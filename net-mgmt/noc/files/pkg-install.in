@@ -103,7 +103,7 @@ if [ "$2" = "POST-INSTALL" ]; then
     ##
     chmod 640 ${NOCDIR}/etc/*.conf
     chown ${NOCUSER}:${NOCGROUP} ${NOCDIR}/etc/*.conf
-    chmod -R +r ${NOCDIR}/share/mibs/
+    chmod -R +r,go-w ${NOCDIR}/share/mibs/
     ##
     ## Create required directories
     ##

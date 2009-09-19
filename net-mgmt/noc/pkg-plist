@@ -183,18 +183,36 @@ noc/dns/migrations/0015_dnszonerecordtype_validate.pyo
 noc/dns/migrations/0016_autozones_path.py
 noc/dns/migrations/0016_autozones_path.pyc
 noc/dns/migrations/0016_autozones_path.pyo
+noc/dns/migrations/0017_dnszone_paid_till.py
+noc/dns/migrations/0017_dnszone_paid_till.pyc
+noc/dns/migrations/0017_dnszone_paid_till.pyo
+noc/dns/migrations/0018_domain_expired.py
+noc/dns/migrations/0018_domain_expired.pyc
+noc/dns/migrations/0018_domain_expired.pyo
 noc/dns/migrations/__init__.py
 noc/dns/migrations/__init__.pyc
 noc/dns/migrations/__init__.pyo
 noc/dns/models.py
 noc/dns/models.pyc
 noc/dns/models.pyo
+noc/dns/periodics/__init__.py
+noc/dns/periodics/__init__.pyc
+noc/dns/periodics/__init__.pyo
+noc/dns/periodics/check_domain_expiration.py
+noc/dns/periodics/check_domain_expiration.pyc
+noc/dns/periodics/check_domain_expiration.pyo
+noc/dns/periodics/update_domain_expiration.py
+noc/dns/periodics/update_domain_expiration.pyc
+noc/dns/periodics/update_domain_expiration.pyo
 noc/dns/reports/__init__.py
 noc/dns/reports/__init__.pyc
 noc/dns/reports/__init__.pyo
 noc/dns/reports/duplicated_fqdns.py
 noc/dns/reports/duplicated_fqdns.pyc
 noc/dns/reports/duplicated_fqdns.pyo
+noc/dns/reports/expiring_domains.py
+noc/dns/reports/expiring_domains.pyc
+noc/dns/reports/expiring_domains.pyo
 noc/dns/reports/missed_p2p_addresses.py
 noc/dns/reports/missed_p2p_addresses.pyc
 noc/dns/reports/missed_p2p_addresses.pyo
@@ -204,6 +222,7 @@ noc/dns/reports/ns_zones.pyo
 noc/dns/reports/supported_servers.py
 noc/dns/reports/supported_servers.pyc
 noc/dns/reports/supported_servers.pyo
+noc/dns/tools.html
 noc/dns/urls.py
 noc/dns/urls.pyc
 noc/dns/urls.pyo
@@ -223,6 +242,8 @@ noc/etc/noc-fcgi.defaults
 noc/etc/noc-launcher.defaults
 @unexec if cmp -s %D/noc/etc/noc-notifier.defaults %D/noc/etc/noc-notifier.conf; then rm -f %D/noc/etc/noc-notifier.conf; fi
 noc/etc/noc-notifier.defaults
+@unexec if cmp -s %D/noc/etc/noc-probe.defaults %D/noc/etc/noc-probe.conf; then rm -f %D/noc/etc/noc-probe.conf; fi
+noc/etc/noc-probe.defaults
 @unexec if cmp -s %D/noc/etc/noc-sae.defaults %D/noc/etc/noc-sae.conf; then rm -f %D/noc/etc/noc-sae.conf; fi
 noc/etc/noc-sae.defaults
 @unexec if cmp -s %D/noc/etc/noc.defaults %D/noc/etc/noc.conf; then rm -f %D/noc/etc/noc.conf; fi
@@ -248,6 +269,9 @@ noc/fm/management/__init__.pyo
 noc/fm/management/commands/__init__.py
 noc/fm/management/commands/__init__.pyc
 noc/fm/management/commands/__init__.pyo
+noc/fm/management/commands/check-required-mibs.py
+noc/fm/management/commands/check-required-mibs.pyc
+noc/fm/management/commands/check-required-mibs.pyo
 noc/fm/management/commands/import-mib.py
 noc/fm/management/commands/import-mib.pyc
 noc/fm/management/commands/import-mib.pyo
@@ -330,6 +354,9 @@ noc/fm/migrations/0024_event_correlation_rule.pyo
 noc/fm/migrations/0025_eventarchivationrule.py
 noc/fm/migrations/0025_eventarchivationrule.pyc
 noc/fm/migrations/0025_eventarchivationrule.pyo
+noc/fm/migrations/0026_postprocessingrule_params.py
+noc/fm/migrations/0026_postprocessingrule_params.pyc
+noc/fm/migrations/0026_postprocessingrule_params.pyo
 noc/fm/migrations/__init__.py
 noc/fm/migrations/__init__.pyc
 noc/fm/migrations/__init__.pyo
@@ -432,6 +459,9 @@ noc/fm/rules/classes/memory.pyo
 noc/fm/rules/classes/phone.py
 noc/fm/rules/classes/phone.pyc
 noc/fm/rules/classes/phone.pyo
+noc/fm/rules/classes/pm.py
+noc/fm/rules/classes/pm.pyc
+noc/fm/rules/classes/pm.pyo
 noc/fm/rules/classes/poe.py
 noc/fm/rules/classes/poe.pyc
 noc/fm/rules/classes/poe.pyo
@@ -462,6 +492,15 @@ noc/fm/rules/classification/Audiocodes/Mediant2000/config.pyo
 noc/fm/rules/classification/Audiocodes/__init__.py
 noc/fm/rules/classification/Audiocodes/__init__.pyc
 noc/fm/rules/classification/Audiocodes/__init__.pyo
+noc/fm/rules/classification/Cisco/AireOS/__init__.py
+noc/fm/rules/classification/Cisco/AireOS/__init__.pyc
+noc/fm/rules/classification/Cisco/AireOS/__init__.pyo
+noc/fm/rules/classification/Cisco/AireOS/dot11.py
+noc/fm/rules/classification/Cisco/AireOS/dot11.pyc
+noc/fm/rules/classification/Cisco/AireOS/dot11.pyo
+noc/fm/rules/classification/Cisco/AireOS/radius.py
+noc/fm/rules/classification/Cisco/AireOS/radius.pyc
+noc/fm/rules/classification/Cisco/AireOS/radius.pyo
 noc/fm/rules/classification/Cisco/IOS/__init__.py
 noc/fm/rules/classification/Cisco/IOS/__init__.pyc
 noc/fm/rules/classification/Cisco/IOS/__init__.pyo
@@ -585,6 +624,9 @@ noc/fm/rules/classification/auth.pyo
 noc/fm/rules/classification/bgp.py
 noc/fm/rules/classification/bgp.pyc
 noc/fm/rules/classification/bgp.pyo
+noc/fm/rules/classification/config.py
+noc/fm/rules/classification/config.pyc
+noc/fm/rules/classification/config.pyo
 noc/fm/rules/classification/dot11.py
 noc/fm/rules/classification/dot11.pyc
 noc/fm/rules/classification/dot11.pyo
@@ -603,6 +645,9 @@ noc/fm/rules/classification/fallback.pyo
 noc/fm/rules/classification/link.py
 noc/fm/rules/classification/link.pyc
 noc/fm/rules/classification/link.pyo
+noc/fm/rules/classification/pm.py
+noc/fm/rules/classification/pm.pyc
+noc/fm/rules/classification/pm.pyo
 noc/fm/rules/classification/stp.py
 noc/fm/rules/classification/stp.pyc
 noc/fm/rules/classification/stp.pyo
@@ -612,8 +657,9 @@ noc/fm/rules/classification/system.pyo
 noc/fm/rules/correlation/__init__.py
 noc/fm/rules/correlation/__init__.pyc
 noc/fm/rules/correlation/__init__.pyo
-noc/fm/rules/correlation/bgp.krb
-noc/fm/rules/correlation/common.krb
+noc/fm/rules/correlation/dot11.py
+noc/fm/rules/correlation/dot11.pyc
+noc/fm/rules/correlation/dot11.pyo
 noc/fm/rules/correlation/ipsec.py
 noc/fm/rules/correlation/ipsec.pyc
 noc/fm/rules/correlation/ipsec.pyo
@@ -624,6 +670,9 @@ noc/fm/rules/correlation/link.pyo
 noc/fm/rules/correlation/loadbalance.py
 noc/fm/rules/correlation/loadbalance.pyc
 noc/fm/rules/correlation/loadbalance.pyo
+noc/fm/rules/correlation/radius.py
+noc/fm/rules/correlation/radius.pyc
+noc/fm/rules/correlation/radius.pyo
 noc/fm/rules/correlation/system.py
 noc/fm/rules/correlation/system.pyc
 noc/fm/rules/correlation/system.pyo
@@ -664,6 +713,9 @@ noc/ip/migrations/0004_default_vrf.pyo
 noc/ip/migrations/0005_free_ip.py
 noc/ip/migrations/0005_free_ip.pyc
 noc/ip/migrations/0005_free_ip.pyo
+noc/ip/migrations/0006_vrf_description.py
+noc/ip/migrations/0006_vrf_description.pyc
+noc/ip/migrations/0006_vrf_description.pyo
 noc/ip/migrations/__init__.py
 noc/ip/migrations/__init__.pyc
 noc/ip/migrations/__init__.pyo
@@ -697,6 +749,7 @@ noc/kb/admin.py
 noc/kb/admin.pyc
 noc/kb/admin.pyo
 noc/kb/index.html
+noc/kb/index_category.html
 noc/kb/management/__init__.py
 noc/kb/management/__init__.pyc
 noc/kb/management/__init__.pyo
@@ -790,6 +843,9 @@ noc/lib/fileutils.pyo
 noc/lib/fsm.py
 noc/lib/fsm.pyc
 noc/lib/fsm.pyo
+noc/lib/gpg.py
+noc/lib/gpg.pyc
+noc/lib/gpg.pyo
 noc/lib/highlight.py
 noc/lib/highlight.pyc
 noc/lib/highlight.pyo
@@ -799,6 +855,9 @@ noc/lib/ip.pyo
 noc/lib/nbsocket.py
 noc/lib/nbsocket.pyc
 noc/lib/nbsocket.pyo
+noc/lib/pmhash.py
+noc/lib/pmhash.pyc
+noc/lib/pmhash.pyo
 noc/lib/pyquote.py
 noc/lib/pyquote.pyc
 noc/lib/pyquote.pyo
@@ -927,6 +986,12 @@ noc/main/migrations/0016_user_profile.pyo
 noc/main/migrations/0017_initial_userprofilecontacts.py
 noc/main/migrations/0017_initial_userprofilecontacts.pyc
 noc/main/migrations/0017_initial_userprofilecontacts.pyo
+noc/main/migrations/0018_systemnotification.py
+noc/main/migrations/0018_systemnotification.pyc
+noc/main/migrations/0018_systemnotification.pyo
+noc/main/migrations/0019_unhandled_exception.py
+noc/main/migrations/0019_unhandled_exception.pyc
+noc/main/migrations/0019_unhandled_exception.pyo
 noc/main/migrations/__init__.py
 noc/main/migrations/__init__.pyc
 noc/main/migrations/__init__.pyo
@@ -1125,18 +1190,74 @@ noc/peer/whois.pyo
 noc/pm/__init__.py
 noc/pm/__init__.pyc
 noc/pm/__init__.pyo
+noc/pm/admin.py
+noc/pm/admin.pyc
+noc/pm/admin.pyo
+noc/pm/index.html
+noc/pm/management/__init__.py
+noc/pm/management/__init__.pyc
+noc/pm/management/__init__.pyo
+noc/pm/management/commands/__init__.py
+noc/pm/management/commands/__init__.pyc
+noc/pm/management/commands/__init__.pyo
+noc/pm/management/commands/ts-export.py
+noc/pm/management/commands/ts-export.pyc
+noc/pm/management/commands/ts-export.pyo
+noc/pm/management/commands/ts-list.py
+noc/pm/management/commands/ts-list.pyc
+noc/pm/management/commands/ts-list.pyo
+noc/pm/management/commands/ts-rm.py
+noc/pm/management/commands/ts-rm.pyc
+noc/pm/management/commands/ts-rm.pyo
+noc/pm/migrations/0001_initial.py
+noc/pm/migrations/0001_initial.pyc
+noc/pm/migrations/0001_initial.pyo
+noc/pm/migrations/__init__.py
+noc/pm/migrations/__init__.pyc
+noc/pm/migrations/__init__.pyo
 noc/pm/models.py
 noc/pm/models.pyc
 noc/pm/models.pyo
+noc/pm/probe.py
+noc/pm/probe.pyc
+noc/pm/probe.pyo
 noc/pm/probes/__init__.py
 noc/pm/probes/__init__.pyc
 noc/pm/probes/__init__.pyo
 noc/pm/probes/http.py
 noc/pm/probes/http.pyc
 noc/pm/probes/http.pyo
-noc/pm/sla.py
-noc/pm/sla.pyc
-noc/pm/sla.pyo
+noc/pm/probes/popen.py
+noc/pm/probes/popen.pyc
+noc/pm/probes/popen.pyo
+noc/pm/probes/postgresql.py
+noc/pm/probes/postgresql.pyc
+noc/pm/probes/postgresql.pyo
+noc/pm/probes/process.py
+noc/pm/probes/process.pyc
+noc/pm/probes/process.pyo
+noc/pm/probes/smtp.py
+noc/pm/probes/smtp.pyc
+noc/pm/probes/smtp.pyo
+noc/pm/probes/snmp.py
+noc/pm/probes/snmp.pyc
+noc/pm/probes/snmp.pyo
+noc/pm/probes/snmp_interface.py
+noc/pm/probes/snmp_interface.pyc
+noc/pm/probes/snmp_interface.pyo
+noc/pm/probes/ssh.py
+noc/pm/probes/ssh.pyc
+noc/pm/probes/ssh.pyo
+noc/pm/probes/tcp.py
+noc/pm/probes/tcp.pyc
+noc/pm/probes/tcp.pyo
+noc/pm/probes/test.py
+noc/pm/probes/test.pyc
+noc/pm/probes/test.pyo
+noc/pm/urls.py
+noc/pm/urls.pyc
+noc/pm/urls.pyo
+noc/pm/view.html
 noc/pm/views.py
 noc/pm/views.pyc
 noc/pm/views.pyo
@@ -1167,9 +1288,15 @@ noc/sa/interfaces/igetarp.pyo
 noc/sa/interfaces/igetconfig.py
 noc/sa/interfaces/igetconfig.pyc
 noc/sa/interfaces/igetconfig.pyo
+noc/sa/interfaces/igetdhcpbinding.py
+noc/sa/interfaces/igetdhcpbinding.pyc
+noc/sa/interfaces/igetdhcpbinding.pyo
 noc/sa/interfaces/igetdot11associations.py
 noc/sa/interfaces/igetdot11associations.pyc
 noc/sa/interfaces/igetdot11associations.pyo
+noc/sa/interfaces/igetlocalusers.py
+noc/sa/interfaces/igetlocalusers.pyc
+noc/sa/interfaces/igetlocalusers.pyo
 noc/sa/interfaces/igetmacaddresstable.py
 noc/sa/interfaces/igetmacaddresstable.pyc
 noc/sa/interfaces/igetmacaddresstable.pyo
@@ -1179,6 +1306,9 @@ noc/sa/interfaces/igetversion.pyo
 noc/sa/interfaces/igetvlans.py
 noc/sa/interfaces/igetvlans.pyc
 noc/sa/interfaces/igetvlans.pyo
+noc/sa/interfaces/ihaslocaluser.py
+noc/sa/interfaces/ihaslocaluser.pyc
+noc/sa/interfaces/ihaslocaluser.pyo
 noc/sa/interfaces/ihasvlan.py
 noc/sa/interfaces/ihasvlan.pyc
 noc/sa/interfaces/ihasvlan.pyo
@@ -1304,6 +1434,19 @@ noc/sa/profiles/Cisco/ASA/highlight.py
 noc/sa/profiles/Cisco/ASA/highlight.pyc
 noc/sa/profiles/Cisco/ASA/highlight.pyo
 noc/sa/profiles/Cisco/ASA/supported.csv
+noc/sa/profiles/Cisco/AireOS/__init__.py
+noc/sa/profiles/Cisco/AireOS/__init__.pyc
+noc/sa/profiles/Cisco/AireOS/__init__.pyo
+noc/sa/profiles/Cisco/AireOS/get_config.py
+noc/sa/profiles/Cisco/AireOS/get_config.pyc
+noc/sa/profiles/Cisco/AireOS/get_config.pyo
+noc/sa/profiles/Cisco/AireOS/get_version.py
+noc/sa/profiles/Cisco/AireOS/get_version.pyc
+noc/sa/profiles/Cisco/AireOS/get_version.pyo
+noc/sa/profiles/Cisco/AireOS/highlight.py
+noc/sa/profiles/Cisco/AireOS/highlight.pyc
+noc/sa/profiles/Cisco/AireOS/highlight.pyo
+noc/sa/profiles/Cisco/AireOS/supported.csv
 noc/sa/profiles/Cisco/FWSM/__init__.py
 noc/sa/profiles/Cisco/FWSM/__init__.pyc
 noc/sa/profiles/Cisco/FWSM/__init__.pyo
@@ -1326,9 +1469,15 @@ noc/sa/profiles/Cisco/IOS/get_arp.pyo
 noc/sa/profiles/Cisco/IOS/get_config.py
 noc/sa/profiles/Cisco/IOS/get_config.pyc
 noc/sa/profiles/Cisco/IOS/get_config.pyo
+noc/sa/profiles/Cisco/IOS/get_dhcp_binding.py
+noc/sa/profiles/Cisco/IOS/get_dhcp_binding.pyc
+noc/sa/profiles/Cisco/IOS/get_dhcp_binding.pyo
 noc/sa/profiles/Cisco/IOS/get_dot11_associations.py
 noc/sa/profiles/Cisco/IOS/get_dot11_associations.pyc
 noc/sa/profiles/Cisco/IOS/get_dot11_associations.pyo
+noc/sa/profiles/Cisco/IOS/get_local_users.py
+noc/sa/profiles/Cisco/IOS/get_local_users.pyc
+noc/sa/profiles/Cisco/IOS/get_local_users.pyo
 noc/sa/profiles/Cisco/IOS/get_mac_address_table.py
 noc/sa/profiles/Cisco/IOS/get_mac_address_table.pyc
 noc/sa/profiles/Cisco/IOS/get_mac_address_table.pyo
@@ -1345,6 +1494,22 @@ noc/sa/profiles/Cisco/IOS/ping.py
 noc/sa/profiles/Cisco/IOS/ping.pyc
 noc/sa/profiles/Cisco/IOS/ping.pyo
 noc/sa/profiles/Cisco/IOS/supported.csv
+noc/sa/profiles/Cisco/NXOS/__init__.py
+noc/sa/profiles/Cisco/NXOS/__init__.pyc
+noc/sa/profiles/Cisco/NXOS/__init__.pyo
+noc/sa/profiles/Cisco/NXOS/get_config.py
+noc/sa/profiles/Cisco/NXOS/get_config.pyc
+noc/sa/profiles/Cisco/NXOS/get_config.pyo
+noc/sa/profiles/Cisco/NXOS/get_local_user.py
+noc/sa/profiles/Cisco/NXOS/get_local_user.pyc
+noc/sa/profiles/Cisco/NXOS/get_local_user.pyo
+noc/sa/profiles/Cisco/NXOS/get_version.py
+noc/sa/profiles/Cisco/NXOS/get_version.pyc
+noc/sa/profiles/Cisco/NXOS/get_version.pyo
+noc/sa/profiles/Cisco/NXOS/highlight.py
+noc/sa/profiles/Cisco/NXOS/highlight.pyc
+noc/sa/profiles/Cisco/NXOS/highlight.pyo
+noc/sa/profiles/Cisco/NXOS/supported.csv
 noc/sa/profiles/Cisco/__init__.py
 noc/sa/profiles/Cisco/__init__.pyc
 noc/sa/profiles/Cisco/__init__.pyo
@@ -1413,6 +1578,9 @@ noc/sa/profiles/Force10/FTOS/get_arp.pyo
 noc/sa/profiles/Force10/FTOS/get_config.py
 noc/sa/profiles/Force10/FTOS/get_config.pyc
 noc/sa/profiles/Force10/FTOS/get_config.pyo
+noc/sa/profiles/Force10/FTOS/get_local_users.py
+noc/sa/profiles/Force10/FTOS/get_local_users.pyc
+noc/sa/profiles/Force10/FTOS/get_local_users.pyo
 noc/sa/profiles/Force10/FTOS/get_mac_address_table.py
 noc/sa/profiles/Force10/FTOS/get_mac_address_table.pyc
 noc/sa/profiles/Force10/FTOS/get_mac_address_table.pyo
@@ -1435,9 +1603,25 @@ noc/sa/profiles/Generic/__init__.pyo
 noc/sa/profiles/Generic/commands.py
 noc/sa/profiles/Generic/commands.pyc
 noc/sa/profiles/Generic/commands.pyo
+noc/sa/profiles/Generic/has_local_user.py
+noc/sa/profiles/Generic/has_local_user.pyc
+noc/sa/profiles/Generic/has_local_user.pyo
 noc/sa/profiles/Generic/has_vlan.py
 noc/sa/profiles/Generic/has_vlan.pyc
 noc/sa/profiles/Generic/has_vlan.pyo
+noc/sa/profiles/HP/__init__.py
+noc/sa/profiles/HP/__init__.pyc
+noc/sa/profiles/HP/__init__.pyo
+noc/sa/profiles/HP/iLO2/__init__.py
+noc/sa/profiles/HP/iLO2/__init__.pyc
+noc/sa/profiles/HP/iLO2/__init__.pyo
+noc/sa/profiles/HP/iLO2/get_config.py
+noc/sa/profiles/HP/iLO2/get_config.pyc
+noc/sa/profiles/HP/iLO2/get_config.pyo
+noc/sa/profiles/HP/iLO2/get_version.py
+noc/sa/profiles/HP/iLO2/get_version.pyc
+noc/sa/profiles/HP/iLO2/get_version.pyo
+noc/sa/profiles/HP/iLO2/supported.csv
 noc/sa/profiles/Huawei/UMG8900/__init__.py
 noc/sa/profiles/Huawei/UMG8900/__init__.pyc
 noc/sa/profiles/Huawei/UMG8900/__init__.pyo
@@ -1565,6 +1749,22 @@ noc/sa/profiles/Protei/MediaGateway/supported.csv
 noc/sa/profiles/Protei/__init__.py
 noc/sa/profiles/Protei/__init__.pyc
 noc/sa/profiles/Protei/__init__.pyo
+noc/sa/profiles/Raisecom/ROS/__init__.py
+noc/sa/profiles/Raisecom/ROS/__init__.pyc
+noc/sa/profiles/Raisecom/ROS/__init__.pyo
+noc/sa/profiles/Raisecom/ROS/get_config.py
+noc/sa/profiles/Raisecom/ROS/get_config.pyc
+noc/sa/profiles/Raisecom/ROS/get_config.pyo
+noc/sa/profiles/Raisecom/ROS/get_version.py
+noc/sa/profiles/Raisecom/ROS/get_version.pyc
+noc/sa/profiles/Raisecom/ROS/get_version.pyo
+noc/sa/profiles/Raisecom/ROS/highlight.py
+noc/sa/profiles/Raisecom/ROS/highlight.pyc
+noc/sa/profiles/Raisecom/ROS/highlight.pyo
+noc/sa/profiles/Raisecom/ROS/supported.csv
+noc/sa/profiles/Raisecom/__init__.py
+noc/sa/profiles/Raisecom/__init__.pyc
+noc/sa/profiles/Raisecom/__init__.pyo
 noc/sa/profiles/Ubiquiti/AirOS/__init__.py
 noc/sa/profiles/Ubiquiti/AirOS/__init__.pyc
 noc/sa/profiles/Ubiquiti/AirOS/__init__.pyo
@@ -1635,6 +1835,19 @@ noc/sa/profiles/Zyxel/ZyNOS/highlight.py
 noc/sa/profiles/Zyxel/ZyNOS/highlight.pyc
 noc/sa/profiles/Zyxel/ZyNOS/highlight.pyo
 noc/sa/profiles/Zyxel/ZyNOS/supported.csv
+noc/sa/profiles/Zyxel/ZyNOSv2/__init__.py
+noc/sa/profiles/Zyxel/ZyNOSv2/__init__.pyc
+noc/sa/profiles/Zyxel/ZyNOSv2/__init__.pyo
+noc/sa/profiles/Zyxel/ZyNOSv2/get_config.py
+noc/sa/profiles/Zyxel/ZyNOSv2/get_config.pyc
+noc/sa/profiles/Zyxel/ZyNOSv2/get_config.pyo
+noc/sa/profiles/Zyxel/ZyNOSv2/get_version.py
+noc/sa/profiles/Zyxel/ZyNOSv2/get_version.pyc
+noc/sa/profiles/Zyxel/ZyNOSv2/get_version.pyo
+noc/sa/profiles/Zyxel/ZyNOSv2/highlight.py
+noc/sa/profiles/Zyxel/ZyNOSv2/highlight.pyc
+noc/sa/profiles/Zyxel/ZyNOSv2/highlight.pyo
+noc/sa/profiles/Zyxel/ZyNOSv2/supported.csv
 noc/sa/profiles/Zyxel/__init__.py
 noc/sa/profiles/Zyxel/__init__.pyc
 noc/sa/profiles/Zyxel/__init__.pyo
@@ -1661,6 +1874,10 @@ noc/sa/protocols/Makefile
 noc/sa/protocols/__init__.py
 noc/sa/protocols/__init__.pyc
 noc/sa/protocols/__init__.pyo
+noc/sa/protocols/pm.proto
+noc/sa/protocols/pm_pb2.py
+noc/sa/protocols/pm_pb2.pyc
+noc/sa/protocols/pm_pb2.pyo
 noc/sa/protocols/sae.proto
 noc/sa/protocols/sae_pb2.py
 noc/sa/protocols/sae_pb2.pyc
@@ -1733,8 +1950,8 @@ noc/scripts/noc-correlator.py
 noc/scripts/noc-fcgi.py
 noc/scripts/noc-launcher.py
 noc/scripts/noc-notifier.py
+noc/scripts/noc-probe.py
 noc/scripts/noc-sae.py
-noc/scripts/noc-sla.py
 noc/scripts/post-install
 noc/scripts/post-update
 noc/scripts/stdin-wrapper
@@ -1787,16 +2004,20 @@ noc/share/doc/en/ug/main.rst
 noc/share/doc/en/ug/modules.rst
 noc/share/doc/en/ug/overview.rst
 noc/share/doc/en/ug/peer.rst
+noc/share/doc/en/ug/pm.rst
 noc/share/doc/en/ug/profiles/Alcatel.AOS.rst
 noc/share/doc/en/ug/profiles/Audiocodes.Mediant2000.rst
 noc/share/doc/en/ug/profiles/Cisco.ASA.rst
+noc/share/doc/en/ug/profiles/Cisco.AireOS.rst
 noc/share/doc/en/ug/profiles/Cisco.FWSM.rst
 noc/share/doc/en/ug/profiles/Cisco.IOS.rst
+noc/share/doc/en/ug/profiles/Cisco.NXOS.rst
 noc/share/doc/en/ug/profiles/DLink.DES3xxx.rst
 noc/share/doc/en/ug/profiles/DLink.DGS3xxx.rst
 noc/share/doc/en/ug/profiles/EdgeCore.ES35xx.rst
 noc/share/doc/en/ug/profiles/EdgeCore.ES4xxx.rst
 noc/share/doc/en/ug/profiles/Force10.FTOS.rst
+noc/share/doc/en/ug/profiles/HP.iLO2.rst
 noc/share/doc/en/ug/profiles/Huawei.UMG8900.rst
 noc/share/doc/en/ug/profiles/Huawei.VRP.rst
 noc/share/doc/en/ug/profiles/InfiNet.WANFlexX.rst
@@ -1807,11 +2028,13 @@ noc/share/doc/en/ug/profiles/Juniper.ScreenOS.rst
 noc/share/doc/en/ug/profiles/Linksys.SPS2xx.rst
 noc/share/doc/en/ug/profiles/MikroTik.RouterOS.rst
 noc/share/doc/en/ug/profiles/Protei.MediaGateway.rst
+noc/share/doc/en/ug/profiles/Raisecom.ROS.rst
 noc/share/doc/en/ug/profiles/Ubiquity.AirOS.rst
 noc/share/doc/en/ug/profiles/VoiceFinder.AddPack.rst
 noc/share/doc/en/ug/profiles/ZTE.ZXDSL531.rst
 noc/share/doc/en/ug/profiles/Zebra.Zebra.rst
 noc/share/doc/en/ug/profiles/ZyXEL.ZyNOS.rst
+noc/share/doc/en/ug/profiles/Zyxel.ZyNOSv2.rst
 noc/share/doc/en/ug/profiles/f5.BIGIP.rst
 noc/share/doc/en/ug/sa.rst
 noc/share/doc/en/ug/sa_activator_fsm.png
@@ -1825,6 +2048,8 @@ noc/share/doc/index/index.rst
 noc/share/linux/lsb/init.d/noc-launcher
 noc/share/linux/lsb/sysconfig/noc
 noc/share/linux/ubuntu/init.d/noc-launcher
+noc/share/mibs/AIRESPACE-REF-MIB.mib
+noc/share/mibs/AIRESPACE-WIRELESS-MIB.mib
 noc/share/mibs/BGP4-MIB.mib
 noc/share/mibs/BRIDGE-MIB.mib
 noc/share/mibs/CISCO-BGP4-MIB.mib
@@ -1833,6 +2058,9 @@ noc/share/mibs/CISCO-DIAL-CONTROL-MIB.mib
 noc/share/mibs/CISCO-IPSEC-FLOW-MONITOR-MIB.mib
 noc/share/mibs/CISCO-IPSEC-MIB.mib
 noc/share/mibs/CISCO-ISDN-MIB.mib
+noc/share/mibs/CISCO-LWAPP-AAA-MIB.mib
+noc/share/mibs/CISCO-LWAPP-TC-MIB.mib
+noc/share/mibs/CISCO-LWAPP-WLAN-MIB.mib
 noc/share/mibs/CISCO-MEDIA-GATEWAY-MIB.mib
 noc/share/mibs/CISCO-SMI.mib
 noc/share/mibs/CISCO-STP-EXTENSIONS-MIB.mib
@@ -1841,6 +2069,7 @@ noc/share/mibs/CISCO-TC.mib
 noc/share/mibs/CISCO-VTP-MIB.mib
 noc/share/mibs/CISCOTRAP-MIB.mib
 noc/share/mibs/DIAL-CONTROL-MIB.mib
+noc/share/mibs/ENTITY-MIB.mib
 noc/share/mibs/F5-BIGIP-COMMON-MIB.mib
 noc/share/mibs/HCNUM-TC.mib
 noc/share/mibs/IANAifType-MIB.mib
@@ -1877,24 +2106,32 @@ noc/share/sunos/manifest/noc-activator.xml
 noc/share/sunos/manifest/noc-classifier.xml
 noc/share/sunos/manifest/noc-correlator.xml
 noc/share/sunos/manifest/noc-fcgi.xml
+noc/share/sunos/manifest/noc-launcher.xml
 noc/share/sunos/manifest/noc-sae.xml
 noc/static/css/databrowse.css
 noc/static/css/diff.css
 noc/static/css/highlight.css
 noc/static/css/jquery.autocomplete.css
 noc/static/css/jquery.pager.css
+noc/static/css/jquery.svg.css
 noc/static/css/login.css
 noc/static/css/main.css
 noc/static/css/menu.css
 noc/static/css/pygments.css
 noc/static/css/rack.css
 noc/static/css/sphinx.css
+noc/static/css/tablesorter.css
+noc/static/img/asc.gif
+noc/static/img/bg.gif
+noc/static/img/desc.gif
 noc/static/img/indicator.gif
 noc/static/img/logo.png
 noc/static/js/jquery.autocomplete.js
 noc/static/js/jquery.form.js
 noc/static/js/jquery.js
 noc/static/js/jquery.pager.js
+noc/static/js/jquery.svg.js
+noc/static/js/jquery.tablesorter.js
 noc/static/js/menu.js
 noc/template/admin/base.html
 noc/template/admin/base_site.html
@@ -1903,6 +2140,7 @@ noc/template/admin/cm/config/change_list.html
 noc/template/admin/cm/dns/change_list.html
 noc/template/admin/cm/prefixlist/change_list.html
 noc/template/admin/cm/rpsl/change_list.html
+noc/template/admin/dns/dnszone/change_list.html
 noc/template/admin/fm/eventclassificationrule/change_form.html
 noc/template/admin/fm/eventclassificationrule/change_list.html
 noc/template/admin/fm/eventcorrelationrule/change_list.html
@@ -1961,6 +2199,8 @@ noc/vc/views.pyo
 @dirrm noc/template/admin/fm/eventcorrelationrule
 @dirrm noc/template/admin/fm/eventclassificationrule
 @dirrm noc/template/admin/fm
+@dirrm noc/template/admin/dns/dnszone
+@dirrm noc/template/admin/dns
 @dirrm noc/template/admin/cm/rpsl
 @dirrm noc/template/admin/cm/prefixlist
 @dirrm noc/template/admin/cm/dns
@@ -1996,6 +2236,7 @@ noc/vc/views.pyo
 @dirrm noc/sa/protocols
 @dirrm noc/sa/profiles/f5/BIGIP
 @dirrm noc/sa/profiles/f5
+@dirrm noc/sa/profiles/Zyxel/ZyNOSv2
 @dirrm noc/sa/profiles/Zyxel/ZyNOS
 @dirrm noc/sa/profiles/Zyxel
 @dirrm noc/sa/profiles/Zebra/Zebra
@@ -2006,6 +2247,8 @@ noc/vc/views.pyo
 @dirrm noc/sa/profiles/VoiceFinder
 @dirrm noc/sa/profiles/Ubiquiti/AirOS
 @dirrm noc/sa/profiles/Ubiquiti
+@dirrm noc/sa/profiles/Raisecom/ROS
+@dirrm noc/sa/profiles/Raisecom
 @dirrm noc/sa/profiles/Protei/MediaGateway
 @dirrm noc/sa/profiles/Protei
 @dirrm noc/sa/profiles/MikroTik/RouterOS
@@ -2022,6 +2265,8 @@ noc/vc/views.pyo
 @dirrm noc/sa/profiles/Huawei/VRP
 @dirrm noc/sa/profiles/Huawei/UMG8900
 @dirrm noc/sa/profiles/Huawei
+@dirrm noc/sa/profiles/HP/iLO2
+@dirrm noc/sa/profiles/HP
 @dirrm noc/sa/profiles/Generic
 @dirrm noc/sa/profiles/Force10/FTOS
 @dirrm noc/sa/profiles/Force10
@@ -2031,8 +2276,10 @@ noc/vc/views.pyo
 @dirrm noc/sa/profiles/DLink/DGS3xxx
 @dirrm noc/sa/profiles/DLink/DES3xxx
 @dirrm noc/sa/profiles/DLink
+@dirrm noc/sa/profiles/Cisco/NXOS
 @dirrm noc/sa/profiles/Cisco/IOS
 @dirrm noc/sa/profiles/Cisco/FWSM
+@dirrm noc/sa/profiles/Cisco/AireOS
 @dirrm noc/sa/profiles/Cisco/ASA
 @dirrm noc/sa/profiles/Cisco
 @dirrm noc/sa/profiles/Audiocodes/Mediant2000
@@ -2046,6 +2293,9 @@ noc/vc/views.pyo
 @dirrm noc/sa/interfaces
 @dirrm noc/sa
 @dirrm noc/pm/probes
+@dirrm noc/pm/migrations
+@dirrm noc/pm/management/commands
+@dirrm noc/pm/management
 @dirrm noc/pm
 @dirrm noc/peer/migrations
 @dirrm noc/peer
@@ -2083,6 +2333,7 @@ noc/vc/views.pyo
 @dirrm noc/fm/rules/classification/DLink/DES3xxx
 @dirrm noc/fm/rules/classification/DLink
 @dirrm noc/fm/rules/classification/Cisco/IOS
+@dirrm noc/fm/rules/classification/Cisco/AireOS
 @dirrm noc/fm/rules/classification/Cisco
 @dirrm noc/fm/rules/classification/Audiocodes/Mediant2000
 @dirrm noc/fm/rules/classification/Audiocodes
@@ -2098,6 +2349,7 @@ noc/vc/views.pyo
 @dirrm noc/fm/management
 @dirrm noc/fm
 @dirrm noc/dns/reports
+@dirrm noc/dns/periodics
 @dirrm noc/dns/migrations
 @dirrm noc/dns/generators
 @dirrm noc/dns

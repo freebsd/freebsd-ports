@@ -12,7 +12,7 @@
 @@ -15,7 +15,7 @@ cd $PREFIX
  sed_script=`mktemp tmp.XXXXXX`
  rm $sed_script
- for cmd in telnet ssh rsync pg_dump tar gzip smidump smilint fping dig; do
+ for cmd in telnet ssh rsync pg_dump tar gzip smidump smilint fping dig gpg; do
 -    echo 's@^\\($cmd *\\)=.*\$@\\1 = '`which $cmd`'@' >> $sed_script
 +    echo "s@^\\($cmd *\\)=.*\$@\\1 = "`which $cmd`'@' >> $sed_script
  done

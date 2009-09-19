@@ -30,6 +30,8 @@ load_rc_config $name
 : ${noc_config="%%NOCDIR%%/etc/noc-launcher.conf"}
 : ${noc_flags="-c ${noc_config}"}
 
+export PATH=$PATH:%%PYTHONBASE%%/bin
+
 noc_chdir=%%NOCDIR%%
 command=%%NOCDIR%%/scripts/noc-launcher.py
 command_interpreter=python
