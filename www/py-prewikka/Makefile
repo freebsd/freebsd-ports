@@ -7,7 +7,7 @@
 
 PORTNAME=	prewikka
 PORTVERSION=	0.9.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www security python
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -17,7 +17,7 @@ MAINTAINER=	r.gruyters@snow.nl
 COMMENT=	Frontend for the Prelude IDS
 
 BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
-LIB_DEPENDS=	prelude.19:${PORTSDIR}/security/libprelude \
+LIB_DEPENDS=	prelude.20:${PORTSDIR}/security/libprelude \
 		preludedb.4:${PORTSDIR}/security/libpreludedb
 
 USE_PYTHON=		2.3+
