@@ -5,7 +5,7 @@
  	AC_CHECK_PROG(WITH_G77,g77,yes,no)
  	if test "$WITH_G77" = no; then
 -		AC_CHECK_PROG(WITH_GFORTRAN,gfortran,yes,no)
-+		AC_CHECK_PROGS(WITH_GFORTRAN,[gfortran gfortran41 gfortran42 gfortran43],no)	
++		AC_CHECK_PROGS(WITH_GFORTRAN,[gfortran gfortran44],no)	
  		if test "$WITH_GFORTRAN" = no; then
  			AC_MSG_ERROR([Unable to configure: g77 or gfortran compiler not found])
  		fi
@@ -14,7 +14,7 @@
  elif test "$with_gfortran" = yes; then
  	# GNU g95 (gfortran) required
 -	AC_CHECK_PROG(WITH_GFORTRAN,gfortran,yes,no)
-+	AC_CHECK_PROGS(WITH_GFORTRAN,[gfortran gfortran41 gfortran42 gfortran43],no)
++	AC_CHECK_PROGS(WITH_GFORTRAN,[gfortran gfortran44],no)
  	if test "$WITH_GFORTRAN" = no; then
  		AC_MSG_ERROR([Unable to configure: gfortran compiler not found])
  	fi
