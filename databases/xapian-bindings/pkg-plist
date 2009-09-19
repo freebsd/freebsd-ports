@@ -17,6 +17,16 @@
 %%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian.py
 %%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian.pyc
 %%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian.pyo
+%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simpleexpand.rb
+%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simpleindex.rb
+%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simplematchdecider.rb
+%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simplesearch.rb
+%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/index.html
+%%BINDING_RUBY%%%%RUBY_SITELIBDIR%%/xapian.rb
+%%BINDING_RUBY%%%%RUBY_SITEARCHLIBDIR%%/_xapian.so
+%%BINDING_RUBY%%@dirrmtry %%RUBY_SITELIBDIR%%
+%%BINDING_RUBY%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ruby/examples
+%%BINDING_RUBY%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ruby
 %%BINDING_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 %%BINDING_PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python/examples
 %%BINDING_PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python
