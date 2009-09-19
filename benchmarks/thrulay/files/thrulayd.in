@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: thrulay
+
+# Add the following line to /etc/rc.conf to enable `thrulayd':
+#
+#thrulayd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="thrulayd"
+rcvar=`set_rcvar`
+
+# read settings, set default values
+load_rc_config "${name}"
+: ${thrulayd_enable="NO"}
+: ${thrulayd_directory="%%PREFIX%%/sbin"}
+
+# path to your executable, might be bin, sbin, ...
+command="${thrulayd_directory}/thrulayd"
+
+run_rc_command "$1"
