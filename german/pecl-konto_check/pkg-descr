@@ -1,0 +1,7 @@
+konto_check is a PHP module to check the validity of German and
+Austrian Bank Account Numbers. All currently defined test methods
+by Deutsche Bundesbank (March 2009: 00 to D3) are implemented.
+
+This port only installs the PHP module.
+
+WWW: http://www.informatik.hs-mannheim.de/konto_check/
