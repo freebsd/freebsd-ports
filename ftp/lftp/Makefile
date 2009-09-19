@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.7.15
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
@@ -36,8 +35,8 @@ PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
 		MIRRORS NEWS README README.debug-levels README.modules \
 		THANKS TODO
 
-OPTIONS=	GNUTLS "With GnutTLS support" off \
-		OPENSSL "With OpenSSL support" on \
+OPTIONS=	OPENSSL "With OpenSSL support" on \
+		GNUTLS "With GnutTLS support" off \
 		NLS "With i18n support" on
 
 .include <bsd.port.pre.mk>
@@ -47,18 +46,18 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
 RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
 .endif
 
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-gnutls
-.else
-CONFIGURE_ARGS+=	--without-gnutls
-.endif
-
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl
 .else
 CONFIGURE_ARGS+=	--without-openssl
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-gnutls
+.else
+CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -71,6 +70,13 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 MAN1=		lftp.1 lftpget.1
+
+pre-configure:
+.if !defined(WITHOUT_OPENSSL) && defined(WITH_GNUTLS)
+	@${ECHO_MSG} "========"
+	@${ECHO_MSG} "WARNING: both OPENSSL and GNUTLS have been selected, OPENSSL will be used"
+	@${ECHO_MSG} "========"
+.endif
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
