@@ -693,6 +693,7 @@
     SUBDIR += pear-Net_Geo
     SUBDIR += pear-Net_GeoIP
     SUBDIR += pear-Net_IDNA
+    SUBDIR += pear-Net_IPv4
     SUBDIR += pear-Net_IPv6
     SUBDIR += pear-Net_Ident
     SUBDIR += pear-Net_LDAP
