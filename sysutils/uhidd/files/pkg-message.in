@@ -1,0 +1,20 @@
+==============================================================================
+
+To use uhidd daemon for USB hid devices, you need to remove 'device ums',
+'device ukbd', and 'device uhid' from your kernel config file and recompile
+the kernel. Or if these drivers are loaded as kernel modules, kldunload them.
+
+If you want to run uhidd deamon at the startup, add the following lines to
+/etc/rc.conf:
+
+	uhidd_flags="-kmhs"
+	uhidd_enable="YES"
+
+To manually start/stop uhidd daemon on certain device, run:
+
+	%%PREFIX%%/etc/rc.d/uhidd [start|stop] /dev/ugen.X.Y
+
+See http://wiki.freebsd.org/uhidd for more details about how to install and
+setup the daemon.
+
+==============================================================================

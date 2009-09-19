@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: uhidd
+# REQUIRE: DAEMON cleanvar
+# KEYWORD: nojail shutdown
+
+. %%RC_SUBR%%
+
+# Usage:
+#	uhidd start ugenX.Y	# start uhidd on device 'ugenX.Y'
+#	uhidd stop ugenX.Y	# stop uhidd on device 'ugenX.Y'
+#	uhidd start		# start uhidd on all ugen device.
+#	uhidd stop		# stop all uhidd instances.
+
+name="uhidd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+start_cmd="uhidd_start"
+required_modules="uvhid vkbd"
+pidprefix="/var/run/uhidd"
+
+load_rc_config $name
+
+if [ -n "$2" ]; then
+	pidfile="${pidprefix}.`basename $2`.pid"
+else
+	pidfile=
+fi
+
+uhidd_start()
+{
+	local dev pf
+
+	if [ -n "$1" ]; then
+		${command} ${uhidd_flags} $1
+	else
+		for dev in /dev/ugen*; do
+			pf="${pidprefix}.`basename ${dev}`.pid"
+			if [ ! -f ${pf} ]; then
+				${command} ${uhidd_flags} ${dev}
+			fi
+		done
+	fi
+}
+
+run_rc_command $*
