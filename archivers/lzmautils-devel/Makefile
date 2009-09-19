@@ -7,6 +7,7 @@
 
 PORTNAME=	lzmautils
 DISTVERSION=	4.999.8
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://tukaani.org/xz/ \
 		http://freebsd.unixfreunde.de/sources/
