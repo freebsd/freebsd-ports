@@ -23,7 +23,7 @@ SNAPDATE=	20090703
 CONFLICTS=	wmii-3.*
 
 USE_ICONV=	yes
-USE_XORG=	x11 xextproto xt xext xft
+USE_XORG=	x11 xext xrandr xrender xinerama xft
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
 		CC="${CC} -c" LD="${CC}" LIBIXP="-lixp" STATIC="" \
