@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autodist
-PORTVERSION=	1.3.2
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://silcnet.org/download/autodist/sources/ \
 		http://public.planetmirror.com/pub/silcnet/autodist/sources/ \
@@ -26,5 +26,6 @@ INFO=		autodist
 post-patch:
 	@${REINPLACE_CMD} -e '/^install-exec-hook:/,/^$$/s/^	.*//' \
 		${WRKSRC}/apps/autodist/Makefile.in
+	${ECHO} "file empty" >> ${WRKSRC}/apps/autodist/doc/autodist.info
 
 .include <bsd.port.post.mk>
