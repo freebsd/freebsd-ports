@@ -29,6 +29,9 @@ USE_GNOME=	pkgconfig gtk20 libgtkhtml vte
 USE_AUTOTOOLS=	autoconf:262
 USE_TK=		yes
 
+DEPRECATED=	unmaintained, many releases behind upstream (without anyone caring), broken nearly everywhere
+EXPIRATION_DATE=2009-10-19
+
 CONFIGURE_ARGS=	--with-tk \
 		--with-tk-library=${LOCALBASE}/lib \
 		--with-tk-include=${TK_INCLUDEDIR} \
