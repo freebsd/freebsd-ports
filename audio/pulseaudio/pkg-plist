@@ -248,6 +248,7 @@ share/locale/ta/LC_MESSAGES/pulseaudio.mo
 share/locale/te/LC_MESSAGES/pulseaudio.mo
 share/locale/uk/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
+share/vala/vapi/libpulse.vapi
 %%GCONF%%@dirrm libexec/pulse
 @dirrm lib/pulse-%%PULSE_VERSION%%/modules
 @dirrm lib/pulse-%%PULSE_VERSION%%
