@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	taglib-extras
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kollide.net/~jefferai/
 
