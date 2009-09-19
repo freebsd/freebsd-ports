@@ -1,4 +1,0 @@
-bin/ecawave
-%%PORTDOCS%%%%DOCSDIR%%/ecawave_manpage.html
-%%PORTDOCS%%%%DOCSDIR%%/users_guide.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
