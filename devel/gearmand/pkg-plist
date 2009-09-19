@@ -12,6 +12,8 @@ include/libgearman/gearmand_thread.h
 include/libgearman/job.h
 include/libgearman/packet.h
 include/libgearman/protocol_http.h
+%%PG%%include/libgearman/queue_libpq.h
+%%SQLITE%%include/libgearman/queue_libsqlite3.h
 include/libgearman/server.h
 include/libgearman/server_client.h
 include/libgearman/server_con.h

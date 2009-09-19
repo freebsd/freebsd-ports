@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/
 
@@ -14,6 +14,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Gearman C Server and Library
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
+		memcached:${PORTSDIR}/databases/libmemcached \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
@@ -22,6 +23,9 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gearmand.sh
+
+OPTIONS=	PQ "Enable PostgreSQL support" off \
+		SQLITE3 "Enable SQLite3 support" off
 
 MAN1=		gearman.1
 MAN3=		gearman_bugreport.3 \
@@ -148,6 +152,12 @@ MAN3=		gearman_bugreport.3 \
 		gearman_queue_libmemcached_conf.3 \
 		gearman_queue_libmemcached_deinit.3 \
 		gearman_queue_libmemcached_init.3 \
+		gearman_queue_libpq_conf.3 \
+		gearman_queue_libpq_deinit.3 \
+		gearman_queue_libpq_init.3 \
+		gearman_queue_libsqlite3_conf.3 \
+		gearman_queue_libsqlite3_deinit.3 \
+		gearman_queue_libsqlite3_init.3 \
 		gearman_server_client_add.3 \
 		gearman_server_client_create.3 \
 		gearman_server_client_free.3 \
@@ -262,6 +272,10 @@ MAN3=		gearman_bugreport.3 \
 		gearmand_queue_libdrizzle_init.3 \
 		gearmand_queue_libmemcached_deinit.3 \
 		gearmand_queue_libmemcached_init.3 \
+		gearmand_queue_libpq_deinit.3 \
+		gearmand_queue_libpq_init.3 \
+		gearmand_queue_libsqlite3_deinit.3 \
+		gearmand_queue_libsqlite3_init.3 \
 		gearmand_run.3 \
 		gearmand_set_backlog.3 \
 		gearmand_set_log.3 \
@@ -273,4 +287,24 @@ MAN3=		gearman_bugreport.3 \
 		gearmand_wakeup.3
 MAN8=		gearmand.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_PQ)
+PLIST_SUB+=	PG=""
+CONFIGURE_ARGS+=	--with-libpq-prefix
+USE_PGSQL=	yes
+.else
+PLIST_SUB+=	PG="@comment "
+CONFIGURE_ARGS+=	--without-libpq-prefix
+.endif
+
+.ifdef(WITH_SQLITE3)
+PLIST_SUB+=	SQLITE=""
+CONFIGURE_ARGS+=	--with-libsqlite3-prefix
+USE_SQLITE=	yes
+.else
+PLIST_SUB+=	SQLITE="@comment "
+CONFIGURE_ARGS+=	--without-libsqlite3-prefix
+.endif
+
+.include <bsd.port.post.mk>
