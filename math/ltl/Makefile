@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ltl
-PORTVERSION=	1.7.10
+PORTVERSION=	1.9.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 
@@ -23,13 +23,14 @@ MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALL_TARGET=	install install-data check distdir
 
-PORTDOCS=	doc/html/*[h.][tp][mn][lg]
-PLIST_FILES=	`ls ${WRKSRC}/doc/html/*[h.][tp][mn][lg] | ${SED} -e 's!${WRKSRC}/doc/html/!%%PORTDOCS%%%%DOCSDIR%%/!g'`
+PORTDOCS=	*.html
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && pwd && ${INSTALL_DATA} -v  ${PORTDOCS} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/${docs} ${DOCSDIR}
+.endfor
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 

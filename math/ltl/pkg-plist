@@ -15,9 +15,13 @@ include/LTL/ltl/fmatrix/fmiter.h
 include/LTL/ltl/fmatrix/fmtloops.h
 include/LTL/ltl/fmatrix/fmtranspose.h
 include/LTL/ltl/fmatrix/gaussj.h
+include/LTL/ltl/fmatrix/lmfit.h
+include/LTL/ltl/fmatrix/lusolve.h
 include/LTL/ltl/fmatrix/marquardt.h
 include/LTL/ltl/fmatrix/mrqfuncs.h
+include/LTL/ltl/fmatrix/mrqhesse.h
 include/LTL/ltl/fmatrix/polynomfit.h
+include/LTL/ltl/fmatrix/svdsolve.h
 include/LTL/ltl/fvector.h
 include/LTL/ltl/fvector/fvbool.h
 include/LTL/ltl/fvector/fvdot.h
@@ -34,6 +38,8 @@ include/LTL/ltl/io/fits_data.h
 include/LTL/ltl/io/fits_header.h
 include/LTL/ltl/linlsqfit.h
 include/LTL/ltl/marray.h
+include/LTL/ltl/marray/apply.h
+include/LTL/ltl/marray/blas.h
 include/LTL/ltl/marray/cast.h
 include/LTL/ltl/marray/eval.h
 include/LTL/ltl/marray/eval_reduc.h
@@ -41,11 +47,14 @@ include/LTL/ltl/marray/expr.h
 include/LTL/ltl/marray/expr_iter.h
 include/LTL/ltl/marray/expr_ops.h
 include/LTL/ltl/marray/index_iter.h
+include/LTL/ltl/marray/lapack.h
 include/LTL/ltl/marray/marray_iter.h
 include/LTL/ltl/marray/marray_methods.h
 include/LTL/ltl/marray/marray_ops.h
 include/LTL/ltl/marray/merge.h
 include/LTL/ltl/marray/reductions.h
+include/LTL/ltl/marray/reductions_sse.h
+include/LTL/ltl/marray/partial_reduc.h
 include/LTL/ltl/marray/shape.h
 include/LTL/ltl/marray/shape_iter.h
 include/LTL/ltl/marray/simplevec.h
