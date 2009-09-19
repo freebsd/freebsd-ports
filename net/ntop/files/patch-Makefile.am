@@ -1,5 +1,5 @@
---- Makefile.am.orig	2008-12-03 17:00:22.000000000 -0500
-+++ Makefile.am	2009-06-02 14:27:56.863148713 -0400
+--- Makefile.am.orig	2009-04-17 17:27:57.000000000 -0300
++++ Makefile.am	2009-09-15 13:07:19.000000000 -0300
 @@ -76,9 +76,7 @@
  NTOPDATA = ntop-cert.pem \
             $(ETTER_PASSIVE) \
@@ -20,8 +20,8 @@
  	@mkdir -p $(DESTDIR)/$(CFG_DBFILE_DIR)
  
  	@echo ""
-@@ -336,7 +332,6 @@
- 
+@@ -341,7 +337,6 @@
+ 	chcon -t textrel_shlib_t $(DESTDIR)$(libdir)/*ntop*.so
  
  install-data-local: ntop.txt ntop.html faq.html
 -	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(libdir)/plugins;

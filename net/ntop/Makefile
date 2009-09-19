@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	ntop
-PORTVERSION=	3.3.9
-PORTREVISION=	2
+PORTVERSION=	3.3.10
 CATEGORIES=	net
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
 		geoiplookup:${PORTSDIR}/net/GeoIP
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+		event-1.4:${PORTSDIR}/devel/libevent
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
@@ -25,6 +25,7 @@ DBDIR?=		/var/db
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool:22 automake:19 autoconf:262
 USE_GNOME=	libxml2
+USE_LUA=	5.1
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
