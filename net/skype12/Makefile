@@ -27,10 +27,6 @@ OPTIONS=	NVIDIA_GL "Enable Nvidia Support" off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700000
-IGNORE=	Legacy version, Use net/skype
-.endif
-
 .if defined(WITH_NVIDIA_GL)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
