@@ -220,6 +220,7 @@
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-traitsbackendwx
+    SUBDIR += py-traitsgui
     SUBDIR += py-vte
     SUBDIR += py-wax
     SUBDIR += py-wmdockapps
