@@ -16,7 +16,7 @@ bin/wvWare
 bin/wvWml
 include/wv/wv.h
 lib/libwv-1.2.so
-lib/libwv-1.2.so.4
+lib/libwv-1.2.so.3
 lib/libwv.a
 lib/libwv.la
 lib/libwv.so
