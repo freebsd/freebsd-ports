@@ -9,7 +9,10 @@ PORTNAME=	abuse
 PORTVERSION=	2.0
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
+MASTER_SITES=	ftp://ftp.pardus.org.tr/pub/source/2007/ \
+		ftp://mirror.euronet.nl/pub/mirrors/FreeBSD/distfiles/ \
+		ftp://166.111.8.205/mirror/gentoo/distfiles/ \
+		http://globalfilesearch.com/download/mirror.euronet.nl/pub/mirrors/tucows/linux/files/
 DISTFILES=	abuse_datafiles.tar.gz
 EXTRACT_ONLY=	# empty
 
