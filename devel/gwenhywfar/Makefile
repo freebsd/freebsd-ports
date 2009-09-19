@@ -59,7 +59,7 @@ PORTDOCS=	*
 
 post-build:
 .if !defined(NOPORTDOCS) && defined(WITH_PORTDOCS)
-	@cd ${WRKSRC} && ${MAKE} srcdoc
+	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
