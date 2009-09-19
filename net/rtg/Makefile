@@ -14,13 +14,15 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
-LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client \
-		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
 MAN1=	rtgplot.1 rtgpoll.1
 
+USE_MYSQL=      yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/rtg
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
+			--with-mysql=${LOCALBASE} \
+			--with-snmp=${LOCALBASE}
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
