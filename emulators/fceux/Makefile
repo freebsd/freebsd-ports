@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}ltra/Source%20Code/${PORTVERSION}-pre
 DISTNAME=	${PORTNAME}-${PORTVERSION}-pre.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
 USE_BZIP2=	yes
