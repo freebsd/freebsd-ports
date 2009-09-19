@@ -13,7 +13,7 @@ MASTER_SITES=	CHEESESHOP \
 		ftp://ftp.pygresql.org/pub/distrib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python interface to PostgreSQL, both classic and DP-API 2.0
 
 USE_PGSQL=		yes
