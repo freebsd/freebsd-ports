@@ -1,6 +1,6 @@
---- configure.orig	2009-07-12 12:59:06.000000000 +0200
-+++ configure	2009-07-26 09:04:22.000000000 +0200
-@@ -2971,9 +2971,9 @@
+--- configure.orig	2009-07-31 17:17:53.000000000 +0200
++++ configure	2009-08-19 20:28:26.000000000 +0200
+@@ -2993,9 +2993,9 @@
  printf 'P1 3 3 0 0 0 0 0 0 0 0 0 0' > conftest.458086.pbm
  "$djvulibre_bin_path/cjb2" conftest.458086.pbm conftest.458086.p1.djvu
  "$djvulibre_bin_path/cjb2" conftest.458086.pbm conftest.458086.p2.djvu
@@ -13,7 +13,7 @@
  printf '(bookmarks ("" ""))' > conftest.458086.outline
  "$djvulibre_bin_path/djvused" -s -e 'set-outline conftest.458086.outline' conftest.458086.djvu
  if ! "$djvulibre_bin_path/djvused" -e print-outline conftest.458086.djvu | grep '(bookmarks' > /dev/null
-@@ -3173,7 +3173,7 @@
+@@ -3170,7 +3170,7 @@
  fi
  
  
