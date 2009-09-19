@@ -7,7 +7,7 @@
 
 PORTNAME=	portaltransforms
 PORTVERSION=	1.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www zope
 MASTER_SITES=	SF/archetypes/Archetypes/1.3.4
 PKGNAMEPREFIX=	zope-
