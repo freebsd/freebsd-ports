@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdecoder
-PORTVERSION=	9.0.1
+PORTVERSION=	9.0.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.qdecoder.org/pub/qDecoder/
 DISTNAME=	qDecoder-${PORTVERSION}
@@ -19,27 +19,23 @@ CONFLICTS=	qDecoder-[5-7]*
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	Q_DEBUG "Debug printout" off
-OPTIONS+=	Q_64BIT "64bit support" off
-OPTIONS+=	Q_SENDFILE "Use sendfile()" off
-OPTIONS+=	Q_MYSQL "Use MySQL" off
-OPTIONS+=	Q_CGISUPPORT "CGI API support" on
-OPTIONS+=	Q_SOCKET "Socket API support" on
-OPTIONS+=	Q_IPC "IPC API support" on
-OPTIONS+=	Q_DATASTRUCTURE "Datastructure API support" on
+OPTIONS=	Q_DEBUG "enable debuging output" off
+OPTIONS+=	Q_CGI "enable CGI APIs" on
+OPTIONS+=	Q_SOCKET "enable socket APIs" on
+OPTIONS+=	Q_IPC "enable IPC APIs" on
+OPTIONS+=	Q_DATASTRUCTURE "enable data-structure APIs" on
+OPTIONS+=	Q_MYSQL "enable MySQL database supports" off
+OPTIONS+=	Q_LFS "enable large-file supports" off
+OPTIONS+=	Q_SENDFILE "use sendfile() if possible" off
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		does not compile
-.endif
 
 .if defined(WITH_Q_DEBUG)
 CONFIGURE_ARGS+="--enable-debug"
 .endif
 
-.if defined(WITH_Q_64BIT)
-CONFIGURE_ARGS+="--enable-64bit"
+.if defined(WITH_Q_LFS)
+CONFIGURE_ARGS+="--enable-lfs"
 .endif
 
 .if defined(WITH_Q_SENDFILE)
@@ -51,8 +47,8 @@ CONFIGURE_ARGS+="--enable-mysql=${LOCALBASE}/include/mysql"
 USE_MYSQL=yes
 .endif
 
-.if defined(WITHOUT_Q_CGISUPPORT)
-CONFIGURE_ARGS+="--disable-cgisupport"
+.if defined(WITHOUT_Q_CGI)
+CONFIGURE_ARGS+="--disable-cgi"
 .endif
 
 .if defined(WITHOUT_Q_SOCKET)
