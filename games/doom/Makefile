@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	# none known, please fix
 DISTNAME=	doomsrc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	DOOM: the game and the sound server
 
 NO_CDROM=	requested by IDsoftware

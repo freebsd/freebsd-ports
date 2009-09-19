@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://mange.dynalias.org/linux/gproftpd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	Gtk2 Frontend for proftpd daemon
 
 RUN_DEPENDS=	proftpd:${PORTSDIR}/ftp/proftpd

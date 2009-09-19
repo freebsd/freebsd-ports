@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 DISTNAME=	${DIST_VER}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	A simple and easy to use wiki, no database required
 
 DIST_VER=	${PORTNAME}-2009-02-14
