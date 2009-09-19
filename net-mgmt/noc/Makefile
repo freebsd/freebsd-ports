@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noc
-PORTVERSION=	0.2.7
+PORTVERSION=	0.3
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	http://trac.nocproject.org/trac/downloads/
 DISTNAME=	noc-${PORTVERSION}
@@ -49,7 +49,8 @@ PLIST_SUB=	NOCDIR=${NOCDIR} \
 		NOCGROUP=${NOCGROUP} \
 		NOCUID=${NOCUID} \
 		NOCGID=${NOCGID} \
-		LOCALSTATE_DIR=${LOCALSTATE_DIR}
+		LOCALSTATE_DIR=${LOCALSTATE_DIR} \
+		PYTHONBASE=${PYTHONBASE}
 
 SUB_FILES=	pkg-install \
 		pkg-deinstall \
@@ -67,6 +68,7 @@ NOC_CONF_FILES=	etc/noc-activator.defaults \
 		etc/noc-launcher.defaults \
 		etc/noc-notifier.defaults \
 		etc/noc-sae.defaults \
+		etc/noc-probe.defaults \
 		etc/noc.defaults
 
 post-patch:
@@ -75,7 +77,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s@^\(repo *=\).*@\1 ${NOCDBDIR}/repo@" -e "s@^\(backup_dir *=\).*@\1 ${NOCDBDIR}/backup@" etc/noc.defaults; \
 	${REINPLACE_CMD} -e "s@^\(PREFIX=\"\).*@\1${NOCDIR}\"@" setup.py; \
 	_sed_script=`${MKTEMP} tmp.XXXXXX`; \
-	for cmd in telnet ssh rsync pg_dump tar gzip smidump smilint fping dig; do \
+	for cmd in telnet ssh rsync pg_dump tar gzip smidump smilint fping dig gpg; do \
 		${ECHO} "s@^\\($${cmd} *\\)=.*\$$@\\1 = "`${WHICH} $${cmd}`'@' >> $${_sed_script} ; \
 	done; \
 	${REINPLACE_CMD} -f $${_sed_script} ${NOC_CONF_FILES}; \
