@@ -44,7 +44,7 @@ MAN3=		libxml.3
 .endif
 
 .if defined(WITH_THREADS_BREAK)
-CONFIGURE_ARGS+=	--with-threads
+CONFIGURE_ARGS+=	--with-threads=pthread
 .else
 CONFIGURE_ARGS+=	--without-threads
 .endif
