@@ -1,0 +1,10 @@
+
+
+	*********************************************************
+	*        		USAGE				*
+	*********************************************************
+
+For using servingxml, you need to specify environnemnt variables :
+SERVINGXML_HOME={PREFIX}/share/java/servingxml
+PATH=$PATH:$SERVINGXML_HOME
+Any third party JAR must be added to CLASSPATH
