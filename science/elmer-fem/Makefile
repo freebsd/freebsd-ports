@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
 RUN_DEPENDS=	ElmerGrid:${PORTSDIR}/science/elmergrid		\
 		Mesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
+BROKEN=		fails to compile with gcc4.4
+
 USE_FORTRAN=	yes
 
 .ifdef WITH_OPTIMIZED_FLAGS
