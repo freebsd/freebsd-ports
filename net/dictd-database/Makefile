@@ -10,7 +10,7 @@ PORTNAME=	dictd-database
 PORTVERSION=	20031009
 # clive: Ok, I have no idea how to name this somewhat-meta-port
 CATEGORIES=	net textproc
-MASTER_SITES=	ftp://ftp.dict.org/pub/dict/pre/
+MASTER_SITES=	ftp://ftp.dict.org/dict/pre/
 DISTFILES=	devils-dict-pre.tar.gz \
 		dict-foldoc-20030927-pre.tar.gz \
 		dict-gazetteer-1.2-pre.tar.gz \
@@ -30,8 +30,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-BROKEN=		checksum mismatch
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/dict
