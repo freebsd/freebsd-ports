@@ -15,7 +15,7 @@ DISTNAME=	pysnmp-mibs-${PORTVERSION}
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	Additional python MIB files for pysnmp4 and friends
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyasn1/__init__.py:${PORTSDIR}/devel/py-asn1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
