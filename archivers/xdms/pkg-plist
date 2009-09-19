@@ -1,3 +1,0 @@
-bin/xdms
-%%PORTDOCS%%%%DOCSDIR%%/xdms.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
