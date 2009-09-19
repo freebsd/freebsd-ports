@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxemul
-PORTVERSION=	0.4.6.5
-PORTREVISION=	1
+PORTVERSION=	0.4.7.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 		http://gavare.se/gxemul/src/
