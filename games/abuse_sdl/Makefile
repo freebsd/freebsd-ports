@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://abuse.zoy.org/raw-attachment/wiki/Downloads/
 DISTNAME=	abuse-sdl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	An SDL port of the Abuse game engine
 
 USE_GL=		gl

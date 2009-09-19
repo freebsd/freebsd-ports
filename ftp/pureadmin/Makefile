@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	SF/purify/Default/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	Management utility for the PureFTPd
 
 USE_GNOME=	pkgconfig gnomehack gnometarget libglade2

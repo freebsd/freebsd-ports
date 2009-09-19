@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
 DISTFILES=	abuse_datafiles.tar.gz
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	The classic 2D action game Abuse
 
 RUN_DEPENDS=	abuse.sdl:${PORTSDIR}/games/abuse_sdl
