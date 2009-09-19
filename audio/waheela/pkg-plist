@@ -18,9 +18,15 @@ share/apps/waheela/themes/HoneyComb/background-wide.jpg
 share/apps/waheela/themes/HoneyComb/background.jpg
 share/apps/waheela/themes/HoneyComb/preview.jpg
 share/apps/waheela/themes/HoneyComb/theme.config
+share/apps/waheela/themes/Kore/background.jpg
+share/apps/waheela/themes/Kore/preview.jpg
+share/apps/waheela/themes/Kore/theme.config
 share/apps/waheela/themes/LakePowell/background.jpg
 share/apps/waheela/themes/LakePowell/preview.jpg
 share/apps/waheela/themes/LakePowell/theme.config
+share/apps/waheela/themes/LandOfFreedom/background.jpg
+share/apps/waheela/themes/LandOfFreedom/preview.jpg
+share/apps/waheela/themes/LandOfFreedom/theme.config
 share/apps/waheela/themes/SunsetBliss/background.jpg
 share/apps/waheela/themes/SunsetBliss/preview.jpg
 share/apps/waheela/themes/SunsetBliss/theme.config
@@ -43,7 +49,9 @@ share/icons/hicolor/64x64/apps/waheela.png
 @dirrm share/apps/waheela/themes/Tiles
 @dirrm share/apps/waheela/themes/TheSoundOfNature
 @dirrm share/apps/waheela/themes/SunsetBliss
+@dirrm share/apps/waheela/themes/LandOfFreedom
 @dirrm share/apps/waheela/themes/LakePowell
+@dirrm share/apps/waheela/themes/Kore
 @dirrm share/apps/waheela/themes/HoneyComb
 @dirrm share/apps/waheela/themes/FloralGlow
 @dirrm share/apps/waheela/themes/DreamingGirl
