@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
@@ -27,7 +28,7 @@ COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.gcc/-${OPERA_BUILD}.gcc/}
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	aspell naslibs xorglibs
+USE_LINUX_APPS=	aspell naslibs png xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes
