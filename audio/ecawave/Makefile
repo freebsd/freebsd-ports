@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Simple graphical audio file editor
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
@@ -24,10 +24,10 @@ CFLAGS+=	${PTHREAD_CFLAGS:S/"//g}
 LDFLAGS+=	${PTHREAD_LIBS:S/"//g}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
-		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 
 MAN1=		ecawave.1
+PLIST_FILES=	bin/ecawave
+PORTDOCS=	*.html
 
 .include <bsd.port.pre.mk>
 
@@ -41,7 +41,9 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/Documentation/*.html ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/${docs} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
