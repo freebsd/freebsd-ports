@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.tnt.uni-hannover.de/pub/MPEG/audio/other-servers/Maplay-
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
 
 NO_WRKSUBDIR=	yes
