@@ -6,12 +6,12 @@ bin/rhythmbox-client
 lib/librhythmbox-core.la
 lib/librhythmbox-core.so
 lib/librhythmbox-core.so.0
-%%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.py
-%%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyc
-%%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyo
@@ -21,6 +21,9 @@ lib/librhythmbox-core.so.0
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.pyo
@@ -447,6 +450,7 @@ share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
+share/locale/br/LC_MESSAGES/rhythmbox.mo
 share/locale/ca/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
 share/locale/cy/LC_MESSAGES/rhythmbox.mo
