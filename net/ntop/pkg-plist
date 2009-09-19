@@ -1,5 +1,4 @@
 bin/ntop
-etc/ntop/etter.finger.os.gz
 etc/ntop/ntop-cert.pem
 etc/ntop/oui.txt.gz
 etc/ntop/specialMAC.txt.gz
@@ -19,10 +18,6 @@ lib/libntopreport-%%PORTVERSION%%.so
 lib/libntopreport.so
 lib/libntopreport.a
 lib/libntopreport.la
-lib/libpdaPlugin-%%PORTVERSION%%.so
-lib/libpdaPlugin.so
-lib/libremotePlugin-%%PORTVERSION%%.so
-lib/libremotePlugin.so
 lib/librrdPlugin-%%PORTVERSION%%.so
 lib/librrdPlugin.so
 lib/libsflowPlugin-%%PORTVERSION%%.so
@@ -31,8 +26,6 @@ lib/ntop/plugins/cpacketPlugin.so
 lib/ntop/plugins/icmpPlugin.so
 lib/ntop/plugins/lastSeenPlugin.so
 lib/ntop/plugins/netflowPlugin.so
-lib/ntop/plugins/pdaPlugin.so
-lib/ntop/plugins/remotePlugin.so
 lib/ntop/plugins/rrdPlugin.so
 lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/perl/report/basic.xml
@@ -67,9 +60,6 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/Risk_medium.gif
 %%DATADIR%%/html/Risk_unknown.gif
 %%DATADIR%%/html/antenna.gif
-%%DATADIR%%/html/arrow_down.gif
-%%DATADIR%%/html/arrow_up.gif
-%%DATADIR%%/html/back.gif
 %%DATADIR%%/html/bg_line.gif
 %%DATADIR%%/html/black.gif
 %%DATADIR%%/html/bottom_corner.gif
@@ -94,9 +84,6 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/expanded.gif
 %%DATADIR%%/html/faq.html
 %%DATADIR%%/html/favicon.ico
-%%DATADIR%%/html/fback.gif
-%%DATADIR%%/html/fforward.gif
-%%DATADIR%%/html/forward.gif
 %%DATADIR%%/html/functions.js
 %%DATADIR%%/html/gauge.jpg
 %%DATADIR%%/html/gaugeR.jpg
@@ -362,6 +349,14 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/statsicons/os/os2.gif
 %%DATADIR%%/html/statsicons/os/sun.gif
 %%DATADIR%%/html/statsicons/os/windows.gif
+%%DATADIR%%/html/arrow_down.png
+%%DATADIR%%/html/arrow_up.png
+%%DATADIR%%/html/back.png
+%%DATADIR%%/html/bit_off.png
+%%DATADIR%%/html/bit_on.png
+%%DATADIR%%/html/fback.png
+%%DATADIR%%/html/fforward.png
+%%DATADIR%%/html/forward.png
 %%DATADIR%%/html/style.css
 %%DATADIR%%/html/switch.gif
 %%DATADIR%%/html/upload.gif
