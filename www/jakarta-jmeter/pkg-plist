@@ -10,6 +10,8 @@
 %%DATADIR%%/bin/jmeter-n.cmd
 %%DATADIR%%/bin/jmeter-report
 %%DATADIR%%/bin/jmeter-server
+%%DATADIR%%/bin/mirror-server.cmd
+%%DATADIR%%/bin/mirror-server.sh
 %%DATADIR%%/bin/jmeter-t.cmd
 %%DATADIR%%/bin/jmeter.properties
 %%DATADIR%%/bin/jmeter.sh
@@ -23,14 +25,10 @@
 %%DATADIR%%/bin/users.dtd
 %%DATADIR%%/bin/users.xml
 %%DATADIR%%/extras/ConvertHTTPSampler.txt
-%%DATADIR%%/extras/JMeter Ant Task.html
-%%DATADIR%%/extras/JMeter Ant Task_files/JMeterResults.jpg
-%%DATADIR%%/extras/JMeterResults.jpg
-%%DATADIR%%/extras/JMeterResultsDetail.jpg
 %%DATADIR%%/extras/Test.jmx
 %%DATADIR%%/extras/addons.txt
 %%DATADIR%%/extras/addons.xml
-%%DATADIR%%/extras/ant-jmeter.jar
+%%DATADIR%%/extras/ant-jmeter-1.0.9.jar
 %%DATADIR%%/extras/build.xml
 %%DATADIR%%/extras/collapse.jpg
 %%DATADIR%%/extras/convertjmx.fdl
@@ -43,6 +41,7 @@
 %%DATADIR%%/extras/jmeter.fb
 %%DATADIR%%/extras/printvars.bsh
 %%DATADIR%%/extras/remote.bsh
+%%DATADIR%%/extras/schematic.xsl
 %%DATADIR%%/extras/startup.bsh
 %%DATADIR%%/lib/Tidy.jar
 %%DATADIR%%/lib/avalon-framework-4.1.4.jar
@@ -52,10 +51,10 @@
 %%DATADIR%%/lib/commons-codec-1.3.jar
 %%DATADIR%%/lib/commons-collections-3.2.jar
 %%DATADIR%%/lib/commons-httpclient-3.1.jar
-%%DATADIR%%/lib/commons-io-1.3.1.jar
+%%DATADIR%%/lib/commons-io-1.4.jar
 %%DATADIR%%/lib/commons-jexl-1.1.jar
-%%DATADIR%%/lib/commons-lang-2.3.jar
-%%DATADIR%%/lib/commons-logging-1.1.jar
+%%DATADIR%%/lib/commons-lang-2.4.jar
+%%DATADIR%%/lib/commons-logging-1.1.1.jar
 %%DATADIR%%/lib/commons-net-1.4.1.jar
 %%DATADIR%%/lib/excalibur-datasource-1.1.1.jar
 %%DATADIR%%/lib/excalibur-instrument-1.0.jar
@@ -85,16 +84,15 @@
 %%DATADIR%%/lib/junit/test.jar
 %%DATADIR%%/lib/junit3.8.2.jar
 %%DATADIR%%/lib/logkit-1.2.jar
-%%DATADIR%%/lib/serializer.jar
+%%DATADIR%%/lib/serializer-2_9_1.jar
 %%DATADIR%%/lib/soap.jar
-%%DATADIR%%/lib/xalan.jar
-%%DATADIR%%/lib/xercesImpl.jar
-%%DATADIR%%/lib/xml-apis.jar
-%%DATADIR%%/lib/xpp3_min-1.1.3.4.O.jar
-%%DATADIR%%/lib/xstream-1.2.1.jar
+%%DATADIR%%/lib/xalan_2_7_1.jar
+%%DATADIR%%/lib/xercesImpl-2_9_1.jar
+%%DATADIR%%/lib/xml-apis-2_9_1.jar
+%%DATADIR%%/lib/xpp3_min-1.1.4c.jar
+%%DATADIR%%/lib/xstream-1.3.jar
 bin/jmeter
 @dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/extras/JMeter Ant Task_files
 @dirrm %%DATADIR%%/extras
 @dirrm %%DATADIR%%/lib/ext
 @dirrm %%DATADIR%%/lib/junit
