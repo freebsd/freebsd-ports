@@ -5,7 +5,7 @@ definition files.
 
 A default configuration is installed in
 
-  ${PREFIX}/etc/asdf-init.lisp
+  %%PREFIX%%/etc/asdf-init.lisp
 
 Review this file for further information, or simply load it from your
 Lisp initialization file.

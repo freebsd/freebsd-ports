@@ -9,24 +9,24 @@ etc/asdf-init.lisp.default
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%EXAMPLESDIR%%/file1.lisp
-%%PORTDOCS%%%%EXAMPLESDIR%%/file2.lisp
-%%PORTDOCS%%%%EXAMPLESDIR%%/file3.lisp
-%%PORTDOCS%%%%EXAMPLESDIR%%/file4.lisp
-%%PORTDOCS%%%%EXAMPLESDIR%%/run-tests.sh
-%%PORTDOCS%%%%EXAMPLESDIR%%/test1.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/test1.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/test2.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/test2.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/test2a.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/test2b1.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/test2b2.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/test2b3.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/test3.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/test3.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/test4.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/wild-module.asd
-%%PORTDOCS%%%%EXAMPLESDIR%%/wild-module.script
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file1.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file2.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file3.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file4.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run-tests.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test1.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test1.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2a.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2b1.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2b2.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2b3.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test3.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test3.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test4.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wild-module.asd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wild-module.script
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/lib/common-lisp/system-registry
