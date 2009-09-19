@@ -9,7 +9,10 @@ PORTNAME=	abuse_sdl
 PORTVERSION=	0.7.0
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://abuse.zoy.org/raw-attachment/wiki/Downloads/
+MASTER_SITES=	http://abuse.zoy.org/raw-attachment/wiki/Downloads/ \
+		http://epix.linux.tucows.com/files/ \
+		http://blueyonder.linux.tucows.com/files/ \
+		http://casemanl.linux.tucows.com/files/
 DISTNAME=	abuse-sdl-${PORTVERSION}
 
 MAINTAINER=	chris@officialunix.com
