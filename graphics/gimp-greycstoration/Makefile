@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.haypocalc.com/perso/prog/greycstoration/ \
 				http://bio3k.softboard.ru/uploads/arch/
 PKGNAMEPREFIX=	gimp-
 
-MAINTAINER=	b3k@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp plugin used for noise reduction
 
 BUILD_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp \
