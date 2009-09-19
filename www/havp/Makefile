@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 		http://bio3k.softboard.ru/uploads/arch/ \
 		http://havp.hege.li/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ayu@commun.jp
 COMMENT=	HTTP Antivirus Proxy
 
 LIB_DEPENDS=	clamav.6:${PORTSDIR}/security/clamav
