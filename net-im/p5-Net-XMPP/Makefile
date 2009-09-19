@@ -14,9 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Net::XMPP provides Perl Developer access to the XMPP protocol
 
-BUILD_DEPENDS=	p5-XML-Stream>=1.22:${PORTSDIR}/textproc/p5-XML-Stream \
+BUILD_DEPENDS+=	p5-XML-Stream>=1.22:${PORTSDIR}/textproc/p5-XML-Stream \
 		p5-Digest-SHA1>=1.02:${PORTSDIR}/security/p5-Digest-SHA1
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	p5-XML-Stream>=1.22:${PORTSDIR}/textproc/p5-XML-Stream \
+		p5-Digest-SHA1>=1.02:${PORTSDIR}/security/p5-Digest-SHA1
 
 USE_PERL5=	5.8.0+	# Require perl 5.8.x due to XML::Stream
 PERL_MODBUILD=	yes
