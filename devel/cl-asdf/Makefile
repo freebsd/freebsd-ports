@@ -15,6 +15,7 @@ PKGNAMEPREFIX=		cl-
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A system definition facility for Common Lisp
 
+SUB_FILES+=		pkg-message
 WRKSRC=			${WRKDIR}/${PORTNAME}
 NO_BUILD=		yes # Sources only, see cl-asdf-[cmucl|sbcl|clisp]
 CL_LIBDIR=		${PREFIX}/lib/common-lisp
@@ -37,15 +38,17 @@ do-install:
 		${CP} ${PREFIX}/etc/asdf-init.lisp.default \
 		${PREFIX}/etc/asdf-init.lisp
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cl-asdf/
-	${MKDIR} ${PREFIX}/share/examples/cl-asdf/
+	${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 -d ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}/
 .endif
 
 post-install:
-	@${CAT} ${MASTERDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
