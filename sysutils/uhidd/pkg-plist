@@ -1,0 +1,9 @@
+%%PL_DEVD%%@unexec if cmp -s %D/etc/devd/uhidd-devd.conf.sample %D/etc/devd/uhidd-devd.conf; then rm -f %D/etc/devd/uhidd-devd.conf; fi
+%%PL_DEVD%%etc/devd/uhidd-devd.conf.sample
+%%PL_DEVD%%@exec if [ ! -f %D/etc/devd/uhidd-devd.conf ]; then mkdir -p %B; cp -p %D/%F %B/uhidd-devd.conf; fi
+%%PL_DEVD%%@dirrmtry etc/devd
+sbin/uhidd
+@cwd /boot/modules
+uvhid.ko
+@exec kldxref %D
+@unexec kldxref %D
