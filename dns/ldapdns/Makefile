@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nimh.org/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	LDAP-backed DNS server
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
