@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	thrulay
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	benchmarks net ipv6
-MASTER_SITES=	http://unc.dl.sourceforge.net/sourceforge/thrulay/ \
-		http://internap.dl.sourceforge.net/sourceforge/thrulay/ \
+MASTER_SITES=	SF \
 		http://www.internet2.edu/~shalunov/thrulay/
 
 MAINTAINER=	shalunov@shlang.com
@@ -19,12 +18,25 @@ MAN8=		thrulayd.8
 MANCOMPRESSED=	no
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	thrulayd
+SUB_FILES=	thrulayd
+
+PORTDOCS=	ChangeLog README thrulay-protocol.txt thrulay-index.html
+
+post-patch:
+	${REINPLACE_CMD} -e '922s,datarootdir,prefix,g' ${WRKSRC}/configure
+
+post-extract:
+	@${CP} ${WRKSRC}/doc/*.[ht]* ${WRKSRC}/
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/thrulayd.sh.sample ${PREFIX}/etc/rc.d/
-	@if [ ! -f ${PREFIX}/etc/rc.d/thrulayd.sh ]; then \
-		${CP} -p ${PREFIX}/etc/rc.d/thrulayd.sh.sample \
-			${PREFIX}/etc/rc.d/thrulayd.sh ; \
-	fi
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
