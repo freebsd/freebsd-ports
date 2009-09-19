@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 PORTDOCS=	README.html
 
 post-patch: .SILENT
-# Adjust some paths for FreBSD, respect CFLAGS, and get rid of GPL
+# Adjust some paths for FreeBSD, respect CFLAGS, and get rid of GPL
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E \
 		's|\(libdir\)/pkgconfig|(prefix)/libdata/pkgconfig|g; \
 		s| -O3( -[mf][[:graph:]]*)*||; \
