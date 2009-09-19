@@ -50,4 +50,8 @@ CONFIGURE_ARGS+=	--enable-localspeex=yes
 CFLAGS+=	-fPIC
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/configure.ac
+
 .include <bsd.port.post.mk>
