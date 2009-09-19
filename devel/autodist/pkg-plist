@@ -1,6 +1,6 @@
 bin/autodist
 bin/makedist
-share/autodist/autodist.conf
-share/autodist/default
-share/autodist/COPYING
-@dirrm share/autodist
+%%DATADIR%%/autodist.conf
+%%DATADIR%%/default
+%%DATADIR%%/COPYING
+@dirrm %%DATADIR%%
