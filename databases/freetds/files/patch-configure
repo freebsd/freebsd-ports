@@ -1,0 +1,13 @@
+--- configure.orig	2009-09-19 14:23:09.000000000 +0200
++++ configure	2009-09-19 14:23:43.000000000 +0200
+@@ -20088,8 +20088,8 @@
+ #define HAVE_GNUTLS 1
+ _ACEOF
+ 
+-	CPPFLAGS="$CPPFLAGS `libgnutls-config --cflags`"
+-	NETWORK_LIBS="$NETWORK_LIBS `libgnutls-config --libs`"
++CPPFLAGS="$CPPFLAGS `pkg-config --cflags gnutls`"
++NETWORK_LIBS="$NETWORK_LIBS `pkg-config --libs gnutls`"
+ else
+ 	echo "$as_me:$LINENO: checking if openssl is wanted" >&5
+ echo $ECHO_N "checking if openssl is wanted... $ECHO_C" >&6
