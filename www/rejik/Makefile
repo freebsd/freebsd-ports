@@ -14,7 +14,7 @@ DISTNAME=	redirector-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	b3k@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A squid redirector used for blocking unwanted content
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre

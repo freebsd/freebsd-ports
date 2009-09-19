@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-RC2 \
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	b3k@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UMIT is the nmap frontend developed with Python and PyGTK
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
