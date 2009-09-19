@@ -1,0 +1,11 @@
+--- servingxml	2009-09-09 21:24:47.000000000 +0200
++++ servingxml.new	2009-09-09 21:09:44.000000000 +0200
+@@ -86,7 +86,7 @@
+ fi
+ 
+ # add fop.jar, fop-sandbox and fop-hyph.jar, which reside in $SERVINGXML_HOME/build
+-LOCALCLASSPATH=${SERVINGXML_HOME}/servingxml.jar${pathSepChar}${SERVINGXML_HOME}/config${pathSepChar}${SERVINGXML_HOME}/classes
++LOCALCLASSPATH=${SERVINGXML_HOME}/servingxml.jar${pathSepChar}${SERVINGXML_HOME}/config${pathSepChar}${SERVINGXML_HOME}/classes${pathSepChar}${LOCALCLASSPATH}
+ 
+ # add in the dependency .jar files, which reside in $SERVINGXML_HOME/lib
+ DIRLIBS=${SERVINGXML_HOME}/lib/*.jar

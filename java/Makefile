@@ -153,6 +153,7 @@
     SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += sablevm-classpath
+    SUBDIR += servingxml
     SUBDIR += shujit
     SUBDIR += simplicity
     SUBDIR += springframework
