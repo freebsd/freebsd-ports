@@ -7,9 +7,9 @@
 
 PORTNAME=	bitlbee-otr
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
-MASTER_SITES=	http://wahjava.googlepages.com/
+MASTER_SITES=	${MASTER_SITE_FREEBSD}
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	An IRC to other chat networks gateway with support for OTR
