@@ -41,6 +41,8 @@ BUILDDIR=	${WRKSRC}/build/release-${OPSYS:L}-${LINUX_ARCH}
 LINUX_ARCH=	${ARCH:C/amd64/x86_64/:C/i386/x86/}
 BINSUFFIX?=
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 # Make sure TARGET and CFLAGS fit together.
 MACHINE_ARCH=	${ARCH}
 .include <bsd.cpu.mk>
