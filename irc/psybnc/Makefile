@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	psybnc
-DISTVERSION=	2.3.2-7
-PORTREVISION=	1
+DISTVERSION=	2.3.2-9
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.psybnc.at/download/beta/ CENKES
 DISTNAME=	psyBNC-${DISTVERSION}
