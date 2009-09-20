@@ -48,9 +48,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Firewall Builder release notes reports:</p>
 	<blockquote cite="http://www.fwbuilder.org/docs/firewall_builder_release_notes.html#3.0.7">
 	<p>Vadim Kurland (vadim.kurland@fwbuilder.org) reports:</p>
-	   <p>Fwbuilder and libfwbuilder 3.0.4 through to 3.0.6 generate
-	   iptables scripts with a security issue when also used to
-	   generate static routing configurations.</p>
+	    <p>Fwbuilder and libfwbuilder 3.0.4 through to 3.0.6 generate
+	    iptables scripts with a security issue when also used to
+	    generate static routing configurations.</p>
 	</blockquote>
       </body>
     </description>
