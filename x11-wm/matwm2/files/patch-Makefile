@@ -1,20 +1,24 @@
---- Makefile.orig	2009-09-09 16:21:44.000000000 +0400
-+++ Makefile	2009-09-09 18:28:24.000000000 +0400
-@@ -1,6 +1,5 @@
--prefix  = /usr/local
--XROOT   = /usr/X11R6
--CC      = cc
-+prefix  = ${PREFIX}
-+XROOT   = ${LOCALBASE}
+--- Makefile.orig	2009-09-20 03:40:09.000000000 +0200
++++ Makefile	2009-09-20 03:38:57.000000000 +0200
+@@ -1,7 +1,6 @@
+-prefix		= /usr/local
+-manprefix	= /usr/local
+-XROOT			= /usr/X11R6
+-CC				= cc
++prefix		= ${PREFIX}
++manprefix	= ${MANPREFIX}
++XROOT			= ${LOCALBASE}
  
- CFLAGS  += -lXext -lX11 -I$(XROOT)/include -L$(XROOT)/lib
- #CFLAGS  += -DDEBUG -ggdb3 # -DDEBUG_EVENTS -DSYNC
-@@ -17,7 +16,7 @@
- 		./makeheader *.c > all.h
+ CFLAGS		+= -lXext -lX11 -I$(XROOT)/include -L$(XROOT)/lib
+ #CFLAGS		+= -DDEBUG -ggdb3 # -DDEBUG_EVENTS -DSYNC
+@@ -19,8 +18,8 @@
  
  install:	matwm2
+ 		mkdir -p $(prefix)/bin $(manprefix)/man/man1
 -		install -s matwm2 $(prefix)/bin
-+		${BSD_INSTALL_PROGRAM} matwm2 $(prefix)/bin
+-		install matwm2.1 $(manprefix)/man/man1
++		${BSD_INSTALL_PROGRAM} -s matwm2 $(prefix)/bin
++		${BSD_INSTALL_MAN} matwm2.1 $(manprefix)/man/man1
  
  deinstall:
- 		rm -f $(prefix)/bin/matwm2
+ 		rm -f $(prefix)/bin/matwm2 $(manprefix)/man/man1/matwm2.1
