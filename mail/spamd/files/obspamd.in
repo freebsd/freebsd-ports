@@ -56,7 +56,7 @@ obspamd_postcmd()
 	if [ -x %%PREFIX%%/sbin/spamd-setup ]; then
 		if [ -r %%PREFIX%%/etc/spamd/spamd.conf ]; then
 			echo "${obspamd_flags}" | egrep "(^\-b| \-b)" 2>&1 > /dev/null
-			if [ $? ]; then
+			if [ $? -eq 0 ]; then
 				%%PREFIX%%/sbin/spamd-setup -bD
 			else
 				%%PREFIX%%/sbin/spamd-setup -D

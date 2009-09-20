@@ -17,5 +17,3 @@ spamd considers sending hosts to be of three types:
  when they try to deliver mail.
 
 WWW: http://freebsdspamd.berlios.de/
-
--Alex <samm@os2.kiev.ua>
