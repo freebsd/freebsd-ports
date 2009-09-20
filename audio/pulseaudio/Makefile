@@ -37,6 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-lm -lintl"
 
 CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-database=gdbm \
 		--disable-lirc # untested
 
 USERS=		pulse
