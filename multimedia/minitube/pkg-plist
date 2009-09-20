@@ -2,12 +2,17 @@ bin/minitube
 share/applications/minitube.desktop
 share/icons/hicolor/128x128/apps/minitube.png
 share/icons/hicolor/scalable/apps/minitube.svg
+%%NLS%%%%DATADIR%%/locale/cs_CZ.qm
 %%NLS%%%%DATADIR%%/locale/de_DE.qm
 %%NLS%%%%DATADIR%%/locale/es_AR.qm
+%%NLS%%%%DATADIR%%/locale/es_ES.qm
+%%NLS%%%%DATADIR%%/locale/he_IL.qm
 %%NLS%%%%DATADIR%%/locale/it_IT.qm
+%%NLS%%%%DATADIR%%/locale/ja_JP.qm
 %%NLS%%%%DATADIR%%/locale/pl_PL.qm
 %%NLS%%%%DATADIR%%/locale/pt_BR.qm
 %%NLS%%%%DATADIR%%/locale/ru_RU.qm
+%%NLS%%%%DATADIR%%/locale/uk.qm
 %%NLS%%@dirrm %%DATADIR%%/locale
 %%NLS%%@dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/scalable/apps
