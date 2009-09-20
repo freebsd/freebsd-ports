@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -19,6 +19,9 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=	free-sa.1
 MAN5=	free-sa.conf.5
+
+CONFLICTS=	free-sa-devel[0-9]*
+LATEST_LINK=	free-sa-devel
 
 .include <bsd.port.pre.mk>
 
