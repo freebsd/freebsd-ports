@@ -1,0 +1,6 @@
+Free-SA is a statistic analyzer for daemons log files similar to SARG.
+Its main advantages over SARG are much better speed (7x-20x times),
+more reports support, crossplatform work and W3C compliance of
+generated HTML/CSS reports code.
+
+WWW: http://free-sa.sourceforge.net

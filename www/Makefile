@@ -231,6 +231,7 @@
     SUBDIR += fpc-httpd20
     SUBDIR += fpc-httpd22
     SUBDIR += free-sa
+    SUBDIR += free-sa-devel
     SUBDIR += freeway
     SUBDIR += fswiki
     SUBDIR += g-cows
