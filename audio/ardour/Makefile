@@ -1,6 +1,6 @@
-# New ports collection makefile for:	ardour
-# Date created:		2006-12-04
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
+# New ports collection makefile for:	Ardour
+# Date created:				2006-12-04
+# Whom:			Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
 #
 # $FreeBSD$
 #
@@ -8,12 +8,13 @@
 PORTNAME=	ardour
 PORTVERSION=	2.8.2
 CATEGORIES=	audio
-MASTER_SITES=	http://releases.ardour.org/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://freebsd.nsu.ru/distfiles/ \
+		#http://releases.ardour.org/
 MASTER_SITE_SUBDIR=	trasz
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Ardour - a digital audio workstation
+COMMENT=	A multichannel digital audio workstation
 
 LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		raptor.2:${PORTSDIR}/textproc/raptor \
@@ -54,10 +55,6 @@ BROKEN=		needs posix_memalign()
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
-
-.if ${ARCH} == "amd64"
-BROKEN=		does not compile
 .endif
 
 .if defined(WITH_VST)
