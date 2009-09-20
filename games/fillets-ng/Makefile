@@ -9,9 +9,10 @@ PORTNAME=	fillets-ng
 PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION}:source \
+		SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${DATAVERSION}:data
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source \
+		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}:data
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A wonderful puzzle game
