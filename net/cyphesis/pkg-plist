@@ -59,6 +59,7 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/mason/benchmarks.py
 %%DATADIR%%/rulesets/mason/define_world.py
 %%DATADIR%%/rulesets/mason/define_world_aglanor.py
+%%DATADIR%%/rulesets/mason/regression.py
 %%DATADIR%%/rulesets/mason/tests.py
 %%DATADIR%%/rulesets/mason/world/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/Pile.py
@@ -107,11 +108,13 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/mason/world/tasks/Cultivate.py
 %%DATADIR%%/rulesets/mason/world/tasks/Delve.py
 %%DATADIR%%/rulesets/mason/world/tasks/Dig.py
+%%DATADIR%%/rulesets/mason/world/tasks/Fishing.py
 %%DATADIR%%/rulesets/mason/world/tasks/Logging.py
 %%DATADIR%%/rulesets/mason/world/tasks/Raise.py
 %%DATADIR%%/rulesets/mason/world/tasks/Ram.py
 %%DATADIR%%/rulesets/mason/world/tasks/Reap.py
 %%DATADIR%%/rulesets/mason/world/tasks/Sharpen.py
+%%DATADIR%%/rulesets/mason/world/tasks/Sift.py
 %%DATADIR%%/rulesets/mason/world/tasks/Slaughter.py
 %%DATADIR%%/rulesets/mason/world/tasks/Slice.py
 %%DATADIR%%/rulesets/mason/world/tasks/Trailblaze.py
