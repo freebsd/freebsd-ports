@@ -1,6 +1,7 @@
 bin/linphone
 bin/linphone-3
 share/applications/linphone.desktop
+%%DATADIR%%/COPYING
 %%DATADIR%%/about.glade
 %%DATADIR%%/buddylookup.glade
 %%DATADIR%%/call_logs.glade
@@ -16,9 +17,11 @@ share/applications/linphone.desktop
 %%DATADIR%%/sip_account.glade
 %%DATADIR%%/stock_people.png
 %%DATADIR%%/waiting.glade
+share/pixmaps/linphone/green.png
 share/pixmaps/linphone/linphone.png
 share/pixmaps/linphone/linphone2.png
 share/pixmaps/linphone/linphone2.xpm
+share/pixmaps/linphone/red.png
 share/pixmaps/linphone/sip-away.png
 share/pixmaps/linphone/sip-bifm.png
 share/pixmaps/linphone/sip-busy.png
