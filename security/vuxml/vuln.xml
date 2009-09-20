@@ -36,7 +36,7 @@ Note:  Please add new entries to the beginning of this file.
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="113cd7e9-a4e2-11de-84af-001195e39404">
-    <topic> -- </topic>
+    <topic>fwbuilder -- security issue in temporary file handling</topic>
     <affects>
       <package>
 	<name>fwbuilder</name>
@@ -45,6 +45,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Firewall Builder release notes reports:</p>
+	<blockquote cite="http://www.fwbuilder.org/docs/firewall_builder_release_notes.html#3.0.7">
 	<p>Vadim Kurland (vadim.kurland@fwbuilder.org) reports:</p>
 	   <p>Fwbuilder and libfwbuilder 3.0.4 through to 3.0.6 generate
 	   iptables scripts with a security issue when also used to
@@ -53,6 +55,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <url>http://www.fwbuilder.org/docs/firewall_builder_release_notes.html#3.0.7</url>
     </references>
     <dates>
       <discovery>2009-09-18</discovery>
