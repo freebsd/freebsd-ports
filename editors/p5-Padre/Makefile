@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.40
+PORTVERSION=	0.45
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -59,7 +59,8 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
-		p5-PPIx-EditorTools>=0.04:${PORTSDIR}/textproc/p5-PPIx-EditorTools \
+		p5-PPIx-EditorTools>=0.08:${PORTSDIR}/textproc/p5-PPIx-EditorTools \
+		p5-ExtUtils-Manifest>=1.56:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
 		p5-Wx>=0.91:${PORTSDIR}/x11-toolkits/p5-Wx
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -91,6 +92,7 @@ BUILD_DEPENDS+=	p5-Encode>=2.26:${PORTSDIR}/converters/p5-Encode \
 .endif
 
 MAN3=		Padre.3 \
+		Padre::Action.3 \
 		Padre::Autosave.3 \
 		Padre::Config.3 \
 		Padre::Config::Host.3 \
@@ -103,30 +105,40 @@ MAN3=		Padre.3 \
 		Padre::DB::HostConfig.3 \
 		Padre::DB::LastPositionInFile.3 \
 		Padre::DB::Plugin.3 \
+		Padre::DB::RecentlyUsed.3 \
 		Padre::DB::Session.3 \
 		Padre::DB::SessionFile.3 \
 		Padre::DB::Snippets.3 \
+		Padre::DB::SyntaxHighlight.3 \
 		Padre::DocBrowser.3 \
 		Padre::DocBrowser::document.3 \
 		Padre::Document.3 \
 		Padre::Document::Perl::Beginner.3 \
+		Padre::HelpProvider.3 \
+		Padre::HelpProvider::Perl.3 \
 		Padre::Locale.3 \
 		Padre::Log.3 \
 		Padre::Manual.3 \
 		Padre::Manual::Hacking.3 \
+		Padre::MimeTypes.3 \
+		Padre::Perl.3 \
 		Padre::Plugin.3 \
 		Padre::Plugin::Devel.3 \
 		Padre::Plugin::My.3 \
-		Padre::Plugin::Perl5.3 \
 		Padre::Plugin::PopularityContest.3 \
 		Padre::PluginBuilder.3 \
 		Padre::PluginManager.3 \
 		Padre::Pod2HTML.3 \
+		Padre::QuickFixProvider.3 \
+		Padre::QuickFixProvider::Perl.3 \
+		Padre::QuickFixProvider::Perl::StrictWarnings.3 \
+		Padre::QuickFixProvider::Perl::IncludeModule.3 \
 		Padre::Search.3 \
 		Padre::Service.3 \
 		Padre::Task.3 \
 		Padre::Task::HTTPClient.3 \
 		Padre::Task::LWP.3 \
+		Padre::Task::OpenResource::SearchTask.3 \
 		Padre::Task::Outline.3 \
 		Padre::Task::Outline::Perl.3 \
 		Padre::Task::PPI.3 \
@@ -146,11 +158,15 @@ MAN3=		Padre.3 \
 		Padre::Wx::CPAN.3 \
 		Padre::Wx::Dialog.3 \
 		Padre::Wx::Dialog::Find.3 \
+		Padre::Wx::Dialog::OpenResource.3 \
 		Padre::Wx::Dialog::PluginManager.3 \
 		Padre::Wx::Dialog::Preferences.3 \
+		Padre::Wx::Dialog::QuickMenuAccess.3 \
 		Padre::Wx::Dialog::Replace.3 \
 		Padre::Wx::Dialog::SessionManager.3 \
 		Padre::Wx::Dialog::SessionSave.3 \
+		Padre::Wx::Dialog::HelpSearch.3 \
+		Padre::Wx::Directory::OpenInFileBrowserAction.3 \
 		Padre::Wx::DocBrowser.3 \
 		Padre::Wx::HtmlWindow.3 \
 		Padre::Wx::Main.3 \
@@ -160,5 +176,8 @@ MAN3=		Padre.3 \
 		Wx::Perl::Dialog.3 \
 		Wx::Perl::Dialog::Simple.3 \
 		Wx::Perl::Dialog::SingleChoice.3
+
+post-patch:
+	${FIND} ${WRKSRC} -type f -name '*.orig' |${XARGS} ${RM} -f
 
 .include <bsd.port.post.mk>
