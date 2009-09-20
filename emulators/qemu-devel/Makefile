@@ -33,6 +33,9 @@ ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
+# comment this if you really want to build this version:
+IGNORE=		is currently an older snapshot than emulators/qemu
+
 OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
 		SAMBA "samba dependency (for -smb)" Off \
