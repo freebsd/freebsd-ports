@@ -1,0 +1,87 @@
+@unexec /bin/rm -f %D/%%WWWDIR%%/themes/default
+bin/free-sa
+%%ETCDIR%%/HTTP_CONNECT_method.filter.sample
+%%ETCDIR%%/HTTP_PUT+POST_method.filter.sample
+%%ETCDIR%%/HTTP_downloads.filter.sample
+%%ETCDIR%%/HTTP_downloads_archives.filter.sample
+%%ETCDIR%%/HTTP_downloads_audio.filter.sample
+%%ETCDIR%%/HTTP_downloads_cddvd.filter.sample
+%%ETCDIR%%/HTTP_downloads_code.filter.sample
+%%ETCDIR%%/HTTP_downloads_office.filter.sample
+%%ETCDIR%%/HTTP_downloads_video.filter.sample
+%%ETCDIR%%/HTTP_proxy_auth_failures.filter.sample
+%%ETCDIR%%/HTTP_proxy_denied.filter.sample
+%%ETCDIR%%/HTTP_site_auth_failures.filter.sample
+%%ETCDIR%%/HTTP_site_denied.filter.sample
+%%ETCDIR%%/HTTP_unusual_codes.filter.sample
+%%ETCDIR%%/HTTP_unusual_methods.filter.sample
+%%ETCDIR%%/SMTP_delivery_rejected.filter.sample
+%%ETCDIR%%/SMTP_receiving_rejected.filter.sample
+%%ETCDIR%%/free-sa.conf.sample
+%%ETCDIR%%/users.filter.sample
+%%DATADIR%%/be.cp1251
+%%DATADIR%%/cs.iso88592
+%%DATADIR%%/de.iso88591
+%%DATADIR%%/en.iso88591
+%%DATADIR%%/es.iso88591
+%%DATADIR%%/et.iso88591
+%%DATADIR%%/fr.iso88591
+%%DATADIR%%/it.iso88591
+%%DATADIR%%/ru.koi8r
+%%DATADIR%%/sk.iso88592
+%%WWWDIR%%/c.png
+%%WWWDIR%%/cgi-bin/free-sa.cgi
+%%WWWDIR%%/d.png
+%%WWWDIR%%/g.png
+%%WWWDIR%%/gsa.css
+%%WWWDIR%%/lsa.css
+%%WWWDIR%%/rsa.css
+%%WWWDIR%%/s.png
+%%WWWDIR%%/sa.js
+%%WWWDIR%%/themes/blues/c.png
+%%WWWDIR%%/themes/blues/d.png
+%%WWWDIR%%/themes/blues/g.png
+%%WWWDIR%%/themes/blues/gsa.css
+%%WWWDIR%%/themes/blues/lsa.css
+%%WWWDIR%%/themes/blues/rsa.css
+%%WWWDIR%%/themes/blues/s.png
+%%WWWDIR%%/themes/qbiq/c.png
+%%WWWDIR%%/themes/qbiq/d.png
+%%WWWDIR%%/themes/qbiq/g.png
+%%WWWDIR%%/themes/qbiq/gsa.css
+%%WWWDIR%%/themes/qbiq/lsa.css
+%%WWWDIR%%/themes/qbiq/rsa.css
+%%WWWDIR%%/themes/qbiq/s.png
+%%WWWDIR%%/themes/rbsec/c.png
+%%WWWDIR%%/themes/rbsec/d.png
+%%WWWDIR%%/themes/rbsec/g.png
+%%WWWDIR%%/themes/rbsec/gsa.css
+%%WWWDIR%%/themes/rbsec/lsa.css
+%%WWWDIR%%/themes/rbsec/rsa.css
+%%WWWDIR%%/themes/rbsec/s.png
+%%WWWDIR%%/themes/sa.js
+%%WWWDIR%%/themes/sarg/c.png
+%%WWWDIR%%/themes/sarg/d.png
+%%WWWDIR%%/themes/sarg/g.png
+%%WWWDIR%%/themes/sarg/s.png
+%%WWWDIR%%/themes/sarg/gsa.css
+%%WWWDIR%%/themes/sarg/lsa.css
+%%WWWDIR%%/themes/sarg/rsa.css
+%%WWWDIR%%/themes/silver/s.png
+%%WWWDIR%%/themes/silver/c.png
+%%WWWDIR%%/themes/silver/d.png
+%%WWWDIR%%/themes/silver/g.png
+%%WWWDIR%%/themes/silver/gsa.css
+%%WWWDIR%%/themes/silver/lsa.css
+%%WWWDIR%%/themes/silver/rsa.css
+@dirrm %%WWWDIR%%/themes/silver
+@dirrm %%WWWDIR%%/themes/sarg
+@dirrm %%WWWDIR%%/themes/rbsec
+@dirrm %%WWWDIR%%/themes/qbiq
+@dirrm %%WWWDIR%%/themes/blues
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/cgi-bin
+@dirrm %%WWWDIR%%
+@dirrm %%DATADIR%%
+@dirrmtry %%ETCDIR%%
+@dirrmtry www/data
