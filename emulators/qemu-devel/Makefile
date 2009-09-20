@@ -11,8 +11,8 @@ PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://bellard.org/qemu/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
-		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		${MASTER_SITE_LOCAL}:snapshot
+MASTER_SITE_SUBDIR=	nox/:snapshot
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-2008-06-20_19
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
