@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	matwm2
-PORTVERSION=	0.0.62
+PORTVERSION=	0.0.64
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.gatorgitter.com/~maties/
 
@@ -15,5 +15,7 @@ COMMENT=	A minimalistic, yet functional window manager for x11
 
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/matwm2
+
+MAN1=		matwm2.1
 
 .include <bsd.port.mk>
