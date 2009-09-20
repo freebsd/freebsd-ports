@@ -132,6 +132,7 @@
 %%XPI_XPIDIR%%/components/nsSessionStore3.js
 %%XPI_XPIDIR%%/components/ignore-history.js
 %%XPI_XPIDIR%%/components/certDialogsOverride.js
+%%XPI_XPIDIR%%/components/external-app-blocker.js
 %%XPI_XPIDIR%%/components/window-mapper.js
 %%XPI_XPIDIR%%/components/nsSessionStore2.js
 %%XPI_XPIDIR%%/chrome.manifest
