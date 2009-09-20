@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Jul 29 14:43:49 2001
-+++ Makefile.in	Thu Mar 18 22:27:35 2004
+--- Makefile.in.orig	2001-07-29 02:43:49.000000000 -0300
++++ Makefile.in	2009-09-20 11:17:07.000000000 -0300
 @@ -5,19 +5,19 @@
  #  initial_directory is now set in the config file
  mpg123_location   := "mpg123"
@@ -32,3 +32,12 @@
  CC= @CC@
  OBJS= cmp3common.o cmp3fileio.o cmp3manager.o cmp3curses.o \
        cmp3llist.o cmp3main.o cmp3listfiles.o cmp3playlist.o cmp3volume.o \
+@@ -103,7 +103,7 @@
+ install: rnmp3 cmp3
+ 	install -c -s cmp3 $(install_directory)/cmp3
+ 	install -c -s rnmp3 $(install_directory)/rnmp3
+-	cp -i cmp3rc $(config_file)
++	cp -i cmp3rc sample.cmp3rc
+ ifdef ass_repository
+ 	@if [ ! -x $(ass_repository) ]; then mkdir $(ass_repository); \
+ 	    echo mkdir $(ass_repository); fi;

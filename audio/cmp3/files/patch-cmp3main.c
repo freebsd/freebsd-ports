@@ -1,5 +1,5 @@
---- cmp3main.c.orig	Fri Mar 17 08:40:00 2000
-+++ cmp3main.c	Fri Jan 12 02:16:41 2001
+--- cmp3main.c.orig	2001-07-07 16:17:23.000000000 -0300
++++ cmp3main.c	2009-09-20 11:11:06.000000000 -0300
 @@ -33,13 +33,18 @@
      int         lastleftline = 0;
      int         lastrightline = 0;
