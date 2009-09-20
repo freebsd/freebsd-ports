@@ -56,4 +56,10 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|^COMPILE=|& noisycc=yes| ; \
 		s|^LINK=|& noisycc=yes|' ${WRKSRC}/mk/hdr.mk
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on amd64 or sparc64
+.endif
+
+.include <bsd.port.post.mk>
