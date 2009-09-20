@@ -8,6 +8,7 @@
 
 PORTNAME=	moreutils
 PORTVERSION=	0.37
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -28,6 +29,7 @@ PLIST_FILES=	bin/combine \
 		bin/isutf8 \
 		bin/lckdo \
 		bin/mispipe \
+		bin/parallel \
 		bin/pee \
 		bin/sponge \
 		bin/ts \
@@ -47,6 +49,7 @@ MAN1=		combine.1 \
 		isutf8.1 \
 		lckdo.1 \
 		mispipe.1 \
+		parallel.1 \
 		pee.1 \
 		sponge.1 \
 		ts.1 \
