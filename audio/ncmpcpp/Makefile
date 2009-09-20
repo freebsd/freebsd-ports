@@ -41,6 +41,10 @@ LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 .endif
 
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on amd64 or sparc64
+.endif
+
 PLIST_FILES=	bin/ncmpcpp \
 		%%DOCSDIR%%/config \
 		%%DOCSDIR%%/keys \
