@@ -21,7 +21,7 @@ MAN1=	free-sa.1
 MAN5=	free-sa.conf.5
 
 CONFLICTS=	free-sa-devel[0-9]*
-LATEST_LINK=	free-sa-devel
+LATEST_LINK=	free-sa
 
 .include <bsd.port.pre.mk>
 
