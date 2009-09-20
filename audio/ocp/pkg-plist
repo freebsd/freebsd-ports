@@ -1,14 +1,29 @@
 bin/ocp
-@unexec if cmp -s %D/etc/ocp.ini %D/etc/ocp.ini.default; then rm -f %D/etc/ocp.ini; fi
-etc/ocp.ini.default
-@exec [ -f %B/ocp.ini ] || cp %B/%f %B/ocp.ini
-lib/ocp/arctar.so
-lib/ocp/arczip.so
-lib/ocp/compat.so
-lib/ocp/cphelper.so
-lib/ocp/cphlpif.so
-lib/ocp/cpiface.so
-lib/ocp/devi.so
+bin/ultrafix.sh
+%%XORG%%etc/X11/wmconfig/opencubicplayer
+lib/ocp/autoload/10-compat.so
+lib/ocp/autoload/10-devi.so
+lib/ocp/autoload/10-hardware.so
+lib/ocp/autoload/10-mchasm.so
+lib/ocp/autoload/10-mixclip.so
+lib/ocp/autoload/10-sets.so
+lib/ocp/autoload/11-framelock.so
+lib/ocp/autoload/12-poutput.so
+lib/ocp/autoload/15-keyhelp.so
+lib/ocp/autoload/20-cphelper.so
+lib/ocp/autoload/25-pfilesel.so
+lib/ocp/autoload/30-arctar.so
+lib/ocp/autoload/30-arczip.so
+lib/ocp/autoload/30-aytype.so
+lib/ocp/autoload/30-fstypes.so
+lib/ocp/autoload/30-mcpbase.so
+lib/ocp/autoload/30-playsid.so
+lib/ocp/autoload/30-plrbase.so
+lib/ocp/autoload/30-smpbase.so
+lib/ocp/autoload/35-cpiface.so
+lib/ocp/autoload/40-cphlpif.so
+%%FLAC%%lib/ocp/autoload/30-flacptype.so
+%%ADPLUG%%lib/ocp/autoload/30-opltype.so
 lib/ocp/devpdisk.so
 lib/ocp/devpnone.so
 lib/ocp/devposs.so
@@ -17,9 +32,6 @@ lib/ocp/devsoss.so
 lib/ocp/devwmix.so
 lib/ocp/devwmixf.so
 lib/ocp/devwnone.so
-lib/ocp/framelock.so
-lib/ocp/fstypes.so
-lib/ocp/hardware.so
 lib/ocp/libocp.so
 lib/ocp/load669.so
 lib/ocp/loadams.so
@@ -31,35 +43,55 @@ lib/ocp/loadptm.so
 lib/ocp/loads3m.so
 lib/ocp/loadult.so
 lib/ocp/medialib.so
-lib/ocp/mchasm.so
-lib/ocp/mcpbase.so
-lib/ocp/mixclip.so
-%%ADPLUG%%lib/ocp/opltype.so
-lib/ocp/pfilesel.so
+lib/ocp/playay.so
 lib/ocp/playgmd.so
 lib/ocp/playgmi.so
 lib/ocp/playit.so
 lib/ocp/playmp2.so
 lib/ocp/playogg.so
-lib/ocp/aytype.so
-lib/ocp/playay.so
-%%ADPLUG%%lib/ocp/playopl.so
 lib/ocp/playsid.so
-lib/ocp/sidtype.so
 lib/ocp/playwav.so
 lib/ocp/playxm.so
-lib/ocp/plrbase.so
-lib/ocp/poutput.so
-lib/ocp/sets.so
-lib/ocp/smpbase.so
-%%DATADIR%%/ocp.pak
+%%FLAC%%lib/ocp/playflac.so
+%%ADPLUG%%lib/ocp/playopl.so
+%%XORG%%share/applications/opencubicplayer.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/KEYBOARD_REMAPS
 %%PORTDOCS%%%%DOCSDIR%%/SUID
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-@dirrm lib/ocp
-@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/html/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fileselector.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/install.html
+%%PORTDOCS%%%%DOCSDIR%%/html/mdz.html
+%%PORTDOCS%%%%DOCSDIR%%/html/player.html
+%%PORTDOCS%%%%DOCSDIR%%/html/plugin.html
+%%PORTDOCS%%%%DOCSDIR%%/html/specialdrive.html
+%%PORTDOCS%%%%DOCSDIR%%/html/starting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/support.html
+%%PORTDOCS%%%%DOCSDIR%%/html/wap.html
+%%XORG%%share/icons/hicolor/16x16/apps/opencubicplayer.xpm
+%%XORG%%share/icons/hicolor/48x48/apps/opencubicplayer.xpm
+%%DATADIR%%/data/ocp.hlp
+%%DATADIR%%/etc/ocp.ini
+@dirrm share/ocp/ultradir
+@dirrm share/ocp/etc
+@dirrm share/ocp/data
+@dirrm share/ocp
+%%XORG%%@dirrmtry share/icons/hicolor/48x48/apps
+%%XORG%%@dirrmtry share/icons/hicolor/48x48
+%%XORG%%@dirrmtry share/icons/hicolor/16x16/apps
+%%XORG%%@dirrmtry share/icons/hicolor/16x16
+%%XORG%%@dirrmtry share/icons/hicolor
+%%XORG%%@dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%XORG%%@dirrmtry share/applications
+@dirrm lib/ocp/autoload
+@dirrm lib/ocp
+%%XORG%%@dirrm etc/X11/wmconfig
+%%XORG%%@dirrmtry etc/X11

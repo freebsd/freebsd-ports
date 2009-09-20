@@ -1,0 +1,40 @@
+--- Makefile.in.orig	2009-06-27 12:15:43.000000000 +0200
++++ Makefile.in	2009-09-20 14:26:13.000000000 +0200
+@@ -35,8 +35,8 @@
+ 
+ 
+ install: all
+-	mkdir -p "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)"
+-	$(CP) AUTHORS BUGS COPYING CREDITS KEYBOARD_REMAPS SUID TODO "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)"
++	$(DOCS)mkdir -p "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)"
++	$(DOCS)$(CP) AUTHORS BUGS COPYING CREDITS KEYBOARD_REMAPS SUID TODO "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)"
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
+ 	$(CP) ocp.hlp "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/etc"
+@@ -52,7 +52,7 @@
+ 	if ! test -z $(DIR_SUFFIX); then ln -sf "ocp$(DIR_SUFFIX)" "$(DESTDIR)$(BINDIR)/ocp"; fi
+ 	$(CP) ultrafix.sh "$(DESTDIR)$(BINDIR)/ultrafix.sh"
+ 	mkdir -p "$(DESTDIR)$(ULTRADIR)"
+-	$(MAKE) -C doc DESTDIR="$(DESTDIR)" install TOPDIR="../$(TOPDIR)"
++	$(DOCS)$(MAKE) -C doc DESTDIR="$(DESTDIR)" install TOPDIR="../$(TOPDIR)"
+ ifeq ($(HAVE_X11),1)
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/share/applications" "$(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/" "$(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/" "$(DESTDIR)$(SYSCONFDIR)/X11/wmconfig"
+ 	$(CP) desktop/opencubicplayer.desktop "$(DESTDIR)$(PREFIX)/share/applications"
+@@ -143,7 +143,7 @@
+ 	$(MAKE) -C playxm TOPDIR=../$(TOPDIR)
+ 	$(MAKE) -C stuff TOPDIR=../$(TOPDIR)
+ 	$(MAKE) -C medialib TOPDIR=../$(TOPDIR)
+-	$(MAKE) -C doc TOPDIR="../$(TOPDIR)"
++	$(DOCS)$(MAKE) -C doc TOPDIR="../$(TOPDIR)"
+ 
+ ocp:	boot/kickload.o
+ 	$(CC) $(LDFLAGS) -o $@ $^ -pthread @DL_LIBS@ @EFENCE_LIBS@ @DUMA_LIBS@
+@@ -177,7 +177,7 @@
+ 	$(MAKE) -C playxm TOPDIR=../$(TOPDIR) clean
+ 	$(MAKE) -C stuff TOPDIR=../$(TOPDIR) clean
+ 	$(MAKE) -C medialib TOPDIR=../$(TOPDIR) clean
+-	$(MAKE) -C doc TOPDIR="../$(TOPDIR)" clean
++	$(DOCS)$(MAKE) -C doc TOPDIR="../$(TOPDIR)" clean
+ 	find . -name '*~' -exec rm {} ';'
+ 	rm -f ocp.hlp ocp *$(LIB_SUFFIX)
+ 	rm -f CPARCH.DAT
