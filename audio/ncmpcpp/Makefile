@@ -7,6 +7,7 @@
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -39,10 +40,6 @@ LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .else
 # no need to use ncurses-config if we use ncurses from the base system
 CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on amd64 or sparc64
 .endif
 
 PLIST_FILES=	bin/ncmpcpp \
@@ -80,6 +77,7 @@ CONFIGURE_ARGS+=	--with-taglib=no
 .endif
 
 .if !defined(WITHOUT_VISUALIZER)
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 CONFIGURE_ARGS+=	--enable-visualizer
 .endif
 
