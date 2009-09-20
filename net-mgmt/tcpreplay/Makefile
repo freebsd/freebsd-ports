@@ -7,20 +7,20 @@
 
 PORTNAME=	tcpreplay
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to replay saved packet capture files
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS=	pcapnav-config:${PORTSDIR}/net/libpcapnav
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
-		--without-pcapnav-config \
-		--program-transform-name='s|.*\(tcp.*\)|\1|' \
+CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
+		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config \
 		--enable-tcpreplay-edit
 
 MAN1=		tcpreplay.1 tcpprep.1 tcprewrite.1 tcpbridge.1 tcpreplay-edit.1
