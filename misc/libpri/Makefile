@@ -18,6 +18,12 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	include/libpri.h lib/libpri.a lib/libpri.so \
 		lib/libpri.so.1
 
-NOT_FOR_ARCHS=	alpha
+ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>
