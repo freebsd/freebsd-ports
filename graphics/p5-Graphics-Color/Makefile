@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Graphics-Color
-PORTVERSION=	0.24
-PORTREVISION=	1
+PORTVERSION=	0.25
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Device and library agnostic color spaces
 
-BUILD_DEPENDS=	p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
   		p5-MooseX-Aliases>=0.03:${PORTSDIR}/devel/p5-MooseX-Aliases \
   		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone \
-		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
-		p5-MooseX-Storage>=0.14:${PORTSDIR}/devel/p5-MooseX-Storage \
   		p5-MooseX-Types>=0.19:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Color-Library>=0.02:${PORTSDIR}/graphics/p5-Color-Library
 RUN_DEPENDS=	${BUILD_DEPENDS}
