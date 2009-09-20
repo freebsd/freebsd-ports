@@ -1,0 +1,265 @@
+bin/pyjama
+share/applications/pyjama.desktop
+share/locale/bg/LC_MESSAGES/pyjama.mo
+share/locale//ca/LC_MESSAGES/pyjama.mo
+share/locale/da/LC_MESSAGES/pyjama.mo
+share/locale/de/LC_MESSAGES/pyjama.mo
+share/locale/en_GB/LC_MESSAGES/pyjama.mo
+share/locale/es/LC_MESSAGES/pyjama.mo
+share/locale/fr/LC_MESSAGES/pyjama.mo
+share/locale/it/LC_MESSAGES/pyjama.mo
+share/locale/pl/LC_MESSAGES/pyjama.mo
+share/pixmaps/pyjama.xpm
+%%PYTHON_SITELIBDIR%%/pyjama/pyjama.py
+%%PYTHON_SITELIBDIR%%/pyjama/about.glade
+%%PYTHON_SITELIBDIR%%/pyjama/preferences.glade
+%%PYTHON_SITELIBDIR%%/pyjama/pyjama.cfg
+%%PYTHON_SITELIBDIR%%/pyjama/pyjama.doxygen.py
+%%PYTHON_SITELIBDIR%%/pyjama/pyjama_test.glade
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/clAlbumBrowser.py
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/clAlbumBrowser.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/clAlbumLayout.py
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/clAlbumLayout.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/clArtistLayout.py
+%%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts/clArtistLayout.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/bookmarks.glade
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clBookmarkDialog.py
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clBookmarkDialog.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clBookmarks.py
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clBookmarks.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clPlaylistDialog.py
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clPlaylistDialog.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clPlaylists.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/extended_modules/clPlaylists.py
+%%PYTHON_SITELIBDIR%%/pyjama/images/blue_grey_tag_T.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/calendar.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/cd.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/clip_note_1.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/folder_06.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/green_beetle.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/info.txt
+%%PYTHON_SITELIBDIR%%/pyjama/images/juk.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/kdmconfig.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/money.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/personal.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/playlist.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/plugin.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/plugin2D.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/pyjama.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/pyjama_anim.gif
+%%PYTHON_SITELIBDIR%%/pyjama/images/radio.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/shuffle.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/star.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/pyjama.xpm
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/artlibre.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/pd.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/by-nc-nd.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/by-nc-sa.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/by-nc.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/by-nd.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/by-sa.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/by.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/nc-sampling-plus.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big/sampling-plus.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/by-nc-nd.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/by-nc-sa.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/by-nc.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/by-nd.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/by-sa.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/by.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/nc-sampling-plus.png
+%%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small/sampling-plus.png
+%%PYTHON_SITELIBDIR%%/pyjama/modules/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clBrowserInterface.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clBrowserInterface.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clDB.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clDB.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clEntry.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clEntry.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clEvent.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clEvent.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clGstreamer010.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clGstreamer010.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clJamendo.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clJamendo.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clMain.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clMain.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clMenu.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clMenu.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clPlayer.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clPlayerForWin.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clPlugin.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clPlugin.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clPreferences.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clSettings.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clSettings.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clThreadedDownload.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clThreadedDownload.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clToolbar.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clToolbar.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clWidgets.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clWidgets.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clWindow.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clWindow.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/clXMLRPC.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/constants.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/constants.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/download_db.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/download_db.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/functions.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/functions.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/generate_changelog.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/get_imagepack.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/get_themepack.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/notification.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/notification.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/modules/pyjama_xml.py
+%%PYTHON_SITELIBDIR%%/pyjama/modules/pyjama_xml.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/README
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/PVC/PVC.glade
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/PVC/PVC.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/PVC/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/PVC/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/PVC/progressdialog.glade
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser/artist_browser.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser/artist_browser.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser/clArtistBrowser.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser/clArtistBrowser.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/configtool/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/configtool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/configtool/configtool.glade
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/configtool/configtool.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/downloadGUI/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/downloadGUI/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/downloadGUI/downloadGUI.glade
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/downloadGUI/downloadGUI.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/example/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/example/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/example/example.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/jam_query/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/jam_query/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/jam_query/jam_query.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/jamlists/100.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/jamlists/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/jamlists/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/jamlists/jamlists.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.py.BASE
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.py.BASE.moved
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.py.OTHER
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.py.OTHER.moved
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.py.THIS
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.py.THIS.moved
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/lastfm.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/patch
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/scrobbler.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm/scrobbler.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.py.BASE
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.py.BASE.moved
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.py.OTHER
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.py.OTHER.moved
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.py.THIS
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.py.THIS.moved
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/librefm.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/patch
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/scrobbler.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm/scrobbler.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/listenstats/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/listenstats/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/listenstats/listenstats.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/listenstats/listenstats.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lyrics/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lyrics/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lyrics/lyrics.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/lyrics/lyrics.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/mmhotkeys/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/mmhotkeys/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/mmhotkeys/mmhotkeys.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/mozplug/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/mozplug/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/mozplug/mozplug.glade
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/mozplug/mozplug.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/nowplaying/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/nowplaying/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/nowplaying/nowplaying.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/radios/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/radios/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/radios/radios.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/randomplayback/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/randomplayback/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/randomplayback/randomplayback.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/patch
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/rating.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/rating.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/star1.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/star2.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/star3.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/star4.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/star5.png
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/rating/starhscale.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/search/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/search/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/search/search.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/starred_albums/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/starred_albums/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/starred_albums/clStarLayout.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/starred_albums/clStarLayout.pyc
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/starred_albums/starred_albums.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/torrent-peer.info
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent/__init__.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent/client.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent/connection.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent/daemon.py
+%%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent/torrent.py
+%%PYTHON_SITELIBDIR%%/pyjama/themes/README
+%%PYTHON_SITELIBDIR%%/pyjama/themes/Clearlooks-DarkLime/gtk-2.0/gtkrc
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/clLayouts
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/extended_modules
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images/license_images
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/modules
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/PVC
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/configtool
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/downloadGUI
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/example
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/jam_query
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/jamlists
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/listenstats
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/lyrics
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/mmhotkeys
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/mozplug
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/nowplaying
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/radios
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/randomplayback
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/rating
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/search
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/starred_albums
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/Clearlooks-DarkLime/gtk-2.0
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/Clearlooks-DarkLime
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/
+@dirrm %%PYTHON_SITELIBDIR%%/pyjama
+@dirrmtry share/applications
