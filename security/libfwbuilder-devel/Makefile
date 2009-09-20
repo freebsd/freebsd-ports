@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.0.7
 CATEGORIES=	security
 .if defined(BUILD)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
@@ -57,6 +56,10 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 800107
+MAKE_ENV+=	CCACHE_DISABLE=yes
+.endif
+
 .if defined(NOPORTDOCS)
 BROKEN=		NOPORTDOCS is incomplete in this port
 .endif
