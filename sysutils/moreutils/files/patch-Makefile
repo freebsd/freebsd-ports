@@ -2,10 +2,10 @@
 +++ Makefile	2009-06-20 07:59:27.000000000 -0700
 @@ -1,25 +1,25 @@
 -BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel
-+BINS=isutf8 ifne pee sponge mispipe lckdo
++BINS=isutf8 ifne pee sponge mispipe lckdo parallel
  PERLSCRIPTS=vidir vipe ts combine zrun
 -MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1 parallel.1
-+MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1
++MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1 parallel.1
  CFLAGS=-O2 -g -Wall
  INSTALL_BIN?=install -s
 -PREFIX=/usr
