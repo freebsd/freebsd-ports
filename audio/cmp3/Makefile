@@ -12,12 +12,12 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.0-pre6
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	An ncurses based frontend to mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs/
+WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -29,13 +29,12 @@ PLIST_FILES=	bin/cmp3 bin/rnmp3
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cmp3 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/rnmp3 ${PREFIX}/bin
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/cmp3rc ${DOCSDIR}/sample.cmp3rc
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
