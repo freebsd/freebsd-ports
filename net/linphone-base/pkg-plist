@@ -7,15 +7,18 @@ include/linphone/lpconfig.h
 include/linphone/sipsetup.h
 include/mediastreamer2/allfilters.h
 include/mediastreamer2/dtmfgen.h
+include/mediastreamer2/dsptools.h
 include/mediastreamer2/ice.h
 include/mediastreamer2/mediastream.h
 include/mediastreamer2/mscommon.h
+include/mediastreamer2/msequalizer.h
 include/mediastreamer2/msfileplayer.h
 include/mediastreamer2/msfilerec.h
 include/mediastreamer2/msfilter.h
 include/mediastreamer2/msqueue.h
 include/mediastreamer2/msrtp.h
 include/mediastreamer2/mssndcard.h
+include/mediastreamer2/msspeexec.h
 include/mediastreamer2/mstee.h
 include/mediastreamer2/msticker.h
 include/mediastreamer2/msv4l.h
@@ -43,7 +46,7 @@ include/ortp/telephonyevents.h
 lib/liblinphone.a
 lib/liblinphone.la
 lib/liblinphone.so
-lib/liblinphone.so.4
+lib/liblinphone.so.5
 lib/libmediastreamer.a
 lib/libmediastreamer.la
 lib/libmediastreamer.so

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/stable/sources
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
@@ -45,8 +45,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(LINPHONE_GUI)
-BUILD_DEPENDS+=	linphone-base>=3.1.2:${PORTSDIR}/net/linphone-base
-RUN_DEPENDS+=	linphone-base>=3.1.2:${PORTSDIR}/net/linphone-base
+BUILD_DEPENDS+=	linphone-base>=${PORTVERSION}:${PORTSDIR}/net/linphone-base
+RUN_DEPENDS+=	linphone-base>=${PORTVERSION}:${PORTSDIR}/net/linphone-base
 DESCR=		${PKGDIR}/pkg-descr.gui
 PLIST=		${PKGDIR}/pkg-plist.gui
 USE_GNOME+=	libglade2
