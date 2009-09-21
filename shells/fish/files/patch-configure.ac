@@ -1,13 +1,118 @@
---- configure.ac.orig	2007-02-08 09:38:58.000000000 -0800
-+++ configure.ac	2007-09-22 18:29:24.000000000 -0700
-@@ -412,9 +412,3 @@
+--- configure.ac.orig	2009-03-08 07:46:47.000000000 -0700
++++ configure.ac	2009-09-18 21:28:07.000000000 -0700
+@@ -451,20 +451,6 @@
  
+ 
+ #
+-# Set up the directory where the documentation files should be
+-# installed
+-#
+-
 -AC_ARG_VAR( [docdir], [Documentation direcotry] )
 -
 -if test -z $docdir; then
--	AC_SUBST(docdir, [$datadir/doc/fish] )
+-	docdir=$datadir/doc/fish
 -else
--	AC_SUBST(docdir, [$docdir])
+-	docdir=$docdir
 -fi
-+AC_SUBST(docdir, [$datadir/doc/fish] )
+-
+-
+-#
+ # Set up locale directory. This is where the .po files will be
+ # installed.
+ #
+@@ -500,94 +486,19 @@
+ #
  
+ # Check for os dependant libraries for all binaries.
+-LIBS_COMMON=$LIBS
+-LIBS=""
+ AC_SEARCH_LIBS( connect, socket, , [AC_MSG_ERROR([Cannot find the socket library, needed to build this package.] )] )
+ AC_SEARCH_LIBS( nanosleep, rt, , [AC_MSG_ERROR([Cannot find the rt library, needed to build this package.] )] )
+ AC_SEARCH_LIBS( setupterm, [ncurses curses], , [AC_MSG_ERROR([Could not find a curses implementation, needed to build fish])] )
+ AC_SEARCH_LIBS( [nan], [m], [AC_DEFINE( [HAVE_NAN], [1], [Define to 1 if you have the nan function])] )
+-LIBS_SHARED=$LIBS
+-LIBS=$LIBS_COMMON
+ 
+ #
+ # Check for libraries needed by fish. 
+ #
+ 
+-LIBS_COMMON=$LIBS
+-LIBS="$LIBS_SHARED"
+ if test x$local_gettext != xno; then 
+ 	AC_SEARCH_LIBS( gettext, intl,,)
+ fi
+ 
+-# Check for libiconv_open if we can't find iconv_open. Silly OS X does
+-# weird macro magic for the sole purpose of amusing me.
+-AC_SEARCH_LIBS( iconv_open, iconv, , [AC_SEARCH_LIBS( libiconv_open, iconv, , [AC_MSG_ERROR([Could not find an iconv implementation, needed to build fish])] )] )
+-
+-LIBS_FISH=$LIBS
+-LIBS=$LIBS_COMMON
+-
+-#
+-# Check for libraries needed by fish_indent. 
+-#
+-
+-LIBS_COMMON=$LIBS
+-LIBS="$LIBS_SHARED"
+-if test x$local_gettext != xno; then 
+-	AC_SEARCH_LIBS( gettext, intl,,)
+-fi
+-LIBS_FISH_INDENT=$LIBS
+-LIBS=$LIBS_COMMON
+-
+-#
+-# Check for libraries needed by fish_pager. 
+-#
+-
+-LIBS_COMMON=$LIBS
+-LIBS="$LIBS_SHARED"
+-if test x$local_gettext != xno; then 
+-	AC_SEARCH_LIBS( gettext, intl,,)
+-fi
+-AC_SEARCH_LIBS( iconv_open, iconv, , [AC_MSG_ERROR([Could not find an iconv implementation, needed to build fish])] )
+-LIBS_FISH_PAGER=$LIBS
+-LIBS=$LIBS_COMMON
+-
+-#
+-# Check for libraries needed by fishd. 
+-#
+-
+-LIBS_COMMON=$LIBS
+-LIBS="$LIBS_SHARED"
+-if test x$local_gettext != xno; then 
+-	AC_SEARCH_LIBS( gettext, intl,,)
+-fi
+-AC_SEARCH_LIBS( iconv_open, iconv, , [AC_MSG_ERROR([Could not find an iconv implementation, needed to build fish])] )
+-LIBS_FISHD=$LIBS
+-LIBS=$LIBS_COMMON
+-
+-#
+-# Check for libraries needed by mimedb. 
+-#
+-
+-LIBS_COMMON=$LIBS
+-LIBS="$LIBS_SHARED"
+-if test x$local_gettext != xno; then 
+-	AC_SEARCH_LIBS( gettext, intl,,)
+-fi
+-LIBS_MIMEDB=$LIBS
+-LIBS=$LIBS_COMMON
+-
+-
+-#
+-# Check for libraries needed by set_color 
+-#
+-
+-LIBS_COMMON=$LIBS
+-LIBS="$LIBS_SHARED"
+-if test x$local_gettext != xno; then 
+-	AC_SEARCH_LIBS( gettext, intl,,)
+-fi
+-LIBS_SET_COLOR=$LIBS
+-LIBS=$LIBS_COMMON
+ 
+ #
+ # Check presense of various header files
