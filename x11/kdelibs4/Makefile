@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -33,7 +33,7 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		idn:${PORTSDIR}/dns/libidn \
 		utempter:${PORTSDIR}/sysutils/libutempter \
 		hal.1:${PORTSDIR}/sysutils/hal \
-		lzma.0:${PORTSDIR}/archivers/lzmautils-devel \
+		lzma.0:${PORTSDIR}/archivers/xz \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		showrgb:${PORTSDIR}/x11/rgb \
