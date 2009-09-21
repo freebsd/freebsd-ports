@@ -12,6 +12,9 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Tamil messages and documentation for KDE4
 
+IGNORE=		unfetchable and unmaintained upstream
+EXPIRATION_DATE=	2009-11-17
+
 KDE4_L10N=	ta
 
 .include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
