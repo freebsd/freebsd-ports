@@ -8,7 +8,8 @@
 PORTNAME=	fcrackzip
 PORTVERSION=	1.0
 CATEGORIES=	security archivers
-MASTER_SITES=	http://home.schmorp.de/data/marc/
+MASTER_SITES=	http://oldhome.schmorp.de/data/marc/ \
+		http://distfiles.macports.org/${PORTNAME}/
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Portable, fast and featureful ZIP password cracker
