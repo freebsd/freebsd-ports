@@ -1,0 +1,177 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: milter-opendkim
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these milteropendkim_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/milteropendkim
+#
+# milteropendkim_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to enable dkim-milter
+# milteropendkim_uid (str):       Set username to run milter.
+# milteropendkim_profiles (list): Set to "" by default.
+#                             Define your profiles here.
+# milteropendkim_cfgfile (str):   Configuration file. See opendkim.conf(5)
+#
+# milteropendkim_${profile}_* :   Variables per profile.
+#                             Sockets must be different from each other.
+#
+#  all parameters below now can be set in opendkim.conf(5).
+# milteropendkim_socket (str):    Path to the milter socket.
+# milteropendkim_domain (str):    Domainpart of From: in mails to sign.
+# milteropendkim_key (str):       Path to the private key file to sign with.
+# milteropendkim_selector (str):  Selector to use when signing
+# milteropendkim_alg (str):       Algorithm to use when signing
+# milteropendkim_flags (str):     Flags passed to start command.
+
+. %%RC_SUBR%%
+
+name="milteropendkim"
+rcvar=`set_rcvar`
+
+start_precmd="dkim_prepcmd"
+stop_postcmd="dkim_postcmd"
+command="%%PREFIX%%/sbin/opendkim"
+_piddir="/var/run/milteropendkim"
+pidfile="${_piddir}/pid"
+
+load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${milteropendkim_enable="NO"}
+: ${milteropendkim_uid="mailnull"}
+: ${milteropendkim_profiles=""}
+: ${milteropendkim_cfgfile="%%PREFIX%%/etc/mail/opendkim.conf"}
+
+: ${milteropendkim_socket=""}
+: ${milteropendkim_domain=""}
+: ${milteropendkim_key=""}
+: ${milteropendkim_selector=""}
+: ${milteropendkim_alg=""}
+# Options other than above can be set with $milteropendkim_flags.
+# see dkim-milter documentation for detail.
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${milteropendkim_profiles}" != "x" ]; then
+	pidfile="${_piddir}/${profile}.pid"
+	eval milteropendkim_enable="\${milteropendkim_${profile}_enable:-${milteropendkim_enable}}"
+	eval milteropendkim_socket="\${milteropendkim_${profile}_socket:-}"
+	if [ "x${milteropendkim_socket}" = "x" ];then
+	    echo "You must define a socket (milteropendkim_${profile}_socket)"
+	    exit 1
+	fi
+	eval milteropendkim_cfgfile="\${milteropendkim_${profile}_cfgfile:-${milteropendkim_cfgfile}}"
+	eval milteropendkim_domain="\${milteropendkim_${profile}_domain:-${milteropendkim_domain}}"
+	eval milteropendkim_key="\${milteropendkim_${profile}_key:-${milteropendkim_key}}"
+	eval milteropendkim_selector="\${milteropendkim_${profile}_selector:-${milteropendkim_selector}}"
+	eval milteropendkim_alg="\${milteropendkim_${profile}_alg:-${milteropendkim_alg}}"
+	eval milteropendkim_flags="\${milteropendkim_${profile}_flags:-${milteropendkim_flags}}"
+	if [ -f "${milteropendkim_cfgfile}" ];then
+	    milteropendkim_cfgfile="-x ${milteropendkim_cfgfile}"
+	else
+	    milteropendkim_cfgfile=""
+	fi
+	if [ "x${milteropendkim_socket}" != "x" ];then
+	    _socket_prefix="-p"
+	fi
+	if [ "x${milteropendkim_uid}" != "x" ];then
+	    _uid_prefix="-u"
+	fi
+	if [ "x${milteropendkim_domain}" != "x" ];then
+	    milteropendkim_domain="-d ${milteropendkim_domain}"
+	fi
+	if [ "x${milteropendkim_key}" != "x" ];then
+	    milteropendkim_key="-k ${milteropendkim_key}"
+	fi
+	if [ "x${milteropendkim_selector}" != "x" ];then
+	    milteropendkim_selector="-s ${milteropendkim_selector}"
+	fi
+	if [ "x${milteropendkim_alg}" != "x" ];then
+	    milteropendkim_alg="-S ${milteropendkim_alg}"
+	fi
+	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
+    else
+	echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${milteropendkim_profiles}" != "x" -a "x$1" != "x" ]; then
+	if [ "x$1" != "xrestart" ]; then
+	    for profile in ${milteropendkim_profiles}; do
+		echo "===> milteropendkim profile: ${profile}"
+		%%PREFIX%%/etc/rc.d/milter-opendkim $1 ${profile}
+		retcode="$?"
+		if [ "0${retcode}" -ne 0 ]; then
+		    failed="${profile} (${retcode}) ${failed:-}"
+		else
+		    success="${profile} ${success:-}"
+		fi
+	    done
+	    exit 0
+	else
+	    restart_precmd=""
+	fi
+    else
+	if [ -f "${milteropendkim_cfgfile}" ];then
+	    milteropendkim_cfgfile="-x ${milteropendkim_cfgfile}"
+	else
+	    milteropendkim_cfgfile=""
+	fi
+	if [ "x${milteropendkim_socket}" != "x" ];then
+	    _socket_prefix="-p"
+	fi
+	if [ "x${milteropendkim_uid}" != "x" ];then
+	    _uid_prefix="-u"
+	fi
+	if [ "x${milteropendkim_domain}" != "x" ];then
+	    milteropendkim_domain="-d ${milteropendkim_domain}"
+	fi
+	if [ "x${milteropendkim_key}" != "x" ];then
+	    milteropendkim_key="-k ${milteropendkim_key}"
+	fi
+	if [ "x${milteropendkim_selector}" != "x" ];then
+	    milteropendkim_selector="-s ${milteropendkim_selector}"
+	fi
+	if [ "x${milteropendkim_alg}" != "x" ];then
+	    milteropendkim_alg="-S ${milteropendkim_alg}"
+	fi
+	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
+    fi
+fi
+
+dkim_prepcmd ()
+{
+    if [ -S ${milteropendkim_socket##local:} ] ; then
+        rm -f ${milteropendkim_socket##local:}
+    elif [ -S ${milteropendkim_socket##unix:} ] ; then
+        rm -f ${milteropendkim_socket##unix:}
+    fi
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
+    fi
+    if [ -n "${milteropendkim_uid}" ] ; then
+	chown ${milteropendkim_uid} ${_piddir}
+    fi
+}
+
+dkim_postcmd()
+{
+    if [ -S ${milteropendkim_socket##local:} ] ; then
+        rm -f ${milteropendkim_socket##local:}
+    elif [ -S ${milteropendkim_socket##unix:} ] ; then
+        rm -f ${milteropendkim_socket##unix:}
+    fi
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+run_rc_command "$1"

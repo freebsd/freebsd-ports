@@ -1,0 +1,23 @@
+************************************************************************
+
+In order to run this port, write your opendkim.conf and:
+
+if you use sendmail, add the milter socket `socketspec' in
+/etc/mail/<your_configuration>.mc:
+
+INPUT_MAIL_FILTER(`dkim-filter', `S=_YOUR_SOCKET_SPEC_, F=T, T=R:2m')
+
+or if you use postfix write your milter socket `socketspec' in
+${PREFIX}/etc/mail/main.cf:
+
+smtpd_milters = _YOUR_SOCKET_SPEC_
+
+
+And to run the milter from startup, add milteropendkim_enable="YES" in
+your /etc/rc.conf.
+Extra options can be found in startup script.
+
+Note: milter sockets must be accessible from postfix/smtpd;
+  using inet sockets might be preferred.
+
+************************************************************************
