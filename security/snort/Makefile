@@ -10,7 +10,8 @@ PORTVERSION=	2.8.4.1
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/ \
-		http://dl.snort.org/snort-current/
+		http://dl.snort.org/snort-current/ \
+		http://dl.snort.org/snort284/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
