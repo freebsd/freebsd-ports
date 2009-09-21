@@ -1,6 +1,19 @@
-LZMA Utils is an attempt to provide LZMA compression to POSIX-like
-systems. The idea is to have a gzip-like command line tool and
-zlib-like library, which would make it easy to adapt the new
-compression technology to existing applications.
+XZ Utils is free general-purpose data compression software with a
+high compression ratio.  XZ Utils is the successor to LZMA Utils.
 
-WWW: http://tukaani.org/lzma/
+The core of the XZ Utils compression code is based on the LZMA SDK.
+The primary compression algorithm is currently LZMA2, which is used
+inside the .xz container format.  With typical files, XZ Utils
+creates output 30% smaller than gzip and 15% smaller than bzip2.
+
+The XZ Utils package consists of several components:
+
+* liblzma is a compression library with an API similar to that of zlib.
+* xz is a command line tool with syntax similar to that of gzip.
+* xzdec is a decompression-only tool smaller than the full-featured xz tool.
+* A set of shell scripts (xzgrep, xzdiff, etc.) have been adapted
+  from gzip to ease viewing, grepping, and comparing compressed files.
+* Emulation of the command line tools of LZMA Utils eases transition
+  from LZMA Utils to XZ Utils.
+
+WWW: http://tukaani.org/xz/

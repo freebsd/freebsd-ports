@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-09-16 19:57:05.000000000 +0200
++++ Makefile.in	2009-09-16 19:59:02.000000000 +0200
+@@ -785,7 +785,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 

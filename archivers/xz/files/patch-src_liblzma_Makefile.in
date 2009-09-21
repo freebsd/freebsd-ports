@@ -1,0 +1,11 @@
+--- src/liblzma/Makefile.in.orig	2009-09-16 19:57:18.000000000 +0200
++++ src/liblzma/Makefile.in	2009-09-16 19:57:31.000000000 +0200
+@@ -1631,7 +1631,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-pkgconfigDATA
++install-data-am: install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive
+ 
