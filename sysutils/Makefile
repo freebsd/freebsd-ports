@@ -510,6 +510,7 @@
     SUBDIR += nrg2iso
     SUBDIR += ntfsprogs
     SUBDIR += nut
+    SUBDIR += nut22
     SUBDIR += nvclock
     SUBDIR += nvtv
     SUBDIR += oak
