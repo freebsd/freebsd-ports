@@ -1,0 +1,11 @@
+--- nettle2.info.orig	2009-06-08 11:27:11.000000000 -0700
++++ nettle2.info	2009-09-13 10:54:29.000000000 -0700
+@@ -12,7 +12,7 @@
+    
+ INFO-DIR-SECTION Encryption
+ START-INFO-DIR-ENTRY
+-* Nettle: (nettle).             A low-level cryptographic library.
++* Nettle2: (nettle2).             A low-level cryptographic library.
+ END-INFO-DIR-ENTRY
+ 
+ 
