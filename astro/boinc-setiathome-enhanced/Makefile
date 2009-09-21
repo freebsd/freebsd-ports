@@ -53,10 +53,7 @@ CONFIGURE_ARGS+=	--disable-graphics
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
+.if ${OSVERSION} >= 700042 && (${ARCH} == i386 || ${ARCH} == amd64)
 CFLAGS+=	-mtune=native
 .endif
 
