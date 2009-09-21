@@ -72,7 +72,6 @@
     SUBDIR += lzip
     SUBDIR += lzma
     SUBDIR += lzmalib
-    SUBDIR += lzmautils
     SUBDIR += lzo
     SUBDIR += lzo2
     SUBDIR += lzop
