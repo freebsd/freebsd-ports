@@ -7,14 +7,14 @@
 
 PORTNAME=	gnormalize
 PORTVERSION=	0.63
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	An alternative for replaygain
 
-BUILD_DEPENDS+=	lzma:${PORTSDIR}/archivers/lzmautils
+BUILD_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		wavegain:${PORTSDIR}/audio/wavegain
 
