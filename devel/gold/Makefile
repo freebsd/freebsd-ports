@@ -29,6 +29,10 @@ OPTIONS=	PLUGINS	"Support fpr plugins"	on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 701000
+BROKEN=		does not build for FreeBSD 6.x
+.endif
+
 .if defined(WITH_NLS)
 USE_GETTEXT=	yes
 CFLAGS+=	-I${LOCALBASE}/include
