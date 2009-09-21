@@ -99,7 +99,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="ee23aa09-a175-11de-96c0-0011098ad87f">
-    <topic>horde-base -- three vulnerabilities</topic>
+    <topic>horde-base -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>horde-base</name>
@@ -108,18 +108,30 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Horde team reports a vulnerability that allows overwriting
-	   of local files and two XSS vulnerabilities.</p>
+      	<p>The Horde team reports:</p>
+	<blockquote cite="http://cvs.horde.org/diff.php/horde/docs/CHANGES?r1=1.515.2.558&amp;r2=1.515.2.559">
+	  <p>An error within the form library when handling image form fields can
+	    be exploited to overwrite arbitrary local files.</p>
+	  <p>An error exists within the MIME Viewer library when rendering unknown
+	    text parts. This can be exploited to execute arbitrary HTML and script
+	    code in a user's browser session in context of an affected site if
+	    malicious data is viewed.</p>
+	  <p>The preferences system does not properly sanitise numeric preference
+	    types. This can be exploited to execute arbitrary HTML and script code
+	    in a user's browser session in contact of an affected site.</p>
+	</blockquote>
       </body>
     </description>
     <references>
       <url>http://bugs.horde.org/ticket/?id=8311</url>
       <url>http://bugs.horde.org/ticket/?id=8399</url>
+      <url>http://secunia.com/advisories/36665/</url>
       <url>http://cvs.horde.org/diff.php/horde/docs/CHANGES?r1=1.515.2.558&amp;r2=1.515.2.559</url>
     </references>
     <dates>
       <discovery>2009-05-28</discovery>
       <entry>2009-09-14</entry>
+      <modified>2009-09-22</modified>
     </dates>
   </vuln>
 
