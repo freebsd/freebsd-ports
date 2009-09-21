@@ -8,7 +8,7 @@
 
 PORTNAME=	seahorse-plugins
 PORTVERSION=	2.26.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +21,7 @@ LIB_DEPENDS=	cryptui.0:${PORTSDIR}/security/seahorse
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GECKO=	firefox libxul
+USE_GECKO=	libxul firefox
 USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
