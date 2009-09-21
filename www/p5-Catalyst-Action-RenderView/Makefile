@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sensible default end action for Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Data-Visitor>=0.08:${PORTSDIR}/devel/p5-Data-Visitor \
+		p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
