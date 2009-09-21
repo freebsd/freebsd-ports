@@ -34,6 +34,8 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fltk:${PORTSDIR}/x11-toolkits/fltk \
 		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
