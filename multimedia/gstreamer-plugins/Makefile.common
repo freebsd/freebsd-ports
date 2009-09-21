@@ -206,7 +206,8 @@ gst_dv_PLIST_FILES=	${GST_LIB_DIR}/libgstdv.la \
 
 # dvd
 gst_dvd_EXTRA_LIBS+=	-ldvdnav
-gst_dvd_LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
+gst_dvd_LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav \
+			dvdread.4:${PORTSDIR}/multimedia/libdvdread
 gst_dvd_GST_PLUGIN_DIR=	ext/dvdnav \
 		ext/dvdread
 gst_dvd_PLIST_FILES=	${GST_LIB_DIR}/libgstdvdnav.la \
