@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08111
+PORTVERSION=	0.08112
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
 BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-Class-Accessor-Grouped>=0.08003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-Class-Accessor-Grouped>=0.09000:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-SQL-Abstract>=1.56:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract>=1.58:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS=	${BUILD_DEPENDS}
