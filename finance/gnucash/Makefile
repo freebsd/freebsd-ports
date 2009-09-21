@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -28,8 +28,6 @@ RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
-
-BROKEN=		does not compile
 
 OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off	\
 		OFX		"OFX support"				off	\
