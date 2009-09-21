@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SU/SUNNAVY
+MASTER_SITE_SUBDIR=	../by-authors/id/G/GF/GFUJI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -20,12 +20,14 @@ PERL_CONFIGURE=	5.8.5+
 MAN3=	Mouse.3 \
 	Mouse::Meta::Attribute.3 \
 	Mouse::Meta::Class.3 \
+	Mouse::Meta::Module.3 \
 	Mouse::Meta::TypeConstraint.3 \
 	Mouse::Object.3 \
 	Mouse::Role.3 \
 	Mouse::Util.3 \
 	Mouse::Util::TypeConstraints.3 \
 	Squirrel.3 \
+	Test::Mouse.3 \
 	ouse.3
 
 post-install:
