@@ -3638,6 +3638,7 @@ fragroute                       ports/security/fragroute
 fragrouter                      ports/security/fragrouter
 fraqtive                        ports/graphics/fraqtive
 free-sa                         ports/www/free-sa
+free-sa-devel                   ports/www/free-sa-devel
 freealut                        ports/audio/freealut
 freebase                        ports/devel/freebase
 freebsd-carddeck-kde4           ports/games/freebsd-carddeck-kde4
@@ -19717,6 +19718,7 @@ py-toscawidgets                 ports/devel/py-ToscaWidgets
 py-trace2html                   ports/devel/py-trace2html
 py-traits                       ports/devel/py-traits
 py-traitsbackendwx              ports/x11-toolkits/py-traitsbackendwx
+py-traitsgui                    ports/x11-toolkits/py-traitsgui
 py-transaction                  ports/devel/py-transaction
 py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
@@ -19866,6 +19868,7 @@ pyephem                         ports/astro/pyephem
 pygmy                           ports/mail/pygmy
 pygopherd                       ports/net/pygopherd
 pygts                           ports/graphics/pygts
+pyjama                          ports/multimedia/pyjama
 pyjamas                         ports/www/pyjamas
 pykawari                        ports/games/pykawari
 pyla                            ports/comms/pyla
@@ -22923,6 +22926,7 @@ uftp                            ports/ftp/uftp
 uhexen                          ports/games/uhexen
 uhexen2                         ports/games/uhexen2
 uhexen2-extras                  ports/games/uhexen2-extras
+uhidd                           ports/sysutils/uhidd
 uif2iso                         ports/sysutils/uif2iso
 uim                             ports/textproc/uim
 uim-el                          ports/textproc/uim-el
