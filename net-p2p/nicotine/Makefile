@@ -22,6 +22,9 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=		yes
 
+DEPRECATED=		development stalled years ago, use net-p2p/nicotine-plus instead
+EXPIRATION_DATE=	2009-10-31
+
 OPTIONS=	GEOIP "Enable the GeoIP based country code blocker" off \
 		PSYCO "Enable Psyco, the optimizing Python compiler" off \
 		VORBIS "Enable OGG/Vorbis support" on
