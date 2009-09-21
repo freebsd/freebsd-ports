@@ -7,7 +7,7 @@ bin/memrm
 bin/memslap
 bin/memstat
 include/libmemcached/memcached.h
-include/libmemcached/memcached.hh
+include/libmemcached/memcached.hpp
 include/libmemcached/memcached_configure.h
 include/libmemcached/memcached_constants.h
 include/libmemcached/memcached_get.h
