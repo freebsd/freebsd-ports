@@ -24,6 +24,4 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-fribidi=${LOCALBASE}
 
-BROKEN=	needs update to work with fribidi-0.19.2
-
 .include <bsd.port.mk>
