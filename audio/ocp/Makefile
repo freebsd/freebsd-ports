@@ -7,6 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.17
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
@@ -74,6 +75,7 @@ PLIST_SUB+=		XORG=""
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--with-debug
+EXTRA_PATCHES+=		${PATCHDIR}/extrapatch-*
 .endif
 
 .if defined(WITH_ADPLUG)
