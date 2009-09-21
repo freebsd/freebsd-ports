@@ -4165,3 +4165,4 @@ devel/eric||2009-09-16|Removed: obsoleted by devel/eric4
 devel/p5-Algorithm-MDiff||2009-09-16|Has expired: the module was removed from CPAN
 devel/p5-Data-Postponed||2009-09-16|Has expired: the module was removed from CPAN
 net/asterisk12-addons||2009-09-16|Has expired: does not build
+archivers/lzmautils-devel|archivers/xz|2009-09-21|Project was renamed

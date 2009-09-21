@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	lzma.0:${PORTSDIR}/archivers/lzmautils-devel \
+LIB_DEPENDS=	lzma.0:${PORTSDIR}/archivers/xz \
 		xine.1:${PORTSDIR}/multimedia/libxine \
 		slp.1:${PORTSDIR}/net/openslp
 

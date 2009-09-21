@@ -73,7 +73,6 @@
     SUBDIR += lzma
     SUBDIR += lzmalib
     SUBDIR += lzmautils
-    SUBDIR += lzmautils-devel
     SUBDIR += lzo
     SUBDIR += lzo2
     SUBDIR += lzop
@@ -186,6 +185,7 @@
     SUBDIR += xdms
     SUBDIR += xmill
     SUBDIR += xpk
+    SUBDIR += xz
     SUBDIR += zip
     SUBDIR += zipios++
     SUBDIR += zipmix
