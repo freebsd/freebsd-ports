@@ -301,6 +301,7 @@
     SUBDIR += nessus-plugins
     SUBDIR += netpgp
     SUBDIR += nettle
+    SUBDIR += nettle2
     SUBDIR += newpki-client
     SUBDIR += newpki-lib
     SUBDIR += newpki-server
