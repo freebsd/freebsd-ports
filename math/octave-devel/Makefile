@@ -29,6 +29,8 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull:${PORTSDIR}/math/qhull
 
+BROKEN=		does not build
+
 LATEST_LINK=    octave-devel
 
 USE_BZIP2=	yes
