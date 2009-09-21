@@ -8,7 +8,6 @@ bin/upsrw
 bin/upssched-cmd
 etc/nut/cmdvartab
 etc/nut/driver.list
-etc/nut/nut.conf.sample
 etc/nut/ups.conf.sample
 etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
@@ -23,6 +22,7 @@ lib/libupsclient.la
 %%NUT_HAL%%libexec/hald-addon-megatec_usb
 %%NUT_HAL%%libexec/hald-addon-tripplite_usb
 %%NUT_HAL%%libexec/hald-addon-usbhid-ups
+%%NUT_SERIAL%%libexec/nut/al175
 %%NUT_SERIAL%%libexec/nut/apcsmart
 %%NUT_SERIAL%%libexec/nut/bcmxcp
 %%NUT_USB%%libexec/nut/bcmxcp_usb
@@ -31,8 +31,7 @@ lib/libupsclient.la
 %%NUT_SERIAL%%libexec/nut/bestfcom
 %%NUT_SERIAL%%libexec/nut/bestuferrups
 %%NUT_SERIAL%%libexec/nut/bestups
-%%NUT_SERIAL%%libexec/nut/blazer_ser
-%%NUT_USB%%libexec/nut/blazer_usb
+%%NUT_SERIAL%%libexec/nut/cpsups
 %%NUT_SERIAL%%libexec/nut/cyberpower
 %%NUT_SERIAL%%libexec/nut/dummy-ups
 %%NUT_SERIAL%%libexec/nut/etapro
@@ -47,16 +46,14 @@ lib/libupsclient.la
 %%NUT_SERIAL%%libexec/nut/metasys
 %%NUT_SERIAL%%libexec/nut/mge-shut
 %%NUT_SERIAL%%libexec/nut/mge-utalk
-%%NUT_SERIAL%%libexec/nut/microdowell
 %%NUT_NEON%%libexec/nut/netxml-ups
 %%NUT_SERIAL%%libexec/nut/newmge-shut
+%%NUT_SERIAL%%libexec/nut/nitram
 %%NUT_SERIAL%%libexec/nut/oneac
 %%NUT_SERIAL%%libexec/nut/optiups
 %%NUT_SERIAL%%libexec/nut/powercom
-%%NUT_PDU%%libexec/nut/powerman-pdu
 %%NUT_SERIAL%%libexec/nut/powerpanel
 %%NUT_SERIAL%%libexec/nut/rhino
-%%NUT_USB%%libexec/nut/richcomm_usb
 %%NUT_SERIAL%%libexec/nut/safenet
 %%NUT_SNMP%%libexec/nut/snmp-ups
 %%NUT_SERIAL%%libexec/nut/skel
