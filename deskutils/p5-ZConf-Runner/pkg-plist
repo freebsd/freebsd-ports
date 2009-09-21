@@ -1,6 +1,9 @@
 bin/zcrunner
 %%SITE_PERL%%/ZConf/Runner.pm
+%%SITE_PERL%%/ZConf/Runner/GUI.pm
+%%SITE_PERL%%/ZConf/Runner/GUI/Curses.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner/.packlist
+@dirrm %%SITE_PERL%%/ZConf/Runner/GUI
 @dirrm %%SITE_PERL%%/ZConf/Runner
 @dirrmtry %%SITE_PERL%%/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner
