@@ -7,6 +7,7 @@
 
 PORTNAME=	lzma
 PORTVERSION=	9.07
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/7-Zip/${PORTVERSION}%20beta/
 DISTNAME=	lzma${PORTVERSION:S/.//g}
@@ -14,7 +15,7 @@ DISTNAME=	lzma${PORTVERSION:S/.//g}
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	High-ratio LZMA compressor
 
-CONFLICTS=	lzmautils-[0-9]*
+CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
