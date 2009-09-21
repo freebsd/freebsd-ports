@@ -1,0 +1,78 @@
+# Makefile.features
+# Author:			Hirohisa Yamaguchi <umq@ueo.co.jp>
+#
+# This file is used to tune build time options.
+# Please refer FEATURES file distributed with the source for details.
+#
+# $FreeBSD$
+#
+
+.if defined(WITH_BODYLENGTH_DB) && !defined(WITHOUT_BODYLENGTH_DB)
+CONFIGURE_ARGS+=	--enable-bodylengthdb
+.endif
+
+.if defined(WITH_CAPTURE_UNKNOWN_ERRORS) && !defined(WITHOUT_CAPTURE_UNKNOWN_ERRORS)
+CONFIGURE_ARGS+=	--enable-captureerrors
+.endif
+
+.if defined(WITH_COMMAIZE) && !defined(WITHOUT_COMMAIZE)
+CONFIGURE_ARGS+=	--enable-commaize
+.endif
+
+.if defined(WITH_DIFFHEADERS) && !defined(WITHOUT_DIFFHEADERS)
+CONFIGURE_ARGS+=	--enable-diffheaders
+LIB_DEPENDS+=		tre:${PORTSDIR}/textproc/libtre
+.endif
+
+.if defined(WITH_DKIM_REPUTATION) && !defined(WITHOUT_DKIM_REPUTATION)
+CONFIGURE_ARGS+=	--enable-dkimreputation
+.endif
+
+.if defined(WITH_DNS_UPGRADE) && !defined(WITHOUT_DNS_UPGRADE)
+CONFIGURE_ARGS+=	--enable-dnsupgrade
+.endif
+
+.if defined(WITH_MULTIPLE_SIGNATURES) && !defined(WITHOUT_MULTIPLE_SIGNATURES)
+CONFIGURE_ARGS+=	--enable-multiplesigs
+.endif
+
+.if defined(WITH_PARSE_TIME) && !defined(WITHOUT_PARSE_TIME)
+BROKEN=		The feature ``_FFR_PARSE_TIME'' is incomplete, does not work
+CONFIGURE_ARGS+=	--enable-parsetime
+.endif
+
+.if defined(WITH_REPLACE_RULES) && !defined(WITHOUT_REPLACE_RULES)
+CONFIGURE_ARGS+=	-enable-replacerules
+.endif
+
+.if defined(WITH_REPORT_INTERVALS) && !defined(WITHOUT_REPORT_INTERVALS)
+CONFIGURE_ARGS+=	--enable-reportintervals
+.endif
+
+.if defined(WITH_SELECT_CANONICALIZATION) && !defined(WITHOUT_SELECT_CANONICALIZATION)
+CONFIGURE_ARGS+=	--enable-selectcanon
+.endif
+
+.if defined(WITH_SELECTOR_HEADER) && !defined(WITHOUT_SELECTOR_HEADER)
+CONFIGURE_ARGS+=	--enable-selectorheader
+.endif
+
+.if defined(WITH_SENDER_HEADERS) && !defined(WITHOUT_SENDER_HEADERS)
+CONFIGURE_ARGS+=	--enable-senderheaders
+.endif
+
+.if defined(WITH_STATS) && !defined(WITHOUT_STATS)
+CONFIGURE_ARGS+=	--enable-stats
+MAN8+=			opendkim-stats.8
+PLIST_SUB+=		STATS=""
+.else
+PLIST_SUB+=		STATS="@comment "
+.endif
+
+.if defined(WITH_VBR) && !defined(WITHOUT_VBR)
+CONFIGURE_ARGS+=	--enable-vbr
+.endif
+
+.if defined(WITH_ZTAGS) && !defined(WITHOUT_ZTAGS)
+CONFIGURE_ARGS+=	--enable-ztags
+.endif

@@ -1,0 +1,12 @@
+--- ./FEATURES.orig	2009-08-04 06:31:48.000000000 +0900
++++ ./FEATURES	2009-08-27 20:35:42.000000000 +0900
+@@ -74,6 +74,9 @@
+ 		to use when signing based on the contents of an arbitrary
+ 		header.  (opendkim)
+ 
++senderheaders	Optional control over which headers are used by the filter
++		to make the sign vs. verify decision.  (opendkim)
++
+ stats		Optional generation of statistics about pass/fail sorted
+ 		by domain and canonicalization.  Requires Sleepycat DB.
+ 		(opendkim, libopendkim)
