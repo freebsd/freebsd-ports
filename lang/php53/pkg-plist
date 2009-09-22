@@ -82,7 +82,6 @@ include/php/ext/standard/css.h
 include/php/ext/standard/cyr_convert.h
 include/php/ext/standard/datetime.h
 include/php/ext/standard/dl.h
-include/php/ext/standard/dns.h
 include/php/ext/standard/exec.h
 include/php/ext/standard/file.h
 include/php/ext/standard/flock_compat.h
@@ -99,6 +98,7 @@ include/php/ext/standard/php_assert.h
 include/php/ext/standard/php_browscap.h
 include/php/ext/standard/php_crypt.h
 include/php/ext/standard/php_dir.h
+include/php/ext/standard/php_dns.h
 include/php/ext/standard/php_ext_syslog.h
 include/php/ext/standard/php_filestat.h
 include/php/ext/standard/php_fopen_wrappers.h
@@ -129,7 +129,6 @@ include/php/ext/standard/sha1.h
 include/php/ext/standard/streamsfuncs.h
 include/php/ext/standard/uniqid.h
 include/php/ext/standard/url.h
-include/php/ext/standard/url_scanner.h
 include/php/ext/standard/url_scanner_ex.h
 @exec touch %D/include/php/ext/php_config.h
 @unexec [ -s %D/include/php/ext/php_config.h ] || rm %D/include/php/ext/php_config.h
