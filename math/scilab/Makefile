@@ -12,7 +12,7 @@ CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@googlemail.com
 COMMENT=	A free Matlab clone by INRIA & ENPC
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
@@ -30,7 +30,7 @@ USE_AUTOTOOLS=	autoconf:262
 USE_TK=		yes
 
 DEPRECATED=	unmaintained, many releases behind upstream (without anyone caring), broken nearly everywhere
-EXPIRATION_DATE=2009-10-19
+EXPIRATION_DATE=2009-11-21
 
 CONFIGURE_ARGS=	--with-tk \
 		--with-tk-library=${LOCALBASE}/lib \
