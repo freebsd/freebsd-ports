@@ -10,7 +10,9 @@ PORTVERSION=	1.0.2a
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/
+MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	10
 
 MAINTAINER=	dinoex@FreeBSD.org
