@@ -9,12 +9,12 @@ PORTNAME=	wqy-fonts
 PORTVERSION=	20081102
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF/wqy/wqy-bitmapfont/0.9.9 \
-		http://dryice.name/computer/FreeBSD/distfiles/
-
-DISTFILES=	wqy-bitmapfont-pcf-0.9.9-0.tar.gz \
-		wqy-unibit-bdf-1.1.0-1.tar.gz \
-		wqy-zenhei-0.8.34-cvs20081027.tar.gz
+MASTER_SITES=	SF/wqy/wqy-bitmapfont/0.9.9:bitmapfont \
+		SF/wqy/wqy-unibit/1.1.0:unibit \
+		SF/wqy/wqy-zenhei/0.8.34-cvs20081027:zenhei
+DISTFILES=	wqy-bitmapfont-pcf-0.9.9-0.tar.gz:bitmapfont \
+		wqy-unibit-bdf-1.1.0-1.tar.gz:unibit \
+		wqy-zenhei-0.8.34-cvs20081027.tar.gz:zenhei
 
 MAINTAINER=	intron@intron.ac
 COMMENT=	GNU GPL-licensed font set covering CJK and other Unicode characters
