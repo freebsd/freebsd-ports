@@ -1,11 +1,11 @@
---- TSRM/threads.m4.orig	Wed Apr 27 15:22:18 2005
-+++ TSRM/threads.m4	Wed May  3 10:02:34 2006
-@@ -164,7 +164,7 @@
- dnl
- AC_DEFUN([PTHREADS_ASSIGN_VARS],[
- if test -n "$ac_cv_pthreads_lib"; then
--  LIBS="$LIBS -l$ac_cv_pthreads_lib"
-+  LIBS="$LIBS $ac_cv_pthreads_lib"
- fi
- 
- if test -n "$ac_cv_pthreads_cflags"; then
+--- TSRM/threads.m4.orig	2005-04-27 15:22:18.000000000 +0200
++++ TSRM/threads.m4	2009-09-22 10:01:37.000000000 +0200
+@@ -79,7 +79,7 @@
+     pthread_mutexattr_t mattr;
+     int data = 1;
+     pthread_mutexattr_init(&mattr);
+-    return pthread_create(&thd, NULL, thread_routine, &data);
++    return 0;
+ } ], [
+   pthreads_working=yes
+   ], [

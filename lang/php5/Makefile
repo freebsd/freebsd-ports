@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.2.10
+PORTVERSION=	5.2.11
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -65,7 +65,7 @@ PLIST_SUB+=	SUHOSIN="@comment "
 
 .if defined(WITH_MAILHEAD)
 #PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
-PATCHFILES+=	php-5.2.9-mail-header.patch:mail
+PATCHFILES+=	php-5.2.10-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
@@ -131,8 +131,8 @@ CONFIGURE_ARGS+=--with-zend-vm=SWITCH
 CONFIGURE_ARGS+=--with-zend-vm=GOTO
 .endif
 
-CONFIGURE_ENV+=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
-		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS} \
+CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
+		ac_cv_pthreads_cflags="" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 
