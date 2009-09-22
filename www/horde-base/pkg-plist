@@ -17,6 +17,7 @@
 %%HORDIR%%/admin/setup/diff.php
 %%HORDIR%%/admin/setup/index.php
 %%HORDIR%%/admin/setup/scripts.php
+%%HORDIR%%/admin/signup_confirm.php
 %%HORDIR%%/admin/sqlshell.php
 %%HORDIR%%/admin/user.php
 %%HORDIR%%/config/.htaccess
@@ -896,6 +897,7 @@
 %%HORDIR%%/scripts/upgrades/3.1_to_3.2.pgsql.sql
 %%HORDIR%%/scripts/upgrades/3.1_to_3.2.sql
 %%HORDIR%%/scripts/upgrades/3.1_to_3.2.sybase.sql
+%%HORDIR%%/scripts/upgrades/3.3_to_3.3.5.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_groups_to_sql.php
 %%HORDIR%%/scripts/upgrades/convert_datatree_perms_to_sql.php
 %%HORDIR%%/scripts/upgrades/migrate_user_categories.php
@@ -1415,6 +1417,7 @@
 %%HORDIR%%/services/editor/xinha/lang/vn.js
 %%HORDIR%%/services/editor/xinha/license.txt
 %%HORDIR%%/services/editor/xinha/modules/ColorPicker/ColorPicker.js
+%%HORDIR%%/services/editor/xinha/modules/ColorPicker/lang/da.js
 %%HORDIR%%/services/editor/xinha/modules/ColorPicker/lang/pt_br.js
 %%HORDIR%%/services/editor/xinha/modules/ColorPicker/src/ColorPicker.js
 %%HORDIR%%/services/editor/xinha/modules/CreateLink/link.html
@@ -1429,6 +1432,7 @@
 %%HORDIR%%/services/editor/xinha/modules/Dialogs/src/panel-dialog.js
 %%HORDIR%%/services/editor/xinha/modules/Dialogs/src/popupwin.js
 %%HORDIR%%/services/editor/xinha/modules/FullScreen/full-screen.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/da.js
 %%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/de.js
 %%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/fr.js
 %%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/ja.js
@@ -1465,6 +1469,7 @@
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/CharacterMap.css
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/character-map.js
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/img/ed_charmap.gif
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/da.js
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/de.js
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/fr.js
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/it.js
@@ -1477,6 +1482,7 @@
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/popups/select_character.html
 %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/src/character-map.js
 %%HORDIR%%/services/editor/xinha/plugins/ContextMenu/context-menu.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/da.js
 %%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/de.js
 %%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/el.js
 %%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/fr.js
@@ -1499,6 +1505,7 @@
 %%HORDIR%%/services/editor/xinha/plugins/ListType/img/square.png
 %%HORDIR%%/services/editor/xinha/plugins/ListType/img/upper-alpha.png
 %%HORDIR%%/services/editor/xinha/plugins/ListType/img/upper-roman.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/da.js
 %%HORDIR%%/services/editor/xinha/plugins/ListType/lang/de.js
 %%HORDIR%%/services/editor/xinha/plugins/ListType/lang/fr.js
 %%HORDIR%%/services/editor/xinha/plugins/ListType/lang/ja.js

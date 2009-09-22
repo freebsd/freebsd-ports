@@ -122,7 +122,9 @@
 %%HORDIR%%/scripts/sql/ingo.oci8.sql
 %%HORDIR%%/scripts/sql/ingo.sql
 %%HORDIR%%/scripts/sql/ingo.xml
+%%HORDIR%%/scripts/upgrades/1.2.1_to_1.2.2.sql
 %%HORDIR%%/scripts/upgrades/1.2_to_1.2.1.sql
+%%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/scripts/upgrades/convert_imp_filters.php
 %%HORDIR%%/scripts/upgrades/convert_prefs_to_sql.php

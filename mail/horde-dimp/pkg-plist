@@ -41,6 +41,7 @@
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/prefs.php
 %%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/dimp.mo
@@ -56,6 +57,7 @@
 %%HORDIR%%/locale/sk_SK/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/dimp.mo
 %%HORDIR%%/message.php
+%%HORDIR%%/po/da_DK.po
 %%HORDIR%%/po/de_DE.po
 %%HORDIR%%/po/dimp.pot
 %%HORDIR%%/po/es_ES.po
@@ -251,6 +253,8 @@
 @dirrm %%HORDIR%%/lib/Notification
 @dirrm %%HORDIR%%/lib/Views
 @dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
 @dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/de_DE
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES

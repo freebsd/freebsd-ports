@@ -108,9 +108,13 @@
 %%HORDIR%%/scripts/sql/mnemo.sql
 %%HORDIR%%/scripts/sql/mnemo.xml
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
-%%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsq.sql
+%%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
+%%HORDIR%%/scripts/upgrades/2.2.1_to_2.2.2.pgsql.sql
+%%HORDIR%%/scripts/upgrades/2.2.1_to_2.2.2.sql
+%%HORDIR%%/scripts/upgrades/2.2_to_2.2.1.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.2.1.sql
+%%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
 %%HORDIR%%/templates/common-header.inc

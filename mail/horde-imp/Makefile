@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.3.3
+PORTVERSION=	4.3.5
 PORTEPOCH=	1
 CATEGORIES=	mail www
 DISTFILES=	${PORTNAME}-h3-${PORTVERSION}${EXTRACT_SUFX}
@@ -14,7 +14,7 @@ DISTFILES=	${PORTNAME}-h3-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webmail system for IMAP/POP3 mailboxes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-h3-${PORTVERSION}
 
 #-----------------------------------------------------------------------
 # You may define these options:

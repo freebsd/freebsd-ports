@@ -19,6 +19,7 @@
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/version.php
 %%HORDIR%%/locale/ca_ES/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/eu_ES/LC_MESSAGES/mimp.mo
@@ -40,6 +41,7 @@
 %%HORDIR%%/message.php
 %%HORDIR%%/po/README
 %%HORDIR%%/po/ca_ES.po
+%%HORDIR%%/po/da_DK.po
 %%HORDIR%%/po/de_DE.po
 %%HORDIR%%/po/es_ES.po
 %%HORDIR%%/po/eu_ES.po
@@ -111,6 +113,8 @@
 @dirrm %%HORDIR%%/locale/es_ES
 @dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
 @dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ca_ES
 @dirrm %%HORDIR%%/locale
