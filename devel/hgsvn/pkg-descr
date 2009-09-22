@@ -6,12 +6,13 @@ latest changes from the SVN server, manage private branches, submit
 patches to project maintainers, etc.  And of course you have fast
 local operations like "hg log", "hg annotate"...
 
-Currently two scripts are provided:
+Three scripts are provided:
 
  * hgimportsvn initializes an SVN checkout which is also a
    Mercurial repository.
  * hgpullsvn pulls the latest changes from the SVN repository,
    and updates the Mercurial repository accordingly.  It can
    be run multiple times.
+ * hgpushsvn pushes your local Mercurial commits back to the SVN repository.
 
-WWW:	http://cheeseshop.python.org/pypi/hgsvn
+WWW:	http://pypi.python.org/pypi/hgsvn
