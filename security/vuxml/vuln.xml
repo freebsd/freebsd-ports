@@ -35,6 +35,59 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bad1b090-a7ca-11de-873f-0030843d3802">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.20</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+	<range><lt>6.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Team reports:</p>
+	<blockquote cite="http://drupal.org/node/579482">
+	  <p>The core OpenID module does not correctly implement Form API for
+	    the form that allows one to link user accounts with OpenID
+	    identifiers. A malicious user is therefore able to use cross site
+	    request forgeries to add attacker controlled OpenID identities to
+	    existing accounts. These OpenID identities can then be used to gain
+	    access to the affected accounts.</p>
+	  <p>The OpenID module is not a compliant implementation of the OpenID
+	    Authentication 2.0 specification. An implementation error allows a
+	    user to access the account of another user when they share the same
+	    OpenID 2.0 provider.</p>
+	  <p>File uploads with certain extensions are not correctly processed by
+	    the File API. This may lead to the creation of files that are
+	    executable by Apache. The .htaccess that is saved into the files
+	    directory by Drupal should normally prevent execution. The files are
+	    only executable when the server is configured to ignore the directives
+	    in the .htaccess file.</p>
+	  <p>Drupal doesn't regenerate the session ID when an anonymous user
+	    follows the one time login link used to confirm email addresses and
+	    reset forgotten passwords. This enables a malicious user to fix and
+	    reuse the session id of a victim under certain circumstances.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/579482</url>
+      <url>http://secunia.com/advisories/36787/</url>
+      <url>http://secunia.com/advisories/36786/</url>
+      <url>http://secunia.com/advisories/36781/</url>
+      <url>http://secunia.com/advisories/36776/</url>
+      <url>http://secunia.com/advisories/36785/</url>
+    </references>
+    <dates>
+      <discovery>2009-09-17</discovery>
+      <entry>2009-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="113cd7e9-a4e2-11de-84af-001195e39404">
     <topic>fwbuilder -- security issue in temporary file handling</topic>
     <affects>
