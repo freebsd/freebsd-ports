@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.5.5-7
+DISTVERSION=	6.5.5-10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
-		SF/${PORTNAME:L}/${PORTNAME}/00-6.5.4 \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/
+		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
+		SF/${PORTNAME:L}/${PORTNAME}/6.5 \
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Image processing tools
