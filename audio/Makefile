@@ -47,7 +47,6 @@
     SUBDIR += aubio
     SUBDIR += audacious-crossfade
     SUBDIR += audacious-dumb
-    SUBDIR += audacious-mac
     SUBDIR += audacity
     SUBDIR += audacity-devel
     SUBDIR += audex
