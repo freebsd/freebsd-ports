@@ -4167,3 +4167,4 @@ devel/p5-Data-Postponed||2009-09-16|Has expired: the module was removed from CPA
 net/asterisk12-addons||2009-09-16|Has expired: does not build
 archivers/lzmautils|archivers/xz|2009-09-21|Project was renamed
 archivers/lzmautils-devel|archivers/xz|2009-09-21|Project was renamed
+audio/audacious-mac||2009-09-21|does not work with audacious 2 and audacious-plugins already delivers a demac plugin
