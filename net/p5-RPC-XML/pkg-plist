@@ -25,6 +25,7 @@
 %%SITE_PERL%%/auto/RPC/XML/Server/add_proc.al
 %%SITE_PERL%%/auto/RPC/XML/Server/add_methods_in_dir.al
 %%SITE_PERL%%/auto/RPC/XML/Server/add_default_methods.al
+%%SITE_PERL%%/auto/RPC/XML/Server/server_fault.al
 @dirrm %%SITE_PERL%%/auto/RPC/XML/Server
 %%SITE_PERL%%/auto/RPC/XML/Procedure/reload.al
 %%SITE_PERL%%/auto/RPC/XML/Procedure/match_signature.al
@@ -53,10 +54,13 @@
 %%SITE_PERL%%/RPC/XML/identity.xpl
 %%SITE_PERL%%/RPC/XML/Server.pm
 %%SITE_PERL%%/RPC/XML/Procedure.pm
+%%SITE_PERL%%/RPC/XML/Parser/XMLParser.pm
 %%SITE_PERL%%/RPC/XML/Parser.pm
+%%SITE_PERL%%/RPC/XML/ParserFactory.pm
 %%SITE_PERL%%/RPC/XML/Method.pm
 %%SITE_PERL%%/RPC/XML/Function.pm
 %%SITE_PERL%%/RPC/XML/Client.pm
+@dirrm %%SITE_PERL%%/RPC/XML/Parser
 @dirrm %%SITE_PERL%%/RPC/XML
 @dirrmtry %%SITE_PERL%%/RPC
 %%SITE_PERL%%/Apache/RPC/status.xpl

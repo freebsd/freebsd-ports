@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RPC-XML
-PORTVERSION=	0.67
+PORTVERSION=	0.69
 CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +29,9 @@ MAN3=		Apache::RPC::Server.3 \
 		RPC::XML::Client.3 \
 		RPC::XML::Function.3 \
 		RPC::XML::Method.3 \
+		RPC::XML::Parser::XMLParser.3 \
 		RPC::XML::Parser.3 \
+		RPC::XML::ParserFactory.3 \
 		RPC::XML::Procedure.3 \
 		RPC::XML::Server.3
 
