@@ -8397,8 +8397,6 @@ lyx15                           ports/print/lyx15
 lzip                            ports/archivers/lzip
 lzma                            ports/archivers/lzma
 lzmalib                         ports/archivers/lzmalib
-lzmautils                       ports/archivers/lzmautils
-lzmautils-devel                 ports/archivers/lzmautils-devel
 lzo                             ports/archivers/lzo
 lzo2                            ports/archivers/lzo2
 lzop                            ports/archivers/lzop
@@ -9506,6 +9504,7 @@ netstrain                       ports/net/netstrain
 netsurf                         ports/www/netsurf
 nettest                         ports/net/nettest
 nettle                          ports/security/nettle
+nettle2                         ports/security/nettle2
 nettoe                          ports/games/nettoe
 nettop                          ports/net-mgmt/nettop
 netustad                        ports/net-mgmt/netustad
@@ -9689,6 +9688,7 @@ numptyphysics-npcomplete        ports/games/numptyphysics-npcomplete
 nunnimcax                       ports/textproc/nunnimcax
 nurbs++                         ports/graphics/nurbs++
 nusoap                          ports/net/nusoap
+nut22                           ports/sysutils/nut22
 nuttcp                          ports/benchmarks/nuttcp
 nux                             ports/textproc/nux
 nvclock                         ports/sysutils/nvclock
@@ -9977,6 +9977,7 @@ opendbx                         ports/databases/opendbx
 opendchub                       ports/net-p2p/opendchub
 opendd                          ports/dns/opendd
 opendis                         ports/graphics/opendis
+opendkim                        ports/mail/opendkim
 opendx                          ports/graphics/opendx
 opendylan                       ports/lang/opendylan
 openerp-server                  ports/finance/openerp-server
@@ -24644,6 +24645,7 @@ xye                             ports/games/xye
 xymon-client                    ports/net-mgmt/xymon-client
 xymon-server                    ports/net-mgmt/xymon-server
 xyssl                           ports/security/xyssl
+xz                              ports/archivers/xz
 xzgv                            ports/graphics/xzgv
 xzip                            ports/games/xzip
 xzoom                           ports/x11/xzoom
