@@ -47,11 +47,14 @@
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_bar.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_errhandler.inc.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_gradient.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_legend.inc.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_line.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_pie.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_pie3d.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_plotband.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_plotmark.inc.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_rgb.inc.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_text.inc.php
 %%LOGCONDIR%%/classes/jpgraph/jpgraph_ttf.inc.php
 %%LOGCONDIR%%/classes/jpgraph/lang/de.inc.php
 %%LOGCONDIR%%/classes/jpgraph/lang/en.inc.php
@@ -329,5 +332,5 @@
 @dirrm %%LOGCONDIR%%/admin
 @dirrm %%LOGCONDIR%%/BitstreamVeraFonts
 @dirrmtry %%LOGCONDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDATA%%@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
