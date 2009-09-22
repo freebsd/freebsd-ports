@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Test-Database
-PORTVERSION=	1.02
+PORTVERSION=	1.06
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Database handles ready for testing
 
 BUILD_DEPENDS=	${SITE_PERL}/mach/DBI.pm:${PORTSDIR}/databases/p5-DBI \
@@ -26,10 +26,12 @@ PERL_CONFIGURE=	yes
 MAN3=		Test::Database.3 Test::Database::Driver.3 \
 		Test::Database::Driver::CSV.3 \
 		Test::Database::Driver::DBM.3 \
+		Test::Database::Driver::Pg.3 \
 		Test::Database::Driver::SQLite.3 \
 		Test::Database::Driver::SQLite2.3 \
 		Test::Database::Driver::mysql.3 \
 		Test::Database::Handle.3 \
+		Test::Database::Tutorial.3 \
 		Test::Database::Util.3
 
 .include <bsd.port.mk>
