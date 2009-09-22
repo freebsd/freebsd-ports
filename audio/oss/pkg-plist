@@ -1,12 +1,12 @@
 bin/ossinfo
 bin/ossmix
 bin/osspartysh
+bin/ossphone
 bin/ossplay
 bin/ossrecord
 bin/osstest
 bin/ossxmix
 etc/oss.conf
-lib/oss/conf/oss_allegro.conf.sample
 lib/oss/conf/oss_audigyls.conf.sample
 lib/oss/conf/oss_audioloop.conf.sample
 lib/oss/conf/oss_cs461x.conf.sample
@@ -17,6 +17,7 @@ lib/oss/conf/oss_fmedia.conf.sample
 lib/oss/conf/oss_hdaudio.conf.sample
 lib/oss/conf/oss_ich.conf.sample
 lib/oss/conf/oss_imux.conf.sample
+lib/oss/conf/oss_madi.conf.sample
 lib/oss/conf/oss_midiloop.conf.sample
 lib/oss/conf/oss_sblive.conf.sample
 lib/oss/conf/oss_sbpci.conf.sample
@@ -35,7 +36,6 @@ lib/oss/include/sys/soundcard.h
 @exec mkdir -p %D/lib/oss/logs
 @dirrmtry lib/oss/logs
 lib/oss/modules/oss_ali5455.ko
-lib/oss/modules/oss_allegro.ko
 lib/oss/modules/oss_atiaudio.ko
 lib/oss/modules/oss_audigyls.ko
 lib/oss/modules/oss_audioloop.ko
@@ -53,6 +53,7 @@ lib/oss/modules/oss_geode.ko
 lib/oss/modules/oss_hdaudio.ko
 lib/oss/modules/oss_ich.ko
 lib/oss/modules/oss_imux.ko
+lib/oss/modules/oss_madi.ko
 lib/oss/modules/oss_midiloop.ko
 lib/oss/modules/oss_midimix.ko
 lib/oss/modules/oss_sblive.ko
@@ -60,6 +61,7 @@ lib/oss/modules/oss_sbpci.ko
 lib/oss/modules/oss_sbxfi.ko
 lib/oss/modules/oss_solo.ko
 lib/oss/modules/oss_trident.ko
+lib/oss/modules/oss_userdev.ko
 lib/oss/modules/oss_via823x.ko
 lib/oss/modules/oss_via97.ko
 lib/oss/modules/oss_ymf7xx.ko
