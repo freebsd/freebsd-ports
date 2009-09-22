@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.1-build1052
-PORTREVISION=	1
+DISTVERSION=	4.2-build2000
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -27,21 +26,22 @@ SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
 MANCOMPRESSED=	yes
 
-MAN1=		ossinfo.1 ossmix.1 osspartysh.1 ossplay.1 ossrecord.1 \
-		osstest.1 ossxmix.1 soundoff.1 soundon.1
-MAN7=		oss_ali5455.7 oss_allegro.7 oss_atiaudio.7 oss_audigyls.7 \
-		oss_audioloop.7 oss_audiopci.7 oss_cmi878x.7 oss_cmpci.7 \
-		oss_cs4281.7 oss_cs461x.7 oss_digi96.7 oss_emu10k1x.7 \
-		oss_envy24.7 oss_envy24ht.7 oss_fmedia.7 oss_geode.7 \
-		oss_hdaudio.7 oss_ich.7 oss_imux.7 oss_midiloop.7 \
-		oss_midimix.7 oss_sblive.7 oss_sbpci.7 oss_sbxfi.7 \
-		oss_solo.7 oss_trident.7 oss_via823x.7 oss_via97.7 \
-		oss_ymf7xx.7 osscore.7
+MAN1=		ossinfo.1 ossmix.1 osspartysh.1 ossphone.1 ossplay.1 \
+		ossrecord.1 osstest.1 ossxmix.1 soundoff.1 soundon.1
+MAN7=		oss_ali5455.7 oss_atiaudio.7 oss_audigyls.7 \
+		oss_audioloop.7 oss_audiopci.7 oss_cmi878x.7 \
+		oss_cmpci.7 oss_cs4281.7 oss_cs461x.7 oss_digi96.7 \
+		oss_emu10k1x.7 oss_envy24.7 oss_envy24ht.7 \
+		oss_fmedia.7 oss_geode.7 oss_hdaudio.7 oss_ich.7 \
+		oss_imux.7 oss_madi.7 oss_midiloop.7 oss_midimix.7 \
+		oss_sblive.7 oss_sbpci.7 oss_sbxfi.7 oss_solo.7 \
+		oss_trident.7 oss_userdev.7 oss_via823x.7 \
+		oss_via97.7 oss_ymf7xx.7 osscore.7
 MAN8=		ossdetect.8 ossdevlinks.8 savemixer.8 vmixctl.8
 
-CONF_FILES=	oss_allegro oss_audigyls oss_audioloop oss_cs461x \
-		oss_emu10k1x oss_envy24 oss_envy24ht oss_fmedia \
-		oss_hdaudio oss_ich oss_imux oss_midiloop oss_sblive \
+CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \
+		oss_envy24 oss_envy24ht oss_fmedia oss_hdaudio \
+		oss_ich oss_imux oss_madi oss_midiloop oss_sblive \
 		oss_sbpci oss_sbxfi oss_trident oss_usb oss_userdev \
 		oss_ymf7xx osscore
 
@@ -52,26 +52,34 @@ PROTO_SBINDIR=	${PROTO_DIR}/usr/sbin
 PROTO_MANDIR=	${PROTO_DIR}/usr/share/man
 PROTO_OSSLIBDIR=${PROTO_DIR}${PREFIX}/lib/oss
 
+OPTIONS=	VORBIS	"OGG/Vorbis audio support"	on
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
 .endif
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
+CONFIGURE_ENV+=	OGG_SUPPORT=YES
+.endif
+
 pre-patch:
 	${FIND} ${WRKDIR}/${DISTNAME} -type f \
-	    -name configure -or -name '*.[ch]' -or -name '*.man' | \
+	    -name '*.[ch]' -or -name '*.man' | \
 	    ${XARGS} ${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' \
 	    -e 's|/etc/oss|${PREFIX}/etc/oss|g'
 
 post-patch:
 	${FIND} ${WRKDIR} -name configure -or -name make.local -or \
-	    -name soundoff -or -name soundon | \
+	    -name soundoff -or -name soundon -or -name srcconf.c | \
 	    ${XARGS} ${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g'
 
 do-configure:
 	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${WRKDIR}/${DISTNAME}/configure
+	(cd ${WRKSRC} && \
+	    ${SETENV} ${CONFIGURE_ENV} ${WRKDIR}/${DISTNAME}/configure)
 
 do-install:
 	${INSTALL_PROGRAM} ${PROTO_BINDIR}/* ${PREFIX}/bin/

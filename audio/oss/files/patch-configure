@@ -1,0 +1,28 @@
+--- configure.orig	2009-08-10 13:16:21.000000000 -0400
++++ configure	2009-09-22 14:38:20.000000000 -0400
+@@ -2,7 +2,7 @@
+ 
+ CONFIGURE=YES
+ COPY_OPTIONS=
+-OSSLIBDIR="/usr/lib/oss"
++OSSLIBDIR="%%PREFIX%%/lib/oss"
+ TARGETOS=
+ 
+ unset USE_PHPMAKE
+@@ -24,11 +24,11 @@
+ 
+ unset CDPATH >/dev/null 2>&1
+ 
+-if test -f /usr/include/vorbis/vorbisfile.h || test -f /usr/local/include/vorbisfile.h
+-then
+-	OGG_SUPPORT=YES
+-	export OGG_SUPPORT
+-fi
++#if test -f /usr/include/vorbis/vorbisfile.h || test -f /usr/local/include/vorbisfile.h
++#then
++#	OGG_SUPPORT=YES
++#	export OGG_SUPPORT
++#fi
+ 
+ DIR=`pwd`
+ SRCDIR=`dirname $0`
