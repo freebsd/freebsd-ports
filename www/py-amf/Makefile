@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amf
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5
 CATEGORIES=	www devel python
 MASTER_SITES=	http://download.pyamf.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
