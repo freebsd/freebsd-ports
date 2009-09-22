@@ -65,6 +65,10 @@ CONFIGURE_ARGS+=--with-cmz80
 CONFIGURE_ARGS+=--with-sdl-audio
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/%define %1 @UNDERSCORE@%1 /d' \
+		${WRKSRC}/raze/raze.asm.in
+
 post-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
