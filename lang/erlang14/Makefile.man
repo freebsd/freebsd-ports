@@ -214,6 +214,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ic_clib.3 \
 	igor.3 \
 	inet.3 \
+	inet_res.3 \
 	inets.3 \
 	init.3 \
 	init_stub.3 \
@@ -364,7 +365,9 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxArtProvider.3 \
 	wxAuiDockArt.3 \
 	wxAuiManager.3 \
+	wxAuiManagerEvent.3 \
 	wxAuiNotebook.3 \
+	wxAuiNotebookEvent.3 \
 	wxAuiPaneInfo.3 \
 	wxAuiTabArt.3 \
 	wxBitmap.3 \
@@ -443,6 +446,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxGridSizer.3 \
 	wxHelpEvent.3 \
 	wxHtmlEasyPrinting.3 \
+	wxHtmlLinkEvent.3 \
+	wxHtmlWindow.3 \
 	wxIcon.3 \
 	wxIconBundle.3 \
 	wxIconizeEvent.3 \
