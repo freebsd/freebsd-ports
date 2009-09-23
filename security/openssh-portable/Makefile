@@ -187,7 +187,8 @@ CONFIGURE_ARGS+=	--localstatedir=/var
 EMPTYDIR=		/var/empty
 PREFIX=			/usr
 ETCSSH=			/etc/ssh
-USE_RC_SUBR=		openssh
+USE_RC_SUBR=	yes
+SUB_FILES+=		openssh
 PLIST_SUB+=		NOTBASE="@comment "
 PLIST_SUB+=		BASE=""
 PLIST_SUB+=		BASEPREFIX="${PREFIX}"
