@@ -277,6 +277,7 @@ share/gtk-doc/html/ibus/up.png
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/te/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus.mo
