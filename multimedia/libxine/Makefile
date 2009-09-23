@@ -55,8 +55,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
 		--with-external-libmad \
-		--with-external-libdts --with-libflac --disable-v4l \
-		--with-external-ffmpeg=no
+		--with-external-libdts --with-libflac --disable-v4l
 
 OPTIONS=	ARTS "Enable aRts support" off \
 		CACA "Enable libcaca support" off \
@@ -64,6 +63,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		JACK "Enable JACK support" off \
 		GNOMEVFS2 "Enable GnomeVFS2 support" off \
 		PULSEAUDIO "Enable PulseAudio support" off \
+		FFMPEG "Enable external FFMpeg" off \
 		XVMC "Enable XvMC support" off \
 		SMB "Enable SMB protocol support" off \
 		AALIB "Enable aalib support" off \
@@ -131,6 +131,15 @@ PLIST_SUB+=	WITH_PULSEAUDIO=""
 .else
 PLIST_SUB+=	WITH_PULSEAUDIO="@comment "
 CONFIGURE_ARGS+=	--without-pulseaudio
+.endif
+
+.if defined(WITH_FFMPEG)
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+CONFIGURE_ARGS+=	--with-external-ffmpeg
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/ffmeg" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/ffmpeg"
+.else
+CONFIGURE_ARGS+=	--with-external-ffmpeg=no
 .endif
 
 .if defined(WITH_XVMC)
