@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Proc/Wait3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Wait3/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Wait3/Wait3.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Wait3/Wait3.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Wait3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Proc

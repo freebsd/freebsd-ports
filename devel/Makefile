@@ -1796,6 +1796,7 @@
     SUBDIR += p5-Proc-Queue
     SUBDIR += p5-Proc-Reliable
     SUBDIR += p5-Proc-Simple
+    SUBDIR += p5-Proc-Wait3
     SUBDIR += p5-Project-Gantt
     SUBDIR += p5-RRDTool-OO
     SUBDIR += p5-Rcs
