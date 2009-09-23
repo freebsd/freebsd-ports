@@ -12,8 +12,11 @@ share/apps/desktoptheme/default/widgets/dock-background-vidro.svgz
 share/apps/desktoptheme/default/widgets/dock-background.svgz
 share/apps/desktoptheme/default/widgets/tasks-indicators.svgz
 share/kde4/services/plasma-applet-daisy.desktop
+share/locale/bs/LC_MESSAGES/plasma_applet_daisy.mo
+share/locale/de/LC_MESSAGES/plasma_applet_daisy.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_daisy.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_daisy.mo
 share/locale/it/LC_MESSAGES/plasma_applet_daisy.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_daisy.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_daisy.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_daisy.mo
