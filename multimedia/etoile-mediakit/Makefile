@@ -34,4 +34,6 @@ USE_GNUSTEP_MAKE_DIRS+=	Frameworks/MediaKit
 FOUNDATION_PORT?=	devel/etoile-foundation
 SYSTEMCONFIG_PORT?=	deskutils/etoile-systemconfig
 
+ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/ffmpeg
+
 .include <bsd.port.mk>
