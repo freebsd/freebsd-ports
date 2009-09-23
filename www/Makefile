@@ -67,6 +67,8 @@
     SUBDIR += cacheboy15-devel
     SUBDIR += cacheboy16
     SUBDIR += cadaver
+    SUBDIR += cakephp11
+    SUBDIR += cakephp12
     SUBDIR += calamaris
     SUBDIR += campsite
     SUBDIR += castget
