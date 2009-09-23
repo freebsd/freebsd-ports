@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=   http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=     ${PORTNAME} ${PORTNAME}/old
 
-MAINTAINER=	r.gruyters@snow.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
 LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
