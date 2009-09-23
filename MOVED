@@ -4168,3 +4168,4 @@ net/asterisk12-addons||2009-09-16|Has expired: does not build
 archivers/lzmautils|archivers/xz|2009-09-21|Project was renamed
 archivers/lzmautils-devel|archivers/xz|2009-09-21|Project was renamed
 audio/audacious-mac||2009-09-21|does not work with audacious 2 and audacious-plugins already delivers a demac plugin
+systutils/uptimec||2009-09-23|Project is gone since 2007
