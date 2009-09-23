@@ -801,7 +801,6 @@
     SUBDIR += upsd
     SUBDIR += upsdaemon
     SUBDIR += upsmon
-    SUBDIR += uptimec
     SUBDIR += uptimed
     SUBDIR += usbhotkey
     SUBDIR += usbutil

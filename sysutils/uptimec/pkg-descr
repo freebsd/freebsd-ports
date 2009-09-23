@@ -1,6 +1,0 @@
-The Uptime Client
-
-The Uptime Client is a tiny daemon process that is installed on participating
-hosts, and sends details about uptime etc to the central server.
-
-WWW: http://mreriksson.net/uptimes/
