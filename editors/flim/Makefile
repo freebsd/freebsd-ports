@@ -7,7 +7,6 @@
 
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
-PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/
@@ -19,7 +18,7 @@ COMMENT?=	FLIM, message representation or encoding elisp library for emacs
 PORTCLASS?=	master
 
 # distfile version
-FLIM_VER=	${FLIM_TRUNK}.8
+FLIM_VER=	${FLIM_TRUNK}.9
 FLIM_TRUNK=	1.14
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim
