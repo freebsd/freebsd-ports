@@ -1,7 +1,7 @@
---- configure.orig	2008-05-03 10:57:25.000000000 +0100
-+++ configure	2008-05-03 10:57:50.000000000 +0100
-@@ -267,7 +267,7 @@
- : ${ac_max_here_lines=38}
+--- configure.orig	2009-08-26 19:53:11.000000000 +0100
++++ configure	2009-09-18 14:08:54.000000000 +0100
+@@ -594,7 +594,7 @@
+ SHELL=${CONFIG_SHELL-/bin/sh}
  
  # Identity of this package.
 -PACKAGE_NAME='gtkwave'
@@ -9,7 +9,7 @@
  PACKAGE_TARNAME='gtkwave'
  PACKAGE_VERSION='3.x'
  PACKAGE_STRING='gtkwave 3.x'
-@@ -1646,7 +1646,7 @@
+@@ -2219,7 +2219,7 @@
  
  
  # Define the identity of the package.
