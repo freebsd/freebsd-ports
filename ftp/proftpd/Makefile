@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.2a
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -21,8 +20,6 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		http://www.smartftp.com/oss/proftpd/:digest \
 		LOCAL/beech:digest \
 		LOCAL/beech:sql_tds
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	chris@officialunix.com
 COMMENT?=	Highly configurable ftp daemon
@@ -271,6 +268,8 @@ CONFIGURE_ARGS+=	--with-includes=${INCLUDEDIRS}
 CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 .endif
 
+#Todo: Fix this to not use != if possible.
+#      Will leave as is for now.
 MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 
 post-extract:
