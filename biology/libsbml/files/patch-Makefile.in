@@ -5,7 +5,7 @@
  
  install-pc: libsbml.pc
 -	$(INSTALL_SH) libsbml.pc -m 0644 "$(DESTDIR)$(LIBDIR)/pkgconfig/libsbml.pc"
-+	$(INSTALL_SH) libsbml.pc -m 0644 "/usr/local/libdata/pkgconfig/libsbml.pc"
++	$(INSTALL_SH) libsbml.pc -m 0644 "%%PREFIX%%/libdata/pkgconfig/libsbml.pc"
  
  install-la: libsbml.la
  ifeq "$(HOST_TYPE)" "cygwin"
@@ -14,21 +14,21 @@
  
  uninstall-libsbml-pc:
 -	@target="$(DESTDIR)$(LIBDIR)/pkgconfig/libsbml.pc"; \
-+	@target="/usr/local/libdata/pkgconfig/libsbml.pc"; \
++	@target="%%PREFIX%%/libdata/pkgconfig/libsbml.pc"; \
  	if test -f $$target ; then \
  	  echo rm $$target; \
  	  rm $$target; \
  	fi; \
 -	if test -d "$(DESTDIR)$(LIBDIR)/pkgconfig"; then \
-+	if test -d "/usr/local/libdata/pkgconfig"; then \
++	if test -d "%%PREFIX%%/libdata/pkgconfig"; then \
  	  if test -n "`find $(DESTDIR)$(LIBDIR) -maxdepth 0 -empty`"; then \
 -	    echo rmdir "$(DESTDIR)$(LIBDIR)/pkgconfig"; \
 -	    rmdir "$(DESTDIR)$(LIBDIR)/pkgconfig"; \
-+	    echo rmdir "/usr/local/libdata/pkgconfig"; \
-+	    rmdir "/usr/local/libdata/pkgconfig"; \
++	    echo rmdir "%%PREFIX%%/libdata/pkgconfig"; \
++	    rmdir "%%PREFIX%%/libdata/pkgconfig"; \
  	  else \
 -	    echo "Directory $(DESTDIR)$(LIBDIR)/pkgconfig not empty; leaving it alone"; \
-+	    echo "Directory /usr/local/libdata/pkgconfig not empty; leaving it alone"; \
++	    echo "Directory %%PREFIX%%/libdata/pkgconfig not empty; leaving it alone"; \
  	  fi; \
  	fi;
  

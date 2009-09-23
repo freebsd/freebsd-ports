@@ -17,6 +17,7 @@ include/sbml/SBMLDocument.h
 include/sbml/SBMLError.h
 include/sbml/SBMLErrorLog.h
 include/sbml/SBMLErrorTable.h
+include/sbml/SBMLNamespaces.h
 include/sbml/SBMLReader.h
 include/sbml/SBMLTypeCodes.h
 include/sbml/SBMLTypes.h
@@ -28,6 +29,7 @@ include/sbml/Species.h
 include/sbml/SpeciesReference.h
 include/sbml/SpeciesType.h
 include/sbml/StoichiometryMath.h
+include/sbml/SyntaxChecker.h
 include/sbml/Trigger.h
 include/sbml/Unit.h
 include/sbml/UnitDefinition.h
@@ -40,7 +42,9 @@ include/sbml/common/extern.h
 include/sbml/common/libsbml-config-unix.h
 include/sbml/common/libsbml-config-win.h
 include/sbml/common/libsbml-config.h
+include/sbml/common/libsbml-namespace.h
 include/sbml/common/libsbml-version.h
+include/sbml/common/operationReturnValues.h
 include/sbml/common/sbmlfwd.h
 include/sbml/compress/CompressCommon.h
 include/sbml/compress/InputDecompressor.h
@@ -110,8 +114,9 @@ include/sbml/xml/XMLParser.h
 include/sbml/xml/XMLToken.h
 include/sbml/xml/XMLTokenizer.h
 include/sbml/xml/XMLTriple.h
-lib/libsbml.3.3.2.so
+lib/libsbml.so.4
 lib/libsbml.so
+lib/libsbml.la
 lib/libsbml.a
 @dirrm include/sbml/annotation
 @dirrm include/sbml/common
