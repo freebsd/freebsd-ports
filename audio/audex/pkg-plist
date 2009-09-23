@@ -23,7 +23,9 @@ share/icons/hicolor/48x48/apps/audex.png
 share/icons/hicolor/64x64/apps/audex.png
 share/locale/cs/LC_MESSAGES/audex.mo
 share/locale/de/LC_MESSAGES/audex.mo
+share/locale/it/LC_MESSAGES/audex.mo
 share/locale/nl/LC_MESSAGES/audex.mo
 share/locale/pt_BR/LC_MESSAGES/audex.mo
+share/locale/ru/LC_MESSAGES/audex.mo
 @dirrm share/apps/audex/images
 @dirrm share/apps/audex
