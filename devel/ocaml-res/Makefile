@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	res
-PORTVERSION=	2.2.6
+PORTVERSION=	3.2.0
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
+MASTER_SITES=	http://hg.ocaml.info/release/res/archive/
 PKGNAMEPREFIX=	ocaml-
+DISTNAME=	release-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Automatically Resizing Contiguous Memory for OCaml
@@ -22,9 +23,10 @@ USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAML_WASH=	yes
 
-DOCS=		README
+DOCS=		README.txt
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-release-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
