@@ -22,7 +22,7 @@ PLIST_FILES=	bin/sendSNPP.pl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${PORTNAME}.pl
-	exit 1
+
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTNAME}.pl ${PREFIX}/bin
 
