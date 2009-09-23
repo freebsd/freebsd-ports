@@ -1,0 +1,13 @@
+The autodie pragma provides a convenient way to replace functions
+that normally return false on failure with equivalents that throw
+an exception on failure.
+
+The autodie pragma has lexical scope, meaning that functions and
+subroutines altered with autodie will only change their behaviour
+until the end of the enclosing block, file, or eval.
+
+If system is specified as an argument to autodie, then it uses
+IPC::System::Simple to do the heavy lifting. See the description
+of that module for more information.
+
+WWW:	http://search.cpan.org/dist/autodie/
