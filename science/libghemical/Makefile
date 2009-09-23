@@ -34,4 +34,8 @@ CONFIGURE_ARGS+=	--enable-mpqc --enable-openbabel --enable-mopac7
 
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 
+.if ${OSVERSION} >= 700000
+BROKEN=		does not configure
+.endif
+
 .include <bsd.port.post.mk>
