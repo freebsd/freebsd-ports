@@ -41,8 +41,13 @@
 #define	ENDFILES { "/usr/lib/crtend.o", "/usr/lib/crtn.o", NULL }
 #define STARTLABEL "_start"
 
+/*
+ * XXX multitargets ?
+ */
 #if defined(mach_i386) || defined(mach_x86)
 #define	CPPMDADD { "-D__i386__", "-D__i386", NULL, }
+#elif defined(mach_amd64)
+#define CPPMDADD { "-D__x86_64__", NULL, }
 #else
 #error defines for arch missing
 #endif
