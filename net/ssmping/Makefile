@@ -22,6 +22,12 @@ PLIST_FILES=	bin/ssmping \
 		bin/mcfirst \
 		sbin/ssmpingd
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+IGNORE=		does not work at FreeBSD 7.x and newer
+.endif
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/ssmping ${PREFIX}/bin
 		${INSTALL_PROGRAM} ${WRKSRC}/asmping ${PREFIX}/bin
@@ -31,4 +37,4 @@ do-install:
 		${INSTALL_MAN} ${WRKSRC}/asmping.1 ${PREFIX}/man/man1
 		${INSTALL_MAN} ${WRKSRC}/mcfirst.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
