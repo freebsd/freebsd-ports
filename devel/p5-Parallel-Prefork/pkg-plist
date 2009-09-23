@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Parallel/Prefork.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Prefork/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Prefork
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel
+@dirrmtry %%SITE_PERL%%/Parallel

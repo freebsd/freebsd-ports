@@ -1749,6 +1749,7 @@
     SUBDIR += p5-Package-Generator
     SUBDIR += p5-PadWalker
     SUBDIR += p5-Parallel-ForkManager
+    SUBDIR += p5-Parallel-Prefork
     SUBDIR += p5-Params-CallbackRequest
     SUBDIR += p5-Params-Check
     SUBDIR += p5-Params-Classify
