@@ -481,6 +481,7 @@
     SUBDIR += gstreamer-plugins-soup
     SUBDIR += gtgt
     SUBDIR += gtkmozedit
+    SUBDIR += gtkparasite
     SUBDIR += gtranslator
     SUBDIR += guichan
     SUBDIR += guikachu
