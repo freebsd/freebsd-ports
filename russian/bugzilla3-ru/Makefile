@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	bugzilla-ru
-DISTVERSION=	3.2rc2-ru-1.0
+DISTVERSION=	3.4.2-ru-20090923
 CATEGORIES=	russian
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/bugzilla-3.4-ru/${DISTVERSION:S/-ru//}/
 DISTNAME=	bugzilla-${DISTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=3.2:${PORTSDIR}/devel/bugzilla
+RUN_DEPENDS=	bugzilla>=3.4.2:${PORTSDIR}/devel/bugzilla
 
 CONFLICTS?=	ja-bugzilla-2.* bugzilla-2.*
 
@@ -31,11 +31,11 @@ BUGZILLADIR=	${PREFIX}/www/data/bugzilla
 PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${MKDIR} ${BUGZILLADIR}
-	${TAR} -C ${WRKSRC} -cf - . | \
-		${TAR} --unlink -C ${BUGZILLADIR} -xf -
+	(cd ${WRKSRC} && ${PAX} -r -w * ${BUGZILLADIR})
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}

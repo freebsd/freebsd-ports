@@ -1,8 +1,5 @@
 %%BUGZILLADIR%%/README-ru.en
 %%BUGZILLADIR%%/README-ru.ru.UTF-8
-%%BUGZILLADIR%%/help/ru/bug_status.html
-%%BUGZILLADIR%%/help/ru/bugwritinghelp.html
-%%BUGZILLADIR%%/help/ru/confirmhelp.html
 %%BUGZILLADIR%%/help/ru/glossary.html
 %%BUGZILLADIR%%/template/ru/default/account/auth/login-small.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/account/auth/login.html.tmpl
@@ -80,8 +77,8 @@
 %%BUGZILLADIR%%/template/ru/default/admin/params/ldap.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/mta.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/patchviewer.html.tmpl
-%%BUGZILLADIR%%/template/ru/default/admin/params/radius.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/query.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/radius.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/shadowdb.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/usermatch.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/products/confirm-delete.html.tmpl
@@ -95,9 +92,9 @@
 %%BUGZILLADIR%%/template/ru/default/admin/products/list-classifications.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/products/list.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/products/updated.html.tmpl
-%%BUGZILLADIR%%/template/ru/default/admin/settings/edit.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/sanitycheck/list.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/sanitycheck/messages.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/settings/edit.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/sudo.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/table.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/users/confirm-delete.html.tmpl
@@ -145,7 +142,7 @@
 %%BUGZILLADIR%%/template/ru/default/bug/dependency-tree.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/bug/edit.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/bug/field.html.tmpl
-%%BUGZILLADIR%%/template/ru/default/bug/keyword-chooser.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/format_comment.txt.tmpl
 %%BUGZILLADIR%%/template/ru/default/bug/knob.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/bug/navigate.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/bug/process/bugmail.html.tmpl
@@ -171,6 +168,7 @@
 %%BUGZILLADIR%%/template/ru/default/global/choose-product.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/code-error.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/common-links.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/confirm-action.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/confirm-user-match.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/docslinks.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/field-descs.none.tmpl
