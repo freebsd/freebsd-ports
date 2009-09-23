@@ -18,9 +18,7 @@
 %%SITE_PERL%%/Mouse/Util/TypeConstraints.pm
 %%SITE_PERL%%/Squirrel.pm
 %%SITE_PERL%%/Squirrel/Role.pm
-%%SITE_PERL%%/Test/Mouse.pm
 %%SITE_PERL%%/ouse.pm
-@dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/Squirrel
 @dirrmtry %%SITE_PERL%%/Mouse/Util
 @dirrmtry %%SITE_PERL%%/Mouse/Meta/Role
