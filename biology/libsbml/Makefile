@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	libsbml
-PORTVERSION=	3.3.2
+PORTVERSION=	4.0.0
 CATEGORIES=	biology devel
-MASTER_SITES=	SF/sbml/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	sbml/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An API Library for Working with SBML File
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
@@ -44,6 +45,10 @@ PLIST_SUB+=		WITH_RUBY=""
 .else
 PLIST_SUB+=		WITH_RUBY="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
