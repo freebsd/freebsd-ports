@@ -1,0 +1,9 @@
+Index: configure
+@@ -1956,6 +1956,7 @@
+ 	esac
+ 	case "$target_cpu" in
+ 	    i386) targmach=i386 ;;
++	    amd64) targmach=amd64 ;;
+ 	esac
+ 	;;
+ 
