@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd-ports@bluepex.com
 COMMENT=	Framework to provide start/stop/reload for a daemon
 
+RUN_DEPENDS=	p5-File-Flock>=0:${PORTSDIR}/devel/p5-File-Flock \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Daemon::Generic.3 \
