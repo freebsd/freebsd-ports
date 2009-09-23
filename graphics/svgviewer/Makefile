@@ -16,8 +16,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SVG Viewer for GNUstep
 
 LIB_DEPENDS+=	svg.1:${PORTSDIR}/graphics/libsvg
-LIB_DEPENDS+=	jpeg.1:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	png.1:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
