@@ -1,0 +1,12 @@
+include/dispatch/base.h
+include/dispatch/dispatch.h
+include/dispatch/group.h
+include/dispatch/object.h
+include/dispatch/once.h
+include/dispatch/queue.h
+include/dispatch/semaphore.h
+include/dispatch/source.h
+include/dispatch/time.h
+lib/libdispatch.so
+lib/libdispatch.so.0
+@dirrm include/dispatch

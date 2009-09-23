@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2009-09-23 17:32:20.000000000 +0400
++++ src/Makefile.in	2009-09-23 17:32:40.000000000 +0400
+@@ -218,7 +218,7 @@
+ # define this optional argument?  We need appropriate configure parts to make
+ # this conditional.
+ #
+-libdispatch_la_CFLAGS = -Wall -Werror -march=i686
++libdispatch_la_CFLAGS = ${CFLAGS}
+ INCLUDES = -I$(top_builddir) -I$(top_srcdir) \
+ 	@APPLE_LIBC_SOURCE_PATH@ @APPLE_XNU_SOURCE_PATH@
+ 

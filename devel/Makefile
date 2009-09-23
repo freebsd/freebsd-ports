@@ -640,6 +640,7 @@
     SUBDIR += libdfui
     SUBDIR += libdict
     SUBDIR += libdisasm
+    SUBDIR += libdispatch
     SUBDIR += libdlmalloc
     SUBDIR += libdlna
     SUBDIR += libdnsres
