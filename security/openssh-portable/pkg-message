@@ -1,6 +1,8 @@
 To enable this port, add openssh_enable="YES" in your rc.conf. To
 prevent conflict with openssh in the base system add sshd_enable="NO"
-in your rc.conf.
+in your rc.conf. Also you can configure openssh at another TCP port (via
+sshd_config 'Port' and 'Listen' options or via 'openssh_flags'
+variable in rc.conf) and run it in same time with base sshd.
 
 'PermitRootLogin no' is the default for the OpenSSH port.
 This now matches the PermitRootLogin configuration of OpenSSH in
