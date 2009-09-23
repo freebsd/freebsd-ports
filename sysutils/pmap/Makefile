@@ -29,10 +29,6 @@ MANCOMPRESSED=	maybe
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
-BROKEN=		Currently does not support -CURRENT
-.endif
-
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources
