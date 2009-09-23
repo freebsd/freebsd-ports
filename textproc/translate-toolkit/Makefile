@@ -28,8 +28,6 @@ BUILD_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
-BROKEN=		does not build
-
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
