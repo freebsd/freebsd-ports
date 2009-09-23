@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	1.04
+PORTVERSION=	1.05.1.20090721
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
-DISTNAME=	liberation-fonts
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
@@ -19,7 +18,9 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_XORG=	x11
+USE_ZIP=	yes	# The 1.05.1.20090721 tarball is broken
 
+NO_WRKSUBDIR=	yes
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 
 SUB_FILES=	pkg-message
@@ -28,7 +29,7 @@ SUB_LIST=	FONTDIR=${FONTDIR}
 
 FONTNAME=	Liberation
 FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-INSTDAT=	License.txt fonts.dir fonts.scale
+INSTDAT=	AUTHORS License.txt fonts.dir fonts.scale
 
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir

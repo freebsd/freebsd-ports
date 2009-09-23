@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%FONTDIR%%/AUTHORS
 %%FONTDIR%%/LiberationMono-Bold.ttf
 %%FONTDIR%%/LiberationMono-BoldItalic.ttf
 %%FONTDIR%%/LiberationMono-Italic.ttf
