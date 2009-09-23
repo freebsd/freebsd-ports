@@ -730,7 +730,6 @@ auctex                          ports/print/auctex
 audacious                       ports/multimedia/audacious
 audacious-crossfade             ports/audio/audacious-crossfade
 audacious-dumb                  ports/audio/audacious-dumb
-audacious-mac                   ports/audio/audacious-mac
 audacious-plugins               ports/multimedia/audacious-plugins
 audacious-skins                 ports/x11-themes/audacious-skins
 audacity                        ports/audio/audacity
