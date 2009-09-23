@@ -29,7 +29,9 @@ pre-configure:
 		&& ./autogen.sh
 
 post-install:
+.ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/USAGE ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
