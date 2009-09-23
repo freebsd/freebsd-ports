@@ -1,19 +1,27 @@
-MaraDNS is a DNS server with the following features:
+MaraDNS is a package that implements the Domain Name Service (DNS), an
+essential internet service. MaraDNS has the following advantages: 
 
-* Security-aware programming. A DNS server needs to be secure. There is a
-number of security features in the code, including:
+o Secure. MaraDNS has a security history as good as or better than any other DNS
+  server. For example, MaraDNS has always randomized, using a secure random
+  number generator, the Query ID and source port of DNS queries; and was never
+  vulnerable to the "new" cache poisoning attack. 
 
-	1. The code uses a special string library which is resistant to buffer
-	overflows.
-	2. The code, if started as root, mandates running as an unprivileged
-	user in a chroot() jail.
+o Supported. MaraDNS has a long history of being maintained and updated.
+  Actively developed since 2001, MaraDNS continues to be fully supported: The
+  most recent release was done on August 4, 2009. Deadwood, the code that will
+  become part of MaraDNS 2.0, is frequently updated. 
 
-* Open-Source. This DNS server is public-domain code. There are no restrictions
-attached to this code.
+o Easy to use. A basic recursive configuration needs only a single three-line
+  configuration file. A basic authoritative configuration needs only a four-line
+  configuration file and a one-line zone file. MaraDNS is fully documented, with
+  both easy-to-follow tutorials and a complete and up-to-date reference manual. 
 
-* Simplicity. This DNS server has the minimum number of features needed to
-correctly act as an authoritative name server for a domain.
+o Small. MaraDNS is well suited for embedded applications and other environments
+  where the server must use the absolute minimum number of resources possible.
+  MaraDNS' binary is smaller than that of any other currently maintained
+  recursive DNS server. 
+
+o Open Source. MaraDNS is fully open-source, The license is a two-clause BSD
+  license that is almost identical to the FreeBSD license.
 
 WWW: http://www.maradns.org/
-
-- Anders Nordby <anders@fix.no>

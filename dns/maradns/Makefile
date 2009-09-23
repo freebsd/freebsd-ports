@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.2.12.10
+PORTVERSION=	1.3.07.09
 CATEGORIES=	dns
-MASTER_SITES=	http://www.maradns.org/download/1.2/${PORTVERSION}/ \
+MASTER_SITES=	http://www.maradns.org/download/1.3/${PORTVERSION}/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS server with focus on security and simplicity
 
 REINPLACE_ARGS=	-i ""
-USE_BZIP2=	yes
 MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 USE_RC_SUBR=	${PORTNAME} zoneserver
 
-MAN1=	askmara.1 getzone.1 fetchzone.1
-MAN5=	mararc.5 csv1.5 csv2.5 csv2_txt.5
-MAN8=	maradns.8 zoneserver.8 duende.8
+MAN1=		askmara.1 getzone.1 fetchzone.1
+MAN5=		mararc.5 csv1.5 csv2.5 csv2_txt.5
+MAN8=		maradns.8 zoneserver.8 duende.8
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|/etc/mara|${ETCDIR}|g'
