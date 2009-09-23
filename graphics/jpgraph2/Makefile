@@ -6,34 +6,41 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	2.1.4
-PORTREVISION=	3
+PORTVERSION=	3.0.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://web.comhem.se/jpgraph/jpgdownloads/
+MASTER_SITES=	http://hem.bredband.net/jpgraph2/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
+USE_BZIP2=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
+NO_WRKSUBDIR=	yes
 USE_PHP=	gd
 IGNORE_WITH_PHP=4
 
 NO_CDROM=	The free version cannot be used in a commercial context
 
+PORTDATA=	*
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 LATEST_LINK=	jpgraph2
 
+.if defined(NOPORTDATA)
+IGNORE=		requires port data, unset NOPORTDATA
+.endif
+
 do-install:
-	@${MKDIR} ${DATADIR}/lang
+	@${MKDIR} ${DATADIR}
 	${CP} ${WRKSRC}/src/*.php ${DATADIR}
-	${CP} ${WRKSRC}/src/*.inc ${DATADIR}
 	${CP} ${WRKSRC}/src/*.dat ${DATADIR}
-	${CP} ${WRKSRC}/src/lang/*.php ${DATADIR}/lang
+	${CP} -R ${WRKSRC}/src/lang ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
+	${CP} -R ${WRKSRC}/docportal/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/src/Examples/* ${EXAMPLESDIR}
 .endif
