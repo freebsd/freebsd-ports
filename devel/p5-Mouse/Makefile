@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.30
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GF/GFUJI
@@ -27,7 +27,6 @@ MAN3=	Mouse.3 \
 	Mouse::Util.3 \
 	Mouse::Util::TypeConstraints.3 \
 	Squirrel.3 \
-	Test::Mouse.3 \
 	ouse.3
 
 post-install:
