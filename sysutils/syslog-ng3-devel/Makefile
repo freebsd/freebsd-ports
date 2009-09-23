@@ -44,6 +44,11 @@ CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` ${CFLAGS}" \
 CONFIGURE_ARGS+=--enable-tcp-wrapper
 .endif
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 700000
+BROKEN=		Does not build under FreeBSD 6.4
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
@@ -65,4 +70,4 @@ post-install:
 	fi
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
