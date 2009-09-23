@@ -225,7 +225,8 @@ test-gcc:
 .endfor
 	@echo Using GCC version ${_USE_GCC}
 .endif
-	@echo CC=${CC} - CXX=${CXX} - CFLAGS=${CFLAGS}
-	@echo F77=${F77} - FC=${FC} - FFLAGS=${FFLAGS}
+	@echo CC=${CC} - CXX=${CXX} - CFLAGS=\"${CFLAGS}\"
+	@echo F77=${F77} - FC=${FC} - FFLAGS=\"${FFLAGS}\"
+	@echo LDFLAGS=\"${LDFLAGS}\"
 	@echo BUILD_DEPENDS=${BUILD_DEPENDS}
 	@echo RUN_DEPENDS=${RUN_DEPENDS}
