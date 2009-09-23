@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Fatal.pm
+%%SITE_PERL%%/autodie.pm
+%%SITE_PERL%%/autodie/exception.pm
+%%SITE_PERL%%/autodie/hints.pm
+%%SITE_PERL%%/autodie/exception/system.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/autodie/.packlist
+@dirrm %%SITE_PERL%%/autodie/exception
+@dirrm %%SITE_PERL%%/autodie
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/autodie
