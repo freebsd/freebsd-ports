@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- USAGE.orig
++++ USAGE
+@@ -0,0 +1,23 @@
++Parasite is pretty easy to use. Start off by launching with an application by doing the following:
++
++$ GTK_MODULES=gtkparasite appname
++    
++The Parasite window will pop up immediately, followed by the application window.
++
++Click the "Inspect" button and then click anywhere in your application's UI to load the widget tree for that window and focus in on the selected widget. You should then be able to browse around the widget tree.
++
++The properties for the selected widget appear on the right-hand side of the Parasite window. Many properties can be modified (nearly anything other than pointer addresses) by clicking on the property value. You'll either be able to type in a new value, or select from a pop-up list.
++
++Toggle "Show Graphic Updates" to see debug rectangles any time part of your UI redraws. This can be used to help optimize drawing performance of a widget.
++
++The Python shell is located at the bottom of the screen. It works like a standard Python shell. You can import modules you need (such as "gtk") and write code to manipulate the widgets.
++
++A special "parasite" module is imported for you that provides a "gobj" function for converting a pointer address for a widget into something you can use in the Python shell. For example:
++
++>>> widget = parasite.gobj(0xDEADBEEF)
++    
++
++You can get the pointer addresses from the "Pointer Address" column in the widget tree, or from right-clicking an item in the widget tree and choosing "Send Widget to Shell."
++
++You can then use any PyGTK functions on the widget.
++
