@@ -7,10 +7,8 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/chinsan/${PORTNAME} \
-		http://dev.splitbrain.org/browse/snapshots/
+MASTER_SITES=	http://dev.splitbrain.org/download/snapshots/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${DIST_VER}
 EXTRACT_SUFX=	.tgz
@@ -18,10 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chris@officialunix.com
 COMMENT=	A simple and easy to use wiki, no database required
 
-DIST_VER=	${PORTNAME}-2007-07-23
+WRKSRC=	${WRKDIR}/${PORTNAME}
+
+DIST_VER=	${PORTNAME}-2009-09-22
 USE_PHP=	gd mbstring pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
+CONFLICTS=	dokuwiki-[0-9]*
 
 DOKUWIKI_DIR?=	www/${PORTNAME}
 PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
