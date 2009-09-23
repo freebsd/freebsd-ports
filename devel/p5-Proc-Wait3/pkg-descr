@@ -1,0 +1,8 @@
+Proc::Wait3 module implements wait3 system call in Perl.
+If any child processes have exited, this call will "reap" the zombies
+similar to the perl "wait" function.  By default, it will return
+immediately and if there are no dead children, everything will be
+undefined. If you pass in a true argument, it will block until a child
+exits (or it gets a signal).
+
+WWW: http://search.cpan.org/dist/Proc-Wait3/
