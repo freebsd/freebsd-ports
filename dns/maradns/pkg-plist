@@ -137,6 +137,7 @@ sbin/zoneserver
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_full_mararc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_full_mararc.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_mararc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_recursive_mararc.txt
 @exec mkdir -p %D/%%ETCDIR%%/logger
 @dirrmtry %%ETCDIR%%/logger
 @dirrmtry %%ETCDIR%%
