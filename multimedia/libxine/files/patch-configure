@@ -22,6 +22,19 @@
                                                                                          LIBICONV="${LIBICONV}${LIBICONV:+ }$found_so"
                      else
                                                                                                                                                                                  LIBICONV="${LIBICONV}${LIBICONV:+ }-l$name"
+@@ -19693,12 +19693,6 @@
+ 
+ done
+ 
+-   if test "$ac_cv_header_ffmpeg_avutil_h" = "yes" && test "$ac_cv_header_libavutil_avutil_h" = "yes"; then
+-     { { $as_echo "$as_me:$LINENO: error: old & new ffmpeg headers found - you need to clean up!" >&5
+-$as_echo "$as_me: error: old & new ffmpeg headers found - you need to clean up!" >&2;}
+-   { (exit 1); exit 1; }; }
+-   fi
+-
+    { $as_echo "$as_me:$LINENO: result: using external ffmpeg" >&5
+ $as_echo "using external ffmpeg" >&6; }
+ else
 @@ -27953,12 +27959,12 @@
          pkg_cv_CACA_CFLAGS="$CACA_CFLAGS"
      else
