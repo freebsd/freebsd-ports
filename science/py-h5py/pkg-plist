@@ -118,6 +118,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_filters.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_filters.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_filters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_group.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_group.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_group.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_h5.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_h5.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/h5py/tests/test_h5.pyo
