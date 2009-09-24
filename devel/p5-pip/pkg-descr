@@ -1,0 +1,14 @@
+The pip ("Perl Installation Program") console application is used
+to install Perl distributions in a wide variety of formats, both
+from CPAN and from external third-party locations, while supporting
+module dependencies that go across the boundary from third-party
+to CPAN.
+
+Using pip you can install CPAN modules, arbitrary tarballs from
+both the local file-system or across the internet from arbitrary
+URIs.
+
+You can use pip to ensure that specific versions of CPAN modules
+are installed instead of the most current version.
+
+WWW: http://search.cpan.org/dist/pip/
