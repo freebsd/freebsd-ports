@@ -16,24 +16,38 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE4
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	marblewidget.5:${PORTSDIR}/misc/kdeedu4 \
-		kipi.6:${PORTSDIR}/graphics/kdegraphics4
+LIB_DEPENDS=	kipi.6:${PORTSDIR}/graphics/kdegraphics4
 
 USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl dbus qt3support  webkit \
+QT_COMPONENTS=	corelib opengl dbus qt3support webkit \
 		designer network svg qtestlib xml \
 		qmake_build moc_build rcc_build uic_build
 
 MAKE_JOBS_SAFE=	yes
+
+OPTIONS=	MARBLE "Marble globe wallpaper for Plasma" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_MARBLE)
+PLIST_SUB+=	MARBLE="@comment "
+.else
+LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/misc/kdeedu4
+PLIST_SUB+=	MARBLE=""
+.endif
 
 post-patch:
 	${GREP} -H -r "#include <q" ${WRKSRC} | ${CUT} -d: -f1 | uniq | \
 		${XARGS} ${REINPLACE_CMD} -f ${FILESDIR}/qt3to4headers.txt
 
 pre-configure:
+.if defined(WITHOUT_MARBLE)
+	${REINPLACE_CMD} -e '/add_subdirectory(marble)/d' \
+		${WRKSRC}/wallpapers/CMakeLists.txt
+.endif
 	#respect prefix, don't update mime when installing
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 		-e '/^set/s,DBUS_INTERFACES_INSTALL_DIR,KDE4_DBUS_INTERFACES_DIR,g' \
@@ -42,4 +56,4 @@ pre-configure:
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
