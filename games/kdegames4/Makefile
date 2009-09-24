@@ -27,7 +27,7 @@ QT_COMPONENTS=	opengl gui svg iconengines pixeltool \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	FREEBSD "Install FreeBSD card desk" off
+OPTIONS=	FREEBSD "Install FreeBSD card deck" off
 
 .include <bsd.port.pre.mk>
 
