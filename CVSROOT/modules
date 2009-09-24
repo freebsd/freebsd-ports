@@ -4964,6 +4964,7 @@ gtkmm20-reference               ports/x11-toolkits/gtkmm20-reference
 gtkmm24                         ports/x11-toolkits/gtkmm24
 gtkmm24-reference               ports/x11-toolkits/gtkmm24-reference
 gtkmozedit                      ports/devel/gtkmozedit
+gtkparasite                     ports/devel/gtkparasite
 gtkpasman                       ports/security/gtkpasman
 gtkperf                         ports/benchmarks/gtkperf
 gtkpod                          ports/audio/gtkpod
@@ -7289,6 +7290,7 @@ libdfui                         ports/devel/libdfui
 libdict                         ports/devel/libdict
 libdisasm                       ports/devel/libdisasm
 libdiscid                       ports/audio/libdiscid
+libdispatch                     ports/devel/libdispatch
 libdjbdns                       ports/dns/libdjbdns
 libdkim                         ports/mail/libdkim
 libdlmalloc                     ports/devel/libdlmalloc
@@ -11980,6 +11982,7 @@ p5-Log-Dispatch-Email-EmailSend  ports/devel/p5-Log-Dispatch-Email-EmailSend
 p5-Log-Dispatch-FileRotate      ports/devel/p5-Log-Dispatch-FileRotate
 p5-Log-Dispatch-FileShared      ports/devel/p5-Log-Dispatch-FileShared
 p5-Log-Dispatch-Perl            ports/devel/p5-Log-Dispatch-Perl
+p5-Log-Dispatch-Screen-Color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-Log-Log4perl                 ports/devel/p5-Log-Log4perl
 p5-Log-Message                  ports/devel/p5-Log-Message
 p5-Log-Message-Simple           ports/devel/p5-Log-Message-Simple
@@ -12632,6 +12635,7 @@ p5-Padre                        ports/editors/p5-Padre
 p5-Palm                         ports/palm/p5-Palm
 p5-Palm-PalmDoc                 ports/palm/p5-Palm-PalmDoc
 p5-Parallel-ForkManager         ports/devel/p5-Parallel-ForkManager
+p5-Parallel-Prefork             ports/devel/p5-Parallel-Prefork
 p5-Parallel-Pvm                 ports/net/p5-Parallel-Pvm
 p5-ParallelUA                   ports/www/p5-ParallelUA
 p5-Params-CallbackRequest       ports/devel/p5-Params-CallbackRequest
@@ -12732,6 +12736,7 @@ p5-Proc-ProcessTable            ports/devel/p5-Proc-ProcessTable
 p5-Proc-Queue                   ports/devel/p5-Proc-Queue
 p5-Proc-Reliable                ports/devel/p5-Proc-Reliable
 p5-Proc-Simple                  ports/devel/p5-Proc-Simple
+p5-Proc-Wait3                   ports/devel/p5-Proc-Wait3
 p5-Project-Gantt                ports/devel/p5-Project-Gantt
 p5-Pugs-Compiler-Rule           ports/lang/p5-Pugs-Compiler-Rule
 p5-Qmail-Envelope               ports/mail/p5-Qmail-Envelope
@@ -13888,6 +13893,7 @@ p5-authen-tacacsplus            ports/security/p5-Authen-TacacsPlus
 p5-authen-ticket                ports/security/p5-Authen-Ticket
 p5-authen-typekey               ports/security/p5-Authen-TypeKey
 p5-autobox                      ports/devel/p5-autobox
+p5-autodie                      ports/devel/p5-autodie
 p5-autoloader                   ports/devel/p5-AutoLoader
 p5-autoxs-header                ports/devel/p5-AutoXS-Header
 p5-axkit                        ports/www/p5-AxKit
@@ -15547,6 +15553,7 @@ p5-log-dispatch-email-emailsend  ports/devel/p5-Log-Dispatch-Email-EmailSend
 p5-log-dispatch-filerotate      ports/devel/p5-Log-Dispatch-FileRotate
 p5-log-dispatch-fileshared      ports/devel/p5-Log-Dispatch-FileShared
 p5-log-dispatch-perl            ports/devel/p5-Log-Dispatch-Perl
+p5-log-dispatch-screen-color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-log-log4perl                 ports/devel/p5-Log-Log4perl
 p5-log-message                  ports/devel/p5-Log-Message
 p5-log-message-simple           ports/devel/p5-Log-Message-Simple
@@ -16122,6 +16129,7 @@ p5-par                          ports/devel/p5-PAR
 p5-par-dist                     ports/devel/p5-PAR-Dist
 p5-par-packer                   ports/devel/p5-PAR-Packer
 p5-parallel-forkmanager         ports/devel/p5-Parallel-ForkManager
+p5-parallel-prefork             ports/devel/p5-Parallel-Prefork
 p5-parallel-pvm                 ports/net/p5-Parallel-Pvm
 p5-parallelua                   ports/www/p5-ParallelUA
 p5-params-callbackrequest       ports/devel/p5-Params-CallbackRequest
@@ -16326,6 +16334,7 @@ p5-proc-processtable            ports/devel/p5-Proc-ProcessTable
 p5-proc-queue                   ports/devel/p5-Proc-Queue
 p5-proc-reliable                ports/devel/p5-Proc-Reliable
 p5-proc-simple                  ports/devel/p5-Proc-Simple
+p5-proc-wait3                   ports/devel/p5-Proc-Wait3
 p5-project-gantt                ports/devel/p5-Project-Gantt
 p5-pugs-compiler-rule           ports/lang/p5-Pugs-Compiler-Rule
 p5-pv                           ports/devel/p5-PV
@@ -23020,7 +23029,6 @@ upsd                            ports/sysutils/upsd
 upsdaemon                       ports/sysutils/upsdaemon
 upslug                          ports/devel/upslug
 upsmon                          ports/sysutils/upsmon
-uptimec                         ports/sysutils/uptimec
 uptimed                         ports/sysutils/uptimed
 upx                             ports/archivers/upx
 uqm                             ports/games/uqm
