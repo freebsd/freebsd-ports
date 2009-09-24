@@ -163,6 +163,7 @@ bin/padre
 %%SITE_PERL%%/auto/share/dist/Padre/examples/wx/05_button_with_event_and_message_box.pl
 %%SITE_PERL%%/auto/share/dist/Padre/examples/wx/21_progress_bar.pl
 %%SITE_PERL%%/auto/share/dist/Padre/examples/wx/22_notebook.pl
+%%SITE_PERL%%/auto/share/dist/Padre/examples/wx/23_menu.pl
 %%SITE_PERL%%/auto/share/dist/Padre/examples/wx/30_editor.pl
 %%SITE_PERL%%/auto/share/dist/Padre/examples/wx/40_draw.pl
 %%SITE_PERL%%/auto/share/dist/Padre/examples/wx/41-drag-image.pl
