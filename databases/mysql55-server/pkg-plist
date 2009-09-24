@@ -75,10 +75,10 @@ lib/mysql/libmysys.a
 %%NDB%%lib/mysql/libndbclient.so
 %%NDB%%lib/mysql/libndbclient.so.3
 lib/mysql/libvio.a
-lib/mysql/plugin/ha_example.a
-lib/mysql/plugin/ha_example.la
-lib/mysql/plugin/ha_example.so
-lib/mysql/plugin/ha_example.so.0
+%%PLUGINS%%lib/mysql/plugin/ha_example.a
+%%PLUGINS%%lib/mysql/plugin/ha_example.la
+%%PLUGINS%%lib/mysql/plugin/ha_example.so
+%%PLUGINS%%lib/mysql/plugin/ha_example.so.0
 libexec/mysqld
 %%NDB%%libexec/ndb_cpcd
 %%NDB%%libexec/ndb_mgmd
@@ -157,7 +157,7 @@ libexec/mysqld
 %%NDB%%@dirrm include/mysql/storage/ndb
 %%NDB%%@dirrm include/mysql/storage
 @dirrmtry include/mysql
-@dirrm lib/mysql/plugin
+%%PLUGINS%%@dirrm lib/mysql/plugin
 @dirrmtry lib/mysql
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech
