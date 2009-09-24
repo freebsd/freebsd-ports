@@ -124,7 +124,7 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-video-svga
 .endif
 
-.if (defined(WITHOUT_VGL) || ${ARCH} != "i386")
+.if defined(WITHOUT_VGL)
 CONFIGURE_ARGS+=--disable-video-vgl
 PKGMESSAGE=	none
 DISPLAY_MSG=	${DO_NADA}
