@@ -6,7 +6,7 @@
 
 PORTNAME=	libpasori
 PORTVERSION=	02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/20457
@@ -29,8 +29,8 @@ post-extract:
 .else
 	@${CP} ${FILESDIR}/Makefile.lib.usb20 ${WRKSRC}/lib/Makefile
 .endif
-	@${CP} ${FILESDIR}/Makefile.lpdump ${WRKSRC}/lptest/Makefile
-	@${CP} ${FILESDIR}/Makefile.lptest ${WRKSRC}/lpdump/Makefile
+	@${CP} ${FILESDIR}/Makefile.lpdump ${WRKSRC}/lpdump/Makefile
+	@${CP} ${FILESDIR}/Makefile.lptest ${WRKSRC}/lptest/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
