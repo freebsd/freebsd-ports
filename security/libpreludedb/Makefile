@@ -4,8 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.15.1
-PORTREVISION=	2
+PORTVERSION=	0.9.15.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
@@ -42,7 +41,8 @@ PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=		2.3+
+USE_PYTHON=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
 .else
@@ -61,10 +61,10 @@ PLIST_SUB+=		WITH_MYSQL="@comment "
 
 .if defined(WITH_PGSQL) || exists(${LOCALBASE}/bin/pg_config)
 USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--with-pgsql
+CONFIGURE_ARGS+=	--with-postgresql
 PLIST_SUB+=		WITH_PGSQL=""
 .else
-CONFIGURE_ARGS+=	--without-pgsql
+CONFIGURE_ARGS+=	--without-postgresql
 PLIST_SUB+=		WITH_PGSQL="@comment "
 .endif
 
