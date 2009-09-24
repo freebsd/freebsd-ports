@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,12 +19,14 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/Class/Adapter.pm:${PORTSDIR}/devel/p5-Class-Adapter \
 		${SITE_PERL}/Class/Unload.pm:${PORTSDIR}/devel/p5-Class-Unload \
 		${SITE_PERL}/Devel/Dumpvar.pm:${PORTSDIR}/devel/p5-Devel-Dumpvar \
+		p5-Devel-Refactor>=0.05:${PORTSDIR}/devel/p5-Devel-Refactor \
 		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
 		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-File-Next>=1.06:${PORTSDIR}/sysutils/p5-File-Next \
 		p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path \
+		p5-File-Remove>=1.42:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/ShareDir.pm:${PORTSDIR}/devel/p5-File-ShareDir \
-		${SITE_PERL}/File/ShareDir/PAR.pm:${PORTSDIR}/devel/p5-File-ShareDir-PAR \
 		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
@@ -34,8 +36,7 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/Module/Starter.pm:${PORTSDIR}/devel/p5-Module-Starter \
 		${SITE_PERL}/ORLite.pm:${PORTSDIR}/databases/p5-ORLite \
 		${SITE_PERL}/ORLite/Migrate.pm:${PORTSDIR}/databases/p5-ORLite-Migrate \
-		${SITE_PERL}/PAR.pm:${PORTSDIR}/devel/p5-PAR \
-		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
+		p5-PPI>=1.205:${PORTSDIR}/textproc/p5-PPI \
 		${SITE_PERL}/Parse/ErrorString/Perl.pm:${PORTSDIR}/devel/p5-Parse-ErrorString-Perl \
 		p5-Parse-ExuberantCTags>=1.00:${PORTSDIR}/devel/p5-Parse-ExuberantCTags \
 		p5-Pod-Abstract>=0.16:${PORTSDIR}/textproc/p5-Pod-Abstract \
@@ -44,7 +45,6 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/Pod/Simple/XHTML.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Probe/Perl.pm:${PORTSDIR}/sysutils/p5-Probe-Perl \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Test/Most.pm:${PORTSDIR}/devel/p5-Test-Most \
 		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		${SITE_PERL}/Test/Script.pm:${PORTSDIR}/devel/p5-Test-Script \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
@@ -59,9 +59,10 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
+		p5-pip>=0.13:${PORTSDIR}/devel/p5-pip \
 		p5-PPIx-EditorTools>=0.08:${PORTSDIR}/textproc/p5-PPIx-EditorTools \
-		p5-ExtUtils-Manifest>=1.56:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
 		p5-Wx>=0.91:${PORTSDIR}/x11-toolkits/p5-Wx
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_WX=		2.8+
@@ -84,11 +85,20 @@ IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
 IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
 .endif
 
-.if ${PERL_LEVEL} >= 501000
+.if ${PERL_LEVEL} >= 501000 && ${PERL_LEVEL} < 501001
 BUILD_DEPENDS+=	p5-Encode>=2.26:${PORTSDIR}/converters/p5-Encode \
 		p5-Thread-Queue>=2.11:${PORTSDIR}/devel/p5-Thread-Queue \
 		p5-threads>=1.71:${PORTSDIR}/devel/p5-threads \
 		p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
+RUN_DEPENDS+=	p5-Encode>=2.26:${PORTSDIR}/converters/p5-Encode \
+		p5-Thread-Queue>=2.11:${PORTSDIR}/devel/p5-Thread-Queue \
+		p5-threads>=1.71:${PORTSDIR}/devel/p5-threads \
+		p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.56:${PORTSDIR}/devel/p5-ExtUtils-Manifest
+RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.56:${PORTSDIR}/devel/p5-ExtUtils-Manifest
 .endif
 
 MAN3=		Padre.3 \
