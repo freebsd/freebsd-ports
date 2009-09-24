@@ -1,13 +1,13 @@
---- Makefile.in.orig	2008-09-09 04:18:38.000000000 -0800
-+++ Makefile.in	2008-09-29 20:14:33.000000000 -0800
-@@ -517,9 +517,8 @@
- target_os = @target_os@
- target_vendor = @target_vendor@
+--- Makefile.in.orig	2009-07-15 13:49:18.000000000 +0600
++++ Makefile.in	2009-09-04 10:56:03.000000000 +0600
+@@ -645,9 +645,8 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4 -I libmissing/m4
 -DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
  EXTRA_DIST = LICENSE.README HACKING.README
 -SUBDIRS = m4 libmissing src plugins bindings docs
 +SUBDIRS = m4 libmissing src plugins bindings
- bin_SCRIPTS = $(top_builddir)/libpreludedb-config
- distuninstallcheck_listfiles = find . -type f -print | grep -v 'perl' | grep -v '3pm'
- AM_CPPFLAGS = @PCFLAGS@ -I$(top_srcdir)/src/include -I$(top_srcdir)/libmissing @LIBPRELUDE_CFLAGS@
+ MAINTAINERCLEANFILES = \
+ 	$(srcdir)/INSTALL \
+ 	$(srcdir)/aclocal.m4 \
