@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.3.2a
-CATEGORIES=	ftp
+CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.dataguard.no/ftp/pub/proftpd/distrib/source/ \
@@ -238,8 +238,8 @@ MODULES:=${MODULES}:mod_digest
 .endif
 
 .if defined(WITH_TDS)
-DISTFILES+=     mod_sql_tds-4.11.tar.bz2:sql_tds
-EXTRACT_ONLY+=  mod_sql_tds-4.11.tar.bz2
+DISTFILES+=	mod_sql_tds-4.11.tar.bz2:sql_tds
+EXTRACT_ONLY+=	mod_sql_tds-4.11.tar.bz2
 MODULES:=${MODULES}:mod_sql_tds
 MODULES:=mod_sql${MODULES}
 PLIST_FILES+=	include/proftpd/mod_sql.h
