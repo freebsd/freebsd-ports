@@ -1346,6 +1346,7 @@
     SUBDIR += p5-Devel-Profile
     SUBDIR += p5-Devel-Profiler
     SUBDIR += p5-Devel-REPL
+    SUBDIR += p5-Devel-Refactor
     SUBDIR += p5-Devel-Required
     SUBDIR += p5-Devel-RingBuffer
     SUBDIR += p5-Devel-STrace
