@@ -45,6 +45,8 @@ lib/collectd/memory.so
 %%MYSQL%%lib/collectd/mysql.so
 lib/collectd/network.la
 lib/collectd/network.so
+%%NUTUPS%%lib/collectd/nut.la
+%%NUTUPS%%lib/collectd/nut.so
 lib/collectd/ntpd.la
 lib/collectd/ntpd.so
 %%PING%%lib/collectd/ping.la
