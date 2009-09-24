@@ -7,7 +7,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.4.1
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -33,12 +33,17 @@ OPTIONS=	SERIAL		"SERIAL support"	on \
 		PDU		"Powerman PDU support"	off \
 		HAL		"HAL support"	off \
 		IPV6		"IPV6 support"  on \
-		DEVEL		"Install header files"	off \
-		CGI		"Web CGI interface"	off \
+		CGI		"Web CGI interface"	off
 
 USE_RC_SUBR=	nut.sh nut_upsmon.sh nut_upslog.sh
 SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
+
+MAN3=		upscli_connect.3 upscli_disconnect.3 upscli_fd.3 \
+		upscli_get.3 upscli_list_next.3 upscli_list_start.3 \
+		upscli_readline.3 upscli_sendline.3 upscli_splitaddr.3 \
+		upscli_splitname.3 upscli_ssl.3 upscli_strerror.3 \
+		upscli_upserror.3 upsclient.3
 
 MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
@@ -60,7 +65,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-pidpath=${STATEDIR} \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 		--with-user=${NUT_USER} \
-		--with-group=${NUT_GROUP}
+		--with-group=${NUT_GROUP} \
+		--with-dev
 
 .if defined(WITH_CGI)
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
@@ -161,20 +167,6 @@ PLIST_SUB+=	NUT_HAL="@comment "
 CONFIGURE_ARGS+=	--with-ipv6
 .else
 CONFIGURE_ARGS+=	--without-ipv6
-.endif
-
-.if defined(WITH_DEVEL)
-CONFIGURE_ARGS+=	--with-dev
-MAN3+=		upscli_connect.3 upscli_disconnect.3 upscli_fd.3 \
-		upscli_get.3 upscli_list_next.3 upscli_list_start.3 \
-		upscli_readline.3 upscli_sendline.3 upscli_splitaddr.3 \
-		upscli_splitname.3 upscli_ssl.3 upscli_strerror.3 \
-		upscli_upserror.3 upsclient.3
-
-PLIST_SUB+=	NUT_DEVEL=""
-.else
-CONFIGURE_ARGS+=	--without-dev
-PLIST_SUB+=	NUT_DEVEL="@comment "
 .endif
 
 pre-install:

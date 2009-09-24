@@ -14,8 +14,8 @@ etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upssched.conf.sample
-%%NUT_DEVEL%%include/parseconf.h
-%%NUT_DEVEL%%include/upsclient.h
+include/parseconf.h
+include/upsclient.h
 lib/libupsclient.so.1
 lib/libupsclient.so
 lib/libupsclient.la
@@ -68,7 +68,7 @@ lib/libupsclient.la
 libexec/nut/upsdrvctl
 %%NUT_USB%%libexec/nut/usbhid-ups
 %%NUT_SERIAL%%libexec/nut/victronups
-%%NUT_DEVEL%%libdata/pkgconfig/libupsclient.pc
+libdata/pkgconfig/libupsclient.pc
 sbin/upsd
 sbin/upsmon
 sbin/upssched
