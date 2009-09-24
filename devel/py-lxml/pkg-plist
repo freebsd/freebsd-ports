@@ -446,7 +446,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree.SerialisationError-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser.XHTMLParser-class.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.2.1.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.2.2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/style.css
@@ -481,6 +481,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/licenses/GPL.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/licenses/ZopePublicLicense.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/licenses/elementtree.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/pdf/pubkey.asc
 %%PORTDOCS%%%%DOCSDIR%%/doc/tutorial.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/test.xml
 %%PORTDOCS%%%%DOCSDIR%%/doc/sax.txt
@@ -521,6 +522,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/doctestcompare.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/cssselect.py
