@@ -1,0 +1,11 @@
+--- ./apps/kinfocenter/info/CMakeLists.txt.orig	2008-04-23 19:51:22.000000000 +0400
++++ ./apps/kinfocenter/info/CMakeLists.txt	2009-09-04 00:42:28.000000000 +0400
+@@ -12,7 +12,7 @@
+ 
+ kde4_add_plugin(kcm_info ${kcm_info_PART_SRCS})
+ 
+-target_link_libraries(kcm_info  ${KDE4_KDEUI_LIBS} ${QT_QTGUI_LIBRARY} ${X11_X11_LIB})
++target_link_libraries(kcm_info  ${KDE4_KDEUI_LIBS} ${QT_QTGUI_LIBRARY} ${X11_X11_LIB} devinfo)
+ 
+ 
+ install(TARGETS kcm_info  DESTINATION ${PLUGIN_INSTALL_DIR} )

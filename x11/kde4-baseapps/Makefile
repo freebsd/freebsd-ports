@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,8 +19,7 @@ COMMENT=	Basic applications for the KDE system
 
 LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
-		pci.2:${PORTSDIR}/devel/libpci
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 LATEST_LINK=	${PORTNAME}4
 
@@ -35,7 +35,8 @@ KDE4_BUILDENV=	yes
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
-		-DWITH_RAW1394:BOOL=OFF
+		-DWITH_RAW1394:BOOL=OFF \
+		-DWITH_PCIUTILS:BOOL=OFF
 
 MAN1=		kappfinder.1 \
 		kbookmarkmerger.1 \
