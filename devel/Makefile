@@ -2121,6 +2121,7 @@
     SUBDIR += p5-namespace-clean
     SUBDIR += p5-orz
     SUBDIR += p5-parent
+    SUBDIR += p5-pip
     SUBDIR += p5-prefork
     SUBDIR += p5-reaper
     SUBDIR += p5-relative

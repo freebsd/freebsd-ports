@@ -1,0 +1,10 @@
+bin/pip
+%%SITE_PERL%%/Module/Plan/Base.pm
+%%SITE_PERL%%/Module/Plan/Lite.pm
+%%SITE_PERL%%/Module/Plan/Archive.pm
+%%SITE_PERL%%/Module/P5Z.pm
+%%SITE_PERL%%/pip.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/pip/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/pip
+@dirrmtry %%SITE_PERL%%/Module/Plan
+@dirrmtry %%SITE_PERL%%/Module
