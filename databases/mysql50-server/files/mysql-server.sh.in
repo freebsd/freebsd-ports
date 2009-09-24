@@ -16,6 +16,8 @@
 #			just before mysql starts.
 # mysql_dbdir (str):	Default to "/var/db/mysql"
 #			Base database directory.
+# mysql_socket (str):	Default to "/tmp/mysql.sock"
+#			Unix socket file.
 # mysql_args (str):	Custom additional arguments to be passed
 #			to mysqld_safe (default empty).
 #
@@ -30,17 +32,21 @@ load_rc_config $name
 : ${mysql_enable="NO"}
 : ${mysql_limits="NO"}
 : ${mysql_dbdir="/var/db/mysql"}
+: ${mysql_socket="/tmp/mysql.sock"}
 : ${mysql_args=""}
 
 mysql_user="mysql"
 mysql_limits_args="-e -U ${mysql_user}"
 pidfile="${mysql_dbdir}/`/bin/hostname`.pid"
 command="%%PREFIX%%/bin/mysqld_safe"
-command_args="--defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args} > /dev/null 2>&1 &"
+command_args="--defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --socket=${mysql_socket} --pid-file=${pidfile} ${mysql_args} > /dev/null 2>&1 &"
 procname="%%PREFIX%%/libexec/mysqld"
 start_precmd="${name}_prestart"
+start_postcmd="${name}_poststart"
 mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
 mysql_install_db_args="--ldata=${mysql_dbdir}"
+mysqladmin="%%LOCALBASE%%/bin/mysqladmin"
+mysqladmin_args="-s --socket=${mysql_socket} ping"
 
 mysql_create_auth_tables()
 {
@@ -58,6 +64,18 @@ mysql_prestart()
 	else
 		return 0
 	fi
+}
+
+mysql_poststart()
+{
+	count=0
+	while [ $count -lt 10 ] ; do
+		eval $mysqladmin $mysqladmin_args >/dev/null
+		[ $? -eq 0 ] && return 0
+		count=`expr $count + 1`
+		sleep 1
+	done
+	return 1
 }
 
 run_rc_command "$1"
