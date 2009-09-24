@@ -1,0 +1,5 @@
+%%SITE_PERL%%/CPAN/Checksums.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Checksums/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Checksums
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
+@dirrmtry %%SITE_PERL%%/CPAN

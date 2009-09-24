@@ -1041,6 +1041,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-CHI
     SUBDIR += p5-CLASS
+    SUBDIR += p5-CPAN-Checksums
     SUBDIR += p5-CPAN-DistnameInfo
     SUBDIR += p5-CPAN-Mini
     SUBDIR += p5-CPAN-SQLite
