@@ -1043,6 +1043,7 @@
     SUBDIR += p5-CLASS
     SUBDIR += p5-CPAN-Checksums
     SUBDIR += p5-CPAN-DistnameInfo
+    SUBDIR += p5-CPAN-Inject
     SUBDIR += p5-CPAN-Mini
     SUBDIR += p5-CPAN-SQLite
     SUBDIR += p5-CPAN-YACSmoke
