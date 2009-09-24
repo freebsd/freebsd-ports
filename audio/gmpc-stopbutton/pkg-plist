@@ -1,4 +1,0 @@
-share/gmpc/plugins/libstopbutton.so
-share/gmpc/plugins/libstopbutton.la
-@dirrmtry share/gmpc/plugins
-@dirrmtry share/gmpc

@@ -211,9 +211,7 @@
     SUBDIR += gmm
     SUBDIR += gmpc
     SUBDIR += gmpc-alarm
-    SUBDIR += gmpc-autoplaylist
     SUBDIR += gmpc-extraplaylist
-    SUBDIR += gmpc-favorites
     SUBDIR += gmpc-lastfm
     SUBDIR += gmpc-libnotify
     SUBDIR += gmpc-lyrics
@@ -221,14 +219,8 @@
     SUBDIR += gmpc-magnatune
     SUBDIR += gmpc-mdcover
     SUBDIR += gmpc-mserver
-    SUBDIR += gmpc-osd
-    SUBDIR += gmpc-qosd
-    SUBDIR += gmpc-random-playlist
-    SUBDIR += gmpc-serverstats
     SUBDIR += gmpc-shout
-    SUBDIR += gmpc-stopbutton
     SUBDIR += gmpc-wikipedia
-    SUBDIR += gmpccaa
     SUBDIR += gnapster
     SUBDIR += gnome-audio
     SUBDIR += gnome-media

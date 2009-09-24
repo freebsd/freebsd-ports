@@ -1,4 +1,0 @@
-share/gmpc/plugins/librandomplaylist.la
-share/gmpc/plugins/librandomplaylist.so
-@dirrmtry share/gmpc/plugins
-@dirrmtry share/gmpc
