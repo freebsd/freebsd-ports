@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Devel/Refactor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refactor/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refactor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/Devel
