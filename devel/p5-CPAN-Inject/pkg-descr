@@ -1,0 +1,13 @@
+Following the release of CPAN::Mini, the CPAN::Mini::Inject module
+was created to add additional distributions into a minicpan mirror.
+
+While it was created for use with a minicpan mirror, similar
+functionality can be reused in other situations.
+
+CPAN::Inject replicates the basics of this functionality.
+
+Specifically, it takes an arbitrary tarball and adds it to the CPAN
+sources directory for a particular author, and then add the new
+file to the CHECKSUMS file.
+
+WWW: http://search.cpan.org/dist/CPAN-Inject/

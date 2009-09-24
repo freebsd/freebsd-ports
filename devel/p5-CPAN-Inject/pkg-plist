@@ -1,0 +1,6 @@
+bin/cpaninject
+%%SITE_PERL%%/CPAN/Inject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Inject/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Inject
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
+@dirrmtry %%SITE_PERL%%/CPAN
