@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -42,6 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$$$PREFIX/share/man|${MANPREFIX}/man|' \
 		${WRKSRC}/src/src.pro
 	@${ECHO_CMD} "LIBS+= -lexecinfo" >> ${WRKSRC}/src/src.pro
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
