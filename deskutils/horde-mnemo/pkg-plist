@@ -1,5 +1,6 @@
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/hooks.php.dist
 %%HORDIR%%/config/prefs.php.dist
 %%HORDIR%%/data.php
 %%HORDIR%%/index.php
@@ -69,6 +70,7 @@
 %%HORDIR%%/notepads/delete.php
 %%HORDIR%%/notepads/edit.php
 %%HORDIR%%/notepads/index.php
+%%HORDIR%%/notes/index.php
 %%HORDIR%%/po/README
 %%HORDIR%%/po/bg_BG.po
 %%HORDIR%%/po/cs_CZ.po
@@ -184,6 +186,7 @@
 @dirrm %%HORDIR%%/scripts/sql
 @dirrm %%HORDIR%%/scripts
 @dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/notes
 @dirrm %%HORDIR%%/notepads
 @dirrm %%HORDIR%%/note
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
