@@ -1,0 +1,84 @@
+--- src/hanja.c~	2003-02-06 09:52:42.000000000 +1100
++++ src/hanja.c	2009-04-21 13:43:59.000000000 +1000
+@@ -345,7 +345,7 @@
+ 
+     if ( ami_codeset==AMI_UTF8) {
+         /* U+AC00 -> EAB080, U+D7A3 -> ED9EA3 */
+-	int ilen,olen;
++	size_t ilen,olen;
+ 	char *iptr=word;
+ 	char *optr;
+        
+@@ -399,8 +399,8 @@
+     if ( ami_codeset==AMI_EUC) 
+ 	match=g_strdup(s);
+     else {
+-	int ilen=strlen(s)+1;
+-	int olen=ilen*2;
++	size_t ilen=strlen(s)+1;
++	size_t olen=ilen*2;
+ 	char *iptr=s;
+ 	char *optr;
+ 	match=g_new(gchar,olen);
+--- src/johabcode2.c~	2003-01-27 10:26:03.000000000 +1100
++++ src/johabcode2.c	2009-04-21 13:39:56.000000000 +1000
+@@ -40,7 +40,7 @@
+ int
+ johab_to_wansung(char *s, int johab)
+ {
+-    int in_len, out_len;
++    size_t in_len, out_len;
+     char in[2];
+     char *in_p, *out_p;
+     if (johab < 128) {
+@@ -68,8 +68,8 @@
+ {
+     char *out_p = s;
+     char *in_p = johab;
+-    int in_len = len;
+-    int out_len = len;
++    size_t in_len = len;
++    size_t out_len = len;
+     if (johab_to_wan_cd == (iconv_t) -1) {
+ 	johab_to_wan_cd = iconv_open(CD_EUC_KR, CD_JOHAB);
+ 	if (johab_to_wan_cd == (iconv_t) -1) {
+@@ -84,7 +84,7 @@
+ int
+ johab_from_wansung(char *s, int wansung)
+ {
+-    int in_len, out_len;
++    size_t in_len, out_len;
+     char in[2];
+     char *in_p, *out_p;
+     if (wansung < 128) {
+@@ -112,8 +112,8 @@
+ {
+     char *out_p = s;
+     char *in_p = wansung;
+-    int in_len = len;
+-    int out_len = len;
++    size_t in_len = len;
++    size_t out_len = len;
+     if (wan_to_johab_cd == (iconv_t) -1) {
+ 	wan_to_johab_cd = iconv_open(CD_JOHAB, CD_EUC_KR);
+ 	if (wan_to_johab_cd == (iconv_t) -1) {
+@@ -155,7 +155,7 @@
+ int
+ johab_to_utf8(char *s, int johab)
+ {
+-    int in_len, out_len;
++    size_t in_len, out_len;
+     char in[2];
+     char *in_p, *out_p;
+     if (johab < 128) {
+--- src/si.c~	2003-01-27 10:26:03.000000000 +1100
++++ src/si.c	2009-04-21 13:39:54.000000000 +1000
+@@ -174,7 +174,7 @@
+     else {
+         char tbuf[3];
+ 	char *iptr,*optr;
+-	int ilen,olen;
++	size_t ilen,olen;
+ 	for (i = 0; i < row*col; i++) {
+ 	    tbuf[0] = first;
+ 	    tbuf[1] = k++;
