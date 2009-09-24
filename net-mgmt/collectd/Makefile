@@ -23,6 +23,7 @@ OPTIONS=	CGI	"Install collection.cgi (requires RRDTOOL)" Off \
 		DEBUG	"Enable debugging" Off \
 		APACHE	"Input: Apache mod_status (libcurl)" Off \
 		APCUPS	"Input: APC UPS (apcupsd)" Off \
+		NUTUPS	"Input: NUT UPS daemon" Off \
 		INTERFACE "Input: Network interfaces (libstatgrab)" On \
 		MBMON	"Input: MBMon" Off \
 		MYSQL	"Input: MySQL" Off \
@@ -48,9 +49,9 @@ BROKEN=		Need bind9 import post 6.1
 
 # NOTE: Feel free to submit patches adding support for any of these
 #       disabled plugins.  If a plugin requires external dependencies,
-#       make it optional through OPTIONS.  Some of these are Linux
-#       specific, but others will probably run on FreeBSD as well,
-#       given a bit of careful attention.
+#       make it optional through OPTIONS defaulting to Off.  Some of
+#       these are Linux specific, but others will probably run on
+#       FreeBSD as well, given a bit of careful attention.
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-apple_sensors \
 		--disable-ascent \
@@ -70,7 +71,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-nginx \
 		--disable-notify_desktop \
 		--disable-notify_email \
-		--disable-nut \
 		--disable-onewire \
 		--disable-perl \
 		--disable-postgresql \
@@ -113,6 +113,15 @@ PLIST_SUB+=	APCUPS=""
 .else
 CONFIGURE_ARGS+=--disable-apcups
 PLIST_SUB+=	APCUPS="@comment "
+.endif
+
+.if defined(WITH_NUTUPS)
+CONFIGURE_ARGS+=--enable-nut
+BUILD_DEPENDS+=	${LOCALBASE}/include/upsclient.h:${PORTSDIR}/sysutils/nut
+PLIST_SUB+=	NUTUPS=""
+.else
+CONFIGURE_ARGS+=--disable-nut
+PLIST_SUB+=	NUTUPS="@comment "
 .endif
 
 .if defined(WITH_INTERFACE)
