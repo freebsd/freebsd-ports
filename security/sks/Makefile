@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	sks
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://minskyprimus.net/sks/releases/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
+
+PROJECTHOST=	sks-keyserver
 
 USE_OCAML=	yes
 USE_BDB=	46+
@@ -25,12 +25,14 @@ MAKE_ENV=	BDBINCLUDE="-I${BDB_INCLUDE_DIR}" \
 		BDBLIB="-L${BDB_LIB_DIR}" \
 		LIBDB="-l${BDB_LIB_NAME}" \
 		MANDIR="${MANPREFIX}/man"
-ALL_TARGET=	all sks.8.gz
 
 PLIST_FILES=	bin/sks bin/sks_add_mail bin/sks_build.sh
 MAN8=		sks.8
 MANCOMPRESSED=	yes
 PORTDOCS=	BUGS README TODO
+
+post-extract:
+	@: > ${WRKSRC}/Makefile.local
 
 post-install:
 .if !defined(NOPORTDOCS)
