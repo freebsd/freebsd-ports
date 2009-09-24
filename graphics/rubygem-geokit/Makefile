@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	geokit
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Ruby gem for maps-based apps
 
 USE_RUBY=	yes
