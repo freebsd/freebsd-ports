@@ -1306,8 +1306,8 @@ cairo-java                      ports/graphics/cairo-java
 cairo-reference                 ports/graphics/cairo-reference
 cairomm                         ports/graphics/cairomm
 cake                            ports/games/cake
-cakephp                         ports/www/cakephp
-cakephp-devel                   ports/www/cakephp-devel
+cakephp11                       ports/www/cakephp11
+cakephp12                       ports/www/cakephp12
 cal                             ports/deskutils/cal
 cal3d                           ports/graphics/cal3d
 cal3d-devel                     ports/graphics/cal3d-devel
