@@ -87,7 +87,7 @@ lib/kde4/plasma_potd_flickrprovider.so
 lib/kde4/plasma_potd_oseiprovider.so
 lib/kde4/plasma_potd_wcpotdprovider.so
 lib/kde4/plasma_wallpaper_mandelbrot.so
-lib/kde4/plasma_wallpaper_marble.so
+%%MARBLE%%lib/kde4/plasma_wallpaper_marble.so
 lib/kde4/plasma_wallpaper_pattern.so
 lib/kde4/plasma_wallpaper_virus.so
 lib/kde4/plasma_wallpaper_weather.so
@@ -358,7 +358,7 @@ share/kde4/services/plasma-runner-converter.desktop
 share/kde4/services/plasma-runner-spellchecker.desktop
 share/kde4/services/plasma-runner-spellchecker_config.desktop
 share/kde4/services/plasma-wallpaper-mandelbrot.desktop
-share/kde4/services/plasma-wallpaper-marble.desktop
+%%MARBLE%%share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
 share/kde4/services/plasma-wallpaper-virus.desktop
 share/kde4/services/plasma-wallpaper-weather.desktop
