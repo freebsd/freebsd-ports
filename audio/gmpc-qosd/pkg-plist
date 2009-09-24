@@ -1,4 +1,0 @@
-share/gmpc/plugins/qosdplugin.so
-share/gmpc/plugins/qosdplugin.la
-@dirrmtry share/gmpc/plugins
-@dirrmtry share/gmpc

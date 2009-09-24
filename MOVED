@@ -4171,3 +4171,11 @@ audio/audacious-mac||2009-09-21|does not work with audacious 2 and audacious-plu
 systutils/uptimec||2009-09-23|Project is gone since 2007
 www/cakephp||2009-09-23|Repomoved to www/cakephp11
 www/cakephp-devel||2009-09-23|Repomoved to www/cakephp12
+audio/gmpccaa||2009-09-24|Unmaintained upstream
+audio/gmpc-osd||2009-09-24|Unmaintained upstream
+audio/gmpc-qosd||2009-09-24|Unmaintained upstream
+audio/gmpc-random-playlist||2009-09-24|Unmaintained upstream
+audio/gmpc-serverstats||2009-09-24|Unmaintained upstream
+audio/gmpc-favorites||2009-09-24|Unmaintained upstream
+audio/gmpc-autoplaylist||2009-09-24|Unmaintained upstream
+audio/gmpc-stopbutton||2009-09-24|Unmaintained upstream

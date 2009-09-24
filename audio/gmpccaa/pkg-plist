@@ -1,4 +1,0 @@
-lib/gmpc/plugins/caaplugin.la
-lib/gmpc/plugins/caaplugin.so
-@dirrmtry lib/gmpc/plugins
-@dirrmtry lib/gmpc

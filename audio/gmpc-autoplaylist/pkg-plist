@@ -1,5 +1,0 @@
-share/gmpc/plugins/apl/apl.glade
-share/gmpc/plugins/libautoplaylist.so
-@dirrmtry share/gmpc/plugins/apl
-@dirrmtry share/gmpc/plugins
-@dirrmtry share/gmpc

@@ -1,8 +1,0 @@
-lib/gmpc/plugins/serverstatsplugin.la
-lib/gmpc/plugins/serverstatsplugin.so
-share/gmpc/plugins/serverstats/mpd.png
-@dirrm share/gmpc/plugins/serverstats
-@dirrmtry share/gmpc/plugins
-@dirrmtry share/gmpc
-@dirrmtry lib/gmpc/plugins
-@dirrmtry lib/gmpc
