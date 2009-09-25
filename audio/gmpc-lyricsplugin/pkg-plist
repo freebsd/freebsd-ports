@@ -1,0 +1,4 @@
+lib/gmpc/plugins/lyricspluginplugin.la
+lib/gmpc/plugins/lyricspluginplugin.so
+@dirrm lib/gmpc/plugins
+@dirrm lib/gmpc
