@@ -42,6 +42,7 @@
     SUBDIR += openmap
     SUBDIR += openuniverse
     SUBDIR += orsa
+    SUBDIR += osmosis
     SUBDIR += p5-Astro
     SUBDIR += p5-Astro-ADS
     SUBDIR += p5-Astro-Catalog
