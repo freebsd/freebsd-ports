@@ -45,7 +45,6 @@ include/fontforge/nonlineartrans.h
 include/fontforge/ofl.h
 include/fontforge/pfaedit.h
 include/fontforge/plugins.h
-include/fontforge/prefpage.h
 include/fontforge/print.h
 include/fontforge/psfont.h
 include/fontforge/savefont.h
