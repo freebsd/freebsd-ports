@@ -77,28 +77,28 @@ CHOLMOD_CONFIG = -DNPARTITION
 
 post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
-			  -e 's,%%CXX%%,${CXX},g' \
-			  -e 's,%%F77%%,${F77},g' \
-			  -e 's,%%BLAS%%,-L${LOCALBASE}/lib ${BLAS},g' \
-			  -e 's,%%FORTRANRUNTIME%%,${FORTRANRUNTIME},g' \
-			  -e 's,%%LAPACK%%,-L${LOCALBASE}/lib ${LAPACK},g' \
-			  -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-			  -e 's,%%METIS_PATH%%,${METIS_PATH},g' \
-			  -e 's,%%METIS%%,${METIS},g' \
-			  -e 's,%%CHOLMOD_CONFIG%%,${CHOLMOD_CONFIG},g' \
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' \
+			  -e 's|%%CXX%%|${CXX}|g' \
+			  -e 's|%%F77%%|${F77}|g' \
+			  -e 's|%%BLAS%%|-L${LOCALBASE}/lib ${BLAS}|g' \
+			  -e 's|%%FORTRANRUNTIME%%|${FORTRANRUNTIME}|g' \
+			  -e 's|%%LAPACK%%|-L${LOCALBASE}/lib ${LAPACK}|g' \
+			  -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+			  -e 's|%%METIS_PATH%%|${METIS_PATH}|g' \
+			  -e 's|%%METIS%%|${METIS}|g' \
+			  -e 's|%%CHOLMOD_CONFIG%%|${CHOLMOD_CONFIG}|g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
 				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk\
 				 ${WRKSRC}/CSparse/Lib/Makefile \
 				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile
 
-	@${REINPLACE_CMD}  -e 's,%%CFLAGS%%,${CFLAGS},g' \
-			   -e 's,%%FFLAGS%%,${FFLAGS},g' \
+	@${REINPLACE_CMD}  -e 's|%%CFLAGS%%|${CFLAGS}|g' \
+			   -e 's|%%FFLAGS%%|${FFLAGS}|g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
 				 ${WRKSRC}/CSparse/Lib/Makefile
 
-	@${REINPLACE_CMD}  -e 's,%%CFLAGS%%,${CFLAGS_SHARED},g' \
-			   -e 's,%%FFLAGS%%,${FFLAGS_SHARED},g' \
+	@${REINPLACE_CMD}  -e 's|%%CFLAGS%%|${CFLAGS_SHARED}|g' \
+			   -e 's|%%FFLAGS%%|${FFLAGS_SHARED}|g' \
 				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk \
 				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile
 
