@@ -1,0 +1,86 @@
+#!/bin/sh
+
+# Config files can define several variables used throughout this script.
+# JAVACMD - The java command to launch osmosis.
+# JAVACMD_OPTIONS - The options to append to the java command, typically used
+#                   to modify jvm settings such as max memory.
+# OSMOSIS_OPTIONS - The options to apply to all osmosis invocations, typically
+#                   used to add plugins or make quiet operation the default.
+
+if [ -f /etc/osmosis ] ; then
+  . /etc/osmosis
+fi
+
+if [ -f "$HOME/.osmosis" ] ; then
+  . "$HOME/.osmosis"
+fi
+
+if [ -z "$JAVACMD" ] ; then
+  # No JAVACMD provided in osmosis config files, therefore default to java
+  JAVACMD="%%LOCALBASE%%/bin/java"
+fi
+
+JAVACMD_OPTIONS="-Xmx1024m ${JAVACMD_OPTIONS}"
+JAVA_VERSION="%%JAVA_VERSION%%"
+export JAVA_VERSION
+
+if [ "x$1x" = "xx" ] || echo "$@" | grep -q -e '--help' ; then
+  cat <<EOF
+osmosis
+
+Example Usage
+
+Import a planet file into a local MySQL database.
+% osmosis --read-xml file=~/osm/planbet/planet.osm --write-mysql host="x" \\
+	database="x" user="x" password="x"
+
+Export a planet file from a local MySQL database.
+% osmosis --read-mysql host="x" database="x" user="x" password="x" --write-xml \\
+	file="planet.osm"
+
+Derive a change set between two planet files.
+% osmosis --read-xml file="planet1.osm" --read-xml file="planet2.osm" \\
+	--derive-change --write-xml-change file="planetdiff-1-2.osc"
+
+Derive a change set between a planet file and a database.
+% osmosis --read-xml file="planet1.osm" --read-mysql host="x" database="x" \\
+	user="x" password="x" --derive-change --write-xml-change \\
+	file="planetdiff-1-2.osc"
+
+Apply a change set to a planet file.
+% osmosis --read-xml file="planet1.osm" --read-xml-change \\
+	file="planetdiff-1-2.osc" --apply-change --write-xml file="planet2.osm"
+
+Sort the contents of a planet file.
+% osmosis --read-xml file="data.osm" --sort type="TypeThenId" --write-xml \\
+	file="data-sorted.osm"
+
+The above examples make use of the default pipe connection feature, however
+a simple read and write planet file command line could be written in two ways.
+The first example uses default pipe connection, the second explicitly connects
+the two components using a pipe named "mypipe". The default pipe connection
+will always work so long as each task is specified in the correct order.
+
+% osmosis --read-xml file="planetin.osm" --write-xml file="planetout.osm"
+
+% osmosis --read-xml file="planetin.osm" outPipe.0="mypipe" --write-xml \\
+	file="planetout.osm" inPipe.0="mypipe"
+
+Full usage details are available at:
+http://www.bretth.com/wiki/Wiki.jsp?page=OpenStreetMap 
+
+EOF
+  exit 1
+fi
+
+# Build up the classpath of required jar files.
+CLASSPATH=%%JAVALIBDIR%%/osmosis.jar:${OSMOSIS_CLASSPATH}
+for FILE in `ls %%DATADIR%%`; do
+  CLASSPATH=${CLASSPATH}:%%DATADIR%%/${FILE}
+done
+
+MAINCLASS=org.openstreetmap.osmosis.core.Osmosis
+EXEC="${JAVACMD} ${JAVACMD_OPTIONS} -cp ${CLASSPATH} ${MAINCLASS} \
+	${OSMOSIS_OPTIONS} $@"
+
+exec $EXEC
