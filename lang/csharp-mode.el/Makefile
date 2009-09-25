@@ -9,13 +9,13 @@ PORTNAME=	csharp-mode.el
 PORTVERSION=	0.7.0
 PORTREVISION=	1
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://mfgames.com/linux/releases/
+MASTER_SITES=	http://mfgames.com/releases/csharp-mode/ \
+		http://gentoo.kiev.ua/ftp/distfiles/ \
+		http://unix.miet.ru/pub/linux/gentoo/distfiles/
 DISTNAME=	${PORTNAME:S|.el$||}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing C\# source code
-
-BROKEN=		does not fetch
 
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
