@@ -40,6 +40,7 @@ include/libspreadsheet-1.10/spreadsheet/gnm-so-filled.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-line.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-polygon.h
 include/libspreadsheet-1.10/spreadsheet/gnm-style-impl.h
+include/libspreadsheet-1.10/spreadsheet/gnumeric-features.h
 include/libspreadsheet-1.10/spreadsheet/gnumeric-gconf.h
 include/libspreadsheet-1.10/spreadsheet/gnumeric-simple-canvas.h
 include/libspreadsheet-1.10/spreadsheet/gnumeric.h
@@ -128,7 +129,6 @@ include/libspreadsheet-1.10/spreadsheet/workbook.h
 include/libspreadsheet-1.10/spreadsheet/xml-io-version.h
 include/libspreadsheet-1.10/spreadsheet/xml-io.h
 include/libspreadsheet-1.10/spreadsheet/xml-sax.h
-lib/gnumeric/%%VERSION%%/include/gnumeric-features.h
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.la
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.so
 lib/gnumeric/%%VERSION%%/plugins/applix/plugin.xml
@@ -341,6 +341,7 @@ share/gnumeric/%%VERSION%%/glade/paste-names.glade
 share/gnumeric/%%VERSION%%/glade/plugin-manager.glade
 share/gnumeric/%%VERSION%%/glade/preferences.glade
 share/gnumeric/%%VERSION%%/glade/print.glade
+share/gnumeric/%%VERSION%%/glade/random-generation-cor.glade
 share/gnumeric/%%VERSION%%/glade/random-generation.glade
 share/gnumeric/%%VERSION%%/glade/rank.glade
 share/gnumeric/%%VERSION%%/glade/regression.glade
@@ -989,7 +990,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/dif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/applix
 @dirrm lib/gnumeric/%%VERSION%%/plugins
-@dirrm lib/gnumeric/%%VERSION%%/include
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
 @dirrm include/libspreadsheet-1.10/spreadsheet
