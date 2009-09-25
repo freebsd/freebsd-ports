@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	burgerspace
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A BurgerTime clone
 
-LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
-		flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
+LIB_DEPENDS=	flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
 
+USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-CCONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		burgerspace.6
-PORTDOCS=	*
+PORTDOCS=	AUTHORS COPYING INSTALL NEWS README THANKS TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^pkgsounddir =.*|pkgsounddir = ${DATADIR}/sounds|' \
