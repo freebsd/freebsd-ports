@@ -8,6 +8,6 @@ The Valgrind distribution includes five tools: two memory error detectors, a
 thread error detector, a cache profiler and a heap profiler. Several other
 tools have been built with Valgrind.
 
-Valgrind was ported to FreeBSD by Doug Rabson (http://www.rabson.org/).
+Valgrind was initially ported to FreeBSD by Doug Rabson (http://www.rabson.org/).
 
 WWW: http://valgrind.kde.org/

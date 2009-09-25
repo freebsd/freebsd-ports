@@ -1,19 +1,15 @@
-Note: This version of valgrind does not support some older processors, 
-      e.g. AMD K6-III, some (?) Pentium II.
+==========================================================================
 
-      If valgrind crashes immediately after it was started with the error
-      message "Illegal hardware instruction", your processor is affected by
-      this problem.
+	Known problems:
+	1) DRD valgrind tool does not work.
+	2) Helgrind tool gives excessive false-positivies for the
+	   internals of pthreads library.  This is now under
+	   investigation.
+	3) 32 bit binaries under amd64 are not supported currently.
+	   Work is being done to get it working.
 
-      As a workaround you can use the devel/valgrind-snapshot port, which is
-      based on a more recent snapshot.
+	If you'll encounter any problems when using Valgrind do not
+	hesitate to contact the maintainer with the description of
+	these problems.
 
-Note 2: A sample suppression file might have been installed to \
-      %%PREFIX%%/etc/freebsd-default.supp. It makes Valgrind hide warnings
-      caused by flawed code sequences - if any - in your system libraries,
-      so that you can concentrate on the warnings issued for your own code.
-
-      To use these suppressions, either pass
-      --suppressions=%%PREFIX%%/etc/freebsd-default.supp
-      to Valgrind on the commandline, or add that line to your
-      ~/.valgrindrc file, which is the recommended way.
+==========================================================================
