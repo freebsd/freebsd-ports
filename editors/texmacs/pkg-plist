@@ -283,6 +283,7 @@ share/TeXmacs/doc/devel/format/basics/typesetting.de.tm
 share/TeXmacs/doc/devel/format/basics/typesetting.en.tm
 share/TeXmacs/doc/devel/format/env-vars.de.tm
 share/TeXmacs/doc/devel/format/env-vars.fr.tm
+share/TeXmacs/doc/devel/format/primitives.fr.tm
 share/TeXmacs/doc/devel/format/environment/env-font.de.tm
 share/TeXmacs/doc/devel/format/environment/env-font.en.tm
 share/TeXmacs/doc/devel/format/environment/env-general.de.tm
@@ -307,7 +308,6 @@ share/TeXmacs/doc/devel/format/format.de.tm
 share/TeXmacs/doc/devel/format/format.fr.tm
 share/TeXmacs/doc/devel/format/leaves.fr.tm
 share/TeXmacs/doc/devel/format/planned-changes.fr.tm
-share/TeXmacs/doc/devel/format/primitives.fr.tm
 share/TeXmacs/doc/devel/format/regular/prim-box.de.tm
 share/TeXmacs/doc/devel/format/regular/prim-box.en.tm
 share/TeXmacs/doc/devel/format/regular/prim-formatting.de.tm
@@ -376,8 +376,6 @@ share/TeXmacs/doc/devel/interface/interface-intro.de.tm
 share/TeXmacs/doc/devel/interface/interface-intro.en.tm
 share/TeXmacs/doc/devel/interface/interface-misc.de.tm
 share/TeXmacs/doc/devel/interface/interface-misc.en.tm
-share/TeXmacs/doc/devel/interface/interface-mutator.de.tm
-share/TeXmacs/doc/devel/interface/interface-mutator.en.tm
 share/TeXmacs/doc/devel/interface/interface-nested.de.tm
 share/TeXmacs/doc/devel/interface/interface-nested.en.tm
 share/TeXmacs/doc/devel/interface/interface-pipes.de.tm
@@ -1315,7 +1313,6 @@ share/TeXmacs/examples/plugins/minimal/src/minimal.cpp
 share/TeXmacs/examples/plugins/multiline/Makefile
 share/TeXmacs/examples/plugins/multiline/progs/init-multiline.scm
 share/TeXmacs/examples/plugins/multiline/src/multiline.cpp
-share/TeXmacs/examples/plugins/mutator/progs/init-mutator.scm
 share/TeXmacs/examples/plugins/nested/Makefile
 share/TeXmacs/examples/plugins/nested/progs/init-nested.scm
 share/TeXmacs/examples/plugins/nested/src/nested.cpp
@@ -1591,6 +1588,8 @@ share/TeXmacs/misc/convert/special.pro
 share/TeXmacs/misc/convert/tex.pro
 share/TeXmacs/misc/convert/texps.pro
 share/TeXmacs/misc/images/tm_gnu1.png
+share/TeXmacs/misc/images/TeXmacs.svg
+share/TeXmacs/misc/images/text-texmacs.svg
 share/TeXmacs/misc/images/tm_gnu1.ps
 share/TeXmacs/misc/images/tm_gnu2.png
 share/TeXmacs/misc/images/tm_gnu2.ps
@@ -1602,6 +1601,7 @@ share/TeXmacs/misc/mime/texmacs.applications
 share/TeXmacs/misc/mime/texmacs.desktop
 share/TeXmacs/misc/mime/texmacs.keys
 share/TeXmacs/misc/mime/texmacs.mime
+share/TeXmacs/misc/mime/texmacs.xml
 share/TeXmacs/misc/patterns/wood-xdark.png
 share/TeXmacs/misc/patterns/granite-light.png
 share/TeXmacs/misc/patterns/granite-medium.png
@@ -1728,6 +1728,7 @@ share/TeXmacs/misc/pixmaps/tm_footnote.xpm
 share/TeXmacs/misc/pixmaps/tm_forward.xpm
 share/TeXmacs/misc/pixmaps/tm_fraction.xpm
 share/TeXmacs/misc/pixmaps/tm_frak.xpm
+share/TeXmacs/misc/pixmaps/tm_go.xpm
 share/TeXmacs/misc/pixmaps/tm_gr_color.xpm
 share/TeXmacs/misc/pixmaps/tm_graphics_cursor.xpm
 share/TeXmacs/misc/pixmaps/tm_graphics_cursorM.xpm
@@ -1780,6 +1781,7 @@ share/TeXmacs/misc/pixmaps/tm_parindent.xpm
 share/TeXmacs/misc/pixmaps/tm_parstyle.xpm
 share/TeXmacs/misc/pixmaps/tm_paste.xpm
 share/TeXmacs/misc/pixmaps/tm_plugin_input.xpm
+share/TeXmacs/misc/pixmaps/tm_plugin_output.xpm
 share/TeXmacs/misc/pixmaps/tm_plus.xpm
 share/TeXmacs/misc/pixmaps/tm_point_mode.xpm
 share/TeXmacs/misc/pixmaps/tm_point_style.xpm
@@ -1794,7 +1796,9 @@ share/TeXmacs/misc/pixmaps/tm_sansserif.xpm
 share/TeXmacs/misc/pixmaps/tm_save.xpm
 share/TeXmacs/misc/pixmaps/tm_section.xpm
 share/TeXmacs/misc/pixmaps/tm_session_delete.xpm
+share/TeXmacs/misc/pixmaps/tm_session_field.xpm
 share/TeXmacs/misc/pixmaps/tm_session_insert.xpm
+share/TeXmacs/misc/pixmaps/tm_session_session.xpm
 share/TeXmacs/misc/pixmaps/tm_session_split.xpm
 share/TeXmacs/misc/pixmaps/tm_shell.xpm
 share/TeXmacs/misc/pixmaps/tm_smallcaps.xpm
@@ -2122,6 +2126,7 @@ share/TeXmacs/progs/dynamic/format-prog-menu.scm
 share/TeXmacs/progs/dynamic/scripts-edit.scm
 share/TeXmacs/progs/dynamic/scripts-kbd.scm
 share/TeXmacs/progs/dynamic/scripts-menu.scm
+share/TeXmacs/progs/dynamic/session-drd.scm
 share/TeXmacs/progs/dynamic/session-edit.scm
 share/TeXmacs/progs/dynamic/session-menu.scm
 share/TeXmacs/progs/fonts/fonts-adobe.scm
@@ -2263,6 +2268,7 @@ share/TeXmacs/progs/utils/misc/markup-funcs.scm
 share/TeXmacs/progs/utils/misc/tm-keywords.scm
 share/TeXmacs/progs/utils/plugins/plugin-cmd.scm
 share/TeXmacs/progs/utils/plugins/plugin-convert.scm
+share/TeXmacs/progs/utils/plugins/plugin-eval.scm
 share/TeXmacs/styles/article.ts
 share/TeXmacs/styles/book.ts
 share/TeXmacs/styles/documentation/browser.ts
@@ -2517,7 +2523,6 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/examples/plugins/nested/progs
 @dirrm share/TeXmacs/examples/plugins/nested/bin
 @dirrm share/TeXmacs/examples/plugins/nested
-@dirrm share/TeXmacs/examples/plugins/mutator/progs
 @dirrm share/TeXmacs/examples/plugins/mutator/bin
 @dirrm share/TeXmacs/examples/plugins/mutator
 @dirrm share/TeXmacs/examples/plugins/multiline/src
@@ -2597,7 +2602,6 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/doc/devel/style
 @dirrm share/TeXmacs/doc/devel/source
 @dirrm share/TeXmacs/doc/devel/scheme/utils
-@dirrm share/TeXmacs/doc/devel/scheme/process
 @dirrm share/TeXmacs/doc/devel/scheme/overview
 @dirrm share/TeXmacs/doc/devel/scheme/graphics
 @dirrm share/TeXmacs/doc/devel/scheme/edit
@@ -2606,8 +2610,6 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/doc/devel/interface
 @dirrm share/TeXmacs/doc/devel/format/stylesheet
 @dirrm share/TeXmacs/doc/devel/format/regular
-@dirrm share/TeXmacs/doc/devel/format/primitives
-@dirrm share/TeXmacs/doc/devel/format/language
 @dirrm share/TeXmacs/doc/devel/format/environment
 @dirrm share/TeXmacs/doc/devel/format/basics
 @dirrm share/TeXmacs/doc/devel/format
