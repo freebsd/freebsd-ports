@@ -1,26 +1,17 @@
 bin/afternoonstalker
-share/afternoonstalker/level1.set
-share/afternoonstalker/level2.set
-share/afternoonstalker/sounds/bat-killed.wav
-share/afternoonstalker/sounds/bomb-explodes.wav
-share/afternoonstalker/sounds/gun-pickup.wav
-share/afternoonstalker/sounds/new-life.wav
-share/afternoonstalker/sounds/player-bullet.wav
-share/afternoonstalker/sounds/player-hit.wav
-share/afternoonstalker/sounds/robot-bullet.wav
-share/afternoonstalker/sounds/robot-hit.wav
-share/afternoonstalker/sounds/shooting-blanks.wav
-share/afternoonstalker/sounds/spider-killed.wav
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/TODO
-share/pixmaps/afternoonstalker.png
 share/applications/afternoonstalker.desktop
-@dirrm %%DOCSDIR%%
-@dirrm share/afternoonstalker/sounds
-@dirrm share/afternoonstalker
+share/pixmaps/afternoonstalker.png
+%%DATADIR%%/level1.set
+%%DATADIR%%/level2.set
+%%DATADIR%%/sounds/bat-killed.wav
+%%DATADIR%%/sounds/gun-pickup.wav
+%%DATADIR%%/sounds/new-life.wav
+%%DATADIR%%/sounds/player-bullet.wav
+%%DATADIR%%/sounds/player-hit.wav
+%%DATADIR%%/sounds/robot-bullet.wav
+%%DATADIR%%/sounds/robot-hit.wav
+%%DATADIR%%/sounds/shooting-blanks.wav
+%%DATADIR%%/sounds/spider-killed.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
