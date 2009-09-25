@@ -1,0 +1,4 @@
+lib/gmpc/plugins/albumviewplugin.la
+lib/gmpc/plugins/albumviewplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc
