@@ -14,6 +14,7 @@ bin/magicsort
 %%DATADIR%%/recipes/nikon-raw
 %%DATADIR%%/recipes/perl
 %%DATADIR%%/recipes/png
+%%DATADIR%%/recipes/ppm
 %%DATADIR%%/recipes/zip
 %%DATADIR%%/recipes/canon-cr2
 %%DATADIR%%/recipes/flac
