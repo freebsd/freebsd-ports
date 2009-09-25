@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20090914
-PORTREVISION=	1
+PORTVERSION=	20090923
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source
 DISTFILES=	${EXTRACT_ONLY}
@@ -31,7 +30,9 @@ EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
 .if !defined(NOPORTDOCS)
-DOC_VERSION=	${PORTVERSION}
+#DOC_VERSION=	${PORTVERSION}
+# This version of Fontforge has a different version number for the docs as opposed to the actual source
+DOC_VERSION=	20090914
 MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-docs:docs
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 DISTFILES+=	${DOCFILES:C/$/:docs/}
