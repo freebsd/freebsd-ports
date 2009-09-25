@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	afternoonstalker
-PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTVERSION=	1.1.2
 CATEGORIES=	games
-MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A clone of the 1981 Night Stalker video game
 
-LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
-		flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
+LIB_DEPENDS=	flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
 
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		afternoonstalker.6
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+PORTDOCS=	AUTHORS COPYING INSTALL NEWS README THANKS TODO
 
 post-patch:
-	${REINPLACE_CMD} "s@sounds/..PACKAGE.@afternoonstalker/sounds@g" \
+	@${REINPLACE_CMD} -e 's|^pkgsounddir =.*|pkgsounddir = ${DATADIR}/sounds|' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|docdir = .*|docdir = ${DOCSDIR}|' \
+		${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/^install-data-am/s|install-docDATA||' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
