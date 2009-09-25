@@ -53,6 +53,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/cache.py
 %%PYTHON_SITELIBDIR%%/sympy/core/cache.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/cache.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/decorators.py
+%%PYTHON_SITELIBDIR%%/sympy/core/decorators.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/decorators.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/evalf.py
 %%PYTHON_SITELIBDIR%%/sympy/core/evalf.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/evalf.pyo
@@ -101,6 +104,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_basic.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_basic.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_basic.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_cache.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_cache.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_cache.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_complex.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_complex.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_complex.pyo
@@ -347,6 +353,36 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/interactive/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/interactive/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/interactive/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/boolalg.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/boolalg.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/boolalg.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/inference.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/inference.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/inference.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_boolalg.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_boolalg.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_boolalg.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_dimacs.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_dimacs.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_dimacs.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_inference.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_inference.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/tests/test_inference.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/utilities/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/utilities/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/utilities/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/utilities/dimacs.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/utilities/dimacs.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/utilities/dimacs.pyo
 %%PYTHON_SITELIBDIR%%/sympy/matrices/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/matrices/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/matrices/__init__.pyo
@@ -368,6 +404,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/elliptic.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/elliptic.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/elliptic.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions.pyo
@@ -383,6 +422,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libhyper.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libhyper.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libhyper.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libintmath.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libintmath.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libintmath.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmpc.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmpc.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmpc.pyo
@@ -497,6 +539,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/test_trig.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/test_trig.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/test_trig.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/usertools.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/usertools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/usertools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/visualization.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/visualization.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/visualization.pyo
@@ -770,6 +815,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/series/order.py
 %%PYTHON_SITELIBDIR%%/sympy/series/order.pyc
 %%PYTHON_SITELIBDIR%%/sympy/series/order.pyo
+%%PYTHON_SITELIBDIR%%/sympy/series/series.py
+%%PYTHON_SITELIBDIR%%/sympy/series/series.pyc
+%%PYTHON_SITELIBDIR%%/sympy/series/series.pyo
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_demidovich.py
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_demidovich.pyc
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_demidovich.pyo
@@ -788,6 +836,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_order.py
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_order.pyc
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_order.pyo
+%%PYTHON_SITELIBDIR%%/sympy/series/tests/test_series.py
+%%PYTHON_SITELIBDIR%%/sympy/series/tests/test_series.pyc
+%%PYTHON_SITELIBDIR%%/sympy/series/tests/test_series.pyo
 %%PYTHON_SITELIBDIR%%/sympy/simplify/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/simplify/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/simplify/__init__.pyo
@@ -824,9 +875,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sympy/solvers/numeric.py
-%%PYTHON_SITELIBDIR%%/sympy/solvers/numeric.pyc
-%%PYTHON_SITELIBDIR%%/sympy/solvers/numeric.pyo
+%%PYTHON_SITELIBDIR%%/sympy/solvers/pde.py
+%%PYTHON_SITELIBDIR%%/sympy/solvers/pde.pyc
+%%PYTHON_SITELIBDIR%%/sympy/solvers/pde.pyo
 %%PYTHON_SITELIBDIR%%/sympy/solvers/polysys.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/polysys.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/polysys.pyo
@@ -842,6 +893,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_ode.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_ode.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_ode.pyo
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_pde.py
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_pde.pyc
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_pde.pyo
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_polysys.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_polysys.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_polysys.pyo
@@ -860,6 +914,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/statistics/tests/test_statistics.py
 %%PYTHON_SITELIBDIR%%/sympy/statistics/tests/test_statistics.pyc
 %%PYTHON_SITELIBDIR%%/sympy/statistics/tests/test_statistics.pyo
+%%PYTHON_SITELIBDIR%%/sympy/test_external/test_codegen_c_cc.py
+%%PYTHON_SITELIBDIR%%/sympy/test_external/test_codegen_c_cc.pyc
+%%PYTHON_SITELIBDIR%%/sympy/test_external/test_codegen_c_cc.pyo
 %%PYTHON_SITELIBDIR%%/sympy/test_external/test_numpy.py
 %%PYTHON_SITELIBDIR%%/sympy/test_external/test_numpy.pyc
 %%PYTHON_SITELIBDIR%%/sympy/test_external/test_numpy.pyo
@@ -1094,6 +1151,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/benchmarking.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/benchmarking.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/benchmarking.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/codegen.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/codegen.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/codegen.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/compilef.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/compilef.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/compilef.pyo
@@ -1127,6 +1187,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.pyo
@@ -1145,6 +1208,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_pytest.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_pytest.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_pytest.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_source.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_source.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_source.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_tests_names.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_tests_names.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_tests_names.pyo
@@ -1166,6 +1232,10 @@ bin/isympy
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/integrals/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/integrals
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/interactive
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/algorithms
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/utilities
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/matrices/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/matrices
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests
