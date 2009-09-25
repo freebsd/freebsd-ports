@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	graphics
-MASTER_SITES=	SFP \
+MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 
