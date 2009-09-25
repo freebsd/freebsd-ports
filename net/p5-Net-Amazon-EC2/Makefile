@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-EC2
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::Attachment.3 \
 		Net::Amazon::EC2::AvailabilityZone.3 \
 		Net::Amazon::EC2::BlockDeviceMapping.3 \
+		Net::Amazon::EC2::BundleInstanceResponse.3 \
 		Net::Amazon::EC2::ConfirmProductInstanceResponse.3 \
 		Net::Amazon::EC2::ConsoleOutput.3 \
 		Net::Amazon::EC2::DescribeAddress.3 \
@@ -39,16 +40,21 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::Error.3 \
 		Net::Amazon::EC2::Errors.3 \
 		Net::Amazon::EC2::GroupSet.3 \
+		Net::Amazon::EC2::InstancePassword.3 \
 		Net::Amazon::EC2::InstanceState.3 \
 		Net::Amazon::EC2::IpPermission.3 \
 		Net::Amazon::EC2::IpRange.3 \
 		Net::Amazon::EC2::KeyPair.3 \
 		Net::Amazon::EC2::LaunchPermission.3 \
 		Net::Amazon::EC2::LaunchPermissionOperation.3 \
+		Net::Amazon::EC2::MonitoredInstance.3 \
 		Net::Amazon::EC2::PlacementResponse.3 \
 		Net::Amazon::EC2::ProductCode.3 \
 		Net::Amazon::EC2::ProductInstanceResponse.3 \
+		Net::Amazon::EC2::Region.3 \
 		Net::Amazon::EC2::ReservationInfo.3 \
+		Net::Amazon::EC2::ReservedInstance.3 \
+		Net::Amazon::EC2::ReservedInstanceOffering.3 \
 		Net::Amazon::EC2::RunningInstances.3 \
 		Net::Amazon::EC2::SecurityGroup.3 \
 		Net::Amazon::EC2::Snapshot.3 \
