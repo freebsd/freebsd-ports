@@ -1,4 +1,23 @@
 lib/gmpc/plugins/alarmplugin.la
 lib/gmpc/plugins/alarmplugin.so
+share/locale/bg/LC_MESSAGES/gmpc-alarm.mo
+share/locale/bs/LC_MESSAGES/gmpc-alarm.mo
+share/locale/de/LC_MESSAGES/gmpc-alarm.mo
+share/locale/es/LC_MESSAGES/gmpc-alarm.mo
+share/locale/fi/LC_MESSAGES/gmpc-alarm.mo
+share/locale/fr/LC_MESSAGES/gmpc-alarm.mo
+share/locale/hu/LC_MESSAGES/gmpc-alarm.mo
+share/locale/it/LC_MESSAGES/gmpc-alarm.mo
+share/locale/ja/LC_MESSAGES/gmpc-alarm.mo
+share/locale/ml/LC_MESSAGES/gmpc-alarm.mo
+share/locale/nb/LC_MESSAGES/gmpc-alarm.mo
+share/locale/nl/LC_MESSAGES/gmpc-alarm.mo
+share/locale/pl/LC_MESSAGES/gmpc-alarm.mo
+share/locale/ro/LC_MESSAGES/gmpc-alarm.mo
+share/locale/ru/LC_MESSAGES/gmpc-alarm.mo
+share/locale/sq/LC_MESSAGES/gmpc-alarm.mo
+share/locale/sv/LC_MESSAGES/gmpc-alarm.mo
+share/locale/tr/LC_MESSAGES/gmpc-alarm.mo
+share/locale/zh_CN/LC_MESSAGES/gmpc-alarm.mo
 @dirrmtry lib/gmpc/plugins
 @dirrmtry lib/gmpc

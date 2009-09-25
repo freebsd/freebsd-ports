@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmpc-shout
-PORTVERSION=	0.18.0
-PORTREVISION=	1
+PORTVERSION=	0.19.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -22,7 +21,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack intltool
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

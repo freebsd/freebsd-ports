@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmpc-libnotify
-PORTVERSION=	0.18.0
-PORTREVISION=	1
+PORTVERSION=	0.19.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -23,7 +22,8 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
-USE_GNOME=	gnomehack
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack intltool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

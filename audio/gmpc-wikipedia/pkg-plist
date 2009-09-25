@@ -1,4 +1,8 @@
 lib/gmpc/plugins/wikiplugin.la
 lib/gmpc/plugins/wikiplugin.so
+share/gmpc/plugins/wikipedia/wikipedia.png
+@dirrmtry share/gmpc/plugins/wikipedia
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
 @dirrmtry lib/gmpc/plugins
 @dirrmtry lib/gmpc
