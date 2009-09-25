@@ -11,7 +11,7 @@ CATEGORIES=	irc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules to implement the IRC protocol (RFC 1459)
 
 PERL_CONFIGURE=	yes
