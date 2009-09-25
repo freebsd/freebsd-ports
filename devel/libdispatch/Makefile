@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libdispatch
-PORTVERSION=	38
+PORTVERSION=	40
 CATEGORIES=	devel
-MASTER_SITES=	http://www.SpringDaemons.com/stas/
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	${PORTNAME}-r${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
@@ -29,14 +29,6 @@ post-configure:
 
 .if ${OSVERSION} < 900002
 IGNORE=	is not supported on this OS version
-.endif
-
-#
-# We want the CPU to be at least i486 on i386 platform, so GCC builting atomics
-# will work.
-#
-.if ${ARCH} == "i386"
-CPUTYPE?=	i486
 .endif
 
 .include <bsd.port.post.mk>
