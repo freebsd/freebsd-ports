@@ -80,6 +80,6 @@ include/X11/Xaw3d/ViewportP.h
 include/X11/Xaw3d/Xaw3dP.h
 include/X11/Xaw3d/XawImP.h
 include/X11/Xaw3d/XawInit.h
-share/doc/Xaw3d/README.XAW3D
+%%PORTDOCS%%share/doc/Xaw3d/README.XAW3D
 @dirrm include/X11/Xaw3d
-@dirrm share/doc/Xaw3d
+%%PORTDOCS%%@dirrm share/doc/Xaw3d
