@@ -41,9 +41,6 @@ JARFILES=	aopalliance-1.0.jar \
 		stax2-api-3.0.1.jar \
 		woodstox-core-lgpl-4.0.3.jar
 
-PLIST_FILES=	bin/osmosis ${JAVAJARDIR_REL}/osmosis.jar \
-		${JARFILES:S,^,${DATADIR_REL}/,}
-
 do-install:
 	@${MKDIR} ${JAVAJARDIR}/
 	${INSTALL_DATA} ${WRKSRC}/osmosis.jar ${JAVAJARDIR}/
