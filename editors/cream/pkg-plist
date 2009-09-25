@@ -212,6 +212,7 @@ share/pixmaps/cream.svg
 @dirrm %%VIMRUNTIME%%/cream/bitmaps
 @dirrm %%VIMRUNTIME%%/cream/addons
 @dirrm %%VIMRUNTIME%%/cream
+@dirrmtry %%VIMRUNTIME%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
