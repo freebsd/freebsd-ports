@@ -14,7 +14,7 @@
  4:
  	cd configure \
 -	&& python configure.py -4 -Q $(QWT) -j $(JOBS) \
-+	&& python configure.py -4 -I/usr/local/include/qwt -L/usr/local/lib -lqwt -j $(JOBS) \
++	&& python configure.py -4 -I%%LOCALBASE%%/include/qwt -L%%LOCALBASE%%/lib -lqwt -j $(JOBS) \
  	&& $(MAKE) -j $(JOBS)
  
  
