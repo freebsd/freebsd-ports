@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Authen-SASL
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,5 +34,10 @@ MAN3+=	Authen::SASL::Perl::PLAIN.3
 .if !defined(WITHOUT_KERBEROS)
 RUN_DEPENDS+=	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
 .endif
+
+post-patch:
+	${RM} ${WRKSRC}/lib/Authen/SASL/Perl/EXTERNAL.pm.orig
+	${RM} ${WRKSRC}/lib/Authen/SASL/Perl/DIGEST_MD5.pm.orig
+	${RM} ${WRKSRC}/lib/Authen/SASL/Perl/DIGEST_MD5.pm.rej
 
 .include <bsd.port.mk>
