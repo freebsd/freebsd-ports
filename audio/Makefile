@@ -211,6 +211,7 @@
     SUBDIR += gmm
     SUBDIR += gmpc
     SUBDIR += gmpc-alarm
+    SUBDIR += gmpc-albumview
     SUBDIR += gmpc-extraplaylist
     SUBDIR += gmpc-lastfm
     SUBDIR += gmpc-libnotify
