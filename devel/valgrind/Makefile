@@ -37,7 +37,15 @@ IGNORE=	your FreeBSD version is not supported
 
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	AMD64=""
+. if !exists(/usr/lib32)
+CONFIGURE_ARGS+=	--enable-only64bit
+PLIST_SUB+=	X86="@comment "
+. else
+PLIST_SUB+=	X86=""
+. else
+. endif
 .else
+PLIST_SUB+=	X86=""
 PLIST_SUB+=	AMD64="@comment "
 .endif
 
