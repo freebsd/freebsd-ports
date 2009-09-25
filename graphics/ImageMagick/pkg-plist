@@ -193,9 +193,6 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dot.a
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dot.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dot.so
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dps.a
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dps.la
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dps.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dpx.a
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dpx.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dpx.so
