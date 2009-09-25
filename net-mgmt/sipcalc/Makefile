@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sipcalc
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 
