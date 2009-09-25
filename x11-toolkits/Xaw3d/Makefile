@@ -9,7 +9,9 @@ PORTNAME=	Xaw3d
 PORTVERSION=	1.5E
 PORTREVISION=	3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
+MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/ \
+		http://www.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware_source/x/xaw3d/ \
+		ftp.slackware.com/pub/slackware/slackware_source/x/xaw3d/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A 3-D Athena Widget set that looks like Motif
@@ -36,8 +38,10 @@ post-configure:
 .endif
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${DOCSDIR}/
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
