@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Mouse/Meta/TypeConstraint.pm
 %%SITE_PERL%%/Mouse/Object.pm
 %%SITE_PERL%%/Mouse/Role.pm
+%%SITE_PERL%%/Mouse/Spec.pm
 %%SITE_PERL%%/Mouse/Tiny.pm
 %%SITE_PERL%%/Mouse/TypeRegistry.pm
 %%SITE_PERL%%/Mouse/Util.pm
