@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lookout
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://catb.org/~esr/lookout/
 
