@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-mpc-plugin
 PORTVERSION=	0.3.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -15,7 +15,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A mpc plugin for xfce
 
-LIB_DEPENDS=	mpd.1:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS=	mpd.2:${PORTSDIR}/audio/libmpd
 
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes

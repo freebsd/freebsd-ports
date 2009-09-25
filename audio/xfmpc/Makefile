@@ -7,6 +7,7 @@
 
 PORTNAME=	xfmpc
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.2/
 DIST_SUBDIR=	xfce4
@@ -14,7 +15,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A graphical MPD client focusing on low footprint
 
-LIB_DEPENDS=	mpd.1:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS=	mpd.2:${PORTSDIR}/audio/libmpd
 
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
