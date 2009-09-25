@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
