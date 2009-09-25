@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/butterfly/avatars.py
 %%PYTHON_SITELIBDIR%%/butterfly/avatars.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/avatars.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/capabilities.py
+%%PYTHON_SITELIBDIR%%/butterfly/capabilities.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/capabilities.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/channel/__init__.py
 %%PYTHON_SITELIBDIR%%/butterfly/channel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/channel/__init__.pyo
@@ -16,6 +19,9 @@
 %%PYTHON_SITELIBDIR%%/butterfly/channel/group.py
 %%PYTHON_SITELIBDIR%%/butterfly/channel/group.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/channel/group.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/channel/media.py
+%%PYTHON_SITELIBDIR%%/butterfly/channel/media.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/channel/media.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/channel/text.py
 %%PYTHON_SITELIBDIR%%/butterfly/channel/text.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/channel/text.pyo
@@ -31,12 +37,27 @@
 %%PYTHON_SITELIBDIR%%/butterfly/contacts.py
 %%PYTHON_SITELIBDIR%%/butterfly/contacts.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/contacts.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/debug.py
+%%PYTHON_SITELIBDIR%%/butterfly/debug.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/debug.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/handle.py
 %%PYTHON_SITELIBDIR%%/butterfly/handle.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/handle.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/presence.py
 %%PYTHON_SITELIBDIR%%/butterfly/presence.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/presence.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/media/__init__.py
+%%PYTHON_SITELIBDIR%%/butterfly/media/__init__.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/media/__init__.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/media/constants.py
+%%PYTHON_SITELIBDIR%%/butterfly/media/constants.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/media/constants.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/media/session_handler.py
+%%PYTHON_SITELIBDIR%%/butterfly/media/session_handler.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/media/session_handler.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/media/stream_handler.py
+%%PYTHON_SITELIBDIR%%/butterfly/media/stream_handler.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/media/stream_handler.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.py
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyo
@@ -47,6 +68,7 @@ libexec/telepathy-butterfly
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.butterfly.service
 share/telepathy/managers/butterfly.manager
 @dirrm %%PYTHON_SITELIBDIR%%/butterfly/util
+@dirrm %%PYTHON_SITELIBDIR%%/butterfly/media
 @dirrm %%PYTHON_SITELIBDIR%%/butterfly/channel
 @dirrm %%PYTHON_SITELIBDIR%%/butterfly
 @dirrmtry share/telepathy/managers
