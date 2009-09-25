@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MathML-Entities
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	textproc www math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert XHTML+MathML Named Entities to Numeric Character References
 
 MAN3=	MathML::Entities.3
