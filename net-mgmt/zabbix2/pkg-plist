@@ -144,6 +144,8 @@ bin/zabbix_server
 %%DATADIR%%/php/images/gradients/gradient.png
 %%DATADIR%%/php/images/gradients/menu_not_active.gif
 %%DATADIR%%/php/images/gradients/menu_not_active_bb.gif
+%%DATADIR%%/php/images/gradients/sla_red.png
+%%DATADIR%%/php/images/gradients/sla_green.png
 %%DATADIR%%/php/images/gradients/table_head.gif
 %%DATADIR%%/php/images/gradients/table_head2.gif
 %%DATADIR%%/php/images/gradients/table_head2_bb.gif
