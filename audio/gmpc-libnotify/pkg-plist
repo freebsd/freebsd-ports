@@ -1,4 +1,4 @@
 lib/gmpc/plugins/libnotifyplugin.la
 lib/gmpc/plugins/libnotifyplugin.so
-@dirrm lib/gmpc/plugins
-@dirrm lib/gmpc
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc

@@ -1,4 +1,21 @@
 lib/gmpc/plugins/lyricwikiplugin.la
 lib/gmpc/plugins/lyricwikiplugin.so
-@dirrmtry lib/gmpc/plugins
-@dirrmtry lib/gmpc
+share/locale/bg/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/bs/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/de/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/es/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/fi/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/fr/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/it/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/nb/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/nl/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/pl/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/pt_BR/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/ro/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/ru/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/sl/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/sq/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/sv/LC_MESSAGES/gmpc-lyricwiki.mo
+share/locale/zh_CN/LC_MESSAGES/gmpc-lyricwiki.mo
+@dirrm lib/gmpc/plugins
+@dirrm lib/gmpc
