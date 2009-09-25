@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/PyQt4/Qwt5
 %%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/_iqt.so
 %%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/Qwt.so
 %%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/qplt.py
@@ -13,10 +12,12 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/iqt.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/pythonrc.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/qplt.pyc
-share/py-sip/Qwt5
+%%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/ipy_user_conf.py
+%%PYTHON_SITELIBDIR%%/PyQt4/Qwt5/ipy_user_conf.pyc
 share/py-sip/Qwt5/qwt_arrow_button.sip
 share/py-sip/Qwt5/qwt_knob.sip
 share/py-sip/Qwt5/qwt_plot_picker.sip
+share/py-sip/Qwt5/qwt_plot_rescaler.sip
 share/py-sip/Qwt5/qwt_plot_svgitem.sip
 share/py-sip/Qwt5/qwt_legend_itemmanager.sip
 share/py-sip/Qwt5/qwt_text.sip
@@ -25,7 +26,6 @@ share/py-sip/Qwt5/qwt_plot_dict.sip
 share/py-sip/Qwt5/qwt_abstract_scale_draw.sip
 share/py-sip/Qwt5/qwt_plot_printfilter.sip
 share/py-sip/Qwt5/qwt_scale_map.sip
-share/py-sip/Qwt5/qwt_scale_widget.sip
 share/py-sip/Qwt5/QwtArrayInt.sip
 share/py-sip/Qwt5/qwt_dial_needle.sip
 share/py-sip/Qwt5/qwt_plot_curve.sip
@@ -89,4 +89,4 @@ share/py-sip/Qwt5/qwt_scale_widget.sip
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/Qwt5
 @dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
 @dirrm share/py-sip/Qwt5
-@dirrm share/py-sip
+@dirrmtry share/py-sip
