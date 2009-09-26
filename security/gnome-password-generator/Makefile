@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security gnome python
 MASTER_SITES=	SF/gnome-password/Gnome%20Password%20Generator/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	GNOME 2 password generator
 
 USE_GNOME=	pygnome2
