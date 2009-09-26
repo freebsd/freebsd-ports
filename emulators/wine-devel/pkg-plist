@@ -394,6 +394,7 @@ include/wine/windows/oleauto.h
 include/wine/windows/olectl.h
 include/wine/windows/oledb.h
 include/wine/windows/oledb.idl
+include/wine/windows/oledberr.h
 include/wine/windows/oledlg.h
 include/wine/windows/oleidl.h
 include/wine/windows/oleidl.idl
@@ -657,6 +658,7 @@ lib/wine/d3dx9_38.dll.so
 lib/wine/d3dx9_39.dll.so
 lib/wine/d3dx9_40.dll.so
 lib/wine/d3dx9_41.dll.so
+lib/wine/d3dx9_42.dll.so
 lib/wine/d3dxof.dll.so
 lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
@@ -761,6 +763,7 @@ lib/wine/fakedlls/d3dx9_38.dll
 lib/wine/fakedlls/d3dx9_39.dll
 lib/wine/fakedlls/d3dx9_40.dll
 lib/wine/fakedlls/d3dx9_41.dll
+lib/wine/fakedlls/d3dx9_42.dll
 lib/wine/fakedlls/d3dxof.dll
 lib/wine/fakedlls/dbghelp.dll
 lib/wine/fakedlls/dciman32.dll
