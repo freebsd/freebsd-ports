@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	ToscaWidgets
-PORTVERSION=	0.9.7.2
+PORTVERSION=	0.9.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A python framework for building reusable web components
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0:${PORTSDIR}/www/py-webob \
