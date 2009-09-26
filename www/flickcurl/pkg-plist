@@ -11,6 +11,14 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-auth-register.html
 %%DOCSDIR%%/flickcurl-auth-use.html
 %%DOCSDIR%%/flickcurl-auth.html
+%%DOCSDIR%%/flickcurl-searching-search-example.html
+%%DOCSDIR%%/flickcurl-searching-search-extras.html
+%%DOCSDIR%%/flickcurl-searching-search-paging.html
+%%DOCSDIR%%/flickcurl-searching-search-parameters.html
+%%DOCSDIR%%/flickcurl-searching-search-result-formats.html
+%%DOCSDIR%%/flickcurl-searching-search-results.html
+%%DOCSDIR%%/flickcurl-searching-search-run.html
+%%DOCSDIR%%/flickcurl-searching.html
 %%DOCSDIR%%/flickcurl-section-activity.html
 %%DOCSDIR%%/flickcurl-section-auth.html
 %%DOCSDIR%%/flickcurl-section-blogs.html
@@ -47,8 +55,8 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/indexes.html
 %%DOCSDIR%%/introduction.html
-%%DOCSDIR%%/ix01.html
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
