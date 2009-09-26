@@ -4337,9 +4337,7 @@ gmm++                           ports/math/gmm++
 gmp-ecm                         ports/math/gmp-ecm
 gmpc                            ports/audio/gmpc
 gmpc-alarm                      ports/audio/gmpc-alarm
-gmpc-autoplaylist               ports/audio/gmpc-autoplaylist
 gmpc-extraplaylist              ports/audio/gmpc-extraplaylist
-gmpc-favorites                  ports/audio/gmpc-favorites
 gmpc-lastfm                     ports/audio/gmpc-lastfm
 gmpc-libnotify                  ports/audio/gmpc-libnotify
 gmpc-lyrics                     ports/audio/gmpc-lyrics
@@ -4347,14 +4345,8 @@ gmpc-lyricwiki                  ports/audio/gmpc-lyricwiki
 gmpc-magnatune                  ports/audio/gmpc-magnatune
 gmpc-mdcover                    ports/audio/gmpc-mdcover
 gmpc-mserver                    ports/audio/gmpc-mserver
-gmpc-osd                        ports/audio/gmpc-osd
-gmpc-qosd                       ports/audio/gmpc-qosd
-gmpc-random-playlist            ports/audio/gmpc-random-playlist
-gmpc-serverstats                ports/audio/gmpc-serverstats
 gmpc-shout                      ports/audio/gmpc-shout
-gmpc-stopbutton                 ports/audio/gmpc-stopbutton
 gmpc-wikipedia                  ports/audio/gmpc-wikipedia
-gmpccaa                         ports/audio/gmpccaa
 gmrun                           ports/x11/gmrun
 gmsh                            ports/cad/gmsh
 gmsh-occ                        ports/cad/gmsh-occ
@@ -10117,6 +10109,7 @@ osgg                            ports/games/osgg
 osh                             ports/shells/osh
 osiris                          ports/security/osiris
 osmose                          ports/emulators/osmose
+osmosis                         ports/astro/osmosis
 osrtspproxy                     ports/net/osrtspproxy
 oss                             ports/audio/oss
 ossec-hids-client               ports/security/ossec-hids-client
@@ -10522,7 +10515,9 @@ p5-CGI.pm                       ports/www/p5-CGI.pm
 p5-CGI_Lite                     ports/www/p5-CGI_Lite
 p5-CHI                          ports/devel/p5-CHI
 p5-CLASS                        ports/devel/p5-CLASS
+p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
+p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
 p5-CPAN-SQLite                  ports/devel/p5-CPAN-SQLite
 p5-CPAN-YACSmoke                ports/devel/p5-CPAN-YACSmoke
@@ -11214,6 +11209,7 @@ p5-Devel-Pointer                ports/devel/p5-Devel-Pointer
 p5-Devel-Profile                ports/devel/p5-Devel-Profile
 p5-Devel-Profiler               ports/devel/p5-Devel-Profiler
 p5-Devel-REPL                   ports/devel/p5-Devel-REPL
+p5-Devel-Refactor               ports/devel/p5-Devel-Refactor
 p5-Devel-Required               ports/devel/p5-Devel-Required
 p5-Devel-RingBuffer             ports/devel/p5-Devel-RingBuffer
 p5-Devel-STrace                 ports/devel/p5-Devel-STrace
@@ -14400,7 +14396,9 @@ p5-convert-tnef                 ports/converters/p5-Convert-TNEF
 p5-convert-uu                   ports/converters/p5-Convert-UU
 p5-convert-uulib                ports/converters/p5-Convert-UUlib
 p5-coro                         ports/devel/p5-Coro
+p5-cpan-checksums               ports/devel/p5-CPAN-Checksums
 p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
+p5-cpan-inject                  ports/devel/p5-CPAN-Inject
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
 p5-cpan-sqlite                  ports/devel/p5-CPAN-SQLite
 p5-cpan-yacsmoke                ports/devel/p5-CPAN-YACSmoke
@@ -14764,6 +14762,7 @@ p5-devel-ppport                 ports/devel/p5-Devel-PPPort
 p5-devel-profile                ports/devel/p5-Devel-Profile
 p5-devel-profiler               ports/devel/p5-Devel-Profiler
 p5-devel-ptkdb                  ports/devel/p5-Devel-ptkdb
+p5-devel-refactor               ports/devel/p5-Devel-Refactor
 p5-devel-repl                   ports/devel/p5-Devel-REPL
 p5-devel-required               ports/devel/p5-Devel-Required
 p5-devel-ringbuffer             ports/devel/p5-Devel-RingBuffer
@@ -16207,6 +16206,7 @@ p5-pgp                          ports/security/p5-PGP
 p5-pgp-sign                     ports/security/p5-PGP-Sign
 p5-php-serialization            ports/devel/p5-PHP-Serialization
 p5-php-session                  ports/www/p5-PHP-Session
+p5-pip                          ports/devel/p5-pip
 p5-pipeline                     ports/devel/p5-Pipeline
 p5-plagger                      ports/textproc/p5-Plagger
 p5-plp                          ports/www/p5-PLP
