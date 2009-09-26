@@ -31,7 +31,7 @@ post-extract:
 	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 post-configure:
 	@(cd ${WRKSRC}; ${MV} Makefile Makefile.orig; ${SED} -e \
 	  's/CDEBUGFLAGS = -O/CDEBUGFLAGS =/g' Makefile.orig > Makefile)
