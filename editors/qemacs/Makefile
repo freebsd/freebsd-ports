@@ -20,6 +20,9 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --make="${GMAKE}" --cc="${CC}" \
 		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
 USE_GCC=	3.4
 
+DEPRECATED=	depends on old version of GCC, no maintainer, not used by any other port, dead upstream
+EXPIRATION_DATE=2009-10-26
+
 DATADIR=	${PREFIX}/share/qe
 
 MAN1=		qe.1
