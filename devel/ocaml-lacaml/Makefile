@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lacaml
-PORTVERSION=	5.4.1
+PORTVERSION=	5.4.6
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://hg.ocaml.info/release/lacaml/archive/
