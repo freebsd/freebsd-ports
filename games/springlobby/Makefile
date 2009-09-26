@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	springlobby
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/
