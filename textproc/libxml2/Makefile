@@ -12,8 +12,8 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.7.4
-PORTREVISION?=	1
+PORTVERSION=	2.7.5
+PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
 		ftp://gd.tuwien.ac.at/pub/libxml/ \
