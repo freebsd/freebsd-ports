@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.25
+PORTVERSION=	1.1.26
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
