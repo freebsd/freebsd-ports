@@ -9,15 +9,14 @@ PORTNAME=	tv_grab_au
 PORTVERSION=	0.6.2
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.onlinetractorparts.com.au/rohbags/xmltvau/
+MASTER_SITES=	http://www.tienza.es/crux/mirror/ \
+		http://www.onlinetractorparts.com.au/rohbags/xmltvau/
 # DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X 'tv_grab_au' is an XMLTV grabber for Australian TV programmes
 
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv
-
-BROKEN=		does not fetch
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
