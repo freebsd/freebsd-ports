@@ -1,0 +1,10 @@
+************************************************************
+* Before using Wanderlust, you must set following elisp    *
+* to your own .emacs file.                                 *
+*                                                          *
+* (require 'wanderlust-startup)                            *
+*                                                          *
+* Sample configuration files are installed into            *
+* ${PREFIX}/share/examples/wanderlust.  Please copy to     *
+* your home directory and edit them.                       *
+************************************************************
