@@ -15,6 +15,7 @@ bin/newlispdoc
 %%PORTDOCS%%%%EXAMPLESDIR%%/client
 %%PORTDOCS%%%%EXAMPLESDIR%%/finger
 %%PORTDOCS%%%%EXAMPLESDIR%%/form.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/form.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/init.lsp.example
 %%PORTDOCS%%%%EXAMPLESDIR%%/newLISP-Excel-Import.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/opengl-demo.lsp
