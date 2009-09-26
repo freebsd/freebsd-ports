@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpc
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.multiprecision.org/mpc/download/
 
