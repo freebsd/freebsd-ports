@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdispatch
-PORTVERSION=	40
+PORTVERSION=	44
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	${PORTNAME}-r${PORTVERSION}
@@ -17,6 +17,11 @@ COMMENT=	Grand Central Dispatch API support library
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+
+MAN3=	dispatch.3 dispatch_after.3 dispatch_api.3 dispatch_apply.3 \
+	dispatch_async.3 dispatch_benchmark.3 dispatch_group_create.3 \
+	dispatch_object.3 dispatch_once.3 dispatch_queue_create.3 \
+	dispatch_semaphore_create.3 dispatch_source_create.3 dispatch_time.3
 
 #
 # Get rid of .la and static library files
