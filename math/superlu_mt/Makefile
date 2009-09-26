@@ -7,7 +7,7 @@
 
 PORTNAME=	superlu_mt
 PORTVERSION=	2.0.20080115
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
@@ -15,13 +15,11 @@ DISTNAME=	${PORTNAME}_2.0
 .ifndef NOPORTDOCS
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} simax97.ps.gz:doc
 .endif
-DIST_SUBDIR=	superlu
+DIST_SUBDIR=	superlu2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
-
-BROKEN=		checksum mismatch
 
 USE_FORTRAN=	yes
 
