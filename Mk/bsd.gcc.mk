@@ -72,6 +72,8 @@ FC:=	gfortran44
 F77:=	gfortran44
 CC:=	gcc44
 CXX:=	g++44
+CFLAGS+=	-Wl,-rpath=${PREFIX}/lib/gcc44
+LDFLAGS+=	-Wl,-rpath=${PREFIX}/lib/gcc44
 
 # Intel Fortran compiler from lang/ifc.
 . elif ${USE_FORTRAN} == ifort
