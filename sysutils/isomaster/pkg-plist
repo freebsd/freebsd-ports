@@ -24,6 +24,7 @@ bin/isomaster
 %%NLS%%share/locale/hu/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/id/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/it/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/isomaster.mo
