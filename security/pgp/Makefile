@@ -19,7 +19,7 @@ COMMENT=	PGP International version - Public-Key encryption for the masses
 WRKSRC=		${WRKDIR}/src
 
 MAKEFILE=	makefile
-ALL_TARGET=	freebsd-${MACHINE_ARCH}
+ALL_TARGET=	freebsd-${ARCH}
 MAKE_ENV=	OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${PREFIX}/share/pgp
 MAN1=		pgp.1 pgp2.1

@@ -19,7 +19,7 @@ COMMENT=	PGP International version - improved for use in IN-CA
 WRKSRC=		${WRKDIR}/pgp263in/src
 
 MAKEFILE=	makefile
-ALL_TARGET=	freebsd-${MACHINE_ARCH} OS_CFLAGS="${CFLAGS}"
+ALL_TARGET=	freebsd-${ARCH} OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${PREFIX}/lib/pgpin
 MAN1=		pgpin.1
 
