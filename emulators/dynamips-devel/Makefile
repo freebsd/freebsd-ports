@@ -7,12 +7,12 @@
 
 PORTNAME=	dynamips
 DISTVERSION=	0.2.8-RC2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	pol@opk.ru
+MAINTAINER=	pol@iib.ru
 COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
