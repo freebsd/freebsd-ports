@@ -28,8 +28,6 @@ UIM_SLAVE=	yes
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt_Makefile.in \
 		${PATCHDIR}/extra-patch-qt_chardict_po_Makefile.in.in
 
-BROKEN=		fails to configure
-
 .if defined(WITHOUT_X11)
 IGNORE=		requires X11
 .endif
