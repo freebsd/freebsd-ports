@@ -10,7 +10,6 @@ PORTVERSION=	3.5.0
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-PKGNAMESUFFIX=	-snapshot
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
