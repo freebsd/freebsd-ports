@@ -1,3 +1,3 @@
-MD5 (htmlize.el) = 7cc77e3e44beecb688b744464159af9e
-SHA256 (htmlize.el) = 4c478c25dfd8bc8ffc8207a26e1340b7abe3167d49c4118bd8debf205e2f321f
-SIZE (htmlize.el) = 70418
+MD5 (repacked/htmlize.el) = dc68eccaafd03ae4519e63829523b712
+SHA256 (repacked/htmlize.el) = f6541fa01e0cfff7823b390143954aa2278d74bb61f8c3d139db88d74a93f57b
+SIZE (repacked/htmlize.el) = 70436

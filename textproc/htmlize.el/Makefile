@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	htmlize.el
-PORTVERSION=	1.34
-PORTREVISION=	1
+PORTVERSION=	1.36
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://fly.srk.fer.hr/~hniksic/emacs/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	repacked
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,8 +22,6 @@ NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}/htmlize.el
-
-BROKEN=		checksum mismatch
 
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/htmlize.el \
 		${EMACS_SITE_LISPDIR}/htmlize.elc
