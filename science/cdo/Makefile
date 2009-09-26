@@ -8,6 +8,7 @@
 
 PORTNAME=		cdo
 PORTVERSION=		1.3.1
+PORTREVISION=		1
 CATEGORIES=		science
 MASTER_SITES=		http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 			http://sunpoet.net/distfiles/
@@ -47,7 +48,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-Makefile.in
 .if (${NETCDF_VER} == 4)
 HDF5_VER=		18
 WITH_HDF5=		yes
-LIB_DEPENDS+=		netcdf.5:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS+=		netcdf.6:${PORTSDIR}/science/netcdf4
 .else
 LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
 .endif
