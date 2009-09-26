@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.1.29
+DISTVERSION=	1.1.30
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -25,8 +25,9 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
-		--without-capi --without-gphoto --without-gsm \
-		--without-mpg123 --without-sane --without-xcursor
+		--without-capi --without-gnutls --without-gphoto \
+		--without-gsm --without-mpg123 --without-openal \
+		--without-sane --without-xcursor
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
