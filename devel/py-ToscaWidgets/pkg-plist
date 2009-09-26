@@ -48,6 +48,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/resources.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/resources.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/resources.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/server.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/server.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/server.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/testutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/testutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tw/core/testutil.pyo
