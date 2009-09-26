@@ -7,10 +7,11 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		5.4.2
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
-MAINTAINER=		wenheping@gmail.com
+MAINTAINER=		wen@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
@@ -27,6 +28,7 @@ OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			MING "Support for Macromedia Flash output" off \
 			PDF "Support for PDF output via pdflib" off \
 			GDAL "Support for a number of input raster formats" off \
+			GEOS "Use GEOS engine where possible" off \
 			POSTGIS "Support for PostGIS" off \
 			PHP "Support for MapScript/PHP" off \
 			PERL "Support for MapScript/PERL" off \
@@ -78,6 +80,11 @@ CONFIGURE_ARGS+=	--with-gdal=${LOCALBASE}/bin/gdal-config \
 			--with-ogr=${LOCALBASE}/bin/gdal-config
 .endif
 
+.if defined(WITH_GEOS)
+LIB_DEPENDS+=		geos.0:${PORTSDIR}/graphics/geos
+CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
+.endif
+
 .if defined(WITH_POSTGIS)
 USE_PGSQL=	YES
 CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
@@ -107,7 +114,7 @@ CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 
 .if defined(WITH_MAPSERV)
-USE_APACHE=		22
+USE_APACHE=		13
 PLIST_SUB+=		WITH_MAPSERV=""
 .else
 PLIST_SUB+=		WITH_MAPSERV="@comment "
