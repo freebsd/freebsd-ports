@@ -1,5 +1,7 @@
+bin/nc-config
 bin/ncdump
 bin/ncgen
+bin/ncgen4
 include/ncvalues.h
 include/netcdf.h
 include/netcdf.hh
@@ -8,7 +10,7 @@ include/netcdfcpp4.h
 lib/libnetcdf.a
 lib/libnetcdf.la
 lib/libnetcdf.so
-lib/libnetcdf.so.5
+lib/libnetcdf.so.6
 lib/libnetcdf_c++.a
 lib/libnetcdf_c++.la
 lib/libnetcdf_c++.so
@@ -17,8 +19,10 @@ lib/libnetcdf_c++4.a
 lib/libnetcdf_c++4.la
 lib/libnetcdf_c++4.so
 lib/libnetcdf_c++4.so.1
+lib/pkgconfig/netcdf.pc
 %%PORTDOCS%%%%DOCSDIR%%/ncdump-man-1.html
 %%PORTDOCS%%%%DOCSDIR%%/ncgen-man-1.html
+%%PORTDOCS%%%%DOCSDIR%%/ncgen4-man-1.html
 %%PORTDOCS%%%%DOCSDIR%%/netcdf-c.html
 %%PORTDOCS%%%%DOCSDIR%%/netcdf-c.pdf
 %%PORTDOCS%%%%DOCSDIR%%/netcdf-c.ps
@@ -55,3 +59,4 @@ lib/libnetcdf_c++4.so.1
 %%PORTDOCS%%%%DOCSDIR%%/netcdf_f77-man.html
 %%PORTDOCS%%%%DOCSDIR%%/netcdf_f90-man.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/pkgconfig
