@@ -7,7 +7,7 @@
 PORTNAME=	amf
 PORTVERSION=	0.5
 CATEGORIES=	www devel python
-MASTER_SITES=	http://download.pyamf.org/releases/
+MASTER_SITES=	http://download.pyamf.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 
