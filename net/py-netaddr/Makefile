@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		CHEESESHOP
@@ -29,7 +29,7 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-x-regression-test:
+regression-test:
 .for f in ${TESTFILES}
 	(cd ${WRKSRC}/netaddr/tests && ${PYTHON_CMD} $f)
 .endfor
