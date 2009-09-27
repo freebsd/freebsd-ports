@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	190.32
+PORTVERSION=	190.36
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-settings/
