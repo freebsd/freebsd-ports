@@ -7,6 +7,7 @@
 
 PORTNAME?=	libtool
 PORTVERSION=	2.2.6a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -20,5 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 INFO?=		libtool
+
+post-patch:
+	${REINPLACE_CMD} -e 's|sed gsed|sed|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
