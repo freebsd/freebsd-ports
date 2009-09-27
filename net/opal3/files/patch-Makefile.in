@@ -1,13 +1,14 @@
---- Makefile.in.orig	Sat Apr 22 16:06:54 2006
-+++ Makefile.in	Thu Jun 22 09:39:04 2006
-@@ -427,10 +427,6 @@
- SOURCES += $(OPAL_SRCDIR)/lids/vpblid.cxx
- endif
+--- Makefile.in.orig	2009-09-11 02:47:07.000000000 +0400
++++ Makefile.in	2009-09-11 03:06:15.000000000 +0400
+@@ -541,8 +541,9 @@
+ install:
+ 	mkdir -p $(DESTDIR)$(libdir); chmod 755 $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 $(OPAL_LIBDIR)/$(LIB_FILENAME_STATIC) $(DESTDIR)$(libdir)
+-	$(INSTALL) -m 755 $(OPAL_LIBDIR)/$(LIB_FILENAME_SHARED_PAT) $(DESTDIR)$(libdir)
+-	ln -snf $(LIB_FILENAME_SHARED_PAT) $(DESTDIR)$(libdir)/$(LIB_FILENAME_SHARED)
++	$(INSTALL) -m 755 $(OPAL_LIBDIR)/$(LIB_FILENAME_SHARED_PAT) $(DESTDIR)$(libdir)/$(RELEASE_LIB_NAME)-@@SO_VER@@
++	ln -snf $(RELEASE_LIB_NAME)-@@SO_VER@@ $(DESTDIR)$(libdir)/$(RELEASE_LIB_NAME)-@@SO_MAJ@@
++	ln -snf $(RELEASE_LIB_NAME)-@@SO_VER@@ $(DESTDIR)$(libdir)/$(RELEASE_LIB_NAME).so
+ 	mkdir -p $(DESTDIR)$(libdir)/pkgconfig ; chmod 755 $(DESTDIR)$(libdir)/pkgconfig
+ 	$(INSTALL) -m 644 opal.pc $(DESTDIR)$(libdir)/pkgconfig
  
--ifdef HAS_SANGOMA
--SOURCES += $(OPAL_SRCDIR)/lids/sangomalid.cxx
--endif
--
- 
- ##################
- # Software codecs

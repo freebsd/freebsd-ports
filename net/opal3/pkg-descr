@@ -1,9 +1,18 @@
-OPAL is the "next generation" of OpenH323 that has a new architecture. Not only
-does it support H.323 and SIP, but new VoIP protocols or devices can be added
-very easily. It is being actively developed and is used by several projects
-such as Ekiga (http://www.ekiga.org)
+Opal is a full-featured voip library that supports a variety of protocols and
+multi-media fornats. Features include:
+
+    * Low latency RTP stack designed specifically for real-time multimedia
+    * Full featured H.323, SIP and IAX2 protocol stacks
+    * Audio codecs including G.711, GSM06.10, Speex and iLBC.
+    * Video codecs including H.261 and H.263
+    * Run-time loadable codec interface for proprietary or codecs such as G.729,
+      H.263, H.264 and MPEG4
+    * Completely Open Source using the commercially friendly MPL 1.1 license
+
+Through the use of a platform isolation library called PTLIB, Opal can run on
+tiny embedded systems or multi-processor servers.
 
 BTW: OPAL is an acronym for Open Phone Abstraction Library, but that is not
 really important :)
 
-WWW: http://www.voxgratia.org/
+WWW: http://opalvoip.org/
