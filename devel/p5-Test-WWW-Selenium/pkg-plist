@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Test/WWW/Selenium.pm
+%%SITE_PERL%%/Test/WWW/mypod2html.pl
 %%SITE_PERL%%/WWW/Selenium.pm
 %%SITE_PERL%%/WWW/Selenium/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/WWW/Selenium/.packlist
