@@ -22,6 +22,8 @@ BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
+CONFLICTS=	llvm-2.[123457]* llvm-2.6.[0-9]*
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -36,7 +38,9 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
-MAN1=		bugpoint.1 clang.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
+CONFIGURE_ARGS+=	--enable-bindings=none
+
+MAN1=		bugpoint.1 clang.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
@@ -105,25 +109,25 @@ regression-test: ${BUILD_COOKIE}
 PLIST_FILE_LIST=	bin/bugpoint \
 			bin/ccc-analyzer \
 			bin/clang* \
-			bin/gccas \
-			bin/gccld \
 			bin/llc \
 			bin/lli \
 			bin/llvm* \
 			bin/opt \
 			bin/scan-build \
-			lib/CompilerDriver.o \
-			lib/LLVM* \
-			lib/libLTO.so \
+			bin/tblgen \
+			lib/libCIndex.* \
+			lib/libCompilerDriver.a \
+			lib/libLTO.* \
 			lib/libLLVM* \
-			lib/libclang* \
-			lib/plugin_llvm* \
+			lib/libUnitTestMain.a \
+			lib/libplugin_llvmc* \
+			lib/libprofile_rt.so \
 			libexec/clang-cc
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm \
 			lib/clang
 build-plist:
-	${RM} ${PLIST}
+	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
 	    ${SORT} >> ${PLIST}
