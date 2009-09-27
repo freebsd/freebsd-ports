@@ -3208,6 +3208,7 @@ fastjar                         ports/archivers/fastjar
 fastresolve                     ports/dns/fastresolve
 fatback                         ports/sysutils/fatback
 fb                              ports/editors/fb
+fb303                           ports/devel/fb303
 fbbi                            ports/lang/fbbi
 fbcmd                           ports/x11-wm/fbcmd
 fbdesk                          ports/x11/fbdesk
@@ -4337,10 +4338,13 @@ gmm++                           ports/math/gmm++
 gmp-ecm                         ports/math/gmp-ecm
 gmpc                            ports/audio/gmpc
 gmpc-alarm                      ports/audio/gmpc-alarm
+gmpc-albumview                  ports/audio/gmpc-albumview
+gmpc-discogs                    ports/audio/gmpc-discogs
 gmpc-extraplaylist              ports/audio/gmpc-extraplaylist
 gmpc-lastfm                     ports/audio/gmpc-lastfm
 gmpc-libnotify                  ports/audio/gmpc-libnotify
 gmpc-lyrics                     ports/audio/gmpc-lyrics
+gmpc-lyricsplugin               ports/audio/gmpc-lyricsplugin
 gmpc-lyricwiki                  ports/audio/gmpc-lyricwiki
 gmpc-magnatune                  ports/audio/gmpc-magnatune
 gmpc-mdcover                    ports/audio/gmpc-mdcover
@@ -23326,6 +23330,7 @@ wampager                        ports/x11-wm/wampager
 wand-libconfig                  ports/devel/wand-libconfig
 wanderer                        ports/games/wanderer
 wanderlust                      ports/mail/wanderlust
+wanderlust-devel                ports/mail/wanderlust-devel
 wanderlust-emacs21              ports/mail/wanderlust-emacs21
 wanderlust-xemacs21-mule        ports/mail/wanderlust-xemacs21-mule
 wanpipe                         ports/misc/wanpipe
