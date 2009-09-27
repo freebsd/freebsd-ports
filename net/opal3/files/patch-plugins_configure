@@ -1,0 +1,144 @@
+--- plugins/configure.ac.orig	2009-09-22 04:57:56.000000000 +0400
++++ plugins/configure.ac	2009-09-26 21:36:48.000000000 +0400
+@@ -219,6 +219,11 @@
+ dnl     ########################
+ dnl     libavcodec (ffmpeg)
+ dnl     ########################
++AC_ARG_ENABLE([ffmpeg],
++              [AC_HELP_STRING([--enable-ffmpeg],[enable libavcodec codec support])],
++              [HAVE_LIBAVCODEC=$enableval])
++
++if test "x${HAVE_LIBAVCODEC}" = "xyes" ; then
+ PKG_CHECK_MODULES([LIBAVCODEC],
+                   [libavcodec >= 52.20.0],
+                   [
+@@ -249,6 +254,8 @@
+                    HAVE_LIBAVCODEC=no
+                   ]
+                  )
++fi
++
+ AC_SUBST(HAVE_LIBAVCODEC)
+ 
+ OPAL_LIBAVCODEC_SOURCE()
+@@ -290,6 +297,11 @@
+ dnl     ########################
+ dnl     theora
+ dnl     ########################
++AC_ARG_ENABLE([theora],
++              [AC_HELP_STRING([--enable-theora],[enable theora codec support])],
++              [HAVE_THEORA=$enableval])
++
++if test "x${HAVE_THEORA}" = "xyes" ; then
+ PKG_CHECK_MODULES([THEORA],
+                   [theora],
+                   [
+@@ -301,11 +313,18 @@
+                   [
+                    HAVE_THEORA=no
+                   ])
++fi
++
+ AC_SUBST(HAVE_THEORA)
+ 
+ dnl     ########################
+ dnl     celt
+ dnl     ########################
++AC_ARG_ENABLE([celt],
++              [AC_HELP_STRING([--enable-celt],[enable CELT codec support])],
++              [HAVE_CELT=$enableval])
++
++if test "x${HAVE_CELT}" = "xyes" ; then
+ PKG_CHECK_MODULES([CELT],
+                   [celt],
+                   [
+@@ -321,6 +340,8 @@
+                   [
+                    HAVE_CELT=no
+                   ])
++fi
++
+ AC_SUBST(HAVE_CELT)
+ 
+ dnl     ########################
+--- plugins/configure.orig	2009-09-26 16:50:06.000000000 +0400
++++ plugins/configure	2009-09-26 21:44:26.000000000 +0400
+@@ -1340,11 +1340,14 @@
+   --enable-sbc            enable use of Bluetooth SBC for CD quality telephony
+   --enable-default-to-full-capabilties
+                           default to full capabilities at empty fmtp lines
++  --enable-ffmpeg         enable libavcodec codec support
+   --enable-libavcodec-stackalign-hack
+                           Stack alignment hack for libavcodec library
+   --enable-x264-link-static
+                           Statically link x264 to the plugin. Default for
+                           win32.
++  --enable-theora         enable theora codec support
++  --enable-celt           enable CELT codec support
+   --enable-h264           enable H.264 support
+   --enable-ixj            enable xJack cards
+   --enable-vpb            enable voicetronix vpb
+@@ -9543,6 +9546,13 @@
+           fi
+ 
+ 
++# Check whether --enable-ffmpeg was given.
++if test "${enable_ffmpeg+set}" = set; then
++  enableval=$enable_ffmpeg; HAVE_LIBAVCODEC=$enableval
++fi
++
++
++if test "x${HAVE_LIBAVCODEC}" = "xyes" ; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for LIBAVCODEC" >&5
+@@ -10144,6 +10154,8 @@
+ 
+ 
+ fi
++fi
++
+ 
+ 
+ 
+@@ -10350,6 +10362,13 @@
+ 
+ 
+ 
++# Check whether --enable-theora was given.
++if test "${enable_theora+set}" = set; then
++  enableval=$enable_theora; HAVE_THEORA=$enableval
++fi
++
++
++if test "x${HAVE_THEORA}" = "xyes" ; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for THEORA" >&5
+@@ -10430,8 +10449,17 @@
+                    HAVE_THEORA=yes
+ 
+ fi
++fi
++
+ 
+ 
++# Check whether --enable-celt was given.
++if test "${enable_celt+set}" = set; then
++  enableval=$enable_celt; HAVE_CELT=$enableval
++fi
++
++
++if test "x${HAVE_CELT}" = "xyes" ; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for CELT" >&5
+@@ -10526,6 +10554,8 @@
+ fi
+ 
+ fi
++fi
++
+ 
+ 
+ 

@@ -1,0 +1,56 @@
+--- plugins/configure.orig	2009-08-29 23:23:02.000000000 +0400
++++ plugins/configure	2009-08-29 23:23:29.000000000 +0400
+@@ -11549,9 +11549,9 @@
+ 
+           saved_LIBS="$LIBS"
+           LIBS="$LIBS -lspandsp"
+-          { echo "$as_me:$LINENO: checking for t38_indicator in -lspandsp" >&5
+-echo $ECHO_N "checking for t38_indicator in -lspandsp... $ECHO_C" >&6; }
+-if test "${ac_cv_lib_spandsp_t38_indicator+set}" = set; then
++          { echo "$as_me:$LINENO: checking for t38_core_init in -lspandsp" >&5
++echo $ECHO_N "checking for t38_core_init in -lspandsp... $ECHO_C" >&6; }
++if test "${ac_cv_lib_spandsp_t38_core_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -11569,11 +11569,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char t38_indicator ();
++char t38_core_init ();
+ int
+ main ()
+ {
+-return t38_indicator ();
++return t38_core_init ();
+   ;
+   return 0;
+ }
+@@ -11596,21 +11596,21 @@
+ 	 test ! -s conftest.err
+        } && test -s conftest$ac_exeext &&
+        $as_test_x conftest$ac_exeext; then
+-  ac_cv_lib_spandsp_t38_indicator=yes
++  ac_cv_lib_spandsp_t38_core_init=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-	ac_cv_lib_spandsp_t38_indicator=no
++	ac_cv_lib_spandsp_t38_core_init=no
+ fi
+ 
+ rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ echo "$as_me:$LINENO: result: $ac_cv_lib_spandsp_t38_indicator" >&5
+-echo "${ECHO_T}$ac_cv_lib_spandsp_t38_indicator" >&6; }
+-if test $ac_cv_lib_spandsp_t38_indicator = yes; then
++{ echo "$as_me:$LINENO: result: $ac_cv_lib_spandsp_t38_core_init" >&5
++echo "${ECHO_T}$ac_cv_lib_spandsp_t38_core_init" >&6; }
++if test $ac_cv_lib_spandsp_t38_core_init = yes; then
+   opal_spandsp=yes
+ else
+   opal_spandsp=no

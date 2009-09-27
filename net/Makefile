@@ -436,6 +436,7 @@
     SUBDIR += onion-fec
     SUBDIR += online-desktop
     SUBDIR += opal
+    SUBDIR += opal3
     SUBDIR += openam
     SUBDIR += openbgpd
     SUBDIR += openh323
