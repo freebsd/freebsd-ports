@@ -209,7 +209,6 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Tests/TestCodeWriter.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Tests/TestCodeWriter.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Includes/__cython__.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/numpy.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python2.5.pxd
