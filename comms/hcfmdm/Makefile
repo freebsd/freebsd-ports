@@ -45,7 +45,7 @@ IGNORE=	is not for FreeBSD versions < 600100
 .endif
 
 .if ${OSVERSION} >= 700000
-BROKEN=	Does not compile at 7.x
+BROKEN=	Does not compile at 7.x or higher
 .endif
 
 PLIST_SUB+=	KMODDIR=${KMODDIR}
