@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pymarc
-PORTVERSION=	2.33
+PORTVERSION=	2.40
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read Write And Modify MARC Bibliographic Data
 
 USE_PYTHON=	yes
