@@ -40,6 +40,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-native.mk
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-i386.mk
+.if ${ARCH} != "i386"
+BROKEN=		build fails with error: CPU you selected does not support x86-64 instruction set
+.endif
 .endif
 
 .include <bsd.port.post.mk>
