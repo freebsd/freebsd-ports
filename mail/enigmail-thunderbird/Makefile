@@ -52,6 +52,9 @@ USE_GCC=	3.4
 .if ${GECKO} == "seamonkey" && ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: drops core
 .endif
+.if ${GECKO} == "thunderbird" && ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: cannot find enigmail-skin-seamonkey.jar
+.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
