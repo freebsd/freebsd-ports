@@ -20,15 +20,23 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ht
 
+OPTIONS=	LZO2	"Enable external lzo2 compresssion support"	off
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
 BROKEN=	Does not build on ia64
 .endif
 
+.if defined(WITH_LZO2)
+LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
+.else
+CONFIGURE_ARGS=	--with-included-lzo
+.endif
+
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
-CONFIGURE_ARGS=--disable-x11-textmode
+CONFIGURE_ARGS+=--disable-x11-textmode
 .else
 USE_XORG=	x11
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
