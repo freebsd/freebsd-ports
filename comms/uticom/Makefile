@@ -26,6 +26,10 @@ PLIST_FILES=	uticom.ko
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800064
+BROKEN=		does not compile
+.endif
+
 # Make sure kernel sources are present before going any further
 .if ! exists(${SRCPREFIX}/sys/dev/usb/usb.c)
 IGNORE=	you need to extract kernel source tree before building this package
