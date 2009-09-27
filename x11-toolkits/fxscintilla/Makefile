@@ -16,7 +16,8 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
 USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ARGS+=	--enable-shared --disable-static
+CONFIGURE_ARGS+=	--enable-shared --disable-static \
+			--includedir=${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
 .if !defined(MASTERDIR)
@@ -43,5 +44,6 @@ CONFIGURE_ARGS+=	--with-fox-1-6
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lFOX-${FOX_LIB_VER}|"-lFOX-${FOX_LIB_VER} ${PTHREAD_LIBS}"|' \
 		${WRKSRC}/configure ${WRKSRC}/tests/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
