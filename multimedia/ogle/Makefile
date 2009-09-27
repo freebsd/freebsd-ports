@@ -65,7 +65,7 @@ CFLAGS+=	-O2
 
 # hack to make ogle work with liba52 + djbfft
 .if exists(${LOCALBASE}/lib/liba52.la)
-LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
+LIBA52_DEP_LIBS!=	${GREP} dependency_libs= ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
 .else
 LIBA52_DEP_LIBS=
 .endif
