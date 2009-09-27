@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	beaker
-PORTVERSION=	1.4
+PORTVERSION=	1.4.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Beaker-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Session and Caching library with WSGI Middleware
 
 USE_PYTHON=	yes
