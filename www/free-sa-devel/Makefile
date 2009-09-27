@@ -36,13 +36,10 @@ BROKEN=	Does not configure on sparc64
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
 .endif
 
-.if (${OSVERSION} >= 700000 && ${OSVERSION} <= 800000)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-native.mk
-.else
+.if ${ARCH} == "i386"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-i386.mk
-.if ${ARCH} != "i386"
-BROKEN=		build fails with error: CPU you selected does not support x86-64 instruction set
-.endif
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-native.mk
 .endif
 
 .include <bsd.port.post.mk>
