@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Test-WWW-Selenium
-PORTVERSION=	1.17
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl driver and test library for Selenium Remote Control (SRC)
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
