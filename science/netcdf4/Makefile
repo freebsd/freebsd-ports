@@ -7,6 +7,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -48,16 +49,16 @@ CONFIGURE_ARGS+=--enable-hdf5-convert
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '288 s/\(info_docs\).*/html_docs\)/' \
+		${WRKSRC}/man4/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '829 s/install-docDATA //' \
 		${WRKSRC}/man4/Makefile.in
+
 .endif
-	@${REINPLACE_CMD} -e \
-		's/\(@INSTALL_DOCS_TRUE@MAN.*\)/# \1/' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		'288 s/\(info_docs\).*/html_docs\)/' \
-		${WRKSRC}/man4/Makefile.in
 
 post-configure:
 	@cd ${WRKSRC}/man4 && make maintainer-clean-aminfo
