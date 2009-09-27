@@ -19,7 +19,7 @@ lib/libnetcdf_c++4.a
 lib/libnetcdf_c++4.la
 lib/libnetcdf_c++4.so
 lib/libnetcdf_c++4.so.1
-lib/pkgconfig/netcdf.pc
+libdata/pkgconfig/netcdf.pc
 %%PORTDOCS%%%%DOCSDIR%%/ncdump-man-1.html
 %%PORTDOCS%%%%DOCSDIR%%/ncgen-man-1.html
 %%PORTDOCS%%%%DOCSDIR%%/ncgen4-man-1.html
@@ -59,4 +59,3 @@ lib/pkgconfig/netcdf.pc
 %%PORTDOCS%%%%DOCSDIR%%/netcdf_f77-man.html
 %%PORTDOCS%%%%DOCSDIR%%/netcdf_f90-man.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/pkgconfig
