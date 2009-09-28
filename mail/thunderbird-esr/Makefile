@@ -23,6 +23,7 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GECKO=	gecko
 WANT_PERL=	yes
 
 MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices,auth,transformiix
@@ -43,7 +44,8 @@ OPTIONS=
 
 .include <bsd.port.pre.mk>
 
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED
+} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if (${ARCH}=="sparc64" && ${OSVERSION} < 601101)
 IGNORE=	core dumps on ${ARCH}, kern.osreldate>=601101 needed
@@ -88,5 +90,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/${PORTNAME}/default.xpm \
 		${PORTNAME_ICON}
 
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>
