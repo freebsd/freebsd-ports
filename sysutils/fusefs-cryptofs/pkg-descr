@@ -16,4 +16,4 @@ program to mount the filesystem. For LUFS a shared library will be built
 that can be used by LUFS's lufsd. Both methods can use the same encrypted
 directory.
 
-WWW: http://reboot.animeirc.de/cryptofs/
+WWW: http://reboot78.re.funpic.de/cryptofs/
