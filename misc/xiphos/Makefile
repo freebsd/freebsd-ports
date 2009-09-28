@@ -7,6 +7,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -27,22 +28,23 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--disable-maintainer-mode --enable-paratab
 
-OPTIONS=	XULRUNNER	"Build with xulrunner (default)" off \
+OPTIONS=	LIBXUL		"Build with libxul (default)" off \
 		GTKHTML		"Build with gtkhtml" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XULRUNNER) && defined(WITH_GTKHTML)
-IGNORE=		choose only one of XULRUNNER or GTKHTML
+.if defined(WITH_LIBXUL) && defined(WITH_GTKHTML)
+IGNORE=		choose only one of LIBXUL or GTKHTML
 .endif
 
-.if defined(WITH_GTKHTML) || defined(WITHOUT_XULRUNNER)
+.if defined(WITH_GTKHTML) || defined(WITHOUT_LIBXUL)
 CONFIGURE_ARGS+=	--enable-gtkhtml --disable-gecko
 .endif
 
-.if !defined(WITHOUT_XULRUNNER) || !defined(WITH_GTKHTML)
-USE_GECKO=	xulrunner
+.if !defined(WITHOUT_LIBXUL) || !defined(WITH_GTKHTML)
+USE_GECKO=	libxul
 CONFIGURE_ARGS+=	--with-gecko=${GECKO} --disable-gtkhtml
+GTKHTML_CFLAGS+="-DXPCOM_GLUE"
 .endif
 
 .include <bsd.port.post.mk>
