@@ -1096,6 +1096,19 @@ bin/yiic
 %%DATADIR%%/framework/vendors/json/LICENSE.txt
 %%DATADIR%%/framework/vendors/markdown/LICENSE.txt
 %%DATADIR%%/framework/vendors/markdown/markdown.php
+%%DATADIR%%/framework/views/bg/error.php
+%%DATADIR%%/framework/views/bg/error400.php
+%%DATADIR%%/framework/views/bg/error403.php
+%%DATADIR%%/framework/views/bg/error404.php
+%%DATADIR%%/framework/views/bg/error500.php
+%%DATADIR%%/framework/views/bg/error503.php
+%%DATADIR%%/framework/views/bg/exception.php
+%%DATADIR%%/framework/views/bg/log-firebug.php
+%%DATADIR%%/framework/views/bg/log.php
+%%DATADIR%%/framework/views/bg/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/bg/profile-callstack.php
+%%DATADIR%%/framework/views/bg/profile-summary-firebug.php
+%%DATADIR%%/framework/views/bg/profile-summary.php
 %%DATADIR%%/framework/views/de/error.php
 %%DATADIR%%/framework/views/de/error400.php
 %%DATADIR%%/framework/views/de/error403.php
@@ -1115,6 +1128,19 @@ bin/yiic
 %%DATADIR%%/framework/views/error404.php
 %%DATADIR%%/framework/views/error500.php
 %%DATADIR%%/framework/views/error503.php
+%%DATADIR%%/framework/views/es/error.php
+%%DATADIR%%/framework/views/es/error400.php
+%%DATADIR%%/framework/views/es/error403.php
+%%DATADIR%%/framework/views/es/error404.php
+%%DATADIR%%/framework/views/es/error500.php
+%%DATADIR%%/framework/views/es/error503.php
+%%DATADIR%%/framework/views/es/exception.php
+%%DATADIR%%/framework/views/es/log-firebug.php
+%%DATADIR%%/framework/views/es/log.php
+%%DATADIR%%/framework/views/es/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/es/profile-callstack.php
+%%DATADIR%%/framework/views/es/profile-summary-firebug.php
+%%DATADIR%%/framework/views/es/profile-summary.php
 %%DATADIR%%/framework/views/exception.php
 %%DATADIR%%/framework/views/fr/error.php
 %%DATADIR%%/framework/views/fr/error400.php
@@ -1226,6 +1252,19 @@ bin/yiic
 %%DATADIR%%/framework/views/ro/profile-callstack.php
 %%DATADIR%%/framework/views/ro/profile-summary-firebug.php
 %%DATADIR%%/framework/views/ro/profile-summary.php
+%%DATADIR%%/framework/views/ru/error.php
+%%DATADIR%%/framework/views/ru/error400.php
+%%DATADIR%%/framework/views/ru/error403.php
+%%DATADIR%%/framework/views/ru/error404.php
+%%DATADIR%%/framework/views/ru/error500.php
+%%DATADIR%%/framework/views/ru/error503.php
+%%DATADIR%%/framework/views/ru/exception.php
+%%DATADIR%%/framework/views/ru/log-firebug.php
+%%DATADIR%%/framework/views/ru/log.php
+%%DATADIR%%/framework/views/ru/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/ru/profile-callstack.php
+%%DATADIR%%/framework/views/ru/profile-summary-firebug.php
+%%DATADIR%%/framework/views/ru/profile-summary.php
 %%DATADIR%%/framework/views/sv/error.php
 %%DATADIR%%/framework/views/sv/error400.php
 %%DATADIR%%/framework/views/sv/error403.php
@@ -1402,6 +1441,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/views/zh_tw
 @dirrm %%DATADIR%%/framework/views/zh_cn
 @dirrm %%DATADIR%%/framework/views/sv
+@dirrm %%DATADIR%%/framework/views/ru
 @dirrm %%DATADIR%%/framework/views/ro
 @dirrm %%DATADIR%%/framework/views/pt
 @dirrm %%DATADIR%%/framework/views/no
@@ -1410,7 +1450,9 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/views/id
 @dirrm %%DATADIR%%/framework/views/he
 @dirrm %%DATADIR%%/framework/views/fr
+@dirrm %%DATADIR%%/framework/views/es
 @dirrm %%DATADIR%%/framework/views/de
+@dirrm %%DATADIR%%/framework/views/bg
 @dirrm %%DATADIR%%/framework/views
 @dirrm %%DATADIR%%/framework/vendors/markdown
 @dirrm %%DATADIR%%/framework/vendors/json
