@@ -1,0 +1,11 @@
+--- liveMedia/Makefile.tail.orig	2009-09-21 10:42:12.000000000 +0900
++++ liveMedia/Makefile.tail	2009-09-28 23:46:58.992036507 +0900
+@@ -47,7 +47,7 @@
+ 
+ $(LIVEMEDIA_LIB): $(LIVEMEDIA_LIB_OBJS) \
+     $(PLATFORM_SPECIFIC_LIB_OBJS)
+-	$(LIBRARY_LINK)$@ $(LIBRARY_LINK_OPTS) \
++	$(LIBRARY_LINK) $@ $(LIBRARY_LINK_OPTS) \
+ 		$(LIVEMEDIA_LIB_OBJS)
+ 
+ Media.$(CPP):		include/Media.hh

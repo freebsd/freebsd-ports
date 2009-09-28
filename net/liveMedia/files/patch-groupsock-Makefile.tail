@@ -1,0 +1,11 @@
+--- groupsock/Makefile.tail.orig	2009-09-21 10:42:12.000000000 +0900
++++ groupsock/Makefile.tail	2009-09-28 23:49:03.130995435 +0900
+@@ -27,7 +27,7 @@
+ 
+ libgroupsock.$(LIB_SUFFIX): $(GROUPSOCK_LIB_OBJS) \
+     $(PLATFORM_SPECIFIC_LIB_OBJS)
+-	$(LIBRARY_LINK)$@ $(LIBRARY_LINK_OPTS) \
++	$(LIBRARY_LINK) $@ $(LIBRARY_LINK_OPTS) \
+ 		$(GROUPSOCK_LIB_OBJS)
+ 
+ clean:

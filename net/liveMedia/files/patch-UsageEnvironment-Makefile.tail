@@ -1,0 +1,11 @@
+--- UsageEnvironment/Makefile.tail.orig	2009-09-21 10:42:12.000000000 +0900
++++ UsageEnvironment/Makefile.tail	2009-09-28 23:50:57.387554379 +0900
+@@ -7,7 +7,7 @@
+ OBJS = UsageEnvironment.$(OBJ) HashTable.$(OBJ) strDup.$(OBJ)
+ 
+ $(USAGE_ENVIRONMENT_LIB): $(OBJS)
+-	$(LIBRARY_LINK)$@ $(LIBRARY_LINK_OPTS) $(OBJS)
++	$(LIBRARY_LINK) $@ $(LIBRARY_LINK_OPTS) $(OBJS)
+ 
+ .$(C).$(OBJ):
+ 	$(C_COMPILER) -c $(C_FLAGS) $<       

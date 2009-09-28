@@ -1,0 +1,11 @@
+--- BasicUsageEnvironment/Makefile.tail.orig	2009-09-21 10:42:12.000000000 +0900
++++ BasicUsageEnvironment/Makefile.tail	2009-09-28 23:51:46.405510187 +0900
+@@ -9,7 +9,7 @@
+ 	DelayQueue.$(OBJ) BasicHashTable.$(OBJ)
+ 
+ libBasicUsageEnvironment.$(LIB_SUFFIX): $(OBJS)
+-	$(LIBRARY_LINK)$@ $(LIBRARY_LINK_OPTS) \
++	$(LIBRARY_LINK) $@ $(LIBRARY_LINK_OPTS) \
+ 		$(OBJS)
+ 
+ .$(C).$(OBJ):
