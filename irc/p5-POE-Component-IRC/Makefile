@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	5.98
+PORTVERSION=	6.14
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,11 +16,10 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A fully event-driven IRC client module
 
 RUN_DEPENDS=	p5-POE>=0.3202:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Component-Pluggable>=1.24:${PORTSDIR}/devel/p5-POE-Component-Pluggable \
 		p5-POE-Filter-IRCD>=1.7:${PORTSDIR}/irc/p5-POE-Filter-IRCD \
-		${SITE_PERL}/POE/Component/Client/DNS.pm:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
-		${SITE_PERL}/POE/Component/Client/Ident.pm:${PORTSDIR}/net/p5-POE-Component-Client-Ident \
-		${SITE_PERL}/POE/Component/SSLify.pm:${PORTSDIR}/security/p5-POE-Component-SSLify \
-		${SITE_PERL}/POE/Component/Pluggable.pm:${PORTSDIR}/devel/p5-POE-Component-Pluggable
+		p5-POE-Component-Client-DNS>=0.99:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
+		p5-POE-Component-SSLify>0:${PORTSDIR}/security/p5-POE-Component-SSLify
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
