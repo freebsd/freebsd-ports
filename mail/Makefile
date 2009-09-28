@@ -700,7 +700,6 @@
     SUBDIR += vqregister
     SUBDIR += vrfy
     SUBDIR += wanderlust
-    SUBDIR += wanderlust-devel
     SUBDIR += wanderlust-emacs21
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wbl
