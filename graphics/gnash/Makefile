@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.5
-PORTREVISION=	3
+PORTVERSION=	0.8.6
 CATEGORIES=	graphics
 # getgnash.org is slow
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -40,16 +39,19 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
 		--disable-testsuite \
-		--with-plugins-install=system
+		--with-plugins-install=system \
+		--sysconfdir="${WRKDIR}/etc" \
+		--disable-jemalloc # leads to infinite recursion on FreeBSD
 
 GNASHVER=	${PORTVERSION}
+CONFIG_FILES=	gnashpluginrc gnashrc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GNASHVER}
 PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-MAN1=		cygnal.1 dumpshm.1 flvdumper.1 gnash.1 gprocessor.1 soldumper.1
+MAN1=		cygnal.1 dumpshm.1 flvdumper.1 gnash.1 gprocessor.1 soldumper.1 rtmpget.1
 
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
@@ -69,6 +71,7 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 .if defined(WITH_CYGNAL)
 PLIST_SUB+=	CYGNAL=""
 CONFIGURE_ARGS+=	--enable-cygnal
+CONFIG_FILES+=	cygnalrc
 .else
 PLIST_SUB+=	CYGNAL="@comment "
 CONFIGURE_ARGS+=	--disable-cygnal
@@ -200,6 +203,12 @@ CONFIGURE_ARGS+=	--enable-media=none
 IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'make config' and leave one or none of them (ffmpeg|gstreamer)
 .endif
 
+.if defined(WITH_GSTREAMER)
+PLIST_SUB+=		GSTREAMER=""
+.else
+PLIST_SUB+=		GSTREAMER="@comment "
+.endif
+
 #
 # Other options
 #
@@ -212,11 +221,11 @@ CONFIGURE_ARGS+=	--disable-speex
 
 .include <bsd.port.pre.mk>
 
-pre-everything::
-.if defined(WITH_OPENGL)
-	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
-	@sleep 3
-.endif
+#pre-everything::
+#.if defined(WITH_OPENGL)
+#	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
+#	@sleep 3
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d; s|-lpthread|${PTHREAD_LIBS}|' \
@@ -225,20 +234,19 @@ post-patch:
 		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
-	@${REINPLACE_CMD} -e '/sysconfDATA_INSTALL/ s|/$$$$f|&.dist|' \
-		${WRKSRC}/libbase/Makefile.in
 	@${REINPLACE_CMD} -e '/KDE4_APPSDATADIR=/ s|share/kde4|share|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^pkgconfigdir =/ s|libdir)|exec_prefix)/libdata|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
-	if [ ! -f ${PREFIX}/etc/gnashrc ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/gnashrc.dist \
-			${PREFIX}/etc/gnashrc; \
+.for conf in ${CONFIG_FILES}
+	@${INSTALL_DATA} ${WRKDIR}/etc/${conf} ${PREFIX}/etc/${conf}.dist
+	if [ ! -f ${PREFIX}/etc/${conf} ]; then \
+		${INSTALL_DATA} ${PREFIX}/etc/${conf}.dist \
+			${PREFIX}/etc/${conf}; \
 	fi
-	if [ ! -f ${PREFIX}/etc/gnashpluginrc ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/gnashpluginrc.dist \
-			${PREFIX}/etc/gnashpluginrc; \
-	fi
+.endfor
 
 .if !defined(WITHOUT_PLUGIN)
 .if !defined(WITHOUT_GTK)
