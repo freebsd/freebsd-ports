@@ -221,11 +221,11 @@ CONFIGURE_ARGS+=	--disable-speex
 
 .include <bsd.port.pre.mk>
 
-#pre-everything::
-#.if defined(WITH_OPENGL)
-#	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
-#	@sleep 3
-#.endif
+pre-everything::
+.if defined(WITH_OPENGL)
+	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
+	@sleep 3
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d; s|-lpthread|${PTHREAD_LIBS}|' \
