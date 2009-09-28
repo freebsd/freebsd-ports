@@ -423,6 +423,7 @@
     SUBDIR += pear-DB_Table
     SUBDIR += pear-DB_ldap
     SUBDIR += pear-DB_ldap2
+    SUBDIR += pear-Doctrine
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
     SUBDIR += pear-MDB2_Driver_ibase
