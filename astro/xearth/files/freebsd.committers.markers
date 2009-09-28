@@ -232,6 +232,7 @@
  35.8072,	-78.7994,	"gallatin"			# Cary, NC, USA
  35.73,		-78.91,		"bsd"				# Apex, NC, USA
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
+ 40.441667,	-80,		"rvb"				# Pittsburgh, PA, US
  43.55,		-80.25,		"rmacklem"			# Guelph, ON, Canada
  37.23,		-80.41,		"mikeh"				# Blacksburg, VA, USA
  43.48,		-80.54,		"emaste"			# Waterloo, ON, Canada
@@ -273,6 +274,7 @@
  33.979,	-118.439,	"                           dougb,"# Marina del Rey, CA USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
  38.54,		-121.76,	"mharo"			# Davis, CA, USA
+ 37.4014,	-121.9265,	"weongyo"			# San Jose, CA, USA
  37.40,		-121.94,	"alfred"		# Santa Clara, CA, USA
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
  37.37781,	-121.951980,	"seanc"				# Santa Clara, CA, USA
@@ -292,6 +294,7 @@
 37.913698,	-122.29414,	"julian"			# El Cerrito, CA, USA
  37.51,		-122.30,	"kbyanc"			# Belmont, CA, USA
  37.90641,	-122.30927,	"gshapiro"			# Richmond, CA, USA
+ 47.672538,	-122.383830,	"zml"				# Seattle, WA, USA
  45.31,		-122.39,	"alexbl"			# Portland, OR, USA
  37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
  37.8067,	-122.4113,	"jmallett"			# North Beach, San Francisco, CA, USA
@@ -307,6 +310,7 @@
  48.482814,	-122.94369,	"jdp"				# Lopez Island, WA, USA
  49.3283,	-122.9968,	"brian"		align=left	# North Vancouver, Canada
  44.04, 	-123.06,	"anholt"			# Eugene, OR, USA
+ 49.2A,		-123.08,		"gonzo"				# Vancouver, BC, Canada
  48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
  40.0,		-123.5,		"jkh"				# Miranda, CA, USA
  61.214020,	-149.881220,	"beech"				# Anchorage, AK, USA
