@@ -9934,6 +9934,7 @@ oorexx                          ports/lang/oorexx
 ooxcb                           ports/x11/ooxcb
 op                              ports/security/op
 opal                            ports/net/opal
+opal3                           ports/net/opal3
 open                            ports/sysutils/open
 open-axiom                      ports/math/open-axiom
 open-beagle                     ports/devel/open-beagle
