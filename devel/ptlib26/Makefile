@@ -7,7 +7,7 @@
 
 PORTNAME=	ptlib
 PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.6
@@ -25,15 +25,13 @@ USE_GNOME=	pkgconfig
 WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=yes
 USE_LDCONFIG=	yes
 
 NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV=	\
-		OPENSSL_CFLAGS="-I/usr/include" \
-		OPENSSL_LIBS="-lssl"
 CONFIGURE_ARGS+=	\
 		--with-expat-dir="${LOCALBASE}" \
 		--enable-oss
