@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	checkmate
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	audio
-MASTER_SITES=	http://checkmate.linuxonly.nl/ \
+MASTER_SITES=	http://checkmate.gissen.nl/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
