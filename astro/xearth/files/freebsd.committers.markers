@@ -47,7 +47,7 @@
  36.6,		120.19,		"dryice"			# Qingdao, Shandong, China
  30.2727,	120.1662,	"davidxu"			# HangZhou, ZheJiang, China
  39.550,	116.214,	"nemoliu"			# Beijing, Beijing, China
- -31.97908,	115.81611,	"adrian"			# Crawley, Perth, Western Australia
+-31.97908,	115.81611,	"adrian"			# Crawley, Perth, Western Australia
  22.1957,	113.549,	"vs"				# Macau, Macau SAR
  47.921386,	106.910153,	"ganbold"			# Ulaanbaatar, Mongolia
  3.167,		101.700,	"ariff"				# Kuala Lumpur, Malaysia
@@ -183,7 +183,7 @@
  52.20360,	0.14134,	"rsm"				# Cambridge, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
- 52.21065,		0.09235,		"rwatson"			# (CORE) Cambridge, UK
+ 52.21065,	0.09235,	"rwatson"			# (CORE) Cambridge, UK
  52.116761,	0.056618,	"dmlb"				# Cambridge, UK
  51.5,		0.0,		" dfr"				# London, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
@@ -244,7 +244,7 @@
  35.555301,	-86.054649,	"rnoland"			# Manchester, TN, USA
  34.81095,	-86.70977,	"steve"				# Huntsville, AL, USA
  43.039,	-87.906,	"silby"				# Milwaukee, WI, USA
-48.400,		-89.233,	"tabthorpe"			# Thunder Bay, ON, Canada
+ 48.400,	-89.233,	"tabthorpe"			# Thunder Bay, ON, Canada
  43.19,		-89.38,		"jlemon"			# Madison, WI, USA
  43.063,	-89.452,	"nwhitehorn"			# Madison, WI, USA
  41.748,	-92.724,	"brooks"			# (CORE) Grinnell, IA, USA
@@ -273,9 +273,9 @@
  34.11,		-118.29,	"         kris,"		# (CORE) Los Angeles, CA, USA
  33.979,	-118.439,	"                           dougb,"# Marina del Rey, CA USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
- 38.54,		-121.76,	"mharo"			# Davis, CA, USA
+ 38.54,		-121.76,	"mharo"				# Davis, CA, USA
  37.4014,	-121.9265,	"weongyo"			# San Jose, CA, USA
- 37.40,		-121.94,	"alfred"		# Santa Clara, CA, USA
+ 37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
  37.37781,	-121.951980,	"seanc"				# Santa Clara, CA, USA
  37.359394,	-121.992,	"cjc"				# Santa Clara, CA, USA
@@ -291,7 +291,7 @@
  37.84,		-122.25,	"jmg"				# Oakland, CA, USA
  37.887398,	-122.264896,	"gsutter,sam"			# Berkeley, CA, USA
  37.386666,	-122.268966,	"fenner"			# Sky Londa, CA, USA
-37.913698,	-122.29414,	"julian"			# El Cerrito, CA, USA
+ 37.913698,	-122.29414,	"julian"			# El Cerrito, CA, USA
  37.51,		-122.30,	"kbyanc"			# Belmont, CA, USA
  37.90641,	-122.30927,	"gshapiro"			# Richmond, CA, USA
  47.672538,	-122.383830,	"zml"				# Seattle, WA, USA
@@ -310,7 +310,7 @@
  48.482814,	-122.94369,	"jdp"				# Lopez Island, WA, USA
  49.3283,	-122.9968,	"brian"		align=left	# North Vancouver, Canada
  44.04, 	-123.06,	"anholt"			# Eugene, OR, USA
- 49.2A,		-123.08,		"gonzo"				# Vancouver, BC, Canada
+ 49.2,		-123.08,	"gonzo"				# Vancouver, BC, Canada
  48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
  40.0,		-123.5,		"jkh"				# Miranda, CA, USA
  61.214020,	-149.881220,	"beech"				# Anchorage, AK, USA
