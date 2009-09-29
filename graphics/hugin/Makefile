@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hugin
-PORTVERSION=	0.8.0
+PORTVERSION=	2009.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
@@ -21,15 +21,14 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		pano13:${PORTSDIR}/graphics/libpano13 \
 		boost_date_time:${PORTSDIR}/devel/boost-libs \
 		GLEW:${PORTSDIR}/graphics/glew
+# gmake is really needed at _runtime_, do not remove it from below
 RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		gmake:${PORTSDIR}/devel/gmake
 
-# TODO add autopano-sift-C to the ports collection and hook it here as
-# an optional dependency
-
 OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
-		AUTOPANOSIFT "Install graphics/autopano-sift" on
+		AUTOPANOSIFT "Install graphics/autopano-sift" off \
+		AUTOPANOSIFTC "Install graphics/autopano-sift-c" on
 
 USE_CMAKE=	yes
 
@@ -84,7 +83,15 @@ RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
 .endif
 
 .if defined(WITH_AUTOPANOSIFT)
+.if defined(WITH_AUTOPANOSIFTC)
+BROKEN=	autopano-sift and autopano-sift-c are mutually exclusive,\
+	please run 'make config' again and select at most one of them
+.endif
 RUN_DEPENDS+=	autopanog:${PORTSDIR}/graphics/autopano-sift
+.endif
+
+.if defined(WITH_AUTOPANOSIFTC)
+RUN_DEPENDS+=	autopano:${PORTSDIR}/graphics/autopano-sift-c
 .endif
 
 .include <bsd.port.post.mk>
