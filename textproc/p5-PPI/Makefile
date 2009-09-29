@@ -7,6 +7,7 @@
 
 PORTNAME=	PPI
 PORTVERSION=	1.206
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -17,17 +18,11 @@ COMMENT=	Analyze and manipulate Perl code without using perl itself
 
 BUILD_DEPENDS=	\
 		p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
+		p5-IO-String>=1.07:${PORTSDIR}/devel/p5-IO-String \
+		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
-		p5-IO-stringy>=2.105:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Digest-MD5>=2.35:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Storable>=2.17:${PORTSDIR}/devel/p5-Storable \
-		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
-		p5-Test-SubCalls>=0.01:${PORTSDIR}/devel/p5-Test-SubCalls \
-		p5-PathTools>=0.84:${PORTSDIR}/devel/p5-PathTools \
-		p5-File-Remove>=0.34:${PORTSDIR}/devel/p5-File-Remove
+		p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
