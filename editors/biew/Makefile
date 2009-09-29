@@ -1,4 +1,4 @@
-# New ports collection makefile for:	biew
+# New ports collection makefile for:	BIEW
 # Date created:				04 February 2000
 # Whom:					Michael Vasilenko <acid@stu.cn.ua>
 #
@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	5.7.3.1
+PORTVERSION=	6.0.0
 CATEGORIES=	editors
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary file viewer and editor
 
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
 		--ld="${CC}" --with-extralibdir="${LOCALBASE}/lib" \
-		--prefix="${PREFIX}" --datadir="${DATADIR}"
+		--prefix="${PREFIX}" --datadir="${DATADIR}" --enable-slang
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKEFILE=	makefile
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 
 PLIST_FILES=	bin/biew \
 		%%DATADIR%%/assembly.skn \
