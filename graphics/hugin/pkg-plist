@@ -2,6 +2,7 @@ bin/PTBatcher
 bin/PTBatcherGUI
 bin/align_image_stack
 bin/autooptimiser
+bin/autopano-noop.sh
 bin/celeste_standalone
 bin/fulla
 bin/hugin
@@ -24,6 +25,7 @@ lib/libhuginvigraimpex.so.0.0
 share/applications/hugin.desktop
 share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/Makefile.equirect.mk
+%%DATADIR%%/data/celeste.model
 %%DATADIR%%/xrc/about.xrc
 %%DATADIR%%/xrc/assistant_panel.xrc
 %%DATADIR%%/xrc/batch_frame.xrc
@@ -31,6 +33,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/batch_toolbar.xrc
 %%DATADIR%%/xrc/cp_editor_panel.xrc
 %%DATADIR%%/xrc/cp_list_frame.xrc
+%%DATADIR%%/xrc/cpdetector_dialog.xrc
 %%DATADIR%%/xrc/crop_panel.xrc
 %%DATADIR%%/xrc/data/1leftarrow.png
 %%DATADIR%%/xrc/data/1rightarrow.png
@@ -44,7 +47,6 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/about.htm
 %%DATADIR%%/xrc/data/add_project.png
 %%DATADIR%%/xrc/data/add_projects.png
-%%DATADIR%%/xrc/data/celeste.model
 %%DATADIR%%/xrc/data/center_pano.png
 %%DATADIR%%/xrc/data/center_pano.xpm
 %%DATADIR%%/xrc/data/close.xpm
@@ -537,6 +539,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/photometric.png
 %%DATADIR%%/xrc/data/preview.png
 %%DATADIR%%/xrc/data/preview_auto_update.png
+%%DATADIR%%/xrc/data/preview_control_point_tool.png
 %%DATADIR%%/xrc/data/preview_num_transform.png
 %%DATADIR%%/xrc/data/preview_show_all.png
 %%DATADIR%%/xrc/data/preview_show_none.png
@@ -613,6 +616,7 @@ share/pixmaps/hugin.png
 @dirrmtry share/locale/cs_CZ
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
+@dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/xrc/data/help_en_EN
 @dirrm %%DATADIR%%/xrc/data/help_it_IT
 @dirrm %%DATADIR%%/xrc/data
