@@ -7,7 +7,7 @@
 
 PORTNAME=	SQL-Translator
 PORTVERSION=	0.09.004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-Digest-SHA1>=2.0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
 		p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Template-Toolkit>=2.10:${PORTSDIR}/www/p5-Template-Toolkit \
@@ -31,11 +30,9 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Spreadsheet-ParseExcel>=0.2602:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
-		p5-Text-ParseWords>=0:${PORTSDIR}/textproc/p5-Text-ParseWords \
 		p5-Text-RecordParser>=0.02:${PORTSDIR}/textproc/p5-Text-RecordParser \
 		p5-XML-Writer>=0.500:${PORTSDIR}/textproc/p5-XML-Writer \
 		p5-XML-XPath>=1.13:${PORTSDIR}/textproc/p5-XML-XPath \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
