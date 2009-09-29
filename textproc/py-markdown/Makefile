@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		markdown
-PORTVERSION=		2.0.1
+PORTVERSION=		2.0.2
 CATEGORIES=		textproc python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		Markdown-${PORTVERSION}
 
-MAINTAINER=		wenheping@gmail.com
+MAINTAINER=		wen@FreeBSD.org
 COMMENT=		Text markup to HTML conversion engine for Python
 
 USE_PYTHON=		2.4+
