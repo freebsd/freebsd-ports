@@ -7,6 +7,7 @@
 
 PORTNAME=	Template-Plugin-JSON
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +16,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Adds a .json vmethod for all TT values
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Template-Plugin-VMethods>0:${PORTSDIR}/www/p5-Template-Plugin-VMethods \
-		p5-JSON-Any>0:${PORTSDIR}/converters/p5-JSON-Any
+RUN_DEPENDS=	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse \
+		p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-JSON>=2.12:${PORTSDIR}/converters/p5-JSON
 
 PERL_CONFIGURE=	yes
 
