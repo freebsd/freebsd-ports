@@ -40,7 +40,7 @@ PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 BROKEN=		Does not compile
 .endif
 
