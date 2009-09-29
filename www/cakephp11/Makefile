@@ -7,7 +7,7 @@
 
 PORTNAME=	cakephp
 PORTVERSION=	1.1.19.6305
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://cakeforge.org/frs/download.php/591/
 DISTNAME=	cake_${PORTVERSION}
@@ -23,7 +23,7 @@ TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
 USE_APACHE=	2.0+
 SLAVE_PORT_MODULES=	rewrite
 
-CONFLICTS=	cakephp-devel-[0-9]*
+CONFLICTS=	cakephp-1.[23].*
 NO_BUILD=	yes
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
