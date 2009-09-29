@@ -7,8 +7,33 @@ bin/asciio
 %%SITE_PERL%%/App/Asciio/Elements.pm
 %%SITE_PERL%%/App/Asciio/Io.pm
 %%SITE_PERL%%/App/Asciio/Menues.pm
+%%SITE_PERL%%/App/Asciio/Options.pm
 %%SITE_PERL%%/App/Asciio/Setup.pm
 %%SITE_PERL%%/App/Asciio/Undo.pm
+%%SITE_PERL%%/App/Asciio/setup/actions/align.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/clipboard.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/colors.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/context_menu_box.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/context_menu_multi_wirl.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/context_menu_rulers.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/debug.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/elements_manipulation.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/file.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/mouse.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/new_elements.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/presentation.pl
+%%SITE_PERL%%/App/Asciio/setup/actions/unsorted.pl
+%%SITE_PERL%%/App/Asciio/setup/asciio_object/basic.pl
+%%SITE_PERL%%/App/Asciio/setup/hooks/canonize_connections.pl
+%%SITE_PERL%%/App/Asciio/setup/import_export/ascii.pl
+%%SITE_PERL%%/App/Asciio/setup/import_export/asciioe.pl
+%%SITE_PERL%%/App/Asciio/setup/import_export/perl.pl
+%%SITE_PERL%%/App/Asciio/setup/import_export/png.pl
+%%SITE_PERL%%/App/Asciio/setup/setup.ini
+%%SITE_PERL%%/App/Asciio/setup/stencils/asciio
+%%SITE_PERL%%/App/Asciio/setup/stencils/computer
+%%SITE_PERL%%/App/Asciio/setup/stencils/divers
+%%SITE_PERL%%/App/Asciio/setup/stencils/people
 %%SITE_PERL%%/App/Asciio/stripes/editable_arrow2.pm
 %%SITE_PERL%%/App/Asciio/stripes/editable_box2.pm
 %%SITE_PERL%%/App/Asciio/stripes/if_box.pm
@@ -17,23 +42,6 @@ bin/asciio
 %%SITE_PERL%%/App/Asciio/stripes/single_stripe.pm
 %%SITE_PERL%%/App/Asciio/stripes/stripes.pm
 %%SITE_PERL%%/App/Asciio/stripes/wirl_arrow.pm
-%%SITE_PERL%%/App/Asciio/setup/actions/align.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/clipboard.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/context_menu_multi_wirl.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/debug.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/elements_manipulation.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/file.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/mouse.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/new_elements.pl
-%%SITE_PERL%%/App/Asciio/setup/actions/unsorted.pl
-%%SITE_PERL%%/App/Asciio/setup/asciio_object/basic.pl
-%%SITE_PERL%%/App/Asciio/setup/hooks/canonize_connections.pl
-%%SITE_PERL%%/App/Asciio/setup/import_export/ascii.pl
-%%SITE_PERL%%/App/Asciio/setup/import_export/asciioe.pl
-%%SITE_PERL%%/App/Asciio/setup/import_export/perl.pl
-%%SITE_PERL%%/App/Asciio/setup/setup.ini
-%%SITE_PERL%%/App/Asciio/setup/stencils/types.asciio
-%%SITE_PERL%%/App/Asciio/setup/stencils/user_types.asciio
 @dirrm %%SITE_PERL%%/App/Asciio/stripes
 @dirrm %%SITE_PERL%%/App/Asciio/setup/stencils
 @dirrm %%SITE_PERL%%/App/Asciio/setup/import_export
