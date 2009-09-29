@@ -22,7 +22,7 @@ Index: src/VBox/HostDrivers/VBoxNetFlt/VBoxNetFltInternal.h
  #elif defined(RT_OS_LINUX)
          uint8_t abPadding[320];
 +#elif defined(RT_OS_FREEBSD)
-+        uint8_t abPadding[256];
++        uint8_t abPadding[320];
  #else
          uint8_t abPadding[128];
  #endif
