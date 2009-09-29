@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualbox
 DISTVERSION=	3.0.51r22902
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -142,14 +143,20 @@ BROKEN=	Does not compile on FreeBSD 6.X
 KMK_ARCH=	freebsd.x86
 PLIST_SUB+=	I386=""
 .else
-.if !exists(/usr/lib32)
-IGNORE=		requires 32-bit libraries installed under /usr/lib32
-.endif
 KMK_ARCH=	freebsd.${ARCH}
 PLIST_SUB+=	I386="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+pre-everything::
+.if ${ARCH} == "amd64"
+.if !exists(/usr/lib32)
+	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
+	@${ECHO} 'Do: cd /usr/src; make build32 install32; ldconfig -v -m -R /usr/lib32'
+	@${FALSE}
+.endif
+.endif
 
 post-patch:
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE_ARCH = ${PREFIX}/lib/virtualbox' > ${WRKSRC}/LocalConfig.kmk
