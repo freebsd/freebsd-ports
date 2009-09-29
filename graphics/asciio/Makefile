@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	asciio
-PORTVERSION=	0.95
-PORTREVISION=	2
+PORTVERSION=	1.02.71
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/CPAN/authors/id/N/NK/NKH/ \
 		CRITICAL
-DISTNAME=	App-Asciio-${PORTVERSION}_01
+DISTNAME=	App-Asciio-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Perl/GTK application that lets you draw ASCII charts using a GUI
@@ -33,7 +32,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Directory/Scratch.pm:${PORTSDIR}/devel/p5-Directory-
 		${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
 		${SITE_PERL}/Module/Util.pm:${PORTSDIR}/devel/p5-Module-Util \
 		${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
-		${SITE_PERL}/Eval/Context.pm:${PORTSDIR}/devel/p5-Eval-Context
+		${SITE_PERL}/Eval/Context.pm:${PORTSDIR}/devel/p5-Eval-Context \
+		${SITE_PERL}/Check/ISA.pm:${PORTSDIR}/devel/p5-Check-ISA
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
