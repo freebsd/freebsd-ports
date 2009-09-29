@@ -2518,6 +2518,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Member/Container.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Method.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Parameter.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Parameter/DefaultValue.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Property.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Property/DefaultValue.php
 %%DATADIR%%/library/Zend/Config.php
@@ -5001,6 +5002,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1/User.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1/UserIsBlogPostOwnerAssertion.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AllTests/StreamWrapper/PhpInput.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/IntrospectorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTestType.php
@@ -5090,6 +5092,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/NavigationTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ResourceAbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/RouterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/SessionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/TranslateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ViewTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/_files/ZfAppBootstrapCustomView.php
@@ -5305,6 +5308,10 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/Db2Statement.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MyCompany1/Db/Adapter.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MyCompany1/Dbadapter.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MyCompany1/IsCaseSpecific.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/Mycompany2/Dbadapter.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MysqliStatement.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/OracleStatement.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/PdoStatement.php
@@ -5716,6 +5723,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss094.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/rss20-zf-7908.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/rss20.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss090.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss091.xml
@@ -6114,6 +6122,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader/rss20.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/ReaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/AtomHOnline.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/AtomPublishingTest-before-update.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/AtomPublishingTest-created-entry.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/AtomPublishingTest-expected-update.xml
@@ -6139,6 +6148,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/TestAtomFeedEntryOnly.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/TestAtomFeedNamespaced.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/TestFeedEntryRssContentEncoded.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/_files/htmlPage.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/AbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/AllTests.php
@@ -6675,6 +6685,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceMethodOverloading.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/services/ZendLoaderAutoloaderResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloaderMultiVersionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/MyLoader.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/MyOverloader.php
@@ -7237,6 +7248,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/DbAdapterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/DbStatementTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Constraint/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Constraint/DomQueryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/ControllerTestCaseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/ConnectionTest.php
@@ -7774,6 +7787,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Constraint
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes
@@ -8174,6 +8188,9 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Profiler/Pdo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Profiler
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Testnamespace
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/Mycompany2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MyCompany1/Db
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MyCompany1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/Pdo
@@ -8287,6 +8304,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/AllTests/StreamWrapper
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/AllTests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl
@@ -8731,6 +8750,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Config/Writer
 @dirrm %%DATADIR%%/library/Zend/Config
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Property
+@dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Parameter
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Member
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock
