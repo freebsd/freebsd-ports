@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fattr
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/codeforpeople
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Fatter Attr for Ruby
 
 USE_RUBY=	yes
