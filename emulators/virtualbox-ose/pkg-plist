@@ -592,7 +592,7 @@ include/virtualbox/xpcom/xpcom-config.h
 %%QT4%%@dirrmtry share/icons
 %%QT4%%@dirrmtry share/applications
 @dirrm lib/virtualbox/components
-@dirrm lib/virtualbox/additions
+%%GUESTADDITIONS%%@dirrm lib/virtualbox/additions
 @dirrm lib/virtualbox
 @cwd /
 %%KMODDIR%%/vboxdrv.ko
