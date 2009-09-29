@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.2.4.8284
+PORTVERSION=	1.2.5
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/glarkin
-PKGNAMESUFFIX=	-devel
+MASTER_SITES=	http://cakeforge.org/frs/download.php/733/ \
+		LOCAL/glarkin
 DISTNAME=	cake_${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_BZIP2=	yes
+DISTFILE_SUFFIX=/donation=complete
 FETCH_BEFORE_ARGS=	-o -
 TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
 
@@ -26,7 +27,7 @@ PORTDOCS=	README
 USE_APACHE=	2.0+
 SLAVE_PORT_MODULES=	rewrite
 
-CONFLICTS=	cakephp-[0-9]*
+CONFLICTS=	cakephp-1.[13].*
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes
@@ -141,8 +142,11 @@ confighelp:
 	@${ECHO_MSG} "http://manual.cakephp.org/chapter/installing"
 	@${ECHO_MSG} ""
 
+post-extract:
+	@${FIND} ${WRKSRC} -name ._\* -delete
+
 post-patch:
-	@${RM} ${WRKSRC}/cake/console/cake.orig	
+	@${RM} ${WRKSRC}/cake/console/cake.orig
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
