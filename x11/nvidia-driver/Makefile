@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	185.18.29
+DISTVERSION?=	185.18.36
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -61,6 +61,8 @@ PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} LIBGLVERSION=${LIBGLVERSION} \
 		MODULESDIR=${MODULESDIR}
 
 .if !defined(WITHOUT_LINUX)
+CONFLICTS=	linux-dri-[0-9]* linux-f10-dri-[0-9]* linux-f8-dri-[0-9]* \
+		linux_dri-[0-9]* linux_dri-devel-[0-9]*
 USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
 .else
@@ -105,7 +107,7 @@ pre-su-install:
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 
 post-install:
-# pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
+# pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
 .if ${NVVERSION} < 817400
 	@${REINPLACE_CMD} '/libnvidia-cfg/d' ${TMPPLIST}
 .endif
