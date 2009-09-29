@@ -1,5 +1,5 @@
 # TODO : Add fr here when pages are complete
-MANLANG=	"" de es eu fr hu
+MANLANG=	"" de es eu fr hu it
 #MANCOMPRESSED=	no
 .if defined(WITH_CAS)
 MAN1_EN+=	cas.1
@@ -19,7 +19,12 @@ MAN1_DE+=	alc.1
 MAN1_ES+=	alc.1
 MAN1_EU+=	alc.1
 MAN1_HU+=	alc.1
-MAN1+=	alcc.1
+MAN1_EN+=	alcc.1
+MAN1_DE+=	alcc.1
+MAN1_ES+=	alcc.1
+MAN1_EU+=	alcc.1
+MAN1_FR+=	alcc.1
+MAN1_HU+=	alcc.1
 .endif
 .if defined(WITH_AMULEWEBSRV)
 MAN1+=	amuleweb.1
@@ -34,6 +39,7 @@ MAN1+=	ed2k.1
 MAN1+=	amuled.1
 MAN1_EN+=	amulegui.1
 MAN1_DE+=	amulegui.1
+MAN1_IT+=	amulegui.1
 .endif
 MAN1+=		amule.1
 MAN1_EN+=	xas.1
