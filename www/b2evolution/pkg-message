@@ -24,6 +24,12 @@ you may need to perform the following steps.
    # Directives to allow use of b2evolution
    #
    Alias /%%B2EVO_URL%% "%%PREFIX%%/%%B2EVO_DIR%%/"
+   AcceptPathInfo On
+   <Directory /usr/local/www/Wikka-1.2>
+      AllowOverride None
+      Order Allow,Deny
+      Allow from all
+   </Directory>
    #
 
 5. Open b2evo installation page in your web browser 
@@ -40,5 +46,9 @@ you may need to perform the following steps.
    your database as described at
 
    http://manual.b2evolution.net/Upgrade_from_an_older_version
+
+
+More detailed information please visit:
+   http://manual.b2evolution.net/Install_b2evolution
 
 ==================================================================

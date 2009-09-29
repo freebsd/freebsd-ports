@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	b2evolution
-PORTVERSION=	2.4.6
+PORTVERSION=	3.3.1
 CATEGORIES=	www
-MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo%20${PORTVERSION}-stable
+MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo-${PORTVERSION}-stable
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
 
-MAINTAINER=	svysh@pn.sinp.msu.ru
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -19,7 +19,7 @@ PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 USE_ZIP=	YES
 USE_DOS2UNIX=	YES
 
-B2EVO_DATE?=	stable-2009-01-12-lc
+B2EVO_DATE?=	stable-2009-08-08
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
