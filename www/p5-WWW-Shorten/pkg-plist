@@ -1,7 +1,5 @@
 bin/shorten
 %%SITE_PERL%%/WWW/Shorten.pm
-%%SITE_PERL%%/WWW/Shorten/BabyURL.pm
-%%SITE_PERL%%/WWW/Shorten/EkDk.pm
 %%SITE_PERL%%/WWW/Shorten/LinkToolbot.pm
 %%SITE_PERL%%/WWW/Shorten/Linkz.pm
 %%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
@@ -9,17 +7,11 @@ bin/shorten
 %%SITE_PERL%%/WWW/Shorten/NotLong.pm
 %%SITE_PERL%%/WWW/Shorten/OneShortLink.pm
 %%SITE_PERL%%/WWW/Shorten/Shorl.pm
-%%SITE_PERL%%/WWW/Shorten/ShortLink.pm
-%%SITE_PERL%%/WWW/Shorten/SmLnk.pm
-%%SITE_PERL%%/WWW/Shorten/SnipURL.pm
 %%SITE_PERL%%/WWW/Shorten/TinyClick.pm
 %%SITE_PERL%%/WWW/Shorten/TinyURL.pm
 %%SITE_PERL%%/WWW/Shorten/Tinylink.pm
-%%SITE_PERL%%/WWW/Shorten/URLjr.pm
-%%SITE_PERL%%/WWW/Shorten/V3.pm
 %%SITE_PERL%%/WWW/Shorten/_dead.pm
 %%SITE_PERL%%/WWW/Shorten/generic.pm
-%%SITE_PERL%%/WWW/Shorten/qURL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
