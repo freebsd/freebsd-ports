@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		l4p-tmpl.1
 MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender.3 \
 		Log::Log4perl::Appender::Buffer.3 \
@@ -65,6 +66,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::NDC.3 \
 		Log::Log4perl::Resurrector.3 \
 		Log::Log4perl::Util.3 \
-		Log::Log4perl::Util::Semaphore.3
+		Log::Log4perl::Util::Semaphore.3 \
+		Log::Log4perl::Util::TimeTracker.3
 
 .include <bsd.port.mk>
