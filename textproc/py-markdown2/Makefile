@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	markdown2
-PORTVERSION=	1.0.1.13
+PORTVERSION=	1.0.1.14
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A fast and complete Python implementaion of Markdown
 
 USE_ZIP=	yes
