@@ -23331,7 +23331,6 @@ wampager                        ports/x11-wm/wampager
 wand-libconfig                  ports/devel/wand-libconfig
 wanderer                        ports/games/wanderer
 wanderlust                      ports/mail/wanderlust
-wanderlust-devel                ports/mail/wanderlust-devel
 wanderlust-emacs21              ports/mail/wanderlust-emacs21
 wanderlust-xemacs21-mule        ports/mail/wanderlust-xemacs21-mule
 wanpipe                         ports/misc/wanpipe
