@@ -13,6 +13,8 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/flim
 COMMENT=	FLIM, message representation or encoding elisp library for xemacs21-mule
 
+MANUAL_PACKAGE_BUILD=	yes
+
 # emacs port setup
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
