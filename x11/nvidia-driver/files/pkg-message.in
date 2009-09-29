@@ -9,9 +9,6 @@ or adding
 
 to your /boot/loader.conf.
 
-Note for users of FreeBSD 7.X and above: you MUST edit /boot/loader.conf
-and reboot, kldload'ing nvidia module will NOT do the trick.
-
 If you build this port with WITH_FREEBSD_AGP=yes, make sure you have
 agp.ko kernel module installed and loaded, since nvidia.ko will depend
 on it, or have your kernel compiled with "device agp".  Otherwise the
