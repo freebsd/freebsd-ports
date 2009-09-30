@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memtest86+
-PORTVERSION=	2.11
+PORTVERSION=	4.00
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 
