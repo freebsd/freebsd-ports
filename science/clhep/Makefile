@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clhep
-PORTVERSION=	2.0.4.2
+PORTVERSION=	2.0.4.3
 CATEGORIES=	science
 MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/distributions/
 EXTRACT_SUFX=	.tgz
@@ -25,8 +25,14 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=	Does not compile on FreeBSD 6.X
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		 '/AM_CXXFLAGS=/s|-O ||g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
