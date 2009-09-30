@@ -4180,3 +4180,4 @@ audio/gmpc-favorites||2009-09-24|Unmaintained upstream
 audio/gmpc-autoplaylist||2009-09-24|Unmaintained upstream
 audio/gmpc-stopbutton||2009-09-24|Unmaintained upstream
 mail/wanderlust-devel||2009-09-28|Port addition canceled
+sysutils/zccron|sysutils/p5-ZConf-Cron|2009-09-27|Please use sysutils/p5-ZConf-Cron
