@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	prawn
-PORTVERSION=	0.5.0.1
+PORTVERSION=	0.5.1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RF/prawn
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Fast pure Ruby PDF generator
 
 BUILD_DEPENDS=	rubygem-prawn-layout>=0.2.0.1:${PORTSDIR}/print/rubygem-prawn-layout \

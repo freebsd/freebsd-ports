@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	prawn-core
-PORTVERSION=	0.5.0.1
+PORTVERSION=	0.5.1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RF/prawn
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Core of Rubygem-prawn
 
 USE_RUBY=	yes
