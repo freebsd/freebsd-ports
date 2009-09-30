@@ -1,0 +1,6 @@
+A ZConf based library to facilitate fetching weather information
+and dumping it or printing it via a template.
+
+zcweather - Fetches the weather for the specified location.
+
+WWW: http://search.cpan.org/dist/ZConf-Weather
