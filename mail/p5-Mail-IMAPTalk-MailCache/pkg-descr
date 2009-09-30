@@ -1,0 +1,4 @@
+This provides methods for caching mail information for
+Mail::IMAPTalk using Mail::Cache.
+
+WWW: http://search.cpan.org/dist/Mail-IMAPTalk-MailCache
