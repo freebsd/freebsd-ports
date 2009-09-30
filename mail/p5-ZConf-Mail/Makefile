@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZConf-Mail
-PORTVERSION=	1.1.0
+PORTVERSION=	1.4.0
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -30,7 +30,10 @@ RUN_DEPENDS=	${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
 		${SITE_PERL}/Email/Date.pm:${PORTSDIR}/mail/p5-Email-Date \
 		${SITE_PERL}/mach/MIME/QuotedPrint.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/Mail/Cache.pm:${PORTSDIR}/mail/p5-Mail-Cache \
+		${SITE_PERL}/Mail/IMAPTalk/MailCache.pm:${PORTSDIR}/mail/p5-Mail-IMAPTalk-MailCache \
+		${SITE_PERL}/Text/SpellChecker/GUI.pm:${PORTSDIR}/textproc/p5-Text-SpellChecker-GUI
 
 PERL_CONFIGURE=	yes
 
