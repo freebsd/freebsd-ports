@@ -35,6 +35,40 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="beb6f4a8-add5-11de-8b55-0030843d3802">
+    <topic>mybb -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mybb</name>
+	<range><lt>1.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>mybb team reports:</p>
+	<blockquote cite="http://blog.mybboard.net/2009/09/21/mybb-1-4-9-released-security-update/">
+	  <p>Input passed via avatar extensions is not properly sanitised before
+	    being used in SQL queries. This can be exploited to manipulate SQL
+	    queries by uploading specially named avatars.</p>
+	  <p>The script allows to sign up with usernames containing zero width
+	    space characters, which can be exploited to e.g. conduct spoofing
+	    attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>36460</bid>
+      <url>http://dev.mybboard.net/issues/464</url>
+      <url>http://dev.mybboard.net/issues/418</url>
+      <url>http://secunia.com/advisories/36803</url>
+      <url>http://blog.mybboard.net/2009/09/21/mybb-1-4-9-released-security-update/</url>
+    </references>
+    <dates>
+      <discovery>2009-09-21</discovery>
+      <entry>2009-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bad1b090-a7ca-11de-873f-0030843d3802">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
