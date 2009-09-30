@@ -1,0 +1,11 @@
+--- conf/post-install.orig	Thu Feb 24 08:06:08 2005
++++ conf/post-install	Sat Mar  5 11:53:42 2005
+@@ -185,7 +185,7 @@
+ 
+ umask 022
+ 
+-PATH=/bin:/usr/bin:/usr/sbin:/usr/etc:/sbin:/etc:/usr/contrib/bin:/usr/gnu/bin:/usr/ucb:/usr/bsd
++PATH=/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+ SHELL=/bin/sh
+ IFS=" 	
+ "
