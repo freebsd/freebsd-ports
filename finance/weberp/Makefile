@@ -8,10 +8,10 @@
 PORTNAME=	weberp
 PORTVERSION=	3.11
 CATEGORIES=	finance www
-MASTER_SITES=	SF/web-erp/webERP/webERP_${PORTVERSION}
+MASTER_SITES=	SF/web-erp/webERP/webERP%20${PORTVERSION}
 DISTNAME=	webERP_${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open-Source Web-Based ERP System
 
 USE_ZIP=	yes
