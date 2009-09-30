@@ -35,6 +35,8 @@ BUILD_DEPENDS=	jackit>=0.109.2:${PORTSDIR}/audio/jack
 # However, the library version number was not changed.  The line above
 # is supposed to work around that.
 
+BROKEN=		bad plist
+
 USE_SCONS=	yes
 SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
 CFLAGS+=	-I${LOCALBASE}/include
