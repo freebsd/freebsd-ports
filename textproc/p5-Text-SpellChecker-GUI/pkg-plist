@@ -1,0 +1,11 @@
+bin/textspellchecker
+bin/curses-textspellchecker
+%%SITE_PERL%%/Text/SpellChecker/GUI.pm
+%%SITE_PERL%%/Text/SpellChecker/GUI/Curses.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/SpellChecker/GUI/.packlist
+@dirrmtry %%SITE_PERL%%/Text/SpellChecker/GUI
+@dirrmtry %%SITE_PERL%%/Text/SpellChecker/
+@dirrmtry %%SITE_PERL%%/Text/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/SpellChecker/GUI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/SpellChecker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
