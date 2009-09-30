@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Mail/IMAPTalk/MailCache.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPTalk/MailCache/.packlist
+@dirrmtry %%SITE_PERL%%/Mail/IMAPTalk
+@dirrmtry %%SITE_PERL%%/Mail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPTalk/MailCache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPTalk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
