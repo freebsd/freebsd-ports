@@ -22,6 +22,9 @@ LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
+MAKE_ARGS=	LDFLAGS_DEPS="-L${LOCALBASE}/lib -lid3tag -lmp4v2 -logg -lvorbis -lvorbisfile" \
+		CFLAGS_DEPS="-I${LOCALBASE}/include"
+
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	vitunes
