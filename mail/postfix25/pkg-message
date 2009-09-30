@@ -18,7 +18,7 @@ daily_submit_queuerun="NO"
 
 If you are using SASL, you need to make sure that postfix has access to read
 the sasldb file.  This is accomplished by adding postfix to group mail and
-making the %%PREFIX%%/etc/sasldb* file(s) readable by group mail (this should
+making the /usr/local/etc/sasldb* file(s) readable by group mail (this should
 be the default for new installs).
 
 If you are upgrading from postfix version prior to 2.0, please see the README
