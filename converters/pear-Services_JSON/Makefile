@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_JSON
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	converters www pear
 
 MAINTAINER=	miwi@FreeBSD.org
