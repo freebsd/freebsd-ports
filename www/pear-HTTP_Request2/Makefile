@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Request2
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
