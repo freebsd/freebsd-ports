@@ -1,18 +1,56 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/_images/ant-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/_images/appengine-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/_images/buildbot-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/cherrypy-logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_images/django-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/jython-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/mod_python-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/_images/modjy-pyamf.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/sqlalchemy-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/_images/swing-example.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/turbogears-logo.png
 %%PORTDOCS%%%%DOCSDIR%%/_sources/about.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/architecture/adapters.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/architecture/attributecontrol.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/architecture/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/bugs.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/contents.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/apache/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/apache/mod_python.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/apache/mod_wsgi.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/appengine.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/buildbot.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/cherrypy.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/django.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/pylons.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/sqlalchemy.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/stackless.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/turbogears.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/twisted.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/web2py.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/gateways/werkzeug.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/general/client.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/general/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/general/sharedobject.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/jython/ant.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/jython/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/jython/modjy.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorials/jython/swing.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/whatsnew/0.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/whatsnew/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/bg_gradient.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/opensearch.xml
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
@@ -20,52 +58,27 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
 %%PORTDOCS%%%%DOCSDIR%%/about.html
-%%PORTDOCS%%%%DOCSDIR%%/api/.buildinfo
-%%PORTDOCS%%%%DOCSDIR%%/api/_sources/about.txt
-%%PORTDOCS%%%%DOCSDIR%%/api/_sources/bugs.txt
-%%PORTDOCS%%%%DOCSDIR%%/api/_sources/contents.txt
-%%PORTDOCS%%%%DOCSDIR%%/api/_sources/copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/api/_sources/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/api/_sources/whatsnew/0.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/basic.css
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/bg_gradient.jpg
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/default.css
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/doctools.js
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/logo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/minus.png
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/opensearch.xml
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/plus.png
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/pyamf.ico
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/pygments.css
-%%PORTDOCS%%%%DOCSDIR%%/api/_static/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/api/about.html
 %%PORTDOCS%%%%DOCSDIR%%/api/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/api/bug-index.html
-%%PORTDOCS%%%%DOCSDIR%%/api/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/api/class-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/api/contents.html
-%%PORTDOCS%%%%DOCSDIR%%/api/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/api/cpyamf-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/cpyamf-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.amf3-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.util-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.util.BufferedByteStream-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.util.IndexedCollection-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.util.IndexedMap-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.util.cBufferedByteStream-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.util.cIndexedCollection-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/cpyamf.util.cIndexedMap-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/crarr.png
-%%PORTDOCS%%%%DOCSDIR%%/api/download.html
 %%PORTDOCS%%%%DOCSDIR%%/api/epydoc.css
 %%PORTDOCS%%%%DOCSDIR%%/api/epydoc.js
 %%PORTDOCS%%%%DOCSDIR%%/api/frames.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genindex-all.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/api/help.html
 %%PORTDOCS%%%%DOCSDIR%%/api/identifier-index.html
 %%PORTDOCS%%%%DOCSDIR%%/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%/api/license.html
 %%PORTDOCS%%%%DOCSDIR%%/api/module-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/api/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.ASObject-class.html
@@ -226,15 +239,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util.DataTypeMixIn-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util.IndexedCollection-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util.IndexedMap-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util.StringIOProxy-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util.imports-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util.imports-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.util.imports.ModuleFinder-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/redirect.html
-%%PORTDOCS%%%%DOCSDIR%%/api/search.html
-%%PORTDOCS%%%%DOCSDIR%%/api/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/api/since-index.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-cpyamf-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-cpyamf.amf3-module.html
@@ -275,6 +284,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/twisted.web.resource.IResource-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_cpyamf_u.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_cpyamf_u_2.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_cpyamf_u_3.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_cpyamf_u_4.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_cpyamf_u_5.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_cpyamf_u_6.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad_2.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad_3.gif
@@ -372,10 +385,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ut.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ut_2.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ut_3.gif
-%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ut_4.gif
-%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ut_5.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_twisted_.gif
-%%PORTDOCS%%%%DOCSDIR%%/api/whatsnew/0.5.html
+%%PORTDOCS%%%%DOCSDIR%%/architecture/adapters.html
+%%PORTDOCS%%%%DOCSDIR%%/architecture/attributecontrol.html
+%%PORTDOCS%%%%DOCSDIR%%/architecture/index.html
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/contents.html
@@ -388,14 +401,47 @@
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/apache/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/apache/mod_python.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/apache/mod_wsgi.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/appengine.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/buildbot.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/cherrypy.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/django.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/pylons.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/sqlalchemy.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/stackless.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/turbogears.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/twisted.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/web2py.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/gateways/werkzeug.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/general/client.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/general/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/general/sharedobject.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/jython/ant.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/jython/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/jython/modjy.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/jython/swing.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/0.5.html
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/whatsnew
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/whatsnew
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/_sources/whatsnew
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorials/jython
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorials/general
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorials/gateways
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorials/apache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorials
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/architecture
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/whatsnew
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/tutorials/jython
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/tutorials/general
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/tutorials/gateways
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/tutorials/apache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/tutorials
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/architecture
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
