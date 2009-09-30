@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Shapely
-PORTVERSION=	1.0.11
-PORTREVISION=	2
+PORTVERSION=	1.0.13
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Package for Manipulation 2D Geospatial Geometry
 
 LIB_DEPENDS=	geos_c.7:${PORTSDIR}/graphics/geos
