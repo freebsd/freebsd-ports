@@ -1,23 +1,14 @@
 bin/ip2cc
 %%SITE_PERL%%/IP/Authority.pm
 %%SITE_PERL%%/IP/Country.pm
-%%SITE_PERL%%/IP/._Authority.pm
 %%SITE_PERL%%/IP/Authority/ipauth.gif
 %%SITE_PERL%%/IP/Authority/auth.gif
-%%SITE_PERL%%/IP/Authority/._ipauth.gif
-%%SITE_PERL%%/IP/Authority/._auth.gif
 %%SITE_PERL%%/IP/Country/Fast.pm
 %%SITE_PERL%%/IP/Country/MaxMind.pm
 %%SITE_PERL%%/IP/Country/Medium.pm
 %%SITE_PERL%%/IP/Country/Slow.pm
-%%SITE_PERL%%/IP/Country/._Fast.pm
-%%SITE_PERL%%/IP/Country/._MaxMind.pm
-%%SITE_PERL%%/IP/Country/._Medium.pm
-%%SITE_PERL%%/IP/Country/._Slow.pm
 %%SITE_PERL%%/IP/Country/Fast/cc.gif
 %%SITE_PERL%%/IP/Country/Fast/ip.gif
-%%SITE_PERL%%/IP/Country/Fast/._cc.gif
-%%SITE_PERL%%/IP/Country/Fast/._ip.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IP/Country/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IP/Country
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IP
