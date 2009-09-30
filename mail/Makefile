@@ -495,6 +495,7 @@
     SUBDIR += postfix-postfwd
     SUBDIR += postfix23
     SUBDIR += postfix24
+    SUBDIR += postfix25
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += prayer
