@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	Math-MPC
-PORTVERSION=	0.60
+PORTVERSION=	0.70
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A perl interface to MPC Library
 
-LIB_DEPENDS=	mpc.1:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	mpc.2:${PORTSDIR}/math/mpc
 
 PERL_CONFIGURE=	yes
 MAKE_ENV=	INC="-I${LOCALBASE}/include"
