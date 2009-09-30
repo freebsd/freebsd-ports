@@ -1,6 +1,7 @@
 include/fxt/aux0-all.h
 include/fxt/aux0/aux0double.h
 include/fxt/aux0/binomial.h
+include/fxt/aux0/cayley-dickson-mult.h
 include/fxt/aux0/cmult.h
 include/fxt/aux0/constants.h
 include/fxt/aux0/csincos.h
@@ -13,6 +14,7 @@ include/fxt/aux0/sign.h
 include/fxt/aux0/sincos.h
 include/fxt/aux0/sumdiff.h
 include/fxt/aux0/swap.h
+include/fxt/aux0/tex-line.h
 include/fxt/aux0/timer.h
 include/fxt/aux0/trigrec.h
 include/fxt/aux0/version.h
@@ -450,11 +452,11 @@ include/fxt/walsh/slant.h
 include/fxt/walsh/subset-convolution.h
 include/fxt/walsh/weighted-arithtransform.h
 include/fxt/walsh/weighted-or-convolution.h
-include/fxt/walsh/walshbasefunc.h
 include/fxt/walsh/walsheigen.h
 include/fxt/walsh/walshgray.h
 include/fxt/walsh/walshpal.h
 include/fxt/walsh/walshq.h
+include/fxt/walsh/walsh-basis.h
 include/fxt/walsh/walshseq.h
 include/fxt/walsh/walshwak.h
 include/fxt/walsh/walshwak2.h
@@ -488,6 +490,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/shiftadd-exp-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/shiftadd-log-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/shiftadd-log-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin2naf-demo.cc
