@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pycha
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A library for making charts with Python
 
 USE_PYTHON=		yes
