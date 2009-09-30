@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	prawn-layout
-PORTVERSION=	0.2.0.1
+PORTVERSION=	0.2.1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RF/prawn
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Prawn Extension to Provides Table Support and Other Layout
 
 USE_RUBY=	yes
