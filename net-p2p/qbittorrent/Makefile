@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -24,10 +24,7 @@ QT_COMPONENTS=	corelib gui network xml \
 		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix="${PREFIX}" \
-		--with-libtorrent-inc="${LOCALBASE}/include" \
-		--with-libtorrent-lib="${LOCALBASE}/lib" \
-		--with-libcurl-inc="${LOCALBASE}/include" \
+CONFIGURE_ARGS=	--with-libcurl-inc="${LOCALBASE}/include" \
 		--with-libcurl-lib="${LOCALBASE}/lib" \
 		--with-libzzip-inc="${LOCALBASE}/include" \
 		--with-libzzip-lib="${LOCALBASE}/lib"
