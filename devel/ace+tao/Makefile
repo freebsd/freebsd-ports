@@ -15,7 +15,7 @@ DISTNAME=	ACE-${ACE_VERSION:C/\.0$//}+TAO-${TAO_VERSION:C/\.0$//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
 
-CONFLICTS?=	ace-*
+CONFLICTS?=	ace-* gperf-[0-9]*
 
 ACE_VERSION=	5.4.2
 TAO_VERSION=	1.4.2
