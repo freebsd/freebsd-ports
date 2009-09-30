@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/Distance/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Distance/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Distance/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Distance/XS/XS.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Distance/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Distance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo/Distance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo
