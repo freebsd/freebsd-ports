@@ -1,0 +1,9 @@
+This provides the required module for managing crontabs stored
+in ZConf. Scripts to use thoseare also included.
+
+The utility zccron is a single pass cron utilitie.
+
+zccron - Runs crontabs stored in ZConf.
+zccrontab - Manage crontabs stored in ZConf.
+
+WWW: http://search.cpan.org/dist/ZConf-Cron
