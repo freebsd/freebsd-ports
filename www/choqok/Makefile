@@ -14,6 +14,8 @@ MASTER_SITES=	http://mirror.umoss.org/download.ospdev.net/${PORTNAME}/${PORTNAME
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
