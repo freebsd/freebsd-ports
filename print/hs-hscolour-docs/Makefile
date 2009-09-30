@@ -19,7 +19,7 @@ COMMENT=	Documentation for HsColour
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		HsColour:${PORTSDIR}/print/hs-hscolour
-RUN_DEPENDS=	hs-hscolour=${PORTVERSION}:${PORTSDIR}/print/hs-hscolour
+RUN_DEPENDS=	hs-hscolour=${PKGVERSION}:${PORTSDIR}/print/hs-hscolour
 
 PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
 .if !empty(PORT_HADDOCK:M?0)
