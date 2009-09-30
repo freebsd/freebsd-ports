@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ORLite-Migrate
-PORTVERSION=	0.03
+PORTVERSION=	1.05
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 extremely light weight SQLite-specific schema migration
 
-BUILD_DEPENDS=	${SITE_PERL}/File/pushd.pm:${PORTSDIR}/devel/p5-File-pushd \
-		${SITE_PERL}/IPC/Run3.pm:${PORTSDIR}/devel/p5-IPC-Run3 \
-		${SITE_PERL}/ORLite.pm:${PORTSDIR}/databases/p5-ORLite \
-		${SITE_PERL}/Probe/Perl.pm:${PORTSDIR}/sysutils/p5-Probe-Perl \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-File-pushd>=1.00:${PORTSDIR}/devel/p5-File-pushd \
+		p5-IPC-Run3>=0.042:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-ORLite>=1.28:${PORTSDIR}/databases/p5-ORLite \
+		p5-Probe-Perl>=0.01:${PORTSDIR}/sysutils/p5-Probe-Perl \
+		p5-DBI>=1.58:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-SQLite>=1.21:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Params-Util>0.37:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
