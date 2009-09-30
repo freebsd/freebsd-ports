@@ -17540,6 +17540,7 @@ pear-Date_Holidays_Sweden       ports/devel/pear-Date_Holidays_Sweden
 pear-Date_Holidays_UNO          ports/devel/pear-Date_Holidays_UNO
 pear-Date_Holidays_USA          ports/devel/pear-Date_Holidays_USA
 pear-Date_Holidays_Ukraine      ports/devel/pear-Date_Holidays_Ukraine
+pear-Doctrine                   ports/databases/pear-Doctrine
 pear-Event_Dispatcher           ports/devel/pear-Event_Dispatcher
 pear-FSM                        ports/devel/pear-FSM
 pear-File                       ports/sysutils/pear-File
@@ -17819,6 +17820,7 @@ pear-db_sqlite_tools            ports/databases/pear-DB_Sqlite_Tools
 pear-db_table                   ports/databases/pear-DB_Table
 pear-dba                        ports/databases/pear-DBA
 pear-dba_relational             ports/databases/pear-DBA_Relational
+pear-doctrine                   ports/databases/pear-Doctrine
 pear-event_dispatcher           ports/devel/pear-Event_Dispatcher
 pear-file                       ports/sysutils/pear-File
 pear-file_archive               ports/archivers/pear-File_Archive
