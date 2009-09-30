@@ -8,11 +8,15 @@
 
 PORTNAME=	ltl
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	A C++ class SSE library for scientific computing
+
+LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack \
+		blas.2:${PORTSDIR}/math/blas
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -21,7 +25,7 @@ CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen --prefix=${PREFIX} --includedir
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-INSTALL_TARGET=	install install-data check distdir
+INSTALL_TARGET=	install install-data distdir
 
 PORTDOCS=	*.html
 
