@@ -79,8 +79,8 @@ post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 
 pre-configure:
-	(${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@DEBUG_LEVEL@,${DEBUG_LEVEL},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,   ARCH *.= ar,   ARCMD = ar,'  ${WRKSRC}/Bmake.inc)
-	(${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC_SHARED},g ; s,@DEBUG_LEVEL@,${DEBUG_LEVEL},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS_SHARED},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS_SHARED},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,   ARCH *.= ar,   ARCMD = ar,'  ${WRKSRC_SHARED}/Bmake.inc)
+	(${REINPLACE_CMD} -e 's|@WRKSRC@|${WRKSRC}|g ; s|@DEBUG_LEVEL@|${DEBUG_LEVEL}|g ; s|@LOCALBASE@|${LOCALBASE}|g ; s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; s|@F77@|${F77}|g ; s|@FFLAGS@|${FFLAGS}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|   ARCH *.= ar|   ARCMD = ar|'  ${WRKSRC}/Bmake.inc)
+	(${REINPLACE_CMD} -e 's|@WRKSRC@|${WRKSRC_SHARED}|g ; s|@DEBUG_LEVEL@|${DEBUG_LEVEL}|g ; s|@LOCALBASE@|${LOCALBASE}|g ; s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS_SHARED}|g ; s|@F77@|${F77}|g ; s|@FFLAGS@|${FFLAGS_SHARED}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|   ARCH *.= ar|   ARCMD = ar|'  ${WRKSRC_SHARED}/Bmake.inc)
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/SRC/MPI/Makefile
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC_SHARED}/SRC/MPI/Makefile
 
