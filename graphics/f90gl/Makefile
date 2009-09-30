@@ -53,24 +53,24 @@ post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 
 pre-build:
-	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
-			-e 's,%%CFLAGS%%,${CFLAGS},g' \
-			-e 's,%%FC%%,${FC},g' \
-			-e 's,%%FFLAGS%%,${FFLAGS},g' \
-			-e 's,%%FNAME%%,${FNAME},g' \
-			-e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/mf8lim7
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' \
+			-e 's|%%CFLAGS%%|${CFLAGS}|g' \
+			-e 's|%%FC%%|${FC}|g' \
+			-e 's|%%FFLAGS%%|${FFLAGS}|g' \
+			-e 's|%%FNAME%%|${FNAME}|g' \
+			-e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/mf8lim7
 
-	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
-			-e 's,%%CFLAGS%%,${CFLAGS_SHARED},g' \
-			-e 's,%%FC%%,${FC},g' \
-			-e 's,%%FFLAGS%%,${FFLAGS_SHARED},g' \
-			-e 's,%%FNAME%%,${FNAME},g' \
-			-e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC_SHARED}/mf8lim7
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' \
+			-e 's|%%CFLAGS%%|${CFLAGS_SHARED}|g' \
+			-e 's|%%FC%%|${FC}|g' \
+			-e 's|%%FFLAGS%%|${FFLAGS_SHARED}|g' \
+			-e 's|%%FNAME%%|${FNAME}|g' \
+			-e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC_SHARED}/mf8lim7
 
-	@${REINPLACE_CMD} -e 's,%%WRKSRC%%,${WRKSRC},g' \
-			-e 's,%%FC%%,${FC},g' \
-			-e 's,%%FFLAGS%%,${FFLAGS},g' \
-			-e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC_SHARED}/examples/mf8lnt
+	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
+			-e 's|%%FC%%|${FC}|g' \
+			-e 's|%%FFLAGS%%|${FFLAGS}|g' \
+			-e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC_SHARED}/examples/mf8lnt
 
 do-build:
 .if !defined (OPENGL_DISPLAY)
