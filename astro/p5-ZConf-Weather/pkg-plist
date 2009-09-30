@@ -1,0 +1,8 @@
+bin/zcweather
+%%SITE_PERL%%/ZConf/Weather.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Weather/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Weather
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/ZConf

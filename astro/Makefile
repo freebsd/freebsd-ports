@@ -59,6 +59,7 @@
     SUBDIR += p5-GPS-Babel
     SUBDIR += p5-Geo-METAR
     SUBDIR += p5-Weather-Underground
+    SUBDIR += p5-ZConf-Weather
     SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += position
