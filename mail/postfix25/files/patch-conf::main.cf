@@ -1,0 +1,80 @@
+--- conf/main.cf.orig	2007-12-18 11:50:25.000000000 -0200
++++ conf/main.cf	2008-02-29 22:35:12.000000000 -0300
+@@ -33,19 +33,19 @@
+ # The command_directory parameter specifies the location of all
+ # postXXX commands.
+ #
+-command_directory = /usr/sbin
++command_directory = !!PREFIX!!/sbin
+ 
+ # The daemon_directory parameter specifies the location of all Postfix
+ # daemon programs (i.e. programs listed in the master.cf file). This
+ # directory must be owned by root.
+ #
+-daemon_directory = /usr/libexec/postfix
++daemon_directory = !!PREFIX!!/libexec/postfix
+ 
+ # The data_directory parameter specifies the location of Postfix-writable
+ # data files (caches, random numbers). This directory must be owned
+ # by the mail_owner account (see below).
+ #
+-data_directory = /var/lib/postfix
++data_directory = /var/db/postfix
+ 
+ # QUEUE AND PROCESS OWNERSHIP
+ #
+@@ -244,7 +244,7 @@
+ # 
+ #mynetworks_style = class
+ #mynetworks_style = subnet
+-#mynetworks_style = host
++mynetworks_style = host
+ 
+ # Alternatively, you can specify the mynetworks list by hand, in
+ # which case Postfix ignores the mynetworks_style setting.
+@@ -615,37 +615,37 @@
+ # sendmail_path: The full pathname of the Postfix sendmail command.
+ # This is the Sendmail-compatible mail posting interface.
+ # 
+-sendmail_path =
++sendmail_path = !!PREFIX!!/sbin/sendmail
+ 
+ # newaliases_path: The full pathname of the Postfix newaliases command.
+ # This is the Sendmail-compatible command to build alias databases.
+ #
+-newaliases_path =
++newaliases_path = !!PREFIX!!/bin/newaliases
+ 
+ # mailq_path: The full pathname of the Postfix mailq command.  This
+ # is the Sendmail-compatible mail queue listing command.
+ # 
+-mailq_path =
++mailq_path = !!PREFIX!!/bin/mailq
+ 
+ # setgid_group: The group for mail submission and queue management
+ # commands.  This must be a group name with a numerical group ID that
+ # is not shared with other accounts, not even with the Postfix account.
+ #
+-setgid_group =
++setgid_group = maildrop
+ 
+ # html_directory: The location of the Postfix HTML documentation.
+ #
+-html_directory =
++html_directory = no
+ 
+ # manpage_directory: The location of the Postfix on-line manual pages.
+ #
+-manpage_directory =
++manpage_directory = !!PREFIX!!/man
+ 
+ # sample_directory: The location of the Postfix sample configuration files.
+ # This parameter is obsolete as of Postfix 2.1.
+ #
+-sample_directory =
++sample_directory = !!PREFIX!!/etc/postfix
+ 
+ # readme_directory: The location of the Postfix README files.
+ #
+-readme_directory =
++readme_directory = no
