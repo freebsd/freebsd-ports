@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.7.1
+PORTVERSION=		2.7.2
 CATEGORIES=		www
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -46,12 +46,12 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/ziproxy
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/bo_exception.list ${PREFIX}/etc/ziproxy/bo_exception.list
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/deny.list ${PREFIX}/etc/ziproxy/deny.list
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/http.passwd ${PREFIX}/etc/ziproxy/http.passwd
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/noprocess.list ${PREFIX}/etc/ziproxy/noprocess.list
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace.list ${PREFIX}/etc/ziproxy/replace.list
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace_ct.list ${PREFIX}/etc/ziproxy/replace_ct.list
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/bo_exception.list ${PREFIX}/etc/ziproxy/bo_exception.list.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/deny.list ${PREFIX}/etc/ziproxy/deny.list.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/http.passwd ${PREFIX}/etc/ziproxy/http.passwd.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/noprocess.list ${PREFIX}/etc/ziproxy/noprocess.list.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace.list ${PREFIX}/etc/ziproxy/replace.list.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace_ct.list ${PREFIX}/etc/ziproxy/replace_ct.list.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf.sample
 	@if [ ! -f ${PREFIX}/etc/ziproxy/ziproxy.conf ]; then \
 		${CP} -p ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf ; \
