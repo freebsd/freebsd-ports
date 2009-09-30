@@ -15,6 +15,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generates perfect hash functions for sets of keywords
 
 MAKE_JOBS_UNSAFE=	yes
+CONFLICTS=	ace+tao-[0-9]*
 
 GNU_CONFIGURE=	yes
 
