@@ -1,5 +1,5 @@
---- src/util/sys_defs.h.orig	2009-05-11 03:45:27.000000000 +0300
-+++ src/util/sys_defs.h	2009-07-22 21:26:44.208909929 +0300
+--- src/util/sys_defs.h.orig	2009-09-27 22:22:10.000000000 -0400
++++ src/util/sys_defs.h	2009-09-27 22:24:08.000000000 -0400
 @@ -25,6 +25,7 @@
    */
  #if defined(FREEBSD2) || defined(FREEBSD3) || defined(FREEBSD4) \

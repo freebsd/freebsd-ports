@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.6.5
-PORTEPOCH=	1
+PORTVERSION=	2.5.7
+PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -22,14 +22,12 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@tandon.net
 COMMENT=	A secure alternative to widely-used Sendmail
 
-VDAVERSION=	2.6.5
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-46-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	postfix.sh
-SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when
 # make config is run (happens first time port is built, too)
@@ -55,19 +53,17 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
 		CDB		"CDB maps lookups"					${STATUS_CDB} \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
-		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
+		VDA		"VDA (Virtual Delivery Agent)"				${STATUS_VDA} \
 		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test}
 
-.include <bsd.port.options.mk>
-
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
-	postlock.1 postlog.1 postmap.1 postmulti.1 postqueue.1 postsuper.1 \
-	sendmail.1 qshape.1
+	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1 \
+	qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
-	pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 regexp_table.5 \
-	relocated.5 tcp_table.5 transport.5 virtual.5
+	pcre_table.5 pgsql_table.5 postconf.5 regexp_table.5 relocated.5 \
+	tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
@@ -80,8 +76,8 @@ MLINKS=	sendmail.1 mailq.1 \
 	bounce.8 trace.8 \
 	smtp.8 lmtp.8
 
-HTML1=	SOHO_README.html body_checks.5.html bounce.5.html postfix-power.png \
-	scache.8.html tlsmgr.8.html
+CONF1=	access aliases canonical generic header_checks main.cf master.cf \
+	relocated transport virtual
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -89,22 +85,14 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
-POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
-			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
-			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
-			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
-			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
-			-DDEF_MAILQ_PATH=\\\"${PREFIX}/bin/mailq\\\" \
-			-DDEF_MANPAGE_DIR=\\\"${MANPREFIX}/man\\\" \
-			-DDEF_README_DIR=\\\"${READMEDIR}\\\" \
-			-DDEF_HTML_DIR=\\\"${READMEDIR}\\\" \
-			-DDEF_QUEUE_DIR=\\\"/var/spool/postfix\\\" \
-			-DDEF_DATA_DIR=\\\"/var/db/postfix\\\" \
-			-DDEF_MAIL_OWNER=\\\"postfix\\\" \
-			-DDEF_SGID_GROUP=\\\"maildrop\\\" \
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}"
+
+.include <bsd.port.pre.mk>
 
 # Default requirement for postfix rc script
-_REQUIRE=		LOGIN cleanvar
+_REQUIRE=	LOGIN cleanvar
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
@@ -123,7 +111,6 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .if defined(WITH_DOVECOT)
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
-_REQUIRE+=		dovecot
 .endif
 
 .if defined(WITH_SASLKRB)
@@ -195,52 +182,28 @@ POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
-# 32Bit VDA patch (64Bit has different patch)
 .if defined(WITH_VDA)
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
-PATCHFILES+=		postfix-${VDAVERSION}-vda-ng.patch.gz
+PATCHFILES+=		postfix-2.5.6-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
-PLIST_SUB+=	VDA=""
-.else
-PLIST_SUB+=	VDA="@comment "
 .endif
 
 .if defined(WITH_TEST)
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 MAN1+=		${MANTEST}
-PLIST_SUB+=	TEST=""
+PLIST_SUB+=	SUB_TEST=""
 .else
-PLIST_SUB+=	TEST="@comment "
+PLIST_SUB+=	SUB_TEST="@comment "
 .endif
 
 .if defined(NOPORTDOCS)
-READMEDIR=	no
+READMEDIR=no
 .else
-READMEDIR=	${DOCSDIR}
+READMEDIR=${PREFIX}/share/doc/postfix
 .endif
 
-DAEMONDIR=	${PREFIX}/libexec/postfix
-
-SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" DAEMONDIR="${DAEMONDIR}"
-SUB_FILES+=	pkg-install pkg-message
-
-# sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
-REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin!;\
-		s!(_directory = )/usr/!\1${PREFIX}/!g;\
-		s!^(data_directory = /var/)lib/!\1db/!g;\
-		s!^\#(mynetworks_style = host)!\1!g;\
-		s!^(sendmail_path =)!\1 ${PREFIX}/sbin/sendmail!g;\
-		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g;\
-		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g;\
-		s!^(setgid_group =)!\1 maildrop!g;\
-		s!^(manpage_directory =)!\1 ${PREFIX}/man!g;\
-		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
-		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
-		s!(:|= )/etc/postfix!\1$$config_directory!g;\
-		s!/etc/postfix!${ETCDIR}!g;\
-		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
-		s!($config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
 .if defined(POSTFIX_OPTIONS)
@@ -269,29 +232,20 @@ pre-patch:
 	fi
 .endif
 
-	@${ECHO} '<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>' \
+	@${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
 		> ${WRKSRC}/html/body_checks.5.html
-	@${REINPLACE_CMD} -E -e 's![[:<:]]perl[[:>:]]!${PERL}!' \
-		${WRKSRC}/src/bounce/Makefile.in
-	@${REINPLACE_CMD} -E -e 's!^(#define DEF_SGID_GROUP[^"]+)"postdrop"$$!\1"maildrop"!' \
-		${WRKSRC}/src/global/mail_params.h
-	@${FIND} -X ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man \
-		-type f -a ! \( -name INSTALL -o -name aliases \) | ${XARGS} \
-		${REINPLACE_CMD} -E -e '${REINPLACE}'
+	@${FIND} -P ${WRKSRC}/man -type f | ${XARGS} \
+		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
+	@${FIND} -P ${WRKSRC}/README_FILES -type f | ${XARGS} \
+		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
+	@${FIND} -P ${WRKSRC}/conf -type f | ${XARGS} \
+		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
 
 post-patch:
-	@${ECHO} '$$readme_directory/SOHO_README:f:root:-:644' \
-		>> ${WRKSRC}/conf/postfix-files
-.for f in ${HTML1}
-	@${ECHO} '$$html_directory/$f:f:root:-:644' \
-		>> ${WRKSRC}/conf/postfix-files
-.endfor
-.if defined(WITH_VDA)
-	@${ECHO} '$$readme_directory/VDA_README:f:root:-:644' \
-		>> ${WRKSRC}/conf/postfix-files
-	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
-		${WRKSRC}/README_FILES/VDA_README
-.endif
+# All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
+	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
+		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
+	@${REINPLACE_CMD} -e "s|perl|${PERL}|" ${WRKSRC}/src/bounce/Makefile.in
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
@@ -302,13 +256,26 @@ pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
-		daemon_directory=${DAEMONDIR} \
-		html_directory=${READMEDIR} \
+	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
+		config_directory=${PREFIX}/etc/postfix \
+		data_directory=/var/db/postfix \
+		daemon_directory=${PREFIX}/libexec/postfix \
+		command_directory=${PREFIX}/sbin \
+		queue_directory=/var/spool/postfix \
+		sendmail_path=${PREFIX}/sbin/sendmail \
+		newaliases_path=${PREFIX}/bin/newaliases \
+		mailq_path=${PREFIX}/bin/mailq \
+		mail_owner=postfix \
+		setgid_group=maildrop \
+		manpage_directory=${MANPREFIX}/man \
+		sample_directory=${PREFIX}/etc/postfix \
 		readme_directory=${READMEDIR}
+
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
+
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
 	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MANPREFIX}/man/man1
+
 .for f in ${BINTEST}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
@@ -316,10 +283,22 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
 .endfor
 
+	@${MKDIR} ${PREFIX}/etc/postfix/dist
+.for f in ${CONF1}
+	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
+.endfor
+
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
+	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
+		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
+.endif
+
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	# Fix compressed man pages
-	@${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${DAEMONDIR}/postfix-files
+# Fix compressed man pages
+	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/etc/postfix/postfix-files
+	@${RM} -f ${PREFIX}/etc/postfix/postfix-files.bak
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
