@@ -6,5 +6,6 @@ zcmailcompose - Composes a mail message and sends it using the specified
 zcgetmail - A getmail replacement using ZConf::Mail.
 zcmailaccountmanage - A GUI interface to ZConf::Mail accounts.
 zcmailuri - Invokes ZConf::Mail::GUI->compose via a mailto URI.
+zcmailimapcache - Updates the Mail::Cache cache for the specified IMAP account.
 
 WWW: http://search.cpan.org/dist/ZConf-Mail/
