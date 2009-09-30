@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcs
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Beta-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Protocol Construction Set
 
-BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
+PORTDOCS=	pcs.pdf
+PORTEXAMPLES=	*
+
+BUILD_DEPENDS=	cython>=0.11.2:${PORTSDIR}/lang/cython
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -22,21 +25,15 @@ USE_PYTHON_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800074
-BROKEN=		does not build
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in pcs.pdf
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC}/docs/Web && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-.for f in arpwhohas.py ddos_analyze.py dns_query.py http_get.py \
-		pcap_info.py pcap_slice.py ping.py snarf.py udp_echo.py
-	${INSTALL_DATA} ${WRKSRC}/scripts/${f} ${EXAMPLESDIR}
-.endfor
+	cd ${WRKSRC}/scripts && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
