@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	centerim
-PORTVERSION=	4.22.7
-PORTREVISION=	1
+PORTVERSION=	4.22.8
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
@@ -18,14 +17,13 @@ COMMENT=	A text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
-USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
-CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-konst
+CONFIGURE_ARGS=	--with-ssl --with-openssl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
 
