@@ -1,214 +1,223 @@
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/accelimation.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/browser.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/browser.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/config.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/convert2RegExp.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/icon_medium.png
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/icon_small.png
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/icon_small_disabled.png
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/install.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/install.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/manage.css
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/manage.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/manage.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/menucommander.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/miscapis.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/newscript.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/newscript.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/pages-overlay.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/pages-overlay.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/prefmanager.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/scriptdownloader.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/template.user.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/test.html
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/updater.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/utils.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/xmlhttprequester.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ar-SA/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ar-SA/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ar-SA/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ar-SA/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/bn-IN/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/bn-IN/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/bn-IN/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/bn-IN/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ca-AD/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ca-AD/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ca-AD/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ca-AD/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/cs-CZ/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/cs-CZ/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/cs-CZ/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/cs-CZ/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu-ES/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu-ES/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu-ES/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu-ES/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fa-IR/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fa-IR/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fa-IR/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fa-IR/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/gl-ES/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/gl-ES/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/gl-ES/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/gl-ES/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/he-IL/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/he-IL/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/he-IL/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/he-IL/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/hu-HU/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/hu-HU/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/hu-HU/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/hu-HU/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/id-ID/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/id-ID/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/id-ID/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/id-ID/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ro-RO/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ro-RO/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ro-RO/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ro-RO/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sl-SI/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sl-SI/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sl-SI/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sl-SI/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sr-RS/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sr-RS/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sr-RS/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sr-RS/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sv-SE/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sv-SE/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sv-SE/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sv-SE/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/vi-VN/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/vi-VN/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/vi-VN/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/vi-VN/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-CN/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-CN/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-CN/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-CN/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/gm-browser.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/gm-manage.properties
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/greasemonkey.dtd
-%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/greasemonkey.properties
-%%XPI_XPIDIR%%/chrome/icons/default/greasemonkey.ico
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/components/gmIBrowserWindow.xpt
 %%XPI_XPIDIR%%/components/gmIGreasemonkeyService.xpt
 %%XPI_XPIDIR%%/components/gmIMenuCommand.xpt
 %%XPI_XPIDIR%%/components/greasemonkey.js
+%%XPI_XPIDIR%%/content/accelimation.js
+%%XPI_XPIDIR%%/content/browser.js
+%%XPI_XPIDIR%%/content/browser.xul
+%%XPI_XPIDIR%%/content/config.js
+%%XPI_XPIDIR%%/content/convert2RegExp.js
+%%XPI_XPIDIR%%/content/icon_medium.png
+%%XPI_XPIDIR%%/content/icon_small.png
+%%XPI_XPIDIR%%/content/icon_small_disabled.png
+%%XPI_XPIDIR%%/content/install.js
+%%XPI_XPIDIR%%/content/install.xul
+%%XPI_XPIDIR%%/content/manage.css
+%%XPI_XPIDIR%%/content/manage.js
+%%XPI_XPIDIR%%/content/manage.xul
+%%XPI_XPIDIR%%/content/menucommander.js
+%%XPI_XPIDIR%%/content/miscapis.js
+%%XPI_XPIDIR%%/content/newscript.js
+%%XPI_XPIDIR%%/content/newscript.xul
+%%XPI_XPIDIR%%/content/pages-overlay.js
+%%XPI_XPIDIR%%/content/pages-overlay.xul
+%%XPI_XPIDIR%%/content/prefmanager.js
+%%XPI_XPIDIR%%/content/scriptdownloader.js
+%%XPI_XPIDIR%%/content/template.user.js
+%%XPI_XPIDIR%%/content/test.html
+%%XPI_XPIDIR%%/content/utils.js
+%%XPI_XPIDIR%%/content/xmlhttprequester.js
 %%XPI_XPIDIR%%/defaults/preferences/greasemonkey.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/license.txt
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ar-SA
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/bn-IN
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ca-AD
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/cs-CZ
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu-ES
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fa-IR
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/gl-ES
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/he-IL
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/hu-HU
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/id-ID
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ro-RO
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/sl-SI
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/sr-RS
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/vi-VN
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
-@dirrm %%XPI_XPIDIR%%/chrome/icons/default
-@dirrm %%XPI_XPIDIR%%/chrome/icons
-@dirrm %%XPI_XPIDIR%%/chrome
+%%XPI_XPIDIR%%/locale/ar/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ar/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ar/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ar/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ar-SA/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ar-SA/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ar-SA/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ar-SA/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/bn-IN/gm-browser.properties
+%%XPI_XPIDIR%%/locale/bn-IN/gm-manage.properties
+%%XPI_XPIDIR%%/locale/bn-IN/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/bn-IN/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ca-AD/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ca-AD/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ca-AD/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ca-AD/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/cs-CZ/gm-browser.properties
+%%XPI_XPIDIR%%/locale/cs-CZ/gm-manage.properties
+%%XPI_XPIDIR%%/locale/cs-CZ/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/cs-CZ/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/da-DK/gm-browser.properties
+%%XPI_XPIDIR%%/locale/da-DK/gm-manage.properties
+%%XPI_XPIDIR%%/locale/da-DK/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/da-DK/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/de-DE/gm-browser.properties
+%%XPI_XPIDIR%%/locale/de-DE/gm-manage.properties
+%%XPI_XPIDIR%%/locale/de-DE/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/de-DE/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/en-US/gm-browser.properties
+%%XPI_XPIDIR%%/locale/en-US/gm-manage.properties
+%%XPI_XPIDIR%%/locale/en-US/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/en-US/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/es-ES/gm-browser.properties
+%%XPI_XPIDIR%%/locale/es-ES/gm-manage.properties
+%%XPI_XPIDIR%%/locale/es-ES/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/es-ES/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/eu-ES/gm-browser.properties
+%%XPI_XPIDIR%%/locale/eu-ES/gm-manage.properties
+%%XPI_XPIDIR%%/locale/eu-ES/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/eu-ES/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/fa-IR/gm-browser.properties
+%%XPI_XPIDIR%%/locale/fa-IR/gm-manage.properties
+%%XPI_XPIDIR%%/locale/fa-IR/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/fa-IR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/fi-FI/gm-browser.properties
+%%XPI_XPIDIR%%/locale/fi-FI/gm-manage.properties
+%%XPI_XPIDIR%%/locale/fi-FI/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/fi-FI/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/fr-FR/gm-browser.properties
+%%XPI_XPIDIR%%/locale/fr-FR/gm-manage.properties
+%%XPI_XPIDIR%%/locale/fr-FR/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/fr-FR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/gl-ES/gm-browser.properties
+%%XPI_XPIDIR%%/locale/gl-ES/gm-manage.properties
+%%XPI_XPIDIR%%/locale/gl-ES/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/gl-ES/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/he-IL/gm-browser.properties
+%%XPI_XPIDIR%%/locale/he-IL/gm-manage.properties
+%%XPI_XPIDIR%%/locale/he-IL/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/he-IL/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/hr-HR/gm-browser.properties
+%%XPI_XPIDIR%%/locale/hr-HR/gm-manage.properties
+%%XPI_XPIDIR%%/locale/hr-HR/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/hr-HR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/hu-HU/gm-browser.properties
+%%XPI_XPIDIR%%/locale/hu-HU/gm-manage.properties
+%%XPI_XPIDIR%%/locale/hu-HU/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/hu-HU/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/id-ID/gm-browser.properties
+%%XPI_XPIDIR%%/locale/id-ID/gm-manage.properties
+%%XPI_XPIDIR%%/locale/id-ID/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/id-ID/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/it-IT/gm-browser.properties
+%%XPI_XPIDIR%%/locale/it-IT/gm-manage.properties
+%%XPI_XPIDIR%%/locale/it-IT/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/it-IT/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ja-JP/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ja-JP/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ja-JP/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ja-JP/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ko-KR/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ko-KR/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ko-KR/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ko-KR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/nl/gm-browser.properties
+%%XPI_XPIDIR%%/locale/nl/gm-manage.properties
+%%XPI_XPIDIR%%/locale/nl/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/nl/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/nl-NL/gm-browser.properties
+%%XPI_XPIDIR%%/locale/nl-NL/gm-manage.properties
+%%XPI_XPIDIR%%/locale/nl-NL/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/nl-NL/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/pl-PL/gm-browser.properties
+%%XPI_XPIDIR%%/locale/pl-PL/gm-manage.properties
+%%XPI_XPIDIR%%/locale/pl-PL/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/pl-PL/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/pt-BR/gm-browser.properties
+%%XPI_XPIDIR%%/locale/pt-BR/gm-manage.properties
+%%XPI_XPIDIR%%/locale/pt-BR/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/pt-BR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/pt-PT/gm-browser.properties
+%%XPI_XPIDIR%%/locale/pt-PT/gm-manage.properties
+%%XPI_XPIDIR%%/locale/pt-PT/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/pt-PT/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ro-RO/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ro-RO/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ro-RO/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ro-RO/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ru-RU/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ru-RU/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ru-RU/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ru-RU/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/sk-SK/gm-browser.properties
+%%XPI_XPIDIR%%/locale/sk-SK/gm-manage.properties
+%%XPI_XPIDIR%%/locale/sk-SK/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/sk-SK/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/sl-SI/gm-browser.properties
+%%XPI_XPIDIR%%/locale/sl-SI/gm-manage.properties
+%%XPI_XPIDIR%%/locale/sl-SI/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/sl-SI/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/sr-RS/gm-browser.properties
+%%XPI_XPIDIR%%/locale/sr-RS/gm-manage.properties
+%%XPI_XPIDIR%%/locale/sr-RS/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/sr-RS/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/sv-SE/gm-browser.properties
+%%XPI_XPIDIR%%/locale/sv-SE/gm-manage.properties
+%%XPI_XPIDIR%%/locale/sv-SE/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/sv-SE/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/tr-TR/gm-browser.properties
+%%XPI_XPIDIR%%/locale/tr-TR/gm-manage.properties
+%%XPI_XPIDIR%%/locale/tr-TR/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/tr-TR/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/uk-UA/gm-browser.properties
+%%XPI_XPIDIR%%/locale/uk-UA/gm-manage.properties
+%%XPI_XPIDIR%%/locale/uk-UA/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/uk-UA/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/vi-VN/gm-browser.properties
+%%XPI_XPIDIR%%/locale/vi-VN/gm-manage.properties
+%%XPI_XPIDIR%%/locale/vi-VN/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/vi-VN/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/zh-CN/gm-browser.properties
+%%XPI_XPIDIR%%/locale/zh-CN/gm-manage.properties
+%%XPI_XPIDIR%%/locale/zh-CN/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/zh-CN/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/zh-TW/gm-browser.properties
+%%XPI_XPIDIR%%/locale/zh-TW/gm-manage.properties
+%%XPI_XPIDIR%%/locale/zh-TW/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/zh-TW/greasemonkey.properties
 @dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/content
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/locale/ar
+@dirrm %%XPI_XPIDIR%%/locale/ar-SA
+@dirrm %%XPI_XPIDIR%%/locale/bn-IN
+@dirrm %%XPI_XPIDIR%%/locale/ca-AD
+@dirrm %%XPI_XPIDIR%%/locale/cs-CZ
+@dirrm %%XPI_XPIDIR%%/locale/da-DK
+@dirrm %%XPI_XPIDIR%%/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/locale/en-US
+@dirrm %%XPI_XPIDIR%%/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/locale/eu-ES
+@dirrm %%XPI_XPIDIR%%/locale/fa-IR
+@dirrm %%XPI_XPIDIR%%/locale/fi-FI
+@dirrm %%XPI_XPIDIR%%/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/locale/gl-ES
+@dirrm %%XPI_XPIDIR%%/locale/he-IL
+@dirrm %%XPI_XPIDIR%%/locale/hr-HR
+@dirrm %%XPI_XPIDIR%%/locale/hu-HU
+@dirrm %%XPI_XPIDIR%%/locale/id-ID
+@dirrm %%XPI_XPIDIR%%/locale/it-IT
+@dirrm %%XPI_XPIDIR%%/locale/ja-JP
+@dirrm %%XPI_XPIDIR%%/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/locale/nl
+@dirrm %%XPI_XPIDIR%%/locale/nl-NL
+@dirrm %%XPI_XPIDIR%%/locale/pl-PL
+@dirrm %%XPI_XPIDIR%%/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/locale/pt-PT
+@dirrm %%XPI_XPIDIR%%/locale/ro-RO
+@dirrm %%XPI_XPIDIR%%/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/locale/sk-SK
+@dirrm %%XPI_XPIDIR%%/locale/sl-SI
+@dirrm %%XPI_XPIDIR%%/locale/sr-RS
+@dirrm %%XPI_XPIDIR%%/locale/sv-SE
+@dirrm %%XPI_XPIDIR%%/locale/tr-TR
+@dirrm %%XPI_XPIDIR%%/locale/uk-UA
+@dirrm %%XPI_XPIDIR%%/locale/vi-VN
+@dirrm %%XPI_XPIDIR%%/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/locale
