@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ORLite
-PORTVERSION=	1.25
+PORTVERSION=	1.28
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -15,9 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 extremely light weight SQLite-specific ORM
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-DBI>=1.60.7:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-File-Remove>=1.40:${PORTSDIR}/devel/p5-File-Remove \
+		p5-Params-Util>=0.33:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
