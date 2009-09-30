@@ -8,7 +8,7 @@
 PORTNAME=	hugin
 PORTVERSION=	2009.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
