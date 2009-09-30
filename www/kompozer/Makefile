@@ -38,6 +38,11 @@ NOT_FOR_ARCHS_REASON_ia64=	does not build
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH}=="powerpc"
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED
+} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 		${WRKSRC}/storage/build/Makefile.in

@@ -1,0 +1,584 @@
+--- xpcom/reflect/xptcall/src/md/unix/xptcstubs_ppc_freebsd.cpp.orig	2009-09-28 22:06:31.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_ppc_freebsd.cpp	2009-09-28 22:06:31.000000000 +0200
+@@ -0,0 +1,232 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
++/* ***** BEGIN LICENSE BLOCK *****
++ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
++ *
++ * The contents of this file are subject to the Mozilla Public License Version
++ * 1.1 (the "License"); you may not use this file except in compliance with
++ * the License. You may obtain a copy of the License at
++ * http://www.mozilla.org/MPL/
++ *
++ * Software distributed under the License is distributed on an "AS IS" basis,
++ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++ * for the specific language governing rights and limitations under the
++ * License.
++ *
++ * The Original Code is mozilla.org code.
++ *
++ * The Initial Developer of the Original Code is
++ * Netscape Communications Corporation.
++ * Portions created by the Initial Developer are Copyright (C) 1999
++ * the Initial Developer. All Rights Reserved.
++ *
++ * Contributor(s):
++ *   Franz.Sirl-kernel@lauterbach.com (Franz Sirl)
++ *   beard@netscape.com (Patrick Beard)
++ *   waterson@netscape.com (Chris Waterson)
++ *
++ * Alternatively, the contents of this file may be used under the terms of
++ * either of the GNU General Public License Version 2 or later (the "GPL"),
++ * or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++ * in which case the provisions of the GPL or the LGPL are applicable instead
++ * of those above. If you wish to allow use of your version of this file only
++ * under the terms of either the GPL or the LGPL, and not to allow others to
++ * use your version of this file under the terms of the MPL, indicate your
++ * decision by deleting the provisions above and replace them with the notice
++ * and other provisions required by the GPL or the LGPL. If you do not delete
++ * the provisions above, a recipient may use your version of this file under
++ * the terms of any one of the MPL, the GPL or the LGPL.
++ *
++ * ***** END LICENSE BLOCK ***** */
++
++// Implement shared vtbl methods.
++
++#include "xptcprivate.h"
++
++// The PPC/SYSV ABI passes the first 8 integral
++// parameters and the first 8 floating point parameters in registers
++// (r3-r10 and f1-f8), no stack space is allocated for these by the
++// caller.  The rest of the parameters are passed in the callers stack
++// area. The stack pointer has to retain 16-byte alignment, longlongs
++// and doubles are aligned on 8-byte boundaries.
++
++#define PARAM_BUFFER_COUNT     16
++#define GPR_COUNT               8
++#define FPR_COUNT               8
++
++// PrepareAndDispatch() is called by SharedStub() and calls the actual method.
++//
++// - 'args[]' contains the arguments passed on stack
++// - 'gprData[]' contains the arguments passed in integer registers
++// - 'fprData[]' contains the arguments passed in floating point registers
++// 
++// The parameters are mapped into an array of type 'nsXPTCMiniVariant'
++// and then the method gets called.
++
++extern "C" nsresult
++PrepareAndDispatch(nsXPTCStubBase* self,
++                   PRUint32 methodIndex,
++                   PRUint32* args,
++                   PRUint32 *gprData,
++                   double *fprData)
++{
++    nsXPTCMiniVariant paramBuffer[PARAM_BUFFER_COUNT];
++    nsXPTCMiniVariant* dispatchParams = NULL;
++    nsIInterfaceInfo* iface_info = NULL;
++    const nsXPTMethodInfo* info;
++    PRUint32 paramCount;
++    PRUint32 i;
++    nsresult result = NS_ERROR_FAILURE;
++
++    NS_ASSERTION(self,"no self");
++
++    self->GetInterfaceInfo(&iface_info);
++    NS_ASSERTION(iface_info,"no interface info");
++    if (! iface_info)
++        return NS_ERROR_UNEXPECTED;
++
++    iface_info->GetMethodInfo(PRUint16(methodIndex), &info);
++    NS_ASSERTION(info,"no method info");
++    if (! info)
++        return NS_ERROR_UNEXPECTED;
++
++    paramCount = info->GetParamCount();
++
++    // setup variant array pointer
++    if(paramCount > PARAM_BUFFER_COUNT)
++        dispatchParams = new nsXPTCMiniVariant[paramCount];
++    else
++        dispatchParams = paramBuffer;
++
++    NS_ASSERTION(dispatchParams,"no place for params");
++    if (! dispatchParams)
++        return NS_ERROR_OUT_OF_MEMORY;
++
++    PRUint32* ap = args;
++    PRUint32 gpr = 1;    // skip one GPR register
++    PRUint32 fpr = 0;
++    PRUint32 tempu32;
++    PRUint64 tempu64;
++
++    for(i = 0; i < paramCount; i++) {
++        const nsXPTParamInfo& param = info->GetParam(i);
++        const nsXPTType& type = param.GetType();
++        nsXPTCMiniVariant* dp = &dispatchParams[i];
++	
++        if (!param.IsOut() && type == nsXPTType::T_DOUBLE) {
++            if (fpr < FPR_COUNT)
++                dp->val.d = fprData[fpr++];
++            else {
++                if ((PRUint32) ap & 4) ap++; // doubles are 8-byte aligned on stack
++                dp->val.d = *(double*) ap;
++                ap += 2;
++            }
++            continue;
++        }
++        else if (!param.IsOut() && type == nsXPTType::T_FLOAT) {
++            if (fpr < FPR_COUNT)
++                dp->val.f = (float) fprData[fpr++]; // in registers floats are passed as doubles
++            else
++                dp->val.f = *(float*) ap++;
++            continue;
++        }
++        else if (!param.IsOut() && (type == nsXPTType::T_I64
++                                    || type == nsXPTType::T_U64)) {
++            if (gpr & 1) gpr++; // longlongs are aligned in odd/even register pairs, eg. r5/r6
++            if ((gpr + 1) < GPR_COUNT) {
++                tempu64 = *(PRUint64*) &gprData[gpr];
++                gpr += 2;
++            }
++            else {
++                if ((PRUint32) ap & 4) ap++; // longlongs are 8-byte aligned on stack
++                tempu64 = *(PRUint64*) ap;
++                ap += 2;
++            }
++        }
++        else {
++            if (gpr < GPR_COUNT)
++                tempu32 = gprData[gpr++];
++            else
++                tempu32 = *ap++;
++        }
++
++        if(param.IsOut() || !type.IsArithmetic()) {
++            dp->val.p = (void*) tempu32;
++            continue;
++        }
++
++        switch(type) {
++        case nsXPTType::T_I8:      dp->val.i8  = (PRInt8)   tempu32; break;
++        case nsXPTType::T_I16:     dp->val.i16 = (PRInt16)  tempu32; break;
++        case nsXPTType::T_I32:     dp->val.i32 = (PRInt32)  tempu32; break;
++        case nsXPTType::T_I64:     dp->val.i64 = (PRInt64)  tempu64; break;
++        case nsXPTType::T_U8:      dp->val.u8  = (PRUint8)  tempu32; break;
++        case nsXPTType::T_U16:     dp->val.u16 = (PRUint16) tempu32; break;
++        case nsXPTType::T_U32:     dp->val.u32 = (PRUint32) tempu32; break;
++        case nsXPTType::T_U64:     dp->val.u64 = (PRUint64) tempu64; break;
++        case nsXPTType::T_BOOL:    dp->val.b   = (PRBool)   tempu32; break;
++        case nsXPTType::T_CHAR:    dp->val.c   = (char)     tempu32; break;
++        case nsXPTType::T_WCHAR:   dp->val.wc  = (wchar_t)  tempu32; break;
++
++        default:
++            NS_ASSERTION(0, "bad type");
++            break;
++        }
++    }
++
++    result = self->CallMethod((PRUint16) methodIndex, info, dispatchParams);
++
++    NS_RELEASE(iface_info);
++
++    if (dispatchParams != paramBuffer)
++        delete [] dispatchParams;
++
++    return result;
++}
++
++// Load r11 with the constant 'n' and branch to SharedStub().
++
++// As G++3 ABI contains the length of the functionname in the mangled
++// name, it is difficult to get a generic assembler mechanism like
++// in the G++ 2.95 case.
++// Create names would be like:
++// _ZN14nsXPTCStubBase5Stub1Ev
++// _ZN14nsXPTCStubBase6Stub12Ev
++// _ZN14nsXPTCStubBase7Stub123Ev
++// _ZN14nsXPTCStubBase8Stub1234Ev
++// etc.
++// Use assembler directives to get the names right...
++
++# define STUB_ENTRY(n)							\
++__asm__ (								\
++	".align	2 \n\t"							\
++	".if	"#n" < 10 \n\t"						\
++	".globl	_ZN14nsXPTCStubBase5Stub"#n"Ev \n\t"			\
++	".type	_ZN14nsXPTCStubBase5Stub"#n"Ev,@function \n\n"		\
++"_ZN14nsXPTCStubBase5Stub"#n"Ev: \n\t"					\
++									\
++	".elseif "#n" < 100 \n\t"					\
++	".globl	_ZN14nsXPTCStubBase6Stub"#n"Ev \n\t"			\
++	".type	_ZN14nsXPTCStubBase6Stub"#n"Ev,@function \n\n"		\
++"_ZN14nsXPTCStubBase6Stub"#n"Ev: \n\t"					\
++									\
++	".elseif "#n" < 1000 \n\t"					\
++	".globl	_ZN14nsXPTCStubBase7Stub"#n"Ev \n\t"			\
++	".type	_ZN14nsXPTCStubBase7Stub"#n"Ev,@function \n\n"		\
++"_ZN14nsXPTCStubBase7Stub"#n"Ev: \n\t"					\
++									\
++	".else \n\t"							\
++	".err	\"stub number "#n" >= 1000 not yet supported\"\n"	\
++	".endif \n\t"							\
++									\
++	"li	11,"#n" \n\t"						\
++	"b	SharedStub@local \n"					\
++);
++
++#define SENTINEL_ENTRY(n)                            \
++nsresult nsXPTCStubBase::Sentinel##n()               \
++{                                                    \
++  NS_ASSERTION(0,"nsXPTCStubBase::Sentinel called"); \
++  return NS_ERROR_NOT_IMPLEMENTED;                   \
++}
++
++#include "xptcstubsdef.inc"
+--- xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ppc_freebsd.s.orig	2009-09-28 22:06:31.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ppc_freebsd.s	2009-09-28 22:06:31.000000000 +0200
+@@ -0,0 +1,89 @@
++# -*- Mode: Asm -*-
++#
++# The contents of this file are subject to the Netscape Public
++# License Version 1.1 (the "License"); you may not use this file
++# except in compliance with the License. You may obtain a copy of
++# the License at http://www.mozilla.org/NPL/
++#
++# Software distributed under the License is distributed on an "AS
++# IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
++# implied. See the License for the specific language governing
++# rights and limitations under the License.
++#
++# The Original Code is mozilla.org code.
++#
++# The Initial Developer of the Original Code is Netscape
++# Communications Corporation.  Portions created by Netscape are
++# Copyright (C) 1999 Netscape Communications Corporation. All
++# Rights Reserved.
++#
++# Contributor(s): 
++#   Franz.Sirl-kernel@lauterbach.com (Franz Sirl)
++#   beard@netscape.com (Patrick Beard)
++#   waterson@netscape.com (Chris Waterson)
++#
++
++.set r0,0; .set sp,1; .set RTOC,2; .set r3,3; .set r4,4
++.set r5,5; .set r6,6; .set r7,7; .set r8,8; .set r9,9
++.set r10,10; .set r11,11; .set r12,12; .set r13,13; .set r14,14
++.set r15,15; .set r16,16; .set r17,17; .set r18,18; .set r19,19
++.set r20,20; .set r21,21; .set r22,22; .set r23,23; .set r24,24
++.set r25,25; .set r26,26; .set r27,27; .set r28,28; .set r29,29
++.set r30,30; .set r31,31
++.set f0,0; .set f1,1; .set f2,2; .set f3,3; .set f4,4
++.set f5,5; .set f6,6; .set f7,7; .set f8,8; .set f9,9
++.set f10,10; .set f11,11; .set f12,12; .set f13,13; .set f14,14
++.set f15,15; .set f16,16; .set f17,17; .set f18,18; .set f19,19
++.set f20,20; .set f21,21; .set f22,22; .set f23,23; .set f24,24
++.set f25,25; .set f26,26; .set f27,27; .set f28,28; .set f29,29
++.set f30,30; .set f31,31
++
++        .section ".text"
++        .align 2
++	.globl SharedStub
++	.type  SharedStub,@function
++
++SharedStub:
++        stwu	sp,-112(sp)			# room for 
++						# linkage (8),
++						# gprData (32),
++						# fprData (64), 
++						# stack alignment(8)
++        mflr	r0
++	stw	r0,116(sp)			# save LR backchain
++
++	stw	r4,12(sp)			# save GP registers
++	stw	r5,16(sp)			# (n.b. that we don't save r3
++	stw	r6,20(sp)			# because PrepareAndDispatch() is savvy)
++	stw	r7,24(sp)
++	stw	r8,28(sp)
++	stw	r9,32(sp)
++	stw	r10,36(sp)
++
++	stfd	f1,40(sp)			# save FP registers
++	stfd	f2,48(sp)
++	stfd	f3,56(sp)
++	stfd	f4,64(sp)
++	stfd	f5,72(sp)
++	stfd	f6,80(sp)
++	stfd	f7,88(sp)
++	stfd	f8,96(sp)
++
++						# r3 has the 'self' pointer already
++	
++	mr      r4,r11				# r4 <= methodIndex selector, passed
++						# via r11 in the nsXPTCStubBase::StubXX() call
++	
++	addi	r5,sp,120			# r5 <= pointer to callers args area,
++						# beyond r3-r10/f1-f8 mapped range
++	
++	addi	r6,sp,8				# r6 <= gprData
++	addi	r7,sp,40			# r7 <= fprData
++      
++	bl	PrepareAndDispatch@local	# Go!
++    
++	lwz	r0,116(sp)			# restore LR
++	mtlr	r0
++	la	sp,112(sp)			# clean up the stack
++	blr
++
+--- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_ppc_freebsd.cpp.orig	2009-09-28 22:06:31.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_ppc_freebsd.cpp	2009-09-28 22:06:31.000000000 +0200
+@@ -0,0 +1,141 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
++/* ***** BEGIN LICENSE BLOCK *****
++ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
++ *
++ * The contents of this file are subject to the Mozilla Public License Version
++ * 1.1 (the "License"); you may not use this file except in compliance with
++ * the License. You may obtain a copy of the License at
++ * http://www.mozilla.org/MPL/
++ *
++ * Software distributed under the License is distributed on an "AS IS" basis,
++ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++ * for the specific language governing rights and limitations under the
++ * License.
++ *
++ * The Original Code is mozilla.org code.
++ *
++ * The Initial Developer of the Original Code is
++ * Netscape Communications Corporation.
++ * Portions created by the Initial Developer are Copyright (C) 1998
++ * the Initial Developer. All Rights Reserved.
++ *
++ * Contributor(s):
++ *   Franz.Sirl-kernel@lauterbach.com (Franz Sirl)
++ *   beard@netscape.com (Patrick Beard)
++ *   waterson@netscape.com (Chris Waterson)
++ *
++ * Alternatively, the contents of this file may be used under the terms of
++ * either of the GNU General Public License Version 2 or later (the "GPL"),
++ * or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++ * in which case the provisions of the GPL or the LGPL are applicable instead
++ * of those above. If you wish to allow use of your version of this file only
++ * under the terms of either the GPL or the LGPL, and not to allow others to
++ * use your version of this file under the terms of the MPL, indicate your
++ * decision by deleting the provisions above and replace them with the notice
++ * and other provisions required by the GPL or the LGPL. If you do not delete
++ * the provisions above, a recipient may use your version of this file under
++ * the terms of any one of the MPL, the GPL or the LGPL.
++ *
++ * ***** END LICENSE BLOCK ***** */
++
++// Platform specific code to invoke XPCOM methods on native objects
++
++// The purpose of XPTC_InvokeByIndex() is to map a platform
++// indepenpent call to the platform ABI. To do that,
++// XPTC_InvokeByIndex() has to determine the method to call via vtable
++// access. The parameters for the method are read from the
++// nsXPTCVariant* and prepared for th native ABI.  For the Linux/PPC
++// ABI this means that the first 8 integral and floating point
++// parameters are passed in registers.
++
++#include "xptcprivate.h"
++
++// 8 integral parameters are passed in registers
++#define GPR_COUNT     8
++
++// 8 floating point parameters are passed in registers, floats are
++// promoted to doubles when passed in registers
++#define FPR_COUNT     8
++
++extern "C" PRUint32
++invoke_count_words(PRUint32 paramCount, nsXPTCVariant* s)
++{
++  return PRUint32(((paramCount * 2) + 3) & ~3);
++}
++
++extern "C" void
++invoke_copy_to_stack(PRUint32* d,
++                     PRUint32 paramCount,
++                     nsXPTCVariant* s, 
++                     PRUint32* gpregs,
++                     double* fpregs)
++{
++    PRUint32 gpr = 1; // skip one GP reg for 'that'
++    PRUint32 fpr = 0;
++    PRUint32 tempu32;
++    PRUint64 tempu64;
++    
++    for(uint32 i = 0; i < paramCount; i++, s++) {
++        if(s->IsPtrData())
++            tempu32 = (PRUint32) s->ptr;
++        else {
++            switch(s->type) {
++            case nsXPTType::T_FLOAT:                                  break;
++            case nsXPTType::T_DOUBLE:                                 break;
++            case nsXPTType::T_I8:     tempu32 = s->val.i8;            break;
++            case nsXPTType::T_I16:    tempu32 = s->val.i16;           break;
++            case nsXPTType::T_I32:    tempu32 = s->val.i32;           break;
++            case nsXPTType::T_I64:    tempu64 = s->val.i64;           break;
++            case nsXPTType::T_U8:     tempu32 = s->val.u8;            break;
++            case nsXPTType::T_U16:    tempu32 = s->val.u16;           break;
++            case nsXPTType::T_U32:    tempu32 = s->val.u32;           break;
++            case nsXPTType::T_U64:    tempu64 = s->val.u64;           break;
++            case nsXPTType::T_BOOL:   tempu32 = s->val.b;             break;
++            case nsXPTType::T_CHAR:   tempu32 = s->val.c;             break;
++            case nsXPTType::T_WCHAR:  tempu32 = s->val.wc;            break;
++            default:                  tempu32 = (PRUint32) s->val.p;  break;
++            }
++        }
++
++        if (!s->IsPtrData() && s->type == nsXPTType::T_DOUBLE) {
++            if (fpr < FPR_COUNT)
++                fpregs[fpr++]    = s->val.d;
++            else {
++                if ((PRUint32) d & 4) d++; // doubles are 8-byte aligned on stack
++                *((double*) d) = s->val.d;
++                d += 2;
++            }
++        }
++        else if (!s->IsPtrData() && s->type == nsXPTType::T_FLOAT) {
++            if (fpr < FPR_COUNT)
++                fpregs[fpr++]   = s->val.f; // if passed in registers, floats are promoted to doubles
++            else
++                *((float*) d++) = s->val.f;
++        }
++        else if (!s->IsPtrData() && (s->type == nsXPTType::T_I64
++                                     || s->type == nsXPTType::T_U64)) {
++            if ((gpr + 1) < GPR_COUNT) {
++                if (gpr & 1) gpr++; // longlongs are aligned in odd/even register pairs, eg. r5/r6
++                *((PRUint64*) &gpregs[gpr]) = tempu64;
++                gpr += 2;
++            }
++            else {
++                if ((PRUint32) d & 4) d++; // longlongs are 8-byte aligned on stack
++                *((PRUint64*) d)            = tempu64;
++                d += 2;
++            }
++        }
++        else {
++            if (gpr < GPR_COUNT)
++                gpregs[gpr++] = tempu32;
++            else
++                *d++          = tempu32;
++        }
++        
++    }
++}
++
++extern "C"
++XPTC_PUBLIC_API(nsresult)
++XPTC_InvokeByIndex(nsISupports* that, PRUint32 methodIndex,
++                   PRUint32 paramCount, nsXPTCVariant* params);
+--- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ppc_freebsd.s.orig	2009-09-28 22:06:31.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ppc_freebsd.s	2009-09-28 22:06:31.000000000 +0200
+@@ -0,0 +1,110 @@
++# -*- Mode: Asm -*-
++#
++# The contents of this file are subject to the Netscape Public
++# License Version 1.1 (the "License"); you may not use this file
++# except in compliance with the License. You may obtain a copy of
++# the License at http://www.mozilla.org/NPL/
++#
++# Software distributed under the License is distributed on an "AS
++# IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
++# implied. See the License for the specific language governing
++# rights and limitations under the License.
++#
++# The Original Code is mozilla.org code.
++#
++# The Initial Developer of the Original Code is Netscape
++# Communications Corporation.  Portions created by Netscape are
++# Copyright (C) 1999 Netscape Communications Corporation. All
++# Rights Reserved.
++#
++# Contributor(s):
++#   Franz.Sirl-kernel@lauterbach.com (Franz Sirl)
++#   beard@netscape.com (Patrick Beard)
++#   waterson@netscape.com (Chris Waterson)
++#
++.set r0,0; .set sp,1; .set RTOC,2; .set r3,3; .set r4,4
++.set r5,5; .set r6,6; .set r7,7; .set r8,8; .set r9,9
++.set r10,10; .set r11,11; .set r12,12; .set r13,13; .set r14,14
++.set r15,15; .set r16,16; .set r17,17; .set r18,18; .set r19,19
++.set r20,20; .set r21,21; .set r22,22; .set r23,23; .set r24,24
++.set r25,25; .set r26,26; .set r27,27; .set r28,28; .set r29,29
++.set r30,30; .set r31,31
++.set f0,0; .set f1,1; .set f2,2; .set f3,3; .set f4,4
++.set f5,5; .set f6,6; .set f7,7; .set f8,8; .set f9,9
++.set f10,10; .set f11,11; .set f12,12; .set f13,13; .set f14,14
++.set f15,15; .set f16,16; .set f17,17; .set f18,18; .set f19,19
++.set f20,20; .set f21,21; .set f22,22; .set f23,23; .set f24,24
++.set f25,25; .set f26,26; .set f27,27; .set f28,28; .set f29,29
++.set f30,30; .set f31,31
++		      
++        .section ".text"
++	.align 2
++	.globl XPTC_InvokeByIndex
++	.type  XPTC_InvokeByIndex,@function
++
++#
++# XPTC_InvokeByIndex(nsISupports* that, PRUint32 methodIndex,
++#                    PRUint32 paramCount, nsXPTCVariant* params)
++#
++
++XPTC_InvokeByIndex:
++	stwu    sp,-32(sp)			# setup standard stack frame
++	mflr    r0				# save LR
++	stw     r3,8(sp)			# r3 <= that
++	stw     r4,12(sp)			# r4 <= methodIndex
++	stw     r30,16(sp)
++	stw     r31,20(sp)
++
++	stw     r0,36(sp)			# store LR backchain
++	mr      r31,sp
++
++	rlwinm  r10,r5,3,0,27			# r10 = (ParamCount * 2 * 4) & ~0x0f
++	addi    r0,r10,96			# reserve stack for GPR and FPR register save area r0 = r10 + 96
++	lwz     r9,0(sp)			# r9 = backchain
++	neg     r0,r0
++	stwux   r9,sp,r0			# reserve stack sapce and save SP backchain
++	
++	addi    r3,sp,8				# r3 <= args
++	mr      r4,r5				# r4 <= paramCount
++	mr      r5,r6				# r5 <= params
++	add     r6,r3,r10			# r6 <= gpregs ( == args + r10 )
++	mr      r30,r6				# store in r30 for use later...
++	addi    r7,r6,32			# r7 <= fpregs ( == gpregs + 32 )
++
++	bl      invoke_copy_to_stack@local	# (args, paramCount, params, gpregs, fpregs)
++
++	lfd     f1,32(r30)			# load FP registers with method parameters
++	lfd     f2,40(r30)   
++	lfd     f3,48(r30)  
++	lfd     f4,56(r30)  
++	lfd     f5,64(r30)  
++	lfd     f6,72(r30)  
++	lfd     f7,80(r30)  
++	lfd     f8,88(r30)
++
++	lwz     r3,8(r31)			# r3 <= that
++	lwz     r4,12(r31)			# r4 <= methodIndex
++	lwz     r5,0(r3)			# r5 <= vtable ( == *that )
++	
++	slwi    r4,r4,2				# convert to offset ( *= 4 )
++	lwzx    r0,r5,r4			# r0 <= methodpointer ( == vtable + offset )
++
++        lwz     r4,4(r30)			# load GP regs with method parameters
++	lwz     r5,8(r30)   
++	lwz     r6,12(r30)  
++	lwz     r7,16(r30)  
++	lwz     r8,20(r30)  
++	lwz     r9,24(r30)  
++	lwz     r10,28(r30)
++
++	mtlr    r0				# copy methodpointer to LR    
++	blrl					# call method
++	
++	lwz     r30,16(r31)			# restore r30 & r31
++	lwz     r31,20(r31)
++	
++	lwz     r11,0(sp)			# clean up the stack
++	lwz     r0,4(r11)
++	mtlr    r0
++	mr      sp,r11
++	blr
