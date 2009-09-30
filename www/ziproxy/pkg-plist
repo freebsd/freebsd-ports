@@ -2,12 +2,12 @@ bin/ziproxy
 bin/ziproxylogtool
 bin/ziproxy_genhtml_stats.sh
 @exec mkdir -p %D/etc/ziproxy
-etc/ziproxy/bo_exception.list
-etc/ziproxy/deny.list
-etc/ziproxy/http.passwd
-etc/ziproxy/noprocess.list
-etc/ziproxy/replace.list
-etc/ziproxy/replace_ct.list
+etc/ziproxy/bo_exception.list.sample
+etc/ziproxy/deny.list.sample
+etc/ziproxy/http.passwd.sample
+etc/ziproxy/noprocess.list.sample
+etc/ziproxy/replace.list.sample
+etc/ziproxy/replace_ct.list.sample
 @unexec if cmp -s %D/etc/ziproxy/ziproxy.conf.sample %D/etc/ziproxy/ziproxy.conf; then rm -f %D/etc/ziproxy/ziproxy.conf; fi
 @exec if [ ! -f %D/etc/ziproxy/ziproxy.conf ] ; then cp -p %D/%F %B/ziproxy.conf; fi
 etc/ziproxy/ziproxy.conf.sample
