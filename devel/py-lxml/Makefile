@@ -17,8 +17,6 @@ COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
-IGNORE=		does not work with libxslt-1.1.25
-
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
