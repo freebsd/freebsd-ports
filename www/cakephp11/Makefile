@@ -7,13 +7,15 @@
 
 PORTNAME=	cakephp
 PORTVERSION=	1.1.19.6305
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://cakeforge.org/frs/download.php/591/
 DISTNAME=	cake_${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
+
+LATEST_LINK=	cakephp11
 
 USE_BZIP2=	yes
 DISTFILE_SUFFIX=/donation=complete
