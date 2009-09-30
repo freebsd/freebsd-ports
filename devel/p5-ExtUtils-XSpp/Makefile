@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-XSpp
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +20,10 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Base.pm:${PORTSDIR}/devel/p5-Test-Base \
 PERL_MODBUILD=	5.6.1+
 
 MAN1=		xspp.1
-MAN3=		ExtUtils::XSpp::Typemap.3 \
+MAN3=		ExtUtils::XSpp.3 \
+		ExtUtils::XSpp::Cmd.3 \
+		ExtUtils::XSpp::Node.3 \
 		ExtUtils::XSpp::Parser.3 \
-		ExtUtils::XSpp.3 \
-		ExtUtils::XSpp::Node.3
+		ExtUtils::XSpp::Typemap.3
 
 .include <bsd.port.mk>
