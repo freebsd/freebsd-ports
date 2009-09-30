@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rss2email
-PORTVERSION=	2.61
+PORTVERSION=	2.65
 CATEGORIES=	mail python
-MASTER_SITES=	CENKES
-# http://rss2email.infogami.com/rss2email.py
+MASTER_SITES=	http://www.chifeng.name/dist/rss2email/
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Read newsfeeds in your email client
