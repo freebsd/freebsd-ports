@@ -45,7 +45,7 @@ WRKSRC=		${WRKDIR}/gcin-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700000
+.if ${OSVERSION} < 700000
 BROKEN=		does not build
 .endif
 
