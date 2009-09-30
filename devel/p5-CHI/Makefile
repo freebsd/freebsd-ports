@@ -7,6 +7,7 @@
 
 PORTNAME=	CHI
 PORTVERSION=	0.280
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/J/JS/JSWARTZ
@@ -24,6 +25,7 @@ RUN_DEPENDS=	\
 	p5-Hash-MoreUtils>0:${PORTSDIR}/devel/p5-Hash-MoreUtils \
 	p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Log-Any>=0.03:${PORTSDIR}/devel/p5-Log-Any \
+	p5-Module-Load-Conditional>0:${PORTSDIR}/devel/p5-Module-Load-Conditional \
 	p5-Moose>=0.66:${PORTSDIR}/devel/p5-Moose \
 	p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Time-Duration>=1.06:${PORTSDIR}/devel/p5-Time-Duration \
