@@ -126,6 +126,10 @@ CONFIGURE_ARGS+=	--with-kerberos5
 EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 .endif
 .endif
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not link
+.endif
 .endif
 
 .if ${OPENSSLBASE} != "/usr"
