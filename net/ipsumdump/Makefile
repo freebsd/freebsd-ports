@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.77
+PORTVERSION=	1.78
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/ \
 		http://core.inec.ru/~az/
@@ -41,6 +41,10 @@ post-install:
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+.endif
+
+.if ${OSVERSION} < 700000
+IGNORE=		not supported
 .endif
 
 .include <bsd.port.post.mk>
