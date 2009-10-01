@@ -1,0 +1,6 @@
+tcpdump is a ubiquitous network traffic capture tool available in a wide
+variety of BSD, Linux and UN*X distributions.
+
+This is the version 3.9.8 which is currently shipped with FreeBSD
+7. FreeBSD 8.0 is shipping with version 4.0.0 which gives a different
+output with some items missing.
