@@ -14,12 +14,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary file viewer and editor
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
 		--ld="${CC}" --with-extralibdir="${LOCALBASE}/lib" \
-		--prefix="${PREFIX}" --datadir="${DATADIR}" --enable-slang
+		--prefix="${PREFIX}" --datadir="${DATADIR}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -38,7 +36,16 @@ MAN1=		biew.1
 PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
 		file_ini.ru licence.en licence.ru release.txt unix.txt
 
+OPTIONS=	SLANG	"Use S-Lang based display renderer"	on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SLANG)
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+CONFIGURE_ARGS+=	--enable-slang
+.else
+CONFIGURE_ARGS+=	--enable-curses
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile
@@ -63,9 +70,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/biew.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
