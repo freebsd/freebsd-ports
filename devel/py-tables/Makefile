@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.pytables.org/download/stable/ \
 		http://www.pytables.org/download/py${PORTNAME}-${PORTVERSION}/
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	tables-${PORTVERSION}.tar.gz pytablesmanual-${PORTVERSION}.pdf
 EXTRACT_ONLY=	tables-${PORTVERSION}.tar.gz
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A hierarchical database for Python
 
 BUILD_DEPENDS=	${PYNUMPY}
