@@ -63,6 +63,11 @@ PLIST_FILES+=	man/${manlang}/man6/wesnoth.6.gz
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+# XXX: breaks compilation because of -Werror
+.if !defined(WITH_STRICT)
+CONFIGURE_ARGS+=	--disable-strict-compilation
+.endif
+
 .if defined(WITHOUT_CAMPAIGN)
 PLIST_SUB+=		CAMPAIGN="@comment "
 .else
