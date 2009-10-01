@@ -59,6 +59,7 @@
     SUBDIR += p5-Cstools
     SUBDIR += p5-Encode
     SUBDIR += p5-Encode-Detect
+    SUBDIR += p5-Encode-DoubleEncodedUTF8
     SUBDIR += p5-Encode-JIS2K
     SUBDIR += p5-Encode-compat
     SUBDIR += p5-Encoding-FixLatin
