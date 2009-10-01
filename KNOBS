@@ -5,8 +5,8 @@
 #
 # Rules for adding knobs:
 #
-#  - Knob names must be 12 characters or less
-#  - Knob descriptions must be 45 characters or less
+#  - Knob name must be 12 characters or less
+#  - Knob description must be 45 characters or less
 #
 #  - Naming knobs:
 #      When a port has a lib-prefix (e.g.: libquicktime, libxine)
@@ -29,23 +29,23 @@ CDDB			CDDB support
 CDPARANOIA		Support for cdparanoia CD extraction
 CJK			Chinese, Japanese, and Korean language support
 CLIENT			Client component of a client/server package
-CUPS			Cups support (Common Unix Printing System)
-CURL			Curl URL transfer library support
-DBUS			Adds support for dbus
+CUPS			CUPS (Common Unix Printing System) support
+CURL			cURL generic file transfer library support
+DBUS			Adds support for D-Bus (Desktop Bus)
 DEBUG			Enables debugging support
 DTS			DTS coherent acoustics decoding (some DVDs)
 DV			Digital Video used by many digital camcorders
 DVD			Enables General DVD support
 DVDNAV			Enables DVD Menu support
 DVDREAD			Enables DVD support
-ESOUND			Adds support for Esound
+ESOUND			Adds support for EsounD
 EXAMPLES		Installs optional example code, graphics, etc.
-EXIF			Support for EXIF headers in JPEG and TIFF files
+EXIF			Support EXIF headers in JPEG and TIFF files
 FAAC			FAAC AAC and MP4 audio encoder support
 FAAD			FAAD AAC and MP4 audio decoder support
 FIREBIRD		Firebird (Interbase) database support
 FLAC			Flac audio support
-GCONF			Use gconf/gconf2
+GCONF			Use GConf/GConf2
 GHC			Prefer/use Glasgow Haskell Compiler
 GNOME			Adds GNOME support
 GNUTLS			Adds GnuTLS support
@@ -53,13 +53,13 @@ GPGME			Use security/gpgme for PGP support
 GSASL			Adds GSASL support
 GSM			GSM audio codec support
 GSSAPI			GSSAPI (Kerberos) support
-GSTREAMER		Gstreamer multimedia support
+GSTREAMER		GStreamer multimedia support
 GTK1			Adds Gtk+1 support
 GTK2			Adds Gtk+2 support
 HAL			Adds support for HAL
 IMAGEMAGICK		ImageMagick graphics support
 IMAP			Adds support for IMAP mail protocol
-IODBC			Use IODBC as the ODBC driver
+IODBC			Use iODBC as the ODBC driver
 IPV6			IPv6 internet protocol support
 ISPELL			Use textproc/ispell for spell checking
 JAVA			Adds support for Java
@@ -94,14 +94,15 @@ POP3			Adds support for POP3 mail protocol
 PSYCO			Adds Python Psyco optimization support
 PYTHON			Adds Python language/module support
 QT			Adds Qt support
-QUICKTIME 		Quicktime audio/video support
+QUICKTIME 		QuickTime audio/video support
 RUBY			Adds Ruby language/module support
 SAMBA			Adds SAMBA support
 SDL			Adds support for SDL media library
 SERVER			Server component of a client/server package
+SLANG			Adds display/screen management via S-Lang
 SLP			Adds SLP (Service Locator Protocol) support
 SNDFILE			Adds support for libsndfile
-SOX			Sox audio support
+SOX			SoX audio support
 SPEEX			Speex audio codec support
 SQLITE			SQLite embedded SQL database support
 SSE			Adds support for x86 SSE optimizations
