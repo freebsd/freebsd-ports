@@ -7,6 +7,7 @@
 
 PORTNAME=	xz
 PORTVERSION=	4.999.9
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://tukaani.org/xz/
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta
@@ -16,13 +17,16 @@ COMMENT=	LZMA compression and decompression tools
 
 CONFLICTS=	lzma-[0-9]* lzmautils-[0-9]* lzmalib-[0-9]*
 
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+USE_AUTOTOOLS=	autoheader:262 autoconf:262
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 
 CONFIGURE_ARGS=	--enable-dynamic=yes
 CONFIGURE_ARGS+=--disable-nls	# no translations available
+
+# pick up assembly language optimizations
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-dist_docDATA
@@ -41,6 +45,10 @@ MLINKS=	xz.1 lzcat.1		xzdiff.1 lzcmp.1 \
 
 PORTDOCS=	AUTHORS COPYING COPYING.GPLv2 NEWS README THANKS TODO \
 		faq.txt history.txt lzma-file-format.txt xz-file-format.txt
+
+# no need to (attempt to) run aclocal
+pre-build:
+	@touch -r ${WRKSRC}/configure.ac ${WRKSRC}/aclocal.m4
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
