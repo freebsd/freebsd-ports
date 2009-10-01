@@ -6,26 +6,24 @@
 #
 
 PORTNAME=	syck
-PORTVERSION=	0.55
+PORTVERSION=	0.61.2
 CATEGORIES=	textproc devel python
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://pyyaml.org/download/pysyck/ \
+		LOCAL/avl
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for Syck, a YAML parser and emitter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
 
-SITELIBDIR=	%%PYTHON_SITELIBDIR%%/
-PYFILES=	ypath.py ydump.py yaml2xml.py
-PYFILES_=	${PYFILES:S/^/${SITELIBDIR}/}
-PLIST_FILES=	${PYFILES_} ${PYFILES_:S/$/c/} ${PYFILES_:S/$/o/}
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Syck
-PYDISTUTILS_PKGVERSION=	1.0
-WRKSRC=		${WRKDIR}/${DISTNAME}/ext/python
+PYDISTUTILS_PKGNAME=	PySyck
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|#include|include|g ; s|#library_dirs|library_dirs|g ; \
+		s|/usr/local|${LOCALBASE}|g ' ${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>
