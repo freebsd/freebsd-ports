@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Encode/DoubleEncodedUTF8.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/DoubleEncodedUTF8/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/DoubleEncodedUTF8
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
+@dirrmtry %%SITE_PERL%%/Encode
