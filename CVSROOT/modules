@@ -10946,7 +10946,6 @@ p5-Curses-Forms                 ports/devel/p5-Curses-Forms
 p5-Curses-UI                    ports/devel/p5-Curses-UI
 p5-Curses-Widgets               ports/devel/p5-Curses-Widgets
 p5-Cvs                          ports/devel/p5-Cvs
-p5-Cwd                          ports/devel/p5-Cwd
 p5-DBD-AnyData                  ports/databases/p5-DBD-AnyData
 p5-DBD-CSV                      ports/databases/p5-DBD-CSV
 p5-DBD-Excel                    ports/databases/p5-DBD-Excel
@@ -11519,6 +11518,7 @@ p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
+p5-Geo-Distance-XS              ports/math/p5-Geo-Distance-XS
 p5-Geo-EOP                      ports/graphics/p5-Geo-EOP
 p5-Geo-GML                      ports/graphics/p5-Geo-GML
 p5-Geo-Gpx                      ports/graphics/p5-Geo-Gpx
@@ -12036,6 +12036,7 @@ p5-Mail-Box                     ports/mail/p5-Mail-Box
 p5-Mail-Box-Parser-C            ports/mail/p5-Mail-Box-Parser-C
 p5-Mail-Bulkmail                ports/mail/p5-Mail-Bulkmail
 p5-Mail-CClient                 ports/mail/p5-Mail-CClient
+p5-Mail-Cache                   ports/mail/p5-Mail-Cache
 p5-Mail-CheckUser               ports/mail/p5-Mail-CheckUser
 p5-Mail-ClamAV                  ports/mail/p5-Mail-ClamAV
 p5-Mail-DKIM                    ports/mail/p5-Mail-DKIM
@@ -12050,6 +12051,7 @@ p5-Mail-GnuPG                   ports/mail/p5-Mail-GnuPG
 p5-Mail-Graph                   ports/mail/p5-Mail-Graph
 p5-Mail-IMAPClient              ports/mail/p5-Mail-IMAPClient
 p5-Mail-IMAPTalk                ports/mail/p5-Mail-IMAPTalk
+p5-Mail-IMAPTalk-MailCache      ports/mail/p5-Mail-IMAPTalk-MailCache
 p5-Mail-LMLM                    ports/mail/p5-Mail-LMLM
 p5-Mail-ListDetector            ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats               ports/mail/p5-Mail-MailStats
@@ -13270,6 +13272,7 @@ p5-Text-Similarity              ports/textproc/p5-Text-Similarity
 p5-Text-SimpleTable             ports/textproc/p5-Text-SimpleTable
 p5-Text-SimpleTemplate          ports/textproc/p5-Text-SimpleTemplate
 p5-Text-SpellChecker            ports/textproc/p5-Text-SpellChecker
+p5-Text-SpellChecker-GUI        ports/textproc/p5-Text-SpellChecker-GUI
 p5-Text-Striphigh               ports/textproc/p5-Text-Striphigh
 p5-Text-Table                   ports/textproc/p5-Text-Table
 p5-Text-Tabs+Wrap               ports/textproc/p5-Text-Tabs+Wrap
@@ -13684,9 +13687,11 @@ p5-Yahoo-Lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search                 ports/www/p5-Yahoo-Search
 p5-ZConf                        ports/net/p5-ZConf
 p5-ZConf-BGSet                  ports/deskutils/p5-ZConf-BGSet
+p5-ZConf-Cron                   ports/sysutils/p5-ZConf-Cron
 p5-ZConf-GUI                    ports/devel/p5-ZConf-GUI
 p5-ZConf-Mail                   ports/mail/p5-ZConf-Mail
 p5-ZConf-Runner                 ports/deskutils/p5-ZConf-Runner
+p5-ZConf-Weather                ports/astro/p5-ZConf-Weather
 p5-ZML                          ports/devel/p5-ZML
 p5-Zen-Koans                    ports/misc/p5-Zen-Koans
 p5-accessors                    ports/devel/p5-accessors
@@ -14504,7 +14509,6 @@ p5-curses-forms                 ports/devel/p5-Curses-Forms
 p5-curses-ui                    ports/devel/p5-Curses-UI
 p5-curses-widgets               ports/devel/p5-Curses-Widgets
 p5-cvs                          ports/devel/p5-Cvs
-p5-cwd                          ports/devel/p5-Cwd
 p5-dTemplate                    ports/textproc/p5-dTemplate
 p5-daemon-generic               ports/net/p5-Daemon-Generic
 p5-danga-socket                 ports/devel/p5-Danga-Socket
@@ -15079,6 +15083,7 @@ p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
+p5-geo-distance-xs              ports/math/p5-Geo-Distance-XS
 p5-geo-eop                      ports/graphics/p5-Geo-EOP
 p5-geo-gml                      ports/graphics/p5-Geo-GML
 p5-geo-gpx                      ports/graphics/p5-Geo-Gpx
@@ -15584,6 +15589,7 @@ p5-mail-audit-attach            ports/mail/p5-Mail-Audit-Attach
 p5-mail-box                     ports/mail/p5-Mail-Box
 p5-mail-box-parser-c            ports/mail/p5-Mail-Box-Parser-C
 p5-mail-bulkmail                ports/mail/p5-Mail-Bulkmail
+p5-mail-cache                   ports/mail/p5-Mail-Cache
 p5-mail-cclient                 ports/mail/p5-Mail-CClient
 p5-mail-checkuser               ports/mail/p5-Mail-CheckUser
 p5-mail-clamav                  ports/mail/p5-Mail-ClamAV
@@ -15599,6 +15605,7 @@ p5-mail-gnupg                   ports/mail/p5-Mail-GnuPG
 p5-mail-graph                   ports/mail/p5-Mail-Graph
 p5-mail-imapclient              ports/mail/p5-Mail-IMAPClient
 p5-mail-imaptalk                ports/mail/p5-Mail-IMAPTalk
+p5-mail-imaptalk-mailcache      ports/mail/p5-Mail-IMAPTalk-MailCache
 p5-mail-listdetector            ports/mail/p5-Mail-ListDetector
 p5-mail-lmlm                    ports/mail/p5-Mail-LMLM
 p5-mail-mailstats               ports/mail/p5-Mail-MailStats
@@ -16886,6 +16893,7 @@ p5-text-similarity              ports/textproc/p5-Text-Similarity
 p5-text-simpletable             ports/textproc/p5-Text-SimpleTable
 p5-text-simpletemplate          ports/textproc/p5-Text-SimpleTemplate
 p5-text-spellchecker            ports/textproc/p5-Text-SpellChecker
+p5-text-spellchecker-gui        ports/textproc/p5-Text-SpellChecker-GUI
 p5-text-striphigh               ports/textproc/p5-Text-Striphigh
 p5-text-table                   ports/textproc/p5-Text-Table
 p5-text-tabs+wrap               ports/textproc/p5-Text-Tabs+Wrap
@@ -17311,9 +17319,11 @@ p5-yape-regex                   ports/textproc/p5-YAPE-Regex
 p5-yape-regex-explain           ports/textproc/p5-YAPE-Regex-Explain
 p5-zconf                        ports/net/p5-ZConf
 p5-zconf-bgset                  ports/deskutils/p5-ZConf-BGSet
+p5-zconf-cron                   ports/sysutils/p5-ZConf-Cron
 p5-zconf-gui                    ports/devel/p5-ZConf-GUI
 p5-zconf-mail                   ports/mail/p5-ZConf-Mail
 p5-zconf-runner                 ports/deskutils/p5-ZConf-Runner
+p5-zconf-weather                ports/astro/p5-ZConf-Weather
 p5-zen-koans                    ports/misc/p5-Zen-Koans
 p5-zml                          ports/devel/p5-ZML
 p65                             ports/devel/p65
@@ -18842,6 +18852,7 @@ postfix-policyd-weight          ports/mail/postfix-policyd-weight
 postfix-postfwd                 ports/mail/postfix-postfwd
 postfix23                       ports/mail/postfix23
 postfix24                       ports/mail/postfix24
+postfix25                       ports/mail/postfix25
 postfixadmin                    ports/mail/postfixadmin
 postgis                         ports/databases/postgis
 postgis-jdbc                    ports/databases/postgis-jdbc
@@ -24746,7 +24757,6 @@ zaptel                          ports/misc/zaptel
 zatacka                         ports/games/zatacka
 zaz                             ports/games/zaz
 zbase32                         ports/converters/zbase32
-zccron                          ports/sysutils/zccron
 zebedee                         ports/security/zebedee
 zebra                           ports/net/zebra
 zebra-server                    ports/net/zebra-server
