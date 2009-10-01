@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	subcommander
-DISTVERSION=	2.0.0.b5
+PORTVERSION=	2.0.0.b5
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://subcommander.tigris.org/files/documents/1759/46676/
-DISTNAME=	Subcommander-${PORTVERSION:S/.b/b/g}
+MASTER_SITES=	http://subcommander.tigris.org/files/documents/1759/46766/
+DISTNAME=	Subcommander-${PORTVERSION:S/.b/b/g}p1
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Qt4 based multiplatform subversion client, diff & merge tool
