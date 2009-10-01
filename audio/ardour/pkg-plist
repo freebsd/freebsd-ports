@@ -173,10 +173,6 @@ share/locale/nn_NO/LC_MESSAGES/gtk2_ardour.mo
 @dirrmtry share/locale/ru_RU
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
-@dirrmtry share/locale/es_ES/LC_MESSAGES
-@dirrmtry share/locale/es_ES
-@dirrmtry share/locale/fr_FR/LC_MESSAGES
-@dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
 @dirrmtry share/locale/cs_CZ
 @dirrmtry share/locale/nn_NO/LC_MESSAGES
