@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://archive.xfce.org/src/panel-plugins/${PORTNAME}/1.1/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	XFce 4 clipboard module for xfce4-panel
+
+OPTIONS=	UNIQUE	"Enable Unique (single instance) support" on
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -24,4 +26,13 @@ USE_XORG=	x11 ice sm xpm
 
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_UNIQUE)
+LIB_DEPENDS+=	unique-1:${PORTSDIR}/x11-toolkits/unique
+CONFIGURE_ARGS+=	--enable-unique
+.else
+CONFIGURE_ARGS+=	--disable-unique
+.endif
+
+.include <bsd.port.post.mk>
