@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 window manager designed for maximum efficiency
 
 RUN_DEPENDS=	${LOCALBASE}/bin/Esetroot:${PORTSDIR}/x11/eterm

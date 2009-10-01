@@ -13,7 +13,7 @@ MASTER_SITES=	http://dev.gentoo.org/~nixphoeni/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	danfe
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 window manager designed for maximum efficiency
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
