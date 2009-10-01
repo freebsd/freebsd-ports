@@ -95,7 +95,7 @@ CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g' -e 's,uuid/uuid.h,xxuuid/uuid.
 .include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)
-.if defined(WITH_SASL)
+.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
 PKGNAMESUFFIX=		-sasl-client
 COMMENT=		Open source LDAP client implementation with SASL2 support
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
