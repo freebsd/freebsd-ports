@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1.1626
 CATEGORIES=	games
-MASTER_SITES=	http://rephial.org/downloads/3.1/ \
-		http://angband.oook.cz/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta
+MASTER_SITES=	http://rephial.org/downloads/3.1/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
@@ -25,6 +24,8 @@ CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--with-x=no
 .endif
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CONFIGURE_ENV=	ac_cv_path_mkdir=mkdir
 
 SUB_FILES=	pkg-message
 
@@ -34,10 +35,6 @@ pre-fetch:
 .else
 	@${ECHO_MSG} "Building without X support"
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| $$(INCLUDEDIR)||' ${WRKSRC}/mk/objective.mk
-	@${REINPLACE_CMD} -e 's|;$$|; \\|' ${WRKSRC}/src/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -3,7 +3,6 @@ share/angband/apex/delete.me
 share/angband/apex/scores.raw
 share/angband/bone/delete.me
 share/angband/data/artifact.raw
-share/angband/data/delete.me
 share/angband/data/ego_item.raw
 share/angband/data/flavor.raw
 share/angband/data/limits.raw
@@ -48,14 +47,19 @@ share/angband/info/delete.me
 share/angband/pref/flvr-dvg.prf
 share/angband/pref/flvr-new.prf
 share/angband/pref/flvr-xxx.prf
+share/angband/pref/font-gcu.prf
+share/angband/pref/font-gtk.prf
 share/angband/pref/font-mac.prf
+share/angband/pref/font-sdl.prf
 share/angband/pref/font-win.prf
 share/angband/pref/font-x11.prf
 share/angband/pref/font-xxx.prf
 share/angband/pref/font.prf
 share/angband/pref/graf-dvg.prf
+share/angband/pref/graf-gtk.prf
 share/angband/pref/graf-mac.prf
 share/angband/pref/graf-new.prf
+share/angband/pref/graf-sdl.prf
 share/angband/pref/graf-win.prf
 share/angband/pref/graf-x11.prf
 share/angband/pref/graf-xxx.prf
@@ -65,6 +69,7 @@ share/angband/pref/pref-acn.prf
 share/angband/pref/pref-gcu.prf
 share/angband/pref/pref-mac.prf
 share/angband/pref/pref-sdl.prf
+share/angband/pref/pref-win.prf
 share/angband/pref/pref-x11.prf
 share/angband/pref/pref.prf
 share/angband/pref/user-mac.prf
