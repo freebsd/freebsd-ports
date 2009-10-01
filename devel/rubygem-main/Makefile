@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	main
-PORTVERSION=	2.8.4
+PORTVERSION=	2.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/codeforpeople
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Class Factory and Dsl for Generating Command Line Programs
 
 BUILD_DEPENDS=	rubygem-fattr>=1.0.3:${PORTSDIR}/devel/rubygem-fattr \
