@@ -2384,6 +2384,7 @@ Note:  Please add new entries to the beginning of this file.
         <name>pango</name>
         <name>linux-pango</name>
         <name>linux-f8-pango</name>
+        <name>linux-f10-pango</name>
         <range><lt>1.24</lt></range>
       </package>
     </affects>
@@ -2411,7 +2412,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-02-22</discovery>
       <entry>2009-05-13</entry>
-      <modified>2009-05-13</modified>
+      <modified>2009-10-01</modified>
     </dates>
   </vuln>
 
