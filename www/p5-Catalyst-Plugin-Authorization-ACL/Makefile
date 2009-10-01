@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authorization-ACL
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ACL support for Catalyst applications
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80013:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-Plugin-Authentication>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
+		p5-Catalyst-Plugin-Authorization-Roles>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-Roles \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Throwable>=0:${PORTSDIR}/devel/p5-Class-Throwable \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
