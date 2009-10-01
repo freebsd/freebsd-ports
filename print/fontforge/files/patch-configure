@@ -1,0 +1,11 @@
+--- configure.orig	2009-09-23 19:55:22.000000000 -0400
++++ configure	2009-09-28 18:28:15.000000000 -0400
+@@ -22843,7 +22843,7 @@
+   LDFLAGS="$LDFLAGS $gww_archlist"
+ fi
+ 
+-CFLAGS_NOOPT=`echo $CFLAGS | sed -e s/-O2// | sed -e s/-O//`
++CFLAGS_NOOPT=`echo $CFLAGS | sed -e s/-O[0-9]*//g`
+ 
+ cp $ac_confdir/Makefile.dynamic.in $ac_confdir/Makefile.in
+ cp $ac_confdir/Unicode/Makefile.dynamic.in $ac_confdir/Unicode/Makefile.in
