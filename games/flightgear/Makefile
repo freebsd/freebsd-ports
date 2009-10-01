@@ -44,6 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 # location of flightgear-data
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
+MAKE_JOBS_UNSAFE=yes
 
 MAN1=	est-epsilon.1 js_demo.1 pstest.1 fgjs.1 gl-info.1 fgfs.1
 
@@ -55,10 +56,4 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 800063
-BROKEN=	plib joystick support broken with USB2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
