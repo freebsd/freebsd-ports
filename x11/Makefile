@@ -290,6 +290,7 @@
     SUBDIR += terminal.app
     SUBDIR += terminator
     SUBDIR += thinglaunch
+    SUBDIR += thingylaunch
     SUBDIR += tilda
     SUBDIR += tint
     SUBDIR += tkXwin
