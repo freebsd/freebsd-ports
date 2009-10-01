@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	syck
-PORTVERSION=	0.55
-PORTREVISION=	1
+PORTVERSION=	0.70
 CATEGORIES=	textproc devel
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://cloud.github.com/downloads/indeyets/syck/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Syck is an extension for reading and writing YAML swiftly
+COMMENT=	A library for reading and writing YAML 1.0
 
 GNU_CONFIGURE=	yes
 USE_BISON=	build
