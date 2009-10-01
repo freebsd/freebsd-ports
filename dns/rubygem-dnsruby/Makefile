@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dnsruby
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A pure Ruby DNS client library
 
 USE_RUBY=	yes
