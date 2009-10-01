@@ -41,14 +41,19 @@ share/apps/kipiplugin_flashexport/index.template
 share/apps/kipiplugin_flashexport/simpleviewer_html/space.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/16x16/actions/flickr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/16x16/actions/hq.png
+share/apps/kipiplugin_flickrexport/icons/hicolor/16x16/actions/zooomr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/22x22/actions/flickr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/22x22/actions/hq.png
+share/apps/kipiplugin_flickrexport/icons/hicolor/22x22/actions/zooomr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/32x32/actions/flickr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/32x32/actions/hq.png
+share/apps/kipiplugin_flickrexport/icons/hicolor/32x32/actions/zooomr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/48x48/actions/flickr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/48x48/actions/hq.png
+share/apps/kipiplugin_flickrexport/icons/hicolor/48x48/actions/zooomr.png
 share/apps/kipiplugin_flickrexport/icons/hicolor/scalable/actions/flickr.svgz
 share/apps/kipiplugin_flickrexport/icons/hicolor/scalable/actions/hq.svgz
+share/apps/kipiplugin_flickrexport/icons/hicolor/scalable/actions/zooomr.svgz
 share/apps/kipiplugin_galleryexport/icons/hicolor/16x16/actions/gallery.png
 share/apps/kipiplugin_galleryexport/icons/hicolor/22x22/actions/gallery.png
 share/apps/kipiplugin_galleryexport/icons/hicolor/32x32/actions/gallery.png
@@ -70,6 +75,8 @@ share/apps/kipiplugin_htmlexport/themes/cleanframes/red.css
 share/apps/kipiplugin_htmlexport/themes/cleanframes/star.png
 share/apps/kipiplugin_htmlexport/themes/cleanframes/template.xsl
 share/apps/kipiplugin_htmlexport/themes/cleanframes/yellow.css
+share/apps/kipiplugin_htmlexport/themes/dateframes/dateframes.desktop
+share/apps/kipiplugin_htmlexport/themes/dateframes/template.xsl
 share/apps/kipiplugin_htmlexport/themes/frames/frames.desktop
 share/apps/kipiplugin_htmlexport/themes/frames/style.css
 share/apps/kipiplugin_htmlexport/themes/frames/template.xsl
@@ -344,13 +351,25 @@ share/locale/en_GB/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugins.mo
 share/locale/es/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/es/LC_MESSAGES/kipiplugin_advancedslideshow.mo
+share/locale/es/LC_MESSAGES/kipiplugin_batchprocessimages.mo
+share/locale/es/LC_MESSAGES/kipiplugin_calendar.mo
+share/locale/es/LC_MESSAGES/kipiplugin_dngconverter.mo
+share/locale/es/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/es/LC_MESSAGES/kipiplugin_flashexport.mo
+share/locale/es/LC_MESSAGES/kipiplugin_flickrexport.mo
+share/locale/es/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_gpssync.mo
 share/locale/es/LC_MESSAGES/kipiplugin_htmlexport.mo
+share/locale/es/LC_MESSAGES/kipiplugin_imageviewer.mo
+share/locale/es/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/es/LC_MESSAGES/kipiplugin_metadataedit.mo
+share/locale/es/LC_MESSAGES/kipiplugin_picasawebexport.mo
+share/locale/es/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/es/LC_MESSAGES/kipiplugin_rawconverter.mo
+share/locale/es/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/es/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/es/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/es/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/es/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/es/LC_MESSAGES/kipiplugins.mo
@@ -378,9 +397,11 @@ share/locale/et/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/et/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/et/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/et/LC_MESSAGES/kipiplugins.mo
+share/locale/fi/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_gpssync.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_metadataedit.mo
+share/locale/fi/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_sendimages.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -1026,6 +1047,7 @@ share/locale/zh_TW/LC_MESSAGES/kipiplugins.mo
 @dirrm share/apps/kipiplugin_htmlexport/themes/s0
 @dirrm share/apps/kipiplugin_htmlexport/themes/matrix
 @dirrm share/apps/kipiplugin_htmlexport/themes/frames
+@dirrm share/apps/kipiplugin_htmlexport/themes/dateframes
 @dirrm share/apps/kipiplugin_htmlexport/themes/cleanframes
 @dirrm share/apps/kipiplugin_htmlexport/themes/classic
 @dirrm share/apps/kipiplugin_htmlexport/themes
