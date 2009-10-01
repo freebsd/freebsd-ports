@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	games
-PKGNAMESUFFIX=	-devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
@@ -19,6 +19,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS=	wesnoth-[0-9]*
 
+USE_GCC=	4.2+
 USE_SDL=	image mixer net ttf
 USE_GNOME=	desktopfileutils gnometarget pango
 USE_GMAKE=	yes
