@@ -48,7 +48,7 @@ MACH=		i686
 MACH=		i386
 .endif
 
-.if ${ARCH} == amd64
+.if ${ARCH} == amd64 && ${OSVERSION} < 800000
 AMD64=		""
 .else
 AMD64=		"@comment "
