@@ -11,6 +11,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/grfsnd.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libxm.html
+%%PORTDOCS%%%%DOCSDIR%%/s7.html
 %%PORTDOCS%%%%DOCSDIR%%/pix/1f.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/2pole.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/4grfs.png
@@ -447,6 +448,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/selection.scm
 %%SCHEME%%%%DATADIR%%/singer.scm
 %%SCHEME%%%%DATADIR%%/s7test.scm
+%%SCHEME%%%%DATADIR%%/s7-slib-init.scm
 %%SCHEME%%%%DATADIR%%/snd-gl.scm
 %%SCHEME%%%%DATADIR%%/snd-gtk.scm
 %%SCHEME%%%%DATADIR%%/snd-hobbit.scm
