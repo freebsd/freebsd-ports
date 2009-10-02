@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
 DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX pthreads implementation using rfork to generate kernel threads
 
 USE_LDCONFIG=	yes
