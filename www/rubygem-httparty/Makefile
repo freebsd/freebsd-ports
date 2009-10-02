@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	httparty
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ruby Library that Makes HTTP Fun Again
 
 BUILD_DEPENDS=	rubygem-crack>=0.1.1:${PORTSDIR}/devel/rubygem-crack
