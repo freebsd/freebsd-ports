@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	zdaemon
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
-PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Daemon Process Control Library and Tools for Unix-bases Systems
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig
