@@ -11310,6 +11310,7 @@ p5-Email-Valid                  ports/mail/p5-Email-Valid
 p5-Email-Valid-Loose            ports/mail/p5-Email-Valid-Loose
 p5-Encode                       ports/converters/p5-Encode
 p5-Encode-Detect                ports/converters/p5-Encode-Detect
+p5-Encode-DoubleEncodedUTF8     ports/converters/p5-Encode-DoubleEncodedUTF8
 p5-Encode-JIS2K                 ports/converters/p5-Encode-JIS2K
 p5-Encode-compat                ports/converters/p5-Encode-compat
 p5-Encoding-FixLatin            ports/converters/p5-Encoding-FixLatin
@@ -14877,6 +14878,7 @@ p5-email-valid-loose            ports/mail/p5-Email-Valid-Loose
 p5-encode                       ports/converters/p5-Encode
 p5-encode-compat                ports/converters/p5-Encode-compat
 p5-encode-detect                ports/converters/p5-Encode-Detect
+p5-encode-doubleencodedutf8     ports/converters/p5-Encode-DoubleEncodedUTF8
 p5-encode-jis2k                 ports/converters/p5-Encode-JIS2K
 p5-encoding-fixlatin            ports/converters/p5-Encoding-FixLatin
 p5-enum                         ports/devel/p5-enum
@@ -22270,6 +22272,7 @@ tcmplex-panteltje               ports/multimedia/tcmplex-panteltje
 tcpblast                        ports/benchmarks/tcpblast
 tcpcat                          ports/net/tcpcat
 tcpdstat                        ports/net/tcpdstat
+tcpdump398                      ports/net/tcpdump398
 tcpflow                         ports/net/tcpflow
 tcpick                          ports/net/tcpick
 tcpillust                       ports/net/tcpillust
