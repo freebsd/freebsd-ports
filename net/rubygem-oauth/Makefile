@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	oauth
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF/oauth
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Rubygem for Creating both OAuth Consumers and Service Providers
 
 BUILD_DEPENDS=	${RUBY_PKGNAMEPREFIX}hmac>=0.3.2:${PORTSDIR}/security/ruby-hmac
