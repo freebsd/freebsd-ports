@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.4.2.20090922
+PORTVERSION=	4.4.2.20090929
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -134,15 +134,6 @@ PLIST_SUB+=	JAVA="@comment "
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-.if ! defined(WITHOUT_JAVA)
-	@DSIZ=700000; DSIZBYTE=734003200; \
-	if [ `ulimit -d` -lt $$DSIZ ]; then \
-	  echo "You need to increase the datasize limit to at least $$DSIZ \
-	    (and set kern.maxdsiz=\"$$DSIZBYTE\" in /boot/loader.conf) to \
-	    build with Java support." | ${FMT} -s; \
-	  exit 1; \
-	fi
-.endif
 
 pre-extract:
 	@# Building libgcj with lang/gcc295 installed is causing a failure
