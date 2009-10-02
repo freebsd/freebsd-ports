@@ -67,7 +67,6 @@
     SUBDIR += ecore-x11
     SUBDIR += editres
     SUBDIR += efreet
-    SUBDIR += electricsheep
     SUBDIR += elicit
     SUBDIR += emprint
     SUBDIR += emu
