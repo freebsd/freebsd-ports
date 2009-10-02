@@ -108,5 +108,3 @@ share/xfce4/panel-plugins/xfce4-clipman-plugin.desktop
 @dirrmtry libexec/xfce4
 @dirrmtry etc/xdg/xfce4/panel
 @dirrmtry etc/xdg/xfce4
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
