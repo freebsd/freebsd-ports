@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Primitive
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -15,14 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Device and library agnostic graphic primitives
 
-BUILD_DEPENDS=	p5-Geometry-Primitive>=0.13:${PORTSDIR}/graphics/p5-Geometry-Primitive \
-		p5-Graphics-Color>=0.16:${PORTSDIR}/graphics/p5-Graphics-Color \
-		p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
-  		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone \
-  		p5-MooseX-AttributeHelpers>=0.12:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
-		p5-MooseX-Storage>=0.14:${PORTSDIR}/devel/p5-MooseX-Storage \
-		p5-Forest>=0.04:${PORTSDIR}/devel/p5-Forest
+BUILD_DEPENDS=	p5-Geometry-Primitive>=0.16:${PORTSDIR}/graphics/p5-Geometry-Primitive \
+		p5-Graphics-Color>=0.20:${PORTSDIR}/graphics/p5-Graphics-Color \
+		p5-Moose>=0.79:${PORTSDIR}/devel/p5-Moose \
+  		p5-MooseX-Clone>=0.04:${PORTSDIR}/devel/p5-MooseX-Clone \
+  		p5-MooseX-AttributeHelpers>=0.17:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+		p5-MooseX-Storage>=0.17:${PORTSDIR}/devel/p5-MooseX-Storage \
+		p5-Forest>=0.06:${PORTSDIR}/devel/p5-Forest
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
