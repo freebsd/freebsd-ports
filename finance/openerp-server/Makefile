@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	openerp-server
-PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTVERSION=	5.0.6
 CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
@@ -29,7 +27,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=			2.4+
 USE_PYDISTUTILS=		yes
-PYDISTUTILS_EGGINFO=		openerp_server-5.0.1_0-${PYTHON_VERSION:S/thon//}.egg-info
+PYDISTUTILS_EGGINFO=		openerp_server-5.0.6-${PYTHON_VERSION:S/thon//}.egg-info
 
 MAN1=		openerp-server.1
 MAN5=		openerp_serverrc.5
