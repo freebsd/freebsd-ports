@@ -144,6 +144,7 @@
     SUBDIR += esound
     SUBDIR += espeak
     SUBDIR += esperanza
+    SUBDIR += etcd
     SUBDIR += etktab
     SUBDIR += etoile-melodie
     SUBDIR += etoile-volumecontrolmenulet

@@ -1,0 +1,11 @@
+Enhanced Tiny CD is a fork of the original Tiny CD, a simple,
+user-friendly ncurses-based CD player, which is available at
+www.nongnu.org/tcd.
+
+Enhancements in etcd include:
+
+* bug fixes
+* support for MusicBrainz
+* general refactory
+
+WWW: http://www.gahr.ch/etcd
