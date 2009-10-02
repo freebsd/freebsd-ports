@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	WildMagic
-DISTVERSION=	4p8
-PORTREVISION=	1
+DISTVERSION=	4p9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geometrictools.com/Downloads/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -32,16 +31,8 @@ MAKE_ENV=	GCC=${CXX} AR=${AR} EGL=${EGL} EGL0=glx EGL1=Glx	\
 		XLIBS="-lX11 -lXext" GLIBS="-lGL -lGLU"
 PLIST_SUB=	CFG=${CONFIG} GRF=${GRF} WM=Wm${MV}
 
-.if defined(WITH_OPENGL)
-GRF=		OpenGL
-EGL=		Glx
-PLIST_SUB+=	OGL="" SOFT="@comment "
-IGNORE=		this version does not run with OpenGL
-.else
 GRF=		Soft
 EGL=		XSoft
-PLIST_SUB+=	OGL="@comment " SOFT=""
-.endif
 
 MV=		${PORTVERSION:R}
 SAMPLEDIRS=	SampleFoundation SampleGraphics SampleImagics SamplePhysics
