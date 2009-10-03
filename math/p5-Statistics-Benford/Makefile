@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Statistics-Benford
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Calculate the deviation from Benford's Law
 
 PERL_CONFIGURE=	yes
