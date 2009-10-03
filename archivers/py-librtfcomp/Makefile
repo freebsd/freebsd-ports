@@ -22,6 +22,13 @@ PLIST=		${.CURDIR}/pkg-plist
 
 RTFCOMP_SLAVE=	pythonb
 
+pre-patch:
+	@${REINPLACE_CMD} -e 's|$$(top_builddir)/src/librtfcomp.la|${LOCALBASE}/lib/librtfcomp.la|g' \
+		${WRKSRC}/python/Makefile.in
+
+do-build:
+	@(cd ${WRKSRC}/python && ${MAKE})
+
 do-install:
 	@(cd ${WRKSRC}/python && ${MAKE} install)
 
