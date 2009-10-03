@@ -7,8 +7,9 @@
 
 PORTNAME=	Image-Heatmap
 PORTVERSION=	0.557
-CATEGORIES=	graphics
+CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN/../../authors/id/W/WA/WAZZUTEKE
+PKGNAMEPREFIX=  p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Build heatmap images
