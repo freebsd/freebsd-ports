@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/GD/Graph/ohlc.pm
+%%SITE_PERL%%/GD/Graph/candlesticks.pod
+%%SITE_PERL%%/GD/Graph/ohlc.pod
+%%SITE_PERL%%/GD/Graph/candlesticks.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/ohlc/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/ohlc
