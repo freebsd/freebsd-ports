@@ -8,7 +8,7 @@
 PORTNAME=	osmosis
 PORTVERSION=	0.31.2
 CATEGORIES=	astro java
-MASTER_SITES=	http://dev.openstreetmap.org/~bretth/osmosis-build/
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	glebius@FreeBSD.org
@@ -22,7 +22,7 @@ JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	osmosis
 
-FETCH_ARGS=	-pRr
+#FETCH_ARGS=	-pRr
 JAVAJARDIR_REL=	 ${JAVAJARDIR:C,${PREFIX}/?,,}
 JARFILES=	aopalliance-1.0.jar \
 		bzip2-20090327.jar \
