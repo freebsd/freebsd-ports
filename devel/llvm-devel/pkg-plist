@@ -527,6 +527,7 @@ libexec/clang-cc
 %%DOCSDIR%%/html/CompilerDriver.html
 %%DOCSDIR%%/html/CompilerDriverTutorial.html
 %%DOCSDIR%%/html/CompilerWriterInfo.html
+%%DOCSDIR%%/html/DebuggingJITedCode.html
 %%DOCSDIR%%/html/DeveloperPolicy.html
 %%DOCSDIR%%/html/DriverInternals.html
 %%DOCSDIR%%/html/ExceptionHandling.html

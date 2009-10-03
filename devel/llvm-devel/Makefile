@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	2.6.r${SVN_REV}
+DISTVERSION=	2.7.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-2.[123457]* llvm-2.6.[0-9]*
+CONFLICTS=	llvm-2.[123456]* llvm-2.7.[0-9]* llvm-2.7
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
