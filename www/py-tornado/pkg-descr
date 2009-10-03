@@ -1,0 +1,10 @@
+Tornado is an open source version of this web server and some of the tools we
+use most often at FriendFeed.
+
+The framework is distinct from most mainstream web server frameworks (and 
+certainly most Python frameworks) because it is non-blocking and reasonably 
+fast. Because it is non-blocking and uses epoll, it can handle 1000s of 
+simultaneous standing connections, which means the framework is ideal for 
+real-time web services.
+
+WWW: http://www.tornadoweb.org

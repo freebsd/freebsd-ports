@@ -1331,6 +1331,7 @@
     SUBDIR += py-slimmer
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
+    SUBDIR += py-tornado
     SUBDIR += py-turbodjango
     SUBDIR += py-turbogears
     SUBDIR += py-turbogears2
