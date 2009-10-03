@@ -2978,6 +2978,7 @@ estraier                        ports/textproc/estraier
 esvn                            ports/devel/esvn
 et-aspell                       ports/textproc/et-aspell
 etask                           ports/deskutils/etask
+etcd                            ports/audio/etcd
 etcmerge                        ports/sysutils/etcmerge
 eterm                           ports/x11/eterm
 eterm-bg                        ports/graphics/eterm-bg
@@ -22415,6 +22416,7 @@ thefish                         ports/sysutils/thefish
 thevalley                       ports/games/thevalley
 thewidgetfactory                ports/x11-themes/thewidgetfactory
 thinglaunch                     ports/x11/thinglaunch
+thingylaunch                    ports/x11/thingylaunch
 thinice                         ports/x11-themes/thinice
 thinkingrock                    ports/deskutils/thinkingrock
 thistest                        ports/devel/thistest
