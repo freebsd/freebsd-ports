@@ -11,6 +11,7 @@
 %%SITE_PERL%%/Google/Chart/Legend.pm
 %%SITE_PERL%%/Google/Chart/Data.pm
 %%SITE_PERL%%/Google/Chart/Fill.pm
+%%SITE_PERL%%/Google/Chart/Margin.pm
 %%SITE_PERL%%/Google/Chart/Type/Bar.pm
 %%SITE_PERL%%/Google/Chart/Type/Line.pm
 %%SITE_PERL%%/Google/Chart/Type/QRcode.pm
@@ -20,6 +21,7 @@
 %%SITE_PERL%%/Google/Chart/Type/ScatterPlot.pm
 %%SITE_PERL%%/Google/Chart/Type/SparkLine.pm
 %%SITE_PERL%%/Google/Chart/Type/Simple.pm
+%%SITE_PERL%%/Google/Chart/Type/XY.pm
 %%SITE_PERL%%/Google/Chart/Axis/Item.pm
 %%SITE_PERL%%/Google/Chart/Axis/Style.pm
 %%SITE_PERL%%/Google/Chart/Data/Simple.pm
