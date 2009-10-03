@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unshield
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 
