@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.49a
-PORTREVISION=	2
+PORTVERSION=	2.49b
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -103,9 +102,6 @@ LIB_DEPENDS+=	ftgl.2:${PORTSDIR}/graphics/ftgl
 .endif
 
 .if defined(WITH_KETSJI)
-.if ${ARCH} == "amd64"
-BROKEN=		GameEngine and BlenderPlayer cannot be build on amd64
-.endif
 MAKE_ENV+=	NAN_NO_KETSJI="false"
 MAKE_ENV+=	NAN_USE_BULLET="true"
 MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="true"
