@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keyring
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
 		http://code.douglasthrift.net/files/${PORTNAME}/
@@ -18,7 +18,7 @@ COMMENT=	Store and access your passwords safely
 LATEST_LINK=	py-${PORTNAME}
 
 USE_KDE4=	#
-USE_PYTHON=	2.6+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
 OPTIONS=	GNOME_KEYRING "GNOME Keyring backend" Off \
@@ -46,7 +46,7 @@ post-patch:
 		${WRKSRC}/extensions.py
 .endif
 .if defined(WITH_KDE_KWALLET)
-	@${REINPLACE_CMD} -e 's|kde4-config|${KDE4_PREFIX}/bin/kde4-config|' \
+	@${REINPLACE_CMD} -e 's|kde-config|${KDE4_PREFIX}/bin/kde4-config|' \
 		${WRKSRC}/extensions.py
 .else
 	@${REINPLACE_CMD} -e 's|exts\.append(kde_kwallet_module)|#&|' \
