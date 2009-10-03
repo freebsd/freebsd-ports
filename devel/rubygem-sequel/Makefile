@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sequel
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The Database Toolkit for Ruby
 
 USE_RUBY=	yes
