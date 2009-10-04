@@ -8,12 +8,12 @@
 
 PORTNAME=	libevnet
 PORTVERSION=	0.3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	pusateri@bangj.com
 COMMENT=	Network Daemon Services for libevent
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libarena.a:${PORTSDIR}/devel/libarena
