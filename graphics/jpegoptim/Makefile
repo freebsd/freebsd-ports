@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jpegoptim
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
@@ -17,10 +16,16 @@ COMMENT=	Utility to optimize jpeg files
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-libjpeg=${LOCALBASE}
-MAKE_ARGS=	mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
 MAN1=		jpegoptim.1
 PLIST_FILES=	bin/jpegoptim
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^bindir =.*$$|bindir = @bindir@|g ; \
+		 s|^mandir =.*$$|mandir = @mandir@|g ; \
+		 s|$$(INSTALL) -m 755|$$(INSTALL_PROGRAM)|g ; \
+	         s|$$(INSTALL) -m 644|$$(INSTALL_DATA)|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
