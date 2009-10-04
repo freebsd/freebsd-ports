@@ -15,6 +15,7 @@ lib/ocaml/site-lib/findlib/findlib.mli
 lib/ocaml/site-lib/findlib/findlib_top.cma
 lib/ocaml/site-lib/findlib/fl_metascanner.cmi
 lib/ocaml/site-lib/findlib/fl_metascanner.mli
+lib/ocaml/site-lib/findlib/fl_metatoken.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.mli
 lib/ocaml/site-lib/findlib/topfind.cmi
