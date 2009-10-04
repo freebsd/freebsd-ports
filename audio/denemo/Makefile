@@ -6,51 +6,61 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.7.6
-PORTREVISION=	3
+PORTVERSION=	0.8.8
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphical score editor
 
-USE_GNOME=	gnometarget gtk20 libxml2
+BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS=	aubio.3:${PORTSDIR}/audio/aubio \
+		jack.0:${PORTSDIR}/audio/jack \
+		lash.2:${PORTSDIR}/audio/lash \
+		guile.20:${PORTSDIR}/lang/guile \
+		fftw3.5:${PORTSDIR}/math/fftw3
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USE_GNOME=	gtk20 librsvg2 libxml2
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-jack --enable-lash \
+		--sysconfdir=${PREFIX}/etc
 
-CPPFLAGS=	${CFLAGS} -I${LOCALBASE}/include
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
-
 post-patch:
-	@${GREP} -lR "<malloc.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc\.h>|<stdlib.h>|g'
-	@${REINPLACE_CMD} -e \
-		's|CXXFLAGS="$$CFLAGS|CXXFLAGS="$$DENEMO_CFLAGS|g ; \
-		 s|-Wall -O2|-Wall $$CXXFLAGS|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|/icons|/pixmaps|g' ${WRKSRC}/pixmaps/Makefile.in
-.ifdef NOPORTDOCS
-	@${REINPLACE_CMD} -e \
-		's|install-data-am:.*|install-data-am:|' ${WRKSRC}/doc/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|m4 doc actions|m4 actions| ; \
+		 s|fonts examples templates|fonts templates|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/src/lyparser.y
 
 post-install:
+	@${LN} -sf ${DOCSDIR}/manual ${DATADIR}/manual
+	@${LN} -sf ${EXAMPLESDIR} ${DATADIR}/examples
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in AUTHORS ChangeLog DESIGN GOALS NEWS README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for i in AUTHORS ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+.for i in DESIGN DESIGN.lilypond GOALS TODO
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
+	@${MKDIR} ${DOCSDIR}/manual
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/manual
+	@${MKDIR} ${DOCSDIR}/manual/images
+	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}/manual/images
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.denemo ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
