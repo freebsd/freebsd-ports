@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -15,7 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	Package will be 724MB, set FORCE_PACKAGE if you really want to build it
+# Package size below is for default set of OPTIONS
+NO_PACKAGE=	Package will be 942MB, set FORCE_PACKAGE if you really want it
 
 USE_ZIP=	yes
 
@@ -77,7 +78,7 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20090501.zip \
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20091001.zip \
 		-d ${WRKDIR}/Nexuiz/sources
 
 post-patch:
@@ -98,7 +99,8 @@ do-install:
 .endif
 .if !defined(WITHOUT_SERVER)
 	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} server ${DATADIR}
-	${FIND} ${DATADIR}/server -type f -name \*.sh -o -name \*.pl | \
+# Fixup lost +x permissions on scripts after COPYTREE_SHARE
+	${FIND} ${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
 .endif
 
