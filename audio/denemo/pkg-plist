@@ -1,18 +1,183 @@
 bin/denemo
-include/denemo/denemo.h
-include/denemo/denemo_api.h
-include/denemo/denemo_objects.h
-include/denemo/denemo_types.h
-include/denemo/denemo_version.h
+bin/smfsh
+%%ETCDIR%%/denemo.conf
+include/smf.h
 share/applications/denemo.desktop
-%%DATADIR%%/denemo.conf
-%%DATADIR%%/denemo.keymaprc
-%%DATADIR%%/denemorc.xml
+%%DATADIR%%/actions/Default.cmdset
+%%DATADIR%%/actions/Empty.cmdset
+%%DATADIR%%/actions/Makefile
+%%DATADIR%%/actions/Makefile.am
+%%DATADIR%%/actions/Makefile.in
+%%DATADIR%%/actions/NumericKeypad.cmdset
+%%DATADIR%%/actions/bitmaps/Anacrusis.png
+%%DATADIR%%/actions/bitmaps/Barline.png
+%%DATADIR%%/actions/bitmaps/CheckMark.png
+%%DATADIR%%/actions/bitmaps/ClosingBarline.png
+%%DATADIR%%/actions/bitmaps/CrossSign.png
+%%DATADIR%%/actions/bitmaps/DoubleBarline.png
+%%DATADIR%%/actions/bitmaps/DrumClef.png
+%%DATADIR%%/actions/bitmaps/EncircleChar
+%%DATADIR%%/actions/bitmaps/EndBeam.png
+%%DATADIR%%/actions/bitmaps/Fortissimo.png
+%%DATADIR%%/actions/bitmaps/Glissando.png
+%%DATADIR%%/actions/bitmaps/LargeEight.png
+%%DATADIR%%/actions/bitmaps/LargeFive.png
+%%DATADIR%%/actions/bitmaps/LargeFour.png
+%%DATADIR%%/actions/bitmaps/LargeNine.png
+%%DATADIR%%/actions/bitmaps/LargeOne.png
+%%DATADIR%%/actions/bitmaps/LargeSeven.png
+%%DATADIR%%/actions/bitmaps/LargeSix.png
+%%DATADIR%%/actions/bitmaps/LargeThree.png
+%%DATADIR%%/actions/bitmaps/LargeTwo.png
+%%DATADIR%%/actions/bitmaps/LargeZero.png
+%%DATADIR%%/actions/bitmaps/MezzoForte.png
+%%DATADIR%%/actions/bitmaps/NoBeam.png
+%%DATADIR%%/actions/bitmaps/RehearsalMark
+%%DATADIR%%/actions/bitmaps/RehearsalMark.png
+%%DATADIR%%/actions/bitmaps/RepeatEnd.png
+%%DATADIR%%/actions/bitmaps/RepeatEndStart.png
+%%DATADIR%%/actions/bitmaps/RepeatStart.png
+%%DATADIR%%/actions/bitmaps/StartBeam.png
+%%DATADIR%%/actions/bitmaps/StartDownStems.png
+%%DATADIR%%/actions/bitmaps/StartTupletNumbering.png
+%%DATADIR%%/actions/bitmaps/StartUpStems.png
+%%DATADIR%%/actions/bitmaps/StopTupletNumbering.png
+%%DATADIR%%/actions/denemo.scm
+%%DATADIR%%/actions/editscripts/D.C.AlFine.scm
+%%DATADIR%%/actions/editscripts/LHFinger.scm
+%%DATADIR%%/actions/editscripts/RehearsalMark.scm
+%%DATADIR%%/actions/editscripts/StaffSize.scm
+%%DATADIR%%/actions/editscripts/StringNum.scm
+%%DATADIR%%/actions/editscripts/Tempo.scm
+%%DATADIR%%/actions/editscripts/UnknownScoreTag.scm
+%%DATADIR%%/actions/init.denemo
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/KeyBindings/StartEmacs2KeyShortcut
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/ApplyToChordsInSelection
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/ApplyToSelection
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/SetTransposeIntervalFromNote
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/SetTransposeIntervalFromSelection
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/TransposeNote
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/TransposeSelection
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/init.scm
+%%DATADIR%%/actions/menus/MainMenu/Educational/CountSteps
+%%DATADIR%%/actions/menus/MainMenu/Educational/DiatonicInterval
+%%DATADIR%%/actions/menus/MainMenu/Educational/LineOrSpace
+%%DATADIR%%/actions/menus/MainMenu/Educational/MIDI/CheckPitches
+%%DATADIR%%/actions/menus/MainMenu/Educational/MIDI/Conductor
+%%DATADIR%%/actions/menus/MainMenu/Educational/NoteNameSpeedTest
+%%DATADIR%%/actions/menus/MainMenu/Educational/ReadingNoteNames
+%%DATADIR%%/actions/menus/MainMenu/Educational/StepSkipOrSame
+%%DATADIR%%/actions/menus/MainMenu/Educational/UpDownOrSame
+%%DATADIR%%/actions/menus/MainMenu/Educational/init.scm
+%%DATADIR%%/actions/menus/MainMenu/HelpMenu/IRC
+%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/AngryDelete
+%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/CheckPitches
+%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/FiguredBassFilterOn
+%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/MidiAdvanceOnEdit
+%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/MidiFilterOff
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/RecreateTimebase
+%%DATADIR%%/actions/menus/ObjectMenu/Bookmarks/NamedBookmarkInsert
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ParenthesizeChord
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/Fingerings/Finger0
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/Fingerings/Finger1
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/Fingerings/Finger2
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/Fingerings/Finger3
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/Fingerings/Finger4
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/LHFinger
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/StringNum
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Orchestral/RehearsalMark
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion/BassDrum
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion/HiHat
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion/HiHatFoot
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion/HiTom
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion/Ride
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion/RideBell
+%%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion/TimbalesStyle
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/Metronome-Markings/MetronomeMarking
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/Ornaments/Trill+Above
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/Ornaments/Trill+Below
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/RehearsalMarks/RehearsalMark
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/Slurs/BeginPhrasingSlur
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/Slurs/EndPhrasingSlur
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/Slurs/SlurThree
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/Slurs/SlurTwo
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/D.C.AlFine
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Dynamic Markings/DeleteDynamic
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Dynamic Markings/Fortissimo
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Dynamic Markings/MezzoForte
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Dynamic Markings/init.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Glissando
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/ParenthesizeChord
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/ParenthesizeNote
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Tempo Indications/Allegro
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Tempo Indications/AllegroAssai
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Tempo Indications/Andante
+%%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Tempo Indications/Presto
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Anacrusis
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ClosingBarline
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/DeleteBarline
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/DoubleBarline
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ForceBarline
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ForceNewMeasure
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/LineBreak
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/PageBreak
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/RepeatEnd
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/RepeatEndStart
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/RepeatStart
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/SplitMeasure
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/HideMovement
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/MovementPageBreak
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Print Layout/Indent
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementPiece
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementTitle
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/Beam1234
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/EndBeam
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/StartBeam
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote/CautionaryAccidental
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote/MoveNoteToCursor
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote/ReminderAccidental
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/NormalSizeNotehead
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/SmallNotehead
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/TinyNotehead
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/EnterRest
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartDownStems
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartUpStems
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/InsertTiedNoteDuration
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/CloseLilyBlock
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/DiatonicShift/Third
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/OpenOctaveUp
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/SetTransposeIntervalFromSelection
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/TransposeNote
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/TransposeSelection
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/init.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tremolo
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/NoTupletNumbers
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/ToggleTripleting
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/ToggleTupletNumbering
+%%DATADIR%%/actions/menus/ObjectMenu/Other/DeleteLilyPondOnChord
+%%DATADIR%%/actions/menus/ObjectMenu/Other/DeleteLilyPondOnNote
+%%DATADIR%%/actions/menus/ObjectMenu/Score/EditProlog
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/HideEmptyStaffs
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/ScoreIndent
+%%DATADIR%%/actions/menus/ObjectMenu/Score/SetFontSize
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreComposer
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreCopyright
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreTagline
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/ScoreTitle
+%%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeOctaveUp
+%%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeScorePrint
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ambitus
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InstrumentName
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/NonPrintingStaff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects/ClearStaffProlog
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects/TransposeStaffOutput
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/ShortInstrumentName
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/SmallerStaff
+%%DATADIR%%/actions/musicgames/ReadingNoteNames.denemo
 %%DATADIR%%/denemoui.xml
-%%DATADIR%%/english.keymaprc
-%%DATADIR%%/french.keymaprc
+%%DATADIR%%/examples
 %%DATADIR%%/instruments.xml
-%%DATADIR%%/italian.keymaprc
+%%DATADIR%%/manual
 %%DATADIR%%/pixmaps/accent.svg
 %%DATADIR%%/pixmaps/downbow.svg
 %%DATADIR%%/pixmaps/fermata.svg
@@ -146,20 +311,82 @@ share/applications/denemo.desktop
 %%DATADIR%%/pixmaps/trill.svg
 %%DATADIR%%/pixmaps/turn.svg
 %%DATADIR%%/pixmaps/upbow.svg
-%%DATADIR%%/speedy.keymaprc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/DESIGN
-%%PORTDOCS%%%%DOCSDIR%%/GOALS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%NLS%%share/locale/es/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/denemo.mo
+%%DATADIR%%/templates/band/BrassBand.denemo
+%%DATADIR%%/templates/band/BrassTrio.denemo
+%%DATADIR%%/templates/chamber/StringQuartet.denemo
+%%DATADIR%%/templates/choral/SATB-Piano.denemo
+%%DATADIR%%/templates/choral/SATB.denemo
+%%DATADIR%%/templates/jazz/JazzCombo.denemo
+share/fonts/truetype/denemo/Denemo.ttf
+share/fonts/truetype/denemo/LICENSE_OFL.txt
+share/locale/de/LC_MESSAGES/denemo.mo
+share/locale/es/LC_MESSAGES/denemo.mo
+share/locale/fr/LC_MESSAGES/denemo.mo
+share/locale/it/LC_MESSAGES/denemo.mo
+share/locale/sv/LC_MESSAGES/denemo.mo
 share/pixmaps/denemo.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/fonts/truetype/denemo
+@dirrmtry share/fonts/truetype
+@dirrmtry share/fonts
+@dirrm %%DATADIR%%/templates/jazz
+@dirrm %%DATADIR%%/templates/choral
+@dirrm %%DATADIR%%/templates/chamber
+@dirrm %%DATADIR%%/templates/band
+@dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/actions/musicgames
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Other
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/DiatonicShift
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Print Layout
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Tempo Indications
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks/Dynamic Markings
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings/TextMarks
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings/Slurs
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings/RehearsalMarks
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings/Ornaments
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings/Metronome-Markings
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Markings
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Instruments/Percussion
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Instruments/Orchestral
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar/Fingerings
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Instruments/Guitar
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Instruments
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Bookmarks
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/PlaybackMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI
+@dirrm %%DATADIR%%/actions/menus/MainMenu/ModeMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/HelpMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/Educational/MIDI
+@dirrm %%DATADIR%%/actions/menus/MainMenu/Educational
+@dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose
+@dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu/Select
+@dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu/KeyBindings
+@dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu
+@dirrm %%DATADIR%%/actions/menus
+@dirrm %%DATADIR%%/actions/editscripts
+@dirrm %%DATADIR%%/actions/bitmaps
+@dirrm %%DATADIR%%/actions
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrm include/denemo
+@dirrm %%ETCDIR%%
