@@ -29,7 +29,6 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer image
 USE_GNOME=	libxml2
-USE_GCC=	3.4
 
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 
