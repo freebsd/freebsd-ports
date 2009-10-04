@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerthumbs
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	dolphin-plugins-
@@ -16,6 +17,8 @@ MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Video thumbs previewer for dolphin
 
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
+
+CONFLICTS=	kdemultimedia-4.3.*
 
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs

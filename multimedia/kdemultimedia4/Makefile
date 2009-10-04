@@ -6,7 +6,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -28,6 +28,7 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
+CONFLICTS=	dolphin-plugins-mplayerthumbs-1.*
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
