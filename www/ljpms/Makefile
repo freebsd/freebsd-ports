@@ -11,7 +11,7 @@ CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://www.offtopia.net/ljsm/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	ache@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Livejournal.com postings mass-restore and permissions utility
 
 RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
