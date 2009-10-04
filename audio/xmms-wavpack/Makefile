@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-wavpack
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
@@ -14,8 +14,6 @@ COMMENT=	XMMS input plugin to play WavPack files
 
 LIB_DEPENDS=	wavpack.1:${PORTSDIR}/audio/wavpack \
 		xmms.4:${PORTSDIR}/multimedia/xmms
-
-RESTRICTED=	missing license
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

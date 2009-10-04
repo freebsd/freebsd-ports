@@ -1,0 +1,11 @@
+--- configure.orig	2009-10-04 22:05:31.000000000 +0200
++++ configure	2009-10-04 22:05:38.000000000 +0200
+@@ -19850,7 +19850,7 @@ test -z "$INSTALL_SCRIPT" && INSTALL_SCR
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+ 
+-CXXFLAGS="$CXXFLAGS -O3 -fomit-frame-pointer"
++#CXXFLAGS="$CXXFLAGS -O3 -fomit-frame-pointer"
+ 
+ { echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+ echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6; }
