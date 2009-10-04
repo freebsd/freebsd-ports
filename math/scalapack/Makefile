@@ -107,8 +107,8 @@ MPICC=	${LOCALBASE}/mpich2/bin/mpicc
 post-patch:
 	${CP} ${WRKSRC}/SLmake.inc.example ${WRKSRC}/SLmake.inc
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@LAPACK@,${LAPACK},g;s,@LAPACK@,${LAPACK},g;s,@LAPACK@,${LAPACK},g;s,@LAPACK@,${LAPACK},g; s,@WRKSRC@,${WRKSRC},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@MPIF77@,${MPIF77},g ; s,@MPICC@,${MPICC},g ; s,@FFLAGS@,${FFLAGS},g ; s,@NOOPT@,${NOOPT},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
-	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@LAPACK@,${LAPACK},g; s,@WRKSRC@,${WRKSRC_SHARED},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS_SHARED},g ; s,@F77@,${F77},g ; s,@MPIF77@,${MPIF77},g ; s,@MPICC@,${MPICC},g ; s,@FFLAGS@,${FFLAGS_SHARED},g ; s,@NOOPT@,${NOOPT} ${FPIC},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC_SHARED}/SLmake.inc
+	@${REINPLACE_CMD} -e 's|@BLAS@|${BLAS}|g; s|@LAPACK@|${LAPACK}|g;s|@LAPACK@|${LAPACK}|g;s|@LAPACK@|${LAPACK}|g;s|@LAPACK@|${LAPACK}|g; s|@WRKSRC@|${WRKSRC}|g ; s|@LOCALBASE@|${LOCALBASE}|g ; s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; s|@F77@|${F77}|g ; s|@MPIF77@|${MPIF77}|g ; s|@MPICC@|${MPICC}|g ; s|@FFLAGS@|${FFLAGS}|g ; s|@NOOPT@|${NOOPT}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|^ARCH *.= ar|ARCMD = ar|' ${WRKSRC}/SLmake.inc
+	@${REINPLACE_CMD} -e 's|@BLAS@|${BLAS}|g; s|@LAPACK@|${LAPACK}|g; s|@WRKSRC@|${WRKSRC_SHARED}|g ; s|@LOCALBASE@|${LOCALBASE}|g ; s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS_SHARED}|g ; s|@F77@|${F77}|g ; s|@MPIF77@|${MPIF77}|g ; s|@MPICC@|${MPICC}|g ; s|@FFLAGS@|${FFLAGS_SHARED}|g ; s|@NOOPT@|${NOOPT} ${FPIC}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|^ARCH *.= ar|ARCMD = ar|' ${WRKSRC_SHARED}/SLmake.inc
 .for mkf in ${ARCH2FIX}
 	@${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${mkf}/Makefile
 	@${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC_SHARED}/${mkf}/Makefile
