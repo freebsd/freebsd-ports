@@ -7,6 +7,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -93,9 +94,9 @@ post-patch:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/include/nss ${PREFIX}/lib/nss
-	${TAR} -C ${DIST}/public --dereference -cf - . | \
-		${TAR} -C ${PREFIX}/include/nss -xf -
+	${MKDIR} -p ${PREFIX}/include/nss/nss ${PREFIX}/lib/nss
+	${FIND} ${DIST}/public/nss -type l \
+	    	-exec ${INSTALL_DATA} {} ${PREFIX}/include/nss/nss \;
 	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
 		${PREFIX}/lib/nss
 	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/libcrmf.a \
