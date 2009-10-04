@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	birthday_reminder
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	net-im
 MASTER_SITES=	SF/pidgin-birthday/pidgin-birthday/${PORTVERSION}
 PKGNAMEPREFIX=	pidgin-
