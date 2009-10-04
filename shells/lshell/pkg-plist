@@ -7,9 +7,5 @@ etc/lshell.conf.sample
 %%PYTHON_SITELIBDIR%%/lshell.py
 %%PYTHON_SITELIBDIR%%/lshell.pyc
 %%PYTHON_SITELIBDIR%%/lshell.pyo
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
 @dirrmtry %%DATADIR%%
 @dirrmtry %%LOGDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

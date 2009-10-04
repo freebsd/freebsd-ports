@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	lshell
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Shell environment to limited sets of commands to user's
-
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
@@ -24,12 +20,17 @@ SHELLS=		/etc/shells
 
 MAN1=	lshell.1
 
+PORTDOCS=	CHANGES COPYING README
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g; \
+		s|share/man|${LOCALBASE}/man|g; 44d' ${WRKSRC}/setup.py
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
 	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
