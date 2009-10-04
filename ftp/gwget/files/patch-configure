@@ -1,0 +1,37 @@
+--- configure.orig	2009-10-02 13:58:38.000000000 +1000
++++ configure	2009-10-02 13:59:21.000000000 +1000
+@@ -1653,10 +1653,10 @@
+                           Config database for installing schema files.
+   --with-gconf-schema-file-dir=dir
+                           Directory for installing schema files.
+-  --with-epiphany-version[=1.6|1.8|1.10|2.14|2.16|2.18|2.20|2.22|2.24|2.26]
++  --with-epiphany-version[=1.6|1.8|1.10|2.14|2.16|2.18|2.20|2.22|2.24|2.26|2.28]
+                           Whether to use epiphany version 1.6 or 1.8 or 1.10
+                           or 2.14 or 2.16 or 2.18 or 2.20 or 2.22 or 2.24 or
+-                          2.26 (default 1.6)
++                          2.26 or 2.28 (default 1.6)
+   --with-extension-prefix=path              Epiphany extension prefix
+ 
+ Some influential environment variables:
+@@ -14861,7 +14861,9 @@
+ 
+ 
+ EPHY_AUTODETECT="(autodetect)"
+-if pkg-config --exists epiphany-2.26; then
++if pkg-config --exists epiphany-2.28; then
++        EPHY_VER=2.28
++elif pkg-config --exists epiphany-2.26; then
+         EPHY_VER=2.26
+ elif pkg-config --exists epiphany-2.25; then
+         EPHY_VER=2.25
+@@ -14976,6 +14978,10 @@
+ 	  EPIPHANY_PKGCONFIG=epiphany-2.26
+           EPIPHANY_REQUIRED=2.26
+ 	  EPIPHANY_SHORTVER=226
++elif test "x$EPHY_VER" = "x2.28"; then
++	  EPIPHANY_PKGCONFIG=epiphany-2.28
++          EPIPHANY_REQUIRED=2.28
++	  EPIPHANY_SHORTVER=228
+ else
+      	{ $as_echo "$as_me:$LINENO: result: no epiphany installed" >&5
+ $as_echo "no epiphany installed" >&6; }
