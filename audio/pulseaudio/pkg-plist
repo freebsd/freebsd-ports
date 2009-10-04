@@ -169,8 +169,8 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-pipe-source.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-pipe-source.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-position-event-sounds.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-position-event-sounds.so
-lib/pulse-%%PULSE_VERSION%%/modules/module-raop-discover.a
-lib/pulse-%%PULSE_VERSION%%/modules/module-raop-discover.so
+%%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/module-raop-discover.a
+%%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/module-raop-discover.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-raop-sink.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-raop-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-remap-sink.a
