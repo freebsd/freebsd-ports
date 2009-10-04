@@ -2808,7 +2808,6 @@ electric                        ports/cad/electric
 electric-ng                     ports/cad/electric-ng
 electriceyes                    ports/graphics/electriceyes
 electricfence                   ports/devel/ElectricFence
-electricsheep                   ports/x11/electricsheep
 elf                             ports/devel/elf
 elfio                           ports/devel/elfio
 elfrc                           ports/devel/elfrc
@@ -11484,6 +11483,7 @@ p5-GD-Arrow                     ports/graphics/p5-GD-Arrow
 p5-GD-Barcode                   ports/graphics/p5-GD-Barcode
 p5-GD-Graph                     ports/graphics/p5-GD-Graph
 p5-GD-Graph-histogram           ports/graphics/p5-GD-Graph-histogram
+p5-GD-Graph-ohlc                ports/graphics/p5-GD-Graph-ohlc
 p5-GD-Graph3d                   ports/graphics/p5-GD-Graph3d
 p5-GD-SVG                       ports/graphics/p5-GD-SVG
 p5-GD-SecurityImage             ports/security/p5-GD-SecurityImage
@@ -15067,6 +15067,7 @@ p5-gd-arrow                     ports/graphics/p5-GD-Arrow
 p5-gd-barcode                   ports/graphics/p5-GD-Barcode
 p5-gd-graph                     ports/graphics/p5-GD-Graph
 p5-gd-graph-histogram           ports/graphics/p5-GD-Graph-histogram
+p5-gd-graph-ohlc                ports/graphics/p5-GD-Graph-ohlc
 p5-gd-graph3d                   ports/graphics/p5-GD-Graph3d
 p5-gd-securityimage             ports/security/p5-GD-SecurityImage
 p5-gd-svg                       ports/graphics/p5-GD-SVG
@@ -19744,6 +19745,7 @@ py-tkinter                      ports/x11-toolkits/py-tkinter
 py-tktreectrl                   ports/x11-toolkits/py-tktreectrl
 py-tlslite                      ports/security/py-tlslite
 py-tofu                         ports/net/py-tofu
+py-tornado                      ports/www/py-tornado
 py-toscawidgets                 ports/devel/py-ToscaWidgets
 py-trace2html                   ports/devel/py-trace2html
 py-traits                       ports/devel/py-traits
