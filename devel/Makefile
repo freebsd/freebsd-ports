@@ -2923,6 +2923,7 @@
     SUBDIR += ucpp
     SUBDIR += udis86
     SUBDIR += umem
+    SUBDIR += universalindentgui
     SUBDIR += upnp
     SUBDIR += upp
     SUBDIR += uppaal
