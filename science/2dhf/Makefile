@@ -65,15 +65,15 @@ do-extract:
 	@(cd ${WRKSRC} ;  ${TAR} xfz ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%FC%%,${FC},g ; \
-	s,%%FFLAGS%%,${FFLAGS},g ; \
-	s,%%FFLAGS_ADD%%,${FFLAGS_ADD},g ; \
-	s,%%CC%%,${CC},g ; \
-	s,%%CFLAGS%%,${CFLAGS},g ; \
-	s,%%LOCALBASE%%,${LOCALBASE},g ;\
-	s,%%BLAS%%,${BLAS},g' \
+	@${REINPLACE_CMD} -e 's|%%FC%%|${FC}|g ; \
+	s|%%FFLAGS%%|${FFLAGS}|g ; \
+	s|%%FFLAGS_ADD%%|${FFLAGS_ADD}|g ; \
+	s|%%CC%%|${CC}|g ; \
+	s|%%CFLAGS%%|${CFLAGS}|g ; \
+	s|%%LOCALBASE%%|${LOCALBASE}|g ;\
+	s|%%BLAS%%|${BLAS}|g' \
 	 ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	 ${WRKSRC}/bin/xhf
 
 do-install:
