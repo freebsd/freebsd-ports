@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.12.3
-PORTREVISION=	1
+PORTVERSION=	0.13.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
@@ -44,7 +43,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_path_EJECT_PROG="/usr/sbin/cdcontrol"
 USE_LDCONFIG=	yes
 
-MAN1=		dvdcpy.1
+MAN1=		dvdcpy.1 avibox.1
 
 .include <bsd.port.pre.mk>
 
@@ -134,9 +133,9 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
-		 s|^CPPFLAGS=|#CPPFLAGS=|g ; \
-		 s|^LDFLAGS=|#LDFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/local/s|^CFLAGS=|#CFLAGS=|g ; \
+		 /local/s|^CPPFLAGS=|#CPPFLAGS=|g ; \
+		 /local/s|^LDFLAGS=|#LDFLAGS=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^SUBDIRS|#SUBDIRS|g' ${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/PROGRAM/s|MP4Box|mp4box|g' ${WRKSRC}/libogmrip/ogmrip-mp4.c
