@@ -20,6 +20,9 @@ COMMENT=	Greylist Policy Service for postfix
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 
+DEPRECATED=	Older than main port, no sign of maintainer activity beyond port creation 4+ years ago
+EXPIRATION_DATE=2009-11-03
+
 SCRIPT_FILES=	gps-maintain.pl gps-db-update.pl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
