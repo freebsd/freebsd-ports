@@ -40,6 +40,7 @@
     SUBDIR += gnusget
     SUBDIR += gnustep-ftp
     SUBDIR += gproftpd
+    SUBDIR += gwget
     SUBDIR += horde-gollem
     SUBDIR += hsftp
     SUBDIR += jftp
