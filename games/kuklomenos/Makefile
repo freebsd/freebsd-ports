@@ -17,7 +17,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 OPTIONS=	VORBIS "Enable Ogg/Vorbis support" on
 
-USE_SDL=	sdl
+USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--datadir=${DATADIR}
