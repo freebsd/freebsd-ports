@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -69,7 +70,7 @@ post-patch:
 	    -e 's|^confexecdir =.*$$|confexecdir = \$$(sysconfdir)|g' \
 	    -e 's|/tmp/\*\.log|${WRKSRC}/*.log|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} \
+	@${REINPLACE_CMD} -e '/objformat=/s|=`[^`]*`|=elf|' \
 	    -e '/^XMLSEC_SHLIBSFX="/s|"[^"]*"|".so"|' \
 	    -e 's|openssl_exlibs=-ldl|openssl_exlibs=|' \
 	    -e 's|-ldl"|"|' \
