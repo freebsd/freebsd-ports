@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlsitemap
-DISTVERSION=	5.x-1.6
+DISTVERSION=	5.x-1.7
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
