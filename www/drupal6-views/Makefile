@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	6.x-2.5
+DISTVERSION=	6.x-2.6
 CATEGORIES=	www
 
 MAINTAINER=	rea-fbsd@codelabs.ru
@@ -14,12 +14,12 @@ COMMENT=	Controls how content lists are generated
 
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	css docs handlers help/images help images includes js \
-		modules/aggregator modules/comment \
-		modules/locale modules/node \
-		modules/profile modules/search modules/statistics \
-		modules/system modules/taxonomy modules/translation \
-		modules/upload modules/user modules plugins theme \
-		translations views_export
+		modules/aggregator modules/comment modules/contact \
+		modules/filter modules/locale modules/node modules/profile \
+		modules/search modules/statistics modules/system \
+		modules/taxonomy modules/translation modules/upload \
+		modules/user modules plugins theme translations views_export
+
 MODULE_FILES=	css/views-admin.css \
 		css/views-list-rtl.css \
 		css/views-list.css \
@@ -41,6 +41,7 @@ MODULE_FILES=	css/views-admin.css \
 		handlers/views_handler_argument_string.inc \
 		handlers/views_handler_field.inc \
 		handlers/views_handler_field_boolean.inc \
+		handlers/views_handler_field_counter.inc \
 		handlers/views_handler_field_custom.inc \
 		handlers/views_handler_field_date.inc \
 		handlers/views_handler_field_markup.inc \
@@ -108,6 +109,7 @@ MODULE_FILES=	css/views-admin.css \
 		help/display-page.html \
 		help/display.html \
 		help/embed.html \
+		help/example-author-block.html \
 		help/example-recent-stories.html \
 		help/example-user-feed.html \
 		help/example-users-by-role.html \
@@ -128,11 +130,11 @@ MODULE_FILES=	css/views-admin.css \
 		help/style-node.html \
 		help/style-row.html \
 		help/style-rss.html \
-		help/style-summary-unformatted.html \
-		help/style.html \
 		help/style-summary.html \
+		help/style-summary-unformatted.html \
 		help/style-table.html \
 		help/style-unformatted.html \
+		help/style.html \
 		help/theme-css.html \
 		help/updating.html \
 		help/using-theme.html \
@@ -159,8 +161,11 @@ MODULE_FILES=	css/views-admin.css \
 		js/dependent.js \
 		js/base.js \
 		js/tabs.js \
+		modules/aggregator/views_handler_argument_aggregator_category_cid.inc \
 		modules/aggregator/views_handler_argument_aggregator_fid.inc \
+		modules/aggregator/views_handler_field_aggregator_category.inc \
 		modules/aggregator/views_handler_field_aggregator_title_link.inc \
+		modules/aggregator/views_handler_filter_aggregator_category_cid.inc \
 		modules/aggregator/views_plugin_row_aggregator_rss.inc \
 		modules/aggregator.views.inc \
 		modules/book.views.inc \
@@ -168,16 +173,20 @@ MODULE_FILES=	css/views-admin.css \
 		modules/comment.views.inc \
 		modules/comment.views_convert.inc \
 		modules/comment.views_default.inc \
+		modules/contact.views.inc \
+		modules/filter.views.inc \
 		modules/locale.views.inc \
 		modules/node.views.inc \
 		modules/node.views_convert.inc \
 		modules/node.views_default.inc \
 		modules/poll.views.inc \
 		modules/profile.views.inc \
+		modules/profile.views_convert.inc \
 		modules/search.views.inc \
 		modules/search.views_convert.inc \
 		modules/search.views_default.inc \
 		modules/statistics.views.inc \
+		modules/statistics.views_convert.inc \
 		modules/statistics.views_default.inc \
 		modules/system.views.inc \
 		modules/taxonomy.views.inc \
@@ -210,6 +219,8 @@ MODULE_FILES=	css/views-admin.css \
 		modules/comment/views_handler_sort_ncs_last_updated.inc \
 		modules/comment/views_plugin_row_comment_rss.inc \
 		modules/comment/views_plugin_row_comment_view.inc \
+		modules/contact/views_handler_field_contact_link.inc \
+		modules/filter/views_handler_field_filter_format_name.inc \
 		modules/locale/views_handler_argument_locale_group.inc \
 		modules/locale/views_handler_argument_locale_language.inc \
 		modules/locale/views_handler_field_locale_group.inc \
@@ -232,6 +243,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/node/views_handler_field_node_revision_link_revert.inc \
 		modules/node/views_handler_field_node_type.inc \
 		modules/node/views_handler_filter_history_user_timestamp.inc \
+		modules/node/views_handler_filter_node_access.inc \
 		modules/node/views_handler_filter_node_status.inc \
 		modules/node/views_handler_filter_node_type.inc \
 		modules/node/views_plugin_argument_default_node.inc \
@@ -258,6 +270,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/taxonomy/views_handler_field_taxonomy.inc \
 		modules/taxonomy/views_handler_field_term_node_tid.inc \
 		modules/taxonomy/views_handler_filter_term_node_tid.inc \
+		modules/taxonomy/views_handler_filter_term_node_tid_depth.inc \
 		modules/taxonomy/views_handler_filter_vocabulary_vid.inc \
 		modules/taxonomy/views_plugin_argument_validate_taxonomy_term.inc \
 		modules/translation/views_handler_argument_node_language.inc \
@@ -274,6 +287,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/user/views_handler_argument_user_uid.inc \
 		modules/user/views_handler_argument_users_roles_rid.inc \
 		modules/user/views_handler_field_user.inc \
+		modules/user/views_handler_field_user_language.inc \
 		modules/user/views_handler_field_user_link.inc \
 		modules/user/views_handler_field_user_link_delete.inc \
 		modules/user/views_handler_field_user_link_edit.inc \
@@ -296,13 +310,16 @@ MODULE_FILES=	css/views-admin.css \
 		plugins/views_plugin_argument_validate.inc \
 		plugins/views_plugin_argument_validate_numeric.inc \
 		plugins/views_plugin_argument_validate_php.inc \
+		plugins/views_plugin_cache.inc \
+		plugins/views_plugin_cache_none.inc \
+		plugins/views_plugin_row.inc \
+		plugins/views_plugin_cache_time.inc \
 		plugins/views_plugin_display.inc \
 		plugins/views_plugin_display_attachment.inc \
 		plugins/views_plugin_display_block.inc \
 		plugins/views_plugin_display_default.inc \
 		plugins/views_plugin_display_feed.inc \
 		plugins/views_plugin_display_page.inc \
-		plugins/views_plugin_row.inc \
 		plugins/views_plugin_row_fields.inc \
 		plugins/views_plugin_style.inc \
 		plugins/views_plugin_style_default.inc \
@@ -332,12 +349,15 @@ MODULE_FILES=	css/views-admin.css \
 		theme/views-view-table.tpl.php \
 		theme/views-view-unformatted.tpl.php \
 		theme/views-view.tpl.php \
-		translations/views.pot \
+		translations/uk-ua.po \
 		translations/de.po \
 		translations/eo.po \
 		translations/fr.po \
 		translations/it.po \
+		translations/pl.po \
 		translations/sv.po \
+		translations/views.pot \
+		translations/uk.po \
 		views_export/views_export.css \
 		views_export/views_export.info \
 		views_export/views_export.module
