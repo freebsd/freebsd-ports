@@ -6,34 +6,38 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.0.6
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	BERLIOS
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook for the GNOME 2 desktop
 
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+
 USE_BZIP2=	yes
-USE_GNOME=	gconf2 gnomehack gnomeprefix gnometarget libglade2
+USE_GNOME=	gconf2 gnomehack gnomeprefix libglade2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_AUTOTOOLS=	libtool:22
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 GCONF_SCHEMAS=	rubrica2.schemas
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-Wall -g|-Wall|g ; \
-		 s|-Wmissing-prototypes -g|-Wmissing-prototypes|g ; \
-		 s|@RUBRICA_FILE_|@FILE_|g'
+		 s|-Wmissing-prototypes -g|-Wmissing-prototypes|g'
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
 
 post-install:
+	@${LN} -sf ${LOCALBASE}/share/icons/gnome \
+		${PREFIX}/share/pixmaps/rubrica2/22x22/hicolor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS CREDITS ChangeLog INSTALL NEWS README TODO

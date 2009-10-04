@@ -1,6 +1,15 @@
---- rubrica2.schemas.in.orig	Thu Aug 16 20:00:44 2007
-+++ rubrica2.schemas.in	Thu Sep  6 21:59:36 2007
-@@ -77,7 +77,7 @@
+--- rubrica2.schemas.in.orig	2008-04-30 18:41:37.000000000 +0900
++++ rubrica2.schemas.in	2009-09-06 12:40:19.000000000 +0900
+@@ -6,7 +6,7 @@
+ 		<applyto>/apps/rubrica2/file_format</applyto>
+ 		<owner>rubrica</owner>
+ 		<type>int</type>
+-		<default>@FILE_FORMAT@</default>
++		<default>@RUBRICA_FILE_FORMAT@</default>
+ 		<locale name="C">
+         		<short>rubrica file format</short>
+       		</locale>
+@@ -88,7 +88,7 @@
  		<key>/schemas/apps/rubrica2/file/load_files</key>
  		<applyto>/apps/rubrica2/file/load_files</applyto>
  		<owner>rubrica</owner>
@@ -9,7 +18,7 @@
  		<default>false</default>
  		<locale name="C">
  			<short>Load addressbooks on startup</short>
-@@ -89,7 +89,8 @@
+@@ -100,7 +100,8 @@
  		<applyto>/apps/rubrica2/file/files</applyto>
  		<owner>rubrica</owner>
  		<type>list</type>
