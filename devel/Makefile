@@ -103,6 +103,7 @@
     SUBDIR += bison
     SUBDIR += bisoncpp
     SUBDIR += bisongen
+    SUBDIR += bmake
     SUBDIR += bnf
     SUBDIR += bnfc
     SUBDIR += boaconstructor
