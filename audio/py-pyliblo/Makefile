@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pyliblo
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	audio python
 MASTER_SITES=	http://das.nasophon.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Python wrapper for the Liblo OSC Library
 
 BUILD_DEPENDS=	pyrex>=0.9.4:${PORTSDIR}/devel/pyrex
