@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kuklomenos
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 OPTIONS=	VORBIS "Enable Ogg/Vorbis support" on
 
-USE_SDL=	sdl mixer
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--datadir=${DATADIR}
