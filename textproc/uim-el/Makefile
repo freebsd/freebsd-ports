@@ -15,6 +15,8 @@ DISTNAME=	uim-${PORTVERSION}
 MAINTAINER=	nobutaka@freebsd.org
 COMMENT?=	Emacs lisp for uim input method library
 
+BROKEN=		does not configure
+
 PROJECTHOST=	uim
 CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
 		uim-el-emacs21-[0-9]*
