@@ -22,8 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-esdtest --disable-dependency-tracking \
 		--disable-rpath --enable-mans
 
-MAN1=		e16.1
-
 .if !defined(WITHOUT_ESOUND)
 USE_GNOME=	esound
 .else
@@ -39,6 +37,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
+MAN1=		e16.1
 CONFIGURE_ARGS+=--enable-docs=yes
 .else
 CONFIGURE_ARGS+=--enable-docs=no
