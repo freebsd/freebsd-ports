@@ -1,26 +1,26 @@
---- src/drivers/oss_seq.c.orig	2008-04-16 20:48:53.000000000 +0200
-+++ src/drivers/oss_seq.c	2008-04-16 20:49:05.000000000 +0200
-@@ -141,7 +141,6 @@
+--- ./src/drivers/oss_seq.c.orig	2009-10-05 14:12:41.000000000 +0200
++++ ./src/drivers/oss_seq.c	2009-10-05 14:14:09.000000000 +0200
+@@ -138,7 +138,6 @@
  #endif
- 	if (num > SEQ_NUM_VOICES)
- 	    return SEQ_NUM_VOICES;
--	GUS_NUMVOICES (dev, num);
- 	break;
-     }
+ 		if (num > SEQ_NUM_VOICES)
+ 			return SEQ_NUM_VOICES;
+-		GUS_NUMVOICES(dev, num);
+ 		break;
+ 	}
  
-@@ -151,7 +150,6 @@
+@@ -147,7 +146,6 @@
  
  static void voicepos(int ch, int pos)
  {
--    GUS_VOICE_POS (dev, ch, pos);
+-	GUS_VOICE_POS(dev, ch, pos);
  }
  
- 
-@@ -204,7 +202,6 @@
+ static void echoback(int msg)
+@@ -194,7 +192,6 @@
  
  static void setpan(struct xmp_context *ctx, int ch, int pan)
  {
--    GUS_VOICEBALA(dev, ch, (pan + 0x80) >> 4)
+-	GUS_VOICEBALA(dev, ch, (pan + 0x80) >> 4)
  }
  
- 
+ static void setbend(int ch, int bend)

@@ -1,14 +1,5 @@
-This is the Extended Module Player, an open source module player for UNIX
-distributed under the terms of the GNU GPL. xmp currently runs on several
-platforms, including ALSA, OSS (for Linux on i386 and Alpha and FreeBSD),
-BSD, SunOS, Solaris, S/Linux and HP-UX.  On PC class machines with GUS or
-AWE cards xmp takes advantage of the  OSS sequencer to play modules  with
-virtually no system load. Using software mixing, xmp plays at rates up to
-48 kHz in mono or stereo, 8 or 16 bits, signed or unsigned, little or big
-endian samples with 32 bit linear interpolation.
-
-The current version of xmp supports many Amiga and PC module formats
-(including packed, Powerpacked and SQSHed modules) -- currently 47 known
-formats.
+The Extended Module Player, or xmp, is a portable command-line module player
+supports over 80 mainstream and obscure module formats from Amiga, Atari,
+Acorn, Apple IIgs and PC.
 
 WWW: http://xmp.sourceforge.net/
