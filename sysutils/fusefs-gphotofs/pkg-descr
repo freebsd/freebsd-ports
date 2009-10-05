@@ -1,0 +1,8 @@
+GPhotoFS is a filesystem client based on libgphoto2 that exposes
+supported cameras as filesystems; while some cameras implement the
+USB Mass Storage class and already appear as filesystems (making
+this program redundant), many use the Picture Transfer Protocol (PTP)
+or some other custom protocol. But as long as the camera is supported
+by libgphoto2, it can be mounted as a filesystem using this program.
+
+WWW: http://www.gphoto.org/
