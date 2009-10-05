@@ -1,3 +1,3 @@
-MD5 (postfix/postfix-2.7-20090712.tar.gz) = da8622117dbf6460735218d0d024bedb
-SHA256 (postfix/postfix-2.7-20090712.tar.gz) = 49c5ae060cdf304eb273071f53a2c55131275632de0d2db803dce5e7b83eb918
-SIZE (postfix/postfix-2.7-20090712.tar.gz) = 3335421
+MD5 (postfix/postfix-2.7-20090828.tar.gz) = e32bb297fa41e36c73160ef09ab9f024
+SHA256 (postfix/postfix-2.7-20090828.tar.gz) = 9e75b2f2b56339ec622ecf50676408dcfa6af5fc68dd77f3a30c66d32db85c6a
+SIZE (postfix/postfix-2.7-20090828.tar.gz) = 3335807
