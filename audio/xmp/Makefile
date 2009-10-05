@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	xmp
-# Date created:		18 September 1999
-# Whom:			Anders Nordby <anders@fix.no>
+# Date created:				18 September 1999
+# Whom:					Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xmp
-PORTVERSION=	2.5.1
+PORTVERSION=	2.7.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -27,9 +27,11 @@ MLINKS=		xmp.1 xxmp.1
 OPTIONS=	XMMS	"Build XMMS plugin" off \
 		ESOUND	"EsounD support" off
 
-CFLAGS+=	-fPIC
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
 
 .if defined(WITH_ESOUND)
 USE_GNOME+=	esound
@@ -40,19 +42,10 @@ CONFIGURE_ARGS+=	--disable-esd
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=	--enable-xmms-plugin
+PLIST_SUB+=		XMMS=""
 .else
 CONFIGURE_ARGS+=	--disable-xmms
+PLIST_SUB+=		XMMS="@comment "
 .endif
-
-post-patch:
-.for f in docs/xmp.1 etc/xmp.conf etc/xmp-modules.conf
-	@${REINPLACE_CMD} -e "s|/etc/xmp|${PREFIX}/etc/xmp|g" ${WRKSRC}/${f}
-.endfor
-	@${REINPLACE_CMD} -E -e 's|(^DDIRS.*)etc|\1|' ${WRKSRC}/Makefile
-
-post-install:
-	@${MKDIR} ${PREFIX}/etc/xmp
-	@${INSTALL_DATA} ${WRKSRC}/etc/xmp.conf ${PREFIX}/etc/xmp/xmp.conf.default
-	@${INSTALL_DATA} ${WRKSRC}/etc/xmp-modules.conf ${PREFIX}/etc/xmp/xmp-modules.conf.default
 
 .include <bsd.port.post.mk>
