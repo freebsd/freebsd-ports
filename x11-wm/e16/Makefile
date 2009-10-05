@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	e16
-DISTVERSION=	1.0.0.901
+DISTVERSION=	1.0.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
