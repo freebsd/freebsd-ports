@@ -39,6 +39,8 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+post-configure:
+	@${REINPLACE_CMD} -e 's|-Wl.*||' ${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
