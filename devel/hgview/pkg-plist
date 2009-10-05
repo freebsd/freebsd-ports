@@ -1,5 +1,7 @@
 bin/hgview
 %%PYTHON_SITELIBDIR%%/hgext/hgview.py
+%%PYTHON_SITELIBDIR%%/hgext/hgview.pyc
+%%PYTHON_SITELIBDIR%%/hgext/hgview.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/__init__.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/__init__.pyo
@@ -15,6 +17,9 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/hggraph.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/hggraph.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/hggraph.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgviewhelp.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgviewhelp.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/hgviewhelp.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/__init__.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/__init__.pyo
@@ -27,6 +32,12 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/fileviewer_ui.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/fileviewer_ui.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/fileviewer_ui.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/helpviewer.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/helpviewer.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/helpviewer.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/helpviewer_ui.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/helpviewer_ui.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/helpviewer_ui.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgdialogmixin.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgdialogmixin.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgdialogmixin.pyo
