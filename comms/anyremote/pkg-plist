@@ -33,7 +33,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/noatun.cfg
 %%DATADIR%%/cfg-data/Server-mode/gnomeradio.cfg
 %%DATADIR%%/cfg-data/Server-mode/customizeClient2.cfg
-%%DATADIR%%/cfg-data/Server-mode/elisa.cfg
 %%DATADIR%%/cfg-data/Server-mode/xmms.cfg
 %%DATADIR%%/cfg-data/Server-mode/kmplayer.cfg
 %%DATADIR%%/cfg-data/Server-mode/iconUpload.cfg
@@ -89,11 +88,15 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/kscd2.cfg
 %%DATADIR%%/cfg-data/Server-mode/impressive.cfg
 %%DATADIR%%/cfg-data/Server-mode/autoUpload.cfg
+%%DATADIR%%/cfg-data/Server-mode/moovida.cfg
 %%DATADIR%%/cfg-data/Utils/gradient.png
 %%DATADIR%%/cfg-data/Utils/message.sh
 %%DATADIR%%/cfg-data/Utils/all-in-1.py
 %%DATADIR%%/cfg-data/Utils/xmms_is_playing
 %%DATADIR%%/cfg-data/Utils/winampgui.tar.gz
+%%DATADIR%%/cfg-data/Utils/aliases-at.cfg
+%%DATADIR%%/cfg-data/Utils/aliases-bemused.cfg
+%%DATADIR%%/cfg-data/Utils/aliases-server.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/exaile.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/juk.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/quodlibet.cfg
@@ -171,6 +174,17 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/32/record.png
 %%DATADIR%%/cfg-data/Icons/32/exit.png
 %%DATADIR%%/cfg-data/Icons/32/info.png
+%%DATADIR%%/cfg-data/Icons/48/bottom.png
+%%DATADIR%%/cfg-data/Icons/48/eject.png
+%%DATADIR%%/cfg-data/Icons/48/exit.png
+%%DATADIR%%/cfg-data/Icons/48/favorites.png
+%%DATADIR%%/cfg-data/Icons/48/first.png
+%%DATADIR%%/cfg-data/Icons/48/info.png
+%%DATADIR%%/cfg-data/Icons/48/last.png
+%%DATADIR%%/cfg-data/Icons/48/launch.png
+%%DATADIR%%/cfg-data/Icons/48/ok.png
+%%DATADIR%%/cfg-data/Icons/48/record.png
+%%DATADIR%%/cfg-data/Icons/48/top.png
 %%DATADIR%%/cfg-data/Icons/64/favorites.png
 %%DATADIR%%/cfg-data/Icons/64/bottom.png
 %%DATADIR%%/cfg-data/Icons/64/eject.png
@@ -194,6 +208,7 @@ bin/anyremote
 @dirrm %%DATADIR%%/cfg-data/Bemused-emulation
 @dirrm %%DATADIR%%/cfg-data/Icons/16
 @dirrm %%DATADIR%%/cfg-data/Icons/32
+@dirrm %%DATADIR%%/cfg-data/Icons/48
 @dirrm %%DATADIR%%/cfg-data/Icons/64
 @dirrm %%DATADIR%%/cfg-data/Icons
 @dirrm %%DATADIR%%/cfg-data/iViewer
@@ -388,6 +403,7 @@ bin/anyremote
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/event.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/icon-themes.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/iviewer.html
+%%PORTDOCS%%%%DOCSDIR%%/doc-html/dbus.html
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README

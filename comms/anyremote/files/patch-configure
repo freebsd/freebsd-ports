@@ -1,0 +1,11 @@
+--- configure.orig	2009-07-15 23:08:34.000000000 +0300
++++ configure	2009-10-05 06:26:25.000000000 +0300
+@@ -6584,7 +6584,7 @@
+ 
+ 
+   pkg_config_args=glib-2.0
+-  for module in .
++  for module in . gthread 
+   do
+       case "$module" in
+          gmodule)

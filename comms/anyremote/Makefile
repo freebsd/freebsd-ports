@@ -6,16 +6,28 @@
 #
 
 PORTNAME=	anyremote
-PORTVERSION=	4.18.1
+PORTVERSION=	5.0
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Remote control service over Bluetooth, infrared or tcp/ip networking
 
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+OPTIONS=	DBUS		"Build with DBUS support" on \
+		X11		"Build with X11 library" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_DBUS)
+CONFIGURE_ARGS+=--disable-dbus
+.else
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+.endif
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--disable-xtest
@@ -34,4 +46,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/doc\/${PORTNAME}/d' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
