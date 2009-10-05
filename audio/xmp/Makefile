@@ -10,7 +10,7 @@ PORTVERSION=	2.5.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
 
 USE_GMAKE=	yes
