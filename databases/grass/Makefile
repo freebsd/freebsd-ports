@@ -49,6 +49,7 @@ USE_TK=		yes
 USE_TK_BUILD=	yes
 PATCH_TCL_SCRIPTS=lib/init/init.sh
 PATCH_TK_SCRIPTS=lib/init/init.sh
+MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=
 GNU_CONFIGURE=	yes
