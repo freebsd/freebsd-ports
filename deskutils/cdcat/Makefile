@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 
 DISTNAME=	CdCat-${PORTVERSION}
 
-MAINTAINER=	aren.tyr@gawab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT based tool for offline CD/DVD/disk catalogs
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
