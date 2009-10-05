@@ -1084,6 +1084,7 @@ bluegps                         ports/comms/bluegps
 bluej                           ports/java/bluej
 bluez-firmware                  ports/comms/bluez-firmware
 blwm                            ports/x11-wm/blwm
+bmake                           ports/devel/bmake
 bmeps                           ports/graphics/bmeps
 bmf                             ports/mail/bmf
 bmon                            ports/net/bmon
@@ -5035,6 +5036,7 @@ gweled                          ports/games/gweled
 gwenhywfar                      ports/devel/gwenhywfar
 gwenview                        ports/graphics/gwenview
 gwenview-i18n                   ports/misc/gwenview-i18n
+gwget                           ports/ftp/gwget
 gwhich                          ports/misc/gwhich
 gwhois                          ports/net/gwhois
 gworkspace                      ports/deskutils/gworkspace
@@ -23015,6 +23017,7 @@ unison                          ports/net/unison
 unison-devel                    ports/net/unison-devel
 unison-nox11                    ports/net/unison-nox11
 uniutils                        ports/sysutils/uniutils
+universalindentgui              ports/devel/universalindentgui
 unix2dos                        ports/converters/unix2dos
 unix2tcp                        ports/net/unix2tcp
 unixODBC                        ports/databases/unixODBC
