@@ -7,6 +7,7 @@
 
 PORTNAME=	HTTP-Recorder
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LE/LEIRA
@@ -23,5 +24,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Recorder.3
+
+post-patch:
+	${RM} -f ${WRKSRC}/lib/HTTP/Recorder.pm.orig
 
 .include <bsd.port.mk>
