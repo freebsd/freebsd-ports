@@ -22,7 +22,8 @@ USE_SDL=	sdl
 MANCOMPRESSED=	no
 
 MAKE_ARGS=	INCDIR=${LOCALBASE}/include LIBDIR=${LOCALBASE}/lib \
-		SDL_LIBS=-lSDL MB_LIBS=-lmusicbrainz NCURSES_LIBS=-lncursesw
+		SDL_LIBS=-lSDL MB_LIBS=-lmusicbrainz \
+		NCURSES_LIBS="-lncursesw ${PTHREAD_LIBS}"
 
 PLIST_FILES=	bin/etcd
 
