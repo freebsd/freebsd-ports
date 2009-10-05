@@ -20,7 +20,10 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		exiv2:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \
 		boost_date_time:${PORTSDIR}/devel/boost-libs \
-		GLEW:${PORTSDIR}/graphics/glew
+		GLEW:${PORTSDIR}/graphics/glew \
+		glut:${PORTSDIR}/graphics/libglut \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		Imath:${PORTSDIR}/graphics/ilmbase
 # gmake is really needed at _runtime_, do not remove it from below
 RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
