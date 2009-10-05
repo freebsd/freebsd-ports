@@ -253,7 +253,6 @@
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fur
     SUBDIR += fusefs-gnome-vfs
-    SUBDIR += fusefs-gphotofs
     SUBDIR += fusefs-gstfs
     SUBDIR += fusefs-gunzip
     SUBDIR += fusefs-httpfs
