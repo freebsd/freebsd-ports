@@ -63,6 +63,13 @@ LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
+.if defined(WITH_NSS)
+CONFIGURE_ARGS+=	--with-nss="${LOCALBASE}" --with-nspr="${LOCALBASE}"
+LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
+.else
+CONFIGURE_ARGS+=	--without-nss
+.endif
+
 CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 
 post-patch:
@@ -85,16 +92,17 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's,total_time.*/ 1000),total_time*1000/CLOCKS_PER_SEC,' \
 		${WRKSRC}/apps/xmlsec.c
+.if defined(WITH_GNUTLS)
+# Don't rely on broken autodetection
+	@${REINPLACE_CMD} -e '/^GNUTLS_FOUND/s/no/yes/' \
+	    -e '/^GNUTLS_LIBS=/s,"","-L${LOCALBASE}/lib -lgnutls",' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 .if defined(WITH_NSS)
-	# Makeing the xmlsec1 executable multi-threaded to let load -lnss,
-	# when needed.
+# Makeing the xmlsec1 executable multi-threaded to let load -lnss,
+# when needed.
 	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib ${PTHREAD_LIBS}\\,' \
 		${WRKSRC}/apps/Makefile.in
-
-CONFIGURE_ARGS+=	--with-nss="${LOCALBASE}" --with-nspr="${LOCALBASE}"
-LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
-.else
-CONFIGURE_ARGS+=	--without-nss
 .endif
 
 .include <bsd.port.post.mk>
