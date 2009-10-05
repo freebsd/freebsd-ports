@@ -26,6 +26,8 @@ etc/jabberd/templates/roster.xml.dist
 %%SUB_BDB%%lib/jabberd/authreg_db.so
 %%SUB_LDAP%%lib/jabberd/authreg_ldap.la
 %%SUB_LDAP%%lib/jabberd/authreg_ldap.so
+%%SUB_LDAP%%lib/jabberd/authreg_ldapfull.la
+%%SUB_LDAP%%lib/jabberd/authreg_ldapfull.so
 %%SUB_MYSQL%%lib/jabberd/authreg_mysql.la
 %%SUB_MYSQL%%lib/jabberd/authreg_mysql.so
 %%SUB_PAM%%lib/jabberd/authreg_pam.la
@@ -112,6 +114,8 @@ lib/jabberd/mod_validate.so.0
 %%SUB_FS%%lib/jabberd/storage_fs.so
 %%SUB_BDB%%lib/jabberd/storage_db.la
 %%SUB_BDB%%lib/jabberd/storage_db.so
+%%SUB_LDAP%%lib/jabberd/storage_ldapvcard.la
+%%SUB_LDAP%%lib/jabberd/storage_ldapvcard.so
 %%SUB_MYSQL%%lib/jabberd/storage_mysql.la
 %%SUB_MYSQL%%lib/jabberd/storage_mysql.so
 %%SUB_PGSQL%%lib/jabberd/storage_pgsql.la
