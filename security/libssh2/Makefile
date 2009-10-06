@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
@@ -18,14 +18,16 @@ COMMENT=	A library implementing the SSH2 protocol
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+OPTIONS=	GCRYPT "Use libgcrypt instead of OpenSSL" off
 
-PLIST_FILES=	include/libssh2.h \
-		include/libssh2_publickey.h \
-		include/libssh2_sftp.h \
-		lib/libssh2.so \
-		lib/libssh2.so.1 \
-		lib/libssh2.la \
-		lib/libssh2.a
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GCRYPT)
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=	--with-libgcrypt -with-libgcrypt-prefix=${LOCALBASE} --without-openssl
+CFLAGS+=-I${LOCALBASE}/include
+LDFLAGS+=-L${LOCALBASE}/lib
+.endif
 
 MAN3=	libssh2_banner_set.3 \
 	libssh2_base64_decode.3 \
@@ -125,5 +127,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/ssh2_sample\.o/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|SHLIB_SUFFIX_NAME@ |SHLIB_SUFFIX_NAME@.0 |g' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
