@@ -6,4 +6,3 @@ lib/libssh2.so.1
 lib/libssh2.la
 lib/libssh2.a
 libdata/pkgconfig/libssh2.pc
-@dirrmtry libdata/pkgconfig
