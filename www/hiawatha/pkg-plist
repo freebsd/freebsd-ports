@@ -4,12 +4,13 @@ sbin/hiawatha
 sbin/newroot
 sbin/php-fcgi
 sbin/wigwam
+%%ETCDIR%%/index.xslt
 @unexec if cmp -s %D/etc/hiawatha/cgi-wrapper.conf.sample %D/etc/hiawatha/cgi-wrapper.conf ; then rm -f %D/etc/hiawatha/cgi-wrapper.conf; fi
 %%ETCDIR%%/cgi-wrapper.conf.sample
 @exec if [ ! -f %D/etc/hiawatha/cgi-wrapper.conf ] ; then cp -p %D/%F %%ETCDIR%%/cgi-wrapper.conf; fi
-@unexec if cmp -s %D/etc/hiawatha/httpd.conf.sample %D/etc/hiawatha/httpd.conf ; then rm -f %D/etc/hiawatha/httpd.conf; fi
-%%ETCDIR%%/httpd.conf.sample
-@exec if [ ! -f %D/etc/hiawatha/httpd.conf ] ; then cp -p %D/%F %%ETCDIR%%/httpd.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/hiawatha.conf.sample %D/etc/hiawatha/hiawatha.conf ; then rm -f %D/etc/hiawatha/hiawatha.conf; fi
+%%ETCDIR%%/hiawatha.conf.sample
+@exec if [ ! -f %D/etc/hiawatha/hiawatha.conf ] ; then cp -p %D/%F %%ETCDIR%%/hiawatha.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/mimetype.conf.sample %D/etc/hiawatha/mimetype.conf ; then rm -f %D/etc/hiawatha/mimetype.conf; fi
 %%ETCDIR%%/mimetype.conf.sample
 @exec if [ ! -f %D/etc/hiawatha/mimetype.conf ] ; then cp -p %D/%F %%ETCDIR%%/mimetype.conf; fi
