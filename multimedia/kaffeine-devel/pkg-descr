@@ -1,0 +1,12 @@
+kaffeine is a xine-based multimedia player for KDE.
+
+* Full Drag and Drop support
+* Import Noatun-playlists as well as M3U, ASX and PLS-Files
+* Editable Playlist
+* Export Playlist to HTML or PDF (KDE-Print)
+* Edit Xine-Options via GUI
+* Support for saving screenshots as PNG, BMP or XBM
+* The ability to prevent the screensaver from activating OSD Titles
+
+Author:	Juergen Kofler <kaffeine@gmx.net>
+WWW:	http://kaffeine.sourceforge.net/

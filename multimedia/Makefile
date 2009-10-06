@@ -115,6 +115,7 @@
     SUBDIR += jmref
     SUBDIR += k9copy
     SUBDIR += kaffeine
+    SUBDIR += kaffeine-devel
     SUBDIR += kaffeine-mozilla
     SUBDIR += katchtv
     SUBDIR += kbtv

@@ -1,0 +1,99 @@
+bin/kaffeine
+lib/kde4/kaffeinedvb.so
+share/applications/kde4/kaffeine.desktop
+share/apps/kaffeine/scanfile.dvb
+share/apps/solid/actions/kaffeine_play_audiocd.desktop
+share/apps/solid/actions/kaffeine_play_dvd.desktop
+share/apps/solid/actions/kaffeine_play_videocd.desktop
+share/icons/oxygen/16x16/actions/audio-radio-encrypted.png
+share/icons/oxygen/16x16/actions/video-television-encrypted.png
+share/icons/oxygen/22x22/actions/audio-radio-encrypted.png
+share/icons/oxygen/22x22/actions/video-television-encrypted.png
+share/icons/oxygen/32x32/actions/audio-radio-encrypted.png
+share/icons/oxygen/32x32/actions/video-television-encrypted.png
+share/icons/oxygen/48x48/actions/audio-radio-encrypted.png
+share/icons/oxygen/48x48/actions/video-television-encrypted.png
+share/locale/cs/LC_MESSAGES/kaffeine.mo
+share/locale/da/LC_MESSAGES/kaffeine.mo
+share/locale/de/LC_MESSAGES/kaffeine.mo
+share/locale/el/LC_MESSAGES/kaffeine.mo
+share/locale/en_GB/LC_MESSAGES/kaffeine.mo
+share/locale/es/LC_MESSAGES/kaffeine.mo
+share/locale/et/LC_MESSAGES/kaffeine.mo
+share/locale/fi/LC_MESSAGES/kaffeine.mo
+share/locale/fr/LC_MESSAGES/kaffeine.mo
+share/locale/ga/LC_MESSAGES/kaffeine.mo
+share/locale/gl/LC_MESSAGES/kaffeine.mo
+share/locale/hu/LC_MESSAGES/kaffeine.mo
+share/locale/it/LC_MESSAGES/kaffeine.mo
+share/locale/ja/LC_MESSAGES/kaffeine.mo
+share/locale/km/LC_MESSAGES/kaffeine.mo
+share/locale/ko/LC_MESSAGES/kaffeine.mo
+share/locale/ku/LC_MESSAGES/kaffeine.mo
+share/locale/lt/LC_MESSAGES/kaffeine.mo
+share/locale/mai/LC_MESSAGES/kaffeine.mo
+share/locale/nb/LC_MESSAGES/kaffeine.mo
+share/locale/nds/LC_MESSAGES/kaffeine.mo
+share/locale/nl/LC_MESSAGES/kaffeine.mo
+share/locale/nn/LC_MESSAGES/kaffeine.mo
+share/locale/pa/LC_MESSAGES/kaffeine.mo
+share/locale/pl/LC_MESSAGES/kaffeine.mo
+share/locale/pt/LC_MESSAGES/kaffeine.mo
+share/locale/pt_BR/LC_MESSAGES/kaffeine.mo
+share/locale/ro/LC_MESSAGES/kaffeine.mo
+share/locale/ru/LC_MESSAGES/kaffeine.mo
+share/locale/se/LC_MESSAGES/kaffeine.mo
+share/locale/sk/LC_MESSAGES/kaffeine.mo
+share/locale/sv/LC_MESSAGES/kaffeine.mo
+share/locale/th/LC_MESSAGES/kaffeine.mo
+share/locale/tr/LC_MESSAGES/kaffeine.mo
+share/locale/uk/LC_MESSAGES/kaffeine.mo
+share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
+share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
+@dirrm share/apps/kaffeine
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/sq/LC_MESSAGES
+@dirrmtry share/locale/sq
+@dirrmtry share/locale/sr@Latn/LC_MESSAGES
+@dirrmtry share/locale/sr@Latn
+@dirrmtry share/locale/ta/LC_MESSAGES
+@dirrmtry share/locale/ta
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/icons/oxygen/48x48/actions
+@dirrmtry share/icons/oxygen/48x48
+@dirrmtry share/icons/oxygen/32x32/actions
+@dirrmtry share/icons/oxygen/32x32
+@dirrmtry share/icons/oxygen/22x22/actions
+@dirrmtry share/icons/oxygen/22x22
+@dirrmtry share/icons/oxygen/16x16/actions
+@dirrmtry share/icons/oxygen/16x16
+@dirrmtry share/apps/solid/actions
+@dirrmtry share/apps/solid
