@@ -2532,3 +2532,4 @@
 @dirrmtry %%CGIDIR%%/db
 @dirrmtry %%CGIDIR%%
 @dirrmtry %%DATADIR%%
+@dirrmtry www/cgi-bin
