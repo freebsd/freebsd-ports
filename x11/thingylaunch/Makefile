@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thingylaunch
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
 		http://people.freebsd.org/~gahr/distfiles/ \
