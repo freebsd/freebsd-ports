@@ -7,12 +7,12 @@
 
 PORTNAME=	MT
 PORTVERSION=	4.320
-CATEGORIES=	www
+CATEGORIES?=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION:S/0$//}-en
 
-MAINTAINER=	arved@FreeBSD.org
-COMMENT=	A web-based personal publishing system for weblogs
+MAINTAINER?=	arved@FreeBSD.org
+COMMENT?=	A web-based personal publishing system for weblogs
 
 CONFLICTS?=	ja-MT-[2-4].* fr-MT-[2-4].* de-MT-[2-4].* es-MT-[2-4].* nl-MT-[2-4].*
 
