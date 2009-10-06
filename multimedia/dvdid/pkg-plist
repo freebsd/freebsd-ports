@@ -7,32 +7,32 @@ lib/libdvdid.a
 lib/libdvdid.la
 lib/libdvdid.so
 lib/libdvdid.so.0
-%%PORTDOCS%%%%DOCSDIR%%/dvdid.tag
-%%PORTDOCS%%%%DOCSDIR%%/html/api/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/classes.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/doxygen.css
-%%PORTDOCS%%%%DOCSDIR%%/html/api/doxygen.png
-%%PORTDOCS%%%%DOCSDIR%%/html/api/dvdid2_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/dvdid2_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/dvdid_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/dvdid_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/export_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/export_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/files.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/functions_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/globals.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/globals_defs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/globals_enum.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/globals_eval.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/globals_func.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/globals_type.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/structdvdid__fileinfo__s.html
-%%PORTDOCS%%%%DOCSDIR%%/html/api/tab_b.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/api/tab_l.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/api/tab_r.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/api/tabs.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/dvdid.tag
+%%DOCSDIR%%/html/api/annotated.html
+%%DOCSDIR%%/html/api/classes.html
+%%DOCSDIR%%/html/api/doxygen.css
+%%DOCSDIR%%/html/api/doxygen.png
+%%DOCSDIR%%/html/api/dvdid2_8h.html
+%%DOCSDIR%%/html/api/dvdid2_8h_source.html
+%%DOCSDIR%%/html/api/dvdid_8h.html
+%%DOCSDIR%%/html/api/dvdid_8h_source.html
+%%DOCSDIR%%/html/api/export_8h.html
+%%DOCSDIR%%/html/api/export_8h_source.html
+%%DOCSDIR%%/html/api/files.html
+%%DOCSDIR%%/html/api/functions.html
+%%DOCSDIR%%/html/api/functions_vars.html
+%%DOCSDIR%%/html/api/globals.html
+%%DOCSDIR%%/html/api/globals_defs.html
+%%DOCSDIR%%/html/api/globals_enum.html
+%%DOCSDIR%%/html/api/globals_eval.html
+%%DOCSDIR%%/html/api/globals_func.html
+%%DOCSDIR%%/html/api/globals_type.html
+%%DOCSDIR%%/html/api/index.html
+%%DOCSDIR%%/html/api/structdvdid__fileinfo__s.html
+%%DOCSDIR%%/html/api/tab_b.gif
+%%DOCSDIR%%/html/api/tab_l.gif
+%%DOCSDIR%%/html/api/tab_r.gif
+%%DOCSDIR%%/html/api/tabs.css
+@dirrm %%DOCSDIR%%/html/api
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
