@@ -400,7 +400,7 @@ diff()
 commit()
 {
 	log "running cvs update"
-	${PCVS} up ports 2>&1 |${PAGER:-less}
+	${PCVS} -fnq up ports 2>&1 |${PAGER:-less}
 
 	answer=`ask "do you want to commit?"`
 
@@ -528,7 +528,7 @@ done
 # the diff afterwards
 answer=y
 while [ "${answer}" = "y" ] ; do
-	diffout=`diff`
+	diffout=diff
 
 	# EDITOR instead of PAGER because vim has nice syntax highlighting ;-)
 	${EDITOR} ${diffout}
