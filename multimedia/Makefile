@@ -40,6 +40,7 @@
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
     SUBDIR += dvdauthorwizard
+    SUBDIR += dvdid
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
     SUBDIR += dvts
