@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/ \
 		http://dl.snort.org/snort-current/ \
@@ -34,6 +34,7 @@ USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIG_DIR?=	${PREFIX}/etc/snort
 CONFIG_FILES=	classification.config gen-msg.map reference.config \
