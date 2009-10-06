@@ -1,0 +1,22 @@
+#
+# Directives to allow use of %%PACKAGENAME%% as a CGI
+#
+<IfModule alias_module>
+	Alias /MT "%%DATADIR%%/mt-static"
+	ScriptAlias /MTcgi "%%CGIDIR%%"
+</IfModule>
+
+#
+# This is to permit URL access to scripts/files in %%PACKAGENAME%% directory.
+#
+<Directory "%%CGIDIR%%">
+	Options None
+	Order allow,deny
+	Allow from all
+</Directory>
+<Directory "%%DATADIR%%/mt-static">
+	Options None
+	Order allow,deny
+	Allow from all
+</Directory>
+
