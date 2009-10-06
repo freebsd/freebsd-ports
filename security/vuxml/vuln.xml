@@ -35,6 +35,46 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="90d2e58f-b25a-11de-8c83-02e0185f8d72">
+    <topic>FreeBSD -- kqueue pipe race conditions</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.4_7</lt></range>
+	<range><gt>6.4</gt><lt>6.3_13</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>A race condition exists in the pipe close() code relating
+	  to kqueues, causing use-after-free for kernel memory, which
+	  may lead to an exploitable NULL pointer vulnerability in the
+	  kernel, kernel memory corruption, and other unpredictable
+	  results.</p>
+	<h1>Impact:</h1>
+	<p>Successful exploitation of the race condition can lead to
+	  local kernel privilege escalation, kernel data corruption
+	  and/or crash.</p>
+	<p>To exploit this vulnerability, an attacker must be able to
+	  run code on the target system.</p>
+	<h1>Workaround</h1>
+	<p>An errata notice, FreeBSD-EN-09:05.null has been released
+	  simultaneously to this advisory, and contains a kernel patch
+	  implementing a workaround for a more broad class of
+	  vulnerabilities.  However, prior to those changes, no
+	  workaround is available.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-09:13.pipe</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2009-10-02</discovery>
+      <entry>2009-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="beb6f4a8-add5-11de-8b55-0030843d3802">
     <topic>mybb -- multiple vulnerabilities</topic>
     <affects>
