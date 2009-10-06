@@ -1,0 +1,4 @@
+Library and executable for calculating dvdids as returned by Windows' 
+IDvdInfo2::GetDiscID.
+
+WWW:	http://www.srcf.ucam.org/~cjk32/dvdid/
