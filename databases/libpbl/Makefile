@@ -6,29 +6,29 @@
 #
 
 PORTNAME=	libpbl
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mission-base.com/peter/source/
-DISTNAME=	pbl_1_03
+DISTNAME=	pbl_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Peter Graf's Program Base Library
 
-ALL_TARGET=	libpbl.a
 MAKEFILE=	makefile
 PLIST_FILES=	lib/libpbl.a include/pbl.h
+MAKE_JOBS_SAFE=	yes
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 post-extract:
-	@${REINPLACE_CMD} -e 's/=  -Wall -O3/+=  -Wall/' \
-		-e 's/^CC=/CC?=/' ${WRKSRC}/makefile
-	@${REINPLACE_CMD} -e 's/%d/%zd/' ${WRKSRC}/pbl.c
+	@${REINPLACE_CMD} -e 's/=  -Wall -O3/+=  -Wall -Werror/' \
+		-e 's/^CC=/CC?=/' -e '/^.rm -f/d' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's/%d/%zd/' -e 's/(int)size/size/' ${WRKSRC}/pbl.c
 	@${REINPLACE_CMD} -e 's/dir\.h/dirent\.h/' ${WRKSRC}/pbl.h
 	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib\.h/' \
-		${WRKSRC}/pbl.c ${WRKSRC}/pblhash.c
+		${WRKSRC}/*.c
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libpbl.a ${LOCALBASE}/lib
@@ -40,10 +40,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
+post-build test regression-test check:
+	${MAKE} -C ${WRKSRC} test
 
-.if ${OSVERSION} >= 700000
-BROKEN=		does not work with databases > ~200 MB (see ports/130236)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
