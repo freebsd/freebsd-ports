@@ -6,17 +6,26 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	4.310
+PORTVERSION=	4.320
 CATEGORIES=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/stable/
-DISTNAME=	MTOS-4.31-en
+DISTNAME?=	MTOS-${PORTVERSION:S/0$//}-en
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A web-based personal publishing system for weblogs
 
+CONFLICTS?=	ja-MT-[2-4].* fr-MT-[2-4].* de-MT-[2-4].* es-MT-[2-4].* nl-MT-[2-4].*
+
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+
+OPTIONS=	APACHE			"USE_APACHE"		off\
+		MYSQL			"USE_MYSQL"		off\
+		POSTGRES		"USE_POSTGRES"		off\
+		OPTIONAL_MODULES	"OPTIONAL_MODULES"	on
+
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
@@ -51,6 +60,23 @@ PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
+.if defined(WITH_APACHE)
+USE_APACHE=	2.0+
+SUB_FILES+=	MT.conf
+SUB_LIST+=	DATADIR=${PREFIX}/${DATADIR} CGIDIR=${PREFIX}/${CGIDIR} \
+		APACHEETCDIR=${PREFIX}/${APACHEETCDIR} \
+		PACKAGENAME=${PKGNAMEPREFIX}${PORTNAME}
+PLIST_FILES+=	${APACHEETCDIR}/Includes/MT.conf
+.endif
+
+.if defined(JAPANESE)
+PLIST_SUB+=	LANG_EN="@comment " \
+		LANG_JA=""
+.else
+PLIST_SUB+=	LANG_EN="" \
+		LANG_JA="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
@@ -62,7 +88,12 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 pre-everything::
 	@${ECHO_CMD} "ATTENTION:"
 	@${ECHO_CMD} "If you are upgrading from an older version of MT"
-	@${ECHO_CMD} "please read http://www.movabletype.org/documentation/upgrade/"
+.if defined(JAPANESE)
+	@${ECHO_CMD} "please read http://movabletype.jp/documentation/upgrade/"
+.else
+	@${ECHO_CMD} "please read http://movabletype.org/documentation/upgrade/"
+.endif
+
 	@${ECHO_CMD} "BEFORE installing this port"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Available switches:"
@@ -83,13 +114,17 @@ pre-everything::
 	@${ECHO_CMD} "WITH_POSTGRES"
 	@${ECHO_CMD} "		- Use PostgreSQL as database backend"
 .endif
+.if defined(WITH_APACHE)
+PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}/Includes"
+PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}"
+.endif
 
 do-install:
 	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
 	@${ECHO_MSG} "Installing cgi under ${PREFIX}/${CGIDIR}/"
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi mt-config.cgi-original \
-	  extlib default_templates  extlib import lib php plugins search_templates \
+	  alt-tmpl default_templates extlib import lib php plugins search_templates \
 	  tmpl tools ${PREFIX}/${CGIDIR}
 	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}/"
 	@${MKDIR} ${PREFIX}/${DATADIR}
@@ -102,7 +137,21 @@ do-install:
 	@${CHOWN} -R www:www ${PREFIX}/${CGIDIR} ${PREFIX}/${DATADIR}
 
 post-install:
+	@${ECHO_MSG} "*****************************************************************"
+.if defined(WITH_APACHE)
+	@${ECHO_MSG} "Please add the following to your apache config, and restart."
 	@${ECHO_CMD} ""
-	@${ECHO_MSG} "Please read the documentation: http://www.movabletype.org/documentation/"
+	@${CAT} ${WRKDIR}/MT.conf
+	@${ECHO_CMD} ""
+	@${MKDIR} ${PREFIX}/${APACHEETCDIR}/Includes
+	@${INSTALL_DATA} ${WRKDIR}/MT.conf ${PREFIX}/${APACHEETCDIR}/Includes/MT.conf
+.else
+	@${ECHO_CMD} ""
+.endif
+.if defined(JAPANESE)
+	@${ECHO_MSG} "Please read the documentation: http://movabletype.jp/documentation/"
+.else
+	@${ECHO_MSG} "Please read the documentation: http://movabletype.org/documentation/"
+.endif
 
 .include <bsd.port.post.mk>
