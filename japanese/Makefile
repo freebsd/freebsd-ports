@@ -7,6 +7,7 @@
     SUBDIR += CGdic-fpw
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
+    SUBDIR += MT
     SUBDIR += VTPSfont
     SUBDIR += Wnn6
     SUBDIR += Wnn6-lib
