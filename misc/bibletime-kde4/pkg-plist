@@ -388,6 +388,26 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/howto/cs/h2-rules-parables.html
 %%DATADIR%%/docs/howto/cs/h2-rules.html
 %%DATADIR%%/docs/howto/cs/index.html
+%%DATADIR%%/docs/howto/da/h2-basics-approaches.html
+%%DATADIR%%/docs/howto/da/h2-basics-expository.html
+%%DATADIR%%/docs/howto/da/h2-basics-interpretation.html
+%%DATADIR%%/docs/howto/da/h2-basics-types.html
+%%DATADIR%%/docs/howto/da/h2-basics-worksheet.html
+%%DATADIR%%/docs/howto/da/h2-basics.html
+%%DATADIR%%/docs/howto/da/h2-importance-breathed.html
+%%DATADIR%%/docs/howto/da/h2-importance-exhortations.html
+%%DATADIR%%/docs/howto/da/h2-importance-liberates.html
+%%DATADIR%%/docs/howto/da/h2-importance-once.html
+%%DATADIR%%/docs/howto/da/h2-importance-supplement.html
+%%DATADIR%%/docs/howto/da/h2-importance-wars.html
+%%DATADIR%%/docs/howto/da/h2-importance-works.html
+%%DATADIR%%/docs/howto/da/h2-importance.html
+%%DATADIR%%/docs/howto/da/h2-rules-context.html
+%%DATADIR%%/docs/howto/da/h2-rules-hcontest.html
+%%DATADIR%%/docs/howto/da/h2-rules-normal.html
+%%DATADIR%%/docs/howto/da/h2-rules-parables.html
+%%DATADIR%%/docs/howto/da/h2-rules.html
+%%DATADIR%%/docs/howto/da/index.html
 %%DATADIR%%/docs/howto/de/h2-basics-approaches.html
 %%DATADIR%%/docs/howto/de/h2-basics-expository.html
 %%DATADIR%%/docs/howto/de/h2-basics-interpretation.html
@@ -428,6 +448,26 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/howto/en/h2-rules-parables.html
 %%DATADIR%%/docs/howto/en/h2-rules.html
 %%DATADIR%%/docs/howto/en/index.html
+%%DATADIR%%/docs/howto/es/h2-basics-approaches.html
+%%DATADIR%%/docs/howto/es/h2-basics-expository.html
+%%DATADIR%%/docs/howto/es/h2-basics-interpretation.html
+%%DATADIR%%/docs/howto/es/h2-basics-types.html
+%%DATADIR%%/docs/howto/es/h2-basics-worksheet.html
+%%DATADIR%%/docs/howto/es/h2-basics.html
+%%DATADIR%%/docs/howto/es/h2-importance-breathed.html
+%%DATADIR%%/docs/howto/es/h2-importance-exhortations.html
+%%DATADIR%%/docs/howto/es/h2-importance-liberates.html
+%%DATADIR%%/docs/howto/es/h2-importance-once.html
+%%DATADIR%%/docs/howto/es/h2-importance-supplement.html
+%%DATADIR%%/docs/howto/es/h2-importance-wars.html
+%%DATADIR%%/docs/howto/es/h2-importance-works.html
+%%DATADIR%%/docs/howto/es/h2-importance.html
+%%DATADIR%%/docs/howto/es/h2-rules-context.html
+%%DATADIR%%/docs/howto/es/h2-rules-hcontest.html
+%%DATADIR%%/docs/howto/es/h2-rules-normal.html
+%%DATADIR%%/docs/howto/es/h2-rules-parables.html
+%%DATADIR%%/docs/howto/es/h2-rules.html
+%%DATADIR%%/docs/howto/es/index.html
 %%DATADIR%%/docs/howto/fi/h2-basics-approaches.html
 %%DATADIR%%/docs/howto/fi/h2-basics-expository.html
 %%DATADIR%%/docs/howto/fi/h2-basics-interpretation.html
@@ -711,8 +751,10 @@ share/icons/bibletime.svg
 @dirrm %%DATADIR%%/docs/howto/hu
 @dirrm %%DATADIR%%/docs/howto/fr
 @dirrm %%DATADIR%%/docs/howto/fi
+@dirrm %%DATADIR%%/docs/howto/es
 @dirrm %%DATADIR%%/docs/howto/en
 @dirrm %%DATADIR%%/docs/howto/de
+@dirrm %%DATADIR%%/docs/howto/da
 @dirrm %%DATADIR%%/docs/howto/cs
 @dirrm %%DATADIR%%/docs/howto/bg
 @dirrm %%DATADIR%%/docs/howto
