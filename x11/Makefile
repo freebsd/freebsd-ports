@@ -157,7 +157,6 @@
     SUBDIR += kdelibs3-nocups
     SUBDIR += keylaunch
     SUBDIR += keynav
-    SUBDIR += kxgenerator
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11
