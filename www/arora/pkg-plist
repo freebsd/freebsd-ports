@@ -25,6 +25,7 @@ share/applications/arora.desktop
 %%NLS%%share/arora/locale/nl_NL.qm
 %%NLS%%share/arora/locale/pl_PL.qm
 %%NLS%%share/arora/locale/pt_BR.qm
+%%NLS%%share/arora/locale/pt_PT.qm
 %%NLS%%share/arora/locale/ru_RU.qm
 %%NLS%%share/arora/locale/sk_SK.qm
 %%NLS%%share/arora/locale/sr_RS.qm
