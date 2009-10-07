@@ -1,0 +1,130 @@
+--- crypto/src/Makefile.orig    2009-08-27 22:08:18.000000000 +0200
++++ crypto/src/Makefile 2009-09-18 21:52:06.000000000 +0200
+@@ -45,6 +45,10 @@
+ sys := $(shell uname -s)
+ wince = $(WINCE)
+ 
++ifeq ($(sys), FreeBSD)
++  xpidl = $(PREFIX)/lib/libxul/xpidl -I$(PREFIX)/share/idl/firefox3/stable
++endif
++
+ ifeq ($(wince), 1)
+   os = WINNT
+   cxx = $(sdkdir)/sdk/bin/arm-wince-gcc
+@@ -66,6 +70,14 @@
+   so = so
+   cppflags += -shared
+ else
++ifeq ($(sys), FreeBSD)
++  os = FreeBSD
++  compiler = gcc3
++  cxx = c++
++  so = so
++  cppflags += -shared
++  ldflags += -L$(PREFIX)/lib/firefox3 -L$(PREFIX)/lib
++else
+ ifeq ($(sys), MINGW32_NT-6.1)
+   os = WINNT
+   compiler = msvc
+@@ -92,6 +104,7 @@
+ endif
+ endif
+ endif
++endif
+ 
+ # Arch detection
+ 
+@@ -121,6 +134,9 @@
+ ifeq ($(machine), x86_64)
+   arch = x86_64
+ else
++ifeq ($(machine), amd64)
++  arch = x86_64
++else
+   $(error: Sorry, your architecture is unknown/unsupported: $(machine))
+ endif
+ endif
+@@ -130,6 +146,7 @@
+ endif
+ endif
+ endif
++endif
+ 
+ # Universal binary so no need for $(arch) for Darwin
+ 
+@@ -188,6 +205,13 @@
+           -I$(sdkdir)/include/nspr \
+           -I$(sdkdir)/sdk/include
+ 
++ifeq ($(sys), FreeBSD)
++  headers += -I$(PREFIX)/include/firefox3/stable \
++             -I$(PREFIX)/include/nspr \
++             -I$(PREFIX)/include/nss \
++             -I$(PREFIX)/include/firefox3/unstable
++endif
++
+ # libraries
+ libdirs := $(sdkdir)/lib $(sdkdir)/bin
+ ifeq ($(wince),1)
+@@ -202,6 +226,10 @@
+ 
+ ifeq ($(os), Linux)
+   libs := xpcom_core $(libs)
++else
++ifeq ($(os), FreeBSD)
++  libs := xpcom $(libs)
++endif
+ endif
+ 
+ # compiler and Linker Flags
+@@ -264,6 +292,25 @@
+              $(sdkdir)/lib/libxpcomglue_s.a \
+              $(libdirs) $(libs)
+ else
++ifeq ($(os), FreeBSD)
++  libdirs := $(patsubst %,-L%,$(libdirs))
++  libs := $(patsubst %,-l%,$(libs))
++  cppflags += -pipe -O2 \
++              -fPIC -fno-rtti -fno-exceptions -fno-strict-aliasing \
++              -fno-common -pthread \
++              -Wall -Wconversion -Wpointer-arith -Woverloaded-virtual -Wsynth \
++              -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wcast-align \
++              -Wno-long-long \
++              -include xpcom-config.h $(headers) \
++              -fshort-wchar
++  ldflags += -pthread -pipe -DMOZILLA_STRICT_API \
++             -Wl,-dead_strip \
++             -Wl,-exported_symbol \
++             -Wl,-z,defs -Wl,-h,WeaveCrypto.so \
++             -Wl,-rpath-link,$(sdkdir)/bin \
++             $(sdkdir)/lib/libxpcomglue_s.a \
++             $(libdirs) $(libs)
++else
+ ifeq ($(os), SunOS)
+   libdirs := $(patsubst %,-L%,$(libdirs))
+   libs := $(patsubst %,-l%,$(libs))
+@@ -303,6 +350,7 @@
+ endif
+ endif
+ endif
++endif
+ 
+ ######################################################################
+ 
+@@ -361,6 +409,11 @@
+        $(cxx) $(cppflags) -o $@ $(cpp_sources) $(ldflags)
+        chmod +x $@
+ else
++ifeq ($(os), FreeBSD)
++  $(so_target): $(idl_headers)
++	$(cxx) $(cppflags) -o $@ $(cpp_sources) $(ldflags)
++	chmod +x $@
++else
+ ifeq ($(os), SunOS)
+   $(so_target): $(idl_headers)
+        $(cxx) $(cppflags) -o $@ $(cpp_sources) $(ldflags)
+@@ -380,3 +433,4 @@
+ endif
+ endif
+ endif
++endif
