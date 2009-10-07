@@ -1,0 +1,13 @@
+--- loader/Makefile.in.orig	2009-08-07 11:13:19.000000000 -0300
++++ loader/Makefile.in	2009-08-07 11:14:01.000000000 -0300
+@@ -13,6 +13,10 @@
+ CC=@CC@
+ CFLAGS=@CFLAGS@ @PICFLAGS@ @WARNFLAGS@
+ 
++override datadir := $(DATADIR)
++override bindir := $(PREFIX)/bin
++override pkglibdir := $(PREFIX)/lib/postgresql
++
+ # Filenames with extension as determined by the OS
+ PGSQL2SHP=pgsql2shp@EXESUFFIX@
+ SHP2PGSQL=shp2pgsql@EXESUFFIX@

@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.3.6
-PORTREVISION=	1
+DISTVERSION=	1.4.0
 CATEGORIES=	databases geography
-MASTER_SITES=	http://postgis.refractions.net/download/
+MASTER_SITES=	http://postgis.refractions.net/download/ \
+  		http://www.postgis.org/download/
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/geos-config:${PORTSDIR}/graphics/geos
 LIB_DEPENDS=	proj.5:${PORTSDIR}/graphics/proj
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
@@ -25,52 +26,44 @@ USE_PERL5_BUILD=	yes
 
 INSTALL_TARGET=	install
 
-OPTIONS=	GEOS "Include GEOS - the OpenGIS 'Simple Features for SQL'" off \
-		UTF8 "UTF-8 support for shp2pgsql. (needs libiconv)" off
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgis \
-		--bindir=${PREFIX}/bin \
-		--libdir=${PREFIX}/lib \
-		--with-proj
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	DATADIR=${DATADIR} DOCSDIR=${DOCSDIR}
+CONFIGURE_ARGS=	--with-projdir=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
-MAKE_ARGS+=	WITH-DOC=yes
+CONFIGURE_ARGS+=	--with-xsldir=${LOCALBASE}/share/xsl/docbook
 MAN1=		pgsql2shp.1 shp2pgsql.1
 PORTDOCS=	*
-.else
-MAKE_ARGS+=	NOPORTSDOC=yes
+#.else
+#MAKE_ARGS+=	NOPORTDOCS=yes
 .endif
 
-.if defined(WITH_UTF8)
-USE_ICONV=	yes
-MAKE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib"
-.else
-CONFIGURE_ARGS+=	--without-iconv
-.endif
+post-extract:
+	@${REINPLACE_CMD} -e 's#@ICONV_LDFLAGS@#-liconv -L${LOCALBASE}/lib#g' \
+		${WRKSRC}/loader/Makefile.in
 
-.if defined(WITH_GEOS)
-LIB_DEPENDS+=	geos:${PORTSDIR}/graphics/geos
-CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
-.else
-CONFIGURE_ARGS+=	--without-geos
-.endif
-
-pre-everything::
-	@${SH} ${PKGINSTALL} ${PORTNAME} MESSAGE
+post-patch:
+	@${REINPLACE_CMD} -e 's#%PERL%#${PERL}#g' \
+		${WRKSRC}/postgis/Makefile.in
 
 post-install:
+	@${MKDIR} ${DATADIR}/utils
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/create_undef.pl ${DATADIR}/utils/
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/new_postgis_restore.pl ${DATADIR}/utils/
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/profile_intersects.pl ${DATADIR}/utils/
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/postgis_proc_upgrade.pl ${DATADIR}/utils/
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/test_estimation.pl ${DATADIR}/utils/
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/postgis_restore.pl ${DATADIR}/utils/
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/test_joinestimation.pl ${DATADIR}/utils/
 	@${MKDIR} ${PREFIX}/lib/postgresql
-	@${LN} -s ${PREFIX}/lib/liblwgeom.so.1 ${PREFIX}/lib/postgresql
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-
-post-deinstall:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
+	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.4.so ${PREFIX}/lib/postgresql/postgis.so
+	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.4.so ${PREFIX}/lib/postgresql/liblwgeom.so.1
+	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.4.so ${PREFIX}/lib/postgresql/liblwgeom.so
 
 .include <bsd.port.post.mk>

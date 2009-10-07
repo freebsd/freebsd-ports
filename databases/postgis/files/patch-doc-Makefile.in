@@ -1,0 +1,21 @@
+--- doc/Makefile.in.orig	2009-07-08 12:16:53.000000000 -0300
++++ doc/Makefile.in	2009-09-20 10:12:53.000000000 -0300
+@@ -135,12 +135,12 @@
+ 	rm -f $(PGSQL_SHAREDIR)/contrib/postgis_comments.sql
+ 
+ install: html/postgis.html man/shp2pgsql.1 man/pgsql2shp.1
+-	@mkdir -p $(PGSQL_DOCDIR)/postgis
+-	@mkdir -p $(PGSQL_MANDIR)/man1
+-	cp html/postgis.html $(PGSQL_DOCDIR)/postgis/postgis.html
+-	cp ../README.postgis $(PGSQL_DOCDIR)/postgis/README.postgis
+-	cp man/pgsql2shp.1 $(PGSQL_MANDIR)/man1/pgsql2shp.1
+-	cp man/shp2pgsql.1 $(PGSQL_MANDIR)/man1/shp2pgsql.1
++	@mkdir -p $(DOCSDIR)
++	@mkdir -p $(PREFIX)/man/man1
++	cp html/postgis.html $(DOCSDIR)/postgis.html
++	cp ../README.postgis $(DOCSDIR)/README.postgis
++	cp man/pgsql2shp.1 $(PREFIX)/man/man1/pgsql2shp.1
++	cp man/shp2pgsql.1 $(PREFIX)/man/man1/shp2pgsql.1
+ 
+ uninstall:
+ 	rm -f $(PGSQL_DOCDIR)/postgis/postgis.html

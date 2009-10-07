@@ -1,48 +1,36 @@
---- GNUmakefile.orig	2007-07-11 05:12:42.000000000 +0800
-+++ GNUmakefile	2007-08-31 17:41:49.000000000 +0800
-@@ -4,9 +4,9 @@
+--- GNUmakefile.orig	2009-05-26 15:00:55.000000000 -0300
++++ GNUmakefile	2009-08-07 14:36:10.000000000 -0300
+@@ -4,10 +4,10 @@
  #
  #-----------------------------------------------------
  
--all: Makefile.config liblwgeom loaderdumper utils 
-+all: Makefile.config liblwgeom loaderdumper utils docs
+-all: postgis loaderdumper utils
++all: postgis loaderdumper utils docs
+ 	@echo "PostGIS was built successfully. Ready to install." 
  
--install: all liblwgeom-install loaderdumper-install 
-+install: all liblwgeom-install loaderdumper-install utils-install docs-install
+-install: all postgis-install loaderdumper-install
++install: all postgis-install loaderdumper-install docs-install
  
- uninstall: liblwgeom-uninstall loaderdumper-uninstall docs-uninstall 
+ uninstall: postgis-uninstall loaderdumper-uninstall docs-uninstall comments-uninstall
  
-@@ -72,21 +72,31 @@
+@@ -80,7 +80,9 @@
  	$(MAKE) -C extras/template_gis uninstall
  
- docs: Makefile.config
+ docs: 
 -	$(MAKE) -C doc 
-+ifndef NOPORTSDOC
-+	$(MAKE) -C doc
++ifndef NOPORTDOCS
++	$(MAKE) -C doc html/postgis.html
 +endif
  
- docs-clean: Makefile.config
-+ifndef NOPORTSDOC
+ docs-clean:
  	$(MAKE) -C doc clean
--
-+endif
+@@ -95,7 +97,9 @@
+ 	$(MAKE) -C doc comments-uninstall
  
  docs-install:
-+ifndef NOPORTSDOC
++ifndef NOPORTDOCS
  	$(MAKE) -C doc install
 +endif
  
  docs-uninstall:
-+ifndef NOPORTSDOC
  	$(MAKE) -C doc uninstall
-+endif
- 
- utils:
- 	$(MAKE) -C utils
- 
-+utils-install:
-+	${MAKE} -C utils install
-+
- configure: configure.in
- 	./autogen.sh
- 

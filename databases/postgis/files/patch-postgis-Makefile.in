@@ -1,0 +1,26 @@
+--- postgis/Makefile.in.orig	2009-06-06 11:09:39.000000000 -0300
++++ postgis/Makefile.in	2009-09-20 09:48:02.000000000 -0300
+@@ -12,6 +12,10 @@
+ 
+ MODULE_big=postgis-@POSTGIS_MAJOR_VERSION@.@POSTGIS_MINOR_VERSION@
+ 
++override datadir := $(DATADIR)
++override bindir := $(PREFIX)/bin
++override pkglibdir := $(PREFIX)/lib/postgresql
++
+ # Files to be copied to the contrib/ directory
+ DATA_built=postgis.sql uninstall_postgis.sql postgis_upgrade.sql
+ DATA=../spatial_ref_sys.sql
+@@ -73,10 +77,10 @@
+ 
+ # Borrow the $libdir substitution from PGXS but customise by adding the version number
+ %.sql: %.sql.in
+-	sed 's,MODULE_PATHNAME,$$libdir/$*-@POSTGIS_MAJOR_VERSION@.@POSTGIS_MINOR_VERSION@,g' $< >$@
++	sed 's,MODULE_PATHNAME,$$libdir/$*,g' $< >$@
+ 
+ postgis_upgrade.sql: postgis.sql
+-	$(PERL) ../utils/postgis_proc_upgrade.pl $< > $@
++	/usr/local/bin/perl ../utils/postgis_proc_upgrade.pl $< > $@
+ 
+ # Generate any .sql.in files from .sql.in.c files by running them through the C pre-processor 
+ $(SQL_OBJS): %.in: %.in.c
