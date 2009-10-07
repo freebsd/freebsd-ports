@@ -4,7 +4,8 @@ share/icons/hicolor/32x32/apps/krename.png
 share/icons/hicolor/48x48/apps/krename.png
 share/icons/locolor/16x16/apps/krename.png
 share/icons/locolor/32x32/apps/krename.png
-share/kde4/services/ServiceMenus/krenameservicemenu.desktop
+share/kde4/services/ServiceMenus/krename_all_nonrec.desktop
+share/kde4/services/ServiceMenus/krename_dir_rec.desktop
 share/locale/bs/LC_MESSAGES/krename.mo
 share/locale/cs/LC_MESSAGES/krename.mo
 share/locale/de/LC_MESSAGES/krename.mo
@@ -20,6 +21,7 @@ share/locale/ru/LC_MESSAGES/krename.mo
 share/locale/sl/LC_MESSAGES/krename.mo
 share/locale/sv/LC_MESSAGES/krename.mo
 share/locale/tr/LC_MESSAGES/krename.mo
+share/locale/uk/LC_MESSAGES/krename.mo
 share/locale/zh_CN/LC_MESSAGES/krename.mo
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
