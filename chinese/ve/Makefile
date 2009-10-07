@@ -7,12 +7,12 @@
 
 PORTNAME=	ve
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gaod@hychen.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
 .include <bsd.port.mk>
