@@ -1,0 +1,182 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/release.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/release.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/release.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/packed/MochiKit/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/packed/MochiKit/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Async.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Base.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Color.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/DOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/DateTime.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Format.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Iter.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Logging.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/LoggingPane.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/MockDOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Signal.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Test.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/Visual.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/packed/MochiKit/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/packed/MochiKit/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Async.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Base.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Color.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/DOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/DateTime.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/DragAndDrop.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Format.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Iter.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Logging.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/LoggingPane.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/MockDOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Position.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Selector.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Signal.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Sortable.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Style.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Test.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/Visual.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/packed/MochiKit/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/packed/MochiKit/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Async.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Base.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Color.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/DOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/DateTime.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/DragAndDrop.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Format.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Iter.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Logging.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/LoggingPane.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/MockDOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Position.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Selector.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Signal.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Sortable.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Style.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Test.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/Visual.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/packed/MochiKit/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/packed/MochiKit/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/packed/MochiKit/customize.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Async.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Base.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Color.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/DOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/DateTime.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/DragAndDrop.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Format.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Iter.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Logging.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/LoggingPane.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/MockDOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Position.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Selector.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Signal.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Sortable.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Style.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Test.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/Visual.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/packed/MochiKit/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/packed/MochiKit/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Async.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Base.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Color.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/DOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/DateTime.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/DragAndDrop.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Format.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Iter.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Logging.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/LoggingPane.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/MockDOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Position.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Selector.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Signal.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Sortable.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Style.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Test.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/Visual.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked/__package__.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/packed/MochiKit/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/packed/MochiKit/customize.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Async.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Base.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Color.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/DOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/DateTime.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/DragAndDrop.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Format.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Iter.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Logging.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/LoggingPane.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/MochiKit.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/MockDOM.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Position.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Selector.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Signal.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Sortable.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Style.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Test.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked/Visual.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/templates/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/templates/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/templates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/tests/test_tgmochikit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/tests/test_tgmochikit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/tests/test_tgmochikit.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/packed/MochiKit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/packed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1/unpacked
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.3.1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/packed/MochiKit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/packed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4/unpacked
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/packed/MochiKit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/packed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1/unpacked
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/packed/MochiKit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/packed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2/unpacked
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4.2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/packed/MochiKit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/packed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383/unpacked
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/1.4_r1383
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/packed/MochiKit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/packed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk/unpacked
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript/trunk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static/javascript
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgmochikit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
