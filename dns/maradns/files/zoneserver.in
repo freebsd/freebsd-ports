@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: zonserver
+# PROVIDE: zoneserver
 # REQUIRE: SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown
@@ -11,13 +11,15 @@
 
 . %%RC_SUBR%%
 
-name="zonserver"
+: ${zoneserver_enable="NO"}
+: ${maradns_conf="%%PREFIX%%/etc/mararc"}
+
+name="zoneserver"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/duende"
+command_args="zoneserver -f ${maradns_conf}"
 pidfile="/var/run/${name}.pid"
 
 load_rc_config $name
-
-zonserver_enable=${zonserver_enable-"NO"}
 
 run_rc_command "$1"

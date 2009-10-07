@@ -11,13 +11,15 @@
 
 . %%RC_SUBR%%
 
+: ${maradns_enable="NO"}
+: ${maradns_conf="%%PREFIX%%/etc/mararc"}
+
 name="maradns"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/duende"
+command_args="maradns -f ${maradns_conf}"
 pidfile="/var/run/${name}.pid"
 
 load_rc_config $name
-
-maradns_enable=${maradns_enable-"NO"}
 
 run_rc_command "$1"
