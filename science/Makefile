@@ -71,6 +71,7 @@
     SUBDIR += libctl
     SUBDIR += libghemical
     SUBDIR += libint
+    SUBDIR += libkml
     SUBDIR += liblinear
     SUBDIR += liboglappth
     SUBDIR += libquantum
