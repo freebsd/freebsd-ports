@@ -91,7 +91,7 @@ COMMENT=	HTTP Caching Proxy (BETA Version)
 
 LATEST_LINK=	squid31
 
-SQUID_BETA_VER=	13
+SQUID_BETA_VER=	14
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
@@ -135,7 +135,7 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_ECAP "En. loadable content adaptation modules" off \
 		SQUID_ICAP "Enable ICAP client functionality" off \
 		SQUID_ESI "Enable ESI support (experimental)" off \
-		SQUID_AUFS "Enable the aufs storage scheme" off \
+		SQUID_AUFS "Enable the aufs storage scheme" on \
 		SQUID_COSS "Enable COSS (currently not available)" off \
 		SQUID_KQUEUE "Use kqueue(2) (experimental)" on \
 		SQUID_LARGEFILE "Support log and cache files >2GB" off \
@@ -162,9 +162,10 @@ icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
 
 error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_CACHE_MGR_ACCESS_DENIED ERR_CANNOT_FORWARD \
-		ERR_CONNECT_FAIL ERR_DNS_FAIL ERR_ESI ERR_FORWARDING_DENIED \
+		ERR_CONNECT_FAIL ERR_DIR_LISTING ERR_DNS_FAIL \
+		ERR_ESI ERR_FORWARDING_DENIED \
 		ERR_FTP_DISABLED ERR_FTP_FAILURE ERR_FTP_FORBIDDEN \
-		ERR_FTP_LISTING ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
+		ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
 		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED ERR_FTP_UNAVAILABLE \
 		ERR_ICAP_FAILURE ERR_INVALID_REQ ERR_INVALID_RESP \
 		ERR_INVALID_URL ERR_LIFETIME_EXP ERR_NO_RELAY \
@@ -180,11 +181,20 @@ error_dirs=	ar az bg ca cs da de el en es et fa fi fr he hu hy id it \
 
 error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
 			ar-ly ar-ma ar-om ar-qa ar-sa ar-sy ar-tn ar-ye \
-			az-az bg-bg cs-cz da-dk de-de el-gr en-au en-ca \
-			en-gb en-in en-nz en-sg en-tt en-uk en-us en-za \
-			es-ar es-pe es-es et-ee fi-fi fr-fr he-il hu-hu \
-			hy-am id-id it-it ja-jp ko-kr lt-lt lv-lv ms-my \
-			nl-nl pl-pl pt-pt ro-ro ru-ru sk-sk sr-sp sv-se \
+			az-az bg-bg cs-cz da-dk \
+			de-at de-ch de-de de-li de-lu \
+			el-gr \
+			en-au en-bz en-ca en-gb en-ie en-in en-jm en-nz \
+			en-ph en-sg en-tt en-uk en-us en-za en-zw \
+			es-ar es-bo es-cl es-co es-cr es-do es-ec es-es \
+			es-gt es-hn es-mx es-ni es-pa es-pe es-pr es-py \
+			es-sv es-uy es-ve \
+			et-ee \
+			fa-fa fa-ir fi-fi \
+			fr-be fr-ca fr-ch fr-fr fr-lu fr-mc \
+			he-il hu-hu hy-am id-id it-ch it-it \
+			ja-jp ko-kp ko-kr lt-lt lv-lv ms-my nl-nl \
+			pl-pl pt-pt ro-ro ru-ru sk-sk sr-sp sv-fi sv-se \
 			th-th tr-tr uk-ua zh-hk zh-mo zh-sg
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
@@ -269,16 +279,21 @@ libexec+=	negotiate_kerb_auth negotiate_kerb_auth_test \
 # Storage schemes:
 
 storage_schemes=	ufs diskd
+# TODO: should AIO be optional as well?
+diskio_modules=	AIO Blocking DiskDaemon
 .if defined(WITH_SQUID_AUFS)
 storage_schemes+=	aufs
+diskio_modules+=	DiskThreads
 # Only document switching from libpthread to libthr using libmap.conf
 # where lipthread is the default threading library:
 .if ${OSVERSION} < 700041
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 .endif
-# Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
-CONFIGURE_ARGS+=	--with-pthreads
+# Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS,
+# e.g. SQUID_CONFIGURE_ARGS=--with-aufs-threads=N
 CFLAGS+=	${PTHREAD_CFLAGS}
+.else
+CONFIGURE_ARGS+=	--without-pthreads
 .endif
 .if defined(WITH_SQUID_COSS)
 # COSS is currently disabled in Squid-3 until fixes from the 2.x series are
@@ -286,6 +301,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 #storage_schemes+=	coss
 .endif
 CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
+CONFIGURE_ARGS+=	--enable-disk-io="${diskio_modules}"
 
 # Other options set via 'make config':
 
