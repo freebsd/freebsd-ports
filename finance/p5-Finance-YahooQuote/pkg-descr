@@ -1,0 +1,8 @@
+This module gets stock quotes from Yahoo! Finance. The getonequote
+function will return a quote for a single stock symbol, while the
+getquote function will return a quote for each of the stock symbols
+passed to it.  getcustomquote allows to specify a format other than
+the default to take advantage of the extended range of available
+information.
+
+WWW:    http://search.cpan.org/dist/Finance-YahooQuote/
