@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	LaTeX-TOM
-PORTVERSION=	0.9
+PORTVERSION=	1.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module for parsing, analyzing, and manipulating LaTeX documents
 
 PERL_CONFIGURE=	yes
