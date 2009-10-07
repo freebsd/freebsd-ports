@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foswiki
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -60,10 +60,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
 .if defined(WITH_APACHE)
-PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
-CONFDIR=	${PREFIX}/${CONFDIR_REL}
-CONFDIR_REL=	${APACHEETCDIR}/Includes
-
+PLIST_SUB+=	NOAPACHE=""
 PKGMESSAGE=	pkg-message-apache
 SUB_FILES+=	pkg-message-apache
 .else
@@ -72,6 +69,10 @@ PKGMESSAGE=	pkg-message-noapache
 SUB_FILES+=	pkg-message-noapache
 .endif
 
+# Always set these so the pkg-message displays correctly
+CONFDIR=	${PREFIX}/${CONFDIR_REL}
+CONFDIR_REL=	${APACHEETCDIR}/Includes
+PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
 SUB_FILES+=	LocalSite.cfg
 
 post-patch:
