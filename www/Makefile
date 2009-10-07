@@ -1615,6 +1615,7 @@
     SUBDIR += wadcomblog
     SUBDIR += wb0
     SUBDIR += wcol
+    SUBDIR += weave
     SUBDIR += web-traceroute
     SUBDIR += web2ldap
     SUBDIR += webalizer
