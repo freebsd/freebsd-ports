@@ -35,6 +35,35 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ebeed063-b328-11de-b6a5-0030843d3802">
+    <topic>virtualbox -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>virtualbox</name>
+	<range><lt>3.0.51.r22902_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sun reports:</p>
+	<blockquote cite="http://sunsolve.sun.com/search/document.do?assetkey=1-66-268188-1">
+	  <p>A security vulnerability in the VBoxNetAdpCtl configuration tool
+	    for certain Sun VirtualBox 3.0 packages may allow local unprivileged
+	    users who are authorized to run VirtualBox to execute arbitrary
+	    commands with root privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sunsolve.sun.com/search/document.do?assetkey=1-66-268188-1</url>
+      <url>http://secunia.com/advisories/36929</url>
+    </references>
+    <dates>
+      <discovery>2009-10-07</discovery>
+      <entry>2009-10-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50383bde-b25b-11de-8c83-02e0185f8d72">
     <topic>FreeBSD -- Devfs / VFS NULL pointer race condition</topic>
     <affects>
