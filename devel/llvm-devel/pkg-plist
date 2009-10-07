@@ -7,7 +7,6 @@ bin/llvm-ar
 bin/llvm-as
 bin/llvm-bcanalyzer
 bin/llvm-config
-bin/llvm-db
 bin/llvm-dis
 bin/llvm-extract
 bin/llvm-ld
@@ -210,12 +209,6 @@ include/llvm/Config/config.h
 include/llvm/Config/config.h.cmake
 include/llvm/Constant.h
 include/llvm/Constants.h
-include/llvm/Debugger/Debugger.h
-include/llvm/Debugger/InferiorProcess.h
-include/llvm/Debugger/ProgramInfo.h
-include/llvm/Debugger/RuntimeInfo.h
-include/llvm/Debugger/SourceFile.h
-include/llvm/Debugger/SourceLanguage.h
 include/llvm/DerivedTypes.h
 include/llvm/ExecutionEngine/ExecutionEngine.h
 include/llvm/ExecutionEngine/GenericValue.h
@@ -438,7 +431,6 @@ lib/libLLVMCodeGen.a
 lib/libLLVMCore.a
 lib/libLLVMCppBackend.a
 lib/libLLVMCppBackendInfo.a
-lib/libLLVMDebugger.a
 lib/libLLVMExecutionEngine.a
 lib/libLLVMHello.so
 lib/libLLVMInstrumentation.a
@@ -625,7 +617,6 @@ libexec/clang-cc
 @dirrm include/llvm/Support
 @dirrm include/llvm/MC
 @dirrm include/llvm/ExecutionEngine
-@dirrm include/llvm/Debugger
 @dirrm include/llvm/Config
 @dirrm include/llvm/CompilerDriver
 @dirrm include/llvm/CodeGen

@@ -25,6 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 CONFLICTS=	llvm-2.[123456]* llvm-2.7.[0-9]* llvm-2.7
 
 GNU_CONFIGURE=	yes
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
