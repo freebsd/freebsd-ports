@@ -2539,6 +2539,7 @@
     SUBDIR += py-tconfpy
     SUBDIR += py-testgears
     SUBDIR += py-testoob
+    SUBDIR += py-tgMochiKit
     SUBDIR += py-thrift
     SUBDIR += py-timelib
     SUBDIR += py-trace2html
