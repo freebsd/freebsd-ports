@@ -7,6 +7,7 @@
 
 PORTNAME=	maradns
 PORTVERSION=	1.3.07.09
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.3/${PORTVERSION}/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/
@@ -24,7 +25,8 @@ MAN5=		mararc.5 csv1.5 csv2.5 csv2_txt.5
 MAN8=		maradns.8 zoneserver.8 duende.8
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|/etc/mara|${ETCDIR}|g'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/etc/maradns|${ETCDIR}|g; s|/etc/mararc|${ETCDIR}|g'
 	@${FIND} ${WRKSRC} -name '*Makefile*' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make|\$$\{MAKE\}|g ; \
 		 s|^FLAGS =|#FLAGS =|g ; \
