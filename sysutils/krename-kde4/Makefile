@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	krename
-PORTVERSION=	3.9.3
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	sysutils kde
-MASTER_SITES=	SF/${PORTNAME}/KDE4%20${PORTNAME}-development/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/KDE4%20${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Very powerful batch file renamer for KDE
@@ -24,5 +23,6 @@ USE_CMAKE=	yes
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
