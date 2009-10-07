@@ -1,19 +1,21 @@
 bin/pgsql2shp
 bin/shp2pgsql
-lib/liblwgeom.so
-lib/liblwgeom.so.1
+lib/postgresql/postgis-1.4.so
+lib/postgresql/postgis.so
+lib/postgresql/liblwgeom.so
 lib/postgresql/liblwgeom.so.1
-%%DATADIR%%/lwpostgis.sql
-%%DATADIR%%/lwpostgis_upgrade.sql
-%%DATADIR%%/spatial_ref_sys.sql
-%%DATADIR%%/utils/postgis_restore.pl
-%%DATADIR%%/utils/profile_intersects.pl
-%%DATADIR%%/utils/test_estimation.pl
-%%DATADIR%%/utils/test_joinestimation.pl
-%%DATADIR%%/utils/create_undef.pl
-%%DATADIR%%/utils/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+share/postgis/contrib/postgis.sql
+share/postgis/contrib/postgis_upgrade.sql
+share/postgis/contrib/spatial_ref_sys.sql
+share/postgis/contrib/uninstall_postgis.sql
+share/postgis/utils/create_undef.pl
+share/postgis/utils/new_postgis_restore.pl
+share/postgis/utils/postgis_proc_upgrade.pl
+share/postgis/utils/postgis_restore.pl
+share/postgis/utils/profile_intersects.pl
+share/postgis/utils/test_estimation.pl
+share/postgis/utils/test_joinestimation.pl
+@dirrm share/postgis/utils
+@dirrm share/postgis/contrib
+@dirrm share/postgis
 @dirrmtry lib/postgresql
-@dirrmtry %%DATADIR%%/utils
-@dirrmtry %%DATADIR%%
-@dirrmtry lib
