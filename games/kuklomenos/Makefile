@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	kuklomenos
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2.1
 CATEGORIES=	games
-MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/
+MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but challenging abstract shoot-em-up game
