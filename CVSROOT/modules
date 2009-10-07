@@ -2580,6 +2580,7 @@ dvda-author                     ports/audio/dvda-author
 dvdauthor                       ports/multimedia/dvdauthor
 dvdauthorwizard                 ports/multimedia/dvdauthorwizard
 dvdbackup                       ports/sysutils/dvdbackup
+dvdid                           ports/multimedia/dvdid
 dvdimagecmp                     ports/sysutils/dvdimagecmp
 dvdisaster                      ports/sysutils/dvdisaster
 dvdrip                          ports/multimedia/dvdrip
@@ -5728,6 +5729,7 @@ ja-ASCIIdates98-fpw             ports/japanese/ASCIIdates98-fpw
 ja-CGdic-fpw                    ports/japanese/CGdic-fpw
 ja-FreeWnn-lib                  ports/japanese/FreeWnn-lib
 ja-FreeWnn-server               ports/japanese/FreeWnn-server
+ja-MT                           ports/japanese/MT
 ja-VTPSfont                     ports/japanese/VTPSfont
 ja-Wnn6                         ports/japanese/Wnn6
 ja-Wnn6-lib                     ports/japanese/Wnn6-lib
@@ -5912,6 +5914,7 @@ ja-mobileimap                   ports/japanese/mobileimap
 ja-monafonts                    ports/japanese/monafonts
 ja-monafonts-ttf                ports/japanese/monafonts-ttf
 ja-mozilla-jlp                  ports/japanese/mozilla-jlp
+ja-mt                           ports/japanese/MT
 ja-mtools                       ports/japanese/mtools
 ja-multiskkserv                 ports/japanese/multiskkserv
 ja-mutt                         ports/japanese/mutt
@@ -6419,6 +6422,7 @@ kBuild                          ports/devel/kBuild
 kaddressbook-plugins            ports/misc/kaddressbook-plugins
 kaffe                           ports/java/kaffe
 kaffeine                        ports/multimedia/kaffeine
+kaffeine-devel                  ports/multimedia/kaffeine-devel
 kaffeine-mozilla                ports/multimedia/kaffeine-mozilla
 kaid                            ports/games/kaid
 kalbum                          ports/graphics/kalbum
