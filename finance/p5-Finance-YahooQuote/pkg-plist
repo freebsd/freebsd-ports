@@ -1,0 +1,6 @@
+bin/yahooquote
+%%SITE_PERL%%/Finance/YahooQuote.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/YahooQuote/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/YahooQuote
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
+@dirrmtry %%SITE_PERL%%/Finance
