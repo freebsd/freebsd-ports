@@ -9,7 +9,7 @@ PORTNAME=	Contact_Vcard_Parse
 PORTVERSION=	1.31.0
 CATEGORIES=	mail www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to parse vCard 2.1 and 3.0 files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
