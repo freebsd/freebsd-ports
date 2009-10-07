@@ -39,7 +39,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/test/s| == | = |g' ${WRKSRC}/configure
+		's|/usr/local/|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|= babel|= openbabel|g' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's| babel| openbabel|g ; \
