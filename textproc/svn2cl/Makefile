@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	svn2cl
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	textproc
-MASTER_SITES=	http://arthurdejong.org/svn2cl/
+MASTER_SITES=	http://arthurdejong.org/svn2cl/ \
+		LOCAL/avl
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Subversion ChangeLog generator
