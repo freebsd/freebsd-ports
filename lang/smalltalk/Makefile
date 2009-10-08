@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,16 +16,19 @@ COMMENT=	GNU Smalltalk
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+		execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		cairo.2:${PORTSDIR}/graphics/cairo
 
 OPTIONS=	TCLTK "Enable Tcl/Tk binding" on \
-		PGSQL "PostgreSQL binding" on
+		PGSQL "PostgreSQL binding" on \
+		SDL "SDL binding" on
 
 USE_AUTOTOOLS=	libtool:22
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig pango
 USE_ICONV=	yes
 USE_SQLITE=	yes
 USE_GMAKE=	yes
+USE_GL=		gl glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_prog_EMACS=no
@@ -66,6 +69,13 @@ PLIST_SUB+=	PGSQL="@comment "
 USE_PGSQL=	yes
 .include "${PORTSDIR}/Mk/bsd.database.mk"
 PLIST_SUB+=	PGSQL=""
+.endif
+
+.if defined(WITHOUT_SDL)
+PLIST_SUB+=	SDL="@comment "
+.else
+USE_SDL=	image mixer sdl sound ttf
+PLIST_SUB+=	SDL=""
 .endif
 
 post-patch:
