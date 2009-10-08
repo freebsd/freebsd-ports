@@ -1,0 +1,14 @@
+lib/kde4/kwin3_aurorae.so
+share/apps/kwin/aurorae.desktop
+share/config/aurorae.knsrc
+lib/kde4/kwin_aurorae_config.so
+share/apps/aurorae/themes/example-deco/decoration.svgz
+share/apps/aurorae/themes/example-deco/close.svgz
+share/apps/aurorae/themes/example-deco/maximize.svgz
+share/apps/aurorae/themes/example-deco/restore.svgz
+share/apps/aurorae/themes/example-deco/minimize.svgz
+share/apps/aurorae/themes/example-deco/example-decorc
+share/apps/aurorae/themes/example-deco/metadata.desktop
+@dirrm share/apps/aurorae/themes/example-deco/
+@dirrm share/apps/aurorae/themes/
+@dirrm share/apps/aurorae/
