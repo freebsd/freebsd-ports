@@ -17,7 +17,8 @@ COMMENT=	KDE4 version of kaffeine
 LATEST_LINK=	${PORTNAME}-devel
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui phonon svg network dbus xml
+QT_COMPONENTS=	corelib gui phonon svg network dbus xml \
+		qmake_build moc_build rcc_build uic_build 
 USE_CMAKE=	yes
 CMAKE_VERBOSE=	yes
 USE_GETTEXT=	yes
