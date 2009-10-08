@@ -12,8 +12,7 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Frisian messages and documentation for KDE4
 
-IGNORE=		unfetchable and unmaintained upstream
-EXPIRATION_DATE=	2009-11-17
+IGNORE=		unfetchable; will be included in next version
 
 KDE4_L10N=	fy
 
