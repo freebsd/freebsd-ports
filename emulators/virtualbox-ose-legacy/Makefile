@@ -171,7 +171,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 		${WRKSRC}/kBuild/units/qt3.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
-		${WRKSRC}/kBuild/sdks/LIBSDL.kmk
+		${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
+		${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} -e 's|\$$KBUILDDIR_BIN/kmk_sed|${PREFIX}/bin/kmk_sed|g' ${WRKSRC}/configure
 
 pre-build:
