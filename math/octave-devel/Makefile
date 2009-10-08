@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.1.55
-PORTREVISION=	4
+PORTVERSION=	3.3.50
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/\
@@ -29,8 +28,6 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull:${PORTSDIR}/math/qhull
 
-BROKEN=		does not build
-
 LATEST_LINK=    octave-devel
 
 USE_BZIP2=	yes
@@ -39,7 +36,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262 autoheader:262
 
-INFO=		octave liboctave
+INFO=		liboctave
 MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 
 .include <bsd.port.pre.mk>
@@ -94,6 +91,7 @@ SUB_LIST=	OCTAVE_VERSION="${OCTAVE_VERSION}" GNU_HOST="${GNU_HOST}"
 
 pre-configure:
 	@cd ${WRKSRC}/scripts ; ${AUTOCONF}
+	@cp ${FILESDIR}/acx_pthread.m4 ${WRKSRC}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/liboctave/liboctave.info ${PREFIX}/info
