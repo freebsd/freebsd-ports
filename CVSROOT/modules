@@ -7488,6 +7488,7 @@ libkexif                        ports/graphics/libkexif
 libkexiv2                       ports/graphics/libkexiv2
 libkipi                         ports/graphics/libkipi
 libkmfl                         ports/textproc/libkmfl
+libkml                          ports/science/libkml
 libksba                         ports/security/libksba
 liblas                          ports/devel/liblas
 liblastfm                       ports/audio/liblastfm
@@ -11463,6 +11464,7 @@ p5-Finance-QuoteHist            ports/finance/p5-Finance-QuoteHist
 p5-Finance-QuoteTW              ports/finance/p5-Finance-QuoteTW
 p5-Finance-TW-EmergingQuote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-Finance-TW-TSEQuote          ports/finance/p5-Finance-TW-TSEQuote
+p5-Finance-YahooQuote           ports/finance/p5-Finance-YahooQuote
 p5-FindBin-libs                 ports/devel/p5-FindBin-libs
 p5-Flickr-API                   ports/www/p5-Flickr-API
 p5-Flickr-Upload                ports/www/p5-Flickr-Upload
@@ -15033,6 +15035,7 @@ p5-finance-quotehist            ports/finance/p5-Finance-QuoteHist
 p5-finance-quotetw              ports/finance/p5-Finance-QuoteTW
 p5-finance-tw-emergingquote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-finance-tw-tsequote          ports/finance/p5-Finance-TW-TSEQuote
+p5-finance-yahooquote           ports/finance/p5-Finance-YahooQuote
 p5-findbin-libs                 ports/devel/p5-FindBin-libs
 p5-flickr-api                   ports/www/p5-Flickr-API
 p5-flickr-upload                ports/www/p5-Flickr-Upload
@@ -19743,6 +19746,8 @@ py-testgears                    ports/devel/py-testgears
 py-testoob                      ports/devel/py-testoob
 py-textile                      ports/www/py-textile
 py-texttable                    ports/textproc/py-texttable
+py-tgMochiKit                   ports/devel/py-tgMochiKit
+py-tgmochikit                   ports/devel/py-tgMochiKit
 py-tgwebservices                ports/www/py-tgwebservices
 py-thrift                       ports/devel/py-thrift
 py-timelib                      ports/devel/py-timelib
