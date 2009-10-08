@@ -75,6 +75,8 @@ share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
 @dirrmtry share/locale/pl
 @dirrmtry share/locale/ro/LC_MESSAGES
 @dirrmtry share/locale/ro
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
 @dirrmtry share/locale/sq/LC_MESSAGES
 @dirrmtry share/locale/sq
 @dirrmtry share/locale/sr@Latn/LC_MESSAGES
