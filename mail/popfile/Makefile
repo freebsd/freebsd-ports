@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	popfile
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 #PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/2.%20POPFile%20Cross%20Platform/v${PORTVERSION}
+MASTER_SITES=	http://getpopfile.org/downloads/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Automatic mail classification tool, acts as a POP3 proxy
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite2.pm:${PORTSDIR}/databases/p5-DBD-SQLite2 \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
@@ -80,6 +80,7 @@ pre-fetch:
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/popfile.pl
+	${REINPLACE_CMD} -I '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/popfile.pl
 	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
 
 do-install:
