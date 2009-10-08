@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.3.5.20090913
+PORTVERSION=	4.3.5.20091004
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -132,7 +132,7 @@ PLIST_SUB+=	JAVA="@comment "
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 .if ! defined(WITHOUT_JAVA)
-	@DSIZ=700000; DSIZBYTE=734003200; \
+	@DSIZ=70000 ; DSIZBYTE=734003200; \
 	if [ `ulimit -d` -lt $$DSIZ ]; then \
 	  echo "You need to increase the datasize limit to at least $$DSIZ \
 	    (and set kern.maxdsiz=\"$$DSIZBYTE\" in /boot/loader.conf) to \
