@@ -6,18 +6,24 @@
 #
 
 PORTNAME=	Date-Pcalc
-PORTVERSION=	1.2
+PORTVERSION=	6.0
 CATEGORIES=	devel perl5
-MASTER_SITES=	ftp://catcode.com/pub/date/ \
-		http://www.engelschall.com/u/sb/download/pkg/ \
-		CPAN
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STBEY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gregorian calendar date calculations
+
+BUILD_DEPENDS=	p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-Bit-Vector>=7.0:${PORTSDIR}/math/p5-Bit-Vector
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Date::Pcalc.3
+MAN3=		Date::Pcalc.3 \
+		Date::Pcalc::Object.3 \
+		Date::Pcalendar.3 \
+		Date::Pcalendar::Profiles.3 \
+		Date::Pcalendar::Year.3
 
 .include <bsd.port.mk>
