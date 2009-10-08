@@ -1,5 +1,16 @@
-%%SITE_PERL%%/Date/Pcalc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
+%%SITE_PERL%%/Date/Pcalc.pm
+%%SITE_PERL%%/Date/Pcalc.pod
+%%SITE_PERL%%/Date/Pcalc/Object.pm
+%%SITE_PERL%%/Date/Pcalc/Object.pod
+%%SITE_PERL%%/Date/Pcalendar.pm
+%%SITE_PERL%%/Date/Pcalendar.pod
+%%SITE_PERL%%/Date/Pcalendar/Profiles.pm
+%%SITE_PERL%%/Date/Pcalendar/Profiles.pod
+%%SITE_PERL%%/Date/Pcalendar/Year.pm
+%%SITE_PERL%%/Date/Pcalendar/Year.pod
+@dirrmtry %%SITE_PERL%%/Date/Pcalendar
+@dirrmtry %%SITE_PERL%%/Date/Pcalc
 @dirrmtry %%SITE_PERL%%/Date
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
