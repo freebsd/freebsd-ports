@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	repoze.tm2
-PORTVERSION=	1.0a4
+PORTVERSION=	1.0a5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Zope-like transaction manager via WSGI middleware
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}transaction>=1.0.0:${PORTSDIR}/devel/py-transaction
