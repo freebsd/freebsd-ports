@@ -188,6 +188,7 @@
     SUBDIR += colorer
     SUBDIR += colorgcc
     SUBDIR += commoncpp
+    SUBDIR += compiler-rt
     SUBDIR += compiz-bcop
     SUBDIR += configkit
     SUBDIR += cons

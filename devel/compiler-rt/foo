@@ -1,0 +1,55 @@
+# New ports collection makefile for:    compiler-rt
+# Date created:	 20 Nov 2005
+#
+# $FreeBSD$	     
+#
+
+PORTNAME=       compiler-rt
+DISTVERSION=    0.r${SVN_REV}
+CATEGORIES=     devel 
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     brooks
+	    
+MAINTAINER=     brooks@FreeBSD.org
+COMMENT=	Low Level Virtual Machine
+
+CONFIGURE_WRKSRC=	${WRKDIR}/build
+BUILD_WRKSRC=		${WRKDIR}/build
+
+USE_GCC=	4.2+
+USE_GMAKE=      yes
+USE_BZIP2=      yes
+USE_LDCONFIG=   yes
+MAKE_JOBS_SAFE= yes
+
+LLVM_SVN=       http://llvm.org/svn/llvm-project
+
+MAN1=
+
+.include <bsd.port.pre.mk>
+
+.if defined(BOOTSTRAP)
+SVN_REV!=       svn info ${LLVM_SVN}/ | ${GREP} Revision | cut -d' ' -f2
+.else
+.include "Makefile.svn_rev"
+.endif
+
+.if defined(BOOTSTRAP)
+FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export -r ${SVN_REV} \
+	    ${LLVM_SVN}/compiler-rt/trunk ${WRKSRC}
+	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2
+${DISTNAME}
+	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
+.if ${USER} == brooks
+	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
+	    freefall.freebsd.org:public_distfiles/
+.endif
+.endif
+
+do-configure:
+	${MKDIR} ${CONFIGURE_WRKSRC}
+	cd ${CONFIGURE_WRKSRC}/build && cmake ../compiler-rt
