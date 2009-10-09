@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thingylaunch
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
 		http://people.freebsd.org/~gahr/distfiles/ \
@@ -16,11 +16,8 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A lightweight tab-completing launcher for X
 
 USE_XORG=	x11 xproto
+USE_GNOME=	pkgconfig
 MAKE_JOBS_SAFE=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
