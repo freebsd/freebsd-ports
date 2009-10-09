@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PCSC-Card
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,5 @@ MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3
 post-patch:
 	${REINPLACE_CMD} -e "s,-I/usr/local/pcsc/include,${LOCALBASE}/include/PCSC," \
 		${WRKSRC}/Makefile.PL
-
 
 .include <bsd.port.mk>
