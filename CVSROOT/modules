@@ -5713,7 +5713,6 @@ ivtools                         ports/graphics/ivtools
 iw-aspell                       ports/hebrew/aspell
 iw-culmus                       ports/hebrew/culmus
 iw-elmar-fonts                  ports/hebrew/elmar-fonts
-iw-geresh                       ports/hebrew/geresh
 iw-he2                          ports/hebrew/he2
 iw-hspell                       ports/hebrew/hspell
 iw-kde3-i18n                    ports/hebrew/kde3-i18n
@@ -6636,6 +6635,7 @@ kde4-l10n-tr                    ports/misc/kde4-l10n-tr
 kde4-l10n-wa                    ports/misc/kde4-l10n-wa
 kde4-shared-mime-info           ports/misc/kde4-shared-mime-info
 kde4-style-polyester            ports/x11-themes/kde4-style-polyester
+kde4-windeco-aurorae            ports/x11-themes/kde4-windeco-aurorae
 kde4-windeco-crystal            ports/x11-themes/kde4-windeco-crystal
 kde4-windeco-dekorator          ports/x11-themes/kde4-windeco-dekorator
 kde4-xdg-env                    ports/misc/kde4-xdg-env
@@ -7007,7 +7007,6 @@ kwappen                         ports/games/kwappen
 kwatch                          ports/misc/kwatch
 kwebget                         ports/ftp/kwebget
 kwirc                           ports/irc/kwirc
-kxgenerator                     ports/x11/kxgenerator
 kxl                             ports/devel/kxl
 kxmleditor                      ports/editors/kxmleditor
 ky-aspell                       ports/textproc/ky-aspell
@@ -23399,6 +23398,7 @@ wdm                             ports/x11/wdm
 weatherget                      ports/astro/weatherget
 weathermap                      ports/net-mgmt/weathermap
 weatherspect                    ports/astro/weatherspect
+weave                           ports/www/weave
 web-traceroute                  ports/www/web-traceroute
 web2ldap                        ports/www/web2ldap
 webalizer                       ports/www/webalizer
