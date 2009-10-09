@@ -7,7 +7,7 @@
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.112
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -17,14 +17,13 @@ MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
 DISTNAME=	Pike-v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		nettle.2:${PORTSDIR}/security/nettle \
 		mird.1:${PORTSDIR}/databases/mird \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
@@ -78,7 +77,8 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-machine-code \
 		 --prefix=${PREFIX}
 
-MAKE_ARGS=	"CONFIGUREARGS=${CONFIGURE_ARGS}"
+MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}" ac_cv_lib_nettle_md5_init=no \
+		ac_cv_lib_nettle_nettle_md5_init=no
 
 USE_GETTEXT=	yes
 USE_BISON=	build
