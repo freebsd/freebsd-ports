@@ -1,0 +1,14 @@
+--- lib/LocalMakefile.in~	2005-07-01 07:19:39.000000000 +0900
++++ lib/LocalMakefile.in	2009-10-09 09:58:51.000000000 +0900
+@@ -41,9 +41,9 @@
+   LIBTOOL= $(SHELL) $(TOPDIR)/libtool
+   LTLINK = $(LIBTOOL) --mode=link
+   ifneq ($(BUILDID),)
+-    LTLINKLIBOPTS = -rpath $(libdir) -release $(BUILDID) -version-info $(SC_SO_VERSION)
++    LTLINKLIBOPTS = %%EXTRARPATH%% -rpath $(libdir) -release $(BUILDID) -version-info $(SC_SO_VERSION)
+   else
+-    LTLINKLIBOPTS = -rpath $(libdir) -version-info $(SC_SO_VERSION)
++    LTLINKLIBOPTS = %%EXTRARPATH%% -rpath $(libdir) -version-info $(SC_SO_VERSION)
+   endif
+   LTLINKBINOPTS =
+   LTCOMP = $(LIBTOOL) --mode=compile

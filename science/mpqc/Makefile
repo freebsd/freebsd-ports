@@ -7,7 +7,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -91,6 +91,12 @@ MPQC_COMMAND=	${PREFIX}/bin/mpqc
 CFLAGS+=	-O2 -ffast-math
 CXXFLAGS+=	-O2 -ffast-math
 .endif
+
+EXTRARPATH=	-Wl,-rpath=`${CAT} ${WRKSRC}/LIBDIR`
+
+post-patch:
+	@${DIRNAME} `${CC} -print-file-name=libstdc++.so` > ${WRKSRC}/LIBDIR
+	@${REINPLACE_CMD} -e 's|%%EXTRARPATH%%|${EXTRARPATH}|g' ${WRKSRC}/lib/LocalMakefile.in
 
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
