@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	jmol
-PORTVERSION=	11.6.17
+PORTVERSION=	11.8.7
 CATEGORIES=	science java
-MASTER_SITES=	SF/${PORTNAME}/Jmol/Version%20${PORTVERSION}:source1 \
+MASTER_SITES=	SF/${PORTNAME}/Jmol/Version%2011.8/Version%20${PORTVERSION}:source1 \
 		http://jmol.svn.sourceforge.net/viewvc/jmol/trunk/Jmol/selfSignedCertificate/:source2
 DISTFILES=	${PORTNAME}-${PORTVERSION}-full.tar.gz:source1 \
 		selfSignedCertificate.cer:source2 \
 		selfSignedCertificate.store:source2
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-full.tar.gz
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open-Source Java Viewer for Chemical Structures in 3D
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JMOL_FILES=	Jmol.jar JmolApplet.jar JmolApplet0.jar \
+		JmolApplet0_Console.jar \
 		JmolApplet0_Minimize.jar \
 		JmolApplet0_Popup.jar JmolApplet0_Quantum.jar \
 		JmolApplet0_ReadersCifPdb.jar JmolApplet0_ReadersMolXyz.jar \
@@ -29,7 +30,8 @@ JMOL_FILES=	Jmol.jar JmolApplet.jar JmolApplet0.jar \
 		JmolApplet0_ShapeBio.jar JmolApplet0_ShapeSpecial.jar \
 		JmolApplet0_ShapeSurface.jar \
 		JmolApplet0_Smiles.jar JmolApplet0_Symmetry.jar \
-		JmolApplet0_i18n.jar
+		JmolData.jar
+
 JMOL_FILES_EXT=	Jmol.js
 SIGN_DIR=	${WRKSRC}/selfSignedCertificate
 
@@ -66,10 +68,12 @@ do-install:
 .for j in ${JMOL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/build/${j} ${JAVAJARDIR}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/build/JmolApplet0_i18n_*.jar ${JAVAJARDIR}
 .else
 .for j in ${JMOL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${j} ${JAVAJARDIR}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/build/JmolApplet0_i18n_*.jar ${JAVAJARDIR}
 .endif
 
 .if !defined(NOPORTDOCS)

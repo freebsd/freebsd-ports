@@ -75,6 +75,7 @@
 %%JAVAJARDIR%%/Jmol.js
 %%JAVAJARDIR%%/JmolApplet.jar
 %%JAVAJARDIR%%/JmolApplet0.jar
+%%JAVAJARDIR%%/JmolApplet0_Console.jar
 %%JAVAJARDIR%%/JmolApplet0_Minimize.jar
 %%JAVAJARDIR%%/JmolApplet0_Popup.jar
 %%JAVAJARDIR%%/JmolApplet0_Quantum.jar
@@ -87,7 +88,30 @@
 %%JAVAJARDIR%%/JmolApplet0_ShapeSurface.jar
 %%JAVAJARDIR%%/JmolApplet0_Symmetry.jar
 %%JAVAJARDIR%%/JmolApplet0_Smiles.jar
-%%JAVAJARDIR%%/JmolApplet0_i18n.jar
+%%JAVAJARDIR%%/JmolData.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_ar.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_ca.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_cs.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_da.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_de.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_el.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_en_GB.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_es.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_et.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_fr.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_hu.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_it.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_ko.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_nb.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_nl.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_pl.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_pt.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_pt_BR.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_sl.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_sv.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_tr.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_uk.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_zh_TW.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/xml2po-modes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/po
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/history
