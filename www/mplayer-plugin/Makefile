@@ -11,14 +11,14 @@ PORTREVISION=	4
 CATEGORIES=	www multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GECKO=	libxul firefox
+USE_GECKO=	libxul
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 		mplayerplug-in-qt.so mplayerplug-in-rm.so \
