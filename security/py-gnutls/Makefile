@@ -19,8 +19,6 @@ COMMENT=	Python wrapper for the GNUTLS library
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	${PYCTYPES}
 
-BROKEN=		does not compile
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_gnutls
@@ -28,8 +26,9 @@ PYDISTUTILS_PKGNAME=	python_gnutls
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e "s|include_dirs=\[\]|include_dirs=\['${LOCALBASE}/include'\]|" ${WRKSRC}/setup.py
-	${REINPLACE_CMD} -e "s|library_dirs=\[\]|library_dirs=\['${LOCALBASE}/lib'\]|" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s|include_dirs=.*|include_dirs=\['${LOCALBASE}/include'\],|" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s|library_dirs=.*|library_dirs=\['${LOCALBASE}/lib'\],|" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s|\.26||g" ${WRKSRC}/gnutls/library/functions.py
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
