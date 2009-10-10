@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	planner.el
-PORTVERSION=	3.41
-PORTREVISION=	3
+PORTVERSION=	3.42
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://download.gna.org/planner-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -104,12 +103,12 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/planner
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS ChangeLog.2004 ChangeLog.2005 ChangeLog \
+PORTDOCS=	AUTHORS ChangeLog.1 ChangeLog.2 ChangeLog.3 ChangeLog \
 		COMMENTARY NEWS README
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's,PREFIX   =,PREFIX   ?=,' ${WRKSRC}/Makefile.defs
+	@${REINPLACE_CMD} 's,PREFIX   =,PREFIX   ?=,' ${WRKSRC}/Makefile.defs.default
 
 pre-build:
 	${CP} ${WRKSRC}/contrib/schedule.el ${WRKSRC}/schedule.el

@@ -40,6 +40,7 @@ info/planner-el
 %%EMACS_SITE_LISPDIR%%/planner/planner-log-edit.el
 %%EMACS_SITE_LISPDIR%%/planner/planner-log-edit.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-mhe.el
+%%EMACS_SITE_LISPDIR%%/planner/planner-mhe.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-multi.el
 %%EMACS_SITE_LISPDIR%%/planner/planner-multi.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-notes-index.el
