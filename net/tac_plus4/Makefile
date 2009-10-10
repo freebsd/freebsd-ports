@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tac_plus
-PORTVERSION=	F4.0.4.18
+PORTVERSION=	F4.0.4.19
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/tac_plus/
-DISTNAME=	tacacs+-F4.0.4.18
+DISTNAME=	tacacs+-F4.0.4.19
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	The Cisco remote authentication/authorization/accounting server
@@ -17,6 +17,7 @@ COMMENT=	The Cisco remote authentication/authorization/accounting server
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	tac_plus
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g tacacs 2>/dev/null || echo '559') \
 		--with-userid=$$(/usr/bin/id -u tacacs 2>/dev/null || echo '559')
 
