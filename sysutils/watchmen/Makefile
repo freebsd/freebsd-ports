@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	watchmen
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -21,7 +21,7 @@ USE_PERL5_RUN=	yes
 POD2MAN?=	pod2man
 
 MAN1=		${PORTNAME}.1
-PLIST_FILES= \
+PLIST_FILES=	\
 	bin/${PORTNAME}  \
 	etc/${PORTNAME}.conf.dist  \
 	%%SITE_PERL%%/%%PERL_ARCH%%/auto/watchmen/.packlist
