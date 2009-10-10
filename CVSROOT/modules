@@ -1715,6 +1715,7 @@ compat4x                        ports/misc/compat4x
 compat5x                        ports/misc/compat5x
 compat6x                        ports/misc/compat6x
 compat7x                        ports/misc/compat7x
+compiler-rt                     ports/devel/compiler-rt
 compiz                          ports/x11-wm/compiz
 compiz-bcop                     ports/devel/compiz-bcop
 compiz-fusion                   ports/x11-wm/compiz-fusion
