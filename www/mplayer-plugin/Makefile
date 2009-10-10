@@ -7,18 +7,18 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.55
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GECKO=	firefox mozilla seamonkey libxul
+USE_GECKO=	libxul firefox
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 		mplayerplug-in-qt.so mplayerplug-in-rm.so \
