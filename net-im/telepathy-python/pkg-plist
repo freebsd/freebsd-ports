@@ -115,6 +115,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Capabilities.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Capabilities.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Capabilities.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contact_Capabilities.py
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contact_Capabilities.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contact_Capabilities.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contacts.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contacts.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Contacts.pyo
