@@ -15,6 +15,7 @@ COMMENT=	A set of UNIX utilities written in assembly language
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+BROKEN=		does not install
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
