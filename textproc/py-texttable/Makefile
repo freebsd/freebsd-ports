@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texttable
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc python
 MASTER_SITES=	http://jefke.free.fr/stuff/python/texttable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,9 @@ COMMENT=	Module for creating simple ASCII tables
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/texttable.py \
+		%%PYTHON_SITELIBDIR%%/texttable.pyc \
+		%%PYTHON_SITELIBDIR%%/texttable.pyo
 
 .include <bsd.port.mk>
