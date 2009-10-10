@@ -16,6 +16,7 @@ COMMENT=	The Cisco remote authentication/authorization/accounting server
 
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
+USE_BISON=	build
 USE_RC_SUBR=	tac_plus
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g tacacs 2>/dev/null || echo '559') \
