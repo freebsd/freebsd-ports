@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
@@ -35,7 +34,7 @@ PLIST_DIRS=%%EXAMPLESDIR%%
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=cs da de es fr gl hu ko nb nl ru sk sv uk zh_CN
+LANGUAGES=cs da de es fr gl he hu ko nb nl ru sk sv uk zh_CN
 .for language in ${LANGUAGES}
 PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
@@ -55,6 +54,10 @@ CONFIGURE_ARGS+=--disable-lyrics-screen
 
 MAN1=		ncmpc.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
+	    ${WRKSRC}/lyrics/03-leoslyrics.py
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpc ${PREFIX}/bin/
 	${MKDIR} ${EXAMPLESDIR}
@@ -69,7 +72,10 @@ do-install:
 .endfor
 .endif
 .if !defined(WITHOUT_LYRICS)
-	${MAKE} -C ${WRKSRC} install-exec-local
+	${MKDIR} ${PREFIX}/lib/ncmpc/lyrics
+	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/01-hd.sh ${PREFIX}/lib/ncmpc/lyrics/01-hd.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/02-lyricwiki.rb ${PREFIX}/lib/ncmpc/lyrics/02-lyricwiki.rb
+	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/03-leoslyrics.py ${PREFIX}/lib/ncmpc/lyrics/03-leoslyrics.py
 .endif
 
 .include <bsd.port.post.mk>
