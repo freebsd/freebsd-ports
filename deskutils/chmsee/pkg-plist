@@ -13,6 +13,7 @@ share/locale/bn/LC_MESSAGES/chmsee.mo
 share/locale/ca/LC_MESSAGES/chmsee.mo
 share/locale/cs/LC_MESSAGES/chmsee.mo
 share/locale/da/LC_MESSAGES/chmsee.mo
+share/locale/de/LC_MESSAGES/chmsee.mo
 share/locale/el/LC_MESSAGES/chmsee.mo
 share/locale/en_GB/LC_MESSAGES/chmsee.mo
 share/locale/es/LC_MESSAGES/chmsee.mo
@@ -33,6 +34,7 @@ share/locale/sw/LC_MESSAGES/chmsee.mo
 share/locale/uk/LC_MESSAGES/chmsee.mo
 share/locale/vi/LC_MESSAGES/chmsee.mo
 share/locale/zh_CN/LC_MESSAGES/chmsee.mo
+share/locale/zh_TW/LC_MESSAGES/chmsee.mo
 share/mime-info/chmsee.keys
 share/mime-info/chmsee.mime
 share/pixmaps/chmsee-icon.png

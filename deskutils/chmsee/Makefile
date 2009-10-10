@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	chmsee
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
 		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
 USE_GNOME=	gnomehier libglade2
-USE_GECKO=	firefox libxul seamonkey xulrunner mozilla
+USE_GECKO=	libxul seamonkey xulrunner mozilla
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
