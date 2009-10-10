@@ -10,6 +10,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/throttled_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_daemon.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
@@ -17,6 +18,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/release-notes.html
 %%PORTDOCS%%%%DOCSDIR%%/rfcs-compliance.html
 %%PORTDOCS%%%%DOCSDIR%%/roadmap.lnk.html
