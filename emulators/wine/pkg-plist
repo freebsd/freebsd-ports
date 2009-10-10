@@ -804,6 +804,7 @@ lib/wine/fakedlls/eject.exe
 lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
 lib/wine/fakedlls/faultrep.dll
+lib/wine/fakedlls/fltlib.dll
 lib/wine/fakedlls/fusion.dll
 lib/wine/fakedlls/gdi32.dll
 lib/wine/fakedlls/gdiplus.dll
@@ -965,6 +966,7 @@ lib/wine/fakedlls/sensapi.dll
 lib/wine/fakedlls/serialui.dll
 lib/wine/fakedlls/services.exe
 lib/wine/fakedlls/setupapi.dll
+lib/wine/fakedlls/setupx.dll16
 lib/wine/fakedlls/sfc.dll
 lib/wine/fakedlls/sfc_os.dll
 lib/wine/fakedlls/shdoclc.dll
@@ -989,10 +991,12 @@ lib/wine/fakedlls/stress.dll16
 lib/wine/fakedlls/svchost.exe
 lib/wine/fakedlls/svrapi.dll
 lib/wine/fakedlls/sxs.dll
+lib/wine/fakedlls/system.drv16
 lib/wine/fakedlls/t2embed.dll
 lib/wine/fakedlls/tapi32.dll
 lib/wine/fakedlls/taskmgr.exe
 lib/wine/fakedlls/termsv.exe
+lib/wine/fakedlls/toolhelp.dll16
 lib/wine/fakedlls/traffic.dll
 lib/wine/fakedlls/twain.dll16
 lib/wine/fakedlls/twain_32.dll
@@ -1009,6 +1013,7 @@ lib/wine/fakedlls/usp10.dll
 lib/wine/fakedlls/uxtheme.dll
 lib/wine/fakedlls/vdhcp.vxd
 lib/wine/fakedlls/vdmdbg.dll
+lib/wine/fakedlls/ver.dll16
 lib/wine/fakedlls/version.dll
 lib/wine/fakedlls/vmm.vxd
 lib/wine/fakedlls/vnbt.vxd
@@ -1044,8 +1049,10 @@ lib/wine/fakedlls/winenas.drv
 lib/wine/fakedlls/wineoss.drv
 lib/wine/fakedlls/winepath.exe
 lib/wine/fakedlls/wineps.drv
+lib/wine/fakedlls/wineps16.drv16
 lib/wine/fakedlls/winevdm.exe
 lib/wine/fakedlls/winex11.drv
+lib/wine/fakedlls/wing.dll16
 lib/wine/fakedlls/wing32.dll
 lib/wine/fakedlls/winhelp.exe16
 lib/wine/fakedlls/winhlp32.exe
@@ -1056,6 +1063,7 @@ lib/wine/fakedlls/winnls.dll16
 lib/wine/fakedlls/winnls32.dll
 lib/wine/fakedlls/winoldap.mod16
 lib/wine/fakedlls/winscard.dll
+lib/wine/fakedlls/winsock.dll16
 lib/wine/fakedlls/winspool.drv
 lib/wine/fakedlls/wintab.dll16
 lib/wine/fakedlls/wintab32.dll
@@ -1079,6 +1087,7 @@ lib/wine/fakedlls/xinput1_3.dll
 lib/wine/fakedlls/xinput9_1_0.dll
 lib/wine/fakedlls/xmllite.dll
 lib/wine/faultrep.dll.so
+lib/wine/fltlib.dll.so
 lib/wine/fusion.dll.so
 lib/wine/gdi.exe16
 lib/wine/gdi32.dll.so
@@ -1391,7 +1400,7 @@ lib/wine/sensapi.dll.so
 lib/wine/serialui.dll.so
 lib/wine/services.exe.so
 lib/wine/setupapi.dll.so
-lib/wine/setupx.dll16
+lib/wine/setupx.dll16.so
 lib/wine/sfc.dll.so
 lib/wine/sfc_os.dll.so
 lib/wine/shdoclc.dll.so
@@ -1416,12 +1425,12 @@ lib/wine/stress.dll16.so
 lib/wine/svchost.exe.so
 lib/wine/svrapi.dll.so
 lib/wine/sxs.dll.so
-lib/wine/system.drv16
+lib/wine/system.drv16.so
 lib/wine/t2embed.dll.so
 lib/wine/tapi32.dll.so
 lib/wine/taskmgr.exe.so
 lib/wine/termsv.exe.so
-lib/wine/toolhelp.dll16
+lib/wine/toolhelp.dll16.so
 lib/wine/traffic.dll.so
 lib/wine/twain.dll16.so
 lib/wine/twain_32.dll.so
@@ -1439,7 +1448,7 @@ lib/wine/usp10.dll.so
 lib/wine/uxtheme.dll.so
 lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
-lib/wine/ver.dll16
+lib/wine/ver.dll16.so
 lib/wine/version.dll.so
 lib/wine/vmm.vxd.so
 lib/wine/vnbt.vxd.so
@@ -1475,10 +1484,10 @@ lib/wine/winenas.drv.so
 lib/wine/wineoss.drv.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.drv.so
-lib/wine/wineps16.drv16
+lib/wine/wineps16.drv16.so
 lib/wine/winevdm.exe.so
 lib/wine/winex11.drv.so
-lib/wine/wing.dll16
+lib/wine/wing.dll16.so
 lib/wine/wing32.dll.so
 lib/wine/winhelp.exe16.so
 lib/wine/winhlp32.exe.so
@@ -1489,7 +1498,7 @@ lib/wine/winnls.dll16.so
 lib/wine/winnls32.dll.so
 lib/wine/winoldap.mod16.so
 lib/wine/winscard.dll.so
-lib/wine/winsock.dll16
+lib/wine/winsock.dll16.so
 lib/wine/winspool.drv.so
 lib/wine/wintab.dll16.so
 lib/wine/wintab32.dll.so
