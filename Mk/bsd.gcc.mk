@@ -36,10 +36,10 @@
 GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 #
-# All GCC versions supported by the ports framework.
-# Please keep them in ascending order.
+# All GCC versions supported by the ports framework.  Keep them in
+# ascending order and in sync with the table below. 
 #
-GCCVERSIONS=	030402 040200 040300 040400
+GCCVERSIONS=	030402 040200 040300 040400 040500
 
 #
 # Versions of GCC shipped.
@@ -52,6 +52,7 @@ GCCVERSION_030402=	502126 700042 3.4
 GCCVERSION_040200=	700042 999999 4.2
 GCCVERSION_040300=	999999 999999 4.3
 GCCVERSION_040400=	999999 999999 4.4
+GCCVERSION_040500=	999999 999999 4.5
 
 #
 # No configurable parts below this.
