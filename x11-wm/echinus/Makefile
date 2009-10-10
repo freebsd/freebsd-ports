@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	echinus
-PORTVERSION=	0.3.4.1
+PORTVERSION=	0.3.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://rootshell.be/~polachok/code/
 
@@ -16,7 +16,7 @@ COMMENT=	A dynamic window manager for X11 based on dwm
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_XORG=	x11 xft xrender
+USE_XORG=	x11 xft xrender xrandr
 USE_GNOME=	pkgconfig
 
 MAN1=		echinus.1
