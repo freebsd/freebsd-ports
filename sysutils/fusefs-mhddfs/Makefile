@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhddfs
-PORTVERSION=	0.1.22
+PORTVERSION=	0.1.23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mhddfs.uvw.ru/downloads/
 PKGNAMEPREFIX=	fusefs-
