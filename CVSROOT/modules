@@ -10185,6 +10185,7 @@ p5-Algorithm-Dependency         ports/devel/p5-Algorithm-Dependency
 p5-Algorithm-Dependency-Objects  ports/devel/p5-Algorithm-Dependency-Objects
 p5-Algorithm-Diff               ports/devel/p5-Algorithm-Diff
 p5-Algorithm-Evolutionary       ports/devel/p5-Algorithm-Evolutionary
+p5-Algorithm-FloodControl       ports/devel/p5-Algorithm-FloodControl
 p5-Algorithm-IncludeExclude     ports/devel/p5-Algorithm-IncludeExclude
 p5-Algorithm-Interval2Prefix    ports/devel/p5-Algorithm-Interval2Prefix
 p5-Algorithm-LCS                ports/devel/p5-Algorithm-LCS
@@ -13733,6 +13734,7 @@ p5-algorithm-dependency         ports/devel/p5-Algorithm-Dependency
 p5-algorithm-dependency-objects  ports/devel/p5-Algorithm-Dependency-Objects
 p5-algorithm-diff               ports/devel/p5-Algorithm-Diff
 p5-algorithm-evolutionary       ports/devel/p5-Algorithm-Evolutionary
+p5-algorithm-floodcontrol       ports/devel/p5-Algorithm-FloodControl
 p5-algorithm-includeexclude     ports/devel/p5-Algorithm-IncludeExclude
 p5-algorithm-interval2prefix    ports/devel/p5-Algorithm-Interval2Prefix
 p5-algorithm-lcs                ports/devel/p5-Algorithm-LCS
