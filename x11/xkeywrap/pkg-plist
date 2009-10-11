@@ -1,5 +1,0 @@
-bin/xkeywrap
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/demo.dat
-%%PORTDOCS%%%%DOCSDIR%%/xkeywrap_demo.c
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
