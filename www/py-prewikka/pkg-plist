@@ -62,6 +62,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/templates/LoginPasswordForm.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/UserSettings.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/ErrorTemplate.py
+%%PYTHON_SITELIBDIR%%/prewikka/templates/IDMEFBrowser.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/MessageSummary.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/HTMLDocument.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/UserListing.py
@@ -84,6 +85,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/templates/LoginPasswordForm.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/UserSettings.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/ErrorTemplate.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/templates/IDMEFBrowser.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/MessageSummary.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/HTMLDocument.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/UserListing.pyc
@@ -106,6 +108,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/templates/LoginPasswordForm.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/UserSettings.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/ErrorTemplate.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/templates/IDMEFBrowser.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/MessageSummary.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/HTMLDocument.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/UserListing.pyo
