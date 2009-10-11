@@ -7,6 +7,7 @@
 
 PORTNAME=	Object-Event
 PORTVERSION=	1.101
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mons@cpan.org
 COMMENT=	A class that provides an event callback interface
 
-RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
+RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-common-sense>0:${PORTSDIR}/devel/p5-common-sense
 
 PERL_CONFIGURE=	yes
 
