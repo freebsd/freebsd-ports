@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	mod_extract_forwarded
-PORTVERSION=	2.0.2
+PORTVERSION=	1.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.openinfo.co.uk/apache/
-DISTNAME=	extract_forwarded-${DISTVERSION}
+MASTER_SITES=	http://web.warhound.org/${PORTNAME}/ \
+		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
-USE_APACHE=	20+
-WRKSRC=		${WRKDIR}/extract_forwarded
-PORTDOCS=	INSTALL README
 MAKE_JOBS_SAFE=  yes
 
+USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
+CONFLICTS=	mod_extract_forwarded-2.* mod_extract_forwarded2-0.*
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PORTDOCS=		doc.html README
 
 post-install:
 .if !defined(NOPORTDOCS)
