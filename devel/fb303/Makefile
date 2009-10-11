@@ -7,6 +7,7 @@
 
 PORTNAME=	fb303
 PORTVERSION=	20090622
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bms
@@ -26,10 +27,20 @@ PYTHON_VERSION_SHORTNAME=	${PYTHON_VERSION:S/thon//}
 USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PERL5_RUN=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
 .include <bsd.port.pre.mk>
+
+post-build:
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
+
+post-install:
+	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
+.for FILE in Constants.pm FacebookService.pm Types.pm
+	${INSTALL_DATA} ${WRKSRC}/gen-perl/Facebook/FB303/${FILE} ${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
+.endfor
 
 .if ${OSVERSION} < 700000
 IGNORE=		not supported
