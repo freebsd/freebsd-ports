@@ -69,6 +69,7 @@
     SUBDIR += p5-Finance-TW-EmergingQuote
     SUBDIR += p5-Finance-TW-TSEQuote
     SUBDIR += p5-Finance-YahooQuote
+    SUBDIR += p5-HTML-Query
     SUBDIR += p5-Locale-Currency-Format
     SUBDIR += p5-Math-Financial
     SUBDIR += p5-PFProAPI
