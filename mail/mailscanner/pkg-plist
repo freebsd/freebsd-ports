@@ -5,6 +5,7 @@ etc/MailScanner/country.domains.conf.sample
 etc/MailScanner/MailScanner.conf.sample
 etc/MailScanner/filename.rules.conf.sample
 etc/MailScanner/filetype.rules.conf.sample
+etc/MailScanner/conf.d/README
 etc/MailScanner/mcp/10_example.cf.sample
 etc/MailScanner/mcp/mcp.spam.assassin.prefs.conf.sample
 etc/MailScanner/mcp/v320.pre.sample
@@ -67,6 +68,8 @@ libexec/MailScanner/analyse_SpamAssassin_cache
 libexec/MailScanner/clean.SA.cache
 libexec/MailScanner/clean.quarantine
 libexec/MailScanner/mailscanner_create_locks
+libexec/MailScanner/processing_messages_alert
+libexec/MailScanner/Quick.Peek
 libexec/MailScanner/update_bad_phishing_emails
 libexec/MailScanner/update_phishing_sites
 libexec/MailScanner/update_bad_phishing_sites
@@ -568,6 +571,7 @@ sbin/MailScanner
 @dirrm lib/MailScanner/MailScanner/CustomFunctions
 @dirrm lib/MailScanner/MailScanner
 @dirrm lib/MailScanner
+@dirrm etc/MailScanner/conf.d
 @dirrm etc/MailScanner/mcp
 @dirrm etc/MailScanner/rules
 @dirrm etc/MailScanner
