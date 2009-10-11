@@ -545,6 +545,7 @@
     SUBDIR += p5-Net-LDAP-Express
     SUBDIR += p5-Net-LDAP-LDAPhash
     SUBDIR += p5-Net-LDAP-Makepath
+    SUBDIR += p5-Net-LDAP-Server
     SUBDIR += p5-Net-Libdnet
     SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
