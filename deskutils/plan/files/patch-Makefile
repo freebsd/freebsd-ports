@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Feb  7 03:11:34 2005
-+++ Makefile	Mon Dec 11 16:30:57 2006
+--- Makefile.orig	2007-07-03 15:08:52.000000000 -0300
++++ Makefile	2009-10-05 22:12:11.000000000 -0300
 @@ -8,19 +8,19 @@
  # after "=", this is parsed and rewritten by the configure script.
  #
@@ -45,7 +45,7 @@
  JAPANDEFS='-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 -DLOCALE_SJIS=ja_JP.SJIS -DLOCALE_EUC=ja_JP.EUC'
 +.if defined(JAPANESE)
 +JAPAN=-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
-+       -DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
++	-DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
 +.else
  JAPAN=
 +.endif
@@ -68,7 +68,7 @@
  	  -DSTDLIBMALLOC
  OBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
  	  -DNO_MOTIF -DSTDLIBMALLOC
-@@ -219,10 +223,10 @@
+@@ -221,10 +225,10 @@
  BSDIG_L2= -L/usr/X11/lib -lc
  NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
  NBSD_L2	= -L/usr/X11R6/lib -lc
@@ -76,14 +76,14 @@
 -FBSD_L2	= -L/usr/X11R6/lib -lc
 -OBSD_L1	= -L/usr/local/lib -lXm -L/usr/X11R6/lib -lXt -lX11
 -OBSD_L2	= -lc
-+FBSD_L1 = -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
-+FBSD_L2 =
-+OBSD_L1 = -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
-+OBSD_L2 =
- LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
++FBSD_L1	= -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++FBSD_L2	=
++OBSD_L1	= -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++OBSD_L2	=
+ LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lXm -lXt -lX11 -lXpm -lc -lXext -lICE -lX11
  LINUX_L2= -lc
  SLINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM /usr/X11R6/lib/libXm.a -lXt -lX11 /usr/X11R6/lib/libXpm.a -lc -lXext -lSM -lICE -lX11
-@@ -287,7 +291,7 @@
+@@ -291,7 +295,7 @@
  	@echo "  make bsdi      BSDI/386"
  	@echo "  make bsdig     BSDI/386 with gcc"
  	@echo "  make netbsd    NetBSD/i386 1.0A (maybe others too)"
@@ -92,7 +92,7 @@
  	@echo "  make openbsd	OpenBSD"
  	@echo "  make svr4      SVR4 Using gcc"
  	@echo "  make news4     Sony NEWS-OS4.x"
-@@ -525,7 +529,7 @@
+@@ -542,7 +546,7 @@
  	$(CCLINE) -c -DLIB=\"$(LIB)\" $<
  
  holiday.o: holiday.c $(MAKEFILE)
@@ -101,16 +101,16 @@
  
  util.o: util.c $(MAKEFILE)
  	$(CCLINE) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
-@@ -600,10 +604,10 @@
- LIST	= README HISTORY holiday/* language/* misc/* src/resources.h.bigfonts web/*
+@@ -617,10 +621,10 @@
+ LIST	= README HISTORY plan.spec holiday/* language/* misc/* src/resources.h.bigfonts web/*
  SRC	= Makefile $(P_SRC) daemon.c $(N_SRC) $(S_SRC) $(INC) $(S_INC) configure
  
 -LDIR	= /usr/X11R6/lib
 +LDIR	= $(LOCALBASE)/lib
  BINDIR	= plan-$(VERSION)
  gMYCC	= gcc
--gCF	= -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
-+gCF	= -I$(LOCALBASE)/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
- gL1F	= -L$(LDIR) -lSM $(LDIR)/libXm.a -lXt -lX11 $(LDIR)/libXpm.a -lc -lXext -lSM -lICE -lXp -lX11
+-gCF	= -m32 -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX -Dlinux
++gCF	= -m32 -I$(LOCALBASE)/include -D_POSIX_SOURCE -DNOLOCK -DLINUX -Dlinux
+ gL1F	= -L$(LDIR) $(LDIR)/libXm.a -lXt -lX11 $(LDIR)/libXpm.a -lc -lXext -lICE -lXp -lX11
  gL2F	= -lc
-
+ 

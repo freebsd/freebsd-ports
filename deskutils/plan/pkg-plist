@@ -40,6 +40,7 @@ bin/Killpland
 %%PORTDOCS%%%%DOCSDIR%%/plan.lang.french
 %%PORTDOCS%%%%DOCSDIR%%/plan.lang.german
 %%PORTDOCS%%%%DOCSDIR%%/plan.lang.italian
+%%PORTDOCS%%%%DOCSDIR%%/plan.lang.polish
 %%PORTDOCS%%%%DOCSDIR%%/plan.lang.spanish
 @exec /bin/mkdir -p %D/%%DATADIR%%/netplan.dir
 @dirrmtry %%DATADIR%%/netplan.dir
