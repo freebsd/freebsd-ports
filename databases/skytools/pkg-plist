@@ -39,6 +39,7 @@ bin/walmgr.py
 %%PYTHON_SITELIBDIR%%/pgq/producer.py
 %%PYTHON_SITELIBDIR%%/pgq/producer.pyc
 %%PYTHON_SITELIBDIR%%/pgq/status.py
+%%PYTHON_SITELIBDIR%%/pgq/status.pyc
 %%PYTHON_SITELIBDIR%%/pgq/ticker.py
 %%PYTHON_SITELIBDIR%%/pgq/ticker.pyc
 %%PYTHON_SITELIBDIR%%/skytools/__init__.py
@@ -73,6 +74,7 @@ bin/walmgr.py
 %%EXAMPLESDIR%%/conf/queue_mover.ini.templ
 %%EXAMPLESDIR%%/conf/queue_splitter.ini.templ
 %%EXAMPLESDIR%%/conf/scriptmgr.ini.templ
+%%EXAMPLESDIR%%/conf/skylog.ini
 %%EXAMPLESDIR%%/conf/table_dispatcher.ini.templ
 %%EXAMPLESDIR%%/conf/wal-master.ini
 %%EXAMPLESDIR%%/conf/wal-slave.ini
@@ -112,6 +114,7 @@ share/postgresql/contrib/txid.sql
 %%DATADIR%%/upgrade/final/v2.1.6_pgq_ext.sql
 %%DATADIR%%/upgrade/final/v2.1.7_londiste.sql
 %%DATADIR%%/upgrade/final/v2.1.7_pgq_core.sql
+%%DATADIR%%/upgrade/final/v2.1.8_pgq_core.sql
 @dirrm %%DATADIR%%/upgrade/final
 @dirrm %%DATADIR%%/upgrade
 @dirrm %%DATADIR%%
