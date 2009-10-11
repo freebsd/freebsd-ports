@@ -2787,6 +2787,7 @@
     SUBDIR += rubygem-streetaddress
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-transactionsimple
+    SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-uuid
