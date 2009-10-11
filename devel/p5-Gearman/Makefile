@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	Gearman
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/B/BR/BRADFITZ
+MASTER_SITE_SUBDIR=	../by-authors/id/D/DO/DORMANDO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Gearman client libraray for Perl
 
 RUN_DEPENDS+=	p5-String-CRC32>=0.0:${PORTSDIR}/devel/p5-String-CRC32
-BUILD_DEPENDS+=	p5-String-CRC32>=0.0:${PORTSDIR}/devel/p5-String-CRC32
 
 PERL_CONFIGURE=	yes
 
