@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.64
-PORTREVISION=	1
+PORTVERSION=	2.67
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -32,8 +31,8 @@ SPOOLDIR?=		/var/spool/MIMEDefang
 QUARANTINEDIR?=	/var/spool/MD-Quarantine
 
 CONFIGURE_ENV+=		PERL=${PERL}
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
-			--with-confsubdir= \
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
+			--with-confsubdir=mimedefang \
 			--with-user=${MAILUSER} \
 			--with-spooldir=${SPOOLDIR} \
 			--with-quarantinedir=${QUARANTINEDIR} \
@@ -54,6 +53,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 CONFIGURE_ARGS+= --with-milterinc=${LOCALBASE}/include
 CONFIGURE_ARGS+= --with-milterlib=${LOCALBASE}/lib
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/fgrep -e/d' ${WRKSRC}/configure
 
 pre-install:
 	@${REINPLACE_CMD} -e '/LOCAL_STATE_DIR/s,/var/lib,/var/db,' ${WRKSRC}/mimedefang.pl
