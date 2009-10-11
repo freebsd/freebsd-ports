@@ -9,4 +9,4 @@ An example of the kind of situation pscan looks for is the following:
   variable = "%s";                   /* or malicious user input */
   sprintf(buffer, variable);         /* BAD! */
 
-WWW: http://www.striker.ottawa.on.ca/~aland/pscan/
+WWW: http://deployingradius.com/pscan/
