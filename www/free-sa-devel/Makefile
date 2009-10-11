@@ -7,6 +7,7 @@
 
 PORTNAME=	free-sa
 PORTVERSION=	2.0.0b2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b2%20_Big%20Change%20Edition_/
@@ -20,26 +21,80 @@ CONFLICTS=	free-sa-[0-9]*
 LATEST_LINK=	free-sa-devel
 
 WWWDIR?=	${PREFIX}/www/data/${PORTNAME}
-DOCSDIR=	share/doc/free-sa-${DISTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 PORTDOCS=	COPYING ChangeLog FAQ INSTALL README README.DEV THANKS
 MAN1=		free-sa.1
 MAN5=		free-sa.conf.5
 
-.include <bsd.port.pre.mk>
+MAKE_ARGS+=	ETCDIR="${ETCDIR}" \
+		WWWDIR="${WWWDIR}" \
+		CACHEDIR="/var/cache/${PORTNAME}" \
+		LOCDIR="${DATADIR}" \
+		DOCDIR="${DOCSDIR}" \
+		LOGFILE=/var/log/squid/access.log \
+		CC="${CC}" \
+		SORT=/usr/bin/sort \
+		INSTALL=/usr/bin/install \
+		LARGEFILE=yes \
+		SATSEP="'" \
+		ADDLDFLAGS="${LDFLAGS} --relax -mrelax"
+
+OPTIONS=	OPTIMIZED_CFLAGS "Build with distribution-recommended CFLAGS"	off \
+		SA_DEBUG "Enable Free-SA debugging (level 1)"	off
+
+.include <bsd.port.options.mk>
+
+pre-everything::
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} ">>> This software is computationally demanding, and users are"
+	@${ECHO_MSG} ">>> advised to employ compiler optimizations when building it."
+	@${ECHO_MSG} ">>> Author of this software have used such flags as"
+	@${ECHO_MSG} ">>> 'CFLAGS= -O4 -pipe -march=native' and 'CC= gcc' to advantage."
+	@${ECHO_MSG} ">>> You can set them in make.conf, but they depends on your system and compiler."
+	@${ECHO_MSG} ">>> In addition, you can enable extra flags by defining WITH_OPTIMIZED_CFLAGS"
+	@${ECHO_MSG} ">>> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
+	@${ECHO_MSG} ">>>"
+.endif
+.ifndef(WITH_SA_DEBUG) && (SA_DEBUG_LEVEL)
+	@${ECHO_MSG} ">>> You can enable Free-SA debugging (level 1) by defining WITH_SA_DEBUG"
+	@${ECHO_MSG} ">>> For example, 'make WITH_SA_DEBUG=yes'"
+	@${ECHO_MSG} ">>> Or for specific level (0-7) you can use SA_DEBUG_LEVEL"
+	@${ECHO_MSG} ">>> For example, 'make SA_DEBUG_LEVEL=4'"
+	@${ECHO_MSG} ">>> Note that SA_DEBUG_LEVEL overrides WITH_SA_DEBUG"
+	@${ECHO_MSG} ">>>"
+.endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=	Does not configure on sparc64
+TRYBROKEN=	Does not configure on sparc64
+.endif
+
+.if defined(WITH_SA_DEBUG)
+SA_DEBUG_LEVEL?=	1
+.else
+SA_DEBUG_LEVEL?=	0
 .endif
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
 .endif
 
-.if ${ARCH} == "i386"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-i386.mk
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,^DEBUG = .*,DEBUG = ${SA_DEBUG_LEVEL},' \
+		-e 's,^include .(GMKPATH)/configs/.(OSTYPE)\.mk,,' \
+		${WRKSRC}/global.mk
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+MAKE_ARGS+=	ADDCFLAGS="${CFLAGS} \
+		-fomit-frame-pointer \
+		-std=c99 \
+		-W -Wall -Wextra -Wredundant-decls -Wnested-externs -Wstrict-prototypes \
+		-Wmissing-prototypes -Wpointer-arith -Winline -Wcast-qual \
+		-Wreturn-type -Wswitch -Wshadow -Wcast-align -Wuninitialized \
+		-Wchar-subscripts -Wuninitialized -Wbad-function-cast -Wwrite-strings"
 .else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-native.mk
+MAKE_ARGS+=	ADDCFLAGS="${CFLAGS}"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
