@@ -2756,6 +2756,7 @@
     SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-platform
+    SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
