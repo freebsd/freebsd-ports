@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.7-20090828
+DISTVERSION=	2.7-20091008
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -54,8 +54,8 @@ MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 regexp_table.5 \
 	relocated.5 tcp_table.5 transport.5 virtual.5
 
-MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 error.8 flush.8 local.8 master.8 \
-	oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
+MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
+	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
 	smtp.8 smtpd.8 spawn.8 tlsmgr.8 trivial-rewrite.8 verify.8 virtual.8
 
 MLINKS=	sendmail.1 mailq.1 \
