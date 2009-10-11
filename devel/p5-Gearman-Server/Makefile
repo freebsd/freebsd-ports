@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	Gearman-Server
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/B/BR/BRADFITZ
+MASTER_SITE_SUBDIR=	../by-authors/id/D/DO/DORMANDO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Gearman server daemon
 
-RUN_DEPENDS=	p5-Gearman>=1.0:${PORTSDIR}/devel/p5-Gearman \
+RUN_DEPENDS=	p5-Gearman>=1.10:${PORTSDIR}/devel/p5-Gearman \
 		p5-Danga-Socket>=1.52:${PORTSDIR}/devel/p5-Danga-Socket
-BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -27,5 +26,4 @@ MAN3=	Gearman::Server.3 Gearman::Server::Client.3
 USE_RC_SUBR=	gearmand
 SUB_LIST+=	NAME=gearmand
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
