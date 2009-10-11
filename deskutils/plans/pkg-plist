@@ -1,30 +1,79 @@
-@unexec if cmp -s %D/%%WWWDIR%%/data/calendars.xml.default %D/%%WWWDIR%%/data/calendars.xml; then rm -f %D/%%WWWDIR%%/data/calendars.xml; fi
-%%WWWDIR%%/data/calendars.xml.default
 @exec   if [ ! -f %D/%%WWWDIR%%/data/calendars.xml ] ; then cp -p %D/%F %B/calendars.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/email_reminders.xml.default %D/%%WWWDIR%%/data/email_reminders.xml; then rm -f %D/%%WWWDIR%%/data/email_reminders.xml; fi
-%%WWWDIR%%/data/email_reminders.xml.default
 @exec   if [ ! -f %D/%%WWWDIR%%/data/email_reminders.xml ] ; then cp -p %D/%F %B/email_reminders.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/events.xml.default %D/%%WWWDIR%%/data/events.xml; then rm -f %D/%%WWWDIR%%/data/events.xml; fi
-%%WWWDIR%%/data/events.xml.default
 @exec   if [ ! -f %D/%%WWWDIR%%/data/events.xml ] ; then cp -p %D/%F %B/events.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/new_calendars.xml.default %D/%%WWWDIR%%/data/new_calendars.xml; then rm -f %D/%%WWWDIR%%/data/new_calendars.xml; fi
-%%WWWDIR%%/data/new_calendars.xml.default
 @exec   if [ ! -f %D/%%WWWDIR%%/data/new_calendars.xml ] ; then cp -p %D/%F %B/new_calendars.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/pending_actions.xml.default %D/%%WWWDIR%%/data/pending_actions.xml; then rm -f %D/%%WWWDIR%%/data/pending_actions.xml; fi
-%%WWWDIR%%/data/pending_actions.xml.default
 @exec   if [ ! -f %D/%%WWWDIR%%/data/pending_actions.xml ] ; then cp -p %D/%F %B/pending_actions.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/users.xml.default %D/%%WWWDIR%%/data/users.xml; then rm -f %D/%%WWWDIR%%/data/users.xml; fi
-%%WWWDIR%%/data/users.xml.default
 @exec   if [ ! -f %D/%%WWWDIR%%/data/users.xml ] ; then cp -p %D/%F %B/users.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/plans_config.pl.default %D/%%WWWDIR%%/plans_config.pl; then rm -f %D/%%WWWDIR%%/plans_config.pl; fi
-%%WWWDIR%%/plans_config.pl.default
 @exec   if [ ! -f %D/%%WWWDIR%%/plans_config.pl ] ; then cp -p %D/%F %B/plans_config.pl; fi
+@unexec if cmp -s %D/%%WWWDIR%%/data/calendars.xml.default %D/%%WWWDIR%%/data/calendars.xml; then rm -f %D/%%WWWDIR%%/data/calendars.xml; fi
+@unexec if cmp -s %D/%%WWWDIR%%/data/email_reminders.xml.default %D/%%WWWDIR%%/data/email_reminders.xml; then rm -f %D/%%WWWDIR%%/data/email_reminders.xml; fi
+@unexec if cmp -s %D/%%WWWDIR%%/data/events.xml.default %D/%%WWWDIR%%/data/events.xml; then rm -f %D/%%WWWDIR%%/data/events.xml; fi
+@unexec if cmp -s %D/%%WWWDIR%%/data/new_calendars.xml.default %D/%%WWWDIR%%/data/new_calendars.xml; then rm -f %D/%%WWWDIR%%/data/new_calendars.xml; fi
+@unexec if cmp -s %D/%%WWWDIR%%/data/pending_actions.xml.default %D/%%WWWDIR%%/data/pending_actions.xml; then rm -f %D/%%WWWDIR%%/data/pending_actions.xml; fi
+@unexec if cmp -s %D/%%WWWDIR%%/data/users.xml.default %D/%%WWWDIR%%/data/users.xml; then rm -f %D/%%WWWDIR%%/data/users.xml; fi
+@unexec if cmp -s %D/%%WWWDIR%%/plans_config.pl.default %D/%%WWWDIR%%/plans_config.pl; then rm -f %D/%%WWWDIR%%/plans_config.pl; fi
+%%WWWDIR%%/Error.pm
+%%WWWDIR%%/JSON/PP.pm
+%%WWWDIR%%/JSON/PP/Boolean.pm
+%%WWWDIR%%/JSON/PP5005.pm
+%%WWWDIR%%/JSON/PP56.pm
+%%WWWDIR%%/JSON/PP58.pm
+%%WWWDIR%%/Time/Normalize.pm
+%%WWWDIR%%/cz_czech.pl
+%%WWWDIR%%/danish.pl
+%%WWWDIR%%/data/calendars.xml.default
+%%WWWDIR%%/data/email_reminders.xml.default
+%%WWWDIR%%/data/events.xml.default
+%%WWWDIR%%/data/new_calendars.xml.default
+%%WWWDIR%%/data/pending_actions.xml.default
+%%WWWDIR%%/data/users.xml.default
+%%WWWDIR%%/de_german.pl
 %%WWWDIR%%/email_reminders.cgi
+%%WWWDIR%%/fr_french.pl
 %%WWWDIR%%/gpl.txt
+%%WWWDIR%%/includes.pl
+%%WWWDIR%%/it_italian.pl
+%%WWWDIR%%/nl_dutch.pl
 %%WWWDIR%%/plans.cgi
+%%WWWDIR%%/plans_check.cgi
+%%WWWDIR%%/plans_config.pl.default
 %%WWWDIR%%/plans_lib.pl
-%%WWWDIR%%/theme/color_select.css
-%%WWWDIR%%/theme/color_select.js
+%%WWWDIR%%/plans_unit_test.pl
+%%WWWDIR%%/sp_spanish.pl
+%%WWWDIR%%/theme/colorpicker/css/colorpicker.css
+%%WWWDIR%%/theme/colorpicker/css/layout.css
+%%WWWDIR%%/theme/colorpicker/images/Thumbs.db
+%%WWWDIR%%/theme/colorpicker/images/blank.gif
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_background.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_hex.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_hsb_b.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_hsb_h.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_hsb_s.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_indic.gif
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_overlay.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_rgb_b.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_rgb_g.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_rgb_r.png
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_select.gif
+%%WWWDIR%%/theme/colorpicker/images/colorpicker_submit.png
+%%WWWDIR%%/theme/colorpicker/images/custom_background.png
+%%WWWDIR%%/theme/colorpicker/images/custom_hex.png
+%%WWWDIR%%/theme/colorpicker/images/custom_hsb_b.png
+%%WWWDIR%%/theme/colorpicker/images/custom_hsb_h.png
+%%WWWDIR%%/theme/colorpicker/images/custom_hsb_s.png
+%%WWWDIR%%/theme/colorpicker/images/custom_indic.gif
+%%WWWDIR%%/theme/colorpicker/images/custom_rgb_b.png
+%%WWWDIR%%/theme/colorpicker/images/custom_rgb_g.png
+%%WWWDIR%%/theme/colorpicker/images/custom_rgb_r.png
+%%WWWDIR%%/theme/colorpicker/images/custom_submit.png
+%%WWWDIR%%/theme/colorpicker/images/select.png
+%%WWWDIR%%/theme/colorpicker/images/select2.png
+%%WWWDIR%%/theme/colorpicker/images/slider.png
+%%WWWDIR%%/theme/colorpicker/index.html
+%%WWWDIR%%/theme/colorpicker/js/colorpicker.js
+%%WWWDIR%%/theme/colorpicker/js/eye.js
+%%WWWDIR%%/theme/colorpicker/js/layout.js
+%%WWWDIR%%/theme/colorpicker/js/utils.js
 %%WWWDIR%%/theme/graphics/close_button1.gif
 %%WWWDIR%%/theme/graphics/color_select_icon.gif
 %%WWWDIR%%/theme/graphics/date_circle.gif
@@ -332,27 +381,89 @@
 %%WWWDIR%%/theme/icons/wreath_16x16.gif
 %%WWWDIR%%/theme/icons/wreath_32x32.gif
 %%WWWDIR%%/theme/icons/wreath_50x50.gif
-%%WWWDIR%%/theme/lpd.js
+%%WWWDIR%%/theme/images/222222_11x11_icon_arrows_leftright.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_arrows_updown.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_close.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_doc.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_folder_closed.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_folder_open.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_minus.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_plus.gif
+%%WWWDIR%%/theme/images/222222_11x11_icon_resize_se.gif
+%%WWWDIR%%/theme/images/222222_7x7_arrow_down.gif
+%%WWWDIR%%/theme/images/222222_7x7_arrow_left.gif
+%%WWWDIR%%/theme/images/222222_7x7_arrow_right.gif
+%%WWWDIR%%/theme/images/222222_7x7_arrow_up.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_arrows_leftright.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_arrows_updown.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_close.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_doc.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_folder_closed.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_folder_open.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_minus.gif
+%%WWWDIR%%/theme/images/454545_11x11_icon_plus.gif
+%%WWWDIR%%/theme/images/454545_7x7_arrow_down.gif
+%%WWWDIR%%/theme/images/454545_7x7_arrow_left.gif
+%%WWWDIR%%/theme/images/454545_7x7_arrow_right.gif
+%%WWWDIR%%/theme/images/454545_7x7_arrow_up.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_arrows_leftright.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_arrows_updown.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_close.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_doc.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_folder_closed.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_folder_open.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_minus.gif
+%%WWWDIR%%/theme/images/888888_11x11_icon_plus.gif
+%%WWWDIR%%/theme/images/888888_7x7_arrow_down.gif
+%%WWWDIR%%/theme/images/888888_7x7_arrow_left.gif
+%%WWWDIR%%/theme/images/888888_7x7_arrow_right.gif
+%%WWWDIR%%/theme/images/888888_7x7_arrow_up.gif
+%%WWWDIR%%/theme/images/calendar.gif
+%%WWWDIR%%/theme/images/dadada_40x100_textures_02_glass_75.png
+%%WWWDIR%%/theme/images/e6e6e6_40x100_textures_02_glass_75.png
+%%WWWDIR%%/theme/images/error_icon.png
+%%WWWDIR%%/theme/images/ffffff_40x100_textures_02_glass_65.png
+%%WWWDIR%%/theme/images/tabs.png
+%%WWWDIR%%/theme/images/tabs2.png
+%%WWWDIR%%/theme/images/throbber.gif
+%%WWWDIR%%/theme/images/ui-bg_flat_75_aaaaaa_40x100.png
+%%WWWDIR%%/theme/images/ui-bg_glass_100_f5f0e5_1x400.png
+%%WWWDIR%%/theme/images/ui-bg_glass_25_cb842e_1x400.png
+%%WWWDIR%%/theme/images/ui-bg_glass_70_ede4d4_1x400.png
+%%WWWDIR%%/theme/images/ui-bg_highlight-hard_100_f4f0ec_1x100.png
+%%WWWDIR%%/theme/images/ui-bg_highlight-hard_65_fee4bd_1x100.png
+%%WWWDIR%%/theme/images/ui-bg_highlight-hard_75_f5f5b5_1x100.png
+%%WWWDIR%%/theme/images/ui-bg_inset-soft_100_f4f0ec_1x100.png
+%%WWWDIR%%/theme/images/ui-icons_c47a23_256x240.png
+%%WWWDIR%%/theme/images/ui-icons_cb672b_256x240.png
+%%WWWDIR%%/theme/images/ui-icons_f08000_256x240.png
+%%WWWDIR%%/theme/images/ui-icons_f35f07_256x240.png
+%%WWWDIR%%/theme/images/ui-icons_ff7519_256x240.png
+%%WWWDIR%%/theme/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/theme/jquery-1.3.2.min.js
+%%WWWDIR%%/theme/jquery-ui-1.7.1.custom.min.js
 %%WWWDIR%%/theme/plans.css
 %%WWWDIR%%/theme/plans.js
 %%WWWDIR%%/theme/plans.template
 %%WWWDIR%%/theme/plans_lang.js
 %%WWWDIR%%/theme/upcoming_events.css
-%%WWWDIR%%/theme/upcoming_events.js
+%%WWWDIR%%/upcoming_events.cgi
+%%WWWDIR%%/upcoming_events.html
 %%WWWDIR%%/us_english.pl
 %%WWWDIR%%/us_english_utf8.pl
-%%WWWDIR%%/cz_czech.pl
-%%WWWDIR%%/danish.pl
-%%WWWDIR%%/de_german.pl
-%%WWWDIR%%/fr_french.pl
-%%WWWDIR%%/it_italian.pl
-%%WWWDIR%%/nl_dutch.pl
-%%WWWDIR%%/sp_spanish.pl
 %%WWWDIR%%/zh_tw.pl
-@dirrm %%WWWDIR%%/theme/icons
 @dirrm %%WWWDIR%%/theme/graphics
-@dirrmtry %%WWWDIR%%/theme/ical
-@dirrmtry %%WWWDIR%%/theme
-@dirrmtry %%WWWDIR%%/sessions
-@dirrmtry %%WWWDIR%%/data
-@dirrmtry %%WWWDIR%%
+@dirrm %%WWWDIR%%/theme/ical
+@dirrm %%WWWDIR%%/theme/icons
+@dirrm %%WWWDIR%%/theme/images
+@dirrm %%WWWDIR%%/theme/colorpicker/js
+@dirrm %%WWWDIR%%/theme/colorpicker/images
+@dirrm %%WWWDIR%%/theme/colorpicker/css
+@dirrm %%WWWDIR%%/theme/colorpicker
+@dirrm %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/sessions
+@dirrm %%WWWDIR%%/theme
+@dirrm %%WWWDIR%%/Time
+@dirrm %%WWWDIR%%/JSON/PP
+@dirrm %%WWWDIR%%/JSON
+@dirrm %%WWWDIR%%
