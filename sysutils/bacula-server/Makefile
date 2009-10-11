@@ -93,6 +93,7 @@ IS_INTERACTIVE=	yes
 .if defined(WITH_CLIENT_ONLY)
 OPTIONS=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console: deprecated" off
+OPTIONS+=	SFDAEMON "Build with staticly compiled file daemon" off
 .elif defined(WITH_BAT)
 OPTIONS=	
 .else
@@ -139,9 +140,15 @@ PKGINSTALL=	${PKGDIR}/pkg-install.server
 CONFFILES=	fd
 # --disable-xattr is temporary to allow build with 8-current
 CONFIGURE_ARGS+=	--enable-client-only --disable-xattr
-
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
 PKGINSTALL=	${PKGDIR}/pkg-install.client
+# Build a static fd binary.
+.if defined(WITH_SFDAEMON)
+CONFIGURE_ARGS+=	--enable-static-fd
+PLIST_SUB+=	SFDAEMON=""
+.else
+PLIST_SUB+=	SFDAEMON="@comment "
+.endif
 # Build bgnome-console
 .if defined(WITH_GNOMECONSOLE)
 CONFIGURE_ARGS+=	--enable-gnome
@@ -219,6 +226,7 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_GNOMECONSOLE=yes	if you only want a GNOME based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
 	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SqLite-3 instead of SqLite-2 as the database."
+	@${ECHO_MSG} "  WITH_SFDAEMON=yes  if you want staticly compiled file daemon (client)."
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
 	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL instead of SqLite as the database."

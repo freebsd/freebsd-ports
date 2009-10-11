@@ -11,6 +11,7 @@ lib/libbacfind.so.1
 lib/libbacpy.la
 lib/libbacpy.so
 lib/libbacpy.so.1
+%%SFDAEMON%%sbin/static-bacula-fd
 sbin/bacula-fd
 sbin/bconsole
 %%GNOMECONS%%sbin/gnome-console
