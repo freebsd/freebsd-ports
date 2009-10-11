@@ -12,7 +12,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/qce-ga/OldFiles
 DISTNAME=	${REALNAME}-${PORTVERSION}
 
-PATCH_SITES=	http://www.medias.ne.jp/~takam/bsd/
+PATCH_SITES=	http://home.384.jp/takam/bsd/ \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	nork
 PATCHFILES=	${REALNAME}-bsd-0.04.patch.gz
 PATCH_DIST_STRIP=	-p1
 

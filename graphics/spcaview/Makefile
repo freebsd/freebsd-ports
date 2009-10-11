@@ -12,7 +12,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://mxhaard.free.fr/spca50x/Download/ \
 		http://mxhaard.free.fr/spca50x/Download/oldrelease/
 
-PATCH_SITES=	http://www.medias.ne.jp/~takam/bsd/
+PATCH_SITES=	http://home.384.jp/takam/bsd/ \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	nork
 PATCHFILES=	spca5xx-bsd-0.6b.patch.gz
 PATCH_DIST_STRIP=	-p3
 
