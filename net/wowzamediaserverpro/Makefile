@@ -17,6 +17,7 @@ COMMENT=	Commercial flash media server written in java
 
 RESTRICTED=	Redistribution not allowed
 
+IS_INTERACTIVE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_EXTRACT=	yes
