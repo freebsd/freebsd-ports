@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-asp
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ruby Interface to the GraphViz Graphing Tool
 
+BUILD_DEPENDS=	rubygem-treetop>=1.4.2:${PORTSDIR}/devel/rubygem-treetop
 RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:${PORTSDIR}/graphics/graphviz
 
 USE_RUBY=	yes
