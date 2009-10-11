@@ -27,6 +27,7 @@ libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/discard
+libexec/postfix/dnsblog
 libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
@@ -43,6 +44,7 @@ libexec/postfix/postfix-files
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
 libexec/postfix/postmulti-script
+libexec/postfix/postscreen
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
@@ -183,6 +185,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/cleanup.8.html
 %%PORTDOCS%%%%DOCSDIR%%/defer.8.html
 %%PORTDOCS%%%%DOCSDIR%%/discard.8.html
+%%PORTDOCS%%%%DOCSDIR%%/dnsblog.8.html
 %%PORTDOCS%%%%DOCSDIR%%/error.8.html
 %%PORTDOCS%%%%DOCSDIR%%/flush.8.html
 %%PORTDOCS%%%%DOCSDIR%%/header_checks.5.html
@@ -217,6 +220,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/postmap.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postmulti.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postqueue.1.html
+%%PORTDOCS%%%%DOCSDIR%%/postscreen.8.html
 %%PORTDOCS%%%%DOCSDIR%%/postsuper.1.html
 %%PORTDOCS%%%%DOCSDIR%%/proxymap.8.html
 %%PORTDOCS%%%%DOCSDIR%%/qmgr.8.html
