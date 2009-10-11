@@ -25,4 +25,8 @@ MAN3=		HTML::CTPP2.3
 # The port actually requires ${CXX} when ${CC} is defined
 CC=		${CXX}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+	    ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
