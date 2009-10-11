@@ -1066,6 +1066,7 @@
     SUBDIR += wmwifi
     SUBDIR += wmwlmon
     SUBDIR += wol
+    SUBDIR += wowzamediaserverpro
     SUBDIR += wpa_gui
     SUBDIR += wping
     SUBDIR += x11vnc
