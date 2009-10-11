@@ -456,6 +456,7 @@
     SUBDIR += mod_evasive
     SUBDIR += mod_extract_forwarded
     SUBDIR += mod_extract_forwarded2
+    SUBDIR += mod_extract_forwarded_ap13
     SUBDIR += mod_fastcgi
     SUBDIR += mod_fcgid
     SUBDIR += mod_fileiri

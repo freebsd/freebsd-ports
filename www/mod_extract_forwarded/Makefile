@@ -18,6 +18,7 @@ USE_APACHE=	20+
 WRKSRC=		${WRKDIR}/extract_forwarded
 PORTDOCS=	INSTALL README
 MAKE_JOBS_SAFE=  yes
+CONFLICTS=	mod_extract_forwarded-1.* mod_extract_forwarded2-0.*
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

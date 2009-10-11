@@ -21,6 +21,7 @@ USE_APACHE=	20+
 SHORTMODNAME=	extract_forwarded
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
+CONFLICTS=	mod_extract_forwarded-1.* mod_extract_forwarded-2.*
 
 PORTDOCS=	doc.html README
 
