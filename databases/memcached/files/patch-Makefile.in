@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2009-10-11 01:13:43.000000000 -0300
++++ Makefile.in	2009-10-11 01:14:02.000000000 -0300
+@@ -730,13 +730,6 @@
+ @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(memcached_debug_CFLAGS) $(CFLAGS) -c -o memcached_debug-solaris_priv.obj `if test -f 'solaris_priv.c'; then $(CYGPATH_W) 'solaris_priv.c'; else $(CYGPATH_W) '$(srcdir)/solaris_priv.c'; fi`
+ install-pkgincludeHEADERS: $(pkginclude_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)"
+-	@list='$(pkginclude_HEADERS)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(pkgincludeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgincludedir)/$$f'"; \
+-	  $(pkgincludeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgincludedir)/$$f"; \
+-	done
+ 
+ uninstall-pkgincludeHEADERS:
+ 	@$(NORMAL_UNINSTALL)
