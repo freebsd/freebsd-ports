@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	conspire
-PORTVERSION=	0.20
-PORTREVISION=	2
-CATEGORIES=	irc gnome
+PORTVERSION=	1.0.0
+CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://distfiles.atheme.org/
-EXTRACT_SUFX=	.tbz2
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	A high quality IRC client which uses a multitude of interfaces
@@ -19,13 +18,13 @@ LIB_DEPENDS=	sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		notify.1:${PORTSDIR}/devel/libnotify
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -37,9 +36,12 @@ OPTIONS=	IPV6 "Enable IPv6 support" off \
 		PLUGIN "Enable plugin support" on \
 		REGEX "Enable regex substitution support" on \
 		GNUTLS "Enale gnutls support" on \
-		SOCKS "Build with socks5 support" off
+		SOCKS "Build with socks5 support (broken)" off
 
 .include <bsd.port.pre.mk>
+
+# Unconditionally disable python, since it doesn't work anyway.
+CONFIGURE_ARGS+=--disable-python
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
@@ -58,6 +60,8 @@ LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 .endif
 
+# XXX - causes linker errors... not sure how to fix or if it's even possible
+# to do so...
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=--enable-socks
