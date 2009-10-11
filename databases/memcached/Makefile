@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.2.8
+PORTVERSION=	1.4.1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.danga.com/memcached/dist/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
@@ -26,7 +26,6 @@ OPTIONS=	REPCACHED	"Enable data replication feature"	off
 MAN1=		memcached.1
 
 PLIST_FILES=	bin/memcached \
-		bin/memcached-debug \
 		bin/memcached-tool
 
 PORTDOCS=	memory_management.txt protocol.txt
@@ -35,16 +34,12 @@ PORTDOCS=	memory_management.txt protocol.txt
 
 .if defined(WITH_REPCACHED)
 # WWW: http://repcached.lab.klab.org/
+BROKEN=			Waiting a new release for this patch.
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/repcached\/repcached\/2.2-${PORTVERSION}/}
 PATCH_DIST_STRIP+=	-p1
 PATCHFILES+=		repcached-2.2-${PORTVERSION}.patch.gz
 CONFIGURE_ARGS+=	--enable-replication --disable-threads
-.else
-CONFIGURE_ARGS+=	--enable-threads
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -E -e 's!=(= "xyes")!\1!' ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#doc/memcached.1##' ${WRKSRC}/Makefile
