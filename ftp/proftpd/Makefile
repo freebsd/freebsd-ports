@@ -20,6 +20,8 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		http://www.smartftp.com/oss/proftpd/:digest \
 		LOCAL/beech:digest \
 		LOCAL/beech:sql_tds
+DISTFILES=      ${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	chris@officialunix.com
 COMMENT?=	Highly configurable ftp daemon
@@ -218,9 +220,8 @@ MODULES:=${MODULES}:mod_quotatab_sql
 .endif
 
 .if defined(WITH_CLAMAV)
-#https://secure.thrallingpenguin.com/redmine/attachments/download/1/mod_clamav-0.11rc.tar.gz
 DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
-#EXTRACT_ONLY+=	mod_clamav-0.11rc.tar.gz
+EXTRACT_ONLY+=	mod_clamav-0.11rc.tar.gz
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
