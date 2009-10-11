@@ -22,6 +22,8 @@ CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} \
 USE_LDCONFIG=	yes
 
 INFO=		mpc
+PLIST_FILES=	include/mpc.h \
+		lib/libmpc.a lib/libmpc.la lib/libmpc.so lib/libmpc.so.2
 
 LATEST_LINK=	math_mpc
 
