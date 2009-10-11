@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.33
+PORTVERSION=	1.35
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/
@@ -16,7 +16,7 @@ COMMENT=	External policy checker for the postfix mail server
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 
-USE_PYTHON=	2.1+
+USE_PYTHON=	yes
 NO_BUILD=	yes
 
 TUMGREYSPF_DIR?=	/var/db/${PORTNAME}
