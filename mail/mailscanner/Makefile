@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.78.9
+PORTVERSION=	4.78.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -41,7 +41,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/IO/Handle.pm:${PORTSDIR}/devel/p5-IO \
 	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite
 
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS+=	${BUILD_DEPENDS} \
 		bash:${PORTSDIR}/shells/bash \
 		tnef:${PORTSDIR}/converters/tnef \
 		wget:${PORTSDIR}/ftp/wget
@@ -137,6 +137,10 @@ do-build:
 		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g;' \
 		${WRKSRC}/bin/mailscanner_create_locks
 	${PERL} -pi -e \
+		's,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		${WRKSRC}/bin/processing_messages_alert
+	${PERL} -pi -e \
 		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
 		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
@@ -197,7 +201,8 @@ do-build:
 		s,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g;' \
 		${WRKSRC}/bin/update_spamassassin
 	${PERL} -pi -e \
-		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g;' \
+		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
 		${WRKSRC}/bin/clean.SA.cache
 	${PERL} -pi -e \
 		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
@@ -246,6 +251,10 @@ do-install:
 		${PREFIX}/libexec/MailScanner/clean.quarantine
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/mailscanner_create_locks \
 		${PREFIX}/libexec/MailScanner/mailscanner_create_locks
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/processing_messages_alert \
+		${PREFIX}/libexec/MailScanner/processing_messages_alert
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/Quick.Peek \
+		${PREFIX}/libexec/MailScanner/Quick.Peek
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_bad_phishing_emails \
 		${PREFIX}/libexec/MailScanner/update_bad_phishing_emails
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_phishing_sites \
@@ -288,6 +297,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
 		${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
 .endfor
+	${MKDIR} ${PREFIX}/etc/MailScanner/conf.d
+	${INSTALL_DATA} ${WRKSRC}/etc/conf.d/README \
+		${PREFIX}/etc/MailScanner/conf.d/README
 	#
 	# Step 4: Install files in share
 	#
