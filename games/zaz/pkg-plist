@@ -1,7 +1,9 @@
 bin/zaz
 share/applications/zaz.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/zaz.mo
 %%NLS%%share/locale/es/LC_MESSAGES/zaz.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/zaz.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/zaz.mo
 share/pixmaps/zaz.xpm
 %%DATADIR%%/FreeMonoBold.ttf
 %%DATADIR%%/FreeSans.ttf
@@ -31,6 +33,13 @@ share/pixmaps/zaz.xpm
 %%DATADIR%%/level10.lvl
 %%DATADIR%%/level10.png
 %%DATADIR%%/level10_thumb.png
+%%DATADIR%%/level11.lvl
+%%DATADIR%%/level11.png
+%%DATADIR%%/level11_thumb.png
+%%DATADIR%%/level12.lvl
+%%DATADIR%%/level12.png
+%%DATADIR%%/level12_overlay.png
+%%DATADIR%%/level12_thumb.png
 %%DATADIR%%/level1_thumb.png
 %%DATADIR%%/level2.lvl
 %%DATADIR%%/level2.png
@@ -55,7 +64,9 @@ share/pixmaps/zaz.xpm
 %%DATADIR%%/level8_thumb.png
 %%DATADIR%%/level9.lvl
 %%DATADIR%%/level9.png
+%%DATADIR%%/level9_overlay.png
 %%DATADIR%%/level9_thumb.png
+%%DATADIR%%/levels.list
 %%DATADIR%%/logo.png
 %%DATADIR%%/menu.lvl
 %%DATADIR%%/mus1.ogg
