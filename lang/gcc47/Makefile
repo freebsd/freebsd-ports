@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.5.0.20091001
+PORTVERSION=	4.5.0.20091008
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -20,7 +20,8 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.5
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
-		mpfr.3:${PORTSDIR}/math/mpfr
+		mpfr.3:${PORTSDIR}/math/mpfr \
+		mpc.2:${PORTSDIR}/math/mpc
 
 .if defined(MAINTAINER_MODE)
 DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
