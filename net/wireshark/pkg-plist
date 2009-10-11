@@ -59,7 +59,9 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/capinfos.html
 %%DATADIR%%/cfilters
 %%DATADIR%%/colorfilters
+%%LUA%%%%DATADIR%%/console.lua
 %%DATADIR%%/dfilters
+%%LUA%%%%DATADIR%%/dtd_gen.lua
 %%DATADIR%%/dumpcap.html
 %%DATADIR%%/diameter/Ericsson.xml
 %%DATADIR%%/diameter/TGPPGmb.xml
@@ -89,6 +91,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/dtds/xcap-caps.dtd
 %%DATADIR%%/dtds/xcap-error.dtd
 %%DATADIR%%/editcap.html
+%%LUA%%%%DATADIR%%/init.lua
 %%DATADIR%%/services
 %%DATADIR%%/smi_modules
 %%DATADIR%%/tpncp/tpncp.dat
