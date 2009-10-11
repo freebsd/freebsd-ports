@@ -127,7 +127,6 @@ include/libspreadsheet-1.10/spreadsheet/workbook-priv.h
 include/libspreadsheet-1.10/spreadsheet/workbook-view.h
 include/libspreadsheet-1.10/spreadsheet/workbook.h
 include/libspreadsheet-1.10/spreadsheet/xml-io-version.h
-include/libspreadsheet-1.10/spreadsheet/xml-io.h
 include/libspreadsheet-1.10/spreadsheet/xml-sax.h
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.la
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.so
@@ -354,9 +353,11 @@ share/gnumeric/%%VERSION%%/glade/sheet-order.glade
 share/gnumeric/%%VERSION%%/glade/sheet-resize.glade
 share/gnumeric/%%VERSION%%/glade/shuffle.glade
 share/gnumeric/%%VERSION%%/glade/simulation.glade
+share/gnumeric/%%VERSION%%/glade/so-button.glade
 share/gnumeric/%%VERSION%%/glade/so-checkbox.glade
 share/gnumeric/%%VERSION%%/glade/so-frame.glade
 share/gnumeric/%%VERSION%%/glade/so-list.glade
+share/gnumeric/%%VERSION%%/glade/so-radiobutton.glade
 share/gnumeric/%%VERSION%%/glade/so-scrollbar.glade
 share/gnumeric/%%VERSION%%/glade/solver.glade
 share/gnumeric/%%VERSION%%/glade/tabulate.glade
