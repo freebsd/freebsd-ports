@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zaz
-PORTVERSION=	0.2.9
+PORTVERSION=	0.3.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -18,15 +18,14 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ftgl.2:${PORTSDIR}/graphics/ftgl
 
-NO_CDROM=	Includes music under non-commercial license (CC-BY-NC-SA)
-
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image
 USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*
 
