@@ -70,7 +70,8 @@ OPTIONS=	RTP "Enable support for playing back RTP streams" off \
 		ADNS "Enable asynchronous DNS lookup support" on \
 		PCRE "Enable regular expression matching support" on \
 		IPV6 "Enable IPv6 support" on \
-		GEOIP "Enable GeoIP lookups" on
+		GEOIP "Enable GeoIP lookups" on \
+		LUA " Enable LUA scripting integration" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -109,14 +110,14 @@ CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-pcre=no
 .endif
 
-#.if defined(WITH_LUA) && !defined(LITE)
-#USE_LUA=	5.1
-#CONFIGURE_ARGS+=--with-lua=${LUA_PREFIX}
-#PLIST_SUB+=	LUA=""
-#.else
+.if defined(WITH_LUA) && !defined(LITE)
+USE_LUA=	5.1
+CONFIGURE_ARGS+=--with-lua=${LUA_PREFIX}
+PLIST_SUB+=	LUA=""
+.else
 CONFIGURE_ARGS+=--without-lua
-#PLIST_SUB+=	LUA="@comment "
-#.endif
+PLIST_SUB+=	LUA="@comment "
+.endif
 
 .if defined(WITH_RTP) && !defined(LITE)
 LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio

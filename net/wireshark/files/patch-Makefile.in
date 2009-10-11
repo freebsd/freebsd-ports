@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2009-10-11 01:36:04.000000000 -0400
++++ Makefile.in	2009-10-11 01:36:22.000000000 -0400
+@@ -570,6 +570,7 @@ wireshark_man = @wireshark_man@
+ wiresharkfilter_man = @wiresharkfilter_man@
+ ACLOCAL_AMFLAGS = `./aclocal-flags`
+ INCLUDES = @LUA_INCLUDES@
++LIBS = @LUA_LIBS@
+ @HAVE_WARNINGS_AS_ERRORS_TRUE@AM_CLEAN_CFLAGS = -Werror
+ 
+ #
