@@ -11,21 +11,25 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Record, repeat, and play key sequence from keyboard
 
 USE_XORG=	x11 xt
 MAN1=		xkeywrap.1
 MANCOMPRESSED=	yes
 
+PORTDOCS=	README demo.dat xkeywrap_demo.c
+
+PLIST_FILES=	bin/xkeywrap
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xkeywrap ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xkeywrap.1.gz ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo.dat ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/xkeywrap_demo.c ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
