@@ -238,6 +238,7 @@ CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_randban.o \
 		--activate-module=src/modules/accel/libaccel.a \
 		--enable-shared=accel
 EXTRA_PATCHES+=	${FILESDIR}/mod_accel-preservehost.patch ${FILESDIR}/mod_accel-Makefile.tmpl.patch
+EXTRA_PATCHES+=	${FILESDIR}/mod_accel-ap_ext_accel.patch
 PLIST_FILES+=	libexec/apache/libaccel.so \
 		libexec/apache/mod_freeze.so \
 		libexec/apache/mod_randban.so \
