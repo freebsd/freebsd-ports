@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	mod_wsgi
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://code.douglasthrift.net/files/${PORTNAME}/
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 PROJECTHOST=	modwsgi
 
