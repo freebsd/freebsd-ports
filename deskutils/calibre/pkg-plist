@@ -1,0 +1,1492 @@
+bin/calibre
+bin/calibre-complete
+bin/calibre-customize
+bin/calibre-debug
+bin/calibre-mount-helper
+bin/calibre-parallel
+bin/calibre-server
+bin/calibre-smtp
+bin/calibre-uninstall
+bin/calibredb
+bin/ebook-convert
+bin/ebook-device
+bin/ebook-meta
+bin/ebook-viewer
+bin/fetch-ebook-metadata
+bin/librarything
+bin/lrf2lrs
+bin/lrfviewer
+bin/lrs2lrf
+bin/markdown-calibre
+bin/pdfmanipulate
+bin/web2disk
+lib/calibre/calibre/__init__.py
+lib/calibre/calibre/constants.py
+lib/calibre/calibre/customize/__init__.py
+lib/calibre/calibre/customize/builtins.py
+lib/calibre/calibre/customize/conversion.py
+lib/calibre/calibre/customize/profiles.py
+lib/calibre/calibre/customize/ui.py
+lib/calibre/calibre/debug.py
+lib/calibre/calibre/devices/__init__.py
+lib/calibre/calibre/devices/android/__init__.py
+lib/calibre/calibre/devices/android/driver.py
+lib/calibre/calibre/devices/bebook/__init__.py
+lib/calibre/calibre/devices/bebook/driver.py
+lib/calibre/calibre/devices/blackberry/__init__.py
+lib/calibre/calibre/devices/blackberry/driver.py
+lib/calibre/calibre/devices/cybookg3/__init__.py
+lib/calibre/calibre/devices/cybookg3/driver.py
+lib/calibre/calibre/devices/cybookg3/t2b.py
+lib/calibre/calibre/devices/eb600/__init__.py
+lib/calibre/calibre/devices/eb600/driver.py
+lib/calibre/calibre/devices/errors.py
+lib/calibre/calibre/devices/eslick/__init__.py
+lib/calibre/calibre/devices/eslick/driver.py
+lib/calibre/calibre/devices/iliad/__init__.py
+lib/calibre/calibre/devices/iliad/driver.py
+lib/calibre/calibre/devices/interface.py
+lib/calibre/calibre/devices/irexdr/__init__.py
+lib/calibre/calibre/devices/irexdr/driver.py
+lib/calibre/calibre/devices/jetbook/__init__.py
+lib/calibre/calibre/devices/jetbook/driver.py
+lib/calibre/calibre/devices/kindle/__init__.py
+lib/calibre/calibre/devices/kindle/driver.py
+lib/calibre/calibre/devices/libusb.py
+lib/calibre/calibre/devices/manager.py
+lib/calibre/calibre/devices/mime.py
+lib/calibre/calibre/devices/prs500/__init__.py
+lib/calibre/calibre/devices/prs500/books.py
+lib/calibre/calibre/devices/prs500/cli/__init__.py
+lib/calibre/calibre/devices/prs500/cli/main.py
+lib/calibre/calibre/devices/prs500/driver.py
+lib/calibre/calibre/devices/prs500/prstypes.py
+lib/calibre/calibre/devices/prs505/__init__.py
+lib/calibre/calibre/devices/prs505/books.py
+lib/calibre/calibre/devices/prs505/driver.py
+lib/calibre/calibre/devices/prs700/__init__.py
+lib/calibre/calibre/devices/prs700/driver.py
+lib/calibre/calibre/devices/scanner.py
+lib/calibre/calibre/devices/usbms/__init__.py
+lib/calibre/calibre/devices/usbms/books.py
+lib/calibre/calibre/devices/usbms/cli.py
+lib/calibre/calibre/devices/usbms/device.py
+lib/calibre/calibre/devices/usbms/deviceconfig.py
+lib/calibre/calibre/devices/usbms/driver.py
+lib/calibre/calibre/devices/usbobserver/test.py
+lib/calibre/calibre/ebooks/BeautifulSoup.py
+lib/calibre/calibre/ebooks/__init__.py
+lib/calibre/calibre/ebooks/chardet/__init__.py
+lib/calibre/calibre/ebooks/chardet/big5freq.py
+lib/calibre/calibre/ebooks/chardet/big5prober.py
+lib/calibre/calibre/ebooks/chardet/chardistribution.py
+lib/calibre/calibre/ebooks/chardet/charsetgroupprober.py
+lib/calibre/calibre/ebooks/chardet/charsetprober.py
+lib/calibre/calibre/ebooks/chardet/codingstate%%PERL_ARCH%%ine.py
+lib/calibre/calibre/ebooks/chardet/constants.py
+lib/calibre/calibre/ebooks/chardet/escprober.py
+lib/calibre/calibre/ebooks/chardet/escsm.py
+lib/calibre/calibre/ebooks/chardet/eucjpprober.py
+lib/calibre/calibre/ebooks/chardet/euckrfreq.py
+lib/calibre/calibre/ebooks/chardet/euckrprober.py
+lib/calibre/calibre/ebooks/chardet/euctwfreq.py
+lib/calibre/calibre/ebooks/chardet/euctwprober.py
+lib/calibre/calibre/ebooks/chardet/gb2312freq.py
+lib/calibre/calibre/ebooks/chardet/gb2312prober.py
+lib/calibre/calibre/ebooks/chardet/hebrewprober.py
+lib/calibre/calibre/ebooks/chardet/jisfreq.py
+lib/calibre/calibre/ebooks/chardet/jpcntx.py
+lib/calibre/calibre/ebooks/chardet/langbulgarianmodel.py
+lib/calibre/calibre/ebooks/chardet/langcyrillicmodel.py
+lib/calibre/calibre/ebooks/chardet/langgreekmodel.py
+lib/calibre/calibre/ebooks/chardet/langhebrewmodel.py
+lib/calibre/calibre/ebooks/chardet/langhungarianmodel.py
+lib/calibre/calibre/ebooks/chardet/langthaimodel.py
+lib/calibre/calibre/ebooks/chardet/latin1prober.py
+lib/calibre/calibre/ebooks/chardet/mbcharsetprober.py
+lib/calibre/calibre/ebooks/chardet/mbcsgroupprober.py
+lib/calibre/calibre/ebooks/chardet/mbcssm.py
+lib/calibre/calibre/ebooks/chardet/sbcharsetprober.py
+lib/calibre/calibre/ebooks/chardet/sbcsgroupprober.py
+lib/calibre/calibre/ebooks/chardet/sjisprober.py
+lib/calibre/calibre/ebooks/chardet/universaldetector.py
+lib/calibre/calibre/ebooks/chardet/utf8prober.py
+lib/calibre/calibre/ebooks/comic/__init__.py
+lib/calibre/calibre/ebooks/comic/input.py
+lib/calibre/calibre/ebooks/compression/__init__.py
+lib/calibre/calibre/ebooks/compression/palmdoc.py
+lib/calibre/calibre/ebooks/conversion/__init__.py
+lib/calibre/calibre/ebooks/conversion/cli.py
+lib/calibre/calibre/ebooks/conversion/config.py
+lib/calibre/calibre/ebooks/conversion/plumber.py
+lib/calibre/calibre/ebooks/conversion/preprocess.py
+lib/calibre/calibre/ebooks/epub/__init__.py
+lib/calibre/calibre/ebooks/epub/input.py
+lib/calibre/calibre/ebooks/epub/output.py
+lib/calibre/calibre/ebooks/epub/pages.py
+lib/calibre/calibre/ebooks/fb2/__init__.py
+lib/calibre/calibre/ebooks/fb2/fb2ml.py
+lib/calibre/calibre/ebooks/fb2/input.py
+lib/calibre/calibre/ebooks/fb2/output.py
+lib/calibre/calibre/ebooks/html/__init__.py
+lib/calibre/calibre/ebooks/html/input.py
+lib/calibre/calibre/ebooks/hyphenate.py
+lib/calibre/calibre/ebooks/lit/__init__.py
+lib/calibre/calibre/ebooks/lit/from_any.py
+lib/calibre/calibre/ebooks/lit/input.py
+lib/calibre/calibre/ebooks/lit/lzx.py
+lib/calibre/calibre/ebooks/lit/maps/__init__.py
+lib/calibre/calibre/ebooks/lit/maps/html.py
+lib/calibre/calibre/ebooks/lit/maps/opf.py
+lib/calibre/calibre/ebooks/lit/mssha1.py
+lib/calibre/calibre/ebooks/lit/output.py
+lib/calibre/calibre/ebooks/lit/reader.py
+lib/calibre/calibre/ebooks/lit/writer.py
+lib/calibre/calibre/ebooks/lrf/__init__.py
+lib/calibre/calibre/ebooks/lrf/fonts/__init__.py
+lib/calibre/calibre/ebooks/lrf/html/__init__.py
+lib/calibre/calibre/ebooks/lrf/html/color_map.py
+lib/calibre/calibre/ebooks/lrf/html/convert_from.py
+lib/calibre/calibre/ebooks/lrf/html/convert_to.py
+lib/calibre/calibre/ebooks/lrf/html/table.py
+lib/calibre/calibre/ebooks/lrf/html/table_as_image.py
+lib/calibre/calibre/ebooks/lrf/input.py
+lib/calibre/calibre/ebooks/lrf/lrfparser.py
+lib/calibre/calibre/ebooks/lrf/lrs/__init__.py
+lib/calibre/calibre/ebooks/lrf/lrs/convert_from.py
+lib/calibre/calibre/ebooks/lrf/meta.py
+lib/calibre/calibre/ebooks/lrf/objects.py
+lib/calibre/calibre/ebooks/lrf/output.py
+lib/calibre/calibre/ebooks/lrf/pylrs/__init__.py
+lib/calibre/calibre/ebooks/lrf/pylrs/elements.py
+lib/calibre/calibre/ebooks/lrf/pylrs/pylrf.py
+lib/calibre/calibre/ebooks/lrf/pylrs/pylrfopt.py
+lib/calibre/calibre/ebooks/lrf/pylrs/pylrs.py
+lib/calibre/calibre/ebooks/lrf/tags.py
+lib/calibre/calibre/ebooks/markdown/__init__.py
+lib/calibre/calibre/ebooks/markdown/markdown.py
+lib/calibre/calibre/ebooks/markdown/mdx_footnotes.py
+lib/calibre/calibre/ebooks/markdown/mdx_tables.py
+lib/calibre/calibre/ebooks/markdown/mdx_toc.py
+lib/calibre/calibre/ebooks/metadata/__init__.py
+lib/calibre/calibre/ebooks/metadata/amazon.py
+lib/calibre/calibre/ebooks/metadata/cli.py
+lib/calibre/calibre/ebooks/metadata/epub.py
+lib/calibre/calibre/ebooks/metadata/ereader.py
+lib/calibre/calibre/ebooks/metadata/fb2.py
+lib/calibre/calibre/ebooks/metadata/fetch.py
+lib/calibre/calibre/ebooks/metadata/google_books.py
+lib/calibre/calibre/ebooks/metadata/html.py
+lib/calibre/calibre/ebooks/metadata/imp.py
+lib/calibre/calibre/ebooks/metadata/isbndb.py
+lib/calibre/calibre/ebooks/metadata/library_thing.py
+lib/calibre/calibre/ebooks/metadata/lit.py
+lib/calibre/calibre/ebooks/metadata/lrx.py
+lib/calibre/calibre/ebooks/metadata/meta.py
+lib/calibre/calibre/ebooks/metadata/mobi.py
+lib/calibre/calibre/ebooks/metadata/odt.py
+lib/calibre/calibre/ebooks/metadata/opf.py
+lib/calibre/calibre/ebooks/metadata/opf2.py
+lib/calibre/calibre/ebooks/metadata/pdb.py
+lib/calibre/calibre/ebooks/metadata/pdf.py
+lib/calibre/calibre/ebooks/metadata/rar.py
+lib/calibre/calibre/ebooks/metadata/rb.py
+lib/calibre/calibre/ebooks/metadata/rtf.py
+lib/calibre/calibre/ebooks/metadata/toc.py
+lib/calibre/calibre/ebooks/metadata/topaz.py
+lib/calibre/calibre/ebooks/metadata/txt.py
+lib/calibre/calibre/ebooks/metadata/worker.py
+lib/calibre/calibre/ebooks/metadata/zip.py
+lib/calibre/calibre/ebooks/mobi/__init__.py
+lib/calibre/calibre/ebooks/mobi/huffcdic.py
+lib/calibre/calibre/ebooks/mobi/input.py
+lib/calibre/calibre/ebooks/mobi/langcodes.py
+lib/calibre/calibre/ebooks/mobi/mobiml.py
+lib/calibre/calibre/ebooks/mobi/output.py
+lib/calibre/calibre/ebooks/mobi/reader.py
+lib/calibre/calibre/ebooks/mobi/writer.py
+lib/calibre/calibre/ebooks/odt/__init__.py
+lib/calibre/calibre/ebooks/odt/input.py
+lib/calibre/calibre/ebooks/oeb/__init__.py
+lib/calibre/calibre/ebooks/oeb/base.py
+lib/calibre/calibre/ebooks/oeb/entitydefs.py
+lib/calibre/calibre/ebooks/oeb/factory.py
+lib/calibre/calibre/ebooks/oeb/iterator.py
+lib/calibre/calibre/ebooks/oeb/output.py
+lib/calibre/calibre/ebooks/oeb/profile.py
+lib/calibre/calibre/ebooks/oeb/reader.py
+lib/calibre/calibre/ebooks/oeb/stylizer.py
+lib/calibre/calibre/ebooks/oeb/transforms/__init__.py
+lib/calibre/calibre/ebooks/oeb/transforms/flatcss.py
+lib/calibre/calibre/ebooks/oeb/transforms/guide.py
+lib/calibre/calibre/ebooks/oeb/transforms/htmltoc.py
+lib/calibre/calibre/ebooks/oeb/transforms/jacket.py
+lib/calibre/calibre/ebooks/oeb/transforms/linearize_tables.py
+lib/calibre/calibre/ebooks/oeb/transforms/manglecase.py
+lib/calibre/calibre/ebooks/oeb/transforms/metadata.py
+lib/calibre/calibre/ebooks/oeb/transforms/rasterize.py
+lib/calibre/calibre/ebooks/oeb/transforms/rescale.py
+lib/calibre/calibre/ebooks/oeb/transforms/split.py
+lib/calibre/calibre/ebooks/oeb/transforms/structure.py
+lib/calibre/calibre/ebooks/oeb/transforms/trimmanifest.py
+lib/calibre/calibre/ebooks/oeb/writer.py
+lib/calibre/calibre/ebooks/pdb/__init__.py
+lib/calibre/calibre/ebooks/pdb/ereader/__init__.py
+lib/calibre/calibre/ebooks/pdb/ereader/inspector.py
+lib/calibre/calibre/ebooks/pdb/ereader/reader.py
+lib/calibre/calibre/ebooks/pdb/ereader/reader132.py
+lib/calibre/calibre/ebooks/pdb/ereader/reader202.py
+lib/calibre/calibre/ebooks/pdb/ereader/writer.py
+lib/calibre/calibre/ebooks/pdb/formatreader.py
+lib/calibre/calibre/ebooks/pdb/formatwriter.py
+lib/calibre/calibre/ebooks/pdb/header.py
+lib/calibre/calibre/ebooks/pdb/input.py
+lib/calibre/calibre/ebooks/pdb/output.py
+lib/calibre/calibre/ebooks/pdb/palmdoc/__init__.py
+lib/calibre/calibre/ebooks/pdb/palmdoc/reader.py
+lib/calibre/calibre/ebooks/pdb/palmdoc/writer.py
+lib/calibre/calibre/ebooks/pdb/ztxt/__init__.py
+lib/calibre/calibre/ebooks/pdb/ztxt/reader.py
+lib/calibre/calibre/ebooks/pdb/ztxt/writer.py
+lib/calibre/calibre/ebooks/pdf/__init__.py
+lib/calibre/calibre/ebooks/pdf/from_comic.py
+lib/calibre/calibre/ebooks/pdf/input.py
+lib/calibre/calibre/ebooks/pdf/manipulate/__init__.py
+lib/calibre/calibre/ebooks/pdf/manipulate/cli.py
+lib/calibre/calibre/ebooks/pdf/manipulate/crop.py
+lib/calibre/calibre/ebooks/pdf/manipulate/decrypt.py
+lib/calibre/calibre/ebooks/pdf/manipulate/encrypt.py
+lib/calibre/calibre/ebooks/pdf/manipulate/info.py
+lib/calibre/calibre/ebooks/pdf/manipulate/merge.py
+lib/calibre/calibre/ebooks/pdf/manipulate/reverse.py
+lib/calibre/calibre/ebooks/pdf/manipulate/rotate.py
+lib/calibre/calibre/ebooks/pdf/manipulate/split.py
+lib/calibre/calibre/ebooks/pdf/output.py
+lib/calibre/calibre/ebooks/pdf/pageoptions.py
+lib/calibre/calibre/ebooks/pdf/pdftohtml.py
+lib/calibre/calibre/ebooks/pdf/reflow.py
+lib/calibre/calibre/ebooks/pdf/verify.py
+lib/calibre/calibre/ebooks/pdf/writer.py
+lib/calibre/calibre/ebooks/pml/__init__.py
+lib/calibre/calibre/ebooks/pml/input.py
+lib/calibre/calibre/ebooks/pml/output.py
+lib/calibre/calibre/ebooks/pml/pmlconverter.py
+lib/calibre/calibre/ebooks/pml/pmlml.py
+lib/calibre/calibre/ebooks/rb/__init__.py
+lib/calibre/calibre/ebooks/rb/input.py
+lib/calibre/calibre/ebooks/rb/output.py
+lib/calibre/calibre/ebooks/rb/rbml.py
+lib/calibre/calibre/ebooks/rb/reader.py
+lib/calibre/calibre/ebooks/rb/writer.py
+lib/calibre/calibre/ebooks/rtf/__init__.py
+lib/calibre/calibre/ebooks/rtf/input.py
+lib/calibre/calibre/ebooks/rtf/output.py
+lib/calibre/calibre/ebooks/rtf/rtfml.py
+lib/calibre/calibre/ebooks/rtf2xml/ParseRtf.py
+lib/calibre/calibre/ebooks/rtf2xml/__init__.py
+lib/calibre/calibre/ebooks/rtf2xml/add_brackets.py
+lib/calibre/calibre/ebooks/rtf2xml/body_styles.py
+lib/calibre/calibre/ebooks/rtf2xml/border_parse.py
+lib/calibre/calibre/ebooks/rtf2xml/char_set.py
+lib/calibre/calibre/ebooks/rtf2xml/check_brackets.py
+lib/calibre/calibre/ebooks/rtf2xml/check_encoding.py
+lib/calibre/calibre/ebooks/rtf2xml/colors.py
+lib/calibre/calibre/ebooks/rtf2xml/combine_borders.py
+lib/calibre/calibre/ebooks/rtf2xml/configure_txt.py
+lib/calibre/calibre/ebooks/rtf2xml/convert_to_tags.py
+lib/calibre/calibre/ebooks/rtf2xml/copy.py
+lib/calibre/calibre/ebooks/rtf2xml/correct_unicode.py
+lib/calibre/calibre/ebooks/rtf2xml/default_encoding.py
+lib/calibre/calibre/ebooks/rtf2xml/delete_info.py
+lib/calibre/calibre/ebooks/rtf2xml/field_strings.py
+lib/calibre/calibre/ebooks/rtf2xml/fields_large.py
+lib/calibre/calibre/ebooks/rtf2xml/fields_small.py
+lib/calibre/calibre/ebooks/rtf2xml/fonts.py
+lib/calibre/calibre/ebooks/rtf2xml/footnote.py
+lib/calibre/calibre/ebooks/rtf2xml/get_char_map.py
+lib/calibre/calibre/ebooks/rtf2xml/get_options.py
+lib/calibre/calibre/ebooks/rtf2xml/group_borders.py
+lib/calibre/calibre/ebooks/rtf2xml/group_styles.py
+lib/calibre/calibre/ebooks/rtf2xml/header.py
+lib/calibre/calibre/ebooks/rtf2xml/headings_to_sections.py
+lib/calibre/calibre/ebooks/rtf2xml/hex_2_utf8.py
+lib/calibre/calibre/ebooks/rtf2xml/info.py
+lib/calibre/calibre/ebooks/rtf2xml/inline.py
+lib/calibre/calibre/ebooks/rtf2xml/line_endings.py
+lib/calibre/calibre/ebooks/rtf2xml/list_numbers.py
+lib/calibre/calibre/ebooks/rtf2xml/list_table.py
+lib/calibre/calibre/ebooks/rtf2xml/make_lists.py
+lib/calibre/calibre/ebooks/rtf2xml/old_rtf.py
+lib/calibre/calibre/ebooks/rtf2xml/options_trem.py
+lib/calibre/calibre/ebooks/rtf2xml/output.py
+lib/calibre/calibre/ebooks/rtf2xml/override_table.py
+lib/calibre/calibre/ebooks/rtf2xml/paragraph_def.py
+lib/calibre/calibre/ebooks/rtf2xml/paragraphs.py
+lib/calibre/calibre/ebooks/rtf2xml/pict.py
+lib/calibre/calibre/ebooks/rtf2xml/preamble_div.py
+lib/calibre/calibre/ebooks/rtf2xml/preamble_rest.py
+lib/calibre/calibre/ebooks/rtf2xml/process_tokens.py
+lib/calibre/calibre/ebooks/rtf2xml/replace_illegals.py
+lib/calibre/calibre/ebooks/rtf2xml/sections.py
+lib/calibre/calibre/ebooks/rtf2xml/styles.py
+lib/calibre/calibre/ebooks/rtf2xml/table.py
+lib/calibre/calibre/ebooks/rtf2xml/table_info.py
+lib/calibre/calibre/ebooks/rtf2xml/tokenize.py
+lib/calibre/calibre/ebooks/sgmllib.py
+lib/calibre/calibre/ebooks/txt/__init__.py
+lib/calibre/calibre/ebooks/txt/input.py
+lib/calibre/calibre/ebooks/txt/newlines.py
+lib/calibre/calibre/ebooks/txt/output.py
+lib/calibre/calibre/ebooks/txt/processor.py
+lib/calibre/calibre/ebooks/txt/txtml.py
+lib/calibre/calibre/ebooks/unidecode/__init__.py
+lib/calibre/calibre/ebooks/unidecode/unicodepoints.py
+lib/calibre/calibre/ebooks/unidecode/unidecoder.py
+lib/calibre/calibre/gui2/__init__.py
+lib/calibre/calibre/gui2/add.py
+lib/calibre/calibre/gui2/convert/__init__.py
+lib/calibre/calibre/gui2/convert/bulk.py
+lib/calibre/calibre/gui2/convert/comic_input.py
+lib/calibre/calibre/gui2/convert/comic_input_ui.py
+lib/calibre/calibre/gui2/convert/debug.py
+lib/calibre/calibre/gui2/convert/debug_ui.py
+lib/calibre/calibre/gui2/convert/epub_output.py
+lib/calibre/calibre/gui2/convert/epub_output_ui.py
+lib/calibre/calibre/gui2/convert/fb2_input.py
+lib/calibre/calibre/gui2/convert/fb2_input_ui.py
+lib/calibre/calibre/gui2/convert/fb2_output.py
+lib/calibre/calibre/gui2/convert/fb2_output_ui.py
+lib/calibre/calibre/gui2/convert/gui_conversion.py
+lib/calibre/calibre/gui2/convert/look_and_feel.py
+lib/calibre/calibre/gui2/convert/look_and_feel_ui.py
+lib/calibre/calibre/gui2/convert/lrf_output.py
+lib/calibre/calibre/gui2/convert/lrf_output_ui.py
+lib/calibre/calibre/gui2/convert/metadata.py
+lib/calibre/calibre/gui2/convert/metadata_ui.py
+lib/calibre/calibre/gui2/convert/mobi_output.py
+lib/calibre/calibre/gui2/convert/mobi_output_ui.py
+lib/calibre/calibre/gui2/convert/page_setup.py
+lib/calibre/calibre/gui2/convert/page_setup_ui.py
+lib/calibre/calibre/gui2/convert/pdb_input.py
+lib/calibre/calibre/gui2/convert/pdb_input_ui.py
+lib/calibre/calibre/gui2/convert/pdb_output.py
+lib/calibre/calibre/gui2/convert/pdb_output_ui.py
+lib/calibre/calibre/gui2/convert/pdf_input.py
+lib/calibre/calibre/gui2/convert/pdf_input_ui.py
+lib/calibre/calibre/gui2/convert/pdf_output.py
+lib/calibre/calibre/gui2/convert/pdf_output_ui.py
+lib/calibre/calibre/gui2/convert/rb_output.py
+lib/calibre/calibre/gui2/convert/rb_output_ui.py
+lib/calibre/calibre/gui2/convert/regex_builder.py
+lib/calibre/calibre/gui2/convert/regex_builder_ui.py
+lib/calibre/calibre/gui2/convert/single.py
+lib/calibre/calibre/gui2/convert/single_ui.py
+lib/calibre/calibre/gui2/convert/structure_detection.py
+lib/calibre/calibre/gui2/convert/structure_detection_ui.py
+lib/calibre/calibre/gui2/convert/toc.py
+lib/calibre/calibre/gui2/convert/toc_ui.py
+lib/calibre/calibre/gui2/convert/txt_input.py
+lib/calibre/calibre/gui2/convert/txt_input_ui.py
+lib/calibre/calibre/gui2/convert/txt_output.py
+lib/calibre/calibre/gui2/convert/txt_output_ui.py
+lib/calibre/calibre/gui2/convert/xexp_edit_ui.py
+lib/calibre/calibre/gui2/convert/xpath_wizard.py
+lib/calibre/calibre/gui2/convert/xpath_wizard_ui.py
+lib/calibre/calibre/gui2/cover_flow.py
+lib/calibre/calibre/gui2/device.py
+lib/calibre/calibre/gui2/device_drivers/__init__.py
+lib/calibre/calibre/gui2/device_drivers/configwidget.py
+lib/calibre/calibre/gui2/device_drivers/configwidget_ui.py
+lib/calibre/calibre/gui2/dialogs/__init__.py
+lib/calibre/calibre/gui2/dialogs/book_info.py
+lib/calibre/calibre/gui2/dialogs/book_info_ui.py
+lib/calibre/calibre/gui2/dialogs/choose_format.py
+lib/calibre/calibre/gui2/dialogs/choose_format_ui.py
+lib/calibre/calibre/gui2/dialogs/comicconf.py
+lib/calibre/calibre/gui2/dialogs/comicconf_ui.py
+lib/calibre/calibre/gui2/dialogs/config/__init__.py
+lib/calibre/calibre/gui2/dialogs/config/add_save.py
+lib/calibre/calibre/gui2/dialogs/config/add_save_ui.py
+lib/calibre/calibre/gui2/dialogs/config/config_ui.py
+lib/calibre/calibre/gui2/dialogs/config/history.py
+lib/calibre/calibre/gui2/dialogs/confirm_delete.py
+lib/calibre/calibre/gui2/dialogs/confirm_delete_ui.py
+lib/calibre/calibre/gui2/dialogs/conversion_error.py
+lib/calibre/calibre/gui2/dialogs/conversion_error_ui.py
+lib/calibre/calibre/gui2/dialogs/fetch_metadata.py
+lib/calibre/calibre/gui2/dialogs/fetch_metadata_ui.py
+lib/calibre/calibre/gui2/dialogs/job_view_ui.py
+lib/calibre/calibre/gui2/dialogs/jobs_ui.py
+lib/calibre/calibre/gui2/dialogs/metadata_bulk.py
+lib/calibre/calibre/gui2/dialogs/metadata_bulk_ui.py
+lib/calibre/calibre/gui2/dialogs/metadata_single.py
+lib/calibre/calibre/gui2/dialogs/metadata_single_ui.py
+lib/calibre/calibre/gui2/dialogs/password.py
+lib/calibre/calibre/gui2/dialogs/password_ui.py
+lib/calibre/calibre/gui2/dialogs/progress.py
+lib/calibre/calibre/gui2/dialogs/progress_ui.py
+lib/calibre/calibre/gui2/dialogs/scheduler.py
+lib/calibre/calibre/gui2/dialogs/scheduler_ui.py
+lib/calibre/calibre/gui2/dialogs/search.py
+lib/calibre/calibre/gui2/dialogs/search_item_ui.py
+lib/calibre/calibre/gui2/dialogs/search_ui.py
+lib/calibre/calibre/gui2/dialogs/tag_editor.py
+lib/calibre/calibre/gui2/dialogs/tag_editor_ui.py
+lib/calibre/calibre/gui2/dialogs/test_email_ui.py
+lib/calibre/calibre/gui2/dialogs/user_profiles.py
+lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
+lib/calibre/calibre/gui2/filename_pattern_ui.py
+lib/calibre/calibre/gui2/jobs.py
+lib/calibre/calibre/gui2/library.py
+lib/calibre/calibre/gui2/lrf_renderer/__init__.py
+lib/calibre/calibre/gui2/lrf_renderer/bookview.py
+lib/calibre/calibre/gui2/lrf_renderer/config_ui.py
+lib/calibre/calibre/gui2/lrf_renderer/document.py
+lib/calibre/calibre/gui2/lrf_renderer/main.py
+lib/calibre/calibre/gui2/lrf_renderer/main_ui.py
+lib/calibre/calibre/gui2/lrf_renderer/text.py
+lib/calibre/calibre/gui2/main.py
+lib/calibre/calibre/gui2/main_ui.py
+lib/calibre/calibre/gui2/main_window.py
+lib/calibre/calibre/gui2/metadata.py
+lib/calibre/calibre/gui2/search_box.py
+lib/calibre/calibre/gui2/status.py
+lib/calibre/calibre/gui2/tag_view.py
+lib/calibre/calibre/gui2/tools.py
+lib/calibre/calibre/gui2/update.py
+lib/calibre/calibre/gui2/viewer/__init__.py
+lib/calibre/calibre/gui2/viewer/bookmarkmanager.py
+lib/calibre/calibre/gui2/viewer/bookmarkmanager_ui.py
+lib/calibre/calibre/gui2/viewer/config_ui.py
+lib/calibre/calibre/gui2/viewer/documentview.py
+lib/calibre/calibre/gui2/viewer/js.py
+lib/calibre/calibre/gui2/viewer/main.py
+lib/calibre/calibre/gui2/viewer/main_ui.py
+lib/calibre/calibre/gui2/viewer/printing.py
+lib/calibre/calibre/gui2/widgets.py
+lib/calibre/calibre/gui2/wizard/__init__.py
+lib/calibre/calibre/gui2/wizard/device_ui.py
+lib/calibre/calibre/gui2/wizard/finish_ui.py
+lib/calibre/calibre/gui2/wizard/kindle_ui.py
+lib/calibre/calibre/gui2/wizard/library_ui.py
+lib/calibre/calibre/gui2/wizard/send_email.py
+lib/calibre/calibre/gui2/wizard/send_email_ui.py
+lib/calibre/calibre/gui2/wizard/stanza_ui.py
+lib/calibre/calibre/library/__init__.py
+lib/calibre/calibre/library/cli.py
+lib/calibre/calibre/library/database.py
+lib/calibre/calibre/library/database2.py
+lib/calibre/calibre/library/move.py
+lib/calibre/calibre/library/save_to_disk.py
+lib/calibre/calibre/library/server.py
+lib/calibre/calibre/library/sqlite.py
+lib/calibre/calibre/library/test.py
+lib/calibre/calibre/libunrar.py
+lib/calibre/calibre/libunzip.py
+lib/calibre/calibre/libwand.py
+lib/calibre/calibre/linux.py
+lib/calibre/calibre/manual/conf.py
+lib/calibre/calibre/manual/custom.py
+lib/calibre/calibre/manual/epub.py
+lib/calibre/calibre/manual/qthelp.py
+lib/calibre/calibre/plugins/cPalmdoc.so
+lib/calibre/calibre/plugins/fontconfig.so
+lib/calibre/calibre/plugins/lzx.so
+lib/calibre/calibre/plugins/msdes.so
+lib/calibre/calibre/plugins/pdfreflow.so
+lib/calibre/calibre/plugins/pictureflow.so
+lib/calibre/calibre/ptempfile.py
+lib/calibre/calibre/startup.py
+lib/calibre/calibre/trac/__init__.py
+lib/calibre/calibre/trac/bzr_commit_plugin.py
+lib/calibre/calibre/trac/plugins/Changelog.py
+lib/calibre/calibre/trac/plugins/__init__.py
+lib/calibre/calibre/trac/plugins/download.py
+lib/calibre/calibre/trac/setup.py
+lib/calibre/calibre/translations/__init__.py
+lib/calibre/calibre/translations/dynamic.py
+lib/calibre/calibre/translations/msgfmt.py
+lib/calibre/calibre/utils/PythonMagickWand.py
+lib/calibre/calibre/utils/Zeroconf.py
+lib/calibre/calibre/utils/__init__.py
+lib/calibre/calibre/utils/complete.py
+lib/calibre/calibre/utils/config.py
+lib/calibre/calibre/utils/filenames.py
+lib/calibre/calibre/utils/fonts/__init__.py
+lib/calibre/calibre/utils/genshi/__init__.py
+lib/calibre/calibre/utils/genshi/builder.py
+lib/calibre/calibre/utils/genshi/core.py
+lib/calibre/calibre/utils/genshi/filters/__init__.py
+lib/calibre/calibre/utils/genshi/filters/html.py
+lib/calibre/calibre/utils/genshi/filters/i18n.py
+lib/calibre/calibre/utils/genshi/filters/transform.py
+lib/calibre/calibre/utils/genshi/input.py
+lib/calibre/calibre/utils/genshi/output.py
+lib/calibre/calibre/utils/genshi/path.py
+lib/calibre/calibre/utils/genshi/template/__init__.py
+lib/calibre/calibre/utils/genshi/template/base.py
+lib/calibre/calibre/utils/genshi/template/directives.py
+lib/calibre/calibre/utils/genshi/template/eval.py
+lib/calibre/calibre/utils/genshi/template/interpolation.py
+lib/calibre/calibre/utils/genshi/template/loader.py
+lib/calibre/calibre/utils/genshi/template/markup.py
+lib/calibre/calibre/utils/genshi/template/plugin.py
+lib/calibre/calibre/utils/genshi/template/text.py
+lib/calibre/calibre/utils/genshi/util.py
+lib/calibre/calibre/utils/help2man.py
+lib/calibre/calibre/utils/ipc/__init__.py
+lib/calibre/calibre/utils/ipc/job.py
+lib/calibre/calibre/utils/ipc/launch.py
+lib/calibre/calibre/utils/ipc/server.py
+lib/calibre/calibre/utils/ipc/worker.py
+lib/calibre/calibre/utils/localization.py
+lib/calibre/calibre/utils/lock.py
+lib/calibre/calibre/utils/logging.py
+lib/calibre/calibre/utils/mdns.py
+lib/calibre/calibre/utils/osx_symlinks.py
+lib/calibre/calibre/utils/pdftk.py
+lib/calibre/calibre/utils/podofo/__init__.py
+lib/calibre/calibre/utils/pyparsing.py
+lib/calibre/calibre/utils/resources.py
+lib/calibre/calibre/utils/rss_gen.py
+lib/calibre/calibre/utils/search_query_parser.py
+lib/calibre/calibre/utils/sftp.py
+lib/calibre/calibre/utils/sigil.py
+lib/calibre/calibre/utils/smtp.py
+lib/calibre/calibre/utils/terminfo.py
+lib/calibre/calibre/utils/threadpool.py
+lib/calibre/calibre/utils/winshell.py
+lib/calibre/calibre/utils/zipfile.py
+lib/calibre/calibre/web/__init__.py
+lib/calibre/calibre/web/feeds/__init__.py
+lib/calibre/calibre/web/feeds/feedparser.py
+lib/calibre/calibre/web/feeds/input.py
+lib/calibre/calibre/web/feeds/news.py
+lib/calibre/calibre/web/feeds/recipes/__init__.py
+lib/calibre/calibre/web/feeds/recipes/recipe_24sata.py
+lib/calibre/calibre/web/feeds/recipes/recipe_24sata_rs.py
+lib/calibre/calibre/web/feeds/recipes/recipe_7dias.py
+lib/calibre/calibre/web/feeds/recipes/recipe_accountancyage.py
+lib/calibre/calibre/web/feeds/recipes/recipe_adventuregamers.py
+lib/calibre/calibre/web/feeds/recipes/recipe_al_jazeera.py
+lib/calibre/calibre/web/feeds/recipes/recipe_ambito.py
+lib/calibre/calibre/web/feeds/recipes/recipe_amspec.py
+lib/calibre/calibre/web/feeds/recipes/recipe_ap.py
+lib/calibre/calibre/web/feeds/recipes/recipe_ars_technica.py
+lib/calibre/calibre/web/feeds/recipes/recipe_atlantic.py
+lib/calibre/calibre/web/feeds/recipes/recipe_axxon_news.py
+lib/calibre/calibre/web/feeds/recipes/recipe_azstarnet.py
+lib/calibre/calibre/web/feeds/recipes/recipe_b92.py
+lib/calibre/calibre/web/feeds/recipes/recipe_barrons.py
+lib/calibre/calibre/web/feeds/recipes/recipe_bbc.py
+lib/calibre/calibre/web/feeds/recipes/recipe_bbcvietnamese.py
+lib/calibre/calibre/web/feeds/recipes/recipe_beta.py
+lib/calibre/calibre/web/feeds/recipes/recipe_beta_en.py
+lib/calibre/calibre/web/feeds/recipes/recipe_blic.py
+lib/calibre/calibre/web/feeds/recipes/recipe_borba.py
+lib/calibre/calibre/web/feeds/recipes/recipe_buenosaireseconomico.py
+lib/calibre/calibre/web/feeds/recipes/recipe_business_standard.py
+lib/calibre/calibre/web/feeds/recipes/recipe_business_week.py
+lib/calibre/calibre/web/feeds/recipes/recipe_carta.py
+lib/calibre/calibre/web/feeds/recipes/recipe_chicago_breaking_news.py
+lib/calibre/calibre/web/feeds/recipes/recipe_chicago_tribune.py
+lib/calibre/calibre/web/feeds/recipes/recipe_chr_mon.py
+lib/calibre/calibre/web/feeds/recipes/recipe_cincinnati_enquirer.py
+lib/calibre/calibre/web/feeds/recipes/recipe_clarin.py
+lib/calibre/calibre/web/feeds/recipes/recipe_climate_progress.py
+lib/calibre/calibre/web/feeds/recipes/recipe_cnn.py
+lib/calibre/calibre/web/feeds/recipes/recipe_coding_horror.py
+lib/calibre/calibre/web/feeds/recipes/recipe_common_dreams.py
+lib/calibre/calibre/web/feeds/recipes/recipe_corriere_della_sera_en.py
+lib/calibre/calibre/web/feeds/recipes/recipe_corriere_della_sera_it.py
+lib/calibre/calibre/web/feeds/recipes/recipe_courrierinternational.py
+lib/calibre/calibre/web/feeds/recipes/recipe_craigslist.py
+lib/calibre/calibre/web/feeds/recipes/recipe_criticadigital.py
+lib/calibre/calibre/web/feeds/recipes/recipe_cubadebate.py
+lib/calibre/calibre/web/feeds/recipes/recipe_cyberpresse.py
+lib/calibre/calibre/web/feeds/recipes/recipe_daily_mail.py
+lib/calibre/calibre/web/feeds/recipes/recipe_daily_telegraph.py
+lib/calibre/calibre/web/feeds/recipes/recipe_danas.py
+lib/calibre/calibre/web/feeds/recipes/recipe_darknet.py
+lib/calibre/calibre/web/feeds/recipes/recipe_de_standaard.py
+lib/calibre/calibre/web/feeds/recipes/recipe_degentenaar.py
+lib/calibre/calibre/web/feeds/recipes/recipe_demorgen_be.py
+lib/calibre/calibre/web/feeds/recipes/recipe_der_standard.py
+lib/calibre/calibre/web/feeds/recipes/recipe_diagonales.py
+lib/calibre/calibre/web/feeds/recipes/recipe_diepresse.py
+lib/calibre/calibre/web/feeds/recipes/recipe_discover_magazine.py
+lib/calibre/calibre/web/feeds/recipes/recipe_dna.py
+lib/calibre/calibre/web/feeds/recipes/recipe_dnevni_avaz.py
+lib/calibre/calibre/web/feeds/recipes/recipe_dnevnik_cro.py
+lib/calibre/calibre/web/feeds/recipes/recipe_e_novine.py
+lib/calibre/calibre/web/feeds/recipes/recipe_ecogeek.py
+lib/calibre/calibre/web/feeds/recipes/recipe_economist.py
+lib/calibre/calibre/web/feeds/recipes/recipe_el_mercurio_chile.py
+lib/calibre/calibre/web/feeds/recipes/recipe_el_pais.py
+lib/calibre/calibre/web/feeds/recipes/recipe_el_universal.py
+lib/calibre/calibre/web/feeds/recipes/recipe_elargentino.py
+lib/calibre/calibre/web/feeds/recipes/recipe_elcronista.py
+lib/calibre/calibre/web/feeds/recipes/recipe_elektrolese.py
+lib/calibre/calibre/web/feeds/recipes/recipe_elmundo.py
+lib/calibre/calibre/web/feeds/recipes/recipe_elperiodico_catalan.py
+lib/calibre/calibre/web/feeds/recipes/recipe_elperiodico_spanish.py
+lib/calibre/calibre/web/feeds/recipes/recipe_eltiempo_hn.py
+lib/calibre/calibre/web/feeds/recipes/recipe_endgadget.py
+lib/calibre/calibre/web/feeds/recipes/recipe_espn.py
+lib/calibre/calibre/web/feeds/recipes/recipe_esquire.py
+lib/calibre/calibre/web/feeds/recipes/recipe_estadao.py
+lib/calibre/calibre/web/feeds/recipes/recipe_exiled.py
+lib/calibre/calibre/web/feeds/recipes/recipe_expansion_spanish.py
+lib/calibre/calibre/web/feeds/recipes/recipe_fastcompany.py
+lib/calibre/calibre/web/feeds/recipes/recipe_faznet.py
+lib/calibre/calibre/web/feeds/recipes/recipe_financial_times.py
+lib/calibre/calibre/web/feeds/recipes/recipe_forbes.py
+lib/calibre/calibre/web/feeds/recipes/recipe_freakonomics.py
+lib/calibre/calibre/web/feeds/recipes/recipe_ftd.py
+lib/calibre/calibre/web/feeds/recipes/recipe_fudzilla.py
+lib/calibre/calibre/web/feeds/recipes/recipe_glas_srpske.py
+lib/calibre/calibre/web/feeds/recipes/recipe_glasgow_herald.py
+lib/calibre/calibre/web/feeds/recipes/recipe_glasjavnosti.py
+lib/calibre/calibre/web/feeds/recipes/recipe_globe_and_mail.py
+lib/calibre/calibre/web/feeds/recipes/recipe_granma.py
+lib/calibre/calibre/web/feeds/recipes/recipe_greader.py
+lib/calibre/calibre/web/feeds/recipes/recipe_guardian.py
+lib/calibre/calibre/web/feeds/recipes/recipe_gva_be.py
+lib/calibre/calibre/web/feeds/recipes/recipe_h1.py
+lib/calibre/calibre/web/feeds/recipes/recipe_h2.py
+lib/calibre/calibre/web/feeds/recipes/recipe_h3.py
+lib/calibre/calibre/web/feeds/recipes/recipe_harpers.py
+lib/calibre/calibre/web/feeds/recipes/recipe_harpers_full.py
+lib/calibre/calibre/web/feeds/recipes/recipe_heise.py
+lib/calibre/calibre/web/feeds/recipes/recipe_hindu.py
+lib/calibre/calibre/web/feeds/recipes/recipe_hln.py
+lib/calibre/calibre/web/feeds/recipes/recipe_hln_be.py
+lib/calibre/calibre/web/feeds/recipes/recipe_hna.py
+lib/calibre/calibre/web/feeds/recipes/recipe_honoluluadvertiser.py
+lib/calibre/calibre/web/feeds/recipes/recipe_honvedelem.py
+lib/calibre/calibre/web/feeds/recipes/recipe_hrt.py
+lib/calibre/calibre/web/feeds/recipes/recipe_huntechnet.py
+lib/calibre/calibre/web/feeds/recipes/recipe_iht.py
+lib/calibre/calibre/web/feeds/recipes/recipe_index_hu.py
+lib/calibre/calibre/web/feeds/recipes/recipe_indy_star.py
+lib/calibre/calibre/web/feeds/recipes/recipe_infobae.py
+lib/calibre/calibre/web/feeds/recipes/recipe_infoworld.py
+lib/calibre/calibre/web/feeds/recipes/recipe_inquirer_net.py
+lib/calibre/calibre/web/feeds/recipes/recipe_instapaper.py
+lib/calibre/calibre/web/feeds/recipes/recipe_intelligencer.py
+lib/calibre/calibre/web/feeds/recipes/recipe_irish_times.py
+lib/calibre/calibre/web/feeds/recipes/recipe_japan_times.py
+lib/calibre/calibre/web/feeds/recipes/recipe_javalobby.py
+lib/calibre/calibre/web/feeds/recipes/recipe_jb_online.py
+lib/calibre/calibre/web/feeds/recipes/recipe_joelonsoftware.py
+lib/calibre/calibre/web/feeds/recipes/recipe_jpost.py
+lib/calibre/calibre/web/feeds/recipes/recipe_jutarnji.py
+lib/calibre/calibre/web/feeds/recipes/recipe_juventudrebelde.py
+lib/calibre/calibre/web/feeds/recipes/recipe_juventudrebelde_english.py
+lib/calibre/calibre/web/feeds/recipes/recipe_kellog_faculty.py
+lib/calibre/calibre/web/feeds/recipes/recipe_kellog_insight.py
+lib/calibre/calibre/web/feeds/recipes/recipe_krstarica.py
+lib/calibre/calibre/web/feeds/recipes/recipe_krstarica_en.py
+lib/calibre/calibre/web/feeds/recipes/recipe_la_cuarta.py
+lib/calibre/calibre/web/feeds/recipes/recipe_la_republica.py
+lib/calibre/calibre/web/feeds/recipes/recipe_la_segunda.py
+lib/calibre/calibre/web/feeds/recipes/recipe_la_tercera.py
+lib/calibre/calibre/web/feeds/recipes/recipe_lamujerdemivida.py
+lib/calibre/calibre/web/feeds/recipes/recipe_lanacion.py
+lib/calibre/calibre/web/feeds/recipes/recipe_lanacion_chile.py
+lib/calibre/calibre/web/feeds/recipes/recipe_laprensa.py
+lib/calibre/calibre/web/feeds/recipes/recipe_laprensa_hn.py
+lib/calibre/calibre/web/feeds/recipes/recipe_laprensa_ni.py
+lib/calibre/calibre/web/feeds/recipes/recipe_latimes.py
+lib/calibre/calibre/web/feeds/recipes/recipe_latribuna.py
+lib/calibre/calibre/web/feeds/recipes/recipe_lavanguardia.py
+lib/calibre/calibre/web/feeds/recipes/recipe_le_monde.py
+lib/calibre/calibre/web/feeds/recipes/recipe_le_temps.py
+lib/calibre/calibre/web/feeds/recipes/recipe_lemonde_dip.py
+lib/calibre/calibre/web/feeds/recipes/recipe_liberation.py
+lib/calibre/calibre/web/feeds/recipes/recipe_linux_magazine.py
+lib/calibre/calibre/web/feeds/recipes/recipe_linuxdevices.py
+lib/calibre/calibre/web/feeds/recipes/recipe_livemint.py
+lib/calibre/calibre/web/feeds/recipes/recipe_lrb.py
+lib/calibre/calibre/web/feeds/recipes/recipe_marca.py
+lib/calibre/calibre/web/feeds/recipes/recipe_mediapart.py
+lib/calibre/calibre/web/feeds/recipes/recipe_miami_herald.py
+lib/calibre/calibre/web/feeds/recipes/recipe_miradasalsur.py
+lib/calibre/calibre/web/feeds/recipes/recipe_mondedurable.py
+lib/calibre/calibre/web/feeds/recipes/recipe_moneynews.py
+lib/calibre/calibre/web/feeds/recipes/recipe_monitor.py
+lib/calibre/calibre/web/feeds/recipes/recipe_moscow_times.py
+lib/calibre/calibre/web/feeds/recipes/recipe_msdnmag_en.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nacional_cro.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nasa.py
+lib/calibre/calibre/web/feeds/recipes/recipe_new_scientist.py
+lib/calibre/calibre/web/feeds/recipes/recipe_new_york_review_of_books.py
+lib/calibre/calibre/web/feeds/recipes/recipe_new_york_review_of_books_no_sub.py
+lib/calibre/calibre/web/feeds/recipes/recipe_new_yorker.py
+lib/calibre/calibre/web/feeds/recipes/recipe_news_times.py
+lib/calibre/calibre/web/feeds/recipes/recipe_newsweek.py
+lib/calibre/calibre/web/feeds/recipes/recipe_newsweek_argentina.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nin.py
+lib/calibre/calibre/web/feeds/recipes/recipe_noaa.py
+lib/calibre/calibre/web/feeds/recipes/recipe_novosti.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nspm.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nspm_int.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nytimes.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nytimes_sub.py
+lib/calibre/calibre/web/feeds/recipes/recipe_nzz_ger.py
+lib/calibre/calibre/web/feeds/recipes/recipe_o_globo.py
+lib/calibre/calibre/web/feeds/recipes/recipe_ourdailybread.py
+lib/calibre/calibre/web/feeds/recipes/recipe_outlook_india.py
+lib/calibre/calibre/web/feeds/recipes/recipe_pagina12.py
+lib/calibre/calibre/web/feeds/recipes/recipe_pcworld_hu.py
+lib/calibre/calibre/web/feeds/recipes/recipe_pescanik.py
+lib/calibre/calibre/web/feeds/recipes/recipe_phd_comics.py
+lib/calibre/calibre/web/feeds/recipes/recipe_philly.py
+lib/calibre/calibre/web/feeds/recipes/recipe_physics_today.py
+lib/calibre/calibre/web/feeds/recipes/recipe_physics_world.py
+lib/calibre/calibre/web/feeds/recipes/recipe_pobjeda.py
+lib/calibre/calibre/web/feeds/recipes/recipe_politico.py
+lib/calibre/calibre/web/feeds/recipes/recipe_politika.py
+lib/calibre/calibre/web/feeds/recipes/recipe_portfolio.py
+lib/calibre/calibre/web/feeds/recipes/recipe_pressonline.py
+lib/calibre/calibre/web/feeds/recipes/recipe_publico.py
+lib/calibre/calibre/web/feeds/recipes/recipe_republika.py
+lib/calibre/calibre/web/feeds/recipes/recipe_reuters.py
+lib/calibre/calibre/web/feeds/recipes/recipe_rga.py
+lib/calibre/calibre/web/feeds/recipes/recipe_rts.py
+lib/calibre/calibre/web/feeds/recipes/recipe_salon.py
+lib/calibre/calibre/web/feeds/recipes/recipe_san_fran_chronicle.py
+lib/calibre/calibre/web/feeds/recipes/recipe_sanjosemercurynews.py
+lib/calibre/calibre/web/feeds/recipes/recipe_science_aas.py
+lib/calibre/calibre/web/feeds/recipes/recipe_science_news.py
+lib/calibre/calibre/web/feeds/recipes/recipe_sciencedaily.py
+lib/calibre/calibre/web/feeds/recipes/recipe_scientific_american.py
+lib/calibre/calibre/web/feeds/recipes/recipe_scott_hanselman.py
+lib/calibre/calibre/web/feeds/recipes/recipe_seattle_times.py
+lib/calibre/calibre/web/feeds/recipes/recipe_security_watch.py
+lib/calibre/calibre/web/feeds/recipes/recipe_serverside.py
+lib/calibre/calibre/web/feeds/recipes/recipe_shacknews.py
+lib/calibre/calibre/web/feeds/recipes/recipe_slashdot.py
+lib/calibre/calibre/web/feeds/recipes/recipe_slate.py
+lib/calibre/calibre/web/feeds/recipes/recipe_smashing.py
+lib/calibre/calibre/web/feeds/recipes/recipe_smh.py
+lib/calibre/calibre/web/feeds/recipes/recipe_soldiers.py
+lib/calibre/calibre/web/feeds/recipes/recipe_spiegel_int.py
+lib/calibre/calibre/web/feeds/recipes/recipe_spiegelde.py
+lib/calibre/calibre/web/feeds/recipes/recipe_st_petersburg_times.py
+lib/calibre/calibre/web/feeds/recipes/recipe_stackoverflow.py
+lib/calibre/calibre/web/feeds/recipes/recipe_starbulletin.py
+lib/calibre/calibre/web/feeds/recipes/recipe_straitstimes.py
+lib/calibre/calibre/web/feeds/recipes/recipe_sueddeutsche.py
+lib/calibre/calibre/web/feeds/recipes/recipe_tanjug.py
+lib/calibre/calibre/web/feeds/recipes/recipe_telegraph_uk.py
+lib/calibre/calibre/web/feeds/recipes/recipe_telepolis.py
+lib/calibre/calibre/web/feeds/recipes/recipe_telepolis_artikel.py
+lib/calibre/calibre/web/feeds/recipes/recipe_teleread.py
+lib/calibre/calibre/web/feeds/recipes/recipe_the_age.py
+lib/calibre/calibre/web/feeds/recipes/recipe_the_budget_fashionista.py
+lib/calibre/calibre/web/feeds/recipes/recipe_the_nation.py
+lib/calibre/calibre/web/feeds/recipes/recipe_the_new_republic.py
+lib/calibre/calibre/web/feeds/recipes/recipe_the_oz.py
+lib/calibre/calibre/web/feeds/recipes/recipe_the_register.py
+lib/calibre/calibre/web/feeds/recipes/recipe_the_scotsman.py
+lib/calibre/calibre/web/feeds/recipes/recipe_thedgesingapore.py
+lib/calibre/calibre/web/feeds/recipes/recipe_theeconomictimes_india.py
+lib/calibre/calibre/web/feeds/recipes/recipe_themarketticker.py
+lib/calibre/calibre/web/feeds/recipes/recipe_theoldfoodie.py
+lib/calibre/calibre/web/feeds/recipes/recipe_theonion.py
+lib/calibre/calibre/web/feeds/recipes/recipe_thestar.py
+lib/calibre/calibre/web/feeds/recipes/recipe_tijd.py
+lib/calibre/calibre/web/feeds/recipes/recipe_time_magazine.py
+lib/calibre/calibre/web/feeds/recipes/recipe_times_online.py
+lib/calibre/calibre/web/feeds/recipes/recipe_tnxm.py
+lib/calibre/calibre/web/feeds/recipes/recipe_tomshardware.py
+lib/calibre/calibre/web/feeds/recipes/recipe_tomshardware_de.py
+lib/calibre/calibre/web/feeds/recipes/recipe_toronto_sun.py
+lib/calibre/calibre/web/feeds/recipes/recipe_tweakers.py
+lib/calibre/calibre/web/feeds/recipes/recipe_twitchfilms.py
+lib/calibre/calibre/web/feeds/recipes/recipe_uncrate.py
+lib/calibre/calibre/web/feeds/recipes/recipe_upi.py
+lib/calibre/calibre/web/feeds/recipes/recipe_usatoday.py
+lib/calibre/calibre/web/feeds/recipes/recipe_usnews.py
+lib/calibre/calibre/web/feeds/recipes/recipe_utne.py
+lib/calibre/calibre/web/feeds/recipes/recipe_vecernji_list.py
+lib/calibre/calibre/web/feeds/recipes/recipe_veintitres.py
+lib/calibre/calibre/web/feeds/recipes/recipe_vijesti.py
+lib/calibre/calibre/web/feeds/recipes/recipe_vnexpress.py
+lib/calibre/calibre/web/feeds/recipes/recipe_volksrant.py
+lib/calibre/calibre/web/feeds/recipes/recipe_vreme.py
+lib/calibre/calibre/web/feeds/recipes/recipe_wash_post.py
+lib/calibre/calibre/web/feeds/recipes/recipe_wikinews_en.py
+lib/calibre/calibre/web/feeds/recipes/recipe_winsupersite.py
+lib/calibre/calibre/web/feeds/recipes/recipe_wired.py
+lib/calibre/calibre/web/feeds/recipes/recipe_woz_die.py
+lib/calibre/calibre/web/feeds/recipes/recipe_wsj.py
+lib/calibre/calibre/web/feeds/recipes/recipe_xkcd.py
+lib/calibre/calibre/web/feeds/recipes/recipe_zaobao.py
+lib/calibre/calibre/web/feeds/recipes/recipe_zdnet.py
+lib/calibre/calibre/web/feeds/recipes/recipe_zeitde.py
+lib/calibre/calibre/web/feeds/templates.py
+lib/calibre/calibre/web/fetch/__init__.py
+lib/calibre/calibre/web/fetch/simple.py
+lib/calibre/cherrypy/__init__.py
+lib/calibre/cherrypy/_cpcgifs.py
+lib/calibre/cherrypy/_cpchecker.py
+lib/calibre/cherrypy/_cpconfig.py
+lib/calibre/cherrypy/_cpdispatch.py
+lib/calibre/cherrypy/_cperror.py
+lib/calibre/cherrypy/_cplogging.py
+lib/calibre/cherrypy/_cpmodpy.py
+lib/calibre/cherrypy/_cprequest.py
+lib/calibre/cherrypy/_cpserver.py
+lib/calibre/cherrypy/_cpthreadinglocal.py
+lib/calibre/cherrypy/_cptools.py
+lib/calibre/cherrypy/_cptree.py
+lib/calibre/cherrypy/_cpwsgi.py
+lib/calibre/cherrypy/_cpwsgi_server.py
+lib/calibre/cherrypy/lib/__init__.py
+lib/calibre/cherrypy/lib/auth.py
+lib/calibre/cherrypy/lib/caching.py
+lib/calibre/cherrypy/lib/covercp.py
+lib/calibre/cherrypy/lib/cptools.py
+lib/calibre/cherrypy/lib/encoding.py
+lib/calibre/cherrypy/lib/http.py
+lib/calibre/cherrypy/lib/httpauth.py
+lib/calibre/cherrypy/lib/profiler.py
+lib/calibre/cherrypy/lib/safemime.py
+lib/calibre/cherrypy/lib/sessions.py
+lib/calibre/cherrypy/lib/static.py
+lib/calibre/cherrypy/lib/tidy.py
+lib/calibre/cherrypy/lib/wsgiapp.py
+lib/calibre/cherrypy/lib/xmlrpc.py
+lib/calibre/cherrypy/process/__init__.py
+lib/calibre/cherrypy/process/plugins.py
+lib/calibre/cherrypy/process/servers.py
+lib/calibre/cherrypy/process/win32.py
+lib/calibre/cherrypy/process/wspbus.py
+lib/calibre/cherrypy/scaffold/__init__.py
+lib/calibre/cherrypy/wsgiserver/__init__.py
+lib/calibre/cssutils/__init__.py
+lib/calibre/cssutils/_fetch.py
+lib/calibre/cssutils/_fetchgae.py
+lib/calibre/cssutils/codec.py
+lib/calibre/cssutils/css/__init__.py
+lib/calibre/cssutils/css/csscharsetrule.py
+lib/calibre/cssutils/css/csscomment.py
+lib/calibre/cssutils/css/cssfontfacerule.py
+lib/calibre/cssutils/css/cssimportrule.py
+lib/calibre/cssutils/css/cssmediarule.py
+lib/calibre/cssutils/css/cssnamespacerule.py
+lib/calibre/cssutils/css/csspagerule.py
+lib/calibre/cssutils/css/cssproperties.py
+lib/calibre/cssutils/css/cssrule.py
+lib/calibre/cssutils/css/cssrulelist.py
+lib/calibre/cssutils/css/cssstyledeclaration.py
+lib/calibre/cssutils/css/cssstylerule.py
+lib/calibre/cssutils/css/cssstylesheet.py
+lib/calibre/cssutils/css/cssunknownrule.py
+lib/calibre/cssutils/css/cssvalue.py
+lib/calibre/cssutils/css/property.py
+lib/calibre/cssutils/css/selector.py
+lib/calibre/cssutils/css/selectorlist.py
+lib/calibre/cssutils/css2productions.py
+lib/calibre/cssutils/cssproductions.py
+lib/calibre/cssutils/errorhandler.py
+lib/calibre/cssutils/helper.py
+lib/calibre/cssutils/parse.py
+lib/calibre/cssutils/prodparser.py
+lib/calibre/cssutils/profiles.py
+lib/calibre/cssutils/script.py
+lib/calibre/cssutils/serialize.py
+lib/calibre/cssutils/settings.py
+lib/calibre/cssutils/stylesheets/__init__.py
+lib/calibre/cssutils/stylesheets/medialist.py
+lib/calibre/cssutils/stylesheets/mediaquery.py
+lib/calibre/cssutils/stylesheets/stylesheet.py
+lib/calibre/cssutils/stylesheets/stylesheetlist.py
+lib/calibre/cssutils/tokenize2.py
+lib/calibre/cssutils/util.py
+lib/calibre/encutils/__init__.py
+lib/calibre/odf/__init__.py
+lib/calibre/odf/anim.py
+lib/calibre/odf/attrconverters.py
+lib/calibre/odf/chart.py
+lib/calibre/odf/config.py
+lib/calibre/odf/dc.py
+lib/calibre/odf/dr3d.py
+lib/calibre/odf/draw.py
+lib/calibre/odf/easyliststyle.py
+lib/calibre/odf/element.py
+lib/calibre/odf/elementtypes.py
+lib/calibre/odf/form.py
+lib/calibre/odf/grammar.py
+lib/calibre/odf/load.py
+lib/calibre/odf/manifest.py
+lib/calibre/odf/math.py
+lib/calibre/odf/meta.py
+lib/calibre/odf/namespaces.py
+lib/calibre/odf/number.py
+lib/calibre/odf/odf2moinmoin.py
+lib/calibre/odf/odf2xhtml.py
+lib/calibre/odf/odfmanifest.py
+lib/calibre/odf/office.py
+lib/calibre/odf/opendocument.py
+lib/calibre/odf/presentation.py
+lib/calibre/odf/script.py
+lib/calibre/odf/style.py
+lib/calibre/odf/svg.py
+lib/calibre/odf/table.py
+lib/calibre/odf/teletype.py
+lib/calibre/odf/text.py
+lib/calibre/odf/thumbnail.py
+lib/calibre/odf/userfield.py
+lib/calibre/odf/xforms.py
+lib/calibre/pyPdf/__init__.py
+lib/calibre/pyPdf/filters.py
+lib/calibre/pyPdf/generic.py
+lib/calibre/pyPdf/pdf.py
+lib/calibre/pyPdf/utils.py
+lib/calibre/pyPdf/xmp.py
+share/calibre/content_server/av.jpg
+share/calibre/content_server/bg_search_box.png
+share/calibre/content_server/btn_search_box.png
+share/calibre/content_server/calibre.png
+share/calibre/content_server/calibre_banner.png
+share/calibre/content_server/date.js
+share/calibre/content_server/default_cover.jpg
+share/calibre/content_server/first.png
+share/calibre/content_server/gui.css
+share/calibre/content_server/gui.js
+share/calibre/content_server/index.html
+share/calibre/content_server/jquery.js
+share/calibre/content_server/last.png
+share/calibre/content_server/loading.gif
+share/calibre/content_server/next.png
+share/calibre/content_server/previous.png
+share/calibre/ebook-convert-complete.pickle
+share/calibre/fonts/liberation/LiberationMono-Bold.ttf
+share/calibre/fonts/liberation/LiberationMono-BoldItalic.ttf
+share/calibre/fonts/liberation/LiberationMono-Italic.ttf
+share/calibre/fonts/liberation/LiberationMono-Regular.ttf
+share/calibre/fonts/liberation/LiberationSans-Bold.ttf
+share/calibre/fonts/liberation/LiberationSans-BoldItalic.ttf
+share/calibre/fonts/liberation/LiberationSans-Italic.ttf
+share/calibre/fonts/liberation/LiberationSans-Regular.ttf
+share/calibre/fonts/liberation/LiberationSerif-Bold.ttf
+share/calibre/fonts/liberation/LiberationSerif-BoldItalic.ttf
+share/calibre/fonts/liberation/LiberationSerif-Italic.ttf
+share/calibre/fonts/liberation/LiberationSerif-Regular.ttf
+share/calibre/fonts/prs500/tt0003m_.ttf
+share/calibre/fonts/prs500/tt0011m_.ttf
+share/calibre/fonts/prs500/tt0419m_.ttf
+share/calibre/images.qrc
+share/calibre/images/add_book.svg
+share/calibre/images/arrow-down.svg
+share/calibre/images/arrow-up.svg
+share/calibre/images/auto_author_sort.svg
+share/calibre/images/back.svg
+share/calibre/images/book.svg
+share/calibre/images/bookmarks.svg
+share/calibre/images/books_in_series.svg
+share/calibre/images/chapters.svg
+share/calibre/images/clear_left.svg
+share/calibre/images/config.svg
+share/calibre/images/convert.svg
+share/calibre/images/cover_flow.svg
+share/calibre/images/debug.svg
+share/calibre/images/dialog_error.svg
+share/calibre/images/dialog_information.svg
+share/calibre/images/dialog_warning.svg
+share/calibre/images/document_open.svg
+share/calibre/images/donate.svg
+share/calibre/images/edit_input.svg
+share/calibre/images/eject.svg
+share/calibre/images/exec.svg
+share/calibre/images/font_size_larger.svg
+share/calibre/images/font_size_smaller.svg
+share/calibre/images/forward.svg
+share/calibre/images/gmail_logo.png
+share/calibre/images/jobs-animated.mng
+share/calibre/images/jobs.svg
+share/calibre/images/library.png
+share/calibre/images/list_remove.svg
+share/calibre/images/lookfeel.svg
+share/calibre/images/mail.svg
+share/calibre/images/metadata.svg
+share/calibre/images/mimetypes/bmp.svg
+share/calibre/images/mimetypes/computer.svg
+share/calibre/images/mimetypes/dir.svg
+share/calibre/images/mimetypes/epub.svg
+share/calibre/images/mimetypes/fb2.svg
+share/calibre/images/mimetypes/gif.svg
+share/calibre/images/mimetypes/html.svg
+share/calibre/images/mimetypes/jpeg.svg
+share/calibre/images/mimetypes/lit.svg
+share/calibre/images/mimetypes/lrf.svg
+share/calibre/images/mimetypes/lrx.svg
+share/calibre/images/mimetypes/mobi.svg
+share/calibre/images/mimetypes/pdf.svg
+share/calibre/images/mimetypes/png.svg
+share/calibre/images/mimetypes/rar.svg
+share/calibre/images/mimetypes/rtf.svg
+share/calibre/images/mimetypes/svg.svg
+share/calibre/images/mimetypes/txt.svg
+share/calibre/images/mimetypes/unknown.svg
+share/calibre/images/mimetypes/zero.svg
+share/calibre/images/mimetypes/zip.svg
+share/calibre/images/minus.svg
+share/calibre/images/network-server.svg
+share/calibre/images/news.svg
+share/calibre/images/news/24sata.png
+share/calibre/images/news/24sata_rs.png
+share/calibre/images/news/adventuregamers.png
+share/calibre/images/news/ambito.png
+share/calibre/images/news/amspec.png
+share/calibre/images/news/ars_technica.png
+share/calibre/images/news/atlantic.png
+share/calibre/images/news/axxon_news.png
+share/calibre/images/news/azstarnet.png
+share/calibre/images/news/b92.png
+share/calibre/images/news/barrons.png
+share/calibre/images/news/bbc.png
+share/calibre/images/news/beta.png
+share/calibre/images/news/beta_en.png
+share/calibre/images/news/blic.png
+share/calibre/images/news/borba.png
+share/calibre/images/news/business_standard.png
+share/calibre/images/news/carta.png
+share/calibre/images/news/chicago_breaking_news.png
+share/calibre/images/news/chr_mon.png
+share/calibre/images/news/clarin.png
+share/calibre/images/news/cnn.png
+share/calibre/images/news/coding_horror.png
+share/calibre/images/news/corriere_della_sera_en.png
+share/calibre/images/news/corriere_della_sera_it.png
+share/calibre/images/news/criticadigital.png
+share/calibre/images/news/cubadebate.png
+share/calibre/images/news/danas.png
+share/calibre/images/news/darknet.png
+share/calibre/images/news/der_standard.png
+share/calibre/images/news/diepresse.png
+share/calibre/images/news/dnevni_avaz.png
+share/calibre/images/news/e_novine.png
+share/calibre/images/news/economist.png
+share/calibre/images/news/el_mercurio_chile.png
+share/calibre/images/news/el_universal.png
+share/calibre/images/news/elargentino.png
+share/calibre/images/news/elcronista.png
+share/calibre/images/news/elektrolese.png
+share/calibre/images/news/elmundo.png
+share/calibre/images/news/elperiodico_catalan.png
+share/calibre/images/news/elperiodico_spanish.png
+share/calibre/images/news/eltiempo_hn.png
+share/calibre/images/news/endgadget.png
+share/calibre/images/news/espn.png
+share/calibre/images/news/esquire.png
+share/calibre/images/news/estadao.png
+share/calibre/images/news/expansion_spanish.png
+share/calibre/images/news/fastcompany.png
+share/calibre/images/news/faznet.png
+share/calibre/images/news/freakonomics.png
+share/calibre/images/news/ftd.png
+share/calibre/images/news/fudzilla.png
+share/calibre/images/news/glas_srpske.png
+share/calibre/images/news/glasjavnosti.png
+share/calibre/images/news/granma.png
+share/calibre/images/news/gva_be.png
+share/calibre/images/news/heise.png
+share/calibre/images/news/hln.png
+share/calibre/images/news/hln_be.png
+share/calibre/images/news/hna.png
+share/calibre/images/news/hrt.png
+share/calibre/images/news/infobae.png
+share/calibre/images/news/inquirer_net.png
+share/calibre/images/news/instapaper.png
+share/calibre/images/news/jb_online.png
+share/calibre/images/news/joelonsoftware.png
+share/calibre/images/news/jpost.png
+share/calibre/images/news/jutarnji.png
+share/calibre/images/news/krstarica.png
+share/calibre/images/news/krstarica_en.png
+share/calibre/images/news/la_cuarta.png
+share/calibre/images/news/la_tercera.png
+share/calibre/images/news/lanacion.png
+share/calibre/images/news/lanacion_chile.png
+share/calibre/images/news/laprensa_hn.png
+share/calibre/images/news/laprensa_ni.png
+share/calibre/images/news/latribuna.png
+share/calibre/images/news/le_monde.png
+share/calibre/images/news/lemonde_dip.png
+share/calibre/images/news/liberation.png
+share/calibre/images/news/linux_magazine.png
+share/calibre/images/news/linuxdevices.png
+share/calibre/images/news/livemint.png
+share/calibre/images/news/miami_herald.png
+share/calibre/images/news/msdnmag_en.png
+share/calibre/images/news/nacional_cro.png
+share/calibre/images/news/nasa.png
+share/calibre/images/news/new_yorker.png
+share/calibre/images/news/newsweek.png
+share/calibre/images/news/noaa.png
+share/calibre/images/news/novosti.png
+share/calibre/images/news/nspm.png
+share/calibre/images/news/nspm_int.png
+share/calibre/images/news/nytimes.png
+share/calibre/images/news/nytimes_sub.png
+share/calibre/images/news/nzz_ger.png
+share/calibre/images/news/o_globo.png
+share/calibre/images/news/pagina12.png
+share/calibre/images/news/pescanik.png
+share/calibre/images/news/pobjeda.png
+share/calibre/images/news/politico.png
+share/calibre/images/news/politika.png
+share/calibre/images/news/portfolio.png
+share/calibre/images/news/pressonline.png
+share/calibre/images/news/rts.png
+share/calibre/images/news/sanjosemercurynews.png
+share/calibre/images/news/sciencedaily.png
+share/calibre/images/news/scott_hanselman.png
+share/calibre/images/news/seattle_times.png
+share/calibre/images/news/security_watch.png
+share/calibre/images/news/smashing.png
+share/calibre/images/news/soldiers.png
+share/calibre/images/news/spiegel_int.png
+share/calibre/images/news/spiegelde.png
+share/calibre/images/news/stackoverflow.png
+share/calibre/images/news/starbulletin.png
+share/calibre/images/news/straitstimes.png
+share/calibre/images/news/sueddeutsche.png
+share/calibre/images/news/tanjug.png
+share/calibre/images/news/telegraph_uk.png
+share/calibre/images/news/telepolis.png
+share/calibre/images/news/telepolis_artikel.png
+share/calibre/images/news/teleread.png
+share/calibre/images/news/the_oz.png
+share/calibre/images/news/theeconomictimes_india.png
+share/calibre/images/news/themarketticker.png
+share/calibre/images/news/theonion.png
+share/calibre/images/news/thestar.png
+share/calibre/images/news/tijd.png
+share/calibre/images/news/time_magazine.png
+share/calibre/images/news/times_online.png
+share/calibre/images/news/tomshardware.png
+share/calibre/images/news/tomshardware_de.png
+share/calibre/images/news/toronto_sun.png
+share/calibre/images/news/uncrate.png
+share/calibre/images/news/usnews.png
+share/calibre/images/news/utne.png
+share/calibre/images/news/vecernji_list.png
+share/calibre/images/news/vijesti.png
+share/calibre/images/news/vreme.png
+share/calibre/images/news/wikinews_en.png
+share/calibre/images/news/wired.png
+share/calibre/images/news/wsj.png
+share/calibre/images/news/zdnet.png
+share/calibre/images/news/zeitde.png
+share/calibre/images/next.svg
+share/calibre/images/ok.svg
+share/calibre/images/page.svg
+share/calibre/images/plugins.svg
+share/calibre/images/plus.svg
+share/calibre/images/previous.svg
+share/calibre/images/print-preview.svg
+share/calibre/images/print.svg
+share/calibre/images/publisher.png
+share/calibre/images/reader.svg
+share/calibre/images/save.svg
+share/calibre/images/scheduler.svg
+share/calibre/images/sd.svg
+share/calibre/images/search.svg
+share/calibre/images/series.svg
+share/calibre/images/star.png
+share/calibre/images/swap.svg
+share/calibre/images/sync.svg
+share/calibre/images/tags.svg
+share/calibre/images/trash.svg
+share/calibre/images/user_profile.svg
+share/calibre/images/view.svg
+share/calibre/images/viewer.svg
+share/calibre/images/welcome_wizard.svg
+share/calibre/images/window-close.svg
+share/calibre/images/wizard.svg
+share/calibre/localization/iso639.pickle
+share/calibre/localization/locales/ar/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/ar/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/ar/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/bg/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/bg/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/ca/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/ca/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/cs/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/cs/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/da/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/da/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/da/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/de/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/de/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/de/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/el/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/el/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/en_GB/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/es/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/es/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/es/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/fr/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/fr/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/fr/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/gl/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/gl/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/he/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/he/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/hr/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/hr/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/hu/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/hu/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/it/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/it/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/ja/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/ja/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/nb/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/nb/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/nds/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/nl/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/nl/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/pl/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/pl/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/pl/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/pt/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/pt/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/pt/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/pt_BR/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/pt_BR/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/ro/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/ro/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/ru/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/ru/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/ru/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/sk/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/sk/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/sk/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/sl/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/sl/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/sv/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/sv/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/sv/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/te/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/uk/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/uk/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/uk/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/yi/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/zh_CN/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/zh_CN/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/zh_CN/LC_MESSAGES/qt.qm
+share/calibre/localization/locales/zh_HK/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/zh_HK/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/zh_TW/LC_MESSAGES/iso639.mo
+share/calibre/localization/locales/zh_TW/LC_MESSAGES/messages.mo
+share/calibre/localization/locales/zh_TW/LC_MESSAGES/qt.qm
+share/calibre/localization/stats.pickle
+share/calibre/metadata_sqlite.sql
+share/calibre/recipes.pickle
+share/calibre/scripts.pickle
+share/calibre/templates/fb2.xsl
+share/calibre/templates/html.css
+share/calibre/templates/lrf.xsl
+share/calibre/templates/ncx.xml
+share/calibre/templates/opf.xml
+share/calibre/templates/rtf.xsl
+share/calibre/viewer/hyphenate/Hyphenator.js
+share/calibre/viewer/hyphenate/patterns/bn.js
+share/calibre/viewer/hyphenate/patterns/cs.js
+share/calibre/viewer/hyphenate/patterns/da.js
+share/calibre/viewer/hyphenate/patterns/de.js
+share/calibre/viewer/hyphenate/patterns/en.js
+share/calibre/viewer/hyphenate/patterns/es.js
+share/calibre/viewer/hyphenate/patterns/fi.js
+share/calibre/viewer/hyphenate/patterns/fr.js
+share/calibre/viewer/hyphenate/patterns/gu.js
+share/calibre/viewer/hyphenate/patterns/hi.js
+share/calibre/viewer/hyphenate/patterns/hu.js
+share/calibre/viewer/hyphenate/patterns/it.js
+share/calibre/viewer/hyphenate/patterns/kn.js
+share/calibre/viewer/hyphenate/patterns/ml.js
+share/calibre/viewer/hyphenate/patterns/nl.js
+share/calibre/viewer/hyphenate/patterns/or.js
+share/calibre/viewer/hyphenate/patterns/pa.js
+share/calibre/viewer/hyphenate/patterns/pl.js
+share/calibre/viewer/hyphenate/patterns/pt.js
+share/calibre/viewer/hyphenate/patterns/ru.js
+share/calibre/viewer/hyphenate/patterns/sv.js
+share/calibre/viewer/hyphenate/patterns/ta.js
+share/calibre/viewer/hyphenate/patterns/te.js
+share/calibre/viewer/hyphenate/patterns/uk.js
+share/calibre/viewer/jquery_scrollTo.js
+@dirrm share/calibre/viewer/hyphenate/patterns
+@dirrm share/calibre/viewer/hyphenate
+@dirrm share/calibre/viewer
+@dirrm share/calibre/templates
+@dirrm share/calibre/localization/locales/zh_TW/LC_MESSAGES
+@dirrm share/calibre/localization/locales/zh_TW
+@dirrm share/calibre/localization/locales/zh_HK/LC_MESSAGES
+@dirrm share/calibre/localization/locales/zh_HK
+@dirrm share/calibre/localization/locales/zh_CN/LC_MESSAGES
+@dirrm share/calibre/localization/locales/zh_CN
+@dirrm share/calibre/localization/locales/yi/LC_MESSAGES
+@dirrm share/calibre/localization/locales/yi
+@dirrm share/calibre/localization/locales/uk/LC_MESSAGES
+@dirrm share/calibre/localization/locales/uk
+@dirrm share/calibre/localization/locales/te/LC_MESSAGES
+@dirrm share/calibre/localization/locales/te
+@dirrm share/calibre/localization/locales/sv/LC_MESSAGES
+@dirrm share/calibre/localization/locales/sv
+@dirrm share/calibre/localization/locales/sl/LC_MESSAGES
+@dirrm share/calibre/localization/locales/sl
+@dirrm share/calibre/localization/locales/sk/LC_MESSAGES
+@dirrm share/calibre/localization/locales/sk
+@dirrm share/calibre/localization/locales/ru/LC_MESSAGES
+@dirrm share/calibre/localization/locales/ru
+@dirrm share/calibre/localization/locales/ro/LC_MESSAGES
+@dirrm share/calibre/localization/locales/ro
+@dirrm share/calibre/localization/locales/pt_BR/LC_MESSAGES
+@dirrm share/calibre/localization/locales/pt_BR
+@dirrm share/calibre/localization/locales/pt/LC_MESSAGES
+@dirrm share/calibre/localization/locales/pt
+@dirrm share/calibre/localization/locales/pl/LC_MESSAGES
+@dirrm share/calibre/localization/locales/pl
+@dirrm share/calibre/localization/locales/nl/LC_MESSAGES
+@dirrm share/calibre/localization/locales/nl
+@dirrm share/calibre/localization/locales/nds/LC_MESSAGES
+@dirrm share/calibre/localization/locales/nds
+@dirrm share/calibre/localization/locales/nb/LC_MESSAGES
+@dirrm share/calibre/localization/locales/nb
+@dirrm share/calibre/localization/locales/ja/LC_MESSAGES
+@dirrm share/calibre/localization/locales/ja
+@dirrm share/calibre/localization/locales/it/LC_MESSAGES
+@dirrm share/calibre/localization/locales/it
+@dirrm share/calibre/localization/locales/hu/LC_MESSAGES
+@dirrm share/calibre/localization/locales/hu
+@dirrm share/calibre/localization/locales/hr/LC_MESSAGES
+@dirrm share/calibre/localization/locales/hr
+@dirrm share/calibre/localization/locales/he/LC_MESSAGES
+@dirrm share/calibre/localization/locales/he
+@dirrm share/calibre/localization/locales/gl/LC_MESSAGES
+@dirrm share/calibre/localization/locales/gl
+@dirrm share/calibre/localization/locales/fr/LC_MESSAGES
+@dirrm share/calibre/localization/locales/fr
+@dirrm share/calibre/localization/locales/es/LC_MESSAGES
+@dirrm share/calibre/localization/locales/es
+@dirrm share/calibre/localization/locales/en_GB/LC_MESSAGES
+@dirrm share/calibre/localization/locales/en_GB
+@dirrm share/calibre/localization/locales/el/LC_MESSAGES
+@dirrm share/calibre/localization/locales/el
+@dirrm share/calibre/localization/locales/de/LC_MESSAGES
+@dirrm share/calibre/localization/locales/de
+@dirrm share/calibre/localization/locales/da/LC_MESSAGES
+@dirrm share/calibre/localization/locales/da
+@dirrm share/calibre/localization/locales/cs/LC_MESSAGES
+@dirrm share/calibre/localization/locales/cs
+@dirrm share/calibre/localization/locales/ca/LC_MESSAGES
+@dirrm share/calibre/localization/locales/ca
+@dirrm share/calibre/localization/locales/bg/LC_MESSAGES
+@dirrm share/calibre/localization/locales/bg
+@dirrm share/calibre/localization/locales/ar/LC_MESSAGES
+@dirrm share/calibre/localization/locales/ar
+@dirrm share/calibre/localization/locales
+@dirrm share/calibre/localization
+@dirrm share/calibre/images/news
+@dirrm share/calibre/images/mimetypes
+@dirrm share/calibre/images
+@dirrm share/calibre/fonts/prs500
+@dirrm share/calibre/fonts/liberation
+@dirrm share/calibre/fonts
+@dirrm share/calibre/content_server
+@dirrm share/calibre
+@dirrm lib/calibre/pyPdf
+@dirrm lib/calibre/odf
+@dirrm lib/calibre/encutils
+@dirrm lib/calibre/cssutils/stylesheets
+@dirrm lib/calibre/cssutils/css
+@dirrm lib/calibre/cssutils
+@dirrm lib/calibre/cherrypy/wsgiserver
+@dirrm lib/calibre/cherrypy/scaffold
+@dirrm lib/calibre/cherrypy/process
+@dirrm lib/calibre/cherrypy/lib
+@dirrm lib/calibre/cherrypy
+@dirrm lib/calibre/calibre/web/fetch
+@dirrm lib/calibre/calibre/web/feeds/recipes
+@dirrm lib/calibre/calibre/web/feeds
+@dirrm lib/calibre/calibre/web
+@dirrm lib/calibre/calibre/utils/podofo
+@dirrm lib/calibre/calibre/utils/ipc
+@dirrm lib/calibre/calibre/utils/genshi/template
+@dirrm lib/calibre/calibre/utils/genshi/filters
+@dirrm lib/calibre/calibre/utils/genshi
+@dirrm lib/calibre/calibre/utils/fonts
+@dirrm lib/calibre/calibre/utils
+@dirrm lib/calibre/calibre/translations
+@dirrm lib/calibre/calibre/trac/plugins
+@dirrm lib/calibre/calibre/trac
+@dirrm lib/calibre/calibre/plugins
+@dirrm lib/calibre/calibre/manual
+@dirrm lib/calibre/calibre/library
+@dirrm lib/calibre/calibre/gui2/wizard
+@dirrm lib/calibre/calibre/gui2/viewer
+@dirrm lib/calibre/calibre/gui2/lrf_renderer
+@dirrm lib/calibre/calibre/gui2/dialogs/config
+@dirrm lib/calibre/calibre/gui2/dialogs
+@dirrm lib/calibre/calibre/gui2/device_drivers
+@dirrm lib/calibre/calibre/gui2/convert
+@dirrm lib/calibre/calibre/gui2
+@dirrm lib/calibre/calibre/ebooks/unidecode
+@dirrm lib/calibre/calibre/ebooks/txt
+@dirrm lib/calibre/calibre/ebooks/rtf2xml
+@dirrm lib/calibre/calibre/ebooks/rtf
+@dirrm lib/calibre/calibre/ebooks/rb
+@dirrm lib/calibre/calibre/ebooks/pml
+@dirrm lib/calibre/calibre/ebooks/pdf/manipulate
+@dirrm lib/calibre/calibre/ebooks/pdf
+@dirrm lib/calibre/calibre/ebooks/pdb/ztxt
+@dirrm lib/calibre/calibre/ebooks/pdb/palmdoc
+@dirrm lib/calibre/calibre/ebooks/pdb/ereader
+@dirrm lib/calibre/calibre/ebooks/pdb
+@dirrm lib/calibre/calibre/ebooks/oeb/transforms
+@dirrm lib/calibre/calibre/ebooks/oeb
+@dirrm lib/calibre/calibre/ebooks/odt
+@dirrm lib/calibre/calibre/ebooks/mobi
+@dirrm lib/calibre/calibre/ebooks/metadata
+@dirrm lib/calibre/calibre/ebooks/markdown
+@dirrm lib/calibre/calibre/ebooks/lrf/pylrs
+@dirrm lib/calibre/calibre/ebooks/lrf/lrs
+@dirrm lib/calibre/calibre/ebooks/lrf/html
+@dirrm lib/calibre/calibre/ebooks/lrf/fonts
+@dirrm lib/calibre/calibre/ebooks/lrf
+@dirrm lib/calibre/calibre/ebooks/lit/maps
+@dirrm lib/calibre/calibre/ebooks/lit
+@dirrm lib/calibre/calibre/ebooks/html
+@dirrm lib/calibre/calibre/ebooks/fb2
+@dirrm lib/calibre/calibre/ebooks/epub
+@dirrm lib/calibre/calibre/ebooks/conversion
+@dirrm lib/calibre/calibre/ebooks/compression
+@dirrm lib/calibre/calibre/ebooks/comic
+@dirrm lib/calibre/calibre/ebooks/chardet
+@dirrm lib/calibre/calibre/ebooks
+@dirrm lib/calibre/calibre/devices/usbobserver
+@dirrm lib/calibre/calibre/devices/usbms
+@dirrm lib/calibre/calibre/devices/prs700
+@dirrm lib/calibre/calibre/devices/prs505
+@dirrm lib/calibre/calibre/devices/prs500/cli
+@dirrm lib/calibre/calibre/devices/prs500
+@dirrm lib/calibre/calibre/devices/kindle
+@dirrm lib/calibre/calibre/devices/jetbook
+@dirrm lib/calibre/calibre/devices/irexdr
+@dirrm lib/calibre/calibre/devices/iliad
+@dirrm lib/calibre/calibre/devices/eslick
+@dirrm lib/calibre/calibre/devices/eb600
+@dirrm lib/calibre/calibre/devices/cybookg3
+@dirrm lib/calibre/calibre/devices/blackberry
+@dirrm lib/calibre/calibre/devices/bebook
+@dirrm lib/calibre/calibre/devices/android
+@dirrm lib/calibre/calibre/devices
+@dirrm lib/calibre/calibre/customize
+@dirrm lib/calibre/calibre
+@dirrm lib/calibre
