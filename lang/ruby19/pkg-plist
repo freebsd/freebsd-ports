@@ -426,9 +426,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/json/common.rb
 %%RUBY_LIBDIR%%/json/editor.rb
 %%RUBY_LIBDIR%%/json/ext.rb
-%%RUBY_LIBDIR%%/json/pure/generator.rb
-%%RUBY_LIBDIR%%/json/pure/parser.rb
-%%RUBY_LIBDIR%%/json/pure.rb
 %%RUBY_LIBDIR%%/json/version.rb
 %%RUBY_LIBDIR%%/json.rb
 %%RUBY_LIBDIR%%/kconv.rb
@@ -897,7 +894,6 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/openssl
 @dirrm %%RUBY_LIBDIR%%/net
 @dirrm %%RUBY_LIBDIR%%/minitest
-@dirrm %%RUBY_LIBDIR%%/json/pure
 @dirrm %%RUBY_LIBDIR%%/json/add
 @dirrm %%RUBY_LIBDIR%%/json
 @dirrm %%RUBY_LIBDIR%%/irb/lc/ja
