@@ -56,6 +56,13 @@ _SUF1=	_${PORTREVISION}
 
 PKGNAMESUFFIX=	#empty
 
+#
+# pthreads in earlier versions has problems with malloc after fork
+#
+.if ${OSVERSION} < 702000
+WITHOUT_PTHREADS=	yes
+.endif
+
 .if defined(WITHOUT_PTHREADS)
 CONFIGURE_ARGS+=--disable-pthread
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+nopthreads
