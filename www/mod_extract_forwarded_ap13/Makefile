@@ -20,6 +20,7 @@ USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 CONFLICTS=	mod_extract_forwarded-2.* mod_extract_forwarded2-0.*
+NO_LATEST_LINK=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
