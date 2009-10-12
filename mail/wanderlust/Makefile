@@ -20,6 +20,8 @@ COMMENT?=	Yet another message interface on Emacsen
 
 USE_EMACS=	yes
 
+CONFLICTS=	wanderlust-*-2.15.*
+
 .include <bsd.port.pre.mk>
 
 EMACS_W3M_PORT_NAME?=	emacs-w3m
