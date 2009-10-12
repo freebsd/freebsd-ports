@@ -8881,6 +8881,7 @@ mod_encoding                    ports/www/mod_encoding
 mod_evasive                     ports/www/mod_evasive
 mod_extract_forwarded           ports/www/mod_extract_forwarded
 mod_extract_forwarded2          ports/www/mod_extract_forwarded2
+mod_extract_forwarded_ap13      ports/www/mod_extract_forwarded_ap13
 mod_fastcgi                     ports/www/mod_fastcgi
 mod_fcgid                       ports/www/mod_fcgid
 mod_fileiri                     ports/www/mod_fileiri
@@ -11645,6 +11646,7 @@ p5-HTML-Parser                  ports/www/p5-HTML-Parser
 p5-HTML-Perlinfo                ports/www/p5-HTML-Perlinfo
 p5-HTML-PrettyPrinter           ports/www/p5-HTML-PrettyPrinter
 p5-HTML-Prototype               ports/www/p5-HTML-Prototype
+p5-HTML-Query                   ports/finance/p5-HTML-Query
 p5-HTML-QuickCheck              ports/www/p5-HTML-QuickCheck
 p5-HTML-RSSAutodiscovery        ports/www/p5-HTML-RSSAutodiscovery
 p5-HTML-ResolveLink             ports/www/p5-HTML-ResolveLink
@@ -11995,6 +11997,7 @@ p5-Log-Dispatch-FileRotate      ports/devel/p5-Log-Dispatch-FileRotate
 p5-Log-Dispatch-FileShared      ports/devel/p5-Log-Dispatch-FileShared
 p5-Log-Dispatch-Perl            ports/devel/p5-Log-Dispatch-Perl
 p5-Log-Dispatch-Screen-Color    ports/devel/p5-Log-Dispatch-Screen-Color
+p5-Log-Dispatch-Scribe          ports/devel/p5-Log-Dispatch-Scribe
 p5-Log-Log4perl                 ports/devel/p5-Log-Log4perl
 p5-Log-Message                  ports/devel/p5-Log-Message
 p5-Log-Message-Simple           ports/devel/p5-Log-Message-Simple
@@ -12388,6 +12391,7 @@ p5-Net-LDAP-AutoDNs             ports/net/p5-Net-LDAP-AutoDNs
 p5-Net-LDAP-Express             ports/net/p5-Net-LDAP-Express
 p5-Net-LDAP-LDAPhash            ports/net/p5-Net-LDAP-LDAPhash
 p5-Net-LDAP-Makepath            ports/net/p5-Net-LDAP-Makepath
+p5-Net-LDAP-Server              ports/net/p5-Net-LDAP-Server
 p5-Net-LibIDN                   ports/dns/p5-Net-LibIDN
 p5-Net-Libdnet                  ports/net/p5-Net-Libdnet
 p5-Net-MAC                      ports/net/p5-Net-MAC
@@ -15239,6 +15243,7 @@ p5-html-parser                  ports/www/p5-HTML-Parser
 p5-html-perlinfo                ports/www/p5-HTML-Perlinfo
 p5-html-prettyprinter           ports/www/p5-HTML-PrettyPrinter
 p5-html-prototype               ports/www/p5-HTML-Prototype
+p5-html-query                   ports/finance/p5-HTML-Query
 p5-html-quickcheck              ports/www/p5-HTML-QuickCheck
 p5-html-resolvelink             ports/www/p5-HTML-ResolveLink
 p5-html-rewriteattributes       ports/textproc/p5-HTML-RewriteAttributes
@@ -15578,6 +15583,7 @@ p5-log-dispatch-filerotate      ports/devel/p5-Log-Dispatch-FileRotate
 p5-log-dispatch-fileshared      ports/devel/p5-Log-Dispatch-FileShared
 p5-log-dispatch-perl            ports/devel/p5-Log-Dispatch-Perl
 p5-log-dispatch-screen-color    ports/devel/p5-Log-Dispatch-Screen-Color
+p5-log-dispatch-scribe          ports/devel/p5-Log-Dispatch-Scribe
 p5-log-log4perl                 ports/devel/p5-Log-Log4perl
 p5-log-message                  ports/devel/p5-Log-Message
 p5-log-message-simple           ports/devel/p5-Log-Message-Simple
@@ -15982,6 +15988,7 @@ p5-net-ldap-autodns             ports/net/p5-Net-LDAP-AutoDNs
 p5-net-ldap-express             ports/net/p5-Net-LDAP-Express
 p5-net-ldap-ldaphash            ports/net/p5-Net-LDAP-LDAPhash
 p5-net-ldap-makepath            ports/net/p5-Net-LDAP-Makepath
+p5-net-ldap-server              ports/net/p5-Net-LDAP-Server
 p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
 p5-net-mac                      ports/net/p5-Net-MAC
@@ -20959,6 +20966,7 @@ rubygem-fastthread              ports/devel/rubygem-fastthread
 rubygem-fattr                   ports/devel/rubygem-fattr
 rubygem-feed-normalizer         ports/www/rubygem-feed-normalizer
 rubygem-ferret                  ports/textproc/rubygem-ferret
+rubygem-file-tail               ports/devel/rubygem-file-tail
 rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
 rubygem-gdata                   ports/devel/rubygem-gdata
@@ -21028,6 +21036,7 @@ rubygem-pdfwriter               ports/print/rubygem-pdfwriter
 rubygem-pg                      ports/databases/rubygem-pg
 rubygem-piston                  ports/devel/rubygem-piston
 rubygem-platform                ports/devel/rubygem-platform
+rubygem-polyglot                ports/devel/rubygem-polyglot
 rubygem-postgres                ports/databases/rubygem-postgres
 rubygem-prawn                   ports/print/rubygem-prawn
 rubygem-prawn-core              ports/print/rubygem-prawn-core
@@ -21098,6 +21107,7 @@ rubygem-thin                    ports/www/rubygem-thin
 rubygem-tidy                    ports/textproc/rubygem-tidy
 rubygem-tmail                   ports/mail/rubygem-tmail
 rubygem-transactionsimple       ports/devel/rubygem-transactionsimple
+rubygem-treetop                 ports/devel/rubygem-treetop
 rubygem-trollop                 ports/devel/rubygem-trollop
 rubygem-turing                  ports/graphics/rubygem-turing
 rubygem-twitter                 ports/net/rubygem-twitter
@@ -23652,6 +23662,7 @@ wormux                          ports/games/wormux
 wormux-devel                    ports/games/wormux-devel
 wots                            ports/sysutils/wots
 wotsap                          ports/misc/wotsap
+wowzamediaserverpro             ports/net/wowzamediaserverpro
 wpa_gui                         ports/net/wpa_gui
 wping                           ports/net/wping
 wprint                          ports/print/wprint
