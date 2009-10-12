@@ -35,6 +35,39 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="437a68cf-b752-11de-b6eb-00e0815b8da8">
+    <topic>php5 -- Multiple security issues</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Vendor reports</p>
+	<blockquote cite="http://www.php.net/releases/5_2_11.php">
+	  <p>Security Enhancements and Fixes in PHP 5.2.11:
+	    Fixed certificate validation inside
+	    php_openssl_apply_verification_policy.
+	    Fixed sanity check for the color index in imagecolortransparent.
+	    Added missing sanity checks around exif processing.
+	    Fixed bug 44683 popen crashes when an invalid mode is passed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.php.net/releases/5_2_11.php</url>
+      <cvename>CVE-2009-3291</cvename>
+      <cvename>CVE-2009-3292</cvename>
+      <cvename>CVE-2009-3293</cvename>
+    </references>
+    <dates>
+      <discovery>2009-09-17</discovery>
+      <entry>2009-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ebeed063-b328-11de-b6a5-0030843d3802">
     <topic>virtualbox -- privilege escalation</topic>
     <affects>
