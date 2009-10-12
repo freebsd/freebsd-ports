@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	rejik
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/ \
-				http://bio3k.softboard.ru/uploads/arch/
+		http://bio3k.softboard.ru/uploads/arch/
 DISTNAME=	redirector-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	A squid redirector used for blocking unwanted content
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
