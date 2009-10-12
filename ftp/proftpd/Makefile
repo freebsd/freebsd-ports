@@ -20,8 +20,8 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		http://www.smartftp.com/oss/proftpd/:digest \
 		LOCAL/beech:digest \
 		LOCAL/beech:sql_tds
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	chris@officialunix.com
 COMMENT?=	Highly configurable ftp daemon
@@ -107,7 +107,9 @@ MODULES:=${MODULES}:mod_rewrite
 MODULES:=${MODULES}:mod_wrap2
 INCLUDEDIRS:=${INCLUDEDIRS}:${WORKDIR}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-PLIST_FILES+=	include/proftpd/mod_wrap2.h
+PLIST_SUB+=	WRAP=""
+.else
+PLIST_SUB+=	WRAP="@comment "
 .endif
 
 .if defined(WITH_WRAP_FILE)
@@ -190,7 +192,9 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 
 .if ${MODULES:M*mod_sql_*}
 MODULES:=mod_sql${MODULES}
-PLIST_FILES+=	include/proftpd/mod_sql.h
+PLIST_SUB+=	SQL=""
+.else
+PLIST_SUB+=	SQL="@comment "
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -202,15 +206,19 @@ MODULES:=${MODULES}:mod_tls
 
 .if defined(WITH_CTRLS)
 CONFIGURE_ARGS+=	--enable-ctrls
-PLIST_FILES+=	sbin/ftpdctl
 .if !defined(WITHOUT_CTRLS_ADMIN)
 MODULES:=${MODULES}:mod_ctrls_admin
 .endif
+PLIST_SUB+=	CTRLS_ADMIN=""
+.else
+PLIST_SUB+=	CTRLS_ADMIN="@comment "
 .endif
 
 .if defined(WITH_QUOTA)
 MODULES:=${MODULES}:mod_quotatab:mod_quotatab_file
-PLIST_FILES+=	include/proftpd/mod_quotatab.h
+PLIST_SUB+=	QUOTA=""
+.else
+PLIST_SUB+=	QUOTA="@comment "
 .if defined(WITH_LDAP)
 MODULES:=${MODULES}:mod_quotatab_ldap
 .endif
@@ -243,7 +251,9 @@ DISTFILES+=	mod_sql_tds-4.11.tar.bz2:sql_tds
 EXTRACT_ONLY+=	mod_sql_tds-4.11.tar.bz2
 MODULES:=${MODULES}:mod_sql_tds
 MODULES:=mod_sql${MODULES}
-PLIST_FILES+=	include/proftpd/mod_sql.h
+PLIST_SUB+=	TDS=""
+.else
+PLIST_SUB+=	TDS="@comment "
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds

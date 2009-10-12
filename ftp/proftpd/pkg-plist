@@ -34,6 +34,10 @@ include/proftpd/libsupp.h
 include/proftpd/log.h
 include/proftpd/mkhome.h
 %%CLAMAV%%include/proftpd/mod_clamav.h
+%%WRAP%%include/proftpd/mod_wrap2.h
+%%SQL%%include/proftpd/mod_sql.h
+%%TDS%%include/proftpd/mod_sql.h
+%%QUOTA%%include/proftpd/mod_quotatab.h
 include/proftpd/mod_ctrls.h
 include/proftpd/modules.h
 include/proftpd/netacl.h
@@ -64,6 +68,7 @@ libdata/pkgconfig/proftpd.pc
 sbin/ftpshut
 sbin/in.proftpd
 sbin/proftpd
+%%CTRLS_ADMIN%%sbin/ftpdctl
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/proftpd.mo
