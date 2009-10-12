@@ -22,7 +22,7 @@ PLIST=		${.CURDIR}/pkg-plist
 RAPI_SLAVE=	pythonb
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|$$(top_builddir)/src/librapi.la|${PREFIX}/lib/librapi.la|g' \
+	@${REINPLACE_CMD} -e 's|$$(top_builddir)/src/librapi.la|${LOCALBASE}/lib/librapi.la|g' \
 		${WRKSRC}/python/Makefile.in
 
 do-build:
