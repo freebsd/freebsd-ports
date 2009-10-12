@@ -742,6 +742,7 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
+    SUBDIR += synergy-plus
     SUBDIR += syscp
     SUBDIR += sysgather
     SUBDIR += sysinfo

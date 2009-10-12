@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/synergyc
+bin/synergys
+%%EXAMPLESDIR%%/synergy.conf
+@dirrm %%EXAMPLESDIR%%
