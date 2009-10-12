@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pip
-PORTVERSION=	0.4
+PORTVERSION=	0.5.1
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
@@ -16,7 +16,20 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Pip installs (Python) packages. An easy_install replacement
 
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+REINPLACE_ARGS=	-i.bak -e "s/env python$$/&${PYTHON_VER}/"
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+post-patch:
+	${FIND} ${WRKSRC} -type f -name "pip*" -print0 | ${XARGS} -0 ${REINPLACE_CMD}
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/docs/_build && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
