@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.20080922
+DISTVERSION=	1.3.3rc1
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.alaskaparadise.com/freebsd/ \
+MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
+		ftp://ftp1.at.proftpd.org/distrib/source/ \
+		ftp://ftp1.ca.proftpd.org/distrib/source/ \
+		ftp://ftp1.us.proftpd.org/distrib/source/ \
 		LOCAL/beech \
 		LOCAL/beech:clam \
 		LOCAL/beech:digest
@@ -16,14 +19,12 @@ PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	chris@officialunix.com
-COMMENT?=	Highly configurable ftp daemon
-
-IGNORE=		Please use ftp/proftpd
+MAINTAINER=	chris@officialunix.com
+COMMENT=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
-MAN8=	proftpd.8 ftpshut.8 ftpdctl.8
+MAN8=	proftpd.8 ftpshut.8 ftpdctl.8 ftpscrub.8
 
 PORTDOCSdoc=	Configuration.html faq.html
 PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
@@ -106,7 +107,9 @@ MODULES:=${MODULES}:mod_rewrite
 MODULES:=${MODULES}:mod_wrap2
 INCLUDEDIRS:=${INCLUDEDIRS}:${WORKDIR}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-PLIST_FILES+=	include/proftpd/mod_wrap2.h
+PLIST_SUB+=	WRAP=""
+.else
+PLIST_SUB+=	WRAP="@comment "
 .endif
 
 .if defined(WITH_WRAP_FILE)
@@ -196,12 +199,14 @@ LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 MODULES:=${MODULES}:mod_sql_odbc
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-CONFIGURE_ARGS+=LIBS=-liodbc LD_LIBRARY_PATH=/usr/local/lib LDFLAGS=-L/usr/local/lib
+CONFIGURE_ARGS+=LIBS=-liodbc LD_LIBRARY_PATH=${LOCALBASE}/lib LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
 .if ${MODULES:M*mod_sql_*}
 MODULES:=mod_sql${MODULES}
-PLIST_FILES+=	include/proftpd/mod_sql.h
+PLIST_SUB+=	SQL=""
+.else
+PLIST_SUB+=	SQL="@comment "
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -209,19 +214,26 @@ PLIST_FILES+=	include/proftpd/mod_sql.h
 CFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
 PROFTPD_LIBS+=	-lssl -lcrypto -L${OPENSSLLIB}
 MODULES:=${MODULES}:mod_tls
+PLIST_SUB+=	TLS=""
+.else
+PLIST_SUB+=	TLS="@comment "
 .endif
 
 .if defined(WITH_CTRLS)
 CONFIGURE_ARGS+=	--enable-ctrls
-PLIST_FILES+=	sbin/ftpdctl
 .if !defined(WITHOUT_CTRLS_ADMIN)
 MODULES:=${MODULES}:mod_ctrls_admin
 .endif
+PLIST_SUB+=	CTRLS_ADMIN=""
+.else
+PLIST_SUB+=	CTRLS_ADMIN="@comment "
 .endif
 
 .if defined(WITH_QUOTA)
 MODULES:=${MODULES}:mod_quotatab:mod_quotatab_file
-PLIST_FILES+=	include/proftpd/mod_quotatab.h
+PLIST_SUB+=	QUOTA=""
+.else
+PLIST_SUB+=	QUOTA="@comment "
 .if defined(WITH_LDAP)
 MODULES:=${MODULES}:mod_quotatab_ldap
 .endif
@@ -235,18 +247,17 @@ MODULES:=${MODULES}:mod_unique_id
 .endif
 
 .if defined(WITH_CLAMAV)
-#http://www.thrallingpenguin.com/resources/mod_clamav-0.10.tar.bz2
-DISTFILES+=	mod_clamav-0.10.tar.bz2:clam
-EXTRACT_ONLY+=	mod_clamav-0.10.tar.bz2
+DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
+EXTRACT_ONLY+=	mod_clamav-0.11rc.tar.gz
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
 LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-PLIST_SUB=	CLAMAV=""
+PLIST_SUB+=	CLAMAV=""
 .else
-PLIST_SUB=	CLAMAV="@comment "
+PLIST_SUB+=	CLAMAV="@comment "
 .endif
 
 .if defined(WITH_DIGEST)
