@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME?=	sync-engine
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES?=	palm
 MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
-DISTNAME=	sync-engine-${PORTVERSION}
+DISTNAME=	synce-sync-engine-${PORTVERSION}
 
 MAINTAINER?=	avl@FreeBSD.org
 COMMENT?=	Synchronization Engine for Windows Mobile devices
@@ -29,6 +29,7 @@ PLIST=		${PKGDIR}/pkg-plist.plugin
 PKGNAMEPREFIX=	synce-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	synce_sync_engine
 .endif
 
 .include <bsd.port.pre.mk>
