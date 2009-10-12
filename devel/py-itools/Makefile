@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	itools
-PORTVERSION=	0.60.3
+PORTVERSION=	0.60.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://download.hforge.org/itools/0.60/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Python library Provides Wide Range Of Capabilities
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2.3:${PORTSDIR}/print/py-reportlab2 \
