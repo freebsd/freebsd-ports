@@ -19,6 +19,7 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.1
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.2
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.3
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.4
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.60.0
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
@@ -203,6 +204,10 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/html/html.py
 %%PYTHON_SITELIBDIR%%/itools/html/html.pyc
 %%PYTHON_SITELIBDIR%%/itools/html/html.pyo
+%%PYTHON_SITELIBDIR%%/itools/html/html-lat1.ent
+%%PYTHON_SITELIBDIR%%/itools/html/html-special.ent
+%%PYTHON_SITELIBDIR%%/itools/html/html-symbol.ent
+%%PYTHON_SITELIBDIR%%/itools/html/html4.01-strict.dtd
 %%PYTHON_SITELIBDIR%%/itools/html/parser.py
 %%PYTHON_SITELIBDIR%%/itools/html/parser.pyc
 %%PYTHON_SITELIBDIR%%/itools/html/parser.pyo
@@ -251,13 +256,12 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/i18n/accept.py
 %%PYTHON_SITELIBDIR%%/itools/i18n/accept.pyc
 %%PYTHON_SITELIBDIR%%/itools/i18n/accept.pyo
-%%PYTHON_SITELIBDIR%%/itools/i18n/base.py
-%%PYTHON_SITELIBDIR%%/itools/i18n/base.pyc
-%%PYTHON_SITELIBDIR%%/itools/i18n/base.pyo
 %%PYTHON_SITELIBDIR%%/itools/i18n/fuzzy.py
 %%PYTHON_SITELIBDIR%%/itools/i18n/fuzzy.pyc
 %%PYTHON_SITELIBDIR%%/itools/i18n/fuzzy.pyo
-%%PYTHON_SITELIBDIR%%/itools/i18n/languages.txt
+%%PYTHON_SITELIBDIR%%/itools/i18n/languages.py
+%%PYTHON_SITELIBDIR%%/itools/i18n/languages.pyc
+%%PYTHON_SITELIBDIR%%/itools/i18n/languages.pyo
 %%PYTHON_SITELIBDIR%%/itools/i18n/locale_.py
 %%PYTHON_SITELIBDIR%%/itools/i18n/locale_.pyc
 %%PYTHON_SITELIBDIR%%/itools/i18n/locale_.pyo
@@ -289,6 +293,7 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/locale/fr.po
 %%PYTHON_SITELIBDIR%%/itools/locale/it.po
 %%PYTHON_SITELIBDIR%%/itools/locale/locale.pot
+%%PYTHON_SITELIBDIR%%/itools/locale/zh.mo
 %%PYTHON_SITELIBDIR%%/itools/locale/zh.po
 %%PYTHON_SITELIBDIR%%/itools/odf/OpenDocument-schema-v1.1.rng
 %%PYTHON_SITELIBDIR%%/itools/odf/OpenDocument-strict-schema-v1.1.rng
@@ -298,6 +303,10 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/odf/odf.py
 %%PYTHON_SITELIBDIR%%/itools/odf/odf.pyc
 %%PYTHON_SITELIBDIR%%/itools/odf/odf.pyo
+%%PYTHON_SITELIBDIR%%/itools/odf/officeshots.ppm
+%%PYTHON_SITELIBDIR%%/itools/odf/thumb.pdf
+%%PYTHON_SITELIBDIR%%/itools/odf/thumb.png
+%%PYTHON_SITELIBDIR%%/itools/odf/thumb.svg
 %%PYTHON_SITELIBDIR%%/itools/odf/oo.py
 %%PYTHON_SITELIBDIR%%/itools/odf/oo.pyc
 %%PYTHON_SITELIBDIR%%/itools/odf/oo.pyo
