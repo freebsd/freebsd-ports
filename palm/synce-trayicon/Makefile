@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-trayicon
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce/SynCE-GNOME/${PORTVERSION}
 
@@ -26,7 +25,7 @@ MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack libgnomeui desktopfileutils
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -54,6 +53,7 @@ pre-configure:
 	fi
 
 post-install:
+	@-update-desktop-database
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
