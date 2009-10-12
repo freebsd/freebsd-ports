@@ -10,6 +10,7 @@ bin/psettime
 bin/pshortcut
 bin/pstatus
 bin/rapiconfig
+bin/synce-database
 bin/synce-install-cab
 bin/synce-list-programs
 bin/synce-registry
