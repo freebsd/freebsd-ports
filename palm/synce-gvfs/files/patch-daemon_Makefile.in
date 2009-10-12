@@ -1,0 +1,76 @@
+--- daemon/Makefile.in.orig	2009-10-05 00:59:38.000000000 +1000
++++ daemon/Makefile.in	2009-10-05 00:57:58.000000000 +1000
+@@ -84,6 +84,12 @@
+ 	$(gvfs_src_dir)/daemon/gvfsjobmountmountable.h \
+ 	$(gvfs_src_dir)/daemon/gvfsjobunmountmountable.c \
+ 	$(gvfs_src_dir)/daemon/gvfsjobunmountmountable.h \
++	$(gvfs_src_dir)/daemon/gvfsjobstartmountable.c \
++	$(gvfs_src_dir)/daemon/gvfsjobstartmountable.h \
++	$(gvfs_src_dir)/daemon/gvfsjobstopmountable.c \
++	$(gvfs_src_dir)/daemon/gvfsjobstopmountable.h \
++	$(gvfs_src_dir)/daemon/gvfsjobpollmountable.c \
++	$(gvfs_src_dir)/daemon/gvfsjobpollmountable.h \
+ 	$(gvfs_src_dir)/daemon/gvfsjobopenforread.c \
+ 	$(gvfs_src_dir)/daemon/gvfsjobopenforread.h \
+ 	$(gvfs_src_dir)/daemon/gvfsjobread.c \
+@@ -147,7 +153,8 @@
+ 	gvfsreadchannel.lo gvfswritechannel.lo gvfsmonitor.lo \
+ 	gvfsdaemonutils.lo gvfsjob.lo gvfsjobsource.lo gvfsjobdbus.lo \
+ 	gvfsjobmount.lo gvfsjobunmount.lo gvfsjobmountmountable.lo \
+-	gvfsjobunmountmountable.lo gvfsjobopenforread.lo \
++	gvfsjobunmountmountable.lo gvfsjobstartmountable.lo \
++	gvfsjobstopmountable.lo gvfsjobpollmountable.lo gvfsjobopenforread.lo \
+ 	gvfsjobread.lo gvfsjobseekread.lo gvfsjobcloseread.lo \
+ 	gvfsjobopenforwrite.lo gvfsjobwrite.lo gvfsjobseekwrite.lo \
+ 	gvfsjobclosewrite.lo gvfsjobpush.lo gvfsjobpull.lo \
+@@ -382,6 +389,12 @@
+ 	$(gvfs_src_dir)/daemon/gvfsjobmountmountable.h \
+ 	$(gvfs_src_dir)/daemon/gvfsjobunmountmountable.c \
+ 	$(gvfs_src_dir)/daemon/gvfsjobunmountmountable.h \
++	$(gvfs_src_dir)/daemon/gvfsjobstartmountable.c \
++	$(gvfs_src_dir)/daemon/gvfsjobstartmountable.h \
++	$(gvfs_src_dir)/daemon/gvfsjobstopmountable.c \
++	$(gvfs_src_dir)/daemon/gvfsjobstopmountable.h \
++	$(gvfs_src_dir)/daemon/gvfsjobpollmountable.c \
++	$(gvfs_src_dir)/daemon/gvfsjobpollmountable.h \
+ 	$(gvfs_src_dir)/daemon/gvfsjobopenforread.c \
+ 	$(gvfs_src_dir)/daemon/gvfsjobopenforread.h \
+ 	$(gvfs_src_dir)/daemon/gvfsjobread.c \
+@@ -571,6 +584,9 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsjobtrash.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsjobunmount.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsjobunmountmountable.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsjobstartmountable.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsjobstopmountable.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsjobpollmountable.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsjobwrite.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfskeyring.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gvfsmonitor.Plo@am__quote@
+@@ -696,6 +712,27 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gvfsjobunmountmountable.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobunmountmountable.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobunmountmountable.c
+ 
++gvfsjobstartmountable.lo: $(gvfs_src_dir)/daemon/gvfsjobstartmountable.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gvfsjobstartmountable.lo -MD -MP -MF $(DEPDIR)/gvfsjobstartmountable.Tpo -c -o gvfsjobstartmountable.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobstartmountable.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobstartmountable.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/gvfsjobstartmountable.Tpo $(DEPDIR)/gvfsjobstartmountable.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$(gvfs_src_dir)/daemon/gvfsjobstartmountable.c' object='gvfsjobstartmountable.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gvfsjobstartmountable.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobstartmountable.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobstartmountable.c
++
++gvfsjobstopmountable.lo: $(gvfs_src_dir)/daemon/gvfsjobstopmountable.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gvfsjobstopmountable.lo -MD -MP -MF $(DEPDIR)/gvfsjobstopmountable.Tpo -c -o gvfsjobstopmountable.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobstopmountable.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobstopmountable.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/gvfsjobstopmountable.Tpo $(DEPDIR)/gvfsjobstopmountable.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$(gvfs_src_dir)/daemon/gvfsjobstopmountable.c' object='gvfsjobstopmountable.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gvfsjobstopmountable.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobstopmountable.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobstopmountable.c
++
++gvfsjobpollmountable.lo: $(gvfs_src_dir)/daemon/gvfsjobpollmountable.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gvfsjobpollmountable.lo -MD -MP -MF $(DEPDIR)/gvfsjobpollmountable.Tpo -c -o gvfsjobpollmountable.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobpollmountable.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobpollmountable.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/gvfsjobpollmountable.Tpo $(DEPDIR)/gvfsjobpollmountable.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$(gvfs_src_dir)/daemon/gvfsjobpollmountable.c' object='gvfsjobpollmountable.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o gvfsjobpollmountable.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobpollmountable.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobpollmountable.c
++
+ gvfsjobopenforread.lo: $(gvfs_src_dir)/daemon/gvfsjobopenforread.c
+ @am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT gvfsjobopenforread.lo -MD -MP -MF $(DEPDIR)/gvfsjobopenforread.Tpo -c -o gvfsjobopenforread.lo `test -f '$(gvfs_src_dir)/daemon/gvfsjobopenforread.c' || echo '$(srcdir)/'`$(gvfs_src_dir)/daemon/gvfsjobopenforread.c
+ @am__fastdepCC_TRUE@	mv -f $(DEPDIR)/gvfsjobopenforread.Tpo $(DEPDIR)/gvfsjobopenforread.Plo
