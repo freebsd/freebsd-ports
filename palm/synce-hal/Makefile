@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	hal
-PORTVERSION=	0.13.1
+PORTVERSION=	0.14
 PORTEPOCH=	1
 CATEGORIES=	palm
-MASTER_SITES=	SF/synce/SynCE/0.13
+MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 PKGNAMEPREFIX=	synce-
 DISTNAME=	synce-hal-${PORTVERSION}
 
@@ -24,14 +24,11 @@ LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce  \
 USE_ICONV=	yes
 USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE} --with-hal-addon-dir=${PREFIX}/libexec --disable-bluetooth-support
+CONFIGURE_ARGS+=--with-hal-addon-dir=${PREFIX}/libexec \
+			--disable-bluetooth-support
 
-PLIST_FILES=	libexec/hal-dccm \
-		libexec/synce-serial-chat \
-		libexec/hal-synce-rndis \
-		libexec/hal-synce-serial \
-		share/synce-hal/dhclient.conf \
-		share/hal/fdi/policy/20thirdparty/10-synce.fdi
+if ${OSVERSION} >= 800074
+IGNORE=		requires pppd
+.endif
 
-PLIST_DIRS=	share/synce-hal
 .include <bsd.port.mk>
