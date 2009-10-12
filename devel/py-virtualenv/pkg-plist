@@ -12,10 +12,10 @@ bin/virtualenv
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/refresh-support-files.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/refresh-support-files.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/refresh-support-files.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/support-files/setuptools-0.6c9-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/support-files
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
