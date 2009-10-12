@@ -30,10 +30,11 @@ export XMODIFIERS=@im=ibus
 export XIM_PROGRAM="ibus-daemon"
 export XIM_ARGS="--daemonize --xim"
 
-Following input methods are available in ports:
+Following input methods/engines are available in ports:
 
 chinese/ibus-pinyin		The PinYin input method
 japanese/ibus-anthy		Anthy engine for IBus
+textproc/ibus-m17n		The m17n IMEngine for IBus framework
 
 If ibus cannot start or the panel does not appear, please ensure
 that you are using up-to-date python.
