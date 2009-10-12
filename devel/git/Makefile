@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.4.4
+PORTVERSION=	1.6.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -173,12 +173,14 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
 		OLD_ICONV=yes \
 		PERL_PATH=${PERL} \
-		LIBMD_SHA1=yes
+		LIBMD_SHA1=yes \
+		ICONVDIR=${LOCALBASAE} \
+		V=1
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
@@ -253,7 +255,7 @@ PLIST_SUB+=	CVS="@comment "
 .endif
 
 verify: checksum
-	gpg --verify ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
+	@gpg --verify ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
 		${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 post-patch:

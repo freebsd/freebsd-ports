@@ -111,8 +111,10 @@ libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
 libexec/git-core/git-relink
 libexec/git-core/git-remote
+libexec/git-core/git-remote-curl
 libexec/git-core/git-repack
 libexec/git-core/git-repo-config
+libexec/git-core/git-replace
 libexec/git-core/git-request-pull
 libexec/git-core/git-rerere
 libexec/git-core/git-reset
@@ -319,7 +321,11 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-reflog.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-relink.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-helpers.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-helpers.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-repack.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-replace.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-replace.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-repo-config.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-request-pull.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-rerere.html
@@ -706,6 +712,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.4.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.4.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.4.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
