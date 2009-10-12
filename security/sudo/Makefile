@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 MASTER_SITE_SUBDIR=	tmclaugh/sudo
 DISTNAME=	${PORTNAME}-1.6.9p20
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
 GNU_CONFIGURE=	yes
