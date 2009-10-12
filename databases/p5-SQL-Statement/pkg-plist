@@ -5,11 +5,16 @@
 %%SITE_PERL%%/SQL/Parser.pm
 %%SITE_PERL%%/SQL/Statement.pm
 %%SITE_PERL%%/SQL/Statement/Embed.pod
+%%SITE_PERL%%/SQL/Statement/Function.pm
 %%SITE_PERL%%/SQL/Statement/Functions.pm
 %%SITE_PERL%%/SQL/Statement/GetInfo.pm
+%%SITE_PERL%%/SQL/Statement/Operation.pm
+%%SITE_PERL%%/SQL/Statement/Placeholder.pm
 %%SITE_PERL%%/SQL/Statement/RAM.pm
 %%SITE_PERL%%/SQL/Statement/Structure.pod
 %%SITE_PERL%%/SQL/Statement/Syntax.pod
+%%SITE_PERL%%/SQL/Statement/Term.pm
+%%SITE_PERL%%/SQL/Statement/TermFactory.pm
 %%SITE_PERL%%/SQL/Statement/Util.pm
 @dirrm %%SITE_PERL%%/SQL/Statement
 @dirrmtry %%SITE_PERL%%/SQL/Dialects
