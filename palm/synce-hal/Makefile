@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-hal-addon-dir=${PREFIX}/libexec \
 			--disable-bluetooth-support
 
-if ${OSVERSION} >= 800074
+.if ${OSVERSION} >= 800074
 IGNORE=		requires pppd
 .endif
 
