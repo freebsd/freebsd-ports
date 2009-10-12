@@ -737,6 +737,7 @@
     SUBDIR += stowES
     SUBDIR += stress
     SUBDIR += su2
+    SUBDIR += superiotool
     SUBDIR += swapd
     SUBDIR += symlinks
     SUBDIR += symon
