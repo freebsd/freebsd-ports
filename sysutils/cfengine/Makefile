@@ -8,7 +8,7 @@
 PORTNAME=	cfengine
 PORTVERSION=	2.2.9
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cfengine.org/downloads/
+MASTER_SITES=	http://www.cfengine.org/tarballs/
 
 MAINTAINER=	jrhett@netconsonance.com
 COMMENT=	A systems administration tool for networks
