@@ -22,6 +22,7 @@
     SUBDIR += buoh
     SUBDIR += cal
     SUBDIR += calcurse
+    SUBDIR += calibre
     SUBDIR += cartotheque
     SUBDIR += cdcat
     SUBDIR += charmap
