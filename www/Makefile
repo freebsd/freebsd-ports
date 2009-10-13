@@ -738,6 +738,7 @@
     SUBDIR += p5-Catalyst-Engine-Apache
     SUBDIR += p5-Catalyst-Engine-HTTP-POE
     SUBDIR += p5-Catalyst-Engine-HTTP-Prefork
+    SUBDIR += p5-Catalyst-Engine-PSGI
     SUBDIR += p5-Catalyst-Enzyme
     SUBDIR += p5-Catalyst-Example-InstantCRUD
     SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
