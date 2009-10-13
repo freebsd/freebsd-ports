@@ -94,12 +94,10 @@ CXXFLAGS+=	-O2 -ffast-math
 
 EXTRARPATH=	-Wl,-rpath=`${CAT} ${WRKSRC}/LIBDIR`
 
-post-patch:
-	@${DIRNAME} `${CC} -print-file-name=libstdc++.so` > ${WRKSRC}/LIBDIR
-	@${REINPLACE_CMD} -e 's|%%EXTRARPATH%%|${EXTRARPATH}|g' ${WRKSRC}/lib/LocalMakefile.in
-
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+	@${DIRNAME} `${CC} -print-file-name=libstdc++.so` > ${WRKSRC}/LIBDIR
+	@${REINPLACE_CMD} -e 's|%%EXTRARPATH%%|${EXTRARPATH}|g' ${WRKSRC}/lib/LocalMakefile.in
 
 do-build:
 	@cd ${WRKSRC} ; ${GMAKE}
@@ -137,4 +135,3 @@ validate:
 	cd ${WRKSRC}/src/bin/mpqc/validate ; ${GMAKE} check0 ; ${GMAKE} check0_run ; ${GMAKE} check0_chk
 
 .include <bsd.port.post.mk>
-
