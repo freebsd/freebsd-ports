@@ -1,5 +1,0 @@
-bin/ccmalloc
-lib/libccmalloc.a
-lib/ccmalloc-%%CXX%%.o
-share/ccmalloc/ccmalloc.cfg
-@dirrm share/ccmalloc
