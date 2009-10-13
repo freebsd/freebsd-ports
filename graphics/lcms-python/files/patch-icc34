@@ -1,0 +1,14 @@
+Try to use the int32 and friends on all Unixes -- not just SGI's Irix.
+--- include/icc34.h.in.orig	Tue Jul 22 06:10:02 2003
++++ include/icc34.h.in	Sun May 23 11:45:09 2004
+@@ -191,8 +191,10 @@
+ typedef icUInt32Number   icU16Fixed16Number;
+ 
+ #else
++#ifdef __unix__
+ #ifdef __sgi
+ #include "sgidefs.h"
++#endif
+ 
+ typedef __int32_t       icSignature; 
+ 

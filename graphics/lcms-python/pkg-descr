@@ -1,0 +1,12 @@
+LCMS is the Little Color Management System, a Color Matching Method
+(CMM) library which implements fast transforms between ICC profiles.
+It is released under LGPL with source code and meant to be portable.
+
+Color management refers to techniques that ensure consistent color
+as images are transferred from scanners or cameras to monitors and
+printers.
+
+WWW: http://www.littlecms.com/
+
+Mikhail Teterin
+mi@aldan.algebra.com

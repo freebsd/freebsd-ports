@@ -391,6 +391,7 @@
     SUBDIR += laternamagica
     SUBDIR += lcdtest
     SUBDIR += lcms
+    SUBDIR += lcms-python
     SUBDIR += leafpak
     SUBDIR += lensfun
     SUBDIR += leptonlib
