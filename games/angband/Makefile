@@ -36,6 +36,9 @@ pre-fetch:
 	@${ECHO_MSG} "Building without X support"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers ||' ${WRKSRC}/configure
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
