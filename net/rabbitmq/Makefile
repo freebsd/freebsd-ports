@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -35,7 +35,8 @@ SUB_LIST=	RABBITMQ_GID=${RABBITMQ_GID} \
 		RABBITMQ_UID=${RABBITMQ_UID} \
 		RABBITMQ_USER=${RABBITMQ_USER}
 
-MAN1=		rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1
+MAN1=		rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1 \
+		rabbitmq-activate-plugins.1 rabbitmq-deactivate-plugins.1
 MAN5=		rabbitmq.conf.5
 MANCOMPRESSED=	yes
 
