@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/StackTrace/WithLexicals/.packlist
+%%SITE_PERL%%/Devel/StackTrace/WithLexicals.pm
+%%SITE_PERL%%/Devel/StackTrace/WithLexicals/Frame.pm
+@dirrm %%SITE_PERL%%/Devel/StackTrace/WithLexicals
+@dirrmtry %%SITE_PERL%%/Devel/StackTrace
+@dirrmtry %%SITE_PERL%%/Devel
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/StackTrace/WithLexicals
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/StackTrace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
