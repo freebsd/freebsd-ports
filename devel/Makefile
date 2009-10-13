@@ -953,6 +953,7 @@
     SUBDIR += oniguruma5
     SUBDIR += open-beagle
     SUBDIR += opencvs
+    SUBDIR += opengrok
     SUBDIR += openocd
     SUBDIR += openwince-include
     SUBDIR += openzz
