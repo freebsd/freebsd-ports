@@ -1544,6 +1544,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Utilities/SingleApplication.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Utilities/Startup.py
 %%PYTHON_SITELIBDIR%%/eric4/Utilities/Startup.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Utilities/uic.py
+%%PYTHON_SITELIBDIR%%/eric4/Utilities/uic.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Utilities/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Utilities/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/VCS/CommandOptionsDialog.py
@@ -2365,6 +2367,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Utilities.SingleApplication.html
 %%DOCSDIR%%/Source/eric4.Utilities.Startup.html
 %%DOCSDIR%%/Source/eric4.Utilities.__init__.html
+%%DOCSDIR%%/Source/eric4.Utilities.uic.html
 %%DOCSDIR%%/Source/eric4.VCS.CommandOptionsDialog.html
 %%DOCSDIR%%/Source/eric4.VCS.ProjectBrowserHelper.html
 %%DOCSDIR%%/Source/eric4.VCS.ProjectHelper.html
