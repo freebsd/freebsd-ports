@@ -35,6 +35,40 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4769914e-b844-11de-b159-0030843d3802">
+    <topic>phpmyadmin -- XSS and SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>3.2.2.1</lt></range>
+      </package>
+      <package>
+        <name>phpMyAdmin211</name>
+	<range><lt>2.11.9.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin Team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2009-6.php">
+	<p>Cross-site scripting (XSS) vulnerability allows remote attackers to
+	  inject arbitrary web script or HTML via a crafted MySQL table name.</p>
+	<p>SQL injection vulnerability allows remote attackers to inject SQL via
+	  various interface parameters of the PDF schema generator feature.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3696</cvename>
+      <cvename>CVE-2009-3697</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2009-6.php</url>
+    </references>
+    <dates>
+      <discovery>2009-10-13</discovery>
+      <entry>2009-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="437a68cf-b752-11de-b6eb-00e0815b8da8">
     <topic>php5 -- Multiple security issues</topic>
     <affects>
