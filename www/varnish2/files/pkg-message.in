@@ -1,0 +1,18 @@
+QUICK-START GUIDE
+
+It's two in the morning and someone posted a link to your website on
+slashdot.  Don't panic, it takes only a minute to set up Varnish in
+front of your web server:
+
+1) Install Varnish
+2) Reconfigure your web server to listen on localhost:8080
+3) echo 'varnishd_enable="YES"' >>/etc/rc.conf
+4) %%PREFIX%%/etc/rc.d/varnishd
+
+Refer to the documentation for more advanced configuration.
+
+NOTE TO USERS UPGRADING FROM AN OLDER VERSION OF VARNISH:
+
+Several rc variables have been renamed and / or have new default
+values.  Refer to the comments in the rc.d scripts for a detailed
+description of these variables.
