@@ -2837,6 +2837,7 @@
     SUBDIR += simpletest
     SUBDIR += simulavr
     SUBDIR += skalibs
+    SUBDIR += slf4j
     SUBDIR += slglade
     SUBDIR += smake
     SUBDIR += smc
