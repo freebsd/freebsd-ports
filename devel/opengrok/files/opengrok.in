@@ -1,0 +1,15 @@
+#!/bin/csh
+#
+# $FreeBSD$
+
+set JAVA = "%%LOCALBASE%%/bin/java"
+set LIBFILES = "%%LIBFILES%%"
+setenv JAVA_VERSION "%%JAVA_VERSION%%"
+
+if ( "${LIBFILES}" != "" ) then
+	set CLASSPATH = `echo ${LIBFILES} | sed -E -e 's,[[:space:]]+,:,g'`
+else
+	set CLASSPATH = ""
+endif
+
+exec "${JAVA}" -cp "${CLASSPATH}" -jar %%JARFILE%% -c %%LOCALBASE%%/bin/exctags $*
