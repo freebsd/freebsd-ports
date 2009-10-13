@@ -29,7 +29,6 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 USE_AUTOTOOLS=		libtool:22
 CONFIGURE_ARGS?=	--enable-shared
-# CONFIGURE_ARGS+=	--disable-thread-support
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
