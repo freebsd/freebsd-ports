@@ -7,6 +7,7 @@
 
 PORTNAME=	poweradmin
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	dns www
 MASTER_SITES=	https://www.poweradmin.org/download/
 EXTRACT_SUFX=	.tgz
