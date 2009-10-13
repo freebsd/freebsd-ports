@@ -1320,6 +1320,7 @@ calculix                        ports/cad/calculix
 calcurse                        ports/deskutils/calcurse
 calf                            ports/audio/calf
 calibrator                      ports/devel/calibrator
+calibre                         ports/deskutils/calibre
 calife                          ports/security/calife
 calife-devel                    ports/security/calife-devel
 callgen323                      ports/net/callgen323
@@ -22083,6 +22084,7 @@ super                           ports/security/super
 super-smack                     ports/benchmarks/super-smack
 super_methane_brothers          ports/games/super_methane_brothers
 supercat                        ports/textproc/supercat
+superiotool                     ports/sysutils/superiotool
 superkaramba-lwp                ports/deskutils/superkaramba-lwp
 superlu                         ports/math/superlu
 superlu_mt                      ports/math/superlu_mt
@@ -22170,6 +22172,7 @@ synce-vdccm                     ports/palm/synce-vdccm
 syncterm                        ports/comms/syncterm
 syndigator                      ports/www/syndigator
 synergy                         ports/sysutils/synergy
+synergy-plus                    ports/sysutils/synergy-plus
 synfig                          ports/devel/synfig
 synfigstudio                    ports/graphics/synfigstudio
 synonym                         ports/mail/synonym
@@ -23375,6 +23378,7 @@ wampager                        ports/x11-wm/wampager
 wand-libconfig                  ports/devel/wand-libconfig
 wanderer                        ports/games/wanderer
 wanderlust                      ports/mail/wanderlust
+wanderlust-devel                ports/mail/wanderlust-devel
 wanderlust-emacs21              ports/mail/wanderlust-emacs21
 wanderlust-xemacs21-mule        ports/mail/wanderlust-xemacs21-mule
 wanpipe                         ports/misc/wanpipe
