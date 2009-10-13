@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gaeutilities
-PORTVERSION=	1.2.2
-#PORTREVISION=	0
+PORTVERSION=	1.3
+PORTREVISION=	0
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -19,6 +19,7 @@ COMMENT=	Utility classes to make working with Google App Engine easier
 
 RUN_DEPENDS=	google-appengine>=1.2.4_1:${PORTSDIR}/www/google-appengine
 
+MANUAL_PACKAGE_BUILD=	uses Python 2.5
 USE_PYTHON=	2.5 # same as www/google-appengine
 
 do-build:
