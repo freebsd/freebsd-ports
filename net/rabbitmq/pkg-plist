@@ -1,3 +1,6 @@
+sbin/rabbitmq-activate-plugins
+sbin/rabbitmq-deactivate-plugins
+sbin/rabbitmq-env
 sbin/rabbitmq-multi
 sbin/rabbitmq-server
 sbin/rabbitmqctl
@@ -8,7 +11,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gen_server2.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/priority_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.app
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.rel
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_access_control.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_alarm.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue.beam
@@ -20,23 +22,29 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_generator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_parser.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dialyzer.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger_file_h.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_guid.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_hooks.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_channel.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_heartbeat.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_limiter.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_load.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_log.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memsup.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memsup_darwin.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memsup_linux.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_misc.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mnesia.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_multi.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_net.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_networking.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_node_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_persister.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_plugin_activator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_reader.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_router.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_sasl_report_file_h.beam
@@ -52,7 +60,14 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_listener_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_framing.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_framing_spec.hrl
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-activate-plugins
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-deactivate-plugins
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-env
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-multi
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-server
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmqctl
 @dirrm lib/erlang/lib/rabbitmq_server-%%VERSION%%/include
+@dirrm lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin
 @dirrm lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin
 @dirrm lib/erlang/lib/rabbitmq_server-%%VERSION%%
 @dirrmtry etc/rabbitmq
