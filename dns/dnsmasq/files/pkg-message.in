@@ -1,0 +1,2 @@
+*** To enable dnsmasq, edit %%PREFIX%%/etc/dnsmasq.conf and
+*** set dnsmasq_enable="YES" in /etc/rc.conf[.local]
