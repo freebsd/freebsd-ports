@@ -24,6 +24,7 @@
     SUBDIR += albumshaper
     SUBDIR += ale
     SUBDIR += allegrogl
+    SUBDIR += alpng
     SUBDIR += amanith
     SUBDIR += ampasCTL
     SUBDIR += animorph
