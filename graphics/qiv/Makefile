@@ -7,42 +7,39 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	2.1.p12
-PORTREVISION=	3
+PORTVERSION=	2.2.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.klografx.net/qiv/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p12/-pre12/}
+MASTER_SITES=	http://spiegl.de/qiv/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Small, fast GDK/Imlib image viewer
+MAINTAINER=	rfarmer@predatorlabs.net
+COMMENT=	Small, fast GDK/Imlib2 image viewer
 
 OPTIONS=	XINERAMA "use multiple monitors" off
 USE_GMAKE=	yes
-USE_GNOME=	imlib
+USE_GNOME=	gtk20
+LIB_DEPENDS=	Imlib2.5:${PORTSDIR}/graphics/imlib2 \
+		exif.12:${PORTSDIR}/graphics/libexif
 
 MAN1=		qiv.1
 PLIST_FILES=	bin/qiv
-USE_XORG+=	x11 xinerama
+USE_XORG+=	x11
 
 .include <bsd.port.pre.mk>
 
 pre-configure:
 .if ! defined(WITH_XINERAMA)
-.else
 	@${REINPLACE_CMD} 's|GTD.*=|#|' ${WRKSRC}/Makefile
+.else
+USE_XORG+=	xinerama
 .endif
 
 do-configure:
-	@${REINPLACE_CMD} 's|/usr/bin|${PREFIX}/bin|g' \
-		${WRKSRC}/qiv.1
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|; \
 		s|gcc|${CC}|; \
 		s|-O2|${CFLAGS}|; \
 		s|libs-gdk`|libs-gdk` ${LDFLAGS}|;' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's|\|GDK_WA_WMCLASS||' \
-		${WRKSRC}/image.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qiv ${PREFIX}/bin/
