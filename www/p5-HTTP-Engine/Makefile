@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Engine
-PORTVERSION=	0.02004
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +34,7 @@ MAN3=		HTTP::Engine.3 \
 		HTTP::Engine::Interface::FCGI.3 \
 		HTTP::Engine::Interface::ModPerl.3 \
 		HTTP::Engine::Interface::POE.3 \
+		HTTP::Engine::Interface::PSGI.3 \
 		HTTP::Engine::Interface::ServerSimple.3 \
 		HTTP::Engine::Interface::Standalone.3 \
 		HTTP::Engine::Interface::Test.3 \

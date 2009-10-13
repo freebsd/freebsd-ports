@@ -6,6 +6,7 @@
 %%SITE_PERL%%/HTTP/Engine/Interface/FCGI.pm
 %%SITE_PERL%%/HTTP/Engine/Interface/ModPerl.pm
 %%SITE_PERL%%/HTTP/Engine/Interface/POE.pm
+%%SITE_PERL%%/HTTP/Engine/Interface/PSGI.pm
 %%SITE_PERL%%/HTTP/Engine/Interface/ServerSimple.pm
 %%SITE_PERL%%/HTTP/Engine/Interface/Standalone.pm
 %%SITE_PERL%%/HTTP/Engine/Interface/Test.pm
