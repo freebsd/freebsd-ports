@@ -1,41 +1,44 @@
---- Makefile.in.orig	2009-03-09 17:29:26.000000000 -0400
-+++ Makefile.in	2009-03-22 15:53:31.000000000 -0400
-@@ -4,7 +4,7 @@
+--- Makefile.in.orig	2009-10-03 11:39:34.000000000 -0400
++++ Makefile.in	2009-10-13 09:48:32.000000000 -0400
+@@ -1,7 +1,7 @@
+ #
+ # -----------     Compilers     ----------------
+ # Use gcc to compile files for Linux. 
+-CC=gcc
++CC?=gcc
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
  # (*.o files can be present by mistake) 
--LCC     = gcc -D_FILE_OFFSET_BITS=64
-+LCC     = ${CC} -D_FILE_OFFSET_BITS=64
- WCC	= /usr/bin/i586-mingw32msvc-gcc
- WINWCC  = C:\mingw\bin\mingw32-gcc
- NASM	= nasm
-@@ -14,10 +14,7 @@
+@@ -15,10 +15,8 @@
  # so we definitely know it is for Windows.
  # (*.o files can be present by mistake) 
  # Always use the same flags.
--CFL	= -g -O -DOSNUM=1 -W -Wall -Wimplicit -Wreturn-type -Wformat \
--@MEM@ -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
+-CFL	= -g -O -DOSNUM=1 @X11@ -W -Wall -Wimplicit -Wreturn-type -Wformat \
+--m32 -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
 --Wparentheses -Wstrict-prototypes -Werror -ffast-math -Wundef \
 --fomit-frame-pointer -c -o
-+CFL	= ${CFLAGS} -DOSNUM=1 -I/usr/local/include -c -o
++CFL	= -O -DOSNUM=1 @X11@ -I%%LOCALBASE%%/include -m32 -ffast-math \
++	-fomit-frame-pointer -c -o
  
  CFW	= -g -O -DOSNUM=2 -W -Wall -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
-@@ -645,7 +642,7 @@
+@@ -646,7 +644,7 @@
  meter_graph.ol fonts.ol screensub.ol tx_graph.ol txssb.ol lxsys.ol 
  
  
--	gcc @MEM@ -olinrad -lvgagl -lvga -lpthread -lm @ALSALIB@ \
-+	gcc @MEM@ -olinrad -lvgagl -lvga -pthread -lm @ALSALIB@ \
+-	${CC} -m32 -olinrad -lvgagl -lvga -lpthread -lm @ALSALIB@ -lrt \
++	${CC} -m32 -olinrad -lvgagl -lvga -lpthread -lm @ALSALIB@ \
  -Wl,-Map,linrad.lmap,-warn-common \
  	lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol radar.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
-@@ -692,7 +689,7 @@
+@@ -703,8 +701,8 @@
  
  
  
--	gcc @MEM@ -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm @ALSALIB@ \
-+	${CC} @MEM@ -oxlinrad -L/usr/local/lib -lX11 -lpthread -lm \
- -Wl,-Map,linrad.xmap,-warn-common \
+-	${CC} -m32 -oxlinrad -L/usr/X11R6/lib @SHMLIB@ -lX11 -lpthread \
+--lm @ALSALIB@ -lrt -Wl,-Map,linrad.xmap,-warn-common \
++	${CC} -m32 -oxlinrad -L%%LOCALBASE%%/lib  -L%%LOCALBASE%%/X11R6/lib @SHMLIB@ -lX11 -lpthread \
++-lm @ALSALIB@ -Wl,-Map,linrad.xmap,-warn-common \
  xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol radar.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
+ fftasm.ol baseb_graph.ol mix2.ol afc_graph.ol hwaredriver.ol \
