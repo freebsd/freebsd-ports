@@ -7,7 +7,7 @@
 
 PORTNAME=	lcms
 PORTVERSION=	1.18a
-CATEGORIES=	graphics
+CATEGORIES=	graphics devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.18 \
 		http://www.littlecms.com/
 PKGNAMESUFFIX=	-python
@@ -17,7 +17,6 @@ COMMENT=	Light Color Management System (python bindings)
 
 LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms
 
-#USE_GNOME=	gnomehack lthack
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-python
