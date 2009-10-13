@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	4623
+PORTVERSION=	4790
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -29,6 +29,8 @@ MAN1=	maatkit.1p \
 		mk-fifo-split.1p \
 		mk-find.1p \
 		mk-heartbeat.1p \
+		mk-kill.1p \
+		mk-loadavg.1p \
 		mk-log-player.1p \
 		mk-parallel-dump.1p \
 		mk-parallel-restore.1p \
