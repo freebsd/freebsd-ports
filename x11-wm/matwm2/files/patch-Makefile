@@ -1,5 +1,5 @@
---- Makefile.orig	2009-09-20 03:40:09.000000000 +0200
-+++ Makefile	2009-09-20 03:38:57.000000000 +0200
+--- Makefile.orig	2009-10-12 02:38:52.000000000 +0200
++++ Makefile	2009-10-12 02:41:48.000000000 +0200
 @@ -1,7 +1,6 @@
 -prefix		= /usr/local
 -manprefix	= /usr/local
@@ -9,9 +9,9 @@
 +manprefix	= ${MANPREFIX}
 +XROOT			= ${LOCALBASE}
  
- CFLAGS		+= -lXext -lX11 -I$(XROOT)/include -L$(XROOT)/lib
- #CFLAGS		+= -DDEBUG -ggdb3 # -DDEBUG_EVENTS -DSYNC
-@@ -19,8 +18,8 @@
+ CFLAGS    += -DSHAPE -lXext # comment out this line if you haven't got the x extentions library
+ CFLAGS		+= -lX11 -I$(XROOT)/include -L$(XROOT)/lib
+@@ -20,8 +19,8 @@
  
  install:	matwm2
  		mkdir -p $(prefix)/bin $(manprefix)/man/man1
@@ -21,4 +21,4 @@
 +		${BSD_INSTALL_MAN} matwm2.1 $(manprefix)/man/man1
  
  deinstall:
- 		rm -f $(prefix)/bin/matwm2 $(manprefix)/man/man1/matwm2.1
+ 		rm -f $(prefix)/bin/matwm2 $(manprefix)/man/man1/matwm2.1* $(manprefix)/man/cat1/matwm2.1*
