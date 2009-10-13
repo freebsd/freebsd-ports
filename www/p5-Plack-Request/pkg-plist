@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Request/.packlist
+%%SITE_PERL%%/Plack/Request.pm
+%%SITE_PERL%%/Plack/Request/BodyParser.pm
+%%SITE_PERL%%/Plack/Request/Upload.pm
+%%SITE_PERL%%/Plack/Response.pm
+@dirrm %%SITE_PERL%%/Plack/Request
+@dirrmtry %%SITE_PERL%%/Plack
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Request
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
