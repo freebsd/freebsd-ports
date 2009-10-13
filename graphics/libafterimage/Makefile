@@ -16,6 +16,8 @@ DISTNAME=	libAfterImage-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic imaging library originally designed for AfterStep
 
+MAKE_JOBS_UNSAFE=	yes
+
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
