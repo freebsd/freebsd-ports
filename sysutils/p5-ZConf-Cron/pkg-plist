@@ -1,7 +1,10 @@
 bin/zccron
 bin/zccrontab
+bin/gzccrontab
 %%SITE_PERL%%/ZConf/Cron.pm
+%%SITE_PERL%%/ZConf/Cron/GUI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Cron/.packlist
+@dirrmtry %%SITE_PERL%%/ZConf/Cron
 @dirrmtry %%SITE_PERL%%/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Cron
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf

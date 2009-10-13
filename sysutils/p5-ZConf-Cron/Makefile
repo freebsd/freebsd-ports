@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZConf-Cron
-PORTVERSION=	0.0.1
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
 
 PERL_CONFIGURE=	yes
 
-MAN3=		ZConf::Cron.3
+MAN3=		ZConf::Cron.3 \
+		ZConf::Cron::GUI.3
 
 .include <bsd.port.mk>
