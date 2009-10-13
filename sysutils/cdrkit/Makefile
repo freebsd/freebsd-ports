@@ -27,12 +27,12 @@ CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800030
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake \
 	    ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|fexecve|librols_fexecve|g' \
+	    ${WRKSRC}/librols/fexec.c \
+	    ${WRKSRC}/include/schily.h
+	@${REINPLACE_CMD} -e 's|getdelim|wodim_getdelim|g' ${WRKSRC}/wodim/cue.c
 
 .include <bsd.port.post.mk>
