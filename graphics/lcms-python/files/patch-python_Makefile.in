@@ -1,0 +1,31 @@
+--- python/Makefile.in.orig	2009-10-13 14:53:14.000000000 +0400
++++ python/Makefile.in	2009-10-13 14:54:04.000000000 +0400
+@@ -56,7 +56,6 @@
+ am__installdirs = "$(DESTDIR)$(pkgdir)" "$(DESTDIR)$(pkgdir)"
+ pkgLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(pkg_LTLIBRARIES)
+-_lcms_la_DEPENDENCIES = $(top_builddir)/src/liblcms.la
+ am__lcms_la_OBJECTS = _lcms_la-lcms_wrap.lo
+ _lcms_la_OBJECTS = $(am__lcms_la_OBJECTS)
+ _lcms_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+@@ -157,7 +156,7 @@
+ PYTHON_EXEC_PREFIX = @PYTHON_EXEC_PREFIX@
+ PYTHON_PLATFORM = @PYTHON_PLATFORM@
+ PYTHON_PREFIX = @PYTHON_PREFIX@
+-PYTHON_VERSION = @PYTHON_VERSION@
++PYTH_VERSION = @PYTHON_VERSION@
+ RANLIB = @RANLIB@
+ SED = @SED@
+ SET_MAKE = @SET_MAKE@
+@@ -243,9 +242,9 @@
+ _lcms_la_LDFLAGS = -no-undefined -module -avoid-version \
+                     -L$(LCMS_PYLIB)/config 
+ 
+-_lcms_la_LIBADD = $(top_builddir)/src/liblcms.la -lpython$(PYTHON_VERSION)
++_lcms_la_LIBADD = -llcms -lpython$(PYTH_VERSION)
+ _lcms_la_SOURCES = lcms_wrap.cxx
+-_lcms_la_CPPFLAGS = -I$(PYTHON_PREFIX)/include/python$(PYTHON_VERSION) \
++_lcms_la_CPPFLAGS = -I$(PYTHON_PREFIX)/include/python$(PYTH_VERSION) \
+ 		    -I$(LCMS_PYINCLUDE) \
+                     $(AM_CPPFLAGS)
+ 
