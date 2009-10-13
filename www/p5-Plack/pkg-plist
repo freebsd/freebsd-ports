@@ -1,0 +1,52 @@
+bin/plackup
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/.packlist
+%%SITE_PERL%%/HTTP/Message/PSGI.pm
+%%SITE_PERL%%/Plack.pm
+%%SITE_PERL%%/Plack/App/Directory.pm
+%%SITE_PERL%%/Plack/App/FCGIDispatcher.pm
+%%SITE_PERL%%/Plack/App/File.pm
+%%SITE_PERL%%/Plack/App/URLMap.pm
+%%SITE_PERL%%/Plack/Builder.pm
+%%SITE_PERL%%/Plack/HTTPParser.pm
+%%SITE_PERL%%/Plack/HTTPParser/PP.pm
+%%SITE_PERL%%/Plack/Loader.pm
+%%SITE_PERL%%/Plack/Middleware.pm
+%%SITE_PERL%%/Plack/Middleware/AccessLog.pm
+%%SITE_PERL%%/Plack/Middleware/AccessLog/Timed.pm
+%%SITE_PERL%%/Plack/Middleware/ConditionalGET.pm
+%%SITE_PERL%%/Plack/Middleware/ContentLength.pm
+%%SITE_PERL%%/Plack/Middleware/ErrorDocument.pm
+%%SITE_PERL%%/Plack/Middleware/Lint.pm
+%%SITE_PERL%%/Plack/Middleware/MethodOverride.pm
+%%SITE_PERL%%/Plack/Middleware/RearrangeHeaders.pm
+%%SITE_PERL%%/Plack/Middleware/Restarter.pm
+%%SITE_PERL%%/Plack/Middleware/SimpleContentFilter.pm
+%%SITE_PERL%%/Plack/Middleware/StackTrace.pm
+%%SITE_PERL%%/Plack/Middleware/Static.pm
+%%SITE_PERL%%/Plack/Middleware/XFramework.pm
+%%SITE_PERL%%/Plack/Middleware/XSendfile.pm
+%%SITE_PERL%%/Plack/Server.pm
+%%SITE_PERL%%/Plack/Server/Apache2.pm
+%%SITE_PERL%%/Plack/Server/CGI.pm
+%%SITE_PERL%%/Plack/Server/FCGI.pm
+%%SITE_PERL%%/Plack/Server/Standalone.pm
+%%SITE_PERL%%/Plack/Server/Standalone/Prefork.pm
+%%SITE_PERL%%/Plack/Test.pm
+%%SITE_PERL%%/Plack/Test/MockHTTP.pm
+%%SITE_PERL%%/Plack/Test/Server.pm
+%%SITE_PERL%%/Plack/Test/Suite.pm
+%%SITE_PERL%%/Plack/Util.pm
+%%SITE_PERL%%/auto/share/dist/Plack/face.jpg
+%%SITE_PERL%%/auto/share/dist/Plack/kyoto.jpg
+@dirrm %%SITE_PERL%%/auto/share/dist/Plack
+@dirrm %%SITE_PERL%%/Plack/Test
+@dirrm %%SITE_PERL%%/Plack/Server/Standalone
+@dirrm %%SITE_PERL%%/Plack/Server
+@dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog
+@dirrm %%SITE_PERL%%/Plack/Middleware
+@dirrm %%SITE_PERL%%/Plack/HTTPParser
+@dirrm %%SITE_PERL%%/Plack/App
+@dirrm %%SITE_PERL%%/Plack
+@dirrmtry %%SITE_PERL%%/HTTP/Message
+@dirrmtry %%SITE_PERL%%/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
