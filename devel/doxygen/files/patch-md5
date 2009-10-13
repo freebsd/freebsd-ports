@@ -4,8 +4,8 @@ implementation. Try to trim this insanity, where we can...
 	-mi
 
 diff -ruN src/definition.cpp src/definition.cpp
---- src/definition.cpp	Sat Sep  1 13:11:48 2007
-+++ src/definition.cpp	Mon Dec  3 01:25:59 2007
+--- src/definition.cpp.orig	2009-06-13 09:42:16.000000000 -0400
++++ src/definition.cpp	2009-08-21 00:54:43.000000000 -0400
 @@ -18,6 +18,7 @@
  #include "qtbc.h"
  #include <ctype.h>
@@ -16,7 +16,7 @@ diff -ruN src/definition.cpp src/definition.cpp
  #include <stdlib.h>
 @@ -363,13 +364,11 @@
  
- bool Definition::_docsAlreadyAdded(const QString &doc)
+ bool Definition::_docsAlreadyAdded(const QCString &doc)
  {
 -  uchar md5_sig[16];
    QCString sigStr(33);
@@ -25,19 +25,19 @@ diff -ruN src/definition.cpp src/definition.cpp
    QCString docStr = doc.simplifyWhiteSpace();
 -  MD5Buffer((const unsigned char *)docStr.data(),docStr.length(),md5_sig);
 -  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char*)docStr.data(),docStr.length(),sigStr.data());
++  MD5Data((const unsigned char *)docStr.data(),docStr.length(),sigStr.data());
    if (m_impl->docSignatures.find(sigStr)==-1) // new docs, add signature to prevent re-adding it
    {
      m_impl->docSignatures+=":"+sigStr;
 diff -ruN src/dirdef.cpp src/dirdef.cpp
---- src/dirdef.cpp	Sun Jan 28 13:28:50 2007
-+++ src/dirdef.cpp	Mon Jun 11 18:32:26 2007
+--- src/dirdef.cpp.orig	2009-05-02 09:05:03.000000000 -0400
++++ src/dirdef.cpp	2009-08-21 00:56:06.000000000 -0400
 @@ -1,3 +1,4 @@
 +#include <sys/types.h>
  #include <md5.h>
  
  #include "dirdef.h"
-@@ -73,10 +74,8 @@
+@@ -74,10 +75,8 @@
    QCString result;
  
    // convert to md5 hash
@@ -50,17 +50,17 @@ diff -ruN src/dirdef.cpp src/dirdef.cpp
  
    // old algorithm
 diff -ruN src/dot.cpp src/dot.cpp
---- src/dot.cpp	Wed Mar 21 22:35:06 2007
-+++ src/dot.cpp	Mon Jun 11 18:33:40 2007
-@@ -38,6 +38,7 @@
+--- src/dot.cpp.orig	2009-08-13 15:15:42.000000000 -0400
++++ src/dot.cpp	2009-08-21 00:57:50.000000000 -0400
+@@ -39,6 +39,7 @@
  #include <qdir.h>
  #include <qfile.h>
  #include <qtextstream.h>
 +#include <sys/types.h>
  #include <md5.h>
  
- #define MAP_CMD "cmap"
-@@ -1204,10 +1205,8 @@
+ #define MAP_CMD "cmapx"
+@@ -1100,10 +1101,8 @@
      }
      writeGraphFooter(md5stream);
      resetReNumbering();
@@ -72,7 +72,7 @@ diff -ruN src/dot.cpp src/dot.cpp
      if (checkAndUpdateMd5Signature(baseName,sigStr) || 
          !QFileInfo(mapName).exists())
      { 
-@@ -1833,10 +1832,8 @@
+@@ -1761,10 +1760,8 @@
      }
    }
    writeGraphFooter(md5stream);
@@ -85,29 +85,29 @@ diff -ruN src/dot.cpp src/dot.cpp
    {
      resetReNumbering();
 diff -ruN src/doxygen.pro.in src/doxygen.pro.in
---- src/doxygen.pro.in	Tue Feb 20 19:27:35 2007
-+++ src/doxygen.pro.in	Mon Jun 11 18:34:03 2007
+--- src/doxygen.pro.in.orig	2009-08-02 09:55:02.000000000 -0400
++++ src/doxygen.pro.in	2009-08-21 00:58:38.000000000 -0400
 @@ -18,7 +18,7 @@
  CONFIG       =	console warn_on $extraopts
  HEADERS      =	doxygen.h 
  SOURCES      =	main.cpp 
--unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 
-+unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd 
+-unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 
++unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd 
  win32:INCLUDEPATH          += .
- win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 
- win32-msvc:LIBS            += qtools.lib png.lib md5.lib doxygen.lib doxycfg.lib shell32.lib 
+ win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 
+ win32-msvc:LIBS            += qtools.lib md5.lib doxygen.lib doxycfg.lib shell32.lib iconv.lib
 @@ -28,7 +28,7 @@
  win32:TMAKE_CXXFLAGS       += -DQT_NODLL
- win32-g++:LIBS             = -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 
+ win32-g++:LIBS             = -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -liconv
  win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
--INCLUDEPATH                += ../qtools ../libpng ../libmd5 .
+-INCLUDEPATH                += ../qtools ../libmd5 .
 +INCLUDEPATH                += ../qtools .
- #win32-g++:INCLUDEPATH      -= ../libpng
  DESTDIR                    =  ../bin
  TARGET                     =  doxygen
+ unix:TARGETDEPS            =  ../lib/libdoxygen.a ../lib/libdoxycfg.a
 diff -ruN src/memberdef.cpp src/memberdef.cpp
---- src/memberdef.cpp	Wed Mar 14 15:49:45 2007
-+++ src/memberdef.cpp	Mon Jun 11 18:32:26 2007
+--- src/memberdef.cpp.orig	2009-08-13 15:15:43.000000000 -0400
++++ src/memberdef.cpp	2009-08-21 00:59:48.000000000 -0400
 @@ -17,6 +17,7 @@
  
  #include <stdio.h>
@@ -116,7 +116,7 @@ diff -ruN src/memberdef.cpp src/memberdef.cpp
  #include <assert.h>
  #include <md5.h>
  #include "memberdef.h"
-@@ -2361,10 +2362,8 @@
+@@ -2561,10 +2562,8 @@
    memAnchor.prepend(definition());
    
    // convert to md5 hash
@@ -125,12 +125,27 @@ diff -ruN src/memberdef.cpp src/memberdef.cpp
 -  MD5Buffer((const unsigned char *)memAnchor.data(),memAnchor.length(),md5_sig);
 -  MD5SigToString(md5_sig,sigStr.data(),33);
 +  MD5Data((const unsigned char *)memAnchor.data(),memAnchor.length(),sigStr.data());
-   m_impl->anc = sigStr;
+   m_impl->anc = "a"+sigStr;
+ }
+ 
+diff -ruN src/membergroup.cpp src/membergroup.cpp
+--- src/membergroup.cpp.orig	2009-08-23 15:28:48.000000000 -0400
++++ src/membergroup.cpp	2009-08-25 13:04:39.000000000 -0400
+@@ -261,10 +261,8 @@
+ 
+ QCString MemberGroup::anchor() const
+ {
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)grpHeader.data(),grpHeader.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)grpHeader.data(),grpHeader.length(),sigStr.data());
+   return "amgrp"+sigStr;
  }
  
 diff -ruN src/util.cpp src/util.cpp
---- src/util.cpp	Wed Mar 14 13:36:26 2007
-+++ src/util.cpp	Mon Jun 11 18:32:26 2007
+--- src/util.cpp.orig	2009-08-20 08:13:51.000000000 -0400
++++ src/util.cpp	2009-08-21 01:03:39.000000000 -0400
 @@ -19,6 +19,7 @@
  #include <ctype.h>
  #include <errno.h>
@@ -139,7 +154,7 @@ diff -ruN src/util.cpp src/util.cpp
  #include <md5.h>
  
  #include "qtbc.h"
-@@ -4561,16 +4562,16 @@
+@@ -4851,16 +4852,16 @@
      if (resultLen>=128) // prevent names that cannot be created!
      {
        // third algorithm based on MD5 hash
@@ -159,7 +174,7 @@ diff -ruN src/util.cpp src/util.cpp
  
  #if MAP_ALGO==ALGO_COUNT 
      // old algorithm, has the problem that after regeneration the
-@@ -4601,12 +4602,13 @@
+@@ -4891,12 +4892,13 @@
      l2Dir = (dirNum>>4)&0xff;
  #elif MAP_ALGO==ALGO_MD5
      // third algorithm based on MD5 hash
@@ -175,5 +190,5 @@ diff -ruN src/util.cpp src/util.cpp
      result.prepend(QCString().sprintf("d%x/d%02x/",l1Dir,l2Dir));
 +#endif
    }
+   //printf("*** convertNameToFile(%s)->%s\n",name,result.data());
    return result;
- }
