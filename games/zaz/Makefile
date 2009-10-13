@@ -7,6 +7,7 @@
 
 PORTNAME=	zaz
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -29,13 +30,14 @@ CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
+# Unconditially disable NLS for now: the game segfaults with 8bit locales
+#.if !defined(WITHOUT_NLS)
+#USE_GETTEXT=	yes
+#PLIST_SUB+=	NLS=""
+#.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.endif
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^zazdocdir =/ s|$${prefix}/doc|$${prefix}/share/doc|' \
