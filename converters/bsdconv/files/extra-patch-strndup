@@ -1,0 +1,25 @@
+--- src/bsdconv_func.c.orig	2009-10-11 19:26:58.000000000 +0800
++++ src/bsdconv_func.c	2009-10-14 21:30:50.000000000 +0800
+@@ -25,6 +25,7 @@
+ #endif
+ #include <string.h>
+ #include "bsdconv.h"
++#include <stdlib.h>
+ 
+ int loadcodec(struct bsdconv_codec_t *cd, char *path, int maponly){
+ #ifdef WIN32
+@@ -138,3 +139,14 @@
+ 	return r;
+ }
+ #endif
++
++char * strndup(const char *str, size_t len){
++	size_t l=strlen(str);
++	char *r;
++	if(len<l){
++		l=len;
++	}
++	r=malloc(l);
++	memcpy(r, str, l);
++	return r;
++}
