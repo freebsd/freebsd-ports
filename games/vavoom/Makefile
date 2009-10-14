@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.28
-PORTREVISION=	3
+PORTVERSION=	1.30
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
@@ -29,7 +28,8 @@ OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
 		OPENGL "Enable OpenGL support" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" off \
 		VORBIS "Enable Ogg Vorbis support" off \
-		SDL "Use SDL for hardware API" on
+		SDL "Use SDL for hardware API" on \
+		WXUNICODE "Enable Unicode support" on
 
 SUB_FILES=	pkg-message
 
@@ -122,10 +122,18 @@ CMAKE_ARGS+=	-DWITH_SDL=Y
 CMAKE_ARGS+=	-DWITH_SDL=N
 .endif
 
+.if !defined(WITHOUT_WXUNICODE)
+WX_UNICODE=yes
+.endif
+
 post-patch:
 	@cd ${WRKSRC} && ${SH} fixunix.sh
 	@${REINPLACE_CMD} -e 's|$$\* ||; s|$${IWADDIR}|-iwaddir ${DMDIR} $$*|' \
 		${WRKSRC}/source/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
+		${WRKSRC}/utils/acc/parse.c
+	@${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
+		${WRKSRC}/utils/acc/strlist.c
 
 post-install:
 .if !defined(NOPORTDOCS)
