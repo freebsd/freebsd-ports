@@ -180,7 +180,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800037
-BROKEN=		does not compile with Heimdal 1.1 in 8.0-CURRENT
+MAKE_ENV+=	KRB5_LDADD=-lhx509
 .endif
 
 .if ${OSVERSION} < 700000
