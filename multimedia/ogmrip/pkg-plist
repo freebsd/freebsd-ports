@@ -13,11 +13,12 @@ include/ogmdvd/ogmdvd-disc.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-drive-chooser-dialog.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-drive-chooser-widget.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-drive-chooser.h
-%%GUI_SUPPORT%%include/ogmdvd/ogmdvd-drive.h
+include/ogmdvd/ogmdvd-drive.h
 include/ogmdvd/ogmdvd-enums.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-gtk.h
 include/ogmdvd/ogmdvd-labels.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-marshal.h
+include/ogmdvd/ogmdvd-monitor.h
 include/ogmdvd/ogmdvd-parser.h
 include/ogmdvd/ogmdvd-reader.h
 include/ogmdvd/ogmdvd-stream.h

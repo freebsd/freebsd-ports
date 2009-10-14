@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
@@ -25,7 +25,6 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools
 
 OPTIONS=	GUI      "Build the GTK+ GUI"                           on  \
-		HAL      "Enable Hardware Abstract Layer (HAL) support" off \
 		ENCHANT  "Enable spell checking for text subtitles"     off \
 		MATROSKA "Enable Matroska container support"            off \
 		MP4      "Enable Mpeg-4 container support"              off \
@@ -38,33 +37,28 @@ USE_GNOME=	glib20 gnomehack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_path_EJECT_PROG="/usr/sbin/cdcontrol"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 MAN1=		dvdcpy.1 avibox.1
 
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_GUI)
-CONFIGURE_ARGS+=	--disable-gtk-support --disable-libnotify-support
+CONFIGURE_ARGS+=	--disable-gtk-support --disable-dbus-support \
+			--disable-libnotify-support
 PLIST_SUB+=		GUI_SUPPORT="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-gtk-support --enable-libnotify-support
-LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=	--enable-gtk-support --enable-dbus-support \
+			--enable-libnotify-support
+LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+			notify.1:${PORTSDIR}/devel/libnotify
 USE_GNOME+=		gconf2 intlhack libglade2
 GCONF_SCHEMAS=		ogmrip.schemas
 PLIST_SUB+=		GUI_SUPPORT=""
-.endif
-
-.if defined(WITH_HAL)
-CONFIGURE_ARGS+=	--enable-hal-support
-LIB_DEPENDS+=		hal:${PORTSDIR}/sysutils/hal
-PLIST_SUB+=		HAL_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-hal-support
-PLIST_SUB+=		HAL_SUPPORT="@comment "
 .endif
 
 .if defined(WITH_ENCHANT)
@@ -141,8 +135,8 @@ post-patch:
 		'/PROGRAM/s|MP4Box|mp4box|g' ${WRKSRC}/libogmrip/ogmrip-mp4.c
 
 post-install:
-	@${ECHO_CMD} ""
+	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} ""
+	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
