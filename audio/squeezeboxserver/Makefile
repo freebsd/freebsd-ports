@@ -1,15 +1,15 @@
-# Ports collection makefile for:		squeezecenter
+# Ports collection makefile for:		squeezeboxserver
 # Date created:					Wed Apr 14, 2004
 # Whom:						Brooks Davis <brooks@freebsd.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	squeezecenter
-PORTVERSION=	7.3.3
+PORTNAME=	squeezeboxserver
+PORTVERSION=	7.4.0
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.slimdevices.com/SqueezeCenter_v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0//}-noCPAN
+MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-28672-noCPAN
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -27,11 +27,13 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=	${WRKDIR}/squeezecenter-${PORTVERSION:S/.0//}-noCPAN
+WRKSRC=	${WRKDIR}/squeezeboxserver-${PORTVERSION}-28672-noCPAN
 
-BUILD_DEPENDS+=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
-RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
+		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
@@ -41,7 +43,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder 
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
+		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck \
+		${SITE_PERL}/${PERL_ARCH}/EV.pm:${PORTSDIR}/devel/p5-EV \
+		${SITE_PERL}/${PERL_ARCH}/Audio/Scan.pm:${PORTSDIR}/audio/p5-Audio-Scan \
+		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor \
+		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor/Array.pm:${PORTSDIR}/devel/p5-Class-XSAccessor-Array
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
@@ -77,29 +83,58 @@ RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-USE_RC_SUBR=	squeezecenter.sh
-TMP_SLIMDIR=	${WRKDIR}/_squeezecenter
+USE_RC_SUBR=	squeezeboxserver.sh
+TMP_SLIMDIR=	${WRKDIR}/_squeezeboxserver
 TMP_DOCSDIR=	${WRKDIR}/doc
 DOCFILES=	Changelog.html Installation.txt License.txt
 CONFFILES=	convert.conf types.conf
 EXCEPTFILES=	${DOCFILES} \
 		${CONFFILES} \
+		CPAN/Carp/Clan.pm \
+		CPAN/Class/Accessor.pm \
+		CPAN/Class/Accessor/Chained.pm \
+		CPAN/Class/C3.pm \
+		CPAN/Class/Inspector.pm \
+		CPAN/Class/XSAccessor.pm \
+		CPAN/Data/Page.pm \
 		CPAN/DBI.pm \
+		CPAN/EV.pm \
+		CPAN/File/Temp.pm \
+		CPAN/File/Which.pm \
 		CPAN/GD.pm \
+		CPAN/HTML/Parser.pm \
 		CPAN/JSON/XS/Boolean.pm \
 		CPAN/JSON/XS.pm \
 		CPAN/Template.pm \
+		CPAN/Test/Simple.pm \
+		CPAN/URI.pm \
 		CPAN/XML/Parser.pm \
 		MySQL/errmsg.txt \
 		MySQL/errmsg.sys
+
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
+		CPAN/Algorith \
+		CPAN/Audio \
 		CPAN/Compress \
+		CPAN/Class/Accessor/Chained \
+		CPAN/Class/C3 \
+		CPAN/Class/Inspector \
+		CPAN/Class/XSAccessor \
+		CPAN/DBD \
 		CPAN/DBI \
+		CPAN/DBIx \
 		CPAN/Digest \
 		CPAN/Encode \
 		CPAN/GD \
+		CPAN/Module \
+		CPAN/MRO \
+		CPAN/Path \
+		CPAN/Scope \
+		CPAN/Sub \
+		CPAN/SQL \
 		CPAN/Template \
+		CPAN/URI \
 		CPAN/XML/Parser \
 		CPAN/YAML
 
@@ -121,12 +156,12 @@ SUB_LIST=	PERL=${PERL} \
 pre-fetch:
 .if !defined(SLIMDIR)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define SLIMDIR to override default of 'squeezecenter'."
+	@${ECHO_MSG} "Define SLIMDIR to override default of 'squeezeboxserver'."
 	@${ECHO_MSG} ""
 .endif
 
-SLIMDIR?=	squeezecenter
-SLIMDBDIR?=	/var/db/squeezecenter
+SLIMDIR?=	squeezeboxserver
+SLIMDBDIR?=	/var/db/squeezeboxserver
 SLIMUSER?=	slimserv
 SLIMGROUP?=	${SLIMUSER}
 

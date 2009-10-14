@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/audio/squeezeboxserver/files/pkg-install.in,v 1.9 2009-10-14 18:59:57 brooks Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/squeezeboxserver/files/pkg-install.in,v 1.10 2009-10-14 22:33:31 brooks Exp $
 
 name=%%PORTNAME%%
 u=%%SLIMUSER%%
@@ -10,15 +10,17 @@ shell=/sbin/nologin
 comment="Slim Devices SlimServer/SqueezeCenter pseudo-user"
 slimdir="%%PREFIX%%/%%SLIMDIR%%"
 statedir=%%SLIMDBDIR%%
-conffile=${statedir}/${name}.conf
+cachedir=${statedir}/cache
+prefsdir=${statedir}/prefs
 playlistdir=${statedir}/playlists
+oldprefsdir=/var/db/squeezecenter/prefs
+logdir=/var/log/${name}
+conffile=${prefsdir}/server.prefs
 pidfile=/var/run/${name}/${name}.pid
 newsyslogfile=/etc/newsyslog.conf
 logcomment="# added by audio/${name} port"
 serverlogfile=/var/log/${name}/server.log
-scannerlogfile=/var/log/${name}/scanner.log
 serverlogline="${serverlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
-scannerlogline="${scannerlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
 
 case $2 in
 PRE-INSTALL)
@@ -51,7 +53,6 @@ POST-INSTALL)
 		echo "Adding ${name} log entry to ${newsyslogfile}."
 		echo "$logcomment" >> ${newsyslogfile}
 		echo "$serverlogline" >> ${newsyslogfile}
-		echo "$scannerlogline" >> ${newsyslogfile}
 	fi
 	for file in %%CONFFILES%%; do
 		path="${slimdir}/${file}"
@@ -60,5 +61,18 @@ POST-INSTALL)
 			chmod 644 ${path}
 		fi
 	done
+
+	if [ ! -f ${serverlogfile} ]; then
+		touch ${serverlogfile}
+		chown -H ${u}:${g} ${serverlogfile}
+	fi
+
+	if [ ! -e ${conffile} ]; then
+		if [ -e ${oldprefsdir}/server.prefs ]; then
+			mkdir -p ${statedir}
+			cp -r ${oldprefsdir}* ${statedir}
+			chown -RH ${u}:${g} ${prefsdir}
+		fi
+	fi
 	;;
 esac

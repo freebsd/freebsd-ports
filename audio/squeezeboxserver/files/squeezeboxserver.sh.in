@@ -10,8 +10,7 @@
 #
 # Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
 #
-# %%PORTNAME%%_enable="YES"
-# %%PORTNAME%%_flags="<set as needed>"
+#%%PORTNAME%%_enable="YES"
 #
 
 . %%RC_SUBR%%
@@ -29,15 +28,19 @@ statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 prefsdir=${statedir}/prefs
 playlistdir=${statedir}/playlists
-conffile=${statedir}/${name}.conf
 u=%%SLIMUSER%%
 g=%%SLIMGROUP%%
-command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"
+command_args="--daemon --pidfile=${pidfile}"
 %%PORTNAME%%_user=${u}
 %%PORTNAME%%_group=${g}
 
 %%PORTNAME%%_start_precmd()
 {
+	# This is stuff is here and not in pkg-install because
+	# /var/run may be destroyed at any time and we've had issues
+	# with permissions on the various directories under /var getting
+ 	# screwed up in the past.
+
 	mkdir -p /var/run/${name}
 	chown -RH ${u}:${g} /var/run/${name}
 
@@ -48,13 +51,7 @@ command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"
 	mkdir -p ${cachedir}
 	mkdir -p ${prefsdir}
 	mkdir -p ${playlistdir}
-	touch ${conffile}
 	chown -RH ${u}:${g} ${statedir}
-
-	if [ ! -f ${logfile} ]; then
-		touch ${logfile}
-		chown -H ${u}:${g} ${logfile}
-	fi	
 }
 
 %%PORTNAME%%_stop_postcmd()
@@ -73,5 +70,6 @@ command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"
 load_rc_config ${name}
 
 %%PORTNAME%%_enable=${%%PORTNAME%%_enable:-"NO"}
+%%PORTNAME%%_flags=${%%PORTNAME%%_flags:-""}
 
 run_rc_command "$1"

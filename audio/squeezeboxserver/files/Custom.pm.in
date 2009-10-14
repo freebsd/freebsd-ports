@@ -33,7 +33,7 @@ sub dirsFor {
 	
 	if ($dir =~ /^(?:Firmware|Graphics|HTML|IR|MySQL|SQL|lib|Bin)$/) {
 
-		push @dirs, "%%PREFIX%%/squeezecenter/$dir";
+		push @dirs, "%%PREFIX%%/squeezeboxserver/$dir";
 
 	} elsif ($dir eq 'Plugins') {
 
@@ -41,11 +41,11 @@ sub dirsFor {
 
 	} elsif ($dir eq 'strings' || $dir eq 'revision') {
 
-		push @dirs, "%%PREFIX%%/squeezecenter";
+		push @dirs, "%%PREFIX%%/squeezeboxserver";
 
 	} elsif ($dir eq 'types' || $dir eq 'convert') {
 
-		push @dirs, "%%PREFIX%%/squeezecenter";
+		push @dirs, "%%PREFIX%%/squeezeboxserver";
 
 	} elsif ($dir eq 'prefs') {
 
@@ -53,9 +53,9 @@ sub dirsFor {
 
 	} elsif ($dir eq 'log') {
 
-		push @dirs, "/var/log/squeezecenter";
+		push @dirs, "/var/log/squeezeboxserver";
 
-	} elsif ($dir eq 'cache') {
+	} elsif ($dir eq 'cache' || $dir eq 'updates') {
 
 		push @dirs, "%%SLIMDBDIR%%/cache";
 
@@ -63,11 +63,11 @@ sub dirsFor {
 
 		# Do nothing - use the depended upon MySQL install.
 
-	} elsif ($dir eq 'oldprefs') {
+	} elsif ($dir eq 'scprefs') {
 
-		if (-r '/var/db/slimserver/slimserver.conf') {
+		if (-r '/var/db/squeezecenter/prefs/server.prefs') {
 
-			push @dirs, '/var/db/slimserver/slimserver.conf';
+			push @dirs, '/var/db/squeezecenter/prefs';
 
 		}
 
@@ -79,5 +79,6 @@ sub dirsFor {
 
 	return wantarray() ? @dirs : $dirs[0];
 }
+
 
 1;
