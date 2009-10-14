@@ -1034,6 +1034,7 @@
     SUBDIR += p5-Plack-Request
     SUBDIR += p5-Plack-Server-AnyEvent
     SUBDIR += p5-Plack-Server-ReverseHTTP
+    SUBDIR += p5-Plack-Server-ServerSimple
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-REST-Google-Apps-Provisioning
     SUBDIR += p5-RT-Authen-ExternalAuth
