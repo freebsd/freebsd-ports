@@ -1281,6 +1281,7 @@
 %%WWWDIR%%/system/modules/news/templates/mod_newsarchive_empty.tpl
 %%WWWDIR%%/system/modules/news/templates/mod_newslist.tpl
 %%WWWDIR%%/system/modules/news/templates/mod_newsmenu.tpl
+%%WWWDIR%%/system/modules/news/templates/mod_newsmenu_year.tpl
 %%WWWDIR%%/system/modules/news/templates/mod_newsreader.tpl
 %%WWWDIR%%/system/modules/news/templates/news_full.tpl
 %%WWWDIR%%/system/modules/news/templates/news_latest.tpl
