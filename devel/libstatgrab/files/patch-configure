@@ -1,0 +1,11 @@
+--- ./configure.orig	2009-10-14 09:21:05.000000000 +0100
++++ ./configure	2009-10-14 09:22:14.000000000 +0100
+@@ -21662,7 +21662,7 @@
+ 	BIN_PERM="2755"
+ 	LINKFLAGS="-lkvm -ldevstat"
+ 	;;
+-freebsd[5-8].*)
++freebsd[5-9].*)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define ALLBSD
