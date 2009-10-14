@@ -1,0 +1,10 @@
+--- configure.orig	2009-10-11 09:21:43.000000000 +0800
++++ configure	2009-10-11 09:22:11.000000000 +0800
+@@ -212,7 +212,6 @@
+ #define HAVE_STRLCPY
+ #define HAVE_STRTONUM
+ #define HAVE_STRSEP
+-#define HAVE_TREE_H
+ #define HAVE_U_INT
+ EOF
+ 	cat <<EOF >>$CONFIG_MK
