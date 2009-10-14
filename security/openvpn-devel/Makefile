@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc19
+DISTVERSION=	2.1_rc20
 CATEGORIES=	security net
 MASTER_SITES=	http://openvpn.net/release/
 PKGNAMESUFFIX=	-devel
@@ -41,7 +41,7 @@ SUB_LIST+=	RCSFX=${RC_SUBR_SUFFIX}
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-pre-fetch:
+pre-configure:
 .ifdef (LOG_OPENVPN)
 	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
 .else
