@@ -9,7 +9,8 @@ PORTNAME=	cmpsfont
 PORTVERSION=	1.0
 PORTREVISION=	6
 CATEGORIES=	print x11-fonts
-MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/cm/
+MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
+		http://ftp.ctex.org/pub/tex/fonts/type1/
 DISTNAME=	cmps
 EXTRACT_SUFX=	-unix.tar.gz
 
