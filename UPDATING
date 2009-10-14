@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091014
+  AFFECTS: users of mail/heirloom-mailx
+  AUTHOR: Alexander Logvinov <avl@FreeBSD.org>
+
+  Since SourceForge switched to the new File Release System,
+  mail/heirloom-mailx has wrong package name. All users who have
+  mail/heirloom-mailx installed after 22 August 2009 should run the
+  following commands:
+
+  # pkg_delete "\-mailx-12.4_1"
+  or
+  # rm -r /var/db/pkg/-mailx-12.4_1
+
+  # rm -r /var/db/ports/-mailx
+  # cd /usr/ports/mail/heirloom-mailx && make install clean
+
 20090921
   AFFECTS: users of archivers/lzmautils, archivers/lzmautils-devel
   AUTHOR: Christian Weisgerber <naddy@FreeBSD.org>
