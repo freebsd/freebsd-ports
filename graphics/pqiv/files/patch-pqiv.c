@@ -1,5 +1,5 @@
---- pqiv.c.orig	2009-05-06 06:10:47.000000000 +0900
-+++ pqiv.c	2009-09-02 02:26:40.000000000 +0900
+--- pqiv.c.orig	2009-10-08 19:49:20.000000000 +0900
++++ pqiv.c	2009-10-10 17:43:14.000000000 +0900
 @@ -234,7 +234,7 @@
  		}}}		
  	 */
@@ -9,7 +9,7 @@
  		"\n");
  	if(claim != 0) {
  		g_print("I don't understand the meaning of %c\n\n", claim);
-@@ -272,7 +272,7 @@
+@@ -273,7 +273,7 @@
                  #ifndef NO_COMMANDS
                  " -<n> s         Set command number n (1-9) to s \n"
                  "                See manpage for advanced commands (starting with > or |) \n"
@@ -18,7 +18,7 @@
                  #endif
  
                  "\n"
-@@ -296,7 +296,7 @@
+@@ -297,7 +297,7 @@
                  " v              Vertical flip \n"
                  " i              Show/hide info box \n"
                  " s              Slideshow toggle \n"
@@ -27,7 +27,7 @@
                  #ifndef NO_COMMANDS
                  " <n>            Run command n (1-3) \n"
                  #endif
-@@ -1824,12 +1824,12 @@
+@@ -1737,12 +1737,12 @@
  			}
  			break;
  			/* }}} */
@@ -43,10 +43,10 @@
 +			sprintf(buf, "./." BINARY_NAME "-select/%s", buf2);
  			if(link(currentFile->fileName, buf) != 0) {
  				/* Failed to link image, try copying it */
- 				if(copyFile(currentFile->fileName, buf) != 0) {
-@@ -2253,14 +2253,14 @@
- 				optionCommands[i] = (char*)g_malloc(strlen(optarg) + 1);
- 				strcpy(optionCommands[i], optarg);
+ 				if(copyFile(currentFile->fileName, buf) != TRUE) {
+@@ -2214,13 +2214,13 @@
+ 				}
+ 				optionCommands[i] = g_strdup((gchar*)optarg);
  				break;
 -			/* OPTION: -q: Use the qiv-command script for commands */
 +			/* OPTION: -q: Use the BINARY_NAME-command script for commands */
@@ -55,9 +55,8 @@
  					if(optionCommands[i] != NULL) {
  						g_free(optionCommands[i]);
  					}
- 					optionCommands[i] = (char*)g_malloc(14);
--					memcpy(optionCommands[i], "qiv-command 0", 14);
-+					memcpy(optionCommands[i], BINARY_NAME "-command 0", 14);
+-					optionCommands[i] = g_strdup("qiv-command 0");
++					optionCommands[i] = g_strdup(BINARY_NAME "-command 0");
  					optionCommands[i][12] += i;
  				}
  				break;
