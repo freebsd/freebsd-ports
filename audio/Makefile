@@ -127,6 +127,7 @@
     SUBDIR += dssi
     SUBDIR += dtmfdial
     SUBDIR += dumb
+    SUBDIR += dumb-allegro
     SUBDIR += dvda-author
     SUBDIR += easytag
     SUBDIR += easytag-devel
