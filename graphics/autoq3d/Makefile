@@ -6,26 +6,18 @@
 #
 
 PORTNAME=	autoq3d
-DISTVERSION=	1.36
-PORTREVISION=	2
+DISTVERSION=	1.39
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AutoQ3D%20${PORTVERSION}
-DISTNAME=	AutoQ3DGPL${PORTVERSION:C/\./-/}qt4source
+DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete QT quick 3d model editor program
 
 USE_ZIP=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build corelib moc_build gui opengl
-
-PORTDOCS=	3DQformat.txt ChangeLog.txt Install.txt license.txt
-
-.if !defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+QT_COMPONENTS=	corelib gui opengl \
+		moc_build qmake_build
 
 DESKTOP_ENTRIES=	"AutoQ3D" \
 			"A complete QT quick 3d model editor program" \
@@ -35,30 +27,26 @@ DESKTOP_ENTRIES=	"AutoQ3D" \
 			"false"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/AutoQ3D-GPL|${DATADIR}|g' \
-		${WRKSRC}/src/main.cpp \
-		${WRKSRC}/src/fgui/cadform.cpp \
-		${WRKSRC}/src/dialogs/prgsettings.cpp
+.for file in src/main.cpp src/fgui/cadform.cpp src/dialogs/prgsettings.cpp
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/AutoQ3D-Community|${DATADIR}|g' ${WRKSRC}/${file}
+.endfor
 
-pre-build:
+do-configure:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC}
 
-post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/AutoQ3D ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/AutoQ3D.png ${PREFIX}/share/pixmaps
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/AutoQ3D ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/qref*.htm ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.htm ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}
 	@${MKDIR} ${DATADIR}/images
-	@${INSTALL_DATA} ${WRKSRC}/images/*.png ${DATADIR}/images
-.if !defined(WITHOUT_NLS)
-	@${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/images/*.png ${DATADIR}/images
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/AutoQ3D.png ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
