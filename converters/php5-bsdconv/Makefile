@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	3.3
+PORTVERSION=	3.5
 CATEGORIES=	converters
 MASTER_SITES=	http://security-hole.info/distfile/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	buganini-bsdconv-a500cb452f12d583fd545dc901dfca89c84b987e
+DISTNAME=	buganini-bsdconv-c14ef1b
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	PHP wrapper for bsdconv
