@@ -49,9 +49,14 @@ bin/AutoQ3D
 %%DATADIR%%/images/vwprop.png
 %%DATADIR%%/images/zoomi.png
 %%DATADIR%%/images/zoomim.png
-%%NLS%%%%DATADIR%%/lan_sp.qm
+%%DATADIR%%/lan_sp.qm
 %%DATADIR%%/qref.htm
 %%DATADIR%%/qref_sp.htm
+%%PORTDOCS%%%%DOCSDIR%%/3DQformat.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/Install.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
 share/pixmaps/AutoQ3D.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
