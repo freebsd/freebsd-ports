@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	brian
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP \
 		SF/${PORTNAME}/Brian/${PORTVERSION}
 
-
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A clock-driven simulator for spiking neural networks
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.1.0:${PORTSDIR}/math/py-numpy \
