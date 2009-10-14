@@ -7,7 +7,7 @@
 
 PORTNAME=	dumb
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -22,9 +22,12 @@ USE_GMAKE=	yes
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
+PKGNAMESUFFIX=	-allegro
+CONFLICTS=	dumb-[0-9]*
 .else
 PLIST_SUB+=	ALLEGRO="@comment "
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS=
+CONFLICTS=	dumb-allegro-[0-9]*
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
