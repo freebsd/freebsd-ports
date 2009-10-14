@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.51rc1
+PORTVERSION=	2.51
+PORTEPOCH=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		http://homepages.uni-paderborn.de/mandree/
 
 MAINTAINER=	matthias.andree@gmx.de
