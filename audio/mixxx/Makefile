@@ -6,51 +6,50 @@
 #
 
 PORTNAME=	mixxx
-PORTVERSION=	1.4.2
-PORTREVISION=	7
+PORTVERSION=	1.7.0
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	http://downloads.mixxx.org/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DJ mixing application
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
-		portaudio:${PORTSDIR}/audio/portaudio \
-		mad:${PORTSDIR}/audio/libmad \
-		id3tag:${PORTSDIR}/audio/libid3tag \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
+		id3tag.0:${PORTSDIR}/audio/libid3tag \
+		mad.2:${PORTSDIR}/audio/libmad \
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		portaudio.2:${PORTSDIR}/audio/portaudio2
 
-USE_QT_VER=	3
-HAS_CONFIGURE=	yes
-USE_GL=		yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-CONFIGURE_WRKSRC=	${WRKSRC}/src
-BUILD_WRKSRC=	${WRKSRC}/src
-INSTALL_WRKSRC=	${WRKSRC}/src
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui opengl qt3support script svg xml \
+		linguist_build moc_build qmake_build uic_build \
+		moc_build rcc_build
+USE_SCONS=	yes
+SCONS_BUILDENV=	${SCONS_ENV}
+SCONS_ARGS=	qtdir="${QT_PREFIX}"
 
-CONFIGURE_ENV=	QMAKESPEC="freebsd-g++"
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
+CCFLAGS=	`pkg-config --cflags portaudio-2.0 \
+			QtCore QtGui QtOpenGL Qt3Support QtScript QtSvg QtXml`
+LINKFLAGS=	-L${LOCALBASE}/lib/portaudio2 -L${QT_LIBDIR} \
+		-Wl,-rpath,${LOCALBASE}/lib/portaudio2 -Wl,-rpath,${QT_LIBDIR} \
+		${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|/bin/bash|${LOCALBASE}&| ; \
-		    s|$$QTDIR/bin/qmake|${LOCALBASE}/bin/qmake|g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} \
-		-e 's|system( ld|& -shared -L${LOCALBASE}/lib|' \
-		${CONFIGURE_WRKSRC}/check.qbas
-	@${REINPLACE_CMD} \
-		-e 's|/usr/local|${LOCALBASE}|; s|/opt|${LOCALBASE}|' \
-		${CONFIGURE_WRKSRC}/paths.qbas
+	@${REINPLACE_CMD} -e \
+		'/pthread/d ; \
+		 /X11R6/d ; \
+		 /-pipe -Wall -W -g/d' ${WRKSRC}/src/SConscript
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Mixxx-Manual.pdf ${WRKSRC}/README ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in Mixxx-Manual.pdf README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
