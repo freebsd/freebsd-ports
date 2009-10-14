@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/ReverseHTTP/.packlist
+%%SITE_PERL%%/Plack/Server/ReverseHTTP.pm
+@dirrmtry %%SITE_PERL%%/Plack/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/ReverseHTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server
