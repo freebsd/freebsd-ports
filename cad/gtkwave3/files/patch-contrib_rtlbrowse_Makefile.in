@@ -1,0 +1,11 @@
+--- contrib/rtlbrowse/Makefile.in.orig	2009-06-14 02:02:18.000000000 +0400
++++ contrib/rtlbrowse/Makefile.in	2009-10-14 15:31:44.000000000 +0400
+@@ -186,7 +186,7 @@
+ BIGFILES = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+ LIBFST_CFLAGS = -I../../src/helpers/fst
+ LIBLZMA_CFLAGS = -I../../src/liblzma
+-LIBLZMA_LDADD = -L../../src/liblzma -llzma
++LIBLZMA_LDADD = ../../src/liblzma/liblzma.a
+ rtlbrowse_SOURCES = definehash.c fgetdynamic.c fgetdynamic.h \
+ 	logfile.c splay.c tree_widget.c \
+ 	$(srcdir)/../../src/helpers/fst/fastlz.c \
