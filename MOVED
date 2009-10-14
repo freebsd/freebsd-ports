@@ -4184,3 +4184,4 @@ x11/electricsheep||2009-10-02|No source tarball, Unix code unmaintained
 sysutils/fusefs-gphotofs||2009-10-05|Removed
 x11/kxgenerator||2009-10-07|Has expired: Project abandoned, master site disappeared
 hebrew/geresh||2009-10-08|No longer maintained upstream
+misc/tmux||2009-10-14|Moved to sysutils category
