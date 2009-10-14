@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dir2ogg
-PORTVERSION=	0.11.6
+PORTVERSION=	0.11.8
 CATEGORIES=	audio
-MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/0.11/ \
-		LOCAL/chinsan/dir2ogg
+MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line {wav,mp3,m4a} to ogg converter
@@ -21,30 +21,22 @@ RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad \
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/dir2ogg
-.if !defined(NOPORTDOCS)
-PLIST_DIRS=	${DOCSDIR_REL}
-PLIST_FILES+=	${DOCSDIR_REL}/README \
-		${DOCSDIR_REL}/NEWS
-.endif
-
-DOCS=		README NEWS
-MAN1=		dir2ogg.1
+MAN1=		${PORTNAME}.1
+PORTDOCS=	NEWS README
+PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '1 s/python/env python/' ${WRKSRC}/dir2ogg
+	@${REINPLACE_CMD} -e \
+		'/^#!/s|/.*python|${SETENV} python|g' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dir2ogg ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dir2ogg.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
+.for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${ECHO} "dir2ogg is now installed. Enjoy..."
 
 .include <bsd.port.mk>
