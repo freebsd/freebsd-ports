@@ -674,6 +674,7 @@
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += squash
+    SUBDIR += squeezeboxserver
     SUBDIR += squeezecenter
     SUBDIR += squeezecenter-dynamicplaylist
     SUBDIR += squeezecenter-lazysearch
