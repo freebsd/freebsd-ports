@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.25
-PORTREVISION=	1
+PORTVERSION=	1.30
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/vmodels-doom/1.4.2:sf \
 		http://doomtextures.freelanzer.com/:dt
-
 PKGNAMESUFFIX=	-extras
 DISTFILES=	#
 
@@ -23,36 +21,54 @@ RUN_DEPENDS=	vavoom:${PORTSDIR}/games/vavoom
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-NO_PACKAGE=	package will be 665MB; set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	package could be up to 661MB; set FORCE_PACKAGE if you really want it
 
-OPTIONS=	MODELS "Install 3D models (20MB)" on \
-		SOUNDTRACKS "Install enhaced soundtracks (480MB)" on \
-		TEXTURES "Install high resolution textures (165MB)" on
+OPTIONS=	MODELS "Install 3D models (17MB)" on \
+		SOUNDTRACKS "Install enhaced soundtracks (482MB)" on \
+		TEXTURES "Install high resolution textures (157MB)" off \
+		DHTP "Prefer Doom Hires Texture Pack (87MB)" on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_MODELS) && !defined(WITH_SOUNDTRACKS) && \
-    !defined(WITH_TEXTURES)
+.if !defined(WITH_MODELS) && !defined(WITH_SOUNDTRACKS) && !defined(WITH_TEXTURES) && !defined(WITH_DHTP)
 IGNORE=		needs at least one option selected
 .endif
 
 .if defined(WITH_MODELS)
 . for f in doom heretic hexen strife
-DISTFILES+=	vmodels-${f}-1.4.2${EXTRACT_SUFX}:sf
+DISTFILES+=	vmodels-${f}-1.4.3${EXTRACT_SUFX}:sf
 . endfor
 PLIST_SUB+=	MODELS=""
 .else
 PLIST_SUB+=	MODELS="@comment "
 .endif
 
+.if defined(WITH_DHTP)
+DISTFILES+=	vv-dhtp-20080808.pk3:dt
+PLIST_SUB+=	DHTP=""
+.else
+PLIST_SUB+=	DHTP="@comment "
+.endif
+
 .if defined(WITH_TEXTURES)
-DISTFILES+=	vv-dhtp-20071114.pk3:dt
 . for f in heretic hexen strife
 DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:sf
 . endfor
 PLIST_SUB+=	TEXTURES=""
 .else
 PLIST_SUB+=	TEXTURES="@comment "
+.endif
+
+.if defined(WITH_TEXTURES) && !defined(WITH_DHTP)
+. for f in plutonia tnt
+DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:sf
+. endfor
+. for f in doom doom1 doom2
+DISTFILES+=	vtextures-${f}-1.1${EXTRACT_SUFX}:sf
+. endfor
+PLIST_SUB+=	NODHTP=""
+.else
+PLIST_SUB+=	NODHTP="@comment "
 .endif
 
 .if defined(WITH_SOUNDTRACKS)
