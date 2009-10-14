@@ -773,6 +773,7 @@
     SUBDIR += tm
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
+    SUBDIR += tmux
     SUBDIR += topless
     SUBDIR += torque
     SUBDIR += torsmo
