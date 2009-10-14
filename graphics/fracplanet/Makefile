@@ -6,42 +6,36 @@
 #
 
 PORTNAME=	fracplanet
-PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive generator of planets and terrain
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_QT_VER=	3
-USE_GL=		glu
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui opengl \
+		moc_build qmake_build
+QT_NONSTANDARD=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
+CONFIGURE_ARGS=	-spec ${QMAKESPEC}
 USE_GMAKE=	yes
-MAKE_ENV=	QTDIR="${QT_PREFIX}" \
-		QMAKESPEC="${QMAKESPEC}" \
-		VERSION_NUMBER="${PORTVERSION}"
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	${PORTNAME}.css ${PORTNAME}.htm
 PLIST_FILES=	bin/${PORTNAME}
 
-BASH?=		${LOCALBASE}/bin/bash
-QMAKE?=		${LOCALBASE}/bin/qmake
-QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-
 post-patch:
-.for file in VERSION configure
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${BASH}|g' ${WRKSRC}/${file}
+.for file in BUILD VERSION configure
+	@${REINPLACE_CMD} -e \
+		'/^#!/s|/.*bash|/bin/sh|g' ${WRKSRC}/${file}
 .endfor
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${BASH} ./configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
