@@ -403,6 +403,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue.py
 %%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue_service_pb.py
 %%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue_stub.py
+%%DATADIR%%/google/appengine/api/lib_config.py
 %%DATADIR%%/google/appengine/api/mail.py
 %%DATADIR%%/google/appengine/api/mail_errors.py
 %%DATADIR%%/google/appengine/api/mail_service_pb.py
@@ -487,6 +488,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/db/__init__.py
 %%DATADIR%%/google/appengine/ext/db/djangoforms.py
 %%DATADIR%%/google/appengine/ext/db/polymodel.py
+%%DATADIR%%/google/appengine/ext/db/stats.py
 %%DATADIR%%/google/appengine/ext/deferred/__init__.py
 %%DATADIR%%/google/appengine/ext/deferred/deferred.py
 %%DATADIR%%/google/appengine/ext/ereporter/__init__.py
