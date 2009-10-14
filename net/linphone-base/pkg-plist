@@ -82,6 +82,7 @@ libexec/mediastream
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/linphone.mo
 share/mediastreamer/images/nowebcamCIF.jpg
 @dirrm share/mediastreamer/images
 @dirrm share/mediastreamer
