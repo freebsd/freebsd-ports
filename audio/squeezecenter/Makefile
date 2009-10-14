@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Slim Devices audio streaming server
 
+DEPRECATED=     Replaced by audio/squeezeboxcenter
+EXPIRATION_DATE=        2009-11-30
+
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
 OPTIONS=	APE "Support Monkey's Audio Codec input" on \
