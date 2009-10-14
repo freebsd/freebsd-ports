@@ -592,6 +592,7 @@
     SUBDIR += p5-Net-SSH-Perl
     SUBDIR += p5-Net-SSH2
     SUBDIR += p5-Net-Server
+    SUBDIR += p5-Net-Server-Coro
     SUBDIR += p5-Net-Services
     SUBDIR += p5-Net-Subnets
     SUBDIR += p5-Net-TCLink
