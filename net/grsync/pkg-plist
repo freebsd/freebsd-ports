@@ -4,6 +4,7 @@ share/applications/grsync.desktop
 share/pixmaps/grsync.png
 share/grsync/grsync.glade
 @dirrm share/grsync
+%%NLS%%share/locale/ca_ES/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/grsync.mo
@@ -16,6 +17,8 @@ share/grsync/grsync.glade
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grsync.mo
+%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca_ES
 %%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/cs_CZ
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
