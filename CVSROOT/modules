@@ -1373,7 +1373,6 @@ cchess                          ports/games/cchess
 cciss_vol_status                ports/sysutils/cciss_vol_status
 cclient                         ports/mail/cclient
 cclive                          ports/multimedia/cclive
-ccmalloc                        ports/devel/ccmalloc
 ccmath                          ports/math/ccmath
 ccmsn                           ports/net-im/ccmsn
 ccrtp                           ports/devel/ccrtp
@@ -7110,6 +7109,7 @@ lcab                            ports/archivers/lcab
 lcdproc                         ports/sysutils/lcdproc
 lcdtest                         ports/graphics/lcdtest
 lcms                            ports/graphics/lcms
+lcms-python                     ports/graphics/lcms-python
 ldap-account-manager            ports/sysutils/ldap-account-manager
 ldap2dns                        ports/net/ldap2dns
 ldapbrowser                     ports/net/ldapbrowser
@@ -9997,6 +9997,7 @@ openfwtk                        ports/security/openfwtk
 opengl-man                      ports/graphics/opengl-man
 openglad                        ports/games/openglad
 opengoo                         ports/deskutils/opengoo
+opengrok                        ports/devel/opengrok
 openh323                        ports/net/openh323
 openhbci                        ports/finance/openhbci
 openjade                        ports/textproc/openjade
@@ -10218,6 +10219,7 @@ p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
+p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
@@ -10511,6 +10513,7 @@ p5-CGI-FormBuilder              ports/www/p5-CGI-FormBuilder
 p5-CGI-Framework                ports/www/p5-CGI-Framework
 p5-CGI-Kwiki                    ports/www/p5-CGI-Kwiki
 p5-CGI-Minimal                  ports/www/p5-CGI-Minimal
+p5-CGI-PSGI                     ports/www/p5-CGI-PSGI
 p5-CGI-Pager                    ports/www/p5-CGI-Pager
 p5-CGI-Prototype                ports/www/p5-CGI-Prototype
 p5-CGI-Response                 ports/www/p5-CGI-Response
@@ -10581,6 +10584,7 @@ p5-Catalyst-Devel               ports/www/p5-Catalyst-Devel
 p5-Catalyst-Engine-Apache       ports/www/p5-Catalyst-Engine-Apache
 p5-Catalyst-Engine-HTTP-POE     ports/www/p5-Catalyst-Engine-HTTP-POE
 p5-Catalyst-Engine-HTTP-Prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
+p5-Catalyst-Engine-PSGI         ports/www/p5-Catalyst-Engine-PSGI
 p5-Catalyst-Enzyme              ports/www/p5-Catalyst-Enzyme
 p5-Catalyst-Example-InstantCRUD  ports/www/p5-Catalyst-Example-InstantCRUD
 p5-Catalyst-Helper-Controller-Scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
@@ -11231,6 +11235,8 @@ p5-Devel-SimpleTrace            ports/devel/p5-Devel-SimpleTrace
 p5-Devel-Size                   ports/devel/p5-Devel-Size
 p5-Devel-SmallProf              ports/devel/p5-Devel-SmallProf
 p5-Devel-StackTrace             ports/devel/p5-Devel-StackTrace
+p5-Devel-StackTrace-AsHTML      ports/devel/p5-Devel-StackTrace-AsHTML
+p5-Devel-StackTrace-WithLexicals  ports/devel/p5-Devel-StackTrace-WithLexicals
 p5-Devel-StealthDebug           ports/devel/p5-Devel-StealthDebug
 p5-Devel-Symdump                ports/devel/p5-Devel-Symdump
 p5-Devel-Timer                  ports/devel/p5-Devel-Timer
@@ -12646,6 +12652,7 @@ p5-PPI-HTML                     ports/textproc/p5-PPI-HTML
 p5-PPI-XS                       ports/textproc/p5-PPI-XS
 p5-PPIx-EditorTools             ports/textproc/p5-PPIx-EditorTools
 p5-PPerl                        ports/devel/p5-PPerl
+p5-PSGI                         ports/www/p5-PSGI
 p5-PV                           ports/devel/p5-PV
 p5-Package-Constants            ports/devel/p5-Package-Constants
 p5-Package-Generator            ports/devel/p5-Package-Generator
@@ -12716,6 +12723,9 @@ p5-Petal-Utils                  ports/textproc/p5-Petal-Utils
 p5-Pg                           ports/databases/p5-Pg
 p5-Pipeline                     ports/devel/p5-Pipeline
 p5-PlRPC                        ports/net/p5-PlRPC
+p5-Plack                        ports/www/p5-Plack
+p5-Plack-Request                ports/www/p5-Plack-Request
+p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
 p5-Plagger                      ports/textproc/p5-Plagger
 p5-Plucene                      ports/textproc/p5-Plucene
 p5-Plucene-Analysis-CJKAnalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
@@ -13772,6 +13782,7 @@ p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
+p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
@@ -14063,6 +14074,7 @@ p5-catalyst-devel               ports/www/p5-Catalyst-Devel
 p5-catalyst-engine-apache       ports/www/p5-Catalyst-Engine-Apache
 p5-catalyst-engine-http-poe     ports/www/p5-Catalyst-Engine-HTTP-POE
 p5-catalyst-engine-http-prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
+p5-catalyst-engine-psgi         ports/www/p5-Catalyst-Engine-PSGI
 p5-catalyst-enzyme              ports/www/p5-Catalyst-Enzyme
 p5-catalyst-example-instantcrud  ports/www/p5-Catalyst-Example-InstantCRUD
 p5-catalyst-helper-controller-scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
@@ -14209,6 +14221,7 @@ p5-cgi-minimal                  ports/www/p5-CGI-Minimal
 p5-cgi-modules                  ports/www/p5-CGI-modules
 p5-cgi-pager                    ports/www/p5-CGI-Pager
 p5-cgi-prototype                ports/www/p5-CGI-Prototype
+p5-cgi-psgi                     ports/www/p5-CGI-PSGI
 p5-cgi-response                 ports/www/p5-CGI-Response
 p5-cgi-session                  ports/www/p5-CGI-Session
 p5-cgi-session-expiresessions   ports/www/p5-CGI-Session-ExpireSessions
@@ -14796,6 +14809,8 @@ p5-devel-simpletrace            ports/devel/p5-Devel-SimpleTrace
 p5-devel-size                   ports/devel/p5-Devel-Size
 p5-devel-smallprof              ports/devel/p5-Devel-SmallProf
 p5-devel-stacktrace             ports/devel/p5-Devel-StackTrace
+p5-devel-stacktrace-ashtml      ports/devel/p5-Devel-StackTrace-AsHTML
+p5-devel-stacktrace-withlexicals  ports/devel/p5-Devel-StackTrace-WithLexicals
 p5-devel-stealthdebug           ports/devel/p5-Devel-StealthDebug
 p5-devel-strace                 ports/devel/p5-Devel-STrace
 p5-devel-symdump                ports/devel/p5-Devel-Symdump
@@ -16243,6 +16258,9 @@ p5-php-serialization            ports/devel/p5-PHP-Serialization
 p5-php-session                  ports/www/p5-PHP-Session
 p5-pip                          ports/devel/p5-pip
 p5-pipeline                     ports/devel/p5-Pipeline
+p5-plack                        ports/www/p5-Plack
+p5-plack-request                ports/www/p5-Plack-Request
+p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
 p5-plagger                      ports/textproc/p5-Plagger
 p5-plp                          ports/www/p5-PLP
 p5-plrpc                        ports/net/p5-PlRPC
@@ -16371,6 +16389,7 @@ p5-proc-reliable                ports/devel/p5-Proc-Reliable
 p5-proc-simple                  ports/devel/p5-Proc-Simple
 p5-proc-wait3                   ports/devel/p5-Proc-Wait3
 p5-project-gantt                ports/devel/p5-Project-Gantt
+p5-psgi                         ports/www/p5-PSGI
 p5-pugs-compiler-rule           ports/lang/p5-Pugs-Compiler-Rule
 p5-pv                           ports/devel/p5-PV
 p5-qdbm                         ports/databases/p5-qdbm
@@ -21592,6 +21611,7 @@ slate                           ports/net-mgmt/slate
 slbd                            ports/net/slbd
 sleuth                          ports/dns/sleuth
 sleuthkit                       ports/sysutils/sleuthkit
+slf4j                           ports/devel/slf4j
 slffea                          ports/cad/slffea
 slglade                         ports/devel/slglade
 slgrace                         ports/math/slgrace
