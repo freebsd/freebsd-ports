@@ -9,7 +9,7 @@ PORTNAME=	amspsfnt
 PORTVERSION=	1.0
 PORTREVISION=	5
 CATEGORIES=	print x11-fonts
-MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/ams/
+MASTER_SITES=	ftp://ftp.uni-koeln.de/tex/fonts/amsfonts/ps-type1/
 DISTNAME=	amsps
 EXTRACT_SUFX=	-unix.tar.gz
 
