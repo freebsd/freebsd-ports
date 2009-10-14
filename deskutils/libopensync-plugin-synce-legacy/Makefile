@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	libopensync-plugin-synce
-PORTVERSION=	0.22
+PORTVERSION=	0.22.1
 CATEGORIES=	deskutils palm
-MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
+MASTER_SITES=	SF/synce/SynCE/0.14
 PKGNAMESUFFIX=	-legacy
+DISTNAME=	${PORTNAME}-rra-${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	SynCE legacy plugin for the OpenSync framework
@@ -19,7 +20,6 @@ LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \
 
 MAKE_JOBS_SAFE=	yes
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 libxml2
 
