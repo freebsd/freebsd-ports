@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kuklomenos
-PORTVERSION=	0.4.2.1
+PORTVERSION=	0.4.3
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHEAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -39,9 +39,7 @@ PLIST_SUB+=	VORBIS=""
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^sounds_DATA/s|Makefile.am||g' ${WRKSRC}/sounds/Makefile.in
-
-.if ${OSVERSION} < 700000
-IGNORE=		does not compile
-.endif
+	@${FIND} ${WRKSRC}/SDL_Mixer -name "*.c" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|<SDL/SDL_mixer.h>|"SDL_mixer.h"|g'
 
 .include <bsd.port.post.mk>
