@@ -9,13 +9,13 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.30.0
+PORTVERSION=	1.0.31.0
 PORTREVISION=	0
 CATEGORIES=	lang lisp
-#MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
-#		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
+#MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
+#		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
 #MASTER_SITE_SUBDIR=	sbcl/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
 
@@ -38,6 +38,7 @@ INFO=		asdf sbcl
 INFODIR=	${PREFIX}/${INFO_PATH}
 
 OSVER_MAJOR=	${OSVERSION:C/([0-9]).*/\1/}
+NEWBOOTNAME=	${PORTNAME}-${PORTVERSION:R}-${ARCH}-freebsd${OSVER_MAJOR}
 
 .if ${PORTVERSION:E} == 0
 SBCLPATCHLEVEL=	#empty
@@ -71,7 +72,11 @@ BOOT_VERSION=	1.0.17
 BOOT_ARCH_OS_LIST=	amd64-freebsd8 amd64-freebsd7 amd64-freebsd6 \
 			i386-freebsd8 i386-freebsd7 i386-freebsd6
 . else
+.  if ${OSVER_MAJOR} == 9	# We'll use 8.x bootstrap for now
+BOOT_ARCH_OS_LIST=	${ARCH}-freebsd8
+.  else
 BOOT_ARCH_OS_LIST=	${ARCH}-freebsd${OSVER_MAJOR}
+.  endif
 . endif
 
 . if ${ARCH} == "i386"
@@ -127,5 +132,11 @@ post-install:
 
 test:	build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
+
+bootstrap:
+	${CP} -r ${WRKSRC} ${WRKDIR}/${NEWBOOTNAME}
+	(cd ${WRKDIR}/ && \
+	    ${WRKDIR}/${NEWBOOTNAME}/binary-distribution.sh ${NEWBOOTNAME})
+	(cd ${WRKDIR}/ && ${BZIP2_CMD} ${NEWBOOTNAME}-binary.tar)
 
 .include <bsd.port.post.mk>
