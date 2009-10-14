@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	cbrpager
-PORTVERSION=	0.9.19
-PORTREVISION=	1
+PORTVERSION=	0.9.20
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/cbrPager-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for cbr (comic book archive) files
 
-USE_GNOME=	gnometarget libgnomeui
+USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
