@@ -45,6 +45,9 @@ USE_PHP+=	zlib
 LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 .endif
 
+pre-install:
+	${MV} ${SITESRC}/typo3conf/localconf.php ${SITESRC}/typo3conf/localconf.php.dist
+
 do-install:
 	${CP} -R ${WRKSRC} ${PREFIX}/${TYPO3DIR}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3DIR}
