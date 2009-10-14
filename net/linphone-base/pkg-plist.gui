@@ -21,6 +21,8 @@ share/pixmaps/linphone/green.png
 share/pixmaps/linphone/linphone.png
 share/pixmaps/linphone/linphone2.png
 share/pixmaps/linphone/linphone2.xpm
+share/pixmaps/linphone/mic_active.png
+share/pixmaps/linphone/mic_muted.png
 share/pixmaps/linphone/red.png
 share/pixmaps/linphone/sip-away.png
 share/pixmaps/linphone/sip-bifm.png
