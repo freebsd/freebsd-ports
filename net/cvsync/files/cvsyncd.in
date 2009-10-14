@@ -20,23 +20,24 @@ load_rc_config ${name}
 case "${cvsyncd_flags}" in
 *-p\ *)
 	echo "Warning: \$cvsyncd_flags includes -p option." \
-		"Please use \$cvsyncd_pidfile instead."
+	    "Please use \$cvsyncd_pidfile instead."
 	;;
 *)
-	cvsyncd_flags="-p ${cvsyncd_pidfile} ${cvsyncd_flags}" ;;
+	cvsyncd_flags="-p ${cvsyncd_pidfile} ${cvsyncd_flags}"
+	;;
 esac
 
 case "${cvsyncd_flags}" in
 *-c\ *)
 	echo "Warning: \$cvsyncd_flags includes -c option." \
-		"Please use \$cvsyncd_conffile instead."
+	    "Please use \$cvsyncd_conffile instead."
 	;;
 *)
-	cvsyncd_flags="-c ${cvsyncd_conffile} ${cvsyncd_flags}" ;;
+	cvsyncd_flags="-c ${cvsyncd_conffile} ${cvsyncd_flags}"
+	;;
 esac
 
 pidfile=${cvsyncd_pidfile}
 required_files=${cvsyncd_conffile}
 
 run_rc_command "$1"
-
