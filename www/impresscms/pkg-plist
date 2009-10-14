@@ -1183,8 +1183,10 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/Extension.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/FileStore.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/HMACSHA1.php
+%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/HMAC.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/Interface.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/KVForm.php
+%%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/MemcachedStore.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/Message.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/MySQLStore.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/OpenID/Nonce.php
@@ -1213,6 +1215,7 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/Yadis/index.html
 %%WWWDIR%%/htdocs/libraries/phpopenid/Auth/index.html
 %%WWWDIR%%/htdocs/libraries/phpopenid/CHANGELOG
+%%WWWDIR%%/htdocs/libraries/phpopenid/CHANGES-2.1.0
 %%WWWDIR%%/htdocs/libraries/phpopenid/COPYING
 %%WWWDIR%%/htdocs/libraries/phpopenid/NEWS
 %%WWWDIR%%/htdocs/libraries/phpopenid/README
@@ -1226,7 +1229,9 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/docblocks.pl
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/findglobals
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/findphp
+%%WWWDIR%%/htdocs/libraries/phpopenid/admin/findallphp
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/fixperms
+%%WWWDIR%%/htdocs/libraries/phpopenid/admin/gettlds.py
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/index.html
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/library-name
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/longlines.pl
@@ -1244,6 +1249,7 @@
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/phpaliases.py
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/prepare-release
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/runtests
+%%WWWDIR%%/htdocs/libraries/phpopenid/admin/syntaxcheck
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/texttest.php
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/tutorials/OpenID/OpenID.pkg
 %%WWWDIR%%/htdocs/libraries/phpopenid/admin/tutorials/OpenID/index.html
@@ -2024,7 +2030,6 @@
 @dirrm %%WWWDIR%%/htdocs/modules/system/images
 @dirrm %%WWWDIR%%/htdocs/modules/system/blocks
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/version/images
-@dirrm %%WWWDIR%%/htdocs/modules/system/admin/version/class
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/version
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/users/images
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/users

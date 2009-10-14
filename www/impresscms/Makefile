@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	impresscms
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/ImpressCMS%20Official%20Releases/ImpressCMS%20${PORTVERSION}%20Final
 DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Community Developed Content Management System
 
 USE_PHP=	mysql pcre session iconv xml gd
