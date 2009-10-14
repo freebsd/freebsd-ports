@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Markdown
-PORTVERSION=	1.0.24
+PORTVERSION=	1.0.26
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Dig
 
 PERL_CONFIGURE=	5.8.0+
 
-MAN3=		Text::Markdown.3 \
-		Text::MultiMarkdown.3
+MAN3=		Text::Markdown.3
 
 .include <bsd.port.mk>
