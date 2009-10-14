@@ -24,19 +24,19 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		LDAP "Support for checking LDAP servers" on \
 		IPV6 "Support for IPv6" on \
 		FPING "Use fping for pinging hosts" on \
-		JABBER "Use jabber media type" on
+		JABBER "Use jabber media type" on \
+		PROXY "Install Zabbix Proxy" on \
+		SERVER "Install Zabbix Server" on
 
 USE_GMAKE=	yes
-USE_PHP=	gd snmp sockets pcre bcmath
-USE_RC_SUBR=	zabbix_server.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-agent --enable-server \
+CONFIGURE_ARGS=	--disable-agent \
 		--with-net-snmp=${LOCALBASE}/bin/net-snmp-config \
 		--with-curl=${LOCALBASE}/bin/curl-config
 MAKE_ARGS=	ARCH=freebsd
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifndef WITHOUT_JABBER
 USE_JABBER=	yes
@@ -74,6 +74,26 @@ CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 IGNORE=	zabbix needs a database backend
 .endif
 
+.ifndef WITHOUT_PROXY
+CONFIGURE_ARGS+=--enable-proxy
+USE_RC_SUBR+=	zabbix_proxy
+PLIST_SUB+=	PROXY=""
+.else
+PLIST_SUB+=	PROXY="@comment "
+.endif
+
+.ifndef WITHOUT_SERVER
+USE_PHP=	gd snmp sockets pcre bcmath
+USE_RC_SUBR+=	zabbix_server.sh
+CONFIGURE_ARGS+=--enable-server
+PLIST_SUB+=	SERVER=""
+.else
+CONFIGURE_ARGS+=--disable-server
+PLIST_SUB+=	SERVER="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f|${XARGS} \
 		${REINPLACE_CMD} -e 's|/etc/zabbix|${ETCDIR}|;s|/usr/sbin|${LOCALBASE}/sbin|'
@@ -92,13 +112,21 @@ post-configure:
 .endif
 
 do-install:
+.ifndef WITHOUT_SERVER
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/zabbix_server/zabbix_server ${PREFIX}/bin/
 	@${INSTALL} -d ${ETCDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/misc/conf/zabbix_server.conf\
 		${ETCDIR}/zabbix_server.conf.sample
 	@cd ${WRKSRC}/frontends/&&${COPYTREE_SHARE} . ${DATADIR}/
+.endif
 	@cd ${WRKSRC}/upgrades/&&${COPYTREE_SHARE} dbpatches ${DATADIR}/
 	@cd ${WRKSRC}/create/&&${COPYTREE_SHARE} "data schema" ${DATADIR}/create/
+.ifndef WITHOUT_PROXY
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/zabbix_proxy/zabbix_proxy ${PREFIX}/bin/
+	@${INSTALL} -d ${ETCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/misc/conf/zabbix_proxy.conf\
+		${ETCDIR}/zabbix_proxy.conf.sample
+.endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
