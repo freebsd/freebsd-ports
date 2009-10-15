@@ -428,6 +428,7 @@ alliance                        ports/cad/alliance
 alltraxclock                    ports/x11-clocks/alltraxclock
 alltray                         ports/x11/alltray
 alpine                          ports/mail/alpine
+alpng                           ports/graphics/alpng
 altermime                       ports/mail/altermime
 althea                          ports/mail/althea
 am-aspell                       ports/textproc/am-aspell
@@ -12466,6 +12467,7 @@ p5-Net-SSH2                     ports/net/p5-Net-SSH2
 p5-Net-SSLeay                   ports/security/p5-Net-SSLeay
 p5-Net-SenderBase               ports/mail/p5-Net-SenderBase
 p5-Net-Server                   ports/net/p5-Net-Server
+p5-Net-Server-Coro              ports/net/p5-Net-Server-Coro
 p5-Net-Server-Mail              ports/mail/p5-Net-Server-Mail
 p5-Net-Server-Mail-ESMTP-AUTH   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
 p5-Net-Services                 ports/net/p5-Net-Services
@@ -12726,6 +12728,8 @@ p5-PlRPC                        ports/net/p5-PlRPC
 p5-Plack                        ports/www/p5-Plack
 p5-Plack-Request                ports/www/p5-Plack-Request
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
+p5-Plack-Server-ReverseHTTP     ports/www/p5-Plack-Server-ReverseHTTP
+p5-Plack-Server-ServerSimple    ports/www/p5-Plack-Server-ServerSimple
 p5-Plagger                      ports/textproc/p5-Plagger
 p5-Plucene                      ports/textproc/p5-Plucene
 p5-Plucene-Analysis-CJKAnalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
@@ -16056,6 +16060,7 @@ p5-net-scp-expect               ports/net/p5-Net-SCP-Expect
 p5-net-sdp                      ports/net/p5-Net-SDP
 p5-net-senderbase               ports/mail/p5-Net-SenderBase
 p5-net-server                   ports/net/p5-Net-Server
+p5-net-server-coro              ports/net/p5-Net-Server-Coro
 p5-net-server-mail              ports/mail/p5-Net-Server-Mail
 p5-net-server-mail-esmtp-auth   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
 p5-net-services                 ports/net/p5-Net-Services
@@ -16261,6 +16266,8 @@ p5-pipeline                     ports/devel/p5-Pipeline
 p5-plack                        ports/www/p5-Plack
 p5-plack-request                ports/www/p5-Plack-Request
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
+p5-plack-server-reversehttp     ports/www/p5-Plack-Server-ReverseHTTP
+p5-plack-server-serversimple    ports/www/p5-Plack-Server-ServerSimple
 p5-plagger                      ports/textproc/p5-Plagger
 p5-plp                          ports/www/p5-PLP
 p5-plrpc                        ports/net/p5-PlRPC
@@ -19239,6 +19246,7 @@ py-bittorrent-core              ports/net-p2p/py-bittorrent-core
 py-bitvector                    ports/math/py-bitvector
 py-boto                         ports/devel/py-boto
 py-breve                        ports/devel/py-Breve
+py-bsdconv                      ports/converters/py-bsdconv
 py-bsddb                        ports/databases/py-bsddb
 py-bsddb3                       ports/databases/py-bsddb3
 py-bulksms                      ports/comms/py-bulksms
@@ -22617,7 +22625,7 @@ tmpreaper                       ports/sysutils/tmpreaper
 tmpwatch                        ports/sysutils/tmpwatch
 tmsnc                           ports/net-im/tmsnc
 tmu                             ports/x11-fonts/tmu
-tmux                            ports/misc/tmux
+tmux                            ports/sysutils/tmux
 tmw                             ports/games/tmw
 tn-aspell                       ports/textproc/tn-aspell
 tn5250                          ports/net/tn5250
