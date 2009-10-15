@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	main
-PORTVERSION=	2.9.2
+PORTVERSION=	3.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/codeforpeople
 
