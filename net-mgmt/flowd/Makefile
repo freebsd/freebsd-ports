@@ -22,13 +22,15 @@ MAN8=		flowd.8 flowd-reader.8
 MAN5=		flowd.conf.5
 PORTDOCS=	README INSTALL
 FLOWD_USER?=	_flowd
+SCRIPTS_ENV+=	FLOWD_USER="${FLOWD_USER}"
+.if defined(FLOWD_UID)
+SCRIPTS_ENV+=	FLOWD_UID="${FLOWD_UID}"
+.endif
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
 PLIST_SUB+=	WITH_PERL=""
-#MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-#MAN3=		Flowd.3
-BROKEN=		Incomplete pkg-plist
+MAN3=		Flowd.3
 .else
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
@@ -36,7 +38,7 @@ PLIST_SUB+=	WITH_PERL="@comment "
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
 PLIST_SUB+=	WITH_PYTHON=""
-BROKEN=		Incomplete pkg-plist
+INSTALLS_EGGINFO=	yes
 .else
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
@@ -67,9 +69,10 @@ post-install:
 
 .if defined(WITH_PERL)
 	cd ${WRKSRC}/Flowd-perl && \
-	${PERL} Makefile.PL  && \
+	${PERL} Makefile.PL INSTALLSITEMAN3DIR=${MAN3PREFIX}/man/man3 && \
 	${GMAKE} && \
-	${GMAKE} install
+	${GMAKE} install;
+	-@${RM} -f ${SITE_PERL}/${PERL_ARCH}/perllocal.pod
 .endif
 
 .if defined(WITH_PYTHON)
@@ -78,6 +81,6 @@ post-install:
 	${PYTHON_CMD} setup.py install
 .endif
 
-	FLOWD_USER=${FLOWD_USER} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
