@@ -5,13 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vavoom
+PORTNAME=	vavoom-extras
 PORTVERSION=	1.30
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/vmodels-doom/1.4.2:sf \
+MASTER_SITES=	SF/vavoom/vmodels-doom/1.4.3:vmd \
+		SF/vavoom/vmodels-heretic/1.4.3:vmhr \
+		SF/vavoom/vmodels-hexen/1.4.3:vmhx \
+		SF/vavoom/vmodels-strife/1.4.3:vms \
+		SF/vavoom/vmusic/1.0:vmu \
+		SF/vavoom/vtextures/1.0:vt10 \
+		SF/vavoom/vtextures/1.1:vt11 \
 		http://doomtextures.freelanzer.com/:dt
-PKGNAMESUFFIX=	-extras
-DISTFILES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port (extras)
@@ -25,8 +29,8 @@ NO_PACKAGE=	package could be up to 661MB; set FORCE_PACKAGE if you really want i
 
 OPTIONS=	MODELS "Install 3D models (17MB)" on \
 		SOUNDTRACKS "Install enhaced soundtracks (482MB)" on \
-		TEXTURES "Install high resolution textures (157MB)" off \
-		DHTP "Prefer Doom Hires Texture Pack (87MB)" on
+		TEXTURES "Install high resolution textures (157MB)" on \
+		DHTP "Prefer Doom Hires Texture Pack (87MB)" off
 
 .include <bsd.port.pre.mk>
 
@@ -35,9 +39,10 @@ IGNORE=		needs at least one option selected
 .endif
 
 .if defined(WITH_MODELS)
-. for f in doom heretic hexen strife
-DISTFILES+=	vmodels-${f}-1.4.3${EXTRACT_SUFX}:sf
-. endfor
+DISTFILES+=	vmodels-doom-1.4.3.zip:vmd
+DISTFILES+=	vmodels-heretic-1.4.3.zip:vmhr
+DISTFILES+=	vmodels-hexen-1.4.3.zip:vmhx
+DISTFILES+=	vmodels-strife-1.4.3.zip:vms
 PLIST_SUB+=	MODELS=""
 .else
 PLIST_SUB+=	MODELS="@comment "
@@ -52,7 +57,7 @@ PLIST_SUB+=	DHTP="@comment "
 
 .if defined(WITH_TEXTURES)
 . for f in heretic hexen strife
-DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:sf
+DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:vt10
 . endfor
 PLIST_SUB+=	TEXTURES=""
 .else
@@ -61,10 +66,10 @@ PLIST_SUB+=	TEXTURES="@comment "
 
 .if defined(WITH_TEXTURES) && !defined(WITH_DHTP)
 . for f in plutonia tnt
-DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:sf
+DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:vt10
 . endfor
 . for f in doom doom1 doom2
-DISTFILES+=	vtextures-${f}-1.1${EXTRACT_SUFX}:sf
+DISTFILES+=	vtextures-${f}-1.1${EXTRACT_SUFX}:vt11
 . endfor
 PLIST_SUB+=	NODHTP=""
 .else
@@ -73,7 +78,7 @@ PLIST_SUB+=	NODHTP="@comment "
 
 .if defined(WITH_SOUNDTRACKS)
 . for f in doom1 doom2 tnt plutonia heretic hexen
-DISTFILES+=	vmusic-${f}-1.0${EXTRACT_SUFX}:sf
+DISTFILES+=	vmusic-${f}-1.0${EXTRACT_SUFX}:vmu
 . endfor
 PLIST_SUB+=	SOUNDTRACKS=""
 .else
