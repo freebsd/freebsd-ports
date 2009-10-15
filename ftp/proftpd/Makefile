@@ -70,8 +70,7 @@ OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		IFSESSION "Include mod_ifsession" on \
 		IPV6 "Use IPv6" on \
 		LDAP "Use LDAP" off \
-		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off\
-		MYSQL "MySQL auth (Can be combined with PGSQL)" off \
+		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off \
 		NLS "Use nls (builds mod_lang)" on \
 		OPENSSL "Include mod_tls" on \
 		PGSQL "Postgres auth (Can be combined with MYSQL)" off \
@@ -85,6 +84,14 @@ OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		WRAP "Include mod_wrap2" on \
 		WRAP_FILE "Include mod_wrap2_file" off \
 		WRAP_SQL "Include mod_wrap2_sql" off
+# Set the MYSQL option based upon the setting from the
+# slave port (ftp/proftpd-mysql).
+.if defined(WITH_MYSQL)
+OPTIONS+=	MYSQL "MySQL auth (Can be combined with PGSQL)" on
+.else
+OPTIONS+=	MYSQL "MySQL auth (Can be combined with PGSQL)" off
+.endif
+
 MODULES?=
 LIBDIRS?=
 INCLUDEDIRS?=
@@ -113,12 +120,18 @@ PLIST_SUB+=	WRAP="@comment "
 .endif
 
 .if defined(WITH_WRAP_FILE)
+.if defined(WITHOUT_WRAP)
+IGNORE=	WRAP_FILE and WRAP_FILE_SQL require WRAP.
+.endif
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_wrap2_file
 .endif
 
 .if defined(WITH_WRAP_SQL)
+.if defined(WITHOUT_WRAP)
+IGNORE=	WRAP_FILE and WRAP_FILE_SQL require WRAP.
+.endif
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_wrap2_sql
@@ -146,9 +159,7 @@ CONFIGURE_ARGS+=	--disable-auth-pam
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-.if !defined(WITH_IPV6)
+.else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
@@ -176,10 +187,16 @@ INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
+# MYSQL, PGSQL and TDS require mod_sql to be built but specifying it
+# more than once causes configure script to complain.
+.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || defined(WITH_TDS)
+MODULES:=${MODULES}:mod_sql
+.endif
+
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 MODULES:=${MODULES}:mod_sql_mysql
-INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include:${LOCALBASE}/include/mysql
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include:${LOCALBASE}/include/mysql:${WRKSRC}/contrib
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib/mysql
 .endif
 
@@ -191,7 +208,6 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
 .if ${MODULES:M*mod_sql_*}
-MODULES:=mod_sql${MODULES}
 PLIST_SUB+=	SQL=""
 .else
 PLIST_SUB+=	SQL="@comment "
@@ -216,16 +232,19 @@ PLIST_SUB+=	CTRLS_ADMIN="@comment "
 
 .if defined(WITH_QUOTA)
 MODULES:=${MODULES}:mod_quotatab:mod_quotatab_file
-PLIST_SUB+=	QUOTA=""
+QUOTA_SUB=	QUOTA=""
 .else
-PLIST_SUB+=	QUOTA="@comment "
+QUOTA_SUB=	QUOTA="@comment "
 .if defined(WITH_LDAP)
 MODULES:=${MODULES}:mod_quotatab_ldap
 .endif
 .if defined(WITH_PGSQL) || defined(WITH_MYSQL)
-MODULES:=${MODULES}:mod_quotatab_sql
+MODULES:=${MODULES}:mod_quotatab_sql:mod_quotatab
+QUOTA_SUB=	QUOTA=""
 .endif
 .endif
+
+PLIST_SUB+=	${QUOTA_SUB}
 
 .if defined(WITH_CLAMAV)
 DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
@@ -250,13 +269,12 @@ MODULES:=${MODULES}:mod_digest
 DISTFILES+=	mod_sql_tds-4.11.tar.bz2:sql_tds
 EXTRACT_ONLY+=	mod_sql_tds-4.11.tar.bz2
 MODULES:=${MODULES}:mod_sql_tds
-MODULES:=mod_sql${MODULES}
 PLIST_SUB+=	TDS=""
-.else
-PLIST_SUB+=	TDS="@comment "
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+.else
+PLIST_SUB+=	TDS="@comment "
 .endif
 
 # mod_ifsession should be the last item in the modules list
