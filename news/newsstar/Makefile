@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newsstar
-PORTVERSION=	1.3.2
+PORTVERSION=	1.5.3
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -14,11 +14,15 @@ MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
+USE_ICONV=	yes
+USE_AUTOTOOLS=	automake:110 autoconf:262 aclocal:110
 
-CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${PREFIX}/man \
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-conf-dir=${PREFIX}/etc/newsstar \
 		--with-rc-dir=/var/spool/newsstar/lib \
 		--with-incoming-dir=/var/spool/newsstar/incoming
@@ -53,7 +57,8 @@ MAN1=		newsstar.1
 DOCS=		AUTHORS INSTALL NEWS README TODO docs/QuickStart docs/manual.txt \
 		docs/index.html docs/ar01s02.html docs/ar01s03.html docs/ar01s04.html \
 		docs/ar01s05.html docs/ar01s06.html docs/ar01s07.html docs/ar01s08.html \
-		docs/ar01s09.html docs/ar01s10.html docs/ar01s11.html docs/ar01s12.html
+		docs/ar01s09.html docs/ar01s10.html docs/ar01s11.html docs/ar01s12.html \
+		docs/news.html
 
 EX_CONFIGS=	cf.server.sample curses.cf.sample filter.pl.sample main.cf.sample \
 		master.ignore.sample master.score.sample newsrc.sample
@@ -70,4 +75,7 @@ post-install:
 .endfor
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/manual.xml
+	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/news.xml
 .include <bsd.port.post.mk>
