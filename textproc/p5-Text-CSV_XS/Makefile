@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Text-CSV_XS
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Comma-separated values manipulation routines
