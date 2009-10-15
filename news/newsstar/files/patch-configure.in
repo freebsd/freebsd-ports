@@ -1,0 +1,11 @@
+--- configure.in.orig	2008-09-09 01:31:21.000000000 +0200
++++ configure.in	2009-07-15 08:50:31.000000000 +0200
+@@ -208,7 +208,7 @@
+ AC_PATH_PROG([SENDMAIL], [sendmail], [/usr/sbin/sendmail],
+     [$PATH:/usr/sbin:/sbin:/usr/local/sbin:/usr/lib])
+ 
+-if test "x$NEWS_PATH" == "x"
++if test "x$NEWS_PATH" = "x"
+ then
+     TH_CHECK_INN
+ fi

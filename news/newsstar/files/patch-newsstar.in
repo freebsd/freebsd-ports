@@ -1,6 +1,6 @@
---- newsstar.in.orig	Tue Aug 17 22:33:53 2004
-+++ newsstar.in	Thu Aug 19 19:18:38 2004
-@@ -30,7 +30,6 @@
+--- newsstar.in.orig	2008-09-09 01:30:52.000000000 +0200
++++ newsstar.in	2009-07-12 17:53:37.000000000 +0200
+@@ -29,7 +29,6 @@
  $NEWS_PATH = '@NEWS_PATH@';
  $prefix = "@prefix@";
  $exec_prefix = "@exec_prefix@";
@@ -8,11 +8,11 @@
  $NEWSSTAR_BIN = "@NEWSSTAR_BIN@";
  $MAINCF = $CONF_DIR . "/main.cf";
  $INCOMING_DIR = "@INCOMING_DIR@";
-@@ -261,7 +260,17 @@
+@@ -266,7 +265,17 @@
+ 		}
  	}
-     }
-     $OUTGOING_NEWSSTAR_DIR = $OUTGOING_DIR . "/newsstar";
--    $ACTIVE_FILE = "/var/lib/news/active" if ($ACTIVE_FILE eq "");
+ 	$OUTGOING_NEWSSTAR_DIR = $OUTGOING_DIR . "/newsstar";
+-	$ACTIVE_FILE = "/var/lib/news/active" if ($ACTIVE_FILE eq "");
 +    if ($ACTIVE_FILE eq "")
 +    {
 +	if ($USE_SNEWS)
@@ -24,54 +24,54 @@
 +	    $ACTIVE_FILE = "${prefix}/news/db/active";
 +	}
 +    }
-     if ($ARTICLES_DIR eq "")
-     {
- 	if ($USE_SNEWS)
-@@ -292,21 +301,9 @@
+ 	if ($ARTICLES_DIR eq "")
+ 	{
+ 		if ($USE_SNEWS)
+@@ -297,21 +306,9 @@
  {
-     if ($SNSTORE eq "")
-     {
--	if (-x "/usr/sbin/snstore")
--	{
--	    $SNSTORE = "/usr/sbin/snstore"
--	}
--	elsif (-x "/usr/local/sbin/snstore")
+ 	if ($SNSTORE eq "")
+ 	{
+-		if (-x "/usr/sbin/snstore")
+-		{
+-			$SNSTORE = "/usr/sbin/snstore"
+-		}
+-		elsif (-x "/usr/local/sbin/snstore")
+-		{
+-			$SNSTORE = "/usr/local/sbin/snstore"
+-		}
+-		elsif (-x "/usr/bin/snstore")
+-		{
+-			$SNSTORE = "/usr/bin/snstore"
+-		}
+-		elsif (-x "/usr/local/bin/snstore")
 +	if (-x "${prefix}/sbin/snstore")
- 	{
--	    $SNSTORE = "/usr/local/sbin/snstore"
--	}
--	elsif (-x "/usr/bin/snstore")
--	{
--	    $SNSTORE = "/usr/bin/snstore"
--	}
--	elsif (-x "/usr/local/bin/snstore")
--	{
--	    $SNSTORE = "/usr/local/bin/snstore"
+ 		{
+-			$SNSTORE = "/usr/local/bin/snstore"
 +	    $SNSTORE = "${prefix}/sbin/snstore"
- 	}
- 	else
- 	{
-@@ -323,21 +320,9 @@
+ 		}
+ 		else
+ 		{
+@@ -328,21 +325,9 @@
  {
-     if ($OVERVIEW eq "")
-     {
--	if (-x "/usr/sbin/overview")
--	{
--	    $OVERVIEW = "/usr/sbin/overview"
--	}
--	elsif (-x "/usr/local/sbin/overview")
--	{
--	    $OVERVIEW = "/usr/local/sbin/overview"
--	}
--	elsif (-x "/usr/bin/overview")
--	{
--	    $OVERVIEW = "/usr/bin/overview"
--	}
--	elsif (-x "/usr/local/bin/overview")
+ 	if ($OVERVIEW eq "")
+ 	{
+-		if (-x "/usr/sbin/overview")
+-		{
+-			$OVERVIEW = "/usr/sbin/overview"
+-		}
+-		elsif (-x "/usr/local/sbin/overview")
+-		{
+-			$OVERVIEW = "/usr/local/sbin/overview"
+-		}
+-		elsif (-x "/usr/bin/overview")
+-		{
+-			$OVERVIEW = "/usr/bin/overview"
+-		}
+-		elsif (-x "/usr/local/bin/overview")
 +	if (-x "${prefix}/sbin/overview")
- 	{
--	    $OVERVIEW = "/usr/local/bin/overview"
+ 		{
+-			$OVERVIEW = "/usr/local/bin/overview"
 +	    $OVERVIEW = "${prefix}/sbin/overview"
- 	}
- 	else
- 	{
+ 		}
+ 		else
+ 		{

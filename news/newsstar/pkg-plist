@@ -7,6 +7,7 @@ libexec/newsstar.bin
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/QuickStart
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/news.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ar01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/ar01s03.html
