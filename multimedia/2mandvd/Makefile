@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	2ManDVD
-PORTVERSION=	0.9.7
+PORTVERSION=	1.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
@@ -22,10 +22,12 @@ RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 		ffmpegthumbnailer:${PORTSDIR}/multimedia/ffmpegthumbnailer \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		notify-send:${PORTSDIR}/devel/libnotify \
+		tcprobe:${PORTSDIR}/multimedia/transcode \
 		xine:${PORTSDIR}/multimedia/xine
 
 USE_QT_VER=	4
 USE_CDRTOOLS=	true
+USE_PERL5_RUN=	yes
 QT_COMPONENTS=	qmake_build gui corelib rcc_build moc_build uic_build
 
 MAKE_ENV+=	QTDIR=${QT_PREFIX}
@@ -43,6 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|bash|sh|g' ${WRKSRC}/mainfrm.cpp \
 		${WRKSRC}/rendering.cpp ${WRKSRC}/project.cpp \
 		${WRKSRC}/media_browser.cpp
+	@${REINPLACE_CMD} -e 's|cp -rf|cp -Rf|g' ${WRKSRC}/project.cpp
 	@${RM} -f ${WRKSRC}/ui_*.h ${WRKSRC}/moc_*.cpp ${WRKSRC}/qrc_*.cpp \
 		${WRKSRC}/*/*/*/*~
 
