@@ -42,7 +42,7 @@ MAN8=		cpu_microcode_tool.8
 IGNORE=		not supported
 .endif
 
-.if ${OSVERSION} > 720000
+.if ${OSVERSION} >= 701102
 IGNORE=		already included into base system
 .endif
 
