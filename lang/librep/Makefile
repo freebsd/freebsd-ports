@@ -6,7 +6,7 @@
 #    $MCom: ports/lang/librep/Makefile,v 1.2 2006/09/10 00:51:12 mezz Exp $
 
 PORTNAME=	librep
-PORTVERSION=	0.90.0
+PORTVERSION=	0.90.2
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
