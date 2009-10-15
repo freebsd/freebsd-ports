@@ -5,9 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://os.ghalkes.nl/dist/
+MASTER_SITES=	http://os.ghalkes.nl/dist/ \
+		http://www.logvinov.ru/files/dist/ \
+		LOCAL/avl
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	avl@FreeBSD.org
