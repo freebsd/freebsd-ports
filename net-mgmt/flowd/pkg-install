@@ -20,9 +20,15 @@ create_user() {
 		shell=/nonexistent
 	fi
 	uhome="/var/empty"
+	if [ -z "${FLOWD_UID}" ]; then
+		uid=`${PW} usernext`;
+		uid=${uid%%:*}
+	else
+		uid=${FLOWD_UID}
+	fi
 
 	if ! ${PW} show user ${USER} -q >/dev/null; then
-		if ! ${PW} add user ${USER} -g ${GROUP} -d "${uhome}" \
+		if ! ${PW} add user ${USER} -u ${uid} -g ${GROUP} -d "${uhome}" \
 				-c "flowd privilege separation user" -s "${shell}" -p "*" \
 				; then
 			e=$?
@@ -31,7 +37,7 @@ create_user() {
 		fi
 		echo "*** Added user \`${USER}' (id ${uid})"
 	else
-		echo "*** You already have user \`${USER}'."
+		echo "*** You already have user \`${USER} (id `id -u ${USER}`)'."
 	fi
 }
 
