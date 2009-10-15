@@ -15,7 +15,7 @@ COMMENT=	An Emacs Lisp like runtime library
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
     		gmp.8:${PORTSDIR}/math/libgmp4 \
-		ffi.5:${PORTSDIR}/devel/libff
+		ffi.5:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
