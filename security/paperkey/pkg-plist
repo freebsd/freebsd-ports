@@ -1,4 +1,0 @@
-bin/paperkey
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

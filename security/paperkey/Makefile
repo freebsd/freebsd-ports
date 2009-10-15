@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paperkey
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.jabberwocky.com/software/paperkey/
 
@@ -16,12 +16,14 @@ COMMENT=	Extract just the secret information out of OpenPGP secret keys
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all check
 
+PLIST_FILES=	bin/paperkey
 MAN1=		paperkey.1
+PORTDOCS=	NEWS README
 
 .if !defined(NOPORTDOCS)
 post-install:
 		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/README ${DOCSDIR}
+		${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
