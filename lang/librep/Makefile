@@ -7,15 +7,15 @@
 
 PORTNAME=	librep
 PORTVERSION=	0.90.0
-PORTREVISION=	1
 CATEGORIES=	lang elisp gnome
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	An Emacs Lisp like runtime library
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
-    		gmp.8:${PORTSDIR}/math/libgmp4
+    		gmp.8:${PORTSDIR}/math/libgmp4 \
+		ffi.5:${PORTSDIR}/devel/libff
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}

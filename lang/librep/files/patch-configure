@@ -1,6 +1,6 @@
---- configure.orig	2009-03-05 08:56:57.000000000 +0200
-+++ configure	2009-03-28 22:35:34.000000000 +0200
-@@ -8030,6 +8030,7 @@
+--- configure.orig	2009-08-25 19:33:59.000000000 +0300
++++ configure	2009-10-15 17:47:07.000000000 +0300
+@@ -7969,6 +7969,7 @@
        hardcode_libdir_flag_spec='-R$libdir'
        hardcode_direct=yes
        hardcode_shlibpath_var=no
@@ -8,12 +8,12 @@
        ;;
  
      hpux9*)
-@@ -13558,7 +13559,7 @@
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_gdbm_gdbm_open" >&5
+@@ -11675,7 +11676,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_gdbm_gdbm_open" >&5
  $as_echo "$ac_cv_lib_gdbm_gdbm_open" >&6; }
- if test "x$ac_cv_lib_gdbm_gdbm_open" = x""yes; then
+ if test "x$ac_cv_lib_gdbm_gdbm_open" = x""yes; then :
 -  GDBM_LIBS="-lgdbm"
 +  GDBM_LIBS="$LIBS -lgdbm"
  else
-   { { $as_echo "$as_me:$LINENO: error: Cannot find GDBM library" >&5
- $as_echo "$as_me: error: Cannot find GDBM library" >&2;}
+   as_fn_error "Cannot find GDBM library" "$LINENO" 5
+ fi
