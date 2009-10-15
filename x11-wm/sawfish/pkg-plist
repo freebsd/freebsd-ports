@@ -24,7 +24,9 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
+share/applications/sawfish.desktop
 share/pixmaps/sawfish-logo.png
+share/xsessions/sawfish.desktop
 %%DATADIR%%/%%VERSION%%/lisp/anim-outline.jl
 %%DATADIR%%/%%VERSION%%/lisp/anim-outline.jlc
 %%DATADIR%%/%%VERSION%%/lisp/audio-events.jl
@@ -91,8 +93,6 @@ share/pixmaps/sawfish-logo.png
 %%DATADIR%%/%%VERSION%%/lisp/rects.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish-defaults.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish-defaults.jlc
-%%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/color-preview.jl
-%%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/color-preview.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/stock.jl
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/stock.jlc
 %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk/widget-dialog.jl

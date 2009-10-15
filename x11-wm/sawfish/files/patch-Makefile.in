@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.in.orig
-+++ Makefile.in
+--- Makefile.in.orig	2009-09-20 12:42:02.000000000 +0300
++++ Makefile.in	2009-10-15 19:38:06.000000000 +0300
 @@ -46,7 +46,6 @@
  	for f in ./DOC*; do \
  	  $(INSTALL_DATA) $$f $(DESTDIR)$(sawfishexecdir); \
@@ -11,21 +8,25 @@ $FreeBSD$
  	$(INSTALL_DATA) $(srcdir)/sawfish.desktop \
  		$(DESTDIR)$(datadir)/applications/
  	$(INSTALL_DATA) $(srcdir)/sawfish-wm.desktop \
-@@ -57,7 +56,7 @@
+@@ -57,18 +56,16 @@
  	    $(INSTALL_SCRIPT) $(srcdir)/moved $(DESTDIR)$(bindir)/$$f; \
  	  fi \
  	done
 -	$(INSTALL_DATA) $(top_srcdir)/sawfish.pc $(DESTDIR)$(libdir)/pkgconfig/
 +	$(INSTALL_DATA) $(top_srcdir)/sawfish.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/
  	$(INSTALL_DATA) $(top_srcdir)/sawfish-session.desktop $(DESTDIR)$(datadir)/xsessions/sawfish.desktop
+-	$(INSTALL_DATA) $(top_srcdir)/sawfish-ksm.desktop $(DESTDIR)$(datadir)/apps/ksmserver/windowmanagers/sawfish.desktop
  
  installdirs : mkinstalldirs
-@@ -65,7 +64,7 @@
+ 	$(SHELL) $< $(DESTDIR)$(sawfishdir)/$(version) \
  	  $(DESTDIR)$(bindir) $(DESTDIR)$(sawfishexecdir) \
  	  $(DESTDIR)$(GNOMEDIR)/share/gnome/wm-properties \
  	  $(DESTDIR)$(datadir)/applications/ \
 -	  $(DESTDIR)$(libdir)/pkgconfig/ \
+-	  $(DESTDIR)$(datadir)/xsessions/ \
+-	  $(DESTDIR)$(datadir)/apps/ksmserver/windowmanagers/
 +	  $(DESTDIR)$(prefix)/libdata/pkgconfig/ \
- 	  $(DESTDIR)$(datadir)/xsessions/
++	  $(DESTDIR)$(datadir)/xsessions/
  
  uninstall :
+ 	for dir in $(SUBDIRS); do \
