@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fetion
-PORTVERSION=	0.98.5
-PORTREVISION=	1
+PORTVERSION=	0.98.5.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/
+MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/ \
+		LOCAL/avl
 PKGNAMEPREFIX=	pidgin-
 
 MAINTAINER=	avl@FreeBSD.org
