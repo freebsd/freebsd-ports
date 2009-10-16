@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,6 @@ MAINTAINER=	cm@therek.net
 COMMENT=	Perl Application Development and Refactoring Environment
 
 BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
-		p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny \
 		${SITE_PERL}/Class/Adapter.pm:${PORTSDIR}/devel/p5-Class-Adapter \
 		${SITE_PERL}/Class/Unload.pm:${PORTSDIR}/devel/p5-Class-Unload \
 		${SITE_PERL}/Devel/Dumpvar.pm:${PORTSDIR}/devel/p5-Devel-Dumpvar \
@@ -27,7 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path \
 		p5-File-Remove>=1.42:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/ShareDir.pm:${PORTSDIR}/devel/p5-File-ShareDir \
-		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
+		p5-File-Which>=1.08:${PORTSDIR}/sysutils/p5-File-Which \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
@@ -60,7 +59,7 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		p5-pip>=0.13:${PORTSDIR}/devel/p5-pip \
-		p5-PPIx-EditorTools>=0.08:${PORTSDIR}/textproc/p5-PPIx-EditorTools \
+		p5-PPIx-EditorTools>=0.09:${PORTSDIR}/textproc/p5-PPIx-EditorTools \
 		p5-Wx>=0.91:${PORTSDIR}/x11-toolkits/p5-Wx
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -124,6 +123,7 @@ MAN3=		Padre.3 \
 		Padre::DocBrowser::document.3 \
 		Padre::Document.3 \
 		Padre::Document::Perl::Beginner.3 \
+		Padre::File.3 \
 		Padre::HelpProvider.3 \
 		Padre::HelpProvider::Perl.3 \
 		Padre::Locale.3 \
@@ -141,8 +141,8 @@ MAN3=		Padre.3 \
 		Padre::Pod2HTML.3 \
 		Padre::QuickFixProvider.3 \
 		Padre::QuickFixProvider::Perl.3 \
-		Padre::QuickFixProvider::Perl::StrictWarnings.3 \
 		Padre::QuickFixProvider::Perl::IncludeModule.3 \
+		Padre::QuickFixProvider::Perl::StrictWarnings.3 \
 		Padre::Search.3 \
 		Padre::Service.3 \
 		Padre::Task.3 \
@@ -162,25 +162,28 @@ MAN3=		Padre.3 \
 		Padre::Transform.3 \
 		Padre::Transform::Perl::UpdateCopyright.3 \
 		Padre::Util.3 \
+		Padre::Util::Win32.3 \
 		Padre::Wx.3 \
 		Padre::Wx::Ack.3 \
 		Padre::Wx::App.3 \
 		Padre::Wx::CPAN.3 \
 		Padre::Wx::Dialog.3 \
 		Padre::Wx::Dialog::Find.3 \
+		Padre::Wx::Dialog::HelpSearch.3 \
 		Padre::Wx::Dialog::OpenResource.3 \
+		Padre::Wx::Dialog::OpenURL.3 \
 		Padre::Wx::Dialog::PluginManager.3 \
 		Padre::Wx::Dialog::Preferences.3 \
 		Padre::Wx::Dialog::QuickMenuAccess.3 \
 		Padre::Wx::Dialog::Replace.3 \
 		Padre::Wx::Dialog::SessionManager.3 \
 		Padre::Wx::Dialog::SessionSave.3 \
-		Padre::Wx::Dialog::HelpSearch.3 \
 		Padre::Wx::Directory::OpenInFileBrowserAction.3 \
 		Padre::Wx::DocBrowser.3 \
 		Padre::Wx::HtmlWindow.3 \
 		Padre::Wx::Main.3 \
 		Padre::Wx::PodFrame.3 \
+		Padre::Wx::Progress.3 \
 		Padre::Wx::Role::MainChild.3 \
 		Padre::Wx::StatusBar.3 \
 		Wx::Perl::Dialog.3 \
