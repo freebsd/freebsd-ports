@@ -21,14 +21,22 @@ include/libmemcached/memcached_string.h
 include/libmemcached/memcached_types.h
 include/libmemcached/memcached_watchpoint.h
 include/libmemcached/memcached_util.h
+include/libmemcached/protocol_handler.h
+include/libmemcached/protocol/cache.h
+include/libmemcached/protocol/callback.h
 include/libmemcached/visibility.h
 lib/libmemcached.a
 lib/libmemcached.la
 lib/libmemcached.so
 lib/libmemcached.so.3
+lib/libmemcachedprotocol.a
+lib/libmemcachedprotocol.la
+lib/libmemcachedprotocol.so
+lib/libmemcachedprotocol.so.0
 lib/libmemcachedutil.a
 lib/libmemcachedutil.la
 lib/libmemcachedutil.so
 lib/libmemcachedutil.so.0
 libdata/pkgconfig/libmemcached.pc
+@dirrm include/libmemcached/protocol
 @dirrm include/libmemcached
