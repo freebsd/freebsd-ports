@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ufraw
-PORTVERSION=	0.15
-PORTREVISION=	3
+PORTVERSION=	0.16
+PORTREVISION=	0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,21 +20,20 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
-GCONF_SCHEMAS=	${PORTNAME}.schemas
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 glib20 gnomehack intltool intlhack libartlgpl2 pkgconfig
 
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L"${LOCALBASE}/lib" ${PTHREAD_LIBS}
+CPPFLAGS=	-I"${LOCALBASE}/include"
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ARGS=	--enable-mime
 PC_FALSE+=	cinepaint
 
 OPTIONS=	EXIV2	"EXIF support via exiv2 library"	on	\
 		GIMP	"Install GIMP UFRaw plugin"		on	\
-		LENSFUN	"Build with LenFun library support"	on
+		LENSFUN	"Build with LenFun library support"	on	\
+		FITS	"Enable FITS output support"		off
 
 .include <bsd.port.pre.mk>
 
@@ -54,14 +53,23 @@ PLIST_SUB+=	GIMP="@comment "
 LIB_DEPENDS+=	lensfun.0:${PORTSDIR}/graphics/lensfun
 CONFIGURE_ARGS+=	--with-lensfun
 .endif
+.if defined(WITH_FITS) || exists(${LOCALBASE}/lib/libcfitsio.so)
+LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
+.endif
 
 MAN1=	ufraw.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '18s|^$$|#include <sys/types.h>|' ${WRKSRC}/dcraw.h
-	@${REINPLACE_CMD} -e '/@schemasdir/s|datadir|sysconfdir|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/@schemasdir/s|datadir|sysconfdir|' \
+	    ${WRKSRC}/Makefile.in
 .for i in ${PC_FALSE}
-	@${REINPLACE_CMD} -e '/PKG_CONFIG.*$i/s|$$PKG_CONFIG|${FALSE}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/PKG_CONFIG.*$i/s|$$PKG_CONFIG|${FALSE}|' \
+	    ${WRKSRC}/configure
 .endfor
+
+pre-build:
+	${INSTALL_SCRIPT} ${LOCALBASE}/share/glib-2.0/gettext/mkinstalldirs \
+	    ${WRKSRC}/
 
 .include <bsd.port.post.mk>
