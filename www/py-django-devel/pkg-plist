@@ -216,6 +216,10 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/djangojs.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr_Latn/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr_Latn/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr_Latn/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr_Latn/LC_MESSAGES/djangojs.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES/djangojs.mo
@@ -1055,7 +1059,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/templates/gis/admin/openlayers.js
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/templates/gis/admin/osm.html
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/templates/gis/admin/osm.js
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/templates/gis/google/google-base.js
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/templates/gis/google/google-map.html
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/templates/gis/google/google-map.js
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/templates/gis/google/google-multi.js
@@ -2491,6 +2494,8 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ta
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr_Latn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr_Latn
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sl/LC_MESSAGES
