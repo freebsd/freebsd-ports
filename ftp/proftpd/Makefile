@@ -230,21 +230,20 @@ PLIST_SUB+=	CTRLS_ADMIN=""
 PLIST_SUB+=	CTRLS_ADMIN="@comment "
 .endif
 
+# LDAP, PGSQL and MYSQL options due nothing (in this case)
+# without QUOTA support.
 .if defined(WITH_QUOTA)
 MODULES:=${MODULES}:mod_quotatab:mod_quotatab_file
-QUOTA_SUB=	QUOTA=""
-.else
-QUOTA_SUB=	QUOTA="@comment "
+PLIST_SUB+=	QUOTA=""
 .if defined(WITH_LDAP)
 MODULES:=${MODULES}:mod_quotatab_ldap
 .endif
 .if defined(WITH_PGSQL) || defined(WITH_MYSQL)
-MODULES:=${MODULES}:mod_quotatab_sql:mod_quotatab
-QUOTA_SUB=	QUOTA=""
+MODULES:=${MODULES}:mod_quotatab_sql
 .endif
+.else
+PLIST_SUB+=	QUOTA="@comment "
 .endif
-
-PLIST_SUB+=	${QUOTA_SUB}
 
 .if defined(WITH_CLAMAV)
 DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
