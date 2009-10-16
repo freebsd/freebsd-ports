@@ -7,6 +7,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -31,7 +32,7 @@ post-install:
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in n-marriott.sh n-marriott.conf screen-keys.conf tmux.vim
+.for i in h-boetes.conf n-marriott.sh n-marriott.conf screen-keys.conf tmux.vim
 	${INSTALL_DATA} ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
 .endfor
 .endif

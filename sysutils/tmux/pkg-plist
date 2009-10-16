@@ -3,6 +3,7 @@ bin/tmux
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/h-boetes.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/n-marriott.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/n-marriott.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/screen-keys.conf
