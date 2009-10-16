@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cursor-crystal-theme
 # Date created:			6 Jun 2007
-# Whom:				David Naylor <dragonsa@highveldmail.co.za>
+# Whom:				David Naylor <naylor.b.david@gmail.com>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.notmart.org/files/ \
 		http://pinguin.stttelkom.ac.id/gentoo/distfiles/
 DISTNAME=	Crystalcursors
 
-MAINTAINER=	dragonsa@highveldmail.co.za
+MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	KDE Crystal style X cursor theme
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-liblzma
 # Date created:		09 Dec 2008
-# Whom:			David Naylor <dragonsa@highveldmail.co.za>
+# Whom:			David Naylor <naylor.b.david@gmail.com>
 #
 # $FreeBSD$
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_CHEESESHOP}source/p/pyliblzma/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 
-MAINTAINER=	dragonsa@highveldmail.co.za
+MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Python binding for the LZMA compression library
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
