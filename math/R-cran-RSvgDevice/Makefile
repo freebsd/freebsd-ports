@@ -1,6 +1,6 @@
 # New ports collection makefile for:	RSvgDevice
 # Date created:		14 April 2009
-# Whom:			David Naylor <dragonsa@highveldmail.co.za>
+# Whom:			David Naylor <naylor.b.david@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	dragonsa@highveldmail.co.za
+MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	A R SVG graphics device
 
 R_MOD=	yes
