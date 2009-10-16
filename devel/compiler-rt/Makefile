@@ -16,6 +16,8 @@ COMMENT=	Compiler runtime library with Blocks support
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
+BROKEN=		does not build
+
 CONFIGURE_WRKSRC=	${WRKDIR}/build
 BUILD_WRKSRC=		${WRKDIR}/build
 INSTALL_WRKSRC=		${WRKDIR}/build
