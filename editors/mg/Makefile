@@ -8,7 +8,7 @@
 PORTNAME=	mg
 PORTVERSION=	20090107
 CATEGORIES=	editors
-MASTER_SITES=	http://www.xs4all.nl/~hanb/software/mg/
+MASTER_SITES=	http://www.han.dds.nl/software/mg/
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	A small, fast Emacs-like editor
