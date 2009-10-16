@@ -66,7 +66,7 @@ PLIST_SUB+=	I386_ONLY="@comment "
 .if defined(WITH_SBCL) && exists(${LOCALBASE}/bin/sbcl)
 LISP_CMD=	""
 .else
-BOOT_VERSION=	1.0.17
+BOOT_VERSION=	1.0.31
 
 . if make(makesum)
 BOOT_ARCH_OS_LIST=	amd64-freebsd8 amd64-freebsd7 amd64-freebsd6 \
