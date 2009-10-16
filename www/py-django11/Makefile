@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/ \
-		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
