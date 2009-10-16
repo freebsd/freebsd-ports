@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aqemu
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -54,6 +53,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} os_icons ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} os_templates ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/aqemu_links.html ${DATADIR}
 .if !defined(WITHOUT_NLS)
 	${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}
 .endif
