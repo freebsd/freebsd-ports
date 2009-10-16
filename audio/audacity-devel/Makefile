@@ -5,17 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTVERSION=	1.3.9
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-fullsrc-${PORTVERSION}
+DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS+=	automake-1.10:${PORTSDIR}/devel/automake110
+BUILD_DEPENDS+=	autoconf-2.62:${PORTSDIR}/devel/autoconf262
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 CONFLICTS=	audacity-[0-9]*
@@ -28,6 +28,7 @@ USE_GCC=	4.2+
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_WX=		2.8
+MAKE_JOBS_SAFE=	yes
 WX_COMPS=	wx
 PORTDOCS=	README.txt LICENSE.txt
 
@@ -38,6 +39,7 @@ OPTIONS=	VORBIS		"Use libvorbis for Ogg Vorbis support"	on \
 		MAD		"Use libmad for mp2/3 decoding support"	on \
 		FLAC		"Use libFLAC for FLAC support" on \
 		ID3TAG		"Use libid3tag for mp3 id3 tag support" on \
+		SAMPLERATE	"Use libresample for sample rate conversion" on \
 		SBSMS		"Use libsbsms for pitch and tempo changing" on \
 		SOUNDTOUCH 	"Use libSoundTouch for pitch and tempo changing" on\
 		TWOLAME		"Use libtwolame for MP2 export support" on \
@@ -76,6 +78,10 @@ CONFIGURE_ARGS+=	--with-libflac
 
 .if defined(WITH_ID3TAG)
 CONFIGURE_ARGS+=	--with-libid3tag
+.endif
+
+.if defined(WITH_SAMPLERATE)
+CONFIGURE_ARGS+=	--with-libresample
 .endif
 
 .if defined(WITH_SBSMS)

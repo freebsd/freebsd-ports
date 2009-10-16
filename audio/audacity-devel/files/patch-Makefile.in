@@ -1,6 +1,6 @@
 --- Makefile.in	2008-06-25 09:55:22.000000000 -0300
 +++ Makefile.in.new	2008-06-25 09:58:26.000000000 -0300
-@@ -30,11 +30,12 @@
+@@ -31,11 +31,12 @@
  	$(INSTALL) -m 755 audacity $(DESTDIR)$(BINDIR)/$(AUDACITY_NAME)
  
  	# install docs
