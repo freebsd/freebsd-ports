@@ -2559,6 +2559,7 @@ duff                            ports/sysutils/duff
 duhdraw                         ports/graphics/duhdraw
 duke3d-data                     ports/games/duke3d-data
 dumb                            ports/audio/dumb
+dumb-allegro                    ports/audio/dumb-allegro
 dummyflash                      ports/www/dummyflash
 dump9660                        ports/sysutils/dump9660
 dumpasn1                        ports/converters/dumpasn1
@@ -12728,6 +12729,7 @@ p5-PlRPC                        ports/net/p5-PlRPC
 p5-Plack                        ports/www/p5-Plack
 p5-Plack-Request                ports/www/p5-Plack-Request
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
+p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
 p5-Plack-Server-ReverseHTTP     ports/www/p5-Plack-Server-ReverseHTTP
 p5-Plack-Server-ServerSimple    ports/www/p5-Plack-Server-ServerSimple
 p5-Plagger                      ports/textproc/p5-Plagger
@@ -16266,6 +16268,7 @@ p5-pipeline                     ports/devel/p5-Pipeline
 p5-plack                        ports/www/p5-Plack
 p5-plack-request                ports/www/p5-Plack-Request
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
+p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
 p5-plack-server-reversehttp     ports/www/p5-Plack-Server-ReverseHTTP
 p5-plack-server-serversimple    ports/www/p5-Plack-Server-ServerSimple
 p5-plagger                      ports/textproc/p5-Plagger
@@ -21891,6 +21894,7 @@ sqstat                          ports/www/sqstat
 squall                          ports/net-p2p/squall
 squash                          ports/audio/squash
 squeak                          ports/lang/squeak
+squeezeboxserver                ports/audio/squeezeboxserver
 squeezecenter                   ports/audio/squeezecenter
 squeezecenter-dynamicplaylist   ports/audio/squeezecenter-dynamicplaylist
 squeezecenter-lazysearch        ports/audio/squeezecenter-lazysearch
@@ -22459,6 +22463,7 @@ textproc_crimson                ports/textproc/crimson
 textproc_flip                   ports/textproc/flip
 textproc_muse                   ports/textproc/muse
 texvc                           ports/print/texvc
+texworks                        ports/editors/texworks
 tftp-hpa                        ports/ftp/tftp-hpa
 tftpgrab                        ports/net/tftpgrab
 tgif                            ports/graphics/tgif
