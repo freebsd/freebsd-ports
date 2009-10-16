@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	soundgrab
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	audio perl5
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITE_SUBDIR=	apps/sound/editors
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Interactively select and save sections of an audio file
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
