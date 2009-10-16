@@ -1,6 +1,7 @@
 bin/aqemu
 share/applications/aqemu.desktop
 %%NLS%%%%DATADIR%%/Russian.qm
+%%DATADIR%%/aqemu_links.html
 %%DATADIR%%/os_icons/alt.png
 %%DATADIR%%/os_icons/arch.png
 %%DATADIR%%/os_icons/asp.png
@@ -15,11 +16,13 @@ share/applications/aqemu.desktop
 %%DATADIR%%/os_icons/mac.png
 %%DATADIR%%/os_icons/mandriva.png
 %%DATADIR%%/os_icons/netbsd.png
+%%DATADIR%%/os_icons/novell.png
 %%DATADIR%%/os_icons/openbsd.png
 %%DATADIR%%/os_icons/opensolaris.png
 %%DATADIR%%/os_icons/redhat.png
 %%DATADIR%%/os_icons/slackware.png
 %%DATADIR%%/os_icons/solaris.png
+%%DATADIR%%/os_icons/suse-novell.png
 %%DATADIR%%/os_icons/suse.png
 %%DATADIR%%/os_icons/symphony.png
 %%DATADIR%%/os_icons/ubuntu.png
@@ -29,7 +32,10 @@ share/applications/aqemu.desktop
 %%DATADIR%%/os_templates/Linux_2_4.aqvmt
 %%DATADIR%%/os_templates/Linux_2_6.aqvmt
 %%DATADIR%%/os_templates/Linux_x86_64.aqvmt
+%%DATADIR%%/os_templates/Mac_OS_X_x86.aqvmt
 %%DATADIR%%/os_templates/Windows_2000.aqvmt
+%%DATADIR%%/os_templates/Windows_7.aqvmt
+%%DATADIR%%/os_templates/Windows_7_x64.aqvmt
 %%DATADIR%%/os_templates/Windows_9X.aqvmt
 %%DATADIR%%/os_templates/Windows_Vista.aqvmt
 %%DATADIR%%/os_templates/Windows_Vista_x64.aqvmt
