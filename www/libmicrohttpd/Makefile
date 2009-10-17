@@ -15,6 +15,7 @@ COMMENT=	C library for embedding HTTP server functionality
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 PLIST_FILES=	lib/libmicrohttpd.so.6 \
 		lib/libmicrohttpd.la \
