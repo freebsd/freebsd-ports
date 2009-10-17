@@ -31,15 +31,6 @@ share/locale/tr/LC_MESSAGES/lilypond.mo
 share/locale/uk/LC_MESSAGES/lilypond.mo
 share/locale/vi/LC_MESSAGES/lilypond.mo
 share/locale/zh_TW/LC_MESSAGES/lilypond.mo
-share/omf/lilypond/%%PORTVERSION%%/lilypond-internals.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-learning.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-learning.pdf.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-program.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-program.pdf.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond.pdf.omf
-share/omf/lilypond/%%PORTVERSION%%/music-glossary.html.omf
-share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/dvips/ps
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-Bold.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-BoldItal.otf
@@ -187,6 +178,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/ly/grace-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/graphviz-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/gregorian.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/guile-debugger.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/italiano.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/lilypond-book-preamble.ly
@@ -197,7 +189,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/ly/nederlands.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/norsk.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/paper-defaults-init.ly
-%%DATADIR%%/%%PORTVERSION%%/ly/params-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/performer-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/portugues.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-fretboards-init.ly
@@ -233,6 +224,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/scm/auto-beam.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/autochange.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/backend-library.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/beam-settings.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/c++.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/chord-entry.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/chord-generic-names.scm
@@ -273,12 +265,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/scm/fret-diagrams.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/graphviz.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/harp-pedals.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/kpathsea.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/layout-beam.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/layout-page-dump.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/layout-page-layout.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/layout-slur.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/lily-library.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/lily-sort.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/lily.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/ly-syntax-constructors.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/markup.scm
@@ -303,6 +293,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/scm/song.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/standalone.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/stencil.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/tablature.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/titling.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/to-xml.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/translation-functions.scm
@@ -16847,8 +16838,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 @dirrm lib/lilypond/%%PORTVERSION%%/python
 @dirrm lib/lilypond/%%PORTVERSION%%
 @dirrm lib/lilypond
-@dirrm share/omf/lilypond/%%PORTVERSION%%
-@dirrm share/omf/lilypond
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vim/syntax
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vim/indent
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vim/ftplugin
@@ -16868,3 +16857,4 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 @dirrm %%DATADIR%%/%%PORTVERSION%%/dvips
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
+@dirrmtry info/dir

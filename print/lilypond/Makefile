@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.3
-PORTREVISION=	1
+PORTVERSION=	2.13.5
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
@@ -32,13 +31,14 @@ LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace
 
-OPTIONS=	WEBDOCS	"Build and install documentation" off
+OPTIONS=	WEBDOCS	"Include web documentation" off
 
 MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
 		lilypond.1 lilysong.1 convert-ly.1 abc2ly.1 etf2ly.1 \
 		midi2ly.1 musicxml2ly.1
-INFO=		lilypond lilypond-internals lilypond-program lilypond-learning \
-		music-glossary
+INFO=		lilypond-internals lilypond-learning lilypond-usage \
+		music-glossary lilypond-changes lilypond-essay \
+		lilypond-notation lilypond-general lilypond-contributor
 
 USE_AUTOTOOLS=	autoconf:262
 USE_BISON=	build
