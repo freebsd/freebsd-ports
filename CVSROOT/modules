@@ -10774,6 +10774,7 @@ p5-Class-Inner                  ports/devel/p5-Class-Inner
 p5-Class-InsideOut              ports/devel/p5-Class-InsideOut
 p5-Class-Inspector              ports/devel/p5-Class-Inspector
 p5-Class-Interfaces             ports/devel/p5-Class-Interfaces
+p5-Class-Load                   ports/devel/p5-Class-Load
 p5-Class-Loader                 ports/devel/p5-Class-Loader
 p5-Class-MOP                    ports/devel/p5-Class-MOP
 p5-Class-MakeMethods            ports/devel/p5-Class-MakeMethods
@@ -14337,6 +14338,7 @@ p5-class-insideout              ports/devel/p5-Class-InsideOut
 p5-class-inspector              ports/devel/p5-Class-Inspector
 p5-class-interfaces             ports/devel/p5-Class-Interfaces
 p5-class-isa                    ports/devel/p5-Class-ISA
+p5-class-load                   ports/devel/p5-Class-Load
 p5-class-loader                 ports/devel/p5-Class-Loader
 p5-class-makemethods            ports/devel/p5-Class-MakeMethods
 p5-class-measure                ports/devel/p5-Class-Measure
