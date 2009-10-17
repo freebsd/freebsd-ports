@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	tornado
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.tornadoweb.org/static/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	python
 
 MAINTAINER=	khsing.cn@gmail.com
 COMMENT=	Python Web Server from FriendFeed
