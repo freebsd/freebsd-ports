@@ -4711,6 +4711,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/XmlRpc/Value.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Array.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Base64.php
+%%DATADIR%%/library/Zend/XmlRpc/Value/BigInteger.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Boolean.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Collection.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/DateTime.php
@@ -5180,6 +5181,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/ParameterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Property/DefaultValueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/PropertyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/ClassAndInterfaces.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestClassWithManyProperties.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestSampleSingleClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/AllTests.php
@@ -8310,6 +8312,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Acl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/AllTests/StreamWrapper
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/AllTests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Log-Writer-Firebug
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Db-Profiler-Firebug
@@ -9327,6 +9331,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Config/Writer/temp
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/OpenId/_files
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/AllTests/StreamWrapper
 @exec mkdir -p %D/%%DATADIR%%/library/Zend/Queue/Stomp/IO
 @exec mkdir -p %D/%%DATADIR%%/library/Zend/Queue/Stomp/Frame
 @exec mkdir -p %D/%%DATADIR%%/library/Zend/Queue/Stomp/Client/Connection
