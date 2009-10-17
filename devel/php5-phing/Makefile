@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	phing
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pear.phing.info/get/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Project build system based on Apache Ant
 
-BUILD_DEPENDS=  ${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=	attempts to contact pear.phing.info during install phase
 
@@ -24,17 +23,16 @@ DEFAULT_PHP_VER=5
 WANT_PHP_CLI=	yes
 NO_BUILD=	yes
 
-CHANNEL=        pear.phing.info
-SUB_FILES=      pear-deinstall pear-install
-SUB_LIST+=      CHANNEL=${CHANNEL}
-PKGINSTALL=     ${WRKDIR}/pear-install
-PKGDEINSTALL=   ${WRKDIR}/pear-deinstall
+CHANNEL=	pear.phing.info
+SUB_FILES=	pear-deinstall pear-install
+SUB_LIST+=	CHANNEL=${CHANNEL}
+PKGINSTALL=	${WRKDIR}/pear-install
+PKGDEINSTALL=	${WRKDIR}/pear-deinstall
 
 CATEGORY=phing
 FILES=	etc/log.xsl etc/phpunit2-noframes.xsl etc/phpunit2-frames.xsl \
 	etc/coverage-frames.xsl etc/str.replace.function.xsl etc/VERSION.TXT \
 	bin/pear-phing.bat bin/pear-phing bin/phing.php \
-	CHANGELOG TODO CREDITS README \
 	IntrospectionHelper.php ProjectComponent.php \
 	BuildLogger.php TaskContainer.php BuildEvent.php Task.php \
 	TaskAdapter.php Phing.php RuntimeConfigurable.php BuildListener.php \
@@ -157,11 +155,13 @@ FILES=	etc/log.xsl etc/phpunit2-noframes.xsl etc/phpunit2-frames.xsl \
 	tasks/ext/phpdoc/PhpDocumentorExternalTask.php \
 	tasks/ext/creole/CreoleSQLExecTask.php \
 	tasks/ext/creole/CreoleTask.php tasks/ext/PearPackage2Task.php \
+	tasks/ext/FtpDeployTask.php tasks/ext/ManifestTask.php \
 	tasks/ext/PhpLintTask.php tasks/ext/SmartyTask.php \
 	tasks/ext/JslLintTask.php tasks/ext/MailTask.php \
 	tasks/ext/XmlLintTask.php tasks/ext/TarTask.php \
 	tasks/ext/PearPackageTask.php tasks/ext/UntarTask.php \
 	tasks/ext/CapsuleTask.php tasks/ext/pdo/PDOResultFormatter.php \
+	tasks/ext/PhpCodeSnifferTask.php \
 	tasks/ext/pdo/PDOSQLExecTask.php tasks/ext/pdo/PDOTask.php \
 	tasks/ext/pdo/PDOSQLExecFormatterElement.php \
 	tasks/ext/pdo/PlainPDOResultFormatter.php \
@@ -183,7 +183,7 @@ FILES=	etc/log.xsl etc/phpunit2-noframes.xsl etc/phpunit2-frames.xsl \
 	tasks/system/condition/OsCondition.php \
 	tasks/system/SequentialTask.php \
 	tasks/system/ForeachTask.php tasks/system/TstampTask.php \
-	tasks/system/ExitTask.php \
+	tasks/system/ExitTask.php tasks/system/ChownTask.php\
 	tasks/system/TaskdefTask.php tasks/system/EchoTask.php \
 	tasks/system/ConditionTask.php \
 	tasks/system/CvsPassTask.php tasks/system/PropertyTask.php \
@@ -219,11 +219,10 @@ FILES=	etc/log.xsl etc/phpunit2-noframes.xsl etc/phpunit2-frames.xsl \
 	input/DefaultInputHandler.php input/PropertyFileInputHandler.php \
 	input/YesNoInputRequest.php
 
-DOCS=
-EXAMPLES= src/HelloWorldTest.php src/HelloWorld.php build.xml
-SQLS=
+_DOCSDIR=.
+DOCS=	CHANGELOG CREDITS README
+EXAMPLES=	src/HelloWorldTest.php src/HelloWorld.php build.xml
 SCRIPTFILES=	phing
-TESTS=
 
 post-extract:
 	${MV} ${WRKSRC}/example ${WRKSRC}/examples
