@@ -1,5 +1,11 @@
 bin/xmp
-etc/xmp/xmp.conf
-etc/xmp/modules.conf
+@unexec if cmp -s %D/%%ETCDIR%%/xmp.conf.sample %D/%%ETCDIR%%/xmp.conf; then rm -f %D/%%ETCDIR%%/xmp.conf; fi
+%%ETCDIR%%/xmp.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/xmp.conf ]; then cp -p %D/%F %B/xmp.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/modules.conf.sample %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
+%%ETCDIR%%/modules.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/modules.conf ]; then cp -p %D/%F %B/modules.conf; fi
+%%AUDACIOUS%%lib/audacious/Input/xmp-audacious.so
+%%BMP%%lib/bmp/Input/xmp-bmp.so
 %%XMMS%%lib/xmms/Input/xmp-xmms.so
-@dirrm etc/xmp
+@dirrmtry %%ETCDIR%%
