@@ -1,0 +1,4 @@
+This program produces numerous reports from OpenLDAP 2.1, 2.2, 2.3 and 2.4
+slapd logfiles to allow OpenLDAP administrator to analyze server's performance.
+
+WWW: http://prefetch.net/code/index.html
