@@ -87,6 +87,7 @@ include/podofo/podofo.h
 include/podofo/podofoapi.h
 include/podofo/util/PdfMutex.h
 include/podofo/util/PdfMutexWrapper.h
-lib/libpodofo.a
+lib/libpodofo.so.0
+lib/libpodofo.so
 @dirrm include/podofo/util
 @dirrm include/podofo

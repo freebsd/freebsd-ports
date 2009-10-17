@@ -1,0 +1,24 @@
+--- src/CMakeLists.txt.orig	2008-11-23 12:37:23.000000000 +0300
++++ src/CMakeLists.txt	2009-10-17 14:43:48.000000000 +0400
+@@ -199,8 +199,8 @@
+     ADD_LIBRARY(podofo_static STATIC ${PODOFO_SOURCES})
+     TARGET_LINK_LIBRARIES(podofo_static ${PODOFO_LIB_DEPENDS})
+     SET_TARGET_PROPERTIES(podofo_static PROPERTIES
+-        VERSION "0.6.99"
+-        SOVERSION "0.6.99"
++        VERSION "0"
++        SOVERSION "0"
+         CLEAN_DIRECT_OUTPUT 1
+         OUTPUT_NAME "podofo"
+         )
+@@ -222,8 +222,8 @@
+     # Visual Studio, since it produces invalid warnings about STL
+     # use.
+     SET_TARGET_PROPERTIES(podofo_shared PROPERTIES
+-        VERSION "0.6.99"
+-        SOVERSION "0.6.99"
++        VERSION "0"
++        SOVERSION "0"
+         CLEAN_DIRECT_OUTPUT 1
+         OUTPUT_NAME "podofo"
+         )
