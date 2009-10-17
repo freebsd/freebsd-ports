@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.5
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3017/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3082/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -24,14 +24,9 @@ USE_RC_SUBR=	pcscd
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
-CONFIGURE_ARGS+=--enable-debug \
-		--enable-syslog \
-		--enable-runpid=/var/run/pcscd.pid \
-		--enable-ipcdir=/var/tmp/ \
+CONFIGURE_ARGS+=--enable-ipcdir=/var/tmp/ \
 		--enable-confdir=${PREFIX}/etc/ \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
-		--enable-muscledropdir=${PREFIX}/lib/pcsc/services/ \
-		--enable-threadsafe
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN5=		reader.conf.5
