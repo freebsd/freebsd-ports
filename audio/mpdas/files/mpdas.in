@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+
+# PROVIDE: mpdas 
+# REQUIRE: musicpd
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable mpdas:
+#
+#mpdas_enable="YES"
+
+. %%RC_SUBR%%
+
+name=mpdas
+rcvar=`set_rcvar`
+
+command=%%PREFIX%/bin/mpdas
+
+load_rc_config $name
+
+: ${mpdas_enable="NO"}
+
+command_args="&"
+
+run_rc_command "$1"
