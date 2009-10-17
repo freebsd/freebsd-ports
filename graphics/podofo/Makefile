@@ -7,6 +7,7 @@
 
 PORTNAME=	podofo
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
@@ -21,8 +22,10 @@ OPTIONS=	JPEG "Enable JPEG support" on \
 		TIFF "Enable TIFF support" on \
 		IMPOSE "Build impose tool (needs Lua)" off
 
-#USE_GETTEXT=	yes
 USE_CMAKE=	yes
+USE_LDCONFIG=	yes
+CMAKE_ARGS+=	-DPODOFO_BUILD_SHARED:BOOL=TRUE \
+		-DPODOFO_BUILD_STATIC:BOOL=FALSE
 
 .include <bsd.port.pre.mk>
 
