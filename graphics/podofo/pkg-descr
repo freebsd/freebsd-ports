@@ -1,0 +1,5 @@
+PoDoFo is a library to work with the PDF file format. The name comes
+from the first letter of PDF (Portable Document Format).  A few tools
+to work with PDF files are already included in the PoDoFo package.
+
+WWW:	http://podofo.sourceforge.net

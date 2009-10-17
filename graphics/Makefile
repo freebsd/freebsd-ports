@@ -698,6 +698,7 @@
     SUBDIR += pngquant
     SUBDIR += pngrewrite
     SUBDIR += pngwriter
+    SUBDIR += podofo
     SUBDIR += poppler
     SUBDIR += poppler-data
     SUBDIR += poppler-gtk
