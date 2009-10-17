@@ -284,6 +284,7 @@
     SUBDIR += lambdamoo
     SUBDIR += lanbrowsing
     SUBDIR += latd
+    SUBDIR += ldap-stats
     SUBDIR += ldap2dns
     SUBDIR += ldapbrowser
     SUBDIR += ldapdiff
