@@ -6,7 +6,7 @@
 #   $MCom: ports/devel/libgsf-gnome/Makefile,v 1.12 2008/09/09 00:08:35 kwm Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-gnome
 
