@@ -59,6 +59,9 @@ CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
 .endif
 .if defined(WITH_POSTFIX)
 CONFIGURE_ARGS+=	--enable-postfix
+.else
+LDFLAGS+=	${SENDMAIL_LDFLAGS}
+LIBS+=		${SENDMAIL_LDADD}
 .endif
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
