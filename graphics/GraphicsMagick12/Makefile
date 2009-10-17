@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.2.7
-PORTREVISION=	2
+PORTVERSION=	1.2.9
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.2/
-
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick

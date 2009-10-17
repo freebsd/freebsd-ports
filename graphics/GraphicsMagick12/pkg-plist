@@ -101,6 +101,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2005
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2006
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2007
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2008
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/images/ball.png
