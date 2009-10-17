@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
