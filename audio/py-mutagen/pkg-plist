@@ -1,8 +1,8 @@
+bin/mid3iconv
 bin/mid3v2
+bin/moggsplit
 bin/mutagen-inspect
 bin/mutagen-pony
-bin/moggsplit
-bin/mid3iconv
 %%PYTHON_SITELIBDIR%%/mutagen/__init__.py
 %%PYTHON_SITELIBDIR%%/mutagen/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/__init__.pyo
@@ -24,6 +24,9 @@ bin/mid3iconv
 %%PYTHON_SITELIBDIR%%/mutagen/easyid3.py
 %%PYTHON_SITELIBDIR%%/mutagen/easyid3.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/easyid3.pyo
+%%PYTHON_SITELIBDIR%%/mutagen/easymp4.py
+%%PYTHON_SITELIBDIR%%/mutagen/easymp4.pyc
+%%PYTHON_SITELIBDIR%%/mutagen/easymp4.pyo
 %%PYTHON_SITELIBDIR%%/mutagen/flac.py
 %%PYTHON_SITELIBDIR%%/mutagen/flac.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/flac.pyo
