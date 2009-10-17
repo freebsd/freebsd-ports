@@ -7,7 +7,11 @@ bin/jag
 %%DATADIR%%/data/bonus/score.png
 %%DATADIR%%/data/bonus/timer.png
 %%DATADIR%%/data/bonus/x.png
+%%DATADIR%%/data/lang/jag_ru.qm
+%%DATADIR%%/data/lang/jag_ru.ts
+%%DATADIR%%/data/lang/langlist.dat
 %%DATADIR%%/data/levels/default.lpk
+%%DATADIR%%/data/levels/sunzero.lpk
 %%DATADIR%%/data/schemes/default/bg1.jpg
 %%DATADIR%%/data/schemes/default/bg2.jpg
 %%DATADIR%%/data/schemes/default/bg3.jpg
@@ -62,6 +66,7 @@ bin/jag
 @dirrm %%DATADIR%%/data/schemes
 @dirrm %%DATADIR%%/data/music
 @dirrm %%DATADIR%%/data/levels
+@dirrm %%DATADIR%%/data/lang
 @dirrm %%DATADIR%%/data/bonus
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
