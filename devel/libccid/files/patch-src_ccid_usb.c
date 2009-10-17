@@ -4,7 +4,7 @@
  
  #define BUS_DEVICE_STRSIZE 32
  
-+EXTERNAL struct usb_interface * get_ccid_usb_interface(struct usb_device *dev);
++EXTERNAL struct usb_interface * get_ccid_usb_interface(struct usb_device *dev, int *num);
 +
  typedef struct
  {
