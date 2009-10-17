@@ -18,15 +18,6 @@
  
  make = 'make' if isunix else NMAKE
  
-@@ -134,7 +134,7 @@
- if isunix:
-     cc = os.environ.get('CC', 'gcc')
-     cxx = os.environ.get('CXX', 'g++')
--    cflags = '-O3 -Wall -DNDEBUG -fPIC -fno-strict-aliasing -pipe'.split()
-+    cflags = '-Wall -DNDEBUG -fPIC'.split()
-     ldflags = ['-Wall']
-     cflags += shlex.split(os.environ.get('CFLAGS', ''))
-     ldflags += shlex.split(os.environ.get('LDFLAGS', ''))
 @@ -146,6 +146,13 @@
      ldflags.append('-lpython'+sysconfig.get_python_version())
  

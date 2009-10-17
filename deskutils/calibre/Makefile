@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.6.17
+PORTVERSION=	0.6.18
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://calibre.kovidgoyal.net/downloads/
 
@@ -35,7 +35,8 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		py*-qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
 
-OPTIONS=	MOUNTHELPER_SUID "Install mount helper as suid binary" off
+OPTIONS=	PODOFO "PDF support via PoDoFo library" on \
+		MOUNTHELPER_SUID "Install mount helper as suid binary" off
 
 USE_GETTEXT=	yes
 USE_PYTHON=	2.6+
@@ -47,7 +48,9 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
-		FC_LIB_DIR="${LOCALBASE}/lib"
+		FC_LIB_DIR="${LOCALBASE}/lib" \
+		OVERRIDE_CFLAGS="${CFLAGS}" \
+		OVERRIDE_LDFLAGS="${LDFLAGS}"
 
 MAN1=	calibre-customize.1 calibre-debug.1 calibre-server.1 calibre-smtp.1 \
 	calibredb.1 ebook-convert.1 ebook-meta.1 fetch-ebook-metadata.1 \
@@ -58,6 +61,14 @@ MANCOMPRESSED=	no
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
+.if !defined(WITHOUT_PODOFO) || exists(${LOCALBASE}/lib/libpodofo.so)
+LIB_DEPENDS+=	podofo:${PORTSDIR}/graphics/podofo
+MAKE_ENV+=	PODOFO_LIB_DIR="${LOCALBASE}/lib" \
+		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
+PLIST_SUB+=	PODOFO=""
+.else
+PLIST_SUB+=	PODOFO="@comment "
 .endif
 
 do-build:
