@@ -1,0 +1,4 @@
+Shout-python is a set of bindings for libshout2. It allows you to
+act as a source for icecast 1 and 2, and shoutcast.
+
+WWW: http://www.icecast.org/
