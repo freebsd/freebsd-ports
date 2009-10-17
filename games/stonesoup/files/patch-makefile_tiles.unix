@@ -1,5 +1,5 @@
---- ./makefile_tiles.unix.orig	2009-06-12 12:32:15.000000000 +0200
-+++ ./makefile_tiles.unix	2009-06-19 13:54:52.000000000 +0200
+--- ./makefile_tiles.unix.orig	2009-10-06 20:44:04.000000000 +0200
++++ ./makefile_tiles.unix	2009-10-15 18:40:29.000000000 +0200
 @@ -4,7 +4,7 @@
  # Modified for Crawl Reference by $Author: dshaligram $ on $Date: 2007-06-24T16:27:58.475101Z $
  #
@@ -9,15 +9,17 @@
  
  # this file contains a list of the libraries.
  # it will make a variable called OBJECTS that contains all the libraries
-@@ -15,7 +15,6 @@
+@@ -15,7 +15,9 @@
  SDL_CFLAGS := $(shell sdl-config --cflags)
  SDL_LDFLAGS := $(shell sdl-config --libs) -lSDLmain
  
--CXX = g++
++ifndef FREEBSD
+ CXX = g++
++endif
  DELETE = rm -f
  COPY = cp
  OS_TYPE = UNIX
-@@ -25,7 +24,7 @@
+@@ -25,7 +27,7 @@
  
  # Change this to y if you want to use Unicode glyphs in the map, and you have
  # libncursesw available.
@@ -26,16 +28,16 @@
  
  ifeq ($(strip $(OSX)),y)
  PNG_INCLUDE := -I/sw/include
-@@ -41,7 +40,7 @@
+@@ -41,7 +43,7 @@
  else
  PNG_INCLUDE :=
  PNG_LIB :=
 -FREETYPE_INCLUDE := -I/usr/include/freetype2
-+FREETYPE_INCLUDE := -I/usr/local/include/freetype2
++FREETYPE_INCLUDE := -I%%LOCALBASE%%/include/freetype2
  endif
  
  # If you have lex and yacc, set DOYACC to y (lowercase y).
-@@ -54,16 +53,16 @@
+@@ -54,16 +56,16 @@
  MCHMOD_SAVEDIR := 775
  
  # The user:group to install the game as.
@@ -56,25 +58,30 @@
  
  LEX  := flex
  YACC := bison -y
-@@ -105,17 +104,8 @@
+@@ -105,10 +107,13 @@
  
  INCLUDES := $(INCLUDES) -Iutil -I. -I$(LUASRC) $(EXTRA_INCLUDES) $(PNG_INCLUDE) $(FREETYPE_INCLUDE)
  
--CFWARN := -Wall -Wwrite-strings -Wshadow -pedantic -Wno-parentheses
--
++ifndef FREEBSD
+ CFWARN := -Wall -Wwrite-strings -Wshadow -pedantic -Wno-parentheses
++endif
+ 
  CFOTHERS := -fsigned-char -D$(OS_TYPE) $(EXTRA_FLAGS) -DCLUA_BINDINGS
  
--ifneq ($(HURRY),y)
--ifneq ($(DEBUG_CRAWL),y)
--CFWARN += -Wuninitialized
--CFOTHERS += -O2
--endif
--endif
--
++ifndef FREEBSD
+ ifneq ($(HURRY),y)
+ ifneq ($(DEBUG_CRAWL),y)
+ CFWARN += -Wuninitialized
+@@ -116,6 +121,8 @@
+ endif
+ endif
+ 
++endif
++
  ifneq ($(strip $(SAVEDIR)),)
  CFOTHERS += '-DSAVE_DIR_PATH="$(strip $(SAVEDIR))"'
  endif
-@@ -124,8 +114,8 @@
+@@ -124,8 +131,8 @@
  CFOTHERS += '-DDATA_DIR_PATH="$(strip $(DATADIR))"'
  endif
  
@@ -85,7 +92,7 @@
  
  UTIL = util/
  
-@@ -167,7 +157,7 @@
+@@ -167,7 +174,7 @@
  	rm -f $(DEPENDENCY_MKF).tmp
  	@for i in $^; do \
  	    echo "Updating dependencies for $$i"; \
@@ -94,7 +101,7 @@
  	done
  	mv -f $(DEPENDENCY_MKF).tmp $(DEPENDENCY_MKF)
  
-@@ -210,7 +200,7 @@
+@@ -210,7 +217,7 @@
  ORIGTILEFILES = $(TILEFILES:%=$(RLTILES)/%)
  
  makerltiles:
@@ -103,7 +110,7 @@
  
  $(TILEDEFSRCS): makerltiles
  
-@@ -222,7 +212,7 @@
+@@ -222,7 +229,7 @@
  	$(COPY) $< $@
  
  clean-rltiles:
@@ -112,7 +119,7 @@
  
  ##########################################################################
  
-@@ -287,21 +277,21 @@
+@@ -287,21 +294,21 @@
  	$(DELETE) $(DEPENDENCY_MKF)
  
  $(GAME): $(GAME_DEPENDS)
@@ -138,3 +145,26 @@
  
  # [ds] Note we don't use the standard CFLAGS here; that's intentional, most
  # flex/bison combos I've tried don't produce code that passes the warnings
+@@ -314,14 +321,22 @@
+ 
+ $(LUASRC)$(LUALIBA):
+ 	echo Building Lua...
++ifdef FREEBSD
++	cd $(LUASRC) && $(MAKE) FREEBSD=yes crawl_unix
++else
+ 	cd $(LUASRC) && $(MAKE) crawl_unix
++endif
+ 
+ #############################################################################
+ # Build SQLite
+ 
+ $(FSQLLIBA):
+ 	echo Building SQLite
++ifdef FREEBSD
++	cd $(SQLSRC) && $(MAKE) FREEBSD=yes
++else
+ 	cd $(SQLSRC) && $(MAKE)
++endif
+ 
+ #############################################################################
+ # Packaging a source tarball for release

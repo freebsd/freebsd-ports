@@ -1,10 +1,12 @@
---- ./util/sqlite/Makefile.orig	2009-06-12 12:27:11.000000000 +0200
-+++ ./util/sqlite/Makefile	2009-06-19 13:54:52.000000000 +0200
-@@ -4,12 +4,11 @@
+--- ./util/sqlite/Makefile.orig	2009-10-06 20:44:04.000000000 +0200
++++ ./util/sqlite/Makefile	2009-10-15 18:40:29.000000000 +0200
+@@ -4,12 +4,14 @@
  
  LIBSQL = libsqlite3.a
  AR     = ar rcu
--CC     = gcc
++ifndef FREEBSD
+ CC     = gcc
++endif
  RANLIB = ranlib
  RM_F   = rm -f
  

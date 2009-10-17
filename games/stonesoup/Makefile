@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-src
@@ -24,12 +24,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/source/
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
-FETCH_ARGS?=    -pRr
+FETCH_ARGS?=	-pRr
 
 OPTIONS=	SDL		"SDL support (tiles interface)"	off \
 		SOUND		"Sound support"			off \
 		LUA_BINDINGS	"LUA bindings for user scripts"	on \
 		UNICODE		"Unicode glyphs (UTF-8)"	off
+
+MAKE_ARGS=	"FREEBSD=yes"
 
 .include <bsd.port.options.mk>
 
@@ -54,6 +56,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}/," ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e "s,%%SAVEDIR%%,${SAVEDIR}," ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/${MAKEFILE}
 .if defined(WITHOUT_LUA_BINDINGS)
 	@${REINPLACE_CMD} -e "s,-DCLUA_BINDINGS,," ${WRKSRC}/${MAKEFILE}
 .endif

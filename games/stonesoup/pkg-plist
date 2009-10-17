@@ -115,6 +115,8 @@ bin/stonesoup
 %%DATADIR%%/docs/changelog.txt
 %%DATADIR%%/docs/aptitudes.txt
 %%DATADIR%%/docs/tiles_help.txt
+%%DATADIR%%/docs/libpng-LICENSE.txt
+%%DATADIR%%/docs/tiles_creation.txt
 @exec chown -R root:games %D/%%DATADIR%%
 @exec install -d -o root -g games -m 775 %%SAVEDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
