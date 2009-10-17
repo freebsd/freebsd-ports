@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.3
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -30,7 +30,7 @@ USE_ICONV=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-IGNORE=		does not compiel
+IGNORE=		does not compile
 .endif
 
 .include <bsd.port.post.mk>
