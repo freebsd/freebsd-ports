@@ -1,7 +1,7 @@
---- dhcpctl/Makefile.dist.orig	Thu Mar  3 17:55:23 2005
-+++ dhcpctl/Makefile.dist	Mon Jul 25 08:33:33 2005
+--- dhcpctl/Makefile.dist.orig	2009-10-16 12:57:05.000000000 +0000
++++ dhcpctl/Makefile.dist	2009-10-16 13:01:01.000000000 +0000
 @@ -22,11 +22,11 @@
- #   http://www.isc.org/
+ #   https://www.isc.org/
  #
  
 -CATMANPAGES = dhcpctl.cat3 omshell.cat1
@@ -37,12 +37,15 @@
  	  foo=""; \
  	  for bar in `echo $(DESTDIR)$${dir} |tr / ' '`; do \
  	    foo=$${foo}/$$bar; \
-@@ -69,16 +65,12 @@
- 	  $(MANINSTALL) $(MANFROM) $${prefix}.$(MANCAT)$${suffix} $(MANTO) \
- 			$(DESTDIR)$(LIBMANDIR)/$${prefix}$(LIBMANEXT); \
- 	done
+@@ -64,19 +60,14 @@
+ 	$(INSTALL) dhcpctl.h $(DESTDIR)$(INCDIR)
+ 	$(CHMOD) 644 $(DESTDIR)$(INCDIR)/dhcpctl.h
+ 
 -	$(INSTALL) omshell $(DESTDIR)$(USERBINDIR)
 -	$(CHMOD) 755 $(DESTDIR)$(USERBINDIR)/omshell
+-
+ 	$(MANINSTALL) $(MANFROM) dhcpctl.$(MANCAT)3 $(MANTO) \
+ 				$(DESTDIR)$(LIBMANDIR)/dhcpctl$(LIBMANEXT)
 -	$(MANINSTALL) $(MANFROM) omshell.$(MANCAT)1 $(MANTO) \
 -				$(DESTDIR)$(USRMANDIR)/omshell$(USRMANEXT)
  
@@ -55,7 +58,7 @@
  
  realclean: clean
  	-rm -f libdhcpctl.a *~ $(CATMANPAGES) $(SEDMANPAGES)
-@@ -87,7 +79,7 @@
+@@ -85,7 +76,7 @@
  	-rm -f Makefile
  
  links:
@@ -64,16 +67,15 @@
  	  if [ ! -b $$foo ]; then \
  	    rm -f $$foo; \
  	  fi; \
-@@ -100,12 +92,5 @@
- dhcpctl.man3:	dhcpctl.3
+@@ -99,11 +90,4 @@
  	sed -e "s#ETCDIR#$(ETC)#g" -e "s#DBDIR#$(VARDB)#g" \
  		-e "s#RUNDIR#$(VARRUN)#g" < dhcpctl.3 >dhcpctl.man3
--
+ 
 -omshell.cat1:	omshell.man1
 -	nroff -man omshell.man1 >omshell.cat1
 -
 -omshell.man1:	omshell.1
 -	sed -e "s#ETCDIR#$(ETC)#g" -e "s#DBDIR#$(VARDB)#g" \
 -		-e "s#RUNDIR#$(VARRUN)#g" < omshell.1 >omshell.man1
- 
+-
  # Dependencies (semi-automatically-generated)
