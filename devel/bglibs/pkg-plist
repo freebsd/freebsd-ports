@@ -38,6 +38,7 @@ include/bglibs/iobuf/iobuf.h
 include/bglibs/iobuf/obuf.h
 include/bglibs/misc/misc.h
 include/bglibs/misc/ucspi.h
+include/bglibs/msg/debug.h
 include/bglibs/msg/msg.h
 include/bglibs/msg/wrap.h
 include/bglibs/net/ipv4.h
