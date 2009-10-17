@@ -1,12 +1,5 @@
 bin/wfwl_syslog
 etc/webfwlog.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes
 %%PORTDOCS%%%%DOCSDIR%%/mysql/README
 %%PORTDOCS%%%%DOCSDIR%%/mysql/setup
 %%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/temp_grants
@@ -32,15 +25,6 @@ etc/webfwlog.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_addcol
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_create
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_services_create
-%%EXAMPLESDIR%%/basic
-%%EXAMPLESDIR%%/current_count
-%%EXAMPLESDIR%%/current_dport
-%%EXAMPLESDIR%%/last20hosts
-%%EXAMPLESDIR%%/latest_logged_packets
-%%EXAMPLESDIR%%/recent_active
-%%EXAMPLESDIR%%/tcpports
-%%EXAMPLESDIR%%/tcpsyn
-%%EXAMPLESDIR%%/udpports
 %%WWWDIR%%/include/config.php
 %%WWWDIR%%/include/criteria.php
 %%WWWDIR%%/include/debug.php
@@ -68,7 +52,5 @@ etc/webfwlog.conf.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pgsql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mysql/scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mysql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%WWWDIR%%/include
 @dirrmtry %%WWWDIR%%

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webfwlog
-PORTVERSION=	0.93
-PORTREVISION=	1
+PORTVERSION=	0.94
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -28,11 +27,10 @@ WANT_PHP_WEB=	yes
 # want to install webfwlog, relative to ${PREFIX}.
 
 SUB_FILES=	pkg-message
-DOCS=		README AUTHORS COPYING \
-		CREDITS ChangeLog INSTALL \
-		README ReleaseNotes
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	AUTHORS COPYING CREDITS ChangeLog INSTALL \
+		README ReleaseNotes
+PORTEXAMPLES=	*
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
@@ -47,8 +45,6 @@ CONFIGURE_ARGS+=--with-pgsql
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@${MKDIR} ${WWWDIR}/include/
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 	@(cd ${WRKSRC}/webfwlog/include/ && ${COPYTREE_SHARE} \* ${WWWDIR}/include/)
 	${INSTALL_PROGRAM} ${WRKSRC}/syslog/wfwl_syslog ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/webfwlog/style.css ${WWWDIR}
@@ -60,9 +56,14 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/pgsql
 	@(cd ${WRKSRC}/mysql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/mysql/)
 	@(cd ${WRKSRC}/pgsql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/pgsql/)
-.for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 	@if test -f ${PREFIX}/etc/webfwlog.conf; \
@@ -86,4 +87,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
