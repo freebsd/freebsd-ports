@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	6.14
+PORTVERSION=	6.16
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,8 @@ RUN_DEPENDS=	p5-POE>=0.3202:${PORTSDIR}/devel/p5-POE \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
+PORTEXAMPLES=	*
 
 MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Common.3 \
@@ -62,8 +64,8 @@ MAN3=		POE::Component::IRC.3 \
 
 post-install:
 .ifndef(NOPORTEXAMPLES)
-	@${INSTALL} -d ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

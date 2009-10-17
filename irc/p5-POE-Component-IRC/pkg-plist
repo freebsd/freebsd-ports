@@ -34,17 +34,6 @@
 %%SITE_PERL%%/POE/Filter/IRC.pm
 %%SITE_PERL%%/POE/Filter/IRC/Compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aimproxy.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dcctest.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dicebot.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eliza.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircproxy.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/moo.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rot13_multi.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpleclient.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tinyurl.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
