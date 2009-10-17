@@ -1,0 +1,14 @@
+--- ./FreeBSD/ncidsip.orig	2009-10-17 15:13:04.000000000 +0200
++++ ./FreeBSD/ncidsip	2009-10-17 15:13:33.000000000 +0200
+@@ -12,10 +12,10 @@
+ 
+ . /etc/rc.subr
+ 
++name=ncidsip
+ rcvar=`set_rcvar`
+ extra_commands="condrestart"
+ 
+-name=ncidsip
+ pidfile="/var/run/${name}.pid"
+ args="--pidfile /var/run/${name}.pid"
+ 
