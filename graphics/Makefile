@@ -756,6 +756,7 @@
     SUBDIR += py-visual
     SUBDIR += pygts
     SUBDIR += pyro
+    SUBDIR += pysvg
     SUBDIR += q-graph
     SUBDIR += qcamview
     SUBDIR += qcomicbook
