@@ -1,0 +1,14 @@
+--- ./FreeBSD/yac2ncid.orig	2009-10-17 15:13:04.000000000 +0200
++++ ./FreeBSD/yac2ncid	2009-10-17 15:13:34.000000000 +0200
+@@ -12,10 +12,10 @@
+ 
+ . /etc/rc.subr
+ 
++name=yac2ncid
+ rcvar=`set_rcvar`
+ extra_commands="condrestart"
+ 
+-name=yac2ncid
+ pidfile="/var/run/${name}.pid"
+ args=""
+ 
