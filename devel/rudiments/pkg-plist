@@ -205,6 +205,7 @@ libdata/pkgconfig/rudiments.pc
 %%DOCSDIR%%/classes/clientserverfactory.h.html
 %%DOCSDIR%%/classes/clientsocket.h.html
 %%DOCSDIR%%/classes/commandline.h.html
+%%DOCSDIR%%/classes/container.h.html
 %%DOCSDIR%%/classes/crypt.h.html
 %%DOCSDIR%%/classes/daemonprocess.h.html
 %%DOCSDIR%%/classes/datetime.h.html
