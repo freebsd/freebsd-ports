@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpdas
-PORTVERSION=	0.2.4
-PORTREVISION=	2
+PORTVERSION=	0.2.5
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
@@ -20,9 +19,18 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
 
+USE_RC_SUBR=	mpdas
+
+SUB_FILES=	pkg-message
+
 PLIST_FILES=	bin/mpdas
 
 MAN1=		mpdas.1
 MANCOMPRESSED=	no
+
+post-install:
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
