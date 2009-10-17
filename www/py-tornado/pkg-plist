@@ -4,6 +4,9 @@
 %%PYTHON_SITELIBDIR%%/tornado/auth.py
 %%PYTHON_SITELIBDIR%%/tornado/auth.pyc
 %%PYTHON_SITELIBDIR%%/tornado/auth.pyo
+%%PYTHON_SITELIBDIR%%/tornado/autoreload.py
+%%PYTHON_SITELIBDIR%%/tornado/autoreload.pyc
+%%PYTHON_SITELIBDIR%%/tornado/autoreload.pyo
 %%PYTHON_SITELIBDIR%%/tornado/database.py
 %%PYTHON_SITELIBDIR%%/tornado/database.pyc
 %%PYTHON_SITELIBDIR%%/tornado/database.pyo
