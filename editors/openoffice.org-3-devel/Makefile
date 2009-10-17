@@ -7,6 +7,7 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	3.2.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
@@ -110,6 +111,7 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PATH=${WRKSRC}/solenv/bin:$$PATH
 
+LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -143,7 +145,8 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-presenter-console			\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
-			--enable-report-builder
+			--enable-report-builder                         \
+			--disable-nss-module
 
 OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
