@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	policyd2
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	mail
 MASTER_SITES=	SF/policyd/2.0.x%20%28Stable%29/v${PORTVERSION}
 DISTNAME=	cluebringer-${PORTVERSION}
 
-MAINTAINER?=	chifeng@gmail.com
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
@@ -40,6 +40,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DB
 .if defined(WITH_SQLite)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpadmin
+	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpolicyd
 
 do-install:
 	@${INSTALL} -d ${WEBUIDIR}
