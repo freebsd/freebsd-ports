@@ -92,7 +92,7 @@ in files/patches-i85126
  #include <dlfcn.h>
  #include <cxxabi.h>
  #include <hash_map>
-@@ -121,7 +121,7 @@
+@@ -121,7 +122,7 @@
  };
  //__________________________________________________________________________________________________
  RTTI::RTTI() SAL_THROW( () )
@@ -101,7 +101,7 @@ in files/patches-i85126
      : m_hApp( dlopen( 0, RTLD_NOW | RTLD_GLOBAL ) )
  #else
      : m_hApp( dlopen( 0, RTLD_LAZY ) )
-@@ -160,7 +160,7 @@
+@@ -160,7 +161,7 @@
          buf.append( 'E' );
  
          OString symName( buf.makeStringAndClear() );

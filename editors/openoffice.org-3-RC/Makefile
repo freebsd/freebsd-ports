@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	3.1.${SNAPDATE}
+PORTVERSION?=	3.2.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
@@ -22,8 +22,6 @@ EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
-
-IGNORE=		Now release version is available
 
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
@@ -66,11 +64,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		19
-OOOTAG?=		OOO310_m${MILESTONE}
+MILESTONE?=		1
+OOOTAG?=		OOO320_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20090821
+SNAPDATE=		20091008
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -106,6 +104,7 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PATH=${WRKSRC}/solenv/bin:$$PATH
 
+LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -140,7 +139,8 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-presenter-console			\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
-			--enable-report-builder
+			--enable-report-builder                         \
+			--disable-nss-module
 
 OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -200,7 +200,7 @@ pre-configure:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput -- -P${MAKE_JOBS_NUMBER}"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
@@ -208,13 +208,13 @@ do-build:
 
 do-install:
 .if ${LOCALIZED_LANG} == "alllangs"
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/ ; ${LS} */freebsd*/*.t?z > ${WRKDIR}/LANGPACKFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd-*/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/$$i ; \
 	done
 	@for i in `${CAT} ${WRKDIR}/LANGPACKFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
@@ -223,18 +223,18 @@ do-install:
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .else
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .endif
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/310/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/320/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
