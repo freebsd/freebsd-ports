@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.29
+PORTVERSION=	5.29.1
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
 		http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
