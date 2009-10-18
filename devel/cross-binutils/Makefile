@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.19.1
+PORTVERSION=	2.20
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -25,7 +25,8 @@ ALL_TARGET=	all info
 
 CONFIGURE_ARGS+=	--disable-nls \
 			--with-system-zlib \
-			--target=${OURTARGET}
+			--target=${OURTARGET} \
+			--disable-werror
 
 OURTARGET=	${TGTARCH}-${TGTABI}
 
