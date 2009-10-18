@@ -7,6 +7,7 @@
 
 PORTNAME=	nspr
 DISTVERSION=	4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=	LOCAL/ahze
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -43,12 +44,21 @@ do-install:
 	${MKDIR} ${PREFIX}/include/nspr
 	${TAR} -C ${WRKSRC}/dist/include --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/include -xf -
+	${FIND} ${PREFIX}/include/nspr | \
+	    	${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${PREFIX}/include/nspr -type d | \
+	    	${XARGS} ${CHMOD} 0755
+	${FIND} ${PREFIX}/include/nspr -type f | \
+	    	${XARGS} ${CHMOD} ${SHAREMODE}
 	${TAR} -C ${WRKSRC}/dist/lib --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/lib -xf -
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${PREFIX}/libdata/pkgconfig
 .for lib in ${LIBS}
+	${STRIP_CMD} ${PREFIX}/lib/${lib}
+	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/lib/${lib}
+	${CHMOD} ${BINMODE} ${PREFIX}/lib/${lib}
 	${LN} -sf ${lib} ${PREFIX}/lib/${lib:R}
 .endfor
 
