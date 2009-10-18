@@ -5,6 +5,7 @@
 
     SUBDIR += 9e
     SUBDIR += advancecomp
+    SUBDIR += amigadepacker
     SUBDIR += aolserver-nszlib
     SUBDIR += arc
     SUBDIR += arj
