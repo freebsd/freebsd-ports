@@ -1,0 +1,6 @@
+amigadepacker depacks compressed Amiga formats. PowerPacker, XPK SQSH, MMCMP and
+StoneCracker 4.04 (S404) formats are supported. Amigadepacker will automatically
+determine the compressed format by content.  Among other things, the tool is
+useful for playing packed Amiga music formats with uade.
+
+WWW: http://zakalwe.fi/~shd/opensource.html
