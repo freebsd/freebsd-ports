@@ -28,5 +28,7 @@ post-patch:
 		${WRKSRC}/stun/sha1.c
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	    	's|-Wno-missing-field-initializers|#|g'
+	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers|#|g' \
+	    	${WRKSRC}/common.mk
 
 .include <bsd.port.mk>
