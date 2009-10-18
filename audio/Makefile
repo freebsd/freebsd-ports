@@ -722,6 +722,7 @@
     SUBDIR += tuneradio
     SUBDIR += tuxguitar
     SUBDIR += twolame
+    SUBDIR += uade
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += umodplayer
@@ -819,7 +820,6 @@
     SUBDIR += xmms-speex
     SUBDIR += xmms-tfmx
     SUBDIR += xmms-timidity
-    SUBDIR += xmms-uade
     SUBDIR += xmms-volnorm
     SUBDIR += xmms-wavpack
     SUBDIR += xmms-wma
