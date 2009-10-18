@@ -13,7 +13,7 @@ MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 		http://critical.ch/distfiles/
 DISTNAME=	uade-${PORTVERSION}
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin
 
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
