@@ -110,7 +110,6 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PATH=${WRKSRC}/solenv/bin:$$PATH
 
-LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -144,8 +143,7 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-presenter-console			\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
-			--enable-report-builder                         \
-			--disable-nss-module
+			--enable-report-builder
 
 OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
