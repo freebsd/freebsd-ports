@@ -7113,6 +7113,7 @@ lcdtest                         ports/graphics/lcdtest
 lcms                            ports/graphics/lcms
 lcms-python                     ports/graphics/lcms-python
 ldap-account-manager            ports/sysutils/ldap-account-manager
+ldap-stats                      ports/net/ldap-stats
 ldap2dns                        ports/net/ldap2dns
 ldapbrowser                     ports/net/ldapbrowser
 ldapdiff                        ports/net/ldapdiff
@@ -18752,6 +18753,7 @@ poco                            ports/devel/poco
 poco-ssl                        ports/devel/poco-ssl
 podcastamatic                   ports/www/podcastamatic
 podcatcher                      ports/multimedia/podcatcher
+podofo                          ports/graphics/podofo
 poe                             ports/multimedia/poe
 poedit                          ports/editors/poedit
 poink                           ports/net/poink
@@ -19730,6 +19732,7 @@ py-sgflib                       ports/games/py-sgflib
 py-sgfsummary                   ports/games/py-sgfsummary
 py-sgrep                        ports/textproc/py-sgrep
 py-shapely                      ports/devel/py-shapely
+py-shout                        ports/audio/py-shout
 py-simplecouchdb                ports/databases/py-simplecouchdb
 py-simplejson                   ports/devel/py-simplejson
 py-simpleparse                  ports/devel/py-simpleparse
@@ -19983,6 +19986,7 @@ pysol-music                     ports/games/pysol-music
 pysol-sound-server              ports/audio/pysol-sound-server
 pysolfc                         ports/games/pysolfc
 pystemmer                       ports/textproc/pystemmer
+pysvg                           ports/graphics/pysvg
 pysvn                           ports/devel/pysvn
 pysycache                       ports/games/pysycache
 pysycache-lang                  ports/games/pysycache-lang
