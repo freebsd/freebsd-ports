@@ -14,6 +14,9 @@ MASTER_SITES=	http://pdp-11.org.ru/~form/cnupm/files/ \
 MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	The BPF Traffic Collector (IPv4/IPv6)
 
+MAKE_ENV+=	BINDIR="${PREFIX}/sbin" \
+		MANDIR="${MANPREFIX}/man/man"
+
 USE_RC_SUBR=	cnupm.sh
 MAN8=		cnupm.8 cnupmstat.8
 MANCOMPRESSED=	yes
