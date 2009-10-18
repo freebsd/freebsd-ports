@@ -1,4 +1,4 @@
-@unexec %D/etc/rc.d/chillispot forcestop 2>/dev/null || true
+@stopdaemon chillispot
 sbin/chilli
 %%PORTDATA%%%%DATADIR%%/chilli.conf.sample
 %%PORTDATA%%%%DATADIR%%/dictionary.chillispot
