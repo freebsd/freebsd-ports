@@ -10,24 +10,42 @@ bin/txt2mb
 bin/win2fcitx
 %%DATADIR%%/data/AutoEng.dat
 %%DATADIR%%/data/cj.mb
+%%DATADIR%%/data/cj.txt
 %%DATADIR%%/data/config
+%%DATADIR%%/data/db.mb
+%%DATADIR%%/data/db.txt
 %%DATADIR%%/data/erbi.mb
+%%DATADIR%%/data/erbi.txt
+%%DATADIR%%/data/gbkpy.org
 %%DATADIR%%/data/gbks2t.tab
 %%DATADIR%%/data/punc.mb
+%%DATADIR%%/data/pyPhrase.org
 %%DATADIR%%/data/pySym.mb
 %%DATADIR%%/data/pybase.mb
 %%DATADIR%%/data/pyphrase.mb
 %%DATADIR%%/data/qxm.mb
+%%DATADIR%%/data/qxm.txt
 %%DATADIR%%/data/sp.dat
 %%DATADIR%%/data/tables.conf
 %%DATADIR%%/data/vk.conf
 %%DATADIR%%/data/wanfeng.mb
+%%DATADIR%%/data/wanfeng.txt
 %%DATADIR%%/data/wbpy.mb
+%%DATADIR%%/data/wbpy.txt
 %%DATADIR%%/data/wbx.mb
+%%DATADIR%%/data/wbx.txt
+%%DATADIR%%/data/zrm.mb
+%%DATADIR%%/data/zrm.txt
+%%DATADIR%%/tools/winmb2fcitx.py
 @dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%
+%%DOCSDIR%%/API.txt
+%%DOCSDIR%%/Develop_Readme.GBK
 %%DOCSDIR%%/cjkvinput.txt
+%%DOCSDIR%%/fcitx3.odt
 %%DOCSDIR%%/fcitx3.pdf
+%%DOCSDIR%%/fcitx_trunk.doxyfile
 %%DOCSDIR%%/pinyin.txt
 %%DOCSDIR%%/wb_fh.htm
 @dirrm %%DOCSDIR%%

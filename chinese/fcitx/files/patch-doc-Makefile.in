@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Fri Aug 11 00:40:27 2006
-+++ doc/Makefile.in	Wed Aug 23 12:44:19 2006
-@@ -148,7 +148,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- doc/Makefile.in.orig	2009-10-16 20:23:38.303051048 +0800
++++ doc/Makefile.in	2009-10-16 20:24:51.132275852 +0800
+@@ -141,7 +141,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(pkgdatadir)/doc
 +docdir = $(datadir)/doc/@PACKAGE@
- doc_DATA = \
-         cjkvinput.txt wb_fh.htm fcitx3.pdf pinyin.txt
- 
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
