@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%200.2/${PORTNAME}%2002l
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	Optimized mpeg 1/2 layer 2 audio encoder
 
 USE_GMAKE=	yes
@@ -26,9 +26,11 @@ PORTDOCS=	FUTURE HISTORY LGPL.txt README
 .include <bsd.port.pre.mk>
 
 do-install:
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/toolame ${PREFIX}/bin
 
