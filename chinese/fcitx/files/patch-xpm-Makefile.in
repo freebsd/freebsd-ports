@@ -1,11 +1,11 @@
---- xpm/Makefile.in.orig	Wed Aug 23 12:45:40 2006
-+++ xpm/Makefile.in	Wed Aug 23 12:45:08 2006
-@@ -148,7 +148,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- xpm/Makefile.in.orig	2009-10-08 22:08:06.000000000 +0800
++++ xpm/Makefile.in	2009-10-16 20:26:46.697277419 +0800
+@@ -172,7 +172,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -xpmdir = $(pkgdatadir)/xpm
-+xpmdir = 
- xpm_DATA = 
- EXTRA_DIST = $(xpm_DATA)
- all: all-am
++xpmdir =
+ xpm_DATA = about_icon.xpm chnPunc.xpm engPunc.xpm ft-0.xpm ft-1.xpm \
+ 	fullcorner.xpm gbk-0.xpm gbk-1.xpm halfcorner.xpm lock-0.xpm \
+ 	lock-1.xpm logo.xpm lx-0.xpm lx-1.xpm next.xpm prev.xpm vk-1.xpm vk.xpm
