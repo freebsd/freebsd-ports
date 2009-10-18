@@ -66,8 +66,6 @@ bin/pybench
 %%DATADIR%%/systimes.py
 %%DATADIR%%/systimes.pyc
 %%DATADIR%%/systimes.pyo
-%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrmtry share/pybench
 @dirrm %%DATADIR%%/package
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
