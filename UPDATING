@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091018
+  AFFECTS: users of databases/mysql54-server
+  AUTHOR: Alex Dupre <ale@FreeBSD.org>
+
+  After the upgrade the server may fail to start due to changes in
+  the default values of innodb_log_files_in_group and
+  innodb_log_file_size, which differ from those in earlier 5.4 releases.
+  You should discard the old InnoDB log files and let MySQL 5.4.3 create
+  new ones. It is necessary to shut down your current server cleanly so
+  that no outstanding transaction information remains in the log.
+
+  See: http://dev.mysql.com/doc/refman/5.4/en/news-5-4-3.html
+
 20091014
   AFFECTS: users of mail/heirloom-mailx
   AUTHOR: Alexander Logvinov <avl@FreeBSD.org>
