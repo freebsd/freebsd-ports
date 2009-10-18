@@ -34,7 +34,6 @@ USE_GNOME+=		glib20
 .endif
 
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
-CONFIGURE_ARGS+=	--with-system-freetype=yes
 
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
@@ -64,7 +63,7 @@ pre-fetch:
 .endif
 .if !defined(WITHOUT_MOZILLA)
 	@${ECHO}
-	@${ECHO} "You can compile OOo without Mozilla connectivity with"
+	@${ECHO} "You can compile OOo without Mozilla/Mozilla NSS-using components"
 	@${ECHO} "make -DWITHOUT_MOZILLA"
 .endif
 .if !defined(WITHOUT_GNOME)
@@ -86,11 +85,6 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You can compile OOo to use Qt/KDE vclplug with"
 	@${ECHO} "make -DWITH_KDE"
-.endif
-.if !defined(WITH_GPC)
-	@${ECHO}
-	@${ECHO} "You can compile OOo with gpc instead of libart by"
-	@${ECHO} "make -DWITH_GPC"
 .endif
 .if !defined(WITH_EVOLUTION2)
 	@${ECHO}
