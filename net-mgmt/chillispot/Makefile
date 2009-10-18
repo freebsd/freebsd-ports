@@ -7,7 +7,7 @@
 
 PORTNAME=	chillispot
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chillispot.info/download/ \
 		http://www.geeklan.co.uk/files/ \
@@ -20,7 +20,7 @@ CONFLICTS=	coovachilli-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
-USE_RC_SUBR=	chillispot.sh
+USE_RC_SUBR=	chillispot
 SUB_FILES=	pkg-message
 MAN8=		chilli.8
 

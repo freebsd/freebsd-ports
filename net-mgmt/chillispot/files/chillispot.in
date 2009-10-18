@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: chillispot
+# REQUIRE: netif
+# BEFORE:  pf ipfw
+# KEYWORD: nojail
+
+. %%RC_SUBR%%
+
+name="chillispot"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/chilli"
+pidfile=/var/run/chilli.pid
+
+load_rc_config $name
+
+: ${chillispot_enable="NO"}
+: ${chillispot_config="%%PREFIX%%/etc/chilli.conf"}
+
+command_args="--conf=${chillispot_config}"
+
+run_rc_command "$1"
