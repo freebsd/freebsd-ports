@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	tiarra
-PORTVERSION=	20050214
+PORTVERSION=	20091019
 #PORTREVISION=	0
 CATEGORIES=	japanese irc ipv6
-MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2005/02/
+MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2009/10/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IRC Proxy software
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 
 USE_PERL5_RUN=	yes
 USE_BZIP2=	yes
