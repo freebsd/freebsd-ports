@@ -1,48 +1,75 @@
-# New ports collection makefile for:	xmms-uade
+# New ports collection makefile for:	uade
 # Date created:				12 Oct 2002
 # Whom:					Martin Blapp <mbr@freebsd.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xmms-uade
-PORTVERSION=	2.05
-PORTREVISION=	2
+PORTNAME=	uade
+PORTVERSION=	2.12
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
-		http://critical.ch/distfiles/
-DISTNAME=	uade-${PORTVERSION}
+		CRITICAL
 
-MAINTAINER=	mbr@FreeBSD.org
-COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	Unix Amiga Delitracker Emulator
 
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		ao.3:${PORTSDIR}/audio/libao
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
 
 DOCSDIR=	${PREFIX}/share/doc/uade2
 DATADIR=	${PREFIX}/share/uade2
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man/man1 \
-		--without-audacious --no-debug
+		--no-debug
 
 CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
-WRKSRC=		${WRKDIR}/uade-${PORTVERSION}
-
 MAN1=		uade123.1
-PORTDOCS=	UAE-CREDITS UAE-README audio_emulation.txt design.tex \
-		layers.eps layers.xfig \
+PORTDOCS=	BUGS PLANS REDUNDANT_REPLAYERS UAE-CREDITS UAE-README \
+		VERSION_CONTROL_TAGGING audio_emulation.txt design.tex \
+		download.html faq.html layers.eps layers.xfig \
 		play_loop_state_diagram.dia play_loop_state_diagram.eps \
-		play_loop_state_diagram.txt
+		play_loop_state_diagram.txt uade.html
+
+OPTIONS=	AUDACIOUS "Audacious plugin" off \
+		TEXT_SCOPE "Audio register debug mode" off \
+		UADEFS "FUSE filesystem" off \
+		XMMS "XMMS plugin" off
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_AUDACIOUS)
+LIB_DEPENDS+=	audclient.2:${PORTSDIR}/multimedia/audacious
+PLIST_SUB+=	AUDACIOUS=""
+.else
+CONFIGURE_ARGS+=--without-audacious
+PLIST_SUB+=	AUDACIOUS="@comment "
+.endif
+
+.if !defined(WITHOUT_TEXT_SCOPE)
+CONFIGURE_ARGS+=--with-text-scope
+.endif
+
+.if !defined(WITHOUT_UADEFS)
+LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+MAN1+=		uadefs.1
+PLIST_SUB+=	UADEFS=""
+.else
+CONFIGURE_ARGS+=--without-uadefs
+PLIST_SUB+=	UADEFS="@comment "
+.endif
+
+.if !defined(WITHOUT_XMMS)
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+PLIST_SUB+=	XMMS=""
+.else
+CONFIGURE_ARGS+=--without-xmms
+PLIST_SUB+=	XMMS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,lib/pkgconfig,libdata/pkgconfig,' \

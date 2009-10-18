@@ -1,12 +1,18 @@
+bin/mod2ogg2.sh
 bin/uade123
-bin/uadexmmsadd
-lib/xmms/Input/libuade2.so
+%%UADEFS%%bin/uadefs
+%%XMMS%%bin/uadexmmsadd
+%%AUDACIOUS%%lib/audacious/Input/libuade2.so
 lib/uade2/uadecore
+%%XMMS%%lib/xmms/Input/libuade2.so
 libdata/pkgconfig/uade.pc
+%%DATADIR%%/eagleplayer.conf
+%%DATADIR%%/players/ADPCM_mono
 %%DATADIR%%/players/AM-Composer
 %%DATADIR%%/players/AMOS
 %%DATADIR%%/players/AbyssHighestExperience
 %%DATADIR%%/players/ActionAmics
+%%DATADIR%%/players/Alcatraz_Packer
 %%DATADIR%%/players/ArtAndMagic
 %%DATADIR%%/players/ArtOfNoise-4V
 %%DATADIR%%/players/ArtOfNoise-8V
@@ -15,6 +21,7 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/BenDaglish
 %%DATADIR%%/players/BenDaglish-SID
 %%DATADIR%%/players/BladePacker
+%%DATADIR%%/players/ChipTracker
 %%DATADIR%%/players/Cinemaware
 %%DATADIR%%/players/CoreDesign
 %%DATADIR%%/players/CustomMade
@@ -66,6 +73,7 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/JasonPage_JP
 %%DATADIR%%/players/JeroenTel
 %%DATADIR%%/players/JesperOlsen
+%%DATADIR%%/players/JesperOlsen_EP
 %%DATADIR%%/players/JochenHippel
 %%DATADIR%%/players/JochenHippel-7V
 %%DATADIR%%/players/JochenHippel-CoSo
@@ -77,6 +85,7 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/Lionheart_Game
 %%DATADIR%%/players/MCMD
 %%DATADIR%%/players/MED
+%%DATADIR%%/players/MIDI-Loriciel
 %%DATADIR%%/players/MMDC
 %%DATADIR%%/players/MagneticFieldsPacker
 %%DATADIR%%/players/MajorTom
@@ -89,10 +98,12 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/MikeDavies
 %%DATADIR%%/players/Mugician
 %%DATADIR%%/players/MugicianII
+%%DATADIR%%/players/MultiMedia_Sound
 %%DATADIR%%/players/MusicAssembler
 %%DATADIR%%/players/MusicMaker-4V
 %%DATADIR%%/players/MusicMaker-8V
 %%DATADIR%%/players/MusiclineEditor
+%%DATADIR%%/players/NTSP-system
 %%DATADIR%%/players/NovoTradePacker
 %%DATADIR%%/players/Octa-MED
 %%DATADIR%%/players/Oktalyzer
@@ -106,6 +117,8 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/PumaTracker
 %%DATADIR%%/players/QuadraComposer
 %%DATADIR%%/players/Quartet
+%%DATADIR%%/players/Quartet_PSG
+%%DATADIR%%/players/Quartet_ST
 %%DATADIR%%/players/RichardJoseph
 %%DATADIR%%/players/RiffRaff
 %%DATADIR%%/players/RobHubbard
@@ -133,6 +146,7 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/SoundProgrammingLanguage
 %%DATADIR%%/players/Soundtracker-IV
 %%DATADIR%%/players/Special-FX
+%%DATADIR%%/players/Special-FX_ST
 %%DATADIR%%/players/SpeedyA1System
 %%DATADIR%%/players/SpeedySystem
 %%DATADIR%%/players/SteveBarrett
@@ -147,6 +161,7 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/TFMX-Pro
 %%DATADIR%%/players/TFMX-Pro-TFHD
 %%DATADIR%%/players/TFMX-TFHD
+%%DATADIR%%/players/TFMX_ST
 %%DATADIR%%/players/TheMusicalEnlightenment
 %%DATADIR%%/players/ThomasHermann
 %%DATADIR%%/players/TimFollin
@@ -156,10 +171,10 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/players/VoodooSupremeSynthesizer
 %%DATADIR%%/players/WallyBeben
 %%DATADIR%%/players/YM-2149
-%%DATADIR%%/uade.conf
-%%DATADIR%%/eagleplayer.conf
-%%DATADIR%%/uaerc
+%%DATADIR%%/players/onEscapee
 %%DATADIR%%/score
+%%DATADIR%%/uade.conf
+%%DATADIR%%/uaerc
 @dirrm lib/uade2
 @dirrm %%DATADIR%%/players/ENV/EaglePlayer
 @dirrm %%DATADIR%%/players/ENV
