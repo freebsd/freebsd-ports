@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	datadraw
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A feature rich persistent database generator
 
 USE_BISON=	build
