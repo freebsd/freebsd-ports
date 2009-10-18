@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	csv2latex
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 PORTEPOCH=	1
 CATEGORIES=	textproc converters
-MASTER_SITES=	http://brouits.free.fr/csv2latex/
+MASTER_SITES=	http://herewe.servebeer.com/csv2latex/releases/ \
+		http://brouits.free.fr/csv2latex/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Converts a well formed csv file to a LaTeX document
 
 PLIST_FILES=	bin/csv2latex
