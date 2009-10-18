@@ -1,0 +1,5 @@
+zlib is a software library used for data compression. zlib is an
+abstraction of the DEFLATE compression algorithm used in the gzip
+file compression program.
+
+WWW:	http://www.zlib.net
