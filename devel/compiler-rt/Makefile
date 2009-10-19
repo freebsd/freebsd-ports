@@ -16,13 +16,14 @@ COMMENT=	Compiler runtime library with Blocks support
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
-BROKEN=		does not build
-
 CONFIGURE_WRKSRC=	${WRKDIR}/build
 BUILD_WRKSRC=		${WRKDIR}/build
 INSTALL_WRKSRC=		${WRKDIR}/build
 
-#USE_GCC=	4.2+
+CMAKE_SOURCE_PATH=	${WRKSRC}
+
+USE_CMAKE=	yes
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -35,6 +36,10 @@ PLIST_FILES=	include/Block.h \
 		lib/libBlocksRuntime.so
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-march=i486
+.endif
 
 .if defined(BOOTSTRAP)
 SVN_REV!=	svn info ${LLVM_SVN}/ | ${GREP} Revision | cut -d' ' -f2
@@ -58,9 +63,7 @@ ${DISTNAME}
 .endif
 .endif
 
-do-configure:
+post-extract:
 	${MKDIR} ${CONFIGURE_WRKSRC}
-	cd ${CONFIGURE_WRKSRC} && \
-	    cmake -DCMAKE_INSTALL_PREFIX="${PREFIX}" ${WRKSRC}
 
 .include <bsd.port.post.mk>
