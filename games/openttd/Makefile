@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} http://binaries.openttd.org/releases/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+		http://binaries.openttd.org/releases/${PORTVERSION}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open source clone of Microprose Transport Tycoon Deluxe
