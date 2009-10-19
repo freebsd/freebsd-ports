@@ -82,8 +82,6 @@
     SUBDIR += mooseekd
     SUBDIR += museekplus
     SUBDIR += mute-net
-    SUBDIR += mute-net-gui
-    SUBDIR += mute-net-text
     SUBDIR += mutella
     SUBDIR += napshare
     SUBDIR += nicotine
