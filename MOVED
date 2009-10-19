@@ -4186,3 +4186,5 @@ x11/kxgenerator||2009-10-07|Has expired: Project abandoned, master site disappea
 hebrew/geresh||2009-10-08|No longer maintained upstream
 misc/tmux|sysutils/tmux|2009-10-14|Moved to sysutils category
 audio/xmms-uade|audio/uade|2009-10-18|decoupled from xmms
+net-p2p/mute-net-gui|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
+net-p2p/mute-net-text|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
