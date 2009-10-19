@@ -92,7 +92,7 @@ CONFIGURE_ARGS+= --without-zaptel --without-dahdi
 PLIST_SUB+=	WITH_ZAPTEL=""
 CONFIGURE_ARGS+= --with-zaptel --without-dahdi
 BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
-LIB_DEPENDS+=	pri-bristuff.1:${PORTSDIR}/misc/libpri
+LIB_DEPENDS+=	pri-bristuff.1:${PORTSDIR}/misc/libpri-bristuff
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 .endif
 
