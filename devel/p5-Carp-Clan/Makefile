@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	Carp-Clan
-PORTVERSION=	6.00
-PORTREVISION=	1
+PORTVERSION=	6.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Report errors from perspective of caller of a "clan" of modules
+
+BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
