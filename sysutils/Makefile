@@ -69,6 +69,7 @@
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdadminscripts
+    SUBDIR += bsdcrashtar
     SUBDIR += bsdhwmon
     SUBDIR += bsdsar
     SUBDIR += bsdstats
