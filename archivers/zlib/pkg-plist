@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-include/zlib.h
-include/zconf.h
-lib/libz.a

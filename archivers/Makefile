@@ -190,7 +190,6 @@
     SUBDIR += zipios++
     SUBDIR += zipmix
     SUBDIR += zipper
-    SUBDIR += zlib
     SUBDIR += zoo
 
 .include <bsd.port.subdir.mk>
