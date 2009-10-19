@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Carp/Clan/Share.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan/Share/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan/Share
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
+@dirrmtry %%SITE_PERL%%/Carp/Clan
+@dirrmtry %%SITE_PERL%%/Carp
