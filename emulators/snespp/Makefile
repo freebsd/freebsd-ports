@@ -9,7 +9,7 @@ PORTNAME=	snespp
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	emulators kld
-MASTER_SITES=	http://www.cse.unsw.edu.au/~tbourke/software/
+MASTER_SITES=	http://www.tbrk.org/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	timbob@bigpond.com
