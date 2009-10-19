@@ -1,5 +1,5 @@
 --- bgpq.c.orig	2006-04-08 04:45:19.000000000 +0400
-+++ bgpq.c	2009-10-19 19:37:28.000000000 +0400
++++ bgpq.c	2008-02-15 14:39:18.000000000 +0300
 @@ -39,7 +39,7 @@
  /* from unistd.h on *BSD */
  extern int optreset;
@@ -71,3 +71,295 @@
  	if(!outfile) outfile=stdout;
  
  	if(debug>3) 
+--- ro.c.orig	2007-10-05 14:01:29.000000000 +0400
++++ ro.c	2009-05-15 23:22:20.000000000 +0400
+@@ -27,7 +27,7 @@
+ int route2ro(struct ro* queue,char* text, struct ro* ra, char* as);
+ 
+ /* struct ro* ro_head=NULL; */
+-extern int debug, allroutes, quiet, no_expand_as, Quiet, invertLogic, addLog;
++extern int debug, allroutes, quiet, no_expand_as, Quiet, invertLogic, addLog, show_bad;
+ 
+ static int ases=0, asmcs=0, routes=0;
+ static struct irrdc* ir=NULL;
+@@ -172,7 +172,7 @@
+ 	if(ntohl(ra->addr) <= ntohl(rb->addr) && 
+ 		ntohl(ra->lastaddr) >= ntohl(rb->lastaddr)) { 
+ 		rb->flag|=RO_OVL;
+-		if(ra->as && rb->as && !strcasecmp(ra->as,rb->as)) 
++		if(ra->as && rb->as && !strcmp(ra->as,rb->as)) 
+ 			 return -2;
+ 		return -1;
+ 	};
+@@ -180,7 +180,7 @@
+ 	if(ntohl(ra->addr) >= ntohl(rb->addr) && 
+ 		ntohl(ra->lastaddr) <= ntohl(rb->lastaddr)) {
+ 		ra->flag|=RO_OVL;
+-		if(ra->as && rb->as && !strcasecmp(ra->as,rb->as)) 
++		if(ra->as && rb->as && !strcmp(ra->as,rb->as)) 
+ 			return 2;
+ 		return 1;
+ 	};
+@@ -275,6 +275,7 @@
+ 	char* c;
+ 	int mle;
+ 	int needenq=0;
++	int i, n;
+ 	struct ro* rb, *rc;
+ 	char buffer[512];
+ 
+@@ -285,7 +286,12 @@
+ 		bzero(ra,sizeof(struct ro));
+ 		ra->text=strdup(text);
+ 		ra->type=RO_RO;
+-		if(as) ra->as=strdup(as);
++		if(as) {
++		    n = strlen(as);
++		    for(i=0; i<n; i++)
++			as[i] = tolower(as[i]);
++		    ra->as=strdup(as);
++		}
+ 		needenq=1;
+ 	};
+ 	c=text;
+@@ -335,7 +341,7 @@
+ 				return 0;
+ 			case 2:
+ 				/* ra << rb */
+-				if(((ra->as && rb->as && !strcasecmp(ra->as, rb->as)) 
++				if(((ra->as && rb->as && !strcmp(ra->as, rb->as)) 
+ 					|| (!ra->as && !rb->as)) && !ra->ovl) { 
+ 					snprintf(buffer,sizeof(buffer)-1,
+ 						"overlayed by %s in the same %s", rb->text, 
+@@ -348,7 +354,7 @@
+ 				return 1;
+ 			case -2: 
+ 				
+-				if(((ra->as && rb->as && !strcasecmp(ra->as, rb->as)) || 
++				if(((ra->as && rb->as && !strcmp(ra->as, rb->as)) || 
+ 					(!ra->as && !rb->as)) && !rb->ovl) { 
+ 					snprintf(buffer,sizeof(buffer)-1,
+ 						"overlayed by %s in the same %s", 
+@@ -369,7 +375,7 @@
+ 				while(rc) { 
+ 					int cmpr=ro_sort(rc,ra);
+ 					if(cmpr!=2) return 1;
+-					if(((ra->as && rc->as && !strcasecmp(ra->as, rc->as)) 
++					if(((ra->as && rc->as && !strcmp(ra->as, rc->as)) 
+ 						|| (!ra->as && !rc->as)) && !rc->ovl) { 
+ 						snprintf(buffer,sizeof(buffer)-1,
+ 							"overlayed by %s in the same %s", ra->text, 
+@@ -430,6 +436,8 @@
+ { 
+ 	char* c,*d;
+ 	struct ro* ra;
++	char disp[] = "|/-\\";
++	unsigned int asn=0, i=0;
+ 
+ 	if(!ro_head) { 
+ 		if(debug) SX_TRACE2("Nothing to expand...\n");
+@@ -439,6 +447,8 @@
+ 
+ 	ra=ro_head;
+ 
++	if(!debug && !quiet)
++	    fprintf(stderr, "Starting expansion...\n");
+ 	while(ra) { 
+ 		if(ra->type==RO_RO || ra->type==RO_RPSL) { 
+ /*			route2ro(ra->text,ra,NULL); */
+@@ -460,7 +470,19 @@
+ 			};
+ 			if(ir->answer) { 
+ 				c=ir->answer;
++				if(!debug && !quiet) {
++				    fprintf(stderr, "\rAS #%u of %u %c", ++asn, ases, disp[i++]);
++				    fflush(stderr);
++				    if(i == sizeof(disp)-1)
++					i=0;
++				}
+ nextro:
++				if(!debug && !quiet) {
++				    fprintf(stderr, "\b%c", disp[i++]);
++				    fflush(stderr);
++				    if(i == sizeof(disp)-1)
++					i=0;
++				}
+ 				while(isspace((int)*c)) c++;
+ 				d=c;
+ 				while(!isspace((int)*c)) c++;
+@@ -468,8 +490,17 @@
+ 				if(!excep || !ro_exists(excep,d)) 
+ 					route2ro(ro_head,d,NULL,ra->text);
+ 				if(*(c+1)!=0) { c++; goto nextro; };
++				if(!debug && !quiet) {
++				    fprintf(stderr, "\b ");
++				    fflush(stderr);
++				}
++			} else {
++				if(show_bad)
++				    fprintf(stderr, "%s - there is no such key in WHOIS database\n", ra->text);
+ 			};
+ 		} else if(ra->type==RO_MC) { 
++			if(!debug && !quiet)
++			    fprintf(stderr, "MC: %s\n", ra->text);
+ 			if(!ir) { 
+ 				ir=ir_init(host,port,source);
+ 				if(!ir) { 
+@@ -515,6 +546,8 @@
+ nextra:
+ 		ra=ra->next;
+ 	};
++	if(!debug && !quiet)
++	    fprintf(stderr, "\nFinished\n");
+ 	return 1;
+ };
+ 
+--- irrdi.h.orig	2009-05-15 18:02:58.000000000 +0400
++++ irrdi.h	2009-05-15 21:44:49.000000000 +0400
+@@ -13,7 +13,6 @@
+ 	int s;
+ 	char* answer;
+ 	struct irrdcentry* cache;
+-	FILE* f;
+ #if HAVE_GETADDRINFO
+ 	struct addrinfo* res;
+ #else
+--- irrdi.c.orig	2005-06-23 11:53:56.000000000 +0400
++++ irrdi.c	2009-10-19 20:17:55.000000000 +0400
+@@ -191,12 +191,10 @@
+ 		};
+ 	};
+ #endif
+-	ir->f=fdopen(ir->s,"a+");
+ 	if(debug>2) { 
+ 		SX_TRACE2("sending !!");
+ 	};
+-	fseek(ir->f,0,SEEK_END);
+-	fwrite("!!\n",3,1,ir->f);
++	write(ir->s, "!!\n",3);
+ 
+ 	return 1;
+ };
+@@ -207,7 +205,9 @@
+ 	va_list ap;
+ 	char qbuff[512];
+ 	char rbuff[2048];
+-	int len;
++	char *p;
++	size_t len, n;
++	int need_copy=0;
+ 	struct irrdcentry* ice;
+ 
+ 	memset(qbuff,0,sizeof(qbuff));
+@@ -223,33 +223,39 @@
+ 	if(debug>2)  
+ 		SX_TRACE2("checking cache for %s", qbuff);
+ 
++	/* XXX A bad cache find function. We get only degradation with it.
+ 	if((ice=irrd_cache_find(ir,qbuff))) { 
+ 		if(debug>2) 
+ 			SX_TRACE2("oki, found cached entry");
+ 		
+ 		ir->answer=strdup(ice->answer);
+ 		return 1;
+-	};
++	};*/
+ 
+ 	if(debug>2) 
+ 		SX_TRACE2("sending %s", qbuff);
+ 
+-	fseek(ir->f,0,SEEK_END);
+-	fwrite(qbuff,strlen(qbuff),1,ir->f);
+-	fwrite("\n",1,1,ir->f);
+-	fflush(ir->f);
++	write(ir->s, qbuff, strlen(qbuff));
++	write(ir->s, "\n", 1);
+ 
+-	if(!fgets(rbuff,sizeof(rbuff),ir->f)) { 
++	if(!(n = read(ir->s, rbuff, sizeof(rbuff)))) { 
+ 		SX_TRACE2("error reading from socket: %i %s",errno,
+ 			strerror(errno));
+-		if(ferror(ir->f)) { 
+-			SX_ERROR("fgets ferror: %i",ferror(ir->f));
+-		};
+-		if(feof(ir->f)) { 
+-			SX_ERROR("fgets feof: %i",ferror(ir->f));
+-		};
+-		return 0;
+-	};
++		SX_TRACE2("trying to reconnect");
++		if(!irrd_connect(ir))
++		    return 0;
++		/* resend a command */
++		write(ir->s, qbuff, strlen(qbuff));
++		write(ir->s, "\n", 1);
++		if(!(n = read(ir->s, rbuff, sizeof(rbuff)))) { 
++		    SX_TRACE2("error again. give up.");
++		    return 0;
++		}
++	};
++	p = strchr(rbuff, '\n');
++	*p++ = '\0';
++	if(n > strlen(rbuff)+1)
++	    need_copy=1;
+ 
+ 	if(debug>2) 
+ 		SX_TRACE2("Answer is %s", rbuff);
+@@ -266,12 +272,34 @@
+ 			if(debug>2) 
+ 				SX_TRACE2("Waiting for %i data bytes..",len);
+ 
+-			fread(ir->answer,1,len,ir->f);
++			if(need_copy) {
++			    n -= strlen(rbuff)+1;
++			    if(n > len) {
++				need_copy = n - len;
++				n = len;
++			    } else
++				need_copy=0;
++			    bcopy(p, ir->answer, n);
++			    p+=n;
++			    if(debug>2)
++				SX_TRACE2("Copy %d bytes", n);
++			} else
++			    n = 0;
++
++			while(n < len)
++			    n += read(ir->s, ir->answer + n, len-n);
+ 			
+ 			if(debug>2) 
+ 				SX_TRACE2("Got %s",ir->answer);
+ 
+-			fgets(rbuff,sizeof(rbuff),ir->f);
++			if(need_copy) {
++			    if(debug>2)
++				SX_TRACE2("Copy %d bytes", need_copy);
++			    bcopy(p, rbuff, need_copy);
++			} else
++			    n = read(ir->s, rbuff, sizeof(rbuff));
++			p = strchr(rbuff, '\n');
++			*p = '\0';
+ 			if(debug>2) 
+ 				SX_TRACE2("And resulting control code is %s", rbuff);
+ 
+@@ -279,7 +307,8 @@
+ 				/* smth strange.. :( */
+ 				return 0;
+ 			};
+-			irrd_cache_add(ir,qbuff,ir->answer);
++			/* XXX see above about irrd_cache_find()
++			irrd_cache_add(ir,qbuff,ir->answer); */
+ 			break;
+ 		case 'C': /* query successfull, no data */
+ 		case 'D': /* no such key */
+@@ -302,9 +331,7 @@
+ 	if(debug>2) { 
+ 		SX_TRACE2("sending !q");
+ 	};
+-	fseek(ir->f,0,SEEK_END);
+-	fprintf(ir->f,"!q\n");
+-	fclose(ir->f);
++	write(ir->s, "!q\n", 3);
+ 	close(ir->s);
+ 	return 1;
+ };
