@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-JFDI
-PORTVERSION=	0.063
+PORTVERSION=	0.064
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Catalyst::Plugin::ConfigLoader-style layer over Config::Any
 
 BUILD_DEPENDS=	\
+	p5-Carp-Clan-Share>=0:${PORTSDIR}/devel/p5-Carp-Clan-Share \
+	p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 	p5-Hash-Merge-Simple>=0:${PORTSDIR}/devel/p5-Hash-Merge-Simple \
 	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
