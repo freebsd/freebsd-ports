@@ -38,6 +38,14 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=	dri
 .endif
 
+.if ${OSVERSION}<700055
+IGNORE=	FreeBSD>=7.X is needed with Linux emulation 2.6.x.
+.elif ${OSVERSION}<800076 && \
+	! defined (OVERRIDE_LINUX_NONBASE_PORTS) || \
+	! (${OVERRIDE_LINUX_NONBASE_PORTS} == f10)
+IGNORE=	needs non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f10 and OVERRIDE_LINUX_NONBASE_PORTS=f10)
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}
