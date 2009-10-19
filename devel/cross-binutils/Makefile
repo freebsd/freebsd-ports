@@ -70,6 +70,13 @@ PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-strings \
 		bin/${OURTARGET}-strip
 
+.if defined(TGTABI) && (${TGTABI} == "pc-mingw32" || ${TGTABI} == "mingw32")
+PLIST_FILES+=	bin/${OURTARGET}-dlltool \
+		bin/${OURTARGET}-dllwrap \
+		bin/${OURTARGET}-windmc \
+		bin/${OURTARGET}-windres
+.endif
+
 #.if defined(WITH_RTEMS_PATCHES)
 #PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071104.diff
 #.endif
