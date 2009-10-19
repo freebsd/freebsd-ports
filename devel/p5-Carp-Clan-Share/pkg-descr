@@ -1,0 +1,5 @@
+This is a very lightweight helper module (actually just an import
+method) that will automagically create a __PACKAGE__::Carp module for
+you.
+
+WWW: http://search.cpan.org/dist/Carp-Clan-Share/

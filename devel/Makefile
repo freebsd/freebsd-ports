@@ -1065,6 +1065,7 @@
     SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Carp-Assert-More
     SUBDIR += p5-Carp-Clan
+    SUBDIR += p5-Carp-Clan-Share
     SUBDIR += p5-Carp-Datum
     SUBDIR += p5-Cdk
     SUBDIR += p5-Check-ISA
