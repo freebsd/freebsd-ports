@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tinyproxy
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.banu.com/pub/tinyproxy/1.6/
