@@ -1,0 +1,73 @@
+--- bgpq.c.orig	2006-04-08 04:45:19.000000000 +0400
++++ bgpq.c	2009-10-19 19:37:28.000000000 +0400
+@@ -39,7 +39,7 @@
+ /* from unistd.h on *BSD */
+ extern int optreset;
+ 
+-int debug, allroutes, quiet, noheader, no_expand_as=0, no_finish_in_main=0;
++int debug, allroutes, quiet, noheader, no_expand_as=0, no_finish_in_main=0, show_bad=0;
+ int Quiet=0, invertLogic=0, addLog=0;
+ 
+ char commandstring[2048];
+@@ -48,10 +48,11 @@
+ int
+ usage()
+ { 
+-	printf("Usage: bgpq [-l name] [-h host] [-p port] [-d] [-Pijosge]|[-f number]|[-F format]|[-G number] [-aq] [-S src] [-H] [-c] [-R masklen] objects [EXCEPT objects]\n");
++	printf("Usage: bgpq [-l name] [-h host] [-p port] [-d] [-Pijosge]|[-f number]|[-F format]|[-G number] [-aq] [-S src] [-H] [-c] [-R masklen] [-b] objects [EXCEPT objects]\n");
+ 	printf("\tbgpq -r filename\n");
+ 	printf("\t-A - try to aggregate routes\n");
+ 	printf("\t-a - print all routes uncommented\n");
++	printf("\t-b - show unresolved ASes\n");
+ 	printf("\t-c - include commandline in output\n");
+ 	printf("\t-d - debugging\n");
+ 	printf("\t-e - generate standard access-list\n");
+@@ -159,11 +160,14 @@
+ 		strncat(commandstring," ",sizeof(commandstring)-1);
+ 	};
+ 		
+-	while((c=getopt(argc,argv,"Aaqh:p:l:dPiIosgG:S:eNHcf:F:O:R:r:jJQL"))!=EOF){ 
++	while((c=getopt(argc,argv,"Aabqh:p:l:dPiIosgG:S:eNHcf:F:O:R:r:jJQL"))!=EOF){ 
+ 	switch(c) { 
+ 		case 'A': 
+ 			do_aggregate=1;
+ 			break;
++		case 'b':
++			show_bad=1;
++			break;
+ 		case 'l': 
+ 			listname=optarg;
+ 			if(!check_is_word(listname)) { 
+@@ -401,12 +405,30 @@
+ 
+ 	if(!expand(ro,host,port,excp,source)) exit(1);
+ 
+-	if(refine) 
++	if(refine)  {
++		if(!quiet)
++		    fprintf(stderr, "Refining...");
++
+ 		ro_refinery(ro,refine);
+ 
+-	if(do_aggregate) 
++		if(!quiet)
++		    fprintf(stderr, " done\n");
++	}
++
++
++	if(do_aggregate) {
++		if(!quiet)
++		    fprintf(stderr, "Aggregating...");
++		
+ 		ro_aggregate(&ro,mode);
+ 
++		if(!quiet)
++		    fprintf(stderr, " done\n");
++	}
++
++	if(!quiet)
++	    fprintf(stderr, "Output results...\n");
++
+ 	if(!outfile) outfile=stdout;
+ 
+ 	if(debug>3) 
