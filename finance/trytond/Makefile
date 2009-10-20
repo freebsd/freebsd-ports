@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	trytond
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.0
 CATEGORIES=	finance python
-MASTER_SITES=	http://downloads.tryton.org/1.2/
+MASTER_SITES=	http://downloads.tryton.org/1.4/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A three-tiers high-level general purpose application platform
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \

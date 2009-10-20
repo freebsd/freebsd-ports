@@ -28,6 +28,18 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/postgresql/table.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/postgresql/table.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/postgresql/table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/database.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/database.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/database.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/table.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/table.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/table.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/table.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/table.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/table.pyo
@@ -70,6 +82,9 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/export.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/export.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/fr_FR.csv
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/gen_time_locale.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/gen_time_locale.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/gen_time_locale.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/ir.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/lang.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/lang.pyc
@@ -98,6 +113,9 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/sequence.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/sequence.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/sequence.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/time_locale.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/time_locale.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/time_locale.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/translation.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/translation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/translation.pyo
@@ -188,6 +206,9 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/model.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/model.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/model.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/modelsingleton.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/modelsingleton.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/modelsingleton.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/modelsql.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/modelsql.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/model/modelsql.pyo
@@ -203,6 +224,9 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/monitor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/monitor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/monitor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/pool.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/pool.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/pool.pyo
@@ -278,6 +302,12 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/mptt.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/mptt.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/mptt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/model.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/model.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/model.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/test_tryton.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/test_tryton.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/tests/test_tryton.pyo
@@ -333,6 +363,7 @@ bin/trytond
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/postgresql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/module
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/ir/ui
