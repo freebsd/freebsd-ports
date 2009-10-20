@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libdispatch
-PORTVERSION=	46
+PORTVERSION=	53
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-DISTNAME=	${PORTNAME}-r${PORTVERSION}
+#DISTNAME=	${PORTNAME}-r${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
@@ -17,6 +17,8 @@ COMMENT=	Grand Central Dispatch API support library
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+
+OPTIONS=	CLANG "Build with LLVM/Clang (required for blocks support)" on
 
 MAN3=	dispatch.3 dispatch_after.3 dispatch_api.3 dispatch_apply.3 \
 	dispatch_async.3 dispatch_benchmark.3 dispatch_group_create.3 \
@@ -34,6 +36,16 @@ post-configure:
 
 .if ${OSVERSION} < 900002
 IGNORE=	is not supported on this OS version
+.endif
+
+.if !defined(WITHOUT_CLANG)
+BUILD_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
+		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
+RUN_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
+		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
+CONFIGURE_ARGS+=	--with-blocks-runtime=/usr/local/lib
+CONFIGURE_ENV+=	CC="clang"
+MAKE_ENV+=	CC="clang"
 .endif
 
 .include <bsd.port.post.mk>
