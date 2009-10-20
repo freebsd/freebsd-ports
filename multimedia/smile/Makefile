@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smile
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/smiletool/
 
@@ -24,6 +24,7 @@ QT_COMPONENTS=	qmake_build gui corelib rcc_build moc_build uic_build \
 
 MAKE_ENV+=	QTDIR=${QT_PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Smile" \
 		"Slideshow Maker in Linux environment" \
