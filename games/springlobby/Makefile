@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	springlobby
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
-		http://mirror.amdmi3.ru/
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform lobby client for the Spring RTS project
