@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Bridge game
 
+BROKEN=		does not build
+
 USE_WX=		2.4
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
@@ -26,8 +28,6 @@ PLIST_FILES=	bin/abridge
 
 .if ${ARCH} != "i386"
 BROKEN=		Does not compile on !i386
-.elif ${OSVERSION} >= 800074
-BROKEN=		does not build
 .endif
 
 .include <bsd.port.post.mk>
