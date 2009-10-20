@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Gtk2/Chmod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Chmod/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Chmod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
+@dirrmtry %%SITE_PERL%%/Gtk2/
