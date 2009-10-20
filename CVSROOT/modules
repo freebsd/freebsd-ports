@@ -449,6 +449,7 @@ amavisd-new                     ports/security/amavisd-new
 amb-plugins                     ports/audio/amb-plugins
 amberfish                       ports/textproc/amberfish
 amfm                            ports/misc/amfm
+amigadepacker                   ports/archivers/amigadepacker
 amiwm                           ports/x11-wm/amiwm
 amoebax                         ports/games/amoebax
 amp                             ports/audio/amp
@@ -1199,6 +1200,7 @@ bsdadminscripts                 ports/sysutils/bsdadminscripts
 bsdar                           ports/archivers/bsdar
 bsdbktr_tvtune                  ports/multimedia/bsdbktr_tvtune
 bsdconv                         ports/converters/bsdconv
+bsdcrashtar                     ports/sysutils/bsdcrashtar
 bsddiff                         ports/textproc/bsddiff
 bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
 bsdgrep                         ports/textproc/bsdgrep
@@ -8730,6 +8732,7 @@ mingw32-gcc                     ports/devel/mingw32-gcc
 mingw32-libgmp4                 ports/math/mingw32-libgmp4
 mingw32-pdcurses                ports/devel/mingw32-pdcurses
 mingw32-pthreads                ports/devel/mingw32-pthreads
+mingw64-binutils                ports/devel/mingw64-binutils
 mini-xml                        ports/textproc/mini-xml
 mini_httpd                      ports/www/mini_httpd
 mini_sendmail                   ports/mail/mini_sendmail
@@ -9225,8 +9228,6 @@ musicpd                         ports/audio/musicpd
 musixtex                        ports/print/musixtex
 mussh                           ports/security/mussh
 mute-net                        ports/net-p2p/mute-net
-mute-net-gui                    ports/net-p2p/mute-net-gui
-mute-net-text                   ports/net-p2p/mute-net-text
 mutella                         ports/net-p2p/mutella
 mutemix                         ports/audio/mutemix
 mutt                            ports/mail/mutt
@@ -10571,6 +10572,7 @@ p5-Carp-Always                  ports/devel/p5-Carp-Always
 p5-Carp-Assert                  ports/devel/p5-Carp-Assert
 p5-Carp-Assert-More             ports/devel/p5-Carp-Assert-More
 p5-Carp-Clan                    ports/devel/p5-Carp-Clan
+p5-Carp-Clan-Share              ports/devel/p5-Carp-Clan-Share
 p5-Carp-Datum                   ports/devel/p5-Carp-Datum
 p5-Catalyst-Action-REST         ports/www/p5-Catalyst-Action-REST
 p5-Catalyst-Action-RenderView   ports/www/p5-Catalyst-Action-RenderView
@@ -14066,6 +14068,7 @@ p5-carp-always                  ports/devel/p5-Carp-Always
 p5-carp-assert                  ports/devel/p5-Carp-Assert
 p5-carp-assert-more             ports/devel/p5-Carp-Assert-More
 p5-carp-clan                    ports/devel/p5-Carp-Clan
+p5-carp-clan-share              ports/devel/p5-Carp-Clan-Share
 p5-carp-datum                   ports/devel/p5-Carp-Datum
 p5-catalyst-action-renderview   ports/www/p5-Catalyst-Action-RenderView
 p5-catalyst-action-rest         ports/www/p5-Catalyst-Action-REST
@@ -22988,6 +22991,7 @@ u-boot                          ports/devel/u-boot
 uDrawGraph                      ports/graphics/uDrawGraph
 ua                              ports/sysutils/ua
 ua-ispell                       ports/textproc/ua-ispell
+uade                            ports/audio/uade
 uae                             ports/emulators/uae
 ubench                          ports/benchmarks/ubench
 uberkey                         ports/security/uberkey
@@ -24348,7 +24352,6 @@ xmms-speex                      ports/audio/xmms-speex
 xmms-status-plugin              ports/multimedia/xmms-status-plugin
 xmms-tfmx                       ports/audio/xmms-tfmx
 xmms-timidity                   ports/audio/xmms-timidity
-xmms-uade                       ports/audio/xmms-uade
 xmms-volnorm                    ports/audio/xmms-volnorm
 xmms-vumeter                    ports/graphics/xmms-vumeter
 xmms-vumeter-skins              ports/x11-themes/xmms-vumeter-skins
@@ -25032,6 +25035,7 @@ ziproxy                         ports/www/ziproxy
 zircon                          ports/irc/zircon
 zisofs-tools                    ports/sysutils/zisofs-tools
 zkt                             ports/dns/zkt
+zlib                            ports/archivers/zlib
 zmailer                         ports/mail/zmailer
 zmq                             ports/devel/zmq
 zms                             ports/mail/zms
