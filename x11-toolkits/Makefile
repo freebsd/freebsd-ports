@@ -158,6 +158,7 @@
     SUBDIR += p5-Gnome2-VFS
     SUBDIR += p5-Gtk
     SUBDIR += p5-Gtk2
+    SUBDIR += p5-Gtk2-Chmod
     SUBDIR += p5-Gtk2-Ex-Dialogs
     SUBDIR += p5-Gtk2-Ex-FormFactory
     SUBDIR += p5-Gtk2-Ex-PodViewer
