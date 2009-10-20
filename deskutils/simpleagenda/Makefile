@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simpleagenda
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://coyote.octets.fr/pub/gnustep/
 DISTNAME=	SimpleAgenda-${PORTVERSION}
@@ -21,5 +21,8 @@ USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|SimpleAgenda|SimpleAgenda.m|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
