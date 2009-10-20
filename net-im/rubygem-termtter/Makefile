@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	termtter
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RF/termtter
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A terminal based twitter client
 
-BUILD_DEPENDS=	rubygem-rubytter>0:${PORTSDIR}/net/rubygem-rubytter \
-		rubygem-termcolor>0:${PORTSDIR}/textproc/rubygem-termcolor
+BUILD_DEPENDS=	rubygem-rubytter>=0.9.2:${PORTSDIR}/net/rubygem-rubytter \
+		rubygem-termcolor>0:${PORTSDIR}/textproc/rubygem-termcolor \
+		rubygem-oauth>=0.3.6:${PORTSDIR}/net/rubygem-oauth
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
