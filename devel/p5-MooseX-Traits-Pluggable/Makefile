@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	MooseX-Traits-Pluggable
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/R/RK/RKITOVER/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
@@ -17,18 +16,10 @@ COMMENT=	An extension to MooseX::Traits
 
 BUILD_DEPENDS=	\
 	p5-Class-MOP>=0.84:${PORTSDIR}/devel/p5-Class-MOP \
-	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Moose-Autobox>=0:${PORTSDIR}/devel/p5-Moose-Autobox \
 	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
-	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS=	\
-	p5-Class-MOP>=0.84:${PORTSDIR}/devel/p5-Class-MOP \
-	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Moose-Autobox>=0:${PORTSDIR}/devel/p5-Moose-Autobox \
-	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
-	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
