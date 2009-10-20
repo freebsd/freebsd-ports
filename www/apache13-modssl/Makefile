@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -57,7 +57,7 @@ MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}${EXTRACT_SUFX}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	apache
 
 .include <bsd.port.pre.mk>
 
@@ -88,10 +88,6 @@ check-depends::
 		`${PKG_INFO} -q -W ${LOCALBASE}/include/fnmatch.h`
 	@${FALSE}
 .endif
-
-APACHE_SH?=	etc/rc.d/apache
-
-PLIST_FILES+=	${APACHE_SH}
 
 .if defined(WITH_APACHE_SUEXEC) && !defined(WITHOUT_APACHE_SUEXEC)
 
@@ -381,8 +377,6 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 post-extract:
-	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/rcng.sh > ${WRKSRC}/rcng.sh
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		${WRKSRC}/src/Configure
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
@@ -429,7 +423,6 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rcng.sh ${PREFIX}/${APACHE_SH}
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
 	@${MKDIR} ${DATADIR}/buckets
 	@${CHOWN} www:www ${DATADIR}/buckets
