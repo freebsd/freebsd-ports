@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	engine_pkcs11
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
