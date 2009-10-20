@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nullmailer
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
