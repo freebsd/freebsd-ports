@@ -4,12 +4,9 @@ bin/verifyta
 %%JAVASHAREDIR%%/%%PORTNAME%%/lib/jdom.jar
 %%JAVASHAREDIR%%/%%PORTNAME%%/lib/jh.jar
 %%JAVASHAREDIR%%/%%PORTNAME%%/lib/jlfgr-1_0.jar
-%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jsr173_1.0_api.jar
-%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jsr173_1.0_ri.jar
 %%JAVASHAREDIR%%/%%PORTNAME%%/lib/model.jar
 %%JAVASHAREDIR%%/%%PORTNAME%%/lib/swixml.jar
 %%JAVASHAREDIR%%/%%PORTNAME%%/server.exe
-%%JAVASHAREDIR%%/%%PORTNAME%%/socketserver.exe
 %%JAVASHAREDIR%%/%%PORTNAME%%/verifyta
 %%JAVASHAREDIR%%/%%PORTNAME%%/uppaal.jar
 %%EXAMPLESDIR%%/2doors.xml

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uppaal
-PORTVERSION=	4.0.7
+PORTVERSION=	4.0.10
 CATEGORIES=	devel java linux
 DISTNAME=	uppaal-${PORTVERSION}-aca
 
@@ -48,8 +48,6 @@ ${DISTDIR}/${DIST_SUBDIR} from:\n\t${DOWNLOAD_URL}\n
 post-patch:
 	${BRANDELF} -t Linux ${WRKSRC}/bin-Linux/server
 	${MV} ${WRKSRC}/bin-Linux/server ${WRKSRC}/bin-Linux/server.exe
-	${BRANDELF} -t Linux ${WRKSRC}/bin-Linux/socketserver
-	${MV} ${WRKSRC}/bin-Linux/socketserver ${WRKSRC}/bin-Linux/socketserver.exe
 	${BRANDELF} -t Linux ${WRKSRC}/bin-Linux/verifyta
 
 do-install:
