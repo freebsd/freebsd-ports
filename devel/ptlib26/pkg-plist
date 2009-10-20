@@ -156,12 +156,13 @@ include/ptlib/vconvert.h
 include/ptlib/video.h
 include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
-lib/libpt-2.6.so
-lib/libpt-2.6.so.4
+lib/libpt-%%PVERSION_MAJOR%%.so
 lib/libpt.so
 lib/libpt_s.a
-lib/ptlib-2.6.4/devices/sound/oss_pwplugin.so
-%%BSDVIDEO%%lib/ptlib-2.6.4/devices/videoinput/bsdvideo_pwplugin.so
+lib/libpt-%%PVERSION_MAJOR%%.so.%%PVERSION_MINOR%%
+lib/ptlib-%%PORTVERSION%%/devices/sound/oss_pwplugin.so
+%%BSDVIDEO%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/bsdvideo_pwplugin.so
+%%V4L%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/v4l_pwplugin.so
 libdata/pkgconfig/ptlib.pc
 %%DATADIR%%/make/common.mak
 %%DATADIR%%/make/lib.mak
@@ -172,10 +173,10 @@ libdata/pkgconfig/ptlib.pc
 %%DATADIR%%/make/unix.mak
 @dirrm %%DATADIR%%/make
 @dirrm %%DATADIR%%
-%%BSDVIDEO%%@dirrm lib/ptlib-2.6.4/devices/videoinput
-@dirrm lib/ptlib-2.6.4/devices/sound
-@dirrm lib/ptlib-2.6.4/devices
-@dirrm lib/ptlib-2.6.4
+%%VIDEODIR%%@dirrm lib/ptlib-%%PORTVERSION%%/devices/videoinput
+@dirrm lib/ptlib-%%PORTVERSION%%/devices/sound
+@dirrm lib/ptlib-%%PORTVERSION%%/devices
+@dirrm lib/ptlib-%%PORTVERSION%%
 @dirrm include/ptlib/unix/ptlib
 @dirrm include/ptlib/unix
 @dirrm include/ptlib
