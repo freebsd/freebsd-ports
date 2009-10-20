@@ -1,0 +1,5 @@
+%%SITE_PERL%%/XML/Reader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Reader/.packlist
+@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Reader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

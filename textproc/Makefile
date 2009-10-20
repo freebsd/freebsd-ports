@@ -795,6 +795,7 @@
     SUBDIR += p5-XML-Parser-Style-Elemental
     SUBDIR += p5-XML-Quote
     SUBDIR += p5-XML-RAI
+    SUBDIR += p5-XML-Reader
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-RSS-Feed
     SUBDIR += p5-XML-RSS-JavaScript
