@@ -7,14 +7,15 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
 PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch xpdf-3.02pl3.patch
+PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch xpdf-3.02pl3.patch \
+		xpdf-3.02pl4.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -78,6 +79,10 @@ PLIST_SUB+=		X11=""
 # add support for adding/deleting drawing annotations in PDF files
 PATCH_SITES+=   http://info.iet.unipi.it/~luigi/FreeBSD/
 PATCHFILES+=    patch-zz-xpdf-annot.20080728a
+
+post-patch:
+	${REINPLACE_CMD} -e 's|undef USE_COMBO_BOX|define USE_COMBO_BOX 1|' \
+		${WRKSRC}/xpdf/XPDFViewer.h
 .endif
 
 post-install:
