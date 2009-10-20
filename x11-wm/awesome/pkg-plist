@@ -7,16 +7,16 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/icons/awesome32.png
 %%DATADIR%%/icons/awesome48.png
 %%DATADIR%%/icons/awesome64.png
-%%DATADIR%%/icons/invaders/enemy_1.png
-%%DATADIR%%/icons/invaders/enemy_2.png
-%%DATADIR%%/icons/invaders/enemy_3.png
-%%DATADIR%%/icons/invaders/player.png
+%%DATADIR%%/lib/awful/autofocus.lua
+%%DATADIR%%/lib/awful/autofocus.lua.in
 %%DATADIR%%/lib/awful/button.lua
 %%DATADIR%%/lib/awful/button.lua.in
 %%DATADIR%%/lib/awful/client.lua
 %%DATADIR%%/lib/awful/client.lua.in
 %%DATADIR%%/lib/awful/completion.lua
 %%DATADIR%%/lib/awful/completion.lua.in
+%%DATADIR%%/lib/awful/dbus.lua
+%%DATADIR%%/lib/awful/dbus.lua.in
 %%DATADIR%%/lib/awful/hooks.lua
 %%DATADIR%%/lib/awful/hooks.lua.in
 %%DATADIR%%/lib/awful/init.lua
@@ -35,18 +35,24 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/lib/awful/layout/suit/magnifier.lua.in
 %%DATADIR%%/lib/awful/layout/suit/max.lua
 %%DATADIR%%/lib/awful/layout/suit/max.lua.in
+%%DATADIR%%/lib/awful/layout/suit/spiral.lua
+%%DATADIR%%/lib/awful/layout/suit/spiral.lua.in
 %%DATADIR%%/lib/awful/layout/suit/tile.lua
 %%DATADIR%%/lib/awful/layout/suit/tile.lua.in
 %%DATADIR%%/lib/awful/menu.lua
 %%DATADIR%%/lib/awful/menu.lua.in
-%%DATADIR%%/lib/awful/mouse.lua
-%%DATADIR%%/lib/awful/mouse.lua.in
+%%DATADIR%%/lib/awful/mouse/finder.lua
+%%DATADIR%%/lib/awful/mouse/finder.lua.in
+%%DATADIR%%/lib/awful/mouse/init.lua
+%%DATADIR%%/lib/awful/mouse/init.lua.in
 %%DATADIR%%/lib/awful/placement.lua
 %%DATADIR%%/lib/awful/placement.lua.in
 %%DATADIR%%/lib/awful/prompt.lua
 %%DATADIR%%/lib/awful/prompt.lua.in
 %%DATADIR%%/lib/awful/remote.lua
 %%DATADIR%%/lib/awful/remote.lua.in
+%%DATADIR%%/lib/awful/rules.lua
+%%DATADIR%%/lib/awful/rules.lua.in
 %%DATADIR%%/lib/awful/screen.lua
 %%DATADIR%%/lib/awful/screen.lua.in
 %%DATADIR%%/lib/awful/startup_notification.lua
@@ -55,33 +61,49 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/lib/awful/tag.lua.in
 %%DATADIR%%/lib/awful/titlebar.lua
 %%DATADIR%%/lib/awful/titlebar.lua.in
+%%DATADIR%%/lib/awful/tooltip.lua
+%%DATADIR%%/lib/awful/tooltip.lua.in
 %%DATADIR%%/lib/awful/util.lua
 %%DATADIR%%/lib/awful/util.lua.in
+%%DATADIR%%/lib/awful/wibox.lua
+%%DATADIR%%/lib/awful/wibox.lua.in
 %%DATADIR%%/lib/awful/widget/button.lua
 %%DATADIR%%/lib/awful/widget/button.lua.in
 %%DATADIR%%/lib/awful/widget/common.lua
 %%DATADIR%%/lib/awful/widget/common.lua.in
+%%DATADIR%%/lib/awful/widget/graph.lua
+%%DATADIR%%/lib/awful/widget/graph.lua.in
 %%DATADIR%%/lib/awful/widget/init.lua
 %%DATADIR%%/lib/awful/widget/init.lua.in
 %%DATADIR%%/lib/awful/widget/launcher.lua
 %%DATADIR%%/lib/awful/widget/launcher.lua.in
+%%DATADIR%%/lib/awful/widget/layout/default.lua
+%%DATADIR%%/lib/awful/widget/layout/default.lua.in
+%%DATADIR%%/lib/awful/widget/layout/horizontal.lua
+%%DATADIR%%/lib/awful/widget/layout/horizontal.lua.in
+%%DATADIR%%/lib/awful/widget/layout/init.lua
+%%DATADIR%%/lib/awful/widget/layout/init.lua.in
+%%DATADIR%%/lib/awful/widget/layout/vertical.lua
+%%DATADIR%%/lib/awful/widget/layout/vertical.lua.in
+%%DATADIR%%/lib/awful/widget/layoutbox.lua
+%%DATADIR%%/lib/awful/widget/layoutbox.lua.in
+%%DATADIR%%/lib/awful/widget/progressbar.lua
+%%DATADIR%%/lib/awful/widget/progressbar.lua.in
 %%DATADIR%%/lib/awful/widget/prompt.lua
 %%DATADIR%%/lib/awful/widget/prompt.lua.in
 %%DATADIR%%/lib/awful/widget/taglist.lua
 %%DATADIR%%/lib/awful/widget/taglist.lua.in
 %%DATADIR%%/lib/awful/widget/tasklist.lua
 %%DATADIR%%/lib/awful/widget/tasklist.lua.in
+%%DATADIR%%/lib/awful/widget/textclock.lua
+%%DATADIR%%/lib/awful/widget/textclock.lua.in
 %%DATADIR%%/lib/beautiful.lua
 %%DATADIR%%/lib/beautiful.lua.in
-%%DATADIR%%/lib/invaders.lua
-%%DATADIR%%/lib/invaders.lua.in
 %%DATADIR%%/lib/naughty.lua
 %%DATADIR%%/lib/naughty.lua.in
-%%DATADIR%%/lib/tabulous.lua
-%%DATADIR%%/lib/tabulous.lua.in
-%%DATADIR%%/lib/telak.lua
-%%DATADIR%%/lib/telak.lua.in
 %%DATADIR%%/themes/default/background.png
+%%DATADIR%%/themes/default/layouts/dwindle.png
+%%DATADIR%%/themes/default/layouts/dwindlew.png
 %%DATADIR%%/themes/default/layouts/fairh.png
 %%DATADIR%%/themes/default/layouts/fairhw.png
 %%DATADIR%%/themes/default/layouts/fairv.png
@@ -94,6 +116,8 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/themes/default/layouts/magnifierw.png
 %%DATADIR%%/themes/default/layouts/max.png
 %%DATADIR%%/themes/default/layouts/maxw.png
+%%DATADIR%%/themes/default/layouts/spiral.png
+%%DATADIR%%/themes/default/layouts/spiralw.png
 %%DATADIR%%/themes/default/layouts/tile.png
 %%DATADIR%%/themes/default/layouts/tilebottom.png
 %%DATADIR%%/themes/default/layouts/tilebottomw.png
@@ -141,11 +165,48 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/themes/sky/sky-background.png
 %%DATADIR%%/themes/sky/theme.lua
 %%DATADIR%%/themes/sky/theme.lua.in
+%%DATADIR%%/themes/zenburn/awesome-icon.png
+%%DATADIR%%/themes/zenburn/layouts/dwindle.png
+%%DATADIR%%/themes/zenburn/layouts/fairh.png
+%%DATADIR%%/themes/zenburn/layouts/fairv.png
+%%DATADIR%%/themes/zenburn/layouts/floating.png
+%%DATADIR%%/themes/zenburn/layouts/fullscreen.png
+%%DATADIR%%/themes/zenburn/layouts/magnifier.png
+%%DATADIR%%/themes/zenburn/layouts/max.png
+%%DATADIR%%/themes/zenburn/layouts/spiral.png
+%%DATADIR%%/themes/zenburn/layouts/tile.png
+%%DATADIR%%/themes/zenburn/layouts/tilebottom.png
+%%DATADIR%%/themes/zenburn/layouts/tileleft.png
+%%DATADIR%%/themes/zenburn/layouts/tiletop.png
+%%DATADIR%%/themes/zenburn/taglist/squarefz.png
+%%DATADIR%%/themes/zenburn/taglist/squarez.png
+%%DATADIR%%/themes/zenburn/theme.lua
+%%DATADIR%%/themes/zenburn/theme.lua.in
+%%DATADIR%%/themes/zenburn/titlebar/close_focus.png
+%%DATADIR%%/themes/zenburn/titlebar/close_normal.png
+%%DATADIR%%/themes/zenburn/titlebar/floating_focus_active.png
+%%DATADIR%%/themes/zenburn/titlebar/floating_focus_inactive.png
+%%DATADIR%%/themes/zenburn/titlebar/floating_normal_active.png
+%%DATADIR%%/themes/zenburn/titlebar/floating_normal_inactive.png
+%%DATADIR%%/themes/zenburn/titlebar/maximized_focus_active.png
+%%DATADIR%%/themes/zenburn/titlebar/maximized_focus_inactive.png
+%%DATADIR%%/themes/zenburn/titlebar/maximized_normal_active.png
+%%DATADIR%%/themes/zenburn/titlebar/maximized_normal_inactive.png
+%%DATADIR%%/themes/zenburn/titlebar/ontop_focus_active.png
+%%DATADIR%%/themes/zenburn/titlebar/ontop_focus_inactive.png
+%%DATADIR%%/themes/zenburn/titlebar/ontop_normal_active.png
+%%DATADIR%%/themes/zenburn/titlebar/ontop_normal_inactive.png
+%%DATADIR%%/themes/zenburn/titlebar/sticky_focus_active.png
+%%DATADIR%%/themes/zenburn/titlebar/sticky_focus_inactive.png
+%%DATADIR%%/themes/zenburn/titlebar/sticky_normal_active.png
+%%DATADIR%%/themes/zenburn/titlebar/sticky_normal_inactive.png
+%%DATADIR%%/themes/zenburn/zenburn-background.png
 share/xsessions/awesome.desktop
-@dirrm %%DATADIR%%/icons/invaders
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/lib/awful/layout/suit
 @dirrm %%DATADIR%%/lib/awful/layout
+@dirrm %%DATADIR%%/lib/awful/mouse
+@dirrm %%DATADIR%%/lib/awful/widget/layout
 @dirrm %%DATADIR%%/lib/awful/widget
 @dirrm %%DATADIR%%/lib/awful
 @dirrm %%DATADIR%%/lib
@@ -156,6 +217,10 @@ share/xsessions/awesome.desktop
 @dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes/sky/layouts
 @dirrm %%DATADIR%%/themes/sky
+@dirrm %%DATADIR%%/themes/zenburn/titlebar
+@dirrm %%DATADIR%%/themes/zenburn/taglist
+@dirrm %%DATADIR%%/themes/zenburn/layouts
+@dirrm %%DATADIR%%/themes/zenburn
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
 @dirrmtry etc/xdg/awesome

@@ -1,6 +1,6 @@
---- awesomeConfig.cmake.orig
-+++ awesomeConfig.cmake
-@@ -12,8 +12,9 @@
+--- awesomeConfig.cmake.orig	2009-09-28 09:08:15.000000000 -0300
++++ awesomeConfig.cmake	2009-09-30 16:36:56.000000000 -0300
+@@ -11,8 +11,9 @@
  set(CMAKE_BUILD_TYPE RELEASE)
  
  option(WITH_DBUS "build with D-BUS" ON)
@@ -11,7 +11,7 @@
  
  link_directories(/usr/local/lib)
  
-@@ -61,7 +62,7 @@
+@@ -60,7 +61,7 @@
  # theme graphics
  a_find_program(CONVERT_EXECUTABLE convert TRUE)
  # doxygen
@@ -20,7 +20,24 @@
  # pkg-config
  include(FindPkgConfig)
  # lua 5.1
-@@ -244,7 +245,7 @@
+@@ -166,6 +167,8 @@
+ 
+ # Check for libev
+ a_find_library(LIB_EV ev)
++# Check for libexecinfo on non Glibc system
++a_find_library(LIB_EXECINFO execinfo)
+ 
+ # Error check
+ if(NOT LUA51_FOUND AND NOT LUA50_FOUND) # This is a workaround to a cmake bug
+@@ -176,6 +179,7 @@
+     ${AWESOME_COMMON_REQUIRED_LDFLAGS}
+     ${AWESOME_REQUIRED_LIBRARIES}
+     ${LIB_EV}
++    ${LIB_EXECINFO}
+     ${LUA_LIBRARIES})
+ 
+ set(AWESOME_REQUIRED_INCLUDE_DIRS
+@@ -244,7 +248,7 @@
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()

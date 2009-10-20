@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.3.4
+PORTVERSION=	3.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -27,7 +27,8 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		xdg-basedir.1:${PORTSDIR}/x11/libxdg-basedir \
 		xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-event.1:${PORTSDIR}/x11/xcb-util
+		xcb-event.1:${PORTSDIR}/x11/xcb-util \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_ICONV=	yes
 USE_CMAKE=	yes
