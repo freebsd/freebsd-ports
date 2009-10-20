@@ -225,7 +225,7 @@
  	struct addrinfo* res;
  #else
 --- irrdi.c.orig	2005-06-23 11:53:56.000000000 +0400
-+++ irrdi.c	2009-10-19 20:17:55.000000000 +0400
++++ irrdi.c	2009-10-20 17:22:49.000000000 +0400
 @@ -191,12 +191,10 @@
  		};
  	};
@@ -240,7 +240,7 @@
  
  	return 1;
  };
-@@ -207,7 +205,9 @@
+@@ -207,8 +205,11 @@
  	va_list ap;
  	char qbuff[512];
  	char rbuff[2048];
@@ -249,110 +249,204 @@
 +	size_t len, n;
 +	int need_copy=0;
  	struct irrdcentry* ice;
++	int retries = 0;
  
  	memset(qbuff,0,sizeof(qbuff));
-@@ -223,33 +223,39 @@
- 	if(debug>2)  
- 		SX_TRACE2("checking cache for %s", qbuff);
+ 	va_start(ap,quest);
+@@ -217,79 +218,120 @@
  
-+	/* XXX A bad cache find function. We get only degradation with it.
- 	if((ice=irrd_cache_find(ir,qbuff))) { 
- 		if(debug>2) 
- 			SX_TRACE2("oki, found cached entry");
- 		
- 		ir->answer=strdup(ice->answer);
- 		return 1;
+ 	va_end(ap);
+ 
+-	if(ir->answer) free(ir->answer);
+-	ir->answer=NULL;
+-
+-	if(debug>2)  
+-		SX_TRACE2("checking cache for %s", qbuff);
+-
+-	if((ice=irrd_cache_find(ir,qbuff))) { 
+-		if(debug>2) 
+-			SX_TRACE2("oki, found cached entry");
+-		
+-		ir->answer=strdup(ice->answer);
+-		return 1;
 -	};
-+	};*/
- 
- 	if(debug>2) 
- 		SX_TRACE2("sending %s", qbuff);
- 
+-
+-	if(debug>2) 
+-		SX_TRACE2("sending %s", qbuff);
+-
 -	fseek(ir->f,0,SEEK_END);
 -	fwrite(qbuff,strlen(qbuff),1,ir->f);
 -	fwrite("\n",1,1,ir->f);
 -	fflush(ir->f);
-+	write(ir->s, qbuff, strlen(qbuff));
-+	write(ir->s, "\n", 1);
- 
+-
 -	if(!fgets(rbuff,sizeof(rbuff),ir->f)) { 
-+	if(!(n = read(ir->s, rbuff, sizeof(rbuff)))) { 
- 		SX_TRACE2("error reading from socket: %i %s",errno,
- 			strerror(errno));
+-		SX_TRACE2("error reading from socket: %i %s",errno,
+-			strerror(errno));
 -		if(ferror(ir->f)) { 
 -			SX_ERROR("fgets ferror: %i",ferror(ir->f));
 -		};
 -		if(feof(ir->f)) { 
 -			SX_ERROR("fgets feof: %i",ferror(ir->f));
 -		};
--		return 0;
--	};
-+		SX_TRACE2("trying to reconnect");
-+		if(!irrd_connect(ir))
-+		    return 0;
-+		/* resend a command */
-+		write(ir->s, qbuff, strlen(qbuff));
-+		write(ir->s, "\n", 1);
-+		if(!(n = read(ir->s, rbuff, sizeof(rbuff)))) { 
-+		    SX_TRACE2("error again. give up.");
-+		    return 0;
-+		}
-+	};
-+	p = strchr(rbuff, '\n');
-+	*p++ = '\0';
-+	if(n > strlen(rbuff)+1)
-+	    need_copy=1;
- 
- 	if(debug>2) 
- 		SX_TRACE2("Answer is %s", rbuff);
-@@ -266,12 +272,34 @@
- 			if(debug>2) 
- 				SX_TRACE2("Waiting for %i data bytes..",len);
- 
--			fread(ir->answer,1,len,ir->f);
-+			if(need_copy) {
-+			    n -= strlen(rbuff)+1;
-+			    if(n > len) {
-+				need_copy = n - len;
-+				n = len;
-+			    } else
-+				need_copy=0;
-+			    bcopy(p, ir->answer, n);
-+			    p+=n;
-+			    if(debug>2)
-+				SX_TRACE2("Copy %d bytes", n);
-+			} else
-+			    n = 0;
++	while (1) {
++	    if(ir->answer) free(ir->answer);
++	    ir->answer=NULL;
 +
-+			while(n < len)
-+			    n += read(ir->s, ir->answer + n, len-n);
- 			
- 			if(debug>2) 
- 				SX_TRACE2("Got %s",ir->answer);
- 
++	    if(debug>2)  
++		    SX_TRACE2("checking cache for %s", qbuff);
++
++	    /* XXX A bad cache find function. We get only degradation with it.
++	    if((ice=irrd_cache_find(ir,qbuff))) { 
++		    if(debug>2) 
++			    SX_TRACE2("oki, found cached entry");
++		    
++		    ir->answer=strdup(ice->answer);
++		    return 1;
++	    };*/
++
++	    if(debug>2) 
++		    SX_TRACE2("sending %s", qbuff);
++
++	    strcat(qbuff, "\n");
++	    if (write(ir->s, qbuff, strlen(qbuff)) != strlen(qbuff))
++		    goto errlab;
++
++	    if((n = read(ir->s, rbuff, sizeof(rbuff)))<=0)
++		    goto errlab;
++	    
++	    p = strchr(rbuff, '\n');
++
++	    if (!p) 
++		goto errlab;
++
++	    *p++ = '\0';
++	    if(n > strlen(rbuff)+1)
++		need_copy=1;
++
++	    if(debug>2) 
++		    SX_TRACE2("Answer is %s", rbuff);
++
++	    switch(rbuff[0]) { 
++		    case 'A': 
++			    len=atoi(rbuff+1);
++			    ir->answer=malloc(len+1);
++			    if(!ir->answer) { 
++				    return 0;
++			    };
++			    bzero(ir->answer,len+1);
++
++			    if(debug>2) 
++				    SX_TRACE2("Waiting for %i data bytes..",len);
++
++			    if(need_copy) {
++				n -= strlen(rbuff)+1;
++				if(n > len) {
++				    need_copy = n - len;
++				    n = len;
++				} else
++				    need_copy=0;
++				bcopy(p, ir->answer, n);
++				p+=n;
++				if(debug>2)
++				    SX_TRACE2("Copy %d bytes", n);
++			    } else
++				n = 0;
++
++			    while(n < len) {
++				size_t nn;
++				nn = read(ir->s, ir->answer + n, len-n);
++				if (nn<=0)
++				    goto errlab;
++				n += nn;
++			    }
++			    
++			    if(debug>2) 
++				    SX_TRACE2("Got %s",ir->answer);
++
++			    if(need_copy) {
++				if(debug>2)
++				    SX_TRACE2("Copy %d bytes", need_copy);
++				bcopy(p, rbuff, need_copy);
++			    } else {
++				n = read(ir->s, rbuff, sizeof(rbuff));
++				if (n <= 0)
++				    goto errlab;
++			    }
++			    p = strchr(rbuff, '\n');
++			    *p = '\0';
++			    if(debug>2) 
++				    SX_TRACE2("And resulting control code is %s", rbuff);
++
++			    if(rbuff[0]!='C') { 
++				    /* smth strange.. :( */
++				    return 0;
++			    };
++			    /* XXX see above about irrd_cache_find()
++			    irrd_cache_add(ir,qbuff,ir->answer); */
++			    break;
++		    case 'C': /* query successfull, no data */
++		    case 'D': /* no such key */
++			    break;
++		    case 'E': /* multiple keys */
++		    case 'F': /* another error.. */
++			    return 0;
++		    default:
++			    return 0;
++	    };
++
++	    break;
++errlab:
++	    if (retries++ > 3)
++		    break; 
++	    SX_TRACE2("trying to reconnect");
++	    if(!irrd_connect(ir))
+ 		return 0;
+-	};
+-
+-	if(debug>2) 
+-		SX_TRACE2("Answer is %s", rbuff);
+-
+-	switch(rbuff[0]) { 
+-		case 'A': 
+-			len=atoi(rbuff+1);
+-			ir->answer=malloc(len+1);
+-			if(!ir->answer) { 
+-				return 0;
+-			};
+-			bzero(ir->answer,len+1);
+-
+-			if(debug>2) 
+-				SX_TRACE2("Waiting for %i data bytes..",len);
+-
+-			fread(ir->answer,1,len,ir->f);
+-			
+-			if(debug>2) 
+-				SX_TRACE2("Got %s",ir->answer);
+-
 -			fgets(rbuff,sizeof(rbuff),ir->f);
-+			if(need_copy) {
-+			    if(debug>2)
-+				SX_TRACE2("Copy %d bytes", need_copy);
-+			    bcopy(p, rbuff, need_copy);
-+			} else
-+			    n = read(ir->s, rbuff, sizeof(rbuff));
-+			p = strchr(rbuff, '\n');
-+			*p = '\0';
- 			if(debug>2) 
- 				SX_TRACE2("And resulting control code is %s", rbuff);
- 
-@@ -279,7 +307,8 @@
- 				/* smth strange.. :( */
- 				return 0;
- 			};
+-			if(debug>2) 
+-				SX_TRACE2("And resulting control code is %s", rbuff);
+-
+-			if(rbuff[0]!='C') { 
+-				/* smth strange.. :( */
+-				return 0;
+-			};
 -			irrd_cache_add(ir,qbuff,ir->answer);
-+			/* XXX see above about irrd_cache_find()
-+			irrd_cache_add(ir,qbuff,ir->answer); */
- 			break;
- 		case 'C': /* query successfull, no data */
- 		case 'D': /* no such key */
-@@ -302,9 +331,7 @@
+-			break;
+-		case 'C': /* query successfull, no data */
+-		case 'D': /* no such key */
+-			break;
+-		case 'E': /* multiple keys */
+-		case 'F': /* another error.. */
+-			return 0;
+-		default:
+-			return 0;
+-	};
++   	}
+ 	return 1;
+ };
+ 
+@@ -302,9 +344,7 @@
  	if(debug>2) { 
  		SX_TRACE2("sending !q");
  	};
