@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tinc
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.tinc-vpn.org/packages/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/tinc/ \
@@ -29,18 +29,5 @@ USE_RC_SUBR=	tincd.sh
 MAN5=	tinc.conf.5
 MAN8=	tincd.8
 INFO=	tinc
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-pre-configure:
-	${REINPLACE_CMD} \
-	    's/OpenSSL_add_all_algorithms/OpenSSL_add_all_ciphers/' \
-	    ${WRKSRC}/configure
 
 .include <bsd.port.mk>
