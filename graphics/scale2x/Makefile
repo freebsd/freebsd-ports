@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scale2x
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,14 +16,12 @@ COMMENT=	Real-time graphics effect able to increase the size of small bitmaps
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/scalex bin/scalerx
 MAN1=		scalex.1 scalerx.1
+PLIST_FILES=	bin/scalex bin/scalerx
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,png.h,libpng/png.h,' ${WRKSRC}/file.h
+CPPFLAGS=	`libpng12-config --I_opts`
+LDFLAGS=	`libpng12-config --L_opts`
 
 .include <bsd.port.mk>
