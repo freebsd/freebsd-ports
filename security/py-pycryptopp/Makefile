@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pycryptopp
-PORTVERSION=	0.5.15
+PORTVERSION=	0.5.17
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Wrappers for the Crypto++ Library
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}darcsver>0:${PORTSDIR}/devel/py-darcsver \
