@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Devel
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.8000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Config-General>=2.42:${PORTSDIR}/devel/p5-Config-General \
 		p5-File-ChangeNotify>=0.07:${PORTSDIR}/devel/p5-File-ChangeNotify \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
-		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
+		p5-Module-Install>=0.91:${PORTSDIR}/devel/p5-Module-Install \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Template-Toolkit>=2.14:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent
