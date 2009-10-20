@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ptlib
-PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTVERSION=	2.6.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.6
@@ -23,57 +22,69 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 WANT_GNOME=	yes
-WANT_SDL=	yes
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=yes
 USE_LDCONFIG=	yes
 
-NO_LATEST_LINK=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=	--enable-oss --enable-plugins --with-expat-dir="${LOCALBASE}"
+
+OPTIONS=	ODBC		"Use ODBC" On \
+		V4L		"Use Video4Linux" Off \
+		BSDVIDEO	"Enable BSD video support" On \
+		SDL		"Use SDL" On \
+		LDAP		"Enable LDAP support" Off
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	\
-		--with-expat-dir="${LOCALBASE}" \
-		--enable-oss
-ALL_TARGET=	optshared
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		PVERSION_MAJOR=${PORTVERSION:C/.[0-9]+$//g}  \
+		PVERSION_MINOR=${PORTVERSION:C/^[0-9]+.[0-9]+.//}
 
-# if explicitely asked for, depend upon it
-.if defined(WITH_SDL)
-USE_SDL+=	sdl
-CONFIGURE_ENV+=	SDL_CFLAGS="`${SDL_CONFIG} --cflags`" \
-		SDL_LIBS="`${SDL_CONFIG} --libs`"
-MAKE_ENV+=	SDL_CFLAGS="`${SDL_CONFIG} --cflags`" \
-		SDL_LIBS="`${SDL_CONFIG} --libs`"
+.if defined(WITH_DEBUG)
+ALL_TARGET=	optshared debugshared
+BROKEN=		debug libs install broken
+.else
+ALL_TARGET=	optshared
 .endif
 
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-#BUILD_DEPENDS+=         unixODBC>=2.2.12:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=	--disable-odbc
 .endif
 
-# if explicitely disabled, do not depend upon it
-.if defined(WITHOUT_SDL)
-CONFIGURE_ARGS+=	--disable-sdl
+.if defined(WITH_BSDVIDEO)
+CONFIGURE_ARGS+=--enable-bsdvideo
+PLIST_SUB+=	BSDVIDEO=""
+WITH_VIDEO=1
+.else
+CONFIGURE_ARGS+=--disable-bsdvideo
+PLIST_SUB+=	BSDVIDEO="@comment "
 .endif
 
-# if nobody cares, use it if it is installed already
-.if !defined(WITHOUT_SDL) && !defined(WITH_SDL)
-.if ${HAVE_SDL:Msdl}
+.if defined(WITH_V4L)
+CONFIGURE_ARGS+=--enable-v4l
+PLIST_SUB+=	V4L=""
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+WITH_VIDEO=1
+.else
+CONFIGURE_ARGS+=--disable-v4l
+PLIST_SUB+=	V4L="@comment "
+.endif
+
+.if defined(WITH_VIDEO)
+CONFIGURE_ARGS+=	--enable-video
+PLIST_SUB+=	VIDEODIR=""
+.else
+CONFIGURE_ARGS+=	--disable-video
+PLIST_SUB+=	VIDEODIR="@comment "
+.endif
+
+.if defined(WITH_SDL)
 USE_SDL+=	sdl
-CONFIGURE_ENV+=	SDL_CFLAGS="`sdl-config --cflags`" \
-		SDL_LIBS="`sdl-config --libs`"
-MAKE_ENV+=	SDL_CFLAGS="`sdl-config --cflags`" \
-		SDL_LIBS="`sdl-config --libs`"
 .else
 CONFIGURE_ARGS+=	--disable-sdl
-.endif
-.endif
-
-.if !defined(WITHOUT_PLUGINS)
-CONFIGURE_ARGS+=	--enable-plugins
 .endif
 
 .if defined(WITH_LDAP)
@@ -103,40 +114,16 @@ PLIST_SUB+=	AVC1394="@comment "
 #
 ##enable libdc1394
 #.if defined(WITH_DC1394)
-#LIB_DEPENDS+=	dc1394_control.13:${PORTSDIR}/devel/libdc1394
+#LIB_DEPENDS+=	dc1394.2[0-9]:${PORTSDIR}/multimedia/libdc1394
 #CONFIGURE_ARGS+=	--enable-dc
 #PLIST_SUB+=	DC1394=""
 #.else
 CONFIGURE_ARGS+=	--disable-dc
-PLIST_SUB+=	DC1394="@comment "
+#PLIST_SUB+=	DC1394="@comment "
 #.endif
-
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
-CFLAGS+=	-fPIC
-.endif
-
-.if (${ARCH} == "i386") || (${ARCH} == "ia64") || (${ARCH} == "amd64") || (${ARCH} == "sparc64")
-CONFIGURE_ARGS+=--enable-bsdvideo
-PLIST_SUB+=	BSDVIDEO=""
-.else
-CONFIGURE_ARGS+=--disable-bsdvideo
-PLIST_SUB+=	BSDVIDEO="@comment "
-.endif
-
-.if defined(WITH_V4L) || ( exists(${LOCALBASE}/include/linux/videodev.h) && \
-	!defined(WITHOUT_V4L) )
-CONFIGURE_ARGS+=--enable-v4l
-PLIST_SUB+=	V4L=""
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-.else
-CONFIGURE_ARGS+=--disable-v4l
-PLIST_SUB+=	V4L="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpt|-lpt-${PORTVERSION:C/.[0-9]+$//g}|' ${WRKSRC}/ptlib.pc.in
-	@${REINPLACE_CMD} -e 's|SDL11/|SDL/|' ${WRKSRC}/src/ptclib/vsdl.cxx \
-		${WRKSRC}/include/ptclib/vsdl.h
 .if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
 	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' ${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
 .endif
