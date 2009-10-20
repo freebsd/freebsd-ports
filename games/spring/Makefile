@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.80.4.2
+PORTVERSION=	0.80.5
 CATEGORIES=	games
-MASTER_SITES=	http://springrts.com/dl/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -23,7 +22,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		ogg.6:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math
