@@ -53,6 +53,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 BROKEN=		Fails to install on sparc64
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		Bad pkg-plist (fails to detect sdl parts)
+.endif
+
 .if defined(WITHOUT_TCLTK)
 CONFIGURE_ARGS+=	--with-tcl=no
 PLIST_SUB+=	TCLTK="@comment "
