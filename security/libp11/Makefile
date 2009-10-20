@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libp11
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
