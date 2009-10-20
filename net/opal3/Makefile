@@ -7,6 +7,7 @@
 
 PORTNAME=	opal3
 PORTVERSION=	3.6.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Stable%205
 DISTNAME=	opal-${PORTVERSION}
@@ -29,7 +30,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	ZRTP	"Enable ZRTP protocol support" on \
+OPTIONS=	ZRTP	"Enable ZRTP protocol support" off \
 		JAVA	"Enable Java JNI support" off \
 		CELT	"Use celt codec from ports" on \
 		ILBC	"USE iLBC codec from ports" off \
@@ -66,6 +67,9 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PVERSION_MINOR=${PORTVERSION:C/^[0-9]+.[0-9]+.//}
 
 .if defined(WITH_ZRTP)
+.if !defined(SAFE_ZRTP)
+IGNORE=	Please build devel/libzrtpcpp WITHOUT ports SSL and re-run build with SAFE_ZRTP set
+.endif
 LIB_DEPENDS+=	zrtpcpp.0:${PORTSDIR}/devel/libzrtpcpp
 CONFIGURE_ARGS+=	--enable-zrtp
 .else
