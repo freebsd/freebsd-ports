@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -87,6 +87,8 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|/usr/lib/|${LOCALBASE}/lib/|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
+	@${REINPLACE_CMD} -e '/weed_plant_free/d' \
+		${WRKSRC}/lives-plugins/weed-plugins/libvis.c
 	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \
 		'/FLAGS/s|-O3||g ; \
