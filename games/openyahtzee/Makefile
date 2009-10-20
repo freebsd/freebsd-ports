@@ -6,24 +6,20 @@
 #
 
 PORTNAME=	openyahtzee
-PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTVERSION=	1.9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Open%20Yahtzee/Open%20Yahtzee%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured classic dice game Yahtzee
 
+USE_BZIP2=	yes
+USE_WX=		2.8+
+WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
-USE_WX=		yes
-USE_SQLITE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" MISSING="${TRUE} "
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' ${WRKSRC}/Makefile.in\
-		${WRKSRC}/src/Makefile.in
-#	@${REINPLACE_CMD} -e '/am_missing_run=/s|=.*|="${TRUE} "|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
