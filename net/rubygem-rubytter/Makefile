@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubytter
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF/rubytter
 
