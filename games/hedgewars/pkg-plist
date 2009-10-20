@@ -39,6 +39,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/BigDigits.png
 %%DATADIR%%/Data/Graphics/BlueWater.png
 %%DATADIR%%/Data/Graphics/Bomb.png
+%%DATADIR%%/Data/Graphics/Bubbles.png
 %%DATADIR%%/Data/Graphics/Cake_down.png
 %%DATADIR%%/Data/Graphics/Cake_walk.png
 %%DATADIR%%/Data/Graphics/Case.png
@@ -59,15 +60,30 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Girder.png
 %%DATADIR%%/Data/Graphics/Graves/Badger.png
 %%DATADIR%%/Data/Graphics/Graves/Bone.png
+%%DATADIR%%/Data/Graphics/Graves/Cherry.png
+%%DATADIR%%/Data/Graphics/Graves/Duck2.png
+%%DATADIR%%/Data/Graphics/Graves/Earth.png
 %%DATADIR%%/Data/Graphics/Graves/Flower.png
 %%DATADIR%%/Data/Graphics/Graves/Grave.png
+%%DATADIR%%/Data/Graphics/Graves/Plinko.png
 %%DATADIR%%/Data/Graphics/Graves/Rip.png
+%%DATADIR%%/Data/Graphics/Graves/Rubberduck.png
 %%DATADIR%%/Data/Graphics/Graves/Simple.png
 %%DATADIR%%/Data/Graphics/Graves/Statue.png
+%%DATADIR%%/Data/Graphics/Graves/bp2.png
+%%DATADIR%%/Data/Graphics/Graves/bubble.png
+%%DATADIR%%/Data/Graphics/Graves/chest.png
 %%DATADIR%%/Data/Graphics/Graves/coffin.png
 %%DATADIR%%/Data/Graphics/Graves/deadhog.png
 %%DATADIR%%/Data/Graphics/Graves/eyecross.png
+%%DATADIR%%/Data/Graphics/Graves/heart.png
+%%DATADIR%%/Data/Graphics/Graves/money.png
+%%DATADIR%%/Data/Graphics/Graves/mouton1.png
+%%DATADIR%%/Data/Graphics/Graves/octopus.png
+%%DATADIR%%/Data/Graphics/Graves/plant2.png
+%%DATADIR%%/Data/Graphics/Graves/plant3.png
 %%DATADIR%%/Data/Graphics/Graves/pyramid.png
+%%DATADIR%%/Data/Graphics/Graves/skull.png
 %%DATADIR%%/Data/Graphics/Graves/star.png
 %%DATADIR%%/Data/Graphics/Grenade.png
 %%DATADIR%%/Data/Graphics/HHDeath.png
@@ -83,8 +99,10 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hats/BrainSlugMouth.png
 %%DATADIR%%/Data/Graphics/Hats/Bunny.png
 %%DATADIR%%/Data/Graphics/Hats/Chunli.png
+%%DATADIR%%/Data/Graphics/Hats/Coonskin3.png
 %%DATADIR%%/Data/Graphics/Hats/Cowboy.png
 %%DATADIR%%/Data/Graphics/Hats/Gasmask.png
+%%DATADIR%%/Data/Graphics/Hats/Geordi.png
 %%DATADIR%%/Data/Graphics/Hats/Glasses.png
 %%DATADIR%%/Data/Graphics/Hats/GreenCap.png
 %%DATADIR%%/Data/Graphics/Hats/GreenHair.png
@@ -111,6 +129,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hats/Samurai.png
 %%DATADIR%%/Data/Graphics/Hats/Santa.png
 %%DATADIR%%/Data/Graphics/Hats/Skull.png
+%%DATADIR%%/Data/Graphics/Hats/Sniper.png
 %%DATADIR%%/Data/Graphics/Hats/Sonic.png
 %%DATADIR%%/Data/Graphics/Hats/SparkleSuperFun.png
 %%DATADIR%%/Data/Graphics/Hats/StrawHat.png
@@ -123,6 +142,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hats/WizardHat.png
 %%DATADIR%%/Data/Graphics/Hats/YellowCap.png
 %%DATADIR%%/Data/Graphics/Hats/YellowHair.png
+%%DATADIR%%/Data/Graphics/Hats/anzac.png
 %%DATADIR%%/Data/Graphics/Hats/apple.png
 %%DATADIR%%/Data/Graphics/Hats/banana.png
 %%DATADIR%%/Data/Graphics/Hats/beefeater.png
@@ -140,6 +160,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hats/kiss_stanley.png
 %%DATADIR%%/Data/Graphics/Hats/knight.png
 %%DATADIR%%/Data/Graphics/Hats/lemon.png
+%%DATADIR%%/Data/Graphics/Hats/mickey_ears.png
 %%DATADIR%%/Data/Graphics/Hats/mp3.png
 %%DATADIR%%/Data/Graphics/Hats/naruto.png
 %%DATADIR%%/Data/Graphics/Hats/orange.png
@@ -156,6 +177,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hats/tophats.png
 %%DATADIR%%/Data/Graphics/Hats/ushanka.png
 %%DATADIR%%/Data/Graphics/Hats/venom.png
+%%DATADIR%%/Data/Graphics/Health.png
 %%DATADIR%%/Data/Graphics/Hedgehog.png
 %%DATADIR%%/Data/Graphics/Hedgehog/Hurrah.png
 %%DATADIR%%/Data/Graphics/Hedgehog/ILoveLemonade.png
@@ -186,7 +208,9 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hedgehog/amDEagle_w.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amDrill.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amGirder.png
+%%DATADIR%%/Data/Graphics/Hedgehog/amJetpack.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amKamikaze.png
+%%DATADIR%%/Data/Graphics/Hedgehog/amMolotov.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amRCPlane.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amRope.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amShotgun.png
@@ -198,6 +222,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Lag.png
 %%DATADIR%%/Data/Graphics/MineOff.png
 %%DATADIR%%/Data/Graphics/MineOn.png
+%%DATADIR%%/Data/Graphics/Molotov.png
 %%DATADIR%%/Data/Graphics/Mortar.png
 %%DATADIR%%/Data/Graphics/Parachute.png
 %%DATADIR%%/Data/Graphics/Power.png
@@ -274,6 +299,9 @@ bin/hwengine
 %%DATADIR%%/Data/Maps/Bath/map.cfg
 %%DATADIR%%/Data/Maps/Bath/map.png
 %%DATADIR%%/Data/Maps/Bath/preview.png
+%%DATADIR%%/Data/Maps/Battlefield/map.cfg
+%%DATADIR%%/Data/Maps/Battlefield/map.png
+%%DATADIR%%/Data/Maps/Battlefield/preview.png
 %%DATADIR%%/Data/Maps/Blox/map.cfg
 %%DATADIR%%/Data/Maps/Blox/map.png
 %%DATADIR%%/Data/Maps/Blox/preview.png
@@ -316,9 +344,16 @@ bin/hwengine
 %%DATADIR%%/Data/Maps/Hydrant/map.cfg
 %%DATADIR%%/Data/Maps/Hydrant/map.png
 %%DATADIR%%/Data/Maps/Hydrant/preview.png
+%%DATADIR%%/Data/Maps/Islands/map.cfg
+%%DATADIR%%/Data/Maps/Islands/map.png
+%%DATADIR%%/Data/Maps/Islands/preview.png
 %%DATADIR%%/Data/Maps/Lonely_Island/map.cfg
 %%DATADIR%%/Data/Maps/Lonely_Island/map.png
 %%DATADIR%%/Data/Maps/Lonely_Island/preview.png
+%%DATADIR%%/Data/Maps/Octorama/info.txt
+%%DATADIR%%/Data/Maps/Octorama/map.cfg
+%%DATADIR%%/Data/Maps/Octorama/map.png
+%%DATADIR%%/Data/Maps/Octorama/preview.png
 %%DATADIR%%/Data/Maps/PirateFlag/map.cfg
 %%DATADIR%%/Data/Maps/PirateFlag/map.png
 %%DATADIR%%/Data/Maps/PirateFlag/preview.png
@@ -446,6 +481,7 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/Melon.ogg
 %%DATADIR%%/Data/Sounds/Rope_hit.ogg
 %%DATADIR%%/Data/Sounds/Yoohoo.ogg
+%%DATADIR%%/Data/Sounds/baseballbat.ogg
 %%DATADIR%%/Data/Sounds/cake2.ogg
 %%DATADIR%%/Data/Sounds/denied.ogg
 %%DATADIR%%/Data/Sounds/drillgun.ogg
@@ -453,17 +489,83 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/graveimpact.ogg
 %%DATADIR%%/Data/Sounds/grenadeimpact.ogg
 %%DATADIR%%/Data/Sounds/gun.ogg
+%%DATADIR%%/Data/Sounds/homerun.ogg
 %%DATADIR%%/Data/Sounds/minetick.ogg
+%%DATADIR%%/Data/Sounds/molotov.ogg
+%%DATADIR%%/Data/Sounds/mortar.ogg
 %%DATADIR%%/Data/Sounds/pickhammer.ogg
 %%DATADIR%%/Data/Sounds/placed.ogg
 %%DATADIR%%/Data/Sounds/rcplane.ogg
 %%DATADIR%%/Data/Sounds/ride_of_the_valkyries.ogg
 %%DATADIR%%/Data/Sounds/shotgunfire.ogg
 %%DATADIR%%/Data/Sounds/shotgunreload.ogg
+%%DATADIR%%/Data/Sounds/shutterclick.ogg
 %%DATADIR%%/Data/Sounds/splash.ogg
+%%DATADIR%%/Data/Sounds/steam.ogg
+%%DATADIR%%/Data/Sounds/suddendeath.ogg
 %%DATADIR%%/Data/Sounds/throwpowerup.ogg
 %%DATADIR%%/Data/Sounds/throwrelease.ogg
 %%DATADIR%%/Data/Sounds/ufo.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Amazing.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Boring.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Brilliant.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Bugger.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Bungee.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Byebye.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Comeonthen.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Coward.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Cutitout.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Drat.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Enemydown.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Excellent.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Fire.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Firstblood.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Flawless.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Gonnagetyou.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Grenade.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Hello.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Hmm.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Hurry.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Illgetyou.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Incoming.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Jump1.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Jump2.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Jump3.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Justyouwait.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Kamikaze.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Laugh.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Leavemealone.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Missed.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Nooo.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Nutter.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ohdear.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ooff1.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ooff2.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ooff3.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Oops.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ouch.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ow1.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ow2.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ow3.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Ow4.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Perfect.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Reinforcements.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Revenge.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Runaway.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Sameteam.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Solong.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Stupid.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Takecover.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Thisoneismine.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Traitor.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Uh-oh.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Victory.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Watchit.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Watchthis.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Whatthe.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Whoopsee.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Yessir.ogg
+%%DATADIR%%/Data/Sounds/voices/Classic/Youllregretthat.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Amazing.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Boring.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Brilliant.ogg
@@ -491,9 +593,7 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Default/Hmm.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Hurry.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Illgetyou.ogg
-%%DATADIR%%/Data/Sounds/voices/Default/Illgetyou.wav
 %%DATADIR%%/Data/Sounds/voices/Default/Incoming.ogg
-%%DATADIR%%/Data/Sounds/voices/Default/Incoming.wav
 %%DATADIR%%/Data/Sounds/voices/Default/Jump1.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Jump2.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Jump3.ogg
@@ -522,7 +622,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Default/Sameteam.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Solong.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Stupid.ogg
-%%DATADIR%%/Data/Sounds/voices/Default/Stupid.wav
 %%DATADIR%%/Data/Sounds/voices/Default/Takecover.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Thisoneismine.ogg
 %%DATADIR%%/Data/Sounds/voices/Default/Traitor.ogg
@@ -542,7 +641,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Mobster/Byebye.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Comeonthen.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Coward.ogg
-%%DATADIR%%/Data/Sounds/voices/Mobster/Coward.wav
 %%DATADIR%%/Data/Sounds/voices/Mobster/Cutitout.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Drat.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Enemydown.ogg
@@ -550,7 +648,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Mobster/Fire.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Firepunch1.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Firstblood.ogg
-%%DATADIR%%/Data/Sounds/voices/Mobster/Firstblood.wav
 %%DATADIR%%/Data/Sounds/voices/Mobster/Flawless.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Gonnagetyou.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Grenade.ogg
@@ -598,7 +695,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Mobster/Whoopsee.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Yessir.ogg
 %%DATADIR%%/Data/Sounds/voices/Mobster/Youllregretthat.ogg
-%%DATADIR%%/Data/Sounds/voices/Mobster/Youllregretthat.wav
 %%DATADIR%%/Data/Sounds/voices/Pirate/Amazing.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Boring.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Brilliant.ogg
@@ -607,11 +703,9 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Pirate/Byebye.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Comeonthen.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Coward.ogg
-%%DATADIR%%/Data/Sounds/voices/Pirate/Coward.wav
 %%DATADIR%%/Data/Sounds/voices/Pirate/Cutitout.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Drat.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Enemydown.ogg
-%%DATADIR%%/Data/Sounds/voices/Pirate/Enemydown.wav
 %%DATADIR%%/Data/Sounds/voices/Pirate/Excellent.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Fire.ogg
 %%DATADIR%%/Data/Sounds/voices/Pirate/Firepunch1.ogg
@@ -719,7 +813,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Robot/Ow4.ogg
 %%DATADIR%%/Data/Sounds/voices/Robot/Perfect.ogg
 %%DATADIR%%/Data/Sounds/voices/Robot/Reinforcements.ogg
-%%DATADIR%%/Data/Sounds/voices/Robot/Reinforcements.wav
 %%DATADIR%%/Data/Sounds/voices/Robot/Revenge.ogg
 %%DATADIR%%/Data/Sounds/voices/Robot/Runaway.ogg
 %%DATADIR%%/Data/Sounds/voices/Robot/Sameteam.ogg
@@ -735,7 +828,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Robot/Whatthe.ogg
 %%DATADIR%%/Data/Sounds/voices/Robot/Whoopsee.ogg
 %%DATADIR%%/Data/Sounds/voices/Robot/Yessir.ogg
-%%DATADIR%%/Data/Sounds/voices/Robot/Yessir.wav
 %%DATADIR%%/Data/Sounds/voices/Robot/Youllregretthat.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Amazing.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Boring.ogg
@@ -745,7 +837,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Russian/Byebye.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Comeonthen.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Coward.ogg
-%%DATADIR%%/Data/Sounds/voices/Russian/Coward.wav
 %%DATADIR%%/Data/Sounds/voices/Russian/Cutitout.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Drat.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Enemydown.ogg
@@ -766,7 +857,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Russian/Jump3.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Justyouwait.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Kamikaze.ogg
-%%DATADIR%%/Data/Sounds/voices/Russian/Kamikaze.wav
 %%DATADIR%%/Data/Sounds/voices/Russian/Laugh.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Leavemealone.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Melon.ogg
@@ -789,7 +879,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Russian/Runaway.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Sameteam.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Solong.ogg
-%%DATADIR%%/Data/Sounds/voices/Russian/Solong.wav
 %%DATADIR%%/Data/Sounds/voices/Russian/Stupid.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Takecover.ogg
 %%DATADIR%%/Data/Sounds/voices/Russian/Thisoneismine.ogg
@@ -830,7 +919,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Singer/Hmm.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Hurry.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Illgetyou.ogg
-%%DATADIR%%/Data/Sounds/voices/Singer/Illgetyou.wav
 %%DATADIR%%/Data/Sounds/voices/Singer/Incoming.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Jump1.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Jump2.ogg
@@ -856,7 +944,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Singer/Perfect.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Reinforcements.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Revenge.ogg
-%%DATADIR%%/Data/Sounds/voices/Singer/Revenge.wav
 %%DATADIR%%/Data/Sounds/voices/Singer/Runaway.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Sameteam.ogg
 %%DATADIR%%/Data/Sounds/voices/Singer/Solong.ogg
@@ -900,7 +987,6 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Surfer/Hmm.ogg
 %%DATADIR%%/Data/Sounds/voices/Surfer/Hurry.ogg
 %%DATADIR%%/Data/Sounds/voices/Surfer/Illgetyou.ogg
-%%DATADIR%%/Data/Sounds/voices/Surfer/Illgetyou.wav
 %%DATADIR%%/Data/Sounds/voices/Surfer/Incoming.ogg
 %%DATADIR%%/Data/Sounds/voices/Surfer/Jump1.ogg
 %%DATADIR%%/Data/Sounds/voices/Surfer/Jump2.ogg
@@ -940,8 +1026,8 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Surfer/Whatthe.ogg
 %%DATADIR%%/Data/Sounds/voices/Surfer/Whoopsee.ogg
 %%DATADIR%%/Data/Sounds/voices/Surfer/Yessir.ogg
-%%DATADIR%%/Data/Sounds/voices/Surfer/Yessir.wav
 %%DATADIR%%/Data/Sounds/voices/Surfer/Youllregretthat.ogg
+%%DATADIR%%/Data/Sounds/warp.ogg
 %%DATADIR%%/Data/Sounds/whipcrack.ogg
 %%DATADIR%%/Data/Themes/Bamboo/Bamboo.png
 %%DATADIR%%/Data/Themes/Bamboo/Bamboo2.png
@@ -952,7 +1038,11 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Bamboo/Flower.png
 %%DATADIR%%/Data/Themes/Bamboo/Girder.png
 %%DATADIR%%/Data/Themes/Bamboo/LandTex.png
+%%DATADIR%%/Data/Themes/Bamboo/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Bamboo/Sky.png
+%%DATADIR%%/Data/Themes/Bamboo/SkyL.png
+%%DATADIR%%/Data/Themes/Bamboo/SkyR.png
+%%DATADIR%%/Data/Themes/Bamboo/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Bamboo/horizont.png
 %%DATADIR%%/Data/Themes/Bamboo/icon.png
 %%DATADIR%%/Data/Themes/Bamboo/theme.cfg
@@ -964,17 +1054,22 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Bath/Flake.png
 %%DATADIR%%/Data/Themes/Bath/Girder.png
 %%DATADIR%%/Data/Themes/Bath/LandTex.png
+%%DATADIR%%/Data/Themes/Bath/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Bath/Sky.png
 %%DATADIR%%/Data/Themes/Bath/Toothbrush.png
 %%DATADIR%%/Data/Themes/Bath/Toothbrush_b.png
 %%DATADIR%%/Data/Themes/Bath/Toothbrush_g.png
+%%DATADIR%%/Data/Themes/Bath/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Bath/horizont.png
+%%DATADIR%%/Data/Themes/Bath/horizontL.png
+%%DATADIR%%/Data/Themes/Bath/horizontR.png
 %%DATADIR%%/Data/Themes/Bath/icon.png
 %%DATADIR%%/Data/Themes/Bath/theme.cfg
 %%DATADIR%%/Data/Themes/Blox/Border.png
 %%DATADIR%%/Data/Themes/Blox/Flake.png
 %%DATADIR%%/Data/Themes/Blox/LandTex.png
 %%DATADIR%%/Data/Themes/Blox/Sky.png
+%%DATADIR%%/Data/Themes/Blox/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Blox/horizont.png
 %%DATADIR%%/Data/Themes/Blox/icon.png
 %%DATADIR%%/Data/Themes/Blox/plant1.png
@@ -1004,9 +1099,13 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Castle/Girder.png
 %%DATADIR%%/Data/Themes/Castle/LandTex.png
 %%DATADIR%%/Data/Themes/Castle/Shield.png
+%%DATADIR%%/Data/Themes/Castle/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Castle/Sky.png
+%%DATADIR%%/Data/Themes/Castle/SkyL.png
+%%DATADIR%%/Data/Themes/Castle/SkyR.png
 %%DATADIR%%/Data/Themes/Castle/Spear.png
 %%DATADIR%%/Data/Themes/Castle/Sword.png
+%%DATADIR%%/Data/Themes/Castle/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Castle/horizont.png
 %%DATADIR%%/Data/Themes/Castle/icon.png
 %%DATADIR%%/Data/Themes/Castle/theme.cfg
@@ -1014,7 +1113,9 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/City/Flake.png
 %%DATADIR%%/Data/Themes/City/Girder.png
 %%DATADIR%%/Data/Themes/City/LandTex.png
+%%DATADIR%%/Data/Themes/City/Sky-lowres.png
 %%DATADIR%%/Data/Themes/City/Sky.png
+%%DATADIR%%/Data/Themes/City/horizont-lowres.png
 %%DATADIR%%/Data/Themes/City/horizont.png
 %%DATADIR%%/Data/Themes/City/icon.png
 %%DATADIR%%/Data/Themes/City/plant1.png
@@ -1022,9 +1123,37 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/City/plant3.png
 %%DATADIR%%/Data/Themes/City/plant4.png
 %%DATADIR%%/Data/Themes/City/theme.cfg
+%%DATADIR%%/Data/Themes/Compost/BlueWater.png
+%%DATADIR%%/Data/Themes/Compost/Border.png
+%%DATADIR%%/Data/Themes/Compost/Carrot1.png
+%%DATADIR%%/Data/Themes/Compost/Carrot2.png
+%%DATADIR%%/Data/Themes/Compost/Carrot3.png
+%%DATADIR%%/Data/Themes/Compost/Carrot4.png
+%%DATADIR%%/Data/Themes/Compost/Clouds.png
+%%DATADIR%%/Data/Themes/Compost/Cucumber1.png
+%%DATADIR%%/Data/Themes/Compost/Cucumber2.png
+%%DATADIR%%/Data/Themes/Compost/Cucumber3.png
+%%DATADIR%%/Data/Themes/Compost/Cucumber4.png
+%%DATADIR%%/Data/Themes/Compost/Eggshell1.png
+%%DATADIR%%/Data/Themes/Compost/Eggshell2.png
+%%DATADIR%%/Data/Themes/Compost/Flake.png
+%%DATADIR%%/Data/Themes/Compost/Girder.png
+%%DATADIR%%/Data/Themes/Compost/LandTex.png
+%%DATADIR%%/Data/Themes/Compost/Onion1.png
+%%DATADIR%%/Data/Themes/Compost/Onion2.png
+%%DATADIR%%/Data/Themes/Compost/Sky-lowres.png
+%%DATADIR%%/Data/Themes/Compost/Sky.png
+%%DATADIR%%/Data/Themes/Compost/horizont-lowres.png
+%%DATADIR%%/Data/Themes/Compost/horizont.png
+%%DATADIR%%/Data/Themes/Compost/icon.png
+%%DATADIR%%/Data/Themes/Compost/theme.cfg
 %%DATADIR%%/Data/Themes/CrazyMission/BlueWater.png
 %%DATADIR%%/Data/Themes/CrazyMission/Flake.png
+%%DATADIR%%/Data/Themes/CrazyMission/Sky-lowres.png
 %%DATADIR%%/Data/Themes/CrazyMission/Sky.png
+%%DATADIR%%/Data/Themes/CrazyMission/SkyL.png
+%%DATADIR%%/Data/Themes/CrazyMission/SkyR.png
+%%DATADIR%%/Data/Themes/CrazyMission/horizont-lowres.png
 %%DATADIR%%/Data/Themes/CrazyMission/horizont.png
 %%DATADIR%%/Data/Themes/CrazyMission/theme.cfg
 %%DATADIR%%/Data/Themes/EarthRise/Border.png
@@ -1033,14 +1162,22 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/EarthRise/LandTex.png
 %%DATADIR%%/Data/Themes/EarthRise/Rock.png
 %%DATADIR%%/Data/Themes/EarthRise/RockShort.png
+%%DATADIR%%/Data/Themes/EarthRise/Sky-lowres.png
 %%DATADIR%%/Data/Themes/EarthRise/Sky.png
+%%DATADIR%%/Data/Themes/EarthRise/SkyL.png
+%%DATADIR%%/Data/Themes/EarthRise/SkyR.png
+%%DATADIR%%/Data/Themes/EarthRise/horizont-lowres.png
 %%DATADIR%%/Data/Themes/EarthRise/horizont.png
+%%DATADIR%%/Data/Themes/EarthRise/horizontL.png
+%%DATADIR%%/Data/Themes/EarthRise/horizontR.png
 %%DATADIR%%/Data/Themes/EarthRise/icon.png
 %%DATADIR%%/Data/Themes/EarthRise/theme.cfg
 %%DATADIR%%/Data/Themes/Eyes/BlueWater.png
 %%DATADIR%%/Data/Themes/Eyes/Clouds.png
 %%DATADIR%%/Data/Themes/Eyes/Flake.png
+%%DATADIR%%/Data/Themes/Eyes/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Eyes/Sky.png
+%%DATADIR%%/Data/Themes/Eyes/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Eyes/horizont.png
 %%DATADIR%%/Data/Themes/Eyes/theme.cfg
 %%DATADIR%%/Data/Themes/Freeway/AppleDirt.png
@@ -1051,9 +1188,11 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Freeway/FishDirt.png
 %%DATADIR%%/Data/Themes/Freeway/Flake.png
 %%DATADIR%%/Data/Themes/Freeway/LandTex.png
+%%DATADIR%%/Data/Themes/Freeway/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Freeway/Sky.png
 %%DATADIR%%/Data/Themes/Freeway/Tire.png
 %%DATADIR%%/Data/Themes/Freeway/TireDirt.png
+%%DATADIR%%/Data/Themes/Freeway/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Freeway/horizont.png
 %%DATADIR%%/Data/Themes/Freeway/icon.png
 %%DATADIR%%/Data/Themes/Freeway/theme.cfg
@@ -1065,7 +1204,10 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Halloween/LandTex.png
 %%DATADIR%%/Data/Themes/Halloween/Rock.png
 %%DATADIR%%/Data/Themes/Halloween/RockShort.png
+%%DATADIR%%/Data/Themes/Halloween/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Halloween/Sky.png
+%%DATADIR%%/Data/Themes/Halloween/SkyL.png
+%%DATADIR%%/Data/Themes/Halloween/SkyR.png
 %%DATADIR%%/Data/Themes/Halloween/horizont.png
 %%DATADIR%%/Data/Themes/Halloween/icon.png
 %%DATADIR%%/Data/Themes/Halloween/theme.cfg
@@ -1074,6 +1216,7 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Island/LandTex.png
 %%DATADIR%%/Data/Themes/Island/Sky.png
 %%DATADIR%%/Data/Themes/Island/anchor.png
+%%DATADIR%%/Data/Themes/Island/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Island/horizont.png
 %%DATADIR%%/Data/Themes/Island/icon.png
 %%DATADIR%%/Data/Themes/Island/plant1.png
@@ -1083,6 +1226,7 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Island/theme.cfg
 %%DATADIR%%/Data/Themes/Planes/Flake.png
 %%DATADIR%%/Data/Themes/Planes/Sky.png
+%%DATADIR%%/Data/Themes/Planes/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Planes/horizont.png
 %%DATADIR%%/Data/Themes/Planes/theme.cfg
 %%DATADIR%%/Data/Themes/Sheep/Border.png
@@ -1090,6 +1234,7 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Sheep/Flake.png
 %%DATADIR%%/Data/Themes/Sheep/Girder.png
 %%DATADIR%%/Data/Themes/Sheep/LandTex.png
+%%DATADIR%%/Data/Themes/Sheep/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Sheep/Sky.png
 %%DATADIR%%/Data/Themes/Sheep/barriere.png
 %%DATADIR%%/Data/Themes/Sheep/fleur.png
@@ -1101,6 +1246,7 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Sheep/grass2.png
 %%DATADIR%%/Data/Themes/Sheep/grassp.png
 %%DATADIR%%/Data/Themes/Sheep/grassp2.png
+%%DATADIR%%/Data/Themes/Sheep/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Sheep/horizont.png
 %%DATADIR%%/Data/Themes/Sheep/icon.png
 %%DATADIR%%/Data/Themes/Sheep/mouton1.png
@@ -1114,6 +1260,7 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Snow/Girder.png
 %%DATADIR%%/Data/Themes/Snow/LandTex.png
 %%DATADIR%%/Data/Themes/Snow/Sky.png
+%%DATADIR%%/Data/Themes/Snow/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Snow/horizont.png
 %%DATADIR%%/Data/Themes/Snow/icon.png
 %%DATADIR%%/Data/Themes/Snow/plant1.png
@@ -1127,12 +1274,14 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Underwater/Flake.png
 %%DATADIR%%/Data/Themes/Underwater/Girder.png
 %%DATADIR%%/Data/Themes/Underwater/LandTex.png
+%%DATADIR%%/Data/Themes/Underwater/Sky-lowres.png
 %%DATADIR%%/Data/Themes/Underwater/Sky.png
 %%DATADIR%%/Data/Themes/Underwater/anchor.png
 %%DATADIR%%/Data/Themes/Underwater/clam.png
 %%DATADIR%%/Data/Themes/Underwater/coral.png
 %%DATADIR%%/Data/Themes/Underwater/coral2.png
 %%DATADIR%%/Data/Themes/Underwater/crab.png
+%%DATADIR%%/Data/Themes/Underwater/horizont-lowres.png
 %%DATADIR%%/Data/Themes/Underwater/horizont.png
 %%DATADIR%%/Data/Themes/Underwater/icon.png
 %%DATADIR%%/Data/Themes/Underwater/theme.cfg
@@ -1148,12 +1297,20 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/cheese/mouseleft.png
 %%DATADIR%%/Data/Themes/cheese/mouseright.png
 %%DATADIR%%/Data/Themes/cheese/theme.cfg
+%%DATADIR%%/Data/Themes/deepspace/BlueWater.png
+%%DATADIR%%/Data/Themes/deepspace/Border.png
+%%DATADIR%%/Data/Themes/deepspace/Clouds.png
+%%DATADIR%%/Data/Themes/deepspace/Flake.png
+%%DATADIR%%/Data/Themes/deepspace/Sky.png
+%%DATADIR%%/Data/Themes/deepspace/horizont.png
+%%DATADIR%%/Data/Themes/deepspace/theme.cfg
 %%DATADIR%%/Data/Themes/hell/BlueWater.png
 %%DATADIR%%/Data/Themes/hell/Border.png
 %%DATADIR%%/Data/Themes/hell/Clouds.png
 %%DATADIR%%/Data/Themes/hell/Flake.png
 %%DATADIR%%/Data/Themes/hell/LandTex.png
 %%DATADIR%%/Data/Themes/hell/Sky.png
+%%DATADIR%%/Data/Themes/hell/horizont-lowres.png
 %%DATADIR%%/Data/Themes/hell/horizont.png
 %%DATADIR%%/Data/Themes/hell/icon.png
 %%DATADIR%%/Data/Themes/hell/plant1.png
@@ -1165,7 +1322,9 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/nature/Flake.png
 %%DATADIR%%/Data/Themes/nature/Girder.png
 %%DATADIR%%/Data/Themes/nature/LandTex.png
+%%DATADIR%%/Data/Themes/nature/Sky-lowres.png
 %%DATADIR%%/Data/Themes/nature/Sky.png
+%%DATADIR%%/Data/Themes/nature/horizont-lowres.png
 %%DATADIR%%/Data/Themes/nature/horizont.png
 %%DATADIR%%/Data/Themes/nature/icon.png
 %%DATADIR%%/Data/Themes/nature/plant1.png
@@ -1176,9 +1335,11 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/themes.cfg
 %%DATADIR%%/Data/Trainings/001_Shotgun.txt
 %%DATADIR%%/Data/Trainings/002_Bazooka.txt
+%%DATADIR%%/Data/Trainings/003_RCPlane.txt
 @dirrm %%DATADIR%%/Data/Trainings
 @dirrm %%DATADIR%%/Data/Themes/nature
 @dirrm %%DATADIR%%/Data/Themes/hell
+@dirrm %%DATADIR%%/Data/Themes/deepspace
 @dirrm %%DATADIR%%/Data/Themes/cheese
 @dirrm %%DATADIR%%/Data/Themes/Underwater
 @dirrm %%DATADIR%%/Data/Themes/Snow
@@ -1190,6 +1351,7 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Themes/Eyes
 @dirrm %%DATADIR%%/Data/Themes/EarthRise
 @dirrm %%DATADIR%%/Data/Themes/CrazyMission
+@dirrm %%DATADIR%%/Data/Themes/Compost
 @dirrm %%DATADIR%%/Data/Themes/City
 @dirrm %%DATADIR%%/Data/Themes/Castle
 @dirrm %%DATADIR%%/Data/Themes/Cake
@@ -1204,6 +1366,7 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Sounds/voices/Pirate
 @dirrm %%DATADIR%%/Data/Sounds/voices/Mobster
 @dirrm %%DATADIR%%/Data/Sounds/voices/Default
+@dirrm %%DATADIR%%/Data/Sounds/voices/Classic
 @dirrm %%DATADIR%%/Data/Sounds/voices
 @dirrm %%DATADIR%%/Data/Sounds
 @dirrm %%DATADIR%%/Data/Names
@@ -1217,7 +1380,9 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Maps/Ropes
 @dirrm %%DATADIR%%/Data/Maps/Plane
 @dirrm %%DATADIR%%/Data/Maps/PirateFlag
+@dirrm %%DATADIR%%/Data/Maps/Octorama
 @dirrm %%DATADIR%%/Data/Maps/Lonely_Island
+@dirrm %%DATADIR%%/Data/Maps/Islands
 @dirrm %%DATADIR%%/Data/Maps/Hydrant
 @dirrm %%DATADIR%%/Data/Maps/Hogville
 @dirrm %%DATADIR%%/Data/Maps/Hedgewars
@@ -1232,6 +1397,7 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Maps/Cake
 @dirrm %%DATADIR%%/Data/Maps/Bubbleflow
 @dirrm %%DATADIR%%/Data/Maps/Blox
+@dirrm %%DATADIR%%/Data/Maps/Battlefield
 @dirrm %%DATADIR%%/Data/Maps/Bath
 @dirrm %%DATADIR%%/Data/Maps/Basketball
 @dirrm %%DATADIR%%/Data/Maps/BambooPlinko
