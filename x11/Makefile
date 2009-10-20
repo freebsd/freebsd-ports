@@ -34,6 +34,7 @@
     SUBDIR += damageproto
     SUBDIR += decurs
     SUBDIR += deskmenu
+    SUBDIR += deskpaint
     SUBDIR += dgs
     SUBDIR += dmenu
     SUBDIR += dmxproto
