@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	qgo
-PORTVERSION=	1.5.4.2
-PORTREVISION=	3
+PORTVERSION=	1.5.4.3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,8 +23,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/NOOPT/s|^CXXFLAGS=|#CXXFLAGS=|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/templates/*.desktop
 
