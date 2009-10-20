@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	gaupol
-PORTVERSION=	0.13.1
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ CENKES
+MASTER_SITES=	http://download.gna.org/gaupol/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=1.5.1:${PORTSDIR}/textproc/py-enchant \
-		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet \
-		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
+		py*-enchant>=1.5.1:${PORTSDIR}/textproc/py-enchant
 
 USE_BZIP2=	yes
+USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-MAN1=	${PORTNAME}.1
+
+MAN1=		${PORTNAME}.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|g;s|share/gaupol|${DATADIR_REL}|g;\
-		/data_dir =/s|=.*|= "${DATADIR}"|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|share/man/|man/|' ${WRKSRC}/manifest/data-files
 
 .include <bsd.port.mk>

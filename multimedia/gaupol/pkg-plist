@@ -213,15 +213,15 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/attrdict.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/attrdict.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/attrdict.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/config.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/config.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/config.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/configobj.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/configobj.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/configobj.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/container.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/container.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/container.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/validate.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/validate.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/validate.pyo
@@ -303,9 +303,18 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/entries.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/entries.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/entries.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/enumuim.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/enumuim.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/enumuim.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/errors.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/errors.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/errors.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/extension.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/extension.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/extension.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/extensionman.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/extensionman.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/extensionman.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/fields.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/fields.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/fields.pyo
@@ -324,6 +333,9 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/float.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/float.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/float.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/multiline.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/multiline.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers/multiline.pyo
@@ -369,6 +381,9 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/markup.py
 %%PYTHON_SITELIBDIR%%/gaupol/markup.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/markup.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/metadata.py
+%%PYTHON_SITELIBDIR%%/gaupol/metadata.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/metadata.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/modes.py
 %%PYTHON_SITELIBDIR%%/gaupol/modes.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/modes.pyo
@@ -458,12 +473,25 @@ share/applications/gaupol.desktop
 %%DATADIR%%/codes/iso_3166.xml
 %%DATADIR%%/codes/iso_639.xml
 %%DATADIR%%/codes/locales.txt
+%%DATADIR%%/extensions/bookmarks/add-bookmark-dialog.glade
+%%DATADIR%%/extensions/bookmarks/bookmark.png
+%%DATADIR%%/extensions/bookmarks/bookmarks.conf.spec
+%%DATADIR%%/extensions/bookmarks/bookmarks.gaupol-extension
+%%DATADIR%%/extensions/bookmarks/bookmarks.py
+%%DATADIR%%/extensions/bookmarks/bookmarks.pyo
+%%DATADIR%%/extensions/bookmarks/bookmarks.ui.xml
+%%DATADIR%%/extensions/side-pane/side-pane.conf.spec
+%%DATADIR%%/extensions/side-pane/side-pane.gaupol-extension
+%%DATADIR%%/extensions/side-pane/side-pane.py
+%%DATADIR%%/extensions/side-pane/side-pane.pyo
+%%DATADIR%%/extensions/side-pane/side-pane.ui.xml
 %%DATADIR%%/gaupol.gtk.conf.spec
 %%DATADIR%%/glade/assistants/text/capitalization.glade
 %%DATADIR%%/glade/assistants/text/common-error.glade
 %%DATADIR%%/glade/assistants/text/confirmation.glade
 %%DATADIR%%/glade/assistants/text/hearing-impaired.glade
 %%DATADIR%%/glade/assistants/text/introduction.glade
+%%DATADIR%%/glade/assistants/text/join-split-words.glade
 %%DATADIR%%/glade/assistants/text/line-break-options.glade
 %%DATADIR%%/glade/assistants/text/line-break.glade
 %%DATADIR%%/glade/assistants/text/progress.glade
@@ -499,6 +527,10 @@ share/applications/gaupol.desktop
 %%DATADIR%%/patterns/Latn-en.hearing-impaired.conf
 %%DATADIR%%/patterns/Latn-en.line-break
 %%DATADIR%%/patterns/Latn-en.line-break.conf
+%%DATADIR%%/patterns/Latn-fi.common-error
+%%DATADIR%%/patterns/Latn-fi.common-error.conf
+%%DATADIR%%/patterns/Latn-fr.common-error
+%%DATADIR%%/patterns/Latn-fr.common-error.conf
 %%DATADIR%%/patterns/Latn.capitalization
 %%DATADIR%%/patterns/Latn.capitalization.conf
 %%DATADIR%%/patterns/Latn.common-error
@@ -520,6 +552,18 @@ share/locale/ca/LC_MESSAGES/gaupol.mo
 share/locale/es/LC_MESSAGES/gaupol.mo
 share/locale/pl/LC_MESSAGES/gaupol.mo
 share/locale/sv/LC_MESSAGES/gaupol.mo
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/patterns
 @dirrm %%DATADIR%%/headers
@@ -527,8 +571,12 @@ share/locale/sv/LC_MESSAGES/gaupol.mo
 @dirrm %%DATADIR%%/glade/assistants/text
 @dirrm %%DATADIR%%/glade/assistants
 @dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/extensions/side-pane
+@dirrm %%DATADIR%%/extensions/bookmarks
+@dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/codes
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gaupol/tags
 @dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers
 @dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs
@@ -539,10 +587,3 @@ share/locale/sv/LC_MESSAGES/gaupol.mo
 @dirrm %%PYTHON_SITELIBDIR%%/gaupol/files
 @dirrm %%PYTHON_SITELIBDIR%%/gaupol/agents
 @dirrm %%PYTHON_SITELIBDIR%%/gaupol
-@dirrmtry share/applications
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
