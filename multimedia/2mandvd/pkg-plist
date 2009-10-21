@@ -414,14 +414,15 @@ bin/2ManDVD
 %%DATADIR%%/Interface/dvd_empty.png
 %%DATADIR%%/Interface/dvd_theme.png
 %%DATADIR%%/Interface/dvdformat.png
+%%DATADIR%%/Interface/dvdnext.png
 %%DATADIR%%/Interface/dvdok.png
 %%DATADIR%%/Interface/dvdok1.png
+%%DATADIR%%/Interface/dvdok2.png
+%%DATADIR%%/Interface/dvdpause.png
 %%DATADIR%%/Interface/dvdplay.png
 %%DATADIR%%/Interface/dvdprevious.png
-%%DATADIR%%/Interface/dvdnext.png
-%%DATADIR%%/Interface/dvdpause.png
-%%DATADIR%%/Interface/dvdok2.png
 %%DATADIR%%/Interface/edit.png
+%%DATADIR%%/Interface/edit_menu.png
 %%DATADIR%%/Interface/effets.png
 %%DATADIR%%/Interface/emblem1.png
 %%DATADIR%%/Interface/emblem2.png
@@ -531,6 +532,7 @@ bin/2ManDVD
 %%DATADIR%%/Interface/rectangle.png
 %%DATADIR%%/Interface/reencode.png
 %%DATADIR%%/Interface/reload.png
+%%DATADIR%%/Interface/remote.png
 %%DATADIR%%/Interface/rond.png
 %%DATADIR%%/Interface/rotate.png
 %%DATADIR%%/Interface/rotate1.png

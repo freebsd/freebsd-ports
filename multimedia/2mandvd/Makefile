@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	2ManDVD
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
