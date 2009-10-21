@@ -58,10 +58,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/zone.tab ${PREFIX}/share/zoneinfo
 
 post-install:
-	if [ -f /var/db/zoneinfo -a -O /var/db/zoneinfo -a \
+	@if [ -f /var/db/zoneinfo -a -O /var/db/zoneinfo -a \
 	     -G /var/db/zoneinfo -a \
 	     -f /usr/share/zoneinfo/$$(cat /var/db/zoneinfo) ]; then \
 		tzsetup -r; \
+		echo "/etc/localtime is updated."; \
 	else \
 		${CAT} ${PKGMESSAGE}; \
 	fi
