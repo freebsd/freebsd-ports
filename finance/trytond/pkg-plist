@@ -31,6 +31,7 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/init.sql
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/database.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/database.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/backend/sqlite/database.pyo
