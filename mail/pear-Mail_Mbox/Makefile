@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail_Mbox
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org
