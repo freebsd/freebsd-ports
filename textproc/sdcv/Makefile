@@ -35,10 +35,6 @@ MAN1=		sdcv.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Doesn't build on 64-bit platforms
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/doc/sdcv.1
@@ -47,6 +43,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, getopt.h,,g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e '146 s|()|(int, char * const [], const char *)|g' \
 		${WRKSRC}/src/getopt.h
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+	@${REINPLACE_CMD} -e '516 s|sizeof|(guint32)sizeof|g' \
+		${WRKSRC}/src/lib/lib.cpp
+.endif
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/src/sdcv.cpp
 	@${REINPLACE_CMD} -e 's,@mandir@/uk,@mandir@,' \
