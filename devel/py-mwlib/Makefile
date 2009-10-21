@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mwlib
-PORTVERSION=	0.12.5
+PORTVERSION=	0.12.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python's MediaWiki Parser and Utility Library
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
