@@ -1,0 +1,12 @@
+OpenOffice::OODoc is an extensible Perl interface allowing direct
+read/write operations on files which comply with the
+OASIS Open Document Format for Office Applications (ODF),
+i.e. the ISO/IEC 26300:2006 standard.
+
+It provides a high-level, document-oriented language, and isolates
+the programmer from the details of the file format. It can process
+different document classes (texts, spreadsheets, presentations,
+and drawings). It can retrieve or update styles and images,
+document metadata, as well as text content.
+
+WWW: http://search.cpan.org/dist/OpenOffice-OODoc/

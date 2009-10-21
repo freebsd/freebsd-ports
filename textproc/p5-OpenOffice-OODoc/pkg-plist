@@ -1,0 +1,51 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenOffice/OODoc/.packlist
+%%SITE_PERL%%/OpenOffice/OODoc.pod
+%%SITE_PERL%%/OpenOffice/OODoc.pm
+%%SITE_PERL%%/OpenOffice/OODoc/Styles.pod
+%%SITE_PERL%%/OpenOffice/OODoc/File.pod
+%%SITE_PERL%%/OpenOffice/OODoc/Manifest.pod
+%%SITE_PERL%%/OpenOffice/OODoc/Image.pod
+%%SITE_PERL%%/OpenOffice/OODoc/Manifest.pm
+%%SITE_PERL%%/OpenOffice/OODoc/config.xml
+%%SITE_PERL%%/OpenOffice/OODoc/XPath.pm
+%%SITE_PERL%%/OpenOffice/OODoc/Meta.pod
+%%SITE_PERL%%/OpenOffice/OODoc/File.pm
+%%SITE_PERL%%/OpenOffice/OODoc/Styles.pm
+%%SITE_PERL%%/OpenOffice/OODoc/Image.pm
+%%SITE_PERL%%/OpenOffice/OODoc/Meta.pm
+%%SITE_PERL%%/OpenOffice/OODoc/XPath.pod
+%%SITE_PERL%%/OpenOffice/OODoc/Document.pm
+%%SITE_PERL%%/OpenOffice/OODoc/Intro.pod
+%%SITE_PERL%%/OpenOffice/OODoc/Text.pod
+%%SITE_PERL%%/OpenOffice/OODoc/Text.pm
+%%SITE_PERL%%/OpenOffice/OODoc/Document.pod
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.sxi
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.ods
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.odp
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.sxc
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.sxw
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.odt
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.sxd
+%%SITE_PERL%%/OpenOffice/OODoc/templates/template.odg
+%%SITE_PERL%%/OpenOffice/OODoc/data/image.png
+bin/oodoc_test
+bin/odfhighlight
+bin/odf_set_title
+bin/odf_set_fields
+bin/odfmetadoc
+bin/odf2pod
+bin/text2table
+bin/odfbuild
+bin/odfsearch
+bin/oodoc_version
+bin/odffilesearch
+bin/text2odf
+bin/odffindbasic
+bin/odfextract
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenOffice/OODoc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenOffice
+@dirrm %%SITE_PERL%%/OpenOffice/OODoc/data
+@dirrm %%SITE_PERL%%/OpenOffice/OODoc/templates
+@dirrm %%SITE_PERL%%/OpenOffice/OODoc
+@dirrmtry %%SITE_PERL%%/OpenOffice

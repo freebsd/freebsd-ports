@@ -504,6 +504,7 @@
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
     SUBDIR += p5-Number-Spell
+    SUBDIR += p5-OpenOffice-OODoc
     SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-API3
     SUBDIR += p5-PDF-Create
