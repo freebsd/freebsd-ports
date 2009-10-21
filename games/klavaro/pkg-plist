@@ -1,231 +1,135 @@
-bin/klavaro
-bin/klavaro_helper
 %%DATADIR%%/C.paragraphs
 %%DATADIR%%/C.words
-%%DATADIR%%/C_about.txt
-%%DATADIR%%/C_adapt_intro.txt
-%%DATADIR%%/C_basic_intro.txt
-%%DATADIR%%/C_fluid_intro.txt
-%%DATADIR%%/C_help.txt
-%%DATADIR%%/C_intro.txt
-%%DATADIR%%/C_velo_intro.txt
-%%DATADIR%%/alphagrip5.kbd
+%%DATADIR%%/alphagrip5_us.kbd
 %%DATADIR%%/azerty_be.kbd
 %%DATADIR%%/azerty_fr.kbd
 %%DATADIR%%/azerty_fr_ibook.kbd
 %%DATADIR%%/basic_lessons.txt
-%%DATADIR%%/bn_BD.paragraphs
-%%DATADIR%%/bn_BD.words
-%%DATADIR%%/bn_BD_about.txt
-%%DATADIR%%/bn_BD_adapt_intro.txt
-%%DATADIR%%/bn_BD_basic_intro.txt
-%%DATADIR%%/bn_BD_fluid_intro.txt
-%%DATADIR%%/bn_BD_help.txt
-%%DATADIR%%/bn_BD_intro.txt
-%%DATADIR%%/bn_BD_velo_intro.txt
-%%DATADIR%%/cs_CZ.paragraphs
-%%DATADIR%%/cs_CZ.words
-%%DATADIR%%/cs_CZ_about.txt
-%%DATADIR%%/cs_CZ_adapt_intro.txt
-%%DATADIR%%/cs_CZ_basic_intro.txt
-%%DATADIR%%/cs_CZ_fluid_intro.txt
-%%DATADIR%%/cs_CZ_help.txt
-%%DATADIR%%/cs_CZ_intro.txt
-%%DATADIR%%/cs_CZ_velo_intro.txt
-%%DATADIR%%/de_DE.paragraphs
-%%DATADIR%%/de_DE.words
-%%DATADIR%%/de_DE_about.txt
-%%DATADIR%%/de_DE_adapt_intro.txt
-%%DATADIR%%/de_DE_basic_intro.txt
-%%DATADIR%%/de_DE_fluid_intro.txt
-%%DATADIR%%/de_DE_help.txt
-%%DATADIR%%/de_DE_intro.txt
-%%DATADIR%%/de_DE_velo_intro.txt
+%%DATADIR%%/beep.png
+%%DATADIR%%/bn.paragraphs
+%%DATADIR%%/bn.words
+%%DATADIR%%/colemak_us.kbd
+%%DATADIR%%/cs.paragraphs
+%%DATADIR%%/cs.words
+%%DATADIR%%/da.paragraphs
+%%DATADIR%%/da.words
+%%DATADIR%%/de.paragraphs
+%%DATADIR%%/de.words
 %%DATADIR%%/dvorak_br_nativo.kbd
+%%DATADIR%%/dvorak_br_us.kbd
+%%DATADIR%%/dvorak_eo_eurokeys.kbd
+%%DATADIR%%/dvorak_eo_nativo.kbd
+%%DATADIR%%/dvorak_eo_uk.kbd
+%%DATADIR%%/dvorak_es_us.kbd
 %%DATADIR%%/dvorak_fr.kbd
+%%DATADIR%%/dvorak_fr_bepo.kbd
+%%DATADIR%%/dvorak_se_us.kbd
 %%DATADIR%%/dvorak_tr_F.kbd
 %%DATADIR%%/dvorak_uk.kbd
 %%DATADIR%%/dvorak_us.kbd
-%%DATADIR%%/dvorak_us_br.kbd
-%%DATADIR%%/dvorak_us_es.kbd
-%%DATADIR%%/dvorak_us_se.kbd
 %%DATADIR%%/en_GB.paragraphs
 %%DATADIR%%/en_GB.words
-%%DATADIR%%/en_GB_adapt_intro.txt
-%%DATADIR%%/en_GB_basic_intro.txt
-%%DATADIR%%/en_GB_fluid_intro.txt
-%%DATADIR%%/en_GB_intro.txt
 %%DATADIR%%/eo.paragraphs
 %%DATADIR%%/eo.words
-%%DATADIR%%/eo_about.txt
-%%DATADIR%%/eo_adapt_intro.txt
-%%DATADIR%%/eo_basic_intro.txt
-%%DATADIR%%/eo_fluid_intro.txt
-%%DATADIR%%/eo_help.txt
-%%DATADIR%%/eo_intro.txt
-%%DATADIR%%/eo_velo_intro.txt
-%%DATADIR%%/es_ES.paragraphs
-%%DATADIR%%/es_ES.words
-%%DATADIR%%/es_ES_about.txt
-%%DATADIR%%/es_ES_adapt_intro.txt
-%%DATADIR%%/es_ES_basic_intro.txt
-%%DATADIR%%/es_ES_fluid_intro.txt
-%%DATADIR%%/es_ES_help.txt
-%%DATADIR%%/es_ES_intro.txt
-%%DATADIR%%/es_ES_velo_intro.txt
+%%DATADIR%%/es.paragraphs
+%%DATADIR%%/es.words
 %%DATADIR%%/fingers_position.txt
-%%DATADIR%%/fr_FR.paragraphs
-%%DATADIR%%/fr_FR.words
-%%DATADIR%%/fr_FR_about.txt
-%%DATADIR%%/fr_FR_adapt_intro.txt
-%%DATADIR%%/fr_FR_basic_intro.txt
-%%DATADIR%%/fr_FR_fluid_intro.txt
-%%DATADIR%%/fr_FR_help.txt
-%%DATADIR%%/fr_FR_intro.txt
-%%DATADIR%%/fr_FR_velo_intro.txt
-%%DATADIR%%/hu_HU.paragraphs
-%%DATADIR%%/hu_HU.words
-%%DATADIR%%/hu_HU_about.txt
-%%DATADIR%%/hu_HU_adapt_intro.txt
-%%DATADIR%%/hu_HU_basic_intro.txt
-%%DATADIR%%/hu_HU_fluid_intro.txt
-%%DATADIR%%/hu_HU_help.txt
-%%DATADIR%%/hu_HU_intro.txt
-%%DATADIR%%/hu_HU_velo_intro.txt
+%%DATADIR%%/fluid.png
+%%DATADIR%%/fr.paragraphs
+%%DATADIR%%/fr.words
+%%DATADIR%%/gl.paragraphs
+%%DATADIR%%/gl.words
+%%DATADIR%%/go_www.png
+%%DATADIR%%/hands_0.png
+%%DATADIR%%/hands_1.png
+%%DATADIR%%/hands_2.png
+%%DATADIR%%/hands_3.png
+%%DATADIR%%/hands_4.png
+%%DATADIR%%/hands_5.png
+%%DATADIR%%/hands_6.png
+%%DATADIR%%/hands_7.png
+%%DATADIR%%/hands_8.png
+%%DATADIR%%/hands_9.png
+%%DATADIR%%/hu.paragraphs
+%%DATADIR%%/hu.words
 %%DATADIR%%/jtsuken_ru.kbd
-%%DATADIR%%/klavaro_test.txt
-%%DATADIR%%/nl_BE.paragraphs
-%%DATADIR%%/nl_BE.words
-%%DATADIR%%/nl_BE_about.txt
-%%DATADIR%%/nl_BE_adapt_intro.txt
-%%DATADIR%%/nl_BE_basic_intro.txt
-%%DATADIR%%/nl_BE_fluid_intro.txt
-%%DATADIR%%/nl_BE_help.txt
-%%DATADIR%%/nl_BE_intro.txt
-%%DATADIR%%/nl_BE_velo_intro.txt
-%%DATADIR%%/pixmaps/hands_0.xpm
-%%DATADIR%%/pixmaps/hands_1.xpm
-%%DATADIR%%/pixmaps/hands_2.xpm
-%%DATADIR%%/pixmaps/hands_3.xpm
-%%DATADIR%%/pixmaps/hands_4.xpm
-%%DATADIR%%/pixmaps/hands_5.xpm
-%%DATADIR%%/pixmaps/hands_6.xpm
-%%DATADIR%%/pixmaps/hands_7.xpm
-%%DATADIR%%/pixmaps/hands_8.xpm
-%%DATADIR%%/pixmaps/hands_9.xpm
-%%DATADIR%%/pixmaps/logo.xpm
-%%DATADIR%%/pixmaps/shift.xpm
-%%DATADIR%%/pl_PL.paragraphs
-%%DATADIR%%/pl_PL.words
-%%DATADIR%%/pl_PL_about.txt
-%%DATADIR%%/pl_PL_adapt_intro.txt
-%%DATADIR%%/pl_PL_basic_intro.txt
-%%DATADIR%%/pl_PL_fluid_intro.txt
-%%DATADIR%%/pl_PL_help.txt
-%%DATADIR%%/pl_PL_intro.txt
-%%DATADIR%%/pl_PL_velo_intro.txt
+%%DATADIR%%/key.png
+%%DATADIR%%/klavaro.ui
+%%DATADIR%%/klavaro_96x96.png
+%%DATADIR%%/nl.paragraphs
+%%DATADIR%%/nl.words
+%%DATADIR%%/other.png
+%%DATADIR%%/pl.paragraphs
+%%DATADIR%%/pl.words
+%%DATADIR%%/progress.png
 %%DATADIR%%/pt_BR.paragraphs
 %%DATADIR%%/pt_BR.words
-%%DATADIR%%/pt_BR_about.txt
-%%DATADIR%%/pt_BR_adapt_intro.txt
-%%DATADIR%%/pt_BR_basic_intro.txt
-%%DATADIR%%/pt_BR_fluid_intro.txt
-%%DATADIR%%/pt_BR_help.txt
-%%DATADIR%%/pt_BR_intro.txt
-%%DATADIR%%/pt_BR_velo_intro.txt
 %%DATADIR%%/qwerty_br.kbd
 %%DATADIR%%/qwerty_br_abnt2.kbd
 %%DATADIR%%/qwerty_cz.kbd
-%%DATADIR%%/qwerty_el.kbd
+%%DATADIR%%/qwerty_dk.kbd
 %%DATADIR%%/qwerty_es.kbd
-%%DATADIR%%/qwerty_he.kbd
+%%DATADIR%%/qwerty_gr.kbd
+%%DATADIR%%/qwerty_il.kbd
 %%DATADIR%%/qwerty_it.kbd
 %%DATADIR%%/qwerty_jp.kbd
+%%DATADIR%%/qwerty_no.kbd
+%%DATADIR%%/qwerty_pk_crulp.kbd
+%%DATADIR%%/qwerty_pk_nla.kbd
 %%DATADIR%%/qwerty_pt.kbd
 %%DATADIR%%/qwerty_se.kbd
 %%DATADIR%%/qwerty_tr.kbd
 %%DATADIR%%/qwerty_uk.kbd
-%%DATADIR%%/qwerty_ur_crulp.kbd
-%%DATADIR%%/qwerty_ur_nla.kbd
 %%DATADIR%%/qwerty_us.kbd
-%%DATADIR%%/qwerty_us2.kbd
+%%DATADIR%%/qwerty_us_2.kbd
 %%DATADIR%%/qwertz_cz.kbd
 %%DATADIR%%/qwertz_de.kbd
 %%DATADIR%%/qwertz_hu.kbd
 %%DATADIR%%/qwertz_pl.kbd
-%%DATADIR%%/ru_RU.paragraphs
-%%DATADIR%%/ru_RU.words
-%%DATADIR%%/ru_RU_about.txt
-%%DATADIR%%/ru_RU_adapt_intro.txt
-%%DATADIR%%/ru_RU_basic_intro.txt
-%%DATADIR%%/ru_RU_fluid_intro.txt
-%%DATADIR%%/ru_RU_help.txt
-%%DATADIR%%/ru_RU_intro.txt
-%%DATADIR%%/ru_RU_velo_intro.txt
-%%DATADIR%%/sv_SE.paragraphs
-%%DATADIR%%/sv_SE.words
-%%DATADIR%%/sv_SE_about.txt
-%%DATADIR%%/sv_SE_adapt_intro.txt
-%%DATADIR%%/sv_SE_basic_intro.txt
-%%DATADIR%%/sv_SE_fluid_intro.txt
-%%DATADIR%%/sv_SE_help.txt
-%%DATADIR%%/sv_SE_intro.txt
-%%DATADIR%%/sv_SE_velo_intro.txt
-%%DATADIR%%/ur_PK.paragraphs
-%%DATADIR%%/ur_PK.words
-%%DATADIR%%/ur_PK_about.txt
-%%DATADIR%%/ur_PK_adapt_intro.txt
-%%DATADIR%%/ur_PK_basic_intro.txt
-%%DATADIR%%/ur_PK_fluid_intro.txt
-%%DATADIR%%/ur_PK_help.txt
-%%DATADIR%%/ur_PK_intro.txt
-%%DATADIR%%/ur_PK_velo_intro.txt
-%%DATADIR%%/vi_VN_about.txt
-%%DATADIR%%/vi_VN_adapt_intro.txt
-%%DATADIR%%/vi_VN_basic_intro.txt
-%%DATADIR%%/vi_VN_fluid_intro.txt
-%%DATADIR%%/vi_VN_help.txt
-%%DATADIR%%/vi_VN_intro.txt
-%%DATADIR%%/vi_VN_velo_intro.txt
-share/locale/bn_BD/LC_MESSAGES/klavaro.mo
-share/locale/cs_CZ/LC_MESSAGES/klavaro.mo
-share/locale/de_DE/LC_MESSAGES/klavaro.mo
+%%DATADIR%%/ru.paragraphs
+%%DATADIR%%/ru.words
+%%DATADIR%%/sv.paragraphs
+%%DATADIR%%/sv.words
+%%DATADIR%%/top10.png
+%%DATADIR%%/ur.paragraphs
+%%DATADIR%%/ur.words
+%%DATADIR%%/vi.paragraphs
+%%DATADIR%%/vi.words
+bin/klavaro
+share/icons/hicolor/16x16/apps/klavaro.png
+share/icons/hicolor/22x22/apps/klavaro.png
+share/icons/hicolor/24x24/apps/klavaro.png
+share/icons/hicolor/32x32/apps/klavaro.png
+share/icons/hicolor/48x48/apps/klavaro.png
+share/locale/bn/LC_MESSAGES/klavaro.mo
+share/locale/cs/LC_MESSAGES/klavaro.mo
+share/locale/da/LC_MESSAGES/klavaro.mo
+share/locale/de/LC_MESSAGES/klavaro.mo
 share/locale/en_GB/LC_MESSAGES/klavaro.mo
 share/locale/eo/LC_MESSAGES/klavaro.mo
-share/locale/es_ES/LC_MESSAGES/klavaro.mo
-share/locale/fr_FR/LC_MESSAGES/klavaro.mo
-share/locale/hu_HU/LC_MESSAGES/klavaro.mo
-share/locale/nl_BE/LC_MESSAGES/klavaro.mo
-share/locale/nl_NL/LC_MESSAGES/klavaro.mo
-share/locale/pl_PL/LC_MESSAGES/klavaro.mo
+share/locale/es/LC_MESSAGES/klavaro.mo
+share/locale/fr/LC_MESSAGES/klavaro.mo
+share/locale/gl/LC_MESSAGES/klavaro.mo
+share/locale/hu/LC_MESSAGES/klavaro.mo
+share/locale/nl/LC_MESSAGES/klavaro.mo
+share/locale/pl/LC_MESSAGES/klavaro.mo
 share/locale/pt_BR/LC_MESSAGES/klavaro.mo
-share/locale/ru_RU/LC_MESSAGES/klavaro.mo
-share/locale/sv_SE/LC_MESSAGES/klavaro.mo
-share/locale/ur_PK/LC_MESSAGES/klavaro.mo
-share/locale/vi_VN/LC_MESSAGES/klavaro.mo
-@dirrm %%DATADIR%%/pixmaps
+share/locale/ru/LC_MESSAGES/klavaro.mo
+share/locale/sv/LC_MESSAGES/klavaro.mo
+share/locale/ur/LC_MESSAGES/klavaro.mo
+share/locale/vi/LC_MESSAGES/klavaro.mo
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/bn_BD/LC_MESSAGES
-@dirrmtry share/locale/bn_BD
-@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-@dirrmtry share/locale/cs_CZ
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrmtry share/locale/en_GB/LC_MESSAGES
-@dirrmtry share/locale/en_GB
-@dirrmtry share/locale/hu_HU/LC_MESSAGES
-@dirrmtry share/locale/hu_HU
-@dirrmtry share/locale/nl_BE/LC_MESSAGES
-@dirrmtry share/locale/nl_BE
-@dirrmtry share/locale/nl_NL/LC_MESSAGES
-@dirrmtry share/locale/nl_NL
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/ru_RU/LC_MESSAGES
-@dirrmtry share/locale/ru_RU
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/vi_VN/LC_MESSAGES
-@dirrmtry share/locale/vi_VN

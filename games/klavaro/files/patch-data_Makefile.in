@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	2009-10-15 21:14:10.000000000 -0300
++++ data/Makefile.in	2009-10-15 21:14:39.000000000 -0300
+@@ -203,7 +203,7 @@
+ 	dvorak_eo_nativo.kbd \
+ 	dvorak_eo_uk.kbd \
+ 	dvorak_fr.kbd \
+-	dvorak_fr_bépo.kbd \
++	dvorak_fr_bepo.kbd \
+ 	dvorak_tr_F.kbd \
+ 	dvorak_uk.kbd \
+ 	dvorak_us.kbd \
