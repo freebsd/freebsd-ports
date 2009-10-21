@@ -58,7 +58,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/zone.tab ${PREFIX}/share/zoneinfo
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	if [ -f /var/db/zoneinfo -a -O /var/db/zoneinfo -a \
+	     -G /var/db/zoneinfo -a \
+	     -f /usr/share/zoneinfo/$$(cat /var/db/zoneinfo) ]; then \
+		tzsetup -r; \
+	else \
+		${CAT} ${PKGMESSAGE}; \
+	fi
 
 test-patches:
 .for M in ${MISSING}
