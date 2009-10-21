@@ -1,0 +1,17 @@
+This is a keyboard for input of the Malayalam according to the transliteration
+scheme called Mozhi (https://sites.google.com/site/cibu/mozhi). The keymap is
+written in Keyman keyboard language and developed as a part of Varamozhi
+Project under the LGPL license.
+
+The Mozhi is intended to be the most intuitive scheme for Malayalam speakers.
+It simplifies what the user needs to remember and is is not phonetically
+accurate.
+
+This keymap supports the current standard for Malayalam Chillus (i.e. without
+special encoding). It offers mnemonic keyboard functionality and smart-quote
+functionality with comas and numerals.
+
+This port installs the keyboard so that it can be used through SCIM KMFL
+IMEngine (textproc/scim-kmfl-imengine).
+
+WWW: http://varamozhi.sourceforge.net/
