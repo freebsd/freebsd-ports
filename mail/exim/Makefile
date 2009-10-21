@@ -19,7 +19,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
-.include "options"
+.include "Makefile.options"
+
+USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SA_EXIM)
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
@@ -50,8 +54,6 @@ WITH_EXIMON=	yes
 .if defined(WITH_EXIMON)
 USE_XORG=	x11 xaw xt
 .endif
-
-USE_BZIP2=	yes
 
 .if !defined(EXIMON_ONLY)
 MAN8=		exim.8
@@ -102,158 +104,25 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 		EXIM_GROUP=${EXIM_GROUP} \
 		LOGDIR="${LOGDIR}"
 
-# Define it to enabale malware and spam scanning in the DATA ACL,
-# and the MIME ACL.
-#WITH_CONTENT_SCAN=	yes
-
-# Enable old, deprecated "demime" ACL condition, in addition
-# to all the other content-scanning features.
-#WITHOUT_OLD_DEMIME=	yes
-
-# If WITH_EXIMON is defined, the eximon monitor, which requires X,
-# will be made a dependency.  Note that using WITH_EXIMON will cause
-# XFree86 to be installed if it is not present.
-#WITH_EXIMON=	yes
-
-# If WITH_SA_EXIM is defined, exim will be built with the SA-Exim
-# local_scan function (<http://marc.merlins.org/linux/exim/sa.html>)
-#WITH_SA_EXIM=		yes
-
 # Exim refuses to run local deliveries as root by default.  You can
 # add other users to this colon-separated list that cannot be
 # overridden at runtime below, but are advised not to remove "root".
 #WITH_FIXED_NEVER_USERS=	root:daemon:bin
-
-# Define WITH_TCP_WRAPPERS, WITH_MYSQL, WITH_SQLITE and WITH_PGSQL
-# to link against libwrap, libmysqlclient, sqlite and libpq
-# respectively.  Define WITH_SASLAUTHD to enable use of the Cyrus
-# SASL authentication daemon.  Define WITH_SQLITE to enable use of
-# the SQLite support.  Define WITH_MYSQL_VER to specify a particular
-# version of MySQL to use.  Valid values are currently 323, 40 and
-# 41.  Defining WITH_MYSQL_VER implies WITH_MYSQL.
-#WITH_TCP_WRAPPERS=	yes
-#WITH_MYSQL=		yes
-#WITH_MYSQL_VER=	40
-#WITH_PGSQL=		yes
-#WITH_SQLITE=		yes
-#WITH_SASLAUTHD=	yes
-
-# As an alternative to WITH_SASLAUTHD, you can define WITH_PWCHECK to
-# link against libsasl for SMTP AUTH authentication via the Cyrus SASL
-# pwcheck daemon.
-################################
-# THIS MECHANISM IS DEPRECATED #
-################################
-#WITH_PWCHECK=		yes
-
-# Define WITHOUT_IPV6 to exclude IPv6 support from the compiled exim
-# binary.  Exim compiled with IPv6 support will still operate on
-# systems that do not have IPv6 kernel support, so this should not
-# be necessary.
-#WITHOUT_IPV6=		yes
-
-# Define WITH_OPENLDAP or WITH_OPENLDAP_VER to link against libldap.
-# Define WITH_OPENLDAP_VER to specify a particular version of
-# OpenLDAP to use. Valid values are currently 21, 22 and 23.
-# Defining WITH_OPENLDAP_VER implies WITH_OPENLDAP.
-# Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
-# client libraries exist for these in the ports tree.
-#WITH_OPENLDAP=		yes
-#WITH_OPENLDAP_VER=	23
-
-# Define WITH_BDB or WITH_BDB_VER to link against the Berkeley DB library.
-# Define WITH_BDB_VER to specify a particular version of Berkeley DB to use.
-# Values may be 1, which corresponds to version 1.85 in the base system, 4,
-# 41, 42, 43, ... which depends on the databases/db4* ports.
-#WITH_BDB=		yes
-#WITH_BDB_VER?=		1
 
 # When Exim is decoding MIME "words" in header lines it converts any foreign
 # character sets to the one that is set in the headers_charset option.
 # The default setting is defined by this setting:
 WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
-# The following options may be defined to turn off support for various
-# features that this port enables by default.
-#
-# Do not link against OpenSSL; disables STARTTLS.
-#WITHOUT_TLS=	yes
-#
-# Disable the embedded Perl interpreter, which allows Perl subroutines to
-# be called during string expansion.
-#WITHOUT_PERL=	yes
-#
-# Disable built-in Exim support for the PAM, RFC 2195, RFC 2595 and
-# Microsoft "Secure Password Authentication" authentication mechanisms,
-# used for SMTP AUTH.
-#WITHOUT_PAM=			yes
-#WITHOUT_AUTH_CRAM_MD5=		yes
-#WITHOUT_AUTH_PLAINTEXT=	yes
-#WITHOUT_AUTH_DOVECOT=		yes
-#WITHOUT_AUTH_SPA=		yes
-#
-# Enable support for authenticating via the Cyrus SASL library
-#WITH_AUTH_SASL=		yes
-#
-# Enable built-in Exim support for radius (RFC 2865) authentication
-# RADIUS_TYPE can either be RADLIB (to use the radius library supplied
-# with FreeBSD) or RADIUSCLIENT (to use port net/radiusclient)
-#WITH_AUTH_RADIUS=		yes
-#WITH_RADIUS_TYPE=		RADLIB
-#
-# Disable built-in Exim support for additional mailbox formats.
-#WITHOUT_MAILDIR=	yes
-#WITHOUT_MAILSTORE=	yes
-#WITHOUT_MBX=		yes
-#
-# Define WITHOUT_CDB, WITHOUT_DNSDB, WITHOUT_DSEARCH, WITHOUT_LSEARCH,
-# WITHOUT_NIS and WITHOUT_PASSWD to disable support for CDB-style, DNS-style,
-# directory-list, wildcarded-file, NIS and /etc/passwd lookups respectively.
-#WITHOUT_CDB=		yes
-#WITHOUT_DNSDB=		yes
-#WITHOUT_DSEARCH=	yes
-#WITHOUT_LSEARCH=	yes
-#WITHOUT_NIS=		yes
-#WITHOUT_PASSWD=	yes
-#
-# Disable support for the LMTP (RFC 2033 "SMTP over command pipe")
-# transport.
-#WITHOUT_LMTP=		yes
-#
-# Allow alternate configuration files not only in ${PREFIX}/etc/exim
-#WITHOUT_ALT_CONFIG_PREFIX=	yes
-#
-# Include the unsupported patches in ${PATCHDIR}/wishlist-*.patch
-#WITH_WISHLIST=		yes
-#
-# Enable Sender Policy Framework (SPF) checking in exiscan-acl
-#WITH_SPF=		yes
-#
-# Enable DomainKeys support
-#WITH_DOMAINKEYS=	yes
-#
-# Enable DKIM (DomainKeys Identified Mail) support
-#WITH_DKIM=	yes
-#
-# Enable Sender Rewriting Scheme (SRS)
-#WITH_SRS=		yes
-#
-# Enable Sender Rewriting Scheme alternative library (SRS_ALT)
-#WITH_SRS_ALT=		yes
-#
-# Use the readline(3) library for the test expansion option
-#WITH_READLINE=		yes
-#
-# Don't install the exim binary suid root
-#WITHOUT_SUID=		yes
-#
-# Don't install scripts to run exim as a daemon
-# (for example when using option mua_wrapper)
-#WITHOUT_DAEMON=	yes
-#
-# Enable XCLIENT command in exim
-#WITH_XCLIENT=		yes
-#
+.if defined(WITH_XCLIENT)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xclient
+.endif
+
+.if defined(WITH_KAS)
+BUILD_DEPENDS+=	libspamtest>=0:${PORTSDIR}/mail/libspamtest
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-kas
+.endif
+
 # You should not need to fiddle with anything below this point.
 
 .if defined(WITH_WISHLIST)
@@ -280,13 +149,13 @@ PLIST_SUB+=	EXIMON="@comment "
 .endif
 
 .if !defined(WITHOUT_TLS)
-USE_OPENSSL=	yes
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
 .else
 SEDLIST+=	-e 's,^(TLS_LIBS=),\# \1,'
 .endif
 
-.if !defined(WITHOUT_PERL)
+.if !defined(WITHOUT_EMBEDDED_PERL)
 USE_PERL5=	yes
 SEDLIST+=	-e 's,^\# (EXIM_PERL=),\1,'
 .endif
@@ -370,12 +239,6 @@ SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 SASLAUTHD_SOCKET?=	/var/run/saslauthd/mux
 SEDLIST+=	-e 's,^\# (CYRUS_SASLAUTHD_SOCKET=).*,\1${SASLAUTHD_SOCKET},'
-.endif
-
-.if defined(WITH_PWCHECK)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
-SEDLIST+=	-e 's,^\# (SUPPORT_CYRUS_PWCHECK=),\1,' \
-		-e 's,^\# (CYRUS_PWCHECK_SOCKET=),\1,'
 .endif
 
 .if !defined(WITHOUT_PAM)
@@ -514,7 +377,7 @@ SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,,'
 .endif
 
 .if defined(WITH_DKIM)
-USE_OPENSSL=	yes
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 LIB_DEPENDS+=	dkim.1:${PORTSDIR}/mail/libdkim
 SEDLIST+=	-e 's,XX_DKIM_LIBS_XX,-ldkim -lstdc++ -lssl,' \
 		-e 's,^\# (EXPERIMENTAL_DKIM=),\1,'
@@ -561,12 +424,6 @@ SUB_LIST+=	LOGDIR="${LOGDIR}"
 .else
 PLIST_SUB+=	DAEMON="@comment "
 .endif
-
-.if defined(WITH_XCLIENT)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xclient
-.endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(EXIMON_ONLY) && ${MASTERDIR} == ${PKGDIR}
 .error EXIMON_ONLY is not user settable
