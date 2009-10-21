@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	soundconverter
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 CATEGORIES=	audio python
 MASTER_SITES=	BERLIOS
-#MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scjamorim@bsd.com.br
 COMMENT=	The sound conversion application for the GNOME environment
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
