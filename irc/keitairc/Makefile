@@ -27,6 +27,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/Japanese.pm:${PORTSDIR}/japanese/
 
 PLIST_FILES=	bin/keitairc
 
+CONFLICTS=	keitairc-2.*
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 EXTRACT_CMD=		${CP}
