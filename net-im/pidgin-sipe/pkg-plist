@@ -1,5 +1,5 @@
-lib/pidgin/libsipe.la
-lib/pidgin/libsipe.so
+lib/purple-2/libsipe.la
+lib/purple-2/libsipe.so
 share/locale/cs/LC_MESSAGES/pidgin-sipe.mo
 share/locale/da/LC_MESSAGES/pidgin-sipe.mo
 share/locale/de/LC_MESSAGES/pidgin-sipe.mo
