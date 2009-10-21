@@ -12,8 +12,8 @@ bin/robocode
 %%DATADIR%%/javadoc/overview-frame.html
 %%DATADIR%%/javadoc/overview-summary.html
 %%DATADIR%%/javadoc/overview-tree.html
-%%DATADIR%%/javadoc/packages
 %%DATADIR%%/javadoc/package-list
+%%DATADIR%%/javadoc/packages
 %%DATADIR%%/javadoc/resources/inherit.gif
 %%DATADIR%%/javadoc/robocode/AdvancedRobot.html
 %%DATADIR%%/javadoc/robocode/BattleEndedEvent.html
@@ -136,14 +136,14 @@ bin/robocode
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/codesize-1.1.jar
 %%DATADIR%%/libs/picocontainer-2.6.jar
+%%DATADIR%%/libs/robocode.battle-1.7.1.4.jar
+%%DATADIR%%/libs/robocode.core-1.7.1.4.jar
+%%DATADIR%%/libs/robocode.host-1.7.1.4.jar
 %%DATADIR%%/libs/robocode.jar
-%%DATADIR%%/libs/robocode.battle-1.7.1.3.jar
-%%DATADIR%%/libs/robocode.core-1.7.1.3.jar
-%%DATADIR%%/libs/robocode.host-1.7.1.3.jar
-%%DATADIR%%/libs/robocode.repository-1.7.1.3.jar
-%%DATADIR%%/libs/robocode.sound-1.7.1.3.jar
-%%DATADIR%%/libs/robocode.ui-1.7.1.3.jar
-%%DATADIR%%/libs/robocode.ui.editor-1.7.1.3.jar
+%%DATADIR%%/libs/robocode.repository-1.7.1.4.jar
+%%DATADIR%%/libs/robocode.sound-1.7.1.4.jar
+%%DATADIR%%/libs/robocode.ui-1.7.1.4.jar
+%%DATADIR%%/libs/robocode.ui.editor-1.7.1.4.jar
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/cpl-v10.html
 %%DATADIR%%/robocode.ico
@@ -172,7 +172,6 @@ bin/robocode
 %%DATADIR%%/robots/sample/RamFire.java
 %%DATADIR%%/robots/sample/RamFire.properties
 %%DATADIR%%/robots/sample/SittingDuck.class
-%%DATADIR%%/robots/sample/SittingDuck.data
 %%DATADIR%%/robots/sample/SittingDuck.data/count.dat
 %%DATADIR%%/robots/sample/SittingDuck.java
 %%DATADIR%%/robots/sample/SittingDuck.properties
@@ -227,9 +226,9 @@ bin/robocode
 %%DATADIR%%/templates/newrobot.tpt
 %%DATADIR%%/versions.txt
 @dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/robots/sample/SittingDuck.data
 @dirrm %%DATADIR%%/robots/sampleteam
 @dirrm %%DATADIR%%/robots/sampleex
+@dirrm %%DATADIR%%/robots/sample/SittingDuck.data
 @dirrm %%DATADIR%%/robots/sample
 @dirrm %%DATADIR%%/robots
 @dirrm %%DATADIR%%/license
