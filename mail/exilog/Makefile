@@ -7,7 +7,7 @@
 
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
@@ -17,7 +17,6 @@ COMMENT=	Tool to centralize and visualize Exim logs with a web front end
 RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
 USE_PERL5=	yes
-USE_APACHE=	1.3
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
