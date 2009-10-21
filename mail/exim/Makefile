@@ -22,6 +22,7 @@ COMMENT?=	High performance MTA for Unix systems on the Internet
 .include "Makefile.options"
 
 USE_BZIP2=	yes
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
