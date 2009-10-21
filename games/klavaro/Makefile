@@ -6,23 +6,32 @@
 #
 
 PORTNAME=	klavaro
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Touchtyping trainer
 
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+		gtkdatabox-0.9.0.1:${PORTSDIR}/x11-toolkits/gtkdatabox \
+		sexy.2:${PORTSDIR}/x11-toolkits/libsexy
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
+USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
+
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAN1=		${PORTNAME}.1 ${PORTNAME}_helper.1
 
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+MAN1=		${PORTNAME}.1
+
+post-patch:
+	${MV} ${WRKSRC}/data/dvorak_fr_b*.kbd ${WRKSRC}/data/dvorak_fr_bepo.kbd
 
 .include <bsd.port.mk>
