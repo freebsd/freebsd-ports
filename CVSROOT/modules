@@ -2196,6 +2196,7 @@ denyhosts                       ports/security/denyhosts
 deputy                          ports/devel/deputy
 deskbar-applet                  ports/deskutils/deskbar-applet
 deskmenu                        ports/x11/deskmenu
+deskpaint                       ports/x11/deskpaint
 desktop-data-model              ports/net/desktop-data-model
 desktop-file-utils              ports/devel/desktop-file-utils
 desktopbsd-tools                ports/sysutils/desktopbsd-tools
@@ -10127,6 +10128,7 @@ osg-devel                       ports/graphics/osg-devel
 osgg                            ports/games/osgg
 osh                             ports/shells/osh
 osiris                          ports/security/osiris
+osmo                            ports/deskutils/osmo
 osmose                          ports/emulators/osmose
 osmosis                         ports/astro/osmosis
 osrtspproxy                     ports/net/osrtspproxy
@@ -11605,6 +11607,7 @@ p5-Graphics-Primitive           ports/graphics/p5-Graphics-Primitive
 p5-Graphics-Primitive-Driver-Cairo  ports/graphics/p5-Graphics-Primitive-Driver-Cairo
 p5-Gtk                          ports/x11-toolkits/p5-Gtk
 p5-Gtk2                         ports/x11-toolkits/p5-Gtk2
+p5-Gtk2-Chmod                   ports/x11-toolkits/p5-Gtk2-Chmod
 p5-Gtk2-Ex-Dialogs              ports/x11-toolkits/p5-Gtk2-Ex-Dialogs
 p5-Gtk2-Ex-FormFactory          ports/x11-toolkits/p5-Gtk2-Ex-FormFactory
 p5-Gtk2-Ex-PodViewer            ports/x11-toolkits/p5-Gtk2-Ex-PodViewer
@@ -15199,6 +15202,7 @@ p5-gssapi                       ports/security/p5-GSSAPI
 p5-gstreamer                    ports/multimedia/p5-GStreamer
 p5-gtk                          ports/x11-toolkits/p5-Gtk
 p5-gtk2                         ports/x11-toolkits/p5-Gtk2
+p5-gtk2-chmod                   ports/x11-toolkits/p5-Gtk2-Chmod
 p5-gtk2-ex-dialogs              ports/x11-toolkits/p5-Gtk2-Ex-Dialogs
 p5-gtk2-ex-formfactory          ports/x11-toolkits/p5-Gtk2-Ex-FormFactory
 p5-gtk2-ex-podviewer            ports/x11-toolkits/p5-Gtk2-Ex-PodViewer
@@ -25035,7 +25039,6 @@ ziproxy                         ports/www/ziproxy
 zircon                          ports/irc/zircon
 zisofs-tools                    ports/sysutils/zisofs-tools
 zkt                             ports/dns/zkt
-zlib                            ports/archivers/zlib
 zmailer                         ports/mail/zmailer
 zmq                             ports/devel/zmq
 zms                             ports/mail/zms
