@@ -1,317 +1,44 @@
-# $FreeBSD$
-#
-# Configurable options for mail/exim. Note that the options listed
-# here are the defaults, so if you want to change them you have to
-# specify the opposite version in the command line, e.g.
-# `make WITH_CONTENT_SCAN=yes WITH_SASLAUTHD=yes install'
-#
-# `make WITHOUT_CONTENT_SCAN=yes WITHOUT_SASLAUTHD=no' will not give the expected results.
-
-#WITHOUT_CONTENT_SCAN
-# Exim will be built without exiscan email content scanner support.
-
-#WITH_OLD_DEMIME
-# Enable old, deprecated "demime" ACL condition, in addition
-# to all the other content-scanning features.
-
-#WITHOUT_SA_EXIM
-# SA-Exim support (<http://marc.merlins.org/linux/exim/sa.html>)
-
-#WITH_BDB_VER=		1, 4, 41, 42, 43
-# BDB_VER is the version of the Berkeley DB library to use, and
-# may be 1, which corresponds to version 1.85 in the base system, 4,
-# 41, 42 or 43 which depends on the databases/db4[123] ports.
-
-#WITH_DEFAULT_CHARSET=	ISO-8859-1, *
-# When Exim is decoding MIME "words" in header lines it converts any foreign
-# character sets to the one that is set in the headers_charset option.
-# The default setting is defined by this setting
-
-#WITH_PERL
-# Embedded Perl interpreter, which allows Perl subroutines to
-# be called during string expansion.
-
-#! lookup types
-
-#WITHOUT_OPENLDAP
-#WITH_OPENLDAP_VER=	auto, 21, 22, 23
-# Link against libldap.
-# Define OPENLDAP_VER to specify a particular version of
-# OpenLDAP to use. Valid values are currently auto, 21, 22 and 23.
-# The use of `auto' is recommended to avoid conflicting with
-# other ports that use the OpenLDAP client libraries.
-# Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
-# client libraries exist for these in the ports tree.
-
-#WITHOUT_MYSQL
-#WITH_MYSQL_VER=	auto, 323, 40, 41, 50
-#WITHOUT_PGSQL
-#WITH_POSTGRESQL_PORT=	auto, databases/postgresql7, databases/postgresql73, databases/postgresql-devel, databases/pgcluster, *
-# Link against libmysqlclient and libpq respectively.
-# Define MYSQL_VER to specify a particular version of MySQL to
-# use.  Valid values are auto, 323, 40, 41 and 50.
-# The use of `auto' is recommended to avoid conflicting with
-# other ports linking against MySQL client libraries.
-
-#WITHOUT_SQLITE
-# Link against libsqlite3 to support sqlite lookups.
-
-#WITH_CDB
-#WITH_DNSDB
-#WITH_DSEARCH
-#WITH_LSEARCH
-#WITH_NIS
-#WITH_PASSWD
-# Support for CDB-style, DNS-style, directory-list, wildcarded-file, NIS
-# and /etc/passwd lookups respectively.
-
-#! authentication mechanisms
-
-#WITH_PAM
-#WITH_AUTH_CRAM_MD5
-#WITH_AUTH_PLAINTEXT
-#WITH_AUTH_DOVECOT
-#WITH_AUTH_SPA
-# Built-in support for the PAM, RFC 2195, RFC 2595 and
-# Microsoft "Secure Password Authentication" authentication mechanisms,
-# used for SMTP AUTH.
-
-#WITHOUT_AUTH_SASL
-# Enable the use of the Cyrus SASL authentication library.
-
-#WITHOUT_SASLAUTHD
-# Enable the use of the Cyrus SASL authentication daemon.
-
-#WITHOUT_PWCHECK
-# As an alternative to SASLAUTHD, you can define PWCHECK to link
-# against libsasl for SMTP AUTH authentication via the Cyrus SASL
-# pwcheck daemon.
-# THIS MECHANISM IS DEPRECATED!
-
-#WITHOUT_AUTH_RADIUS
-# Link against a radius library o support radius (RFC 2865) authentication.
-#WITH_RADIUS_TYPE=	RADLIB, RADIUSCLIENT
-# Choose between the system library (RADLIB) or port net/freeradius (RADIUSCLIENT).
-
-#! optional features
-
-#WITH_TLS
-# Link against OpenSSL; required for STARTTLS.
-
-#WITH_IPV6
-# Enable IPv6 support in the compiled exim binary.  Exim compiled
-# with IPv6 support will still operate on systems that do not have
-# IPv6 kernel support, so this should not be necessary.
-
-#WITH_MAILDIR
-#WITH_MAILSTORE
-#WITH_MBX
-# Built-in support for additional mailbox formats.
-
-#WITH_LMTP
-# Support for the LMTP (RFC 2033 "SMTP over command pipe") transport.
-
-#WITHOUT_SPF
-# Enable Sender Policy Framework (SPF) checking in exiscan-acl
-
-#WITHOUT_SRS
-# Enable Sender Rewriting Scheme (SRS), a part of the SPF/SRS protocol pair.
-# SRS support depends on exiscan.
-# .
-# Additional options:
-# srs_alwaysrewrite   (boolean)      Rewrite for all domains
-# srs_hashlength      (integer)      Hash length to generate
-# srs_hashmin         (integer)      Hash length to check
-# srs_maxage          (integer)      Max age for SRS address
-# srs_secrets         (string list)  List of SRS secrets
-# srs_separator       (string*)      Separator for SRS addresses
-#
-# Additional expansion variables:
-# srs_orig_recipient  (string*)     SRS original recipient
-# srs_orig_sender     (string*)     SRS original sender
-# srs_recipient       (string*)     SRS recipient
-# srs_status          (string*)     SRS status
-
-#WITHOUT_SRS_ALT
-# Enable Sender Rewriting Scheme (SRS)
-
-#WITHOUT_DOMAINKEYS
-# Enable Yahoo DomainKeys support.
-# DomainKeys support depends on exiscan.
-
-#WITHOUT_DKIM
-# Enable DKIM (DomainKeys Identified Mail) support.
-
-#WITHOUT_TCP_WRAPPERS
-# Link against libwrap to support /etc/hosts.allow access control.
-
-#WITHOUT_EXIMON
-# The eximon monitor, which requires X, will be made a dependency.
-# Note that using EXIMON will cause XFree86 to be installed
-# if it is not present.
-
-#WITHOUT_ALT_CONFIG_PREFIX
-# Allow alternate configuration files not only in ${PREFIX}/etc/exim
-
-#WITHOUT_WISHLIST
-# Include the unsupported patches in ${PATCHDIR}/wishlist-*.patch
-
-#WITHOUT_RCORDER
-# FreeBSD 5.x only: Install the rc.subr(8) script to /etc/rc.d to participate
-# in rcorder(8).
-
-#WITHOUT_READLINE
-# readline(3) library for the test expansion option.
-
-#WITH_SUID
-# Install the exim binary suid root (usually required)
-
-#WITH_DAEMON
-# Don't install scripts to run exim as a daemon
-
-#WITH_ICONV
-# Link with libiconv to enable header charset conversion
-
-#WITH_XCLIENT
-# Enable XCLIENT command in exim: http://www.postfix.org/XCLIENT_README.html
-
-## AUTOMATICALLY GENERATED FILE - DO NOT CHANGE ANYTHING BELOW THIS LINE ##
-# use `make config' to edit the local configuration
-# use `make makeconfig' to edit the defaults (MAINTAINER only)
-
-_OPTIONSNG_READ?=default
-.ifndef WITH_CONTENT_SCAN
-WITHOUT_CONTENT_SCAN?=yes
-.endif
-.ifndef WITHOUT_OLD_DEMIME
-WITH_OLD_DEMIME?=yes
-.endif
-.ifndef WITH_SA_EXIM
-WITHOUT_SA_EXIM?=yes
-.endif
-WITH_BDB_VER?=1
-WITH_DEFAULT_CHARSET?=ISO-8859-1
-.ifndef WITHOUT_PERL
-WITH_PERL?=yes
-.endif
-.ifndef WITH_OPENLDAP
-WITHOUT_OPENLDAP?=yes
-.endif
-WITH_OPENLDAP_VER?=auto
-.ifndef WITH_MYSQL
-WITHOUT_MYSQL?=yes
-.endif
-WITH_MYSQL_VER?=auto
-.ifndef WITH_PGSQL
-WITHOUT_PGSQL?=yes
-.endif
-WITH_POSTGRESQL_PORT?=auto
-.ifndef WITHOUT_CDB
-WITH_CDB?=yes
-.endif
-.ifndef WITH_SQLITE
-WITHOUT_SQLITE?=yes
-.endif
-.ifndef WITHOUT_DNSDB
-WITH_DNSDB?=yes
-.endif
-.ifndef WITHOUT_DSEARCH
-WITH_DSEARCH?=yes
-.endif
-.ifndef WITHOUT_LSEARCH
-WITH_LSEARCH?=yes
-.endif
-.ifndef WITHOUT_NIS
-WITH_NIS?=yes
-.endif
-.ifndef WITHOUT_PASSWD
-WITH_PASSWD?=yes
-.endif
-.ifndef WITHOUT_PAM
-WITH_PAM?=yes
-.endif
-.ifndef WITHOUT_AUTH_CRAM_MD5
-WITH_AUTH_CRAM_MD5?=yes
-.endif
-.ifndef WITHOUT_AUTH_PLAINTEXT
-WITH_AUTH_PLAINTEXT?=yes
-.endif
-.ifndef WITHOUT_AUTH_DOVECOT
-WITH_AUTH_DOVECOT?=yes
-.endif
-.ifndef WITHOUT_AUTH_SPA
-WITH_AUTH_SPA?=yes
-.endif
-.ifndef WITH_AUTH_SASL
-WITHOUT_AUTH_SASL?=yes
-.endif
-.ifndef WITH_SASLAUTHD
-WITHOUT_SASLAUTHD?=yes
-.endif
-.ifndef WITH_PWCHECK
-WITHOUT_PWCHECK?=yes
-.endif
-.ifndef WITH_AUTH_RADIUS
-WITHOUT_AUTH_RADIUS?=yes
-.endif
-WITH_RADIUS_TYPE?=RADLIB
-.ifndef WITHOUT_TLS
-WITH_TLS?=yes
-.endif
-.ifndef WITHOUT_IPV6
-WITH_IPV6?=yes
-.endif
-.ifndef WITHOUT_MAILDIR
-WITH_MAILDIR?=yes
-.endif
-.ifndef WITHOUT_MAILSTORE
-WITH_MAILSTORE?=yes
-.endif
-.ifndef WITHOUT_MBX
-WITH_MBX?=yes
-.endif
-.ifndef WITHOUT_LMTP
-WITH_LMTP?=yes
-.endif
-.ifndef WITH_SPF
-WITHOUT_SPF?=yes
-.endif
-.ifndef WITH_SRS
-WITHOUT_SRS?=yes
-.endif
-.ifndef WITH_SRS_ALT
-WITHOUT_SRS_ALT?=yes
-.endif
-.ifndef WITH_DOMAINKEYS
-WITHOUT_DOMAINKEYS?=yes
-.endif
-.ifndef WITH_DKIM
-WITHOUT_DKIM?=yes
-.endif
-.ifndef WITH_TCP_WRAPPERS
-WITHOUT_TCP_WRAPPERS?=yes
-.endif
-.ifndef WITH_EXIMON
-WITHOUT_EXIMON?=yes
-.endif
-.ifndef WITH_ALT_CONFIG_PREFIX
-WITHOUT_ALT_CONFIG_PREFIX?=yes
-.endif
-.ifndef WITH_WISHLIST
-WITHOUT_WISHLIST?=yes
-.endif
-.ifndef WITH_RCORDER
-WITHOUT_RCORDER?=yes
-.endif
-.ifndef WITH_READLINE
-WITHOUT_READLINE?=yes
-.endif
-.ifndef WITHOUT_SUID
-WITH_SUID?=yes
-.endif
-.ifndef WITHOUT_DAEMON
-WITH_DAEMON?=yes
-.endif
-.ifndef WITHOUT_ICONV
-WITH_ICONV?=yes
-.endif
+OPTIONS+= \
+	 ALT_CONFIG_PREFIX "Allow alternate configuration files" off \
+	 AUTH_CRAM_MD5 "Enable CRAM-MD5 authentication mechanisms" on \
+	 AUTH_DOVECOT "Enable Dovecot authentication mechanisms" on \
+	 AUTH_PLAINTEXT "Enalbe plaintext authentication" on \
+	 AUTH_RADIUS "Enable radius (RFC 2865) authentication" off \
+	 AUTH_SASL "Enable use of Cyrus SASL auth library" off \
+	 AUTH_SPA "Enable Secure Password Authentication" on \
+	 CDB "Enable CDB-style lookups" on \
+	 CONTENT_SCAN "Enable exiscan email content scanner" off \
+	 DAEMON "Don't install scripts to run as a daemon" on \
+	 DKIM "Enable DKIM (DomainKeys Identified Mail)" off \
+	 DNSDB "Enable DNS-style lookups" on \
+	 DOMAINKEYS "Enable Yahoo DomainKeys support" off \
+	 DSEARCH "Enable directory-list lookups" on \
+	 EMBEDDED_PERL "Enable embedded Perl interpreter" on \
+	 EXIMON "Build eximon monitor (require XFree86!)" off \
+	 ICONV "Enable header charset conversion" on \
+	 IPV6 "Enable IPv6 support" on \
+	 KAS "Build with Kaspersky AntiSpam local scan" off \
+	 LMTP "RFC2033 SMTP over command pipe transport" on \
+	 LSEARCH "Enable wildcarded-file lookups" on \
+	 MAILDIR "Enable Maildir mailbox format" on \
+	 MAILSTORE "Enable Mailstore mailbox format" on \
+	 MBX "Enable MBX mailbox format" on \
+	 MYSQL "Link against libmysqlclient library" off \
+	 NIS "Enable NIS-style lookups" on \
+	 OLD_DEMIME "Enable old, deprecated "demime" ACL" on \
+	 OPENLDAP "Link against libldap" off \
+	 PAM "Enable PAM authentication mechanisms" on \
+	 PASSWD "Enable /etc/passwd lookups" on \
+	 PGSQL "Link against libpq" off \
+	 READLINE "Enable readline(3) library" off \
+	 SASLAUTHD "Enable use of Cyrus SASL auth daemon" off \
+	 SA_EXIM "SA-Exim support" off \
+	 SPF "Enable Sender Policy Framework checking" off \
+	 SQLITE "Enable SQLite lookups" off \
+	 SRS "Enable Sender Rewriting Scheme" off \
+	 SRS_ALT "Enable alternative SRS library" off \
+	 SUID "Install the exim binary suid root" on \
+	 TCP_WRAPPERS "Enable /etc/hosts.allow access control" off \
+	 TLS "Link against OpenSSL" on \
+	 WISHLIST "Include the unsupported patches" off \
+	 XCLIENT "Enable XCLIENT command in exim" off \
