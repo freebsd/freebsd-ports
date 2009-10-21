@@ -225,8 +225,8 @@
  	struct addrinfo* res;
  #else
 --- irrdi.c.orig	2005-06-23 11:53:56.000000000 +0400
-+++ irrdi.c	2009-10-20 17:22:49.000000000 +0400
-@@ -191,12 +191,10 @@
++++ irrdi.c	2009-10-20 20:11:04.000000000 +0400
+@@ -191,24 +191,25 @@
  		};
  	};
  #endif
@@ -240,7 +240,11 @@
  
  	return 1;
  };
-@@ -207,8 +205,11 @@
+ 
+ int
+ irrd_question(struct irrdc* ir, char* quest, ...)
+-{ 
++{
  	va_list ap;
  	char qbuff[512];
  	char rbuff[2048];
@@ -253,7 +257,7 @@
  
  	memset(qbuff,0,sizeof(qbuff));
  	va_start(ap,quest);
-@@ -217,79 +218,120 @@
+@@ -217,79 +218,121 @@
  
  	va_end(ap);
  
@@ -307,7 +311,8 @@
 +	    if(debug>2) 
 +		    SX_TRACE2("sending %s", qbuff);
 +
-+	    strcat(qbuff, "\n");
++	    if(!retries)
++		strcat(qbuff, "\n");
 +	    if (write(ir->s, qbuff, strlen(qbuff)) != strlen(qbuff))
 +		    goto errlab;
 +
@@ -336,7 +341,7 @@
 +			    bzero(ir->answer,len+1);
 +
 +			    if(debug>2) 
-+				    SX_TRACE2("Waiting for %i data bytes..",len);
++				    SX_TRACE2("Waiting for %i data bytes",len);
 +
 +			    if(need_copy) {
 +				n -= strlen(rbuff)+1;
@@ -446,7 +451,7 @@
  	return 1;
  };
  
-@@ -302,9 +344,7 @@
+@@ -302,9 +345,7 @@
  	if(debug>2) { 
  		SX_TRACE2("sending !q");
  	};
