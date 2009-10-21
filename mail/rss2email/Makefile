@@ -7,6 +7,7 @@
 
 PORTNAME=	rss2email
 PORTVERSION=	2.65
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.chifeng.name/dist/rss2email/
 
@@ -27,6 +28,8 @@ PORTEXAMPLES=	config.py
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHONCMD@|${PYTHON_CMD}|;s|@DATADIR@|${DATADIR}|'\
 		${WRKSRC}/r2e
+	@${REINPLACE_CMD} -e "s|\([^[:alnum:]]\)c.type\([^[:alnum:]]\)|\1c.get('type','')\2|"\
+		${WRKSRC}/rss2email.py
 
 do-install:
 	@${INSTALL} -d ${DATADIR}/
