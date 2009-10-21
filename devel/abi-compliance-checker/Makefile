@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://ispras.linux-foundation.org/images/7/75/
+MASTER_SITES=	http://ispras.linux-foundation.org/images/8/8c/
 DISTFILES=	${PORTNAME:S/^a/A/}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	bf1783@gmail.com
