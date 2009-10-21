@@ -264,7 +264,7 @@ audit_cwd()
 		return 2
 	fi
 
-	PKGNAME=`make -VPKGNAME 2>/dev/null || true"`
+	PKGNAME=`make -VPKGNAME 2>/dev/null || true`
 
 	if [ -z "$PKGNAME" ]; then
 		echo "portaudit: Can't determine the package name" >&2
