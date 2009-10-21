@@ -7,7 +7,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--disable-xft2
 .endif
 
 .if defined(WITH_GIF)
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=	--enable-gif
 .else
 CONFIGURE_ARGS+=	--disable-gif
@@ -74,6 +74,9 @@ CONFIGURE_ARGS+=	--enable-imlib
 .else
 CONFIGURE_ARGS+=	--disable-imlib
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-lungif|-lgif|' ${WRKSRC}/configure
 
 post-configure:
 	cd ${WRKSRC}/contrib/xmindpath && \

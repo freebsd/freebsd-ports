@@ -7,14 +7,14 @@
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple painting program
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
@@ -27,7 +27,7 @@ USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		--locale=${PREFIX}/share/locale \
-		gtk2 cflags slow asneeded gif jpeg jp2 tiff man
+		gtk2 cflags slow asneeded GIF jpeg jp2 tiff man
 
 MANCOMPRESSED=	yes
 MAN1=		${PORTNAME}.1
