@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlobject
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,28 +15,26 @@ DISTNAME=	SQLObject-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A python object for manipulation with SQL table row
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formencode>=1.2.2:${PORTSDIR}/www/py-formencode
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLObject
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
+PYDISTUTILS_NOEGGINFO=	yes
 
 PORTDOCS=	*
 
 OPTIONS=	MYSQL	"MySQL supports" off \
 		PGSQL	"PostgreSQL Supports" off \
 		SQLITE	"SQLite Supports" off \
-		MSSQL	"MSSQL Supports" off
+		MSSQL	"MSSQL Supports" off \
+		FIREBIRD "FireBird Supports" Off \
+		SYBASE  "Sybase Supports" Off
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.pre.mk>
-
-PYSQLOBJECT_EGG=	SQLObject-${SQLOBJECTVER}-py${PYTHONVER}.egg
-PYFORMENCODE_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-formencode/Makefile -V PYFORMENCODE_EGG
-
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYFORMENCODE_EGG}:${PORTSDIR}/www/py-formencode
-
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 .endif
@@ -53,7 +51,15 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/p
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
-# currently FireBird, MaxDB(SAP), Sybase, ADODB are not supported
+.if defined(WITH_FIREBIRD)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}kinterbasdb>=3.2:${PORTSDIR}/databases/kinterbasdb
+.endif
+
+.if defined(WITH_SYBASE)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sybase>=0.37:${PORTSDIR}/databases/py-sybase
+.endif
+
+# currently MaxDB(SAP), ADODB are not supported
 
 post-install:
 .if !defined(NOPORTDOCS)
