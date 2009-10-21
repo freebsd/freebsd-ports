@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9001
+PORTVERSION=	0.9004
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -19,12 +19,14 @@ RUN_DEPENDS=	\
 	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 	p5-Devel-StackTrace>0:${PORTSDIR}/devel/p5-Devel-StackTrace \
 	p5-Devel-StackTrace-AsHTML>0:${PORTSDIR}/devel/p5-Devel-StackTrace-AsHTML \
-	p5-File-ShareDir>0:${PORTSDIR}/devel/p5-File-ShareDir \
+	p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
+	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-HTTP-Request-AsCGI>=0.9:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
-	p5-URI>0:${PORTSDIR}/net/p5-URI
+	p5-URI>0:${PORTSDIR}/net/p5-URI \
+	p5-parent>0:${PORTSDIR}/devel/p5-parent
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -43,9 +45,11 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware.3 \
 	Plack::Middleware::AccessLog.3 \
 	Plack::Middleware::AccessLog::Timed.3 \
+	Plack::Middleware::Chunked.3 \
 	Plack::Middleware::ConditionalGET.3 \
 	Plack::Middleware::ContentLength.3 \
 	Plack::Middleware::ErrorDocument.3 \
+	Plack::Middleware::JSONP.3 \
 	Plack::Middleware::Lint.3 \
 	Plack::Middleware::MethodOverride.3 \
 	Plack::Middleware::RearrangeHeaders.3 \
