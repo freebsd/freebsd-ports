@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enchant
-DISTVERSION=	1.0.2
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	textproc devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
