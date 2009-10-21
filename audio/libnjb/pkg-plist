@@ -121,6 +121,7 @@ libdata/pkgconfig/libnjb.pc
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/songid_8c.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/songid_8h_source.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__datafile__struct.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__device__entry.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__eax__struct.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__error__stack__struct.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__keyval__struct.html
@@ -128,8 +129,14 @@ libdata/pkgconfig/libnjb.pc
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__playlist__track__struct.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__songid__frame__struct.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__songid__struct.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__state__t.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__struct.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb__time__struct.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjb3__state__t.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjbdfhdr__t.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjblibctr__t.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjbplhdr__t.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/structnjbttaghdr__t.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/tab_b.gif
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/tab_l.gif
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/tab_r.gif
