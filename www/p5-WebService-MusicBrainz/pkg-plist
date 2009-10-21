@@ -5,6 +5,7 @@
 %%SITE_PERL%%/WebService/MusicBrainz/Label.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Query.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Release.pm
+%%SITE_PERL%%/WebService/MusicBrainz/ReleaseGroup.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Track.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Alias.pm
@@ -13,10 +14,13 @@
 %%SITE_PERL%%/WebService/MusicBrainz/Response/ArtistList.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Disc.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/DiscList.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/ISRC.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/ISRCList.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Label.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/LabelList.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Metadata.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Puid.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/Rating.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/PuidList.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Relation.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/RelationList.pm
@@ -24,10 +28,15 @@
 %%SITE_PERL%%/WebService/MusicBrainz/Response/ReleaseList.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/ReleaseEvent.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/ReleaseEventList.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/ReleaseGroup.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/ReleaseGroupList.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Tag.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/TagList.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/Track.pm
 %%SITE_PERL%%/WebService/MusicBrainz/Response/TrackList.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/UserRating.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/UserTag.pm
+%%SITE_PERL%%/WebService/MusicBrainz/Response/UserTagList.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/MusicBrainz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
 @dirrmtry %%SITE_PERL%%/WebService/MusicBrainz/Response
