@@ -38,9 +38,9 @@ post-extract:
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM} -rf
-	${REINPLACE_CMD} -I '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -I '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -I '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
+	${REINPLACE_CMD} -i '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
+	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
+	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
