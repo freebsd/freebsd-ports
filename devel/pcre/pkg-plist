@@ -21,3 +21,4 @@ lib/libpcreposix.so
 lib/libpcreposix.so.0
 libdata/pkgconfig/libpcre.pc
 libdata/pkgconfig/libpcrecpp.pc
+libdata/pkgconfig/libpcreposix.pc
