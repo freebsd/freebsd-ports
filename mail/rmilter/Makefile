@@ -16,6 +16,10 @@ COMMENT=		Milter plugin for rambler mail
 PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh etc/rmilter.conf.sample
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+
 
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=	--enable-debug
