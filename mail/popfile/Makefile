@@ -80,7 +80,7 @@ pre-fetch:
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/popfile.pl
-	${REINPLACE_CMD} -I '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/popfile.pl
+	${REINPLACE_CMD} -i '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/popfile.pl
 	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
 
 do-install:
