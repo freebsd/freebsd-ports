@@ -6,7 +6,7 @@
 
 PORTNAME=	bgpq
 PORTVERSION=	1.0.9.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 EXTRACT_SUFX=	.tgz
