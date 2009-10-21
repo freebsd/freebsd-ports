@@ -35,7 +35,7 @@ pidfile="/var/run/${name}.pid"
 etcdir="%%PREFIX%%/etc/${name}"
 respawn=""
 
-if [ "$couchdb_respawn" gt 0 ]
+if [ "$couchdb_respawn" > 0 ]
     then
         respawn="-r ${couchdb_respawn} "
 fi
