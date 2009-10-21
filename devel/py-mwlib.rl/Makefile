@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mwlib.rl
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generate Pdfs from Mediawiki Markup
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/texvc:${PORTSDIR}/print/texvc \
