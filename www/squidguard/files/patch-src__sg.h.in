@@ -1,0 +1,11 @@
+--- ./src/sg.h.in.orig	2007-11-16 08:58:32.000000000 -0800
++++ ./src/sg.h.in	2009-10-19 12:25:23.000000000 -0700
+@@ -73,7 +73,7 @@
+ #define REQUEST_TYPE_REDIRECT   2
+ #define REQUEST_TYPE_PASS       3
+ 
+-#define MAX_BUF 4096
++#define MAX_BUF 12288
+ 
+ #define DEFAULT_LOGFILE "squidGuard.log"
+ #define WARNING_LOGFILE "squidGuard.log"
