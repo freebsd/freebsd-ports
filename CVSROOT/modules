@@ -6705,6 +6705,7 @@ keep                            ports/sysutils/keep
 keepalived                      ports/net/keepalived
 keepassx                        ports/security/keepassx
 keitairc                        ports/irc/keitairc
+keitairc2                       ports/irc/keitairc2
 kenny                           ports/misc/kenny
 kermit                          ports/comms/kermit
 kevedit                         ports/games/kevedit
@@ -12558,6 +12559,7 @@ p5-OpenCA-CRR                   ports/security/p5-OpenCA-CRR
 p5-OpenCA-PKCS7                 ports/security/p5-OpenCA-PKCS7
 p5-OpenCA-REQ                   ports/security/p5-OpenCA-REQ
 p5-OpenGL                       ports/graphics/p5-OpenGL
+p5-OpenOffice-OODoc             ports/textproc/p5-OpenOffice-OODoc
 p5-Oryx                         ports/databases/p5-Oryx
 p5-OurNet-BBS                   ports/net/p5-OurNet-BBS
 p5-OurNet-BBSAgent              ports/net/p5-OurNet-BBSAgent
@@ -13672,6 +13674,7 @@ p5-XML-RSS-Liberal              ports/textproc/p5-XML-RSS-Liberal
 p5-XML-RSS-Parser               ports/textproc/p5-XML-RSS-Parser
 p5-XML-RSS-SimpleGen            ports/textproc/p5-XML-RSS-SimpleGen
 p5-XML-RSSLite                  ports/textproc/p5-XML-RSSLite
+p5-XML-Reader                   ports/textproc/p5-XML-Reader
 p5-XML-RegExp                   ports/textproc/p5-XML-RegExp
 p5-XML-Rules                    ports/textproc/p5-XML-Rules
 p5-XML-SAX                      ports/textproc/p5-XML-SAX
@@ -16170,6 +16173,7 @@ p5-openca-crr                   ports/security/p5-OpenCA-CRR
 p5-openca-pkcs7                 ports/security/p5-OpenCA-PKCS7
 p5-openca-req                   ports/security/p5-OpenCA-REQ
 p5-opengl                       ports/graphics/p5-OpenGL
+p5-openoffice-oodoc             ports/textproc/p5-OpenOffice-OODoc
 p5-openxpki                     ports/security/p5-openxpki
 p5-openxpki-client              ports/security/p5-openxpki-client
 p5-openxpki-client-html-mason   ports/security/p5-openxpki-client-html-mason
@@ -17317,6 +17321,7 @@ p5-xml-parser-style-elemental   ports/textproc/p5-XML-Parser-Style-Elemental
 p5-xml-pastor                   ports/devel/p5-XML-Pastor
 p5-xml-quote                    ports/textproc/p5-XML-Quote
 p5-xml-rai                      ports/textproc/p5-XML-RAI
+p5-xml-reader                   ports/textproc/p5-XML-Reader
 p5-xml-regexp                   ports/textproc/p5-XML-RegExp
 p5-xml-rpc                      ports/net/p5-XML-RPC
 p5-xml-rss                      ports/textproc/p5-XML-RSS
@@ -21303,6 +21308,7 @@ scim-kmfl-sil-galatia           ports/textproc/scim-kmfl-sil-galatia
 scim-kmfl-sil-ipa-unicode5      ports/textproc/scim-kmfl-sil-ipa-unicode5
 scim-kmfl-sil-panafrican-latin  ports/textproc/scim-kmfl-sil-panafrican-latin
 scim-kmfl-sil-yi                ports/textproc/scim-kmfl-sil-yi
+scim-kmfl-varamozhi-malayalam   ports/textproc/scim-kmfl-varamozhi-malayalam
 scim-m17n                       ports/textproc/scim-m17n
 scim-openvanilla                ports/textproc/scim-openvanilla
 scim-table-imengine             ports/textproc/scim-table-imengine
