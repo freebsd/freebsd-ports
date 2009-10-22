@@ -20,8 +20,8 @@ CONFLICTS=	husky-base-devel-[0-9]*
 WRKSRC=		${WRKDIR}/huskybse
 NO_BUILD=	yes
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+USERS=		fido
+GROUPS=		fido
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/fido ${PREFIX}/share/doc/husky
