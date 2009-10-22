@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Convert-BER
-PORTVERSION=	1.31.01
+PORTVERSION=	1.32
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to encode and decode objects using Basic Encoding Rules (BER)
