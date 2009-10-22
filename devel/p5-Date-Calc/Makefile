@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	Date-Calc
-PORTVERSION=	6.0
+PORTVERSION=	6.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STBEY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Gregorian calendar date calculations
 
-BUILD_DEPENDS=	p5-Bit-Vector>=7.0:${PORTSDIR}/math/p5-Bit-Vector
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Bit-Vector>=7.1:${PORTSDIR}/math/p5-Bit-Vector \
+		p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Date::Calc.3 Date::Calc::Object.3 Date::Calendar.3 \
+MAN3=		Date::Calc.3 Date::Calc::PP.3 Date::Calc::Object.3 Date::Calendar.3 \
 		Date::Calendar::Profiles.3 Date::Calendar::Year.3
 
 .include <bsd.port.mk>
