@@ -1,0 +1,28 @@
+bin/xfce4-notifyd-config
+libexec/xfce4-notifyd
+share/applications/xfce4-notifyd-config.desktop
+share/dbus-1/services/org.freedesktop.Notifications.service
+share/icons/hicolor/48x48/apps/xfce4-notifyd.png
+share/themes/Default/xfce-notify-4.0/gtkrc
+share/themes/Smoke/xfce-notify-4.0/gtkrc
+share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
+%%NLS%%share/locale/ca/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfce4-notifyd.mo
+@dirrm share/themes/ZOMG-PONIES!/xfce-notify-4.0
+@dirrm share/themes/ZOMG-PONIES!
+@dirrm share/themes/Smoke/xfce-notify-4.0
+@dirrm share/themes/Smoke
+@dirrm share/themes/Default/xfce-notify-4.0
+@dirrmtry share/themes/Default
+@dirrmtry share/applications
