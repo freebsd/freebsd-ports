@@ -7,7 +7,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/notification-daemon-xfce/ \
 		CRITICAL
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 			--libexecdir=${PREFIX}/libexec/xfce4 \
 			--with-dbus-services=${PREFIX}/share/dbus-1/services
 
-CONFLICTS=	notification-daemon-[0-9]*
+CONFLICTS=	notification-daemon-[0-9]* xfce4-notifyd-[0-9]*
 
 OPTIONS=	GRADIENT "Show a gradient look in the default theme"  off \
 		CLOSE    "Show the close button in the default theme" on  \
