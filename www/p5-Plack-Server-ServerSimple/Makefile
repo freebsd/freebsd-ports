@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack-Server-ServerSimple
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Plack Server w/ HTTP::Server::Simple
 
 RUN_DEPENDS=	\
-	p5-HTTP-Server-Simple>0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+	p5-HTTP-Server-Simple>=0.41:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
