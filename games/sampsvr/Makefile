@@ -5,24 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	sampsvr
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3a
 CATEGORIES=	games linux
 MASTER_SITES=	http://files.sa-mp.com/
-DISTNAME=	samp02Xsvr
+DISTNAME=	samp${PORTVERSION:S,.,,}svr
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
 
 USE_LINUX=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S,svr,,}
-USE_DOS2UNIX=	*.txt *.pwn
+WRKSRC=		${WRKDIR}/${DISTNAME:S,asvr,,}
+USE_DOS2UNIX=	*.txt *.pwn *.inc
 USE_RC_SUBR=	sampd
 SAMPDIR=	${PREFIX}/libexec/${PORTNAME}
-PORTDOCS=	README
-PLIST_SUB=	SAMPDIR="${SAMPDIR:S,^${PREFIX}/,,}" SAMPBIN=${DISTNAME}
+PORTDOCS=	LICENSE README
+PLIST_SUB=	SAMPDIR="${SAMPDIR:S,^${PREFIX}/,,}"
 SUB_FILES=	pkg-message
-SUB_LIST=	SAMPDIR="${SAMPDIR}" SAMPBIN=${DISTNAME}
+SUB_LIST=	SAMPDIR="${SAMPDIR}" SAMPBIN=samp03svr
 .if !defined(NOPORTDOCS)
 SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/README to configure SA-MP Server"
 .else
@@ -33,7 +33,7 @@ SUB_LIST+=	NOTEWORK=""
 
 do-install:
 	${MKDIR} ${SAMPDIR}
-.for i in ${DISTNAME} announce
+.for i in announce samp-npc samp03svr
 	${BRANDELF} -t Linux ${WRKSRC}/${i}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${SAMPDIR}
 .endfor
@@ -41,7 +41,7 @@ do-install:
 	cd ${WRKSRC} && \
 	${FIND} . -type d ! -empty -exec \
 		${MKDIR} "${DATADIR}/{}" \;
-.for i in filterscripts gamemodes scriptfiles
+.for i in filterscripts gamemodes include npcmodes scriptfiles
 	cd ${WRKSRC} && \
 	${FIND} ${i} -type f -exec \
 		${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
