@@ -162,6 +162,7 @@ PORTSNAP_FLAGS?= -p ${.CURDIR}
 .if defined(SUPHOST)
 SUPFLAGS+=	-h ${SUPHOST}
 .endif
+.if !target(update)
 update:
 .if defined(SUP_UPDATE) && defined(PORTSSUPFILE)
 	@echo "--------------------------------------------------------------"
@@ -186,5 +187,6 @@ update:
 .else
 	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch
 	@${PORTSNAP} ${PORTSNAP_FLAGS} update
+.endif
 .endif
 .endif
