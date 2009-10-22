@@ -67,12 +67,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-3700</cvename>
       <url>http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091015</url>
       <url>http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091019</url>
     </references>
     <dates>
       <discovery>2009-10-15</discovery>
       <entry>2009-10-22</entry>
+      <modified>2009-10-22</modified>
     </dates>
   </vuln>
 
