@@ -7,7 +7,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/
 

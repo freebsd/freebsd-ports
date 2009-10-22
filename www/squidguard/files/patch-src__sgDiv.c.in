@@ -1,0 +1,11 @@
+--- ./src/sgDiv.c.in.orig	2008-07-14 09:02:43.000000000 -0700
++++ ./src/sgDiv.c.in	2009-10-19 12:26:04.000000000 -0700
+@@ -745,7 +745,7 @@
+       p++;
+       break;
+     case 'u': /* Requested URL */
+-      strcat(buf, req->orig);
++      strncat(buf, req->orig, 2048);
+       p++;
+       break;
+     default:
