@@ -3,4 +3,4 @@ parallel port. It appears as a keyboard: buttons on the controllers send key
 strokes to the operating system. snespp works under both the system console
 and X windows, using the microseq interface to reduce overhead.
 
-WWW: http://www.cse.unsw.edu.au/~tbourke/software/snespp.html
+WWW: http://www.tbrk.org/software/snespp.html
