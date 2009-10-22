@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-5.0/
 PATCHFILES=	rpm-5.0.3.1.patch
@@ -22,6 +22,7 @@ LIB_DEPENDS=	db-${DB_VERSION:C/(.)/\1./}:${PORTSDIR}/databases/db${DB_VERSION} \
 		neon.28:${PORTSDIR}/www/neon28 \
 		magic:${PORTSDIR}/sysutils/file \
 		xar:${PORTSDIR}/archivers/xar \
+		lzma:${PORTSDIR}/archivers/xz \
 		pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 .if !defined(NOPORTDOCS)
@@ -40,6 +41,13 @@ USE_LDCONFIG=	yes
 USE_PERL5_BUILD=5.8.0+
 LATEST_LINK=	rpm5
 CONFLICTS=	rpm-3.* rpm-4.*
+
+# need to autogen (for xz support)
+USE_AUTOTOOLS+=	aclocal:110 autoconf:262 automake:110 autoheader:262
+ACLOCAL_ARGS+=	-I m4 -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS+=	-a -c
+pre-configure:
+	cd ${WRKSRC}; ./autogen.sh
 
 .if !defined(WITHOUT_LUA)
 CONFIGURE_ARGS+=--with-lua=external
@@ -87,6 +95,7 @@ CONFIGURE_ARGS+=--with-db=external --with-bugreport="${MAINTAINER}" \
 		--with-zlib=external \
 		--with-file=external \
 		--with-xar=external \
+		--with-xz=external \
 		--with-pcre=external \
 		--program-prefix="" \
 		--sysconfdir=${PREFIX}/etc \
@@ -116,7 +125,9 @@ CFLAGS+=	-fPIC
 post-patch::
 	@${REINPLACE_CMD} -E -e \
 		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
-		${WRKSRC}/scripts/Makefile.in
+		${WRKSRC}/scripts/Makefile.am ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s:/bin/sh:/usr/bin/env bash:" \
+		${WRKSRC}/scripts/gendiff
 
 .if defined(WITH_PERL)
 post-configure:
