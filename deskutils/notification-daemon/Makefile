@@ -8,7 +8,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
 
@@ -33,6 +33,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	notification-daemon.schemas
 
-CONFLICTS=	xfce4-notification-daemon-[0-9]*
+CONFLICTS=	xfce4-notification-daemon-[0-9]* xfce4-notifyd-[0-9]*
 
 .include <bsd.port.mk>
