@@ -13,7 +13,7 @@ MASTER_SITES=	http://files.randombit.net/botan/v1.6/
 DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	lapo@lapo.it
 COMMENT=	A portable, easy to use, and efficient C++ crypto library
 
 USE_BZIP2=	yes
