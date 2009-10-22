@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.4
 DISTNAME=	ptlib-${PORTVERSION}
 
-MAINTAINER=	d9364104@mail.nchu.edu.tw
+MAINTAINER=	lihong@ieee.org
 COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -25,6 +25,8 @@ WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+
+NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
