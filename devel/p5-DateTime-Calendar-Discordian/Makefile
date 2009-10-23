@@ -16,7 +16,7 @@ COMMENT=	Perl extension for the Discordian Calendar
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Locale.pm:${PORTSDIR}/devel/p5-DateTime-Locale \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 
 PERL_CONFIGURE=	yes
 

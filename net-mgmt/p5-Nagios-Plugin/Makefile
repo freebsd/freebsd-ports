@@ -17,7 +17,7 @@ COMMENT=	Modules to streamline writing Nagios plugins
 PERL_CONFIGURE=	5.8.0+
 
 BUILD_DEPENDS+=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/Math/Calc/Units.pm:${PORTSDIR}/math/p5-Math-Calc-Units \
 		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny
 RUN_DEPENDS+=	${BUILD_DEPENDS}

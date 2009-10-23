@@ -16,7 +16,7 @@ COMMENT=	Modules for analysing network traffic
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
 		${SITE_PERL}/NetPacket.pm:${PORTSDIR}/net/p5-NetPacket \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Network control port for POE applications
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/${PERL_ARCH}/Authen/Libwrap.pm:${PORTSDIR}/security/p5-Authen-Libwrap \
 		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 BUILD_DEPENDS=	${RUN_DEPENDS}
