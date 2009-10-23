@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	biblio-py
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		http://cabcat2.cnea.gov.ar/staff/fiol/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A package to manage bibliography written in python
 
 USE_PYTHON=	yes
