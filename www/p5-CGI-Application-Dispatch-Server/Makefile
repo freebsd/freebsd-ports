@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/CGI/Application/Dispatch.pm:${PORTSDIR}/www/p5-CGI-Application-Dispatch \
 		${SITE_PERL}/HTTP/Server/Simple/CGI.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		${SITE_PERL}/HTTP/Server/Simple/Static.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 
 PERL_MODBUILD=	5.8.0+
 

@@ -15,7 +15,7 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl interface to the Amazon Elastic Compute Cloud
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		p5-Digest-HMAC>=1.01:${PORTSDIR}/security/p5-Digest-HMAC \

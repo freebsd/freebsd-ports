@@ -9,14 +9,14 @@ PORTNAME=	POE-API-Hooks
 PORTVERSION=	1.0500
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Implement lightweight hooks into POE
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
