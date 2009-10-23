@@ -1,5 +1,5 @@
 --- bgpq.c.orig	2006-04-08 04:45:19.000000000 +0400
-+++ bgpq.c	2008-02-15 14:39:18.000000000 +0300
++++ bgpq.c	2009-10-23 14:11:00.000000000 +0400
 @@ -39,7 +39,7 @@
  /* from unistd.h on *BSD */
  extern int optreset;
@@ -72,7 +72,7 @@
  
  	if(debug>3) 
 --- ro.c.orig	2007-10-05 14:01:29.000000000 +0400
-+++ ro.c	2009-05-15 23:22:20.000000000 +0400
++++ ro.c	2009-10-23 14:59:11.000000000 +0400
 @@ -27,7 +27,7 @@
  int route2ro(struct ro* queue,char* text, struct ro* ra, char* as);
  
@@ -149,7 +149,29 @@
  						|| (!ra->as && !rc->as)) && !rc->ovl) { 
  						snprintf(buffer,sizeof(buffer)-1,
  							"overlayed by %s in the same %s", ra->text, 
-@@ -430,6 +436,8 @@
+@@ -407,7 +413,7 @@
+ { 
+ 	struct irrdc* ir;
+ 
+-	if(!(ir=irrd_init(host,port))) { 
++	if(!(ir=irrd_init(host,port,source))) { 
+ 		perror("!irrd_init");
+ 		return NULL;
+ 	};
+@@ -416,12 +422,6 @@
+ 		return NULL;
+ 	};
+ 
+-	if(source && strlen(source)) { 
+-		if(!irrd_question(ir,"!s%s",source)) { 
+-			perror("!Can't set source");
+-			return NULL;
+-		};
+-	};
+ 	return ir;
+ };
+ 
+@@ -430,6 +430,8 @@
  { 
  	char* c,*d;
  	struct ro* ra;
@@ -158,7 +180,7 @@
  
  	if(!ro_head) { 
  		if(debug) SX_TRACE2("Nothing to expand...\n");
-@@ -439,6 +447,8 @@
+@@ -439,6 +441,8 @@
  
  	ra=ro_head;
  
@@ -167,7 +189,7 @@
  	while(ra) { 
  		if(ra->type==RO_RO || ra->type==RO_RPSL) { 
  /*			route2ro(ra->text,ra,NULL); */
-@@ -460,7 +470,19 @@
+@@ -460,7 +464,19 @@
  			};
  			if(ir->answer) { 
  				c=ir->answer;
@@ -187,7 +209,7 @@
  				while(isspace((int)*c)) c++;
  				d=c;
  				while(!isspace((int)*c)) c++;
-@@ -468,8 +490,17 @@
+@@ -468,8 +484,17 @@
  				if(!excep || !ro_exists(excep,d)) 
  					route2ro(ro_head,d,NULL,ra->text);
  				if(*(c+1)!=0) { c++; goto nextro; };
@@ -205,7 +227,7 @@
  			if(!ir) { 
  				ir=ir_init(host,port,source);
  				if(!ir) { 
-@@ -515,6 +546,8 @@
+@@ -515,6 +540,8 @@
  nextra:
  		ra=ra->next;
  	};
@@ -214,9 +236,21 @@
  	return 1;
  };
  
---- irrdi.h.orig	2009-05-15 18:02:58.000000000 +0400
-+++ irrdi.h	2009-05-15 21:44:49.000000000 +0400
-@@ -13,7 +13,6 @@
+--- irrdi.h.orig	2005-06-23 11:53:56.000000000 +0400
++++ irrdi.h	2009-10-23 15:04:44.000000000 +0400
+@@ -1,28 +1,22 @@
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ 
+-struct irrdcentry { 
+-	char* qwes;
+-	char* answer;
+-	struct irrdcentry* next;
+-};
+-
+ struct irrdc { 
+ 	char* host;
+ 	int port;
  	int s;
  	char* answer;
  	struct irrdcentry* cache;
@@ -224,9 +258,83 @@
  #if HAVE_GETADDRINFO
  	struct addrinfo* res;
  #else
+ 	struct sockaddr_in sca;
+ #endif
++	char* source;
+ };
+ 
+ 
+-struct irrdc* 	irrd_init(char* host,int port);
++struct irrdc* 	irrd_init(char* host,int port,char* source);
+ int		irrd_connect(struct irrdc*);
+ int		irrd_question(struct irrdc*, char* fmt, ...);
+ int		irrd_disc(struct irrdc*);
 --- irrdi.c.orig	2005-06-23 11:53:56.000000000 +0400
-+++ irrdi.c	2009-10-20 20:11:04.000000000 +0400
-@@ -191,24 +191,25 @@
++++ irrdi.c	2009-10-23 15:26:21.000000000 +0400
+@@ -65,13 +65,14 @@
+ #endif
+ 
+ struct irrdc* 
+-irrd_init(char* host, int port)
++irrd_init(char* host, int port, char* source)
+ { 
+ 	struct irrdc* ir=malloc(sizeof(struct irrdc));
+ 	if(!ir) return NULL;
+ 	bzero(ir,sizeof(struct irrdc));
+ 	if(host) ir->host=strdup(host);
+ 	if(port) ir->port=port;
++	if(source) ir->source=strdup(source);
+ 	ir->s=-1;
+ 
+ 	if(host&&port) { 
+@@ -105,46 +106,6 @@
+ 	return ir;
+ };
+ 
+-struct irrdcentry*
+-irrd_cache_find(struct irrdc* ir, char* q)
+-{ 
+-	struct irrdcentry* ic;
+-	if(!ir||!q) return NULL;
+-
+-	ic=ir->cache;
+-	while(ic) { 
+-		if(ic->qwes && !strcmp(ic->qwes,q)) return ic;
+-		ic=ic->next;
+-	};
+-	return NULL;
+-};
+-
+-int
+-irrd_cache_add(struct irrdc* ir, char* q, char* ans)
+-{ 
+-	struct irrdcentry* ic, *id;
+-	if(!ir || !q || !ans) return 0;
+-
+-	ic=malloc(sizeof(struct irrdcentry));
+-	if(!ic) return 0;
+-
+-	bzero(ic,sizeof(struct irrdcentry));
+-	ic->qwes=strdup(q);
+-	ic->answer=strdup(ans);
+-
+-	if(!ir->cache) { 
+-		ir->cache=ic;
+-		return 1;
+-	};
+-	
+-	id=ir->cache;
+-
+-	while(id->next) id=id->next;
+-
+-	id->next=ic;
+-	
+-	return 1;
+-};
+ int
+ irrd_connect(struct irrdc* ir)
+ { 
+@@ -191,24 +152,30 @@
  		};
  	};
  #endif
@@ -237,6 +345,13 @@
 -	fseek(ir->f,0,SEEK_END);
 -	fwrite("!!\n",3,1,ir->f);
 +	write(ir->s, "!!\n",3);
++
++	if(ir->source && strlen(ir->source)) {
++	    	if(!irrd_question(ir,"!s%s",ir->source)) {
++		    	perror("!Can't set source");
++			return 0;
++		};
++	};
  
  	return 1;
  };
@@ -249,15 +364,14 @@
  	char qbuff[512];
  	char rbuff[2048];
 -	int len;
+-	struct irrdcentry* ice;
 +	char *p;
 +	size_t len, n;
-+	int need_copy=0;
- 	struct irrdcentry* ice;
-+	int retries = 0;
++	int need_copy=0, retries = 0, i, success;
  
  	memset(qbuff,0,sizeof(qbuff));
  	va_start(ap,quest);
-@@ -217,79 +218,121 @@
+@@ -217,79 +184,115 @@
  
  	va_end(ap);
  
@@ -295,18 +409,6 @@
 +	while (1) {
 +	    if(ir->answer) free(ir->answer);
 +	    ir->answer=NULL;
-+
-+	    if(debug>2)  
-+		    SX_TRACE2("checking cache for %s", qbuff);
-+
-+	    /* XXX A bad cache find function. We get only degradation with it.
-+	    if((ice=irrd_cache_find(ir,qbuff))) { 
-+		    if(debug>2) 
-+			    SX_TRACE2("oki, found cached entry");
-+		    
-+		    ir->answer=strdup(ice->answer);
-+		    return 1;
-+	    };*/
 +
 +	    if(debug>2) 
 +		    SX_TRACE2("sending %s", qbuff);
@@ -386,8 +488,6 @@
 +				    /* smth strange.. :( */
 +				    return 0;
 +			    };
-+			    /* XXX see above about irrd_cache_find()
-+			    irrd_cache_add(ir,qbuff,ir->answer); */
 +			    break;
 +		    case 'C': /* query successfull, no data */
 +		    case 'D': /* no such key */
@@ -403,8 +503,16 @@
 +errlab:
 +	    if (retries++ > 3)
 +		    break; 
-+	    SX_TRACE2("trying to reconnect");
-+	    if(!irrd_connect(ir))
++	    success=0;
++	    for(i=0; i<3; i++) {
++		SX_TRACE2("trying to reconnect");
++		sleep(3);
++		if(irrd_connect(ir)) {
++		    success=1;
++		    break;
++		}
++	    }
++	    if(!success)
  		return 0;
 -	};
 -
@@ -451,7 +559,7 @@
  	return 1;
  };
  
-@@ -302,9 +345,7 @@
+@@ -302,9 +305,7 @@
  	if(debug>2) { 
  		SX_TRACE2("sending !q");
  	};
