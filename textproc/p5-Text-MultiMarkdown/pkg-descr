@@ -1,0 +1,14 @@
+Markdown is a text-to-HTML filter; it translates an easy-to-read and
+easy-to-write structured text format into HTML. Markdown's text format
+is most similar to that of plain text email, and supports features such
+as headers, *emphasis*, code blocks, blockquotes, and links.
+
+Markdown's syntax is designed not as a generic markup language, but
+specifically to serve as a front-end to (X)HTML. You can use span-level
+HTML tags anywhere in a Markdown document, and you can use block level
+HTML tags (like <div> and <table> as well).
+
+Text::MultiMarkdown implements the MultiMarkdown markdown syntax
+extensions from: http://fletcherpenney.net/multimarkdown/
+
+WWW: http://search.cpan.org/dist/Text-MultiMarkdown/
