@@ -1,0 +1,11 @@
+--- MANIFEST.orig	2009-10-23 10:26:10.000000000 +0800
++++ MANIFEST	2009-10-23 10:26:37.000000000 +0800
+@@ -163,8 +163,6 @@
+ t/docs-maruku-unittest/xml_instruction.text
+ t/docs-multimarkdown-todo/Amps_and_angle_encoding.html
+ t/docs-multimarkdown-todo/Amps_and_angle_encoding.text
+-t/docs-multimarkdown-todo/Citations.text
+-t/docs-multimarkdown-todo/Citations.xhtml
+ t/docs-multimarkdown-todo/Email_Obfuscation.html
+ t/docs-multimarkdown-todo/Email_Obfuscation.text
+ t/docs-multimarkdown-todo/Tidyness.html
