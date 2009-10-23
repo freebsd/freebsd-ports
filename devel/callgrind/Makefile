@@ -16,6 +16,8 @@ COMMENT=	Valgrind skin for cache simulation and call tracing
 # see http://lists.freebsd.org/pipermail/cvs-ports/2006-December/112797.html
 #IGNORE=	Dumps core \(SIGBUS\). \(Also v. 0.9.10\!\)
 
+BROKEN=		does not build
+
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
