@@ -93,6 +93,9 @@
 %%WWWDIR%%/etc/changes/changes_tables_core_605.xml
 %%WWWDIR%%/etc/changes/changes_tables_core_606.xml
 %%WWWDIR%%/etc/changes/changes_tables_core_607.xml
+%%WWWDIR%%/etc/changes/changes_tables_core_608.xml
+%%WWWDIR%%/etc/changes/changes_tables_core_609.xml
+%%WWWDIR%%/etc/changes/changes_tables_core_610.xml
 %%WWWDIR%%/etc/changes/changes_tables_temp_priority_501.xml
 %%WWWDIR%%/etc/changes/changes_tables_temp_statistics_501.xml
 %%WWWDIR%%/etc/changes/migration_tables_core_100.php
@@ -167,6 +170,9 @@
 %%WWWDIR%%/etc/changes/migration_tables_core_605.php
 %%WWWDIR%%/etc/changes/migration_tables_core_606.php
 %%WWWDIR%%/etc/changes/migration_tables_core_607.php
+%%WWWDIR%%/etc/changes/migration_tables_core_608.php
+%%WWWDIR%%/etc/changes/migration_tables_core_609.php
+%%WWWDIR%%/etc/changes/migration_tables_core_610.php
 %%WWWDIR%%/etc/changes/migration_tables_temp_priority_501.php
 %%WWWDIR%%/etc/changes/openads_upgrade_2.0.11_to_2.3.32_beta.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.1.29_to_2.3.32_beta.xml
@@ -201,15 +207,19 @@
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.24-beta-rc3.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.26-beta-rc3.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.26-beta-rc5.xml
-%%WWWDIR%%/etc/changes/openads_upgrade_2.7.30-beta-rc11.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.30-beta-rc4.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.30-beta-rc5.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.7.31-beta-rc1.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.31-beta-rc2.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.31-beta-rc4.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.6.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.8-dev.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.8.1-rc10.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.8.1-rc4.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc2.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc8.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc9.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc11.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_array.txt
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.0.11_to_2.3.32_beta.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.1.29_to_2.3.32_beta.php
@@ -220,12 +230,13 @@
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.11-dev.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.12.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.26-beta-rc5.php
-%%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.30-beta-rc11.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.30-beta-rc4.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.30-beta-rc5.php
+%%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.31-beta-rc1.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.31-beta-rc4.php
-%%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.1-rc10.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.1-rc4.php
+%%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.1-rc10.php
+%%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.2-rc8.php
 %%WWWDIR%%/etc/changes/prescript_openads_upgrade_2.0.11_to_2.3.32_beta.php
 %%WWWDIR%%/etc/changes/prescript_openads_upgrade_2.3.33-beta-rc4.php
 %%WWWDIR%%/etc/changes/prescript_tables_core_399.php
@@ -305,6 +316,9 @@
 %%WWWDIR%%/etc/changes/schema_tables_core_605.xml
 %%WWWDIR%%/etc/changes/schema_tables_core_606.xml
 %%WWWDIR%%/etc/changes/schema_tables_core_607.xml
+%%WWWDIR%%/etc/changes/schema_tables_core_608.xml
+%%WWWDIR%%/etc/changes/schema_tables_core_609.xml
+%%WWWDIR%%/etc/changes/schema_tables_core_610.xml
 %%WWWDIR%%/etc/changes/schema_tables_temp_priority_500.xml
 %%WWWDIR%%/etc/changes/schema_tables_temp_priority_501.xml
 %%WWWDIR%%/etc/changes/schema_tables_temp_statistics_500.xml
@@ -406,6 +420,9 @@
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-605.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-606.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-607.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-608.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-609.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-610.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-temp-priority-501.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-temp-statistics-501.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-049.bin
@@ -484,6 +501,9 @@
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-605.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-606.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-607.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-608.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-609.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-610.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-temp-priority-500.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-temp-priority-501.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-temp-statistics-500.bin
@@ -566,20 +586,8 @@
 %%WWWDIR%%/lib/OA/Admin/Statistics/Fields/Delivery.php
 %%WWWDIR%%/lib/OA/Admin/Statistics/Fields/Delivery/Affiliates.php
 %%WWWDIR%%/lib/OA/Admin/Statistics/Fields/Delivery/Default.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Fields/Targeting/Default.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Fields/Targeting/StatisticsFieldsTargeting.php
 %%WWWDIR%%/lib/OA/Admin/Statistics/Flexy.php
 %%WWWDIR%%/lib/OA/Admin/Statistics/History.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/Common.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/CommonAd.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/CommonPlacement.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/Controller/BannerTargeting.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/Controller/BannerTargetingDaily.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/Controller/CampaignTargeting.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/Controller/CampaignTargetingDaily.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/Flexy.php
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/themes/t_breakdown_by_date.html
-%%WWWDIR%%/lib/OA/Admin/Statistics/Targeting/themes/t_breakdown_by_week.html
 %%WWWDIR%%/lib/OA/Admin/Template.php
 %%WWWDIR%%/lib/OA/Admin/TemplatePlugin.php
 %%WWWDIR%%/lib/OA/Admin/UI.php
@@ -699,7 +707,6 @@
 %%WWWDIR%%/lib/OA/Dal/Statistics/Banner.php
 %%WWWDIR%%/lib/OA/Dal/Statistics/Campaign.php
 %%WWWDIR%%/lib/OA/Dal/Statistics/Publisher.php
-%%WWWDIR%%/lib/OA/Dal/Statistics/Targeting.php
 %%WWWDIR%%/lib/OA/Dal/Statistics/Zone.php
 %%WWWDIR%%/lib/OA/Dashboard/Feed.php
 %%WWWDIR%%/lib/OA/Dashboard/Graph.php
@@ -743,18 +750,14 @@
 %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/ECPMCommon.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/ECPMforContract.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/ECPMforRemnant.php
-%%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/ForecastZoneImpressions.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/GetRequiredAdImpressions.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/GetRequiredAdImpressionsDaily.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/GetRequiredAdImpressionsLifetime.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task/PriorityCompensation.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation/Common.php
-%%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation/Date.php
-%%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation/Day.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation/Empty.php
 %%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation/Factory.php
-%%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation/Hour.php
 %%WWWDIR%%/lib/OA/Maintenance/Pruning.php
 %%WWWDIR%%/lib/OA/Maintenance/Regenerate.php
 %%WWWDIR%%/lib/OA/Maintenance/Status.php
@@ -804,6 +807,8 @@
 %%WWWDIR%%/lib/OX/Extension/bannerTypeText/bannerTypeText.php
 %%WWWDIR%%/lib/OX/Extension/bannerTypeText/bannerTypeTextDelivery.php
 %%WWWDIR%%/lib/OX/Extension/deliveryAdRender.php
+%%WWWDIR%%/lib/OX/Extension/deliveryAdSelect.php
+%%WWWDIR%%/lib/OX/Extension/deliveryAdSelect/DeliveryAdSelect.php
 %%WWWDIR%%/lib/OX/Extension/deliveryCacheStore/DeliveryCacheStore.php
 %%WWWDIR%%/lib/OX/Extension/deliveryCacheStore/deliveryCacheStoreDelivery.php
 %%WWWDIR%%/lib/OX/Extension/deliveryDataPrepare.php
@@ -824,6 +829,7 @@
 %%WWWDIR%%/lib/OX/Extension/deliveryLog/RawBucketProcessingStrategyPgsql.php
 %%WWWDIR%%/lib/OX/Extension/deliveryLog/Setup.php
 %%WWWDIR%%/lib/OX/Extension/deliveryTrackerRender.php
+%%WWWDIR%%/lib/OX/Extension/invocationTags.php
 %%WWWDIR%%/lib/OX/Extension/invocationTags/InvocationTags.php
 %%WWWDIR%%/lib/OX/Extension/invocationTags/InvocationTagsOptions.php
 %%WWWDIR%%/lib/OX/Extension/maintenancePriorityTask/MaintenancePriorityTask.php
@@ -846,6 +852,7 @@
 %%WWWDIR%%/lib/OX/Maintenance/Priority/Campaign.php
 %%WWWDIR%%/lib/OX/Maintenance/Priority/Zone.php
 %%WWWDIR%%/lib/OX/Maintenance/Statistics.php
+%%WWWDIR%%/lib/OX/Maintenance/Statistics/MigrateBucketData.php
 %%WWWDIR%%/lib/OX/Maintenance/Statistics/Task.php
 %%WWWDIR%%/lib/OX/Maintenance/Statistics/Task/DeduplicateConversions.php
 %%WWWDIR%%/lib/OX/Maintenance/Statistics/Task/LogCompletion.php
@@ -1024,7 +1031,6 @@
 %%WWWDIR%%/lib/max/Admin/UI/FieldFactory.php
 %%WWWDIR%%/lib/max/Admin/UI/OrganisationScope.php
 %%WWWDIR%%/lib/max/Admin_DA.php
-%%WWWDIR%%/lib/max/Dal/Admin.php
 %%WWWDIR%%/lib/max/Dal/Admin/Acls.php
 %%WWWDIR%%/lib/max/Dal/Admin/Affiliates.php
 %%WWWDIR%%/lib/max/Dal/Admin/Agency.php
@@ -2184,6 +2190,10 @@
 %%WWWDIR%%/scripts/.htaccess
 %%WWWDIR%%/scripts/maintenance/maintenance-distributed.php
 %%WWWDIR%%/scripts/maintenance/maintenance.php
+%%WWWDIR%%/scripts/maintenance/plot-maintenance-times/extract
+%%WWWDIR%%/scripts/maintenance/plot-maintenance-times/plot
+%%WWWDIR%%/scripts/maintenance/plot-maintenance-times/README.txt
+%%WWWDIR%%/scripts/maintenance/tools/migrateBucketData.php
 %%WWWDIR%%/scripts/maintenance/tools/statisticsTestAndCorrect.php
 %%WWWDIR%%/scripts/maintenance/translationStrings.php
 %%WWWDIR%%/var/.htaccess
@@ -3233,6 +3243,7 @@
 %%WWWDIR%%/www/delivery/ax.php
 %%WWWDIR%%/www/delivery/axmlrpc.php
 %%WWWDIR%%/www/delivery/ck.php
+%%WWWDIR%%/www/delivery/crossdomain.xml
 %%WWWDIR%%/www/delivery/dxmlrpc.php
 %%WWWDIR%%/www/delivery/fc.php
 %%WWWDIR%%/www/delivery/fl.js
@@ -3285,12 +3296,11 @@
 @dirrm www/openx/www
 @dirrm www/openx/var/templates_compiled
 @dirrm www/openx/var/plugins/recover
-@dirrm www/openx/var/plugins/config
-@dirrm www/openx/var/plugins/cache
 @dirrm www/openx/var/plugins/DataObjects
 @dirrm www/openx/var/plugins
 @dirrm www/openx/var/cache
 @dirrm www/openx/var
+@dirrm www/openx/scripts/maintenance/plot-maintenance-times
 @dirrm www/openx/scripts/maintenance/tools
 @dirrm www/openx/scripts/maintenance
 @dirrm www/openx/scripts
@@ -3554,6 +3564,7 @@
 @dirrm www/openx/lib/OX/Extension/deliveryLimitations
 @dirrm www/openx/lib/OX/Extension/deliveryCacheStore
 @dirrm www/openx/lib/OX/Extension/deliveryAdRender
+@dirrm www/openx/lib/OX/Extension/deliveryAdSelect
 @dirrm www/openx/lib/OX/Extension/bannerTypeText
 @dirrm www/openx/lib/OX/Extension/bannerTypeHtml
 @dirrm www/openx/lib/OX/Extension/authentication
@@ -3605,10 +3616,6 @@
 @dirrm www/openx/lib/OA/Admin/UI/Field
 @dirrm www/openx/lib/OA/Admin/UI
 @dirrm www/openx/lib/OA/Admin/Statistics/themes
-@dirrm www/openx/lib/OA/Admin/Statistics/Targeting/themes
-@dirrm www/openx/lib/OA/Admin/Statistics/Targeting/Controller
-@dirrm www/openx/lib/OA/Admin/Statistics/Targeting
-@dirrm www/openx/lib/OA/Admin/Statistics/Fields/Targeting
 @dirrm www/openx/lib/OA/Admin/Statistics/Fields/Delivery
 @dirrm www/openx/lib/OA/Admin/Statistics/Fields
 @dirrm www/openx/lib/OA/Admin/Statistics/Delivery/themes
