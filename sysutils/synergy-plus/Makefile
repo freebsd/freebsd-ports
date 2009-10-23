@@ -7,6 +7,7 @@
 
 PORTNAME=	synergy-plus
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,6 +20,8 @@ GNU_CONFIGURE=	yes
 USE_XORG=	ice xtst x11 sm
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+CONFLICTS=	synergy-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/configure
