@@ -21,6 +21,7 @@ RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 USE_BISON=	build
 USE_PGSQL=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 
@@ -40,8 +41,8 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 CONFIGURE_ARGS+=	--with-xsldir=${LOCALBASE}/share/xsl/docbook
 MAN1=		pgsql2shp.1 shp2pgsql.1
 PORTDOCS=	*
-#.else
-#MAKE_ARGS+=	NOPORTDOCS=yes
+.else
+MAKE_ARGS+=	NOPORTDOCS=yes
 .endif
 
 post-extract:
