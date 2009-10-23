@@ -24074,6 +24074,7 @@ xfce4-mpc-plugin                ports/audio/xfce4-mpc-plugin
 xfce4-netload-plugin            ports/sysutils/xfce4-netload-plugin
 xfce4-notes-plugin              ports/deskutils/xfce4-notes-plugin
 xfce4-notification-daemon       ports/deskutils/xfce4-notification-daemon
+xfce4-notifyd                   ports/deskutils/xfce4-notifyd
 xfce4-panel                     ports/x11-wm/xfce4-panel
 xfce4-places-plugin             ports/sysutils/xfce4-places-plugin
 xfce4-power-manager             ports/sysutils/xfce4-power-manager
