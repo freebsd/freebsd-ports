@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openx
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.openx.org/
 
