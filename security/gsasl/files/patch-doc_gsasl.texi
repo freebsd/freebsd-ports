@@ -3,9 +3,9 @@ $FreeBSD$
 
 --- doc/gsasl.texi.orig
 +++ doc/gsasl.texi
-@@ -123,14 +123,6 @@
- and the command-line interface, self-tests and examples are licensed
- under the GNU General Public License.
+@@ -198,14 +198,6 @@
+ applications and the library through the official API is illustrated
+ below.
  
 -@float Illustration,fig:abstraction
 -@image{abstraction,10cm,5cm}
@@ -15,6 +15,6 @@ $FreeBSD$
 -
 -@end float
 -
- @menu
- * Getting Started::
- * Features::
+ @node Features
+ @section Features
+ 

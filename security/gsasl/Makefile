@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	0.2.29
+PORTVERSION=	1.3
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
+MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/ \
+		${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/${PORTNAME}/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
