@@ -1,4 +1,5 @@
 %%WWWDIR%%/LICENSE
+%%WWWDIR%%/Manifest.xml
 %%WWWDIR%%/README
 %%WWWDIR%%/config/.htaccess
 %%WWWDIR%%/config/config.ini.sample.php
@@ -65,6 +66,10 @@
 %%WWWDIR%%/core/DataTable/Simple.php
 %%WWWDIR%%/core/DataTable.php
 %%WWWDIR%%/core/Date.php
+%%WWWDIR%%/core/Db/Mysqli.php
+%%WWWDIR%%/core/Db/Pdo/Mysql.php
+%%WWWDIR%%/core/Db/Pdo/Pgsql.php
+%%WWWDIR%%/core/Db.php
 %%WWWDIR%%/core/ErrorHandler.php
 %%WWWDIR%%/core/ExceptionHandler.php
 %%WWWDIR%%/core/Form.php
@@ -105,11 +110,15 @@
 %%WWWDIR%%/core/SmartyPlugins/modifier.unescape.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.urlRewriteBasicView.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.urlRewriteWithParameters.php
+%%WWWDIR%%/core/SmartyPlugins/outputfilter.ajaxcdn.php
 %%WWWDIR%%/core/SmartyPlugins/outputfilter.cachebuster.php
 %%WWWDIR%%/core/TablePartitioning.php
 %%WWWDIR%%/core/Timer.php
 %%WWWDIR%%/core/Tracker/Action.php
 %%WWWDIR%%/core/Tracker/Config.php
+%%WWWDIR%%/core/Tracker/Db/Mysqli.php
+%%WWWDIR%%/core/Tracker/Db/Pdo/Mysql.php
+%%WWWDIR%%/core/Tracker/Db/Pdo/Pgsql.php
 %%WWWDIR%%/core/Tracker/Db.php
 %%WWWDIR%%/core/Tracker/Generator/Tracker.php
 %%WWWDIR%%/core/Tracker/Generator/Visit.php
@@ -130,10 +139,11 @@
 %%WWWDIR%%/core/Updates/0.2.34.php
 %%WWWDIR%%/core/Updates/0.2.35.php
 %%WWWDIR%%/core/Updates/0.2.37.php
-%%WWWDIR%%/core/Updates/0.4.php
 %%WWWDIR%%/core/Updates/0.4.1.php
 %%WWWDIR%%/core/Updates/0.4.2.php
 %%WWWDIR%%/core/Updates/0.4.3.php
+%%WWWDIR%%/core/Updates/0.4.4.php
+%%WWWDIR%%/core/Updates/0.4.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -157,8 +167,8 @@
 %%WWWDIR%%/core/Visualization/Chart.php
 %%WWWDIR%%/core/Visualization/Cloud.php
 %%WWWDIR%%/core/Visualization/Sparkline.php
-%%WWWDIR%%/core/iView.php
 %%WWWDIR%%/core/iUpdate.php
+%%WWWDIR%%/core/iView.php
 %%WWWDIR%%/core/testMinimumPhpVersion.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/README
@@ -179,9 +189,10 @@
 %%WWWDIR%%/lang/hu.php
 %%WWWDIR%%/lang/it.php
 %%WWWDIR%%/lang/ja.php
+%%WWWDIR%%/lang/ko.php
 %%WWWDIR%%/lang/lt.php
+%%WWWDIR%%/lang/nb.php
 %%WWWDIR%%/lang/nl.php
-%%WWWDIR%%/lang/no.php
 %%WWWDIR%%/lang/pl.php
 %%WWWDIR%%/lang/pt.php
 %%WWWDIR%%/lang/ro.php
@@ -322,7 +333,10 @@
 %%WWWDIR%%/libs/Zend/Auth/Adapter/Http/Resolver/File.php
 %%WWWDIR%%/libs/Zend/Auth/Adapter/Http/Resolver/Interface.php
 %%WWWDIR%%/libs/Zend/Auth/Adapter/Http.php
+%%WWWDIR%%/libs/Zend/Auth/Adapter/InfoCard.php
 %%WWWDIR%%/libs/Zend/Auth/Adapter/Interface.php
+%%WWWDIR%%/libs/Zend/Auth/Adapter/Ldap.php
+%%WWWDIR%%/libs/Zend/Auth/Adapter/OpenId.php
 %%WWWDIR%%/libs/Zend/Auth/Exception.php
 %%WWWDIR%%/libs/Zend/Auth/Result.php
 %%WWWDIR%%/libs/Zend/Auth/Storage/Exception.php
@@ -331,56 +345,87 @@
 %%WWWDIR%%/libs/Zend/Auth/Storage/Session.php
 %%WWWDIR%%/libs/Zend/Auth.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Apc.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/ExtendedInterface.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/File.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Interface.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Memcached.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Sqlite.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Test.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/TwoLevels.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/Xcache.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/ZendPlatform.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer/Disk.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer/ShMem.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer.php
 %%WWWDIR%%/libs/Zend/Cache/Backend.php
 %%WWWDIR%%/libs/Zend/Cache/Core.php
-%%WWWDIR%%/libs/Zend/Cache/EXAMPLES.txt
 %%WWWDIR%%/libs/Zend/Cache/Exception.php
 %%WWWDIR%%/libs/Zend/Cache/Frontend/Class.php
 %%WWWDIR%%/libs/Zend/Cache/Frontend/File.php
 %%WWWDIR%%/libs/Zend/Cache/Frontend/Function.php
 %%WWWDIR%%/libs/Zend/Cache/Frontend/Output.php
 %%WWWDIR%%/libs/Zend/Cache/Frontend/Page.php
-%%WWWDIR%%/libs/Zend/Cache/TODO.txt
+%%WWWDIR%%/libs/Zend/Cache.php
 %%WWWDIR%%/libs/Zend/Config/Exception.php
 %%WWWDIR%%/libs/Zend/Config/Ini.php
+%%WWWDIR%%/libs/Zend/Config/Writer/Array.php
+%%WWWDIR%%/libs/Zend/Config/Writer/Ini.php
+%%WWWDIR%%/libs/Zend/Config/Writer/Xml.php
+%%WWWDIR%%/libs/Zend/Config/Writer.php
 %%WWWDIR%%/libs/Zend/Config/Xml.php
 %%WWWDIR%%/libs/Zend/Config.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Abstract.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Db2/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Db2.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Mysqli/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Mysqli.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Oracle/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Oracle.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Abstract.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm/Db2.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm/Ids.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Mssql.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Mysql.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Oci.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Pgsql.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Sqlite.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Sqlsrv/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Adapter/Sqlsrv.php
 %%WWWDIR%%/libs/Zend/Db/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Expr.php
 %%WWWDIR%%/libs/Zend/Db/Profiler/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Profiler/Firebug.php
 %%WWWDIR%%/libs/Zend/Db/Profiler/Query.php
 %%WWWDIR%%/libs/Zend/Db/Profiler.php
 %%WWWDIR%%/libs/Zend/Db/Select/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Select.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Db2/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Db2.php
 %%WWWDIR%%/libs/Zend/Db/Statement/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Statement/Interface.php
 %%WWWDIR%%/libs/Zend/Db/Statement/Mysqli/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Statement/Mysqli.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Oracle/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Oracle.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Pdo/Ibm.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Pdo/Oci.php
 %%WWWDIR%%/libs/Zend/Db/Statement/Pdo.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Sqlsrv/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Statement/Sqlsrv.php
 %%WWWDIR%%/libs/Zend/Db/Statement.php
 %%WWWDIR%%/libs/Zend/Db/Table/Abstract.php
+%%WWWDIR%%/libs/Zend/Db/Table/Definition.php
 %%WWWDIR%%/libs/Zend/Db/Table/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Table/Row/Abstract.php
 %%WWWDIR%%/libs/Zend/Db/Table/Row/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Table/Row.php
 %%WWWDIR%%/libs/Zend/Db/Table/Rowset/Abstract.php
+%%WWWDIR%%/libs/Zend/Db/Table/Rowset/Exception.php
 %%WWWDIR%%/libs/Zend/Db/Table/Rowset.php
+%%WWWDIR%%/libs/Zend/Db/Table/Select/Exception.php
+%%WWWDIR%%/libs/Zend/Db/Table/Select.php
 %%WWWDIR%%/libs/Zend/Db/Table.php
 %%WWWDIR%%/libs/Zend/Db.php
 %%WWWDIR%%/libs/Zend/Exception.php
@@ -397,8 +442,33 @@
 %%WWWDIR%%/libs/Zend/Feed/Entry/Atom.php
 %%WWWDIR%%/libs/Zend/Feed/Entry/Rss.php
 %%WWWDIR%%/libs/Zend/Feed/Exception.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Entry/Atom.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Entry/Rss.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/EntryAbstract.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/EntryInterface.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Atom/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Atom/Feed.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Content/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/CreativeCommons/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/CreativeCommons/Feed.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/DublinCore/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/DublinCore/Feed.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/EntryAbstract.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/FeedAbstract.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Podcast/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Podcast/Feed.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Slash/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Syndication/Feed.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Thread/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Extension/WellFormedWeb/Entry.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Feed/Atom.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/Feed/Rss.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/FeedAbstract.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/FeedInterface.php
+%%WWWDIR%%/libs/Zend/Feed/Reader.php
 %%WWWDIR%%/libs/Zend/Feed/Rss.php
 %%WWWDIR%%/libs/Zend/Feed.php
+%%WWWDIR%%/libs/Zend/Http/Client/Adapter/Curl.php
 %%WWWDIR%%/libs/Zend/Http/Client/Adapter/Exception.php
 %%WWWDIR%%/libs/Zend/Http/Client/Adapter/Interface.php
 %%WWWDIR%%/libs/Zend/Http/Client/Adapter/Proxy.php
@@ -416,17 +486,25 @@
 %%WWWDIR%%/libs/Zend/Log/Filter/Message.php
 %%WWWDIR%%/libs/Zend/Log/Filter/Priority.php
 %%WWWDIR%%/libs/Zend/Log/Filter/Suppress.php
+%%WWWDIR%%/libs/Zend/Log/Formatter/Firebug.php
 %%WWWDIR%%/libs/Zend/Log/Formatter/Interface.php
 %%WWWDIR%%/libs/Zend/Log/Formatter/Simple.php
 %%WWWDIR%%/libs/Zend/Log/Formatter/Xml.php
 %%WWWDIR%%/libs/Zend/Log/Writer/Abstract.php
 %%WWWDIR%%/libs/Zend/Log/Writer/Db.php
+%%WWWDIR%%/libs/Zend/Log/Writer/Firebug.php
+%%WWWDIR%%/libs/Zend/Log/Writer/Mail.php
 %%WWWDIR%%/libs/Zend/Log/Writer/Mock.php
 %%WWWDIR%%/libs/Zend/Log/Writer/Null.php
 %%WWWDIR%%/libs/Zend/Log/Writer/Stream.php
+%%WWWDIR%%/libs/Zend/Log/Writer/Syslog.php
 %%WWWDIR%%/libs/Zend/Log.php
 %%WWWDIR%%/libs/Zend/Mail/Exception.php
+%%WWWDIR%%/libs/Zend/Mail/Message/File.php
+%%WWWDIR%%/libs/Zend/Mail/Message/Interface.php
 %%WWWDIR%%/libs/Zend/Mail/Message.php
+%%WWWDIR%%/libs/Zend/Mail/Part/File.php
+%%WWWDIR%%/libs/Zend/Mail/Part/Interface.php
 %%WWWDIR%%/libs/Zend/Mail/Part.php
 %%WWWDIR%%/libs/Zend/Mail/Protocol/Abstract.php
 %%WWWDIR%%/libs/Zend/Mail/Protocol/Exception.php
@@ -463,6 +541,8 @@
 %%WWWDIR%%/libs/Zend/Session/Abstract.php
 %%WWWDIR%%/libs/Zend/Session/Exception.php
 %%WWWDIR%%/libs/Zend/Session/Namespace.php
+%%WWWDIR%%/libs/Zend/Session/SaveHandler/DbTable.php
+%%WWWDIR%%/libs/Zend/Session/SaveHandler/Exception.php
 %%WWWDIR%%/libs/Zend/Session/SaveHandler/Interface.php
 %%WWWDIR%%/libs/Zend/Session/Validator/Abstract.php
 %%WWWDIR%%/libs/Zend/Session/Validator/HttpUserAgent.php
@@ -480,22 +560,39 @@
 %%WWWDIR%%/libs/Zend/Validate/Between.php
 %%WWWDIR%%/libs/Zend/Validate/Ccnum.php
 %%WWWDIR%%/libs/Zend/Validate/Date.php
+%%WWWDIR%%/libs/Zend/Validate/Db/Abstract.php
+%%WWWDIR%%/libs/Zend/Validate/Db/NoRecordExists.php
+%%WWWDIR%%/libs/Zend/Validate/Db/RecordExists.php
 %%WWWDIR%%/libs/Zend/Validate/Digits.php
 %%WWWDIR%%/libs/Zend/Validate/EmailAddress.php
 %%WWWDIR%%/libs/Zend/Validate/Exception.php
+%%WWWDIR%%/libs/Zend/Validate/File/Count.php
+%%WWWDIR%%/libs/Zend/Validate/File/Crc32.php
+%%WWWDIR%%/libs/Zend/Validate/File/ExcludeExtension.php
+%%WWWDIR%%/libs/Zend/Validate/File/ExcludeMimeType.php
+%%WWWDIR%%/libs/Zend/Validate/File/Exists.php
+%%WWWDIR%%/libs/Zend/Validate/File/Extension.php
+%%WWWDIR%%/libs/Zend/Validate/File/FilesSize.php
+%%WWWDIR%%/libs/Zend/Validate/File/Hash.php
+%%WWWDIR%%/libs/Zend/Validate/File/ImageSize.php
+%%WWWDIR%%/libs/Zend/Validate/File/IsCompressed.php
+%%WWWDIR%%/libs/Zend/Validate/File/IsImage.php
+%%WWWDIR%%/libs/Zend/Validate/File/Md5.php
+%%WWWDIR%%/libs/Zend/Validate/File/MimeType.php
+%%WWWDIR%%/libs/Zend/Validate/File/NotExists.php
+%%WWWDIR%%/libs/Zend/Validate/File/Sha1.php
+%%WWWDIR%%/libs/Zend/Validate/File/Size.php
+%%WWWDIR%%/libs/Zend/Validate/File/Upload.php
+%%WWWDIR%%/libs/Zend/Validate/File/WordCount.php
 %%WWWDIR%%/libs/Zend/Validate/Float.php
 %%WWWDIR%%/libs/Zend/Validate/GreaterThan.php
 %%WWWDIR%%/libs/Zend/Validate/Hex.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/At.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/Ch.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/De.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/Fi.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/Hu.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/Interface.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/Li.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/No.php
-%%WWWDIR%%/libs/Zend/Validate/Hostname/Se.php
+%%WWWDIR%%/libs/Zend/Validate/Hostname/Biz.php
+%%WWWDIR%%/libs/Zend/Validate/Hostname/Cn.php
+%%WWWDIR%%/libs/Zend/Validate/Hostname/Com.php
+%%WWWDIR%%/libs/Zend/Validate/Hostname/Jp.php
 %%WWWDIR%%/libs/Zend/Validate/Hostname.php
+%%WWWDIR%%/libs/Zend/Validate/Iban.php
 %%WWWDIR%%/libs/Zend/Validate/Identical.php
 %%WWWDIR%%/libs/Zend/Validate/InArray.php
 %%WWWDIR%%/libs/Zend/Validate/Int.php
@@ -504,6 +601,10 @@
 %%WWWDIR%%/libs/Zend/Validate/LessThan.php
 %%WWWDIR%%/libs/Zend/Validate/NotEmpty.php
 %%WWWDIR%%/libs/Zend/Validate/Regex.php
+%%WWWDIR%%/libs/Zend/Validate/Sitemap/Changefreq.php
+%%WWWDIR%%/libs/Zend/Validate/Sitemap/Lastmod.php
+%%WWWDIR%%/libs/Zend/Validate/Sitemap/Loc.php
+%%WWWDIR%%/libs/Zend/Validate/Sitemap/Priority.php
 %%WWWDIR%%/libs/Zend/Validate/StringLength.php
 %%WWWDIR%%/libs/Zend/Validate.php
 %%WWWDIR%%/libs/Zend/Version.php
@@ -550,12 +651,14 @@
 %%WWWDIR%%/libs/json/json.js
 %%WWWDIR%%/libs/open-flash-chart/README.txt
 %%WWWDIR%%/libs/open-flash-chart/open-flash-chart.swf
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/JSON.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/README.txt
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/dot_base.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/json_format.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_area_base.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_area_hollow.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_area_line.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_arrow.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_3d.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_base.php
@@ -579,9 +682,9 @@
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_scatter_line.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_shape.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_sugar.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_tags.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_title.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_tooltip.php
-%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_upload_image.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_x_axis.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_x_axis_label.php
 %%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_x_axis_labels.php
@@ -610,6 +713,8 @@
 %%WWWDIR%%/misc/.htaccess_to_use_later
 %%WWWDIR%%/misc/How to install Piwik.html
 %%WWWDIR%%/misc/TODO
+%%WWWDIR%%/misc/WebAppGallery/Manifest.xml
+%%WWWDIR%%/misc/WebAppGallery/parameters.xml
 %%WWWDIR%%/misc/api_community_sticker.php
 %%WWWDIR%%/misc/api_example_marketing.php
 %%WWWDIR%%/misc/api_internal_call.php
@@ -631,6 +736,7 @@
 %%WWWDIR%%/misc/redirectToUrl.php
 %%WWWDIR%%/misc/stress.sh
 %%WWWDIR%%/misc/widget_example_lastvisits.html
+%%WWWDIR%%/parameters.xml
 %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
 %%WWWDIR%%/plugins/API/API.php
@@ -771,6 +877,7 @@
 %%WWWDIR%%/plugins/LanguagesManager/Controller.php
 %%WWWDIR%%/plugins/LanguagesManager/LanguagesManager.php
 %%WWWDIR%%/plugins/LanguagesManager/templates/languages.tpl
+%%WWWDIR%%/plugins/LanguagesManager/tests/LanguagesManager.test.php
 %%WWWDIR%%/plugins/Live/API.php
 %%WWWDIR%%/plugins/Live/Controller.php
 %%WWWDIR%%/plugins/Live/Live.php
@@ -789,11 +896,14 @@
 %%WWWDIR%%/plugins/Login/Form.php
 %%WWWDIR%%/plugins/Login/Login.php
 %%WWWDIR%%/plugins/Login/PasswordForm.php
+%%WWWDIR%%/plugins/Login/ResetPasswordForm.php
 %%WWWDIR%%/plugins/Login/templates/header.tpl
 %%WWWDIR%%/plugins/Login/templates/login.css
 %%WWWDIR%%/plugins/Login/templates/login.tpl
 %%WWWDIR%%/plugins/Login/templates/lostPassword.tpl
+%%WWWDIR%%/plugins/Login/templates/passwordchanged.tpl
 %%WWWDIR%%/plugins/Login/templates/passwordsent.tpl
+%%WWWDIR%%/plugins/Login/templates/resetPassword.tpl
 %%WWWDIR%%/plugins/Provider/API.php
 %%WWWDIR%%/plugins/Provider/Controller.php
 %%WWWDIR%%/plugins/Provider/Provider.php
@@ -994,6 +1104,7 @@
 %%WWWDIR%%/plugins/SitesManager/templates/JavascriptTagHelp.tpl
 %%WWWDIR%%/plugins/SitesManager/templates/SitesManager.js
 %%WWWDIR%%/plugins/SitesManager/templates/SitesManager.tpl
+%%WWWDIR%%/plugins/SitesManager/tests/SitesManager.test.php
 %%WWWDIR%%/plugins/UserCountry/API.php
 %%WWWDIR%%/plugins/UserCountry/Controller.php
 %%WWWDIR%%/plugins/UserCountry/UserCountry.php
@@ -1263,6 +1374,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/zw.png
 %%WWWDIR%%/plugins/UserCountry/functions.php
 %%WWWDIR%%/plugins/UserCountry/templates/index.tpl
+%%WWWDIR%%/plugins/UserCountry/tests/UserCountry.test.php
 %%WWWDIR%%/plugins/UserSettings/API.php
 %%WWWDIR%%/plugins/UserSettings/Controller.php
 %%WWWDIR%%/plugins/UserSettings/UserSettings.php
@@ -1283,6 +1395,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/IB.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/IC.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/IE.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/IR.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/KM.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/KO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/LI.gif
@@ -1348,6 +1461,7 @@
 %%WWWDIR%%/plugins/UsersManager/images/valid.png
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.js
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.tpl
+%%WWWDIR%%/plugins/UsersManager/tests/UsersManager.test.php
 %%WWWDIR%%/plugins/VisitFrequency/API.php
 %%WWWDIR%%/plugins/VisitFrequency/Controller.php
 %%WWWDIR%%/plugins/VisitFrequency/VisitFrequency.php
@@ -1414,6 +1528,7 @@
 %%WWWDIR%%/themes/default/simple_structure_footer.tpl
 %%WWWDIR%%/themes/default/simple_structure_header.tpl
 %%WWWDIR%%/themes/default/styles.css
+%%WWWDIR%%/web.config
 @dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/core/API
 @dirrm %%WWWDIR%%/core/Archive/Array
@@ -1425,10 +1540,14 @@
 @dirrm %%WWWDIR%%/core/DataTable/Renderer
 @dirrm %%WWWDIR%%/core/DataTable/Row
 @dirrm %%WWWDIR%%/core/DataTable
+@dirrm %%WWWDIR%%/core/Db/Pdo
+@dirrm %%WWWDIR%%/core/Db
 @dirrm %%WWWDIR%%/core/Log
 @dirrm %%WWWDIR%%/core/Period
 @dirrm %%WWWDIR%%/core/PluginsFunctions
 @dirrm %%WWWDIR%%/core/SmartyPlugins
+@dirrm %%WWWDIR%%/core/Tracker/Db/Pdo
+@dirrm %%WWWDIR%%/core/Tracker/Db
 @dirrm %%WWWDIR%%/core/Tracker/Generator
 @dirrm %%WWWDIR%%/core/Tracker
 @dirrm %%WWWDIR%%/core/Updates
@@ -1456,24 +1575,48 @@
 @dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter
 @dirrm %%WWWDIR%%/libs/Zend/Auth/Storage
 @dirrm %%WWWDIR%%/libs/Zend/Auth
+@dirrm %%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer
 @dirrm %%WWWDIR%%/libs/Zend/Cache/Backend
 @dirrm %%WWWDIR%%/libs/Zend/Cache/Frontend
 @dirrm %%WWWDIR%%/libs/Zend/Cache
+@dirrm %%WWWDIR%%/libs/Zend/Config/Writer
 @dirrm %%WWWDIR%%/libs/Zend/Config
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Db2
 @dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Mysqli
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Oracle
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm
 @dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Sqlsrv
 @dirrm %%WWWDIR%%/libs/Zend/Db/Adapter
 @dirrm %%WWWDIR%%/libs/Zend/Db/Profiler
 @dirrm %%WWWDIR%%/libs/Zend/Db/Select
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Db2
 @dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Mysqli
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Oracle
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Pdo
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Sqlsrv
 @dirrm %%WWWDIR%%/libs/Zend/Db/Statement
 @dirrm %%WWWDIR%%/libs/Zend/Db/Table/Row
 @dirrm %%WWWDIR%%/libs/Zend/Db/Table/Rowset
+@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Select
 @dirrm %%WWWDIR%%/libs/Zend/Db/Table
 @dirrm %%WWWDIR%%/libs/Zend/Db
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Builder/Header
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Builder
 @dirrm %%WWWDIR%%/libs/Zend/Feed/Entry
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Entry
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Atom
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Content
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/CreativeCommons
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/DublinCore
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Podcast
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Slash
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Syndication
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Thread
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/WellFormedWeb
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Feed
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader
 @dirrm %%WWWDIR%%/libs/Zend/Feed
 @dirrm %%WWWDIR%%/libs/Zend/Http/Client/Adapter
 @dirrm %%WWWDIR%%/libs/Zend/Http/Client
@@ -1482,6 +1625,8 @@
 @dirrm %%WWWDIR%%/libs/Zend/Log/Formatter
 @dirrm %%WWWDIR%%/libs/Zend/Log/Writer
 @dirrm %%WWWDIR%%/libs/Zend/Log
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Message
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Part
 @dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp/Auth
 @dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp
 @dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol
@@ -1496,7 +1641,10 @@
 @dirrm %%WWWDIR%%/libs/Zend/Session
 @dirrm %%WWWDIR%%/libs/Zend/Uri
 @dirrm %%WWWDIR%%/libs/Zend/Validate/Barcode
+@dirrm %%WWWDIR%%/libs/Zend/Validate/Db
+@dirrm %%WWWDIR%%/libs/Zend/Validate/File
 @dirrm %%WWWDIR%%/libs/Zend/Validate/Hostname
+@dirrm %%WWWDIR%%/libs/Zend/Validate/Sitemap
 @dirrm %%WWWDIR%%/libs/Zend/Validate
 @dirrm %%WWWDIR%%/libs/Zend
 @dirrm %%WWWDIR%%/libs/javascript
@@ -1513,6 +1661,7 @@
 @dirrm %%WWWDIR%%/libs/upgradephp
 @dirrm %%WWWDIR%%/libs
 @dirrm %%WWWDIR%%/misc/UI
+@dirrm %%WWWDIR%%/misc/WebAppGallery
 @dirrm %%WWWDIR%%/misc/cron
 @dirrm %%WWWDIR%%/misc/generateVisitsData
 @dirrm %%WWWDIR%%/misc
@@ -1549,6 +1698,7 @@
 @dirrm %%WWWDIR%%/plugins/Installation/templates
 @dirrm %%WWWDIR%%/plugins/Installation
 @dirrm %%WWWDIR%%/plugins/LanguagesManager/templates
+@dirrm %%WWWDIR%%/plugins/LanguagesManager/tests
 @dirrm %%WWWDIR%%/plugins/LanguagesManager
 @dirrm %%WWWDIR%%/plugins/Live/templates/images
 @dirrm %%WWWDIR%%/plugins/Live/templates/scripts
@@ -1562,9 +1712,11 @@
 @dirrm %%WWWDIR%%/plugins/Referers/templates
 @dirrm %%WWWDIR%%/plugins/Referers
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates
+@dirrm %%WWWDIR%%/plugins/SitesManager/tests
 @dirrm %%WWWDIR%%/plugins/SitesManager
 @dirrm %%WWWDIR%%/plugins/UserCountry/flags
 @dirrm %%WWWDIR%%/plugins/UserCountry/templates
+@dirrm %%WWWDIR%%/plugins/UserCountry/tests
 @dirrm %%WWWDIR%%/plugins/UserCountry
 @dirrm %%WWWDIR%%/plugins/UserSettings/images/browsers
 @dirrm %%WWWDIR%%/plugins/UserSettings/images/os
@@ -1575,6 +1727,7 @@
 @dirrm %%WWWDIR%%/plugins/UserSettings
 @dirrm %%WWWDIR%%/plugins/UsersManager/images
 @dirrm %%WWWDIR%%/plugins/UsersManager/templates
+@dirrm %%WWWDIR%%/plugins/UsersManager/tests
 @dirrm %%WWWDIR%%/plugins/UsersManager
 @dirrm %%WWWDIR%%/plugins/VisitFrequency/templates
 @dirrm %%WWWDIR%%/plugins/VisitFrequency
