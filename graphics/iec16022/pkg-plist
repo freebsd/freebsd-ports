@@ -1,0 +1,10 @@
+bin/iec16022
+include/iec16022/iec16022ecc200.h
+include/iec16022/image.h
+include/iec16022/reedsol.h
+lib/libiec16022.so
+lib/libiec16022.so.0
+lib/libiec16022.la
+lib/libiec16022.a
+libdata/pkgconfig/libiec16022.pc
+@dirrm include/iec16022

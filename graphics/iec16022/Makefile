@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iec16022
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://datenfreihafen.org/~stefan/iec16022/ \
 		CRITICAL
@@ -17,19 +17,20 @@ COMMENT=	Create 2D barcodes, also known as DataMatrix
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_GNOME=	pkgconfig
+
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MAN1=		iec16022.1
-PLIST_FILES=	bin/iec16022
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/iec16022.c \
 		${WRKSRC}/iec16022ecc200.c ${WRKSRC}/reedsol.c ${WRKSRC}/image.c
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	@${REINPLACE_CMD} -e \
+		"s|^\(pkgconfigdir\).*|\1 = ${PREFIX}/libdata/pkgconfig|" \
+			${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
