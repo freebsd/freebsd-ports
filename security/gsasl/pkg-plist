@@ -26,6 +26,8 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix04.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix05.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix06.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/ix07.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/ix08.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/left.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/right.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/style.css
@@ -44,6 +46,7 @@ libdata/pkgconfig/libgsasl.pc
 %%NLS%%share/locale/pl/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gsasl.mo
