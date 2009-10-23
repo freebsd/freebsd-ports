@@ -76,6 +76,14 @@ KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=
 
+.if defined(WITHOUT_QT4) && !defined(WITHOUT_NLS)
+BROKEN=		NLS support requires QT4 frontend. Run 'make config' again!
+.endif
+
+.if defined(WITHOUT_X11) && !defined(WITHOUT_QT4)
+BROKEN=		QT4 frontend requires X11 support. Run 'make config' again!
+.endif
+
 .if !defined(WITHOUT_X11)
 USE_SDL=	sdl
 USE_XORG=	xcursor xmu
@@ -96,7 +104,6 @@ PLIST_SUB+=	QT4=""
 .else
 CONFIGURE_ARGS+=--disable-qt4
 PLIST_SUB+=	QT4="@comment "
-WITHOUT_NLS=	yes
 .endif
 
 .if defined(WITH_GUESTADDITIONS)
