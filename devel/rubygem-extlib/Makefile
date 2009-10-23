@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	extlib
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
