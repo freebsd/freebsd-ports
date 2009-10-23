@@ -377,6 +377,7 @@
     SUBDIR += inform
     SUBDIR += interlogic
     SUBDIR += ioquake3
+    SUBDIR += ioquake3-devel
     SUBDIR += iourbanterror
     SUBDIR += ishido
     SUBDIR += ivan
