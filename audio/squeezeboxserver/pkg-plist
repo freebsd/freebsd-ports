@@ -1,4 +1,6 @@
 bin/softsqueeze
+@unexec if cmp -s %D/%%SLIMDIR%%/convert.conf %D/%%SLIMDIR%%/convert.conf.sample; then rm -f %D/%%SLIMDIR%%/convert.conf; fi
+@unexec if cmp -s %D/%%SLIMDIR%%/types.conf %D/%%SLIMDIR%%/types.conf.sample; then rm -f %D/%%SLIMDIR%%/types.conf; fi
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/Installation.txt
 %%PORTDOCS%%%%DOCSDIR%%/License.txt
@@ -432,7 +434,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/enum.pm
 %%SLIMDIR%%/CPAN/version.pm
 %%SLIMDIR%%/CPAN/version/vpp.pm
-%%SLIMDIR%%/Cache
 %%SLIMDIR%%/Changelog1.html
 %%SLIMDIR%%/Changelog2.html
 %%SLIMDIR%%/Changelog3.html
@@ -1491,8 +1492,6 @@ bin/softsqueeze
 %%SLIMDIR%%/License.nl.txt
 %%SLIMDIR%%/MySQL/COPYING
 %%SLIMDIR%%/MySQL/README
-%%SLIMDIR%%/MySQL/errmsg.sys
-%%SLIMDIR%%/MySQL/errmsg.txt
 %%SLIMDIR%%/MySQL/my.tt
 %%SLIMDIR%%/MySQL/system.sql
 %%SLIMDIR%%/SQL/mysql/schema_10_down.sql
@@ -1828,6 +1827,11 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/Podcast/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/Podcast/install.xml
 %%SLIMDIR%%/Slim/Plugin/Podcast/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Queen/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Queen/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Queen/install.xml
+%%SLIMDIR%%/Slim/Plugin/Queen/strings.txt
 %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/RS232/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/RS232/Settings.pm
@@ -1957,7 +1961,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Utils/MySQLHelper.pm
 %%SLIMDIR%%/Slim/Utils/Network.pm
 %%SLIMDIR%%/Slim/Utils/OS.pm
-%%SLIMDIR%%/Slim/Utils/OS/Custom.pm
 %%SLIMDIR%%/Slim/Utils/OS/Debian.pm
 %%SLIMDIR%%/Slim/Utils/OS/Linux.pm
 %%SLIMDIR%%/Slim/Utils/OS/OSX.pm
@@ -2048,7 +2051,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Web/XMLBrowser.pm
 %%SLIMDIR%%/Slim/bootstrap.pm
 %%SLIMDIR%%/cleanup.pl
-%%SLIMDIR%%/convert.conf
 %%SLIMDIR%%/convert.conf.sample
 %%SLIMDIR%%/lib/AnyEvent/DNS.pm
 %%SLIMDIR%%/lib/AnyEvent/Impl/PerfMonEV.pm
@@ -2075,8 +2077,11 @@ bin/softsqueeze
 %%SLIMDIR%%/slimservice-strings.txt
 %%SLIMDIR%%/slimservice.pl
 %%SLIMDIR%%/strings.txt
-%%SLIMDIR%%/types.conf
 %%SLIMDIR%%/types.conf.sample
+%%SLIMDIR%%/Cache
+%%SLIMDIR%%/MySQL/errmsg.txt
+%%SLIMDIR%%/MySQL/errmsg.sys
+%%SLIMDIR%%/Slim/Utils/OS/Custom.pm
 @dirrm %%SLIMDIR%%/lib/Template
 @dirrm %%SLIMDIR%%/lib/Net/UPnP
 @dirrm %%SLIMDIR%%/lib/Net
@@ -2187,12 +2192,13 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232
-@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby/HTML/EN/plugins/PreventStandby/settings
-@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby/HTML/EN/plugins/PreventStandby
-@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby/HTML/EN/plugins
-@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby/HTML/EN
-@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby/HTML
-@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby
+@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen
+@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Queen
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html
@@ -2417,7 +2423,6 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/SQL/slimservice
 @dirrm %%SLIMDIR%%/SQL/mysql
 @dirrm %%SLIMDIR%%/SQL
-@dirrm %%SLIMDIR%%/Plugins
 @dirrm %%SLIMDIR%%/MySQL
 @dirrm %%SLIMDIR%%/IR
 @dirrm %%SLIMDIR%%/HTML/xml/html
@@ -2565,11 +2570,10 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/CPAN/AnyEvent
 @dirrm %%SLIMDIR%%/CPAN/Algorithm
 @dirrm %%SLIMDIR%%/CPAN
-@dirrm squeezeboxserver
+@dirrmtry %%SLIMDIR%%/Plugins
+@dirrmtry %%SLIMDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rm -rf /var/db/squeezecenter/cache > /dev/null 2>&1 || true
-@dirrmtry /var/db/squeezecenter/playlists
-@dirrmtry /var/db/squeezecenter
-@unexec test -d /var/db/squeezecenter && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/squeezecenter and its contents manually.")
-@exec mkdir -p %D/%%SLIMDIR%%/Slim/Plugin/PreventStandby/HTML/EN/plugins/PreventStandby/settings
-@exec mkdir -p %D/%%SLIMDIR%%/Plugins
+@unexec rm -rf /var/db/squeezeboxserver/cache > /dev/null 2>&1 || true
+@dirrmtry /var/db/squeezeboxserver/playlists
+@dirrmtry /var/db/squeezeboxserver
+@unexec test -d /var/db/squeezeboxserver && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/squeezeboxserver and its contents manually.")
