@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	squeezeboxserver
-PORTVERSION=	7.4.0
+PORTVERSION=	7.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-28672-noCPAN
+DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Slim Devices audio streaming server
+
+CONFLICTS=	squeezecenter-*
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
@@ -27,7 +29,7 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=	${WRKDIR}/squeezeboxserver-${PORTVERSION}-28672-noCPAN
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-28947-noCPAN
 
 RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
@@ -52,10 +54,11 @@ RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zl
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 USE_PERL5=	yes
-USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323 40
 
 .include <bsd.port.pre.mk>
+
+USE_MYSQL=	yes
+IGNORE_WITH_MYSQL=	323 40
 
 # We need a dependency on the server because squeezecenter runs the binary
 # directly with a non-standard config.
