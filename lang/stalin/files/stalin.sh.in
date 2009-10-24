@@ -1,0 +1,4 @@
+#!/bin/sh
+
+libdir=%%PREFIX%%/lib/stalin
+exec ${libdir}/stalin -I ${libdir} -copt -fno-strict-aliasing -copt -I%%LOCALBASE%%/include -copt -L%%LOCALBASE%%/lib $@

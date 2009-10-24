@@ -1,0 +1,18 @@
+bin/stalin
+lib/stalin/QobiScheme.sc
+lib/stalin/Scheme-to-C-compatibility.sc
+lib/stalin/Tmk.sc
+lib/stalin/gl-c.c
+lib/stalin/gl.sc
+lib/stalin/libstalin.a
+lib/stalin/parallel-QobiScheme.sc
+lib/stalin/stalin
+lib/stalin/stalin-architecture-name
+lib/stalin/stalin.architectures
+lib/stalin/xlib-c.c
+lib/stalin/xlib-original.sc
+lib/stalin/xlib.sc
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/emacs/site-lisp/stalin.el
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/stalin

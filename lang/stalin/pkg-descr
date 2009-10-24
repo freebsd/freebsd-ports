@@ -1,0 +1,10 @@
+Stalin (STAtic Language ImplementatioN) is an aggressive optimizing batch
+whole-program Scheme compiler written by Jeffrey Mark Siskind.  It uses
+advanced flow analysis and type inference and a variety of other optimization
+techniques to produce code (using C as an intermediate language) that is
+extremely fast, particularly for numerical code.  In a number of tests it
+has outperformed hand-written C, sometimes by a considerable margin.
+Stalin is intended for production use in generating an optimized executable.
+
+Author:	Jeffrey Mark Siskind
+WWW:	http://cobweb.ecn.purdue.edu/~qobi/software.html
