@@ -17,6 +17,8 @@ COMMENT=	Valgrind skin for cache simulation and call tracing
 #IGNORE=	Dumps core \(SIGBUS\). \(Also v. 0.9.10\!\)
 
 BROKEN=		does not build
+DEPRECATED=	Included in devel/valgrind
+EXPIRATION_DATE=	2009-10-30
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
