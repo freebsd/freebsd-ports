@@ -171,6 +171,7 @@
     SUBDIR += cl-split-sequence-sbcl
     SUBDIR += cl-uffi
     SUBDIR += cl-uffi-sbcl
+    SUBDIR += clang
     SUBDIR += clanlib
     SUBDIR += clewn
     SUBDIR += clig
