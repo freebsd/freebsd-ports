@@ -5581,6 +5581,7 @@ iolib                           ports/biology/iolib
 ion                             ports/x11-wm/ion
 ion-2                           ports/x11-wm/ion-2
 ioquake3                        ports/games/ioquake3
+ioquake3-devel                  ports/games/ioquake3-devel
 iourbanterror                   ports/games/iourbanterror
 iozone                          ports/benchmarks/iozone
 iozone21                        ports/benchmarks/iozone21
@@ -13289,6 +13290,7 @@ p5-Text-LevenshteinXS           ports/devel/p5-Text-LevenshteinXS
 p5-Text-Markdown                ports/textproc/p5-Text-Markdown
 p5-Text-Markdown-ApacheHandler  ports/www/p5-Text-Markdown-ApacheHandler
 p5-Text-Metaphone               ports/textproc/p5-Text-Metaphone
+p5-Text-MultiMarkdown           ports/textproc/p5-Text-MultiMarkdown
 p5-Text-NSP                     ports/textproc/p5-Text-NSP
 p5-Text-NeatTemplate            ports/textproc/p5-Text-NeatTemplate
 p5-Text-Netstring               ports/textproc/p5-Text-Netstring
@@ -16935,6 +16937,7 @@ p5-text-levenshteinxs           ports/devel/p5-Text-LevenshteinXS
 p5-text-markdown                ports/textproc/p5-Text-Markdown
 p5-text-markdown-apachehandler  ports/www/p5-Text-Markdown-ApacheHandler
 p5-text-metaphone               ports/textproc/p5-Text-Metaphone
+p5-text-multimarkdown           ports/textproc/p5-Text-MultiMarkdown
 p5-text-neattemplate            ports/textproc/p5-Text-NeatTemplate
 p5-text-netstring               ports/textproc/p5-Text-Netstring
 p5-text-ngram                   ports/textproc/p5-Text-Ngram
@@ -20946,6 +20949,7 @@ ruby-thrift                     ports/devel/ruby-thrift
 ruby-tk                         ports/x11-toolkits/ruby-tk
 ruby-tmail                      ports/mail/ruby-tmail
 ruby-tmpl                       ports/www/ruby-tmpl
+ruby-tokyocabinet               ports/databases/ruby-tokyocabinet
 ruby-tserver                    ports/net/ruby-tserver
 ruby-tzfile                     ports/devel/ruby-tzfile
 ruby-usersguide                 ports/lang/ruby-usersguide
