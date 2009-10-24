@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nomyso
-PORTVERSION=	3.0
+PORTVERSION=	4.0
 CATEGORIES=	converters devel
 MASTER_SITES=	http://www.devoresoftware.com/nomyso/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
