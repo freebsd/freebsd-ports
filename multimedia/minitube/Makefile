@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minitube
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
