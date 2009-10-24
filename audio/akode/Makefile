@@ -7,12 +7,12 @@
 
 PORTNAME=	akode
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=distfiles
-DISTNAME=	30375-${PORTNAME}-${PORTVERSION}.tar.bz2
-EXTRACT_SUFX=	# none
+DISTNAME=	30375-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Default KDE audio backend
@@ -27,13 +27,11 @@ OPTIONS=	FFMPEG "FFMPEG decoder plugin" off \
 		RESAMPLER "Resampler processing plugin" on \
 		XIPH "FLAC/Speex/Vorbis decoder plugin" on
 
-USE_AUTOTOOLS=	libltdl
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=	libltdl:22 libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
-PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH}
 
 CONFIGURE_ARGS+=--program-transform-name= \
 		--with-extra-libs=${LOCALBASE}/lib \
@@ -42,7 +40,7 @@ CONFIGURE_ARGS+=--program-transform-name= \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FFMPEG)
-RUN_DEPENDS=	${LOCALBASE}/lib/libakode_ffmpeg_decoder.so:${PORTSDIR}/audio/akode-plugins-ffmpeg
+RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_ffmpeg_decoder.so:${PORTSDIR}/audio/akode-plugins-ffmpeg
 .endif
 
 .if defined(WITH_JACK)
@@ -75,11 +73,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's|akodeplay_LDFLAGS =.*|akodeplay_LDFLAGS = \
 	$$(all_libraries) ${PTHREAD_LIBS}|g' \
 		${WRKSRC}/akode/akodeplay/Makefile.in
-
-do-build:
-	cd ${WRKSRC}/akode && ${GMAKE}
-
-do-install:
-	cd ${WRKSRC}/akode && ${GMAKE} install
 
 .include <bsd.port.post.mk>
