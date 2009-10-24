@@ -145,7 +145,7 @@ lib/kde4/ktzeroconfplugin.so
 lib/kde4/plasma_engine_ktorrent.so
 lib/libbtcore.so
 lib/libbtcore.so.11
-lib/libbtcore.so.11.2.0
+lib/libbtcore.so.11.3.0
 lib/libktcore.so
 lib/libktcore.so.9
 lib/libktcore.so.9.3.0
