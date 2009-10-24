@@ -329,6 +329,7 @@
     SUBDIR += squeak
     SUBDIR += squirrel
     SUBDIR += sr
+    SUBDIR += stalin
     SUBDIR += starlogo
     SUBDIR += steptalk
     SUBDIR += stklos
