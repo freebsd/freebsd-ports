@@ -7,21 +7,41 @@
 
 PORTNAME=	neon26
 PORTVERSION=	0.26.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.webdav.org/neon/ \
-		http://keyserver.kjsl.com/~jharris/distfiles/
+MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
-CONFLICTS=	neon28-[0-9]*
+CONFLICTS=	neon2[8|9]-[0-9]*
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
+
+USE_GNOME=	gnomehack gnometarget
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --enable-shared \
+		--with-libs=${LOCALBASE}:${PREFIX}
+
+# expat is default unless WITH_XML is choosen
+.if !defined(WITHOUT_EXPAT) && !defined(WITH_XML)
+FORBIDDEN= see CVE-2009-2473 and CVE-2009-2474 please use neon28 or neon29 instead
+CONFIGURE_ARGS+= --with-expat
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+.endif
+
+.if defined(WITH_XML)
+CONFIGURE_ARGS+=--with-libxml2
+LIB_DEPENDS+=   xml2.5:${PORTSDIR}/textproc/libxml2
+.endif
+
+.ifndef WITHOUT_OPENSSL
+FORBIDDEN= see CVE-2009-2474 please use neon28 or neon29 instead
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-ssl
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -30,18 +50,6 @@ PLIST_SUB+=	NLS="@comment "
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
-
-.ifndef WITHOUT_OPENSSL
-USE_OPENSSL=	yes
-.endif
-
-USE_GNOME=	gnomehack gnometarget
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl \
-		--enable-xml \
-		--enable-shared \
-		--with-expat \
-		--with-libs=${PREFIX}
 
 MAN1=	neon-config.1
 MAN3=	ne_add_request_header.3 ne_addr_resolve.3 ne_buffer.3 \
@@ -115,6 +123,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 DOCSDIR:=	${DOCSDIR:S/26//}
+
+pre-everything::
+.if defined(WITH_EXPAT) && defined(WITH_XML)
+	@${ECHO_CMD} "please choose between expat and libxml2 not both"
+	@${FALSE}
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
