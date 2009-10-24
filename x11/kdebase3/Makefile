@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -28,22 +28,20 @@ LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-4]* kdeutils-3.[0-2]*
 
 USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
 
 USE_OPENLDAP=	yes
 USE_OPENSSL=	yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XORG=	xpm xkbfile xrandr xcursor
+USE_XORG=	xpm xkbfile xrandr xcursor xscrnsaver
 SUB_FILES=	kdm pkg-deinstall pkg-install pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no kde_cv_utmp_file=/var/run/utmp
 CONFIGURE_ARGS+=--without-java			\
@@ -61,7 +59,7 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .else
-EXTRA_PATCHES+= ${FILESDIR}/extrapatch-libusb20
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libusb20
 .endif
 
 .if !defined(WITHOUT_ARTSWRAPPER)
