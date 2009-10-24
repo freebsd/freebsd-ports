@@ -1,0 +1,42 @@
+bin/ccc-analyzer
+bin/clang
+bin/scan-build
+lib/clang/1.0/include/emmintrin.h
+lib/clang/1.0/include/float.h
+lib/clang/1.0/include/iso646.h
+lib/clang/1.0/include/limits.h
+lib/clang/1.0/include/mm_malloc.h
+lib/clang/1.0/include/mmintrin.h
+lib/clang/1.0/include/pmmintrin.h
+lib/clang/1.0/include/stdarg.h
+lib/clang/1.0/include/stdbool.h
+lib/clang/1.0/include/stddef.h
+lib/clang/1.0/include/stdint.h
+lib/clang/1.0/include/tgmath.h
+lib/clang/1.0/include/tmmintrin.h
+lib/clang/1.0/include/xmmintrin.h
+libexec/clang-cc
+%%DATADIR%%/scanview.css
+%%DATADIR%%/sorttable.js
+%%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
+%%PORTDOCS%%%%DOCSDIR%%/html/AnalyzerRegions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/DriverInternals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/InternalsManual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/LanguageExtensions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/PCHInternals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/PTHInternals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersManual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
+%%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/libIndex.html
+%%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
+@dirrm lib/clang/1.0/include
+@dirrm lib/clang/1.0
+@dirrm lib/clang
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/clang
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
