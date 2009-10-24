@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	schism
-PORTVERSION=	20081004
+PORTVERSION=	20090817
 CATEGORIES=	audio
-MASTER_SITES=	http://nimh.org/schism/ \
+MASTER_SITES=	http://schismtracker.org/dl/ \
 		CRITICAL
-DISTNAME=	cvs-snapshot
-EXTRACT_SUFX=	.tgz
+DISTNAME=	schismtracker-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A module tracker editor/player resembling impulse tracker
@@ -19,6 +18,7 @@ COMMENT=	A module tracker editor/player resembling impulse tracker
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_SDL=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -29,7 +29,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
