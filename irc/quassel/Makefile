@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quassel
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.0
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -28,7 +28,8 @@ OPTIONS=	MONO "Quassel standalone client" on \
 
 CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 		-DWANT_CORE=${QUASSEL_CORE} \
-		-DWANT_QTCLIENT=${QUASSEL_CLIENT}
+		-DWANT_QTCLIENT=${QUASSEL_CLIENT} \
+		-DWITH_LIBINDICATE=OFF
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +39,12 @@ IGNORE=		needs at least one Quassel component. Please, rerun 'make config'
 
 .if !defined(WITHOUT_NLS)
 QT_COMPONENTS+=	linguist_build
+.endif
+
+.if defined(WITHOUT_MONO) && defined(WITHOUT_CLIENT)
+PLIST_SUB+=	MONO_OR_CLIENT="@comment "
+.else
+PLIST_SUB+=	MONO_OR_CLIENT=""
 .endif
 
 .if !defined(WITHOUT_MONO)
