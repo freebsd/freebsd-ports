@@ -22,6 +22,7 @@ OPTIONS=	MANPAGES "Install manpages" on\
 		LIBSPF2 "Include SPF support" off\
 		GEOIP "Include GeoIP support" off\
 		CURL "Include curl support" off\
+		OPENLDAP "Include OpenLDAP support" off\
 		POSTFIX "Use Postfix instead of Sendmail" off
 
 .include <bsd.port.pre.mk>
@@ -56,6 +57,10 @@ CONFIGURE_ARGS+=	--with-libGeoIP=${LOCALBASE}
 .if defined(WITH_CURL)
 BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
+.endif
+.if defined(WITH_OPENLDAP)
+USE_OPENLDAP=yes
+CONFIGURE_ARGS+=	--with-openldap
 .endif
 .if defined(WITH_POSTFIX)
 CONFIGURE_ARGS+=	--enable-postfix
