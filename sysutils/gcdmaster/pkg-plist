@@ -1,4 +1,5 @@
 bin/gcdmaster
+%%DATADIR%%/Preferences.glade
 %%DATADIR%%/ProjectChooser.glade
 share/application-registry/gcdmaster.applications
 share/applications/gcdmaster.desktop
