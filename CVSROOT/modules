@@ -22023,6 +22023,7 @@ sswf                            ports/graphics/sswf
 ssync                           ports/sysutils/ssync
 st                              ports/devel/st
 stalepid                        ports/sysutils/stalepid
+stalin                          ports/lang/stalin
 stalonetray                     ports/x11/stalonetray
 stamp                           ports/graphics/stamp
 stan                            ports/misc/stan
