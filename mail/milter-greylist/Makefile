@@ -13,7 +13,7 @@ DISTNAME=	milter-greylist-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ache@FreeBSD.org
-COMMENT=	Easy-to-use greylist milter for sendmail
+COMMENT=	Easy-to-use greylist milter for sendmail and postfix
 
 CONFLICTS=	milter-greylist-devel-[1-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
