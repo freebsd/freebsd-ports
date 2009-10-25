@@ -4189,3 +4189,4 @@ audio/xmms-uade|audio/uade|2009-10-18|decoupled from xmms
 net-p2p/mute-net-gui|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
 net-p2p/mute-net-text|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
 archivers/zlib||2009-10-19|Removed
+graphics/libwpcg||2009-10-25|Unmaintained upstream, depends on an old version of GCC, lacks a maintainer, and not used by anything else
