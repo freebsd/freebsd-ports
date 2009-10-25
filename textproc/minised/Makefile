@@ -8,7 +8,8 @@
 PORTNAME=	minised
 PORTVERSION=	1.13
 CATEGORIES=	textproc
-MASTER_SITES=	http://dl.exactcode.de/oss/minised/ CENKES
+MASTER_SITES=	http://dl.exactcode.de/oss/minised/ CENKES \
+		http://people.freebsd.org/~wen/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smaller, cheaper, faster sed implementation
