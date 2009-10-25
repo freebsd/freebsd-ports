@@ -17,6 +17,8 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
+BROKEN=		does not build
+
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_ICONV=	yes
