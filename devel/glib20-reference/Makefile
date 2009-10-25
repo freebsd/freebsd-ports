@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 
-BOOKS=		glib gobject
+BOOKS=		glib gobject gio
 
 glib_MAN=	glib-gettextize.1
 gobject_MAN=	glib-genmarshal.1 glib-mkenums.1 gobject-query.1
