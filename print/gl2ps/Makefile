@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gl2ps
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +17,7 @@ COMMENT=	A C library providing vector output for OpenGL application
 USE_GL=		yes
 USE_XORG=	x11 xmu xi
 USE_LDCONFIG=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 pre-build:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
