@@ -63,7 +63,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=380347</url>
     </references>
     <dates>
-      <discovery>29-07-2006</discovery>
+      <discovery>2006-07-29</discovery>
       <entry>2009-10-25</entry>
     </dates>
   </vuln>
