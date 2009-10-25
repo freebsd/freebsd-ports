@@ -620,6 +620,7 @@
     SUBDIR += p5-Image-Size
     SUBDIR += p5-Image-Size-FillFullSelect
     SUBDIR += p5-Imager
+    SUBDIR += p5-Imager-AverageGray
     SUBDIR += p5-Imager-Graph
     SUBDIR += p5-Imager-Plot
     SUBDIR += p5-Imager-QRCode

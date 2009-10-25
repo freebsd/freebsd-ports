@@ -1,0 +1,4 @@
+This uses the the Imager to find the average gray value
+for a image.
+
+WWW: http://search.cpan.org/dist/Imager-AverageGray/
