@@ -22,7 +22,7 @@ BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-2.[123456]* llvm-2.7.[0-9]* llvm-2.7
+CONFLICTS=	clang-2.6* llvm-2.[123456]* llvm-2.7.[0-9]* llvm-2.7
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -121,12 +121,17 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libLTO.* \
 			lib/libLLVM* \
 			lib/libUnitTestMain.a \
+			lib/libclang* \
 			lib/libplugin_llvmc* \
 			lib/libprofile_rt.so \
 			libexec/clang-cc
-PLIST_DIR_LIST=		include/llvm-c \
+PLIST_DIR_LIST=		include/clang \
+			include/clang-c \
+			include/llvm-c \
 			include/llvm \
-			lib/clang
+			lib/clang \
+			share/clang \
+			share/doc/clang
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
