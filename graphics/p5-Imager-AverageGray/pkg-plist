@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Imager/AverageGray.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/AverageGray/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/AverageGray
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
+@dirrmtry %%SITE_PERL%%/Imager
