@@ -7,9 +7,10 @@
 
 PORTNAME=	stalin
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-DISTNAME=	stalin-freebsd-${PORTVERSION}
+DISTNAME=	stalin-freebsd-${PORTVERSION}_1
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An aggressive optimizing Scheme compiler
@@ -17,7 +18,7 @@ COMMENT=	An aggressive optimizing Scheme compiler
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_BZIP2=	yes
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	has not been bootstrapped on other platforms yet
 
 .include <bsd.port.pre.mk>
@@ -26,6 +27,8 @@ ONLY_FOR_ARCHS_REASON=	has not been bootstrapped on other platforms yet
 STALIN_SRC=	"stalin-IA32.c"
 .elif ${ARCH} == "amd64"
 STALIN_SRC=	"stalin-AMD64.c"
+.elif ${ARCH} == "sparc64"
+STALIN_SRC=	"stalin-SPARC64.c"
 .endif
 STALIN_LIBDIR=	${PREFIX}/lib/stalin
 
