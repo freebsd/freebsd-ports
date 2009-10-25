@@ -698,6 +698,7 @@ lib/wine/dxgi.dll.so
 lib/wine/eject.exe.so
 lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
+lib/wine/extrac32.exe.so
 lib/wine/fakedlls/acledit.dll
 lib/wine/fakedlls/aclui.dll
 lib/wine/fakedlls/activeds.dll
@@ -803,6 +804,7 @@ lib/wine/fakedlls/dxgi.dll
 lib/wine/fakedlls/eject.exe
 lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
+lib/wine/fakedlls/extrac32.exe
 lib/wine/fakedlls/faultrep.dll
 lib/wine/fakedlls/fltlib.dll
 lib/wine/fakedlls/fusion.dll
@@ -854,6 +856,7 @@ lib/wine/fakedlls/mciwave.dll
 lib/wine/fakedlls/midimap.dll
 lib/wine/fakedlls/mlang.dll
 lib/wine/fakedlls/mmdevldr.vxd
+lib/wine/fakedlls/mmsystem.dll16
 lib/wine/fakedlls/monodebg.vxd
 lib/wine/fakedlls/mountmgr.sys
 lib/wine/fakedlls/mouse.drv16
@@ -1287,7 +1290,7 @@ lib/wine/mciwave.dll.so
 lib/wine/midimap.dll.so
 lib/wine/mlang.dll.so
 lib/wine/mmdevldr.vxd.so
-lib/wine/mmsystem.dll16
+lib/wine/mmsystem.dll16.so
 lib/wine/monodebg.vxd.so
 lib/wine/mountmgr.sys.so
 lib/wine/mouse.drv16.so
