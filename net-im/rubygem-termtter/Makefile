@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termtter
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RF/termtter
 
