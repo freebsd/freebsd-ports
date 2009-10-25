@@ -1,0 +1,146 @@
+bin/violetland
+%%DATADIR%%/README_EN.TXT
+%%DATADIR%%/README_RU.TXT
+%%DATADIR%%/fonts/harabara.ttf
+%%DATADIR%%/images/ak.png
+%%DATADIR%%/images/anima/bleed/bleed-0.png
+%%DATADIR%%/images/anima/bleed/bleed-1.png
+%%DATADIR%%/images/anima/bleed/bleed-10.png
+%%DATADIR%%/images/anima/bleed/bleed-11.png
+%%DATADIR%%/images/anima/bleed/bleed-12.png
+%%DATADIR%%/images/anima/bleed/bleed-2.png
+%%DATADIR%%/images/anima/bleed/bleed-3.png
+%%DATADIR%%/images/anima/bleed/bleed-4.png
+%%DATADIR%%/images/anima/bleed/bleed-5.png
+%%DATADIR%%/images/anima/bleed/bleed-6.png
+%%DATADIR%%/images/anima/bleed/bleed-7.png
+%%DATADIR%%/images/anima/bleed/bleed-8.png
+%%DATADIR%%/images/anima/bleed/bleed-9.png
+%%DATADIR%%/images/anima/monsters/0/move-0.png
+%%DATADIR%%/images/anima/monsters/0/move-1.png
+%%DATADIR%%/images/anima/monsters/0/move-10.png
+%%DATADIR%%/images/anima/monsters/0/move-11.png
+%%DATADIR%%/images/anima/monsters/0/move-12.png
+%%DATADIR%%/images/anima/monsters/0/move-13.png
+%%DATADIR%%/images/anima/monsters/0/move-14.png
+%%DATADIR%%/images/anima/monsters/0/move-15.png
+%%DATADIR%%/images/anima/monsters/0/move-16.png
+%%DATADIR%%/images/anima/monsters/0/move-17.png
+%%DATADIR%%/images/anima/monsters/0/move-18.png
+%%DATADIR%%/images/anima/monsters/0/move-19.png
+%%DATADIR%%/images/anima/monsters/0/move-2.png
+%%DATADIR%%/images/anima/monsters/0/move-20.png
+%%DATADIR%%/images/anima/monsters/0/move-21.png
+%%DATADIR%%/images/anima/monsters/0/move-22.png
+%%DATADIR%%/images/anima/monsters/0/move-23.png
+%%DATADIR%%/images/anima/monsters/0/move-24.png
+%%DATADIR%%/images/anima/monsters/0/move-3.png
+%%DATADIR%%/images/anima/monsters/0/move-4.png
+%%DATADIR%%/images/anima/monsters/0/move-5.png
+%%DATADIR%%/images/anima/monsters/0/move-6.png
+%%DATADIR%%/images/anima/monsters/0/move-7.png
+%%DATADIR%%/images/anima/monsters/0/move-8.png
+%%DATADIR%%/images/anima/monsters/0/move-9.png
+%%DATADIR%%/images/anima/monsters/1/move-0.png
+%%DATADIR%%/images/anima/monsters/1/move-1.png
+%%DATADIR%%/images/anima/monsters/1/move-10.png
+%%DATADIR%%/images/anima/monsters/1/move-11.png
+%%DATADIR%%/images/anima/monsters/1/move-12.png
+%%DATADIR%%/images/anima/monsters/1/move-13.png
+%%DATADIR%%/images/anima/monsters/1/move-14.png
+%%DATADIR%%/images/anima/monsters/1/move-15.png
+%%DATADIR%%/images/anima/monsters/1/move-16.png
+%%DATADIR%%/images/anima/monsters/1/move-17.png
+%%DATADIR%%/images/anima/monsters/1/move-18.png
+%%DATADIR%%/images/anima/monsters/1/move-19.png
+%%DATADIR%%/images/anima/monsters/1/move-2.png
+%%DATADIR%%/images/anima/monsters/1/move-20.png
+%%DATADIR%%/images/anima/monsters/1/move-21.png
+%%DATADIR%%/images/anima/monsters/1/move-22.png
+%%DATADIR%%/images/anima/monsters/1/move-23.png
+%%DATADIR%%/images/anima/monsters/1/move-24.png
+%%DATADIR%%/images/anima/monsters/1/move-3.png
+%%DATADIR%%/images/anima/monsters/1/move-4.png
+%%DATADIR%%/images/anima/monsters/1/move-5.png
+%%DATADIR%%/images/anima/monsters/1/move-6.png
+%%DATADIR%%/images/anima/monsters/1/move-7.png
+%%DATADIR%%/images/anima/monsters/1/move-8.png
+%%DATADIR%%/images/anima/monsters/1/move-9.png
+%%DATADIR%%/images/anima/player/legs-0.png
+%%DATADIR%%/images/anima/player/legs-1.png
+%%DATADIR%%/images/anima/player/legs-10.png
+%%DATADIR%%/images/anima/player/legs-11.png
+%%DATADIR%%/images/anima/player/legs-12.png
+%%DATADIR%%/images/anima/player/legs-13.png
+%%DATADIR%%/images/anima/player/legs-14.png
+%%DATADIR%%/images/anima/player/legs-15.png
+%%DATADIR%%/images/anima/player/legs-16.png
+%%DATADIR%%/images/anima/player/legs-17.png
+%%DATADIR%%/images/anima/player/legs-18.png
+%%DATADIR%%/images/anima/player/legs-19.png
+%%DATADIR%%/images/anima/player/legs-2.png
+%%DATADIR%%/images/anima/player/legs-20.png
+%%DATADIR%%/images/anima/player/legs-21.png
+%%DATADIR%%/images/anima/player/legs-22.png
+%%DATADIR%%/images/anima/player/legs-23.png
+%%DATADIR%%/images/anima/player/legs-24.png
+%%DATADIR%%/images/anima/player/legs-3.png
+%%DATADIR%%/images/anima/player/legs-4.png
+%%DATADIR%%/images/anima/player/legs-5.png
+%%DATADIR%%/images/anima/player/legs-6.png
+%%DATADIR%%/images/anima/player/legs-7.png
+%%DATADIR%%/images/anima/player/legs-8.png
+%%DATADIR%%/images/anima/player/legs-9.png
+%%DATADIR%%/images/blood_0.png
+%%DATADIR%%/images/blood_1.png
+%%DATADIR%%/images/blood_2.png
+%%DATADIR%%/images/medikit.png
+%%DATADIR%%/images/pistol_bullet.png
+%%DATADIR%%/images/player_top.png
+%%DATADIR%%/images/pm.png
+%%DATADIR%%/images/remington.png
+%%DATADIR%%/images/terrain/0/0.png
+%%DATADIR%%/images/terrain/0/1.png
+%%DATADIR%%/images/terrain/1/0.png
+%%DATADIR%%/images/terrain/1/1.png
+%%DATADIR%%/images/terrain/2/0.png
+%%DATADIR%%/images/terrain/2/1.png
+%%DATADIR%%/images/terrain/2/2.png
+%%DATADIR%%/images/terrain/3/0.png
+%%DATADIR%%/images/terrain/3/1.png
+%%DATADIR%%/images/terrain/base_0.png
+%%DATADIR%%/images/terrain/base_1.png
+%%DATADIR%%/images/terrain/base_2.png
+%%DATADIR%%/images/terrain/base_3.png
+%%DATADIR%%/images/uzi.png
+%%DATADIR%%/sounds/ak-47_reload.ogg
+%%DATADIR%%/sounds/ak-47_shot.ogg
+%%DATADIR%%/sounds/ambient_zombie.ogg
+%%DATADIR%%/sounds/player_hit_0.ogg
+%%DATADIR%%/sounds/player_hit_1.ogg
+%%DATADIR%%/sounds/player_hit_2.ogg
+%%DATADIR%%/sounds/player_killed.ogg
+%%DATADIR%%/sounds/pm_reload.ogg
+%%DATADIR%%/sounds/pm_shot.ogg
+%%DATADIR%%/sounds/remington_reload.ogg
+%%DATADIR%%/sounds/remington_shot.ogg
+%%DATADIR%%/sounds/uzi_reload.ogg
+%%DATADIR%%/sounds/uzi_shot.ogg
+%%DATADIR%%/sounds/zombie_hit_1.ogg
+%%DATADIR%%/sounds/zombie_hit_2.ogg
+%%DATADIR%%/weapons
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/images/terrain/3
+@dirrm %%DATADIR%%/images/terrain/2
+@dirrm %%DATADIR%%/images/terrain/1
+@dirrm %%DATADIR%%/images/terrain/0
+@dirrm %%DATADIR%%/images/terrain
+@dirrm %%DATADIR%%/images/anima/player
+@dirrm %%DATADIR%%/images/anima/monsters/1
+@dirrm %%DATADIR%%/images/anima/monsters/0
+@dirrm %%DATADIR%%/images/anima/monsters
+@dirrm %%DATADIR%%/images/anima/bleed
+@dirrm %%DATADIR%%/images/anima
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%

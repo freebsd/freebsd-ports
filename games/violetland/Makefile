@@ -1,0 +1,37 @@
+# New ports collection makefile for:	violetland
+# Date created:		25 Oct 2009
+# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	violetland
+PORTVERSION=	0.2.0
+CATEGORIES=	games
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	Top-down survival shoot 'em up
+
+USE_ZIP=	yes
+USE_SDL=	sdl mixer image ttf
+USE_GL=		gl glu
+MAKE_JOBS_SAFE=	yes
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
+
+DESKTOP_ENTRIES="Violetland" \
+		"Top-down survival shoot 'em up" \
+		"" \
+		"violetland" \
+		"Game;ArcadeGame;" \
+		false
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/src/system/FileUtility.cpp
+
+.include <bsd.port.mk>
