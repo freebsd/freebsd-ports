@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minised
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.exactcode.de/oss/minised/ CENKES
 
