@@ -22,6 +22,8 @@ LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep \
 BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 
+BROKEN=		leaves files behind on deinstallation
+
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
