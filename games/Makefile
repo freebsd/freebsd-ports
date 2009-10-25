@@ -896,6 +896,7 @@
     SUBDIR += vectoroids
     SUBDIR += vegastrike
     SUBDIR += vegastrike-data
+    SUBDIR += violetland
     SUBDIR += vitetris
     SUBDIR += volleyball
     SUBDIR += vor
