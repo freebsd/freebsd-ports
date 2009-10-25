@@ -17,9 +17,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/MusicPlayerInfo/default.xml
 %%INSTDIR%%/resources/AppData/Plugins/.keep_me
 %%INSTDIR%%/resources/AppData/Skins/.keep_me
-%%INSTDIR%%/resources/AppData/Sounds/MSN Email.wav
-%%INSTDIR%%/resources/AppData/Sounds/MSN Message.wav
-%%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
+%%INSTDIR%%/resources/AppData/Sounds/MSNMessage.mp3
 %%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
 %%INSTDIR%%/resources/AppData/SplashWindow/EinsteinYellow.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/Danny.zip
@@ -37,7 +35,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact.zip
 %%INSTDIR%%/resources/AppData/Views/Default_CLGroup.zip
 %%INSTDIR%%/resources/AppData/Views/Default_Chat.zip
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard.zip
 %%INSTDIR%%/resources/AppData/Views/Default_ContactTooltip.zip
 %%INSTDIR%%/resources/AppData/Views/Default_EventBox.zip
 %%INSTDIR%%/resources/AppData/Views/Default_General.zip
