@@ -1,6 +1,8 @@
 bin/tablify
+bin/tab2graph
 bin/tabmerge
 %%SITE_PERL%%/Text/RecordParser.pm
 %%SITE_PERL%%/Text/RecordParser/Tab.pm
+%%SITE_PERL%%/Text/RecordParser/Object.pm
 @dirrm %%SITE_PERL%%/Text/RecordParser
 @dirrmtry %%SITE_PERL%%/Text
