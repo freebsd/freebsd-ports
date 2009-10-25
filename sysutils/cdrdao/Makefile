@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	cdrdao
-PORTVERSION=	1.2.2
-PORTREVISION?=	1
+PORTVERSION=	1.2.3
+PORTREVISION?=	0
 CATEGORIES=	sysutils audio
 MASTER_SITES=	SF
 DISTNAME=	cdrdao-${PORTVERSION}
@@ -28,35 +28,42 @@ MP3OGG_LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 
 .if ${PORTNAME} == "gcdmaster"
 USE_GNOME=		gnomehier pkgconfig
-LIB_DEPENDS=		${MP3OGG_LIB_DEPENDS} \
+GCONF_SCHEMAS=		gcdmaster.schemas
+LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS} \
 			gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
-RUN_DEPENDS=		${LOCALBASE}/bin/cdrdao:${PORTSDIR}/sysutils/cdrdao \
+RUN_DEPENDS+=		${LOCALBASE}/bin/cdrdao:${PORTSDIR}/sysutils/cdrdao \
 			${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
 MAN1=			gcdmaster.1
-CONFIGURE_ARGS=		--without-lame
+CONFIGURE_ARGS+=	--with-lame=no
 .else
-MAN1=			cdrdao.1 cue2toc.1
-CONFIGURE_ARGS=		--without-xdao
+MAN1=			cdrdao.1 cue2toc.1 toc2cddb.1 toc2cue.1
+CONFIGURE_ARGS+=	--with-xdao=no
 .if defined(WITH_TOC2MP3)
-LIB_DEPENDS=		mp3lame.0:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-include=${LOCALBASE}/include \
 			--with-lame-lib=${LOCALBASE}/lib
 PLIST_SUB+=		TOC2MP3=""
 .else
-CONFIGURE_ARGS+=	--without-lame
+CONFIGURE_ARGS+=	--with-lame=no
 PLIST_SUB+=		TOC2MP3="@comment "
 .endif
 .if !defined(WITHOUT_MP3OGG)
 USE_GNOME=		pkgconfig
 LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS}
+CONFIGURE_ENV+=		AO_CFLAGS=-I${LOCALBASE}/include \
+			AO_LIBS="-L${LOCALBASE}/lib -lao" \
+			MAD_CFLAGS=-I${LOCALBASE}/include \
+			MAD_LIBS="-L${LOCALBASE}/lib -lmad" \
+			VORBISFILE_CFLAGS=-I${LOCALBASE}/include \
+			VORBISFILE_LIBS="-L${LOCALBASE}/lib -lvorbisfile"
 .else
-CONFIGURE_ARGS+=	--without-mp3-support --without-ogg-support
+CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 .endif
 .endif
 
 CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
 			--with-pcctsinc=${LOCALBASE}/include/pccts \
-			--without-posix-threads --with-scglib=pkg
+			--with-posix-threads=no --with-scglib
 MAKE_ENV=		CCOM=cc LANG=C
 SCSILIBTARGET=		${ARCH}-freebsd-cc
 
@@ -112,6 +119,9 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -E -e 's|(^CDRDAO_DATA_DIR.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/dao/Makefile.in
+.for i in toc2cddb.1 toc2cue.1
+	@${REINPLACE_CMD} -e 's|1\.2\.2|${PORTVERSION}|g' ${WRKSRC}/utils/${i}
+.endfor
 .endif
 
 do-install:
@@ -131,9 +141,12 @@ do-install:
 		${LOCALBASE}/share/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
 		${LOCALBASE}/share/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
+		${LOCALBASE}/etc/gconf/schemas
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
 		${LOCALBASE}/share/mime/packages
 	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade ${DATADIR}
 .else
 	@${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${PREFIX}/bin
@@ -141,7 +154,9 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/utils/cue2toc ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/utils/cue2toc.1 ${PREFIX}/man/man1
 	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cddb ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cddb.1 ${PREFIX}/man/man1
 	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cue.1 ${PREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers ${DATADIR}/drivers
 .if defined(WITH_TOC2MP3)
