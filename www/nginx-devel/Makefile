@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.20
+PORTVERSION=	0.8.21
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -28,6 +28,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_FLV_MODULE		"Enable http_flv module" off \
 		HTTP_GEOIP_MODULE	"Enable http_geoip module" off \
 		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
+		HTTP_IMAGE_FILTER_MODULE "Enable http_image_filter module" off \
 		HTTP_PERL_MODULE	"Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE	"Enable http_realip module" off \
@@ -171,6 +172,10 @@ LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 
 .if defined(WITH_HTTP_GZIP_STATIC_MODULE)
 CONFIGURE_ARGS+=--with-http_gzip_static_module
+.endif
+
+.if defined(WITH_HTTP_IMAGE_FILTER_MODULE)
+CONFIGURE_ARGS+=--with-http_image_filter_module
 .endif
 
 .if defined(WITH_HTTP_MOGILEFS_MODULE)
