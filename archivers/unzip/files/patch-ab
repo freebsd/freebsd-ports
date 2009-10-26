@@ -1,11 +1,11 @@
---- unix/unix.c.bak	Wed May 26 21:40:00 2004
-+++ unix/unix.c	Wed May 26 21:40:09 2004
-@@ -533,7 +533,7 @@
- 
-             default:
-                 /* allow European characters in filenames: */
--                if (isprint(workch) || (128 <= workch && workch <= 254))
-+                if (isprint(workch) || (128 <= workch && workch <= 255))
+--- unix/unix.c.orig	2009-01-24 02:31:26.000000000 +0300
++++ unix/unix.c	2009-10-26 13:22:08.000000000 +0300
+@@ -610,7 +610,7 @@
+                  * else allow 8-bit characters (e.g. UTF-8) in filenames:
+                  */
+                 if (uO.cflxflag ||
+-                    (isprint(workch) || (128 <= workch && workch <= 254)))
++		    (isprint(workch) || (128 <= workch && workch <= 255)))
                      *pp++ = (char)workch;
          } /* end switch */
  
