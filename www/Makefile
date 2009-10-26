@@ -303,7 +303,6 @@
     SUBDIR += igal
     SUBDIR += igal2
     SUBDIR += ikiwiki
-    SUBDIR += ilias
     SUBDIR += ilias3
     SUBDIR += imgsizer
     SUBDIR += impresscms
