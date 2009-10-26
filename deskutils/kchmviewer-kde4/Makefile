@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kchmviewer
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 
