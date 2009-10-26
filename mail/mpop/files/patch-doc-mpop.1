@@ -1,0 +1,23 @@
+--- doc/mpop.1.orig     2009-10-05 16:47:15.000000000 -0300
++++ doc/mpop.1  2009-10-24 12:18:19.000000000 -0200
+@@ -333,6 +333,11 @@
+ .br
+ On Debian based systems, you can install the \fBca\-certificates\fP package and
+ use the file \fB/etc/ssl/certs/ca\-certificates.crt\fP.
+++.br
++On FreeBSD based systems, you can install the \fBsecurity/ca_root_nss\fP port and
+++use the file \fB/usr/local/share/certs/ca-root-nss.crt\fP. Please note that if
+++you are installing mpop from ports with OpenSSL or gnutls support,
+++the \fBsecurity/ca_root_nss\fP port will be installed automaticly.
+ .br
+ An empty argument disables this feature.
+ .IP "tls_crl_file [\fIfile\fP]"
+@@ -457,7 +462,7 @@
+ .br
+ # Enable full TLS certificate checks.
+ .br
+-tls_trust_file /etc/ssl/certs/ca\-certificates.crt
++tls_trust_file /usr/local/share/certs/ca-root-nss.crt
+ .br
+ # Use the POP3-over-TLS variant instead of the STARTTLS variant.
+ .br

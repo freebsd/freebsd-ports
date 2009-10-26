@@ -286,6 +286,7 @@
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += moztraybiff
+    SUBDIR += mpop
     SUBDIR += mreport
     SUBDIR += msgconvert
     SUBDIR += msmtp
