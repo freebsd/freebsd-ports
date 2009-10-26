@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Calculate Japanese Holiday
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+RUN_DEPENDS=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/${PERL_ARCH}/Date/Simple.pm:${PORTSDIR}/devel/p5-Date-Simple \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Time/JulianDay.pm:${PORTSDIR}/devel/p5-Time-modules

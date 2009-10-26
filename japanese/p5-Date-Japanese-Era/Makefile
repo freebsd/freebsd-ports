@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conversion between Japanese Era / Gregorian calendar
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+BUILD_DEPENDS=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/Lingua/JA/Numbers.pm:${PORTSDIR}/japanese/p5-Lingua-JA-Numbers
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
