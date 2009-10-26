@@ -39,4 +39,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/share/man/#/man/#g' -e 's#-ansi##g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: attempts to use i386 asm
+.endif
+
+.include <bsd.port.post.mk>
