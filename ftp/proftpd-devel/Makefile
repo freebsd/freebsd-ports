@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.3rc1
+DISTVERSION=	1.3.3rc2
+PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp1.at.proftpd.org/distrib/source/ \
 		ftp://ftp1.ca.proftpd.org/distrib/source/ \
 		ftp://ftp1.us.proftpd.org/distrib/source/ \
+		https://secure.thrallingpenguin.com/redmine/attachments/download/1/:clam \
+		http://www.smartftp.com/oss/proftpd/:digest \
 		LOCAL/beech \
 		LOCAL/beech:clam \
 		LOCAL/beech:digest
@@ -48,7 +51,6 @@ PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
 		FXP.html Regex.html Tracing.html
 
 USE_GMAKE=	yes
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 
@@ -289,7 +291,7 @@ MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 
 post-extract:
 .if defined(WITH_CLAMAV)
-	@${CP} ${WRKDIR}/mod_clamav-0.10/mod_clamav.* ${WRKSRC}/contrib
+	@${CP} ${WRKDIR}/mod_clamav-0.11rc/mod_clamav.* ${WRKSRC}/contrib
 .endif
 .if defined(WITH_DIGEST)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
