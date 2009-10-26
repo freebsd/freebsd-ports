@@ -20,8 +20,6 @@ bin/texmakerx
 %%DATADIR%%/doc8.png
 %%DATADIR%%/doc9.png
 %%DATADIR%%/latexhelp.html
-%%DATADIR%%/texmaker_fr.qm
-%%DATADIR%%/texmaker_de.qm
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/qt_fr.qm
 %%DATADIR%%/qt_de.qm
@@ -41,4 +39,23 @@ bin/texmakerx
 %%DATADIR%%/texmaker128x128.png
 %%DATADIR%%/texmaker.desktop
 %%DATADIR%%/texmaker.svg
+%%DATADIR%%/texmakerx_fr.qm
+%%DATADIR%%/texmakerx_de.qm
+%%DATADIR%%/texmakerx_it.qm
+%%DATADIR%%/template_Article.tex
+%%DATADIR%%/template_Beamer.tex
+%%DATADIR%%/template_Book.tex
+%%DATADIR%%/template_HA-prosper.tex
+%%DATADIR%%/template_Letter.tex
+%%DATADIR%%/template_Prosper.tex
+%%DATADIR%%/template_Report.tex
+%%DATADIR%%/template_Scrartcl.tex
+%%DATADIR%%/template_Scrbook.tex
+%%DATADIR%%/template_Scrlttr2.tex
+%%DATADIR%%/template_Scrreprt.tex
+%%DATADIR%%/de_DE.aff
+%%DATADIR%%/de_DE.dic
+%%DATADIR%%/th_en_US_v2.dat
+%%DATADIR%%/th_fr_FR_v2.dat
+%%DATADIR%%/th_de_DE_v2.dat
 @dirrm %%DATADIR%%
