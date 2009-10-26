@@ -5,6 +5,7 @@ etc/jailkit/jk_lsh.ini
 etc/jailkit/jk_socketd.ini
 etc/jailkit/jk_chrootsh.ini
 etc/jailkit/jk_update.ini
+etc/jailkit/jk_uchroot.ini
 sbin/jk_chrootlaunch
 sbin/jk_chrootsh
 sbin/jk_cp
