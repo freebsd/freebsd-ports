@@ -169,7 +169,7 @@ SED_SCRIPT=	-e "s;\`-pthread\';\`${PTHREAD_LIBS}\';" \
 SED_SCRIPT+=	-e "s;-DNIS ;;"
 .endif
 
-post-extract:
+post-patch:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
 		> ${WRKSRC}/sm-client.sh
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
