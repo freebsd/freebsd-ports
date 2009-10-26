@@ -1,5 +1,14 @@
---- configure.orig	Tue Dec 14 20:00:19 1999
-+++ configure	Sun Dec  8 19:58:41 2002
+--- configure.orig	1999-12-15 05:00:19.000000000 +0100
++++ configure	2009-10-26 16:31:21.000000000 +0100
+@@ -1453,7 +1453,7 @@
+ 	    # results, and the version is kept in special file).
+ 	
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' '/etc/.relid'`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
 @@ -1757,7 +1757,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
@@ -28,7 +37,7 @@
  	    
  else
    echo "$ac_t""no" 1>&6
-@@ -2267,6 +2272,7 @@
+@@ -2267,6 +2267,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
