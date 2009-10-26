@@ -11,6 +11,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_api.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_app.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_appmod_cgi.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_appmod_fcgi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_cgi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_compile.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_config.beam
@@ -23,6 +24,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log_file_h.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ls.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_multipart.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_outmod.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_pam.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
@@ -62,6 +64,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_api.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_app.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_appmod_cgi.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_appmod_fcgi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_cgi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_compile.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_config.erl
@@ -78,6 +81,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_log.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_log_file_h.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_ls.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_multipart.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_outmod.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_pam.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_revproxy.erl
@@ -94,7 +98,6 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup_restarts.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
-%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_vdir.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/ymnesia.erl
@@ -309,6 +312,7 @@ bin/yaws
 %%WWWDIR%%/upload.yaws
 %%WWWDIR%%/upload0.yaws
 %%WWWDIR%%/urandom.yaws
+%%WWWDIR%%/urandom_from_pid.yaws
 %%WWWDIR%%/yapp_intro.yaws
 %%WWWDIR%%/yaws-1.55_to_1.56.patch
 %%WWWDIR%%/ybed.erl
