@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qdevelop
-PORTVERSION=	0.26.1
-PORTREVISION=	1
+PORTVERSION=	0.27.4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://qdevelop.org/public/release/
 
@@ -25,7 +24,7 @@ CMAKE_USE_PTHREAD=	yes
 
 DESKTOP_ENTRIES=	"QDevelop" \
 			"Qt4 development environment" \
-			"qdevelop" \
+			"${PREFIX}/share/pixmaps/qdevelop.png" \
 			"qdevelop" \
 			"Qt;KDE;Development;" \
 			"false"
