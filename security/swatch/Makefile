@@ -17,7 +17,7 @@ COMMENT=	The Simple WATCHer and filter
 BUILD_DEPENDS=	${BUILD_DEPENDS_56} \
 	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

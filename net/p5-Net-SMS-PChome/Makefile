@@ -16,7 +16,7 @@ COMMENT=	Send SMS messages via the sms.pchome.com.tw service
 
 BUILD_DEPENDS=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
 		${SITE_PERL}/HTML/TagParser.pm:${PORTSDIR}/www/p5-HTML-TagParser \
-		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+		${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

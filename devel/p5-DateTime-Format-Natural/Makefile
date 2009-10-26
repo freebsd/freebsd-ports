@@ -16,7 +16,7 @@ COMMENT=	Create machine readable date/time with natural parsing logic
 
 BUILD_DEPENDS=	\
 		${SITE_PERL}/boolean.pm:${PORTSDIR}/devel/p5-boolean \
-		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+		${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate

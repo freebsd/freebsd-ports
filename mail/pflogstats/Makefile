@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/${PORTNAME}/
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	Postfix Log Statistics Reporter
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+RUN_DEPENDS=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 		${SITE_PERL}/Number/Format.pm:${PORTSDIR}/textproc/p5-Number-Format \

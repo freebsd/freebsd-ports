@@ -18,7 +18,7 @@ PERL_CONFIGURE=	yes
 
 # define WITHOUT_DATE_CALC to disable support for rand_date()
 .if !defined(WITHOUT_DATE_CALC)
-EXTRA_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+EXTRA_DEPENDS+=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 
 # define WITH_GD to enable support for rand_image()
