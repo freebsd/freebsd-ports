@@ -19,6 +19,8 @@ RUN_DEPENDS=	${SITE_PERL}/Apache/AuthCookie.pm:${PORTSDIR}/www/p5-Apache-AuthCoo
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		does not build
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::AuthTicket.3 Apache2::AuthTicket.3
