@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	unzip
-PORTVERSION=	5.52
-PORTREVISION=	5
+PORTVERSION=	6.0
 CATEGORIES?=	archivers
-MASTER_SITES=	SF/infozip/UnZip%205.x%20and%20earlier/${PORTVERSION}
-DISTNAME=	${PORTNAME}552
+MASTER_SITES=	SF/infozip/UnZip%206.x%20(latest)/UnZip%20${PORTVERSION} \
+		SF/infozip/UnZip%205.x%20and%20earlier/5.51:unreduce
+DISTNAME=	${PORTNAME}60
 
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT?=	List, test and extract compressed files in a ZIP archive
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
 .if defined(INSTALL_AS_INFOUNZIP)
 UNZIP_NAME=	info-unzip
@@ -26,16 +25,18 @@ PLIST_FILES=	bin/${UNZIP_NAME} bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
 PORTDOCS=	README WHERE
 MAN1=		${UNZIP_NAME}.1 funzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
-CFLAGS+=	-D_FILE_OFFSET_BITS=64
-LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR
+LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR \
+		-DUNICODE_SUPPORT -DUNICODE_WCHAR -DUTF8_MAYBE_NATIVE -D_MBCS \
+		-DLARGE_FILE_SUPPORT
 
 .if defined(WITH_UNZIP_UNREDUCE)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip
-EXTRACT_ONLY=	${PORTNAME}552.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip:unreduce
+EXTRACT_ONLY=	${PORTNAME}60.tar.gz
 LOCAL_UNZIP+=	-DUSE_SMITH_CODE
 .endif
 
-MAKE_ENV=	LOCAL_UNZIP="${LOCAL_UNZIP}"
+MAKE_ENV=	LOCAL_UNZIP="${LOCAL_UNZIP}" \
+		D_USE_BZ2=-DUSE_BZIP2 L_BZ2=-lbz2
 
 .ifdef USE_UNZIP
 .error You have `USE_UNZIP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
