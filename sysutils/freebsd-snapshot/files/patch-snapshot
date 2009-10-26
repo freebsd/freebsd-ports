@@ -11,28 +11,3 @@
 
  #   option defaults
  fs_subdir=".snap"
-@@ -271,7 +271,7 @@
-         i=19
-         k=`expr $maxgen - 1`
-         while [ $i -gt $k ]; do
--            if zfs list "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
-+            if zfs list -t snapshot "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
-                 system zfs destroy "$fs_name@$fs_tag.$i"
-             fi
-             i=`expr $i - 1`
-@@ -280,12 +280,12 @@
-         if [ $maxgen -gt 0 ]; then
-             #   rotate remaining snapshots
-             i=$k
--            if zfs list "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
-+            if zfs list -t snapshot "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
-                 system zfs destroy "$fs_name@$fs_tag.$i"
-             fi
-             i=`expr $i - 1`
-             while [ $i -ge $fs_gen ]; do
--                if zfs list "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
-+                if zfs list -t snapshot "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
-                     j=`expr $i + 1`
-                     system zfs rename "$fs_name@$fs_tag.$i" "$fs_name@$fs_tag.$j"
-                 fi 
-
