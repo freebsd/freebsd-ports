@@ -1,5 +1,14 @@
---- configure.orig	Fri Oct 18 22:44:46 2002
-+++ configure	Tue Nov 12 21:40:13 2002
+--- configure.orig	2002-10-18 22:44:46.000000000 +0200
++++ configure	2009-10-26 16:24:59.000000000 +0100
+@@ -4767,7 +4767,7 @@
+ 	    # results, and the version is kept in special file).
+ 	
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' '/etc/.relid'`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
 @@ -4831,7 +4831,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
@@ -38,3 +47,12 @@
  	    	TCL_LIB_VERSIONS_OK=nodots
  		;;
  	    esac
+@@ -6192,7 +6193,7 @@
+ 	    # results, and the version is kept in special file).
+ 	
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' '/etc/.relid'`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`

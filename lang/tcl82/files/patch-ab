@@ -1,5 +1,14 @@
---- configure.orig	Tue Dec 14 19:59:18 1999
-+++ configure	Mon Dec 16 11:52:34 2002
+--- configure.orig	1999-12-15 04:59:18.000000000 +0100
++++ configure	2009-10-26 16:20:22.000000000 +0100
+@@ -4587,7 +4587,7 @@
+ 	    # results, and the version is kept in special file).
+ 	
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' '/etc/.relid'`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
 @@ -4648,7 +4648,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
@@ -39,7 +48,7 @@
  	    
  else
    echo "$ac_t""no" 1>&6
-@@ -4954,17 +4959,6 @@
+@@ -4954,17 +4954,6 @@
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
@@ -57,7 +66,7 @@
  	NEXTSTEP-*)
  	    SHLIB_CFLAGS=""
  	    SHLIB_LD="cc -nostdlib -r"
-@@ -5371,7 +5365,7 @@
+@@ -5371,7 +5360,7 @@
  	SHARED_LIB_SUFFIX='${VERSION}\$\{DBGX\}${SHLIB_SUFFIX}'
      fi
      if test "$UNSHARED_LIB_SUFFIX" = "" ; then
@@ -66,7 +75,16 @@
      fi
  
      
-@@ -5594,7 +5588,7 @@
+@@ -5507,7 +5496,7 @@
+ 	    # results, and the version is kept in special file).
+ 	
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' '/etc/.relid'`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
+@@ -5594,7 +5583,7 @@
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
  	MAKE_LIB="ar cr \${TCL_LIB_FILE} \${OBJS}"
      else
@@ -75,7 +93,7 @@
  	RANLIB=":"
      fi
  else
-@@ -5628,11 +5622,7 @@
+@@ -5628,11 +5617,7 @@
  # up the Tcl library.
  
  if test "$SHARED_BUILD" = "0" -o $TCL_NEEDS_EXP_FILE = 0; then
@@ -88,7 +106,7 @@
      TCL_BUILD_LIB_SPEC="-L`pwd` ${TCL_LIB_FLAG}"
      TCL_LIB_SPEC="-L${exec_prefix}/lib ${TCL_LIB_FLAG}"
  else
-@@ -5678,11 +5668,7 @@
+@@ -5678,11 +5663,7 @@
  
  TCL_STUB_LIB_FILE=${STUB_LIB_FILE}
  
