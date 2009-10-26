@@ -36,6 +36,9 @@ PLIST_FILES=	include/openjpeg.h \
 
 SHLIB_VER=	2
 
+post-patch:	.SILENT
+		${FIND} ${WRKSRC} -type f -name Makefile -exec ${REINPLACE_CMD} 's|gcc|$$(CC)|g' {} +
+
 do-install:
 		${INSTALL_DATA} ${WRKSRC}/libopenjpeg/openjpeg.h ${PREFIX}/include/
 		${INSTALL_DATA} ${WRKSRC}/libopenjpeg.a ${PREFIX}/lib/
