@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.mico.org/
 PATCH_SITES=	http://mico.org/errata/
 PATCHFILES=	mico-2.3.12-secfix1.diff
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure, reliable, production-quality, standards-based CORBA middleware
 
 PATCH_DIST_STRIP=	-p1
