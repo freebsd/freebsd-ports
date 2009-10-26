@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.62
+PORTVERSION=	0.7.63
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -25,6 +25,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_DAV_MODULE		"Enable http_webdav module" off \
 		HTTP_FLV_MODULE		"Enable http_flv module" off \
 		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
+		HTTP_IMAGE_FILTER_MODULE "Enable http_image_filter module" off \
 		HTTP_PERL_MODULE	"Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE	"Enable http_realip module" off \
@@ -159,6 +160,10 @@ CONFIGURE_ARGS+=--with-http_flv_module
 
 .if defined(WITH_HTTP_GZIP_STATIC_MODULE)
 CONFIGURE_ARGS+=--with-http_gzip_static_module
+.endif
+
+.if defined(WITH_HTTP_IMAGE_FILTER_MODULE)
+CONFIGURE_ARGS+=--with-http_image_filter_module
 .endif
 
 .if defined(WITH_HTTP_MOGILEFS_MODULE)
