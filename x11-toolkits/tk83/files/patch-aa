@@ -1,5 +1,14 @@
---- configure.orig	Wed Oct 23 19:45:50 2002
-+++ configure	Tue Nov 12 21:51:56 2002
+--- configure.orig	2002-10-23 19:45:50.000000000 +0200
++++ configure	2009-10-26 16:36:07.000000000 +0100
+@@ -1763,7 +1763,7 @@
+ 	    # results, and the version is kept in special file).
+ 	
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' '/etc/.relid'`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
 @@ -2496,12 +2496,12 @@
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
