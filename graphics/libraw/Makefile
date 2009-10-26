@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
