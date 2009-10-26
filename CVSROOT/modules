@@ -1571,6 +1571,7 @@ clamfilter                      ports/mail/clamfilter
 clamsmtp                        ports/security/clamsmtp
 clamtk                          ports/security/clamtk
 clamz                           ports/net/clamz
+clang                           ports/devel/clang
 clanlib                         ports/devel/clanlib
 claraocr                        ports/graphics/claraocr
 clarence                        ports/math/clarence
@@ -7796,7 +7797,6 @@ libwmf                          ports/graphics/libwmf
 libwnck                         ports/x11-toolkits/libwnck
 libwnck-reference               ports/x11-toolkits/libwnck-reference
 libworkman                      ports/audio/libworkman
-libwpcg                         ports/graphics/libwpcg
 libwpd                          ports/textproc/libwpd
 libwpg                          ports/graphics/libwpg
 libwps                          ports/textproc/libwps
@@ -11869,6 +11869,7 @@ p5-Image-Pngslimmer             ports/graphics/p5-Image-Pngslimmer
 p5-Image-Size                   ports/graphics/p5-Image-Size
 p5-Image-Size-FillFullSelect    ports/graphics/p5-Image-Size-FillFullSelect
 p5-Imager                       ports/graphics/p5-Imager
+p5-Imager-AverageGray           ports/graphics/p5-Imager-AverageGray
 p5-Imager-Graph                 ports/graphics/p5-Imager-Graph
 p5-Imager-Plot                  ports/graphics/p5-Imager-Plot
 p5-Imager-QRCode                ports/graphics/p5-Imager-QRCode
@@ -13585,6 +13586,7 @@ p5-Wx-Perl-ProcessStream        ports/x11-toolkits/p5-Wx-Perl-ProcessStream
 p5-X11-GUITest                  ports/x11/p5-X11-GUITest
 p5-X11-IdleTime                 ports/x11/p5-X11-IdleTime
 p5-X11-Protocol                 ports/x11/p5-X11-Protocol
+p5-X11-Resolution               ports/x11/p5-X11-Resolution
 p5-X500-DN                      ports/net/p5-X500-DN
 p5-XML-ApacheFOP                ports/print/p5-XML-ApacheFOP
 p5-XML-Atom                     ports/textproc/p5-XML-Atom
@@ -15408,6 +15410,7 @@ p5-image-pngslimmer             ports/graphics/p5-Image-Pngslimmer
 p5-image-size                   ports/graphics/p5-Image-Size
 p5-image-size-fillfullselect    ports/graphics/p5-Image-Size-FillFullSelect
 p5-imager                       ports/graphics/p5-Imager
+p5-imager-averagegray           ports/graphics/p5-Imager-AverageGray
 p5-imager-graph                 ports/graphics/p5-Imager-Graph
 p5-imager-plot                  ports/graphics/p5-Imager-Plot
 p5-imager-qrcode                ports/graphics/p5-Imager-QRCode
@@ -17241,6 +17244,7 @@ p5-wx-perl-processstream        ports/x11-toolkits/p5-Wx-Perl-ProcessStream
 p5-x11-guitest                  ports/x11/p5-X11-GUITest
 p5-x11-idletime                 ports/x11/p5-X11-IdleTime
 p5-x11-protocol                 ports/x11/p5-X11-Protocol
+p5-x11-resolution               ports/x11/p5-X11-Resolution
 p5-x500-dn                      ports/net/p5-X500-DN
 p5-xango                        ports/www/p5-Xango
 p5-xml-apachefop                ports/print/p5-XML-ApacheFOP
