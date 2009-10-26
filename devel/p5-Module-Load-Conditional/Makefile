@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	Module-Load-Conditional
-PORTVERSION=	0.30
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Looking up Perl modules information/loading at runtime
+
+RUN_DEPENDS=	p5-Module-CoreList>=2.22:${PORTSDIR}/devel/p5-Module-CoreList
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
