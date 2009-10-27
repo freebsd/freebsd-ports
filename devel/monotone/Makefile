@@ -7,18 +7,18 @@
 
 PORTNAME=	monotone
 PORTVERSION=	0.45
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/lib/libbotan-1.6.5.so:${PORTSDIR}/security/botan
-RUN_DEPENDS=	${LOCALBASE}/lib/libbotan-1.6.5.so:${PORTSDIR}/security/botan
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		idn.16:${PORTSDIR}/dns/libidn \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
+		botan.0:${PORTSDIR}/security/botan
 
 SUB_FILES=	pkg-message
 USE_PERL5_BUILD=yes
