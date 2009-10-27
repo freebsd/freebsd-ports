@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	violetland
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
@@ -29,9 +29,5 @@ DESKTOP_ENTRIES="Violetland" \
 		"violetland" \
 		"Game;ArcadeGame;" \
 		false
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/src/system/FileUtility.cpp
 
 .include <bsd.port.mk>
