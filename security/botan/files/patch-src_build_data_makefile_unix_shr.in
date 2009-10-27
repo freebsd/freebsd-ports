@@ -1,0 +1,24 @@
+--- src/build-data/makefile/unix_shr.in.orig	2009-09-10 02:29:34.000000000 +0200
++++ src/build-data/makefile/unix_shr.in	2009-10-27 14:30:46.000000000 +0100
+@@ -25,8 +25,8 @@
+ BINDIR        = $(DESTDIR)/bin
+ LIBDIR        = $(DESTDIR)/%{libdir}
+ HEADERDIR     = $(DESTDIR)/%{includedir}/botan
+-DOCDIR        = $(DESTDIR)/%{docdir}/Botan-$(VERSION)
+-PKGCONF_DIR   = $(LIBDIR)/pkgconfig
++DOCDIR        = $(DESTDIR)/%{docdir}/botan
++PKGCONF_DIR   = $(DESTDIR)/libdata/pkgconfig
+ 
+ CONFIG_SCRIPT = %{botan_config}
+ PKGCONFIG     = %{botan_pkgconfig}
+@@ -67,8 +67,8 @@
+ LIBNAME       = %{lib_prefix}libbotan
+ STATIC_LIB    = $(LIBNAME).a
+ 
+-SHARED_LIB    = $(LIBNAME)-$(SO_VERSION).%{so_suffix}
+-SONAME        = $(LIBNAME)-$(SO_VERSION).%{so_suffix}
++SHARED_LIB    = $(LIBNAME).%{so_suffix}.0
++SONAME        = $(LIBNAME).%{so_suffix}.0
+ 
+ SYMLINK       = libbotan.%{so_suffix}
+ 
