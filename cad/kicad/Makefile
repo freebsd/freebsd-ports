@@ -27,6 +27,8 @@ COMMENT=		Schematic and PCB editing software
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
+CONFLICTS=      kicad-devel*
+
 DOCVERSION=	1.1
 LIBVERSION=	1.0
 WRKSRC=		${WRKDIR}/kicad
