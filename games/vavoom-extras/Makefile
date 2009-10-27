@@ -22,6 +22,8 @@ COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port (extras)
 
 RUN_DEPENDS=	vavoom:${PORTSDIR}/games/vavoom
 
+DATADIR=	${PREFIX}/share/vavoom
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
