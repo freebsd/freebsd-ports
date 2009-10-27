@@ -49,6 +49,7 @@
     SUBDIR += iverilog
     SUBDIR += jspice3
     SUBDIR += kicad
+    SUBDIR += kicad-devel
     SUBDIR += klayout
     SUBDIR += leocad
     SUBDIR += libgeda
