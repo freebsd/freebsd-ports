@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Elixir
-PORTVERSION=	0.6.1
-#PORTREVISION=	0
+PORTVERSION=	0.7.0
+PORTREVISION=	0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
