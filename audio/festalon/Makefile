@@ -24,7 +24,7 @@ MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-ONLY_FOR_ARCHS=	i386 ppc
+ONLY_FOR_ARCHS=	i386 powerpc
 
 .include <bsd.port.pre.mk>
 
