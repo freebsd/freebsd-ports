@@ -1,46 +1,39 @@
-# New ports collection makefile for:  kicad
-# Date created:               29 November 2005
-# Whom:                       Thierry Thomas <thierry@FreeBSD.org>
+# New ports collection makefile for:  kicad-devel
+# Date created:               27 October 2009
+# Whom:                       Michael Reifenberger <mr@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		kicad
-PORTVERSION=		20080825
-PORTREVISION=	1
+DISTVERSION=    r${SVN_REV}
 CATEGORIES=		cad
-#MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
-#			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
-#			http://iut-tice.ujf-grenoble.fr/cao/:dat	\
-#			ftp://iut-tice.ujf-grenoble.fr/cao/:src		\
-#			ftp://ftp.lis.inpg.fr/uploads/kicad/:src	\
-#			http://iut-tice.ujf-grenoble.fr/cao/:src
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}%20src/${PORTVERSION}
-DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}		\
-			${PORTNAME}-library-${LIBVERSION}${EXTRACT_SUFX}	\
-			${PORTNAME}-doc-${LIBVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=		${PORTNAME}
-#EXTRACT_ONLY=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     mr
+PKGNAMESUFFIX=  -devel
+# Additional patches: http://svn.openmoko.org/trunk/gta02-core/kicad-patches/
 
-MAINTAINER=		thierry@FreeBSD.org
+MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
+CONFLICTS=      kicad-2008*
+
 DOCVERSION=	1.1
 LIBVERSION=	1.0
-WRKSRC=		${WRKDIR}/kicad
-MAKEFILE=	makefile.gtk
-INSTALL_TARGET=	install-bin install-res
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
+#USE_GMAKE=	yes
 USE_GL=		yes
 USE_WX=		2.8
 WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
 #TODO	Add support for Python.
+
+#OPTIONS=	GTA2CORE "Apply additional Openmoko GTA2_CORE patches" off
 
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
@@ -48,8 +41,22 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
+USE_CMAKE=      yes
+CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
+		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
+		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
+CMAKE_USE_PTHREAD=	yes
+
+MAKE_JOBS_SAFE= yes
 
 .include <bsd.port.pre.mk>
+
+#.if !defined(WITHOUT_GTA2CORE)
+#PATCH_STRIP=	-p1
+#EXTRA_PATCHES+= \
+#	${WRKDIR}/kicad-patches/eeschema-plot-only-mode.patch \
+#	${WRKDIR}/kicad-patches/streamline-erc.patch
+#.endif
 
 .if exists(${LOCALBASE}/bin/konqueror)
 RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
@@ -57,53 +64,92 @@ RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
-post-extract:
-	${CP} ${WRKSRC}/libs.linux ${WRKSRC}/libs.${OPSYS}
+.if defined(BOOTSTRAP)
+SVN_REV!=       svn info https://kicad.svn.sourceforge.net/svnroot/kicad/trunk/kicad | ${GREP} Revision | cut -d' ' -f2
+.else
+.include "Makefile.svn_rev"
+.endif
 
-pre-configure:
-	for f in `${FIND} ${WRKSRC} -name ${MAKEFILE}` ; do		\
-		${REINPLACE_CMD} -e 's|CC = gcc|#CC = gcc|'		\
-			-e 's|LD = gcc|LD = ${CC}|'			\
-			-e 's|LD = g++|LD = ${CXX}|'			\
-			-e 's|-O2|${CFLAGS} -I${LOCALBASE}/include|'	\
-			-e 's|wx-config|${WX_CONFIG}|'			\
-			-e 's|LDFLAGS =|LDFLAGS += -L${LOCALBASE}/lib|'	\
-			-e 's|libs.linux|libs.${OPSYS}|'		\
-			-e 's|gcc -D|${CC} -D|' $$f ;			\
+.if defined(BOOTSTRAP)
+FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export -r ${SVN_REV} \
+		https://kicad.svn.sourceforge.net/svnroot/kicad/trunk/kicad ${WRKSRC}
+	svn export -r ${SVN_REV} \
+		https://kicad.svn.sourceforge.net/svnroot/kicad/trunk/kicad-library ${WRKDIR}/kicad-library
+	svn export \
+		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
+	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME} kicad-library kicad-patches
+	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
+.endif
+
+ki:
+	svn export \
+		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
+
+post-configure:
+	${REINPLACE_CMD} -e 's|#define HAVE_ISO646_H|//#define HAVE_ISO646_H|'     \
+		${WRKSRC}/config.h
+	for f in `${FIND} ${WRKSRC} -name \*.make -o -name link.txt` ; do				\
+		${REINPLACE_CMD}						\
+		-e 's|CC = gcc|#CC = gcc|'             				\
+		-e 's|LD = gcc|LD = ${CC}|'                     		\
+		-e 's|LD = g++|LD = ${CXX}|'                    		\
+		-e 's|wx-config|${WX_CONFIG}|'                  		\
+		-e 's|CXX_FLAGS =|CXX_FLAGS = -I${LOCALBASE}/include|'		\
+		-e 's|C_FLAGS =|C_FLAGS = -I${LOCALBASE}/include|'		\
+		-e 's|LDFLAGS =|LDFLAGS += -L${LOCALBASE}/lib|' 		\
+		-e 's|gcc -D|${CC} -D|'						\
+		-e 's/-pthread;-D_THREAD_SAFE/-pthread -D_THREAD_SAFE/g'	\
+		$$f ;								\
 	done
-	${REINPLACE_CMD} -e 's|kicad/linux|kicad/${OPSYS}|'	\
-		-e 's|/usr/share/kicad|${DATADIR}|'		\
-		-e 's|/usr/local|${PREFIX}|' ${WRKSRC}/common/gestfich.cpp
-.for subdir in template internat
-	${REINPLACE_CMD} -e 's|libs.linux|libs.${OPSYS}|'	\
-		${WRKSRC}/${subdir}/makefile
-.endfor
-.for subdir in library modules
-	${REINPLACE_CMD} -e 's|libs.linux|libs.${OPSYS}|'	\
-		${WRKDIR}/kicad-library/${subdir}/makefile
-.endfor
-	${REINPLACE_CMD} -e 's|/usr/bin/xpdf|${LOCALBASE}/bin/xpdf|'	\
-		-e 's|/usr/bin/konqueror|${LOCALBASE}/bin/konqueror|'	\
-		${WRKSRC}/common/eda_doc.cpp
 
 pre-install:
-.for subdir in library modules
-	${CP} -Rp ${WRKDIR}/kicad-library/${subdir} ${WRKSRC}/
-.endfor
+	echo "${DATADIR}, ${DOCSDIR}"
 
 post-install:
-	${MKDIR} ${DOCSDIR}/help ${DESKTOPDIR}
-	(cd ${WRKDIR}/kicad-doc/doc/help	\
-		&& ${COPYTREE_SHARE} \* ${DOCSDIR}/help)
-	(cd ${WRKSRC}/resources/linux/opendesktop	\
-		&& ${COPYTREE_SHARE} \* ${DESKTOPDIR})
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-	${RM} ${EXAMPLESDIR}/CMakeLists.txt
-.endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+.for subdir in library modules
+	${CP} -Rp ${WRKDIR}/kicad-library/${subdir} ${DATADIR}
+.endfor
+
+PLIST_FILE_LIST=	bin/freeroute.jnlp \
+			bin/cvpcb \
+			bin/eeschema \
+			bin/gerbview \
+			bin/kicad \
+			bin/minizip \
+			bin/pcbnew \
+			share/mimelnk/application/x-kicad-schematic.desktop \
+			share/mimelnk/application/x-kicad-project.desktop \
+			share/icons/hicolor/24x24/mimetypes/application-x-kicad-project.png \
+			share/icons/hicolor/48x48/apps/kicad.png \
+			share/icons/hicolor/48x48/mimetypes/application-x-kicad-project.png \
+			share/icons/hicolor/scalable/apps/kicad.svg \
+			share/icons/hicolor/scalable/mimetypes/application-x-kicad-project.svg \
+			share/icons/hicolor/16x16/mimetypes/application-x-kicad-project.png \
+			share/icons/hicolor/32x32/mimetypes/application-x-kicad-project.png \
+			share/icons/hicolor/22x22/mimetypes/application-x-kicad-project.png \
+			share/mime/packages/kicad.xml \
+			share/applications/kicad.desktop \
+			share/applications/eeschema.desktop
+			
+PLIST_DIR_LIST=	
+
+build-plist:
+	${RM} -f ${PLIST}
+	cd ${PREFIX} && \
+		(ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
+		${SORT} >> ${PLIST}
+	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
+		${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
+		-e 's|${DOCSDIR}|%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
+	cd ${PREFIX} && \
+		${FIND} ${PLIST_DIR_LIST} -type d | \
+		${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
+	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
+		${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
+			-e 's|${DOCSDIR}|%%DOCSDIR%%|' \
+			-e 's|^|@dirrm |' >> ${PLIST}
 
 .include <bsd.port.post.mk>
