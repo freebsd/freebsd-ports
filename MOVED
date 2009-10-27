@@ -2813,7 +2813,6 @@ textproc/ruby-htmlcompact||2007-02-18|Has expired: distfile and homepage disappe
 textproc/ruby-rwv2||2007-02-18|Has expired: distfile disappeared and has no homepage
 net/happystats||2007-02-18|Has expired: Disappeared from the internet
 www/drupal-pubcookie||2007-02-19|Has expired: No maintainer
-lang/tcc||2007-02-19|Has expired: is unusable; tcc -run works, but little else
 www/p5-HTML||2007-02-23|Has expired: project no longer exists
 audio/speex-devel|audio/speex|2007-02-23|Merged into audio/speex
 www/horde|www/horde-base|2007-02-24|Port renamed for consistency
