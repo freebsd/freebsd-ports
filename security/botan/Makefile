@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .if !defined(WITHOUT_GMP)
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=--with-gnump
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
