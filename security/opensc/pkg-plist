@@ -12,6 +12,7 @@ bin/pkcs15-crypt
 bin/pkcs15-init
 bin/pkcs15-tool
 bin/rutoken-tool
+bin/westcos-tool
 etc/opensc.conf-sample
 include/opensc/asn1.h
 include/opensc/cardctl.h
@@ -65,12 +66,14 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/jcop.profile
 %%DATADIR%%/miocos.profile
 %%DATADIR%%/muscle.profile
+%%DATADIR%%/myeid.profile
 %%DATADIR%%/oberthur.profile
 %%DATADIR%%/pkcs15.profile
 %%DATADIR%%/rutoken.profile
 %%DATADIR%%/rutoken_ecp.profile
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
+%%DATADIR%%/westcos.profile
 %%SIGNER%%@dirrmtry %%WEBPLUGINS_DIR%%
 @dirrm include/opensc
 @dirrm lib/pkcs11

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opensc
-PORTVERSION=	0.11.9
-PORTREVISION=	1
+PORTVERSION=	0.11.11
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -39,7 +38,8 @@ PORTDOCS=	*
 MANCOMPRESSED=	no
 MAN1=		cardos-tool.1 cryptoflex-tool.1 netkey-tool.1 \
 		opensc-config.1 opensc-explorer.1 opensc-tool.1 \
-		pkcs11-tool.1 pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1
+		pkcs11-tool.1 pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 \
+		westcos-tool.1
 MAN3=		sc_app_info_t.3 sc_append_record.3 sc_asn1_decode.3 \
 		sc_asn1_encode.3 sc_asn1_entry.3 sc_asn1_find_tag.3 \
 		sc_asn1_print_tags.3 sc_asn1_put_tag.3 sc_asn1_read_tag.3 \
