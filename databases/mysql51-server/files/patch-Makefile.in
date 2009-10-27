@@ -7,7 +7,7 @@
 -SUBDIRS = . include @docs_dirs@ @zlib_dir@ \
 -			@readline_topdir@ sql-common scripts \
 -			@pstack_dir@ \
--			@sql_union_dirs@ unittest storage plugin \
+-			@sql_union_dirs@ unittest \
 -			@sql_server@ @man_dirs@ tests \
 -			netware @libmysqld_dirs@ \
 -			mysql-test support-files sql-bench @tools_dirs@ \
