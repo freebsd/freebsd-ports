@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/mysql-proxy/files/Attic/mysql-proxy.sh.in,v 1.2 2009-07-09 02:49:52 clsung Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/mysql-proxy/files/Attic/mysql-proxy.sh.in,v 1.3 2009-10-27 12:31:22 clsung Exp $
 #
 
 # PROVIDE: mysql-proxy
@@ -39,10 +39,14 @@ load_rc_config $name
 : ${mysql_proxy_address=":4040"}
 : ${mysql_proxy_backend_addresses="127.0.0.1:3306"}
 : ${mysql_proxy_pid_file="/var/run/mysql-proxy.pid"}
+proxy_backend_addresses=""
+for addr in ${mysql_proxy_backend_addresses}; do
+	proxy_backend_addresses="${proxy_backend_addresses} --proxy-backend-addresses=${addr}"
+done
 
 pidfile="${mysql_proxy_pid_file}"
 command=%%PREFIX%%/libexec/mysql-proxy
-command_args="--admin-address=${mysql_proxy_admin_address} --proxy-address=${mysql_proxy_address} --proxy-backend-addresses=${mysql_proxy_backend_addresses} ${mysql_proxy_args} --daemon --pid-file=${mysql_proxy_pid_file}"
+command_args="--admin-address=${mysql_proxy_admin_address} --proxy-address=${mysql_proxy_address} ${proxy_backend_addresses} ${mysql_proxy_args} --daemon --pid-file=${mysql_proxy_pid_file}"
 procname=%%PREFIX%%/libexec/mysql-proxy
 
 run_rc_command "$1"
