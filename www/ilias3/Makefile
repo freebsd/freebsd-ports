@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	3.10.9
+PORTVERSION=	3.10.10
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%203.10/ILIAS%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/2.%20ILIAS%203.10/ILIAS%20${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A poweful, dynamic, PHP and MySQL based e-learning platform
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
@@ -22,13 +22,14 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+CONFLICTS=	ilias-4.[0-9].*
+
 NO_BUILD=		yes
 SUB_FILES=		pkg-message
 USE_MYSQL=		yes
 DEFAULT_MYSQL_VER=	50
 USE_PHP=		mysql session zlib gd pdf dom xsl pcre
 DEFAULT_PHP_VER=	5
-#WANT_PHP_MOD=		yes
 WRKSRC=			${WRKDIR}/ilias3
 ILIASDATADIR=		www/iliasdata
 PORTDOCS=*

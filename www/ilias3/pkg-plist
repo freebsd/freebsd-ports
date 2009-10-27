@@ -2236,14 +2236,6 @@ www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/feeds
 www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/feeds/FeedManager.as
 www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/feeds/RSSParser.as
 www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/feeds/XSPFParser.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._AbstractModel.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._AbstractView.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._CallbackView.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._EqualizerView.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._ImageModel.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._JavascriptView.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._PlaylistView.as
-www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/._RotatorController.as
 www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/AbstractController.as
 www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/AbstractModel.as
 www/ilias/Services/MediaObjects/flash_flv_player/source/com/jeroenwijering/players/AbstractPlayer.as
