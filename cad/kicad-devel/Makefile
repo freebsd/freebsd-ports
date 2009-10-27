@@ -88,6 +88,9 @@ ki:
 	svn export \
 		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
 
+tmp:
+	echo "${DATADIR} ${DATADIR:H}"
+
 post-configure:
 	${REINPLACE_CMD} -e 's|#define HAVE_ISO646_H|//#define HAVE_ISO646_H|'     \
 		${WRKSRC}/config.h
@@ -134,7 +137,11 @@ PLIST_FILE_LIST=	bin/freeroute.jnlp \
 			share/applications/kicad.desktop \
 			share/applications/eeschema.desktop
 			
-PLIST_DIR_LIST=	
+PLIST_DIR_LIST=		lib/kicad	
+
+PLIST_SHAREDDIR_LIST=	share/applications \
+			share/mimelnk/application \
+			share/mimelnk
 
 build-plist:
 	${RM} -f ${PLIST}
@@ -147,6 +154,9 @@ build-plist:
 	cd ${PREFIX} && \
 		${FIND} ${PLIST_DIR_LIST} -type d | \
 		${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
+.for subdir in ${PLIST_SHAREDDIR_LIST}
+	@${ECHO_CMD} '@unexec ${RMDIR} %D/${subdir} 2> /dev/null || true' >> ${PLIST}
+.endfor
 	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
 		${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
 			-e 's|${DOCSDIR}|%%DOCSDIR%%|' \
