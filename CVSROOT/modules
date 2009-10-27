@@ -5500,7 +5500,7 @@ ike-scan                        ports/security/ike-scan
 ikiwiki                         ports/www/ikiwiki
 iksemel                         ports/textproc/iksemel
 ilbc                            ports/net/ilbc
-ilias                           ports/www/ilias
+ilias3                          ports/www/ilias3
 ilmbase                         ports/graphics/ilmbase
 ilohamail                       ports/mail/ilohamail
 ilohamail-devel                 ports/mail/ilohamail-devel
@@ -9107,6 +9107,7 @@ mplayer-skins                   ports/multimedia/mplayer-skins
 mplayerxp                       ports/multimedia/mplayerxp
 mplex                           ports/multimedia/mplex
 mpmf20                          ports/audio/mpmf20
+mpop                            ports/mail/mpop
 mpqc                            ports/science/mpqc
 mpqc-mpich                      ports/science/mpqc-mpich
 mprime                          ports/math/mprime
@@ -23314,6 +23315,7 @@ vinagre                         ports/net/vinagre
 vindaloo                        ports/graphics/vindaloo
 vinetto                         ports/security/vinetto
 vino                            ports/net/vino
+violetland                      ports/games/violetland
 vipec                           ports/cad/vipec
 vips                            ports/graphics/vips
 virtualbox                      ports/emulators/virtualbox
