@@ -830,8 +830,15 @@ Note:  Please add new entries to the beginning of this file.
      <affects>
        <package>
          <name>opera</name>
-         <name>linux-opera</name>
          <range><lt>10.00.20090830</lt></range>
+       </package>
+       <package>
+         <name>opera-devel</name>
+         <range><le>10.00.b3_1,1</le></range>
+       </package>
+       <package>
+         <name>linux-opera</name>
+         <range><lt>10.00</lt></range>
        </package>
      </affects>
      <description>
@@ -858,7 +865,7 @@ Note:  Please add new entries to the beginning of this file.
      <dates>
        <discovery>2009-09-01</discovery>
        <entry>2009-09-04</entry>
-       <modified>2009-09-04</modified>
+       <modified>2009-10-29</modified>
      </dates>
    </vuln>
 
