@@ -1,7 +1,7 @@
 bin/FBReader
-lib/libzlcore.so.0.10
+lib/libzlcore.so.0.11
 lib/libzlcore.so.%%VERSION%%
-lib/libzltext.so.0.10
+lib/libzltext.so.0.11
 lib/libzltext.so.%%VERSION%%
 lib/zlibrary/ui/zlui-%%UI%%.so
 share/FBReader/default/config.xml
@@ -17,6 +17,7 @@ share/FBReader/formats/xhtml/xhtml-lat1.ent
 share/FBReader/formats/xhtml/xhtml-special.ent
 share/FBReader/formats/xhtml/xhtml-symbol.ent
 share/FBReader/help/MiniHelp.cs.fb2
+share/FBReader/help/MiniHelp.de.fb2
 share/FBReader/help/MiniHelp.en.fb2
 share/FBReader/help/MiniHelp.fi.fb2
 share/FBReader/help/MiniHelp.fr.fb2
@@ -27,6 +28,7 @@ share/FBReader/help/MiniHelp.sv.fb2
 share/FBReader/help/MiniHelp.uk.fb2
 share/FBReader/resources/ar.xml
 share/FBReader/resources/cs.xml
+share/FBReader/resources/de.xml
 share/FBReader/resources/en.xml
 share/FBReader/resources/fi.xml
 share/FBReader/resources/fr.xml
@@ -112,6 +114,7 @@ share/zlibrary/keynames-%%UI%%.xml
 share/zlibrary/languagePatterns.zip
 share/zlibrary/resources/ar.xml
 share/zlibrary/resources/cs.xml
+share/zlibrary/resources/de.xml
 share/zlibrary/resources/en.xml
 share/zlibrary/resources/fi.xml
 share/zlibrary/resources/fr.xml
