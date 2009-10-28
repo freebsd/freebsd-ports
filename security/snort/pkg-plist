@@ -28,6 +28,8 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%src/snort_dynamicsrc/pcap_pkthdr32.h
 %%DYNAMIC%%src/snort_dynamicsrc/preprocids.h
 %%DYNAMIC%%src/snort_dynamicsrc/profiler.h
+%%DYNAMIC%%src/snort_dynamicsrc/sfPolicyUserData.c
+%%DYNAMIC%%src/snort_dynamicsrc/sfPolicyUserData.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_common.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_meta.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.c
@@ -126,6 +128,7 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.decoder_preproc_rules
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
+%%PORTDOCS%%%%DOCSDIR%%/README.filters
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3
 %%PORTDOCS%%%%DOCSDIR%%/README.ftptelnet
@@ -133,8 +136,10 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
 %%PORTDOCS%%%%DOCSDIR%%/README.ipip
 %%PORTDOCS%%%%DOCSDIR%%/README.ipv6
+%%PORTDOCS%%%%DOCSDIR%%/README.multipleconfigs
 %%PORTDOCS%%%%DOCSDIR%%/README.pcap_readmode
 %%PORTDOCS%%%%DOCSDIR%%/README.ppm
+%%PORTDOCS%%%%DOCSDIR%%/README.reload
 %%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
 %%PORTDOCS%%%%DOCSDIR%%/README.ssh
 %%PORTDOCS%%%%DOCSDIR%%/README.ssl
@@ -152,3 +157,4 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+libdata/pkgconfig/snort.pc
