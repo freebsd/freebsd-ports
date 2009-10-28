@@ -3,5 +3,7 @@ that uses ZConf as the setting storage backend.
 
 zbgset - Background setter.
 zbgset-admin - Manages the settings.
+zbgset-pt - Automatically populate a path based on fill type
+    and average gray.
 
 WWW: http://search.cpan.org/~vvelox/ZConf-BGSet/
