@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Notify/Simple/.packlist
+%%SITE_PERL%%/Filesys/Notify/Simple.pm
+@dirrmtry %%SITE_PERL%%/Filesys/Notify
+@dirrmtry %%SITE_PERL%%/Filesys
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Notify/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Notify
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
