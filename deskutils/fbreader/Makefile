@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	fbreader
-PORTVERSION=	0.10.7
+PORTVERSION=	0.11.2
 DISTVERSIONPREFIX=	sources-
-PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/
 EXTRACT_SUFX=	.tgz
@@ -32,6 +31,7 @@ LDFLAGS+=	-L${QT_LIBDIR}
 .endif
 
 USE_GMAKE=	yes
+USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	do_install
