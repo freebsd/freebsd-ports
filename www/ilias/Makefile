@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	3.10.9
+PORTVERSION=	4.0.0
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%203.10/ILIAS%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%204.0/ILIAS%20${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A poweful, dynamic, PHP and MySQL based e-learning platform
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
@@ -22,14 +22,17 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+CONFLICTS=	ilias-3.[0-9].*
+
 NO_BUILD=		yes
+PLIST=			${WRKDIR}/plist
 SUB_FILES=		pkg-message
 USE_MYSQL=		yes
 DEFAULT_MYSQL_VER=	50
 USE_PHP=		mysql session zlib gd pdf dom xsl pcre
 DEFAULT_PHP_VER=	5
-#WANT_PHP_MOD=		yes
-WRKSRC=			${WRKDIR}/ilias3
+WRKSRC=			${WRKDIR}/ilias
+ILIASDIR=		www/ilias
 ILIASDATADIR=		www/iliasdata
 PORTDOCS=*
 PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
@@ -53,6 +56,11 @@ RUN_DEPENDS+=	 ${LOCALBASE}/share/pear/HTTP/Request.php:${PORTSDIR}/www/pear-HTT
 .if defined(WITH_Mail)
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail
 .endif
+
+pre-install:
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${ILIASDIR}?g" >${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${ILIASDIR}?g" >> ${PLIST}
+	@${ECHO} @dirrm ${ILIASDATADIR} >> ${PLIST}
 
 post-extract:
 	@cd ${WRKSRC} && ${MV} docs ${WRKDIR}
