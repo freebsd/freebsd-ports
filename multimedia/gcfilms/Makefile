@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcfilms
-PORTVERSION=	6.0
-PORTREVISION=	3
+PORTVERSION=	6.4
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	http://download.gna.org/gcfilms/
 
@@ -21,9 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-# uses Gtk2 install wizard
-IS_INTERACTIVE=	yes
 
 NO_BUILD=	yes
 
