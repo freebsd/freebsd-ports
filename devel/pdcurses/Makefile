@@ -20,6 +20,7 @@ CONFLICTS=	pdcurses-the-[0-9]*
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext sm ice xt xaw
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	DEBUG "Enable debugging support" off \
 		LATIN1 "Enable support for Latin1 keys" off \
