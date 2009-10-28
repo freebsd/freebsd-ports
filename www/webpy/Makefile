@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	webpy
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	www python
-MASTER_SITES=	http://webpy.org/static/
+MASTER_SITES=	http://webpy.org/static/ \
+		CHEESESHOP
 DISTNAME=	web.py-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Web Framework For Python
 
-WRKSRC=			${WRKDIR}/webpy
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	web.py
