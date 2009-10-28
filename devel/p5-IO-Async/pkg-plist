@@ -14,6 +14,7 @@
 %%SITE_PERL%%/IO/Async/Loop/IO_Poll.pm
 %%SITE_PERL%%/IO/Async/Loop/Poll.pm
 %%SITE_PERL%%/IO/Async/Loop/Select.pm
+%%SITE_PERL%%/IO/Async/LoopTests.pm
 %%SITE_PERL%%/IO/Async/MergePoint.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
 %%SITE_PERL%%/IO/Async/Resolver.pm
@@ -22,6 +23,9 @@
 %%SITE_PERL%%/IO/Async/Stream.pm
 %%SITE_PERL%%/IO/Async/Test.pm
 %%SITE_PERL%%/IO/Async/Timer.pm
+%%SITE_PERL%%/IO/Async/Timer/Countdown.pm
+%%SITE_PERL%%/IO/Async/Timer/Periodic.pm
+@dirrmtry %%SITE_PERL%%/IO/Async/Timer
 @dirrmtry %%SITE_PERL%%/IO/Async/Loop
 @dirrmtry %%SITE_PERL%%/IO/Async/Internals
 @dirrmtry %%SITE_PERL%%/IO/Async/DetachedCode

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +29,7 @@ MAN3=		IO::Async.3 \
 		IO::Async::Loop::IO_Poll.3 \
 		IO::Async::Loop::Poll.3 \
 		IO::Async::Loop::Select.3 \
+		IO::Async::LoopTests.3 \
 		IO::Async::MergePoint.3 \
 		IO::Async::Notifier.3 \
 		IO::Async::Resolver.3 \
@@ -36,6 +37,8 @@ MAN3=		IO::Async.3 \
 		IO::Async::Signal.3 \
 		IO::Async::Stream.3 \
 		IO::Async::Test.3 \
-		IO::Async::Timer.3
+		IO::Async::Timer.3 \
+		IO::Async::Timer::Countdown.3 \
+		IO::Async::Timer::Periodic.3
 
 .include <bsd.port.mk>
