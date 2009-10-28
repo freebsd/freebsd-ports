@@ -23,6 +23,12 @@ lib/mysql-proxy/lua/lpeg.so
 lib/mysql-proxy/lua/lpeg.la
 lib/mysql-proxy/lua/posix.so
 lib/mysql-proxy/lua/posix.la
+lib/mysql-proxy/lua/proxy/auto-config.lua
+lib/mysql-proxy/lua/proxy/balance.lua
+lib/mysql-proxy/lua/proxy/commands.lua
+lib/mysql-proxy/lua/proxy/parser.lua
+lib/mysql-proxy/lua/proxy/tokenizer.lua
+lib/mysql-proxy/lua/proxy/test.lua
 lib/mysql-proxy/plugins/libadmin.so
 lib/mysql-proxy/plugins/libadmin.la
 lib/mysql-proxy/plugins/libproxy.so
@@ -46,12 +52,6 @@ lib/mysql-proxy/plugins/libdebug.la
 %%DATADIR%%/ro-pooling.lua
 %%DATADIR%%/rw-splitting.lua
 %%DATADIR%%/xtab.lua
-%%DATADIR%%/lua/proxy/auto-config.lua
-%%DATADIR%%/lua/proxy/balance.lua
-%%DATADIR%%/lua/proxy/commands.lua
-%%DATADIR%%/lua/proxy/parser.lua
-%%DATADIR%%/lua/proxy/tokenizer.lua
-%%DATADIR%%/lua/proxy/test.lua
 %%EXAMPLESDIR%%/tutorial-basic.lua
 %%EXAMPLESDIR%%/tutorial-constants.lua
 %%EXAMPLESDIR%%/tutorial-inject.lua
@@ -67,6 +67,7 @@ lib/mysql-proxy/plugins/libdebug.la
 %%EXAMPLESDIR%%/tutorial-union.lua
 %%EXAMPLESDIR%%/tutorial-warnings.lua
 @dirrmtry lib/mysql-proxy/plugins
+@dirrmtry lib/mysql-proxy/lua/proxy
 @dirrmtry lib/mysql-proxy/lua
 @dirrmtry lib/mysql-proxy
 @dirrmtry %%EXAMPLESDIR%%
