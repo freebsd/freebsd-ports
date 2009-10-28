@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	version
-PORTVERSION=	0.76
+PORTVERSION=	0.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JP/JPEACOCK
@@ -17,6 +17,6 @@ COMMENT=	Perl extension for Version Objects
 
 PERL_CONFIGURE=	yes
 
-MAN3=		version.3
+MAN3=		version.3 version::Internals.3
 
 .include <bsd.port.mk>
