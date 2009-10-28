@@ -7,6 +7,7 @@
 
 PORTNAME=	Module-Install
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ COMMENT=	Standalone, extensible Perl module installer
 
 RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/Module/ScanDeps.pm:${PORTSDIR}/devel/p5-Module-ScanDeps \
-		${SITE_PERL}/Module/CoreList.pm:${PORTSDIR}/devel/p5-Module-CoreList \
 		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
 		${SITE_PERL}/PAR/Dist.pm:${PORTSDIR}/devel/p5-PAR-Dist \
 		${SITE_PERL}/YAML/Tiny.pm:${PORTSDIR}/textproc/p5-YAML-Tiny \
@@ -41,7 +41,7 @@ MAN3=		inc::Module::Install.3 \
 		Module::Install::Deprecated.3 \
 		Module::Install::External.3 \
 		Module::Install::Makefile.3 \
-    		Module::Install::PAR.3 \
+		Module::Install::PAR.3 \
 		Module::Install::Philosophy.3 \
 		Module::Install::Share.3 \
 		Module::Install::With.3
@@ -50,6 +50,10 @@ MAN3=		inc::Module::Install.3 \
 
 .if ${PERL_LEVEL} < 500805
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
+.endif
+
+.if ${PERL_LEVEL} < 500809
+BUILD_DEPENDS+=	${SITE_PERL}/Module/CoreList.pm:${PORTSDIR}/devel/p5-Module-CoreList
 .endif
 
 .include <bsd.port.post.mk>
