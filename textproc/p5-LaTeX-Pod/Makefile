@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	LaTeX-Pod
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Transform LaTeX source files to POD
 
 BUILD_DEPENDS=	p5-LaTeX-TOM>=0.9:${PORTSDIR}/textproc/p5-LaTeX-TOM \
