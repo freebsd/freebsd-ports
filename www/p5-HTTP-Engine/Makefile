@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Engine
-PORTVERSION=	0.03001
+PORTVERSION=	0.03002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,6 @@ RUN_DEPENDS=	\
 	p5-Any-Moose>=0.08:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-Mouse>=0.23:${PORTSDIR}/devel/p5-Moose \
 	p5-MouseX-Types>=0.01:${PORTSDIR}/devel/p5-MouseX-Types \
-	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
 	p5-CGI-Simple>=1.103:${PORTSDIR}/www/p5-CGI-Simple \
 	p5-HTTP-Body>=1.05:${PORTSDIR}/www/p5-HTTP-Body \
 	p5-HTTP-Headers-Fast>=0.11:${PORTSDIR}/www/p5-HTTP-Headers-Fast \
