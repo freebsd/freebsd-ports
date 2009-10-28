@@ -6731,6 +6731,7 @@ khacc                           ports/finance/khacc
 khtml2png                       ports/www/khtml2png
 kiax                            ports/net/kiax
 kicad                           ports/cad/kicad
+kicad-devel                     ports/cad/kicad-devel
 kicker-applets                  ports/misc/kicker-applets
 kickpim                         ports/deskutils/kickpim
 kiconedit                       ports/graphics/kiconedit
