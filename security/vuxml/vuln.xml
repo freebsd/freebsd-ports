@@ -35,6 +35,85 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c87aa2d2-c3c4-11de-ab08-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.5.*,1</gt><lt>3.5.4,1</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.15,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.0.15</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/">
+	  <p>MFSA 2009-64  Crashes with evidence of memory
+	     corruption (rv:1.9.1.4/ 1.9.0.15)</p>
+	  <p>MFSA 2009-63  Upgrade media libraries to fix memory
+	     safety bugs</p>
+	  <p>MFSA 2009-62  Download filename spoofing with RTL
+	     override</p>
+	  <p>MFSA 2009-61  Cross-origin data theft through
+	     document.getSelection()</p>
+	  <p>MFSA 2009-59  Heap buffer overflow in string to
+	     number conversion</p>
+	  <p>MFSA 2009-57  Chrome privilege escalation in
+	     XPCVariant::VariantDataToJS()</p>
+	  <p>MFSA 2009-56  Heap buffer overflow in GIF color map
+	     parser</p>
+	  <p>MFSA 2009-55  Crash in proxy auto-configuration
+	     regexp parsing</p>
+	  <p>MFSA 2009-54  Crash with recursive web-worker calls</p>
+	  <p>MFSA 2009-53  Local downloaded file tampering</p>
+	  <p>MFSA 2009-52  Form history vulnerable to stealing</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3380</cvename>
+      <cvename>CVE-2009-3381</cvename>
+      <cvename>CVE-2009-3382</cvename>
+      <cvename>CVE-2009-3383</cvename>
+      <cvename>CVE-2009-3379</cvename>
+      <cvename>CVE-2009-3378</cvename>
+      <cvename>CVE-2009-3377</cvename>
+      <cvename>CVE-2009-3376</cvename>
+      <cvename>CVE-2009-3375</cvename>
+      <cvename>CVE-2009-1563</cvename>
+      <cvename>CVE-2009-3374</cvename>
+      <cvename>CVE-2009-3373</cvename>
+      <cvename>CVE-2009-3372</cvename>
+      <cvename>CVE-2009-3371</cvename>
+      <cvename>CVE-2009-3274</cvename>
+      <cvename>CVE-2009-3370</cvename>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-64.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-63.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-62.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-61.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-59.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-57.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-56.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-55.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-54.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-53.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-52.html</url>
+    </references>
+    <dates>
+      <discovery>2009-10-27</discovery>
+      <entry>2009-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2544f543-c178-11de-b175-001cc0377035">
     <topic>elinks -- buffer overflow vulnerability</topic>
     <affects>
