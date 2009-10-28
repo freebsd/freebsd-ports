@@ -1,0 +1,5 @@
+The Log-Any-Adapter distribution implements Log::Any class methods to
+specify where logs should be sent. It is a separate distribution so as
+to keep Log::Any itself as simple and unchanging as possible.
+
+WWW: http://search.cpan.org/dist/Log-Any-Adapter/
