@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.8.4.1
-PORTREVISION=	2
+PORTVERSION=	2.8.5.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/ \
-		http://dl.snort.org/snort-current/ \
-		http://dl.snort.org/snort284/
+		http://dl.snort.org/snort-current/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
@@ -34,6 +32,7 @@ USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+PATCH_DIST_STRIP=	-p1
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIG_DIR?=	${PREFIX}/etc/snort
@@ -127,8 +126,8 @@ CONFIGURE_ARGS+=	--enable-perfprofiling
 .endif
 
 .if defined(WITH_SNORTSAM)
-PATCH_SITES+=http://www.freebsdbrasil.com.br/~urisso/files/snort/:snortsam
-PATCHFILES+=snortsam-2.8.4.1.diff:snortsam
+PATCH_SITES+=http://www.snortsam.net/files/snort-plugin/:snortsam
+PATCHFILES+=snortsam-2.8.5.diff.gz:snortsam
 .endif
 
 post-patch:
@@ -148,6 +147,7 @@ pre-configure:
 	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
 		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
 	${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
+	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 .if defined(WITH_FLEXRESP) || defined(WITH_FLEXRESP2)
 	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
 .endif
