@@ -7,13 +7,14 @@
 
 PORTNAME=	piwik
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Open Source Web Analytics Software Program
 
-USE_PHP=	mysql gd pdo pdo_mysql zlib
+USE_PHP=	mysql gd pdo pdo_mysql zlib iconv dom
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
