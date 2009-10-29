@@ -1,0 +1,8 @@
+fconfig is an application that allows to read and write RedBoot's configuration
+parameters.
+
+Examples,
+ fconfig -l
+ fconfig -w -n console_baud_rate -x 115200
+
+WWW: http://andrzejekiert.ovh.org/software.html.en

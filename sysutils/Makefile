@@ -208,6 +208,7 @@
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
     SUBDIR += fatback
+    SUBDIR += fconfig
     SUBDIR += fcron
     SUBDIR += fdupes
     SUBDIR += fetchlog
