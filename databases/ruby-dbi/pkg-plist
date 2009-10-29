@@ -1,42 +1,36 @@
-@exec mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%/DBD
-@exec mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%/dbi
-@exec mkdir -p %D/%%RUBY_SITELIBDIR%%/DBD
-bin/sqlsh.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/dbd/frontbase/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/dbd/mysql/HISTORY
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/dbd/mysql/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/dbd/postgresql/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ChangeLog.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/DBD_SPEC.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/DBI_SPEC.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/rubyStyle.css
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/DBD_SPEC
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/DBI_SPEC
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.1st
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/dbd/frontbase
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/dbd/mysql
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/dbd/postgresql
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/dbd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/persistence.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sqlsh.rb.new
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test1.pl
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_blob.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/trace_test.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlgen.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmltest.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-@dirrm %%RUBY_SITEARCHLIBDIR%%/DBD
-@dirrm %%RUBY_SITEARCHLIBDIR%%/dbi
+bin/dbi
+bin/test_broken_dbi
+%%RUBY_SITELIBDIR%%/dbi.rb
+%%RUBY_SITELIBDIR%%/dbi/base_classes.rb
+%%RUBY_SITELIBDIR%%/dbi/base_classes/database.rb
+%%RUBY_SITELIBDIR%%/dbi/base_classes/driver.rb
+%%RUBY_SITELIBDIR%%/dbi/base_classes/statement.rb
+%%RUBY_SITELIBDIR%%/dbi/binary.rb
 %%RUBY_SITELIBDIR%%/dbi/columninfo.rb
+%%RUBY_SITELIBDIR%%/dbi/exceptions.rb
+%%RUBY_SITELIBDIR%%/dbi/handles.rb
+%%RUBY_SITELIBDIR%%/dbi/handles/database.rb
+%%RUBY_SITELIBDIR%%/dbi/handles/driver.rb
+%%RUBY_SITELIBDIR%%/dbi/handles/statement.rb
 %%RUBY_SITELIBDIR%%/dbi/row.rb
 %%RUBY_SITELIBDIR%%/dbi/sql.rb
+%%RUBY_SITELIBDIR%%/dbi/sql/preparedstatement.rb
+%%RUBY_SITELIBDIR%%/dbi/sql_type_constants.rb
 %%RUBY_SITELIBDIR%%/dbi/trace.rb
+%%RUBY_SITELIBDIR%%/dbi/types.rb
+%%RUBY_SITELIBDIR%%/dbi/typeutil.rb
 %%RUBY_SITELIBDIR%%/dbi/utils.rb
-%%RUBY_SITELIBDIR%%/dbi/version.rb
-%%RUBY_SITELIBDIR%%/dbi.rb
-@dirrm %%RUBY_SITELIBDIR%%/DBD
+%%RUBY_SITELIBDIR%%/dbi/utils/date.rb
+%%RUBY_SITELIBDIR%%/dbi/utils/tableformatter.rb
+%%RUBY_SITELIBDIR%%/dbi/utils/time.rb
+%%RUBY_SITELIBDIR%%/dbi/utils/timestamp.rb
+%%RUBY_SITELIBDIR%%/dbi/utils/xmlformatter.rb
+@dirrm %%RUBY_SITELIBDIR%%/dbi/utils
+@dirrm %%RUBY_SITELIBDIR%%/dbi/sql
+@dirrm %%RUBY_SITELIBDIR%%/dbi/handles
+@dirrm %%RUBY_SITELIBDIR%%/dbi/base_classes
 @dirrm %%RUBY_SITELIBDIR%%/dbi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test1.pl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmltest.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
