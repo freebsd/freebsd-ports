@@ -10,7 +10,7 @@
 # snort_enable (bool):		Set to YES to enable snort
 # 				Default: NO
 # snort_flags (str):		Extra flags passed to snort
-#				Default: -Dq
+#				Default: -D -q
 # snort_interface (str):	Network interface to sniff
 #				Default: "" 
 # snort_conf (str):		Snort configuration file
@@ -34,7 +34,7 @@ load_rc_config $name
 
 [ -z "$snort_enable" ]    && snort_enable="NO"
 [ -z "$snort_conf" ]      && snort_conf="%%PREFIX%%/etc/snort/snort.conf"
-[ -z "$snort_flags" ]     && snort_flags="-Dq"
+[ -z "$snort_flags" ]     && snort_flags="-D -q"
 
 [ -n "$snort_interface" ] && snort_flags="$snort_flags -i $snort_interface" \
                           && pidfile="/var/run/snort_${snort_interface}.pid"
