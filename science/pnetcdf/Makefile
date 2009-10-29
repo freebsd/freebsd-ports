@@ -8,7 +8,7 @@
 PORTNAME=	pnetcdf
 PORTVERSION=	1.0.3
 CATEGORIES=	science parallel
-MASTER_SITES=	http://ftp.mcs.anl.gov/parallel-netcdf/
+MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
