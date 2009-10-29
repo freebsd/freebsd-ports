@@ -5,50 +5,46 @@
 # $FreeBSD$
 
 PORTNAME=	jabber.el
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im elisp
 MASTER_SITES=	SF/emacs-jabber/emacs-jabber/${PORTVERSION}
 DISTNAME=		emacs-jabber-${PORTVERSION}
 
-MAINTAINER=	m.boyarov@bsd.by
+MAINTAINER=	m.boyarov@gmail.com
 COMMENT=	A minimal jabber client for [X]Emacs
 
-NO_BUILD=	yes
+RUN_DEPENDS=	${LOCALBASE}/bin/gnutls-cli:${PORTSDIR}/security/gnutls
 
-INFO=		jabber.el
+INFO=		emacs-jabber
 PORTDOCS+=	AUTHORS NEWS README
 
-EMACS_LISPDIR=	share/emacs/site-lisp/emacs-jabber
-XEMACS_LISPDIR=	lib/xemacs/site-lisp/emacs-jabber
+USE_EMACS=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-PLIST_SUB+=	EMACS_LISPDIR=${EMACS_LISPDIR}	\
-		XEMACS_LISPDIR=${XEMACS_LISPDIR}
+.include <bsd.port.pre.mk>
 
-## Generate info
+CONFIGURE_ARGS+=	--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/emacs-jabber \
+			--disable-schemas-install
+
+pre-configure:
+	${REINPLACE_CMD} -e 's/jabber\.info/emacs-jabber.info/' \
+		${WRKSRC}/Makefile.in
+
+	( cd ${WRKSRC} && ${CP} -f jabber.info emacs-jabber.info )
+	${REINPLACE_CMD} -e 's/^File: jabber.info/File: emacs-jabber.info/'	\
+			-e 's/^* jabber.el: (jabber)/* jabber.el: (emacs-jabber)/'	\
+			${WRKSRC}/emacs-jabber.info
+
 pre-install:
-	( cd ${WRKSRC} && ${CP} -f jabber.info jabber.el.info )
-	${REINPLACE_CMD} -e 's/^File: jabber.info/File: jabber.el.info/'	\
-			-e 's/^* jabber.el: (jabber)/* jabber.el: (jabber.el)/'	\
-			${WRKSRC}/jabber.el.info
+	${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/emacs-jabber
 
-do-install:
-	${MKDIR} ${PREFIX}/${EMACS_LISPDIR}
-	${MKDIR} ${PREFIX}/${XEMACS_LISPDIR}
-	cd ${WRKSRC}; \
-	for el in `ls -1 *.el`; do							\
-		${INSTALL_DATA} $$el ${PREFIX}/${EMACS_LISPDIR}/;			\
-		${LN} -sf ${PREFIX}/${EMACS_LISPDIR}/$$el ${PREFIX}/${XEMACS_LISPDIR}/;	\
-	done;
-
-	${INSTALL_DATA} ${WRKSRC}/${INFO}.info ${PREFIX}/${INFO_PATH}/
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/xmppuri.sh ${EXAMPLESDIR}/
-
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+		${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
+		${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
