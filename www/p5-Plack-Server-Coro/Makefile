@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack-Server-Coro
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -17,7 +17,7 @@ COMMENT=	Perl extension for Coro cooperative multithread web server
 
 RUN_DEPENDS=	\
 	p5-Coro>0:${PORTSDIR}/devel/p5-Coro \
-	p5-Net-Server-Coro>0:${PORTSDIR}/net/p5-Net-Server-Coro \
+	p5-Net-Server-Coro>=0.5:${PORTSDIR}/net/p5-Net-Server-Coro \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
