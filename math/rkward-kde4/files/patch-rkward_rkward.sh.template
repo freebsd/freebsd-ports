@@ -1,5 +1,5 @@
---- rkward/rkward.sh.template.orig	2009-07-31 16:43:07.000000000 +0200
-+++ rkward/rkward.sh.template	2009-08-06 20:47:41.000000000 +0200
+--- rkward/rkward.sh.template.orig	2009-06-23 22:20:48.000000000 +0200
++++ rkward/rkward.sh.template	2009-10-27 23:12:15.000000000 +0100
 @@ -30,7 +30,7 @@
  }
  
@@ -9,9 +9,3 @@
  do
    arg=$(eval echo \$\{`echo ${i}`\})
    if [ "${arg}" = "--debugger" ]; then
-@@ -45,4 +45,5 @@
- export LC_NUMERIC="C"
- 
- ## Start rkward. Running through R CMD to set all the relevant R enviroment variables
-+cd %%PREFIX%%/share/apps && \
- exec $R_binary CMD $debugger $0.bin "$@"

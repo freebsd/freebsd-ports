@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rkward
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -20,8 +20,9 @@ RUN_DEPENDS=	seq2:${PORTSDIR}/misc/seq2
 CONFLICTS=	rkward-0.4.*
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
-USE_KDE4=	automoc4 kdelibs
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build phonon
+
+USE_KDE4=	kdehier kdeprefix automoc4 kdelibs
 USE_PHP=	yes
 WANT_PHP_CLI=	yes
 USE_GETTEXT=	yes
@@ -42,6 +43,10 @@ PLIST_SUB+=	NLS=${NLS}
 
 PHP2FIX=	rkward/settings/rksettingsmodulephp.cpp
 
+.if defined(WITH_DEBUG)
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
 		${PHP2FIX:S|^|${WRKSRC}/|}
@@ -54,6 +59,13 @@ pre-configure:
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(po)|#ADD_SUBDIRECTORY(po)|'	\
 		${WRKSRC}/CMakeLists.txt
+.endif
+
+.if defined(MAINTAINER_MODE)
+regression-test:	install
+	@${ECHO_MSG} "To pass the tests, somme CRAN packages like R2HTML"
+	@${ECHO_MSG} "must be installed."
+	(cd ${WRKSRC}/tests && make plugintests)
 .endif
 
 .include <bsd.port.mk>
