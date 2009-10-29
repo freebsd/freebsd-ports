@@ -1,5 +1,6 @@
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/HISTORY
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%RUBY_SITELIBDIR%%/DBD/Mysql/Mysql.rb
-@dirrm %%RUBY_SITELIBDIR%%/DBD/Mysql
+%%RUBY_SITELIBDIR%%/dbd/Mysql.rb
+%%RUBY_SITELIBDIR%%/dbd/mysql/database.rb
+%%RUBY_SITELIBDIR%%/dbd/mysql/driver.rb
+%%RUBY_SITELIBDIR%%/dbd/mysql/statement.rb
+@dirrm %%RUBY_SITELIBDIR%%/dbd/mysql
+@dirrmtry %%RUBY_SITELIBDIR%%/dbd
