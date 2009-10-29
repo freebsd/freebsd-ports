@@ -25,6 +25,7 @@
     SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus
+    SUBDIR += p5-PerlFM
     SUBDIR += pbi-thumbnailer
     SUBDIR += pcmanfm
     SUBDIR += py-nautilus
