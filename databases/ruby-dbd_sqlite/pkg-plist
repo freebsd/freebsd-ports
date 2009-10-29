@@ -1,4 +1,5 @@
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%RUBY_SITEARCHLIBDIR%%/DBD/SQLite/SQLite.so
-@dirrm %%RUBY_SITEARCHLIBDIR%%/DBD/SQLite
+%%RUBY_SITELIBDIR%%/dbd/SQLite.rb
+%%RUBY_SITELIBDIR%%/dbd/sqlite/database.rb
+%%RUBY_SITELIBDIR%%/dbd/sqlite/statement.rb
+@dirrm %%RUBY_SITELIBDIR%%/dbd/sqlite
+@dirrmtry %%RUBY_SITELIBDIR%%/dbd
