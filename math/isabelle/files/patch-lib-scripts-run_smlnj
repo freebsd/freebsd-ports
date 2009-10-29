@@ -1,6 +1,6 @@
---- lib/scripts/run-smlnj.orig	2004-06-21 18:25:58.000000000 +1000
-+++ lib/scripts/run-smlnj	2008-07-29 15:49:30.000000000 +1000
-@@ -39,11 +39,10 @@
+--- lib/scripts/run-smlnj.orig	2009-10-08 20:50:08.000000000 +1100
++++ lib/scripts/run-smlnj	2009-10-08 20:51:07.000000000 +1100
+@@ -38,11 +38,10 @@
  
  ## compiler binaries
  
@@ -13,7 +13,7 @@
  
  
  
-@@ -84,8 +83,7 @@
+@@ -83,8 +82,7 @@
  ## fix heap file name and permissions
  
  if [ -n "$OUTFILE" ]; then
