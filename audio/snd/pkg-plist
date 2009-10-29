@@ -6,6 +6,9 @@ bin/sndrecord
 %%X11%%lib/X11/app-defaults/Snd.ad
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.Snd
 %%PORTDOCS%%%%DOCSDIR%%/README.Snd
+%%PORTDOCS%%%%DOCSDIR%%/clm.html
+%%PORTDOCS%%%%DOCSDIR%%/dlocsig.html
+%%PORTDOCS%%%%DOCSDIR%%/freeverb.html
 %%PORTDOCS%%%%DOCSDIR%%/extsnd.html
 %%PORTDOCS%%%%DOCSDIR%%/fm.html
 %%PORTDOCS%%%%DOCSDIR%%/grfsnd.html
@@ -175,6 +178,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/n.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n6.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n5-all.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/noidchoices.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ncosfm.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ncossweep.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/newbuttons.png
@@ -190,6 +194,8 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/open-dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/orig-oboe.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/pad1.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/phase-paths.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/peak-path.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/polyfm.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/polyshape.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/poussin.png
@@ -220,6 +226,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/samplesviacolormap.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/saveas.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/scanned.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/s65536.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq10.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq11.png
@@ -326,7 +333,6 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/sndlib.html
 %%PORTDOCS%%%%DOCSDIR%%/sndscm.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/1_intro_and_build_snd.html
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/1_intro_and_build_snd.html~
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/2_custom_snd.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/3_editing_and_processing_snd.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/4_advanced_snd.html
@@ -375,7 +381,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/eval-c.scm
 %%SCHEME%%%%DATADIR%%/examp.scm
 %%SCHEME%%%%DATADIR%%/expandn.scm
-%%SCHEME%%%%DATADIR%%/export-all.scm
 %%SCHEME%%%%DATADIR%%/extensions.scm
 %%SCHEME%%%%DATADIR%%/fade.scm
 %%SCHEME%%%%DATADIR%%/fft-menu.scm
@@ -390,6 +395,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/gtk-effects.scm
 %%SCHEME%%%%DATADIR%%/gtk-popup.scm
 %%SCHEME%%%%DATADIR%%/gui.scm
+%%SCHEME%%%%DATADIR%%/heart.scm
 %%SCHEME%%%%DATADIR%%/hooks.scm
 %%SCHEME%%%%DATADIR%%/index.scm
 %%SCHEME%%%%DATADIR%%/jcrev.scm
@@ -431,6 +437,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/piano.scm
 %%SCHEME%%%%DATADIR%%/play.scm
 %%SCHEME%%%%DATADIR%%/poly.scm
+%%SCHEME%%%%DATADIR%%/pretty-print.scm
 %%SCHEME%%%%DATADIR%%/popup.scm
 %%SCHEME%%%%DATADIR%%/prc95.scm
 %%SCHEME%%%%DATADIR%%/pvoc.scm
@@ -454,13 +461,12 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/snd-hobbit.scm
 %%SCHEME%%%%DATADIR%%/snd-motif.scm
 %%SCHEME%%%%DATADIR%%/snd-test.scm
-%%SCHEME%%%%DATADIR%%/snd4.scm
-%%SCHEME%%%%DATADIR%%/snd5.scm
 %%SCHEME%%%%DATADIR%%/snd6.scm
 %%SCHEME%%%%DATADIR%%/snd7.scm
 %%SCHEME%%%%DATADIR%%/snd8.scm
 %%SCHEME%%%%DATADIR%%/snd9.scm
 %%SCHEME%%%%DATADIR%%/snd10.scm
+%%SCHEME%%%%DATADIR%%/snd_frg.scm
 %%SCHEME%%%%DATADIR%%/snd_conffile.scm
 %%SCHEME%%%%DATADIR%%/snddiff.scm
 %%SCHEME%%%%DATADIR%%/sndlib-ws.scm
@@ -474,10 +480,8 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/stochastic.scm
 %%SCHEME%%%%DATADIR%%/strad.scm
 %%SCHEME%%%%DATADIR%%/toolbar.scm
-%%SCHEME%%%%DATADIR%%/tools/check-gtk.scm
 %%SCHEME%%%%DATADIR%%/tools/check-help.scm
 %%SCHEME%%%%DATADIR%%/tools/gldata.scm
-%%SCHEME%%%%DATADIR%%/tools/lines.scm
 %%SCHEME%%%%DATADIR%%/tools/makegl.scm
 %%SCHEME%%%%DATADIR%%/tools/makexg.scm
 %%SCHEME%%%%DATADIR%%/tools/nor.scm
