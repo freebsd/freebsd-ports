@@ -611,6 +611,7 @@
     SUBDIR += ruby-dbd_odbc
     SUBDIR += ruby-dbd_pg
     SUBDIR += ruby-dbd_sqlite
+    SUBDIR += ruby-dbd_sqlite3
     SUBDIR += ruby-dbdbd
     SUBDIR += ruby-dbi
     SUBDIR += ruby-frontbase
