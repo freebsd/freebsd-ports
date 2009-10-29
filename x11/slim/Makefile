@@ -7,13 +7,13 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://depot.fsck.ch/mirror/distfiles/
 MASTER_SITE_SUBDIR=slim
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Graphical login manager for X11, derived from Login.app
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
