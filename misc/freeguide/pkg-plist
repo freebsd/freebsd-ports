@@ -36,7 +36,6 @@ bin/freeguide
 %%JAVAJARDIR%%/freeguide/lib/common.jar
 %%JAVAJARDIR%%/freeguide/lib/docs.jar
 %%JAVAJARDIR%%/freeguide/lib/grabber-kulichki.jar
-%%JAVAJARDIR%%/freeguide/lib/xmltv-win.jar
 %%JAVAJARDIR%%/freeguide/lib/ui-vertical.jar
 %%JAVAJARDIR%%/freeguide/lib/grabber-ntvplus.jar
 %%JAVAJARDIR%%/freeguide/lib/ui-horizontal.jar
