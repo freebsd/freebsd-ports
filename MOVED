@@ -4190,3 +4190,4 @@ net-p2p/mute-net-text|net-p2p/mute-net|2009-10-19|Broken for extensive period of
 archivers/zlib||2009-10-19|Removed
 graphics/libwpcg||2009-10-25|Unmaintained upstream, depends on an old version of GCC, lacks a maintainer, and not used by anything else
 databases/ruby-dbd_msql||2009-10-29|Has expired: no longer under development
+databases/ruby-dbd_proxy||2009-10-29|Has expired: no longer under development
