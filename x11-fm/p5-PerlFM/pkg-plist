@@ -1,0 +1,4 @@
+bin/pfm
+%%SITE_PERL%%/PerlFM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlFM/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlFM
