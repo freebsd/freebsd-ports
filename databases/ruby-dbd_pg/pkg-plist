@@ -1,4 +1,8 @@
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%RUBY_SITELIBDIR%%/DBD/Pg/Pg.rb
-@dirrm %%RUBY_SITELIBDIR%%/DBD/Pg
+%%RUBY_SITELIBDIR%%/dbd/Pg.rb
+%%RUBY_SITELIBDIR%%/dbd/pg/database.rb
+%%RUBY_SITELIBDIR%%/dbd/pg/exec.rb
+%%RUBY_SITELIBDIR%%/dbd/pg/statement.rb
+%%RUBY_SITELIBDIR%%/dbd/pg/tuples.rb
+%%RUBY_SITELIBDIR%%/dbd/pg/type.rb
+@dirrm %%RUBY_SITELIBDIR%%/dbd/pg
+@dirrmtry %%RUBY_SITELIBDIR%%/dbd
