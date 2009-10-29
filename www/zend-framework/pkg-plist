@@ -4057,7 +4057,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Db.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/Message.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/Queue.php
-%%DATADIR%%/library/Zend/Queue/Adapter/Db/queue.sql
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/mysql.sql
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/postgresql.sql
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/queue_sqlite.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Memcacheq.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Null.php
 %%DATADIR%%/library/Zend/Queue/Adapter/PlatformJobQueue.php
@@ -5552,6 +5554,11 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/RssTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/baseurl/plain/atom10-entrylevel.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/baseurl/plain/atom10-feedlevel.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentlink/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentlink/plain/atom10-relative.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentlink/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated/plain/atom03.xml
@@ -5565,6 +5572,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain/atom10-norel.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain/atom10-relative.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links/plain/atom10.xml
@@ -5862,6 +5871,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom10-relative.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain/atom10.xml
@@ -5870,6 +5880,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain/atom10-norel.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain/atom10-relative.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title/plain/atom10.xml
@@ -6874,6 +6886,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/StompTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/WARNING.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Bugs/ZF-7650Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Custom/DbForUpdate.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Custom/Message.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Custom/Messages.php
@@ -7860,6 +7873,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Stomp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Message
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Custom
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Bugs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Queue
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter
@@ -8145,6 +8159,10 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentlink/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentlink
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/baseurl/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/baseurl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom
