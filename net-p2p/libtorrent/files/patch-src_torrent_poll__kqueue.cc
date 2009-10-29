@@ -9,3 +9,12 @@
  #endif
  
  namespace torrent {
+@@ -113,7 +113,7 @@
+   if (fd == -1)
+     return NULL;
+ 
+-  return new PollKQueue(fd, 1024, maxOpenSockets);
++  return new PollKQueue(fd, 16384, maxOpenSockets);
+ }
+ 
+ PollKQueue::PollKQueue(int fd, int maxEvents, int maxOpenSockets) :
