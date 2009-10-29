@@ -1,2 +1,6 @@
-%%RUBY_SITELIBDIR%%/DBD/ODBC/ODBC.rb
-@dirrm %%RUBY_SITELIBDIR%%/DBD/ODBC
+%%RUBY_SITELIBDIR%%/dbd/ODBC.rb
+%%RUBY_SITELIBDIR%%/dbd/odbc/database.rb
+%%RUBY_SITELIBDIR%%/dbd/odbc/driver.rb
+%%RUBY_SITELIBDIR%%/dbd/odbc/statement.rb
+@dirrm %%RUBY_SITELIBDIR%%/dbd/odbc
+@dirrmtry %%RUBY_SITELIBDIR%%/dbd
