@@ -24,6 +24,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	ilias-4.[0-9].*
 
+LATEST_LINK=		ilias3
 NO_BUILD=		yes
 SUB_FILES=		pkg-message
 USE_MYSQL=		yes
