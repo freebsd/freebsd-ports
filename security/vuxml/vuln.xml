@@ -46,22 +46,21 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Securityfocus reports:</p>
-        <blockquote
-          cite="http://www.securityfocus.com/bid/34584">
+        <blockquote cite="http://www.securityfocus.com/bid/34584">
           <p>cTorrent and dTorrent are prone to a remote buffer-overflow
-             vulnerability because the software fails to properly
-             bounds-check user-supplied input before copying it to an
-             insufficiently sized memory buffer.</p>
+            vulnerability because the software fails to properly
+            bounds-check user-supplied input before copying it to an
+            insufficiently sized memory buffer.</p>
           <p>Successful exploits allow remote attackers to execute
-             arbitrary machine code in the context of a vulnerable
-             application. Failed exploit attempts will likely result in
-             denial-of-service conditions.</p>
+            arbitrary machine code in the context of a vulnerable
+            application. Failed exploit attempts will likely result in
+            denial-of-service conditions.</p>
         </blockquote>
       </body>
     </description>
     <references>
-      <cvename>CVE-2009-1759</cvename>
       <bid>34584</bid>
+      <cvename>CVE-2009-1759</cvename>
       <url>http://sourceforge.net/tracker/?func=detail&amp;aid=2782875&amp;group_id=202532&amp;atid=981959</url>
     </references>
     <dates>
@@ -69,6 +68,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2009-10-28</entry>
     </dates>
   </vuln>
+
   <vuln vid="c87aa2d2-c3c4-11de-ab08-000f20797ede">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
@@ -236,12 +236,21 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>SecurityFocus reports:</p>
 	<blockquote cite="http://www.securityfocus.com/archive/1/507261">
-	  <p>Some vulnerabilities have been reported in Xpdf, which can be exploited by malicious people to potentially compromise a user's system.</p>
-	  <p>1) Multiple integer overflows in "SplashBitmap::SplashBitmap()" can be exploited to cause heap-based buffer overflows.</p>
-	  <p>2) An integer overflow error in "ObjectStream::ObjectStream()" can be exploited to cause a heap-based buffer overflow.</p>
-	  <p>3) Multiple integer overflows in "Splash::drawImage()" can be exploited to cause heap-based buffer overflows.</p>
-	  <p>4) An integer overflow error in "PSOutputDev::doImageL1Sep()" can be exploited to cause a heap-based buffer overflow when converting a PDF document to a PS file.</p>
-	  <p>Successful exploitation of the vulnerabilities may allow execution of arbitrary code by tricking a user into opening a specially crafted PDF file.</p>
+	  <p>Some vulnerabilities have been reported in Xpdf, which can be
+	    exploited by malicious people to potentially compromise a user's
+	    system.</p>
+	  <p>1) Multiple integer overflows in "SplashBitmap::SplashBitmap()"
+	    can be exploited to cause heap-based buffer overflows.</p>
+	  <p>2) An integer overflow error in "ObjectStream::ObjectStream()"
+	    can be exploited to cause a heap-based buffer overflow.</p>
+	  <p>3) Multiple integer overflows in "Splash::drawImage()" can be
+	    exploited to cause heap-based buffer overflows.</p>
+	  <p>4) An integer overflow error in "PSOutputDev::doImageL1Sep()"
+	    can be exploited to cause a heap-based buffer overflow when
+	    converting a PDF document to a PS file.</p>
+	  <p>Successful exploitation of the vulnerabilities may allow execution
+	    of arbitrary code by tricking a user into opening a specially crafted
+	    PDF file.</p>
 	</blockquote>
       </body>
     </description>
