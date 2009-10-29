@@ -17,6 +17,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/Chunked.pm
 %%SITE_PERL%%/Plack/Middleware/ConditionalGET.pm
 %%SITE_PERL%%/Plack/Middleware/ContentLength.pm
+%%SITE_PERL%%/Plack/Middleware/ContentMD5.pm
 %%SITE_PERL%%/Plack/Middleware/Deflater.pm
 %%SITE_PERL%%/Plack/Middleware/ErrorDocument.pm
 %%SITE_PERL%%/Plack/Middleware/JSONP.pm
