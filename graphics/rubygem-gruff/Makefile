@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gruff
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.6
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
