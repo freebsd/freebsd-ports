@@ -1,24 +1,4 @@
 bin/gturing
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%EXAMPLESDIR%%/3ones2zeroes.tur
-%%EXAMPLESDIR%%/add.tur
-%%EXAMPLESDIR%%/addbin.tur
-%%EXAMPLESDIR%%/bb2.tur
-%%EXAMPLESDIR%%/bb3.tur
-%%EXAMPLESDIR%%/bb5.tur
-%%EXAMPLESDIR%%/bin2dec.tur
-%%EXAMPLESDIR%%/bin2dec_shift.tur
-%%EXAMPLESDIR%%/dashnumbers.tur
-%%EXAMPLESDIR%%/dec2bin.tur
-%%EXAMPLESDIR%%/dec2bin_shift.tur
-%%EXAMPLESDIR%%/sort.tur
-%%EXAMPLESDIR%%/subst.tur
 share/applications/gturing.desktop
 share/gnome/help/gturing/C/figures/mainwin.png
 share/gnome/help/gturing/C/gturing.xml
@@ -65,6 +45,4 @@ share/locale/zh_TW/LC_MESSAGES/gturing-2.0.mo
 @dirrm share/gnome/help/gturing/C/figures
 @dirrm share/gnome/help/gturing/C
 @dirrm share/gnome/help/gturing
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
