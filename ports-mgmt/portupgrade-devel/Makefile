@@ -5,14 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	portupgrade-devel
-PORTVERSION=	2.4.6
+PORTNAME=	portupgrade
+PORTVERSION=	20091029
+PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SF/portupgrade/pkgtools/${PORTVERSION}
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	FreeBSD ports/packages administration and management tool suite (devel version)
+COMMENT=	FreeBSD ports/packages management tool (devel version)
 
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
 		BDB1 "Use Berkeley DB 1.85 as backend" off
@@ -21,7 +23,6 @@ CONFLICTS=	portupgrade-[0-9]*
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	optparse ruby18
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 
