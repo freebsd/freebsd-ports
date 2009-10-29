@@ -18,7 +18,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
 
 CONFLICTS=	sword-1.6*
-NO_LATEST_LINK=	yes
+LATEST_LINK=	${PORTNAME}15
 
 MAKE_JOBS_SAFE=	yes
 
