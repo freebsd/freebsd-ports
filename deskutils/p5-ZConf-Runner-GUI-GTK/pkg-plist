@@ -1,0 +1,10 @@
+%%SITE_PERL%%/ZConf/Runner/GUI/GTK.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner/GUI/GTK/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner/GUI/GTK
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner/GUI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/ZConf/Runner/GUI
+@dirrmtry %%SITE_PERL%%/ZConf/Runner
+@dirrmtry %%SITE_PERL%%/ZConf
