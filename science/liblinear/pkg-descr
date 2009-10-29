@@ -1,11 +1,12 @@
 LIBLINEAR is a linear classifier for data with millions of instances and
-features. It supports L2-regularized logistic regression (LR), L2-loss
-linear SVM, and L1-loss linear SVM.
+features. It supports L2-regularized classifiers (L2-loss linear SVM,
+L1-loss linear SVM, and logistic regression), L1-regularized classifiers
+(L2-loss linear SVM and logistic regression).
 
 Main features of LIBLINEAR include 
 
 - Same data format as LIBSVM and similar usage
-- One-vs-the rest multi-class classification
+- One-vs-the rest and Crammer & Singer multi-class classification
 - Cross validation for model selection
 - Probability estimates (logistic regression only)
 - Weights for unbalanced data
