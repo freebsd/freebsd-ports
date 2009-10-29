@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack-Request
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -19,7 +19,6 @@ RUN_DEPENDS=	\
 	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
 	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 	p5-HTTP-Body>=1.05:${PORTSDIR}/www/p5-HTTP-Body \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
