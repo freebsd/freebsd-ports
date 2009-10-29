@@ -2106,6 +2106,7 @@
     SUBDIR += p5-XML-Pastor
     SUBDIR += p5-XSLoader
     SUBDIR += p5-Yada-Yada-Yada
+    SUBDIR += p5-ZConf-Bookmarks
     SUBDIR += p5-ZConf-GUI
     SUBDIR += p5-ZML
     SUBDIR += p5-accessors
