@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZConf-Runner
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -18,7 +18,8 @@ COMMENT=	Run a file using a choosen methode, desktop entry or mimetype
 RUN_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
 		${SITE_PERL}/File/MimeInfo/Applications.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
 		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
-		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI
+		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI \
+		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 PERL_CONFIGURE=	yes
 
