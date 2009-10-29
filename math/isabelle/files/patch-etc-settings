@@ -1,9 +1,13 @@
---- etc/settings.orig	2008-07-28 15:10:38.000000000 +1000
-+++ etc/settings	2008-07-28 15:22:08.000000000 +1000
-@@ -16,70 +16,36 @@
- # not invent new ML system names unless you know what you are doing.
- # Only one of the sections below should be activated.
+--- etc/settings.orig	2009-10-09 10:34:33.000000000 +1100
++++ etc/settings	2009-10-09 10:37:10.000000000 +1100
+@@ -11,55 +11,11 @@
+ ### ML compiler settings (ESSENTIAL!)
+ ###
  
+-# ML_HOME specifies the location of the actual compiler binaries.  Do
+-# not invent new ML system names unless you know what you are doing.
+-# Only one of the sections below should be activated.
+-
 -# Poly/ML 4.x/5.x (automated settings)
 -POLY_HOME="$(type -p poly)"; [ -n "$POLY_HOME" ] && POLY_HOME="$(dirname "$POLY_HOME")"
 -ML_PLATFORM=$("$ISABELLE_HOME/lib/scripts/polyml-platform")
@@ -42,37 +46,23 @@
 -#ML_OPTIONS="@SMLdebug=/dev/null"
 -#ML_PLATFORM=$(eval $("$ML_HOME/.arch-n-opsys" 2>/dev/null); echo "$HEAP_SUFFIX")
 -#SMLNJ_CYGWIN_RUNTIME=1
+-
+-# Moscow ML 2.00 (experimental!)
+-#ML_SYSTEM=mosml
+-#ML_HOME="/usr/local/mosml/bin"
+-#ML_OPTIONS=""
+-#ML_PLATFORM=""
+-
 +ML_SYSTEM=%%ML_SYSTEM%%
 +ML_HOME=%%ML_HOME%%
 +ML_OPTIONS=%%ML_OPTIONS%%
 +ML_PLATFORM=%%ML_PLATFORM%%
 +ML_DBASE=%%ML_DBASE%%
  
- # Moscow ML 2.00 (experimental!)
- #ML_SYSTEM=mosml
--#ML_HOME="/usr/local/mosml/bin"
-+#ML_HOME="%%PREFIX%%/bin"
- #ML_OPTIONS=""
- #ML_PLATFORM=""
- 
- # Alice 1.4 (experimental!)
- #ML_SYSTEM=alice
--#ML_HOME="/usr/local/alice/bin"
-+#ML_HOME="%%PREFIX%%/bin"
- #ML_OPTIONS=""
- #ML_PLATFORM=""
- 
- # Poplog/PML version 15.6/2.1 (experimental!)
- #ML_SYSTEM=poplogml
--#ML_HOME="/usr/local/poplog/current-poplog/bin"
-+#ML_HOME="%%PREFIX%%/bin"
- #ML_OPTIONS="-noinit"
- #ML_SUFFIX=".psv"
- #ML_PLATFORM=""
- 
--
  ###
- ### Interactive sessions (cf. isatool tty)
+ ### JVM components (Scala or Java)
+@@ -81,7 +37,7 @@
+ ### Interactive sessions (cf. isabelle tty)
  ###
  
 -ISABELLE_LINE_EDITOR=""
@@ -80,7 +70,16 @@
  [ -z "$ISABELLE_LINE_EDITOR" ] && ISABELLE_LINE_EDITOR="$(type -p rlwrap)"
  [ -z "$ISABELLE_LINE_EDITOR" ] && ISABELLE_LINE_EDITOR="$(type -p ledit)"
  
-@@ -154,7 +120,7 @@
+@@ -131,7 +87,7 @@
+ ISABELLE_TOOLS="$ISABELLE_HOME/lib/Tools"
+ 
+ # Location for temporary files (should be on a local file system).
+-ISABELLE_TMP_PREFIX="/tmp/isabelle-$USER"
++ISABELLE_TMP_PREFIX="%%SYSTMPDIR%%/isabelle-$USER"
+ 
+ # Heap input locations. ML system identifier is included in lookup.
+ ISABELLE_PATH="$ISABELLE_HOME_USER/heaps/$ISABELLE_IDENTIFIER:$ISABELLE_HOME/heaps"
+@@ -157,7 +113,7 @@
  ###
  
  # Where to look for docs (multiple dirs separated by ':').
@@ -89,29 +88,50 @@
  
  # Preferred document format
  ISABELLE_DOC_FORMAT=pdf
-@@ -189,6 +155,8 @@
+@@ -191,9 +147,7 @@
+ PROOFGENERAL_HOME=$(choosefrom \
+   "$ISABELLE_HOME/contrib/ProofGeneral" \
+   "$ISABELLE_HOME/../ProofGeneral" \
+-  "/usr/local/ProofGeneral" \
+-  "/usr/share/ProofGeneral" \
+-  "/opt/ProofGeneral" \
++  "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/ProofGeneral" \
+   "")
  
- # Proof General path, look in a variety of places
- ISABELLE_INTERFACE=$(choosefrom \
-+  "%%PREFIX%%/lib/xemacs/site-lisp/ProofGeneral/isar/interface" \
-+  "%%PREFIX%%/bin/proofgeneral" \
-   "$ISABELLE_HOME/contrib/ProofGeneral/isar/interface" \
-   "$ISABELLE_HOME/../ProofGeneral/isar/interface" \
-   "/usr/local/ProofGeneral/isar/interface" \
-@@ -211,9 +179,9 @@
- ## Set HOME only for tools you have installed!
+ PROOFGENERAL_OPTIONS=""
+@@ -211,9 +165,7 @@
+ JEDIT_HOME=$(choosefrom \
+   "$ISABELLE_HOME/contrib/jedit" \
+   "$ISABELLE_HOME/../jedit" \
+-  "/usr/local/jedit" \
+-  "/usr/share/jedit" \
+-  "/opt/jedit" \
++  "%%JAVASHAREDIR%%/jedit" \
+   "")
  
- # External provers
--E_HOME=$(choosefrom "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" "/usr/local/E" "")
--VAMPIRE_HOME=$(choosefrom "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" "/usr/local/Vampire" "")
--SPASS_HOME=$(choosefrom "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" "/usr/local/SPASS" "")
-+E_HOME=$(choosefrom "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" "%%PREFIX%%/E" "")
-+VAMPIRE_HOME=$(choosefrom "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" "%%PREFIX%%/Vampire" "")
-+SPASS_HOME=$(choosefrom "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" "%%PREFIX%%/SPASS" "")
+ JEDIT_JAVA_OPTIONS=""
+@@ -231,17 +183,17 @@
+ E_HOME=$(choosefrom \
+   "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" \
+   "$ISABELLE_HOME/../E/$ML_PLATFORM" \
+-  "/usr/local/E" \
++  "%%PREFIX%%/E" \
+   "")
+ VAMPIRE_HOME=$(choosefrom \
+   "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" \
+   "$ISABELLE_HOME/../vampire/$ML_PLATFORM" \
+-  "/usr/local/Vampire" \
++  "%%PREFIX%%/Vampire" \
+   "")
+ SPASS_HOME=$(choosefrom \
+   "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" \
+   "$ISABELLE_HOME/../spass/$ML_PLATFORM/bin" \
+-  "/usr/local/SPASS" \
++  "%%PREFIX%%/SPASS" \
+   "")
  
  # HOL4 proof objects (cf. Isabelle/src/HOL/Import)
- #HOL4_PROOFS="$ISABELLE_HOME_USER/proofs:$ISABELLE_HOME/proofs"
-@@ -224,26 +192,26 @@
+@@ -253,24 +205,24 @@
  #SVC_MACHINE=sparc-sun-solaris
  
  # Mucke (mu-calculus model checker)
@@ -129,8 +149,6 @@
  # zChaff (SAT Solver, cf. Isabelle/src/HOL/Tools/sat_solver.ML)
 -#ZCHAFF_HOME=/usr/local/bin
 +#ZCHAFF_HOME=%%PREFIX%%/bin
- #ZCHAFF_VERSION=2004.5.13
- #ZCHAFF_VERSION=2004.11.15
  
  # BerkMin561 (SAT Solver, cf. Isabelle/src/HOL/Tools/sat_solver.ML)
 -#BERKMIN_HOME=/usr/local/bin
