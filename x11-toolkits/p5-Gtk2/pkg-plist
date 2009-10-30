@@ -12,6 +12,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/AspectFrame.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Assistant.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Bin.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/BindingSet.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Box.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Buildable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Buildable/ParseContext.pod
@@ -151,7 +152,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl-versions.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl.typemap
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/pango.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Invisible.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Item.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ItemFactory.pod
@@ -171,6 +171,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Notebook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Object.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/OptionMenu.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Orientable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/PageSetup.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Paned.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango.pm

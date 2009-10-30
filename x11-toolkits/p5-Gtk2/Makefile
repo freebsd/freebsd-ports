@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gtk2
-PORTVERSION=	1.203
+PORTVERSION=	1.221
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN SF/${PORTNAME:L}-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ COMMENT=	Perl module for Gtk+ 2.x graphical user interface library
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo \
+		${SITE_PERL}/${PERL_ARCH}/Pango.pm:${PORTSDIR}/x11-toolkits/p5-Pango \
 		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
