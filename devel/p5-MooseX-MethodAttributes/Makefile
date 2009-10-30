@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-MethodAttributes
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Code attribute introspection
 
-BUILD_DEPENDS=	p5-Moose>=0.79:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Types>=0.06:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Types>=0.20:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-namespace-clean>=0.10:${PORTSDIR}/devel/p5-namespace-clean \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::MethodAttributes.3 \
 		MooseX::MethodAttributes::Inheritable.3 \
+		MooseX::MethodAttributes::Role.3 \
 		MooseX::MethodAttributes::Role::AttrContainer.3 \
 		MooseX::MethodAttributes::Role::AttrContainer::Inheritable.3 \
 		MooseX::MethodAttributes::Role::Meta::Class.3 \
@@ -31,6 +32,8 @@ MAN3=		MooseX::MethodAttributes.3 \
 		MooseX::MethodAttributes::Role::Meta::Method.3 \
 		MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped.3 \
 		MooseX::MethodAttributes::Role::Meta::Method::Wrapped.3 \
-		MooseX::MethodAttributes::Role::Meta::Role.3
+		MooseX::MethodAttributes::Role::Meta::Role.3 \
+		MooseX::MethodAttributes::Role::Meta::Role::Application.3 \
+		MooseX::MethodAttributes::Role::Meta::Role::Application::Summation.3
 
 .include <bsd.port.mk>
