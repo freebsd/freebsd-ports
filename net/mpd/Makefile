@@ -29,9 +29,10 @@ USE_RC_SUBR=	mpd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800097
-BROKEN=		does not compile
-.endif
+post-patch:
+	${FIND} ${WRKSRC}/src -type f -name \*.c \
+	| ${XARGS} ${GREP} -l 'NG_....LEN[ +1]*' \
+	| ${XARGS} ${REINPLACE_CMD} 's/\(NG_....\)LEN[ +1]*/\1SIZ/g'
 
 pre-build:
 	@${ECHO}
