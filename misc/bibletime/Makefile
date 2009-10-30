@@ -9,7 +9,6 @@ PORTNAME=	bibletime
 PORTVERSION=	2.3.3
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
-PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	An opensource Bible study tool
@@ -20,20 +19,18 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		clucene.0:${PORTSDIR}/textproc/clucene
 
 USE_OPENSSL=	yes
-KDE4_BUILDENV=	yes
-USE_KDE4=	kdeprefix runtime workspace oxygen automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
-
-CMAKE_SOURCE_PATH=	${WRKSRC}/..
+QT_COMPONENTS=	corelib dbus gui qtestlib script webkit xml qmake_build moc_build uic_build rcc_build
 
 CONFLICTS=	bibletime-devel-2*
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700042
-BROKEN=	does on build on 6.x, use misc/bibletime-kde3
+CMAKE_USE_PTHREAD=	yes
 .endif
+
+CMAKE_BUILD_TYPE=	Release
 
 .include <bsd.port.post.mk>
