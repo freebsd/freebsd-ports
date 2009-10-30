@@ -116,11 +116,13 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_tiny.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/NullAI/0.1/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/NullAI/0.1/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/NullAI/0.1/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/NullLegacyCppAI/0.1/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/NullLegacyCppAI/0.1/AIOptions.lua
