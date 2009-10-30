@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	daisy
-PORTVERSION=	0.0.4.20
+PORTVERSION=	0.0.4.21
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://daisyplasma.freehostia.com/downloads/
 PKGNAMEPREFIX=	plasma-applet-
