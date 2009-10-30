@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.teeworlds.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -30,6 +30,7 @@ OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
 .if defined(WITH_TEEWORLDS_SERVER_ONLY)
 BAM_TARGET=	server_release
 PLIST_SUB+=	CLIENT="@comment "
+PKGNAMESUFFX=	-server
 .else
 USE_XORG=	x11
 USE_GL=		gl glu
