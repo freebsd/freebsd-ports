@@ -8,7 +8,12 @@
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/MaybeWrapped.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application/Summation.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role.pm
+@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application
+@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer
