@@ -777,7 +777,6 @@
     SUBDIR += p5-XML-Handler-YAWriter
     SUBDIR += p5-XML-LibRSVG
     SUBDIR += p5-XML-LibXML
-    SUBDIR += p5-XML-LibXML-Common
     SUBDIR += p5-XML-LibXML-Iterator
     SUBDIR += p5-XML-LibXML-Simple
     SUBDIR += p5-XML-LibXSLT
