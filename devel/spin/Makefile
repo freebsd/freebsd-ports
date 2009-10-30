@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	5.1.7
+PORTVERSION=	5.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
@@ -21,7 +21,7 @@ OPTIONS=	XSPIN "Install xspin and TCL/Tk dependency" on
 .if !defined(WITHOUT_XSPIN)
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 PLIST_SUB+=	XSPIN=""
-XSPIN_TCL	=${WRKDIR}/Spin/Xspin5.1/xspin510.tcl
+XSPIN_TCL=	${WRKDIR}/Spin/Xspin5.2/xspin521.tcl
 .else
 PLIST_SUB+=	XSPIN="@comment "
 .endif
@@ -31,14 +31,16 @@ WRKSRC=		${WRKDIR}/Spin/Src${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	spin
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNXT"
+MAKE_JOBS_UNSAFE=yes
 
 post-extract:
+	@${ECHO_MSG} "Unbundling promela example files..."
 	@cd ${WRKDIR}/Spin/Test && ${SH} ${WRKDIR}/Spin/Test/examples
 
 .if !defined(WITHOUT_XSPIN)
 pre-patch:
-	${TR} -d '\015' < ${XSPIN_TCL} > ${XSPIN_TCL}.tmp
-	${MV} -f ${XSPIN_TCL}.tmp ${XSPIN_TCL}
+	@${TR} -d '\r' < ${XSPIN_TCL} > ${XSPIN_TCL}.tmp
+	@${MV} -f ${XSPIN_TCL}.tmp ${XSPIN_TCL}
 .endif
 
 .if !defined(WITHOUT_XSPIN)
