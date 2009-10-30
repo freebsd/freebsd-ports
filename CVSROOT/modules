@@ -11622,6 +11622,7 @@ p5-Gtk2-Ex-Utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
 p5-Gtk2-GladeXML                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-Gtk2-Html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-Gtk2-ImageView               ports/x11-toolkits/p5-Gtk2-ImageView
+p5-Gtk2-PathButtonBar           ports/x11-toolkits/p5-Gtk2-PathButtonBar
 p5-Gtk2-Spell                   ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-Gtk2-WebKit                  ports/www/p5-Gtk2-WebKit
@@ -13738,10 +13739,12 @@ p5-Yahoo-Lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search                 ports/www/p5-Yahoo-Search
 p5-ZConf                        ports/net/p5-ZConf
 p5-ZConf-BGSet                  ports/deskutils/p5-ZConf-BGSet
+p5-ZConf-Bookmarks              ports/devel/p5-ZConf-Bookmarks
 p5-ZConf-Cron                   ports/sysutils/p5-ZConf-Cron
 p5-ZConf-GUI                    ports/devel/p5-ZConf-GUI
 p5-ZConf-Mail                   ports/mail/p5-ZConf-Mail
 p5-ZConf-Runner                 ports/deskutils/p5-ZConf-Runner
+p5-ZConf-Runner-GUI-GTK         ports/deskutils/p5-ZConf-Runner-GUI-GTK
 p5-ZConf-Weather                ports/astro/p5-ZConf-Weather
 p5-ZML                          ports/devel/p5-ZML
 p5-Zen-Koans                    ports/misc/p5-Zen-Koans
@@ -15224,6 +15227,7 @@ p5-gtk2-ex-utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
 p5-gtk2-gladexml                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-gtk2-html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-gtk2-imageview               ports/x11-toolkits/p5-Gtk2-ImageView
+p5-gtk2-pathbuttonbar           ports/x11-toolkits/p5-Gtk2-PathButtonBar
 p5-gtk2-spell                   ports/devel/p5-Gtk2-Spell
 p5-gtk2-trayicon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-gtk2-webkit                  ports/www/p5-Gtk2-WebKit
@@ -17086,6 +17090,7 @@ p5-ui-dialog                    ports/devel/p5-UI-Dialog
 p5-uml-class-simple             ports/textproc/p5-UML-Class-Simple
 p5-uml-sequence                 ports/textproc/p5-UML-Sequence
 p5-uml-state                    ports/textproc/p5-UML-State
+p5-uni-perl                     ports/devel/p5-uni-perl
 p5-unicode-checkutf8            ports/textproc/p5-Unicode-CheckUTF8
 p5-unicode-eastasianwidth       ports/textproc/p5-Unicode-EastAsianWidth
 p5-unicode-escape               ports/textproc/p5-Unicode-Escape
@@ -17400,10 +17405,12 @@ p5-yape-regex                   ports/textproc/p5-YAPE-Regex
 p5-yape-regex-explain           ports/textproc/p5-YAPE-Regex-Explain
 p5-zconf                        ports/net/p5-ZConf
 p5-zconf-bgset                  ports/deskutils/p5-ZConf-BGSet
+p5-zconf-bookmarks              ports/devel/p5-ZConf-Bookmarks
 p5-zconf-cron                   ports/sysutils/p5-ZConf-Cron
 p5-zconf-gui                    ports/devel/p5-ZConf-GUI
 p5-zconf-mail                   ports/mail/p5-ZConf-Mail
 p5-zconf-runner                 ports/deskutils/p5-ZConf-Runner
+p5-zconf-runner-gui-gtk         ports/deskutils/p5-ZConf-Runner-GUI-GTK
 p5-zconf-weather                ports/astro/p5-ZConf-Weather
 p5-zen-koans                    ports/misc/p5-Zen-Koans
 p5-zml                          ports/devel/p5-ZML
@@ -20752,13 +20759,11 @@ ruby-crypt                      ports/security/ruby-crypt
 ruby-csv                        ports/textproc/ruby-csv
 ruby-cvs                        ports/devel/ruby-cvs
 ruby-date2                      ports/devel/ruby-date2
-ruby-dbd_interbase              ports/databases/ruby-dbd_interbase
-ruby-dbd_msql                   ports/databases/ruby-dbd_msql
 ruby-dbd_mysql                  ports/databases/ruby-dbd_mysql
 ruby-dbd_odbc                   ports/databases/ruby-dbd_odbc
 ruby-dbd_pg                     ports/databases/ruby-dbd_pg
-ruby-dbd_proxy                  ports/databases/ruby-dbd_proxy
 ruby-dbd_sqlite                 ports/databases/ruby-dbd_sqlite
+ruby-dbd_sqlite3                ports/databases/ruby-dbd_sqlite3
 ruby-dbdbd                      ports/databases/ruby-dbdbd
 ruby-dbi                        ports/databases/ruby-dbi
 ruby-dcl                        ports/science/ruby-dcl
