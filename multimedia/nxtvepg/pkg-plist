@@ -1,4 +1,5 @@
 bin/nxtvepg
+bin/nxtvepgd
 lib/X11/app-defaults/Nxtvepg
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
