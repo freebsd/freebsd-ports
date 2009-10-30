@@ -10,6 +10,7 @@ PORTVERSION=	4.13b
 PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
+		ftp://ftp3.ru.freebsd.org/pub/unix/postscript/a2ps/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${PAPERSIZE}${PKGNAMESUFFIX2}
