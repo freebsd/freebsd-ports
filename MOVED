@@ -4192,3 +4192,4 @@ graphics/libwpcg||2009-10-25|Unmaintained upstream, depends on an old version of
 databases/ruby-dbd_msql||2009-10-29|Has expired: no longer under development
 databases/ruby-dbd_proxy||2009-10-29|Has expired: no longer under development
 databases/ruby-dbd_interbase||2009-10-29|Has expired: no longer under development
+textproc/p5-XML-LibXML-Common|textproc/p5-XML-LibXML|2009-10-30|merged

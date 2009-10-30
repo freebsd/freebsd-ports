@@ -7,7 +7,7 @@
 
 PORTNAME=	XML-GDOME
 PORTVERSION=	0.86
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	Perl module that provides the DOM Level 2 Core API for XML documents
 
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 RUN_DEPENDS=	${SITE_PERL}/XML/SAX/Base.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML/Common.pm:${PORTSDIR}/textproc/p5-XML-LibXML-Common
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML/Common.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
