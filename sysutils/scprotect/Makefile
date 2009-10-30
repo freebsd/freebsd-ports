@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scprotect
-PORTVERSION=	20090209
-PORTREVISION=	1
+PORTVERSION=	20091028
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://dindin.ru/download/
 
@@ -23,9 +22,10 @@ PLIST_SUB=	KMODDIR=${KMODDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV+=	KMODDIR=${KMODDIR}
+CFLAGS+=-DWITH_SCPROTECT_LIST
 
-MAN8=		scprotect.8
-MANCOMPRESSED=	maybe
+#MAN4=		scprotect.4
+#MANCOMPRESSED=	yes
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources
