@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbd_sqlite3
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	databases ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-dbi
