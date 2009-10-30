@@ -714,22 +714,6 @@ lib/libplugin_llvmc_Base.a
 lib/libplugin_llvmc_Clang.a
 lib/libprofile_rt.so
 libexec/clang-cc
-share/clang/scanview.css
-share/clang/sorttable.js
-share/doc/clang/html.tar.gz
-share/doc/clang/html/AnalyzerRegions.html
-share/doc/clang/html/DriverInternals.html
-share/doc/clang/html/InternalsManual.html
-share/doc/clang/html/LanguageExtensions.html
-share/doc/clang/html/PCHInternals.html
-share/doc/clang/html/PTHInternals.html
-share/doc/clang/html/UsersManual.html
-share/doc/clang/html/clang/clang.html
-share/doc/clang/html/clang/manpage.css
-share/doc/clang/html/doxygen.css
-share/doc/clang/html/index.html
-share/doc/clang/html/libIndex.html
-share/doc/clang/ps/clang.ps
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%DOCSDIR%%/html.tar.gz
@@ -855,12 +839,6 @@ share/doc/clang/ps/clang.ps
 %%DOCSDIR%%/ps/llvmgxx.ps
 %%DOCSDIR%%/ps/opt.ps
 %%DOCSDIR%%/ps/tblgen.ps
-@dirrm share/doc/clang/ps
-@dirrm share/doc/clang/html/img
-@dirrm share/doc/clang/html/clang
-@dirrm share/doc/clang/html
-@dirrm share/doc/clang
-@dirrm share/clang
 @dirrm lib/clang/1.1/include
 @dirrm lib/clang/1.1
 @dirrm lib/clang
