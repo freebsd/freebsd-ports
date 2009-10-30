@@ -72,6 +72,7 @@
 %%WWWDIR%%/graphics/language.png
 %%WWWDIR%%/graphics/ldap-server.png
 %%WWWDIR%%/graphics/light.png
+%%WWWDIR%%/graphics/loadProfile.png
 %%WWWDIR%%/graphics/logo32.png
 %%WWWDIR%%/graphics/locality.png
 %%WWWDIR%%/graphics/lock.png
@@ -80,6 +81,7 @@
 %%WWWDIR%%/graphics/mailBig.png
 %%WWWDIR%%/graphics/minus.png
 %%WWWDIR%%/graphics/modules.png
+%%WWWDIR%%/graphics/moduleSettings.png
 %%WWWDIR%%/graphics/n.png
 %%WWWDIR%%/graphics/netgroup.png
 %%WWWDIR%%/graphics/network-wired.png
@@ -114,6 +116,7 @@
 %%WWWDIR%%/graphics/tux.png
 %%WWWDIR%%/graphics/uid.png
 %%WWWDIR%%/graphics/uniquegroup.png
+%%WWWDIR%%/graphics/undo.png
 %%WWWDIR%%/graphics/up.gif
 %%WWWDIR%%/graphics/user.png
 %%WWWDIR%%/graphics/userDefault.png
@@ -145,7 +148,6 @@
 %%WWWDIR%%/lib/lamPDF.inc
 %%WWWDIR%%/lib/lamdaemon.inc
 %%WWWDIR%%/lib/lamdaemon.pl
-%%WWWDIR%%/lib/lamdaemonOld.pl
 %%WWWDIR%%/lib/ldap.inc
 %%WWWDIR%%/lib/lists.inc
 %%WWWDIR%%/lib/modules.inc
@@ -168,7 +170,6 @@
 %%WWWDIR%%/lib/modules/posixAccount.inc
 %%WWWDIR%%/lib/modules/posixGroup.inc
 %%WWWDIR%%/lib/modules/quota.inc
-%%WWWDIR%%/lib/modules/sambaAccount.inc
 %%WWWDIR%%/lib/modules/sambaDomain.inc
 %%WWWDIR%%/lib/modules/sambaGroupMapping.inc
 %%WWWDIR%%/lib/modules/sambaSamAccount.inc
@@ -241,6 +242,7 @@
 %%WWWDIR%%/templates/config/mainlogin.php
 %%WWWDIR%%/templates/config/mainmanage.php
 %%WWWDIR%%/templates/config/profmanage.php
+%%WWWDIR%%/templates/config/moduleSettings.php
 %%WWWDIR%%/templates/delete.php
 %%WWWDIR%%/templates/help.php
 %%WWWDIR%%/templates/initsuff.php
