@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.4.0
-PORTREVISION=	6
+PORTVERSION=	0.4.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
@@ -28,7 +27,7 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		qcomicbook.1
 
 DESKTOP_ENTRIES="QComicBook" "Comic Book Viewer" \
-		"${DATADIR}/${PORTNAME}.png" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"qcomicbook" "" false
 
 OPTIONS=	7ZIP "Enable support for 7-Zip (.cb7) comic book archives" on \
