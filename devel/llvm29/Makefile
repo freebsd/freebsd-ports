@@ -34,6 +34,8 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
+CONFIGURE_ARGS+=	--enable-bindings=none
+
 .if defined(NOPORTDOCS)
 DOCSRCDIR=
 .else
