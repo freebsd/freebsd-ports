@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.9
+PORTVERSION=	6.95
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -76,9 +76,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/www/awstats/tools/webmin
 	@${MKDIR} ${PREFIX}/www/awstats/tools/xslt
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_buildstaticpages.pl ${PREFIX}/www/awstats/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_configure.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_exportlib.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_updateall.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_configure.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
