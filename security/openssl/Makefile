@@ -34,6 +34,7 @@ OPTIONS=	I386	"Use optimzed assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ZLIB	"Build with zlib compression" on \
 		SCTP	"Build with SCTP support" off \
+		FIPS    "Build with FIPS support" off \
 
 EXTRACONFIGURE+=	enable-camellia
 
@@ -870,6 +871,8 @@ EXTRACONFIGURE+=	no-sse2
 .endif
 .if !defined(WITH_FIPS)
 EXTRACONFIGURE+=	no-fips
+.else
+EXTRACONFIGURE+=	fips no-asm
 .endif
 .if defined(NOSHARED)
 PLIST_SUB+=	SHARED="@comment "
