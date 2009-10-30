@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	whois
-PORTVERSION=	4.7.34
+PORTVERSION=	4.7.36
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lapo@lapo.it
-COMMENT=	Marco d\'Itri whois client
+COMMENT=	Marco d'Itri whois client
 
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-#LDFLAGS+=	-L/usr/local/lib
-#CFLAGS+=	-I/usr/local/include
 
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	OPTS=""
