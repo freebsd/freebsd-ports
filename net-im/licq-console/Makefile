@@ -21,7 +21,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 LICQ_PORT?=	net-im/licq
 CPPFLAGS+=	${PTHREAD_CFLAGS}
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/cdk
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	lib/licq/licq_console.la \
