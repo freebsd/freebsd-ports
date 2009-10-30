@@ -7,6 +7,7 @@
 
 PORTNAME=	soundconverter
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	BERLIOS
 
@@ -28,7 +29,9 @@ INSTALLS_ICONS=	yes
 MAN1=	soundconverter.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@GMSGFMT@|${LOCALBASE}/bin/msgfmt|' ${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e 's|@GMSGFMT@|${LOCALBASE}/bin/msgfmt|; \
+		s|itlocaledir = .*|itlocaledir = ${LOCALBASE}/share/locale|g' \
+			${WRKSRC}/po/Makefile.in.in
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|' ${WRKSRC}/src/soundconverter.py
 
 .include <bsd.port.mk>
