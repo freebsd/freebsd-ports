@@ -23,7 +23,7 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui qtestlib script webkit xml qmake_build moc_build uic_build rcc_build
 
-CONFLICTS=	bibletime-devel-2*
+CONFLICTS=	bibletime-kde3-1*
 
 .include <bsd.port.pre.mk>
 
