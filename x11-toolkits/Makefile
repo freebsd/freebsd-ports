@@ -169,6 +169,7 @@
     SUBDIR += p5-Gtk2-ImageView
     SUBDIR += p5-Gtk2-PathButtonBar
     SUBDIR += p5-Gtk2-TrayIcon
+    SUBDIR += p5-Pango
     SUBDIR += p5-Prima
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk

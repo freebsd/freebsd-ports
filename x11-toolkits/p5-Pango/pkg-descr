@@ -1,0 +1,6 @@
+Perl binding to pango library to render and control the layout of
+internationalized text, and is the backend for right-to-left text.
+Pango is an integral part of the GTK+ and GNOME projects, but its
+code is platform- and toolkit-independent.
+
+WWW: http://search.cpan.org/dist/Pango/
