@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pvm
-PORTVERSION=	3.4.5
-PORTREVISION=	5
+PORTVERSION=	3.4.6
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
@@ -33,6 +32,7 @@ MAKE_ENV+=	PVM_ROOT=${WRKSRC} ARCHCFLAGS="${CFLAGS}"
 ALL_TARGET=	all install
 PVM_ROOT=	${PREFIX}/lib/pvm
 REINPLACE_ARGS=	-i ""
+MAKE_JOBS_UNSAFE=yes
 
 MAN1=		aimk.1 pvm.1 pvm_intro.1 pvm_shmd.1 pvmd3.1
 MAN3=		libpvm.3 pvm_addhosts.3 pvm_addmhf.3 pvm_advise.3 \
