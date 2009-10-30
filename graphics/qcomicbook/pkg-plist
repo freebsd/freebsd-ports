@@ -22,4 +22,5 @@ bin/qcomicbook
 %%DATADIR%%/thumbnails.png
 %%DATADIR%%/twopages.png
 %%DATADIR%%/wholepage.png
+share/pixmaps/qcomicbook.png
 @dirrm %%DATADIR%%
