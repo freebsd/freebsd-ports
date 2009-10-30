@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	air
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	roundcube-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	roundcube-
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Theme for RoundCube Web Mail
 
-RUN_DEPENDS=	roundcube>=0.2:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.3:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
 
