@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nxtvepg
-PORTVERSION=	2.7.6
-PORTREVISION=	2
+PORTVERSION=	2.8.0
 CATEGORIES=	multimedia tcl tk
 MASTER_SITES=	SF
 
@@ -21,7 +20,7 @@ USE_GMAKE=	yes
 USE_XORG=	x11 xmu
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WRKSRC=${WRKSRC}
 
-MAN1=		nxtvepg.1
+MAN1=		nxtvepg.1 nxtvepgd.1
 MYPORTDOCS=	README TODO CHANGES manual.html
 
 post-patch:
@@ -33,6 +32,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${LOCALBASE}/bin
 	${INSTALL_DATA}    ${WRKSRC}/Nxtvepg.ad ${LOCALBASE}/lib/X11/app-defaults/Nxtvepg
 	${INSTALL_MAN}     ${WRKSRC}/nxtvepg.1 ${LOCALBASE}/man/man1
+	${INSTALL_MAN}     ${WRKSRC}/nxtvepgd.1 ${LOCALBASE}/man/man1
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
