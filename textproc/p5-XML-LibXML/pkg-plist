@@ -4,6 +4,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Boolean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/CDATASection.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Comment.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Common.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Common.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/DOM.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Document.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/DocumentFragment.pod
@@ -24,6 +26,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Pattern.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Reader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Reader.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/RegExp.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/RelaxNG.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pod
