@@ -3,41 +3,41 @@
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 bin/soundconverter
-lib/locale/ar/LC_MESSAGES/soundconverter.mo
-lib/locale/bg/LC_MESSAGES/soundconverter.mo
-lib/locale/br/LC_MESSAGES/soundconverter.mo
-lib/locale/ca/LC_MESSAGES/soundconverter.mo
-lib/locale/cs/LC_MESSAGES/soundconverter.mo
-lib/locale/da/LC_MESSAGES/soundconverter.mo
-lib/locale/de/LC_MESSAGES/soundconverter.mo
-lib/locale/el/LC_MESSAGES/soundconverter.mo
-lib/locale/en_AU/LC_MESSAGES/soundconverter.mo
-lib/locale/en_GB/LC_MESSAGES/soundconverter.mo
-lib/locale/eo/LC_MESSAGES/soundconverter.mo
-lib/locale/es/LC_MESSAGES/soundconverter.mo
-lib/locale/et/LC_MESSAGES/soundconverter.mo
-lib/locale/eu/LC_MESSAGES/soundconverter.mo
-lib/locale/fa/LC_MESSAGES/soundconverter.mo
-lib/locale/fi/LC_MESSAGES/soundconverter.mo
-lib/locale/fr/LC_MESSAGES/soundconverter.mo
-lib/locale/he/LC_MESSAGES/soundconverter.mo
-lib/locale/hi/LC_MESSAGES/soundconverter.mo
-lib/locale/hu/LC_MESSAGES/soundconverter.mo
-lib/locale/it/LC_MESSAGES/soundconverter.mo
-lib/locale/ja/LC_MESSAGES/soundconverter.mo
-lib/locale/ms/LC_MESSAGES/soundconverter.mo
-lib/locale/nl/LC_MESSAGES/soundconverter.mo
-lib/locale/pl/LC_MESSAGES/soundconverter.mo
-lib/locale/pt_BR/LC_MESSAGES/soundconverter.mo
-lib/locale/ru/LC_MESSAGES/soundconverter.mo
-lib/locale/sk/LC_MESSAGES/soundconverter.mo
-lib/locale/sr/LC_MESSAGES/soundconverter.mo
-lib/locale/sr@latin/LC_MESSAGES/soundconverter.mo
-lib/locale/sv/LC_MESSAGES/soundconverter.mo
-lib/locale/te/LC_MESSAGES/soundconverter.mo
-lib/locale/tr/LC_MESSAGES/soundconverter.mo
-lib/locale/vi/LC_MESSAGES/soundconverter.mo
-lib/locale/zh_CN/LC_MESSAGES/soundconverter.mo
+share/locale/ar/LC_MESSAGES/soundconverter.mo
+share/locale/bg/LC_MESSAGES/soundconverter.mo
+share/locale/br/LC_MESSAGES/soundconverter.mo
+share/locale/ca/LC_MESSAGES/soundconverter.mo
+share/locale/cs/LC_MESSAGES/soundconverter.mo
+share/locale/da/LC_MESSAGES/soundconverter.mo
+share/locale/de/LC_MESSAGES/soundconverter.mo
+share/locale/el/LC_MESSAGES/soundconverter.mo
+share/locale/en_AU/LC_MESSAGES/soundconverter.mo
+share/locale/en_GB/LC_MESSAGES/soundconverter.mo
+share/locale/eo/LC_MESSAGES/soundconverter.mo
+share/locale/es/LC_MESSAGES/soundconverter.mo
+share/locale/et/LC_MESSAGES/soundconverter.mo
+share/locale/eu/LC_MESSAGES/soundconverter.mo
+share/locale/fa/LC_MESSAGES/soundconverter.mo
+share/locale/fi/LC_MESSAGES/soundconverter.mo
+share/locale/fr/LC_MESSAGES/soundconverter.mo
+share/locale/he/LC_MESSAGES/soundconverter.mo
+share/locale/hi/LC_MESSAGES/soundconverter.mo
+share/locale/hu/LC_MESSAGES/soundconverter.mo
+share/locale/it/LC_MESSAGES/soundconverter.mo
+share/locale/ja/LC_MESSAGES/soundconverter.mo
+share/locale/ms/LC_MESSAGES/soundconverter.mo
+share/locale/nl/LC_MESSAGES/soundconverter.mo
+share/locale/pl/LC_MESSAGES/soundconverter.mo
+share/locale/pt_BR/LC_MESSAGES/soundconverter.mo
+share/locale/ru/LC_MESSAGES/soundconverter.mo
+share/locale/sk/LC_MESSAGES/soundconverter.mo
+share/locale/sr/LC_MESSAGES/soundconverter.mo
+share/locale/sr@latin/LC_MESSAGES/soundconverter.mo
+share/locale/sv/LC_MESSAGES/soundconverter.mo
+share/locale/te/LC_MESSAGES/soundconverter.mo
+share/locale/tr/LC_MESSAGES/soundconverter.mo
+share/locale/vi/LC_MESSAGES/soundconverter.mo
+share/locale/zh_CN/LC_MESSAGES/soundconverter.mo
 share/applications/soundconverter.desktop
 share/icons/hicolor/48x48/apps/soundconverter.png
 share/icons/hicolor/scalable/apps/soundconverter.svg
@@ -48,77 +48,10 @@ share/icons/hicolor/scalable/apps/soundconverter.svg
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-@dirrmtry lib/locale/zh_CN/LC_MESSAGES
-@dirrmtry lib/locale/zh_CN
-@dirrmtry lib/locale/vi/LC_MESSAGES
-@dirrmtry lib/locale/vi
-@dirrmtry lib/locale/tr/LC_MESSAGES
-@dirrmtry lib/locale/tr
 @dirrmtry lib/locale/te/LC_MESSAGES
 @dirrmtry lib/locale/te
 @dirrmtry lib/locale/sv_SE/LC_MESSAGES
 @dirrmtry lib/locale/sv_SE
-@dirrmtry lib/locale/sv/LC_MESSAGES
-@dirrmtry lib/locale/sv
 @dirrmtry lib/locale/sr@latin/LC_MESSAGES
 @dirrmtry lib/locale/sr@latin
-@dirrmtry lib/locale/sr/LC_MESSAGES
-@dirrmtry lib/locale/sr
-@dirrmtry lib/locale/sk/LC_MESSAGES
-@dirrmtry lib/locale/sk
-@dirrmtry lib/locale/ru/LC_MESSAGES
-@dirrmtry lib/locale/ru
-@dirrmtry lib/locale/pt_BR/LC_MESSAGES
-@dirrmtry lib/locale/pt_BR
-@dirrmtry lib/locale/pl/LC_MESSAGES
-@dirrmtry lib/locale/pl
-@dirrmtry lib/locale/nl/LC_MESSAGES
-@dirrmtry lib/locale/nl
-@dirrmtry lib/locale/ms/LC_MESSAGES
-@dirrmtry lib/locale/ms
-@dirrmtry lib/locale/ja/LC_MESSAGES
-@dirrmtry lib/locale/ja
-@dirrmtry lib/locale/it/LC_MESSAGES
-@dirrmtry lib/locale/it
-@dirrmtry lib/locale/hu/LC_MESSAGES
-@dirrmtry lib/locale/hu
-@dirrmtry lib/locale/hi/LC_MESSAGES
-@dirrmtry lib/locale/hi
-@dirrmtry lib/locale/he/LC_MESSAGES
-@dirrmtry lib/locale/he
-@dirrmtry lib/locale/fr/LC_MESSAGES
-@dirrmtry lib/locale/fr
-@dirrmtry lib/locale/fi/LC_MESSAGES
-@dirrmtry lib/locale/fi
-@dirrmtry lib/locale/fa/LC_MESSAGES
-@dirrmtry lib/locale/fa
-@dirrmtry lib/locale/eu/LC_MESSAGES
-@dirrmtry lib/locale/eu
-@dirrmtry lib/locale/et/LC_MESSAGES
-@dirrmtry lib/locale/et
-@dirrmtry lib/locale/es/LC_MESSAGES
-@dirrmtry lib/locale/es
-@dirrmtry lib/locale/eo/LC_MESSAGES
-@dirrmtry lib/locale/eo
-@dirrmtry lib/locale/en_GB/LC_MESSAGES
-@dirrmtry lib/locale/en_GB
-@dirrmtry lib/locale/en_AU/LC_MESSAGES
-@dirrmtry lib/locale/en_AU
-@dirrmtry lib/locale/el/LC_MESSAGES
-@dirrmtry lib/locale/el
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale/da/LC_MESSAGES
-@dirrmtry lib/locale/da
-@dirrmtry lib/locale/cs/LC_MESSAGES
-@dirrmtry lib/locale/cs
-@dirrmtry lib/locale/ca/LC_MESSAGES
-@dirrmtry lib/locale/ca
-@dirrmtry lib/locale/br/LC_MESSAGES
-@dirrmtry lib/locale/br
-@dirrmtry lib/locale/bg/LC_MESSAGES
-@dirrmtry lib/locale/bg
-@dirrmtry lib/locale/ar/LC_MESSAGES
-@dirrmtry lib/locale/ar
-@dirrmtry lib/locale
 @dirrm %%DATADIR%%
