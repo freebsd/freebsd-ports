@@ -17,6 +17,9 @@ MASTER_SITE_SUBDIR=	tabthorpe
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
 
+DEPRECATED=	use misc/sword
+EXPIRATION_DATE=	2010-01-06
+
 CONFLICTS=	sword-1.6*
 LATEST_LINK=	${PORTNAME}15
 

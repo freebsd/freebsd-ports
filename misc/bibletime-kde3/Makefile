@@ -15,11 +15,14 @@ PKGNAMESUFFIX=	-kde3
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A powerful Bible study application for KDE3
 
+DEPRECATED=	use misc/bibletime
+EXPIRATION_DATE=	2010-01-06
+
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword15 \
 		${LOCALBASE}/lib/libclucene.so:${PORTSDIR}/textproc/clucene
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-CONFIGURE_ARGS= --with-sword-dir=${LOCALBASE} --with-clucene-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--with-sword-dir=${LOCALBASE} --with-clucene-dir=${LOCALBASE}
 
 PORTSCOUT=	ignore:1
 
@@ -29,6 +32,8 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+
+CONFLICTS=	bibletime-2*
 
 .include <bsd.port.pre.mk>
 
