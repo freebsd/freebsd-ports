@@ -1,0 +1,6 @@
+XML Schema defines a usage profile which is a subset of
+the ISO8601 profile.  This profile defines that the
+following is the only possible representation for a
+dateTime, despite all other options ISO provides.
+
+WWW: http://search.cpan.org/perldoc?DateTime::Format::XSD

@@ -1305,6 +1305,7 @@
     SUBDIR += p5-DateTime-Format-SQLite
     SUBDIR += p5-DateTime-Format-Strptime
     SUBDIR += p5-DateTime-Format-W3CDTF
+    SUBDIR += p5-DateTime-Format-XSD
     SUBDIR += p5-DateTime-Functions
     SUBDIR += p5-DateTime-HiRes
     SUBDIR += p5-DateTime-Incomplete
