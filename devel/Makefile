@@ -2380,6 +2380,7 @@
     SUBDIR += py-SymbolType
     SUBDIR += py-ToscaWidgets
     SUBDIR += py-TurboJinja
+    SUBDIR += py-akismet
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse
     SUBDIR += py-asn1
