@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	dictem
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc net elisp
 MASTER_SITES=	SF/dictem/dictem/dictem-${PORTVERSION}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	m.boyarov@bsd.by
+MAINTAINER=	m.boyarov@gmail.com
 COMMENT=	DictEm is a dict client for [X]Emacs
+
+RUN_DEPENDS=	${LOCALBASE}/bin/dict:${PORTSDIR}/textproc/dict
 
 USE_EMACS=	yes
 
