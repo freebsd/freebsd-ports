@@ -45,7 +45,7 @@ Milter_Include_MAINTAINER=	dinoex@FreeBSD.org
 	!defined(WITH_SENDMAIL_PORT)
 .if	exists(${LOCALBASE}/lib/libmilter.a) || \
 	!exists(/usr/lib/libmilter.a)
-WITH_SENDMAIL_PORTS=yes
+WITH_SENDMAIL_PORT=yes
 .else
 WITH_SENDMAIL_BASE=yes
 .endif
