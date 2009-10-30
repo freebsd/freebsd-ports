@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Filter-Crypto
-PORTVERSION=	1.23
+PORTVERSION=	1.29
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create runnable Perl files encrypted with OpenSSL libcrypto
 
 BUILD_DEPENDS=	${SITE_PERL}/PAR/Filter.pm:${PORTSDIR}/devel/p5-PAR-Packer \
