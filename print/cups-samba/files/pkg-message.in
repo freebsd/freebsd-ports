@@ -5,13 +5,6 @@ MANUAL INSTALL INSTRUCTIONS:
 
 To complete the installation of print/cups-samba, do in order:
 
-CUPS-BASE
------------
-
-1) Uncomment application/octet-stream line in mime.types
-2) Uncomment application/octet-stream line in mime.convs
-3) Restart cupsd
-
 SAMBA
 -------
 
@@ -58,7 +51,17 @@ write list or authentication will fail.
 CUPS-LPR
 ----------
 
-1) Run cupsaddsmb
+1) Copy following files from your MS Windows system:
+
+  ps5ui.dll
+  pscript5.dll
+  pscript.hlp
+  pscript.ntf
+
+They are located somewhere in C:\WINDOWS\system32\spool\drivers\w32x86.
+Put them to %%PREFIX%%/share/cups/drivers and correct permissions (chmod -wx).
+
+2) Run cupsaddsmb
 
 If only a subset of your printers will be installed as exportable to
 MS Windows NT/XP/2000/2003 clients:
@@ -80,6 +83,12 @@ will be automagically installed.
 ____________
 NOTE:  Other settings in smb.conf may work, but your REALLY need to
 know what your are doing.  :)
+
+64-bit Windows clients are not yet supported however you may find your luck
+with drivers from: http://www.cups.org/str.php?L2566
+
+On later Samba versions, "printer admin" is deprecated, instead your admin
+user should have SePrintOperatorPrivilege. Use "net rpc rights" to add them.
 
 %%PREFIX%%/share/doc/samba/Samba-HOWTO-Collection.pdf has some
 valuable information on this topic, especially chapters 17 and 18.
