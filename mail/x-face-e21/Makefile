@@ -7,7 +7,7 @@
 
 PORTNAME=	x-face-e21
 PORTVERSION=	20070306
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	X-Face utilities for Emacs 21 (and possibly 22)
 
+RUN_DEPENDS=	uncompface:${PORTSDIR}/mail/faces
 USE_EMACS=	yes
 
 .include <bsd.port.pre.mk>
