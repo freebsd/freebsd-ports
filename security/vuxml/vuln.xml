@@ -35,6 +35,40 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2fda6bd2-c53c-11de-b157-001999392805">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <range><lt>10.01.20091019</lt></range>
+      </package>
+      <package>
+        <name>linux-opera</name>
+        <range><lt>10.01</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Opera Team Reports:</p>
+        <blockquote cite="http://www.opera.com/docs/changelogs/unix/1001/">
+          <ul>
+            <li>Fixed an issue where certain domain names could allow execution of arbitrary code, as reported by Chris Weber of Casaba Security</li>
+            <li>Fixed an issue where scripts can run on the feed subscription page, as reported by Inferno</li>
+          </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/938/</url>
+      <url>http://www.opera.com/support/kb/view/939/</url>
+    </references>
+    <dates>
+      <discovery>2009-10-28</discovery>
+      <entry>2009-10-30</entry>
+      <modified>2009-10-30</modified>
+    </dates>
+   </vuln>
+
   <vuln vid="83d7d149-b965-11de-a515-0022156e8794">
     <topic>Enhanced cTorrent -- stack-based overflow</topic>
     <affects>
