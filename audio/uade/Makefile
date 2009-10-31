@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uade
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 		CRITICAL
