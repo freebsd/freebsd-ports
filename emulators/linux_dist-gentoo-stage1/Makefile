@@ -7,6 +7,7 @@
 
 PORTNAME=	gentoo-stage1
 PORTVERSION=	2008.0
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
@@ -86,6 +87,7 @@ do-install:
 		-type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
 		| ${XARGS} ${BRANDELF} -t Linux
+	@${BRANDELF} -t Linux ${PREFIX}/${PREFIX_SUBDIR}/lib/ld-2.6.1.so
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
