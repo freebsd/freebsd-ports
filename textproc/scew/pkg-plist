@@ -3,6 +3,7 @@ bin/scew_stream
 bin/scew_write
 libdata/pkgconfig/scew.pc
 lib/libscew.a
+lib/libscew.la
 lib/libscew.so
 lib/libscew.so.1
 include/scew/attribute.h
