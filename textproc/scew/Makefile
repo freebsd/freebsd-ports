@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scew
-PORTVERSION=	0.4.0
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH/${PORTNAME}/
 
@@ -21,13 +21,13 @@ USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-					LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 SCEW_EXAMPLES=	print stream write
 
 post-install:
 .for ex in ${SCEW_EXAMPLES}
-	${INSTALL_PROGRAM} ${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} ${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
