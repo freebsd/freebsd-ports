@@ -1,5 +1,4 @@
-%%PYTHON_SITELIBDIR%%/rrdtool/__init__.py
-%%PYTHON_SITELIBDIR%%/rrdtool/__init__.pyc
-%%PYTHON_SITELIBDIR%%/rrdtool/__init__.pyo
-%%PYTHON_SITELIBDIR%%/rrdtool/_rrdtool.so
-@dirrm %%PYTHON_SITELIBDIR%%/rrdtool
+%%PYTHON_SITELIBDIR%%/rrdtool.py
+%%PYTHON_SITELIBDIR%%/rrdtool.pyc
+%%PYTHON_SITELIBDIR%%/rrdtool.pyo
+%%PYTHON_SITELIBDIR%%/_rrdtool.so
