@@ -52,8 +52,10 @@ Note:  Please add new entries to the beginning of this file.
         <p>Opera Team Reports:</p>
         <blockquote cite="http://www.opera.com/docs/changelogs/unix/1001/">
           <ul>
-            <li>Fixed an issue where certain domain names could allow execution of arbitrary code, as reported by Chris Weber of Casaba Security</li>
-            <li>Fixed an issue where scripts can run on the feed subscription page, as reported by Inferno</li>
+            <li>Fixed an issue where certain domain names could allow execution
+	      of arbitrary code, as reported by Chris Weber of Casaba Security</li>
+            <li>Fixed an issue where scripts can run on the feed subscription
+	      page, as reported by Inferno</li>
           </ul>
         </blockquote>
       </body>
@@ -64,8 +66,7 @@ Note:  Please add new entries to the beginning of this file.
     </references>
     <dates>
       <discovery>2009-10-28</discovery>
-      <entry>2009-10-30</entry>
-      <modified>2009-10-30</modified>
+      <entry>2009-10-31</entry>
     </dates>
    </vuln>
 
