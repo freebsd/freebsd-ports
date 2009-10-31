@@ -3231,6 +3231,7 @@ fceu                            ports/emulators/fceu
 fceu-server                     ports/emulators/fceu-server
 fcgi                            ports/www/fcgi
 fcheck                          ports/security/fcheck
+fconfig                         ports/sysutils/fconfig
 fconv                           ports/converters/fconv
 fcplay                          ports/audio/fcplay
 fcptools                        ports/net-p2p/fcptools
@@ -11191,6 +11192,7 @@ p5-DateTime-Format-Roman        ports/devel/p5-DateTime-Format-Roman
 p5-DateTime-Format-SQLite       ports/devel/p5-DateTime-Format-SQLite
 p5-DateTime-Format-Strptime     ports/devel/p5-DateTime-Format-Strptime
 p5-DateTime-Format-W3CDTF       ports/devel/p5-DateTime-Format-W3CDTF
+p5-DateTime-Format-XSD          ports/devel/p5-DateTime-Format-XSD
 p5-DateTime-Functions           ports/devel/p5-DateTime-Functions
 p5-DateTime-HiRes               ports/devel/p5-DateTime-HiRes
 p5-DateTime-Incomplete          ports/devel/p5-DateTime-Incomplete
@@ -12680,6 +12682,7 @@ p5-PadWalker                    ports/devel/p5-PadWalker
 p5-Padre                        ports/editors/p5-Padre
 p5-Palm                         ports/palm/p5-Palm
 p5-Palm-PalmDoc                 ports/palm/p5-Palm-PalmDoc
+p5-Pango                        ports/x11-toolkits/p5-Pango
 p5-Parallel-ForkManager         ports/devel/p5-Parallel-ForkManager
 p5-Parallel-Prefork             ports/devel/p5-Parallel-Prefork
 p5-Parallel-Pvm                 ports/net/p5-Parallel-Pvm
@@ -12727,6 +12730,7 @@ p5-Perl6-Rules                  ports/devel/p5-Perl6-Rules
 p5-Perl6-Say                    ports/devel/p5-Perl6-Say
 p5-Perl6-Subs                   ports/lang/p5-Perl6-Subs
 p5-PerlCryptLib                 ports/security/p5-PerlCryptLib
+p5-PerlFM                       ports/x11-fm/p5-PerlFM
 p5-PerlIO-eol                   ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip                  ports/archivers/p5-PerlIO-gzip
 p5-PerlIO-via-Bzip2             ports/archivers/p5-PerlIO-via-Bzip2
@@ -13654,7 +13658,6 @@ p5-XML-Handler-Trees            ports/textproc/p5-XML-Handler-Trees
 p5-XML-Handler-YAWriter         ports/textproc/p5-XML-Handler-YAWriter
 p5-XML-LibRSVG                  ports/textproc/p5-XML-LibRSVG
 p5-XML-LibXML                   ports/textproc/p5-XML-LibXML
-p5-XML-LibXML-Common            ports/textproc/p5-XML-LibXML-Common
 p5-XML-LibXML-Iterator          ports/textproc/p5-XML-LibXML-Iterator
 p5-XML-LibXML-Simple            ports/textproc/p5-XML-LibXML-Simple
 p5-XML-LibXSLT                  ports/textproc/p5-XML-LibXSLT
@@ -13739,7 +13742,7 @@ p5-Yahoo-Lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search                 ports/www/p5-Yahoo-Search
 p5-ZConf                        ports/net/p5-ZConf
 p5-ZConf-BGSet                  ports/deskutils/p5-ZConf-BGSet
-p5-ZConf-Bookmarks              ports/devel/p5-ZConf-Bookmarks
+p5-ZConf-Bookmarks              ports/net/p5-ZConf-Bookmarks
 p5-ZConf-Cron                   ports/sysutils/p5-ZConf-Cron
 p5-ZConf-GUI                    ports/devel/p5-ZConf-GUI
 p5-ZConf-Mail                   ports/mail/p5-ZConf-Mail
@@ -14700,6 +14703,7 @@ p5-datetime-format-roman        ports/devel/p5-DateTime-Format-Roman
 p5-datetime-format-sqlite       ports/devel/p5-DateTime-Format-SQLite
 p5-datetime-format-strptime     ports/devel/p5-DateTime-Format-Strptime
 p5-datetime-format-w3cdtf       ports/devel/p5-DateTime-Format-W3CDTF
+p5-datetime-format-xsd          ports/devel/p5-DateTime-Format-XSD
 p5-datetime-functions           ports/devel/p5-DateTime-Functions
 p5-datetime-hires               ports/devel/p5-DateTime-HiRes
 p5-datetime-incomplete          ports/devel/p5-DateTime-Incomplete
@@ -16211,6 +16215,7 @@ p5-padre                        ports/editors/p5-Padre
 p5-padwalker                    ports/devel/p5-PadWalker
 p5-palm                         ports/palm/p5-Palm
 p5-palm-palmdoc                 ports/palm/p5-Palm-PalmDoc
+p5-pango                        ports/x11-toolkits/p5-Pango
 p5-par                          ports/devel/p5-PAR
 p5-par-dist                     ports/devel/p5-PAR-Dist
 p5-par-packer                   ports/devel/p5-PAR-Packer
@@ -16273,6 +16278,7 @@ p5-perl6-rules                  ports/devel/p5-Perl6-Rules
 p5-perl6-say                    ports/devel/p5-Perl6-Say
 p5-perl6-subs                   ports/lang/p5-Perl6-Subs
 p5-perlcryptlib                 ports/security/p5-PerlCryptLib
+p5-perlfm                       ports/x11-fm/p5-PerlFM
 p5-perlio-eol                   ports/devel/p5-PerlIO-eol
 p5-perlio-gzip                  ports/archivers/p5-PerlIO-gzip
 p5-perlio-via-bzip2             ports/archivers/p5-PerlIO-via-Bzip2
@@ -17320,7 +17326,6 @@ p5-xml-handler-yawriter         ports/textproc/p5-XML-Handler-YAWriter
 p5-xml-liberal                  ports/textproc/p5-XML-Liberal
 p5-xml-librsvg                  ports/textproc/p5-XML-LibRSVG
 p5-xml-libxml                   ports/textproc/p5-XML-LibXML
-p5-xml-libxml-common            ports/textproc/p5-XML-LibXML-Common
 p5-xml-libxml-iterator          ports/textproc/p5-XML-LibXML-Iterator
 p5-xml-libxml-simple            ports/textproc/p5-XML-LibXML-Simple
 p5-xml-libxslt                  ports/textproc/p5-XML-LibXSLT
@@ -17405,7 +17410,7 @@ p5-yape-regex                   ports/textproc/p5-YAPE-Regex
 p5-yape-regex-explain           ports/textproc/p5-YAPE-Regex-Explain
 p5-zconf                        ports/net/p5-ZConf
 p5-zconf-bgset                  ports/deskutils/p5-ZConf-BGSet
-p5-zconf-bookmarks              ports/devel/p5-ZConf-Bookmarks
+p5-zconf-bookmarks              ports/net/p5-ZConf-Bookmarks
 p5-zconf-cron                   ports/sysutils/p5-ZConf-Cron
 p5-zconf-gui                    ports/devel/p5-ZConf-GUI
 p5-zconf-mail                   ports/mail/p5-ZConf-Mail
@@ -19251,6 +19256,7 @@ py-YABT                         ports/misc/py-YABT
 py-addons                       ports/devel/py-AddOns
 py-adns                         ports/dns/py-adns
 py-aipy                         ports/astro/py-aipy
+py-akismet                      ports/devel/py-akismet
 py-albatross                    ports/www/py-albatross
 py-amanith                      ports/graphics/py-amanith
 py-amf                          ports/www/py-amf
