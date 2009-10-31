@@ -1,0 +1,11 @@
+Pod::Autopod is designed to generate pod documentation of a perl
+class by analysing its code. The idea is to have something similar
+like javadoc. So it uses also comments written directly obove the
+method definitions. It is designed to asumes a pm file which
+represents a class.
+
+Of course it can not understand every kind of syntax, parameters,
+etc. But the plan is to improve this library in the future to
+understand more and more automatically.
+
+WWW: http://search.cpan.org/dist/Pod-Autopod/
