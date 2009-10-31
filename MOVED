@@ -4194,3 +4194,4 @@ databases/ruby-dbd_interbase||2009-10-29|Has expired: no longer under developmen
 textproc/p5-XML-LibXML-Common|textproc/p5-XML-LibXML|2009-10-30|merged
 misc/bibletime-kde4|misc/bibletime|2009-10-30|Renamed now that KDE dependencies are removed
 net/xmlrpc++||2009-10-31|Unmaintained upstream and on the FreeBSD side
+net-p2p/mute-net||2009-10-31|Broken for extensive period of time and unmaintained

@@ -81,7 +81,6 @@
     SUBDIR += moodriver
     SUBDIR += mooseekd
     SUBDIR += museekplus
-    SUBDIR += mute-net
     SUBDIR += mutella
     SUBDIR += napshare
     SUBDIR += nicotine
