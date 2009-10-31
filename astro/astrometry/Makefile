@@ -38,8 +38,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
-BROKEN=		Does not build on sparc64-8
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 .include <bsd.port.post.mk>
