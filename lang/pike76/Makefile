@@ -226,8 +226,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -lgmp| -L${LOCALBASE}/lib -lgmp|' \
 		${WRKSRC}/src/modules/Gmp/configure ${WRKSRC}/src/modules/_Image_XFace/configure
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
-		${WRKSRC}/src/configure
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+			-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+			-e "s|/cc/|&'|" \
 		${WRKSRC}/src/configure
 
 post-install:
