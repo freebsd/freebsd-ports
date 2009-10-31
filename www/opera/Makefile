@@ -28,11 +28,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	10.00
+OPERA_VER=	10.01
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20090830
-OPERA_BUILD=	4585
+OPERA_DATE=	20091019
+OPERA_BUILD=	4682
 OPERA_LIB=	shared
 MASTER_SITES_VER_PATH=	unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
@@ -58,10 +58,6 @@ OPERA_TYPE=	7
 .else
 OPERA_TYPE=	6
 .endif
-
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/${PORTNAME}${PKGNAMESUFFIX}|g' \
-#		${WRKSRC}/usr/local/share/opera/defaults/pluginpath.ini
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX} --docdir=${DOCSDIR} --sharedir=${DATADIR} --exec_prefix=${DATADIR}/bin --plugindir=${DATADIR}/plugins)
