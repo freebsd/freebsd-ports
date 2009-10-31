@@ -1,21 +1,12 @@
---- configure.ac.orig	2009-05-09 00:44:27.000000000 +0900
-+++ configure.ac	2009-05-09 02:21:41.017956544 +0900
+--- configure.ac.orig	2009-11-01 04:18:22.000000000 +0900
++++ configure.ac	2009-11-01 04:23:22.892872472 +0900
 @@ -21,6 +21,9 @@
- dnl Define SED var without requiring AC_PROG_SED (new in autoconf-2.59b)
- m4_ifdef([AC_PROG_SED], [AC_PROG_SED], [AC_SUBST([SED], [${SED-sed}])])
+ AC_DISABLE_STATIC
+ AC_PROG_CC
  
 +dnl Define MKDIR_P var without requiring AC_PROG_MKDIR_P (new in autoconf-2.59b)
 +m4_ifdef([AC_PROG_MKDIR_P], [AC_PROG_MKDIR_P], [AC_SUBST([MKDIR_P], [${MKDIR_P-mkdir -p}])])
 +
- AC_MSG_CHECKING([whether $SED can substitute tabs and newlines for text])
- dnl One tab, a letter and two newlines
- cat>sed-test.1<<EOF
-@@ -314,7 +317,7 @@
- 
- # AtomBios special flags
- ATOMBIOS_CFLAGS=""
--for w in -std=c99 -Wno-unknown-pragmas ; do
-+for w in -std=gnu99 -Wno-unknown-pragmas ; do
-   AC_PROG_CC_FLAG($w,[ATOMBIOS_CFLAGS="$ATOMBIOS_CFLAGS $w"],)
- done
+ dnl Define SED var without requiring AC_PROG_SED (new in autoconf-2.59b)
+ m4_ifdef([AC_PROG_SED], [AC_PROG_SED], [AC_SUBST([SED], [${SED-sed}])])
  
