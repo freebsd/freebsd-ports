@@ -7,7 +7,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/ \
@@ -33,12 +32,20 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes
 
-OPERA_VER=	10.00
-OPERA_BUILD=	4585
+OPERA_VER=	10.01
+OPERA_BUILD=	4682
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
 MAN1=		linux-opera.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION}<700055
+IGNORE=	you need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
+.elif ${OSVERSION}<800076 && ! defined (OVERRIDE_LINUX_NONBASE_PORTS)
+IGNORE=	you need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
+.endif
 
 post-extract:
 	@${MV} ${WRKSRC}/usr/share/man/man1/opera.1 \
@@ -63,4 +70,4 @@ do-install:
 			--exec_prefix=${DATADIR}/bin \
 			--plugindir=${DATADIR}/plugins)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
