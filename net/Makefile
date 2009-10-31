@@ -1080,7 +1080,6 @@
     SUBDIR += xipdump
     SUBDIR += xipmsg
     SUBDIR += xisp
-    SUBDIR += xmlrpc++
     SUBDIR += xmlrpc-c
     SUBDIR += xmlrpc-c-devel
     SUBDIR += xmlrpc-epi
