@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20071009
-PORTREVISION=	1
+PORTVERSION=	0.0.20091026
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -19,7 +18,6 @@ OPTIONS+=	GUI "With GTK support (GtkGlExt)" off
 OPTIONS+=	THREADS "With threading support" off
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4
 USE_GL=		gl
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libltdl:22
@@ -72,6 +70,6 @@ BROKEN=		Fails to link
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/gentokens/find_header.perl
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/gengl/find_header.perl
 
 .include <bsd.port.post.mk>
