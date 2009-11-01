@@ -7,7 +7,7 @@
 
 PORTNAME=	esdl
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 ALL_TARGET=	target
 PLIST_SUB=	VERSION="${PORTVERSION}"
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	SDL_TTF "SDL_ttf support" on \
 		SDL_IMAGE "SDL_image support" on
@@ -46,6 +47,9 @@ PLIST_SUB+=	SDL_IMAGE=""
 .else
 PLIST_SUB+=	SDL_IMAGE="@comment "
 .endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} go+r
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|addons|lib|' ${WRKSRC}/Makefile
