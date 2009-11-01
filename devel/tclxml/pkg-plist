@@ -1,17 +1,28 @@
-include/tclxml/tclxml.h
-include/tclxml/tclxmlDecls.h
-lib/TclxmlConfig.sh
+include/tclxml/docObj.h
+include/tclxml/tcldom-libxml2.h
+include/tclxml/tcldom.h
+include/tclxml/tclxml-libxml2.h
+include/tclxml/tclxslt.h
 lib/Tclxml%%VER%%/libTclxml%%VER%%.so
 lib/Tclxml%%VER%%/libTclxmlstub%%VER%%.a
 lib/Tclxml%%VER%%/pkgIndex.tcl
+lib/Tclxml%%VER%%/process.tcl
+lib/Tclxml%%VER%%/resources.tcl
 lib/Tclxml%%VER%%/sgml-8.0.tcl
 lib/Tclxml%%VER%%/sgml-8.1.tcl
 lib/Tclxml%%VER%%/sgmlparser.tcl
+lib/Tclxml%%VER%%/tcldom-libxml2.tcl
 lib/Tclxml%%VER%%/tclparser-8.0.tcl
 lib/Tclxml%%VER%%/tclparser-8.1.tcl
-lib/Tclxml%%VER%%/xml__tcl.tcl
+lib/Tclxml%%VER%%/tclxslt-libxslt.tcl
+lib/Tclxml%%VER%%/utilities.tcl
 lib/Tclxml%%VER%%/xml-8.0.tcl
 lib/Tclxml%%VER%%/xml-8.1.tcl
+lib/Tclxml%%VER%%/xml__tcl.tcl
+lib/Tclxml%%VER%%/xmldep.tcl
+lib/Tclxml%%VER%%/xmlswitch.tcl
 lib/Tclxml%%VER%%/xpath.tcl
+lib/Tclxml%%VER%%/xsltcache.tcl
+lib/TclxmlConfig.sh
 @dirrm lib/Tclxml%%VER%%
 @dirrm include/tclxml

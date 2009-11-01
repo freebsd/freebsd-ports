@@ -1,15 +1,11 @@
-Due to the portbuildmechanism, the original TCL_SRC_DIR is not available
-at buildtime of this port, but the private headers that we are actually
-looking for can also be found in the include directory.
-
---- configure.orig	2005-11-04 07:26:33.000000000 +0100
-+++ configure	2008-04-27 23:30:44.000000000 +0200
-@@ -3183,7 +3183,7 @@
+--- configure.orig	2008-12-02 08:55:06.000000000 -0200
++++ configure	2009-10-09 19:10:25.000000000 -0300
+@@ -6770,6 +6770,8 @@
  
      TCL_INCLUDES=-I\"${INCLUDE_DIR_NATIVE}\"
  
--    
 +    TCL_SRC_DIR=${with_tclinclude}
++
  
  
-     echo $ac_n "checking for Tcl private include files""... $ac_c" 1>&6
+ 

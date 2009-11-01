@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	tclxml
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tclxml/TclXML/${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	API for parsing XML documents using Tcl
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/xslt-config:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS?=	dtplite:${PORTSDIR}/devel/tcllib
 
-PORTDOCS=	README.html html.xsl nroff.xsl tclxml.html tclxml.xml \
-		README.xml man.macros tcldoc-1.0.dtd tclxml.n txt.xsl
+PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
+		tcldom.html tcldom.xml tclxml.css tclxml.html tclxml.xml \
+		tclxslt.html tclxslt.xml transform.tcl txt.xsl
 
 USE_TCL=	82+
+XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR}
+		--with-tclinclude=${TCL_INCLUDEDIR} \
+		XML_CONFIG="${XML_CONFIG}"
 PLIST=		${PKGDIR}${PKGNAMESUFFIX}/pkg-plist
 PATCHDIR=	${PKGDIR}${PKGNAMESUFFIX}/files/
 PLIST_SUB=	VER=${PORTVERSION}
@@ -33,7 +36,7 @@ PLIST_SUB=	VER=${PORTVERSION}
 pre-install:
 
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}	
+	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
