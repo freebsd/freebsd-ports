@@ -7,9 +7,8 @@
 #
 
 PORTNAME=		bash
-PATCHLEVEL=		48
+PATCHLEVEL=		50
 PORTVERSION=		3.2.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -26,12 +25,10 @@ PATCHFILES!=		/usr/bin/jot -s " " -w \
 			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
-LATEST_LINK=		bash3
-CONFLICTS=		bash-[0-24-9].*
 
 .if !defined(WITHOUT_IMPLICITCD)
 EXTRA_PATCHES+=		${PATCHDIR}/xpatch-implicitcd
@@ -62,11 +59,14 @@ CONFIGURE_ARGS=		--without-bash-malloc \
 WITHOUT_NLS=yes
 .endif
 CONFIGURE_ARGS+=	--enable-static-link
-PKGNAMESUFFIX=	-static
-CONFLICTS+=	bash-[0-9]*
+PKGNAMESUFFIX=	3-static
+LATEST_LINK=		bash3-static
+CONFLICTS+=	bash-[0-9]* bash-static-[0-9]* bash3-[0-9]*
 .else
 CONFIGURE_ARGS+=	--enable-static-link=no
-CONFLICTS+=	bash-static-[0-9]*
+CONFLICTS+=	bash-[0-9]* bash-static-[0-9]* bash3-static-[0-9]*
+PKGNAMESUFFIX=	3
+LATEST_LINK=		bash3
 .endif
 
 .if defined(WITHOUT_HELP)
