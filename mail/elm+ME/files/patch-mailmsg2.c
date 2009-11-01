@@ -32,17 +32,20 @@
  	    if (!cur_editcharset)
  		cur_editcharset = display_charset;
  
-@@ -523,12 +539,15 @@
+@@ -523,15 +539,18 @@
  				     hdr->env_from);
  		    
  		} else if (attribution[0] && hdr) {
 +		    char * date = us2s(stream_from_string(Date_buffer,1,NULL));
 +
  		    if (From_buffer) {
- 			char * str = us2s(stream_from_string(From_buffer,1,NULL));
+ 			struct string * tmp1 = convert_string(cur_editcharset,
+ 							      From_buffer,1);
+ 			char * str = us2s(stream_from_string(tmp1,1,NULL));
 -			fprintf(reply, attribution, str);
 +			fprintf(reply, attribution, str, date);
  			free(str);
+ 			free_string(&tmp1);
  		    } else
 -			fprintf(reply, attribution, hdr->env_from);
 +			fprintf(reply, attribution, hdr->env_from, date);
