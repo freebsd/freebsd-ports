@@ -9,7 +9,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		33
 PORTVERSION=		4.0.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -30,7 +30,6 @@ MAINTAINER=		obrien@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
-CONFLICTS=		bash-[0-35-9].*
 
 .if !defined(WITHOUT_IMPLICITCD)
 EXTRA_PATCHES+=		${PATCHDIR}/xpatch-implicitcd
@@ -64,10 +63,10 @@ WITHOUT_NLS=yes
 .endif
 CONFIGURE_ARGS+=	--enable-static-link
 PKGNAMESUFFIX=	-static
-CONFLICTS+=	bash-[0-9]*
+CONFLICTS+=	bash-[0-9]* bash3-[0-9]* bash3-static-[0-9]*
 .else
 CONFIGURE_ARGS+=	--enable-static-link=no
-CONFLICTS+=	bash-static-[0-9]*
+CONFLICTS+=	bash-static-[0-9]* bash3-[0-9]* bash3-static-[0-9]*
 .endif
 
 .if defined(WITHOUT_HELP)
