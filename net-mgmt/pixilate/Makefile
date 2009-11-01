@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pixilate
-PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTVERSION=	0.4.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/winfingerprint/${PORTNAME}/${PORTVERSION}
 
@@ -17,10 +16,8 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/pixilate
 
-USE_AUTOTOOLS=	automake:15 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:22
 AUTOMAKE_ARGS=	--add-missing
-
-#CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${LIBS}" CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		pixilate.1
 
