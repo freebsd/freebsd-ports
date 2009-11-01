@@ -26,10 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--disable-docs
+CONFIGURE_ARGS+=	--disable-documentation
 
-post-patch:
-	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/(docs|examples)//g' ${WRKSRC}/Makefile.in
 .else
 post-configure:
 	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
