@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wings
-PORTVERSION=	0.99.04a
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
@@ -22,13 +21,12 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 
 MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
 PLIST_SUB=	VERSION="${PORTVERSION}"
+MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	wings.sh
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-
-BROKEN=		Broken with erlang-r13b
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
@@ -36,7 +34,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}
-.for dir in src ebin fonts plugins
+.for dir in src ebin fonts plugins textures shaders patches
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${PREFIX}/lib/erlang/lib/${DISTNAME}
 .endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/wings.sh ${PREFIX}/bin/wings
