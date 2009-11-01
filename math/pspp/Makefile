@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pspp
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
@@ -25,6 +24,7 @@ USE_PERL5_BUILD=yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 INFO=		pspp pspp-dev

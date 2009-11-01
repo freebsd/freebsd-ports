@@ -40,6 +40,8 @@ lib/pspp/.keep_me
 %%GUI%%share/glade3/pixmaps/22x22/psppire-selector.png
 %%GUI%%share/glade3/pixmaps/22x22/psppire-vbuttonbox.png
 %%NLS%%share/locale/en_GB/LC_MESSAGES/pspp.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/pspp.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pspp.mo
 %%GUI%%%%DATADIR%%/crosstabs.glade
 %%GUI%%%%DATADIR%%/data-editor.glade
 %%GUI%%%%DATADIR%%/date-scale.png
