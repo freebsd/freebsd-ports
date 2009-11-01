@@ -63,6 +63,10 @@ OPTIONS=	BWMON	 "Enable bandwidth monitoring for server" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 # workaround: compress and add to plist disobedient man pages
 .for manlang in ${MANLANG_GAME}
 MAN6_${manlang:U}=	wesnoth.6
