@@ -127,7 +127,12 @@
 %%WWWDIR%%/claroline/announcements/setup/course_install.sql
 %%WWWDIR%%/claroline/announcements/setup/course_uninstall.sql
 %%WWWDIR%%/claroline/auth/courses.php
-%%WWWDIR%%/claroline/auth/extauth/casProcess.inc.php
+%%WWWDIR%%/claroline/auth/extauth/cas/casProcess.inc.php
+%%WWWDIR%%/claroline/auth/extauth/shibboleth/conf/auth.shibboleth.conf.php.dist
+%%WWWDIR%%/claroline/auth/extauth/shibboleth/index.php
+%%WWWDIR%%/claroline/auth/extauth/shibboleth/shibboleth.lib.php
+%%WWWDIR%%/claroline/auth/extauth/shibboleth/shibbolethProcess.inc.php
+%%WWWDIR%%/claroline/auth/extauth/shibboleth/shibbolethUser.php
 %%WWWDIR%%/claroline/auth/index.php
 %%WWWDIR%%/claroline/auth/inscription.php
 %%WWWDIR%%/claroline/auth/login.php
@@ -791,6 +796,24 @@
 %%WWWDIR%%/claroline/inc/lib/thirdparty/pear/XML/Util.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/phpmailer/class.phpmailer.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/phpmailer/class.smtp.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/lang/eng.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/lang/ita.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/tcpdf_config.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/tcpdf_config_alt.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/arialunicid0.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/courier.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/helvetica.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/helveticab.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/helveticabi.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/helveticai.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/times.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/timesb.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/timesbi.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/timesi.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/htmlcolors.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/LICENSE.TXT
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/tcpdf.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/unicode_data.php
 %%WWWDIR%%/claroline/inc/lib/thumbnails.lib.php
 %%WWWDIR%%/claroline/inc/lib/url.lib.php
 %%WWWDIR%%/claroline/inc/lib/user.lib.php
@@ -809,15 +832,26 @@
 %%WWWDIR%%/claroline/inc/swf/player_flv.jpg
 %%WWWDIR%%/claroline/inc/swf/player_flv.swf
 %%WWWDIR%%/claroline/inc/swf/player_mp3.swf
+%%WWWDIR%%/claroline/inc/templates/advancedCourseSearch.tpl.php
+%%WWWDIR%%/claroline/inc/templates/advancedUserSearch.tpl.php
 %%WWWDIR%%/claroline/inc/templates/banner.tpl.php
 %%WWWDIR%%/claroline/inc/templates/body.tpl.php
 %%WWWDIR%%/claroline/inc/templates/course_index.tpl.php
 %%WWWDIR%%/claroline/inc/templates/document_create.tpl.php
 %%WWWDIR%%/claroline/inc/templates/footer.tpl.php
 %%WWWDIR%%/claroline/inc/templates/header.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_claroline.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_document.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_exercise.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_forum.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_group.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_home.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_user.tpl.php
+%%WWWDIR%%/claroline/inc/templates/help_work.tpl.php
 %%WWWDIR%%/claroline/inc/templates/loginzone.tpl.php
 %%WWWDIR%%/claroline/inc/templates/platform_index.tpl.php
 %%WWWDIR%%/claroline/inc/templates/readme.txt
+%%WWWDIR%%/claroline/inc/templates/translation_index.tpl.php
 %%WWWDIR%%/claroline/index.php
 %%WWWDIR%%/claroline/install/INSTALL
 %%WWWDIR%%/claroline/install/defaultsetting.inc.php
@@ -1431,6 +1465,9 @@
 @dirrm %%WWWDIR%%/claroline/announcements/lib
 @dirrm %%WWWDIR%%/claroline/announcements/setup
 @dirrm %%WWWDIR%%/claroline/announcements
+@dirrm %%WWWDIR%%/claroline/auth/extauth/shibboleth/conf
+@dirrm %%WWWDIR%%/claroline/auth/extauth/shibboleth
+@dirrm %%WWWDIR%%/claroline/auth/extauth/cas
 @dirrm %%WWWDIR%%/claroline/auth/extauth
 @dirrm %%WWWDIR%%/claroline/auth
 @dirrm %%WWWDIR%%/claroline/backends/sso
@@ -1636,6 +1673,12 @@
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/pear/XML
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/pear
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/phpmailer
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/images
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/lang
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/cache
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty
 @dirrm %%WWWDIR%%/claroline/inc/lib/utils
 @dirrm %%WWWDIR%%/claroline/inc/lib
