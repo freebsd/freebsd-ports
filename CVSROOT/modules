@@ -972,8 +972,8 @@ biabam                          ports/mail/biabam
 bib2html                        ports/textproc/bib2html
 bibcursed                       ports/print/bibcursed
 bibelot                         ports/palm/bibelot
+bibletime                       ports/misc/bibletime
 bibletime-kde3                  ports/misc/bibletime-kde3
-bibletime-kde4                  ports/misc/bibletime-kde4
 biblical-curse                  ports/misc/biblical-curse
 biblio-py                       ports/print/biblio-py
 bibtex2html                     ports/textproc/bibtex2html
@@ -12759,6 +12759,7 @@ p5-Plucene-Analysis-CJKAnalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
 p5-Plucene-Plugin-Analyzer-SnowballAnalyzer  ports/textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
 p5-Plucene-Simple               ports/textproc/p5-Plucene-Simple
 p5-Pod-Abstract                 ports/textproc/p5-Pod-Abstract
+p5-Pod-Autopod                  ports/textproc/p5-Pod-Autopod
 p5-Pod-Constants                ports/textproc/p5-Pod-Constants
 p5-Pod-Coverage                 ports/devel/p5-Pod-Coverage
 p5-Pod-Coverage-Moose           ports/devel/p5-Pod-Coverage-Moose
@@ -16315,6 +16316,7 @@ p5-plucene-analysis-cjkanalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
 p5-plucene-plugin-analyzer-snowballanalyzer  ports/textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
 p5-plucene-simple               ports/textproc/p5-Plucene-Simple
 p5-pod-abstract                 ports/textproc/p5-Pod-Abstract
+p5-pod-autopod                  ports/textproc/p5-Pod-Autopod
 p5-pod-constants                ports/textproc/p5-Pod-Constants
 p5-pod-coverage                 ports/devel/p5-Pod-Coverage
 p5-pod-coverage-moose           ports/devel/p5-Pod-Coverage-Moose
@@ -24305,7 +24307,6 @@ xmlppm                          ports/textproc/xmlppm
 xmlprpr                         ports/textproc/xmlprpr
 xmlpull                         ports/textproc/xmlpull
 xmlroff                         ports/textproc/xmlroff
-xmlrpc++                        ports/net/xmlrpc++
 xmlrpc-c                        ports/net/xmlrpc-c
 xmlrpc-c-devel                  ports/net/xmlrpc-c-devel
 xmlrpc-epi                      ports/net/xmlrpc-epi
