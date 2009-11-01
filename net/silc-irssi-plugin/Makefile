@@ -19,4 +19,6 @@ CONFLICTS=	silc-toolkit-1.1.* silc-client-1.1.*
 
 IRSSI_PLUGIN=	-irssi
 
+IGNORE=	is broken with latest IRSSI
+
 .include "${MASTERDIR}/Makefile"
