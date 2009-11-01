@@ -8,6 +8,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/sawmill/${PORTNAME}/${PORTVERSION}
@@ -21,8 +22,6 @@ LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep \
 		cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
-
-BROKEN=		leaves files behind on deinstallation
 
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
