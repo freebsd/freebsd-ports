@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.multiprecision.org/mpc/download/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Library of complex numbers with arbitrarily high precision
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
