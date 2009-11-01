@@ -17,7 +17,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Open Ticket Request System
 
 BUILD_DEPENDS=	p5-CGI.pm>=3.33:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date-Pcalc \
+		${SITE_PERL}/${PERL_ARCH}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date-Pcalc \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
