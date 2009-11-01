@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	o2sms
-PORTVERSION=	3.34
+PORTVERSION=	3.35
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN \
 		http://www.mackers.com/projects/o2sms/releases/
 MASTER_SITE_SUBDIR=	WWW/MACKERS
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Send SMS messages via the websites of Irish mobile operators
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
@@ -26,11 +26,13 @@ PERL_CONFIGURE=	yes
 MAN1=		aftsms.1 \
 		o2sms.1 \
 		meteorsms.1 \
+		threesms.1 \
 		vodasms.1
 MAN3=		WWW::SMS::IE::aftsms.3 \
 		WWW::SMS::IE::iesms.3 \
 		WWW::SMS::IE::o2sms.3 \
 		WWW::SMS::IE::meteorsms.3 \
+		WWW::SMS::IE::threesms.3 \
 		WWW::SMS::IE::vodasms.3
 
 .include <bsd.port.mk>
