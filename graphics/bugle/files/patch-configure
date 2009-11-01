@@ -1,0 +1,26 @@
+--- configure.ac.orig	2009-10-26 20:12:49.000000000 +0100
++++ configure.ac	2009-11-01 15:23:46.000000000 +0100
+@@ -228,8 +228,8 @@
+             [test $withval = no && HAVE_GTK=0], [])
+ GLDB=gldb/gldb$EXEEXT
+ GLDB_GUI=gldb/gldb-gui$EXEEXT
+-test $HAVE_GTK == 1 || GLDB_GUI=""
+-test $BUGLE_OSAPI == "BUGLE_OSAPI_POSIX" || GLDB=""
++test $HAVE_GTK = 1 || GLDB_GUI=""
++test $BUGLE_OSAPI = "BUGLE_OSAPI_POSIX" || GLDB=""
+ AC_SUBST(GLDB)
+ AC_SUBST(GLDB_GUI)
+ 
+--- configure.orig	2009-10-26 20:17:02.000000000 +0100
++++ configure	2009-11-01 15:33:48.000000000 +0100
+@@ -37159,8 +37159,8 @@
+ 
+ GLDB=gldb/gldb$EXEEXT
+ GLDB_GUI=gldb/gldb-gui$EXEEXT
+-test $HAVE_GTK == 1 || GLDB_GUI=""
+-test $BUGLE_OSAPI == "BUGLE_OSAPI_POSIX" || GLDB=""
++test $HAVE_GTK = 1 || GLDB_GUI=""
++test $BUGLE_OSAPI = "BUGLE_OSAPI_POSIX" || GLDB=""
+ 
+ 
+ 
