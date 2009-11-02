@@ -9234,7 +9234,6 @@ musiccontrol                    ports/audio/musiccontrol
 musicpd                         ports/audio/musicpd
 musixtex                        ports/print/musixtex
 mussh                           ports/security/mussh
-mute-net                        ports/net-p2p/mute-net
 mutella                         ports/net-p2p/mutella
 mutemix                         ports/audio/mutemix
 mutt                            ports/mail/mutt
