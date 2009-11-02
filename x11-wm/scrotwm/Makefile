@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.19
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.peereboom.us/scrotwm/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +17,6 @@ MAINTAINER=	aragon@phat.za.net
 COMMENT=	A small, dynamic tiling window manager for X11
 
 OPTIONS=	DMENU "Depend on x11/dmenu" On \
-		DMENU_COLFIX "Fix inverted/select colour on dmenu" On \
 		DMENU_BOTTOM "dmenu at screen bottom (instead of top)" Off \
 		CLOCKFORMAT "Configurable strftime(3) clock format" Off
 
@@ -27,13 +26,10 @@ USE_XORG=	x11 xproto xrandr
 USE_XLIB=	yes
 
 MAN1=		scrotwm.1
-PLIST_FILES=	bin/scrotwm lib/swmhack.so etc/scrotwm.conf
+PLIST_FILES=	bin/scrotwm lib/libswmhack.so etc/scrotwm.conf
 
 .if defined(WITH_DMENU)
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
-.endif
-.if defined(WITH_DMENU_COLFIX)
-EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_colourfix.patch
 .endif
 .if defined(WITH_DMENU_BOTTOM)
 EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_atbottom.patch
@@ -47,11 +43,11 @@ do-build:
 		-I${WRKSRC}/linux -lutil -L${X11BASE}/lib -lX11 -lXrandr \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 	${CC} ${CFLAGS} -I${X11BASE}/include -shared -fPIC \
-		-o ${WRKSRC}/swmhack.so ${WRKSRC}/lib/swm_hack.c
+		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/swmhack.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libswmhack.so ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/scrotwm.1 ${PREFIX}/man/man1
 
