@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -19,19 +18,21 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 OPTIONS=	ARTS		"Enable aRts support"		off \
 		AUDIOFILE	"Enable libaudiofile support"	off \
 		JACK		"Enable JACK support"		off \
+		LO		"Enable liblo support"		off \
+		OIL		"Enable liboil support"		off \
 		SAMPLERATE	"Enable libsamplerate support"	off
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound \
 		--disable-rubyecasound \
-		--with-largefile \
 		--enable-sys-readline
 USE_LDCONFIG=	yes
 
-MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecafixdc.1 ecalength.1 \
-		ecamonitor.1 ecanormalize.1 ecaplay.1 ecasignalview.1
+MAN1=		ecaconvert.1 ecafixdc.1 ecalength.1 ecamonitor.1 \
+		ecanormalize.1 ecaplay.1 ecasignalview.1 ecasound.1 \
+		ecasound-iam.1 ecatools.1
 MAN5=		ecasoundrc.5
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -61,6 +62,16 @@ LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
+.if defined(WITH_LO)
+LIB_DEPENDS+=	lo.7:${PORTSDIR}/audio/liblo
+CONFIGURE_ARGS+=	--enable-liblo
+.endif
+
+.if defined(WITH_OIL)
+LIB_DEPENDS+=	oil-0.3.0:${PORTSDIR}/devel/liboil
+CONFIGURE_ARGS+=	--enable-liboil
+.endif
+
 .if defined(WITH_SAMPLERATE)
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .else
@@ -70,6 +81,7 @@ CONFIGURE_ARGS+=	--disable-libsamplerate --disable-sndfile
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
 		 s| $$EXTRAGCCFLAGS||g ; \
+		 s| $$EXTRACPPFLAGS||g ; \
 		 s| -pthread||g ; \
 		 s| -D_THREAD_SAFE||g ; \
 		 s| -D_P1003_1B_VISIBLE||' ${WRKSRC}/configure
