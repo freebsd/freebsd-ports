@@ -28,12 +28,16 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
 post-extract:
 	${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${LOCALBASE}/bin/ruby|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|__demos __tests||' ${WRKSRC}/admin/Makefile.rb
 	${REINPLACE_CMD} -e '/QMAKE_CXXFLAGS_RELEASE.*/d' \
 		-e 's|linux:|unix:|'  ${WRKSRC}/.qmake.cache
 	${FIND} ${WRKSRC}/admin -type f | ${XARGS} \
-		 ${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${LOCALBASE}/bin/ruby|'
+		 ${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${RUBY_WITH_SUFFIX}|'
+.if ${RUBY_VERSION_CODE} >= 190000
+	${REINPLACE_CMD} -e "s|'ftools'|'fileutils'|" ${WRKSRC}/admin/qpp ${WRKSRC}/admin/Makefile.rb
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
