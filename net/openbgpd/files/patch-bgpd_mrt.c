@@ -2,13 +2,13 @@ Index: bgpd/mrt.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/mrt.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.2
-diff -u -p -r1.1.1.1 -r1.1.1.2
+retrieving revision 1.1.1.3
+diff -u -p -r1.1.1.1 -r1.1.1.3
 --- bgpd/mrt.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/mrt.c	9 Jul 2009 16:49:54 -0000	1.1.1.2
++++ bgpd/mrt.c	10 Aug 2009 21:09:57 -0000	1.1.1.3
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: mrt.c,v 1.53 2007/04/23 13:04:24 claudio Exp $ */
-+/*	$OpenBSD: mrt.c,v 1.63 2009/06/29 12:22:16 claudio Exp $ */
++/*	$OpenBSD: mrt.c,v 1.64 2009/07/12 15:36:41 jsg Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org>
@@ -553,7 +553,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 +fail:
 +	if (hbuf)
 +		buf_free(hbuf);
-+	if (h2buf);
++	if (h2buf)
 +		buf_free(h2buf);
 +	buf_free(buf);
 +	return (-1);

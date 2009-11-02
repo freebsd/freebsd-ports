@@ -2,13 +2,13 @@ Index: bgpd/imsg.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/imsg.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.2
-diff -u -p -r1.1.1.1 -r1.1.1.2
+retrieving revision 1.1.1.3
+diff -u -p -r1.1.1.1 -r1.1.1.3
 --- bgpd/imsg.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/imsg.c	9 Jul 2009 16:49:54 -0000	1.1.1.2
++++ bgpd/imsg.c	10 Aug 2009 21:09:57 -0000	1.1.1.3
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: imsg.c,v 1.42 2008/03/24 16:11:02 deraadt Exp $ */
-+/*	$OpenBSD: imsg.c,v 1.47 2009/06/08 08:30:06 dlg Exp $	*/
++/*	$OpenBSD: imsg.c,v 1.48 2009/08/08 18:33:40 nicm Exp $	*/
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -242,7 +242,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  }
  
  void
-@@ -219,3 +250,19 @@ imsg_get_fd(struct imsgbuf *ibuf)
+@@ -219,3 +250,22 @@ imsg_get_fd(struct imsgbuf *ibuf)
  
  	return (fd);
  }
@@ -259,6 +259,9 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 +void
 +imsg_clear(struct imsgbuf *ibuf)
 +{
-+	while (ibuf->w.queued)
-+		msgbuf_clear(&ibuf->w);
++	int	fd;
++
++	msgbuf_clear(&ibuf->w);
++	while ((fd = imsg_get_fd(ibuf)) != -1)
++		close(fd);
 +}

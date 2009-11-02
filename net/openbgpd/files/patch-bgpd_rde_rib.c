@@ -2,10 +2,10 @@ Index: bgpd/rde_rib.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_rib.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.3
-diff -u -p -r1.1.1.1 -r1.3
+retrieving revision 1.4
+diff -u -p -r1.1.1.1 -r1.4
 --- bgpd/rde_rib.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/rde_rib.c	9 Jul 2009 17:22:14 -0000	1.3
++++ bgpd/rde_rib.c	22 Oct 2009 15:10:02 -0000	1.4
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_rib.c,v 1.96 2007/06/01 04:17:30 claudio Exp $ */
 +/*	$OpenBSD: rde_rib.c,v 1.116 2009/06/29 14:13:48 claudio Exp $ */
@@ -73,7 +73,7 @@ diff -u -p -r1.1.1.1 -r1.3
 +	bzero(&ribs[id], sizeof(struct rib));
 +	strlcpy(ribs[id].name, name, sizeof(ribs[id].name));
 +	RB_INIT(&ribs[id].rib);
-+	ribs[id].state = RIB_ACTIVE;
++	ribs[id].state = RIB_NEW;
 +	ribs[id].id = id;
 +	ribs[id].flags = flags;
 +

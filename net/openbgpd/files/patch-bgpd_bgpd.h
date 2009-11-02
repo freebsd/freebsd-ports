@@ -2,28 +2,25 @@ Index: bgpd/bgpd.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.h,v
 retrieving revision 1.1.1.1
-retrieving revision 1.5
-diff -u -p -r1.1.1.1 -r1.5
+retrieving revision 1.8
+diff -u -p -r1.1.1.1 -r1.8
 --- bgpd/bgpd.h	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/bgpd.h	9 Jul 2009 17:22:14 -0000	1.5
++++ bgpd/bgpd.h	22 Oct 2009 15:53:39 -0000	1.8
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpd.h,v 1.222 2008/01/23 08:11:32 claudio Exp $ */
-+/*	$OpenBSD: bgpd.h,v 1.241 2009/06/12 16:42:53 claudio Exp $ */
++/*	$OpenBSD: bgpd.h,v 1.243 2009/07/23 14:53:18 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
-@@ -27,12 +27,19 @@
- #include <net/if.h>
- #include <net/pfkeyv2.h>
+@@ -30,9 +30,16 @@
+ #include <poll.h>
+ #include <stdarg.h>
  
 +#if defined(__FreeBSD__)	/* compat */
 +#include "openbsd-compat.h"
 +#endif /* defined(__FreeBSD__) */
++#include "imsg.h"
 +
- #include <poll.h>
- #include <stdarg.h>
-+#include <imsg.h>
- 
  #define	BGP_VERSION			4
  #define	BGP_PORT			179
 +#ifndef CONFFILE
@@ -248,7 +245,22 @@ diff -u -p -r1.1.1.1 -r1.5
  };
  
  struct kroute_nexthop {
-@@ -510,7 +480,7 @@ struct ctl_show_rib {
+@@ -473,8 +443,13 @@ struct pftable_msg {
+ 
+ struct ctl_show_nexthop {
+ 	struct bgpd_addr	addr;
+-	u_int8_t		valid;
+ 	struct kif		kif;
++	union {
++		struct kroute		kr4;
++		struct kroute6		kr6;
++	} kr;
++	u_int8_t		valid;
++	u_int8_t		krvalid;;
+ };
+ 
+ struct ctl_neighbor {
+@@ -510,7 +485,7 @@ struct ctl_show_rib {
  	u_int32_t		med;
  	u_int32_t		prefix_cnt;
  	u_int32_t		active_cnt;
@@ -257,7 +269,7 @@ diff -u -p -r1.1.1.1 -r1.5
  	u_int16_t		aspath_len;
  	u_int16_t		flags;
  	u_int8_t		prefixlen;
-@@ -545,6 +515,7 @@ struct filter_community {
+@@ -545,6 +520,7 @@ struct filter_community {
  };
  
  struct ctl_show_rib_request {
@@ -265,7 +277,7 @@ diff -u -p -r1.1.1.1 -r1.5
  	struct ctl_neighbor	neighbor;
  	struct bgpd_addr	prefix;
  	struct filter_as	as;
-@@ -590,6 +561,7 @@ enum comp_ops {
+@@ -590,6 +566,7 @@ enum comp_ops {
  struct filter_peers {
  	u_int32_t	peerid;
  	u_int32_t	groupid;
@@ -273,7 +285,7 @@ diff -u -p -r1.1.1.1 -r1.5
  };
  
  /* special community type */
-@@ -644,6 +616,7 @@ TAILQ_HEAD(filter_head, filter_rule);
+@@ -644,6 +621,7 @@ TAILQ_HEAD(filter_head, filter_rule);
  
  struct filter_rule {
  	TAILQ_ENTRY(filter_rule)	entry;
@@ -281,7 +293,7 @@ diff -u -p -r1.1.1.1 -r1.5
  	struct filter_peers		peer;
  	struct filter_match		match;
  	struct filter_set_head		set;
-@@ -697,6 +670,7 @@ struct rrefresh {
+@@ -697,6 +675,7 @@ struct rrefresh {
  struct rde_memstats {
  	int64_t		path_cnt;
  	int64_t		prefix_cnt;
@@ -289,7 +301,7 @@ diff -u -p -r1.1.1.1 -r1.5
  	int64_t		pt4_cnt;
  	int64_t		pt6_cnt;
  	int64_t		nexthop_cnt;
-@@ -709,6 +683,15 @@ struct rde_memstats {
+@@ -709,6 +688,15 @@ struct rde_memstats {
  	int64_t		attr_dcnt;
  };
  
@@ -305,7 +317,13 @@ diff -u -p -r1.1.1.1 -r1.5
  /* Address Family Numbers as per RFC 1700 */
  #define	AFI_IPv4	1
  #define	AFI_IPv6	2
-@@ -723,6 +706,18 @@ struct rde_memstats {
+@@ -718,11 +706,24 @@ struct rde_memstats {
+ #define	SAFI_NONE	0x00
+ #define	SAFI_UNICAST	0x01
+ #define	SAFI_MULTICAST	0x02
++#define	SAFI_MPLS	0x04
+ #define	SAFI_ALL	0xff
+ 
  /* 4-byte magic AS number */
  #define AS_TRANS	23456
  
@@ -324,7 +342,7 @@ diff -u -p -r1.1.1.1 -r1.5
  /* prototypes */
  /* bgpd.c */
  void		 send_nexthop_update(struct kroute_nexthop *);
-@@ -730,18 +725,6 @@ void		 send_imsg_session(int, pid_t, voi
+@@ -730,18 +731,6 @@ void		 send_imsg_session(int, pid_t, voi
  int		 bgpd_redistribute(int, struct kroute *, struct kroute6 *);
  int		 bgpd_filternexthop(struct kroute *, struct kroute6 *);
  
@@ -343,7 +361,7 @@ diff -u -p -r1.1.1.1 -r1.5
  /* log.c */
  void		 log_init(int);
  void		 vlog(int, const char *, va_list);
-@@ -760,19 +743,6 @@ int	 cmdline_symset(char *);
+@@ -760,19 +749,6 @@ int	 cmdline_symset(char *);
  /* config.c */
  int	 host(const char *, struct bgpd_addr *, u_int8_t *);
  
@@ -363,7 +381,7 @@ diff -u -p -r1.1.1.1 -r1.5
  /* kroute.c */
  int		 kr_init(int, u_int);
  int		 kr_change(struct kroute_label *);
-@@ -788,10 +758,7 @@ void		 kr_nexthop_delete(struct bgpd_add
+@@ -788,10 +764,7 @@ void		 kr_nexthop_delete(struct bgpd_add
  void		 kr_show_route(struct imsg *);
  void		 kr_ifinfo(char *);
  int		 kr_reload(void);
@@ -374,7 +392,7 @@ diff -u -p -r1.1.1.1 -r1.5
  
  /* control.c */
  void	control_cleanup(const char *);
-@@ -806,6 +773,10 @@ int	pftable_addr_remove(struct pftable_m
+@@ -806,6 +779,10 @@ int	pftable_addr_remove(struct pftable_m
  int	pftable_commit(void);
  
  /* name2id.c */
@@ -385,7 +403,7 @@ diff -u -p -r1.1.1.1 -r1.5
  u_int16_t	 rtlabel_name2id(const char *);
  const char	*rtlabel_id2name(u_int16_t);
  void		 rtlabel_unref(u_int16_t);
-@@ -829,5 +800,8 @@ const char	*log_as(u_int32_t);
+@@ -829,5 +806,8 @@ const char	*log_as(u_int32_t);
  int		 aspath_snprint(char *, size_t, void *, u_int16_t);
  int		 aspath_asprint(char **, void *, u_int16_t);
  size_t		 aspath_strlen(void *, u_int16_t);
