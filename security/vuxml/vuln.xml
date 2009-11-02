@@ -35,6 +35,53 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6f358f5a-c7ea-11de-a9f3-0030843d3802">
+    <topic>KDE -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>kdebase4-runtime</name>
+	<range><lt>4.3.1_2</lt></range>
+      </package>
+      <package>
+        <name>kdelibs4</name>
+	<range><lt>4.3.1_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2009-015.html">
+	  <p>Ark input sanitization errors: The KDE archiving tool, Ark,
+	    performs insufficient validation which leads to specially crafted
+	    archive files, using unknown MIME types, to be rendered using a KHTML
+	    instance, this can trigger uncontrolled XMLHTTPRequests to remote
+	    sites.</p>
+	  <p>IO Slaves input sanitization errors: KDE protocol handlers perform
+	    insufficient input validation, an attacker can craft malicious URI
+	    that would trigger JavaScript execution. Additionally the 'help://'
+	    protocol handler suffer from directory traversal. It should be noted
+	    that the scope of this issue is limited as the malicious URIs cannot
+	    be embedded in Internet hosted content.</p>
+	  <p>KMail input sanitization errors: The KDE mail client, KMail, performs
+	    insufficient validation which leads to specially crafted email
+	    attachments, using unknown MIME types, to be rendered using a KHTML
+	    instance, this can trigger uncontrolled XMLHTTPRequests to remote
+	    sites.</p>
+	  <p>The exploitation of these vulnerabilities is unlikely according to
+	    Portcullis and KDE but the execution of active content is nonetheless
+	    unexpected and might pose a threat.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ocert.org/advisories/ocert-2009-015.html</url>
+    </references>
+    <dates>
+      <discovery>2009-10-30</discovery>
+      <entry>2009-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2fda6bd2-c53c-11de-b157-001999392805">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
