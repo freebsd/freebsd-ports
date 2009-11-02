@@ -1,3 +1,25 @@
+bin/gnofract4d
+share/applications/gnofract4d.desktop
+share/gnome/help/gnofract4d/C/commands.xml
+share/gnome/help/gnofract4d/C/docbook.css
+share/gnome/help/gnofract4d/C/figures/MyFormula.png
+share/gnome/help/gnofract4d/C/figures/hybrid.png
+share/gnome/help/gnofract4d/C/figures/julia_perturbed.png
+share/gnome/help/gnofract4d/C/figures/julia_standard.png
+share/gnome/help/gnofract4d/C/figures/mandelbrot_perturbed.png
+share/gnome/help/gnofract4d/C/figures/mandelbrot_standard.png
+share/gnome/help/gnofract4d/C/figures/tutorial001.png
+share/gnome/help/gnofract4d/C/figures/tutorial002.png
+share/gnome/help/gnofract4d/C/figures/xw_plane.png
+share/gnome/help/gnofract4d/C/figures/xz_plane.png
+share/gnome/help/gnofract4d/C/figures/yz_plane.png
+share/gnome/help/gnofract4d/C/gnofract4d-manual.html
+share/gnome/help/gnofract4d/C/gnofract4d-manual.xml
+share/gnome/help/gnofract4d/C/stdlib.xml
+share/gnome/help/gnofract4d/C/tutorial001.xml
+share/gnome/help/gnofract4d/C/tutorial002.xml
+share/gnome/help/gnofract4d/C/tutorial003.xml
+share/pixmaps/gnofract4d-logo.png
 %%DATADIR%%/formulas/fractint-builtin.frm
 %%DATADIR%%/formulas/fractint-g4.frm
 %%DATADIR%%/formulas/fractint.cfrm
@@ -5,6 +27,7 @@
 %%DATADIR%%/formulas/gf4d.frm
 %%DATADIR%%/formulas/gf4d.uxf
 %%DATADIR%%/formulas/standard.ucl
+%%DATADIR%%/formulas/sterling2.frm
 %%DATADIR%%/formulas/tutorial.frm
 %%DATADIR%%/maps/4zebbowx.map
 %%DATADIR%%/maps/AM-1.cs
@@ -230,6 +253,7 @@
 %%DATADIR%%/maps/stripe.map
 %%DATADIR%%/maps/sunset_on_the_bay.cs
 %%DATADIR%%/maps/test.cs
+%%DATADIR%%/maps/therose.cs
 %%DATADIR%%/maps/topo.map
 %%DATADIR%%/maps/unknown.map
 %%DATADIR%%/maps/van_gogh_noche_estrellada.cs
@@ -309,12 +333,12 @@
 %%PYTHON_SITELIBDIR%%/fract4d/fractparser.py
 %%PYTHON_SITELIBDIR%%/fract4d/fractparser.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/fractparser.pyo
-%%PYTHON_SITELIBDIR%%/fract4d/fracttypes.py
-%%PYTHON_SITELIBDIR%%/fract4d/fracttypes.pyc
-%%PYTHON_SITELIBDIR%%/fract4d/fracttypes.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/fractsettings.py
 %%PYTHON_SITELIBDIR%%/fract4d/fractsettings.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/fractsettings.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/fracttypes.py
+%%PYTHON_SITELIBDIR%%/fract4d/fracttypes.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/fracttypes.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/fsymbol.py
 %%PYTHON_SITELIBDIR%%/fract4d/fsymbol.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/fsymbol.pyo
@@ -333,9 +357,6 @@
 %%PYTHON_SITELIBDIR%%/fract4d/ir.py
 %%PYTHON_SITELIBDIR%%/fract4d/ir.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/ir.pyo
-%%PYTHON_SITELIBDIR%%/fract4d/keyframe.py
-%%PYTHON_SITELIBDIR%%/fract4d/keyframe.pyc
-%%PYTHON_SITELIBDIR%%/fract4d/keyframe.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/lex.py
 %%PYTHON_SITELIBDIR%%/fract4d/lex.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/lex.pyo
@@ -345,6 +366,9 @@
 %%PYTHON_SITELIBDIR%%/fract4d/mapmatcher.py
 %%PYTHON_SITELIBDIR%%/fract4d/mapmatcher.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/mapmatcher.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/messages.py
+%%PYTHON_SITELIBDIR%%/fract4d/messages.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/messages.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/optimize.py
 %%PYTHON_SITELIBDIR%%/fract4d/optimize.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/optimize.pyo
@@ -438,12 +462,12 @@
 %%PYTHON_SITELIBDIR%%/fract4d/test_fractparser.py
 %%PYTHON_SITELIBDIR%%/fract4d/test_fractparser.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/test_fractparser.pyo
-%%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.py
-%%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.pyc
-%%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/test_fractsettings.py
 %%PYTHON_SITELIBDIR%%/fract4d/test_fractsettings.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/test_fractsettings.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.py
+%%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/test_gradient.py
 %%PYTHON_SITELIBDIR%%/fract4d/test_gradient.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/test_gradient.pyo
@@ -498,6 +522,9 @@
 %%PYTHON_SITELIBDIR%%/fract4dgui/__init__.py
 %%PYTHON_SITELIBDIR%%/fract4dgui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/fract4dgui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/fract4dgui/adjustment.py
+%%PYTHON_SITELIBDIR%%/fract4dgui/adjustment.pyc
+%%PYTHON_SITELIBDIR%%/fract4dgui/adjustment.pyo
 %%PYTHON_SITELIBDIR%%/fract4dgui/angle.py
 %%PYTHON_SITELIBDIR%%/fract4dgui/angle.pyc
 %%PYTHON_SITELIBDIR%%/fract4dgui/angle.pyo
@@ -655,39 +682,13 @@
 %%PYTHON_SITELIBDIR%%/fractutils/test_slave.py
 %%PYTHON_SITELIBDIR%%/fractutils/test_slave.pyc
 %%PYTHON_SITELIBDIR%%/fractutils/test_slave.pyo
-
-share/gnome/help/gnofract4d/C/commands.xml
-share/gnome/help/gnofract4d/C/figures/MyFormula.png
-share/gnome/help/gnofract4d/C/figures/hybrid.png
-share/gnome/help/gnofract4d/C/figures/julia_perturbed.png
-share/gnome/help/gnofract4d/C/figures/julia_standard.png
-share/gnome/help/gnofract4d/C/figures/mandelbrot_perturbed.png
-share/gnome/help/gnofract4d/C/figures/mandelbrot_standard.png
-share/gnome/help/gnofract4d/C/figures/tutorial001.png
-share/gnome/help/gnofract4d/C/figures/tutorial002.png
-share/gnome/help/gnofract4d/C/figures/xw_plane.png
-share/gnome/help/gnofract4d/C/figures/xz_plane.png
-share/gnome/help/gnofract4d/C/figures/yz_plane.png
-share/gnome/help/gnofract4d/C/docbook.css
-share/gnome/help/gnofract4d/C/gnofract4d-manual.html
-share/gnome/help/gnofract4d/C/gnofract4d-manual.xml
-share/gnome/help/gnofract4d/C/stdlib.xml
-share/gnome/help/gnofract4d/C/tutorial001.xml
-share/gnome/help/gnofract4d/C/tutorial002.xml
-share/gnome/help/gnofract4d/C/tutorial003.xml
-
-bin/gnofract4d
-share/applications/gnofract4d.desktop
-share/mime/packages/gnofract4d-mime.xml
-share/pixmaps/gnofract4d-logo.png
-
-@dirrm %%PYTHON_SITELIBDIR%%/fract4d
-@dirrm %%PYTHON_SITELIBDIR%%/fract4dgui
-@dirrm %%PYTHON_SITELIBDIR%%/fractutils
-@dirrm %%DATADIR%%/formulas
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
 @dirrm share/gnome/help/gnofract4d/C/figures
 @dirrm share/gnome/help/gnofract4d/C
 @dirrm share/gnome/help/gnofract4d
+@dirrm %%PYTHON_SITELIBDIR%%/fractutils
+@dirrm %%PYTHON_SITELIBDIR%%/fract4dgui
+@dirrm %%PYTHON_SITELIBDIR%%/fract4d
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/formulas
+@dirrm %%DATADIR%%
