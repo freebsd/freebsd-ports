@@ -1,0 +1,15 @@
+====
+
+*** Attention! ***
+
+To enable the Hg-Git extension make sure you have the following lines in your
+Mercurial global configuration file '~/.hgrc':
+
+[extensions]
+bookmarks =
+hggit =
+
+The bookmarks section is not compulsory, but it makes some things a bit nicer.
+Bookmarks will be translated to git heads when pushing.
+
+====
