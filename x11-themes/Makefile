@@ -160,6 +160,7 @@
     SUBDIR += kde4-windeco-aurorae
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
+    SUBDIR += kde4-windeco-nitrogen
     SUBDIR += kde-style-tiblit
     SUBDIR += kde-windeco-activeheart
     SUBDIR += kde-windeco-crystal
