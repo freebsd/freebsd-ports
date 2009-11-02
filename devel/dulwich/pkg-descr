@@ -1,0 +1,7 @@
+Dulwich is a pure-Python implementation of the Git file formats and protocols.
+
+It aims to give an interface to git repos that doesn't call out to git directly
+but instead uses pure Python. It is based on the Python-Git module released by
+James Westby.
+
+WWW:	http://samba.org/~jelmer/dulwich/
