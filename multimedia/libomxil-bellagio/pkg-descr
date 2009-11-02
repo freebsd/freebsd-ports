@@ -1,0 +1,11 @@
+Bellagio is an opensource implementation of the OpenMAX IL API that
+runs on Linux PC, including:
+
+    * A shared library with the IL core and a "reference" OpenMAX component
+    * A number of OpenMAX components which pass Khronos conformance tests
+
+It is intended to show the usage of the IL API and to allow people to
+start developing components.
+
+
+WWW:	http://omxil.sourceforge.net/index.html
