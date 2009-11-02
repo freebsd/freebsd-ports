@@ -146,6 +146,7 @@
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
+    SUBDIR += libomxil-bellagio
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame
     SUBDIR += libtheora

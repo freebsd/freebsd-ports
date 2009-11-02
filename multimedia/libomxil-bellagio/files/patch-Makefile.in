@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-09-18 19:52:15.000000000 +0800
++++ Makefile.in	2009-10-04 21:59:06.000000000 +0800
+@@ -215,7 +215,7 @@
+ EXTRA_DIST = libomxil-bellagio.spec sis group src/components/components_symbian \
+              src/loaders test/components/components_symbian
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libomxil-bellagio.pc
+ doc_DATA = README \
+ 	   ChangeLog \
