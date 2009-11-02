@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Sys/Group/GIDhelper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Group/GIDhelper/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Group/GIDhelper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Group/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/
+@dirrmtry %%SITE_PERL%%/Sys/Group/
+@dirrmtry %%SITE_PERL%%/Sys/
