@@ -552,6 +552,7 @@
     SUBDIR += p5-Sys-CpuLoad
     SUBDIR += p5-Sys-Filesystem
     SUBDIR += p5-Sys-Gamin
+    SUBDIR += p5-Sys-Group-GIDhelper
     SUBDIR += p5-Sys-HostIP
     SUBDIR += p5-Sys-Hostname-FQDN
     SUBDIR += p5-Sys-Hostname-Long
