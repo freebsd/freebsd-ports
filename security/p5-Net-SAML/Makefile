@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-SAML
-PORTVERSION=	0.27
-PORTREVISION=	1
+PORTVERSION=	0.38
 CATEGORIES=	security perl5
 MASTER_SITES=	http://zxid.org/
 PKGNAMEPREFIX=	p5-
@@ -29,14 +28,9 @@ post-patch:
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/../zxid.pl ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/../zxid.pl    ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/../zxidhlo.pl ${EXAMPLESDIR}
 
 MAN3=		Net::SAML.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800037
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
