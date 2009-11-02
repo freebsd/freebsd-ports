@@ -73,14 +73,3 @@
      p_sys->i_video_pts = p_block->i_pts = p_block->i_dts = mdate();
  
      return p_block;
---- configure.orig	Mon Jun 12 10:44:45 2006
-+++ configure	Mon Jun 12 10:46:11 2006
-@@ -39400,7 +39400,7 @@
-   enableval="$enable_v4l"
- fi
-
--if test "${enable_v4l}" = "yes"
-+if true
- then
- 
- # Check whether --with-v4l or --without-v4l was given.
