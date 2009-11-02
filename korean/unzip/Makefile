@@ -6,7 +6,7 @@
 
 CATEGORIES=	korean archivers
 
-MAINTAINER=	ab@astralblue.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZIP archive extractor with localized patches
 
 CONFLICTS=	unzip-[0-9]* ru-unzip-[0-9]* zh-unzip-[0-9]*
