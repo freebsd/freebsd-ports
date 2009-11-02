@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZConf-GUI
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A GUI backend chooser
+
+RUN_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
+		${LOCALBASE}/bin/xhost:${PORTSDIR}/x11/xhost
 
 PERL_CONFIGURE=	yes
 
