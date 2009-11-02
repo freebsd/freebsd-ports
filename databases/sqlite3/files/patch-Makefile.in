@@ -1,20 +1,11 @@
---- Makefile.in.orig	2008-10-14 15:07:37.000000000 -0300
-+++ Makefile.in	2008-10-29 11:06:53.000000000 -0200
-@@ -135,7 +135,7 @@
- prefix = @prefix@
- exec_prefix = @exec_prefix@
- libdir = @libdir@
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
- bindir = @bindir@
- includedir = @includedir@
- INSTALL = @INSTALL@
-@@ -426,7 +426,7 @@
- # This is the default Makefile target.  The objects listed here
- # are what get build when you type just "make" with no arguments.
- #
--all:	sqlite3.h libsqlite3.la sqlite3$(TEXE) $(HAVE_TCL:1=libtclsqlite3.la)
-+all:	sqlite3.h libsqlite3.la sqlite3$(TEXE) $(HAVE_TCL:1=libtclsqlite3.la tclsqlite3)
+--- Makefile.in.orig	2009-09-17 13:41:21.000000000 +0200
++++ Makefile.in	2009-09-17 13:45:38.000000000 +0200
+@@ -687,7 +687,7 @@
+ 	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/status.c
  
- Makefile: $(TOP)/Makefile.in
- 	./config.status
+ sqlite3.h:	$(TOP)/src/sqlite.h.in $(TOP)/manifest.uuid $(TOP)/VERSION
+-	tclsh $(TOP)/tool/mksqlite3h.tcl $(TOP) >sqlite3.h
++	$(TCLSH_CMD) $(TOP)/tool/mksqlite3h.tcl $(TOP) >sqlite3.h
+ 
+ table.lo:	$(TOP)/src/table.c $(HDR)
+ 	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/table.c
