@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	picard
-PORTVERSION=	0.11
+PORTVERSION=	0.12.1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
-		http://ftp.uk.musicbrainz.org/pub/musicbrainz/picard/
+		http://ftp.uk.musicbrainz.org/pub/musicbrainz/picard/ \
+		http://ftp.osuosl.org/pub/musicbrainz/picard/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Next generation MusicBrainz Tagger
@@ -25,14 +26,12 @@ RUN_DEPENDS=	py*-mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		py*-qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
 
 USE_GETTEXT=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
+INSTALLS_ICONS=	yes
 
 post-patch:
-	@${REINPLACE_CMD} '/with-libofa/s|False|True|;\
-		/with-avcodec/s|False|True|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|libdiscid.so.0|libdiscid.so.2|g' \
 		${WRKSRC}/picard/disc.py
-	@${REINPLACE_CMD} 's|<av|<ffmpeg/av|' ${WRKSRC}/picard/musicdns/avcodec.c
 
 .include <bsd.port.mk>
