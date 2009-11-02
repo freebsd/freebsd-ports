@@ -80,7 +80,8 @@ do-fetch:
 		https://kicad.svn.sourceforge.net/svnroot/kicad/trunk/kicad-library ${WRKDIR}/kicad-library
 	svn export \
 		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
-	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME} kicad-library kicad-patches
+	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
+		${DISTNAME} kicad-library kicad-patches
 	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
 .endif
 
