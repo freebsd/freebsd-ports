@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upx
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	archivers
 MASTER_SITES=	http://upx.sourceforge.net/download/\
 		SF/sevenzip/7-Zip/4.57:lzma
