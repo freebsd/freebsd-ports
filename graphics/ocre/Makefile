@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocre
-PORTVERSION=	0.031
+PORTVERSION=	0.032
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
@@ -53,7 +53,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 	@${MKDIR} ${MAN1PREFIX}/man/es/man1
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}-es.1 ${MAN1PREFIX}/man/es/man1/${PORTNAME}.1
-	${INSTALL_DATA} ${WRKSRC}/../po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/ocre.mo
+	${INSTALL_DATA} ${WRKSRC}/../po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/${PORTNAME}.mo
 	@${MKDIR} ${DATADIR}
 	@${TAR} xof ${WRKSRC}/ocre-decsWood-${PORTVERSION}.tgz -C ${DATADIR}
 	@${CHMOD} -h 755 ${DATADIR}/decsWood
