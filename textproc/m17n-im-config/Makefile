@@ -25,6 +25,13 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+DESKTOP_ENTRIES="M17N-IM Configuration" \
+		"${COMMENT}" \
+		"" \
+		"m17n-im-config" \
+		"Settings;" \
+		true
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
