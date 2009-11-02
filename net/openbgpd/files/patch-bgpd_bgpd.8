@@ -2,16 +2,25 @@ Index: bgpd/bgpd.8
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.8,v
 retrieving revision 1.1.1.1
-retrieving revision 1.4
-diff -u -p -r1.1.1.1 -r1.4
+retrieving revision 1.6
+diff -u -p -r1.1.1.1 -r1.6
 --- bgpd/bgpd.8	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/bgpd.8	9 Jul 2009 17:22:14 -0000	1.4
++++ bgpd/bgpd.8	22 Oct 2009 15:10:02 -0000	1.6
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpd.8,v 1.27 2007/05/31 19:20:22 jmc Exp $
-+.\" $OpenBSD: bgpd.8,v 1.28 2009/01/13 23:01:36 sthen Exp $
++.\" $OpenBSD: bgpd.8,v 1.29 2009/08/06 08:53:11 claudio Exp $
  .\"
  .\" Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
  .\"
+@@ -14,7 +14,7 @@
+ .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .\"
+-.Dd $Mdocdate: May 31 2007 $
++.Dd $Mdocdate: September 2 2009 $
+ .Dt BGPD 8
+ .Os
+ .Sh NAME
 @@ -48,9 +48,9 @@ Please refer to that document for more i
  .Nm
  is usually started at boot time, and can be enabled by
@@ -42,7 +51,29 @@ diff -u -p -r1.1.1.1 -r1.4
  default
  .Nm
  configuration file
-@@ -195,9 +195,9 @@ control socket
+@@ -175,11 +175,6 @@ control socket
+ .%D September 2000
+ .Re
+ .Rs
+-.%R RFC 3392
+-.%T "Capabilities Advertisement with BGP-4"
+-.%D January 1999
+-.Re
+-.Rs
+ .%R RFC 3682
+ .%T "The Generalized TTL Security Mechanism (GTSM)"
+ .%D February 2004
+@@ -190,14 +185,29 @@ control socket
+ .%D April 2004
+ .Re
+ .Rs
++.%R RFC 4486
++.%T "BGP Cease Notification Message Subcodes"
++.%D April 2006
++.Re
++.Rs
+ .%R RFC 4760
+ .%T "Multiprotocol Extensions for BGP-4"
  .%D January 2007
  .Re
  .Rs
@@ -51,6 +82,16 @@ diff -u -p -r1.1.1.1 -r1.4
  .%T "BGP Support for Four-octet AS Number Space"
 -.%D February 2007
 +.%D May 2007
++.Re
++.Rs
++.%R RFC 5492
++.%T "Capabilities Advertisement with BGP-4"
++.%D February 2009
++.Re
++.Rs
++.%R draft-ietf-idr-optional-transitive-00
++.%T "Error Handling for Optional Transitive BGP Attributes"
++.%D April 2009
  .Re
  .Sh HISTORY
  The

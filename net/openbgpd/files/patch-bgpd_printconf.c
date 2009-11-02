@@ -2,10 +2,10 @@ Index: bgpd/printconf.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/printconf.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.4
-diff -u -p -r1.1.1.1 -r1.4
+retrieving revision 1.5
+diff -u -p -r1.1.1.1 -r1.5
 --- bgpd/printconf.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/printconf.c	9 Jul 2009 17:22:14 -0000	1.4
++++ bgpd/printconf.c	22 Oct 2009 15:10:02 -0000	1.5
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: printconf.c,v 1.65 2007/11/22 11:37:25 henning Exp $	*/
 +/*	$OpenBSD: printconf.c,v 1.70 2009/06/06 01:10:29 claudio Exp $	*/
@@ -55,7 +55,20 @@ diff -u -p -r1.1.1.1 -r1.4
  	if (p->remote_as)
  		printf("%s\tremote-as %s\n", c, log_as(p->remote_as));
  	if (p->down)
-@@ -320,6 +325,12 @@ print_peer(struct peer_config *p, struct
+@@ -293,6 +298,12 @@ print_peer(struct peer_config *p, struct
+ 		printf("%s\tholdtime min %u\n", c, p->min_holdtime);
+ 	if (p->announce_capa == 0)
+ 		printf("%s\tannounce capabilities no\n", c);
++	if (p->capabilities.refresh == 0)
++		printf("%s\tannounce refresh no\n", c);
++	if (p->capabilities.restart == 1)
++		printf("%s\tannounce restart yes\n", c);
++	if (p->capabilities.as4byte == 0)
++		printf("%s\tannounce as4byte no\n", c);
+ 	if (p->announce_type == ANNOUNCE_SELF)
+ 		printf("%s\tannounce self\n", c);
+ 	else if (p->announce_type == ANNOUNCE_NONE)
+@@ -320,6 +331,12 @@ print_peer(struct peer_config *p, struct
  		printf("%s\tdemote %s\n", c, p->demote_group);
  	if (p->if_depend[0])
  		printf("%s\tdepend on \"%s\"\n", c, p->if_depend);
@@ -68,7 +81,7 @@ diff -u -p -r1.1.1.1 -r1.4
  
  	if (p->auth.method == AUTH_MD5SIG)
  		printf("%s\ttcp md5sig\n", c);
-@@ -419,10 +430,12 @@ print_rule(struct peer *peer_l, struct f
+@@ -419,10 +436,12 @@ print_rule(struct peer *peer_l, struct f
  		printf("deny ");
  	else
  		printf("match ");
@@ -82,7 +95,7 @@ diff -u -p -r1.1.1.1 -r1.4
  	if (r->dir == DIR_IN)
  		printf("from ");
  	else if (r->dir == DIR_OUT)
-@@ -532,12 +545,14 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
+@@ -532,12 +551,14 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
  	LIST_FOREACH(m, xmrt_l, entry)
  		if ((gid != 0 && m->group_id == gid) ||
  		    (m->peer_id == pid && m->group_id == gid)) {
@@ -101,7 +114,7 @@ diff -u -p -r1.1.1.1 -r1.4
  				    MRT2MC(m)->name,
  				    MRT2MC(m)->ReopenTimerInterval);
  		}
-@@ -602,16 +617,25 @@ peer_compare(const void *aa, const void 
+@@ -602,16 +623,25 @@ peer_compare(const void *aa, const void 
  }
  
  void

@@ -2,17 +2,17 @@ Index: bgpd/rde_decide.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_decide.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.2
-diff -u -p -r1.1.1.1 -r1.1.1.2
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
 --- bgpd/rde_decide.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/rde_decide.c	9 Jul 2009 16:49:54 -0000	1.1.1.2
++++ bgpd/rde_decide.c	22 Oct 2009 15:12:21 -0000	1.2
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_decide.c,v 1.51 2008/05/08 09:51:46 henning Exp $ */
-+/*	$OpenBSD: rde_decide.c,v 1.58 2009/06/29 14:10:13 claudio Exp $ */
++/*	$OpenBSD: rde_decide.c,v 1.59 2009/08/06 08:53:11 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org>
-@@ -115,12 +115,6 @@ prefix_cmp(struct prefix *p1, struct pre
+@@ -115,15 +115,15 @@ prefix_cmp(struct prefix *p1, struct pre
  	if (p2 == NULL)
  		return (1);
  
@@ -25,7 +25,16 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  	asp1 = p1->aspath;
  	asp2 = p2->aspath;
  
-@@ -201,9 +195,16 @@ prefix_cmp(struct prefix *p1, struct pre
++	/* pathes with errors are not eligible */
++	if (asp1->flags & F_ATTR_PARSE_ERR)
++		return (-1);
++	if (asp2->flags & F_ATTR_PARSE_ERR)
++		return (1);
++
+ 	/* only loop free pathes are eligible */
+ 	if (asp1->flags & F_ATTR_LOOP)
+ 		return (-1);
+@@ -201,9 +201,16 @@ prefix_cmp(struct prefix *p1, struct pre
  		    &p2->aspath->peer->remote_addr,
  		    sizeof(p1->aspath->peer->remote_addr)));
  
@@ -38,12 +47,13 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 +	}
 +
  	fatalx("Uh, oh a politician in the decision process");
- 	/* NOTREACHED */
+-	/* NOTREACHED */
 -	return (0);
++	return(0);	/* NOTREACHED */
  }
  
  /*
-@@ -212,59 +213,59 @@ prefix_cmp(struct prefix *p1, struct pre
+@@ -212,59 +219,59 @@ prefix_cmp(struct prefix *p1, struct pre
   * The to evaluate prefix must not be in the prefix list.
   */
  void
@@ -94,7 +104,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 -	if (xp == NULL || !(xp->flags & F_LOCAL) ||
 -	    xp->aspath->flags & F_ATTR_LOOP ||
 +	xp = LIST_FIRST(&re->prefix_h);
-+	if (xp == NULL || xp->aspath->flags & F_ATTR_LOOP ||
++	if (xp == NULL || xp->aspath->flags & (F_ATTR_LOOP|F_ATTR_PARSE_ERR) ||
  	    (xp->aspath->nexthop != NULL &&
  	    xp->aspath->nexthop->state != NEXTHOP_REACH))
  		/* xp is ineligible */

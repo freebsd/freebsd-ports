@@ -2,13 +2,13 @@ Index: bgpd/bgpd.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.2
-diff -u -p -r1.1.1.1 -r1.1.1.2
+retrieving revision 1.1.1.3
+diff -u -p -r1.1.1.1 -r1.1.1.3
 --- bgpd/bgpd.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/bgpd.c	9 Jul 2009 16:49:54 -0000	1.1.1.2
++++ bgpd/bgpd.c	10 Aug 2009 21:09:57 -0000	1.1.1.3
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpd.c,v 1.145 2008/05/12 19:15:02 pyr Exp $ */
-+/*	$OpenBSD: bgpd.c,v 1.148 2009/06/07 00:30:23 claudio Exp $ */
++/*	$OpenBSD: bgpd.c,v 1.149 2009/07/20 15:00:13 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -61,7 +61,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  
  	mrt_reconfigure(&mrt_l);
  
-@@ -452,6 +459,7 @@ reconfigure(char *conffile, struct bgpd_
+@@ -452,10 +459,15 @@ reconfigure(char *conffile, struct bgpd_
  	struct peer		*p;
  	struct filter_rule	*r;
  	struct listen_addr	*la;
@@ -69,7 +69,15 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  
  	if (parse_config(conffile, conf, mrt_l, peer_l, &net_l, rules_l)) {
  		log_warnx("config file %s has errors, not reloading",
-@@ -488,6 +496,15 @@ reconfigure(char *conffile, struct bgpd_
+ 		    conffile);
++		while ((rr = SIMPLEQ_FIRST(&ribnames))) {
++			SIMPLEQ_REMOVE_HEAD(&ribnames, entry);
++			free(rr);
++		}
+ 		return (1);
+ 	}
+ 
+@@ -488,6 +500,15 @@ reconfigure(char *conffile, struct bgpd_
  		la->fd = -1;
  	}
  

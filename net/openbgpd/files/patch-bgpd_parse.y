@@ -2,13 +2,13 @@ Index: bgpd/parse.y
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/parse.y,v
 retrieving revision 1.1.1.1
-retrieving revision 1.4
-diff -u -p -r1.1.1.1 -r1.4
+retrieving revision 1.6
+diff -u -p -r1.1.1.1 -r1.6
 --- bgpd/parse.y	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/parse.y	9 Jul 2009 17:22:14 -0000	1.4
++++ bgpd/parse.y	22 Oct 2009 15:10:02 -0000	1.6
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: parse.y,v 1.217 2008/07/08 13:14:58 claudio Exp $ */
-+/*	$OpenBSD: parse.y,v 1.231 2009/06/06 01:10:29 claudio Exp $ */
++/*	$OpenBSD: parse.y,v 1.233 2009/08/03 13:14:07 claudio Exp $ */
  
  /*
   * Copyright (c) 2002, 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -32,7 +32,7 @@ diff -u -p -r1.1.1.1 -r1.4
  int		 get_id(struct peer *);
  int		 expand_rule(struct filter_rule *, struct filter_peers_l *,
  		    struct filter_match_l *, struct filter_set_head *);
-@@ -155,10 +159,10 @@ typedef struct {
+@@ -155,11 +159,11 @@ typedef struct {
  %}
  
  %token	AS ROUTERID HOLDTIME YMIN LISTEN ON FIBUPDATE RTABLE
@@ -41,11 +41,13 @@ diff -u -p -r1.1.1.1 -r1.4
  %token	GROUP NEIGHBOR NETWORK
 -%token	REMOTEAS DESCR LOCALADDR MULTIHOP PASSIVE MAXPREFIX RESTART
 -%token	ANNOUNCE DEMOTE
+-%token	ENFORCE NEIGHBORAS CAPABILITIES REFLECTOR DEPEND DOWN SOFTRECONFIG
 +%token	REMOTEAS DESCR LLIFACE LOCALADDR MULTIHOP PASSIVE MAXPREFIX RESTART
-+%token	ANNOUNCE DEMOTE CONNECTRETRY
- %token	ENFORCE NEIGHBORAS CAPABILITIES REFLECTOR DEPEND DOWN SOFTRECONFIG
++%token	ANNOUNCE CAPABILITIES REFRESH AS4BYTE CONNECTRETRY
++%token	DEMOTE ENFORCE NEIGHBORAS REFLECTOR DEPEND DOWN SOFTRECONFIG
  %token	DUMP IN OUT
  %token	LOG ROUTECOLL TRANSPARENT
+ %token	TCP MD5SIG PASSWORD KEY TTLSECURITY
 @@ -178,7 +182,7 @@ typedef struct {
  %token	<v.number>		NUMBER
  %type	<v.number>		asnumber as4number optnumber yesno inout
@@ -55,18 +57,31 @@ diff -u -p -r1.1.1.1 -r1.4
  %type	<v.addr>		address
  %type	<v.prefix>		prefix addrspec
  %type	<v.u8>			action quick direction delete
-@@ -207,8 +211,8 @@ grammar		: /* empty */
+@@ -207,8 +211,12 @@ grammar		: /* empty */
  		;
  
  asnumber	: NUMBER			{
 -			if ($1 < 0 || $1 >= USHRT_MAX) {
 -				yyerror("AS too big: max %u", USHRT_MAX - 1);
-+			if ($1 < 0 || $1 >= ASNUM_MAX) {
-+				yyerror("AS too big: max %u", ASNUM_MAX - 1);
++			/*
++			 * Accroding to iana 65535 and 4294967295 are reserved
++			 * but enforcing this is not duty of the parser.
++			 */
++			if ($1 < 0 || $1 > UINT_MAX) {
++				yyerror("AS too big: max %u", UINT_MAX);
  				YYERROR;
  			}
  		}
-@@ -381,6 +385,24 @@ conf_main	: AS as4number		{
+@@ -270,6 +278,8 @@ yesno		:  STRING			{
+ 			else if (!strcmp($1, "no"))
+ 				$$ = 0;
+ 			else {
++				yyerror("syntax error, "
++				    "either yes or no expected");
+ 				free($1);
+ 				YYERROR;
+ 			}
+@@ -381,6 +391,24 @@ conf_main	: AS as4number		{
  			else
  				conf->flags &= ~BGPD_FLAG_NO_EVALUATE;
  		}
@@ -82,7 +97,7 @@ diff -u -p -r1.1.1.1 -r1.4
 +				free($3);
 +				YYERROR;
 +			}
-+			if (!add_rib($3, F_RIB_NOEVALUATE)) {
++			if (!add_rib($3, F_RIB_NOFIB | F_RIB_NOEVALUATE)) {
 +				free($3);
 +				YYERROR;
 +			}
@@ -91,7 +106,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		| TRANSPARENT yesno	{
  			if ($2 == 1)
  				conf->flags |= BGPD_FLAG_DECISION_TRANS_AS;
-@@ -469,12 +491,42 @@ conf_main	: AS as4number		{
+@@ -469,12 +497,42 @@ conf_main	: AS as4number		{
  				YYERROR;
  			}
  			free($2);
@@ -135,7 +150,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		| mrtdump
  		| RDE STRING EVALUATE		{
  			if (!strcmp($2, "route-age"))
-@@ -523,11 +575,23 @@ conf_main	: AS as4number		{
+@@ -523,11 +581,23 @@ conf_main	: AS as4number		{
  			free($4);
  		}
  		| RTABLE NUMBER {
@@ -159,7 +174,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		}
  		;
  
-@@ -550,7 +614,8 @@ mrtdump		: DUMP STRING inout STRING optn
+@@ -550,7 +620,8 @@ mrtdump		: DUMP STRING inout STRING optn
  				free($4);
  				YYERROR;
  			}
@@ -169,7 +184,28 @@ diff -u -p -r1.1.1.1 -r1.4
  				free($2);
  				free($4);
  				YYERROR;
-@@ -742,6 +807,17 @@ peeropts	: REMOTEAS as4number	{
+@@ -653,6 +724,20 @@ neighbor	: {	curpeer = new_peer(); }
+ 			if (($3.prefix.af == AF_INET && $3.len != 32) ||
+ 			    ($3.prefix.af == AF_INET6 && $3.len != 128))
+ 				curpeer->conf.template = 1;
++			switch (curpeer->conf.remote_addr.af) {
++			case AF_INET:
++				if (curpeer->conf.capabilities.mp_v4 !=
++				    SAFI_ALL)
++					break;
++				curpeer->conf.capabilities.mp_v4 = SAFI_UNICAST;
++				break;
++			case AF_INET6:
++				if (curpeer->conf.capabilities.mp_v6 !=
++				    SAFI_ALL)
++					break;
++				curpeer->conf.capabilities.mp_v6 = SAFI_UNICAST;
++				break;
++			}
+ 			if (get_id(curpeer)) {
+ 				yyerror("get_id failed");
+ 				YYERROR;
+@@ -742,6 +827,17 @@ peeropts	: REMOTEAS as4number	{
  			}
  			free($2);
  		}
@@ -187,7 +223,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		| LOCALADDR address	{
  			memcpy(&curpeer->conf.local_addr, &$2,
  			    sizeof(curpeer->conf.local_addr));
-@@ -759,6 +835,22 @@ peeropts	: REMOTEAS as4number	{
+@@ -759,6 +855,22 @@ peeropts	: REMOTEAS as4number	{
  		| DOWN		{
  			curpeer->conf.down = 1;
  		}
@@ -210,7 +246,31 @@ diff -u -p -r1.1.1.1 -r1.4
  		| HOLDTIME NUMBER	{
  			if ($2 < MIN_HOLDTIME || $2 > USHRT_MAX) {
  				yyerror("holdtime must be between %u and %u",
-@@ -1058,6 +1150,12 @@ peeropts	: REMOTEAS as4number	{
+@@ -804,11 +916,22 @@ peeropts	: REMOTEAS as4number	{
+ 		| ANNOUNCE CAPABILITIES yesno {
+ 			curpeer->conf.announce_capa = $3;
+ 		}
++		| ANNOUNCE REFRESH yesno {
++			curpeer->conf.capabilities.refresh = $3;
++		}
++		| ANNOUNCE RESTART yesno {
++			curpeer->conf.capabilities.restart = $3;
++		}
++		| ANNOUNCE AS4BYTE yesno {
++			curpeer->conf.capabilities.as4byte = $3;
++		}
+ 		| ANNOUNCE SELF {
+ 			curpeer->conf.announce_type = ANNOUNCE_SELF;
+ 		}
+ 		| ANNOUNCE STRING {
+-			if (!strcmp($2, "none"))
++			if (!strcmp($2, "self"))
++				curpeer->conf.announce_type = ANNOUNCE_SELF;
++			else if (!strcmp($2, "none"))
+ 				curpeer->conf.announce_type = ANNOUNCE_NONE;
+ 			else if (!strcmp($2, "all"))
+ 				curpeer->conf.announce_type = ANNOUNCE_ALL;
+@@ -1058,6 +1181,12 @@ peeropts	: REMOTEAS as4number	{
  			else
  				curpeer->conf.softreconfig_out = $3;
  		}
@@ -223,7 +283,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		;
  
  restart		: /* nada */		{ $$ = 0; }
-@@ -1115,16 +1213,37 @@ encspec		: /* nada */	{
+@@ -1115,16 +1244,37 @@ encspec		: /* nada */	{
  		}
  		;
  
@@ -265,7 +325,7 @@ diff -u -p -r1.1.1.1 -r1.4
  				YYERROR;
  		}
  		;
-@@ -1142,6 +1261,9 @@ direction	: FROM		{ $$ = DIR_IN; }
+@@ -1142,6 +1292,9 @@ direction	: FROM		{ $$ = DIR_IN; }
  		| TO		{ $$ = DIR_OUT; }
  		;
  
@@ -275,7 +335,7 @@ diff -u -p -r1.1.1.1 -r1.4
  filter_peer_h	: filter_peer
  		| '{' filter_peer_l '}'		{ $$ = $2; }
  		;
-@@ -1396,7 +1518,7 @@ prefixlenop	: unaryop NUMBER		{
+@@ -1396,7 +1549,7 @@ prefixlenop	: unaryop NUMBER		{
  				YYERROR;
  			}
  			if ($1 >= $3) {
@@ -284,7 +344,12 @@ diff -u -p -r1.1.1.1 -r1.4
  				YYERROR;
  			}
  			$$.op = $2;
-@@ -1771,6 +1893,7 @@ lookup(char *s)
+@@ -1767,10 +1920,12 @@ lookup(char *s)
+ 		{ "allow",		ALLOW},
+ 		{ "announce",		ANNOUNCE},
+ 		{ "any",		ANY},
++		{ "as-4byte",		AS4BYTE },
+ 		{ "blackhole",		BLACKHOLE},
  		{ "capabilities",	CAPABILITIES},
  		{ "community",		COMMUNITY},
  		{ "compare",		COMPARE},
@@ -292,7 +357,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		{ "connected",		CONNECTED},
  		{ "delete",		DELETE},
  		{ "demote",		DEMOTE},
-@@ -1792,6 +1915,9 @@ lookup(char *s)
+@@ -1792,6 +1947,9 @@ lookup(char *s)
  		{ "include",		INCLUDE},
  		{ "inet",		IPV4},
  		{ "inet6",		IPV6},
@@ -302,7 +367,11 @@ diff -u -p -r1.1.1.1 -r1.4
  		{ "ipsec",		IPSEC},
  		{ "key",		KEY},
  		{ "listen",		LISTEN},
-@@ -1826,6 +1952,7 @@ lookup(char *s)
+@@ -1823,9 +1981,11 @@ lookup(char *s)
+ 		{ "qualify",		QUALIFY},
+ 		{ "quick",		QUICK},
+ 		{ "rde",		RDE},
++		{ "refresh",		REFRESH },
  		{ "reject",		REJECT},
  		{ "remote-as",		REMOTEAS},
  		{ "restart",		RESTART},
@@ -310,7 +379,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		{ "route-collector",	ROUTECOLL},
  		{ "route-reflector",	REFLECTOR},
  		{ "router-id",		ROUTERID},
-@@ -1933,11 +2060,13 @@ findeol(void)
+@@ -1933,11 +2093,13 @@ findeol(void)
  	int	c;
  
  	parsebuf = NULL;
@@ -326,23 +395,25 @@ diff -u -p -r1.1.1.1 -r1.4
  		if (c == '\n') {
  			file->lineno++;
  			break;
-@@ -2118,9 +2247,13 @@ pushfile(const char *name, int secret)
+@@ -2118,11 +2280,15 @@ pushfile(const char *name, int secret)
  {
  	struct file	*nfile;
  
 -	if ((nfile = calloc(1, sizeof(struct file))) == NULL ||
 -	    (nfile->name = strdup(name)) == NULL) {
 +	if ((nfile = calloc(1, sizeof(struct file))) == NULL) {
-+		log_warn("malloc");
-+		return (NULL);
-+	}
-+	if ((nfile->name = strdup(name)) == NULL) {
  		log_warn("malloc");
-+		free(nfile);
  		return (NULL);
  	}
++	if ((nfile->name = strdup(name)) == NULL) {
++		log_warn("malloc");
++		free(nfile);
++		return (NULL);
++	}
  	if ((nfile->stream = fopen(nfile->name, "r")) == NULL) {
-@@ -2207,6 +2340,9 @@ parse_config(char *filename, struct bgpd
+ 		log_warn("%s", nfile->name);
+ 		free(nfile->name);
+@@ -2207,6 +2373,9 @@ parse_config(char *filename, struct bgpd
  	/* init the empty filter list for later */
  	TAILQ_INIT(xfilter_l);
  
@@ -352,16 +423,24 @@ diff -u -p -r1.1.1.1 -r1.4
  	yyparse();
  	errors = file->errors;
  	popfile();
-@@ -2452,6 +2588,8 @@ alloc_peer(void)
+@@ -2447,11 +2616,13 @@ alloc_peer(void)
+ 	p->conf.distance = 1;
+ 	p->conf.announce_type = ANNOUNCE_UNDEF;
+ 	p->conf.announce_capa = 1;
+-	p->conf.capabilities.mp_v4 = SAFI_UNICAST;
+-	p->conf.capabilities.mp_v6 = SAFI_NONE;
++	p->conf.capabilities.mp_v4 = SAFI_ALL;
++	p->conf.capabilities.mp_v6 = SAFI_ALL;
  	p->conf.capabilities.refresh = 1;
  	p->conf.capabilities.restart = 0;
- 	p->conf.capabilities.as4byte = 0;
+-	p->conf.capabilities.as4byte = 0;
++	p->conf.capabilities.as4byte = 1;
 +	p->conf.local_as = conf->as;
 +	p->conf.local_short_as = conf->short_as;
  	p->conf.softreconfig_in = 1;
  	p->conf.softreconfig_out = 1;
  
-@@ -2473,10 +2611,16 @@ new_peer(void)
+@@ -2473,10 +2644,16 @@ new_peer(void)
  		if (strlcpy(p->conf.descr, curgroup->conf.descr,
  		    sizeof(p->conf.descr)) >= sizeof(p->conf.descr))
  			fatalx("new_peer descr strlcpy");
@@ -379,7 +458,7 @@ diff -u -p -r1.1.1.1 -r1.4
  	return (p);
  }
  
-@@ -2487,11 +2631,15 @@ new_group(void)
+@@ -2487,11 +2664,15 @@ new_group(void)
  }
  
  int
@@ -396,7 +475,7 @@ diff -u -p -r1.1.1.1 -r1.4
  		if (p == NULL) {
  			if (m->peer_id != 0 || m->group_id != 0)
  				continue;
-@@ -2527,6 +2675,20 @@ add_mrtconfig(enum mrt_type type, char *
+@@ -2527,6 +2708,20 @@ add_mrtconfig(enum mrt_type type, char *
  			n->group_id = 0;
  		}
  	}
@@ -417,7 +496,7 @@ diff -u -p -r1.1.1.1 -r1.4
  
  	LIST_INSERT_HEAD(mrtconf, n, entry);
  
-@@ -2534,6 +2696,42 @@ add_mrtconfig(enum mrt_type type, char *
+@@ -2534,6 +2729,42 @@ add_mrtconfig(enum mrt_type type, char *
  }
  
  int
@@ -460,3 +539,27 @@ diff -u -p -r1.1.1.1 -r1.4
  get_id(struct peer *newpeer)
  {
  	struct peer	*p;
+@@ -2713,10 +2944,6 @@ neighbor_consistent(struct peer *p)
+ 		return (-1);
+ 	}
+ 
+-	/* for testing: enable 4-byte AS number capability if necessary */
+-	if (conf->as > USHRT_MAX || p->conf.remote_as > USHRT_MAX)
+-		p->conf.capabilities.as4byte = 1;
+-
+ 	/* set default values if they where undefined */
+ 	p->conf.ebgp = (p->conf.remote_as != conf->as);
+ 	if (p->conf.announce_type == ANNOUNCE_UNDEF)
+@@ -2733,6 +2960,12 @@ neighbor_consistent(struct peer *p)
+ 		return (-1);
+ 	}
+ 
++	/* the default MP capability is NONE */
++	if (p->conf.capabilities.mp_v4 == SAFI_ALL)
++		p->conf.capabilities.mp_v4 = SAFI_NONE;
++	if (p->conf.capabilities.mp_v6 == SAFI_ALL)
++		p->conf.capabilities.mp_v6 = SAFI_NONE;
++
+ 	return (0);
+ }
+ 

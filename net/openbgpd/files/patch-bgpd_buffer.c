@@ -2,13 +2,13 @@ Index: bgpd/buffer.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/buffer.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.2
-diff -u -p -r1.1.1.1 -r1.1.1.2
+retrieving revision 1.1.1.4
+diff -u -p -r1.1.1.1 -r1.1.1.4
 --- bgpd/buffer.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/buffer.c	9 Jul 2009 16:49:54 -0000	1.1.1.2
++++ bgpd/buffer.c	22 Oct 2009 14:24:02 -0000	1.1.1.4
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: buffer.c,v 1.39 2008/03/24 16:11:02 deraadt Exp $ */
-+/*	$OpenBSD: buffer.c,v 1.43 2009/06/06 06:33:15 eric Exp $	*/
++/*	$OpenBSD: buffer.c,v 1.44 2009/07/23 18:58:42 eric Exp $	*/
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -59,14 +59,14 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 -		buf->buf = NULL;
 -		buf->size = 0;
 +	if (max < len)
-+		return (NULL);
-+
-+	if ((buf = buf_open(len)) == NULL)
  		return (NULL);
 -	}
  
 -	buf->buf = p;
 -	buf->size += len;
++	if ((buf = buf_open(len)) == NULL)
++		return (NULL);
++
 +	if (max > 0)
 +		buf->max = max;
  
@@ -151,7 +151,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 +buf_write(struct msgbuf *msgbuf)
  {
 +	struct iovec	 iov[IOV_MAX];
-+	struct buf	*buf, *next;
++	struct buf	*buf;
 +	unsigned int	 i = 0;
  	ssize_t	n;
  
@@ -162,7 +162,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 +		if (i >= IOV_MAX)
 +			break;
 +		iov[i].iov_base = buf->buf + buf->rpos;
-+		iov[i].iov_len = buf->size - buf->rpos;
++		iov[i].iov_len = buf->wpos - buf->rpos;
 +		i++;
 +	}
 +
@@ -170,7 +170,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  		if (errno == EAGAIN || errno == ENOBUFS ||
  		    errno == EINTR)	/* try later */
  			return (0);
-@@ -116,11 +170,19 @@ buf_write(int sock, struct buf *buf)
+@@ -116,11 +170,9 @@ buf_write(int sock, struct buf *buf)
  		return (-2);
  	}
  
@@ -179,27 +179,44 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 -		return (0);
 -	} else
 -		return (1);
++	msgbuf_drain(msgbuf, n);
++
++	return (0);
+ }
+ 
+ void
+@@ -139,6 +191,24 @@ msgbuf_init(struct msgbuf *msgbuf)
+ }
+ 
+ void
++msgbuf_drain(struct msgbuf *msgbuf, size_t n)
++{
++	struct buf	*buf, *next;
++
 +	for (buf = TAILQ_FIRST(&msgbuf->bufs); buf != NULL && n > 0;
 +	    buf = next) {
 +		next = TAILQ_NEXT(buf, entry);
-+		if (buf->rpos + n >= buf->size) {
-+			n -= buf->size - buf->rpos;
++		if (buf->rpos + n >= buf->wpos) {
++			n -= buf->wpos - buf->rpos;
 +			buf_dequeue(msgbuf, buf);
 +		} else {
 +			buf->rpos += n;
 +			n = 0;
 +		}
 +	}
++}
 +
-+	return (0);
- }
- 
- void
-@@ -152,13 +214,13 @@ msgbuf_write(struct msgbuf *msgbuf)
++void
+ msgbuf_clear(struct msgbuf *msgbuf)
+ {
+ 	struct buf	*buf;
+@@ -151,14 +221,14 @@ int
+ msgbuf_write(struct msgbuf *msgbuf)
  {
  	struct iovec	 iov[IOV_MAX];
- 	struct buf	*buf, *next;
+-	struct buf	*buf, *next;
 -	int		 i = 0;
++	struct buf	*buf;
 +	unsigned int	 i = 0;
  	ssize_t		 n;
  	struct msghdr	 msg;
@@ -212,7 +229,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  	} cmsgbuf;
  
  	bzero(&iov, sizeof(iov));
-@@ -167,7 +229,7 @@ msgbuf_write(struct msgbuf *msgbuf)
+@@ -167,7 +237,7 @@ msgbuf_write(struct msgbuf *msgbuf)
  		if (i >= IOV_MAX)
  			break;
  		iov[i].iov_base = buf->buf + buf->rpos;
@@ -221,14 +238,22 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  		i++;
  		if (buf->fd != -1)
  			break;
-@@ -211,8 +273,8 @@ msgbuf_write(struct msgbuf *msgbuf)
- 	for (buf = TAILQ_FIRST(&msgbuf->bufs); buf != NULL && n > 0;
- 	    buf = next) {
- 		next = TAILQ_NEXT(buf, entry);
+@@ -208,17 +278,7 @@ msgbuf_write(struct msgbuf *msgbuf)
+ 		buf->fd = -1;
+ 	}
+ 
+-	for (buf = TAILQ_FIRST(&msgbuf->bufs); buf != NULL && n > 0;
+-	    buf = next) {
+-		next = TAILQ_NEXT(buf, entry);
 -		if (buf->rpos + n >= buf->size) {
 -			n -= buf->size - buf->rpos;
-+		if (buf->rpos + n >= buf->wpos) {
-+			n -= buf->wpos - buf->rpos;
- 			buf_dequeue(msgbuf, buf);
- 		} else {
- 			buf->rpos += n;
+-			buf_dequeue(msgbuf, buf);
+-		} else {
+-			buf->rpos += n;
+-			n = 0;
+-		}
+-	}
++	msgbuf_drain(msgbuf, n);
+ 
+ 	return (0);
+ }

@@ -2,10 +2,10 @@ Index: bgpd/bgpd.conf.5
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.conf.5,v
 retrieving revision 1.1.1.1
-retrieving revision 1.4
-diff -u -p -r1.1.1.1 -r1.4
+retrieving revision 1.5
+diff -u -p -r1.1.1.1 -r1.5
 --- bgpd/bgpd.conf.5	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/bgpd.conf.5	9 Jul 2009 17:22:14 -0000	1.4
++++ bgpd/bgpd.conf.5	22 Oct 2009 15:10:02 -0000	1.5
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpd.conf.5,v 1.88 2008/03/22 08:38:38 claudio Exp $
 +.\" $OpenBSD: bgpd.conf.5,v 1.94 2009/06/07 00:31:22 claudio Exp $
@@ -17,7 +17,7 @@ diff -u -p -r1.1.1.1 -r1.4
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
 -.Dd $Mdocdate: March 22 2008 $
-+.Dd $Mdocdate: June 4 2009 $
++.Dd $Mdocdate: October 6 2009 $
  .Dt BGPD.CONF 5
  .Os
  .Sh NAME
@@ -67,7 +67,7 @@ diff -u -p -r1.1.1.1 -r1.4
 +.Ic rib Ar name
 +.Op Ic no Ic evaluate
 +.Xc
-+Creat an additional RIB named
++Create an additional RIB named
 +.Ar name .
 +It is possible to disable the decision process per RIB with the
 +.Ic no Ic evaluate
@@ -82,7 +82,55 @@ diff -u -p -r1.1.1.1 -r1.4
  .Ic route-age
  .Pq Ic ignore Ns \&| Ns Ic evaluate
  .Xc
-@@ -561,6 +589,12 @@ Inherited from the global configuration 
+@@ -455,6 +483,17 @@ Only routes for that address family and 
+ announced and processed.
+ .Pp
+ .It Xo
++.Ic announce as-4byte
++.Pq Ic yes Ns \&| Ns Ic no
++.Xc
++If set to
++.Ic no ,
++the 4-byte AS capability is not announced and so native 4-byte AS support is
++disabled.
++The default is
++.Ic yes .
++.Pp
++.It Xo
+ .Ic announce capabilities
+ .Pq Ic yes Ns \&| Ns Ic no
+ .Xc
+@@ -465,6 +504,29 @@ This can be helpful to connect to old or
+ The default is
+ .Ic yes .
+ .Pp
++.It Xo
++.Ic announce refresh
++.Pq Ic yes Ns \&| Ns Ic no
++.Xc
++If set to
++.Ic no ,
++the route refresh capability is not announced.
++The default is
++.Ic yes .
++.Pp
++.It Xo
++.Ic announce restart
++.Pq Ic yes Ns \&| Ns Ic no
++.Xc
++If set to
++.Ic yes ,
++the graceful restart capability is announced.
++Currently only the End-of-RIB marker is supported and announced by the
++.Ic restart
++capability.
++The default is
++.Ic no .
++.Pp
+ .It Ic demote Ar group
+ Increase the
+ .Xr carp 4
+@@ -561,6 +623,12 @@ Inherited from the global configuration 
  Set the minimal acceptable holdtime.
  Inherited from the global configuration if not given.
  .Pp
@@ -95,7 +143,7 @@ diff -u -p -r1.1.1.1 -r1.4
  .It Xo
  .Ic ipsec
  .Pq Ic ah Ns \&| Ns Ic esp
-@@ -611,11 +645,11 @@ is responsible for managing the session 
+@@ -611,11 +679,11 @@ is responsible for managing the session 
  With
  .Xr isakmpd 8 ,
  it is sufficient to copy the peer's public key, found in
@@ -109,17 +157,17 @@ diff -u -p -r1.1.1.1 -r1.4
  The local public key must be copied to the peer in the same way.
  As
  .Xr bgpd 8
-@@ -670,6 +704,9 @@ Do not attempt to actively open a TCP co
+@@ -670,6 +738,9 @@ Do not attempt to actively open a TCP co
  .It Ic remote-as Ar as-number
  Set the AS number of the remote system.
  .Pp
-+.It rib .Ar name
++.It Ic rib Ar name
 +Bind the neighbor to the specified RIB.
 +.Pp
  .It Ic route-reflector Op Ar address
  Act as an RFC 2796
  .Em route-reflector
-@@ -728,6 +765,18 @@ tcp md5sig key deadbeef
+@@ -728,6 +799,18 @@ tcp md5sig key deadbeef
  .Ed
  .Pp
  .It Xo
@@ -138,7 +186,7 @@ diff -u -p -r1.1.1.1 -r1.4
  .Ic ttl-security
  .Pq Ic yes Ns \&| Ns Ic no
  .Xc
-@@ -1048,6 +1097,7 @@ will be adjusted by adding or subtractin
+@@ -1048,6 +1131,7 @@ will be adjusted by adding or subtractin
  .Ar number ;
  otherwise it will be set to
  .Ar number .
@@ -146,7 +194,7 @@ diff -u -p -r1.1.1.1 -r1.4
  .Pp
  .It Ic med Ar number
  .It Ic metric Ar number
-@@ -1137,8 +1187,8 @@ For prefixes with equally long paths, th
+@@ -1137,8 +1221,8 @@ For prefixes with equally long paths, th
  is selected.
  .El
  .Sh FILES

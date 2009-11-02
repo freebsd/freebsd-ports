@@ -3,8 +3,8 @@ Index: bgpd/imsg.h
 RCS file: bgpd/imsg.h
 diff -N bgpd/imsg.h
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ bgpd/imsg.h	9 Jul 2009 16:49:54 -0000	1.1.1.1
-@@ -0,0 +1,108 @@
++++ bgpd/imsg.h	22 Oct 2009 14:24:02 -0000	1.1.1.2
+@@ -0,0 +1,109 @@
 +/*	$OpenBSD: imsg.h,v 1.3 2009/06/07 05:56:24 eric Exp $	*/
 +
 +/*
@@ -97,6 +97,7 @@ diff -N bgpd/imsg.h
 +void		 msgbuf_init(struct msgbuf *);
 +void		 msgbuf_clear(struct msgbuf *);
 +int		 msgbuf_write(struct msgbuf *);
++void		 msgbuf_drain(struct msgbuf *, size_t);
 +
 +/* imsg.c */
 +void	 imsg_init(struct imsgbuf *, int);

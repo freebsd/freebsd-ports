@@ -2,13 +2,13 @@ Index: bgpd/rde.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde.h,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.2
-diff -u -p -r1.1.1.1 -r1.1.1.2
+retrieving revision 1.1.1.4
+diff -u -p -r1.1.1.1 -r1.1.1.4
 --- bgpd/rde.h	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/rde.h	9 Jul 2009 16:49:54 -0000	1.1.1.2
++++ bgpd/rde.h	22 Oct 2009 14:24:02 -0000	1.1.1.4
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde.h,v 1.102 2008/01/23 08:11:32 claudio Exp $ */
-+/*	$OpenBSD: rde.h,v 1.120 2009/06/06 01:10:29 claudio Exp $ */
++/*	$OpenBSD: rde.h,v 1.121 2009/08/06 08:53:11 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org> and
@@ -46,7 +46,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  };
  
  /* attribute flags. 4 low order bits reserved */
-@@ -154,16 +155,15 @@ LIST_HEAD(prefix_head, prefix);
+@@ -154,16 +155,16 @@ LIST_HEAD(prefix_head, prefix);
  #define	F_ATTR_MED_ANNOUNCE	0x00020
  #define	F_ATTR_MP_REACH		0x00040
  #define	F_ATTR_MP_UNREACH	0x00080
@@ -61,13 +61,14 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  #define	F_NEXTHOP_BLACKHOLE	0x04000
  #define	F_NEXTHOP_NOMODIFY	0x08000
 -#define	F_NEXTHOP_SELF		0x10000
++#define	F_ATTR_PARSE_ERR	0x10000
  #define	F_ATTR_LINKED		0x20000
 -#define	F_LOCAL			0x40000	/* Local-RIB */
 -#define	F_ORIGINAL		0x80000	/* Adj-RIB-In */
  
  
  #define ORIGIN_IGP		0
-@@ -184,7 +184,6 @@ struct rde_aspath {
+@@ -184,7 +185,6 @@ struct rde_aspath {
  	u_int32_t			 weight;	/* low prio lpref */
  	u_int32_t			 prefix_cnt; /* # of prefixes */
  	u_int32_t			 active_cnt; /* # of active prefixes */
@@ -75,7 +76,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  	u_int32_t			 flags;		/* internally used */
  	u_int16_t			 rtlabelid;	/* route label id */
  	u_int16_t			 pftableid;	/* pf table id */
-@@ -223,53 +222,71 @@ struct pt_entry {
+@@ -223,53 +223,72 @@ struct pt_entry {
  	RB_ENTRY(pt_entry)		 pt_e;
  	sa_family_t			 af;
  	u_int8_t			 prefixlen;
@@ -145,6 +146,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
 +
 +enum rib_state {
 +	RIB_NONE,
++	RIB_NEW,
 +	RIB_ACTIVE,
 +	RIB_DELETE
 +};
@@ -173,7 +175,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  };
  
  extern struct rde_memstats rdemem;
-@@ -282,7 +299,8 @@ void		 rde_send_pftable(u_int16_t, struc
+@@ -282,7 +301,8 @@ void		 rde_send_pftable(u_int16_t, struc
  		     u_int8_t, int);
  void		 rde_send_pftable_commit(void);
  
@@ -183,7 +185,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  u_int32_t	 rde_local_as(void);
  int		 rde_noevaluate(void);
  int		 rde_decisionflags(void);
-@@ -291,6 +309,8 @@ int		 rde_as4byte(struct rde_peer *);
+@@ -291,6 +311,8 @@ int		 rde_as4byte(struct rde_peer *);
  /* rde_attr.c */
  int		 attr_write(void *, u_int16_t, u_int8_t, u_int8_t, void *,
  		     u_int16_t);
@@ -192,7 +194,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  void		 attr_init(u_int32_t);
  void		 attr_shutdown(void);
  int		 attr_optadd(struct rde_aspath *, u_int8_t, u_int8_t,
-@@ -327,10 +347,24 @@ int		 community_set(struct rde_aspath *,
+@@ -327,10 +349,24 @@ int		 community_set(struct rde_aspath *,
  void		 community_delete(struct rde_aspath *, int, int);
  
  /* rde_rib.c */
@@ -219,7 +221,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  int		 path_compare(struct rde_aspath *, struct rde_aspath *);
  struct rde_aspath *path_lookup(struct rde_aspath *, struct rde_peer *);
  void		 path_remove(struct rde_aspath *);
-@@ -343,18 +377,20 @@ void		 path_put(struct rde_aspath *);
+@@ -343,18 +379,20 @@ void		 path_put(struct rde_aspath *);
  #define	PREFIX_SIZE(x)	(((x) + 7) / 8 + 1)
  int		 prefix_compare(const struct bgpd_addr *,
  		    const struct bgpd_addr *, int);
@@ -250,7 +252,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  
  void		 nexthop_init(u_int32_t);
  void		 nexthop_shutdown(void);
-@@ -368,7 +404,7 @@ struct nexthop	*nexthop_get(struct bgpd_
+@@ -368,7 +406,7 @@ struct nexthop	*nexthop_get(struct bgpd_
  int		 nexthop_compare(struct nexthop *, struct nexthop *);
  
  /* rde_decide.c */
@@ -259,7 +261,7 @@ diff -u -p -r1.1.1.1 -r1.1.1.2
  
  /* rde_update.c */
  void		 up_init(struct rde_peer *);
-@@ -387,24 +423,34 @@ u_char		*up_dump_mp_unreach(u_char *, u_
+@@ -387,24 +425,34 @@ u_char		*up_dump_mp_unreach(u_char *, u_
  u_char		*up_dump_mp_reach(u_char *, u_int16_t *, struct rde_peer *);
  
  /* rde_prefix.c */
