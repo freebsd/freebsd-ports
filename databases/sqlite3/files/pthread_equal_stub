@@ -1,0 +1,11 @@
+--- src/mutex_unix.c.orig	2009-09-18 12:39:33.000000000 +0200
++++ src/mutex_unix.c	2009-09-18 12:39:04.000000000 +0200
+@@ -326,4 +326,8 @@
+   return &sMutex;
+ }
+ 
++int pthread_equal() __attribute__ ((weak));
++
++#define pthread_equal(a,b) ((pthread_equal) ? pthread_equal(a,b) : 1)
++
+ #endif /* SQLITE_MUTEX_PTHREAD */
