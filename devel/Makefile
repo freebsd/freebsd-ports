@@ -500,6 +500,7 @@
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hcs12mem
+    SUBDIR += hg-git
     SUBDIR += hgsvn
     SUBDIR += hgview
     SUBDIR += highlighterkit
