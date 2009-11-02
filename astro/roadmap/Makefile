@@ -6,47 +6,62 @@
 #
 
 PORTNAME=	roadmap
-PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTVERSION=	1.2.1
 CATEGORIES=	astro geography
-MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/ \
-		SF/${PORTNAME}/OldFiles		
-
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/:S/./_/g}_src
+MASTER_SITES=	SF/${PORTNAME}/RoadMap/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based GPS moving map
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
+MAKE_ARGS=	INSTALLDIR="${PREFIX}" CC="${CC}" CXX="${CXX}"
 
-BINS=		buildmap buildus dumpmap
+SUB_FILES=	pkg-message
+
+MAN1=		roadgps.1 roadmap.1
+PORTDOCS=	${DOCS} README
+PLIST_FILES=	${BINS:S,^,bin/,} ${GUI_BINS:S,^,bin/,} \
+		${GUI_BINS:S,^gtk,bin/,} ${SCRIPTS:S,^,bin/,} \
+		${DATA:S,^,%%DATADIR%%/,}
+PLIST_DIRS=	%%DATADIR%%
+
+BINS=		dumpmap buildmap buildmap_osm buildplace buildus
 GUI_BINS=	gtkroadmap gtkroadgps
-SCRIPTS=	rdmdownload rdmgetall rdmgenmaps rdmcompare
-DATA=		sprites preferences schema
-PORTDOCS=	AUTHORS BUGS README TODO
-SUB_FILES+=	pkg-message
+SCRIPTS=	rdmcompare rdmdownload rdmgendcwmaps rdmgenmaps \
+		rdmgenshpmaps rdmgenstatemaps 
+DATA=		drivers preferences roadmap.popup roadmap.screenobjects \
+		session sprites
+DOCS=		Bugs ChangeLog Coding Configuration Developer-Guide \
+		Installation Map-Building Map-Designing Map-Format \
+		OpenStreetMap Platforms Quickstart Status ToDo Usage
 
 post-patch:
-	@${REINPLACE_CMD} -e '150s,static ,, ; 423s,static ,,' \
-		${WRKSRC}/src/roadmap_download.c
+	@${REINPLACE_CMD} -e 's|-O ||g ; \
+		 s|/usr/include|${LOCALBASE}/include|g ; \
+		 s|/usr/local/include|${LOCALBASE}/include|g ; \
+		 s|/usr/local/lib|${LOCALBASE}/lib|g' ${WRKSRC}/src/options.mk
 
 do-install:
-.for _GUI_BIN in ${GUI_BINS}
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gtk/${_GUI_BIN} ${PREFIX}/bin/${_GUI_BIN}
-.endfor
 .for _BIN in ${BINS}
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${_BIN} ${PREFIX}/bin/${_BIN}
 .endfor
+.for _GUI_BIN in ${GUI_BINS}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gtk2/${_GUI_BIN} ${PREFIX}/bin/${_GUI_BIN}
+	${LN} -sf ${_GUI_BIN} ${PREFIX}/bin/${_GUI_BIN:S,^gtk,,}
+.endfor
 .for _SCRIPT in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${_SCRIPT} ${PREFIX}/bin/${_BIN}
+	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${_SCRIPT} ${PREFIX}/bin/${_SCRIPT}
+.endfor
+.for _MAN in ${MAN1}
+	${INSTALL_MAN} ${INSTALL_WRKSRC}/${_MAN} ${MANPREFIX}/man/man1/${_MAN}
 .endfor
 	@${MKDIR} ${DATADIR}
 .for _DATA in ${DATA}
@@ -54,8 +69,9 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for _DOC in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${_DOC} ${DOCSDIR}/${_DOC}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+.for _DOC in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${_DOC} ${DOCSDIR}/${_DOC}
 .endfor
 .endif
 
