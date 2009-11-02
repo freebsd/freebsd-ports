@@ -7,7 +7,7 @@
 
 PORTNAME=	aumix
 PORTVERSION=	2.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://jpj.net/~trevor/aumix/ \
@@ -51,8 +51,8 @@ pre-extract:
 	@sleep 3
 .endif
 
-do-patch:
-	@${REINPLACE_CMD} -e "s:/etc:${PREFIX}/etc:" ${WRKSRC}/src/common.[c,h]
+pre-patch:
+	@${REINPLACE_CMD} -e "s:/etc:${PREFIX}/etc:" ${WRKSRC}/src/common.[ch]
 
 .if (${HAVE_GNOME:Mgtk12}!="") && !defined(WITHOUT_ALL) && \
 	!defined(WITHOUT_GTK)&& !defined(WITH_GTK2)
