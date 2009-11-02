@@ -24,4 +24,27 @@ CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
 		--disable-pcre
 USE_LDCONFIG=	yes
 
+ROOTDIRS=	classes css programming programming/parts
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/bin/perl,${PREFIX}/bin/perl,g' \
+		${WRKSRC}/doc/programming/insert.pl
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for dirs in ${ROOTDIRS}
+	@${MKDIR} ${DOCSDIR}/${dirs}
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/classes/*.html \
+		${DOCSDIR}/classes
+	@${INSTALL_DATA} ${WRKSRC}/doc/css/*.css \
+		${DOCSDIR}/css
+	@${INSTALL_DATA} ${WRKSRC}/doc/programming/*.html \
+		${DOCSDIR}/programming
+	@${INSTALL_SCRIPT} ${WRKSRC}/doc/programming/*.pl \
+		${DOCSDIR}/programming
+	@${INSTALL_DATA} ${WRKSRC}/doc/programming/parts/*.html \
+		${DOCSDIR}/programming/parts
+.endif
+
 .include <bsd.port.mk>
