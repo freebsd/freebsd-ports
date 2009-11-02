@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	den@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Users Traffic Count
 
 .include <bsd.port.mk>
