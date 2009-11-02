@@ -16,7 +16,8 @@ COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.1:${PORTSDIR}/devel/rudiments
 
-USE_GMAKE=		yes
+WANT_GNOME=	yes
+USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:22
 CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV} \
 			CPPFLAGS="-I${LOCALBASE}/include"
@@ -129,11 +130,15 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 		IF_INTERBASE=${IF_INTERBASE} \
 		IF_GTK=${IF_GTK}
 
-MAN1=		fields.1 query.1 query.py.1 sqlr-config-gtk.1 sqlrsh.1
+MAN1=		fields.1 query.1 query.py.1 sqlrsh.1
 MAN8=		sqlr-connection.8 sqlr-cachemanager.8 sqlr-ipclean.8 \
 		sqlr-listener.8 sqlr-scaler.8 sqlr-start.8 sqlr-stop.8
 
 post-patch:
+	${REINPLACE_CMD} -E \
+		-e 's,(freebsd.*)/usr/local(.*rc.d),\1${PREFIX}\2/sqlrelay.sh-sample,' \
+		-e 's,(freebsd/sqlrelay )(.*etc),\1$$(sysconfdir)/sqlrelay-sample,' \
+			${WRKSRC}/init/Makefile
 	${REINPLACE_CMD} -E \
 		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
 		-e 's,[[:<:]]gtk-config[[:>:]],${GTK_CONFIG:T},g;' \
