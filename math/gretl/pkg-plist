@@ -137,9 +137,6 @@ lib/gretl-gtk2/nistcheck.so
 lib/gretl-gtk2/ods_import.a
 lib/gretl-gtk2/ods_import.la
 lib/gretl-gtk2/ods_import.so
-lib/gretl-gtk2/oprobit.a
-lib/gretl-gtk2/oprobit.la
-lib/gretl-gtk2/oprobit.so
 lib/gretl-gtk2/pca.a
 lib/gretl-gtk2/pca.la
 lib/gretl-gtk2/pca.so
@@ -155,6 +152,9 @@ lib/gretl-gtk2/quantreg.so
 lib/gretl-gtk2/range-mean.a
 lib/gretl-gtk2/range-mean.la
 lib/gretl-gtk2/range-mean.so
+lib/gretl-gtk2/sas_import.a
+lib/gretl-gtk2/sas_import.la
+lib/gretl-gtk2/sas_import.so
 lib/gretl-gtk2/spss_import.a
 lib/gretl-gtk2/spss_import.la
 lib/gretl-gtk2/spss_import.so
@@ -312,6 +312,7 @@ share/applications/gretl.desktop
 %%DATADIR%%/data/misc/ects_nls.gdt
 %%DATADIR%%/data/misc/engel.gdt
 %%DATADIR%%/data/misc/galton.gdt
+%%DATADIR%%/data/misc/gear.gdt
 %%DATADIR%%/data/misc/hall.gdt
 %%DATADIR%%/data/misc/hamilton.gdt
 %%DATADIR%%/data/misc/hendry_jae.gdt
