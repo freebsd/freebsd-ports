@@ -1,6 +1,6 @@
---- gui2/Makefile.in.orig	2008-12-12 03:44:33.000000000 +0900
-+++ gui2/Makefile.in	2009-02-05 23:24:20.000000000 +0900
-@@ -106,7 +106,7 @@
+--- gui2/Makefile.in.orig	2009-09-17 03:48:17.000000000 +0900
++++ gui2/Makefile.in	2009-10-29 22:59:23.000000000 +0900
+@@ -98,7 +98,7 @@
  #### End of system configuration section. ####
  
  SHELL = /bin/sh
@@ -9,23 +9,16 @@
  PROG  = gretl_x11
  
  vpath %.c $(topsrc)/gui2
-@@ -164,13 +164,13 @@
- 	$(CC) $(CFLAGS) -MM $< > .deps/$*.d 
- 
- $(PROG): .deps $(OBJS) $(HACK_OBJ) $(GTKSOURCEVIEW_LITE) 
--	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(HACK_OBJ) $(LIBS) $(INETLIB) $(CARBONLIB)
-+	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $(OBJS) $(HACK_OBJ) $(LIBS) $(INETLIB) $(CARBONLIB)
- 
- $(HACK_OBJ): $(HACK_SRC) $(HACK_HDR)
+@@ -167,7 +167,7 @@
  	$(CC) $(CFLAGS) $(GTK_CFLAGS) -c $<
  
  mklang: mklang.o
 -	$(LIBTOOL) --mode=link $(CC) -o $@ $< ../lib/libgretl-1.0.la $(XML_LIBS)
-+	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $< ../lib/libgretl-1.0.la $(XML_LIBS)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $< ../lib/libgretl-1.0.la $(LDFLAGS) $(XML_LIBS)
  
- mklang.o: mklang.c $(topsrc)/lib/src/options.c $(topsrc)/lib/src/genlex.c
+ mklang.o: mklang.c $(topsrc)/lib/src/options.c $(topsrc)/lib/src/genlex.c $(topsrc)/lib/src/gretl_commands.c
  	$(CC) -c -I.. -I$(libsrc) $(XML_CFLAGS) $<
-@@ -179,7 +179,7 @@
+@@ -176,7 +176,7 @@
  	./mklang $(LANGOPT) > $@
  
  $(GTKSOURCEVIEW_LITE):
@@ -34,7 +27,7 @@
  
  .deps:
  	mkdir $@
-@@ -194,7 +194,7 @@
+@@ -191,7 +191,7 @@
  	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(DESTDIR)$(bindir)/$(PROG)
  
  install-data: installdirs
