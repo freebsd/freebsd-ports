@@ -18,15 +18,15 @@ else
 fi
 
 if [ "$2" = "POST-INSTALL" ] ; then
-	need_remove_links=yes
-	need_create_links=yes
+	need_remove_links=%%LINK_USRBIN%%
+	need_create_links=%%LINK_USRBIN%%
 	need_cleanup_make_conf=yes
 	need_cleanup_manpath=yes
 	need_spam_make_conf=yes
 	need_spam_manpath=yes
 	need_post_install=yes
 elif [ "$2" = "POST-DEINSTALL" ] ; then
-	need_remove_links=yes
+	need_remove_links=%%LINK_USRBIN%%
 	need_cleanup_make_conf=yes
 	need_cleanup_manpath=yes
 else
