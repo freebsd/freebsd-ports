@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.0.2
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -20,8 +19,6 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat \
-		${LOCALBASE}/include/X11/xpm.h:${PORTSDIR}/x11/libXpm
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
@@ -65,9 +62,13 @@ OPTIONS=	A52 "a52 audio support, many DVDs use this" On \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+.if !defined(WITHOUT_X11)
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
+.endif
+.if !defined(WITHOUT_SDL) && !defined(WITHOUT_X11)
 WANT_SDL=	yes
+.endif
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 
@@ -87,7 +88,8 @@ CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-postproc \
 			--without-dv-raw1394 \
 			--disable-dv \
-			--disable-galaktos
+			--disable-galaktos \
+			--disable-glx
 
 MAN1=		vlc.1 \
 		vlc-config.1 \
@@ -105,7 +107,7 @@ WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 BROKEN=	Does not compile with perl ${PERL_VERSION}
 .endif
 
-.if !defined(WITHOUT_QT4)
+.if !defined(WITHOUT_QT4) && !defined(WITHOUT_X11)
 USE_QT_VER+=	4
 QT_COMPONENTS+=	gui corelib moc_build rcc_build uic_build
 CONFIGURE_ARGS+=--enable-qt4
@@ -162,7 +164,7 @@ DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 
-.if !defined(WITHOUT_GNOMEVFS)
+.if !defined(WITHOUT_GNOMEVFS) && !defined(WITHOUT_X11)
 USE_GNOME+=	gnomevfs2
 CONFIGURE_ARGS+=	--enable-gnomevfs
 .else
@@ -175,14 +177,14 @@ DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
-.if !defined(WITHOUT_LIBNOTIFY)
+.if !defined(WITHOUT_LIBNOTIFY) && !defined(WITHOUT_X11)
 LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
 .else
 CONFIGURE_ARGS+=--disable-notify
 .endif
 
-.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS) && !defined(WITHOUT_QT4)
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS) && !defined(WITHOUT_QT4) && !defined(WITHOUT_X11)
 LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2 --enable-libtar
 .else
@@ -231,14 +233,14 @@ CONFIGURE_ARGS+=--enable-zvbi
 CONFIGURE_ARGS+=--disable-zvbi
 .endif
 
-.if !defined(WITHOUT_HAL)
+.if !defined(WITHOUT_HAL) && !defined(WITHOUT_X11)
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=--enable-hal
 .else
 CONFIGURE_ARGS+=--disable-hal
 .endif
 
-.if (defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so)) && !defined(WITHOUT_ARTS)
+.if (defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so)) && !defined(WITHOUT_ARTS) && !defined(WITHOUT_X11)
 LIB_DEPENDS+=	 artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--enable-arts
 .else
@@ -296,7 +298,7 @@ CONFIGURE_ARGS+=--enable-dvdread
 CONFIGURE_ARGS+=--disable-dvdread
 .endif
 
-.if (defined(WITH_ESOUND) || ${HAVE_GNOME:Mesound}!="") && !defined(WITHOUT_ESOUND)
+.if (defined(WITH_ESOUND) || defined(HAVE_GNOME) && ${HAVE_GNOME:Mesound}!="") && !defined(WITHOUT_ESOUND) && !defined(WITHOUT_X11)
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
 .else
@@ -502,7 +504,7 @@ CONFIGURE_ARGS+=--enable-smb
 CONFIGURE_ARGS+=--disable-smb
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if !defined(WITHOUT_SDL) && !defined(WITHOUT_X11)
 USE_SDL=	image
 CONFIGURE_ARGS+=--enable-sdl
 .else
@@ -532,7 +534,7 @@ CONFIGURE_ARGS+=--disable-speex
 CONFIGURE_ARGS+=--disable-sout
 .endif
 
-.if (defined(WITH_SVG) || ${HAVE_GNOME:Mlibrsvg2}!="") && !defined(WITHOUT_SVG)
+.if (defined(WITH_SVG) || defined(HAVE_GNOME) && ${HAVE_GNOME:Mlibrsvg2}!="") && !defined(WITHOUT_SVG) && !defined(WITHOUT_X11)
 USE_GNOME+=	librsvg2
 CONFIGURE_ARGS+=--enable-svg
 .else
@@ -587,6 +589,7 @@ CONFIGURE_ARGS+=--enable-optimizations
 .if defined(WITHOUT_V4L)
 CONFIGURE_ARGS+=--disable-v4l
 .else
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 CONFIGURE_ARGS+=--enable-v4l
 .endif
 
@@ -594,6 +597,7 @@ CONFIGURE_ARGS+=--enable-v4l
 CONFIGURE_ARGS+=--disable-x11
 .else
 USE_XORG=	xpm
+BUILD_DEPENDS+=	${LOCALBASE}/include/X11/xpm.h:${PORTSDIR}/x11/libXpm
 CONFIGURE_ARGS+=--enable-x11
 .endif
 
