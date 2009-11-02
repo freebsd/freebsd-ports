@@ -288,6 +288,7 @@
     SUBDIR += dprog
     SUBDIR += drpython
     SUBDIR += dsss
+    SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
     SUBDIR += dyncall
