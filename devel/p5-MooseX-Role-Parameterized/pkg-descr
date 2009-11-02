@@ -1,0 +1,21 @@
+Roles are composable units of behavior.  They are useful for factoring
+out functionality common to many classes from any part of your class
+hierarchy.  See Moose::Cookbook::Roles::Recipe1 for an introduction to
+Moose::Role.
+
+While combining roles affords you a great deal of flexibility,
+individual roles have very little in the way of configurability.  Core
+Moose provides alias for renaming methods and excludes for ignoring
+methods.  These options are primarily (perhaps solely) for
+disambiguating role conflicts.  See Moose::Cookbook::Roles::Recipe2 for
+more about alias and excludes.
+
+Because roles serve many different masters, they usually provide only
+the least common denominator of functionality.  To empower roles
+further, more configurability than alias and excludes is required.
+Perhaps your role needs to know which method to call when it is done.
+Or what default value to use for its url attribute.
+
+Parameterized roles offer exactly this solution.
+
+WWW: http://search.cpan.org/dist/MooseX-Role-Parameterized/
