@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	davical
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.7.6
 CATEGORIES?=	www
 MASTER_SITES=	SF/rscds/${PORTNAME}/${PORTVERSION}
-DISTNAME=	davical_${PORTVERSION}-0
+DISTNAME=	davical-${PORTVERSION}
 
 MAINTAINER=	maurice@castro.aus.net
 COMMENT=	A simple CalDAV server using a postgres backend
@@ -21,8 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pgsql:${PORTSDIR}/databases/php5-pgsql
 		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
 		php-libawl>=0.37:${PORTSDIR}/devel/php-libawl
 
-WRKSRC=		${WRKDIR}/davical-${PORTVERSION}-0
-
 NO_BUILD=	yes
 
 USE_PHP=	gettext pcre xml
@@ -32,7 +30,6 @@ WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
 post-patch:
 	${RM} ${WRKSRC}/inc/always.php.orig
-	${RM} ${WRKSRC}/htdocs/index.php.orig
 
 do-install:
 	${MKDIR} ${WWWDIR} ${WWWDIR}/htdocs ${WWWDIR}/inc ${WWWDIR}/config
@@ -51,7 +48,6 @@ post-install:
 	${CP} -pv ${WRKSRC}/README ${DOCSDIR}
 	${CP} -pv ${WRKSRC}/INSTALL ${DOCSDIR}
 	${CHMOD} a+x ${DOCSDIR}/dba/update-davical-database
-	${CHMOD} a+x ${DOCSDIR}/dba/update-rscds-database
 
 .endif
 
