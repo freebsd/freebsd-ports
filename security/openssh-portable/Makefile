@@ -128,7 +128,9 @@ EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 .endif
 
 .if ${OSVERSION} >= 800000
+.if !defined(WITHOUT_KERBEROS)
 BROKEN=		does not link
+.endif
 .endif
 .endif
 
