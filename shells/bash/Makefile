@@ -9,7 +9,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		33
 PORTVERSION=		4.0.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -93,7 +93,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
-			YACC="bison"
+			YACC="bison -y"
 
 .include <bsd.port.pre.mk>
 
