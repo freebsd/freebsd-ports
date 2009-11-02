@@ -32,6 +32,8 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		SITECUSTOMIZE	"Run-time customization of @INC"	off \
 		USE_PERL	"Rewrite links in /usr/bin"		on
 
+PORTSCOUT=	limitw:1,even
+
 PERL_VERSION=	5.10.1
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
@@ -138,6 +140,12 @@ CONFIGURE_ARGS+=	-Dusemultiplicity=y
 CONFIGURE_ARGS+=	-Dusesitecustomize
 .endif
 
+.if defined(WITH_USE_PERL)
+LINK_USRBIN=	yes
+.else
+LINK_USRBIN=	no
+.endif
+
 NO_LATEST_LINK=	yes
 
 .if defined(WITH_GDBM)
@@ -161,6 +169,7 @@ post-patch:
 		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
 		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
 		-e 's|%%MAKE_CONF%%|${__MAKE_CONF}|g;' \
+		-e 's|%%LINK_USRBIN%%|${LINK_USRBIN}|g;' \
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
 	${SED} -e 's|%%PERL%%|${PERL}|g; s|%%PERL_VERSION%%|${PERL_VERSION}|g; s|%%PKGNAME%%|${PKGNAME}|g' \
@@ -198,9 +207,7 @@ post-install:
 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
 		${BSDPAN_WRKSRC}/${files} ${BSDPAN_DEST}/${files}
 .endfor
-.if defined(WITH_USE_PERL)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 
 test: build
 	@(cd ${WRKSRC}; make test)
