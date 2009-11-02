@@ -6,33 +6,44 @@
 #
 
 PORTNAME=	xcowsay
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.nickg.me.uk/files/ LOCAL/chinsan/games
+MASTER_SITES=	http://www.nickg.me.uk/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical configurable talking cow
 
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 gdkpixbuf intlhack
+OPTIONS=	DBUS "Enable DBus support" off
+
+USE_GNOME=	gtk20
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		xcowsay.6
+PLIST_FILES=	bin/xcowdream \
+		bin/xcowfortune \
+		bin/xcowsay \
+		bin/xcowthink \
+		share/locale/pt_BR/LC_MESSAGES/xcowsay.mo \
+		%%DATADIR%%/cow_large.png \
+		%%DATADIR%%/cow_med.png \
+		%%DATADIR%%/cow_small.png
+PLIST_DIRS=	%%DATADIR%%
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CFLAGS+=	-DWITH_DBUS
+CONFIGURE_ARGS+=	--enable-dbus
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DWITH_DBUS||g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

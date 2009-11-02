@@ -1,9 +1,0 @@
-bin/xcowsay
-bin/xcowfortune
-bin/xcowdream
-bin/xcowthink
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/xcowsay.mo
-%%DATADIR%%/cow_small.png
-%%DATADIR%%/cow_med.png
-%%DATADIR%%/cow_large.png
-@dirrm %%DATADIR%%
