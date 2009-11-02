@@ -5,13 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	squirrel
-PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTNAME=	squirrel-sql
+PORTVERSION=	3.0.2
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME}-sql/1-stable/2.6%20plain%20zip
-PKGNAMESUFFIX=	-sql
-DISTNAME=	squirrel-sql-2.6-standard
+MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}%20(plain%20zip)
+DISTNAME=	${PORTNAME}-${PORTVERSION}-standard
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A universal SQL Client
@@ -20,26 +18,26 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 WRKSRC=		${WRKDIR}/SQuirreL SQL Client
-DSTDIR=		${JAVASHAREDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
 SUB_FILES=	squirrel-sql
 PKGMESSAGE=	pkg-messages
 
+PORTDATA=	*
+DATADIR=	${PREFIX}/share/java/${UNIQUENAME}
+
 DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"${COMMENT}" \
-		"${DSTDIR}/icons/acorn.png" \
+		"${DATADIR}/icons/acorn.png" \
 		"squirrel-sql" \
 		"Application;" \
 		false
 
 post-extract:
-	${RM} -rf "${WRKSRC}"/Uninstaller
-	${RM} -rf "${WRKSRC}"/*.bat
-	${RM} -rf "${WRKSRC}"/*.sh
+	cd "${WRKSRC}" && ${RM} -rf Uninstaller *.bat *.sh .installationinformation
 
 do-install:
-	cd "${WRKSRC}" && ${FIND} . -type d -exec ${MKDIR} ${DSTDIR}/{} \;
-	cd "${WRKSRC}" && ${FIND} . -type f -not -path "\./bin/" -exec ${INSTALL_DATA} {} ${DSTDIR}/{} \;
+	${MKDIR} ${DATADIR}
+	cd "${WRKSRC}" && ${FIND} . | ${CPIO} -pdum -R root:wheel ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/squirrel-sql ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE} 
 
