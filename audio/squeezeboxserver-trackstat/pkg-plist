@@ -1,3 +1,8 @@
+%%SLIMDIR%%/Plugins/TrackStat/Amarok/Common.pm
+%%SLIMDIR%%/Plugins/TrackStat/Amarok/Export.pm
+%%SLIMDIR%%/Plugins/TrackStat/Amarok/Import.pm
+%%SLIMDIR%%/Plugins/TrackStat/Backup/File.pm
+%%SLIMDIR%%/Plugins/TrackStat/Backup/RestoreModule.pm
 %%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/albumrating.template
 %%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/albumrating.xml
 %%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/albumratings.template
@@ -104,6 +109,8 @@
 %%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatgenre.xml
 %%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatplaylist.xml
 %%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatyear.xml
+%%SLIMDIR%%/Plugins/TrackStat/MusicMagic/Export.pm
+%%SLIMDIR%%/Plugins/TrackStat/MusicMagic/Import.pm
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/lastadded.template
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/lastadded.xml
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/lastaddedalbums.template
@@ -146,24 +153,70 @@
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforartist.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforgenre.xml
 %%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforyear.xml
+%%SLIMDIR%%/Plugins/TrackStat/Plugin.pm
 %%SLIMDIR%%/Plugins/TrackStat/README.txt
+%%SLIMDIR%%/Plugins/TrackStat/SQL/SQLite/dbcreate.sql
+%%SLIMDIR%%/Plugins/TrackStat/SQL/SQLite/dbindex.sql
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbcreate.sql
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_added.sql
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_history.sql
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_musicbrainz.sql
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_url_type.sql
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_url_type255.sql
-%%SLIMDIR%%/Plugins/TrackStat/TrackStatiTunesUpdateWin.pl
+%%SLIMDIR%%/Plugins/TrackStat/Settings/Backup.pm
+%%SLIMDIR%%/Plugins/TrackStat/Settings/BaseSettings.pm
+%%SLIMDIR%%/Plugins/TrackStat/Settings/Basic.pm
+%%SLIMDIR%%/Plugins/TrackStat/Settings/EnabledStatistic.pm
+%%SLIMDIR%%/Plugins/TrackStat/Settings/Favorites.pm
+%%SLIMDIR%%/Plugins/TrackStat/Settings/Interface.pm
+%%SLIMDIR%%/Plugins/TrackStat/Settings/Rating.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/All.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/Base.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/FirstPlayed.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/LastAdded.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/LastPlayed.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/LeastPlayed.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/LeastPlayedRecentAdded.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/MostPlayed.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/MostPlayedRecent.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/MostPlayedRecentAdded.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/NotCompletelyRated.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/NotCompletelyRatedRecent.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/NotCompletelyRatedRecentAdded.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/NotPlayed.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/NotRated.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/NotRatedRecent.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/NotRatedRecentAdded.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/PartlyPlayed.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/SpecificRating.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/TopRated.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/TopRatedRecent.pm
+%%SLIMDIR%%/Plugins/TrackStat/Statistics/TopRatedRecentAdded.pm
+%%SLIMDIR%%/Plugins/TrackStat/Storage.pm
+%%SLIMDIR%%/Plugins/TrackStat/Template/Reader.pm
+%%SLIMDIR%%/Plugins/TrackStat/TrackStatiTunesUpdate.pl
+%%SLIMDIR%%/Plugins/TrackStat/iPeng/Reader.pm
 %%SLIMDIR%%/Plugins/TrackStat/iPengConfiguration/trackstat.ipeng.xml
+%%SLIMDIR%%/Plugins/TrackStat/iTunes/Export.pm
+%%SLIMDIR%%/Plugins/TrackStat/iTunes/Import.pm
 %%SLIMDIR%%/Plugins/TrackStat/install.xml
-%%SLIMDIR%%/Plugins/TrackStat/lib/Plugins-TrackStat-Plugin.par
+%%SLIMDIR%%/Plugins/TrackStat/lib/Time/Stopwatch.pm
 %%SLIMDIR%%/Plugins/TrackStat/strings.txt
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/lib/Time
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/lib/Plugins
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/lib
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/iTunes
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/iPengConfiguration
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/iPeng
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Template
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Statistics
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Settings
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/SQL/SQLite
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/SQL
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/Playlists
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/MusicMagic
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/Mixes
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/Menus
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/MenuTemplates
@@ -211,6 +264,8 @@
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/DataQueries
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/ContextMenus
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Backup
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Amarok
 @dirrm %%SLIMDIR%%/Plugins/TrackStat
 @dirrmtry %%SLIMDIR%%/Plugins
 @dirrmtry %%SLIMDIR%%
