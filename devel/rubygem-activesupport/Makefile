@@ -6,6 +6,7 @@
 
 PORTNAME=	activesupport
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
@@ -13,6 +14,7 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Utility classes and extension that are required by Rails MVC Framework
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
