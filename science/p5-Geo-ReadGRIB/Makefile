@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Geo-ReadGRIB
-PORTVERSION=	0.98
+PORTVERSION=	1.1
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module provides read access to GRIB files
 
 PERL_CONFIGURE=	yes
