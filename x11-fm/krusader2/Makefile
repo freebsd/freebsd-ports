@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	krusader
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.0.b1
 CATEGORIES=	x11-fm kde
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.b/-beta/}/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
@@ -19,6 +19,7 @@ KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml moc_build qmake_build\
 		 rcc_build uic_build
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 MAKE_JOBS_UNSAFE=	yes
