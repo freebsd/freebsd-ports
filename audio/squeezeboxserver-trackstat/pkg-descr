@@ -1,8 +1,8 @@
-This is a statistic plugin for SqueezeCenter. SqueezeCenter normally
-stores statistics about the last time a track was played, when a
-specific track was added to the library and how many times a track has
-been played. The problem is that all of these statistics are cleared
-every time you perform a full rescan of SqueezeCenter.
+This is a statistic plugin for Squeezebox Server. Squeezebox Server
+normally stores statistics about the last time a track was played,
+when a specific track was added to the library and how many times a
+track has been played. The problem is that all of these statistics are
+cleared every time you perform a full rescan of Squeezebox Server.
 
 The TrackStat plugin solves this problem by making sure that the
 statistics survive a rescan. Besides this TrackStat also extends the
@@ -14,7 +14,7 @@ holding a number between 1-5 down on the now playing screen.
 
 The other main functionality the TrackStat plugins provides is various
 ways to browse your music based on the statistic information. The
-standard SqueezeCenter only makes it possible to show most played
+standard Squeezebox Server only makes it possible to show most played
 tracks. The TrackStat plugin makes it possible to show the statistics
 in a lot more ways. The purpose is simply to give you another way to
 select which music you like to play, for example like:
