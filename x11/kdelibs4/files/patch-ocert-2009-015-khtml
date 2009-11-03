@@ -1,0 +1,117 @@
+--- ./khtml/ecma/xmlhttprequest.cpp	2009/10/15 10:13:41	1035538
++++ ./khtml/ecma/xmlhttprequest.cpp	2009/10/15 10:14:38	1035539
+@@ -49,7 +49,7 @@
+ 
+ using namespace KJS;
+ using namespace DOM;
+-// 
++//
+ ////////////////////// XMLHttpRequest Object ////////////////////////
+ 
+ /* Source for XMLHttpRequestProtoTable.
+@@ -269,7 +269,7 @@
+ static bool canSetRequestHeader(const QString& name)
+ {
+     static QSet<CaseInsensitiveString> forbiddenHeaders;
+-    
++
+     if (forbiddenHeaders.isEmpty()) {
+ 	static const char* hdrs[] = {
+ 	    "accept-charset",
+@@ -298,12 +298,12 @@
+ 	    "transfer-encoding",
+ 	    "unlock",
+ 	    "upgrade",
+-	    "via" 
++	    "via"
+ 	};
+ 	for (size_t i = 0; i < sizeof(hdrs)/sizeof(char*); ++i)
+ 	    forbiddenHeaders.insert(CaseInsensitiveString(hdrs[i]));
+     }
+-    
++
+     return !forbiddenHeaders.contains(name);
+ }
+ 
+@@ -326,9 +326,9 @@
+ 
+ XMLHttpRequest::~XMLHttpRequest()
+ {
+-  if (onLoadListener) 
++  if (onLoadListener)
+       onLoadListener->deref();
+-  if (onReadyStateChangeListener) 
++  if (onReadyStateChangeListener)
+       onReadyStateChangeListener->deref();
+   delete qObject;
+   qObject = 0;
+@@ -412,17 +412,18 @@
+       return;
+   }
+ 
+-  if (method == "post") {
+-    QString protocol = url.protocol().toLower();
++  const QString protocol = url.protocol().toLower();
++  // Abandon the request when the protocol is other than "http",
++  // instead of blindly doing a KIO::get on other protocols like file:/.
++  if (!protocol.startsWith(QLatin1String("http")) &&
++      !protocol.startsWith(QLatin1String("webdav")))
++  {
++    ec = DOMException::INVALID_ACCESS_ERR;
++    abort();
++    return;
++  }
+ 
+-    // Abondon the request when the protocol is other than "http",
+-    // instead of blindly changing it to a "get" request.
+-    if (!protocol.startsWith(QLatin1String("http")) &&
+-        !protocol.startsWith(QLatin1String("webdav")))
+-    {
+-      abort();
+-      return;
+-    }
++  if (method == "post") {
+ 
+     // FIXME: determine post encoding correctly by looking in headers
+     // for charset.
+@@ -580,7 +581,7 @@
+       ec = DOMException::INVALID_STATE_ERR;
+       return jsString("");
+   }
+-  
++
+   // ### test error flag, return jsNull
+ 
+   if (responseHeaders.isEmpty()) {
+@@ -809,7 +810,7 @@
+       setDOMException(exec, ec);
+       return ret;
+     }
+-  case XMLHttpRequest::GetResponseHeader: 
++  case XMLHttpRequest::GetResponseHeader:
+     {
+       if (args.size() < 1)
+           return throwError(exec, SyntaxError, "Not enough arguments");
+@@ -852,11 +853,11 @@
+         DOM::NodeImpl* docNode = toNode(args[0]);
+         if (docNode && docNode->isDocumentNode()) {
+           DOM::DocumentImpl *doc = static_cast<DOM::DocumentImpl *>(docNode);
+-          
++
+           try {
+             body = doc->toString().string();
+             // FIXME: also need to set content type, including encoding!
+-  
++
+           } catch(DOM::DOMException&) {
+             return throwError(exec, GeneralError, "Exception serializing document");
+           }
+@@ -866,7 +867,7 @@
+       }
+ 
+       request->send(body, ec);
+-      setDOMException(exec, ec);  
++      setDOMException(exec, ec);
+       return jsUndefined();
+     }
+   case XMLHttpRequest::SetRequestHeader:
