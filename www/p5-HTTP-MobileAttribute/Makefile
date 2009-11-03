@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TO/TOKUHIROM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another HTTP::MobileAgent
 
 BUILD_DEPENDS=	p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn
@@ -35,5 +35,4 @@ MAN3=	HTTP::MobileAttribute::Plugin::Encoding.3 \
 
 PERL_CONFIGURE=	Yes
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -10,7 +10,7 @@ PORTVERSION=	1.5.6
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://www.reductivelabs.com/downloads/facter/
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform Ruby library for retrieving facts from OS
 
 NO_BUILD=	yes

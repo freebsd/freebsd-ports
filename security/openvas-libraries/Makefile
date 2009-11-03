@@ -10,7 +10,7 @@ PORTVERSION=	2.0.3
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/600/
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for OpenVAS
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls

@@ -12,7 +12,7 @@ CATEGORIES=	dns security
 MASTER_SITES=	http://www.securebits.org/tools/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DNS Cache Poisoner/Overwriter
 
 NO_WRKSUBDIR=	Yes

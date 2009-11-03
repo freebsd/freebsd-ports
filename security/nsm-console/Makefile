@@ -10,8 +10,8 @@ PORTVERSION=	0.7
 CATEGORIES=	security
 MASTER_SITES=	http://writequit.org/projects/nsm-console/files/
 
-MAINTAINER=	cherry@trombik.org
-COMMENT=	A framework for performing analysis on packat capture files
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A framework for performing analysis on packet capture files
 
 USE_RUBY=	yes
 NO_BUILD=	yes

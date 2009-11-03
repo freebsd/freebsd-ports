@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TO/TOMYHERO/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamically load adaptor modules
 
 RUN_DEPENDS=	${SITE_PERL}/Catalyst/Runtime.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \

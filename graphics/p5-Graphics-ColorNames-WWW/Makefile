@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	WWW color names and equivalent RGB values
 
 RUN_DEPENDS=	p5-Graphics-ColorNames>=0.32:${PORTSDIR}/graphics/p5-Graphics-ColorNames

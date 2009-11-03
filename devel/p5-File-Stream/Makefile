@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Regular expression delimited records from streams
 
 RUN_DEPENDS=	p5-YAPE-Regex>=3.02:${PORTSDIR}/textproc/p5-YAPE-Regex

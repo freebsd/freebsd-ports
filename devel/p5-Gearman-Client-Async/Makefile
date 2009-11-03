@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/B/BR/BRADFITZ
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous client module for Gearman for Danga::Socket applications
 
 RUN_DEPENDS=	\
@@ -25,5 +25,4 @@ USE_PERL=	yes
 PERL_CONFIGURE=	yes
 MAN3=	Gearman::Client::Async.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
