@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.89
+PORTVERSION=	2.90
 PORTEPOCH=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A library for Support Vector Machines
