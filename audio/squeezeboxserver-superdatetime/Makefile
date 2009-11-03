@@ -1,4 +1,4 @@
-# New ports collection makefile for:	squeezecenter-superdatetime
+# New ports collection makefile for:	squeezeboxserver-superdatetime
 # Date created:		21 June 2008
 # Whom:			Tim Bishop <tdb@FreeBSD.org>
 #
@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	superdatetime
-PORTVERSION=	5.8.7
+PORTVERSION=	5.8.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.gregbrown.net/squeeze/SuperDateTime/
-PKGNAMEPREFIX=	squeezecenter-
+PKGNAMEPREFIX=	squeezeboxserver-
 DISTNAME=	SuperDateTime${PORTVERSION:S/./-/g}
-DIST_SUBDIR=	squeezecenter
+DIST_SUBDIR=	squeezeboxserver
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	SqueezeCenter plugin to display weather conditions and forecasts
+COMMENT=	Squeezebox Server plugin to display weather conditions and forecasts
 
-RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezecenter
+RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-SLIMDIR?=	squeezecenter
+SLIMDIR?=	squeezeboxserver
 PLIST_SUB+=	SLIMDIR=${SLIMDIR}
 
 do-install:
