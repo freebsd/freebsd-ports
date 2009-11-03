@@ -242,6 +242,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Manila.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Muscat.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Nicosia.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Novokuznetsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Novosibirsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Omsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Oral.pm
