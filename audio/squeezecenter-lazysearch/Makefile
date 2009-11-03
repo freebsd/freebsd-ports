@@ -16,6 +16,9 @@ DIST_SUBDIR=	squeezecenter
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	SqueezeCenter plugin for performing lazy searches
 
+DEPRECATED=	Replaced by audio/squeezeboxserver-lazysearch
+EXPIRATION_DATE=	2009-11-30
+
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezecenter
 
 USE_ZIP=	yes
