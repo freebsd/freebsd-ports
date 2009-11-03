@@ -16,6 +16,9 @@ DIST_SUBDIR=	squeezecenter
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	SqueezeCenter plugin to create playlists based on SQL queries
 
+DEPRECATED=	Replaced by audio/squeezeboxserver-sqlplaylist
+EXPIRATION_DATE=	2009-11-30
+
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezecenter \
 		${LOCALBASE}/${SLIMDIR}/Plugins/DynamicPlayList/install.xml:${PORTSDIR}/audio/squeezecenter-dynamicplaylist
 

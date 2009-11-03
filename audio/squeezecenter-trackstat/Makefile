@@ -16,6 +16,9 @@ DIST_SUBDIR=	squeezecenter
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	SqueezeCenter plugin to store ratings and statistics about songs
 
+DEPRECATED=	Replaced by audio/squeezeboxserver-trackstat
+EXPIRATION_DATE=	2009-11-30
+
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezecenter
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
