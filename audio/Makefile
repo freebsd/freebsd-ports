@@ -676,6 +676,11 @@
     SUBDIR += splaytk
     SUBDIR += squash
     SUBDIR += squeezeboxserver
+    SUBDIR += squeezeboxserver-dynamicplaylist
+    SUBDIR += squeezeboxserver-lazysearch
+    SUBDIR += squeezeboxserver-sqlplaylist
+    SUBDIR += squeezeboxserver-superdatetime
+    SUBDIR += squeezeboxserver-trackstat
     SUBDIR += squeezecenter
     SUBDIR += squeezecenter-dynamicplaylist
     SUBDIR += squeezecenter-lazysearch
