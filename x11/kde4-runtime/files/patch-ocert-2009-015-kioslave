@@ -1,0 +1,16 @@
+--- ./kioslave/info/info.cc	2009/10/02 15:51:26	1030578
++++ ./kioslave/info/info.cc	2009/10/02 15:53:30	1030579
+@@ -89,6 +89,13 @@
+         return;
+     }
+ 
++    // '<' in the path looks suspicious, someone is trying info:/dir/<script>alert('xss')</script>
++    if (url.path().contains('<'))
++    {
++        error(KIO::ERR_DOES_NOT_EXIST, url.url());
++        return;
++    }
++
+     mimeType("text/html");
+     // extract the path and node from url
+     decodeURL( url );
