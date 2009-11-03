@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	DateTime-Format-W3CDTF
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Parse and format W3CDTF datetime strings
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
