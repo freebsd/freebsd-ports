@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	raj@csub.edu
 COMMENT=	A configuration management framework written in Ruby
 
 BUILD_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
