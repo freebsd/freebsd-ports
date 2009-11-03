@@ -19,6 +19,7 @@ share/gnome/help/gnofract4d/C/stdlib.xml
 share/gnome/help/gnofract4d/C/tutorial001.xml
 share/gnome/help/gnofract4d/C/tutorial002.xml
 share/gnome/help/gnofract4d/C/tutorial003.xml
+share/mime/packages/gnofract4d-mime.xml
 share/pixmaps/gnofract4d-logo.png
 %%DATADIR%%/formulas/fractint-builtin.frm
 %%DATADIR%%/formulas/fractint-g4.frm

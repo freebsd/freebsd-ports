@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/gnofract4d
 
 	# fix NOPORTDOCS
-	@${REINPLACE_CMD} -e '233,235d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '236,238d' ${WRKSRC}/setup.py
 
 	# fixup library detection
 	@${REINPLACE_CMD} -e "s/libpng/libpng12/" ${WRKSRC}/setup.py
