@@ -1,4 +1,4 @@
-# New ports collection makefile for:	squeezecenter-dynamicplaylist
+# New ports collection makefile for:	squeezeboxserver-dynamicplaylist
 # Date created:		21 June 2008
 # Whom:			Tim Bishop <tdb@FreeBSD.org>
 #
@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	dynamicplaylist
-PORTVERSION=	2.7
+PORTVERSION=	2.8.1
 CATEGORIES=	audio
 MASTER_SITES=	http://erland.homeip.net/download/do/downloadapplication?name=slimserver-dynamicplaylist&filename=/
-PKGNAMEPREFIX=	squeezecenter-
+PKGNAMEPREFIX=	squeezeboxserver-
 DISTNAME=	DynamicPlayList-${PORTVERSION:S/b/beta/}
-DIST_SUBDIR=	squeezecenter
+DIST_SUBDIR=	squeezeboxserver
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	SqueezeCenter plugin to create dynamic playlists
+COMMENT=	Squeezebox Server plugin to create dynamic playlists
 
-RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezecenter
+RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-SLIMDIR?=	squeezecenter
+SLIMDIR?=	squeezeboxserver
 PLIST_SUB+=	SLIMDIR=${SLIMDIR}
 
 do-install:

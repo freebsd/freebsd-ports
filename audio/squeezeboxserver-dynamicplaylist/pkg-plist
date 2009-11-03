@@ -1,3 +1,6 @@
+%%SLIMDIR%%/Plugins/DynamicPlayList/BaseSettings.pm
+%%SLIMDIR%%/Plugins/DynamicPlayList/FavouriteSettings.pm
+%%SLIMDIR%%/Plugins/DynamicPlayList/FilterSettings.pm
 %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/html/images/dynamicplaylist_mixbutton.gif
 %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/plugins/DynamicPlayList/dynamicplaylistlink.html
 %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/html/images/dynamicplaylist_mixbutton.gif
@@ -27,18 +30,27 @@
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistplaylist.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylisttrack.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistyear.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/PlaylistSettings.pm
+%%SLIMDIR%%/Plugins/DynamicPlayList/Plugin.pm
+%%SLIMDIR%%/Plugins/DynamicPlayList/ProtocolHandler.pm
 %%SLIMDIR%%/Plugins/DynamicPlayList/README.txt
+%%SLIMDIR%%/Plugins/DynamicPlayList/SQL/SQLite/dbcreate.sql
+%%SLIMDIR%%/Plugins/DynamicPlayList/SQL/SQLite/dbindex.sql
 %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbcreate.sql
 %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbupgrade_client_type.sql
 %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbupgrade_skipped.sql
+%%SLIMDIR%%/Plugins/DynamicPlayList/Settings.pm
+%%SLIMDIR%%/Plugins/DynamicPlayList/Template/Reader.pm
 %%SLIMDIR%%/Plugins/DynamicPlayList/custom-types.conf
+%%SLIMDIR%%/Plugins/DynamicPlayList/iPeng/Reader.pm
 %%SLIMDIR%%/Plugins/DynamicPlayList/iPengConfiguration/mix.ipeng.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/install.xml
-%%SLIMDIR%%/Plugins/DynamicPlayList/lib/Plugins-DynamicPlayList-Plugin.par
 %%SLIMDIR%%/Plugins/DynamicPlayList/strings.txt
-@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/lib
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/iPengConfiguration
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/iPeng
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/Template
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/SQLite
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/SQL
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins/DynamicPlayList/html/images
