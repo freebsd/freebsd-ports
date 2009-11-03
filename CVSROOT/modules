@@ -882,6 +882,7 @@ bash                            ports/shells/bash
 bash-completion                 ports/shells/bash-completion
 bash-static                     ports/shells/bash-static
 bash3                           ports/shells/bash3
+bash3-static                    ports/shells/bash3-static
 bashburn                        ports/sysutils/bashburn
 bashc                           ports/shells/bashc
 basicdsp                        ports/cad/basicdsp
@@ -2562,6 +2563,7 @@ duel                            ports/games/duel
 duff                            ports/sysutils/duff
 duhdraw                         ports/graphics/duhdraw
 duke3d-data                     ports/games/duke3d-data
+dulwich                         ports/devel/dulwich
 dumb                            ports/audio/dumb
 dumb-allegro                    ports/audio/dumb-allegro
 dummyflash                      ports/www/dummyflash
@@ -5154,6 +5156,7 @@ hf6to4                          ports/net/hf6to4
 hffzip                          ports/archivers/hffzip
 hfs                             ports/emulators/hfs
 hfsutils                        ports/emulators/hfsutils
+hg-git                          ports/devel/hg-git
 hgrep                           ports/textproc/hgrep
 hgsvn                           ports/devel/hgsvn
 hgview                          ports/devel/hgview
@@ -7590,6 +7593,7 @@ libol                           ports/devel/libol
 liboldX                         ports/x11/liboldX
 liboldx                         ports/x11/liboldX
 libole2                         ports/devel/libole2
+libomxil-bellagio               ports/multimedia/libomxil-bellagio
 liboobs                         ports/devel/liboobs
 liboop                          ports/devel/liboop
 libopendaap                     ports/devel/libopendaap
@@ -12284,6 +12288,7 @@ p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
 p5-MooseX-Object-Pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
+p5-MooseX-Role-Parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
@@ -15901,6 +15906,7 @@ p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
 p5-moosex-object-pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
+p5-moosex-role-parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
