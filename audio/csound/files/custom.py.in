@@ -4,8 +4,8 @@ import sys
 
 customCPPPATH = [ '%%LOCALBASE%%/include', '%%PYTHON_INCLUDEDIR%%' ]
 customCCFLAGS = [  ]
-customCXXFLAGS = [  ]
-customLIBS = []
+customCXXFLAGS = [ ]
+customLIBS = [ '-lintl' ]
 customLIBPATH = [ '%%LOCALBASE%%/lib/portaudio2', '%%LOCALBASE%%/lib' ]
 customSHLINKFLAGS = []
 customSWIGFLAGS = []

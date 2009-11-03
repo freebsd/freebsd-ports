@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	5.07
-PORTREVISION=	1
+PORTVERSION=	5.11.1
 CATEGORIES=	audio lang
-MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/csound/:src \
-		${MASTER_SITE_LOCAL:S/$/:manual/}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/$/:src/} wxs/:manual
-DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}.0
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.11/:src \
+		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.10/:manual
+# Developer does not include a newer version of the manual.
+MASTER_SITE_SUBDIR=	${PORTNAME:S/$/:src/}
+DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 DIST_SUBDIR=	csound
 
@@ -24,26 +24,31 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
-WRKSRC=		${WRKDIR}/csound5
-USE_PYTHON=	2.4+
+WRKSRC=		${WRKDIR}/${DISTNAME}/
+USE_PYTHON=	2.6+
 USE_SCONS=	yes
 SCONS_ARGS+=	prefix=${PREFIX} CC=${CC} CXX=${CXX} \
 		usePortAudio=0 usePortMIDI=0 useALSA=0 \
 		useJack=0 useFLTK=1 buildCsoundAC=0 buildCsoundVST=0 \
 		buildCsound5GUI=1 buildRelease=1 install=1 \
 		useCoreAudio=1 buildWinsound=1 buildInterfaces=1 \
-		buildVirtual=1 buildCSEditor=1 buildDSSI=0
+		buildVirtual=1 buildCSEditor=1 buildDSSI=0 \
+		useGettext=1 dynamicCsoundLibrary=1 useDouble=1
+USE_GETTEXT=	yes
 SUB_FILES=	custom.py pkg-message
 SUB_LIST+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
 		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 USE_LDCONFIG=	yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-USE_LDCONFIG=	${PREFIX}/lib/csound/plugins
+# Please note:
+# This option is not needed, if the specific port or new port
+# does not support double float.
+# This was only added to please audio/smasher.
 
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${DISTNAME}-manual.tar.gz:manual
+BUILD_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+DISTFILES+=	Csound5.10_manual_html.zip:manual
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -65,10 +70,14 @@ post-patch: apply-slist
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/csound-manual/tutorial_${PORTVERSION}.pdf ${DOCSDIR}
-	${CP} -r ${WRKDIR}/csound-manual/html ${DOCSDIR}
+	@${ECHO_MSG} " Installing the manual."
+	cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@${ECHO_MSG} " Done."
 .endif
+	@${ECHO_MSG} " Moving ${PREFIX}/bin/mixer to ${PREFIX}/bin/csmixer"
+	@${ECHO_MSG} " This is to prevent conflicts with /usr/bin/mixer"
 	${MV} ${PREFIX}/bin/mixer ${PREFIX}/bin/csmixer
+	@${ECHO_MSG} " Done."
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
