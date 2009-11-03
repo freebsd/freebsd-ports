@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/588/
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for OpenVAS
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \

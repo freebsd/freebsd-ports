@@ -10,7 +10,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/561/
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NASL libraries for OpenVAS
 
 LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \

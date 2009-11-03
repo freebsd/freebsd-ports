@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pluggable component framework
 
 RUN_DEPENDS=	p5-Carp-Clan>0:${PORTSDIR}/devel/p5-Carp-Clan \

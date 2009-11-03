@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A JSON based config file system
 
 RUN_DEPENDS=    p5-Class-InsideOut>=1.06:${PORTSDIR}/devel/p5-Class-InsideOut \

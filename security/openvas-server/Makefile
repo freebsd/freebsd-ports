@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/593/
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A security scanner: a fork of Nessus
 
 LIB_DEPENDS=	openvas.2:${PORTSDIR}/security/openvas-libraries \

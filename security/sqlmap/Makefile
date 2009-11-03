@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	security python
 MASTER_SITES=	SF
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic SQL injection tool
 
 USE_PYTHON=	yes

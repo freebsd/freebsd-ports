@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module to highlight words or patterns in HTML documents
 
 PERL_CONFIGURE=	Yes

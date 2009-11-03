@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cherry@trombik.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Two letter codes for state identification in the United States
 
 PERL_CONFIGURE=	Yes
