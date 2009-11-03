@@ -704,6 +704,7 @@
     SUBDIR += screen
     SUBDIR += screenie
     SUBDIR += sdd
+    SUBDIR += sdparm
     SUBDIR += searchmonkey
     SUBDIR += seatools
     SUBDIR += sec
