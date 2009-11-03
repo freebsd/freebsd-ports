@@ -35,6 +35,35 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3149ab1c-c8b9-11de-b87b-0011098ad87f">
+    <topic>vlc -- stack overflow in MPA, AVI and ASF demuxer</topic>
+    <affects>
+      <package>
+	<name>vlc</name>
+	<range><ge>0.5.0</ge><lt>1.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VideoLAN reports:</p>
+	<blockquote cite="http://www.videolan.org/security/sa0901.html">
+	  <p>When parsing a MP4, ASF or AVI file with an overly deep box
+	    structure, a stack overflow might occur. It would overwrite the
+	    return address and thus redirect the execution flow.</p>
+	  <p>If successful, a malicious third party could trigger execution
+	    of arbitrary code within the context of the VLC media player.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.videolan.org/security/sa0901.html</url>
+    </references>
+    <dates>
+      <discovery>2009-09-14</discovery>
+      <entry>2009-11-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f358f5a-c7ea-11de-a9f3-0030843d3802">
     <topic>KDE -- multiple vulnerabilities</topic>
     <affects>
@@ -7541,7 +7570,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
         <name>vlc-devel</name>
 	<range><lt>0.9.6,3</lt></range>
-      </package>	
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
