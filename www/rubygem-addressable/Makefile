@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	addressable
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RF
 
