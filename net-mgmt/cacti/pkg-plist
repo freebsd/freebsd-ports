@@ -22,6 +22,7 @@
 %%CACTIDIR%%/cli/rebuild_poller_cache.php
 %%CACTIDIR%%/cli/repair_database.php
 %%CACTIDIR%%/cli/structure_rra_paths.php
+%%CACTIDIR%%/cli/repair_templates.php
 %%CACTIDIR%%/cli/upgrade_database.php
 %%CACTIDIR%%/cmd.php
 %%CACTIDIR%%/color.php
