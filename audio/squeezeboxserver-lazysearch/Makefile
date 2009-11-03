@@ -1,4 +1,4 @@
-# New ports collection makefile for:	squeezecenter-lazysearch
+# New ports collection makefile for:	squeezeboxserver-lazysearch
 # Date created:		21 June 2008
 # Whom:			Tim Bishop <tdb@FreeBSD.org>
 #
@@ -7,22 +7,23 @@
 
 PORTNAME=	lazysearch
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.hickinbottom.com/sc-plugins/
-PKGNAMEPREFIX=	squeezecenter-
+PKGNAMEPREFIX=	squeezeboxserver-
 DISTNAME=	LazySearch2-7-${PORTVERSION}
-DIST_SUBDIR=	squeezecenter
+DIST_SUBDIR=	squeezeboxserver
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	SqueezeCenter plugin for performing lazy searches
+COMMENT=	Squeezebox Server plugin for performing lazy searches
 
-RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezecenter
+RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-SLIMDIR?=	squeezecenter
+SLIMDIR?=	squeezeboxserver
 PLIST_SUB+=	SLIMDIR=${SLIMDIR}
 
 do-install:
