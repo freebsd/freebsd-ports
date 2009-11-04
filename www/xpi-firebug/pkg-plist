@@ -1,10 +1,12 @@
 %%XPI_XPIDIR%%/build.xml
 %%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/firebug-annotations.js
 %%XPI_XPIDIR%%/components/firebug-channel-listener.js
 %%XPI_XPIDIR%%/components/firebug-http-observer.js
 %%XPI_XPIDIR%%/components/firebug-service.js
 %%XPI_XPIDIR%%/components/firebug-trace-service.js
 %%XPI_XPIDIR%%/content/firebug/a11y.js
+%%XPI_XPIDIR%%/content/firebug/activation.js
 %%XPI_XPIDIR%%/content/firebug/bindings.xml
 %%XPI_XPIDIR%%/content/firebug/blank.gif
 %%XPI_XPIDIR%%/content/firebug/branch.properties
@@ -136,6 +138,9 @@
 %%XPI_XPIDIR%%/locale/ro-RO/editors.dtd
 %%XPI_XPIDIR%%/locale/ro-RO/firebug.dtd
 %%XPI_XPIDIR%%/locale/ro-RO/firebug.properties
+%%XPI_XPIDIR%%/locale/ru-RU/editors.dtd
+%%XPI_XPIDIR%%/locale/ru-RU/firebug.dtd
+%%XPI_XPIDIR%%/locale/ru-RU/firebug.properties
 %%XPI_XPIDIR%%/locale/sk-SK/editors.dtd
 %%XPI_XPIDIR%%/locale/sk-SK/firebug.dtd
 %%XPI_XPIDIR%%/locale/sk-SK/firebug.properties
@@ -145,6 +150,9 @@
 %%XPI_XPIDIR%%/locale/tr-TR/editors.dtd
 %%XPI_XPIDIR%%/locale/tr-TR/firebug.dtd
 %%XPI_XPIDIR%%/locale/tr-TR/firebug.properties
+%%XPI_XPIDIR%%/locale/uk-UA/editors.dtd
+%%XPI_XPIDIR%%/locale/uk-UA/firebug.dtd
+%%XPI_XPIDIR%%/locale/uk-UA/firebug.properties
 %%XPI_XPIDIR%%/locale/zh-CN/editors.dtd
 %%XPI_XPIDIR%%/locale/zh-CN/firebug.dtd
 %%XPI_XPIDIR%%/locale/zh-CN/firebug.properties
@@ -327,9 +335,11 @@
 @dirrm %%XPI_XPIDIR%%/locale/pl-PL
 @dirrm %%XPI_XPIDIR%%/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/locale/ro-RO
+@dirrm %%XPI_XPIDIR%%/locale/ru-RU
 @dirrm %%XPI_XPIDIR%%/locale/sk-SK
 @dirrm %%XPI_XPIDIR%%/locale/sv-SE
 @dirrm %%XPI_XPIDIR%%/locale/tr-TR
+@dirrm %%XPI_XPIDIR%%/locale/uk-UA
 @dirrm %%XPI_XPIDIR%%/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/locale
