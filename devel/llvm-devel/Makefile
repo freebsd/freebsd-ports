@@ -22,7 +22,7 @@ BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	clang-2.6* llvm-2.[123456]* llvm-2.7.[0-9]* llvm-2.7
+CONFLICTS=	clang-2.[0-9]* llvm-2.[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -129,9 +129,7 @@ PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
 			include/llvm-c \
 			include/llvm \
-			lib/clang \
-			share/clang \
-			share/doc/clang
+			lib/clang
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
