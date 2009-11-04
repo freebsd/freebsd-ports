@@ -7,7 +7,7 @@
 
 PORTNAME=	doom
 PORTVERSION=	1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/|}
 DISTNAME=	doomsrc
@@ -30,6 +30,24 @@ post-extract:
 	@cd ${WRKDIR} && ${TAR} xzf linuxdoom-1.10.src.tgz && ${TAR} xzf sndserv.tgz
 
 post-patch:
+	${REINPLACE_CMD} 's|<linux/soundcard.h>|<sys/soundcard.h>|g'\
+			${WRKSRC}/sndserv/linux.c \
+			${WRKSRC}/linuxdoom-1.10/i_sound.c
+	${REINPLACE_CMD} 's|<errnos.h>|<errno.h>|g' \
+			${WRKSRC}/linuxdoom-1.10/i_video.c
+	${REINPLACE_CMD} 's|#include  <alloca.h>|//#include  <alloca.h>|g'\
+			${WRKSRC}/linuxdoom-1.10/r_data.c
+	${REINPLACE_CMD} 's|#include <alloca.h>|//#include <alloca.h>|g'\
+			${WRKSRC}/linuxdoom-1.10/w_wad.c
+	${REINPLACE_CMD} 's|<malloc.c>|<stdlib.h>|g'\
+			${WRKSRC}/linuxdoom-1.10/w_wad.c \
+			${WRKSRC}/sndserv/soundsrv.c \
+			${WRKSRC}/sndserv/wadread.c
+	${REINPLACE_CMD} 's|<values.h>|<limits.h>|g'\
+			${WRKSRC}/linuxdoom-1.10/m_bbox.h \
+			${WRKSRC}/linuxdoom-1.10/doomtype.h
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g'\
+			${WRKSRC}/linuxdoom-1.10/Makefile
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
 		-E -e 's|#include +<malloc.h>|#include <stdlib.h>|g'
 
