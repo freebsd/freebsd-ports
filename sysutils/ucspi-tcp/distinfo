@@ -16,3 +16,6 @@ SIZE (ucspi-tcp_rbl2smtpd.diff) = 570
 MD5 (tcpserver-limits-2006-01-26.diff) = 61de274e951e99a5034fd4628bcb4bbb
 SHA256 (tcpserver-limits-2006-01-26.diff) = 859e8bebff07c10576fe10f0c3bad2a6efda7acf30dd9c0e72e38808851d2a11
 SIZE (tcpserver-limits-2006-01-26.diff) = 15523
+MD5 (ucspi-tcp-0.88-ipv6.diff19.bz2) = d87d31ba2d34a0fb60141282d5233a51
+SHA256 (ucspi-tcp-0.88-ipv6.diff19.bz2) = 35952cd290d714452c840580126004cbae8db65b1632df67ac9c8fad7d1f9ace
+SIZE (ucspi-tcp-0.88-ipv6.diff19.bz2) = 22632

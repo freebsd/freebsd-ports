@@ -22,7 +22,8 @@ OPTIONS=	MAN "Install man(1) pages" on \
 		RSS_DIFF "Patch rblsmtpd for qmail users" off \
 		SSL "Adds support for SSL (Secure Socket Layer)" off \
 		RBL2SMTPD "Don't drop connection, pass envvar to smtpd" off \
-		LIMITS "Implement per-connection and other limits" off
+		LIMITS "Implement per-connection and other limits" off \
+		IPV6 "Add IPv6 support" off
 
 MAKE_JOBS_SAFE=	yes
 
@@ -95,6 +96,21 @@ PATCHFILES+=	ucspi-tcp_rbl2smtpd.diff:rbl2smtpd
 .if defined(WITH_LIMITS)
 PATCH_SITES+=	http://linux.voyager.hr/ucspi-tcp/files/:limits
 PATCHFILES+=	tcpserver-limits-2006-01-26.diff:limits
+.endif
+
+# Neither can IPv6 and SSL
+.if defined(WITH_IPV6) && defined(WITH_SSL)
+BROKEN= SSL and IPv6 options cannot coexist, please choose one of them
+.endif
+
+# Same for IPv6 and LIMITS
+.if defined(WITH_IPV6) && defined(WITH_LIMITS)
+BROKEN= IPv6 and LIMITS options cannot coexist, please choose one of them
+.endif
+
+.if defined(WITH_IPV6)
+PATCH_SITES+=	http://www.fefe.de/ucspi/:ipv6
+PATCHFILES+=	ucspi-tcp-0.88-ipv6.diff19.bz2:ipv6
 .endif
 
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:rss,ssl,rbl2smtpd/}
