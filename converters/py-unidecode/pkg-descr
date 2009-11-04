@@ -1,0 +1,8 @@
+What Unidecode provides is a function, 'unidecode(...)' that
+takes Unicode data and tries to represent it in ASCII characters
+(i.e., the universally displayable characters between 0x00 and 0x7F).
+The representation is almost always an attempt at *transliteration*
+-- i.e., conveying, in Roman letters, the pronunciation expressed by
+the text in some other writing system. (See the example above)
+
+WWW: http://code.zemanta.com/tsolc/unidecode/
