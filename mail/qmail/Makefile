@@ -168,7 +168,9 @@ OPTIONS+=	TLS		"SMTP TLS support" on \
 		LDAP_DEBUG	"possibility to log and debug imap/pop" off \
 		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off \
 		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off \
-		SENDERCHECK4	"LOOSE checks exclusively for RELAY clients" off
+		SENDERCHECK4	"LOOSE checks exclusively for RELAY clients" off \
+		ENHACELOGS	"Enhace qmail-smtpd logs (spamcontrol-like)" off \
+		GRTDELAY	"Add jms1's Greet Delay feature" off
 
 LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 		CLEARTEXTPASSWD DASH_EXT DATA_COMPRESS\
@@ -470,7 +472,7 @@ PATCHFILES+=	tarpit.patch:tarpit
 . if defined(SLAVE_SPAMCONTROL)
 SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2519.patch
 . else
-SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}_3.patch
+SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}_4.patch
 . endif
 
 MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/patches/:extfork \
@@ -485,6 +487,21 @@ PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:sendercheck4
 		${MASTER_SITE_LOCAL:S/$/:sendercheck4/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:sendercheck4
 PATCHFILES+=	qmail-ldap-1.03_qmail-smtpd_SENDERCHECK4.patch:sendercheck4
+.endif
+
+.if defined(SLAVE_LDAP) && defined(WITH_GRTDELAY)
+PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:grtdelay \
+		${MASTER_SITE_LOCAL:S/$/:grtdelay/}
+PATCH_SITE_SUBDIR+=	garga/qmail/:grtdelay
+PATCHFILES+=	qmail-ldap-${LDAP_PATCH_DATE}-grtdelay.patch:grtdelay
+DOCFILES_WRKDIR_doc+=	README.GREETDELAY
+.endif
+
+.if defined(SLAVE_LDAP) && defined(WITH_ENHACELOGS)
+PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:ldapenhacelog \
+		${MASTER_SITE_LOCAL:S/$/:ldapenhacelog/}
+PATCH_SITE_SUBDIR+=	garga/qmail/:ldapenhacelog
+PATCHFILES+=	enhacelogging-ldap-${LDAP_PATCH_DATE}_4.patch:ldapenhacelog
 .endif
 
 # Some default values, these can be modified by make command line
