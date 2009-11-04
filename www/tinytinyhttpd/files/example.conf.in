@@ -6,5 +6,5 @@ charset=utf-8
 spawnexec=on
 
 [mime/types]
-cgi=@/usr/local/bin/perl
-php=@/usr/local/bin/php
+cgi=@%%LOCALBASE%%/bin/perl
+php=@%%LOCALBASE%%/bin/php

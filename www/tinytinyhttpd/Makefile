@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinytinyhttpd
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/mattn/tinytinyhttpd/ \
 		${MASTER_SITE_LOCAL}
@@ -17,6 +17,7 @@ COMMENT=	Tiny tiny httpd
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tthttpd
+SUB_FILES=	example.conf
 PORTDOCS=	README example.conf ChangeLog
 
 do-install:
@@ -24,7 +25,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/example.conf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/example.conf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
 .endif
