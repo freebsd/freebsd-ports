@@ -302,6 +302,7 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/shell/model/model.php
 %%DATADIR%%/framework/cli/views/shell/module/components/.yii
 %%DATADIR%%/framework/cli/views/shell/module/controllers/DefaultController.php
+%%DATADIR%%/framework/cli/views/shell/module/messages/.yii
 %%DATADIR%%/framework/cli/views/shell/module/models/.yii
 %%DATADIR%%/framework/cli/views/shell/module/module.php
 %%DATADIR%%/framework/cli/views/shell/module/views/default/index.php
@@ -888,6 +889,7 @@ bin/yiic
 %%DATADIR%%/framework/utils/CTimestamp.php
 %%DATADIR%%/framework/utils/CVarDumper.php
 %%DATADIR%%/framework/utils/mimeTypes.php
+%%DATADIR%%/framework/validators/CBooleanValidator.php
 %%DATADIR%%/framework/validators/CCaptchaValidator.php
 %%DATADIR%%/framework/validators/CCompareValidator.php
 %%DATADIR%%/framework/validators/CDefaultValueValidator.php
@@ -1553,6 +1555,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/cli/views/shell/module/views/layouts
 @dirrm %%DATADIR%%/framework/cli/views/shell/module/views/default
 @dirrm %%DATADIR%%/framework/cli/views/shell/module/views
+@dirrm %%DATADIR%%/framework/cli/views/shell/module/messages
 @dirrm %%DATADIR%%/framework/cli/views/shell/module/models
 @dirrm %%DATADIR%%/framework/cli/views/shell/module/controllers
 @dirrm %%DATADIR%%/framework/cli/views/shell/module/components
