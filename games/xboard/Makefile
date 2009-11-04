@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
@@ -21,10 +21,10 @@ USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:19 aclocal:19
 AUTOMAKE_ARGS=	-a
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-MAN6=		xboard.6 zic2xpm.6
+MAN6=		xboard.6
 INFO=		xboard
 USE_PERL5_BUILD=yes
-PLIST_FILES=	bin/xboard bin/cmail bin/pxboard bin/zic2xpm
+PLIST_FILES=	bin/xboard bin/cmail
 
 .include <bsd.port.options.mk>
 
@@ -40,9 +40,7 @@ BROKEN=		Does not install on sparc64
 .endif
 
 post-patch:
-		@${REINPLACE_CMD} -e '/^man6_MANS/s/$$/ zic2xpm.man/' \
-			-e '/^bin_PROGRAMS/s/$$/ zic2xpm/' \
-			-e '/^$$/s/$$/bin_SCRIPTS = cmail pxboard/' \
+		@${REINPLACE_CMD} -e '/^$$/s/$$/bin_SCRIPTS = cmail /' \
 			-e '/^info/s/copyright.texi//' \
 			${WRKSRC}/Makefile.am
 		@${REINPLACE_CMD} -e 's/fairymax/gnuchessx/' ${WRKSRC}/xboard.h
