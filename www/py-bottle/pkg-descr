@@ -1,0 +1,8 @@
+Bottle is a fast and simple micro-framework for small web-applications.
+It offers request dispatching (Routes) with url parameter support,
+Templates, key/value Databases, a build-in HTTP Server and adapters
+for many third party WSGI/HTTP-server and template engines.
+All in a single file and with no dependencies other than the Python
+Standard Library.
+
+WWW: http://bottle.paws.de/
