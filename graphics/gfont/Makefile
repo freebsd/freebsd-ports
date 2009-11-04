@@ -20,6 +20,7 @@ RUN_DEPENDS=	gsftopk:${PORTSDIR}/print/teTeX
 USE_GHOSTSCRIPT_BUILD=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 MAN1=		gfont.1
 

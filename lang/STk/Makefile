@@ -19,6 +19,7 @@ COMMENT=	A scheme interpreter with full access to the Tk graphical package
 USE_XORG=	x11 ice sm xt
 GNU_CONFIGURE=	yes
 CFLAGS=		-I${LOCALBASE}/include
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB=	STK_VERSION=${PORTVERSION} STK_ARCH=${STK_ARCH}
 
