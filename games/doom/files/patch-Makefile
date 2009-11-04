@@ -11,8 +11,8 @@
 -LDFLAGS=-L/usr/X11R6/lib
 -LIBS=-lXext -lX11 -lnsl -lm
 +CFLAGS?= -O
-+CFLAGS+=-g -I${LOCALBASE}/include -Wall -DNORMALUNIX -DSNDSERV -DSNDSRV # -DUSEASM 
-+LDFLAGS=-L${LOCALBASE}/lib
++CFLAGS+=-g -I%%LOCALBASE%%/include -Wall -DNORMALUNIX -DSNDSERV -DSNDSRV # -DUSEASM 
++LDFLAGS=-L%%LOCALBASE%%/lib
 +LIBS=-lXext -lX11 -lm
  
  # subdirectory for objects
