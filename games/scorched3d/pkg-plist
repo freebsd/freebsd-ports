@@ -136,10 +136,9 @@ games/scorched3d/data/avatars/web.png
 games/scorched3d/data/avatars/yoda.png
 games/scorched3d/data/custominfo.xml
 games/scorched3d/data/fastestdisplay.xml
-games/scorched3d/data/fonts/VERA-COPYRIGHT.TXT
-games/scorched3d/data/fonts/test.ttf
-games/scorched3d/data/fonts/vera.ttf
-games/scorched3d/data/fonts/veramobd.ttf
+games/scorched3d/data/fonts/dejavusans.ttf
+games/scorched3d/data/fonts/dejavusconbd.ttf
+games/scorched3d/data/fonts/dejavusmobd.ttf
 games/scorched3d/data/globalmods/apoc/authors.txt
 games/scorched3d/data/globalmods/apoc/data/accessories.xml
 games/scorched3d/data/globalmods/apoc/data/accessories/black.bmp
@@ -623,6 +622,8 @@ games/scorched3d/data/globalmods/apoc/license.txt
 games/scorched3d/data/globalmods/apoc/readme-nexus.txt
 games/scorched3d/data/globalmods/apoc/readme.txt
 games/scorched3d/data/globalmods/globalmods.txt
+games/scorched3d/data/html/server/account.html
+games/scorched3d/data/html/server/adminmenu.html
 games/scorched3d/data/html/server/applet.html
 games/scorched3d/data/html/server/banned.html
 games/scorched3d/data/html/server/binary/Applet.jar
@@ -660,20 +661,30 @@ games/scorched3d/data/landscapes/ambientsoundtrees.xml
 games/scorched3d/data/landscapes/ambientsoundwaves.xml
 games/scorched3d/data/landscapes/ascencion-pic.bmp
 games/scorched3d/data/landscapes/ascencion.bmp
+games/scorched3d/data/landscapes/ascencion2.bmp
 games/scorched3d/data/landscapes/boidsah64.xml
 games/scorched3d/data/landscapes/boidsbats.xml
 games/scorched3d/data/landscapes/boidsf16.xml
 games/scorched3d/data/landscapes/boidsf18.xml
 games/scorched3d/data/landscapes/boidsgulls.xml
+games/scorched3d/data/landscapes/boidslargenumber.xml
 games/scorched3d/data/landscapes/boidsparrot.xml
 games/scorched3d/data/landscapes/canyon-pic.bmp
 games/scorched3d/data/landscapes/canyon.bmp
 games/scorched3d/data/landscapes/cavern-pic.bmp
+games/scorched3d/data/landscapes/circle.bmp
 games/scorched3d/data/landscapes/defnascencion.xml
+games/scorched3d/data/landscapes/defnascencion2.xml
 games/scorched3d/data/landscapes/defncanyon.xml
+games/scorched3d/data/landscapes/defncanyon2.xml
 games/scorched3d/data/landscapes/defncavern.xml
+games/scorched3d/data/landscapes/defncavern2.xml
 games/scorched3d/data/landscapes/defndenali.xml
+games/scorched3d/data/landscapes/defndenali2.xml
+games/scorched3d/data/landscapes/defndenali3.xml
 games/scorched3d/data/landscapes/defnglaciation.xml
+games/scorched3d/data/landscapes/defnglaciation2.xml
+games/scorched3d/data/landscapes/defnglaciation3.xml
 games/scorched3d/data/landscapes/defnhalfed.xml
 games/scorched3d/data/landscapes/defnhilly.xml
 games/scorched3d/data/landscapes/defnicebergs2.xml
@@ -681,17 +692,23 @@ games/scorched3d/data/landscapes/defnicebergs3.xml
 games/scorched3d/data/landscapes/defnislands.xml
 games/scorched3d/data/landscapes/defnlowlands.xml
 games/scorched3d/data/landscapes/defnoldstyle.xml
+games/scorched3d/data/landscapes/defnoldstyleerrosion.xml
 games/scorched3d/data/landscapes/defnridge.xml
 games/scorched3d/data/landscapes/defnspike.xml
 games/scorched3d/data/landscapes/defntest.xml
 games/scorched3d/data/landscapes/defnvalley.xml
 games/scorched3d/data/landscapes/denali-pic.bmp
 games/scorched3d/data/landscapes/denali.bmp
+games/scorched3d/data/landscapes/denali2.bmp
+games/scorched3d/data/landscapes/denali3.bmp
 games/scorched3d/data/landscapes/eventslightning.xml
 games/scorched3d/data/landscapes/eventsmeteor.xml
 games/scorched3d/data/landscapes/eventstest.xml
+games/scorched3d/data/landscapes/fjords.bmp
 games/scorched3d/data/landscapes/glaciation-pic.bmp
 games/scorched3d/data/landscapes/glaciation.bmp
+games/scorched3d/data/landscapes/glaciation2.bmp
+games/scorched3d/data/landscapes/glaciation3.bmp
 games/scorched3d/data/landscapes/half-mask-start.bmp
 games/scorched3d/data/landscapes/half-mask.bmp
 games/scorched3d/data/landscapes/halfed-pic.bmp
@@ -720,6 +737,7 @@ games/scorched3d/data/landscapes/placepalm.xml
 games/scorched3d/data/landscapes/placepalm2.xml
 games/scorched3d/data/landscapes/placepine.xml
 games/scorched3d/data/landscapes/placepine2.xml
+games/scorched3d/data/landscapes/placepinelargenumber.xml
 games/scorched3d/data/landscapes/placepingu.xml
 games/scorched3d/data/landscapes/placesnowpine.xml
 games/scorched3d/data/landscapes/placetest.xml
@@ -744,6 +762,7 @@ games/scorched3d/data/landscapes/texcavern.xml
 games/scorched3d/data/landscapes/texchina.xml
 games/scorched3d/data/landscapes/texdefault.xml
 games/scorched3d/data/landscapes/texdenali.xml
+games/scorched3d/data/landscapes/texdenalilandperf.xml
 games/scorched3d/data/landscapes/texhell.xml
 games/scorched3d/data/landscapes/texice.xml
 games/scorched3d/data/landscapes/texnight.xml
@@ -757,6 +776,8 @@ games/scorched3d/data/landscapes/textuscan.xml
 games/scorched3d/data/landscapes/texvulcano.xml
 games/scorched3d/data/landscapes/valley-mask.bmp
 games/scorched3d/data/landscapes/valley-pic.bmp
+games/scorched3d/data/lang/lang.resource
+games/scorched3d/data/lua/accessories/test.lua
 games/scorched3d/data/mediumdisplay.xml
 games/scorched3d/data/meshes/ah64d/ah64.bmp
 games/scorched3d/data/meshes/ah64d/ah64d.txt
@@ -809,11 +830,14 @@ games/scorched3d/data/prunetables.sql
 games/scorched3d/data/random.no
 games/scorched3d/data/safedisplay.xml
 games/scorched3d/data/server.xml
+games/scorched3d/data/shaders/land-splat.fshader
 games/scorched3d/data/shaders/land.fshader
 games/scorched3d/data/shaders/land.vshader
 games/scorched3d/data/shaders/water.fshader
 games/scorched3d/data/shaders/water.license
 games/scorched3d/data/shaders/water.vshader
+games/scorched3d/data/shaders/watersimple.fshader
+games/scorched3d/data/shaders/watersimple.vshader
 games/scorched3d/data/singlecustom.xml
 games/scorched3d/data/singleeasy.xml
 games/scorched3d/data/singlehard.xml
@@ -832,8 +856,6 @@ games/scorched3d/data/talk/talk2.txt
 games/scorched3d/data/tankais.xml
 games/scorched3d/data/tankaiweaponsets.xml
 games/scorched3d/data/tanks.xml
-games/scorched3d/data/tanks/CF-104/104.bmp
-games/scorched3d/data/tanks/CF-104/104.txt
 games/scorched3d/data/tanks/a7v.ase
 games/scorched3d/data/tanks/a7v.bmp
 games/scorched3d/data/tanks/aat.ase
@@ -871,6 +893,8 @@ games/scorched3d/data/tanks/cannont/gun.bmp
 games/scorched3d/data/tanks/cannont/side.bmp
 games/scorched3d/data/tanks/cannont/side2.bmp
 games/scorched3d/data/tanks/cannont/top.bmp
+games/scorched3d/data/tanks/cf-104/104.bmp
+games/scorched3d/data/tanks/cf-104/104.txt
 games/scorched3d/data/tanks/death/black.bmp
 games/scorched3d/data/tanks/death/chrome.bmp
 games/scorched3d/data/tanks/death/death.txt
@@ -1066,6 +1090,9 @@ games/scorched3d/data/textures/bordershield/grid.bmp
 games/scorched3d/data/textures/bordershield/grid2.bmp
 games/scorched3d/data/textures/bordershield/grid22.bmp
 games/scorched3d/data/textures/bordershield/hit.bmp
+games/scorched3d/data/textures/circle.bmp
+games/scorched3d/data/textures/circlem.bmp
+games/scorched3d/data/textures/circlew.bmp
 games/scorched3d/data/textures/clearsky.bmp
 games/scorched3d/data/textures/explode/explosion0/exp0004.bmp
 games/scorched3d/data/textures/explode/explosion0/exp0008.bmp
@@ -1248,7 +1275,6 @@ games/scorched3d/data/textures/landscape/china/shore.bmp
 games/scorched3d/data/textures/landscape/china/texture0.bmp
 games/scorched3d/data/textures/landscape/china/texture1.bmp
 games/scorched3d/data/textures/landscape/china/texture2.bmp
-games/scorched3d/data/textures/landscape/china/texture2.jpg
 games/scorched3d/data/textures/landscape/china/texture3.bmp
 games/scorched3d/data/textures/landscape/china/texture4.bmp
 games/scorched3d/data/textures/landscape/china/water.bmp
@@ -1590,6 +1616,8 @@ games/scorched3d/data/windows/mask.bmp
 games/scorched3d/data/windows/move.bmp
 games/scorched3d/data/windows/noentry.bmp
 games/scorched3d/data/windows/ok.bmp
+games/scorched3d/data/windows/perf.bmp
+games/scorched3d/data/windows/perfa.bmp
 games/scorched3d/data/windows/plan.bmp
 games/scorched3d/data/windows/plana.bmp
 games/scorched3d/data/windows/planaa.bmp
@@ -1709,13 +1737,13 @@ games/scorched3d/documentation/README-zlib.txt
 @dirrm games/scorched3d/data/tanks/guntower
 @dirrm games/scorched3d/data/tanks/gorilla
 @dirrm games/scorched3d/data/tanks/death
+@dirrm games/scorched3d/data/tanks/cf-104
 @dirrm games/scorched3d/data/tanks/cannont
 @dirrm games/scorched3d/data/tanks/cannon
 @dirrm games/scorched3d/data/tanks/bradley2
 @dirrm games/scorched3d/data/tanks/bm13
 @dirrm games/scorched3d/data/tanks/bender
 @dirrm games/scorched3d/data/tanks/battleship
-@dirrm games/scorched3d/data/tanks/CF-104
 @dirrm games/scorched3d/data/tanks
 @dirrm games/scorched3d/data/talk/polish
 @dirrm games/scorched3d/data/talk/german
@@ -1737,6 +1765,9 @@ games/scorched3d/documentation/README-zlib.txt
 @dirrm games/scorched3d/data/meshes/arara
 @dirrm games/scorched3d/data/meshes/ah64d
 @dirrm games/scorched3d/data/meshes
+@dirrm games/scorched3d/data/lua/accessories
+@dirrm games/scorched3d/data/lua
+@dirrm games/scorched3d/data/lang
 @dirrm games/scorched3d/data/landscapes
 @dirrm games/scorched3d/data/html/server/binary
 @dirrm games/scorched3d/data/html/server
