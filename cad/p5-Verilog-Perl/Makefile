@@ -1,12 +1,12 @@
-# New ports collection makefile for:   Verilog-Perl
-# Date created:                11 Apr 2009
-# Whom:                        Otacílio de Araújo Ramos Neto <otacilio.neto@ee.ufcg.edu.br>
+# New ports collection makefile for:	Verilog-Perl
+# Date created:		11 Apr 2009
+# Whom:			Otacilio de Araujo Ramos Neto <otacilio.neto@ee.ufcg.edu.br>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Verilog-Perl
-PORTVERSION=	3.212
+PORTVERSION=	3.221
 CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=	Verilog::EditFiles.3 Verilog::Netlist::Logger.3 \
 	Verilog::SigParser.3 Verilog::Netlist.3 Verilog::Netlist::Pin.3 \
 	Verilog::Netlist::Cell.3 Verilog::Netlist::Port.3 \
 	Verilog::Netlist::File.3 Verilog::Netlist::Subclass.3 \
+	Verilog::Netlist::ContAssign.3 \
 	Verilog::Verilog-Perl.3 Verilog::Netlist::Interface.3 Verilog::Std.3
 
 .include <bsd.port.pre.mk>
