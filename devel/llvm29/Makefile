@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-2.[12345]* llvm-2.7.r*
+CONFLICTS=	llvm-devel-2.[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
