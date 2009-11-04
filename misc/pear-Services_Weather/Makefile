@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Weather
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	misc www pear geography
 
 MAINTAINER=	miwi@FreeBSD.org
