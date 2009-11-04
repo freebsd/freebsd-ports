@@ -1,0 +1,24 @@
+--- mozhi_1.1.0.kmn.orig	2009-11-04 09:05:06.000000000 +0100
++++ mozhi_1.1.0.kmn	2009-11-04 09:06:50.000000000 +0100
+@@ -6,12 +6,13 @@
+ c License along with this library; if not, write to the Free Software
+ c Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA          
+ 
+-NAME "Mozhi Keymap 1.1.1"                         
++NAME "Varamozhi Mozhi Keymap 1.1.1"                         
+ COPYRIGHT "2006 © Raj Nair (peringz at gmail dot com)" 
+ MESSAGE "Mozhi Keymap is a varamozhi based Tavultesoft keyboard available for Windows & Linux OS. Mozhi Keymap is distributed under GNU LGPL."
+ VERSION 6.0 
+ BITMAP mozhi.bmp
+ CAPS ALWAYS OFF
++store(&language) "ml_IN"
+ 
+ store(&MnemonicLayout) "1"
+ begin Unicode > use(main)
+@@ -436,4 +437,4 @@
+ U+0D46 + [K_I] > U+0D48 
+ U+0D28 U+0D4D U+0D28 U+0D4D + [K_G] > U+0D19 U+0D4D U+0D19 U+0D4D
+                                                                                                            
+-c EOF                              
+\ No newline at end of file
++c EOF                              

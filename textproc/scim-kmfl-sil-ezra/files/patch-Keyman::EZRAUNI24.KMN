@@ -8,7 +8,7 @@
 +BITMAP HEBDISPY.bmp      c 8/21/02
  c HOTKEY "^+M"
  VERSION 6.0         c 7/9/02 
-+store(&language) "Biblical Hebrew"
++store(&language) "he_IL"
  
  begin UNICODE > use(Main)  
  

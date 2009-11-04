@@ -6,6 +6,7 @@
 
 PORTNAME=	scim-kmfl-sil-ezra
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=EzraSIL251_Src.zip\&filename=/:1 \
 		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=EzraSIL2.5Keying\&filename=/:2 \
@@ -55,7 +56,7 @@ do-install:
 post-install:
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "  You should now have the new keyboard in the section"
-	@${ECHO_MSG} "  \"Others\" in your SCIM menu. If you don't see it,"
+	@${ECHO_MSG} "  \"Hebrew\" in your SCIM menu. If you don't see it,"
 	@${ECHO_MSG} "  restart X."
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG}
