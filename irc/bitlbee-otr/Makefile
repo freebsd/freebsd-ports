@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bitlbee-otr
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.2.4
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_FREEBSD}
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		${MASTER_SITE_FREEBSD}
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	An IRC to other chat networks gateway with support for OTR
