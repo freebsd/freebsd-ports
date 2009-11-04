@@ -1,15 +1,14 @@
---- src/osd/sdl/sdl.mak.orig	2009-03-19 14:09:23.000000000 +0100
-+++ src/osd/sdl/sdl.mak	2009-03-25 05:32:18.000000000 +0100
-@@ -127,7 +127,7 @@
- 
+--- src/osd/sdl/sdl.mak.orig	2009-10-25 16:43:25.000000000 +0100
++++ src/osd/sdl/sdl.mak	2009-11-01 02:07:41.000000000 +0100
+@@ -142,6 +142,7 @@
  ifeq ($(TARGETOS),freebsd)
  TARGETOS = unix
--DEFS += -DNO_THREAD_COOPERATIVE
-+DEFS += -DNO_THREAD_COOPERATIVE -DNO_DEBUGGER
+ SYNC_IMPLEMENTATION = ntc
++DEFS += -DNO_DEBUGGER
  endif
  
  ifeq ($(TARGETOS),openbsd)
-@@ -269,10 +269,10 @@
+@@ -288,10 +289,11 @@
  # the new debugger relies on GTK+ in addition to the base SDLMAME needs
  # Non-X11 builds can not use the debugger
  ifndef NO_X11
@@ -18,6 +17,7 @@
 -LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --libs gconf-2.0`
 -CFLAGS += -DGTK_DISABLE_DEPRECATED
 +OSDCOREOBJS += $(SDLOBJ)/debugwin.o
++#OSDCOREOBJS += $(SDLOBJ)/debugwin.o $(SDLOBJ)/dview.o $(SDLOBJ)/debug-sup.o $(SDLOBJ)/debug-intf.o
 +#CFLAGS += `pkg-config --cflags gtk+-2.0` `pkg-config --cflags gconf-2.0` 
 +#LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --libs gconf-2.0`
 +#CFLAGS += -DGTK_DISABLE_DEPRECATED
