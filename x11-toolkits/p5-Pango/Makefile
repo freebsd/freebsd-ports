@@ -23,6 +23,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
 USE_GNOME=	pango
 PERL_CONFIGURE=	5.8.0+
+MAKE_JOBS_UNSAFE=yes
 
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
