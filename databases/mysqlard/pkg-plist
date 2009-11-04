@@ -1,4 +1,5 @@
 @unexec if cmp -s %D/etc/mysqlard.cnf %D/www/mysqlard/mysqlard.cnf; then rm -f %D/etc/mysqlard.cnf; fi
+www/mysqlard/mysqlard.cnf
 @exec [ -f %D/etc/mysqlard.cnf ] || cp %D/www/mysqlard/mysqlard.cnf %D/etc
 bin/mysqlar_graph
 sbin/mysqlard
@@ -7,7 +8,6 @@ www/mysqlard/mysqlar.daily
 www/mysqlard/mysqlar.monthly
 www/mysqlard/mysqlar.php
 www/mysqlard/mysqlar.weekly
-www/mysqlard/mysqlard.cnf
 www/mysqlard/mysqlard.server
 www/mysqlard/rrdtool.gif
 www/mysqlard/sos.gif
