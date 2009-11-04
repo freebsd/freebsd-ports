@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (soon) C++ compiler
 
+CONFLICTS=      clang-devel-2.[0-9]* llvm-devel-2.[0-9]*
+
 CLANG_NAME=	clang-${PORTVERSION}
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
 LLVM_NAME=	llvm-${PORTVERSION}
@@ -25,8 +27,8 @@ LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/${LLVM_NAME}
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
-BUILD_DEPENDS+=	llvm=2.6:${PORTSDIR}/devel/llvm
-RUN_DEPENDS+=	llvm=2.6:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	llvm-as:${PORTSDIR}/devel/llvm
+RUN_DEPENDS+=	llvm-as:${PORTSDIR}/devel/llvm
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
@@ -35,6 +37,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 GNU_CONFIGURE=	yes
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
@@ -109,9 +112,8 @@ build-plist:
 	cd ${PREFIX} && \
 	    ${FIND} ${PLIST_DIR_LIST} -type d | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
-	${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
-	     -e 's|${DOCSDIR}|%%DOCSDIR%%|' \
-	     -e 's|^|%%PORTDOCS%%@dirrm |' >> ${PLIST}
+	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
+	    ${SED} -e 's|${DATADIR}|@dirrm %%DATADIR%%|' \
+	     -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' >> ${PLIST}
 
 .include <bsd.port.post.mk>
