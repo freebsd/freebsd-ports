@@ -32,7 +32,7 @@ pidfile2=/var/run/pure-uploadscript.pid
 procname=pure-ftpd
 
 pureftpd_enable=${pureftpd_enable:-"NO"}
-command_args=${pureftpd_config}
+command_args="${pureftpd_config} -g${pidfile}"
 command_upload_args="-B -r ${pureftpd_uploadscript}"
 
 start_postcmd=start_postcmd
