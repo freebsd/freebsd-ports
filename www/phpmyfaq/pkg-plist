@@ -920,7 +920,7 @@
 %%WWWDIR%%/savecomment.php
 %%WWWDIR%%/savequestion.php
 %%WWWDIR%%/savevoting.php
-%%WWWDIR%%/scripts/svn2package.sh
+%%WWWDIR%%/scripts/git2package.sh
 %%WWWDIR%%/search.php
 %%WWWDIR%%/send2friend.php
 %%WWWDIR%%/sendmail.php
