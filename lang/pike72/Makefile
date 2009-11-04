@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.oav.net/pike/7.2/unofficial/ \
 		ftp://ftp.us.caudium.net/pub/pike/7.2/unofficial/ 
 DISTNAME=	pike-${PORTVERSION}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	johans@stack.nl
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
