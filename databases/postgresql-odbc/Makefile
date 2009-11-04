@@ -7,21 +7,33 @@
 # $FreeBSD$
 #
 
-# PostgreSQL ODBC driver should work under either unixODBC or iODBC
-# driver manager, when compliled against one. (Important: Do not try
-# to have both installed -- they have overlapping files).
+# -- 2009-07-23 -- Alex Goncharov -->
 
-# It looks like most people are using unixODBC these days, rather than
-# iODBC, so let's make unixODBC the default choice: to select iODBC,
-# set WITH_IODBC, without setting WITH_UNIXODBC.  When the latter is
-# set or when neither is set, we go with WITH_UNIXODBC.
+# The driver has to be built against a driver manager; there is no
+# reason to expect that it can be built against *any* driver manager.
+# In days old, iODBC was the common choice of a driver manager on
+# Unix.  Today, everybody builds and tests against another driver
+# manager, unixODBC.
+
+# When I took over this port, I made the build against unixODBC to be
+# the default, and introduced the WITH_IODBC variable to build against
+# iODBC.  At that point (2008-08-30), the i0DBC build worked and
+# produced a workable driver.
+
+# Starting from the new driver release, 08.04.0100, I am no longer
+# trying to build the WITH_IODBC=yes case.  I keep this switch here,
+# but you should really never use it -- iODBC has long been
+# unmaintained and ODBC driver developers use unixODBC for builds and
+# tests.
+
+# -- 2008-08-30 -- Alex Goncharov ->
 
 # Following the existing convention, and other postgresql-* pieces,
 # this is considered to be a part of the `postgresql' port.
 
 PORTNAME=		postgresql
-PORTVERSION=		08.03.0400
-PORTREVISION=		1
+PORTVERSION=		08.04.0100
+PORTREVISION=		0
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	odbc/versions/src
