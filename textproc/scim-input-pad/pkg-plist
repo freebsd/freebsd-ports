@@ -6,6 +6,8 @@ lib/libscim-input-pad.a
 lib/libscim-input-pad.la
 lib/libscim-input-pad.so
 lib/libscim-input-pad.so.0
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/de/LC_MESSAGES/scim-input-pad.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/scim-input-pad.mo
 %%NLS%%share/locale/it/LC_MESSAGES/scim-input-pad.mo
@@ -18,4 +20,5 @@ share/scim/input-pad/base.pad
 share/scim/input-pad/chinese.pad
 share/scim/input-pad/japanese.pad
 share/scim/input-pad/keyboard.pad
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/scim/input-pad

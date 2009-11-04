@@ -7,38 +7,51 @@
 
 PORTNAME=	scim-input-pad
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
+		http://anthesphoria.net/FreeBSD/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	SCIM add-on to input various symbols with on-screen pad
+MAINTAINER=	nikola.lecic@anthesphoria.net
+COMMENT=	SCIM add-on to input various symbols with customisable on-screen pad
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+DESKTOP_ENTRIES="SCIM Input Pad" \
+		"${COMMENT}" \
+		"${PREFIX}/share/scim/icons/input-pad.png" \
+		"scim-input-pad" \
+		"Utility;" \
+		false
+
+DOCS=		ChangeLog README
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 USE_GNOME=	intlhack
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -E 's|(SCIM_LIBEXECDIR=).*|\1${PREFIX}/lib/scim-1.0|' \
+		${WRKSRC}/configure
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
