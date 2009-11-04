@@ -156,4 +156,4 @@ bin/smolder_smoke_signal
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Wavelet
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Wavelet2D
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
