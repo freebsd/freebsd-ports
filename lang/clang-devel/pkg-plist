@@ -40,3 +40,4 @@ libexec/clang-cc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/clang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
