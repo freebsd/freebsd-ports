@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	VFS
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -20,6 +20,7 @@ USE_PHP=	gettext
 
 FILES=		VFS.php VFS/Browser.php VFS/GC.php VFS/ListItem.php \
 		VFS/Object.php VFS/file.php VFS/ftp.php VFS/horde.php \
+		VFS/kolab.php \
 		VFS/musql.php VFS/sql.php VFS/sql_file.php VFS/smb.php \
 		VFS/ssh2.php
 DATA=		muvfs.sql vfs.oci8.sql vfs.pgsql.sql vfs.sql
@@ -28,7 +29,7 @@ SCRIPTFILES=	vfs.php
 
 post-patch:
 	@${MV} ${WRKSRC}/scripts/VFS/vfs.php ${WRKSRC}/pear-vfs.php
-	${MV} ${WRKSRC}/lib/* ${WRKSRC}
+	@${MV} ${WRKSRC}/lib/* ${WRKSRC}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
