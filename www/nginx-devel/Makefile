@@ -175,6 +175,7 @@ CONFIGURE_ARGS+=--with-http_gzip_static_module
 .endif
 
 .if defined(WITH_HTTP_IMAGE_FILTER_MODULE)
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=--with-http_image_filter_module
 .endif
 
