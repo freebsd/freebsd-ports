@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.3
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 PORTEPOCH=	1
 CATEGORIES=	mail www
-MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${PORTVERSION}-stable
-DISTNAME=	${PORTNAME}mail-${DISTVERSION}-stable
+MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${PORTVERSION}
+DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
@@ -103,6 +102,7 @@ post-patch:
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
 		${WRKSRC}/plugins/*/*.php \
 		${WRKSRC}/program/include/rcmail.php \
+		${WRKSRC}/program/js/editor.js \
 		${WRKSRC}/program/localization/*/labels.inc \
 		${WRKSRC}/program/steps/addressbook/mailto.inc
 	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
@@ -111,10 +111,14 @@ post-patch:
 		${WRKSRC}/program/js/app.js \
 		${WRKSRC}/skins/default/includes/header.html \
 		${WRKSRC}/skins/default/includes/taskbar.html
+	@${REINPLACE_CMD} "s/mail_footer/${MAIL}_footer/g" \
+		${WRKSRC}/skins/default/*.css
 	@${REINPLACE_CMD} "s/mail_toolbar/${MAIL}_toolbar/g" \
 		${WRKSRC}/skins/default/*.css
 	@${MV} ${WRKSRC}/program/steps/mail \
 		${WRKSRC}/program/steps/${MAIL}
+	@${MV} ${WRKSRC}/skins/default/images/mail_footer.png \
+		${WRKSRC}/skins/default/images/${MAIL}_footer.png
 	@${MV} ${WRKSRC}/skins/default/images/mail_toolbar.gif \
 		${WRKSRC}/skins/default/images/${MAIL}_toolbar.gif
 	@${MV} ${WRKSRC}/skins/default/images/mail_toolbar.png \
