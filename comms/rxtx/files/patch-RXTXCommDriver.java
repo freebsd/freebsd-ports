@@ -1,11 +1,25 @@
---- src/RXTXCommDriver.java.orig	2006-01-30 05:37:49.000000000 +0100
-+++ src/RXTXCommDriver.java	2008-11-14 13:23:47.000000000 +0100
-@@ -590,6 +590,8 @@
- 						String[] Temp = {
- 							"ttyd",    //general purpose serial ports
- 							"cuaa",    //dialout serial ports
-+							"ttyU",    //USB serial ports
-+							"cuaU",    //USB dialout serial ports
- 							"ttyA",    //Specialix SI/XIO dialin ports
- 							"cuaA",    //Specialix SI/XIO dialout ports
- 							"ttyD",    //Digiboard - 16 dialin ports
+Apply patch.
+
+Patch attached with submission follows:
+
+*** src/RXTXCommDriver.java.orig	Sun Jan 29 23:37:49 2006
+--- src/RXTXCommDriver.java	Sun Nov  1 19:36:18 2009
+***************
+*** 588,597 ****
+--- 588,601 ----
+  					else if(osName.equals("FreeBSD")) //FIXME this is probably wrong
+  					{
+  						String[] Temp = {
+  							"ttyd",    //general purpose serial ports
+  							"cuaa",    //dialout serial ports
++ 							"ttyu",    //general purpose serial ports (uart)
++ 							"cuau",    //dialout serial ports (uart)
++ 							"ttyD",    //USB serial ports
++ 							"cuaU",    //USB dial in serial ports
+  							"ttyA",    //Specialix SI/XIO dialin ports
+  							"cuaA",    //Specialix SI/XIO dialout ports
+  							"ttyD",    //Digiboard - 16 dialin ports
+  							"cuaD",    //Digiboard - 16 dialout ports
+  							"ttyE",    //Stallion EasyIO (stl) dialin ports
+
+

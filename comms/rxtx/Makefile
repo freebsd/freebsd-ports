@@ -7,7 +7,7 @@
 
 PORTNAME=	rxtx
 PORTVERSION=	2.1.7r2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms java
 MASTER_SITES=	ftp://jarvi.dsl.frii.com/pub/rxtx/
 PKGNAMESUFFIX=	-${JAVA_PORT:S/java\///}
