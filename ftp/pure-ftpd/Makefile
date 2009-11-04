@@ -7,7 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -33,7 +33,8 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-everything \
 		--with-paranoidmsg \
 		--with-virtualchroot \
-		--sysconfdir=${PREFIX}/etc
+		--sysconfdir=${PREFIX}/etc \
+		--localstatedir=/var
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
 		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8 \
