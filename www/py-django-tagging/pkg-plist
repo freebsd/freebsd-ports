@@ -1,0 +1,53 @@
+%%PYTHON_SITELIBDIR%%/tagging/__init__.py
+%%PYTHON_SITELIBDIR%%/tagging/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tagging/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tagging/admin.py
+%%PYTHON_SITELIBDIR%%/tagging/admin.pyc
+%%PYTHON_SITELIBDIR%%/tagging/admin.pyo
+%%PYTHON_SITELIBDIR%%/tagging/fields.py
+%%PYTHON_SITELIBDIR%%/tagging/fields.pyc
+%%PYTHON_SITELIBDIR%%/tagging/fields.pyo
+%%PYTHON_SITELIBDIR%%/tagging/forms.py
+%%PYTHON_SITELIBDIR%%/tagging/forms.pyc
+%%PYTHON_SITELIBDIR%%/tagging/forms.pyo
+%%PYTHON_SITELIBDIR%%/tagging/generic.py
+%%PYTHON_SITELIBDIR%%/tagging/generic.pyc
+%%PYTHON_SITELIBDIR%%/tagging/generic.pyo
+%%PYTHON_SITELIBDIR%%/tagging/managers.py
+%%PYTHON_SITELIBDIR%%/tagging/managers.pyc
+%%PYTHON_SITELIBDIR%%/tagging/managers.pyo
+%%PYTHON_SITELIBDIR%%/tagging/models.py
+%%PYTHON_SITELIBDIR%%/tagging/models.pyc
+%%PYTHON_SITELIBDIR%%/tagging/models.pyo
+%%PYTHON_SITELIBDIR%%/tagging/settings.py
+%%PYTHON_SITELIBDIR%%/tagging/settings.pyc
+%%PYTHON_SITELIBDIR%%/tagging/settings.pyo
+%%PYTHON_SITELIBDIR%%/tagging/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/tagging/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tagging/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tagging/templatetags/tagging_tags.py
+%%PYTHON_SITELIBDIR%%/tagging/templatetags/tagging_tags.pyc
+%%PYTHON_SITELIBDIR%%/tagging/templatetags/tagging_tags.pyo
+%%PYTHON_SITELIBDIR%%/tagging/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/tagging/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tagging/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tagging/tests/models.py
+%%PYTHON_SITELIBDIR%%/tagging/tests/models.pyc
+%%PYTHON_SITELIBDIR%%/tagging/tests/models.pyo
+%%PYTHON_SITELIBDIR%%/tagging/tests/settings.py
+%%PYTHON_SITELIBDIR%%/tagging/tests/settings.pyc
+%%PYTHON_SITELIBDIR%%/tagging/tests/settings.pyo
+%%PYTHON_SITELIBDIR%%/tagging/tests/tests.py
+%%PYTHON_SITELIBDIR%%/tagging/tests/tests.pyc
+%%PYTHON_SITELIBDIR%%/tagging/tests/tests.pyo
+%%PYTHON_SITELIBDIR%%/tagging/utils.py
+%%PYTHON_SITELIBDIR%%/tagging/utils.pyc
+%%PYTHON_SITELIBDIR%%/tagging/utils.pyo
+%%PYTHON_SITELIBDIR%%/tagging/views.py
+%%PYTHON_SITELIBDIR%%/tagging/views.pyc
+%%PYTHON_SITELIBDIR%%/tagging/views.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tagging/tests
+@dirrm %%PYTHON_SITELIBDIR%%/tagging/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/tagging
+%%PORTDOCS%%%%DOCSDIR%%/overview.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

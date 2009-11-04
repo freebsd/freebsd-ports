@@ -1304,6 +1304,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-django
     SUBDIR += py-django-devel
+    SUBDIR += py-django-tagging
     SUBDIR += py-dtflickr
     SUBDIR += py-ez_web
     SUBDIR += py-fcgi
