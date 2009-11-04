@@ -1,0 +1,11 @@
+--- shtool.orig	2009-11-04 18:51:24.000000000 +0300
++++ shtool	2009-11-04 18:51:29.000000000 +0300
+@@ -228,7 +228,7 @@
+                 ;;
+             -[a-zA-Z0-9])
+                 opt_OPT=`awk 'BEGIN { printf("%s", substr(OPT, 2)); }' \
+-                         "OPT=$1" </dev/null"`
++                         "OPT=$1" </dev/null`
+                 opt_ARG=''
+                 ;;
+             *)
