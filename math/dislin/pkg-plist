@@ -527,6 +527,13 @@ dislin/chf/sortr2.chf
 dislin/chf/sphe3d.chf
 dislin/chf/spline.chf
 dislin/chf/splmod.chf
+dislin/chf/stmmod.chf
+dislin/chf/stmopt.chf
+dislin/chf/stmpts.chf
+dislin/chf/stmpts3d.chf
+dislin/chf/stmval.chf
+dislin/chf/stream.chf
+dislin/chf/stream3d.chf
 dislin/chf/strt3d.chf
 dislin/chf/strtpt.chf
 dislin/chf/surclr.chf
@@ -638,6 +645,9 @@ dislin/chf/vang3d.chf
 dislin/chf/vclp3d.chf
 dislin/chf/vecclr.chf
 dislin/chf/vecf3d.chf
+dislin/chf/vecf3d.chf
+dislin/chf/vecmat.chf
+dislin/chf/vecmat3d.chf
 dislin/chf/vecopt.chf
 dislin/chf/vector.chf
 dislin/chf/vectr3.chf
