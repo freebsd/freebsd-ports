@@ -1530,6 +1530,7 @@
     SUBDIR += trac-email2trac
     SUBDIR += trac-fullblog
     SUBDIR += trac-gantt
+    SUBDIR += trac-gitplugin
     SUBDIR += trac-graphviz
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
