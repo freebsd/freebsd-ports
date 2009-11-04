@@ -1,9 +1,9 @@
---- src/AudioController.cpp.orig	Sat Jul 14 09:50:13 2007
-+++ src/AudioController.cpp	Sat Jul 14 09:50:28 2007
-@@ -160,13 +160,7 @@
-     }
+--- src/AudioController.cpp.orig	2007-12-18 15:18:20.000000000 +0100
++++ src/AudioController.cpp	2009-11-04 19:22:00.000000000 +0100
+@@ -168,13 +168,7 @@
+ 
      m_transcode->setBufferCapacity( kDecodedBufferMinSize );
-     
+ 
 -    #ifdef WIN32
          m_output = qobject_cast<OutputInterface*>( loadPlugin( "rtaudioplayback" ) );
 -    #elif defined LINUX
@@ -13,4 +13,4 @@
 -    #endif
  
      if ( m_output == 0 )
-     {
+         return false;
