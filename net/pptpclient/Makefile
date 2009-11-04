@@ -7,7 +7,7 @@
 
 PORTNAME=	pptpclient
 PORTVERSION=	1.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
@@ -17,15 +17,28 @@ COMMENT=	PPTP client for establishing a VPN link with an NT server
 
 USE_PERL5=	yes
 
-MAN8=		pptp.8
+MAN8=		pptp.8 pptpsetup.8
+FILES=		README ppp.conf
+PORTDOCS=	AUTHORS COPYING ChangeLog DEVELOPERS INSTALL NEWS \
+		PROTOCOL-SECURITY README TODO USING
 
 MAKE_ARGS=	DEBUG=""
 
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr|/usr/local|g' -e 's|/etc|/usr/local/etc|g' \
+	${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's|/etc|/usr/local/etc|g' ${WRKSRC}/pptpsetup
+
 do-install:
+	${MKDIR} ${EXAMPLESDIR} ${ETCDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/pptp ${PREFIX}/sbin
-	${MKDIR} ${PREFIX}/share/examples/pptpclient
-	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/pptpclient
-	${INSTALL_DATA} ${FILESDIR}/ppp.conf ${PREFIX}/share/examples/pptpclient
-	${INSTALL_MAN} ${WRKSRC}/pptp.8 ${PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKSRC}/pptpsetup ${PREFIX}/sbin
+	${INSTALL_MAN} ${MAN8:S,^,${WRKSRC}/,} ${MAN8PREFIX}/man/man8
+	${INSTALL_DATA} ${FILES:S,^,${FILESDIR}/,} ${EXAMPLESDIR}
+	${CP} ${FILESDIR}/ppp.conf ${ETCDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
