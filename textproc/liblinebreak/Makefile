@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/vimgadgets/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	yuri.pankov@gmail.com
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Implementation of the line breaking algorithm for Unicode
 
 GNU_CONFIGURE=	yes

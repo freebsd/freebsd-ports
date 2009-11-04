@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yuri.pankov@gmail.com
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Powerful e-book reader
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
