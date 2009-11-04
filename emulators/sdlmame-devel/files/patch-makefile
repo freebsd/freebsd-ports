@@ -1,5 +1,5 @@
---- makefile.orig	2009-08-14 00:29:05.000000000 +0200
-+++ makefile	2009-08-14 00:31:28.000000000 +0200
+--- makefile.orig	2009-11-01 01:19:01.000000000 +0100
++++ makefile	2009-11-01 01:21:41.000000000 +0100
 @@ -59,7 +59,7 @@
  ifeq ($(OSD),windows)
  TARGETOS = win32
@@ -47,20 +47,21 @@
  else
  endif
  else
-@@ -382,6 +382,7 @@
+@@ -382,7 +382,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
  	-I$(SRC)/osd/$(OSD) \
+-
 +	-I$(LOCALBASE)/include \
  
  
- 
-@@ -395,7 +396,7 @@
+ #-------------------------------------------------
+@@ -395,7 +395,7 @@
  ifneq ($(TARGETOS),macosx)
  ifneq ($(TARGETOS),os2)
  ifneq ($(TARGETOS),solaris)
 -LDFLAGS = -Wl,--warn-common
-+LDFLAGS = -Wl,--warn-common $(PTHREAD_LIBS) -L$(LOCALBASE)/lib
++LDFLAGS = -Wl,--warn-common -L$(LOCALBASE)/lib
  endif
  endif
  endif

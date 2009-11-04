@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmame-devel
-PORTVERSION=	0.133u2
+PORTVERSION=	0.134u4
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/ \
 		http://rbelmont.mameworld.info/
