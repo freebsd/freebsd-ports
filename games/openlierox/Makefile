@@ -20,6 +20,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 USE_BZIP2=	yes
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/libxml2
 CXXFLAGS+=	-I${LOCALBASE}/include/libxml2
@@ -52,6 +53,8 @@ post-patch:
 		${WRKSRC}/src/main.cpp ${WRKSRC}/include/FindFile.h
 	@${REINPLACE_CMD} -e 's|DATADIR|"${DATADIR}"|' \
 		${WRKSRC}/src/main.cpp
+	@${REINPLACE_CMD} -e 's|EXEC_PROGRAM.*OLXVER)|SET(OLXVER "${DISTVERSION}")|' \
+		${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/openlierox ${PREFIX}/bin
