@@ -6651,6 +6651,7 @@ kde4-style-polyester            ports/x11-themes/kde4-style-polyester
 kde4-windeco-aurorae            ports/x11-themes/kde4-windeco-aurorae
 kde4-windeco-crystal            ports/x11-themes/kde4-windeco-crystal
 kde4-windeco-dekorator          ports/x11-themes/kde4-windeco-dekorator
+kde4-windeco-nitrogen           ports/x11-themes/kde4-windeco-nitrogen
 kde4-xdg-env                    ports/misc/kde4-xdg-env
 kde_poster                      ports/print/kde_poster
 kdeaccessibility                ports/accessibility/kdeaccessibility
@@ -12423,6 +12424,8 @@ p5-Net-LDAP-Express             ports/net/p5-Net-LDAP-Express
 p5-Net-LDAP-LDAPhash            ports/net/p5-Net-LDAP-LDAPhash
 p5-Net-LDAP-Makepath            ports/net/p5-Net-LDAP-Makepath
 p5-Net-LDAP-Server              ports/net/p5-Net-LDAP-Server
+p5-Net-LDAP-posixAccount        ports/net/p5-Net-LDAP-posixAccount
+p5-Net-LDAP-posixGroup          ports/net/p5-Net-LDAP-posixGroup
 p5-Net-LibIDN                   ports/dns/p5-Net-LibIDN
 p5-Net-Libdnet                  ports/net/p5-Net-Libdnet
 p5-Net-MAC                      ports/net/p5-Net-MAC
@@ -13085,6 +13088,7 @@ p5-Sys-Cpu                      ports/devel/p5-Sys-Cpu
 p5-Sys-CpuLoad                  ports/sysutils/p5-Sys-CpuLoad
 p5-Sys-Filesystem               ports/sysutils/p5-Sys-Filesystem
 p5-Sys-Gamin                    ports/sysutils/p5-Sys-Gamin
+p5-Sys-Group-GIDhelper          ports/sysutils/p5-Sys-Group-GIDhelper
 p5-Sys-HostIP                   ports/sysutils/p5-Sys-HostIP
 p5-Sys-Hostname-FQDN            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-Sys-Hostname-Long            ports/sysutils/p5-Sys-Hostname-Long
@@ -13097,6 +13101,7 @@ p5-Sys-Sig                      ports/devel/p5-Sys-Sig
 p5-Sys-SigAction                ports/devel/p5-Sys-SigAction
 p5-Sys-Syscall                  ports/devel/p5-Sys-Syscall
 p5-Sys-Syslog                   ports/sysutils/p5-Sys-Syslog
+p5-Sys-User-UIDhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-Sys-Utmp                     ports/sysutils/p5-Sys-Utmp
 p5-Sysadm-Install               ports/sysutils/p5-Sysadm-Install
 p5-SyslogScan                   ports/sysutils/p5-SyslogScan
@@ -16049,6 +16054,8 @@ p5-net-ldap-autodns             ports/net/p5-Net-LDAP-AutoDNs
 p5-net-ldap-express             ports/net/p5-Net-LDAP-Express
 p5-net-ldap-ldaphash            ports/net/p5-Net-LDAP-LDAPhash
 p5-net-ldap-makepath            ports/net/p5-Net-LDAP-Makepath
+p5-net-ldap-posixaccount        ports/net/p5-Net-LDAP-posixAccount
+p5-net-ldap-posixgroup          ports/net/p5-Net-LDAP-posixGroup
 p5-net-ldap-server              ports/net/p5-Net-LDAP-Server
 p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
@@ -16742,6 +16749,7 @@ p5-sys-cpu                      ports/devel/p5-Sys-Cpu
 p5-sys-cpuload                  ports/sysutils/p5-Sys-CpuLoad
 p5-sys-filesystem               ports/sysutils/p5-Sys-Filesystem
 p5-sys-gamin                    ports/sysutils/p5-Sys-Gamin
+p5-sys-group-gidhelper          ports/sysutils/p5-Sys-Group-GIDhelper
 p5-sys-hostip                   ports/sysutils/p5-Sys-HostIP
 p5-sys-hostname-fqdn            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-sys-hostname-long            ports/sysutils/p5-Sys-Hostname-Long
@@ -16754,6 +16762,7 @@ p5-sys-sig                      ports/devel/p5-Sys-Sig
 p5-sys-sigaction                ports/devel/p5-Sys-SigAction
 p5-sys-syscall                  ports/devel/p5-Sys-Syscall
 p5-sys-syslog                   ports/sysutils/p5-Sys-Syslog
+p5-sys-user-uidhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-sys-utmp                     ports/sysutils/p5-Sys-Utmp
 p5-sysadm-install               ports/sysutils/p5-Sysadm-Install
 p5-syslogscan                   ports/sysutils/p5-SyslogScan
@@ -21426,6 +21435,7 @@ sdom                            ports/textproc/sdom
 sdpa                            ports/math/sdpa
 sdpa-gmp                        ports/math/sdpa-gmp
 sdpara                          ports/math/sdpara
+sdparm                          ports/sysutils/sdparm
 sdr                             ports/mbone/sdr
 sdts++                          ports/devel/sdts++
 seabattle                       ports/games/seabattle
@@ -21947,6 +21957,11 @@ squall                          ports/net-p2p/squall
 squash                          ports/audio/squash
 squeak                          ports/lang/squeak
 squeezeboxserver                ports/audio/squeezeboxserver
+squeezeboxserver-dynamicplaylist  ports/audio/squeezeboxserver-dynamicplaylist
+squeezeboxserver-lazysearch     ports/audio/squeezeboxserver-lazysearch
+squeezeboxserver-sqlplaylist    ports/audio/squeezeboxserver-sqlplaylist
+squeezeboxserver-superdatetime  ports/audio/squeezeboxserver-superdatetime
+squeezeboxserver-trackstat      ports/audio/squeezeboxserver-trackstat
 squeezecenter                   ports/audio/squeezecenter
 squeezecenter-dynamicplaylist   ports/audio/squeezecenter-dynamicplaylist
 squeezecenter-lazysearch        ports/audio/squeezecenter-lazysearch
