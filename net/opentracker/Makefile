@@ -7,8 +7,8 @@
 
 PORTNAME=	opentracker
 PORTVERSION=	0.2009.06.27
-CATEGORIES=		net
-MASTER_SITES=	http://www.bayofrum.net/opentracker/ \
+CATEGORIES=	net
+MASTER_SITES=	http://www.bayofrum.net/dist/opentracker/ \
 		http://freebsd.dev-urandom.com/opentracker/
 
 MAINTAINER=	utisoft@gmail.com
@@ -18,12 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
 USE_RC_SUBR=	opentracker
 
-OPTIONS=WANT_ACCESSLIST_BLACK "Enable client blacklisting" Off \
-	WANT_ACCESSLIST_WHITE "Enable client whitelisting" Off \
-	WANT_COMPRESSION_GZIP "Deliver gzip compressed full scrapes" Off \
-	DEBUG_HTTPERROR "Verbose HTTPERRORs" Off \
-	WANT_FULLSCRAPE "Can query tracker for all torrents" On \
-	WANT_V6 "IPv6-only" Off \
+OPTIONS=	WANT_ACCESSLIST_BLACK "Enable client blacklisting" Off \
+		WANT_ACCESSLIST_WHITE "Enable client whitelisting" Off \
+		WANT_COMPRESSION_GZIP "Deliver gzip compressed full scrapes" Off \
+		DEBUG_HTTPERROR "Verbose HTTPERRORs" Off \
+		WANT_FULLSCRAPE "Can query tracker for all torrents" On \
+		WANT_V6 "IPv6-only" Off \
+		WANT_RESTRICT_STATS "Limit stats access based on IP" On
 
 .include <bsd.port.options.mk>
 
@@ -45,13 +46,17 @@ FEATURES+=-DWANT_FULLSCRAPE
 .if defined(WITH_WANT_V6)
 FEATURES+=-DWANT_V6
 .endif
+.if defined(WITH_WANT_RESTRICT_STATS)
+FEATURES+=-DWANT_RESTRICT_STATS
+.endif
 
 MAKE_ENV+=FEATURES="${FEATURES}"
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 		${MKDIR} ${PREFIX}/etc/${PORTNAME}
-		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf.sample
+		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample \
+			${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf.sample
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf ]; then \
