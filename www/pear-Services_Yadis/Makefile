@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Yadis
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
