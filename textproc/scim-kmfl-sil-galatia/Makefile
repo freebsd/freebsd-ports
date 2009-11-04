@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-kmfl-sil-galatia
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=GrkPolyComp_Src&filename=/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
@@ -50,7 +51,7 @@ do-install:
 post-install:
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "  You should now have the new keyboard in the section"
-	@${ECHO_MSG} "  \"Others\" in your SCIM menu. If you don't see it,"
+	@${ECHO_MSG} "  \"Greek\" in your SCIM menu. If you don't see it,"
 	@${ECHO_MSG} "  restart X."
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG}

@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-kmfl-varamozhi-malayalam
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/varamozhi/2%20Mozhi%20Keyman%20-%20Input%20Method/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/kmfl/
@@ -29,10 +30,6 @@ SCIM_KMFL_ICONS_DIR=	share/scim/kmfl/icons
 PLIST_FILES=	${SCIM_KMFL_DIR}/mozhi_1.1.0.kmn \
 		${SCIM_KMFL_ICONS_DIR}/mozhi.bmp
 
-post-patch:
-	@${REINPLACE_CMD} -E 's|(Mozhi Keymap 1\.1\.1)|Varamozhi \1|' \
-		${WRKSRC}/mozhi_1.1.0.kmn
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${SCIM_KMFL_DIR}
 	${INSTALL_DATA} ${WRKSRC}/*.bmp ${LOCALBASE}/${SCIM_KMFL_ICONS_DIR}
@@ -40,7 +37,7 @@ do-install:
 post-install:
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "  You should now have the new keyboard in the section"
-	@${ECHO_MSG} "  \"Others\" in your SCIM menu. If you don't see it,"
+	@${ECHO_MSG} "  \"Malayalam\" in your SCIM menu. If you don't see it,"
 	@${ECHO_MSG} "  restart X."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  At the moment, this keyboard has no downloadable"
