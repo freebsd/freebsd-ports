@@ -39,6 +39,5 @@ libexec/fetchmailconf.py
 @unexec if cmp -s %D/etc/fetchmailrc.sample %D/etc/fetchmailrc; then rm -f %D/etc/fetchmailrc; fi
 etc/fetchmailrc.sample
 @exec if [ ! -f %D/etc/fetchmailrc ] ; then cp -p %D/%F %B/fetchmailrc; fi
-@cwd /
 @unexec rm -f /var/run/fetchmail/fetchmail.pid 2>/dev/null || true
-@dirrm /var/run/fetchmail
+@unexec rmdir /var/run/fetchmail 2>/dev/null || true
