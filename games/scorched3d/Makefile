@@ -7,9 +7,8 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
-PORTREVISION=		2
 CATEGORIES=		games
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/Build%2041.3
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/Version%20${SCORCH_VERSION}/
 DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 
 MAINTAINER=		ports@FreeBSD.org
@@ -23,7 +22,7 @@ LIB_DEPENDS=		alut.1:${PORTSDIR}/audio/freealut \
 			jpeg:${PORTSDIR}/graphics/jpeg \
 			png:${PORTSDIR}/graphics/png
 
-SCORCH_VERSION=		41.3
+SCORCH_VERSION=		42.1
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
@@ -36,6 +35,7 @@ USE_AUTOTOOLS=	automake:15 autoconf:262
 USE_PERL5=	yes
 USE_WX=		2.4+
 WX_CONF_ARGS=	absolute
+USE_DOS2UNIX=	mkinstalldirs
 
 WRKSRC=			${WRKDIR}/scorched
 AUTOMAKE_ARGS=		--foreign
