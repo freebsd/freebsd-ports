@@ -1,5 +1,5 @@
 bin/last.fm
-%%DATADIR%%/LastFMHelper
+%%DATADIR%%/LastFmHelper
 %%DATADIR%%/data/about.png
 %%DATADIR%%/data/about_generic.png
 %%DATADIR%%/data/about_mac.png
@@ -13,19 +13,9 @@ bin/last.fm
 %%DATADIR%%/data/buttons/action_upload.png
 %%DATADIR%%/data/buttons/action_upload_down.png
 %%DATADIR%%/data/buttons/action_upload_hover.png
-%%DATADIR%%/data/buttons/addToMyPlaylist.png
-%%DATADIR%%/data/buttons/ban.png
 %%DATADIR%%/data/buttons/closebutton.png
-%%DATADIR%%/data/buttons/love.png
 %%DATADIR%%/data/buttons/myprofile.png
-%%DATADIR%%/data/buttons/play.png
-%%DATADIR%%/data/buttons/recommend.png
 %%DATADIR%%/data/buttons/scrobble.png
-%%DATADIR%%/data/buttons/skip.png
-%%DATADIR%%/data/buttons/skip_active.png
-%%DATADIR%%/data/buttons/stop.png
-%%DATADIR%%/data/buttons/stop_active.png
-%%DATADIR%%/data/buttons/tag.png
 %%DATADIR%%/data/icons/as.ico
 %%DATADIR%%/data/icons/as.png
 %%DATADIR%%/data/icons/blackprofile24.png
@@ -39,7 +29,6 @@ bin/last.fm
 %%DATADIR%%/data/icons/icon_tag.png
 %%DATADIR%%/data/icons/icon_track.png
 %%DATADIR%%/data/icons/icon_user.png
-%%DATADIR%%/data/icons/lastfm.icns
 %%DATADIR%%/data/icons/loved_radio.png
 %%DATADIR%%/data/icons/my_bookmarks.png
 %%DATADIR%%/data/icons/my_friends.png
@@ -97,24 +86,36 @@ bin/last.fm
 %%DATADIR%%/data/wizard.png
 %%DATADIR%%/data/wizard_generic.png
 %%DATADIR%%/data/wizard_mac.png
+%%DATADIR%%/glib-2.0.lib
+%%DATADIR%%/gpod.lib
 %%DATADIR%%/last.fm
-%%DATADIR%%/last.fm.app
-%%DATADIR%%/libLastFmTools.so
-%%DATADIR%%/libLastFmTools.so.1
-%%DATADIR%%/libLastFmTools.so.1.0
+%%DATADIR%%/last.fm.sh
+%%DATADIR%%/libLastFmFingerprint.so.1.0.0
+%%DATADIR%%/libLastFmFingerprint.so.1.0
+%%DATADIR%%/libLastFmFingerprint.so.1
+%%DATADIR%%/libLastFmFingerprint.so
 %%DATADIR%%/libLastFmTools.so.1.0.0
+%%DATADIR%%/libLastFmTools.so.1.0
+%%DATADIR%%/libLastFmTools.so.1
+%%DATADIR%%/libLastFmTools.so
+%%DATADIR%%/libMoose.so.1.0.0
+%%DATADIR%%/libMoose.so.1.0
+%%DATADIR%%/libMoose.so.1
+%%DATADIR%%/libMoose.so
+%%DATADIR%%/libfftw3f-3.lib
+%%DATADIR%%/services/libsrv_Ipod_device.so
 %%DATADIR%%/services/libsrv_httpinput.so
 %%DATADIR%%/services/libsrv_itunesdevice.so
-%%DATADIR%%/services/libsrv_mp3transcode.so
+%%DATADIR%%/services/libsrv_madtranscode.so
 %%DATADIR%%/services/libsrv_rtaudioplayback.so
+%%DATADIR%%/updater-autorestart.sh
+%%DATADIR%%/zlibwapi.lib
 share/applications/last.fm.desktop
 share/services/lastfm.protocol
 @dirrmtry share/services
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/services
-@dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/data/icons
-@dirrm %%DATADIR%%/data/i18n
 @dirrm %%DATADIR%%/data/buttons
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
