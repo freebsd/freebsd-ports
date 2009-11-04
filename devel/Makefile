@@ -2503,6 +2503,7 @@
     SUBDIR += py-protocols-devel
     SUBDIR += py-psyco
     SUBDIR += py-ptrace
+    SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-pycallgraph
     SUBDIR += py-pydasm
