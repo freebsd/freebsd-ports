@@ -4,10 +4,10 @@
 # $FreeBSD$
 
 PORTNAME=	php-libawl
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel
 MASTER_SITES=	SF/rscds/awl/${PORTVERSION}
-DISTNAME=	awl_${PORTVERSION}
+DISTNAME=	awl-${PORTVERSION}
 
 MAINTAINER=	cristianorolim@hotmail.com
 COMMENT=	Andrew.s Web Libraries - PHP Utility Libraries
