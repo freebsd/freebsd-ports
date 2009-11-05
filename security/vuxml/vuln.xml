@@ -35,6 +35,46 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6693bad2-ca50-11de-8ee8-00215c6a37bb">
+    <topic>typo3 -- multiple vulnerabilities in TYPO3 Core</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><lt>4.2.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TYPO3 develop team reports:</p>
+	<blockquote cite="http://typo3.org/teams/security/security-bulletins/typo3-sa-2009-016/">
+	  <p>Affected versions: TYPO3 versions 4.0.13 and below, 4.1.12
+	    and below, 4.2.9 and below, 4.3.0beta1 and below.</p>
+	  <p>SQL injection, Cross-site scripting (XSS), Information
+	    disclosure, Frame hijacking, Remote shell command execution
+	    and Insecure Install Tool authentication/session handling.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>36801</bid>
+      <cvename>CVE-2009-3628</cvename>
+      <cvename>CVE-2009-3629</cvename>
+      <cvename>CVE-2009-3630</cvename>
+      <cvename>CVE-2009-3631</cvename>
+      <cvename>CVE-2009-3632</cvename>
+      <cvename>CVE-2009-3633</cvename>
+      <cvename>CVE-2009-3634</cvename>
+      <cvename>CVE-2009-3635</cvename>
+      <cvename>CVE-2009-3636</cvename>
+      <url>http://typo3.org/teams/security/security-bulletins/typo3-sa-2009-016/</url>
+      <url>http://secunia.com/advisories/37122/</url>
+    </references>
+    <dates>
+      <discovery>2009-10-22</discovery>
+      <entry>2009-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3149ab1c-c8b9-11de-b87b-0011098ad87f">
     <topic>vlc -- stack overflow in MPA, AVI and ASF demuxer</topic>
     <affects>
