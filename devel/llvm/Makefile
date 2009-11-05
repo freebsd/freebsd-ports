@@ -43,11 +43,13 @@ DOCSRCDIR=
 DOCSRCDIR=	docs
 .endif
 
+.if !defined(NOPORTDOCS)
 MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
+.endif
 
 .include <bsd.port.pre.mk>
 
