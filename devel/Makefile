@@ -1015,6 +1015,7 @@
     SUBDIR += p5-App-Control
     SUBDIR += p5-App-Info
     SUBDIR += p5-App-Options
+    SUBDIR += p5-App-SVN-Bisect
     SUBDIR += p5-App-Trace
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std

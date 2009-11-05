@@ -1,0 +1,4 @@
+bin/svn-bisect
+%%SITE_PERL%%/App/SVN/Bisect.pm
+@dirrmtry %%SITE_PERL%%/App/SVN
+@dirrmtry %%SITE_PERL%%/App
