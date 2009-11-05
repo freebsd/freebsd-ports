@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	docbook-xsl
-PORTVERSION=	1.75.1
+PORTVERSION=	1.75.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
-		http://sourceforge.net/projects/docbook/files/:doc
+		SF/docbook/${PORTNAME}-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XSL DocBook stylesheets
 
-RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook:${PORTSDIR}/textproc/docbook
+BUILD_DEPENDS=	${LOCALBASE}/bin/xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	docbook>=0:${PORTSDIR}/textproc/docbook
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
@@ -168,7 +169,7 @@ PLIST_SUB+=	XHTML11="@comment "
 .endif
 
 post-extract:
-	${FIND} ${WRKSRC} -name '.#*' -or -name '.gitignore' -delete
+	${FIND} ${WRKSRC} \( -name '.*' -or -name '*.sh' -or -name '*.LOG' \) -delete
 	${FIND} ${WRKSRC}/extensions -type d -mindepth 1 -maxdepth 1 -print0 |\
 		${XARGS} -0 ${RM} -rf
 
