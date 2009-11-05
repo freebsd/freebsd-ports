@@ -3229,8 +3229,8 @@ fbreader                        ports/deskutils/fbreader
 fbsd-icons                      ports/x11/fbsd-icons
 fc++                            ports/devel/fc++
 fcalc                           ports/misc/fcalc
-fceu                            ports/emulators/fceu
 fceu-server                     ports/emulators/fceu-server
+fceux                           ports/emulators/fceux
 fcgi                            ports/www/fcgi
 fcheck                          ports/security/fcheck
 fconfig                         ports/sysutils/fconfig
@@ -9352,6 +9352,7 @@ nagios-statd                    ports/sysutils/nagios-statd
 nagios2                         ports/net-mgmt/nagios2
 nagiosagent                     ports/net-mgmt/nagiosagent
 nagiosgraph                     ports/net-mgmt/nagiosgraph
+nagiosgrapher                   ports/net-mgmt/nagiosgrapher
 nagiostat                       ports/net-mgmt/nagiostat
 nagircbot                       ports/net-mgmt/nagircbot
 naim                            ports/net-im/naim
@@ -10305,6 +10306,8 @@ p5-AppConfig                    ports/devel/p5-AppConfig
 p5-AppConfig-Std                ports/devel/p5-AppConfig-Std
 p5-Archive-Any                  ports/archivers/p5-Archive-Any
 p5-Archive-Extract              ports/archivers/p5-Archive-Extract
+p5-Archive-Rar                  ports/archivers/p5-Archive-Rar
+p5-Archive-SimpleExtractor      ports/archivers/p5-Archive-SimpleExtractor
 p5-Archive-Tar                  ports/archivers/p5-Archive-Tar
 p5-Archive-Zip                  ports/archivers/p5-Archive-Zip
 p5-Ark                          ports/www/p5-Ark
@@ -13504,6 +13507,7 @@ p5-Variable-Magic               ports/devel/p5-Variable-Magic
 p5-Verilog-Perl                 ports/cad/p5-Verilog-Perl
 p5-Video-Info                   ports/multimedia/p5-Video-Info
 p5-Video-OpenQuicktime          ports/multimedia/p5-Video-OpenQuicktime
+p5-Vimana                       ports/editors/p5-Vimana
 p5-Visio                        ports/graphics/p5-Visio
 p5-W3C-LinkChecker              ports/www/p5-W3C-LinkChecker
 p5-W3C-LogValidator             ports/www/p5-W3C-LogValidator
@@ -13893,6 +13897,8 @@ p5-appconfig                    ports/devel/p5-AppConfig
 p5-appconfig-std                ports/devel/p5-AppConfig-Std
 p5-archive-any                  ports/archivers/p5-Archive-Any
 p5-archive-extract              ports/archivers/p5-Archive-Extract
+p5-archive-rar                  ports/archivers/p5-Archive-Rar
+p5-archive-simpleextractor      ports/archivers/p5-Archive-SimpleExtractor
 p5-archive-tar                  ports/archivers/p5-Archive-Tar
 p5-archive-zip                  ports/archivers/p5-Archive-Zip
 p5-arclog                       ports/sysutils/p5-arclog
@@ -17173,6 +17179,7 @@ p5-verilog-perl                 ports/cad/p5-Verilog-Perl
 p5-version                      ports/devel/p5-version
 p5-video-info                   ports/multimedia/p5-Video-Info
 p5-video-openquicktime          ports/multimedia/p5-Video-OpenQuicktime
+p5-vimana                       ports/editors/p5-Vimana
 p5-visio                        ports/graphics/p5-Visio
 p5-vpopmail                     ports/mail/p5-vpopmail
 p5-w3c-linkchecker              ports/www/p5-W3C-LinkChecker
@@ -19307,6 +19314,7 @@ py-bittorrent                   ports/net-p2p/py-bittorrent
 py-bittorrent-core              ports/net-p2p/py-bittorrent-core
 py-bitvector                    ports/math/py-bitvector
 py-boto                         ports/devel/py-boto
+py-bottle                       ports/www/py-bottle
 py-breve                        ports/devel/py-Breve
 py-bsdconv                      ports/converters/py-bsdconv
 py-bsddb                        ports/databases/py-bsddb
@@ -19362,6 +19370,7 @@ py-distorm                      ports/devel/py-distorm
 py-distutils                    ports/misc/py-distutils
 py-django                       ports/www/py-django
 py-django-devel                 ports/www/py-django-devel
+py-django-tagging               ports/www/py-django-tagging
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
 py-docutils                     ports/textproc/py-docutils
@@ -19660,6 +19669,7 @@ py-psyco                        ports/devel/py-psyco
 py-psycopg                      ports/databases/py-psycopg
 py-psycopg2                     ports/databases/py-psycopg2
 py-ptrace                       ports/devel/py-ptrace
+py-pudb                         ports/devel/py-pudb
 py-pullparser                   ports/www/py-pullparser
 py-punjab                       ports/net-im/py-punjab
 py-px                           ports/devel/py-px
@@ -19905,6 +19915,7 @@ py-twistedwords                 ports/net-im/py-twistedWords
 py-twitter                      ports/net/py-twitter
 py-twofish                      ports/security/py-twofish
 py-txamqp                       ports/net/py-txamqp
+py-unidecode                    ports/converters/py-unidecode
 py-unit                         ports/devel/py-unit
 py-unittestplus                 ports/devel/py-unittestplus
 py-urlgrabber                   ports/www/py-urlgrabber
@@ -22791,6 +22802,7 @@ trac-down                       ports/www/trac-down
 trac-email2trac                 ports/www/trac-email2trac
 trac-fullblog                   ports/www/trac-fullblog
 trac-gantt                      ports/www/trac-gantt
+trac-gitplugin                  ports/www/trac-gitplugin
 trac-graphviz                   ports/www/trac-graphviz
 trac-hierwiki                   ports/www/trac-hierwiki
 trac-iniadmin                   ports/www/trac-iniadmin
