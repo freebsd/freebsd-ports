@@ -1222,7 +1222,7 @@ games/hlserver-trainhunters||2004-10-23|current version no longer available
 games/utserver-asu||2004-10-23|checksum failure
 graphics/ruby-gdchart||2004-10-23|build failure
 hebrew/pine||2004-10-23|contained serious vulnerabilities
-mail/cyrus|cyrus-imapd22|2004-10-23|contained serious vulnerabilities
+mail/cyrus|mail/cyrus-imapd22|2004-10-23|contained serious vulnerabilities
 archivers/alz2zip||2004-10-23|no longer maintained
 x11-wm/fbdesk|x11/fbdesk|2004-10-24|better category
 audio/streamtuner-live365|audio/streamtuner|2004-10-28|plugins rolled into main port
@@ -2358,9 +2358,9 @@ archivers/bsdtar|archivers/libarchive|2006-06-20|Merged into the libarchive port
 lang/fpc2||2006-06-21|Removed because lang/fpc will be updated to 2.x
 devel/fpc-gdb||2006-06-21|Obsoleted after lang/fpc was updated to 2.0.2
 net/fpc-inet||2006-06-21|Obsoleted after lang/fpc was updated to 2.0.2
-audio/ruby-snett|audio/snett|2006-06|Because it's a application, not a library
-audio/py-shellac|audio/shellac|2006-06|Because it's a application, not a library
-print/cups-lpr|print/cups-base|2006-06|Merged cups-lpr into cups-base
+audio/ruby-snett|audio/snett|2006-06-21|Because it's a application, not a library
+audio/py-shellac|audio/shellac|2006-06-21|Because it's a application, not a library
+print/cups-lpr|print/cups-base|2006-06-23|Merged cups-lpr into cups-base
 audio/mpck|audio/checkmate|2006-06-24|project was renamed
 www/xpi-tablesort|www/xpi-tabletools|2006-06-27|Extension renamed
 mail/rssyl|mail/sylpheed-claws-rssyl|2006-06-27|Moved to follow the rest of sylpheed-claws naming scheme
@@ -2931,11 +2931,11 @@ net-im/gaim-consoleui-devel|net-im/finch|2007-05-03|Project renamed
 devel/imake-6|devel/imake|2007-05-19|Remove hardcoded version from portname
 x11-fonts/xorg-fonts-encodings|x11-fonts/encodings|2007-05-19|Encoding fonts are now distributed separately
 x11/xorg-documents|x11/xorg-docs|2007-05-19|X.org documentation now has its own distfile, rename accordingly
-x11/xorg-manpages|||X.org manual pages are now installed with every single port
+x11/xorg-manpages||2007-05-19|X.org manual pages are now installed with every single port
 x11/xorg-clients|x11/xorg-apps|2007-05-19|Rename to new xorg-apps meta-port
 x11/libXfont|x11-fonts/libXfont|2007-05-19|Move to the x11-fonts category
 x11-servers/xorg-fontserver|x11-fonts/xfs|2007-05-19|Rename to follow X.org name
-x11/xlibs|xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
+x11/xlibs|x11/xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
 multimedia/ffmpeg-devel|multimedia/ffmpeg|2007-05-25|Merged multimedia/ffmpeg-devel into multimedia/ffmpeg
 devel/wfut||2007-05-27|Obsolete
 net-im/gaim-hotkeys|net-im/pidgin-hotkeys|2007-05-28|Project renamed
@@ -3529,8 +3529,8 @@ japanese/kterm16c|japanese/kterm|2008-07-24|Deprecated in favor of japanese/kter
 lang/gambc|lang/gambit-c|2008-07-24|Port was renamed
 devel/legoctl|devel/roboctl|2008-07-26|Port was renamed
 games/ssamtse|games/linux-ssamtse|2008-07-26|Upgraded to Linux version of the game
-palm/synce-rra|synce-librra|2008-07-27|Port was renamed
-palm/synce-dccm|synce-vdccm|2008-07-27|Port was renamed
+palm/synce-rra|palm/synce-librra|2008-07-27|Port was renamed
+palm/synce-dccm|palm/synce-vdccm|2008-07-27|Port was renamed
 arabic/php_doc||2008-08-04|Manual in this language was removed
 chinese/php_doc-hk||2008-08-04|Manual in this language was removed
 chinese/php_doc-tw||2008-08-04|Manual in this language was removed
@@ -3578,7 +3578,7 @@ devel/openthreads||2008-08-27|Now included in graphics/osg
 www/cherokee-devel||2008-08-27|Removed, use www/cherokee instead
 irc/tirc||2008-08-28|Has expired: Project is dead
 x11-toolkits/gtkdatabox2||2008-08-29|Removed, use x11-toolkits/gtkdatabox instead
-chinese/BBMan||2008-0830|Removed, abandonware by upstream maintainer
+chinese/BBMan||2008-08-30|Removed, abandonware by upstream maintainer
 games/q3base||2008-09-01|Project gone, website defaced
 editors/ooo-build||2008-09-01|Has expired: Has been broken for more than 6 months
 mail/pine4|mail/alpine|2008-09-01|No further development for pine, alpine has more features and is config-compatible
@@ -3767,7 +3767,7 @@ x11/xphelloworld||2009-01-24|Xprint application, deprecated upstream
 x11/xclock|x11-clocks/xclock|2009-01-28|Moved to a more appropriate category
 lang/perl5|lang/perl5.6|2009-02-01|Renamed
 devel/libmcve|devel/libmonetra|2009-02-01|Project renamed
-misc/gnomesword|misc/xiphos/|2009-02-02|Project renamed
+misc/gnomesword|misc/xiphos|2009-02-02|Project renamed
 www/aolserver-nscache||2009-02-03|Removed
 games/emacs-chess||2009-02-03|Has expired: has been broken for more than 6 months
 devel/subversion-devel||2009-02-03|Has expired: Use devel/subversion or devel/subversion-freebsd instead of this port
@@ -3832,7 +3832,7 @@ textproc/nicetext||2009-03-07|Abandoned upstream, requires obsolete version of G
 multimedia/libspiff|multimedia/libxspf|2009-03-08|Project renamed
 graphics/libgdgeda||2009-03-09|Has expired: is not required anymore
 japanese/ruby-tk||2009-03-09|Has expired: uses old Tk, not required with newer versions
-www/p5-Cookie-XS|p5-CGI-Cookie-XS|2009-03-09|Renamed
+www/p5-Cookie-XS|www/p5-CGI-Cookie-XS|2009-03-09|Renamed
 databases/rubygem-rrdtool||2009-03-09|Has expired: port no longer maintained by upstream use rrdtools own ruby bindings instead
 graphics/crystalentitylayer-devel||2009-03-09|Has expired: Depends on broken, expired port
 graphics/crystalspace-devel||2009-03-09|Has expired: Has been broken for more than 6 months
@@ -3935,7 +3935,7 @@ x11/nvidia-driver-96xx|x11/nvidia-driver-96|2009-04-13|Renamed
 emulators/cpmtools27|emulators/cpmtools2|2009-04-25|Renamed
 games/chromium|games/chromium-bsu|2009-04-26|Renamed
 russian/xneur|deskutils/xneur|2009-04-27|Better category: supports many languages
-audio/rubygem-mp3info|rubygem-ruby-mp3info|2009-04-28|Updated to match GEM name, use rubygem-ruby-mp3info instead
+audio/rubygem-mp3info|audio/rubygem-ruby-mp3info|2009-04-28|Updated to match GEM name, use rubygem-ruby-mp3info instead
 sysutils/linux-megacli2|sysutils/linux-megacli|2009-04-30|Folded into unversioned port directory
 net/vnstati|net/vnstat|2009-04-30|Use net/vnstat
 audio/snowstar||2009-05-01|Has expired: tcl8.0 support is going to be dropped
@@ -4113,7 +4113,7 @@ deskutils/plasma-applet-quicklauncher||2009-07-10|Not supported anymore; functio
 databases/phpminadmin|databases/adminer|2009-07-14|Project was renamed
 net-mgmt/net-snmp53||2009-07-13|Has expired: Use net-mgmt/net-snmp
 www/firefox-devel||2009-07-13|Please use www/firefox3 or www/firefox35
-R-sp|R-cran-sp|2009-07-17|Port was renamed
+math/R-sp|math/R-cran-sp|2009-07-17|Port was renamed
 lang/gcc-ooo|lang/gcc43|2009-07-18|Not used by OpenOffice any more, superseded by gcc43
 security/altivore||2009-07-19|Removed
 editors/openoffice.org-2-devel||2009-07-21|Removed
@@ -4136,7 +4136,7 @@ security/trans-proxy-tor||2009-08-09|Removed: trans-proxy-tor is rendered obsole
 science/dft++||2009-08-11|Removed
 devel/p5-MooseX-Policy-SemiAffordanceAccessor|devel/p5-MooseX-SemiAffordanceAccessor|2009-08-18|Renamed
 misc/bibletime-devel||2009-08-17|Has expired
-www/mediawiki12|mediawiki112|2009-08-19|Renamed
+www/mediawiki12|www/mediawiki112|2009-08-19|Renamed
 lang/gcc42-withgcjawt|lang/gcc42|2009-08-19|Not needed any longer, still an option for the regular lang/gcc ports
 math/octave-forge-windows||2009-08-23|Abandoned upstream
 math/freefem++||2009-08-23|Has expired: unmaintained and consistently unportable
@@ -4144,15 +4144,15 @@ math/it++||2009-08-23|Has expired: unmaintained and consistently unportable
 graphics/rubygem-rmagick||2009-08-27|Duplicate of graphics/ruby-rmagick
 databases/firebird-client||2009-09-03|Removed: no longer under development
 databases/firebird-server||2009-09-03|Removed: no longer under development
-audio/slimserver|audio/squeezecenter|2009-09-4|SlimServer has been superseded by SqueezeCenter
-audio/slimserver-dynamicplaylist|audio/squeezecenter-dynamicplaylist|2009-09-4|SlimServer has been superseded by SqueezeCenter
-audio/slimserver-dynamictransition||2009-09-4|SlimServer has been superseded by SqueezeCenter
-audio/slimserver-lastfm||2009-09-4|SlimServer has been superseded by SqueezeCenter
-audio/slimserver-lazysearch|audio/squeezecenter-lazysearch|2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver|audio/squeezecenter|2009-09-04|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-dynamicplaylist|audio/squeezecenter-dynamicplaylist|2009-09-04|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-dynamictransition||2009-09-04|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-lastfm||2009-09-04|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-lazysearch|audio/squeezecenter-lazysearch|2009-09-04|SlimServer has been superseded by SqueezeCenter
 audio/slimserver-slimscrobbler||2009-09-04|SlimServer has been superseded by SqueezeCenter
 audio/slimserver-sqlplaylist|audio/squeezecenter-sqlplaylist|2009-09-04|SlimServer has been superseded by SqueezeCenter
-audio/slimserver-superdatetime|audio/squeezecenter-superdatetime|2009-09-4|SlimServer has been superseded by SqueezeCenter
-audio/slimserver-trackstat|audio/squeezecenter-trackstat|2009-09-4|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-superdatetime|audio/squeezecenter-superdatetime|2009-09-04|SlimServer has been superseded by SqueezeCenter
+audio/slimserver-trackstat|audio/squeezecenter-trackstat|2009-09-04|SlimServer has been superseded by SqueezeCenter
 www/conkeror|www/xpi-conkeror|2009-09-05|Please use www/xpi-conkeror
 www/nvu|www/kompozer|2009-09-10|Abandoned upstream since 2005
 multimedia/phonon-gstreamer|multimedia/qt4-phonon-gst|2009-09-11|Superseded by multimedia/qt4-phonon-gst
@@ -4195,4 +4195,4 @@ textproc/p5-XML-LibXML-Common|textproc/p5-XML-LibXML|2009-10-30|merged
 misc/bibletime-kde4|misc/bibletime|2009-10-30|Renamed now that KDE dependencies are removed
 net/xmlrpc++||2009-10-31|Unmaintained upstream and on the FreeBSD side
 net-p2p/mute-net||2009-10-31|Broken for extensive period of time and unmaintained
-emulators/fceu|emulators/fceux|2009-11-4|Repocopied to new location
+emulators/fceu|emulators/fceux|2009-11-04|Repocopied to new location
