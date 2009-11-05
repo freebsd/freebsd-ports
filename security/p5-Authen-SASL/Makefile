@@ -31,6 +31,8 @@ MAN3+=	Authen::SASL::Perl::GSSAPI.3
 MAN3+=	Authen::SASL::Perl::LOGIN.3
 MAN3+=	Authen::SASL::Perl::PLAIN.3
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_KERBEROS)
 RUN_DEPENDS+=	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
 .endif
@@ -40,4 +42,4 @@ post-patch:
 	${RM} ${WRKSRC}/lib/Authen/SASL/Perl/DIGEST_MD5.pm.orig
 	${RM} ${WRKSRC}/lib/Authen/SASL/Perl/DIGEST_MD5.pm.rej
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
