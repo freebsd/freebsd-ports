@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	magicrescue
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.student.dtu.dk/~s042078/magicrescue/release/ \
 		CRITICAL
