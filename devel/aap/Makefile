@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aap
-PORTVERSION=	1.090
-PORTREVISION=	1
+PORTVERSION=	1.091
 CATEGORIES=	devel
 MASTER_SITES=	SF/a-a-p/Aap/${PORTVERSION}
 
@@ -30,10 +29,6 @@ FULLDOCS=no
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} >= 2.5
-EXTRA_PATCHES=	${FILESDIR}/extra-Sign.py
-.endif
 
 do-install:
 	@cd ${WRKSRC} && \
