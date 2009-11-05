@@ -140,12 +140,12 @@ do_spam_manpath()
 	echo " Done."
 }
 
-[ $need_remove_links ] && do_remove_links
-[ $need_create_links ] && do_create_links
-[ $need_post_install ] && do_post_install
-[ $need_cleanup_make_conf ] && do_cleanup_make_conf
-[ $need_spam_make_conf ] && do_spam_make_conf
-[ $need_cleanup_manpath ] && do_cleanup_manpath
-[ $need_spam_manpath ] && do_spam_manpath
+[ "$need_remove_links" = "yes" ] && do_remove_links
+[ "$need_create_links" = "yes" ] && do_create_links
+[ "$need_post_install" = "yes" ] && do_post_install
+[ "$need_cleanup_make_conf" = "yes" ] && do_cleanup_make_conf
+[ "$need_spam_make_conf" = "yes" ] && do_spam_make_conf
+[ "$need_cleanup_manpath" = "yes" ] && do_cleanup_manpath
+[ "$need_spam_manpath" = "yes" ] && do_spam_manpath 
 
 exit 0
