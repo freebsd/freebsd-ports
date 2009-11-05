@@ -7,7 +7,7 @@
 
 PORTNAME=	lapack++
 PORTVERSION=	2.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=   SF/lapackpp/lapackpp/${PORTVERSION} \
 		http://math.nist.gov/lapack++/:doc
@@ -36,8 +36,7 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 .endif
 
 USE_FORTRAN=	yes
-
-USE_AUTOTOOLS=	libtool:22
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 .if defined(WITH_ATLAS)
 BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas -latlas
