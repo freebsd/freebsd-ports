@@ -1,0 +1,33 @@
+--- SConstruct.bak	2009-10-22 02:59:15.000000000 -0500
++++ SConstruct	2009-10-22 03:01:00.000000000 -0500
+@@ -14,7 +14,7 @@
+   BoolVariable('LOGO', 'Enable a logoscreen when creating avis (SDL only)', '1')
+ )
+ 
+-env = Environment(options = opts)
++env = Environment(ENV = os.environ, options = opts)
+ 
+ # LSB_FIRST must be off for PPC to compile
+ if platform.system == "ppc":
+@@ -35,6 +35,8 @@
+   env.Append(CCFLAGS = os.environ['CFLAGS'].split())
+ if os.environ.has_key('LDFLAGS'):
+   env.Append(LINKFLAGS = os.environ['LDFLAGS'].split())
++  env['CPPPATH'] = Split(env['CPPPATH'])
++  env['LIBPATH'] = Split(env['LIBPATH'])
+ 
+ print "platform: ", env['PLATFORM']
+ 
+@@ -51,9 +53,9 @@
+   env.Append(LIBS = ["rpcrt4", "comctl32", "vfw32", "winmm", "ws2_32", "comdlg32", "ole32", "gdi32", "htmlhelp"])
+ else:
+   conf = Configure(env)
+-  if not conf.CheckLib('SDL'):
+-    print 'Did not find libSDL or SDL.lib, exiting!'
+-    Exit(1)
++###  if not conf.CheckLib('SDL'):
++###    print 'Did not find libSDL or SDL.lib, exiting!'
++###    Exit(1)
+   if not conf.CheckLib('z', autoadd=1):
+     print 'Did not find libz or z.lib, exiting!'
+     Exit(1)
