@@ -1,4 +1,4 @@
 liblscp is a C library written as a wrapper around the LSCP network
 protocol, thus to control linuxsampler.
 
-WWW:	ttp://www.linuxsampler.org/
+WWW:	http://www.linuxsampler.org/
