@@ -1,26 +1,26 @@
 bin/gbirthday
 share/applications/gbirthday.desktop
 %%DATADIR%%/gbirthday.py
-%%DATADIR%%/languages/de.lang
-%%DATADIR%%/languages/en.lang
-%%DATADIR%%/languages/es.lang
-%%DATADIR%%/languages/es_AR.lang
-%%DATADIR%%/languages/es_ES.lang
-%%DATADIR%%/languages/fr.lang
-%%DATADIR%%/languages/gl.lang
-%%DATADIR%%/languages/it.lang
-%%DATADIR%%/languages/ru.lang
-%%DATADIR%%/languages/pt.lang
-%%DATADIR%%/languages/sk.lang
-%%DATADIR%%/pics/birthday.png
-%%DATADIR%%/pics/birthdaylost.png
-%%DATADIR%%/pics/birthdaynext.png
-%%DATADIR%%/pics/birthdaytoday.png
-%%DATADIR%%/pics/gbirthday.png
-%%DATADIR%%/pics/gbirthday.svg
-%%DATADIR%%/pics/nobirthday.png
-%%DATADIR%%/pics/pie.svg
-@dirrmtry %%DATADIR%%/languages
-@dirrmtry %%DATADIR%%/pics
+share/pixmaps/gbirthday/birthday.png
+share/pixmaps/gbirthday/birthdaylost.png
+share/pixmaps/gbirthday/birthdaynext.png
+share/pixmaps/gbirthday/birthdaytoday.png
+share/pixmaps/gbirthday/gbirthday.png
+share/pixmaps/gbirthday/gbirthday.svg
+share/pixmaps/gbirthday/nobirthday.png
+share/pixmaps/gbirthday/pie.svg
+%%NLS%%share/locale/de/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/en/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gbirthday.mo
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry %%DATADIR%%
+@dirrmtry share/pixmaps/gbirthday
 @dirrmtry share/applications
