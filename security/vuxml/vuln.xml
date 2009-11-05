@@ -35,6 +35,47 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e8344a3-ca52-11de-8ee8-00215c6a37bb">
+    <topic>gd -- '_gdGetColors' remote buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>gd</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>php5-gd</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>php4-gd</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3546">
+	  <p>The _gdGetColors function in gd_gd.c in PHP 5.2.11 and
+	    5.3.0, and the GD Graphics Library 2.x, does not properly
+	    verify a certain colorsTotal structure member, which might
+	    allow remote attackers to conduct buffer overflow or buffer
+	    over-read attacks via a crafted GD file, a different
+	    vulnerability than CVE-2009-3293.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>36712</bid>
+      <cvename>CVE-2009-3546</cvename>
+      <url>http://secunia.com/advisories/37069</url>
+      <url>http://secunia.com/advisories/37080</url>
+    </references>
+    <dates>
+      <discovery>2009-10-15</discovery>
+      <entry>2009-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6693bad2-ca50-11de-8ee8-00215c6a37bb">
     <topic>typo3 -- multiple vulnerabilities in TYPO3 Core</topic>
     <affects>
