@@ -5,6 +5,7 @@ sbin/badblocks
 sbin/blkid
 sbin/debugfs
 sbin/dumpe2fs
+sbin/e2freefrag
 sbin/e2fsck
 sbin/e2image
 sbin/e2label

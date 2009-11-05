@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.41.8
+PORTVERSION=	1.41.9
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -35,7 +35,7 @@ MAN8=		badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
 		e2undo.8 mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
 		fsck.ext2.8 fsck.ext3.8 fsck.ext4.8 fsck.ext4dev.8 \
 		mkfs.ext2.8 mkfs.ext3.8 mkfs.ext4.8 mkfs.ext4dev.8 \
-		findfs.8 blkid.8 logsave.8 fsck_ext2fs.8
+		findfs.8 blkid.8 logsave.8 fsck_ext2fs.8 e2freefrag.8
 PORTDOCS=	COPYING RELEASE-NOTES
 
 post-extract:

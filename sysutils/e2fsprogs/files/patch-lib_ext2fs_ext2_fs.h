@@ -1,6 +1,6 @@
 --- a/lib/ext2fs/ext2_fs.h.orig	Sat Jun 30 16:36:37 2007
 +++ b/lib/ext2fs/ext2_fs.h	Sat Jun 30 16:36:43 2007
-@@ -418,7 +418,7 @@
+@@ -421,7 +421,7 @@
  
  #define i_size_high	i_dir_acl
  
