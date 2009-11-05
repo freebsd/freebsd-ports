@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpthread-stubs
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -20,4 +20,10 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+CONFIGURE_ENV+=	LDFLAGS=-lpthread
+.endif
+
+.include <bsd.port.post.mk>
