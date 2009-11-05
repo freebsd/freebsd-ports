@@ -37,7 +37,7 @@ BUILD_DEPENDS+=${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
 BUILD_DEPENDS+=${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size
 .endif
 .if defined(WITH_DATE_CALC)
-BUILD_DEPENDS+=${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+BUILD_DEPENDS+=p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 .if defined(WITH_POD_POM)
 BUILD_DEPENDS+=${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM
