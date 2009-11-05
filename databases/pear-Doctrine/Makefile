@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Doctrine
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pear.phpdoctrine.org/get/ \
 		LOCAL/glarkin
