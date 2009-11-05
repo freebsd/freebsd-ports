@@ -1362,6 +1362,7 @@
     SUBDIR += p5-Devel-STrace
     SUBDIR += p5-Devel-SimpleTrace
     SUBDIR += p5-Devel-Size
+    SUBDIR += p5-Devel-Size-Report
     SUBDIR += p5-Devel-SmallProf
     SUBDIR += p5-Devel-StackTrace
     SUBDIR += p5-Devel-StackTrace-AsHTML
