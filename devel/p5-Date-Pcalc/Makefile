@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Bit-Vector>=7.0:${PORTSDIR}/math/p5-Bit-Vector
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	</dev/null
 
 MAN3=		Date::Pcalc.3 \
 		Date::Pcalc::Object.3 \
