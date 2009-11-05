@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	hlstats
-PORTVERSION=	1.38
+PORTVERSION=	1.50
 CATEGORIES=	games www
-MASTER_SITES=	SF/${PORTNAME}/HLstats/${PORTVERSION}
+MASTER_SITES=	http://www.hlstats-community.org/files/42/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time stats parser for Half Life & its mods
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	yes
 USE_PERL5_RUN=	yes
