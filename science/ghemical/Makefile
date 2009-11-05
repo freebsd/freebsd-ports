@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ghemical
-PORTVERSION=	2.98
-PORTREVISION=	3
+PORTVERSION=	2.99.2
 CATEGORIES=	science
-MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20080731/ \
+MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20090911/ \
 		http://bioinformatics.org/ghemical/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +15,8 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Ghemical is a computational chemistry software package
 
 BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c \
-		openbabel:${PORTSDIR}/science/openbabel
+		openbabel:${PORTSDIR}/science/openbabel \
+		ld:${PORTSDIR}/devel/binutils
 RUN_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 LIB_DEPENDS=	mpqc:${PORTSDIR}/science/mpqc \
 		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea \
