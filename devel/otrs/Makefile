@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -31,7 +31,8 @@ BUILD_DEPENDS=	p5-CGI.pm>=3.33:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
-		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
+		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
+		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	MYSQL "MySQL database support" on \
@@ -64,7 +65,8 @@ DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
 CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* scripts/redhat* \
-		var/httpd/htdocs/yui
+		var/httpd/htdocs/yui/2.7.0/as-docs var/httpd/htdocs/yui/2.7.0/*.html \
+		var/httpd/htdocs/yui/2.7.0/releasenotes
 
 USE_APACHE=	1.3+
 USE_PERL5=	yes

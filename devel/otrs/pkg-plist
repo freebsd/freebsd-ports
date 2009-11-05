@@ -35,6 +35,7 @@ otrs/bin/mkStats.pl
 otrs/bin/opm.pl
 otrs/bin/otrs.ArticleStorageSwitch.pl
 otrs/bin/otrs.CacheDelete.pl
+otrs/bin/otrs.CleanTicketIndex.pl
 otrs/bin/otrs.CreateNewTranslationFile
 otrs/bin/otrs.RebuildConfig.pl
 otrs/bin/otrs.RebuildEscalationIndex.pl
@@ -42,8 +43,10 @@ otrs/bin/otrs.RebuildFulltextIndex.pl
 otrs/bin/otrs.addGroup
 otrs/bin/otrs.addQueue
 otrs/bin/otrs.addRole
+otrs/bin/otrs.addRole2Group
 otrs/bin/otrs.addUser
 otrs/bin/otrs.addUser2Group
+otrs/bin/otrs.addUser2Role
 otrs/bin/otrs.checkModules
 otrs/bin/otrs.cleanup
 otrs/bin/otrs.getConfig
@@ -634,7 +637,365 @@ otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fcktemplates.xml
 otrs/var/httpd/htdocs/js/otrs.js
 otrs/var/httpd/htdocs/js/prototype.js
 otrs/var/httpd/htdocs/js/yui-image-uploader.js
-otrs/var/packages/Support-1.0.92.opm
+otrs/var/httpd/htdocs/yui/2.7.0/assets/YUIexamples.js
+otrs/var/httpd/htdocs/yui/2.7.0/assets/bg_hd.gif
+otrs/var/httpd/htdocs/yui/2.7.0/assets/dpSyntaxHighlighter.css
+otrs/var/httpd/htdocs/yui/2.7.0/assets/dpSyntaxHighlighter.js
+otrs/var/httpd/htdocs/yui/2.7.0/assets/example-hd-bg.gif
+otrs/var/httpd/htdocs/yui/2.7.0/assets/title_h_bg.gif
+otrs/var/httpd/htdocs/yui/2.7.0/assets/yui-candy.jpg
+otrs/var/httpd/htdocs/yui/2.7.0/assets/yui.css
+otrs/var/httpd/htdocs/yui/2.7.0/assets/yui.gif
+otrs/var/httpd/htdocs/yui/2.7.0/assets/yuiDistribution.css
+otrs/var/httpd/htdocs/yui/2.7.0/assets/yuilib.jpg
+otrs/var/httpd/htdocs/yui/2.7.0/build/animation/animation-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/animation/animation-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/animation/animation.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/ajax-loader.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/asc.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/autocomplete.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/bg-h.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/bg-v.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/blankimage.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/button.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/calendar.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/carousel.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/colorpicker.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/container.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/datatable.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/desc.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/dt-arrow-dn.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/dt-arrow-up.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor-knob.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor-sprite-active.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor-sprite.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/header_background.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/hue_bg.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/imagecropper.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/layout.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/layout_sprite.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/loading.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/logger.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menu-button-arrow-disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menu-button-arrow.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menu.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menubaritem_submenuindicator.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menubaritem_submenuindicator_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_checkbox.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_checkbox_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_submenuindicator.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_submenuindicator_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/paginator.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/picker_mask.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/profilerviewer.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/resize.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/simpleeditor.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/slider.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-active.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-focus.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-hover.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/sprite.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/sprite.psd
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/tabview.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/treeview-loading.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/treeview-sprite.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/treeview.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/wait.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/yuitest.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/autocomplete-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins/sam/autocomplete-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins/sam/autocomplete.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/autocomplete-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/autocomplete-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/autocomplete.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/base/base-min.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/base/base.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/button-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/button-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/button.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/menu-button-arrow-disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/menu-button-arrow.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-active.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-focus.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-hover.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/button-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/button-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/button/button.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calendar-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calendar.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calgrad.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/callt.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calrt.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calx.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins/sam/calendar-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins/sam/calendar.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/calendar-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/calendar-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/calendar.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/ajax-loader.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/carousel-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam/ajax-loader.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam/carousel-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam/carousel.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/carousel-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/carousel-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/carousel.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/charts/assets/charts.swf
+otrs/var/httpd/htdocs/yui/2.7.0/build/charts/charts-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/charts/charts-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/charts/charts.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/colorpicker-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/hue_thumb.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/picker_mask.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/picker_thumb.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/colorpicker-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/colorpicker.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/hue_bg.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/picker_mask.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/colorpicker-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/colorpicker-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/colorpicker.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/connection/connection-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/connection/connection-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/connection/connection.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/alrt16_1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/blck16_1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/close12_1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/container-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/container.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/hlp16_1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/info16_1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins/sam/container-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins/sam/container.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/tip16_1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/warn16_1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/container-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/container-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/container.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/container_core-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/container_core-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/container/container_core.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/cookie/cookie-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/cookie/cookie-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/cookie/cookie.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/datasource/datasource-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/datasource/datasource-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/datasource/datasource.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/datatable-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/datatable.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/datatable-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/datatable.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/dt-arrow-dn.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/dt-arrow-up.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/datatable-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/datatable-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/datatable.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/dom/dom-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/dom/dom-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/dom/dom.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop/dragdrop-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop/dragdrop-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop/dragdrop.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/editor-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/simpleeditor-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/blankimage.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-knob.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-sprite-active.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-sprite.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/simpleeditor-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/simpleeditor.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/editor-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/editor-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/editor.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/simpleeditor-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/simpleeditor-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/editor/simpleeditor.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/element/element-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/element/element-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/element/element.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/event/event-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/event/event-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/event/event.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/fonts/fonts-min.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/fonts/fonts.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/get/get-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/get/get-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/get/get.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/grids/grids-min.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/grids/grids.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/history/assets/blank.html
+otrs/var/httpd/htdocs/yui/2.7.0/build/history/history-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/history/history-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/history/history.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/imagecropper-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins/sam/imagecropper-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins/sam/imagecropper.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/imagecropper-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/imagecropper-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/imagecropper.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader/imageloader-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader/imageloader-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader/imageloader.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/json/json-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/json/json-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/json/json.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/layout-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam/layout-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam/layout.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam/layout_sprite.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/layout/layout-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/layout/layout-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/layout/layout.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/logger-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/logger.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins/sam/logger-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins/sam/logger.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/logger/logger-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/logger/logger-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/logger/logger.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_down_arrow.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_down_arrow_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_up_arrow.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_up_arrow_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menubaritem_submenuindicator.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menubaritem_submenuindicator_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menubaritem_submenuindicator_selected.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_checkbox.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_checkbox_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_checkbox_selected.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_submenuindicator.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_submenuindicator_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_submenuindicator_selected.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menu-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menu.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menubaritem_submenuindicator.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menubaritem_submenuindicator_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_checkbox.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_checkbox_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_submenuindicator.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_submenuindicator_disabled.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/menu-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/menu-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/menu/menu.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/paginator-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins/sam/paginator-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins/sam/paginator.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/paginator-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/paginator-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/paginator.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/profiler/profiler-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/profiler/profiler-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/profiler/profiler.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/profilerviewer-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/asc.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/desc.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/header_background.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/profilerviewer-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/profilerviewer.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/wait.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/profilerviewer-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/profilerviewer-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/profilerviewer.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts/reset-fonts.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/reset/reset-min.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/reset/reset.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/resize-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam/layout_sprite.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam/resize-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam/resize.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/resize/resize-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/resize/resize-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/resize/resize.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/selector/selector-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/selector/selector-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/selector/selector.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-fader.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-h.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-v-e.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-v.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/left-thumb.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/right-thumb.png
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/bg-h.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/bg-v.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/slider-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/slider.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/slider-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/slider-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-bar.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-e.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-fader.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-n.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-s.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-w.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/slider-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/slider-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/slider/slider.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet/stylesheet-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet/stylesheet-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet/stylesheet.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/border_tabs.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/loading.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skin-sam.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins/sam/tabview-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins/sam/tabview.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/tabview-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/tabview.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/tabview-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/tabview-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/tabview.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/check0.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/check1.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/check2.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/loading.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/loading.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview-loading.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview-sprite.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-loading.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-sprite.gif
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/treeview-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/treeview-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/treeview.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/assets/uploader.swf
+otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader-experimental-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/utilities/utilities.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo-dom-event/yahoo-dom-event.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo/yahoo-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo/yahoo-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo/yahoo.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader-dom-event/yuiloader-dom-event.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader/yuiloader-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader/yuiloader-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader/yuiloader.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins/sam/yuitest-skin.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins/sam/yuitest.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/testlogger.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/yuitest-core.css
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-debug.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-min.js
+otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core.js
+otrs/var/httpd/htdocs/yui/License-YUI.txt
+otrs/var/packages/Support-1.0.93.opm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
@@ -799,6 +1160,7 @@ otrs/Kernel/Modules/CustomerZoom.pm
 otrs/Kernel/Modules/Installer.pm
 otrs/Kernel/Modules/PublicDefault.pm
 otrs/Kernel/Modules/PublicRepository.pm
+otrs/Kernel/Modules/SpellingInline.pm
 otrs/Kernel/Modules/Test.pm
 otrs/Kernel/Output/HTML/ArticleAttachmentDownload.pm
 otrs/Kernel/Output/HTML/ArticleAttachmentHTMLViewer.pm
@@ -1018,6 +1380,7 @@ otrs/Kernel/Output/HTML/Standard/PrintHeader.dtl
 otrs/Kernel/Output/HTML/Standard/PublicDefault.dtl
 otrs/Kernel/Output/HTML/Standard/Redirect.dtl
 otrs/Kernel/Output/HTML/Standard/RichTextEditor.dtl
+otrs/Kernel/Output/HTML/Standard/SpellingInline.dtl
 otrs/Kernel/Output/HTML/Standard/Test.dtl
 otrs/Kernel/Output/HTML/Standard/Warning.dtl
 otrs/Kernel/Output/HTML/TicketMenuGeneric.pm
@@ -1181,6 +1544,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/Kernel/System/XMLMaster
 @dirrm otrs/Kernel/System/Web/UploadCache
 @dirrm otrs/Kernel/System/Web
+@dirrm otrs/Kernel/System/VirtualFS
 @dirrm otrs/Kernel/System/User/Preferences
 @dirrm otrs/Kernel/System/User
 @dirrm otrs/Kernel/System/Ticket/Permission
@@ -1236,6 +1600,120 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrmtry otrs/var/log
 @dirrmtry otrs/var/stats
 @dirrm otrs/var/packages
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader-dom-event
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo-dom-event
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/utilities
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/uploader
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/selector
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts-grids
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/reset
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profiler
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/json
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/history/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/history
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/grids
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/get
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/fonts
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/event
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/element
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/dom
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datasource
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/cookie
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/connection
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/charts/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/charts
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/base
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/animation
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0/assets
+@dirrm otrs/var/httpd/htdocs/yui/2.7.0
+@dirrm otrs/var/httpd/htdocs/yui
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver
