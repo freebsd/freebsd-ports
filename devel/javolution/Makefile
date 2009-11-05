@@ -6,23 +6,32 @@
 #
 
 PORTNAME=	javolution
-PORTVERSION=	5.3.0
+PORTVERSION=	5.4.0
 CATEGORIES=	devel java
 MASTER_SITES=	http://javolution.org/target/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+DISTNAME=	${PORTNAME}-${PORTVERSION}-project
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java solution for real time and embedded systems
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+JAVA_VERSION=	1.4+
+JDKMVERSION=	${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
+USE_ANT=	yes
+ALL_TARGET=	${JDKMVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+
+post-patch:
+.if !defined(NOPORTDOCS)
+	@${REINPLACE_CMD} "s|doc, jar, _zip|doc, jar|" ${WRKSRC}/build.xml
+.else
+	@${REINPLACE_CMD} "s|doc, jar, _zip|jar|" ${WRKSRC}/build.xml
+.endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
