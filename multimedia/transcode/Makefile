@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
@@ -40,6 +40,7 @@ MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 
 OPTIONS=	OPTIMIZED_CFLAGS "Build with optimizations" off \
 		X11 "Build with X11 support" off \
+		MPEG2 "Enable libmpeg2 support" off \
 		BKTR "Enable bktr support" off \
 		POSTPROC "Enable libpostproc support" off \
 		FREETYPE "Enable FreeType2 support" off \
@@ -73,6 +74,13 @@ USE_XORG=	xv xaw xpm
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
+.endif
+
+.if defined(WITH_MPEG2)
+LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+CONFIGURE_ARGS+=	--with-libmpeg2-prefix=${LOCALBASE} --enable-libmpeg2
+.else
+CONFIGURE_ARGS+=	--disable-libmpeg2
 .endif
 
 .if defined(WITH_BKTR)
@@ -158,8 +166,8 @@ CONFIGURE_ARGS+=	--disable-libquicktime
 
 .if defined(WITH_LZO)
 LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
-CONFIGURE_ARGS+=	--enable-lzo --with-lzo-prefix=${LOCALBASE} \
-					--with-lzo-includes=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-lzo-prefix=${LOCALBASE} --with-lzo-includes=${LOCALBASE} \
+			--enable-lzo
 .else
 CONFIGURE_ARGS+=	--disable-lzo
 .endif
