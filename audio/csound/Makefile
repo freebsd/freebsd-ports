@@ -8,6 +8,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	5.11.1
+PORTREVISION=	1
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.11/:src \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.10/:manual
@@ -39,10 +40,6 @@ SUB_FILES=	custom.py pkg-message
 SUB_LIST+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
 		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 USE_LDCONFIG=	yes
-# Please note:
-# This option is not needed, if the specific port or new port
-# does not support double float.
-# This was only added to please audio/smasher.
 
 .include <bsd.port.pre.mk>
 
@@ -56,7 +53,7 @@ BROKEN=		Fails to link
 .endif
 
 post-patch: apply-slist
-	@${SETENV} FLTKBASE=${FLTKBASE} ${SH} ${SCRIPTDIR}/check-fltk-threads.sh
+	@${SETENV} LOCALBASE=${LOCALBASE} ${SH} ${SCRIPTDIR}/check-fltk-threads.sh
 	@${MV} ${WRKDIR}/custom.py ${WRKSRC}
 	@${REINPLACE_CMD} -e "s|'unsupported'|'linux'|; \
 		s|ENV = {'PATH' : os.environ\['PATH'\]}|ENV = os.environ|; \
