@@ -1,0 +1,30 @@
+bin/fceux
+%%PORTDOCS%%%%DOCSDIR%%/snes9x-lua.html
+%%PORTDOCS%%%%DOCSDIR%%/fcs.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/todo
+%%PORTDOCS%%%%DOCSDIR%%/Videolog.txt
+%%PORTDOCS%%%%DOCSDIR%%/fm2.txt
+%%PORTDOCS%%%%DOCSDIR%%/porting.txt
+%%PORTDOCS%%%%DOCSDIR%%/cheat.html
+%%PORTDOCS%%%%DOCSDIR%%/tech/readme.now
+%%PORTDOCS%%%%DOCSDIR%%/tech/exp/vrcvii.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/exp/smb2j.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/exp/tengen.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/exp/mmc5-e.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/exp/vrcvi.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/cpu/nessound.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/cpu/4017.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/cpu/nessound-4th.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/cpu/dmc.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/nsfspec.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/readme.sound
+%%PORTDOCS%%%%DOCSDIR%%/tech/ppu/loopy2.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/ppu/2c02 technical operation.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech/ppu/loopy1.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech/ppu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech/cpu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech/exp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

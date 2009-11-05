@@ -5,48 +5,40 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fceu
-PORTVERSION=	0.98.13
-PORTREVISION=	4
+PORTNAME=	fceux
+PORTVERSION=	2.1.1
 CATEGORIES=	emulators
-MASTER_SITES=	SF/${PORTNAME}ltra/Source%20Code/${PORTVERSION}-pre
-DISTNAME=	${PORTNAME}-${PORTVERSION}-pre.src
+MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION}%20src/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	chris@officialunix.com
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE_SCONS=	yes
 USE_SDL=	sdl
+USE_DOS2UNIX=	yes
+USE_LUA=	yes
 
 WRKSRC=		${WRKDIR}/fceu
 
-GNU_CONFIGURE=	yes
+BUILD_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
 
-MAN6=		fceu.6
-
-PLIST_FILES=	bin/fceu %%DOCSDIR%%/cheat.html %%DOCSDIR%%/faq.html \
-		%%DOCSDIR%%/fceultra.html %%DOCSDIR%%/fcm.txt \
-		%%DOCSDIR%%/fcs.txt %%DOCSDIR%%/protocol.txt
-PLIST_DIRS=	%%DOCSDIR%%
+MAN6=		fceux.6
 
 .include <bsd.port.pre.mk>
 
 post-extract:
-	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/src/drivers/common/vidblit.c
-
-pre-build:
-	@${CP} ${WRKSRC}/Documentation/fceu-sdl.6 ${WRKSRC}/Documentation/fceu.6
+       ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
+		${WRKSRC}/src/drivers/common/vidblit.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/fceu ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/Documentation/fceu.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKSRC}/src/fceux ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/documentation/fceux.6 ${PREFIX}/man/man6
+	${RM} ${WRKSRC}/documentation/fceux.6
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/cheat.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/faq.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/fceultra.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/fcm.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/fcs.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/protocol.txt ${DOCSDIR}
+	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>
