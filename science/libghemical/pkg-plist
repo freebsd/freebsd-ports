@@ -19,6 +19,7 @@ include/ghemical/geomopt.h
 include/ghemical/intcrd.h
 include/ghemical/libghemicaldefine.h
 include/ghemical/libghemical-features.h
+include/ghemical/local_i18n.h
 include/ghemical/mfinder.h
 include/ghemical/model.h
 include/ghemical/moldyn.h
@@ -36,7 +37,7 @@ include/ghemical/typerule.h
 include/ghemical/utility.h
 include/ghemical/v3d.h
 @dirrm include/ghemical
-lib/libghemical.so.4
+lib/libghemical.so.5
 lib/libghemical.so
 lib/libghemical.la
 lib/libghemical.a
@@ -68,6 +69,10 @@ share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm/tripos52/parameters5.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default/loopdip.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default/looptor.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default/nonbonded.txt
+share/locale/fi/LC_MESSAGES/libghemical.mo
+share/locale/mk/LC_MESSAGES/libghemical.mo
+share/locale/pt_BR/LC_MESSAGES/libghemical.mo
+share/locale/sq/LC_MESSAGES/libghemical.mo
 @dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default
 @dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf
 @dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm/tripos52
