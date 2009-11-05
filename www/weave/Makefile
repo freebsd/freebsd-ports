@@ -49,10 +49,4 @@ post-install:
 	${MKDIR} ${PREFIX}/lib/firefox3/extensions
 	${LN} -sf ${XPI_DIR} ${PREFIX}/lib/firefox3/extensions
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

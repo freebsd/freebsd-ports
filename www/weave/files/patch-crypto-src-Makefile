@@ -21,7 +21,7 @@
 +  cxx = c++
 +  so = so
 +  cppflags += -shared
-+  ldflags += -L$(PREFIX)/lib/firefox3 -L$(PREFIX)/lib
++  ldflags += -L$(PREFIX)/lib/firefox3 -L$(PREFIX)/lib -lc
 +else
  ifeq ($(sys), MINGW32_NT-6.1)
    os = WINNT
