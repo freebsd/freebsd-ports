@@ -15,8 +15,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		all_locales-${PORTVERSION}-20060219${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	simond@irrelevant.org
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A webmail system which accesses mail over IMAP (Development version)
+
+DEPRECATED=	use mail/squirrelmail
+EXPIRATION_DATE=        2010-01-06
 
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
