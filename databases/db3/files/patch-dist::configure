@@ -9,6 +9,15 @@
  INSTALLER="\$(LIBTOOL) --mode=install cp"
  
  # Configure for shared libraries, static libraries, or both.  If both are
+@@ -8728,7 +8728,7 @@
+ 	done
+ 	JTOPDIR=`echo "$JAVACABS" | sed -e 's://*:/:g' -e 's:/[^/]*$::'`
+ 	case "$host_os" in
+-		darwin*)	JTOPDIR=`echo "$JTOPDIR" | sed -e s:/[^/]*$::'`
++		darwin*)	JTOPDIR=`echo "$JTOPDIR" | sed -e 's:/[^/]*$::'`
+ 				JNIHEADERDIR="$JTOPDIR/Headers";;
+ 		*)		JNIHEADERDIR="$JTOPDIR/include";;
+ 	esac
 @@ -9100,7 +9100,7 @@
  
  # Optional utilities.
