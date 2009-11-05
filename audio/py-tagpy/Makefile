@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tagpy
-PORTVERSION=	0.94.5
-#PORTREVISION=	0
+PORTVERSION=	0.94.7
+PORTREVISION=	0
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -20,6 +20,7 @@ LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		tag.6:${PORTSDIR}/audio/taglib
 
 HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--taglib-inc-dir="${LOCALBASE}/include/taglib" \
 		--taglib-lib-dir="${LOCALBASE}/lib" \
 		--boost-inc-dir="${PYTHON_INCLUDEDIR},${LOCALBASE}/include" \
