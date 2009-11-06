@@ -35,6 +35,36 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="68bda678-caab-11de-a97e-be89dfd1042e">
+    <topic>Denial of service via an incomplete SGML numeric character</topic>
+    <affects>
+      <package>
+	<name>HTML-Parser</name>
+	<range><lt>3.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3627">
+	  <p>The decode_entities function in util.c in HTML-Parser before
+	     3.63 allows context-dependent attackers to cause a denial of service
+	     (infinite loop) via an incomplete SGML numeric character reference,
+	     which triggers generation of an invalid UTF-8 character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>36807</bid>
+      <cvename>CVE-2009-3627</cvename>
+      <url>http://secunia.com/advisories/37155</url>
+    </references>
+    <dates>
+      <discovery>2009-10-23</discovery>
+      <entry>2009-11-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e8344a3-ca52-11de-8ee8-00215c6a37bb">
     <topic>gd -- '_gdGetColors' remote buffer overflow vulnerability</topic>
     <affects>
