@@ -14,4 +14,6 @@ CONFLICTS=	unzip-[0-9]* ru-unzip-[0-9]* zh-unzip-[0-9]*
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 MASTERDIR=	${.CURDIR}/../../archivers/unzip
 
+BROKEN=		does not patch
+
 .include "${MASTERDIR}/Makefile"
