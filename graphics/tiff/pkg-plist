@@ -162,6 +162,8 @@ lib/libtiffxx.so.4
 %%PORTDOCS%%%%DOCSDIR%%/v3.8.1.html
 %%PORTDOCS%%%%DOCSDIR%%/v3.8.2.html
 %%PORTDOCS%%%%DOCSDIR%%/v3.9.0beta.html
+%%PORTDOCS%%%%DOCSDIR%%/v3.9.1.html
+%%PORTDOCS%%%%DOCSDIR%%/v3.9.2.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
