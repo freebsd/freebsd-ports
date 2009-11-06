@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tmux
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,23 +17,30 @@ HAS_CONFIGURE=	yes
 
 MAN1=		tmux.1
 
+PLIST_FILES=	bin/tmux
+
+PORTDOCS=	CHANGES FAQ NOTES
+PORTEXAMPLES=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^#define HAVE_TREE_H/d' \
+		${WRKSRC}/configure
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tmux ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tmux.1 ${MANPREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/tmux ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/tmux.1 ${MANPREFIX}/man/man1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in CHANGES FAQ NOTES
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-.for i in h-boetes.conf n-marriott.sh n-marriott.conf screen-keys.conf tmux.vim
-	${INSTALL_DATA} ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
-.endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
