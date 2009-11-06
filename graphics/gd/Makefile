@@ -7,7 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.35
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.libgd.org/releases/
