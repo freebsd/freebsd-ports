@@ -1,5 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/AnyEvent/.packlist
 %%SITE_PERL%%/Plack/Server/AnyEvent.pm
+%%SITE_PERL%%/Plack/Server/AnyEvent/Writer.pm
+@dirrm %%SITE_PERL%%/Plack/Server/AnyEvent
 @dirrmtry %%SITE_PERL%%/Plack/Server
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/AnyEvent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server
