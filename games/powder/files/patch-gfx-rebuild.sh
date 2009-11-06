@@ -1,9 +1,9 @@
---- gfx/rebuild.sh.orig	2009-02-06 04:42:17.000000000 +0300
-+++ gfx/rebuild.sh	2009-06-08 00:18:29.000000000 +0400
+--- gfx/rebuild.sh.orig	2009-09-24 06:33:55.000000000 +0400
++++ gfx/rebuild.sh	2009-11-05 18:35:53.000000000 +0300
 @@ -3,10 +3,10 @@
  echo Rebuilding Graphics Files
  
- for tileset in classic adambolt nethack ascii ibsongrey akoimeexx; do
+ for tileset in classic distorted adambolt nethack ascii ibsongrey akoimeexx lomaka ; do
 -	pushd $tileset
 +	cd $tileset
  	echo Building tiles...
