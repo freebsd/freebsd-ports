@@ -45,7 +45,6 @@ lib/virtualbox/VBoxXPCOMIPCD
 lib/virtualbox/VBoxDD2GC.gc
 lib/virtualbox/VBoxDDGC.gc
 lib/virtualbox/VMMGC.gc
-lib/virtualbox/tstMicroGC.gc
 lib/virtualbox/VBoxDD2R0.r0
 lib/virtualbox/VBoxDDR0.r0
 %%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions.iso
