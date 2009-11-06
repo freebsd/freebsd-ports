@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--with-pam
 .endif
 
 .if defined(WITH_LIBSPF)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf.a:mail/libspf
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf.a:${PORTSDIR}/mail/libspf
 CONFIGURE_ARGS+=	--with-libspf ${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
