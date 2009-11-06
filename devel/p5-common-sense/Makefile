@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	common-sense
-PORTVERSION=	0.04
+PORTVERSION=	2.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
@@ -17,6 +17,6 @@ COMMENT=	Perl common defaults with lower memory usage
 
 PERL_CONFIGURE=	yes
 
-MAN3=	common::sense.3
+MAN3=		common::sense.3
 
 .include <bsd.port.mk>
