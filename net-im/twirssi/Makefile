@@ -19,6 +19,8 @@ RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi \
 		${SITE_PERL}Net/Twitter.pm:${PORTSDIR}/net/p5-Net-Twitter \
 		${SITE_PERL}WWW/Shorten.pm:${PORTSDIR}/www/p5-WWW-Shorten
 
+SUB_FILES=	pkg-message
+
 NO_BUILD=	yes
 PLIST_FILES=	%%DATADIR%%/${PORTNAME}.pl
 PLIST_DIRS=	%%DATADIR%%
@@ -27,5 +29,6 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_SCRIPT} -v ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl \
 		${DATADIR}/${PORTNAME}.pl
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
