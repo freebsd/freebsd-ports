@@ -8,9 +8,10 @@
 PORTNAME=	unzip
 PORTVERSION=	6.0
 CATEGORIES?=	archivers
-MASTER_SITES=	SF/infozip/UnZip%206.x%20(latest)/UnZip%20${PORTVERSION} \
-		SF/infozip/UnZip%205.x%20and%20earlier/5.51:unreduce
+MASTER_SITES=	SF/infozip/UnZip%206.x%20%28latest%29/UnZip%20${PORTVERSION}/:main \
+	     	SF/infozip/UnZip%205.x%20and%20earlier/5.51/:unreduce
 DISTNAME=	${PORTNAME}60
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT?=	List, test and extract compressed files in a ZIP archive
@@ -30,8 +31,8 @@ LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR \
 		-DLARGE_FILE_SUPPORT
 
 .if defined(WITH_UNZIP_UNREDUCE)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip:unreduce
-EXTRACT_ONLY=	${PORTNAME}60.tar.gz
+DISTFILES+=	unreduce_full.zip:unreduce
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 LOCAL_UNZIP+=	-DUSE_SMITH_CODE
 .endif
 
