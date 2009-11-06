@@ -10236,6 +10236,7 @@ p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
+p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
@@ -10301,6 +10302,7 @@ p5-App-Control                  ports/devel/p5-App-Control
 p5-App-Info                     ports/devel/p5-App-Info
 p5-App-Nopaste                  ports/www/p5-App-Nopaste
 p5-App-Options                  ports/devel/p5-App-Options
+p5-App-SVN-Bisect               ports/devel/p5-App-SVN-Bisect
 p5-App-Trace                    ports/devel/p5-App-Trace
 p5-AppConfig                    ports/devel/p5-AppConfig
 p5-AppConfig-Std                ports/devel/p5-AppConfig-Std
@@ -11255,6 +11257,7 @@ p5-Devel-RingBuffer             ports/devel/p5-Devel-RingBuffer
 p5-Devel-STrace                 ports/devel/p5-Devel-STrace
 p5-Devel-SimpleTrace            ports/devel/p5-Devel-SimpleTrace
 p5-Devel-Size                   ports/devel/p5-Devel-Size
+p5-Devel-Size-Report            ports/devel/p5-Devel-Size-Report
 p5-Devel-SmallProf              ports/devel/p5-Devel-SmallProf
 p5-Devel-StackTrace             ports/devel/p5-Devel-StackTrace
 p5-Devel-StackTrace-AsHTML      ports/devel/p5-Devel-StackTrace-AsHTML
@@ -13827,6 +13830,7 @@ p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
+p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
@@ -13892,6 +13896,7 @@ p5-app-control                  ports/devel/p5-App-Control
 p5-app-info                     ports/devel/p5-App-Info
 p5-app-nopaste                  ports/www/p5-App-Nopaste
 p5-app-options                  ports/devel/p5-App-Options
+p5-app-svn-bisect               ports/devel/p5-App-SVN-Bisect
 p5-app-trace                    ports/devel/p5-App-Trace
 p5-appconfig                    ports/devel/p5-AppConfig
 p5-appconfig-std                ports/devel/p5-AppConfig-Std
@@ -14857,6 +14862,7 @@ p5-devel-required               ports/devel/p5-Devel-Required
 p5-devel-ringbuffer             ports/devel/p5-Devel-RingBuffer
 p5-devel-simpletrace            ports/devel/p5-Devel-SimpleTrace
 p5-devel-size                   ports/devel/p5-Devel-Size
+p5-devel-size-report            ports/devel/p5-Devel-Size-Report
 p5-devel-smallprof              ports/devel/p5-Devel-SmallProf
 p5-devel-stacktrace             ports/devel/p5-Devel-StackTrace
 p5-devel-stacktrace-ashtml      ports/devel/p5-Devel-StackTrace-AsHTML
