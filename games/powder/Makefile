@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powder
-PORTVERSION=	111
+PORTVERSION=	112
 CATEGORIES=	games
 MASTER_SITES=	http://www.zincland.com/powder/release/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,6 +17,7 @@ COMMENT=	Graphical dungeon crawling game
 
 USE_GMAKE=	yes
 USE_SDL=	sdl
+MAKE_JOBS_UNSAFE=yes
 
 BUILD_WRKSRC=	${WRKSRC}/port/linux
 
