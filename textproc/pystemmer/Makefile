@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	pystemmer
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://snowball.tartarus.org/wrappers/
+MASTER_SITES=	CHEESESHOP \
+		http://snowball.tartarus.org/wrappers/
 DISTNAME=	PyStemmer-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Snowball Stemming Algorithms for Information Retrieval
 
 USE_PYTHON=	yes
