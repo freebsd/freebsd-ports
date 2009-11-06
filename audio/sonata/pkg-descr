@@ -3,19 +3,21 @@ It aims to be efficient (no toolbar, main menu, or statusbar), user-friendly,
 and clean.
 
 FEATURES:
-
-	+ Expanded and collapsed views
-	+ Automatic remote or local album art
+	+ Expanded and collapsed views, fullscreen album art mode
+	+ Automatic remote and local album art
+	+ Library browsing by folders, or by genre/artist/album
 	+ User-configurable columns
 	+ Automatic fetching of lyrics
 	+ Playlist and stream support
 	+ Support for editing song tags
+	+ Drag-and-drop to copy files
 	+ Popup notification
-	+ Library searching and playlist filtering
+	+ Library and playlist searching, filter as you type
 	+ Audioscrobbler (last.fm) 1.2 support
 	+ Multiple MPD profiles
 	+ Keyboard friendly
 	+ Support for multimedia keys
 	+ Commandline control
+	+ Available in 24 languages
 
 WWW:	http://sonata.berlios.de/index.html
