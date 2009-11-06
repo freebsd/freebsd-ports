@@ -50,7 +50,7 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 #LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack_r -lptcblas ${PTHREAD_LIBS}
 
 #lapack++ forces to use atlas when detected, so we should disable here.
-CONFIGURE_ARGS+=	--with-blas="${BLAS_LIB}" --with-lapack="${LAPACK_LIB}" --disable-atlas
+CONFIGURE_ARGS+=	--with-blas="${BLAS_LIB}" --with-lapack="${LAPACK_LIB}" --disable-atlas --enable-static
 
 do-install:
 	@(cd ${WRKSRC} ; ${GMAKE} install)
