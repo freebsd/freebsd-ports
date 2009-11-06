@@ -17,6 +17,8 @@ COMMENT=	A gcc4 frontend for LLVM
 
 BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 USE_BISON=	build
 USE_GCC=	4.2+
