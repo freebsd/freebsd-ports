@@ -13,6 +13,7 @@
 
 PORTNAME=	bind95
 PORTVERSION=	9.5.2
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
