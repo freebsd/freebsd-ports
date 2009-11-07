@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	images
-PORTVERSION=	2.2
-PORTREVISION=	6
+PORTVERSION=	2.12
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
@@ -48,7 +47,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 DOCSDIR=	${PREFIX}/share/doc/ocaml-images
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Announce Announce-2.2 CHANGES INSTALL LICENSE doc
+PORTDOCS=	Announce CHANGES INSTALL LICENSE doc
 .endif
 
 post-install:
@@ -57,7 +56,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${FIND} doc | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${INSTALL_DATA} ${WRKSRC}/Announce ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/Announce-2.2 ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
