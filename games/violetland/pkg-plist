@@ -2,6 +2,8 @@ bin/violetland
 %%DATADIR%%/README_EN.TXT
 %%DATADIR%%/README_RU.TXT
 %%DATADIR%%/fonts/harabara.ttf
+%%DATADIR%%/icon-dark.png
+%%DATADIR%%/icon-light.png
 %%DATADIR%%/images/ak.png
 %%DATADIR%%/images/anima/bleed/bleed-0.png
 %%DATADIR%%/images/anima/bleed/bleed-1.png
@@ -94,11 +96,13 @@ bin/violetland
 %%DATADIR%%/images/blood_0.png
 %%DATADIR%%/images/blood_1.png
 %%DATADIR%%/images/blood_2.png
+%%DATADIR%%/images/laser.png
 %%DATADIR%%/images/medikit.png
-%%DATADIR%%/images/pistol_bullet.png
 %%DATADIR%%/images/player_top.png
 %%DATADIR%%/images/pm.png
 %%DATADIR%%/images/remington.png
+%%DATADIR%%/images/splash_0.png
+%%DATADIR%%/images/splash_1.png
 %%DATADIR%%/images/terrain/0/0.png
 %%DATADIR%%/images/terrain/0/1.png
 %%DATADIR%%/images/terrain/1/0.png
@@ -113,9 +117,13 @@ bin/violetland
 %%DATADIR%%/images/terrain/base_2.png
 %%DATADIR%%/images/terrain/base_3.png
 %%DATADIR%%/images/uzi.png
+%%DATADIR%%/music/dzaibatsu.ogg
+%%DATADIR%%/music/morning.ogg
+%%DATADIR%%/music/space-crusader.ogg
 %%DATADIR%%/sounds/ak-47_reload.ogg
 %%DATADIR%%/sounds/ak-47_shot.ogg
-%%DATADIR%%/sounds/ambient_zombie.ogg
+%%DATADIR%%/sounds/laser_reload.ogg
+%%DATADIR%%/sounds/laser_shot.ogg
 %%DATADIR%%/sounds/player_hit_0.ogg
 %%DATADIR%%/sounds/player_hit_1.ogg
 %%DATADIR%%/sounds/player_hit_2.ogg
@@ -130,6 +138,7 @@ bin/violetland
 %%DATADIR%%/sounds/zombie_hit_2.ogg
 %%DATADIR%%/weapons
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/images/terrain/3
 @dirrm %%DATADIR%%/images/terrain/2
 @dirrm %%DATADIR%%/images/terrain/1
