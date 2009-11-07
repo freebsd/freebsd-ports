@@ -12868,6 +12868,7 @@ p5-Roman                        ports/math/p5-Roman
 p5-Rose-DB                      ports/databases/p5-Rose-DB
 p5-Rose-DB-Object               ports/databases/p5-Rose-DB-Object
 p5-Rose-DBx-Object-MoreHelpers  ports/databases/p5-Rose-DBx-Object-MoreHelpers
+p5-Rose-DBx-Object-Renderer     ports/databases/p5-Rose-DBx-Object-Renderer
 p5-Rose-DateTime                ports/devel/p5-Rose-DateTime
 p5-Rose-Object                  ports/devel/p5-Rose-Object
 p5-RunApp                       ports/devel/p5-RunApp
@@ -16514,6 +16515,7 @@ p5-rose-datetime                ports/devel/p5-Rose-DateTime
 p5-rose-db                      ports/databases/p5-Rose-DB
 p5-rose-db-object               ports/databases/p5-Rose-DB-Object
 p5-rose-dbx-object-morehelpers  ports/databases/p5-Rose-DBx-Object-MoreHelpers
+p5-rose-dbx-object-renderer     ports/databases/p5-Rose-DBx-Object-Renderer
 p5-rose-object                  ports/devel/p5-Rose-Object
 p5-rpc-simple                   ports/net/p5-RPC-Simple
 p5-rpc-xml                      ports/net/p5-RPC-XML
@@ -23042,6 +23044,7 @@ twiki-wysiwygplugin             ports/www/twiki-WysiwygPlugin
 twill                           ports/www/twill
 twin                            ports/emulators/twin
 twinkle                         ports/net/twinkle
+twirssi                         ports/net-im/twirssi
 twitch                          ports/games/twitch
 twitux                          ports/net/twitux
 twm                             ports/x11-wm/twm
