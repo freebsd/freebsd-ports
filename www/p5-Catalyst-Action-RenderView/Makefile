@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	Catalyst-Action-RenderView
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MS/MSTROUT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sensible default end action for Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.70:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-HTTP-Request-AsCGI>=0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI
 
 PERL_CONFIGURE=	5.8.0+
 
