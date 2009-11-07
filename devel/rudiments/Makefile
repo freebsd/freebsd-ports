@@ -31,7 +31,7 @@ post-patch:
 		${WRKSRC}/doc/programming/insert.pl
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 .for dirs in ${ROOTDIRS}
 	@${MKDIR} ${DOCSDIR}/${dirs}
 .endfor
@@ -45,6 +45,10 @@ post-install:
 		${DOCSDIR}/programming
 	@${INSTALL_DATA} ${WRKSRC}/doc/programming/parts/*.html \
 		${DOCSDIR}/programming/parts
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html \
+		${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.gif \
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
