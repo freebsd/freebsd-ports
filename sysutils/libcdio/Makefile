@@ -6,12 +6,12 @@
 
 PORTNAME=	libcdio
 PORTVERSION=	0.78.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
 LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
@@ -36,6 +36,7 @@ OPTIONS=	PARANOIA "Support for accessing audio via CD Paranoia" on
 .ifdef(WITH_PARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 PLIST_SUB+=	PARANOIA=""
+MANLANG=	"" ja
 MAN1=	cd-paranoia.1
 .else
 CONFIGURE_ARGS+=	--without-cd-paranoia
@@ -43,10 +44,13 @@ PLIST_SUB+=	PARANOIA="@comment "
 .endif
 
 post-patch:
-.ifndef(WITH_PARANOIA)
+.ifdef(WITH_PARANOIA)
+	${REINPLACE_CMD} -e 's|/jp/man1|/ja/man1|' \
+		 ${WRKSRC}/src/cd-paranoia/doc/jp/Makefile.in
+.else
 	${REINPLACE_CMD} -e 's|libcdio_paranoia.pc||; s|libcdio_cdda.pc||' \
 		 ${WRKSRC}/Makefile.in
 .endif
-	${REINPLACE_CMD} -e "s,freebsd5\.\*,freebsd5\.\*|freebsd6\.\*|freebsd7\.\*," ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,freebsd5\.\*,freebsd*," ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
