@@ -1,0 +1,38 @@
+--- Makefile.orig	2009-09-02 22:21:01.000000000 +0900
++++ Makefile	2009-10-27 22:05:49.000000000 +0900
+@@ -1,18 +1,18 @@
+-CC = gcc
+-CFLAGS = -Wall
++CC ?= gcc
++CFLAGS += -Wall
+ DEBUG = -g
+-LDFLAGS = -lm
+-OPT = -O3
+-MAXKMERLENGTH=31
+-CATEGORIES=2
++#LDFLAGS = -lm
++#OPT = -O3
++MAXKMERLENGTH?=31
++CATEGORIES?=2
+ DEF = -D MAXKMERLENGTH=$(MAXKMERLENGTH) -D CATEGORIES=$(CATEGORIES)
+ 
+ Z_LIB_DIR=third-party/zlib-1.2.3
+ Z_LIB_FILES=$(Z_LIB_DIR)/*.o
+ 
+ # Mac OS users: uncomment the following lines
+-# Z_LIB_FILES=
+-# LDFLAGS = -lm -lz
++Z_LIB_FILES=
++LDFLAGS += -lm -lz
+ # CFLAGS = -Wall -m64
+ 
+ # Sparc/Solaris users: uncomment the following line
+@@ -32,7 +32,7 @@
+ 	-rm obj/*.o obj/dbg/*.o 
+ 
+ zlib : 
+-	cd $(Z_LIB_DIR); ./configure; make; rm minigzip.o; rm example.o
++#	cd $(Z_LIB_DIR); ./configure; make; rm minigzip.o; rm example.o
+ 
+ velveth : $(OBJ) 
+ 	$(CC) $(CFLAGS) $(OPT) $(LDFLAGS) -o velveth obj/tightString.o obj/run.o obj/recycleBin.o obj/splay.o obj/splayTable.o obj/readSet.o obj/crc.o obj/utility.o obj/kmer.o $(Z_LIB_FILES)

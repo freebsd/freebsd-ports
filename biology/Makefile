@@ -94,6 +94,7 @@
     SUBDIR += tinker
     SUBDIR += treepuzzle
     SUBDIR += treeviewx
+    SUBDIR += velvet
     SUBDIR += wise
     SUBDIR += xdrawchem
     SUBDIR += xmolwt

@@ -1,0 +1,10 @@
+Velvet is a de novo genomic assembler specially designed for short read
+sequencing technologies, such as Solexa or 454, developed by Daniel Zerbino
+and Ewan Birney at the European Bioinformatics Institute (EMBL-EBI).
+
+Citation:
+
+Velvet: algorithms for de novo short read assembly using de Bruijn graphs.
+D.R. Zerbino and E. Birney. Genome Research 18: 821-829 (2008)
+
+WWW: http://www.ebi.ac.uk/~zerbino/velvet/
