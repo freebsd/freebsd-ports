@@ -7,7 +7,7 @@
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
@@ -23,6 +23,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-d
 		nsgmls:${PORTSDIR}/textproc/jade \
 		sgmlspl:${PORTSDIR}/textproc/p5-SGMLSpm \
 		lynx:${PORTSDIR}/www/lynx
+
+CONFLICTS=	docbook2X-*
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
