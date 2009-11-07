@@ -667,6 +667,8 @@ include/Inventor/nodes/SoGroup.h
 include/Inventor/nodes/SoImage.h
 include/Inventor/nodes/SoIndexedFaceSet.h
 include/Inventor/nodes/SoIndexedLineSet.h
+include/Inventor/nodes/SoIndexedMarkerSet.h
+include/Inventor/nodes/SoIndexedPointSet.h
 include/Inventor/nodes/SoIndexedNurbsCurve.h
 include/Inventor/nodes/SoIndexedNurbsSurface.h
 include/Inventor/nodes/SoIndexedShape.h
@@ -823,7 +825,7 @@ include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
 lib/libCoin.la
 lib/libCoin.so
-lib/libCoin.so.60
+lib/libCoin.so.61
 libdata/pkgconfig/Coin.pc
 %%DATADIR%%/conf/coin-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv
