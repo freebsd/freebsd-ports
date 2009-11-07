@@ -234,6 +234,7 @@
     SUBDIR += free-sa-devel
     SUBDIR += freeway
     SUBDIR += fswiki
+    SUBDIR += ftasv
     SUBDIR += g-cows
     SUBDIR += g-gcl
     SUBDIR += gaeo
