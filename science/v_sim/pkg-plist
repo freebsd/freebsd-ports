@@ -7,8 +7,8 @@ lib/libv_sim.so.1
 %%BABEL%%lib/v_sim/plug-ins/libobloader.la
 %%BABEL%%lib/v_sim/plug-ins/libobloader.so
 %%BABEL%%lib/v_sim/plug-ins/libobloader.so.1
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.en
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.fr
+%%DOCSDIR%%/ChangeLog.en
+%%DOCSDIR%%/ChangeLog.fr
 %%PORTDOCS%%%%DOCSDIR%%/authors
 %%PORTDOCS%%%%DOCSDIR%%/licence.en.txt
 %%PORTDOCS%%%%DOCSDIR%%/licence.fr.txt
@@ -204,6 +204,6 @@ share/pixmaps/v_sim.xpm
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm lib/v_sim/plug-ins
 @dirrm lib/v_sim
