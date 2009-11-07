@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	warzone2100
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.4
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Warzone%202100%20${PORTVERSION} \
-		http://download.gna.org/warzone/releases/${PORTVERSION:C/^([0-9]+\.[0-9]+)\..*$/\1/}/
-
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Warzone%202100%20${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
@@ -28,10 +26,10 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		GLC.0:${PORTSDIR}/graphics/quesoglc \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		popt.0:${PORTSDIR}/devel/popt
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	net sdl

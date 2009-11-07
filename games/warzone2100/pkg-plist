@@ -6,6 +6,7 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/de/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/es/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/et_EE/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/fy/LC_MESSAGES/warzone2100.mo
@@ -26,6 +27,7 @@ share/icons/warzone2100.png
 %%DATADIR%%/base.wz
 %%DATADIR%%/mods/multiplay/aivolution.wz
 %%DATADIR%%/mods/multiplay/ntw.wz
+%%DATADIR%%/mods/multiplay/original.wz
 %%DATADIR%%/mp.wz
 %%DATADIR%%/music/menu.ogg
 %%DATADIR%%/music/music.wpl
@@ -39,5 +41,7 @@ share/icons/warzone2100.png
 %%NLS%%@dirrmtry share/locale/la
 %%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fy
+%%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et_EE
 @dirrmtry share/applications
 @dirrmtry share/icons
