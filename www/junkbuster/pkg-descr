@@ -8,5 +8,8 @@ which support Accept-Encoding: gzip (e.g. Netscape 4.7, Internet Explorer 5,
 Lynx 2.8.3) to save downstream modem/network bandwidth.  It uses the zlib
 compression library to perform on-the-fly compression of HTML documents.
 
+Please note that this software does not support IPv6. See www/privoxy
+for a worth followup of this software.
+
 WWW: http://www.junkbusters.com/ht/en/ijb.html
      http://f2.org/products/ijb-zlib/
