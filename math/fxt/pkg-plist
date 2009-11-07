@@ -353,6 +353,7 @@ include/fxt/ntt-all.h
 include/fxt/ntt/ntt.h
 include/fxt/perm-all.h
 include/fxt/perm/even2lower.h
+include/fxt/perm/fact2perm-swp-apply.h
 include/fxt/perm/graypermute.h
 include/fxt/perm/grayrevpermute.h
 include/fxt/perm/haarpermute.h
@@ -366,11 +367,13 @@ include/fxt/perm/perminvert.h
 include/fxt/perm/permq.h
 include/fxt/perm/permrand.h
 include/fxt/perm/permrand-connected.h
+include/fxt/perm/permrand-derange3.h
 include/fxt/perm/permrand-ord.h
 include/fxt/perm/permrand-pref.h
 include/fxt/perm/permrand-2cycles.h
 include/fxt/perm/permrand-cyclic.h
 include/fxt/perm/permrand-inv-mod-m.h
+include/fxt/perm/permrand-ncm2.h
 include/fxt/perm/permrand-parity.h
 include/fxt/perm/permrand-cycle-type.h
 include/fxt/perm/permrand-derange.h
