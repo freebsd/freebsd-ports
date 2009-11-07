@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	v_sim
-PORTVERSION=	3.4.4
-PORTREVISION=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -16,6 +15,7 @@ COMMENT=	Visualization of atomic structures
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
 USE_BZIP2=	yes
+USE_FORTRAN=	yes
 USE_GNOME=	gtk20
 USE_GL=		yes
 USE_GMAKE=	yes
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 MAN1=		v_sim.1
