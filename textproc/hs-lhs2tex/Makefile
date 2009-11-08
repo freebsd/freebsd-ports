@@ -31,8 +31,6 @@ PORTDOCS=	*
 DATADIR=${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 PORTDATA=	*
 
-BROKEN=	Does not compile with GHC 6.10
-
 .include <bsd.port.pre.mk>
 
 INSTALL_TARGET=	install
