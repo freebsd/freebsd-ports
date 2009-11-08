@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	1.0.0rc1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Graphical Adventure Game Virtual Machine
@@ -30,9 +30,10 @@ CONFIGURE_ENV=	CXX="${CXX}"
 
 OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
 		MAD "Enable mad (MP3) support" on \
-		MPEG2 "Enable MPEG2 support (implies VORBIS)" off \
+		MPEG2 "Enable MPEG2 support (implies VORBIS)" on \
 		FLAC "Enable FLAC support" off \
-		FLUIDSYNTH "Enable FluidSynth MIDI synthesizer" off
+		FLUIDSYNTH "Enable FluidSynth MIDI synthesizer" off \
+		DPLUGINS "Enable support for dynamic plugins" off
 
 MAN6=		scummvm.6
 
@@ -64,9 +65,7 @@ CONFIGURE_ARGS+=--disable-mad
 .if defined(WITH_MPEG2)
 WITH_VORBIS=	yes
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
-CONFIGURE_ARGS+=--with-mpeg2-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-mpeg2
+CONFIGURE_ARGS+=--with-mpeg2-prefix=${LOCALBASE} --enable-mpeg2
 .endif
 
 .if defined(WITH_FLAC)
@@ -81,6 +80,10 @@ LIB_DEPENDS+=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-fluidsynth
+.endif
+
+.if defined(WITH_DPLUGINS)
+CONFIGURE_ARGS+=	--enable-plugins
 .endif
 
 post-patch:
