@@ -10,7 +10,8 @@ from signal import *
 # List of filesystems to backup
 backuplist=["a", "a/nfs", "a/src", "a/local", "a/ports", "a/portbuild",
             "a/portbuild/amd64", "a/portbuild/i386",
-            "a/portbuild/sparc64", "a/portbuild/ia64"]
+            "a/portbuild/ia64", "a/portbuild/powerprc",
+            "a/portbuild/sparc64"]
 
 # Directory to store backups
 backupdir="/dumpster/pointyhat/backup"
@@ -52,7 +53,12 @@ for fs in backuplist:
     dir = backupdir + "/" + fs
     mkdirp(dir)
 
-    snaplist = [snap[0] for snap in zfs.getallsnaps(fs) if snap[0].isdigit()]
+    snaplist = None
+    try:
+        snaplist = [snap[0] for snap in zfs.getallsnaps(fs) if snap[0].isdigit()]
+    except zfs.NoSuchFS:
+        print "no such fs %s, skipping" % fs
+        continue
 
     dofull = 0
 
