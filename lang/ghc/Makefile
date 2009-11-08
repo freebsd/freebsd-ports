@@ -181,7 +181,7 @@ MAN1=		ghc.1
 
 SLAVES_PREFIX=		${WRKDIR}/slaves_prefix
 SLAVES_WRKDIRPREFIX=	${WRKDIR}/slaves_wrkdirprefix
-SLAVES_MAKE_ARGS=	-DSLAVE PREFIX=${SLAVES_PREFIX} WRKDIRPREFIX=${SLAVES_WRKDIRPREFIX}
+SLAVES_MAKE_ARGS=	-DSLAVE PREFIX=${SLAVES_PREFIX} WRKDIRPREFIX=${SLAVES_WRKDIRPREFIX} PATH=${BOOT_DIR}/bin:${PATH}
 
 MAKE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
@@ -273,14 +273,14 @@ pre-configure:
 
 .if defined(WITHOUT_HADDOCK)
 	@(cd ${PORTSDIR}/devel/hs-ghc-paths && \
-		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
+		${MAKE} ${SLAVES_MAKE_ARGS} install)
 
 	@(cd ${PORTSDIR}/devel/hs-haddock && \
-		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
+		${MAKE} ${SLAVES_MAKE_ARGS} install)
 .endif
 
 	@(cd ${PORTSDIR}/print/hs-hscolour && \
-		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
+		${MAKE} ${SLAVES_MAKE_ARGS} install)
 .endif
 
 post-install:
