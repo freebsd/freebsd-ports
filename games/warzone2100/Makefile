@@ -10,7 +10,7 @@ PORTVERSION=	2.2.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Warzone%202100%20${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
