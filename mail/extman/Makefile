@@ -7,18 +7,19 @@
 
 PORTNAME=	extman
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
 		http://mirror3.extmail.net/dist/%SUBDIR%/
 
-MAINTAINER?=	chifeng@gmail.com
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	Web interface to manage Virtual Accounts
-
-USE_PERL5=	yes
-NO_BUILD=	yes
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+
+USE_PERL5=	yes
+NO_BUILD=	yes
 
 OPTIONS=	MySQL "Use MySQL support" On \
 		LDAP "Use LDAP support" Off
@@ -34,5 +35,6 @@ RUN_DEPENDS+=	${SITE_PERL}/DBD/LDAP.pm:${PORTSDIR}/databases/p5-DBD-LDAP
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 .include <bsd.port.post.mk>
