@@ -1,12 +1,11 @@
 #!/bin/sh
 #
-# Update the master ports and source trees that are used by package builds
+# Update the master ports tree that is used by package builds
 # and other consumers
 
 base=/a/snap
 zbase=a/snap
 
-srepo=/r/ncvs
 prepo=/r/pcvs
 
 supstamp() {
@@ -44,6 +43,8 @@ cat /root/ports-cvsup-master-supfile | sed "s|%%DATE%%|${supdate}|" > /root/port
 
 cvsup -L 2 /root/ports-cvsup-master-supfile.now > ${base}/ports/cvsup.log
 echo ${fulldate} > /a/snap/ports/cvsdone
+# hack for zfs breakiness
+find ${base}/ports -group wheel|xargs chgrp portmgr
 snapdate=$(stamp ${fulldate})
 zfs snapshot ${zbase}/ports@${snapdate}
 
