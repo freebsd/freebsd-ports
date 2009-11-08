@@ -70,7 +70,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gd</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.0.35_2,1</lt></range>
       </package>
       <package>
 	<name>php5-gd</name>
@@ -103,6 +103,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-10-15</discovery>
       <entry>2009-11-05</entry>
+      <modified>2009-11-08</modified>
     </dates>
   </vuln>
 
