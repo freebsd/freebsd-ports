@@ -1,8 +1,37 @@
-bin/pyflakes
 %%PYTHON_SITELIBDIR%%/pyflakes/__init__.py
 %%PYTHON_SITELIBDIR%%/pyflakes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyflakes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/checker.py
+%%PYTHON_SITELIBDIR%%/pyflakes/checker.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/checker.pyo
 %%PYTHON_SITELIBDIR%%/pyflakes/messages.py
 %%PYTHON_SITELIBDIR%%/pyflakes/messages.pyc
 %%PYTHON_SITELIBDIR%%/pyflakes/messages.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/pyflakes/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/scripts/pyflakes.py
+%%PYTHON_SITELIBDIR%%/pyflakes/scripts/pyflakes.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/scripts/pyflakes.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/test/__init__.py
+%%PYTHON_SITELIBDIR%%/pyflakes/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/test/harness.py
+%%PYTHON_SITELIBDIR%%/pyflakes/test/harness.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/test/harness.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_imports.py
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_imports.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_imports.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_other.py
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_other.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_other.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_script.py
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_script.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_script.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_undefined_names.py
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_undefined_names.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/test/test_undefined_names.pyo
+bin/pyflakes
+@dirrm %%PYTHON_SITELIBDIR%%/pyflakes/test
+@dirrm %%PYTHON_SITELIBDIR%%/pyflakes/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/pyflakes
