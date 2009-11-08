@@ -13,8 +13,9 @@ expirelist=(("a", 14),
             ("a/portbuild", 14),
             ("a/portbuild/amd64", 14),
             ("a/portbuild/i386", 14),
-            ("a/portbuild/sparc64", 14),
             ("a/portbuild/ia64", 14),
+            ("a/portbuild/powerpc", 14),
+            ("a/portbuild/sparc64", 14),
             ("a/snap", 7),
             ("a/snap/ports", 7),
             ("a/snap/src-5", 7),
@@ -28,7 +29,12 @@ expirelist=(("a", 14),
 now = datetime.datetime.now()
 
 for (fs, maxage) in expirelist:
-    snapdata = zfs.getallsnaps(fs)
+    try:
+        snapdata = zfs.getallsnaps(fs)
+    except zfs.NoSuchFS:
+        print "no such fs %s, skipping" % fs
+        continue
+
     snaps = (i[0] for i in snapdata)
 
     for snap in snaps:
