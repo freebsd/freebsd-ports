@@ -1,0 +1,4 @@
+bin/mathomatic
+share/pixmaps/mathomatic.png
+share/applications/mathomatic.desktop
+@dirrmtry share/applications
