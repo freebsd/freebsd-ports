@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	fspd
-PORTVERSION=	2.8.1.24
-PORTREVISION=	2
+PORTVERSION=	2.8.1.25
 CATEGORIES=	net
-MASTER_SITES=	SF/fsp/fsp/2.8.1b24
-DISTNAME=	fsp-2.8.1b24
+MASTER_SITES=	SF/fsp/fsp/2.8.1b25
+DISTNAME=	fsp-2.8.1b25
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	FSP daemon, clients and scanner
+
+BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
 CLIENTS=	fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
 		flscmd fmkdir fprocmd fput frmcmd frmdircmd fver fspmerge \
 		fstatcmd fmvcmd fbye fsetupcmd
 DOCDIR=		share/doc/${PORTNAME}
 PORTDOCS=	BETA.README COPYRIGHT ChangeLog FILES INFO INSTALL MACHINES \
-		TODO PROTOCOL
+		TODO PROTOCOL HISTORY faq.html fsp-faq.html
 MAN1=		fcatcmd.1 fcdcmd.1 fducmd.1 ffindcmd.1 fgetcmd.1 fgrabcmd.1 \
 		fhostcmd.1 flscmd.1 fmkdir.1 fprocmd.1 fput.1 \
 		frmcmd.1 frmdircmd.1 fspd.1 fspscan.1 fver.1 \
@@ -33,7 +34,7 @@ MLINKS=		fcatcmd.1 fcat.1 fcdcmd.1 fcd.1 fducmd.1 fdu.1 \
 		frmdircmd.1 frmdir.1 fstatcmd.1 fstat.1 fmvcmd.1 fmv.1 \
 		fsetupcmd.1 fsetup.1
 
-GNU_CONFIGURE=	yes
+USE_SCONS=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -43,18 +44,25 @@ OPTIONS=	NOCLIENTS "Omit client commands" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_INFINITE)
-CONFIGURE_ARGS+=	--disable-timeout
+SCONS_ARGS+=	disable-timeout=yes
 .endif
 
 .if !defined(WITH_NOCLIENTS)
 .for command in ${CLIENTS}
 PLIST_FILES+=	bin/${command}
 .endfor
+.else
+SCONS_ARGS+=	without-clients=yes
 .endif
+
 PLIST_FILES+=	etc/fspd.conf.sample bin/fspscan bin/fspd
 
 post-extract:
-	${CP} ${WRKSRC}/doc/PROTOCOL ${WRKSRC}
+	@${CP} ${WRKSRC}/doc/PROTOCOL ${WRKSRC}
+	@${CP} ${WRKSRC}/doc/HISTORY ${WRKSRC}
+
+post-build:
+	@${CP} ${WRKSRC}/doc/*.html ${WRKSRC}
 
 do-install:
 .if !defined(NOPORTDOCS)
