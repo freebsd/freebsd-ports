@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	scummvm-tools
-PORTVERSION=	0.13.0
-PORTREVISION=	2
+DISTVERSION=	1.0.0rc1
 CATEGORIES=	games emulators
-MASTER_SITES=	SF/scummvm/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/scummvm/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
@@ -26,7 +25,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/scummvm-tools-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_SAFE=	yes
 
