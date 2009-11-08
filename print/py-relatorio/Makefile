@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	relatorio
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A templating library able to output odt and pdf files
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
