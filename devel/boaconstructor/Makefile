@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	boaconstructor
-PORTVERSION=	0.4.4
-PORTREVISION=	4
+PORTVERSION=	0.6.1
 CATEGORIES=	devel python
-MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-alpha
-DISTNAME=	boa-constructor-${PORTVERSION}
+#MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-alpha
+MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-beta
+DISTNAME=	boa-constructor-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform RAD GUI Building IDE for wxPython
@@ -18,6 +18,7 @@ COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 
 USE_ZIP=	yes
+USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_WX=		2.6
 WX_COMPS=	python
