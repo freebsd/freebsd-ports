@@ -1,13 +1,12 @@
 #!/bin/sh
 #
-# Update the master ports and source trees that are used by package builds
+# Update the master source trees that are used by package builds
 # and other consumers
 
 base=/a/snap
 zbase=a/snap
 
 srepo=/r/ncvs
-prepo=/r/pcvs
 
 stamp() {
 	fulldate=$1
@@ -31,13 +30,6 @@ echo "Started at $(date)"
 umask 002
 
 #cvsup -g /root/cvs-supfile || finish 1
-
-#cd $base/ports
-#fulldate=$(date)
-#cvs -Rq -d ${prepo} update -PdA -D "${fulldate}"
-#echo ${fulldate} > cvsdone
-#snapdate=$(stamp ${fulldate})
-#zfs snapshot ${zbase}/ports@${snapdate}
 
 cd $base/src-HEAD
 fulldate=$(date)
