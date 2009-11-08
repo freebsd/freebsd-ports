@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	3.80
+PORTVERSION=	3.90
 PORTEPOCH=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
-DISTNAME=	rarbsd-3.8.0
+DISTNAME=	rarbsd-3.9.0
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	File archiver (binary port)
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
 PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
-		readme.txt file_id.diz
+		readme.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${PREFIX}/bin/rar
