@@ -17,11 +17,14 @@ lib/libspread.a
 lib/libspread-core.a
 lib/libtspread-core.a
 lib/libspread.so
-lib/libspread.so.2.0
+lib/libspread.so.2
+lib/libspread.so.2.0.1
 lib/libspread-core.so
-lib/libspread-core.so.2.0
+lib/libspread-core.so.2
+lib/libspread-core.so.2.0.1
 lib/libtspread-core.so
-lib/libtspread-core.so.2.0
+lib/libtspread-core.so.2
+lib/libtspread-core.so.2.0.1
 sbin/spread
 %%PORTDOCS%%%%DOCSDIR%%/DynamicConfiguration.txt
 %%PORTDOCS%%%%DOCSDIR%%/Flush_or_SpreadAPI.txt

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	spread4
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	net perl5
-MASTER_SITES=	http://www.edu-linux.org/down/
+MASTER_SITES=	LOCAL/wen
 DISTNAME=	spread-src-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
