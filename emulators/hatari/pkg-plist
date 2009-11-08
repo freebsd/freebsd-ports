@@ -1,4 +1,6 @@
 bin/hatari
+bin/hmsa
+bin/zip2st
 %%PORTDOCS%%%%DOCSDIR%%/alsa-midi.txt
 %%PORTDOCS%%%%DOCSDIR%%/authors.txt
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt

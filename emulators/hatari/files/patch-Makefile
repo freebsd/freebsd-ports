@@ -1,18 +1,18 @@
---- Makefile.orig	2008-02-05 23:31:45.000000000 +0100
-+++ Makefile	2008-03-20 18:29:10.619181023 +0100
-@@ -30,24 +30,18 @@
+--- Makefile.orig	2009-01-24 12:12:44.000000000 -0200
++++ Makefile	2009-11-06 21:26:15.000000000 -0200
+@@ -31,9 +31,6 @@
  		cp -v config-default.h config.h; \
  	fi
  
 -hatari.1.gz: doc/hatari.1
 -	gzip -9 -c doc/hatari.1 > $@
 -
--
+ 
  clean:
  	$(MAKE) -C src/ clean
- 
- distclean:
+@@ -43,14 +40,12 @@
  	$(MAKE) -C src/ distclean
+ 	$(MAKE) -C tools/hmsa/ distclean
  	$(RM) config.cache config.log Makefile.cnf config.h
 -	$(RM) hatari.1.gz
 -
@@ -26,7 +26,7 @@
  	@if [ "x$(INSTALL)" = "x" ]; then \
  		echo; \
  		echo "*** Hatari was not configured for installation. ***"; \
-@@ -55,14 +49,8 @@
+@@ -58,9 +53,6 @@
  	fi
  	$(INSTALL) -d $(DESTDIR)$(BINDIR)
  	$(INSTALL) -d $(DESTDIR)$(DATADIR)
@@ -34,7 +34,9 @@
 -	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -d $(DESTDIR)$(DOCDIR)/images
  	$(INSTALL_PROGRAM) src/hatari $(DESTDIR)$(BINDIR)/hatari
- 	$(INSTALL_DATA) src/hatari-icon.bmp $(DESTDIR)$(DATADIR)/hatari-icon.bmp
+ 	$(INSTALL_PROGRAM) tools/hmsa/hmsa $(DESTDIR)$(BINDIR)/hmsa
+ 	$(INSTALL_SCRIPT) tools/zip2st.sh $(DESTDIR)$(BINDIR)/zip2st
+@@ -68,6 +60,3 @@
  	if test -f src/tos.img -a \! -f $(DESTDIR)$(DATADIR)/tos.img ; then \
  	  $(INSTALL_DATA) src/tos.img $(DESTDIR)$(DATADIR)/tos.img ; \
  	fi
