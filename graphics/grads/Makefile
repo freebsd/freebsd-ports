@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits.a:${PORTSDIR}/science/udunits \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
