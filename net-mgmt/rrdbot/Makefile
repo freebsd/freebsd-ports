@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdbot
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://memberwebs.com/stef/software/rrdbot/
 
