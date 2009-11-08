@@ -22,9 +22,6 @@ builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 buildenv ${pb} ${arch} ${branch} ${builddir}
 
-# XXX MCL 20080908 test removal of this
-#duds=${builddir}/duds
-
 unset DISPLAY
 
 export __MAKE_SHELL=/rescue/sh
