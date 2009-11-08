@@ -9,7 +9,7 @@ validate_env() {
     branch=$2
 
     case ${arch} in
-	amd64|i386|ia64|sparc64)
+	amd64|i386|ia64|powerpc|sparc64)
 	    continue
 	    ;;
 	*)
