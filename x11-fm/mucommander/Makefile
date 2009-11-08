@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mucommander
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-fm java
 MASTER_SITES=	http://www.mucommander.com/download/
-DISTNAME=	${PORTNAME}-0_8_3
+DISTNAME=	${PORTNAME}-0_8_4
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Lightweight file manager featuring a Norton Commander style interface
@@ -25,7 +24,7 @@ SUB_FILES=	mucommander
 
 PORTDOCS=	readme.txt
 
-WRKSRC=		${WRKDIR}/muCommander-0_8_3
+WRKSRC=		${WRKDIR}/muCommander-0_8_4
 
 do-install:
 	@${MKDIR} ${DATADIR}
