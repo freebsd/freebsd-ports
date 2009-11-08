@@ -1,0 +1,38 @@
+# New ports collection makefile for:	bennugd
+# Date created:		06 Nov 2009
+# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	modules
+PORTVERSION=	r20091106
+CATEGORIES=	devel games
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+PKGNAMEPREFIX=	bennugd-
+DISTNAME=	bennugd-${PORTVERSION}
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	High level open source game development suite, modules
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbgdrtm.so:${PORTSDIR}/devel/bennugd-core/
+RUN_DEPENDS=	${LOCALBASE}/lib/libbgdrtm.so:${PORTSDIR}/devel/bennugd-core/
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
+USE_SDL=	sdl mixer
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/bennugd"
+MAKE_JOBS_SAFE=	yes
+
+WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
+
+post-extract:
+	@${CHMOD} a+x ${WRKSRC}/configure ${WRKSRC}/install-sh
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/configure
+
+.include <bsd.port.mk>

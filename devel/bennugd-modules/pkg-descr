@@ -1,0 +1,13 @@
+Bennu is a high level open source game development suite which
+focuses on modularity and portability, making it a perfect choice
+for cross-platform game development.
+
+Although officialy it is only supported on Windows, Linux and GP2X
+Wiz (on the right), Bennu can run on multiple other platforms,
+including *BSD, MacOSX and other consoles such as the Wii, Dingoo
+A320, GP2X, or the classic Xbox.
+
+This makes it really fun to code in Bennu: the game can be played
+on you computer AND your console!
+
+WWW: http://www.bennugd.org/
