@@ -6,9 +6,6 @@ bin/sndrecord
 %%X11%%lib/X11/app-defaults/Snd.ad
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.Snd
 %%PORTDOCS%%%%DOCSDIR%%/README.Snd
-%%PORTDOCS%%%%DOCSDIR%%/clm.html
-%%PORTDOCS%%%%DOCSDIR%%/dlocsig.html
-%%PORTDOCS%%%%DOCSDIR%%/freeverb.html
 %%PORTDOCS%%%%DOCSDIR%%/extsnd.html
 %%PORTDOCS%%%%DOCSDIR%%/fm.html
 %%PORTDOCS%%%%DOCSDIR%%/grfsnd.html
@@ -226,7 +223,6 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/samplesviacolormap.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/saveas.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/scanned.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/s65536.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq10.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq11.png
@@ -333,6 +329,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/sndlib.html
 %%PORTDOCS%%%%DOCSDIR%%/sndscm.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/1_intro_and_build_snd.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/1_intro_and_build_snd.html~
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/2_custom_snd.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/3_editing_and_processing_snd.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/4_advanced_snd.html
@@ -395,7 +392,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/gtk-effects.scm
 %%SCHEME%%%%DATADIR%%/gtk-popup.scm
 %%SCHEME%%%%DATADIR%%/gui.scm
-%%SCHEME%%%%DATADIR%%/heart.scm
 %%SCHEME%%%%DATADIR%%/hooks.scm
 %%SCHEME%%%%DATADIR%%/index.scm
 %%SCHEME%%%%DATADIR%%/jcrev.scm
@@ -437,7 +433,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/piano.scm
 %%SCHEME%%%%DATADIR%%/play.scm
 %%SCHEME%%%%DATADIR%%/poly.scm
-%%SCHEME%%%%DATADIR%%/pretty-print.scm
 %%SCHEME%%%%DATADIR%%/popup.scm
 %%SCHEME%%%%DATADIR%%/prc95.scm
 %%SCHEME%%%%DATADIR%%/pvoc.scm
@@ -466,7 +461,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/snd8.scm
 %%SCHEME%%%%DATADIR%%/snd9.scm
 %%SCHEME%%%%DATADIR%%/snd10.scm
-%%SCHEME%%%%DATADIR%%/snd_frg.scm
 %%SCHEME%%%%DATADIR%%/snd_conffile.scm
 %%SCHEME%%%%DATADIR%%/snddiff.scm
 %%SCHEME%%%%DATADIR%%/sndlib-ws.scm
