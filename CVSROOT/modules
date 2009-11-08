@@ -7949,6 +7949,7 @@ linux-doom3-demo                ports/games/linux-doom3-demo
 linux-dri74                     ports/graphics/linux-dri74
 linux-ePSXe                     ports/emulators/linux-ePSXe
 linux-eagle                     ports/cad/linux-eagle
+linux-eagle5                    ports/cad/linux-eagle5
 linux-edonkey-core              ports/net-p2p/linux-edonkey-core
 linux-edonkey-server            ports/net-p2p/linux-edonkey-server
 linux-edonkey-tool-recovermet   ports/net-p2p/linux-edonkey-tool-recovermet
@@ -22378,6 +22379,7 @@ tcl-memchan                     ports/devel/tcl-memchan
 tcl-modules                     ports/lang/tcl-modules
 tcl-mysql                       ports/databases/tcl-Mysql
 tcl-neo                         ports/devel/tcl-neo
+tcl-trf                         ports/devel/tcl-trf
 tcl-wrapper                     ports/lang/tcl-wrapper
 tcl82                           ports/lang/tcl82
 tcl83                           ports/lang/tcl83
@@ -23300,6 +23302,7 @@ vee                             ports/www/vee
 vegastrike                      ports/games/vegastrike
 vegastrike-data                 ports/games/vegastrike-data
 velocity                        ports/x11-fm/velocity
+velvet                          ports/biology/velvet
 venice                          ports/finance/venice
 ventrilo-server                 ports/audio/ventrilo-server
 vera                            ports/misc/vera
