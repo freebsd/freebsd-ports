@@ -32,6 +32,10 @@ PORTDOCS=	memory_management.txt protocol.txt
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not link
+.endif
+
 .if defined(WITH_REPCACHED)
 # WWW: http://repcached.lab.klab.org/
 BROKEN=			Waiting a new release for this patch.
