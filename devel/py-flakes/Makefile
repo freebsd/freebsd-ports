@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	flakes
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://divmod.org/static/projects/pyflakes/
+MASTER_SITES=	http://pypi.python.org/packages/source/p/pyflakes/ \
+		http://code.enthought.com/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyflakes-${PORTVERSION}
 
