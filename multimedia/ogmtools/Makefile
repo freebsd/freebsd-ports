@@ -7,7 +7,7 @@
 
 PORTNAME=	ogmtools
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
@@ -48,7 +48,7 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libdvdread.so.5)
+.if exists(${LOCALBASE}/lib/libdvdread.so.4)
 WITH_DVDREAD=yes
 .endif
 
