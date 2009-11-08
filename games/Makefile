@@ -732,6 +732,7 @@
     SUBDIR += qwdtools
     SUBDIR += r1q2
     SUBDIR += race
+    SUBDIR += railroad-rampage
     SUBDIR += reminiscence
     SUBDIR += rezerwar
     SUBDIR += rfksay

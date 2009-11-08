@@ -1,0 +1,22 @@
+bin/railroad-rampage
+%%DATADIR%%/Music/TACOGUN.ogg
+%%DATADIR%%/RailroadRampage.dcb
+%%DATADIR%%/RailroadRampage.png
+%%DATADIR%%/Sound/beam.wav
+%%DATADIR%%/Sound/bip.wav
+%%DATADIR%%/Sound/boing.wav
+%%DATADIR%%/Sound/bounce.wav
+%%DATADIR%%/Sound/explode1.wav
+%%DATADIR%%/Sound/explode2.wav
+%%DATADIR%%/Sound/firework1.wav
+%%DATADIR%%/Sound/firework2.wav
+%%DATADIR%%/Sound/poff.wav
+%%DATADIR%%/Sound/pop.wav
+%%DATADIR%%/Sound/rocket.wav
+%%DATADIR%%/Sound/stretch.wav
+%%DATADIR%%/Sound/train.wav
+%%DATADIR%%/Sound/turn.wav
+%%DATADIR%%/traintd.fpg
+@dirrm %%DATADIR%%/Sound
+@dirrm %%DATADIR%%/Music
+@dirrm %%DATADIR%%
