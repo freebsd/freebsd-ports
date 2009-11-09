@@ -30,7 +30,7 @@ lib/libvcl.la
 lib/libvcl.a
 libdata/pkgconfig/varnishapi.pc
 sbin/varnishd
-@exec mkdir %D/varnish
+@exec [ -d %D/varnish ] || mkdir %D/varnish
 @dirrmtry varnish
 @dirrm include/varnish
 @dirrmtry etc/varnish
