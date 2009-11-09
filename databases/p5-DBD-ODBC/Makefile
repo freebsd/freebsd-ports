@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.19
+PORTVERSION=	1.23
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBD module interfacing the ODBC databases
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	-o ${LOCALBASE}
+CONFIGURE_ARGS=	-o ${LOCALBASE}
 
 MAN3=		DBD::ODBC.3
 
@@ -54,9 +54,6 @@ post-install:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/[[:<:]]our[[:>:]]/my/g' \
-			  -e 's/^    @$$(NOOP)/	@$$(NOOP)/g' ${WRKSRC}/Makefile.PL
-	@${PERL} -pi -e '$$_ .= "\$$myodbc = \"${MYODBC}\";" if ($$. == 365);' \
-		${WRKSRC}/Makefile.PL
+	${REINPLACE_CMD} -e '/my $$myodbc/s|q{}|"${MYODBC}"|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
