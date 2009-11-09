@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	20080614.01
+DISTVERSION=	20091108
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
@@ -14,7 +14,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
 USE_GNOME=	pkgconfig
-USE_XORG=	xtst x11
+USE_XORG=	xtst x11 xinerama
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/keynav
