@@ -17,14 +17,14 @@ COMMENT=	Prelude Network Intrusion Detection System central logging point
 LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
-BROKEN=		does not configure
-
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:262
 USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="${LIBS} -L${LOCALBASE}/lib"
 
 PRELUDEUSER?=	prelude
 PRELUDEGROUP?=	prelude
