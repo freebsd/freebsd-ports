@@ -1,0 +1,11 @@
+Oracle Berkeley DB is a family of open source embeddable databases
+that allows developers to incorporate within their applications a
+fast, scalable, transactional database engine with industrial grade
+reliability and availability. As a result, customers and end-users
+will experience an application that simply works, reliably manages
+data, can scale under extreme load, but requires no ongoing database
+administration. As a developer, you can focus on your application and
+be confident that Oracle Berkeley DB will manage your persistence
+needs.
+
+WWW:	http://www.oracle.com/database/berkeley-db/index.html
