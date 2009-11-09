@@ -46,18 +46,29 @@ do_create() {
     shift 4
 
     newfs=a/portbuild/${arch}/${buildid}
-    zfs create -o mountpoint=${builddir} ${newfs} || exit 1
+    mountpoint=${builddir}
+    zfs create -o mountpoint=${mountpoint} ${newfs} || exit 1
+    chown -R ports-${arch}:portmgr ${mountpoint}
+    chmod g+w ${mountpoint}
     zfs snapshot ${newfs}@${buildid}
 
     portsfs=${newfs}/ports
     portsnap=${portsfs}@${buildid}
-    zfs create -o mountpoint=${builddir}ports ${portsfs} || exit 1
+    mountpoint=${builddir}ports
+    zfs create -o mountpoint=${mountpoint} ${portsfs} || exit 1
+    chown -R ports-${arch}:portmgr ${mountpoint}
+    chmod g+w ${mountpoint}
     zfs snapshot ${portsnap}
 
     srcfs=${newfs}/src
     srcsnap=${srcfs}@${buildid}
-    zfs create -o mountpoint=${builddir}src ${srcfs} || exit 1
+    mountpoint=${builddir}src
+    zfs create -o mountpoint=${mountpoint} ${srcfs} || exit 1
+    chown -R ports-${arch}:portmgr ${mountpoint}
+    chmod g+w ${mountpoint}
     zfs snapshot ${srcsnap}
+
+    ln -sf ${builddir} ${pbab}/builds/latest
 
     echo "New build ID is ${buildid}"
 }
