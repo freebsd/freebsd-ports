@@ -44,6 +44,14 @@ WRKSRC=		${WRKDIR}/${SRC_DIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 		--exclude js/jsd
 
+OPTIONS=	UTF8 "Enable UTF8 support" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_UTF8)
+CFLAGS+=	-DJS_C_STRINGS_ARE_UTF8
+.endif
+
 do-configure:
 	${CP} ${WRKSRC}/config/Linux_All.mk \
 		${WRKSRC}/config/${OPSYS}`${UNAME} -r`.mk && \
