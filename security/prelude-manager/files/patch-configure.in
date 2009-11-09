@@ -1,0 +1,29 @@
+--- configure.in.orig	2008-08-21 14:22:20.000000000 +0200
++++ configure.in	2009-11-09 11:33:23.000000000 +0100
+@@ -86,15 +86,6 @@
+ dnl **************************************************
+ dnl * Check for GnuTLS.                              *
+ dnl **************************************************
+-AM_PATH_LIBGNUTLS(1.0.17, gnutls=yes, gnutls=no)
+-if test x$gnutls != xyes; then
+-        AC_MSG_ERROR(libgnutls is required in order to build prelude-manager.)
+-fi
+-
+-old_LIBS=$LIBS
+-old_CPPFLAGS=$CPPFLAGS
+-LIBS="$LIBGNUTLS_LIBS"
+-CPPFLAGS="$LIBGNUTLS_CFLAGS"
+ 
+ AC_CHECK_LIB(gnutls, gnutls_priority_init, gnutls_string_priority=yes, gnutls_string_priority=no)
+ if test x$gnutls_string_priority = xyes; then
+@@ -104,9 +95,7 @@
+ AC_CHECK_HEADER(gnutls/gnutls.h, ,
+                 AC_MSG_ERROR("libgnutls development headers are required to build libprelude"))
+ 
+-CPPFLAGS=$old_CPPFLAGS
+-LIBS=$old_LIBS
+-
++AC_SUBST(LIBGNUTLS_CFLAGS,"")
+ 
+ 
+ dnl **************************************************
