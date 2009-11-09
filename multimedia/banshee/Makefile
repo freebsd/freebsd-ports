@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.1
 PORTEPOCH=	1
-PORTREVISION=	2
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://download.banshee-project.org/banshee/
+MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/stable/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
 
 MAINTAINER=	mono@FreeBSD.org
