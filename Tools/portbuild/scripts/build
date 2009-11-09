@@ -45,11 +45,21 @@ do_create() {
     builddir=$4
     shift 4
 
-    zfs create -o mountpoint=${builddir} a/portbuild/${arch}/${branch}/${buildid} \
-	|| (echo "Couldn't create build"; exit 1)    
+    newfs=a/portbuild/${arch}/${buildid}
+    zfs create -o mountpoint=${builddir} ${newfs} || exit 1
+    zfs snapshot ${newfs}@${buildid}
+
+    portsfs=${newfs}/ports
+    portsnap=${portsfs}@${buildid}
+    zfs create -o mountpoint=${builddir}/ports ${portsfs} || exit 1
+    zfs snapshot ${portsnap}
+
+    srcfs=${newfs}/src
+    srcsnap=${srcfs}@${buildid}
+    zfs create -o mountpoint=${builddir}/src ${srcfs} || exit 1
+    zfs snapshot ${srcsnap}
 
     echo "New build ID is ${buildid}"
-
 }
 
 do_clone() {
@@ -439,6 +449,16 @@ if [ $# -ge 1 ]; then
 		# We can't rely on buildenv for this code path
 	    fi
 	    ;;
+	create)
+	    # XXX some way to avoid the latest/previous dance?
+	    if [ "${buildid}" = "latest" ]; then
+		buildid=$(now)
+	    elif [ "${buildid}" = "previous" ]; then
+		echo "Use build clone latest instead"
+		exit 1
+	    fi
+	    # We can't rely on buildenv for this code path
+	    ;;
 	*)
 	    newbuildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
 	    if [ -z "${newbuildid}" ]; then
@@ -463,10 +483,21 @@ case "$cmd" in
 	do_list ${arch} ${branch} $@
 	;;
     create)
+	# XXX some way to avoid the latest/previous dance?
 	if [ -z "${buildid}" ]; then
 	    buildid=$(now)
-	    usage
+	else
+	    buildid=${buildid%/}
 	fi
+
+        # note: the directory must not exist yet
+	builddir=$(realpath ${pbab}/builds)/${buildid}/
+	if [ -d ${builddir} ]; then
+	    echo "Can't create ${builddir}, it already exists"
+	    exit 1
+	fi
+	buildenv ${pb} ${arch} ${branch} ${builddir}
+
 	proxy_root create ${arch} ${branch} ${buildid} ${builddir} $@
 	;;
     clone)
@@ -507,7 +538,7 @@ case "$cmd" in
 	proxy_root destroy ${arch} ${branch} ${buildid} ${builddir} $@
 	;;
     *)
-	echo "Invalid command: $cmd"
+	echo "build: invalid command: $cmd"
 	exit 1
 	;;
 esac
