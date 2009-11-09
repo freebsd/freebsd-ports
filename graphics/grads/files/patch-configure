@@ -1,7 +1,7 @@
 $FreeBSD$
 
 --- configure.orig	2005-05-23 08:04:40.000000000 -0700
-+++ configure	2009-01-20 21:01:00.000000000 -0800
++++ configure	2009-11-08 19:19:24.000000000 -0800
 @@ -6835,7 +6835,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -11,6 +11,40 @@ $FreeBSD$
  _ACEOF
  rm -f conftest.$ac_objext
  if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -9156,13 +9156,13 @@
+ if test $ac_cv_header_netcdf_h = yes; then
+ 
+   if test "${ga_dyn_supplibs}" = "yes" ; then
+-     echo "$as_me:$LINENO: checking for utInit in -ludunits" >&5
+-echo $ECHO_N "checking for utInit in -ludunits... $ECHO_C" >&6
++     echo "$as_me:$LINENO: checking for utInit in -ludunits2" >&5
++echo $ECHO_N "checking for utInit in -ludunits2... $ECHO_C" >&6
+ if test "${ac_cv_lib_udunits_utInit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ludunits  $LIBS"
++LIBS="-ludunits2  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9752,13 +9752,13 @@
+ if test $ac_cv_lib_z_compress = yes; then
+ 
+   if test "${ga_dyn_supplibs}" = "yes" ; then
+-     echo "$as_me:$LINENO: checking for utInit in -ludunits" >&5
+-echo $ECHO_N "checking for utInit in -ludunits... $ECHO_C" >&6
++     echo "$as_me:$LINENO: checking for utInit in -ludunits2" >&5
++echo $ECHO_N "checking for utInit in -ludunits2... $ECHO_C" >&6
+ if test "${ac_cv_lib_udunits_utInit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ludunits  $LIBS"
++LIBS="-ludunits2  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
 @@ -9866,7 +9866,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -29,6 +63,23 @@ $FreeBSD$
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
+@@ -10818,13 +10818,13 @@
+ echo "${ECHO_T}yes" >&6
+ 
+   if test "${ga_dyn_supplibs}" = "yes" ; then
+-     echo "$as_me:$LINENO: checking for utInit in -ludunits" >&5
+-echo $ECHO_N "checking for utInit in -ludunits... $ECHO_C" >&6
++     echo "$as_me:$LINENO: checking for utInit in -ludunits2" >&5
++echo $ECHO_N "checking for utInit in -ludunits2... $ECHO_C" >&6
+ if test "${ac_cv_lib_udunits_utInit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ludunits  $LIBS"
++LIBS="-ludunits2  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
 @@ -11916,7 +11916,7 @@
       ga_lib_suffix='.a'
    fi
@@ -38,3 +89,37 @@ $FreeBSD$
        hdf_libs="$hdf_libs ${ga_lib_prefix}${ga_lib_name}${ga_lib_suffix}"
    done
  
+@@ -12263,13 +12263,13 @@
+ if test $ac_cv_lib_z_compress = yes; then
+ 
+   if test "${ga_dyn_supplibs}" = "yes" ; then
+-     echo "$as_me:$LINENO: checking for utInit in -ludunits" >&5
+-echo $ECHO_N "checking for utInit in -ludunits... $ECHO_C" >&6
++     echo "$as_me:$LINENO: checking for utInit in -ludunits2" >&5
++echo $ECHO_N "checking for utInit in -ludunits2... $ECHO_C" >&6
+ if test "${ac_cv_lib_udunits_utInit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ludunits  $LIBS"
++LIBS="-ludunits2  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -14449,13 +14449,13 @@
+ echo "${ECHO_T}yes" >&6
+ 
+   if test "${ga_dyn_supplibs}" = "yes" ; then
+-     echo "$as_me:$LINENO: checking for utInit in -ludunits" >&5
+-echo $ECHO_N "checking for utInit in -ludunits... $ECHO_C" >&6
++     echo "$as_me:$LINENO: checking for utInit in -ludunits2" >&5
++echo $ECHO_N "checking for utInit in -ludunits2... $ECHO_C" >&6
+ if test "${ac_cv_lib_udunits_utInit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ludunits  $LIBS"
++LIBS="-ludunits2  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

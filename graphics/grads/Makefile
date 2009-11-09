@@ -68,6 +68,7 @@ post-extract:
 
 post-configure:
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKSRC}/src/gx.h
+	${REINPLACE_CMD} -e "s:ludunits:ludunits2:" ${WRKSRC}/src/Makefile
 
 post-install:
 .if !defined(NOPORTDATA)
