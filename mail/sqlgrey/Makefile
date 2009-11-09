@@ -61,7 +61,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-D
 .endif
 
 .if defined(WITH_STATS)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+RUN_DEPENDS+=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 
 post-patch:
