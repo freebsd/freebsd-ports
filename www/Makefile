@@ -369,6 +369,7 @@
     SUBDIR += linux-seamonkey
     SUBDIR += linux-seamonkey-devel
     SUBDIR += linuxpluginwrapper
+    SUBDIR += lionwiki
     SUBDIR += ljdeps
     SUBDIR += ljdump
     SUBDIR += ljpms
