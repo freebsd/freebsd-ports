@@ -175,9 +175,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_MO
 .endif
 
 .if defined(WITH_HTTP_MP4_H264_MODULE)
-MASTER_SITES+=	http://i.6.cn/:mp4streaming
-DISTFILES+=	nginx_mp4_streaming_public_20081229.tar.bz2:mp4streaming
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mp4_streaming_public
+NGINX_H264_MODULE_VERSION=	2.2.5
+MASTER_SITES+=	http://h264.code-shop.com/download/:mp4streaming
+DISTFILES+=	nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}.tar.gz:mp4streaming
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_NOTICE_MODULE)
