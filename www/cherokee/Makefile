@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.99.24
+PORTVERSION=	0.99.27
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.99/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/0.99/${PORTVERSION}/ \
@@ -36,10 +36,10 @@ MASTER_SITES=	http://www.cherokee-project.com/download/0.99/${PORTVERSION}/ \
 MAINTAINER=	chris@officialunix.com
 COMMENT=	Extremely fast and flexible web server
 
-CONFLICTS=	cherokee-devel-[0-9]*
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
