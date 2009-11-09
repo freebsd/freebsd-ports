@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	2
 
 MASTERDIR=	${.CURDIR}/../../lang/php5
 
