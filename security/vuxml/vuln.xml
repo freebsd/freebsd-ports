@@ -74,7 +74,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php5-gd</name>
-	<range><gt>0</gt></range>
+	<range><lt>5.2.11_2</lt></range>
       </package>
       <package>
 	<name>php4-gd</name>
@@ -103,7 +103,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-10-15</discovery>
       <entry>2009-11-05</entry>
-      <modified>2009-11-08</modified>
+      <modified>2009-11-09</modified>
     </dates>
   </vuln>
 
