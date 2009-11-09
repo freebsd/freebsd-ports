@@ -1,5 +1,5 @@
---- Makefile.orig	Thu May  8 10:58:17 2003
-+++ Makefile	Thu May  8 10:58:32 2003
+--- ./Makefile.orig	2009-11-09 17:15:57.000000000 -0500
++++ ./Makefile	2009-11-09 17:15:57.000000000 -0500
 @@ -0,0 +1,34 @@
 +#!/usr/bin/make
 +#
@@ -21,7 +21,7 @@
 +#    will run on the target platform.  This is usually the same
 +#    as BCC, unless you are cross-compiling.
 +#
-+TCC = gcc -g -O0 -Wall -I$(LOCALBASE)/include -lm
++TCC = gcc -g -O0 -Wall -I$(LOCALBASE)/include
 +
 +#### Extra arguments for linking against SQLite
 +#
