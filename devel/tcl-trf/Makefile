@@ -8,10 +8,10 @@
 PORTNAME=	Trf
 PORTVERSION=	2.1.4
 CATEGORIES=	devel tcl
-MASTER_SITES=	ftp://ftp.tcl.tk/pub/incoming/
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	tcl-
 DISTNAME=	trf${PORTVERSION}
-MASTER_SITE_SUBDIR=tcltrf
+MASTER_SITE_SUBDIR=tcltrf/tcltrf/${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Data conversion, digests, compression, error-correction for Tcl
