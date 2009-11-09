@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://ispras.linux-foundation.org/images/8/8c/
+MASTER_SITES=	http://ispras.linux-foundation.org/images/3/34/
 DISTFILES=	${PORTNAME:S/^a/A/}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	bf1783@gmail.com
@@ -25,7 +25,8 @@ READELF?=	readelf
 post-patch:
 	${REINPLACE_CMD} -e "s|c++filt|${CPPFILT}|g" \
 		-e "s|readelf|${READELF}|g" -e "s|g++|${CXX}|g" \
-		-e "s|\"gcc|\"${CC}|g" -e "s|-shared|& -fPIC|g" ${WRKSRC}/${PORTNAME}.pl
+		-e "s|\"gcc|\"${CC}|g" -e "s|-shared|& -fPIC|g" \
+		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
