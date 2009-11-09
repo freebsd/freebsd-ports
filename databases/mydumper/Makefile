@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mydumper
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.7
 CATEGORIES=	databases
 MASTER_SITES=	http://code.launchpad.net/mydumper/${PORTVERSION:R}/${PORTVERSION}/+download/
 
