@@ -951,6 +951,8 @@ beep-media-player               ports/multimedia/beep-media-player
 beforelight                     ports/x11/beforelight
 belooted                        ports/games/belooted
 belvu                           ports/biology/belvu
+bennugd-core                    ports/devel/bennugd-core
+bennugd-modules                 ports/devel/bennugd-modules
 berkeley-db                     ports/java/berkeley-db
 bestfit                         ports/misc/bestfit
 bf2c                            ports/lang/bf2c
@@ -3778,6 +3780,7 @@ fsviewer                        ports/x11-fm/FSViewer
 fswatch                         ports/security/fswatch
 fswiki                          ports/www/fswiki
 ft2demos                        ports/print/ft2demos
+ftasv                           ports/www/ftasv
 ftdi-eeprom                     ports/misc/ftdi-eeprom
 fte                             ports/editors/fte
 ftelnetd                        ports/net/ftelnetd
@@ -20392,6 +20395,7 @@ radvd                           ports/net/radvd
 ragel                           ports/devel/ragel
 raggle                          ports/net/raggle
 raidtest                        ports/benchmarks/raidtest
+railroad-rampage                ports/games/railroad-rampage
 rain                            ports/security/rain
 rainbowcrack                    ports/security/rainbowcrack
 raincoat                        ports/sysutils/raincoat
