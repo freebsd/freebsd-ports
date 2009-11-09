@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for RDF site summaries based news-check
 
 BUILD_DEPENDS=	hs-haxml>=1.19:${PORTSDIR}/textproc/hs-haxml
