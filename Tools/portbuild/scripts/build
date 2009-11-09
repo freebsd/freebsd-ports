@@ -51,12 +51,12 @@ do_create() {
 
     portsfs=${newfs}/ports
     portsnap=${portsfs}@${buildid}
-    zfs create -o mountpoint=${builddir}/ports ${portsfs} || exit 1
+    zfs create -o mountpoint=${builddir}ports ${portsfs} || exit 1
     zfs snapshot ${portsnap}
 
     srcfs=${newfs}/src
     srcsnap=${srcfs}@${buildid}
-    zfs create -o mountpoint=${builddir}/src ${srcfs} || exit 1
+    zfs create -o mountpoint=${builddir}src ${srcfs} || exit 1
     zfs snapshot ${srcsnap}
 
     echo "New build ID is ${buildid}"
