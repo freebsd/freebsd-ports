@@ -1038,6 +1038,10 @@
 %%WWWDIR%%/dojox/atom/widget/nls/ar/FeedEntryViewer.js
 %%WWWDIR%%/dojox/atom/widget/nls/ar/FeedViewerEntry.js
 %%WWWDIR%%/dojox/atom/widget/nls/ar/PeopleEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/ca/FeedEntryEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/ca/FeedEntryViewer.js
+%%WWWDIR%%/dojox/atom/widget/nls/ca/FeedViewerEntry.js
+%%WWWDIR%%/dojox/atom/widget/nls/ca/PeopleEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/cs/FeedEntryEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/cs/FeedEntryViewer.js
 %%WWWDIR%%/dojox/atom/widget/nls/cs/FeedViewerEntry.js
@@ -1110,10 +1114,22 @@
 %%WWWDIR%%/dojox/atom/widget/nls/ru/FeedEntryViewer.js
 %%WWWDIR%%/dojox/atom/widget/nls/ru/FeedViewerEntry.js
 %%WWWDIR%%/dojox/atom/widget/nls/ru/PeopleEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/sk/FeedEntryEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/sk/FeedEntryViewer.js
+%%WWWDIR%%/dojox/atom/widget/nls/sk/FeedViewerEntry.js
+%%WWWDIR%%/dojox/atom/widget/nls/sk/PeopleEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/sl/FeedEntryEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/sl/FeedEntryViewer.js
+%%WWWDIR%%/dojox/atom/widget/nls/sl/FeedViewerEntry.js
+%%WWWDIR%%/dojox/atom/widget/nls/sl/PeopleEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/sv/FeedEntryEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/sv/FeedEntryViewer.js
 %%WWWDIR%%/dojox/atom/widget/nls/sv/FeedViewerEntry.js
 %%WWWDIR%%/dojox/atom/widget/nls/sv/PeopleEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/th/FeedEntryEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/th/FeedEntryViewer.js
+%%WWWDIR%%/dojox/atom/widget/nls/th/FeedViewerEntry.js
+%%WWWDIR%%/dojox/atom/widget/nls/th/PeopleEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/tr/FeedEntryEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/tr/FeedEntryViewer.js
 %%WWWDIR%%/dojox/atom/widget/nls/tr/FeedViewerEntry.js
@@ -1355,6 +1371,7 @@
 %%WWWDIR%%/dojox/editor/plugins/UploadImage.js
 %%WWWDIR%%/dojox/editor/plugins/nls/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ar/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ca/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/da/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/de/TableDialog.js
@@ -1373,7 +1390,10 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sk/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sl/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/th/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/TableDialog.js
@@ -1390,6 +1410,7 @@
 %%WWWDIR%%/dojox/embed/Object.js
 %%WWWDIR%%/dojox/embed/Quicktime.js
 %%WWWDIR%%/dojox/embed/README
+%%WWWDIR%%/dojox/embed/flashVars.js
 %%WWWDIR%%/dojox/embed/resources/version.mov
 %%WWWDIR%%/dojox/encoding/LICENSE
 %%WWWDIR%%/dojox/encoding/README
@@ -1476,6 +1497,7 @@
 %%WWWDIR%%/dojox/form/resources/FileInputAuto.html
 %%WWWDIR%%/dojox/form/resources/FilePickerTextBox.css
 %%WWWDIR%%/dojox/form/resources/FilePickerTextBox.html
+%%WWWDIR%%/dojox/form/resources/FileUploader.css
 %%WWWDIR%%/dojox/form/resources/HorizontalRangeSlider.html
 %%WWWDIR%%/dojox/form/resources/PasswordValidator.html
 %%WWWDIR%%/dojox/form/resources/RangeSlider.css
@@ -2078,6 +2100,8 @@
 %%WWWDIR%%/dojox/widget/nls/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/ar/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/ar/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ca/FilePicker.js
+%%WWWDIR%%/dojox/widget/nls/ca/RollingList.js
 %%WWWDIR%%/dojox/widget/nls/ca/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/cs/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/cs/Wizard.js
@@ -2115,10 +2139,16 @@
 %%WWWDIR%%/dojox/widget/nls/pt/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/ru/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/ru/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/sk/FilePicker.js
+%%WWWDIR%%/dojox/widget/nls/sk/RollingList.js
 %%WWWDIR%%/dojox/widget/nls/sk/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/sl/FilePicker.js
+%%WWWDIR%%/dojox/widget/nls/sl/RollingList.js
 %%WWWDIR%%/dojox/widget/nls/sl/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/sv/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/sv/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/th/FilePicker.js
+%%WWWDIR%%/dojox/widget/nls/th/RollingList.js
 %%WWWDIR%%/dojox/widget/nls/th/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/tr/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/tr/Wizard.js
@@ -2326,7 +2356,10 @@
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/zh
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/tr
+@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/th
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/sv
+@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/sl
+@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/sk
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ru
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/pt
@@ -2345,6 +2378,7 @@
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/de
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/da
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/cs
+@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ca
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ar
 @dirrm %%WWWDIR%%/dojox/editor/plugins/nls
 @dirrm %%WWWDIR%%/dojox/editor/plugins
@@ -2383,7 +2417,10 @@
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/zh-tw
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/zh
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/tr
+@dirrm %%WWWDIR%%/dojox/atom/widget/nls/th
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/sv
+@dirrm %%WWWDIR%%/dojox/atom/widget/nls/sl
+@dirrm %%WWWDIR%%/dojox/atom/widget/nls/sk
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/ru
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/pt-pt
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/pt
@@ -2402,6 +2439,7 @@
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/de
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/da
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/cs
+@dirrm %%WWWDIR%%/dojox/atom/widget/nls/ca
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls/ar
 @dirrm %%WWWDIR%%/dojox/atom/widget/nls
 @dirrm %%WWWDIR%%/dojox/atom/widget
