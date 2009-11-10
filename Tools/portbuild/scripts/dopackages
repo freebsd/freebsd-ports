@@ -134,7 +134,9 @@ makeduds () {
     echo "generating duds"
     echo "================================================"
     echo "duds generation started at $(date)"
-    cp -p ${builddir}/duds ${builddir}/duds.old
+    if [ -e ${builddir}/duds ]; then
+	cp -p ${builddir}/duds ${builddir}/duds.old
+    fi
     if ! ${pb}/scripts/makeduds ${arch} ${branch} ${buildid}; then
 	echo "error(s) detected, exiting script at $(date).  Failed duds list was:"
 	cat ${builddir}/duds
@@ -142,8 +144,12 @@ makeduds () {
     fi
     echo "duds generation ended at $(date)"
     echo $(wc -l ${builddir}/duds | awk '{print $1}') "items in duds"
-    echo "duds diff:"
-    diff ${builddir}/duds.old ${builddir}/duds
+    if [ -f ${builddir}/duds.old ]; then
+	echo "duds diff:"
+	diff ${builddir}/duds.old ${builddir}/duds
+    else
+	echo "no previous duds to compare against."
+    fi
     cp -p ${builddir}/duds ${builddir}/duds.orig
 }
 
@@ -366,6 +372,9 @@ fi
 # Start setting up build environment
 
 if [ "${skipstart}" -eq 0 ]; then
+    # MCL note 20091109: buildid must exist.  For now, use the following
+    # MCL manual command to start new buildenvs, before the first use of
+    # MCL dopackages: "build create arch branch"
     oldbuildid=${buildid}
     buildid=$(date +%Y%m%d%H%M%S)
     build clone ${arch} ${branch} ${oldbuildid} ${buildid}
@@ -373,6 +382,7 @@ fi
 
 builddir=${pbab}/builds/${buildid}
 
+# XXX MCL what does this line do???
 df -k | grep ${buildid}
 # Set up our environment variables
 buildenv ${pb} ${arch} ${branch} ${builddir}
@@ -381,6 +391,9 @@ buildenv ${pb} ${arch} ${branch} ${builddir}
 if [ ! -d ${builddir} ]; then
     mailexit 1
 fi
+
+# make necessary subdirectories if they don't exist
+mkdir -p ${builddir}/bak/restricted || mailexit 1
 
 if [ "${keep}" -eq 1 ]; then
     touch ${builddir}/.keep
@@ -481,7 +494,12 @@ if [ "$skipstart" = 0 ]; then
         # will need to work out how to deal with updates from
         # concurrent builds though (one build may fail after a more
         # recent build has fixed the breakage)
-	cp ${pbab}/failure ${pbab}/newfailure ${builddir}/bak
+	if [ -f ${pbab}/failure ]; then
+	    cp ${pbab}/failure ${builddir}/bak/
+	fi
+	if [ -f ${pbab}/newfailure ]; then
+	    cp ${pbab}/newfailure ${builddir}/bak/
+	fi
 	lockf -k ${pbab}/failure.lock ${pb}/scripts/prunefailure ${arch} ${branch} ${builddir}
     fi
 fi
@@ -497,8 +515,10 @@ if [ "$skipstart" = 0 ]; then
     fi
     
     cd ${builddir}
-    mv distfiles/ .distfiles~
-    rm -rf .distfiles~ &
+    if [ -d distfiles ]; then
+	mv distfiles .distfiles~
+	rm -rf .distfiles~ &
+    fi
     mkdir -p distfiles/
     
     olderrors=$(readlink ${builddir}/errors)
@@ -510,7 +530,12 @@ if [ "$skipstart" = 0 ]; then
     # Cycle out the previous symlinks
     rm -f bak/errors
     rm -f bak/logs
-    mv errors logs bak
+    if [ -e errors ]; then
+	mv errors bak/
+    fi
+    if [ -e logs ]; then
+	mv logs bak/
+    fi
     
     # Create new log directories for archival
     rm -rf ${newerrors}
@@ -540,19 +565,24 @@ if [ "$skipstart" = 0 ]; then
 	
         # Copy back in the restricted ports that were saved after the
         # previous build
-	if [ -d bak/restricted/ ]; then
+	if [ -d ${builddir}/bak/restricted/ ]; then
 	    cd ${builddir}/bak/restricted
 	    find . | cpio -dumpl ${builddir}
 	fi
 	cd ${builddir}
 
         # Create hardlinks to previous set of logs
-	cd ${oldlogs} && find . -name \*.log\* | cpio -dumpl ${newlogs}
-	cd ${olderrors} && find . -name \*.log\* | cpio -dumpl ${newerrors}
+	if [ ! -z "${oldlogs}" -a -d ${oldlogs} ]; then
+	    cd ${oldlogs} && find . -name \*.log\* | cpio -dumpl ${newlogs}
+	fi
+	if [ ! -z "${olderrors}" -a -d ${olderrors} ]; then
+	    cd ${olderrors} && find . -name \*.log\* | cpio -dumpl ${newerrors}
+	fi
 	
         # Identify the ports that have changed and need to be removed
         # before rebuilding
 	cd ${PORTSDIR}
+	if [ -f ${INDEXFILE}.old ]; then
 	cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
 	cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
 	comm -2 -3 ${INDEXFILE}.old1 ${INDEXFILE}.1 | cut -f 1 -d \| > ${builddir}/.oldports
@@ -571,11 +601,14 @@ if [ "$skipstart" = 0 ]; then
 	cd ${builddir}/logs/
 	sed 's,$,.log,' ${builddir}/.oldports | xargs rm -f
 	sed 's,$,.log.bz2,' ${builddir}/.oldports | xargs rm -f
+	fi
     else
 	cd ${builddir}
 	
-	mv packages .packages~
-	rm -rf .packages~ &
+	if [ -d packages ]; then
+	    mv packages .packages~
+	    rm -rf .packages~ &
+	fi
 	mkdir -p packages/All
     fi
 fi
