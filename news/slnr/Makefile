@@ -8,9 +8,9 @@
 PORTNAME=	slnr
 PORTVERSION=	2.3.0
 CATEGORIES=	news
-MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/slnr/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	hoek@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simplistic reader for SOUP (HDPF) mail and news packets
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
