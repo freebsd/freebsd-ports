@@ -1,0 +1,7 @@
+XML::Validate is a generic interface to different XML validation backends. 
+
+Backends for the following validators are included with this distribution:
+** LibXML (& you'll need XML::LibXML)
+** Xerces (& you'll need XML::Xerces)
+
+WWW: http://search.cpan.org/~bbc/XML-Validate/
