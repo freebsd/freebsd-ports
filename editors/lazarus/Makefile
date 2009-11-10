@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.26.2
-PORTREVISION=	2
+PORTVERSION=	0.9.28.2
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-0/}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-src/}
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
@@ -19,6 +17,7 @@ COMMENT=	A portable Delphi-like IDE for the FreePascal compiler
 
 ONLY_FOR_ARCHS=	i386
 
+USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -55,7 +54,7 @@ LCL_PLATFORM=	gtk
 .if defined(WITH_QT4)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/qt4/libqt4intf.so:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
-OPT_EXTRA=	"-dUSE_QT_44"
+OPT_EXTRA=	"-dUSE_QT_45"
 .endif
 
 post-extract:
@@ -142,6 +141,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA}	${WRKSRC}/Makefile* ${DATADIR}
+	${INSTALL_DATA}	${WRKSRC}/JCFSettings.cfg ${DATADIR}
 .for FILE in ${MAN1}
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${MAN1PREFIX}/man/man1
 .endfor
