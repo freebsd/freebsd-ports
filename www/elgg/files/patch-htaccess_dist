@@ -1,18 +1,11 @@
---- htaccess_dist.orig	2008-08-22 16:25:51.000000000 +0200
-+++ htaccess_dist	2008-09-26 10:18:45.000000000 +0200
-@@ -65,7 +65,7 @@
+--- htaccess_dist.orig	2009-11-10 10:21:19.000000000 +0800
++++ htaccess_dist	2009-11-10 10:22:15.000000000 +0800
+@@ -114,7 +114,7 @@
  # If you're not running Elgg in a subdirectory on your site, but still getting lots
  # of 404 errors beyond the front page, you could instead try:
  #
 -#RewriteBase /
 +RewriteBase /elgg
  
- RewriteRule ^cron\/$ engine/handlers/cron_handler.php
+ RewriteRule ^action\/([A-Za-z0-9\_\-\/]+)$ engine/handlers/action_handler.php?action=$1
  
-@@ -84,4 +84,4 @@
- RewriteRule xml-rpc.php engine/handlers/xml-rpc_handler.php
- RewriteRule mt/mt-xmlrpc.cgi engine/handlers/xml-rpc_handler.php
- 
--</IfModule>
-\ No newline at end of file
-+</IfModule>

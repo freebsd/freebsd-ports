@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	elgg
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Blogging and social networking platform
 
-USE_PHP=	mysql gd json soap dom
+USE_PHP=	mysql gd json soap dom xml
 USE_GETTEXT=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
