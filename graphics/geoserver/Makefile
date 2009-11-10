@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	geoserver
-PORTVERSION=	1.7.6
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+DISTNAME=	${PORTNAME}-${PORTVERSION}a-bin
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Open Source GIS Server
@@ -29,7 +29,6 @@ SUB_LIST=	GEOSERVERDIR="${GEOSERVERDIR}" JAVA="${JAVA}"
 SUB_FILES=	pkg-message
 
 post-patch:
-	@${RM} ${WRKSRC}/webapps/geoserver/editarea/images/Thumbs.db
 	@${REINPLACE_CMD} -e 's|$$GEOSERVER_HOME|${GEOSERVERDIR}|g' \
 		-e 's|%%JAVA%%|${JAVA}|g' \
 		${WRKSRC}/bin/startup.sh ${WRKSRC}/bin/shutdown.sh
