@@ -208,6 +208,7 @@
     SUBDIR += crow
     SUBDIR += cscope
     SUBDIR += cscout
+    SUBDIR += csoap
     SUBDIR += cssc
     SUBDIR += cstringbuffer
     SUBDIR += ctags
