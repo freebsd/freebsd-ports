@@ -1,0 +1,20 @@
+###############################################################################
+
+ ArchiveSMTP has been installed! You will, however, need to configure your MTA
+ to use it as a 'milter'. Please consult your MTA's documentation reguarding
+ this. For rule formats check the manpage and sample configuration file. The
+ following rc values can be adjusted to your preference; listed are their
+ default values:
+
+ Enable port   -> archivesmtp_enable="NO"
+ Run as user   -> archivesmtp_chuser="nobody"
+ Filter socket -> archivesmtp_socket="unix:%%SOCKETBASE%%/%%SOCKETDIR%%/mta.sock"
+ Pid file      -> archivesmtp_pidfile="%%SOCKETBASE%%/%%SOCKETDIR%%/run.pid"
+ Configuration -> archivesmtp_config="%%PREFIX%%/etc/archivesmtp.conf"
+ Other Flags   -> archuvesmtp_flags=""
+
+ Please note: Only the owner my have write permissions on the socket directory.
+
+ Visit the website at: http://www.dancingfortune.com/projects/archivesmtp/
+
+###############################################################################

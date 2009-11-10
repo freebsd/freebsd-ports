@@ -1,0 +1,7 @@
+sbin/archivesmtp
+etc/archivesmtp.conf.sample
+@stopdaemon archivesmtp
+@exec mkdir -p %%SOCKETBASE%%/%%SOCKETDIR%%
+@exec chown nobody %%SOCKETBASE%%/%%SOCKETDIR%%
+@cwd %%SOCKETBASE%%
+@dirrm %%SOCKETDIR%%

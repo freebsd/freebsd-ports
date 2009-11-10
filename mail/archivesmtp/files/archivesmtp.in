@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: archivesmtp
+# BEFORE: mail
+
+. %%RC_SUBR%%
+
+name="archivesmtp"
+rcvar="${name}_enable"
+
+command="%%PREFIX%%/sbin/${name}"
+
+# Read settings and set defaults
+load_rc_config $name
+
+: ${archivesmtp_enable="NO"}
+: ${archivesmtp_chuser="nobody"}
+: ${archivesmtp_socket="unix:%%SOCKETBASE%%/%%SOCKETDIR%%/mta.sock"}
+: ${archivesmtp_config="%%PREFIX%%/etc/archivesmtp.conf"}
+: ${archivesmtp_pidfile="%%SOCKETBASE%%/%%SOCKETDIR%%/run.pid"}
+: ${archivesmtp_flags=""}
+
+pidfile="${archivesmtp_pidfile}"
+
+command_args="${archivesmtp_flags} -p ${archivesmtp_socket} -f ${archivesmtp_config} -u ${archivesmtp_chuser} -r ${archivesmtp_pidfile} &"
+
+run_rc_command "$1"
