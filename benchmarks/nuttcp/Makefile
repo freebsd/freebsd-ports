@@ -18,6 +18,7 @@ MAINTAINER=	andrewclarkii@gmail.com
 COMMENT=	TCP/UDP network testing tool
 
 USE_BZIP2=	yes
+WANT_PERL=	yes
 MAKEFILE=	/dev/null
 ALL_TARGET=	${PORTNAME}
 MAN8=		${PORTNAME}.8
