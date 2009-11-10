@@ -12,7 +12,7 @@ CATEGORIES=	converters tcl tk
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
 
-MAINTAINER=	hoek@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
