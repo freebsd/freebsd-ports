@@ -12,6 +12,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	neil@darlow.co.uk
 COMMENT=	SquirrelMail plugin for Server-Side Mail Filtering management
 
+USE_PERL5_RUN=	yes
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
 

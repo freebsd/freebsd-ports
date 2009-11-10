@@ -13,10 +13,12 @@ PKGNAMESUFFIX=	-plugin
 DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Place notes on the login screen
 
 RUN_DEPENDS=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+
+USE_PERL5_RUN=	yes
 
 SUB_FILES=	pkg-message
 

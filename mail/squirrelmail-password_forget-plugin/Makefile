@@ -18,6 +18,8 @@ COMMENT=	Prevent reuse of login details by browsers at public terminals
 
 RUN_DEPENDS=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
+USE_PERL5_RUN=	yes
+
 .include <bsd.port.pre.mk>
 .include "../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.post.mk>

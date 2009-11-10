@@ -18,6 +18,8 @@ COMMENT=		Adds multi-site-hosting capabilities to SquirrelMail
 
 RUN_DEPENDS=		squirrelmail-compatibility-plugin>=2.0.14:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
+USE_PERL5_RUN=		yes
+
 .include <bsd.port.pre.mk>
 .include "../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.post.mk>

@@ -14,6 +14,7 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Provides buttons with customizable action (for reporting spam, etc.)
 
 USE_SM_COMPAT=	yes
+USE_PERL5_RUN=	yes
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 

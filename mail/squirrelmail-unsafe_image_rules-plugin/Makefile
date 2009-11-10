@@ -15,6 +15,7 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Determines what unsafe (web) images will be shown
 
 USE_SM_COMPAT=	yes
+USE_PERL5_RUN=	yes
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
