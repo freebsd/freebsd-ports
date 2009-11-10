@@ -16,10 +16,6 @@ COMMENT=	Lanmap sits quietly on a network and builds a picture of what it sees
 
 RUN_DEPENDS=	twopi:${PORTSDIR}/graphics/graphviz
 
-BROKEN=		distfile no longer available
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2009-09-21
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_ZIP=	yes
