@@ -12,7 +12,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
 
-MAINTAINER=	hoek@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 GNU_CONFIGURE=	yes

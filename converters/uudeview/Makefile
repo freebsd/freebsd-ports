@@ -10,7 +10,7 @@ PORTVERSION=	0.5.20
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 
-MAINTAINER=	hoek@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
