@@ -7,7 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.20.r2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION:S/.r/-RC/}:squirrelmail \
 		SF/${PORTNAME}/locales/1.4.18-20090526:locales
@@ -64,6 +64,7 @@ post-patch:
 		${WRKSRC}/config/config_default.php.orig \
 		${WRKSRC}/functions/global.php.orig \
 		${WRKSRC}/functions/i18n.php.orig \
+		${WRKSRC}/functions/imap_search.php.orig \
 		${WRKSRC}/src/addrbook_search_html.php.orig \
 		${WRKSRC}/src/compose.php.orig
 .endif
