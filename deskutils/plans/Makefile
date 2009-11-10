@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	8.1.5
+PORTVERSION=	8.1.6
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
@@ -25,7 +25,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:plans \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A Good Web Calendar
 
 BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session
@@ -34,6 +34,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/${PORTNAME}_${PORTVERSION}
 
 SUB_FILES=	pkg-message
 
