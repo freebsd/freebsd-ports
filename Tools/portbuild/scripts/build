@@ -45,28 +45,15 @@ do_create() {
     builddir=$4
     shift 4
 
-    newfs=a/portbuild/${arch}/${buildid}
     mountpoint=${builddir}
+    newfs=a/portbuild/${arch}/${buildid}
     zfs create -o mountpoint=${mountpoint} ${newfs} || exit 1
     chown -R ports-${arch}:portmgr ${mountpoint}
     chmod g+w ${mountpoint}
-    zfs snapshot ${newfs}@${buildid}
 
-    portsfs=${newfs}/ports
-    portsnap=${portsfs}@${buildid}
-    mountpoint=${builddir}ports
-    zfs create -o mountpoint=${mountpoint} ${portsfs} || exit 1
-    chown -R ports-${arch}:portmgr ${mountpoint}
-    chmod g+w ${mountpoint}
-    zfs snapshot ${portsnap}
+    do_portsupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
 
-    srcfs=${newfs}/src
-    srcsnap=${srcfs}@${buildid}
-    mountpoint=${builddir}src
-    zfs create -o mountpoint=${mountpoint} ${srcfs} || exit 1
-    chown -R ports-${arch}:portmgr ${mountpoint}
-    chmod g+w ${mountpoint}
-    zfs snapshot ${srcsnap}
+    do_srcupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
 
     ln -sf ${builddir} ${pbab}/builds/latest
 
@@ -137,18 +124,28 @@ do_portsupdate() {
 	shift
     fi
 
-    portsfs=a/portbuild/${arch}/${buildid}/ports
-
     destroy_fs a/portbuild/${arch} ${buildid} /ports || exit 1
 
     if [ "${arg}" = "-umount" ]; then
 	return
     fi
 
+    do_portsupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
+}
+
+do_portsupdate_inner() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
+
     echo "================================================"
     echo "Reimaging ZFS ports tree on ${builddir}/ports"
     echo "================================================"
-    
+
+    portsfs=a/portbuild/${arch}/${buildid}/ports
+
     now=$(now)
     zfs snapshot a/snap/ports@${now}
     zfs clone a/snap/ports@${now} ${portsfs}
@@ -167,35 +164,33 @@ do_srcupdate() {
 	shift
     fi
 
-    srcfs=a/portbuild/${arch}/${buildid}/src
-
     destroy_fs a/portbuild/${arch} ${buildid} /src || exit 1
 
     if [ "${arg}" = "-umount" ]; then
 	return
     fi
 
+    do_srcupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
+}
+
+do_srcupdate_inner() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
+
     echo "================================================"
     echo "Reimaging ZFS src tree on ${builddir}/src"
     echo "================================================"
-    
 
-    case ${branch} in
-	9|9-exp)
-	    srcbranch=HEAD
-	    ;;
-	*-exp)
-	    srcbranch=${branch%-exp}
-	    ;;
-	*)
-	    srcbranch=${branch}
-    esac
     now=$(now)
-    
-    zfs snapshot a/snap/src-${srcbranch}@${now}
-    zfs clone a/snap/src-${srcbranch}@${now} ${srcfs}
-    zfs set mountpoint=${builddir}/src ${srcfs}
 
+    srcfs=a/portbuild/${arch}/${buildid}/src
+
+    zfs snapshot a/snap/src-${branch}@${now}
+    zfs clone a/snap/src-${branch}@${now} ${srcfs}
+    zfs set mountpoint=${builddir}/src ${srcfs}
 }
 
 cleanup_client() {
@@ -215,7 +210,6 @@ cleanup_client() {
     ${pb}/scripts/dosetupnode ${arch} ${branch} ${buildid} ${mach} -nocopy -queue -full
 
     echo "Finished cleaning up ${arch}/${branch} build ID ${buildid} on ${mach}"
-
 }
 
 do_cleanup() {
@@ -340,7 +334,7 @@ destroy_fs() {
 	    fi
 	fi
     fi
-}	
+}
 
 do_destroy() {
     arch=$1
