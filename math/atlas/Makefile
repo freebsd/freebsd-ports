@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 USE_LDCONFIG=	yes
+CONFLICTS=	atlas-devel-[0-9]*
 
 .include <bsd.port.pre.mk>
 
