@@ -13,8 +13,8 @@ include/ccrtp/rtcppkt.h
 include/ccrtp/rtp.h
 include/ccrtp/rtppkt.h
 include/ccrtp/sources.h
-lib/libccrtp1-1.6.so.1
-lib/libccrtp1-1.6.so
+lib/libccrtp1-1.7.so.0
+lib/libccrtp1-1.7.so
 lib/libccrtp1.so
 lib/libccrtp1.a
 lib/libccrtp1.la
