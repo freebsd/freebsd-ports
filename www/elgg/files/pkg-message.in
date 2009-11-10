@@ -15,7 +15,7 @@ and change the AllowOverride setting of the DocumentRoot to
    Alias /elgg %%WWWDIR%%/
    AcceptPathInfo On
    <Directory %%WWWDIR%%>
-      AllowOverride None
+      AllowOverride All
       Options Indexes FollowSymLinks
       Order Allow,Deny
       Allow from all
