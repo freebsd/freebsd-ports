@@ -16,6 +16,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
+USE_PERL5_RUN=	yes
+
 CONFLICTS=	squirrelmail-compatibility-plugin-1.*
 
 .include <bsd.port.pre.mk>

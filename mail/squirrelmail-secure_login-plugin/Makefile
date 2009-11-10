@@ -18,6 +18,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	This plugin will automatically turn on SSL security during login
 
+USE_PERL5_RUN=	yes
+
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
