@@ -13,6 +13,7 @@ include/bullet/BulletCollision/BroadphaseCollision/btQuantizedBvh.h
 include/bullet/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h
 include/bullet/BulletCollision/CollisionDispatch/SphereTriangleDetector.h
 include/bullet/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h
+include/bullet/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btBoxBoxDetector.h
 include/bullet/BulletCollision/CollisionDispatch/btCollisionConfiguration.h
@@ -21,6 +22,7 @@ include/bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.h
 include/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h
 include/bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h
 include/bullet/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.h
+include/bullet/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.h
@@ -33,6 +35,7 @@ include/bullet/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.h
 include/bullet/BulletCollision/CollisionDispatch/btUnionFind.h
+include/bullet/BulletCollision/CollisionShapes/btBox2dShape.h
 include/bullet/BulletCollision/CollisionShapes/btBoxShape.h
 include/bullet/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
 include/bullet/BulletCollision/CollisionShapes/btCapsuleShape.h
@@ -41,6 +44,7 @@ include/bullet/BulletCollision/CollisionShapes/btCollisionShape.h
 include/bullet/BulletCollision/CollisionShapes/btCompoundShape.h
 include/bullet/BulletCollision/CollisionShapes/btConcaveShape.h
 include/bullet/BulletCollision/CollisionShapes/btConeShape.h
+include/bullet/BulletCollision/CollisionShapes/btConvex2dShape.h
 include/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h
 include/bullet/BulletCollision/CollisionShapes/btConvexInternalShape.h
 include/bullet/BulletCollision/CollisionShapes/btConvexPointCloudShape.h
@@ -112,11 +116,15 @@ include/bullet/BulletCollision/NarrowPhaseCollision/btRaycastCallback.h
 include/bullet/BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h
 include/bullet/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h
 include/bullet/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h
+include/bullet/BulletDynamics/Character/btCharacterControllerInterface.h
+include/bullet/BulletDynamics/Character/btKinematicCharacterController.h
 include/bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h
 include/bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h
 include/bullet/BulletDynamics/ConstraintSolver/btContactConstraint.h
 include/bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h
 include/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h
+include/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h
+include/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h
 include/bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h
 include/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h
 include/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h
@@ -126,8 +134,8 @@ include/bullet/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.h
 include/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h
 include/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h
 include/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h
-include/bullet/BulletDynamics/Character/btCharacterControllerInterface.h
-include/bullet/BulletDynamics/Character/btKinematicCharacterController.h
+include/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h
+include/bullet/BulletDynamics/Dynamics/btActionInterface.h
 include/bullet/BulletDynamics/Dynamics/btContinuousDynamicsWorld.h
 include/bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
 include/bullet/BulletDynamics/Dynamics/btDynamicsWorld.h
@@ -136,11 +144,12 @@ include/bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h
 include/bullet/BulletDynamics/Vehicle/btRaycastVehicle.h
 include/bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h
 include/bullet/BulletDynamics/Vehicle/btWheelInfo.h
+include/bullet/BulletMultiThreaded/MiniCLTask/MiniCLTask.h
+include/bullet/BulletMultiThreaded/MiniCLTaskScheduler.h
 include/bullet/BulletMultiThreaded/PlatformDefinitions.h
 include/bullet/BulletMultiThreaded/PosixThreadSupport.h
 include/bullet/BulletMultiThreaded/PpuAddressSpace.h
 include/bullet/BulletMultiThreaded/SequentialThreadSupport.h
-include/bullet/BulletMultiThreaded/SpuBatchRaycaster.h
 include/bullet/BulletMultiThreaded/SpuCollisionObjectWrapper.h
 include/bullet/BulletMultiThreaded/SpuCollisionTaskProcess.h
 include/bullet/BulletMultiThreaded/SpuContactManifoldCollisionAlgorithm.h
@@ -152,24 +161,22 @@ include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/Box.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuCollisionShapes.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuContactResult.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuConvexPenetrationDepthSolver.h
-include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuEpaPenetrationDepthSolver.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuGatheringCollisionTask.h
-include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuGjkEpa2.h
-include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuGjkPairDetector.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuLocalSupport.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuMinkowskiPenetrationDepthSolver.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuPreferredPenetrationDirections.h
-include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuVoronoiSimplexSolver.h
 include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.h
-include/bullet/BulletMultiThreaded/SpuParallelSolver.h
-include/bullet/BulletMultiThreaded/SpuRaycastTask/SpuRaycastTask.h
-include/bullet/BulletMultiThreaded/SpuRaycastTask/SpuSubSimplexConvexCast.h
-include/bullet/BulletMultiThreaded/SpuRaycastTaskProcess.h
 include/bullet/BulletMultiThreaded/SpuSampleTask/SpuSampleTask.h
 include/bullet/BulletMultiThreaded/SpuSampleTaskProcess.h
-include/bullet/BulletMultiThreaded/SpuSolverTask/SpuParallellSolverTask.h
 include/bullet/BulletMultiThreaded/SpuSync.h
 include/bullet/BulletMultiThreaded/Win32ThreadSupport.h
+include/bullet/BulletMultiThreaded/btGpu3DGridBroadphase.h
+include/bullet/BulletMultiThreaded/btGpu3DGridBroadphaseSharedCode.h
+include/bullet/BulletMultiThreaded/btGpu3DGridBroadphaseSharedDefs.h
+include/bullet/BulletMultiThreaded/btGpu3DGridBroadphaseSharedTypes.h
+include/bullet/BulletMultiThreaded/btGpuDefines.h
+include/bullet/BulletMultiThreaded/btGpuUtilsSharedCode.h
+include/bullet/BulletMultiThreaded/btGpuUtilsSharedDefs.h
 include/bullet/BulletMultiThreaded/btThreadSupportInterface.h
 include/bullet/BulletMultiThreaded/vectormath/scalar/cpp/mat_aos.h
 include/bullet/BulletMultiThreaded/vectormath/scalar/cpp/quat_aos.h
@@ -207,13 +214,16 @@ include/bullet/LinearMath/btStackAlloc.h
 include/bullet/LinearMath/btTransform.h
 include/bullet/LinearMath/btTransformUtil.h
 include/bullet/LinearMath/btVector3.h
+include/bullet/MiniCL/cl.h
+include/bullet/MiniCL/cl_gl.h
+include/bullet/MiniCL/cl_platform.h
 include/bullet/btBulletCollisionCommon.h
 include/bullet/btBulletDynamicsCommon.h
+include/bullet/bulletmultithreaded/MiniCLTaskScheduler.h
 include/bullet/bulletmultithreaded/PlatformDefinitions.h
 include/bullet/bulletmultithreaded/PosixThreadSupport.h
 include/bullet/bulletmultithreaded/PpuAddressSpace.h
 include/bullet/bulletmultithreaded/SequentialThreadSupport.h
-include/bullet/bulletmultithreaded/SpuBatchRaycaster.h
 include/bullet/bulletmultithreaded/SpuCollisionObjectWrapper.h
 include/bullet/bulletmultithreaded/SpuCollisionTaskProcess.h
 include/bullet/bulletmultithreaded/SpuContactManifoldCollisionAlgorithm.h
@@ -221,11 +231,16 @@ include/bullet/bulletmultithreaded/SpuDoubleBuffer.h
 include/bullet/bulletmultithreaded/SpuFakeDma.h
 include/bullet/bulletmultithreaded/SpuGatheringCollisionDispatcher.h
 include/bullet/bulletmultithreaded/SpuLibspe2Support.h
-include/bullet/bulletmultithreaded/SpuParallelSolver.h
-include/bullet/bulletmultithreaded/SpuRaycastTaskProcess.h
 include/bullet/bulletmultithreaded/SpuSampleTaskProcess.h
 include/bullet/bulletmultithreaded/SpuSync.h
 include/bullet/bulletmultithreaded/Win32ThreadSupport.h
+include/bullet/bulletmultithreaded/btGpu3DGridBroadphase.h
+include/bullet/bulletmultithreaded/btGpu3DGridBroadphaseSharedCode.h
+include/bullet/bulletmultithreaded/btGpu3DGridBroadphaseSharedDefs.h
+include/bullet/bulletmultithreaded/btGpu3DGridBroadphaseSharedTypes.h
+include/bullet/bulletmultithreaded/btGpuDefines.h
+include/bullet/bulletmultithreaded/btGpuUtilsSharedCode.h
+include/bullet/bulletmultithreaded/btGpuUtilsSharedDefs.h
 include/bullet/bulletmultithreaded/btThreadSupportInterface.h
 include/bullet/bulletmultithreaded/vectormath2bullet.h
 lib/libbulletcollision.a
@@ -233,31 +248,26 @@ lib/libbulletdynamics.a
 lib/libbulletmath.a
 lib/libbulletsoftbody.a
 libdata/pkgconfig/bullet.pc
-%%PORTDOCS%%%%DOCSDIR%%/Bullet_Faq.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Bullet_User_Manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 @dirrm include/bullet/bulletmultithreaded
-@dirrm include/bullet/BulletCollision/BroadphaseCollision
-@dirrm include/bullet/BulletCollision/CollisionDispatch
-@dirrm include/bullet/BulletCollision/CollisionShapes
-@dirrm include/bullet/BulletCollision/Gimpact
-@dirrm include/bullet/BulletCollision/NarrowPhaseCollision
-@dirrm include/bullet/BulletCollision
-@dirrm include/bullet/BulletDynamics/Character
-@dirrm include/bullet/BulletDynamics/ConstraintSolver
-@dirrm include/bullet/BulletDynamics/Dynamics
-@dirrm include/bullet/BulletDynamics/Vehicle
-@dirrm include/bullet/BulletDynamics
-@dirrm include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask
-@dirrm include/bullet/BulletMultiThreaded/SpuRaycastTask
-@dirrm include/bullet/BulletMultiThreaded/SpuSampleTask
-@dirrm include/bullet/BulletMultiThreaded/SpuSolverTask
+@dirrm include/bullet/MiniCL
+@dirrm include/bullet/LinearMath
+@dirrm include/bullet/BulletSoftBody
 @dirrm include/bullet/BulletMultiThreaded/vectormath/scalar/cpp
 @dirrm include/bullet/BulletMultiThreaded/vectormath/scalar
 @dirrm include/bullet/BulletMultiThreaded/vectormath
+@dirrm include/bullet/BulletMultiThreaded/SpuSampleTask
+@dirrm include/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask
+@dirrm include/bullet/BulletMultiThreaded/MiniCLTask
 @dirrm include/bullet/BulletMultiThreaded
-@dirrm include/bullet/BulletSoftBody
-@dirrm include/bullet/LinearMath
+@dirrm include/bullet/BulletDynamics/Vehicle
+@dirrm include/bullet/BulletDynamics/Dynamics
+@dirrm include/bullet/BulletDynamics/ConstraintSolver
+@dirrm include/bullet/BulletDynamics/Character
+@dirrm include/bullet/BulletDynamics
+@dirrm include/bullet/BulletCollision/NarrowPhaseCollision
+@dirrm include/bullet/BulletCollision/Gimpact
+@dirrm include/bullet/BulletCollision/CollisionShapes
+@dirrm include/bullet/BulletCollision/CollisionDispatch
+@dirrm include/bullet/BulletCollision/BroadphaseCollision
+@dirrm include/bullet/BulletCollision
 @dirrm include/bullet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

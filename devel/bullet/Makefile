@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	bullet
-PORTVERSION=	2.73
-PORTREVISION=	1
+PORTVERSION=	2.75
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-sp1/}
+MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	acm@FreeBSD.org
@@ -23,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 USE_GL=		glu glut
 USE_XORG=	x11
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include
 CONFIGURE_ENV=		CPPFLAGS=${CPPFLAGS} LDFLAGS=${LDFLAGS}
@@ -32,7 +31,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 JAM_CMD=	${LOCALBASE}/bin/jam
-JAM_ARGS=	-qa
+JAM_ARGS=	-qa ${_MAKE_JOBS}
+
+PORTDOCS=	*
+
+OPTIONS=	DOUBLE "Use double precision"	off
 
 .include <bsd.port.pre.mk>
 
@@ -42,6 +45,10 @@ CFLAGS+=	-DUSE_ADDR64
 
 .if ${ARCH} == "sparc64"
 IGNORE=		Does not configure on sparc64
+.endif
+
+.if defined(WITH_DOUBLE)
+CFLAGS+=	-DBT_USE_DOUBLE_PRECISION
 .endif
 
 post-patch:
