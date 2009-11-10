@@ -2073,6 +2073,7 @@ db44                            ports/databases/db44
 db45                            ports/databases/db45
 db46                            ports/databases/db46
 db47                            ports/databases/db47
+db48                            ports/databases/db48
 db4o-mono                       ports/databases/db4o-mono
 dbXML                           ports/databases/dbXML
 dbacl                           ports/textproc/dbacl
@@ -8248,6 +8249,7 @@ linuxsampler                    ports/audio/linuxsampler
 linuxthreads                    ports/devel/linuxthreads
 linwarrior                      ports/games/linwarrior
 lion                            ports/devel/lion
+lionwiki                        ports/www/lionwiki
 liquidwar                       ports/games/liquidwar
 lirc                            ports/comms/lirc
 lire                            ports/sysutils/lire
