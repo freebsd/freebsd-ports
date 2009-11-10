@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emesene
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	net-im python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,6 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	pygtk2
+USE_GSTREAMER=	python
 REINPLACE_ARGS=	-i ""
 
 PLIST=		${WRKDIR}/pkg-plist
@@ -40,6 +40,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${PORTNAME}
 
 do-build:
+	@cd ${WRKSRC} && \
+		${PYTHON_CMD} setup.py build_ext -i
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
 
@@ -47,7 +49,7 @@ do-build:
 	@${ECHO_CMD} "exec ${PYTHON_CMD} ./${PORTNAME}" >> ${WRKDIR}/run.sh
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} -fr ${PLIST} ${WRKSRC}/build ${WRKSRC}/libmimic
 	@cd ${WRKSRC} && \
 		${FIND}  * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
 			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
