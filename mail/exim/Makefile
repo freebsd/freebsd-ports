@@ -23,6 +23,7 @@ COMMENT?=	High performance MTA for Unix systems on the Internet
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
+WANT_PERL=	yes
 
 .include <bsd.port.pre.mk>
 
