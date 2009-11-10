@@ -15,16 +15,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	An elegant music player for MPD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd
 
 USE_GETTEXT=	yes
-USE_GNOME=	pygnomeextras
+USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
 PYDISTUTILS_PKGNAME=	Sonata
 
-OPTIONS=	MPD	"Install Music Player Daemon" on \
+OPTIONS=	MMKEYS	"Enable instance single support for mmkeys" off \
+		MPD	"Install Music Player Daemon" on \
+		PYGNOMEEXTRAS	"Use py-gnome-extras for enhanced system tray" off \
 		TAGLIB	"Install support for editing metadata" off \
 		ZSI	"Install support for automatic lyrics fetching" off
 
@@ -47,6 +49,14 @@ post-patch:
 
 .if defined (WITH_MPD)
 RUN_DEPENDS+=	mpd:${PORTSDIR}/audio/musicpd
+.endif
+
+.if defined (WITH_MMKEYS)
+RUN_DEPENDS+=${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus
+.endif
+
+.if defined (WITH_PYGNOMEEXTRAS)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnome-extras>=2.25.3_4:${PORTSDIR}/x11-toolkits/py-gnome-extras
 .endif
 
 .if defined (WITH_TAGLIB)
