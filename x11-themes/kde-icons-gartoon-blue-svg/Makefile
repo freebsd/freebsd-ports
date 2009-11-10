@@ -16,6 +16,7 @@ COMMENT=	KDE Gartoon Blue SVG iconset
 USE_BZIP2=	yes
 
 BROKEN=		does not fetch
+EXPIRATION_DATE=        2009-12-10
 
 WRKSRC=		${WRKDIR}/Gartoon.Blue
 PORT_SHAREDIR?=	"${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}"
