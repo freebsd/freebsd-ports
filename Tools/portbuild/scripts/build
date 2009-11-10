@@ -496,7 +496,7 @@ case "$cmd" in
 	fi
 
         # note: the directory must not exist yet
-	builddir=$(realpath ${pbab}/builds)/${buildid}/
+	builddir=$(realpath ${pbab}/builds)/${buildid}
 	if [ -d ${builddir} ]; then
 	    echo "Can't create ${builddir}, it already exists"
 	    exit 1
