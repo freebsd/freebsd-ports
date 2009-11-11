@@ -30,10 +30,6 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=		does not compile on ia64 (gcc internal error)
-.endif
-
 post-extract:
 	@${LN} -sf babel.1 ${WRKSRC}/doc/openbabel.1
 
