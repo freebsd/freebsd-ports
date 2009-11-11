@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: uhub
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable uhub:
+#
+# uhub_enable (bool):	Set it to "YES" to enable uhub
+#			Default is "NO".
+# uhub_conf (path):	Set full path to config file.
+#			Default is "%%PREFIX%%/etc/uhub/uhub.conf".
+# uhub_pidfile (path):	Set full path to pid file.
+#			Default is "/var/run/uhub.pid".
+#
+
+. %%RC_SUBR%%
+
+name="uhub"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${uhub_enable="NO"}
+: ${uhub_conf="%%PREFIX%%/etc/uhub/uhub.conf"}
+: ${uhub_pidfile="/var/run/${name}.pid"}
+
+command=%%PREFIX%%/bin/uhub
+command_args="-fq -c ${uhub_conf} -p ${uhub_pidfile}"
+pidfile=${uhub_pidfile}
+required_files=${uhub_conf}
+stop_postcmd=stop_postcmd
+reload_precmd=reload_precmd
+reload_postcmd=reload_postcmd
+extra_commands="reload"
+
+stop_postcmd()
+{
+	rm -f ${pidfile}
+}
+
+reload_precmd()
+{
+	echo "Reload ${name} configuration."
+}
+
+reload_postcmd()
+{
+	kill -HUP `cat ${pidfile}`
+}
+
+run_rc_command "$1"

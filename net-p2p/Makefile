@@ -125,6 +125,7 @@
     SUBDIR += transmisson-remote-gui
     SUBDIR += tribler
     SUBDIR += tvrss
+    SUBDIR += uhub
     SUBDIR += unworkable
     SUBDIR += valknut
     SUBDIR += verlihub

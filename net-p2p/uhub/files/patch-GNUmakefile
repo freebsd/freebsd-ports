@@ -1,0 +1,35 @@
+--- GNUmakefile.orig	2009-03-24 02:21:38.000000000 +0300
++++ GNUmakefile	2009-11-07 04:35:56.000000000 +0300
+@@ -3,7 +3,7 @@
+ ## Copyright (C) 2007-2008, Jan Vidar Krey <janvidar@extatic.org>
+  #
+ 
+-CC            = gcc
++CC            ?= gcc
+ LD            := $(CC)
+ MV            := mv
+ RANLIB        := ranlib
+@@ -31,10 +31,10 @@
+ BIN_EXT       ?= .exe
+ else
+ DESTDIR       ?= /
+-UHUB_CONF_DIR ?= $(DESTDIR)/etc/uhub
+-UHUB_PREFIX   ?= $(DESTDIR)/usr/local
+-CFLAGS        += -I/usr/local/include
+-LDFLAGS       += -L/usr/local/lib
++UHUB_PREFIX   ?= $(PREFIX)
++UHUB_CONF_DIR ?= $(UHUB_PREFIX)/etc/uhub
++CFLAGS        += -I$(LOCALBASE)/include
++LDFLAGS       += -L$(LOCALBASE)/lib
+ BIN_EXT       ?=
+ endif
+ 
+@@ -252,7 +252,7 @@
+ 	@if [ ! -d $(UHUB_CONF_DIR) ]; then echo Creating $(UHUB_CONF_DIR); mkdir -p $(UHUB_CONF_DIR); fi
+ 	@if [ ! -f $(UHUB_CONF_DIR)/uhub.conf ]; then cp doc/uhub.conf $(UHUB_CONF_DIR); fi
+ 	@if [ ! -f $(UHUB_CONF_DIR)/users.conf ]; then cp doc/users.conf  $(UHUB_CONF_DIR); fi
+-	@touch $(UHUB_CONF_DIR)/motd.txt
++	@if [ ! -f $(UHUB_CONF_DIR)/motd.txt ]; then touch $(UHUB_CONF_DIR)/motd.txt; fi
+ 	@echo done.
+ endif
+ 

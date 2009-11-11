@@ -1,0 +1,11 @@
+bin/uhub
+@unexec if cmp -s %D/etc/uhub/uhub.conf.sample %D/etc/uhub/uhub.conf; then rm -f %D/etc/uhub/uhub.conf; fi
+etc/uhub/uhub.conf.sample
+@exec if [ ! -f %D/etc/uhub/uhub.conf ] ; then cp -p %D/%F %B/uhub/uhub.conf; fi
+@unexec if cmp -s %D/etc/uhub/users.conf.sample %D/etc/uhub/users.conf; then rm -f %D/etc/uhub/users.conf; fi
+etc/uhub/users.conf.sample
+@exec if [ ! -f %D/etc/uhub/users.conf ] ; then cp -p %D/%F %B/uhub/users.conf; fi
+@unexec if cmp -s %D/etc/uhub/motd.txt.sample %D/etc/uhub/motd.txt; then rm -f %D/etc/uhub/motd.txt; fi
+etc/uhub/motd.txt.sample
+@exec if [ ! -f %D/etc/uhub/motd.txt ] ; then cp -p %D/%F %B/uhub/motd.txt; fi
+@dirrmtry etc/uhub
