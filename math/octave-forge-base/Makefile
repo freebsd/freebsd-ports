@@ -25,8 +25,6 @@ COMMENT=	Octave-forge baseport for all packages
 
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
 
-BROKEN=		incomplete pkg-plist
-
 do-build:
 	@${DO_NADA}
 
