@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	psychopy
-PORTVERSION=	1.00.00
-PORTREVISION=	1
+PORTVERSION=	1.51.01
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	PsychoPy-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Psychophysics toolkit for Python
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.1.0:${PORTSDIR}/math/py-numpy \
