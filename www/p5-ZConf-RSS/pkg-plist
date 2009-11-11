@@ -1,0 +1,13 @@
+bin/zcrss-addfeed
+bin/zcrss-admin
+bin/zcrss-browse
+bin/zcrss-get
+bin/zcrss-managetemplates
+%%SITE_PERL%%/ZConf/RSS.pm
+%%SITE_PERL%%/ZConf/RSS/GUI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/ZConf/RSS
+@dirrmtry %%SITE_PERL%%/ZConf

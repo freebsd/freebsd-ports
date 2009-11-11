@@ -1188,6 +1188,7 @@
     SUBDIR += p5-Xango
     SUBDIR += p5-Yahoo-Lifestyle
     SUBDIR += p5-Yahoo-Search
+    SUBDIR += p5-ZConf-RSS
     SUBDIR += p5-chklinks
     SUBDIR += p5-libapreq
     SUBDIR += p5-libapreq-static
