@@ -1,0 +1,22 @@
+bin/gcc%%SUFFIX%%/cpp%%SUFFIX%%
+bin/gcc%%SUFFIX%%/gcc
+bin/gcc%%SUFFIX%%/gcc%%SUFFIX%%
+bin/gcc%%SUFFIX%%/gccbug%%SUFFIX%%
+bin/gcc%%SUFFIX%%/gcov%%SUFFIX%%
+bin/gcc%%SUFFIX%%/gnat
+bin/gcc%%SUFFIX%%/gnatbind
+bin/gcc%%SUFFIX%%/gnatchop
+bin/gcc%%SUFFIX%%/gnatclean
+bin/gcc%%SUFFIX%%/gnatfind
+bin/gcc%%SUFFIX%%/gnatkr
+bin/gcc%%SUFFIX%%/gnatlink
+bin/gcc%%SUFFIX%%/gnatls
+bin/gcc%%SUFFIX%%/gnatmake
+bin/gcc%%SUFFIX%%/gnatname
+bin/gcc%%SUFFIX%%/gnatprep
+bin/gcc%%SUFFIX%%/gnatxref
+bin/gcc%%SUFFIX%%/%%GNU_HOST%%-gcc-%%GCC_VER%%
+bin/gcc%%SUFFIX%%/%%GNU_HOST%%-gcc%%SUFFIX%%
+info/gcc%%SUFFIX%%/dir
+@dirrm bin/gcc%%SUFFIX%%
+@comment Insert PLIST.lib here

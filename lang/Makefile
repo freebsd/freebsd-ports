@@ -107,6 +107,7 @@
     SUBDIR += gnat-gcc41
     SUBDIR += gnat-gcc42
     SUBDIR += gnat-gcc43
+    SUBDIR += gnat-gcc44
     SUBDIR += gnat-glade
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
