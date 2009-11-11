@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	-tkdefs \
 			-tklibs "-L${LOCALBASE}/lib ${THR_LD}"
 .endif
 
-.if ${ARCH} == sparc64 || ${ARCH} == ia64
+.if ${ARCH} == sparc64
 BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
 .endif
 
