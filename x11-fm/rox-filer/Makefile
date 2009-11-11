@@ -34,6 +34,15 @@ CONFIGURE_WRKSRC=	${WRKSRC}/ROX-Filer/src
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 ALL_TARGET=
 
+post-configure:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+                ${CONFIGURE_WRKSRC}/configure \
+                ${CONFIGURE_WRKSRC}/choices.c \
+                ${CONFIGURE_WRKSRC}/support.c \
+                ${CONFIGURE_WRKSRC}/type.c \
+                ${CONFIGURE_WRKSRC}/usericons.c \
+                ${CONFIGURE_WRKSRC}/xdgmime.c
+
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Filer
 	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun Help Messages Options.xml ROX ROX-Filer images style.css Templates.glade subclasses ${PREFIX}/apps/ROX-Filer
