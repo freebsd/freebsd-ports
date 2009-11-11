@@ -744,6 +744,7 @@
 %%WWWDIR%%/inc/Init.php
 %%WWWDIR%%/inc/js/functions.js
 %%WWWDIR%%/inc/js/jquery.min.js
+%%WWWDIR%%/inc/js/plugins/autocomplete/indicator.gif
 %%WWWDIR%%/inc/js/plugins/autocomplete/jquery.autocomplete.css
 %%WWWDIR%%/inc/js/plugins/autocomplete/jquery.autocomplete.pack.js
 %%WWWDIR%%/inc/js/plugins/datePicker/date.js
@@ -920,7 +921,9 @@
 %%WWWDIR%%/savecomment.php
 %%WWWDIR%%/savequestion.php
 %%WWWDIR%%/savevoting.php
+%%WWWDIR%%/scripts/git2changelog.sh
 %%WWWDIR%%/scripts/git2package.sh
+%%WWWDIR%%/scripts/version.sh
 %%WWWDIR%%/search.php
 %%WWWDIR%%/send2friend.php
 %%WWWDIR%%/sendmail.php
