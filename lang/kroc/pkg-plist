@@ -174,6 +174,11 @@ lib/kroc/examples/occade/bounce
 lib/kroc/examples/occade/breakout
 lib/kroc/examples/occade/collision-test
 lib/kroc/examples/occade/parrot_attack
+lib/kroc/examples/occbench/fft2
+lib/kroc/examples/occbench/fft2-noresched
+lib/kroc/examples/occbench/fft3
+lib/kroc/examples/occbench/mandelbrot
+lib/kroc/examples/random/test-random
 lib/kroc/examples/robots/particles-ats
 lib/kroc/examples/robots/robot
 lib/kroc/examples/robots/robot2
@@ -260,6 +265,8 @@ lib/liboccam_occSDLsound.a
 lib/liboccam_occSDLsound.so
 lib/liboccam_occade.a
 lib/liboccam_occade.so
+lib/liboccam_random.a
+lib/liboccam_random.so
 lib/liboccam_proc.a
 lib/liboccam_proc.so
 lib/liboccam_rastergraphics.a
@@ -288,6 +295,8 @@ lib/liboccam_stream.a
 lib/liboccam_stream.so
 lib/liboccam_string.a
 lib/liboccam_string.so
+lib/liboccam_time.a
+lib/liboccam_time.so
 lib/liboccam_trap.a
 lib/liboccam_trap.so
 lib/liboccam_ttyutil.a
@@ -330,6 +339,7 @@ share/kroc/doc/api/overwriting-buffer.html
 share/kroc/doc/api/player.html
 share/kroc/doc/api/pony.html
 share/kroc/doc/api/proc.html
+share/kroc/doc/api/random.html
 share/kroc/doc/api/raster.html
 share/kroc/doc/api/rastergraphics.html
 share/kroc/doc/api/rasterio.html
@@ -340,6 +350,7 @@ share/kroc/doc/api/shared-screen.html
 share/kroc/doc/api/sock.html
 share/kroc/doc/api/streamio.html
 share/kroc/doc/api/string.html
+share/kroc/doc/api/time.html
 share/kroc/doc/api/trap.html
 share/kroc/doc/api/ttyutil.html
 share/kroc/doc/api/udc.html
@@ -710,6 +721,8 @@ share/kroc/vtinclude/occade.module
 share/kroc/vtinclude/overwriting-buffer.inc
 share/kroc/vtinclude/proc.module
 share/kroc/vtinclude/proclib.inc
+share/kroc/vtinclude/random.inc
+share/kroc/vtinclude/random.module
 share/kroc/vtinclude/raster.inc
 share/kroc/vtinclude/raster.module
 share/kroc/vtinclude/rastergraphics.module
@@ -731,6 +744,8 @@ share/kroc/vtinclude/ss.module
 share/kroc/vtinclude/stream.module
 share/kroc/vtinclude/streamio.inc
 share/kroc/vtinclude/string.module
+share/kroc/vtinclude/time.inc
+share/kroc/vtinclude/time.module
 share/kroc/vtinclude/trap.inc
 share/kroc/vtinclude/trap.module
 share/kroc/vtinclude/ttyutil.inc
@@ -757,6 +772,7 @@ share/kroc/vtlib/netbar.lib
 share/kroc/vtlib/occSDL.lib
 share/kroc/vtlib/occade.lib
 share/kroc/vtlib/proc.lib
+share/kroc/vtlib/random.lib
 share/kroc/vtlib/rastergraphics.lib
 share/kroc/vtlib/rasterio.lib
 share/kroc/vtlib/rastertext.lib
@@ -770,6 +786,7 @@ share/kroc/vtlib/splib.lib
 share/kroc/vtlib/ss.lib
 share/kroc/vtlib/stream.lib
 share/kroc/vtlib/string.lib
+share/kroc/vtlib/time.lib
 share/kroc/vtlib/trap.lib
 share/kroc/vtlib/ttyutil.lib
 share/kroc/vtlib/useful.lib
@@ -803,6 +820,8 @@ share/kroc/xslt/cspx2cspm.xsl
 @dirrm lib/kroc/examples/shootout
 @dirrm lib/kroc/examples/sdlraster
 @dirrm lib/kroc/examples/robots
+@dirrm lib/kroc/examples/random
+@dirrm lib/kroc/examples/occbench
 @dirrm lib/kroc/examples/occade
 @dirrm lib/kroc/examples/occSDL
 @dirrm lib/kroc/examples/occGL
