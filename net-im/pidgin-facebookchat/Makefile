@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
 
-MAINTAINER=	chalpin@cs.wisc.edu
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Facebook Chat for Pidgin
 
 LIB_DEPENDS=	json-glib-1.0.0:${PORTSDIR}/devel/json-glib
