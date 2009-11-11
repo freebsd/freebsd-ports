@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	celt
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/celt/
 
