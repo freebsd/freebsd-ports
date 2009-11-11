@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Net-EPP-Client
+# New ports collection makefile for:	Net-EPP
 # Date created:				18 Feb 2006
 # Whom:					Aaron Dalton <aaron@FreeBSD.org>
 #
