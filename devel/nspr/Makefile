@@ -6,8 +6,7 @@
 #    $MCom: ports-experimental/devel/nspr/Makefile,v 1.6 2008/03/12 13:06:56 ahze Exp $
 
 PORTNAME=	nspr
-DISTVERSION=	4.8
-PORTREVISION=	1
+DISTVERSION=	4.8.2
 CATEGORIES=	devel
 #MASTER_SITES=	LOCAL/ahze
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -20,6 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/nsprpub/build
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--disable-debug \
@@ -78,6 +78,8 @@ libtests:
 	#
 
 test: libtests prtests
+
+#regression-test: test
 
 #.if defined(PACKAGE_BUILDING)
 #post-build: test
