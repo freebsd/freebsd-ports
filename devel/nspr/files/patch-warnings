@@ -55,3 +55,83 @@
 +#define PR_FIND_NEXT_COUNTER_QNAME(next,handle)
  #endif
  
+--- ../pr/src/io/prprf.c	2008-05-31 11:10:17.000000000 -0400
++++ ../pr/src/io/prprf.c	2009-11-04 14:27:19.000000000 -0500
+@@ -698,5 +698,5 @@
+     int rv, i;
+     struct NumArg* nas = NULL;
+-    struct NumArg* nap;
++    struct NumArg* nap = NULL;
+     struct NumArg  nasArray[ NAS_DEFAULT_NUM ];
+     char  pattern[20];
+--- ../pr/src/io/prscanf.c	2005-08-05 18:44:06.000000000 -0400
++++ ../pr/src/io/prscanf.c	2009-11-04 14:31:24.000000000 -0500
+@@ -230,5 +230,5 @@
+ {
+     char buf[FMAX + 1], *p;
+-    int ch;
++    int ch = -1;
+     static const char digits[] = "0123456789abcdefABCDEF";
+     PRBool seenDigit = PR_FALSE;
+@@ -340,5 +340,5 @@
+ {
+     char buf[FMAX + 1], *p;
+-    int ch;
++    int ch = -1;
+     PRBool seenDigit = PR_FALSE;
+ 
+--- ../pr/src/misc/pralarm.c	2009-05-06 01:40:37.000000000 -0400
++++ ../pr/src/misc/pralarm.c	2009-11-04 14:34:27.000000000 -0500
+@@ -134,5 +134,5 @@
+     while (why != abort)
+     {
+-        PRIntervalTime pause;
++        PRIntervalTime pause = 0;
+ 
+         PR_Lock(alarm->lock);
+--- ../pr/src/misc/prdtoa.c	2009-10-05 18:58:41.000000000 -0400
++++ ../pr/src/misc/prdtoa.c	2009-11-04 14:36:24.000000000 -0500
+@@ -2765,5 +2765,5 @@
+ 	*/
+ 
+-	int bbits, b2, b5, be, dig, i, ieps, ilim, ilim0, ilim1,
++	int bbits, b2, b5, be, dig, i, ieps, ilim = -1, ilim0, ilim1 = -1,
+ 		j, j1, k, k0, k_check, leftright, m2, m5, s2, s5,
+ 		spec_case, try_quick;
+--- ../pr/src/misc/prenv.c	2009-05-06 01:40:37.000000000 -0400
++++ ../pr/src/misc/prenv.c	2009-11-04 15:02:32.000000000 -0500
+@@ -94,5 +94,10 @@
+ 
+     _PR_LOCK_ENV();
+-    result = _PR_MD_PUT_ENV(string);
++    /*
++     * putenv() does not modify the contents, but allows
++     * the caller to modify it later. So, it is Ok to
++     * drop the const-ness here...
++     */
++    result = _PR_MD_PUT_ENV((char *)string);
+     _PR_UNLOCK_ENV();
+     return (result)? PR_FAILURE : PR_SUCCESS;
+--- ../pr/src/misc/prtpool.c	2005-04-28 18:37:25.000000000 -0400
++++ ../pr/src/misc/prtpool.c	2009-11-04 15:08:05.000000000 -0500
+@@ -314,6 +314,6 @@
+ int rv;
+ PRCList *qp, *nextqp;
+-PRPollDesc *pollfds;
+-PRJob **polljobs;
++PRPollDesc *pollfds = NULL;
++PRJob **polljobs = NULL;
+ int poll_timeout;
+ PRIntervalTime now;
+--- ../pr/include/prlog.h	2009-02-22 14:56:13.000000000 -0500
++++ ../pr/include/prlog.h	2009-11-04 15:30:48.000000000 -0500
+@@ -232,7 +232,8 @@
+ #endif /* NO_NSPR_10_SUPPORT */
+ 
++NSPR_API(void) PR_Assert(const char *s, const char *file, PRIntn ln);
++
+ #if defined(DEBUG) || defined(FORCE_PR_ASSERT)
+ 
+-NSPR_API(void) PR_Assert(const char *s, const char *file, PRIntn ln);
+ #define PR_ASSERT(_expr) \
+     ((_expr)?((void)0):PR_Assert(# _expr,__FILE__,__LINE__))
