@@ -4195,3 +4195,5 @@ misc/bibletime-kde4|misc/bibletime|2009-10-30|Renamed now that KDE dependencies 
 net/xmlrpc++||2009-10-31|Unmaintained upstream and on the FreeBSD side
 net-p2p/mute-net||2009-10-31|Broken for extensive period of time and unmaintained
 emulators/fceu|emulators/fceux|2009-11-04|Repocopied to new location
+net/p5-Net-EPP-Frame|net/p5-Net-EPP|2009-11-11|Please use net/p5-Net-EPP
+net/p5-Net-EPP-Client|net/p5-Net-EPP|2009-11-11|Please use net/p5-Net-EPP
