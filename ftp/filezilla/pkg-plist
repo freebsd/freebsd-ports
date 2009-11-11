@@ -7,6 +7,7 @@ bin/fzputtygen
 %%NLS%%share/locale/el/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/es/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/it/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/filezilla.mo
@@ -74,6 +75,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/16x16/remotetreeview.png
 %%DATADIR%%/resources/16x16/server.png
 %%DATADIR%%/resources/16x16/sitemanager.png
+%%DATADIR%%/resources/16x16/symlink.png
 %%DATADIR%%/resources/16x16/synchronize.png
 %%DATADIR%%/resources/16x16/unknown.png
 %%DATADIR%%/resources/16x16/upload.png
