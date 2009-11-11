@@ -514,6 +514,8 @@
     SUBDIR += p5-Net-Delicious
     SUBDIR += p5-Net-Dict
     SUBDIR += p5-Net-Divert
+    SUBDIR += p5-Net-EPP
+    SUBDIR += p5-Net-EPP-Proxy
     SUBDIR += p5-Net-FS-Flickr
     SUBDIR += p5-Net-FS-Gmail
     SUBDIR += p5-Net-FTP-File
