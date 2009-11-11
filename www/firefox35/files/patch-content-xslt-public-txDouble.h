@@ -5,7 +5,7 @@
  #ifdef __FreeBSD__
  #include <ieeefp.h>
 -#ifdef __alpha__
-+#if defined (__alpha__) || defined (__powerpc__) || defined (__sparc__)
++#if !defined(__amd64__) && !defined(__i386__)
  static fp_except_t allmask = FP_X_INV|FP_X_OFL|FP_X_UFL|FP_X_DZ|FP_X_IMP;
  #else
  static fp_except_t allmask = FP_X_INV|FP_X_OFL|FP_X_UFL|FP_X_DZ|FP_X_IMP|FP_X_DNML;
