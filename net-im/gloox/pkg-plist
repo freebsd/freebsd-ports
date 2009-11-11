@@ -2,5 +2,5 @@ bin/gloox-config
 lib/libgloox.a
 lib/libgloox.la
 lib/libgloox.so
-lib/libgloox.so.7
+lib/libgloox.so.8
 libdata/pkgconfig/gloox.pc
