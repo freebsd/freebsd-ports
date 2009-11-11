@@ -28,6 +28,11 @@ do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
+pre-install:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+			${WRKSRC}/Edit/findrox.py
+	@${FIND} ${WRKSRC} -name *.bak | ${XARGS} ${RM}
+
 do-install:
 	@${MKDIR} ${PREFIX}/apps
 	@${CP} -r ${WRKSRC}/Edit ${PREFIX}/apps/
