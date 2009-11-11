@@ -136,9 +136,12 @@ bin/rdiffdir
 %%PORTDOCS%%%%DOCSDIR%%/REPO-README
 %%PORTDOCS%%%%DOCSDIR%%/tarfile-LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/locale/bg/LC_MESSAGES/duplicity.mo
 share/locale/en_GB/LC_MESSAGES/duplicity.mo
+share/locale/es/LC_MESSAGES/duplicity.mo
 share/locale/eo/LC_MESSAGES/duplicity.mo
 share/locale/io/LC_MESSAGES/duplicity.mo
+share/locale/pt/LC_MESSAGES/duplicity.mo
 share/locale/zh_CN/LC_MESSAGES/duplicity.mo
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
