@@ -18,7 +18,7 @@ COMMENT=	X.Org complete distribution metaport
 
 NO_BUILD=	yes
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/dri/r128_dri.so:${PORTSDIR}/graphics/dri
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
 
 # data
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:${PORTSDIR}/x11/xbitmaps \
