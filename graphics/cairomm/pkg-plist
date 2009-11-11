@@ -183,6 +183,7 @@ libdata/pkgconfig/cairomm-xlib-1.0.pc
 %%PORTDOCS%%@dirrm share/doc/cairomm-1.0/reference/html
 %%PORTDOCS%%@dirrm share/doc/cairomm-1.0/reference
 %%PORTDOCS%%@dirrm share/doc/cairomm-1.0
+%%PORTDOCS%%@dirrm share/devhelp/books/cairomm-1.0
 @dirrm lib/cairomm-1.0/include
 @dirrm lib/cairomm-1.0
 @dirrm include/cairomm-1.0/cairomm
