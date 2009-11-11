@@ -1,11 +1,14 @@
---- security/coreconf/FreeBSD.mk.orig	2009-07-30 17:30:28.000000000 +0200
-+++ security/coreconf/FreeBSD.mk	2009-08-17 22:29:03.510890513 +0200
-@@ -45,8 +45,20 @@
+--- security/coreconf/FreeBSD.mk.orig	2008-07-12 07:28:59.000000000 -0700
++++ security/coreconf/FreeBSD.mk	2009-11-09 22:42:09.000000000 -0800
+@@ -45,8 +45,24 @@
  ifeq ($(OS_TEST),alpha)
  CPU_ARCH		= alpha
  else
 +ifeq ($(OS_TEST),amd64)
 +CPU_ARCH		= amd64
++else
++ifeq ($(OS_TEST),ia64)
++CPU_ARCH		= ia64
 +else
 +ifeq ($(OS_TEST),powerpc)
 +CPU_ARCH		= powerpc
@@ -18,10 +21,11 @@
 +endif
 +endif
 +endif
++endif
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -73,7 +85,7 @@
+@@ -73,7 +89,7 @@
  DLL_SUFFIX		= so.1.0
  endif
  
@@ -30,9 +34,9 @@
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
-@@ -82,4 +94,4 @@
+@@ -82,4 +98,4 @@
  
  G++INCLUDES		= -I/usr/include/g++
  
 -INCLUDES		+= -I/usr/X11R6/include
-+#INCLUDES		+= -I/usr/X11R6/include
++#INCLUDES		+= -I/usr/local/include
