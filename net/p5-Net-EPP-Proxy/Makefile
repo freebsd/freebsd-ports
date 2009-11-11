@@ -15,8 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A proxy server for the EPP protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/Net/EPP/Frame.pm:${PORTSDIR}/net/p5-Net-EPP-Frame \
-		${SITE_PERL}/Net/EPP/Client.pm:${PORTSDIR}/net/p5-Net-EPP-Client \
+		${SITE_PERL}/Net/EPP.pm:${PORTSDIR}/net/p5-Net-EPP \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
