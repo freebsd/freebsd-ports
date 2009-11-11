@@ -1,0 +1,8 @@
+bin/mupdf
+bin/mu_pdfshow
+bin/mu_pdfdraw
+bin/mu_pdfinfo
+bin/mu_cmapdump
+bin/mu_pdfextract
+bin/mu_pdfclean
+bin/mu_fontdump
