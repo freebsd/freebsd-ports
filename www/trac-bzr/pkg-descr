@@ -1,4 +1,4 @@
-Trac-bzr is an extension for Trac, so its revision browser
-can show Bazaar branches
+Trac-Bzr is a plugin for Trac (>= 0.10) that provides a
+version control backend for Bzr.
 
-WWW:	http://bazaar-vcs.org/TracBzr
+WWW:	https://launchpad.net/trac-bzr
