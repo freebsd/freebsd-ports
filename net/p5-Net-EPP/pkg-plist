@@ -1,7 +1,54 @@
 %%SITE_PERL%%/Net/EPP/Client.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/Client/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/Client
+%%SITE_PERL%%/Net/EPP/Frame/Command/Create/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Create/Host.pm
+%%SITE_PERL%%/Net/EPP/Protocol.pm
+%%SITE_PERL%%/Net/EPP/ResponseCodes.pm
+%%SITE_PERL%%/Net/EPP/Simple.pm
+%%SITE_PERL%%/Net/EPP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/.packlist
+%%SITE_PERL%%/Net/EPP/Frame.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Check.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Check/Contact.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Check/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Check/Host.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Create.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Create/Contact.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Delete.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Delete/Contact.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Delete/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Delete/Host.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Info.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Info/Contact.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Info/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Info/Host.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Login.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Logout.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Poll.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Poll/Req.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Poll/Ack.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Renew.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Transfer.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Transfer/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Transfer/Contact.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Update.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Update/Contact.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Update/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Update/Host.pm
+%%SITE_PERL%%/Net/EPP/Frame/Greeting.pm
+%%SITE_PERL%%/Net/EPP/Frame/Hello.pm
+%%SITE_PERL%%/Net/EPP/Frame/ObjectSpec.pm
+%%SITE_PERL%%/Net/EPP/Frame/Response.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Update
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Info
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Delete
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Create
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Check
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Poll
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Transfer
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command
+@dirrm %%SITE_PERL%%/Net/EPP/Frame
 @dirrmtry %%SITE_PERL%%/Net/EPP
 @dirrmtry %%SITE_PERL%%/Net
