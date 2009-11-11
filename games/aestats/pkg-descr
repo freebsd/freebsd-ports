@@ -2,17 +2,17 @@ AEstats reads game log files for just about all shooters, converts them into
 platform independent log format (meta log format), and generates meaningful
 (and very pretty!) stats and ranking pages in HTML form.  Overall features:
 
-    * Split into two executables to make the code more modular (independent
-      of specific games/mod).  This also makes updates quicker and less prone
-      to new bugs.
-    * Modules are command line driven, giving you the maximum control of the
-      the executables, without having to deal with klutzy platform dependent
-      interfaces.  This makes it possible to control the modules via batch
-      files or scripts.  Ideal for automating calls.
-    * HTML output is eatable by any browser with frames.  Since plain HTML
-      code is generated, any user should be able to view the output.
-    * Provides an UnrealScript module (aeonsdmmod.u) that will generate
-      extra log info, since Unreal does not provide any frag obituaries by
-      default.
+  * Split into two executables to make the code more modular (independent
+    of specific games/mod).  This also makes updates quicker and less prone
+    to new bugs.
+  * Modules are command line driven, giving you the maximum control of the
+    the executables, without having to deal with klutzy platform dependent
+    interfaces.  This makes it possible to control the modules via batch
+    files or scripts.  Ideal for automating calls.
+  * HTML output is eatable by any browser with frames.  Since plain HTML
+    code is generated, any user should be able to view the output.
+  * Provides an UnrealScript module (aeonsdmmod.u) that will generate
+    extra log info, since Unreal does not provide any frag obituaries by
+    default.
 
-WWW: http://www.planetquake.com/aeons/aestats/
+WWW: http://aeons.poweredbylasers.com/aestats/
