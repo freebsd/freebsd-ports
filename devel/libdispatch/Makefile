@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libdispatch
-PORTVERSION=	53
+PORTVERSION=	147
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-#DISTNAME=	${PORTNAME}-r${PORTVERSION}
+DISTNAME=	${PORTNAME}-r${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
@@ -34,7 +34,7 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900002
+.if ${OSVERSION} <= 800107 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900002)
 IGNORE=	is not supported on this OS version
 .endif
 
