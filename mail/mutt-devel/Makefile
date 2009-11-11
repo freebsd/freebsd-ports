@@ -102,6 +102,9 @@
 # If you want to enable the `greeting' option define:
 #  WITH_MUTT_GREETING_PATCH
 #
+# If you want to enable the parent/child match support define:
+#  WITH_MUTT_PARENT_CHILD_MATCH_PATCH
+#
 # If you want to enable the internal SMTP relay support define:
 #  WITH_MUTT_SMTP
 #
@@ -115,7 +118,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.20
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -335,6 +338,11 @@ post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-reverse_reply
 .endif
 
+.if defined(WITH_MUTT_PARENT_CHILD_MATCH_PATCH)
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-parent-child-match
+.endif
+
 .if defined(WITHOUT_MUTT_FLOCK)
 CONFIGURE_ARGS+=	--disable-flock
 .else
@@ -475,7 +483,11 @@ SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
 SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .endif
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+.if defined(WITH_TOKYOCABINET)
+CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
+.else
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-hcache
 .endif
