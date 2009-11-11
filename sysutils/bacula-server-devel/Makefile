@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--enable-nls
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
-.if definedf defined(WITH_CLIENT_ONLY) && (${OSVERSION} >= 800000)
+.if defined(WITH_CLIENT_ONLY) && (${OSVERSION} >= 800000)
 BROKEN=	Does not build due to missing llistxattr
 .endif
 
