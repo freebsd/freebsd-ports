@@ -528,6 +528,7 @@
     SUBDIR += moth
     SUBDIR += mtpaint
     SUBDIR += multivideo
+    SUBDIR += mupdf
     SUBDIR += mxp
     SUBDIR += mypaint
     SUBDIR += nathive
