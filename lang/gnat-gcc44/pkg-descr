@@ -1,0 +1,6 @@
+The GNU Ada compiler system built from GCC 4.4.0.
+
+Please add ${PREFIX}/bin/gcc44 to your PATH variable
+before using this port.
+
+WWW: http://gcc.gnu.org/
