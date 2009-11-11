@@ -572,6 +572,7 @@ archivemount                    ports/sysutils/archivemount
 archivers_deco                  ports/archivers/deco
 archivers_rvm                   ports/archivers/rvm
 archivers_szip                  ports/archivers/szip
+archivesmtp                     ports/mail/archivesmtp
 archmage                        ports/textproc/archmage
 archmbox                        ports/mail/archmbox
 ardour                          ports/audio/ardour
@@ -1884,6 +1885,7 @@ cscope                          ports/devel/cscope
 cscout                          ports/devel/cscout
 csharp-mode.el                  ports/lang/csharp-mode.el
 csmash                          ports/games/csmash
+csoap                           ports/devel/csoap
 csocks                          ports/net/csocks
 csound                          ports/audio/csound
 css-mode.el                     ports/www/css-mode.el
@@ -13738,6 +13740,7 @@ p5-XML-TinyXML                  ports/textproc/p5-XML-TinyXML
 p5-XML-TreeBuilder              ports/textproc/p5-XML-TreeBuilder
 p5-XML-TreePP                   ports/textproc/p5-XML-TreePP
 p5-XML-Twig                     ports/textproc/p5-XML-Twig
+p5-XML-Validate                 ports/textproc/p5-XML-Validate
 p5-XML-Validator-Schema         ports/textproc/p5-XML-Validator-Schema
 p5-XML-WBXML                    ports/converters/p5-XML-WBXML
 p5-XML-Writer                   ports/textproc/p5-XML-Writer
@@ -17418,6 +17421,7 @@ p5-xml-tinyxml                  ports/textproc/p5-XML-TinyXML
 p5-xml-treebuilder              ports/textproc/p5-XML-TreeBuilder
 p5-xml-treepp                   ports/textproc/p5-XML-TreePP
 p5-xml-twig                     ports/textproc/p5-XML-Twig
+p5-xml-validate                 ports/textproc/p5-XML-Validate
 p5-xml-validator-schema         ports/textproc/p5-XML-Validator-Schema
 p5-xml-wbxml                    ports/converters/p5-XML-WBXML
 p5-xml-writer                   ports/textproc/p5-XML-Writer
