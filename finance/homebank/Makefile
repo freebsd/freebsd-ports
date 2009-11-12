@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTVERSION=	4.1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -16,7 +15,7 @@ COMMENT=	Manage your personal accounts at home
 
 OPTIONS=	OFX "Enable libOFX support" on
 
-USE_GNOME=	desktopfileutils gnomehier gtk20 librsvg2
+USE_GNOME=	desktopfileutils gnomehier gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

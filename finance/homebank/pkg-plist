@@ -6,22 +6,24 @@ share/applications/homebank.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/help/00new4.0.html
+%%DATADIR%%/help/00new4.1.html
 %%DATADIR%%/help/02balance.html
 %%DATADIR%%/help/02concepts.html
 %%DATADIR%%/help/02intro.html
 %%DATADIR%%/help/02minor.html
 %%DATADIR%%/help/03account.html
 %%DATADIR%%/help/03accountmenu.html
+%%DATADIR%%/help/03auto_addition.html
+%%DATADIR%%/help/03auto_assign.html
 %%DATADIR%%/help/03carcost.html
 %%DATADIR%%/help/03import.html
 %%DATADIR%%/help/03main.html
 %%DATADIR%%/help/03mainmenu.html
+%%DATADIR%%/help/03reconcile.html
 %%DATADIR%%/help/03trans_add.html
-%%DATADIR%%/help/03trans_auto.html
-%%DATADIR%%/help/03trans_mult.html
-%%DATADIR%%/help/03validate.html
 %%DATADIR%%/help/04acco.html
 %%DATADIR%%/help/04arch.html
+%%DATADIR%%/help/04assign.html
 %%DATADIR%%/help/04bud1.html
 %%DATADIR%%/help/04cate.html
 %%DATADIR%%/help/04paye.html
@@ -55,6 +57,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/03transmult1.png
 %%DATADIR%%/help/images/04account1.png
 %%DATADIR%%/help/images/04archive1.png
+%%DATADIR%%/help/images/04assign1.png
 %%DATADIR%%/help/images/04budget1.png
 %%DATADIR%%/help/images/04category1.png
 %%DATADIR%%/help/images/04filter1.png
@@ -87,67 +90,114 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/8.png
 %%DATADIR%%/help/images/9.png
 %%DATADIR%%/help/images/bg_page.gif
+%%DATADIR%%/help/images/doc_balance.png
 %%DATADIR%%/help/images/doc_title.png
-%%DATADIR%%/help/images/home.gif
-%%DATADIR%%/help/images/homedsbl.gif
-%%DATADIR%%/help/images/next.gif
-%%DATADIR%%/help/images/nextdsbl.gif
-%%DATADIR%%/help/images/prev.gif
-%%DATADIR%%/help/images/prevdsbl.gif
+%%DATADIR%%/help/images/go-home.png
+%%DATADIR%%/help/images/go-next.png
+%%DATADIR%%/help/images/go-previous.png
+%%DATADIR%%/help/images/no-home.png
+%%DATADIR%%/help/images/no-next.png
+%%DATADIR%%/help/images/no-previous.png
+%%DATADIR%%/help/images/shotback.png
+%%DATADIR%%/help/images/top-gradient.png
 %%DATADIR%%/help/images/web_title.png
 %%DATADIR%%/help/index.html
 %%DATADIR%%/help/main.html
 %%DATADIR%%/help/navig.html
-%%DATADIR%%/images/account.svg
-%%DATADIR%%/images/archive.svg
-%%DATADIR%%/images/banktransfer.svg
-%%DATADIR%%/images/budget.svg
-%%DATADIR%%/images/cash.svg
-%%DATADIR%%/images/category.svg
-%%DATADIR%%/images/cheque.svg
-%%DATADIR%%/images/creditcard.svg
-%%DATADIR%%/images/filter.svg
-%%DATADIR%%/images/homebank.svg
-%%DATADIR%%/images/legend.svg
-%%DATADIR%%/images/lpi-bug.svg
-%%DATADIR%%/images/lpi-help.png
-%%DATADIR%%/images/lpi-translate.svg
-%%DATADIR%%/images/lst_auto.svg
-%%DATADIR%%/images/lst_edit.svg
-%%DATADIR%%/images/lst_new.svg
-%%DATADIR%%/images/lst_remind.svg
-%%DATADIR%%/images/lst_vali.svg
-%%DATADIR%%/images/lst_warning.svg
-%%DATADIR%%/images/ope_add.svg
-%%DATADIR%%/images/ope_delete.svg
-%%DATADIR%%/images/ope_edit.svg
-%%DATADIR%%/images/ope_herit.svg
-%%DATADIR%%/images/ope_show.svg
-%%DATADIR%%/images/ope_valid.svg
-%%DATADIR%%/images/payee.svg
-%%DATADIR%%/images/personaltransfer.svg
-%%DATADIR%%/images/prf_columns.svg
-%%DATADIR%%/images/prf_display.svg
-%%DATADIR%%/images/prf_euro.svg
-%%DATADIR%%/images/prf_general.svg
-%%DATADIR%%/images/prf_help.svg
-%%DATADIR%%/images/prf_interface.svg
-%%DATADIR%%/images/prf_report.svg
-%%DATADIR%%/images/rate.svg
-%%DATADIR%%/images/refresh.svg
-%%DATADIR%%/images/report_budget.svg
-%%DATADIR%%/images/report_car.svg
-%%DATADIR%%/images/report_overdrawn.svg
-%%DATADIR%%/images/report_stats.svg
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-account.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-archive.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-assign-run.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-assign.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-budget.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-category.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-file-export.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-file-import.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-filter.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-add.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-auto.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-delete.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-edit.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-herit.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-remind.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-show.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-valid.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-payee.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-budget.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-car.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-over.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-stats.png
+%%DATADIR%%/icons/hicolor/16x16/actions/lpi-help.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-cash.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-ccard.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-check.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-dcard.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-deposit.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-epayment.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-fifee.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-intransfer.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-none.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-standingorder.png
+%%DATADIR%%/icons/hicolor/16x16/status/pm-transfer.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-account.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-archive.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-assign-run.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-assign.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-budget.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-category.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-file-export.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-file-import.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-filter.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-legend.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-add.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-auto.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-delete.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-edit.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-herit.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-remind.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-show.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-valid.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-payee.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-rate.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-budget.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-car.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-over.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-stats.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-view-bar.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-view-line.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-view-list.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-view-pie.png
+%%DATADIR%%/icons/hicolor/22x22/status/flt-exclude.png
+%%DATADIR%%/icons/hicolor/22x22/status/flt-inactive.png
+%%DATADIR%%/icons/hicolor/22x22/status/flt-include.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-cash.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-ccard.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-check.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-dcard.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-deposit.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-epayment.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-fifee.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-intransfer.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-none.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-standingorder.png
+%%DATADIR%%/icons/hicolor/22x22/status/pm-transfer.png
+%%DATADIR%%/icons/hicolor/22x22/status/prf-columns.png
+%%DATADIR%%/icons/hicolor/22x22/status/prf-display.png
+%%DATADIR%%/icons/hicolor/22x22/status/prf-euro.png
+%%DATADIR%%/icons/hicolor/22x22/status/prf-general.png
+%%DATADIR%%/icons/hicolor/22x22/status/prf-interface.png
+%%DATADIR%%/icons/hicolor/22x22/status/prf-report.png
+%%DATADIR%%/icons/hicolor/48x48/actions/hb-file-import.png
+%%DATADIR%%/icons/hicolor/48x48/status/prf-columns.png
+%%DATADIR%%/icons/hicolor/48x48/status/prf-display.png
+%%DATADIR%%/icons/hicolor/48x48/status/prf-euro.png
+%%DATADIR%%/icons/hicolor/48x48/status/prf-general.png
+%%DATADIR%%/icons/hicolor/48x48/status/prf-interface.png
+%%DATADIR%%/icons/hicolor/48x48/status/prf-report.png
 %%DATADIR%%/images/splash.png
-%%DATADIR%%/images/view_bar.svg
-%%DATADIR%%/images/view_line.svg
-%%DATADIR%%/images/view_list.svg
-%%DATADIR%%/images/view_pie.svg
 share/icons/hicolor/16x16/apps/homebank.png
+share/icons/hicolor/22x22/apps/homebank.png
 share/icons/hicolor/24x24/apps/homebank.png
 share/icons/hicolor/32x32/apps/homebank.png
-share/icons/hicolor/48x48/apps/homebank.png
 share/icons/hicolor/scalable/apps/homebank.svg
 share/locale/am/LC_MESSAGES/homebank.mo
 share/locale/ar/LC_MESSAGES/homebank.mo
@@ -209,7 +259,6 @@ share/locale/zh_TW/LC_MESSAGES/homebank.mo
 share/mime-info/homebank.keys
 share/mime-info/homebank.mime
 share/mime/packages/homebank.xml
-share/pixmaps/homebank.svg
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ur/LC_MESSAGES
@@ -223,6 +272,17 @@ share/pixmaps/homebank.svg
 @dirrmtry share/locale/ht/LC_MESSAGES
 @dirrmtry share/locale/ht
 @dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/icons/hicolor/48x48/status
+@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor/22x22/status
+@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/help/images
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
