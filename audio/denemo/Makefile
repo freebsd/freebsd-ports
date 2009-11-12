@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.10
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -16,16 +16,15 @@ COMMENT=	Graphical score editor
 BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	aubio.3:${PORTSDIR}/audio/aubio \
 		jack.0:${PORTSDIR}/audio/jack \
-		lash.2:${PORTSDIR}/audio/lash \
 		guile.20:${PORTSDIR}/lang/guile \
 		fftw3.5:${PORTSDIR}/math/fftw3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GNOME=	gtk20 librsvg2 libxml2
+USE_GNOME=	gtk20 gtksourceview2 librsvg2 libxml2
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-jack --enable-lash \
+CONFIGURE_ARGS=	--enable-jack \
 		--sysconfdir=${PREFIX}/etc
 
 PORTDOCS=	*
@@ -37,7 +36,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|m4 doc actions|m4 actions| ; \
 		 s|fonts examples templates|fonts templates|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/src/lyparser.y
