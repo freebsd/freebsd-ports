@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.4.30
+PORTVERSION=	3.6.163
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,10 +25,15 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR}
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
+		AUTOMAKE="${TRUE}"
 
 CFLAGS+=	-fPIC
 
 MAN1=		xcircuit.1
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
@@ -41,7 +45,7 @@ post-patch:
 		 s|wish |${WISH:T} |g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.lgf ${EXAMPLESDIR}
