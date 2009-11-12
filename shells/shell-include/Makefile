@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shell-include
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	shells devel
 MASTER_SITES=	http://vvelox.net/src/shell-include/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -23,7 +23,7 @@ MAN3=		random::shortIntRandom.3 \
 
 MAN7=		shell-include.7
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #nothing to configure
 do-configure:
@@ -34,6 +34,6 @@ do-build:
 	@${ECHO} -n
 
 do-install:
-	@${EXEC} cd ${WRKDIR}/${PORTNAME}/ ; ${WRKDIR}/${PORTNAME}/install ${PREFIX}
+	@${EXEC} cd ${WRKSRC}/ ; ${WRKSRC}/install ${PREFIX}
 
 .include <bsd.port.mk>
