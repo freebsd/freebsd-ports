@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.0
 CATEGORIES=	science parallel
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}
@@ -28,7 +28,8 @@ MAN1=		ncmpidump.1 ncmpigen.1
 MAN3=		pnetcdf.3
 PORTDOCS=	COPYRIGHT INSTALL README
 PLIST_FILES=	bin/ncmpidump bin/ncmpigen bin/ncvalid \
-		include/pnetcdf.h include/pnetcdf.inc lib/libpnetcdf.a
+		include/pnetcdf.h include/pnetcdf.inc include/pnetcdf.mod \
+		lib/libpnetcdf.a
 
 CFLAGS+=	-fPIC -DPIC
 
@@ -43,6 +44,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.so:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}/mpich2
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/GENERATED/s|$$@|$$(INCDIR)|' \
+		${WRKSRC}/rules.make
+	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
+		${WRKSRC}/src/libf/mvar.[ch]
 
 post-install:
 .for file in ncmpidump ncmpigen ncvalid
