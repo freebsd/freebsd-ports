@@ -5,13 +5,16 @@ sends it to a stream server.
 DarkIce can encode in the following formats:
 
  mp3 - using the lame library
+ mp2 - using the twolame library
  Ogg Vorbis
- aac - using the faac library
+ AAC - using the faac library
+ AAC HEv2 - using libaacplus library 
 
 DarkIce can send the encoded stream to the following streaming servers:
 
  ShoutCast
  IceCast 1.3.x and 2.x
  Darwin Streaming Server
+ archive the encoded audio in files
 
-WWW: http://darkice.tyrell.hu/
+WWW: http://code.google.com/p/darkice/
