@@ -1,26 +1,41 @@
---- pydf.orig  2009-04-10 13:00:07.000000000 +0000
-+++ pydf       2009-07-15 12:54:08.000000000 +0000
+--- pydf.orig	2009-11-10 00:38:15.000000000 +0100
++++ pydf	2009-11-10 02:13:13.000000000 +0100
 @@ -1,4 +1,4 @@
 -#! /usr/bin/python
 +#! %%PYTHON_CMD%%
 
  import sys, os, string, types, commands, struct
  from optparse import OptionParser
-@@ -169,8 +169,8 @@
+@@ -169,7 +169,7 @@
  #end of default definitions
-
+ 
  # read configuration file
--for i in ["/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
--    if os.path.isfile(i):
-+for i in ["%%PREFIX%%/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
-+      if os.path.isfile(i):
-         execfile(i)
-
-
-@@ -344,9 +344,9 @@
-         except OSError, IOError:
+-for conffile in ["/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
++for conffile in ["%%PREFIX%/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
+     if os.path.isfile(conffile):
+         execfile(conffile)
+ 
+@@ -294,11 +294,12 @@
+                     continue
+                 device, on = line.split(' on ', 1)
+                 device = device.split()[0]
+-                onparts = on.split()
++                onparts = on.rstrip(")").split(" (")
+                 on = onparts[0]
+-                # option format: (a,b,..)
+-                opts = onparts[-1][1:-1].split(",")
+-                r[on] = (device, '', opts)                
++                # option format: (fstype, a, b, ..)
++                typ, opts = onparts[1].split(", ", 1)
++                opts = opts.split(", ")
++                r[on] = (device, typ, opts)
+ 
+             if r:
+                 return r
+@@ -335,9 +336,9 @@
+         except (OSError, IOError):
              status = 10*[0]
-
+ 
 -        fs_blocksize = status[F_BSIZE]
 +        fs_blocksize = status[F_FRSIZE]
          if fs_blocksize == 0:
@@ -29,7 +44,7 @@
          free = status[F_BFREE]
          size = status[F_BLOCKS]
          avail = status[F_BAVAIL]
-@@ -375,7 +375,7 @@
+@@ -366,7 +367,7 @@
              used_f = myformat(used, sizeformat, fs_blocksize)
              avail_f = myformat(avail, sizeformat, fs_blocksize)
              try:
@@ -38,12 +53,12 @@
                  perc_f = str(perc)
              except ZeroDivisionError:
                  perc = 0
-@@ -444,7 +444,7 @@
+@@ -435,7 +436,7 @@
      "test if fs (as type) is a special one"
      "in addition, a filesystem is special if it has number of blocks equal to 0"
      fs = fs.lower()
 -    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs" ]
-+    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs", "procfs", "devfs" ]
-
-
-
++    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs", "procfs", "devfs", "linprocfs" ]
+ 
+ def get_table(mps):
+     "table is a list of rows"
