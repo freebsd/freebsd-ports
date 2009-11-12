@@ -1,4 +1,11 @@
 bin/lmarbles
+share/applications/lmarbles.desktop
+%%PORTDOCS%%%%DOCSDIR%%/arrow.jpg
+%%PORTDOCS%%%%DOCSDIR%%/arrow2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/crumble.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/marbles.jpg
+%%PORTDOCS%%%%DOCSDIR%%/teleport.jpg
 %%DATADIR%%/gfx/board.bmp
 %%DATADIR%%/gfx/f_red.bmp
 %%DATADIR%%/gfx/f_small.bmp
@@ -56,6 +63,7 @@ bin/lmarbles
 %%DATADIR%%/gfx/wood/wall.bmp
 %%DATADIR%%/gfx/wood/wall_crumble.bmp
 %%DATADIR%%/levels/Original
+%%DATADIR%%/lmarbles.prfs
 %%DATADIR%%/sounds/alarm.wav
 %%DATADIR%%/sounds/arrow.wav
 %%DATADIR%%/sounds/click.wav
@@ -64,10 +72,12 @@ bin/lmarbles
 %%DATADIR%%/sounds/select.wav
 %%DATADIR%%/sounds/stop.wav
 %%DATADIR%%/sounds/teleport.wav
-@dirrm %%DATADIR%%/gfx/metal
-@dirrm %%DATADIR%%/gfx/stone
-@dirrm %%DATADIR%%/gfx/wood
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%/levels
+share/pixmaps/lmarbles48.gif
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/gfx/wood
+@dirrm %%DATADIR%%/gfx/stone
+@dirrm %%DATADIR%%/gfx/metal
+@dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
