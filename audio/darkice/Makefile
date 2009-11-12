@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.19
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	audio net
-MASTER_SITES=	http://darkice.tyrell.hu/dist/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
@@ -22,9 +20,12 @@ OPTIONS=	VORBIS "Ogg Vorbis support" on \
 		FAAC "FAAC support for AAC" off \
 		JACK "Jack support" off
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--without-alsa
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
+		ac_cv_prog_acx_pthread_config=no
+CONFIGURE_ARGS=	--without-alsa --without-aacplus
 
 MAN1=		darkice.1
 MAN5=		darkice.cfg.5
@@ -68,10 +69,7 @@ CONFIGURE_ARGS+=	--without-jack
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
-		s|PTHREAD_CFLAGS=.*$$|PTHREAD_CFLAGS=|g ; \
-		s|PTHREAD_LIBS=.*$$|PTHREAD_LIBS=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.am
 
 .include <bsd.port.post.mk>
