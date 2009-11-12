@@ -26,6 +26,12 @@ export TARGET_ARCH=${arch}
 # Workaround needed for zfs - 20090321 erwin
 export NO_FSCHG=1
 
+# experimental: uncomment these 4 to test with clang
+#export WITH_CLANG=1
+#export NO_WERROR=1
+#export WERROR=1
+#export WITH_CLANG_IS_CC=1
+
 case "$branch" in
     6*)
 	export SRCBRANCH="-r RELENG_6"
@@ -82,19 +88,19 @@ echo "==> Starting make buildworld"
 make buildworld ${args} || exit $?
 
 echo "==> Cleaning up chroot"
-rm -rf /var/chroot/
-chflags -R noschg /var/chroot/
-rm -rf /var/chroot/
-mkdir /var/chroot/
+rm -rf ${worlddir}/
+chflags -R noschg ${worlddir}/
+rm -rf ${worlddir}/
+mkdir ${worlddir}/
 
 echo "==> Starting make installworld"
 if [ "$client" = "0" ]; then
 	export NEWSPARC_TIMETYPE=__int64_t
-	make installworld DESTDIR=/var/chroot || exit $?
+	make installworld DESTDIR=${worlddir} || exit $?
 
 	echo "==> Starting make distribute"
-	make DESTDIR=/var/chroot distrib-dirs && \
-	    make DESTDIR=/var/chroot distribution || exit $?
+	make DESTDIR=${worlddir} distrib-dirs && \
+	    make DESTDIR=${worlddir} distribution || exit $?
 
 else
 	echo "==> Not doing installworld of client source tree"
