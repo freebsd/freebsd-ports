@@ -12,6 +12,3 @@ To keep dotconf from printing out warnings, you can install your
 own customized error handler.
 
 WWW: http://www.azzit.de/dotconf/
-
--- Ying-Chieh Liao
-   ijliao@FreeBSD.org

@@ -12,7 +12,7 @@ CATEGORIES=	net kld
 MASTER_SITES=	http://www.cultdeadsheep.org/~clement/FreeBSD/ipvs/
 DISTNAME=	ipvs-${PORTVERSION}_${PORTREVISION}
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD port of Linux Virtual Server
 
 #WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

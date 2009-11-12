@@ -10,7 +10,7 @@ PORTVERSION=	1.2.18
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.2/src/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
 
 USE_RC_SUBR=	haproxy.sh

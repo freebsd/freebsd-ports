@@ -10,7 +10,7 @@ PORTVERSION=	0.22
 CATEGORIES=	security
 MASTER_SITES=	http://members.elysium.pl/brush/cmd5checkpw/dist/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkpassword compatible authentication program that uses CRAM-MD5
 
 MAN8=		cmd5checkpw.8

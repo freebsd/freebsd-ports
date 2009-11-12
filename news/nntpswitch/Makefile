@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.nntpswitch.org/download/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A NNTP content router
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
