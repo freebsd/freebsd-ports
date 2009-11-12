@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An optparse-inspired command-line parsing library
 
+BROKEN=		checksum mismatch
+
 USE_ZIP=	yes
 
 USE_PYTHON=	2.4+
