@@ -56,6 +56,7 @@
     SUBDIR += bk_edit
     SUBDIR += bkmrkconv
     SUBDIR += blogd
+    SUBDIR += blogsum
     SUBDIR += bluefish
     SUBDIR += boa
     SUBDIR += bookmarkbridge

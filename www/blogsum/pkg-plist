@@ -1,0 +1,32 @@
+%%WWWROOT%%/blogsum/Blogsum/Config.pm.dist
+%%WWWROOT%%/blogsum/admin.cgi
+%%WWWROOT%%/blogsum/docs/LICENSE
+%%WWWROOT%%/blogsum/docs/LICENSE.images
+%%WWWROOT%%/blogsum/docs/README
+%%WWWROOT%%/blogsum/examples/create_sqlite.sql
+%%WWWROOT%%/blogsum/examples/httpd-blogsum.conf
+%%WWWROOT%%/blogsum/examples/wp2blogsum.pl
+%%WWWROOT%%/blogsum/index.cgi
+%%WWWROOT%%/blogsum/startup.pl
+%%WWWROOT%%/blogsum/themes/default/admin.tmpl
+%%WWWROOT%%/blogsum/themes/default/images/asterisk-green.gif
+%%WWWROOT%%/blogsum/themes/default/images/asterisk-red.gif
+%%WWWROOT%%/blogsum/themes/default/images/check.gif
+%%WWWROOT%%/blogsum/themes/default/images/delete.gif
+%%WWWROOT%%/blogsum/themes/default/images/draft-disabled.gif
+%%WWWROOT%%/blogsum/themes/default/images/draft.gif
+%%WWWROOT%%/blogsum/themes/default/images/play-disabled.gif
+%%WWWROOT%%/blogsum/themes/default/images/play.gif
+%%WWWROOT%%/blogsum/themes/default/images/plus.gif
+%%WWWROOT%%/blogsum/themes/default/images/xml.gif
+%%WWWROOT%%/blogsum/themes/default/index.tmpl
+%%WWWROOT%%/blogsum/themes/default/style.css
+@exec mkdir -p %D %%WWWROOT%%/blogsum/data/
+@dirrm %%WWWROOT%%/blogsum/Blogsum
+@dirrm %%WWWROOT%%/blogsum/data
+@dirrm %%WWWROOT%%/blogsum/docs
+@dirrm %%WWWROOT%%/blogsum/examples
+@dirrm %%WWWROOT%%/blogsum/themes/default/images
+@dirrm %%WWWROOT%%/blogsum/themes/default
+@dirrm %%WWWROOT%%/blogsum/themes
+@dirrm %%WWWROOT%%/blogsum/
