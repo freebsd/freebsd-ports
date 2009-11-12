@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.12
-PORTREVISION=	1
+PORTVERSION=	1.0.13
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames/${PORTNAME}/1.0
+MASTER_SITES=	SF/lgames/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An another tetris clone but a good one with bunch of cool features
@@ -20,6 +19,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
 .include <bsd.port.pre.mk>
 
@@ -36,9 +36,9 @@ post-patch:
 		 s|--mode=666||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
-	${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
-	${CHMOD} 2755 ${PREFIX}/bin/${PORTNAME}
-	${CHMOD} 664 ${PREFIX}/var/ltris.hscr
-	${CHOWN} root:games ${PREFIX}/var/ltris.hscr
+	@${CHMOD} 2755 ${PREFIX}/bin/${PORTNAME}
+	@${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
+	@${CHMOD} 0664 ${DATADIR}/${PORTNAME}.hscr
+	@${CHOWN} root:games ${DATADIR}/${PORTNAME}.hscr
 
 .include <bsd.port.post.mk>

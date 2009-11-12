@@ -1,6 +1,8 @@
 bin/ltris
 %%NLS%%share/locale/de/LC_MESSAGES/ltris.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/ltris.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/ltris.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ltris.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ltris.mo
 %%DATADIR%%/figures
 %%DATADIR%%/gfx/back0.bmp
@@ -20,6 +22,7 @@ bin/ltris
 %%DATADIR%%/gfx/logo.bmp
 %%DATADIR%%/gfx/menuback.bmp
 %%DATADIR%%/gfx/quest.bmp
+%%DATADIR%%/ltris.hscr
 %%DATADIR%%/sounds/click.wav
 %%DATADIR%%/sounds/excellent.wav
 %%DATADIR%%/sounds/explosion.wav
@@ -27,7 +30,6 @@ bin/ltris
 %%DATADIR%%/sounds/motion.wav
 %%DATADIR%%/sounds/nextlevel.wav
 %%DATADIR%%/sounds/stop.wav
-var/ltris.hscr
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
