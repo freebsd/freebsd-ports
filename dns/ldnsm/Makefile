@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldnsm
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	dns
 MASTER_SITES=	http://vvelox.net/src/ldap/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -23,7 +23,7 @@ MAN1=		ldnsm.1
 
 MAN5=		dotldnsm.5
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #nothing to configure
 do-configure:
@@ -34,6 +34,6 @@ do-build:
 	@${ECHO} -n
 
 do-install:
-	@${EXEC} cd ${WRKDIR}/${PORTNAME}/ ; ${WRKDIR}/${PORTNAME}/install ${PREFIX}
+	@${EXEC} cd ${WRKSRC} ; ${WRKSRC}/install ${PREFIX}
 
 .include <bsd.port.mk>
