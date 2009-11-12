@@ -4388,6 +4388,7 @@ gnat-doc-txt                    ports/lang/gnat-doc-txt
 gnat-gcc41                      ports/lang/gnat-gcc41
 gnat-gcc42                      ports/lang/gnat-gcc42
 gnat-gcc43                      ports/lang/gnat-gcc43
+gnat-gcc44                      ports/lang/gnat-gcc44
 gnat-glade                      ports/lang/gnat-glade
 gnats                           ports/databases/gnats
 gnats4                          ports/databases/gnats4
@@ -9211,6 +9212,7 @@ munin-node                      ports/sysutils/munin-node
 mup                             ports/print/mup
 mupad                           ports/math/mupad
 muparser                        ports/math/muparser
+mupdf                           ports/graphics/mupdf
 mupen64                         ports/emulators/mupen64
 mupen64-base                    ports/emulators/mupen64-base
 mupen64-dummyaudio              ports/emulators/mupen64-dummyaudio
@@ -12386,8 +12388,7 @@ p5-Net-Dict                     ports/net/p5-Net-Dict
 p5-Net-Divert                   ports/net/p5-Net-Divert
 p5-Net-Domain-ExpireDate        ports/dns/p5-Net-Domain-ExpireDate
 p5-Net-Domain-TLD               ports/dns/p5-Net-Domain-TLD
-p5-Net-EPP-Client               ports/net/p5-Net-EPP-Client
-p5-Net-EPP-Frame                ports/net/p5-Net-EPP-Frame
+p5-Net-EPP                      ports/net/p5-Net-EPP
 p5-Net-EPP-Proxy                ports/net/p5-Net-EPP-Proxy
 p5-Net-FS-Flickr                ports/net/p5-Net-FS-Flickr
 p5-Net-FS-Gmail                 ports/net/p5-Net-FS-Gmail
@@ -13773,6 +13774,7 @@ p5-ZConf-Bookmarks              ports/net/p5-ZConf-Bookmarks
 p5-ZConf-Cron                   ports/sysutils/p5-ZConf-Cron
 p5-ZConf-GUI                    ports/devel/p5-ZConf-GUI
 p5-ZConf-Mail                   ports/mail/p5-ZConf-Mail
+p5-ZConf-RSS                    ports/www/p5-ZConf-RSS
 p5-ZConf-Runner                 ports/deskutils/p5-ZConf-Runner
 p5-ZConf-Runner-GUI-GTK         ports/deskutils/p5-ZConf-Runner-GUI-GTK
 p5-ZConf-Weather                ports/astro/p5-ZConf-Weather
@@ -16024,8 +16026,7 @@ p5-net-dnsbl-statistics         ports/dns/p5-Net-DNSBL-Statistics
 p5-net-domain-expiredate        ports/dns/p5-Net-Domain-ExpireDate
 p5-net-domain-tld               ports/dns/p5-Net-Domain-TLD
 p5-net-ebay                     ports/www/p5-Net-eBay
-p5-net-epp-client               ports/net/p5-Net-EPP-Client
-p5-net-epp-frame                ports/net/p5-Net-EPP-Frame
+p5-net-epp                      ports/net/p5-Net-EPP
 p5-net-epp-proxy                ports/net/p5-Net-EPP-Proxy
 p5-net-ext                      ports/net/p5-Net-ext
 p5-net-finger                   ports/net/p5-Net-Finger
@@ -17455,6 +17456,7 @@ p5-zconf-bookmarks              ports/net/p5-ZConf-Bookmarks
 p5-zconf-cron                   ports/sysutils/p5-ZConf-Cron
 p5-zconf-gui                    ports/devel/p5-ZConf-GUI
 p5-zconf-mail                   ports/mail/p5-ZConf-Mail
+p5-zconf-rss                    ports/www/p5-ZConf-RSS
 p5-zconf-runner                 ports/deskutils/p5-ZConf-Runner
 p5-zconf-runner-gui-gtk         ports/deskutils/p5-ZConf-Runner-GUI-GTK
 p5-zconf-weather                ports/astro/p5-ZConf-Weather
@@ -23122,6 +23124,7 @@ uhexen                          ports/games/uhexen
 uhexen2                         ports/games/uhexen2
 uhexen2-extras                  ports/games/uhexen2-extras
 uhidd                           ports/sysutils/uhidd
+uhub                            ports/net-p2p/uhub
 uif2iso                         ports/sysutils/uif2iso
 uim                             ports/textproc/uim
 uim-el                          ports/textproc/uim-el
