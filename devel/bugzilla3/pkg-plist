@@ -41,7 +41,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Search/Saved.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Status.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Parser.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/Bugzilla.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/Hook.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/User.html
@@ -263,7 +262,6 @@
 %%BUGZILLADIR%%/Bugzilla/Series.pm
 %%BUGZILLADIR%%/Bugzilla/Status.pm
 %%BUGZILLADIR%%/Bugzilla/Template.pm
-%%BUGZILLADIR%%/Bugzilla/Template/Parser.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/Bugzilla.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/Hook.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/User.pm
