@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 .ifdef MNAME
@@ -17,12 +17,12 @@ MAINTAINER=	cristianorolim@hotmail.com
 COMMENT=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
-RUN_DEPENDS=	rsyslog>=4:${PORTSDIR}/sysutils/rsyslog4
+RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog4
 
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
-CONFLICTS=	rsyslog-[2-3].[0-9]*
+CONFLICTS=	rsyslog-[!4].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
