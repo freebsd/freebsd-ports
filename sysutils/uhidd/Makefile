@@ -27,7 +27,7 @@ MAN8=		uhidd.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
-BROKEN=		Does not build with the old USB stack
+IGNORE=		does not build with the old USB stack
 .endif
 
 .if !exists(/usr/src/sys/Makefile)
