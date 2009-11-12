@@ -63,7 +63,10 @@ fi
 if [ -s "${here}/bindist/dirlist" ]; then
   cat "${here}/bindist/dirlist" | xargs mkdir -p 
 fi
-cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir}
+# XXX MCL seems to be obsoleted by individual files in clients/?
+if [ -d ${here}/bindist/files ]; do
+  cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir}
+fi
 
 # Post-processing of installed world
 date '+%Y%m%d' > ${tmpdir}/var/db/port.mkversion
