@@ -427,6 +427,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ml-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ne-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.poedit-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.st-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.te-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ur-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.vi-module.html
@@ -439,6 +440,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.file_discovery-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.hash-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.ini-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.lru-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.multistring-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.optrecurse-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.ourdom-module.html
@@ -805,6 +807,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ne.ne-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.poedit-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.poedit-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.st-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.st-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.st.st-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.te-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.te-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.te.te-class.html
@@ -847,6 +852,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.ini.LineType-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.ini.OptionLine-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.ini.SectionLine-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.lru-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.lru-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.lru.LRUCachingDict-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.multistring-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.multistring-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.multistring.multistring-class.html
@@ -1548,6 +1556,8 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_30.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_300.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_301.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_302.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_303.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_31.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_32.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_33.png
@@ -1868,6 +1878,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.py
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.pyo
+%%PYTHON_SITELIBDIR%%/translate/lang/st.py
+%%PYTHON_SITELIBDIR%%/translate/lang/st.pyc
+%%PYTHON_SITELIBDIR%%/translate/lang/st.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/te.py
 %%PYTHON_SITELIBDIR%%/translate/lang/te.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/te.pyo
@@ -1947,6 +1960,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/misc/ini.py
 %%PYTHON_SITELIBDIR%%/translate/misc/ini.pyc
 %%PYTHON_SITELIBDIR%%/translate/misc/ini.pyo
+%%PYTHON_SITELIBDIR%%/translate/misc/lru.py
+%%PYTHON_SITELIBDIR%%/translate/misc/lru.pyc
+%%PYTHON_SITELIBDIR%%/translate/misc/lru.pyo
 %%PYTHON_SITELIBDIR%%/translate/misc/multistring.py
 %%PYTHON_SITELIBDIR%%/translate/misc/multistring.pyc
 %%PYTHON_SITELIBDIR%%/translate/misc/multistring.pyo
