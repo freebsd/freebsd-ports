@@ -1,8 +1,12 @@
---- _config.mk	2008-08-04 14:08:03.000000000 +0200
-+++ config.mk	2008-08-04 14:07:48.000000000 +0200
-@@ -7,16 +7,16 @@
- PREFIX = ${HOME}
+diff -Naur ./config.mk ../echinus-0.3.8/config.mk
+--- ./config.mk	2009-11-07 22:00:00.000000000 +0100
++++ ../echinus-0.3.8/config.mk	2009-11-07 22:01:52.000000000 +0100
+@@ -6,10 +6,10 @@
+ # paths
+ PREFIX = /usr/local
  MANPREFIX = ${PREFIX}/share/man
+-CONF = /share/examples/echinus
++CONF = ${PREFIX}/etc/echinus/
  
 -X11INC = /usr/X11R6/include
 -X11LIB = /usr/X11R6/lib
@@ -11,19 +15,3 @@
  
  # includes and libs
  INCS = -I. -I/usr/include -I${X11INC} `pkg-config --cflags xft`
- LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 `pkg-config --libs xft`
- 
- # flags
--CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
--LDFLAGS = -s ${LIBS}
-+CFLAGS += -Os ${INCS} -DVERSION=\"${VERSION}\"
-+LDFLAGS += -s ${LIBS}
- #CFLAGS = -g3 -ggdb3 -std=c99 -pedantic -Wall -O0 ${INCS} -DVERSION=\"${VERSION}\" 
- #LDFLAGS = -g3 -ggdb3 ${LIBS}
- 
-@@ -26,4 +26,4 @@
- #CFLAGS += -xtarget=ultra
- 
- # compiler and linker
--CC = cc
-+CC? = cc
