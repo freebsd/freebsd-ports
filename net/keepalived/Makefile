@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.cultdeadsheep.org/~clement/FreeBSD/ipvs/
 DISTNAME=	${PORTNAME}-FreeBSD-${PORTVERSION}
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A monitoring daemon for ipvs clusters
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

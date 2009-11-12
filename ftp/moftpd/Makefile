@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.morth.org/moftpd/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	clement
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful FTP server supporting IPv6, TLS, and much more
 
 USE_AUTOTOOLS=	autoconf:262
