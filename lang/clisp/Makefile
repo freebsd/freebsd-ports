@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.47
-PORTREVISION=	2
+PORTVERSION=	2.48
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
@@ -33,6 +32,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	BDB "Build Berkeley Database module" off \
 		CLX_MIT "Build X11 module (original MIT version)" off \

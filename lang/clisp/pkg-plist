@@ -43,7 +43,7 @@ lib/clisp/full/calls.o
 %%FASTCGI%%lib/clisp/full/fastcgi_wrappers.o
 %%CLX_MIT%%lib/clisp/full/fonts.fas
 %%CLX_MIT%%lib/clisp/full/fonts.lisp
-lib/clisp/full/fnmatch.o
+%%WILDCARD%%lib/clisp/full/fnmatch.o
 %%CLX_MIT%%lib/clisp/full/gcontext.fas
 %%CLX_MIT%%lib/clisp/full/gcontext.lisp
 %%GDBM%%lib/clisp/full/gdbm.o
@@ -58,6 +58,7 @@ lib/clisp/full/gettext.o
 %%CLX_MIT%%lib/clisp/full/keysyms.fas
 %%CLX_MIT%%lib/clisp/full/keysyms.lisp
 lib/clisp/full/libnoreadline.a
+%%SVM%%lib/clisp/full/libsvm.o
 lib/clisp/full/lisp.a
 lib/clisp/full/lisp.run
 lib/clisp/full/lispinit.mem
@@ -87,6 +88,7 @@ lib/clisp/full/regexp.dvi
 %%CLX_MIT%%lib/clisp/full/resource.lisp
 %%CLX_MIT%%lib/clisp/full/shape.fas
 %%CLX_MIT%%lib/clisp/full/shape.lisp
+%%SVM%%lib/clisp/full/svm.so
 %%CLX_MIT%%lib/clisp/full/text.fas
 %%CLX_MIT%%lib/clisp/full/text.lisp
 %%CLX_MIT%%lib/clisp/full/trace.fas
@@ -121,7 +123,6 @@ lib/clisp/linkkit/modules.c
 %%DOCSDIR%%/doc/clisp.pdf
 %%DOCSDIR%%/doc/clisp.png
 %%DOCSDIR%%/doc/clisp.ps
-%%DOCSDIR%%/doc/editors.txt
 %%DOCSDIR%%/doc/impnotes.css
 %%DOCSDIR%%/doc/impnotes.html
 %%DATADIR%%/emacs/clhs.el
@@ -130,6 +131,7 @@ lib/clisp/linkkit/modules.c
 %%DATADIR%%/emacs/clisp-indent.el
 %%DATADIR%%/emacs/clisp-indent.lisp
 %%DATADIR%%/vim/lisp.vim
+share/aclocal/clisp.m4
 %%NLS%%share/locale/da/LC_MESSAGES/clisp.mo
 %%NLS%%share/locale/da/LC_MESSAGES/clisplow.mo
 %%NLS%%share/locale/de/LC_MESSAGES/clisp.mo
