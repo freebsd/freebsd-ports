@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	manualsize
-PORTVERSION=	0.6a
-PORTREVISION?=	1
+PORTVERSION=	0.7
 CATEGORIES=	net-im
-MASTER_SITES=	http://myfotomx.com/files/ \
+MASTER_SITES=	http://issv.org.ru/oss/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
