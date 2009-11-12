@@ -1,5 +1,5 @@
---- man/tpb.1.orig	Mon Dec  5 11:01:51 2005
-+++ man/tpb.1	Mon Dec  5 11:06:07 2005
+--- man/tpb.1.orig	2005-07-25 10:40:53.000000000 +0200
++++ man/tpb.1	2009-11-12 23:50:29.000000000 +0100
 @@ -7,7 +7,7 @@
  With TPB it is possible to bind a program to the ThinkPad, Mail, Home and Search button.
  TPB can also run a callback program on each state change with the changed state and the new state as options. 
@@ -18,17 +18,16 @@
  .TP
  \(bu
  configuration in $HOME/.tpbrc
-@@ -121,7 +121,8 @@
+@@ -121,7 +121,7 @@
  .TP 8
  .B NVRAM
  Should define the nvram device from where the information about the key states
 -is read. Default is to try /dev/nvram, followed by /dev/misc/nvram.
-+is read. Default is to try /dev/nvram, followed by /dev/misc/nvram.  This has
-+no effect on FreeBSD, since it uses the acpi_ibm(4) driver instead.
++is read. Default is to try /dev/nvram.
  .TP 8
  .B POLLTIME
  Defines the delay between polls in microseconds.
-@@ -332,14 +333,16 @@
+@@ -332,14 +332,18 @@
  Possible values are left, center and right.
  Default is left.
  .SH "NOTES"
@@ -39,6 +38,8 @@
  The device file could be created with \'mknod /dev/nvram c 10 144\'
  
 +On FreeBSD you have to load the acpi_ibm(4) driver prior to using TPB.
++If ACPI and in turn acpi_ibm(4) is not available, nvram(4) and apm(4)
++are being used.
 +
  This program was developed on a Thinkpad Model T21.
  .SH EXAMPLE

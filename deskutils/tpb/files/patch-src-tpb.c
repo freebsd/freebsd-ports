@@ -1,27 +1,31 @@
---- src/tpb.c.orig	Sun Aug 22 15:45:11 2004
-+++ src/tpb.c	Mon Jun 13 17:31:34 2005
-@@ -34,6 +34,10 @@
+--- src/tpb.c.orig	2005-07-18 16:15:59.000000000 +0200
++++ src/tpb.c	2009-11-12 09:51:09.000000000 +0100
+@@ -34,6 +34,14 @@
  #include <unistd.h>
  #include "config.h"
  
 +#ifdef __FreeBSD__
++#include <sys/file.h>
++#include <sys/ioctl.h>
++#include <sys/types.h>
 +#include <sys/sysctl.h>
++#include <machine/apm_bios.h>
 +#endif
 +
  #if ENABLE_NLS
  #include <libintl.h>
  #endif /* ENABLE_NLS */
-@@ -163,6 +167,9 @@
+@@ -161,6 +169,9 @@
    /* to initialize struct */
    memset(&last_thinkpad_state, 0x00, sizeof(t_thinkpad_state));
    if(get_nvram_state(&thinkpad_state) != 0) {
 +#ifdef __FreeBSD__
-+    fprintf(stderr, _("acpi_ibm(4) driver not loaded. Exiting..."));
++    fprintf(stderr, _("Neither acpi_ibm(4) nor nvram(4) driver loaded. Exiting..."));
 +#endif
      _exit(1);
    }
    if(cfg.apm == STATE_ON) {
-@@ -449,6 +456,25 @@
+@@ -449,6 +460,25 @@
  #endif /* HAVE_LIBXOSD */
      } /* }}} */
  
@@ -47,24 +51,24 @@
      /* determine the state of display  {{{ */
      if((thinkpad_state.display_toggle != last_thinkpad_state.display_toggle ||
  	thinkpad_state.display_state != last_thinkpad_state.display_state) &&
-@@ -972,6 +998,7 @@
- /* get the current state from the nvram */
+@@ -981,6 +1011,11 @@
  int get_nvram_state(t_thinkpad_state *thinkpad_state) /* {{{ */
  {
-+#ifndef __FreeBSD__
    static int fdsc = -1; /* -1 -> file not opened */
-   unsigned char buffer[114];
-   struct {
-@@ -1030,13 +1057,52 @@
-   thinkpad_state->mute_toggle       = (thinkpad_state->mute_toggle       & ~0x01) | (( buffer[0x60] & 0x40) >> 6);
-   thinkpad_state->powermgt_ac       =                                               (( buffer[0x39] & 0x07)     );
-   thinkpad_state->powermgt_battery  =                                               (( buffer[0x39] & 0x38) >> 3);
-+#else
++#ifdef __FreeBSD__
 +  u_int n = 0;
 +  size_t len = sizeof(n);
-+  if ( sysctlbyname("dev.acpi_ibm.0.hotkey", &n, &len, NULL, 0) == -1 )
-+    return -1;
++  if ( fdsc != -1 || sysctlbyname("dev.acpi_ibm.0.hotkey", &n, &len, NULL, 0) == -1 ) {
++#endif
+   unsigned char buffer[114];
+   struct {
+     int pos;
+@@ -1040,13 +1075,51 @@
+   thinkpad_state->powermgt_battery  =                                               (( buffer[0x39] & 0x38) >> 3);
  
+   return 0;
++#ifdef __FreeBSD__
++  }    
 +  thinkpad_state->thinkpad_toggle   = (thinkpad_state->thinkpad_toggle   & ~0x01) | (( n & (1<<3)) >> 3);
 +  thinkpad_state->zoom_toggle       = (thinkpad_state->zoom_toggle       & ~0x01) | (( n & (1<<4)) >> 4);
 +  thinkpad_state->display_toggle    = (thinkpad_state->display_toggle    & ~0x01) | (( n & (1<<6)) >> 6);
@@ -97,18 +101,22 @@
 +  if ( sysctlbyname("dev.acpi_ibm.0.mute", &n, &len, NULL, 0) == -1 )
 +    return -1;
 +  thinkpad_state->mute_toggle = n;
++
++  return 0;
 +#endif
-   return 0;
  } /* }}} */
  
  /* get the current state from the apm subsystem */
  int get_apm_state(t_thinkpad_state *thinkpad_state) /* {{{ */
  {
-+#ifndef __FreeBSD__
-   unsigned int i;
+-  unsigned int i;
    static int fdsc = -1; /* -1 -> file not opened */
++#ifndef __FreeBSD__
++  unsigned int i;
    char buffer[38];
-@@ -1114,7 +1180,15 @@
+   char *tokens[9];
+ 
+@@ -1122,7 +1195,28 @@
        thinkpad_state->ac_state = STATE_ON;
        break;
    }
@@ -116,31 +124,47 @@
 +  u_long addr;
 +  size_t len = sizeof(addr);
 +
-+  if ( sysctlbyname("hw.acpi.acline", &addr, &len, NULL, 0) == -1 )
-+    return -1;
++  if ( fdsc != -1 || sysctlbyname("hw.acpi.acline", &addr, &len, NULL, 0) == -1 ) {
++    // Try APM
++    if(fdsc == -1) { /* if not already opened, open apm */
++      if((fdsc = open("/dev/apm", O_RDONLY)) == -1)
++        return -1;
++    }
  
++    struct apm_info info;
++    if (ioctl(fdsc, APMIO_GETINFO, &info) == -1)
++      return -1;
++
++    if (info.ai_acline > 2)
++      return -1;
++    
++    addr = info.ai_acline;
++  }
 +  thinkpad_state->ac_state = (addr == 1) ? STATE_ON : STATE_OFF;
 +#endif
    return 0;
  } /* }}} */
  
-@@ -1276,6 +1350,12 @@
+@@ -1285,6 +1379,13 @@
  
    /* only use writeback to nvram when cfg.mixersteps is different from DEFAULT_MIXERSTEPS */
    if(cfg.mixersteps != DEFAULT_MIXERSTEPS) {
 +#ifdef __FreeBSD__
 +    u_int n = thinkpad_state->volume_level;
 +
-+    if (sysctlbyname("dec.acpi_ibm.0.volume", NULL, NULL, &n, sizeof(n)))
++    if (sysctlbyname("dec.acpi_ibm.0.volume", NULL, NULL, &n, sizeof(n)) != 0)
 +      fprintf(stderr, _("Unable to set volume sysctl"));
-+#else
++    else {
++#endif
      /* open nvram */
      if((fdsc = open(cfg.nvram, O_RDWR|O_NONBLOCK)) == -1) {
        fprintf(stderr, _("Unable to open device %s: "), cfg.nvram);
-@@ -1317,8 +1397,8 @@
+@@ -1326,8 +1427,10 @@
      }
  
      close(fdsc);
++#ifdef __FreeBSD__
++    }
 +#endif
    }
 -
