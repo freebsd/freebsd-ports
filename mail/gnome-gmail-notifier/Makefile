@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-gmail-notifier
 PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${POR
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gtk20 libgnome libgnomeui libxml2 libglade2
+USE_GNOME=	glib20 gtk20 libgnome libgnomeui libxml2 libglade2 librsvg2
 USE_GSTREAMER=	good
 
 post-patch:
