@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small footprint, fast Wiki engine written in C++
 
 GNU_CONFIGURE=	yes
