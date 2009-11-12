@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Beanstalk/Client/.packlist
+%%SITE_PERL%%/Beanstalk/Client.pm
+%%SITE_PERL%%/Beanstalk/Job.pm
+%%SITE_PERL%%/Beanstalk/Pool.pm
+%%SITE_PERL%%/Beanstalk/Stats.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Beanstalk/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Beanstalk
+@dirrmtry %%SITE_PERL%%/Beanstalk
