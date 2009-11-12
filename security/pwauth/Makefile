@@ -10,7 +10,7 @@ PORTVERSION=	2.3.7
 CATEGORIES=	security www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	eg@fbsd.lt
 COMMENT=	A Unix Web Authenticator
 
 PLIST_FILES=	bin/pwauth bin/checkfaillog
