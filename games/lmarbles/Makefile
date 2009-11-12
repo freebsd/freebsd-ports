@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lmarbles
-PORTVERSION=	1.0.7
-PORTREVISION=	3
+PORTVERSION=	1.0.8
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames/marbles/1.0
+MASTER_SITES=	SF/lgames/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A challenging puzzle game similar to Atomix
@@ -17,20 +16,21 @@ COMMENT=	A challenging puzzle game similar to Atomix
 USE_SDL=	sdl mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/games
+CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
-MAN6=		lmarbles.6
-
-PORTDOCS=	*
+MAN6=		${PORTNAME}.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/SDL\///' ${WRKSRC}/src/*.[ch]
+	@${REINPLACE_CMD} -e 's|(datadir)/icons|(datadir)/pixmaps|g' \
+		${WRKSRC}/Makefile.in
 
 post-install:
-	@${CHOWN} root:games ${PREFIX}/bin/lmarbles
-	@${CHMOD} g+s ${PREFIX}/bin/lmarbles
+	@${CHMOD} 2755 ${PREFIX}/bin/${PORTNAME}
+	@${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
+	@${CHMOD} 0664 ${DATADIR}/${PORTNAME}.prfs
+	@${CHOWN} root:games ${DATADIR}/${PORTNAME}.prfs
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/manual/* ${DOCSDIR}
 .endif
 
