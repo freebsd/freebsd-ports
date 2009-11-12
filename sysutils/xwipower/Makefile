@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fumi.org/pub/xwipower/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wave power level meter for wi(4)
 
 ONLY_FOR_ARCHS=	i386
