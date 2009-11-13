@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME:S/$/3/}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	State-event driven class extendible C++ script interpreter
 
-LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp
 
 BROKEN=		Does not build with libtool 2.2.
 

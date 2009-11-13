@@ -7,14 +7,14 @@
 
 PORTNAME=	panoptis
 PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Detect and block DoS/DDoS attacks
 
-LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
