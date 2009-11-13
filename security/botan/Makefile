@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.8.7
-PORTREVISION=	1
+PORTVERSION=	1.8.8
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.8/
 DISTNAME=	Botan-${PORTVERSION}
