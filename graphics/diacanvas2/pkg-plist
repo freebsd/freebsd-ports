@@ -1,4 +1,5 @@
 include/diacanvas/dia-canvas-box.h
+include/diacanvas/dia-canvas-clipboard.h
 include/diacanvas/dia-canvas-editable.h
 include/diacanvas/dia-canvas-element.h
 include/diacanvas/dia-canvas-group.h
@@ -8,7 +9,9 @@ include/diacanvas/dia-canvas-image.h
 include/diacanvas/dia-canvas-item.h
 include/diacanvas/dia-canvas-iter.h
 include/diacanvas/dia-canvas-line.h
+include/diacanvas/dia-canvas-punctum.h
 include/diacanvas/dia-canvas-text.h
+include/diacanvas/dia-canvas-varius-forma.h
 include/diacanvas/dia-canvas-view.h
 include/diacanvas/dia-canvas.h
 include/diacanvas/dia-constraint.h
@@ -30,6 +33,9 @@ include/diacanvas/dia-shape.h
 include/diacanvas/dia-solver.h
 include/diacanvas/dia-stack-tool.h
 include/diacanvas/dia-strength.h
+include/diacanvas/dia-textus-cuadrus.h
+include/diacanvas/dia-textus-imago.h
+include/diacanvas/dia-textus-punctum.h
 include/diacanvas/dia-tool.h
 include/diacanvas/dia-undo-manager.h
 include/diacanvas/dia-undo.h
@@ -40,6 +46,13 @@ lib/libdiacanvas2.a
 lib/libdiacanvas2.la
 lib/libdiacanvas2.so
 lib/libdiacanvas2.so.0
+libdata/pkgconfig/diacanvas2.pc
+share/locale/nl/LC_MESSAGES/diacanvas.mo
+share/pygtk/2.0/defs/dia-boxed.defs
+share/pygtk/2.0/defs/diacanvas.defs
+share/pygtk/2.0/defs/diageometry.defs
+share/pygtk/2.0/defs/diashape.defs
+share/pygtk/2.0/defs/diaview.defs
 %%PYTHON_SITELIBDIR%%/diacanvas/__init__.py
 %%PYTHON_SITELIBDIR%%/diacanvas/__init__.pyc
 %%PYTHON_SITELIBDIR%%/diacanvas/__init__.pyo
@@ -58,12 +71,5 @@ lib/libdiacanvas2.so.0
 %%PYTHON_SITELIBDIR%%/diacanvas/viewmodule.a
 %%PYTHON_SITELIBDIR%%/diacanvas/viewmodule.la
 %%PYTHON_SITELIBDIR%%/diacanvas/viewmodule.so
-libdata/pkgconfig/diacanvas2.pc
-share/locale/nl/LC_MESSAGES/diacanvas.mo
-share/pygtk/2.0/defs/dia-boxed.defs
-share/pygtk/2.0/defs/diacanvas.defs
-share/pygtk/2.0/defs/diageometry.defs
-share/pygtk/2.0/defs/diashape.defs
-share/pygtk/2.0/defs/diaview.defs
 @dirrm %%PYTHON_SITELIBDIR%%/diacanvas
 @dirrm include/diacanvas

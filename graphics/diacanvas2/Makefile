@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	diacanvas2
-PORTVERSION=	0.14.4
-PORTREVISION=	3
+PORTVERSION=	0.15.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/diacanvas/DiaCanvas2/${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor
@@ -23,6 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 USE_DISPLAY=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
