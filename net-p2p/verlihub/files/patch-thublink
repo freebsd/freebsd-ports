@@ -100,21 +100,6 @@ diff -u -r1.89 casyncconn.cpp
  cMessageParser *cAsyncConn::CreateParser()
  {
  	if (this->mxProtocol != NULL)
-Index: casyncsocketserver.cpp
-===================================================================
-RCS file: /cvsroot/verlihub/verlihub/src/casyncsocketserver.cpp,v
-retrieving revision 1.70
-diff -u -r1.70 casyncsocketserver.cpp
---- src/casyncsocketserver.cpp	27 Mar 2006 13:37:32 -0000	1.70
-+++ src/casyncsocketserver.cpp	17 Jun 2006 21:27:43 -0000
-@@ -198,6 +198,7 @@
- 		return;
- 	}
- 	tCLIt it = old_conn->mIterator;//find(mConnList.begin(), mConnList.end(), old_conn);
-+
- 	cAsyncConn *found=(*it);
- 	if( (it ==  mConnList.end()) || (found != old_conn) )
- 	{
 Index: cconndc.cpp
 ===================================================================
 RCS file: /cvsroot/verlihub/verlihub/src/cconndc.cpp,v
@@ -164,7 +149,7 @@ retrieving revision 1.235
 diff -u -r1.235 cserverdc.cpp
 --- src/cserverdc.cpp	8 Nov 2005 07:51:23 -0000	1.235
 +++ src/cserverdc.cpp	17 Jun 2006 21:27:44 -0000
-@@ -492,7 +492,7 @@
+@@ -505,7 +505,7 @@
  	}
  
  	int count=0;
@@ -173,7 +158,7 @@ diff -u -r1.235 cserverdc.cpp
  	{
  		conn=(cConnDC *)(*i);
  		if(conn && conn->ok && conn->mWritable && conn->mpUser && conn->mpUser->mInList)
-@@ -516,7 +516,7 @@
+@@ -529,7 +529,7 @@
  	cConnDC *conn;
  	tCLIt i;
  	int counter = 0;
@@ -182,16 +167,16 @@ diff -u -r1.235 cserverdc.cpp
  	{
  		conn=(cConnDC *)(*i);
  		if(
-@@ -541,7 +541,7 @@
- 	static string str;
+@@ -555,7 +555,7 @@
  	cConnDC *conn;
  	tCLIt i;
+ 	int counter = 0;
 -	for(i=mConnList.begin(); i!= mConnList.end(); i++)
 +	for(i=mDCConnList.begin(); i!= mDCConnList.end(); i++)
  	{
  		conn=(cConnDC *)(*i);
  		if(
-@@ -563,6 +563,9 @@
+@@ -579,6 +579,9 @@
  /** return negative if conn should be removed */
  int cServerDC::OnNewConn(cAsyncConn *nc)
  {
@@ -201,7 +186,7 @@ diff -u -r1.235 cserverdc.cpp
  	cConnDC *conn = (cConnDC *)nc;
  	stringstream errmsg,os;
  	if(!conn) return -1;
-@@ -909,7 +912,7 @@
+@@ -925,7 +928,7 @@
  /** return true if accept is allowed - override */
  bool cServerDC::AllowNewConn()
  {
@@ -210,7 +195,7 @@ diff -u -r1.235 cserverdc.cpp
  }
  
  int cServerDC::SaveFile(const string &file, const string &text)
-@@ -1268,6 +1271,7 @@
+@@ -1280,6 +1283,7 @@
  		delete work;
  		return 0;
  	}
