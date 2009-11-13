@@ -1079,6 +1079,7 @@ blocksolve95                    ports/math/blocksolve95
 blocksshd                       ports/security/blocksshd
 blogbench                       ports/benchmarks/blogbench
 blogd                           ports/www/blogd
+blogsum                         ports/www/blogsum
 blogtk                          ports/deskutils/blogtk
 blokish                         ports/games/blokish
 blop                            ports/audio/blop
@@ -10433,6 +10434,7 @@ p5-BSD-Sysctl                   ports/sysutils/p5-BSD-Sysctl
 p5-BSD-stat                     ports/devel/p5-BSD-stat
 p5-Badger                       ports/devel/p5-Badger
 p5-Baseball-Sabermetrics        ports/games/p5-Baseball-Sabermetrics
+p5-Beanstalk-Client             ports/net/p5-Beanstalk-Client
 p5-Benchmark-Forking            ports/benchmarks/p5-Benchmark-Forking
 p5-Benchmark-Stopwatch          ports/benchmarks/p5-Benchmark-Stopwatch
 p5-BerkeleyDB                   ports/databases/p5-BerkeleyDB
@@ -14026,6 +14028,7 @@ p5-bbs-userinfo-maple3itoc      ports/net/p5-BBS-UserInfo-Maple3itoc
 p5-bbs-userinfo-ptt             ports/net/p5-BBS-UserInfo-Ptt
 p5-bbs-userinfo-sob             ports/net/p5-BBS-UserInfo-SOB
 p5-bbs-userinfo-wretch          ports/net/p5-BBS-UserInfo-Wretch
+p5-beanstalk-client             ports/net/p5-Beanstalk-Client
 p5-benchmark-forking            ports/benchmarks/p5-Benchmark-Forking
 p5-benchmark-stopwatch          ports/benchmarks/p5-Benchmark-Stopwatch
 p5-berkeleydb                   ports/databases/p5-BerkeleyDB
@@ -21165,6 +21168,7 @@ rubygem-prawn                   ports/print/rubygem-prawn
 rubygem-prawn-core              ports/print/rubygem-prawn-core
 rubygem-prawn-format            ports/print/rubygem-prawn-format
 rubygem-prawn-layout            ports/print/rubygem-prawn-layout
+rubygem-prawn-security          ports/print/rubygem-prawn-security
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-railroad                ports/graphics/rubygem-railroad
