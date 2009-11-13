@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-EC2
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,10 +29,12 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::Attachment.3 \
 		Net::Amazon::EC2::AvailabilityZone.3 \
+		Net::Amazon::EC2::AvailabilityZoneMessage.3 \
 		Net::Amazon::EC2::BlockDeviceMapping.3 \
 		Net::Amazon::EC2::BundleInstanceResponse.3 \
 		Net::Amazon::EC2::ConfirmProductInstanceResponse.3 \
 		Net::Amazon::EC2::ConsoleOutput.3 \
+		Net::Amazon::EC2::CreateVolumePermission.3 \
 		Net::Amazon::EC2::DescribeAddress.3 \
 		Net::Amazon::EC2::DescribeImageAttribute.3 \
 		Net::Amazon::EC2::DescribeImagesResponse.3 \
@@ -58,6 +60,7 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::RunningInstances.3 \
 		Net::Amazon::EC2::SecurityGroup.3 \
 		Net::Amazon::EC2::Snapshot.3 \
+		Net::Amazon::EC2::SnapshotAttribute.3 \
 		Net::Amazon::EC2::TerminateInstancesResponse.3 \
 		Net::Amazon::EC2::UserData.3 \
 		Net::Amazon::EC2::UserIdGroupPair.3 \
