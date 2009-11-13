@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	redmine
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	www
-MASTER_SITES=	RF
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	decke@bluelife.at
 COMMENT=	A flexible project management web application
