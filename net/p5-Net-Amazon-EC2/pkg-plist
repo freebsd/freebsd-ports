@@ -3,10 +3,12 @@
 %%SITE_PERL%%/Net/Amazon/EC2.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Attachment.pm
 %%SITE_PERL%%/Net/Amazon/EC2/AvailabilityZone.pm
+%%SITE_PERL%%/Net/Amazon/EC2/AvailabilityZoneMessage.pm
 %%SITE_PERL%%/Net/Amazon/EC2/BlockDeviceMapping.pm
 %%SITE_PERL%%/Net/Amazon/EC2/BundleInstanceResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ConfirmProductInstanceResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ConsoleOutput.pm
+%%SITE_PERL%%/Net/Amazon/EC2/CreateVolumePermission.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeAddress.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImageAttribute.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImagesResponse.pm
@@ -32,6 +34,7 @@
 %%SITE_PERL%%/Net/Amazon/EC2/RunningInstances.pm
 %%SITE_PERL%%/Net/Amazon/EC2/SecurityGroup.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Snapshot.pm
+%%SITE_PERL%%/Net/Amazon/EC2/SnapshotAttribute.pm
 %%SITE_PERL%%/Net/Amazon/EC2/TerminateInstancesResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserData.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserIdGroupPair.pm
