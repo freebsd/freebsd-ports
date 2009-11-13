@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	timelib
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Parse english textual date descriptions
 
 USE_PYTHON=		yes
