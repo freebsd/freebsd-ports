@@ -62,8 +62,8 @@ libexec/git-core/git-grep
 %%GUI%%libexec/git-core/git-gui--askpass
 libexec/git-core/git-hash-object
 libexec/git-core/git-help
-libexec/git-core/git-http-fetch
-libexec/git-core/git-http-push
+%%CURL%%libexec/git-core/git-http-fetch
+%%CURL%%libexec/git-core/git-http-push
 libexec/git-core/git-imap-send
 libexec/git-core/git-index-pack
 libexec/git-core/git-init
@@ -111,7 +111,7 @@ libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
 libexec/git-core/git-relink
 libexec/git-core/git-remote
-libexec/git-core/git-remote-curl
+%%CURL%%libexec/git-core/git-remote-curl
 libexec/git-core/git-repack
 libexec/git-core/git-repo-config
 libexec/git-core/git-replace
@@ -714,6 +714,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.4.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.2.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
@@ -737,7 +738,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%@dirrm %%DOCSDIR%%/howto
 %%HTMLDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/git-core
-@dirrm share/git-core/templates/branches
+@dirrmtry share/git-core/templates/branches
 @dirrmtry share/git-core/templates/hooks
 @dirrm share/git-core/templates/info
 @dirrmtry share/git-core/templates

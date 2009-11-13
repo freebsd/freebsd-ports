@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.5.1
+PORTVERSION=	1.6.5.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -18,13 +18,6 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Distributed source code management tool
-
-BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 MAKE_JOBS_SAFE=	yes
 
@@ -153,7 +146,6 @@ MAN1=		git.1 \
 		git-web--browse.1 \
 		git-whatchanged.1 \
 		git-write-tree.1
-MAN3=		Git.3
 MAN5=		gitattributes.5 \
 		githooks.5 \
 		gitignore.5 \
@@ -170,16 +162,9 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
-USE_ICONV=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-MAKE_ENV+=	CURLDIR=${LOCALBASE} \
-		NEEDS_LIBICONV=yes \
-		OLD_ICONV=yes \
-		PERL_PATH=${PERL} \
-		LIBMD_SHA1=yes \
-		ICONVDIR=${LOCALBASAE} \
+MAKE_ENV+=	LIBMD_SHA1=yes \
 		V=1
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
@@ -192,9 +177,45 @@ OPTIONS=	GUI "Enable building of GUI tools" off \
 		GITWEB "Install gitweb" off \
 		P4  "Enable Perforce support" on \
 		CVS "Enable CVS support" on \
-		HTMLDOCS "Install additional documentation" off
+		HTMLDOCS "Install additional documentation" off \
+		PERL "Build perl based git tools" on \
+		ICONV "Support for multiple character encodings" on \
+		CURL "Support HTTP push and pull" on
 
 .include <bsd.port.pre.mk>
+
+.ifdef (WITH_PERL)
+USE_PERL5=	yes
+MAKE_ENV+=	PERL_PATH=${PERL}
+BUILD_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
+RUN_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
+		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
+MAN3=		Git.3
+.else
+MAKE_ENV+=	NO_PERL=1
+PLIST_SUB+=	SITE_PERL="@comment "
+.endif
+
+.ifdef (WITH_ICONV)
+USE_ICONV=	yes
+MAKE_ENV+=	NEEDS_LIBICONV=yes \
+		OLD_ICONV=yes \
+		ICONVDIR=${LOCALBASE}
+.else
+MAKE_ENV+=	NO_ICONV=1
+.endif
+
+.ifdef (WITH_CURL)
+MAKE_ENV+=	CURLDIR=${LOCALBASE}
+BUILD_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+PLIST_SUB+=	CURL=""
+.else
+MAKE_ENV+=	NO_CURL=1 \
+		NO_EXPAT=1
+PLIST_SUB+=	CURL="@comment "
+.endif
 
 .ifdef (WITH_HTMLDOCS)
 RUN_DEPENDS+=	${LOCALBASE}/bin/asciidoc:${PORTSDIR}/textproc/asciidoc \
@@ -231,6 +252,10 @@ PLIST_SUB+=	SVN="@comment "
 PLIST_SUB+=	GITWEB=""
 .else
 PLIST_SUB+=	GITWEB="@comment "
+.endif
+
+.ifdef (WITH_GITWEB) && !defined(WITH_PERL)
+IGNORE=	using GITWEB support requires PERL support
 .endif
 
 .ifdef (WITH_P4)
