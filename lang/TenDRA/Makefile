@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ten15.org/pub/snapshot/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/4.//}
 
-MAINTAINER=	stefanf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable BSD-licensed compiler suite
 
 CONFLICTS=	swi-pl* slffea-* tcc-*
@@ -29,7 +29,7 @@ TENDRA_ARCH=	${ARCH:S/i386/80x86/}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-BROKEN=		does not build
+#BROKEN=		does not build
 .endif
 
 .if ${ARCH} == "i386"
