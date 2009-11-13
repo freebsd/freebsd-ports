@@ -1,6 +1,11 @@
---- src/client.c.orig	Thu May 12 14:01:28 2005
-+++ src/client.c	Thu May 12 14:04:19 2005
-@@ -841,6 +841,14 @@
+Description: Do not pass null pointers to execvp().
+Forwarded: https://stunnel.mirt.net/cgi-bin/bugzilla3/show_bug.cgi?id=2
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-13
+
+--- src/client.c.orig
++++ src/client.c
+@@ -859,6 +859,14 @@
          sigemptyset(&newmask);
          sigprocmask(SIG_SETMASK, &newmask, NULL);
  #endif
