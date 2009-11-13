@@ -12,6 +12,9 @@ bin/coverage
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/annotate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/annotate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/annotate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/backward.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/backward.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/backward.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/cmdline.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/cmdline.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/cmdline.pyo
@@ -59,6 +62,9 @@ bin/coverage
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/tracer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/tracer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/tracer.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/xmlreport.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/xmlreport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/xmlreport.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
