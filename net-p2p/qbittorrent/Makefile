@@ -7,13 +7,14 @@
 
 PORTNAME=	qbittorrent
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent
 
-LIB_DEPENDS=	ccext2-1.6.0:${PORTSDIR}/devel/commoncpp \
+LIB_DEPENDS=	ccext2-1.7.0:${PORTSDIR}/devel/commoncpp \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		zzip.13:${PORTSDIR}/devel/zziplib \
 		curl.5:${PORTSDIR}/ftp/curl \
