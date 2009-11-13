@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.27
+PORTVERSION=	4.28
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/download/stunnel/src/
+
+PATCH_SITES=	ftp://stunnel.mirt.net/stunnel/
+PATCHFILES=	no_ticket.patch
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
@@ -33,12 +36,29 @@ PEM_DIR?=	${PREFIX}/etc
 OPTIONS=	FORK	"use the fork(3) threading model"	off \
 		PTHREAD	"use the pthread(3) threading model (default)"	on \
 		UCONTEXT	"use the ucontext(3) threading model"	off \
-		IPV6	"enable IPv6 support" off
+		DH	"use Diffie-Hellman key negotiation" off \
+		IPV6	"enable IPv6 support" off \
+		LIBWRAP	"use TCP wrappers" on
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_DH)
+CONFIGURE_ARGS+=	--enable-dh
+.else
+CONFIGURE_ARGS+=	--disable-dh
+.endif
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITH_LIBWRAP)
+CONFIGURE_ARGS+=	--enable-libwrap
+LDFLAGS+=		-lwrap
+.else
+CONFIGURE_ARGS+=	--disable-libwrap
 .endif
 
 .if defined(WITH_UCONTEXT) && defined(WITH_FORK) || defined(WITH_UCONTEXT) && defined(WITH_PTHREAD) || defined(WITH_FORK) && defined(WITH_PTHREAD)
