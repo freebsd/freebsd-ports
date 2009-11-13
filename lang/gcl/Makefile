@@ -12,13 +12,16 @@ CATEGORIES=	lang tcl tk
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcl
 
-MAINTAINER=	markm@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Common Lisp
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
 ONLY_FOR_ARCHS=	i386
+
+DEPRECATED=		fails to build on FreeBSD 7.x
+EXPIRATION_DATE=	2010-01-12
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
