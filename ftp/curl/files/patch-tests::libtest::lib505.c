@@ -1,4 +1,7 @@
-Use fstat() instead of stat() to avoid a race condition.
+Description: Use fstat() instead of stat() to avoid a race condition.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-13
 
 --- a/tests/libtest/lib505.c
 +++ b/tests/libtest/lib505.c

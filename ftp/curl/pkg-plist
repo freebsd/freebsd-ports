@@ -159,6 +159,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anyauthput.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacertinmem.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certinfo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkspeed.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie_interface.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/curlgtk.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/curlx.c
@@ -167,6 +168,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileupload.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fopen.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpget.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetinfo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetresp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpupload.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpuploadresume.c

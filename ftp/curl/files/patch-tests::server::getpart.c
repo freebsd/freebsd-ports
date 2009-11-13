@@ -1,4 +1,7 @@
-Properly allocate a buffer as large as needed.
+Description: Properly allocate a buffer as large as needed.
+Forwarded: https://sourceforge.net/tracker/?func=detail&aid=2897159&group_id=976&atid=100976
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-13
 
 --- a/tests/server/getpart.c
 +++ b/tests/server/getpart.c
