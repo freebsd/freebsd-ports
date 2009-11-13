@@ -27,6 +27,8 @@ include/verlihub/cconndc.h
 include/verlihub/cconnpoll.h
 include/verlihub/cconnselect.h
 include/verlihub/cconntypes.h
+include/verlihub/ccustomredirect.h
+include/verlihub/ccustomredirects.h
 include/verlihub/cdbconf.h
 include/verlihub/cdcclients.h
 include/verlihub/cdccommand.h
@@ -85,10 +87,6 @@ include/verlihub/tmysqlmemoryhash.h
 include/verlihub/tmysqlmemorylist.h
 include/verlihub/tmysqlmemoryordlist.h
 include/verlihub/tpluginbase.h
-lib/libdiakritika_pi.a
-lib/libdiakritika_pi.la
-lib/libdiakritika_pi.so
-lib/libdiakritika_pi.so.0
 lib/libplug_pi.a
 lib/libplug_pi.la
 lib/libplug_pi.so
