@@ -48,7 +48,8 @@ cleandir ${tmpdir}
 mkdir -p ${tmpdir}
 
 # Copy the files into the tmpdir from an existing built world
-cd ${worlddir}; find -dx . | \
+destdir=${worlddir}/${arch}/${branch}
+cd ${destdir}; find -dx . | \
     grep -v -E '^./usr/(local|obj|opt|ports|src)' | \
     grep -v '^./home' | \
     grep -v '^./var/db/pkg' | \
@@ -64,7 +65,7 @@ if [ -s "${here}/bindist/dirlist" ]; then
   cat "${here}/bindist/dirlist" | xargs mkdir -p 
 fi
 # XXX MCL seems to be obsoleted by individual files in clients/?
-if [ -d ${here}/bindist/files ]; do
+if [ -d ${here}/bindist/files ]; then
   cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir}
 fi
 
