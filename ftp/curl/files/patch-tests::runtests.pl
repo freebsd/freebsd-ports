@@ -1,4 +1,7 @@
-Do not use valgrind.
+Description: Do not use valgrind.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-13
 
 --- a/tests/runtests.pl
 +++ b/tests/runtests.pl

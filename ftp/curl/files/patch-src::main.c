@@ -1,10 +1,13 @@
-Use fstat() instead of stat() to avoid a race condition.
+Description: Use fstat() instead of stat() to avoid a race condition.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-13
 
 --- a/src/main.c
 +++ b/src/main.c
-@@ -4384,33 +4384,34 @@
- 	    break;
- 	  }
+@@ -4441,33 +4441,34 @@
+             break;
+           }
  
 -          if(config->resume_from_current) {
 -            /* We're told to continue from where we are now. Get the
@@ -33,8 +36,8 @@ Use fstat() instead of stat() to avoid a race condition.
              if (!outs.stream) {
                helpf(config->errors, "Can't open '%s'!\n", outfile);
                free(url);
- 	      res = CURLE_WRITE_ERROR;
- 	      break;
+               res = CURLE_WRITE_ERROR;
+               break;
              }
 +
 +	    if(config->resume_from_current) {

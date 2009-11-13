@@ -1,4 +1,7 @@
-Build and install the documentation as usual, no special handling.
+Description: Build and install the documentation as usual, no special handling.
+Forwarded: https://sourceforge.net/tracker/?func=detail&aid=2897155&group_id=976&atid=100976
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-13
 
 --- a/Makefile.in
 +++ b/Makefile.in
