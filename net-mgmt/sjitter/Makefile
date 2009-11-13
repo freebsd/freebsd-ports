@@ -6,30 +6,22 @@
 #
 
 PORTNAME=	sjitter
-PORTVERSION=	0.14b
+PORTVERSION=	0.18.1b
 CATEGORIES=	net-mgmt net
-MASTER_SITES=	http://www.alcasat.net/dev/sjitter/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.18.1/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	A client/server jitter measurement utility
 
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN1=		sjitter.1
-MANCOMPRESSED=	yes
-
 PLIST_FILES=	sbin/sjitters sbin/sjitterc
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
-	    s,^LDFLAGS,LDFLAGS+,g ; \
-	    s,^CFLAGS,CFLAGS+,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sjitters ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/sjitterc ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/sjitter.1.gz ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
