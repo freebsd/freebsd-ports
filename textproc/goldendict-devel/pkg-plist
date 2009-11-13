@@ -1,0 +1,6 @@
+bin/goldendict
+share/applications/goldendict.desktop
+share/pixmaps/goldendict.png
+%%DATADIR%%/locale/ru.qm
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%
