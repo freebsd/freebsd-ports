@@ -277,6 +277,7 @@
     SUBDIR += python30
     SUBDIR += python31
     SUBDIR += q
+    SUBDIR += qore
     SUBDIR += qscheme
     SUBDIR += ratfor
     SUBDIR += rexx-imc
