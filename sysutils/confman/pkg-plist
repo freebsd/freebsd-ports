@@ -1,6 +1,7 @@
 etc/bash_completion.d/confman_completion
 etc/confman.conf.sample
 etc/defaults/confman.conf
+etc/defaults/recipe.template
 libexec/confman/abspath
 libexec/confman/confaudit
 libexec/confman/confexport
