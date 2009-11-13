@@ -11,7 +11,7 @@ CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}a-bin
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	avl@FreeBSD.org
 COMMENT=	An Open Source GIS Server
 
 USE_JAVA=	yes
