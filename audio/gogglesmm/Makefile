@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmm
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.10
 CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	musicmanager-${PORTVERSION}
@@ -22,6 +22,7 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 		\
 		dbus-1:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
