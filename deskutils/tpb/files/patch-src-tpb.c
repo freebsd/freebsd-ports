@@ -1,6 +1,6 @@
 --- src/tpb.c.orig	2005-07-18 16:15:59.000000000 +0200
-+++ src/tpb.c	2009-11-12 09:51:09.000000000 +0100
-@@ -34,6 +34,14 @@
++++ src/tpb.c	2009-11-13 02:18:58.000000000 +0100
+@@ -34,6 +34,16 @@
  #include <unistd.h>
  #include "config.h"
  
@@ -9,13 +9,15 @@
 +#include <sys/ioctl.h>
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
++#ifdef __i386__
 +#include <machine/apm_bios.h>
++#endif
 +#endif
 +
  #if ENABLE_NLS
  #include <libintl.h>
  #endif /* ENABLE_NLS */
-@@ -161,6 +169,9 @@
+@@ -161,6 +171,9 @@
    /* to initialize struct */
    memset(&last_thinkpad_state, 0x00, sizeof(t_thinkpad_state));
    if(get_nvram_state(&thinkpad_state) != 0) {
@@ -25,7 +27,7 @@
      _exit(1);
    }
    if(cfg.apm == STATE_ON) {
-@@ -449,6 +460,25 @@
+@@ -449,6 +462,25 @@
  #endif /* HAVE_LIBXOSD */
      } /* }}} */
  
@@ -51,7 +53,7 @@
      /* determine the state of display  {{{ */
      if((thinkpad_state.display_toggle != last_thinkpad_state.display_toggle ||
  	thinkpad_state.display_state != last_thinkpad_state.display_state) &&
-@@ -981,6 +1011,11 @@
+@@ -981,6 +1013,11 @@
  int get_nvram_state(t_thinkpad_state *thinkpad_state) /* {{{ */
  {
    static int fdsc = -1; /* -1 -> file not opened */
@@ -63,7 +65,7 @@
    unsigned char buffer[114];
    struct {
      int pos;
-@@ -1040,13 +1075,51 @@
+@@ -1040,13 +1077,51 @@
    thinkpad_state->powermgt_battery  =                                               (( buffer[0x39] & 0x38) >> 3);
  
    return 0;
@@ -116,7 +118,7 @@
    char buffer[38];
    char *tokens[9];
  
-@@ -1122,7 +1195,28 @@
+@@ -1122,7 +1197,30 @@
        thinkpad_state->ac_state = STATE_ON;
        break;
    }
@@ -125,6 +127,7 @@
 +  size_t len = sizeof(addr);
 +
 +  if ( fdsc != -1 || sysctlbyname("hw.acpi.acline", &addr, &len, NULL, 0) == -1 ) {
++#ifdef __i386__
 +    // Try APM
 +    if(fdsc == -1) { /* if not already opened, open apm */
 +      if((fdsc = open("/dev/apm", O_RDONLY)) == -1)
@@ -139,13 +142,14 @@
 +      return -1;
 +    
 +    addr = info.ai_acline;
++#endif
 +  }
 +  thinkpad_state->ac_state = (addr == 1) ? STATE_ON : STATE_OFF;
 +#endif
    return 0;
  } /* }}} */
  
-@@ -1285,6 +1379,13 @@
+@@ -1285,6 +1383,13 @@
  
    /* only use writeback to nvram when cfg.mixersteps is different from DEFAULT_MIXERSTEPS */
    if(cfg.mixersteps != DEFAULT_MIXERSTEPS) {
@@ -159,7 +163,7 @@
      /* open nvram */
      if((fdsc = open(cfg.nvram, O_RDWR|O_NONBLOCK)) == -1) {
        fprintf(stderr, _("Unable to open device %s: "), cfg.nvram);
-@@ -1326,8 +1427,10 @@
+@@ -1326,8 +1431,10 @@
      }
  
      close(fdsc);
