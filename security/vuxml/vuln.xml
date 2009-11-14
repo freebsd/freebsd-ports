@@ -35,6 +35,47 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0640198a-d117-11de-b667-0030843d3802">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>2.8.6,1</lt></range>
+      </package>
+      <package>
+        <name>wordpress</name>
+	<range><lt>2.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/37332/">
+	  <p>The security issue is caused due to the wp_check_filetype()
+	    function in /wp-includes/functions.php improperly validating uploaded
+	    files. This can be exploited to execute arbitrary PHP code by
+	    uploading a malicious PHP script with multiple extensions.</p>
+	  <p>Successful exploitation of this vulnerability requires that Apache
+	    is not configured to handle the mime-type for media files with an e.g.
+	    "gif", "jpg", "png", "tif", "wmv" extension.</p>
+	  <p>Input passed via certain parameters to press-this.php is not
+	    properly sanitised before being displayed to the user. This can be
+	    exploited to insert arbitrary HTML and script code, which will be
+	    executed in a user's browser session in context of an affected site
+	    when the malicious data is being viewed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://wordpress.org/development/2009/11/wordpress-2-8-6-security-release/</url>
+      <url>http://secunia.com/advisories/37332/</url>
+    </references>
+    <dates>
+      <discovery>2009-11-12</discovery>
+      <entry>2009-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68bda678-caab-11de-a97e-be89dfd1042e">
     <topic>p5-HTML-Parser -- denial of service</topic>
     <affects>
