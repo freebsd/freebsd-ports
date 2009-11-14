@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.1415926
+PORTVERSION=	3.20091113
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -41,7 +41,7 @@ USE_GETTEXT=	yes
 OPTIONS=	SEARCH "Install search backend" On \
 		W3M "Install w3m CGI wrapper" Off
 
-MAN1=		ikiwiki.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
+MAN1=		ikiwiki.1 ikiwiki-calendar.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*
