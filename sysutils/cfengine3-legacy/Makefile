@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.0.1
-DISTVERSION=	3.0.1a7
+PORTVERSION=	3.0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cfengine.org/downloads/
+MASTER_SITES=	http://www.cfengine.org/tarballs/
 
-MAINTAINER=	jrhett@netconsonance.com
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 LATEST_LINK=	cfengine3
 
@@ -22,7 +21,7 @@ USE_BDB=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 BUILD_DEPENDS=
-EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
+# EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine3
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html \
@@ -42,15 +41,11 @@ CONFIGURE_ARGS+= --with-pcre=${LOCALBASE}
 
 MAN8=   cf-agent.8   cf-key.8      cf-monitord.8   \
         cf-report.8  cf-serverd.8  cf-execd.8      \
-        cf-know.8    cf-promise.8  cf-runagent.8
-
-.if !defined(NOPORTDOCS)
-INFO=		cf3-reference
-.endif
+        cf-know.8    cf-promises.8 cf-runagent.8
 
 post-patch:
-		@${REINPLACE_CMD} -e '/^pkgdatadir/s!=.*!= ${EXAMPLESDIR}!'\
-				  ${WRKSRC}/inputs/Makefile.in
+		@# ${REINPLACE_CMD} -e '/^pkgdatadir/s!=.*!= ${EXAMPLESDIR}!'\
+		@#		  ${WRKSRC}/inputs/Makefile.in
 
 		@${REINPLACE_CMD} -e '/^docdir/s!=.*!= @docdir@!'\
 				  ${WRKSRC}/tests/file_masters/Makefile.in \
