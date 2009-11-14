@@ -61,6 +61,19 @@ Local/Library/Frameworks/PostgreSQLEOAdaptor.framework/Versions/%%MAJORVERSION%%
 Local/Library/Frameworks/PostgreSQLEOAdaptor.framework/Versions/%%MAJORVERSION%%/libPostgreSQLEOAdaptor.so.%%VERSION%%
 Local/Library/Frameworks/PostgreSQLEOAdaptor.framework/Versions/Current
 Local/Library/Frameworks/PostgreSQLEOAdaptor.framework/libPostgreSQLEOAdaptor.so
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Headers
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Resources
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/SQLite3EOAdaptor
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/LoginPanel
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/Resources/Info-gnustep.plist
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/stamp.make
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/SQLite3EOAdaptor
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/libSQLite3EOAdaptor.so
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/libSQLite3EOAdaptor.so.%%MAJORVERSION%%
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/libSQLite3EOAdaptor.so.%%LIBVERSION%%
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/Current
+Local/Library/Frameworks/SQLite3EOAdaptor.framework/libSQLite3EOAdaptor.so
 Local/Library/Headers/EOAccess/EOAccess.h
 Local/Library/Headers/EOAccess/EOAccessFault.h
 Local/Library/Headers/EOAccess/EOAdaptor.h
@@ -141,6 +154,7 @@ Local/Library/Headers/EOModeler/EOModelerApp.h
 Local/Library/Headers/EOModeler/EOModelerDocument.h
 Local/Library/Headers/EOModeler/EOModelerEditor.h
 Local/Library/Headers/PostgreSQLEOAdaptor
+Local/Library/Headers/SQLite3EOAdaptor
 Local/Library/Libraries/libEOAccess.so
 Local/Library/Libraries/libEOAccess.so.%%MAJORVERSION%%
 Local/Library/Libraries/libEOAccess.so.%%VERSION%%
@@ -156,6 +170,9 @@ Local/Library/Libraries/libEOModeler.so.%%VERSION%%
 Local/Library/Libraries/libPostgreSQLEOAdaptor.so
 Local/Library/Libraries/libPostgreSQLEOAdaptor.so.%%VERSION%%
 Local/Library/Libraries/libPostgreSQLEOAdaptor.so.%%MAJORVERSION%%
+Local/Library/Libraries/libSQLite3EOAdaptor.so
+Local/Library/Libraries/libSQLite3EOAdaptor.so.%%MAJORVERSION%%
+Local/Library/Libraries/libSQLite3EOAdaptor.so.%%LIBVERSION%%
 Local/Tools/DBModeler
 Local/Tools/eoutil
 Local/Tools/gdlgsdoc
@@ -164,6 +181,13 @@ System/Library/Makefiles/Auxiliary/gdl2.make
 @dirrm Local/Library/Headers/EOInterface
 @dirrm Local/Library/Headers/EOControl
 @dirrm Local/Library/Headers/EOAccess
+@dirrm Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/Resources
+@dirrm Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle
+@dirrm Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions/%%MAJORVERSION%%
+@dirrm Local/Library/Frameworks/SQLite3EOAdaptor.framework/Versions
+@dirrm Local/Library/Frameworks/SQLite3EOAdaptor.framework
 @dirrm Local/Library/Frameworks/PostgreSQLEOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/Resources
 @dirrm Local/Library/Frameworks/PostgreSQLEOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle
 @dirrm Local/Library/Frameworks/PostgreSQLEOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources
