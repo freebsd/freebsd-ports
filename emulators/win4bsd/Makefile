@@ -35,15 +35,6 @@ PKGDEINSTALL=	${WRKSRC}/+POST-DEINSTALL
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-SCHED_NAME!=	${SYSCTL} -n kern.sched.name
-.if ${SCHED_NAME} != "4BSD"
-IGNORE=		requires the traditional 4BSD scheduler. Please rebuild your kernel with options SCHED_4BSD, and run make again
-.endif
-.endif
-
 POST_PATCH_REMOVE_FILES=	\
 	usr/local/lib/win4bsd/bin/postinstall.sh.orig \
 	usr/local/lib/win4bsd/etc/mergepro_rc.orig \
@@ -67,4 +58,4 @@ do-install:
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
