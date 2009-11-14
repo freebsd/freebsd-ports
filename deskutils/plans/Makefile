@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	8.1.6
+PORTVERSION=	8.1.7
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
