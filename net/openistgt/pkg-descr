@@ -1,4 +1,0 @@
-This is an iSCSI target, it serves iSCSI protocol and provides
-SCSI devices to the initiator (client).
-
-WWW:	http://shell.peach.ne.jp/aoyama/

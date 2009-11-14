@@ -1,8 +1,0 @@
-Zabbix is software for application and network monitoring.
-Zabbix supports both polling and trapping techniques to
-collect data from monitored hosts. Flexible notification
-mechanism allows easy and quckly configure email notifications
-for pre-defined events. Zabbix is freely available under the
-terms of the GNU General Public License (GPL). 
-
-WWW: http://www.zabbix.com/

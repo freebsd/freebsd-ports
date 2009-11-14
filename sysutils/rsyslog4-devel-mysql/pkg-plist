@@ -1,4 +1,0 @@
-lib/rsyslog/ommysql.la
-lib/rsyslog/ommysql.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql_createDB.sql
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

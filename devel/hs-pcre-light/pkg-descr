@@ -1,7 +1,0 @@
-A small, efficient and portable Haskell regex library for Perl 5 compatible
-regular expressions.
-
-The PCRE library is a set of functions that implement regular expression
-pattern matching using the same syntax and semantics as Perl 5.
-
-WWW: http://code.haskell.org/~dons/code/pcre-light

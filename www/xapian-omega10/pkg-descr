@@ -1,6 +1,0 @@
-This package contains two index building utilities (omindex and
-scriptindex) and a CGI search application (omega).  These use the
-Xapian search library to provide a search over a collection of
-documents.
-
-WWW: http://xapian.org/

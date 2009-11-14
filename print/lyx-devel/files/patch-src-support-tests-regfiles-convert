@@ -1,7 +1,0 @@
---- src/support/tests/regfiles/convert.orig	2005-01-28 00:05:44.000000000 +0300
-+++ src/support/tests/regfiles/convert	2009-03-25 06:34:11.000000000 +0300
-@@ -46,4 +46,3 @@
- false
- a
- 1
--1.1

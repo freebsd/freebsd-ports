@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	typo3
-PORTVERSION=	4.2.8
+PORTVERSION=	4.2.9
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
@@ -44,6 +44,9 @@ USE_PHP+=	zlib
 .if defined(WITH_IMAGICK)
 LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 .endif
+
+pre-install:
+	${MV} ${SITESRC}/typo3conf/localconf.php ${SITESRC}/typo3conf/localconf.php.dist
 
 do-install:
 	${CP} -R ${WRKSRC} ${PREFIX}/${TYPO3DIR}

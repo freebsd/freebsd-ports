@@ -1,9 +1,0 @@
---- codec/p64/p64.cpp	Thu Sep  9 08:46:10 1999
-+++ codec/p64/p64.cpp	Mon Mar 26 01:44:44 2007
-@@ -1069,5 +1069,5 @@
- 	 * with 8 bits; otherwise, prime it with a 16.
- 	 */
--	if ((int)bp & 1) {
-+	if ((intptr_t)bp & 1) {
- 		bs_ = (u_short*)(bp + 1);
- 		bb_ = *bp;

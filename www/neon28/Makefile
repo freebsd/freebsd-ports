@@ -6,33 +6,39 @@
 #
 
 PORTNAME=	neon28
-PORTVERSION=	0.28.4
+PORTVERSION=	0.28.6
 CATEGORIES=	www
-MASTER_SITES=	http://www.webdav.org/neon/ \
-		http://keyserver.kjsl.com/~jharris/distfiles/
+MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
-CONFLICTS=	neon26-[0-9]*
+CONFLICTS=	neon2[6|9]-[0-9]*
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
-.ifndef WITHOUT_OPENSSL
-USE_OPENSSL=	yes
-.endif
-
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl \
-		--enable-xml \
-		--enable-shared \
-		--with-expat \
+CONFIGURE_ARGS= --enable-shared \
 		--with-libs=${LOCALBASE}:${PREFIX}
+
+# expat is default unless WITH_XML is choosen
+.if !defined(WITHOUT_EXPAT) && !defined(WITH_XML)
+CONFIGURE_ARGS+= --with-expat
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+.endif
+
+.if defined(WITH_XML)
+CONFIGURE_ARGS+=--with-libxml2
+LIB_DEPENDS+=   xml2.5:${PORTSDIR}/textproc/libxml2
+.endif
+
+.ifndef WITHOUT_OPENSSL
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-ssl
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -118,6 +124,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/neon
 
 .include <bsd.port.pre.mk>
+
+pre-everything::
+.if defined(WITH_EXPAT) && defined(WITH_XML)
+	@${ECHO_CMD} "please choose between expat and libxml2 not both"
+	@${FALSE}
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1

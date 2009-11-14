@@ -5,46 +5,6 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20090921
-  AFFECTS: users of archivers/lzmautils, archivers/lzmautils-devel
-  AUTHOR: Christian Weisgerber <naddy@FreeBSD.org>
-
-  The XZ Utils distribution has superseded LZMA Utils, so the xz
-  port has been added and the lzmautils ports have been removed.
-  To perform the move, run one of the following commands:
-
-  If using portupgrade:
-  # portupgrade -o archivers/xz lzmautils\*
-
-  If using portmaster:
-  # portmaster -o archivers/xz archivers/lzmautils
-  or
-  # portmaster -o archivers/xz archivers/lzmautils-devel
-  as applicable.
-
-20090919:
-  AFFECTS: users of mail/postfix-postfwd
-  AUTHOR: Sahil Tandon <sahil@tandon.net>
-
-  The recipient rate-limiting feature is now called via rcpt()
-  command instead of with mrcpt() as in previous versions. Make
-  sure to update your postfwd.conf if you use this feature.
-
-20090917:
-  AFFECTS: users of www/epiphany, x11/yelp, graphics/librsvg2,
-           x11/toolkits/py-gnome-extras, and www/epiphany-extensions
-  AUTHOR: gnome@FreeBSD.org
-
-  The default Gecko provider has been changed from www/firefox to
-  www/libxul.  Firefox 2.x is now forbidden for security reasons, and
-  libxul is the new, stable Gecko provider.  Libxul uses the same Gecko
-  engine as Firefox 3.0.x.
-
-  Some ports may fail to upgrade or run when both www/firefox and libxul
-  are installed on the same system.  To make sure everything runs smoothly,
-  uninstall www/firefox, then install libxul, then upgrade the affected
-  ports.
-
 20090915:
   AFFECTS: users of sysutils/gosa
   AUTHOR: Denis Shaposhnikov <dsh@wizard.volgograd.ru>

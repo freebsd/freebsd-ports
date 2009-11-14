@@ -4162,20 +4162,3 @@ multimedia/phonon-gstreamer|multimedia/qt4-phonon-gst|2009-09-11|Superseded by m
 multimedia/phonon|multimedia/qt4-phonon|2009-09-11|Superseded by multimedia/qt4-phonon
 editors/bed||2009-09-13|Removed: marked IGNORE for more than two years, unmaintained
 devel/eric||2009-09-16|Removed: obsoleted by devel/eric4
-devel/p5-Algorithm-MDiff||2009-09-16|Has expired: the module was removed from CPAN
-devel/p5-Data-Postponed||2009-09-16|Has expired: the module was removed from CPAN
-net/asterisk12-addons||2009-09-16|Has expired: does not build
-archivers/lzmautils|archivers/xz|2009-09-21|Project was renamed
-archivers/lzmautils-devel|archivers/xz|2009-09-21|Project was renamed
-audio/audacious-mac||2009-09-21|does not work with audacious 2 and audacious-plugins already delivers a demac plugin
-systutils/uptimec||2009-09-23|Project is gone since 2007
-www/cakephp||2009-09-23|Repomoved to www/cakephp11
-www/cakephp-devel||2009-09-23|Repomoved to www/cakephp12
-audio/gmpccaa||2009-09-24|Unmaintained upstream
-audio/gmpc-osd||2009-09-24|Unmaintained upstream
-audio/gmpc-qosd||2009-09-24|Unmaintained upstream
-audio/gmpc-random-playlist||2009-09-24|Unmaintained upstream
-audio/gmpc-serverstats||2009-09-24|Unmaintained upstream
-audio/gmpc-favorites||2009-09-24|Unmaintained upstream
-audio/gmpc-autoplaylist||2009-09-24|Unmaintained upstream
-audio/gmpc-stopbutton||2009-09-24|Unmaintained upstream

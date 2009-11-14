@@ -1,6 +1,0 @@
-bin/mp3info
-%%WITH_GTK%%bin/gmp3info
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/mp3info.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

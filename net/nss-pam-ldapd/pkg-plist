@@ -1,3 +1,0 @@
-etc/%%CONFIG%%.conf.sample
-%%NSS%%lib/nss_ldap.so.1
-%%NSLCD%%sbin/nslcd
