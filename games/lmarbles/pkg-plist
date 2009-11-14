@@ -80,4 +80,5 @@ share/pixmaps/lmarbles48.gif
 @dirrm %%DATADIR%%/gfx/metal
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
