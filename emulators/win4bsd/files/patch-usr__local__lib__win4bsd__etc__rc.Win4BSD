@@ -1,0 +1,68 @@
+--- ./usr/local/lib/win4bsd/etc/rc.Win4BSD.orig	2006-11-15 18:02:59.000000000 -0200
++++ ./usr/local/lib/win4bsd/etc/rc.Win4BSD	2009-11-14 00:02:03.000000000 -0200
+@@ -4,19 +4,46 @@
+ #
+ 
+ # PROVIDE: Win4BSD
+-# REQUIRE: DAEMON
++# REQUIRE: DAEMON kqemu
+ 
+ . /etc/rc.subr
+ 
+ name="Win4BSD"
+ command="/usr/local/lib/win4bsd/etc/mergepro_rc"
++start_precmd="win4bsd_precmd"
+ start_cmd="win4bsd_start"
+ stop_cmd="win4bsd_stop"
+ restart_cmd="win4bsd_restart"
+ status_cmd="win4bsd_status"
+ 
++local_force_depend()
++{
++	_depend="$1"
++	if [ -f /usr/local/etc/rc.d/${_depend}.sh ]; then
++		_depend="${_depend}.sh"
++	fi
++
++	if ! /usr/local/etc/rc.d/${_depend} forcestart; then
++		return 1
++	fi
++
++	return 0
++}
++
++win4bsd_precmd()
++{
++	if ! checkyesno kqemu_enable
++	then
++		local_force_depend kqemu || return 1
++	fi
++}
++
+ win4bsd_start()
+ {
++	if ! checkyesno kqemu_enable ; then
++		return 0
++	fi
++
+ 	[ -x $command ] && $command start
+ }
+ 
+@@ -27,6 +54,10 @@
+ 
+ win4bsd_restart()
+ {
++	if ! checkyesno kqemu_enable ; then
++		return 0
++	fi
++
+ 	[ -x $command ] && $command restart
+ }
+ 
+@@ -35,5 +66,6 @@
+ 	[ -x $command ] && $command status
+ }
+ 
++load_rc_config ${name}
+ run_rc_command "$1"
+ 

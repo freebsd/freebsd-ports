@@ -283,4 +283,4 @@ share/pixmaps/mergepro-64x64.xpm
 @dirrmtry lib/win4bsd
 @dirrmtry share/applications/kde
 @dirrmtry share/applications
-@unexec echo "If you are permanently removing this port check the following files/dirs that could be left over (if the setup was executed): \"/boot/kernel/kqemu.ko\", \"%D/win4bsd\", \"%D/lib/win4bsd/docs\", \"/etc/default/mergepro\"." | fmt
+@unexec echo "If you are permanently removing this port check the following files/dirs that could be left over (if the setup was executed): \"%D/win4bsd\", \"%D/lib/win4bsd/docs\", \"/etc/default/mergepro\"." | fmt
