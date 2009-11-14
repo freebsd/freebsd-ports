@@ -1578,6 +1578,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/ViewManager/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric4/compileUiFiles.py
+%%PYTHON_SITELIBDIR%%/eric4/compileUiFiles.pyc
 %%PYTHON_SITELIBDIR%%/eric4/default.e4k
 %%PYTHON_SITELIBDIR%%/eric4/eric4-api.py
 %%PYTHON_SITELIBDIR%%/eric4/eric4-api.pyc
@@ -2379,6 +2381,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.ViewManager.BookmarkedFilesDialog.html
 %%DOCSDIR%%/Source/eric4.ViewManager.ViewManager.html
 %%DOCSDIR%%/Source/eric4.ViewManager.__init__.html
+%%DOCSDIR%%/Source/eric4.compileUiFiles.html
 %%DOCSDIR%%/Source/eric4.eric4-api.html
 %%DOCSDIR%%/Source/eric4.eric4-compare.html
 %%DOCSDIR%%/Source/eric4.eric4-configure.html
