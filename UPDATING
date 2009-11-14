@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091114
+  AFFECTS: users of emulators/win4bsd
+  AUTHOR: Mario S F Ferreira <lioux@FreeBSD.org>
+
+  The new port now depends on emulators/kqemu-kmod instead of
+  installing its own version. Therefore, you should make sure
+  that no other kqemu.ko modules are installed.
+
+	# pkg_delete -f win4bsd\*
+  	# rm -f /boot/kernel/kqemu.ko
+  	# pkg_delete -f kqemu-kmod\*
+  	# portinstall emulators/win4bsd
+
+  Do not forget to enable kqemu on rc.conf since win4bsd will not
+  work without it.
+
 20091018
   AFFECTS: users of databases/mysql54-server
   AUTHOR: Alex Dupre <ale@FreeBSD.org>
