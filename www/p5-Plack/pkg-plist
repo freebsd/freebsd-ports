@@ -32,6 +32,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/XFramework.pm
 %%SITE_PERL%%/Plack/Middleware/XSendfile.pm
 %%SITE_PERL%%/Plack/Server.pm
+%%SITE_PERL%%/Plack/Server/Apache1.pm
 %%SITE_PERL%%/Plack/Server/Apache2.pm
 %%SITE_PERL%%/Plack/Server/CGI.pm
 %%SITE_PERL%%/Plack/Server/FCGI.pm
