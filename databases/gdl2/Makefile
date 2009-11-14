@@ -7,6 +7,7 @@
 
 PORTNAME=	gdl2
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	databases gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
@@ -14,6 +15,8 @@ DISTNAME=	gnustep-dl2-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep Database Library 2 (Enterprise Objects Framework)
+
+LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
