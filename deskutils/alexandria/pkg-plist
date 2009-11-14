@@ -135,6 +135,7 @@ share/gnome/help/alexandria/C/searching.xml
 share/gnome/help/alexandria/C/settings.xml
 share/gnome/help/alexandria/C/smart-libraries.xml
 share/gnome/help/alexandria/C/working-with-libraries.xml
+share/gnome/help/alexandria/C/#settings.xml#
 share/gnome/help/alexandria/fr/alexandria.xml
 share/gnome/help/alexandria/fr/figures/alexandria_add_button.png
 share/gnome/help/alexandria/fr/figures/alexandria_add_by_isbn_1.png
