@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9008
+PORTVERSION=	0.9011
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -25,7 +25,7 @@ RUN_DEPENDS=	\
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
-	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
+	p5-libwww>=5.814:${PORTSDIR}/www/p5-libwww \
 	p5-URI>0:${PORTSDIR}/net/p5-URI \
 	p5-parent>0:${PORTSDIR}/devel/p5-parent
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -63,6 +63,7 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware::XFramework.3 \
 	Plack::Middleware::XSendfile.3 \
 	Plack::Server.3 \
+	Plack::Server::Apache1.3 \
 	Plack::Server::Apache2.3 \
 	Plack::Server::CGI.3 \
 	Plack::Server::FCGI.3 \
