@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	2.2.9
+PORTVERSION=	2.2.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cfengine.org/tarballs/
 
-MAINTAINER=	jrhett@netconsonance.com
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 
 USE_RC_SUBR=	cfexecd cfservd
@@ -27,7 +27,7 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
 .if !defined(NOPORTDOCS)
-INFO=		cfengine-Tutorial cfengine-Reference cfengine-Anomalies
+INFO=		cfengine-Tutorial cfengine-Reference
 .endif
 
 MAN8=		cfagent.8 cfengine.8 cfenvd.8 cfenvgraph.8 cfetoolcheck.8 \
