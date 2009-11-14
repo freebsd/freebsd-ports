@@ -16,6 +16,8 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project LanguageKit framework
 
+BROKEN=		needs llvm 2.6 to build
+
 BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm-devel
 
 USE_BZIP2=	yes
