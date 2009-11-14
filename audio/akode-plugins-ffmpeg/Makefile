@@ -5,21 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=   akode-plugins-${PORTNAMESUFX}
-PORTVERSION=    2.0.2
-PORTEPOCH=  1
-CATEGORIES= audio kde
-MASTER_SITES=   ${MASTER_SITE_GENTOO}
+PORTNAME=	akode
+PORTVERSION=	2.0.2
+PORTEPOCH=	1
+CATEGORIES=	audio kde
+MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=distfiles
-DISTNAME=   30375-akode-${PORTVERSION}.tar.bz2
-EXTRACT_SUFX=   # none
+PKGNAMESUFFIX=	-plugins-${PORTNAMESUFX}
+DISTNAME=	30375-akode-${PORTVERSION}.tar.bz2
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	FFMPEG decoder plugin for akode
 
 LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg
-
-BROKEN=		does not compile with ffmpeg 0.5 and later
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
@@ -27,7 +26,7 @@ PLUGIN=		ffmpeg_decoder
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
 USE_AUTOTOOLS=	libltdl
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/akode-${PORTVERSION}
