@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.11.2p1
+PORTVERSION=	2.11.2p2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.irc.org/ftp/irc/server/ \
 		ftp://ftp.archive.de.uu.net/pub/mirrors/ftp.irc.org/server/ \
