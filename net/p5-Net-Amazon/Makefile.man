@@ -335,7 +335,6 @@ MAN3+=	Net::Amazon::Validate::ItemSearch::us::HomeGarden.3
 MAN3+=	Net::Amazon::Validate::ItemSearch::us::Industrial.3
 MAN3+=	Net::Amazon::Validate::ItemSearch::us::ItemPage.3
 MAN3+=	Net::Amazon::Validate::ItemSearch::us::Jewelry.3
-MAN3+=	Net::Amazon::Validate::ItemSearch::us::Keyword.3
 MAN3+=	Net::Amazon::Validate::ItemSearch::us::Keywords.3
 MAN3+=	Net::Amazon::Validate::ItemSearch::us::KindleStore.3
 MAN3+=	Net::Amazon::Validate::ItemSearch::us::Kitchen.3

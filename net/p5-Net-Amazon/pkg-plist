@@ -357,7 +357,6 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Industrial.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/ItemPage.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Jewelry.pm
-%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Keyword.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Keywords.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/KindleStore.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Kitchen.pm
