@@ -25,7 +25,7 @@ USE_GNOME=	#
 USE_FPC=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-xml \
 		iconvenc pasjpeg x11
 
-MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib ${OPT_EXTRA}"
+MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${LOCALBASE}/lib/qt4 ${OPT_EXTRA}"
 MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
