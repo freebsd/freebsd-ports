@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.07004
+PORTVERSION=	3.08000
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::Twitter.3 Net::Twitter::Search.3 Net::Identica.3 \
 		Net::Twitter::Error.3 Net::Twitter::Role::OAuth.3 \
+		Net::Twitter::Role::API::Lists.3 \
 		Net::Twitter::Role::API::REST.3 \
 		Net::Twitter::Role::API::TwitterVision.3 \
 		Net::Twitter::OAuth.3 Net::Twitter::Core.3 \
