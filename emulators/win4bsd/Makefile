@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.win4bsd.com/pub/releases/${PORTVERSION}/
 DISTNAME=	Win4BSD-1.1_63918_i386-freebsd
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Win4BSD Virtual Machine for Windows under BSD
 
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
@@ -40,9 +40,11 @@ SUB_FILES=	pkg-message
 IGNORE=		requires system source for installing kqemu, the accelerator that provides native CPU speed in Win4BSD.  Please install the system sources in /usr/src (e.g. using sysinstall), and run make again
 .endif
 
+.if ${OSVERSION} < 800000
 SCHED_NAME!=	${SYSCTL} -n kern.sched.name
 .if ${SCHED_NAME} != "4BSD"
 IGNORE=		requires the traditional 4BSD scheduler. Please rebuild your kernel with options SCHED_4BSD, and run make again
+.endif
 .endif
 
 post-patch:
