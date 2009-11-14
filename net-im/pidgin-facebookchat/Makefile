@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-facebookchat
-PORTVERSION=	1.60
+PORTVERSION=	1.63
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
@@ -19,10 +19,15 @@ BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 PROJECTHOST=	${PORTNAME}
-WRKSRC=		${WRKDIR}/pidgin-facebookchat
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 
 PIXMAPS_DIR=	${PREFIX}/share/pixmaps/pidgin/protocols
+
+IGNORE=	known usability issue with json-glib <0.7.6, use NO_IGNORE to build\
+	anyway. See http://code.google.com/p/pidgin-facebookchat/wiki/FAQ\
+	and http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/140097 for\
+	json-glib 0.7.6
 
 do-patch:
 	${REINPLACE_CMD} -e "s#i686-pc-freebsd6.0-gcc#${CC}#; \
