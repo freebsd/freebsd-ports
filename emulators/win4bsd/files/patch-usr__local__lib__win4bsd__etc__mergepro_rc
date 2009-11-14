@@ -1,0 +1,49 @@
+--- ./usr/local/lib/win4bsd/etc/mergepro_rc.orig	2009-11-13 23:32:08.000000000 -0200
++++ ./usr/local/lib/win4bsd/etc/mergepro_rc	2009-11-13 23:32:28.000000000 -0200
+@@ -131,46 +131,6 @@
+ 			"$STATICMERGE"/bin/mergepro-cdahubd
+ 		fi
+ 		
+-		# load platform-specific drivers/daemons
+-		sleep 1
+-		case "$SYSTEMTYPE" in
+-			linux)
+-				# load the KQEMU module quietly
+-				"$STATICMERGE/bin/reload_kqemu.sh"
+-
+-				# create the device node for /dev/kqemu
+-				KQMAJOR=`cat /proc/devices|grep kqemu|cut -d ' ' -f 1`
+-				if [ "$KQMAJOR" != "" ]; then
+-					rm -f /dev/kqemu >/dev/null 2>&1
+-					mknod -m 0666 /dev/kqemu c $KQMAJOR 0 \
+-						>/dev/null 2>&1
+-				else
+-
+-					# attempt to build the KQEMU module
+-					# if it did not load properly
+-					KQEMU_NO_FAIL="yes"
+-					KQEMU_NO_REBOOT="yes"
+-					export KQEMU_NO_FAIL KQEMU_NO_REBOOT
+-					"$STATICMERGE"/bin/build_kqemu.sh
+-				fi
+-				;;
+-			bsd)
+-				# load the KQEMU module quietly
+-				kldload kqemu >/dev/null 2>&1
+-				kldstat -n kqemu >/dev/null 2>&1
+-				if [ $? -ne 0 ]; then
+-
+-					# attempt to build the KQEMU module
+-					# if it did not load properly
+-					KQEMU_NO_FAIL="yes"
+-					KQEMU_NO_REBOOT="yes"
+-					export KQEMU_NO_FAIL KQEMU_NO_REBOOT
+-					"$STATICMERGE"/bin/build_kqemu.sh
+-				fi
+-				;;		
+-			*)
+-				;;
+-		esac
+ 
+ 		exit 0
+ 		;;

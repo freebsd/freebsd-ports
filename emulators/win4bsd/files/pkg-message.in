@@ -13,4 +13,7 @@ and run the following command for the initial setup:
 
 $ %%PREFIX%%/lib/win4bsd/bin/postinstall.sh
 
+Do not forget to enable kqemu on rc.conf before starting
+Win4BSD.
+
 =======================================================================

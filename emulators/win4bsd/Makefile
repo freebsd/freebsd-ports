@@ -7,7 +7,7 @@
 
 PORTNAME=	win4bsd
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.win4bsd.com/pub/releases/${PORTVERSION}/
 DISTNAME=	Win4BSD-1.1_63918_i386-freebsd
@@ -17,7 +17,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Win4BSD Virtual Machine for Windows under BSD
 
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
-RUN_DEPENDS=	xwininfo:${PORTSDIR}/x11/xwininfo
+RUN_DEPENDS=	kqemu-kmod>1.3.0.p11:${PORTSDIR}/emulators/kqemu-kmod \
+		xwininfo:${PORTSDIR}/x11/xwininfo
 
 CONFLICTS=	Win4BSD-[0-9]*
 
@@ -36,16 +37,17 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/src/sys/kern)
-IGNORE=		requires system source for installing kqemu, the accelerator that provides native CPU speed in Win4BSD.  Please install the system sources in /usr/src (e.g. using sysinstall), and run make again
-.endif
-
 .if ${OSVERSION} < 800000
 SCHED_NAME!=	${SYSCTL} -n kern.sched.name
 .if ${SCHED_NAME} != "4BSD"
 IGNORE=		requires the traditional 4BSD scheduler. Please rebuild your kernel with options SCHED_4BSD, and run make again
 .endif
 .endif
+
+POST_PATCH_REMOVE_FILES=	\
+	usr/local/lib/win4bsd/bin/postinstall.sh.orig \
+	usr/local/lib/win4bsd/etc/mergepro_rc.orig \
+	usr/local/lib/win4bsd/etc/rc.Win4BSD.orig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/+POST-* \
@@ -54,6 +56,9 @@ post-patch:
 		${WRKSRC}/usr/local/lib/win4bsd/etc/rc.Win4BSD
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/usr/local/lib/win4bsd/etc/mrgprossv.sh
+.for file in ${POST_PATCH_REMOVE_FILES}
+	@${RM} ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	${CP} -R ${WRKSRC}/usr/local/* ${PREFIX}
