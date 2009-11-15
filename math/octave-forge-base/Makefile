@@ -25,6 +25,10 @@ COMMENT=	Octave-forge baseport for all packages
 
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		failing to build on the package build cluster; linimon to investigate
+.endif
+
 do-build:
 	@${DO_NADA}
 
