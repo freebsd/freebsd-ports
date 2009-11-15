@@ -16,6 +16,8 @@ COMMENT=	Simple graphical audio file editor
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 
+BROKEN=		does not compile
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
