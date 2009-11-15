@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.19.4
-PORTREVISION=	4
+PORTVERSION=	7.19.6
 CATEGORIES=	ftp linux
 PKGNAMEPREFIX=	linux-f10-
 DISTFILES=	curl-${PORTVERSION}-${RPMVERSION}.i386.rpm \
@@ -26,7 +25,7 @@ CONFLICTS=	linux-curl-[0-9]* linux-f8-curl-[0-9]*
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	cyrus-sasl2 openldap
 LINUX_DIST_VER=	10
-RPMVERSION=	6.fc10
+RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 BRANDELF_FILES=	usr/bin/curl
 DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
