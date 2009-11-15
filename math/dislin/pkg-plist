@@ -115,8 +115,10 @@ dislin/chf/conshd.chf
 dislin/chf/contri.chf
 dislin/chf/contur.chf
 dislin/chf/cross.chf
+dislin/chf/crvqdr.chf
 dislin/chf/crvmat.chf
 dislin/chf/crvtri.chf
+dislin/chf/crvt3d.chf
 dislin/chf/csrkey.chf
 dislin/chf/csrmod.chf
 dislin/chf/csrmov.chf
@@ -138,6 +140,7 @@ dislin/chf/dashl.chf
 dislin/chf/dashm.chf
 dislin/chf/dbffin.chf
 dislin/chf/dbfini.chf
+dislin/chf/dbfmod.chf
 dislin/chf/delglb.chf
 dislin/chf/digits.chf
 dislin/chf/disalf.chf
@@ -272,6 +275,7 @@ dislin/chf/imgfmt.chf
 dislin/chf/imgini.chf
 dislin/chf/imgmod.chf
 dislin/chf/imgsiz.chf
+dislin/chf/imgtpr.chf
 dislin/chf/inccrv.chf
 dislin/chf/incdat.chf
 dislin/chf/incfil.chf
@@ -305,6 +309,8 @@ dislin/chf/legpos.chf
 dislin/chf/legtit.chf
 dislin/chf/legval.chf
 dislin/chf/lfttit.chf
+dislin/chf/licmod.chf
+dislin/chf/licpts.chf
 dislin/chf/light.chf
 dislin/chf/lincyc.chf
 dislin/chf/line.chf
@@ -342,6 +348,7 @@ dislin/chf/mplclr.chf
 dislin/chf/mplpos.chf
 dislin/chf/mplsiz.chf
 dislin/chf/mpslogo.chf
+dislin/chf/mrkclr.chf
 dislin/chf/msgbox.chf
 dislin/chf/mshclr.chf
 dislin/chf/mshcrv.chf
@@ -637,6 +644,7 @@ dislin/chf/tripts.chf
 dislin/chf/trmlen.chf
 dislin/chf/tube3d.chf
 dislin/chf/txtjus.chf
+dislin/chf/txture.chf
 dislin/chf/unit.chf
 dislin/chf/units.chf
 dislin/chf/upstr.chf
@@ -736,6 +744,7 @@ dislin/chf/zbfers.chf
 dislin/chf/zbffin.chf
 dislin/chf/zbfini.chf
 dislin/chf/zbflin.chf
+dislin/chf/zbfmod.chf
 dislin/chf/zbfres.chf
 dislin/chf/zbfscl.chf
 dislin/chf/zbftri.chf
