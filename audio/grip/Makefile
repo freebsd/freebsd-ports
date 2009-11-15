@@ -7,7 +7,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	3.2.0
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -16,7 +16,6 @@ COMMENT=	GTK front-end to external cd rippers and audio encoders
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		curl.5:${PORTSDIR}/ftp/curl
-PATCH_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 USE_XORG=	x11
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
@@ -39,8 +38,6 @@ OPTIONS+=	BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
 		FAAC "Encoder: faac: Install audio/faac" off \
 		FLAC "Encoder: flac: Install audio/flac" off \
 		GOGO "Encoder: gogo: Install audio/gogo" off
-
-ISO_LOCALES=	de es fr pt_BR
 
 .include <bsd.port.pre.mk>
 
@@ -102,13 +99,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|{"xingmp3enc","-B %b -Q %w","mp3"},||; \
 		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","--no-midside -w -q 100 --artist %a --album %d --track %t --title %n --year %y --genre %g -b %b %w -o %m", "m4a"},|' \
 		${WRKSRC}/src/gripcfg.c
-.for l in ${ISO_LOCALES}
-	@${MV} ${WRKSRC}/po/${l}.po ${WRKSRC}/po/_${l}.po
-	${LOCALBASE}/bin/iconv -f ISO-8859-15 -t UTF-8 \
-		${WRKSRC}/po/_${l}.po > ${WRKSRC}/po/${l}.po
-.endfor
-	@${MV} ${WRKSRC}/po/ru.po ${WRKSRC}/po/_ru.po
-	${LOCALBASE}/bin/iconv -f koi8-r -t UTF-8 \
-		${WRKSRC}/po/_ru.po > ${WRKSRC}/po/ru.po
 
 .include <bsd.port.post.mk>
