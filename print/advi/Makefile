@@ -34,7 +34,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	opt
 INSTALL_TARGET=	installopt installman
 
-CI_DEPEND=	${LOCALBASE}/${OCAML_LIBDIR}/camlimages/ci_core.a
+CI_DEPEND=	${LOCALBASE}/${OCAML_LIBDIR}/camlimages/images.cmi
 MAN1=		advi.1
 
 post-extract:
