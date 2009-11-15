@@ -1,0 +1,11 @@
+--- OS/Makefile-FreeBSD.orig	2009-11-14 21:13:45.000000000 +0300
++++ OS/Makefile-FreeBSD	2009-11-14 21:15:39.000000000 +0300
+@@ -7,7 +7,7 @@
+ PORTOBJFORMAT!= test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+ 
+ CHOWN_COMMAND=/usr/sbin/chown
+-STRIP_COMMAND=/usr/bin/strip
++STRIP_COMMAND=XX_STRIPCMD_XX
+ CHMOD_COMMAND=/bin/chmod
+ 
+ HAVE_SA_LEN=YES
