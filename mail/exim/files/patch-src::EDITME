@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- src/EDITME.orig
-+++ src/EDITME
+--- src/EDITME.orig	2008-07-26 00:23:25.000000000 +0400
++++ src/EDITME	2009-11-14 19:28:32.000000000 +0300
 @@ -100,7 +100,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
@@ -47,7 +47,7 @@ $FreeBSD$
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -308,8 +309,10 @@
+@@ -321,8 +322,10 @@
  # specified in INCLUDE. The settings below are just examples; -lpq is for
  # PostgreSQL, -lgds is for Interbase, -lsqlite3 is for SQLite.
  
@@ -60,7 +60,7 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -320,7 +323,7 @@
+@@ -333,7 +336,7 @@
  # files are defaulted in the OS/Makefile-Default file, but can be overridden in
  # local OS-specific make files.
  
@@ -69,16 +69,15 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -372,6 +375,8 @@
+@@ -385,6 +388,7 @@
  
  
  
-+# EXPERIMENTAL_DOMAINKEYS=yes
-+# EXPERIMENTAL_DKIM=yes
++# EXPERIMENTAL_DCC=yes
  ###############################################################################
  #                 THESE ARE THINGS YOU MIGHT WANT TO SPECIFY                  #
  ###############################################################################
-@@ -440,6 +445,7 @@
+@@ -453,6 +457,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -86,7 +85,7 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -494,7 +500,7 @@
+@@ -507,7 +512,7 @@
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -95,7 +94,7 @@ $FreeBSD$
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -579,7 +585,7 @@
+@@ -592,7 +597,7 @@
  # SUPPORT_TLS=yes
  
  # Uncomment this setting if you are using OpenSSL
@@ -104,7 +103,7 @@ $FreeBSD$
  
  # Uncomment these settings if you are using GnuTLS
  # USE_GNUTLS=yes
-@@ -630,7 +636,7 @@
+@@ -643,7 +648,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -113,7 +112,7 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -643,7 +649,7 @@
+@@ -656,7 +661,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -122,7 +121,7 @@ $FreeBSD$
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -719,7 +725,7 @@
+@@ -732,7 +737,7 @@
  # that the local_scan API is made available by the linker. You may also need
  # to add -ldl to EXTRALIBS so that dlopen() is available to Exim.
  
@@ -131,7 +130,7 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -811,13 +817,21 @@
+@@ -824,13 +829,21 @@
  # library for TCP wrappers, so you probably need something like this:
  #
  # USE_TCP_WRAPPERS=yes
@@ -139,7 +138,7 @@ $FreeBSD$
 -# EXTRALIBS_EXIM=-L/usr/local/lib -lwrap
 -#
 +CFLAGS=XX_CFLAGS_XX XX_SPF_FLAGS_XX XX_SRS_FLAGS_XX XX_SQLITE_FLAGS_XX
-+EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_DOMAINKEYS_LIBS_XX XX_DKIM_LIBS_XX XX_RADIUS_LIBS_XX XX_SQLITE_LIBS_XX
++EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_RADIUS_LIBS_XX XX_SQLITE_LIBS_XX
 +
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.
@@ -156,7 +155,7 @@ $FreeBSD$
  #------------------------------------------------------------------------------
  # The default action of the exim_install script (which is run by "make
  # install") is to install the Exim binary with a unique name such as
-@@ -1082,7 +1096,7 @@
+@@ -1097,7 +1110,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  

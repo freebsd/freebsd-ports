@@ -39,8 +39,8 @@ ALT_CONFIG_PREFIX	= "Allow alternate configuration files"
 AUTH_RADIUS	= "Enable radius (RFC 2865) authentication"
 AUTH_SASL	= "Enable use of Cyrus SASL auth library"
 CONTENT_SCAN	= "Enable exiscan email content scanner"
-DKIM		= "Enable DKIM (DomainKeys Identified Mail)"
-DOMAINKEYS	= "Enable Yahoo DomainKeys support"
+DCC		= "Enable DCC at ACL support via dccifd"
+DEBUG		= "Build with debugging symbols"
 EXIMON		= "Build eximon monitor (require XFree86!)"
 KAS		= "Build with Kaspersky AntiSpam local scan"
 MYSQL		= "Link against libmysqlclient library"
@@ -86,8 +86,8 @@ DISABLED_OPTIONS+=	\
 		AUTH_RADIUS \
 		AUTH_SASL \
 		CONTENT_SCAN \
-		DKIM \
-		DOMAINKEYS \
+		DCC \
+		DEBUG \
 		EXIMON \
 		KAS \
 		MYSQL \

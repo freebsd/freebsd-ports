@@ -7,7 +7,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -34,7 +33,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.69
+EXIM_VERSION=	4.70
 SA_EXIM_VERSION=4.2
 
 .if !defined(EXIMON_ONLY)
@@ -69,7 +68,7 @@ PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		experimental-spec.txt filter.txt pcrepattern.txt \
 		pcretest.txt spec.txt
 
-PORT_EXAMPLES=	convert4r3 convert4r4 pcretest transport-filter.pl
+PORT_EXAMPLES=	convert4r3 convert4r4 transport-filter.pl
 
 DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
 
@@ -116,6 +115,14 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 # The default setting is defined by this setting:
 WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
+# You should not need to fiddle with anything below this point.
+
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+
+.if defined(WITH_DCC)
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DCC=),\1,'
+.endif
+
 .if defined(WITH_XCLIENT)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xclient
 .endif
@@ -124,8 +131,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xclient
 BUILD_DEPENDS+=	libspamtest>=0:${PORTSDIR}/mail/libspamtest
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-kas
 .endif
-
-# You should not need to fiddle with anything below this point.
 
 .if defined(WITH_WISHLIST)
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
@@ -267,7 +272,7 @@ SEDLIST+=	-e 's,^\# (AUTH_SPA=),\1,'
 .endif
 
 .if defined(WITH_AUTH_SASL)
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 SEDLIST+=	-e 's,^\# (AUTH_CYRUS_SASL=),\1,' \
 		-e 's,^\# (AUTH_LIBS=),\1,'
 .endif
@@ -370,23 +375,6 @@ SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 		-e 's,XX_SPF_LIBS_XX,,'
 .endif
 
-.if defined(WITH_DOMAINKEYS)
-LIB_DEPENDS+=	domainkeys.3:${PORTSDIR}/mail/libdomainkeys
-SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,-ldomainkeys,' \
-		-e 's,^\# (EXPERIMENTAL_DOMAINKEYS=),\1,'
-.else
-SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,,'
-.endif
-
-.if defined(WITH_DKIM)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-LIB_DEPENDS+=	dkim.1:${PORTSDIR}/mail/libdkim
-SEDLIST+=	-e 's,XX_DKIM_LIBS_XX,-ldkim -lstdc++ -lssl,' \
-		-e 's,^\# (EXPERIMENTAL_DKIM=),\1,'
-.else
-SEDLIST+=	-e 's,XX_DKIM_LIBS_XX,,'
-.endif
-
 .if defined(WITH_SRS)
 LIB_DEPENDS+=	srs2.0:${PORTSDIR}/mail/libsrs2
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSRS,' \
@@ -478,6 +466,8 @@ do-configure:
 	@${REINPLACE_CMD} -e 's,/usr/bin/spamc,${LOCALBASE}/bin/spamc,' \
 	    ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf
 .endif
+	@${REINPLACE_CMD} -E -e 's/XX_STRIPCMD_XX/${STRIP_CMD:S,/,\/,g}/' \
+		${WRKSRC}/OS/Makefile-FreeBSD
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
 post-build:
