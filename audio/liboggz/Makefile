@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	liboggz
-DISTVERSION=	0.9.6
-PORTREVISION=	1
+DISTVERSION=	0.9.9
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/liboggz//
+MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
+		http://wickedmachine.net/mirror/
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Simple Ogg API
@@ -23,10 +23,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} --program-transform-name=""
 CONFIGURE_ENV=	HAVE_DOCBOOK2HTML=false DOCBOOKTOMAN=false HAVE_DOXYGEN=false HAVE_VALGRIND=false
 
+# First REINPLACE_CMD line makes all timestimes relative to localtime, crude hack
 post-patch:
-	@${REINPLACE_CMD} -e '/^pkgconfigdir/s!=.*!= ${PREFIX}/libdata/pkgconfig!' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/timezone/0/' \
+		${WRKSRC}/src/tools/oggz-chop/httpdate.c \
+		${WRKSRC}/src/tools/oggz-chop/httpdate_test.c
+	@${REINPLACE_CMD} -e '/^pkgconfigdir/s!=.*!= ${PREFIX}/libdata/pkgconfig!' \
+		${WRKSRC}/Makefile.in
 .ifdef NOPORTDOCS
-	@${REINPLACE_CMD} -e '/^install-data-am/s!install-data-local!!' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e '/^install-data-am/s!install-data-local!!'	\
+		${WRKSRC}/doc/Makefile.in
 .endif
 
 .include <bsd.port.mk>
