@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for embeding mozilla
 
-USE_GECKO=	firefox mozilla
+USE_GECKO=	libxul
 USE_GNOME=	gnometarget gtksharp20
 LATEST_LINK=	gecko-sharp20
 GNU_CONFIGURE=	yes
@@ -27,6 +27,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

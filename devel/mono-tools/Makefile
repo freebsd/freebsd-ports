@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget gnomedesktopsharp20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GECKO=	firefox mozilla
+USE_GECKO=	libxul
 
 MAN1=		create-native-map.1 gendarme.1 mprof-decoder.1 mprof-heap-viewer.1
 
@@ -39,5 +39,4 @@ post-patch:
 		's|@datadir@/man/man1|@mandir@/man1|g'
 
 .include "${PORTSDIR}/lang/mono/bsd.mono.mk"
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>
