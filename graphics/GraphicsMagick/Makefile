@@ -28,6 +28,7 @@ OTHERGRAPHICS=	jasper jpeg lcms png tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
 
 OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
+		X11 "Enable X11 support" on \
 		TESTS "Run bundled self-tests after build" on
 
 USE_ICONV=	yes
@@ -72,7 +73,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in
 CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 .endif
 
-.if defined(WITHOUT_X11)
+.if !defined(WITH_X11)
 PKGNAMESUFFIX+=	-nox11
 CONFIGURE_ARGS+=--without-x
 .endif
