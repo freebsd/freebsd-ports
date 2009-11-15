@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.8
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
@@ -47,7 +47,6 @@ PORTDATA=	*
 
 OPTIONS=	BWMON	 "Enable bandwidth monitoring for server" Off \
 		CAMPAIGN "Enable campaign server"	On \
-		DUMMYLOCALES "Enable wesnoth own locales" Off \
 		EDITOR	 "Enable map editor"		On \
 		FRIBIDI	 "Enable bidirectional support"	On \
 		LOWMEM	 "Reduce memory usage (disables animations)" Off \
@@ -103,12 +102,6 @@ PLIST_SUB+=		CAMPAIGN="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-campaign-server
 PLIST_SUB+=		CAMPAIGN=""
-.endif
-
-.if defined(WITHOUT_DUMMYLOCALES)
-CONFIGURE_ARGS+=	--disable-dummy-locales
-.else
-CONFIGURE_ARGS+=	--enable-dummy-locales
 .endif
 
 .if defined(WITHOUT_EDITOR)
