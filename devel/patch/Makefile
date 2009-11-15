@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	patch
-PORTVERSION=	2.5.9
+PORTVERSION=	2.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	patch
@@ -14,8 +14,9 @@ MASTER_SITE_SUBDIR=	patch
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	GNU patch utility
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf262 aclocal:110
 CONFIGURE_ARGS=	--program-prefix=g
+USE_GMAKE=	yes
 
 MAN1=		gpatch.1
 PLIST_FILES=	bin/gpatch
