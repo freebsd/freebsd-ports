@@ -7,6 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
@@ -30,6 +31,7 @@ OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
 		DPS "Enable Display Ghostscript support" on \
 		OPENMP "Enable OpenMP support" on \
 		SSE "Enable SSE opcodes on supported CPUs" off \
+		X11 "Enable X11 support" on \
 		TESTS "Run bundled self-tests after build" on
 
 USE_ICONV=	yes
@@ -54,7 +56,8 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"       \
-	LDFLAGS="-L${LOCALBASE}/lib"
+	LDFLAGS="${CONFIGURE_LDFLAGS}"
+CONFIGURE_LDFLAGS=-L${LOCALBASE}/lib
 
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
@@ -98,7 +101,7 @@ CONFIGURE_ARGS+=	--without-dps
 IGNORE=		does not support OpenMP on FreeBSD version ${OSVERSION}
 .endif
 
-CONFIGURE_ENV+=		LDFLAGS=${PTHREAD_LIBS}
+CONFIGURE_LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-threads --enable-openmp --disable-openmp-slow
 .else
 CONFIGURE_ARGS+=	--without-threads --disable-openmp
@@ -113,7 +116,7 @@ WINDOWS_FONT_DIR=${LOCALBASE}/lib/X11/fonts/webfonts
 CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 .endif
 
-.if defined(WITHOUT_X11)
+.if !defined(WITH_X11)
 PKGNAMESUFFIX+=	-nox11
 CONFIGURE_ARGS+=--without-x
 .endif
