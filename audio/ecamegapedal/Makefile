@@ -16,6 +16,8 @@ COMMENT=	Realtime audio processor
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 
+BROKEN=		does not compile
+
 JACKDIR=	${LOCALBASE}/include/jack
 USE_QT_VER=	3
 USE_GMAKE=	yes
