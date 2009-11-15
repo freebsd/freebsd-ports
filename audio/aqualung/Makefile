@@ -7,9 +7,10 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9beta10
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9beta10 \
+ 		http://wickedmachine.net/mirror/
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Music player with rich features
@@ -19,7 +20,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		oggz.4:${PORTSDIR}/audio/liboggz \
+		oggz.6:${PORTSDIR}/audio/liboggz \
 		speex.1:${PORTSDIR}/audio/speex \
 		mad.2:${PORTSDIR}/audio/libmad \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
