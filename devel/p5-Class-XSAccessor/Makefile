@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-XSAccessor
-PORTVERSION=	1.03
+PORTVERSION=	1.05
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-AutoXS-Header>=1.02:${PORTSDIR}/devel/p5-AutoXS-Header
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Class::XSAccessor.3
+MAN3=		Class::XSAccessor.3 \
+    		Class::XSAccessor::Array.3 \
+    		Class::XSAccessor::Heavy.3
 
 .include <bsd.port.mk>
