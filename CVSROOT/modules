@@ -20820,6 +20820,7 @@ ruby-crypt                      ports/security/ruby-crypt
 ruby-csv                        ports/textproc/ruby-csv
 ruby-cvs                        ports/devel/ruby-cvs
 ruby-date2                      ports/devel/ruby-date2
+ruby-dbd-sqlite3                ports/databases/ruby-dbd-sqlite3
 ruby-dbd_mysql                  ports/databases/ruby-dbd_mysql
 ruby-dbd_odbc                   ports/databases/ruby-dbd_odbc
 ruby-dbd_pg                     ports/databases/ruby-dbd_pg
