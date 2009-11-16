@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mogilefs-server
-PORTVERSION=	2.30
+PORTVERSION=	2.32
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DO/DORMANDO
@@ -52,6 +52,13 @@ MAN3=		MogileFS::DevFID.3 \
 		mogdeps::Gearman::Task.3 \
 		mogdeps::Gearman::Worker.3 \
 		mogdeps::Perlbal.3 \
+		mogdeps::Perlbal::Plugin::Cgilike.3 \
+		mogdeps::Perlbal::Plugin::Include.3 \
+		mogdeps::Perlbal::Plugin::MaxContentLength.3 \
+		mogdeps::Perlbal::Plugin::Palimg.3 \
+		mogdeps::Perlbal::Plugin::Redirect.3 \
+		mogdeps::Perlbal::Test.3 \
+		mogdeps::Perlbal::Util.3 \
 		mogdeps::Sys::Syscall.3
 
 post-install:
