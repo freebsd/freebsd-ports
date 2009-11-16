@@ -41,11 +41,11 @@ Patch attached with submission follows:
 +
 +            while (<STDIN>) {
 +                chomp();
-+                if ( /^(\w+):\s+flags=/ ) {
++                if ( /^(\w+):\sflags=/ ) {
 +                    $if_name = $1;
 +                    $if_status = ( /UP/ ) ? 1 : 0;
 +                }
-+                if ( /^\s+inet\s+${ip}/ ) {
++                if ( /^\tinet\s${ip}\s/ ) {
 +                    if ( $if_status ) {
 +                        print $if_name;
 +                        exit(0)
