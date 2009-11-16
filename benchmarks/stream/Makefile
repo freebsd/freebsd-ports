@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	stream
-PORTVERSION=	5.8
+PORTVERSION=	5.9
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.cs.virginia.edu/stream/FTP/Code/
 DISTFILES=	stream.c
-DIST_SUBDIR=	${PORTNAME}-1.0
+DIST_SUBDIR=	${PORTNAME}-1.0/${PORTVERSION}
 
 MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
