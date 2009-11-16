@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Audio-MPD-Common
-PORTVERSION=	1.093120
+PORTVERSION=	1.093190
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	A bunch of common helper classes for mpd
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Has-Sugar>=0:${PORTSDIR}/devel/p5-MooseX-Has-Sugar \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -28,6 +29,7 @@ MAN3=		Audio::MPD::Common.3 \
 		Audio::MPD::Common::Item::Playlist.3 \
 		Audio::MPD::Common::Stats.3 \
 		Audio::MPD::Common::Status.3 \
-		Audio::MPD::Common::Time.3
+		Audio::MPD::Common::Time.3 \
+		Audio::MPD::Common::Types.3
 
 .include <bsd.port.mk>
