@@ -19,8 +19,8 @@ MAINTAINER=	hernan.di.pietro@gmail.com
 COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 
 .ifdef(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
-		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+USE_LINUX_APPS+=libglu
 .else
 USE_LINUX_APPS+=dri
 .endif
