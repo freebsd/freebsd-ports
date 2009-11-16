@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mdocml
-PORTVERSION=	1.9.13
+PORTVERSION=	1.9.14
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
   		https://www.spoerlein.net/pub/mdocml/
@@ -17,6 +17,9 @@ COMMENT=	mdoc macro compiler
 MAN1=	mandoc.1
 MAN7=	mdoc.7
 
-PLIST_FILES=	bin/mandoc
+PLIST_SUB+=	EXAMPLESDIR=share/examples/mandoc
+
+pre-install:
+	@${MKDIR} ${EXAMPLESDIR:S/mdocml/mandoc/}
 
 .include <bsd.port.mk>
