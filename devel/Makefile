@@ -1693,6 +1693,7 @@
     SUBDIR += p5-MooseX-Declare
     SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
     SUBDIR += p5-MooseX-Getopt
+    SUBDIR += p5-MooseX-Has-Sugar
     SUBDIR += p5-MooseX-IOC
     SUBDIR += p5-MooseX-LazyRequire
     SUBDIR += p5-MooseX-Log-Log4perl
