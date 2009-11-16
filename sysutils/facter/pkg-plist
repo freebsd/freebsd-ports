@@ -27,6 +27,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/network.rb
 %%RUBY_SITELIBDIR%%/facter/operatingsystem.rb
 %%RUBY_SITELIBDIR%%/facter/operatingsystemrelease.rb
+%%RUBY_SITELIBDIR%%/facter/path.rb
 %%RUBY_SITELIBDIR%%/facter/physicalprocessorcount.rb
 %%RUBY_SITELIBDIR%%/facter/processor.rb
 %%RUBY_SITELIBDIR%%/facter/ps.rb
@@ -53,6 +54,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/resolution.rb
 %%RUBY_SITELIBDIR%%/facter/util/uptime.rb
 %%RUBY_SITELIBDIR%%/facter/util/values.rb
+%%RUBY_SITELIBDIR%%/facter/util/virtual.rb
 %%RUBY_SITELIBDIR%%/facter/virtual.rb
 @dirrm %%RUBY_SITELIBDIR%%/facter/util/plist
 @dirrm %%RUBY_SITELIBDIR%%/facter/util
