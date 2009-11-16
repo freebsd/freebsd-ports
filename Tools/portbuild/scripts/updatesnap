@@ -3,6 +3,10 @@
 # Update the master source trees that are used by package builds
 # and other consumers
 
+# head is handled specially
+HEAD_BRANCH="9"
+NON_HEAD_BRANCHES="6 7 8"
+
 base=/a/snap
 zbase=a/snap
 
@@ -31,32 +35,20 @@ umask 002
 
 #cvsup -g /root/cvs-supfile || finish 1
 
-cd $base/src-HEAD
+cd $base/src-${HEAD_BRANCH}
 fulldate=$(date)
 cvs -Rq -d ${srepo} update -PdA -D "${fulldate}"
 echo ${fulldate} > cvsdone
 snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-HEAD@${snapdate}
+zfs snapshot ${zbase}/src-${HEAD_BRANCH}@${snapdate}
 
-cd $base/src-6
-fulldate=$(date)
-cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_6
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-6@${snapdate}
-
-cd $base/src-7
-fulldate=$(date)
-cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_7
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-7@${snapdate}
-
-cd $base/src-8
-fulldate=$(date)
-cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_8
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-8@${snapdate}
+for branch in $NON_HEAD_BRANCHES; do
+  cd $base/src-${branch}
+  fulldate=$(date)
+  cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_${branch}
+  echo ${fulldate} > cvsdone
+  snapdate=$(stamp ${fulldate})
+  zfs snapshot ${zbase}/src-${branch}@${snapdate}
+done
 
 finish 0
