@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mumble
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTVERSION=	1.1.8
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
@@ -25,6 +24,8 @@ QT_COMPONENTS=	gui opengl dbus xml sql network linguist_build l10n \
 USE_XORG=	ice
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+
+MAKE_JOBS_SAFE=	yes
 
 CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-update no-g15 \
 		no-portaudio no-pulseaudio no-xevie
