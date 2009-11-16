@@ -14,7 +14,7 @@ kill_procs()
     while [ ! -z "${pids}" ]; do
 	pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
 	if [ ! -z "${pids}" ]; then
-	    echo "Killing off pids in ${dir}"
+	    echo "Killing off pids in ${dir} on $(hostname)"
 	    ps -p $pids
 	    kill -KILL ${pids} 2> /dev/null
 	    sleep 2
@@ -29,11 +29,11 @@ cleanup_mount() {
     if [ -d ${chroot}${mount} ]; then
 	mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
 	if [ "${mdir}" = "MOUNT" ]; then
-	    umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+	    umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} on $(hostname) failed!"
 	fi
 	if [ "${mdir}" = "${chroot}${mount}" ]; then
 	    kill_procs ${chroot}${mount}
-	    umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+	    umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} on $(hostname) failed!"
 	fi
     fi
 }
@@ -90,5 +90,7 @@ done
 mkdir -p ${scratchdir}/old
 mv ${old2} ${scratchdir}/old
 rm -rf ${scratchdir}/old 2> /dev/null
-chflags -R noschg ${scratchdir}/old
-rm -rf ${scratchdir}/old
+if [ -d ${scratchdir}/old ]; then
+  chflags -R noschg ${scratchdir}/old
+  rm -rf ${scratchdir}/old
+fi
