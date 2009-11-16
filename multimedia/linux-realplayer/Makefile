@@ -10,7 +10,8 @@ DISTVERSION=	10.0.9.809-20070726
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	https://helixcommunity.org/download.php/2479/:player \
 		http://ftp.nluug.nl/ftp/pub/os/Linux/distr/pardusrepo/sources/:playeralt \
-		ftp://fr2.rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/:codecs
+		ftp://fr2.rpmfind.net/linux/sourceforge/m/project/mp/mplayer-tru/mplayer-codecs/20040704/:codecs \
+		http://mirror.therek.net/freebsd/distfiles/mplayer/:codecs
 DISTFILES=	RealPlayer-${DISTVERSION}.i586.rpm:player,playeralt \
 		mplayer-codecs-linux-real-20040626-1.i386.rpm:codecs
 
