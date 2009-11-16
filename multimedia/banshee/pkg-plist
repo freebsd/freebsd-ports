@@ -44,14 +44,14 @@ lib/banshee-1/Extensions/Banshee.CoverArt.dll
 lib/banshee-1/Extensions/Banshee.CoverArt.dll.mdb
 lib/banshee-1/Extensions/Banshee.Daap.dll
 lib/banshee-1/Extensions/Banshee.Daap.dll.mdb
+%%OPT_IPOD%%lib/banshee-1/Extensions/Banshee.Dap.Ipod.dll
+%%OPT_IPOD%%lib/banshee-1/Extensions/Banshee.Dap.Ipod.dll.mdb
 lib/banshee-1/Extensions/Banshee.Dap.MassStorage.dll
 lib/banshee-1/Extensions/Banshee.Dap.MassStorage.dll.mdb
 %%OPT_MTP%%lib/banshee-1/Extensions/Banshee.Dap.Mtp.dll
 %%OPT_MTP%%lib/banshee-1/Extensions/Banshee.Dap.Mtp.dll.mdb
 lib/banshee-1/Extensions/Banshee.Dap.dll
 lib/banshee-1/Extensions/Banshee.Dap.dll.mdb
-%%OPT_IPOD%%lib/banshee-1/Extensions/Banshee.Dap.Ipod.dll
-%%OPT_IPOD%%lib/banshee-1/Extensions/Banshee.Dap.Ipod.dll.mdb
 lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll
 lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll.mdb
 lib/banshee-1/Extensions/Banshee.InternetRadio.dll
@@ -74,10 +74,10 @@ lib/banshee-1/Extensions/Banshee.PlayerMigration.dll
 lib/banshee-1/Extensions/Banshee.PlayerMigration.dll.mdb
 lib/banshee-1/Extensions/Banshee.Podcasting.dll
 lib/banshee-1/Extensions/Banshee.Podcasting.dll.mdb
-%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll
-%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll.mdb
 %%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll
 %%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll.mdb
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll.mdb
 lib/banshee-1/Halie.exe
 lib/banshee-1/Halie.exe.mdb
 lib/banshee-1/Hyena.Gui.dll
@@ -138,6 +138,7 @@ share/banshee-1/audio-profiles/vorbis.xml
 share/banshee-1/audio-profiles/wav.xml
 share/banshee-1/audio-profiles/wavpack.xml
 share/banshee-1/audio-profiles/wma.xml
+share/banshee-1/icons/hicolor/128x128/devices/phone-htc-g1-white.png
 share/banshee-1/icons/hicolor/16x16/actions/media-import-audio-cd.png
 share/banshee-1/icons/hicolor/16x16/actions/media-repeat-all.png
 share/banshee-1/icons/hicolor/16x16/actions/media-repeat-none.png
@@ -202,7 +203,6 @@ share/banshee-1/icons/hicolor/48x48/actions/media-write-cd.png
 share/banshee-1/icons/hicolor/48x48/categories/podcast.png
 share/banshee-1/icons/hicolor/48x48/categories/radio.png
 share/banshee-1/icons/hicolor/48x48/devices/phone-htc-g1-white.png
-share/banshee-1/icons/hicolor/128x128/devices/phone-htc-g1-white.png
 share/banshee-1/icons/hicolor/scalable/categories/radio.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-U2-color.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-U2-monochrome.svg
@@ -270,28 +270,16 @@ share/locale/vi/LC_MESSAGES/banshee-1.mo
 share/locale/zh_CN/LC_MESSAGES/banshee-1.mo
 share/locale/zh_HK/LC_MESSAGES/banshee-1.mo
 share/locale/zh_TW/LC_MESSAGES/banshee-1.mo
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrm share/banshee-1/icons/hicolor/scalable/status
 @dirrm share/banshee-1/icons/hicolor/scalable/devices
 @dirrm share/banshee-1/icons/hicolor/scalable/categories
-@dirrm share/banshee-1/icons/hicolor/scalable/actions
 @dirrm share/banshee-1/icons/hicolor/scalable
-@dirrm share/banshee-1/icons/hicolor/128x128/status
-@dirrm share/banshee-1/icons/hicolor/128x128/devices
-@dirrm share/banshee-1/icons/hicolor/128x128/categories
-@dirrm share/banshee-1/icons/hicolor/128x128/actions
-@dirrm share/banshee-1/icons/hicolor/128x128
-@dirrm share/banshee-1/icons/hicolor/48x48/status
 @dirrm share/banshee-1/icons/hicolor/48x48/devices
 @dirrm share/banshee-1/icons/hicolor/48x48/categories
 @dirrm share/banshee-1/icons/hicolor/48x48/actions
 @dirrm share/banshee-1/icons/hicolor/48x48
-@dirrm share/banshee-1/icons/hicolor/32x32/status
 @dirrm share/banshee-1/icons/hicolor/32x32/devices
-@dirrm share/banshee-1/icons/hicolor/32x32/categories
 @dirrm share/banshee-1/icons/hicolor/32x32/actions
 @dirrm share/banshee-1/icons/hicolor/32x32
-@dirrm share/banshee-1/icons/hicolor/22x22/status
 @dirrm share/banshee-1/icons/hicolor/22x22/devices
 @dirrm share/banshee-1/icons/hicolor/22x22/categories
 @dirrm share/banshee-1/icons/hicolor/22x22/actions
@@ -302,6 +290,8 @@ share/locale/zh_TW/LC_MESSAGES/banshee-1.mo
 @dirrm share/banshee-1/icons/hicolor/16x16/categories
 @dirrm share/banshee-1/icons/hicolor/16x16/actions
 @dirrm share/banshee-1/icons/hicolor/16x16
+@dirrm share/banshee-1/icons/hicolor/128x128/devices
+@dirrm share/banshee-1/icons/hicolor/128x128
 @dirrm share/banshee-1/icons/hicolor
 @dirrm share/banshee-1/icons
 @dirrm share/banshee-1/audio-profiles
