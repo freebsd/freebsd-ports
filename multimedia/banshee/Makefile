@@ -7,6 +7,7 @@
 
 PORTNAME=	banshee
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/stable/${PORTVERSION}/
@@ -27,17 +28,17 @@ LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/mono-zeroconf.pc:${PORTSDIR}/net/mono-zeroconf \
 		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins
 
-OPTIONS=	DOCS "Install documentation" on \
-		MTP "Enable MTP support" on
-#		BPMDETECT "Enable BPM detection" on
-#		IPOD "Enable iPod support" on \
+OPTIONS=	DOCS      "Install documentation" on \
+		MTP       "Enable MTP support"    on \
+		BPMDETECT "Enable BPM detection"  on \
+#		IPOD      "Enable iPod support"   on
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtksharp20 gnomesharp20
-USE_GSTREAMER=	yes
+USE_GSTREAMER=	cdparanoia
 USE_GETTEXT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}-1
 USE_XORG=	xrandr xxf86vm
@@ -72,36 +73,8 @@ CONFIGURE_ARGS+=	--disable-mtp
 PLIST_SUB+=	OPT_MTP="@comment "
 .endif
 
-#.if !defined(WITHOUT_BPMDETECT)
-#USE_GSTREAMER+=	soundtouch
-#.endif
-
-post-patch:
-	@${REINPLACE_CMD} "s|!/bin/bash|!${PREFIX}/bin/bash|" \
-				${WRKSRC}/build/icon-theme-installer \
-				${WRKSRC}/build/private-icon-theme-installer \
-				${WRKSRC}/data/desktop-files/update-desktop-file.sh \
-				${WRKSRC}/src/Clients/Booter/banshee-1.in
-	@${REINPLACE_CMD} 's|sed -r|sed -E|' \
-				${WRKSRC}/data/icon-theme-hicolor/Makefile.in
-#				${WRKSRC}/configure \
-
-# XXX - This is gross.
-post-configure:
-	@${REINPLACE_CMD} -e 's|^\(MSGFMT =\).*|\1 ${LOCALBASE}/bin/msgfmt|' \
-		-e 's|^\(GMSGFMT =\).*|\1 ${LOCALBASE}/bin/msgfmt|' \
-			${WRKSRC}/po/Makefile
-
-# XXX - Really ugly too.
-pre-build:
-	${MKDIR} ${WRKSRC}/bin/share/banshee-1/icons/hicolor/scalable/
-
-# XXX - This one is the best.
-pre-install:
-.for i in 16x16 22x22 32x32 48x48 128x128 scalable
-. for j in actions categories devices status
-	@${MKDIR} ${PREFIX}/share/banshee-1/icons/hicolor/$i/$j/
-. endfor
-.endfor
+.if !defined(WITHOUT_BPMDETECT)
+USE_GSTREAMER+=	soundtouch
+.endif
 
 .include <bsd.port.post.mk>

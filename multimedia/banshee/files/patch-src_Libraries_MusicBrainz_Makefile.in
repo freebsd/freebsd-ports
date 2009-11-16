@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/Libraries/MusicBrainz/Makefile.in.orig
++++ src/Libraries/MusicBrainz/Makefile.in
+@@ -347,6 +347,7 @@
+ SOURCES = \
+ 	MusicBrainz/Artist.cs \
+ 	MusicBrainz/Disc.cs \
++	MusicBrainz/DiscFreeBSD.cs \
+ 	MusicBrainz/DiscLinux.cs \
+ 	MusicBrainz/DiscWin32.cs \
+ 	MusicBrainz/Event.cs \
