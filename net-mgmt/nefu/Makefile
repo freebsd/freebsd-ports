@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nefu
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +16,7 @@ COMMENT=	A network monitoring daemon
 
 USE_RC_SUBR=	nefu
 GNU_CONFIGURE=		yes
+MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib" \
 			YACC=${YACC} \
