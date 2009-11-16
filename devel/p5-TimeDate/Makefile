@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TimeDate
-PORTVERSION=	1.16
+PORTVERSION=	1.19
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -19,6 +19,8 @@ COMMENT=	Perl5 module containing a better/faster date parser for absolute dates
 PERL_CONFIGURE=	YES
 
 MAN3=		Date::Format.3 \
+		Date::Language.3 \
+		Date::Language::Hungarian.3 \
 		Date::Parse.3 \
 		Time::Zone.3
 
