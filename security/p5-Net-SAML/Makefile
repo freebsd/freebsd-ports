@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Net-SAML
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	security perl5
 MASTER_SITES=	http://zxid.org/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	zxid-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using SAML SSO
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
