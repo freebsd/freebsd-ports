@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Domain-ExpireDate
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	dns net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Domain::ExpireDate.3
 
 post-patch:
-		@${FIND} ${WRKSRC} -name "*.orig" -delete 
+		@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>
