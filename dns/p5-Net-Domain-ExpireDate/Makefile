@@ -23,4 +23,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::Domain::ExpireDate.3
 
+post-patch:
+		@${FIND} ${WRKSRC} -name "*.orig" -delete 
+
 .include <bsd.port.mk>
