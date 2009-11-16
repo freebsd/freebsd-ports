@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	recaptcha
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/r/recaptcha-client
@@ -15,10 +15,8 @@ DISTNAME=	${PORTNAME}-client-${PORTVERSION}
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A plugin for reCAPTCHA and reCAPTCHA Mailhide
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	recaptcha_client
 PYDISTUTILS_NOEGGINFO=	yes
 
