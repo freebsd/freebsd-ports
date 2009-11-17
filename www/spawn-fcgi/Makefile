@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spawn-fcgi
-PORTVERSION=	1.6.2
-PORTREVISION=	2
+PORTVERSION=	1.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/
 
