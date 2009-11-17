@@ -1,5 +1,5 @@
---- icmake/man.orig	2009-03-10 05:33:46.000000000 +0100
-+++ icmake/man	2009-03-10 05:38:20.000000000 +0100
+--- icmake/man.orig	2009-09-01 10:41:10.000000000 +0200
++++ icmake/man	2009-10-04 16:00:03.000000000 +0200
 @@ -9,7 +9,10 @@
  
      special(0, 0);
@@ -25,10 +25,10 @@
      yo = makelist("*.yo") - (list)"bobcat.yo" -  (list)"bobcatlcgen.yo";
 @@ -43,8 +48,10 @@
      
-             run("yodl2man  --no-warnings -o ../../tmp/man/man3/" + 
+             run("yodl2man  --no-warnings -r 15000 -o ../../tmp/man/man3/" + 
                                                      base + ".3bobcat " + yodl);
 +#ifdef MANHTML
-             run("yodl2html --no-warnings -o ../../tmp/manhtml/" + 
+             run("yodl2html --no-warnings -r 15000 -o ../../tmp/manhtml/" + 
                                                      base + ".3.html " + yodl);
 +#endif
          }
