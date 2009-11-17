@@ -3,6 +3,7 @@
 %%SITE_PERL%%/MogileFS/Admin.pm
 %%SITE_PERL%%/MogileFS/Backend.pm
 %%SITE_PERL%%/MogileFS/Client.pm
+%%SITE_PERL%%/MogileFS/ClientHTTPFile.pm
 %%SITE_PERL%%/MogileFS/NewHTTPFile.pm
 @dirrmtry %%SITE_PERL%%/MogileFS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Client
