@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pstree
-PORTVERSION=	2.32
+PORTVERSION=	2.33
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thp.uni-duisburg.de/pub/source/ \
-		http://fresh.t-systems-sfr.com/unix/src/misc/
+		LOCAL/avl
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	List processes as a tree
