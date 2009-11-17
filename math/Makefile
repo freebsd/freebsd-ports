@@ -463,6 +463,7 @@
     SUBDIR += ruby-netcdf
     SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
+    SUBDIR += saga
     SUBDIR += sc
     SUBDIR += scalapack
     SUBDIR += scigraphica
