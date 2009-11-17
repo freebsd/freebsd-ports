@@ -18,8 +18,10 @@ COMMENT=	An Intelligent C-like Maker
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		icmake.1 icmbuild.1 icmstart.1
 MAN7=		icmstart.rc.7
+.endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
