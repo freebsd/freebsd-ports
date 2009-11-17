@@ -1,31 +1,31 @@
---- Makefile.orig	2007-08-11 20:35:34.000000000 +0200
-+++ Makefile	2007-12-24 12:18:38.000000000 +0100
-@@ -1,13 +1,13 @@
+--- Makefile.orig	2009-11-17 20:19:54.000000000 +0100
++++ Makefile	2009-11-17 20:22:51.000000000 +0100
+@@ -1,8 +1,8 @@
  TGT=noip2
 -CC=gcc
-+MYCC=${CC}
++CC?=gcc
+ PKG=noip-2.1.tgz
  
 -PREFIX=/usr/local
--CONFDIR=${PREFIX}/etc
--BINDIR=${PREFIX}/bin
-+MYPREFIX=${PREFIX}
-+MYCONFDIR=${PREFIX}/etc
-+MYBINDIR=${PREFIX}/bin
++PREFIX?=/usr/local
+ CONFDIR=${PREFIX}/etc
+ BINDIR=${PREFIX}/bin
  
- # these defines are for Linux
--LIBS=
--ARCH=linux
-+#LIBS=
-+#ARCH=linux
+@@ -11,7 +11,7 @@
+ ARCH=linux
  
  # for Mac OS X and BSD systems that have getifaddr(), uncomment the next line
- #ARCH=bsd_with_getifaddrs
-@@ -21,7 +21,7 @@
+-#ARCH=bsd_with_getifaddrs
++ARCH=bsd_with_getifaddrs
+ 
+ # for early BSD systems without getifaddrs(), uncomment the next line
+ #ARCH=bsd
+@@ -22,7 +22,7 @@
  # ARCH=sun
  
  ${TGT}: Makefile ${TGT}.c 
--	${CC} -Wall -g -O2 -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
-+	${MYCC} ${CFLAGS} -Dbsd_with_getifaddrs -DPREFIX=\"${MYPREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
+-	${CC} -Wall -g -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
++	${CC} -Wall -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
  
  install: ${TGT} 
  	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi
