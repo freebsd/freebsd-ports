@@ -605,6 +605,7 @@
 %%WWWDIR%%/lib/tasks/email.rake
 %%WWWDIR%%/lib/tasks/extract_fixtures.rake
 %%WWWDIR%%/lib/tasks/fetch_changesets.rake
+%%WWWDIR%%/lib/tasks/initializers.rake
 %%WWWDIR%%/lib/tasks/load_default_data.rake
 %%WWWDIR%%/lib/tasks/migrate_from_mantis.rake
 %%WWWDIR%%/lib/tasks/migrate_from_trac.rake
