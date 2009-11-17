@@ -19,7 +19,7 @@ LD	      = $(F77)
 
 LDFLAGS	      = -L%%LOCALBASE%%/lib
 
-LIBS	      = -lgd -lpng -ljpeg -lX11 -lz -lm
+LIBS	      = -lgd -lpng -ljpeg -lX11 -lz -lfreetype -lpthread
 
 MAKEFILE      = Makefile
 
@@ -79,10 +79,14 @@ OBJS	      = dp1_linux.o \
 		edsub.o \
 		edwrst.o \
 		fit3b.o \
-		gl_src.o \
-		aqua_src.o \
 		starpac.o \
+		cluster.o \
+		compgeom.o \
 		tcdriv_nopc.o \
+		aqua_src.o \
+		gl_src.o \
+		libplot_src.o \
+		rldp.o \
 		gd_src.o \
 		x11_src.o \
 		main.o
@@ -93,7 +97,7 @@ PROGRAM       = dataplot
 
 SHELL	      = /bin/sh
 
-SRCS	      = dp1_linux.f \
+SRCS	      = dp1_linux.F \
 		dp2.f \
 		dp3.f \
 		dp4.f \
@@ -149,10 +153,14 @@ SRCS	      = dp1_linux.f \
 		edsub.f \
 		edwrst.f \
 		fit3b.f \
-		gl_src.f \
-		aqua_src.f \
 		starpac.f \
+		cluster.f \
+		compgeom.f \
 		tcdriv_nopc.f \
+		aqua_src.f \
+		gl_src.f \
+		libplot_src.f \
+		rldp.f \
 		gd_src.c \
 		x11_src.c \
 		main.f
