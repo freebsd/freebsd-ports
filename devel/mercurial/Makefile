@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -23,16 +23,22 @@ PYDISTUTILS_EGGINFO=    ${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.eg
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
 		dumprevlog \
-		hg-relink \
 		hg-ssh \
 		hgdiff \
 		hgk \
 		logo-droplets.svg \
 		mercurial.el \
+		mergetools.hgrc \
 		mq.el \
+		perf.py \
+		python-hook-examples.py \
+		rewrite-log \
 		sample.hgrc \
+		shrink-revlog.py \
 		simplemerge \
 		tcsh_completion \
+		tcsh_completion_build.sh \
+		tmplrewrite.py \
 		undumprevlog \
 		zsh_completion \
 		git-viz/git-cat-file \
