@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091118
+  AFFECTS: users of www/redmine
+  AUTHOR: Bernhard Froehlich <decke@bluelife.at>
+
+  After the upgrade you need to generate a session secret before restarting
+  the application. This is to protect you from Cross site request forgery.
+  From your Redmine directory, simply run the following command once:
+
+  # rake config/initializers/session_store.rb
+
+  then upgrade as usual
+
+  # rake db:migrate RAILS_ENV=production
+
 20091114
   AFFECTS: users of emulators/win4bsd
   AUTHOR: Mario S F Ferreira <lioux@FreeBSD.org>
