@@ -609,7 +609,6 @@
     SUBDIR += ruby-bdb
     SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb
-    SUBDIR += ruby-dbd-sqlite3
     SUBDIR += ruby-dbd_mysql
     SUBDIR += ruby-dbd_odbc
     SUBDIR += ruby-dbd_pg
