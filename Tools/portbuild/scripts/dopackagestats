@@ -74,92 +74,92 @@ write_row () {
     fi
 
     # column: date of CVS checkout
-    have_cvsdone=0
+    have_cvsdone=""
     cvsdone=""
     if [ -f $directory/cvsdone ]; then
       cvsdone="$(cat $directory/cvsdone | awk '{printf("%s %s\n",$2,$3)}')"
       if [ ! -z "$cvsdone" ]; then
-        have_cvsdone=1
+        have_cvsdone="yes"
       fi
     fi
 
     # column: datestamp and URL of latest log
-    have_latest=0
+    have_latest=""
     latest=""
 # MCL removed 20090808 -- this takes way too long
 #    if [ -d $directory/logs ]; then
 #      latest_suffix="$(cd $directory/logs 2> /dev/null && ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
-#      if [ "$latest_suffix" ]; then
+#      if [ -z "$latest_suffix" ]; then
 #        latest="<a href=\"http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs/$latest_suffix"
-#        have_latest=1
+#        have_latest="yes"
 #      fi
 #    fi
 
     # column: INDEX count
-    have_index=0
+    have_index=""
     n_index=0
     if [ -f $indexfile ]; then
       n_index=`cat $indexfile | wc -l`
-      have_index=1
+      have_index="yes"
     fi
 
     # column: buildlog count
-    have_logs=0
+    have_logs=""
     n_logs=0
     if [ -d $directory/logs ]; then
       n_logs=`ls $directory/logs | grep '\.log' | wc -l`
-      have_logs=1
+      have_logs="yes"
     fi
 
     # column: package count
-    have_packages=0
+    have_packages=""
     n_packages=0
     if [ -d $directory/packages/All ]; then
       # MCL removed 20090808 -- this takes way too long
       # n_packages=`find $directory/packages/All -name \*.tbz -or -name \*.tgz |wc -l`
       n_packages=`ls $directory/packages/All | grep -v CHECKSUM.MD5 | wc -l`
-      have_packages=1
+      have_packages="yes"
     fi
 
     # column: error count
-    have_errors=0
+    have_errors=""
     n_errors=0
     if [ -d $directory/errors ]; then
       n_errors=`ls $directory/errors | grep '\.log' | wc -l`
-      have_errors=1
+      have_errors="yes"
     fi
 
     # column: duds count
-    have_duds=0
+    have_duds=""
     n_duds=0
     if [ -f $directory/duds ]; then
       n_duds=`cat $directory/duds | wc -l`
-      have_duds=1
+      have_duds="yes"
     fi
 
     # if do not have any files, skip the row
-    if [ ! $have_cvsdone -a \
-         ! $have_latest -a \
-         ! $have_index -a \
-         ! $have_logs -a \
-         ! $have_packages -a \
-         ! $have_errors -a \
-         ! $have_duds ]; then
+    if [ -z "$have_cvsdone" -a \
+         -z "$have_latest" -a \
+         -z "$have_index" -a \
+         -z "$have_logs" -a \
+         -z "$have_packages" -a \
+         -z "$have_errors" -a \
+         -z "$have_duds" ]; then
       return
     fi
 
     # column: not yet built count
     # MCL 20080916 use n_packages, not n_logs; individual logs can be stale.
     # (OTOH, so can packages (see sparc64-5) but this is possibly obsolete)
-    have_not_yet_built=0
+    have_not_yet_built=""
     n_not_yet_built=0
-    if [ $have_index -a \
-         $have_packages -a \
-         $have_errors -a \
-         $have_duds ]; then
+    if [ ! -z "$have_index" -a \
+         ! -z "$have_packages" -a \
+         ! -z "$have_errors" -a \
+         ! -z "$have_duds" ]; then
       if [ $n_index -ne 0 ]; then
         n_not_yet_built=`expr $n_index - $n_packages - $n_errors - $n_duds`
-        have_not_yet_built=1
+        have_not_yet_built="yes"
       # else index currently being rebuilt
       fi
     fi
@@ -198,7 +198,7 @@ write_row () {
     echo "<th align='left' bgcolor='$THCOLOR'>$arch-$build</th>" >> ${TMPFILE}
 
     echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_cvsdone ]; then
+    if [ ! -z "$have_cvsdone" ]; then
       echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/cvsdone'>" >> ${TMPFILE}
       echo "$cvsdone</a>" >> ${TMPFILE}
     else
@@ -208,7 +208,7 @@ write_row () {
 
 # MCL removed 20090808 -- this takes way too long
 #    echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
-#    if [ $have_latest ]; then
+#    if [ ! -z "$have_latest" ]; then
 #      echo "$latest" >> ${TMPFILE}
 #    else
 #      echo "&nbsp;" >> ${TMPFILE}
@@ -217,7 +217,7 @@ write_row () {
 
     # note: ports/INDEX-n is copied to a file called errorlogs/INDEX
     echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_index ]; then
+    if [ ! -z "$have_index" ]; then
       echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/INDEX'>" >> ${TMPFILE}
       echo "$n_index</a>" >> ${TMPFILE}
     else
@@ -226,7 +226,7 @@ write_row () {
     echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_logs ]; then
+    if [ ! -z "$have_logs" ]; then
       echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
       echo "$n_logs</a>" >> ${TMPFILE}
     else
@@ -235,7 +235,7 @@ write_row () {
     echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_packages ]; then
+    if [ ! -z "$have_packages" ]; then
       echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-packages-latest/All'>" >> ${TMPFILE}
       echo "$n_packages</a>" >> ${TMPFILE}
     else
@@ -244,7 +244,7 @@ write_row () {
     echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_errors ]; then
+    if [ ! -z "$have_errors" ]; then
       echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest'>" >> ${TMPFILE}
       echo "$n_errors</a>" >> ${TMPFILE}
     else
@@ -253,7 +253,7 @@ write_row () {
     echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_duds ]; then
+    if [ ! -z "$have_duds" ]; then
       echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/duds.verbose'>" >> ${TMPFILE}
       echo "$n_duds</a>" >> ${TMPFILE}
     else
@@ -262,7 +262,7 @@ write_row () {
     echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ $have_not_yet_built ]; then
+    if [ ! -z "$have_not_yet_built" ]; then
       echo "$n_not_yet_built" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
