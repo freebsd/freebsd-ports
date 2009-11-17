@@ -1,0 +1,32 @@
+--- ./icm_install.orig	2009-07-29 13:12:39.000000000 +0200
++++ ./icm_install	2009-11-15 23:59:54.000000000 +0100
+@@ -19,11 +19,7 @@
+     shift
+ fi
+ 
+-if [ "$2" != "" ] ; then
+     INSTALLDIR=$2
+-else
+-    INSTALLDIR=${ROOT}
+-fi
+ 
+ try()
+ {
+@@ -67,7 +63,7 @@
+         into ${SKELDIR}
+         into ${DOCDIR}
+         into ${DOCDOCDIR}
+-        into etc/icmake
++        into ${CONFDIR}
+     ;;
+ 
+     (progs)
+@@ -91,7 +87,7 @@
+     ;;
+ 
+     (etc)
+-        into etc/icmake
++        into ${CONFDIR}
+     ;;
+ 
+     (docdoc)

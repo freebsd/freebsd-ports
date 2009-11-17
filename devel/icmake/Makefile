@@ -6,44 +6,75 @@
 #
 
 PORTNAME=	icmake
-PORTVERSION=	7.11.1
+PORTVERSION=	7.12.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.rug.nl/contrib/frank/software/linux/icmake/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	.orig.tar.gz
 
 MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	An Intelligent C-like Maker
 
-MANCOMPRESSED=	yes
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		gsed:${PORTSDIR}/textproc/gsed
+
 MAN1=		icmake.1 icmbuild.1 icmstart.1
+MAN7=		icmstart.rc.7
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	icmake.doc icmake.ps README.icmbuild
+PORTDOCS=	*
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"/usr/bin"|"${PREFIX}/bin"| ; \
-		s|"/usr/share/icmake"|"${PREFIX}/share/icmake-${PORTVERSION}"| ; \
-		s|"/usr/share/man/man1"|"${PREFIX}/man/man1"| ; \
-		s|"/usr/lib/icmake"|"${PREFIX}/lib/icmake-${PORTVERSION}"|' \
-		${WRKSRC}/def/destinations
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/icm_bootstrap \
+		${WRKSRC}/icm_install \
+		${WRKSRC}/scripts/convert
+	@${REINPLACE_CMD} -e 's|sed|gsed|g' \
+		${WRKSRC}/scripts/conversions \
+		${WRKSRC}/scripts/convert
+	@${REINPLACE_CMD} -e 's|"usr/bin"|"bin"| ; \
+		s|"usr/share/icmake"|"share/icmake-${PORTVERSION}"| ; \
+		s|"usr/share/man"|"man"| ; \
+		s|"usr/lib/icmake"|"lib/icmake-${PORTVERSION}"| ; \
+		s|"usr/share/doc/icmake"|"share/doc/icmake-${PORTVERSION}"| ; \
+		s|"usr/share/doc/icmake-doc"|"share/doc/icmake-${PORTVERSION}/doc"|' \
+		${WRKSRC}/INSTALL.im
+	@${REINPLACE_CMD} -e '\
+		s|"ar"|"${AR}"| ; \
+		s|"rsv"|"${ARFLAGS}"| ; \
+		s|"gcc"|"${CC}"| ; \
+		s|"-c -Wall -O2|"-c ${CFLAGS}| ; \
+		s|"gzip"|"${GZIP_CMD}"| ; \
+		s|"cp"|"${CP}"| ; \
+		s|"mkdir"|"${MKDIR}"| ; \
+		s|"rm"|"${RM}"| ; \
+		s|"strip"|"${STRIP_CMD}"|' \
+		${WRKSRC}/def/programs
+	@${REINPLACE_CMD} -e '\
+		s|gcc|${CC}| ; \
+		s|-O2 -g -Wall|${CFLAGS}| ; \
+		s|cp -r|cp -R|' \
+		${WRKSRC}/icm_bootstrap \
+		${WRKSRC}/icm_install
 
 do-build:
-	cd ${WRKSRC} && ${SH} ./bootstrap.sh
+	cd ${WRKSRC} && ./icm_bootstrap ${PREFIX}
 
 do-install:
-	cd ${WRKSRC} && \
-		${SH} ./install.sh strip && \
-		./unix skel && \
-		./unix man
+	cd ${WRKSRC} && ./icm_install strip progs
+	cd ${WRKSRC} && ./icm_install scripts
+	cd ${WRKSRC} && ./icm_install skel
+	cd ${WRKSRC} && ./icm_install etc
+.if !defined(NO_INSTALL_MANPAGES)
+	cd ${WRKSRC} && ./icm_install man
+.endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ./icm_install doc
+	cd ${WRKSRC} && ./icm_install docdoc
 .endif
 
 .include <bsd.port.mk>
