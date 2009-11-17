@@ -7,7 +7,7 @@
 
 PORTNAME=	dbd_pg
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-dbi
@@ -19,7 +19,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PostgreSQL driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${PORTSDIR}/databases/ruby-dbi \
-		${RUBY_SITEARCHLIBDIR}/postgres.so:${PORTSDIR}/databases/ruby-postgres
+		${RUBY_SITEARCHLIBDIR}/pg.so:${PORTSDIR}/databases/ruby-pg
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
