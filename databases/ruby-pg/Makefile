@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgres
+PORTNAME=	pg
 PORTVERSION=	0.8.0
 CATEGORIES=	databases ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
