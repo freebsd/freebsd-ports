@@ -8,7 +8,7 @@ PORTNAME=	farbot
 PORTVERSION=	1.0.b2
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dpw.threerings.net/projects/farbot/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	farbot-1.0-beta2
 
 MAINTAINER=	snb@FreeBSD.org
