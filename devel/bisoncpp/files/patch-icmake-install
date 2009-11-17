@@ -1,23 +1,31 @@
---- icmake/install.orig	2007-03-22 21:28:58.000000000 +0100
-+++ icmake/install	2009-03-05 16:50:49.000000000 +0100
-@@ -8,17 +8,15 @@
-     md(where + SKEL);
-     run("cp share/* " + where + SKEL);
+--- icmake/install.orig	2009-07-07 16:12:30.000000000 +0200
++++ icmake/install	2009-11-02 13:23:44.000000000 +0100
+@@ -12,10 +12,6 @@
+         printf("  installing the skeleton files\n");
+         md(where + SKEL);
+         run("cp share/* " + where + SKEL);
+-
+-        printf("  installing the information directly in and under $DOC\n");
+-        md(where + DOC);
+-        run("gzip -9 < changelog > " + where + DOC + "/changelog.gz");
+     }
  
--    if (all)
--    {
-         printf("  installing the manual page bisonc++.1\n");
+     if (what == "man")
+@@ -24,14 +20,14 @@
          md(where + MAN);
          run("gzip -9 < tmp/man/bisonc++.1 > " + 
                                          where + MAN + "/bisonc++.1.gz");
++    }
  
--        printf("  installing the manual page bisonc++man.html\n");
--        md(where + DOC + "/man");
--        run("cp tmp/manhtml/bisonc++man.html " + where + DOC + "/man");
-+    if (all)
++    if (what == "manual")
 +    {
-     
-+        md(where + DOC);
-         printf("  installing the information directly in and under $DOC\n");
-         run("gzip -9 < changelog > " + where + DOC + "/changelog.gz");
-     
+         printf("  installing the manual page bisonc++man.html\n");
+         md(where + DOC + "/man");
+         run("cp tmp/manhtml/bisonc++man.html " + where + DOC + "/man");
+-    }
+ 
+-    if (what == "manual")
+-    {
+         printf("  installing bison's docs\n");
+         md(where + docdoc + "/bison-docs");
+ 

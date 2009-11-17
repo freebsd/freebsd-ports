@@ -4,7 +4,7 @@
      int idx;
      string compiler;
      string file;
-+    string objDir; /* for 8-CURRENT */
++    string objDir;
  
      compiler = COMPILER;
  
