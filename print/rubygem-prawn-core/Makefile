@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prawn-core
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	print rubygems
 MASTER_SITES=	RF/prawn
 
