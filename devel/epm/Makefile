@@ -6,23 +6,15 @@
 #
 
 PORTNAME=	epm
-PORTVERSION=	3.7
-PORTREVISION=	2
+PORTVERSION=	4.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=     maho/openoffice.org
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
-EXTRACT_SUFX=	.tar.bz2
-
-PATCH_DIST_STRIP=       -p2
+MASTER_SITES=	${MASTER_SITE_EASYSW}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+EXTRACT_SUFX=	-source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	A free UNIX software/file packaging program
 
-PATCHFILES+=    epm-3.7.patch
-PATCH_SITES+=   http://installation.openoffice.org/
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262
