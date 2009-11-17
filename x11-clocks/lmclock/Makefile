@@ -9,8 +9,7 @@ PORTNAME=	lmclock
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://pantransit.reptiles.org/prog/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Xerox Lisp machine clock clone
