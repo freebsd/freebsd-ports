@@ -1,0 +1,13 @@
+--- build.orig	2009-07-07 16:12:30.000000000 +0200
++++ build	2009-11-02 14:28:18.000000000 +0100
+@@ -43,7 +43,10 @@
+         manpage();
+ 
+     if (option == "manual")
++    {
++        manhtmlpage();
+         manual();
++    }
+ 
+     if (option == "library")
+         library(1);
