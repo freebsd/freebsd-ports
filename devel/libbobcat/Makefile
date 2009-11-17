@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbobcat
-PORTVERSION=	2.02.02
+PORTVERSION=	2.05.00
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
@@ -17,32 +17,37 @@ COMMENT=	Brokken's Own Base Classes And Templates
 
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		${LOCALBASE}/include/X11/Xlib.h:${PORTSDIR}/x11/libX11 \
-		yodl>=2.0:${PORTSDIR}/textproc/yodl
+		yodl>=2.0:${PORTSDIR}/textproc/yodl \
+		g++45:${PORTSDIR}/lang/gcc45
 
 MANCOMPRESSED=	yes
 MAN1=		bobcatlcgen.1
 MAN3=		a2x.3bobcat align.3bobcat arg.3bobcat argconfig.3bobcat \
-		autoptr.3bobcat binarysearch.3bobcat cgi.3bobcat \
-		clientsocket.3bobcat cmdfinder.3bobcat cmdfinderbase.3bobcat \
-		configfile.3bobcat datetime.3bobcat errno.3bobcat \
-		fnwrap1.3bobcat fnwrap1c.3bobcat fnwrap2.3bobcat \
-		fnwrap2c.3bobcat foreach.3bobcat fork.3bobcat \
-		gethostent.3bobcat glob.3bobcat hash.3bobcat hostent.3bobcat \
-		hostname.3bobcat ifdstream.3bobcat ifdstreambuf.3bobcat \
-		indent.3bobcat inetaddress.3bobcat iostream.3bobcat \
-		iostreambuf.3bobcat irandstream.3bobcat lc.3bobcat level.3bobcat \
-		lm.3bobcat localclientsocket.3bobcat localserversocket.3bobcat \
+		autoptr.3bobcat bigint.3bobcat binarysearch.3bobcat \
+		cgi.3bobcat clientsocket.3bobcat cmdfinder.3bobcat \
+		cmdfinderbase.3bobcat configfile.3bobcat datetime.3bobcat \
+		decryptbuf.3bobcat digestbuf.3bobcat encryptbuf.3bobcat \
+		errno.3bobcat fnwrap1.3bobcat fnwrap1c.3bobcat \
+		fnwrap2.3bobcat fnwrap2c.3bobcat foreach.3bobcat \
+		fork.3bobcat gethostent.3bobcat glob.3bobcat hash.3bobcat \
+		hmacbuf.3bobcat hostent.3bobcat hostname.3bobcat \
+		ifdstream.3bobcat ifdstreambuf.3bobcat indent.3bobcat \
+		inetaddress.3bobcat iostream.3bobcat iostreambuf.3bobcat \
+		irandstream.3bobcat lc.3bobcat level.3bobcat lm.3bobcat \
+		localclientsocket.3bobcat localserversocket.3bobcat \
 		localsocketbase.3bobcat log.3bobcat logbuffer.3bobcat \
 		mailheaders.3bobcat manipulators.3bobcat milter.3bobcat \
-		mlm.3bobcat msg.3bobcat multistreambuf.3bobcat ofdstream.3bobcat \
-		ofdstreambuf.3bobcat ofilterstreambuf.3bobcat ofoldstream.3bobcat \
-		ofoldstreambuf.3bobcat onekey.3bobcat pattern.3bobcat \
-		pipe.3bobcat process.3bobcat randbuffer.3bobcat \
-		redirector.3bobcat refcount.3bobcat repeat.3bobcat \
-		selector.3bobcat serversocket.3bobcat socketbase.3bobcat \
-		stat.3bobcat string.3bobcat syslogbuf.3bobcat \
-		syslogstream.3bobcat table.3bobcat tablesupport.3bobcat \
-		typetrait.3bobcat user.3bobcat x2a.3bobcat xpointer.3bobcat
+		mlm.3bobcat msg.3bobcat multistreambuf.3bobcat \
+		ofdstream.3bobcat ofdstreambuf.3bobcat \
+		ofilterstreambuf.3bobcat ofoldstream.3bobcat \
+		ofoldstreambuf.3bobcat ohexstreambuf.3bobcat onekey.3bobcat \
+		pattern.3bobcat pipe.3bobcat process.3bobcat \
+		randbuffer.3bobcat redirector.3bobcat refcount.3bobcat \
+		repeat.3bobcat selector.3bobcat serversocket.3bobcat \
+		socketbase.3bobcat stat.3bobcat string.3bobcat \
+		syslogbuf.3bobcat syslogstream.3bobcat table.3bobcat \
+		tablesupport.3bobcat typetrait.3bobcat user.3bobcat \
+		x2a.3bobcat xpointer.3bobcat
 MAN7=		bobcat.7
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
@@ -53,19 +58,31 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/bobcat-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BUILD_DEPENDS+=	openssl>=0.9.8:${PORTSDIR}/security/openssl
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/doc/libbobcat2"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/doc/libbobcat2-dev"|"/share/doc/${PORTNAME}-${PORTVERSION}/dev"| ; \
 		s|"/share/man"|"/man"| ; \
 		s|"-d"|"-Pp"| ; \
-		s|#define MANHTML||' \
+		s|#define MANHTML|| ; \
+		s|g++|g++45| ; \
+		s|gcc|gcc45|' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake| ; \
 		s|"-Itmp -Wall -O3"|"-Itmp -I${LOCALBASE}/include -Wall ${CXXFLAGS}"|' \
 		${WRKSRC}/build
 	@${REINPLACE_CMD} -e 's|"cp -r |"cp -R |' \
 		${WRKSRC}/icmake/install
+	@${REINPLACE_CMD} -e 's|-lssl|-lssl -L${LOCALBASE}/lib| ; \
+		s|-lX11|-lX11 -L${LOCALBASE}/lib| ; \
+		s|-lmilter|-lmilter -lpthread|' \
+		${WRKSRC}/icmake/special
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|#define DOCOTHER||' \
 		${WRKSRC}/INSTALL.im
@@ -77,4 +94,4 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ./build install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
