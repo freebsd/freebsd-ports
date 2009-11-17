@@ -625,6 +625,7 @@
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
     SUBDIR += ruby-odbc
+    SUBDIR += ruby-pg
     SUBDIR += ruby-postgres
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-rdbc1
