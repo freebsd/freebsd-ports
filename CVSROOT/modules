@@ -11513,6 +11513,7 @@ p5-Finance-QuoteTW              ports/finance/p5-Finance-QuoteTW
 p5-Finance-TW-EmergingQuote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-Finance-TW-TSEQuote          ports/finance/p5-Finance-TW-TSEQuote
 p5-Finance-YahooQuote           ports/finance/p5-Finance-YahooQuote
+p5-Find-Lib                     ports/devel/p5-Find-Lib
 p5-FindBin-libs                 ports/devel/p5-FindBin-libs
 p5-Flickr-API                   ports/www/p5-Flickr-API
 p5-Flickr-Upload                ports/www/p5-Flickr-Upload
@@ -12298,6 +12299,7 @@ p5-MooseX-Daemonize             ports/devel/p5-MooseX-Daemonize
 p5-MooseX-Declare               ports/devel/p5-MooseX-Declare
 p5-MooseX-Emulate-Class-Accessor-Fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
+p5-MooseX-Has-Sugar             ports/devel/p5-MooseX-Has-Sugar
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
 p5-MooseX-LazyRequire           ports/devel/p5-MooseX-LazyRequire
 p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
@@ -15132,6 +15134,7 @@ p5-finance-quotetw              ports/finance/p5-Finance-QuoteTW
 p5-finance-tw-emergingquote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-finance-tw-tsequote          ports/finance/p5-Finance-TW-TSEQuote
 p5-finance-yahooquote           ports/finance/p5-Finance-YahooQuote
+p5-find-lib                     ports/devel/p5-Find-Lib
 p5-findbin-libs                 ports/devel/p5-FindBin-libs
 p5-flickr-api                   ports/www/p5-Flickr-API
 p5-flickr-upload                ports/www/p5-Flickr-Upload
@@ -15930,6 +15933,7 @@ p5-moosex-daemonize             ports/devel/p5-MooseX-Daemonize
 p5-moosex-declare               ports/devel/p5-MooseX-Declare
 p5-moosex-emulate-class-accessor-fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
+p5-moosex-has-sugar             ports/devel/p5-MooseX-Has-Sugar
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
 p5-moosex-lazyrequire           ports/devel/p5-MooseX-LazyRequire
 p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
