@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samesame
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://samesame.kruijff.org/ \
 		${MASTER_SITE_LOCAL}
@@ -30,8 +30,8 @@ CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --prefix="${PREFIX}" \
 USE_BZIP2=	yes
 
 OPTIONS=	DEBUG "Enables debugging support" Off \
-		DISK_STORAGE "Allows temporarily storage paths on disk" On \
-		LOGIC "Determine results by using logic when posible" On \
+		DISK_STORAGE "Allows temporarily storage on disk" Off \
+		LOW_MEMORY_PROFILE "Low memory profile reduces functionality" Off \
 		TEST "Run quality assurance test" Off
 
 .include <bsd.port.pre.mk>
@@ -44,8 +44,8 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-disk-storage
 .endif
 
-.if defined(WITHOUT_LOGIC)
-CONFIGURE_ARGS+=	--disable-logic
+.if defined(WITH_LOW_MEMORY_PROFILE)
+CONFIGURE_ARGS+=	--enable-low-memory-profile
 .endif
 
 regression-test: build
