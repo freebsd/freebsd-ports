@@ -178,6 +178,7 @@
     SUBDIR += poedit
     SUBDIR += psgml
     SUBDIR += puff
+    SUBDIR += py-room
     SUBDIR += qemacs
     SUBDIR += richtext
     SUBDIR += rospell
