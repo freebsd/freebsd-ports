@@ -99,7 +99,7 @@ MAN1=		vlc.1 \
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} < 701000)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_misc_thread.c
+CONFIGURE_ENV+=	HAS_SYS_MOUNT_H="1"
 .endif
 
 WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
