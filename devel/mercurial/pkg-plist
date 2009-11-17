@@ -119,6 +119,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/record.py
 %%PYTHON_SITELIBDIR%%/hgext/record.pyc
 %%PYTHON_SITELIBDIR%%/hgext/record.pyo
+%%PYTHON_SITELIBDIR%%/hgext/relink.py
+%%PYTHON_SITELIBDIR%%/hgext/relink.pyc
+%%PYTHON_SITELIBDIR%%/hgext/relink.pyo
 %%PYTHON_SITELIBDIR%%/hgext/share.py
 %%PYTHON_SITELIBDIR%%/hgext/share.pyc
 %%PYTHON_SITELIBDIR%%/hgext/share.pyo
@@ -215,6 +218,16 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help.py
 %%PYTHON_SITELIBDIR%%/mercurial/help.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/help.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/help/config.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/dates.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/diffs.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/environment.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/extensions.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/multirevs.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/patterns.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/revisions.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/templates.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/urls.txt
 %%PYTHON_SITELIBDIR%%/mercurial/hg.py
 %%PYTHON_SITELIBDIR%%/mercurial/hg.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/hg.pyo
@@ -264,6 +277,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/i18n/hggettext
 %%PYTHON_SITELIBDIR%%/mercurial/i18n/it.po
 %%PYTHON_SITELIBDIR%%/mercurial/i18n/ja.po
+%%PYTHON_SITELIBDIR%%/mercurial/i18n/sv.po
 %%PYTHON_SITELIBDIR%%/mercurial/i18n/pt_BR.po
 %%PYTHON_SITELIBDIR%%/mercurial/i18n/zh_CN.po
 %%PYTHON_SITELIBDIR%%/mercurial/i18n/zh_TW.po
@@ -279,6 +293,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/locale/fr/LC_MESSAGES/hg.mo
 %%PYTHON_SITELIBDIR%%/mercurial/locale/it/LC_MESSAGES/hg.mo
 %%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES/hg.mo
+%%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES/hg.mo
 %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES/hg.mo
 %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN/LC_MESSAGES/hg.mo
 %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW/LC_MESSAGES/hg.mo
@@ -309,6 +324,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/merge.py
 %%PYTHON_SITELIBDIR%%/mercurial/merge.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/merge.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/minirst.py
+%%PYTHON_SITELIBDIR%%/mercurial/minirst.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/minirst.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/mpatch.so
 %%PYTHON_SITELIBDIR%%/mercurial/node.py
 %%PYTHON_SITELIBDIR%%/mercurial/node.pyc
@@ -354,6 +372,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/subrepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/subrepo.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/subrepo.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/tags.py
+%%PYTHON_SITELIBDIR%%/mercurial/tags.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/tags.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/templatefilters.py
 %%PYTHON_SITELIBDIR%%/mercurial/templatefilters.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/templatefilters.pyo
@@ -507,6 +528,7 @@ bin/hg
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/common.txt
 %%PORTDOCS%%%%DOCSDIR%%/hg.1.gendoc.txt
 %%PORTDOCS%%%%DOCSDIR%%/hg.1.html
 %%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
@@ -517,30 +539,36 @@ bin/hg
 %%PORTDATA%%%%DATADIR%%/contrib/bash_completion
 %%PORTDATA%%%%DATADIR%%/contrib/convert-repo
 %%PORTDATA%%%%DATADIR%%/contrib/dumprevlog
+%%PORTDATA%%%%DATADIR%%/contrib/hg-ssh
+%%PORTDATA%%%%DATADIR%%/contrib/hgdiff
+%%PORTDATA%%%%DATADIR%%/contrib/hgk
+%%PORTDATA%%%%DATADIR%%/contrib/logo-droplets.svg
+%%PORTDATA%%%%DATADIR%%/contrib/mercurial.el
+%%PORTDATA%%%%DATADIR%%/contrib/mergetools.hgrc
+%%PORTDATA%%%%DATADIR%%/contrib/mq.el
+%%PORTDATA%%%%DATADIR%%/contrib/perf.py
+%%PORTDATA%%%%DATADIR%%/contrib/python-hook-examples.py
+%%PORTDATA%%%%DATADIR%%/contrib/rewrite-log
+%%PORTDATA%%%%DATADIR%%/contrib/sample.hgrc
+%%PORTDATA%%%%DATADIR%%/contrib/shrink-revlog.py
+%%PORTDATA%%%%DATADIR%%/contrib/simplemerge
+%%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion
+%%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion_build.sh
+%%PORTDATA%%%%DATADIR%%/contrib/tmplrewrite.py
+%%PORTDATA%%%%DATADIR%%/contrib/undumprevlog
+%%PORTDATA%%%%DATADIR%%/contrib/zsh_completion
 %%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-cat-file
 %%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-diff-tree
 %%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-rev-list
 %%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-rev-tree
 %%PORTDATA%%%%DATADIR%%/contrib/git-viz/hg-viz
-%%PORTDATA%%%%DATADIR%%/contrib/hg-relink
-%%PORTDATA%%%%DATADIR%%/contrib/hg-ssh
-%%PORTDATA%%%%DATADIR%%/contrib/hgdiff
-%%PORTDATA%%%%DATADIR%%/contrib/hgk
 %%PORTDATA%%%%DATADIR%%/contrib/hgsh/Makefile
 %%PORTDATA%%%%DATADIR%%/contrib/hgsh/hgsh.c
-%%PORTDATA%%%%DATADIR%%/contrib/logo-droplets.svg
-%%PORTDATA%%%%DATADIR%%/contrib/mercurial.el
-%%PORTDATA%%%%DATADIR%%/contrib/mq.el
-%%PORTDATA%%%%DATADIR%%/contrib/sample.hgrc
-%%PORTDATA%%%%DATADIR%%/contrib/simplemerge
-%%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion
-%%PORTDATA%%%%DATADIR%%/contrib/undumprevlog
 %%PORTDATA%%%%DATADIR%%/contrib/vim/HGAnnotate.vim
 %%PORTDATA%%%%DATADIR%%/contrib/vim/hg-menu.vim
 %%PORTDATA%%%%DATADIR%%/contrib/vim/hgcommand.vim
 %%PORTDATA%%%%DATADIR%%/contrib/vim/patchreview.txt
 %%PORTDATA%%%%DATADIR%%/contrib/vim/patchreview.vim
-%%PORTDATA%%%%DATADIR%%/contrib/zsh_completion
 %%PORTDATA%%%%DATADIR%%/www/hgweb.cgi
 %%PORTDATA%%%%DATADIR%%/www/hgwebdir.cgi
 %%PORTDATA%%%%DATADIR%%/www/hgwebdir.fcgi
@@ -574,6 +602,8 @@ bin/hg
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/it
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN/LC_MESSAGES
@@ -582,6 +612,7 @@ bin/hg
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/help
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/hgweb
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext/zeroconf
