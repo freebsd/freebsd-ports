@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	noip
-PORTVERSION=	2.1.7
-PORTREVISION=	2
+PORTVERSION=	2.1.9
 CATEGORIES=	dns
-MASTER_SITES=	http://www.no-ip.com/client/linux/
+MASTER_SITES=	http://www.no-ip.com/client/linux/ \
+		CRITICAL
 
-MAINTAINER=	kay.abendroth@raxion.net
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	No-IP.com's dynamic DNS update client
 
 ALL_TARGET=	noip2
