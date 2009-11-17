@@ -440,6 +440,7 @@
     SUBDIR += opal3
     SUBDIR += openam
     SUBDIR += openbgpd
+    SUBDIR += opendpi
     SUBDIR += openh323
     SUBDIR += openldap23-client
     SUBDIR += openldap23-sasl-client
