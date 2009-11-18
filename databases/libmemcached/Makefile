@@ -73,6 +73,8 @@ MAN3=		libmemcached.3 \
 		memcached_lib_version.3 \
 		memcached_mget.3 \
 		memcached_mget_by_key.3 \
+		memcached_mget_execute.3 \
+		memcached_mget_execute_by_key.3 \
 		memcached_pool_behavior_get.3 \
 		memcached_pool_behavior_set.3 \
 		memcached_pool_create.3 \
