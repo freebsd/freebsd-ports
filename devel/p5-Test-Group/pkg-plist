@@ -1,2 +1,4 @@
 %%SITE_PERL%%/Test/Group.pm
+%%SITE_PERL%%/Test/Group/Extending.pod
+@dirrmtry %%SITE_PERL%%/Test/Group
 @dirrmtry %%SITE_PERL%%/Test
