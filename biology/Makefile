@@ -81,6 +81,7 @@
     SUBDIR += psi88
     SUBDIR += py-biopython
     SUBDIR += pycogent
+    SUBDIR += pyfasta
     SUBDIR += pymol
     SUBDIR += rasmol
     SUBDIR += recombine
