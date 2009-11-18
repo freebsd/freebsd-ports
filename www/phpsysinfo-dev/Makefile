@@ -6,13 +6,14 @@
 
 PORTNAME=	phpSysInfo
 DISTVERSION=	3.0-RC9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/3.0-RC9
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	A PHP script for displaying system information
 
-USE_PHP=	pcre xml simplexml
+USE_PHP=	pcre xml simplexml mbstring
 WANT_PHP_WEB=	yes
 
 CONFLICTS=	phpsysinfo-2.[0-9]*
