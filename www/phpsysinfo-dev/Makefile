@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	phpSysInfo
-DISTVERSION=	3.0-RC6
-PORTREVISION=	1
+DISTVERSION=	3.0-RC9
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/3.0-RC6
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/3.0-RC9
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	A PHP script for displaying system information
@@ -21,6 +20,7 @@ CONFLICTS=	phpsysinfo-2.[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
 NO_BUILD=	yes
 
+SUB_FILES=	pkg-message
 LATEST_LINK=	phpsysinfo
 
 .include <bsd.port.pre.mk>
@@ -38,4 +38,7 @@ do-install:
 	${FIND} ${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 	${CP} ${WWWDIR}/config.php.new ${WWWDIR}/config.php
 
+.if !defined(BATCH)
+	@ ${CAT} ${PKGMESSAGE}
+.endif
 .include <bsd.port.post.mk>
