@@ -32,6 +32,8 @@ CONFIGURE_ARGS+=	--disable-gtk --disable-gtk2
 
 PLIST_SUB=	DCL_VERSION=${PORTVERSION:S/.//g}
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

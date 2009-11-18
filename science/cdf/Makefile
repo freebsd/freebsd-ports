@@ -21,6 +21,7 @@ COMMENT=	Device independent view of the CDF data model
 MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu      \
 		FORTRAN=yes FC_freebsd=${F77}
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 VER=		${PORTVERSION:S/.//:S/./_/}
 

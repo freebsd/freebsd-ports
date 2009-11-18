@@ -18,6 +18,7 @@ LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 pkgconfig
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		libopenvas-config.1
 

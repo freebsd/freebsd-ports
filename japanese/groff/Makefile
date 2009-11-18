@@ -34,6 +34,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 CONFIGURE_ARGS=	--enable-multibyte
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"

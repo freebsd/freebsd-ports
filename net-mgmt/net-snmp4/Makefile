@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC -Dfreebsd5
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--with-mib-modules="host ucd-snmp/diskio" \

@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		dlsdump.1 gigdump.1 gigextract.1 rifftree.1
 

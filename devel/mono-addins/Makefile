@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	GTK2 "Enable GTK support" on
 

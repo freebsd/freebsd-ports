@@ -21,6 +21,8 @@ BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 USE_XORG=	x11 xext
 MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
 
+MAKE_JOBS_UNSAFE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 pre-patch:

@@ -25,6 +25,7 @@ USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} --with-libevent=${LOCALBASE} \
 		--enable-shared --enable-static --with-zlib

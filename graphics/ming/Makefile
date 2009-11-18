@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming \
 		ac_cv_path_PYTHON=no
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS=	-I. -I.. -I${LOCALBASE}/include
 LDFLAGS=	-L. -L.. -L${LOCALBASE}/lib

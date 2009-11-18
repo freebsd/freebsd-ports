@@ -19,6 +19,8 @@ PLIST_FILES=	bin/bdelta \
 		bin/bpatch \
 		lib/libbdelta.so
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bdelta ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bpatch ${PREFIX}/bin

@@ -21,6 +21,7 @@ USE_OCAML=	yes
 USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
 USE_TK=		84+
+MAKE_JOBS_UNSAFE=	yes
 
 MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]

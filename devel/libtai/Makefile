@@ -19,6 +19,7 @@ COMMENT=	A library for storing and manipulating dates and times in second/attose
 ALL_TARGET=	it
 USE_LDCONFIG=	yes
 MAKE_ENV=	LIBVERSION="${LIBVERSION}"
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	LIBVERSION=${LIBVERSION} \
 		LIBFILE=${LIBFILE}

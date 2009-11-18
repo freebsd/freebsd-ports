@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-db-lib=${BDB_LIB_DIR} \
 		--with-db-bin=${LOCALBASE}/bin \
 		--enable-shared
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

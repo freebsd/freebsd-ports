@@ -27,6 +27,7 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=	--enable-threads=posix
 
