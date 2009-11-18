@@ -1640,6 +1640,7 @@ clojure                         ports/lang/clojure
 clojure-mode.el                 ports/lang/clojure-mode.el
 clonehdd                        ports/sysutils/clonehdd
 cloop-utils                     ports/sysutils/cloop-utils
+closure-compiler                ports/www/closure-compiler
 clp                             ports/math/clp
 clpbar                          ports/misc/clpbar
 clucene                         ports/textproc/clucene
@@ -10013,6 +10014,7 @@ opendchub                       ports/net-p2p/opendchub
 opendd                          ports/dns/opendd
 opendis                         ports/graphics/opendis
 opendkim                        ports/mail/opendkim
+opendpi                         ports/net/opendpi
 opendx                          ports/graphics/opendx
 opendylan                       ports/lang/opendylan
 openerp-server                  ports/finance/openerp-server
@@ -19800,6 +19802,7 @@ py-reverse                      ports/devel/py-reverse
 py-rijndael                     ports/security/py-rijndael
 py-rlcompleter2                 ports/devel/py-rlcompleter2
 py-ro                           ports/devel/py-ro
+py-room                         ports/editors/py-room
 py-routes                       ports/www/py-routes
 py-roxlib                       ports/devel/py-roxlib
 py-rpyc                         ports/devel/py-RPyC
@@ -20824,7 +20827,6 @@ ruby-crypt                      ports/security/ruby-crypt
 ruby-csv                        ports/textproc/ruby-csv
 ruby-cvs                        ports/devel/ruby-cvs
 ruby-date2                      ports/devel/ruby-date2
-ruby-dbd-sqlite3                ports/databases/ruby-dbd-sqlite3
 ruby-dbd_mysql                  ports/databases/ruby-dbd_mysql
 ruby-dbd_odbc                   ports/databases/ruby-dbd_odbc
 ruby-dbd_pg                     ports/databases/ruby-dbd_pg
@@ -20966,6 +20968,7 @@ ruby-password                   ports/security/ruby-password
 ruby-pcap                       ports/net/ruby-pcap
 ruby-pdflib                     ports/print/ruby-pdflib
 ruby-perl                       ports/lang/ruby-perl
+ruby-pg                         ports/databases/ruby-pg
 ruby-pgplot                     ports/graphics/ruby-pgplot
 ruby-poll                       ports/devel/ruby-poll
 ruby-postgres                   ports/databases/ruby-postgres
@@ -21292,6 +21295,7 @@ safecat                         ports/sysutils/safecat
 saferpay                        ports/security/saferpay
 safesh                          ports/security/safesh
 safestr                         ports/devel/safestr
+saga                            ports/math/saga
 sagasu                          ports/textproc/sagasu
 sage                            ports/graphics/sage
 saint                           ports/security/saint
