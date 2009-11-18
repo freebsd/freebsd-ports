@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	fasta
-PORTVERSION=	21.u1.d1
+PORTVERSION=	21.1.1
 CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta2/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/fasta/fasta2/
-DISTNAME=	fasta${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	ports@FreeBSD.org
