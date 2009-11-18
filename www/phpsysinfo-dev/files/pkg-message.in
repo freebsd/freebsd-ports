@@ -1,0 +1,16 @@
+*****************************************************************
+You will also need to configure Apache.  Consider adding the following
+to your httpd.conf:
+
+     Alias /phpSysInfo "%%WWWDIR%%"
+
+    <Directory "%%WWWDIR%%">
+        AllowOverride all
+	Allow from all
+    </Directory>
+
+Then restart Apache: 'apachectl graceful'
+
+Please visit 'http://localhost/phpSysInfo/' in a
+web-browser and follow the configuration instructions.
+*****************************************************************
