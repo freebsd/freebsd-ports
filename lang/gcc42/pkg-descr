@@ -1,6 +1,6 @@
-GCC, the GNU Compiler Collection includes C, C++, and Java.
-
-This port installs the various front ends as gcc42, g++42, gcj42, and
-so forth into the ${PREFIX}/bin directory.
+GCC, the GNU Compiler Collection, supports a number of languages.  This
+port installs the C and C++ front ends as gcc42 and g++42, respectively.
 
 WWW: http://gcc.gnu.org/
+
+Gerald Pfeifer <gerald@FreeBSD.org>
