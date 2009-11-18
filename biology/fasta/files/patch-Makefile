@@ -1,16 +1,16 @@
---- Makefile.orig	Sun May  7 22:29:14 2006
-+++ Makefile	Sun May  7 22:30:52 2006
+--- Makefile.orig	2009-11-17 21:32:40.000000000 +0800
++++ Makefile	2009-11-17 21:33:55.000000000 +0800
 @@ -2,14 +2,14 @@
  # for SGI also use: -signed
  #
  
--CC= cc -O
-+#CC= cc -O
- #CC=cc -g
- #CC=insure -g
+-CC= cc -O -g
++#CC= cc -O -g
+ #CC=cc -g -ansi -Wall
+ #CC= /usr/local/parasoft/bin.linux2/insure -g -DDEBUG
  
--CFLAGS= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
-+CFLAGS+= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
+-CFLAGS= -DUNIX -DPGM_DOC -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
++CFLAGS+= -DUNIX -DPGM_DOC -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
  LFLAGS= -lm -o
  
 -BIN = /seqprg/bin
@@ -18,12 +18,12 @@
  #NRAND= nrand
  #IBM RS/6000
  #NRAND= nrand48
-@@ -29,7 +29,7 @@
- all : $(PROGS)
+@@ -33,7 +33,7 @@
+ all : $(WPROGS)
  
  install : 
--	cp $(PROGS) $(BIN)
-+	$(BSD_INSTALL_PROGRAM) $(PROGS) $(BIN)
+-	cp $(WPROGS) $(BIN)
++	$(BSD_INSTALL_PROGRAM) $(WPROGS) $(BIN)
  
  clean-up : 
  	rm *.o $(PROGS)
