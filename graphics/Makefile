@@ -379,6 +379,7 @@
     SUBDIR += kipi-plugins-kde4
     SUBDIR += kisomandel
     SUBDIR += kix-kmod
+    SUBDIR += klatexformula
     SUBDIR += kludge3d
     SUBDIR += kooka
     SUBDIR += kphotoalbum
