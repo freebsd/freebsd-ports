@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Alien-wxWidgets
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,9 +31,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Plu
 .if defined(WITH_UNICODE)
 WX_UNICODE=	yes
 WX_UNI=		uni_
-CONFIGURE_ARGS+=	--build_wx=0 --unicode=1
+CONFIGURE_ARGS+=	--wxWidgets-build=0 --wxWidgets-unicode=1
 .else
-CONFIGURE_ARGS+=	--build_wx=0 --unicode=0
+CONFIGURE_ARGS+=	--wxWidgets-build=0 --wxWidgets-unicode=0
 .endif
 
 WX_UVER=	${WX_CONFIG:T} --version | ${TR} '.' '_'
