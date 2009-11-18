@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--disable-mdnsresponder
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"

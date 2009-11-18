@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/Position/PROJ.4
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		geod.1 nad2nad.1 proj.1
 MAN3=		pj_init.3

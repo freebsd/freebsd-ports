@@ -31,6 +31,8 @@ LUA_BIN=	lua luac
 LUA_LIB=	lua lualib
 LUA_MAN=	${LUA_BIN:S/$/.1/}
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

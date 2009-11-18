@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_GMAKE=	yes
 MAKE_ENV=	MONO_PATH=${WRKSRC}/lib
 INSTALL_TARGET=	install prefix=${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

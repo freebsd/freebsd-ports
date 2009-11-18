@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 ltverhack
 USE_PYTHON_BUILD=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(^pkgconfigdir =\).*|\1 ${PREFIX}/libdata/pkgconfig|' \

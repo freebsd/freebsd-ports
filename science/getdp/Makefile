@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gsl-prefix=${LOCALBASE}	\
 		--with-blas-lapack-prefix=${LOCALBASE}
 WANT_PERL=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

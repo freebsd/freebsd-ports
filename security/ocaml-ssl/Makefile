@@ -18,6 +18,7 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+MAKE_JOBS_UNSAFE=	yes
 
 USE_OPENSSL=		yes
 USE_OCAML=		yes

@@ -24,6 +24,8 @@ OPTIONS=	SSL "Compile with SSL support" on \
 		IPV6 "Support IPv6" on \
 		MBX_DEFAULT "Use MBX as default mailbox format" off
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 USE_LDCONFIG=	yes

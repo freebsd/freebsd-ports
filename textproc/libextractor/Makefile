@@ -25,6 +25,7 @@ USE_LDCONFIG=	${PREFIX}/lib/libextractor
 CONFIGURE_ARGS=	--disable-ltdl-install --enable-exiv2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude libltdl
 
