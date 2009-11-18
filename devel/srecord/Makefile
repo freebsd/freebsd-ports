@@ -7,14 +7,19 @@
 #
 
 PORTNAME=	srecord
-PORTVERSION=	1.39
+PORTVERSION=	1.50
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	abwang@gmail.com
 COMMENT=	A collection of powerful tools for manipulating EPROM load files
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/srec_cat \
 		bin/srec_cmp \
