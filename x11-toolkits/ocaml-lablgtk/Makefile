@@ -25,6 +25,7 @@ CONFIGURE_ENV=	USE_DOTOPT=1 GTK_CONFIG=${GTK_CONFIG} \
 		LIBDIR=${LOCALBASE}/lib/ocaml BINDIR=${PREFIX}/bin \
 		INSTALLDIR=${PREFIX}/lib/ocaml/${PORTNAME} \
 		DLLDIR=${PREFIX}/lib/ocaml/stublibs
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	GL	"Enable OpenGL support" on \
 		GNOME	"Enable GNOME support" off \
