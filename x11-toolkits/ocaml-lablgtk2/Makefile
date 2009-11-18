@@ -35,6 +35,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/lib/ocaml
 
