@@ -1,0 +1,23 @@
+Time::Format provides a very easy way to format dates and times.  The
+formatting functions are tied to hash variables, so they can be used
+inside strings as well as in ordinary expressions.  The formatting
+codes used are meant to be easy to remember, use, and read.  They
+follow a simple, consistent pattern.  If I've done my job right, once
+you learn the codes, you should never have to refer to the
+documentation again.
+A quick-reference page is included, just in case.  ;-)
+
+Time::Format can also format DateTime objects, and strings created
+with Date::Manip.
+
+Also provided is a tied-hash interface to POSIX::strftime and
+Date::Manip::UnixDate.
+
+If the I18N::Langinfo module is available, Time::Format provides
+weekday and month names in a language appropriate for your locale.
+
+A companion module, Time::Format_XS, is also available; if it is
+installed, Time::Format will detect and use it, which will result in a
+significant speed improvement.
+
+WWW: http://search.cpan.org/dist/Time-Format/
