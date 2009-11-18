@@ -12,8 +12,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/cs/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/cs/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/cs/hdbk-op.html
-%%DATADIR%%/docs/handbook/cs/hdbk-reference-hotkeys.html
-%%DATADIR%%/docs/handbook/cs/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/cs/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/cs/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/cs/hdbk-reference.html
 %%DATADIR%%/docs/handbook/cs/hdbk-startsequence.html
@@ -48,6 +47,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/cs/ss_mainterms.png
 %%DATADIR%%/docs/handbook/cs/ss_searchanal.png
 %%DATADIR%%/docs/handbook/cs/ss_searchopts.png
+%%DATADIR%%/docs/handbook/cs/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/de/hdbk-config.html
 %%DATADIR%%/docs/handbook/de/hdbk-intro.html
 %%DATADIR%%/docs/handbook/de/hdbk-op-bookshelfmanager.html
@@ -55,8 +55,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/de/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/de/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/de/hdbk-op.html
-%%DATADIR%%/docs/handbook/de/hdbk-reference-hotkeys.html
-%%DATADIR%%/docs/handbook/de/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/de/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/de/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/de/hdbk-reference.html
 %%DATADIR%%/docs/handbook/de/hdbk-startsequence.html
@@ -91,6 +90,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/de/ss_mainterms.png
 %%DATADIR%%/docs/handbook/de/ss_searchanal.png
 %%DATADIR%%/docs/handbook/de/ss_searchopts.png
+%%DATADIR%%/docs/handbook/de/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/en/hdbk-config.html
 %%DATADIR%%/docs/handbook/en/hdbk-intro.html
 %%DATADIR%%/docs/handbook/en/hdbk-op-bookshelfmanager.html
@@ -98,8 +98,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/en/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/en/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/en/hdbk-op.html
-%%DATADIR%%/docs/handbook/en/hdbk-reference-hotkeys.html
-%%DATADIR%%/docs/handbook/en/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/en/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/en/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/en/hdbk-reference.html
 %%DATADIR%%/docs/handbook/en/hdbk-startsequence.html
@@ -134,6 +133,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/en/ss_mainterms.png
 %%DATADIR%%/docs/handbook/en/ss_searchanal.png
 %%DATADIR%%/docs/handbook/en/ss_searchopts.png
+%%DATADIR%%/docs/handbook/en/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/fi/hdbk-config.html
 %%DATADIR%%/docs/handbook/fi/hdbk-intro.html
 %%DATADIR%%/docs/handbook/fi/hdbk-op-bookshelfmanager.html
@@ -141,8 +141,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fi/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/fi/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/fi/hdbk-op.html
-%%DATADIR%%/docs/handbook/fi/hdbk-reference-hotkeys.html
-%%DATADIR%%/docs/handbook/fi/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/fi/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/fi/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/fi/hdbk-reference.html
 %%DATADIR%%/docs/handbook/fi/hdbk-startsequence.html
@@ -177,6 +176,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fi/ss_mainterms.png
 %%DATADIR%%/docs/handbook/fi/ss_searchanal.png
 %%DATADIR%%/docs/handbook/fi/ss_searchopts.png
+%%DATADIR%%/docs/handbook/fi/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/fr/hdbk-config.html
 %%DATADIR%%/docs/handbook/fr/hdbk-intro.html
 %%DATADIR%%/docs/handbook/fr/hdbk-op-bookshelfmanager.html
@@ -184,8 +184,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fr/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/fr/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/fr/hdbk-op.html
-%%DATADIR%%/docs/handbook/fr/hdbk-reference-hotkeys.html
-%%DATADIR%%/docs/handbook/fr/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/fr/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/fr/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/fr/hdbk-reference.html
 %%DATADIR%%/docs/handbook/fr/hdbk-startsequence.html
@@ -220,6 +219,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fr/ss_mainterms.png
 %%DATADIR%%/docs/handbook/fr/ss_searchanal.png
 %%DATADIR%%/docs/handbook/fr/ss_searchopts.png
+%%DATADIR%%/docs/handbook/fr/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/hu/hdbk-config.html
 %%DATADIR%%/docs/handbook/hu/hdbk-intro.html
 %%DATADIR%%/docs/handbook/hu/hdbk-op-bookshelfmanager.html
@@ -227,8 +227,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/hu/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/hu/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/hu/hdbk-op.html
-%%DATADIR%%/docs/handbook/hu/hdbk-reference-hotkeys.html
-%%DATADIR%%/docs/handbook/hu/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/hu/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/hu/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/hu/hdbk-reference.html
 %%DATADIR%%/docs/handbook/hu/hdbk-startsequence.html
@@ -263,6 +262,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/hu/ss_mainterms.png
 %%DATADIR%%/docs/handbook/hu/ss_searchanal.png
 %%DATADIR%%/docs/handbook/hu/ss_searchopts.png
+%%DATADIR%%/docs/handbook/hu/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/nl/hdbk-config.html
 %%DATADIR%%/docs/handbook/nl/hdbk-intro.html
 %%DATADIR%%/docs/handbook/nl/hdbk-op-bookshelfmanager.html
@@ -270,8 +270,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/nl/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/nl/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/nl/hdbk-op.html
-%%DATADIR%%/docs/handbook/nl/hdbk-reference-hotkeys.html
-%%DATADIR%%/docs/handbook/nl/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/nl/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/nl/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/nl/hdbk-reference.html
 %%DATADIR%%/docs/handbook/nl/hdbk-startsequence.html
@@ -306,6 +305,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/nl/ss_mainterms.png
 %%DATADIR%%/docs/handbook/nl/ss_searchanal.png
 %%DATADIR%%/docs/handbook/nl/ss_searchopts.png
+%%DATADIR%%/docs/handbook/nl/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/pt-br/hdbk-config.html
 %%DATADIR%%/docs/handbook/pt-br/hdbk-intro.html
 %%DATADIR%%/docs/handbook/pt-br/hdbk-op-bookshelfmanager.html
@@ -313,7 +313,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/pt-br/hdbk-op-parts.html
 %%DATADIR%%/docs/handbook/pt-br/hdbk-op-search.html
 %%DATADIR%%/docs/handbook/pt-br/hdbk-op.html
-%%DATADIR%%/docs/handbook/pt-br/hdbk-reference-hotkeys.html
+%%DATADIR%%/docs/handbook/pt-br/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/pt-br/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/pt-br/hdbk-reference.html
 %%DATADIR%%/docs/handbook/pt-br/hdbk-startsequence.html
@@ -348,6 +348,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/pt-br/ss_mainterms.png
 %%DATADIR%%/docs/handbook/pt-br/ss_searchanal.png
 %%DATADIR%%/docs/handbook/pt-br/ss_searchopts.png
+%%DATADIR%%/docs/handbook/pt-br/ss_shortcuts.png
 %%DATADIR%%/docs/howto/bg/h2-basics-approaches.html
 %%DATADIR%%/docs/howto/bg/h2-basics-expository.html
 %%DATADIR%%/docs/howto/bg/h2-basics-interpretation.html
@@ -732,13 +733,13 @@ share/applications/bibletime.desktop
 %%DATADIR%%/locale/bibletime_ui_ru.qm
 %%DATADIR%%/locale/bibletime_ui_sk.qm
 %%DATADIR%%/locale/bibletime_ui_sv.qm
-%%DATADIR%%/locale/bibletime_ui_ua.qm
+%%DATADIR%%/locale/bibletime_ui_uk.qm
 %%DATADIR%%/locale/bibletime_ui_vi.qm
 %%DATADIR%%/locale/bibletime_ui_zh_CN.qm
 %%DATADIR%%/locale/bibletime_ui_zh_TW.qm
 %%DATADIR%%/pics/startuplogo.png
 share/icons/bibletime.svg
-@dirrm share/icons
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/pics
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/license
@@ -771,4 +772,4 @@ share/icons/bibletime.svg
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/display-templates
 @dirrm %%DATADIR%%
-@dirrm share/applications
+@dirrmtry share/applications
