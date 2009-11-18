@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091118:
+  AFFECTS: users of java/jboss5
+  AUTHOR: Jonathan Chen <jonc@chen.org.nz>
+
+  The JBoss directory structure has been reorganised to more
+  closely follow hier(7) guidelines; in particular moving transient
+  and deployment files to /var/jboss5, and allowing /usr to be
+  read-only.
+
 20091118
   AFFECTS: users of www/redmine
   AUTHOR: Bernhard Froehlich <decke@bluelife.at>
