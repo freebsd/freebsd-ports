@@ -1,0 +1,14 @@
+bin/klatexformula
+bin/klatexformula_cmdl
+include/klfbackend.h
+include/klfblockprocess.h
+lib/libklfbackend.a
+share/applications/klatexformula.desktop
+share/icons/hicolor/128x128/apps/klatexformula.png
+share/icons/hicolor/16x16/apps/klatexformula.png
+share/icons/hicolor/32x32/apps/klatexformula.png
+share/icons/hicolor/64x64/apps/klatexformula.png
+share/klatexformula/rccresources/klfbaseplugins.rcc
+@dirrm share/klatexformula/rccresources
+@dirrm share/klatexformula
+@dirrmtry share/applications
