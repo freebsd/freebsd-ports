@@ -1,5 +1,5 @@
---- eiskaltdc/dcinotify.cpp.orig	2009-09-01 09:45:17.000000000 +0700
-+++ eiskaltdc/dcinotify.cpp	2009-09-01 09:46:21.000000000 +0700
+--- ./eiskaltdc/dcinotify.cpp.orig	2009-09-01 09:45:17.000000000 +0700
++++ ./eiskaltdc/dcinotify.cpp	2009-09-01 09:46:21.000000000 +0700
 @@ -2,7 +2,201 @@
  
  #include "dcinotify.h"
