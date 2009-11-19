@@ -179,7 +179,6 @@
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-room
-    SUBDIR += qemacs
     SUBDIR += richtext
     SUBDIR += rospell
     SUBDIR += rox-edit

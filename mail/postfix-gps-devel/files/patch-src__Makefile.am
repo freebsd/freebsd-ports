@@ -1,9 +1,0 @@
---- src/Makefile.am.orig	Sun Nov 21 01:41:36 2004
-+++ src/Makefile.am	Sun Jan  9 16:45:10 2005
-@@ -9,5 +9,5 @@
- noinst_HEADERS = configreader.h db.h read.h triplet.h defs.h strtrim.h cfg.h \
- 		wlmodule.h wldb.h tmplwlmod.h dbdefs.h doxygen.h wlcacheddb.h dbiquote.h \
- 		regexcpp.h pmatcher.h action.h
--gps_LDADD = -lpthread -ldbi -ldl
-+gps_LDADD = -ldbi ${PTHREAD_LIBS}
- METASOURCES = AUTO
