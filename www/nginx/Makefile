@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.63
+PORTVERSION=	0.7.64
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -351,6 +351,10 @@ post-patch:
 .if defined(WITH_HTTP_NOTICE_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
+.endif
+.if defined(WITH_HTTP_REDIS_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_redis_module.c
 .endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!g++!${CXX}!' \
