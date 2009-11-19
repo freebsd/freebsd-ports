@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 MAKEFILE=	Makefile.gdc.posix
 
 MAKE_ENV=	NATIVECXX="${CXX}"
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 

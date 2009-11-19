@@ -22,5 +22,6 @@ USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 ALL_TARGET=	Xaw3d all
 MAN1=		axe.1 axinfo.1
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

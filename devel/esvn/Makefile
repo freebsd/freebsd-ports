@@ -31,6 +31,7 @@ CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 CONFIGURE_ARGS=	--qtdir=${QT_PREFIX}
 MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

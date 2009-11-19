@@ -23,6 +23,7 @@ DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
 PATCH_WRKSRC=	${WRKDIR}/dgd
 ALL_TARGET=	install
+MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

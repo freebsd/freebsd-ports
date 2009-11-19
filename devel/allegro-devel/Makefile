@@ -33,6 +33,7 @@ OPTIONS=	AL "Enable OpenAL support" off \
 
 MAKEFILE=	makefile
 ALL_TARGET=	full-build
+MAKE_JOBS_UNSAFE=	yes
 
 .include "Makefile.man"
 

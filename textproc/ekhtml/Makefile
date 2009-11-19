@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	include/ekhtml.h lib/libekhtml.a \
 		lib/libekhtml.la lib/libekhtml.so \

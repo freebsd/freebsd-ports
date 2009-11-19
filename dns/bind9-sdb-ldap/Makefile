@@ -29,6 +29,7 @@ ISCVERSION=	9.4.3-P1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		REPLACE_BASE "Replace base BIND with this version" off \

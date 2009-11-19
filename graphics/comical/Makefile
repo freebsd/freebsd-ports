@@ -21,6 +21,7 @@ USE_WX=		2.6+
 WX_PREMK=	yes
 WX_UNICODE=	yes
 PLIST_FILES=	bin/comical
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

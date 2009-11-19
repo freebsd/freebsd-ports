@@ -27,6 +27,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
 		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	SSL "Use SSL" off
 

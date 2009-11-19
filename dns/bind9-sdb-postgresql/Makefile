@@ -26,6 +26,7 @@ ISCVERSION=	9.4.3-P3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
 		--with-randomdev=/dev/random
+MAKE_JOBS_UNSAFE=	yes
 
 USE_OPENSSL=	yes
 USE_PGSQL=	yes

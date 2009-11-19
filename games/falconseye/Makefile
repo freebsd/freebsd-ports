@@ -26,6 +26,7 @@ USE_ZIP=	yes
 USE_XORG=	x11 xpm xaw
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11
 WRKSRC=		${WRKDIR}
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${PERL} -pi -e "s@<malloc.h>@<stdlib.h>@g" \

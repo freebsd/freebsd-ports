@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 PORTDOCS=	README INSTALL
 MAN8=		fistgen.8
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	TEMPLATES	"Install FiST templates" on \
 		EXAMPLES	"Install sample filesystems" on

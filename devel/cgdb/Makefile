@@ -17,6 +17,7 @@ INFO=		cgdb
 MAN1=		cgdb.1
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

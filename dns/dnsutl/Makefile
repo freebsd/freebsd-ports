@@ -15,6 +15,7 @@ COMMENT=	Programs to make using DNS easier
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all sure
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		dns-boot-check.1 dns-bootp.1 dns-bootparams.1 \
 		dns-conf-check.1 dns-dhcp.1 dns-ethers-import.1 \

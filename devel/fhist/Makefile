@@ -17,6 +17,7 @@ USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	binaries po
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		fcomp.1 fhist.1 fmerge.1
 PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge

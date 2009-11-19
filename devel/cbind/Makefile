@@ -16,6 +16,7 @@ MAINTAINER=	david@realityrift.com
 COMMENT=	Translator for "thin" Ada bindings to C
 
 USE_ZIP=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		cbind.1
 

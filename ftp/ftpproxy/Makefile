@@ -17,6 +17,7 @@ MAINTAINER=	philippe@le-berre.com
 COMMENT=	A ftp proxy
 
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ftp.proxy.1
 MANCOMPRESSED=	no

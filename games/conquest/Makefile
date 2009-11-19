@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \
 		--localstatedir=/var/games
 BINGRP=		conquest
 SHAREGRP=	conquest
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} "s|^.*@chgrp .(CONQGROUP) conq.*||g; \

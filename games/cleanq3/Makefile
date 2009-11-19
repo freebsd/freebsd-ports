@@ -20,6 +20,7 @@ USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/CleanQ3
 BUILD_WRKSRC=	${WRKSRC}/code/unix
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \

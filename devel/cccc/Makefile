@@ -19,6 +19,7 @@ BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts \
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	readme.txt changes.txt
 PLIST_FILES=	bin/cccc

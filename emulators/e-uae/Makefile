@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_SDL=	sdl
 CONFIGURE_ARGS=	--with-sdl --with-sdl-gfx
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/uae bin/readdisk
 PORTDOCS=	ChangeLog README bsdsocket.txt cmd-line.txt \

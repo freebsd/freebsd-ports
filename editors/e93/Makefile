@@ -22,6 +22,7 @@ USE_TK=		84
 USE_TK_BUILD=	84
 USE_XORG=	x11 xt
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|wish|wish${TK_VER}|' ${WRKSRC}/e93r

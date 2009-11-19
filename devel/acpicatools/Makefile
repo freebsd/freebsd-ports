@@ -20,6 +20,8 @@ NO_WRKSUBDIR=	yes
 
 MAN8=		acpidump.8
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 post-patch:
