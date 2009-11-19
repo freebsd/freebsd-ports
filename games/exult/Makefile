@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	expack.1 ipack.1 shp2pcx.1 splitshp.1 textpack.1
 MAN6=	exult.6

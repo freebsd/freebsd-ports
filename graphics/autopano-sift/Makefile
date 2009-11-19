@@ -26,6 +26,8 @@ SUB_FILES=	autopano
 USE_GMAKE=	yes
 USE_GNOME=	gtksharp10
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN1=		autopano-complete.1 \
 		autopano-complete.old.1 \
 		autopano.1 \

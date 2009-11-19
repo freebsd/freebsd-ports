@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 NOPRECIOUSSOFTMAKEVARS=	yes # to many _MLINKS
 PORTDOCS=	COPYING EXPANDING INSTALL NOTES README TODO
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

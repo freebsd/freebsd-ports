@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
 MAKEFILE=	${WRKSRC}/make/gcc.mak
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 

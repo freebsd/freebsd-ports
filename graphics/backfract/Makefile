@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 NO_INSTALL_MANPAGE=	yes
 ALL_TARGET= 	# none
+MAKE_JOBS_UNSAFE=	yes
 
 pre-configure:
 	${PERL} -pi -e "s@-O3@${CFLAGS}@g" ${WRKSRC}/configure

@@ -37,6 +37,7 @@ ALL_TARGET=	build compile-bee
 INSTALL_TARGET=	install-progs install-bee
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/bigloo/${PORTVERSION:R}
 PLIST_SUB=	BIGLOO_VERSION="${PORTVERSION:R}"
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		bigloo.1
 INFO=		bigloo

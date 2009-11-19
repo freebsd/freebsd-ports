@@ -20,6 +20,7 @@ COMMENT=	An english <-> german dictionary under the GPL
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 USE_XORG=	xt
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(WITHOUT_XSTEAK)
 USE_XORG=	x11

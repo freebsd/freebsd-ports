@@ -24,6 +24,7 @@ DIRSECTION=	"The Emacs editor and associated tools"
 INFOENTRY=	"* BBDB: (bbdb).             The Insidious Big Brother Database."
 PLIST_SUB+=	BBDB_LISPDIR=${BBDB_LISPDIR} \
 		DIRSECTION=${DIRSECTION} INFOENTRY=${INFOENTRY}
+MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}

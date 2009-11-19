@@ -20,6 +20,7 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gtksourceview-1.0:${PORTSDIR}/x11-toolkits/gtksourceview
 
 USE_GNOME=	libxml2
+MAKE_JOBS_UNSAFE=	yes
 
 .ifdef WITHOUT_SSL
 MAKE_ARGS+=	WITHOUT_SSL=yes

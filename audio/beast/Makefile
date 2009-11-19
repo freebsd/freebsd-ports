@@ -31,6 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DENODATA=255" \
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-osspcm=/dev/dsp \
 		--enable-ossmidi=/dev/midi
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		beast.1 bsescm.1 sfidl.1
 MAN5=		bse.5

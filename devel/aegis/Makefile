@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-nlsdir="${PREFIX}/share/locale"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 		WISH="${WISH}"
 REINPLACE_ARGS=	-i ''
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	ae-cvs-ci.1 ae-repo-ci.1 ae-sccs-put.1 ae_c.1 ae_p.1 \
 	aeannotate.1 aeb.1 aebisect.1 aebuffy.1 aeca.1 aecd.1 aechown.1 \

@@ -16,6 +16,8 @@ COMMENT=	Beanie is a fully-fledged accounting and payroll system
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	dbow:${PORTSDIR}/databases/dbow
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${CP} ${WRKSRC}/beanie.mk.sample $(WRKSRC)/beanie.mk
 	@${CP} ${WRKSRC}/tmac/lhead.sample.r ${WRKSRC}/tmac/lhead.r

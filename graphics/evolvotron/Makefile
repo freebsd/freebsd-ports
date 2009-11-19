@@ -23,6 +23,7 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 MAKE_ENV=	QTDIR=${QT_PREFIX} MOC=${MOC}
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

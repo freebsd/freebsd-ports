@@ -57,6 +57,8 @@ PATHNAME_FILES=	atc/atc.6 \
 		quiz/quiz.6 \
 		wump/pathnames.h
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 post-extract:

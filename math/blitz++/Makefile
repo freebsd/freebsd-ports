@@ -29,6 +29,7 @@ USE_GNOME=	gnometarget gnomehack
 CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
+MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/blitz
 

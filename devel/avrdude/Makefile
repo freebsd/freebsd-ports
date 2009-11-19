@@ -19,6 +19,7 @@ MANCOMPRESSED=	no
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

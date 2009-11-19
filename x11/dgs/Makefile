@@ -27,6 +27,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:22
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.5.9
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		dgs.1 dpsnx.agent.1
 MANN=		dpsexec.man makepsres.man xepsf.man

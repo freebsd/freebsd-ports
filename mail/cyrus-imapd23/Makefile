@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	BDB		"Use Berkeley DB"			on \
 		DRAC		"Enable DRAC support"			off \

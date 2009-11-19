@@ -15,6 +15,7 @@ MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	Audio file conversion utilities and library
 
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	AFsp.1audio CompAudio.1audio CopyAudio.1audio FiltAudio.1audio \
 	GenNoise.1audio GenTone.1audio InfoAudio.1audio LPanal.1audio \
