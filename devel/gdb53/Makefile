@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=53
 
 BROKEN=		does not build
+DEPRECATED=		has been broken for 3 months
+EXPIRATION_DATE=	2010-01-18
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 USE_GCC=	3.4
