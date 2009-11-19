@@ -159,3 +159,4 @@ nefu:*:918:918::0:0:Nefu daemon:/var/db/nefu:/usr/sbin/nologin
 couchdb:*:919:919:daemon:0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
 vboxusers:*:920:920::0:0:Virtualbox user:/nonexistent:/usr/sbin/nologin
 transmission:*:921:921::0:0:Transmission Daemon User:/usr/local/etc/transmission/home:/usr/sbin/nologin
+mongodb:*:922:922:daemon:0:0:MongoDB Account:/var/empty:/usr/sbin/nologin
