@@ -1,0 +1,11 @@
+PyBrain is a modular Machine Learning Library for Python.
+It's goal is to offer flexible, easy-to-use yet still powerful
+algorithms for Machine Learning Tasks and a variety of
+predefined environments to test and compare your algorithms.
+
+PyBrain is short for Python-Based Reinforcement Learning,
+Artificial Intelligence and Neural Network Library. In fact,
+we came up with the name first and later reverse-engineerer
+this quite descriptive "Backronym".
+ 
+WWW:	http://pybrain.org/
