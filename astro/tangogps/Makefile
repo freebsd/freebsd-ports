@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tangogps
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.9
+PORTREVISION=	0
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.tangogps.org/downloads/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		exif.12:${PORTSDIR}/graphics/libexif
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 gconf2
+USE_GNOME=	gtk20 gconf2 libxml2
 USE_SQLITE=	3
 INSTALLS_ICONS=	yes
 
