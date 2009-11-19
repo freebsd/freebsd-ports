@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	PyLucene
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.9.1
 CATEGORIES=	textproc devel python java
-MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/jcc/
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	lucene/pylucene
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PATCHSET}-src-jcc
+DISTNAME=	pylucene-${PORTVERSION}${PATCHSET}-src
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A GCJ-compiled version of Java Lucene integrated with Python
@@ -28,10 +28,10 @@ JAVA_VERSION=	1.4+
 USE_GMAKE=	yes
 PATCHSET=	-1
 LUCENE_VER=	2.4.1
-#EGG_INFO=	lucene-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
-EGG_INFO=	lucene-${LUCENE_VER}-${PYTHON_VERSION:S/thon//}.egg-info
+EGG_INFO=	lucene-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
+#EGG_INFO=	lucene-${LUCENE_VER}-${PYTHON_VERSION:S/thon//}.egg-info
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${PATCHSET}
+WRKSRC=		${WRKDIR}/pylucene-${PORTVERSION}${PATCHSET}
 PLIST_SUB=	EGG_INFO=${EGG_INFO}
 
 MAKE_ENV+=	LD_LIBRARY_PATH="${JAVA_HOME}/jre/lib/${ARCH}:${JAVA_HOME}/jre/lib/${ARCH}/server"
