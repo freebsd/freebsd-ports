@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Creator/ISO_2022_JP/.packlist
+%%SITE_PERL%%/Email/MIME/Creator/ISO_2022_JP.pm
+@dirrmtry %%SITE_PERL%%/Email/MIME/Creator
+@dirrmtry %%SITE_PERL%%/Email/MIME
+@dirrmtry %%SITE_PERL%%/Email
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Creator/ISO_2022_JP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Creator/ISO_2022_JP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Creator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
