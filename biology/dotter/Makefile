@@ -21,6 +21,8 @@ COMMENT=	A viewer for multiple sequence alignments
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		checksum mismatch
+
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} bin/${DISTNAME}
 
