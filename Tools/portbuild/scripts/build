@@ -42,8 +42,22 @@ do_create() {
     arch=$1
     branch=$2
     buildid=$3
-    builddir=$4
-    shift 4
+    shift 3
+
+    archdir=${pbab}/builds
+    if [ ! -d ${archdir} ]; then
+	mkdir -p ${archdir} || exit 1
+	chown -R ports-${arch}:portmgr ${archdir}
+	chmod g+w ${archdir}
+    fi
+
+    builddir=$(realpath ${archdir})/${buildid}
+    if [ -d ${builddir} ]; then
+	echo "Can't create ${builddir}, it already exists"
+	exit 1
+    fi
+    # XXX needed?
+    buildenv ${pb} ${arch} ${branch} ${builddir}
 
     mountpoint=${builddir}
     newfs=a/portbuild/${arch}/${buildid}
@@ -184,12 +198,13 @@ do_srcupdate_inner() {
     echo "Reimaging ZFS src tree on ${builddir}/src"
     echo "================================================"
 
+    strippedbranch=${branch%%-exp}
     now=$(now)
 
     srcfs=a/portbuild/${arch}/${buildid}/src
 
-    zfs snapshot a/snap/src-${branch}@${now}
-    zfs clone a/snap/src-${branch}@${now} ${srcfs}
+    zfs snapshot a/snap/src-${strippedbranch}@${now}
+    zfs clone a/snap/src-${strippedbranch}@${now} ${srcfs}
     zfs set mountpoint=${builddir}/src ${srcfs}
 }
 
@@ -485,7 +500,7 @@ fi
 # Unprivileged commands
 case "$cmd" in
     list)
-	do_list ${arch} ${branch} $@
+	do_list ${arch} ${branch} $@ || exit 1
 	;;
     create)
 	# XXX some way to avoid the latest/previous dance?
@@ -495,52 +510,44 @@ case "$cmd" in
 	    buildid=${buildid%/}
 	fi
 
-        # note: the directory must not exist yet
-	builddir=$(realpath ${pbab}/builds)/${buildid}
-	if [ -d ${builddir} ]; then
-	    echo "Can't create ${builddir}, it already exists"
-	    exit 1
-	fi
-	buildenv ${pb} ${arch} ${branch} ${builddir}
-
-	proxy_root create ${arch} ${branch} ${buildid} ${builddir} $@
+	proxy_root create ${arch} ${branch} ${buildid} $@ || exit 1
 	;;
     clone)
 	if [ -z "${buildid}" ]; then
 	    usage
 	fi
-	proxy_root clone ${arch} ${branch} ${buildid} ${builddir} $@
+	proxy_root clone ${arch} ${branch} ${buildid} ${builddir} $@ || exit 1
 	;;
     portsupdate)
 	if [ -z "${buildid}" ]; then
 	    usage
 	fi
-	proxy_root portsupdate ${arch} ${branch} ${buildid} ${builddir} $@
+	proxy_root portsupdate ${arch} ${branch} ${buildid} ${builddir} $@ || exit 1
 	;;
     srcupdate)
 	if [ -z "${buildid}" ]; then
 	    usage
 	fi
-	proxy_root srcupdate ${arch} ${branch} ${buildid} ${builddir} $@
+	proxy_root srcupdate ${arch} ${branch} ${buildid} ${builddir} $@ || exit 1
 	;;
     cleanup)
 	if [ -z "${buildid}" ]; then
 	    usage
 	fi
 	# builddir may be null if cleaning up a destroyed build
-	proxy_user cleanup ${arch} ${branch} ${buildid} "${builddir}" $@
+	proxy_user cleanup ${arch} ${branch} ${buildid} "${builddir}" $@ || exit 1
 	;;
     upload)
 	if [ -z "${buildid}" ]; then
 	    usage
 	fi
-	proxy_user upload ${arch} ${branch} ${buildid} ${builddir} $@
+	proxy_user upload ${arch} ${branch} ${buildid} ${builddir} $@ || exit 1
 	;;
     destroy)
 	if [ -z "${buildid}" ]; then
 	    usage
 	fi
-	proxy_root destroy ${arch} ${branch} ${buildid} ${builddir} $@
+	proxy_root destroy ${arch} ${branch} ${buildid} ${builddir} $@ || exit 1
 	;;
     *)
 	echo "build: invalid command: $cmd"
