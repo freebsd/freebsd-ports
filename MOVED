@@ -4205,5 +4205,5 @@ sysutils/rsyslog||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsys
 sysutils/rsyslog-gssapi||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
 sysutils/rsyslog-mysql||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
 sysutils/rsyslog-pgsql||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
-misc/kde4-l10n-ta||2009-11-19|Has expired
-misc/kde4-l10n-eo||2009-11-19|Has expired
+misc/kde4-l10n-ta||2009-11-19|Has expired: unfetchable and unmaintained upstream
+misc/kde4-l10n-eo||2009-11-19|Has expired: unfetchable and unmaintained upstream
