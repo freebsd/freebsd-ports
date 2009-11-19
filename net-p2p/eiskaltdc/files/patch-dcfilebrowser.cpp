@@ -1,11 +1,10 @@
---- eiskaltdc/dcfilebrowser.cpp.orig	2009-08-28 10:26:38.000000000 +0700
-+++ eiskaltdc/dcfilebrowser.cpp	2009-08-28 10:26:57.000000000 +0700
-@@ -37,7 +37,7 @@
+--- ./eiskaltdc/dcfilebrowser.cpp.orig	2009-08-28 10:26:38.000000000 +0700
++++ ./eiskaltdc/dcfilebrowser.cpp	2009-08-28 10:26:57.000000000 +0700
+@@ -36,6 +36,7 @@
+ #include <QColor>
  
  #include <set>
- 
--#include <malloc.h>
 +#include <stdlib.h>
- 
- #include "dcmenuhandler.h"
- #include "dcconfig.h"
+ #ifdef HAVE_MALLOC_H
+ #include <malloc.h>
+ #endif
