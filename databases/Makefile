@@ -171,6 +171,7 @@
     SUBDIR += memcachedb
     SUBDIR += metakit
     SUBDIR += mird
+    SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
     SUBDIR += msql
     SUBDIR += msql3
