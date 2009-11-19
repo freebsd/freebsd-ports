@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
@@ -65,6 +65,7 @@ MAN3=	libssh2_banner_set.3 \
 	libssh2_knownhost_check.3 \
 	libssh2_knownhost_del.3 \
 	libssh2_knownhost_get.3 \
+	libssh2_knownhost_free.3 \
 	libssh2_knownhost_init.3 \
 	libssh2_knownhost_readfile.3 \
 	libssh2_knownhost_readline.3 \
