@@ -13419,6 +13419,7 @@ p5-Tie-iCal                     ports/devel/p5-Tie-iCal
 p5-Time-Clock                   ports/devel/p5-Time-Clock
 p5-Time-Duration                ports/devel/p5-Time-Duration
 p5-Time-Duration-Parse          ports/devel/p5-Time-Duration-Parse
+p5-Time-Format                  ports/devel/p5-Time-Format
 p5-Time-HiRes                   ports/devel/p5-Time-HiRes
 p5-Time-Human                   ports/textproc/p5-Time-Human
 p5-Time-Interval                ports/devel/p5-Time-Interval
@@ -17095,6 +17096,7 @@ p5-tie-toobject                 ports/devel/p5-Tie-ToObject
 p5-time-clock                   ports/devel/p5-Time-Clock
 p5-time-duration                ports/devel/p5-Time-Duration
 p5-time-duration-parse          ports/devel/p5-Time-Duration-Parse
+p5-time-format                  ports/devel/p5-Time-Format
 p5-time-hires                   ports/devel/p5-Time-HiRes
 p5-time-human                   ports/textproc/p5-Time-Human
 p5-time-interval                ports/devel/p5-Time-Interval
@@ -20052,6 +20054,7 @@ pydbdesigner                    ports/databases/pydbdesigner
 pydbx                           ports/databases/pydbx
 pydf                            ports/sysutils/pydf
 pyephem                         ports/astro/pyephem
+pyfasta                         ports/biology/pyfasta
 pygmy                           ports/mail/pygmy
 pygopherd                       ports/net/pygopherd
 pygts                           ports/graphics/pygts
