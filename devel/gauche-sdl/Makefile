@@ -27,6 +27,7 @@ PORTFAKENAME=	Gauche-sdl-${PORTVERSION}
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
+MAKE_JOBS_UNSAFE=	yes
 
 pre-configure:
 .for DIR in . image mixer ttf

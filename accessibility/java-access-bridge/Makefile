@@ -25,6 +25,7 @@ USE_JAVA=	1.4+
 JAVA_OS=	native
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${prefix}/share/jar|${JAVAJARDIR}|' \

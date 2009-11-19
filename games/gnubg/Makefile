@@ -40,6 +40,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	2.0+
 USE_AUTOTOOLS=	libtool:22 automake:110
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

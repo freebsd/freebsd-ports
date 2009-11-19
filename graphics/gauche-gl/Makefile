@@ -22,6 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/gauche/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}

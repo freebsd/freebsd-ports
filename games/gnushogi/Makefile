@@ -17,6 +17,7 @@ COMMENT=	GNU version of Shogi
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x --without-xshogi
+MAKE_JOBS_UNSAFE=	yes
 
 MAN6=		gnushogi.6
 INFO=		gnushogi

@@ -16,6 +16,7 @@ MAINTAINER=	ppl@nbnet.nb.ca
 COMMENT=	A platform game with high doses of mystery
 
 MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ HC_BIN_DIR=${PREFIX}/bin/
+MAKE_JOBS_UNSAFE=	yes
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf

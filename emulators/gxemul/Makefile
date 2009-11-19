@@ -18,6 +18,7 @@ OPTIONS=	X11	 "X11 support" on
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	build
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		gxemul.1
 PORTDOCS=	*

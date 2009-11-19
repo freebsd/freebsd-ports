@@ -25,6 +25,7 @@ LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	YES
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

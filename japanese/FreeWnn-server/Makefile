@@ -30,6 +30,7 @@ INSTALL_TARGET=	install install.man
 SUB_FILES=	pkg-install
 SUB_LIST=	RC_SUBR=${RC_SUBR}
 PKGINSTALL=	${WRKDIR}/pkg-install
+MAKE_JOBS_UNSAFE=	yes
 
 WNNTYPE?=	WNN
 CONFIGURE_ARGS=	--enable-libraries=no \

@@ -21,6 +21,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(WITHOUT_PHP)
 USE_PHP=	yes

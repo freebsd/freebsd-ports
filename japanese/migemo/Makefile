@@ -32,6 +32,7 @@ RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
 
 CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
+MAKE_JOBS_UNSAFE=	yes
 
 SKKDIC_FILE=	SKK-JISYO.L-20060709
 

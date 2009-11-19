@@ -27,6 +27,7 @@ JP_VERSION=	3.05
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-batchmode \
 		--enable-apop=${PREFIX}/etc/pop.auth --enable-rpop
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	ali.1 anno.1 bbc.1 burst.1 comp.1 dist.1 folder.1 forw.1 inc.1 mark.1 \
 	mh-chart.1 mh.1 mhl.1 mhmail.1 mhn.1 mhook.1 mhparam.1 mhpath.1 \
