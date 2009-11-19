@@ -83,7 +83,6 @@
     SUBDIR += museekplus
     SUBDIR += mutella
     SUBDIR += napshare
-    SUBDIR += nicotine
     SUBDIR += nicotine-plus
     SUBDIR += opendchub
     SUBDIR += opennap

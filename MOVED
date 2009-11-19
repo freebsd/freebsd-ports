@@ -4197,3 +4197,13 @@ net-p2p/mute-net||2009-10-31|Broken for extensive period of time and unmaintaine
 emulators/fceu|emulators/fceux|2009-11-04|Repocopied to new location
 net/p5-Net-EPP-Frame|net/p5-Net-EPP|2009-11-11|Please use net/p5-Net-EPP
 net/p5-Net-EPP-Client|net/p5-Net-EPP|2009-11-11|Please use net/p5-Net-EPP
+editors/qemacs||2009-11-19|Has expired: depends on old version of GCC, no maintainer, not used by any other port, dead upstream
+mail/postfix-gps-devel||2009-11-19|Has expired: Older than main port, no sign of maintainer activity beyond port creation 4+ years ago
+graphics/php4-ffmpeg||2009-11-19|Has expired: development continues only for php5
+net-p2p/nicotine||2009-11-19|Has expired: development stalled years ago, use net-p2p/nicotine-plus instead
+sysutils/rsyslog||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
+sysutils/rsyslog-gssapi||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
+sysutils/rsyslog-mysql||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
+sysutils/rsyslog-pgsql||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
+misc/kde4-l10n-ta||2009-11-19|Has expired
+misc/kde4-l10n-eo||2009-11-19|Has expired
