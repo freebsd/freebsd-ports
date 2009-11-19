@@ -1,11 +1,5 @@
-GCC, the GNU Compiler Collection includes C, C++, Java and Fortran.
-
-This port installs the various front ends as gcc43, g++43, gcj43,
-gfortran43 and so forth into the ${PREFIX}/bin directory.
-
-(Building the Java frontend and the associated libgcj library will
-consume more than 512MB of main memory.  Set WITHOUT_JAVA=yes in 
-the environment when building this port to avoid that.)
+GCC, the GNU Compiler Collection, supports a number of languages.  This
+port installs the C and C++ front ends as gcc43 and g++43, respectively.
 
 WWW: http://gcc.gnu.org/
 
