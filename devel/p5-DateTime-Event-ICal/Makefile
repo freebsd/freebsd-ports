@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Event-ICal
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl DateTime extension for computing rfc2445 recurrences
 
-BUILD_DEPENDS=	${SITE_PERL}/DateTime/Event/Recurrence.pm:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Event-Recurrence>=0.11:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence
+BUILD_DEPENDS=  ${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
