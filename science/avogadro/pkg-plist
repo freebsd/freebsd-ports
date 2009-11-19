@@ -41,65 +41,65 @@ include/avogadro/tool.h
 include/avogadro/toolgroup.h
 include/avogadro/undosequence.h
 include/avogadro/zmatrix.h
-lib/avogadro/AvogadroBuildSettings.cmake
+lib/avogadro/1_0/AvogadroBuildSettings.cmake
 lib/avogadro/AvogadroConfig.cmake
 lib/avogadro/AvogadroConfigVersion.cmake
-lib/avogadro/AvogadroLibraryDeps.cmake
-lib/avogadro/AvogadroUse.cmake
-lib/avogadro/cmake/FindEigen2.cmake
-lib/avogadro/cmake/FindGLEW.cmake
-lib/avogadro/colors/atomindexcolor.so
-lib/avogadro/colors/chargecolor.so
-lib/avogadro/colors/customcolor.so
-lib/avogadro/colors/distancecolor.so
-lib/avogadro/colors/residuecolor.so
-lib/avogadro/engines/axesengine.so
-lib/avogadro/engines/cartoonengine.so
-lib/avogadro/engines/dipoleengine.so
-lib/avogadro/engines/forceengine.so
-lib/avogadro/engines/hbondengine.so
-lib/avogadro/engines/labelengine.so
-lib/avogadro/engines/overlayengine.so
-lib/avogadro/engines/polygonengine.so
-lib/avogadro/engines/ribbonengine.so
-lib/avogadro/engines/ringengine.so
-lib/avogadro/engines/simplewireengine.so
-lib/avogadro/engines/sphereengine.so
-lib/avogadro/engines/stickengine.so
-lib/avogadro/engines/surfaceengine.so
-lib/avogadro/engines/wireengine.so
-lib/avogadro/extensions/animationextension.so
-lib/avogadro/extensions/fileimportextension.so
-lib/avogadro/extensions/forcefieldextension.so
-lib/avogadro/extensions/gamessextension.so
-lib/avogadro/extensions/gaussianextension.so
-lib/avogadro/extensions/h2methylextension.so
-lib/avogadro/extensions/hydrogenextension.so
-lib/avogadro/extensions/insertfragmentextension.so
-lib/avogadro/extensions/insertpeptideextension.so
-lib/avogadro/extensions/molecularpropextension.so
-lib/avogadro/extensions/networkfetchextension.so
-lib/avogadro/extensions/povrayextension.so
-lib/avogadro/extensions/propextension.so
-lib/avogadro/extensions/pythonterminal.so
-lib/avogadro/extensions/selectextension.so
-lib/avogadro/extensions/spectraextension.so
-lib/avogadro/extensions/supercellextension.so
-lib/avogadro/extensions/surfaceextension.so
-lib/avogadro/extensions/unitcellextension.so
-lib/avogadro/extensions/vibrationextension.so
-lib/avogadro/tools/aligntool.so
-lib/avogadro/tools/autoopttool.so
-lib/avogadro/tools/autorotatetool.so
-lib/avogadro/tools/bondcentrictool.so
-lib/avogadro/tools/clickmeasuretool.so
-lib/avogadro/tools/drawtool.so
-lib/avogadro/tools/manipulatetool.so
-lib/avogadro/tools/navigatetool.so
-lib/avogadro/tools/selectrotatetool.so
+lib/avogadro/1_0/AvogadroLibraryDeps.cmake
+lib/avogadro/1_0/AvogadroUse.cmake
+lib/avogadro/1_0/cmake/FindEigen2.cmake
+lib/avogadro/1_0/cmake/FindGLEW.cmake
+lib/avogadro/1_0/colors/atomindexcolor.so
+lib/avogadro/1_0/colors/chargecolor.so
+lib/avogadro/1_0/colors/customcolor.so
+lib/avogadro/1_0/colors/distancecolor.so
+lib/avogadro/1_0/colors/residuecolor.so
+lib/avogadro/1_0/engines/axesengine.so
+lib/avogadro/1_0/engines/cartoonengine.so
+lib/avogadro/1_0/engines/dipoleengine.so
+lib/avogadro/1_0/engines/forceengine.so
+lib/avogadro/1_0/engines/hbondengine.so
+lib/avogadro/1_0/engines/labelengine.so
+lib/avogadro/1_0/engines/overlayengine.so
+lib/avogadro/1_0/engines/polygonengine.so
+lib/avogadro/1_0/engines/ribbonengine.so
+lib/avogadro/1_0/engines/ringengine.so
+lib/avogadro/1_0/engines/simplewireengine.so
+lib/avogadro/1_0/engines/sphereengine.so
+lib/avogadro/1_0/engines/stickengine.so
+lib/avogadro/1_0/engines/surfaceengine.so
+lib/avogadro/1_0/engines/wireengine.so
+lib/avogadro/1_0/extensions/animationextension.so
+lib/avogadro/1_0/extensions/fileimportextension.so
+lib/avogadro/1_0/extensions/forcefieldextension.so
+lib/avogadro/1_0/extensions/gamessextension.so
+lib/avogadro/1_0/extensions/h2methylextension.so
+lib/avogadro/1_0/extensions/hydrogenextension.so
+lib/avogadro/1_0/extensions/inputfileextension.so
+lib/avogadro/1_0/extensions/insertfragmentextension.so
+lib/avogadro/1_0/extensions/insertpeptideextension.so
+lib/avogadro/1_0/extensions/molecularpropextension.so
+lib/avogadro/1_0/extensions/networkfetchextension.so
+lib/avogadro/1_0/extensions/povrayextension.so
+lib/avogadro/1_0/extensions/propextension.so
+lib/avogadro/1_0/extensions/pythonterminal.so
+lib/avogadro/1_0/extensions/selectextension.so
+lib/avogadro/1_0/extensions/spectraextension.so
+lib/avogadro/1_0/extensions/supercellextension.so
+lib/avogadro/1_0/extensions/surfaceextension.so
+lib/avogadro/1_0/extensions/unitcellextension.so
+lib/avogadro/1_0/extensions/vibrationextension.so
+lib/avogadro/1_0/tools/aligntool.so
+lib/avogadro/1_0/tools/autoopttool.so
+lib/avogadro/1_0/tools/autorotatetool.so
+lib/avogadro/1_0/tools/bondcentrictool.so
+lib/avogadro/1_0/tools/clickmeasuretool.so
+lib/avogadro/1_0/tools/drawtool.so
+lib/avogadro/1_0/tools/manipulatetool.so
+lib/avogadro/1_0/tools/navigatetool.so
+lib/avogadro/1_0/tools/selectrotatetool.so
 lib/libavogadro.so
-lib/libavogadro.so.0
-lib/libavogadro.so.0.9.8
+lib/libavogadro.so.1
+lib/libavogadro.so.1.0.0
 %%PYTHON_SITELIBDIR%%/Avogadro.so
 %%DATADIR%%/builder/amino/d-ala.zmat
 %%DATADIR%%/builder/amino/d-arg.zmat
@@ -454,10 +454,11 @@ share/libavogadro/extensionScripts/example.py
 @dirrm %%DATADIR%%/builder/amino
 @dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%
-@dirrm lib/avogadro/tools
-@dirrm lib/avogadro/extensions
-@dirrm lib/avogadro/engines
-@dirrm lib/avogadro/colors
-@dirrm lib/avogadro/cmake
+@dirrm lib/avogadro/1_0/tools
+@dirrm lib/avogadro/1_0/extensions
+@dirrm lib/avogadro/1_0/engines
+@dirrm lib/avogadro/1_0/colors
+@dirrm lib/avogadro/1_0/cmake
+@dirrm lib/avogadro/1_0
 @dirrm lib/avogadro
 @dirrm include/avogadro
