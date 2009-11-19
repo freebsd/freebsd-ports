@@ -17,6 +17,7 @@ COMMENT=	C-like compiler that translates input code to the HP48 RPN language
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		${PORTNAME}.1
 

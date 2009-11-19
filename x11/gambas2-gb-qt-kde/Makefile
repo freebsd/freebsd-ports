@@ -12,4 +12,6 @@ COMMENT=	The gambas KDE component
 
 MASTERDIR=	${.CURDIR}/../../lang/gambas2-base
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include "${MASTERDIR}/Makefile"

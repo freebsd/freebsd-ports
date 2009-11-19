@@ -16,6 +16,7 @@ COMMENT=	A 2D pool game using the GTK+ toolkit
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2 -O0 -Wall `gtk-config --cflags` -lgtk -lgdk -lglib -lm -lX11,${CXXFLAGS} `gtk-config --cflags` `gtk-config --libs`,' ${WRKSRC}/configure

@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/slang
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install-elf
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/slang-j.doc ${PREFIX}/share/doc/slang

@@ -22,6 +22,7 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --disable-gp2x
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS=	${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib

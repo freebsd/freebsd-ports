@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		iterm.1
 MAN3=		IPA.3 IPA::Geometry.3 IPA::Global.3 IPA::Local.3 IPA::Misc.3 \

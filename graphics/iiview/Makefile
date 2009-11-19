@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
 
 USE_XORG=	xpm x11
 PLIST_FILES=	bin/iiview
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		iiview.1
 MANCOMPRESSED=	yes

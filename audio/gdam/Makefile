@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	libglade
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$XMMS_CONFIG --libs`|"`$$XMMS_CONFIG --libs` ${PTHREAD_LIBS}"|' ${WRKSRC}/configure

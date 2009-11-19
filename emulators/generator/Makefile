@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=--with-gtk
 
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		RAZE "Use RAZE z80 emulation (only for i386)" on \

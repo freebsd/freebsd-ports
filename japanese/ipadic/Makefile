@@ -20,6 +20,7 @@ RUN_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
 
 CONFIGURE_ARGS=	--with-dicdir=${PREFIX}/share/chasen/dic
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/chasenrc \

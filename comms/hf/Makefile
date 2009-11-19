@@ -20,6 +20,7 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
 
 MANLANG=	"" "de.ISO8859-1"
 MAN1=		hf.1 hfterm.1 hfkernel.1

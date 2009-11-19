@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/current
 MAKEFILE=	makefile
 MAKE_ARGS=	freebsd	CFLAGS="${CFLAGS}"
 ALL_TARGET=
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		iozone.1
 PLIST_FILES=	bin/iozone

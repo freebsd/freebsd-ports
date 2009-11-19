@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		RAZE "Use RAZE z80 emulation (only for i386)" on \
