@@ -47,8 +47,8 @@ do_create() {
     archdir=${pbab}/builds
     if [ ! -d ${archdir} ]; then
 	mkdir -p ${archdir} || exit 1
-	chown -R ports-${arch}:portmgr ${archdir}
-	chmod g+w ${archdir}
+	chown -R ports-${arch}:portmgr ${pbab}
+	chmod -R g+w ${pbab}
     fi
 
     builddir=$(realpath ${archdir})/${buildid}
