@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	1.982
+PORTVERSION=	1.992
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generate GD Images of Bio::Seq Objects
 
 BUILD_DEPENDS=	p5-GD>=2.3:${PORTSDIR}/graphics/p5-GD \
