@@ -3,12 +3,9 @@ bin/gw6c
 etc/gw6c.conf.sample
 @exec if [ ! -f %D/etc/gw6c.conf ] ; then cp -p %D/%F %B/gw6c.conf; fi
 %%DATADIR%%/CLIENT-LICENSE.TXT
-%%DATADIR%%/GUI-LICENSE.TXT
-%%DATADIR%%/HEX_DC_0005_Gateway6_Client_Guide.pdf
-%%DATADIR%%/HEX_DC_0007_Gateway6_Client_Release_Notes.pdf
 %%DATADIR%%/INSTALL
 %%DATADIR%%/README
-%%DATADIR%%/checktunnel.sh
+%%DATADIR%%/HEX_DC_0005_Gateway6_Client_Guide.pdf
+%%DATADIR%%/HEX_DC_0007_Gateway6_Client_Release_Notes.pdf
 %%DATADIR%%/freebsd.sh
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
