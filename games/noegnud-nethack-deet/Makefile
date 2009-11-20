@@ -31,6 +31,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 ALL_TARGET=	nh342-dt
 INSTALL_TARGET=	install_nh342-dt
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

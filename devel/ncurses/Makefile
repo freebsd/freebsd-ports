@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-rpath --disable-root-environ \
 		--with-manpage-format=gzip --srcdir=../
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	EXTCOLORS "Enable 256-color support (only for ncursesw)" off
 

@@ -19,6 +19,7 @@ COMMENT=	A flexible build system
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
+MAKE_JOBS_UNSAFE=	yes
 
 FETCH_CMD?=	/usr/bin/fetch -Rr
 

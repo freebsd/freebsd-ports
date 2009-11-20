@@ -22,6 +22,7 @@ USE_RC_SUBR=	moftpd
 USE_PERL5_BUILD=yes
 CONFIGURE_ENV+=	LIBS="${LIBS}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
+MAKE_JOBS_UNSAFE=	yes
 
 MAN8=		moftpd.8 moftpadmin.8
 LIBS+=		-lcrypt

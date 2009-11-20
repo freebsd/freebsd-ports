@@ -37,6 +37,7 @@ PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/Inline
 PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
 		${SITE_PERL_REL}/${PERL_ARCH}/Inline/Pdlpp.pm \
 		${SITE_PERL_REL}/${PERL_ARCH}/Inline/MakePdlppInstallable.pm
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(KITCHEN_SINK)
 RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \

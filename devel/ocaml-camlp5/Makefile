@@ -19,6 +19,7 @@ COMMENT=	A preprocessor-pretty-printer of OCaml
 
 USE_OCAML=	yes
 HAS_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(WITH_TRANSITIONAL) || !defined(WITH_STRICT)
 CONFIGURE_ARGS=	--transitional --prefix ${PREFIX}

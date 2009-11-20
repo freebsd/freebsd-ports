@@ -28,6 +28,7 @@ MAKE_FLAGS=	PACKAGES=	# If defined, would be used by ocamlfind
 HAS_CONFIGURE=	yes
 
 ALL_TARGET=	all opt
+MAKE_JOBS_UNSAFE=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}
 

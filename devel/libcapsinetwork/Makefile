@@ -16,5 +16,6 @@ COMMENT=	Network library aimed at easy development of C++ server daemons
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

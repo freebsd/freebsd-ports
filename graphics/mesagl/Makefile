@@ -31,6 +31,7 @@ GLVER=		14
 
 MAKEFILE=	Makefile.X11
 ALL_TARGET=	realclean freebsd
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/Mesa/GL

@@ -22,6 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
 PERL_CONFIGURE=	5.8.0+
 USE_GNOME=	gconf2
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		Gnome2::GConf.3 \
 		Gnome2::GConf::ChangeSet.3 \

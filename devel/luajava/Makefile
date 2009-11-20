@@ -22,6 +22,7 @@ LUA_COMPS+=	compat51
 .endif
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	run
 USE_DOS2UNIX=	yes

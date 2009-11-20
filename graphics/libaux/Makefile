@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GL=		glut
 USE_IMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libaux.a ${PREFIX}/lib

@@ -18,6 +18,7 @@ COMMENT=	A front end to GCC from Liberty Basic source code
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \

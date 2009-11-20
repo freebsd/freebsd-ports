@@ -67,6 +67,7 @@ MLINKS=		pvf.1 pvfamp.1 \
 		pvf.1 rmdtopvf.1 \
 		pvf.1 voctopvf.1 \
 		pvf.1 wavtopvf.1
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-DAUTO_PPP
 .if defined(WITH_FIDO) && ${WITH_FIDO:L} != no

@@ -25,6 +25,7 @@ USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_PYTHON)

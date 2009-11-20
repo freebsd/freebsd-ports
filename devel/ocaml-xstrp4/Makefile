@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 HAS_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 

@@ -22,6 +22,7 @@ USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/sources_4639
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		praat.1
 

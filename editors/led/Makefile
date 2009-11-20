@@ -15,5 +15,6 @@ COMMENT=	A tiny text editor, with a number of useful programming features
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

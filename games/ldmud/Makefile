@@ -18,6 +18,7 @@ CONFIGURE_ARGS+=--libdir=${DATADIR} --bindir=${PREFIX}/sbin
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	ldmud
 MAN1=		ldmud.1
+MAKE_JOBS_UNSAFE=	yes
 
 LOGDIR=		${DATADIR}
 .if defined(MUDLIB) && ${MUDLIB} == lpmud

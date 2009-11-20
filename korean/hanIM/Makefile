@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/
 USE_IMAKE=	YES
 USE_XORG=	xpm xmu xaw
 WRKSRC=		${WRKDIR}/hanIM
+MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/hanIM

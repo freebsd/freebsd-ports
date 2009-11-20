@@ -33,6 +33,7 @@ USE_GMAKE=	yes
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libreadline-java.jar ${JAVAJARDIR}

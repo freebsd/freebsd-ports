@@ -32,6 +32,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOL_VARS=	--force --automake
+MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-I${LOCALBASE}/lib

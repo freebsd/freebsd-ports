@@ -22,6 +22,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-runpath \
 			--with-gd=${LOCALBASE} \
 			--with-proj=${LOCALBASE}
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			TIFF "Support for TIFF (but not GeoTIFF) files" off \

@@ -19,6 +19,7 @@ USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:22
 USE_LDCONFIG=		yes
 CONFIGURE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/config.h.in

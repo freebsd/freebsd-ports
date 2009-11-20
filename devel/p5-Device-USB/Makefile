@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
 
 WRKSRC=		${WRKDIR}/Device-USB-${PORTVERSION}
 PERL_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		Device::USB.3 \
 		Device::USB::Bus.3 \

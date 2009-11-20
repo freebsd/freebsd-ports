@@ -22,6 +22,7 @@ USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PGSQL=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/kde_appsdir/s|applnk||g' ${WRKSRC}/configure

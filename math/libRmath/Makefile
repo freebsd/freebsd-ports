@@ -40,6 +40,7 @@ USE_LDCONFIG=		yes
 CONFIGURE_ARGS+=--with-readline=no --with-x=no --disable-mbcs --disable-nls --with-tcltk=no --with-cairo=no \
 		--with-libpng=no --with-jpeglib=no --with-iconv=no --with-ICU=no --without-libintl-prefix
 BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
 

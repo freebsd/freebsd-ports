@@ -24,6 +24,7 @@ PLIST_FILES=	bin/opj2dat \
 PLIST_DIRS=	include/${PORTNAME}
 
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

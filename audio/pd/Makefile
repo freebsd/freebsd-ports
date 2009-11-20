@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	makefile
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		pd.1 pdreceive.1 pdsend.1
 

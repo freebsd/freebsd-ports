@@ -22,6 +22,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/sem" \
 		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib"
+MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(WITH_CUSTOM)
 MAKE_ENV+=	NO_CUSTOM=y

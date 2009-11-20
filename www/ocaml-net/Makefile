@@ -27,6 +27,7 @@ USE_OCAML_FINDLIB=	yes
 HAS_CONFIGURE=	yes
 
 ALL_TARGET=	all opt
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/netplex-admin \
 		bin/ocamlrpcgen

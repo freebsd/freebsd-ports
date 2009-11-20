@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	ngrep
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pcap-restart
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PCRE	"Use PCRE instead of GNU regex"	on \
 		PORTS_PCAP	"Use ports PCAP instead of system PCAP" off \

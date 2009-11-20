@@ -23,6 +23,7 @@ MAKEFILE=	Makefile.Linux
 MAKE_ARGS=	CC="${CXX}" CPPFLAGS="${CXXFLAGS} -ansi"	\
 		SYS_INCLUDE="-I${LOCALBASE}/include"		\
 		SYS_LIBS="-L${LOCALBASE}/lib -lX11"
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/oonsoo ${PREFIX}/bin

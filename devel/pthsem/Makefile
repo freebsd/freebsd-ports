@@ -20,4 +20,6 @@ USE_GMAKE=	yes
 MAN1=		pthsem-config.1
 MAN3=		pthsem.3
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>

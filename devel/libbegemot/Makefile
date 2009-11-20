@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:262:env libltdl:22 libtool:22
 USE_LDCONFIG=	yes
-
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	cstrc.1 frame.1 getfields.1 intro.1 panic.1 prstat.1 readline.1 \
 		rpoll.1 strnchr.1 strnlen.1 strsave.1 strtrimsp.1 verb.1 xalloc.1

@@ -24,6 +24,7 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	atk glib20 gtk20 pango
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-Wpointer-arithmetic,," ${WRKSRC}/configure

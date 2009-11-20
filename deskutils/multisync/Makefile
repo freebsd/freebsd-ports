@@ -21,6 +21,7 @@ USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env libtool:22
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+MAKE_JOBS_UNSAFE=	yes
 
 pre-configure:
 	@${FIND} ${WRKDIR} -type l -delete

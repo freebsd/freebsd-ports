@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-optimize \
 			--includedir=${LOCALBASE}/include \

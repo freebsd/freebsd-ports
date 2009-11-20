@@ -28,6 +28,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CONFLICTS=	sketchy-*
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		par.pl.1 parl.1 pp.1 tkpp.1
 MAN3=		pp.3 \
