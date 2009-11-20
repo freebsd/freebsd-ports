@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fonttools
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	print python
 MASTER_SITES=	SF/${PORTNAME}/Source%20code/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,9 +26,13 @@ MAN1=		ttx.1
 
 DOCSDIR=	${PREFIX}/share/doc/py-fonttools
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' ${WRKSRC}/setup.py
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${DOCSDIR}
 .endif
