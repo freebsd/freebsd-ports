@@ -16,6 +16,7 @@ COMMENT=	Clewn provides Gdb support within Vim
 RUN_DEPENDS=	vim>=6.3:${PORTSDIR}/editors/vim
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	vimdir=${PREFIX}/share/vim/vimfiles
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
