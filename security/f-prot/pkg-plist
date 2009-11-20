@@ -1,37 +1,66 @@
-bin/f-prot
-f-prot/CHANGES
-f-prot/ENGLISH.TX0
-f-prot/LICENSE
-f-prot/LICENSE-FPAV
-f-prot/LICENSES-others
-f-prot/README
-f-prot/f-prot
-f-prot/etc/f-prot.conf.default
-f-prot/tools/check-updates.pl
-%%PORTDOCS%%%%DOCSDIR%%/add_info.html
-%%PORTDOCS%%%%DOCSDIR%%/auto_updt.html
-%%PORTDOCS%%%%DOCSDIR%%/comm_scan.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/inf_eicar.gif
-%%PORTDOCS%%%%DOCSDIR%%/info_options.html
-%%PORTDOCS%%%%DOCSDIR%%/inst_pro.html
-%%PORTDOCS%%%%DOCSDIR%%/loc_files.html
-%%PORTDOCS%%%%DOCSDIR%%/macro_scanning_options.html
-%%PORTDOCS%%%%DOCSDIR%%/main_feat.html
-%%PORTDOCS%%%%DOCSDIR%%/man_updt.html
-%%PORTDOCS%%%%DOCSDIR%%/per_scan.html
-%%PORTDOCS%%%%DOCSDIR%%/reporting_options.html
-%%PORTDOCS%%%%DOCSDIR%%/scanning_options.html
-%%PORTDOCS%%%%DOCSDIR%%/screenshot.jpg
-%%PORTDOCS%%%%DOCSDIR%%/sys_req.html
-%%PORTDOCS%%%%DOCSDIR%%/test_eicar.html
-%%PORTDOCS%%%%DOCSDIR%%/test_inst.html
-%%PORTDOCS%%%%DOCSDIR%%/updater.html
-%%PORTDOCS%%%%DOCSDIR%%/updater_req.html
-%%PORTDOCS%%%%DOCSDIR%%/updt_macro.gif
-%%PORTDOCS%%%%DOCSDIR%%/updt_sign.gif
-%%PORTDOCS%%%%DOCSDIR%%/updt_signature.gif
+bin/fpscan
+bin/fpupdate
+@unexec if [ -L /etc/f-prot.conf ]; then rm /etc/f-prot.conf; fi
+@unexec if cmp -s %D/etc/f-prot.conf.sample %D/etc/f-prot.conf; then rm -f %D/etc/f-prot.conf; fi
+etc/f-prot.conf.sample
+@exec if [ ! -f %D/etc/f-prot.conf ]; then cp -p %D/%F %B/f-prot.conf; fi
+@exec if [ ! -e /etc/f-prot.conf ]; then ln -s %D/etc/f-prot.conf /etc/f-prot.conf; fi
+etc/periodic/daily/900.fpupdate
+libexec/f-prot/README
+libexec/f-prot/antivir.def
+libexec/f-prot/fpscan
+libexec/f-prot/fpupdate
+libexec/f-prot/license.key
+libexec/f-prot/product.data
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE-FPAV
+%%PORTDOCS%%%%DOCSDIR%%/LICENSES-others
+%%PORTDOCS%%%%DOCSDIR%%/html/add_info.html
+%%PORTDOCS%%%%DOCSDIR%%/html/appendix_a.html
+%%PORTDOCS%%%%DOCSDIR%%/html/appendix_b.html
+%%PORTDOCS%%%%DOCSDIR%%/html/appendix_c.html
+%%PORTDOCS%%%%DOCSDIR%%/html/auto_updt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/chmstyle.css
+%%PORTDOCS%%%%DOCSDIR%%/html/conf_scanmail_bootup.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpmon.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpmon_conf.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpmon_options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fprots.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpscan.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpscan_options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpscand.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpscand_conf.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpscand_options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fpupdate_options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/arrow_left.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/images/arrow_right.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/images/banner.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/images/dazuko.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fpupdate.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/images/notusing_fprot_so_v6.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/images/test_eicar.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/images/using_fprot_so_v6.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/inst_pro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/loc_files.html
+%%PORTDOCS%%%%DOCSDIR%%/html/loglevel.html
+%%PORTDOCS%%%%DOCSDIR%%/html/mailscanner.html
+%%PORTDOCS%%%%DOCSDIR%%/html/main_feat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man_updt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/milter_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/html/per_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/html/postfix_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/html/prot_samba.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmail_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/html/scan_with_mailscanner.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sys_req.html
+%%PORTDOCS%%%%DOCSDIR%%/html/test_eicar.html
+%%PORTDOCS%%%%DOCSDIR%%/html/test_inst.html
+%%PORTDOCS%%%%DOCSDIR%%/html/updater.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm f-prot/tools
-@dirrm f-prot/etc
-@dirrmtry f-prot
+@dirrmtry libexec/f-prot
+@dirrmtry etc/periodic/daily
+@dirrmtry etc/periodic

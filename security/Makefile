@@ -116,7 +116,6 @@
     SUBDIR += execwrap
     SUBDIR += expiretable
     SUBDIR += f-prot
-    SUBDIR += f-prot-sig
     SUBDIR += f-protd
     SUBDIR += fakebo
     SUBDIR += fakeident
