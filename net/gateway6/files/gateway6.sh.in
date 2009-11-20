@@ -17,6 +17,8 @@
 #                         Set it to YES to enable gateway6.
 # gateway6_flags (flags): Set to "" by default.
 #
+# See gw6c(8) for gateway6_flags
+#
 
 . %%RC_SUBR%%
 

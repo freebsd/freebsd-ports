@@ -6,65 +6,64 @@
 #
 
 PORTNAME=	gateway6
-PORTVERSION=	5.0
-PORTREVISION=	2
+PORTVERSION=	6.0
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.go6.net/4105/file.asp?file_id=142&foo=/
-MASTER_SITES+=	http://fth.sourceforge.net/freenet6/
-MASTER_SITES+=	http://fth.host56.com/freenet6/
-DISTNAME=	gw6c-5_0-RELEASE-src
+MASTER_SITES=	http://go6.net/4105/file.asp?file_id=166&foo=/
+MASTER_SITES+=	http://go6.net/4105/file.asp?file_id=166&
+DISTNAME=	gw6c-6_0-RELEASE-src
 
 MAINTAINER=	mike@fth-devel.net
 COMMENT=	Gateway6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
 USE_RC_SUBR=	gateway6.sh
-WRKSRC=		${WRKDIR}/tspc-advanced
+WRKSRC=		${WRKDIR}/gw6c-6_0_1
+ETCDIR=		${PREFIX}/etc
 
 MAN8=		gw6c.8
 MAN5=		gw6c.conf.5
+GW6C_DATA=	\
+		CLIENT-LICENSE.TXT \
+		INSTALL \
+		README \
+		HEX_DC_0005_Gateway6_Client_Guide.pdf \
+		HEX_DC_0007_Gateway6_Client_Release_Notes.pdf
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	gateway6.sh pkg-message
 
+USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
+MAKE_JOBS_UNSAFE=yes
+MAKE_ARGS=	target=freebsd installdir=${PREFIX}
+
 .include <bsd.port.pre.mk>
 
-EXTRA_PATCHES=	${FILESDIR}/patch5-template.freebsd.sh
-
-MAKE_ARGS=	target=freebsd installdir=${PREFIX}
-GW6C_DATA=	CLIENT-LICENSE.TXT GUI-LICENSE.TXT INSTALL README
-
-do-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/gw6c ${PREFIX}/bin/gw6c
-	@${INSTALL_MAN} ${WRKSRC}/man/man8/gw6c.8 ${MAN8PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/man/man5/gw6c.conf.5 ${MAN5PREFIX}/man/man5
-	@${INSTALL_SCRIPT} ${WRKSRC}/template/checktunnel.sh ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/template/freebsd.sh ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/bin/gw6c.conf.sample ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKDIR}/HEX_DC_0005_Gateway6_Client_Guide.pdf ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/HEX_DC_0007_Gateway6_Client_Release_Notes.pdf ${DATADIR}
-
-.for f in ${GW6C_DATA}
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
-.endfor
-
 post-install:
-	@if [ ! -f ${PREFIX}/etc/gw6c.conf ]; then \
-		${CP} -p ${PREFIX}/etc/gw6c.conf.sample ${PREFIX}/etc/gw6c.conf ; \
-	fi
+.for f in ${GW6C_DATA}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "s|/installdir/bin|${PREFIX}/etc|g" \
-		${WRKSRC}/man/man8/gw6c.8
+		-e "s|/usr/local/etc/gw6|${PREFIX}|g" \
+		-e "s|gw6c.conf|${ETCDIR}/gw6c.conf|g" \
+		${WRKSRC}/tspc-advanced/platform/freebsd/tsp_local.c
+	@${REINPLACE_CMD} \
+		-e 's|"template"|"share/gateway6"|g' \
+		${WRKSRC}/tspc-advanced/src/lib/config.c
+	@${REINPLACE_CMD} \
+		-e "s|gifconfig=/usr/sbin/gifconfig|gifconfig=/sbin/ifconfig|g" \
+		${WRKSRC}/tspc-advanced/template/freebsd.sh
+	@${REINPLACE_CMD} \
+		-e "s|/installdir/bin|${ETCDIR}|g" \
+		${WRKSRC}/tspc-advanced/man/man8/gw6c.8
 
 	@${REINPLACE_CMD} \
 		-e "s|/usr/local/gw6c|${PREFIX}|g" \
-		-e "s|/install/dir/bin/gw6c.conf.sample|${EXAMPLESDIR}/gw6c.conf.sample|g" \
-		-e "s|/install/dir/bin/gw6c.conf|${PREFIX}/etc/gw6c.conf|g" \
+		-e "s|/install/dir/bin/gw6c.conf.sample|${ETCDIR}/gw6c.conf.sample|g" \
+		-e "s|/install/dir/bin/gw6c.conf|${ETCDIR}/gw6c.conf|g" \
 		-e "s|template=linux|template=freebsd|g" \
-		${WRKSRC}/man/man5/gw6c.conf.5
+		${WRKSRC}/tspc-advanced/man/man5/gw6c.conf.5
 
 .include <bsd.port.post.mk>
