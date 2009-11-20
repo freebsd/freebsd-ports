@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Sender
-PORTVERSION=	0.092840
+PORTVERSION=	0.093110
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,6 +39,7 @@ MAN3=	Email::Sender.3 \
 	Email::Sender::Manual.3 \
 	Email::Sender::Manual::QuickStart.3 \
 	Email::Sender::Role::CommonSending.3 \
+	Email::Sender::Role::HasMessage.3 \
 	Email::Sender::Simple.3 \
 	Email::Sender::Success.3 \
 	Email::Sender::Success::Partial.3 \
