@@ -17,6 +17,10 @@ DISTNAME=	abuse-${PORTVERSION}
 MAINTAINER=	chris@officialunix.com
 COMMENT=	An SDL port of the Abuse game engine
 
+# Add in the oposite, request games/abuse if being installed directly
+# Instead of games/abuse
+RUN_DEPENS=	abuse:${PORTSDIR}/games/abuse
+
 USE_GL=		gl
 USE_SDL=	sdl
 USE_GMAKE=	yes
