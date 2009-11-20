@@ -7,7 +7,7 @@
 
 PORTNAME=	opal3
 PORTVERSION=	3.6.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Stable%205
 DISTNAME=	opal-${PORTVERSION}
@@ -68,7 +68,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 
 .if defined(WITH_ZRTP)
 .if !defined(SAFE_ZRTP)
-IGNORE=	Please build devel/libzrtpcpp WITHOUT ports SSL and re-run build with SAFE_ZRTP set
+IGNORE=	please build devel/libzrtpcpp WITHOUT ports SSL and re-run build with SAFE_ZRTP set
 .endif
 LIB_DEPENDS+=	zrtpcpp.0:${PORTSDIR}/devel/libzrtpcpp
 CONFIGURE_ARGS+=	--enable-zrtp
@@ -265,5 +265,8 @@ post-patch:
 .if !defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e 's/^\(all:\).*/\1 optdepend opt/' ${WRKSRC}/Makefile.in
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's?\$$(LIB_FILENAME_SHARED_PAT)?libopal-${PORTVERSION:C/.[0-9]+$//g}'.so.'${PORTVERSION:C/^[0-9]+.[0-9]+.//}?' ${WRKSRC}/opal_defs.mak
 
 .include <bsd.port.post.mk>
