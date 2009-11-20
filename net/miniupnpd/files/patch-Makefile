@@ -1,5 +1,5 @@
---- Makefile.orig	2009-01-29 19:21:05.000000000 +0100
-+++ Makefile	2009-04-19 14:27:04.264746884 +0200
+--- Makefile.orig	2009-11-06 08:23:18.000000000 +0800
++++ Makefile	2009-11-06 08:23:31.000000000 +0800
 @@ -25,10 +25,12 @@
  
  # better way to find if we are using ipf or pf
@@ -11,5 +11,5 @@
  .endif
 +.endif
  
- # Solaris specific CFLAGS
- .if $(OSNAME) == "SunOS"
+ .if $(OSNAME) == "NetBSD"
+ FWNAME != . /etc/rc.subr; . /etc/rc.conf; \
