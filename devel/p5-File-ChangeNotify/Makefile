@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-ChangeNotify
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,8 @@ MAN3=		File::ChangeNotify.3 \
 		File::ChangeNotify::Event.3 \
 		File::ChangeNotify::Watcher.3 \
 		File::ChangeNotify::Watcher::Inotify.3 \
-		File::ChangeNotify::Watcher::Default.3
+		File::ChangeNotify::Watcher::Default.3 \
+		File::ChangeNotify::Watcher::KQueue.3
 
 PERL_CONFIGURE=	yes
 
