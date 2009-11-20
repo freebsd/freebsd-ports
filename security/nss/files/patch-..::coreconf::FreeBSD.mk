@@ -1,6 +1,6 @@
---- ../../security/coreconf/FreeBSD.mk.orig	2008-07-12 10:28:59.000000000 -0400
-+++ ../../security/coreconf/FreeBSD.mk	2009-09-16 22:57:28.000000000 -0400
-@@ -37,16 +37,28 @@
+--- ../../security/coreconf/FreeBSD.mk.orig	2008-07-12 07:28:59.000000000 -0700
++++ ../../security/coreconf/FreeBSD.mk	2009-11-19 19:29:23.000000000 -0800
+@@ -37,16 +37,33 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
@@ -22,6 +22,10 @@
 +CPU_ARCH		= sparc64
 +USE_64			= 1
 +else
++ifeq ($(OS_TEST),ia64)
++CPU_ARCH		= ia64
++USE_64			= 1
++else
 +ifeq ($(OS_TEST),amd64)
 +USE_64			= 1
 +endif
@@ -29,10 +33,11 @@
  endif
 +endif
 +endif
++endif
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -60,20 +72,18 @@ ifndef CLASSIC_NSPR
+@@ -60,20 +77,18 @@
  USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
  OS_LIBS			+= -pthread
@@ -58,7 +63,7 @@
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
-@@ -82,4 +92,5 @@ PROCESS_MAP_FILE = grep -v ';-' $< | \
+@@ -82,4 +97,5 @@
  
  G++INCLUDES		= -I/usr/include/g++
  
