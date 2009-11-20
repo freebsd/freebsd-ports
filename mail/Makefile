@@ -600,6 +600,7 @@
     SUBDIR += sigit
     SUBDIR += sigrot
     SUBDIR += simscan
+    SUBDIR += slapd-cyrus
     SUBDIR += sma
     SUBDIR += smail
     SUBDIR += smfsav
