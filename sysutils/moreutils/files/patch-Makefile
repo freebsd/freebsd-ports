@@ -1,23 +1,26 @@
---- Makefile.orig	2009-05-05 12:09:22.000000000 -0700
-+++ Makefile	2009-06-20 07:59:27.000000000 -0700
-@@ -1,25 +1,25 @@
+--- Makefile.orig	2009-07-02 12:00:44.000000000 -0700
++++ Makefile	2009-11-07 12:51:25.000000000 -0800
+@@ -1,51 +1,34 @@
 -BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel
 +BINS=isutf8 ifne pee sponge mispipe lckdo parallel
  PERLSCRIPTS=vidir vipe ts combine zrun
 -MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1 parallel.1
-+MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1 parallel.1
- CFLAGS=-O2 -g -Wall
+-CFLAGS=-O2 -g -Wall
++MANS=sponge.1 isutf8.1 ifne.1 pee.1 mispipe.1 lckdo.1 parallel.1
++CFLAGS+= -Wall
  INSTALL_BIN?=install -s
 -PREFIX=/usr
  
 -DOCBOOK2XMAN=docbook2x-man
-+DOCBOOK2XMAN=docbook2man
++.SUFFIXES: .1 .docbook
++
++DOCBOOK2XMAN= ${LOCALBASE}/bin/xsltproc ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
  
  all: $(BINS) $(MANS)
  
-+bins: $(BINS)
++bins: ${BINS}
 +
-+mans: $(MANS)
++mans: ${MANS}
 +
  clean:
  	rm -f $(BINS) $(MANS)
@@ -35,3 +38,36 @@
 -
  check: isutf8
  	./check-isutf8
+ 
+-isutf8.1: isutf8.docbook
+-	$(DOCBOOK2XMAN) $<
+-
+-ifdata.1: ifdata.docbook
+-	$(DOCBOOK2XMAN) $<
+-
+-ifne.1: ifne.docbook
+-	$(DOCBOOK2XMAN) $<
+-
+-pee.1: pee.docbook
+-	$(DOCBOOK2XMAN) $<
+-
+-sponge.1: sponge.docbook
+-	$(DOCBOOK2XMAN) $<
+-
+-mispipe.1: mispipe.docbook
+-	$(DOCBOOK2XMAN) $<
+-
+-lckdo.1: lckdo.docbook
+-	$(DOCBOOK2XMAN) $<
+-
+-parallel.1: parallel.docbook
+-	$(DOCBOOK2XMAN) $<
++.docbook.1:
++	$(DOCBOOK2XMAN) ${.IMPSRC}
+ 
+-%.1: %
+-	pod2man --center=" " --release="moreutils" $< > $@;
++extraman: ${PERLSCRIPTS}
++.for i in ${PERLSCRIPTS}
++	pod2man --center=" " --release="moreutils" ${i} > ${i:S@$@.1$@};
++.endfor
