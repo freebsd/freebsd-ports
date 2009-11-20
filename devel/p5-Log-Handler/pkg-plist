@@ -1,0 +1,24 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Handler/.packlist
+%%SITE_PERL%%/Log/Handler.pm
+%%SITE_PERL%%/Log/Handler/Config.pm
+%%SITE_PERL%%/Log/Handler/Examples.pod
+%%SITE_PERL%%/Log/Handler/Levels.pm
+%%SITE_PERL%%/Log/Handler/Output.pm
+%%SITE_PERL%%/Log/Handler/Output/DBI.pm
+%%SITE_PERL%%/Log/Handler/Output/Email.pm
+%%SITE_PERL%%/Log/Handler/Output/File.pm
+%%SITE_PERL%%/Log/Handler/Output/Forward.pm
+%%SITE_PERL%%/Log/Handler/Output/Screen.pm
+%%SITE_PERL%%/Log/Handler/Output/Sendmail.pm
+%%SITE_PERL%%/Log/Handler/Output/Socket.pm
+%%SITE_PERL%%/Log/Handler/Pattern.pm
+%%SITE_PERL%%/Log/Handler/Plugin/Config/General.pm
+%%SITE_PERL%%/Log/Handler/Plugin/Config/Properties.pm
+%%SITE_PERL%%/Log/Handler/Plugin/YAML.pm
+@dirrm %%SITE_PERL%%/Log/Handler/Output
+@dirrm %%SITE_PERL%%/Log/Handler/Plugin/Config
+@dirrm %%SITE_PERL%%/Log/Handler/Plugin
+@dirrm %%SITE_PERL%%/Log/Handler
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Handler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
+@dirrmtry %%SITE_PERL%%/Log
