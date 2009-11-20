@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -94,6 +94,10 @@ post-patch:
 		 /flags/s|-L/usr/lib64||g ; \
 		 /flags/s|-Wl,-Bsymbolic||g ; \
 		 /flags/s|--tag=disable-static||g'
+
+pre-build:
+	@cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} update-po
 
 post-install:
 .if !defined(NOPORTDOCS)
