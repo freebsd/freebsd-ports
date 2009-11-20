@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.7
+PORTVERSION=	8.5.8
 #PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
@@ -85,7 +85,8 @@ PLIST_SUB+=	DEMOS="@comment "
 
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
-	CoordToWin.3 CrtCmHdlr.3 CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 \
+	CoordToWin.3 CrtConsoleChan.3 CrtCmHdlr.3 CrtErrHdlr.3 \
+	CrtGenHdlr.3 CrtImgType.3 \
 	CrtItemType.3 CrtPhImgFmt.3 CrtSelHdlr.3 CrtWindow.3 DeleteImg.3 \
 	DrawFocHlt.3 EventHndlr.3 FindPhoto.3 FontId.3 FreeXId.3 GeomReq.3 \
 	GetAnchor.3 GetBitmap.3 GetCapStyl.3 GetClrmap.3 GetColor.3 \
@@ -113,8 +114,8 @@ MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	ttk_button.n ttk_checkbutton.n ttk_combobox.n ttk_entry.n ttk_frame.n \
 	ttk_image.n ttk_intro.n ttk_label.n ttk_labelframe.n ttk_menubutton.n \
 	ttk_notebook.n ttk_panedwindow.n ttk_progressbar.n ttk_radiobutton.n \
-	ttk_scrollbar.n ttk_separator.n ttk_sizegrip.n ttk_style.n \
-	ttk_treeview.n ttk_widget.n
+	ttk_scale.n ttk_scrollbar.n ttk_separator.n ttk_sizegrip.n ttk_style.n \
+	ttk_treeview.n ttk_vsapi.n ttk_widget.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
 MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \

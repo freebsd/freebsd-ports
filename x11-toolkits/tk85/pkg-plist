@@ -26,6 +26,7 @@ include/tk%%TK_VER%%/generic/tkUndo.h
 include/tk%%TK_VER%%/tk.h
 include/tk%%TK_VER%%/tkDecls.h
 include/tk%%TK_VER%%/tkInt.h
+include/tk%%TK_VER%%/tkIntDecls.h
 include/tk%%TK_VER%%/tkIntXlibDecls.h
 include/tk%%TK_VER%%/unix/tkUnixDefault.h
 include/tk%%TK_VER%%/unix/tkUnixInt.h
@@ -194,6 +195,7 @@ lib/tk%%TK_VER%%/ttk/sizegrip.tcl
 lib/tk%%TK_VER%%/ttk/treeview.tcl
 lib/tk%%TK_VER%%/ttk/ttk.tcl
 lib/tk%%TK_VER%%/ttk/utils.tcl
+lib/tk%%TK_VER%%/ttk/vistaTheme.tcl
 lib/tk%%TK_VER%%/ttk/winTheme.tcl
 lib/tk%%TK_VER%%/ttk/xpTheme.tcl
 lib/tk%%TK_VER%%/unsupported.tcl

@@ -15,6 +15,7 @@ include/tcl%%TCL_VER%%/generic/tclPlatDecls.h
 include/tcl%%TCL_VER%%/generic/tclPort.h
 include/tcl%%TCL_VER%%/generic/tclRegexp.h
 include/tcl%%TCL_VER%%/generic/tclTomMath.h
+include/tcl%%TCL_VER%%/generic/tclTomMathInt.h
 include/tcl%%TCL_VER%%/generic/tclTomMathDecls.h
 include/tcl%%TCL_VER%%/generic/tommath.h
 include/tcl%%TCL_VER%%/tcl.h
@@ -562,6 +563,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Manila
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Muscat
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Nicosia
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Novokuznetsk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Novosibirsk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Omsk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Oral
