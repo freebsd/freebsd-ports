@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	catapult
-PORTVERSION=	0.6.3R1
-PORTREVISION=	4
+PORTVERSION=	0.7.2
 CATEGORIES=	emulators
-MASTER_SITES=	SF/openmsx/openmsx/0.6.3
-DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION:S/R1/-R1/}
+MASTER_SITES=	SF/openmsx/openmsx/${PORTVERSION}
+DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for openMSX
@@ -19,25 +18,45 @@ COMMENT=	GUI for openMSX
 BUILD_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 
+USE_GNOME=	libxml2
+USE_WX=		2.6+
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_ARGS+=	INSTALL_BASE=${PREFIX} \
-		INSTALL_SHARE_DIR=${DATADIR} \
-		INSTALL_DOC_DIR=${DOCSDIR} \
-		CATAPULT_OPENMSX_BINARY=${LOCALBASE}/bin/openmsx \
-		CATAPULT_OPENMSX_SHARE=${LOCALBASE}/share/openmsx
-USE_WX=		2.6
-USE_GNOME=	libxml2
+MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
+		INSTALL_SHARE_DIR="${DATADIR}" \
+		CATAPULT_FLAVOUR="portbld" \
+		CATAPULT_OPENMSX_BINARY="${LOCALBASE}/bin/openmsx" \
+		CATAPULT_OPENMSX_SHARE="${LOCALBASE}/share/openmsx" \
+		SYMLINK_FOR_BINARY="false"
+
+.if defined(NOPORTDOCS)
+# Use dummy target rather than rewriting makefile
+MAKE_ARGS+=	INSTALL_DOC_DIR="${WRKSRC}/dummy"
+.else
+MAKE_ARGS+=	INSTALL_DOC_DIR="${DOCSDIR}"
+.endif
+
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DDEBUG
+CATAPULT_STRIP=	false
+.else
+CFLAGS+=	-DNDEBUG
+CATAPULT_STRIP=	true
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|freebsd5\*|freebsd*|; s|x86_64)|amd64)|;' \
-	    ${WRKSRC}/build/detectsys.sh
-	@${REINPLACE_CMD} 's|@$$(CXX)|$$(CXX)|' ${WRKSRC}/build/main.mk
-	@${REINPLACE_CMD} 's|INSTALL_BASE|INSTALL_SHARE_DIR|' ${WRKSRC}/build/info2code.mk
-	@${REINPLACE_CMD} 's|wx-config|${WX_CONFIG}|g' \
-		${WRKSRC}/build/main.mk ${WRKSRC}/build/probe.mk
-.if defined(NOPORTDOCS)
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/build-main.mk
-.endif
+	@${REINPLACE_CMD} 's|freebsd5\*|freebsd*| ; \
+		 s|x86_64)|amd64)|' ${WRKSRC}/build/detectsys.sh
+	@${REINPLACE_CMD} 's|INSTALL_BASE|INSTALL_SHARE_DIR|' \
+		${WRKSRC}/build/info2code.mk
+.for file in build/main.mk build/probe.mk
+	@${REINPLACE_CMD} 's|@$$(CXX)|$$(CXX)| ; \
+		 s|wx-config|${WX_CONFIG}|g' ${WRKSRC}/${file}
+.endfor
+	@${ECHO_CMD} > ${WRKSRC}/build/flavour-portbld.mk
+	@${ECHO_CMD} 'CXXFLAGS+=${CXXFLAGS}' \
+		>> ${WRKSRC}/build/flavour-portbld.mk
+	@${ECHO_CMD} 'CATAPULT_STRIP:=${CATAPULT_STRIP}' \
+		>> ${WRKSRC}/build/flavour-portbld.mk
 
 .include <bsd.port.mk>
