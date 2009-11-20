@@ -20,7 +20,12 @@ NO_BUILD=	yes
 MAN8=		zfs-snapshot-mgmt.8
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+
+post-patch:	.SILENT
+	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
+		-e 's|/usr/local|${PREFIX}|g' \
+		-e 's|${PREFIX}\(/bin/ruby\)|${LOCALBASE}\1|g' \
+		{} +
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
