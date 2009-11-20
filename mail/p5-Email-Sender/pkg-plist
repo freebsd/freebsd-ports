@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Email/Sender/Manual.pm
 %%SITE_PERL%%/Email/Sender/Manual/QuickStart.pm
 %%SITE_PERL%%/Email/Sender/Role/CommonSending.pm
+%%SITE_PERL%%/Email/Sender/Role/HasMessage.pm
 %%SITE_PERL%%/Email/Sender/Simple.pm
 %%SITE_PERL%%/Email/Sender/Success.pm
 %%SITE_PERL%%/Email/Sender/Success/Partial.pm
