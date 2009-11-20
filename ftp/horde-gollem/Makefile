@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gollem
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	ftp www
 
 MAINTAINER=	ports@FreeBSD.org
