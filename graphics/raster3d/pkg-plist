@@ -57,47 +57,47 @@ bin/normal3d
 %%PORTDOCS%%%%DOCSDIR%%/html/rods.html
 %%PORTDOCS%%%%DOCSDIR%%/html/stereo3d.html
 %%PORTDOCS%%%%DOCSDIR%%/R3D_manual.pdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/msms/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/msms/msms2r3d.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/msms/msms_example.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/LT.pdb
-%%PORTDOCS%%%%EXAMPLESDIR%%/README.examples
-%%PORTDOCS%%%%EXAMPLESDIR%%/chaincolours.pdb
-%%PORTDOCS%%%%EXAMPLESDIR%%/clip.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex5.jpeg
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex5_matrix.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex7_header.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex7_helix.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex7_labels.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex7_tex.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex7_titles.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.sgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/example3.mol
-%%PORTDOCS%%%%EXAMPLESDIR%%/example3.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/example3.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example4.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example5.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/example5.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example6.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/example6.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example7.jpeg
-%%PORTDOCS%%%%EXAMPLESDIR%%/example7.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/example7.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example8.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/example9.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/gal_srf.r3d.gz
-%%PORTDOCS%%%%EXAMPLESDIR%%/header1.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/header2.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/header4.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/header8.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/plane.r3d
-%%PORTDOCS%%%%EXAMPLESDIR%%/sugarG.pdb
-%%PORTDOCS%%%%EXAMPLESDIR%%/sugarcolours.pdb
-%%PORTDOCS%%%%EXAMPLESDIR%%/sugars.pdb
-%%PORTDOCS%%%%EXAMPLESDIR%%/transparent.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/msms2r3d.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/msms_example.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LT.pdb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.examples
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chaincolours.pdb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clip.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex5.jpeg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex5_matrix.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex7_header.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex7_helix.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex7_labels.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex7_tex.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex7_titles.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.sgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.mol
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example5.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example5.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example6.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example6.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example7.jpeg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example7.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example7.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example8.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example9.script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gal_srf.r3d.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header1.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header2.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header4.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header8.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plane.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sugarG.pdb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sugarcolours.pdb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sugars.pdb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent.r3d
 %%DATADIR%%/materials/2-sided.r3d
 %%DATADIR%%/materials/backdrop_1.r3d
 %%DATADIR%%/materials/backdrop_2.r3d
@@ -149,9 +149,9 @@ bin/normal3d
 %%DATADIR%%/materials/transparent1.r3d
 %%DATADIR%%/materials/white.r3d
 %%DATADIR%%/materials/yellow.r3d
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/msms
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/materials
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/msms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
