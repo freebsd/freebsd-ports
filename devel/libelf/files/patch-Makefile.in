@@ -1,4 +1,7 @@
-Fix the pkgconfig data directory path.
+Description: Fix the pkgconfig data directory path.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-20
 
 --- Makefile.in.orig
 +++ Makefile.in
