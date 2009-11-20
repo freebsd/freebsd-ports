@@ -2,6 +2,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/.packlist
 @dirrmtry %%SITE_PERL%%/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
+bin/zcchooser-edit
+bin/zcchooser-get
+bin/zcchooser-run
+bin/zcchooser-set
 bin/zccreate
 bin/zcget
 bin/zcls

@@ -7,6 +7,9 @@ zcrm	Remove a ZConf config or set.
 zcset	Sets a value in a ZConf config.
 zcvdel	Remove a variable from a ZConf config.
 zcvls	Lists the keys of a ZConf config.
-
+zcchooser-edit	Edits the chooser for a config.
+zcchooser-get	Gets the chooser for a config.
+zcchooser-run	Return the set that will be used for a config.
+zcchooser-set	Set the chooser using data in the specified file.
 
 WWW: http://search.cpan.org/dist/ZConf/
