@@ -1,6 +1,6 @@
---- Makefile.orig	2009-08-04 07:54:00.000000000 -0700
-+++ Makefile	2009-09-10 15:10:11.000000000 -0700
-@@ -111,7 +111,7 @@
+--- Makefile.orig	2009-11-03 12:00:27.000000000 -0800
++++ Makefile	2009-11-20 13:13:06.000000000 -0800
+@@ -118,7 +118,7 @@
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -9,7 +9,7 @@
  
  
  # Define standard directories for various platforms
-@@ -141,7 +141,7 @@
+@@ -148,7 +148,7 @@
    ASTMANDIR=$(mandir)
  ifneq ($(findstring BSD,$(OSARCH)),)
    ASTVARLIBDIR=$(prefix)/share/asterisk
@@ -18,7 +18,7 @@
    ASTDBDIR=$(localstatedir)/db/asterisk
  else
    ASTVARLIBDIR=$(localstatedir)/lib/asterisk
-@@ -241,9 +241,11 @@
+@@ -248,9 +248,11 @@
    _ASTCFLAGS+=-isystem /usr/local/include
  endif
  
@@ -30,7 +30,7 @@
  
  ifeq ($(PROC),ppc)
    _ASTCFLAGS+=-fsigned-char
-@@ -251,7 +253,7 @@
+@@ -258,7 +260,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
@@ -39,12 +39,7 @@
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
  endif
  
-@@ -454,25 +456,25 @@
- 	rm -f build_tools/menuselect-deps
- 
- datafiles: _all
--	if [ x`$(ID) -un` = xroot ]; then CFLAGS="$(_ASTCFLAGS) $(ASTCFLAGS)" bash build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
-+	#if [ x`$(ID) -un` = xroot ]; then CFLAGS="$(_ASTCFLAGS) $(ASTCFLAGS)" bash build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
+@@ -467,21 +469,21 @@
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
@@ -63,17 +58,17 @@
  			done \
  	fi
 -	mkdir -p $(DESTDIR)$(ASTDATADIR)/images
-+	$(MKDIR) $(DESTDIR)$(ASTDATADIR)/images
++	$(MKDIR) $(DESTDIR)$(DOCSDIR)/images
  	for x in images/*.jpg; do \
 -		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTDATADIR)/images ; \
-+		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTDATADIR)/images ; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(DOCSDIR)/images ; \
  	done
 -	mkdir -p $(DESTDIR)$(AGI_DIR)
 +	$(MKDIR) $(DESTDIR)$(AGI_DIR)
  	$(MAKE) -C sounds install
  
  update: 
-@@ -496,47 +498,47 @@
+@@ -505,47 +507,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  installdirs:
@@ -153,7 +148,7 @@
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -570,7 +572,7 @@
+@@ -579,7 +581,7 @@
  	@exit 1
  endif
  
@@ -162,7 +157,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -602,38 +604,25 @@
+@@ -611,38 +613,25 @@
  # XXX why *.adsi is installed first ?
  adsi:
  	@echo Installing adsi config files...
@@ -209,7 +204,7 @@
  		echo "Creating asterisk.conf"; \
  		( \
  		echo "[directories](!) ; remove the (!) to enable this" ; \
-@@ -689,13 +678,16 @@
+@@ -698,13 +687,16 @@
  		echo "pbx_realtime=1.6" ; \
  		echo "res_agi=1.6" ; \
  		echo "app_set=1.6" ; \
@@ -229,7 +224,7 @@
  	@for x in phoneprov/*; do \
  		dst="$(DESTDIR)$(ASTDATADIR)/$$x" ;	\
  		if [ -f $${dst} ]; then \
-@@ -711,14 +703,14 @@
+@@ -720,14 +712,14 @@
  			fi ;\
  		fi ; \
  		echo "Installing file $$x"; \
