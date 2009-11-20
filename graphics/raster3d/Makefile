@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	raster3d
-DISTVERSION=	2.7d
-PORTREVISION=	2
+PORTVERSION=	2.7s
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
-DISTNAME=	Raster3D_${DISTVERSION}
+DISTNAME=	Raster3D_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of tools for generating raster images of proteins and molecules
@@ -18,48 +17,18 @@ COMMENT=	A set of tools for generating raster images of proteins and molecules
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-BINARIES=	avs2ps balls rastep render ribbon rings3d rods normal3d
-SCRIPTS=	label3d stereo3d
+OPTIONS=	IMAGEMAGICK "ImageMagick graphics support" on
 
-USE_FORTRAN=	g77
+USE_FORTRAN=	yes
+MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" FC="${FC}" FFLAGS="${FFLAGS}" \
+		RM="${RM}" OS="${OPSYS}"
+ALL_TARGET=	strip-for-g77 all
 
-.if !defined(WITHOUT_IMAGEMAGICK)
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
-PLIST_SUB+=	IMAGEMAGICK=""
-.else
-PLIST_SUB+=	IMAGEMAGICK="@comment "
-.endif
+MANL=		avs2ps.l balls.l label3d.l r3d_objects.l r3dtops.l rastep.l \
+		raster3d.l render.l ribbon.l rods.l normal3d.l stereo3d.l
 
-MANL=		avs2ps.l label3d.l r3d_objects.l rastep.l render.l rods.l  \
-		balls.l normal3d.l r3dtops.l raster3d.l ribbon.l stereo3d.l
-
-pre-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} freebsd
-	@${REINPLACE_CMD} -e 's#prefix#PREFIX#g' \
-	                  -e 's#^LIBDIRS.*=.*#LIBDIRS	= -L${LOCALBASE}/lib#g' \
-	                  -e 's#^INCDIRS.*=.*#INCDIRS	= -I/usr/include -I${LOCALBASE}/include#g' \
-	                  ${WRKSRC}/Makefile*
-
-do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${BINARIES} ${PREFIX}/bin
-.if !defined(WITHOUT_IMAGEMAGICK)
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
-.endif
-	@${MKDIR} ${DATADIR}/materials
-	cd ${WRKSRC}/materials && ${INSTALL_DATA} * ${DATADIR}/materials
-
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANL} ${MANLPREFIX}/man/manl
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} R3D_manual.pdf ${DOCSDIR}
-	cd ${WRKSRC}/html && ${INSTALL_DATA} * ${DOCSDIR}/html
-
-	@${MKDIR} ${EXAMPLESDIR}/msms
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} *.* ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/msms && ${INSTALL_DATA} * ${EXAMPLESDIR}/msms
-.endif
+CFLAGS+=	-DLINUX -DNETWORKBYTEORDER
+FFLAGS+=	-fno-range-check
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +36,43 @@ post-install:
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile with GCC 4.2: internal compiler error
 .endif
+.endif
+
+.if defined(WITHOUT_IMAGEMAGICK)
+PLIST_SUB+=	IMAGEMAGICK="@comment "
+.else
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+CFLAGS+=	-DIMAGEPIPE
+PLIST_SUB+=	IMAGEMAGICK=""
+.endif
+
+do-configure:
+	@cd ${WRKSRC}; ${SED} 's:^prefix.*$$:prefix = ${PREFIX}:g ; \
+		 s:^INCDIRS.*$$:INCDIRS = -I${LOCALBASE}/include:g ; \
+		 s:^LIBDIRS.*$$:LIBDIRS = -L${LOCALBASE}/lib:g ; \
+		 s:IDEFS:#IDEFS:g' Makefile.template > Makefile.incl
+
+do-install:
+.for file in avs2ps balls normal3d rastep render ribbon rings3d rods
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${file} ${PREFIX}/bin
+.endfor
+.if !defined(WITHOUT_IMAGEMAGICK)
+.for file in label3d stereo3d
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${PREFIX}/bin
+.endfor
+.endif
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANL} ${MANLPREFIX}/man/manl
+	@${MKDIR} ${DATADIR}/materials
+	cd ${WRKSRC}/materials && ${INSTALL_DATA} * ${DATADIR}/materials
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} R3D_manual.pdf ${DOCSDIR}
+	cd ${WRKSRC}/html && ${INSTALL_DATA} * ${DOCSDIR}/html
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}/msms
+	cd ${WRKSRC}/examples && ${INSTALL_DATA} *.* ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/msms && ${INSTALL_DATA} * ${EXAMPLESDIR}/msms
 .endif
 
 .include <bsd.port.post.mk>
