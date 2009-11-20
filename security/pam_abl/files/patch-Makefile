@@ -9,11 +9,11 @@
 -CONFDIR=/etc/security
 -DBDIR=/var/lib/abl
 -LIBS=-ldb -lpthread
-+CFLAGS=-Wall -fPIC -I/usr/local/include
++CFLAGS=-Wall -fPIC -I%%PREFIX%%/include -I%%LOCALBASE%%/include
 +PAMDIR=%%PREFIX%%/lib
 +CONFDIR=%%ETCPREFIX%%/etc
 +DBDIR=%%PAMABLDB%%
-+LIBS=-L/usr/local/lib -ldb -lpthread
++LIBS=-L%%PREFIX%%/lib -L%%LOCALBASE%% -ldb -lpthread
  MODULE=pam_abl.so
  OBJ=pam_abl.o log.o config.o rule.o
  SUBDIRS=tools

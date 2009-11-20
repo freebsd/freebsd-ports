@@ -44,6 +44,7 @@ SUB_LIST+=	ETCPREFIX=${ETCPREFIX}
 SED_SCRIPT=	-e 's|<db.h>|<${BDB_INCLUDE_DIR}/db.h>|' \
 		-e 's|-ldb|-l${BDB_LIB_NAME}|' \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|%%ETCPREFIX%%|${ETCPREFIX}|' \
 		-e 's|%%PAMABLDB%%|${PAMABLDB}|'
 
