@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-DateTime-ButMaintained
-PORTVERSION=	0.08
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	DateTime related constraints and coercions for Moose
 
 RUN_DEPENDS=	p5-DateTime>=0.43:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Locale>=0.40:${PORTSDIR}/devel/p5-DateTime-Locale \
-		p5-DateTime-TimeZone>=0.77:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-DateTime-TimeZone>=0.96:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-Moose>=0.41:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Olson-Abbreviations>=0:${PORTSDIR}/devel/p5-Olson-Abbreviations \
