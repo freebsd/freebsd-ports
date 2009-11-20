@@ -43,6 +43,8 @@
 %%HORDIR%%/locale/fi_FI/help.xml
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/gl_ES/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/hr_HR/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/hr_HR/help.xml
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/hu_HU/help.xml
 %%HORDIR%%/locale/id_ID/LC_MESSAGES/passwd.mo
@@ -79,6 +81,7 @@
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
 %%HORDIR%%/po/gl_ES.po
+%%HORDIR%%/po/hr_HR.po
 %%HORDIR%%/po/hu_HU.po
 %%HORDIR%%/po/id_ID.po
 %%HORDIR%%/po/it_IT.po
@@ -139,6 +142,8 @@
 @dirrm %%HORDIR%%/locale/fr_FR
 @dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/gl_ES
+@dirrm %%HORDIR%%/locale/hr_HR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hr_HR
 @dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/hu_HU
 @dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
