@@ -1,18 +1,23 @@
 bin/hatari
+bin/hatari-console.py
+bin/hatariui
 bin/hmsa
 bin/zip2st
-%%PORTDOCS%%%%DOCSDIR%%/alsa-midi.txt
+share/applications/hatariui.desktop
 %%PORTDOCS%%%%DOCSDIR%%/authors.txt
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/emutos.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/clavier-exemple.txt
 %%PORTDOCS%%%%DOCSDIR%%/images/devices.png
-%%PORTDOCS%%%%DOCSDIR%%/images/discs.png
 %%PORTDOCS%%%%DOCSDIR%%/images/fileselector.png
+%%PORTDOCS%%%%DOCSDIR%%/images/floppydisks.png
+%%PORTDOCS%%%%DOCSDIR%%/images/harddisks.png
 %%PORTDOCS%%%%DOCSDIR%%/images/joystick.png
 %%PORTDOCS%%%%DOCSDIR%%/images/keyboard.png
 %%PORTDOCS%%%%DOCSDIR%%/images/main.png
 %%PORTDOCS%%%%DOCSDIR%%/images/memory.png
+%%PORTDOCS%%%%DOCSDIR%%/images/newfloppy.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen.png
 %%PORTDOCS%%%%DOCSDIR%%/images/sound.png
 %%PORTDOCS%%%%DOCSDIR%%/images/system.png
@@ -20,11 +25,27 @@ bin/zip2st
 %%PORTDOCS%%%%DOCSDIR%%/keymap-sample.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/memory-usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/midi-linux.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/todo.txt
 %%DATADIR%%/hatari-icon.bmp
+%%DATADIR%%/hatariui/Changelog
+%%DATADIR%%/hatariui/README
+%%DATADIR%%/hatariui/TODO
+%%DATADIR%%/hatariui/config.py
+%%DATADIR%%/hatariui/debugui.py
+%%DATADIR%%/hatariui/dialogs.py
+%%DATADIR%%/hatariui/hatari-icon.png
+%%DATADIR%%/hatariui/hatari.png
+%%DATADIR%%/hatariui/hatari.py
+%%DATADIR%%/hatariui/hatariui.py
+%%DATADIR%%/hatariui/uihelpers.py
 %%DATADIR%%/tos.img
+share/pixmaps/hatari-icon.png
+@dirrm %%DATADIR%%/hatariui
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

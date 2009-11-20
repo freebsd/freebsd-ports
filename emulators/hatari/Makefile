@@ -6,30 +6,43 @@
 #
 
 PORTNAME=	hatari
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.1
 CATEGORIES=	emulators
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Atari ST emulator
 
-USE_GNOME=	gnometarget
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 USE_BZIP2=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		hatari.1
-MANCOMPRESSED=	no
+MANLANG=	"" fr
+MAN1=		${PORTNAME}.1
+
+CPPFLAGS=	`libpng-config --I_opts`
+LDFLAGS=	`libpng-config --L_opts`
+
+post-patch:
+	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^ICONPATH/s|/icons/.*$$|/pixmaps|' \
+		${WRKSRC}/python-ui/Makefile
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/hatari.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${MANPREFIX}/man/fr/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/fr/${PORTNAME}.1 ${MANPREFIX}/man/fr/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/fr
+	${INSTALL_DATA} ${WRKSRC}/doc/fr/*.txt ${DOCSDIR}/fr
 	@${MKDIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}/images
 .endif
