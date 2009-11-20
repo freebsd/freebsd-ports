@@ -24,6 +24,7 @@
     SUBDIR += asused
     SUBDIR += bandwidthd
     SUBDIR += bgpq
+    SUBDIR += bgpq3
     SUBDIR += bigsister
     SUBDIR += bpft
     SUBDIR += braa
