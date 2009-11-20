@@ -13,8 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
+		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.5
@@ -37,8 +36,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
+MAKE_JOBS_SAFE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
@@ -61,7 +60,7 @@ TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--disable-nls \
+CONFIGURE_ARGS+=--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-gmp=${LOCALBASE} \
