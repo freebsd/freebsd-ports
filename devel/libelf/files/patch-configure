@@ -1,8 +1,14 @@
-Adapt the configure script to FreeBSD:
-- use the elf.h header;
-- shorten the library .so file name;
-- honor LDFLAGS when linking;
-- do not link against or depend on libc.
+Description: Adapt the configure script to FreeBSD.
+ - use the elf.h header;
+ - shorten the library .so file name;
+ - honor LDFLAGS when linking;
+ - do not link against or depend on libc.
+Forwarded: not-needed
+Author: Kevin Van Maren <vanmaren@fast.cs.utah.edu>,
+	Maxim Sobolev <sobomax@FreeBSD.org>,
+	Peter Pentchev <roam@FreeBSD.org>
+	Ying-Chieh Liao <ijliao@FreeBSD.org>
+Last-Update: 2009-11-20
 
 --- configure.orig
 +++ configure
