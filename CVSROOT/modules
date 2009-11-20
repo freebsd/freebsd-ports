@@ -6617,7 +6617,6 @@ kde4-l10n-da                    ports/misc/kde4-l10n-da
 kde4-l10n-el                    ports/misc/kde4-l10n-el
 kde4-l10n-en_GB                 ports/misc/kde4-l10n-en_GB
 kde4-l10n-en_gb                 ports/misc/kde4-l10n-en_GB
-kde4-l10n-eo                    ports/misc/kde4-l10n-eo
 kde4-l10n-es                    ports/misc/kde4-l10n-es
 kde4-l10n-et                    ports/misc/kde4-l10n-et
 kde4-l10n-eu                    ports/misc/kde4-l10n-eu
@@ -6651,7 +6650,6 @@ kde4-l10n-sk                    ports/misc/kde4-l10n-sk
 kde4-l10n-sl                    ports/misc/kde4-l10n-sl
 kde4-l10n-sr                    ports/misc/kde4-l10n-sr
 kde4-l10n-sv                    ports/misc/kde4-l10n-sv
-kde4-l10n-ta                    ports/misc/kde4-l10n-ta
 kde4-l10n-tg                    ports/misc/kde4-l10n-tg
 kde4-l10n-th                    ports/misc/kde4-l10n-th
 kde4-l10n-tr                    ports/misc/kde4-l10n-tr
@@ -6780,6 +6778,7 @@ klaptopdaemon                   ports/sysutils/klaptopdaemon
 klassmodeler                    ports/devel/klassmodeler
 klat                            ports/editors/klat
 klat4                           ports/editors/klat4
+klatexformula                   ports/graphics/klatexformula
 klavaro                         ports/games/klavaro
 klayout                         ports/cad/klayout
 kldfind                         ports/sysutils/kldfind
@@ -9001,6 +9000,8 @@ mol2ps                          ports/science/mol2ps
 molden                          ports/biology/molden
 momspider                       ports/www/momspider
 mondrian                        ports/editors/mondrian
+mongodb                         ports/databases/mongodb
+mongodb-devel                   ports/databases/mongodb-devel
 monit                           ports/sysutils/monit
 monitord                        ports/sysutils/monitord
 monkey                          ports/www/monkey
@@ -9594,7 +9595,6 @@ nhc98                           ports/lang/nhc98
 nibbles                         ports/games/nibbles
 nickle                          ports/lang/nickle
 nickleby                        ports/x11-wm/nickleby
-nicotine                        ports/net-p2p/nicotine
 nicotine-plus                   ports/net-p2p/nicotine-plus
 nifmon                          ports/net/nifmon
 nifticlib                       ports/science/nifticlib
@@ -11352,6 +11352,7 @@ p5-Email-MIME-Attachment-Stripper  ports/mail/p5-Email-MIME-Attachment-Stripper
 p5-Email-MIME-ContentType       ports/mail/p5-Email-MIME-ContentType
 p5-Email-MIME-CreateHTML        ports/mail/p5-Email-MIME-CreateHTML
 p5-Email-MIME-Creator           ports/mail/p5-Email-MIME-Creator
+p5-Email-MIME-Creator-ISO_2022_JP  ports/mail/p5-Email-MIME-Creator-ISO_2022_JP
 p5-Email-MIME-Encodings         ports/mail/p5-Email-MIME-Encodings
 p5-Email-MIME-Modifier          ports/mail/p5-Email-MIME-Modifier
 p5-Email-MessageID              ports/mail/p5-Email-MessageID
@@ -14973,6 +14974,7 @@ p5-email-mime-attachment-stripper  ports/mail/p5-Email-MIME-Attachment-Stripper
 p5-email-mime-contenttype       ports/mail/p5-Email-MIME-ContentType
 p5-email-mime-createhtml        ports/mail/p5-Email-MIME-CreateHTML
 p5-email-mime-creator           ports/mail/p5-Email-MIME-Creator
+p5-email-mime-creator-iso_2022_jp  ports/mail/p5-Email-MIME-Creator-ISO_2022_JP
 p5-email-mime-encodings         ports/mail/p5-Email-MIME-Encodings
 p5-email-mime-modifier          ports/mail/p5-Email-MIME-Modifier
 p5-email-obfuscate              ports/security/p5-Email-Obfuscate
@@ -18419,7 +18421,6 @@ php4-dio                        ports/devel/php4-dio
 php4-domxml                     ports/textproc/php4-domxml
 php4-exif                       ports/graphics/php4-exif
 php4-extensions                 ports/lang/php4-extensions
-php4-ffmpeg                     ports/graphics/php4-ffmpeg
 php4-filepro                    ports/databases/php4-filepro
 php4-ftp                        ports/ftp/php4-ftp
 php4-gd                         ports/graphics/php4-gd
@@ -18995,7 +18996,6 @@ postfinger                      ports/mail/postfinger
 postfix                         ports/mail/postfix
 postfix-current                 ports/mail/postfix-current
 postfix-gps                     ports/mail/postfix-gps
-postfix-gps-devel               ports/mail/postfix-gps-devel
 postfix-policyd-sf              ports/mail/postfix-policyd-sf
 postfix-policyd-spf             ports/mail/postfix-policyd-spf
 postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
@@ -20043,6 +20043,7 @@ pybench                         ports/benchmarks/pybench
 pyblosxom                       ports/www/pyblosxom
 pybook                          ports/textproc/pybook
 pybookreader                    ports/deskutils/pybookreader
+pybrain                         ports/science/pybrain
 pycdf                           ports/science/pycdf
 pychecker                       ports/devel/pychecker
 pyching                         ports/games/pyching
@@ -20150,7 +20151,6 @@ qdbm-plus                       ports/databases/qdbm-plus
 qdecoder                        ports/www/qdecoder
 qdevelop                        ports/devel/qdevelop
 qdvdauthor                      ports/multimedia/qdvdauthor
-qemacs                          ports/editors/qemacs
 qemu                            ports/emulators/qemu
 qemu-devel                      ports/emulators/qemu-devel
 qemu-launcher                   ports/emulators/qemu-launcher
@@ -20703,10 +20703,6 @@ rsync                           ports/net/rsync
 rsyncbackup                     ports/sysutils/rsyncbackup
 rsyncmanager                    ports/sysutils/rsyncmanager
 rsynth                          ports/audio/rsynth
-rsyslog                         ports/sysutils/rsyslog
-rsyslog-gssapi                  ports/sysutils/rsyslog-gssapi
-rsyslog-mysql                   ports/sysutils/rsyslog-mysql
-rsyslog-pgsql                   ports/sysutils/rsyslog-pgsql
 rsyslog3                        ports/sysutils/rsyslog3
 rsyslog3-dbi                    ports/sysutils/rsyslog3-dbi
 rsyslog3-gssapi                 ports/sysutils/rsyslog3-gssapi
