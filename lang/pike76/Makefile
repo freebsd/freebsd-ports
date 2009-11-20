@@ -7,7 +7,7 @@
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.112
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -88,10 +88,11 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--with-perl
 USE_PERL5=	YES
 
+PLIST_FILES=	bin/pike bin/pike76 bin/hilfe
+
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
@@ -231,15 +232,13 @@ post-patch:
 		${WRKSRC}/src/configure
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/pike/${PORTVERSION}/bin/pike
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/hilfe ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/pike.1 ${MAN1PREFIX}/man/man1
-
-verify:
-	@(cd ${WRKSRC}; make verify)
-
-# Autodocs is currently b0rken.... :/
-#doc:
-#	@(cd ${WRKSRC}; make documentation)
+	@${STRIP_CMD} ${PREFIX}/pike/${PORTVERSION}/bin/pike
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/hilfe ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/man/pike.1 ${MAN1PREFIX}/man/man1
+	@cd ${PREFIX} && ${FIND} pike/${PORTVERSION} ! -type d >> ${TMPPLIST}
+	@cd ${PREFIX} && ${FIND} pike/${PORTVERSION} -type d -empty -delete
+	@cd ${PREFIX} && ${FIND} -d pike/${PORTVERSION} -type d | \
+		${SED} 's,^,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/pike 2>/dev/null || true' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
