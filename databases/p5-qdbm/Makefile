@@ -18,4 +18,6 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 PATCHDIR=	${.CURDIR}/files
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include "${MASTERDIR}/Makefile"

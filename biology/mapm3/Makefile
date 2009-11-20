@@ -19,6 +19,7 @@ MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	Constructs linkage maps of markers segregating in experimental crosses
 
 NO_WRKSUBDIR=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${CP} ${WRKSRC}/sun/* ${WRKSRC}

@@ -22,6 +22,7 @@ USE_IMAKE=	yes
 USE_XORG=	x11 xext xt
 ALL_TARGET=	World
 MAN1=		plotmtv.1
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.c | ${XARGS} ${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/'

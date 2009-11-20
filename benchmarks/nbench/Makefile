@@ -15,6 +15,7 @@ MAINTAINER=	steinex@nognu.de
 COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbench ${PREFIX}/bin

@@ -23,6 +23,7 @@ EXTRACT_CMD=	${MKDIR} ${WRKSRC}; cd ${WRKSRC}; ${GZIP_CMD}
 MAKEFILE=	mk.stdx
 MAKE_ENV=	DORE_LOC=${WRKDIR}
 NOPRECIOUSMAKEVARS=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

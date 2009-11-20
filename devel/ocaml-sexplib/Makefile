@@ -23,6 +23,7 @@ RUN_DEPENDS=	${SA_DIR}/type-conv/pa_type_conv.cmi:${PORTSDIR}/devel/ocaml-typeco
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}

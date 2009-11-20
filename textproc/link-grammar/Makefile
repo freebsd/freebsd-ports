@@ -22,6 +22,7 @@ USE_CSTD=	gnu99
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--enable-pthreads \
 		--disable-java-bindings
+MAKE_JOBS_UNSAFE=	yes
 
 DOCS=		AUTHORS LICENSE MAINTAINERS README
 MAN1=		link-parser.1

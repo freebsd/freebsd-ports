@@ -18,6 +18,7 @@ COMMENT=	Application for computing/exploring Mandelbrot set
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
 USE_XORG=	xaw xbitmaps xpm
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.noimake ${WRKSRC}/Makefile

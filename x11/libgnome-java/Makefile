@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd" \
 		ac_cv_path_DB1="nocommand" \
 		ac_cv_path_DB2="nocommand"
+MAKE_JOBS_UNSAFE=	yes
 
 # jikes related
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}

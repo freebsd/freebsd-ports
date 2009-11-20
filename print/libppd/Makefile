@@ -18,6 +18,7 @@ USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	Yes
 USE_GNOME=	glib12
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ppdfilt.1
 MAN3=           ppd_check_option_is_marked.3 ppd_emit_to_file.3 \

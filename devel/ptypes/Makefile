@@ -19,6 +19,7 @@ SHLIB_VER=	21
 USE_LDCONFIG=	yes
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PTYPES_CFLAGS=	${CFLAGS}
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	DEBUG "Build debug version" off \
 		OPTIMIZED "Enable -O2 optimization" off

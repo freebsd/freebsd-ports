@@ -25,6 +25,7 @@ USE_GL=		glut
 USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${UNZIP_CMD} -q -o ${DISTDIR}/leocad-pieces-20030330.zip -d ${WRKDIR}/pieces

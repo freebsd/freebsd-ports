@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		pftpd.1 rpad.1
 PLIST_FILES=	sbin/pftpd

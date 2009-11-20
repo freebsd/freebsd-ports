@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 MAKEFILE=	makefile
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/pathload_rcv bin/pathload_snd
 

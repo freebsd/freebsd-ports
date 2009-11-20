@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--enable-tests=no --enable-maintainer=no \
 		--enable-pthread  --disable-kernel-patch \
 		--exec-prefix=${PREFIX} --includedir=${PREFIX}/include
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 

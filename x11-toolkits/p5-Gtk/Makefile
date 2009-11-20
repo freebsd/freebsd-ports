@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 USE_GNOME=	gtk12
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-guessing --lazy-load
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		Gtk.3pm \
 		Gtk::CListModel.3pm \

@@ -15,6 +15,7 @@ MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	A network tank battle game
 
 USE_XORG=	xpm
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		nadars.1 nadar.1
 MANCOMPRESSED=	yes

@@ -30,6 +30,7 @@ CONFIGURE_ARGS= --with-zlib --libdir="${L_LIB}" \
 		--enable-gzip-help \
 		--with-mime-libdir=${PREFIX}/etc \
 		--with-libiconv-prefix=${LOCALBASE}
+MAKE_JOBS_UNSAFE=	yes
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes

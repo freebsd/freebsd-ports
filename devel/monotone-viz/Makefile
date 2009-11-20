@@ -24,6 +24,7 @@ USE_GMAKE=	YES
 USE_GNOME=	gtk20 libgnomecanvas
 
 ALL_TARGET=
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/monotone-viz
 

@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Maryland Routing Simulator
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	X11 "Build with X11 support via Motif" on
 
 .include <bsd.port.pre.mk>

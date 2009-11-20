@@ -27,6 +27,7 @@ MAKE_SHELL=	${LOCALBASE}/bin/bash	# To avoid "shift: can't shift that many"
 REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
+MAKE_JOBS_UNSAFE=	yes
 
 NOMANCOMPRESS=	yes
 MAN1=		mined.1 minmacs.1 mpico.1 mstar.1 umined.1 uterm.1 xmined.1

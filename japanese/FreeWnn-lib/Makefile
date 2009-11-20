@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}"
 ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man
+MAKE_JOBS_UNSAFE=	yes
 
 WNNTYPE?=	WNN
 CONFIGURE_ARGS=	--enable-server=no \

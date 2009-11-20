@@ -22,6 +22,7 @@ MAKE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 USE_GCC=	3.4
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 #

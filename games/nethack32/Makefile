@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_XORG=	xaw xpm
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"
+MAKE_JOBS_UNSAFE=	yes
 
 MAN6=		dgn_comp${HACKEXT}.6 dlb${HACKEXT}.6 lev_comp${HACKEXT}.6 \
 		${HACKNAME}.6 recover${HACKEXT}.6

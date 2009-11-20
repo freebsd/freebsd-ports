@@ -31,6 +31,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	DATADIR=${DATADIR} DOCSDIR=${DOCSDIR}
+MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--with-projdir=${LOCALBASE}
 
 .include <bsd.port.pre.mk>

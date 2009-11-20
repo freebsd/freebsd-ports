@@ -22,6 +22,7 @@ CONFLICTS=	ode-[0-9].*
 
 USE_GL=		yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 
