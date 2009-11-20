@@ -462,6 +462,7 @@
     SUBDIR += ossp-sa
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
+    SUBDIR += p5-AnyEvent-Twitter
     SUBDIR += p5-Apache2-SOAP
     SUBDIR += p5-BBS-Client
     SUBDIR += p5-BBS-UserInfo
