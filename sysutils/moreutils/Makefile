@@ -8,7 +8,7 @@
 
 PORTNAME=	moreutils
 PORTVERSION=	0.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,12 +17,12 @@ MAINTAINER=	corky1951@comcast.net
 COMMENT=	Additional Unix utilities
 
 .if !defined(NO_INSTALL_MANPAGES)
-BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook2X \
+BUILD_DEPENDS=	libxslt>=0:${PORTSDIR}/textproc/libxslt \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-440
 .endif
 
 USE_PERL5=	yes
-USE_GMAKE=	yes
 
 PLIST_FILES=	bin/combine \
 		bin/ifne \
@@ -57,7 +57,7 @@ MAN1=		combine.1 \
 		vipe.1 \
 		zrun.1
 
-ALL_TARGET+=	mans
+ALL_TARGET+=	mans extraman
 MANCOMPRESSED=	no
 
 # portlint will warn about the next line, but we need it this way
@@ -65,7 +65,7 @@ OLD_DTD=	/usr/share/xml/docbook/schema/dtd/4.4/docbookx.dtd
 NEW_DTD=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.docbook" | ${XARGS} -n 7 -x ${REINPLACE_CMD} -E -e 's|${OLD_DTD}|${NEW_DTD}|g'
+	${REINPLACE_CMD} -E -e 's|${OLD_DTD}|${NEW_DTD}|g' ${WRKSRC}/*.docbook
 
 post-install:
 .for manpage in ${MAN1}
