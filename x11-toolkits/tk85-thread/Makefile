@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+PORTNAME=	tk
+
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Graphical toolkit for Tcl (threads support)
+
 BUILDING_TK_THREADS=	yes
 
 MASTERDIR=	${.CURDIR}/../tk85
