@@ -39,8 +39,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		Does not compile on sparc64 or ia64
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 post-patch:
