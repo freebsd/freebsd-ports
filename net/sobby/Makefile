@@ -6,32 +6,32 @@
 #
 
 PORTNAME=	sobby
-PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTVERSION=	0.4.6
 CATEGORIES=	net
-MASTER_SITES=	http://releases.0x539.de/sobby/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://releases.0x539.de/sobby/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A standalone obby server
 
-LIB_DEPENDS=	net6:${PORTSDIR}/net/net6 \
-		obby:${PORTSDIR}/devel/obby \
-		xml++:${PORTSDIR}/textproc/libxml++26 \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		glibmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
-
-MAN1=	sobby.1
-MANCOMPRESSED=	no
+LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
+		obby-0.4.1:${PORTSDIR}/devel/obby \
+		net6-1.3.0:${PORTSDIR}/net/net6 \
+		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
+		glibmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-zeroconf
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/sobby
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sobby ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sobby.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
