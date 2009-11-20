@@ -27,11 +27,11 @@
 %%HORDIR%%/faces/search/named.php
 %%HORDIR%%/faces/search/owner.php
 %%HORDIR%%/faces/search/tabs.php
-%%HORDIR%%/gallery.php
 %%HORDIR%%/gallery/captions.php
 %%HORDIR%%/gallery/delete.php
 %%HORDIR%%/gallery/index.php
 %%HORDIR%%/gallery/sort.php
+%%HORDIR%%/gallery.php
 %%HORDIR%%/group.php
 %%HORDIR%%/image.php
 %%HORDIR%%/img/download.php
@@ -45,20 +45,26 @@
 %%HORDIR%%/img/upload.php
 %%HORDIR%%/img/upload_preview.php
 %%HORDIR%%/index.php
+%%HORDIR%%/js/autocomplete.js
 %%HORDIR%%/js/builder.js
 %%HORDIR%%/js/carousel.js
 %%HORDIR%%/js/cropper.js
 %%HORDIR%%/js/editcaption.js
 %%HORDIR%%/js/embed.js
+%%HORDIR%%/js/googlemap.js
+%%HORDIR%%/js/googlemap_edit.js
 %%HORDIR%%/js/imagefaces.js
 %%HORDIR%%/js/lightbox.js
 %%HORDIR%%/js/slideshow.js
 %%HORDIR%%/js/slugcheck.js
+%%HORDIR%%/js/src/autocomplete.js
 %%HORDIR%%/js/src/builder.js
 %%HORDIR%%/js/src/carousel.js
 %%HORDIR%%/js/src/cropper.js
 %%HORDIR%%/js/src/editcaption.js
 %%HORDIR%%/js/src/embed.js
+%%HORDIR%%/js/src/googlemap.js
+%%HORDIR%%/js/src/googlemap_edit.js
 %%HORDIR%%/js/src/imagefaces.js
 %%HORDIR%%/js/src/lightbox.js
 %%HORDIR%%/js/src/slideshow.js
@@ -75,7 +81,7 @@
 %%HORDIR%%/lib/Block/recent_comments.php
 %%HORDIR%%/lib/Block/recent_faces.php
 %%HORDIR%%/lib/Block/recently_added.php
-%%HORDIR%%/lib/Exif.php
+%%HORDIR%%/lib/Block/recently_added_geodata.php
 %%HORDIR%%/lib/Exif/canon.php
 %%HORDIR%%/lib/Exif/fujifilm.php
 %%HORDIR%%/lib/Exif/gps.php
@@ -83,9 +89,10 @@
 %%HORDIR%%/lib/Exif/olympus.php
 %%HORDIR%%/lib/Exif/panasonic.php
 %%HORDIR%%/lib/Exif/sanyo.php
-%%HORDIR%%/lib/Faces.php
+%%HORDIR%%/lib/Exif.php
 %%HORDIR%%/lib/Faces/facedetect.php
 %%HORDIR%%/lib/Faces/opencv.php
+%%HORDIR%%/lib/Faces.php
 %%HORDIR%%/lib/Forms/Ecard.php
 %%HORDIR%%/lib/Forms/Image.php
 %%HORDIR%%/lib/Forms/ImageDate.php
@@ -93,7 +100,6 @@
 %%HORDIR%%/lib/Forms/Watermark.php
 %%HORDIR%%/lib/GalleryMode/Date.php
 %%HORDIR%%/lib/GalleryMode/Normal.php
-%%HORDIR%%/lib/ImageView.php
 %%HORDIR%%/lib/ImageView/mini.php
 %%HORDIR%%/lib/ImageView/plainstack.php
 %%HORDIR%%/lib/ImageView/polaroidstack.php
@@ -103,12 +109,13 @@
 %%HORDIR%%/lib/ImageView/screen.php
 %%HORDIR%%/lib/ImageView/shadowsharpthumb.php
 %%HORDIR%%/lib/ImageView/thumb.php
-%%HORDIR%%/lib/Report.php
+%%HORDIR%%/lib/ImageView.php
 %%HORDIR%%/lib/Report/letter.php
 %%HORDIR%%/lib/Report/mail.php
 %%HORDIR%%/lib/Report/tickets.php
-%%HORDIR%%/lib/Search.php
+%%HORDIR%%/lib/Report.php
 %%HORDIR%%/lib/Search/exif.php
+%%HORDIR%%/lib/Search.php
 %%HORDIR%%/lib/Tags.php
 %%HORDIR%%/lib/Tile/DateGallery.php
 %%HORDIR%%/lib/Tile/Gallery.php
@@ -127,24 +134,28 @@
 %%HORDIR%%/lib/Views/List.php
 %%HORDIR%%/lib/Views/Results.php
 %%HORDIR%%/lib/Views/Slideshow.php
-%%HORDIR%%/lib/Widget.php
 %%HORDIR%%/lib/Widget/Actions.php
 %%HORDIR%%/lib/Widget/GalleryFaces.php
+%%HORDIR%%/lib/Widget/Geodata.php
 %%HORDIR%%/lib/Widget/ImageFaces.php
 %%HORDIR%%/lib/Widget/Links.php
 %%HORDIR%%/lib/Widget/OtherGalleries.php
 %%HORDIR%%/lib/Widget/OwnerFaces.php
 %%HORDIR%%/lib/Widget/SimilarPhotos.php
 %%HORDIR%%/lib/Widget/Tags.php
+%%HORDIR%%/lib/Widget.php
 %%HORDIR%%/lib/XPPublisher.php
-%%HORDIR%%/lib/XRequest.php
 %%HORDIR%%/lib/XRequest/EditCaption.php
 %%HORDIR%%/lib/XRequest/EditFaces.php
 %%HORDIR%%/lib/XRequest/Embed.php
 %%HORDIR%%/lib/XRequest/GallerySlugCheck.php
+%%HORDIR%%/lib/XRequest/ImageSaveGeolocation.php
+%%HORDIR%%/lib/XRequest/LocationAutoCompleter.php
 %%HORDIR%%/lib/XRequest/TagActions.php
+%%HORDIR%%/lib/XRequest/TagAutoCompleter.php
 %%HORDIR%%/lib/XRequest/ToggleGalleryActions.php
 %%HORDIR%%/lib/XRequest/ToggleOtherGalleries.php
+%%HORDIR%%/lib/XRequest.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/prefs.php
@@ -172,6 +183,7 @@
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/ansel.mo
 %%HORDIR%%/locale/tr_TR/LC_MESSAGES/ansel.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/ansel.mo
+%%HORDIR%%/map_edit.php
 %%HORDIR%%/perms.php
 %%HORDIR%%/po/README
 %%HORDIR%%/po/ansel.pot
@@ -198,7 +210,8 @@
 %%HORDIR%%/scripts/remote_import.php
 %%HORDIR%%/scripts/sql/ansel.pgsql.sql
 %%HORDIR%%/scripts/sql/ansel.sql
-%%HORDIR%%/scripts/upgrades/2009-01-10_fix_view_mode.sql
+%%HORDIR%%/scripts/upgrades/1.0_to_1.1.pgsql.sql
+%%HORDIR%%/scripts/upgrades/1.0_to_1.1.php
 %%HORDIR%%/templates/captions/captions.inc
 %%HORDIR%%/templates/common-header.inc
 %%HORDIR%%/templates/faces/custom.inc
@@ -306,6 +319,7 @@
 %%HORDIR%%/themes/silver/graphics/lightbox/loading.gif
 %%HORDIR%%/themes/silver/graphics/lightbox/nextlabel.gif
 %%HORDIR%%/themes/silver/graphics/lightbox/prevlabel.gif
+%%HORDIR%%/themes/silver/graphics/mini-error.png
 %%HORDIR%%/themes/silver/graphics/mygalleries.png
 %%HORDIR%%/themes/silver/graphics/slideshow_next.png
 %%HORDIR%%/themes/silver/graphics/slideshow_pause.png
@@ -346,79 +360,79 @@
 %%HORDIR%%/view.php
 %%HORDIR%%/xppublish.php
 %%HORDIR%%/xrequest.php
-@dirrm %%HORDIR%%/themes/tango-blue/graphics/lightbox
-@dirrm %%HORDIR%%/themes/tango-blue/graphics/carousel
-@dirrm %%HORDIR%%/themes/tango-blue/graphics
-@dirrm %%HORDIR%%/themes/tango-blue
-@dirrm %%HORDIR%%/themes/silver/graphics/lightbox
-@dirrm %%HORDIR%%/themes/silver/graphics/carousel
-@dirrm %%HORDIR%%/themes/silver/graphics
-@dirrm %%HORDIR%%/themes/silver
-@dirrm %%HORDIR%%/themes/graphics/lightbox
-@dirrm %%HORDIR%%/themes/graphics/carousel
-@dirrm %%HORDIR%%/themes/graphics
-@dirrm %%HORDIR%%/themes
-@dirrm %%HORDIR%%/templates/xppublish
-@dirrm %%HORDIR%%/templates/view
-@dirrm %%HORDIR%%/templates/tile
-@dirrm %%HORDIR%%/templates/rss
-@dirrm %%HORDIR%%/templates/prefs
-@dirrm %%HORDIR%%/templates/list
-@dirrm %%HORDIR%%/templates/image
-@dirrm %%HORDIR%%/templates/group
-@dirrm %%HORDIR%%/templates/gallery
-@dirrm %%HORDIR%%/templates/faces
-@dirrm %%HORDIR%%/templates/captions
-@dirrm %%HORDIR%%/templates
-@dirrm %%HORDIR%%/scripts/upgrades
-@dirrm %%HORDIR%%/scripts/sql
-@dirrm %%HORDIR%%/scripts
-@dirrm %%HORDIR%%/po
-@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_TW
-@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/tr_TR
-@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sv_SE
-@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sl_SI
-@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lt_LT
-@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ja_JP
-@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/it_IT
-@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fi_FI
-@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/es_ES
-@dirrm %%HORDIR%%/locale/en_US
-@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/de_DE
-@dirrm %%HORDIR%%/locale
-@dirrm %%HORDIR%%/lib/tests/data
-@dirrm %%HORDIR%%/lib/tests
-@dirrm %%HORDIR%%/lib/XRequest
-@dirrm %%HORDIR%%/lib/Widget
-@dirrm %%HORDIR%%/lib/Views/GalleryRenderers
-@dirrm %%HORDIR%%/lib/Views/EmbeddedRenderers
-@dirrm %%HORDIR%%/lib/Views
-@dirrm %%HORDIR%%/lib/Tile
-@dirrm %%HORDIR%%/lib/Search
-@dirrm %%HORDIR%%/lib/Report
-@dirrm %%HORDIR%%/lib/ImageView
-@dirrm %%HORDIR%%/lib/GalleryMode
-@dirrm %%HORDIR%%/lib/Forms
-@dirrm %%HORDIR%%/lib/Faces
-@dirrm %%HORDIR%%/lib/Exif
-@dirrm %%HORDIR%%/lib/Block
-@dirrm %%HORDIR%%/lib
-@dirrm %%HORDIR%%/js/src
-@dirrm %%HORDIR%%/js
-@dirrm %%HORDIR%%/img
-@dirrm %%HORDIR%%/gallery
+@dirrmtry %%HORDIR%%/config
 @dirrm %%HORDIR%%/faces/search
 @dirrm %%HORDIR%%/faces
-@dirrm %%HORDIR%%/config
+@dirrm %%HORDIR%%/gallery
+@dirrm %%HORDIR%%/img
+@dirrm %%HORDIR%%/js/src
+@dirrm %%HORDIR%%/js
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Exif
+@dirrm %%HORDIR%%/lib/Faces
+@dirrm %%HORDIR%%/lib/Forms
+@dirrm %%HORDIR%%/lib/GalleryMode
+@dirrm %%HORDIR%%/lib/ImageView
+@dirrm %%HORDIR%%/lib/Report
+@dirrm %%HORDIR%%/lib/Search
+@dirrm %%HORDIR%%/lib/Tile
+@dirrm %%HORDIR%%/lib/Views/EmbeddedRenderers
+@dirrm %%HORDIR%%/lib/Views/GalleryRenderers
+@dirrm %%HORDIR%%/lib/Views
+@dirrm %%HORDIR%%/lib/Widget
+@dirrm %%HORDIR%%/lib/XRequest
+@dirrm %%HORDIR%%/lib/tests/data
+@dirrm %%HORDIR%%/lib/tests
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/captions
+@dirrm %%HORDIR%%/templates/faces
+@dirrm %%HORDIR%%/templates/gallery
+@dirrm %%HORDIR%%/templates/group
+@dirrm %%HORDIR%%/templates/image
+@dirrm %%HORDIR%%/templates/list
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/rss
+@dirrm %%HORDIR%%/templates/tile
+@dirrm %%HORDIR%%/templates/view
+@dirrm %%HORDIR%%/templates/xppublish
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics/carousel
+@dirrm %%HORDIR%%/themes/graphics/lightbox
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/silver/graphics/carousel
+@dirrm %%HORDIR%%/themes/silver/graphics/lightbox
+@dirrm %%HORDIR%%/themes/silver/graphics
+@dirrm %%HORDIR%%/themes/silver
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/carousel
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/lightbox
+@dirrm %%HORDIR%%/themes/tango-blue/graphics
+@dirrm %%HORDIR%%/themes/tango-blue
+@dirrm %%HORDIR%%/themes
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
