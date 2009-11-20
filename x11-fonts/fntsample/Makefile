@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	fntsample
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 PORTREVISION?=	0
 CATEGORIES?=	x11-fonts
 MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION} http://unicode.org/Public/5.1.0/ucd/:unidata
@@ -34,7 +34,8 @@ RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
 USE_GNOME=	pango
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-unicode-blocks=${WRKSRC}/Blocks.txt
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--with-unicode-blocks=${WRKSRC}/Blocks.txt
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME} share/locale/uk/LC_MESSAGES/${PORTNAME}.mo
