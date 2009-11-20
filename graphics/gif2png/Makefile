@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gif2png
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 
@@ -15,11 +15,14 @@ COMMENT=	Converts GIF images to a PNG format
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
-USE_GMAKE=	yes
 USE_PYTHON_RUN=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		gif2png.1 web2png.1
+MAN1=		${PORTNAME}.1 web2png.1
+PLIST_FILES=	bin/${PORTNAME} bin/web2png
+
+CPPFLAGS=	`libpng-config --I_opts`
+LDFLAGS=	`libpng-config --L_opts`
 
 .include <bsd.port.mk>
