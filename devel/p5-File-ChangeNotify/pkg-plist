@@ -3,6 +3,7 @@
 %%SITE_PERL%%/File/ChangeNotify/Watcher.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher/Default.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher/Inotify.pm
+%%SITE_PERL%%/File/ChangeNotify/Watcher/KQueue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ChangeNotify/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ChangeNotify
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
