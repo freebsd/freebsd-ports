@@ -1,0 +1,2 @@
+#!/bin/sh
+exec %%PREFIX%%/libexec/f-prot/fpupdate --keyfile %%PREFIX%%/libexec/f-prot/license.key ${@+"$@"}

@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# f-prot update script
+
+# If there is a global system configuration file, suck it in.
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+: ${fpupdate_enable="YES"}
+
+case "$fpupdate_enable" in
+	[Yy][Ee][Ss])
+		echo -n "Updating f-prot definitions: "
+		%%PREFIX%%/bin/fpupdate >/dev/null
+		if [ $? = 0 ]; then
+			echo "done."
+			rc=0
+		else
+			echo "failed."
+			rc=3
+		fi
+		;;
+	*) rc=0;;
+esac
+
+exit $rc

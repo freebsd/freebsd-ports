@@ -6,58 +6,63 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	4.6.8
+PORTVERSION=	6.2.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
-DISTNAME=	fp-freebsd-ws-${PORTVERSION}
+DISTNAME=	fp-FreeBSD-i386-ws-${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
-RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
-
-.ifndef(WITHOUT_SIGNATURES)
-RUN_DEPENDS+=	${LOCALBASE}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
-.endif
-
-RESTRICTED=	Free for personal use only
-BROKEN=		This version no longer receives updates
+RESTRICTED=	Free for personal users on personal workstations only
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-USE_PERL5=	yes
+SUB_FILES=	900.fpupdate fpscan fpupdate
 
-MAN1=		f-prot.1
+MAN1=		fpscan.1
+MAN5=		f-prot.conf.5
+MAN8=		fpupdate.8
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
 
 do-install:
-	cd ${WRKDIR} && ${TAR}	--exclude man_pages \
-				--exclude doc_ws \
-				--exclude f-prot.sh \
-				--exclude *.DEF \
-				--exclude install-f-prot.pl \
-				-cf - f-prot | ${TAR} -xf - -C ${PREFIX}
+	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/fpscan ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/fpupdate ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/antivir.def ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/license.key ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/product.data ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/libexec/${PORTNAME}
 
-	${INSTALL_SCRIPT} ${FILESDIR}/f-prot ${PREFIX}/bin/f-prot
-	${INSTALL_MAN} ${WRKSRC}/man_pages/f-prot.1 ${MANPREFIX}/man/man1/
-	${CHMOD} 755 ${PREFIX}/f-prot/tools/check-updates.pl
+	${INSTALL_DATA} ${WRKSRC}/f-prot.conf.default ${PREFIX}/etc/f-prot.conf.sample
 
-.ifdef(WITHOUT_SIGNATURES)
-post-extract:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WARNING: You have chosen not to have the virus signatures installed."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Make sure you download and update the signatures yourself, or use the"
-	@${ECHO_MSG} "check-updates.pl script provided in this port to do it for you."
-	@${ECHO_MSG} ""
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/fpscan ${PREFIX}/bin/fpscan
+	${INSTALL_SCRIPT} ${WRKDIR}/fpupdate ${PREFIX}/bin/fpupdate
+
+	${MKDIR} ${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/900.fpupdate ${PREFIX}/etc/periodic/daily
+
+	${INSTALL_MAN} ${WRKSRC}/doc/man/fpscan.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/f-prot.conf.5 ${MANPREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/fpupdate.8 ${MANPREFIX}/man/man8/
 
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -Rp ${WRKSRC}/doc_ws/* ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/html ${DOCSDIR}
+	${CP} ${WRKSRC}/doc/CHANGES ${DOCSDIR}
+	${CP} ${WRKSRC}/doc/LICENSE ${DOCSDIR}
+	${CP} ${WRKSRC}/doc/LICENSE-FPAV ${DOCSDIR}
+	${CP} ${WRKSRC}/doc/LICENSES-others ${DOCSDIR}
 .endif
+	@if [ ! -f ${PREFIX}/etc/f-prot.conf ]; then \
+		${CP} -p ${PREFIX}/etc/f-prot.conf.sample ${PREFIX}/etc/f-prot.conf ; \
+	fi
+	@if [ ! -e /etc/f-prot.conf ]; then \
+		${LN} -s ${PREFIX}/etc/f-prot.conf /etc/f-prot.conf ; \
+	fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
