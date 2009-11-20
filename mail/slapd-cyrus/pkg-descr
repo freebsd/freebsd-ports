@@ -1,0 +1,5 @@
+slapd-cyrus is a slapd perl backend, used to translate LDAP DIT into
+Cyrus IMAP-server configuration. It can manage user folders, shared
+folders and ACLs of shared folders.
+
+WWW: http://slapd-cyrus.sourceforge.net

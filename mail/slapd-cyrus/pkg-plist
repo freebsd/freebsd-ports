@@ -1,0 +1,15 @@
+%%SITE_PERL_REL%%/Slapd/Backend/Constant.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Cyrus.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Cyrus/Base.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Cyrus/Cyradm.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Cyrus/Mail.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Cyrus/User.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Proxy.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Proxy/Store.pm
+%%SITE_PERL_REL%%/Slapd/Backend/Proxy/Store/BerkeleyDB.pm
+@dirrmtry %%SITE_PERL_REL%%/Slapd/Backend/Proxy/Store
+@dirrmtry %%SITE_PERL_REL%%/Slapd/Backend/Proxy
+@dirrmtry %%SITE_PERL_REL%%/Slapd/Backend/Cyrus
+@dirrmtry %%SITE_PERL_REL%%/Slapd/Backend
+@dirrmtry %%SITE_PERL_REL%%/Slapd
+@dirrmtry %%SITE_PERL_REL%%
