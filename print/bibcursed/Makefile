@@ -7,22 +7,25 @@
 #
 
 PORTNAME=	bibcursed
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	print
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple curses-based editor for BibTeX bibliography files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKEFILE=	Makefile.ncurses
 
-MAN1=		bibcursed.1
-PLIST_FILES=	bin/bibcursed
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
+
+do-build:
+	cd ${WRKSRC}; ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME} -lncurses
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bibcursed ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bibcursed.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
