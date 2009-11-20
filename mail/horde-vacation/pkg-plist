@@ -18,6 +18,7 @@
 %%HORDIR%%/lib/Driver/forwards.php
 %%HORDIR%%/lib/Driver/ldap.php
 %%HORDIR%%/lib/Driver/plesk.php
+%%HORDIR%%/lib/Driver/postfixadmin.php
 %%HORDIR%%/lib/Driver/qmail.php
 %%HORDIR%%/lib/Driver/sql.php
 %%HORDIR%%/lib/Driver.php
