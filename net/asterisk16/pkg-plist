@@ -326,7 +326,6 @@ lib/asterisk/modules/app_pickupchan.so
 lib/asterisk/modules/app_readexten.so
 lib/asterisk/modules/app_waituntil.so
 %%WITH_ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
-lib/asterisk/modules/cdr_sqlite3_custom.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_jingle.so
 lib/asterisk/modules/chan_unistim.so
 lib/asterisk/modules/codec_g722.so
@@ -371,6 +370,7 @@ lib/asterisk/modules/app_dumpchan.so
 lib/asterisk/modules/app_echo.so
 lib/asterisk/modules/app_exec.so
 lib/asterisk/modules/app_externalivr.so
+%%WITH_SPANDSP%%lib/asterisk/modules/app_fax.so
 lib/asterisk/modules/app_festival.so
 lib/asterisk/modules/app_followme.so
 lib/asterisk/modules/app_forkcdr.so
@@ -506,15 +506,12 @@ share/asterisk/agi-bin/agi-test.agi
 share/asterisk/agi-bin/eagi-sphinx-test
 share/asterisk/agi-bin/eagi-test
 share/asterisk/agi-bin/jukebox.agi
-share/asterisk/firmware/iax/iaxy.bin
-share/asterisk/images/asterisk-intro.jpg
-share/asterisk/images/kpad2.jpg
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
 share/asterisk/moh/.asterisk-moh-opsound-wav
-share/asterisk/moh/CHANGES-asterisk-moh-opsound-2.01
-share/asterisk/moh/CREDITS-asterisk-moh-opsound-2.01
-share/asterisk/moh/LICENSE-asterisk-moh-opsound-2.01
+share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
+share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
+share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
 share/asterisk/moh/macroform-cold_day.wav
 share/asterisk/moh/macroform-robot_dity.wav
 share/asterisk/moh/macroform-the_simplicity.wav
@@ -524,8 +521,8 @@ share/asterisk/phoneprov/000000000000-directory.xml
 share/asterisk/phoneprov/000000000000-phone.cfg
 share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.15
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.15
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.16
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.16
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
 share/asterisk/sounds/en/conf-extended.gsm
 share/asterisk/sounds/en/conf-nonextended.gsm
@@ -536,11 +533,12 @@ share/asterisk/sounds/en/vm-forward-multiple.gsm
 share/asterisk/sounds/en/vm-invalid-password.gsm
 share/asterisk/sounds/en/vm-marked-nonurgent.gsm
 share/asterisk/sounds/en/vm-marked-urgent.gsm
+share/asterisk/sounds/en/vm-pls-try-again.gsm
 share/asterisk/sounds/en/vm-record-prepend.gsm
 share/asterisk/sounds/en/vm-review-nonurgent.gsm
 share/asterisk/sounds/en/vm-review-urgent.gsm
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.15
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.15
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.16
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.16
 share/asterisk/sounds/en/dir-usingkeypad.gsm
 share/asterisk/sounds/en/dir-welcome.gsm
 share/asterisk/sounds/en/agent-alreadyon.gsm
@@ -979,6 +977,8 @@ share/asterisk/static-http/prototype.js
 %%DOCSDIR%%/WARNINGS
 %%DOCSDIR%%/asterisk.css
 %%DOCSDIR%%/asterisk.html
+%%DOCSDIR%%/images/asterisk-intro.jpg
+%%DOCSDIR%%/images/kpad2.jpg
 %%DOCSDIR%%/images.aux
 %%DOCSDIR%%/images.log
 %%DOCSDIR%%/images.out
@@ -1271,6 +1271,7 @@ share/asterisk/static-http/prototype.js
 %%DOCSDIR%%/node97.html
 %%DOCSDIR%%/node98.html
 %%DOCSDIR%%/node99.html
+@dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
 @dirrm share/asterisk/static-http
 @dirrm share/asterisk/sounds/en/silence
@@ -1286,7 +1287,6 @@ share/asterisk/static-http/prototype.js
 @dirrm share/asterisk/phoneprov
 @dirrm share/asterisk/moh
 @dirrm share/asterisk/keys
-@dirrm share/asterisk/images
 @dirrm share/asterisk/firmware/iax
 @dirrm share/asterisk/firmware
 @dirrm share/asterisk/agi-bin

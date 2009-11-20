@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.6.0.15
+PORTVERSION=	1.6.0.18
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
@@ -16,7 +16,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
-		newt.51:${PORTSDIR}/devel/newt
+		newt.51:${PORTSDIR}/devel/newt \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
@@ -53,17 +54,18 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		GSM		"Enable GSM codec" on \
 		CURL		"Enable CURL support" on \
 		ILBC		"Enable iLBC codec" off \
+		SPANDSP		"Enable Spandsp faxing support" off \
 #		CODEC_PATCH	"Apply codec negotiation patch" off \
 #		MISC_PATCHES	"Apply additional patches" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+#.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 #OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
 
 # Include this since we have altered OPTIONS.
-.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
-.endif
+#.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
+#.endif
 
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
@@ -182,11 +184,22 @@ LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 
 .if !defined(WITH_CURL)
 PLIST_SUB+=	WITH_CURL="@comment "
-CONFIGURE_ARGS+= --without-curl
+CONFIGURE_ARGS+= --with-curl=no \
+		--with-libcurl=no
 .else
 PLIST_SUB+=	WITH_CURL=""
-CONFIGURE_ARGS+= --with-curl
+CONFIGURE_ARGS+= --with-curl \
+		--with-libcurl
 LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+.endif
+
+.if !defined(WITH_SPANDSP)
+PLIST_SUB+=	WITH_SPANDSP="@comment "
+CONFIGURE_ARGS+= --without-spandsp
+.else
+PLIST_SUB+=	WITH_SPANDSP=""
+CONFIGURE_ARGS+= --with-spandsp
+LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
 .endif
 
 .if defined(WITH_CODEC_PATCH)
