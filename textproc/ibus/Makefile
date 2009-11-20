@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus
-PORTVERSION=	1.1.0.20090829
+PORTVERSION=	1.2.0.20091024
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -24,37 +24,12 @@ USE_QT_VER=	4
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	ibus.schemas
 
 OPTIONS=	ISOCODES "Use isocodecs" on
-#		QTIMMODULE "Enable building of Qt4 immodule" off \
-#		PYGCONF "Use internal python gconf binding" on \
 
 .include <bsd.port.pre.mk>
-
-# With 1.1.0.20090311, QT4 IM Module is broken and would not be built
-# .if defined(WITH_QTIMMODULE)
-# QT_COMPONENTS=	dbus xml gui corelib qmake_build
-# # if no QMAKE is set, the configure script would fail to find qmake-qt4
-# # however, it worked as expected when being executed in the shell...
-# CONFIGURE_ENV+=	QMAKE=${LOCALBASE}/bin/qmake-qt4
-# PLIST_SUB+=	WITH_QTIMMODULE=""
-# CONFIGURE_ARGS+=	--enable-qt4-immodule
-# .else
-# CONFIGURE_ARGS+=	--disable-qt4-immodule
-# PLIST_SUB+=	WITH_QTIMMODULE="@comment "
-# .endif
-
-# This option does not exist now
-# .if defined(WITH_PYGCONF)
-# CONFIGURE_ARGS+= --enable-pygconf
-# PLIST_SUB+=	WITH_PYGCONF=""
-# .else
-# CONFIGURE_ARGS+= --disable-pygconf
-# PLIST_SUB+=	WITH_PYGCONF="@comment "
-# depends on gnome-python ( py-gnome2 )
-# USE_GNOME+=	pygnome2
-# .endif
 
 .if defined(WITH_ISOCODES)
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
