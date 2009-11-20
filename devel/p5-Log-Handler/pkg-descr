@@ -1,0 +1,5 @@
+Log::Handler is an object-oriented handler for logging, tracing and
+debugging. It is very easy to use and provides a simple interface for
+multiple output objects with lots of configuration parameters.
+
+WWW: http://search.cpan.org/dist/Log-Handler/
