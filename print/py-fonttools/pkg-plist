@@ -245,6 +245,8 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/otTables.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/otTables.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/ttProgram.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/ttProgram.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/ttProgram.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/test/__init__.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/test/__init__.pyo
@@ -266,7 +268,7 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/xmlWriter.py
 %%PYTHON_SITELIBDIR%%/FontTools/xmlWriter.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/xmlWriter.pyo
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/changes.txt
 %%PORTDOCS%%%%DOCSDIR%%/documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
