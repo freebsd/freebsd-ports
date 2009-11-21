@@ -29,6 +29,10 @@ PLIST_FILES+=	bin/rsvndump
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700041
+CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
+.endif
+
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 
