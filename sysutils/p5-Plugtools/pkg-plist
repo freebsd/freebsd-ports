@@ -1,0 +1,14 @@
+bin/plgadd
+bin/plgclean
+bin/plgmod
+bin/plgrm
+bin/pluadd
+bin/plumod
+bin/plupass
+bin/plurm
+%%SITE_PERL%%/Plugtools.pm
+%%SITE_PERL%%/Plugtools/Plugins/Dump.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plugtools/.packlist
+@dirrmtry %%SITE_PERL%%/Plugtools/Plugins/
+@dirrmtry %%SITE_PERL%%/Plugtools/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plugtools/
