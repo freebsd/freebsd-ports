@@ -12,6 +12,7 @@
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += anyremote2html
+    SUBDIR += anyterm
     SUBDIR += aolserver
     SUBDIR += aolserver-xotcl
     SUBDIR += apache-contrib
