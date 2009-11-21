@@ -1,0 +1,17 @@
+# Games dirs
+.
+/set type=dir uname=root gname=games mode=0775
+    games
+	atc
+	..
+	battlestar
+	..
+        hackdir         mode=0770
+            save            mode=0770
+            ..
+        ..
+        larn
+        ..
+        phantasia
+        ..
+    ..

@@ -1,0 +1,35 @@
+--- Makefile.orig	2009-09-24 10:46:30.000000000 +0200
++++ Makefile	2009-11-04 18:14:08.698185298 +0100
+@@ -8,32 +8,20 @@
+ 	atc \
+ 	backgammon \
+ 	battlestar \
+-	bcd \
+ 	bs \
+-	caesar \
+ 	canfield \
+ 	cribbage \
+-	dm \
+-	factor \
+ 	fish \
+-	fortune \
+-	grdc \
+ 	hack \
+ 	hangman \
+ 	hunt \
+ 	larn \
+ 	mille \
+-	morse \
+-	number \
+ 	phantasia \
+ 	piano \
+ 	pig \
+-	pom \
+-	ppt \
+-	primes \
+ 	quiz \
+ 	rain \
+-	random \
+ 	robots \
+ 	rogue \
+ 	sail \
