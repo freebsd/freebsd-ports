@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendkim
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.2
 CATEGORIES=	mail security
 MASTER_SITES=	SF/opendkim
 
@@ -26,6 +26,7 @@ MAN8=		opendkim-genkey.8 opendkim-testadsp.8 \
 PORTDOCS0=	FEATURES INSTALL KNOWNBUGS LICENSE LICENSE.Sendmail \
 		README RELEASE_NOTES RELEASE_NOTES.Sendmail
 PORTDOCS=	docs/*
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -95,6 +96,8 @@ post-install:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+.else
+	@${RM} -rf ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
