@@ -88,6 +88,8 @@ post-extract:
 	@cd ${WRKSRC}/src/pool && ${LN} -s pool.conf pool.conf.dist
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|libgnutls-config|pkg-config gnutls|g' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>| ; \
 		 s|/freetds.conf|/freetds.conf.dist|g ; \
