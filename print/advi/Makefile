@@ -8,7 +8,7 @@
 
 PORTNAME=	advi
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -34,7 +34,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	opt
 INSTALL_TARGET=	installopt installman
 
-CI_DEPEND=	${LOCALBASE}/${OCAML_LIBDIR}/camlimages/images.cmi
+CI_DEPEND=	${LOCALBASE}/${OCAML_LIBDIR}/camlimages/ci_core.a
 MAN1=		advi.1
 
 post-extract:
