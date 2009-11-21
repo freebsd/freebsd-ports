@@ -7,6 +7,7 @@
 
 PORTNAME=	amavisd-milter
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -55,8 +56,24 @@ MAN8=		amavisd-milter.8
 BROKEN=		Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
 
+.if !defined(SENDMAIL_WITHOUT_MILTER)
+.if defined(WITH_SENDMAIL_PORT)
+.if !defined(WITH_SENDMAIL_STATIC_MILTER) && !exists(${LOCALBASE}/lib/libmilter.so.${MILTER_SOVER})
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} You must rebuild sendmail port with SENDMAIL_WITH_SHARED_MILTER
+	@${ECHO_MSG} or set variable WITH_SENDMAIL_STATIC_MILTER
+	@${FALSE}
+.endif
+.endif
+.endif
+
 .if defined(WITH_SENDMAIL_PORT)
 CONFIGURE_ARGS+=--with-sendmail=${MILTERBASE}
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
 .endif
 
 post-install:
