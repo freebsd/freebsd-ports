@@ -7,6 +7,7 @@
 
 PORTNAME=	Devel-Size-Report
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	p5-Array-RefElem>=1.00:${PORTSDIR}/misc/p5-Array-RefElem \
 		p5-Devel-Size>=0.69:${PORTSDIR}/devel/p5-Devel-Size \
 		p5-Scalar-List-Utils>=1.13:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Time-HiRes>=1.86:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
