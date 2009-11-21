@@ -7,7 +7,7 @@
 
 PORTNAME=	simscan
 PORTVERSION=	1.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
@@ -37,7 +37,8 @@ OPTIONS=	CLAMAV "Support for ClamAV Virus Scanning" on \
 		ATTACH "Turn On Attachment Scanning (required CLAMAV)" off \
 		DROPMSG "Drop Message in Case of Virus Found" off \
 		PASSTHRU "Pass Spam Thru, Do Not Reject (required SPAMD)" off \
-		HEADERS "Add a Received Line With Versions of Scanners" off
+		HEADERS "Add a Received Line With Versions of Scanners" off \
+		DSPAM "Turn on DSPAM scanning" off
 
 .include <bsd.port.pre.mk>
 
@@ -88,6 +89,11 @@ CONFIGURE_ARGS+=--enable-spam-passthru=y
 .if defined(WITH_HEADERS)
 CONFIGURE_ARGS+=--enable-received=y
 CONFIGURE_ARGS+=--enable-sigtool-path=${LOCALBASE}/bin/sigtool
+.endif
+
+.if defined(WITH_DSPAM)
+CONFIGURE_ARGS+=--enable-dspam=y
+BUILD_DEPENDS+=	dspam:${PORTSDIR}/mail/dspam
 .endif
 
 .if defined(SPAM_HITS)
