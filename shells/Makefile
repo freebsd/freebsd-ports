@@ -12,6 +12,7 @@
     SUBDIR += bashc
     SUBDIR += bush
     SUBDIR += ch
+    SUBDIR += dash
     SUBDIR += es
     SUBDIR += esh
     SUBDIR += fd
