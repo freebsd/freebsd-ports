@@ -969,6 +969,7 @@ bftpd                           ports/ftp/bftpd
 bg-aspell                       ports/textproc/bg-aspell
 bglibs                          ports/devel/bglibs
 bgpq                            ports/net-mgmt/bgpq
+bgpq3                           ports/net-mgmt/bgpq3
 bgrab                           ports/news/bgrab
 bgrot                           ports/x11/bgrot
 bgs                             ports/x11/bgs
@@ -3181,7 +3182,6 @@ ezstream                        ports/audio/ezstream
 ezwgl                           ports/graphics/EZWGL
 ezxml                           ports/textproc/ezxml
 f-prot                          ports/security/f-prot
-f-prot-sig                      ports/security/f-prot-sig
 f-protd                         ports/security/f-protd
 f-spot                          ports/graphics/f-spot
 f1spirit-remake                 ports/games/f1spirit-remake
