@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -40,7 +40,7 @@ OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off \
 		DEJAVU		"Use DejaVu fonts (requires X11)" off \
 		MMAP		"Use mmap in rrd_update" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_PYTHON_MODULE)
 USE_PYTHON=	yes
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--disable-mmap
 .endif
 
 .if exists(${LOCALBASE}/lib/X11/fonts/dejavu) || defined(WITH_DEJAVU)
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
@@ -105,7 +105,7 @@ post-extract:
 		${WRKSRC}/doc/Makefile.in
 .endif
 .if defined(NOPORTEXAMPLES)
-	@${REINPLACE_CMD} -e 's|SUBDIRS = $$(PO) src examples doc bindings|SUBDIRS = $$(PO) src doc bindings|' \
+	${REINPLACE_CMD} -e 's|SUBDIRS = po src examples doc bindings intl|SUBDIRS = po src doc bindings intl|' \
 		${WRKSRC}/Makefile.in
 .endif
 
@@ -117,4 +117,4 @@ post-install:
 	@${ECHO_MSG} "############################################################################"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
