@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RUBYFORGE/sqlite-ruby
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
@@ -19,8 +19,8 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+CONFIGURE_ARGS+=--with-sqlite3-dir=${LOCALBASE}
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
