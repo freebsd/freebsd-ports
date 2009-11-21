@@ -9,6 +9,7 @@ PORTNAME=	unidecode
 PORTVERSION=	0.04.2
 CATEGORIES=	converters python
 MASTER_SITES=	http://code.zemanta.com/tsolc/unidecode/releases/ \
+		http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Unidecode-${PORTVERSION}
