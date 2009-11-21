@@ -9,6 +9,7 @@ PORTNAME=	mod_wsgi
 PORTVERSION=	2.6
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
 
 MAINTAINER=	douglas@douglasthrift.net
