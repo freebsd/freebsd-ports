@@ -63,6 +63,10 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
+.if defined(WITH_CAMELLIA)
+CONFIGURE_ARGS+=	--enable-camellia
+.endif
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=		AUTHORS NEWS README THANKS
 .endif
