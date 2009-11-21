@@ -9,6 +9,7 @@ PORTNAME=	keyring
 PORTVERSION=	0.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
+		http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
