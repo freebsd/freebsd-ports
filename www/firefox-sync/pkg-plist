@@ -30,14 +30,11 @@
 %%XPI_XPIDIR%%/modules/ext/Preferences.js
 %%XPI_XPIDIR%%/modules/ext/StringBundle.js
 %%XPI_XPIDIR%%/modules/ext/Sync.js
-%%XPI_XPIDIR%%/modules/xmpp/authenticationLayer.js
-%%XPI_XPIDIR%%/modules/xmpp/readme.txt
-%%XPI_XPIDIR%%/modules/xmpp/transportLayer.js
-%%XPI_XPIDIR%%/modules/xmpp/xmppClient.js
 %%XPI_XPIDIR%%/modules/auth.js
 %%XPI_XPIDIR%%/modules/notifications.js
 %%XPI_XPIDIR%%/modules/resource.js
 %%XPI_XPIDIR%%/modules/service.js
+%%XPI_XPIDIR%%/modules/status.js
 %%XPI_XPIDIR%%/modules/stores.js
 %%XPI_XPIDIR%%/modules/trackers.js
 %%XPI_XPIDIR%%/modules/util.js
@@ -52,7 +49,6 @@ lib/firefox3/extensions/%%XPI_XPIID%%
 @dirrm %%XPI_XPIDIR%%/platform/%%PLATFORM%%/components
 @dirrm %%XPI_XPIDIR%%/platform/%%PLATFORM%%
 @dirrm %%XPI_XPIDIR%%/platform
-@dirrm %%XPI_XPIDIR%%/modules/xmpp
 @dirrm %%XPI_XPIDIR%%/modules/ext
 @dirrm %%XPI_XPIDIR%%/modules/type_records
 @dirrm %%XPI_XPIDIR%%/modules/engines
