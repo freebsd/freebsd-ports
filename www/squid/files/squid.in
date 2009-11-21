@@ -11,11 +11,23 @@
 # /etc/rc.conf.d/squid to make this script actually do something. There
 # you can also set squid_chdir, squid_pidfile, squid_user, and squid_flags.
 #
+# On FreeBSD 7.1 and beyond you can use squid_fib to set a different routing
+# table for squid. See setfib(1) for details.
+#
 # Please see squid(8), rc.conf(5) and rc(8) for further details.
 #
 
 squid_checkrunning() {
 	${command} ${squid_flags} -k check 2>/dev/null
+}
+
+squid_setfib() {
+	sysctl net.fibs >/dev/null 2>&1 || return 0
+	if [ "x${squid_fib}" != "xNONE" ]; then
+		command="setfib -F ${squid_fib} ${command}"
+	else
+		return 0
+	fi
 }
 
 squid_stop() {
@@ -32,6 +44,7 @@ rcvar=${name}_enable
 command=%%PREFIX%%/sbin/squid
 extra_commands=reload
 reload_cmd="${command} ${squid_flags} -k reconfigure"
+start_precmd="squid_setfib"
 stop_precmd="squid_checkrunning"
 stop_cmd="squid_stop"
 
@@ -39,6 +52,7 @@ load_rc_config ${name}
 
 squid_chdir=${squid_chdir:-"%%PREFIX%%/squid/logs"}
 squid_enable=${squid_enable:-"NO"}
+squid_fib=${squid_fib:-"NONE"}
 squid_flags=${squid_flags-"-D"}
 squid_pidfile=${squid_pidfile:-"%%PREFIX%%/squid/logs/squid.pid"}
 squid_user=${squid_user:-%%SQUID_UID%%}
