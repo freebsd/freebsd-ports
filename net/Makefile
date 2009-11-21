@@ -916,6 +916,7 @@
     SUBDIR += silc-server
     SUBDIR += simpleproxy
     SUBDIR += sip_scenario
+    SUBDIR += sippy_b2bua
     SUBDIR += siproxd
     SUBDIR += sipsak
     SUBDIR += sixxs-aiccu
