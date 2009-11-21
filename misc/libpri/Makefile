@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.4.10.1
+PORTVERSION=	1.4.10.2
 CATEGORIES=	misc
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/libpri/releases/
 
