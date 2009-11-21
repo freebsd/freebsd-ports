@@ -101,6 +101,7 @@
     SUBDIR += briquolo
     SUBDIR += brutalchess
     SUBDIR += bs
+    SUBDIR += bsdgames
     SUBDIR += bsdrain
     SUBDIR += bsdtris
     SUBDIR += bsp
@@ -244,7 +245,6 @@
     SUBDIR += fortunate
     SUBDIR += fotaq
     SUBDIR += freebsd-carddeck-kde4
-    SUBDIR += freebsd-games
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-nox11
