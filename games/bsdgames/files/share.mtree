@@ -1,0 +1,11 @@
+# Games dirs
+.
+/set type=dir uname=root gname=wheel mode=0755
+    games
+        atc
+        ..
+        larn
+        ..
+        quiz.db
+        ..
+    ..

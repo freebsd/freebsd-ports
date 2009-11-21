@@ -12,19 +12,24 @@ bin/cribbage
 bin/fish
 bin/hack
 bin/hangman
+bin/hunt
+bin/huntd
 bin/larn
 bin/mille
 bin/phantasia
 bin/piano
 bin/pig
 bin/quiz
+bin/rain
 bin/robots
 bin/rogue
 bin/sail
 bin/snake
 bin/snscore
 bin/trek
+bin/wargames
 bin/worm
+bin/worms
 bin/wump
 share/games/atc/Game_List
 share/games/atc/Killer
@@ -76,28 +81,39 @@ share/games/fish.instr
 share/games/wump.info
 @dirrm share/games
 @cwd /var/games
-@dirrm atc
-@dirrm battlestar
+@exec chgrp games /var/games
+@dirrmtry atc
+@exec mkdir %D/atc
+@exec chmod 0775 %D/atc
+@dirrmtry battlestar
+@exec mkdir %D/battlestar
+@exec chmod 0775 %D/battlestar
 hackdir/perm
-hackdir/record
 hackdir/rumors
 hackdir/help
 hackdir/hh
 hackdir/data
-@dirrm hackdir/save
-@dirrm hackdir
+phantasia/monsters
+phantasia/void
+@comment FIXME below are highscores, we should keep them if non-empty
+@comment Also, we must make sure to not clobber them upon install XXX
+hackdir/record
+@dirrmtry hackdir/save
+@dirrmtry hackdir
+@exec mkdir -p %D/hackdir/save
+@exec chmod 0770 %D/hackdir %D/hackdir/save
 larn/lscore12.0
 larn/llog12.0
-@dirrm larn
+@dirrmtry larn
+@exec chmod 0775 %D/larn
 phantasia/characs
 phantasia/gold
 phantasia/lastdead
 phantasia/mess
-phantasia/monsters
 phantasia/motd
 phantasia/scoreboard
-phantasia/void
-@dirrm phantasia
+@dirrmtry phantasia
+@exec chmod 0775 %D/phantasia
 battlestar.log
 cfscores
 criblog

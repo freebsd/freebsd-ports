@@ -5,20 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	freebsd-games
-PORTVERSION=	5.1.1
-PORTREVISION=	7
+PORTNAME=	bsdgames
+PORTVERSION=	2.4
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=markm
+# Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v2.4.0:/games
+# Content is stable, but file timestamps differ. Bad gitweb, no cookie!
+MASTER_SITES=	https://www.spoerlein.net/pub/
 
-MAINTAINER=	uspoerlein@gmail.com
-COMMENT=	FreeBSD-modified "Standard" BSD games
+MAINTAINER=	uqs@spoerlein.net
+COMMENT=	Traditional BSD games taken from DragonFly BSD
 
+WRKSRC=		${WRKDIR}/dragonfly
 USE_BZIP2=	yes
-
-MAN6=	\
-	adventure.6 \
+MAN6=	adventure.6 \
 	arithmetic.6 \
 	atc.6 \
 	backgammon.6 \
@@ -30,25 +30,32 @@ MAN6=	\
 	fish.6 \
 	hack.6 \
 	hangman.6 \
+	hunt.6 \
+	huntd.6 \
 	larn.6 \
 	mille.6 \
 	phantasia.6 \
 	piano.6 \
 	pig.6 \
 	quiz.6 \
+	rain.6 \
 	robots.6 \
 	rogue.6 \
 	sail.6 \
 	snake.6 \
 	snscore.6 \
 	trek.6 \
+	wargames.6 \
 	worm.6 \
+	worms.6 \
 	wump.6
 
 MANCOMPRESSED=	maybe
 
-PATHNAME_FILES=	atc/atc.6 \
+# contain /usr/share/games
+SHAREPATH_FILES=atc/atc.6 \
 		atc/pathnames.h \
+		cribbage/cribbage.6 \
 		cribbage/pathnames.h \
 		fish/pathnames.h \
 		larn/pathnames.h \
@@ -57,25 +64,32 @@ PATHNAME_FILES=	atc/atc.6 \
 		quiz/quiz.6 \
 		wump/pathnames.h
 
-MAKE_JOBS_UNSAFE=	yes
-
-.include <bsd.port.pre.mk>
-
-post-extract:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
+# contain /usr/games/*
+GAMESPATH_FILES=backgammon/backgammon/backgammon.6 \
+		backgammon/common_source/init.c \
+		canfield/canfield/canfield.6 \
+		cribbage/cribbage.6 \
+		hunt/hunt/hunt.6 \
+		hunt/huntd/huntd.6 \
+		phantasia/pathnames.h \
+		wargames/wargames.sh
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
-		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|share/games|local/share/games|g'
-	@${FIND} ${WRKSRC} -name 'Makefile' | \
-		${XARGS} ${REINPLACE_CMD}  's|$${LIBCOMPAT}||g;;s|-lcompat||g'
-	@for f in ${PATHNAME_FILES}; do \
-		${REINPLACE_CMD} -e 's|/usr/local/local/local|${PREFIX}|g' \
+	@for f in ${SHAREPATH_FILES}; do \
+		${REINPLACE_CMD} -e 's|/usr/share/games|${PREFIX}/share/games|g' \
 			${WRKSRC}/$${f}; \
 	done
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		"${WRKSRC}/hack/hack.unix.c"
+	@for f in ${GAMESPATH_FILES}; do \
+		${REINPLACE_CMD} -e 's|/usr/games|${PREFIX}/bin|g' \
+			${WRKSRC}/$${f}; \
+	done
 
-.include <bsd.port.post.mk>
+# Only useful for DESTDIR
+VARDIR?=	/var
+
+pre-install:
+	${MKDIR} ${VARDIR}
+	mtree -deU -f ${FILESDIR}/var.mtree -p ${VARDIR}
+	mtree -deU -f ${FILESDIR}/share.mtree -p ${PREFIX}/share
+
+.include <bsd.port.mk>
