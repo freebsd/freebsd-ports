@@ -8,7 +8,7 @@
 PORTNAME=	gitosis
 PORTVERSION=	0.2.20080825
 CATEGORIES=	devel
-MASTER_SITES=	http://cloud.github.com/downloads/douglaswth/gitosis/ \
+MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/gitosis/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
