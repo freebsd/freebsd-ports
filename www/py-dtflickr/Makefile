@@ -9,6 +9,7 @@ PORTNAME=	dtflickr
 PORTVERSION=	1.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
+		http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
