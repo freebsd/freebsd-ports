@@ -8,7 +8,8 @@
 PORTNAME=	gitplugin
 PORTVERSION=	0.11.0.2.7034
 CATEGORIES=	www devel python
-MASTER_SITES=	http://code.douglasthrift.net/files/${PORTNAME}/
+MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
+		http://code.douglasthrift.net/files/${PORTNAME}/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}-r${PORTVERSION:E}
 
