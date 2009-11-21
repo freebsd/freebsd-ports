@@ -9,7 +9,9 @@
 PORTNAME=	openbox
 PORTVERSION=	3.4.7.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
+MASTER_SITES=	http://icculus.org/${PORTNAME}/releases/ \
+		http://offload1.icculus.org/openbox/releases/ \
+		http://sorcerer.mirrors.pair.com/mirror/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A standards compliant, fast, light-weight, extensible window manager
