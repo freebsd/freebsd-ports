@@ -8,7 +8,8 @@
 PORTNAME=	dtse
 PORTVERSION=	1.3
 CATEGORIES=	www perl5
-MASTER_SITES=	http://computers.douglasthrift.net/searchengine/download/
+MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
+		http://code.douglasthrift.net/files/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	douglas@douglasthrift.net
