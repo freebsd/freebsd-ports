@@ -8,7 +8,7 @@ if you use sendmail, add the milter socket `socketspec' in
 INPUT_MAIL_FILTER(`dkim-filter', `S=_YOUR_SOCKET_SPEC_, F=T, T=R:2m')
 
 or if you use postfix write your milter socket `socketspec' in
-${PREFIX}/etc/mail/main.cf:
+%%PREFIX%%/etc/postfix/main.cf:
 
 smtpd_milters = _YOUR_SOCKET_SPEC_
 
