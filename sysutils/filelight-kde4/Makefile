@@ -1,28 +1,28 @@
-# New ports collection makefile for:	filelight
-# Date created:		Fri Aug 29 21:16:39 CEST 2003
-# Whom:			Markus Brueffer <brueffer@phoenix-systems.de>
+# New ports collection Makefile for:	filelight
+# Date created:				2009-10-09
+# Whom:					Rusty Nejdl <rnejdl@ringofsaturn.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	filelight
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.9
+PORTREVISION=	0
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://www.methylblue.com/filelight/packages/
+MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
+DISTNAME=	99561-${PORTNAME}-${PORTVERSION}rc3
+EXTRACT_SUFX=	.tgz
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}rc3
 
-MAINTAINER=	decept0@gmail.com
-COMMENT=	Represent a file system as a set of concentric segmented-rings
+MAINTAINER=	rnejdl@ringofsaturn.com
+COMMENT=        Represent a file system as a set of concentric segmented-rings
 
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:22
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GETTEXT=	yes
-INSTALLS_ICONS=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
+USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=  corelib gui qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
+USE_CMAKE=	yes
+USE_LDCONFG=	yes
 
 .include <bsd.port.mk>
