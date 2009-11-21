@@ -1,7 +1,0 @@
---- gcc/config/t-freebsd.orig	Tue Jun  1 17:02:39 1999
-+++ gcc/config/t-freebsd	Tue Jun 22 11:05:25 1999
-@@ -1,4 +1,2 @@
- # Don't run fixproto
- STMP_FIXPROTO =
--# Use only native include files
--USER_H = $(EXTRA_HEADERS) $(LANG_EXTRA_HEADERS)
