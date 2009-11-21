@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dangen
-PORTVERSION=	0.3
-PORTREVISION=	4
+PORTVERSION=	0.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/dangen/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,6 +17,13 @@ COMMENT=	Shoot'em up game where accurate shooting matters
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image
+MAKE_JOBS_SAFE=	yes
+DESKTOP_ENTRIES="dangen" \
+		"Shoot'em up game where accurate shooting matters" \
+		"" \
+		"dangen" \
+		"Game;ArcadeGame;" \
+		false
 
 PORTDOCS=	README
 
