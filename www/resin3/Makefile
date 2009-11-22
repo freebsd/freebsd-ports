@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.1.8
+PORTVERSION=		3.1.9
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
-MAINTAINER=		wenheping@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Resin, a Java-based Application Server, 3.x branch
 
 USE_JAVA=		yes
