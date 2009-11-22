@@ -45,6 +45,13 @@ start_precmd="mlnet_check_vars"
 start_cmd="start_cmd"
 start_cmd()
 {
+  if [ -z "${rc_fast}" -a -n "${rc_pid}" ]; then
+    echo 1>&2 "${name} already running? (pid=${rc_pid})."
+    return 1
+  fi
+
+  check_startmsgs && echo "Starting ${name}."
+
   if [ -n "${mlnet_logfile}" ]; then
     mlnet_logcommand="-log_file ${mlnet_logfile}"
   else
