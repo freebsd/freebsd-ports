@@ -1,0 +1,8 @@
+wifimgr is a GTK+-based GUI for management of WiFi networks on BSD systems.
+It acts as an interface to the existing /etc/wpa_supplicant.conf networks
+configuration file, and supports WEP and WPA-PSK security.
+
+wifimgr was designed for users of the XFce4 window manager but will work
+in any environment with GTK+ libraries installed.
+
+WWW: http://opal.com/freebsd/ports/net-mgmt/wifimgr

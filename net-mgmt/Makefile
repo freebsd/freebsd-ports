@@ -270,6 +270,7 @@
     SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
+    SUBDIR += wifimgr
     SUBDIR += xymon-client
     SUBDIR += xymon-server
     SUBDIR += yabm
