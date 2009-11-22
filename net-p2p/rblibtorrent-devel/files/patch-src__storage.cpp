@@ -1,5 +1,5 @@
---- src/storage.cpp.orig	2009-04-13 02:37:54.000000000 +0900
-+++ src/storage.cpp	2009-04-29 15:56:16.000000000 +0900
+--- src/storage.cpp.orig	2009-11-06 09:45:13.000000000 -0800
++++ src/storage.cpp	2009-11-21 23:12:53.000000000 -0800
 @@ -53,7 +53,7 @@
  #include <boost/multi_index_container.hpp>
  #include <boost/multi_index/member.hpp>
@@ -28,7 +28,7 @@
  		}
  #endif // BOOST_VERSION
  #endif // BOOST_NO_EXCEPTIONS
-@@ -458,17 +458,17 @@
+@@ -460,17 +460,17 @@
  			}
  #ifndef BOOST_NO_EXCEPTIONS
  			}
@@ -49,7 +49,7 @@
  				return true;
  			}
  #endif // BOOST_VERSION
-@@ -501,16 +501,16 @@
+@@ -503,16 +503,16 @@
  #endif
  #ifndef BOOST_NO_EXCEPTIONS
  			}
@@ -69,7 +69,7 @@
  				return false;
  			}
  #endif // BOOST_VERSION
-@@ -558,17 +558,17 @@
+@@ -560,17 +560,17 @@
  			m_mapped_files->rename_file(index, new_filename);
  #ifndef BOOST_NO_EXCEPTIONS
  		}
@@ -91,7 +91,7 @@
  			return true;
  		}
  #endif // BOOST_VERSION
-@@ -591,15 +591,15 @@
+@@ -593,7 +593,7 @@
  #endif
  		{ fs::remove(safe_convert(p)); }
  #ifndef BOOST_NO_EXCEPTIONS
@@ -99,7 +99,9 @@
 +#if 0 // BOOST_VERSION >= 103500
  		catch (boost::system::system_error& e)
  		{
- 			set_error(p, e.code());
+ 			// no such file or directory is not an error
+@@ -601,9 +601,9 @@
+ 				set_error(p, e.code());
  		}
  #else
 -		catch (boost::filesystem::filesystem_error& e)
