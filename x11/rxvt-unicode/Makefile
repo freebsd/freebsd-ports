@@ -15,11 +15,6 @@ MASTER_SITE_SUBDIR=	. Attic
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
 
-.if !defined(WITHOUT_IMLOCALE_FIX)
-PATCH_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/p5-Encode-HanExtra \
-		${SITE_PERL}/${PERL_ARCH}/Encode/JIS2K.pm:${PORTSDIR}/converters/p5-Encode-JIS2K
-.endif
-
 USE_GNOME=	pkgconfig
 USE_XORG=		xpm xft
 GNU_CONFIGURE=		yes
@@ -27,11 +22,39 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
 USE_BZIP2=		yes
 
+OPTIONS=	\
+	PERL		"Embedded perl interpreter"			On	\
+	XIM		"Support for XIM (X Input Method) protocol"	On	\
+	UNICODE3	"Support Unicode codepoints above 65535"	On	\
+	COMBINING	"Automatic composition of combining chars"	On	\
+	MENUBAR		"Support for the menu bar system"		On	\
+	RXVT_SCROLLBAR	"Support for the original rxvt scrollbar"	On	\
+	NEXT_SCROLLBAR	"Support for a NeXT-like scrollbar"		On	\
+	XTERM_SCROLLBAR	"Support for an Xterm-like scrollbar"		On	\
+	PLAIN_SCROLLBAR	"Support for a plain-looking scrollbar"		On	\
+	HALF_SHADOW	"Half width/height shadows rxvt scrollbar"	Off	\
+	BACKSPACE_KEY	"Handling of the backspace key by rxvt"		On	\
+	DELETE_KEY	"Handling of the delete key by rxvt"		On	\
+	LINESPACE	"Support for line-spacing"			On	\
+	MOUSEWHEEL	"Support for scrolling via mouse wheel"		On	\
+	SMART_RESIZE	"Smart growth/shrink behaviour"			On	\
+	IMLOCALE_FIX	"imlocale encoding conversion fix" 		On	\
+	TERMINFO	"Register urxvt in the terminfo database"	On	\
+	AFTERIMAGE	"Use libAfterImage for background images"	On	\
+	XTERM_COLOR	"Support for xterm 256 colors"			Off
+
+.include <bsd.port.pre.mk>
+
 MAN1=		urxvt.1 urxvtc.1 urxvtd.1
 MAN7=		urxvt.7
 
 PORTDOCS1=	Changes README.FAQ README.configure
 PORTDOCS=	README.xvt ${PORTDOCS1}
+
+.if !defined(WITHOUT_IMLOCALE_FIX)
+PATCH_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/p5-Encode-HanExtra \
+		${SITE_PERL}/${PERL_ARCH}/Encode/JIS2K.pm:${PORTSDIR}/converters/p5-Encode-JIS2K
+.endif
 
 # disable the embedded perl interpreter
 .if defined(WITHOUT_PERL)
@@ -143,8 +166,6 @@ CONFIGURE_ENV+=		LIBS="-lutil"
 CONFIGURE_ARGS+=	--enable-xterm-colors=256
 .endif
 
-.include <bsd.port.pre.mk>
-
 # compile in support for additional codeset groups
 .if defined(WITH_ENCODING)
 AVAIL_ENC=	jp jp_ext kr zh zh_ext all
@@ -166,27 +187,6 @@ CONFIGURE_ARGS+=	--with-codesets=${WITH_ENCODING}
 .endif # WITH_ENCODING
 
 pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "WITHOUT_PERL		disable the embedded Perl interpreter"
-	@${ECHO_MSG} "WITHOUT_XIM		disable support for XIM (X Input Method) protocol"
-	@${ECHO_MSG} "WITHOUT_MENUBAR		disable support for menu bar system"
-	@${ECHO_MSG} "WITHOUT_RXVT_SCROLLBAR	disable support for the original rxvt scrollbar"
-	@${ECHO_MSG} "WITHOUT_NEXT_SCROLLBAR	disable support for a NeXT-like scrollbar"
-	@${ECHO_MSG} "WITHOUT_XTERM_SCROLLBAR	disable support for an Xterm-like scrollbar"
-	@${ECHO_MSG} "WITHOUT_PLAIN_SCROLLBAR	disable support for a plain-looking scrollbar"
-	@${ECHO_MSG} "WITH_HALF_SHADOW      	use half width/height shadows on rxvt scrollbar"
-	@${ECHO_MSG} "WITHOUT_BACKSPACE_KEY	disable handling of the backspace key"
-	@${ECHO_MSG} "WITHOUT_DELETE_KEY	disable handling of the delete key"
-	@${ECHO_MSG} "WITHOUT_LINESPACE	disable support for line-spacing"
-	@${ECHO_MSG} "WITHOUT_MOUSEWHEEL	disable support for scrolling via mouse wheel"
-	@${ECHO_MSG} "WITHOUT_SMART_RESIZE	disable smart growth/shrink behaviour"
-	@${ECHO_MSG} "WITHOUT_IMLOCALE_FIX	disable imlocale encoding conversion fix"
-	@${ECHO_MSG} "WITHOUT_TERMINFO	don't register urxvt in the terminfo database"
-	@${ECHO_MSG} "WITHOUT_AFTERIMAGE	disable integration with libAfterImage for background images"
-	@${ECHO_MSG} "WITH_XTERM_COLOR	enable support for xterm 256 colors"
-	@${ECHO_MSG}
 .ifndef(WITH_ENCODING)
 	@${ECHO_MSG} "==> You can compile in support for additional codeset groups by setting the WITH_ENCODING variable"
 	@${ECHO_MSG} '==> Options are: "jp"     common japanese encodings;'
