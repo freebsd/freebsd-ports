@@ -17,6 +17,7 @@ COMMENT=	Intelligent Chinese encoding converter
 
 MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CFLAGS|#CFLAGS|" \

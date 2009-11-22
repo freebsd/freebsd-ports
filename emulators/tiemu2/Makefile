@@ -23,6 +23,7 @@ LIB_DEPENDS=	ticalcs.10:${PORTSDIR}/devel/libticalcs \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		tiemu.1

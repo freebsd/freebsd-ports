@@ -19,6 +19,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 USE_BZIP2=	yes
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|; s|CCFLAGS =|& ${CXXFLAGS}|' \

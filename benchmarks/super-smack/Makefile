@@ -16,6 +16,7 @@ COMMENT=	A benchmarking, stress testing, and load generation tool for Databases
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-smacks-dir=${DATADIR}
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	README TUTORIAL
 

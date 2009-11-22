@@ -31,6 +31,7 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 		CFLAGS_COMMON="${CFLAGS}"
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

@@ -25,6 +25,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 WRKSRC=		${WRKDIR}/fonts/X
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/vietnamese

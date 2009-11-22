@@ -20,6 +20,7 @@ USE_AUTOTOOLS=	libtool:22
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 LB2FIX=		Makefile.in test/Makefile.in xbsql/Makefile.in
 

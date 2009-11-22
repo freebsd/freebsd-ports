@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya --disable-java --disable-intr --disable-jit --disable-math --disable-ilu
 USE_GMAKE=	yes
 ALL_TARGET=	all schemas
+MAKE_JOBS_UNSAFE=	yes
 MAN1=		cextract.1
 MAN5=		cextrc.5
 

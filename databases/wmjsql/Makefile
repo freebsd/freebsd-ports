@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_XORG=	xpm
 
 ALL_TARGET=	clean all
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

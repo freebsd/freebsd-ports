@@ -37,6 +37,7 @@ MAN1=		emx.1 xrmap.1
 PORTDOCS=	*
 
 MAKE_ARGS=	DESTDIR="${PREFIX}"
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${BZIP2_CMD} -dc ${_DISTDIR}/${CIAFILE} >${WRKDIR}/CIA_WDB2.jpd

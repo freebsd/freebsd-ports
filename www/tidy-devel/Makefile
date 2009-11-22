@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 
 SLAVEDIRS=	www/tidy-lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(WITH_SHLIB)
 USE_GMAKE=	yes

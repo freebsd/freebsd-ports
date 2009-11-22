@@ -19,7 +19,7 @@ LDFLAGS+=	-L.
 MANPREFIX=	${PREFIX}/9
 MAKE_ARGS=	PREFIX="${PREFIX}/9" CC="${CC}" MANPREFIX="${MANPREFIX}/man" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_JOB_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 APPS=		awk basename bc cat cleanname date dc echo grep mk rc sed \
 		seq sleep sort tee test touch tr uniq yacc
 MAN1=		${APPS:S|$|.1|}

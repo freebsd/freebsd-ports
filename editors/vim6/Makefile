@@ -43,6 +43,7 @@ PATCH_DIST_ARGS= -d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST
 #PATCH_DIST_ARGS=	-t
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
+MAKE_JOBS_UNSAFE=	yes
 _DATADIR=	${DISTNAME:S/-//g:S/.//g}
 DATADIR=	${PREFIX}/share/vim/${_DATADIR}
 PLIST_SUB=	VIM_VER=${_DATADIR}

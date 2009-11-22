@@ -39,6 +39,7 @@ MANCOMPRESSED=	yes
 
 XMKMF=		xmkmf
 ALL_TARGET=	xrelease Makefiles includes all
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

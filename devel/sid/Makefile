@@ -16,6 +16,7 @@ COMMENT=	A LL(1) parser generator
 CONFLICTS=	TenDRA-4.2*
 
 INSTALL_TARGET=	install DESTDIR=${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
 
 USE_PERL5=	yes
 

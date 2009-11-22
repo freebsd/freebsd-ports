@@ -22,6 +22,7 @@ INSTALL_TARGET=	install install.info
 MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" \
 		MACHINE=freebsd COMPRESSION_FILE="${PREFIX}/etc/compression_methods" \
 		CFLAGS="${CFLAGS} -funroll-loops -finline-functions"
+MAKE_JOBS_UNSAFE=	yes
 
 INFO=		tracker
 PLIST_FILES=	bin/randomize bin/tracker etc/compression_methods

@@ -17,6 +17,7 @@ COMMENT=	Symbolic Model Verifier System for checking finite state systems
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	${PORTNAME}
 MAKEFILE=	makefile
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		smv.1
 

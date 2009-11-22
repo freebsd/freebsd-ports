@@ -17,6 +17,7 @@ COMMENT=	Sierra AGI games interpreter
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 

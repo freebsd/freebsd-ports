@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 		INSTR_DOWNLOADS "instrument downloads for analysis" off \

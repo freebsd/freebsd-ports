@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	thrulayd
 SUB_FILES=	thrulayd
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	ChangeLog README thrulay-protocol.txt thrulay-index.html
 

@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BYTE magazine's Public Domain benchmark for UNIX
 
 SUB_FILES=	unixbench
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	${RM} -f ${WRKSRC}/pgms/select

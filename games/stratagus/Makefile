@@ -31,6 +31,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-extra-includes=${LUA_INCDIR} \
 		--with-extra-libs=${LUA_LIBDIR}
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/stratagus

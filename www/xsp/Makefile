@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		asp-state.1 dbsessmgr.1 mod-mono-server.1 xsp.1 \
 		fastcgi-mono-server.1

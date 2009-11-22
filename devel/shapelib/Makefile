@@ -18,6 +18,7 @@ COMMENT=	C API for reading and writing ArcView Shapefiles
 USE_AUTOTOOLS=	libtool:22:env
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${SHAPELIB_VER}
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PROJ4 "Cartographic Projections library" off
 

@@ -26,6 +26,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" IMPLPATH="${PREFIX}/lib/scm/" \
 ALL_TARGET=	scmlit scm5 mydlls
 MAN1=		scm.1
 INFO=		scm
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

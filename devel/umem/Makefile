@@ -17,6 +17,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 ONLY_FOR_ARCHS=	i386 amd64
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -ldl//g' ${WRKSRC}/Makefile.in

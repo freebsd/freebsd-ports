@@ -18,6 +18,8 @@ COMMENT=	SCEPTRE is a general purpose circuit analysis program
 SUB_FILES+=	pkg-message
 .endif
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 USE_FORTRAN=	g77

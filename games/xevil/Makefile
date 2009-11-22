@@ -19,6 +19,7 @@ USE_ZIP=	yes
 USE_XORG=	xpm
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -25,6 +25,7 @@ MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV+=	STRIP_CMD=${STRIP_CMD}
+MAKE_JOBS_UNSAFE=	yes
 
 .ifdef WITHOUT_X11
 PKGNAMESUFFIX=	-without-x11

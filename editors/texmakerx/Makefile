@@ -25,6 +25,7 @@ QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build \
 		uic_build qtestlib
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	XDVI "view dvi with xdvi" On \
 		GV "view ps with gv" On

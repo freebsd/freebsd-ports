@@ -16,6 +16,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple UNIX SMS client to send messages to phones or pagers
 
 HAS_CONFIGURE=		yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=			sms_client.1
 

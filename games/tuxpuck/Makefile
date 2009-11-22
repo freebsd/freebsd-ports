@@ -23,6 +23,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 USE_SDL=	sdl
 USE_GMAKE=	yes
 ALL_TARGET=	tuxpuck
+MAKE_JOBS_UNSAFE=	yes
 
 MANCOMPRESSED=	yes
 MAN6=		tuxpuck.6

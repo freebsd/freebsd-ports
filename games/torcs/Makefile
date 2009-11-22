@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DE
 
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
+MAKE_JOBS_UNSAFE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer
 WANT_GNOME=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	DEMO "Install demo version of the game data" off \
 		HEXEN2 "Build Hexen II clients and servers" on \

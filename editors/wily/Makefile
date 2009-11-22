@@ -21,6 +21,7 @@ USE_XORG=	x11 ice xt
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 MAN1=		wgoto.1 win.1 wreplace.1 Tag.1 mktags.1 Man.1
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	index.html intro.html download.html credits.html FAQ.html \
 		onepage.html user.html idioms.html C.html python.html \

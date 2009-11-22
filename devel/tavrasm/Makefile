@@ -26,6 +26,7 @@ AVR_INCLUDE=	${PREFIX}/include/avr
 MAKEFILE=	makefile
 USE_GMAKE=	yes
 ALL_TARGET=	tavrasm
+MAKE_JOBS_UNSAFE=	yes
 
 # Also get the include files and documentation from Atmel
 

@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
 ALL_TARGET=	audinfo snd snd-info sndplay sndrecord
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		snd.1
 

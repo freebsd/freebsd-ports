@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package
 
+MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	bin/ripmime
 MAN1=		ripmime.1
 

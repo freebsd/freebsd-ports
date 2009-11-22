@@ -16,5 +16,6 @@ COMMENT=	A library for reading and writing YAML 1.0
 GNU_CONFIGURE=	yes
 USE_BISON=	build
 CFLAGS+=	-fPIC
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

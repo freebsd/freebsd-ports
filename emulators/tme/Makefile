@@ -20,6 +20,7 @@ USE_XORG=	x11
 USE_GNOME=	gtk12 gnometarget
 CONFIGURE_ARGS+=	--disable-shared
 MAKE_ENV=	LANG=C
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 		${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/libtme/module.c

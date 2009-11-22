@@ -21,6 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl ttf mixer
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/slashem
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}

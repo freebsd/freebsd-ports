@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 USE_XORG=	xaw
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.2
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${CP} ${FILESDIR}/rosegarden ${WRKSRC}/rosegarden.sh
