@@ -40,6 +40,13 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 
 .include <bsd.port.pre.mk>
 
+# Around the time GCC stack protection (aka Propolice) for userland
+# was enabled on src/share/mk/bsd.sys.mk
+# SVN rev 180012 on 2008-06-25 21:33:28Z by ru
+.if ${OSVERSION} >= 800040
+LDFLAGS+=	-fstack-protector
+.endif
+
 .if ${ARCH}=="i386"
 MAKE_ENV+=	ARCH_X86="1"
 .endif
