@@ -3,12 +3,15 @@
 %%SITE_PERL%%/URI/Heuristic.pm
 %%SITE_PERL%%/URI/QueryParam.pm
 %%SITE_PERL%%/URI/Split.pm
+%%SITE_PERL%%/URI/IRI.pm
 %%SITE_PERL%%/URI/URL.pm
 %%SITE_PERL%%/URI/WithBase.pm
 %%SITE_PERL%%/URI/_foreign.pm
 %%SITE_PERL%%/URI/_generic.pm
+%%SITE_PERL%%/URI/_idna.pm
 %%SITE_PERL%%/URI/_ldap.pm
 %%SITE_PERL%%/URI/_login.pm
+%%SITE_PERL%%/URI/_punycode.pm
 %%SITE_PERL%%/URI/_query.pm
 %%SITE_PERL%%/URI/_segment.pm
 %%SITE_PERL%%/URI/_server.pm
