@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	2.05
+PORTVERSION=	2.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,8 +26,6 @@ MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::Linkz.3 \
 		WWW::Shorten::MakeAShorterLink.3 \
 		WWW::Shorten::Metamark.3 \
-		WWW::Shorten::NotLong.3 \
-		WWW::Shorten::OneShortLink.3 \
 		WWW::Shorten::Shorl.3 \
 		WWW::Shorten::TinyClick.3 \
 		WWW::Shorten::TinyURL.3 \
