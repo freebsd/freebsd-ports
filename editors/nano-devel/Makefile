@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	2.1.11
+PORTVERSION=	2.1.99
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v2.1/ \
 		http://www.ewtoo.org/~astyanax/nano/dist/v2.1/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	nano-${PORTVERSION}
+DISTNAME=	nano-${PORTVERSION}pre2
 
 MAINTAINER=	EitanAdlerList@gmail.com
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
