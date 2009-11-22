@@ -73,8 +73,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/gengl/find_header.perl
 
 post-install:
-	@${RM} -f ${PREFIX}/lib/*.la ${PREFIX}/lib/bugle/*.la \
-	         ${PREFIX}/lib/pkgconfig/bugle.pc
+	@${RM} -f ${PREFIX}/lib/libbugle.la ${PREFIX}/lib/libbugleutils.la \
+	          ${PREFIX}/lib/bugle/*.la \
+	          ${PREFIX}/lib/pkgconfig/bugle.pc
 	@-${RMDIR} ${PREFIX}/lib/pkgconfig
 	@${RM} -rf ${PREFIX}/share/doc/bugle
 
