@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	URI
-PORTVERSION=	1.40
+PORTVERSION=	1.50
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 
 PERL_CONFIGURE=	yes
@@ -25,6 +25,7 @@ MAN3=		URI.3 \
 		URI::WithBase.3 \
 		URI::data.3 \
 		URI::file.3 \
-		URI::ldap.3
+		URI::ldap.3 \
+		URI::_punycode.3
 
 .include <bsd.port.mk>

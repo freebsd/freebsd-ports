@@ -1,6 +1,9 @@
 This package contains the URI.pm module with friends.  The module
 implements the URI class.  Objects of this class represent Uniform
-Resource Identifier (URI) references as specified in RFC 2396.
+Resource Identifier (URI) references as specified in RFC 2396 and
+updated by RFC 2732.  Release 1.50 includes the initial attempt at
+providing support to IRIs.  URI objects now support the 'as_iri'
+and 'ihost' methods.
 
 URI objects can be used to access and manipulate the various
 components that make up these strings.  There are also methods to
