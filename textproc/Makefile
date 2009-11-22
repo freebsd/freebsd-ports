@@ -238,6 +238,7 @@
     SUBDIR += ia-aspell
     SUBDIR += ibus
     SUBDIR += ibus-m17n
+    SUBDIR += ibus-qt
     SUBDIR += id-aspell
     SUBDIR += idnits
     SUBDIR += iiimf-client-lib
