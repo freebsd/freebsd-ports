@@ -496,6 +496,7 @@ antrix                          ports/games/antrix
 anubis                          ports/mail/anubis
 anyremote                       ports/comms/anyremote
 anyremote2html                  ports/www/anyremote2html
+anyterm                         ports/www/anyterm
 aoi                             ports/graphics/aoi
 aolserver                       ports/www/aolserver
 aolserver-nsencrypt             ports/security/aolserver-nsencrypt
@@ -1209,6 +1210,7 @@ bsdconv                         ports/converters/bsdconv
 bsdcrashtar                     ports/sysutils/bsdcrashtar
 bsddiff                         ports/textproc/bsddiff
 bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
+bsdgames                        ports/games/bsdgames
 bsdgrep                         ports/textproc/bsdgrep
 bsdhwmon                        ports/sysutils/bsdhwmon
 bsdiff                          ports/misc/bsdiff
@@ -1362,6 +1364,7 @@ catdoc                          ports/textproc/catdoc
 catdvi                          ports/print/catdvi
 catseye-fm                      ports/x11-fm/catseye-fm
 caudium12                       ports/www/caudium12
+caudium14                       ports/www/caudium14
 cave                            ports/misc/cave
 cave9                           ports/games/cave9
 cavezofphear                    ports/games/cavezofphear
@@ -2056,6 +2059,7 @@ darkplaces                      ports/games/darkplaces
 darkstat                        ports/net-mgmt/darkstat
 darts                           ports/devel/darts
 darwinstreamingserver           ports/net/DarwinStreamingServer
+dash                            ports/shells/dash
 dasher                          ports/accessibility/dasher
 datadesigner                    ports/devel/datadesigner
 datadraw                        ports/devel/datadraw
@@ -3322,6 +3326,7 @@ fiked                           ports/security/fiked
 file-roller                     ports/archivers/file-roller
 filedupe                        ports/sysutils/filedupe
 filelight                       ports/sysutils/filelight
+filelight-kde4                  ports/sysutils/filelight-kde4
 filepp                          ports/textproc/filepp
 fileprune                       ports/sysutils/fileprune
 filerunner                      ports/x11-fm/filerunner
@@ -3681,7 +3686,6 @@ freebsd-doc-sr                  ports/misc/freebsd-doc-sr
 freebsd-doc-tr                  ports/misc/freebsd-doc-tr
 freebsd-doc-zh_cn               ports/misc/freebsd-doc-zh_cn
 freebsd-doc-zh_tw               ports/misc/freebsd-doc-zh_tw
-freebsd-games                   ports/games/freebsd-games
 freebsd-sha1                    ports/sysutils/freebsd-sha1
 freebsd-sha256                  ports/sysutils/freebsd-sha256
 freebsd-snapshot                ports/sysutils/freebsd-snapshot
@@ -3990,7 +3994,6 @@ gcal                            ports/deskutils/gcal
 gcalcli                         ports/deskutils/gcalcli
 gcalctool                       ports/math/gcalctool
 gcb                             ports/x11/gcb
-gcc295                          ports/lang/gcc295
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
 gcc43                           ports/lang/gcc43
@@ -10252,6 +10255,7 @@ p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
+p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
@@ -12052,6 +12056,7 @@ p5-Log-Dispatch-FileShared      ports/devel/p5-Log-Dispatch-FileShared
 p5-Log-Dispatch-Perl            ports/devel/p5-Log-Dispatch-Perl
 p5-Log-Dispatch-Screen-Color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-Log-Dispatch-Scribe          ports/devel/p5-Log-Dispatch-Scribe
+p5-Log-Handler                  ports/devel/p5-Log-Handler
 p5-Log-Log4perl                 ports/devel/p5-Log-Log4perl
 p5-Log-Message                  ports/devel/p5-Log-Message
 p5-Log-Message-Simple           ports/devel/p5-Log-Message-Simple
@@ -12788,6 +12793,7 @@ p5-Plucene                      ports/textproc/p5-Plucene
 p5-Plucene-Analysis-CJKAnalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
 p5-Plucene-Plugin-Analyzer-SnowballAnalyzer  ports/textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
 p5-Plucene-Simple               ports/textproc/p5-Plucene-Simple
+p5-Plugtools                    ports/sysutils/p5-Plugtools
 p5-Pod-Abstract                 ports/textproc/p5-Pod-Abstract
 p5-Pod-Autopod                  ports/textproc/p5-Pod-Autopod
 p5-Pod-Constants                ports/textproc/p5-Pod-Constants
@@ -13854,6 +13860,7 @@ p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
+p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
@@ -15686,6 +15693,7 @@ p5-log-dispatch-fileshared      ports/devel/p5-Log-Dispatch-FileShared
 p5-log-dispatch-perl            ports/devel/p5-Log-Dispatch-Perl
 p5-log-dispatch-screen-color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-log-dispatch-scribe          ports/devel/p5-Log-Dispatch-Scribe
+p5-log-handler                  ports/devel/p5-Log-Handler
 p5-log-log4perl                 ports/devel/p5-Log-Log4perl
 p5-log-message                  ports/devel/p5-Log-Message
 p5-log-message-simple           ports/devel/p5-Log-Message-Simple
@@ -16364,6 +16372,7 @@ p5-plucene                      ports/textproc/p5-Plucene
 p5-plucene-analysis-cjkanalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
 p5-plucene-plugin-analyzer-snowballanalyzer  ports/textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
 p5-plucene-simple               ports/textproc/p5-Plucene-Simple
+p5-plugtools                    ports/sysutils/p5-Plugtools
 p5-pod-abstract                 ports/textproc/p5-Pod-Abstract
 p5-pod-autopod                  ports/textproc/p5-Pod-Autopod
 p5-pod-constants                ports/textproc/p5-Pod-Constants
@@ -21683,6 +21692,7 @@ siod                            ports/lang/siod
 sip_scenario                    ports/net/sip_scenario
 sipcalc                         ports/net-mgmt/sipcalc
 sipp                            ports/benchmarks/sipp
+sippy_b2bua                     ports/net/sippy_b2bua
 siproxd                         ports/net/siproxd
 sipsak                          ports/net/sipsak
 sirc                            ports/irc/sirc
@@ -21727,6 +21737,7 @@ sl                              ports/games/sl
 sl-aspell                       ports/textproc/sl-aspell
 sl2tps                          ports/net/sl2tps
 slack                           ports/sysutils/slack
+slapd-cyrus                     ports/mail/slapd-cyrus
 slash                           ports/www/slash
 slashem-tty                     ports/games/slashem-tty
 slate                           ports/net-mgmt/slate
