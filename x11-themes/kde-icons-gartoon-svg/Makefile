@@ -7,16 +7,15 @@
 
 PORTNAME=	gartoon
 PORTVERSION=	1.3
-MASTER_SITES=	http://www.nasland.nu/gartoon/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://ns.ael.ru/ports/distfiles/KDE/
+MASTER_SITE_SUBDIR=	fluffy
 PKGNAMESUFFIX=	-svg
 DISTNAME=	ICONS-Gartoon-SVG-v${PORTVERSION}
 
 COMMENT=	KDE Gartoon SVG iconset
 
 USE_BZIP2=	yes
-
-BROKEN=		does not fetch
-EXPIRATION_DATE=        2009-12-10
 
 WRKSRC=		${WRKDIR}/Gartoon
 PORT_SHAREDIR?=	"${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}"
