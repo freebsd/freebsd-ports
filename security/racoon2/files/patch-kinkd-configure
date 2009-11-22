@@ -1,0 +1,11 @@
+--- kinkd/configure-	2009-11-22 10:28:45.000000000 +0900
++++ kinkd/configure	2009-11-22 10:28:56.000000000 +0900
+@@ -2055,7 +2055,7 @@
+ 
+ else
+   echo "$ac_t""no" 1>&6
+-LIBS="$LIBS -ldes"; cat >> confdefs.h <<\EOF
++LIBS="$LIBS -lhx509"; cat >> confdefs.h <<\EOF
+ #define HAVE_LIBDES 1
+ EOF
+ 
