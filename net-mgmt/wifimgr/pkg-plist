@@ -1,0 +1,26 @@
+bin/wifimgr
+libexec/wifimgrsu
+%%DATADIR%%/icons/freebsd-surf.png
+%%DATADIR%%/icons/padlock-open.png
+%%DATADIR%%/icons/padlock-unk.png
+%%DATADIR%%/icons/padlock-wep.png
+%%DATADIR%%/icons/padlock-wpa.png
+%%DATADIR%%/icons/signal_bars_0.png
+%%DATADIR%%/icons/signal_bars_1.png
+%%DATADIR%%/icons/signal_bars_2.png
+%%DATADIR%%/icons/signal_bars_3.png
+%%DATADIR%%/icons/signal_bars_4.png
+%%DATADIR%%/icons/signal_bars_5.png
+%%DATADIR%%/icons/wifimgr.png
+%%DATADIR%%/icons/wifimgr24green.png
+share/applications/wifimgr.desktop
+share/icons/hicolor/16x16/apps/wifimgr.png
+share/icons/hicolor/22x22/apps/wifimgr.png
+share/icons/hicolor/24x24/apps/wifimgr.png
+share/icons/hicolor/32x32/apps/wifimgr.png
+share/icons/hicolor/48x48/apps/wifimgr.png
+share/icons/hicolor/64x64/apps/wifimgr.png
+share/icons/hicolor/scalable/apps/wifimgr.svg
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
