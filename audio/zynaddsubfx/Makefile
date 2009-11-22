@@ -36,6 +36,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dssi
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/zynaddsubfx ${PREFIX}/bin

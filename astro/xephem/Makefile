@@ -18,6 +18,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_MOTIF=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 

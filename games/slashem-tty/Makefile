@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES+=	pkg-deinstall
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 slashem.6
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}
 MAKE_ENV+=	DATADIR="${DATADIR}"

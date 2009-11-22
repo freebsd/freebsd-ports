@@ -22,6 +22,7 @@ USE_XORG=	x11 xt
 USE_LDCONFIG=	yes
 ALL_TARGET=	all data
 INSTALL_TARGET=	install data-install
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		chinput.1
 

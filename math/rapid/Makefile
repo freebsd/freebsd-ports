@@ -24,6 +24,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ALL_TARGET=
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	rapid.1
 

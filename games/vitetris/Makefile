@@ -17,6 +17,7 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	#
 CONFIGURE_ARGS=	--prefix=${PREFIX} --datarootdir=${PREFIX}/share \
 		curses="-lncurses" xlib=no
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/vitetris \
 		share/allegro/licence.txt \

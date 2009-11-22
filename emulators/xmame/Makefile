@@ -29,6 +29,7 @@ USE_GMAKE=	yes
 MAKE_ARGS+=	ARCH=freebsd
 WANT_SDL=	yes
 WANT_GNOME=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 # Broken on ia-64
 NOT_FOR_ARCHS=	ia64

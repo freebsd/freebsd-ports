@@ -20,6 +20,7 @@ LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/srec_cat \
 		bin/srec_cmp \

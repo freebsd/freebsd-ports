@@ -24,6 +24,7 @@ USE_GL=		glut
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.3
 ALL_TARGET=	everything
+MAKE_JOBS_UNSAFE=	yes
 
 EXEC=	beam/beam/bm beam/beam_gr/bmpost brick/brick/br \
 	brick/brick_gr/brpost brick/brick_gr/pvbr \

@@ -20,6 +20,7 @@ COMMENT=	Fast action arcade-style game for X Window
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 MAN6=		xkoules.6
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${CP} ${WRKSRC}/xkoules.6 ${WRKSRC}/xkoules.man

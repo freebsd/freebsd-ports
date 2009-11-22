@@ -19,6 +19,7 @@ COMMENT=	A communications package for the X Window system
 WRKSRC=		${WRKDIR}/seyon
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xpm xmu xaw xt sm ice
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		seyon.1
 

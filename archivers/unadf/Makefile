@@ -20,6 +20,7 @@ PLIST_FILES=	bin/unadf
 PORTDOCS=	API.txt api_device.html api_dir.html api_env.html api_file.html \
 		api_index.html api_native.html api_salv.html api_volume.html
 USE_ZIP=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@tests lib demo@lib demo@g" ${WRKSRC}/Makefile

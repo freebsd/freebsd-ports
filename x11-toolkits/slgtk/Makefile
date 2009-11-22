@@ -19,6 +19,7 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS=-lncurses
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		imdisplay.1
 

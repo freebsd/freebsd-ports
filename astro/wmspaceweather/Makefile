@@ -22,6 +22,7 @@ EXTRACT_BEFORE_ARGS=
 
 USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean all
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	wmSpaceWeather.1
 

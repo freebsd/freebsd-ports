@@ -17,6 +17,7 @@ COMMENT=	A graphical interface to git repositories
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build uic_build
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -24,6 +24,7 @@ PORTDOCS=	ANNOUNCEMENT STATUS pgsqldns.html NEWS TODO README \
 		pgsqldns-conf.html sqldns.html pgsqldns-schema.html
 DJ_SRC=		`cd ${DJ_PORT} && make -V WRKSRC`
 ALL_TARGET=	default
+MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/dnsbench bin/pgsqldns bin/pgsqldns-conf bin/pgsqldnscache \
 		share/examples/${PORTNAME}/create.sql
 PLIST_DIRS=	share/examples/${PORTNAME}

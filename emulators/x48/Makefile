@@ -21,6 +21,7 @@ COMMENT=	An HP48 SX/GX calculator emulator
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -23,6 +23,7 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xpm
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h

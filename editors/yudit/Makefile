@@ -21,10 +21,10 @@ CONFLICTS=	uniconvertor-[0-9]*
 USE_XORG=	x11
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LC_ALL=
 MAKE_ENV=	LC_ALL=
 MAN1=		mytool.1 uniconv.1 uniprint.1
-USE_GMAKE=	YES
 
 .include <bsd.port.mk>

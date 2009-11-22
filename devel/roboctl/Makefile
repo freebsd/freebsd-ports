@@ -17,6 +17,7 @@ COMMENT=	API and tools for communicating with Lego and Vex robots
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
 
 MAKE_ENV=	EXTRALIBS=-lbluetooth
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	CUTECOM "Install cutecom for Vex debugging" On
 
