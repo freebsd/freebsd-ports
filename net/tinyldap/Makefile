@@ -7,7 +7,6 @@
 
 PORTNAME=	tinyldap
 PORTVERSION=	0.0.${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/tinyldap/
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
@@ -17,9 +16,7 @@ COMMENT=	A small LDAP implementation
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/${LIBOWFAT_PORT}
 
-NO_PACKAGE=	GPL forbids distribution when linked with openssl
-
-SNAPSHOT=	20080425
+SNAPSHOT=	20091122
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
