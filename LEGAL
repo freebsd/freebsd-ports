@@ -735,3 +735,4 @@ pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 tarsnap-*		sysutils/tarsnap	Redistribution restricted
 linuxsampler-*		audio/linuxsampler	Commercial use is prohibited
 WowzaMediaServerPro	net/wowzamediaserverpro	Redistribution not allowed
+wifimgr-*		net-mgmt/wifimgr	Includes copyrighted icons
