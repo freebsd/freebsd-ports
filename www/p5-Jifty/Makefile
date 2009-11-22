@@ -7,6 +7,7 @@
 
 PORTNAME=	Jifty
 PORTVERSION=	0.91117
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,8 +44,7 @@ BUILD_DEPENDS=	\
 		p5-Email-MIME-CreateHTML>0:${PORTSDIR}/mail/p5-Email-MIME-CreateHTML \
 		p5-Email-MIME-ContentType>0:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-Simple-Creator>0:${PORTSDIR}/mail/p5-Email-Simple-Creator \
-		p5-Email-Simple>0:${PORTSDIR}/mail/p5-Email-Simple \
+		p5-Email-Simple>=2.100:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Exporter-Lite>0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-ExtUtils-Command>0:${PORTSDIR}/devel/p5-ExtUtils-Command \
 		p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
