@@ -110,6 +110,13 @@ ALL_TARGET+=	\
 
 .include <bsd.port.pre.mk>
 
+# Around the time GCC stack protection (aka Propolice) for userland
+# was enabled on src/share/mk/bsd.sys.mk 
+# SVN rev 180012 on 2008-06-25 21:33:28Z by ru
+.if ${OSVERSION} >= 800040
+LDFLAGS+=	-fstack-protector
+.endif
+
 ### Development version
 ## Thus, we will use non standard threading library
 ## We will switch from libpthread to libthr which should produce
