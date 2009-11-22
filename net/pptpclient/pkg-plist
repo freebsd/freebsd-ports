@@ -1,7 +1,4 @@
 sbin/pptp
-sbin/pptpsetup
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/ppp.conf
-%%ETCDIR%%/ppp.conf
-@dirrm %%ETCDIR%%
 @dirrm %%EXAMPLESDIR%%
