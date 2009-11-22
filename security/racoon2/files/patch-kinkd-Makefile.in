@@ -1,0 +1,10 @@
+--- kinkd/Makefile.in~	2006-01-11 11:38:55.000000000 +0900
++++ kinkd/Makefile.in	2009-11-22 10:39:25.000000000 +0900
+@@ -68,3 +68,7 @@
+ 
+ .PHONY: .depend
+ @IF_GMAKE@-include .depend
++
++# override default .c.o rule in case it doesn't include CPPFLAGS (FreeBSD)
++.c.o:
++	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
