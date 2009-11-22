@@ -1,6 +1,6 @@
 --- Makefile.orig	2008-04-25 13:09:33.000000000 +0200
-+++ Makefile	2008-04-25 21:51:06.000000000 +0200
-@@ -35,18 +35,22 @@
++++ Makefile	2009-11-22 22:24:42.000000000 +0100
+@@ -35,22 +35,26 @@
  
  auth.a: auth.o
  
@@ -28,6 +28,11 @@
  ifneq ($(DIET),)
  LIBS+=-llatin1
  else
+-LIBS+=-lcrypto -lcrypt
++LIBS+=-lcrypt
+ endif
+ 
+ %.o: %.c
 @@ -79,7 +83,7 @@
  	$(DIET) $(CC) $(CFLAGS) -DSTANDALONE -DDEBUG -o $@ $^ $(LDFLAGS) -lowfat $(LIBS)
  
