@@ -9,7 +9,7 @@ PORTNAME=	win4bsd
 PORTVERSION=	1.1
 PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.win4bsd.com/pub/releases/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.v-bridges.com/pub/archive/pro/releases/bsd/pro/${PORTVERSION}/
 DISTNAME=	Win4BSD-1.1_63918_i386-freebsd
 EXTRACT_SUFX=	.tbz
 
