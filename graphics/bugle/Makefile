@@ -28,14 +28,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		GL_LIBS="-L${LOCALBASE}/lib"
 
-BROKEN=		does not compile
-
-MAN1=	gldb.1
+MAN1=	gldb.1 gldb-gui.1
 MAN3=	bugle.3
-MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7	\
-	bugle-extoverride.7 bugle-frontbuffer.7 bugle-log.7 bugle-logstats.7 \
-	bugle-screenshot.7 bugle-showerror.7 bugle-showextensions.7 \
-	bugle-showstats.7 bugle-stats_basic.7 bugle-stats_fragments.7 \
+MAN5=	bugle-statistics.5
+MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7 \
+	bugle-exe.7 bugle-extoverride.7 bugle-frontbuffer.7 bugle-log.7 \
+	bugle-logstats.7 bugle-screenshot.7 bugle-showerror.7 \
+	bugle-showextensions.7 bugle-showstats.7 bugle-stats_basic.7 \
+	bugle-stats_calls.7 bugle-stats_calltimes.7 bugle-stats_fragments.7 \
 	bugle-stats_nv.7 bugle-stats_primitives.7 bugle-trace.7 \
 	bugle-unwindstack.7 bugle-wireframe.7
 
@@ -71,5 +71,11 @@ BROKEN=		Fails to link
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/gengl/find_header.perl
+
+post-install:
+	@${RM} -f ${PREFIX}/lib/*.la ${PREFIX}/lib/bugle/*.la \
+	         ${PREFIX}/lib/pkgconfig/bugle.pc
+	@-${RMDIR} ${PREFIX}/lib/pkgconfig
+	@${RM} -rf ${PREFIX}/share/doc/bugle
 
 .include <bsd.port.post.mk>
