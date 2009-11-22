@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
+MASTER_SITE_SUBDIR=	../by-authors/id/F/FL/FLORA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
