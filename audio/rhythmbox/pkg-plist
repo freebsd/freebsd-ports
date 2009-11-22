@@ -47,6 +47,32 @@ lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
 lib/rhythmbox/plugins/cd-recorder/cd-recorder.rb-plugin
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.la
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.so
+%%PYTHON%%lib/rhythmbox/plugins/context/AlbumTab.py
+%%PYTHON%%lib/rhythmbox/plugins/context/AlbumTab.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/AlbumTab.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/ArtistTab.py
+%%PYTHON%%lib/rhythmbox/plugins/context/ArtistTab.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/ArtistTab.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/ContextView.py
+%%PYTHON%%lib/rhythmbox/plugins/context/ContextView.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/ContextView.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/LastFM.py
+%%PYTHON%%lib/rhythmbox/plugins/context/LastFM.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/LastFM.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/LyricsTab.py
+%%PYTHON%%lib/rhythmbox/plugins/context/LyricsTab.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/LyricsTab.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/__init__.py
+%%PYTHON%%lib/rhythmbox/plugins/context/__init__.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__init__.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/context.rb-plugin
+%%PYTHON%%lib/rhythmbox/plugins/context/img/lastfm.png
+%%PYTHON%%lib/rhythmbox/plugins/context/img/spinner.gif
+%%PYTHON%%lib/rhythmbox/plugins/context/tmpl/album-tmpl.html
+%%PYTHON%%lib/rhythmbox/plugins/context/tmpl/artist-tmpl.html
+%%PYTHON%%lib/rhythmbox/plugins/context/tmpl/loading.html
+%%PYTHON%%lib/rhythmbox/plugins/context/tmpl/lyrics-tmpl.html
+%%PYTHON%%lib/rhythmbox/plugins/context/tmpl/main.css
 %%DAAP%%lib/rhythmbox/plugins/daap/daap-prefs.ui
 %%DAAP%%lib/rhythmbox/plugins/daap/daap-ui.xml
 %%DAAP%%lib/rhythmbox/plugins/daap/daap.rb-plugin
@@ -158,6 +184,9 @@ lib/rhythmbox/plugins/power-manager/power-manager.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/rb/Loader.py
 %%PYTHON%%lib/rhythmbox/plugins/rb/Loader.pyc
 %%PYTHON%%lib/rhythmbox/plugins/rb/Loader.pyo
+%%PYTHON%%lib/rhythmbox/plugins/rb/URLCache.py
+%%PYTHON%%lib/rhythmbox/plugins/rb/URLCache.pyc
+%%PYTHON%%lib/rhythmbox/plugins/rb/URLCache.pyo
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.py
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/rb/__init__.pyo
@@ -450,6 +479,7 @@ share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
+share/locale/bn_IN/LC_MESSAGES/rhythmbox.mo
 share/locale/br/LC_MESSAGES/rhythmbox.mo
 share/locale/ca/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
@@ -486,6 +516,7 @@ share/locale/mn/LC_MESSAGES/rhythmbox.mo
 share/locale/mr/LC_MESSAGES/rhythmbox.mo
 share/locale/ms/LC_MESSAGES/rhythmbox.mo
 share/locale/nb/LC_MESSAGES/rhythmbox.mo
+share/locale/nds/LC_MESSAGES/rhythmbox.mo
 share/locale/ne/LC_MESSAGES/rhythmbox.mo
 share/locale/nl/LC_MESSAGES/rhythmbox.mo
 share/locale/oc/LC_MESSAGES/rhythmbox.mo
@@ -499,6 +530,7 @@ share/locale/ro/LC_MESSAGES/rhythmbox.mo
 share/locale/ru/LC_MESSAGES/rhythmbox.mo
 share/locale/rw/LC_MESSAGES/rhythmbox.mo
 share/locale/sk/LC_MESSAGES/rhythmbox.mo
+share/locale/sl/LC_MESSAGES/rhythmbox.mo
 share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo
@@ -654,6 +686,9 @@ share/rhythmbox/uri-new.ui
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/im-status
 @dirrm lib/rhythmbox/plugins/generic-player
 %%DAAP%%@dirrm lib/rhythmbox/plugins/daap
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/context/tmpl
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/context/img
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/context
 @dirrm lib/rhythmbox/plugins/cd-recorder
 @dirrm lib/rhythmbox/plugins/audioscrobbler
 @dirrm lib/rhythmbox/plugins/audiocd
@@ -674,6 +709,8 @@ share/rhythmbox/uri-new.ui
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
