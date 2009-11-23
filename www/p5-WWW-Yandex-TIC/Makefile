@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	WWW-Yandex-TIC
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Query Yandex Thematic Index of Citing (TIC) for domain
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
