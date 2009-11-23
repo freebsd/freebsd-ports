@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/.packlist
 %%SITE_PERL%%/DBIx/Class.pm
 %%SITE_PERL%%/DBIx/Class/AccessorGroup.pm
@@ -89,6 +90,8 @@
 %%SITE_PERL%%/DBIx/Class/StartupCheck.pm
 %%SITE_PERL%%/DBIx/Class/Storage.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/AmbiguousGlob.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/AutoCast.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
@@ -116,10 +119,11 @@
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Role/QueryCounter.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase.pm
-%%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/Base.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/Common.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server/NoBindVars.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/NoBindVars.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
 %%SITE_PERL%%/DBIx/Class/Storage/TxnScopeGuard.pm
@@ -141,6 +145,7 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Serialize
