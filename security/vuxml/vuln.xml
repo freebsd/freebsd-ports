@@ -35,6 +35,33 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="04104985-d846-11de-84e4-00215af774f0">
+    <topic>cacti -- cross-site scripting issues</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.7e4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cacti development team reports:</p>
+	<blockquote cite="http://docs.cacti.net/#cross-site_scripting_fixes">
+	  <p>The Cross-Site Scripting patch has been posted.</p>
+	  <p>This patch addresses cross-site scripting issues reported
+	    by Moritz Naumann.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://docs.cacti.net/#cross-site_scripting_fixes</url>
+    </references>
+    <dates>
+      <discovery>2009-11-21</discovery>
+      <entry>2009-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0640198a-d117-11de-b667-0030843d3802">
     <topic>wordpress -- multiple vulnerabilities</topic>
     <affects>
