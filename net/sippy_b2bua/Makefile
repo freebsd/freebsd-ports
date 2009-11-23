@@ -7,6 +7,7 @@
 
 PORTNAME=	sippy_b2bua
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://www.b2bua.org/chrome/site/
 DISTNAME=	sippy-${PORTVERSION}
@@ -17,6 +18,7 @@ COMMENT=	SIP Back-to-back user agent (B2BUA) server with Radius support
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	sippy
+DOCSDIR=	${PREFIX}/share/doc/${PYDISTUTILS_PKGNAME}
 
 DOCS=		COPYING README
 

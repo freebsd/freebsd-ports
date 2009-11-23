@@ -1,5 +1,6 @@
 bin/b2bua_radius.py
 bin/b2bua_simple.py
+etc/sippy/dictionary
 %%PYTHON_SITELIBDIR%%/sippy/CCEvents.py
 %%PYTHON_SITELIBDIR%%/sippy/CCEvents.pyc
 %%PYTHON_SITELIBDIR%%/sippy/CCEvents.pyo
@@ -234,6 +235,7 @@ bin/b2bua_simple.py
 %%PYTHON_SITELIBDIR%%/sippy/b2bua_simple.py
 %%PYTHON_SITELIBDIR%%/sippy/b2bua_simple.pyc
 %%PYTHON_SITELIBDIR%%/sippy/b2bua_simple.pyo
+@dirrm etc/sippy
 @dirrm %%PYTHON_SITELIBDIR%%/sippy
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
