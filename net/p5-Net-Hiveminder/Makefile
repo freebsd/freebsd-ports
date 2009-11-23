@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Hiveminder
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interface to hiveminder.com
 
-RUN_DEPENDS=	${SITE_PERL}/Email/Simple/Creator.pm:${PORTSDIR}/mail/p5-Email-Simple-Creator \
+RUN_DEPENDS=	${SITE_PERL}/Email/Simple/Creator.pm:${PORTSDIR}/mail/p5-Email-Simple \
 		${SITE_PERL}/Moose.pm:${PORTSDIR}/devel/p5-Moose \
 		${SITE_PERL}/Term/Encoding.pm:${PORTSDIR}/devel/p5-Term-Encoding \
 		${SITE_PERL}/Net/Jifty.pm:${PORTSDIR}/net/p5-Net-Jifty \
