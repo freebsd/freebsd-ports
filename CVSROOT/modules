@@ -599,7 +599,6 @@ arista                          ports/multimedia/arista
 arj                             ports/archivers/arj
 arkpandora                      ports/x11-fonts/arkpandora
 arm-elf-binutils                ports/devel/arm-elf-binutils
-arm-elf-gcc295                  ports/devel/arm-elf-gcc295
 arm-rtems-binutils              ports/devel/arm-rtems-binutils
 arm-rtems-gcc                   ports/devel/arm-rtems-gcc
 arm-rtems-gdb                   ports/devel/arm-rtems-gdb
@@ -5410,6 +5409,8 @@ ibp                             ports/comms/ibp
 ibsh                            ports/shells/ibsh
 ibus                            ports/textproc/ibus
 ibus-m17n                       ports/textproc/ibus-m17n
+ibus-qt                         ports/textproc/ibus-qt
+ibus-table                      ports/textproc/ibus-table
 ical                            ports/deskutils/ical
 ical2html                       ports/converters/ical2html
 icb                             ports/net-im/icb
