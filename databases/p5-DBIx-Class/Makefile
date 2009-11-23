@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08112
+PORTVERSION=	0.08114
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,7 +38,6 @@ CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
 MAN1=	dbicadmin.1
 MAN3=	DBIx::Class.3 \
 	DBIx::Class::AccessorGroup.3 \
-	DBIx::Class::Storage::DBI::AutoCast.3 \
 	DBIx::Class::CDBICompat.3 \
 	DBIx::Class::CDBICompat::AbstractSearch.3 \
 	DBIx::Class::CDBICompat::ColumnsAsHash.3 \
@@ -94,7 +93,9 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::StartupCheck.3 \
 	DBIx::Class::Storage.3 \
 	DBIx::Class::Storage::DBI.3 \
+	DBIx::Class::Storage::DBI::ADO::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::AmbiguousGlob.3 \
+	DBIx::Class::Storage::DBI::AutoCast.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \
 	DBIx::Class::Storage::DBI::DB2.3 \
 	DBIx::Class::Storage::DBI::MSSQL.3 \
@@ -119,10 +120,11 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Role::QueryCounter.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
 	DBIx::Class::Storage::DBI::Sybase.3 \
-	DBIx::Class::Storage::DBI::Sybase::Base.3 \
+	DBIx::Class::Storage::DBI::Sybase::Common.3 \
 	DBIx::Class::Storage::DBI::Sybase::MSSQL.3 \
 	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server::NoBindVars.3 \
+	DBIx::Class::Storage::DBI::Sybase::NoBindVars.3 \
 	DBIx::Class::Storage::DBI::mysql.3 \
 	DBIx::Class::Storage::Statistics.3 \
 	DBIx::Class::Storage::TxnScopeGuard.3 \
