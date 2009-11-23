@@ -8,9 +8,7 @@
 PORTNAME=	wifimgr
 PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt sysutils
-MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ehaupt
+MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
@@ -22,6 +20,6 @@ INSTALLS_ICONS=	yes
 
 MAN8=		wifimgr.8
 
-NO_CDROM=	uses copyrighted icons
+RESTRICTED=	uses copyrighted icons
 
 .include <bsd.port.mk>
