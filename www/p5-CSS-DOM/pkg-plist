@@ -20,6 +20,7 @@
 %%SITE_PERL%%/CSS/DOM/StyleSheetList.pm
 %%SITE_PERL%%/CSS/DOM/Util.pm
 %%SITE_PERL%%/CSS/DOM/Value.pm
+%%SITE_PERL%%/CSS/DOM/Value/List.pm
 %%SITE_PERL%%/CSS/DOM/Value/Primitive.pm
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Value
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Rule

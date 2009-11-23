@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSS-DOM
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CSS
@@ -41,6 +41,7 @@ MAN3=		CSS::DOM.3 \
 		CSS::DOM::StyleSheetList.3 \
 		CSS::DOM::Util.3 \
 		CSS::DOM::Value.3 \
+		CSS::DOM::Value::List.3 \
 		CSS::DOM::Value::Primitive.3 \
 
 .include <bsd.port.mk>
