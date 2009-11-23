@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	wspr
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	2.00
 CATEGORIES=	comms hamradio
+MASTER_SITES=	http://www.physics.princeton.edu/pulsar/K1JT/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
-DISTNAME=	wspr-r${SVN_REV}
+DISTNAME=	wspr-${PORTVERSION}.r1714
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal for HF ham radio communication package
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter/ \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
-LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
+LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
+		fftw3f:${PORTSDIR}/math/fftw3-float \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
 ALL_TARGET=	build
-USE_BZIP2=	yes
+EXTRACT_SUFX=	.tgz
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
@@ -38,33 +39,21 @@ USE_AUTOTOOLS=	libtool:22
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
 post-configure:
 	@${REINPLACE_CMD} -e 's|-Wl.*||' ${WRKSRC}/Makefile
 
 post-install:
+.if	!defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for d in ${WRKSRC}/LICENSE.TXT ${WRKSRC}/WSPR_Announcement.TXT \
+	${WRKSRC}/WSPR_Instructions.TXT ${WRKSRC}/WSPR_Quick_Start.TXT \
+	${WRKSRC}/supported_rigs.txt
+	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+.endfor
+	@${ECHO}
+	@${ECHO} "docs installed in ${DOCSDIR}"
+	@${ECHO}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
-.if defined(BOOTSTRAP)
-SVN_REV!=	svn info http://svn.berlios.de/svnroot/repos/wsjt/branches/wspr/ | ${GREP} Revision | cut -d' ' -f2
-.else
-.include "Makefile.svn_rev"
-.endif
-
-.if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-
-do-fetch:
-	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} \
-	    http://svn.berlios.de/svnroot/repos/wsjt/branches/wspr ${WRKSRC}
-	cd ${WRKDIR};rm -f ${DISTNAME}/*.a ${DISTNAME}/*.lib ${DISTNAME}/*.dll;\
-		tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
-	echo "SVN_REV=	${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
-.if ${USER} == db
-	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
-	    freefall.freebsd.org:public_distfiles/
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
