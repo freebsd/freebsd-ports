@@ -449,6 +449,7 @@
     SUBDIR += pecl-mdbtools
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
+    SUBDIR += pecl-mongo
     SUBDIR += pecl-sqlite
     SUBDIR += pg_filedump
     SUBDIR += pgaccess
