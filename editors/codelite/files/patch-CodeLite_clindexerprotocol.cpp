@@ -1,5 +1,5 @@
---- CodeLite/clindexerprotocol.cpp.orig	2009-05-26 14:27:26.000000000 +0200
-+++ CodeLite/clindexerprotocol.cpp	2009-05-26 14:30:37.000000000 +0200
+--- sdk/codelite_indexer/network/clindexerprotocol.cpp.orig	2009-05-26 14:27:26.000000000 +0200
++++ sdk/codelite_indexer/network/clindexerprotocol.cpp	2009-05-26 14:30:37.000000000 +0200
 @@ -25,7 +25,7 @@
  	}
  

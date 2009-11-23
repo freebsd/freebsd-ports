@@ -1,4 +1,5 @@
 bin/codelite
+bin/codelite_cppcheck
 bin/codelite_exec
 bin/codelite_fix_files
 bin/codelite_indexer
@@ -46,8 +47,10 @@ bin/codelite_kill_children
 %%DATADIR%%/plugins/CodeFormatter.so
 %%DATADIR%%/plugins/ContinuousBuild.so
 %%DATADIR%%/plugins/Copyright.so
+%%DATADIR%%/plugins/CppCheck.so
 %%DATADIR%%/plugins/ExternalTools.so
 %%DATADIR%%/plugins/Gizmos.so
+%%DATADIR%%/plugins/QmakePlugin.so
 %%DATADIR%%/plugins/SnipWiz.so
 %%DATADIR%%/plugins/Subversion.so
 %%DATADIR%%/plugins/SymbolView.so
@@ -55,26 +58,26 @@ bin/codelite_kill_children
 %%DATADIR%%/plugins/abbreviation.so
 %%DATADIR%%/plugins/cscope.so
 %%DATADIR%%/plugins/debuggers/Debugger.so
+%%DATADIR%%/plugins/libcodeliteu.so
+%%DATADIR%%/plugins/libpluginu.so
+%%DATADIR%%/plugins/libwxpropgridu.so
+%%DATADIR%%/plugins/libwxscintillau.so
+%%DATADIR%%/plugins/libwxsqlite3u.so
 %%DATADIR%%/plugins/resources/abbrev.png
 %%DATADIR%%/plugins/resources/abbreviation.accelerators
 %%DATADIR%%/plugins/resources/compfile.png
+%%DATADIR%%/plugins/resources/cppcheck.png
 %%DATADIR%%/plugins/resources/external_tools.accelerators
-%%DATADIR%%/plugins/resources/qt24_preferences.png
-%%DATADIR%%/plugins/resources/qt24_new.png
-%%DATADIR%%/plugins/resources/qt16_preferences.png
 %%DATADIR%%/plugins/resources/qt16_new.png
+%%DATADIR%%/plugins/resources/qt16_preferences.png
+%%DATADIR%%/plugins/resources/qt24_new.png
+%%DATADIR%%/plugins/resources/qt24_preferences.png
 %%DATADIR%%/plugins/resources/svn_diff.png
 %%DATADIR%%/plugins/resources/svn_settings.png
 %%DATADIR%%/plugins/resources/svn_ssh.png
 %%DATADIR%%/plugins/resources/wxfb_conflict.png
 %%DATADIR%%/plugins/resources/wxfb_modified.png
 %%DATADIR%%/plugins/resources/wxfb_ok.png
-%%DATADIR%%/plugins/libwxsqlite3u.so
-%%DATADIR%%/plugins/libwxscintillau.so
-%%DATADIR%%/plugins/libwxpropgridu.so
-%%DATADIR%%/plugins/libpluginu.so
-%%DATADIR%%/plugins/libcodeliteu.so
-%%DATADIR%%/plugins/QmakePlugin.so
 %%DATADIR%%/plugins/wxformbuilder.so
 %%DATADIR%%/rc/menu.xrc
 %%DATADIR%%/src/unittest++1.3.tar.gz
@@ -98,8 +101,11 @@ bin/codelite_kill_children
 %%DATADIR%%/templates/projects/UnitTest++/main.cpp
 %%DATADIR%%/templates/projects/custom-makefile/custom-makefile.project
 %%DATADIR%%/templates/projects/custom-makefile/icon.png
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/defs.h
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project~
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/main.cpp
 %%DATADIR%%/templates/projects/dynamic-library/dynamic-library.project
 %%DATADIR%%/templates/projects/dynamic-library/icon.png
 %%DATADIR%%/templates/projects/executable-console-wx-enabled/executable-console-wx-enabled.project
@@ -136,7 +142,9 @@ bin/codelite_kill_children
 %%DATADIR%%/templates/projects/executable/main.cpp
 %%DATADIR%%/templates/projects/non-code-project/icon.png
 %%DATADIR%%/templates/projects/non-code-project/non-code.project
+%%DATADIR%%/templates/projects/static-library-wx-enabled/defs.h
 %%DATADIR%%/templates/projects/static-library-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/static-library-wx-enabled/main.cpp
 %%DATADIR%%/templates/projects/static-library-wx-enabled/static-library-wx-enabled.project
 %%DATADIR%%/templates/projects/static-library/icon.png
 %%DATADIR%%/templates/projects/static-library/static-library.project
@@ -148,11 +156,15 @@ bin/codelite_kill_children
 %%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
 %%DATADIR%%/templates/qmake/qmake.project
 share/applications/codelite.desktop
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/templates/qmake
 @dirrm %%DATADIR%%/templates/projects/vc-static-lib
 @dirrm %%DATADIR%%/templates/projects/vc-executable
 @dirrm %%DATADIR%%/templates/projects/vc-dynamic-library
 @dirrm %%DATADIR%%/templates/projects/static-library-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/static-library
+@dirrm %%DATADIR%%/templates/projects/qmake-gui
+@dirrm %%DATADIR%%/templates/projects/qmake-console
 @dirrm %%DATADIR%%/templates/projects/non-code-project
 @dirrm %%DATADIR%%/templates/projects/executable-wx-frame
 @dirrm %%DATADIR%%/templates/projects/executable-wx-enabled
@@ -162,12 +174,14 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/executable-gcc
 @dirrm %%DATADIR%%/templates/projects/executable-console-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/executable
+@dirrm %%DATADIR%%/templates/projects/dynamic-library-wx-enabled-win
 @dirrm %%DATADIR%%/templates/projects/dynamic-library-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/dynamic-library
 @dirrm %%DATADIR%%/templates/projects/custom-makefile
 @dirrm %%DATADIR%%/templates/projects/UnitTest++
+@dirrm %%DATADIR%%/templates/projects/QtConsole
+@dirrm %%DATADIR%%/templates/projects/QmakeTestTmpl
 @dirrm %%DATADIR%%/templates/projects
-@dirrm %%DATADIR%%/templates/qmake
 @dirrm %%DATADIR%%/templates/gizmos
 @dirrm %%DATADIR%%/templates/formbuilder
 @dirrm %%DATADIR%%/templates
@@ -182,4 +196,3 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
