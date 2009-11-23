@@ -588,6 +588,7 @@
     SUBDIR += py25-bsddb
     SUBDIR += pydbdesigner
     SUBDIR += pydbx
+    SUBDIR += pymongo
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
     SUBDIR += qt-ibase-plugin
