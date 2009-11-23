@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-ParseExcel
-PORTVERSION=	0.49
+PORTVERSION=	0.55
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -41,8 +41,7 @@ post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}/Excel
-	@${INSTALL_DATA} ${WRKSRC}/sample/README ${WRKSRC}/sample/res* \
-		${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sample/README ${EXAMPLESDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/sample/*.pl ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/sample/Excel/* ${EXAMPLESDIR}/Excel
 .endif
