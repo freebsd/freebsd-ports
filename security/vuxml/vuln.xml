@@ -35,6 +35,39 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="92ca92c1-d859-11de-89f9-001517351c22">
+    <topic>bugzilla -- information leak</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><gt>3.3.1</gt><lt>3.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.4.3/">
+	  <p>When a bug is in a group, none of its information
+            (other than its status and resolution) should be visible
+            to users outside that group. It was discovered that
+            as of 3.3.2, Bugzilla was showing the alias of the bug 
+            (a very short string used as a shortcut for looking up
+            the bug) to users outside of the group, if the protected
+            bug ended up in the "Depends On" or "Blocks" list of any
+            other bug.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3386</cvename>
+      <url>http://www.bugzilla.org/security/3.4.3/</url>
+    </references>
+    <dates>
+      <discovery>2009-11-18</discovery>
+      <entry>2009-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04104985-d846-11de-84e4-00215af774f0">
     <topic>cacti -- cross-site scripting issues</topic>
     <affects>
