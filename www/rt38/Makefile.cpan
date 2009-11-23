@@ -91,4 +91,4 @@ SMTP_DEPS=	p5-Net>=1.22:${PORTSDIR}/net/p5-Net
 
 STANDALONE_DEPS=	p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
 				p5-HTTP-Server-Simple>=0.34:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-				p5-HTTP-Server-Siple-Mason>=0.09:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
+				p5-HTTP-Server-Simple-Mason>=0.09:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
