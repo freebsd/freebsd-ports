@@ -10,3 +10,6 @@ SIZE (snmp_invalid_response.patch) = 921
 MD5 (template_duplication.patch) = b1bd81dc89aa3e30365d0c9d45956255
 SHA256 (template_duplication.patch) = c6ab6d2396f6b6519607f7908df642a575d32a75430e2b74381a6046d57f8ad9
 SIZE (template_duplication.patch) = 9190
+MD5 (cross_site_fix.patch) = 4323da80d4dc0238fc4902dcd27f47f0
+SHA256 (cross_site_fix.patch) = 75b7d4687722d96e0d32afb3832f93a54e8518c0c949e1dcd9ae634623564b28
+SIZE (cross_site_fix.patch) = 8705
