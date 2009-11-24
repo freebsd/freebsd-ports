@@ -27,7 +27,7 @@ you update your ports collection, before attempting any port upgrades.
   and deployment files to /var/jboss5, and allowing /usr to be
   read-only.
 
-20091118
+20091118:
   AFFECTS: users of www/redmine
   AUTHOR: Bernhard Froehlich <decke@bluelife.at>
 
@@ -41,7 +41,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # rake db:migrate RAILS_ENV=production
 
-20091114
+20091114:
   AFFECTS: users of emulators/win4bsd
   AUTHOR: Mario S F Ferreira <lioux@FreeBSD.org>
 
@@ -57,7 +57,7 @@ you update your ports collection, before attempting any port upgrades.
   Do not forget to enable kqemu on rc.conf since win4bsd will not
   work without it.
 
-20091018
+20091018:
   AFFECTS: users of databases/mysql54-server
   AUTHOR: Alex Dupre <ale@FreeBSD.org>
 
@@ -70,7 +70,7 @@ you update your ports collection, before attempting any port upgrades.
 
   See: http://dev.mysql.com/doc/refman/5.4/en/news-5-4-3.html
 
-20091014
+20091014:
   AFFECTS: users of mail/heirloom-mailx
   AUTHOR: Alexander Logvinov <avl@FreeBSD.org>
 
@@ -86,7 +86,7 @@ you update your ports collection, before attempting any port upgrades.
   # rm -r /var/db/ports/-mailx
   # cd /usr/ports/mail/heirloom-mailx && make install clean
 
-20090921
+20090921:
   AFFECTS: users of archivers/lzmautils, archivers/lzmautils-devel
   AUTHOR: Christian Weisgerber <naddy@FreeBSD.org>
 
