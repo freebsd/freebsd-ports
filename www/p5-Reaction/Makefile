@@ -7,7 +7,7 @@
 
 PORTNAME=	Reaction
 PORTVERSION=	0.001001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,7 +39,6 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7002:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid \
 		${SITE_PERL}/Email/Send.pm:${PORTSDIR}/mail/p5-Email-Send \
 		${SITE_PERL}/Email/MIME.pm:${PORTSDIR}/mail/p5-Email-MIME \
-		${SITE_PERL}/Email/MIME/Creator.pm:${PORTSDIR}/mail/p5-Email-MIME-Creator \
 		${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 		${SITE_PERL}/${PERL_ARCH}/Devel/Declare.pm:${PORTSDIR}/devel/p5-Devel-Declare

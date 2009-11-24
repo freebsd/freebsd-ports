@@ -7,6 +7,7 @@
 
 PORTNAME=	ZConf-Mail
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -17,7 +18,6 @@ COMMENT=	Misc mail client functions backed by ZConf
 
 RUN_DEPENDS=	${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
 		${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
-		${SITE_PERL}/Email/Simple/Creator.pm:${PORTSDIR}/mail/p5-Email-Simple-Creator \
 		${SITE_PERL}/Mail/IMAPTalk.pm:${PORTSDIR}/mail/p5-Mail-IMAPTalk \
 		${SITE_PERL}/Mail/POP3Client.pm:${PORTSDIR}/mail/p5-Mail-POP3Client \
 		${SITE_PERL}/Net/SMTP_auth.pm:${PORTSDIR}/mail/p5-Net-SMTP_auth \

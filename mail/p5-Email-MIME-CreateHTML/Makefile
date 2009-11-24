@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-MIME-CreateHTML
 PORTVERSION=	1.026
+PORTREVISION=	1
 CATEGORIES=	mail www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,7 @@ COMMENT=	Multipart HTML Email builder
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Slurp/WithinPolicy.pm:${PORTSDIR}/devel/p5-File-Policy \
 		p5-Data-Serializer>0:${PORTSDIR}/devel/p5-Data-Serializer \
-		p5-Email-MIME-Creator>0:${PORTSDIR}/mail/p5-Email-MIME-Creator \
+		p5-Email-MIME>0:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \
 		p5-HTML-TokeParser-Simple>0:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \

@@ -7,7 +7,7 @@
 
 PORTNAME=	assp
 PORTVERSION=	1.5.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -115,7 +115,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/SenderBase.pm:${PORTSDIR}/mail/p5-Net-SenderBase
 .endif
 
 .if !defined(WITHOUT_MIMEMOD)
-RUN_DEPENDS+=	${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME-Modifier
+RUN_DEPENDS+=	${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME
 .endif
 
 .if !defined(WITHOUT_SSL)
