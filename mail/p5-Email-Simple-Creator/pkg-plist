@@ -1,7 +1,0 @@
-%%SITE_PERL%%/Email/Simple/Creator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple/Creator/.packlist
-@dirrmtry %%SITE_PERL%%/Email/Simple
-@dirrmtry %%SITE_PERL%%/Email
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple/Creator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email

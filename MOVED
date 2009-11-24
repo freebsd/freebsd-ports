@@ -4212,3 +4212,6 @@ lang/gcc295|lang/gcc44|2009-11-21|Abandoned upstream, superseded by later versio
 games/freebsd-games|games/bsdgames|2009-11-21|Superseded by and equivalent to freebsd-games
 devel/arm-elf-gcc295|devel/cross-gcc|2009-11-21|Broken with current versions of FreeBSD, abandoned upstream, superseded by later versions
 x11-toolkits/xclasses||2009-11-24|Has expired: Version branch long since retired
+mail/p5-Email-MIME-Creator||2009-11-24|Folded into p5-Email-MIME package
+mail/p5-Email-MIME-Modifier||2009-11-24|Folded into p5-Email-MIME package
+mail/p5-Email-Simple-Creator||2009-11-24|Folded into p5-Email-Simple package

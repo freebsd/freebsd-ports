@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Plugin-Email
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +17,7 @@ COMMENT=	Send emails with Catalyst
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-Email-MIME-Creator>=0:${PORTSDIR}/mail/p5-Email-MIME-Creator
+		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+

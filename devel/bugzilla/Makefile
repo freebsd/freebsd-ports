@@ -7,6 +7,7 @@
 
 PORTNAME?=	bugzilla
 PORTVERSION?=	3.4.4
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -44,8 +45,7 @@ RUN_DEPENDS+=	\
 		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-Email-MIME-Modifier>=1.442:${PORTSDIR}/mail/p5-Email-MIME-Modifier
+		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
 
 CONFLICTS?=	ja-bugzilla-2.* bugzilla-2.*
 
