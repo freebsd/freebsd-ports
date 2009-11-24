@@ -1,6 +1,6 @@
 $FreeBSD$
---- ntpd.8.orig	2009-08-01 21:32:41.000000000 +0200
-+++ ntpd.8	2009-08-01 21:40:29.000000000 +0200
+--- ntpd.8.orig	2009-02-12 02:33:37.000000000 +0100
++++ ntpd.8	2009-11-23 21:36:02.000000000 +0100
 @@ -29,8 +29,7 @@
  .Sh DESCRIPTION
  The
@@ -44,8 +44,12 @@ $FreeBSD$
  for more information on the boot process
  and enabling daemons.
  .Pp
-@@ -123,19 +122,19 @@ receives a
- signal, it writes its peer and sensor status to
+@@ -120,22 +119,22 @@ When
+ .Nm
+ receives a
+ .Dv SIGINFO
+-signal, it writes its peer and sensor status to
++signal, it writes its peer status to
  .Xr syslog 3 .
  .Sh FILES
 -.Bl -tag -width "/var/db/ntpd.driftXXX" -compact
