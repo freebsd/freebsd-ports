@@ -1,0 +1,54 @@
+--- configure.orig	2009-09-17 18:08:39.000000000 +0900
++++ configure	2009-11-24 11:20:36.000000000 +0900
+@@ -17059,9 +17059,9 @@
+ #define HAVE_DECL_NTH_UNCONVERTED_CANDIDATE 0
+ _ACEOF
+ 
+-{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
+-$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
+-   { (exit 1); exit 1; }; }
++#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
++#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
++#   { (exit 1); exit 1; }; }
+ fi
+ { $as_echo "$as_me:$LINENO: checking whether NTH_KATAKANA_CANDIDATE is declared" >&5
+ $as_echo_n "checking whether NTH_KATAKANA_CANDIDATE is declared... " >&6; }
+@@ -17129,9 +17129,9 @@
+ #define HAVE_DECL_NTH_KATAKANA_CANDIDATE 0
+ _ACEOF
+ 
+-{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
+-$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
+-   { (exit 1); exit 1; }; }
++#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
++#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
++#   { (exit 1); exit 1; }; }
+ fi
+ { $as_echo "$as_me:$LINENO: checking whether NTH_HIRAGANA_CANDIDATE is declared" >&5
+ $as_echo_n "checking whether NTH_HIRAGANA_CANDIDATE is declared... " >&6; }
+@@ -17199,9 +17199,9 @@
+ #define HAVE_DECL_NTH_HIRAGANA_CANDIDATE 0
+ _ACEOF
+ 
+-{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
+-$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
+-   { (exit 1); exit 1; }; }
++#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
++#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
++#   { (exit 1); exit 1; }; }
+ fi
+ { $as_echo "$as_me:$LINENO: checking whether NTH_HALFKANA_CANDIDATE is declared" >&5
+ $as_echo_n "checking whether NTH_HALFKANA_CANDIDATE is declared... " >&6; }
+@@ -17269,9 +17269,9 @@
+ #define HAVE_DECL_NTH_HALFKANA_CANDIDATE 0
+ _ACEOF
+ 
+-{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
+-$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
+-   { (exit 1); exit 1; }; }
++#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
++#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
++#   { (exit 1); exit 1; }; }
+ fi
+ 
+ 
