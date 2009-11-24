@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ibus-anthy
-PORTVERSION=	1.1.0.20090402
-PORTREVISION=	3
+PORTVERSION=	1.2.0.20090917
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -38,5 +38,9 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e "s|-I/usr/include|-I${LOCALBASE}/include|" ${WRKSRC}/engine/Makefile.am
 	@${REINPLACE_CMD} -e "s|-I/usr/include|-I${LOCALBASE}/include|" ${WRKSRC}/engine/Makefile.in
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO} To display this message again, type ${PKG_INFO} -D ${PKGNAME}
 
 .include <bsd.port.mk>

@@ -26,11 +26,25 @@ libexec/ibus-engine-anthy
 %%DATADIR%%/engine/tables.py
 %%DATADIR%%/engine/tables.pyc
 %%DATADIR%%/engine/tables.pyo
+%%DATADIR%%/engine/thumb.py
+%%DATADIR%%/engine/thumb.pyc
+%%DATADIR%%/engine/thumb.pyo
 %%DATADIR%%/icons/ibus-anthy.png
+%%DATADIR%%/setup/anthyprefs.py
+%%DATADIR%%/setup/anthyprefs.pyc
+%%DATADIR%%/setup/anthyprefs.pyo
+%%DATADIR%%/setup/main.py
+%%DATADIR%%/setup/main.pyc
+%%DATADIR%%/setup/main.pyo
+%%DATADIR%%/setup/prefs.py
+%%DATADIR%%/setup/prefs.pyc
+%%DATADIR%%/setup/prefs.pyo
+%%DATADIR%%/setup/setup.glade
 share/ibus/component/anthy.xml
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus-anthy.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus-anthy.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
+@dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/engine
 @dirrm %%DATADIR%%
