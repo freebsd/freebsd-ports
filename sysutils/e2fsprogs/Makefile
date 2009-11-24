@@ -11,7 +11,7 @@ PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER?=	matthias.andree@gmx.de
+MAINTAINER?=	mandree@freebsd.org
 COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 
 PATCH_STRIP=	-p1
