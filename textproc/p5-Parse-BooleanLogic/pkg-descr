@@ -1,0 +1,6 @@
+Parse::BooleanLogic is a fast parser for boolean expressions. Originally
+written for Request Tracker to parse SQL like expressions, it can be
+used to parse other boolean logic sentences with OPERANDs joined using
+binary OPERATORs and grouped and nested using parentheses.
+
+WWW:	http://search.cpan.org/~ruz/Parse-BooleanLogic/

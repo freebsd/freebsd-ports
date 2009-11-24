@@ -520,6 +520,7 @@
     SUBDIR += p5-PPI-HTML
     SUBDIR += p5-PPI-XS
     SUBDIR += p5-PPIx-EditorTools
+    SUBDIR += p5-Parse-BooleanLogic
     SUBDIR += p5-Parse-CSV
     SUBDIR += p5-Parse-FixedLength
     SUBDIR += p5-Parse-Flex
