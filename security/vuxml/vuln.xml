@@ -35,6 +35,37 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="94edff42-d93d-11de-a434-0211d880e350">
+    <topic>libvorbis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libvorbis</name>
+	<range><lt>1.2.3_1,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Ubuntu security team reports:</p>
+	<blockquote cite="http://www.ubuntu.com/usn/usn-861-1">
+	  <p>It was discovered that libvorbis did not correctly
+	    handle certain malformed vorbis files. If a user were
+	    tricked into opening a specially crafted vorbis file
+	    with an application that uses libvorbis, an attacker
+	    could cause a denial of service or possibly execute
+	    arbitrary code with the user's privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1420</cvename>
+      <cvename>CVE-2009-3379</cvename>
+    </references>
+    <dates>
+      <discovery>2009-11-24</discovery>
+      <entry>2009-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92ca92c1-d859-11de-89f9-001517351c22">
     <topic>bugzilla -- information leak</topic>
     <affects>
