@@ -192,8 +192,8 @@
 %%WWWDIR%%/modules/flash/LICENSE
 %%WWWDIR%%/modules/flash/Original/skin.xml
 %%WWWDIR%%/modules/flash/crossdomain.xml
-%%WWWDIR%%/modules/flash/xspf_jukebox.swf
 %%WWWDIR%%/modules/flash/xspf_jukebox.fla
+%%WWWDIR%%/modules/flash/xspf_jukebox.swf
 %%WWWDIR%%/modules/flash/xspf_player.php
 %%WWWDIR%%/modules/getid3/docs/changelog.txt
 %%WWWDIR%%/modules/getid3/docs/dependencies.txt
@@ -539,8 +539,59 @@
 %%WWWDIR%%/themes/greysme/images/sort_on.gif
 %%WWWDIR%%/themes/greysme/templates/default.css
 %%WWWDIR%%/themes/greysme/theme.cfg.php
+%%WWWDIR%%/themes/penguin/images/ajax-loader.gif
+%%WWWDIR%%/themes/penguin/images/ampache.png
+%%WWWDIR%%/themes/penguin/images/background.gif
+%%WWWDIR%%/themes/penguin/images/bg_login.jpg
+%%WWWDIR%%/themes/penguin/images/blank-pixel.gif
+%%WWWDIR%%/themes/penguin/images/blankalbum.gif
+%%WWWDIR%%/themes/penguin/images/blankalbum.jpg
+%%WWWDIR%%/themes/penguin/images/bottom.gif
+%%WWWDIR%%/themes/penguin/images/bottomright.gif
+%%WWWDIR%%/themes/penguin/images/icons/icon_add.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_add_key.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_add_user.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_admin.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_all.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_batch_download.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_browse.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_cog.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_delete.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_disable.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_download.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_edit.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_enable.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_feed.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_home.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_link.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_logout.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_next.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_pause.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_play.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_playlist_add.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_plugin.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_preferences.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_prev.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_random.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_server_lightning.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_stop.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_view.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_volumedn.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_volumemute.png
+%%WWWDIR%%/themes/penguin/images/icons/icon_volumeup.png
+%%WWWDIR%%/themes/penguin/images/ratings/star_rating.gif
+%%WWWDIR%%/themes/penguin/images/ratings/x.gif
+%%WWWDIR%%/themes/penguin/images/ratings/x_off.gif
+%%WWWDIR%%/themes/penguin/images/rightbar_top.jpg
+%%WWWDIR%%/themes/penguin/templates/default.css
+%%WWWDIR%%/themes/penguin/theme.cfg.php
 %%WWWDIR%%/update.php
 %%WWWDIR%%/util.php
+@dirrm %%WWWDIR%%/themes/penguin/templates
+@dirrm %%WWWDIR%%/themes/penguin/images/ratings
+@dirrm %%WWWDIR%%/themes/penguin/images/icons
+@dirrm %%WWWDIR%%/themes/penguin/images
+@dirrm %%WWWDIR%%/themes/penguin
 @dirrm %%WWWDIR%%/themes/greysme/templates
 @dirrm %%WWWDIR%%/themes/greysme/images/ratings
 @dirrm %%WWWDIR%%/themes/greysme/images/icons
@@ -577,12 +628,12 @@
 @dirrm %%WWWDIR%%/locale/sv_SE
 @dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ru_RU
+@dirrm %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pl_PL
 @dirrm %%WWWDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/nl_NL
 @dirrm %%WWWDIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/nb_NO
-@dirrm %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/pl_PL
 @dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ja_JP
 @dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
