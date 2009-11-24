@@ -2,6 +2,7 @@
 %%PYTHON_SITELIBDIR%%/_anthy.so
 %%PYTHON_SITELIBDIR%%/anthy.py
 libexec/ibus-engine-anthy
+libexec/ibus-setup-anthy
 %%DATADIR%%/engine/engine.py
 %%DATADIR%%/engine/engine.pyc
 %%DATADIR%%/engine/engine.pyo
