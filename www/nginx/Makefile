@@ -50,7 +50,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_REDIS_MODULE	"3rd party http_redis module" off \
 		HTTP_RESPONSE_MODULE	"3rd party http_response module" off \
 		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
-		HTTP_UPLOAD_PROGRESS	"3rd party upload_progress module" off \
+		HTTP_UPLOAD_PROGRESS	"3rd party uploadprogress module" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
@@ -234,17 +234,17 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_MODULE)
-NGINX_UPLOAD_MODULE_VERSION=	2.0.9
+NGINX_UPLOAD_MODULE_VERSION=	2.0.11
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_PROGRESS)
-NGINX_UPLOAD_PROGRESS_MODULE_VERSION=	0.6
-MASTER_SITES+=	http://wiki.nginx.org/images/7/70/:uploadprogress
-DISTFILES+=	Nginx-upload-progress-module-${NGINX_UPLOAD_PROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-upload-progress-module
+NGINX_UPLOADPROGRESS_MODULE_VERSION=	0.7
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:uploadprogress/}
+DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
@@ -285,7 +285,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.5
+PASSENGER_VERSION=	2.2.7
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
