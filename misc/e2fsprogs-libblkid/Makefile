@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
 INSTALL_WRKSRC=	${WRKSRC}/lib/blkid
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		libblkid.3
 
