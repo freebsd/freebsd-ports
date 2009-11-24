@@ -18257,6 +18257,7 @@ pecl-mcve                       ports/devel/pecl-mcve
 pecl-mdbtools                   ports/databases/pecl-mdbtools
 pecl-memcache                   ports/databases/pecl-memcache
 pecl-memcached                  ports/databases/pecl-memcached
+pecl-mongo                      ports/databases/pecl-mongo
 pecl-newt                       ports/devel/pecl-newt
 pecl-oauth                      ports/net/pecl-oauth
 pecl-operator                   ports/devel/pecl-operator
@@ -20078,6 +20079,7 @@ pylize                          ports/misc/pylize
 pylot                           ports/www/pylot
 pymacs                          ports/devel/pymacs
 pymol                           ports/biology/pymol
+pymongo                         ports/databases/pymongo
 pymsgauth                       ports/mail/pymsgauth
 pymsn                           ports/net-im/pymsn
 pyne                            ports/news/pyne
@@ -23653,6 +23655,7 @@ wide-dhcp                       ports/net-mgmt/wide-dhcp
 widelands                       ports/games/widelands
 widentd                         ports/net/widentd
 widgetfactory                   ports/x11/widgetfactory
+wifimgr                         ports/net-mgmt/wifimgr
 wikicalc                        ports/www/wikicalc
 wikindx                         ports/www/wikindx
 wildmagic                       ports/graphics/wildmagic
