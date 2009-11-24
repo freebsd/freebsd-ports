@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	"LEX=${LOCALBASE}/bin/flex"
 CONFIGURE_ARGS=	--disable-debug --disable-static
 
 MAN1=		qore.1
