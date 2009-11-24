@@ -1,32 +1,34 @@
 $FreeBSD$
---- ntp.c.orig	2009-08-01 20:12:43.000000000 +0200
-+++ ntp.c	2009-08-01 20:26:44.000000000 +0200
-@@ -34,8 +34,12 @@
+--- ntp.c.orig	2009-11-23 20:47:16.000000000 +0100
++++ ntp.c	2009-11-23 20:55:59.000000000 +0100
+@@ -34,9 +34,14 @@
  #include "ntpd.h"
  
  #define	PFD_PIPE_MAIN	0
 +#ifdef HAVE_SENSORS
  #define	PFD_HOTPLUG	1
- #define	PFD_MAX		2
+ #define	PFD_PIPE_DNS	2
+ #define	PFD_MAX		3
 +#else
-+#define	PFD_MAX		1
++#define	PFD_PIPE_DNS	1
++#define	PFD_MAX		2
 +#endif
  
  volatile sig_atomic_t	 ntp_quit = 0;
  volatile sig_atomic_t	 ntp_report = 0;
-@@ -69,7 +73,10 @@ pid_t
+@@ -72,7 +77,10 @@ pid_t
  ntp_main(int pipe_prnt[2], struct ntpd_conf *nconf, struct passwd *pw)
  {
  	int			 a, b, nfds, i, j, idx_peers, timeout;
--	int			 hotplugfd, nullfd;
+-	int			 hotplugfd, nullfd, pipe_dns[2];
 +#ifdef HAVE_SENSORS
 +	int			 hotplugfd;
 +#endif
-+	int			 nullfd;
++	int			 nullfd, pipe_dns[2];
  	u_int			 pfd_elms = 0, idx2peer_elms = 0;
  	u_int			 listener_cnt, new_cnt, sent_cnt, trial_cnt;
- 	pid_t			 pid;
-@@ -78,10 +85,15 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+ 	pid_t			 pid, dns_pid;
+@@ -81,10 +89,15 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  	struct listen_addr	*la;
  	struct ntp_peer		*p;
  	struct ntp_peer		**idx2peer = NULL;
@@ -43,7 +45,7 @@ $FreeBSD$
  	void			*newp;
  
  	switch (pid = fork()) {
-@@ -105,7 +117,9 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+@@ -108,7 +121,9 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  
  	if ((nullfd = open(_PATH_DEVNULL, O_RDWR, 0)) == -1)
  		fatal(NULL);
@@ -51,9 +53,9 @@ $FreeBSD$
  	hotplugfd = sensor_hotplugfd();
 +#endif
  
- 	if (stat(pw->pw_dir, &stb) == -1)
- 		fatal("stat");
-@@ -168,7 +182,9 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+ 	if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC, pipe_dns) == -1)
+ 		fatal("socketpair");
+@@ -179,7 +194,9 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  	conf->status.precision = a;
  	conf->scale = 1;
  
@@ -63,7 +65,7 @@ $FreeBSD$
  
  	log_info("ntp engine ready");
  
-@@ -210,8 +226,10 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+@@ -221,8 +238,10 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  		nextaction = getmonotime() + 3600;
  		pfd[PFD_PIPE_MAIN].fd = ibuf_main->fd;
  		pfd[PFD_PIPE_MAIN].events = POLLIN;
@@ -71,10 +73,10 @@ $FreeBSD$
  		pfd[PFD_HOTPLUG].fd = hotplugfd;
  		pfd[PFD_HOTPLUG].events = POLLIN;
 +#endif
+ 		pfd[PFD_PIPE_DNS].fd = ibuf_dns->fd;
+ 		pfd[PFD_PIPE_DNS].events = POLLIN;
  
- 		i = PFD_MAX;
- 		TAILQ_FOREACH(la, &conf->listen_addrs, entry) {
-@@ -265,6 +283,7 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+@@ -278,6 +297,7 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  			}
  		}
  
@@ -82,7 +84,7 @@ $FreeBSD$
  		if (last_sensor_scan == 0 ||
  		    last_sensor_scan + SENSOR_SCAN_INTERVAL < getmonotime()) {
  			sensors_cnt = sensor_scan();
-@@ -273,7 +292,9 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+@@ -286,7 +306,9 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  		if (!TAILQ_EMPTY(&conf->ntp_conf_sensors) && sensors_cnt == 0 &&
  		    nextaction > last_sensor_scan + SENSOR_SCAN_INTERVAL)
  			nextaction = last_sensor_scan + SENSOR_SCAN_INTERVAL;
@@ -92,7 +94,7 @@ $FreeBSD$
  		TAILQ_FOREACH(s, &conf->ntp_sensors, entry) {
  			if (conf->settime && s->offsets[0].offset)
  				priv_settime(s->offsets[0].offset);
-@@ -281,6 +302,7 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+@@ -294,6 +316,7 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  			if (s->next > 0 && s->next < nextaction)
  				nextaction = s->next;
  		}
@@ -100,7 +102,7 @@ $FreeBSD$
  
  		if (conf->settime &&
  		    ((trial_cnt > 0 && sent_cnt == 0) ||
-@@ -312,10 +334,12 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+@@ -339,10 +362,12 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  				ntp_quit = 1;
  		}
  
@@ -111,9 +113,9 @@ $FreeBSD$
  		}
 +#endif
  
- 		for (j = 1; nfds > 0 && j < idx_peers; j++)
+ 		for (j = PFD_MAX; nfds > 0 && j < idx_peers; j++)
  			if (pfd[j].revents & (POLLIN|POLLERR)) {
-@@ -332,12 +356,14 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
+@@ -359,12 +384,14 @@ ntp_main(int pipe_prnt[2], struct ntpd_c
  					ntp_quit = 1;
  			}
  
@@ -128,7 +130,7 @@ $FreeBSD$
  		report_peers(ntp_report);
  		ntp_report = 0;
  	}
-@@ -511,7 +537,9 @@ int
+@@ -574,7 +601,9 @@ int
  priv_adjtime(void)
  {
  	struct ntp_peer		 *p;
@@ -138,7 +140,7 @@ $FreeBSD$
  	int			  offset_cnt = 0, i = 0, j;
  	struct ntp_offset	**offsets;
  	double			  offset_median;
-@@ -524,11 +552,13 @@ priv_adjtime(void)
+@@ -587,11 +616,13 @@ priv_adjtime(void)
  		offset_cnt += p->weight;
  	}
  
@@ -152,7 +154,7 @@ $FreeBSD$
  
  	if (offset_cnt == 0)
  		return (1);
-@@ -543,12 +573,14 @@ priv_adjtime(void)
+@@ -606,12 +637,14 @@ priv_adjtime(void)
  			offsets[i++] = &p->update;
  	}
  
@@ -167,7 +169,7 @@ $FreeBSD$
  
  	qsort(offsets, offset_cnt, sizeof(struct ntp_offset *), offset_compare);
  
-@@ -585,11 +617,13 @@ priv_adjtime(void)
+@@ -648,11 +681,13 @@ priv_adjtime(void)
  			p->reply[i].offset -= offset_median;
  		p->update.good = 0;
  	}
@@ -181,7 +183,7 @@ $FreeBSD$
  
  	return (0);
  }
-@@ -679,16 +713,20 @@ report_peers(int always)
+@@ -734,16 +769,20 @@ report_peers(int always)
  	u_int badpeers = 0;
  	u_int badsensors = 0;
  	struct ntp_peer *p;
@@ -200,9 +202,9 @@ $FreeBSD$
  	}
 +#endif
  
- 	now = time(NULL);
+ 	now = getmonotime();
  	if (!always) {
-@@ -718,6 +756,7 @@ report_peers(int always)
+@@ -773,6 +812,7 @@ report_peers(int always)
  			}
  		}
  	}
@@ -210,10 +212,9 @@ $FreeBSD$
  	if (sensors_cnt > 0) {
  		log_warnx("%u out of %u sensors valid",
  		    sensors_cnt - badsensors, sensors_cnt);
-@@ -726,5 +765,6 @@ report_peers(int always)
+@@ -781,4 +821,5 @@ report_peers(int always)
  				log_warnx("bad sensor %s", s->device);
  		}
  	}
 +#endif
  }
- 
