@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-HomeDir
-PORTVERSION=	0.86
+PORTVERSION=	0.88
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,11 @@ COMMENT=	Get home directory for self or other users
 
 PERL_CONFIGURE=	yes
 
-MAN3=		File::HomeDir.3 File::HomeDir::Darwin.3 File::HomeDir::Unix.3 \
+MAN3=		File::HomeDir.3 \
+		File::HomeDir::Darwin.3 \
+		File::HomeDir::Darwin::Carbon.3 \
+		File::HomeDir::Darwin::Cocoa.3 \
+		File::HomeDir::Unix.3 \
 		File::HomeDir::Windows.3
 
 .include <bsd.port.mk>

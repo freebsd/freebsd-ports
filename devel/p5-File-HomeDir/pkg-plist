@@ -1,11 +1,14 @@
 %%SITE_PERL%%/File/HomeDir.pm
 %%SITE_PERL%%/File/HomeDir/Darwin.pm
+%%SITE_PERL%%/File/HomeDir/Darwin/Carbon.pm
+%%SITE_PERL%%/File/HomeDir/Darwin/Cocoa.pm
 %%SITE_PERL%%/File/HomeDir/Driver.pm
 %%SITE_PERL%%/File/HomeDir/MacOS9.pm
 %%SITE_PERL%%/File/HomeDir/Unix.pm
 %%SITE_PERL%%/File/HomeDir/Windows.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrm %%SITE_PERL%%/File/HomeDir
+@dirrmtry %%SITE_PERL%%/File/HomeDir/Darwin
+@dirrmtry %%SITE_PERL%%/File/HomeDir
 @dirrmtry %%SITE_PERL%%/File
