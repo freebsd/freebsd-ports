@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	yahoo
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0r4
 CATEGORIES=	www
 MASTER_SITES=	http://yuilibrary.com/downloads/yui2/
 PKGNAMESUFFIX=	-ui
-DISTNAME=	yui_${PORTVERSION}b
+DISTNAME=	yui_${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	The Yahoo! User Interface (YUI) Library
