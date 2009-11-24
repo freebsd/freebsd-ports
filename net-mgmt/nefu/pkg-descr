@@ -1,5 +1,5 @@
 nefu monitors network services and reports outages. Working
-from a discription of the network topography, nefu's algorithm
+from a description of the network topography, nefu's algorithm
 prevents "false alarms" in the event of a network outage due to
 a dependency failure.
 
