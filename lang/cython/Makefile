@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cython
-PORTVERSION=	0.11.3
+PORTVERSION=	0.12
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.cython.org/ \
+MASTER_SITES=	http://www.cython.org/release/ \
 		CHEESESHOP
 DISTNAME=	Cython-${PORTVERSION}
 

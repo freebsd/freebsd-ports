@@ -10,6 +10,9 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/TestUtils.py
 %%PYTHON_SITELIBDIR%%/Cython/Utils.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/AnalysedTreeTransforms.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/AnalysedTreeTransforms.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/AnalysedTreeTransforms.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Annotate.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/AutoDocTransforms.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Buffer.py
@@ -48,6 +51,12 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/UtilNodes.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Version.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Visitor.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/TreePath.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/TreePath.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/TreePath.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/TypeInference.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/TypeInference.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/TypeInference.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestBuffer.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestDecorators.py
@@ -63,6 +72,9 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestDecorators.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestParseTreeTransforms.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreeFragment.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Lexicon.pickle
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Annotate.pyc
@@ -230,7 +242,6 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_module.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_number.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_object.pxd
-%%PYTHON_SITELIBDIR%%/Cython/Includes/python_parse.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_ref.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_sequence.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_set.pxd
@@ -239,6 +250,11 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_type.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_unicode.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_version.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/python_bytes.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/python_cobject.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/python_getargs.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/python_pycapsule.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/python_weakref.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/stdio.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/stdlib.pxd
 %%PYTHON_SITELIBDIR%%/Cython/__init__.pyc
