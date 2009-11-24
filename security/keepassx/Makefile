@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	KeePassX
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.1
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:L}
+DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Cross Platform Password Manager
+
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 DATADIR=	${PREFIX}/share/${PORTNAME:L}
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
@@ -22,11 +25,15 @@ QT_COMPONENTS=	qmake_build moc_build uic_build qt3support_build rcc_build \
 HAS_CONFIGURE=	yes
 USE_XORG=	xt inputproto xtst xrender xrandr xfixes xcursor\
 		xext x11 sm ice xi
+MAKE_JOBS_SAFE=	yes
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix PREFIX=${PREFIX} \
 		INCLUDEPATH+=${LOCALBASE}/include LIBS+=-L${LOCALBASE}/lib \
 		keepassx.pro
+
+post-install:
+	-@update-mime-database ${LOCALBASE}/share/mime
 
 .include <bsd.port.mk>
