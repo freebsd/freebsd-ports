@@ -312,7 +312,6 @@
     SUBDIR += wxgtk28-unicode
     SUBDIR += wxgtk28-unicode-contrib
     SUBDIR += xbae
-    SUBDIR += xclasses
     SUBDIR += xforms
     SUBDIR += xforms-i18n
     SUBDIR += xmhtml

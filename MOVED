@@ -4211,3 +4211,4 @@ security/f-prot-sig||2009-11-20|No longer needed with security/f-prot update
 lang/gcc295|lang/gcc44|2009-11-21|Abandoned upstream, superseded by later versions
 games/freebsd-games|games/bsdgames|2009-11-21|Superseded by and equivalent to freebsd-games
 devel/arm-elf-gcc295|devel/cross-gcc|2009-11-21|Broken with current versions of FreeBSD, abandoned upstream, superseded by later versions
+x11-toolkits/xclasses||2009-11-24|Has expired: Version branch long since retired
