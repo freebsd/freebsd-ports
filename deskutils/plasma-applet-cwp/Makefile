@@ -12,7 +12,7 @@ MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	98925-cwp-${PORTVERSION}
 
-MAINTAINER=	stast@bsdportal.ru
+MAINTAINER=	devel@stasyan.com
 COMMENT=	Weather plasma applet for KDE4
 
 USE_BZIP2=	yes

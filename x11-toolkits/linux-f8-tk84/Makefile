@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	linux-f8-
 PKGNAMESUFFIX=	84
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	stast@bsdportal.ru
+MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical toolkit for TCL (Linux Fedora 8)
 
 CONFLICTS=	linux-f10-tk85-[0-9]*

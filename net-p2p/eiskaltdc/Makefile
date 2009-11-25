@@ -10,7 +10,7 @@ PORTVERSION=	1.0.30
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	stast@bsdportal.ru
+MAINTAINER=	devel@stasyan.com
 COMMENT=	A Direct Connect client QT GUI
 
 LIB_DEPENDS=	dc.5:${PORTSDIR}/net-p2p/dclib

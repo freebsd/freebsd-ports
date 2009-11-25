@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}13
 
-MAINTAINER=	stast@bsdportal.ru
+MAINTAINER=	devel@stasyan.com
 COMMENT=	Library for display PNG images in programs
 
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
