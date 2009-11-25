@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	eventlog
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.10
 CATEGORIES=	sysutils
-MASTER_SITES= http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.0.4/source/
+DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 
 MAINTAINER=	ivan.lago@ifom-ieo-campus.it
-COMMENT=	Replacement of the simple syslog() API providing structure to messages.
+COMMENT=	Replacement of the simple syslog() API providing structure to messages
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
