@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.netdimes.org/PublicData/downloads/ \
 		http://www.stasyan.com/devel/distfiles/
 DISTNAME=	Dimes_Agent_052_Linux
 
-MAINTAINER=	stast@bsdportal.ru
+MAINTAINER=	devel@stasyan.com
 COMMENT=	Distributed research project for measurement topology of the Internet
 
 NO_PACKAGE=	There is the string in properties.xml which system-depends

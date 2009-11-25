@@ -10,7 +10,7 @@ CATEGORIES=	x11-toolkits linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	stast@bsdportal.ru
+MAINTAINER=	devel@stasyan.com
 COMMENT=	BLT widget extension to Tcl/Tk scripting language development (Linux Fedora 10)
 
 USE_LINUX_RPM=	yes
