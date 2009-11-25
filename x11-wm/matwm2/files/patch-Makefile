@@ -1,25 +1,23 @@
---- Makefile.orig	2009-10-17 16:21:44.000000000 -0400
-+++ Makefile	2009-10-17 21:33:55.000000000 -0400
-@@ -1,7 +1,6 @@
--prefix    = /usr/local
--manprefix = /usr/local
+--- Makefile.orig	2009-11-25 01:51:50.000000000 +0100
++++ Makefile	2009-11-25 01:53:45.000000000 +0100
+@@ -1,7 +1,4 @@
+-PREFIX    = /usr/local
+-MANPREFIX = /usr/local
 -XROOT     = /usr/X11R6
 -CC        = cc
-+prefix    = ${PREFIX}
-+manprefix = ${MANPREFIX}
-+XROOT     = ${LOCALBASE} 
++XROOT     = ${LOCALBASE}
+ RM        = rm -f
  
- CFLAGS    += -DSHAPE -lXext # comment out this line if you haven't got the x extentions library
- #CFLAGS    += -DDEBUG -ggdb3 # -DDEBUG_EVENTS -DSYNC # for debugging
-@@ -19,9 +18,8 @@
+ CFLAGS    += -DSHAPE # comment out this line to disable shape support
+@@ -26,9 +23,8 @@
  	./makeheader *.c > all.h
  
  install: matwm2
--	mkdir -p $(prefix)/bin $(manprefix)/man/man1
--	install -s matwm2 $(prefix)/bin
--	install matwm2.1 $(manprefix)/man/man1
-+	${BSD_INSTALL_PROGRAM} -s matwm2 $(prefix)/bin
-+	${BSD_INSTALL_MAN} matwm2.1 $(manprefix)/man/man1
+-	mkdir -p $(PREFIX)/bin $(MANPREFIX)/man/man1
+-	install -s matwm2 $(PREFIX)/bin
+-	install matwm2.1 $(MANPREFIX)/man/man1
++	${BSD_INSTALL_PROGRAM} -s matwm2 $(PREFIX)/bin
++	${BSD_INSTALL_MAN} matwm2.1 $(MANPREFIX)/man/man1
  
  deinstall:
- 	rm -f $(prefix)/bin/matwm2 $(manprefix)/man/man1/matwm2.1* $(manprefix)/man/cat1/matwm2.1*
+ 	rm -f $(PREFIX)/bin/matwm2 $(MANPREFIX)/man/man1/matwm2.1* $(MANPREFIX)/man/cat1/matwm2.1*
