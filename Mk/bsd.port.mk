@@ -2213,7 +2213,7 @@ _MAKE_JOBS=		#
 .if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
 MAKE_JOBS_NUMBER?=	`${SYSCTL} -n kern.smp.cpus`
 _MAKE_JOBS=		-j${MAKE_JOBS_NUMBER}
-.if defined(FORCE_MAKE_JOBS)
+.if defined(FORCE_MAKE_JOBS) && !defined(MAKE_JOBS_SAFE)
 BUILD_FAIL_MESSAGE+=	"You have chosen to use multiple make jobs (parallelization) for all ports.  This port was not tested for this setting.  Please remove FORCE_MAKE_JOBS and retry the build before reporting the failure to the maintainer."
 .endif
 .endif
