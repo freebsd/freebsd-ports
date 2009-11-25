@@ -78,12 +78,18 @@ lib/hamlib-rpcrig.so
 lib/hamlib-rpcrot.a
 lib/hamlib-rpcrot.la
 lib/hamlib-rpcrot.so
+lib/hamlib-rs.a
+lib/hamlib-rs.la
+lib/hamlib-rs.so
 lib/hamlib-sartek.a
 lib/hamlib-sartek.la
 lib/hamlib-sartek.so
 lib/hamlib-skanti.a
 lib/hamlib-skanti.la
 lib/hamlib-skanti.so
+lib/hamlib-spid.a
+lib/hamlib-spid.la
+lib/hamlib-spid.so
 lib/hamlib-tapr.a
 lib/hamlib-tapr.la
 lib/hamlib-tapr.so
@@ -118,6 +124,10 @@ lib/libhamlib.so
 lib/libhamlib.so.2
 lib/libhamlib.a
 lib/libhamlib.la
+libdata/pkgconfig/hamlib.pc
+sbin/rpc.rigd
+sbin/rpc.rotd
+share/aclocal/hamlib.m4
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.bs
@@ -126,10 +136,19 @@ lib/libhamlib.la
 %%PYTHON_SITELIBDIR%%/Hamlib.py
 %%PYTHON_SITELIBDIR%%/Hamlib.pyc
 %%PYTHON_SITELIBDIR%%/Hamlib.pyo
-libdata/pkgconfig/hamlib.pc
-sbin/rpc.rigd
-sbin/rpc.rotd
-share/aclocal/hamlib.m4
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PLAN
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.betatester
+%%PORTDOCS%%%%DOCSDIR%%/README.win32
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
 @dirrm lib/tcl%%TCL_VER%%/hamlib
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib
 @dirrm include/hamlib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
