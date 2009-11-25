@@ -270,6 +270,7 @@
     SUBDIR += goocanvas
     SUBDIR += goocanvasmm
     SUBDIR += goom
+    SUBDIR += gource
     SUBDIR += gozer
     SUBDIR += gpaint
     SUBDIR += gphoto2

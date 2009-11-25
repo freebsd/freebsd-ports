@@ -1,0 +1,8 @@
+OpenGL-based 3D visualisation tool for source control repositories.
+
+The repository is displayed as a tree where the root of the
+repository is the centre, directories are branches and files
+are leaves.  Contributors to the source code appear and disappear
+ias they contribute to specific files and directories.
+
+WWW: http://code.google.com/p/gource/
