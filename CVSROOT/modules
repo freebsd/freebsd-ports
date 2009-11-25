@@ -12729,6 +12729,7 @@ p5-Params-Classify              ports/devel/p5-Params-Classify
 p5-Params-Coerce                ports/devel/p5-Params-Coerce
 p5-Params-Util                  ports/devel/p5-Params-Util
 p5-Params-Validate              ports/devel/p5-Params-Validate
+p5-Parse-BooleanLogic           ports/textproc/p5-Parse-BooleanLogic
 p5-Parse-CPAN-Meta              ports/devel/p5-Parse-CPAN-Meta
 p5-Parse-CPAN-Packages          ports/devel/p5-Parse-CPAN-Packages
 p5-Parse-CSV                    ports/textproc/p5-Parse-CSV
@@ -16289,6 +16290,7 @@ p5-params-coerce                ports/devel/p5-Params-Coerce
 p5-params-util                  ports/devel/p5-Params-Util
 p5-params-validate              ports/devel/p5-Params-Validate
 p5-parent                       ports/devel/p5-parent
+p5-parse-booleanlogic           ports/textproc/p5-Parse-BooleanLogic
 p5-parse-cpan-meta              ports/devel/p5-Parse-CPAN-Meta
 p5-parse-cpan-packages          ports/devel/p5-Parse-CPAN-Packages
 p5-parse-csv                    ports/textproc/p5-Parse-CSV
@@ -24004,7 +24006,6 @@ xchm                            ports/deskutils/xchm
 xchomp                          ports/games/xchomp
 xcircuit                        ports/cad/xcircuit
 xcite                           ports/mail/xcite
-xclasses                        ports/x11-toolkits/xclasses
 xclick                          ports/x11/xclick
 xclip                           ports/x11/xclip
 xclipboard                      ports/x11/xclipboard
