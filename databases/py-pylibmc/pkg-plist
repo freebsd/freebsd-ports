@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/_pylibmc.so
+%%PYTHON_SITELIBDIR%%/pylibmc.py
+%%PYTHON_SITELIBDIR%%/pylibmc.pyc
+%%PYTHON_SITELIBDIR%%/pylibmc.pyo
