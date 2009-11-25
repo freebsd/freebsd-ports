@@ -1,12 +1,14 @@
-This release has an incompatible change regarding how roles add methods
-to a class!
+Note that this release of p5-Moose is incompatible with
+older versions of these modules:
 
-Note that the release is incompatible with older versions of these modules:
-
-        - MooseX::ClassAttribute    <= 0.07
-        - MooseX::Singleton         <= 0.15
-        - MooseX::StrictConstructor <= 0.07
-        - MooseX::Params::Validate  <= 0.05
-        - Fey::ORM                  <= 0.23
+        - Fey::ORM                      <= 0.23
+        - MooseX::AttributeHelpers      <= 0.21
+        - MooseX::ClassAttribute        <= 0.09
+        - MooseX::MethodAttributes      <= 0.15
+        - MooseX::Params::Validate      <= 0.05
+        - MooseX::Singleton             <= 0.19
+        - MooseX::StrictConstructor     <= 0.07
+        - MooseX::Types                 <= 0.19
+        - namespace::autoclean          <= 0.08
 
 They will need to be updated.
