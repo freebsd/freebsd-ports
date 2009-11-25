@@ -8,7 +8,7 @@ OPTIONS+= \
 	 AUTH_SPA "Enable Secure Password Authentication" on \
 	 CDB "Enable CDB-style lookups" on \
 	 CONTENT_SCAN "Enable exiscan email content scanner" off \
-	 DAEMON "Don't install scripts to run as a daemon" on \
+	 DAEMON "Install scripts to run as a daemon" on \
 	 DCC "Enable DCC at ACL support via dccifd" off \
 	 DEBUG "Build with debugging symbols" off \
 	 DNSDB "Enable DNS-style lookups" on \
