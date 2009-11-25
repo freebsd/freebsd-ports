@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	ftp
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/2717/ \
-		http://mirror.mcx2.org/
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/3015/ \
+		ftp://ftp.linuxforum.hu/mirrors/frugalware/pub/frugalware/frugalware-testing/source/apps-extra/axel/ \
+		http://cvs.fedoraproject.org/repo/pkgs/axel/axel-2.4.tar.gz/a2a762fce0c96781965c8f9786a3d09d/
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	A download accelerator
@@ -40,13 +40,10 @@ CONFIGURE_ARGS+=--debug=1 --strip=0
 .endif
 
 MAN1=		axel.1
+MANLANG=	"" zh_CN
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
 		s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.settings
-	@${REINPLACE_CMD} -e '37,38d' \
-		-e 's|cn|CN|g' ${WRKSRC}/Makefile
-	${MV} ${WRKSRC}/zh_cn.po ${WRKSRC}/zh_CN.po
-	@${ECHO} 'CFLAGS+=${CFLAGS}' >> ${WRKSRC}/Makefile.settings
 
 .include <bsd.port.post.mk>

@@ -4,3 +4,6 @@ etc/axelrc
 %%NLS%%share/locale/nl/LC_MESSAGES/axel.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/axel.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/axel.mo
+@dirrmtry man/zh_CN/man1
+@dirrmtry man/zh_CN
+
