@@ -41,7 +41,6 @@ share/applications/linux-opera.desktop
 %%DATADIR%%/locale/be/standard_speeddial.ini
 %%DATADIR%%/locale/bg/bg.lng
 %%DATADIR%%/locale/cs/cs.lng
-%%DATADIR%%/locale/da/bookmarks.adr
 %%DATADIR%%/locale/da/da.lng
 %%DATADIR%%/locale/de/bookmarks.adr
 %%DATADIR%%/locale/de/de.lng
@@ -132,7 +131,6 @@ share/applications/linux-opera.desktop
 %%DATADIR%%/scripts/common.js
 %%DATADIR%%/scripts/substance.js
 %%DATADIR%%/skin/standard_skin.zip
-%%DATADIR%%/styles/Inconsolata.otf
 %%DATADIR%%/styles/about.css
 %%DATADIR%%/styles/cache.css
 %%DATADIR%%/styles/certinfo.css
@@ -157,7 +155,6 @@ share/applications/linux-opera.desktop
 %%DATADIR%%/styles/images/folder.png
 %%DATADIR%%/styles/images/header-expanded.png
 %%DATADIR%%/styles/images/header.png
-%%DATADIR%%/styles/images/info-header.png
 %%DATADIR%%/styles/images/opera.png
 %%DATADIR%%/styles/images/page-bot.png
 %%DATADIR%%/styles/images/red_center.png
@@ -204,9 +201,16 @@ share/applications/linux-opera.desktop
 %%DATADIR%%/ui/standard_menu.ini
 %%DATADIR%%/ui/standard_mouse.ini
 %%DATADIR%%/ui/standard_toolbar.ini
-%%DATADIR%%/ui/standard_trusted_repositories.ini
 %%DATADIR%%/ui/unix_keyboard.ini
+%%DATADIR%%/unite/fileSharing.ua
+%%DATADIR%%/unite/fridge.ua
+%%DATADIR%%/unite/home.ua
+%%DATADIR%%/unite/mediaPlayer.ua
+%%DATADIR%%/unite/messenger.ua
+%%DATADIR%%/unite/photoSharing.ua
+%%DATADIR%%/unite/webserver.ua
 share/pixmaps/linux-opera.png
+@dirrm %%DATADIR%%/unite
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles/images
