@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/pQuery/.packlist
+%%SITE_PERL%%/pQuery.pm
+%%SITE_PERL%%/pQuery/DOM.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/pQuery
+@dirrmtry %%SITE_PERL%%/pQuery
