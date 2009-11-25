@@ -1,0 +1,8 @@
+bin/gource
+%%DATADIR%%/no_photo.png
+%%DATADIR%%/file.png
+%%DATADIR%%/beam.png
+%%DATADIR%%/fonts/FreeSans.ttf
+%%DATADIR%%/fonts/README
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-11-25 05:29:14.000000000 +0300
++++ Makefile.in	2009-11-25 15:03:36.000000000 +0300
+@@ -2,7 +2,7 @@
+ exec_prefix = ${prefix}
+ bindir = ${exec_prefix}/bin
+ datarootdir = @datarootdir@
+-mandir = ${datarootdir}/man
++mandir = ${prefix}/man
+ gourcedatadir = $(datarootdir)/gource
+ gourcefontdir = @gourcefontdir@
+ 
