@@ -374,6 +374,7 @@ bin/projectSynchro
 %%DATADIR%%/cpp_utilities/python_imports
 %%DATADIR%%/cpp_utilities/stereotypes
 %%DATADIR%%/cpp_utilities/tools
+%%DATADIR%%/de.lang
 %%DATADIR%%/deplcl
 %%DATADIR%%/deploy/1024.bodies
 %%DATADIR%%/deploy/1152.bodies
@@ -654,6 +655,7 @@ bin/projectSynchro
 %%DATADIR%%/empty/stereotypes
 %%DATADIR%%/empty/tools
 %%DATADIR%%/file_control
+%%DATADIR%%/fr.lang
 %%DATADIR%%/genpro/1024.bodies
 %%DATADIR%%/genpro/1152.bodies
 %%DATADIR%%/genpro/1280.bodies
@@ -942,6 +944,7 @@ bin/projectSynchro
 %%DATADIR%%/html/tools
 %%DATADIR%%/idl_generator
 %%DATADIR%%/irose
+%%DATADIR%%/it.lang
 %%DATADIR%%/ixmi2
 %%DATADIR%%/java_catalog
 %%DATADIR%%/java_generator
