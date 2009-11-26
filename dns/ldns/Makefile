@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
@@ -207,15 +207,15 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 	ldns_update_set_adcount.3 ldns_update_set_prcount.3 \
 	ldns_update_set_upcount.3 ldns_update_set_zocount.3 \
 	ldns_update_upcount.3 ldns_update_zocount.3 ldns_verify.3 \
-	ldns_verify_rrsig.3 ldns_verify_rrsig_dsa.3 \
-	ldns_verify_rrsig_keylist.3 ldns_verify_rrsig_rsamd5.3 \
-	ldns_verify_rrsig_rsasha1.3 ldns_wire2dname.3 ldns_wire2pkt.3 \
-	ldns_wire2rdf.3 ldns_wire2rr.3 ldns_zone.3 ldns_zone_deep_free.3 \
-	ldns_zone_glue_rr_list.3 ldns_zone_new.3 ldns_zone_new_frm_fp.3 \
-	ldns_zone_new_frm_fp_l.3 ldns_zone_print.3 ldns_zone_push_rr.3 \
-	ldns_zone_push_rr_list.3 ldns_zone_rr_count.3 ldns_zone_rrs.3 \
-	ldns_zone_set_rrs.3 ldns_zone_set_soa.3 ldns_zone_soa.3 \
-	ldns_zone_sort.3
+	ldns_verify_notime.3 ldns_verify_rrsig.3 ldns_verify_rrsig_dsa.3 \
+	ldns_verify_rrsig_keylist.3 ldns_verify_rrsig_keylist_notime.3 \
+	ldns_verify_rrsig_rsamd5.3 ldns_verify_rrsig_rsasha1.3 \
+	ldns_wire2dname.3 ldns_wire2pkt.3 ldns_wire2rdf.3 ldns_wire2rr.3 \
+	ldns_zone.3 ldns_zone_deep_free.3 ldns_zone_glue_rr_list.3 \
+	ldns_zone_new.3 ldns_zone_new_frm_fp.3 ldns_zone_new_frm_fp_l.3 \
+	ldns_zone_print.3 ldns_zone_push_rr.3 ldns_zone_push_rr_list.3 \
+	ldns_zone_rr_count.3 ldns_zone_rrs.3 ldns_zone_set_rrs.3 \
+	ldns_zone_set_soa.3 ldns_zone_soa.3 ldns_zone_sort.3
 .endif
 
 .if defined(WITH_EXAMPLES)
@@ -240,6 +240,10 @@ post-install:
 	@(cd ${WRKSRC}/examples; ${GMAKE} install)
 .else
 PLIST_SUB+=		EXAMPLES="@comment "
+.endif
+
+.if ${OSVERSION} < 700000
+CONFIGURE_ARGS+=	"--disable-sha2"
 .endif
 
 .include <bsd.port.post.mk>
