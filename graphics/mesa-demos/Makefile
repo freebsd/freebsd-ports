@@ -10,7 +10,7 @@ PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	mesa-
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
 USE_GL=		glu glut
