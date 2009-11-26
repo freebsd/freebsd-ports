@@ -242,7 +242,6 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GOFontSel.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOFormatSel.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOLocaleSel.html
-%%DOCSDIR%%-%%SHORT_VER%%/GOMarker.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOOptionMenu.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPersist.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPluginLoader.html
@@ -343,6 +342,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-Simple-structures.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-Units.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-distribution.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-marker.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-plugin.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-string.html
 %%DOCSDIR%%-%%SHORT_VER%%/home.png
