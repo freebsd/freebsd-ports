@@ -1,10 +1,11 @@
 bin/sdlmess
 libexec/sdlmess/chdman
+libexec/sdlmess/imgtool
+libexec/sdlmess/jedutil
 libexec/sdlmess/ldresample
 libexec/sdlmess/ldverify
 libexec/sdlmess/testkeys
-libexec/sdlmess/imgtool
-libexec/sdlmess/jedutil
+libexec/sdlmess/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/SDLMESS.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
@@ -54,6 +55,7 @@ libexec/sdlmess/jedutil
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/propvec.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/startup.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/tree.gif
+%%DATADIR%%/artwork/4004clk.zip
 %%DATADIR%%/artwork/aim65.zip
 %%DATADIR%%/artwork/amsterd.zip
 %%DATADIR%%/artwork/avigo.zip
@@ -69,6 +71,7 @@ libexec/sdlmess/jedutil
 %%DATADIR%%/artwork/hp48gx.zip
 %%DATADIR%%/artwork/hp48s.zip
 %%DATADIR%%/artwork/hp48sx.zip
+%%DATADIR%%/artwork/junior.zip
 %%DATADIR%%/artwork/kim1.zip
 %%DATADIR%%/artwork/ledoff.png
 %%DATADIR%%/artwork/ledon.png
