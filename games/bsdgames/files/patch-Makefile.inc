@@ -1,7 +1,7 @@
 --- Makefile.inc.orig	2009-09-24 10:46:30.000000000 +0200
-+++ Makefile.inc	2009-11-04 20:09:49.102229343 +0100
++++ Makefile.inc	2009-11-25 23:07:35.000000000 +0100
 @@ -2,14 +2,40 @@
- # $FreeBSD: /tmp/pcvs/ports/games/bsdgames/files/patch-Makefile.inc,v 1.1 2009-11-21 22:00:33 miwi Exp $
+ # $FreeBSD: /tmp/pcvs/ports/games/bsdgames/files/patch-Makefile.inc,v 1.2 2009-11-26 14:45:24 miwi Exp $
  # $DragonFly: src/games/Makefile.inc,v 1.3 2006/10/08 16:22:34 pavalos Exp $
  
 -BINDIR?=	/usr/games
@@ -12,12 +12,14 @@
  FILESDIR?=	${SHAREDIR}/games
  WARNS?=		6
  
- .if defined(HIDEGAME)
+-.if defined(HIDEGAME)
 -ORIGBINDIR:=	${BINDIR}
 -BINDIR:=	${BINDIR}/hide
 -ORIGBINGRP:=	${BINGRP}
++.if defined(SGIDGAME)
  BINGRP=		games
- BINMODE=	550
+-BINMODE=	550
++BINMODE=	2555
  .endif
 +
 +# cribbed from DragonflyBSD build system
