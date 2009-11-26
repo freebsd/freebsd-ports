@@ -238,6 +238,8 @@ libdata/pkgconfig/omnithread3.pc
 %%PYTHON_SITELIBDIR%%/omniidl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idlast.py
 %%PYTHON_SITELIBDIR%%/omniidl/idlast.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/idlstring.py
+%%PYTHON_SITELIBDIR%%/omniidl/idlstring.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idltype.py
 %%PYTHON_SITELIBDIR%%/omniidl/idltype.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idlutil.py
@@ -338,9 +340,7 @@ libdata/pkgconfig/omnithread3.pc
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.txt
 %%PORTDOCS%%%%DOCSDIR%%/omniNames.html
 %%PORTDOCS%%%%DOCSDIR%%/omniNames.pdf
-%%PORTDOCS%%%%DOCSDIR%%/omniNames.ps
 %%PORTDOCS%%%%DOCSDIR%%/omniORB.pdf
-%%PORTDOCS%%%%DOCSDIR%%/omniORB.ps
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/contents_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/index.html
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/next_motif.gif
@@ -364,10 +364,8 @@ libdata/pkgconfig/omnithread3.pc
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/previous_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/omniidl.html
 %%PORTDOCS%%%%DOCSDIR%%/omniidl.pdf
-%%PORTDOCS%%%%DOCSDIR%%/omniidl.ps
 %%PORTDOCS%%%%DOCSDIR%%/omnithread.html
 %%PORTDOCS%%%%DOCSDIR%%/omnithread.pdf
-%%PORTDOCS%%%%DOCSDIR%%/omnithread.ps
 %%PORTDOCS%%%%DOCSDIR%%/tex/cover.tex
 %%PORTDOCS%%%%DOCSDIR%%/tex/ode.tex
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniNames.tex
@@ -378,8 +376,7 @@ libdata/pkgconfig/omnithread3.pc
 %%PORTDOCS%%%%DOCSDIR%%/tex/utilities.tex
 %%PORTDOCS%%%%DOCSDIR%%/utilities.html
 %%PORTDOCS%%%%DOCSDIR%%/utilities.pdf
-%%PORTDOCS%%%%DOCSDIR%%/utilities.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/omniORB.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/omniORB.cfg
 %%DATADIR%%/idl/COS/CosCollection.idl
 %%DATADIR%%/idl/COS/CosCompoundLifeCycle.idl
 %%DATADIR%%/idl/COS/CosConcurrencyControl.idl
@@ -452,7 +449,7 @@ libdata/pkgconfig/omnithread3.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/omniORB
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel
 @dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl
 @dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header
