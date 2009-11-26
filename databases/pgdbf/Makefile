@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgdbf
-PORTVERSION=	0.4.6
+PORTVERSION=	0.5.0
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kirk@daycos.com
 COMMENT=	Convert XBase / FoxPro tables to PostgreSQL
