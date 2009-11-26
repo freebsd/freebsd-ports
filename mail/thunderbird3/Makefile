@@ -8,6 +8,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	2.0.0.23
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -27,7 +28,7 @@ USE_GECKO=	gecko
 WANT_PERL=	yes
 
 MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices,auth,transformiix
-MOZ_PROTOCOLS=	http,file,jar,viewsource,res,data
+MOZ_PROTOCOLS=	http,ftp,file,jar,viewsource,res,data
 MOZ_GRAPHICS=	default,-xbm
 MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--enable-single-profile --disable-profilesharing \
