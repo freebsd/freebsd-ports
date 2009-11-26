@@ -7,6 +7,7 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	2.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v2.4.0:/games
@@ -74,6 +75,10 @@ GAMESPATH_FILES=backgammon/backgammon/backgammon.6 \
 		phantasia/pathnames.h \
 		wargames/wargames.sh
 
+# These keep score in /var/games
+SGID_BINARIES=	atc battlestar canfield/canfield cribbage hack phantasia \
+		robots sail snake/snake
+
 post-patch:
 	@for f in ${SHAREPATH_FILES}; do \
 		${REINPLACE_CMD} -e 's|/usr/share/games|${PREFIX}/share/games|g' \
@@ -82,6 +87,10 @@ post-patch:
 	@for f in ${GAMESPATH_FILES}; do \
 		${REINPLACE_CMD} -e 's|/usr/games|${PREFIX}/bin|g' \
 			${WRKSRC}/$${f}; \
+	done
+	@for f in ${SGID_BINARIES}; do \
+		${REINPLACE_CMD} -e 's/HIDEGAME/SGIDGAME/' \
+			${WRKSRC}/$${f}/Makefile; \
 	done
 
 # Only useful for DESTDIR
