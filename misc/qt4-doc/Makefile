@@ -9,11 +9,7 @@
 PORTNAME=	doc
 PORTVERSION=	${QT4_VERSION}
 CATEGORIES?=	misc
-MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework
 

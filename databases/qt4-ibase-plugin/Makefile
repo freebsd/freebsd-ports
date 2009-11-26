@@ -9,9 +9,6 @@
 PORTNAME=	qt4-${DB}-plugin
 PORTVERSION=	${QT4_VERSION}
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_QT}
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt IBase/Firebird database plugin

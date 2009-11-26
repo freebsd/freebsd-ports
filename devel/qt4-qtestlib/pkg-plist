@@ -48,9 +48,9 @@ lib/qt4/libQtTest.la
 lib/qt4/libQtTest.prl
 lib/qt4/libQtTest.so
 lib/qt4/libQtTest.so.4
-lib/qt4/libQtTest.so.4.5
-lib/qt4/libQtTest.so.4.5.2
-%%DEBUG%%lib/qt4/libQtTest.so.4.5.2.debug
+lib/qt4/libQtTest.so.%%SHLIB_SHVER%%
+lib/qt4/libQtTest.so.%%SHLIB_VER%%
+%%DEBUG%%lib/qt4/libQtTest.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtTest.pc
 @dirrm include/qt4/QtTest
 @dirrmtry include/qt4/Qt

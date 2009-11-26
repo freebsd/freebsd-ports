@@ -7,11 +7,11 @@
 
 PORTNAME=	qt4
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=0
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	# empty
-DISTFILES=	# none
-EXTRACT_ONLY=	# empty
+MASTER_SITES=	${MASTER_SITE_QT}
+DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework (metaport)
@@ -55,8 +55,7 @@ QT_COMPONENTS+=	codecs-cn codecs-jp codecs-kr codecs-tw
 .endif
 
 .if defined(WITH_SQL_PLUGINS)
-RUN_DEPENDS+=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlibase.so:${PORTSDIR}/databases/qt4-ibase-plugin \
-		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin \
+RUN_DEPENDS+=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin \
 		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlodbc.so:${PORTSDIR}/databases/qt4-odbc-plugin \
 		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt4-pgsql-plugin \
 		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite2.so:${PORTSDIR}/databases/qt4-sqlite-plugin \

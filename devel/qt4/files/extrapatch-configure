@@ -1,6 +1,6 @@
---- ./configure.orig	2009-04-22 03:57:35.000000000 +0400
-+++ ./configure	2009-05-21 02:46:31.000000000 +0400
-@@ -2084,12 +2084,6 @@
+--- ./configure.orig	2009-09-29 15:01:31.000000000 +0400
++++ ./configure	2009-10-04 01:56:41.000000000 +0400
+@@ -2124,12 +2124,6 @@
          chmod 755 "$outpath/bin/syncqt"
      fi
  
@@ -13,7 +13,7 @@
      # symlink the doc directory
      rm -rf "$outpath/doc"
      ln -s "$relpath/doc" "$outpath/doc"
-@@ -2128,7 +2122,7 @@
+@@ -2168,7 +2162,7 @@
  # find a make command
  if [ -z "$MAKE" ]; then
      MAKE=
@@ -22,7 +22,7 @@
          if "$WHICH" $mk >/dev/null 2>&1; then
              MAKE=`$WHICH $mk`
              break
-@@ -4006,7 +4000,7 @@
+@@ -4069,7 +4063,7 @@
  }
  
  # build qmake
@@ -31,7 +31,7 @@
      echo "Creating qmake. Please wait..."
  
      OLD_QCONFIG_H=
-@@ -4734,12 +4728,13 @@
+@@ -4797,12 +4791,13 @@
      fi
  
      # Check we actually have X11 :-)
@@ -51,7 +51,7 @@
  
      # auto-detect OpenGL support (es1 = OpenGL ES 1.x Common, es1cl = ES 1.x common lite, es2 = OpenGL ES 2.x)
      if [ "$CFG_OPENGL" = "auto" ] || [ "$CFG_OPENGL" = "yes" ]; then
-@@ -5569,7 +5564,7 @@
+@@ -5652,7 +5647,7 @@
          QT_CONFIG="$QT_CONFIG phonon-backend"
      fi
  else
@@ -60,7 +60,7 @@
  fi
  
  # disable accessibility
-@@ -5581,7 +5576,7 @@
+@@ -5664,7 +5659,7 @@
  
  # enable opengl
  if [ "$CFG_OPENGL" = "no" ]; then
@@ -69,7 +69,7 @@
  else
      QT_CONFIG="$QT_CONFIG opengl"
  fi
-@@ -5946,7 +5941,7 @@
+@@ -6038,7 +6033,7 @@
  if [ "$CFG_XMLPATTERNS" = "yes" ]; then
      QT_CONFIG="$QT_CONFIG xmlpatterns"
  else
@@ -78,7 +78,7 @@
  fi
  
  if [ "$CFG_SVG" = "yes" ]; then
-@@ -6442,10 +6437,10 @@
+@@ -6535,10 +6530,10 @@
  [ "$CFG_JPEG" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_JPEG"
  [ "$CFG_MNG" != "yes" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_MNG"
  [ "$CFG_ZLIB" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_ZLIB"
@@ -91,7 +91,7 @@
  
  if [ "$PLATFORM_QWS" != "yes" ]; then
      [ "$CFG_GRAPHICS_SYSTEM" = "raster" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_GRAPHICSSYSTEM_RASTER"
-@@ -6453,33 +6448,33 @@
+@@ -6546,34 +6541,34 @@
  fi
  
  # X11/Unix/Mac only configs
@@ -125,6 +125,7 @@
 -[ "$CFG_XRENDER" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRENDER"
 -[ "$CFG_MITSHM" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_MITSHM"
 -[ "$CFG_XSHAPE" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SHAPE"
+-[ "$CFG_XSYNC" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XSYNC"
 -[ "$CFG_XINPUT" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINPUT QT_NO_TABLET"
 +# [ "$CFG_SM" = "no" ]         && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SESSIONMANAGER"
 +# [ "$CFG_XCURSOR" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XCURSOR"
@@ -136,11 +137,12 @@
 +# [ "$CFG_XRENDER" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRENDER"
 +# [ "$CFG_MITSHM" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_MITSHM"
 +# [ "$CFG_XSHAPE" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SHAPE"
++# [ "$CFG_XSYNC" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XSYNC"
 +# [ "$CFG_XINPUT" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINPUT QT_NO_TABLET"
  
  [ "$CFG_XCURSOR" = "runtime" ]   && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_RUNTIME_XCURSOR"
  [ "$CFG_XINERAMA" = "runtime" ]  && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_RUNTIME_XINERAMA"
-@@ -6989,7 +6984,7 @@
+@@ -7084,7 +7079,7 @@
  if [ -f "${relpath}/projects.pro" ]; then
      mkfile="${outpath}/Makefile"
      [ -f "$mkfile" ] && chmod +w "$mkfile"
@@ -149,7 +151,7 @@
  fi
  
  # .projects      -> projects to process
-@@ -7162,7 +7157,7 @@
+@@ -7257,7 +7252,7 @@
              echo "  for $a\c"
          fi
  

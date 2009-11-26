@@ -429,7 +429,6 @@ share/examples/qt4/demos/textedit/main.cpp
 share/examples/qt4/demos/textedit/textedit
 share/examples/qt4/demos/textedit/textedit.cpp
 %%DEBUG%%share/examples/qt4/demos/textedit/textedit.debug
-share/examples/qt4/demos/textedit/textedit.doc
 share/examples/qt4/demos/textedit/textedit.h
 share/examples/qt4/demos/textedit/textedit.pro
 share/examples/qt4/demos/textedit/textedit.qrc
@@ -486,6 +485,12 @@ share/examples/qt4/examples/assistant/simpletextviewer/main.cpp
 share/examples/qt4/examples/assistant/simpletextviewer/mainwindow.cpp
 share/examples/qt4/examples/assistant/simpletextviewer/mainwindow.h
 share/examples/qt4/examples/assistant/simpletextviewer/simpletextviewer
+share/examples/qt4/examples/itemviews/frozencolumn/freezetablewidget.cpp
+share/examples/qt4/examples/itemviews/frozencolumn/freezetablewidget.h
+share/examples/qt4/examples/itemviews/frozencolumn/frozencolumn
+share/examples/qt4/examples/itemviews/frozencolumn/frozencolumn.pro
+share/examples/qt4/examples/itemviews/frozencolumn/grades.qrc
+share/examples/qt4/examples/itemviews/frozencolumn/main.cpp
 %%DEBUG%%share/examples/qt4/examples/assistant/simpletextviewer/simpletextviewer.debug
 share/examples/qt4/examples/assistant/simpletextviewer/simpletextviewer.pro
 share/examples/qt4/examples/dbus/chat/chat.cpp
@@ -2202,7 +2207,7 @@ share/examples/qt4/examples/webkit/fancybrowser/main.cpp
 share/examples/qt4/examples/webkit/fancybrowser/mainwindow.cpp
 share/examples/qt4/examples/webkit/fancybrowser/mainwindow.h
 share/examples/qt4/examples/webkit/formextractor/form.html
-share/examples/qt4/examples/webkit/formextractor/formExtractor
+share/examples/qt4/examples/webkit/formextractor/formextractor
 %%DEBUG%%share/examples/qt4/examples/webkit/formextractor/formExtractor.debug
 share/examples/qt4/examples/webkit/formextractor/formextractor.cpp
 share/examples/qt4/examples/webkit/formextractor/formextractor.h
@@ -2779,6 +2784,7 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/itemviews/puzzle
 @dirrm share/examples/qt4/examples/itemviews/pixelator/images
 @dirrm share/examples/qt4/examples/itemviews/pixelator
+@dirrm share/examples/qt4/examples/itemviews/frozencolumn
 @dirrm share/examples/qt4/examples/itemviews/fetchmore
 @dirrm share/examples/qt4/examples/itemviews/editabletreemodel
 @dirrm share/examples/qt4/examples/itemviews/dirview

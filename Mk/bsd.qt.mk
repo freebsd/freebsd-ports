@@ -1,8 +1,11 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
-
+#
 # QT_NONSTANDARD	- Suppress modification of configure and make environment.
 # QT_DIST			- Package being built is part of the Qt distribution.
+#
+# $FreeBSD$
+#
 
 .if !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)
 Qt_Include_MAINTAINER=	kde@freebsd.org
@@ -19,6 +22,10 @@ MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .endif # !defined(QT_NONSTANDARD)
 
 .if defined(QT_DIST)
+MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
+MASTER_SITES=	${MASTER_SITE_QT}
+DISTNAME=	qt-x11-opensource-src-${QT4_VERSION}
+DIST_SUBDIR=	KDE
 #CONFLICTS+=	Currently there are no conflicts \o/
 
 CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
@@ -38,6 +45,9 @@ CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
 		-sysconfdir ${PREFIX}/etc/xdg \
 		-examplesdir ${PREFIX}/share/examples/qt4/examples \
 		-demosdir ${PREFIX}/share/examples/qt4/demos
+
+PLIST_SUB+=	SHLIB_VER=${QT4_VERSION} \
+		SHLIB_SHVER=${QT4_VERSION:C/.[0-9]+$//}
 
 .if defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2
@@ -95,7 +105,7 @@ QTCGFLIBS?=
 # QT4 version
 # Don't forget to update ${PORTSDIR}/devel/qt4/files/configure !
 #
-QT4_VERSION?=		4.5.2
+QT4_VERSION?=		4.5.3
 
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \

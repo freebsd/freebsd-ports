@@ -8,10 +8,7 @@
 PORTNAME=	xmlpatterns
 PORTVERSION=	${QT4_VERSION}
 CATEGORIES?=	textproc
-MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	XQuery 1.0 and XPath 2.0 support for Qt4

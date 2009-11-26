@@ -24,6 +24,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=  moc_build sql
 QT_NONSTANDARD=	yes
 MAKE_JOBS_SAFE=	yes
+MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
 
 DRIVER=		src/sql/drivers/${DB}
 PLUGIN=		src/plugins/sqldrivers/${DB}
