@@ -338,6 +338,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/distutils/spawn.py
 %%PYTHON_LIBDIR%%/distutils/sysconfig.py
 %%PYTHON_LIBDIR%%/distutils/tests/__init__.py
+%%PYTHON_LIBDIR%%/distutils/tests/setuptools_build_ext.py
+%%PYTHON_LIBDIR%%/distutils/tests/setuptools_extension.py
 %%PYTHON_LIBDIR%%/distutils/tests/support.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_build_ext.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_build_py.py
@@ -690,9 +692,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.2.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.4.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.2.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.4.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -984,6 +986,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/tempfile.py
 %%PYTHON_LIBDIR%%/test/185test.db
 %%PYTHON_LIBDIR%%/test/README
+%%PYTHON_LIBDIR%%/test/Sine-1000Hz-300ms.aif
 %%PYTHON_LIBDIR%%/test/__init__.py
 %%PYTHON_LIBDIR%%/test/audiotest.au
 %%PYTHON_LIBDIR%%/test/autotest.py
@@ -1199,6 +1202,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_abc.py
 %%PYTHON_LIBDIR%%/test/test_abstract_numbers.py
 %%PYTHON_LIBDIR%%/test/test_aepack.py
+%%PYTHON_LIBDIR%%/test/test_aifc.py
 %%PYTHON_LIBDIR%%/test/test_al.py
 %%PYTHON_LIBDIR%%/test/test_anydbm.py
 %%PYTHON_LIBDIR%%/test/test_applesingle.py
@@ -1375,6 +1379,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_kqueue.py
 %%PYTHON_LIBDIR%%/test/test_largefile.py
 %%PYTHON_LIBDIR%%/test/test_lib2to3.py
+%%PYTHON_LIBDIR%%/test/test_linecache.py
 %%PYTHON_LIBDIR%%/test/test_linuxaudiodev.py
 %%PYTHON_LIBDIR%%/test/test_list.py
 %%PYTHON_LIBDIR%%/test/test_locale.py
@@ -1474,6 +1479,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_site.py
 %%PYTHON_LIBDIR%%/test/test_slice.py
 %%PYTHON_LIBDIR%%/test/test_smtplib.py
+%%PYTHON_LIBDIR%%/test/test_smtpnet.py
 %%PYTHON_LIBDIR%%/test/test_socket.py
 %%PYTHON_LIBDIR%%/test/test_socketserver.py
 %%PYTHON_LIBDIR%%/test/test_softspace.py
