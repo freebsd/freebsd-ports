@@ -35,9 +35,9 @@ lib/qt4/libQtWebKit.la
 lib/qt4/libQtWebKit.prl
 lib/qt4/libQtWebKit.so
 lib/qt4/libQtWebKit.so.4
-lib/qt4/libQtWebKit.so.4.5
-lib/qt4/libQtWebKit.so.4.5.2
-@comment %%DEBUG%%lib/qt4/libQtWebKit.so.4.5.2.debug
+lib/qt4/libQtWebKit.so.%%SHLIB_SHVER%%
+lib/qt4/libQtWebKit.so.%%SHLIB_VER%%
+@comment %%DEBUG%%lib/qt4/libQtWebKit.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtWebKit.pc
 @dirrm include/qt4/QtWebKit
 @dirrmtry include/qt4/Qt

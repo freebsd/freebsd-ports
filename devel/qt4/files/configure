@@ -1,13 +1,44 @@
 #!/bin/sh
-#
-# Configures to build the Qt library
-#
-# Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
-# Contact: Nokia Corporation (qt-info@nokia.com)
-#
-# This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
-# WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-#
+#############################################################################
+##
+## Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+## All rights reserved.
+## Contact: Nokia Corporation (qt-info@nokia.com)
+##
+## This file is the build configuration utility of the Qt Toolkit.
+##
+## $QT_BEGIN_LICENSE:LGPL$
+## Commercial Usage
+## Licensees holding valid Qt Commercial licenses may use this file in
+## accordance with the Qt Commercial License Agreement provided with the
+## Software or, alternatively, in accordance with the terms contained in
+## a written agreement between you and Nokia.
+##
+## GNU Lesser General Public License Usage
+## Alternatively, this file may be used under the terms of the GNU Lesser
+## General Public License version 2.1 as published by the Free Software
+## Foundation and appearing in the file LICENSE.LGPL included in the
+## packaging of this file.  Please review the following information to
+## ensure the GNU Lesser General Public License version 2.1 requirements
+## will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+##
+## In addition, as a special exception, Nokia gives you certain additional
+## rights.  These rights are described in the Nokia Qt LGPL Exception
+## version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+##
+## GNU General Public License Usage
+## Alternatively, this file may be used under the terms of the GNU
+## General Public License version 3.0 as published by the Free Software
+## Foundation and appearing in the file LICENSE.GPL included in the
+## packaging of this file.  Please review the following information to
+## ensure the GNU General Public License version 3.0 requirements will be
+## met: http://www.gnu.org/copyleft/gpl.html.
+##
+## If you have questions regarding the use of this file, please contact
+## Nokia at qt-info@nokia.com.
+## $QT_END_LICENSE$
+##
+#############################################################################
 
 #-------------------------------------------------------------------------------
 # script initialization
@@ -162,7 +193,7 @@ fi
 #-------------------------------------------------------------------------------
 # check the license
 #-------------------------------------------------------------------------------
-COMMERCIAL_USER=no
+COMMERCIAL_USER=ask
 CFG_DEV=no
 CFG_NOKIA=no
 CFG_EMBEDDED=no
@@ -400,7 +431,7 @@ elif [ $COMMERCIAL_USER = "yes" ]; then
             echo
             echo "You are not licensed for Qt for Embedded Linux."
             echo
-            echo "Please contact sales@trolltech.com to upgrade your license"
+            echo "Please contact qt-info@nokia.com to upgrade your license"
             echo "to include Qt for Embedded Linux, or install the"
             echo "Qt Open Source Edition if you intend to develop free software."
             exit 1
@@ -420,7 +451,7 @@ elif [ $COMMERCIAL_USER = "yes" ]; then
             echo
             echo "You are not licensed for the Qt/Mac platform."
             echo
-            echo "Please contact sales@trolltech.com to upgrade your license"
+            echo "Please contact qt-info@nokia.com to upgrade your license"
             echo "to include the Qt/Mac platform."
             exit 1
             ;;
@@ -439,7 +470,7 @@ elif [ $COMMERCIAL_USER = "yes" ]; then
              echo
              echo "You are not licensed for the Qt/X11 platform."
              echo
-             echo "Please contact sales@trolltech.com to upgrade your license to"
+             echo "Please contact qt-info@nokia.com to upgrade your license to"
              echo "include the Qt/X11 platform, or install the Qt Open Source Edition"
              echo "if you intend to develop free software."
              exit 1
@@ -570,6 +601,7 @@ CFG_DEBUG_RELEASE=no
 CFG_SHARED=yes
 CFG_SM=auto
 CFG_XSHAPE=auto
+CFG_XSYNC=auto
 CFG_XINERAMA=runtime
 CFG_XFIXES=runtime
 CFG_ZLIB=auto
@@ -831,7 +863,7 @@ while [ "$#" -gt 0 ]; do
         VAL=no
         ;;
     #Qt style yes options
-        -incremental|-qvfb|-profile|-shared|-static|-sm|-xinerama|-xshape|-xinput|-reduce-exports|-pch|-separate-debug-info|-stl|-freetype|-xcursor|-xfixes|-xrandr|-xrender|-mitshm|-fontconfig|-xkb|-nis|-qdbus|-dbus|-dbus-linked|-glib|-gstreamer|-gtkstyle|-cups|-iconv|-largefile|-h|-help|-v|-verbose|-debug|-release|-fast|-accessibility|-confirm-license|-gnumake|-framework|-qt3support|-debug-and-release|-exceptions|-cocoa|-universal|-prefix-install|-silent|-armfpa|-optimized-qmake|-dwarf2|-reduce-relocations|-sse|-openssl|-openssl-linked|-ptmalloc|-xmlpatterns|-phonon|-phonon-backend|-svg|-webkit|-scripttools|-rpath|-force-pkg-config)
+        -incremental|-qvfb|-profile|-shared|-static|-sm|-xinerama|-xshape|-xshape|-xinput|-reduce-exports|-pch|-separate-debug-info|-stl|-freetype|-xcursor|-xfixes|-xrandr|-xrender|-mitshm|-fontconfig|-xkb|-nis|-qdbus|-dbus|-dbus-linked|-glib|-gstreamer|-gtkstyle|-cups|-iconv|-largefile|-h|-help|-v|-verbose|-debug|-release|-fast|-accessibility|-confirm-license|-gnumake|-framework|-qt3support|-debug-and-release|-exceptions|-cocoa|-universal|-prefix-install|-silent|-armfpa|-optimized-qmake|-dwarf2|-reduce-relocations|-sse|-openssl|-openssl-linked|-ptmalloc|-xmlpatterns|-phonon|-phonon-backend|-svg|-webkit|-scripttools|-rpath|-force-pkg-config)
         VAR=`echo $1 | sed "s,^-\(.*\),\1,"`
         VAL=yes
         ;;
@@ -1415,6 +1447,13 @@ while [ "$#" -gt 0 ]; do
     xshape)
         if [ "$VAL" = "yes" ] || [ "$VAL" = "no" ]; then
             CFG_XSHAPE="$VAL"
+        else
+            UNKNOWN_OPT=yes
+        fi
+        ;;
+    xsync)
+        if [ "$VAL" = "yes" ] || [ "$VAL" = "no" ]; then
+            CFG_XSYNC="$VAL"
         else
             UNKNOWN_OPT=yes
         fi
@@ -2876,7 +2915,7 @@ fi
 #prefix
 if [ -z "$QT_INSTALL_PREFIX" ]; then
     if [ "$CFG_DEV" = "yes" ]; then
-	QT_INSTALL_PREFIX="$outpath" # At Trolltech, we use sandboxed builds by default
+	QT_INSTALL_PREFIX="$outpath" # In Qt Development, we use sandboxed builds by default
     elif [ "$PLATFORM_QWS" = "yes" ]; then
         QT_INSTALL_PREFIX="/usr/local/Trolltech/QtEmbedded-${QT_VERSION}"
         if [ "$PLATFORM" != "$XPLATFORM" ]; then
@@ -3474,6 +3513,10 @@ Qt/X11 only:
  $SHY  -xshape ............ Compile XShape support.
                          Requires X11/extensions/shape.h.
 
+ $SHN  -no-xsync .......... Do not compile XSync support.
+ $SHY  -xsync ............. Compile XSync support.
+                         Requires X11/extensions/sync.h.
+
  $XAN  -no-xinerama ....... Do not compile Xinerama (multihead) support.
  $XAY  -xinerama .......... Compile Xinerama support.
                          Requires X11/extensions/Xinerama.h and libXinerama.
@@ -3692,16 +3735,22 @@ if [ "$Edition" = "NokiaInternalBuild" ]; then
 elif [ "$Edition" = "OpenSource" ]; then
     while true; do
         echo "You are licensed to use this software under the terms of"
-        echo "the GNU General Public License (GPL) versions 3."
-        echo "You are also licensed to use this software under the terms of"
         echo "the Lesser GNU General Public License (LGPL) versions 2.1."
+        if [ -f "$relpath/LICENSE.GPL3" ]; then
+            echo "You are also licensed to use this software under the terms of"
+            echo "the GNU General Public License (GPL) versions 3."
+            affix="either"
+        else
+            affix="the"
+        fi
         echo
-        affix="either"
         if [ "$OPT_CONFIRM_LICENSE" = "yes" ]; then
-	    echo "You have already accepted the terms of the $LicenseType license."
+            echo "You have already accepted the terms of the $LicenseType license."
             acceptance=yes
         else
-	    echo "Type '3' to view the GNU General Public License version 3."
+            if [ -f "$relpath/LICENSE.GPL3" ]; then
+                echo "Type '3' to view the GNU General Public License version 3."
+            fi
             echo "Type 'L' to view the Lesser GNU General Public License version 2.1."
             echo "Type 'yes' to accept this license offer."
             echo "Type 'no' to decline this license offer."
@@ -3774,7 +3823,7 @@ elif [ "$Edition" != "OpenSource" ]; then
                     echo "  Your support and upgrade period has expired."
                     echo
                     echo "  You are no longer licensed to use this version of Qt."
-                    echo "  Please contact sales@trolltech.com to renew your support"
+                    echo "  Please contact qt-info@nokia.com to renew your support"
                     echo "  and upgrades for this license."
                     echo
                     echo "NOTICE  NOTICE  NOTICE  NOTICE"
@@ -3792,7 +3841,7 @@ elif [ "$Edition" != "OpenSource" ]; then
                     echo "  support, nor are you entitled to use any more recent"
                     echo "  Qt releases."
                     echo
-                    echo "  Please contact sales@trolltech.com to renew your"
+                    echo "  Please contact qt-info@nokia.com to renew your"
                     echo "  support and upgrades for this license."
                     echo
                     echo "WARNING  WARNING  WARNING  WARNING"
@@ -3807,7 +3856,7 @@ elif [ "$Edition" != "OpenSource" ]; then
                 echo "  Your Evaluation license has expired."
                 echo
                 echo "  You are no longer licensed to use this software. Please"
-                echo "  contact sales@trolltech.com to purchase license, or install"
+                echo "  contact qt-info@nokia.com to purchase license, or install"
                 echo "  the Qt Open Source Edition if you intend to develop free"
                 echo "  software."
                 echo
@@ -4988,6 +5037,23 @@ if [ "$PLATFORM_X11" = "yes" ]; then
 	fi
     fi
 
+    # auto-detect XSync support
+    if [ "$CFG_XSYNC" != "no" ]; then
+	if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/xsync "XSync" $L_FLAGS $I_FLAGS $l_FLAGS $X11TESTS_FLAGS; then
+	    CFG_XSYNC=yes
+	else
+	    if [ "$CFG_XSYNC" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
+		echo "XSync support cannot be enabled due to functionality tests!"
+		echo " Turn on verbose messaging (-v) to $0 to see the final report."
+		echo " If you believe this message is in error you may use the continue"
+		echo " switch (-continue) to $0 to continue."
+		exit 101
+	    else
+		CFG_XSYNC=no
+	    fi
+	fi
+    fi
+
     # auto-detect Xinerama support
     if [ "$CFG_XINERAMA" != "no" ]; then
 	if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/xinerama "Xinerama" $L_FLAGS $I_FLAGS $l_FLAGS $X11TESTS_FLAGS; then
@@ -5581,7 +5647,7 @@ if [ "$CFG_PHONON" = "yes" ]; then
         QT_CONFIG="$QT_CONFIG phonon-backend"
     fi
 else
-    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_PHONON"
+#    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_PHONON"
 fi
 
 # disable accessibility
@@ -5593,7 +5659,7 @@ fi
 
 # enable opengl
 if [ "$CFG_OPENGL" = "no" ]; then
-    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_OPENGL"
+#    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_OPENGL"
 else
     QT_CONFIG="$QT_CONFIG opengl"
 fi
@@ -5701,7 +5767,9 @@ fi
 if [ "$CFG_INOTIFY" = "yes" ]; then
     QT_CONFIG="$QT_CONFIG inotify"
 fi
-if [ "$CFG_LIBJPEG" = "system" ]; then
+if [ "$CFG_LIBJPEG" = "no" ]; then
+    CFG_JPEG="no"
+elif [ "$CFG_LIBJPEG" = "system" ]; then
     QT_CONFIG="$QT_CONFIG system-jpeg"
 fi
 if [ "$CFG_JPEG" = "no" ]; then
@@ -5709,7 +5777,9 @@ if [ "$CFG_JPEG" = "no" ]; then
 elif [ "$CFG_JPEG" = "yes" ]; then
     QT_CONFIG="$QT_CONFIG jpeg"
 fi
-if [ "$CFG_LIBMNG" = "system" ]; then
+if [ "$CFG_LIBMNG" = "no" ]; then
+    CFG_MNG="no"
+elif [ "$CFG_LIBMNG" = "system" ]; then
     QT_CONFIG="$QT_CONFIG system-mng"
 fi
 if [ "$CFG_MNG" = "no" ]; then
@@ -5733,7 +5803,9 @@ if [ "$CFG_GIF" = "no" ]; then
 elif [ "$CFG_GIF" = "yes" ]; then
     QT_CONFIG="$QT_CONFIG gif"
 fi
-if [ "$CFG_LIBTIFF" = "system" ]; then
+if [ "$CFG_LIBTIFF" = "no" ]; then
+    CFG_TIFF="no"
+elif [ "$CFG_LIBTIFF" = "system" ]; then
     QT_CONFIG="$QT_CONFIG system-tiff"
 fi
 if [ "$CFG_TIFF" = "no" ]; then
@@ -5779,6 +5851,9 @@ if [ "$PLATFORM_X11" = "yes" ]; then
     # so *every* program/lib (including Qt) has to link against them
     if [ "$CFG_XSHAPE" = "yes" ]; then
         QT_CONFIG="$QT_CONFIG xshape"
+    fi
+    if [ "$CFG_XSYNC" = "yes" ]; then
+        QT_CONFIG="$QT_CONFIG xsync"
     fi
     if [ "$CFG_XINERAMA" = "yes" ]; then
         QT_CONFIG="$QT_CONFIG xinerama"
@@ -5958,7 +6033,7 @@ fi
 if [ "$CFG_XMLPATTERNS" = "yes" ]; then
     QT_CONFIG="$QT_CONFIG xmlpatterns"
 else
-    QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XMLPATTERNS"
+#     QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XMLPATTERNS"
 fi
 
 if [ "$CFG_SVG" = "yes" ]; then
@@ -6455,10 +6530,10 @@ QMakeVar set sql-plugins "$SQL_PLUGINS"
 [ "$CFG_JPEG" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_JPEG"
 [ "$CFG_MNG" != "yes" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_MNG"
 [ "$CFG_ZLIB" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_ZLIB"
-[ "$CFG_EXCEPTIONS" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_EXCEPTIONS"
+# [ "$CFG_EXCEPTIONS" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_EXCEPTIONS"
 [ "$CFG_IPV6" = "no" ]       && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IPV6"
 [ "$CFG_SXE" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SXE"
-[ "$CFG_DBUS" = "no" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_DBUS"
+# [ "$CFG_DBUS" = "no" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_DBUS"
 
 if [ "$PLATFORM_QWS" != "yes" ]; then
     [ "$CFG_GRAPHICS_SYSTEM" = "raster" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_GRAPHICSSYSTEM_RASTER"
@@ -6492,6 +6567,7 @@ fi
 [ "$CFG_XRENDER" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRENDER"
 [ "$CFG_MITSHM" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_MITSHM"
 [ "$CFG_XSHAPE" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SHAPE"
+[ "$CFG_XSYNC" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XSYNC"
 [ "$CFG_XINPUT" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINPUT QT_NO_TABLET"
 
 [ "$CFG_XCURSOR" = "runtime" ]   && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_RUNTIME_XCURSOR"
@@ -6933,6 +7009,7 @@ fi
 if [ "$PLATFORM_X11" = "yes" ]; then
     echo "NAS sound support ... $CFG_NAS"
     echo "XShape support ...... $CFG_XSHAPE"
+    echo "XSync support ....... $CFG_XSYNC"
     echo "Xinerama support .... $CFG_XINERAMA"
     echo "Xcursor support ..... $CFG_XCURSOR"
     echo "Xfixes support ...... $CFG_XFIXES"
@@ -7030,9 +7107,9 @@ BEGIN {
 
 FNR == 1 {
     if ( input_file ) {
-  if ( ! target_file )
-      target_file = third
-  print input_file >target_file
+        if ( ! target_file )
+            target_file = third
+        print input_file >target_file
     }
 
     matched_target = 0
@@ -7043,32 +7120,32 @@ FNR == 1 {
 
 /^(TARGET.*=)/ {
     if ( \$3 == "moc" || \$3 ~ /^Qt/ ) {
-  target_file = first
+        target_file = first
         matched_target = 1
     }
 }
 
 matched_target == 0 && /^(TEMPLATE.*=)/ {
     if ( \$3 == "subdirs" )
-  target_file = second
+        target_file = second
     else if ( \$3 == "lib" )
-  template_lib = 1
+        template_lib = 1
     else
-  target_file = third
+        target_file = third
 }
 
 matched_target == 0 && template_lib == 1 && /^(CONFIG.*=)/ {
     if ( \$0 ~ /plugin/ )
         target_file = third
     else
-  target_file = second
+        target_file = second
 }
 
 END {
     if ( input_file ) {
-  if ( ! target_file )
-      target_file = third
-  print input_file >>target_file
+        if ( ! target_file )
+            target_file = third
+        print input_file >>target_file
     }
 }
 

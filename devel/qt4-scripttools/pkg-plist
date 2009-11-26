@@ -7,8 +7,8 @@ lib/qt4/libQtScriptTools.la
 lib/qt4/libQtScriptTools.prl
 lib/qt4/libQtScriptTools.so
 lib/qt4/libQtScriptTools.so.4
-lib/qt4/libQtScriptTools.so.4.5
-lib/qt4/libQtScriptTools.so.4.5.2
-%%DEBUG%%lib/qt4/libQtScriptTools.so.4.5.2.debug
+lib/qt4/libQtScriptTools.so.%%SHLIB_SHVER%%
+lib/qt4/libQtScriptTools.so.%%SHLIB_VER%%
+%%DEBUG%%lib/qt4/libQtScriptTools.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtScriptTools.pc
 @dirrm include/qt4/QtScriptTools

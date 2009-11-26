@@ -20,11 +20,12 @@ COMMENT=	Qt translations messages
 USE_QT_VER=	4
 QT_COMPONENTS=	#dummy
 NO_BUILD=	yes
+MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
 
 EXTRACT_AFTER_ARGS+=	| ${TAR} -xf - --include '${DISTNAME}/translations'
 
 do-install:
 	${MKDIR} ${PREFIX}/share/qt4/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${PREFIX}/share/qt4/translations
+	${INSTALL_DATA} ${WRKSRC}/translations/*.ts ${PREFIX}/share/qt4/translations
 
 .include <bsd.port.mk>

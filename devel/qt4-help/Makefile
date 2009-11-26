@@ -8,10 +8,7 @@
 PORTNAME=	help
 PORTVERSION=	${QT4_VERSION}
 CATEGORIES?=	devel
-MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtHelp module provides QHelpEngine API and is used by Assistant

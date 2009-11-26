@@ -520,9 +520,9 @@ lib/qt4/libQtCore.la
 lib/qt4/libQtCore.prl
 lib/qt4/libQtCore.so
 lib/qt4/libQtCore.so.4
-lib/qt4/libQtCore.so.4.5
-lib/qt4/libQtCore.so.4.5.2
-%%DEBUG%%lib/qt4/libQtCore.so.4.5.2.debug
+lib/qt4/libQtCore.so.%%SHLIB_SHVER%%
+lib/qt4/libQtCore.so.%%SHLIB_VER%%
+%%DEBUG%%lib/qt4/libQtCore.so.%%SHLIB_VER%%.debug
 lib/qt4/plugins/.keep_me
 libdata/pkgconfig/QtCore.pc
 share/qt4/mkspecs/qconfig.pri

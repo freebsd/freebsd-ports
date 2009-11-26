@@ -11,8 +11,6 @@ CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
 PKGNAMESUFFIX=	-tools
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtHelp tools to generate and convert documentation

@@ -8,11 +8,8 @@
 PORTNAME=	assistant
 PORTVERSION=	${QT4_VERSION}
 CATEGORIES?=	devel
-MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
-PKGNAMESUFFIX=	-adp
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
+PKGNAMESUFFIX=  -adp
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser, adp compat version

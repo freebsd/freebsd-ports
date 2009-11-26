@@ -6,10 +6,10 @@ QT4_OPTIONS+=	CUPS
 .endif
 
 .for opt in ${QT4_OPTIONS_ALL}
-${opt}_REPLACE=\#
+${opt}_REPLACE=
 QT4_OPTIONS_REPLACE+=	s,%%${opt}%%,${${opt}_REPLACE},g;
 .endfor
 
 .for opt in ${QT4_OPTIONS}
-${opt}_REPLACE=
+${opt}_REPLACE=\#
 .endfor

@@ -920,6 +920,8 @@
 %%DOCSDIR%%/html/images/framebufferobject2-example.png
 %%DOCSDIR%%/html/images/frames.png
 %%DOCSDIR%%/html/images/fridgemagnets-example.png
+%%DOCSDIR%%/html/images/frozencolumn-example.png
+%%DOCSDIR%%/html/images/frozencolumn-tableview.png
 %%DOCSDIR%%/html/images/ftp-example.png
 %%DOCSDIR%%/html/images/geometry.png
 %%DOCSDIR%%/html/images/googlechat-example.png
@@ -1836,6 +1838,12 @@
 %%DOCSDIR%%/html/itemviews-fetchmore-window-cpp.html
 %%DOCSDIR%%/html/itemviews-fetchmore-window-h.html
 %%DOCSDIR%%/html/itemviews-fetchmore.html
+%%DOCSDIR%%/html/itemviews-frozencolumn-freezetablewidget-cpp.html
+%%DOCSDIR%%/html/itemviews-frozencolumn-freezetablewidget-h.html
+%%DOCSDIR%%/html/itemviews-frozencolumn-frozencolumn-pro.html
+%%DOCSDIR%%/html/itemviews-frozencolumn-grades-qrc.html
+%%DOCSDIR%%/html/itemviews-frozencolumn-main-cpp.html
+%%DOCSDIR%%/html/itemviews-frozencolumn.html
 %%DOCSDIR%%/html/itemviews-pixelator-imagemodel-cpp.html
 %%DOCSDIR%%/html/itemviews-pixelator-imagemodel-h.html
 %%DOCSDIR%%/html/itemviews-pixelator-images-qrc.html
@@ -3745,6 +3753,7 @@
 %%DOCSDIR%%/html/qsqldatabase-members.html
 %%DOCSDIR%%/html/qsqldatabase-qt3.html
 %%DOCSDIR%%/html/qsqldatabase.html
+%%DOCSDIR%%/html/qsqldatatype-table.html
 %%DOCSDIR%%/html/qsqldriver-members.html
 %%DOCSDIR%%/html/qsqldriver-qt3.html
 %%DOCSDIR%%/html/qsqldriver.html
