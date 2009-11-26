@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.11.1.a.20090817
+PORTVERSION=	0.11.1.a.20091117
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -44,6 +44,10 @@ do-install:
 	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
 		-name tkabber \"\$$@\"\n" > ${WRKDIR}/tkabber.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/tkabber.sh ${PREFIX}/bin/tkabber
+
+	${ECHO} -e "#!/bin/sh\nexec ${TCLSH} ${DATADIR}/tkabber-remote.tcl \
+		-name tkabber-remote \"\$$@\"\n" > ${WRKDIR}/tkabber-remote.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/tkabber-remote.sh ${PREFIX}/bin/tkabber-remote
 
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.tcl ${DATADIR}
