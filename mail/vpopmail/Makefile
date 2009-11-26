@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.27
+PORTVERSION=	5.4.28
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
@@ -68,6 +68,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 # WITHOUT_FPIC		- do not add -fPIC to the C compiler flags
 # WITH_MAILDROP		- enable maildrop as an MDA (see README.maildrop)
 # MAILDROP_PORT		- the port that provides the bin/maildrop program
+# WITH_DOMAIN_QUOTAS	- enable non-system domain quotas
 #
 # Set these to the values you'd prefer
 #
@@ -229,6 +230,12 @@ PLIST_SUB+=	MAILDROP=""
 .else
 CONFIGURE_ARGS+=	--enable-maildrop=n
 PLIST_SUB+=	MAILDROP="@comment "
+.endif
+
+.if defined(WITH_DOMAIN_QUOTAS)
+CONFIGURE_ARGS+=	--enable-domainquotas=y
+.else
+CONFIGURE_ARGS+=	--enable-domainquotas=n
 .endif
 
 .if defined(NOPORTDOCS)
@@ -454,7 +461,7 @@ post-install:
 .endif
 	@${TOUCH} ${QMAIL_PREFIX}/control/locals
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${PREFIX}/vpopmail/doc/
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${PREFIX}/vpopmail/doc/
 .endif
 
 .include <bsd.port.post.mk>

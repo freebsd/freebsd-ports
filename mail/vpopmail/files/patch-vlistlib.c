@@ -1,9 +1,13 @@
-Honor lots of limits - convert sprintf() to snprintf(), use the correct
-limit size, etc.
-Check a couple more calls for errors.
-Wait for the correct child process - waitpid() instead of wait().
-Add two closedir()'s to fix file descriptor leaks.
-Look for the arguments properly if progname should ever containing spaces.
+Description: Sanity and safety checks.
+ Honor lots of limits - convert sprintf() to snprintf(), use the correct
+ limit size, etc.
+ Check a couple more calls for errors.
+ Wait for the correct child process - waitpid() instead of wait().
+ Add two closedir()'s to fix file descriptor leaks.
+ Look for the arguments properly if progname should ever containing spaces.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vlistlib.c
 +++ b/vlistlib.c
@@ -34,7 +38,7 @@ Look for the arguments properly if progname should ever containing spaces.
 -    snprintf( LI->SQLPass,      MAX_FILE_NAME, "dbpass" );
 -    snprintf( LI->SQLTable,     MAX_FILE_NAME, "ezmlm" );
 -    snprintf( LI->SQLUser,      MAX_FILE_NAME, "dbUser" );
-+    snprintf( LI->OwnerEmail,   sizeof(LI->OwnerEmail), "postmaster@%s", LI->Domain ); 
++    snprintf( LI->OwnerEmail,   sizeof(LI->OwnerEmail), "postmaster@%s", LI->Domain );
 +    snprintf( LI->ReplyTo_Addr, sizeof(LI->ReplyTo_Addr), "%s", "" );
 +    snprintf( LI->SQLBase,      sizeof(LI->SQLBase), "ezmlm" );
 +    snprintf( LI->SQLHost,      sizeof(LI->SQLHost), "localhost" );
@@ -299,7 +303,7 @@ Look for the arguments properly if progname should ever containing spaces.
    
      FILE *fs;
 -    int handles[2],pid,z = 0,subuser_count = 0; 
-+    int handles[2],pid,status,z = 0,subuser_count = 0; 
++    int handles[2],pid,status,z = 0,subuser_count = 0;
      char ProgramPath[MAX_BUFF];
      char ListPath[MAX_BUFF];
      char buf[256];

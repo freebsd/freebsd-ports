@@ -23,6 +23,7 @@ vpopmail/bin/vpasswd
 vpopmail/bin/vpopbull
 vpopmail/bin/vpopmaild
 vpopmail/bin/vsetuserquota
+vpopmail/bin/vusagec
 vpopmail/bin/vuserinfo
 %%PORTDOCS%%vpopmail/doc/doc_html/vpopmail.html
 %%PORTDOCS%%vpopmail/doc/doc_html/vpopmail5.abw
@@ -76,7 +77,11 @@ vpopmail/etc/vlimits.default-dist
 %%MYSQL%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.mysql %D/vpopmail/etc/vpopmail.mysql-dist; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
 %%MYSQL%%vpopmail/etc/vpopmail.mysql-dist
 %%MYSQL%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.mysql ] ; then cp -p %D/%F %B/vpopmail.mysql; fi
+vpopmail/include/client.h
+vpopmail/include/conf.h
 vpopmail/include/config.h
+vpopmail/include/ippp.h
+vpopmail/include/storage.h
 vpopmail/include/vauth.h
 vpopmail/include/vlimits.h
 vpopmail/include/vpopmail.h

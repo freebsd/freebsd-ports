@@ -1,10 +1,13 @@
-Buffer handling:
-- convert a strncpy() to snprintf() to ensure null-termination;
-- explicitly pass sizeof(var) as the second argument of snprintf().
+Description: String buffer handling fixes.
+ - convert a strncpy() to snprintf() to ensure null-termination;
+ - explicitly pass sizeof(var) as the second argument of snprintf().
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/backfill.c
 +++ b/backfill.c
-@@ -56,7 +56,7 @@
+@@ -54,7 +54,7 @@
  		return(-1);
  #endif
  	/*- format a new string */
@@ -13,7 +16,7 @@ Buffer handling:
  	if (rename(filename, bak_file))
  	{
  		fprintf(stderr, "rename %s->%s: %s\n", filename, bak_file, strerror(errno));
-@@ -155,7 +155,7 @@
+@@ -153,7 +153,7 @@
  		fprintf(stderr, "%s: No such domain\n", domain);
  		return((char *) 0);
  	}
@@ -22,7 +25,7 @@ Buffer handling:
  	if (operation == 1) /*- Delete */
  	{
  		if (!(fp = fopen(filename, "r")))
-@@ -193,7 +193,7 @@
+@@ -191,7 +191,7 @@
  	} else
  	if (operation == 2) /*- add */
  	{

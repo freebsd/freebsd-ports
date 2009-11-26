@@ -1,14 +1,20 @@
-Add the --enable-spam-threshold and --enable-spam-junkfolder options.
-Do not try to create the etc/vpopmail directory and tcp.smtp in place,
-this is done by the port at install time.
-FreeBSD does not have libresolv.
-Pass the correct compiler and linker flags to the cdb build.
-FreeBSD does not need -R $libdir (a.k.a. --rpath) - the MySQL client
-library is added to ldconfig's search path in its own startup script.
+Description: Configure for the FreeBSD ports build system.
+ Add the --enable-spam-threshold and --enable-spam-junkfolder options.
+ Do not try to create the etc/vpopmail directory and tcp.smtp in place,
+ this is done by the port at install time.
+ FreeBSD does not have libresolv.
+ Pass the correct compiler and linker flags to the cdb build.
+ FreeBSD does not need -R $libdir (a.k.a. --rpath) - the MySQL client
+ library is added to ldconfig's search path in its own startup script.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>,
+	Alex Dupre <ale@FreeBSD.org>,
+	Renato Botelho <garga@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/configure
 +++ b/configure
-@@ -1326,6 +1326,8 @@
+@@ -1455,6 +1455,8 @@
    --enable-onchange-script   Enable onchange script. See README.onchange for more info.
    --enable-spamassassin      Enable spamassassin. See  README.spamassassin for more info.
    --enable-spamc-prog=PATH   Full path to spamc program /usr/{local/}bin/spamc.
@@ -16,8 +22,8 @@ library is added to ldconfig's search path in its own startup script.
 +  --enable-spam-junkfolder   Automatically move (not deleted) spam messages into Junk folder
    --enable-maildrop          Enable maildrop. See  README.maildrop for more info.
    --enable-maildrop-prog=PATH    Full path to maildrop program /usr/{local/}bin/maildrop.
-   --enable-domains-dir=TEXT  Directory in ~vpopmail to store domains (default=domains).
-@@ -6504,27 +6506,6 @@
+   --enable-domainquotas      Enable non-system domain quotas. See README.quotas for more info.
+@@ -6884,27 +6886,6 @@
  
  #----------------------------------------------------------------------
  
@@ -25,15 +31,15 @@ library is added to ldconfig's search path in its own startup script.
 -then
 -  if test ! -d $vpopmaildir
 -  then
--    { echo "$as_me:$LINENO: WARNING: creating $vpopmaildir " >&5
--echo "$as_me: WARNING: creating $vpopmaildir " >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: creating $vpopmaildir " >&5
+-$as_echo "$as_me: WARNING: creating $vpopmaildir " >&2;}
 -    mkdir -p $vpopmaildir
 -    chown $vpopmailuid $vpopmaildir
 -    chgrp $vpopmailgid $vpopmaildir
 -    chmod 755 $vpopmaildir
 -  fi
--  { echo "$as_me:$LINENO: WARNING: making a vpopmail etc directory " >&5
--echo "$as_me: WARNING: making a vpopmail etc directory " >&2;}
+-  { $as_echo "$as_me:$LINENO: WARNING: making a vpopmail etc directory " >&5
+-$as_echo "$as_me: WARNING: making a vpopmail etc directory " >&2;}
 -  mkdir $vpopmaildir/etc
 -  chown $vpopmailuid "$vpopmaildir"/etc
 -  chgrp $vpopmailgid "$vpopmaildir"/etc
@@ -42,42 +48,42 @@ library is added to ldconfig's search path in its own startup script.
 -
 -#----------------------------------------------------------------------
 -
- { echo "$as_me:$LINENO: checking whether roaming-users has been enabled" >&5
- echo $ECHO_N "checking whether roaming-users has been enabled... $ECHO_C" >&6; }
+ { $as_echo "$as_me:$LINENO: checking whether roaming-users has been enabled" >&5
+ $as_echo_n "checking whether roaming-users has been enabled... " >&6; }
  # Check whether --enable-roaming-users was given.
-@@ -6611,30 +6592,9 @@
+@@ -6991,30 +6972,11 @@
      # Check whether --enable-tcpserver_file was given.
  if test "${enable_tcpserver_file+set}" = set; then
    enableval=$enable_tcpserver_file; tcpserver_file="$enableval"
--else
--
++  echo "127.:allow,RELAYCLIENT=\"\"" > ${VCFGDIR}/tcp.smtp
+ else
+ 
 -            if test "$tcpserver_file" = ""
 -            then
--                { echo "$as_me:$LINENO: WARNING: Unable to find your tcpserver relay file." >&5
--echo "$as_me: WARNING: Unable to find your tcpserver relay file." >&2;}
--                { echo "$as_me:$LINENO: WARNING: Creating tcp.smtp in \"$vpopmaildir\"/etc/tcp.smtp." >&5
--echo "$as_me: WARNING: Creating tcp.smtp in \"$vpopmaildir\"/etc/tcp.smtp." >&2;}
+-                { $as_echo "$as_me:$LINENO: WARNING: Unable to find your tcpserver relay file." >&5
+-$as_echo "$as_me: WARNING: Unable to find your tcpserver relay file." >&2;}
+-                { $as_echo "$as_me:$LINENO: WARNING: Creating tcp.smtp in \"$vpopmaildir\"/etc/tcp.smtp." >&5
+-$as_echo "$as_me: WARNING: Creating tcp.smtp in \"$vpopmaildir\"/etc/tcp.smtp." >&2;}
 -
 -                echo "127.:allow,RELAYCLIENT=\"\"" > "$vpopmaildir"/etc/tcp.smtp
 -                tcpserver_file="$vpopmaildir"/etc/tcp.smtp
 -            fi
 -
 -
-+  echo "127.:allow,RELAYCLIENT=\"\"" > ${VCFGDIR}/tcp.smtp
  fi
  
 -
 -    if test ! -f "$tcpserver_file"
 -    then
--        { { echo "$as_me:$LINENO: error: Unable to find your tcp.smtp file, specify --enable-tcpserver-path=/full/path/to/tcp.smtp" >&5
--echo "$as_me: error: Unable to find your tcp.smtp file, specify --enable-tcpserver-path=/full/path/to/tcp.smtp" >&2;}
+-        { { $as_echo "$as_me:$LINENO: error: Unable to find your tcp.smtp file, specify --enable-tcpserver-path=/full/path/to/tcp.smtp" >&5
+-$as_echo "$as_me: error: Unable to find your tcp.smtp file, specify --enable-tcpserver-path=/full/path/to/tcp.smtp" >&2;}
 -   { (exit 1); exit 1; }; }
 -    fi
 -
-     { echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6; }
+     { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
  
-@@ -7143,6 +7103,44 @@
+@@ -7523,6 +7485,44 @@
  #define SPAMC_PROG "$spamc_prog"
  _ACEOF
  
@@ -122,7 +128,7 @@ library is added to ldconfig's search path in its own startup script.
  
        ;;
  esac
-@@ -7396,7 +7394,7 @@
+@@ -7785,7 +7785,7 @@
     { (exit 1); exit 1; }; }
      fi
  
@@ -131,7 +137,7 @@ library is added to ldconfig's search path in its own startup script.
  
      ;;
  
-@@ -7463,7 +7461,7 @@
+@@ -7852,7 +7852,7 @@
  #define USE_LDAP $USE_LDAP
  _ACEOF
  
@@ -140,7 +146,7 @@ library is added to ldconfig's search path in its own startup script.
  
      auth_inc="-I/usr/local/include"
  
-@@ -9954,8 +9952,8 @@
+@@ -10466,8 +10466,8 @@
      ;;
  esac
  

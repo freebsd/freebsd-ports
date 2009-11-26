@@ -1,5 +1,9 @@
-Optimize a lot of calls by just using access(2).
-Fix a file descriptor and FILE structure leak.
+Description: Sanity and safety.
+ Optimize a lot of calls by just using access(2).
+ Fix a file descriptor and FILE structure leak.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vutil.c
 +++ b/vutil.c

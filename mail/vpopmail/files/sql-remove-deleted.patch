@@ -1,9 +1,12 @@
-Activate the SQL_REMOVE_DELETED code.
-Only applied if this is requested at port build time.
+Description: Activate the SQL_REMOVE_DELETED code.
+ Only applied if this is requested at port build time.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/config.h.in
 +++ b/config.h.in
-@@ -371,3 +371,5 @@
+@@ -374,3 +374,5 @@
  
  /* Define to `int' if <sys/types.h> doesn't define. */
  #undef uid_t
