@@ -368,6 +368,10 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_redis_module.c
 .endif
+.if defined(WITH_HTTP_UPLOAD_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_upload_module.c
+.endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!g++!${CXX}!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/Rakefile
