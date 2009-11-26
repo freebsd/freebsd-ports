@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -114,7 +113,7 @@ CONFIGURE_ARGS+=	--disable-mmx
 CONFIGURE_ARGS+=	--enable-qimage \
 			--qimage-includedir="${QT_INCDIR}" \
 			--qimage-libdir="${QT_LIBDIR}"
-QT_COMPONENTS+=	gui
+QT_COMPONENTS+=	gui svg xml
 PLIST_SUB+=	QIMAGE=""
 .else
 CONFIGURE_ARGS+=	--disable-qimage
