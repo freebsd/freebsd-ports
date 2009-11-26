@@ -137,6 +137,9 @@ lib/gnumeric/%%VERSION%%/plugins/dif/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/excel/excel.la
 lib/gnumeric/%%VERSION%%/plugins/excel/excel.so
 lib/gnumeric/%%VERSION%%/plugins/excel/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.la
+lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.so
+lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-complex/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-complex/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-complex/plugin.xml
@@ -158,6 +161,9 @@ lib/gnumeric/%%VERSION%%/plugins/fn-erlang/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-financial/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-financial/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-financial/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/fn-hebrew-date/plugin.la
+lib/gnumeric/%%VERSION%%/plugins/fn-hebrew-date/plugin.so
+lib/gnumeric/%%VERSION%%/plugins/fn-hebrew-date/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-info/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-info/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-info/plugin.xml
@@ -205,6 +211,9 @@ lib/gnumeric/%%VERSION%%/plugins/html/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/lotus/lotus.la
 lib/gnumeric/%%VERSION%%/plugins/lotus/lotus.so
 lib/gnumeric/%%VERSION%%/plugins/lotus/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/lpsolve/lpsolve.la
+lib/gnumeric/%%VERSION%%/plugins/lpsolve/lpsolve.so
+lib/gnumeric/%%VERSION%%/plugins/lpsolve/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/mps/mps.la
 lib/gnumeric/%%VERSION%%/plugins/mps/mps.so
 lib/gnumeric/%%VERSION%%/plugins/mps/plugin.xml
@@ -294,7 +303,6 @@ share/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.simple.xml
 share/gnumeric/%%VERSION%%/glade/advanced-filter.glade
 share/gnumeric/%%VERSION%%/glade/anova-one.glade
 share/gnumeric/%%VERSION%%/glade/anova-two.glade
-share/gnumeric/%%VERSION%%/glade/autocorrect.glade
 share/gnumeric/%%VERSION%%/glade/autofilter-expression.glade
 share/gnumeric/%%VERSION%%/glade/autofilter-top10.glade
 share/gnumeric/%%VERSION%%/glade/autoformat.glade
@@ -965,6 +973,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/openoffice
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/mps
+@dirrm lib/gnumeric/%%VERSION%%/plugins/lpsolve
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-glossary
@@ -980,6 +989,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-lookup
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-logical
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-info
+@dirrm lib/gnumeric/%%VERSION%%/plugins/fn-hebrew-date
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-financial
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-erlang
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-eng
@@ -987,6 +997,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-date
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-database
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-complex
+@dirrm lib/gnumeric/%%VERSION%%/plugins/fn-christian-date
 @dirrm lib/gnumeric/%%VERSION%%/plugins/excel
 @dirrm lib/gnumeric/%%VERSION%%/plugins/dif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/applix
