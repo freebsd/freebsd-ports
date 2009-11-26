@@ -4215,3 +4215,4 @@ x11-toolkits/xclasses||2009-11-24|Has expired: Version branch long since retired
 mail/p5-Email-MIME-Creator||2009-11-24|Folded into p5-Email-MIME package
 mail/p5-Email-MIME-Modifier||2009-11-24|Folded into p5-Email-MIME package
 mail/p5-Email-Simple-Creator||2009-11-24|Folded into p5-Email-Simple package
+www/gecko-sharp10|www/gecko-sharp20|2009-11-26|Superseded by later version
