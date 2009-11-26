@@ -47,7 +47,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 DOCSDIR=	${PREFIX}/share/doc/ocaml-images
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Announce CHANGES INSTALL LICENSE doc
+PORTDOCS=	Announce Announce-2.2 CHANGES INSTALL LICENSE doc
 .endif
 
 post-install:
