@@ -298,6 +298,7 @@
     SUBDIR += py-reportlab
     SUBDIR += py-reportlab2
     SUBDIR += py-rtf
+    SUBDIR += py-trml2pdf
     SUBDIR += rlpr
     SUBDIR += rprint
     SUBDIR += rtf2latex
