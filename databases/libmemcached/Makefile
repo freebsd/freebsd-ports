@@ -7,7 +7,7 @@
 
 PORTNAME=	libmemcached
 PORTVERSION=	0.35
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
 
