@@ -6,7 +6,7 @@
 
 PORTNAME=	python25
 PORTVERSION=	2.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -40,7 +40,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
-		plat-freebsd7 plat-freebsd8
+		plat-freebsd7 plat-freebsd8 plat-freebsd9
 
 BIN_SCRIPTS=	idle pydoc python python-shared smtpd.py python-config \
 		python-shared-config
@@ -170,6 +170,8 @@ pre-build:
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
 
 pre-su-install:
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd9
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in IN.py regen
