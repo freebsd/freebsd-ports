@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmame-devel
-PORTVERSION=	0.134u4
+PORTVERSION=	0.135u1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/ \
 		http://rbelmont.mameworld.info/
@@ -51,7 +51,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-.for f in chdman ldresample ldverify testkeys
+.for f in chdman ldresample ldverify testkeys unidasm
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/${PORTNAME}
 .endfor
 
