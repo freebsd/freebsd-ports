@@ -48,11 +48,11 @@ include/mlt/framework/mlt_tractor.h
 include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
 lib/libmlt++.so
-lib/libmlt++.so.0.4.4
-lib/libmlt++.so.2
+lib/libmlt++.so.0.4.6
+lib/libmlt++.so.3
 lib/libmlt.so
-lib/libmlt.so.0.4.4
-lib/libmlt.so.1
+lib/libmlt.so.0.4.6
+lib/libmlt.so.2
 %%AVFORMAT%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdgraft.so
