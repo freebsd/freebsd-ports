@@ -7,7 +7,7 @@
 
 PORTNAME=	python24
 PORTVERSION=	2.4.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -31,7 +31,7 @@ PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 plat-freebsd7 \
-		plat-freebsd8
+		plat-freebsd8 plat-freebsd9
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
@@ -161,6 +161,8 @@ post-build:
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
 
 pre-su-install:
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd9
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in IN.py regen
