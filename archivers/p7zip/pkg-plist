@@ -1,16 +1,3 @@
-bin/7z
-bin/7za
-bin/7zr
-bin/p7zip
-%%MODULES%%libexec/p7zip/7z
-%%MODULES%%libexec/p7zip/7z.so
-%%MODULES%%libexec/p7zip/Client7z
-libexec/p7zip/7za
-libexec/p7zip/7zr
-libexec/p7zip/7zCon.sfx
-%%MODULES%%libexec/p7zip/Codecs/Rar29.so
-%%MODULES%%@dirrm libexec/p7zip/Codecs
-@dirrm libexec/p7zip
 %%PORTDOCS%%%%DOCSDIR%%/7zC.txt
 %%PORTDOCS%%%%DOCSDIR%%/7zFormat.txt
 %%PORTDOCS%%%%DOCSDIR%%/License.txt
