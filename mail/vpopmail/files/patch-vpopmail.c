@@ -1,8 +1,13 @@
-Implement SpamAssassin support.
-Honor limits correctly.
-Wait for the correct child process - waitpid() instead of wait().
-Check for a couple more errors.
-Add a closedir() to fix a file descriptor leak.
+Description: SpamAssassin support, sanity checks.
+ Implement SpamAssassin support.
+ Honor limits correctly.
+ Wait for the correct child process - waitpid() instead of wait().
+ Check for a couple more errors.
+ Add a closedir() to fix a file descriptor leak.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>,
+	Alex Dupre <ale@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vpopmail.c
 +++ b/vpopmail.c
@@ -14,7 +19,7 @@ Add a closedir() to fix a file descriptor leak.
            return(-1);
          }
        }
-@@ -1562,7 +1563,7 @@
+@@ -1563,7 +1564,7 @@
     i++;
     }
  
@@ -23,7 +28,7 @@ Add a closedir() to fix a file descriptor leak.
  
  if( i>0 ) {
     for( j=0; j<k; j++ )  {
-@@ -1574,7 +1575,7 @@
+@@ -1575,7 +1576,7 @@
  
  //  trim spaces and tabs from end
  i = strlen(s) - 1;
@@ -32,7 +37,7 @@ Add a closedir() to fix a file descriptor leak.
     i--;
     }
  
-@@ -2345,7 +2346,12 @@
+@@ -2348,7 +2349,12 @@
   char calling_dir[MAX_BUFF];
   char domain_dir[MAX_BUFF];
   const char *dirnames[] = {"Maildir", "Maildir/new", "Maildir/cur", 
@@ -46,7 +51,7 @@ Add a closedir() to fix a file descriptor leak.
   int i;
  
    verrori = 0;
-@@ -3107,6 +3113,13 @@
+@@ -3114,6 +3120,13 @@
    if (mkdir("cur",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
    if (mkdir("new",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
    if (mkdir("tmp",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
@@ -60,7 +65,7 @@ Add a closedir() to fix a file descriptor leak.
  
    /* set permissions on the user's dir */
    chdir(dir);
-@@ -4139,11 +4152,19 @@
+@@ -4163,11 +4176,19 @@
  	}
  	else if ( pid > 0 )
  	{

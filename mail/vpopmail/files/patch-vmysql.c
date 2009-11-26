@@ -1,9 +1,11 @@
-Fix the virtual alias support.
-Implement SQL_REMOVE_DELETED.
+Description: Fix the virtual alias support; implement SQL_REMOVE_DELETED.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vmysql.c
 +++ b/vmysql.c
-@@ -596,12 +596,14 @@
+@@ -599,6 +599,7 @@
  #endif
  
  #ifdef ENABLE_SQL_LOGGING
@@ -11,14 +13,15 @@ Implement SQL_REMOVE_DELETED.
      qnprintf( SqlBufUpdate, SQL_BUF_SIZE,
         "delete from vlog where domain = '%s'", domain );
      if (mysql_query(&mysql_update,SqlBufUpdate)) {
-        return(-1);
+@@ -607,6 +608,7 @@
+ 		  fprintf(stderr, "vauth_deldomain: warning: mysql_query(%s) failed: %s\n", SqlBufUpdate, mysql_error(&mysql_update));
      }
  #endif
 +#endif
  
      vdel_limits(domain);
  
-@@ -647,6 +649,7 @@
+@@ -656,6 +658,7 @@
  #endif
  
  #ifdef ENABLE_SQL_LOGGING
@@ -26,15 +29,15 @@ Implement SQL_REMOVE_DELETED.
      qnprintf( SqlBufUpdate, SQL_BUF_SIZE,
          "delete from vlog where domain = '%s' and user = '%s'", 
         domain, user );
-@@ -654,6 +657,7 @@
-         err = -1;
+@@ -667,6 +670,7 @@
+ 		  err = 0;
      }
  #endif
 +#endif
      return(err);
  }
  
-@@ -1580,7 +1584,7 @@
+@@ -1593,7 +1597,7 @@
   *  valias_select_names
   */
  
@@ -43,7 +46,7 @@ Implement SQL_REMOVE_DELETED.
  {
   struct linklist *temp_entry = NULL;
  
-@@ -1609,16 +1613,13 @@
+@@ -1622,16 +1626,13 @@
      }
  
      while ((row = mysql_fetch_row(res_read))) {
@@ -62,7 +65,7 @@ Implement SQL_REMOVE_DELETED.
  }
  
  /************************************************************************
-@@ -1626,16 +1627,13 @@
+@@ -1639,16 +1640,13 @@
   *  valias_select_names_next
   */
  

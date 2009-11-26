@@ -1,9 +1,11 @@
-Implement valias support.
-Implement SQL_REMOVE_DELETED.
+Description: Implement valias support; implement SQL_REMOVE_DELETED.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vpgsql.c
 +++ b/vpgsql.c
-@@ -390,13 +390,15 @@
+@@ -392,13 +392,15 @@
  #endif
  
  #ifdef ENABLE_SQL_LOGGING
@@ -21,7 +23,7 @@ Implement SQL_REMOVE_DELETED.
      return(0);
  }
  
-@@ -443,14 +445,16 @@
+@@ -445,14 +447,16 @@
  #endif
  
  #ifdef ENABLE_SQL_LOGGING
@@ -40,7 +42,7 @@ Implement SQL_REMOVE_DELETED.
  
    return(err);
  }
-@@ -1553,6 +1557,80 @@
+@@ -1555,6 +1559,80 @@
      return valias_current->data; 
    }
  }

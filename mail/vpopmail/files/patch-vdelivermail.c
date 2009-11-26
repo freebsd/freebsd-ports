@@ -1,5 +1,10 @@
-Add SpamAssassin support.
-Drop the unneeded MAX_ENV_BUFF definition.
+Description: SpamAssassin support, build optimization
+ Add SpamAssassin support.
+ Drop the unneeded MAX_ENV_BUFF definition.
+Forwarded: not-needed
+Author: Alex Dupre <ale@FreeBSD.org>,
+	Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vdelivermail.c
 +++ b/vdelivermail.c
@@ -117,7 +122,7 @@ Drop the unneeded MAX_ENV_BUFF definition.
      /* This is an command */
      if ( *address == '|' ) { 
  
-@@ -895,9 +939,6 @@
+@@ -898,9 +942,6 @@
   */
  void run_command(char *prog)
  {
@@ -127,7 +132,7 @@ Drop the unneeded MAX_ENV_BUFF definition.
   int child;
   char *(args[4]);
   int wstat;
-@@ -1211,19 +1252,22 @@
+@@ -1214,19 +1255,22 @@
   *   * in the email headers for X-Spam-Level: which
   *    * we put in each spam email
   *     *
@@ -154,7 +159,7 @@ Drop the unneeded MAX_ENV_BUFF definition.
  
           /* check for blank line, end of headers */
           for(k=j,found=0;k<i;++k) {
-@@ -1246,13 +1290,19 @@
+@@ -1249,13 +1293,19 @@
           }
           if ( found == 0 ) {
             InHeaders=0;

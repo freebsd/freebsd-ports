@@ -1,5 +1,9 @@
-Do not impose an arbitrary limit of 100 list entries.
-Fix the usage message and an error message.
+Description: Sanity and usage fixes.
+ Do not impose an arbitrary limit of 100 list entries.
+ Fix the usage message and an error message.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vlist.c
 +++ b/vlist.c

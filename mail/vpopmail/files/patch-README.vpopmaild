@@ -1,7 +1,10 @@
-Fix a couple of typos and grammatical errors.
+Description: Fix a couple of typos and grammatical errors.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
---- a/README.vpopmaild
-+++ b/README.vpopmaild
+--- a/doc/README.vpopmaild
++++ b/doc/README.vpopmaild
 @@ -243,7 +243,7 @@
  
  Rights required: Must be a valid email address.

@@ -1,4 +1,7 @@
-Honor the correct limits.
+Description: Honor the correct limits.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
 
 --- a/vpalias.c
 +++ b/vpalias.c

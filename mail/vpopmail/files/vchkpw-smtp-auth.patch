@@ -1,5 +1,8 @@
-Fix the SMTP auth calculations - use the correct order of arguments.
-Only applied if requested at port build time.
+Description: Use the correct order of arguments for the SMTP auth calculations.
+ Only applied if requested at port build time.
+Forwarded: not-needed
+Author: Nikolay Georgiev <niki@techlab.office1.bg>
+Last-Update: 2009-11-26
 
 --- a/vchkpw.c
 +++ b/vchkpw.c
