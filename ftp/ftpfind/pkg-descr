@@ -6,7 +6,3 @@ usage: /usr/local/bin/ftpfind URL [-proxy proxy_server] \
 		[-delete|-get [directory] [-new] [-resume] \
 			|-put [directory] [-new] \
 			|-chmod 0???]
-
---
-Tomokazu ISHII
-t-ishii@tryplanet.com

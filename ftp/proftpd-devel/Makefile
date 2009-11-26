@@ -22,7 +22,7 @@ PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
