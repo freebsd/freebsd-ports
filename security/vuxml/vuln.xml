@@ -81,7 +81,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>When a bug is in a group, none of its information
             (other than its status and resolution) should be visible
             to users outside that group. It was discovered that
-            as of 3.3.2, Bugzilla was showing the alias of the bug 
+            as of 3.3.2, Bugzilla was showing the alias of the bug
             (a very short string used as a shortcut for looking up
             the bug) to users outside of the group, if the protected
             bug ended up in the "Depends On" or "Blocks" list of any
@@ -180,9 +180,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>CVE reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3627">
 	  <p>The decode_entities function in util.c in HTML-Parser before
-	     3.63 allows context-dependent attackers to cause a denial of service
-	     (infinite loop) via an incomplete SGML numeric character reference,
-	     which triggers generation of an invalid UTF-8 character.</p>
+	    3.63 allows context-dependent attackers to cause a denial of service
+	    (infinite loop) via an incomplete SGML numeric character reference,
+	    which triggers generation of an invalid UTF-8 character.</p>
 	</blockquote>
       </body>
     </description>
