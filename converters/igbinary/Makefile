@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	igbinary
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	converters
-MASTER_SITES=	http://opensource.dynamoid.com/
+MASTER_SITES=	http://opensource.dynamoid.com/	\
+		http://files.gslin.org/~gslin/Software/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Replacement for the standard PHP serializer
