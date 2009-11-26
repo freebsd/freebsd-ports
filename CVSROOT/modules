@@ -4656,6 +4656,7 @@ gossip                          ports/net-im/gossip
 gotmail                         ports/mail/gotmail
 gotoblas                        ports/math/gotoblas
 gotthard                        ports/net/gotthard
+gource                          ports/graphics/gource
 gourmet                         ports/deskutils/gourmet
 gozer                           ports/graphics/gozer
 gpa                             ports/security/gpa
@@ -11105,6 +11106,7 @@ p5-Data-Dump                    ports/devel/p5-Data-Dump
 p5-Data-Dump-Streamer           ports/devel/p5-Data-Dump-Streamer
 p5-Data-DumpXML                 ports/devel/p5-Data-DumpXML
 p5-Data-Dumper                  ports/devel/p5-Data-Dumper
+p5-Data-Dumper-Concise          ports/devel/p5-Data-Dumper-Concise
 p5-Data-Dumper-Perltidy         ports/devel/p5-Data-Dumper-Perltidy
 p5-Data-Dumper-Simple           ports/devel/p5-Data-Dumper-Simple
 p5-Data-Entropy                 ports/security/p5-Data-Entropy
@@ -11356,17 +11358,14 @@ p5-Email-MIME                   ports/mail/p5-Email-MIME
 p5-Email-MIME-Attachment-Stripper  ports/mail/p5-Email-MIME-Attachment-Stripper
 p5-Email-MIME-ContentType       ports/mail/p5-Email-MIME-ContentType
 p5-Email-MIME-CreateHTML        ports/mail/p5-Email-MIME-CreateHTML
-p5-Email-MIME-Creator           ports/mail/p5-Email-MIME-Creator
 p5-Email-MIME-Creator-ISO_2022_JP  ports/mail/p5-Email-MIME-Creator-ISO_2022_JP
 p5-Email-MIME-Encodings         ports/mail/p5-Email-MIME-Encodings
-p5-Email-MIME-Modifier          ports/mail/p5-Email-MIME-Modifier
 p5-Email-MessageID              ports/mail/p5-Email-MessageID
 p5-Email-Obfuscate              ports/security/p5-Email-Obfuscate
 p5-Email-Reply                  ports/mail/p5-Email-Reply
 p5-Email-Send                   ports/mail/p5-Email-Send
 p5-Email-Sender                 ports/mail/p5-Email-Sender
 p5-Email-Simple                 ports/mail/p5-Email-Simple
-p5-Email-Simple-Creator         ports/mail/p5-Email-Simple-Creator
 p5-Email-Stuff                  ports/mail/p5-Email-Stuff
 p5-Email-Valid                  ports/mail/p5-Email-Valid
 p5-Email-Valid-Loose            ports/mail/p5-Email-Valid-Loose
@@ -14639,6 +14638,7 @@ p5-data-currency                ports/finance/p5-Data-Currency
 p5-data-dump                    ports/devel/p5-Data-Dump
 p5-data-dump-streamer           ports/devel/p5-Data-Dump-Streamer
 p5-data-dumper                  ports/devel/p5-Data-Dumper
+p5-data-dumper-concise          ports/devel/p5-Data-Dumper-Concise
 p5-data-dumper-perltidy         ports/devel/p5-Data-Dumper-Perltidy
 p5-data-dumper-simple           ports/devel/p5-Data-Dumper-Simple
 p5-data-dumpxml                 ports/devel/p5-Data-DumpXML
@@ -14982,16 +14982,13 @@ p5-email-mime                   ports/mail/p5-Email-MIME
 p5-email-mime-attachment-stripper  ports/mail/p5-Email-MIME-Attachment-Stripper
 p5-email-mime-contenttype       ports/mail/p5-Email-MIME-ContentType
 p5-email-mime-createhtml        ports/mail/p5-Email-MIME-CreateHTML
-p5-email-mime-creator           ports/mail/p5-Email-MIME-Creator
 p5-email-mime-creator-iso_2022_jp  ports/mail/p5-Email-MIME-Creator-ISO_2022_JP
 p5-email-mime-encodings         ports/mail/p5-Email-MIME-Encodings
-p5-email-mime-modifier          ports/mail/p5-Email-MIME-Modifier
 p5-email-obfuscate              ports/security/p5-Email-Obfuscate
 p5-email-reply                  ports/mail/p5-Email-Reply
 p5-email-send                   ports/mail/p5-Email-Send
 p5-email-sender                 ports/mail/p5-Email-Sender
 p5-email-simple                 ports/mail/p5-Email-Simple
-p5-email-simple-creator         ports/mail/p5-Email-Simple-Creator
 p5-email-stuff                  ports/mail/p5-Email-Stuff
 p5-email-valid                  ports/mail/p5-Email-Valid
 p5-email-valid-loose            ports/mail/p5-Email-Valid-Loose
@@ -16269,6 +16266,7 @@ p5-ournet-bbs                   ports/net/p5-OurNet-BBS
 p5-ournet-bbsagent              ports/net/p5-OurNet-BBSAgent
 p5-p4                           ports/devel/p5-P4
 p5-p4-client                    ports/devel/p5-P4-Client
+p5-pQuery                       ports/www/p5-pQuery
 p5-package-constants            ports/devel/p5-Package-Constants
 p5-package-generator            ports/devel/p5-Package-Generator
 p5-padre                        ports/editors/p5-Padre
@@ -16483,6 +16481,7 @@ p5-ppi                          ports/textproc/p5-PPI
 p5-ppi-html                     ports/textproc/p5-PPI-HTML
 p5-ppi-xs                       ports/textproc/p5-PPI-XS
 p5-ppix-editortools             ports/textproc/p5-PPIx-EditorTools
+p5-pquery                       ports/www/p5-pQuery
 p5-prefork                      ports/devel/p5-prefork
 p5-prima                        ports/x11-toolkits/p5-Prima
 p5-probe-perl                   ports/sysutils/p5-Probe-Perl
@@ -19745,6 +19744,7 @@ py-pyke                         ports/devel/py-pyke
 py-pylib                        ports/devel/py-pylib
 py-pylibacl                     ports/security/py-pylibacl
 py-pyliblo                      ports/audio/py-pyliblo
+py-pylibmc                      ports/databases/py-pylibmc
 py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
 py-pymc                         ports/math/py-pymc
