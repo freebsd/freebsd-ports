@@ -1,5 +1,5 @@
---- setup.py.orig	2009-06-28 20:59:53.170127518 +0800
-+++ setup.py	2009-06-29 01:19:05.592053355 +0800
+--- setup.py.orig	2009-08-12 20:39:44.000000000 +0200
++++ setup.py	2009-11-26 12:58:45.000000000 +0100
 @@ -16,7 +16,7 @@
  from distutils.command.install_lib import install_lib
  
@@ -61,7 +61,25 @@
                                     libraries = [panel_library] + curses_libs) )
          else:
              missing.append('_curses_panel')
-@@ -1666,8 +1670,7 @@
+@@ -1161,7 +1165,7 @@
+             macros = dict()
+             libraries = []
+ 
+-        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8'):
++        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9'):
+             # FreeBSD's P1003.1b semaphore support is very experimental
+             # and has many known problems. (as of June 2008)
+             macros = dict()
+@@ -1204,7 +1208,7 @@
+ 
+         # Platform-specific libraries
+         if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
+-                        'freebsd7', 'freebsd8'):
++                        'freebsd7', 'freebsd8', 'freebsd9'):
+             exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
+         else:
+             missing.append('ossaudiodev')
+@@ -1665,8 +1669,7 @@
            # called unless there's at least one extension module defined.
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
