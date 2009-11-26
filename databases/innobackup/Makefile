@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	innobackup
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.innodb.com/download/
+MASTER_SITES=	http://www.innodb.com/download/ \
+		http://files.gslin.org/Software/
 DISTFILES=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gslin@gslin.org
@@ -21,7 +22,7 @@ USE_PERL5=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${PREFIX}/sbin
