@@ -1,5 +1,14 @@
 --- configure.orig	Fri Mar  5 20:56:14 2004
 +++ configure	Fri Sep 28 17:25:04 2007
+@@ -2783,7 +2783,7 @@
+ 	    # results, and the version is kept in special file).
+ 	
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' /etc/.relid`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
 @@ -4477,7 +4477,7 @@
      TCL_LIB=${TCL_LIB_SPEC}
      TCL_INC=${TCL_INCLUDE_SPEC}
