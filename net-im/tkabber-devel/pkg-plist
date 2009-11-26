@@ -1,4 +1,5 @@
 bin/tkabber
+bin/tkabber-remote
 %%DATADIR%%/Tclx.tcl
 %%DATADIR%%/balloon.tcl
 %%DATADIR%%/chats.tcl
@@ -387,7 +388,8 @@ bin/tkabber
 %%DATADIR%%/tclxmpp/doc/xmpp_xml.man
 %%DATADIR%%/tclxmpp/examples/chessbot.tcl
 %%DATADIR%%/tclxmpp/examples/echo.tcl
-%%DATADIR%%/tclxmpp/examples/xsend.tcl
+%%DATADIR%%/tclxmpp/examples/jsend.tcl
+%%DATADIR%%/tclxmpp/examples/rssbot.tcl
 %%DATADIR%%/tclxmpp/license.terms
 %%DATADIR%%/tclxmpp/tclxml/pkgIndex.tcl
 %%DATADIR%%/tclxmpp/tclxml/sgml.tcl
