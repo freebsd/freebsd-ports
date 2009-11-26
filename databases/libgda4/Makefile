@@ -107,8 +107,7 @@ CONFIGURE_ARGS+=	--without-odbc
 .endif
 
 .if ${LIBGDA4_SLAVE}=="jdbc"
-USE_JAVA=		yes
-BROKEN=			does not configure
+USE_JAVA=		bsdjava openjdk
 .else
 CONFIGURE_ARGS+=	--without-java
 .endif
