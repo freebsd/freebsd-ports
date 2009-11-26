@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	istgt
-PORTVERSION=	20090428
+PORTVERSION=	20091124
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
 MAINTAINER=	aoyama@peach.ne.jp
-COMMENT=	An iSCSI target for FreeBSD 7.x with ZFS
+COMMENT=	An iSCSI target for FreeBSD 7.x
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
