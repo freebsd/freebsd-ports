@@ -340,7 +340,6 @@ include/omniORBpy.h
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy011.html
 %%PORTDOCS%%%%DOCSDIR%%/html/previous_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/omniORBpy.pdf
-%%PORTDOCS%%%%DOCSDIR%%/omniORBpy.ps
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.bib
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.tex
 %%PORTDOCS%%%%EXAMPLESDIR%%/echo/echo.idl

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	omniORB
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
-
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A robust high performance CORBA ORB for C++ and Python
 
@@ -21,12 +20,8 @@ USE_OPENSSL=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile
-BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
-CONFIGURE_WRKSRC=	${WRKSRC}/build
-CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
-		CPP=${CPP} PYTHON=${PYTHON_CMD}
+CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CPP=${CPP} \
+		PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--datadir=${DATADIR} --with-openssl=${OPENSSLBASE} \
 		--with-omniORB-config=${PREFIX}/etc/omniORB.cfg \
 		--with-omniNames-logdir=/var/log
@@ -37,21 +32,18 @@ PLIST_SUB+=	STATIC="@comment "
 PLIST_SUB+=	STATIC=""
 .endif
 
-MAN1=		catior.1 genior.1 nameclt.1 omniNames.1 omniidl.1
+MAN1=		catior.1 convertior.1 genior.1 nameclt.1 omniidl.1
+MAN8=		omniMapper.8 omniNames.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
 		-e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
 
-pre-configure:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
-
 post-install:
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${PYTHON_SITELIBDIR}/omniidl')"
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${PYTHON_SITELIBDIR}/omniidl_be')"
-.for manpage in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/${manpage} ${MANPREFIX}/man/man1
-.endfor
+	@cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
+	@cd ${WRKSRC}/man/man8 && ${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} COPYING README.FIRST.txt README.unix \
