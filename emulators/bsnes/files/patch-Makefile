@@ -1,29 +1,28 @@
---- Makefile.orig	2009-06-07 01:56:29.000000000 +0000
-+++ Makefile	2009-07-03 10:10:19.032836854 +0000
-@@ -6,8 +6,8 @@
+--- src/Makefile.orig	2009-11-01 00:45:19.000000000 +0100
++++ src/Makefile	2009-11-01 00:45:50.000000000 +0100
+@@ -6,9 +6,9 @@
  ### compiler ###
  ################
  
 -c     := $(compiler)
 -cpp   := $(subst cc,++,$(compiler))
+-flags := -O3 -fomit-frame-pointer -Ilib
 +c     := ${CC}
 +cpp   := ${CXX}
- flags := -O3 -fomit-frame-pointer -Ilib
++flags := -O3 -fomit-frame-pointer -Ilib -I${LOCALBASE}/include
  link  :=
  
-@@ -36,6 +36,15 @@
-   ruby += input.carbon
+ # profile-guided instrumentation:
+@@ -25,9 +25,9 @@
+ ifeq ($(platform),x)
+   link += -s
  
-   link += $(if $(findstring audio.openal,$(ruby)),-framework OpenAL)
-+else ifeq ($(platform),bsd)
-+  link += -s
-+  flags += -I${LOCALBASE}/include
-+
+-  ruby := video.glx video.xv video.qtraster video.sdl
+-  ruby += audio.alsa audio.openal audio.oss audio.pulseaudio audio.ao
+-  ruby += input.sdl input.x
 +  ruby := VIDEO
 +  ruby += AUDIO
 +  ruby += INPUT
-+
-+  link += $(if $(findstring audio.openal,$(ruby)),-lopenal)
- else ifeq ($(platform),win)
-   link += -mwindows
- # link += -mconsole
+ 
+   link += $(if $(findstring audio.openal,$(ruby)),-lopenal)
+ else ifeq ($(platform),osx)

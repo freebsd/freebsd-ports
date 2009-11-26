@@ -5,11 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	bsnes
-PORTVERSION=	0.50
+PORTVERSION=	0.57
 CATEGORIES=	emulators
-MASTER_SITES=	http://byuusan.kuro-hitsuji.net/ \
+MASTER_SITES=	http://byuu.org/files/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
+DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}${EXTRACT_SUFX} snesreader_v009${EXTRACT_SUFX} \
+		snesfilter_v006${EXTRACT_SUFX} supergameboy_v013
 
 MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	Super Nintendo/Super Famicom emulator
@@ -21,8 +22,9 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui
 
 ONLY_FOR_ARCHS=	i386 amd64
-WRKSRC=		${WRKDIR}/src/
-MAKE_ENV+=	enable_gzip=true
+WRKSRC=		${WRKDIR}/
+MAKE_ENV+=	moc=moc-qt4
+USE_LDCONFIG=	yes
 
 OPTIONS=	VIDEO_GLX "Build GLX Video Driver" on \
 		VIDEO_XV "Build Xv Video Driver" off \
@@ -95,14 +97,23 @@ IGNORE=	you have to choose at least a audio driver first
 IGNORE=	you have to choose at least an input driver first
 .endif
 
-PLIST_FILES=	bin/bsnes
-
 post-patch:
-	${REINPLACE_CMD} -e 's|VIDEO|${VIDEO_DRIVER}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|AUDIO|${AUDIO_DRIVER}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|INPUT|${INPUT_DRIVER}|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|VIDEO|${VIDEO_DRIVER}|' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's|AUDIO|${AUDIO_DRIVER}|' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's|INPUT|${INPUT_DRIVER}|' ${WRKSRC}/src/Makefile
+
+do-build:
+	(cd ${WRKSRC}/src && ${GMAKE} ${MAKE_ENV})
+	(cd ${WRKSRC}/snesreader && ${GMAKE} ${MAKE_ENV})
+	(cd ${WRKSRC}/snesfilter && ${GMAKE} ${MAKE_ENV})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/src/data/bsnes.png ${PREFIX}/share/pixmaps/bsnes.png
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/src/data/bsnes.desktop ${PREFIX}/share/applications/bsnes.desktop
+	${INSTALL_DATA} ${WRKSRC}/snesreader/libsnesreader.so ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/snesfilter/libsnesfilter.so ${PREFIX}/lib/
 
 .include <bsd.port.post.mk>
