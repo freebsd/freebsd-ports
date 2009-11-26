@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.133
+PORTVERSION=	0.135
 CATEGORIES=	emulators
 MASTER_SITES=	http://rbelmont.mameworld.info/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
@@ -52,11 +52,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/libexec/sdlmess
 	${INSTALL_PROGRAM} ${WRKSRC}/chdman ${PREFIX}/libexec/sdlmess
+	${INSTALL_PROGRAM} ${WRKSRC}/imgtool ${PREFIX}/libexec/sdlmess
+	${INSTALL_PROGRAM} ${WRKSRC}/jedutil ${PREFIX}/libexec/sdlmess
 	${INSTALL_PROGRAM} ${WRKSRC}/ldresample ${PREFIX}/libexec/sdlmess
 	${INSTALL_PROGRAM} ${WRKSRC}/ldverify ${PREFIX}/libexec/sdlmess
 	${INSTALL_PROGRAM} ${WRKSRC}/testkeys ${PREFIX}/libexec/sdlmess
-	${INSTALL_PROGRAM} ${WRKSRC}/imgtool ${PREFIX}/libexec/sdlmess
-	${INSTALL_PROGRAM} ${WRKSRC}/jedutil ${PREFIX}/libexec/sdlmess
+	${INSTALL_PROGRAM} ${WRKSRC}/unidasm ${PREFIX}/libexec/sdlmess
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
