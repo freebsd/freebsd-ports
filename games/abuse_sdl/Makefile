@@ -14,7 +14,7 @@ MASTER_SITES=	http://abuse.zoy.org/raw/Downloads/ \
 		http://casemanl.linux.tucows.com/files/
 DISTNAME=	abuse-${PORTVERSION}
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL port of the Abuse game engine
 
 # Add in the oposite, request games/abuse if being installed directly

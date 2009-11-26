@@ -10,7 +10,7 @@ PORTVERSION=	0.996
 CATEGORIES=	ftp
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013366/
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find directory&file on a ftp server
 
 PLIST_FILES=	bin/ftpfind

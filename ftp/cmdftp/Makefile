@@ -10,7 +10,7 @@ PORTVERSION=	0.9.7
 CATEGORIES=	ftp
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line shell-like ftp client
 
 GNU_CONFIGURE=	yes

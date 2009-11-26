@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.pardus.org.tr/pub/source/2007/ \
 DISTFILES=	abuse_datafiles.tar.gz
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The classic 2D action game Abuse
 
 RUN_DEPENDS=	abuse.sdl:${PORTSDIR}/games/abuse_sdl
