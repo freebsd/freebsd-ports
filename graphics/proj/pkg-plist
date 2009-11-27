@@ -12,7 +12,7 @@ include/projects.h
 lib/libproj.a
 lib/libproj.la
 lib/libproj.so
-lib/libproj.so.5
+lib/libproj.so.6
 %%DATADIR%%/FL
 %%DATADIR%%/GL27
 %%DATADIR%%/IGNF
