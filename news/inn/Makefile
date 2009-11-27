@@ -7,7 +7,7 @@
 
 PORTNAME?=	inn
 PORTVERSION?=	2.4.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	news ipv6
 MASTER_SITES?=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR?=	${PORTNAME}
@@ -22,14 +22,13 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-WANT_PERL=	yes
+USE_PERL5=	yes
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 
 BRANCH?=	# Empty
 
-OPTIONS=	PERL		"Embedded Perl script support"			On	\
-		PYTHON		"Embedded Python module support"		Off	\
+OPTIONS=	PYTHON		"Embedded Python module support"		Off	\
 		TCL		"Embedded TCL support"				Off	\
 		KERBEROS	"Enable Kerberos auth support"			Off	\
 		SASL		"Enable SASL support (for imapfeed auth)"	Off	\
@@ -54,7 +53,7 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--with-run-dir=${INN_RUNDIR}		\
 			--with-db-dir=${INN_DBDIR}		\
 			--with-ssl=${OPENSSLBASE}		\
-			--enable-ipv6
+			--enable-ipv6 --with-perl
 
 .include <bsd.port.options.mk>
 
@@ -78,11 +77,6 @@ CONFIGURE_ENV+=		ac_cv_func_krb5_init_ets=yes
 CONFIGURE_ARGS+=	--without-kerberos
 .endif
 
-.if !defined(WITHOUT_PERL)
-USE_PERL5=		yes
-CONFIGURE_ARGS+=	--with-perl
-.endif
-
 .if defined(WITH_PYTHON)
 USE_PYTHON=		YES
 CONFIGURE_ARGS+=	--with-python
@@ -90,7 +84,7 @@ CONFIGURE_ARGS+=	--with-python
 .endif
 
 .if defined(WITH_TCL)
-USE_TCL=		84
+USE_TCL=		84+
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}
 .endif
 
@@ -193,8 +187,8 @@ post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \
 	                  ${WRKSRC}/site/Makefile
 .if defined(WITH_TCL)
-	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl8.4/tcl.h>!' ${WRKSRC}/innd/innd.h
-	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl84!'			\
+	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl${TCL_VER}/tcl.h>!' ${WRKSRC}/innd/innd.h
+	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl${USE_TCL}!'			\
 	                  ${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e 's!et/com_err\.h!com_err.h!g'	\
