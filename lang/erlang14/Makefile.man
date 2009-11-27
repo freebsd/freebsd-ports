@@ -7,6 +7,7 @@ MAN1=	epmd.1 \
 	erlsrv.1 \
 	escript.1 \
 	run_erl.1 \
+	run_test.1 \
 	start.1 \
 	start_erl.1 \
 	start_webtool.1 \
@@ -271,7 +272,6 @@ MAN3=	CosEventChannelAdmin.3 \
 	orddict.3 \
 	ordsets.3 \
 	os.3 \
-	os_mon.3 \
 	os_mon_mib.3 \
 	os_sup.3 \
 	otp_mib.3 \
@@ -332,6 +332,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmpm_conf.3 \
 	snmpm_mpd.3 \
 	snmpm_network_interface.3 \
+	snmpm_network_interface_filter.3 \
 	snmpm_user.3 \
 	sofs.3 \
 	ssh.3 \
@@ -440,8 +441,17 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxGrid.3 \
 	wxGridBagSizer.3 \
 	wxGridCellAttr.3 \
+	wxGridCellBoolEditor.3 \
+	wxGridCellBoolRenderer.3 \
+	wxGridCellChoiceEditor.3 \
 	wxGridCellEditor.3 \
+	wxGridCellFloatEditor.3 \
+	wxGridCellFloatRenderer.3 \
+	wxGridCellNumberEditor.3 \
+	wxGridCellNumberRenderer.3 \
 	wxGridCellRenderer.3 \
+	wxGridCellStringRenderer.3 \
+	wxGridCellTextEditor.3 \
 	wxGridEvent.3 \
 	wxGridSizer.3 \
 	wxHelpEvent.3 \
@@ -463,6 +473,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxListItem.3 \
 	wxListView.3 \
 	wxListbook.3 \
+	wxLogNull.3 \
 	wxMDIChildFrame.3 \
 	wxMDIClientWindow.3 \
 	wxMDIParentFrame.3 \
@@ -587,9 +598,9 @@ MAN6=	common_test.6 \
 	docbuilder.6 \
 	kernel.6 \
 	observer.6 \
+	os_mon.6 \
 	runtime_tools.6 \
 	sasl.6 \
-	snmp.6 \
 	ssl.6 \
 	stdlib.6 \
 	test_server.6
