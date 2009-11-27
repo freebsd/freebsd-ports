@@ -7,7 +7,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.904
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xine/${PORTNAME}%20%28GTK%20front%20end%29/${PORTVERSION}
 
@@ -73,7 +73,7 @@ LIB_DEPENDS+=	js.1:${PORTSDIR}/lang/spidermonkey
 CONFIGURE_ARGS+=--without-browser-plugin --with-spidermonkey
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
-USE_GECKO=	firefox mozilla seamonkey xulrunner
+USE_GECKO=	seamonkey
 USE_WEBPLUGINS=	native
 WEBPLUGINS_DIR=	${PREFIX}/lib/gxine
 WEBPLUGINS_FILES=gxineplugin.so

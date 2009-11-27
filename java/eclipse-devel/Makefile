@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200809111700
@@ -32,7 +32,7 @@ USE_GL=		glu
 PATCH=		${LOCALBASE}/bin/gpatch
 
 .if !defined(WITHOUT_MOZILLA)
-USE_GECKO=	firefox xulrunner seamonkey
+USE_GECKO=	libxul seamonkey
 .endif
 
 USE_JAVA=	yes
