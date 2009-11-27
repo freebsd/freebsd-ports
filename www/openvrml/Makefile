@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.17.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -35,7 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_
 		LIBS="-lm"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GECKO=	firefox seamonkey
+USE_GECKO=	libxul seamonkey
 
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=openvrml.so
@@ -45,7 +45,6 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 .if ${OSVERSION} < 700042

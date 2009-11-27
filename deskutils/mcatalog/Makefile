@@ -8,7 +8,7 @@
 
 PORTNAME=	mcatalog
 PORTVERSION=	0.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.mcatalog.net/releases/
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mai
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mail/evolution-sharp \
 		${LOCALBASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20
 
-USE_GECKO=	firefox mozilla
+USE_GECKO=	libxul
 USE_GNOME=	gnomeprefix gnomehack gconf2 intlhack gnomesharp20
 USE_SQLITE=	2
 USE_GMAKE=	yes
@@ -47,6 +47,4 @@ post-install:
 .endif
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

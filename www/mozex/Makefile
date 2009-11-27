@@ -8,7 +8,7 @@
 
 PORTNAME=	mozex
 PORTVERSION=	1.07
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www mail news ftp
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +25,8 @@ PLIST_FILES=	%%MOZDIR%%/chrome/mozex.jar
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozex/Makefile.xpi"
 
-.if ${GECKO} == mozilla
-PLIST_FILES+=	%%MOZDIR%%/chrome/overlayinfo/browser/content/overlays.rdf
+.if ${GECKO} == libxul
+PLIST_FILES+=	%%MOZDIR%%/chrome/installed-chrome.txt
 .endif
 
 do-install:

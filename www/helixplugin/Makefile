@@ -7,7 +7,7 @@
 
 PORTNAME=	hxplugin
 PORTVERSION=	20070318
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://virtual-estates.net/~mi/port-stuff/
 
@@ -17,7 +17,7 @@ COMMENT=	Browser plugin for Real or Helix Players
 USE_BZIP2	 =	yes
 USE_DOS2UNIX	 =	yes
 MAKEFILE	 =	${FILESDIR}/BSDmakefile
-USE_GECKO	 =	firefox mozilla seamonkey xulrunner
+USE_GECKO	 =	seamonkey
 MAKE_ENV	+=	TOP="${WRKSRC}" GECKO=${GECKO}
 
 USE_WEBPLUGINS=	native
@@ -32,6 +32,5 @@ do-install:
 	${INSTALL_DATA} ${WEBPLUGINS_FILES:S|^|${WRKSRC}/|} ${WEBPLUGINS_DIR}/
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	gecko-mediaplayer
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -23,7 +23,7 @@ OPTIONS=	GCONF	"Use Gconf to store preferences"	off \
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20
-USE_GECKO=	firefox mozilla seamonkey libxul
+USE_GECKO=	libxul seamonkey
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=	${PORTNAME}-dvx.so ${PORTNAME}-qt.so ${PORTNAME}-rm.so \
 				${PORTNAME}-wmp.so ${PORTNAME}.so
@@ -55,6 +55,5 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .include <bsd.port.post.mk>
