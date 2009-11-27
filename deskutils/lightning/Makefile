@@ -24,6 +24,7 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_GECKO=	gecko
 WANT_GNOME=	yes
 WANT_PERL=	yes
 SUNBIRD=	${PORTNAME}
@@ -44,7 +45,6 @@ GECKO_PLIST_PRE_FILES=	lib/sunbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce
 .include <bsd.init.mk>
 .include <bsd.libnames.mk>
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
 
 .if ${ARCH}=="sparc64"
 BROKEN=		does not build
