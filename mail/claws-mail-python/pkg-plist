@@ -1,0 +1,5 @@
+lib/claws-mail/plugins/python_plugin.a
+lib/claws-mail/plugins/python_plugin.la
+lib/claws-mail/plugins/python_plugin.so
+@dirrmtry lib/claws-mail/plugins
+@dirrmtry lib/claws-mail
