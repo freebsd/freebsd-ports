@@ -2920,8 +2920,6 @@
     SUBDIR += tclthread
     SUBDIR += tcltls
     SUBDIR += tclxml
-    SUBDIR += tclxml-expat
-    SUBDIR += tclxml-libxml2
     SUBDIR += tdl
     SUBDIR += templ
     SUBDIR += terminality

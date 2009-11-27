@@ -1500,8 +1500,6 @@
     SUBDIR += swish++
     SUBDIR += swish-e
     SUBDIR += syndigator
-    SUBDIR += tcldom
-    SUBDIR += tcldom-libxml2
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
     SUBDIR += tdiary
