@@ -486,7 +486,6 @@
     SUBDIR += gstreamer-plugins-sdl
     SUBDIR += gstreamer-plugins-soup
     SUBDIR += gtgt
-    SUBDIR += gtkmozedit
     SUBDIR += gtkparasite
     SUBDIR += gtranslator
     SUBDIR += guichan
