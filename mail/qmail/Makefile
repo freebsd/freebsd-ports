@@ -494,7 +494,7 @@ PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:grtdelay \
 		${MASTER_SITE_LOCAL:S/$/:grtdelay/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:grtdelay
 PATCHFILES+=	qmail-ldap-${LDAP_PATCH_DATE}-grtdelay.patch:grtdelay
-DOCFILES_WRKDIR_doc+=	README.GREETDELAY
+DOCFILES_WRKSRC+=	README.GREETDELAY
 .endif
 
 .if defined(SLAVE_LDAP) && defined(WITH_ENHACELOGS)
