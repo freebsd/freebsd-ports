@@ -1,0 +1,29 @@
+Change copy_file() function to try to create a hard link instead
+of copying...
+
+Submitted to author:
+
+	http://www.epmhome.org/str.php?L21+P0+S-2+C0+I0+E0+M10+Q
+
+	-mi
+
+--- file.c	2006-08-29 12:43:09.000000000 -0400
++++ file.c	2009-11-16 19:49:06.242283000 -0500
+@@ -67,4 +67,17 @@
+ 
+   unlink(dst);
++  if (link(src, dst) == 0)
++  {
++    if (Verbosity > 1)
++       printf("Successfully linked %s to %s instead of copying\n",
++              src, dst);
++    return 0;
++  }
++  else
++  {
++    if (Verbosity > 1)
++       printf("Linking %s to %s failed: %s.\n\tFalling back to copying\n",
++              src, dst, strerror(errno));
++  }
+ 
+   if ((dstfile = fopen(dst, "wb")) == NULL)
