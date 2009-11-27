@@ -7,6 +7,7 @@
 
 PORTNAME=	Miro
 PORTVERSION=	2.5.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -29,7 +30,7 @@ INSTALL_WRKSRC=	${WRKSRC}/platform/gtk-x11
 
 USE_GCC=	4.3+
 USE_GNOME=	gtk20 pygnomeextras
-USE_GECKO=	firefox libxul seamonkey xulrunner mozilla
+USE_GECKO=	libxul seamonkey
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
 WANT_GSTREAMER=	yes
@@ -48,7 +49,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME:L}
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(WITH_GSTREAMER)
 USE_GSTREAMER+=	python

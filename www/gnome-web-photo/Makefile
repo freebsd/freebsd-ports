@@ -9,7 +9,7 @@
 
 PORTNAME=	gnome-web-photo
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	GNOME
 
@@ -17,7 +17,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Tool to generate full-size image files and thumbnails
 
 USE_BZIP2=	yes
-USE_GECKO=	firefox seamonkey xulrunner
+USE_GECKO=	seamonkey
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko=${GECKO}
 USE_GMAKE=	yes
@@ -25,7 +25,6 @@ USE_GNOME=	gnomevfs2 gnomehack gnomeprefix
 GCONF_SCHEMAS=	thumbnailer.schemas
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure

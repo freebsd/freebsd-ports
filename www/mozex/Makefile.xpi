@@ -4,8 +4,8 @@
 # $FreeBSD$
 #
 
-USE_GECKO=	seamonkey mozilla
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+USE_GECKO=	libxul
+.include "${.CURDIR}/../../Mk/bsd.gecko.mk"
 
 EXTRACT_SUFX=   .xpi
 

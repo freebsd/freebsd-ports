@@ -8,7 +8,7 @@
 
 PORTNAME=	openftd
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	http://www.icheb.nl/mirrors/openftd/
 
@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GECKO=	firefox
+USE_GECKO=	libxul
 
 USE_GNOME=	glib20 libxml2 gtk20 libgnome gtkhtml3 libxslt
 
@@ -40,5 +40,4 @@ CONFIGURE_ARGS=	--with-libcurl-libraries=${LOCALBASE}/lib \
 BROKEN=		Does not install
 .endif
 
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>

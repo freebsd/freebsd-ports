@@ -8,7 +8,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		${MASTER_SITE_LOCAL}/gahr/:fluid \
@@ -34,7 +34,7 @@ MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}
 
 USE_JAVA=	yes
-USE_GECKO=	xulrunner firefox mozilla
+USE_GECKO=	libxul
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.4+
@@ -133,5 +133,4 @@ post-install:
 	@${ECHO} "enable them."
 	@${ECHO}
 
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>

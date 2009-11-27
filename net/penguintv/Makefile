@@ -6,7 +6,7 @@
 
 PORTNAME=	PenguinTV
 PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/4.0
 
@@ -31,13 +31,12 @@ OPTIONS=	PYLUCENE "Use Lucene search engine" ON \
 
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
-USE_GECKO=	firefox
+USE_GECKO=	libxul
 USE_DISPLAY=	yes
 
 CONFLICTS=	PenguinTV-devel-[0-9]*
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(WITH_GSTREAMER)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
