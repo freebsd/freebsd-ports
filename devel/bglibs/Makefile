@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
 		http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
 NOT_FOR_ARCHS=	alpha

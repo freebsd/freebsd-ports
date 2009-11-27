@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mp3-utils/mp3info
 DISTNAME=	${PORTNAME}-${PORTVERSION}a
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Tool to manipulate ID3 tags for MP3 files
 
 WANT_GNOME=	yes

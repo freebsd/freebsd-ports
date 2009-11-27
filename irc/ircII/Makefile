@@ -11,7 +11,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
 		ftp://ftp.irc.org/irc/clients/unix/ircII/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
 
 GNU_CONFIGURE=	yes

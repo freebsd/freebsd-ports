@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.franken.de/pub/crypt/misc/ \
 		http://ftp.tugraz.at/mirror/crypto/programs/hpack/
 DISTNAME=	hpack79src
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
 NO_WRKSUBDIR=	yes

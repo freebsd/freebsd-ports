@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-3.0/ \
 		http://ftp.tpnet.pl/vol/d4/ftp.rpm.org/rpm/dist/rpm-3.0.x/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

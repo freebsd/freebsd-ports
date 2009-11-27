@@ -14,7 +14,7 @@ MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
 
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \

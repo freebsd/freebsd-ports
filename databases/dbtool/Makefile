@@ -11,7 +11,7 @@ PORTVERSION=	1.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Store and retrieve data in a key/value format in a hash database
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

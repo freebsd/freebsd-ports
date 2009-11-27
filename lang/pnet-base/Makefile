@@ -13,7 +13,7 @@ MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 PKGNAMESUFFIX=	base
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc

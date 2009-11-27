@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.softwareforge.de/releases/${PORTNAME}/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp

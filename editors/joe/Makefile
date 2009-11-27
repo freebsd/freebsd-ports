@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Joe's Own Editor
 
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell

@@ -11,7 +11,7 @@ PORTVERSION=	1.4.16
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A graphical program for editing sound files
 
 USE_BZIP2=	yes

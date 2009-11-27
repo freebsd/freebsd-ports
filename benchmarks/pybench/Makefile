@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	benchmarks python
 MASTER_SITES=	http://downloads.egenix.com/python/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An extensible benchmark suite for Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

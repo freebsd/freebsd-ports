@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
 
 USE_XORG=	x11 xt

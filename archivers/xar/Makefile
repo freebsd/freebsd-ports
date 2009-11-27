@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	OpenDarwin XML eXtensible ARchiver
 
 USE_LDCONFIG=	yes

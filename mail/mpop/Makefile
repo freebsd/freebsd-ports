@@ -1,6 +1,6 @@
 # New ports collection makefile for:    mpop
 # Date created:         2009-10-24
-# Whom:                 Sylvio Cesar <scjamorim@bsd.com.br>
+# Whom:                 Sylvio Cesar <sylvio@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0.19
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	MPOP is a small and fast POP3 client
 
 USE_BZIP2=	yes

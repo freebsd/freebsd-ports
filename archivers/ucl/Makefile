@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A data compression library with low memory usage
 
 USE_AUTOTOOLS=	libtool:22

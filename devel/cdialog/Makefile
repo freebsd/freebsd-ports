@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://invisible-island.net/dialog/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
 USE_AUTOTOOLS=	libtool:22

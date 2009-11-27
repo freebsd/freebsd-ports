@@ -10,7 +10,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://zakalwe.fi/~shd/foss/xdms/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An Amiga DMS archiver unpacker
 
 USE_BZIP2=	yes

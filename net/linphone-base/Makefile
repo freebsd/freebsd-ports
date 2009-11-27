@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/stable/sources
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \

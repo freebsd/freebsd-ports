@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
 USE_PYTHON=	yes

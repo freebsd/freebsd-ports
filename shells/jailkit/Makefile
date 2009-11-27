@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jailkit
 # Date created:		2009-08-20
-# Whom:			Sylvio Cesar <scjamorim@bsd.com.br>
+# Whom:			Sylvio Cesar <sylvio@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Jailkit is a set of utilities to limit user account
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A 3D OpenGL based chess game
 
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \

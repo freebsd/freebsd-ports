@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.memtest86.com/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Stand alone memory test for x86 architecture computers
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

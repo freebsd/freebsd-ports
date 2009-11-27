@@ -10,7 +10,7 @@ PORTVERSION=	3.3.10
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \

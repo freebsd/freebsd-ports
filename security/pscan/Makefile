@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://deployingradius.com/pscan/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Security C code scanner for misuse of format strings
 
 ALL_TARGET=	#empty

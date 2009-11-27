@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.0-pre6
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An ncurses based frontend to mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123

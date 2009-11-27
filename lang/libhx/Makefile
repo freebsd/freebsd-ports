@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libhx
 # Date created:		2009-06-20
-# Whom:			Sylvio Cesar <scjamorim@bsd.com.br>
+# Whom:			Sylvio Cesar <sylvio@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Library C with some additional C++ bindings available
 
 CPPFLAGS=	-I${LOCALBASE}/include

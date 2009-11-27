@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.ca/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

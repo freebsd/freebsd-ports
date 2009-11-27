@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The sound conversion application for the GNOME environment
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer

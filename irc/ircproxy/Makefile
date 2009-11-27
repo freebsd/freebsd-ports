@@ -10,7 +10,7 @@ PORTVERSION=	1.3.4c
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An IRC proxy/bouncer daemon
 
 LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares

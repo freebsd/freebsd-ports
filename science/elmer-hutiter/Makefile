@@ -12,7 +12,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack

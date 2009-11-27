@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake

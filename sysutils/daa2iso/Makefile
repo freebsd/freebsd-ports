@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://aluigi.altervista.org/mytoolz/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert PowerISO DAA files to ISO9660
 
 USE_ZIP=	yes
