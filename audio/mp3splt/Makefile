@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.2.6a
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -20,11 +19,22 @@ USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ARGS+=--enable-oggsplt_symlink --disable-mp3splttest
 
-MAN1=		mp3splt.1
+OPTIONS=	NLS "Native language support" on
+
+MAN1=		oggsplt.1 mp3splt.1
 PLIST_FILES=	bin/mp3splt bin/oggsplt
 
 post-install:
-	@${LN} -fsv ${PREFIX}/bin/mp3splt ${PREFIX}/bin/oggsplt
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+.else
+USE_GETTEXT=	yes
+LANGUAGES=	de fr
+.for language in ${LANGUAGES}
+PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/mp3splt.mo
+.endfor
+.endif
 
 .include <bsd.port.mk>
