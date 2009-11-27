@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	skystar2.8
+PORTNAME=	skystar2
 PORTVERSION=	1.32
+PORTEPOCH=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar2/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
+DISTNAME=	${PORTNAME}.8_${PORTVERSION:S/.//}
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A, ver. ${PORTVERSION}
