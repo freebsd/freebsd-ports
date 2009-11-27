@@ -53,7 +53,6 @@
     SUBDIR += embryo
     SUBDIR += eperl
     SUBDIR += erlang
-    SUBDIR += erlang-doc
     SUBDIR += erlang-lite
     SUBDIR += etoile-compiler
     SUBDIR += etoile-io
