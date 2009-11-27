@@ -5,16 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	skystar2
-PORTVERSION=	1.31
-PORTEPOCH=	1
+PORTNAME=	skystar2.8
+PORTVERSION=	1.32
 CATEGORIES=	net kld
 MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar2/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 
 MAINTAINER=	admin@lissyara.su
-COMMENT=	Kernel module and program for SkyStar2, ver. ${PORTVERSION}
+COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A, ver. ${PORTVERSION}
 
 USE_BZIP2=	yes
 SYSDIR?=	${SRC_BASE}/sys
@@ -29,6 +28,12 @@ pre-fetch:
 	${ECHO}  "*************************************************"; \
 	exit 1
 .endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#g' \
+		${WRKSRC}/dvbnet/Makefile \
+		${WRKSRC}/dvbtune/Makefile \
+		${WRKSRC}/monitor/Makefile
 
 pre-install:
 	${INSTALL} -d ${KMODDIR}
