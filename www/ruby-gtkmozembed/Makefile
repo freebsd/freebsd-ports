@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkmozembed
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -22,7 +22,7 @@ COMMENT=	Ruby binding for GtkMozEmbed a widget embedding a Gecko renderer
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
-USE_GECKO=	firefox mozilla xulrunner
+USE_GECKO=	seamonkey
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"

@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -414,7 +414,7 @@ CONFIGURE_ARGS+=--disable-a52
 .endif
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
-USE_GECKO=	firefox xulrunner seamonkey
+USE_GECKO=	libxul seamonkey
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=libvlcplugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"

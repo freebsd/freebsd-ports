@@ -7,7 +7,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -46,7 +46,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_XULRUNNER)
-USE_GECKO=	xulrunner
+USE_GECKO=	libxul
 CONFIGURE_ARGS+=	--with-javascript=xulrunner
 .else
 CONFIGURE_ARGS+=	--with-javascript=none
