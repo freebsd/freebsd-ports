@@ -16,8 +16,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
 USE_BZIP2=	yes
-USE_TCL_BUILD=	84
-USE_TCL=	84
+USE_TCL_BUILD=	yes
+USE_TCL=	yes
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -28,8 +28,19 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-tcl="${TCL_LIBDIR}"
 PLIST_SUB=	TCLX_VER=${PORTVERSION}
 MAKE_JOBS_SAFE=	yes
-ALL_TARGET=	binaries libraries	# test
+ALL_TARGET=	binaries libraries
 INSTALL_TARGET=	install-binaries install-libraries
+
+check test regression-check:
+	#
+	# Define TCLX_NO_SELF_TESTS to disable automatic
+	# running of TclX' checks after building
+	#
+	${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} test
+
+.ifndef TCLX_NO_SELF_TESTS
+post-build:	test
+.endif
 
 MAN3=	CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3
 MANN=	TclX.n
@@ -47,6 +58,10 @@ MLINKS+=	TclXInit.3	$l.3
 .endfor
 
 .include <bsd.port.pre.mk>
+
+.if ${TCL_VER} > 8.4
+EXTRA_PATCHES+=	${FILESDIR}/tcl85-test-patch
+.endif
 
 pre-configure:
 .if exists(${TCL_LIBDIR}/tclConfig-threads.sh)
