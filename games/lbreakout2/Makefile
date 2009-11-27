@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lbreakout2
-DISTVERSION=	2.6beta-3
-PORTREVISION=	2
+PORTVERSION=	2.6
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames/${PORTNAME}/2.6
+MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	mmendez@gmail.com
 COMMENT=	The polished successor to LBreakout
@@ -23,6 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-sdl-net \
 		--localstatedir=/var/games \
 		--disable-nls
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -45,6 +45,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.jpg ${DOCSDIR}
 .endif
 	@${SETENV} "PKG_PREFIX=${PREFIX}" \
-		${SH} pkg-install ${PKGNAME} POST-INSTALL
+		${SH} ${.CURDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
