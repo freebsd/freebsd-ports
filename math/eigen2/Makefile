@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.10
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://bitbucket.org/eigen/eigen2/get/
+MASTER_SITES=	http://bitbucket.org/eigen/eigen/get/
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -20,6 +20,12 @@ USE_CMAKE=	yes
 
 LATEST_LINK=	${PORTNAME}2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}2
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|g' \
+		${WRKSRC}/CMakeLists.txt
+
+.include <bsd.port.post.mk>
