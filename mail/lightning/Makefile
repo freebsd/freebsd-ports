@@ -25,6 +25,7 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_GECKO=	gecko
 WANT_GNOME=	yes
 WANT_PERL=	yes
 LIGHTNING_DIR=	lib/thunderbird/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}
@@ -78,5 +79,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications
 	${LN} -sf ${MOZILLA_ICON_SRC} ${PREFIX}/share/pixmaps/${MOZILLA_ICON}
 
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>

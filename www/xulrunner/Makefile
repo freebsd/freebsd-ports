@@ -23,6 +23,7 @@ ALL_TARGET=	default
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GECKO=	gecko
 
 PORT_MOZCONFIG=	${WRKSRC}/xulrunner/config/mozconfig
 MOZ_OPTIONS?=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
@@ -32,6 +33,4 @@ MOZ_EXTENSIONS=	default,cookie,permissions
 OPTIONS=	# Empty, used for generic gecko OPTIONS
 USE_GECKO_OPTIONS=	java debug logging optimized_cflags
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

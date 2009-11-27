@@ -18,6 +18,7 @@ COMMENT=	The open source, standards compliant web browser
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GECKO=	gecko
 WANT_GNOME=	yes
 WANT_PERL=	yes
 HAS_CONFIGURE=	yes
@@ -114,5 +115,4 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/seamonkey.desktop ${PREFIX}/share/applications
 
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>

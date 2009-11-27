@@ -29,6 +29,7 @@ EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GECKO=	gecko
 WANT_PERL=	yes
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
@@ -110,5 +111,4 @@ post-install:
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 	@${CAT} ${PKGMESSAGE}
 
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>
