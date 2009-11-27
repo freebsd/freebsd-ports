@@ -459,6 +459,7 @@
     SUBDIR += mp3rename
     SUBDIR += mp3riot
     SUBDIR += mp3splt
+    SUBDIR += mp3splt-gtk
     SUBDIR += mp3stat
     SUBDIR += mp3towav-bundle
     SUBDIR += mp3unicode
