@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lionwiki
 # Date created:		2009-10-07
-# Whom:			Sylvio Cesar <scjamorim@bsd.com.br>
+# Whom:			Sylvio Cesar <sylvio@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	3.1.0
 CATEGORIES=	www
 MASTER_SITES=	http://lionwiki.0o.cz/download/${PORTVERSION}/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Minimalis wiki, extensible, templatable and file based
 
 USE_BZIP2=	yes

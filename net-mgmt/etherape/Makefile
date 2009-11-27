@@ -10,7 +10,7 @@ PORTVERSION=	0.9.7
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A graphical network traffic visualization tool for gnome
 
 USE_GETTEXT=	yes

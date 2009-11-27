@@ -11,7 +11,7 @@ CATEGORIES+=	devel
 MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/cvs2p4/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	CVS to Perforce Converter
 
 REINPLACE_ARGS=	-i ""

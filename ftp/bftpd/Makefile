@@ -10,7 +10,7 @@ PORTVERSION=	2.6
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 WRKSRC=	${WRKDIR}/${PORTNAME}

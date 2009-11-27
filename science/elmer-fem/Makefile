@@ -12,7 +12,7 @@ CATEGORIES=	science tk
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	FEM solver for use in the ELMER FEM package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\

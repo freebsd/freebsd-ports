@@ -10,7 +10,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	irc
 MASTER_SITES=	SF/evilnet/${PORTNAME}%20IRCu/${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	IRC server used by evilnet based off of Undernet\'s ircu
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

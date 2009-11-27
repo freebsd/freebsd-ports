@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S,.,-,g}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Compare/diff two (comma) seperated files with each other
 
 NO_BUILD=	yes

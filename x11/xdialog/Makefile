@@ -14,7 +14,7 @@ MASTER_SITES=	http://thgodef.nerim.net/xdialog/ \
 		http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	BashBurn-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	CD burning bash script
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash

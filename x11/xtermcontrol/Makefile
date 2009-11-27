@@ -10,7 +10,7 @@ PORTVERSION=	2.10
 CATEGORIES=	x11
 MASTER_SITES=	http://www.thrysoee.dk/xtermcontrol/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Tool for dynamic control of xterm properties
 
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm

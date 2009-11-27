@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		cdk-${CDK_VERSION}.tgz:cdk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \

@@ -16,7 +16,7 @@ MASTER_SITES=	SFP \
 MASTER_SITE_SUBDIR=	mailfilter/Mailfilter/${PORTVERSION}
 DISTNAME=	mailfilter-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Filter mail on a pop3 server: saves downloading spam
 
 # This port is filtermail, but the author called it mailfilter. To avoid a

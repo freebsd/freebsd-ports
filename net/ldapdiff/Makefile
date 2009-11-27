@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.ale.org/pub/mirrors/openpkg/sources/DST/ldapdiff/ \
 		http://webtomware.rhoen.de/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A utility for patching LDAP directories using LDIF files
 
 USE_ICONV=	yes

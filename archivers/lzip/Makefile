@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lzip
 # Date created:		2009-06-20
-# Whom:			Sylvio Cesar <scjamorim@bsd.com.br>
+# Whom:			Sylvio Cesar <sylvio@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.8
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Is a lossless data compressor based on the LZMA algorithm
 
 PLIST_FILES=	bin/lzip \

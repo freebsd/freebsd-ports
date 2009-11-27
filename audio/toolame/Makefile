@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%200.2/${PORTNAME}%2002l
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Optimized mpeg 1/2 layer 2 audio encoder
 
 USE_GMAKE=	yes

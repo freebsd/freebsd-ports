@@ -10,7 +10,7 @@ PORTVERSION=	0.13.5
 CATEGORIES=	irc
 MASTER_SITES=	http://xaric.org/software/xaric/releases/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
 
 USE_GNOME=	gnomehack

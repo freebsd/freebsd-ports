@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Alvano\'s MSN Messenger
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib

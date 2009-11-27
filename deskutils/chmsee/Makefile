@@ -10,7 +10,7 @@ PORTVERSION=	1.0.7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \

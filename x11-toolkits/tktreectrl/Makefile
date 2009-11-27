@@ -10,7 +10,7 @@ PORTVERSION=	2.2.9
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Multi-column hierarchical listbox widget
 
 USE_TK=		yes

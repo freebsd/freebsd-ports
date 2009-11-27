@@ -12,7 +12,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF
 DISTNAME=	MUMmer${PORTVERSION}
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A modular system for rapid whole genome alignment
 
 USE_GMAKE=	yes

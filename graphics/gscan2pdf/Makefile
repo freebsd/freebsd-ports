@@ -10,7 +10,7 @@ PORTVERSION=	0.9.28
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 RUN_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \

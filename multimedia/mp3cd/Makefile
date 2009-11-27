@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mp3cd
 # Date created:		2009-06-15
-# Whom:			Sylvio Cesar <scjamorim@bsd.com.br>
+# Whom:			Sylvio Cesar <sylvio@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.026001
 CATEGORIES=	multimedia
 MASTER_SITES=	http://outflux.net/software/pkgs/mp3cd/download/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Perl script that burns MP3 to audio CDs
 
 BUILD_DEPENDS=	${SITE_PERL}/Config/Simple.pm:${PORTSDIR}/devel/p5-Config-Simple

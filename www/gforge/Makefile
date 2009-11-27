@@ -10,7 +10,7 @@ PORTVERSION=	4.5.19
 CATEGORIES=	www devel
 MASTER_SITES=	http://gforge.org/gf/download/frsrelease/150/245/
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Open Source collaborative software development tool
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
