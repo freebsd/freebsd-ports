@@ -189,6 +189,9 @@ noc/dns/migrations/0017_dnszone_paid_till.pyo
 noc/dns/migrations/0018_domain_expired.py
 noc/dns/migrations/0018_domain_expired.pyc
 noc/dns/migrations/0018_domain_expired.pyo
+noc/dns/migrations/0019_dnszoneprofile_description.py
+noc/dns/migrations/0019_dnszoneprofile_description.pyc
+noc/dns/migrations/0019_dnszoneprofile_description.pyo
 noc/dns/migrations/__init__.py
 noc/dns/migrations/__init__.pyc
 noc/dns/migrations/__init__.pyo
@@ -216,6 +219,9 @@ noc/dns/reports/expiring_domains.pyo
 noc/dns/reports/missed_p2p_addresses.py
 noc/dns/reports/missed_p2p_addresses.pyc
 noc/dns/reports/missed_p2p_addresses.pyo
+noc/dns/reports/missed_reverse_zones.py
+noc/dns/reports/missed_reverse_zones.pyc
+noc/dns/reports/missed_reverse_zones.pyo
 noc/dns/reports/ns_zones.py
 noc/dns/reports/ns_zones.pyc
 noc/dns/reports/ns_zones.pyo
@@ -357,6 +363,15 @@ noc/fm/migrations/0025_eventarchivationrule.pyo
 noc/fm/migrations/0026_postprocessingrule_params.py
 noc/fm/migrations/0026_postprocessingrule_params.pyc
 noc/fm/migrations/0026_postprocessingrule_params.pyo
+noc/fm/migrations/0027_sp_delete_event.py
+noc/fm/migrations/0027_sp_delete_event.pyc
+noc/fm/migrations/0027_sp_delete_event.pyo
+noc/fm/migrations/0028_change_eventarchivationrule.py
+noc/fm/migrations/0028_change_eventarchivationrule.pyc
+noc/fm/migrations/0028_change_eventarchivationrule.pyo
+noc/fm/migrations/0029_sp_close_event.py
+noc/fm/migrations/0029_sp_close_event.pyc
+noc/fm/migrations/0029_sp_close_event.pyo
 noc/fm/migrations/__init__.py
 noc/fm/migrations/__init__.pyc
 noc/fm/migrations/__init__.pyo
@@ -492,6 +507,15 @@ noc/fm/rules/classification/Audiocodes/Mediant2000/config.pyo
 noc/fm/rules/classification/Audiocodes/__init__.py
 noc/fm/rules/classification/Audiocodes/__init__.pyc
 noc/fm/rules/classification/Audiocodes/__init__.pyo
+noc/fm/rules/classification/Cisco/ASA/__init__.py
+noc/fm/rules/classification/Cisco/ASA/__init__.pyc
+noc/fm/rules/classification/Cisco/ASA/__init__.pyo
+noc/fm/rules/classification/Cisco/ASA/config.py
+noc/fm/rules/classification/Cisco/ASA/config.pyc
+noc/fm/rules/classification/Cisco/ASA/config.pyo
+noc/fm/rules/classification/Cisco/ASA/logging.py
+noc/fm/rules/classification/Cisco/ASA/logging.pyc
+noc/fm/rules/classification/Cisco/ASA/logging.pyo
 noc/fm/rules/classification/Cisco/AireOS/__init__.py
 noc/fm/rules/classification/Cisco/AireOS/__init__.pyc
 noc/fm/rules/classification/Cisco/AireOS/__init__.pyo
@@ -588,6 +612,9 @@ noc/fm/rules/classification/Force10/FTOS/config.pyo
 noc/fm/rules/classification/Force10/FTOS/link.py
 noc/fm/rules/classification/Force10/FTOS/link.pyc
 noc/fm/rules/classification/Force10/FTOS/link.pyo
+noc/fm/rules/classification/Force10/FTOS/security.py
+noc/fm/rules/classification/Force10/FTOS/security.pyc
+noc/fm/rules/classification/Force10/FTOS/security.pyo
 noc/fm/rules/classification/Force10/__init__.py
 noc/fm/rules/classification/Force10/__init__.pyc
 noc/fm/rules/classification/Force10/__init__.pyo
@@ -716,6 +743,9 @@ noc/ip/migrations/0005_free_ip.pyo
 noc/ip/migrations/0006_vrf_description.py
 noc/ip/migrations/0006_vrf_description.pyc
 noc/ip/migrations/0006_vrf_description.pyo
+noc/ip/migrations/0007_ipv4addressrange.py
+noc/ip/migrations/0007_ipv4addressrange.pyc
+noc/ip/migrations/0007_ipv4addressrange.pyo
 noc/ip/migrations/__init__.py
 noc/ip/migrations/__init__.pyc
 noc/ip/migrations/__init__.pyo
@@ -819,6 +849,9 @@ noc/kb/views.pyo
 noc/lib/__init__.py
 noc/lib/__init__.pyc
 noc/lib/__init__.pyo
+noc/lib/colors.py
+noc/lib/colors.pyc
+noc/lib/colors.pyo
 noc/lib/daemon.py
 noc/lib/daemon.pyc
 noc/lib/daemon.pyo
@@ -870,9 +903,6 @@ noc/lib/render.pyo
 noc/lib/rpsl.py
 noc/lib/rpsl.pyc
 noc/lib/rpsl.pyo
-noc/lib/svg.py
-noc/lib/svg.pyc
-noc/lib/svg.pyo
 noc/lib/sysutils.py
 noc/lib/sysutils.pyc
 noc/lib/sysutils.pyo
@@ -1166,6 +1196,9 @@ noc/peer/migrations/0018_no_lg.pyo
 noc/peer/migrations/0019_no_rcmd.py
 noc/peer/migrations/0019_no_rcmd.pyc
 noc/peer/migrations/0019_no_rcmd.pyo
+noc/peer/migrations/0020_no_masklen.py
+noc/peer/migrations/0020_no_masklen.pyc
+noc/peer/migrations/0020_no_masklen.pyo
 noc/peer/migrations/__init__.py
 noc/peer/migrations/__init__.pyc
 noc/peer/migrations/__init__.pyo
@@ -1224,6 +1257,9 @@ noc/pm/probe.pyo
 noc/pm/probes/__init__.py
 noc/pm/probes/__init__.pyc
 noc/pm/probes/__init__.pyo
+noc/pm/probes/fping.py
+noc/pm/probes/fping.pyc
+noc/pm/probes/fping.pyo
 noc/pm/probes/http.py
 noc/pm/probes/http.pyc
 noc/pm/probes/http.pyo
@@ -1279,6 +1315,9 @@ noc/sa/interfaces/__init__.pyo
 noc/sa/interfaces/base.py
 noc/sa/interfaces/base.pyc
 noc/sa/interfaces/base.pyo
+noc/sa/interfaces/iaddvlan.py
+noc/sa/interfaces/iaddvlan.pyc
+noc/sa/interfaces/iaddvlan.pyo
 noc/sa/interfaces/icommands.py
 noc/sa/interfaces/icommands.pyc
 noc/sa/interfaces/icommands.pyo
@@ -1315,6 +1354,12 @@ noc/sa/interfaces/ihasvlan.pyo
 noc/sa/interfaces/iping.py
 noc/sa/interfaces/iping.pyc
 noc/sa/interfaces/iping.pyo
+noc/sa/interfaces/iremovevlan.py
+noc/sa/interfaces/iremovevlan.pyc
+noc/sa/interfaces/iremovevlan.pyo
+noc/sa/interfaces/isyncvlans.py
+noc/sa/interfaces/isyncvlans.pyc
+noc/sa/interfaces/isyncvlans.pyo
 noc/sa/management/__init__.py
 noc/sa/management/__init__.pyc
 noc/sa/management/__init__.pyo
@@ -1463,6 +1508,9 @@ noc/sa/profiles/Cisco/FWSM/supported.csv
 noc/sa/profiles/Cisco/IOS/__init__.py
 noc/sa/profiles/Cisco/IOS/__init__.pyc
 noc/sa/profiles/Cisco/IOS/__init__.pyo
+noc/sa/profiles/Cisco/IOS/add_vlan.py
+noc/sa/profiles/Cisco/IOS/add_vlan.pyc
+noc/sa/profiles/Cisco/IOS/add_vlan.pyo
 noc/sa/profiles/Cisco/IOS/get_arp.py
 noc/sa/profiles/Cisco/IOS/get_arp.pyc
 noc/sa/profiles/Cisco/IOS/get_arp.pyo
@@ -1493,10 +1541,16 @@ noc/sa/profiles/Cisco/IOS/highlight.pyo
 noc/sa/profiles/Cisco/IOS/ping.py
 noc/sa/profiles/Cisco/IOS/ping.pyc
 noc/sa/profiles/Cisco/IOS/ping.pyo
+noc/sa/profiles/Cisco/IOS/remove_vlan.py
+noc/sa/profiles/Cisco/IOS/remove_vlan.pyc
+noc/sa/profiles/Cisco/IOS/remove_vlan.pyo
 noc/sa/profiles/Cisco/IOS/supported.csv
 noc/sa/profiles/Cisco/NXOS/__init__.py
 noc/sa/profiles/Cisco/NXOS/__init__.pyc
 noc/sa/profiles/Cisco/NXOS/__init__.pyo
+noc/sa/profiles/Cisco/NXOS/add_vlan.py
+noc/sa/profiles/Cisco/NXOS/add_vlan.pyc
+noc/sa/profiles/Cisco/NXOS/add_vlan.pyo
 noc/sa/profiles/Cisco/NXOS/get_config.py
 noc/sa/profiles/Cisco/NXOS/get_config.pyc
 noc/sa/profiles/Cisco/NXOS/get_config.pyo
@@ -1506,9 +1560,15 @@ noc/sa/profiles/Cisco/NXOS/get_local_user.pyo
 noc/sa/profiles/Cisco/NXOS/get_version.py
 noc/sa/profiles/Cisco/NXOS/get_version.pyc
 noc/sa/profiles/Cisco/NXOS/get_version.pyo
+noc/sa/profiles/Cisco/NXOS/get_vlans.py
+noc/sa/profiles/Cisco/NXOS/get_vlans.pyc
+noc/sa/profiles/Cisco/NXOS/get_vlans.pyo
 noc/sa/profiles/Cisco/NXOS/highlight.py
 noc/sa/profiles/Cisco/NXOS/highlight.pyc
 noc/sa/profiles/Cisco/NXOS/highlight.pyo
+noc/sa/profiles/Cisco/NXOS/remove_vlan.py
+noc/sa/profiles/Cisco/NXOS/remove_vlan.pyc
+noc/sa/profiles/Cisco/NXOS/remove_vlan.pyo
 noc/sa/profiles/Cisco/NXOS/supported.csv
 noc/sa/profiles/Cisco/__init__.py
 noc/sa/profiles/Cisco/__init__.pyc
@@ -1572,6 +1632,9 @@ noc/sa/profiles/EdgeCore/__init__.pyo
 noc/sa/profiles/Force10/FTOS/__init__.py
 noc/sa/profiles/Force10/FTOS/__init__.pyc
 noc/sa/profiles/Force10/FTOS/__init__.pyo
+noc/sa/profiles/Force10/FTOS/add_vlan.py
+noc/sa/profiles/Force10/FTOS/add_vlan.pyc
+noc/sa/profiles/Force10/FTOS/add_vlan.pyo
 noc/sa/profiles/Force10/FTOS/get_arp.py
 noc/sa/profiles/Force10/FTOS/get_arp.pyc
 noc/sa/profiles/Force10/FTOS/get_arp.pyo
@@ -1593,6 +1656,9 @@ noc/sa/profiles/Force10/FTOS/get_vlans.pyo
 noc/sa/profiles/Force10/FTOS/highlight.py
 noc/sa/profiles/Force10/FTOS/highlight.pyc
 noc/sa/profiles/Force10/FTOS/highlight.pyo
+noc/sa/profiles/Force10/FTOS/remove_vlan.py
+noc/sa/profiles/Force10/FTOS/remove_vlan.pyc
+noc/sa/profiles/Force10/FTOS/remove_vlan.pyo
 noc/sa/profiles/Force10/FTOS/supported.csv
 noc/sa/profiles/Force10/__init__.py
 noc/sa/profiles/Force10/__init__.pyc
@@ -1609,6 +1675,22 @@ noc/sa/profiles/Generic/has_local_user.pyo
 noc/sa/profiles/Generic/has_vlan.py
 noc/sa/profiles/Generic/has_vlan.pyc
 noc/sa/profiles/Generic/has_vlan.pyo
+noc/sa/profiles/Generic/sync_vlans.py
+noc/sa/profiles/Generic/sync_vlans.pyc
+noc/sa/profiles/Generic/sync_vlans.pyo
+noc/sa/profiles/HP/GbE2/__init__.py
+noc/sa/profiles/HP/GbE2/__init__.pyc
+noc/sa/profiles/HP/GbE2/__init__.pyo
+noc/sa/profiles/HP/GbE2/get_config.py
+noc/sa/profiles/HP/GbE2/get_config.pyc
+noc/sa/profiles/HP/GbE2/get_config.pyo
+noc/sa/profiles/HP/GbE2/get_version.py
+noc/sa/profiles/HP/GbE2/get_version.pyc
+noc/sa/profiles/HP/GbE2/get_version.pyo
+noc/sa/profiles/HP/GbE2/highlight.py
+noc/sa/profiles/HP/GbE2/highlight.pyc
+noc/sa/profiles/HP/GbE2/highlight.pyo
+noc/sa/profiles/HP/GbE2/supported.csv
 noc/sa/profiles/HP/__init__.py
 noc/sa/profiles/HP/__init__.pyc
 noc/sa/profiles/HP/__init__.pyo
@@ -1765,6 +1847,22 @@ noc/sa/profiles/Raisecom/ROS/supported.csv
 noc/sa/profiles/Raisecom/__init__.py
 noc/sa/profiles/Raisecom/__init__.pyc
 noc/sa/profiles/Raisecom/__init__.pyo
+noc/sa/profiles/Sun/__init__.py
+noc/sa/profiles/Sun/__init__.pyc
+noc/sa/profiles/Sun/__init__.pyo
+noc/sa/profiles/Sun/iLOM3/__init__.py
+noc/sa/profiles/Sun/iLOM3/__init__.pyc
+noc/sa/profiles/Sun/iLOM3/__init__.pyo
+noc/sa/profiles/Sun/iLOM3/get_config.py
+noc/sa/profiles/Sun/iLOM3/get_config.pyc
+noc/sa/profiles/Sun/iLOM3/get_config.pyo
+noc/sa/profiles/Sun/iLOM3/get_version.py
+noc/sa/profiles/Sun/iLOM3/get_version.pyc
+noc/sa/profiles/Sun/iLOM3/get_version.pyo
+noc/sa/profiles/Sun/iLOM3/highlight.py
+noc/sa/profiles/Sun/iLOM3/highlight.pyc
+noc/sa/profiles/Sun/iLOM3/highlight.pyo
+noc/sa/profiles/Sun/iLOM3/supported.csv
 noc/sa/profiles/Ubiquiti/AirOS/__init__.py
 noc/sa/profiles/Ubiquiti/AirOS/__init__.pyc
 noc/sa/profiles/Ubiquiti/AirOS/__init__.pyo
@@ -1929,6 +2027,9 @@ noc/sa/scripts/matrix_report.pyo
 noc/sa/scripts/result_report.py
 noc/sa/scripts/result_report.pyc
 noc/sa/scripts/result_report.pyo
+noc/sa/scripts/vlan_provisioning_report.py
+noc/sa/scripts/vlan_provisioning_report.pyc
+noc/sa/scripts/vlan_provisioning_report.pyo
 noc/sa/syslogcollector.py
 noc/sa/syslogcollector.pyc
 noc/sa/syslogcollector.pyo
@@ -2017,6 +2118,7 @@ noc/share/doc/en/ug/profiles/DLink.DGS3xxx.rst
 noc/share/doc/en/ug/profiles/EdgeCore.ES35xx.rst
 noc/share/doc/en/ug/profiles/EdgeCore.ES4xxx.rst
 noc/share/doc/en/ug/profiles/Force10.FTOS.rst
+noc/share/doc/en/ug/profiles/HP.GbE2.rst
 noc/share/doc/en/ug/profiles/HP.iLO2.rst
 noc/share/doc/en/ug/profiles/Huawei.UMG8900.rst
 noc/share/doc/en/ug/profiles/Huawei.VRP.rst
@@ -2029,6 +2131,7 @@ noc/share/doc/en/ug/profiles/Linksys.SPS2xx.rst
 noc/share/doc/en/ug/profiles/MikroTik.RouterOS.rst
 noc/share/doc/en/ug/profiles/Protei.MediaGateway.rst
 noc/share/doc/en/ug/profiles/Raisecom.ROS.rst
+noc/share/doc/en/ug/profiles/Sun.iLOM3.rst
 noc/share/doc/en/ug/profiles/Ubiquity.AirOS.rst
 noc/share/doc/en/ug/profiles/VoiceFinder.AddPack.rst
 noc/share/doc/en/ug/profiles/ZTE.ZXDSL531.rst
@@ -2130,6 +2233,7 @@ noc/static/js/jquery.autocomplete.js
 noc/static/js/jquery.form.js
 noc/static/js/jquery.js
 noc/static/js/jquery.pager.js
+noc/static/js/jquery.rotate_text.js
 noc/static/js/jquery.svg.js
 noc/static/js/jquery.tablesorter.js
 noc/static/js/menu.js
@@ -2172,19 +2276,48 @@ noc/vc/migrations/0002_default_vc_domain.pyo
 noc/vc/migrations/0003_vc_type.py
 noc/vc/migrations/0003_vc_type.pyc
 noc/vc/migrations/0003_vc_type.pyo
+noc/vc/migrations/0004_move_type.py
+noc/vc/migrations/0004_move_type.pyc
+noc/vc/migrations/0004_move_type.pyo
+noc/vc/migrations/0005_alter_type.py
+noc/vc/migrations/0005_alter_type.pyc
+noc/vc/migrations/0005_alter_type.pyo
+noc/vc/migrations/0006_vc_provisioning.py
+noc/vc/migrations/0006_vc_provisioning.pyc
+noc/vc/migrations/0006_vc_provisioning.pyo
+noc/vc/migrations/0007_new_vcdomainprovisioningconfig.py
+noc/vc/migrations/0007_new_vcdomainprovisioningconfig.pyc
+noc/vc/migrations/0007_new_vcdomainprovisioningconfig.pyo
+noc/vc/migrations/0008_vc_name.py
+noc/vc/migrations/0008_vc_name.pyc
+noc/vc/migrations/0008_vc_name.pyo
+noc/vc/migrations/0009_vc_filter.py
+noc/vc/migrations/0009_vc_filter.pyc
+noc/vc/migrations/0009_vc_filter.pyo
+noc/vc/migrations/0010_vcdomainprobvisioningconfig_vcfilter.py
+noc/vc/migrations/0010_vcdomainprobvisioningconfig_vcfilter.pyc
+noc/vc/migrations/0010_vcdomainprobvisioningconfig_vcfilter.pyo
 noc/vc/migrations/__init__.py
 noc/vc/migrations/__init__.pyc
 noc/vc/migrations/__init__.pyo
 noc/vc/models.py
 noc/vc/models.pyc
 noc/vc/models.pyo
+noc/vc/periodics/__init__.py
+noc/vc/periodics/__init__.pyc
+noc/vc/periodics/__init__.pyo
+noc/vc/periodics/vc_provisioning.py
+noc/vc/periodics/vc_provisioning.pyc
+noc/vc/periodics/vc_provisioning.pyo
 noc/vc/sa_import_vlans.html
 noc/vc/urls.py
 noc/vc/urls.pyc
 noc/vc/urls.pyo
+noc/vc/vc_filter_test.html
 noc/vc/views.py
 noc/vc/views.pyc
 noc/vc/views.pyo
+@dirrm noc/vc/periodics
 @dirrm noc/vc/migrations
 @dirrm noc/vc
 @dirrm noc/template/databrowse
@@ -2247,6 +2380,8 @@ noc/vc/views.pyo
 @dirrm noc/sa/profiles/VoiceFinder
 @dirrm noc/sa/profiles/Ubiquiti/AirOS
 @dirrm noc/sa/profiles/Ubiquiti
+@dirrm noc/sa/profiles/Sun/iLOM3
+@dirrm noc/sa/profiles/Sun
 @dirrm noc/sa/profiles/Raisecom/ROS
 @dirrm noc/sa/profiles/Raisecom
 @dirrm noc/sa/profiles/Protei/MediaGateway
@@ -2266,6 +2401,7 @@ noc/vc/views.pyo
 @dirrm noc/sa/profiles/Huawei/UMG8900
 @dirrm noc/sa/profiles/Huawei
 @dirrm noc/sa/profiles/HP/iLO2
+@dirrm noc/sa/profiles/HP/GbE2
 @dirrm noc/sa/profiles/HP
 @dirrm noc/sa/profiles/Generic
 @dirrm noc/sa/profiles/Force10/FTOS
@@ -2334,6 +2470,7 @@ noc/vc/views.pyo
 @dirrm noc/fm/rules/classification/DLink
 @dirrm noc/fm/rules/classification/Cisco/IOS
 @dirrm noc/fm/rules/classification/Cisco/AireOS
+@dirrm noc/fm/rules/classification/Cisco/ASA
 @dirrm noc/fm/rules/classification/Cisco
 @dirrm noc/fm/rules/classification/Audiocodes/Mediant2000
 @dirrm noc/fm/rules/classification/Audiocodes

@@ -13,9 +13,6 @@
 #  noc_enable (bool):    Set to "NO" by default.
 #                       Set it to "YES" to enable noc.
 #
-# You may also wish to use the following variables to fine-tune startup:
-#  noc_daemons="activator classifier correlator fcgi sae"
-#
 
 . %%RC_SUBR%%
 
