@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://jhweiss.de/pub/users/weiss/nagios/plugins/
 DISTNAME=	check_spamd-${PORTVERSION}.pl
 EXTRACT_SUFX=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Nagios plugin for checking SpamAssassins spamd
 
 RUN_DEPENDS+=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
