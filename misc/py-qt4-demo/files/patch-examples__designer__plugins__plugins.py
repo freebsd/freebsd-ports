@@ -9,14 +9,14 @@
 +if sys.platform[:-1] == 'freebsd': freebsd = True
 +
  
- # Set a specified environment variable with a directory name.
- def setEnvironment(env, var_name, dir_name):
-@@ -56,6 +60,8 @@
+ app = QtGui.QApplication(sys.argv)
  
- if sys.platform == "darwin":
-     designer_bin.append("/Designer.app/Contents/MacOS/Designer")
+@@ -43,6 +47,8 @@
+ 
+ if sys.platform == 'darwin':
+     designer_bin += '/Designer.app/Contents/MacOS/Designer'
 +elif freebsd:
 +    designer_bin.append("/designer-qt4")
  else:
-     designer_bin.append("/designer")
+     designer_bin += '/designer'
  

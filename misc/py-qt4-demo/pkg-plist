@@ -390,8 +390,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/connection.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/querymodel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/querymodel.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/relationaltablemode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/relationaltablemode.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/relationaltablemodel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/relationaltablemodel.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/tablemodel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql/tablemodel.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threads/README

@@ -58,6 +58,7 @@ do-build:
 do-install:
 .if !defined(NOPORTEXAMPLES)
 	${RM} -f ${WRKSRC}/examples/designer/plugins/plugins.py.orig
+	${RM} -f ${WRKSRC}/examples/activeqt/webbrowser/webbrowser.py.orig
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .else
