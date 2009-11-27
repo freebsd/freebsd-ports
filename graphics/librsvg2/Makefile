@@ -46,10 +46,10 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-USE_GECKO=	libxul firefox mozilla seamonkey xulrunner
+USE_GECKO=	libxul seamonkey
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=libmozsvgdec.so
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+.include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 CONFIGURE_ENV+=	MOZILLA_CONFIG=no
 CONFIGURE_ARGS+=--enable-mozilla-plugin=yes

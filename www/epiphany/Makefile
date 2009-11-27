@@ -32,6 +32,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GECKO+=	libxul
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${EXTRA_LIBS}"
@@ -52,11 +53,9 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-USE_GECKO+=	libxul firefox
 CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
 			--with-engine=mozilla \
 			--with-gecko-home=${LOCALBASE}/lib/${GECKO}
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 CONFLICTS=	epiphany-webkit-[1-9]*
 PLIST_SUB+=	GECKO=""
 .if ${GECKO:Mlibxul}!=""

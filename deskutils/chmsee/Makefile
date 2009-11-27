@@ -17,7 +17,7 @@ LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
 		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
 USE_GNOME=	gnomehier libglade2
-USE_GECKO=	libxul seamonkey xulrunner mozilla
+USE_GECKO=	libxul seamonkey
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
@@ -26,7 +26,6 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=TRUE
 MAN1=		chmsee.1
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(GECKO) && ${GECKO:Mlibxul}!=""
 GTKMOZEMBED_LIB="${GECKO}-embedding-unstable nspr"
