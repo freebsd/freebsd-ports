@@ -19416,6 +19416,7 @@ py-distorm                      ports/devel/py-distorm
 py-distutils                    ports/misc/py-distutils
 py-django                       ports/www/py-django
 py-django-devel                 ports/www/py-django-devel
+py-django-registration          ports/www/py-django-registration
 py-django-tagging               ports/www/py-django-tagging
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
@@ -19921,6 +19922,7 @@ py-traits                       ports/devel/py-traits
 py-traitsbackendwx              ports/x11-toolkits/py-traitsbackendwx
 py-traitsgui                    ports/x11-toolkits/py-traitsgui
 py-transaction                  ports/devel/py-transaction
+py-trml2pdf                     ports/print/py-trml2pdf
 py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
 py-turbodjango                  ports/www/py-turbodjango
