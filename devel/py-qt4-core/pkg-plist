@@ -96,9 +96,6 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtwebkit.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtwebkit.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtwebkit.pyo
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qwt.py
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qwt.pyc
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qwt.pyo
 %%SIP%%share/py-sip/QtCore/QtCoremod.sip
 %%SIP%%share/py-sip/QtCore/qabstracteventdispatcher.sip
 %%SIP%%share/py-sip/QtCore/qabstractfileengine.sip
