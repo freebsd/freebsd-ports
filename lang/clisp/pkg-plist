@@ -31,6 +31,7 @@ lib/clisp/full/calls.o
 %%CLX_NEW%%lib/clisp/full/clx.o
 %%PARI%%lib/clisp/full/cpari.o
 %%PCRE%%lib/clisp/full/cpcre.o
+%%DBUS%%lib/clisp/full/dbus.o
 %%CLX_MIT%%lib/clisp/full/depdefs.fas
 %%CLX_MIT%%lib/clisp/full/depdefs.lisp
 %%CLX_MIT%%lib/clisp/full/dependent.fas
