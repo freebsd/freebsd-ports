@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r13b02
-PORTREVISION=	1
+PORTVERSION=	r13b03
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.erlang.org/download/        \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R13B02
+DISTNAME=	otp_src_R13B03
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -76,9 +75,9 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=	otp_doc_man_R13B02.tar.gz
+ERLANG_MAN=	otp_doc_man_R13B03.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R13B02.tar.gz
+ERLANG_DOCS=	otp_doc_html_R13B03.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
@@ -134,8 +133,11 @@ pre-configure:
 # links in the documentation.
 post-install:
 	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
-	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
-		-C ${PREFIX}/lib/erlang
+	@for SECTION in 1 3 4 6; do \
+		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
+			-C ${PREFIX}/lib/erlang \
+			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
+	done
 	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?
 .if !defined(NOPORTDOCS)
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
