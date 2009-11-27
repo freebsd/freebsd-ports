@@ -37,6 +37,7 @@ MAKE_JOBS_UNSAFE=yes
 OPTIONS=	BDB "Build Berkeley Database module" off \
 		CLX_MIT "Build X11 module (original MIT version)" off \
 		CLX_NEW "Build X11 module (new faster version)" off \
+		DBUS "D-BUS control module" Off \
 		FASTCGI "Build FastCGI module" off \
 		GDBM "Build GNU Database manager module" off \
 		GTK2 "Build Gtk+2 module" off \
@@ -46,6 +47,7 @@ OPTIONS=	BDB "Build Berkeley Database module" off \
 		PGSQL "Build PostgreSQL database module" off \
 		RAWSOCK "Build Raw Socket Access module" on \
 		SVM "Enable Support Vector Machines module" off \
+		THREADS "Enable multithreaded (Experimental)" Off \
 		WILDCARD "Build wildcard matching module" on \
 		ZLIB "Build ZLib interface module " off
 
@@ -59,8 +61,8 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-mmap
 .endif
 
-MODULES=	BDB CLX_MIT CLX_NEW FASTCGI GDBM GTK2 ORACLE PARI PCRE PGSQL \
-		RAWSOCK SVM WILDCARD ZLIB
+MODULES=	BDB CLX_MIT CLX_NEW DBUS FASTCGI GDBM GTK2 ORACLE PARI PCRE \
+		PGSQL RAWSOCK SVM WILDCARD ZLIB
 
 .for mod in ${MODULES}
 .   if defined(WITH_${mod})
@@ -96,6 +98,11 @@ CONFIGURE_ARGS+=--with-module=clx/mit-clx
 .endif
 .if defined(WITH_CLX_NEW)
 CONFIGURE_ARGS+=--with-module=clx/new-clx
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=   dbus-1.3:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=--with-module=dbus
 .endif
 
 .if defined(WITH_FASTCGI)
@@ -143,6 +150,12 @@ CONFIGURE_ARGS+=--with-module=rawsock
 .if defined(WITH_SVM)
 RUN_DEPENDS+=	svm-predict:${PORTSDIR}/science/libsvm
 CONFIGURE_ARGS+=--with-module=libsvm
+.endif
+
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--with-threads=POSIX_THREADS \
+			LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
+PKGNAMESUFFIX=		-threaded
 .endif
 
 .if defined(WITH_WILDCARD)
