@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libmxp
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	net games textproc
 MASTER_SITES=	http://www.kmuddy.com/libmxp/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parser for the MUD eXtension protocol
 
-GNU_CONFIGURE=	yes
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
