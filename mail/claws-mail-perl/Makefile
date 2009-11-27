@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	perl
-PORTVERSION=	0.9.15
-PORTREVISION=	3
+PORTVERSION=	0.9.16
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +15,8 @@ DISTNAME=	perl_plugin-${PORTVERSION}
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Perl filtering plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.2:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.3:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.3:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
