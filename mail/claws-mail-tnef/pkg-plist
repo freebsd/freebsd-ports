@@ -1,6 +1,7 @@
 lib/claws-mail/plugins/tnef_parse.a
 lib/claws-mail/plugins/tnef_parse.la
 lib/claws-mail/plugins/tnef_parse.so
+share/locale/es/LC_MESSAGES/tnef_parse.mo
 share/locale/fi/LC_MESSAGES/tnef_parse.mo
 share/locale/fr/LC_MESSAGES/tnef_parse.mo
 share/locale/hu/LC_MESSAGES/tnef_parse.mo
