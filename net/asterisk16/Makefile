@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.0.18
+PORTREVISION=	1
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
@@ -158,7 +159,8 @@ LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
 
 .if !defined(WITH_SQLITE)
 PLIST_SUB+=	WITH_SQLITE="@comment "
-CONFIGURE_ARGS+=	--without-sqlite
+CONFIGURE_ARGS+=	--without-sqlite \
+		--with-sqlite3=no
 .else
 PLIST_SUB+=	WITH_SQLITE=""
 CONFIGURE_ARGS+= --with-sqlite
