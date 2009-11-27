@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	soprano
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Soprano/${PORTVERSION}
 
@@ -51,7 +51,7 @@ PLIST_SUB+=	SESAME2="@comment "
 post-patch:
 	${REINPLACE_CMD} -e "s,$${LIB_SUFFIX}/pkgconfig,data/pkgconfig," \
 		${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e "s,apps/cmake/modules,cmake/Modules," \
+	${REINPLACE_CMD} -e "s,soprano/cmake,cmake/Modules," \
 		${WRKSRC}/cmake/modules/CMakeLists.txt
 
 .include <bsd.port.post.mk>
