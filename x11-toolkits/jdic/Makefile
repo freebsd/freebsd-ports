@@ -32,7 +32,7 @@ JAVA_VERSION=	1.5+
 USE_LDCONFIG=	yes
 # Do not build mozembed: it requires Gecko_SDK and XULRunner, which is
 # broken ATM - see <http://developer.mozilla.org/en/docs/Gecko_SDK>.
-#USE_GECKO=	firefox seamonkey mozilla
+#USE_GECKO=	seamonkey libxul
 
 #ALL_TARGET=	buildall
 ALL_TARGET=	buildtray
@@ -70,5 +70,4 @@ regression-test:	install
 	java -cp "${JAVAJARDIR}/jdic.jar:." Tray)
 .endif
 
-#.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>

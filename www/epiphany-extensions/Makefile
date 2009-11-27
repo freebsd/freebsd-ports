@@ -22,7 +22,7 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_GECKO=	libxul firefox
+USE_GECKO=	libxul
 USE_GNOME=	gnomeprefix gnomehack intlhack
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
@@ -42,7 +42,6 @@ PLIST_SUB=	VERSION=2.26 EPHY_VERSION=2.26
 OPTIONS=	OPENSP "Enable OpenSP SGML support" off
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(WITH_OPENSP)
 CONFIGURE_ARGS+=	--enable-opensp=yes

@@ -25,7 +25,7 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
 		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 
-USE_GECKO=	libxul firefox xulrunner mozilla
+USE_GECKO=	libxul
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
@@ -43,7 +43,6 @@ DOCSDIR=	${WRKSRC}/share/doc/py-gnome-extras
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(GECKO) && ${GECKO:Mlibxul}!=""
 CONFIGURE_ARGS+=	--with-gtkmozembed=mozilla
