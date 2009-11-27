@@ -19,6 +19,10 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
 
+# Let process generate meaningful backtrace on core dump
+LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib network qtestlib dbus sql \
