@@ -1,0 +1,172 @@
+From
+
+https://sourceforge.net/tracker/index.php?func=detail&aid=1656350&group_id=13247&atid=313247
+
+	-mi
+
+*** doc/TclX.n	2004-11-22 16:58:20.000000000 -0500
+--- doc/TclX.n	2009-03-14 23:41:19.000000000 -0400
+***************
+*** 221,226 ****
+--- 221,234 ----
+  \fBwait\fR command has full functionality.  \fB0\fR if the \fBwait\fR
+  command has limited functionality.
+  .TP
++ \fBhave_getsid\fR
++ Return \fB1\fR if the \fBgetsid\fR system call is available.
++ If it is, the \fBid process session\fR command may be used.
++ .TP
++ \fBhave_setsid\fR
++ Return \fB1\fR if the \fBsetsid\fR system call is available.
++ If it is, the \fBid process session set\fR command may be used.
++ .TP
+  \fBappname\fR
+  Return the symbolic application name of the current application linked with
+  the Extended Tcl library.  The C variable \fBtclAppName\fR must be set by the
+***************
+*** 736,741 ****
+--- 744,755 ----
+  \fBid process group set\fR
+  Set the process group ID of the current process to its process ID.
+  .TP
++ \fBid process session\fR
++ Return the session ID of the current process.
++ .TP
++ \fBid process session set\fR
++ Set the process session ID of the current process to be a session leader.
++ .TP
+  \fBid host\fR
+  Returns the standard host name of the machine the process is executing on.
+  .IP
+*** generic/tclXgeneral.c	Mon May  7 13:16:47 2001
+--- generic/tclXgeneral.c	Sun Oct 14 17:54:28 2001
+***************
+*** 274,279 ****
+--- 274,295 ----
+  #       endif        
+          return TCL_OK;
+      }
++     if (STREQU ("have_getsid", optionPtr)) {
++ #       if (!defined(NO_GETSID)) && (!defined(WIN32))
++         Tcl_SetBooleanObj (resultPtr, TRUE);
++ #       else
++         Tcl_SetBooleanObj (resultPtr, FALSE);
++ #       endif        
++         return TCL_OK;
++     }
++     if (STREQU ("have_setsid", optionPtr)) {
++ #       if (!defined(NO_SETSID)) && (!defined(WIN32))
++         Tcl_SetBooleanObj (resultPtr, TRUE);
++ #       else
++         Tcl_SetBooleanObj (resultPtr, FALSE);
++ #       endif        
++         return TCL_OK;
++     }
+      if (STREQU ("appname", optionPtr)) {
+          if (tclAppName != NULL) {
+              Tcl_SetStringObj (resultPtr, tclAppName, -1);
+***************
+*** 302,307 ****
+--- 318,324 ----
+                            "have_fchown, have_fchmod, have_flock, ",
+                            "have_fsync, have_ftruncate, have_msgcats, ",
+                            "have_symlink, have_truncate, ",
++                           "have_getsid, have_setsid, ",
+                            "have_posix_signals, have_waitpid, appname, ",
+                            "applongname, appversion, or apppatchlevel",
+                            (char *) NULL);
+*** unix/tclXunixId.c	Thu Dec  2 20:02:08 1999
+--- unix/tclXunixId.c	Fri Oct 12 15:09:13 2001
+***************
+*** 133,138 ****
+--- 133,140 ----
+   *        id process parent
+   *        id process group
+   *        id process group set
++  *        id process session
++  *        id process session set
+   *
+   *        id effective user
+   *        id effective userid
+***************
+*** 317,323 ****
+  }
+  
+  /*
+!  * id process ?parent|group? ?set?
+   */
+  static int
+  IdProcess (interp, objc, objv)
+--- 319,325 ----
+  }
+  
+  /*
+!  * id process ?parent|group|session? ?set?  
+   */
+  static int
+  IdProcess (interp, objc, objv)
+***************
+*** 332,338 ****
+      if (objc > 4)
+          return TclX_WrongArgs (interp, 
+  			       objv [0], 
+! 			       "process ?parent|group? ?set?");
+  
+      if (objc == 2) {
+  	Tcl_SetObjResult (interp, Tcl_NewIntObj (getpid ()));
+--- 334,340 ----
+      if (objc > 4)
+          return TclX_WrongArgs (interp, 
+  			       objv [0], 
+! 			       "process ?parent|group|session? ?set?");
+  
+      if (objc == 2) {
+  	Tcl_SetObjResult (interp, Tcl_NewIntObj (getpid ()));
+***************
+*** 373,381 ****
+  #endif
+          return TCL_OK;
+      }
+  
+!     TclX_AppendObjResult (interp, "expected one of \"parent\" or \"group\" ",
+!                           "got\"", subCommand, "\"", (char *) NULL);
+      return TCL_ERROR;
+  }
+  
+--- 375,410 ----
+  #endif
+          return TCL_OK;
+      }
++     if (STREQU (subCommand, "session")) {
++         if (objc == 3) {
++ #ifndef NO_GETSID
++ 	    Tcl_SetObjResult (interp, Tcl_NewIntObj (getsid (0)));
++ #endif
++             return TCL_OK;
++         }
++ 	trailerCommand = Tcl_GetStringFromObj (objv[3], NULL);
++         if ((objc != 4) || !STREQU (trailerCommand, "set"))
++             return TclX_WrongArgs (interp, objv [0], 
++                               " process session ?set?");
++ 
++         if (Tcl_IsSafe (interp)) {
++             TclX_AppendObjResult (interp,  "can't set process session from a ",
++                                   "safe interpeter", (char *) NULL);
++             return TCL_ERROR;
++         }
++ #ifndef NO_SETSID
++ 	if (setsid () == -1 ) {
++ 	    TclX_AppendObjResult (interp,  "session set failed, process is ",
++ 				"already session leader", (char *) NULL);
++             return TCL_ERROR;
++ 	}
++ 	return TCL_OK;
++ #endif
++     }
+  
+!     TclX_AppendObjResult (interp, "expected one of \"parent\", \"group\" ",
+!                           "or \"session\" ",
+!                           "got \"", subCommand, "\"", (char *) NULL);
+      return TCL_ERROR;
+  }
+  
