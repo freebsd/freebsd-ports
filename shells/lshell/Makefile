@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lshell
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
-MAINTAINER=	scjamorim@bsd.com.br
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Shell environment to limited sets of commands to user's
 
 USE_PYDISTUTILS=	yes
