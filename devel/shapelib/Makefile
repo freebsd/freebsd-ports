@@ -7,6 +7,7 @@
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		http://sunpoet.net/distfiles/
@@ -27,7 +28,7 @@ SHAPELIB_VER=	${PORTVERSION}a2
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PROJ4)
-LIB_DEPENDS+=	proj.5:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=	proj.6:${PORTSDIR}/graphics/proj
 PLIST_SUB+=	PROJ4=""
 PROJ4=		-DPROJ4
 .else
