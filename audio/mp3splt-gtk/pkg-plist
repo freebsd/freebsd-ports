@@ -1,0 +1,11 @@
+bin/mp3splt-gtk
+share/applications/mp3splt-gtk.desktop
+share/locale/de/LC_MESSAGES/mp3splt-gtk.mo
+share/locale/fr/LC_MESSAGES/mp3splt-gtk.mo
+share/pixmaps/mp3splt-gtk.png
+share/pixmaps/mp3splt-gtk_ico.png
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/pixmaps
