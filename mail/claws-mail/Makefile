@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.7.2
-PORTREVISION=	2
+PORTVERSION=	3.7.3
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
