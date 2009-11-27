@@ -1,6 +1,5 @@
 include/libmxp/libmxp.h
-lib/libmxp.a
-lib/libmxp.la
-lib/libmxp.so
+lib/libmxp.so.0.0.4
 lib/libmxp.so.0
+lib/libmxp.so
 @dirrm include/libmxp
