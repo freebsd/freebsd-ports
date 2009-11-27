@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	4.6.1
+PORTVERSION=	4.7.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/proj/ \
 		http://download.osgeo.org/proj/
@@ -15,16 +15,17 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Cartographic Projections library
 
-DATUM_GRID_FILES=	proj-datumgrid-1.4.tar.gz
+DATUM_GRID_FILES=	proj-datumgrid-1.5.zip
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_ZIP=	yes
 
 MAN1=		cs2cs.1 geod.1 nad2nad.1 proj.1
 MAN3=		pj_init.3
 
 post-extract:
-	@${TAR} -xof ${DISTDIR}/${DATUM_GRID_FILES} -C ${WRKSRC}/nad
+	@${UNZIP_CMD} -q ${DISTDIR}/${DATUM_GRID_FILES} -d ${WRKSRC}/nad
 
 .include <bsd.port.mk>
