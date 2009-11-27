@@ -54,6 +54,10 @@ share/apps/kvtml/cs/animals.kvtml
 share/apps/kvtml/cs/easy.kvtml
 share/apps/kvtml/cs/hard.kvtml
 share/apps/kvtml/cs/medium.kvtml
+share/doc/HTML/cs/common/fdl-translated.html
+share/doc/HTML/cs/common/gpl-translated.html
+share/doc/HTML/cs/common/kde-localised.css
+share/doc/HTML/cs/common/lgpl-translated.html
 share/doc/HTML/cs/kcontrol/bell/common
 share/doc/HTML/cs/kcontrol/bell/index.cache.bz2
 share/doc/HTML/cs/kcontrol/bell/index.docbook
@@ -309,7 +313,6 @@ share/locale/cs/LC_MESSAGES/kdat.mo
 share/locale/cs/LC_MESSAGES/kde-menu.mo
 share/locale/cs/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/cs/LC_MESSAGES/kdebugdialog.mo
-share/locale/cs/LC_MESSAGES/kded_phononserver.mo
 share/locale/cs/LC_MESSAGES/kdelibs4.mo
 share/locale/cs/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/cs/LC_MESSAGES/kdelirc.mo
@@ -490,6 +493,7 @@ share/locale/cs/LC_MESSAGES/ksendemail.mo
 share/locale/cs/LC_MESSAGES/kshisen.mo
 share/locale/cs/LC_MESSAGES/kshorturifilter.mo
 share/locale/cs/LC_MESSAGES/ksirk.mo
+share/locale/cs/LC_MESSAGES/ksirkskineditor.mo
 share/locale/cs/LC_MESSAGES/ksmserver.mo
 share/locale/cs/LC_MESSAGES/ksnapshot.mo
 share/locale/cs/LC_MESSAGES/kspaceduel.mo
@@ -577,6 +581,7 @@ share/locale/cs/LC_MESSAGES/libphonon.mo
 share/locale/cs/LC_MESSAGES/libplasma.mo
 share/locale/cs/LC_MESSAGES/libplasmaclock.mo
 share/locale/cs/LC_MESSAGES/libplasmaweather.mo
+share/locale/cs/LC_MESSAGES/librtm.mo
 share/locale/cs/LC_MESSAGES/libtaskmanager.mo
 share/locale/cs/LC_MESSAGES/lokalize.mo
 share/locale/cs/LC_MESSAGES/lskat.mo
@@ -609,6 +614,7 @@ share/locale/cs/LC_MESSAGES/parley.mo
 share/locale/cs/LC_MESSAGES/phonon-xine.mo
 share/locale/cs/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/cs/LC_MESSAGES/phonon_kde.mo
+share/locale/cs/LC_MESSAGES/phononserver.mo
 share/locale/cs/LC_MESSAGES/plasma-desktop.mo
 share/locale/cs/LC_MESSAGES/plasma-overlay.mo
 share/locale/cs/LC_MESSAGES/plasma-shells-common.mo
@@ -672,9 +678,9 @@ share/locale/cs/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/cs/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/cs/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/cs/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/cs/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/cs/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_network.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_notifications.mo
@@ -767,6 +773,7 @@ share/locale/cs/entry.desktop
 @dirrm share/doc/HTML/cs/kcontrol/clock
 @dirrm share/doc/HTML/cs/kcontrol/bell
 @dirrm share/doc/HTML/cs/kcontrol
+@dirrm share/doc/HTML/cs/common
 @dirrm share/apps/kvtml/cs
 @dirrm share/apps/kvtml
 @dirrm share/apps/klettres/cs/syllab

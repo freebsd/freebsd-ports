@@ -24,6 +24,10 @@ share/apps/kvtml/ro/animals.kvtml
 share/apps/kvtml/ro/easy.kvtml
 share/apps/kvtml/ro/hard.kvtml
 share/apps/kvtml/ro/medium.kvtml
+share/doc/HTML/ro/common/fdl-translated.html
+share/doc/HTML/ro/common/gpl-translated.html
+share/doc/HTML/ro/common/kde-localised.css
+share/doc/HTML/ro/common/lgpl-translated.html
 share/doc/HTML/ro/khelpcenter/common
 share/doc/HTML/ro/khelpcenter/contact.docbook
 share/doc/HTML/ro/khelpcenter/glossary/common
@@ -320,7 +324,6 @@ share/locale/ro/LC_MESSAGES/kcron.mo
 share/locale/ro/LC_MESSAGES/kdat.mo
 share/locale/ro/LC_MESSAGES/kde-menu.mo
 share/locale/ro/LC_MESSAGES/kdebugdialog.mo
-share/locale/ro/LC_MESSAGES/kded_phononserver.mo
 share/locale/ro/LC_MESSAGES/kdelibs4.mo
 share/locale/ro/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ro/LC_MESSAGES/kdelirc.mo
@@ -608,6 +611,7 @@ share/locale/ro/LC_MESSAGES/okular_xps.mo
 share/locale/ro/LC_MESSAGES/parley.mo
 share/locale/ro/LC_MESSAGES/phonon-xine.mo
 share/locale/ro/LC_MESSAGES/phonon_kde.mo
+share/locale/ro/LC_MESSAGES/phononserver.mo
 share/locale/ro/LC_MESSAGES/plasma-desktop.mo
 share/locale/ro/LC_MESSAGES/plasma-overlay.mo
 share/locale/ro/LC_MESSAGES/plasma-shells-common.mo
@@ -669,7 +673,7 @@ share/locale/ro/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/ro/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/ro/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/ro/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/ro/LC_MESSAGES/plasma_engine_applicationjobs.mo
+share/locale/ro/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_network.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_notifications.mo
@@ -756,6 +760,7 @@ share/locale/ro/entry.desktop
 @dirrm share/doc/HTML/ro/khelpcenter/visualdict
 @dirrm share/doc/HTML/ro/khelpcenter/glossary
 @dirrm share/doc/HTML/ro/khelpcenter
+@dirrm share/doc/HTML/ro/common
 @dirrm share/apps/kvtml/ro
 @dirrm share/apps/kvtml
 @dirrm share/apps/ktuberling/sounds/ro

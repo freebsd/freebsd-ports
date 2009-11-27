@@ -90,6 +90,10 @@ share/doc/HTML/gl/akregator/index.docbook
 share/doc/HTML/gl/blinken/common
 share/doc/HTML/gl/blinken/index.cache.bz2
 share/doc/HTML/gl/blinken/index.docbook
+share/doc/HTML/gl/common/fdl-translated.html
+share/doc/HTML/gl/common/gpl-translated.html
+share/doc/HTML/gl/common/kde-localised.css
+share/doc/HTML/gl/common/lgpl-translated.html
 share/doc/HTML/gl/gwenview/common
 share/doc/HTML/gl/gwenview/index.cache.bz2
 share/doc/HTML/gl/gwenview/index.docbook
@@ -490,7 +494,6 @@ share/locale/gl/LC_MESSAGES/kdat.mo
 share/locale/gl/LC_MESSAGES/kde-menu.mo
 share/locale/gl/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/gl/LC_MESSAGES/kdebugdialog.mo
-share/locale/gl/LC_MESSAGES/kded_phononserver.mo
 share/locale/gl/LC_MESSAGES/kdelibs4.mo
 share/locale/gl/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/gl/LC_MESSAGES/kdelirc.mo
@@ -790,6 +793,7 @@ share/locale/gl/LC_MESSAGES/parley.mo
 share/locale/gl/LC_MESSAGES/phonon-xine.mo
 share/locale/gl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/gl/LC_MESSAGES/phonon_kde.mo
+share/locale/gl/LC_MESSAGES/phononserver.mo
 share/locale/gl/LC_MESSAGES/plasma-desktop.mo
 share/locale/gl/LC_MESSAGES/plasma-overlay.mo
 share/locale/gl/LC_MESSAGES/plasma-shells-common.mo
@@ -853,9 +857,9 @@ share/locale/gl/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/gl/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/gl/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/gl/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/gl/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/gl/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_network.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_notifications.mo
@@ -968,6 +972,7 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/kalzium
 @dirrm share/doc/HTML/gl/kaddressbook
 @dirrm share/doc/HTML/gl/gwenview
+@dirrm share/doc/HTML/gl/common
 @dirrm share/doc/HTML/gl/blinken
 @dirrm share/doc/HTML/gl/akregator
 @dirrm share/apps/kvtml/gl

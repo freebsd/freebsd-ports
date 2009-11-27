@@ -239,6 +239,10 @@ share/doc/HTML/da/blinken/index.docbook
 share/doc/HTML/da/cervisia/common
 share/doc/HTML/da/cervisia/index.cache.bz2
 share/doc/HTML/da/cervisia/index.docbook
+share/doc/HTML/da/common/fdl-translated.html
+share/doc/HTML/da/common/gpl-translated.html
+share/doc/HTML/da/common/kde-localised.css
+share/doc/HTML/da/common/lgpl-translated.html
 share/doc/HTML/da/gwenview/common
 share/doc/HTML/da/gwenview/docked_windows.docbook
 share/doc/HTML/da/gwenview/external_tools.docbook
@@ -1336,7 +1340,6 @@ share/locale/da/LC_MESSAGES/kdat.mo
 share/locale/da/LC_MESSAGES/kde-menu.mo
 share/locale/da/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/da/LC_MESSAGES/kdebugdialog.mo
-share/locale/da/LC_MESSAGES/kded_phononserver.mo
 share/locale/da/LC_MESSAGES/kdelibs4.mo
 share/locale/da/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/da/LC_MESSAGES/kdelirc.mo
@@ -1605,6 +1608,7 @@ share/locale/da/LC_MESSAGES/libphonon.mo
 share/locale/da/LC_MESSAGES/libplasma.mo
 share/locale/da/LC_MESSAGES/libplasmaclock.mo
 share/locale/da/LC_MESSAGES/libplasmaweather.mo
+share/locale/da/LC_MESSAGES/librtm.mo
 share/locale/da/LC_MESSAGES/libtaskmanager.mo
 share/locale/da/LC_MESSAGES/lokalize.mo
 share/locale/da/LC_MESSAGES/lskat.mo
@@ -1637,6 +1641,7 @@ share/locale/da/LC_MESSAGES/parley.mo
 share/locale/da/LC_MESSAGES/phonon-xine.mo
 share/locale/da/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/da/LC_MESSAGES/phonon_kde.mo
+share/locale/da/LC_MESSAGES/phononserver.mo
 share/locale/da/LC_MESSAGES/plasma-desktop.mo
 share/locale/da/LC_MESSAGES/plasma-overlay.mo
 share/locale/da/LC_MESSAGES/plasma-shells-common.mo
@@ -1700,9 +1705,9 @@ share/locale/da/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/da/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/da/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/da/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/da/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/da/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/da/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/da/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/da/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/da/LC_MESSAGES/plasma_engine_network.mo
 share/locale/da/LC_MESSAGES/plasma_engine_notifications.mo
@@ -1948,6 +1953,7 @@ share/locale/da/entry.desktop
 @dirrm share/doc/HTML/da/juk
 @dirrm share/doc/HTML/da/irkick
 @dirrm share/doc/HTML/da/gwenview
+@dirrm share/doc/HTML/da/common
 @dirrm share/doc/HTML/da/cervisia
 @dirrm share/doc/HTML/da/blinken
 @dirrm share/doc/HTML/da/ark

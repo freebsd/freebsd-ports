@@ -5,8 +5,8 @@ bin/kblankscrn.kss
 bin/kcheckrunning
 bin/kcminit
 bin/kcminit_startup
-bin/kdm-bin
 bin/kdm
+bin/kdm-bin
 bin/kdmctl
 bin/kdostartupconfig4
 bin/kfontinst
@@ -796,8 +796,10 @@ share/doc/HTML/en/kcontrol/colors/common
 share/doc/HTML/en/kcontrol/colors/index.cache.bz2
 share/doc/HTML/en/kcontrol/colors/index.docbook
 share/doc/HTML/en/kcontrol/desktopthemedetails/common
+share/doc/HTML/en/kcontrol/desktopthemedetails/desktop-settings.png
 share/doc/HTML/en/kcontrol/desktopthemedetails/index.cache.bz2
 share/doc/HTML/en/kcontrol/desktopthemedetails/index.docbook
+share/doc/HTML/en/kcontrol/desktopthemedetails/message.png
 share/doc/HTML/en/kcontrol/energy/common
 share/doc/HTML/en/kcontrol/energy/index.cache.bz2
 share/doc/HTML/en/kcontrol/energy/index.docbook

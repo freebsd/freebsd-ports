@@ -2254,8 +2254,9 @@ share/apps/ktouch/german.number.ktouch.xml
 share/apps/ktouch/german2.ktouch.xml
 share/apps/ktouch/german3.ktouch.xml
 share/apps/ktouch/he.keyboard.xml
+share/apps/ktouch/hu.keyboard.xml
+share/apps/ktouch/hungarian.expert.ktouch.xml
 share/apps/ktouch/hungarian.ktouch.xml
-share/apps/ktouch/hungarian_expert.ktouch.xml
 share/apps/ktouch/it.keyboard.xml
 share/apps/ktouch/italian.ktouch.xml
 share/apps/ktouch/ktouchui.rc

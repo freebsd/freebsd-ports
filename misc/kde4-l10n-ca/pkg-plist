@@ -168,10 +168,23 @@ share/doc/HTML/ca/amor/common
 share/doc/HTML/ca/amor/index.cache.bz2
 share/doc/HTML/ca/amor/index.docbook
 share/doc/HTML/ca/amor/man-amor.6.docbook
+share/doc/HTML/ca/bomber/common
+share/doc/HTML/ca/bomber/index.cache.bz2
+share/doc/HTML/ca/bomber/index.docbook
+share/doc/HTML/ca/cervisia/common
+share/doc/HTML/ca/cervisia/index.cache.bz2
+share/doc/HTML/ca/cervisia/index.docbook
+share/doc/HTML/ca/common/fdl-translated.html
+share/doc/HTML/ca/common/gpl-translated.html
+share/doc/HTML/ca/common/kde-localised.css
+share/doc/HTML/ca/common/lgpl-translated.html
 share/doc/HTML/ca/kalzium/common
 share/doc/HTML/ca/kalzium/index.cache.bz2
 share/doc/HTML/ca/kalzium/index.docbook
 share/doc/HTML/ca/kalzium/man-kalzium.1.docbook
+share/doc/HTML/ca/kapptemplate/common
+share/doc/HTML/ca/kapptemplate/index.cache.bz2
+share/doc/HTML/ca/kapptemplate/index.docbook
 share/doc/HTML/ca/kate-plugins/common
 share/doc/HTML/ca/kate-plugins/filetemplates.docbook
 share/doc/HTML/ca/kate-plugins/htmltools.docbook
@@ -464,6 +477,9 @@ share/doc/HTML/ca/khelpcenter/visualdict/index.cache.bz2
 share/doc/HTML/ca/khelpcenter/visualdict/index.docbook
 share/doc/HTML/ca/khelpcenter/welcome.docbook
 share/doc/HTML/ca/khelpcenter/whatiskde.docbook
+share/doc/HTML/ca/kimagemapeditor/common
+share/doc/HTML/ca/kimagemapeditor/index.cache.bz2
+share/doc/HTML/ca/kimagemapeditor/index.docbook
 share/doc/HTML/ca/kinfocenter/devices/common
 share/doc/HTML/ca/kinfocenter/devices/index.cache.bz2
 share/doc/HTML/ca/kinfocenter/devices/index.docbook
@@ -723,9 +739,22 @@ share/doc/HTML/ca/kwrite/index.docbook
 share/doc/HTML/ca/lilo-config/common
 share/doc/HTML/ca/lilo-config/index.cache.bz2
 share/doc/HTML/ca/lilo-config/index.docbook
+share/doc/HTML/ca/lokalize/common
+share/doc/HTML/ca/lokalize/index.cache.bz2
+share/doc/HTML/ca/lokalize/index.docbook
 share/doc/HTML/ca/sonnet/common
 share/doc/HTML/ca/sonnet/index.cache.bz2
 share/doc/HTML/ca/sonnet/index.docbook
+share/doc/HTML/ca/umbrello/authors.docbook
+share/doc/HTML/ca/umbrello/code_import_and_generation.docbook
+share/doc/HTML/ca/umbrello/common
+share/doc/HTML/ca/umbrello/credits.docbook
+share/doc/HTML/ca/umbrello/index.cache.bz2
+share/doc/HTML/ca/umbrello/index.docbook
+share/doc/HTML/ca/umbrello/introduction.docbook
+share/doc/HTML/ca/umbrello/other_features.docbook
+share/doc/HTML/ca/umbrello/uml_basics.docbook
+share/doc/HTML/ca/umbrello/working_with_umbrello.docbook
 share/locale/ca/LC_MESSAGES/akonadi-kcal.mo
 share/locale/ca/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_distlist_resource.mo
@@ -903,7 +932,6 @@ share/locale/ca/LC_MESSAGES/kdat.mo
 share/locale/ca/LC_MESSAGES/kde-menu.mo
 share/locale/ca/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/ca/LC_MESSAGES/kdebugdialog.mo
-share/locale/ca/LC_MESSAGES/kded_phononserver.mo
 share/locale/ca/LC_MESSAGES/kdelibs4.mo
 share/locale/ca/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ca/LC_MESSAGES/kdelirc.mo
@@ -1172,6 +1200,7 @@ share/locale/ca/LC_MESSAGES/libphonon.mo
 share/locale/ca/LC_MESSAGES/libplasma.mo
 share/locale/ca/LC_MESSAGES/libplasmaclock.mo
 share/locale/ca/LC_MESSAGES/libplasmaweather.mo
+share/locale/ca/LC_MESSAGES/librtm.mo
 share/locale/ca/LC_MESSAGES/libtaskmanager.mo
 share/locale/ca/LC_MESSAGES/lokalize.mo
 share/locale/ca/LC_MESSAGES/lskat.mo
@@ -1204,6 +1233,7 @@ share/locale/ca/LC_MESSAGES/parley.mo
 share/locale/ca/LC_MESSAGES/phonon-xine.mo
 share/locale/ca/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ca/LC_MESSAGES/phonon_kde.mo
+share/locale/ca/LC_MESSAGES/phononserver.mo
 share/locale/ca/LC_MESSAGES/plasma-desktop.mo
 share/locale/ca/LC_MESSAGES/plasma-overlay.mo
 share/locale/ca/LC_MESSAGES/plasma-shells-common.mo
@@ -1267,9 +1297,9 @@ share/locale/ca/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/ca/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/ca/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/ca/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/ca/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/ca/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_network.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_notifications.mo
@@ -1337,7 +1367,9 @@ share/locale/ca/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ca/entry.desktop
 @dirrm share/locale/ca/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/ca/LC_SCRIPTS
+@dirrm share/doc/HTML/ca/umbrello
 @dirrm share/doc/HTML/ca/sonnet
+@dirrm share/doc/HTML/ca/lokalize
 @dirrm share/doc/HTML/ca/lilo-config
 @dirrm share/doc/HTML/ca/kwrite
 @dirrm share/doc/HTML/ca/kwordquiz
@@ -1416,6 +1448,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kinfocenter/dma
 @dirrm share/doc/HTML/ca/kinfocenter/devices
 @dirrm share/doc/HTML/ca/kinfocenter
+@dirrm share/doc/HTML/ca/kimagemapeditor
 @dirrm share/doc/HTML/ca/khelpcenter/visualdict
 @dirrm share/doc/HTML/ca/khelpcenter/userguide
 @dirrm share/doc/HTML/ca/khelpcenter/quickstart
@@ -1482,7 +1515,11 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kbugbuster
 @dirrm share/doc/HTML/ca/kate-plugins
 @dirrm share/doc/HTML/ca/kate
+@dirrm share/doc/HTML/ca/kapptemplate
 @dirrm share/doc/HTML/ca/kalzium
+@dirrm share/doc/HTML/ca/common
+@dirrm share/doc/HTML/ca/cervisia
+@dirrm share/doc/HTML/ca/bomber
 @dirrm share/doc/HTML/ca/amor
 @dirrm share/apps/kvtml/ca
 @dirrm share/apps/kvtml

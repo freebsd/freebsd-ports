@@ -119,6 +119,10 @@ share/doc/HTML/fr/cervisia/logtree.png
 share/doc/HTML/fr/cervisia/mainview.png
 share/doc/HTML/fr/cervisia/resolve.png
 share/doc/HTML/fr/cervisia/updatetag.png
+share/doc/HTML/fr/common/fdl-translated.html
+share/doc/HTML/fr/common/gpl-translated.html
+share/doc/HTML/fr/common/kde-localised.css
+share/doc/HTML/fr/common/lgpl-translated.html
 share/doc/HTML/fr/dolphin/common
 share/doc/HTML/fr/dolphin/index.cache.bz2
 share/doc/HTML/fr/dolphin/index.docbook
@@ -138,6 +142,10 @@ share/doc/HTML/fr/irkick/index.docbook
 share/doc/HTML/fr/juk/common
 share/doc/HTML/fr/juk/index.cache.bz2
 share/doc/HTML/fr/juk/index.docbook
+share/doc/HTML/fr/kabcclient/common
+share/doc/HTML/fr/kabcclient/index.cache.bz2
+share/doc/HTML/fr/kabcclient/index.docbook
+share/doc/HTML/fr/kabcclient/man-kabcclient.1.docbook
 share/doc/HTML/fr/kaddressbook/common
 share/doc/HTML/fr/kaddressbook/index.cache.bz2
 share/doc/HTML/fr/kaddressbook/index.docbook
@@ -173,6 +181,11 @@ share/doc/HTML/fr/kanagram/newstuff-settings.png
 share/doc/HTML/fr/kanagram/standard-fonts.png
 share/doc/HTML/fr/kanagram/vocab-editor.png
 share/doc/HTML/fr/kanagram/vocab-settings.png
+share/doc/HTML/fr/kapman/common
+share/doc/HTML/fr/kapman/config.png
+share/doc/HTML/fr/kapman/index.cache.bz2
+share/doc/HTML/fr/kapman/index.docbook
+share/doc/HTML/fr/kapman/kapman.png
 share/doc/HTML/fr/karm/common
 share/doc/HTML/fr/karm/index.cache.bz2
 share/doc/HTML/fr/karm/index.docbook
@@ -1445,6 +1458,10 @@ share/doc/HTML/fr/lskat/index.cache.bz2
 share/doc/HTML/fr/lskat/index.docbook
 share/doc/HTML/fr/lskat/lskat_screen_01.png
 share/doc/HTML/fr/marble/common
+share/doc/HTML/fr/marble/configure-cacheproxy.png
+share/doc/HTML/fr/marble/configure-navigation.png
+share/doc/HTML/fr/marble/configure-plugins.png
+share/doc/HTML/fr/marble/configure-view.png
 share/doc/HTML/fr/marble/index.cache.bz2
 share/doc/HTML/fr/marble/index.docbook
 share/doc/HTML/fr/marble/logo-1.png
@@ -1453,15 +1470,20 @@ share/doc/HTML/fr/marble/measure-1.png
 share/doc/HTML/fr/marble/quick-1.png
 share/doc/HTML/fr/marble/search-1.png
 share/doc/HTML/fr/marble/search-2.png
+share/doc/HTML/fr/okteta/basics.docbook
+share/doc/HTML/fr/okteta/common
+share/doc/HTML/fr/okteta/credits.docbook
+share/doc/HTML/fr/okteta/index.cache.bz2
+share/doc/HTML/fr/okteta/index.docbook
+share/doc/HTML/fr/okteta/introduction.docbook
+share/doc/HTML/fr/okteta/menu.docbook
+share/doc/HTML/fr/okteta/tools.docbook
 share/doc/HTML/fr/okular/common
 share/doc/HTML/fr/okular/index.cache.bz2
 share/doc/HTML/fr/okular/index.docbook
 share/doc/HTML/fr/parley/common
 share/doc/HTML/fr/parley/index.cache.bz2
 share/doc/HTML/fr/parley/index.docbook
-share/doc/HTML/fr/plasma/common
-share/doc/HTML/fr/plasma/index.cache.bz2
-share/doc/HTML/fr/plasma/index.docbook
 share/doc/HTML/fr/sonnet/common
 share/doc/HTML/fr/sonnet/index.cache.bz2
 share/doc/HTML/fr/sonnet/index.docbook
@@ -1653,7 +1675,6 @@ share/locale/fr/LC_MESSAGES/kdat.mo
 share/locale/fr/LC_MESSAGES/kde-menu.mo
 share/locale/fr/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/fr/LC_MESSAGES/kdebugdialog.mo
-share/locale/fr/LC_MESSAGES/kded_phononserver.mo
 share/locale/fr/LC_MESSAGES/kdelibs4.mo
 share/locale/fr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/fr/LC_MESSAGES/kdelirc.mo
@@ -1922,6 +1943,7 @@ share/locale/fr/LC_MESSAGES/libphonon.mo
 share/locale/fr/LC_MESSAGES/libplasma.mo
 share/locale/fr/LC_MESSAGES/libplasmaclock.mo
 share/locale/fr/LC_MESSAGES/libplasmaweather.mo
+share/locale/fr/LC_MESSAGES/librtm.mo
 share/locale/fr/LC_MESSAGES/libtaskmanager.mo
 share/locale/fr/LC_MESSAGES/lokalize.mo
 share/locale/fr/LC_MESSAGES/lskat.mo
@@ -1954,6 +1976,7 @@ share/locale/fr/LC_MESSAGES/parley.mo
 share/locale/fr/LC_MESSAGES/phonon-xine.mo
 share/locale/fr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/fr/LC_MESSAGES/phonon_kde.mo
+share/locale/fr/LC_MESSAGES/phononserver.mo
 share/locale/fr/LC_MESSAGES/plasma-desktop.mo
 share/locale/fr/LC_MESSAGES/plasma-overlay.mo
 share/locale/fr/LC_MESSAGES/plasma-shells-common.mo
@@ -2017,9 +2040,9 @@ share/locale/fr/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/fr/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/fr/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/fr/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/fr/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/fr/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_network.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_notifications.mo
@@ -2088,9 +2111,9 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/superkaramba
 @dirrm share/doc/HTML/fr/step
 @dirrm share/doc/HTML/fr/sonnet
-@dirrm share/doc/HTML/fr/plasma
 @dirrm share/doc/HTML/fr/parley
 @dirrm share/doc/HTML/fr/okular
+@dirrm share/doc/HTML/fr/okteta
 @dirrm share/doc/HTML/fr/marble
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lokalize
@@ -2336,16 +2359,19 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/katomic
 @dirrm share/doc/HTML/fr/kate-plugins
 @dirrm share/doc/HTML/fr/karm
+@dirrm share/doc/HTML/fr/kapman
 @dirrm share/doc/HTML/fr/kanagram
 @dirrm share/doc/HTML/fr/kamera
 @dirrm share/doc/HTML/fr/kalzium
 @dirrm share/doc/HTML/fr/kalarm
 @dirrm share/doc/HTML/fr/kaddressbook
+@dirrm share/doc/HTML/fr/kabcclient
 @dirrm share/doc/HTML/fr/juk
 @dirrm share/doc/HTML/fr/irkick
 @dirrm share/doc/HTML/fr/gwenview
 @dirrm share/doc/HTML/fr/dragonplayer
 @dirrm share/doc/HTML/fr/dolphin
+@dirrm share/doc/HTML/fr/common
 @dirrm share/doc/HTML/fr/cervisia
 @dirrm share/doc/HTML/fr/bovo
 @dirrm share/doc/HTML/fr/bomber

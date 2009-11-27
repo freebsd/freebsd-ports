@@ -51,6 +51,10 @@ share/apps/klettres/he/syllab/ad-23.ogg
 share/apps/klettres/he/syllab/ad-24.ogg
 share/apps/klettres/he/syllab/ad-25.ogg
 share/apps/klettres/he/syllab/ad-26.ogg
+share/doc/HTML/he/common/fdl-translated.html
+share/doc/HTML/he/common/gpl-translated.html
+share/doc/HTML/he/common/kde-localised.css
+share/doc/HTML/he/common/lgpl-translated.html
 share/locale/he/LC_MESSAGES/akregator.mo
 share/locale/he/LC_MESSAGES/amor.mo
 share/locale/he/LC_MESSAGES/ark.mo
@@ -168,7 +172,6 @@ share/locale/he/LC_MESSAGES/kcron.mo
 share/locale/he/LC_MESSAGES/kdat.mo
 share/locale/he/LC_MESSAGES/kde-menu.mo
 share/locale/he/LC_MESSAGES/kdebugdialog.mo
-share/locale/he/LC_MESSAGES/kded_phononserver.mo
 share/locale/he/LC_MESSAGES/kdelibs4.mo
 share/locale/he/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/he/LC_MESSAGES/kdelirc.mo
@@ -370,6 +373,7 @@ share/locale/he/LC_MESSAGES/okular.mo
 share/locale/he/LC_MESSAGES/parley.mo
 share/locale/he/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/he/LC_MESSAGES/phonon_kde.mo
+share/locale/he/LC_MESSAGES/phononserver.mo
 share/locale/he/LC_MESSAGES/plasma-desktop.mo
 share/locale/he/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/he/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
@@ -416,8 +420,8 @@ share/locale/he/LC_MESSAGES/plasma_applet_weatherstation.mo
 share/locale/he/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/he/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/he/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/he/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/he/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/he/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/he/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/he/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/he/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -446,6 +450,7 @@ share/locale/he/LC_MESSAGES/systemsettings.mo
 share/locale/he/LC_MESSAGES/timezones4.mo
 share/locale/he/LC_MESSAGES/useraccount.mo
 share/locale/he/entry.desktop
+@dirrm share/doc/HTML/he/common
 @dirrm share/apps/klettres/he/syllab
 @dirrm share/apps/klettres/he/alpha
 @dirrm share/apps/klettres/he

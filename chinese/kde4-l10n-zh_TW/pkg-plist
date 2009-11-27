@@ -1,3 +1,7 @@
+share/doc/HTML/zh_TW/common/fdl-translated.html
+share/doc/HTML/zh_TW/common/gpl-translated.html
+share/doc/HTML/zh_TW/common/kde-localised.css
+share/doc/HTML/zh_TW/common/lgpl-translated.html
 share/doc/HTML/zh_TW/khelpcenter/faq/about.docbook
 share/doc/HTML/zh_TW/khelpcenter/faq/common
 share/doc/HTML/zh_TW/khelpcenter/faq/configkde.docbook
@@ -198,7 +202,6 @@ share/locale/zh_TW/LC_MESSAGES/kdat.mo
 share/locale/zh_TW/LC_MESSAGES/kde-menu.mo
 share/locale/zh_TW/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/zh_TW/LC_MESSAGES/kdebugdialog.mo
-share/locale/zh_TW/LC_MESSAGES/kded_phononserver.mo
 share/locale/zh_TW/LC_MESSAGES/kdelibs4.mo
 share/locale/zh_TW/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/zh_TW/LC_MESSAGES/kdelirc.mo
@@ -467,6 +470,7 @@ share/locale/zh_TW/LC_MESSAGES/libphonon.mo
 share/locale/zh_TW/LC_MESSAGES/libplasma.mo
 share/locale/zh_TW/LC_MESSAGES/libplasmaclock.mo
 share/locale/zh_TW/LC_MESSAGES/libplasmaweather.mo
+share/locale/zh_TW/LC_MESSAGES/librtm.mo
 share/locale/zh_TW/LC_MESSAGES/libtaskmanager.mo
 share/locale/zh_TW/LC_MESSAGES/lokalize.mo
 share/locale/zh_TW/LC_MESSAGES/lskat.mo
@@ -499,6 +503,7 @@ share/locale/zh_TW/LC_MESSAGES/parley.mo
 share/locale/zh_TW/LC_MESSAGES/phonon-xine.mo
 share/locale/zh_TW/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/zh_TW/LC_MESSAGES/phonon_kde.mo
+share/locale/zh_TW/LC_MESSAGES/phononserver.mo
 share/locale/zh_TW/LC_MESSAGES/plasma-desktop.mo
 share/locale/zh_TW/LC_MESSAGES/plasma-overlay.mo
 share/locale/zh_TW/LC_MESSAGES/plasma-shells-common.mo
@@ -562,9 +567,9 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/zh_TW/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_network.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_notifications.mo
@@ -631,3 +636,4 @@ share/locale/zh_TW/LC_MESSAGES/xml_mimetypes.mo
 share/locale/zh_TW/entry.desktop
 @dirrm share/doc/HTML/zh_TW/khelpcenter/faq
 @dirrm share/doc/HTML/zh_TW/khelpcenter
+@dirrm share/doc/HTML/zh_TW/common

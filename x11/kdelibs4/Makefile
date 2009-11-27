@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	5
+PORTREVISION=	0
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -44,7 +44,7 @@ CONFLICTS=	kdebase-workspace-4.1.*
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
+USE_KDE4=	kdeprefix kdehier automoc4 sharedmime oxygen
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

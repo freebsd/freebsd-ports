@@ -68,7 +68,6 @@ share/locale/mr/LC_MESSAGES/kcmview1394.mo
 share/locale/mr/LC_MESSAGES/kcmxinerama.mo
 share/locale/mr/LC_MESSAGES/kde-menu.mo
 share/locale/mr/LC_MESSAGES/kdebugdialog.mo
-share/locale/mr/LC_MESSAGES/kded_phononserver.mo
 share/locale/mr/LC_MESSAGES/kdelibs4.mo
 share/locale/mr/LC_MESSAGES/kdepasswd.mo
 share/locale/mr/LC_MESSAGES/kdesu.mo
@@ -152,6 +151,7 @@ share/locale/mr/LC_MESSAGES/nepomuk.mo
 share/locale/mr/LC_MESSAGES/nepomuksearch.mo
 share/locale/mr/LC_MESSAGES/nsplugin.mo
 share/locale/mr/LC_MESSAGES/phonon_kde.mo
+share/locale/mr/LC_MESSAGES/phononserver.mo
 share/locale/mr/LC_MESSAGES/plasma-desktop.mo
 share/locale/mr/LC_MESSAGES/plasma-overlay.mo
 share/locale/mr/LC_MESSAGES/plasma-shells-common.mo
@@ -177,8 +177,8 @@ share/locale/mr/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/mr/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/mr/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/mr/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/mr/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/mr/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_network.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_notifications.mo

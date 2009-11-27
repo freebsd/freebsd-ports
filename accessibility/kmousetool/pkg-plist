@@ -2266,5 +2266,3 @@ share/kde4/servicetypes/kttsd_synthplugin.desktop
 @dirrm share/apps/kmousetool/sounds
 @dirrm share/apps/kmousetool
 @dirrm share/apps/kmag
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake

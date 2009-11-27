@@ -49,6 +49,7 @@ share/doc/HTML/ru/blinken/index.docbook
 share/doc/HTML/ru/cervisia/common
 share/doc/HTML/ru/cervisia/index.cache.bz2
 share/doc/HTML/ru/cervisia/index.docbook
+share/doc/HTML/ru/common/kde-localised.css
 share/doc/HTML/ru/gwenview/common
 share/doc/HTML/ru/gwenview/docked_windows.docbook
 share/doc/HTML/ru/gwenview/external_tools.docbook
@@ -886,6 +887,19 @@ share/doc/HTML/ru/xsldbg/index.cache.bz2
 share/doc/HTML/ru/xsldbg/index.docbook
 share/doc/HTML/ru/xsldbg/introduction.docbook
 share/doc/HTML/ru/xsldbg/usage.docbook
+share/locale/ru/LC_MESSAGES/akonadi-kcal.mo
+share/locale/ru/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_distlist_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_ical_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_imap_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_kcal_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_localbookmarks_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_microblog_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_nepomuktag_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_nntp_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_openchange_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ru/LC_MESSAGES/akonaditray.mo
 share/locale/ru/LC_MESSAGES/akregator.mo
 share/locale/ru/LC_MESSAGES/amor.mo
@@ -1030,7 +1044,6 @@ share/locale/ru/LC_MESSAGES/kdat.mo
 share/locale/ru/LC_MESSAGES/kde-menu.mo
 share/locale/ru/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/ru/LC_MESSAGES/kdebugdialog.mo
-share/locale/ru/LC_MESSAGES/kded_phononserver.mo
 share/locale/ru/LC_MESSAGES/kdelibs4.mo
 share/locale/ru/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ru/LC_MESSAGES/kdelirc.mo
@@ -1315,6 +1328,7 @@ share/locale/ru/LC_MESSAGES/okular_xps.mo
 share/locale/ru/LC_MESSAGES/parley.mo
 share/locale/ru/LC_MESSAGES/phonon-xine.mo
 share/locale/ru/LC_MESSAGES/phonon_kde.mo
+share/locale/ru/LC_MESSAGES/phononserver.mo
 share/locale/ru/LC_MESSAGES/plasma-desktop.mo
 share/locale/ru/LC_MESSAGES/plasma-overlay.mo
 share/locale/ru/LC_MESSAGES/plasma-shells-common.mo
@@ -1370,8 +1384,8 @@ share/locale/ru/LC_MESSAGES/plasma_applet_weatherstation.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/ru/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/ru/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/ru/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/ru/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -1615,6 +1629,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kaddressbook
 @dirrm share/doc/HTML/ru/juk
 @dirrm share/doc/HTML/ru/gwenview
+@dirrm share/doc/HTML/ru/common
 @dirrm share/doc/HTML/ru/cervisia
 @dirrm share/doc/HTML/ru/blinken
 @dirrm share/doc/HTML/ru/ark

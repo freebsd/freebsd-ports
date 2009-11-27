@@ -26,11 +26,22 @@ share/apps/kvtml/sr@latin/animals.kvtml
 share/apps/kvtml/sr@latin/easy.kvtml
 share/apps/kvtml/sr@latin/hard.kvtml
 share/apps/kvtml/sr@latin/medium.kvtml
+share/doc/HTML/sr/common/fdl-translated.html
+share/doc/HTML/sr/common/gpl-translated.html
+share/doc/HTML/sr/common/kde-localised.css
+share/doc/HTML/sr/common/lgpl-translated.html
 share/doc/HTML/sr/dolphin/common
 share/doc/HTML/sr/dolphin/index.cache.bz2
 share/doc/HTML/sr/dolphin/index.docbook
 share/doc/HTML/sr/dolphin/toolbarbuttons.png
 share/doc/HTML/sr/dolphin/workspacebuttons.png
+share/doc/HTML/sr/gwenview/common
+share/doc/HTML/sr/gwenview/index.cache.bz2
+share/doc/HTML/sr/gwenview/index.docbook
+share/doc/HTML/sr/gwenview/interface.docbook
+share/doc/HTML/sr/gwenview/introduction.docbook
+share/doc/HTML/sr/gwenview/keybindings.docbook
+share/doc/HTML/sr/gwenview/mouse.docbook
 share/doc/HTML/sr/kcontrol/autostart/common
 share/doc/HTML/sr/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/sr/kcontrol/autostart/index.docbook
@@ -385,6 +396,13 @@ share/doc/HTML/sr/sonnet/index.docbook
 share/doc/HTML/sr@latin/dolphin/common
 share/doc/HTML/sr@latin/dolphin/index.cache.bz2
 share/doc/HTML/sr@latin/dolphin/index.docbook
+share/doc/HTML/sr@latin/gwenview/common
+share/doc/HTML/sr@latin/gwenview/index.cache.bz2
+share/doc/HTML/sr@latin/gwenview/index.docbook
+share/doc/HTML/sr@latin/gwenview/interface.docbook
+share/doc/HTML/sr@latin/gwenview/introduction.docbook
+share/doc/HTML/sr@latin/gwenview/keybindings.docbook
+share/doc/HTML/sr@latin/gwenview/mouse.docbook
 share/doc/HTML/sr@latin/kcontrol/autostart/common
 share/doc/HTML/sr@latin/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol/autostart/index.docbook
@@ -926,7 +944,6 @@ share/locale/sr/LC_MESSAGES/kcmxinerama.mo
 share/locale/sr/LC_MESSAGES/kde-menu.mo
 share/locale/sr/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/sr/LC_MESSAGES/kdebugdialog.mo
-share/locale/sr/LC_MESSAGES/kded_phononserver.mo
 share/locale/sr/LC_MESSAGES/kdelibs4.mo
 share/locale/sr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/sr/LC_MESSAGES/kdelirc.mo
@@ -1021,6 +1038,7 @@ share/locale/sr/LC_MESSAGES/kollision.mo
 share/locale/sr/LC_MESSAGES/konqueror.mo
 share/locale/sr/LC_MESSAGES/konquest.mo
 share/locale/sr/LC_MESSAGES/konsole.mo
+share/locale/sr/LC_MESSAGES/kontactinterfaces.mo
 share/locale/sr/LC_MESSAGES/kopete.mo
 share/locale/sr/LC_MESSAGES/kpartsaver.mo
 share/locale/sr/LC_MESSAGES/kpasswdserver.mo
@@ -1043,6 +1061,7 @@ share/locale/sr/LC_MESSAGES/kshisen.mo
 share/locale/sr/LC_MESSAGES/kshorturifilter.mo
 share/locale/sr/LC_MESSAGES/ksirk.mo
 share/locale/sr/LC_MESSAGES/ksmserver.mo
+share/locale/sr/LC_MESSAGES/ksnapshot.mo
 share/locale/sr/LC_MESSAGES/kspaceduel.mo
 share/locale/sr/LC_MESSAGES/ksplashthemes.mo
 share/locale/sr/LC_MESSAGES/ksquares.mo
@@ -1108,6 +1127,7 @@ share/locale/sr/LC_MESSAGES/libphonon.mo
 share/locale/sr/LC_MESSAGES/libplasma.mo
 share/locale/sr/LC_MESSAGES/libplasmaclock.mo
 share/locale/sr/LC_MESSAGES/libplasmaweather.mo
+share/locale/sr/LC_MESSAGES/librtm.mo
 share/locale/sr/LC_MESSAGES/libtaskmanager.mo
 share/locale/sr/LC_MESSAGES/lokalize.mo
 share/locale/sr/LC_MESSAGES/lskat.mo
@@ -1121,6 +1141,7 @@ share/locale/sr/LC_MESSAGES/oktetapart.mo
 share/locale/sr/LC_MESSAGES/phonon-xine.mo
 share/locale/sr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/sr/LC_MESSAGES/phonon_kde.mo
+share/locale/sr/LC_MESSAGES/phononserver.mo
 share/locale/sr/LC_MESSAGES/plasma-desktop.mo
 share/locale/sr/LC_MESSAGES/plasma-overlay.mo
 share/locale/sr/LC_MESSAGES/plasma-shells-common.mo
@@ -1183,8 +1204,8 @@ share/locale/sr/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/sr/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/sr/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/sr/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/sr/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/sr/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_network.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_notifications.mo
@@ -1241,15 +1262,9 @@ share/locale/sr/LC_MESSAGES/systemsettings.mo
 share/locale/sr/LC_MESSAGES/timezones4.mo
 share/locale/sr/LC_MESSAGES/useraccount.mo
 share/locale/sr/LC_MESSAGES/xml_mimetypes.mo
-share/locale/sr/LC_SCRIPTS/kdelibs4/apps.pmap
-share/locale/sr/LC_SCRIPTS/kdelibs4/apps.pmapc
-share/locale/sr/LC_SCRIPTS/kdelibs4/calendar.pmap
-share/locale/sr/LC_SCRIPTS/kdelibs4/contributors.pmap
-share/locale/sr/LC_SCRIPTS/kdelibs4/countries.pmap
-share/locale/sr/LC_SCRIPTS/kdelibs4/fonts.pmap
 share/locale/sr/LC_SCRIPTS/kdelibs4/kdelibs4.js
-share/locale/sr/LC_SCRIPTS/kdelibs4/languages.pmap
-share/locale/sr/LC_SCRIPTS/kdelibs4/places.pmap
+share/locale/sr/LC_SCRIPTS/kdelibs4/trapnakron.pmap
+share/locale/sr/LC_SCRIPTS/kdelibs4/trapnakron.pmapc
 share/locale/sr/LC_SCRIPTS/kfontinst/kfontinst.js
 share/locale/sr/entry.desktop
 share/locale/sr@latin/LC_MESSAGES/kdeqt.mo
@@ -1274,58 +1289,89 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/icons/oxygen/48x48/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/48x48/apps/l10n/sr
 @dirrm share/icons/oxygen/48x48/apps/l10n
+@dirrm share/icons/oxygen/48x48/apps
 @dirrm share/icons/oxygen/48x48/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/48x48/actions/l10n/sr
 @dirrm share/icons/oxygen/48x48/actions/l10n
+@dirrm share/icons/oxygen/48x48/actions
+@dirrm share/icons/oxygen/48x48
 @dirrm share/icons/oxygen/32x32/status/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/status/l10n/sr
 @dirrm share/icons/oxygen/32x32/status/l10n
+@dirrm share/icons/oxygen/32x32/status
 @dirrm share/icons/oxygen/32x32/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/apps/l10n/sr
 @dirrm share/icons/oxygen/32x32/apps/l10n
+@dirrm share/icons/oxygen/32x32/apps
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr
 @dirrm share/icons/oxygen/32x32/actions/l10n
+@dirrm share/icons/oxygen/32x32/actions
+@dirrm share/icons/oxygen/32x32
 @dirrm share/icons/oxygen/256x256
 @dirrm share/icons/oxygen/22x22/status/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/status/l10n/sr
 @dirrm share/icons/oxygen/22x22/status/l10n
+@dirrm share/icons/oxygen/22x22/status
 @dirrm share/icons/oxygen/22x22/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/apps/l10n/sr
 @dirrm share/icons/oxygen/22x22/apps/l10n
+@dirrm share/icons/oxygen/22x22/apps
 @dirrm share/icons/oxygen/22x22/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/actions/l10n/sr
 @dirrm share/icons/oxygen/22x22/actions/l10n
+@dirrm share/icons/oxygen/22x22/actions
+@dirrm share/icons/oxygen/22x22
 @dirrm share/icons/oxygen/16x16/status/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/status/l10n/sr
 @dirrm share/icons/oxygen/16x16/status/l10n
+@dirrm share/icons/oxygen/16x16/status
 @dirrm share/icons/oxygen/16x16/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/apps/l10n/sr
 @dirrm share/icons/oxygen/16x16/apps/l10n
+@dirrm share/icons/oxygen/16x16/apps
 @dirrm share/icons/oxygen/16x16/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/actions/l10n/sr
 @dirrm share/icons/oxygen/16x16/actions/l10n
+@dirrm share/icons/oxygen/16x16/actions
+@dirrm share/icons/oxygen/16x16
 @dirrm share/icons/oxygen/128x128/status/l10n/sr@latin
 @dirrm share/icons/oxygen/128x128/status/l10n/sr
 @dirrm share/icons/oxygen/128x128/status/l10n
+@dirrm share/icons/oxygen/128x128/status
 @dirrm share/icons/oxygen/128x128/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/128x128/apps/l10n/sr
 @dirrm share/icons/oxygen/128x128/apps/l10n
+@dirrm share/icons/oxygen/128x128/apps
+@dirrm share/icons/oxygen/128x128
+@dirrm share/icons/oxygen
 @dirrm share/icons/hicolor/scalable/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/scalable/actions/l10n/sr
 @dirrm share/icons/hicolor/scalable/actions/l10n
+@dirrm share/icons/hicolor/scalable/actions
+@dirrm share/icons/hicolor/scalable
 @dirrm share/icons/hicolor/48x48/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/48x48/actions/l10n/sr
 @dirrm share/icons/hicolor/48x48/actions/l10n
+@dirrm share/icons/hicolor/48x48/actions
+@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/32x32/actions/l10n/sr
 @dirrm share/icons/hicolor/32x32/actions/l10n
+@dirrm share/icons/hicolor/32x32/actions
+@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/22x22/actions/l10n/sr
 @dirrm share/icons/hicolor/22x22/actions/l10n
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr
 @dirrm share/icons/hicolor/16x16/actions/l10n
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/sr@latin/sonnet
 @dirrm share/doc/HTML/sr@latin/lokalize
 @dirrm share/doc/HTML/sr@latin/kwrite
@@ -1421,6 +1467,7 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr@latin/kcontrol/background
 @dirrm share/doc/HTML/sr@latin/kcontrol/autostart
 @dirrm share/doc/HTML/sr@latin/kcontrol
+@dirrm share/doc/HTML/sr@latin/gwenview
 @dirrm share/doc/HTML/sr@latin/dolphin
 @dirrm share/doc/HTML/sr@latin
 @dirrm share/doc/HTML/sr/sonnet
@@ -1518,7 +1565,10 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr/kcontrol/background
 @dirrm share/doc/HTML/sr/kcontrol/autostart
 @dirrm share/doc/HTML/sr/kcontrol
+@dirrm share/doc/HTML/sr/gwenview
 @dirrm share/doc/HTML/sr/dolphin
+@dirrm share/doc/HTML/sr/common
+@dirrm share/doc/HTML/sr
 @dirrm share/apps/kvtml/sr@latin
 @dirrm share/apps/kvtml/sr
 @dirrm share/apps/kvtml
@@ -1529,6 +1579,9 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr@latin
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr
 @dirrm share/apps/desktoptheme/default/widgets/l10n
+@dirrm share/apps/desktoptheme/default/widgets
+@dirrm share/apps/desktoptheme/default
+@dirrm share/apps/desktoptheme
 @dirrmtry man/sr@latin/man1
 @dirrmtry man/sr@latin
 @dirrmtry man/sr/man1

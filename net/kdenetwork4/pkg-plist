@@ -6,8 +6,8 @@ bin/kopete_latexconvert.sh
 bin/krdc
 bin/krfb
 bin/skype-action-handler
-bin/winpopup-install.sh
-bin/winpopup-send.sh
+bin/winpopup-install
+bin/winpopup-send
 include/kopete/kabcpersistence.h
 include/kopete/kopete_export.h
 include/kopete/kopeteaccount.h

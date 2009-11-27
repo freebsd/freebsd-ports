@@ -76,6 +76,10 @@ share/apps/kvtml/en_GB/worldcapitals.kvtml
 share/doc/HTML/en_GB/cervisia/common
 share/doc/HTML/en_GB/cervisia/index.cache.bz2
 share/doc/HTML/en_GB/cervisia/index.docbook
+share/doc/HTML/en_GB/common/fdl-translated.html
+share/doc/HTML/en_GB/common/gpl-translated.html
+share/doc/HTML/en_GB/common/kde-localised.css
+share/doc/HTML/en_GB/common/lgpl-translated.html
 share/doc/HTML/en_GB/kaddressbook/common
 share/doc/HTML/en_GB/kaddressbook/index.cache.bz2
 share/doc/HTML/en_GB/kaddressbook/index.docbook
@@ -699,7 +703,6 @@ share/locale/en_GB/LC_MESSAGES/kdat.mo
 share/locale/en_GB/LC_MESSAGES/kde-menu.mo
 share/locale/en_GB/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/en_GB/LC_MESSAGES/kdebugdialog.mo
-share/locale/en_GB/LC_MESSAGES/kded_phononserver.mo
 share/locale/en_GB/LC_MESSAGES/kdelibs4.mo
 share/locale/en_GB/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/en_GB/LC_MESSAGES/kdelirc.mo
@@ -999,6 +1002,7 @@ share/locale/en_GB/LC_MESSAGES/parley.mo
 share/locale/en_GB/LC_MESSAGES/phonon-xine.mo
 share/locale/en_GB/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/en_GB/LC_MESSAGES/phonon_kde.mo
+share/locale/en_GB/LC_MESSAGES/phononserver.mo
 share/locale/en_GB/LC_MESSAGES/plasma-desktop.mo
 share/locale/en_GB/LC_MESSAGES/plasma-overlay.mo
 share/locale/en_GB/LC_MESSAGES/plasma-shells-common.mo
@@ -1062,8 +1066,8 @@ share/locale/en_GB/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/en_GB/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/en_GB/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/en_GB/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/en_GB/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/en_GB/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_network.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_notifications.mo
@@ -1225,6 +1229,7 @@ share/locale/en_GB/entry.desktop
 @dirrm share/doc/HTML/en_GB/kbugbuster
 @dirrm share/doc/HTML/en_GB/kalarm
 @dirrm share/doc/HTML/en_GB/kaddressbook
+@dirrm share/doc/HTML/en_GB/common
 @dirrm share/doc/HTML/en_GB/cervisia
 @dirrm share/apps/kvtml/en_GB
 @dirrm share/apps/kvtml

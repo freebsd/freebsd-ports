@@ -267,6 +267,10 @@ share/doc/HTML/es/bovo/index.docbook
 share/doc/HTML/es/cervisia/common
 share/doc/HTML/es/cervisia/index.cache.bz2
 share/doc/HTML/es/cervisia/index.docbook
+share/doc/HTML/es/common/fdl-translated.html
+share/doc/HTML/es/common/gpl-translated.html
+share/doc/HTML/es/common/kde-localised.css
+share/doc/HTML/es/common/lgpl-translated.html
 share/doc/HTML/es/dolphin/common
 share/doc/HTML/es/dolphin/index.cache.bz2
 share/doc/HTML/es/dolphin/index.docbook
@@ -861,6 +865,9 @@ share/doc/HTML/es/kioslave/mailto/index.docbook
 share/doc/HTML/es/kioslave/man/common
 share/doc/HTML/es/kioslave/man/index.cache.bz2
 share/doc/HTML/es/kioslave/man/index.docbook
+share/doc/HTML/es/kioslave/network/common
+share/doc/HTML/es/kioslave/network/index.cache.bz2
+share/doc/HTML/es/kioslave/network/index.docbook
 share/doc/HTML/es/kioslave/news/common
 share/doc/HTML/es/kioslave/news/index.cache.bz2
 share/doc/HTML/es/kioslave/news/index.docbook
@@ -918,6 +925,9 @@ share/doc/HTML/es/kleopatra/index.docbook
 share/doc/HTML/es/klettres/common
 share/doc/HTML/es/klettres/index.cache.bz2
 share/doc/HTML/es/klettres/index.docbook
+share/doc/HTML/es/klettres/klettres-newstuff.png
+share/doc/HTML/es/klettres/klettres-newstuff1.png
+share/doc/HTML/es/klettres/klettres-newstuff2.png
 share/doc/HTML/es/klettres/klettres1.png
 share/doc/HTML/es/klettres/klettres2.png
 share/doc/HTML/es/klettres/klettres3.png
@@ -942,6 +952,17 @@ share/doc/HTML/es/kmag/screenshot.png
 share/doc/HTML/es/kmahjongg/common
 share/doc/HTML/es/kmahjongg/index.cache.bz2
 share/doc/HTML/es/kmahjongg/index.docbook
+share/doc/HTML/es/kmail/common
+share/doc/HTML/es/kmail/configure.docbook
+share/doc/HTML/es/kmail/credits-and-licenses.docbook
+share/doc/HTML/es/kmail/faq.docbook
+share/doc/HTML/es/kmail/getting-started.docbook
+share/doc/HTML/es/kmail/importing.docbook
+share/doc/HTML/es/kmail/index.cache.bz2
+share/doc/HTML/es/kmail/index.docbook
+share/doc/HTML/es/kmail/intro.docbook
+share/doc/HTML/es/kmail/menus.docbook
+share/doc/HTML/es/kmail/using-kmail.docbook
 share/doc/HTML/es/kmenuedit/common
 share/doc/HTML/es/kmenuedit/index.cache.bz2
 share/doc/HTML/es/kmenuedit/index.docbook
@@ -1606,7 +1627,6 @@ share/locale/es/LC_MESSAGES/kdat.mo
 share/locale/es/LC_MESSAGES/kde-menu.mo
 share/locale/es/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/es/LC_MESSAGES/kdebugdialog.mo
-share/locale/es/LC_MESSAGES/kded_phononserver.mo
 share/locale/es/LC_MESSAGES/kdelibs4.mo
 share/locale/es/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/es/LC_MESSAGES/kdelirc.mo
@@ -1875,6 +1895,7 @@ share/locale/es/LC_MESSAGES/libphonon.mo
 share/locale/es/LC_MESSAGES/libplasma.mo
 share/locale/es/LC_MESSAGES/libplasmaclock.mo
 share/locale/es/LC_MESSAGES/libplasmaweather.mo
+share/locale/es/LC_MESSAGES/librtm.mo
 share/locale/es/LC_MESSAGES/libtaskmanager.mo
 share/locale/es/LC_MESSAGES/lokalize.mo
 share/locale/es/LC_MESSAGES/lskat.mo
@@ -1907,6 +1928,7 @@ share/locale/es/LC_MESSAGES/parley.mo
 share/locale/es/LC_MESSAGES/phonon-xine.mo
 share/locale/es/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/es/LC_MESSAGES/phonon_kde.mo
+share/locale/es/LC_MESSAGES/phononserver.mo
 share/locale/es/LC_MESSAGES/plasma-desktop.mo
 share/locale/es/LC_MESSAGES/plasma-overlay.mo
 share/locale/es/LC_MESSAGES/plasma-shells-common.mo
@@ -1970,9 +1992,9 @@ share/locale/es/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/es/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/es/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/es/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/es/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/es/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/es/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/es/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/es/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/es/LC_MESSAGES/plasma_engine_network.mo
 share/locale/es/LC_MESSAGES/plasma_engine_notifications.mo
@@ -2103,6 +2125,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kmix
 @dirrm share/doc/HTML/es/kmines
 @dirrm share/doc/HTML/es/kmenuedit
+@dirrm share/doc/HTML/es/kmail
 @dirrm share/doc/HTML/es/kmahjongg
 @dirrm share/doc/HTML/es/kmag
 @dirrm share/doc/HTML/es/klipper
@@ -2127,6 +2150,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kioslave/nntp
 @dirrm share/doc/HTML/es/kioslave/nfs
 @dirrm share/doc/HTML/es/kioslave/news
+@dirrm share/doc/HTML/es/kioslave/network
 @dirrm share/doc/HTML/es/kioslave/man
 @dirrm share/doc/HTML/es/kioslave/mailto
 @dirrm share/doc/HTML/es/kioslave/ldap
@@ -2271,6 +2295,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/gwenview
 @dirrm share/doc/HTML/es/dragonplayer
 @dirrm share/doc/HTML/es/dolphin
+@dirrm share/doc/HTML/es/common
 @dirrm share/doc/HTML/es/cervisia
 @dirrm share/doc/HTML/es/bovo
 @dirrm share/doc/HTML/es/blinken
