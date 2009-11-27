@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	kde-l10n
-PORTVERSION=	4.1.4
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Frisian messages and documentation for KDE4
-
-IGNORE=		unfetchable; will be included in next version
 
 KDE4_L10N=	fy
 

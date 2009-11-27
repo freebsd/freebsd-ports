@@ -3,6 +3,10 @@ share/apps/kvtml/tr/animals.kvtml
 share/apps/kvtml/tr/easy.kvtml
 share/apps/kvtml/tr/hard.kvtml
 share/apps/kvtml/tr/medium.kvtml
+share/doc/HTML/tr/common/fdl-translated.html
+share/doc/HTML/tr/common/gpl-translated.html
+share/doc/HTML/tr/common/kde-localised.css
+share/doc/HTML/tr/common/lgpl-translated.html
 share/doc/HTML/tr/kinfocenter/protocols/common
 share/doc/HTML/tr/kinfocenter/protocols/index.cache.bz2
 share/doc/HTML/tr/kinfocenter/protocols/index.docbook
@@ -183,7 +187,6 @@ share/locale/tr/LC_MESSAGES/kdat.mo
 share/locale/tr/LC_MESSAGES/kde-menu.mo
 share/locale/tr/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/tr/LC_MESSAGES/kdebugdialog.mo
-share/locale/tr/LC_MESSAGES/kded_phononserver.mo
 share/locale/tr/LC_MESSAGES/kdelibs4.mo
 share/locale/tr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/tr/LC_MESSAGES/kdelirc.mo
@@ -483,6 +486,7 @@ share/locale/tr/LC_MESSAGES/parley.mo
 share/locale/tr/LC_MESSAGES/phonon-xine.mo
 share/locale/tr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/tr/LC_MESSAGES/phonon_kde.mo
+share/locale/tr/LC_MESSAGES/phononserver.mo
 share/locale/tr/LC_MESSAGES/plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma-overlay.mo
 share/locale/tr/LC_MESSAGES/plasma-shells-common.mo
@@ -546,9 +550,9 @@ share/locale/tr/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/tr/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/tr/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/tr/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/tr/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/tr/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_network.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_notifications.mo
@@ -615,6 +619,7 @@ share/locale/tr/LC_MESSAGES/xml_mimetypes.mo
 share/locale/tr/entry.desktop
 @dirrm share/doc/HTML/tr/kinfocenter/protocols
 @dirrm share/doc/HTML/tr/kinfocenter
+@dirrm share/doc/HTML/tr/common
 @dirrm share/apps/kvtml/tr
 @dirrm share/apps/kvtml
 @dirrm share/apps/khangman

@@ -181,7 +181,7 @@ share/locale/csb/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/csb/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/csb/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/csb/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/csb/LC_MESSAGES/plasma_engine_applicationjobs.mo
+share/locale/csb/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/csb/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/csb/LC_MESSAGES/plasma_engine_network.mo
 share/locale/csb/LC_MESSAGES/plasma_engine_notifications.mo

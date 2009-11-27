@@ -15,6 +15,7 @@ share/locale/bg/LC_MESSAGES/display.mo
 share/locale/bg/LC_MESSAGES/dolphin.mo
 share/locale/bg/LC_MESSAGES/drkonqi.mo
 share/locale/bg/LC_MESSAGES/filetypes.mo
+share/locale/bg/LC_MESSAGES/gwenview.mo
 share/locale/bg/LC_MESSAGES/htmlsearch.mo
 share/locale/bg/LC_MESSAGES/imagerename_plugin.mo
 share/locale/bg/LC_MESSAGES/irkick.mo
@@ -321,6 +322,7 @@ share/locale/bg/LC_MESSAGES/libkworkspace.mo
 share/locale/bg/LC_MESSAGES/libphonon.mo
 share/locale/bg/LC_MESSAGES/libplasma.mo
 share/locale/bg/LC_MESSAGES/libtaskmanager.mo
+share/locale/bg/LC_MESSAGES/lokalize.mo
 share/locale/bg/LC_MESSAGES/lskat.mo
 share/locale/bg/LC_MESSAGES/nepomuk.mo
 share/locale/bg/LC_MESSAGES/nepomuksearch.mo

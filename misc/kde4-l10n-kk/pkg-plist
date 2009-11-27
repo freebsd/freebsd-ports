@@ -107,7 +107,6 @@ share/locale/kk/LC_MESSAGES/kcron.mo
 share/locale/kk/LC_MESSAGES/kdat.mo
 share/locale/kk/LC_MESSAGES/kde-menu.mo
 share/locale/kk/LC_MESSAGES/kdebugdialog.mo
-share/locale/kk/LC_MESSAGES/kded_phononserver.mo
 share/locale/kk/LC_MESSAGES/kdelibs4.mo
 share/locale/kk/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/kk/LC_MESSAGES/kdelirc.mo
@@ -280,6 +279,7 @@ share/locale/kk/LC_MESSAGES/okular_dvi.mo
 share/locale/kk/LC_MESSAGES/okular_ooo.mo
 share/locale/kk/LC_MESSAGES/phonon-xine.mo
 share/locale/kk/LC_MESSAGES/phonon_kde.mo
+share/locale/kk/LC_MESSAGES/phononserver.mo
 share/locale/kk/LC_MESSAGES/plasma-desktop.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_clock.mo

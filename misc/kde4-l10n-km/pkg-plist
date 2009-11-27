@@ -172,7 +172,6 @@ share/locale/km/LC_MESSAGES/kcron.mo
 share/locale/km/LC_MESSAGES/kdat.mo
 share/locale/km/LC_MESSAGES/kde-menu.mo
 share/locale/km/LC_MESSAGES/kdebugdialog.mo
-share/locale/km/LC_MESSAGES/kded_phononserver.mo
 share/locale/km/LC_MESSAGES/kdelibs4.mo
 share/locale/km/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/km/LC_MESSAGES/kdelirc.mo
@@ -469,6 +468,7 @@ share/locale/km/LC_MESSAGES/okular_xps.mo
 share/locale/km/LC_MESSAGES/parley.mo
 share/locale/km/LC_MESSAGES/phonon-xine.mo
 share/locale/km/LC_MESSAGES/phonon_kde.mo
+share/locale/km/LC_MESSAGES/phononserver.mo
 share/locale/km/LC_MESSAGES/plasma-desktop.mo
 share/locale/km/LC_MESSAGES/plasma-overlay.mo
 share/locale/km/LC_MESSAGES/plasma-shells-common.mo
@@ -532,9 +532,9 @@ share/locale/km/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/km/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/km/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/km/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/km/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/km/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/km/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/km/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/km/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/km/LC_MESSAGES/plasma_engine_network.mo
 share/locale/km/LC_MESSAGES/plasma_engine_notifications.mo

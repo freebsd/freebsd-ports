@@ -89,6 +89,10 @@ share/apps/kvtml/nl/animals.kvtml
 share/apps/kvtml/nl/easy.kvtml
 share/apps/kvtml/nl/hard.kvtml
 share/apps/kvtml/nl/medium.kvtml
+share/doc/HTML/nl/common/fdl-translated.html
+share/doc/HTML/nl/common/gpl-translated.html
+share/doc/HTML/nl/common/kde-localised.css
+share/doc/HTML/nl/common/lgpl-translated.html
 share/doc/HTML/nl/irkick/common
 share/doc/HTML/nl/irkick/index.cache.bz2
 share/doc/HTML/nl/irkick/index.docbook
@@ -1085,7 +1089,6 @@ share/locale/nl/LC_MESSAGES/kdat.mo
 share/locale/nl/LC_MESSAGES/kde-menu.mo
 share/locale/nl/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/nl/LC_MESSAGES/kdebugdialog.mo
-share/locale/nl/LC_MESSAGES/kded_phononserver.mo
 share/locale/nl/LC_MESSAGES/kdelibs4.mo
 share/locale/nl/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/nl/LC_MESSAGES/kdelirc.mo
@@ -1354,6 +1357,7 @@ share/locale/nl/LC_MESSAGES/libphonon.mo
 share/locale/nl/LC_MESSAGES/libplasma.mo
 share/locale/nl/LC_MESSAGES/libplasmaclock.mo
 share/locale/nl/LC_MESSAGES/libplasmaweather.mo
+share/locale/nl/LC_MESSAGES/librtm.mo
 share/locale/nl/LC_MESSAGES/libtaskmanager.mo
 share/locale/nl/LC_MESSAGES/lokalize.mo
 share/locale/nl/LC_MESSAGES/lskat.mo
@@ -1386,6 +1390,7 @@ share/locale/nl/LC_MESSAGES/parley.mo
 share/locale/nl/LC_MESSAGES/phonon-xine.mo
 share/locale/nl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/nl/LC_MESSAGES/phonon_kde.mo
+share/locale/nl/LC_MESSAGES/phononserver.mo
 share/locale/nl/LC_MESSAGES/plasma-desktop.mo
 share/locale/nl/LC_MESSAGES/plasma-overlay.mo
 share/locale/nl/LC_MESSAGES/plasma-shells-common.mo
@@ -1449,9 +1454,9 @@ share/locale/nl/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/nl/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/nl/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/nl/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/nl/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/nl/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_network.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_notifications.mo
@@ -1673,6 +1678,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kalgebra
 @dirrm share/doc/HTML/nl/juk
 @dirrm share/doc/HTML/nl/irkick
+@dirrm share/doc/HTML/nl/common
 @dirrm share/apps/kvtml/nl
 @dirrm share/apps/kvtml
 @dirrm share/apps/kturtle/examples/nl

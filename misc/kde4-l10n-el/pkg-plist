@@ -175,7 +175,6 @@ share/locale/el/LC_MESSAGES/kdat.mo
 share/locale/el/LC_MESSAGES/kde-menu.mo
 share/locale/el/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/el/LC_MESSAGES/kdebugdialog.mo
-share/locale/el/LC_MESSAGES/kded_phononserver.mo
 share/locale/el/LC_MESSAGES/kdelibs4.mo
 share/locale/el/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/el/LC_MESSAGES/kdelirc.mo
@@ -471,6 +470,7 @@ share/locale/el/LC_MESSAGES/parley.mo
 share/locale/el/LC_MESSAGES/phonon-xine.mo
 share/locale/el/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/el/LC_MESSAGES/phonon_kde.mo
+share/locale/el/LC_MESSAGES/phononserver.mo
 share/locale/el/LC_MESSAGES/plasma-desktop.mo
 share/locale/el/LC_MESSAGES/plasma-overlay.mo
 share/locale/el/LC_MESSAGES/plasma-shells-common.mo
@@ -532,8 +532,8 @@ share/locale/el/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/el/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/el/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/el/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/el/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/el/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/el/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/el/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/el/LC_MESSAGES/plasma_engine_ocs.mo
 share/locale/el/LC_MESSAGES/plasma_engine_rss.mo

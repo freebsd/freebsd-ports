@@ -23,6 +23,10 @@ share/apps/step/objinfo/l10n/zh_CN/Particle.html
 share/apps/step/objinfo/l10n/zh_CN/Polygon.html
 share/apps/step/objinfo/l10n/zh_CN/Spring.html
 share/apps/step/objinfo/l10n/zh_CN/World.html
+share/doc/HTML/zh_CN/common/fdl-translated.html
+share/doc/HTML/zh_CN/common/gpl-translated.html
+share/doc/HTML/zh_CN/common/kde-localised.css
+share/doc/HTML/zh_CN/common/lgpl-translated.html
 share/doc/HTML/zh_CN/gwenview/browse_mode.png
 share/doc/HTML/zh_CN/gwenview/common
 share/doc/HTML/zh_CN/gwenview/fullscreen_mode.png
@@ -210,7 +214,6 @@ share/locale/zh_CN/LC_MESSAGES/kdat.mo
 share/locale/zh_CN/LC_MESSAGES/kde-menu.mo
 share/locale/zh_CN/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/zh_CN/LC_MESSAGES/kdebugdialog.mo
-share/locale/zh_CN/LC_MESSAGES/kded_phononserver.mo
 share/locale/zh_CN/LC_MESSAGES/kdelibs4.mo
 share/locale/zh_CN/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/zh_CN/LC_MESSAGES/kdelirc.mo
@@ -511,6 +514,7 @@ share/locale/zh_CN/LC_MESSAGES/parley.mo
 share/locale/zh_CN/LC_MESSAGES/phonon-xine.mo
 share/locale/zh_CN/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/zh_CN/LC_MESSAGES/phonon_kde.mo
+share/locale/zh_CN/LC_MESSAGES/phononserver.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-desktop.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-overlay.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-shells-common.mo
@@ -574,9 +578,9 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/zh_CN/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_network.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_notifications.mo
@@ -647,6 +651,7 @@ share/locale/zh_CN/flag.png
 @dirrm share/locale/zh_CN/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/zh_CN/LC_SCRIPTS
 @dirrm share/doc/HTML/zh_CN/gwenview
+@dirrm share/doc/HTML/zh_CN/common
 @dirrm share/apps/step/objinfo/l10n/zh_CN
 @dirrm share/apps/step/objinfo/l10n
 @dirrm share/apps/step/objinfo

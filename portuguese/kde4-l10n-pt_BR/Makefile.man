@@ -33,7 +33,6 @@ MAN1=	adddebug.1 \
 	kmplot.1 \
 	kross.1 \
 	ktouch.1 \
-	kworldclock.1 \
 	makekdewidgets.1 \
 	plasmaengineexplorer.1 \
 	po2xml.1 \

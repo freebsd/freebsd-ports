@@ -1823,7 +1823,6 @@ share/locale/de/LC_MESSAGES/kdat.mo
 share/locale/de/LC_MESSAGES/kde-menu.mo
 share/locale/de/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/de/LC_MESSAGES/kdebugdialog.mo
-share/locale/de/LC_MESSAGES/kded_phononserver.mo
 share/locale/de/LC_MESSAGES/kdelibs4.mo
 share/locale/de/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/de/LC_MESSAGES/kdelirc.mo
@@ -2092,6 +2091,7 @@ share/locale/de/LC_MESSAGES/libphonon.mo
 share/locale/de/LC_MESSAGES/libplasma.mo
 share/locale/de/LC_MESSAGES/libplasmaclock.mo
 share/locale/de/LC_MESSAGES/libplasmaweather.mo
+share/locale/de/LC_MESSAGES/librtm.mo
 share/locale/de/LC_MESSAGES/libtaskmanager.mo
 share/locale/de/LC_MESSAGES/lokalize.mo
 share/locale/de/LC_MESSAGES/lskat.mo
@@ -2124,6 +2124,7 @@ share/locale/de/LC_MESSAGES/parley.mo
 share/locale/de/LC_MESSAGES/phonon-xine.mo
 share/locale/de/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/de/LC_MESSAGES/phonon_kde.mo
+share/locale/de/LC_MESSAGES/phononserver.mo
 share/locale/de/LC_MESSAGES/plasma-desktop.mo
 share/locale/de/LC_MESSAGES/plasma-overlay.mo
 share/locale/de/LC_MESSAGES/plasma-shells-common.mo
@@ -2187,9 +2188,9 @@ share/locale/de/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/de/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/de/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/de/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/de/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/de/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/de/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/de/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/de/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/de/LC_MESSAGES/plasma_engine_network.mo
 share/locale/de/LC_MESSAGES/plasma_engine_notifications.mo

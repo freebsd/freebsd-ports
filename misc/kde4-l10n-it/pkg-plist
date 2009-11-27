@@ -173,6 +173,10 @@ share/doc/HTML/it/bomber/index.docbook
 share/doc/HTML/it/bovo/common
 share/doc/HTML/it/bovo/index.cache.bz2
 share/doc/HTML/it/bovo/index.docbook
+share/doc/HTML/it/common/fdl-translated.html
+share/doc/HTML/it/common/gpl-translated.html
+share/doc/HTML/it/common/kde-localised.css
+share/doc/HTML/it/common/lgpl-translated.html
 share/doc/HTML/it/dolphin/common
 share/doc/HTML/it/dolphin/index.cache.bz2
 share/doc/HTML/it/dolphin/index.docbook
@@ -470,6 +474,9 @@ share/doc/HTML/it/kcontrol/screensaver/index.docbook
 share/doc/HTML/it/kcontrol/smb/common
 share/doc/HTML/it/kcontrol/smb/index.cache.bz2
 share/doc/HTML/it/kcontrol/smb/index.docbook
+share/doc/HTML/it/kcontrol/solid-actions/common
+share/doc/HTML/it/kcontrol/solid-actions/index.cache.bz2
+share/doc/HTML/it/kcontrol/solid-actions/index.docbook
 share/doc/HTML/it/kcontrol/spellchecking/common
 share/doc/HTML/it/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/it/kcontrol/spellchecking/index.docbook
@@ -479,6 +486,9 @@ share/doc/HTML/it/kcontrol/splashscreen/index.docbook
 share/doc/HTML/it/kcontrol/useragent/common
 share/doc/HTML/it/kcontrol/useragent/index.cache.bz2
 share/doc/HTML/it/kcontrol/useragent/index.docbook
+share/doc/HTML/it/kcontrol/windowbehaviour/common
+share/doc/HTML/it/kcontrol/windowbehaviour/index.cache.bz2
+share/doc/HTML/it/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/it/kcontrol/windowspecific/common
 share/doc/HTML/it/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/it/kcontrol/windowspecific/index.docbook
@@ -1032,6 +1042,9 @@ share/doc/HTML/it/ksnapshot/index.docbook
 share/doc/HTML/it/kspaceduel/common
 share/doc/HTML/it/kspaceduel/index.cache.bz2
 share/doc/HTML/it/kspaceduel/index.docbook
+share/doc/HTML/it/ksquares/common
+share/doc/HTML/it/ksquares/index.cache.bz2
+share/doc/HTML/it/ksquares/index.docbook
 share/doc/HTML/it/kstars/aavso.png
 share/doc/HTML/it/kstars/ai-contents.docbook
 share/doc/HTML/it/kstars/altvstime.docbook
@@ -1117,6 +1130,9 @@ share/doc/HTML/it/kstars/tools.docbook
 share/doc/HTML/it/kstars/utime.docbook
 share/doc/HTML/it/kstars/wut.docbook
 share/doc/HTML/it/kstars/zenith.docbook
+share/doc/HTML/it/ksudoku/common
+share/doc/HTML/it/ksudoku/index.cache.bz2
+share/doc/HTML/it/ksudoku/index.docbook
 share/doc/HTML/it/ksysguard/common
 share/doc/HTML/it/ksysguard/index.cache.bz2
 share/doc/HTML/it/ksysguard/index.docbook
@@ -1154,6 +1170,9 @@ share/doc/HTML/it/kturtle/index.docbook
 share/doc/HTML/it/kturtle/programming-reference.docbook
 share/doc/HTML/it/kturtle/translator-guide.docbook
 share/doc/HTML/it/kturtle/using-kturtle.docbook
+share/doc/HTML/it/kubrick/common
+share/doc/HTML/it/kubrick/index.cache.bz2
+share/doc/HTML/it/kubrick/index.docbook
 share/doc/HTML/it/kuser/common
 share/doc/HTML/it/kuser/index.cache.bz2
 share/doc/HTML/it/kuser/index.docbook
@@ -1449,7 +1468,6 @@ share/locale/it/LC_MESSAGES/kdat.mo
 share/locale/it/LC_MESSAGES/kde-menu.mo
 share/locale/it/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/it/LC_MESSAGES/kdebugdialog.mo
-share/locale/it/LC_MESSAGES/kded_phononserver.mo
 share/locale/it/LC_MESSAGES/kdelibs4.mo
 share/locale/it/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/it/LC_MESSAGES/kdelirc.mo
@@ -1718,6 +1736,7 @@ share/locale/it/LC_MESSAGES/libphonon.mo
 share/locale/it/LC_MESSAGES/libplasma.mo
 share/locale/it/LC_MESSAGES/libplasmaclock.mo
 share/locale/it/LC_MESSAGES/libplasmaweather.mo
+share/locale/it/LC_MESSAGES/librtm.mo
 share/locale/it/LC_MESSAGES/libtaskmanager.mo
 share/locale/it/LC_MESSAGES/lokalize.mo
 share/locale/it/LC_MESSAGES/lskat.mo
@@ -1750,6 +1769,7 @@ share/locale/it/LC_MESSAGES/parley.mo
 share/locale/it/LC_MESSAGES/phonon-xine.mo
 share/locale/it/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/it/LC_MESSAGES/phonon_kde.mo
+share/locale/it/LC_MESSAGES/phononserver.mo
 share/locale/it/LC_MESSAGES/plasma-desktop.mo
 share/locale/it/LC_MESSAGES/plasma-overlay.mo
 share/locale/it/LC_MESSAGES/plasma-shells-common.mo
@@ -1813,9 +1833,9 @@ share/locale/it/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/it/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/it/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/it/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/it/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/it/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/it/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/it/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/it/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/it/LC_MESSAGES/plasma_engine_network.mo
 share/locale/it/LC_MESSAGES/plasma_engine_notifications.mo
@@ -1900,6 +1920,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kwatchgnupg
 @dirrm share/doc/HTML/it/kwallet
 @dirrm share/doc/HTML/it/kuser
+@dirrm share/doc/HTML/it/kubrick
 @dirrm share/doc/HTML/it/kturtle
 @dirrm share/doc/HTML/it/ktuberling
 @dirrm share/doc/HTML/it/kttsd
@@ -1909,7 +1930,9 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kteatime
 @dirrm share/doc/HTML/it/ksysv
 @dirrm share/doc/HTML/it/ksysguard
+@dirrm share/doc/HTML/it/ksudoku
 @dirrm share/doc/HTML/it/kstars
+@dirrm share/doc/HTML/it/ksquares
 @dirrm share/doc/HTML/it/kspaceduel
 @dirrm share/doc/HTML/it/ksnapshot
 @dirrm share/doc/HTML/it/ksirkskineditor
@@ -2037,9 +2060,11 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kdat
 @dirrm share/doc/HTML/it/kcron
 @dirrm share/doc/HTML/it/kcontrol/windowspecific
+@dirrm share/doc/HTML/it/kcontrol/windowbehaviour
 @dirrm share/doc/HTML/it/kcontrol/useragent
 @dirrm share/doc/HTML/it/kcontrol/splashscreen
 @dirrm share/doc/HTML/it/kcontrol/spellchecking
+@dirrm share/doc/HTML/it/kcontrol/solid-actions
 @dirrm share/doc/HTML/it/kcontrol/smb
 @dirrm share/doc/HTML/it/kcontrol/screensaver
 @dirrm share/doc/HTML/it/kcontrol/proxy
@@ -2123,6 +2148,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/gwenview
 @dirrm share/doc/HTML/it/dragonplayer
 @dirrm share/doc/HTML/it/dolphin
+@dirrm share/doc/HTML/it/common
 @dirrm share/doc/HTML/it/bovo
 @dirrm share/doc/HTML/it/bomber
 @dirrm share/doc/HTML/it/blinken

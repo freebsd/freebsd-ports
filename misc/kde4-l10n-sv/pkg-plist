@@ -96,6 +96,10 @@ share/doc/HTML/sv/cervisia/popup.png
 share/doc/HTML/sv/cervisia/repositories.png
 share/doc/HTML/sv/cervisia/resolve.png
 share/doc/HTML/sv/cervisia/updatetag.png
+share/doc/HTML/sv/common/fdl-translated.html
+share/doc/HTML/sv/common/gpl-translated.html
+share/doc/HTML/sv/common/kde-localised.css
+share/doc/HTML/sv/common/lgpl-translated.html
 share/doc/HTML/sv/dolphin/bookmarkbutton.png
 share/doc/HTML/sv/dolphin/breadcrumb.png
 share/doc/HTML/sv/dolphin/common
@@ -1777,7 +1781,6 @@ share/locale/sv/LC_MESSAGES/kdat.mo
 share/locale/sv/LC_MESSAGES/kde-menu.mo
 share/locale/sv/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/sv/LC_MESSAGES/kdebugdialog.mo
-share/locale/sv/LC_MESSAGES/kded_phononserver.mo
 share/locale/sv/LC_MESSAGES/kdelibs4.mo
 share/locale/sv/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/sv/LC_MESSAGES/kdelirc.mo
@@ -2046,6 +2049,7 @@ share/locale/sv/LC_MESSAGES/libphonon.mo
 share/locale/sv/LC_MESSAGES/libplasma.mo
 share/locale/sv/LC_MESSAGES/libplasmaclock.mo
 share/locale/sv/LC_MESSAGES/libplasmaweather.mo
+share/locale/sv/LC_MESSAGES/librtm.mo
 share/locale/sv/LC_MESSAGES/libtaskmanager.mo
 share/locale/sv/LC_MESSAGES/lokalize.mo
 share/locale/sv/LC_MESSAGES/lskat.mo
@@ -2078,6 +2082,7 @@ share/locale/sv/LC_MESSAGES/parley.mo
 share/locale/sv/LC_MESSAGES/phonon-xine.mo
 share/locale/sv/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/sv/LC_MESSAGES/phonon_kde.mo
+share/locale/sv/LC_MESSAGES/phononserver.mo
 share/locale/sv/LC_MESSAGES/plasma-desktop.mo
 share/locale/sv/LC_MESSAGES/plasma-overlay.mo
 share/locale/sv/LC_MESSAGES/plasma-shells-common.mo
@@ -2141,9 +2146,9 @@ share/locale/sv/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/sv/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/sv/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/sv/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/sv/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/sv/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_network.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_notifications.mo
@@ -2459,6 +2464,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/gwenview
 @dirrm share/doc/HTML/sv/dragonplayer
 @dirrm share/doc/HTML/sv/dolphin
+@dirrm share/doc/HTML/sv/common
 @dirrm share/doc/HTML/sv/cervisia
 @dirrm share/doc/HTML/sv/bovo
 @dirrm share/doc/HTML/sv/bomber

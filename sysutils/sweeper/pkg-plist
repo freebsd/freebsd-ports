@@ -25,7 +25,7 @@ lib/kde4/kerfuffle_libxz.so
 lib/kde4/libarkpart.so
 lib/kde4/libextracthere.so
 lib/kde4/libkbytearrayedit.so
-lib/kde4/liboktetapart.so
+lib/kde4/oktetapart.so
 lib/kde4/plasma_package_superkaramba.so
 lib/kde4/plasma_scriptengine_superkaramba.so
 lib/libkdeinit4_irkick.so
@@ -116,7 +116,6 @@ share/apps/profiles/dragonplayer.profile.xml
 share/apps/profiles/klauncher.profile.xml
 share/apps/profiles/kmix.profile.xml
 share/apps/profiles/konqueror.profile.xml
-share/apps/profiles/kscd.profile.xml
 share/apps/profiles/okular.profile.xml
 share/apps/profiles/profile.dtd
 share/apps/profiles/shutdown.profile.xml

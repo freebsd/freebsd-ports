@@ -3,6 +3,10 @@ share/apps/kvtml/nn/animals.kvtml
 share/apps/kvtml/nn/easy.kvtml
 share/apps/kvtml/nn/hard.kvtml
 share/apps/kvtml/nn/medium.kvtml
+share/doc/HTML/nn/common/fdl-translated.html
+share/doc/HTML/nn/common/gpl-translated.html
+share/doc/HTML/nn/common/kde-localised.css
+share/doc/HTML/nn/common/lgpl-translated.html
 share/doc/HTML/nn/kaddressbook/common
 share/doc/HTML/nn/kaddressbook/index.cache.bz2
 share/doc/HTML/nn/kaddressbook/index.docbook
@@ -192,7 +196,6 @@ share/locale/nn/LC_MESSAGES/kdat.mo
 share/locale/nn/LC_MESSAGES/kde-menu.mo
 share/locale/nn/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/nn/LC_MESSAGES/kdebugdialog.mo
-share/locale/nn/LC_MESSAGES/kded_phononserver.mo
 share/locale/nn/LC_MESSAGES/kdelibs4.mo
 share/locale/nn/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/nn/LC_MESSAGES/kdelirc.mo
@@ -493,6 +496,7 @@ share/locale/nn/LC_MESSAGES/parley.mo
 share/locale/nn/LC_MESSAGES/phonon-xine.mo
 share/locale/nn/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/nn/LC_MESSAGES/phonon_kde.mo
+share/locale/nn/LC_MESSAGES/phononserver.mo
 share/locale/nn/LC_MESSAGES/plasma-desktop.mo
 share/locale/nn/LC_MESSAGES/plasma-overlay.mo
 share/locale/nn/LC_MESSAGES/plasma-shells-common.mo
@@ -556,9 +560,9 @@ share/locale/nn/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/nn/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/nn/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/nn/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/nn/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/nn/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_network.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_notifications.mo
@@ -635,6 +639,7 @@ share/locale/nn/entry.desktop
 @dirrm share/doc/HTML/nn/kcontrol/bell
 @dirrm share/doc/HTML/nn/kcontrol
 @dirrm share/doc/HTML/nn/kaddressbook
+@dirrm share/doc/HTML/nn/common
 @dirrm share/apps/kvtml/nn
 @dirrm share/apps/kvtml
 @dirrm share/apps/khangman

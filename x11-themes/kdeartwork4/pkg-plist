@@ -4046,6 +4046,7 @@ share/icons/nuvola/64x64/places/user-trash.png
 share/icons/nuvola/64x64/status/dialog-error.png
 share/icons/nuvola/64x64/status/dialog-password.png
 share/icons/nuvola/64x64/status/user-trash-full.png
+share/icons/nuvola/index.theme
 share/icons/nuvola/scalable/actions/dialog-ok.svg
 share/icons/nuvola/scalable/actions/document-open.svg
 share/icons/nuvola/scalable/actions/document-print.svg
@@ -4157,7 +4158,6 @@ share/icons/nuvola/scalable/status/dialog-authentication.svg
 share/icons/nuvola/scalable/status/dialog-information.svg
 share/icons/nuvola/scalable/status/dialog-warning.svg
 share/icons/nuvola/scalable/status/user-trash-full.svg
-share/icons/nuvola/index.theme
 share/kde4/services/ScreenSavers/KBanner.desktop
 share/kde4/services/ScreenSavers/KBlob.desktop
 share/kde4/services/ScreenSavers/KClock.desktop
@@ -4568,15 +4568,6 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/icons/nuvola/scalable/apps
 @dirrm share/icons/nuvola/scalable/actions
 @dirrm share/icons/nuvola/scalable
-@dirrm share/icons/nuvola/256x256/mimetypes
-@dirrm share/icons/nuvola/256x256
-@dirrm share/icons/nuvola/128x128/status
-@dirrm share/icons/nuvola/128x128/places
-@dirrm share/icons/nuvola/128x128/mimetypes
-@dirrm share/icons/nuvola/128x128/devices
-@dirrm share/icons/nuvola/128x128/categories
-@dirrm share/icons/nuvola/128x128/apps
-@dirrm share/icons/nuvola/128x128
 @dirrm share/icons/nuvola/64x64/status
 @dirrm share/icons/nuvola/64x64/places
 @dirrm share/icons/nuvola/64x64/mimetypes
@@ -4600,6 +4591,8 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/icons/nuvola/32x32/apps
 @dirrm share/icons/nuvola/32x32/actions
 @dirrm share/icons/nuvola/32x32
+@dirrm share/icons/nuvola/256x256/mimetypes
+@dirrm share/icons/nuvola/256x256
 @dirrm share/icons/nuvola/22x22/status
 @dirrm share/icons/nuvola/22x22/places
 @dirrm share/icons/nuvola/22x22/mimetypes
@@ -4616,6 +4609,13 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/icons/nuvola/16x16/apps
 @dirrm share/icons/nuvola/16x16/actions
 @dirrm share/icons/nuvola/16x16
+@dirrm share/icons/nuvola/128x128/status
+@dirrm share/icons/nuvola/128x128/places
+@dirrm share/icons/nuvola/128x128/mimetypes
+@dirrm share/icons/nuvola/128x128/devices
+@dirrm share/icons/nuvola/128x128/categories
+@dirrm share/icons/nuvola/128x128/apps
+@dirrm share/icons/nuvola/128x128
 @dirrm share/icons/nuvola
 @dirrm share/emoticons/tweakers.net
 @dirrm share/emoticons/phpBB
@@ -4650,7 +4650,6 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/apps/desktoptheme/Elegance
 @dirrm share/apps/desktoptheme/Clean-Blend/widgets
 @dirrm share/apps/desktoptheme/Clean-Blend/weatherstation
-@dirrm share/apps/desktoptheme/Clean-Blend/systemtray
 @dirrm share/apps/desktoptheme/Clean-Blend/stylesheets
 @dirrm share/apps/desktoptheme/Clean-Blend/rssnow
 @dirrm share/apps/desktoptheme/Clean-Blend/opaque/widgets

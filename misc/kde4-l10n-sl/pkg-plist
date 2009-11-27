@@ -43,6 +43,10 @@ share/apps/kvtml/sl/sports.kvtml
 share/apps/kvtml/sl/transportation.kvtml
 share/apps/kvtml/sl/vegetables.kvtml
 share/apps/kvtml/sl/worldcapitals.kvtml
+share/doc/HTML/sl/common/fdl-translated.html
+share/doc/HTML/sl/common/gpl-translated.html
+share/doc/HTML/sl/common/kde-localised.css
+share/doc/HTML/sl/common/lgpl-translated.html
 share/doc/HTML/sl/kaddressbook/common
 share/doc/HTML/sl/kaddressbook/index.cache.bz2
 share/doc/HTML/sl/kaddressbook/index.docbook
@@ -286,7 +290,6 @@ share/locale/sl/LC_MESSAGES/kdat.mo
 share/locale/sl/LC_MESSAGES/kde-menu.mo
 share/locale/sl/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/sl/LC_MESSAGES/kdebugdialog.mo
-share/locale/sl/LC_MESSAGES/kded_phononserver.mo
 share/locale/sl/LC_MESSAGES/kdelibs4.mo
 share/locale/sl/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/sl/LC_MESSAGES/kdelirc.mo
@@ -576,6 +579,7 @@ share/locale/sl/LC_MESSAGES/parley.mo
 share/locale/sl/LC_MESSAGES/phonon-xine.mo
 share/locale/sl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/sl/LC_MESSAGES/phonon_kde.mo
+share/locale/sl/LC_MESSAGES/phononserver.mo
 share/locale/sl/LC_MESSAGES/plasma-desktop.mo
 share/locale/sl/LC_MESSAGES/plasma-overlay.mo
 share/locale/sl/LC_MESSAGES/plasma-shells-common.mo
@@ -637,7 +641,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/sl/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/sl/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/sl/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/sl/LC_MESSAGES/plasma_engine_applicationjobs.mo
+share/locale/sl/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_network.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_notifications.mo
@@ -726,6 +730,7 @@ share/locale/sl/entry.desktop
 @dirrm share/doc/HTML/sl/kcontrol/cookies
 @dirrm share/doc/HTML/sl/kcontrol
 @dirrm share/doc/HTML/sl/kaddressbook
+@dirrm share/doc/HTML/sl/common
 @dirrm share/apps/kvtml/sl
 @dirrm share/apps/kvtml
 @dirrm share/apps/kturtle/examples/sl

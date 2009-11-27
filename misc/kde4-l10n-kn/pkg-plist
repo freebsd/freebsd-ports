@@ -62,7 +62,6 @@ share/locale/kn/LC_MESSAGES/kcmview1394.mo
 share/locale/kn/LC_MESSAGES/kcmxinerama.mo
 share/locale/kn/LC_MESSAGES/kde-menu.mo
 share/locale/kn/LC_MESSAGES/kdebugdialog.mo
-share/locale/kn/LC_MESSAGES/kded_phononserver.mo
 share/locale/kn/LC_MESSAGES/kdelibs4.mo
 share/locale/kn/LC_MESSAGES/kdepasswd.mo
 share/locale/kn/LC_MESSAGES/kdesu.mo
@@ -152,6 +151,7 @@ share/locale/kn/LC_MESSAGES/nepomuk.mo
 share/locale/kn/LC_MESSAGES/nepomuksearch.mo
 share/locale/kn/LC_MESSAGES/nsplugin.mo
 share/locale/kn/LC_MESSAGES/phonon_kde.mo
+share/locale/kn/LC_MESSAGES/phononserver.mo
 share/locale/kn/LC_MESSAGES/plasma-desktop.mo
 share/locale/kn/LC_MESSAGES/plasma-overlay.mo
 share/locale/kn/LC_MESSAGES/plasma-shells-common.mo

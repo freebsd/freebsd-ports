@@ -184,7 +184,6 @@ share/apps/desktoptheme/default/widgets/eyes.svg
 share/apps/desktoptheme/default/widgets/luna.svgz
 share/apps/desktoptheme/default/widgets/microblog.svgz
 share/apps/desktoptheme/default/widgets/notes.svgz
-share/apps/desktoptheme/default/widgets/picture-frame-default.svgz
 share/apps/desktoptheme/default/widgets/previewer-16.svgz
 share/apps/desktoptheme/default/widgets/previewer-22.svgz
 share/apps/desktoptheme/default/widgets/timer.svgz
@@ -246,6 +245,7 @@ share/apps/desktoptheme/slim-glow/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/slim-glow/lancelot/system-buttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/theme.config
 share/apps/lancelot/lancelot.notifyrc
+share/apps/plasma-applet-frame/picture-frame-default.jpg
 share/apps/plasma-applet-opendesktop/user.css
 share/apps/plasma/services/rtmauth.operations
 share/apps/plasma/services/rtmtask.operations
@@ -295,9 +295,9 @@ share/icons/hicolor/64x64/apps/bball.png
 share/icons/hicolor/64x64/apps/lancelot-part.png
 share/icons/hicolor/64x64/apps/lancelot.png
 share/icons/hicolor/64x64/apps/previewer.png
+share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/icons/hicolor/scalable/apps/bball.svgz
 share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
-share/icons/oxygen/scalable/apps/accessories-dictionary.svgz
 share/kde4/services/ServiceMenus/preview.desktop
 share/kde4/services/apodprovider.desktop
 share/kde4/services/browserhistory.desktop
@@ -371,6 +371,7 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/plasma_wallpaper_pattern
 @dirrm share/apps/plasma_pastebin
 @dirrm share/apps/plasma-applet-opendesktop
+@dirrm share/apps/plasma-applet-frame
 @dirrm share/apps/lancelot
 @dirrm share/apps/desktoptheme/slim-glow/lancelot
 @dirrmtry share/apps/desktoptheme/slim-glow

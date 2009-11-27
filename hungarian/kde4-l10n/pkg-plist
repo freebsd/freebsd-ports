@@ -92,6 +92,10 @@ share/doc/HTML/hu/amor/index.docbook
 share/doc/HTML/hu/ark/common
 share/doc/HTML/hu/ark/index.cache.bz2
 share/doc/HTML/hu/ark/index.docbook
+share/doc/HTML/hu/common/fdl-translated.html
+share/doc/HTML/hu/common/gpl-translated.html
+share/doc/HTML/hu/common/kde-localised.css
+share/doc/HTML/hu/common/lgpl-translated.html
 share/doc/HTML/hu/flashkard/common
 share/doc/HTML/hu/flashkard/index.cache.bz2
 share/doc/HTML/hu/flashkard/index.docbook
@@ -299,6 +303,26 @@ share/doc/HTML/hu/kweather/index.docbook
 share/doc/HTML/hu/kworldclock/common
 share/doc/HTML/hu/kworldclock/index.cache.bz2
 share/doc/HTML/hu/kworldclock/index.docbook
+share/locale/hu/LC_MESSAGES/akonadi-kcal.mo
+share/locale/hu/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_distlist_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_ical_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_imap_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_kcal_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_kolabproxy_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_kresourceassistant.mo
+share/locale/hu/LC_MESSAGES/akonadi_localbookmarks_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_maildir_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_microblog_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_nepomuktag_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_next.mo
+share/locale/hu/LC_MESSAGES/akonadi_nntp_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_openchange_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_singlefile_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_vcard_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/hu/LC_MESSAGES/akonaditray.mo
 share/locale/hu/LC_MESSAGES/akregator.mo
 share/locale/hu/LC_MESSAGES/amor.mo
@@ -374,6 +398,7 @@ share/locale/hu/LC_MESSAGES/kbreakout.mo
 share/locale/hu/LC_MESSAGES/kbruch.mo
 share/locale/hu/LC_MESSAGES/kbugbuster.mo
 share/locale/hu/LC_MESSAGES/kcachegrind.mo
+share/locale/hu/LC_MESSAGES/kcal_akonadi.mo
 share/locale/hu/LC_MESSAGES/kcalc.mo
 share/locale/hu/LC_MESSAGES/kcertpart.mo
 share/locale/hu/LC_MESSAGES/kcharselect.mo
@@ -451,7 +476,6 @@ share/locale/hu/LC_MESSAGES/kdat.mo
 share/locale/hu/LC_MESSAGES/kde-menu.mo
 share/locale/hu/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/hu/LC_MESSAGES/kdebugdialog.mo
-share/locale/hu/LC_MESSAGES/kded_phononserver.mo
 share/locale/hu/LC_MESSAGES/kdelibs4.mo
 share/locale/hu/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/hu/LC_MESSAGES/kdelirc.mo
@@ -517,6 +541,7 @@ share/locale/hu/LC_MESSAGES/kimagemapeditor.mo
 share/locale/hu/LC_MESSAGES/kinetd.mo
 share/locale/hu/LC_MESSAGES/kinfocenter.mo
 share/locale/hu/LC_MESSAGES/kio4.mo
+share/locale/hu/LC_MESSAGES/kio_akonadi.mo
 share/locale/hu/LC_MESSAGES/kio_applications.mo
 share/locale/hu/LC_MESSAGES/kio_archive.mo
 share/locale/hu/LC_MESSAGES/kio_audiocd.mo
@@ -549,6 +574,7 @@ share/locale/hu/LC_MESSAGES/kio_zeroconf.mo
 share/locale/hu/LC_MESSAGES/kioclient.mo
 share/locale/hu/LC_MESSAGES/kioexec.mo
 share/locale/hu/LC_MESSAGES/kiriki.mo
+share/locale/hu/LC_MESSAGES/kitchensync.mo
 share/locale/hu/LC_MESSAGES/kiten.mo
 share/locale/hu/LC_MESSAGES/kjots.mo
 share/locale/hu/LC_MESSAGES/kjumpingcube.mo
@@ -716,6 +742,7 @@ share/locale/hu/LC_MESSAGES/libphonon.mo
 share/locale/hu/LC_MESSAGES/libplasma.mo
 share/locale/hu/LC_MESSAGES/libplasmaclock.mo
 share/locale/hu/LC_MESSAGES/libplasmaweather.mo
+share/locale/hu/LC_MESSAGES/librtm.mo
 share/locale/hu/LC_MESSAGES/libtaskmanager.mo
 share/locale/hu/LC_MESSAGES/lokalize.mo
 share/locale/hu/LC_MESSAGES/lskat.mo
@@ -746,6 +773,7 @@ share/locale/hu/LC_MESSAGES/parley.mo
 share/locale/hu/LC_MESSAGES/phonon-xine.mo
 share/locale/hu/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/hu/LC_MESSAGES/phonon_kde.mo
+share/locale/hu/LC_MESSAGES/phononserver.mo
 share/locale/hu/LC_MESSAGES/plasma-desktop.mo
 share/locale/hu/LC_MESSAGES/plasma-overlay.mo
 share/locale/hu/LC_MESSAGES/plasma-shells-common.mo
@@ -808,8 +836,8 @@ share/locale/hu/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/hu/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/hu/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/hu/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/hu/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/hu/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_network.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_notifications.mo
@@ -941,6 +969,7 @@ share/locale/hu/entry.desktop
 @dirrm share/doc/HTML/hu/kalzium
 @dirrm share/doc/HTML/hu/kaddressbook
 @dirrm share/doc/HTML/hu/flashkard
+@dirrm share/doc/HTML/hu/common
 @dirrm share/doc/HTML/hu/ark
 @dirrm share/doc/HTML/hu/amor
 @dirrm share/apps/kvtml/hu

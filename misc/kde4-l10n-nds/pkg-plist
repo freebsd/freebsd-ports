@@ -179,6 +179,10 @@ share/apps/kvtml/nds/sports.kvtml
 share/apps/kvtml/nds/transportation.kvtml
 share/apps/kvtml/nds/vegetables.kvtml
 share/apps/kvtml/nds/worldcapitals.kvtml
+share/doc/HTML/nds/common/fdl-translated.html
+share/doc/HTML/nds/common/gpl-translated.html
+share/doc/HTML/nds/common/kde-localised.css
+share/doc/HTML/nds/common/lgpl-translated.html
 share/locale/nds/LC_MESSAGES/akonadi-kcal.mo
 share/locale/nds/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/nds/LC_MESSAGES/akonadi_distlist_resource.mo
@@ -356,7 +360,6 @@ share/locale/nds/LC_MESSAGES/kdat.mo
 share/locale/nds/LC_MESSAGES/kde-menu.mo
 share/locale/nds/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/nds/LC_MESSAGES/kdebugdialog.mo
-share/locale/nds/LC_MESSAGES/kded_phononserver.mo
 share/locale/nds/LC_MESSAGES/kdelibs4.mo
 share/locale/nds/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/nds/LC_MESSAGES/kdelirc.mo
@@ -657,6 +660,7 @@ share/locale/nds/LC_MESSAGES/parley.mo
 share/locale/nds/LC_MESSAGES/phonon-xine.mo
 share/locale/nds/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/nds/LC_MESSAGES/phonon_kde.mo
+share/locale/nds/LC_MESSAGES/phononserver.mo
 share/locale/nds/LC_MESSAGES/plasma-desktop.mo
 share/locale/nds/LC_MESSAGES/plasma-overlay.mo
 share/locale/nds/LC_MESSAGES/plasma-shells-common.mo
@@ -720,9 +724,9 @@ share/locale/nds/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/nds/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/nds/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/nds/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/nds/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/nds/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_network.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_notifications.mo
@@ -787,6 +791,7 @@ share/locale/nds/LC_MESSAGES/umbrello.mo
 share/locale/nds/LC_MESSAGES/useraccount.mo
 share/locale/nds/LC_MESSAGES/xml_mimetypes.mo
 share/locale/nds/entry.desktop
+@dirrm share/doc/HTML/nds/common
 @dirrm share/apps/kvtml/nds
 @dirrm share/apps/kvtml
 @dirrm share/apps/kturtle/examples/nds

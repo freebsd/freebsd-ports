@@ -9,7 +9,7 @@ PORTNAME=	policykit-qt
 PORTVERSION=	0.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITES=	ftp://ftp.kde.org/pub/kde/stable/apps/KDE4.x/admin/
+MASTER_SITE_SUBDIR=	stable/apps/KDE4.x/admin/
 DISTNAME=	polkit-qt-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org

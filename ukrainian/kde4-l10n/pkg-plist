@@ -1,4 +1,17 @@
 share/apps/ktuberling/sounds/uk.soundtheme
+share/apps/step/objinfo/l10n/uk/Box.html
+share/apps/step/objinfo/l10n/uk/ChargedParticle.html
+share/apps/step/objinfo/l10n/uk/Disk.html
+share/apps/step/objinfo/l10n/uk/Gas.html
+share/apps/step/objinfo/l10n/uk/GasLJForce.html
+share/apps/step/objinfo/l10n/uk/GasParticle.html
+share/apps/step/objinfo/l10n/uk/Meter.html
+share/apps/step/objinfo/l10n/uk/Note.html
+share/apps/step/objinfo/l10n/uk/Particle.html
+share/apps/step/objinfo/l10n/uk/Polygon.html
+share/apps/step/objinfo/l10n/uk/Spring.html
+share/apps/step/objinfo/l10n/uk/World.html
+share/locale/uk/LC_MESSAGES/librtm.mo
 share/apps/ktuberling/sounds/uk/ear.ogg
 share/apps/ktuberling/sounds/uk/earring.ogg
 share/apps/ktuberling/sounds/uk/egypt_arch.ogg
@@ -132,6 +145,10 @@ share/doc/HTML/uk/bovo/index.docbook
 share/doc/HTML/uk/cervisia/common
 share/doc/HTML/uk/cervisia/index.cache.bz2
 share/doc/HTML/uk/cervisia/index.docbook
+share/doc/HTML/uk/common/fdl-translated.html
+share/doc/HTML/uk/common/gpl-translated.html
+share/doc/HTML/uk/common/kde-localised.css
+share/doc/HTML/uk/common/lgpl-translated.html
 share/doc/HTML/uk/dolphin/common
 share/doc/HTML/uk/dolphin/index.cache.bz2
 share/doc/HTML/uk/dolphin/index.docbook
@@ -1350,7 +1367,6 @@ share/locale/uk/LC_MESSAGES/kdat.mo
 share/locale/uk/LC_MESSAGES/kde-menu.mo
 share/locale/uk/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/uk/LC_MESSAGES/kdebugdialog.mo
-share/locale/uk/LC_MESSAGES/kded_phononserver.mo
 share/locale/uk/LC_MESSAGES/kdelibs4.mo
 share/locale/uk/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/uk/LC_MESSAGES/kdelirc.mo
@@ -1651,6 +1667,7 @@ share/locale/uk/LC_MESSAGES/parley.mo
 share/locale/uk/LC_MESSAGES/phonon-xine.mo
 share/locale/uk/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/uk/LC_MESSAGES/phonon_kde.mo
+share/locale/uk/LC_MESSAGES/phononserver.mo
 share/locale/uk/LC_MESSAGES/plasma-desktop.mo
 share/locale/uk/LC_MESSAGES/plasma-overlay.mo
 share/locale/uk/LC_MESSAGES/plasma-shells-common.mo
@@ -1714,9 +1731,9 @@ share/locale/uk/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/uk/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/uk/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/uk/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
-share/locale/uk/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_keystate.mo
+share/locale/uk/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_network.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_notifications.mo
@@ -2037,6 +2054,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/gwenview
 @dirrm share/doc/HTML/uk/dragonplayer
 @dirrm share/doc/HTML/uk/dolphin
+@dirrm share/doc/HTML/uk/common
 @dirrm share/doc/HTML/uk/cervisia
 @dirrm share/doc/HTML/uk/bovo
 @dirrm share/doc/HTML/uk/bomber
@@ -2045,6 +2063,10 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/amor
 @dirrm share/doc/HTML/uk/akregator
 @dirrm share/doc/HTML/uk/PolicyKit-kde
+@dirrm share/apps/step/objinfo/l10n/uk
+@dirrm share/apps/step/objinfo/l10n
+@dirrm share/apps/step/objinfo
+@dirrm share/apps/step
 @dirrm share/apps/kvtml/uk
 @dirrm share/apps/kvtml
 @dirrm share/apps/ktuberling/sounds/uk

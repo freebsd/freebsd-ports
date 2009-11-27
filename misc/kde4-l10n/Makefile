@@ -20,7 +20,7 @@ NO_BUILD=	yes
 USE_KDE4=	kdeprefix
 
 KDE4_LANG_ALL=	ar bg bn_IN ca cs csb da de el en_GB es et eu fi fr \
-		ga gl gu he hi hne hr hu is it ja kk km kn ko ku lt lv \
+		fy ga gl gu he hi hne hr hu is it ja kk km kn ko ku lt lv \
 		mai mk ml mr nb nds nl nn pa pl pt pt_BR ro ru \
 		sk sl sr sv tg th tr uk wa zh_CN zh_TW
 
