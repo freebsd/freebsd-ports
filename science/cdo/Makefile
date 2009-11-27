@@ -8,7 +8,7 @@
 
 PORTNAME=		cdo
 PORTVERSION=		1.3.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		science
 MASTER_SITES=		http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 			http://sunpoet.net/distfiles/
@@ -66,7 +66,7 @@ LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
 
 .if defined(WITH_PROJ)
 CONFIGURE_ARGS+=	--with-proj=${LOCALBASE}
-LIB_DEPENDS+=		proj.5:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=		proj.6:${PORTSDIR}/graphics/proj
 .endif
 
 post-build:
