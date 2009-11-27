@@ -151,6 +151,7 @@ bin/lbreakout2server
 %%DATADIR%%/gui_theme/spinbutton_arrows.png
 %%DATADIR%%/gui_theme/widget_frame.png
 %%DATADIR%%/gui_theme/widget_wallpaper.png
+%%DATADIR%%/levels/1010011010
 %%DATADIR%%/levels/Abc
 %%DATADIR%%/levels/Afl
 %%DATADIR%%/levels/Alex
@@ -158,17 +159,24 @@ bin/lbreakout2server
 %%DATADIR%%/levels/Arkanoid
 %%DATADIR%%/levels/BeOS-4ever
 %%DATADIR%%/levels/Biolab428
+%%DATADIR%%/levels/Blues
 %%DATADIR%%/levels/Bombs
 %%DATADIR%%/levels/CalendarFun
 %%DATADIR%%/levels/Chaos
+%%DATADIR%%/levels/Choices
 %%DATADIR%%/levels/Color
 %%DATADIR%%/levels/Composers
+%%DATADIR%%/levels/Circle
+%%DATADIR%%/levels/D2K
+%%DATADIR%%/levels/Daves
 %%DATADIR%%/levels/Demons
 %%DATADIR%%/levels/Family
+%%DATADIR%%/levels/Fantaisie
 %%DATADIR%%/levels/FatalDoomsday
 %%DATADIR%%/levels/Flower
 %%DATADIR%%/levels/Fly
 %%DATADIR%%/levels/Freek
+%%DATADIR%%/levels/FunCity
 %%DATADIR%%/levels/Gatinha
 %%DATADIR%%/levels/GreenWall
 %%DATADIR%%/levels/GreenWall2
@@ -184,6 +192,7 @@ bin/lbreakout2server
 %%DATADIR%%/levels/IoriYagami
 %%DATADIR%%/levels/Iris
 %%DATADIR%%/levels/IrrenhausAh
+%%DATADIR%%/levels/Izusiowe
 %%DATADIR%%/levels/Kazan-1
 %%DATADIR%%/levels/Kevin
 %%DATADIR%%/levels/LBreakout1
@@ -194,26 +203,36 @@ bin/lbreakout2server
 %%DATADIR%%/levels/Lord
 %%DATADIR%%/levels/Maze
 %%DATADIR%%/levels/Megadoomer
+%%DATADIR%%/levels/Negundoid
+%%DATADIR%%/levels/NewOERG1
 %%DATADIR%%/levels/NES
 %%DATADIR%%/levels/N_Arenas
 %%DATADIR%%/levels/N_Snapshots
 %%DATADIR%%/levels/OpenSource
+%%DATADIR%%/levels/OurWorld
 %%DATADIR%%/levels/Pabelo
 %%DATADIR%%/levels/Pawset
 %%DATADIR%%/levels/Ph33r
+%%DATADIR%%/levels/PlayAgain
+%%DATADIR%%/levels/Popcorn
 %%DATADIR%%/levels/R-World
 %%DATADIR%%/levels/Runes
+%%DATADIR%%/levels/Sadistic
 %%DATADIR%%/levels/Shimitar
 %%DATADIR%%/levels/Silly
 %%DATADIR%%/levels/SkillShot
+%%DATADIR%%/levels/Smilies
 %%DATADIR%%/levels/SnyMaxx
+%%DATADIR%%/levels/Symmetry
 %%DATADIR%%/levels/Symmetry-MKII
+%%DATADIR%%/levels/T.C.S.
 %%DATADIR%%/levels/TheGauntlet
 %%DATADIR%%/levels/TimeWaster
 %%DATADIR%%/levels/Tricky
 %%DATADIR%%/levels/Twilight
 %%DATADIR%%/levels/WTF
 %%DATADIR%%/levels/Wolvie
+%%DATADIR%%/levels/WonderWalls
 %%DATADIR%%/levels/X
 %%DATADIR%%/levels/Yexter
 %%DATADIR%%/levels/Zigies
@@ -278,6 +297,10 @@ bin/lbreakout2server
 %%DATADIR%%/sounds/wall.wav
 %%DATADIR%%/sounds/weak_ball.wav
 %%DATADIR%%/sounds/wontgiveup.wav
+share/applications/lbreakout2.desktop
+share/icons/lbreakout48.gif
+@dirrmtry share/applications
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/gui_theme
