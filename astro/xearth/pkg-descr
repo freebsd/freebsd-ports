@@ -7,7 +7,7 @@ Xearth  can  also  render  directly into PPM and GIF files
 instead of drawing in the root window.
 
 There are two additional marker files installed in
-/usr/X11R6/lib/X11/xearth which specify the locations of
+/usr/local/lib/X11/xearth which specify the locations of
 various FreeBSD people and places:
 
 freebsd.committers.markers - FreeBSD committers
