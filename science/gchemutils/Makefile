@@ -44,8 +44,7 @@ OPTIONS=	XUL "Build browser plugin (requires Xulrunner)" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_XUL)
-USE_GECKO=	xulrunner
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+USE_GECKO=	libxul
 CONFIGURE_ARGS+=--enable-mozilla-plugin
 PLIST_SUB+=	XUL=""
 .else

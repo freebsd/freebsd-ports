@@ -32,7 +32,7 @@ JAVA_VERSION=	1.6
 JAVA_OS=	native
 
 .if !defined(WITHOUT_MOZILLA)
-USE_GECKO=	libxul firefox xulrunner seamonkey
+USE_GECKO=	libxul seamonkey
 .endif
 
 USE_GNOME=	gtk20 pkgconfig desktopfileutils gconf2
