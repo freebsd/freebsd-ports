@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmp3splt
-PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTVERSION=	0.5.7a
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -20,11 +19,13 @@ USE_AUTOTOOLS=	libltdl
 
 OPTIONS=	MP3	"mp3 support"	on \
 		ID3	"id3tag support for the mp3"	on \
-		VORBIS	"ogg vorbis support"	on
+		VORBIS	"ogg vorbis support"	on \
+		NLS     "native language support"       on
 
 PLIST_DIRS=	include/libmp3splt lib/libmp3splt
 PLIST_FILES=	include/libmp3splt/mp3splt.h lib/libmp3splt.so.0 \
-		lib/libmp3splt.so lib/libmp3splt.la lib/libmp3splt.a
+		lib/libmp3splt.so lib/libmp3splt.la lib/libmp3splt.a \
+		share/aclocal/mp3splt.m4
 
 .include <bsd.port.pre.mk>
 
@@ -57,6 +58,16 @@ PLIST_FILES+=	lib/libmp3splt/libsplt_ogg.a \
 		lib/libmp3splt/libsplt_ogg.la \
 		lib/libmp3splt/libsplt_ogg.so \
 		lib/libmp3splt/libsplt_ogg.so.0
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+.else
+USE_GETTEXT=	yes
+LANGUAGES=	de fr
+.for language in ${LANGUAGES}
+PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/libmp3splt.mo
+.endfor
 .endif
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
