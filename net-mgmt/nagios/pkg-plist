@@ -30,10 +30,10 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/cgi-bin/status.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/statusmap.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/statuswml.cgi
-%%NAGIOSWWWDIR%%/cgi-bin/statuswrl.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/summary.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/tac.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/trends.cgi
+%%NAGIOSWWWDIR%%/config.inc.php
 %%NAGIOSWWWDIR%%/contexthelp/A1.html
 %%NAGIOSWWWDIR%%/contexthelp/A2.html
 %%NAGIOSWWWDIR%%/contexthelp/A3.html
@@ -128,6 +128,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/docs/freshness.html
 %%NAGIOSWWWDIR%%/docs/funstuff.html
 %%NAGIOSWWWDIR%%/docs/hostchecks.html
+%%NAGIOSWWWDIR%%/docs/knownissues.html
 %%NAGIOSWWWDIR%%/docs/images/activechecks.png
 %%NAGIOSWWWDIR%%/docs/images/cachedcheckgraphs.png
 %%NAGIOSWWWDIR%%/docs/images/cachedchecks.png
@@ -192,6 +193,8 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/docs/images/multiple-templates1.png
 %%NAGIOSWWWDIR%%/docs/images/multiple-templates2.png
 %%NAGIOSWWWDIR%%/docs/images/nagios.jpg
+%%NAGIOSWWWDIR%%/docs/images/nagiosexchange.png
+%%NAGIOSWWWDIR%%/docs/images/nagiossupport.png
 %%NAGIOSWWWDIR%%/docs/images/ndoutils.png
 %%NAGIOSWWWDIR%%/docs/images/network-outage1.png
 %%NAGIOSWWWDIR%%/docs/images/network-outage2.png
@@ -319,8 +322,9 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/images/redundancy.png
 %%NAGIOSWWWDIR%%/images/restart.gif
 %%NAGIOSWWWDIR%%/images/right.gif
-%%NAGIOSWWWDIR%%/images/sblogo.jpg
+%%NAGIOSWWWDIR%%/images/sblogo.png
 %%NAGIOSWWWDIR%%/images/serviceevent.gif
+%%NAGIOSWWWDIR%%/images/sflogo.png
 %%NAGIOSWWWDIR%%/images/splunk1.gif
 %%NAGIOSWWWDIR%%/images/splunk2.gif
 %%NAGIOSWWWDIR%%/images/start.gif
@@ -345,10 +349,11 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/images/weblogo1.png
 %%NAGIOSWWWDIR%%/images/zoom1.gif
 %%NAGIOSWWWDIR%%/images/zoom2.gif
-%%NAGIOSWWWDIR%%/index.html
-%%NAGIOSWWWDIR%%/main.html
+%%NAGIOSWWWDIR%%/includes/utils.inc.php
+%%NAGIOSWWWDIR%%/index.php
+%%NAGIOSWWWDIR%%/main.php
 %%NAGIOSWWWDIR%%/robots.txt
-%%NAGIOSWWWDIR%%/side.html
+%%NAGIOSWWWDIR%%/side.php
 %%NAGIOSWWWDIR%%/stylesheets/avail.css
 %%NAGIOSWWWDIR%%/stylesheets/checksanity.css
 %%NAGIOSWWWDIR%%/stylesheets/cmd.css
@@ -374,6 +379,7 @@ etc/nagios/resource.cfg-sample
 @dirrm %%NAGIOSWWWDIR%%/docs
 @dirrm %%NAGIOSWWWDIR%%/images/logos
 @dirrm %%NAGIOSWWWDIR%%/images
+@dirrm %%NAGIOSWWWDIR%%/includes
 @dirrm %%NAGIOSWWWDIR%%/media
 @dirrm %%NAGIOSWWWDIR%%/ssi
 @dirrm %%NAGIOSWWWDIR%%/stylesheets

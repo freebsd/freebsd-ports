@@ -41,18 +41,6 @@
  AC_SUBST(INSTALL_OPTS)
  
  AC_ARG_WITH(command_user,--with-command-user=<user> sets user name for command access,command_user=$withval,command_user=$nagios_user)
-@@ -520,9 +528,9 @@
- fi
- 
- dnl Try and locate glib
--GLIB_INCLUDE=`pkg-config --cflags glib-2.0`
-+GLIB_INCLUDE=""
- AC_SUBST(GLIB_INCLUDE)
--GLIB_LIBS=`pkg-config --libs glib-2.0`
-+GLIB_LIBS=""
- AC_SUBST(GLIB_LIBS)
- if test x$GLIB_LIBS != x; then
- 	AC_DEFINE_UNQUOTED(HAVE_GLIB)
 @@ -667,6 +675,9 @@
  
  	AC_DEFINE_UNQUOTED(EMBEDDEDPERL)

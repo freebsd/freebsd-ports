@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	3.0.6
-PORTREVISION=	3
+PORTVERSION=	3.2.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
@@ -27,7 +26,7 @@ CONFLICTS=	nagios-[12].* nagios-devel-*
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
 		NANOSLEEP "Use nanosleep in event timing" off \
 		EVENT_BROKER "Enable event broker functionality" off \
-		UNHANDLED_HACK "Display passive checks in unhandled queries" off
+		UNHANDLED_HACK "Display passive checks in unhandled queries" off \
 
 GNU_CONFIGURE=	yes
 
@@ -55,11 +54,13 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
+		--datarootdir=${PREFIX}/${NAGIOSWWWDIR} \
 		--datadir=${PREFIX}/${NAGIOSWWWDIR} \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
 		--with-httpd-conf=${PREFIX}/etc \
-		--with-checkresult-dir=${NAGIOSDIR}/checkresults
+		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
+		--disable-statuswrl
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS}" \
@@ -85,9 +86,11 @@ SUB_FILES=	pkg-install \
 		pkg-deinstall \
 		pkg-message
 
-### XXX: Subtle bug with removing PREFIX from here
+# XXX: Don't remove PREFIX from SUB_LIST here.
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
+
+USE_PHP=	yes
 
 .if defined(WITH_EMBEDDED_PERL)
 USE_PERL5=	5.8.0+
@@ -110,8 +113,8 @@ CONFIGURE_ARGS+=	--disable-event-broker
 
 post-patch:
 .if defined(WITH_UNHANDLED_HACK)
-	@${REINPLACE_CMD} -e 's#\&serviceprops=42\&#\&serviceprops=10\&#g' \
-		-e 's#\&hostprops=42\"#\&hostprops=10\"#g' ${WRKSRC}/html/side.html.in
+	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
+		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 .endif
 
 pre-install:
