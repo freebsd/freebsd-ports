@@ -12,6 +12,8 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru
 
+BROKEN=		does not compile
+
 PLUGIN_NAME=	lua
 PLUGIN_DESC=	LuaScript
 
