@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	bsnmp-regex
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://memberwebs.com/stef/software/bsnmp-regex/
 
 MAINTAINER=	brock@cotcomsol.com
 COMMENT=	A bsnmpd module allowing creation of counters from log files
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+GNU_CONFIGURE=	yes
 
 MAN1=		sockin.1
 MAN5=		bsnmp-regex.conf.5
