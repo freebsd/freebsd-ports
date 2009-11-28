@@ -1,6 +1,6 @@
---- configure.orig	2009-09-17 18:08:39.000000000 +0900
-+++ configure	2009-11-24 11:20:36.000000000 +0900
-@@ -17059,9 +17059,9 @@
+--- configure.orig	2009-11-28 17:33:24.000000000 +0900
++++ configure	2009-11-28 17:35:52.000000000 +0900
+@@ -17771,9 +17771,9 @@
  #define HAVE_DECL_NTH_UNCONVERTED_CANDIDATE 0
  _ACEOF
  
@@ -13,7 +13,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_KATAKANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_KATAKANA_CANDIDATE is declared... " >&6; }
-@@ -17129,9 +17129,9 @@
+@@ -17841,9 +17841,9 @@
  #define HAVE_DECL_NTH_KATAKANA_CANDIDATE 0
  _ACEOF
  
@@ -26,7 +26,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_HIRAGANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_HIRAGANA_CANDIDATE is declared... " >&6; }
-@@ -17199,9 +17199,9 @@
+@@ -17911,9 +17911,9 @@
  #define HAVE_DECL_NTH_HIRAGANA_CANDIDATE 0
  _ACEOF
  
@@ -39,7 +39,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_HALFKANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_HALFKANA_CANDIDATE is declared... " >&6; }
-@@ -17269,9 +17269,9 @@
+@@ -17981,9 +17981,9 @@
  #define HAVE_DECL_NTH_HALFKANA_CANDIDATE 0
  _ACEOF
  
