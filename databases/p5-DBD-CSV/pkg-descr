@@ -1,1 +1,7 @@
-    DBD::CSV - DBI driver for CSV files
+The DBD::CSV module is yet another driver for the DBI (Database
+independent interface for Perl). This one is based on the SQL
+"engine" SQL::Statement and the abstract DBI driver DBD::File
+and implements access to so-called CSV files (Comma separated
+values).
+
+WWW: http://search.cpan.org/dist/DBD-CSV/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-CSV
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -16,10 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI driver for CSV files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=1.00:${PORTSDIR}/databases/p5-DBI \
+		p5-SQL-Statement>=1.23:${PORTSDIR}/databases/p5-SQL-Statement \
+		p5-Text-CSV_XS>=0.64:${PORTSDIR}/textproc/p5-Text-CSV_XS
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
