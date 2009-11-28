@@ -11,6 +11,7 @@ include/cups/language.h
 include/cups/ppd.h
 include/cups/sidechannel.h
 include/cups/transcode.h
+include/cups/versioning.h
 lib/libcups.a
 lib/libcups.so
 lib/libcups.so.2

@@ -2,6 +2,8 @@ include/cups/image.h
 include/cups/raster.h
 lib/libcupsimage.so
 lib/libcupsimage.so.2
+libexec/cups/filter/bannertops
+libexec/cups/filter/commandtops
 libexec/cups/filter/gziptoany
 libexec/cups/filter/hpgltops
 libexec/cups/filter/imagetops
