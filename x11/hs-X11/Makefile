@@ -41,6 +41,9 @@ OPTIONS=	XINERAMA "Build with Xinerama support" off
 
 .if defined(WITH_XINERAMA)
 USE_XORG+=	xinerama
+CONFIGURE_ARGS+=	--configure-option=--with-xinerama
+.else
+CONFIGURE_ARGS+=	--configure-option=--without-xinerama
 .endif
 
 .if defined(NOPORTDOCS)
@@ -71,7 +74,8 @@ post-patch:
 
 do-configure:
 	cd ${WRKSRC} && ${GHC_CMD} --make Setup.hs -o setup -package Cabal \
-		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX}
+		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX} \
+			 ${CONFIGURE_ARGS}
 
 do-build:
 	cd ${WRKSRC} && ${SETUP_CMD} build \
