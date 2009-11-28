@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.3.10
+PORTVERSION=	1.4.1
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
@@ -182,7 +182,12 @@ MAN1=	cancel.1 \
 	lpq.1 \
 	lprm.1 \
 	lpr.1 \
-	lpstat.1
+	lpstat.1 \
+	ppdc.1 \
+	ppdhtml.1 \
+	ppdi.1 \
+	ppdmerge.1 \
+	ppdpo.1
 MAN5=	classes.conf.5 \
 	client.conf.5 \
 	cups-snmp.conf.5 \
@@ -190,26 +195,31 @@ MAN5=	classes.conf.5 \
 	mailto.conf.5 \
 	mime.convs.5 \
 	mime.types.5 \
+	ppdcfile.5 \
 	printers.conf.5 \
 	subscriptions.conf.5
 MAN7=	backend.7 \
-	filter.7
+	drv.7 \
+	filter.7 \
+	notifier.7
 MAN8=	accept.8 \
+	cupsaccept.8 \
 	cupsaddsmb.8 \
-	cups-deviced.8 \
-	cups-driverd.8 \
-	cups-lpd.8 \
-	cups-polld.8 \
 	cupsctl.8 \
 	cupsd.8 \
 	cupsenable.8 \
 	cupsfilter.8 \
+	cups-deviced.8 \
+	cups-driverd.8 \
+	cups-lpd.8 \
+	cups-polld.8 \
 	lpadmin.8 \
 	lpinfo.8 \
 	lpmove.8 \
 	lpc.8
 
 MLINKS=	accept.8 reject.8 \
+	cupsaccept.8 cupsreject.8 \
 	cupsenable.8 cupsdisable.8
 .endif
 
@@ -228,7 +238,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
 	@${REINPLACE_CMD} -e 's|/etc/cups|${LOCALBASE}/etc/cups|g' ${WRKSRC}/man/*.man*
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/scheduler/cups-driverd.c
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/scheduler/cups-driverd.cxx
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
 		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -269,6 +279,11 @@ pre-build:
 	${CP} -p ${LOCALBASE}/lib/libcupsimage.so ${WRKSRC}/filter/
 	${CP} -p ${LOCALBASE}/lib/libcupsimage.so.2 ${WRKSRC}/filter/
 .endif
+.endif
+
+.if defined(CUPS_IMAGE)
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/cups/raster.h ${PREFIX}/include/cups/
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
