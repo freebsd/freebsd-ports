@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.65
+PORTVERSION=	110.71
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -24,7 +24,8 @@ USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
 
 OPTIONS=	EVERYTHING "install everything from the SML/NJ distribution" off \
-		RECOMPILE "recompile the SML compiler - implies EVERYTHING" off
+		RECOMPILE  "recompile the SML compiler - implies EVERYTHING" off \
+		POSITION64 "use 64bit fi""le positions - implies RECOMPILE"  off
 
 SUB_FILES=	pkg-install
 SUB_LIST=	EXEBINDIR=${MLBINRELATIVE} EXENAMES="${MLEXE}"
@@ -44,6 +45,13 @@ DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz heap2asm.tgz ml-lpt.tgz \
 
 PLIST_SUB=	MLARCH=${MLARCH}
 
+.if defined(WITH_POSITION64)
+WITH_RECOMPILE?=	${WITH_POSITION64}
+CMB_COMMAND=	'(\#set o CMB.symval) "USE_64_BIT_POSITIONS" (SOME 1);'
+.else
+CMB_COMMAND=
+.endif
+
 .if defined(WITH_RECOMPILE)
 WITH_EVERYTHING?=	${WITH_RECOMPILE}
 .endif
@@ -58,8 +66,9 @@ MLROOT=		${PREFIX}/${MLROOTRELATIVE}
 MLBINRELATIVE=	${MLROOTRELATIVE}/bin
 MLBIN=		${MLROOT}/bin
 MLLIB=		${MLROOT}/lib
-MLSRCDIRS=	base ckit cml eXene heap2asm ml-burg ml-lex ml-lpt \
-		ml-yacc nlffi pgraph smlnj-c smlnj-lib
+MLSTDSRCDIRS=	cml heap2asm ml-lex ml-lpt ml-yacc smlnj-lib
+MLSRCDIRS=	base ${MLSTDSRCDIRS} \
+		ckit eXene ml-burg nlffi pgraph smlnj-c
 MLSRCS=
 .for srcdir in ${MLSRCDIRS}
 MLSRCS+=	${MLROOT}/${srcdir}
@@ -91,6 +100,10 @@ pre-fetch:
 .if !defined(WITH_RECOMPILE)
 	@${ECHO} 'Use make WITH_RECOMPILE=yes to recompile the compiler.'
 	@${ECHO} ' This implies WITH_EVERYTHING.'
+.endif
+.if !defined(WITH_POSITION64)
+	@${ECHO} 'Use make WITH_POSITION64=yes to use 64bit file positions.'
+	@${ECHO} ' This implies WITH_RECOMPILE.'
 .endif
 	@${ECHO}
 
@@ -134,34 +147,41 @@ RECOMPILEDIR=	base/system
 RECOMPILEDIR=
 .endif
 
-# calm portlint complaining about /dev/null
-AUXSLASH=	/
-AUXDEV=		${AUXSLASH}dev
-AUXDEVNULL!=	if [ -w ${AUXDEV}/null ]; then ${ECHO_CMD} -n ${AUXDEV}/null; \
-		else ${ECHO_CMD} -n '${WRKDIR}/.devnull'; fi
-
-MLRUNTIMEPATCHES!=	cd ${FILESDIR} && \
-			( ${LS} do-patch-base_runtime_* 2> ${AUXDEVNULL} || \
+MLRUNTIMEPATCHES_CMD=	cd ${FILESDIR} && \
+			( ${LS} do-patch-base_runtime_* 2>&- || \
 			  ${TRUE} )
+MLSTANDARDPATCHES_CMD=	cd ${FILESDIR} && \
+			( for srcdir in ${MLSTDSRCDIRS} ; \
+			  do ${LS} do-patch-$${srcdir}_* 2>&- ; \
+			  done ) || ${TRUE}
+MLSTANDARDPATCHDIRS_CMD=	cd ${FILESDIR} && \
+			( for srcdir in ${MLSTDSRCDIRS} ; \
+			  do if ${LS} do-patch-$${srcdir}_* 1>&- 2>&- ; \
+			     then ${ECHO_CMD} -n $${srcdir} " " ; break ; fi ; \
+			  done ) || ${TRUE}
 .if defined(WITH_EVERYTHING)
-MLSOURCEPATCHES!=	cd ${FILESDIR} && \
-			( ${LS} do-patch-* 2> ${AUXDEVNULL} || \
+MLSOURCEPATCHES_CMD=	cd ${FILESDIR} && \
+			( ${LS} do-patch-* 2>&- || \
 			  ${TRUE} )
 .else
-MLSOURCEPATCHES=
+MLSOURCEPATCHES_CMD=	${TRUE}
 .endif
 
 do-build:
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes \
-	MLRUNTIMEPATCHES="${MLRUNTIMEPATCHES}" \
-	MLSOURCEPATCHES="${MLSOURCEPATCHES}"	./config/install.sh
+	MLRUNTIMEPATCHES=`${MLRUNTIMEPATCHES_CMD}` \
+	MLSTANDARDPATCHES=`${MLSTANDARDPATCHES_CMD}` \
+	MLSTANDARDPATCHDIRS=`${MLSTANDARDPATCHDIRS_CMD}` \
+	MLSOURCEPATCHES=`${MLSOURCEPATCHES_CMD}` \
+	./config/install.sh
 .if defined(WITH_RECOMPILE)
 	-${RM} ${WRKDIR}/config/targets.customized
 	@${ECHO} '(* Recompiling the core system: *)'
 	cd ${WRKDIR}/${RECOMPILEDIR} && ( \
 	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
+	${ECHO_CMD} ${CMB_COMMAND} ; \
 	${ECHO_CMD} 'CMB.make ();' ) | \
 	../../bin/sml
 	@${ECHO} '(* Building the recompiled heap: *)'
@@ -205,12 +225,10 @@ pre-install:
 	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/base/\1%' \
 		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/base/\1%' \
 		> ${MLRUNTIMEPLIST}
-.for p in ${MLRUNTIMEPATCHES}
-	@${ECHO_CMD} '${p}' | \
+	`${MLRUNTIMEPATCHES_CMD}` | \
 	${SED} ${MLPATCHPATHREGEX} | \
 	${SED} -E -e 's%^do-patch-(base/.*)%${MLROOTRELATIVE}/\1.orig%' \
 	>> ${MLRUNTIMEPLIST}
-.endfor
 	@cd "${WRKDIR}" && ( \
 	( ${FIND} -s -d ${MLSRCDIRS} \! -type d | \
 	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
@@ -247,6 +265,7 @@ do-install:
 	@${ECHO} '(* Rebuilding the recompiled libs: *)'
 	cd ${WRKDIR}/${RECOMPILEDIR} && ( \
 	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
+	${ECHO_CMD} ${CMB_COMMAND} ; \
 	${ECHO_CMD} 'CMB.make ();' ) | \
 	../../bin/sml
 	@${ECHO} '(* Rebuilding the recompiled heap: *)'
