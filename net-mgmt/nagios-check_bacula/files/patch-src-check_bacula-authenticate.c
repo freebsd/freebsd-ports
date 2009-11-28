@@ -1,5 +1,5 @@
---- src/check_bacula/authenticate.c.orig	2007-11-22 12:45:01.000000000 +0100
-+++ src/check_bacula/authenticate.c	2009-05-14 20:45:52.000000000 +0200
+--- src/check_bacula/authenticate.c.org	2009-09-28 16:16:01.000000000 +0200
++++ src/check_bacula/authenticate.c	2009-09-28 16:16:34.000000000 +0200
 @@ -57,7 +57,7 @@
  /* Response from SD */
  static char SDOKhello[]   = "3000 OK Hello\n";
