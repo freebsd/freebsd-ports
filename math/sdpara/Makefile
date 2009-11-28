@@ -7,9 +7,9 @@
 
 PORTNAME=	sdpara
 PORTVERSION=	7.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math parallel
-MASTER_SITES=   http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
+MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE}#${MANUALFILE}
 DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${SRCFILE}
@@ -34,9 +34,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 USE_BLAS?=	reference
 
 .if exists(${LOCALBASE}/lib/libgoto.so)
-USE_BLAS=     gotoblas
+USE_BLAS=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas_r.so)
-USE_BLAS=     atlas
+USE_BLAS=	atlas
 .endif
 
 . if ${USE_BLAS} == reference
@@ -50,21 +50,21 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lgotop
 LAPACK=		-lgotop -llapack
 .elif ${USE_BLAS} == atlas
-LIB_DEPENDS+=   atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas -lptcblas -latlas_r
 LAPACK=		-lalapack_r
 .endif
 
 #PLIST_SUB+=	MANUALFILE=${MANUALFILE}
 
-SCALAPACK = -L/usr/local/lib -lscalapack -lblacs -lblacsc
-FORTRAN_LIBS= -lgfortran
-GCCLIBDIR = -L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+SCALAPACK=	-L/usr/local/lib -lscalapack -lblacs -lblacsc
+FORTRAN_LIBS=	-lgfortran
+GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/mpich2/bin/mpicc|g ; \
-				s|%%MPICXX%%|${LOCALBASE}/mpich2/bin/mpicxx|g ; \
-				s|%%MPIF77%%|${LOCALBASE}/mpich2/bin/mpif77|g ; \
+	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/bin/mpicc|g ; \
+				s|%%MPICXX%%|${LOCALBASE}/bin/mpicxx|g ; \
+				s|%%MPIF77%%|${LOCALBASE}/bin/mpif77|g ; \
 				s|%%CFLAGS%%|${CFLAGS}|g ; \
 				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
 				s|%%FFLAGS%%|${FFLAGS}|g ; \
@@ -73,9 +73,9 @@ post-patch:
 				s|%%SCALAPACK%%|${SCALAPACK}|g ; \
 				s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
 				s|%%FORTRAN_LIBS%%|${GCCLIBDIR} ${FORTRAN_LIBS}|g '  ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/mpich2/bin/mpicc|g ; \
-				s|%%MPICXX%%|${LOCALBASE}/mpich2/bin/mpicxx|g ; \
-				s|%%MPIF77%%|${LOCALBASE}/mpich2/bin/mpif77|g ; \
+	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/bin/mpicc|g ; \
+				s|%%MPICXX%%|${LOCALBASE}/bin/mpicxx|g ; \
+				s|%%MPIF77%%|${LOCALBASE}/bin/mpif77|g ; \
 				s|%%CFLAGS%%|${CFLAGS}|g ; \
 				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
 				s|%%FFLAGS%%|${FFLAGS}|g ; \

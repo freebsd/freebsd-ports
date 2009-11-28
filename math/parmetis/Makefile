@@ -7,15 +7,15 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A package for parallel (mpi) unstructured graph partitioning
 
-RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
-BUILD_DEPENDS=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 
 ALL_TARGET=
 

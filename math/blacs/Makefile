@@ -7,7 +7,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/blacs/
 DISTNAME=	BLACS
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
-WITH_OPENMPI=   yes
+WITH_OPENMPI=	yes
 .endif
 
 .if defined(WITH_OPENMPI)
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-openmpi.diff
 .else
 LIB_DEPENDS=	mpich:${PORTSDIR}/net/mpich2
-RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
+RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
 .endif
 

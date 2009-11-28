@@ -7,7 +7,7 @@
 
 PORTNAME=	scotch
 PORTVERSION=	5.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad science
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/3795/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -39,11 +39,10 @@ EXAMPLES=	scotch_example.f
 PKGMESSAGE=	${WRKSRC}/LICENSE_en.txt
 
 .if !defined(WITHOUT_MPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.so:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/lib/libmpich.so:${PORTSDIR}/net/mpich2
 
 ALL_TARGET+=	ptscotch
-MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin
 
 INCS+=		ptscotch.h ptscotchf.h
 LIBS+=		libptscotch.a libptscotcherr.a

@@ -72,7 +72,7 @@
  #
  # MPI_INSTALL_DIR = 
 -  MPI_INSTALL_DIR = /usr/local/mpich-1.0.13
-+MPI_INSTALL_DIR = %%LOCALBASE%%/mpich2
++MPI_INSTALL_DIR = %%LOCALBASE%%
  #
  #---------------------------------------------------------------------
  #

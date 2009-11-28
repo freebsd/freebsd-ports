@@ -7,6 +7,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -39,9 +40,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpi/openmpi
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
-CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
 .endif
 
 .if defined(WITH_DEBUG)

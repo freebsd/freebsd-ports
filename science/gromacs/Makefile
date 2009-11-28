@@ -86,7 +86,7 @@ PLIST_SUB+=	SUFFIX_D=_d SUFFIX_DOUBLE=_double
 .if defined(WITH_MPICH) || defined(WITH_OMPI)
 CONFIGURE_ARGS+=	--enable-mpi
 .if defined(WITH_MPICH)
-CONFIGURE_ENV+=	MPICC=${PREFIX}/mpich2/bin/mpicc
+CONFIGURE_ENV+=	MPICC=${PREFIX}/bin/mpicc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 .elif defined(WITH_OMPI)

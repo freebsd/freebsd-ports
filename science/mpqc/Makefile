@@ -7,7 +7,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ICC)
-BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
+BUILD_DEPENDS+=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -72,11 +72,11 @@ CONFIGURE_ARGS+=--with-cc=${CC} \
 CONFIGURE_ARGS+=--with-libs="-lsvml"
 .endif
 .if defined(WITH_MPICH)
-CONFIGURE_ARGS+=--with-libdirs="-L${LOCALBASE}/lib -L${LOCALBASE}/mpich2/lib"\
+CONFIGURE_ARGS+=--with-libdirs="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"\
 		--enable-always-use-mpi
 .endif
 .if defined(WITH_MPICH)
-CONFIGURE_ARGS+=--with-include="-I${LOCALBASE}/mpich2/include -I${WRKDIR} -I${LOCALBASE}/include"
+CONFIGURE_ARGS+=--with-include="-I${LOCALBASE}/include -I${WRKDIR} -I${LOCALBASE}/include"
 .else
 CONFIGURE_ARGS+=--with-include="-I${WRKDIR} -I${LOCALBASE}/include"
 .endif

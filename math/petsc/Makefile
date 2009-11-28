@@ -7,7 +7,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.3-p0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -65,7 +65,7 @@ PORTDOCS=	*
 
 LIBSCALAPACK=	${LOCALBASE}/lib/libscalapack.a
 LIBBLACS=	${LOCALBASE}/lib/libblacs.a
-MPIDIR=		${LOCALBASE}/mpich2
+MPIDIR=		${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
@@ -82,7 +82,7 @@ WITHOUT_SUPERLU=	yes
 WITH_MPI=	yes
 .endif
 .if defined(WITH_MPI)
-. if exists(${LOCALBASE}/include/mpi.h)
+. if exists(${LOCALBASE}/bin/lamboot)
 BROKEN=		Cannot build with MPI when lam-7 is installed - set WITHOUT_MPI or deinstall net/lam
 . endif
 .if defined(WITH_OPENMPI)
@@ -97,8 +97,8 @@ WITHOUT_SPOOLES=	yes
 WITHOUT_PARMETIS=	yes
 CONFIGURE_ARGS+=	--with-cc=${MPIDIR}/bin/mpicc --with-fc=${MPIDIR}/bin/mpif77
 .else
-BUILD_DEPENDS+=		${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=		${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS+=		${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=		${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
 PKGNAMESUFFIX+=		-mpich
 WITHOUT_SPOOLES=	yes
 .endif
@@ -139,7 +139,7 @@ CONFIGURE_ARGS+=	--with-superlu-include=${LOCALBASE}/include/superlu	\
 CONFIGURE_ARGS+=	--with-blocksolve95=0
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libBS95.a:${PORTSDIR}/math/blocksolve95
-CONFIGURE_ARGS+=	--with-blocksolve95-include=${LOCALBASE}/mpich2/include	\
+CONFIGURE_ARGS+=	--with-blocksolve95-include=${LOCALBASE}/include	\
 			--with-blocksolve95-lib=${LOCALBASE}/lib/libBS95.a
 .endif
 
@@ -288,12 +288,12 @@ regression-test:
 	${CHMOD} go-r ${HOME}/.mpd.conf
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 .  endif
-	${LOCALBASE}/mpich2/bin/mpd &
+	${LOCALBASE}/bin/mpd &
 . endif
 	(cd ${BUILD_WRKSRC};	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 . if defined (WITH_MPI) && !defined(WITH_OPENMPI)
-	${LOCALBASE}/mpich2/bin/mpdallexit
+	${LOCALBASE}/bin/mpdallexit
 . endif
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	pnetcdf
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}
@@ -40,9 +41,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
 CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}/mpi/openmpi
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.so:${PORTSDIR}/net/mpich2
-CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/lib/libmpich.so:${PORTSDIR}/net/mpich2
+CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}
 .endif
 
 post-patch:

@@ -67,12 +67,12 @@ PATCH2RM=	conf/config lib/as_config.py conf/aster_profile.sh
 . if exists(${LOCALBASE}/sbin/pbs_server)
 WITH_PBS=	yes
 . endif
-. if exists(${LOCALBASE}/mpich2/bin/mpirun)
+. if exists(${LOCALBASE}/bin/mpirun)
 WITH_MPI=	yes
 . endif
 . if defined(WITH_MPI)
 RUN_DEPENDS+=	${HOME_MPI}/bin/mpirun:${PORTSDIR}/net/mpich2
-HOME_MPI=	${LOCALBASE}/mpich2
+HOME_MPI=	${LOCALBASE}
 PLIST_SUB+=	MPI=""
 . else
 PLIST_SUB+=	MPI="@comment "

@@ -132,14 +132,14 @@ MUMPS_PORT=	mumps
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs	\
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
 MUMPS_PORT=	mumps-mpich
-MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/mpich2/lib -lmpich
+MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich
 . endif
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
 .endif
 
 .if defined(WITH_MPI)
 BUILD_DEPENDS+=	${HOME_MPI}/include/mpif.h:${PORTSDIR}/net/mpich2
-HOME_MPI=	${LOCALBASE}/mpich2
+HOME_MPI=	${LOCALBASE}
 .endif
 
 USE_FORTRAN=	yes
@@ -220,7 +220,6 @@ ${WRKSRC}/instdir/${vaster}/elements:	build
 pre-everything::
 .if defined(WITH_MPI)
 	@${ECHO_MSG} "To build Code_Aster with MPI enabled, you nedd to run `mpd &'"
-	@${ECHO_MSG} "and may be you have to run `ldconfig -R ${LOCALBASE}/mpich2/lib'"
 .endif
 
 pre-configure:

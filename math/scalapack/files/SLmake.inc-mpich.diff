@@ -27,7 +27,7 @@
 -BLACSFINIT    = $(BLACSdir)/libmpiblacsF77init-p4.a
 -BLACSCINIT    = $(BLACSdir)/libmpiblacsCinit-p4.a
 -BLACSLIB      = $(BLACSdir)/libmpiblacs-p4.a
-+SMPLIB        = -L@LOCALBASE@/mpich2 -lmpich
++SMPLIB        = -L@LOCALBASE@ -lmpich
 +BLACSFINIT    = $(BLACSdir)/libblacsf77.a #-L$(BLACSdir) -lblacsf77
 +BLACSCINIT    = $(BLACSdir)/libblacsc.a   #-L$(BLACSdir) -lblacsc
 +BLACSLIB      = $(BLACSdir)/libblacs.a    #-L$(BLACSdir) -lblacs
