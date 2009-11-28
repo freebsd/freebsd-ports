@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mpich2
-DISTVERSION=	1.1.1p1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 PORTEPOCH=	4
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
+MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${PORTVERSION}/
 DIST_SUBDIR=	mpich
 #PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/mpich2-patch/
 #PATCHFILES=
@@ -27,7 +26,14 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 # - WITHOUT_JAVA	don't build MPE Jumpshot-4
 # - WITHOUT_X11		disable MPE graphics routines
 # - WITH_SMPD		use SMPD instead of MPD for OS-mixed cluster
+# - WITH_RECV_TIMEOUT	set a non-default MPIEXEC_RECV_TIMEOUT
 #-----------------------------------------------------------------------
+
+.if defined(MAINTAINER_MODE)
+WITH_RECV_TIMEOUT?=	100
+.else
+WITH_RECV_TIMEOUT?=	20
+.endif
 
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
@@ -47,15 +53,18 @@ MAKE_ENV+=	VERBOSE=1
 .endif
 MAKE_JOBS_UNSAFE=	yes
 
+CONFLICTS=	lam-7.* mpiexec-0.*
+
 USE_FORTRAN=	yes
 F90FLAGS+=	${FFLAGS}
 CONFIGURE_ENV+=	F90="${FC}" F90FLAGS="${F90FLAGS}"
 
-NO_MTREE=	yes
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 
+VERSO=		1.2
+PLIST_SUB=	VER=${VERSO}
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--disable-graphics
 WITHOUT_JAVA=	yes
@@ -86,7 +95,7 @@ CONFIGURE_ARGS+=	--with-pmi=simple --with-pm=mpd
 PLIST_SUB+=	PM_MPD="" PM_SMPD="@comment "
 .endif
 
-LIBSSO=		fmpich mpich mpichcxx
+LIBSSO=		fmpich mpich mpichcxx mpichf90
 
 THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
 		test/mpi/threads/pt2pt/Makefile.in		\
@@ -98,6 +107,9 @@ LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
 		src/mpe2/src/graphics/configure
 DOC2PATCH=	Makefile.in src/mpe2/sbin/mpeinstall.in		\
 		src/openpa/Makefile.in src/mpi/romio/util/romioinstall.in
+CONFPFX2FIX1=	man/man1/mpd.1 src/pm/mpd/mpd.py
+CONFPFX2FIX2=	README doc/installguide/install.tex.vin		\
+		src/pm/mpd/mpdlib.py src/pm/mpd/mpdroot.c
 
 .include <bsd.port.pre.mk>
 
@@ -122,8 +134,6 @@ BROKEN=	Requested timer clock_gettime (POSIX) is not available for ${OSREL}
 .include "${FILESDIR}/manpages"
 .endif
 
-PREFIX:=	${PREFIX}/${PORTNAME}
-
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You could define the following options:"
@@ -136,6 +146,7 @@ pre-everything::
 .if !defined(WITH_SMPD)
 	@${ECHO_MSG} "- WITH_SMPD	use SMPD instead of MPD, to work with SMPD under MS Windows"
 .endif
+	@${ECHO_MSG} "- WITH_RECV_TIMEOUT set it to a value > 20 on slow machines"
 	@${ECHO_MSG}
 
 pre-configure:
@@ -154,6 +165,16 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|lib doc share|lib share|'	\
 		${WRKSRC}/src/mpe2/src/slog2sdk/sbin/install-package.in
 .endif
+	${REINPLACE_CMD} -e '/MPIEXEC_RECV_TIMEOUT/s|20,|${WITH_RECV_TIMEOUT},|' \
+		${WRKSRC}/src/pm/mpd/mpiexec.py
+	${REINPLACE_CMD} -e 's|%%SRCDIR%%|${WRKSRC}|' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.for cnf in ${CONFPFX2FIX1}
+	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${cnf}
+.endfor
+.for cnf in ${CONFPFX2FIX2}
+	${REINPLACE_CMD} -e 's|/etc/mpd.conf|${PREFIX}/etc/mpd.conf|'	\
+		${WRKSRC}/${cnf}
+.endfor
 
 post-configure:
 	${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g;	\
@@ -161,15 +182,19 @@ post-configure:
 		${WRKSRC}/src/packaging/pkgconfig/mpich2-ch3.pc
 
 post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
 .for lib in ${LIBSSO}
-	${MV} ${PREFIX}/lib/lib${lib}.so.1.1 ${PREFIX}/lib/lib${lib}.so.1
+	${MV} ${PREFIX}/lib/lib${lib}.so.1.2 ${PREFIX}/lib/lib${lib}.so.1
 	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so.1.1
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so.1.2
 .endfor
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
+	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${WRKDIR}/mpd.conf.dist
+	${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${PREFIX}/etc/
+	if [ ! -e ${PREFIX}/etc/mpd.conf ]; then \
+		${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${PREFIX}/etc/mpd.conf ; \
+	fi
+	${CHMOD} 600 ${PREFIX}/etc/mpd.conf ${PREFIX}/etc/mpd.conf.dist
 	@${CAT} ${PKGMESSAGE}
 
 .if defined(MAINTAINER_MODE)
