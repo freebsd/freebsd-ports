@@ -6,10 +6,12 @@
 
 PORTNAME=	scim-kmfl-european-latin
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://eurolatin.keymankeyboards.com/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
 DISTNAME=	eurolatin-${PORTVERSION}
+DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Paneuropean Latin KMFL SCIM IMEngine keyboard covering 42 languages
@@ -18,6 +20,7 @@ RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
  		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/kmfl.so:${PORTSDIR}/textproc/scim-kmfl-imengine
 
 NO_WRKSUBDIR=	yes
+USE_DOS2UNIX=	european.kmn
 NO_BUILD=	yes
 USE_ZIP=	yes
 
@@ -33,9 +36,6 @@ PLIST_FILES=	${SCIM_KMFL_DIR}/european.kmn \
 		${SCIM_KMFL_ICONS_DIR}/european.bmp \
 		${SCIM_KMFL_ICONS_DIR}/latin.bmp \
 		${SCIM_KMFL_ICONS_DIR}/latin.ico
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|latin.ico|latin.bmp|' ${WRKSRC}/european.kmn
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${SCIM_KMFL_DIR}
