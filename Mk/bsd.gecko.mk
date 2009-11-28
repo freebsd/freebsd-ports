@@ -5,7 +5,6 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/Mk/bsd.gecko.mk,v 1.10 2009/04/04 19:54:48 marcus Exp $
 #
 # 4 column tabs prevent hair loss and tooth decay!
 
@@ -65,7 +64,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  
 #  post-patch:
 #	@${REINPALCE_CMD} -e 's|mozilla-|${GECKO}-|' \
-#		${WRKSRC}/configure
+#		${MOZSRC}/configure
 #
 #  If you want your port to check the ${GECKO} variable to see which backend
 #  has been chosen.
@@ -76,7 +75,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  post-patch:
 #  .if ${GECKO}=="seamonkey"
 #	@${REINPLACE_CMD} -e 's|mozilla-|seamonkey-|' \
-#		${WRKSRC}/configure
+#		${MOZSRC}/configure
 #  .endif
 
 _GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock mozilla \
@@ -258,6 +257,7 @@ USE_XORG=	printproto sm xt xi xext x11 xinerama \
 		ice xproto
 
 MOZILLA_SUFX?=	none
+MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
 FAKEDIR?=	${WRKDIR}/fake
 PLIST?=		${WRKDIR}/plist
@@ -501,17 +501,17 @@ gecko-post-patch:
 	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g ; \
 		s|"%FULL_NSPR_CFLAGS%"|`nspr-config --cflags`|g ; \
 		s|"%FULL_NSPR_LIBS%"|`nspr-config --libs`|g' \
-			${WRKSRC}/build/unix/mozilla-config.in
+			${MOZSRC}/build/unix/mozilla-config.in
 	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
 		${WRKSRC}/configure \
-		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
-		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
+		${MOZSRC}/intl/uconv/native/nsNativeUConvService.cpp \
+		${MOZSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		${WRKSRC}/config/autoconf.mk.in
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
 		s|echo aout|echo elf|g ; s|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/security/coreconf/FreeBSD.mk \
-		${WRKSRC}/js/src/Makefile.in
+		${MOZSRC}/security/coreconf/FreeBSD.mk \
+		${MOZSRC}/js/src/Makefile.in
 	@if [ -d ${WRKSRC}/directory/c-sdk ]; then \
 		${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 			${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
@@ -524,14 +524,14 @@ gecko-post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
-			${WRKSRC}/build/unix/run-mozilla.sh
+			${MOZSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
-		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+		${MOZSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
-		${WRKSRC}/*/*/*/nsDeviceContextSpecG.cpp
+		${MOZSRC}/*/*/*/nsDeviceContextSpecG.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g ; \
 		s|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
-		${WRKSRC}/xpcom/*/SpecialSystemDirectory.cpp
+		${MOZSRC}/xpcom/*/SpecialSystemDirectory.cpp
 
 # handles mozilla pis scripts.
 gecko-moz-pis-patch:
@@ -542,13 +542,13 @@ gecko-moz-pis-patch:
 post-configure: gecko-post-configure
 
 gecko-post-configure:
-	@${ECHO_CMD} "#define JNIIMPORT" >> ${WRKSRC}/mozilla-config.h
+	@${ECHO_CMD} "#define JNIIMPORT" >> ${MOZSRC}/mozilla-config.h
 
 post-build: gecko-post-build
 
 gecko-post-build:
 	@${REINPLACE_CMD} -e "s|\(Libs:.*\)\($$\)|\1 -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}\2|" \
-		${WRKSRC}/build/unix/*.pc || ${TRUE}
+		${MOZSRC}/build/unix/*.pc || ${TRUE}
 
 pre-install: gecko-moz-pis-pre-install gecko-pre-install port-pre-install gecko-create-plist
 
@@ -561,7 +561,7 @@ gecko-pre-install:
 .if !defined(NOGECKO_PLIST)
 	@${RM} -rf ${FAKEDIR} ${PLIST} ${PLISTD} ${PLISTF}
 	@${TOUCH} -f ${PLIST} ${PLISTD} ${PLISTF}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@cd ${MOZSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} prefix=${FAKEDIR} ${INSTALL_TARGET}
 .if defined(MOZILLA_SUFX) && ${MOZILLA_SUFX}!="none"
 	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//} ${FAKEDIR}/bin/${MOZILLA}
