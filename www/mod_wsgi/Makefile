@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_wsgi
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
@@ -23,7 +23,7 @@ CONFLICTS=	mod_wsgi-3.*
 PROJECTHOST=	modwsgi
 
 USE_APACHE=	1.3+
-USE_PYTHON=	2.5-2.6
+USE_PYTHON=	2.3-2.6
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
