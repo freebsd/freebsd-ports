@@ -1,6 +1,6 @@
 bin/cd-drive
 bin/cd-info
-%%PARANOIA%%bin/cd-paranoia
+bin/cd-paranoia
 bin/cd-read
 bin/cdda-player
 bin/iso-info
@@ -49,23 +49,23 @@ include/cdio++/track.hpp
 lib/libcdio.a
 lib/libcdio.la
 lib/libcdio.so
-lib/libcdio.so.8
+lib/libcdio.so.12
 lib/libcdio++.a
 lib/libcdio++.la
 lib/libcdio++.so
 lib/libcdio++.so.0
-%%PARANOIA%%lib/libcdio_cdda.a
-%%PARANOIA%%lib/libcdio_cdda.la
-%%PARANOIA%%lib/libcdio_cdda.so
-%%PARANOIA%%lib/libcdio_cdda.so.0
-%%PARANOIA%%lib/libcdio_paranoia.a
-%%PARANOIA%%lib/libcdio_paranoia.la
-%%PARANOIA%%lib/libcdio_paranoia.so
-%%PARANOIA%%lib/libcdio_paranoia.so.0
+lib/libcdio_cdda.a
+lib/libcdio_cdda.la
+lib/libcdio_cdda.so
+lib/libcdio_cdda.so.0
+lib/libcdio_paranoia.a
+lib/libcdio_paranoia.la
+lib/libcdio_paranoia.so
+lib/libcdio_paranoia.so.0
 lib/libiso9660.a
 lib/libiso9660.la
 lib/libiso9660.so
-lib/libiso9660.so.5
+lib/libiso9660.so.7
 lib/libiso9660++.a
 lib/libiso9660++.la
 lib/libiso9660++.so
@@ -75,8 +75,11 @@ lib/libudf.la
 lib/libudf.so
 lib/libudf.so.0
 libdata/pkgconfig/libcdio.pc
-%%PARANOIA%%libdata/pkgconfig/libcdio_cdda.pc
-%%PARANOIA%%libdata/pkgconfig/libcdio_paranoia.pc
+libdata/pkgconfig/libcdio_cdda.pc
+libdata/pkgconfig/libcdio_paranoia.pc
+libdata/pkgconfig/libudf.pc
+libdata/pkgconfig/libcdio++.pc
+libdata/pkgconfig/libiso9660++.pc
 libdata/pkgconfig/libiso9660.pc
 @dirrm include/cdio
 @dirrm include/cdio++
