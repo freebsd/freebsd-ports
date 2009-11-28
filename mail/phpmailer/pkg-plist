@@ -1,9 +1,10 @@
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/Callback_function_notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/DomainKeys_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/Note_for_SMTP_debugging.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/aboutus.html
-%%PORTDOCS%%%%DOCSDIR%%/docs.ini
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/extending.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/pop3_article.txt
@@ -55,6 +56,7 @@
 %%DATADIR%%/test/contents.html
 %%DATADIR%%/test/phpmailerTest.php
 %%DATADIR%%/test/test.png
+%%DATADIR%%/test/test_callback.php
 %%DATADIR%%/test/testemail.php
 @dirrm %%DATADIR%%/test
 @dirrm %%DATADIR%%/language
