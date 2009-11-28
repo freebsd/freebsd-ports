@@ -355,6 +355,7 @@
     SUBDIR += flex-sdk
     SUBDIR += flex-sdk2
     SUBDIR += flex_compiler_shell
+    SUBDIR += flexdock
     SUBDIR += flexjson
     SUBDIR += flick
     SUBDIR += florist

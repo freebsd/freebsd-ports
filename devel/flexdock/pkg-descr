@@ -1,0 +1,12 @@
+ FlexDock is a Java docking framework for use in cross-platform 
+ Swing applications. It offers features you'd expect in any desktop
+ docking framework such as:
+ 
+    * Tabbed and Split Layouts
+    * Drag-n-Drop capability (with native drag rubber band painting
+      on some platforms)
+    * Floating windows
+    * Collapsible Containers to Save Real Estate
+    * Layout Persistence
+
+WWW:	https://flexdock.dev.java.net/
