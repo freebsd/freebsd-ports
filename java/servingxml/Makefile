@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	servingxml
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.1b
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 
