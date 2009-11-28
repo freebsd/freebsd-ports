@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	boost-python-libs
+PORTREVISION=	1
 COMMENT=	Framework for interfacing Python and C++
 
 USE_BZIP2=	yes
@@ -25,10 +26,14 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
-RUN_DEPENDS+=	${PREFIX}/lib/libboost_thread.so.${BOOST_SHARED_LIB_VER}:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml \
-		${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
-
+RUN_DEPENDS+=	${LOCALBASE}/lib/libboost_thread.so.${BOOST_SHARED_LIB_VER}:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
+.if defined(WITH_PYSTE)
+RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml
+PLIST_SUB+=	PYSTE=
+.else
+PLIST_SUB+=	PYSTE="@comment "
+.endif
 BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 
@@ -39,12 +44,13 @@ PLIST_SUB+=	PYTHON_VERSION=${PYTHON_VERSION:C/python//1}
 
 post-patch: customize-boost-build
 
-
+.if defined(WITH_PYSTE)
 post-configure:
 # Configure pyste, the Boost.Python code generator
 	@cd ${BUILD_WRKSRC}/libs/python/pyste/install && \
 	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
 		config ${PYDISTUTILS_CONFIGUREARGS}
+.endif
 
 do-build:
 # build the library
@@ -84,10 +90,12 @@ do-install:
 	${FIND} boost -type f -a \! -name "*.orig"\
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
 
+.if defined(WITH_PYSTE)
 # Install pyste, the Boost.Python code generator
 	cd ${WRKSRC}/libs/python/pyste/install && \
 	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
 		install ${PYDISTUTILS_INSTALLARGS}
+.endif
 
 post-install:
 # display pkg-message
