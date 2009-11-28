@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmailer
-PORTVERSION=	5.0.2
+PORTVERSION=	5.1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20for%20php5_6/PHPMailer%20v${PORTVERSION}
 DISTNAME=	PHPMailer_v${DISTVERSION}
@@ -37,7 +37,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in aboutus.html ChangeLog.txt docs.ini README LICENSE
+.for f in aboutus.html changelog.txt README LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
