@@ -33,6 +33,12 @@ DESKTOP_ENTRIES="Railroad Rampage" \
 		"Game;StrategyGame;ArcadeGame;" \
 		false
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		build fails on amd64
+.endif
+
 do-build:
 	cd ${WRKSRC} && ${SETENV} \
 		LD_LIBRARY_PATH=${LOCALBASE}/lib/bennugd \
@@ -50,4 +56,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
