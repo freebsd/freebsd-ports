@@ -36,6 +36,7 @@
     SUBDIR += amrcoder
     SUBDIR += aqualung
     SUBDIR += ardour
+    SUBDIR += ario
     SUBDIR += arts
     SUBDIR += artswrapper
     SUBDIR += ascd
