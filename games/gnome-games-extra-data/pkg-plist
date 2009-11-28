@@ -11,9 +11,9 @@ share/gnome-games/glines/pixmaps/classic.png
 share/gnome-games/glines/pixmaps/dots.png
 share/gnome-games/glines/pixmaps/gumball.png
 share/gnome-games/glines/pixmaps/pulse.png
-share/gnome-games/gnobots2/pixmaps/cows.png
-share/gnome-games/gnobots2/pixmaps/eggs.png
-share/gnome-games/gnobots2/pixmaps/mice.png
+share/gnome-games/gnobots2/themes/cows.png
+share/gnome-games/gnobots2/themes/eggs.png
+share/gnome-games/gnobots2/themes/mice.png
 share/gnome-games/gnometris/pixmaps/5blocks-tig.png
 share/gnome-games/gnometris/pixmaps/5blocks-tim.png
 share/gnome-games/gnometris/pixmaps/5blocks.png

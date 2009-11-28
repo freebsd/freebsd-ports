@@ -20,6 +20,7 @@ include/poppler/Function.h
 include/poppler/Gfx.h
 include/poppler/GfxFont.h
 include/poppler/GfxState.h
+include/poppler/GfxState_helpers.h
 include/poppler/GlobalParams.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
@@ -39,6 +40,7 @@ include/poppler/PSTokenizer.h
 include/poppler/Page.h
 include/poppler/PageTransition.h
 include/poppler/Parser.h
+include/poppler/PopplerCache.h
 include/poppler/PreScanOutputDev.h
 include/poppler/ProfileData.h
 include/poppler/SecurityHandler.h
@@ -56,6 +58,11 @@ include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
 include/poppler/XRef.h
 include/poppler/XpdfPluginAPI.h
+include/poppler/fofi/FoFiBase.h
+include/poppler/fofi/FoFiEncodings.h
+include/poppler/fofi/FoFiTrueType.h
+include/poppler/fofi/FoFiType1.h
+include/poppler/fofi/FoFiType1C.h
 include/poppler/goo/FixedPoint.h
 include/poppler/goo/GooHash.h
 include/poppler/goo/GooList.h
@@ -63,8 +70,10 @@ include/poppler/goo/GooMutex.h
 include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
 include/poppler/goo/GooVector.h
+include/poppler/goo/PNGWriter.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
+include/poppler/goo/gstrtod.h
 include/poppler/goo/gtypes.h
 include/poppler/poppler-config.h
 include/poppler/splash/Splash.h
@@ -93,10 +102,11 @@ include/poppler/splash/SplashXPathScanner.h
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.4
+lib/libpoppler.so.5
 %%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-splash.pc
 libdata/pkgconfig/poppler.pc
 @dirrm include/poppler/splash
 @dirrm include/poppler/goo
+@dirrm include/poppler/fofi
 @dirrm include/poppler

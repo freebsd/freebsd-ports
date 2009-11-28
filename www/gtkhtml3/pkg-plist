@@ -25,8 +25,8 @@ lib/libgtkhtml-editor.so
 lib/libgtkhtml-editor.so.0
 libdata/pkgconfig/gtkhtml-editor.pc
 libdata/pkgconfig/libgtkhtml-%%VERSION%%.pc
-share/gtkhtml-%%VERSION%%/gtkhtml-editor.glade
-share/gtkhtml-%%VERSION%%/gtkhtml-editor.ui
+share/gtkhtml-%%VERSION%%/gtkhtml-editor-builder.ui
+share/gtkhtml-%%VERSION%%/gtkhtml-editor-manager.ui
 share/gtkhtml-%%VERSION%%/icons/bulb.png
 share/gtkhtml-%%VERSION%%/icons/confidential-stamp.jpg
 share/gtkhtml-%%VERSION%%/icons/draft-paper.png
@@ -57,6 +57,7 @@ share/locale/bg/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/bn/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/bn_IN/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/ca@valencia/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/cy/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
@@ -153,6 +154,8 @@ share/locale/zh_TW/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

@@ -1094,6 +1094,10 @@ share/icons/HighContrast-SVG/scalable/status/messagebox_warning.svg
 share/icons/HighContrast-SVG/scalable/status/network-offline.svg
 share/icons/HighContrast-SVG/scalable/status/network-online.svg
 share/icons/HighContrast-SVG/scalable/status/nm-no-connection.svg
+share/icons/HighContrast-SVG/scalable/status/nm-signal-100.svg
+share/icons/HighContrast-SVG/scalable/status/nm-signal-25.svg
+share/icons/HighContrast-SVG/scalable/status/nm-signal-50.svg
+share/icons/HighContrast-SVG/scalable/status/nm-signal-75.svg
 share/icons/HighContrast-SVG/scalable/status/printer-printing.svg
 share/icons/HighContrast-SVG/scalable/status/software-update-available.svg
 share/icons/HighContrast-SVG/scalable/status/software-update-urgent.svg
@@ -2232,6 +2236,7 @@ share/locale/be@latin/LC_MESSAGES/gnome-themes.mo
 share/locale/bg/LC_MESSAGES/gnome-themes.mo
 share/locale/bn/LC_MESSAGES/gnome-themes.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-themes.mo
+share/locale/br/LC_MESSAGES/gnome-themes.mo
 share/locale/bs/LC_MESSAGES/gnome-themes.mo
 share/locale/ca/LC_MESSAGES/gnome-themes.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-themes.mo
@@ -2270,6 +2275,7 @@ share/locale/ky/LC_MESSAGES/gnome-themes.mo
 share/locale/li/LC_MESSAGES/gnome-themes.mo
 share/locale/lt/LC_MESSAGES/gnome-themes.mo
 share/locale/lv/LC_MESSAGES/gnome-themes.mo
+share/locale/mai/LC_MESSAGES/gnome-themes.mo
 share/locale/mg/LC_MESSAGES/gnome-themes.mo
 share/locale/mk/LC_MESSAGES/gnome-themes.mo
 share/locale/ml/LC_MESSAGES/gnome-themes.mo
@@ -2277,6 +2283,7 @@ share/locale/mn/LC_MESSAGES/gnome-themes.mo
 share/locale/mr/LC_MESSAGES/gnome-themes.mo
 share/locale/ms/LC_MESSAGES/gnome-themes.mo
 share/locale/nb/LC_MESSAGES/gnome-themes.mo
+share/locale/nds/LC_MESSAGES/gnome-themes.mo
 share/locale/ne/LC_MESSAGES/gnome-themes.mo
 share/locale/nl/LC_MESSAGES/gnome-themes.mo
 share/locale/nn/LC_MESSAGES/gnome-themes.mo
@@ -2723,9 +2730,9 @@ share/themes/Mist/index.theme
 share/themes/Mist/metacity-1/metacity-theme-1.xml
 share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/Simple/gtk-2.0
-@dirrmtry share/themes/Simple
+@dirrm share/themes/Simple
 @dirrm share/themes/Mist/metacity-1
-@dirrmtry share/themes/Mist
+@dirrm share/themes/Mist
 @dirrm share/themes/LowContrastLargePrint/pixmaps
 @dirrm share/themes/LowContrastLargePrint/gtk-2.0
 @dirrm share/themes/LowContrastLargePrint
@@ -2752,12 +2759,12 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/Glider/metacity-1
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
-@dirrmtry share/themes/Crux
+@dirrm share/themes/Crux
 @dirrm share/themes/ClearlooksClassic/metacity-1
 @dirrm share/themes/ClearlooksClassic/gtk-2.0
 @dirrm share/themes/ClearlooksClassic
 @dirrm share/themes/Clearlooks/metacity-1
-@dirrmtry share/themes/Clearlooks
+@dirrm share/themes/Clearlooks
 @dirrmtry share/themes
 @dirrm share/icons/Mist/scalable/status
 @dirrm share/icons/Mist/scalable/places
@@ -2858,10 +2865,14 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES

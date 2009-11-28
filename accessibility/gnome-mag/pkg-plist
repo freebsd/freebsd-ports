@@ -77,6 +77,7 @@ share/locale/ku/LC_MESSAGES/gnome-mag.mo
 share/locale/ky/LC_MESSAGES/gnome-mag.mo
 share/locale/lt/LC_MESSAGES/gnome-mag.mo
 share/locale/lv/LC_MESSAGES/gnome-mag.mo
+share/locale/mai/LC_MESSAGES/gnome-mag.mo
 share/locale/mg/LC_MESSAGES/gnome-mag.mo
 share/locale/mi/LC_MESSAGES/gnome-mag.mo
 share/locale/mk/LC_MESSAGES/gnome-mag.mo
@@ -147,6 +148,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES

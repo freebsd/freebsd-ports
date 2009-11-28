@@ -1,21 +1,22 @@
---- src/tracker-preferences/Makefile.in.orig	2008-03-30 16:28:05.657537943 -0400
-+++ src/tracker-preferences/Makefile.in	2008-03-30 16:29:01.927868390 -0400
-@@ -59,8 +59,7 @@
+--- src/tracker-preferences/Makefile.in.orig	2009-08-08 17:13:03.000000000 +0000
++++ src/tracker-preferences/Makefile.in	2009-08-08 17:14:08.000000000 +0000
+@@ -67,8 +67,6 @@
  tracker_preferences_OBJECTS = $(am_tracker_preferences_OBJECTS)
  am__DEPENDENCIES_1 =
- tracker_preferences_DEPENDENCIES = $(am__DEPENDENCIES_1) \
--	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
--	$(top_builddir)/src/libtracker/libtrackerclient.la
-+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
- DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
-@@ -329,7 +328,7 @@
- 			    $(GTK2_LIBS) \
- 			    $(LIBGLADE_LIBS) \
- 				$(DBUS_LIBS) \
--				$(top_builddir)/src/libtracker/libtrackerclient.la \
-+				-ltrackerclient \
- 			    $(NULL)
+ tracker_preferences_DEPENDENCIES =  \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la \
+-	$(top_builddir)/src/libtracker-common/libtracker-common.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+@@ -361,8 +359,8 @@
+ 	tracker-preferences-utils.h
  
- EXTRA_DIST = $(pkgdata_DATA)
+ tracker_preferences_LDADD = \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la		\
+-	$(top_builddir)/src/libtracker-common/libtracker-common.la 	\
++	-ltrackerclient		\
++	-ltracker-common 	\
+ 	$(LIBGLADE_LIBS)						\
+ 	$(GTK2_LIBS) 							\
+ 	$(DBUS_LIBS) 							\

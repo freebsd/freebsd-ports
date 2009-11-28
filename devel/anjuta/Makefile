@@ -3,12 +3,11 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/anjuta/Makefile,v 1.6 2009/04/20 04:42:30 marcus Exp $
+#   $MCom: ports/devel/anjuta/Makefile,v 1.49 2009/10/19 19:29:48 kwm Exp $
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	2.26.2.2
-PORTREVISION=	2
+PORTVERSION=	2.28.1.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,16 +17,14 @@ COMMENT=	Integrated Development Environment for C and C++
 
 BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
-		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
-		neato:${PORTSDIR}/graphics/graphviz
+		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gladeui-1.9:${PORTSDIR}/devel/glade3 \
 		neon.28:${PORTSDIR}/www/neon28 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
+		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
-		neato:${PORTSDIR}/graphics/graphviz \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		libtool:${PORTSDIR}/devel/libtool22 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
@@ -40,23 +37,24 @@ USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui vte gtksourceview2 libgda4
+USE_GNOME=	gnomeprefix gnomehack vte gtksourceview2 libgda4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
 		anjuta-cvs-plugin.schemas \
+		anjuta-debug-manager.schemas \
 		anjuta-document-manager.schemas \
-		anjuta-editor-scintilla.schemas \
 		anjuta-editor-sourceview.schemas \
 		anjuta-language-cpp-java.schemas \
 		anjuta-message-manager-plugin.schemas \
 		anjuta-symbol-db.schemas \
 		anjuta-terminal-plugin.schemas \
-		anjuta.schemas
+		file-manager.schemas \
+		preferences.schemas
 
-MAN1=		anjuta.1 anjuta_launcher.1
+MAN1=		anjuta.1 anjuta-launcher.1
 
 OPTIONS=	SVN "Build subversion plugin" off \
 		DEVHELP "Build devhelp plugin" on
@@ -91,7 +89,7 @@ PLIST_SUB+=	SVN="@comment "
 .endif
 
 .if defined(WITH_DEVHELP)
-LIB_DEPENDS+=	devhelp-1.0:${PORTSDIR}/devel/devhelp
+LIB_DEPENDS+=	devhelp-1.1:${PORTSDIR}/devel/devhelp
 PLIST_SUB+=	DEVHELP=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-devhelp

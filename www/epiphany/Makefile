@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.195 2009/03/30 03:15:21 marcus Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.214 2009/10/25 20:22:54 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.26.3
-PORTREVISION?=	4
+PORTVERSION=	2.28.1
+PORTREVISION?=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,11 +16,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	An extremely lightweight and simple web browser for GNOME 2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		${LOCALBASE}/share/gir-1.0/WebKit-1.0.gir:${PORTSDIR}/www/gir-repository-webkit
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.1:${PORTSDIR}/devel/libnotify
+		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
+		notify.1:${PORTSDIR}/devel/libnotify \
+		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-    		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
+		${LOCALBASE}/share/gir-1.0/WebKit-1.0.gir:${PORTSDIR}/www/gir-repository-webkit \
+		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
 
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -32,19 +36,20 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GECKO+=	libxul
 INSTALLS_OMF=	yes
+CONFIGURE_ARGS+=--enable-introspection
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${EXTRA_LIBS}"
 
-GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas \
-		epiphany-fonts.schemas epiphany-pango.schemas
+GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
 
 PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}"
 
 MAN1=		epiphany.1
 
-OPTIONS=	SPELL_CHECKER "Enable spell checking support" off
+OPTIONS=	NSS "Import passwords from 2.26 and older on first run" on \
+		SEED "Enable seed support" off \
+		SPELLCHECK "Enable spell checking by default" on
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME
@@ -53,40 +58,26 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
-			--with-engine=mozilla \
-			--with-gecko-home=${LOCALBASE}/lib/${GECKO}
-CONFLICTS=	epiphany-webkit-[1-9]*
-PLIST_SUB+=	GECKO=""
-.if ${GECKO:Mlibxul}!=""
-PLUGIN_SYMLINK=	19
-CONFIGURE_ENV+=gecko_cv_xpcom_program_check="yes"
-PLIST_SUB+=	GECKO19=""
-.else
-PLUGIN_SYMLINK=	18
-PLIST_SUB+=	GECKO19="@comment "
-.endif
-
 NO_WERROR=	yes
 # allow build with more warnings enabled
 .if defined(NO_WERROR)
 CONFIGURE_ARGS+=	--enable-compile-warnings=no
 .endif
 
-.if ${HAVE_GNOME:Mpygnome2}!=""
-USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygnome2
-CONFIGURE_ARGS+=--enable-python
-PLIST_SUB+=	PYTHON=""
+.if defined(WITH_NSS)
+LIB_DEPENDS+=	nss3.1:${PORTSDIR}/security/nss
+CONFIGURE_ARGS+=--enable-nss
 .else
-CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	PYTHON="@comment "
+CONFIGURE_ARGS+=--disable-nss
 .endif
 
-.if defined(WITH_SPELL_CHECKER)
-LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
-CONFIGURE_ARGS+=--enable-spell-checker
+.if defined(WITH_SEED)
+LIB_DEPENDS+=	seed.0:${PORTSDIR}/devel/seed
+CONFIGURE_ARGS+=--enable-seed
+.endif
+
+.if defined(WITH_SPELLCHECK)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-embed_ephy-embed-prefs.c
 .endif
 
 post-patch:
@@ -95,14 +86,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
 	    	s|-ldl"$$|"|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins/symlinks/gecko${PLUGIN_SYMLINK}"|' \
-		${WRKSRC}/embed/mozilla/mozilla-embed-single.cpp
-	@${REINPLACE_CMD} -e 's|@with_engine@|mozilla|' \
-		${WRKSRC}/data/epiphany.pc.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/data/epiphany-fonts.schemas \
-		${PREFIX}/etc/gconf/schemas
 	@-update-desktop-database
 
 .include <bsd.port.post.mk>

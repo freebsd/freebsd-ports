@@ -53,6 +53,7 @@ include/gdkmm-%%API_VERSION%%/gdkmm/event.h
 include/gdkmm-%%API_VERSION%%/gdkmm/gc.h
 include/gdkmm-%%API_VERSION%%/gdkmm/general.h
 include/gdkmm-%%API_VERSION%%/gdkmm/image.h
+include/gtkmm-%%API_VERSION%%/gtkmm/infobar.h
 include/gdkmm-%%API_VERSION%%/gdkmm/list.h
 include/gdkmm-%%API_VERSION%%/gdkmm/pixbuf.h
 include/gdkmm-%%API_VERSION%%/gdkmm/pixbufanimation.h
@@ -72,6 +73,7 @@ include/gdkmm-%%API_VERSION%%/gdkmm/private/drawable_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/event_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/gc_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/image_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/infobar_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/pixbuf_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/pixbufanimation_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/pixbufanimationiter_p.h
@@ -445,12 +447,6 @@ include/gtkmm-%%API_VERSION%%/gtkmm/window.h
 include/gtkmm-%%API_VERSION%%/gtkmm/wrap_init.h
 lib/gdkmm-%%API_VERSION%%/include/gdkmmconfig.h
 lib/gtkmm-%%API_VERSION%%/include/gtkmmconfig.h
-lib/gtkmm-%%API_VERSION%%/proc/m4/convert.m4
-lib/gtkmm-%%API_VERSION%%/proc/m4/convert_atk.m4
-lib/gtkmm-%%API_VERSION%%/proc/m4/convert_gdk.m4
-lib/gtkmm-%%API_VERSION%%/proc/m4/convert_gtk.m4
-lib/gtkmm-%%API_VERSION%%/proc/m4/convert_gtkmm.m4
-lib/gtkmm-%%API_VERSION%%/proc/m4/convert_pango.m4
 lib/libatkmm-1.6.a
 lib/libatkmm-1.6.la
 lib/libatkmm-1.6.so
@@ -466,8 +462,48 @@ lib/libgtkmm-%%VERSION%%.so.1
 libdata/pkgconfig/atkmm-1.6.pc
 libdata/pkgconfig/gdkmm-%%API_VERSION%%.pc
 libdata/pkgconfig/gtkmm-%%API_VERSION%%.pc
-@dirrm lib/gtkmm-%%API_VERSION%%/proc/m4
-@dirrm lib/gtkmm-%%API_VERSION%%/proc
+share/gtkmm-%%API_VERSION%%/demo/alphatest.png
+share/gtkmm-%%API_VERSION%%/demo/apple-red.png
+share/gtkmm-%%API_VERSION%%/demo/background.jpg
+share/gtkmm-%%API_VERSION%%/demo/demo-common.cc
+share/gtkmm-%%API_VERSION%%/demo/demo-common.h
+share/gtkmm-%%API_VERSION%%/demo/demos.h
+share/gtkmm-%%API_VERSION%%/demo/demowindow.cc
+share/gtkmm-%%API_VERSION%%/demo/demowindow.h
+share/gtkmm-%%API_VERSION%%/demo/example_appwindow.cc
+share/gtkmm-%%API_VERSION%%/demo/example_buttonbox.cc
+share/gtkmm-%%API_VERSION%%/demo/example_change_display.cc
+share/gtkmm-%%API_VERSION%%/demo/example_colorsel.cc
+share/gtkmm-%%API_VERSION%%/demo/example_dialog.cc
+share/gtkmm-%%API_VERSION%%/demo/example_drawingarea.cc
+share/gtkmm-%%API_VERSION%%/demo/example_iconview.cc
+share/gtkmm-%%API_VERSION%%/demo/example_images.cc
+share/gtkmm-%%API_VERSION%%/demo/example_menus.cc
+share/gtkmm-%%API_VERSION%%/demo/example_panes.cc
+share/gtkmm-%%API_VERSION%%/demo/example_pixbufs.cc
+share/gtkmm-%%API_VERSION%%/demo/example_sizegroup.cc
+share/gtkmm-%%API_VERSION%%/demo/example_stockbrowser.cc
+share/gtkmm-%%API_VERSION%%/demo/example_textview.cc
+share/gtkmm-%%API_VERSION%%/demo/example_treeview_editable_cells.cc
+share/gtkmm-%%API_VERSION%%/demo/example_treeview_liststore.cc
+share/gtkmm-%%API_VERSION%%/demo/example_treeview_treestore.cc
+share/gtkmm-%%API_VERSION%%/demo/example_uimanager.cc
+share/gtkmm-%%API_VERSION%%/demo/floppybuddy.gif
+share/gtkmm-%%API_VERSION%%/demo/gnome-applets.png
+share/gtkmm-%%API_VERSION%%/demo/gnome-calendar.png
+share/gtkmm-%%API_VERSION%%/demo/gnome-foot.png
+share/gtkmm-%%API_VERSION%%/demo/gnome-fs-directory.png
+share/gtkmm-%%API_VERSION%%/demo/gnome-fs-regular.png
+share/gtkmm-%%API_VERSION%%/demo/gnome-gimp.png
+share/gtkmm-%%API_VERSION%%/demo/gnome-gmush.png
+share/gtkmm-%%API_VERSION%%/demo/gnome-gsame.png
+share/gtkmm-%%API_VERSION%%/demo/gnu-keys.png
+share/gtkmm-%%API_VERSION%%/demo/gtk-logo-rgb.gif
+share/gtkmm-%%API_VERSION%%/demo/main.cc
+share/gtkmm-%%API_VERSION%%/demo/textwidget.cc
+share/gtkmm-%%API_VERSION%%/demo/textwidget.h
+@dirrm share/gtkmm-%%API_VERSION%%/demo
+@dirrm share/gtkmm-%%API_VERSION%%
 @dirrm lib/gtkmm-%%API_VERSION%%/include
 @dirrm lib/gtkmm-%%API_VERSION%%
 @dirrm lib/gdkmm-%%API_VERSION%%/include

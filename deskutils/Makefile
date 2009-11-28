@@ -87,6 +87,7 @@
     SUBDIR += gnome-main-menu
     SUBDIR += gnome-pim
     SUBDIR += gnome-utils
+    SUBDIR += gnote
     SUBDIR += gnotime
     SUBDIR += gnustep-notebook
     SUBDIR += gnustep-wrapper

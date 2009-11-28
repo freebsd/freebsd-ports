@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	clutter
-PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
+MASTER_SITES=	GNOME \
+		http://www.clutter-project.org/sources/${PORTNAME}/1.0/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
 
-LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/Pango-1.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-pango
+RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/Pango-1.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-pango
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig gtk20 gnomehack ltverhack gnomeprefix
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-x --with-json=check
+CONFIGURE_ARGS=	--with-x --with-json=internal
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

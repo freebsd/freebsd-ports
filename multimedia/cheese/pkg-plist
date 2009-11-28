@@ -18,10 +18,22 @@ share/applications/cheese.desktop
 %%DATADIR%%/effects/warptv.png
 %%DATADIR%%/gtkrc
 %%DATADIR%%/icons/hicolor/16x16/actions/browse-webcam-effects.png
+%%DATADIR%%/icons/hicolor/16x16/actions/cheese-take-burst.png
+%%DATADIR%%/icons/hicolor/16x16/actions/cheese-take-photo.png
 %%DATADIR%%/icons/hicolor/22x22/actions/browse-webcam-effects.png
+%%DATADIR%%/icons/hicolor/22x22/actions/cheese-take-burst.png
+%%DATADIR%%/icons/hicolor/22x22/actions/cheese-take-photo.png
 %%DATADIR%%/icons/hicolor/24x24/actions/browse-webcam-effects.png
+%%DATADIR%%/icons/hicolor/24x24/actions/cheese-take-burst.png
+%%DATADIR%%/icons/hicolor/24x24/actions/cheese-take-photo.png
 %%DATADIR%%/icons/hicolor/32x32/actions/browse-webcam-effects.png
+%%DATADIR%%/icons/hicolor/32x32/actions/cheese-take-burst.png
+%%DATADIR%%/icons/hicolor/32x32/actions/cheese-take-photo.png
 %%DATADIR%%/icons/hicolor/48x48/actions/browse-webcam-effects.png
+%%DATADIR%%/icons/hicolor/48x48/actions/cheese-take-burst.png
+%%DATADIR%%/icons/hicolor/48x48/actions/cheese-take-photo.png
+%%DATADIR%%/icons/hicolor/scalable/actions/cheese-take-burst.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/cheese-take-photo.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/browse-webcam-effects.svg
 %%DATADIR%%/pixmaps/camera-icon.svg
 %%DATADIR%%/pixmaps/cheese-1.svg
@@ -40,58 +52,129 @@ share/dbus-1/services/org.gnome.Cheese.service
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/gnome/help/cheese/C/cheese.xml
-share/gnome/help/cheese/C/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/C/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/C/figures/cheese-effects.jpg
+share/gnome/help/cheese/C/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/C/figures/cheese-main.jpg
+share/gnome/help/cheese/C/figures/cheese-preferences.jpg
+share/gnome/help/cheese/C/figures/cheese-share.jpg
+share/gnome/help/cheese/C/figures/cheese-wide.jpg
 share/gnome/help/cheese/C/legal.xml
 share/gnome/help/cheese/ca/cheese.xml
-share/gnome/help/cheese/ca/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/ca/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/ca/figures/cheese-effects.jpg
+share/gnome/help/cheese/ca/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/ca/figures/cheese-main.jpg
+share/gnome/help/cheese/ca/figures/cheese-preferences.jpg
+share/gnome/help/cheese/ca/figures/cheese-share.jpg
+share/gnome/help/cheese/ca/figures/cheese-wide.jpg
 share/gnome/help/cheese/de/cheese.xml
-share/gnome/help/cheese/de/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/de/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/de/figures/cheese-effects.jpg
+share/gnome/help/cheese/de/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/de/figures/cheese-main.jpg
+share/gnome/help/cheese/de/figures/cheese-preferences.jpg
+share/gnome/help/cheese/de/figures/cheese-share.jpg
+share/gnome/help/cheese/de/figures/cheese-wide.jpg
 share/gnome/help/cheese/el/cheese.xml
-share/gnome/help/cheese/el/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/el/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/el/figures/cheese-effects.jpg
+share/gnome/help/cheese/el/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/el/figures/cheese-main.jpg
+share/gnome/help/cheese/el/figures/cheese-preferences.jpg
+share/gnome/help/cheese/el/figures/cheese-share.jpg
+share/gnome/help/cheese/el/figures/cheese-wide.jpg
 share/gnome/help/cheese/en_GB/cheese.xml
-share/gnome/help/cheese/en_GB/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/en_GB/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/en_GB/figures/cheese-effects.jpg
+share/gnome/help/cheese/en_GB/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/en_GB/figures/cheese-main.jpg
+share/gnome/help/cheese/en_GB/figures/cheese-preferences.jpg
+share/gnome/help/cheese/en_GB/figures/cheese-share.jpg
+share/gnome/help/cheese/en_GB/figures/cheese-wide.jpg
 share/gnome/help/cheese/es/cheese.xml
-share/gnome/help/cheese/es/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/es/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/es/figures/cheese-effects.jpg
+share/gnome/help/cheese/es/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/es/figures/cheese-main.jpg
+share/gnome/help/cheese/es/figures/cheese-preferences.jpg
+share/gnome/help/cheese/es/figures/cheese-share.jpg
+share/gnome/help/cheese/es/figures/cheese-wide.jpg
 share/gnome/help/cheese/fr/cheese.xml
-share/gnome/help/cheese/fr/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/fr/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/fr/figures/cheese-effects.jpg
+share/gnome/help/cheese/fr/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/fr/figures/cheese-main.jpg
+share/gnome/help/cheese/fr/figures/cheese-preferences.jpg
+share/gnome/help/cheese/fr/figures/cheese-share.jpg
+share/gnome/help/cheese/fr/figures/cheese-wide.jpg
+share/gnome/help/cheese/it/cheese.xml
+share/gnome/help/cheese/it/figures/cheese-effects.jpg
+share/gnome/help/cheese/it/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/it/figures/cheese-main.jpg
+share/gnome/help/cheese/it/figures/cheese-preferences.jpg
+share/gnome/help/cheese/it/figures/cheese-share.jpg
+share/gnome/help/cheese/it/figures/cheese-wide.jpg
 share/gnome/help/cheese/nl/cheese.xml
-share/gnome/help/cheese/nl/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/nl/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/nl/figures/cheese-effects.jpg
+share/gnome/help/cheese/nl/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/nl/figures/cheese-main.jpg
+share/gnome/help/cheese/nl/figures/cheese-preferences.jpg
+share/gnome/help/cheese/nl/figures/cheese-share.jpg
+share/gnome/help/cheese/nl/figures/cheese-wide.jpg
 share/gnome/help/cheese/oc/cheese.xml
-share/gnome/help/cheese/oc/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/oc/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/oc/figures/cheese-effects.jpg
+share/gnome/help/cheese/oc/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/oc/figures/cheese-main.jpg
+share/gnome/help/cheese/oc/figures/cheese-preferences.jpg
+share/gnome/help/cheese/oc/figures/cheese-share.jpg
+share/gnome/help/cheese/oc/figures/cheese-wide.jpg
 share/gnome/help/cheese/pt_BR/cheese.xml
-share/gnome/help/cheese/pt_BR/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/pt_BR/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/pt_BR/figures/cheese-effects.jpg
+share/gnome/help/cheese/pt_BR/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/pt_BR/figures/cheese-main.jpg
+share/gnome/help/cheese/pt_BR/figures/cheese-preferences.jpg
+share/gnome/help/cheese/pt_BR/figures/cheese-share.jpg
+share/gnome/help/cheese/pt_BR/figures/cheese-wide.jpg
 share/gnome/help/cheese/ru/cheese.xml
-share/gnome/help/cheese/ru/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/ru/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/ru/figures/cheese-effects.jpg
+share/gnome/help/cheese/ru/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/ru/figures/cheese-main.jpg
+share/gnome/help/cheese/ru/figures/cheese-preferences.jpg
+share/gnome/help/cheese/ru/figures/cheese-share.jpg
+share/gnome/help/cheese/ru/figures/cheese-wide.jpg
 share/gnome/help/cheese/sv/cheese.xml
-share/gnome/help/cheese/sv/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/sv/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/sv/figures/cheese-effects.jpg
+share/gnome/help/cheese/sv/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/sv/figures/cheese-main.jpg
+share/gnome/help/cheese/sv/figures/cheese-preferences.jpg
+share/gnome/help/cheese/sv/figures/cheese-share.jpg
+share/gnome/help/cheese/sv/figures/cheese-wide.jpg
 share/gnome/help/cheese/th/cheese.xml
-share/gnome/help/cheese/th/figures/cheese-effects-screenshot.jpg
-share/gnome/help/cheese/th/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/th/figures/cheese-effects.jpg
+share/gnome/help/cheese/th/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/th/figures/cheese-main.jpg
+share/gnome/help/cheese/th/figures/cheese-preferences.jpg
+share/gnome/help/cheese/th/figures/cheese-share.jpg
+share/gnome/help/cheese/th/figures/cheese-wide.jpg
+share/gnome/help/cheese/zh_CN/cheese.xml
+share/gnome/help/cheese/zh_CN/figures/cheese-effects.jpg
+share/gnome/help/cheese/zh_CN/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/zh_CN/figures/cheese-main.jpg
+share/gnome/help/cheese/zh_CN/figures/cheese-preferences.jpg
+share/gnome/help/cheese/zh_CN/figures/cheese-share.jpg
+share/gnome/help/cheese/zh_CN/figures/cheese-wide.jpg
 share/icons/hicolor/16x16/apps/cheese.png
 share/icons/hicolor/22x22/apps/cheese.png
 share/icons/hicolor/24x24/apps/cheese.png
+share/icons/hicolor/256x256/apps/cheese.png
 share/icons/hicolor/32x32/apps/cheese.png
 share/icons/hicolor/48x48/apps/cheese.png
 share/icons/hicolor/scalable/apps/cheese.svg
+share/locale/af/LC_MESSAGES/cheese.mo
 share/locale/ar/LC_MESSAGES/cheese.mo
 share/locale/as/LC_MESSAGES/cheese.mo
+share/locale/ast/LC_MESSAGES/cheese.mo
 share/locale/be/LC_MESSAGES/cheese.mo
 share/locale/be@latin/LC_MESSAGES/cheese.mo
 share/locale/bg/LC_MESSAGES/cheese.mo
+share/locale/bn/LC_MESSAGES/cheese.mo
 share/locale/bn_IN/LC_MESSAGES/cheese.mo
 share/locale/ca/LC_MESSAGES/cheese.mo
+share/locale/ca@valencia/LC_MESSAGES/cheese.mo
 share/locale/cs/LC_MESSAGES/cheese.mo
 share/locale/da/LC_MESSAGES/cheese.mo
 share/locale/de/LC_MESSAGES/cheese.mo
@@ -117,6 +200,7 @@ share/locale/ko/LC_MESSAGES/cheese.mo
 share/locale/ku/LC_MESSAGES/cheese.mo
 share/locale/lt/LC_MESSAGES/cheese.mo
 share/locale/lv/LC_MESSAGES/cheese.mo
+share/locale/mai/LC_MESSAGES/cheese.mo
 share/locale/mk/LC_MESSAGES/cheese.mo
 share/locale/ml/LC_MESSAGES/cheese.mo
 share/locale/mr/LC_MESSAGES/cheese.mo
@@ -153,13 +237,19 @@ share/omf/cheese/cheese-el.omf
 share/omf/cheese/cheese-en_GB.omf
 share/omf/cheese/cheese-es.omf
 share/omf/cheese/cheese-fr.omf
+share/omf/cheese/cheese-it.omf
 share/omf/cheese/cheese-nl.omf
 share/omf/cheese/cheese-oc.omf
 share/omf/cheese/cheese-pt_BR.omf
 share/omf/cheese/cheese-ru.omf
 share/omf/cheese/cheese-sv.omf
 share/omf/cheese/cheese-th.omf
+share/omf/cheese/cheese-zh_CN.omf
 @dirrm share/omf/cheese
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrm share/gnome/help/cheese/zh_CN/figures
+@dirrm share/gnome/help/cheese/zh_CN
 @dirrm share/gnome/help/cheese/th/figures
 @dirrm share/gnome/help/cheese/th
 @dirrm share/gnome/help/cheese/sv/figures
@@ -172,6 +262,8 @@ share/omf/cheese/cheese-th.omf
 @dirrm share/gnome/help/cheese/oc
 @dirrm share/gnome/help/cheese/nl/figures
 @dirrm share/gnome/help/cheese/nl
+@dirrm share/gnome/help/cheese/it/figures
+@dirrm share/gnome/help/cheese/it
 @dirrm share/gnome/help/cheese/fr/figures
 @dirrm share/gnome/help/cheese/fr
 @dirrm share/gnome/help/cheese/es/figures
@@ -220,15 +312,21 @@ share/omf/cheese/cheese-th.omf
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

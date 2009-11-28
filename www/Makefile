@@ -243,7 +243,6 @@
     SUBDIR += g-gcl
     SUBDIR += gaeo
     SUBDIR += gaeutilities
-    SUBDIR += galeon
     SUBDIR += gallery
     SUBDIR += gallery2
     SUBDIR += gallery3
@@ -256,6 +255,7 @@
     SUBDIR += geronimo
     SUBDIR += getleft
     SUBDIR += gforge
+    SUBDIR += gir-repository-webkit
     SUBDIR += gist
     SUBDIR += glibwww
     SUBDIR += glpi

@@ -1,0 +1,6 @@
+Gnote is a port of Tomboy to C++. 
+
+It is the same note taking application, including most of the add-ins (more
+are to come). Synchronization support is being worked on.
+
+WWW: http://live.gnome.org/Gnote

@@ -1,11 +1,11 @@
---- docs/reference/Makefile.in.orig	2008-02-23 10:25:17.000000000 -0500
-+++ docs/reference/Makefile.in	2008-02-23 10:26:36.000000000 -0500
-@@ -372,7 +372,7 @@
+--- docs/reference/Makefile.in.orig	2009-09-05 11:17:44.000000000 +0200
++++ docs/reference/Makefile.in	2009-09-05 11:18:15.000000000 +0200
+@@ -359,7 +359,7 @@ XVFB_START = \
+ 	|| { echo "Gtk+Tests:ERROR: Failed to start Xvfb environment for X11 target tests."; exit 1; } \
  	&& DISPLAY=:$$XID && export DISPLAY
  
- 
 -SUBDIRS = gdk-pixbuf gdk gtk libgail-util
-+SUBDIRS = # gdk-pixbuf gdk gtk libgail-util
- subdir = docs/reference
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
++SUBDIRS = #gdk-pixbuf gdk gtk libgail-util
+ GITIGNOREFILES = */*.1
+ all: all-recursive
+ 

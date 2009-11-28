@@ -1,5 +1,5 @@
---- hald/freebsd/Makefile.in.orig	2009-02-17 18:59:04.000000000 -0500
-+++ hald/freebsd/Makefile.in	2009-02-18 00:18:00.000000000 -0500
+--- hald/freebsd/Makefile.in.orig	2009-05-17 00:43:12.000000000 -0400
++++ hald/freebsd/Makefile.in	2009-05-17 00:43:12.000000000 -0400
 @@ -32,6 +32,11 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
@@ -43,15 +43,7 @@
  RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
  	html-recursive info-recursive install-data-recursive \
  	install-dvi-recursive install-exec-recursive \
-@@ -228,6 +242,7 @@ sharedstatedir = @sharedstatedir@
- srcdir = @srcdir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
-+top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- SUBDIRS = libprobe probing addons .
-@@ -241,46 +256,15 @@ AM_CPPFLAGS = \
+@@ -250,46 +264,15 @@ AM_CPPFLAGS = \
  	@GLIB_CFLAGS@ @DBUS_CFLAGS@ @POLKIT_CFLAGS@
  
  @HALD_COMPILE_FREEBSD_TRUE@noinst_LTLIBRARIES = libhald_freebsd.la
@@ -107,7 +99,7 @@
  EXTRA_DIST = README TODO
  all: all-recursive
  
-@@ -349,6 +333,7 @@ distclean-compile:
+@@ -358,6 +341,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-sound.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-storage.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-usb.Plo@am__quote@

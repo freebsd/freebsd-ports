@@ -3,12 +3,11 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/security/seahorse-plugins/Makefile,v 1.1 2009/04/15 10:36:03 kwm Exp $
+#   $MCom: ports/security/seahorse-plugins/Makefile,v 1.18 2009/10/19 10:24:17 kwm Exp $
 #
 
 PORTNAME=	seahorse-plugins
-PORTVERSION=	2.26.2
-PORTREVISION=	3
+PORTVERSION=	2.28.1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,10 +28,10 @@ INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	EPIPHANY "Enable Epiphany plug-in support" on \
-		NAUTILUS "Enable the Nautilus component" on \
+OPTIONS=	NAUTILUS "Enable the Nautilus component" on \
 		GEDIT "Enable GEdit plug-in support" on \
 		APPLET "Enable clipboard encryption applet" on
+#EPIPHANY "Enable Epiphany plug-in support" on
 
 GCONF_SCHEMAS=	seahorse-plugins.schemas
 MAN1=		seahorse-agent.1 seahorse-tool.1
@@ -63,14 +62,14 @@ PLIST_SUB+=	NAUTILUS="@comment "
 CONFIGURE_ARGS+=--disable-nautilus
 .endif
 
-.if !defined(WITHOUT_EPIPHANY)
-BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.26"
-.else
+#.if !defined(WITHOUT_EPIPHANY)
+#BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
+#RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
+#PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.26"
+#.else
 CONFIGURE_ARGS+=--disable-epiphany
 PLIST_SUB+=	EPHY="@comment "
-.endif
+#.endif
 
 .if !defined(WITHOUT_APPLET)
 USE_GNOME+=	gnomepanel

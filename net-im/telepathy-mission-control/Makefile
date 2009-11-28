@@ -3,13 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/net-im/telepathy-mission-control/Makefile,v 1.4 2008/03/20 03:20:54 marcus Exp $
+#    $MCom: ports/net-im/telepathy-mission-control/Makefile,v 1.8 2009/10/24 15:26:03 marcus Exp $
 
 PORTNAME=	telepathy-mission-control
-PORTVERSION=	4.67
-PORTREVISION=	1
+PORTVERSION=	5.2.6
 CATEGORIES=	net-im devel
-MASTER_SITES=	SF/mission-control/mission-control/${PORTVERSION}
+MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-control/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Telepathy component to apps to abstract details of connection managers
@@ -22,6 +21,11 @@ USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+MAN1=		mc-account-convert.1 mc-tool.1 mc-wait-for-name.1
+MAN8=		mission-control-5.8
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/gtk-doc/html|/${DOCSDIR}|' \

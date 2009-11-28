@@ -3,12 +3,11 @@
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/print/freetype2/Makefile,v 1.16 2009/04/09 03:24:09 mezz Exp $
+#   $MCom: ports/print/freetype2/Makefile,v 1.19 2009/11/28 05:59:02 mezz Exp $
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.3.9
-PORTREVISION=	1
+PORTVERSION=	2.3.11
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \

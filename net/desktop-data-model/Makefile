@@ -7,7 +7,7 @@
 
 PORTNAME=	desktop-data-model
 PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gtk20 glib20 gnomedesktop
+USE_GNOME=	gnomehack gtk20 glib20 gnomedesktop gnomevfs2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-maemo=no
 USE_XORG=	xscrnsaver

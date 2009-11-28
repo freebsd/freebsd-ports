@@ -3,26 +3,30 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom$
+#   $MCom: ports/x11-toolkits/unique/Makefile,v 1.3 2009/10/03 02:27:43 marcus Exp $
 #
 
 PORTNAME=	unique
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.gnome.org/~ebassi/source/
+MASTER_SITES=	GNOME/sources/lib${PORTNAME}/${PORTVERSION:R}/
+DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for single instance applications.
 
+BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/Gtk-2.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-gtk20
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
+RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/Gtk-2.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-gtk20
 
 USE_XORG=	ice
+USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
-USE_GNOME=	gtk20 gnomeprefix
+USE_GNOME=	gtk20 gnomeprefix ltverhack:2
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-maintainer-flags
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

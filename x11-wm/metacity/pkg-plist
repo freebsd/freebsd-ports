@@ -14,7 +14,6 @@ lib/libmetacity-private.la
 lib/libmetacity-private.so
 lib/libmetacity-private.so.0
 libdata/pkgconfig/libmetacity-private.pc
-libexec/metacity-dialog
 share/applications/metacity.desktop
 share/gnome-control-center/keybindings/50-metacity-desktop-key.xml
 share/gnome-control-center/keybindings/50-metacity-key.xml
@@ -30,6 +29,7 @@ share/locale/be@latin/LC_MESSAGES/metacity.mo
 share/locale/bg/LC_MESSAGES/metacity.mo
 share/locale/bn/LC_MESSAGES/metacity.mo
 share/locale/bn_IN/LC_MESSAGES/metacity.mo
+share/locale/br/LC_MESSAGES/metacity.mo
 share/locale/bs/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
 share/locale/ca@valencia/LC_MESSAGES/metacity.mo

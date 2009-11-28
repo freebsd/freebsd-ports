@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	-mozjs
 
@@ -19,11 +19,15 @@ BUILD_WRKSRC=	${WRKSRC}/src/plugins
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_GECKO=	firefox libxul
+USE_GECKO=	libxul
 CONFIGURE_ARGS=--without-gnome --without-kde --without-webkit \
 		--with-mozjs --without-networkmanager --without-python \
 		--without-envvar --without-file
 
 LIBPROXY_SLAVE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|mozilla-js|mozilla-js libxul-unstable|g' \
+		${WRKSRC}/configure
 
 .include "${MASTERDIR}/Makefile"

@@ -186,6 +186,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%DOCSDIR%%/class-gtkaccessible.html
 %%DOCSDIR%%/class-gtkaction.html
 %%DOCSDIR%%/class-gtkactiongroup.html
+%%DOCSDIR%%/class-gtkactivatable.html
 %%DOCSDIR%%/class-gtkadjustment.html
 %%DOCSDIR%%/class-gtkalignment.html
 %%DOCSDIR%%/class-gtkarrow.html
@@ -700,6 +701,7 @@ share/pygtk/2.0/defs/atk.defs
 share/pygtk/2.0/defs/gdk-2.10.defs
 share/pygtk/2.0/defs/gdk-2.12.defs
 share/pygtk/2.0/defs/gdk-2.14.defs
+share/pygtk/2.0/defs/gdk-2.16.defs
 share/pygtk/2.0/defs/gdk-base-types.defs
 share/pygtk/2.0/defs/gdk-base.defs
 share/pygtk/2.0/defs/gdk-types.defs
@@ -710,6 +712,8 @@ share/pygtk/2.0/defs/gtk-2.12-types.defs
 share/pygtk/2.0/defs/gtk-2.12.defs
 share/pygtk/2.0/defs/gtk-2.14-types.defs
 share/pygtk/2.0/defs/gtk-2.14.defs
+share/pygtk/2.0/defs/gtk-2.16-types.defs
+share/pygtk/2.0/defs/gtk-2.16.defs
 share/pygtk/2.0/defs/gtk-base-types.defs
 share/pygtk/2.0/defs/gtk-base.defs
 share/pygtk/2.0/defs/gtk-extrafuncs.defs
@@ -743,10 +747,10 @@ share/pygtk/2.0/defs/pangocairo.override
 @dirrm %%DOCSDIR%%/cursors
 @dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0
+@dirrmtry %%PYTHON_SITELIBDIR%%/gtk-2.0
 @dirrm lib/pygtk/2.0/demos/images
 @dirrm lib/pygtk/2.0/demos
 @dirrm lib/pygtk/2.0
 @dirrm lib/pygtk
 @dirrm include/pygtk-2.0/pygtk
-@dirrm include/pygtk-2.0
+@dirrmtry include/pygtk-2.0

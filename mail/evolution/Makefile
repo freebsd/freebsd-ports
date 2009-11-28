@@ -3,12 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/mail/evolution/Makefile,v 1.3 2009/04/16 01:08:59 kwm Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.204 2009/10/18 05:39:30 marcus Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.26.3
-PORTREVISION=	1
+PORTVERSION=	2.28.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +23,7 @@ USE_GMAKE=	yes
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gtkhtml3 \
-		desktopfileutils gnomedocutils ltasneededhack
+		desktopfileutils gnomedocutils ltasneededhack gnomedesktop
 USE_AUTOTOOLS=	libtool:22
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -32,6 +31,7 @@ USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--enable-mono=no \
+		--disable-nm \
 		--with-sub-version=" FreeBSD GNOME Team Port"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -47,7 +47,7 @@ GCONF_SCHEMAS=	apps_evolution_addressbook.schemas \
 		bogo-junk-plugin.schemas \
 		evolution-mail.schemas
 
-EVO_VERSION=	2.26
+EVO_VERSION=	2.28
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
@@ -93,6 +93,7 @@ CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
+		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|stdlib.n|stdlib.h|' \
 	    	${WRKSRC}/iconv-detect.c
@@ -100,9 +101,5 @@ post-patch:
 		${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/bin|g' \
 		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
-
-post-install: install-ldconfig-file
-	${MKDIR} ${PREFIX}/include/evolution-${EVO_VERSION}/composer
-	${INSTALL_DATA} ${WRKSRC}/composer/e-msg*.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 
 .include <bsd.port.post.mk>

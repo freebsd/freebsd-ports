@@ -1,21 +1,15 @@
---- src/orca/orca.in.orig	2009-01-23 22:39:27.000000000 +0100
-+++ src/orca/orca.in	2009-02-21 22:50:38.000000000 +0100
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- #
- # Orca
- #
+--- src/orca/orca.in.orig	2009-07-17 10:44:34.000000000 +1000
++++ src/orca/orca.in	2009-07-17 10:46:14.000000000 +1000
 @@ -30,7 +30,7 @@
  
  # Set the user's $PATH for this script.
  #
--export PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
-+export PATH="${PATH}:/usr/bin:/usr/sbin:/bin:/usr/local/bin"
+-PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
++PATH="${PATH}:/usr/bin:/usr/sbin:/bin:/usr/local/bin"
+ export PATH
  
  # Save the arguments away.
- #
-@@ -83,7 +83,7 @@
+@@ -84,7 +84,7 @@ restoreXmodmap()
  cleanup()
  {
      USERID=`id | cut -f2 -d= | cut -f1 -d\(`
@@ -24,21 +18,3 @@
  	egrep "orca[.]orca|OAFIID[:]GNOME_Speech|OAFIID[:]GNOME_Magnifier|festival [-][-]server"|\
  	grep -v grep | awk '{ print $1 }'`
      IFS='
-@@ -137,7 +137,7 @@
-     fi
- fi
- 
--if [ `grep -c "\-q" <<< $ARGS` -gt 0 ] ; then
-+if [ `echo $ARGS | grep -c "\-q"` -gt 0 ] ; then
-     # If the user has done -q or --quit, that means to tell any
-     # existing orca process to quit.  So, we just do a cleanup.
-     #
-@@ -154,7 +154,7 @@
-     if [ "x$ARGS" = "x" ] ; then
-         CLEANUP=1
-     else
--        CLEANUP=`egrep -c "\-s|\-t|\-n|\-u|\-e|\-d" <<< $ARGS`
-+        CLEANUP=`echo $ARGS | egrep -c "\-s|\-t|\-n|\-u|\-e|\-d"`
-     fi
- 
-     # Clean up before running orca to get anything that might

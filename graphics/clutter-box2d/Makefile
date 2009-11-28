@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	clutter-box2d
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
+MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.10/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter Box2D integration library
 
-LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack ltverhack gnomeprefix
 USE_XORG=	xp x11
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--enable-introspection=no
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

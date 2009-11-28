@@ -1,0 +1,20 @@
+--- stickynotes/stickynotes.ui.orig	2009-11-13 13:13:28.000000000 +0800
++++ stickynotes/stickynotes.ui	2009-11-13 13:15:23.000000000 +0800
+@@ -593,7 +593,7 @@
+               </packing>
+             </child>
+             <child>
+-              <object class="GtkVBox" id="vbox1">
++              <object class="GtkVBox" id="vbox3">
+                 <property name="visible">True</property>
+                 <property name="orientation">vertical</property>
+                 <child>
+@@ -613,7 +613,7 @@
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkLabel" id="label1">
++                  <object class="GtkLabel" id="label2">
+                     <property name="visible">True</property>
+                     <property name="xalign">0</property>
+                     <property name="label" translatable="yes">This cannot be undone.</property>

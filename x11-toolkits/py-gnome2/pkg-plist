@@ -48,6 +48,7 @@ libdata/pkgconfig/gnome-python-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/gconf/basic-gconf-app.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/simple-controller.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/simple-view.py
+%%PORTDOCS%%share/examples/py-gnome/popt/goption.py
 %%PORTDOCS%%share/examples/py-gnome/popt/popt.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/async-xfer.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/async.py

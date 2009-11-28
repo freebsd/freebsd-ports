@@ -1,10 +1,12 @@
 include/poppler/glib/poppler-action.h
 include/poppler/glib/poppler-annot.h
 include/poppler/glib/poppler-attachment.h
+include/poppler/glib/poppler-date.h
 include/poppler/glib/poppler-document.h
 include/poppler/glib/poppler-enums.h
 include/poppler/glib/poppler-features.h
 include/poppler/glib/poppler-form-field.h
+include/poppler/glib/poppler-layer.h
 include/poppler/glib/poppler-page.h
 include/poppler/glib/poppler.h
 lib/libpoppler-glib.a
@@ -18,10 +20,13 @@ libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/index.sgml
 %%DOCSDIR%%/poppler/left.png
 %%DOCSDIR%%/poppler/poppler-poppler-action.html
+%%DOCSDIR%%/poppler/poppler-poppler-annot.html
 %%DOCSDIR%%/poppler/poppler-poppler-attachment.html
 %%DOCSDIR%%/poppler/poppler-poppler-document.html
 %%DOCSDIR%%/poppler/poppler-poppler-enums.html
+%%DOCSDIR%%/poppler/poppler-poppler-features.html
 %%DOCSDIR%%/poppler/poppler-poppler-form-field.html
+%%DOCSDIR%%/poppler/poppler-poppler-layer.html
 %%DOCSDIR%%/poppler/poppler-poppler-page.html
 %%DOCSDIR%%/poppler/poppler-poppler.html
 %%DOCSDIR%%/poppler/poppler.devhelp

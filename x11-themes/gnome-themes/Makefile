@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-themes/gnome-themes/Makefile,v 1.3 2009/04/15 22:18:14 kwm Exp $
+#   $MCom: ports/x11-themes/gnome-themes/Makefile,v 1.170 2009/10/19 18:58:14 kwm Exp $
 #
 
 PORTNAME=	gnome-themes
-PORTVERSION=	2.26.3.1
-PORTREVISION=	1
+PORTVERSION=	2.28.1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,7 +26,7 @@ USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:22
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack metacity libgnomeui
+USE_GNOME=	gnomehack gnomeprefix intlhack metacity gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
 

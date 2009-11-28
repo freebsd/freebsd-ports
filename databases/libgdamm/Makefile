@@ -3,12 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgdamm/Makefile,v 1.15 2009/04/09 03:24:07 mezz Exp $
+#   $MCom: ports/databases/libgdamm/Makefile,v 1.18 2009/11/28 05:58:58 mezz Exp $
 #
 
 PORTNAME=	libgdamm
-PORTVERSION=	3.99.16
-PORTREVISION=	1
+PORTVERSION=	3.99.17.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,10 +24,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgda4
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-static
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
-		${WRKSRC}/tools/extra_defs_gen/Makefile.in
+CONFIGURE_ARGS=	--enable-static --disable-documentation
 
 .include <bsd.port.mk>

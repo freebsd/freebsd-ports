@@ -4,8 +4,8 @@ include/eog-2.20/eog/eog-debug.h
 include/eog-2.20/eog/eog-dialog.h
 include/eog-2.20/eog/eog-enums.h
 include/eog-2.20/eog/eog-error-message-area.h
-include/eog-2.20/eog/eog-exif-details.h
-include/eog-2.20/eog/eog-exif-util.h
+%%EXIFEXEMPI%%include/eog-2.20/eog/eog-exif-details.h
+%%EXIF%%include/eog-2.20/eog/eog-exif-util.h
 include/eog-2.20/eog/eog-file-chooser.h
 include/eog-2.20/eog/eog-image-save-info.h
 include/eog-2.20/eog/eog-image.h
@@ -45,7 +45,6 @@ share/applications/eog.desktop
 %%DOCSDIR%%/EogMessageArea.html
 %%DOCSDIR%%/EogMetadataReaderJpg.html
 %%DOCSDIR%%/EogMetadataReaderPng.html
-%%DOCSDIR%%/EogPixbufCellRenderer.html
 %%DOCSDIR%%/EogPlugin.html
 %%DOCSDIR%%/EogPluginManager.html
 %%DOCSDIR%%/EogPreferencesDialog.html
@@ -126,6 +125,10 @@ share/gnome/help/eog/ca/eog.xml
 share/gnome/help/eog/ca/figures/eog_save_as_window.png
 share/gnome/help/eog/ca/figures/eog_start_window.png
 share/gnome/help/eog/ca/figures/eog_toolbar_editor_window.png
+share/gnome/help/eog/cs/eog.xml
+share/gnome/help/eog/cs/figures/eog_save_as_window.png
+share/gnome/help/eog/cs/figures/eog_start_window.png
+share/gnome/help/eog/cs/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/da/eog.xml
 share/gnome/help/eog/da/figures/eog_save_as_window.png
 share/gnome/help/eog/da/figures/eog_start_window.png
@@ -215,14 +218,17 @@ share/locale/af/LC_MESSAGES/eog.mo
 share/locale/am/LC_MESSAGES/eog.mo
 share/locale/ar/LC_MESSAGES/eog.mo
 share/locale/as/LC_MESSAGES/eog.mo
+share/locale/ast/LC_MESSAGES/eog.mo
 share/locale/az/LC_MESSAGES/eog.mo
 share/locale/be/LC_MESSAGES/eog.mo
 share/locale/be@latin/LC_MESSAGES/eog.mo
 share/locale/bg/LC_MESSAGES/eog.mo
 share/locale/bn/LC_MESSAGES/eog.mo
 share/locale/bn_IN/LC_MESSAGES/eog.mo
+share/locale/br/LC_MESSAGES/eog.mo
 share/locale/bs/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
+share/locale/ca@valencia/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
 share/locale/cy/LC_MESSAGES/eog.mo
 share/locale/da/LC_MESSAGES/eog.mo
@@ -304,6 +310,7 @@ share/locale/zu/LC_MESSAGES/eog.mo
 share/omf/eog/eog-C.omf
 share/omf/eog/eog-ar.omf
 share/omf/eog/eog-ca.omf
+share/omf/eog/eog-cs.omf
 share/omf/eog/eog-da.omf
 share/omf/eog/eog-de.omf
 share/omf/eog/eog-el.omf
@@ -365,6 +372,8 @@ share/omf/eog/eog-zh_TW.omf
 @dirrm share/gnome/help/eog/de
 @dirrm share/gnome/help/eog/da/figures
 @dirrm share/gnome/help/eog/da
+@dirrm share/gnome/help/eog/cs/figures
+@dirrm share/gnome/help/eog/cs
 @dirrm share/gnome/help/eog/ca/figures
 @dirrm share/gnome/help/eog/ca
 @dirrm share/gnome/help/eog/ar/figures
@@ -434,9 +443,13 @@ share/omf/eog/eog-zh_TW.omf
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

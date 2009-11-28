@@ -97,6 +97,8 @@
     SUBDIR += gdkxft
     SUBDIR += gdm
     SUBDIR += ggiterm
+    SUBDIR += gir-repository-babl
+    SUBDIR += gir-repository-gnome-menus
     SUBDIR += glproto
     SUBDIR += gmessage
     SUBDIR += gmrun
@@ -111,6 +113,7 @@
     SUBDIR += gnome-panel-reference
     SUBDIR += gnome-screensaver
     SUBDIR += gnome-session
+    SUBDIR += gnome-shell
     SUBDIR += gnome-swallow
     SUBDIR += gnome-terminal
     SUBDIR += gnome2

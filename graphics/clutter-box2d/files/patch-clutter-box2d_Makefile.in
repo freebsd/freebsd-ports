@@ -1,0 +1,11 @@
+--- clutter-box2d/Makefile.in.orig	2009-08-07 16:28:57.000000000 +0200
++++ clutter-box2d/Makefile.in	2009-08-07 16:29:26.000000000 +0200
+@@ -269,7 +269,7 @@
+ EXTRA_DIST = \
+ 	clutter-box2d-marshal.list
+ 
+-BUILT_GIRSOURCES = ClutterBox2D-@CLUTTER_BOX2D_API_VERSION@.gir
++BUILT_GIRSOURCES = # ClutterBox2D-@CLUTTER_BOX2D_API_VERSION@.gir
+ 
+ # INTROSPECTION_GIRDIR/INTROSPECTION_TYPELIBDIR aren't the right place to
+ # install anything - we need to install inside our prefix.

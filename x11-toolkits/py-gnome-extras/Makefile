@@ -3,17 +3,16 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gnome-extras/Makefile,v 1.48 2009/04/07 03:08:53 marcus Exp $
+#   $MCom: ports/x11-toolkits/py-gnome-extras/Makefile,v 1.55 2009/11/28 05:59:04 mezz Exp $
 #
 
-PORTNAME=	gnome
+PORTNAME=	gnome-extras
 PORTVERSION=	2.25.3
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	-extras
 DISTNAME=	gnome-python-extras-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -22,8 +21,8 @@ COMMENT=	A set of Python bindings for GNOME 2
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
-		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
-		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
+		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui
+#		gdl-1.2:${PORTSDIR}/x11-toolkits/gdl
 
 USE_GECKO=	libxul
 USE_BZIP2=	yes
@@ -33,6 +32,7 @@ USE_GNOME=	gnomehack libgtkhtml pygnome2 libgda4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--disable-gdl
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome

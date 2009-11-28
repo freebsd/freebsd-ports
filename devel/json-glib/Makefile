@@ -3,20 +3,22 @@
 # Whom:                 		Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/json-glib/Makefile,v 1.5 2009/10/30 11:35:48 kwm Exp $
 #
 
 PORTNAME=	json-glib
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel
-MASTER_SITES=	http://folks.o-hand.com/~ebassi/sources/ \
-    		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	marcus:local
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JSON (RFC 4627) interface for Glib
 
+BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
+RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
+
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnomeprefix ltverhack
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes

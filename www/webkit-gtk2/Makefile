@@ -3,76 +3,91 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.23 2008/10/23 02:41:54 mezz Exp $
+#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.50 2009/11/28 17:35:07 kwm Exp $
 #
 
 PORTNAME=	webkit
-PORTVERSION=	1.0.1
-PORTREVISION=	8
+PORTVERSION=	1.1.15.4
 CATEGORIES=	www
-MASTER_SITES=	http://people.freedesktop.org/~alp/webkit/gtk/
+MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An opensource browser engine
 
+BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	icutu.38:${PORTSDIR}/devel/icu \
+		enchant.1:${PORTSDIR}/textproc/enchant \
 		curl.5:${PORTSDIR}/ftp/curl \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
+		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 WANT_GSTREAMER=	yes
+MAKE_JOBS_SAFE=	yes
 USE_XORG=	xt
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libxslt
+USE_AUTOTOOLS=	libtool:22
+USE_GNOME=	gtk20 libxslt ltverhack:13
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		ac_cv_path_DOLT_BASH=""
-CONFIGURE_ARGS=	--with-webkit-target=x11 \
-		--enable-icon-database \
+CONFIGURE_ARGS=	--enable-icon-database \
 		--enable-svg \
-		--enable-svg-fonts \
-		--enable-svg-experimental \
-		--enable-static
+		--enable-svg-fonts
 MAKEFILE=	GNUmakefile
 
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
-OPTIONS=	VIDEO "Enable video support" on
+OPTIONS=	VIDEO "Enable video support" on \
+		DEBUG "Build with debug support" off \
+		STATIC "Enable building static library" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if defined(WITH_VIDEO)
+USE_GSTREAMER+=	yes
+CONFIGURE_ARGS+=--enable-video
 .endif
 
-.if defined(WITH_VIDEO)
-USE_GSTREAMER+=	gnomevfs
-CONFIGURE_ARGS+=--enable-video
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.else
+CONFIGURE_ARGS+=--disable-debug
+.endif
+
+.if defined(WITH_STATIC)
+CONFIGURE_ARGS+=--enable-static
+PLIST_SUB+=	STATIC=""
+.else
+PLIST_SUB+=	STATIC="@comment "
+.endif
+
+.if ${OSVERSION} < 700000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-JavaScriptCore_yarr_RegexJIT.h \
+		${FILESDIR}/extra-patch-JavaScriptCore_jit_JITStubCall.h \
+		${FILESDIR}/extra-patch-JavaScriptCore_jit_JITOpcodes.cpp \
+		${FILESDIR}/extra-patch-JavaScriptCore_assembler_MacroAssemblerCodeRef.h \
+		${FILESDIR}/extra-patch-JavaScriptCore_jit_JITStubs.cpp
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%BROWSER_PLUGINS_DIR%%|${BROWSER_PLUGINS_DIR}|' \
 		${WRKSRC}/WebCore/plugins/PluginDatabase.cpp
-	@${REINPLACE_CMD} -e 's|autoconf|${AUTOCONF}|g ; \
-		s|automake|${AUTOMAKE}|g ; s|aclocal|${ACLOCAL}|g ; \
-		s|autoheader|${AUTOHEADER}|g ; \
-		s|LIBTOOLIZE=libtoolize|LIBTOOLIZE=${LIBTOOLIZE}|g ; \
-		s|$$srcdir/configure|#$$srcdir/configure|g' \
-			${WRKSRC}/autogen.sh
-	@${FIND} ${WRKSRC} -name GNUmakefile.am | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name GNUmakefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-
-pre-configure:
-	@(cd ${WRKSRC} && ${SH} autogen.sh)
-
-post-install:
-# Install compat pkg-config file so we don't have to patch ports
-	${CP} ${PREFIX}/libdata/pkgconfig/webkit-1.0.pc \
-		${PREFIX}/libdata/pkgconfig/WebKitGtk.pc
+.if !defined(WITH_STATIC)
+	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|' \
+		${WRKDIR}/gnome-libtool
+.endif
+	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
+		${WRKSRC}/WebCore/dom/make_names.pl \
+		${WRKSRC}/WebCore/css/make-css-file-arrays.pl \
+		${WRKSRC}/WebCore/bindings/scripts/IDLParser.pm
 
 .include <bsd.port.post.mk>

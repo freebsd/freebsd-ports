@@ -4224,3 +4224,5 @@ lang/erlang-doc||2009-11-27|Documentation now part of lang/erlang package
 devel/gtkmozedit||2009-11-27|No longer under development, does not build with libxul
 audio/exaile-devel|audio/exaile|2009-11-28|main port updated to latest stable version
 finance/p5-HTML-Query|www/p5-HTML-Query|2009-11-28|Moved to www category
+graphics/clutter-cairo|graphics/clutter|2009-11-28|This port is obsolete, all functionality is now in graphics/clutter
+www/galeon||2009-11-28|This port is obsolete; similar functionality can be found in www/epiphany

@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/sysutils/system-tools-backends/Makefile,v 1.1 2009/04/16 08:56:17 kwm Exp $
+#   $MCom: ports/sysutils/system-tools-backends/Makefile,v 1.54 2009/10/11 19:13:30 marcus Exp $
 #
 
 PORTNAME=	system-tools-backends
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +17,7 @@ COMMENT=	Backend system admin scripts for gnome-system-tools
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DBus.pm:${PORTSDIR}/devel/p5-Net-DBus
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit-dbus.2:${PORTSDIR}/sysutils/policykit
+		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DBus.pm:${PORTSDIR}/devel/p5-Net-DBus
 
 USE_BZIP2=	yes

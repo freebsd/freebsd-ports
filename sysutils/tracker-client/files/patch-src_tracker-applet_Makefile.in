@@ -1,19 +1,22 @@
---- src/tracker-applet/Makefile.in.orig	2008-03-30 16:20:32.345933535 -0400
-+++ src/tracker-applet/Makefile.in	2008-03-30 16:20:52.759690870 -0400
-@@ -55,7 +55,6 @@
+--- src/tracker-applet/Makefile.in.orig	2009-08-08 17:11:05.000000000 +0000
++++ src/tracker-applet/Makefile.in	2009-08-08 17:12:21.000000000 +0000
+@@ -65,8 +65,6 @@
  tracker_applet_OBJECTS = $(am_tracker_applet_OBJECTS)
  am__DEPENDENCIES_1 =
  tracker_applet_DEPENDENCIES =  \
 -	$(top_builddir)/src/libtracker/libtrackerclient.la \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
- DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
- depcomp = $(SHELL) $(top_srcdir)/depcomp
-@@ -312,7 +311,7 @@
- 	tracker-applet-marshallers.h
+-	$(top_builddir)/src/libtracker-common/libtracker-common.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+@@ -345,8 +343,8 @@
+ 	$(GCOV_CFLAGS)
  
  tracker_applet_LDADD = \
--	$(top_builddir)/src/libtracker/libtrackerclient.la \
-+	-ltrackerclient \
- 	$(LIBGLADE_LIBS) \
- 	$(TRACKERAPPLET_LIBS)
- 
+-	$(top_builddir)/src/libtracker/libtrackerclient.la 		\
+-	$(top_builddir)/src/libtracker-common/libtracker-common.la 	\
++	-ltrackerclient 		\
++	-ltracker-common 	\
+ 	$(TRACKER_APPLET_LIBS)						\
+ 	$(LIBGLADE_LIBS)						\
+ 	$(GCOV_LIBS)

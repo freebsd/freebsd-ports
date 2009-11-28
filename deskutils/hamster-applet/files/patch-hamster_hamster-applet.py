@@ -1,17 +1,23 @@
---- hamster/hamster-applet.py.orig	2009-02-13 16:02:00.000000000 -0500
-+++ hamster/hamster-applet.py	2009-02-27 19:50:13.000000000 -0500
-@@ -52,10 +52,10 @@ if hasattr(gettext, 'bind_textdomain_cod
-     gettext.bind_textdomain_codeset('hamster-applet','UTF-8')
- gettext.textdomain('hamster-applet')
+--- hamster/hamster-applet.py.orig	2009-07-19 21:41:20.000000000 +1000
++++ hamster/hamster-applet.py	2009-07-19 21:41:46.000000000 +1000
+@@ -37,14 +37,14 @@ from hamster import defs
+ from hamster.configuration import runtime
  
--locale.bindtextdomain('hamster-applet', locale_dir)
--if hasattr(locale, 'bind_textdomain_codeset'):
--    locale.bind_textdomain_codeset('hamster-applet','UTF-8')
--locale.textdomain('hamster-applet')
-+#locale.bindtextdomain('hamster-applet', locale_dir)
-+#if hasattr(locale, 'bind_textdomain_codeset'):
-+#    locale.bind_textdomain_codeset('hamster-applet','UTF-8')
-+#locale.textdomain('hamster-applet')
+ # Setup i18n
+-locale_dir = os.path.abspath(os.path.join(defs.DATA_DIR, "locale"))
++#locale_dir = os.path.abspath(os.path.join(defs.DATA_DIR, "locale"))
  
- hamster.__init_db()
- import hamster.applet
+-for module in (gettext, locale):
+-    module.bindtextdomain('hamster-applet', locale_dir)
+-    module.textdomain('hamster-applet')
++#for module in (gettext, locale):
++#    module.bindtextdomain('hamster-applet', locale_dir)
++#    module.textdomain('hamster-applet')
+ 
+-    if hasattr(module, 'bind_textdomain_codeset'):
+-        module.bind_textdomain_codeset('hamster-applet','UTF-8')
++#    if hasattr(module, 'bind_textdomain_codeset'):
++#        module.bind_textdomain_codeset('hamster-applet','UTF-8')
+ 
+ 
+ from hamster.applet import HamsterApplet

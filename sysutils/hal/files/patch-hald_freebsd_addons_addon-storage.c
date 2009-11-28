@@ -1,6 +1,6 @@
---- hald/freebsd/addons/addon-storage.c.orig	2008-05-07 19:24:04.000000000 -0400
-+++ hald/freebsd/addons/addon-storage.c	2008-05-19 02:18:59.000000000 -0400
-@@ -36,17 +36,23 @@
+--- hald/freebsd/addons/addon-storage.c.orig	2008-08-10 09:50:10.000000000 -0400
++++ hald/freebsd/addons/addon-storage.c	2009-09-13 17:23:52.000000000 -0400
+@@ -36,17 +36,24 @@
  #include "../libprobe/hfp.h"
  #include "../libprobe/hfp-cdrom.h"
  
@@ -22,11 +22,22 @@
  } addon = { { 2, 0 } };
  
 +static void update_proc_title (const char *device);
++static void unmount_volumes (void);
 +
  /* see MMC-3 Working Draft Revision 10 */
  static boolean
  hf_addon_storage_cdrom_eject_pressed (HFPCDROM *cdrom)
-@@ -144,18 +150,49 @@ hf_addon_storage_update (void)
+@@ -100,8 +107,7 @@ hf_addon_storage_update (void)
+ 
+ 	  if (hf_addon_storage_cdrom_eject_pressed(cdrom))
+ 	    {
+-	      libhal_device_emit_condition(hfp_ctx, hfp_udi, "EjectPressed", "", &hfp_error);
+-	      dbus_error_free(&hfp_error);
++	      libhal_device_emit_condition(hfp_ctx, hfp_udi, "EjectPressed", "", NULL);
+ 	    }
+ 
+ 	  hfp_cdrom_free(cdrom);
+@@ -144,18 +150,142 @@ hf_addon_storage_update (void)
  	}
      }
  
@@ -36,6 +47,102 @@
    return has_media;
  }
  
++static void
++unmount_volumes (void)
++{
++  int num_volumes;
++  char **volumes;
++
++  if ((volumes = libhal_manager_find_device_string_match(hfp_ctx,
++                                                         "block.storage_device",
++							 hfp_udi,
++							 &num_volumes,
++							 NULL)) != NULL)
++    {
++      int i;
++
++      for (i = 0; i < num_volumes; i++)
++        {
++          char *vol_udi;
++
++	  vol_udi = volumes[i];
++
++	  if (libhal_device_get_property_bool(hfp_ctx, vol_udi, "volume.is_mounted", NULL))
++            {
++              DBusMessage *msg = NULL;
++	      DBusMessage *reply = NULL;
++	      DBusConnection *dbus_connection;
++	      unsigned int num_options = 0;
++	      char **options = NULL;
++	      char *devfile;
++
++              hfp_info("Forcing unmount of volume '%s'", vol_udi);
++
++	      dbus_connection = libhal_ctx_get_dbus_connection(hfp_ctx);
++	      msg = dbus_message_new_method_call("org.freedesktop.Hal", vol_udi,
++                                                 "org.freedesktop.Hal.Device.Volume",
++						 "Unmount");
++	      if (msg == NULL)
++                {
++                  hfp_warning("Could not create dbus message for %s", vol_udi);
++		  continue;
++		}
++
++	      options = calloc(1, sizeof (char *));
++	      if (options == NULL)
++                {
++                  hfp_warning("Could not allocation memory for options");
++		  dbus_message_unref(msg);
++		  continue;
++		}
++
++	      options[0] = "force";
++	      num_options = 1;
++
++	      devfile = libhal_device_get_property_string(hfp_ctx, vol_udi, "block.device", NULL);
++	      if (devfile != NULL)
++                {
++                  hfp_info("Forcibly attempting to unmount %s as media was removed", devfile);
++		  libhal_free_string(devfile);
++		}
++
++	      if (! dbus_message_append_args(msg, DBUS_TYPE_ARRAY, DBUS_TYPE_STRING, &options, num_options, DBUS_TYPE_INVALID))
++                 {
++                   hfp_warning("Could not append args to dbus message for %s", vol_udi);
++		   free(options);
++		   dbus_message_unref(msg);
++		   continue;
++		 }
++
++	      if (! (reply = dbus_connection_send_with_reply_and_block(dbus_connection, msg, -1, &hfp_error)))
++                {
++                  hfp_warning("Unmount failed for %s: %s: %s", vol_udi, hfp_error.name, hfp_error.message);
++		  dbus_error_free(&hfp_error);
++		  free(options);
++		  dbus_message_unref(msg);
++		  continue;
++		}
++
++	      if (dbus_error_is_set(&hfp_error))
++                {
++                  hfp_warning("Unmount failed for %s: %s : %s", vol_udi, hfp_error.name, hfp_error.message);
++		  dbus_error_free(&hfp_error);
++		  free(options);
++		  dbus_message_unref(msg);
++		  dbus_message_unref(reply);
++		  continue;
++		}
++
++	      hfp_info("Successfully unmounted udi '%s'", vol_udi);
++	      free(options);
++              dbus_message_unref(msg);
++              dbus_message_unref(reply);
++	    }
++	}
++      libhal_free_string_array(volumes);
++    }
++}
++
  static boolean
 -poll_for_media (void)
 +poll_for_media (boolean check_only, boolean force)
@@ -49,10 +156,9 @@
 +      check_lock_state = FALSE;
 +
 +      hfp_info("Checking whether device %s is locked by HAL", addon.device_file);
-+      if (libhal_device_is_locked_by_others(hfp_ctx, hfp_udi, "org.freedesktop.Hal.Device.Storage", &hfp_error))
++      if (libhal_device_is_locked_by_others(hfp_ctx, hfp_udi, "org.freedesktop.Hal.Device.Storage", NULL))
 +        {
 +          hfp_info("... device %s is locked by HAL", addon.device_file);
-+	  dbus_error_free(&hfp_error);
 +	  is_locked_by_hal = TRUE;
 +	  update_proc_title(addon.device_file);
 +	  goto skip_check;
@@ -62,10 +168,8 @@
 +          hfp_info("... device %s is not locked by HAL", addon.device_file);
 +	  is_locked_by_hal = FALSE;
 +	}
-+      dbus_error_free(&hfp_error);
 +
-+      should_poll = libhal_device_get_property_bool(hfp_ctx, hfp_udi, "storage.media_check_enabled", &hfp_error);
-+      dbus_error_free(&hfp_error);
++      should_poll = libhal_device_get_property_bool(hfp_ctx, hfp_udi, "storage.media_check_enabled", NULL);
 +      polling_disabled = ! should_poll;
 +      update_proc_title(addon.device_file);
 +    }
@@ -80,7 +184,23 @@
    if (has_media != addon.had_media)
      {
        /*
-@@ -175,20 +212,33 @@ poll_for_media (void)
+@@ -168,27 +298,47 @@ poll_for_media (void)
+        * then hung while rebooting and did not unmount my other
+        * filesystems.
+        */
++#if __FreeBSD_version >= 800066
++      /*
++       * With newusb, it is safe to force unmount volumes.  This may be
++       * safe on newer versions of the old USB stack, but we'll be
++       * extra cautious.
++       */
++      unmount_volumes();
++#endif
+ 
+-      libhal_device_rescan(hfp_ctx, hfp_udi, &hfp_error);
+-      dbus_error_free(&hfp_error);
++      libhal_device_rescan(hfp_ctx, hfp_udi, NULL);
+       addon.had_media = has_media;
  
        return TRUE;
      }
@@ -119,7 +239,7 @@
  {
    if (dbus_message_is_method_call(message,
  			  	  "org.freedesktop.Hal.Device.Storage.Removable",
-@@ -199,7 +249,7 @@ filter_function (DBusConnection *connect
+@@ -199,7 +349,7 @@ filter_function (DBusConnection *connect
  
        hfp_info("Forcing poll for media becusse CheckForMedia() was called");
  
@@ -128,7 +248,7 @@
  
        reply = dbus_message_new_method_return (message);
        dbus_message_append_args(reply, DBUS_TYPE_BOOLEAN, &had_effect, DBUS_TYPE_INVALID);
-@@ -217,8 +267,9 @@ main (int argc, char **argv)
+@@ -217,8 +367,9 @@ main (int argc, char **argv)
    char *removable;
    char *bus;
    char *driver;
@@ -139,19 +259,19 @@
  
    if (! hfp_init(argc, argv))
      goto end;
-@@ -251,16 +302,41 @@ main (int argc, char **argv)
+@@ -251,16 +402,39 @@ main (int argc, char **argv)
    addon.is_scsi_removable = (! strcmp(bus, "scsi") ||
      (! strcmp(bus, "usb") && (! strcmp(driver, "da") || ! strcmp(driver, "sa") ||
      ! strcmp(driver, "cd")))) && ! strcmp(removable, "true");
 -  addon.had_media = hf_addon_storage_update();
 +  addon.had_media = poll_for_media(TRUE, FALSE);
  
-   if (! libhal_device_addon_is_ready(hfp_ctx, hfp_udi, &hfp_error))
+-  if (! libhal_device_addon_is_ready(hfp_ctx, hfp_udi, &hfp_error))
++  if (! libhal_device_addon_is_ready(hfp_ctx, hfp_udi, NULL))
      goto end;
-   dbus_error_free(&hfp_error);
- 
-+  syscon = dbus_bus_get(DBUS_BUS_SYSTEM, &hfp_error);
-+  dbus_error_free(&hfp_error);
+-  dbus_error_free(&hfp_error);
++
++  syscon = dbus_bus_get(DBUS_BUS_SYSTEM, NULL);
 +  assert(syscon != NULL);
 +  dbus_connection_set_exit_on_disconnect(syscon, 0);
 +
@@ -174,7 +294,7 @@
 +  hfp_free(filter_str);
 +
 +  dbus_connection_add_filter(syscon, dbus_filter_function, NULL, NULL);
-+
+ 
    connection = libhal_ctx_get_dbus_connection(hfp_ctx);
    assert(connection != NULL);
    dbus_connection_set_exit_on_disconnect(connection, 0);
@@ -183,7 +303,20 @@
  
    if (! libhal_device_claim_interface(hfp_ctx,
  			 	      hfp_udi,
-@@ -280,40 +356,32 @@ main (int argc, char **argv)
+@@ -268,52 +442,43 @@ main (int argc, char **argv)
+ 				      "    <method name=\"CheckForMedia\">\n"
+ 				      "      <arg name=\"call_had_sideeffect\" direction=\"out\" type=\"b\"/>\n"
+ 				      "    </method>\n",
+-				      &hfp_error))
++				      NULL))
+     {
+       hfp_critical("Cannot claim interface 'org.freedesktop.Hal.Device.Storage.Removable'");
+       goto end;
+     }
+-  dbus_error_free(&hfp_error);
+ 
+   while (TRUE)
+     {
        /* process dbus traffic until update interval has elapsed */
        while (TRUE)
  	{

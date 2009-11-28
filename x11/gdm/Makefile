@@ -3,12 +3,12 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gdm/Makefile,v 1.8 2009/04/15 23:39:01 kwm Exp $
+#   $MCom: ports/x11/gdm/Makefile,v 1.164 2009/11/28 05:59:03 mezz Exp $
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.26.1
-PORTREVISION=	7
+PORTVERSION=	2.28.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,8 +18,10 @@ COMMENT=	GNOME 2 version of xdm display manager
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
+		polkit-gtk-1.0:${PORTSDIR}/sysutils/polkit-gnome \
     		execinfo:${PORTSDIR}/devel/libexecinfo \
-		hal.1:${PORTSDIR}/sysutils/hal
+		hal.1:${PORTSDIR}/sysutils/hal \
+		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gnome-session:${PORTSDIR}/x11/gnome-session
@@ -35,8 +37,8 @@ INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
-		gnomeprefix gnomepanel
+USE_GNOME=	gnomehack intlhack gnomehier gconf2 libglade2 librsvg2 \
+		gnomedocutils gnomeprefix gnomepanel
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home
@@ -81,6 +83,8 @@ post-patch:
 	    	${WRKSRC}/data/session-setup.entries
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure ${WRKSRC}/daemon/*.c ${WRKSRC}/po/*.po
+	@${REINPLACE_CMD} -e 's|/usr/lib|${LOCALBASE}/lib|g' \
+		${WRKSRC}/data/greeter-autostart/*.desktop.in*
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/gconf.path \
@@ -94,7 +98,6 @@ post-install:
 		${PREFIX}/etc/gdm/custom.conf.default
 	${MKDIR} ${PREFIX}/share/xsessions
 	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm
-	@${MKDIR} ${PREFIX}/etc/gdm/Sessions
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}

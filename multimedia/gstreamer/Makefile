@@ -3,11 +3,11 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer/Makefile,v 1.59 2008/03/21 03:53:00 ahze Exp $
+#    $MCom: ports/multimedia/gstreamer/Makefile,v 1.67 2009/11/12 16:18:30 kwm Exp $
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.24
+PORTVERSION=	0.10.25
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		GNOME
@@ -15,8 +15,10 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BISON=	build
@@ -50,7 +52,7 @@ MAN1=	gst-feedback-${GST_VERSION}.1 gst-inspect-${GST_VERSION}.1 \
 LIB_DEPENDS+=	check.0:${PORTSDIR}/devel/libcheck
 PLIST_SUB+=	CHECK=""
 .else
-CONFIGURE_ARGS+=--without-check
+CONFIGURE_ARGS+=--disable-check
 PLIST_SUB+=	CHECK="@comment "
 .endif
 

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-vnc
-PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTVERSION=	0.3.10
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -20,6 +19,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 
 USE_GNOME=	pygtk2 gnomehack
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

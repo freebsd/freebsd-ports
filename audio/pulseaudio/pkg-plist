@@ -11,6 +11,7 @@ bin/parecord
 bin/pasuspender
 bin/pax11publish
 bin/pulseaudio
+bin/start-pulseaudio-kde
 bin/start-pulseaudio-x11
 etc/dbus-1/system.d/pulseaudio-system.conf
 @unexec if cmp -s %D/etc/pulse/client.conf %D/etc/pulse/client.conf-dist; then rm -f %D/etc/pulse/client.conf; fi
@@ -26,12 +27,14 @@ etc/pulse/default.pa-dist
 etc/pulse/system.pa-dist
 @exec [ -f %B/system.pa ] || cp %B/%f %B/system.pa
 etc/xdg/autostart/pulseaudio.desktop
+etc/xdg/autostart/pulseaudio-kde.desktop
 %%AVAHI%%include/pulse/browser.h
 include/pulse/cdecl.h
 include/pulse/channelmap.h
 include/pulse/context.h
 include/pulse/def.h
 include/pulse/error.h
+include/pulse/ext-device-manager.h
 include/pulse/ext-stream-restore.h
 include/pulse/gccmacro.h
 include/pulse/glib-mainloop.h
@@ -81,6 +84,8 @@ lib/libpulsedsp.a
 lib/libpulsedsp.so
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.a
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.a
+lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.so
 lib/pulse-%%PULSE_VERSION%%/modules/libcli.a
 lib/pulse-%%PULSE_VERSION%%/modules/libcli.so
 lib/pulse-%%PULSE_VERSION%%/modules/liboss-util.a
@@ -230,6 +235,7 @@ share/locale/fi/LC_MESSAGES/pulseaudio.mo
 share/locale/fr/LC_MESSAGES/pulseaudio.mo
 share/locale/gu/LC_MESSAGES/pulseaudio.mo
 share/locale/hi/LC_MESSAGES/pulseaudio.mo
+share/locale/hu/LC_MESSAGES/pulseaudio.mo
 share/locale/it/LC_MESSAGES/pulseaudio.mo
 share/locale/ja/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo

@@ -17,11 +17,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/braille.py
 %%PYTHON_SITELIBDIR%%/orca/braille.pyc
 %%PYTHON_SITELIBDIR%%/orca/braille.pyo
-%%PYTHON_SITELIBDIR%%/orca/braillegenerator.py
-%%PYTHON_SITELIBDIR%%/orca/braillegenerator.pyc
-%%PYTHON_SITELIBDIR%%/orca/braillegenerator.pyo
-%%PYTHON_SITELIBDIR%%/orca/brlmodule.la
-%%PYTHON_SITELIBDIR%%/orca/brlmodule.so
+%%PYTHON_SITELIBDIR%%/orca/braille_generator.py
+%%PYTHON_SITELIBDIR%%/orca/braille_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/braille_generator.pyo
 %%PYTHON_SITELIBDIR%%/orca/brlmon.py
 %%PYTHON_SITELIBDIR%%/orca/brlmon.pyc
 %%PYTHON_SITELIBDIR%%/orca/brlmon.pyo
@@ -55,6 +53,12 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.py
 %%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.pyc
 %%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.pyo
+%%PYTHON_SITELIBDIR%%/orca/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/formatting.pyo
+%%PYTHON_SITELIBDIR%%/orca/generator.py
+%%PYTHON_SITELIBDIR%%/orca/generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/generator.pyo
 %%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.py
 %%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyc
 %%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyo
@@ -85,9 +89,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/orca_console_prefs.py
 %%PYTHON_SITELIBDIR%%/orca/orca_console_prefs.pyc
 %%PYTHON_SITELIBDIR%%/orca/orca_console_prefs.pyo
-%%PYTHON_SITELIBDIR%%/orca/orca_glade.py
-%%PYTHON_SITELIBDIR%%/orca/orca_glade.pyc
-%%PYTHON_SITELIBDIR%%/orca/orca_glade.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_gtkbuilder.py
+%%PYTHON_SITELIBDIR%%/orca/orca_gtkbuilder.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_gtkbuilder.pyo
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_find.py
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_find.pyc
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_find.pyo
@@ -160,21 +164,24 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/ddu.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/ddu.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/ddu.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/formatting.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/script.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/speech_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/speech_generator.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/where_am_i.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/where_am_i.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution/where_am_i.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/__init__.pyo
@@ -184,9 +191,6 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/speech_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/speech_generator.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/where_am_i.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/where_am_i.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/where_am_i.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin.pyo
@@ -220,12 +224,12 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/formatting.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/script.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/speech_generator.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/speech_generator.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties/speech_generator.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2.pyo
@@ -247,6 +251,21 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/braille_generator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/braille_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/braille_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/speech_generator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/speech_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/speech_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/tutorialgenerator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/tutorialgenerator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/tutorialgenerator.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/__init__.pyo
@@ -259,9 +278,6 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/speech_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/speech_generator.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/where_am_i.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/where_am_i.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/where_am_i.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/planner/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/planner/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/planner/__init__.pyo
@@ -280,6 +296,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/braille_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/braille_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/braille_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/formatting.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox/script.pyo
@@ -292,6 +311,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/braille_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/braille_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/braille_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/formatting.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/script.pyo
@@ -301,9 +323,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/speech_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/speech_generator.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/where_am_i.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/where_am_i.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/where_am_i.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp.pyo
@@ -322,6 +344,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/braille_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/braille_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/braille_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/formatting.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/script.pyo
@@ -334,24 +359,18 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/structural_navigation.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/structural_navigation.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/structural_navigation.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/where_am_i.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/where_am_i.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/where_am_i.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/__init__.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/braillegenerator.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/braillegenerator.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/braillegenerator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/formatting.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/script.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/speechgenerator.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/speechgenerator.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/speechgenerator.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/where_am_I.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/where_am_I.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/where_am_I.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/speech_generator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/speech_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/speech_generator.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/VCL.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/VCL.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/VCL.pyo
@@ -361,15 +380,18 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/settings.py
 %%PYTHON_SITELIBDIR%%/orca/settings.pyc
 %%PYTHON_SITELIBDIR%%/orca/settings.pyo
+%%PYTHON_SITELIBDIR%%/orca/sound.py
+%%PYTHON_SITELIBDIR%%/orca/sound.pyc
+%%PYTHON_SITELIBDIR%%/orca/sound.pyo
 %%PYTHON_SITELIBDIR%%/orca/speech.py
 %%PYTHON_SITELIBDIR%%/orca/speech.pyc
 %%PYTHON_SITELIBDIR%%/orca/speech.pyo
+%%PYTHON_SITELIBDIR%%/orca/speech_generator.py
+%%PYTHON_SITELIBDIR%%/orca/speech_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/speech_generator.pyo
 %%PYTHON_SITELIBDIR%%/orca/speechdispatcherfactory.py
 %%PYTHON_SITELIBDIR%%/orca/speechdispatcherfactory.pyc
 %%PYTHON_SITELIBDIR%%/orca/speechdispatcherfactory.pyo
-%%PYTHON_SITELIBDIR%%/orca/speechgenerator.py
-%%PYTHON_SITELIBDIR%%/orca/speechgenerator.pyc
-%%PYTHON_SITELIBDIR%%/orca/speechgenerator.pyo
 %%PYTHON_SITELIBDIR%%/orca/speechserver.py
 %%PYTHON_SITELIBDIR%%/orca/speechserver.pyc
 %%PYTHON_SITELIBDIR%%/orca/speechserver.pyo
@@ -397,6 +419,7 @@ share/locale/bg/LC_MESSAGES/orca.mo
 share/locale/bn/LC_MESSAGES/orca.mo
 share/locale/bn_IN/LC_MESSAGES/orca.mo
 share/locale/ca/LC_MESSAGES/orca.mo
+share/locale/ca@valencia/LC_MESSAGES/orca.mo
 share/locale/cs/LC_MESSAGES/orca.mo
 share/locale/cy/LC_MESSAGES/orca.mo
 share/locale/da/LC_MESSAGES/orca.mo
@@ -410,6 +433,7 @@ share/locale/et/LC_MESSAGES/orca.mo
 share/locale/eu/LC_MESSAGES/orca.mo
 share/locale/fi/LC_MESSAGES/orca.mo
 share/locale/fr/LC_MESSAGES/orca.mo
+share/locale/ga/LC_MESSAGES/orca.mo
 share/locale/gl/LC_MESSAGES/orca.mo
 share/locale/gu/LC_MESSAGES/orca.mo
 share/locale/he/LC_MESSAGES/orca.mo
@@ -453,11 +477,13 @@ share/locale/vi/LC_MESSAGES/orca.mo
 share/locale/zh_CN/LC_MESSAGES/orca.mo
 share/locale/zh_HK/LC_MESSAGES/orca.mo
 share/locale/zh_TW/LC_MESSAGES/orca.mo
-%%DATADIR%%/glade/orca-find.glade
-%%DATADIR%%/glade/orca-mainwin.glade
-%%DATADIR%%/glade/orca-quit.glade
-%%DATADIR%%/glade/orca-setup.glade
-@dirrm %%DATADIR%%/glade
+%%DATADIR%%/ui/orca-advanced-magnification.ui
+%%DATADIR%%/ui/orca-find.ui
+%%DATADIR%%/ui/orca-mainwin.ui
+%%DATADIR%%/ui/orca-preferences-warning.ui
+%%DATADIR%%/ui/orca-quit.ui
+%%DATADIR%%/ui/orca-setup.ui
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge
@@ -467,6 +493,7 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/planner
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gedit
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool
@@ -493,5 +520,7 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN

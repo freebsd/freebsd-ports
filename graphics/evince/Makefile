@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/evince/Makefile,v 1.7 2009/04/16 08:20:58 kwm Exp $
+#   $MCom: ports/graphics/evince/Makefile,v 1.130 2009/10/19 19:57:01 kwm Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	2.26.2
-PORTREVISION=	2
+PORTVERSION=	2.28.1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,8 +15,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
 
+BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 LIB_DEPENDS=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk \
 		spectre.1:${PORTSDIR}/print/libspectre
+RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
@@ -30,9 +31,9 @@ USE_GNOME=	gnomehack intlhack gnomeprefix desktopfileutils \
 		gnomedocutils ltasneededhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-print=gtk
 
-GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas \
+GCONF_SCHEMAS=	evince.schemas \
+		evince-thumbnailer.schemas \
 		evince-thumbnailer-ps.schemas
 
 MAN1=		evince.1

@@ -1,0 +1,9 @@
+GObject Introspection is a project for providing machine readable introspection
+data of the API of C libraries. This introspection data can be used in several
+different use cases, for example automatic code generation for bindings, API
+verification and documentation generation.
+
+GObject Introspection contains tools to generate and handle the introspection
+data.
+
+WWW: http://live.gnome.org/GObjectIntrospection

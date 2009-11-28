@@ -1,6 +1,6 @@
---- python/Makefile.in.orig	2009-03-16 08:49:19.000000000 +0100
-+++ python/Makefile.in	2009-03-16 08:51:17.000000000 +0100
-@@ -56,7 +56,6 @@
+--- python/Makefile.in.orig	2009-11-01 13:38:24.000000000 -0500
++++ python/Makefile.in	2009-11-01 13:38:24.000000000 -0500
+@@ -73,7 +73,6 @@ am__installdirs = "$(DESTDIR)$(pythonsit
  LTLIBRARIES = $(pythonsiteexec_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  @BUILD_PYTHON_MODULES_TRUE@vtemodule_la_DEPENDENCIES =  \
@@ -8,24 +8,7 @@
  @BUILD_PYTHON_MODULES_TRUE@	$(am__DEPENDENCIES_1) \
  @BUILD_PYTHON_MODULES_TRUE@	$(am__DEPENDENCIES_1) \
  @BUILD_PYTHON_MODULES_TRUE@	$(am__DEPENDENCIES_1)
-@@ -290,11 +289,11 @@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- EXTRA_DIST = vte.defs pyvte.pc.in vte.override cat.py unrealize.py vte-demo.py
--defsdir = $(datadir)/pygtk/2.0/defs
--defs_DATA = vte.defs
--pkgconfigdir = $(prefix)/libdata/pkgconfig
--pkgconfig_DATA = pyvte.pc
--PYTHON_MODULES = vtemodule.la
-+@BUILD_PYTHON_MODULES_TRUE@defsdir = $(datadir)/pygtk/2.0/defs
-+@BUILD_PYTHON_MODULES_TRUE@defs_DATA = vte.defs
-+@BUILD_PYTHON_MODULES_TRUE@pkgconfigdir = $(prefix)/libdata/pkgconfig
-+@BUILD_PYTHON_MODULES_TRUE@pkgconfig_DATA = pyvte.pc
-+@BUILD_PYTHON_MODULES_TRUE@PYTHON_MODULES = vtemodule.la
- @BUILD_PYTHON_MODULES_TRUE@pythonsiteexecdir = $(pyexecdir)/gtk-2.0
- @BUILD_PYTHON_MODULES_TRUE@pythonsiteexec_LTLIBRARIES = $(PYTHON_MODULES)
- @BUILD_PYTHON_MODULES_TRUE@CLEANFILES = vte.c
-@@ -305,7 +304,7 @@
+@@ -320,7 +319,7 @@ EXTRA_DIST = vte.defs pyvte.pc.in vte.ov
  # we do this to suport building with -Wl,-z,defs which errors on
  # vtemodule.so as we cannot include $(PYTHON_LIBS) due to bug 410986.
  @BUILD_PYTHON_MODULES_TRUE@vtemodule_la_LDFLAGS = -module -avoid-version -export-symbols-regex initvte $(PYTHON_LDFLAGS) $(AM_LDFLAGS)

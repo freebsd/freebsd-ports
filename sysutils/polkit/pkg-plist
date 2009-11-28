@@ -1,0 +1,82 @@
+bin/pkaction
+bin/pkcheck
+bin/pkexec
+@unexec if cmp -s %D/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf %D/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist; then rm -f %D/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf ; fi
+etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist
+@exec [ -f %B/org.freedesktop.PolicyKit1.conf ] || cp %B/%f %B/org.freedesktop.PolicyKit1.conf
+etc/pam.d/polkit-1
+etc/polkit-1/localauthority.conf.d/50-localauthority.conf
+etc/polkit-1/nullbackend.conf.d/50-nullbackend.conf
+include/polkit-1/polkit/polkit.h
+include/polkit-1/polkit/polkitactiondescription.h
+include/polkit-1/polkit/polkitauthorityfeatures.h
+include/polkit-1/polkit/polkitauthority.h
+include/polkit-1/polkit/polkitauthorizationresult.h
+include/polkit-1/polkit/polkitcheckauthorizationflags.h
+include/polkit-1/polkit/polkitdetails.h
+include/polkit-1/polkit/polkitenumtypes.h
+include/polkit-1/polkit/polkiterror.h
+include/polkit-1/polkit/polkitidentity.h
+include/polkit-1/polkit/polkitimplicitauthorization.h
+include/polkit-1/polkit/polkitprivate.h
+include/polkit-1/polkit/polkitsubject.h
+include/polkit-1/polkit/polkitsystembusname.h
+include/polkit-1/polkit/polkittemporaryauthorization.h
+include/polkit-1/polkit/polkittypes.h
+include/polkit-1/polkit/polkitunixgroup.h
+include/polkit-1/polkit/polkitunixprocess.h
+include/polkit-1/polkit/polkitunixsession.h
+include/polkit-1/polkit/polkitunixuser.h
+include/polkit-1/polkitagent/polkitagent.h
+include/polkit-1/polkitagent/polkitagentlistener.h
+include/polkit-1/polkitagent/polkitagentsession.h
+include/polkit-1/polkitagent/polkitagenttypes.h
+include/polkit-1/polkitbackend/polkitbackend.h
+include/polkit-1/polkitbackend/polkitbackendactionlookup.h
+include/polkit-1/polkitbackend/polkitbackendactionpool.h
+include/polkit-1/polkitbackend/polkitbackendauthority.h
+include/polkit-1/polkitbackend/polkitbackendconfigsource.h
+include/polkit-1/polkitbackend/polkitbackendinteractiveauthority.h
+include/polkit-1/polkitbackend/polkitbackendlocalauthority.h
+include/polkit-1/polkitbackend/polkitbackendlocalauthorizationstore.h
+include/polkit-1/polkitbackend/polkitbackendsessionmonitor.h
+include/polkit-1/polkitbackend/polkitbackendtypes.h
+lib/girepository-1.0/Polkit-1.0.typelib
+lib/libpolkit-agent-1.a
+lib/libpolkit-agent-1.la
+lib/libpolkit-agent-1.so
+lib/libpolkit-agent-1.so.0
+lib/libpolkit-backend-1.a
+lib/libpolkit-backend-1.la
+lib/libpolkit-backend-1.so
+lib/libpolkit-backend-1.so.0
+lib/libpolkit-gobject-1.a
+lib/libpolkit-gobject-1.la
+lib/libpolkit-gobject-1.so
+lib/libpolkit-gobject-1.so.0
+lib/polkit-1/extensions/libnullbackend.a
+lib/polkit-1/extensions/libnullbackend.la
+lib/polkit-1/extensions/libnullbackend.so
+lib/polkit-1/extensions/libpkexec-action-lookup.a
+lib/polkit-1/extensions/libpkexec-action-lookup.la
+lib/polkit-1/extensions/libpkexec-action-lookup.so
+libdata/pkgconfig/polkit-agent-1.pc
+libdata/pkgconfig/polkit-backend-1.pc
+libdata/pkgconfig/polkit-gobject-1.pc
+libexec/polkit-agent-helper-1
+libexec/polkitd
+share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
+share/gir-1.0/Polkit-1.0.gir
+share/locale/da/LC_MESSAGES/polkit-1.mo
+share/polkit-1/actions/org.freedesktop.policykit.policy
+@dirrmtry share/polkit-1/actions
+@dirrmtry share/polkit-1
+@dirrm lib/polkit-1/extensions
+@dirrm lib/polkit-1
+@dirrm include/polkit-1/polkitbackend
+@dirrm include/polkit-1/polkitagent
+@dirrm include/polkit-1/polkit
+@dirrm include/polkit-1
+@dirrm etc/polkit-1/nullbackend.conf.d
+@dirrm etc/polkit-1/localauthority.conf.d
+@dirrm etc/polkit-1

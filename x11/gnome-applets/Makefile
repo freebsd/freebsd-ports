@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gnome-applets/Makefile,v 1.1 2009/04/13 13:21:01 kwm Exp $
+#   $MCom: ports/x11/gnome-applets/Makefile,v 1.208 2009/11/13 06:07:53 avl Exp $
 #
 
 PORTNAME=	gnome-applets
-PORTVERSION=	2.26.3
+PORTVERSION=	2.28.0
 PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${POR
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		gweather.1:${PORTSDIR}/net/libgweather \
+		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit \
 		xklavier.12:${PORTSDIR}/x11/libxklavier \
 		gucharmap.7:${PORTSDIR}/deskutils/gucharmap
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${PORTSDIR}/sysutils/system-tools-backends \
@@ -38,7 +39,8 @@ WANT_GNOME=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gstreamer=0.10 \
-		--enable-mixer-applet
+		--enable-mixer-applet \
+		--disable-networkmanager
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		OS_SYS="/usr/include"

@@ -3,6 +3,7 @@ include/libxklavier/xkl_config_rec.h
 include/libxklavier/xkl_config_registry.h
 include/libxklavier/xkl_engine.h
 include/libxklavier/xkl_engine_marshal.h
+include/libxklavier/xkl-enum-types.h
 include/libxklavier/xklavier.h
 lib/libxklavier.a
 lib/libxklavier.la

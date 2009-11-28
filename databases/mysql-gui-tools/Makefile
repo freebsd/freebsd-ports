@@ -8,6 +8,7 @@
 
 PORTNAME=	mysql-gui-tools
 PORTVERSION=	5.0r14
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLGUITools
@@ -24,15 +25,16 @@ OPTIONS=	QUERY_BROWSER	"Build the MySQL Query Browser"	on \
 		ADMINISTRATOR	"Build the MySQL Administrator"	on
 
 USE_AUTOTOOLS=	autoconf:262 libtool:22 automake:110
-USE_GNOME=	gnomelibs libglade2 gtkhtml3 libgnomeprint intlhack gtksourceview
+USE_GNOME=	libgnome libglade2 gtkhtml3 libgnomeprint intlhack gtksourceview
 USE_GL=		gl glut
 USE_GMAKE=	yes
 
 DATADIR=	${PREFIX}/share/mysql-gui
 
-CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS+=	--with-gtkhtml=libgtkhtml-3.14
 
 .include <bsd.port.pre.mk>

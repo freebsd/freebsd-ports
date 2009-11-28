@@ -3,12 +3,11 @@
 # Whom:					FreeBSD GNOME Team
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/alacarte/Makefile,v 1.20 2008/09/29 15:18:59 marcus Exp $
+#    $MCom: ports/deskutils/alacarte/Makefile,v 1.23 2009/09/21 16:31:27 kwm Exp $
 #
 
 PORTNAME=	alacarte
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.12.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

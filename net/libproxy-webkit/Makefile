@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	-webkit
 
@@ -13,7 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	WebKit Javascript plug-in for libproxy
 
 LIB_DEPENDS=	proxy.0:${PORTSDIR}/net/libproxy \
-    		webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
+    		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 
 MASTERDIR=	${.CURDIR}/../libproxy
 BUILD_WRKSRC=	${WRKSRC}/src/plugins

@@ -7,7 +7,7 @@
 
 PORTNAME=	gauche
 PORTVERSION=	0.4.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	SF/${PORTNAME}/Gauche-gtk/${PORTVERSION}
 PKGNAMESUFFIX=	-gtk
@@ -35,6 +35,10 @@ PLIST_SUB+=	GTKGLEXT=""
 .else
 PLIST_SUB+=	GTKGLEXT="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|n-bytes|x-n-bytes|g' -e 's|text-size|x-text-size|g' \
+		${WRKSRC}/src/gtkentry.stub
 
 post-install:
 .if !defined(NOPORTDOCS)

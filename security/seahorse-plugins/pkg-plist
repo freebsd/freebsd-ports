@@ -1,10 +1,10 @@
 bin/seahorse-agent
 bin/seahorse-preferences
 bin/seahorse-tool
-%%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.a
-%%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.la
-%%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.so
-%%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/seahorse.ephy-extension
+%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.a
+%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.la
+%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.so
+%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/seahorse.ephy-extension
 %%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.a
 %%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.la
 %%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.so
@@ -51,7 +51,9 @@ share/locale/be@latin/LC_MESSAGES/seahorse-plugins.mo
 share/locale/bg/LC_MESSAGES/seahorse-plugins.mo
 share/locale/bn/LC_MESSAGES/seahorse-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/seahorse-plugins.mo
+share/locale/br/LC_MESSAGES/seahorse-plugins.mo
 share/locale/ca/LC_MESSAGES/seahorse-plugins.mo
+share/locale/ca@valencia/LC_MESSAGES/seahorse-plugins.mo
 share/locale/cs/LC_MESSAGES/seahorse-plugins.mo
 share/locale/da/LC_MESSAGES/seahorse-plugins.mo
 share/locale/de/LC_MESSAGES/seahorse-plugins.mo
@@ -78,6 +80,7 @@ share/locale/ko/LC_MESSAGES/seahorse-plugins.mo
 share/locale/ku/LC_MESSAGES/seahorse-plugins.mo
 share/locale/lt/LC_MESSAGES/seahorse-plugins.mo
 share/locale/lv/LC_MESSAGES/seahorse-plugins.mo
+share/locale/mai/LC_MESSAGES/seahorse-plugins.mo
 share/locale/mk/LC_MESSAGES/seahorse-plugins.mo
 share/locale/ml/LC_MESSAGES/seahorse-plugins.mo
 share/locale/mr/LC_MESSAGES/seahorse-plugins.mo
@@ -176,7 +179,7 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 %%DATADIR%%/glade/seahorse-notify.glade
 %%DATADIR%%/glade/seahorse-prefs.glade
 %%DATADIR%%/glade/seahorse-progress.glade
-%%EPIPHANY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%/extensions
+%%EPHY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%/extensions
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/pixmaps/seahorse-plugins/scalable
@@ -227,10 +230,14 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

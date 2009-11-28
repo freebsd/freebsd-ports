@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/hal/files/hald.in,v 1.14 2008/08/21 16:04:48 mezz Exp $
+#   $MCom: ports/sysutils/hal/files/hald.in,v 1.17 2009/09/26 13:42:01 marcus Exp $
 #
 # PROVIDE: hald
 # REQUIRE: DAEMON usbd devd dbus moused
@@ -9,12 +9,13 @@
 # Add the following line to /etc/rc.conf to enable the HAL daemon:
 #
 # hald_enable="YES"
-# hald_flags="<set as needed>"
+#
 
 . %%RC_SUBR%%
 . %%GNOME_SUBR%%
 
 hald_enable=${hald_enable-${gnome_enable}}
+hald_flags=${hald_flags-""}
 
 name=hald
 rcvar=`set_rcvar`

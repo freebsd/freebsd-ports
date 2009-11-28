@@ -1,0 +1,187 @@
+bin/seed
+include/seed/seed-debug.h
+include/seed/seed-module.h
+include/seed/seed.h
+lib/libseed.a
+lib/libseed.la
+lib/libseed.so
+lib/libseed.so.0
+lib/seed/libseed_cairo.a
+lib/seed/libseed_cairo.la
+lib/seed/libseed_cairo.so
+lib/seed/libseed_canvas.a
+lib/seed/libseed_canvas.la
+lib/seed/libseed_canvas.so
+lib/seed/libseed_dbusnative.a
+lib/seed/libseed_dbusnative.la
+lib/seed/libseed_dbusnative.so
+lib/seed/libseed_example.a
+lib/seed/libseed_example.la
+lib/seed/libseed_example.so
+lib/seed/libseed_ffi.a
+lib/seed/libseed_ffi.la
+lib/seed/libseed_ffi.so
+lib/seed/libseed_gettext.a
+lib/seed/libseed_gettext.la
+lib/seed/libseed_gettext.so
+lib/seed/libseed_gtkbuilder.a
+lib/seed/libseed_gtkbuilder.la
+lib/seed/libseed_gtkbuilder.so
+lib/seed/libseed_libxml.a
+lib/seed/libseed_libxml.la
+lib/seed/libseed_libxml.so
+lib/seed/libseed_mpfr.a
+lib/seed/libseed_mpfr.la
+lib/seed/libseed_mpfr.so
+lib/seed/libseed_multiprocessing.a
+lib/seed/libseed_multiprocessing.la
+lib/seed/libseed_multiprocessing.so
+lib/seed/libseed_os.a
+lib/seed/libseed_os.la
+lib/seed/libseed_os.so
+lib/seed/libseed_readline.a
+lib/seed/libseed_readline.la
+lib/seed/libseed_readline.so
+lib/seed/libseed_sandbox.a
+lib/seed/libseed_sandbox.la
+lib/seed/libseed_sandbox.so
+lib/seed/libseed_sqlite.a
+lib/seed/libseed_sqlite.la
+lib/seed/libseed_sqlite.so
+libdata/pkgconfig/seed.pc
+%%DATADIR%%/dbus.js
+%%DATADIR%%/extensions/Clutter.js
+%%DATADIR%%/extensions/GObject.js
+%%DATADIR%%/extensions/Gio.js
+%%DATADIR%%/extensions/Gst.js
+%%DATADIR%%/extensions/Gtk.js
+%%DATADIR%%/extensions/Seed.js
+%%DATADIR%%/extensions/xml.js
+%%DATADIR%%/lang.js
+%%PORTEXAMPLES%%%%DATADIR%%/repl.js
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE
+%%PORTDOCS%%%%DOCSDIR%%/conventions.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Gnio-server.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Gnio.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HACKING
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accelgroup.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/actions.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async-quine.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserSettings.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserStatusbar.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserTab.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserToolbar.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserView.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/COPYING
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/TabbedBrowser.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/main.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cairo.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calculator-mpfr.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calculator.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-1.0.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-cairo-1.0.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-cogl-1.0.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/clutter-pad.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/animated-rectangle.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/box2d.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/cairo.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/pink-stage.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/spring.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/main.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/redhand.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/ShaderEditor.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/ShaderView.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/bob.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/default.glsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/main.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/dbus-banshee.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/dbus-consolekit.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/dbus-networkmanager.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/networkManagerIfaces.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gconf.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdkpixbufloader.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/env.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/pretty.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/thread.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/timeout.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/timer.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/twitter.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtkplug.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtktextview.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtktreeview.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json-packing.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json-reddit.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ls.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/n-oscillator.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify-test.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/glut-teapot.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/seed-gears.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/triangle-actor.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pango-fontset.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pango.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poppler.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quine.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/repl.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soup.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threaded-repl.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vte-test.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/sample.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/weather.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/xml-dom.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/xml-tree.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/xml-xpath.js
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/enum-mapping.png
+%%PORTDOCS%%%%DOCSDIR%%/mapping/mapping.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/canvas.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/gtkbuilder/html/gtkbuilder-funcs.xml
+%%PORTDOCS%%%%DOCSDIR%%/modules/multiprocessing.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/readline/html/readline-funcs.xml
+%%PORTDOCS%%%%DOCSDIR%%/modules/sandbox/html/sandbox-funcs.xml
+%%PORTDOCS%%%%DOCSDIR%%/modules/sqlite/html/sqlite-funcs.xml
+%%PORTDOCS%%%%DOCSDIR%%/runtime.html
+%%PORTDOCS%%%%DOCSDIR%%/sh.css
+%%PORTDOCS%%%%DOCSDIR%%/sh.js
+%%PORTDOCS%%%%DOCSDIR%%/sh_js.js
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/1.js
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/1.png
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/2.js
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/2.png
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/3.js
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/3.png
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/4.png
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/packing.png
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/packing.svg
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial.html
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/browser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clutter-pad/examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clutter-pad
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clutter-shader
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dbus
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/glib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mapping
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/gtkbuilder/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/gtkbuilder
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/readline/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/readline
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sandbox/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sandbox
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sqlite/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sqlite
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/seed
+@dirrm lib/seed
+@dirrm %%DATADIR%%/extensions
+@dirrm %%DATADIR%%

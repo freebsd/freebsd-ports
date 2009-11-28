@@ -1,3 +1,4 @@
+bin/wnck-urgency-monitor
 bin/wnckprop
 include/libwnck-1.0/libwnck/application.h
 include/libwnck-1.0/libwnck/class-group.h
@@ -63,6 +64,7 @@ share/locale/ky/LC_MESSAGES/libwnck.mo
 share/locale/li/LC_MESSAGES/libwnck.mo
 share/locale/lt/LC_MESSAGES/libwnck.mo
 share/locale/lv/LC_MESSAGES/libwnck.mo
+share/locale/mai/LC_MESSAGES/libwnck.mo
 share/locale/mi/LC_MESSAGES/libwnck.mo
 share/locale/mk/LC_MESSAGES/libwnck.mo
 share/locale/ml/LC_MESSAGES/libwnck.mo
@@ -120,6 +122,8 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES

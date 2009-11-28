@@ -2,6 +2,7 @@ bin/file-roller
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-fileroller.la
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-fileroller.so
 libexec/file-roller/isoinfo.sh
+libexec/file-roller/rpm2cpio
 share/applications/file-roller.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/add-files-to-archive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/add-folder-to-archive.png
@@ -37,6 +38,12 @@ share/gnome/help/file-roller/ca/figures/file-roller_main_window.png
 share/gnome/help/file-roller/ca/figures/file-roller_rightarrow.png
 share/gnome/help/file-roller/ca/figures/file-roller_uparrow.png
 share/gnome/help/file-roller/ca/file-roller.xml
+share/gnome/help/file-roller/cs/figures/file-roller_home.png
+share/gnome/help/file-roller/cs/figures/file-roller_leftarrow.png
+share/gnome/help/file-roller/cs/figures/file-roller_main_window.png
+share/gnome/help/file-roller/cs/figures/file-roller_rightarrow.png
+share/gnome/help/file-roller/cs/figures/file-roller_uparrow.png
+share/gnome/help/file-roller/cs/file-roller.xml
 share/gnome/help/file-roller/de/figures/file-roller_home.png
 share/gnome/help/file-roller/de/figures/file-roller_leftarrow.png
 share/gnome/help/file-roller/de/figures/file-roller_main_window.png
@@ -134,6 +141,7 @@ share/locale/bn_IN/LC_MESSAGES/file-roller.mo
 share/locale/br/LC_MESSAGES/file-roller.mo
 share/locale/bs/LC_MESSAGES/file-roller.mo
 share/locale/ca/LC_MESSAGES/file-roller.mo
+share/locale/ca@valencia/LC_MESSAGES/file-roller.mo
 share/locale/cs/LC_MESSAGES/file-roller.mo
 share/locale/cy/LC_MESSAGES/file-roller.mo
 share/locale/da/LC_MESSAGES/file-roller.mo
@@ -162,6 +170,7 @@ share/locale/is/LC_MESSAGES/file-roller.mo
 share/locale/it/LC_MESSAGES/file-roller.mo
 share/locale/ja/LC_MESSAGES/file-roller.mo
 share/locale/ka/LC_MESSAGES/file-roller.mo
+share/locale/kk/LC_MESSAGES/file-roller.mo
 share/locale/kn/LC_MESSAGES/file-roller.mo
 share/locale/ko/LC_MESSAGES/file-roller.mo
 share/locale/ku/LC_MESSAGES/file-roller.mo
@@ -211,6 +220,7 @@ share/locale/zh_HK/LC_MESSAGES/file-roller.mo
 share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 share/omf/file-roller/file-roller-C.omf
 share/omf/file-roller/file-roller-ca.omf
+share/omf/file-roller/file-roller-cs.omf
 share/omf/file-roller/file-roller-bg.omf
 share/omf/file-roller/file-roller-de.omf
 share/omf/file-roller/file-roller-el.omf
@@ -252,6 +262,8 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrm share/gnome/help/file-roller/el
 @dirrm share/gnome/help/file-roller/de/figures
 @dirrm share/gnome/help/file-roller/de
+@dirrm share/gnome/help/file-roller/cs/figures
+@dirrm share/gnome/help/file-roller/cs
 @dirrm share/gnome/help/file-roller/ca/figures
 @dirrm share/gnome/help/file-roller/ca
 @dirrm share/gnome/help/file-roller/bg/figures
@@ -301,12 +313,16 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

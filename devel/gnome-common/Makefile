@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/gnome-common/Makefile,v 1.12 2009/03/20 00:12:35 kwm Exp $
+#    $MCom: ports/devel/gnome-common/Makefile,v 1.15 2009/09/26 13:41:58 marcus Exp $
 #
 
 PORTNAME=	gnome-common
-PORTVERSION=	2.26.0
+PORTVERSION=	2.28.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

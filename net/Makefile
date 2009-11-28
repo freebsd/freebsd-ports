@@ -172,6 +172,7 @@
     SUBDIR += geotrace
     SUBDIR += ggsd
     SUBDIR += gini
+    SUBDIR += gir-repository-avahi
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst

@@ -7,7 +7,7 @@
 
 PORTNAME=	gattrib
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
@@ -45,5 +45,8 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|>n_bytes|>x_n_bytes|g' \
+		-e 's|>text_size|>x_text_size|g' \
+		${WRKSRC}/src/gtkitementry_2_2.c
 
 .include <bsd.port.mk>

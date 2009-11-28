@@ -22,6 +22,7 @@ share/locale/it/LC_MESSAGES/shared-mime-info.mo
 share/locale/ja/LC_MESSAGES/shared-mime-info.mo
 share/locale/ko/LC_MESSAGES/shared-mime-info.mo
 share/locale/lt/LC_MESSAGES/shared-mime-info.mo
+share/locale/lv/LC_MESSAGES/shared-mime-info.mo
 share/locale/ms/LC_MESSAGES/shared-mime-info.mo
 share/locale/nb/LC_MESSAGES/shared-mime-info.mo
 share/locale/nl/LC_MESSAGES/shared-mime-info.mo
@@ -51,8 +52,10 @@ share/mime/application/javascript.xml
 share/mime/application/mac-binhex40.xml
 share/mime/application/mathematica.xml
 share/mime/application/mbox.xml
+share/mime/application/metalink+xml.xml
 share/mime/application/msword-template.xml
 share/mime/application/msword.xml
+share/mime/application/mxf.xml
 share/mime/application/octet-stream.xml
 share/mime/application/oda.xml
 share/mime/application/ogg.xml
@@ -75,6 +78,8 @@ share/mime/application/sieve.xml
 share/mime/application/smil.xml
 share/mime/application/vnd.corel-draw.xml
 share/mime/application/vnd.emusic-emusic_package.xml
+share/mime/application/vnd.google-earth.kml+xml.xml
+share/mime/application/vnd.google-earth.kmz.xml
 share/mime/application/vnd.hp-hpgl.xml
 share/mime/application/vnd.hp-pcl.xml
 share/mime/application/vnd.lotus-1-2-3.xml
@@ -150,6 +155,7 @@ share/mime/application/x-bzpdf.xml
 share/mime/application/x-bzpostscript.xml
 share/mime/application/x-cb7.xml
 share/mime/application/x-cbr.xml
+share/mime/application/x-cbt.xml
 share/mime/application/x-cbz.xml
 share/mime/application/x-cd-image.xml
 share/mime/application/x-cdrdao-toc.xml
@@ -225,6 +231,10 @@ share/mime/application/x-java.xml
 share/mime/application/x-jbuilder-project.xml
 share/mime/application/x-karbon.xml
 share/mime/application/x-kchart.xml
+share/mime/application/x-kexi-connectiondata.xml
+share/mime/application/x-kexiproject-shortcut.xml
+share/mime/application/x-kexiproject-sqlite2.xml
+share/mime/application/x-kexiproject-sqlite3.xml
 share/mime/application/x-kformula.xml
 share/mime/application/x-killustrator.xml
 share/mime/application/x-kivio.xml
@@ -242,6 +252,7 @@ share/mime/application/x-lha.xml
 share/mime/application/x-lhz.xml
 share/mime/application/x-linguist.xml
 share/mime/application/x-lyx.xml
+share/mime/application/x-lzip.xml
 share/mime/application/x-lzma-compressed-tar.xml
 share/mime/application/x-lzma.xml
 share/mime/application/x-lzop.xml
@@ -300,6 +311,8 @@ share/mime/application/x-slp.xml
 share/mime/application/x-smaf.xml
 share/mime/application/x-sms-rom.xml
 share/mime/application/x-snes-rom.xml
+share/mime/application/x-spss-por.xml
+share/mime/application/x-spss-sav.xml
 share/mime/application/x-sqlite2.xml
 share/mime/application/x-sqlite3.xml
 share/mime/application/x-stuffit.xml
@@ -321,10 +334,13 @@ share/mime/application/x-tzo.xml
 share/mime/application/x-ufraw.xml
 share/mime/application/x-ustar.xml
 share/mime/application/x-wais-source.xml
+share/mime/application/x-windows-themepack.xml
 share/mime/application/x-wpg.xml
 share/mime/application/x-x509-ca-cert.xml
 share/mime/application/x-xbel.xml
 share/mime/application/x-xliff.xml
+share/mime/application/x-xz-compressed-tar.xml
+share/mime/application/x-xz.xml
 share/mime/application/x-zerosize.xml
 share/mime/application/x-zoo.xml
 share/mime/application/xhtml+xml.xml
@@ -392,6 +408,7 @@ share/mime/image/gif.xml
 share/mime/image/ief.xml
 share/mime/image/jp2.xml
 share/mime/image/jpeg.xml
+share/mime/image/openraster.xml
 share/mime/image/png.xml
 share/mime/image/rle.xml
 share/mime/image/svg+xml-compressed.xml
@@ -613,11 +630,13 @@ share/mime/x-content/blank-hddvd.xml
 share/mime/x-content/image-dcf.xml
 share/mime/x-content/image-picturecd.xml
 share/mime/x-content/software.xml
+share/mime/x-content/unix-software.xml
 share/mime/x-content/video-bluray.xml
 share/mime/x-content/video-dvd.xml
 share/mime/x-content/video-hddvd.xml
 share/mime/x-content/video-svcd.xml
 share/mime/x-content/video-vcd.xml
+share/mime/x-content/win32-software.xml
 share/mime/x-epoc/x-sisx-app.xml
 @unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces || true
 @unexec [ -f %D/share/mime/aliases ] && rm -f %D/share/mime/aliases || true

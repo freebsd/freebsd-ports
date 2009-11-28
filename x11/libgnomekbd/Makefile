@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.29 2009/03/14 05:54:11 marcus Exp $
+#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.37 2009/09/22 23:24:04 avl Exp $
 #
 
 PORTNAME=	libgnomekbd
-PORTVERSION=	2.26.0
-PORTREVISION=	1
+PORTVERSION=	2.28.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +19,7 @@ LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2 libglade2
+USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2
 USE_AUTOTOOLS=	libtool:22
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes

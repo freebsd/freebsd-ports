@@ -25,6 +25,14 @@ share/gnome/help/gconf-editor/ca/figures/entry-schema.png
 share/gnome/help/gconf-editor/ca/figures/entry-string.png
 share/gnome/help/gconf-editor/ca/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/ca/gconf-editor.xml
+share/gnome/help/gconf-editor/cs/figures/entry-blank.png
+share/gnome/help/gconf-editor/cs/figures/entry-bool.png
+share/gnome/help/gconf-editor/cs/figures/entry-list.png
+share/gnome/help/gconf-editor/cs/figures/entry-number.png
+share/gnome/help/gconf-editor/cs/figures/entry-schema.png
+share/gnome/help/gconf-editor/cs/figures/entry-string.png
+share/gnome/help/gconf-editor/cs/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/cs/gconf-editor.xml
 share/gnome/help/gconf-editor/de/figures/entry-blank.png
 share/gnome/help/gconf-editor/de/figures/entry-bool.png
 share/gnome/help/gconf-editor/de/figures/entry-list.png
@@ -121,6 +129,14 @@ share/gnome/help/gconf-editor/uk/figures/entry-schema.png
 share/gnome/help/gconf-editor/uk/figures/entry-string.png
 share/gnome/help/gconf-editor/uk/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/uk/gconf-editor.xml
+share/gnome/help/gconf-editor/zh_CN/figures/entry-blank.png
+share/gnome/help/gconf-editor/zh_CN/figures/entry-bool.png
+share/gnome/help/gconf-editor/zh_CN/figures/entry-list.png
+share/gnome/help/gconf-editor/zh_CN/figures/entry-number.png
+share/gnome/help/gconf-editor/zh_CN/figures/entry-schema.png
+share/gnome/help/gconf-editor/zh_CN/figures/entry-string.png
+share/gnome/help/gconf-editor/zh_CN/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/zh_CN/gconf-editor.xml
 share/icons/hicolor/48x48/apps/gconf-editor.png
 share/locale/am/LC_MESSAGES/gconf-editor.mo
 share/locale/ar/LC_MESSAGES/gconf-editor.mo
@@ -135,6 +151,7 @@ share/locale/bn_IN/LC_MESSAGES/gconf-editor.mo
 share/locale/br/LC_MESSAGES/gconf-editor.mo
 share/locale/bs/LC_MESSAGES/gconf-editor.mo
 share/locale/ca/LC_MESSAGES/gconf-editor.mo
+share/locale/ca@valencia/LC_MESSAGES/gconf-editor.mo
 share/locale/cs/LC_MESSAGES/gconf-editor.mo
 share/locale/cy/LC_MESSAGES/gconf-editor.mo
 share/locale/da/LC_MESSAGES/gconf-editor.mo
@@ -166,6 +183,7 @@ share/locale/ku/LC_MESSAGES/gconf-editor.mo
 share/locale/li/LC_MESSAGES/gconf-editor.mo
 share/locale/lt/LC_MESSAGES/gconf-editor.mo
 share/locale/lv/LC_MESSAGES/gconf-editor.mo
+share/locale/mai/LC_MESSAGES/gconf-editor.mo
 share/locale/mg/LC_MESSAGES/gconf-editor.mo
 share/locale/mk/LC_MESSAGES/gconf-editor.mo
 share/locale/ml/LC_MESSAGES/gconf-editor.mo
@@ -206,6 +224,7 @@ share/locale/zh_HK/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 share/omf/gconf-editor/gconf-editor-C.omf
 share/omf/gconf-editor/gconf-editor-ca.omf
+share/omf/gconf-editor/gconf-editor-cs.omf
 share/omf/gconf-editor/gconf-editor-de.omf
 share/omf/gconf-editor/gconf-editor-el.omf
 share/omf/gconf-editor/gconf-editor-en_GB.omf
@@ -218,7 +237,10 @@ share/omf/gconf-editor/gconf-editor-ru.omf
 share/omf/gconf-editor/gconf-editor-sv.omf
 share/omf/gconf-editor/gconf-editor-th.omf
 share/omf/gconf-editor/gconf-editor-uk.omf
+share/omf/gconf-editor/gconf-editor-zh_CN.omf
 @dirrm share/omf/gconf-editor
+@dirrm share/gnome/help/gconf-editor/zh_CN/figures
+@dirrm share/gnome/help/gconf-editor/zh_CN
 @dirrm share/gnome/help/gconf-editor/uk/figures
 @dirrm share/gnome/help/gconf-editor/uk
 @dirrm share/gnome/help/gconf-editor/th/figures
@@ -243,6 +265,8 @@ share/omf/gconf-editor/gconf-editor-uk.omf
 @dirrm share/gnome/help/gconf-editor/el
 @dirrm share/gnome/help/gconf-editor/de/figures
 @dirrm share/gnome/help/gconf-editor/de
+@dirrm share/gnome/help/gconf-editor/cs/figures
+@dirrm share/gnome/help/gconf-editor/cs
 @dirrm share/gnome/help/gconf-editor/ca/figures
 @dirrm share/gnome/help/gconf-editor/ca
 @dirrm share/gnome/help/gconf-editor/C/figures
@@ -276,10 +300,14 @@ share/omf/gconf-editor/gconf-editor-uk.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

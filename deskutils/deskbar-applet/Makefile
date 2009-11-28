@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/deskutils/deskbar-applet/Makefile,v 1.3 2009/04/15 15:18:16 kwm Exp $
+#   $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.109 2009/09/22 10:54:20 kwm Exp $
 #
 
 PORTNAME=	deskbar-applet
-PORTVERSION=	2.26.2
-PORTREVISION=	1
+PORTVERSION=	2.28.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +17,7 @@ COMMENT=	Omnipresent versatile search interface
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/simplejson-2.0.9-py${PYTHON_VER}-${OPSYS:L}-${_OSRELEASE}-${ARCH}.egg:${PORTSDIR}/devel/py-simplejson
+		${LOCALBASE}/share/doc/py26-simplejson:${PORTSDIR}/devel/py-simplejson
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

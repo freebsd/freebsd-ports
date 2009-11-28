@@ -3,12 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gconf2/Makefile,v 1.106 2009/03/18 00:42:34 kwm Exp $
+#   $MCom: ports/devel/gconf2/Makefile,v 1.109 2009/09/22 20:20:31 kwm Exp $
 #
 
 PORTNAME=	gconf2
-PORTVERSION=	2.26.2
-PORTREVISION?=	1
+PORTVERSION=	2.28.0
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit.2:${PORTSDIR}/sysutils/policykit
+		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

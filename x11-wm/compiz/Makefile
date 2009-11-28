@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -83,7 +83,8 @@ DESKTOP_ENTRIES=	"Compiz Manager" \
 			false
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libpng|libpng12|' -e 's|gnome-desktop-2.0|gnome-desktop-2.0 gconf-2.0|g' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/compiz-manager ${PREFIX}/bin/compiz-manager

@@ -7,7 +7,7 @@
 
 PORTNAME=	mlview
 PORTVERSION=	0.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:22
-USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview
+USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview libgnomeui
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0 libgnomeui-2.0`" LIBS="-L${LOCALBASE}/lib `pkg-config --libs gnome-vfs-2.0 libgnomeui-2.0`"

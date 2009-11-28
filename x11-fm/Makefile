@@ -16,6 +16,7 @@
     SUBDIR += filerunner
     SUBDIR += fsv
     SUBDIR += gentoo
+    SUBDIR += gir-repository-nautilus
     SUBDIR += gnome-commander
     SUBDIR += gnome-commander2
     SUBDIR += gprename

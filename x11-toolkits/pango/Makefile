@@ -3,11 +3,11 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-toolkits/pango/Makefile,v 1.7 2009/04/15 22:25:48 kwm Exp $
+#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.149 2009/11/18 11:00:12 kwm Exp $
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.24.5
+PORTVERSION=	1.26.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME \
@@ -32,8 +32,7 @@ MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack glib20 ltverhack referencehack
-CONFIGURE_ARGS=	--with-qt=no \
-		--with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--enable-static
 # Hmm.. tough one.  Found this one when I had graphics/hdf installed
 # (which installs glist.h) which is picked up before the glib-2.0
@@ -45,7 +44,7 @@ PLIST_SUB=	VERSION="1.6.0"
 FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 
-MAN1=		pango-view.1 pango-querymodules.1 preload.1
+MAN1=		pango-view.1 pango-querymodules.1
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-x=no
@@ -61,6 +60,12 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 PLIST_SUB+=		X11=""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
+.endif
+
+.include <bsd.port.post.mk>
 
 .endif

@@ -1,0 +1,20 @@
+--- configure.orig	2009-10-19 21:06:41.000000000 +1000
++++ configure	2009-10-19 23:38:22.000000000 +1000
+@@ -4710,7 +4710,7 @@
+ 
+ 
+ 	_ac_warning_def=error
+-	_ac_compliant_def="-ansi -pedantic -Wno-overlength-strings"
++	_ac_compliant_def="-ansi -pedantic"
+ 
+ 
+     # Check whether --enable-compile-warnings was given.
+@@ -4800,7 +4800,7 @@
+ 	done
+ 	unset option
+ 	if test "$enable_compile_warnings" = "error" ; then
+-	    warning_flags="$warning_flags -Werror"
++	    warning_flags="$warning_flags"
+ 	fi
+ 	;;
+     *)

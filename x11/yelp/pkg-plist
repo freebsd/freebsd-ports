@@ -16,12 +16,14 @@ share/locale/bn_IN/LC_MESSAGES/yelp.mo
 share/locale/br/LC_MESSAGES/yelp.mo
 share/locale/bs/LC_MESSAGES/yelp.mo
 share/locale/ca/LC_MESSAGES/yelp.mo
+share/locale/ca@valencia/LC_MESSAGES/yelp.mo
 share/locale/cs/LC_MESSAGES/yelp.mo
 share/locale/cy/LC_MESSAGES/yelp.mo
 share/locale/da/LC_MESSAGES/yelp.mo
 share/locale/de/LC_MESSAGES/yelp.mo
 share/locale/dz/LC_MESSAGES/yelp.mo
 share/locale/el/LC_MESSAGES/yelp.mo
+share/locale/en@shaw/LC_MESSAGES/yelp.mo
 share/locale/en_CA/LC_MESSAGES/yelp.mo
 share/locale/en_GB/LC_MESSAGES/yelp.mo
 share/locale/eo/LC_MESSAGES/yelp.mo
@@ -61,7 +63,7 @@ share/locale/mn/LC_MESSAGES/yelp.mo
 share/locale/mr/LC_MESSAGES/yelp.mo
 share/locale/ms/LC_MESSAGES/yelp.mo
 share/locale/nb/LC_MESSAGES/yelp.mo
-share/locale/nds@NFE/LC_MESSAGES/yelp.mo
+share/locale/nds/LC_MESSAGES/yelp.mo
 share/locale/ne/LC_MESSAGES/yelp.mo
 share/locale/nl/LC_MESSAGES/yelp.mo
 share/locale/nn/LC_MESSAGES/yelp.mo
@@ -115,12 +117,16 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 %%DATADIR%%/man.xml
 %%DATADIR%%/scrollkeeper.xml
 %%DATADIR%%/toc.xml
+%%DATADIR%%/ui/yelp-bookmarks-add.ui
+%%DATADIR%%/ui/yelp-bookmarks.ui
+%%DATADIR%%/ui/yelp-open-location.ui
+%%DATADIR%%/ui/yelp-preferences.ui
 %%DATADIR%%/ui/yelp-search-ui.xml
 %%DATADIR%%/ui/yelp-ui.xml
-%%DATADIR%%/ui/yelp.glade
 %%DATADIR%%/xslt/db-title.xsl
 %%DATADIR%%/xslt/db2html.xsl
 %%DATADIR%%/xslt/info2html.xsl
+%%DATADIR%%/xslt/mal2html.xsl
 %%DATADIR%%/xslt/man2html.xsl
 %%DATADIR%%/xslt/search2html.xsl
 %%DATADIR%%/xslt/toc2html.xsl
@@ -155,8 +161,8 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
-@dirrmtry share/locale/nds@NFE/LC_MESSAGES
-@dirrmtry share/locale/nds@NFE
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -173,8 +179,12 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrmtry share/locale/ks
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

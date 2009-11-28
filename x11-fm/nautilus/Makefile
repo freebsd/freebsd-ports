@@ -3,12 +3,11 @@
 # Whom:                 		ade, archie
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-fm/nautilus/Makefile,v 1.4 2009/04/15 12:03:35 kwm Exp $
+#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.186 2009/10/20 13:37:51 avl Exp $
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	2.26.3
-PORTREVISION=	2
+PORTVERSION=	2.28.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -32,7 +31,7 @@ USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	--enable-static --disable-packagekit
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 OPTIONS=	TRACKER "Enable Tracker Search (sysutils/tracker)" Off

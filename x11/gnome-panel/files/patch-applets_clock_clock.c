@@ -1,11 +1,11 @@
---- applets/clock/clock.c.orig	2008-02-26 14:17:49.000000000 +0100
-+++ applets/clock/clock.c	2008-02-26 18:01:17.000000000 +0100
-@@ -84,6 +84,8 @@
- 
- #define FALLBACK_CONFIG_TOOL "time-admin"
+--- applets/clock/clock.c.orig	2009-07-01 15:06:23.000000000 +0200
++++ applets/clock/clock.c	2009-07-19 15:59:26.000000000 +0200
+@@ -71,6 +71,8 @@
+ #include "set-timezone.h"
+ #include "system-timezone.h"
  
 +#define daylight 1
 +
- static const char *clock_config_tools [] = {
- 	CLOCK_TIME_UTILITY,
- 	FALLBACK_CONFIG_TOOL
+ #define INTERNETSECOND (864)
+ #define INTERNETBEAT   (86400)
+ 

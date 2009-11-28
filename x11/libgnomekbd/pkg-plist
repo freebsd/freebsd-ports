@@ -9,20 +9,24 @@ include/libgnomekbd/gkbd-util.h
 lib/libgnomekbd.a
 lib/libgnomekbd.la
 lib/libgnomekbd.so
-lib/libgnomekbd.so.3
+lib/libgnomekbd.so.4
 lib/libgnomekbdui.a
 lib/libgnomekbdui.la
 lib/libgnomekbdui.so
-lib/libgnomekbdui.so.3
+lib/libgnomekbdui.so.4
 libdata/pkgconfig/libgnomekbd.pc
 libdata/pkgconfig/libgnomekbdui.pc
 share/applications/gkbd-indicator-plugins-capplet.desktop
-%%DATADIR%%/glade/gkbd-indicator-plugins.glade
+%%DATADIR%%/ui/gkbd-indicator-plugins.ui
+%%DATADIR%%/ui/gkbd-indicator-plugins_add.ui
 share/locale/ar/LC_MESSAGES/libgnomekbd.mo
+share/locale/as/LC_MESSAGES/libgnomekbd.mo
 share/locale/be@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/bg/LC_MESSAGES/libgnomekbd.mo
+share/locale/bn/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn_IN/LC_MESSAGES/libgnomekbd.mo
 share/locale/ca/LC_MESSAGES/libgnomekbd.mo
+share/locale/ca@valencia/LC_MESSAGES/libgnomekbd.mo
 share/locale/cs/LC_MESSAGES/libgnomekbd.mo
 share/locale/da/LC_MESSAGES/libgnomekbd.mo
 share/locale/de/LC_MESSAGES/libgnomekbd.mo
@@ -34,6 +38,7 @@ share/locale/et/LC_MESSAGES/libgnomekbd.mo
 share/locale/eu/LC_MESSAGES/libgnomekbd.mo
 share/locale/fi/LC_MESSAGES/libgnomekbd.mo
 share/locale/fr/LC_MESSAGES/libgnomekbd.mo
+share/locale/ga/LC_MESSAGES/libgnomekbd.mo
 share/locale/gl/LC_MESSAGES/libgnomekbd.mo
 share/locale/gu/LC_MESSAGES/libgnomekbd.mo
 share/locale/he/LC_MESSAGES/libgnomekbd.mo
@@ -42,9 +47,11 @@ share/locale/hu/LC_MESSAGES/libgnomekbd.mo
 share/locale/it/LC_MESSAGES/libgnomekbd.mo
 share/locale/ja/LC_MESSAGES/libgnomekbd.mo
 share/locale/ka/LC_MESSAGES/libgnomekbd.mo
+share/locale/kn/LC_MESSAGES/libgnomekbd.mo
 share/locale/ko/LC_MESSAGES/libgnomekbd.mo
 share/locale/lt/LC_MESSAGES/libgnomekbd.mo
 share/locale/lv/LC_MESSAGES/libgnomekbd.mo
+share/locale/mai/LC_MESSAGES/libgnomekbd.mo
 share/locale/mk/LC_MESSAGES/libgnomekbd.mo
 share/locale/ml/LC_MESSAGES/libgnomekbd.mo
 share/locale/mr/LC_MESSAGES/libgnomekbd.mo
@@ -74,7 +81,7 @@ share/locale/vi/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_HK/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomekbd.mo
-@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/libgnomekbd
@@ -90,6 +97,8 @@ share/locale/zh_TW/LC_MESSAGES/libgnomekbd.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

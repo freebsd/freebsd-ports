@@ -35,8 +35,10 @@ share/locale/be/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bn/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/libgnome-2.0.mo
+share/locale/br/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bs/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ca@valencia/LC_MESSAGES/libgnome-2.0.mo
 share/locale/crh/LC_MESSAGES/libgnome-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnome-2.0.mo
 share/locale/cy/LC_MESSAGES/libgnome-2.0.mo
@@ -66,6 +68,7 @@ share/locale/is/LC_MESSAGES/libgnome-2.0.mo
 share/locale/it/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ja/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ka/LC_MESSAGES/libgnome-2.0.mo
+share/locale/kn/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ku/LC_MESSAGES/libgnome-2.0.mo
 share/locale/lt/LC_MESSAGES/libgnome-2.0.mo
@@ -151,6 +154,8 @@ share/pixmaps/backgrounds/gnome/background-default.jpg
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/ast/LC_MESSAGES

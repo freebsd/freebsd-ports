@@ -1,6 +1,6 @@
-bin/nautilus-actions-config
-bin/nautilus-actions-convert
-bin/nautilus-actions-new-config
+bin/nautilus-actions-config-tool
+bin/nautilus-actions-new
+bin/nautilus-actions-schemas
 lib/nautilus/extensions-2.0/libnautilus-actions.la
 lib/nautilus/extensions-2.0/libnautilus-actions.so
 share/applications/nact.desktop
@@ -12,36 +12,64 @@ share/icons/hicolor/scalable/apps/nautilus-actions.svg
 share/locale/ar/LC_MESSAGES/nautilus-actions.mo
 share/locale/bg/LC_MESSAGES/nautilus-actions.mo
 share/locale/bn/LC_MESSAGES/nautilus-actions.mo
+share/locale/bn_IN/LC_MESSAGES/nautilus-actions.mo
 share/locale/ca/LC_MESSAGES/nautilus-actions.mo
 share/locale/cs/LC_MESSAGES/nautilus-actions.mo
 share/locale/da/LC_MESSAGES/nautilus-actions.mo
 share/locale/de/LC_MESSAGES/nautilus-actions.mo
 share/locale/dz/LC_MESSAGES/nautilus-actions.mo
+share/locale/el/LC_MESSAGES/nautilus-actions.mo
 share/locale/en_CA/LC_MESSAGES/nautilus-actions.mo
 share/locale/en_GB/LC_MESSAGES/nautilus-actions.mo
 share/locale/es/LC_MESSAGES/nautilus-actions.mo
+share/locale/eu/LC_MESSAGES/nautilus-actions.mo
 share/locale/fi/LC_MESSAGES/nautilus-actions.mo
 share/locale/fr/LC_MESSAGES/nautilus-actions.mo
 share/locale/gl/LC_MESSAGES/nautilus-actions.mo
 share/locale/gu/LC_MESSAGES/nautilus-actions.mo
 share/locale/he/LC_MESSAGES/nautilus-actions.mo
+share/locale/hi/LC_MESSAGES/nautilus-actions.mo
+share/locale/it/LC_MESSAGES/nautilus-actions.mo
 share/locale/ja/LC_MESSAGES/nautilus-actions.mo
+share/locale/kn/LC_MESSAGES/nautilus-actions.mo
+share/locale/ko/LC_MESSAGES/nautilus-actions.mo
 share/locale/lt/LC_MESSAGES/nautilus-actions.mo
 share/locale/lv/LC_MESSAGES/nautilus-actions.mo
+share/locale/mk/LC_MESSAGES/nautilus-actions.mo
+share/locale/mr/LC_MESSAGES/nautilus-actions.mo
 share/locale/nb/LC_MESSAGES/nautilus-actions.mo
 share/locale/nl/LC_MESSAGES/nautilus-actions.mo
+share/locale/oc/LC_MESSAGES/nautilus-actions.mo
+share/locale/or/LC_MESSAGES/nautilus-actions.mo
 share/locale/pa/LC_MESSAGES/nautilus-actions.mo
+share/locale/pl/LC_MESSAGES/nautilus-actions.mo
+share/locale/pt/LC_MESSAGES/nautilus-actions.mo
 share/locale/pt_BR/LC_MESSAGES/nautilus-actions.mo
+share/locale/ru/LC_MESSAGES/nautilus-actions.mo
+share/locale/sl/LC_MESSAGES/nautilus-actions.mo
 share/locale/sv/LC_MESSAGES/nautilus-actions.mo
+share/locale/ta/LC_MESSAGES/nautilus-actions.mo
+share/locale/te/LC_MESSAGES/nautilus-actions.mo
 share/locale/th/LC_MESSAGES/nautilus-actions.mo
 share/locale/vi/LC_MESSAGES/nautilus-actions.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-actions.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus-actions.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-actions.mo
-share/nautilus-actions/nact/nautilus-actions-config.glade
-@dirrm share/nautilus-actions/nact
-@dirrm share/nautilus-actions
+%%DATADIR%%/nautilus-actions.schemas
+%%DATADIR%%/nautilus-actions-config-tool.actions
+%%DATADIR%%/nautilus-actions-config-tool.ui
+%%DATADIR%%/nact-assistant-export.ui
+@dirrm %%DATADIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/applications

@@ -17,6 +17,7 @@ lib/libnautilus-extension.a
 lib/libnautilus-extension.la
 lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
+libexec/nautilus-convert-metadata
 libdata/pkgconfig/libnautilus-extension.pc
 share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus-browser.desktop

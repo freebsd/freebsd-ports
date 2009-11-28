@@ -1,0 +1,11 @@
+--- help/Makefile.in.orig	2009-05-10 03:06:15.000000000 -0400
++++ help/Makefile.in	2009-05-10 03:06:29.000000000 -0400
+@@ -783,7 +783,7 @@ $(DOC_H_FILE): $(DOC_H_DOCS);
+ 	  xsltproc --path "$$xmlpath" $(_credits) $$doc; \
+ 	done | sort | uniq \
+ 	  | awk 'BEGIN{s=""}{n=split($$0,w,"<");if(s!=""&&s!=substr(w[1],1,length(w[1])-1)){print s};if(n>1){print $$0;s=""}else{s=$$0}};END{if(s!=""){print s}}' \
+-	  | sed -e 's/\\/\\\\/' -e 's/"/\\"/' -e 's/\(.*\)/\t"\1",/' >> $@.tmp
++	  | sed -e 's/\\/\\\\/' -e 's/"/\\"/' -e 's/\(.*\)/	"\1",/' >> $@.tmp
+ 	echo '	NULL' >> $@.tmp
+ 	echo '};' >> $@.tmp
+ 	echo >> $@.tmp

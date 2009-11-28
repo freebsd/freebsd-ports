@@ -1,0 +1,33 @@
+Running
+
+You can either start gnome-shell "nested" in a window within your current 
+session, or you can run it within your session replacing gnome-panel and 
+window manager.
+
+Depending on the state of your X drivers, one or of the other of these may
+work better. So, if the first one you try doesn't work, try the other.
+
+====
+
+Running gnome-shell replacing the panel
+
+This approach is best when trying out the GNOME Shell and wanting to see its
+full potential.
+
+gnome-shell --replace
+
+When gnome-shell exits (you can kill it with Control-C in the terminal in which
+you started it), gnome-panel and metacity are restarted.
+
+====
+
+Running gnome-shell nested
+
+This approach is useful when developing the GNOME Shell and wanting to quickly
+test some changes. NOTE: It isn't useful for getting a good feel for how the
+shell works since it will be really slow, and won't properly integrate with
+the rest of your desktop.
+
+gnome-shell
+(This requires a relatively recent version of Xephyr with GLX support to be
+installed on your system (x11-servers/xephyr).

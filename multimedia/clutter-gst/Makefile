@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	clutter-gst
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
+MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.10/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
 
-LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack ltverhack gnomeprefix
 USE_GSTREAMER=	yes

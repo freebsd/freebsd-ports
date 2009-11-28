@@ -3,7 +3,7 @@
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/librsvg2/Makefile,v 1.5 2009/04/20 05:55:53 marcus Exp $
+#   $MCom: ports/graphics/librsvg2/Makefile,v 1.128 2009/11/28 05:59:01 mezz Exp $
 #
 
 PORTNAME=	librsvg2
@@ -47,10 +47,8 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" on
 
 .if defined(WITH_MOZILLA_PLUGIN)
 USE_GECKO=	libxul seamonkey
-USE_WEBPLUGINS=	gecko*
+USE_WEBPLUGINS=	gecko19
 WEBPLUGINS_FILES=libmozsvgdec.so
-.include "${PORTSDIR}/Mk/bsd.gecko.mk"
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 CONFIGURE_ENV+=	MOZILLA_CONFIG=no
 CONFIGURE_ARGS+=--enable-mozilla-plugin=yes
 
@@ -63,7 +61,7 @@ PLIST_SUB+=	PLUGIN="@comment "
 
 post-patch:
 .if defined(WITH_MOZILLA_PLUGIN)
-.if ${GECKO:Mlibxul}==""
+.if "${GECKO:Mlibxul}"
 	@${REINPLACE_CMD} -e 's|mozilla-plugin|${GECKO}-plugin|g' \
 		${WRKSRC}/configure
 .endif
