@@ -7,11 +7,10 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
-
 DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
@@ -49,6 +48,9 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's|/usr/X11R6/lib|${LOCALBASE}/lib|' \
 	   	${WRKSRC}/src/Makefile.in ${WRKSRC}/src/xkbmap.cpp
+	@${REINPLACE_CMD} \
+		's|/usr/lib|${LOCALBASE}/lib|' \
+		${WRKSRC}/scim_kmfl_imengine_setup/scim_kmfl_imengine_setup.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)
