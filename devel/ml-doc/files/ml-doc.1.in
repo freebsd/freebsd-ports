@@ -117,12 +117,12 @@
 .Op Fl root Ar file
 .Ar mldoc-files
 .Sh DESCRIPTION
-.ML-Doc
+ML-Doc
 is a system for producing reference manuals for SML libraries. It can
 produce high quality documentation with extensive indexing, like the
 published SML Basis Library reference manual, and also HTML for online use.
 .Pp
-.ML-Doc
+ML-Doc
 is different to systems like javadoc that extract documentation from source
 files.
 Rather, the documentation
@@ -132,14 +132,14 @@ the primary artifact\(emin fact
 can be used to create source files from documentation. The
 .Xr mkdoc 1
 utility, however, can produce first drafts from source files.
-.ML-Doc
+ML-Doc
 is most useful for documenting stable library interfaces.
 .Pp
-.ML-Doc
+ML-Doc
 files, marked by the extension
 .Pa .mldoc ,
 are SGML documents conforming to the
-.ML-Doc
+ML-Doc
 document type definition.
 .Pp
 This manual has four major sections besides the present one:
@@ -431,7 +431,7 @@ extension.
 .\"
 .Ss Directory structure
 An
-.ML-Doc
+ML-Doc
 .Em project
 comprises a set of files and directories that, at a minimum, will include:
 .Bl -tag -width ".Pa index.template"
@@ -440,7 +440,7 @@ comprises a set of files and directories that, at a minimum, will include:
 Typically links to
 .Pa Entities.sgml
 in the same directory and the installed
-.ML-Doc
+ML-Doc
 .Pa CATALOG
 file.
 See
@@ -608,7 +608,7 @@ URL of the table of contents
 .\"
 .Ss Entities
 Entities are used within
-.ML-Doc
+ML-Doc
 to include mathematical and other
 specialised symbols, to abbreviate titles and other text, to reference
 files, and to name certain output files.
@@ -643,7 +643,7 @@ files:
 .D1 This feature requires the &SMLNJ; libraries.
 .Pp
 Documentation will sometimes need to reference the
-.ML-Doc
+ML-Doc
 descriptions of other libraries; such as those of the SML Basis, SML/NJ, or
 Concurrent ML.
 The reference tags described under
@@ -691,7 +691,7 @@ This example refers to a master info file installed with SML/NJ and directs
 hyperlinks to the online documentation.
 .Pp
 Entities are also used within
-.ML-Doc
+ML-Doc
 to specify values for the
 .Li FILE
 attribute, which specifies an input file for the
@@ -713,7 +713,7 @@ would be extracted to a file named
 .\"
 .Ss General Use
 A simplified sequence of steps for creating
-.ML-Doc
+ML-Doc
 documentation:
 .Bl -enum
 .\" **
@@ -807,7 +807,7 @@ This section essentially elaborates on the
 .Pa ml-doc.dtd
 file.
 An
-.ML-Doc
+ML-Doc
 file begins with the declaration:
 .Dl <!DOCTYPE ML-DOC SYSTEM>
 and contains header elements followed by one or more, potentially nested,
@@ -928,7 +928,7 @@ A corresponding
 file, for HTML output, and/or
 .Pa *.tex
 file, for LaTeX output, is generated for each
-.ML-Doc
+ML-Doc
 source file.
 A complete document is constructed by including, with
 .Li INCLFILE
@@ -1859,7 +1859,7 @@ Displays, 19\(em25
 .\" ----------------------------------------
 .Sh SGML vs HTML/XML
 Although the basics of editing
-.ML-Doc
+ML-Doc
 will be familiar to most authors of HTML and XML, SGML has some peculiarities
 that are designed to make editing
 .Sq by hand
@@ -1899,7 +1899,7 @@ These details are well described in Chapter 9 of
 .\" ----------------------------------------
 .Sh FILES
 System-wide
-.ML-Doc
+ML-Doc
 files and directories are stored at:
 .Dl %%PREFIX%%/share/ml-doc
 Notably:
@@ -1908,7 +1908,7 @@ Notably:
 Master catalog file.
 .It Pa lib/ml-doc.dtd
 DTD of
-.ML-Doc
+ML-Doc
 language.
 .It Pa lib/entities.sgml
 Entity definitions
@@ -1923,7 +1923,14 @@ After creating the directory structure
 .Pq see Sx Directory Structure ,
 and writing up the ML-Doc files
 .Pq see Sx WRITING DOCUMENTATION ,
-create a
+first edit the
+.Pa CATALOG
+file:
+.Bd -literal -offset indent -compact
+ENTITY    %document-entities    "Entities.sgml"
+CATALOG                         "%%PREFIX%%/share/ml-doc/lib/catalog"
+.Ed
+Then, create a
 .Pa Makefile :
 .Dl find ML-Doc -name '*.mldoc' -print | mk-mldoc-makefile
 .Pp
