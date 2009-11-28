@@ -18,8 +18,6 @@ DOCSDIR=	${PREFIX}/share/doc/glibmm-2.4
 post-patch:
 	@${FIND} ${WRKSRC}/examples -name Makefile.in \
 		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-gmmproc_binSCRIPTS||' \
-		${WRKSRC}/docs/reference/Makefile.in
 
 post-build:
 	@${TOUCH} ${WRKSRC}/docs/reference/html/index.html

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwget
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	ftp gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 gconf2 libgnomeui \
-		libglade2 desktopfileutils
+		desktopfileutils
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--disable-libnotify
 BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 CONFIGURE_ARGS+=	--enable-epiphany-extension
-PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.26"
+PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.28"
 .else
 CONFIGURE_ARGS+=	--disable-epiphany-extension
 PLIST_SUB+=	EPIPHANY="@comment "

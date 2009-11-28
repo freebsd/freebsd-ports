@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc-wikipedia
 PORTVERSION=	0.19.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +17,7 @@ COMMENT=	Wikipedia info for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		curl.5:${PORTSDIR}/ftp/curl \
-		webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
+		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 

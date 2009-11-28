@@ -1,45 +1,164 @@
 bin/vinagre
 libdata/bonobo/servers/GNOME_VinagreApplet.server
 libexec/vinagre-applet
+include/vinagre-1.0/vinagre/vinagre-app.h
+include/vinagre-1.0/vinagre/vinagre-bacon.h
+include/vinagre-1.0/vinagre/vinagre-bookmarks-entry.h
+include/vinagre-1.0/vinagre/vinagre-bookmarks-migration.h
+include/vinagre-1.0/vinagre/vinagre-bookmarks-tree.h
+include/vinagre-1.0/vinagre/vinagre-bookmarks-ui.h
+include/vinagre-1.0/vinagre/vinagre-bookmarks.h
+include/vinagre-1.0/vinagre/vinagre-commands.h
+include/vinagre-1.0/vinagre/vinagre-connect.h
+include/vinagre-1.0/vinagre/vinagre-connection.h
+include/vinagre-1.0/vinagre/vinagre-debug.h
+include/vinagre-1.0/vinagre/vinagre-dirs.h
+include/vinagre-1.0/vinagre/vinagre-dnd.h
+include/vinagre-1.0/vinagre/vinagre-fav.h
+include/vinagre-1.0/vinagre/vinagre-notebook.h
+include/vinagre-1.0/vinagre/vinagre-plugin-loader.h
+include/vinagre-1.0/vinagre/vinagre-plugin.h
+include/vinagre-1.0/vinagre/vinagre-prefs.h
+include/vinagre-1.0/vinagre/vinagre-tab.h
+include/vinagre-1.0/vinagre/vinagre-ui.h
+include/vinagre-1.0/vinagre/vinagre-utils.h
+include/vinagre-1.0/vinagre/vinagre-window.h
+lib/vinagre-1/plugin-loaders/libcloader.la
+lib/vinagre-1/plugin-loaders/libcloader.so
+lib/vinagre-1/plugins/libssh.la
+lib/vinagre-1/plugins/libssh.so
+lib/vinagre-1/plugins/libvnc.la
+lib/vinagre-1/plugins/libvnc.so
+lib/vinagre-1/plugins/ssh.vinagre-plugin
+lib/vinagre-1/plugins/vnc.vinagre-plugin
+libdata/pkgconfig/vinagre-1.0.pc
 share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
+%%TELEPATHY%%share/dbus-1/services/org.gnome.Empathy.StreamTubeHandler.rfb.service
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/gnome/help/vinagre/C/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/C/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/C/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/C/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/C/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/C/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/C/legal.xml
 share/gnome/help/vinagre/C/vinagre.xml
+share/gnome/help/vinagre/ca/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/ca/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/ca/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/ca/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/ca/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/ca/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/ca/vinagre.xml
+share/gnome/help/vinagre/cs/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/cs/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/cs/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/cs/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/cs/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/cs/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/cs/vinagre.xml
+share/gnome/help/vinagre/de/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/de/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/de/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/de/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/de/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/de/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/de/vinagre.xml
+share/gnome/help/vinagre/el/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/el/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/el/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/el/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/el/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/el/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/el/vinagre.xml
+share/gnome/help/vinagre/en_GB/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/en_GB/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/en_GB/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/en_GB/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/en_GB/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/en_GB/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/en_GB/vinagre.xml
+share/gnome/help/vinagre/es/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/es/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/es/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/es/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/es/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/es/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/es/vinagre.xml
+share/gnome/help/vinagre/fr/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/fr/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/fr/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/fr/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/fr/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/fr/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/fr/vinagre.xml
+share/gnome/help/vinagre/it/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/it/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/it/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/it/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/it/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/it/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/it/vinagre.xml
+share/gnome/help/vinagre/oc/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/oc/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/oc/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/oc/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/oc/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/oc/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/oc/vinagre.xml
+share/gnome/help/vinagre/pl/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/pl/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/pl/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/pl/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/pl/figures/vinagre-saving-bookmarks.png
+share/gnome/help/vinagre/pl/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/pl/vinagre.xml
+share/gnome/help/vinagre/pt/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/pt/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/pt/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/pt/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/pt/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/pt/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/pt/vinagre.xml
+share/gnome/help/vinagre/pt_BR/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/pt_BR/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/pt_BR/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/pt_BR/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/pt_BR/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/pt_BR/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/pt_BR/vinagre.xml
+share/gnome/help/vinagre/sq/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/sq/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/sq/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/sq/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/sq/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/sq/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/sq/vinagre.xml
+share/gnome/help/vinagre/sv/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/sv/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/sv/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/sv/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/sv/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/sv/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/sv/vinagre.xml
+share/gnome/help/vinagre/th/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/th/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/th/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/th/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/th/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/th/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/th/vinagre.xml
+share/gnome/help/vinagre/zh_CN/figures/vinagre-auth-needed.png
+share/gnome/help/vinagre/zh_CN/figures/vinagre-bookmarks-side-panel.png
+share/gnome/help/vinagre/zh_CN/figures/vinagre-connect-dialog.png
+share/gnome/help/vinagre/zh_CN/figures/vinagre-editing-bookmarks.png
+share/gnome/help/vinagre/zh_CN/figures/vinagre-saving-bookmarks.png
 share/gnome/help/vinagre/zh_CN/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/zh_CN/vinagre.xml
 share/icons/hicolor/16x16/apps/vinagre.png
@@ -69,8 +188,10 @@ share/locale/as/LC_MESSAGES/vinagre.mo
 share/locale/ast/LC_MESSAGES/vinagre.mo
 share/locale/be@latin/LC_MESSAGES/vinagre.mo
 share/locale/bg/LC_MESSAGES/vinagre.mo
+share/locale/bn/LC_MESSAGES/vinagre.mo
 share/locale/bn_IN/LC_MESSAGES/vinagre.mo
 share/locale/ca/LC_MESSAGES/vinagre.mo
+share/locale/ca@valencia/LC_MESSAGES/vinagre.mo
 share/locale/cs/LC_MESSAGES/vinagre.mo
 share/locale/da/LC_MESSAGES/vinagre.mo
 share/locale/de/LC_MESSAGES/vinagre.mo
@@ -81,6 +202,7 @@ share/locale/et/LC_MESSAGES/vinagre.mo
 share/locale/eu/LC_MESSAGES/vinagre.mo
 share/locale/fi/LC_MESSAGES/vinagre.mo
 share/locale/fr/LC_MESSAGES/vinagre.mo
+share/locale/ga/LC_MESSAGES/vinagre.mo
 share/locale/gl/LC_MESSAGES/vinagre.mo
 share/locale/gu/LC_MESSAGES/vinagre.mo
 share/locale/he/LC_MESSAGES/vinagre.mo
@@ -93,6 +215,7 @@ share/locale/ko/LC_MESSAGES/vinagre.mo
 share/locale/ku/LC_MESSAGES/vinagre.mo
 share/locale/lt/LC_MESSAGES/vinagre.mo
 share/locale/lv/LC_MESSAGES/vinagre.mo
+share/locale/mai/LC_MESSAGES/vinagre.mo
 share/locale/mk/LC_MESSAGES/vinagre.mo
 share/locale/ml/LC_MESSAGES/vinagre.mo
 share/locale/mr/LC_MESSAGES/vinagre.mo
@@ -135,6 +258,7 @@ share/omf/vinagre/vinagre-es.omf
 share/omf/vinagre/vinagre-fr.omf
 share/omf/vinagre/vinagre-it.omf
 share/omf/vinagre/vinagre-oc.omf
+share/omf/vinagre/vinagre-pl.omf
 share/omf/vinagre/vinagre-pt.omf
 share/omf/vinagre/vinagre-pt_BR.omf
 share/omf/vinagre/vinagre-sq.omf
@@ -143,7 +267,7 @@ share/omf/vinagre/vinagre-th.omf
 share/omf/vinagre/vinagre-zh_CN.omf
 %%DATADIR%%/GNOME_VinagreApplet.xml
 %%DATADIR%%/vinagre-ui.xml
-%%DATADIR%%/vinagre.glade
+%%DATADIR%%/vinagre.ui
 @dirrm %%DATADIR%%
 @dirrm share/omf/vinagre
 @dirrm share/gnome/help/vinagre/zh_CN/figures
@@ -158,6 +282,8 @@ share/omf/vinagre/vinagre-zh_CN.omf
 @dirrm share/gnome/help/vinagre/pt_BR
 @dirrm share/gnome/help/vinagre/pt/figures
 @dirrm share/gnome/help/vinagre/pt
+@dirrm share/gnome/help/vinagre/pl/figures
+@dirrm share/gnome/help/vinagre/pl
 @dirrm share/gnome/help/vinagre/oc/figures
 @dirrm share/gnome/help/vinagre/oc
 @dirrm share/gnome/help/vinagre/it/figures
@@ -181,6 +307,11 @@ share/omf/vinagre/vinagre-zh_CN.omf
 @dirrm share/gnome/help/vinagre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrm lib/vinagre-1/plugins
+@dirrm lib/vinagre-1/plugin-loaders
+@dirrm lib/vinagre-1
+@dirrm include/vinagre-1.0/vinagre
+@dirrm include/vinagre-1.0
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -197,8 +328,12 @@ share/omf/vinagre/vinagre-zh_CN.omf
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ca@valencia//LC_MESSAGES
+@dirrmtry share/locale/ca@valencia/
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

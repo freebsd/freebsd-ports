@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/net/vinagre/Makefile,v 1.1 2009/04/15 09:36:08 kwm Exp $
+#   $MCom: ports/net/vinagre/Makefile,v 1.32 2009/10/19 13:20:56 avl Exp $
 #
 
 PORTNAME=	vinagre
-PORTVERSION=	2.26.2
-PORTREVISION=	1
+PORTVERSION=	2.28.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,19 +22,32 @@ LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libglade2 gconf2 gnomedocutils \
+USE_GNOME=	gnomeprefix intlhack gnomehack vte gconf2 gnomedocutils \
 		gnomepanel
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--enable-avahi
+CONFIGURE_ARGS=	--enable-avahi --enable-applet -enable-ssh
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	vinagre.schemas
 
 MAN1=		vinagre.1
+
+OPTIONS=	TELEPATHY "Enable telepathy integration" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_TELEPATHY)
+CONFIGURE_ARGS+=--enable-telepathy
+LIB_DEPENDS+=	telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+PLIST_SUB+=	TELEPATHY=""
+.else
+CONFIGURE_ARGS+=--disable-telepathy
+PLIST_SUB+=	TELEPATHY="@comment "
+.endif
 
 post-install:
 	@-update-desktop-database > /dev/null
@@ -47,4 +59,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

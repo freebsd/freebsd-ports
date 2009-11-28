@@ -1,14 +1,14 @@
---- gui/simple-greeter/gdm-user.c.orig	2009-05-16 17:52:57.000000000 -0400
-+++ gui/simple-greeter/gdm-user.c	2009-05-16 18:08:08.000000000 -0400
-@@ -412,6 +412,7 @@ _gdm_user_update (GdmUser             *u
+--- gui/simple-greeter/gdm-user.c.orig	2009-07-20 03:09:09.000000000 +0200
++++ gui/simple-greeter/gdm-user.c	2009-07-20 10:09:41.000000000 +0200
+@@ -427,6 +427,7 @@ _gdm_user_update (GdmUser             *u
          /* Display Name */
          if (pwent->pw_gecos && pwent->pw_gecos[0] != '\0') {
                  gchar *first_comma;
 +		gchar *ampersand;
+                 gchar *real_name_utf8;
  
-                 first_comma = strchr (pwent->pw_gecos, ',');
-                 if (first_comma) {
-@@ -425,6 +426,23 @@ _gdm_user_update (GdmUser             *u
+                 real_name_utf8 = g_locale_to_utf8 (pwent->pw_gecos, -1, NULL, NULL, NULL);
+@@ -443,6 +444,23 @@ _gdm_user_update (GdmUser             *u
                          g_free (real_name);
                          real_name = NULL;
                  }

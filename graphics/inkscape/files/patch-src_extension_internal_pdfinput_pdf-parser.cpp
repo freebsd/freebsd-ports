@@ -1,164 +1,89 @@
---- src/extension/internal/pdfinput/pdf-parser.cpp	2008/03/29 09:49:50	18077
-+++ src/extension/internal/pdfinput/pdf-parser.cpp	2008/06/12 18:14:25	18894
-@@ -2191,6 +2191,151 @@
+--- src/extension/internal/pdfinput/pdf-parser.cpp.orig	2009-11-26 03:14:38.000000000 +0100
++++ src/extension/internal/pdfinput/pdf-parser.cpp	2009-11-26 03:14:47.000000000 +0100
+@@ -809,7 +809,7 @@ void PdfParser::opSetExtGState(Object ar
+ 	  blendingColorSpace = NULL;
+ 	  isolated = knockout = gFalse;
+ 	  if (!obj4.dictLookup(const_cast<char*>("CS"), &obj5)->isNull()) {
+-	    blendingColorSpace = GfxColorSpace::parse(&obj5);
++	    blendingColorSpace = GfxColorSpace::parse(&obj5,(Gfx*)this);
+ 	  }
+ 	  obj5.free();
+ 	  if (obj4.dictLookup(const_cast<char*>("I"), &obj5)->isBool()) {
+@@ -1009,9 +1009,9 @@ void PdfParser::opSetFillColorSpace(Obje
+   state->setFillPattern(NULL);
+   res->lookupColorSpace(args[0].getName(), &obj);
+   if (obj.isNull()) {
+-    colorSpace = GfxColorSpace::parse(&args[0]);
++    colorSpace = GfxColorSpace::parse(&args[0],(Gfx*)this);
+   } else {
+-    colorSpace = GfxColorSpace::parse(&obj);
++    colorSpace = GfxColorSpace::parse(&obj,(Gfx*)this);
    }
- }
+   obj.free();
+   if (colorSpace) {
+@@ -1032,9 +1032,9 @@ void PdfParser::opSetStrokeColorSpace(Ob
+   state->setStrokePattern(NULL);
+   res->lookupColorSpace(args[0].getName(), &obj);
+   if (obj.isNull()) {
+-    colorSpace = GfxColorSpace::parse(&args[0]);
++    colorSpace = GfxColorSpace::parse(&args[0],(Gfx*)this);
+   } else {
+-    colorSpace = GfxColorSpace::parse(&obj);
++    colorSpace = GfxColorSpace::parse(&obj,(Gfx*)this);
+   }
+   obj.free();
+   if (colorSpace) {
+@@ -1101,7 +1101,7 @@ void PdfParser::opSetFillColorN(Object a
+       builder->updateStyle(state);
+     }
+     if (args[numArgs-1].isName() &&
+-	(pattern = res->lookupPattern(args[numArgs-1].getName()))) {
++	(pattern = res->lookupPattern(args[numArgs-1].getName(),(Gfx*)this))) {
+       state->setFillPattern(pattern);
+       builder->updateStyle(state);
+     }
+@@ -1145,7 +1145,7 @@ void PdfParser::opSetStrokeColorN(Object
+       builder->updateStyle(state);
+     }
+     if (args[numArgs-1].isName() &&
+-	(pattern = res->lookupPattern(args[numArgs-1].getName()))) {
++	(pattern = res->lookupPattern(args[numArgs-1].getName(),(Gfx*)this))) {
+       state->setStrokePattern(pattern);
+       builder->updateStyle(state);
+     }
+@@ -1543,7 +1543,7 @@ void PdfParser::opShFill(Object args[], 
+   double *matrix = NULL;
+   GBool savedState = gFalse;
  
-+
-+#if 1
-+
-+/**
-+ * This is for the change to GfxFont's getNextChar() call.
-+ * Thanks to tsdgeos for the fix.
-+ * Miklos, does this look ok?
-+ */   
-+
-+void PdfParser::doShowText(GooString *s) {
-+  GfxFont *font;
-+  int wMode;
-+  double riseX, riseY;
-+  CharCode code;
-+  Unicode *u = NULL;
-+  double x, y, dx, dy, dx2, dy2, curX, curY, tdx, tdy, lineX, lineY;
-+  double originX, originY, tOriginX, tOriginY;
-+  double oldCTM[6], newCTM[6];
-+  double *mat;
-+  Object charProc;
-+  Dict *resDict;
-+  Parser *oldParser;
-+  char *p;
-+  int len, n, uLen, nChars, nSpaces, i;
-+
-+  font = state->getFont();
-+  wMode = font->getWMode();
-+
-+  builder->beginString(state, s);
-+
-+  // handle a Type 3 char
-+  if (font->getType() == fontType3 && 0) {//out->interpretType3Chars()) {
-+    mat = state->getCTM();
-+    for (i = 0; i < 6; ++i) {
-+      oldCTM[i] = mat[i];
-+    }
-+    mat = state->getTextMat();
-+    newCTM[0] = mat[0] * oldCTM[0] + mat[1] * oldCTM[2];
-+    newCTM[1] = mat[0] * oldCTM[1] + mat[1] * oldCTM[3];
-+    newCTM[2] = mat[2] * oldCTM[0] + mat[3] * oldCTM[2];
-+    newCTM[3] = mat[2] * oldCTM[1] + mat[3] * oldCTM[3];
-+    mat = font->getFontMatrix();
-+    newCTM[0] = mat[0] * newCTM[0] + mat[1] * newCTM[2];
-+    newCTM[1] = mat[0] * newCTM[1] + mat[1] * newCTM[3];
-+    newCTM[2] = mat[2] * newCTM[0] + mat[3] * newCTM[2];
-+    newCTM[3] = mat[2] * newCTM[1] + mat[3] * newCTM[3];
-+    newCTM[0] *= state->getFontSize();
-+    newCTM[1] *= state->getFontSize();
-+    newCTM[2] *= state->getFontSize();
-+    newCTM[3] *= state->getFontSize();
-+    newCTM[0] *= state->getHorizScaling();
-+    newCTM[2] *= state->getHorizScaling();
-+    state->textTransformDelta(0, state->getRise(), &riseX, &riseY);
-+    curX = state->getCurX();
-+    curY = state->getCurY();
-+    lineX = state->getLineX();
-+    lineY = state->getLineY();
-+    oldParser = parser;
-+    p = s->getCString();
-+    len = s->getLength();
-+    while (len > 0) {
-+      n = font->getNextChar(p, len, &code,
-+			    &u, &uLen,
-+			    &dx, &dy, &originX, &originY);
-+      dx = dx * state->getFontSize() + state->getCharSpace();
-+      if (n == 1 && *p == ' ') {
-+	dx += state->getWordSpace();
-+      }
-+      dx *= state->getHorizScaling();
-+      dy *= state->getFontSize();
-+      state->textTransformDelta(dx, dy, &tdx, &tdy);
-+      state->transform(curX + riseX, curY + riseY, &x, &y);
-+      saveState();
-+      state->setCTM(newCTM[0], newCTM[1], newCTM[2], newCTM[3], x, y);
-+      //~ the CTM concat values here are wrong (but never used)
-+      //out->updateCTM(state, 1, 0, 0, 1, 0, 0);
-+      if (0){ /*!out->beginType3Char(state, curX + riseX, curY + riseY, tdx, tdy,
-+			       code, u, uLen)) {*/
-+	((Gfx8BitFont *)font)->getCharProc(code, &charProc);
-+	if ((resDict = ((Gfx8BitFont *)font)->getResources())) {
-+	  pushResources(resDict);
-+	}
-+	if (charProc.isStream()) {
-+	  //parse(&charProc, gFalse); // TODO: parse into SVG font
-+	} else {
-+	  error(getPos(), "Missing or bad Type3 CharProc entry");
-+	}
-+	//out->endType3Char(state);
-+	if (resDict) {
-+	  popResources();
-+	}
-+	charProc.free();
-+      }
-+      restoreState();
-+      // GfxState::restore() does *not* restore the current position,
-+      // so we deal with it here using (curX, curY) and (lineX, lineY)
-+      curX += tdx;
-+      curY += tdy;
-+      state->moveTo(curX, curY);
-+      state->textSetPos(lineX, lineY);
-+      p += n;
-+      len -= n;
-+    }
-+    parser = oldParser;
-+
-+  } else {
-+    state->textTransformDelta(0, state->getRise(), &riseX, &riseY);
-+    p = s->getCString();
-+    len = s->getLength();
-+    while (len > 0) {
-+      n = font->getNextChar(p, len, &code,
-+			    &u, &uLen,
-+			    &dx, &dy, &originX, &originY);
-+      
-+      if (wMode) {
-+	dx *= state->getFontSize();
-+	dy = dy * state->getFontSize() + state->getCharSpace();
-+	if (n == 1 && *p == ' ') {
-+	  dy += state->getWordSpace();
-+	}
-+      } else {
-+	dx = dx * state->getFontSize() + state->getCharSpace();
-+	if (n == 1 && *p == ' ') {
-+	  dx += state->getWordSpace();
-+	}
-+	dx *= state->getHorizScaling();
-+	dy *= state->getFontSize();
-+      }
-+      state->textTransformDelta(dx, dy, &tdx, &tdy);
-+      originX *= state->getFontSize();
-+      originY *= state->getFontSize();
-+      state->textTransformDelta(originX, originY, &tOriginX, &tOriginY);
-+      builder->addChar(state, state->getCurX() + riseX, state->getCurY() + riseY,
-+                       dx, dy, tOriginX, tOriginY, code, n, u, uLen);
-+      state->shift(tdx, tdy);
-+      p += n;
-+      len -= n;
-+    }
-+  }
-+
-+  builder->endString(state);
-+}
-+
-+#else  /* !POPPLER_NEW_GFXFONT */
-+
- void PdfParser::doShowText(GooString *s) {
-   GfxFont *font;
-   int wMode;
-@@ -2325,6 +2470,9 @@
-   builder->endString(state);
- }
+-  if (!(shading = res->lookupShading(args[0].getName()))) {
++  if (!(shading = res->lookupShading(args[0].getName(),(Gfx*)this))) {
+     return;
+   }
  
-+#endif /* POPPLER_NEW_GFXFONT */
-+
-+
- //------------------------------------------------------------------------
- // XObject operators
- //------------------------------------------------------------------------
+@@ -2507,7 +2655,7 @@ void PdfParser::doImage(Object *ref, Str
+       }
+     }
+     if (!obj1.isNull()) {
+-      colorSpace = GfxColorSpace::parse(&obj1);
++      colorSpace = GfxColorSpace::parse(&obj1,(Gfx*)this);
+     } else if (csMode == streamCSDeviceGray) {
+       colorSpace = new GfxDeviceGrayColorSpace();
+     } else if (csMode == streamCSDeviceRGB) {
+@@ -2592,7 +2740,7 @@ void PdfParser::doImage(Object *ref, Str
+ 	  obj2.free();
+ 	}
+       }
+-      maskColorSpace = GfxColorSpace::parse(&obj1);
++      maskColorSpace = GfxColorSpace::parse(&obj1,(Gfx*)this);
+       obj1.free();
+       if (!maskColorSpace || maskColorSpace->getMode() != csDeviceGray) {
+ 	goto err1;
+@@ -2767,7 +2915,7 @@ void PdfParser::doForm(Object *str) {
+     if (obj1.dictLookup(const_cast<char*>("S"), &obj2)->isName(const_cast<char*>("Transparency"))) {
+       transpGroup = gTrue;
+       if (!obj1.dictLookup(const_cast<char*>("CS"), &obj3)->isNull()) {
+-	blendingColorSpace = GfxColorSpace::parse(&obj3);
++	blendingColorSpace = GfxColorSpace::parse(&obj3,(Gfx*)this);
+       }
+       obj3.free();
+       if (obj1.dictLookup(const_cast<char*>("I"), &obj3)->isBool()) {

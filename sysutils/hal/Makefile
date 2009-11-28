@@ -3,12 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/hal/Makefile,v 1.54 2008/12/21 06:20:19 marcus Exp $
+#   $MCom: ports/sysutils/hal/Makefile,v 1.72 2009/11/28 05:59:03 mezz Exp $
 #
 
 PORTNAME=	hal
-DISTVERSION=	0.5.11
-PORTREVISION=	26
+DISTVERSION=	0.5.13
+PORTREVISION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-pid-file=/var/run/hald/hald.pid \
 		--with-deprecated-keys \
 		--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_CK_0_3" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
 
@@ -78,13 +78,6 @@ OPTIONS=	FIXED_MOUNTPOINTS "use fixed mountpoints" off
 RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 .endif
 
-.if ${OSVERSION} <= 601100
-NEEDS_MEDIA=	yes
-PLIST_SUB+=	MEDIA=""
-.else
-PLIST_SUB+=	MEDIA="@comment "
-.endif
-
 .if defined(WITH_FIXED_MOUNTPOINTS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-tools_hal-storage-mount.c
 .endif
@@ -96,11 +89,12 @@ PLIST_SUB+=	USB2="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^scriptdir = /s|libdir|libexecdir|' \
+	@${REINPLACE_CMD} -e '/^scriptdir = /s|[(]libexecdir[)]/scripts|(libexecdir)/hal/scripts|' \
 		${WRKSRC}/tools/Makefile.in \
 		${WRKSRC}/tools/freebsd/Makefile.in
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/hal/scripts|(libexecdir)/hal/scripts|' \
-		${WRKSRC}/hald/Makefile.in
+	@${REINPLACE_CMD} -e 's|[(]libexecdir[)]/scripts|(libexecdir)/hal/scripts|' \
+		${WRKSRC}/hald/Makefile.in \
+		${WRKSRC}/tools/Makefile.in
 	@${REINPLACE_CMD} -e 's|user="0"|group="operator"|g' \
 		${WRKSRC}/hal.conf.in
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -117,9 +111,6 @@ post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if defined(NEEDS_MEDIA)
-	${MKDIR} /media
-.endif
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

@@ -1,68 +1,137 @@
---- configure.orig	2009-05-02 22:45:53.000000000 -0400
-+++ configure	2009-05-02 22:47:16.000000000 -0400
-@@ -19163,15 +19163,18 @@ if test -n "$DAEMON_CFLAGS"; then
-     if test -n "$PKG_CONFIG" && \
-     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"dbus-glib-1 >= \$DBUS_GLIB_REQUIRED_VERSION
+--- configure.orig	2009-09-22 12:26:34.000000000 +0200
++++ configure	2009-09-22 12:29:51.000000000 +0200
+@@ -22494,10 +22494,12 @@
+     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"dbus-glib-1 >= \$DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= \$GLIB_REQUIRED_VERSION
+         gio-2.0 >= \$GLIB_REQUIRED_VERSION
 +	hal
  \"") >&5
    ($PKG_CONFIG --exists --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  ") 2>&5
    ac_status=$?
-   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; then
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+@@ -22519,10 +22521,12 @@
+     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"dbus-glib-1 >= \$DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= \$GLIB_REQUIRED_VERSION
+         gio-2.0 >= \$GLIB_REQUIRED_VERSION
++	hal
+ \"") >&5
+   ($PKG_CONFIG --exists --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
++	hal
+ ") 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+@@ -22530,6 +22534,7 @@
+   pkg_cv_COMMON_LIBS=`$PKG_CONFIG --libs "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
++	hal
+ " 2>/dev/null`
+ else
+   pkg_failed=yes
+@@ -22551,11 +22556,13 @@
+ 	        COMMON_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
++	hal
+ " 2>&1`
+         else
+ 	        COMMON_PKG_ERRORS=`$PKG_CONFIG --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
++	hal
+ " 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+@@ -22564,6 +22571,7 @@
+ 	{ { echo "$as_me:$LINENO: error: Package requirements (dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
++	hal
+ ) were not met:
+ 
+ $COMMON_PKG_ERRORS
+@@ -22578,6 +22586,7 @@
+ echo "$as_me: error: Package requirements (dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
++	hal
+ ) were not met:
+ 
+ $COMMON_PKG_ERRORS
+@@ -22634,10 +22643,12 @@
+     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"dbus-glib-1 >= \$DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= \$GLIB_REQUIRED_VERSION
+         gio-2.0 >= \$GLIB_REQUIRED_VERSION
++	hal
+ \"") >&5
+   ($PKG_CONFIG --exists --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+         gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
++	hal
+ ") 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+@@ -22645,6 +22656,7 @@
    pkg_cv_DAEMON_CFLAGS=`$PKG_CONFIG --cflags "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -19185,15 +19188,18 @@ if test -n "$DAEMON_LIBS"; then
-     if test -n "$PKG_CONFIG" && \
-     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"dbus-glib-1 >= \$DBUS_GLIB_REQUIRED_VERSION
+@@ -22659,10 +22671,12 @@
+     { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"dbus-glib-1 >= \$DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= \$GLIB_REQUIRED_VERSION
+         gio-2.0 >= \$GLIB_REQUIRED_VERSION
 +	hal
  \"") >&5
    ($PKG_CONFIG --exists --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  ") 2>&5
    ac_status=$?
-   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; then
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+@@ -22670,6 +22684,7 @@
    pkg_cv_DAEMON_LIBS=`$PKG_CONFIG --libs "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -19214,10 +19220,12 @@ fi
-         if test $_pkg_short_errors_supported = yes; then
+@@ -22691,11 +22706,13 @@
  	        DAEMON_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  " 2>&1`
          else
  	        DAEMON_PKG_ERRORS=`$PKG_CONFIG --print-errors "dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  " 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
-@@ -19225,6 +19233,7 @@ fi
- 
- 	{ { $as_echo "$as_me:$LINENO: error: Package requirements (dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+@@ -22704,6 +22721,7 @@
+ 	{ { echo "$as_me:$LINENO: error: Package requirements (dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  ) were not met:
  
  $DAEMON_PKG_ERRORS
-@@ -19238,6 +19247,7 @@ See the pkg-config man page for more det
- " >&5
- $as_echo "$as_me: error: Package requirements (dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+@@ -22718,6 +22736,7 @@
+ echo "$as_me: error: Package requirements (dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
          gobject-2.0 >= $GLIB_REQUIRED_VERSION
+         gio-2.0 >= $GLIB_REQUIRED_VERSION
 +	hal
  ) were not met:
  

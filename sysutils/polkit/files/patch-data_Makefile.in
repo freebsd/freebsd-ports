@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	2009-08-01 16:02:38.000000000 +0200
++++ data/Makefile.in	2009-08-01 16:05:13.000000000 +0200
+@@ -471,7 +471,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dbusconfDATA install-pamDATA \
++install-data-am: install-pamDATA \
+ 	install-pkgconfigDATA install-serviceDATA
+ 
+ install-dvi: install-dvi-am

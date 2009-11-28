@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libcanberra
-PORTVERSION=	0.10
-PORTREVISION=	5
+PORTVERSION=	0.22
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/
 
@@ -20,7 +19,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack gconf2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22 libltdl:22
-CONFIGURE_ARGS=	--disable-lynx
+CONFIGURE_ARGS=	--disable-lynx --disable-tdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -28,6 +27,8 @@ GCONF_SCHEMAS=	libcanberra.schemas
 
 OPTIONS=	PULSE "Enable Pulse Audio support" off \
 		GSTREAMER "Enable GStreamer audio support" off
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 

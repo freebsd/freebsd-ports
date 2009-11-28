@@ -1,15 +1,14 @@
-include/clutter-0.8/clutter-gst/clutter-gst-audio.h
-include/clutter-0.8/clutter-gst/clutter-gst-shaders.h
-include/clutter-0.8/clutter-gst/clutter-gst-util.h
-include/clutter-0.8/clutter-gst/clutter-gst-version.h
-include/clutter-0.8/clutter-gst/clutter-gst-video-sink.h
-include/clutter-0.8/clutter-gst/clutter-gst-video-texture.h
-include/clutter-0.8/clutter-gst/clutter-gst.h
-lib/libclutter-gst-0.8.a
-lib/libclutter-gst-0.8.la
-lib/libclutter-gst-0.8.so
-lib/libclutter-gst-0.8.so.0
-libdata/pkgconfig/clutter-gst-0.8.pc
+include/clutter-1.0/clutter-gst/clutter-gst-audio.h
+include/clutter-1.0/clutter-gst/clutter-gst-util.h
+include/clutter-1.0/clutter-gst/clutter-gst-version.h
+include/clutter-1.0/clutter-gst/clutter-gst-video-sink.h
+include/clutter-1.0/clutter-gst/clutter-gst-video-texture.h
+include/clutter-1.0/clutter-gst/clutter-gst.h
+lib/libclutter-gst-0.10.a
+lib/libclutter-gst-0.10.la
+lib/libclutter-gst-0.10.so
+lib/libclutter-gst-0.10.so.0
+libdata/pkgconfig/clutter-gst-0.10.pc
 %%DOCSDIR%%/ClutterGstAudio.html
 %%DOCSDIR%%/ClutterGstVideoSink.html
 %%DOCSDIR%%/ClutterGstVideoTexture.html
@@ -28,5 +27,5 @@ libdata/pkgconfig/clutter-gst-0.8.pc
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 @dirrmtry %%DOCSDIR%%
-@dirrm include/clutter-0.8/clutter-gst
-@dirrmtry include/clutter-0.8
+@dirrm include/clutter-1.0/clutter-gst
+@dirrmtry include/clutter-1.0

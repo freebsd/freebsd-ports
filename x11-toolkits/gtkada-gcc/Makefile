@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	2.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/gnuada/GNAT_GCC%20Source/4.1.1%20R6
 PKGNAMESUFFIX=	-gcc
@@ -49,5 +49,7 @@ do-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/projects/Makefile
+	@${REINPLACE_CMD} -e 's|n_bytes|x_n_bytes|g' -e 's|text_size|x_text_size|g' \
+		${WRKSRC}/src/gtkextra/gtkitementry.c
 
 .include <bsd.port.mk>

@@ -3,11 +3,11 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/pangomm/Makefile,v 1.9 2009/03/13 14:42:38 kwm Exp $
+#   $MCom: ports/x11-toolkits/pangomm/Makefile,v 1.13 2009/09/21 17:22:55 kwm Exp $
 #
 
 PORTNAME=	pangomm
-PORTVERSION=	2.24.0
+PORTVERSION=	2.26.0
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -30,17 +30,16 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pango
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-demos \
-		--disable-docs \
-		--disable-examples \
-		--enable-static=yes \
-		--with-sigc-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--disable-documentation \
+		--enable-static=yes
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="1.4"
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
+.for d in tests
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/${d}//' \
 		${WRKSRC}/Makefile.in
+.endfor
 
 .include <bsd.port.mk>
 

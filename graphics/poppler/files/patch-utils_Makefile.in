@@ -1,13 +1,15 @@
---- utils/Makefile.in.orig	2009-02-26 18:44:48.000000000 -0500
-+++ utils/Makefile.in	2009-02-26 18:45:57.000000000 -0500
-@@ -61,50 +61,50 @@ am_pdffonts_OBJECTS = pdffonts.$(OBJEXT)
+--- utils/Makefile.in.orig	2009-10-22 20:33:17.000000000 +0200
++++ utils/Makefile.in	2009-10-22 20:33:49.000000000 +0200
+@@ -64,7 +64,7 @@ am_pdffonts_OBJECTS = pdffonts.$(OBJEXT)
  pdffonts_OBJECTS = $(am_pdffonts_OBJECTS)
  pdffonts_LDADD = $(LDADD)
  am__DEPENDENCIES_1 =
 -pdffonts_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
 +pdffonts_DEPENDENCIES = \
  	$(am__DEPENDENCIES_1)
- am_pdfimages_OBJECTS = pdfimages.$(OBJEXT) ImageOutputDev.$(OBJEXT) \
+ AM_V_lt = $(am__v_lt_$(V))
+ am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+@@ -73,19 +73,19 @@ am_pdfimages_OBJECTS = pdfimages.$(OBJEX
  	$(am__objects_1)
  pdfimages_OBJECTS = $(am_pdfimages_OBJECTS)
  pdfimages_LDADD = $(LDADD)
@@ -25,11 +27,12 @@
  @BUILD_ABIWORD_OUTPUT_TRUE@am_pdftoabw_OBJECTS = pdftoabw.$(OBJEXT) \
  @BUILD_ABIWORD_OUTPUT_TRUE@	$(am__objects_1)
  pdftoabw_OBJECTS = $(am_pdftoabw_OBJECTS)
- pdftoabw_LDADD = $(LDADD)
--pdftoabw_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
-+pdftoabw_DEPENDENCIES = \
+-am__DEPENDENCIES_2 = $(top_builddir)/poppler/libpoppler.la \
++am__DEPENDENCIES_2 =  \
  	$(am__DEPENDENCIES_1)
- am_pdftohtml_OBJECTS = pdftohtml.$(OBJEXT) HtmlFonts.$(OBJEXT) \
+ @BUILD_ABIWORD_OUTPUT_TRUE@pdftoabw_DEPENDENCIES =  \
+ @BUILD_ABIWORD_OUTPUT_TRUE@	$(am__DEPENDENCIES_2) \
+@@ -94,25 +94,25 @@ am_pdftohtml_OBJECTS = pdftohtml.$(OBJEX
  	HtmlLinks.$(OBJEXT) HtmlOutputDev.$(OBJEXT) $(am__objects_1)
  pdftohtml_OBJECTS = $(am_pdftohtml_OBJECTS)
  pdftohtml_LDADD = $(LDADD)
@@ -59,7 +62,7 @@
  	$(am__DEPENDENCIES_1)
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir) -I$(top_builddir)/poppler
  depcomp = $(SHELL) $(top_srcdir)/depcomp
-@@ -320,7 +320,7 @@ INCLUDES = \
+@@ -382,7 +382,7 @@ INCLUDES = \
  	$(ABIWORD_CFLAGS)
  
  LDADD = \

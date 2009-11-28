@@ -3,11 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/gnome-netstatus/Makefile,v 1.52 2009/03/08 19:32:04 marcus Exp $
+#   $MCom: ports/net/gnome-netstatus/Makefile,v 1.54 2009/09/22 20:42:40 kwm Exp $
 #
 
 PORTNAME=	gnome-netstatus
-PORTVERSION=	2.26.0
+PORTVERSION=	2.28.0
 PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
@@ -19,7 +19,7 @@ COMMENT=	A GNOME applet that shows network status
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel libglade2 \
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel \
 		gnomedocutils
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

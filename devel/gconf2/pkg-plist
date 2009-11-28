@@ -31,7 +31,6 @@ libexec/gconf-sanity-check-2
 libexec/gconfd-2
 %%LDAP%%share/GConf/schema/evoldap.schema
 share/aclocal/gconf-2.m4
-share/PolicyKit/policy/org.gnome.gconf.defaults.policy
 share/dbus-1/system-services/org.gnome.GConf.Defaults.service
 share/dbus-1/services/org.gnome.GConf.service
 share/locale/am/LC_MESSAGES/GConf2.mo
@@ -44,6 +43,7 @@ share/locale/bn/LC_MESSAGES/GConf2.mo
 share/locale/bn_IN/LC_MESSAGES/GConf2.mo
 share/locale/bs/LC_MESSAGES/GConf2.mo
 share/locale/ca/LC_MESSAGES/GConf2.mo
+share/locale/ca@valencia/LC_MESSAGES/GConf2.mo
 share/locale/cs/LC_MESSAGES/GConf2.mo
 share/locale/cy/LC_MESSAGES/GConf2.mo
 share/locale/da/LC_MESSAGES/GConf2.mo
@@ -113,6 +113,7 @@ share/locale/yi/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
+share/polkit-1/actions/org.gnome.gconf.defaults.policy
 share/sgml/gconf/gconf-1.0.dtd
 @dirrm share/sgml/gconf
 %%LDAP%%@dirrm share/GConf/schema
@@ -147,6 +148,8 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

@@ -1,6 +1,6 @@
---- configure.orig	2008-11-24 13:44:42.000000000 -0600
-+++ configure	2008-11-24 13:50:51.000000000 -0600
-@@ -29576,6 +29576,12 @@
+--- configure.orig	2009-09-05 10:54:38.000000000 +0200
++++ configure	2009-09-05 10:56:40.000000000 +0200
+@@ -29571,6 +29571,12 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -13,16 +13,16 @@
  int
  main ()
  {
-@@ -31407,7 +31413,7 @@
+@@ -31611,7 +31617,7 @@ done
  
  
  
--for ac_func in chown lchown fchmod fchown link statvfs statfs utimes getgrgid getpwuid
-+for ac_func in chown lchown fchmod fchown link statvfs statfs utimes getgrgid getpwuid sysctlbyname
+-for ac_func in chown lchmod lchown fchmod fchown link statvfs statfs utimes getgrgid getpwuid
++for ac_func in chown lchmod lchown fchmod fchown link statvfs statfs utimes getgrgid getpwuid sysctlbyname
  do
  as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
  { $as_echo "$as_me:$LINENO: checking for $ac_func" >&5
-@@ -36810,6 +36816,8 @@
+@@ -39943,6 +39949,8 @@ fi
           ;;
      esac
    fi

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case $2 in
+POST-INSTALL)
+	mkdir -p /var/lib/polkit-1
+	for i in 10-vendor.d 20-org.d 30-site.d 50-local.d 90-mandatory.d; do
+	    mkdir -p /var/lib/polkit-1/${i}
+	done
+	chmod 0700 /var/lib/polkit-1
+	exit 0
+	;;
+esac

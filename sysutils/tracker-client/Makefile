@@ -3,14 +3,14 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/tracker-client/Makefile,v 1.6 2009/02/27 00:23:22 marcus Exp $
+#   $MCom: ports/sysutils/tracker-client/Makefile,v 1.10 2009/10/11 11:11:33 kwm Exp $
 #
 
 PORTNAME=	tracker
-PORTVERSION=	0.6.6
-PORTREVISION=	11
+PORTVERSION=	0.6.95
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
+MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	-client
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,7 +23,12 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		wv-1.2.3:${PORTSDIR}/textproc/wv \
 		gmime-2.0.4:${PORTSDIR}/mail/gmime2 \
 		qdbm.14:${PORTSDIR}/databases/qdbm \
-		exempi.3:${PORTSDIR}/textproc/exempi
+		exempi.3:${PORTSDIR}/textproc/exempi \
+		hal.1:${PORTSDIR}/sysutils/hal \
+		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser \
+		raptor.2:${PORTSDIR}/textproc/raptor \
+		ogg.6:${PORTSDIR}/audio/libogg \
+		iptcdata.3:${PORTSDIR}/graphics/libiptcdata
 RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 		o3totxt:${PORTSDIR}/converters/o3read \
 		pdftotext:${PORTSDIR}/graphics/poppler-utils \
@@ -33,7 +38,7 @@ USE_BZIP2=	yes
 USE_FAM=	yes
 WANT_FAM_SYSTEM=gamin
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehack gnomeprefix ltasneededhack intltool
+USE_GNOME=	gnomehack gnomeprefix ltasneededhack intltool ltverhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
@@ -41,11 +46,12 @@ USE_GSTREAMER=	core
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/tracker ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
 		--enable-file-monitoring=fam \
 		--with-session-bus-services-dir=${LOCALBASE}/share/dbus-1/services \
-		--enable-external-qdbm
+		--enable-external-qdbm --enable-libexif --enable-libvorbis \
+		--enable-libiptcdata
 
 .include <bsd.port.pre.mk>
 
@@ -59,7 +65,7 @@ INSTALL_WRKSRC=	${WRKSRC}/src/tracker-applet
 EXTRA_WRKSRC=	src/tracker-preferences src/tracker-search-tool
 RUN_DEPENDS+=	${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
 USE_GNOME+=	gnomedesktop libgsf
-MAN1+=		tracker-applet.1  tracker-search-tool.1 tracker-preferences.1
+MAN1+=		tracker-applet.1 tracker-search-tool.1 tracker-preferences.1
 CONFIGURE_ARGS+=--enable-deskbar-applet \
 		--with-deskbar-applet-handler-dir=${LOCALBASE}/lib/deskbar-applet/handlers
 . endif
@@ -71,14 +77,17 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 . endif
 .else
 MAN1+=	tracker-extract.1 tracker-files.1 \
+	tracker-info.1 \
 	tracker-meta-folder.1 tracker-query.1 \
-	tracker-search.1 tracker-stats.1 \
-	tracker-status.1 tracker-tag.1 tracker-thumbnailer.1 trackerd.1
+	tracker-search.1 tracker-services.1 tracker-stats.1 \
+	tracker-status.1 tracker-tag.1 tracker-thumbnailer.1 tracker-unique.1 trackerd.1
+
 MAN5+=	tracker.cfg.5
-MAN7+=	tracker-services.7
 CONFIGURE_ARGS+=	--disable-libtrackergtk --disable-gui \
 			--disable-trackerapplet --disable-gsf \
-			--disable-preferences
+			--disable-preferences   --disable-deskbar-applet \
+			--disable-tracker-applet --disable-tracker-preferences \
+			--disable-libgsf
 .endif
 
 post-patch:
@@ -104,7 +113,7 @@ post-install:
 	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 . endfor
 . for man in ${MAN1}
-	@(cd ${WRKSRC} && ${INSTALL_DATA} docs/${man} ${PREFIX}/man/man1/${man})
+	@(cd ${WRKSRC} && ${INSTALL_DATA} docs/manpages/${man} ${PREFIX}/man/man1/${man})
 . endfor
 .endif
 

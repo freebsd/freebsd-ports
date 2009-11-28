@@ -1,5 +1,4 @@
 @unexec %D/etc/rc.d/hald stop > /dev/null 2>&1 || true
-%%MEDIA%%@exec mkdir -p /media
 bin/hal-device
 bin/hal-disable-polling
 bin/hal-find-by-capability
@@ -83,6 +82,7 @@ sbin/hald
 %%DATADIR%%/fdi/policy/10osvendor/10-dockstation.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-input-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-laptop-panel-mgmt-policy.fdi
+%%DATADIR%%/fdi/policy/10osvendor/10-leds.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-mouse-sysmouse.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-power-mgmt-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-rfkill-switch.fdi
@@ -94,6 +94,7 @@ sbin/hald
 %%DATADIR%%/mount-fuse
 share/PolicyKit/policy/org.freedesktop.hal.dockstation.policy
 share/PolicyKit/policy/org.freedesktop.hal.killswitch.policy
+share/PolicyKit/policy/org.freedesktop.hal.leds.policy
 share/PolicyKit/policy/org.freedesktop.hal.policy
 share/PolicyKit/policy/org.freedesktop.hal.power-management.policy
 share/PolicyKit/policy/org.freedesktop.hal.storage.policy
@@ -131,4 +132,3 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @unexec rmdir /var/cache 2>/dev/null || true
 @unexec /var/lib/hal 2>/dev/null || true
 @unexec /var/lib 2>/dev/null || true
-%%MEDIA%%@unexec rmdir /media 2>/dev/null || true

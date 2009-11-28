@@ -3,12 +3,12 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler/Makefile,v 1.44 2009/03/14 05:12:31 marcus Exp $
+#   $MCom: ports/graphics/poppler/Makefile,v 1.56 2009/11/22 04:24:49 marcus Exp $
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.10.6
-PORTREVISION?=	1
+PORTVERSION=	0.12.2
+PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -16,7 +16,8 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A PDF rendering library
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
 USE_GMAKE=	yes
@@ -30,13 +31,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .if !defined(SLAVEPORT)
-OPTIONS=	CAIRO "Enable cairo output backend" on
+OPTIONS=	CAIRO "Enable cairo output backend" on \
+		OPENJPEG "Enable JPEG 2000 support" on
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
-LIB_DEPENDS+=	poppler.4:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	poppler.5:${PORTSDIR}/graphics/poppler
 
 .if ${SLAVEPORT}=="gtk"
 CONFIGURE_ARGS+=--enable-poppler-glib
@@ -94,6 +96,13 @@ PLIST_SUB+=	CAIRO="@comment "
 .else
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 PLIST_SUB+=	CAIRO=""
+.endif
+
+.if defined(WITHOUT_OPENJPEG)
+CONFIGURE_ARGS+=--disable-libopenjpeg
+.else
+CONFIGURE_ARGS+=--enable-libopenjpeg
+LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 .endif
 .endif
 

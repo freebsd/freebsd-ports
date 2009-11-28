@@ -110,6 +110,7 @@ include/gtk-2.0/gtk/gtkdnd.h
 include/gtk-2.0/gtk/gtkdrawingarea.h
 include/gtk-2.0/gtk/gtkeditable.h
 include/gtk-2.0/gtk/gtkentry.h
+include/gtk-2.0/gtk/gtkentrybuffer.h
 include/gtk-2.0/gtk/gtkentrycompletion.h
 include/gtk-2.0/gtk/gtkenums.h
 include/gtk-2.0/gtk/gtkeventbox.h
@@ -138,6 +139,7 @@ include/gtk-2.0/gtk/gtkhsv.h
 include/gtk-2.0/gtk/gtkiconfactory.h
 include/gtk-2.0/gtk/gtkicontheme.h
 include/gtk-2.0/gtk/gtkiconview.h
+include/gtk-2.0/gtk/gtkinfobar.h
 include/gtk-2.0/gtk/gtkimage.h
 include/gtk-2.0/gtk/gtkimagemenuitem.h
 include/gtk-2.0/gtk/gtkimcontext.h
@@ -413,6 +415,7 @@ share/gtk-2.0/demo/demo.ui
 share/gtk-2.0/demo/dialog.c
 share/gtk-2.0/demo/drawingarea.c
 share/gtk-2.0/demo/editable_cells.c
+share/gtk-2.0/demo/entry_buffer.c
 share/gtk-2.0/demo/entry_completion.c
 share/gtk-2.0/demo/expander.c
 share/gtk-2.0/demo/floppybuddy.gif
@@ -430,8 +433,12 @@ share/gtk-2.0/demo/hypertext.c
 share/gtk-2.0/demo/iconview.c
 share/gtk-2.0/demo/iconview_edit.c
 share/gtk-2.0/demo/images.c
+share/gtk-2.0/demo/infobar.c
 share/gtk-2.0/demo/list_store.c
+share/gtk-2.0/demo/links.c
 share/gtk-2.0/demo/menus.c
+share/gtk-2.0/demo/offscreen_window.c
+share/gtk-2.0/demo/offscreen_window2.c
 share/gtk-2.0/demo/panes.c
 share/gtk-2.0/demo/pickers.c
 share/gtk-2.0/demo/pixbufs.c

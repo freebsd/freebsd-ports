@@ -1,8 +1,8 @@
 bin/gcalctool
 bin/gnome-calculator
 share/applications/gcalctool.desktop
-%%DATADIR%%/gcalctool.glade
-%%DATADIR%%/financial.glade
+%%DATADIR%%/gcalctool.ui
+%%DATADIR%%/financial.ui
 share/gnome/help/gcalctool/C/figures/gcalctool_advanced_window.png
 share/gnome/help/gcalctool/C/figures/gcalctool_basic_window.png
 share/gnome/help/gcalctool/C/figures/gcalctool_financial_window.png

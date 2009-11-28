@@ -18,7 +18,7 @@ include/devhelp-1.0/devhelp/dh-window.h
 lib/libdevhelp-1.a
 lib/libdevhelp-1.la
 lib/libdevhelp-1.so
-lib/libdevhelp-1.so.0
+lib/libdevhelp-1.so.1
 libdata/pkgconfig/libdevhelp-1.0.pc
 share/applications/devhelp.desktop
 share/devhelp/assistant/assistant.css
@@ -42,6 +42,7 @@ share/locale/bg/LC_MESSAGES/devhelp.mo
 share/locale/bn/LC_MESSAGES/devhelp.mo
 share/locale/bn_IN/LC_MESSAGES/devhelp.mo
 share/locale/ca/LC_MESSAGES/devhelp.mo
+share/locale/ca@valencia/LC_MESSAGES/devhelp.mo
 share/locale/cs/LC_MESSAGES/devhelp.mo
 share/locale/da/LC_MESSAGES/devhelp.mo
 share/locale/de/LC_MESSAGES/devhelp.mo
@@ -66,6 +67,7 @@ share/locale/kn/LC_MESSAGES/devhelp.mo
 share/locale/ko/LC_MESSAGES/devhelp.mo
 share/locale/lt/LC_MESSAGES/devhelp.mo
 share/locale/lv/LC_MESSAGES/devhelp.mo
+share/locale/mai/LC_MESSAGES/devhelp.mo
 share/locale/mk/LC_MESSAGES/devhelp.mo
 share/locale/ml/LC_MESSAGES/devhelp.mo
 share/locale/ms/LC_MESSAGES/devhelp.mo
@@ -80,13 +82,14 @@ share/locale/pl/LC_MESSAGES/devhelp.mo
 share/locale/ps/LC_MESSAGES/devhelp.mo
 share/locale/pt/LC_MESSAGES/devhelp.mo
 share/locale/pt_BR/LC_MESSAGES/devhelp.mo
+share/locale/ro/LC_MESSAGES/devhelp.mo
 share/locale/ru/LC_MESSAGES/devhelp.mo
 share/locale/rw/LC_MESSAGES/devhelp.mo
 share/locale/sk/LC_MESSAGES/devhelp.mo
 share/locale/sl/LC_MESSAGES/devhelp.mo
 share/locale/sq/LC_MESSAGES/devhelp.mo
 share/locale/sr/LC_MESSAGES/devhelp.mo
-share/locale/sr@Latn/LC_MESSAGES/devhelp.mo
+share/locale/sr@latin/LC_MESSAGES/devhelp.mo
 share/locale/sv/LC_MESSAGES/devhelp.mo
 share/locale/ta/LC_MESSAGES/devhelp.mo
 share/locale/te/LC_MESSAGES/devhelp.mo
@@ -98,7 +101,6 @@ share/locale/zh_CN/LC_MESSAGES/devhelp.mo
 share/locale/zh_HK/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/devhelp/ui
-@dirrm share/devhelp/images
 @dirrm share/devhelp/dtd
 @dirrm share/devhelp/assistant
 @dirrm share/devhelp
@@ -108,18 +110,24 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
-@dirrmtry share/locale/sr@Latn/LC_MESSAGES
-@dirrmtry share/locale/sr@Latn
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
 @dirrmtry share/locale/ps/LC_MESSAGES
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

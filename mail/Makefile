@@ -120,6 +120,7 @@
     SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += evolution-exchange
+    SUBDIR += evolution-mapi
     SUBDIR += evolution-sharp
     SUBDIR += exact
     SUBDIR += exilog
@@ -213,6 +214,7 @@
     SUBDIR += libdomainkeys
     SUBDIR += libesmtp
     SUBDIR += libetpan
+    SUBDIR += libmapi
     SUBDIR += libnewmail
     SUBDIR += libpst
     SUBDIR += librfc822

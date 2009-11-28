@@ -7,6 +7,7 @@
 
 PORTNAME=	libpthread-stubs
 PORTVERSION=	0.3
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 

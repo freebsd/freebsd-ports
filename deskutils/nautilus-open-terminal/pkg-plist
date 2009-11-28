@@ -2,8 +2,9 @@ lib/nautilus/extensions-2.0/libnautilus-open-terminal.a
 lib/nautilus/extensions-2.0/libnautilus-open-terminal.la
 lib/nautilus/extensions-2.0/libnautilus-open-terminal.so
 share/locale/ar/LC_MESSAGES/nautilus-open-terminal.mo
-share/locale/be@latin/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/as/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/be/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/be@latin/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/bg/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ca/LC_MESSAGES/nautilus-open-terminal.mo
@@ -26,6 +27,7 @@ share/locale/hu/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/it/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ja/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ka/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/kn/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ko/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/lt/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/mk/LC_MESSAGES/nautilus-open-terminal.mo
@@ -38,8 +40,8 @@ share/locale/oc/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/or/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/pa/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/pl/LC_MESSAGES/nautilus-open-terminal.mo
-share/locale/pt_BR/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/pt/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/pt_BR/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ro/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ru/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/rw/LC_MESSAGES/nautilus-open-terminal.mo
@@ -49,12 +51,15 @@ share/locale/sr/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/sr@Latn/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/sv/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ta/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/te/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/th/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/tr/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/uk/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/vi/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-open-terminal.mo
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -67,3 +72,5 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-open-terminal.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

@@ -1,5 +1,5 @@
---- hald/freebsd/hf-volume.c.orig	2008-05-07 19:24:03.000000000 -0400
-+++ hald/freebsd/hf-volume.c	2008-10-26 15:17:09.000000000 -0400
+--- hald/freebsd/hf-volume.c.orig	2008-08-10 09:50:10.000000000 -0400
++++ hald/freebsd/hf-volume.c	2009-09-19 02:06:37.000000000 -0400
 @@ -45,6 +45,7 @@
  #include "hf-util.h"
  
@@ -8,7 +8,7 @@
  
  static void
  hf_volume_get_mounts (struct statfs **mounts, int *n_mounts)
-@@ -60,6 +61,55 @@ hf_volume_get_mounts (struct statfs **mo
+@@ -60,6 +61,58 @@ hf_volume_get_mounts (struct statfs **mo
      }
  }
  
@@ -37,9 +37,12 @@
 +        {
 +          if (strcmp(fields[0], special) == 0)
 +	    {
++	      char *ret;
++
++	      ret = g_strdup(fields[1]);
 +	      g_strfreev(fields);
 +	      g_strfreev(lines);
-+	      return g_strdup(fields[1]);
++	      return ret;
 +	    }
 +	}
 +      g_strfreev(fields);
@@ -64,7 +67,7 @@
  static const struct statfs *
  hf_volume_mounts_find (const struct statfs *mounts,
  		       int n_mounts,
-@@ -71,8 +121,18 @@ hf_volume_mounts_find (const struct stat
+@@ -71,8 +124,18 @@ hf_volume_mounts_find (const struct stat
    g_return_val_if_fail(special != NULL, NULL);
  
    for (i = 0; i < n_mounts; i++)
@@ -85,7 +88,7 @@
  
    return NULL;
  }
-@@ -92,7 +152,13 @@ hf_volume_device_update_mount_properties
+@@ -92,7 +155,13 @@ hf_volume_device_update_mount_properties
  
        special = hal_device_property_get_string(device, "block.device");
        if (special)

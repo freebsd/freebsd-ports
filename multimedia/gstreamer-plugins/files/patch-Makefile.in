@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-10-02 22:46:23.000000000 +0000
-+++ Makefile.in	2008-10-12 17:59:39.000000000 +0000
-@@ -359,19 +359,15 @@
+--- Makefile.in.orig	2009-11-09 10:37:05.000000000 +0100
++++ Makefile.in	2009-11-09 10:37:34.000000000 +0100
+@@ -397,19 +397,15 @@
  	gst-libs 		\
  	gst sys $(SUBDIRS_EXT) 	\
  	tools 			\
@@ -8,10 +8,10 @@
 -	docs			\
  	po 			\
  	common 			\
- 	m4 			\
- 	pkgconfig
+ 	m4
  
  DIST_SUBDIRS = \
+ 	pkgconfig		\
 -	docs			\
  	gst-libs		\
  	gst sys ext		\
@@ -19,4 +19,4 @@
 -	tests 			\
  	po 			\
  	common 			\
- 	m4 			\
+ 	m4

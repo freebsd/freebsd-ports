@@ -12,6 +12,7 @@ bin/gvfs-open
 bin/gvfs-rename
 bin/gvfs-rm
 bin/gvfs-save
+bin/gvfs-set-attribute
 bin/gvfs-trash
 bin/gvfs-tree
 etc/profile.d/gvfs-bash-completion.sh
@@ -43,12 +44,14 @@ libexec/gvfsd-ftp
 %%GPHOTO2%%libexec/gvfsd-gphoto2
 libexec/gvfsd-http
 libexec/gvfsd-localtest
+libexec/gvfsd-metadata
 libexec/gvfsd-network
 libexec/gvfsd-sftp
 %%SMB%%libexec/gvfsd-smb
 %%SMB%%libexec/gvfsd-smb-browse
 libexec/gvfsd-trash
 share/dbus-1/services/gvfs-daemon.service
+share/dbus-1/services/gvfs-metadata.service
 %%GPHOTO2%%share/dbus-1/services/org.gtk.Private.GPhoto2VolumeMonitor.service
 share/dbus-1/services/org.gtk.Private.HalVolumeMonitor.service
 %%ARCHIVE%%share/gvfs/mounts/archive.mount
@@ -73,8 +76,10 @@ share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/as/LC_MESSAGES/gvfs.mo
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
+share/locale/bn/LC_MESSAGES/gvfs.mo
 share/locale/bn_IN/LC_MESSAGES/gvfs.mo
 share/locale/ca/LC_MESSAGES/gvfs.mo
+share/locale/ca@valencia/LC_MESSAGES/gvfs.mo
 share/locale/cs/LC_MESSAGES/gvfs.mo
 share/locale/da/LC_MESSAGES/gvfs.mo
 share/locale/de/LC_MESSAGES/gvfs.mo
@@ -98,6 +103,7 @@ share/locale/ko/LC_MESSAGES/gvfs.mo
 share/locale/ku/LC_MESSAGES/gvfs.mo
 share/locale/lt/LC_MESSAGES/gvfs.mo
 share/locale/lv/LC_MESSAGES/gvfs.mo
+share/locale/mai/LC_MESSAGES/gvfs.mo
 share/locale/mk/LC_MESSAGES/gvfs.mo
 share/locale/ml/LC_MESSAGES/gvfs.mo
 share/locale/mr/LC_MESSAGES/gvfs.mo
@@ -140,8 +146,12 @@ share/locale/zh_TW/LC_MESSAGES/gvfs.mo
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

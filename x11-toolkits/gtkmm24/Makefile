@@ -3,12 +3,12 @@
 # Whom:                Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtkmm24/Makefile,v 1.46 2009/03/17 15:18:15 kwm Exp $
+#   $MCom: ports/x11-toolkits/gtkmm24/Makefile,v 1.55 2009/10/04 09:39:21 kwm Exp $
 #
 
 PORTNAME=	gtkmm
-PORTVERSION=	2.16.0
-PORTREVISION?=	1
+PORTVERSION=	2.18.2
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,22 +29,18 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gtk20
+USE_AUTOTOOLS=	libtool:22
+USE_GNOME=	gnomehack gtk20 ltverhack:1
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-demos \
-		--disable-docs \
-		--disable-examples \
-		--enable-static=yes \
-		--with-sigc-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--disable-documentation \
+		--enable-static=yes
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|demo[$$][(]EXEEXT[)]|gtkmm-demo$$(EXEEXT)|g' \
-	    	${WRKSRC}/demos/gtk-demo/Makefile.in
 
 .include <bsd.port.mk>
 

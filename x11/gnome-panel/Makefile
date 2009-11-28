@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gnome-panel/Makefile,v 1.3 2009/04/16 08:01:26 kwm Exp $
+#   $MCom: ports/x11/gnome-panel/Makefile,v 1.208 2009/10/12 13:36:46 avl Exp $
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.26.3
+PORTVERSION=	2.28.0
 PORTREVISION?=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
@@ -21,21 +21,20 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	gweather.1:${PORTSDIR}/net/libgweather \
-    		polkit-gnome.0:${PORTSDIR}/sysutils/policykit-gnome
+		polkit-gnome.0:${PORTSDIR}/sysutils/policykit-gnome
 
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop librsvg2 \
-		libwnck gnomemenus gnomedocutils ltverhack referencehack
+		libwnck gnomemenus gnomedocutils ltverhack referencehack \
+		libgnomeui
 WANT_GNOME=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
-		--with-kde-docdir=${LOCALBASE}/share/doc \
-		--disable-network-manager \
+CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-polkit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -69,9 +68,7 @@ post-patch:
 		's|"applications.menu"|"gnome-applications.menu"|'
 	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
 		${WRKSRC}/help/clock/Makefile.in \
-		${WRKSRC}/help/fish/Makefile.in \
-		${WRKSRC}/help/window-list/Makefile.in \
-		${WRKSRC}/help/workspace-switcher/Makefile.in
+		${WRKSRC}/help/fish/Makefile.in
 
 .include <bsd.port.post.mk>
 

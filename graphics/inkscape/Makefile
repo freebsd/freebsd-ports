@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.46
-PORTREVISION=	6
+PORTVERSION=	0.47
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -20,6 +19,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gc.1:${PORTSDIR}/devel/boehm-gc \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		lcms.1:${PORTSDIR}/graphics/lcms \
+		wpg-0.1.1:${PORTSDIR}/graphics/libwpg \
 		Magick++.2:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--without-gnome-vfs
 LIB_DEPENDS+=		poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
 CONFIGURE_ARGS+=	--enable-poppler-cairo
 .else
-CONFIGURE_ARGS+=	--disable-poppler-cairo
+CONFIGURE_ARGS+=	--enable-poppler-cairo=no
 .endif
 
 post-patch:

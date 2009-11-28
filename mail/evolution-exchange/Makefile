@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports-stable/mail/evolution-exchange/Makefile,v 1.3 2009/04/16 01:14:40 kwm Exp $
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.146 2009/10/18 05:41:36 marcus Exp $
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.26.3
-PORTREVISION=	1
+PORTVERSION=	2.28.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -33,8 +32,8 @@ CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--disable-compile-warnings \
 		--with-libdb=${LOCALBASE}
 
-EVO_VERSION=	2.26
-VERSION=	2.26
+EVO_VERSION=	2.28
+VERSION=	2.28
 PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
 		EDS_VERSION="1.2"
 
@@ -52,6 +51,7 @@ IGNORE=	build fails when ${LOCALBASE}/include/mapi.h exists in system, run pkg_i
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
+		-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

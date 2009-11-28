@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.189 2009/03/18 00:23:38 kwm Exp $
+#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.198 2009/10/20 00:09:19 kwm Exp $
 #
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.26.0
-PORTREVISION=	2
+PORTVERSION=	2.28.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME 2 project
 
-LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
@@ -27,18 +27,18 @@ USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GSTREAMER=	good
 WANT_GNOME=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack metacity nautilus2 \
-		gnomemenus desktopfileutils libgnomekbd gnomepanel
+USE_GNOME=	gnomeprefix gnomehack intlhack metacity gnomemenus \
+		desktopfileutils libgnomekbd gnomedesktop librsvg2
 USE_XORG=	xscrnsaver
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-gstreamer=0.10
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	control-center.schemas fontilus.schemas
+GCONF_SCHEMAS=	control-center.schemas fontilus.schemas \
+		gnome-control-center.schemas
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME

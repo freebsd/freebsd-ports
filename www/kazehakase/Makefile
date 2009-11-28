@@ -3,29 +3,30 @@
 # Whom:			michael johnson <ahze@ahze.net>
 #
 # $FreeBSD$
-#   $MCom: ports/www/kazehakase/Makefile,v 1.15 2008/08/06 04:22:50 mezz Exp $
+#   $MCom: ports/www/kazehakase/Makefile,v 1.26 2009/10/22 22:10:49 kwm Exp $
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.5.4
-PORTREVISION=	7
+PORTVERSION=	0.5.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/30219
+MASTER_SITE_SUBDIR=	${PORTNAME}/43802
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
 
-LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
+		estraier.8:${PORTSDIR}/textproc/hyperestraier
 
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GECKO=	seamonkey
+USE_GECKO=	libxul seamonkey
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+		-I${LOCALBASE}/include/nspr" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAN1=		kazehakase.1
 OPTIONS=	WEBKIT "Webkit Backend (along with Gecko)" On
@@ -39,7 +40,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_WEBKIT)
-LIB_DEPENDS+=	webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 PLIST_SUB+=	WEBKIT=""
 .else
 PLIST_SUB+=	WEBKIT="@comment "
@@ -57,23 +58,11 @@ CONFIGURE_ARGS+=	--enable-migemo
 .endif
 .endif
 
-WITH_SEARCH?=	hyperestraier
-.if ${WITH_SEARCH:L}=="rast"
-LIB_DEPENDS+=	rast.1:${PORTSDIR}/textproc/rast
-CONFIGURE_ARGS+=	--with-search-engine=rast
-.else
-LIB_DEPENDS+=	estraier.8:${PORTSDIR}/textproc/hyperestraier
-CONFIGURE_ARGS+=	--with-search-engine=hyperestraier
-.endif
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Enable Migemo (Japanese incremental search) by defining WITH_MIGEMO"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Enable Thumbnail support by defining WITH_THUMBNAIL"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "By default the search uses hyperestraier but you can"
-	@${ECHO_MSG} "use rast by using WITH_SEARCH=rast"
 	@${ECHO_MSG} ""
 
 post-patch:

@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/nautilus-locked-folder/Makefile,v 1.9 2009/04/07 03:12:16 marcus Exp $
+#   $MCom: ports/deskutils/nautilus-locked-folder/Makefile,v 1.12 2009/11/28 05:58:59 mezz Exp $
 #
 
 PORTNAME=	nautilus-locked-folder
 PORTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -18,7 +18,7 @@ COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
-USE_GNOME=	nautilus2 eel2
+USE_GNOME=	nautilus2 eel2 libgnomeui
 PKGCONFIGS=	gtk+-2.0 libglade-2.0 libnautilus-extension libgnomeui-2.0
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags ${PKGCONFIGS}`" \
 		LDFLASG="-L${LOCALBASE}/lib `pkg-config --libs ${PKGCONFIGS}`" \

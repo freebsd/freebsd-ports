@@ -1,0 +1,21 @@
+--- query-browser/configure.in.orig	2009-09-27 23:40:34.000000000 +0200
++++ query-browser/configure.in	2009-09-27 23:41:02.000000000 +0200
+@@ -66,7 +66,7 @@
+      gtkhtml=$withval, gtkhtml=libgtkhtml-3.0)
+ 
+ 
+-PKG_CHECK_MODULES(GLIB, [glib-2.0 libxml-2.0 >= 2.6.2])
++PKG_CHECK_MODULES(GLIB, [glib-2.0 libxml-2.0 >= 2.6.2 libgnome-2.0])
+ AC_SUBST(GLIB_CFLAGS)
+ AC_SUBST(GLIB_LIBS)
+ 
+@@ -74,7 +74,8 @@
+ 			gthread-2.0
+ 			libxml-2.0 >= 2.6.2
+                         $gtkhtml
+-                        gtkmm-2.4])
++                        gtkmm-2.4
++			libgnome-2.0])
+ AC_SUBST(GNOME_CFLAGS)
+ AC_SUBST(GNOME_LIBS)
+ 

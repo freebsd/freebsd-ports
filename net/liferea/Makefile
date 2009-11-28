@@ -7,7 +7,7 @@
 
 PORTNAME=	liferea
 PORTVERSION=	1.4.28
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
 
@@ -61,7 +61,7 @@ PLIST_SUB+=	GTKHTML="@comment "
 .endif
 
 .ifdef WITH_WEBKIT
-LIB_DEPENDS+=	webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 CONFIGURE_ARGS+=--enable-webkit
 PLIST_SUB+=	WEBKIT=""
 .else

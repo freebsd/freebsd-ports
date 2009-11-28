@@ -8,8 +8,6 @@ include/pygda-4.0/pygdavalue_conversions.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/trayicon.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gda.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gda.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gdl.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gdl.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.pyo

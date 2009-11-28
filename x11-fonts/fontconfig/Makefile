@@ -3,11 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.18 2008/08/21 21:53:01 mezz Exp $
+#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.25 2009/11/22 04:17:16 marcus Exp $
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.6.0
+PORTVERSION=	2.8.0
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
@@ -36,7 +36,7 @@ MAKE_ENV=	LC_ALL=C
 MAKE_JOBS_SAFE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1
+MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1 fc-query.1 fc-scan.1
 MAN5=		fonts-conf.5
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 

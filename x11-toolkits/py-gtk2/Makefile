@@ -3,12 +3,11 @@
 # Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.58 2008/09/27 01:53:01 mezz Exp $
+#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.65 2009/08/23 18:58:07 kwm Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.14.1
-PORTREVISION=	1
+PORTVERSION=	2.16.0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,7 +18,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK+
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
+BUILD_DEPENDS=	${PYNUMERIC} \
+		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \

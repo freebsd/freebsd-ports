@@ -11,6 +11,7 @@
     SUBDIR += atk-reference
     SUBDIR += dasher
     SUBDIR += eflite
+    SUBDIR += gir-repository-atk
     SUBDIR += gnome-mag
     SUBDIR += gnome-speech
     SUBDIR += gnopernicus

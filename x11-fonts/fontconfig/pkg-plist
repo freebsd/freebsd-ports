@@ -2,6 +2,8 @@ bin/fc-cache
 bin/fc-cat
 bin/fc-list
 bin/fc-match
+bin/fc-query
+bin/fc-scan
 etc/fonts/conf.avail/10-autohint.conf
 etc/fonts/conf.avail/10-no-sub-pixel.conf
 etc/fonts/conf.avail/10-sub-pixel-bgr.conf

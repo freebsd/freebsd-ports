@@ -3,25 +3,26 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/net-im/empathy/Makefile,v 1.3 2009/04/15 11:41:56 kwm Exp $
+#    $MCom: ports/net-im/empathy/Makefile,v 1.49 2009/11/18 18:26:02 kwm Exp $
 
 PORTNAME=	empathy
-PORTVERSION=	2.26.2
-PORTREVISION=	1
+PORTVERSION=	2.28.1.2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME IM client based around telepathy
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	missioncontrol-server.1:${PORTSDIR}/net-im/telepathy-mission-control \
-    		aspell.16:${PORTSDIR}/textproc/aspell \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+    		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
+LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		telepathy-farsight.0:${PORTSDIR}/net-im/telepathy-farsight \
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+    		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -45,7 +46,9 @@ OPTIONS=	JABBER	"Enable jabber (XMPP) client support" on \
 		MSN	"Enable MSN client support" on \
 		IRC	"Enable IRC client support" on \
 		SALUT	"Enable link-local (serverless) XMPP support" off \
-		HAZE	"Enable libpurple protocol integration" off
+		HAZE	"Enable libpurple protocol integration" off \
+		WEBKIT	"Enable Adium Message Style themes" on \
+		MAP	"Enable graphical map support" on
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +70,24 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-
 
 .if !defined(WITHOUT_HAZE)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
+.endif
+
+.if defined(WITH_WEBKIT)
+LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+CONFIGURE_ARGS+=--enable-webkit
+PLIST_SUB+=	ADIUM=""
+.else
+CONFIGURE_ARGS+=--disable-webkit
+PLIST_SUB+=	ADIUM="@comment "
+.endif
+
+.if !defined(WITHOUT_MAP)
+LIB_DEPENDS+=	champlain-0.4.1:${PORTSDIR}/graphics/libchamplain
+CONFIGURE_ARGS+=--enable-map
+PLIST_SUB+=	MAP=""
+.else
+CONFIGURE_ARGS+=--disable-map
+PLIST_SUB+=	MAP="@comment "
 .endif
 
 post-patch:

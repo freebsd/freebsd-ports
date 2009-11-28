@@ -7,4 +7,17 @@ lib/libgtk-vnc-1.0.so.0
 %%PYTHON_SITELIBDIR%%/gtkvnc.la
 %%PYTHON_SITELIBDIR%%/gtkvnc.so
 libdata/pkgconfig/gtk-vnc-1.0.pc
+share/locale/de/LC_MESSAGES/gtk-vnc.mo
+share/locale/el/LC_MESSAGES/gtk-vnc.mo
+share/locale/en_GB/LC_MESSAGES/gtk-vnc.mo
+share/locale/es/LC_MESSAGES/gtk-vnc.mo
+share/locale/eu/LC_MESSAGES/gtk-vnc.mo
+share/locale/fr/LC_MESSAGES/gtk-vnc.mo
+share/locale/gl/LC_MESSAGES/gtk-vnc.mo
+share/locale/hu/LC_MESSAGES/gtk-vnc.mo
+share/locale/it/LC_MESSAGES/gtk-vnc.mo
+share/locale/pl/LC_MESSAGES/gtk-vnc.mo
+share/locale/pt/LC_MESSAGES/gtk-vnc.mo
+share/locale/pt_BR/LC_MESSAGES/gtk-vnc.mo
+share/locale/sv/LC_MESSAGES/gtk-vnc.mo
 @dirrm include/gtk-vnc-1.0

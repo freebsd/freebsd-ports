@@ -3,12 +3,12 @@
 # Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnotime/Makefile,v 1.21 2007/05/19 21:36:03 marcus Exp $
+#   $MCom: ports/deskutils/gnotime/Makefile,v 1.24 2009/11/28 05:58:58 mezz Exp $
 #
 
 PORTNAME=	gnotime
 PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION}:gttr SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION}:qof
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gttr \
@@ -36,8 +36,8 @@ GCONF_SCHEMAS=	gnotime.schemas
 QOF_DISTNAME=	qof-0.7.5
 QOF_WRKSRC=	${WRKDIR}/${QOF_DISTNAME}
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
+LDFLAGS=	-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 LIBQOF_CFLAGS=	-I${QOF_WRKSRC}/qof
 LIBQOF_LIBS=	-L${QOF_WRKSRC}/qof/.libs -lqof
 

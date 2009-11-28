@@ -83,6 +83,7 @@
     SUBDIR += matwm2
     SUBDIR += metacity
     SUBDIR += musca
+    SUBDIR += mutter
     SUBDIR += nickleby
     SUBDIR += obconf
     SUBDIR += obmenu

@@ -151,6 +151,7 @@
     SUBDIR += gag
     SUBDIR += gambas2-gb-crypt
     SUBDIR += gcipher
+    SUBDIR += gir-repository-gnome-keyring
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
     SUBDIR += gnome-password-generator

@@ -194,6 +194,9 @@ lib/gnome-games/gnome-games-render-cards
 %%PYTHON_SITELIBDIR%%/glchess/history.py
 %%PYTHON_SITELIBDIR%%/glchess/history.pyc
 %%PYTHON_SITELIBDIR%%/glchess/history.pyo
+%%PYTHON_SITELIBDIR%%/glchess/i18n.py
+%%PYTHON_SITELIBDIR%%/glchess/i18n.pyc
+%%PYTHON_SITELIBDIR%%/glchess/i18n.pyo
 %%PYTHON_SITELIBDIR%%/glchess/main.py
 %%PYTHON_SITELIBDIR%%/glchess/main.pyc
 %%PYTHON_SITELIBDIR%%/glchess/main.pyo
@@ -218,12 +221,9 @@ lib/gnome-games/gnome-games-render-cards
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.pyo
-%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.py
-%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.pyc
-%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.pyo
-%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.py
-%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.pyc
-%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/models.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/models.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/models.pyo
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.py
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.pyc
 %%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.pyo
@@ -248,6 +248,9 @@ lib/gnome-games/gnome-games-render-cards
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/dancer.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/dancer.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/dancer.pyo
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.pyo
@@ -275,9 +278,9 @@ lib/gnome-games/gnome-games-render-cards
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/gconf_wrapper.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/gconf_wrapper.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/gconf_wrapper.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/image_extras.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/image_extras.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/image_extras.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/number_box.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/number_box.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/number_box.pyo
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/main.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/main.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/main.pyo
@@ -346,24 +349,26 @@ share/ggz/gnome-games/gnibbles-client.dsc
 share/ggz/gnome-games/iagno-client.dsc
 @exec %%LOCALBASE%%/bin/ggz-config -D --install --modfile=%D/share/ggz/gnome-games/iagno-client.dsc --force
 share/glchess/ai.xml
-share/glchess/chess_view.glade
-share/glchess/glchess.glade
-share/glchess/load_game.glade
-share/glchess/log.glade
-share/glchess/network_game.glade
-share/glchess/new_game.glade
-share/glchess/preferences.glade
-share/glchess/save_game.glade
+share/glchess/chess_view.ui
+share/glchess/glchess.ui
+share/glchess/load_game.ui
+share/glchess/log.ui
+share/glchess/network_game.ui
+share/glchess/network_new_server.ui
+share/glchess/new_game.ui
+share/glchess/preferences.ui
+share/glchess/save_game.ui
+share/glchess/textures/board.png
+share/glchess/textures/piece.png
 share/gnome-games-common/cards/gnomangelo_bitmap.svg
-share/gnome-games-common/theme-install.ini
 %%DATADIR%%/aisleriot/games/accordion.scm
 %%DATADIR%%/aisleriot/games/agnes.scm
 %%DATADIR%%/aisleriot/games/athena.scm
 %%DATADIR%%/aisleriot/games/auld_lang_syne.scm
-%%DATADIR%%/aisleriot/games/aunt_mary.scm
 %%DATADIR%%/aisleriot/games/backbone.scm
 %%DATADIR%%/aisleriot/games/bakers_dozen.scm
 %%DATADIR%%/aisleriot/games/bakers_game.scm
+%%DATADIR%%/aisleriot/games/bear_river.scm
 %%DATADIR%%/aisleriot/games/beleaguered_castle.scm
 %%DATADIR%%/aisleriot/games/block_ten.scm
 %%DATADIR%%/aisleriot/games/bristol.scm
@@ -389,6 +394,7 @@ share/gnome-games-common/theme-install.ini
 %%DATADIR%%/aisleriot/games/freecell.scm
 %%DATADIR%%/aisleriot/games/gaps.scm
 %%DATADIR%%/aisleriot/games/gay_gordons.scm
+%%DATADIR%%/aisleriot/games/giant.scm
 %%DATADIR%%/aisleriot/games/glenwood.scm
 %%DATADIR%%/aisleriot/games/gold_mine.scm
 %%DATADIR%%/aisleriot/games/golf.scm
@@ -526,11 +532,11 @@ share/gnome-games-common/theme-install.ini
 %%DATADIR%%/gnobots2/games/robots2_easy.cfg
 %%DATADIR%%/gnobots2/games/robots_with_safe_teleport.cfg
 %%DATADIR%%/gnobots2/pixmaps/aieee.png
-%%DATADIR%%/gnobots2/pixmaps/boo.svg
-%%DATADIR%%/gnobots2/pixmaps/gnomes.png
-%%DATADIR%%/gnobots2/pixmaps/robots.svg
 %%DATADIR%%/gnobots2/pixmaps/splat.png
-%%DATADIR%%/gnobots2/pixmaps/ufo.svg
+%%DATADIR%%/gnobots2/themes/ufo.svg
+%%DATADIR%%/gnobots2/themes/boo.svg
+%%DATADIR%%/gnobots2/themes/gnomes.png
+%%DATADIR%%/gnobots2/themes/robots.svg
 %%DATADIR%%/gnobots2/pixmaps/yahoo.png
 %%DATADIR%%/gnometris/pixmaps/7blocks-gw.png
 %%DATADIR%%/gnometris/pixmaps/7blocks-tig.png
@@ -562,8 +568,13 @@ share/gnome-games-common/theme-install.ini
 %%DATADIR%%/gtali/pixmaps/kismet6.svg
 %%DATADIR%%/iagno/pixmaps/classic.png
 %%DATADIR%%/iagno/pixmaps/woodtrim.png
+%%DATADIR%%/icons/hicolor/16x16/actions/cards-deal.png
+%%DATADIR%%/icons/hicolor/22x22/actions/cards-deal.png
+%%DATADIR%%/icons/hicolor/24x24/actions/cards-deal.png
 %%DATADIR%%/icons/hicolor/24x24/actions/teleport-random.png
 %%DATADIR%%/icons/hicolor/24x24/actions/teleport.png
+%%DATADIR%%/icons/hicolor/32x32/actions/cards-deal.png
+%%DATADIR%%/icons/hicolor/48x48/actions/cards-deal.png
 %%DATADIR%%/icons/hicolor/scalable/actions/cards-deal.svg
 %%DATADIR%%/mahjongg/games/mahjongg.map
 %%DATADIR%%/mahjongg/pixmaps/postmodern.svg
@@ -596,14 +607,15 @@ share/gnome-games-common/theme-install.ini
 %%DATADIR%%/sounds/turn.ogg
 %%DATADIR%%/sounds/victory.ogg
 %%DATADIR%%/sounds/yahoo.ogg
-share/gnome-sudoku/print_games.glade
-share/gnome-sudoku/puzzle_generator.glade
+share/gnome-sudoku/images/footprints.png
+share/gnome-sudoku/print_games.ui
+share/gnome-sudoku/puzzle_generator.ui
 share/gnome-sudoku/puzzles/easy
 share/gnome-sudoku/puzzles/hard
 share/gnome-sudoku/puzzles/medium
 share/gnome-sudoku/puzzles/very_hard
-share/gnome-sudoku/select_game.glade
-share/gnome-sudoku/tracker.glade
+share/gnome-sudoku/select_game.ui
+share/gnome-sudoku/tracker.ui
 share/gnome/help/aisleriot/C/accordion.xml
 share/gnome/help/aisleriot/C/agnes.xml
 share/gnome/help/aisleriot/C/aisleriot.xml
@@ -611,6 +623,7 @@ share/gnome/help/aisleriot/C/athena.xml
 share/gnome/help/aisleriot/C/auld_lang_syne.xml
 share/gnome/help/aisleriot/C/aunt_mary.xml
 share/gnome/help/aisleriot/C/backbone.xml
+share/gnome/help/aisleriot/C/bear_river.xml
 share/gnome/help/aisleriot/C/bakers_dozen.xml
 share/gnome/help/aisleriot/C/bakers_game.xml
 share/gnome/help/aisleriot/C/beleaguered_castle.xml
@@ -641,6 +654,7 @@ share/gnome/help/aisleriot/C/fourteen.xml
 share/gnome/help/aisleriot/C/freecell.xml
 share/gnome/help/aisleriot/C/gaps.xml
 share/gnome/help/aisleriot/C/gay_gordons.xml
+share/gnome/help/aisleriot/C/giant.xml
 share/gnome/help/aisleriot/C/glenwood.xml
 share/gnome/help/aisleriot/C/gold_mine.xml
 share/gnome/help/aisleriot/C/golf.xml
@@ -728,6 +742,9 @@ share/gnome/help/blackjack/C/legal.xml
 share/gnome/help/blackjack/ca/blackjack.xml
 share/gnome/help/blackjack/ca/figures/blackjack_start_window.png
 share/gnome/help/blackjack/ca/figures/blackjack_win_window.png
+share/gnome/help/blackjack/cs/blackjack.xml
+share/gnome/help/blackjack/cs/figures/blackjack_start_window.png
+share/gnome/help/blackjack/cs/figures/blackjack_win_window.png
 share/gnome/help/blackjack/da/blackjack.xml
 share/gnome/help/blackjack/da/figures/blackjack_start_window.png
 share/gnome/help/blackjack/da/figures/blackjack_win_window.png
@@ -766,6 +783,11 @@ share/gnome/help/glchess/ca/figures/new_game.png
 share/gnome/help/glchess/ca/figures/preferences_game.png
 share/gnome/help/glchess/ca/figures/preferences_view.png
 share/gnome/help/glchess/ca/glchess.xml
+share/gnome/help/glchess/cs/figures/game.png
+share/gnome/help/glchess/cs/figures/new_game.png
+share/gnome/help/glchess/cs/figures/preferences_game.png
+share/gnome/help/glchess/cs/figures/preferences_view.png
+share/gnome/help/glchess/cs/glchess.xml
 share/gnome/help/glchess/de/figures/game.png
 share/gnome/help/glchess/de/figures/new_game.png
 share/gnome/help/glchess/de/figures/preferences_game.png
@@ -915,6 +937,11 @@ share/gnome/help/gnect/eu/figures/mainwindow.png
 share/gnome/help/gnect/eu/figures/tables.png
 share/gnome/help/gnect/eu/figures/tileset.png
 share/gnome/help/gnect/eu/gnect.xml
+share/gnome/help/gnect/fi/figures/connect.png
+share/gnome/help/gnect/fi/figures/mainwindow.png
+share/gnome/help/gnect/fi/figures/tables.png
+share/gnome/help/gnect/fi/figures/tileset.png
+share/gnome/help/gnect/fi/gnect.xml
 share/gnome/help/gnect/fr/figures/connect.png
 share/gnome/help/gnect/fr/figures/mainwindow.png
 share/gnome/help/gnect/fr/figures/tables.png
@@ -972,8 +999,6 @@ share/gnome/help/gnibbles/el/figures/playing.png
 share/gnome/help/gnibbles/el/figures/tables.png
 share/gnome/help/gnibbles/el/figures/worm_op.png
 share/gnome/help/gnibbles/el/gnibbles.xml
-share/gnome/help/gnobots2/el/figures/gnobots2-main.png
-share/gnome/help/gnobots2/el/gnobots2.xml
 share/gnome/help/gnibbles/en_GB/figures/connect.png
 share/gnome/help/gnibbles/en_GB/figures/game.png
 share/gnome/help/gnibbles/en_GB/figures/intro.png
@@ -1028,10 +1053,12 @@ share/gnome/help/gnobots2/C/gnobots2.xml
 share/gnome/help/gnobots2/C/legal.xml
 share/gnome/help/gnobots2/ca/figures/gnobots2-main.png
 share/gnome/help/gnobots2/ca/gnobots2.xml
-share/gnome/help/gnobots2/da/gnobots2.xml
-share/gnome/help/gnobots2/da/legal.xml
+share/gnome/help/gnobots2/cs/figures/gnobots2-main.png
+share/gnome/help/gnobots2/cs/gnobots2.xml
 share/gnome/help/gnobots2/de/figures/gnobots2-main.png
 share/gnome/help/gnobots2/de/gnobots2.xml
+share/gnome/help/gnobots2/el/figures/gnobots2-main.png
+share/gnome/help/gnobots2/el/gnobots2.xml
 share/gnome/help/gnobots2/en_GB/figures/gnobots2-main.png
 share/gnome/help/gnobots2/en_GB/gnobots2.xml
 share/gnome/help/gnobots2/es/figures/gnobots2-main.png
@@ -1375,6 +1402,9 @@ share/gnome/help/gnotravex/ca/gnotravex.xml
 share/gnome/help/gnotravex/cs/figures/gnotravex_game.png
 share/gnome/help/gnotravex/cs/figures/gnotravex_mainwindow.png
 share/gnome/help/gnotravex/cs/gnotravex.xml
+share/gnome/help/gnotravex/da/figures/gnotravex_game.png
+share/gnome/help/gnotravex/da/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/da/gnotravex.xml
 share/gnome/help/gnotravex/de/figures/gnotravex_game.png
 share/gnome/help/gnotravex/de/figures/gnotravex_mainwindow.png
 share/gnome/help/gnotravex/de/gnotravex.xml
@@ -1449,8 +1479,9 @@ share/gnome/help/gtali/C/legal.xml
 share/gnome/help/gtali/ca/figures/mainwindow.png
 share/gnome/help/gtali/ca/figures/preferences.png
 share/gnome/help/gtali/ca/gtali.xml
-share/gnome/help/gtali/da/gtali.xml
-share/gnome/help/gtali/da/legal.xml
+share/gnome/help/gtali/cs/figures/mainwindow.png
+share/gnome/help/gtali/cs/figures/preferences.png
+share/gnome/help/gtali/cs/gtali.xml
 share/gnome/help/gtali/de/figures/mainwindow.png
 share/gnome/help/gtali/de/figures/preferences.png
 share/gnome/help/gtali/de/gtali.xml
@@ -1834,7 +1865,6 @@ share/icons/hicolor/scalable/apps/gnome-gnibbles.svg
 share/icons/hicolor/scalable/apps/gnome-gnometris.svg
 share/icons/hicolor/scalable/apps/gnome-iagno.svg
 share/icons/hicolor/scalable/apps/gnome-klotski.svg
-share/icons/hicolor/scalable/apps/gnome-lightsoff.svg
 share/icons/hicolor/scalable/apps/gnome-mahjongg.svg
 share/icons/hicolor/scalable/apps/gnome-mines.svg
 share/icons/hicolor/scalable/apps/gnome-robots.svg
@@ -1851,7 +1881,9 @@ share/locale/be/LC_MESSAGES/gnome-games.mo
 share/locale/bg/LC_MESSAGES/gnome-games.mo
 share/locale/bn/LC_MESSAGES/gnome-games.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-games.mo
+share/locale/br/LC_MESSAGES/gnome-games.mo
 share/locale/ca/LC_MESSAGES/gnome-games.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-games.mo
 share/locale/cs/LC_MESSAGES/gnome-games.mo
 share/locale/cy/LC_MESSAGES/gnome-games.mo
 share/locale/da/LC_MESSAGES/gnome-games.mo
@@ -1932,6 +1964,7 @@ share/omf/aisleriot/aisleriot-ru.omf
 share/omf/aisleriot/aisleriot-sv.omf
 share/omf/blackjack/blackjack-C.omf
 share/omf/blackjack/blackjack-ca.omf
+share/omf/blackjack/blackjack-cs.omf
 share/omf/blackjack/blackjack-da.omf
 share/omf/blackjack/blackjack-de.omf
 share/omf/blackjack/blackjack-el.omf
@@ -1943,6 +1976,7 @@ share/omf/blackjack/blackjack-oc.omf
 share/omf/blackjack/blackjack-sv.omf
 share/omf/glchess/glchess-C.omf
 share/omf/glchess/glchess-ca.omf
+share/omf/glchess/glchess-cs.omf
 share/omf/glchess/glchess-de.omf
 share/omf/glchess/glchess-el.omf
 share/omf/glchess/glchess-en_GB.omf
@@ -1975,6 +2009,7 @@ share/omf/gnect/gnect-el.omf
 share/omf/gnect/gnect-en_GB.omf
 share/omf/gnect/gnect-es.omf
 share/omf/gnect/gnect-eu.omf
+share/omf/gnect/gnect-fi.omf
 share/omf/gnect/gnect-fr.omf
 share/omf/gnect/gnect-it.omf
 share/omf/gnect/gnect-oc.omf
@@ -1993,6 +2028,7 @@ share/omf/gnibbles/gnibbles-oc.omf
 share/omf/gnibbles/gnibbles-sv.omf
 share/omf/gnobots2/gnobots2-C.omf
 share/omf/gnobots2/gnobots2-ca.omf
+share/omf/gnobots2/gnobots2-cs.omf
 share/omf/gnobots2/gnobots2-de.omf
 share/omf/gnobots2/gnobots2-el.omf
 share/omf/gnobots2/gnobots2-en_GB.omf
@@ -2002,8 +2038,6 @@ share/omf/gnobots2/gnobots2-fr.omf
 share/omf/gnobots2/gnobots2-it.omf
 share/omf/gnobots2/gnobots2-oc.omf
 share/omf/gnobots2/gnobots2-sv.omf
-share/omf/gnome-games/gnobots2-da.omf
-share/omf/gnome-games/gtali-da.omf
 share/omf/gnome-sudoku/gnome-sudoku-C.omf
 share/omf/gnome-sudoku/gnome-sudoku-ca.omf
 share/omf/gnome-sudoku/gnome-sudoku-cs.omf
@@ -2049,6 +2083,7 @@ share/omf/gnomine/gnomine-zh_CN.omf
 share/omf/gnotravex/gnotravex-C.omf
 share/omf/gnotravex/gnotravex-ca.omf
 share/omf/gnotravex/gnotravex-cs.omf
+share/omf/gnotravex/gnotravex-da.omf
 share/omf/gnotravex/gnotravex-de.omf
 share/omf/gnotravex/gnotravex-el.omf
 share/omf/gnotravex/gnotravex-en_GB.omf
@@ -2073,6 +2108,7 @@ share/omf/gnotski/gnotski-oc.omf
 share/omf/gnotski/gnotski-sv.omf
 share/omf/gtali/gtali-C.omf
 share/omf/gtali/gtali-ca.omf
+share/omf/gtali/gtali-cs.omf
 share/omf/gtali/gtali-de.omf
 share/omf/gtali/gtali-el.omf
 share/omf/gtali/gtali-en_GB.omf
@@ -2121,11 +2157,6 @@ share/omf/same-gnome/same-gnome-it.omf
 share/omf/same-gnome/same-gnome-oc.omf
 share/omf/same-gnome/same-gnome-ru.omf
 share/omf/same-gnome/same-gnome-sv.omf
-share/pixmaps/glchess/board.png
-share/pixmaps/glchess/piece.png
-share/pixmaps/gnome-sudoku/footprints.png
-@dirrm share/pixmaps/gnome-sudoku
-@dirrm share/pixmaps/glchess
 @dirrm share/omf/same-gnome
 @dirrm share/omf/mahjongg
 @dirrm share/omf/iagno
@@ -2135,7 +2166,6 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/omf/gnomine
 @dirrm share/omf/gnometris
 @dirrm share/omf/gnome-sudoku
-@dirrm share/omf/gnome-games
 @dirrm share/omf/gnobots2
 @dirrm share/omf/gnibbles
 @dirrm share/omf/gnect
@@ -2242,7 +2272,8 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome/help/gtali/el
 @dirrm share/gnome/help/gtali/de/figures
 @dirrm share/gnome/help/gtali/de
-@dirrm share/gnome/help/gtali/da
+@dirrm share/gnome/help/gtali/cs/figures
+@dirrm share/gnome/help/gtali/cs
 @dirrm share/gnome/help/gtali/ca/figures
 @dirrm share/gnome/help/gtali/ca
 @dirrm share/gnome/help/gtali/C/figures
@@ -2293,6 +2324,8 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome/help/gnotravex/el
 @dirrm share/gnome/help/gnotravex/de/figures
 @dirrm share/gnome/help/gnotravex/de
+@dirrm share/gnome/help/gnotravex/da/figures
+@dirrm share/gnome/help/gnotravex/da
 @dirrm share/gnome/help/gnotravex/cs/figures
 @dirrm share/gnome/help/gnotravex/cs
 @dirrm share/gnome/help/gnotravex/ca/figures
@@ -2391,7 +2424,8 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome/help/gnobots2/el
 @dirrm share/gnome/help/gnobots2/de/figures
 @dirrm share/gnome/help/gnobots2/de
-@dirrm share/gnome/help/gnobots2/da
+@dirrm share/gnome/help/gnobots2/cs/figures
+@dirrm share/gnome/help/gnobots2/cs
 @dirrm share/gnome/help/gnobots2/ca/figures
 @dirrm share/gnome/help/gnobots2/ca
 @dirrm share/gnome/help/gnobots2/C/figures
@@ -2430,6 +2464,8 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome/help/gnect/it
 @dirrm share/gnome/help/gnect/fr/figures
 @dirrm share/gnome/help/gnect/fr
+@dirrm share/gnome/help/gnect/fi/figures
+@dirrm share/gnome/help/gnect/fi
 @dirrm share/gnome/help/gnect/eu/figures
 @dirrm share/gnome/help/gnect/eu
 @dirrm share/gnome/help/gnect/es/figures
@@ -2496,6 +2532,8 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome/help/glchess/el
 @dirrm share/gnome/help/glchess/de/figures
 @dirrm share/gnome/help/glchess/de
+@dirrm share/gnome/help/glchess/cs/figures
+@dirrm share/gnome/help/glchess/cs
 @dirrm share/gnome/help/glchess/ca/figures
 @dirrm share/gnome/help/glchess/ca
 @dirrm share/gnome/help/glchess/C/figures
@@ -2519,6 +2557,8 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome/help/blackjack/de
 @dirrm share/gnome/help/blackjack/da/figures
 @dirrm share/gnome/help/blackjack/da
+@dirrm share/gnome/help/blackjack/cs/figures
+@dirrm share/gnome/help/blackjack/cs
 @dirrm share/gnome/help/blackjack/ca/figures
 @dirrm share/gnome/help/blackjack/ca
 @dirrm share/gnome/help/blackjack/C/figures
@@ -2546,6 +2586,7 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome/help/aisleriot/C
 @dirrm share/gnome/help/aisleriot
 @dirrm share/gnome-sudoku/puzzles
+@dirrm share/gnome-sudoku/images
 @dirrm share/gnome-sudoku
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/same-gnome/themes/2.10
@@ -2557,8 +2598,16 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm %%DATADIR%%/mahjongg
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
+@dirrm %%DATADIR%%/icons/hicolor/32x32
 @dirrm %%DATADIR%%/icons/hicolor/24x24/actions
 @dirrm %%DATADIR%%/icons/hicolor/24x24
+@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/iagno/pixmaps
@@ -2571,6 +2620,7 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm %%DATADIR%%/gnomine
 @dirrm %%DATADIR%%/gnometris/pixmaps
 @dirrm %%DATADIR%%/gnometris
+@dirrm %%DATADIR%%/gnobots2/themes
 @dirrm %%DATADIR%%/gnobots2/pixmaps
 @dirrm %%DATADIR%%/gnobots2/games
 @dirrm %%DATADIR%%/gnobots2
@@ -2589,6 +2639,7 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrm share/gnome-games-common/cards
 @dirrm share/gnome-games-common
 @dirrm %%DATADIR%%
+@dirrm share/glchess/textures
 @dirrm share/glchess
 @dirrmtry share/ggz/gnome-games
 @dirrmtry share/ggz
@@ -2629,6 +2680,8 @@ share/pixmaps/gnome-sudoku/footprints.png
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

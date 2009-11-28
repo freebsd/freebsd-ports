@@ -37,6 +37,7 @@ share/gnome/help/fdl/fr/fdl.xml
 share/gnome/help/fdl/hu/fdl.xml
 share/gnome/help/fdl/ko/fdl.xml
 share/gnome/help/fdl/oc/fdl.xml
+share/gnome/help/fdl/pl/fdl.xml
 share/gnome/help/fdl/sv/fdl.xml
 share/gnome/help/fdl/uk/fdl.xml
 share/gnome/help/fdl/vi/fdl.xml
@@ -74,6 +75,7 @@ share/gnome/help/lgpl/sv/lgpl.xml
 share/gnome/help/lgpl/uk/lgpl.xml
 share/gnome/help/lgpl/vi/lgpl.xml
 share/gnome/help/lgpl/zh_CN/lgpl.xml
+share/libgnome-desktop/pnp.ids
 share/locale/af/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -126,8 +128,8 @@ share/locale/ko/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ky/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/li/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/lt/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lo/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/lt/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mai/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mg/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -138,6 +140,7 @@ share/locale/mn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/nds/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -189,6 +192,7 @@ share/omf/fdl/fdl-fr.omf
 share/omf/fdl/fdl-hu.omf
 share/omf/fdl/fdl-ko.omf
 share/omf/fdl/fdl-oc.omf
+share/omf/fdl/fdl-pl.omf
 share/omf/fdl/fdl-sv.omf
 share/omf/fdl/fdl-uk.omf
 share/omf/fdl/fdl-vi.omf
@@ -336,6 +340,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/fdl/vi
 @dirrm share/gnome/help/fdl/uk
 @dirrm share/gnome/help/fdl/sv
+@dirrm share/gnome/help/fdl/pl
 @dirrm share/gnome/help/fdl/oc
 @dirrm share/gnome/help/fdl/ko
 @dirrm share/gnome/help/fdl/hu
@@ -351,6 +356,7 @@ share/pixmaps/vnterm.xpm
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0
+@dirrm share/libgnome-desktop
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -381,6 +387,8 @@ share/pixmaps/vnterm.xpm
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES

@@ -11,6 +11,5 @@ share/applications/tracker-search-tool.desktop
 %%DATADIR%%/icons/tracker-applet-paused.png
 %%DATADIR%%/tracker-applet-prefs.glade
 %%DATADIR%%/tracker-preferences.glade
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/icons
 @dirrmtry share/applications

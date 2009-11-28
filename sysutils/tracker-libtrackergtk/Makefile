@@ -3,9 +3,9 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/sysutils/tracker-libtrackergtk/Makefile,v 1.1 2008/03/30 20:39:09 ahze Exp $
+#    $MCom: ports/sysutils/tracker-libtrackergtk/Makefile,v 1.1 2009/08/08 18:46:43 ahze Exp $
 
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	Gtk bindings to tracker and GSF data extract module (MS docs)
 

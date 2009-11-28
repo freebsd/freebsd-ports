@@ -71,8 +71,8 @@
     SUBDIR += claraocr
     SUBDIR += clutter
     SUBDIR += clutter-box2d
-    SUBDIR += clutter-cairo
     SUBDIR += clutter-gtk
+    SUBDIR += clutter-qt
     SUBDIR += comical
     SUBDIR += comix
     SUBDIR += compupic
@@ -124,6 +124,7 @@
     SUBDIR += enblend
     SUBDIR += enfle
     SUBDIR += eog
+    SUBDIR += eog-plugins
     SUBDIR += epdfview
     SUBDIR += epeg
     SUBDIR += epix
@@ -243,6 +244,8 @@
     SUBDIR += gimp-manual-pdf
     SUBDIR += gimpfx-foundry
     SUBDIR += gimpshop
+    SUBDIR += gir-repository-goocanvas
+    SUBDIR += gir-repository-poppler
     SUBDIR += giram
     SUBDIR += gkrellkam
     SUBDIR += gkrellkam2
@@ -409,6 +412,7 @@
     SUBDIR += libaux
     SUBDIR += libboard
     SUBDIR += libcaca
+    SUBDIR += libchamplain
     SUBDIR += libdrm
     SUBDIR += libdmtx
     SUBDIR += libemf
@@ -729,6 +733,7 @@
     SUBDIR += py-cgkit
     SUBDIR += py-chart
     SUBDIR += py-clutter
+    SUBDIR += py-clutter-gtk
     SUBDIR += py-editobj
     SUBDIR += py-exif
     SUBDIR += py-exiv2

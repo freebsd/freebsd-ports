@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-system-tools/Makefile,v 1.81 2008/09/27 01:53:00 mezz Exp $
+#   $MCom: ports/sysutils/gnome-system-tools/Makefile,v 1.88 2009/10/19 18:43:32 kwm Exp $
 #
 
 PORTNAME=	gnome-system-tools
-PORTVERSION=	2.22.2
-PORTREVISION=	1
+PORTVERSION=	2.28.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tools to configure workstations
 
-LIB_DEPENDS=	oobs-1.4:${PORTSDIR}/devel/liboobs
+LIB_DEPENDS=	oobs-1.4:${PORTSDIR}/devel/liboobs \
+		polkit-gtk-1.0:${PORTSDIR}/sysutils/polkit-gnome
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

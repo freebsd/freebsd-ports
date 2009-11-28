@@ -3,11 +3,11 @@
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gimp-app/Makefile,v 1.35 2009/04/09 03:24:07 mezz Exp $
+#   $MCom: ports/graphics/gimp-app/Makefile,v 1.48 2009/09/23 15:44:49 kwm Exp $
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.6.6
+DISTVERSION=	2.6.7
 PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
@@ -132,7 +132,7 @@ USE_GNOME+=	libgnomeui
 .endif
 
 .if defined(WITH_HELPBROWSER)
-LIB_DEPENDS+=		webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 CONFIGURE_ARGS+=	--with-webkit
 PLIST_SUB+=		HELPBROWSER=""
 .else

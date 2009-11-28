@@ -1,0 +1,20 @@
+--- configure.orig	2009-06-15 17:23:17.000000000 +0200
++++ configure	2009-06-15 20:19:44.000000000 +0200
+@@ -21204,7 +21204,7 @@ fi
+ 
+ if test "$enable_jit" = "yes"; then
+     case "$host_cpu" in
+-        i*86|x86_64)
++        i*86|x86_64|amd64)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define ENABLE_JIT 1
+@@ -21243,7 +21243,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+                 ;;
+-                x86_64)
++                x86_64|amd64)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define WTF_USE_JIT_STUB_ARGUMENT_REGISTER 1

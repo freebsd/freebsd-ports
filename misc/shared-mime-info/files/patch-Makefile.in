@@ -13,12 +13,3 @@
  
  uninstall-hook:
  	for media in text application image audio inode video message model multipart x-epoc x-content; do rm -f "$(DESTDIR)$(datadir)/mime/$${media}/"*.xml; done
-@@ -956,7 +960,7 @@ uninstall-hook:
- 	rm -f "$(DESTDIR)$(datadir)/mime/types"
- 
- all: check
--	make -C po shared-mime-info.pot
-+	$(MAKE) -C po shared-mime-info.pot
- 
- check: freedesktop.org.xml
- 	if test -n $(XMLLINT) ; then \

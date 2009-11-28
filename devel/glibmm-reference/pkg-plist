@@ -1,7 +1,10 @@
-%%PORTDOCS%%lib/glibmm-%%API_VERSION%%/proc/doxygen_to_devhelp.xsl
-%%PORTDOCS%%share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp
+%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/doc-install.pl
+%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/doc-postprocess.pl
+%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/doxygen.css
+%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/tagfile-to-devhelp2.xsl
+%%PORTDOCS%%share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp2
 %%PORTDOCS%%@dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
 %%PORTDOCS%%@dirrmtry share/devhelp/books
 %%PORTDOCS%%@dirrmtry share/devhelp
-%%PORTDOCS%%@dirrmtry lib/glibmm-%%API_VERSION%%/proc
-%%PORTDOCS%%@dirrmtry lib/glibmm-%%API_VERSION%%
+%%PORTDOCS%%@dirrmtry share/glibmm-%%API_VERSION%%/doctool
+%%PORTDOCS%%@dirrmtry share/glibmm-%%API_VERSION%%

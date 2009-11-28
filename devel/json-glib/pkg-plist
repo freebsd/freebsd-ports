@@ -5,6 +5,7 @@ include/json-glib-1.0/json-glib/json-gobject.h
 include/json-glib-1.0/json-glib/json-parser.h
 include/json-glib-1.0/json-glib/json-types.h
 include/json-glib-1.0/json-glib/json-version.h
+lib/girepository-1.0/Json-1.0.typelib
 lib/libjson-glib-1.0.a
 lib/libjson-glib-1.0.la
 lib/libjson-glib-1.0.so
@@ -12,20 +13,25 @@ lib/libjson-glib-1.0.so.0
 libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/JsonGenerator.html
 %%DOCSDIR%%/JsonParser.html
+%%DOCSDIR%%/annotation-glossary.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
+%%DOCSDIR%%/ch04.html
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/ix01.html
 %%DOCSDIR%%/ix02.html
+%%DOCSDIR%%/ix03.html
+%%DOCSDIR%%/ix04.html
+%%DOCSDIR%%/ix05.html
 %%DOCSDIR%%/json-advanced.html
 %%DOCSDIR%%/json-base.html
 %%DOCSDIR%%/json-glib-GObject-integration.html
-%%DOCSDIR%%/json-glib-JsonArray.html
-%%DOCSDIR%%/json-glib-JsonNode.html
-%%DOCSDIR%%/json-glib-JsonObject.html
+%%DOCSDIR%%/json-glib-JSON-Array.html
+%%DOCSDIR%%/json-glib-JSON-Node.html
+%%DOCSDIR%%/json-glib-JSON-Object.html
 %%DOCSDIR%%/json-glib-Versioning-information.html
 %%DOCSDIR%%/json-glib.devhelp
 %%DOCSDIR%%/json-glib.devhelp2
@@ -37,6 +43,7 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
+share/gir-1.0/Json-1.0.gir
 @dirrm %%DOCSDIR%%
 @dirrm include/json-glib-1.0/json-glib
 @dirrm include/json-glib-1.0

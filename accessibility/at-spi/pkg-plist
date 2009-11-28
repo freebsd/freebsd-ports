@@ -1,3 +1,4 @@
+etc/xdg/autostart/at-spi-registryd.desktop
 include/at-spi-1.0/cspi/spi-impl.h
 include/at-spi-1.0/cspi/spi-listener.h
 include/at-spi-1.0/cspi/spi-roletypes.h
@@ -112,6 +113,7 @@ share/locale/bn/LC_MESSAGES/at-spi.mo
 share/locale/bn_IN/LC_MESSAGES/at-spi.mo
 share/locale/bs/LC_MESSAGES/at-spi.mo
 share/locale/ca/LC_MESSAGES/at-spi.mo
+share/locale/ca@valencia/LC_MESSAGES/at-spi.mo
 share/locale/crh/LC_MESSAGES/at-spi.mo
 share/locale/cs/LC_MESSAGES/at-spi.mo
 share/locale/cy/LC_MESSAGES/at-spi.mo
@@ -140,17 +142,19 @@ share/locale/is/LC_MESSAGES/at-spi.mo
 share/locale/it/LC_MESSAGES/at-spi.mo
 share/locale/ja/LC_MESSAGES/at-spi.mo
 share/locale/ka/LC_MESSAGES/at-spi.mo
+share/locale/kn/LC_MESSAGES/at-spi.mo
 share/locale/ko/LC_MESSAGES/at-spi.mo
 share/locale/ku/LC_MESSAGES/at-spi.mo
 share/locale/lt/LC_MESSAGES/at-spi.mo
 share/locale/lv/LC_MESSAGES/at-spi.mo
+share/locale/mai/LC_MESSAGES/at-spi.mo
 share/locale/mk/LC_MESSAGES/at-spi.mo
 share/locale/ml/LC_MESSAGES/at-spi.mo
 share/locale/mn/LC_MESSAGES/at-spi.mo
 share/locale/mr/LC_MESSAGES/at-spi.mo
 share/locale/ms/LC_MESSAGES/at-spi.mo
 share/locale/nb/LC_MESSAGES/at-spi.mo
-share/locale/nds_DE/LC_MESSAGES/at-spi.mo
+share/locale/nds/LC_MESSAGES/at-spi.mo
 share/locale/ne/LC_MESSAGES/at-spi.mo
 share/locale/nl/LC_MESSAGES/at-spi.mo
 share/locale/nn/LC_MESSAGES/at-spi.mo
@@ -208,8 +212,8 @@ share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrmtry share/locale/nds_DE/LC_MESSAGES
-@dirrmtry share/locale/nds_DE
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -218,6 +222,8 @@ share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

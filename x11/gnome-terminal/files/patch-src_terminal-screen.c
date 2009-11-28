@@ -1,5 +1,5 @@
---- src/terminal-screen.c.orig	2009-04-12 15:40:23.000000000 +0200
-+++ src/terminal-screen.c	2009-05-06 00:30:39.000000000 +0200
+--- src/terminal-screen.c.orig	2009-08-13 14:39:24.000000000 +0200
++++ src/terminal-screen.c	2009-08-20 10:41:58.000000000 +0200
 @@ -18,6 +18,15 @@
  
  #include <config.h>
@@ -16,9 +16,9 @@
  #include <string.h>
  #include <stdlib.h>
  #include <unistd.h>
-@@ -1744,10 +1753,22 @@
- char*
- terminal_screen_get_current_dir (TerminalScreen *screen)
+@@ -184,15 +193,28 @@ G_DEFINE_TYPE (TerminalScreen, terminal_
+ static char *
+ cwd_of_pid (int pid)
  {
 +#ifndef __FreeBSD__
    static const char patterns[][18] = {
@@ -36,22 +36,21 @@
 +#endif /* HAVE_KINFO_GETFILE */
 +#endif /* __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104) */
 +#endif /* __FreeBSD__ */
-   TerminalScreenPrivate *priv = screen->priv;
-   int fgpid;
    guint i;
-@@ -1767,6 +1788,7 @@
-   if (fgpid == -1)
-     return g_strdup (priv->initial_working_directory);
+   
+   if (pid == -1)
+     return NULL;
  
 +#ifndef __FreeBSD__
    /* Try to get the working directory using various OS-specific mechanisms */
    for (i = 0; i < G_N_ELEMENTS (patterns); ++i)
      {
-@@ -1804,6 +1826,48 @@
+@@ -230,6 +252,49 @@ cwd_of_pid (int pid)
              return working_dir;
          }
      }
 +#else
++  int fgpid;
 +#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +#ifndef HAVE_KINFO_GETFILE
 +  name[0] = CTL_KERN;
@@ -94,5 +93,5 @@
 +#endif /* __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104) */
 +#endif /* __FreeBSD__ */
  
-   return g_strdup (priv->initial_working_directory);
+   return NULL;
  }

@@ -3,20 +3,20 @@
 # Whom:					Florent Thoumie <flz@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/sysutils/consolekit/Makefile,v 1.2 2009/04/18 22:09:26 marcus Exp $
+#    $MCom: ports/sysutils/consolekit/Makefile,v 1.23 2009/09/26 12:32:45 kwm Exp $
 
 PORTNAME=	consolekit
-PORTVERSION=	0.3.0
-PORTREVISION=	8
+PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://people.freedesktop.org/~mccann/dist/
+MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 DISTFILES=	ConsoleKit-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for defining and tracking users
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-    		polkit.2:${PORTSDIR}/sysutils/policykit
+    		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
 
 WRKSRC=		${WRKDIR}/ConsoleKit-${PORTVERSION}
 USE_BZIP2=	yes

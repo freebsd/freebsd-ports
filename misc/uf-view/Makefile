@@ -7,7 +7,7 @@
 
 PORTNAME=	uf-view
 PORTVERSION=	2.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 
@@ -15,7 +15,7 @@ MAINTAINER=	mcgee@wam.umd.edu
 COMMENT=	A gTK+ viewer for the User Friendly and several other popular comics
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gnomedesktop
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gnomedesktop libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

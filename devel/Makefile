@@ -37,6 +37,7 @@
     SUBDIR += allegro
     SUBDIR += allegro-devel
     SUBDIR += anjuta
+    SUBDIR += anjuta-extras
     SUBDIR += antlr
     SUBDIR += antlrworks
     SUBDIR += apache-ant
@@ -309,6 +310,7 @@
     SUBDIR += ecore-main
     SUBDIR += ecos-tools
     SUBDIR += eet
+    SUBDIR += eggdbus
     SUBDIR += egypt
     SUBDIR += eieio
     SUBDIR += eiffelstudio
@@ -437,6 +439,11 @@
     SUBDIR += giggle
     SUBDIR += gindent
     SUBDIR += gio-fam-backend
+    SUBDIR += gir-repository
+    SUBDIR += gir-repository-dbus
+    SUBDIR += gir-repository-gconf2
+    SUBDIR += gir-repository-libnotify
+    SUBDIR += gir-repository-libsoup
     SUBDIR += git
     SUBDIR += gittrac
     SUBDIR += glade2
@@ -455,6 +462,7 @@
     SUBDIR += gmake
     SUBDIR += gnome-common
     SUBDIR += gnome-crash
+    SUBDIR += gnome-js-common
     SUBDIR += gnome-vfs
     SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
@@ -466,6 +474,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += gob2
+    SUBDIR += gobject-introspection
     SUBDIR += goffice
     SUBDIR += goffice04
     SUBDIR += goffice06
@@ -876,6 +885,7 @@
     SUBDIR += mkmf
     SUBDIR += ml-doc
     SUBDIR += mm
+    SUBDIR += mm-common
     SUBDIR += mob
     SUBDIR += mono-addins
     SUBDIR += mono-tools
@@ -2835,6 +2845,7 @@
     SUBDIR += sdlmm
     SUBDIR += sdts++
     SUBDIR += sedsed
+    SUBDIR += seed
     SUBDIR += semantic
     SUBDIR += sfio
     SUBDIR += sfml

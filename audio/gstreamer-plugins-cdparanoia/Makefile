@@ -3,10 +3,10 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/gstreamer-plugins-cdparanoia/Makefile,v 1.6 2008/03/21 04:01:31 ahze Exp $
+#   $MCom: ports/audio/gstreamer-plugins-cdparanoia/Makefile,v 1.8 2009/11/17 19:08:45 kwm Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer CDDA extraction (aka audio ripping) plugin

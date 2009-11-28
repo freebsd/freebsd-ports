@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.35 2009/03/16 08:49:02 kwm Exp $
+#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.40 2009/11/28 05:58:58 mezz Exp $
 #
 
 PORTNAME=	evolution-jescs
-PORTVERSION=	2.26.0
-PORTREVISION=	1
+PORTVERSION=	2.28.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,8 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
 
-EVO_VERSION=	2.26
-PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.26"
+EVO_VERSION=	2.28
+PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.28"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir/bonobo/servers|prefix/libdata/bonobo/servers|g' \

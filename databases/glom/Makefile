@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/glom/Makefile,v 1.24 2009/03/17 16:33:41 kwm Exp $
+#   $MCom: ports/databases/glom/Makefile,v 1.28 2009/10/11 10:43:05 kwm Exp $
 #
 
 PORTNAME=	glom
-PORTVERSION=	1.10.1
-PORTREVISION=	1
+PORTVERSION=	1.12.2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,8 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
-LIB_DEPENDS=	bakery-2.6:${PORTSDIR}/x11-toolkits/bakery \
-		gdamm-4.0.11:${PORTSDIR}/databases/libgdamm \
+LIB_DEPENDS=	gdamm-4.0.12:${PORTSDIR}/databases/libgdamm \
+		gconfmm-2.0.1:${PORTSDIR}/devel/gconfmm \
 		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
 		epc-1.0.2:${PORTSDIR}/www/libepc \

@@ -15,6 +15,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Mono bindings for evolution
 
+BROKEN=		Doesn't accept current evolution version
+
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 

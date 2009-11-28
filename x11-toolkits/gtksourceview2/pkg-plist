@@ -1,4 +1,5 @@
 include/gtksourceview-2.0/gtksourceview/gtksourcebuffer.h
+include/gtksourceview-2.0/gtksourceview/gtksourcegutter.h
 include/gtksourceview-2.0/gtksourceview/gtksourceiter.h
 include/gtksourceview-2.0/gtksourceview/gtksourcelanguage.h
 include/gtksourceview-2.0/gtksourceview/gtksourcelanguagemanager.h
@@ -28,6 +29,7 @@ share/gtksourceview-2.0/language-specs/convert.py
 share/gtksourceview-2.0/language-specs/cpp.lang
 share/gtksourceview-2.0/language-specs/csharp.lang
 share/gtksourceview-2.0/language-specs/css.lang
+share/gtksourceview-2.0/language-specs/cuda.lang
 share/gtksourceview-2.0/language-specs/d.lang
 share/gtksourceview-2.0/language-specs/def.lang
 share/gtksourceview-2.0/language-specs/desktop.lang
@@ -42,6 +44,7 @@ share/gtksourceview-2.0/language-specs/erlang.lang
 share/gtksourceview-2.0/language-specs/forth.lang
 share/gtksourceview-2.0/language-specs/fortran.lang
 share/gtksourceview-2.0/language-specs/gap.lang
+share/gtksourceview-2.0/language-specs/glsl.lang
 share/gtksourceview-2.0/language-specs/gtk-doc.lang
 share/gtksourceview-2.0/language-specs/gtkrc.lang
 share/gtksourceview-2.0/language-specs/haddock.lang
@@ -60,6 +63,7 @@ share/gtksourceview-2.0/language-specs/libtool.lang
 share/gtksourceview-2.0/language-specs/lua.lang
 share/gtksourceview-2.0/language-specs/m4.lang
 share/gtksourceview-2.0/language-specs/makefile.lang
+share/gtksourceview-2.0/language-specs/mallard.lang
 share/gtksourceview-2.0/language-specs/msil.lang
 share/gtksourceview-2.0/language-specs/nemerle.lang
 share/gtksourceview-2.0/language-specs/nsis.lang
@@ -105,6 +109,7 @@ share/locale/bn/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/bs/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/ca/LC_MESSAGES/gtksourceview-2.0.mo
+share/locale/ca@valencia/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/cs/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/cy/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/da/LC_MESSAGES/gtksourceview-2.0.mo
@@ -197,6 +202,8 @@ share/locale/zh_TW/LC_MESSAGES/gtksourceview-2.0.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

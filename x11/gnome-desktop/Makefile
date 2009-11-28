@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gnome-desktop/Makefile,v 1.3 2009/04/15 21:55:48 kwm Exp $
+#   $MCom: ports/x11/gnome-desktop/Makefile,v 1.171 2009/10/22 14:31:14 kwm Exp $
 #
 
 PORTNAME=	gnome-desktop
-PORTVERSION=	2.26.3
-PORTREVISION?=	1
+PORTVERSION=	2.28.1
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,10 +20,10 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-RUN_DEPENDS=	${pygnome2_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome2
+LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 USE_XORG=	xpm
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomedocutils \
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedocutils gconf2 pygtk2 \
 		ltverhack referencehack
 GNOME_DESKTOP_VERSION=2
 USE_GETTEXT=	yes
@@ -33,8 +33,7 @@ USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project" \
-		--with-kde-datadir=${LOCALBASE}/share
+CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -34,11 +34,58 @@ share/doc/libcryptui/libcryptui.devhelp2
 share/doc/libcryptui/right.png
 share/doc/libcryptui/style.css
 share/doc/libcryptui/up.png
+share/doc/libseahorse/api-index-full.html
+share/doc/libseahorse/ch01.html
+share/doc/libseahorse/home.png
+share/doc/libseahorse/index.html
+share/doc/libseahorse/index.sgml
+share/doc/libseahorse/left.png
+share/doc/libseahorse/libseahorse-SeahorseCommands.html
+share/doc/libseahorse/libseahorse-SeahorseContext.html
+share/doc/libseahorse/libseahorse-SeahorseKeyserverControl.html
+share/doc/libseahorse/libseahorse-SeahorseMultiOperation.html
+share/doc/libseahorse/libseahorse-SeahorseObject.html
+share/doc/libseahorse/libseahorse-SeahorseObjectModel.html
+share/doc/libseahorse/libseahorse-SeahorseObjectWidget.html
+share/doc/libseahorse/libseahorse-SeahorseSecureEntry.html
+share/doc/libseahorse/libseahorse-SeahorseServiceDiscovery.html
+share/doc/libseahorse/libseahorse-SeahorseSet.html
+share/doc/libseahorse/libseahorse-SeahorseSetModel.html
+share/doc/libseahorse/libseahorse-SeahorseUnknown.html
+share/doc/libseahorse/libseahorse-SeahorseUnknownSource.html
+share/doc/libseahorse/libseahorse-SeahorseWidget.html
+share/doc/libseahorse/libseahorse-SeahorseXxx.html
+share/doc/libseahorse/libseahorse-seahorse-check-button-control.html
+share/doc/libseahorse/libseahorse-seahorse-combo-keys.html
+share/doc/libseahorse/libseahorse-seahorse-gconf.html
+share/doc/libseahorse/libseahorse-seahorse-gtkstock.html
+share/doc/libseahorse/libseahorse-seahorse-libdialogs.html
+share/doc/libseahorse/libseahorse-seahorse-marshal.html
+share/doc/libseahorse/libseahorse-seahorse-passphrase.html
+share/doc/libseahorse/libseahorse-seahorse-prefs.html
+share/doc/libseahorse/libseahorse-seahorse-progress.html
+share/doc/libseahorse/libseahorse-seahorse-secure-memory.html
+share/doc/libseahorse/libseahorse-seahorse-servers.html
+share/doc/libseahorse/libseahorse-seahorse-source.html
+share/doc/libseahorse/libseahorse-seahorse-transfer-operation.html
+share/doc/libseahorse/libseahorse-seahorse-types.html
+share/doc/libseahorse/libseahorse-seahorse-unix-signal.html
+share/doc/libseahorse/libseahorse-seahorse-util.html
+share/doc/libseahorse/libseahorse-seahorse-validity.html
+share/doc/libseahorse/libseahorse-seahorse-view.html
+share/doc/libseahorse/libseahorse.devhelp
+share/doc/libseahorse/libseahorse.devhelp2
+share/doc/libseahorse/object-tree.html
+share/doc/libseahorse/right.png
+share/doc/libseahorse/style.css
+share/doc/libseahorse/up.png
 share/gnome/help/seahorse/C/figures/seahorse-window.png
 share/gnome/help/seahorse/C/legal.xml
 share/gnome/help/seahorse/C/seahorse.xml
 share/gnome/help/seahorse/ca/figures/seahorse-window.png
 share/gnome/help/seahorse/ca/seahorse.xml
+share/gnome/help/seahorse/cs/figures/seahorse-window.png
+share/gnome/help/seahorse/cs/seahorse.xml
 share/gnome/help/seahorse/de/figures/seahorse-window.png
 share/gnome/help/seahorse/de/seahorse.xml
 share/gnome/help/seahorse/el/figures/seahorse-window.png
@@ -78,8 +125,11 @@ share/locale/be@latin/LC_MESSAGES/seahorse.mo
 share/locale/bg/LC_MESSAGES/seahorse.mo
 share/locale/bn/LC_MESSAGES/seahorse.mo
 share/locale/bn_IN/LC_MESSAGES/seahorse.mo
+share/locale/br/LC_MESSAGES/seahorse.mo
 share/locale/ca/LC_MESSAGES/seahorse.mo
+share/locale/ca@valencia/LC_MESSAGES/seahorse.mo
 share/locale/cs/LC_MESSAGES/seahorse.mo
+share/locale/cy/LC_MESSAGES/seahorse.mo
 share/locale/da/LC_MESSAGES/seahorse.mo
 share/locale/de/LC_MESSAGES/seahorse.mo
 share/locale/dz/LC_MESSAGES/seahorse.mo
@@ -105,6 +155,7 @@ share/locale/ku/LC_MESSAGES/seahorse.mo
 share/locale/ko/LC_MESSAGES/seahorse.mo
 share/locale/lt/LC_MESSAGES/seahorse.mo
 share/locale/lv/LC_MESSAGES/seahorse.mo
+share/locale/mai/LC_MESSAGES/seahorse.mo
 share/locale/mk/LC_MESSAGES/seahorse.mo
 share/locale/ml/LC_MESSAGES/seahorse.mo
 share/locale/mr/LC_MESSAGES/seahorse.mo
@@ -139,6 +190,7 @@ share/locale/zh_HK/LC_MESSAGES/seahorse.mo
 share/locale/zh_TW/LC_MESSAGES/seahorse.mo
 share/omf/seahorse/seahorse-C.omf
 share/omf/seahorse/seahorse-ca.omf
+share/omf/seahorse/seahorse-cs.omf
 share/omf/seahorse/seahorse-de.omf
 share/omf/seahorse/seahorse-el.omf
 share/omf/seahorse/seahorse-en_GB.omf
@@ -176,34 +228,35 @@ share/pixmaps/seahorse/scalable/seahorse-sign-bad.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg
 share/pixmaps/seahorse/scalable/seahorse-sign.svg
-%%DATADIR%%/glade/seahorse-add-keyring.glade
-%%DATADIR%%/glade/seahorse-add-keyserver.glade
-%%DATADIR%%/glade/seahorse-add-subkey.glade
-%%DATADIR%%/glade/seahorse-add-uid.glade
-%%DATADIR%%/glade/seahorse-change-passphrase.glade
-%%DATADIR%%/glade/seahorse-expires.glade
-%%DATADIR%%/glade/seahorse-generate-select.glade
-%%DATADIR%%/glade/seahorse-gkr-item-properties.glade
-%%DATADIR%%/glade/seahorse-gkr-keyring.glade
-%%DATADIR%%/glade/seahorse-key-manager.glade
-%%DATADIR%%/glade/seahorse-key-manager.ui
-%%DATADIR%%/glade/seahorse-keyserver-results.glade
-%%DATADIR%%/glade/seahorse-keyserver-results.ui
-%%DATADIR%%/glade/seahorse-keyserver-search.glade
-%%DATADIR%%/glade/seahorse-keyserver-sync.glade
-%%DATADIR%%/glade/seahorse-notify.glade
-%%DATADIR%%/glade/seahorse-pgp-generate.glade
-%%DATADIR%%/glade/seahorse-pgp-private-key-properties.glade
-%%DATADIR%%/glade/seahorse-pgp-public-key-properties.glade
-%%DATADIR%%/glade/seahorse-prefs.glade
-%%DATADIR%%/glade/seahorse-progress.glade
-%%DATADIR%%/glade/seahorse-revoke.glade
-%%DATADIR%%/glade/seahorse-sign.glade
-%%DATADIR%%/glade/seahorse-signer.glade
-%%DATADIR%%/glade/seahorse-ssh-generate.glade
-%%DATADIR%%/glade/seahorse-ssh-key-properties.glade
-%%DATADIR%%/glade/seahorse-ssh-upload.glade
-@dirrm %%DATADIR%%/glade
+%%DATADIR%%/ui/seahorse-add-keyring.xml
+%%DATADIR%%/ui/seahorse-add-keyserver.xml
+%%DATADIR%%/ui/seahorse-add-subkey.xml
+%%DATADIR%%/ui/seahorse-add-uid.xml
+%%DATADIR%%/ui/seahorse-change-passphrase.xml
+%%DATADIR%%/ui/seahorse-expires.xml
+%%DATADIR%%/ui/seahorse-generate-select.xml
+%%DATADIR%%/ui/seahorse-gkr-add-item.xml
+%%DATADIR%%/ui/seahorse-gkr-item-properties.xml
+%%DATADIR%%/ui/seahorse-gkr-keyring.xml
+%%DATADIR%%/ui/seahorse-key-manager.ui
+%%DATADIR%%/ui/seahorse-key-manager.xml
+%%DATADIR%%/ui/seahorse-keyserver-results.ui
+%%DATADIR%%/ui/seahorse-keyserver-results.xml
+%%DATADIR%%/ui/seahorse-keyserver-search.xml
+%%DATADIR%%/ui/seahorse-keyserver-sync.xml
+%%DATADIR%%/ui/seahorse-notify.xml
+%%DATADIR%%/ui/seahorse-pgp-generate.xml
+%%DATADIR%%/ui/seahorse-pgp-private-key-properties.xml
+%%DATADIR%%/ui/seahorse-pgp-public-key-properties.xml
+%%DATADIR%%/ui/seahorse-prefs.xml
+%%DATADIR%%/ui/seahorse-progress.xml
+%%DATADIR%%/ui/seahorse-revoke.xml
+%%DATADIR%%/ui/seahorse-sign.xml
+%%DATADIR%%/ui/seahorse-signer.xml
+%%DATADIR%%/ui/seahorse-ssh-generate.xml
+%%DATADIR%%/ui/seahorse-ssh-key-properties.xml
+%%DATADIR%%/ui/seahorse-ssh-upload.xml
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrm share/pixmaps/seahorse/scalable
 @dirrm share/pixmaps/seahorse/48x48
@@ -232,11 +285,14 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 @dirrm share/gnome/help/seahorse/el
 @dirrm share/gnome/help/seahorse/de/figures
 @dirrm share/gnome/help/seahorse/de
+@dirrm share/gnome/help/seahorse/cs/figures
+@dirrm share/gnome/help/seahorse/cs
 @dirrm share/gnome/help/seahorse/ca/figures
 @dirrm share/gnome/help/seahorse/ca
 @dirrm share/gnome/help/seahorse/C/figures
 @dirrm share/gnome/help/seahorse/C
 @dirrm share/gnome/help/seahorse
+@dirrm share/doc/libseahorse
 @dirrm share/doc/libcryptui
 @dirrmtry share/applications
 @dirrm lib/seahorse
@@ -255,10 +311,14 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

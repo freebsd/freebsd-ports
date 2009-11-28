@@ -1,6 +1,5 @@
-diff -up gdm-2.25.2/daemon/gdm-session-direct.c.system-keyboard gdm-2.25.2/daemon/gdm-session-direct.c
---- daemon/gdm-session-direct.c.system-keyboard	2008-08-26 15:04:00.000000000 -0400
-+++ daemon/gdm-session-direct.c	2009-02-24 22:55:02.656566009 -0500
+--- daemon/gdm-session-direct.c.orig	2009-07-20 03:09:09.000000000 +0200
++++ daemon/gdm-session-direct.c	2009-07-20 10:14:45.000000000 +0200
 @@ -45,6 +45,8 @@
  #include <dbus/dbus-glib.h>
  #include <dbus/dbus-glib-lowlevel.h>
@@ -10,7 +9,7 @@ diff -up gdm-2.25.2/daemon/gdm-session-direct.c.system-keyboard gdm-2.25.2/daemo
  #include "gdm-session-direct.h"
  #include "gdm-session.h"
  #include "gdm-session-private.h"
-@@ -595,14 +597,66 @@ get_default_language_name (GdmSessionDir
+@@ -597,14 +599,66 @@ get_default_language_name (GdmSessionDir
      return setlocale (LC_MESSAGES, NULL);
  }
  
@@ -80,23 +79,19 @@ diff -up gdm-2.25.2/daemon/gdm-session-direct.c.system-keyboard gdm-2.25.2/daemo
  }
  
  static char *
-@@ -1971,9 +2025,10 @@ setup_session_environment (GdmSessionDir
+@@ -1953,8 +2007,8 @@ setup_session_environment (GdmSessionDir
                                                       "GDM_LANG",
                                                       get_language_name (session));
  
--        gdm_session_direct_set_environment_variable (session,
--                                                     "GDM_KEYBOARD_LAYOUT",
--                                                     get_layout_name (session));
-+	if (g_strcmp0 (get_layout_name (session), get_system_default_layout (session)) != 0)
-+        	gdm_session_direct_set_environment_variable (session,
-+                                                     	     "GDM_KEYBOARD_LAYOUT",
-+                                                             get_layout_name (session));
- 
-         gdm_session_direct_set_environment_variable (session,
-                                                      "DISPLAY",
-diff -up gdm-2.25.2/daemon/gdm-session-settings.c.system-keyboard gdm-2.25.2/daemon/gdm-session-settings.c
---- daemon/gdm-session-settings.c.system-keyboard	2008-08-26 15:04:00.000000000 -0400
-+++ daemon/gdm-session-settings.c	2009-02-24 22:51:00.158815919 -0500
+-        if (strcmp (get_layout_name (session),
+-                    get_default_layout_name (session)) == 0) {
++        if (g_strcmp0 (get_layout_name (session),
++                    get_default_layout_name (session)) != 0) {
+                 gdm_session_direct_set_environment_variable (session,
+                                                              "GDM_KEYBOARD_LAYOUT",
+                                                              get_layout_name (session));
+--- daemon/gdm-session-settings.c.orig	2009-05-19 17:18:12.000000000 +0200
++++ daemon/gdm-session-settings.c	2009-07-20 10:10:15.000000000 +0200
 @@ -149,8 +149,7 @@ gdm_session_settings_set_layout_name (Gd
  {
          g_return_if_fail (GDM_IS_SESSION_SETTINGS (settings));

@@ -3,17 +3,15 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.86 2009/03/15 00:39:36 marcus Exp $
+#   $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.91 2009/09/21 20:15:50 kwm Exp $
 #
 
-PORTNAME=	gnome
-PORTVERSION=	2.26.0
-PORTREVISION=	1
+PORTNAME=	gnome-desktop
+PORTVERSION=	2.28.0
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-desktop/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	-desktop
 DISTNAME=	gnome-python-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -25,6 +23,7 @@ LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
+		brasero-media.2:${PORTSDIR}/sysutils/brasero \
 		evdocument.1:${PORTSDIR}/graphics/evince
 RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 

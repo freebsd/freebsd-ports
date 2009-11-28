@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/sysutils/brasero/Makefile,v 1.1 2009/04/16 02:11:50 kwm Exp $
+#    $MCom: ports/sysutils/brasero/Makefile,v 1.59 2009/10/24 01:52:39 avl Exp $
 
 PORTNAME=	brasero
-PORTVERSION=	2.26.3
+PORTVERSION=	2.28.2
 PORTREVISION=	1
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
@@ -16,9 +16,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD/DVD mastering tool for the GNOME desktop
 
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-    		cdrdao:${PORTSDIR}/sysutils/cdrdao
+		cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
@@ -26,6 +27,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm
 USE_GNOME=	intlhack gnomeprefix gnomehack
+USE_LDCONFIG=	yes
 USE_GSTREAMER=	gconf core
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

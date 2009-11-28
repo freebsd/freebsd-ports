@@ -23,9 +23,9 @@ libdata/pkgconfig/libpanelapplet-2.0.pc
 libexec/clock-applet
 libexec/fish-applet-2
 libexec/gnome-clock-applet-mechanism
+libexec/gnome-panel-add
 libexec/notification-area-applet
 libexec/wnck-applet
-share/PolicyKit/policy/org.gnome.clockapplet.mechanism.policy
 share/applications/gnome-panel.desktop
 share/dbus-1/system-services/org.gnome.ClockApplet.Mechanism.service
 share/gnome-2.0/ui/GNOME_ClockApplet.xml
@@ -36,13 +36,13 @@ share/gnome-2.0/ui/GNOME_ShowDesktopApplet.xml
 share/gnome-2.0/ui/GNOME_WindowListApplet.xml
 share/gnome-2.0/ui/GNOME_WindowMenuApplet.xml
 share/gnome-2.0/ui/GNOME_WorkspaceSwitcherApplet.xml
-%%DATADIR%%/glade/clock.glade
-%%DATADIR%%/glade/fish.glade
-%%DATADIR%%/glade/panel-properties-dialog.glade
-%%DATADIR%%/glade/panel-run-dialog.glade
-%%DATADIR%%/glade/panel-test-applets.glade
-%%DATADIR%%/glade/window-list.glade
-%%DATADIR%%/glade/workspace-switcher.glade
+%%DATADIR%%/ui/clock.ui
+%%DATADIR%%/ui/fish.ui
+%%DATADIR%%/ui/panel-properties-dialog.ui
+%%DATADIR%%/ui/panel-run-dialog.ui
+%%DATADIR%%/ui/panel-test-applets.ui
+%%DATADIR%%/ui/window-list.ui
+%%DATADIR%%/ui/workspace-switcher.ui
 %%DATADIR%%/pixmaps/clock-calendar-icon.png
 %%DATADIR%%/pixmaps/clock-face-large.svg
 %%DATADIR%%/pixmaps/clock-face-small-day.svg
@@ -192,50 +192,6 @@ share/gnome/help/fish/uk/legal.xml
 share/gnome/help/fish/zh_CN/figures/fish_applet.png
 share/gnome/help/fish/zh_CN/fish.xml
 share/gnome/help/fish/zh_CN/legal.xml
-share/gnome/help/window-list/C/window-list.xml
-share/gnome/help/window-list/ar/window-list.xml
-share/gnome/help/window-list/ca/window-list.xml
-share/gnome/help/window-list/cs/window-list.xml
-share/gnome/help/window-list/da/window-list.xml
-share/gnome/help/window-list/de/window-list.xml
-share/gnome/help/window-list/el/window-list.xml
-share/gnome/help/window-list/en_GB/window-list.xml
-share/gnome/help/window-list/es/window-list.xml
-share/gnome/help/window-list/eu/window-list.xml
-share/gnome/help/window-list/fi/window-list.xml
-share/gnome/help/window-list/fr/window-list.xml
-share/gnome/help/window-list/it/window-list.xml
-share/gnome/help/window-list/ko/window-list.xml
-share/gnome/help/window-list/oc/window-list.xml
-share/gnome/help/window-list/pa/window-list.xml
-share/gnome/help/window-list/pt_BR/window-list.xml
-share/gnome/help/window-list/ru/window-list.xml
-share/gnome/help/window-list/sv/window-list.xml
-share/gnome/help/window-list/uk/window-list.xml
-share/gnome/help/window-list/zh_CN/window-list.xml
-share/gnome/help/workspace-switcher/C/workspace-switcher.xml
-share/gnome/help/workspace-switcher/ar/workspace-switcher.xml
-share/gnome/help/workspace-switcher/ca/workspace-switcher.xml
-share/gnome/help/workspace-switcher/cs/workspace-switcher.xml
-share/gnome/help/workspace-switcher/da/workspace-switcher.xml
-share/gnome/help/workspace-switcher/de/workspace-switcher.xml
-share/gnome/help/workspace-switcher/el/workspace-switcher.xml
-share/gnome/help/workspace-switcher/en_GB/workspace-switcher.xml
-share/gnome/help/workspace-switcher/es/workspace-switcher.xml
-share/gnome/help/workspace-switcher/eu/workspace-switcher.xml
-share/gnome/help/workspace-switcher/fi/workspace-switcher.xml
-share/gnome/help/workspace-switcher/fr/workspace-switcher.xml
-share/gnome/help/workspace-switcher/it/workspace-switcher.xml
-share/gnome/help/workspace-switcher/ko/workspace-switcher.xml
-share/gnome/help/workspace-switcher/nl/workspace-switcher.xml
-share/gnome/help/workspace-switcher/oc/workspace-switcher.xml
-share/gnome/help/workspace-switcher/pa/workspace-switcher.xml
-share/gnome/help/workspace-switcher/pt_BR/workspace-switcher.xml
-share/gnome/help/workspace-switcher/ru/workspace-switcher.xml
-share/gnome/help/workspace-switcher/sv/workspace-switcher.xml
-share/gnome/help/workspace-switcher/uk/workspace-switcher.xml
-share/gnome/help/workspace-switcher/vi/workspace-switcher.xml
-share/gnome/help/workspace-switcher/zh_CN/workspace-switcher.xml
 share/icons/hicolor/16x16/apps/gnome-panel-clock.png
 share/icons/hicolor/16x16/apps/gnome-panel-drawer.png
 share/icons/hicolor/16x16/apps/gnome-panel-fish.png
@@ -438,101 +394,10 @@ share/omf/fish/fish-sv.omf
 share/omf/fish/fish-th.omf
 share/omf/fish/fish-uk.omf
 share/omf/fish/fish-zh_CN.omf
-share/omf/window-list/window-list-C.omf
-share/omf/window-list/window-list-ar.omf
-share/omf/window-list/window-list-ca.omf
-share/omf/window-list/window-list-cs.omf
-share/omf/window-list/window-list-da.omf
-share/omf/window-list/window-list-de.omf
-share/omf/window-list/window-list-el.omf
-share/omf/window-list/window-list-en_GB.omf
-share/omf/window-list/window-list-es.omf
-share/omf/window-list/window-list-eu.omf
-share/omf/window-list/window-list-fi.omf
-share/omf/window-list/window-list-fr.omf
-share/omf/window-list/window-list-it.omf
-share/omf/window-list/window-list-ko.omf
-share/omf/window-list/window-list-oc.omf
-share/omf/window-list/window-list-pa.omf
-share/omf/window-list/window-list-pt_BR.omf
-share/omf/window-list/window-list-ru.omf
-share/omf/window-list/window-list-sv.omf
-share/omf/window-list/window-list-uk.omf
-share/omf/window-list/window-list-zh_CN.omf
-share/omf/workspace-switcher/workspace-switcher-C.omf
-share/omf/workspace-switcher/workspace-switcher-ar.omf
-share/omf/workspace-switcher/workspace-switcher-ca.omf
-share/omf/workspace-switcher/workspace-switcher-cs.omf
-share/omf/workspace-switcher/workspace-switcher-da.omf
-share/omf/workspace-switcher/workspace-switcher-de.omf
-share/omf/workspace-switcher/workspace-switcher-el.omf
-share/omf/workspace-switcher/workspace-switcher-en_GB.omf
-share/omf/workspace-switcher/workspace-switcher-es.omf
-share/omf/workspace-switcher/workspace-switcher-eu.omf
-share/omf/workspace-switcher/workspace-switcher-fi.omf
-share/omf/workspace-switcher/workspace-switcher-fr.omf
-share/omf/workspace-switcher/workspace-switcher-it.omf
-share/omf/workspace-switcher/workspace-switcher-ko.omf
-share/omf/workspace-switcher/workspace-switcher-nl.omf
-share/omf/workspace-switcher/workspace-switcher-oc.omf
-share/omf/workspace-switcher/workspace-switcher-pa.omf
-share/omf/workspace-switcher/workspace-switcher-pt_BR.omf
-share/omf/workspace-switcher/workspace-switcher-ru.omf
-share/omf/workspace-switcher/workspace-switcher-sv.omf
-share/omf/workspace-switcher/workspace-switcher-uk.omf
-share/omf/workspace-switcher/workspace-switcher-vi.omf
-share/omf/workspace-switcher/workspace-switcher-zh_CN.omf
-@dirrm share/omf/workspace-switcher
-@dirrm share/omf/window-list
+share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 @dirrm share/omf/fish
 @dirrm share/omf/clock
 @dirrm share/idl/gnome-panel-2.0
-@dirrm share/gnome/help/workspace-switcher/zh_CN
-@dirrm share/gnome/help/workspace-switcher/vi
-@dirrm share/gnome/help/workspace-switcher/uk
-@dirrm share/gnome/help/workspace-switcher/sv
-@dirrm share/gnome/help/workspace-switcher/ru
-@dirrm share/gnome/help/workspace-switcher/pt_BR
-@dirrm share/gnome/help/workspace-switcher/pa
-@dirrm share/gnome/help/workspace-switcher/oc
-@dirrm share/gnome/help/workspace-switcher/nl
-@dirrm share/gnome/help/workspace-switcher/ko
-@dirrm share/gnome/help/workspace-switcher/it
-@dirrm share/gnome/help/workspace-switcher/fr
-@dirrm share/gnome/help/workspace-switcher/fi
-@dirrm share/gnome/help/workspace-switcher/eu
-@dirrm share/gnome/help/workspace-switcher/es
-@dirrm share/gnome/help/workspace-switcher/en_GB
-@dirrm share/gnome/help/workspace-switcher/el
-@dirrm share/gnome/help/workspace-switcher/de
-@dirrm share/gnome/help/workspace-switcher/da
-@dirrm share/gnome/help/workspace-switcher/cs
-@dirrm share/gnome/help/workspace-switcher/ca
-@dirrm share/gnome/help/workspace-switcher/ar
-@dirrm share/gnome/help/workspace-switcher/C
-@dirrm share/gnome/help/workspace-switcher
-@dirrm share/gnome/help/window-list/zh_CN
-@dirrm share/gnome/help/window-list/uk
-@dirrm share/gnome/help/window-list/sv
-@dirrm share/gnome/help/window-list/ru
-@dirrm share/gnome/help/window-list/pt_BR
-@dirrm share/gnome/help/window-list/pa
-@dirrm share/gnome/help/window-list/oc
-@dirrm share/gnome/help/window-list/ko
-@dirrm share/gnome/help/window-list/it
-@dirrm share/gnome/help/window-list/fr
-@dirrm share/gnome/help/window-list/fi
-@dirrm share/gnome/help/window-list/eu
-@dirrm share/gnome/help/window-list/es
-@dirrm share/gnome/help/window-list/en_GB
-@dirrm share/gnome/help/window-list/el
-@dirrm share/gnome/help/window-list/de
-@dirrm share/gnome/help/window-list/da
-@dirrm share/gnome/help/window-list/cs
-@dirrm share/gnome/help/window-list/ca
-@dirrm share/gnome/help/window-list/ar
-@dirrm share/gnome/help/window-list/C
-@dirrm share/gnome/help/window-list
 @dirrm share/gnome/help/fish/zh_CN/figures
 @dirrm share/gnome/help/fish/zh_CN
 @dirrm share/gnome/help/fish/uk/figures
@@ -622,7 +487,7 @@ share/omf/workspace-switcher/workspace-switcher-zh_CN.omf
 @dirrm share/gnome/help/clock/C
 @dirrm share/gnome/help/clock
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/panel-2.0

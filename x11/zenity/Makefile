@@ -3,12 +3,11 @@
 # Whom:					Franz Klammer <klammer@webonaut.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/zenity/Makefile,v 1.98 2009/03/17 22:47:07 kwm Exp $
+#   $MCom: ports/x11/zenity/Makefile,v 1.102 2009/09/21 22:23:34 kwm Exp $
 #
 
 PORTNAME=	zenity
-PORTVERSION=	2.26.0
-PORTREVISION=	1
+PORTVERSION=	2.28.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gnomedocutils intlhack
+USE_GNOME=	gnomeprefix gnomehack gtk20 gnomedocutils intlhack
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

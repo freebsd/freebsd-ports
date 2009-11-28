@@ -183,6 +183,7 @@ include/evolution-data-server-%%VERSION%%/libebook/e-vcard.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-check-timezones.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-component.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-recur.h
+include/evolution-data-server-%%VERSION%%/libecal/e-cal-system-timezone.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-time-util.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-types.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-util.h
@@ -203,8 +204,10 @@ include/evolution-data-server-%%VERSION%%/libedata-book/e-data-book.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/Evolution-DataServer-Calendar.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-factory.h
+include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-file-store.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-loader-factory.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-sexp.h
+include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-store.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-sync.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-util.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend.h
@@ -579,6 +582,7 @@ share/doc/libecal/ix01.html
 share/doc/libecal/left.png
 share/doc/libecal/libecal-e-cal-check-timezones.html
 share/doc/libecal/libecal-e-cal-recur.html
+share/doc/libecal/libecal-e-cal-system-timezone.html
 share/doc/libecal/libecal-e-cal-time-util.html
 share/doc/libecal/libecal-e-cal-types.html
 share/doc/libecal/libecal-e-cal-util.html
@@ -601,9 +605,6 @@ share/doc/libedata-book/index.html
 share/doc/libedata-book/index.sgml
 share/doc/libedata-book/ix01.html
 share/doc/libedata-book/left.png
-share/doc/libedata-book/libedata-book-EDataBookFactory.html
-share/doc/libedata-book/libedata-book-e-book-backend-db-cache.html
-share/doc/libedata-book/libedata-book-ximian-vcard.html
 share/doc/libedata-book/libedata-book.devhelp
 share/doc/libedata-book/libedata-book.devhelp2
 share/doc/libedata-book/right.png
@@ -623,7 +624,6 @@ share/doc/libedata-cal/index.html
 share/doc/libedata-cal/index.sgml
 share/doc/libedata-cal/ix01.html
 share/doc/libedata-cal/left.png
-share/doc/libedata-cal/libedata-cal-e-cal-backend-util.html
 share/doc/libedata-cal/libedata-cal.devhelp
 share/doc/libedata-cal/libedata-cal.devhelp2
 share/doc/libedata-cal/right.png
@@ -647,7 +647,6 @@ share/doc/libedataserver/left.png
 share/doc/libedataserver/libedataserver-EFlag.html
 share/doc/libedataserver/libedataserver-EProxy.html
 share/doc/libedataserver/libedataserver-ESExp.html
-share/doc/libedataserver/libedataserver-Version-Information.html
 share/doc/libedataserver/libedataserver-e-categories.html
 share/doc/libedataserver/libedataserver-e-iconv.html
 share/doc/libedataserver/libedataserver-e-memory.html
@@ -683,10 +682,6 @@ share/doc/libedataserverui/index.html
 share/doc/libedataserverui/index.sgml
 share/doc/libedataserverui/ix01.html
 share/doc/libedataserverui/left.png
-share/doc/libedataserverui/libedataserverui-ECategoryCompletion.html
-share/doc/libedataserverui/libedataserverui-ECellRendererColor.html
-share/doc/libedataserverui/libedataserverui-e-book-auth-util.html
-share/doc/libedataserverui/libedataserverui-e-data-server-ui-marshal.html
 share/doc/libedataserverui/libedataserverui-e-passwords.html
 share/doc/libedataserverui/libedataserverui.devhelp
 share/doc/libedataserverui/libedataserverui.devhelp2
@@ -703,6 +698,7 @@ share/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer.idl
 share/locale/am/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/as/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/ast/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -710,6 +706,7 @@ share/locale/bn/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/bs/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/cy/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -849,7 +846,11 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

@@ -1,12 +1,20 @@
---- gui/simple-greeter/gdm-user-manager.c.orig	2008-04-29 13:38:43.000000000 -0400
-+++ gui/simple-greeter/gdm-user-manager.c	2008-05-03 13:27:52.000000000 -0400
-@@ -1269,17 +1269,23 @@ reload_passwd (GdmUserManager *manager)
-         GSList        *old_users;
+--- gui/simple-greeter/gdm-user-manager.c.orig	2009-09-21 16:05:27.000000000 -0400
++++ gui/simple-greeter/gdm-user-manager.c	2009-10-14 12:58:37.000000000 -0400
+@@ -65,6 +65,8 @@
+ 
+ #ifdef __sun
+ #define DEFAULT_MINIMAL_UID     100
++#elif defined(__FreeBSD__)
++#define DEFAULT_MINIMAL_UID     1000
+ #else
+ #define DEFAULT_MINIMAL_UID     500
+ #endif
+@@ -1366,17 +1368,24 @@ reload_passwd (GdmUserManager *manager)
          GSList        *new_users;
          GSList        *list;
--        FILE          *fp;
+         GSList        *dup;
 +#ifndef __FreeBSD__
-+       FILE          *fp;
+         FILE          *fp;
 +#endif
  
          old_users = NULL;
@@ -15,6 +23,7 @@
 +#ifdef __FreeBSD__
 +        setpwent ();
 +#else
++
          errno = 0;
          fp = fopen (PATH_PASSWD, "r");
          if (fp == NULL) {
@@ -25,7 +34,7 @@
  
          g_hash_table_foreach (manager->priv->users, listify_hash_values_hfunc, &old_users);
          g_slist_foreach (old_users, (GFunc) g_object_ref, NULL);
-@@ -1292,7 +1298,11 @@ reload_passwd (GdmUserManager *manager)
+@@ -1390,7 +1399,11 @@ reload_passwd (GdmUserManager *manager)
                  }
          }
  
@@ -37,7 +46,7 @@
                  GdmUser *user;
  
                  user = NULL;
-@@ -1355,7 +1365,11 @@ reload_passwd (GdmUserManager *manager)
+@@ -1461,7 +1474,11 @@ reload_passwd (GdmUserManager *manager)
   out:
          /* Cleanup */
  

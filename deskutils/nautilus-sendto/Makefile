@@ -3,21 +3,18 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/deskutils/nautilus-sendto/Makefile,v 1.4 2009/04/20 06:12:55 marcus Exp $
+#    $MCom: ports/deskutils/nautilus-sendto/Makefile,v 1.22 2009/11/18 18:50:49 kwm Exp $
 
 PORTNAME=	nautilus-sendto
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	2.28.2
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integration between nautilus, evolution, and pidgin
 
-BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution \
-    		empathy:${PORTSDIR}/net-im/empathy
-RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution \
-    		empathy:${PORTSDIR}/net-im/empathy
+BUILD_DEPENDS=	empathy:${PORTSDIR}/net-im/empathy
+RUN_DEPENDS=	empathy:${PORTSDIR}/net-im/empathy
 
 MAN1=		nautilus-sendto.1
 GCONF_SCHEMAS=	nst.schemas

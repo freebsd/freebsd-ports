@@ -67,19 +67,16 @@ include/libgdamm-4.0/libgdamm/set.h
 include/libgdamm-4.0/libgdamm/sqlparser.h
 include/libgdamm-4.0/libgdamm/statement.h
 include/libgdamm-4.0/libgdamm/transactionstatus.h
+include/libgdamm-4.0/libgdamm/throw_exception.h
 include/libgdamm-4.0/libgdamm/value.h
 include/libgdamm-4.0/libgdamm/wrap_init.h
 include/libgdamm-4.0/libgdamm/xatransaction.h
 lib/libgdamm-4.0.a
 lib/libgdamm-4.0.la
 lib/libgdamm-4.0.so
-lib/libgdamm-4.0.so.11
+lib/libgdamm-4.0.so.12
 lib/libgdamm-4.0/include/libgdammconfig.h
-lib/libgdamm-4.0/proc/m4/convert.m4
-lib/libgdamm-4.0/proc/m4/convert_libgdamm.m4
 libdata/pkgconfig/libgdamm-4.0.pc
-@dirrm lib/libgdamm-4.0/proc/m4
-@dirrm lib/libgdamm-4.0/proc
 @dirrm lib/libgdamm-4.0/include
 @dirrm lib/libgdamm-4.0
 @dirrm include/libgdamm-4.0/libgdamm/private

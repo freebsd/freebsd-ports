@@ -2,15 +2,13 @@ bin/gnome-session
 bin/gnome-session-properties
 bin/gnome-session-save
 bin/gnome-wm
-etc/xdg/autostart/at-spi-registryd-wrapper.desktop
+etc/xdg/autostart/gnome-session-splash.desktop
 etc/xdg/autostart/gnome-settings-daemon-helper.desktop
-lib/gnome-session/helpers/at-spi-registryd-wrapper
 lib/gnome-session/helpers/gnome-session-splash
 lib/gnome-session/helpers/gnome-settings-daemon-helper
 share/applications/session-properties.desktop
-%%DATADIR%%/gsm-inhibit-dialog.glade
-%%DATADIR%%/session-properties.glade
-share/gnome/autostart/gnome-session-splash.desktop
+%%DATADIR%%/gsm-inhibit-dialog.ui
+%%DATADIR%%/session-properties.ui
 share/icons/hicolor/16x16/apps/session-properties.png
 share/icons/hicolor/22x22/apps/session-properties.png
 share/icons/hicolor/24x24/apps/session-properties.png
@@ -28,6 +26,7 @@ share/locale/be@latin/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/br/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-session-2.0.mo
@@ -68,6 +67,7 @@ share/locale/ko/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/mai/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mg/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-session-2.0.mo
@@ -170,6 +170,8 @@ share/xsessions/gnome.desktop
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/ig/LC_MESSAGES

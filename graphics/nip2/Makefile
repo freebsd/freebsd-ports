@@ -7,7 +7,7 @@
 
 PORTNAME=	nip2
 PORTVERSION=	7.14.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
@@ -39,5 +39,7 @@ MAN1=		nip2.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's, malkovich,,' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|n_bytes|x_n_bytes|g' -e 's|text_size|x_text_size|g' \
+		${WRKSRC}/src/gtkitementry.c
 
 .include <bsd.port.mk>

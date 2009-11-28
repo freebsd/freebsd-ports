@@ -1,30 +1,21 @@
---- configure.orig	Mon Jun 18 23:55:48 2007
-+++ configure	Mon Jun 18 23:56:20 2007
-@@ -24562,6 +24562,14 @@ case "$host" in
-     # AC_CACHE_VAL(have_addrinfo, [have_addrinfo=yes])
-     # AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
-     ;;
-+*freebsd*)
-+    os_win32=no
-+    NO_UNDEFINED=''
-+    SOCKET_LIBS=''
-+    DL_LIB=''
-+    SOFTOKN3_LIB='-lsoftokn3'
-+    LIBEXECDIR_IN_SERVER_FILE="$libexecdir"
-+    ;;
- *)  os_win32=no
-     NO_UNDEFINED=''
-     SOCKET_LIBS=''
-@@ -28651,7 +28659,7 @@ cat >>conftest.$ac_ext <<_ACEOF
- 		#include <sys/socket.h>
- 		#include <netinet/in.h>
- 		#include <netdb.h>
--
-+		#include <stdio.h>
+--- configure.orig	2009-08-24 10:39:07.000000000 +0200
++++ configure	2009-08-24 10:44:47.000000000 +0200
+@@ -15988,6 +15988,14 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
  
- int
- main ()
-@@ -33825,7 +33833,7 @@ idldir='${datadir}'/idl/evolution-data-s
+ 	;;
++*freebsd*)
++	os_win32=no
++	NO_UNDEFINED=''
++	SOCKET_LIBS=''
++	DL_LIB=''
++	SOFTOKN3_LIB='-lsoftokn3'
++	LIBEXECDIR_IN_SERVER_FILE="$libexecdir"
++	;;
+ *)
+ 	os_win32=no
+ 	NO_UNDEFINED=''
+@@ -24777,7 +24785,7 @@ idldir='${datadir}'/idl/evolution-data-s
  imagesdir='${datadir}'/pixmaps/evolution-data-server
  
  

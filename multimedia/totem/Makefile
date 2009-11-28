@@ -3,12 +3,12 @@
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem/Makefile,v 1.126 2009/04/03 10:17:44 kwm Exp $
+#   $MCom: ports/multimedia/totem/Makefile,v 1.138 2009/11/19 15:28:58 kwm Exp $
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.26.3
-PORTREVISION?=	1
+PORTVERSION=	2.28.4
+PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,6 +18,7 @@ COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
+		gdata.6:${PORTSDIR}/devel/libgdata \
 		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
@@ -29,7 +30,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils \
 		nautilus2 ltverhack pygtk2
 GNOME_DESKTOP_VERSION=2
-WANT_GSTREAMER=	yes
+USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
@@ -44,7 +45,8 @@ CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
-CONFLICTS?=	totem-xine-[0-9]*
+
+WITHOUT_DVDNAV=	yes
 
 OPTIONS=	LIRC "Enable lirc support" off \
 		GALAGO "Enable Galago support" off \
@@ -100,7 +102,7 @@ CONFIGURE_ARGS+=--enable-browser-plugins \
 PLIST_SUB+=	BROWSER_PLUGINS=""
 
 USE_WEBPLUGINS=		gecko19 webkit-gtk2
-WEBPLUGINS_FILES=	libtotem-basic-plugin.so libtotem-complex-plugin.so \
+WEBPLUGINS_FILES=	libtotem-complex-plugin.so \
 			libtotem-cone-plugin.so libtotem-gmp-plugin.so \
 			libtotem-mully-plugin.so \
 			libtotem-narrowspace-plugin.so
@@ -112,17 +114,6 @@ CONFIGURE_ARGS+=--disable-browser-plugins \
 		--disable-complex-plugin \
 		--disable-narrowspace-plugin
 PLIST_SUB+=	BROWSER_PLUGINS="@comment "
-.endif
-
-.if !defined(WITH_TOTEM_XINE) || ${SLAVE_PORT}=="no"
-CONFIGURE_ARGS+=--enable-gstreamer=yes
-USE_GSTREAMER+=	core gconf hal good mpeg2dec soup ugly python gio
-WITHOUT_DVDNAV=	yes
-PLIST_SUB+=	GSTREAMER=""
-.else
-CONFIGURE_ARGS+=--enable-xine=yes
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
-PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if defined(WITH_DVDNAV) && !defined(WITHOUT_DVDNAV)
@@ -142,8 +133,6 @@ pre-everything::
 
 post-patch:
 	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-	@${REINPLACE_CMD} -e 's|dbus >= 0.61|dbus-1 >= 0.61|g' \
-	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 

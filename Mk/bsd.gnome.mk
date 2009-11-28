@@ -3,9 +3,16 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.479 2009/03/14 05:55:36 marcus Exp $
+#     $MCom: ports/Mk/bsd.gnome.mk,v 1.486 2009/09/12 01:23:12 marcus Exp $
 #
 # Please view me with 4 column tabs!
+
+#######################################################
+#
+# *** WARNING: Disable MARCUSCOM before merge in FreeBSD!
+#     Please also remove this section before merging into FreeBSD.
+#
+#MARCUSCOM_CVS=yes
 
 # ======================= USERS =================================
 #
@@ -353,7 +360,7 @@ libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2
 
 gnomedesktop_LIB_DEPENDS=	gnome-desktop-2.11:${PORTSDIR}/x11/gnome-desktop
 gnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
-gnomedesktop_USE_GNOME_IMPL=	libgnomeui gnomedocutils
+gnomedesktop_USE_GNOME_IMPL=	gconf2 gnomedocutils pygtk2
 gnomedesktop_GNOME_DESKTOP_VERSION=2
 
 gnomedesktopsharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
@@ -383,7 +390,7 @@ eel2_USE_GNOME_IMPL=	gnomedesktop
 
 gnomepanel_LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnome-panel
 gnomepanel_DETECT=	${LOCALBASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
-gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils librsvg2
+gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils librsvg2 libgnomeui
 gnomepanel_GNOME_DESKTOP_VERSION=2
 
 nautilus2_LIB_DEPENDS=	nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus
@@ -401,7 +408,7 @@ gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
 gnomecontrolcenter2_LIB_DEPENDS=gnome-window-settings.1:${PORTSDIR}/sysutils/gnome-control-center
 gnomecontrolcenter2_DETECT=${LOCALBASE}/libdata/pkgconfig/gnome-window-settings-2.0.pc
-gnomecontrolcenter2_USE_GNOME_IMPL=metacity nautilus2 gnomemenus desktopfileutils libgnomekbd gnomepanel
+gnomecontrolcenter2_USE_GNOME_IMPL=metacity gnomemenus desktopfileutils libgnomekbd gnomedesktop librsvg2
 
 libgda2_LIB_DEPENDS=	gda-2.3:${PORTSDIR}/databases/libgda2
 libgda2_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgda.pc
@@ -515,8 +522,8 @@ gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-
 gnomesharp20_USE_GNOME_IMPL=	gnomepanel gtkhtml3 gtksharp20 librsvg2 vte
 
 libgnomekbd_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
-libgnomekbd_LIB_DEPENDS=	gnomekbd.3:${PORTSDIR}/x11/libgnomekbd
-libgnomekbd_USE_GNOME_IMPL=	libgnomeui
+libgnomekbd_LIB_DEPENDS=	gnomekbd.4:${PORTSDIR}/x11/libgnomekbd
+libgnomekbd_USE_GNOME_IMPL=	gconf2
 
 pygtksourceview_DETECT=		${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc
 pygtksourceview_BUILD_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/py-gtksourceview

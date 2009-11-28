@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/databases/evolution-data-server/Makefile,v 1.5 2009/04/15 23:04:33 kwm Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.181 2009/10/18 04:17:46 marcus Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	2.26.3
-PORTREVISION=	1
+PORTVERSION=	2.28.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,8 +26,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui ltverhack \
-		ltasneededhack
+USE_GNOME=	gnomeprefix gnomehack intlhack ltverhack ltasneededhack \
+		libglade2 libbonobo
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_BDB=	41+
@@ -41,7 +40,7 @@ CONFIGURE_ARGS=	--enable-static \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="2.26" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="2.28" EVO_VERSION="1.2"
 
 #OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 OPTIONS=	WEATHER "Enable weather calendar backend" on
@@ -82,7 +81,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g ; \
-		s|heimlibs=".*"|heimlibs="${KRB5_LIB}"|g' \
+		s|heimlibs=".*"|heimlibs="${KRB5_LIB}"|g ; \
+		s|-Wmissing-include-dirs||g' \
 			${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -1,42 +1,92 @@
 bin/abiword
 include/abiword-%%ABIVERSION%%/abiwidget.h
+include/abiword-%%ABIVERSION%%/libabiword.h
 include/abiword-%%ABIVERSION%%/xap_UnixTableWidget.h
+lib/abiword-%%ABIVERSION%%/plugins/opendocument.a
+lib/abiword-%%ABIVERSION%%/plugins/opendocument.la
+lib/abiword-%%ABIVERSION%%/plugins/opendocument.so
+lib/libabiword-%%ABIVERSION%%.a
+lib/libabiword-%%ABIVERSION%%.la
+lib/libabiword-%%ABIVERSION%%.so
 libdata/pkgconfig/abiword-%%ABIVERSION%%.pc
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Break.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Field.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_FormatFootnotes.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_FormatFrame.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_FormatTOC.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_FormatTable.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Goto.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_HdrFtr.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_InsertTable.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Insert_DateTime.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Latex.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_MailMerge.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_MetaData.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_New.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Options.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Options_ColorSel.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_PageNumbers.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_PageSetup.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Replace.glade
-%%DICT:%%share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Spell.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Styles.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Stylist.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Stylist_modal.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_Tab.glade
-share/abiword-%%ABIVERSION%%/glade/ap_UnixDialog_WordCount.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_DocComparison.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_Encoding.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_History.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_Image.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_Language.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_ListDocuments.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_Password.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_PluginManager.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_WindowMore.glade
-share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_Zoom.glade
+%%CLIPART%%share/abiword-2.8/clipart/book.png
+%%CLIPART%%share/abiword-2.8/clipart/chip.png
+%%CLIPART%%share/abiword-2.8/clipart/fun.png
+%%CLIPART%%share/abiword-2.8/clipart/gear.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomea.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomeb.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomec.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomecorner.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomed.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomedecor1.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomedecor2.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomee.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomeflowers.png
+%%CLIPART%%share/abiword-2.8/clipart/gnomeline.png
+%%CLIPART%%share/abiword-2.8/clipart/idea.png
+%%CLIPART%%share/abiword-2.8/clipart/lamp.png
+%%CLIPART%%share/abiword-2.8/clipart/monitor.png
+%%CLIPART%%share/abiword-2.8/clipart/music1.png
+%%CLIPART%%share/abiword-2.8/clipart/pinceau.png
+%%CLIPART%%share/abiword-2.8/clipart/simca.png
+%%CLIPART%%share/abiword-2.8/clipart/surprise.png
+%%CLIPART%%share/abiword-2.8/clipart/together.png
+%%CLIPART%%share/abiword-2.8/clipart/toolbox.png
+%%CLIPART%%share/abiword-2.8/clipart/tree.png
+%%CLIPART%%share/abiword-2.8/clipart/tux_bordelais.png
+%%CLIPART%%share/abiword-2.8/clipart/weather.png
+%%CLIPART%%share/abiword-2.8/clipart/write.png
+share/abiword-%%ABIVERSION%%/system.profile-ro
+share/abiword-%%ABIVERSION%%/system.profile-ro-RO
+%%TEMPLATES%%share/abiword-2.8/templates/A4.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Business-Letter.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Business-Report.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Employee-Directory.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Fax-Coversheet.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Friendly-Letter.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Memo.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Press-Release.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Resume.awt
+%%TEMPLATES%%share/abiword-2.8/templates/Two-Columns.awt
+%%TEMPLATES%%share/abiword-2.8/templates/US-Letter.awt
+share/abiword-%%ABIVERSION%%/templates/normal.awt-ro
+share/abiword-%%ABIVERSION%%/templates/normal.awt-ro_RO
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Annotation.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Break.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Field.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_FormatFootnotes.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_FormatFrame.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_FormatTOC.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_FormatTable.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Goto.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_HdrFtr.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_InsertTable.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Insert_DateTime.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Latex.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_MailMerge.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_MetaData.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_New.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Options.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Options_ColorSel.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_PageNumbers.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_PageSetup.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Replace.xml
+%%DICT%%share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Spell.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Styles.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Stylist.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Stylist_modal.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_Tab.xml
+share/abiword-%%ABIVERSION%%/ui/ap_UnixDialog_WordCount.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_DocComparison.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_Encoding.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_History.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_Image.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_Language.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_ListDocuments.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_Password.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_PluginManager.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_WindowMore.xml
+share/abiword-%%ABIVERSION%%/ui/xap_UnixDlg_Zoom.xml
 share/abiword-%%ABIVERSION%%/readme.abw
 share/abiword-%%ABIVERSION%%/readme.txt
 share/abiword-%%ABIVERSION%%/strings/am-ET.strings
@@ -45,7 +95,6 @@ share/abiword-%%ABIVERSION%%/strings/ast-ES.strings
 share/abiword-%%ABIVERSION%%/strings/ayc-BO.strings
 share/abiword-%%ABIVERSION%%/strings/aym-BO.strings
 share/abiword-%%ABIVERSION%%/strings/be-BY.strings
-share/abiword-%%ABIVERSION%%/strings/be@latin.strings
 share/abiword-%%ABIVERSION%%/strings/bg-BG.strings
 share/abiword-%%ABIVERSION%%/strings/br-FR.strings
 share/abiword-%%ABIVERSION%%/strings/ca-ES.strings
@@ -88,7 +137,6 @@ share/abiword-%%ABIVERSION%%/strings/ne-NP.strings
 share/abiword-%%ABIVERSION%%/strings/nl-NL.strings
 share/abiword-%%ABIVERSION%%/strings/nn-NO.strings
 share/abiword-%%ABIVERSION%%/strings/pl-PL.strings
-share/abiword-%%ABIVERSION%%/strings/ps.strings
 share/abiword-%%ABIVERSION%%/strings/pt-BR.strings
 share/abiword-%%ABIVERSION%%/strings/pt-PT.strings
 share/abiword-%%ABIVERSION%%/strings/quh-BO.strings
@@ -242,16 +290,19 @@ share/abiword-%%ABIVERSION%%/templates/normal.awt-yi
 share/abiword-%%ABIVERSION%%/templates/normal.awt-zh_CN
 share/abiword-%%ABIVERSION%%/templates/normal.awt-zh_TW
 share/applications/abiword.desktop
+share/icons/abiword_48.png
 share/mime-info/abiword.keys
-share/pixmaps/abiword_48.png
 @dirrmtry share/applications
+@dirrm share/abiword-%%ABIVERSION%%/ui
 @dirrm share/abiword-%%ABIVERSION%%/templates
 @dirrm share/abiword-%%ABIVERSION%%/strings
-@dirrm share/abiword-%%ABIVERSION%%/glade
+%%CLIPART%%@dirrm share/abiword-%%ABIVERSION%%/clipart
 @dirrm share/abiword-%%ABIVERSION%%
 @exec /bin/mkdir -p %D/lib/abiword-%%ABIVERSION%%/plugins
 @dirrmtry lib/abiword-%%ABIVERSION%%/plugins
 @dirrmtry lib/abiword-%%ABIVERSION%%
 @dirrm include/abiword-%%ABIVERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime-info > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime-info > /dev/null || /usr/bin/true

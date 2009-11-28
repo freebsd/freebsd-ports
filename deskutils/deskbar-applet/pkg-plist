@@ -1,70 +1,70 @@
-lib/deskbar-applet/deskbar-applet
-lib/deskbar-applet/modules-2.20-compatible/beagle-live.py
-lib/deskbar-applet/modules-2.20-compatible/beagle-live.pyc
-lib/deskbar-applet/modules-2.20-compatible/beagle-live.pyo
-lib/deskbar-applet/modules-2.20-compatible/beagle-static.py
-lib/deskbar-applet/modules-2.20-compatible/beagle-static.pyc
-lib/deskbar-applet/modules-2.20-compatible/beagle-static.pyo
-lib/deskbar-applet/modules-2.20-compatible/calculator.py
-lib/deskbar-applet/modules-2.20-compatible/calculator.pyc
-lib/deskbar-applet/modules-2.20-compatible/calculator.pyo
-lib/deskbar-applet/modules-2.20-compatible/desklicious.py
-lib/deskbar-applet/modules-2.20-compatible/desklicious.pyc
-lib/deskbar-applet/modules-2.20-compatible/desklicious.pyo
-lib/deskbar-applet/modules-2.20-compatible/epiphany.py
-lib/deskbar-applet/modules-2.20-compatible/epiphany.pyc
-lib/deskbar-applet/modules-2.20-compatible/epiphany.pyo
-%%EVO%%lib/deskbar-applet/modules-2.20-compatible/evolution.py
-%%EVO%%lib/deskbar-applet/modules-2.20-compatible/evolution.pyc
-%%EVO%%lib/deskbar-applet/modules-2.20-compatible/evolution.pyo
-lib/deskbar-applet/modules-2.20-compatible/files.py
-lib/deskbar-applet/modules-2.20-compatible/files.pyc
-lib/deskbar-applet/modules-2.20-compatible/files.pyo
-lib/deskbar-applet/modules-2.20-compatible/gdmactions.py
-lib/deskbar-applet/modules-2.20-compatible/gdmactions.pyc
-lib/deskbar-applet/modules-2.20-compatible/gdmactions.pyo
-lib/deskbar-applet/modules-2.20-compatible/googlecodesearch.py
-lib/deskbar-applet/modules-2.20-compatible/googlecodesearch.pyc
-lib/deskbar-applet/modules-2.20-compatible/googlecodesearch.pyo
-lib/deskbar-applet/modules-2.20-compatible/googlesearch.py
-lib/deskbar-applet/modules-2.20-compatible/googlesearch.pyc
-lib/deskbar-applet/modules-2.20-compatible/googlesearch.pyo
-lib/deskbar-applet/modules-2.20-compatible/history.py
-lib/deskbar-applet/modules-2.20-compatible/history.pyc
-lib/deskbar-applet/modules-2.20-compatible/history.pyo
-lib/deskbar-applet/modules-2.20-compatible/iswitch-window.py
-lib/deskbar-applet/modules-2.20-compatible/iswitch-window.pyc
-lib/deskbar-applet/modules-2.20-compatible/iswitch-window.pyo
-lib/deskbar-applet/modules-2.20-compatible/mozilla.py
-lib/deskbar-applet/modules-2.20-compatible/mozilla.pyc
-lib/deskbar-applet/modules-2.20-compatible/mozilla.pyo
-lib/deskbar-applet/modules-2.20-compatible/opensearch.py
-lib/deskbar-applet/modules-2.20-compatible/opensearch.pyc
-lib/deskbar-applet/modules-2.20-compatible/opensearch.pyo
-lib/deskbar-applet/modules-2.20-compatible/programs.py
-lib/deskbar-applet/modules-2.20-compatible/programs.pyc
-lib/deskbar-applet/modules-2.20-compatible/programs.pyo
-lib/deskbar-applet/modules-2.20-compatible/recent.py
-lib/deskbar-applet/modules-2.20-compatible/recent.pyc
-lib/deskbar-applet/modules-2.20-compatible/recent.pyo
-lib/deskbar-applet/modules-2.20-compatible/templates.py
-lib/deskbar-applet/modules-2.20-compatible/templates.pyc
-lib/deskbar-applet/modules-2.20-compatible/templates.pyo
-lib/deskbar-applet/modules-2.20-compatible/tomboy.py
-lib/deskbar-applet/modules-2.20-compatible/tomboy.pyc
-lib/deskbar-applet/modules-2.20-compatible/tomboy.pyo
-lib/deskbar-applet/modules-2.20-compatible/twitter.py
-lib/deskbar-applet/modules-2.20-compatible/twitter.pyc
-lib/deskbar-applet/modules-2.20-compatible/twitter.pyo
-lib/deskbar-applet/modules-2.20-compatible/web_address.py
-lib/deskbar-applet/modules-2.20-compatible/web_address.pyc
-lib/deskbar-applet/modules-2.20-compatible/web_address.pyo
-lib/deskbar-applet/modules-2.20-compatible/wikipedia-suggest.py
-lib/deskbar-applet/modules-2.20-compatible/wikipedia-suggest.pyc
-lib/deskbar-applet/modules-2.20-compatible/wikipedia-suggest.pyo
-lib/deskbar-applet/modules-2.20-compatible/yahoo.py
-lib/deskbar-applet/modules-2.20-compatible/yahoo.pyc
-lib/deskbar-applet/modules-2.20-compatible/yahoo.pyo
+libexec/deskbar-applet/deskbar-applet
+libexec/deskbar-applet/modules-2.20-compatible/beagle-live.py
+libexec/deskbar-applet/modules-2.20-compatible/beagle-live.pyc
+libexec/deskbar-applet/modules-2.20-compatible/beagle-live.pyo
+libexec/deskbar-applet/modules-2.20-compatible/beagle-static.py
+libexec/deskbar-applet/modules-2.20-compatible/beagle-static.pyc
+libexec/deskbar-applet/modules-2.20-compatible/beagle-static.pyo
+libexec/deskbar-applet/modules-2.20-compatible/calculator.py
+libexec/deskbar-applet/modules-2.20-compatible/calculator.pyc
+libexec/deskbar-applet/modules-2.20-compatible/calculator.pyo
+libexec/deskbar-applet/modules-2.20-compatible/desklicious.py
+libexec/deskbar-applet/modules-2.20-compatible/desklicious.pyc
+libexec/deskbar-applet/modules-2.20-compatible/desklicious.pyo
+libexec/deskbar-applet/modules-2.20-compatible/epiphany.py
+libexec/deskbar-applet/modules-2.20-compatible/epiphany.pyc
+libexec/deskbar-applet/modules-2.20-compatible/epiphany.pyo
+%%EVO%%libexec/deskbar-applet/modules-2.20-compatible/evolution.py
+%%EVO%%libexec/deskbar-applet/modules-2.20-compatible/evolution.pyc
+%%EVO%%libexec/deskbar-applet/modules-2.20-compatible/evolution.pyo
+libexec/deskbar-applet/modules-2.20-compatible/files.py
+libexec/deskbar-applet/modules-2.20-compatible/files.pyc
+libexec/deskbar-applet/modules-2.20-compatible/files.pyo
+libexec/deskbar-applet/modules-2.20-compatible/gdmactions.py
+libexec/deskbar-applet/modules-2.20-compatible/gdmactions.pyc
+libexec/deskbar-applet/modules-2.20-compatible/gdmactions.pyo
+libexec/deskbar-applet/modules-2.20-compatible/googlecodesearch.py
+libexec/deskbar-applet/modules-2.20-compatible/googlecodesearch.pyc
+libexec/deskbar-applet/modules-2.20-compatible/googlecodesearch.pyo
+libexec/deskbar-applet/modules-2.20-compatible/googlesearch.py
+libexec/deskbar-applet/modules-2.20-compatible/googlesearch.pyc
+libexec/deskbar-applet/modules-2.20-compatible/googlesearch.pyo
+libexec/deskbar-applet/modules-2.20-compatible/history.py
+libexec/deskbar-applet/modules-2.20-compatible/history.pyc
+libexec/deskbar-applet/modules-2.20-compatible/history.pyo
+libexec/deskbar-applet/modules-2.20-compatible/iswitch-window.py
+libexec/deskbar-applet/modules-2.20-compatible/iswitch-window.pyc
+libexec/deskbar-applet/modules-2.20-compatible/iswitch-window.pyo
+libexec/deskbar-applet/modules-2.20-compatible/mozilla.py
+libexec/deskbar-applet/modules-2.20-compatible/mozilla.pyc
+libexec/deskbar-applet/modules-2.20-compatible/mozilla.pyo
+libexec/deskbar-applet/modules-2.20-compatible/opensearch.py
+libexec/deskbar-applet/modules-2.20-compatible/opensearch.pyc
+libexec/deskbar-applet/modules-2.20-compatible/opensearch.pyo
+libexec/deskbar-applet/modules-2.20-compatible/programs.py
+libexec/deskbar-applet/modules-2.20-compatible/programs.pyc
+libexec/deskbar-applet/modules-2.20-compatible/programs.pyo
+libexec/deskbar-applet/modules-2.20-compatible/recent.py
+libexec/deskbar-applet/modules-2.20-compatible/recent.pyc
+libexec/deskbar-applet/modules-2.20-compatible/recent.pyo
+libexec/deskbar-applet/modules-2.20-compatible/templates.py
+libexec/deskbar-applet/modules-2.20-compatible/templates.pyc
+libexec/deskbar-applet/modules-2.20-compatible/templates.pyo
+libexec/deskbar-applet/modules-2.20-compatible/tomboy.py
+libexec/deskbar-applet/modules-2.20-compatible/tomboy.pyc
+libexec/deskbar-applet/modules-2.20-compatible/tomboy.pyo
+libexec/deskbar-applet/modules-2.20-compatible/twitter.py
+libexec/deskbar-applet/modules-2.20-compatible/twitter.pyc
+libexec/deskbar-applet/modules-2.20-compatible/twitter.pyo
+libexec/deskbar-applet/modules-2.20-compatible/web_address.py
+libexec/deskbar-applet/modules-2.20-compatible/web_address.pyc
+libexec/deskbar-applet/modules-2.20-compatible/web_address.pyo
+libexec/deskbar-applet/modules-2.20-compatible/wikipedia-suggest.py
+libexec/deskbar-applet/modules-2.20-compatible/wikipedia-suggest.pyc
+libexec/deskbar-applet/modules-2.20-compatible/wikipedia-suggest.pyo
+libexec/deskbar-applet/modules-2.20-compatible/yahoo.py
+libexec/deskbar-applet/modules-2.20-compatible/yahoo.pyc
+libexec/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/__init__.pyo
@@ -176,11 +176,6 @@ lib/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/__init__.pyo
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/_evolution.la
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/_evolution.so
-%%PYTHON_SITELIBDIR%%/deskbar/handlers/gdmclient/__init__.py
-%%PYTHON_SITELIBDIR%%/deskbar/handlers/gdmclient/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deskbar/handlers/gdmclient/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/handlers/gdmclient/_gdmclient.la
-%%PYTHON_SITELIBDIR%%/deskbar/handlers/gdmclient/_gdmclient.so
 %%PYTHON_SITELIBDIR%%/deskbar/interfaces/Action.py
 %%PYTHON_SITELIBDIR%%/deskbar/interfaces/Action.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/interfaces/Action.pyo
@@ -323,6 +318,12 @@ share/gnome/help/deskbar/C/legal.xml
 share/gnome/help/deskbar/ca/deskbar.xml
 share/gnome/help/deskbar/ca/figures/deskbar-applet.png
 share/gnome/help/deskbar/ca/legal.xml
+share/gnome/help/deskbar/cs/deskbar.xml
+share/gnome/help/deskbar/cs/figures/deskbar-applet.png
+share/gnome/help/deskbar/cs/legal.xml
+share/gnome/help/deskbar/da/deskbar.xml
+share/gnome/help/deskbar/da/figures/deskbar-applet.png
+share/gnome/help/deskbar/da/legal.xml
 share/gnome/help/deskbar/de/deskbar.xml
 share/gnome/help/deskbar/de/figures/deskbar-applet.png
 share/gnome/help/deskbar/de/legal.xml
@@ -373,7 +374,9 @@ share/locale/be@latin/LC_MESSAGES/deskbar-applet.mo
 share/locale/bg/LC_MESSAGES/deskbar-applet.mo
 share/locale/bn/LC_MESSAGES/deskbar-applet.mo
 share/locale/bn_IN/LC_MESSAGES/deskbar-applet.mo
+share/locale/br/LC_MESSAGES/deskbar-applet.mo
 share/locale/ca/LC_MESSAGES/deskbar-applet.mo
+share/locale/ca@valencia/LC_MESSAGES/deskbar-applet.mo
 share/locale/cs/LC_MESSAGES/deskbar-applet.mo
 share/locale/cy/LC_MESSAGES/deskbar-applet.mo
 share/locale/da/LC_MESSAGES/deskbar-applet.mo
@@ -388,6 +391,7 @@ share/locale/eu/LC_MESSAGES/deskbar-applet.mo
 share/locale/fa/LC_MESSAGES/deskbar-applet.mo
 share/locale/fi/LC_MESSAGES/deskbar-applet.mo
 share/locale/fr/LC_MESSAGES/deskbar-applet.mo
+share/locale/ga/LC_MESSAGES/deskbar-applet.mo
 share/locale/gl/LC_MESSAGES/deskbar-applet.mo
 share/locale/gu/LC_MESSAGES/deskbar-applet.mo
 share/locale/he/LC_MESSAGES/deskbar-applet.mo
@@ -403,6 +407,7 @@ share/locale/ko/LC_MESSAGES/deskbar-applet.mo
 share/locale/ku/LC_MESSAGES/deskbar-applet.mo
 share/locale/lt/LC_MESSAGES/deskbar-applet.mo
 share/locale/lv/LC_MESSAGES/deskbar-applet.mo
+share/locale/mai/LC_MESSAGES/deskbar-applet.mo
 share/locale/mg/LC_MESSAGES/deskbar-applet.mo
 share/locale/mk/LC_MESSAGES/deskbar-applet.mo
 share/locale/ml/LC_MESSAGES/deskbar-applet.mo
@@ -439,6 +444,8 @@ share/locale/zh_HK/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_TW/LC_MESSAGES/deskbar-applet.mo
 share/omf/deskbar/deskbar-C.omf
 share/omf/deskbar/deskbar-ca.omf
+share/omf/deskbar/deskbar-cs.omf
+share/omf/deskbar/deskbar-da.omf
 share/omf/deskbar/deskbar-de.omf
 share/omf/deskbar/deskbar-el.omf
 share/omf/deskbar/deskbar-en_GB.omf
@@ -476,6 +483,10 @@ share/omf/deskbar/deskbar-zh_CN.omf
 @dirrm share/gnome/help/deskbar/el
 @dirrm share/gnome/help/deskbar/de/figures
 @dirrm share/gnome/help/deskbar/de
+@dirrm share/gnome/help/deskbar/da/figures
+@dirrm share/gnome/help/deskbar/da
+@dirrm share/gnome/help/deskbar/cs/figures
+@dirrm share/gnome/help/deskbar/cs
 @dirrm share/gnome/help/deskbar/ca/figures
 @dirrm share/gnome/help/deskbar/ca
 @dirrm share/gnome/help/deskbar/C/figures
@@ -489,7 +500,6 @@ share/omf/deskbar/deskbar-zh_CN.omf
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/ui
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/osutils
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/deskbar/handlers/gdmclient
 %%EVO%%@dirrm %%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/handlers/actions
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/handlers
@@ -498,8 +508,8 @@ share/omf/deskbar/deskbar-zh_CN.omf
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/core
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar
-@dirrm lib/deskbar-applet/modules-2.20-compatible
-@dirrm lib/deskbar-applet
+@dirrm libexec/deskbar-applet/modules-2.20-compatible
+@dirrm libexec/deskbar-applet
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -516,10 +526,14 @@ share/omf/deskbar/deskbar-zh_CN.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

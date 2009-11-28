@@ -2,6 +2,7 @@ bin/gnome-screensaver
 bin/gnome-screensaver-command
 bin/gnome-screensaver-preferences
 %%PAM%%etc/pam.d/gnome-screensaver
+etc/xdg/autostart/gnome-screensaver.desktop
 etc/xdg/menus/gnome-screensavers.menu
 libdata/pkgconfig/gnome-screensaver.pc
 libexec/gnome-screensaver-dialog
@@ -15,8 +16,8 @@ share/applications/screensavers/footlogo-floaters.desktop
 share/applications/screensavers/personal-slideshow.desktop
 share/applications/screensavers/popsquares.desktop
 share/desktop-directories/gnome-screensaver.directory
-%%DATADIR%%/gnome-screensaver-preferences.glade
-%%DATADIR%%/lock-dialog-default.glade
+%%DATADIR%%/gnome-screensaver-preferences.ui
+%%DATADIR%%/lock-dialog-default.ui
 share/locale/ar/LC_MESSAGES/gnome-screensaver.mo
 share/locale/as/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ast/LC_MESSAGES/gnome-screensaver.mo
@@ -25,7 +26,9 @@ share/locale/be@latin/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bg/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-screensaver.mo
+share/locale/br/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ca/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-screensaver.mo
 share/locale/crh/LC_MESSAGES/gnome-screensaver.mo
 share/locale/cs/LC_MESSAGES/gnome-screensaver.mo
 share/locale/cy/LC_MESSAGES/gnome-screensaver.mo
@@ -58,12 +61,14 @@ share/locale/ko/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ku/LC_MESSAGES/gnome-screensaver.mo
 share/locale/lt/LC_MESSAGES/gnome-screensaver.mo
 share/locale/lv/LC_MESSAGES/gnome-screensaver.mo
+share/locale/mai/LC_MESSAGES/gnome-screensaver.mo
 share/locale/mg/LC_MESSAGES/gnome-screensaver.mo
 share/locale/mk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ml/LC_MESSAGES/gnome-screensaver.mo
 share/locale/mn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/mr/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nb/LC_MESSAGES/gnome-screensaver.mo
+share/locale/nds/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ne/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nn/LC_MESSAGES/gnome-screensaver.mo
@@ -92,18 +97,21 @@ share/locale/vi/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-screensaver.mo
-share/pixmaps/backgrounds/cosmos/cloud.jpg
-share/pixmaps/backgrounds/cosmos/comet.jpg
-share/pixmaps/backgrounds/cosmos/earth-horizon.jpg
-share/pixmaps/backgrounds/cosmos/earthrise.jpg
-share/pixmaps/backgrounds/cosmos/galaxy-ngc3370.jpg
-share/pixmaps/backgrounds/cosmos/helix-nebula.jpg
-share/pixmaps/backgrounds/cosmos/jupiter.jpg
-share/pixmaps/backgrounds/cosmos/sombrero.jpg
-share/pixmaps/backgrounds/cosmos/whirlpool.jpg
+share/backgrounds/cosmos/background-1.xml
+share/backgrounds/cosmos/blue-marble-west.jpg
+share/backgrounds/cosmos/cloud.jpg
+share/backgrounds/cosmos/comet.jpg
+share/backgrounds/cosmos/earth-horizon.jpg
+share/backgrounds/cosmos/galaxy-ngc3370.jpg
+share/backgrounds/cosmos/helix-nebula.jpg
+share/backgrounds/cosmos/jupiter.jpg
+share/backgrounds/cosmos/sombrero.jpg
+share/backgrounds/cosmos/whirlpool.jpg
+share/gnome-background-properties/cosmos.xml
 share/pixmaps/gnome-logo-white.svg
-@dirrm share/pixmaps/backgrounds/cosmos
-@dirrmtry share/pixmaps/backgrounds
+@dirrm share/gnome-background-properties
+@dirrm share/backgrounds/cosmos
+@dirrmtry share/backgrounds
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm libexec/gnome-screensaver
@@ -119,16 +127,22 @@ share/pixmaps/gnome-logo-white.svg
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

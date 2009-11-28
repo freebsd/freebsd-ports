@@ -1,0 +1,8 @@
+--- data/nautilus.desktop.in.in.orig	2009-04-25 17:13:18.000000000 -0400
++++ data/nautilus.desktop.in.in	2009-04-25 17:13:32.000000000 -0400
+@@ -15,4 +15,5 @@ X-GNOME-Bugzilla-Version=@VERSION@
+ X-GNOME-Autostart-Phase=Desktop
+ X-GNOME-Autostart-Notify=true
+ X-GNOME-AutoRestart=true
++AutostartCondition=GNOME /apps/nautilus/preferences/show_desktop
+ X-GNOME-Provides=filemanager

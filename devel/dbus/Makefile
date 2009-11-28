@@ -3,14 +3,14 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/dbus/Makefile,v 1.34 2009/11/28 06:03:52 mezz Exp $
 #
 
 PORTNAME=	dbus
-PORTVERSION?=	1.2.4.6
+PORTVERSION?=	1.2.16
 PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
-DISTNAME=	dbus-${PORTVERSION}permissive
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A message bus system for inter-application communication
@@ -59,6 +59,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/dbus/machine-id|/db/dbus/machine-id|g' \
 		${WRKSRC}/dbus/Makefile.in \
 		${WRKSRC}/tools/Makefile.in
+	@${REINPLACE_CMD} -e 's|THREAD_LIBS -lrt|THREAD_LIBS|g' \
+		${WRKSRC}/configure
 
 .if !defined(DBUS_SLAVE)
 post-install:

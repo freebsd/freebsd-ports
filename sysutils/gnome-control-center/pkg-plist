@@ -43,17 +43,6 @@ share/applications/keyboard.desktop
 share/applications/window-properties.desktop
 share/desktop-directories/gnomecc.directory
 %%DATADIR%%/default-apps/gnome-default-applications.xml
-%%DATADIR%%/glade/appearance.glade
-%%DATADIR%%/glade/at-enable-dialog.glade
-%%DATADIR%%/glade/display-capplet.glade
-%%ABOUTME%%%%DATADIR%%/glade/gnome-about-me.glade
-%%ABOUTME%%%%DATADIR%%/glade/gnome-about-me-fingerprint.glade
-%%DATADIR%%/glade/gnome-default-applications-properties.glade
-%%DATADIR%%/glade/gnome-keybinding-properties.glade
-%%DATADIR%%/glade/gnome-keyboard-properties.glade
-%%DATADIR%%/glade/gnome-mouse-properties.glade
-%%DATADIR%%/glade/gnome-network-properties.glade
-%%DATADIR%%/glade/gnome-window-properties.glade
 %%DATADIR%%/keybindings/00-multimedia-key.xml
 %%DATADIR%%/keybindings/01-desktop-key.xml
 %%DATADIR%%/pixmaps/at-startup.png
@@ -65,21 +54,49 @@ share/desktop-directories/gnomecc.directory
 %%DATADIR%%/pixmaps/double-click-maybe.png
 %%DATADIR%%/pixmaps/double-click-off.png
 %%DATADIR%%/pixmaps/double-click-on.png
-%%ABOUTME%%%%DATADIR%%/pixmaps/gnome-about-me-lock-open.png
-%%ABOUTME%%%%DATADIR%%/pixmaps/gnome-about-me-lock.png
+%%DATADIR%%/pixmaps/gnome-about-me-lock-open.png
+%%DATADIR%%/pixmaps/gnome-about-me-lock.png
 %%DATADIR%%/pixmaps/gtk-theme-thumbnailing.png
 %%DATADIR%%/pixmaps/icon-theme-thumbnailing.png
+%%DATADIR%%/pixmaps/left-index-finger.svg
+%%DATADIR%%/pixmaps/left-little-finger.svg
+%%DATADIR%%/pixmaps/left-middle-finger.svg
+%%DATADIR%%/pixmaps/left-ring-finger.svg
+%%DATADIR%%/pixmaps/left-thumb.svg
 %%DATADIR%%/pixmaps/mouse-cursor-normal-large.png
 %%DATADIR%%/pixmaps/mouse-cursor-normal.png
 %%DATADIR%%/pixmaps/mouse-cursor-white-large.png
 %%DATADIR%%/pixmaps/mouse-cursor-white.png
 %%DATADIR%%/pixmaps/ocean-stripes.png
+%%DATADIR%%/pixmaps/print_error.svg
+%%DATADIR%%/pixmaps/print_ok.svg
+%%DATADIR%%/pixmaps/right-index-finger.svg
+%%DATADIR%%/pixmaps/right-little-finger.svg
+%%DATADIR%%/pixmaps/right-middle-finger.svg
+%%DATADIR%%/pixmaps/right-ring-finger.svg
+%%DATADIR%%/pixmaps/right-thumb.svg
 %%DATADIR%%/pixmaps/subpixel-bgr.png
 %%DATADIR%%/pixmaps/subpixel-rgb.png
 %%DATADIR%%/pixmaps/subpixel-vbgr.png
 %%DATADIR%%/pixmaps/subpixel-vrgb.png
 %%DATADIR%%/pixmaps/theme-thumbnailing.png
 %%DATADIR%%/pixmaps/window-theme-thumbnailing.png
+%%DATADIR%%/ui/appearance.ui
+%%DATADIR%%/ui/at-enable-dialog.ui
+%%DATADIR%%/ui/display-capplet.ui
+share/gnome-control-center/ui/gnome-about-me-dialog.ui
+share/gnome-control-center/ui/gnome-about-me-fingerprint.ui
+share/gnome-control-center/ui/gnome-about-me-password.ui
+%%DATADIR%%/ui/gnome-default-applications-properties.ui
+%%DATADIR%%/ui/gnome-keybinding-properties.ui
+share/gnome-control-center/ui/gnome-keyboard-properties-a11y-notifications.ui
+share/gnome-control-center/ui/gnome-keyboard-properties-dialog.ui
+share/gnome-control-center/ui/gnome-keyboard-properties-layout-chooser.ui
+share/gnome-control-center/ui/gnome-keyboard-properties-model-chooser.ui
+share/gnome-control-center/ui/gnome-keyboard-properties-options-dialog.ui
+share/gnome-control-center/ui/gnome-mouse-properties.ui
+%%DATADIR%%/ui/gnome-network-properties.ui
+%%DATADIR%%/ui/gnome-window-properties.ui
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
 share/gnome/cursor-fonts/cursor-white.pcf
@@ -101,6 +118,7 @@ share/gnome/help/control-center/ca/control-center.xml
 share/gnome/help/control-center/ca@valencia/control-center.xml
 share/gnome/help/control-center/cs/control-center.xml
 share/gnome/help/control-center/de/control-center.xml
+share/gnome/help/control-center/el/control-center.xml
 share/gnome/help/control-center/en_GB/control-center.xml
 share/gnome/help/control-center/es/control-center.xml
 share/gnome/help/control-center/fr/control-center.xml
@@ -149,6 +167,7 @@ share/locale/br/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/crh/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -229,6 +248,7 @@ share/omf/control-center/control-center-ca.omf
 share/omf/control-center/control-center-ca@valencia.omf
 share/omf/control-center/control-center-cs.omf
 share/omf/control-center/control-center-de.omf
+share/omf/control-center/control-center-el.omf
 share/omf/control-center/control-center-en_GB.omf
 share/omf/control-center/control-center-es.omf
 share/omf/control-center/control-center-fr.omf
@@ -260,6 +280,7 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/help/control-center/fr
 @dirrm share/gnome/help/control-center/es
 @dirrm share/gnome/help/control-center/en_GB
+@dirrm share/gnome/help/control-center/el
 @dirrm share/gnome/help/control-center/de
 @dirrm share/gnome/help/control-center/cs
 @dirrm share/gnome/help/control-center/ca@valencia
@@ -267,8 +288,8 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/help/control-center/C
 @dirrm share/gnome/help/control-center
 @dirrm share/gnome/cursor-fonts
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/default-apps
 @dirrmtry share/desktop-directories
 @dirrmtry share/applications
@@ -308,6 +329,8 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

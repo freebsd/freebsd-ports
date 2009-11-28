@@ -1,0 +1,14 @@
+This module is part of the GNOME C++ bindings effort <http://www.gtkmm.org/>.
+
+The mm-common module provides the build infrastructure and utilities
+shared among the GNOME C++ binding libraries.  It is only a required
+dependency for building the C++ bindings from the gnome.org version
+control repository.  An installation of mm-common is not required for
+building tarball releases, unless configured to use maintainer-mode.
+
+Release archives of mm-common include the Doxygen tag file for the
+GNU C++ Library reference documentation.  It is covered by the same
+licence as the source code it was extracted from.  More information
+is available at <http://gcc.gnu.org/onlinedocs/libstdc++/>.
+
+WWW: http://www.gtkmm.org

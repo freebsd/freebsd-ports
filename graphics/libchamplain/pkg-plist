@@ -1,0 +1,93 @@
+include/libchamplain-%%VERSION%%/champlain/champlain-base-marker.h
+include/libchamplain-%%VERSION%%/champlain/champlain-cache.h
+include/libchamplain-%%VERSION%%/champlain/champlain-defines.h
+include/libchamplain-%%VERSION%%/champlain/champlain-enum-types.h
+include/libchamplain-%%VERSION%%/champlain/champlain-layer.h
+include/libchamplain-%%VERSION%%/champlain/champlain-map-source-desc.h
+include/libchamplain-%%VERSION%%/champlain/champlain-map-source-factory.h
+include/libchamplain-%%VERSION%%/champlain/champlain-map-source.h
+include/libchamplain-%%VERSION%%/champlain/champlain-marker.h
+include/libchamplain-%%VERSION%%/champlain/champlain-network-map-source.h
+include/libchamplain-%%VERSION%%/champlain/champlain-point.h
+include/libchamplain-%%VERSION%%/champlain/champlain-polygon.h
+include/libchamplain-%%VERSION%%/champlain/champlain-selection-layer.h
+include/libchamplain-%%VERSION%%/champlain/champlain-tile.h
+include/libchamplain-%%VERSION%%/champlain/champlain-version.h
+include/libchamplain-%%VERSION%%/champlain/champlain-view.h
+include/libchamplain-%%VERSION%%/champlain/champlain-zoom-level.h
+include/libchamplain-%%VERSION%%/champlain/champlain.h
+include/libchamplain-gtk-%%VERSION%%/champlain-gtk/champlain-gtk.h
+include/libchamplain-gtk-%%VERSION%%/champlain-gtk/gtk-champlain-embed.h
+lib/girepository-1.0/Champlain-%%VERSION%%.typelib
+lib/girepository-1.0/GtkChamplain-%%VERSION%%.typelib
+lib/libchamplain-%%VERSION%%.a
+lib/libchamplain-%%VERSION%%.la
+lib/libchamplain-%%VERSION%%.so
+lib/libchamplain-%%VERSION%%.so.1
+lib/libchamplain-gtk-%%VERSION%%.a
+lib/libchamplain-gtk-%%VERSION%%.la
+lib/libchamplain-gtk-%%VERSION%%.so
+lib/libchamplain-gtk-%%VERSION%%.so.1
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/champlain.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/champlain.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/champlain.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/champlaingtk.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/champlaingtk.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/champlaingtk.so
+libdata/pkgconfig/champlain-%%VERSION%%.pc
+libdata/pkgconfig/champlain-gtk-%%VERSION%%.pc
+share/gir-1.0/Champlain-%%VERSION%%.gir
+share/gir-1.0/GtkChamplain-%%VERSION%%.gir
+share/gtk-doc/html/libchamplain-gtk/GtkChamplainEmbed.html
+share/gtk-doc/html/libchamplain-gtk/ch01.html
+share/gtk-doc/html/libchamplain-gtk/home.png
+share/gtk-doc/html/libchamplain-gtk/index.html
+share/gtk-doc/html/libchamplain-gtk/index.sgml
+share/gtk-doc/html/libchamplain-gtk/left.png
+share/gtk-doc/html/libchamplain-gtk/libchamplain-gtk.devhelp
+share/gtk-doc/html/libchamplain-gtk/libchamplain-gtk.devhelp2
+share/gtk-doc/html/libchamplain-gtk/right.png
+share/gtk-doc/html/libchamplain-gtk/style.css
+share/gtk-doc/html/libchamplain-gtk/up.png
+share/gtk-doc/html/libchamplain/ChamplainBaseMarker.html
+share/gtk-doc/html/libchamplain/ChamplainCache.html
+share/gtk-doc/html/libchamplain/ChamplainLayer.html
+share/gtk-doc/html/libchamplain/ChamplainMapSource.html
+share/gtk-doc/html/libchamplain/ChamplainMapSourceFactory.html
+share/gtk-doc/html/libchamplain/ChamplainMarker.html
+share/gtk-doc/html/libchamplain/ChamplainNetworkMapSource.html
+share/gtk-doc/html/libchamplain/ChamplainPolygon.html
+share/gtk-doc/html/libchamplain/ChamplainSelectionLayer.html
+share/gtk-doc/html/libchamplain/ChamplainTile.html
+share/gtk-doc/html/libchamplain/ChamplainView.html
+share/gtk-doc/html/libchamplain/ch01.html
+share/gtk-doc/html/libchamplain/ch02.html
+share/gtk-doc/html/libchamplain/ch03.html
+share/gtk-doc/html/libchamplain/home.png
+share/gtk-doc/html/libchamplain/index.html
+share/gtk-doc/html/libchamplain/index.sgml
+share/gtk-doc/html/libchamplain/ix01.html
+share/gtk-doc/html/libchamplain/ix02.html
+share/gtk-doc/html/libchamplain/ix03.html
+share/gtk-doc/html/libchamplain/ix04.html
+share/gtk-doc/html/libchamplain/ix05.html
+share/gtk-doc/html/libchamplain/ix06.html
+share/gtk-doc/html/libchamplain/ix07.html
+share/gtk-doc/html/libchamplain/ix08.html
+share/gtk-doc/html/libchamplain/left.png
+share/gtk-doc/html/libchamplain/libchamplain-Champlain.html
+share/gtk-doc/html/libchamplain/libchamplain-ChamplainPoint.html
+share/gtk-doc/html/libchamplain/libchamplain-ChamplainVersion.html
+share/gtk-doc/html/libchamplain/libchamplain.devhelp
+share/gtk-doc/html/libchamplain/libchamplain.devhelp2
+share/gtk-doc/html/libchamplain/right.png
+share/gtk-doc/html/libchamplain/style.css
+share/gtk-doc/html/libchamplain/up.png
+@dirrm share/gtk-doc/html/libchamplain
+@dirrm share/gtk-doc/html/libchamplain-gtk
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/libchamplain-gtk-%%VERSION%%/champlain-gtk
+@dirrm include/libchamplain-gtk-%%VERSION%%
+@dirrm include/libchamplain-%%VERSION%%/champlain
+@dirrm include/libchamplain-%%VERSION%%

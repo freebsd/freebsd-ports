@@ -7,9 +7,9 @@ MAN3=	FcAtomicCreate.3 FcAtomicDeleteNew.3 FcAtomicDestroy.3 \
 	FcCharSetCopy.3 FcCharSetCount.3 FcCharSetCoverage.3 \
 	FcCharSetCreate.3 FcCharSetDestroy.3 FcCharSetEqual.3 \
 	FcCharSetFirstPage.3 FcCharSetHasChar.3 FcCharSetIntersect.3 \
-	FcCharSetIntersectCount.3 FcCharSetIsSubset.3 FcCharSetNew.3 \
-	FcCharSetNextPage.3 FcCharSetSubtract.3 FcCharSetSubtractCount.3 \
-	FcCharSetUnion.3 FcConfigAppFontAddDir.3 \
+	FcCharSetIntersectCount.3 FcCharSetIsSubset.3 FcCharSetMerge.3 \
+	FcCharSetNew.3 FcCharSetNextPage.3 FcCharSetSubtract.3 \
+	FcCharSetSubtractCount.3 FcCharSetUnion.3 FcConfigAppFontAddDir.3 \
 	FcConfigAppFontAddFile.3 FcConfigAppFontClear.3 \
 	FcConfigBuildFonts.3 FcConfigCreate.3 FcConfigDestroy.3 \
 	FcConfigEnableHome.3 FcConfigFilename.3 FcConfigGetBlanks.3 \
@@ -17,7 +17,7 @@ MAN3=	FcAtomicCreate.3 FcAtomicDeleteNew.3 FcAtomicDestroy.3 \
 	FcConfigGetConfigDirs.3 FcConfigGetConfigFiles.3 \
 	FcConfigGetCurrent.3 FcConfigGetFontDirs.3 FcConfigGetFonts.3 \
 	FcConfigGetRescanInterval.3 FcConfigHome.3 \
-	FcConfigParseAndLoad.3 FcConfigSetCurrent.3 \
+	FcConfigParseAndLoad.3 FcConfigReference.3 FcConfigSetCurrent.3 \
 	FcConfigSetRescanInterval.3 FcConfigSubstitute.3 \
 	FcConfigSubstituteWithPat.3 FcConfigUptoDate.3 \
 	FcDefaultSubstitute.3 FcDirCacheLoad.3 FcDirCacheLoadFile.3 \
@@ -35,8 +35,8 @@ MAN3=	FcAtomicCreate.3 FcAtomicDeleteNew.3 FcAtomicDestroy.3 \
 	FcIsUpper.3 FcLangGetCharSet.3 FcLangSetAdd.3 FcLangSetCompare.3 \
 	FcLangSetContains.3 FcLangSetCopy.3 FcLangSetCreate.3 \
 	FcLangSetDestroy.3 FcLangSetEqual.3 FcLangSetHasLang.3 \
-	FcLangSetHash.3 FcMatrixCopy.3 FcMatrixEqual.3 FcMatrixInit.3 \
-	FcMatrixMultiply.3 FcMatrixRotate.3 FcMatrixScale.3 \
+	FcLangSetGetLangs.3 FcLangSetHash.3 FcMatrixCopy.3 FcMatrixEqual.3 \
+	FcMatrixInit.3 FcMatrixMultiply.3 FcMatrixRotate.3 FcMatrixScale.3 \
 	FcMatrixShear.3 FcNameConstant.3 FcNameGetConstant.3 \
 	FcNameGetObjectType.3 FcNameParse.3 FcNameRegisterConstants.3 \
 	FcNameRegisterObjectTypes.3 FcNameUnparse.3 \
@@ -45,9 +45,9 @@ MAN3=	FcAtomicCreate.3 FcAtomicDeleteNew.3 FcAtomicDestroy.3 \
 	FcObjectSetDestroy.3 FcPatternAdd.3 FcPatternAdd-Type.3 \
 	FcPatternAddWeak.3 FcPatternBuild.3 FcPatternCreate.3 \
 	FcPatternDel.3 FcPatternDestroy.3 FcPatternDuplicate.3 \
-	FcPatternEqual.3 FcPatternEqualSubset.3 FcPatternGet.3 \
-	FcPatternGet-Type.3 FcPatternHash.3 FcPatternPrint.3 \
-	FcPatternReference.3 FcPatternRemove.3 FcStrBasename.3 \
+	FcPatternEqual.3 FcPatternEqualSubset.3 FcPatternFilter.3 \
+	FcPatternFormat.3 FcPatternGet.3 FcPatternGet-Type.3 FcPatternHash.3 \
+	FcPatternPrint.3 FcPatternReference.3 FcPatternRemove.3 FcStrBasename.3 \
 	FcStrCmp.3 FcStrCmpIgnoreCase.3 FcStrCopy.3 FcStrCopyFilename.3 \
 	FcStrDowncase.3 FcStrFree.3 FcStrListCreate.3 FcStrListDone.3 \
 	FcStrListNext.3 FcStrPlus.3 FcStrSetAdd.3 FcStrSetAddFilename.3 \

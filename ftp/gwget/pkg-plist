@@ -7,8 +7,8 @@ share/dbus-1/services/org.gnome.gwget.service
 %%DATADIR%%/gwget-large.png
 %%DATADIR%%/downloading.png
 %%DATADIR%%/newdownload.png
-%%DATADIR%%/preferences.glade
-%%DATADIR%%/gwget.glade
+%%DATADIR%%/preferences.ui
+%%DATADIR%%/gwget.ui
 %%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/gwget.xml
 %%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libgwgetextension.a
 %%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libgwgetextension.la

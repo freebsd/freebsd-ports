@@ -56,8 +56,10 @@ share/locale/be/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/bg/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/bn/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/br/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/bs/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ca/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/ca@valencia/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/cs/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/cy/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/da/LC_MESSAGES/libbonoboui-2.0.mo
@@ -172,6 +174,8 @@ share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

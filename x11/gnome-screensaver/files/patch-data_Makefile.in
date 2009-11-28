@@ -1,6 +1,6 @@
---- data/Makefile.in.orig	Mon Nov  7 05:37:01 2005
-+++ data/Makefile.in	Mon Nov  7 05:37:38 2005
-@@ -737,38 +737,38 @@
+--- data/Makefile.in.orig	2009-06-15 22:41:37.000000000 +0200
++++ data/Makefile.in	2009-06-15 22:42:51.000000000 +0200
+@@ -916,38 +916,38 @@
  @GCONF_SCHEMAS_INSTALL_FALSE@install-data-local:
  
  install-data-hook:
@@ -68,6 +68,6 @@
 +#	        echo "***" ; \
 +#	   fi; \
 +#	fi
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:

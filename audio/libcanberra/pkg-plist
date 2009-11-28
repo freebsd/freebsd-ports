@@ -15,18 +15,18 @@ lib/libcanberra.so.0
 %%GSTREAMER%%lib/libcanberra/libcanberra-gstreamer.a
 %%GSTREAMER%%lib/libcanberra/libcanberra-gstreamer.la
 %%GSTREAMER%%lib/libcanberra/libcanberra-gstreamer.so
-lib/libcanberra/libcanberra-multi.a
-lib/libcanberra/libcanberra-multi.la
-lib/libcanberra/libcanberra-multi.so
-lib/libcanberra/libcanberra-null.a
-lib/libcanberra/libcanberra-null.la
-lib/libcanberra/libcanberra-null.so
-lib/libcanberra/libcanberra-oss.a
-lib/libcanberra/libcanberra-oss.la
-lib/libcanberra/libcanberra-oss.so
-%%PULSE%%lib/libcanberra/libcanberra-pulse.a
-%%PULSE%%lib/libcanberra/libcanberra-pulse.la
-%%PULSE%%lib/libcanberra/libcanberra-pulse.so
+lib/libcanberra-%%VERSION%%/libcanberra-multi.a
+lib/libcanberra-%%VERSION%%/libcanberra-multi.la
+lib/libcanberra-%%VERSION%%/libcanberra-multi.so
+lib/libcanberra-%%VERSION%%/libcanberra-null.a
+lib/libcanberra-%%VERSION%%/libcanberra-null.la
+lib/libcanberra-%%VERSION%%/libcanberra-null.so
+lib/libcanberra-%%VERSION%%/libcanberra-oss.a
+lib/libcanberra-%%VERSION%%/libcanberra-oss.la
+lib/libcanberra-%%VERSION%%/libcanberra-oss.so
+%%PULSE%%lib/libcanberra-%%VERSION%%/libcanberra-pulse.a
+%%PULSE%%lib/libcanberra-%%VERSION%%/libcanberra-pulse.la
+%%PULSE%%lib/libcanberra-%%VERSION%%/libcanberra-pulse.so
 libdata/pkgconfig/libcanberra-gtk.pc
 libdata/pkgconfig/libcanberra.pc
 %%DOCSDIR%%/README
@@ -42,8 +42,14 @@ libdata/pkgconfig/libcanberra.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
+share/gdm/autostart/LoginWindow/libcanberra-ready-sound.desktop
 share/gnome/autostart/libcanberra-login-sound.desktop
 share/gnome/shutdown/libcanberra-logout-sound.sh
+share/vala/vapi/libcanberra-gtk.vapi
+share/vala/vapi/libcanberra.vapi
 @dirrmtry share/gnome/shutdown
+@dirrmtry share/gdm/autostart/LoginWindow
+@dirrmtry share/gdm/autostart
+@dirrmtry share/gdm
 @dirrm %%DOCSDIR%%
-@dirrm lib/libcanberra
+@dirrm lib/libcanberra-%%VERSION%%

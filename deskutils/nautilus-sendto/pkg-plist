@@ -1,7 +1,5 @@
 bin/nautilus-sendto
-lib/evolution/2.26/plugins/liborg-gnome-evolution-send-attachments-to.la
-lib/evolution/2.26/plugins/liborg-gnome-evolution-send-attachments-to.so
-lib/evolution/2.26/plugins/org-gnome-evolution-send-attachments-to.eplug
+include/nautilus-sendto/nautilus-sendto-plugin.h
 lib/nautilus-sendto/plugins/libnstbluetooth.la
 lib/nautilus-sendto/plugins/libnstbluetooth.so
 lib/nautilus-sendto/plugins/libnstburn.la
@@ -10,20 +8,35 @@ lib/nautilus-sendto/plugins/libnstempathy.la
 lib/nautilus-sendto/plugins/libnstempathy.so
 lib/nautilus-sendto/plugins/libnstevolution.la
 lib/nautilus-sendto/plugins/libnstevolution.so
+lib/nautilus-sendto/plugins/libnstgajim.la
+lib/nautilus-sendto/plugins/libnstgajim.so
 %%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.la
 %%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.so
 lib/nautilus-sendto/plugins/libnstremovable_devices.la
 lib/nautilus-sendto/plugins/libnstremovable_devices.so
 lib/nautilus/extensions-2.0/libnautilus-sendto.la
 lib/nautilus/extensions-2.0/libnautilus-sendto.so
-%%PIDGIN%%lib/pidgin/nautilus.la
-%%PIDGIN%%lib/pidgin/nautilus.so
-share/nautilus-sendto/glade/nautilus-sendto.glade
+libdata/pkgconfig/nautilus-sendto.pc
+%%DOCSDIR%%/api-index-full.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/nautilus-sendto-nautilus-sendto-plugin.html
+%%DOCSDIR%%/nautilus-sendto.devhelp
+%%DOCSDIR%%/nautilus-sendto.devhelp2
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
+share/locale/as/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ast/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be@latin/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bg/LC_MESSAGES/nautilus-sendto.mo
+share/locale/bn_IN/LC_MESSAGES/nautilus-sendto.mo
+share/locale/br/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ca/LC_MESSAGES/nautilus-sendto.mo
 share/locale/cs/LC_MESSAGES/nautilus-sendto.mo
 share/locale/da/LC_MESSAGES/nautilus-sendto.mo
@@ -40,10 +53,12 @@ share/locale/fr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/he/LC_MESSAGES/nautilus-sendto.mo
+share/locale/hi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/hu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/it/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ja/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ka/LC_MESSAGES/nautilus-sendto.mo
+share/locale/kn/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ko/LC_MESSAGES/nautilus-sendto.mo
 share/locale/lt/LC_MESSAGES/nautilus-sendto.mo
 share/locale/mk/LC_MESSAGES/nautilus-sendto.mo
@@ -64,15 +79,21 @@ share/locale/sk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sq/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sv/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ta/LC_MESSAGES/nautilus-sendto.mo
+share/locale/te/LC_MESSAGES/nautilus-sendto.mo
 share/locale/th/LC_MESSAGES/nautilus-sendto.mo
 share/locale/uk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/vi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
-@dirrm share/nautilus-sendto/glade
+share/nautilus-sendto/ui/nautilus-sendto.ui
+@dirrm %%DOCSDIR%%
+@dirrm share/nautilus-sendto/ui
 @dirrm share/nautilus-sendto
 @dirrm lib/nautilus-sendto/plugins
 @dirrm lib/nautilus-sendto
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -81,7 +102,11 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

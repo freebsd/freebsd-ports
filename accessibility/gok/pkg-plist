@@ -7,6 +7,7 @@ share/applications/gok.desktop
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
 %%DOCSDIR%%/ch04.html
+%%DOCSDIR%%/gok-GokButton.html
 %%DOCSDIR%%/gok-arraylist.html
 %%DOCSDIR%%/gok-callbacks.html
 %%DOCSDIR%%/gok-command-common.html
@@ -24,6 +25,7 @@ share/applications/gok.desktop
 %%DOCSDIR%%/gok-gok-data.html
 %%DOCSDIR%%/gok-gok-editor.html
 %%DOCSDIR%%/gok-gok-feedback.html
+%%DOCSDIR%%/gok-gok-gconf-keys.html
 %%DOCSDIR%%/gok-gok-gconf.html
 %%DOCSDIR%%/gok-gok-key.html
 %%DOCSDIR%%/gok-gok-keyboard.html
@@ -183,6 +185,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/ca/quit.kbd
 %%DATADIR%%/ca/text-operations.kbd
 %%DATADIR%%/ca/valuator.kbd
+%%DATADIR%%/ca@valencia/gok-controls.kbd
+%%DATADIR%%/ca@valencia/hide.kbd
+%%DATADIR%%/ca@valencia/launcher.kbd
+%%DATADIR%%/ca@valencia/main.kbd
+%%DATADIR%%/ca@valencia/mouse.kbd
+%%DATADIR%%/ca@valencia/move-resize.kbd
+%%DATADIR%%/ca@valencia/numberpad.kbd
+%%DATADIR%%/ca@valencia/quit.kbd
+%%DATADIR%%/ca@valencia/text-operations.kbd
+%%DATADIR%%/ca@valencia/valuator.kbd
 %%DATADIR%%/cs/gok-controls.kbd
 %%DATADIR%%/cs/hide.kbd
 %%DATADIR%%/cs/launcher.kbd
@@ -351,8 +363,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/glade/gok.glade2
 %%DATADIR%%/gok.rc
 %%DATADIR%%/goklogo.png
-%%DATADIR%%/goksound1.wav
-%%DATADIR%%/goksound2.wav
 %%DATADIR%%/gu/gok-controls.kbd
 %%DATADIR%%/gu/hide.kbd
 %%DATADIR%%/gu/launcher.kbd
@@ -868,6 +878,7 @@ share/locale/bg/LC_MESSAGES/gok.mo
 share/locale/bn/LC_MESSAGES/gok.mo
 share/locale/bn_IN/LC_MESSAGES/gok.mo
 share/locale/ca/LC_MESSAGES/gok.mo
+share/locale/ca@valencia/LC_MESSAGES/gok.mo
 share/locale/cs/LC_MESSAGES/gok.mo
 share/locale/cy/LC_MESSAGES/gok.mo
 share/locale/da/LC_MESSAGES/gok.mo
@@ -935,6 +946,10 @@ share/locale/zh_HK/LC_MESSAGES/gok.mo
 share/locale/zh_TW/LC_MESSAGES/gok.mo
 share/omf/gok/gok-C.omf
 share/pixmaps/gok.png
+share/sounds/freedesktop/stereo/goksound1.wav
+share/sounds/freedesktop/stereo/goksound2.wav
+@dirrmtry share/sounds/freedesktop/stereo
+@dirrmtry share/sounds/freedesktop
 @dirrm share/omf/gok
 @dirrm %%DATADIR%%/zh_TW
 @dirrm %%DATADIR%%/zh_HK
@@ -1002,6 +1017,7 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/da
 @dirrm %%DATADIR%%/cy
 @dirrm %%DATADIR%%/cs
+@dirrm %%DATADIR%%/ca@valencia
 @dirrm %%DATADIR%%/ca
 @dirrm %%DATADIR%%/bn_IN
 @dirrm %%DATADIR%%/bn
@@ -1014,9 +1030,9 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/am
 @dirrm %%DATADIR%%/C
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
-@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -1038,6 +1054,8 @@ share/pixmaps/gok.png
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES
