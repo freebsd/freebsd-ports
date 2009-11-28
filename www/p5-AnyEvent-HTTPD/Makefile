@@ -20,6 +20,8 @@ RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=2.0:${PORTSDIR}/devel/p5-common-sense \
 		p5-URI>=1.40:${PORTSDIR}/net/p5-URI
 
+BROKEN=		unsatisfiable dependency condition
+
 PERL_CONFIGURE=	yes
 
 MAN3=	AnyEvent::HTTPD.3 AnyEvent::HTTPD::Request.3 AnyEvent::HTTPD::Util.3 AnyEvent::HTTPD::HTTPServer.3 AnyEvent::HTTPD::HTTPConnection.3
