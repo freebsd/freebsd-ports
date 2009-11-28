@@ -7,9 +7,9 @@
 
 PORTNAME=	mod_vhs
 PORTVERSION=	1.0.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.oav.net/projects/${PORTNAME}/
+MASTER_SITES=	ftp://ftp.oav.net/openvisp/${PORTNAME}/
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	kiwi@oav.net
@@ -17,7 +17,7 @@ COMMENT=	Allows mass virtual hosting using libhome system with Apache 2.0.x
 
 LIB_DEPENDS+=	home:${PORTSDIR}/misc/libhome
 
-USE_APACHE=	2.0
+USE_APACHE=	2.0+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 WANT_PHP_MOD=	yes
