@@ -6,3 +6,5 @@ lib/asterisk/modules/format_mp3.so
 lib/asterisk/modules/chan_ooh323.so
 %%SAMPLE_CONFIG%%etc/asterisk/cdr_mysql.conf
 %%SAMPLE_CONFIG%%etc/asterisk/res_mysql.conf
+%%SAMPLE_CONFIG%%etc/asterisk/ooh323.conf
+%%SAMPLE_CONFIG%%etc/asterisk/mysql.conf
