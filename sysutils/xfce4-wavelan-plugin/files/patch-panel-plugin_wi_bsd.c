@@ -1,5 +1,5 @@
---- panel-plugin/wi_bsd.c.orig	2006-12-21 22:33:39.000000000 +0100
-+++ panel-plugin/wi_bsd.c	2008-03-14 16:00:57.000000000 +0100
+--- panel-plugin/wi_bsd.c.orig	2006-12-21 16:33:39.000000000 -0500
++++ panel-plugin/wi_bsd.c	2009-10-29 09:51:21.000000000 -0400
 @@ -1,6 +1,8 @@
  /* $Id: wi_bsd.c 562 2004-12-03 18:29:41Z benny $ */
  /*-
@@ -46,7 +46,7 @@
  static int _wi_vendor(const struct wi_device *, char *, size_t);
  static int _wi_netname(const struct wi_device *, char *, size_t);
  static int _wi_quality(const struct wi_device *, int *);
-@@ -193,24 +202,73 @@
+@@ -193,24 +202,76 @@
  	return((ifmr.ifm_status & IFM_ACTIVE) != 0 ? WI_OK : WI_NOCARRIER);
  }
  
@@ -120,15 +120,18 @@
 +   dev_number = (int)strtol(c, NULL, 10);
 +   *c = '\0';
 +
-+
 +   snprintf(mib, sizeof(mib), "dev.%s.%d.%%desc", dev_name, dev_number);
-+   if(sysctlbyname(mib, buffer, &len, NULL, 0) == -1)
-+      return (WI_NOSUCHDEV);
++   if(sysctlbyname(mib, buffer, &len, NULL, 0) == -1) {
++      /* check for wlan device instead */
++      snprintf(mib, sizeof(mib), "net.%s.%d.%%parent", dev_name, dev_number);
++      if(sysctlbyname(mib, buffer, &len, NULL, 0) == -1)
++         return (WI_NOSUCHDEV);
++   }
 +#else
  #define WI_RID_STA_IDENTITY_LUCENT	0x1
  #define WI_RID_STA_IDENTITY_PRISMII	0x2
  #define WI_RID_STA_IDENTITY_SAMSUNG	0x3
-@@ -250,6 +308,7 @@
+@@ -250,6 +311,7 @@
  
    snprintf(buffer, len, "%s (ID %d, version %d.%d)", vendor,
        wr.wi_val[0], wr.wi_val[2], wr.wi_val[3]);
@@ -136,7 +139,7 @@
  
    return(WI_OK);
  }
-@@ -257,6 +316,18 @@
+@@ -257,6 +319,18 @@
  static int
  _wi_netname(const struct wi_device *device, char *buffer, size_t len)
  {
@@ -155,7 +158,7 @@
    struct wi_req wr;
    int result;
  
-@@ -268,6 +339,7 @@
+@@ -268,6 +342,7 @@
      return(result);
  
    strlcpy(buffer, (char *)&wr.wi_val[1], MIN(len, le16toh(wr.wi_val[0]) + 1));
@@ -163,7 +166,7 @@
  
    return(WI_OK);
  }
-@@ -275,6 +347,16 @@
+@@ -275,6 +350,16 @@
  static int
  _wi_quality(const struct wi_device *device, int *quality)
  {
@@ -175,12 +178,12 @@
 +   if((result = _wi_getval(device, &req)) != WI_OK)
 +      return (result);
 +
-+   *quality = req.isr_rssi;
++   *quality = req.isr_rssi * 2;
 +#else
    struct wi_req wr;
    int result;
  
-@@ -289,6 +371,7 @@
+@@ -289,6 +374,7 @@
      *quality = le16toh(wr.wi_val[1]);
    else
      *quality = le16toh(wr.wi_val[0]);
@@ -188,7 +191,7 @@
  
    return(WI_OK);
  }
-@@ -296,6 +379,20 @@
+@@ -296,6 +382,20 @@
  static int
  _wi_rate(const struct wi_device *device, int *rate)
  {
@@ -209,7 +212,7 @@
    struct wi_req wr;
    int result;
  
-@@ -307,6 +404,7 @@
+@@ -307,6 +407,7 @@
      return(result);
  
    *rate = le16toh(wr.wi_val[0]);
