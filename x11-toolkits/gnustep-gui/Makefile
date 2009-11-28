@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep-gui
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.17.1
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -19,7 +18,7 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 
 NO_PACKAGE=	GPL3
 GNU_CONFIGURE=	yes
