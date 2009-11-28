@@ -40,7 +40,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>libtool</name>
-	<range><lt>2.2.6a</lt></range>
+	<range><lt>2.2.6b</lt></range>
       </package>
     </affects>
     <description>
