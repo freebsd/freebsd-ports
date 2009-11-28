@@ -8,7 +8,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	2.26.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ COMMENT=	Clean, mean and lean CD ripper for GNOME2
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
     		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
-		cdio.8:${PORTSDIR}/sysutils/libcdio \
+		cdio.12:${PORTSDIR}/sysutils/libcdio \
     		tag.6:${PORTSDIR}/audio/taglib \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \

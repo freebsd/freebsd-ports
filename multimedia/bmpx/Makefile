@@ -7,7 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.40.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.backtrace.info/releases/0.40/
 
@@ -17,7 +17,7 @@ COMMENT=	Media player geared towards usability, technical efficiency and looks
 LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
 		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		cdio.8:${PORTSDIR}/sysutils/libcdio \
+		cdio.12:${PORTSDIR}/sysutils/libcdio \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		rsvg-2:${PORTSDIR}/graphics/librsvg2 \

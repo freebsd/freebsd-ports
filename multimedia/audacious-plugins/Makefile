@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -285,7 +286,7 @@ PLIST_SUB+=	TIMIDITYPLUGIN="@comment "
 .endif
 
 .if defined(WITH_CDAUDIO)
-LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio \
+LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
 		cddb.4:${PORTSDIR}/audio/libcddb
 CONFIGURE_ARGS+=--enable-cdaudio
 PLIST_SUB+=	CDAUDIOPLUGIN=""
