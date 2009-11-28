@@ -4222,3 +4222,4 @@ www/tcldom|devel/tclxml|2009-11-26|port now do part of devel/tclxml
 www/tcldom-libxml2|devel/tclxml|2009-11-26|port now do part of devel/tclxml
 lang/erlang-doc||2009-11-27|Documentation now part of lang/erlang package
 devel/gtkmozedit||2009-11-27|No longer under development, does not build with libxul
+audio/exaile-devel|audio/exaile|2009-11-28|main port updated to latest stable version
