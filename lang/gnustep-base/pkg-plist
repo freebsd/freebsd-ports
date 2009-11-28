@@ -27,13 +27,14 @@ System/Library/Headers/Foundation/NSAttributedString.h
 System/Library/Headers/Foundation/NSAutoreleasePool.h
 System/Library/Headers/Foundation/NSBundle.h
 System/Library/Headers/Foundation/NSByteOrder.h
+System/Library/Headers/Foundation/NSCache.h
 System/Library/Headers/Foundation/NSCalendarDate.h
 System/Library/Headers/Foundation/NSCharacterSet.h
 System/Library/Headers/Foundation/NSClassDescription.h
 System/Library/Headers/Foundation/NSCoder.h
-System/Library/Headers/Foundation/NSConnection.h
 System/Library/Headers/Foundation/NSComparisonPredicate.h
 System/Library/Headers/Foundation/NSCompoundPredicate.h
+System/Library/Headers/Foundation/NSConnection.h
 System/Library/Headers/Foundation/NSData.h
 System/Library/Headers/Foundation/NSDate.h
 System/Library/Headers/Foundation/NSDateFormatter.h
@@ -52,6 +53,7 @@ System/Library/Headers/Foundation/NSExpression.h
 System/Library/Headers/Foundation/NSFileHandle.h
 System/Library/Headers/Foundation/NSFileManager.h
 System/Library/Headers/Foundation/NSFormatter.h
+System/Library/Headers/Foundation/NSGarbageCollector.h
 System/Library/Headers/Foundation/NSGeometry.h
 System/Library/Headers/Foundation/NSHTTPCookie.h
 System/Library/Headers/Foundation/NSHTTPCookieStorage.h
@@ -73,7 +75,10 @@ System/Library/Headers/Foundation/NSNull.h
 System/Library/Headers/Foundation/NSNumberFormatter.h
 System/Library/Headers/Foundation/NSObjCRuntime.h
 System/Library/Headers/Foundation/NSObject.h
+System/Library/Headers/Foundation/NSOperation.h
 System/Library/Headers/Foundation/NSPathUtilities.h
+System/Library/Headers/Foundation/NSPointerArray.h
+System/Library/Headers/Foundation/NSPointerFunctions.h
 System/Library/Headers/Foundation/NSPort.h
 System/Library/Headers/Foundation/NSPortCoder.h
 System/Library/Headers/Foundation/NSPortMessage.h
@@ -114,6 +119,12 @@ System/Library/Headers/Foundation/NSUserDefaults.h
 System/Library/Headers/Foundation/NSUtilities.h
 System/Library/Headers/Foundation/NSValue.h
 System/Library/Headers/Foundation/NSValueTransformer.h
+System/Library/Headers/Foundation/NSXMLDTD.h
+System/Library/Headers/Foundation/NSXMLDTDNode.h
+System/Library/Headers/Foundation/NSXMLDocument.h
+System/Library/Headers/Foundation/NSXMLElement.h
+System/Library/Headers/Foundation/NSXMLNode.h
+System/Library/Headers/Foundation/NSXMLNodeOptions.h
 System/Library/Headers/Foundation/NSXMLParser.h
 System/Library/Headers/Foundation/NSZone.h
 System/Library/Headers/GNUstepBase/GCObject.h
@@ -318,9 +329,9 @@ System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZ
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Knox
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Marengo
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Petersburg
+System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Tell_City
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Vevay
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Vincennes
-System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Tell_City
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indiana/Winamac
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Indianapolis
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Inuvik
@@ -438,9 +449,9 @@ System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZ
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Dushanbe
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Gaza
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Harbin
+System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Ho_Chi_Minh
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Hong_Kong
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Hovd
-System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Ho_Chi_Minh
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Irkutsk
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Istanbul
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Jakarta
@@ -558,7 +569,6 @@ System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZ
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Egypt
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Eire
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT
-System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT0
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT+0
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT+1
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT+10
@@ -587,6 +597,7 @@ System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZ
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT-7
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT-8
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT-9
+System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/GMT0
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/Greenwich
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/UCT
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Etc/UTC
@@ -653,7 +664,6 @@ System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZ
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GB
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GB-Eire
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT
-System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT0
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT+0
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT+1
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT+10
@@ -684,6 +694,7 @@ System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZ
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT-7
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT-8
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT-9
+System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/GMT0
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Greenwich
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/HST
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Hongkong
