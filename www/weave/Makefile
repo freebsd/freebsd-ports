@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weave
-PORTVERSION=	1.0b1
+PORTVERSION=	1.0b2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
 		LOCAL/glarkin
