@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	fpdf
-PORTVERSION=	1.53
-PORTREVISION=	6
+PORTVERSION=	1.6
+PORTEPOCH=	1
 CATEGORIES=	print www
 MASTER_SITES=	http://www.fpdf.org/fr/
 DISTNAME=	${PORTNAME}${PORTVERSION:S|.||}
@@ -18,7 +18,7 @@ COMMENT=	A free PHP class to generate PDF files with pure PHP
 
 USE_PHP=	zlib
 
-FETCH_CMD=	/usr/bin/fetch -ARr -o ${DISTDIR}/${DISTFILES}
+FETCH_CMD=	${FETCH_BINARY} -ARr -o ${DISTDIR}/${DISTFILES}
 NO_BUILD=	yes
 
 FPDF_DIR?=	share/fpdf
