@@ -3,8 +3,8 @@ lib/libhangul.a
 lib/libhangul.la
 lib/libhangul.so
 lib/libhangul.so.1
-lib/libhangul/hanja/hanja.txt
 libdata/pkgconfig/libhangul.pc
+share/libhangul/hanja/hanja.txt
+@dirrm share/libhangul/hanja
+@dirrm share/libhangul
 @dirrm include/hangul-1.0
-@dirrm lib/libhangul/hanja
-@dirrm lib/libhangul

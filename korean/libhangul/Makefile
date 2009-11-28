@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libhangul
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	korean
-MASTER_SITES=	http://kldp.net/frs/download.php/4943/
+MASTER_SITES=	http://kldp.net/frs/download.php/5417/
 
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	A library for hangul processing
