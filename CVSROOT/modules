@@ -2966,7 +2966,6 @@ eqonomize-kde4                  ports/finance/eqonomize-kde4
 eric4                           ports/devel/eric4
 eris                            ports/devel/eris
 erlang                          ports/lang/erlang
-erlang-doc                      ports/lang/erlang-doc
 erlang-lite                     ports/lang/erlang-lite
 erlang-mysql                    ports/databases/erlang-mysql
 erlang-thrift                   ports/devel/erlang-thrift
@@ -4061,7 +4060,6 @@ gdvrecv                         ports/multimedia/gdvrecv
 geany                           ports/devel/geany
 gearmand                        ports/devel/gearmand
 gecko-mediaplayer               ports/www/gecko-mediaplayer
-gecko-sharp10                   ports/www/gecko-sharp10
 gecko-sharp20                   ports/www/gecko-sharp20
 geda                            ports/cad/geda
 geda-docs                       ports/cad/geda-docs
@@ -4984,7 +4982,6 @@ gtkmm20                         ports/x11-toolkits/gtkmm20
 gtkmm20-reference               ports/x11-toolkits/gtkmm20-reference
 gtkmm24                         ports/x11-toolkits/gtkmm24
 gtkmm24-reference               ports/x11-toolkits/gtkmm24-reference
-gtkmozedit                      ports/devel/gtkmozedit
 gtkparasite                     ports/devel/gtkparasite
 gtkpasman                       ports/security/gtkpasman
 gtkperf                         ports/benchmarks/gtkperf
@@ -9090,6 +9087,7 @@ mp3plot                         ports/audio/mp3plot
 mp3rename                       ports/audio/mp3rename
 mp3riot                         ports/audio/mp3riot
 mp3splt                         ports/audio/mp3splt
+mp3splt-gtk                     ports/audio/mp3splt-gtk
 mp3stat                         ports/audio/mp3stat
 mp3towav-bundle                 ports/audio/mp3towav-bundle
 mp3unicode                      ports/audio/mp3unicode
@@ -22440,8 +22438,6 @@ tclExpat                        ports/textproc/tclExpat
 tclX                            ports/lang/tclX
 tclcheck                        ports/devel/tclcheck
 tclcl                           ports/devel/tclcl
-tcldom                          ports/www/tcldom
-tcldom-libxml2                  ports/www/tcldom-libxml2
 tclexpat                        ports/textproc/tclExpat
 tclgeomap                       ports/astro/tclgeomap
 tclgetopts                      ports/devel/tclgetopts
@@ -22462,8 +22458,6 @@ tcludp                          ports/net/tcludp
 tclwebtest                      ports/www/tclwebtest
 tclx                            ports/lang/tclX
 tclxml                          ports/devel/tclxml
-tclxml-expat                    ports/devel/tclxml-expat
-tclxml-libxml2                  ports/devel/tclxml-libxml2
 tcm                             ports/graphics/tcm
 tcmplex-panteltje               ports/multimedia/tcmplex-panteltje
 tcpblast                        ports/benchmarks/tcpblast
