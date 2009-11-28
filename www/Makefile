@@ -893,6 +893,7 @@
     SUBDIR += p5-HTML-Perlinfo
     SUBDIR += p5-HTML-PrettyPrinter
     SUBDIR += p5-HTML-Prototype
+    SUBDIR += p5-HTML-Query
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-RSSAutodiscovery
     SUBDIR += p5-HTML-ResolveLink
