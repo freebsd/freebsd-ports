@@ -1,5 +1,5 @@
---- config/install.sh.orig	Thu Nov  2 22:23:22 2006
-+++ config/install.sh	Sun Nov 19 23:51:03 2006
+--- config/install.sh.orig	Tue May 22 18:48:30 2007
++++ config/install.sh	Sun Sep 16 02:56:22 2007
 @@ -18,6 +18,8 @@
      nolib=false
  fi
@@ -38,7 +38,7 @@
  this=$0
  
  
-@@ -307,7 +331,12 @@
+@@ -308,7 +332,12 @@
  # the name of the bin files directory
  #
  BOOT_ARCHIVE=boot.$ARCH-unix
@@ -52,7 +52,7 @@
  
  #
  # build the run-time system
-@@ -316,6 +345,11 @@
+@@ -317,6 +346,11 @@
      vsay $this: Run-time system already exists.
  else
      "$CONFIGDIR"/unpack "$ROOT" runtime
@@ -64,7 +64,7 @@
      cd "$BASEDIR"/runtime/objs
      echo $this: Compiling the run-time system.
      $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
-@@ -330,7 +364,7 @@
+@@ -331,7 +365,7 @@
  	if [ -f run.$ARCH-$OPSYS.a ]; then
  	    mv run.$ARCH-$OPSYS.a "$RUNDIR"
  	fi
@@ -73,7 +73,7 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -356,7 +390,7 @@
+@@ -357,7 +391,7 @@
  	complain "$this !!! Unable to re-create heap image (sml.$HEAP_SUFFIX)."
      fi
  else
@@ -82,12 +82,31 @@
  
      fish "$ROOT"/"$BOOT_FILES"/smlnj/basis
  
-@@ -427,5 +461,12 @@
+@@ -415,6 +449,18 @@
+ 
+ cd "$ROOT"
+ 
++# apply source patches for standard targets
++[ -n "$MLSTANDARDPATCHDIRS" ] && \
++for d in $MLSTANDARDPATCHDIRS
++do
++	"$CONFIGDIR"/unpack "$ROOT" "$d"
++done
++[ -n "$MLSTANDARDPATCHES" ] && \
++for p in $MLSTANDARDPATCHES
++do
++	do_patch $p
++done
++
+ #
+ # Now do all the rest using the precompiled installer:
+ #
+@@ -430,5 +476,12 @@
  	complain "$this: !!! Installation of libraries and programs failed."
      fi
  fi
 +
-+# apply source patches
++# apply all source patches
 +[ -n "$MLSOURCEPATCHES" ] && \
 +for p in $MLSOURCEPATCHES
 +do

@@ -28,6 +28,11 @@ smlnj/lib/SMLNJ-ML-YACC-LIB/.cm/%%MLARCH%%-unix/ml-yacc-lib.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/ALPHA.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/AMD64-Peephole.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/AMD64.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/CCall-Vararg.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/CCall-sparc.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/CCall-x86-64.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/CCall-x86.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/CCall.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Control.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Graphs.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/HPPA.cm
@@ -39,8 +44,8 @@ smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/MLTREE.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/PPC.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Peephole.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/RA.cm
-smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/SA.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/SPARC.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/StagedAlloc.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Visual.cm
 smlnj/lib/cml/.cm/%%MLARCH%%-unix/basis.cm
 smlnj/lib/cml/.cm/%%MLARCH%%-unix/cml-internal.cm
@@ -52,6 +57,7 @@ smlnj/lib/dir-tool.cm/.cm/%%MLARCH%%-unix/dir-tool.cm
 smlnj/lib/grm-ext.cm/.cm/%%MLARCH%%-unix/grm-ext.cm
 smlnj/lib/hash-cons-lib.cm/.cm/%%MLARCH%%-unix/hash-cons-lib.cm
 smlnj/lib/inet-lib.cm/.cm/%%MLARCH%%-unix/inet-lib.cm
+smlnj/lib/json-lib.cm/.cm/%%MLARCH%%-unix/json-lib.cm
 smlnj/lib/lex-ext.cm/.cm/%%MLARCH%%-unix/lex-ext.cm
 smlnj/lib/make-tool.cm/.cm/%%MLARCH%%-unix/make-tool.cm
 smlnj/lib/ml-antlr-tool.cm/.cm/%%MLARCH%%-unix/ml-antlr-tool.cm
@@ -180,6 +186,9 @@ smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/lib/inet-lib.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/inet-lib.cm/.cm
 @dirrm smlnj/lib/inet-lib.cm
+@dirrm smlnj/lib/json-lib.cm/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/json-lib.cm/.cm
+@dirrm smlnj/lib/json-lib.cm
 @dirrm smlnj/lib/lex-ext.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/lex-ext.cm/.cm
 @dirrm smlnj/lib/lex-ext.cm
