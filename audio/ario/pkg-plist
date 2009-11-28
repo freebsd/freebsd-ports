@@ -1,0 +1,125 @@
+bin/ario
+lib/ario/plugins/audioscrobbler.ario-plugin
+lib/ario/plugins/filesystem.ario-plugin
+lib/ario/plugins/information.ario-plugin
+lib/ario/plugins/libaudioscrobbler.a
+lib/ario/plugins/libaudioscrobbler.la
+lib/ario/plugins/libaudioscrobbler.so
+lib/ario/plugins/libaudioscrobbler.so.0
+lib/ario/plugins/libfilesystem.a
+lib/ario/plugins/libfilesystem.la
+lib/ario/plugins/libfilesystem.so
+lib/ario/plugins/libfilesystem.so.0
+lib/ario/plugins/libinformation.a
+lib/ario/plugins/libinformation.la
+lib/ario/plugins/libinformation.so
+lib/ario/plugins/libinformation.so.0
+lib/ario/plugins/liblibnotify.a
+lib/ario/plugins/liblibnotify.la
+lib/ario/plugins/liblibnotify.so
+lib/ario/plugins/liblibnotify.so.0
+lib/ario/plugins/libmmkeys.a
+lib/ario/plugins/libmmkeys.la
+lib/ario/plugins/libmmkeys.so
+lib/ario/plugins/libmmkeys.so.0
+lib/ario/plugins/libnotify.ario-plugin
+lib/ario/plugins/libradios.a
+lib/ario/plugins/libradios.la
+lib/ario/plugins/libradios.so
+lib/ario/plugins/libradios.so.0
+lib/ario/plugins/libwikipedia.a
+lib/ario/plugins/libwikipedia.la
+lib/ario/plugins/libwikipedia.so
+lib/ario/plugins/libwikipedia.so.0
+lib/ario/plugins/mmkeys.ario-plugin
+lib/ario/plugins/radios.ario-plugin
+lib/ario/plugins/wikipedia.ario-plugin
+share/applications/ario.desktop
+%%DATADIR%%/art/ario-pause.png
+%%DATADIR%%/art/ario-play.png
+%%DATADIR%%/art/ario.png
+%%DATADIR%%/art/logo.png
+%%DATADIR%%/art/play.png
+%%DATADIR%%/art/repeat.png
+%%DATADIR%%/art/shuffle.png
+%%DATADIR%%/data/profiles.xml.default
+%%DATADIR%%/plugins/audioscrobbler-prefs.ui
+%%DATADIR%%/plugins/filesystem-ui.xml
+%%DATADIR%%/plugins/icons/audioscrobbler.png
+%%DATADIR%%/plugins/icons/wikipedia.png
+%%DATADIR%%/plugins/information.ui
+%%DATADIR%%/plugins/radios-ui.xml
+%%DATADIR%%/plugins/radios.xml.default
+%%DATADIR%%/plugins/wikipedia-ui.xml
+%%DATADIR%%/ui/ario-ui.xml
+%%DATADIR%%/ui/browser-prefs.ui
+%%DATADIR%%/ui/connection-assistant.ui
+%%DATADIR%%/ui/connection-autodetect.ui
+%%DATADIR%%/ui/connection-prefs.ui
+%%DATADIR%%/ui/connection-widget.ui
+%%DATADIR%%/ui/cover-prefs.ui
+%%DATADIR%%/ui/cover-progress.ui
+%%DATADIR%%/ui/cover-select.ui
+%%DATADIR%%/ui/lyrics-prefs.ui
+%%DATADIR%%/ui/lyrics-select.ui
+%%DATADIR%%/ui/others-prefs.ui
+%%DATADIR%%/ui/playlist-prefs.ui
+%%DATADIR%%/ui/server-prefs.ui
+%%DATADIR%%/ui/similar-artists.ui
+%%DATADIR%%/ui/song-infos.ui
+%%DATADIR%%/ui/stats-prefs.ui
+%%DATADIR%%/ui/trayicon-prefs.ui
+share/icons/hicolor/128x128/apps/ario.png
+share/icons/hicolor/16x16/apps/ario.png
+share/icons/hicolor/22x22/apps/ario.png
+share/icons/hicolor/24x24/apps/ario.png
+share/icons/hicolor/256x256/apps/ario.png
+share/icons/hicolor/32x32/apps/ario.png
+share/icons/hicolor/48x48/apps/ario.png
+share/icons/hicolor/64x64/apps/ario.png
+share/icons/hicolor/72x72/apps/ario.png
+share/icons/hicolor/96x96/apps/ario.png
+share/icons/hicolor/scalable/apps/ario.svg
+share/locale/ar/LC_MESSAGES/ario.mo
+share/locale/ca/LC_MESSAGES/ario.mo
+share/locale/cs/LC_MESSAGES/ario.mo
+share/locale/da/LC_MESSAGES/ario.mo
+share/locale/de/LC_MESSAGES/ario.mo
+share/locale/en_GB/LC_MESSAGES/ario.mo
+share/locale/es/LC_MESSAGES/ario.mo
+share/locale/fi/LC_MESSAGES/ario.mo
+share/locale/fr/LC_MESSAGES/ario.mo
+share/locale/ga/LC_MESSAGES/ario.mo
+share/locale/he/LC_MESSAGES/ario.mo
+share/locale/hr/LC_MESSAGES/ario.mo
+share/locale/hu/LC_MESSAGES/ario.mo
+share/locale/id/LC_MESSAGES/ario.mo
+share/locale/it/LC_MESSAGES/ario.mo
+share/locale/ja/LC_MESSAGES/ario.mo
+share/locale/nb/LC_MESSAGES/ario.mo
+share/locale/nds/LC_MESSAGES/ario.mo
+share/locale/nl/LC_MESSAGES/ario.mo
+share/locale/pl/LC_MESSAGES/ario.mo
+share/locale/pt/LC_MESSAGES/ario.mo
+share/locale/pt_BR/LC_MESSAGES/ario.mo
+share/locale/ro/LC_MESSAGES/ario.mo
+share/locale/ru/LC_MESSAGES/ario.mo
+share/locale/sv/LC_MESSAGES/ario.mo
+share/locale/th/LC_MESSAGES/ario.mo
+share/locale/tr/LC_MESSAGES/ario.mo
+share/locale/zh_CN/LC_MESSAGES/ario.mo
+share/locale/zh_TW/LC_MESSAGES/ario.mo
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrm share/icons/hicolor/256x256/apps
+@dirrm share/icons/hicolor/256x256
+@dirrm share/icons
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/plugins/icons
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/art
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm lib/ario/plugins
+@dirrm lib/ario

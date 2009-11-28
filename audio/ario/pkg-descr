@@ -1,0 +1,5 @@
+Ario is a GTK2 client for MPD (Music player daemon). The interface used to
+browse the library is inspired by Rhythmbox but Ario aims to be much lighter
+and faster.
+
+WWW: http://ario-player.sourceforge.net/
