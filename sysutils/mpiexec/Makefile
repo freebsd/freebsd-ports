@@ -23,4 +23,6 @@ CONFIGURE_ARGS=	--with-default-comm=mpich2
 PLIST_FILES=	bin/mpiexec
 MAN1=		mpiexec.1
 
+CONFLICTS=	mpich2-1.2.*
+
 .include <bsd.port.mk>
