@@ -7,6 +7,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -77,7 +78,7 @@ CONFIGURE_ARGS+=--disable-libvisual
 .endif
 
 .if !defined(WITHOUT_LIBCDIO)
-LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
 PLIST_SUB+=	CDIO=""
 .else
 CONFIGURE_ARGS+=--disable-libcdio

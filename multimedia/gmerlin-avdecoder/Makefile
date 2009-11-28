@@ -7,6 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -169,7 +170,7 @@ CONFIGURE_ARGS+=--disable-libcda --disable-libdca
 .endif
 
 .if !defined(WITHOUT_LIBCDIO)
-LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
 PLIST_SUB+=	LIBCDIO=""
 .else
 CONFIGURE_ARGS+=--disable-libcdio
