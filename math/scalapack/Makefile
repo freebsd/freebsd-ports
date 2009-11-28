@@ -7,7 +7,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	1.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
@@ -57,7 +57,7 @@ LAPACK=		-llapack
 .endif
 
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
-WITH_OPENMPI=   yes
+WITH_OPENMPI=	yes
 .endif
 
 .if defined(WITH_OPENMPI)
@@ -66,8 +66,8 @@ RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-openmpi.diff
 .else
 #LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-mpich.diff
 .endif
 
@@ -100,8 +100,8 @@ NOOPT=	-O0
 MPIF77=	${LOCALBASE}/mpi/openmpi/bin/mpif77
 MPICC=	${LOCALBASE}/mpi/openmpi/bin/mpicc
 .else
-MPIF77=	${LOCALBASE}/mpich2/bin/mpif77
-MPICC=	${LOCALBASE}/mpich2/bin/mpicc
+MPIF77=	${LOCALBASE}/bin/mpif77
+MPICC=	${LOCALBASE}/bin/mpicc
 .endif
 
 post-patch:

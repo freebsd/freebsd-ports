@@ -31,7 +31,7 @@
  #  Name and location of the MPI library.
  #  -------------------------------------
 -   MPIdir = /usr/local/mpich
-+   MPIdir = @LOCALBASE@/mpich2
++   MPIdir = @LOCALBASE@
     MPILIBdir = $(MPIdir)/lib/
     MPIINCdir = $(MPIdir)/include
 -   MPILIB = $(MPILIBdir)/libmpich.a

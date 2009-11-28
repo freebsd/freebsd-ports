@@ -7,7 +7,7 @@
 
 PORTNAME=	mumps
 PORTVERSION=	4.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\
@@ -66,12 +66,12 @@ LAPACK_LIBS=	-llapack
 
 .ifdef WITH_MPI
 PKGNAMESUFFIX+=		-mpich
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/include/mpif.h:${PORTSDIR}/net/mpich2 \
+BUILD_DEPENDS+=	${LOCALBASE}/include/mpif.h:${PORTSDIR}/net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
 LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 # Note: -l?mumps still requires to be linked with -lblacs + -lscalapack
-RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2 \
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
 CONFLICTS=	mumps-4*
@@ -142,16 +142,16 @@ regression-test:
 	${CHMOD} go-r ${HOME}/.mpd.conf
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 .  endif
-	${LOCALBASE}/mpich2/bin/mpd &
+	${LOCALBASE}/bin/mpd &
 	(cd ${WRKSRC}/examples &&	\
-	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./ssimpletest < input_simpletest_real ;	\
-	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./dsimpletest < input_simpletest_real ;	\
-	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./csimpletest < input_simpletest_cmplx ;	\
-	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./zsimpletest < input_simpletest_cmplx ;	\
+	${LOCALBASE}/bin/mpirun -np 2 ./ssimpletest < input_simpletest_real ;	\
+	${LOCALBASE}/bin/mpirun -np 2 ./dsimpletest < input_simpletest_real ;	\
+	${LOCALBASE}/bin/mpirun -np 2 ./csimpletest < input_simpletest_cmplx ;	\
+	${LOCALBASE}/bin/mpirun -np 2 ./zsimpletest < input_simpletest_cmplx ;	\
 	${ECHO_MSG} "The solution should be (1,2,3,4,5)" ;	\
-	${LOCALBASE}/mpich2/bin/mpirun -np 3 ./c_example ;	\
+	${LOCALBASE}/bin/mpirun -np 3 ./c_example ;	\
 	${ECHO_MSG} "The solution should be (1,2)")
-	${LOCALBASE}/mpich2/bin/mpdallexit
+	${LOCALBASE}/bin/mpdallexit
 .else
 	(cd ${WRKSRC}/examples &&	\
 	./ssimpletest < input_simpletest_real ;			\

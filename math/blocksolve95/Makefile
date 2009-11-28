@@ -7,7 +7,7 @@
 
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/BlockSolve95/	\
 		ftp://ftp.irisa.fr/pub/mirrors/BlockSolve95/
@@ -27,7 +27,7 @@ MAKEFILE=	makefile
 MAKE_ARGS=	GMAKE=${GMAKE} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
 		BLAS_LIB=${BLAS_LIB} LAPACK_LIB=${LAPACK_LIB}
 
-MPIDIR=		${LOCALBASE}/mpich2
+MPIDIR=		${LOCALBASE}
 PETSC_ARCH=	freebsd
 BOPT?=		O
 
@@ -73,10 +73,10 @@ regression-test:	build
 	${CHMOD} go-r ${HOME}/.mpd.conf
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 . endif
-	${LOCALBASE}/mpich2/bin/mpd &
+	${LOCALBASE}/bin/mpd &
 	@(cd ${BUILD_WRKSRC}/examples;	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bsrunexamples clean)
-	${LOCALBASE}/mpich2/bin/mpdallexit
+	${LOCALBASE}/bin/mpdallexit
 .endif
 
 .include "${FILESDIR}/BSman3.inc"

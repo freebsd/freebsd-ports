@@ -6,19 +6,19 @@
 
  Example:
   % cd %%DATADIR%%/TESTING
-  % %%LOCALBASE%%/mpich2/bin/mpd &
-  % %%LOCALBASE%%/mpich2/bin/mpirun -np 4 ./xcbrd
-  % %%LOCALBASE%%/mpich2/bin/mpirun -np 4 ./xcdblu
+  % %%LOCALBASE%%/bin/mpd &
+  % %%LOCALBASE%%/bin/mpirun -np 4 ./xcbrd
+  % %%LOCALBASE%%/bin/mpirun -np 4 ./xcdblu
    etc., etc. ...
 
   to perform all the tests,
   % cd %%DATADIR%%/TESTING
-  % %%LOCALBASE%%/mpich2/bin/mpd &
+  % %%LOCALBASE%%/bin/mpd &
   % csh
   % foreach i (x*)
-  ? %%LOCALBASE%%/mpich2/bin/mpirun -np 4 ./$i >& ~/$i.log
+  ? %%LOCALBASE%%/bin/mpirun -np 4 ./$i >& ~/$i.log
   ? end
-  % %%LOCALBASE%%/mpich2/bin/mpdallexit
+  % %%LOCALBASE%%/bin/mpdallexit
 
  If you're using OpenMPI, use this instead:
   % cd %%DATADIR%%/TESTING

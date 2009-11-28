@@ -7,7 +7,7 @@
 
 PORTNAME=	hpl
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netlib.org/benchmark/hpl/
 
@@ -15,7 +15,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
 
 .if !defined(WITH_LAM)
-BUILD_DEPENDS=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 .else
 BUILD_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
 CC=		${LOCALBASE}/bin/mpicc
@@ -28,14 +28,14 @@ USE_FORTRAN=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.a) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .else
 WITH_BLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 .endif
 
 USE_LDCONFIG=	yes
@@ -75,7 +75,7 @@ MAN3=		HPL_abort.3 HPL_all_reduce.3 HPL_barrier.3 HPL_bcast.3 \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^TOPdir[ ]*=.*$$|TOPdir = ${WRKSRC}| ; \
-		s|^MPdir[ ]*=.*$$|MPdir = ${LOCALBASE}/mpich2| ; \
+		s|^MPdir[ ]*=.*$$|MPdir = ${LOCALBASE}| ; \
 		s|^LAdir[ ]*=.*$$|LAdir = ${LOCALBASE}/lib| ; \
 		s|^CC[ ]*=.*$$|CC = ${CC}| ; \
 		s|^CCFLAGS[ ]*=.*$$|CCFLAGS = $$\(HPL_DEFS\) ${CFLAGS} -fomit-frame-pointer -funroll-loops| ; \
@@ -90,7 +90,7 @@ post-patch:
 		s|^MPlib[ ]*=.*$$|MPlib = /usr/lib/libg2c.a|' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
 .else
-	@${REINPLACE_CMD} -e 's|^MPdir[ ]*=.*$$|MPdir = ${LOCALBASE}/mpich2|' \
+	@${REINPLACE_CMD} -e 's|^MPdir[ ]*=.*$$|MPdir = ${LOCALBASE}|' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
 .endif
 

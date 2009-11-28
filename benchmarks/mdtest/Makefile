@@ -7,7 +7,7 @@
 
 PORTNAME=	mdtest
 PORTVERSION=	1.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.llnl.gov/icc/lc/siop/downloads/
 
@@ -25,9 +25,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
 MPICC=		${LOCALBASE}/mpi/openmpi/bin/mpicc
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.so:${PORTSDIR}/net/mpich2
-MPICC=		${LOCALBASE}/mpich2/bin/mpicc
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/lib/libmpich.so:${PORTSDIR}/net/mpich2
+MPICC=		${LOCALBASE}/bin/mpicc
 .endif
 
 USE_GMAKE=	yes

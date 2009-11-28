@@ -45,15 +45,15 @@ LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
 CONFIGURE_ARGS+=	--with-blas=goto
 .elif ${USE_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS+=        --with-blas=atlas
+CONFIGURE_ARGS+=	--with-blas=atlas
 .endif
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 
 .if defined(WITH_MPI)
 LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpi=pmpi
-CPPFLAGS+=	-I${LOCALBASE}/mpich/include -I${LOCALBASE}/mpich/include/mpi2c++
-LDFLAGS+=	-L${LOCALBASE}/mpich/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mpi2c++
+LDFLAGS+=	-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-mpi=no
 .endif
