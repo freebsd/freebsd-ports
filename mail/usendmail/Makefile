@@ -7,7 +7,7 @@
 
 PORTNAME=	usendmail
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ohse.de/uwe/usendmail/
 
