@@ -1,4 +1,5 @@
 bin/dngconverter
+bin/scangui
 lib/kde4/kipiplugin_acquireimages.so
 lib/kde4/kipiplugin_advancedslideshow.so
 lib/kde4/kipiplugin_batchprocessimages.so
@@ -13,12 +14,14 @@ lib/kde4/kipiplugin_htmlexport.so
 lib/kde4/kipiplugin_imageviewer.so
 %%GPOD%%lib/kde4/kipiplugin_ipodexport.so
 lib/kde4/kipiplugin_jpeglossless.so
+lib/kde4/kipiplugin_kioexportimport.so
 lib/kde4/kipiplugin_metadataedit.so
 lib/kde4/kipiplugin_picasawebexport.so
 lib/kde4/kipiplugin_printimages.so
 lib/kde4/kipiplugin_rawconverter.so
 %%OPENCV%%lib/kde4/kipiplugin_removeredeyes.so
 lib/kde4/kipiplugin_sendimages.so
+lib/kde4/kipiplugin_shwup.so
 lib/kde4/kipiplugin_smug.so
 lib/kde4/kipiplugin_timeadjust.so
 lib/libkipiplugins.so
@@ -26,7 +29,7 @@ lib/libkipiplugins.so.1
 lib/libkipiplugins.so.1.0.0
 share/applications/kde4/dngconverter.desktop
 share/applications/kde4/kipiplugins.desktop
-share/apps/kipiplugin_advancedslideshow/KIPIicon.svg
+share/applications/kde4/scangui.desktop
 share/apps/kipiplugin_facebook/icons/hicolor/16x16/actions/facebook.png
 share/apps/kipiplugin_facebook/icons/hicolor/22x22/actions/facebook.png
 share/apps/kipiplugin_facebook/icons/hicolor/32x32/actions/facebook.png
@@ -59,7 +62,8 @@ share/apps/kipiplugin_galleryexport/icons/hicolor/22x22/actions/gallery.png
 share/apps/kipiplugin_galleryexport/icons/hicolor/32x32/actions/gallery.png
 share/apps/kipiplugin_galleryexport/icons/hicolor/48x48/actions/gallery.png
 share/apps/kipiplugin_galleryexport/icons/hicolor/scalable/actions/gallery.svgz
-share/apps/kipiplugin_galleryexport/pics/gallery.png
+share/apps/kipiplugin_galleryexport/pics/gallery_logo.png
+share/apps/kipiplugin_htmlexport/THEME_HOWTO
 share/apps/kipiplugin_htmlexport/themes/classic/classic.desktop
 share/apps/kipiplugin_htmlexport/themes/classic/gohome.png
 share/apps/kipiplugin_htmlexport/themes/classic/template.xsl
@@ -114,29 +118,38 @@ share/apps/kipiplugin_picasawebexport/icons/hicolor/22x22/actions/picasa.png
 share/apps/kipiplugin_picasawebexport/icons/hicolor/32x32/actions/picasa.png
 share/apps/kipiplugin_picasawebexport/icons/hicolor/48x48/actions/picasa.png
 share/apps/kipiplugin_picasawebexport/icons/hicolor/scalable/actions/picasa.svgz
-share/apps/kipiplugin_printimages/templates/10.5x14.8cm.desktop
-share/apps/kipiplugin_printimages/templates/10x13.33cm.desktop
-share/apps/kipiplugin_printimages/templates/10x15cm.desktop
-share/apps/kipiplugin_printimages/templates/10x15cmAlbum.desktop
-share/apps/kipiplugin_printimages/templates/11.5x15cmAlbum.desktop
-share/apps/kipiplugin_printimages/templates/13x18cm.desktop
-share/apps/kipiplugin_printimages/templates/20x25cm.desktop
-share/apps/kipiplugin_printimages/templates/21x29.7cm.desktop
-share/apps/kipiplugin_printimages/templates/3.5x5.desktop
-share/apps/kipiplugin_printimages/templates/4x6.desktop
+share/apps/kipiplugin_printimages/TEMPLATE_HOWTO
+share/apps/kipiplugin_printimages/templates/1_photo_10.5x14.8cm.desktop
+share/apps/kipiplugin_printimages/templates/1_photo_10x15cm.desktop
+share/apps/kipiplugin_printimages/templates/1_photo_20x25cm.desktop
+share/apps/kipiplugin_printimages/templates/1_photo_8x10.desktop
+share/apps/kipiplugin_printimages/templates/1_photo_9x13cm.desktop
+share/apps/kipiplugin_printimages/templates/2_photos_13x18cm.desktop
+share/apps/kipiplugin_printimages/templates/2_photos_5x7.desktop
+share/apps/kipiplugin_printimages/templates/3_photos_10x15cm.desktop
+share/apps/kipiplugin_printimages/templates/3_photos_4x6.desktop
+share/apps/kipiplugin_printimages/templates/4_photos_10x13.33cm.desktop
+share/apps/kipiplugin_printimages/templates/4_photos_3.5x5.desktop
+share/apps/kipiplugin_printimages/templates/4_photos_4.5x5cm.desktop
+share/apps/kipiplugin_printimages/templates/4_photos_9x13cm.desktop
 share/apps/kipiplugin_printimages/templates/4x6Album.desktop
-share/apps/kipiplugin_printimages/templates/5x7.desktop
-share/apps/kipiplugin_printimages/templates/6x9cm.desktop
-share/apps/kipiplugin_printimages/templates/8x10.desktop
-share/apps/kipiplugin_printimages/templates/9x13cm.desktop
+share/apps/kipiplugin_printimages/templates/6_photos_3.5x4cm.desktop
+share/apps/kipiplugin_printimages/templates/8_photos_6x9cm.desktop
 share/apps/kipiplugin_printimages/templates/Album-Collage.desktop
 share/apps/kipiplugin_printimages/templates/Album-Collage1.desktop
+share/apps/kipiplugin_printimages/templates/Album_10x15cm.desktop
+share/apps/kipiplugin_printimages/templates/Album_11.5x15cm.desktop
+share/apps/kipiplugin_printimages/templates/FullPage.desktop
 share/apps/kipiplugin_printimages/templates/Photoframe.desktop
-share/apps/kipiplugin_printimages/templates/Small-Thumbnails.desktop
-share/apps/kipiplugin_printimages/templates/Thumbnails.desktop
+share/apps/kipiplugin_printimages/templates/Thumbnails_5x4.desktop
+share/apps/kipiplugin_printimages/templates/Thumbnails_6x5.desktop
 share/apps/kipiplugin_printimages/templates/templates.xml
 %%OPENCV%%share/apps/kipiplugin_removeredeyes/controlwidget.svg
 %%OPENCV%%share/apps/kipiplugin_removeredeyes/removeredeyes_classifier_eye_20_20.xml
+share/apps/kipiplugin_shwup/icons/hicolor/16x16/actions/shwup.png
+share/apps/kipiplugin_shwup/icons/hicolor/22x22/actions/shwup.png
+share/apps/kipiplugin_shwup/icons/hicolor/32x32/actions/shwup.png
+share/apps/kipiplugin_shwup/icons/hicolor/48x48/actions/shwup.png
 share/apps/kipiplugin_smug/icons/hicolor/16x16/actions/smugmug.png
 share/apps/kipiplugin_smug/icons/hicolor/22x22/actions/smugmug.png
 share/apps/kipiplugin_smug/icons/hicolor/32x32/actions/smugmug.png
@@ -187,12 +200,14 @@ share/kde4/services/kipiplugin_htmlexport.desktop
 share/kde4/services/kipiplugin_imageviewer.desktop
 %%GPOD%%share/kde4/services/kipiplugin_ipodexport.desktop
 share/kde4/services/kipiplugin_jpeglossless.desktop
+share/kde4/services/kipiplugin_kioexportimport.desktop
 share/kde4/services/kipiplugin_metadataedit.desktop
 share/kde4/services/kipiplugin_picasawebexport.desktop
 share/kde4/services/kipiplugin_printimages.desktop
 share/kde4/services/kipiplugin_rawconverter.desktop
 %%OPENCV%%share/kde4/services/kipiplugin_removeredeyes.desktop
 share/kde4/services/kipiplugin_sendimages.desktop
+share/kde4/services/kipiplugin_shwup.desktop
 share/kde4/services/kipiplugin_smug.desktop
 share/kde4/services/kipiplugin_timeadjust.desktop
 share/locale/ar/LC_MESSAGES/kipiplugin_jpeglossless.mo
@@ -267,12 +282,14 @@ share/locale/da/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/da/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/da/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/da/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/da/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/da/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/da/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/da/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/da/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/da/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/da/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/da/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/da/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/da/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/da/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -339,12 +356,14 @@ share/locale/en_GB/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/en_GB/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/en_GB/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -387,12 +406,14 @@ share/locale/et/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/et/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/et/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/et/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/et/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/et/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/et/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/et/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/et/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/et/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/et/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/et/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/et/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/et/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/et/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -465,12 +486,14 @@ share/locale/gl/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/gl/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -509,6 +532,7 @@ share/locale/is/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/is/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/is/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/is/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/is/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/is/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/is/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/is/LC_MESSAGES/kipiplugin_printimages.mo
@@ -533,12 +557,14 @@ share/locale/it/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/it/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/it/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/it/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/it/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/it/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/it/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/it/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/it/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/it/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/it/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/it/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/it/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/it/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/it/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -594,6 +620,7 @@ share/locale/lt/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/lt/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_printimages.mo
@@ -651,12 +678,14 @@ share/locale/nds/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/nds/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/nds/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -675,6 +704,7 @@ share/locale/nl/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/nl/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_printimages.mo
@@ -765,12 +795,14 @@ share/locale/pt/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/pt/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/pt/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -789,12 +821,14 @@ share/locale/pt_BR/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/pt_BR/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/pt_BR/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -855,12 +889,14 @@ share/locale/sk/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/sk/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/sk/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -879,12 +915,14 @@ share/locale/sv/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/sv/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/sv/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -921,12 +959,14 @@ share/locale/tr/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/tr/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/tr/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/tr/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -945,12 +985,14 @@ share/locale/uk/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_picasawebexport.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/uk/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_wallpaper.mo
@@ -1022,6 +1064,17 @@ share/locale/zh_TW/LC_MESSAGES/kipiplugins.mo
 @dirrm share/apps/kipiplugin_smug/icons/hicolor
 @dirrm share/apps/kipiplugin_smug/icons
 @dirrm share/apps/kipiplugin_smug
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/48x48/actions
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/48x48
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/32x32/actions
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/32x32
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/22x22/actions
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/22x22
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/16x16/actions
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor/16x16
+@dirrm share/apps/kipiplugin_shwup/icons/hicolor
+@dirrm share/apps/kipiplugin_shwup/icons
+@dirrm share/apps/kipiplugin_shwup
 %%OPENCV%%@dirrm share/apps/kipiplugin_removeredeyes
 @dirrm share/apps/kipiplugin_printimages/templates
 @dirrm share/apps/kipiplugin_printimages
