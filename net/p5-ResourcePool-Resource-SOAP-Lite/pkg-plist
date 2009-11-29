@@ -1,15 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite/.packlist
-%%SITE_PERL%%/ResourcePool/Command/SOAP/Lite/Call.pod
 %%SITE_PERL%%/ResourcePool/Command/SOAP/Lite/Call.pm
-%%SITE_PERL%%/ResourcePool/Resource/SOAP/Lite.pm
 %%SITE_PERL%%/ResourcePool/Factory/SOAP/Lite.pm
-%%SITE_PERL%%/ResourcePool/Factory/SOAP/Lite.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP
+%%SITE_PERL%%/ResourcePool/Resource/SOAP/Lite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource
-@dirrm %%SITE_PERL%%/ResourcePool/Command/SOAP/Lite
-@dirrm %%SITE_PERL%%/ResourcePool/Command/SOAP
-@dirrm %%SITE_PERL%%/ResourcePool/Resource/SOAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool
+@dirrmtry %%SITE_PERL%%/ResourcePool/Resource/SOAP
 @dirrmtry %%SITE_PERL%%/ResourcePool/Resource
-@dirrm %%SITE_PERL%%/ResourcePool/Factory/SOAP
+@dirrmtry %%SITE_PERL%%/ResourcePool/Factory/SOAP
 @dirrmtry %%SITE_PERL%%/ResourcePool/Factory
+@dirrmtry %%SITE_PERL%%/ResourcePool/Command/SOAP/Lite
+@dirrmtry %%SITE_PERL%%/ResourcePool/Command/SOAP
+@dirrmtry %%SITE_PERL%%/ResourcePool/Command
+@dirrmtry %%SITE_PERL%%/ResourcePool
