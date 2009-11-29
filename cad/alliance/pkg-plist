@@ -177,14 +177,13 @@ alliance/etc/spimodel.cfg
 alliance/etc/cmos.rds
 alliance/etc/prol.elp
 alliance/etc/attila.conf
-alliance/etc/alc_env.csh
-alliance/etc/alc_env.sh
 alliance/etc/cmos.dreal
 alliance/etc/cmos.graal
 alliance/etc/sxlib.scapin
 alliance/etc/se_defaults.mac
 alliance/etc/cmos.lef
 alliance/etc/xfsm.par
+alliance/etc/xgra.par
 alliance/etc/xpat.par
 alliance/etc/xsch.par
 alliance/etc/xvpn.par
@@ -234,6 +233,7 @@ alliance/bin/syf
 alliance/bin/vasy
 alliance/bin/x2y
 alliance/bin/xfsm
+alliance/bin/xgra
 alliance/bin/xpat
 alliance/bin/xsch
 alliance/bin/xvpn
