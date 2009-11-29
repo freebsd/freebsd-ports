@@ -351,6 +351,7 @@
     SUBDIR += hpacucli
     SUBDIR += htop
     SUBDIR += httplog
+    SUBDIR += hwstat
     SUBDIR += i855vidctl10
     SUBDIR += iat
     SUBDIR += idled
