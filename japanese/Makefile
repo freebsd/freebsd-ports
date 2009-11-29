@@ -78,6 +78,7 @@
     SUBDIR += font-ipa
     SUBDIR += font-ipa-uigothic
     SUBDIR += font-kochi
+    SUBDIR += font-mona-ipa
     SUBDIR += font-mplus
     SUBDIR += font-mplus-ipa
     SUBDIR += font-sazanami
