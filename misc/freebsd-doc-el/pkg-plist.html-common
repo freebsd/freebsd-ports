@@ -13,6 +13,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/greek-language-support/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png

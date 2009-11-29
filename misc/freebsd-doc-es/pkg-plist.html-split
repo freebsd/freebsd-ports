@@ -98,6 +98,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-prep.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-when.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-writing.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/bootstrap-config.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/custom-postinst-package.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/install-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/server-config.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/ackno.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/biblio.html

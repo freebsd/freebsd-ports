@@ -11,6 +11,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/greek-language-support/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
