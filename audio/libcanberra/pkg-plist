@@ -12,9 +12,9 @@ lib/libcanberra.a
 lib/libcanberra.la
 lib/libcanberra.so
 lib/libcanberra.so.0
-%%GSTREAMER%%lib/libcanberra/libcanberra-gstreamer.a
-%%GSTREAMER%%lib/libcanberra/libcanberra-gstreamer.la
-%%GSTREAMER%%lib/libcanberra/libcanberra-gstreamer.so
+%%GSTREAMER%%lib/libcanberra-%%VERSION%%/libcanberra-gstreamer.a
+%%GSTREAMER%%lib/libcanberra-%%VERSION%%/libcanberra-gstreamer.la
+%%GSTREAMER%%lib/libcanberra-%%VERSION%%/libcanberra-gstreamer.so
 lib/libcanberra-%%VERSION%%/libcanberra-multi.a
 lib/libcanberra-%%VERSION%%/libcanberra-multi.la
 lib/libcanberra-%%VERSION%%/libcanberra-multi.so
