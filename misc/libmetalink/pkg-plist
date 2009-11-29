@@ -4,5 +4,6 @@ include/metalink/metalink_types.h
 lib/libmetalink.a
 lib/libmetalink.la
 lib/libmetalink.so
-lib/libmetalink.so.0
+lib/libmetalink.so.1
+libdata/pkgconfig/libmetalink.pc
 @dirrm include/metalink

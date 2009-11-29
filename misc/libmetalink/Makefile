@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	libmetalink
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://launchpad.net/libmetalink/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Metalink library written in C language
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+FETCH_ARGS=
 USE_BZIP2=	yes
+USE_GCC=	4.3+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--with-libexpat-prefix="${LOCALBASE}" \
@@ -37,6 +39,10 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(install:).*|\1|' \
 		${WRKSRC}/doc/Makefile.in
+# fix pkgconfig install destination
+	@${REINPLACE_CMD} -E \
+		-e 's|^(pkgconfigdir[[:space:]]*=).*$$|\1${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/lib/Makefile.in
 
 post-install:
 # examples
