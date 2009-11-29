@@ -1,0 +1,11 @@
+The plugins for PEAR_PackageFileManager to pick up what files to use.
+Supported are
+* File
+* CVS
+* SVN
+* Perforce
+
+This package is to be used with PackageFileManager v1 and v2 and can't
+be used on it's own
+
+WWW:	http://pear.php.net/package/PEAR_PackageFileManager_Plugins
