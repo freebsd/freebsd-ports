@@ -5,18 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	alliance
-PORTVERSION=	5.0.20070718
-PORTREVISION=	1
+PORTVERSION=	5.0.20090901
 CATEGORIES=	cad
 MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
-DISTNAME=	${PORTNAME}-5.0-20070718
+DISTNAME=	${PORTNAME}-5.0-20090901
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A complete set of CAD tools and libraries for VLSI design
-
-BROKEN=		does not compile
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	${PKGNAME} does not build on ${ARCH}
@@ -31,7 +28,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	ALLIANCE_TOP=${ALLIANCE_TOP}
 CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
 		--prefix=${ALLIANCE_TOP} ${CONFIGURE_TARGET}
-SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -196,8 +192,5 @@ pre-configure:
 
 pre-su-install:
 	${MKDIR} ${ALLIANCE_TOP}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
