@@ -1,0 +1,5 @@
+#! /bin/sh
+# $FreeBSD$
+# Launch %%GECKO%% for urlview
+URL=$@
+%%GECKO%% -remote "openurl($URL, new-tab)" || %%GECKO%% $URL

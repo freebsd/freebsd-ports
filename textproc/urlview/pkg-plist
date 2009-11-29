@@ -1,3 +1,4 @@
 @comment $FreeBSD$
+bin/gecko.sh
 bin/url_handler.sh
 bin/urlview
