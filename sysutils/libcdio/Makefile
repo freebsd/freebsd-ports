@@ -6,6 +6,7 @@
 
 PORTNAME=	libcdio
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -39,13 +40,8 @@ _MANPAGES+=	${_MAN1:S%^%${MAN1PREFIX}/man/${lang}/man1/%}
 .endfor
 
 post-patch:
-.ifdef(WITH_PARANOIA)
 	${REINPLACE_CMD} -e 's|/jp/man1|/ja/man1|' \
 		${WRKSRC}/src/cd-paranoia/doc/ja/Makefile.in
-.else
-	${REINPLACE_CMD} -e 's|libcdio_paranoia.pc||; s|libcdio_cdda.pc||' \
-		 ${WRKSRC}/Makefile.in
-.endif
 	${REINPLACE_CMD} -e "s,freebsd5\.\*,freebsd*," ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
