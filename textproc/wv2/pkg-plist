@@ -27,8 +27,8 @@ include/wv2/wvlog.h
 include/wv2/zcodec.hxx
 lib/libwv2.la
 lib/libwv2.so
-lib/libwv2.so.3
-lib/libwv2.so.3.0.0
+lib/libwv2.so.4
+lib/libwv2.so.4.0.1
 lib/wvWare/wv2.cmake
 lib/wvWare/wv2-noconfig.cmake
 @dirrm lib/wvWare
