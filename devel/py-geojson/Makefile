@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	geojson
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	devel geography python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
-MASTER_SITE_SUBDIR=	source/g/geojson/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python's Encoder/decoder for simple GIS features
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>1.9:${PORTSDIR}/devel/py-simplejson
 
 DOCSFILE=	CHANGES.txt CREDITS.txt DEPENDENCIES.txt FAQ.txt \
-		GeoInterface.txt HISTORY.txt INSTALL.txt LICENSE.txt \
+		GeoInterface.txt INSTALL.txt LICENSE.txt \
 		README.txt VERSION.txt
 
 USE_PYTHON=	2.4+
