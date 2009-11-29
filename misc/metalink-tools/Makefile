@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	metalink
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}s/Metalink%20commandline/${PORTVERSION}
+MASTER_SITES=	SF/metalinks/Metalink%20commandline/${PORTVERSION}
 PKGNAMESUFFIX?=	-tools
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Metalink generation tool
 
 LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
-		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		boost_program_options.4:${PORTSDIR}/devel/boost-libs \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs
+		glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
+		gpg-error.0:${PORTSDIR}/security/libgpg-error \
+		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	AWK="${AWK}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
