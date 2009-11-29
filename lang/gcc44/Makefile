@@ -134,14 +134,6 @@ PLIST_SUB+=	JAVA="@comment "
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 
-pre-extract:
-	@# Building libgcj with lang/gcc295 installed is causing a failure
-	@# about "hidden symbol `__eprintf'" in libgcc.a(_eprintf.o).
-	@if type gcc295 >/dev/null ; then \
-	  echo "This port will not build in the presence of lang/gcc295."; \
-	  exit 1; \
-	fi
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 	    ${SRCDIR}/gcc/version.c
