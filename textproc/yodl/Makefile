@@ -23,9 +23,14 @@ BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 
 USE_PERL5_BUILD=	yes
 
+.if !defined(NO_INSTALL_MANPAGES)
 MANCOMPRESSED=	no
 MAN1=		yodl.1 yodlpost.1 yodlconverters.1 yodlverbinsert.1 yodlstriproff.1
 MAN7=		yodlbuiltins.7 yodlmanpage.7 yodlletter.7 yodlmacros.7
+PLIST_SUB+=	NO_MANPAGES=""
+.else
+PLIST_SUB+=	NO_MANPAGES="@comment "
+.endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
