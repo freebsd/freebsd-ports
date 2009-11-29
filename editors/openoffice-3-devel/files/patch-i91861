@@ -1,11 +1,6 @@
-Index: vcl/source/glyphs/makefile.mk
-===================================================================
-RCS file: /cvs/gsl/vcl/source/glyphs/makefile.mk,v
-retrieving revision 1.13.106.1
-diff -u -r1.13.106.1 makefile.mk
---- vcl/source/glyphs/makefile.mk	31 Jul 2008 20:14:59 -0000	1.13.106.1
-+++ vcl/source/glyphs/makefile.mk	10 Aug 2008 01:06:59 -0000
-@@ -41,9 +41,17 @@
+--- vcl/source/glyphs/makefile.mk~	2009-11-18 13:58:31.000000000 +0900
++++ vcl/source/glyphs/makefile.mk	2009-11-29 20:13:21.000000000 +0900
+@@ -41,7 +41,11 @@
  .INCLUDE :  settings.mk
  .INCLUDE :  $(PRJ)$/util$/makefile2.pmk
  
@@ -14,12 +9,6 @@ diff -u -r1.13.106.1 makefile.mk
 +.ELSE
 +ADDCDEFS+= $(FREETYPE_CFLAGS)
 +.ENDIF
- .IF "$(USE_FT_EMBOLDEN)" == "YES"
-+.IF "$(OS)" != "FREEBSD"
- CFLAGS+=-DUSE_FT_EMBOLDEN
-+.ELSE
-+ADDCDEFS+=-DUSE_FT_EMBOLDEN
-+.ENDIF
- .ENDIF
  
  # --- Files --------------------------------------------------------
+ 
