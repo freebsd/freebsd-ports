@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.6.4
+PORTVERSION=	2.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 PKGNAMESUFFIX=	-gui
