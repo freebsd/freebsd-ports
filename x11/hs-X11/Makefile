@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	x11
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.4.6.1
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
