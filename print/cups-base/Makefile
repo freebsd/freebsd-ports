@@ -256,7 +256,7 @@ post-patch:
 		${WRKSRC}/Makefile
 .else
 	@${REINPLACE_CMD} \
-		-e 's|cups backend|backend|' -e 's|filter ||' \
+		-e 's|cups filter backend|backend|' \
 		-e 's|$$.INSTALL_SCRIPT. cups-config|echo skip: cups-config|' \
 		-e 's|/usr/share|${PREFIX}/share|g' \
 		-e 's|installhdrs$$||' \
