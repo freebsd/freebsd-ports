@@ -1,0 +1,43 @@
+
+I think i have managed to solve the problem and produce
+almost valid elf files on FreeBSD. The two patches attached
+should go in ports/tcc/files (patch-libtcc.c replaces
+the existing one with the same name) and bumping PORTREVISION
+should complete the job. I can do the commit myself if the
+maintainer has no time.
+
+The patches address a few problems (trying to explain to the
+best of my knowledge; i am not very familiar with ELF and
+the FreeBSD ELF conventions):
+
+1. ELF file format
+   tcc produces an ELF executable which is good for linux but
+   not for FreeBSD. It misses the PHDR section which is almost
+   mandatory for shared executables, puts in the .dynsym section
+   some relocation info that FreeBSD expects to be in .got,
+   and expect the relocation sections to be contiguous.
+
+   patch-tccelf.c tries to address the above problem using
+   conditional sections (so hopefully can be imported upstream)
+   and also adds the ability to override the name of the dynamic
+   loader through an environment variable (this is important to
+   debug tcc).
+
+2. predefined macros
+
+   patch-libtcc.c adds/fixes some predefined macros when compiling
+   on FreeBSD: these are __FreeBSD__ and the usual set of
+   __i386__ and __unix__ variants.
+   It also sets __INTEL_COMPILER so we can grab the __aligned
+   macro from cdefs.h , otherwise many programs would fail
+
+The resulting elf file is still not 100% correct -- if you strip it,
+the program will not run (presumably there is some dangling reference).
+Other than that, program do seem to run correctly.
+
+I am going to submit the patch upstream to see if the maintainers
+want to integrate it
+
+	cheers
+	luigi
+
