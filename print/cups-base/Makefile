@@ -227,33 +227,29 @@ pre-configure::
 	@${ECHO_MSG} Configuring CUPS with options:
 	@${ECHO_MSG} ${CONFIGURE_ARGS} | fmt
 
-.if defined(WITH_PAM)
-post-configure:
-	${GREP} -v pam_securityserver ${WRKSRC}/conf/pam.darwin  > ${WRKSRC}/conf/pam.std
-.endif
-
 post-patch:
 .if defined(WITH_XDG_OPEN)
-	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop
+	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop.in
 .endif
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
 	@${REINPLACE_CMD} -e 's|/etc/cups|${LOCALBASE}/etc/cups|g' ${WRKSRC}/man/*.man*
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/scheduler/cups-driverd.cxx
-	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
+	@${REINPLACE_CMD} -e 's|-lpthreads.*;|${PTHREAD_LIBS};|g' \
 		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(CUPS_CLIENT)
 	@${REINPLACE_CMD} \
-		-e 's|backend berkeley cgi-bin filter locale man monitor ||' \
-		-e 's|notifier scheduler systemv test ||' \
+		-e 's|cups filter |cups |' \
+		-e 's|backend berkeley cgi-bin driver locale man monitor||' \
+		-e 's|notifier ppdc scheduler systemv test ||' \
 		-e 's|$$.PHPDIR. ||' \
 		-e 's|conf data doc $$.FONTS.ppd templates||' \
 		-e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile
 .elif defined(CUPS_IMAGE)
 	@${REINPLACE_CMD} \
-		-e 's|cups backend berkeley cgi-bin filter locale man monitor |filter |' \
-		-e 's|notifier scheduler systemv test ||' \
+		-e 's|cups filter |filter |' \
+		-e 's|backend berkeley cgi-bin driver locale man monitor||' \
+		-e 's|notifier ppdc scheduler systemv test ||' \
 		-e 's|$$.PHPDIR. ||' \
 		-e 's|conf data doc $$.FONTS.ppd templates||' \
 		-e 's|/usr/share|${PREFIX}/share|g' \
