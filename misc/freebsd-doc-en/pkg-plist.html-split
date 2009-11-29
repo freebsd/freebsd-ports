@@ -319,6 +319,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/interrupting.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/management.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/monitoring.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-arch.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-branch.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-node.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/release.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/setup.html
@@ -1137,6 +1139,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-perl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-python.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-qt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-ruby.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sdl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sub-files.html

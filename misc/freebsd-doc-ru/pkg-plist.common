@@ -33,6 +33,8 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/hubs
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/hats
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/fonts
@@ -43,6 +45,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/console-server
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide

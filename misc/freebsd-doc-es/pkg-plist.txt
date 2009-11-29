@@ -14,6 +14,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/zip-drive/article.txt

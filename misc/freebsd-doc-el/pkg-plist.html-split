@@ -35,9 +35,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x96.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/x116.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/x57.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/x91.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/x121.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/x62.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/x96.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/x165.html
@@ -82,6 +82,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/software.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/startup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/updates.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/acknowledgments.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/bikeshed.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/etiquette.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/recurring.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/ch2.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/ch3.html
