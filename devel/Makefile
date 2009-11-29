@@ -2239,6 +2239,7 @@
     SUBDIR += pear-PEAR_Info
     SUBDIR += pear-PEAR_PackageFileManager
     SUBDIR += pear-PEAR_PackageFileManager2
+    SUBDIR += pear-PEAR_PackageFileManager_Plugins
     SUBDIR += pear-PHPDoc
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
