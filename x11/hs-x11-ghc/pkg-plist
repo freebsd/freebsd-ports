@@ -13,6 +13,7 @@
 %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Atom.hi
 %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Color.hi
 %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Context.hi
+%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Cursor.hi
 %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Display.hi
 %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Event.hi
 %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Extras.hi
