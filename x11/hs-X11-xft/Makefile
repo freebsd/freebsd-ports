@@ -7,7 +7,7 @@
 
 PORTNAME=	x11-xft
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11-xft/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
