@@ -16,6 +16,8 @@ PKGNAMESUFFIX?=		-stage1
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
+ONLY_FOR_ARCHS=		amd64 i386
+
 PSP_GCC_STAGE_PREFIX=	psp/stage1
 
 BUILD_DEPENDS+=		psp-addr2line:${PORTSDIR}/devel/psptoolchain-binutils \
