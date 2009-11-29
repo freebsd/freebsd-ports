@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmonad-contrib
-PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTVERSION=	0.9
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad-contrib/${PORTVERSION}/
 
