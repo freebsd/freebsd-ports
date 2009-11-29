@@ -67,3 +67,17 @@
          m_tap->rgtc[ m_column + 1 ].brcLeft
          : tc.brcRight;
  
+--- filters/kword/msword/texthandler.cpp.orig	2007-05-31 08:39:22.000000000 +1100
++++ filters/kword/msword/texthandler.cpp	2009-10-11 15:50:25.000000000 +1100
+@@ -322,9 +322,9 @@
+     format.setAttribute( "pos", pos );
+     format.setAttribute( "len", len );
+ 
+-    if ( !refChp || refChp->ico != chp->ico )
++    if ( !refChp || refChp->cv != chp->cv )
+     {
+-        QColor color = Conversion::color( chp->ico, -1 );
++        QColor color = Conversion::color( chp->cv, -1 );
+         QDomElement colorElem( mainDocument().createElement( "COLOR" ) );
+         colorElem.setAttribute( "red", color.red() );
+         colorElem.setAttribute( "blue", color.blue() );
