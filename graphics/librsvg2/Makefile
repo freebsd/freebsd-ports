@@ -49,6 +49,7 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" on
 USE_GECKO=	libxul seamonkey
 USE_WEBPLUGINS=	gecko19
 WEBPLUGINS_FILES=libmozsvgdec.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 CONFIGURE_ENV+=	MOZILLA_CONFIG=no
 CONFIGURE_ARGS+=--enable-mozilla-plugin=yes
 
