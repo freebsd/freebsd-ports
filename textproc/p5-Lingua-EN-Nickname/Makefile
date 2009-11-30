@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=		Lingua-EN-Nickname
-PORTVERSION=		1.15
-CATEGORIES=		textproc perl5
-MASTER_SITES=		CPAN
+PORTNAME=	Lingua-EN-Nickname
+PORTVERSION=	1.16
+CATEGORIES=	textproc perl5
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRIANL
-PKGNAMEPREFIX=		p5-
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		perl@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Genealogical nickname matching (Liz=Beth)
 
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=	yes
 
-MAN3=			Lingua::EN::Nickname.3
+MAN3=		Lingua::EN::Nickname.3
 
 .include <bsd.port.mk>
