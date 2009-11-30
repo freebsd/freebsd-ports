@@ -21,6 +21,7 @@ QT_COMPONENTS=	corelib gui network qt3support qmake_build \
 		moc_build uic_build rcc_build linguist_build
 USE_GMAKE=	yes
 USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 QTCFGLIBS+=	${PTHREAD_LIBS}
 
 MAN1=		eiskaltdc.1
