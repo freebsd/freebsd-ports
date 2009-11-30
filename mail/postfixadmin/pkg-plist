@@ -1,7 +1,7 @@
-www/postfixadmin/ADDITIONS/README.TXT
 www/postfixadmin/ADDITIONS/change_password.tgz
 www/postfixadmin/ADDITIONS/cleanupdirs.pl
 www/postfixadmin/ADDITIONS/convert-passwd-to-postfixadmin.pl
+www/postfixadmin/ADDITIONS/delete-mailq-by-domain.pl
 www/postfixadmin/ADDITIONS/fetchmail.pl
 www/postfixadmin/ADDITIONS/mailbox_remover.pl
 www/postfixadmin/ADDITIONS/mkeveryone.pl
@@ -10,23 +10,32 @@ www/postfixadmin/ADDITIONS/postfixadmin-0.3-1.4.tar.gz
 www/postfixadmin/ADDITIONS/postfixadmin-domain-postdeletion.sh
 www/postfixadmin/ADDITIONS/postfixadmin-mailbox-postcreation.sh
 www/postfixadmin/ADDITIONS/postfixadmin-mailbox-postdeletion.sh
+www/postfixadmin/ADDITIONS/quota_usage.pl
+www/postfixadmin/ADDITIONS/README.TXT
 www/postfixadmin/ADDITIONS/virtualmaildel.php
+www/postfixadmin/VIRTUAL_VACATION/tests/asterisk-email.txt
+www/postfixadmin/VIRTUAL_VACATION/tests/facebook.txt
+www/postfixadmin/VIRTUAL_VACATION/tests/mailing-list.txt
+www/postfixadmin/VIRTUAL_VACATION/tests/mail-myself.txt
+www/postfixadmin/VIRTUAL_VACATION/tests/spam.txt
+www/postfixadmin/VIRTUAL_VACATION/tests/teodor-smtp-envelope-headers.txt
+www/postfixadmin/VIRTUAL_VACATION/tests/test.sh
+www/postfixadmin/VIRTUAL_VACATION/tests/test-email.txt
+www/postfixadmin/VIRTUAL_VACATION/FILTER_README
+www/postfixadmin/VIRTUAL_VACATION/INSTALL.TXT
+www/postfixadmin/VIRTUAL_VACATION/index.php
+www/postfixadmin/VIRTUAL_VACATION/vacation.pl
 www/postfixadmin/CHANGELOG.TXT
 www/postfixadmin/GPL-LICENSE.TXT
 www/postfixadmin/INSTALL.TXT
 www/postfixadmin/LICENSE.TXT
-www/postfixadmin/VIRTUAL_VACATION/FILTER_README
-www/postfixadmin/VIRTUAL_VACATION/INSTALL.TXT
-www/postfixadmin/VIRTUAL_VACATION/index.php
-www/postfixadmin/VIRTUAL_VACATION/mail-filter
-www/postfixadmin/VIRTUAL_VACATION/vacation.pl
 www/postfixadmin/admin/index.php
 www/postfixadmin/backup.php
 www/postfixadmin/broadcast-message.php
 www/postfixadmin/common.php
-www/postfixadmin/config.inc.php
 www/postfixadmin/create-admin.php
 www/postfixadmin/create-alias.php
+www/postfixadmin/create-alias-domain.php
 www/postfixadmin/create-domain.php
 www/postfixadmin/create-mailbox.php
 www/postfixadmin/css/default.css
@@ -97,15 +106,18 @@ www/postfixadmin/password.php
 www/postfixadmin/search.php
 www/postfixadmin/sendmail.php
 www/postfixadmin/setup.php
+www/postfixadmin/model/AliasHandler.php
+www/postfixadmin/model/UserHandler.php
+www/postfixadmin/model/VacationHandler.php
 www/postfixadmin/templates/admin_create-admin.php
 www/postfixadmin/templates/admin_create-domain.php
 www/postfixadmin/templates/admin_edit-admin.php
 www/postfixadmin/templates/admin_edit-domain.php
 www/postfixadmin/templates/admin_list-admin.php
 www/postfixadmin/templates/admin_list-domain.php
-www/postfixadmin/templates/admin_search.php
 www/postfixadmin/templates/broadcast-message.php
 www/postfixadmin/templates/create-alias.php
+www/postfixadmin/templates/create-alias-domain.php
 www/postfixadmin/templates/create-mailbox.php
 www/postfixadmin/templates/edit-alias.php
 www/postfixadmin/templates/edit-mailbox.php
@@ -140,6 +152,10 @@ www/postfixadmin/users/password.php
 www/postfixadmin/users/vacation.php
 www/postfixadmin/variables.inc.php
 www/postfixadmin/viewlog.php
+www/postfixadmin/xmlrpc.php
+@unexec if cmp -s %D/www/postfixadmin/config.inc.php.sample %D/www/postfixadmin/config.inc.php; then rm -f %D/www/postfixadmin/config.inc.php; fi
+www/postfixadmin/config.inc.php.sample
+@exec if [ ! -f %D/www/postfixadmin/config.inc.php ] ; then cp -p %D/%F %B/config.inc.php; fi
 %%PORTDOCS%%%%DOCSDIR%%/BACKUP_MX.txt
 %%PORTDOCS%%%%DOCSDIR%%/DOVECOT.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
@@ -164,11 +180,13 @@ www/postfixadmin/viewlog.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/screenshots
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm www/postfixadmin/ADDITIONS
+@dirrm www/postfixadmin/VIRTUAL_VACATION/tests
 @dirrm www/postfixadmin/VIRTUAL_VACATION
 @dirrm www/postfixadmin/admin
 @dirrm www/postfixadmin/css
 @dirrm www/postfixadmin/images
 @dirrm www/postfixadmin/languages
+@dirrm www/postfixadmin/model/
 @dirrm www/postfixadmin/templates
 @dirrm www/postfixadmin/users
 @dirrm www/postfixadmin
