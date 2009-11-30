@@ -96,7 +96,7 @@ post-patch:
 # Only useful for DESTDIR
 VARDIR?=	/var
 
-pre-install:
+pre-su-install:
 	${MKDIR} ${VARDIR}
 	mtree -deU -f ${FILESDIR}/var.mtree -p ${VARDIR}
 	mtree -deU -f ${FILESDIR}/share.mtree -p ${PREFIX}/share
