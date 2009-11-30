@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.24
+PORTVERSION=	1.4.25
 CATEGORIES=	www
-MASTER_SITES=	http://www.lighttpd.net/download/ \
-		http://mirrors.cat.pdx.edu/lighttpd/
+MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
