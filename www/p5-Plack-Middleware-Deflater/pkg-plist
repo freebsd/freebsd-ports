@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Deflater/.packlist
+%%SITE_PERL%%/Plack/Middleware/Deflater.pm
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/Plack
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Deflater
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
