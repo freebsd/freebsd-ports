@@ -1,4 +1,0 @@
-include/scintilla/gtkscintilla.h
-lib/libgtkscintilla.a
-lib/libgtkscintilla.so
-lib/libgtkscintilla.so.0

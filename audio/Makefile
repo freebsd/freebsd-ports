@@ -682,12 +682,6 @@
     SUBDIR += squeezeboxserver-sqlplaylist
     SUBDIR += squeezeboxserver-superdatetime
     SUBDIR += squeezeboxserver-trackstat
-    SUBDIR += squeezecenter
-    SUBDIR += squeezecenter-dynamicplaylist
-    SUBDIR += squeezecenter-lazysearch
-    SUBDIR += squeezecenter-sqlplaylist
-    SUBDIR += squeezecenter-superdatetime
-    SUBDIR += squeezecenter-trackstat
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += streamtuner

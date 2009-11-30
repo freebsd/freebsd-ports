@@ -83,7 +83,6 @@
     SUBDIR += gtkmm20-reference
     SUBDIR += gtkmm24
     SUBDIR += gtkmm24-reference
-    SUBDIR += gtkscintilla
     SUBDIR += gtksourceview
     SUBDIR += gtksourceview-reference
     SUBDIR += gtksourceview-sharp
@@ -216,7 +215,6 @@
     SUBDIR += py-gtk2
     SUBDIR += py-gtkextra
     SUBDIR += py-gtkglext
-    SUBDIR += py-gtkscintilla
     SUBDIR += py-gtksourceview
     SUBDIR += py-gui
     SUBDIR += py-kde
