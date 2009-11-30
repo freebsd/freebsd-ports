@@ -4,7 +4,7 @@ Description: SpamAssassin support, build optimization
 Forwarded: not-needed
 Author: Alex Dupre <ale@FreeBSD.org>,
 	Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-26
+Last-Update: 2009-11-30
 
 --- a/vdelivermail.c
 +++ b/vdelivermail.c
@@ -75,8 +75,23 @@ Last-Update: 2009-11-26
      return 0;
  }
  
-@@ -495,6 +513,11 @@
+@@ -481,8 +499,8 @@
+ int deliver_to_maildir (
+     const char *maildir,
+     const char *extra_headers,
+-    int read_fd,
+-    ssize_t msgsize)
++    int read_fd
++    )
+ {
+ #ifdef HOST_NAME_MAX
+   char hostname[HOST_NAME_MAX];
+@@ -493,21 +511,25 @@
+   char local_file_tmp[FILE_SIZE];
+   char local_file_new[FILE_SIZE];
    size_t headerlen;
++  struct stat sb;
++  size_t msgsize;
    int write_fd;
    char quota[80];
 +#ifdef SPAM_JUNKFOLDER
@@ -86,10 +101,40 @@ Last-Update: 2009-11-26
 +#endif
  
      headerlen = strlen (extra_headers);
-     msgsize += headerlen;
-@@ -557,6 +580,24 @@
+-    msgsize += headerlen;
+     
+     /* Format the email file name */
+     /* we get the whole hostname, even though we only use 32 chars of it */
+     gethostname(hostname, sizeof(hostname));
+     pid = (long unsigned) getpid();
+     tm = (long unsigned) time((time_t *) NULL);
+-    snprintf(local_file_tmp, sizeof(local_file_tmp), "%stmp/%lu.%lu.%.32s,S=%lu",
+-        maildir, tm, pid, hostname, (long unsigned) msgsize);
+-    snprintf(local_file_new, sizeof(local_file_new), "%snew/%lu.%lu.%.32s,S=%lu",
+-        maildir, tm, pid, hostname, (long unsigned) msgsize);
++    snprintf(local_file_tmp, sizeof(local_file_tmp), "%stmp/%lu.%lu.%.32s",
++        maildir, tm, pid, hostname);
+ 
+     read_quota_from_maildir (maildir, quota, sizeof(quota));
+ 
+@@ -548,6 +570,9 @@
+ #endif
+         close (write_fd) == 0 ) {
+ 
++        if (stat(local_file_tmp, &sb) == -1)
++            DeleteMail = 1;
++
+ 	if(DeleteMail == 1) {
+ 	    if (unlink(local_file_tmp) != 0) {
+                 printf("unlink failed %s errno = %d\n", local_file_tmp, errno);
+@@ -556,7 +581,29 @@
+             return(0);
  	}
  
++        msgsize = sb.st_size;
++        snprintf(local_file_new, sizeof(local_file_new), "%snew/%lu.%lu.%.32s,S=%lu",
++            maildir, tm, pid, hostname, (long unsigned) msgsize);
++
          /* if this succeeds link the file to the new directory */
 +#ifdef SPAM_JUNKFOLDER
 +        if (MoveMail == 1) {
@@ -112,7 +157,7 @@ Last-Update: 2009-11-26
          if ( link( local_file_tmp, local_file_new ) == 0 ) {
              /* file was successfully delivered, remove temp file */
              if ( unlink(local_file_tmp) != 0 ) {
-@@ -616,6 +657,9 @@
+@@ -616,6 +663,9 @@
      /* rewind the message */
      lseek(0,0L,SEEK_SET);
  
@@ -122,7 +167,16 @@ Last-Update: 2009-11-26
      /* This is an command */
      if ( *address == '|' ) { 
  
-@@ -898,9 +942,6 @@
+@@ -723,7 +773,7 @@
+                 email);
+         }
+     
+-        switch (deliver_to_maildir (address, DeliveredTo, 0, message_size)) {
++        switch (deliver_to_maildir (address, DeliveredTo, 0)) {
+             case -1:
+                 vexiterr (EXIT_OVERQUOTA, "user is over quota");
+                 break;
+@@ -898,9 +948,6 @@
   */
  void run_command(char *prog)
  {
@@ -132,7 +186,16 @@ Last-Update: 2009-11-26
   int child;
   char *(args[4]);
   int wstat;
-@@ -1214,19 +1255,22 @@
+@@ -1183,7 +1230,7 @@
+             maildir_to_email(newdir), date_header());
+     }
+ 
+-    err = deliver_to_maildir (dir, DeliveredTo, read_fd, sb.st_size);
++    err = deliver_to_maildir (dir, DeliveredTo, read_fd);
+ 
+     close (read_fd);
+     
+@@ -1214,19 +1261,22 @@
   *   * in the email headers for X-Spam-Level: which
   *    * we put in each spam email
   *     *
@@ -159,7 +222,7 @@ Last-Update: 2009-11-26
  
           /* check for blank line, end of headers */
           for(k=j,found=0;k<i;++k) {
-@@ -1249,13 +1293,19 @@
+@@ -1249,13 +1299,19 @@
           }
           if ( found == 0 ) {
             InHeaders=0;
