@@ -51,6 +51,11 @@ PYTHON=		"@comment "
 
 .include <bsd.port.pre.mk>
 
+# A workaround for broken OpenSSL on 6.4 amd64
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 604000 && ${OSVERSION} < 700000
+CONFIGURE_ARGS+=	--disable-sha2
+.endif
+
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
 BROKEN=		Does not build on sparc64-6
 .endif
