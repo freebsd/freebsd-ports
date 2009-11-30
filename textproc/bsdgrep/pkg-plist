@@ -10,3 +10,5 @@ bin/zegrep
 bin/zfgrep
 %%NLS%%share/nls/hu_HU.ISO8859-2/grep.cat
 %%NLS%%share/nls/pt_BR.ISO8859-1/grep.cat
+%%NLS%%share/nls/gl_ES.ISO8859-1/grep.cat
+%%NLS%%@dirrmtry share/nls/gl_ES.ISO8859-1

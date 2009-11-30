@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	20090111
+PORTVERSION=	20091130
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -43,6 +43,11 @@ PLIST_SUB+=	NLS=""
 
 .if defined(WITHOUT_GNU_COMPAT)
 MAKE_ENV+=	WITHOUT_GNU_COMPAT=yes
+.endif
+
+pre-install:
+.if defined(WITH_NLS)
+	${MKDIR} -p ${LOCALBASE}/share/nls/gl_ES.ISO8859-1
 .endif
 
 post-install:
