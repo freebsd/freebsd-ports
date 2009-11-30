@@ -187,6 +187,7 @@ post-install:
 	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so
 	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so.1.2
 .endfor
+	${RM} ${MANPREFIX}/man/man1/mpd.1.bak
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${WRKDIR}/mpd.conf.dist
