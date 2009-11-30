@@ -96,10 +96,6 @@ post-patch:
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]' 2> /dev/null`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
-		${FALSE}; \
-	fi
 .if defined(WITHOUT_KERBEROS)
 	@${ECHO_CMD} "${PKGNAME}: KERBEROS is required."
 	@${FALSE}
