@@ -1,5 +1,5 @@
---- ./unix/tools/bldmanhelp.tcl.orig	Thu Dec  2 21:33:05 2004
-+++ ./unix/tools/bldmanhelp.tcl	Sun Mar 25 17:07:36 2007
+--- unix/tools/bldmanhelp.tcl	2004-12-02 15:33:05.000000000 -0500
++++ unix/tools/bldmanhelp.tcl	2009-11-28 16:41:13.000000000 -0500
 @@ -11,10 +11,9 @@
  #
  # The command line is:
@@ -12,9 +12,11 @@
  #    o maninfo is the path to a file that when sources returns a list of
  #      entries describing manual pages to convert.  Each entry is a list
  #      of manual file and the path of the help file to generate.
-@@ -69,17 +68,32 @@
+@@ -68,18 +67,41 @@
+ 
  proc CopyManPage {manPage outFH} {
      global skipSection
++    global tcl_version
  
 -    set stat [catch {
 -        open $manPage
@@ -24,7 +26,14 @@
 +      return
 +    }
 +    set manPage [file rootname $manPage]
-+    set manPage [split [exec man -w $section $manPage] ":)"]
++    if {[catch {exec man -w $section $manPage} page] &&
++	[catch {exec man -w $section $manPage$tcl_version} page]} {
++        global gotErrors
++        set gotErrors 1
++	puts stderr "can't find man-page for \"$manPage\": $page"
++	return
++    }
++    set manPage [split $page ":)"]
 +    if {[llength $manPage] > 1} { # Get the source, not from cat
 +	set manPage [string trim [lindex $manPage 1]]
 +    }
@@ -49,7 +58,7 @@
              .so* {
                  CopyManPage [lindex $line 1] $outFH
              }
-@@ -119,11 +133,10 @@
+@@ -119,11 +141,10 @@
  # for input to buildhelp.
  #
  
@@ -62,7 +71,7 @@
  
     foreach ent $manInfoTbl {
         puts stdout "    preprocessing $ent"
-@@ -144,13 +157,12 @@
+@@ -144,13 +165,12 @@
  
  set tmpFile "bldmanhelp.tmp"
  
