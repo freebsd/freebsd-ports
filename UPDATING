@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20091120:
+  AFFECTS: users of mail/postfixadmin
+  AUTHOR: Terry Sposato (tabmow@freenode.net)
+
+  Due to a bug in the previous postfixadmin port, existing users
+  need to backup their config.inc.php before they upgrade to
+  postfixadmin-2.3 or later and put it in place after the upgrade
+  is complete.
+
+20091120:
   AFFECTS: users of security/f-prot
   AUTHOR: Tim Bishop <tdb@FreeBSD.org>
 
