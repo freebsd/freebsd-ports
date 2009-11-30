@@ -228,6 +228,11 @@ pre-configure::
 	@${ECHO_MSG} ${CONFIGURE_ARGS} | fmt
 
 post-patch:
+.if (${OSVERSION} >= 700000) || defined(WITH_PIEAMD64)
+.if ${ARCH} == "amd64" || defined(WITH_PIEAMD64)
+	@${REINPLACE_CMD} -e 's|@PIEFLAGS@||' ${WRKSRC}/Makedefs.in
+.endif
+.endif
 .if defined(WITH_XDG_OPEN)
 	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop.in
 .endif
