@@ -21,6 +21,9 @@ CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
 USE_LDCONFIG=	yes
 
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	Segfaults on !i386
+
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 
 PLIST_FILES=	bin/bgdc bin/bgdi \
