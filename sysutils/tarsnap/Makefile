@@ -8,7 +8,7 @@
 PORTNAME=	tarsnap
 PORTVERSION=	1.0.25
 CATEGORIES=	sysutils
-MASTER_SITES=	https://beta.tarsnap.com/download/
+MASTER_SITES=	https://www.tarsnap.com/download/
 DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
