@@ -225,7 +225,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(USE_BDB)
 
-_DB_PORTS=	2 3 40 41 42 43 44 45 46 47 3+ 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+
+_DB_PORTS=	2 3 40 41 42 43 44 45 46 47 48 3+ 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+
 # Dependence lines for different db versions
 db2_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 db3_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
@@ -396,6 +396,10 @@ BDB_LIB_DIR=		${LOCALBASE}/lib/db46
 BDB_LIB_NAME=		db-4.7
 BDB_LIB_CXX_NAME=	db_cxx-4.7
 BDB_LIB_DIR=		${LOCALBASE}/lib/db47
+.  elif ${_BDB_VER} == 48
+BDB_LIB_NAME=		db-4.8
+BDB_LIB_CXX_NAME=	db_cxx-4.8
+BDB_LIB_DIR=		${LOCALBASE}/lib/db48
 .  endif
 BDB_LIB_NAME?=		db${_BDB_VER}
 BDB_LIB_CXX_NAME?=	db${_BDB_VER}_cxx
