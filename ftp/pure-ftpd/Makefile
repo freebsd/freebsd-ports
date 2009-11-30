@@ -31,7 +31,6 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-everything \
 		--with-paranoidmsg \
-		--with-virtualchroot \
 		--sysconfdir=${PREFIX}/etc \
 		--localstatedir=/var
 
@@ -51,7 +50,8 @@ OPTIONS=	LDAP		"Support for users in LDAP directories" off \
 		UPLOADSCRIPT	"Support uploadscript daemon" off \
 		UTF8		"Support for charset conversion (expreimental)" off \
 		SENDFILE	"Support for the sendfile syscall" on \
-		LARGEFILE	"Support downloading files larger than 2Gb" off
+		LARGEFILE	"Support downloading files larger than 2Gb" off \
+		VIRTUALCHROOT	"Follow symlinks outside a chroot jail" on
 
 .include <bsd.port.pre.mk>
 
@@ -133,6 +133,12 @@ CONFIGURE_ARGS+=	--without-sendfile
 CONFIGURE_ARGS+=	--enable-largefile
 .else
 CONFIGURE_ARGS+=	--disable-largefile
+.endif
+
+.if defined(WITH_VIRTUALCHROOT)
+CONFIGURE_ARGS+=	--with-virtualchroot
+.else
+CONFIGURE_ARGS+=	--without-virtualchroot
 .endif
 
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
