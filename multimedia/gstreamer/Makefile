@@ -48,6 +48,11 @@ MAN1=	gst-feedback-${GST_VERSION}.1 gst-inspect-${GST_VERSION}.1 \
 
 .include <bsd.port.pre.mk>
 
+# workaround a gcc bug on 6.x
+.if ${OSVERSION} < 700000
+CONFIGURE_ENV+=	gst_cv_uint128_t="no"
+.endif
+
 .if (exists(${LOCALBASE}/lib/libcheck.a) || defined(WITH_CHECK))
 LIB_DEPENDS+=	check.0:${PORTSDIR}/devel/libcheck
 PLIST_SUB+=	CHECK=""
