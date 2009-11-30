@@ -476,6 +476,7 @@ animenfo-client                 ports/databases/animenfo-client
 animenfo-client-gtk             ports/databases/animenfo-client-gtk
 animorph                        ports/graphics/animorph
 anjuta                          ports/devel/anjuta
+anjuta-extras                   ports/devel/anjuta-extras
 anki                            ports/games/anki
 annelid                         ports/games/annelid
 annextools                      ports/net-mgmt/annextools
@@ -594,6 +595,7 @@ aria2                           ports/www/aria2
 aria2fe                         ports/www/aria2fe
 ariadne                         ports/biology/ariadne
 aribas                          ports/math/aribas
+ario                            ports/audio/ario
 arirang                         ports/security/arirang
 arista                          ports/multimedia/arista
 arj                             ports/archivers/arj
@@ -1654,9 +1656,9 @@ clusterit                       ports/net/clusterit
 clusterssh                      ports/security/clusterssh
 clutter                         ports/graphics/clutter
 clutter-box2d                   ports/graphics/clutter-box2d
-clutter-cairo                   ports/graphics/clutter-cairo
 clutter-gst                     ports/multimedia/clutter-gst
 clutter-gtk                     ports/graphics/clutter-gtk
+clutter-qt                      ports/graphics/clutter-qt
 cm-super                        ports/print/cm-super
 cmail                           ports/mail/cmail
 cmake                           ports/devel/cmake
@@ -2802,6 +2804,7 @@ efltk                           ports/x11-toolkits/efltk
 efreet                          ports/x11/efreet
 efront                          ports/www/efront
 eggcreator                      ports/irc/eggcreator
+eggdbus                         ports/devel/eggdbus
 eggdrop                         ports/irc/eggdrop
 egl                             ports/games/egl
 egoboo                          ports/games/egoboo
@@ -2939,6 +2942,7 @@ envelope                        ports/print/envelope
 enygma                          ports/games/enygma
 eo-aspell                       ports/textproc/eo-aspell
 eog                             ports/graphics/eog
+eog-plugins                     ports/graphics/eog-plugins
 epdfview                        ports/graphics/epdfview
 epeg                            ports/graphics/epeg
 eperl                           ports/lang/eperl
@@ -3109,6 +3113,7 @@ evolution-data-server           ports/databases/evolution-data-server
 evolution-exchange              ports/mail/evolution-exchange
 evolution-gconf-tools           ports/devel/evolution-gconf-tools
 evolution-jescs                 ports/deskutils/evolution-jescs
+evolution-mapi                  ports/mail/evolution-mapi
 evolution-sharp                 ports/mail/evolution-sharp
 evolution-webcal                ports/www/evolution-webcal
 evolvotron                      ports/graphics/evolvotron
@@ -3910,7 +3915,6 @@ galaxyhack                      ports/games/galaxyhack
 galaxymage                      ports/games/galaxymage
 galculator                      ports/math/galculator
 gale                            ports/net-im/gale
-galeon                          ports/www/galeon
 gallery                         ports/www/gallery
 gallery2                        ports/www/gallery2
 gallery3                        ports/www/gallery3
@@ -4213,12 +4217,32 @@ ginac                           ports/math/GiNaC
 gindent                         ports/devel/gindent
 gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
+gir-repository                  ports/devel/gir-repository
+gir-repository-atk              ports/accessibility/gir-repository-atk
+gir-repository-avahi            ports/net/gir-repository-avahi
+gir-repository-babl             ports/x11/gir-repository-babl
+gir-repository-dbus             ports/devel/gir-repository-dbus
+gir-repository-gconf2           ports/devel/gir-repository-gconf2
+gir-repository-gnome-keyring    ports/security/gir-repository-gnome-keyring
+gir-repository-gnome-menus      ports/x11/gir-repository-gnome-menus
+gir-repository-goocanvas        ports/graphics/gir-repository-goocanvas
+gir-repository-gtk20            ports/x11-toolkits/gir-repository-gtk20
+gir-repository-gtksourceview2   ports/x11-toolkits/gir-repository-gtksourceview2
+gir-repository-libnotify        ports/devel/gir-repository-libnotify
+gir-repository-libsoup          ports/devel/gir-repository-libsoup
+gir-repository-libwnck          ports/x11-toolkits/gir-repository-libwnck
+gir-repository-nautilus         ports/x11-fm/gir-repository-nautilus
+gir-repository-pango            ports/x11-toolkits/gir-repository-pango
+gir-repository-poppler          ports/graphics/gir-repository-poppler
+gir-repository-vte              ports/x11-toolkits/gir-repository-vte
+gir-repository-webkit           ports/www/gir-repository-webkit
 giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
 gist                            ports/www/gist
 git                             ports/devel/git
 gittrac                         ports/devel/gittrac
 gj                              ports/java/gj
+gjs                             ports/lang/gjs
 gkermit                         ports/comms/gkermit
 gkfreq                          ports/sysutils/gkfreq
 gkleds2                         ports/sysutils/gkleds2
@@ -4459,6 +4483,7 @@ gnome-icons-snowish             ports/x11-themes/gnome-icons-snowish
 gnome-icons-stylish             ports/x11-themes/gnome-icons-stylish
 gnome-icons-ximian-south        ports/x11-themes/gnome-icons-ximian-south
 gnome-jabber                    ports/net-im/gnome-jabber
+gnome-js-common                 ports/devel/gnome-js-common
 gnome-keyring                   ports/security/gnome-keyring
 gnome-launch-box                ports/x11/gnome-launch-box
 gnome-libs                      ports/x11/gnome-libs
@@ -4488,6 +4513,7 @@ gnome-screensaver               ports/x11/gnome-screensaver
 gnome-session                   ports/x11/gnome-session
 gnome-settings-daemon           ports/sysutils/gnome-settings-daemon
 gnome-sharp20                   ports/x11-toolkits/gnome-sharp20
+gnome-shell                     ports/x11/gnome-shell
 gnome-speech                    ports/accessibility/gnome-speech
 gnome-spell                     ports/textproc/gnome-spell
 gnome-splashscreen-manager      ports/x11-themes/gnome-splashscreen-manager
@@ -4538,6 +4564,7 @@ gnono                           ports/games/gnono
 gnopernicus                     ports/accessibility/gnopernicus
 gnormalize                      ports/audio/gnormalize
 gnosamba                        ports/net/gnosamba
+gnote                           ports/deskutils/gnote
 gnotepad+                       ports/editors/gnotepad+
 gnotime                         ports/deskutils/gnotime
 gnowavcut                       ports/audio/gnowavcut
@@ -4606,6 +4633,7 @@ gnuwash                         ports/deskutils/gnuwash
 gob                             ports/x11-toolkits/gob
 gob2                            ports/devel/gob2
 gobby                           ports/editors/gobby
+gobject-introspection           ports/devel/gobject-introspection
 goblin                          ports/math/goblin
 gocr                            ports/graphics/gocr
 gofer                           ports/lang/Gofer
@@ -5828,6 +5856,7 @@ ja-foldoc-fpw                   ports/japanese/foldoc-fpw
 ja-font-ipa                     ports/japanese/font-ipa
 ja-font-ipa-uigothic            ports/japanese/font-ipa-uigothic
 ja-font-kochi                   ports/japanese/font-kochi
+ja-font-mona-ipa                ports/japanese/font-mona-ipa
 ja-font-mplus                   ports/japanese/font-mplus
 ja-font-mplus-ipa               ports/japanese/font-mplus-ipa
 ja-font-sazanami                ports/japanese/font-sazanami
@@ -7293,6 +7322,7 @@ libcddb                         ports/audio/libcddb
 libcddb-doc                     ports/audio/libcddb-doc
 libcdio                         ports/sysutils/libcdio
 libcfg                          ports/devel/libcfg
+libchamplain                    ports/graphics/libchamplain
 libcheck                        ports/devel/libcheck
 libchipcard                     ports/devel/libchipcard
 libchipcard-kde                 ports/devel/libchipcard-kde
@@ -7540,6 +7570,7 @@ libmaa                          ports/devel/libmaa
 libmad                          ports/audio/libmad
 libmaitretarot                  ports/games/libmaitretarot
 libmal                          ports/palm/libmal
+libmapi                         ports/mail/libmapi
 libmath++                       ports/math/libmath++
 libmatheval                     ports/devel/libmatheval
 libmatroska                     ports/multimedia/libmatroska
@@ -8837,6 +8868,7 @@ mlterm                          ports/x11/mlterm
 mlton                           ports/lang/mlton
 mlview                          ports/editors/mlview
 mm                              ports/devel/mm
+mm-common                       ports/devel/mm-common
 mma                             ports/audio/mma
 mmail                           ports/news/mmail
 mmake                           ports/java/mmake
@@ -9265,6 +9297,7 @@ mutt-devel                      ports/mail/mutt-devel
 mutt-devel-lite                 ports/mail/mutt-devel-lite
 mutt-lite                       ports/mail/mutt-lite
 mutt_vc_query                   ports/mail/mutt_vc_query
+mutter                          ports/x11-wm/mutter
 muttprint                       ports/print/muttprint
 muttzilla                       ports/mail/muttzilla
 mvdsv                           ports/games/mvdsv
@@ -17840,6 +17873,8 @@ pear-Numbers_Words              ports/textproc/pear-Numbers_Words
 pear-OLE                        ports/devel/pear-OLE
 pear-PEAR_Info                  ports/devel/pear-PEAR_Info
 pear-PEAR_PackageFileManager    ports/devel/pear-PEAR_PackageFileManager
+pear-PEAR_PackageFileManager2   ports/devel/pear-PEAR_PackageFileManager2
+pear-PEAR_PackageFileManager_Plugins  ports/devel/pear-PEAR_PackageFileManager_Plugins
 pear-PHPDoc                     ports/devel/pear-PHPDoc
 pear-PHPUnit                    ports/devel/pear-PHPUnit
 pear-PHPUnit2                   ports/devel/pear-PHPUnit2
@@ -18121,6 +18156,8 @@ pear-ole                        ports/devel/pear-OLE
 pear-pager                      ports/devel/pear-Pager
 pear-pear_info                  ports/devel/pear-PEAR_Info
 pear-pear_packagefilemanager    ports/devel/pear-PEAR_PackageFileManager
+pear-pear_packagefilemanager2   ports/devel/pear-PEAR_PackageFileManager2
+pear-pear_packagefilemanager_plugins  ports/devel/pear-PEAR_PackageFileManager_Plugins
 pear-php_archiv                 ports/archivers/pear-PHP_Archiv
 pear-php_arrayof                ports/devel/pear-PHP_ArrayOf
 pear-php_beautifier             ports/devel/pear-PHP_Beautifier
@@ -18873,9 +18910,10 @@ pokerth                         ports/games/pokerth
 policyd2                        ports/mail/policyd2
 policykit                       ports/sysutils/policykit
 policykit-gnome                 ports/sysutils/policykit-gnome
-policykit-kde                   ports/sysutils/policykit-kde
 policykit-qt                    ports/sysutils/policykit-qt
 polipo                          ports/www/polipo
+polkit                          ports/sysutils/polkit
+polkit-gnome                    ports/sysutils/polkit-gnome
 poly1305aes                     ports/security/poly1305aes
 polygraph                       ports/benchmarks/polygraph
 polygraph31                     ports/benchmarks/polygraph31
@@ -19388,6 +19426,7 @@ py-cjson                        ports/devel/py-cjson
 py-clamav                       ports/security/py-clamav
 py-clientform                   ports/www/py-clientform
 py-clutter                      ports/graphics/py-clutter
+py-clutter-gtk                  ports/graphics/py-clutter-gtk
 py-cmdln                        ports/devel/py-cmdln
 py-cmemcache                    ports/databases/py-cmemcache
 py-cog                          ports/devel/py-cog
@@ -21529,6 +21568,7 @@ sedsed                          ports/devel/sedsed
 sedumi                          ports/math/sedumi
 see                             ports/lang/see
 see-devel                       ports/lang/see-devel
+seed                            ports/devel/seed
 seed7                           ports/lang/seed7
 seejpeg                         ports/graphics/seejpeg
 selectwm                        ports/x11-wm/selectwm
