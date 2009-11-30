@@ -4,7 +4,7 @@
 # $FreeBSD$
 #
 
-USE_GECKO=	libxul
+USE_GECKO=	seamonkey
 .include "${.CURDIR}/../../Mk/bsd.gecko.mk"
 
 EXTRACT_SUFX=   .xpi
