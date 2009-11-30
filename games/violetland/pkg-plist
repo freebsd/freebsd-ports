@@ -18,6 +18,18 @@ bin/violetland
 %%DATADIR%%/images/anima/bleed/bleed-7.png
 %%DATADIR%%/images/anima/bleed/bleed-8.png
 %%DATADIR%%/images/anima/bleed/bleed-9.png
+%%DATADIR%%/images/anima/grenade/0.png
+%%DATADIR%%/images/anima/grenade/1.png
+%%DATADIR%%/images/anima/grenade/10.png
+%%DATADIR%%/images/anima/grenade/11.png
+%%DATADIR%%/images/anima/grenade/2.png
+%%DATADIR%%/images/anima/grenade/3.png
+%%DATADIR%%/images/anima/grenade/4.png
+%%DATADIR%%/images/anima/grenade/5.png
+%%DATADIR%%/images/anima/grenade/6.png
+%%DATADIR%%/images/anima/grenade/7.png
+%%DATADIR%%/images/anima/grenade/8.png
+%%DATADIR%%/images/anima/grenade/9.png
 %%DATADIR%%/images/anima/monsters/0/move-0.png
 %%DATADIR%%/images/anima/monsters/0/move-1.png
 %%DATADIR%%/images/anima/monsters/0/move-10.png
@@ -96,7 +108,11 @@ bin/violetland
 %%DATADIR%%/images/blood_0.png
 %%DATADIR%%/images/blood_1.png
 %%DATADIR%%/images/blood_2.png
+%%DATADIR%%/images/expl_0.png
+%%DATADIR%%/images/expl_1.png
+%%DATADIR%%/images/grenade.png
 %%DATADIR%%/images/laser.png
+%%DATADIR%%/images/m32.png
 %%DATADIR%%/images/medikit.png
 %%DATADIR%%/images/player_top.png
 %%DATADIR%%/images/pm.png
@@ -117,13 +133,18 @@ bin/violetland
 %%DATADIR%%/images/terrain/base_2.png
 %%DATADIR%%/images/terrain/base_3.png
 %%DATADIR%%/images/uzi.png
-%%DATADIR%%/music/dzaibatsu.ogg
-%%DATADIR%%/music/morning.ogg
-%%DATADIR%%/music/space-crusader.ogg
+%%DATADIR%%/music/01.ogg
+%%DATADIR%%/music/02.ogg
+%%DATADIR%%/music/03.ogg
+%%DATADIR%%/music/04.ogg
+%%DATADIR%%/music/05.ogg
 %%DATADIR%%/sounds/ak-47_reload.ogg
 %%DATADIR%%/sounds/ak-47_shot.ogg
+%%DATADIR%%/sounds/explode-0.ogg
+%%DATADIR%%/sounds/explode-1.ogg
 %%DATADIR%%/sounds/laser_reload.ogg
 %%DATADIR%%/sounds/laser_shot.ogg
+%%DATADIR%%/sounds/m32_shot.ogg
 %%DATADIR%%/sounds/player_hit_0.ogg
 %%DATADIR%%/sounds/player_hit_1.ogg
 %%DATADIR%%/sounds/player_hit_2.ogg
@@ -148,6 +169,7 @@ bin/violetland
 @dirrm %%DATADIR%%/images/anima/monsters/1
 @dirrm %%DATADIR%%/images/anima/monsters/0
 @dirrm %%DATADIR%%/images/anima/monsters
+@dirrm %%DATADIR%%/images/anima/grenade
 @dirrm %%DATADIR%%/images/anima/bleed
 @dirrm %%DATADIR%%/images/anima
 @dirrm %%DATADIR%%/images

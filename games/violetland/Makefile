@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	violetland
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
@@ -20,12 +20,13 @@ USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=yes
+CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
 DESKTOP_ENTRIES="Violetland" \
 		"Top-down survival shoot 'em up" \
-		"" \
+		"${DATADIR}/icon-light.png" \
 		"violetland" \
 		"Game;ArcadeGame;" \
 		false
