@@ -61,6 +61,14 @@ MLINKS+=	TclXInit.3	$l.3
 
 .if ${TCL_VER} > 8.4
 EXTRA_PATCHES+=	${FILESDIR}/tcl85-test-patch
+PLIST_SUB+=	BELOW_85='@comment '
+.else
+PLIST_SUB+=	BELOW_85=''
+.endif
+.if ${TCL_VER} > 8.3
+PLIST_SUB+=	ABOVE_83=''
+.else
+PLIST_SUB+=	ABOVE_83='@comment '
 .endif
 
 pre-configure:

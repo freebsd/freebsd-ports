@@ -81,7 +81,7 @@ lib/tclx%%TCLX_VER%%/help.tcl
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/files/readdir
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/files/recursive_glob
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/files/registry
-%%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/files/resource
+%%PORTDOCS%%%%BELOW_85%%lib/tclx%%TCLX_VER%%/help/tcl/files/resource
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/files/seek
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/files/select
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/files/sync
@@ -132,7 +132,7 @@ lib/tclx%%TCLX_VER%%/help.tcl
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lreplace
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lrmdups
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lsearch
-%%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lset
+%%PORTDOCS%%%%ABOVE_83%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lset
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lsort
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lvarcat
 %%PORTDOCS%%lib/tclx%%TCLX_VER%%/help/tcl/lists/lvarpop
