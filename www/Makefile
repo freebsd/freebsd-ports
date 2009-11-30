@@ -1039,6 +1039,7 @@
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Path-Class-URI
     SUBDIR += p5-Plack
+    SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Request
     SUBDIR += p5-Plack-Server-AnyEvent
     SUBDIR += p5-Plack-Server-Coro
