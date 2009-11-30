@@ -14,11 +14,12 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware.pm
 %%SITE_PERL%%/Plack/Middleware/AccessLog.pm
 %%SITE_PERL%%/Plack/Middleware/AccessLog/Timed.pm
+%%SITE_PERL%%/Plack/Middleware/Auth/Basic.pm
 %%SITE_PERL%%/Plack/Middleware/Chunked.pm
+%%SITE_PERL%%/Plack/Middleware/Conditional.pm
 %%SITE_PERL%%/Plack/Middleware/ConditionalGET.pm
 %%SITE_PERL%%/Plack/Middleware/ContentLength.pm
 %%SITE_PERL%%/Plack/Middleware/ContentMD5.pm
-%%SITE_PERL%%/Plack/Middleware/Deflater.pm
 %%SITE_PERL%%/Plack/Middleware/ErrorDocument.pm
 %%SITE_PERL%%/Plack/Middleware/JSONP.pm
 %%SITE_PERL%%/Plack/Middleware/Lint.pm
@@ -49,6 +50,7 @@ bin/plackup
 @dirrm %%SITE_PERL%%/Plack/Test
 @dirrm %%SITE_PERL%%/Plack/Server/Standalone
 @dirrm %%SITE_PERL%%/Plack/Server
+@dirrm %%SITE_PERL%%/Plack/Middleware/Auth
 @dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog
 @dirrm %%SITE_PERL%%/Plack/Middleware
 @dirrm %%SITE_PERL%%/Plack/Loader
