@@ -7,6 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
@@ -30,7 +31,6 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-crypto-prefix=${LOCALBASE} \
-		--disable-upnp \
 		--with-denoise-level=0
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
