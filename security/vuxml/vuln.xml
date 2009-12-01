@@ -35,6 +35,43 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6431c4db-deb4-11de-9078-0030843d3802">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<range><lt>10.10.20091120</lt></range>
+      </package>
+      <package>
+        <name>linux-opera</name>
+	<range><lt>10.10</lt></range>
+	</package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>>Opera Team reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1010/">
+	  <ul>
+	    <li>Fixed a heap buffer overflow in string to number conversion</li>
+	    <li>Fixed an issue where error messages could leak onto unrelated
+	      sites</li>
+	    <li>Fixed a moderately severe issue, as reported by Chris Evans of
+	      the Google Security Team; details will be disclosed at a later
+	      date.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/942/</url>
+      <url>http://www.opera.com/support/kb/view/941/</url>
+    </references>
+    <dates>
+      <discovery>2009-11-23</discovery>
+      <entry>2009-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="77c14729-dc5e-11de-92ae-02e0184b8d35">
     <topic>libtool -- Library Search Path Privilege Escalation Issue</topic>
     <affects>
