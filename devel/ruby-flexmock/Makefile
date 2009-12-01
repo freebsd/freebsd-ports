@@ -6,32 +6,15 @@
 #
 
 PORTNAME=	flexmock
-PORTVERSION=	0.3.0
-CATEGORIES=	devel ruby
+PORTVERSION=	0.8.6
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ecal
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple mock object for Ruby
 
 USE_RUBY=	yes
-
-NO_BUILD=	yes
-
-DOCS=	CHANGELOG README
-
-do-install:
-	cd ${WRKSRC}; ${RUBY} install.rb
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.endif
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
