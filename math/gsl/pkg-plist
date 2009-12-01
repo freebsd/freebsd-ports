@@ -221,7 +221,7 @@ include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.13
+lib/libgsl.so.14
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so

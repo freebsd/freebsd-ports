@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gsl/} \
 		http://www.gnu.org/software/${PORTNAME}/manual/:gslref
