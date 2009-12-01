@@ -1,0 +1,5 @@
+LittlePlugger is a module that provides Gem based plugin management.
+By extending your own class or module with LittlePlugger you can easily
+manage the loading and initializing of plugins provided by other gems.
+
+WWW: http://rubyforge.org/projects/codeforpeople/
