@@ -1,6 +1,6 @@
---- org/gudy/azureus2/platform/PlatformManagerFactory.java.orig	2008-10-22 19:53:40.000000000 -0400
-+++ org/gudy/azureus2/platform/PlatformManagerFactory.java	2008-10-22 19:53:58.000000000 -0400
-@@ -48,21 +48,17 @@
+--- org/gudy/azureus2/platform/PlatformManagerFactory.java.orig	2009-07-10 06:30:32.000000000 -0500
++++ org/gudy/azureus2/platform/PlatformManagerFactory.java	2009-07-10 06:36:34.000000000 -0500
+@@ -50,21 +50,17 @@
  				try{
  					if ( getPlatformType() == PlatformManager.PT_WINDOWS ){
  						
@@ -14,7 +14,7 @@
  	                    
  					}else if( getPlatformType() == PlatformManager.PT_UNIX ){
  						
-             platform_manager = org.gudy.azureus2.platform.unix.PlatformManagerImpl.getSingleton();
+ 						platform_manager = org.gudy.azureus2.platform.unix.PlatformManagerImpl.getSingleton();
  
  					}
 -				}catch( PlatformManagerException e ){

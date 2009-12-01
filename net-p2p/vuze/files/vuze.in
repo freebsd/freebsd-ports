@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-p2p/vuze/files/vuze.in,v 1.1 2008-12-22 18:27:01 rnoland Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-p2p/vuze/files/vuze.in,v 1.2 2009-12-01 21:05:21 rnoland Exp $
 
 # java
 export JAVA_VERSION="%%JAVA_VERSION%%"
@@ -12,22 +12,17 @@ LIB_PATH=%%LIBDIR%%
 
 CLASS_PATH=:%%JAVAJARDIR%%/%%JARFILE%%:${ECLIPSE_SWT_JAR}
 
-BROWSERS="firefox xulrunner seamonkey mozilla"
+#if [ ! "${MOZILLA_FIVE_HOME}" ]; then
+#	if [ -d "%%LOCALBASE%%/lib/%%GECKO%%" ]; then
+#		MOZILLA_FIVE_HOME="%%LOCALBASE%%/lib/%%GECKO%%"
+#	fi
+#fi
 
-if [ ! "${MOZILLA_FIVE_HOME}" ]; then
-	for browser in ${BROWSERS}; do
-		if [ -d "%%LOCALBASE%%/lib/${browser}" ]; then
-			MOZILLA_FIVE_HOME="%%LOCALBASE%%/lib/${browser}"
-			break;
-		fi
-	done
-fi
-
-if [ "${MOZILLA_FIVE_HOME}" ];then
-	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${MOZILLA_FIVE_HOME}"
-	export MOZILLA_FIVE_HOME LD_LIBRARY_PATH
-	echo "MOZILLA_FIVE_HOME=${MOZILLA_FIVE_HOME}"
-fi
+#if [ "${MOZILLA_FIVE_HOME}" ];then
+#	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${MOZILLA_FIVE_HOME}"
+#	export MOZILLA_FIVE_HOME LD_LIBRARY_PATH
+#	echo "MOZILLA_FIVE_HOME=${MOZILLA_FIVE_HOME}"
+#fi
 
 if [ "${DEBUG}" ]
 then
@@ -39,4 +34,4 @@ then
 	echo "LIB_PATH = ${LIB_PATH}"
 fi
 
-exec "%%JAVA%%" -cp "${CLASS_PATH}" "-Djava.library.path=${LIB_PATH}" "-Dos.name=linux" "-Dazureus.config.path=${HOME}/.Azureus" "-Duser.dir=${HOME}/.Azureus" org.gudy.azureus2.ui.swt.Main "${@}"
+exec "%%JAVA%%" -cp "${CLASS_PATH}" "-Djava.library.path=${LIB_PATH}" "-Dos.name=FreeBSD" "-Dazureus.config.path=${HOME}/.Azureus" "-Duser.dir=${HOME}/.Azureus" org.gudy.azureus2.ui.swt.Main "${@}"

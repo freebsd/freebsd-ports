@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vuze
-PORTVERSION=	4.2.0.2
-PORTREVISION=	1
+PORTVERSION=	4.3.0.4
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/azureus/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	Vuze_${PORTVERSION}_source
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_ANT=	yes
 
@@ -35,12 +34,13 @@ org/gudy/azureus2/ui/swt/views/table/impl/TableViewSWTImpl.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
 
+USE_GECKO=	libxul
+
 NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" on \
-		EXTRAHACK "Apply extra performance hack" off
+OPTIONS=	SWTDEVEL "Use SWT Development port" on
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -54,7 +54,8 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
-		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
+		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java" \
+		GECKO="${GECKO}"
 
 DESKTOP_ENTRIES=	"Vuze" \
 			"A full feature BitTorrent client" \
@@ -75,14 +76,6 @@ RUN_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 SWT=		swt
 BUILD_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
 RUN_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
-.endif
-
-# Ok, I'm not quite sure why this works, or if it is in any way a proper fix.
-# Use at your own risk, I've just had it around and decided to share.
-.if defined(WITH_EXTRAHACK)
-EXTRA_PATCHES+=	\
-	${PATCHDIR}/extra-patch-com__aelitis__azureus__core__networkmanager__impl__TransportHelperFilterStream.java \
-	${PATCHDIR}/extra-patch-com__aelitis__azureus__core__networkmanager__impl__TransportHelperFilterTransparent.java
 .endif
 
 CLASSPATH=.
