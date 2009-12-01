@@ -3,18 +3,21 @@ $FreeBSD$
 
 --- doc/man/Makefile.in.orig
 +++ doc/man/Makefile.in
-@@ -592,11 +592,11 @@
+@@ -204,7 +204,7 @@
+ @GROFF_HTML_TRUE@@USE_NANORC_TRUE@BUILT_SOURCES = nano.1.html nanorc.5.html rnano.1.html
+ nano_man_mans = nano.1 nanorc.5 rnano.1
+ @GROFF_HTML_TRUE@htmlman_DATA = nano.1.html nanorc.5.html rnano.1.html
+-@GROFF_HTML_TRUE@htmlmandir = $(datadir)/nano/man-html
++@GROFF_HTML_TRUE@htmlmandir = $(htmldir)
+ @GROFF_HTML_TRUE@nano_built_sources = nano.1.html nanorc.5.html rnano.1.html
+ @GROFF_HTML_FALSE@EXTRA_DIST = $(nano_man_mans)
+ @GROFF_HTML_TRUE@EXTRA_DIST = $(nano_man_mans) $(nano_built_sources)
+@@ -577,7 +577,7 @@
  
+ info-am:
  
- nano.1.html: nano.1
--	groff -t -mandoc -Thtml < $< > $@
-+	groff -t -mandoc -Thtml < $? > $@
- nanorc.5.html: nanorc.5
--	groff -t -mandoc -Thtml < $< > $@
-+	groff -t -mandoc -Thtml < $? > $@
- rnano.1.html: rnano.1
--	groff -t -mandoc -Thtml < $< > $@
-+	groff -t -mandoc -Thtml < $? > $@
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+-install-data-am: install-htmlmanDATA install-man
++install-data-am: $(install_htmlmanDATA) install-man
+ 
+ install-exec-am:
+ 
