@@ -4227,12 +4227,12 @@ finance/p5-HTML-Query|www/p5-HTML-Query|2009-11-28|Moved to www category
 graphics/clutter-cairo|graphics/clutter|2009-11-28|This port is obsolete, all functionality is now in graphics/clutter
 www/galeon||2009-11-28|This port is obsolete; similar functionality can be found in www/epiphany
 sysutils/policykit-kde||2009-11-29|This port is obsolete; all functionality included in x11/kdebase4
-audio/squeezecenter-trackstat||2009-11-30|Has expired: Replaced by audio/squeezeboxserver-trackstat
-audio/squeezecenter-superdatetime||2009-11-30|Has expired: Replaced by audio/squeezeboxserver-superdatetime
-audio/squeezecenter-sqlplaylist||2009-11-30|Has expired: Replaced by audio/squeezeboxserver-sqlplaylist
-audio/squeezecenter-lazysearch||2009-11-30|Has expired: Replaced by audio/squeezeboxserver-lazysearch
-audio/squeezecenter-dynamicplaylist||2009-11-30|Has expired: Replaced by audio/squeezeboxserver-dynamicplaylist
-audio/squeezecenter||2009-11-30|Has expired: Replaced by audio/squeezeboxcenter
+audio/squeezecenter-trackstat|audio/squeezeboxserver-trackstat|2009-11-30|Has expired: Replaced by audio/squeezeboxserver-trackstat
+audio/squeezecenter-superdatetime|audio/squeezeboxserver-superdatetime|2009-11-30|Has expired: Replaced by audio/squeezeboxserver-superdatetime
+audio/squeezecenter-sqlplaylist|audio/squeezeboxserver-sqlplaylist|2009-11-30|Has expired: Replaced by audio/squeezeboxserver-sqlplaylist
+audio/squeezecenter-lazysearch|audio/squeezeboxserver-lazysearch|2009-11-30|Has expired: Replaced by audio/squeezeboxserver-lazysearch
+audio/squeezecenter-dynamicplaylist|audio/squeezeboxserver-dynamicplaylist|2009-11-30|Has expired: Replaced by audio/squeezeboxserver-dynamicplaylist
+audio/squeezecenter|audio/squeezeboxserver|2009-11-30|Has expired: Replaced by audio/squeezeboxserver
 www/mod_auth_mysql41_ap2||2009-11-30|Has expired: distfile no longer fetchable
 x11-toolkits/gtkscintilla||2009-11-30|Has expired: no longer under development, last release in 2002
 x11-toolkits/py-gtkscintilla||2009-11-30|Has expired: no longer under development, last release in 2002
