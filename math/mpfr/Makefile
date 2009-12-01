@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpfr
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.2
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	mpfr
@@ -23,6 +22,14 @@ CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 USE_LDCONFIG=	yes
 
 INFO=		mpfr
+
+PORTDOCS=	*
+
+.if defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} 's/install-nobase_dist_docDATA$$//' \
+		${WRKSRC}/Makefile.in
+.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
