@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Primitive-Driver-Cairo
-PORTVERSION=	0.40
+PORTVERSION=	0.42
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
