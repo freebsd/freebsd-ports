@@ -107,6 +107,7 @@
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += papyon
     SUBDIR += pebrot
+    SUBDIR += pecl-stomp
     SUBDIR += pidgin
     SUBDIR += pidgin-birthday_reminder
     SUBDIR += pidgin-facebookchat
