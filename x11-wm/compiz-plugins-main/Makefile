@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	compiz-plugins-main
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -35,6 +34,7 @@ GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-expo.schemas \
 		compiz-ezoom.schemas \
 		compiz-imgjpeg.schemas \
+		compiz-kdecompat.schemas \
 		compiz-mag.schemas \
 		compiz-mousepoll.schemas \
 		compiz-neg.schemas \
@@ -51,6 +51,7 @@ GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-winrules.schemas \
 		compiz-workarounds.schemas \
 		compiz-scaleaddon.schemas \
+		compiz-titleinfo.schemas \
 		compiz-vpswitch.schemas \
 		compiz-shift.schemas
 

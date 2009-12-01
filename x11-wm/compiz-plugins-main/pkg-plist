@@ -17,6 +17,9 @@ lib/compiz/libezoom.a
 lib/compiz/libimgjpeg.so
 lib/compiz/libimgjpeg.la
 lib/compiz/libimgjpeg.a
+lib/compiz/libkdecompat.so
+lib/compiz/libkdecompat.la
+lib/compiz/libkdecompat.a
 lib/compiz/libmag.so
 lib/compiz/libmag.la
 lib/compiz/libmag.a
@@ -56,6 +59,9 @@ lib/compiz/libtext.a
 lib/compiz/libthumbnail.so
 lib/compiz/libthumbnail.la
 lib/compiz/libthumbnail.a
+lib/compiz/libtitleinfo.so
+lib/compiz/libtitleinfo.la
+lib/compiz/libtitleinfo.a
 lib/compiz/libwall.so
 lib/compiz/libwall.la
 lib/compiz/libwall.a
@@ -108,6 +114,7 @@ share/compiz/colorfilter.xml
 share/compiz/expo.xml
 share/compiz/ezoom.xml
 share/compiz/imgjpeg.xml
+share/compiz/kdecompat.xml
 share/compiz/mag.xml
 share/compiz/mousepoll.xml
 share/compiz/neg.xml
@@ -120,6 +127,7 @@ share/compiz/snap.xml
 share/compiz/staticswitcher.xml
 share/compiz/text.xml
 share/compiz/thumbnail.xml
+share/compiz/titleinfo.xml
 share/compiz/wall.xml
 share/compiz/winrules.xml
 share/compiz/workarounds.xml

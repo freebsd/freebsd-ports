@@ -57,7 +57,16 @@ share/compiz/fakeargb.xml
 share/compiz/mswitch.xml
 share/compiz/snow.xml
 share/compiz/tile.xml
+share/compiz/autumn1.png
+share/compiz/autumn2.png
+share/compiz/bubbles1.png
+share/compiz/bubbles2.png
+share/compiz/fireflies1.svg
+share/compiz/fireflies2.svg
+share/compiz/snow1.png
+share/compiz/snow2.png
 share/compiz/snowflake.png
+share/compiz/stars1.png
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
 @dirrmtry include/compiz

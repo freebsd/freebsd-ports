@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	compiz
-PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -63,6 +62,7 @@ GCONF_SCHEMAS=	gwd.schemas \
 		compiz-wobbly.schemas \
 		compiz-zoom.schemas
 
+CONFIGURE_ARGS=	--disable-kde4
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
