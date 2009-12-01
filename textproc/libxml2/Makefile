@@ -4,7 +4,6 @@
 #
 # $FreeBSD$
 #
-# WITH_THREADS_BREAK enable pthread support (WILL BREAK OTHER PORTS!)
 # WITHOUT_SCHEMA disable XML schema support
 # WITH_MEM_DEBUG enable memory debugging (DEVELOPERS ONLY!)
 # WITH_XMLLINT_HIST enable history for xmllint
@@ -13,7 +12,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
 		ftp://gd.tuwien.ac.at/pub/libxml/ \
@@ -31,7 +30,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS?= --with-iconv=${LOCALBASE} \
+CONFIGURE_ARGS?=--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--without-python
@@ -41,12 +40,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if !defined(MASTERDIR)
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
 MAN3=		libxml.3
-.endif
-
-.if defined(WITH_THREADS_BREAK)
-CONFIGURE_ARGS+=	--with-threads=pthread
-.else
-CONFIGURE_ARGS+=	--without-threads
 .endif
 
 .if defined(WITHOUT_SCHEMA)
