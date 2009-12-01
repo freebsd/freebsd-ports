@@ -6,10 +6,14 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ \
 		GENTOO/distfiles
+.if !defined(NOPORTDOCS)
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}-manual-en${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
@@ -142,12 +146,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.txt README.txt" ${DOCSDIR}
-	@${INSTALL} -d ${DOCSDIR}/extras/api
-	@cd ${WRKSRC}/extras/documentation/api/extras && \
-		${COPYTREE_SHARE} . ${DOCSDIR}/extras/api
-	@${INSTALL} -d ${DOCSDIR}/extras/manual
-	@cd ${WRKSRC}/extras/documentation/manual/extras/en && \
-		${COPYTREE_SHARE} . ${DOCSDIR}/extras/manual
+	@${INSTALL} -d ${DOCSDIR}/manual
+	@cd ${WRKSRC}/documentation/manual/core/en && \
+		${COPYTREE_SHARE} . ${DOCSDIR}/manual
 .endif
 	@${CAT} ${PKGMESSAGE}
 
