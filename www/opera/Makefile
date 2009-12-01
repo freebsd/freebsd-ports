@@ -28,11 +28,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	10.01
+OPERA_VER=	10.10
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20091019
-OPERA_BUILD=	4682
+OPERA_DATE=	20091120
+OPERA_BUILD=	4742
 OPERA_LIB=	shared
 MASTER_SITES_VER_PATH=	unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
@@ -69,3 +69,4 @@ do-install:
 	@${RM} ${DATADIR}/defaults/pluginpath.ini.bak
 
 .include <bsd.port.post.mk>
+
