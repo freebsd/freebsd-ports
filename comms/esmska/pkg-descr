@@ -1,10 +1,11 @@
-Esmska is a cross-platform application for sending SMS messages over the
-Internet.
+Esmska is a cross-platform application for sending GSM SMS over the Internet.
+It uses publicly available web gateways and sends messages through them.  This
+way it can be much more comfortable than using a web browser or a mobile phone.
 
 Features:
- * Send SMS to various operators (local or international)
+ * Send SMS through various gateways (local or international)
  * Supports all common operating systems (Linux, Windows, Mac OS, etc.)
- * Free, under open-source licence GNU AGPL3
+ * Free, under open-source licence GNU AGPL3+
  * Import contacts from other programs (DreamCom) and formats (vCard)
  * Send SMS to multiple recipients at once
  * History of sent messages
