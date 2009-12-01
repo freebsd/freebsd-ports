@@ -7,7 +7,7 @@
 
 PORTNAME=	orpie
 PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	math
 MASTER_SITES=	http://pessimization.com/software/orpie/
 
@@ -15,7 +15,7 @@ MAINTAINER=	dylan@dylex.net
 COMMENT=	A fullscreen RPN calculator for the console
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.14:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

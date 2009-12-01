@@ -7,7 +7,7 @@
 
 PORTNAME=	Math-GSL
 PORTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ COMMENT=	A perl interface to GNU Scientific Library
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/Test/Class.pm:${PORTSDIR}/devel/p5-Test-Class
-LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.14:${PORTSDIR}/math/gsl
 
 PERL_CONFIGURE=	yes
 PERL_MODBUILD=	yes

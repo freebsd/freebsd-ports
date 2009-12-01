@@ -8,7 +8,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
 LIB_DEPENDS=	plplotd.11:${PORTSDIR}/math/plplot \
 		fftw.2:${PORTSDIR}/math/fftw \
-		gsl.13:${PORTSDIR}/math/gsl
+		gsl.14:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GL=		yes

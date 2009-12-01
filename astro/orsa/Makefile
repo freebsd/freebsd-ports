@@ -8,14 +8,14 @@
 
 PORTNAME=	orsa
 PORTVERSION=	0.7.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Orbit Reconstruction, Simulation and Analysis
 
-LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl \
+LIB_DEPENDS=	gsl.14:${PORTSDIR}/math/gsl \
 		cln.6:${PORTSDIR}/math/cln \
 		fftw.2:${PORTSDIR}/math/fftw \
 		ginac-1.5.0:${PORTSDIR}/math/GiNaC

@@ -7,6 +7,7 @@
 
 PORTNAME=	sipp
 PORTVERSION=	3.1.20090121
+PORTREVISION=	1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://sipp.sourceforge.net/snapshots/
 DISTNAME=	${PORTNAME}.2009-01-21
@@ -30,7 +31,7 @@ OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GSL)
-LIB_DEPENDS+=	gsl.13:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.14:${PORTSDIR}/math/gsl
 
 MAKE_ENV+=	EXTRACPPFLAGS=-DHAVE_GSL \
 		EXTRACFLAGS=-DHAVE_GSL \
