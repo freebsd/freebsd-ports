@@ -2757,6 +2757,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-columnize
+    SUBDIR += rubygem-configuration
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-deeptest
@@ -2784,8 +2785,12 @@
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json_pure
+    SUBDIR += rubygem-launchy
+    SUBDIR += rubygem-little_plugger
     SUBDIR += rubygem-linecache
     SUBDIR += rubygem-lockfile
+    SUBDIR += rubygem-logging
+    SUBDIR += rubygem-loquacious
     SUBDIR += rubygem-main
     SUBDIR += rubygem-mash
     SUBDIR += rubygem-metaid
@@ -2832,6 +2837,7 @@
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-validatable
     SUBDIR += rubygem-warbler
+    SUBDIR += rubygem-webby
     SUBDIR += rubygem-zentest
     SUBDIR += rubygem-zoom
     SUBDIR += rudeconfig
