@@ -598,6 +598,7 @@
     SUBDIR += pecl-crack
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-hash
+    SUBDIR += pecl-pam
     SUBDIR += pecl-ssh2
     SUBDIR += pecl-tcpwrap
     SUBDIR += pft
