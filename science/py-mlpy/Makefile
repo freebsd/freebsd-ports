@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mlpy
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.0
 CATEGORIES=	science python
 MASTER_SITES=	https://mlpy.fbk.eu/download/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MLPY-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	High performance Python package for predictive modeling
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
