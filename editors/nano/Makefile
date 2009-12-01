@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v2.0/ \
-		http://www.ewtoo.org/~astyanax/nano/dist/v2.0/
+MASTER_SITES=	http://www.nano-editor.org/dist/v2.2/ \
+		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	EitanAdlerList@gmail.com
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-all
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_JOBS_SAFE=	yes
@@ -28,6 +28,12 @@ MANLANG=	"" fr
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
+.else
+MAKE_ARGS+=	install_htmlmanDATA=""
 .endif
 
 INFO=		nano
