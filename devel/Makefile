@@ -2761,6 +2761,7 @@
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-deprecated
+    SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-echoe
     SUBDIR += rubygem-eventmachine
