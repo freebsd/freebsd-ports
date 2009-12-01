@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linwarrior
-PORTVERSION=	20090529
+PORTVERSION=	20091108
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackcraft.de/games/linwarrior_3d/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
