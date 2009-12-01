@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-pam-include=system \
 		--with-os-type=freebsd \
 		--enable-introspection \
-		--localstatedir=/var \
+		--localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
