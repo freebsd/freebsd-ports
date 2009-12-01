@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	swt
-DISTVERSION=	3.4
-PORTREVISION=	1
+DISTVERSION=	3.5
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${DISTVERSION}-200806172000
+MASTER_SITE_SUBDIR=	R-${DISTVERSION}-200906111540
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@FreeBSD.org
@@ -20,16 +19,14 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 CONFLICTS=	swt-3.1*
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-${ARCH}-os.c
-
-SWT_VERSION=	3448
+SWT_VERSION=	3550
 OUTPUT_JAR=	swt.jar
 
 USE_ZIP=	yes
 USE_GL=		yes
 USE_GNOME=	gtk20 pkgconfig
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_ANT=	yes
 MAKE_ARGS+=	-Doutput.jar=${OUTPUT_JAR}
@@ -64,17 +61,15 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if defined(WITH_BROWSER)
-USE_GECKO=	firefox seamonkey mozilla 
-
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
-
-PLIST_FILES+=	lib/libswt-mozilla-gtk-%%BUILD%%.so
-MAKE_MOZILLA=	make_mozilla
+USE_GECKO=	libxul
+PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
+MAKE_MOZILLA=	make_xulrunner
 .endif
 
 MAKE_ENV+=	MAKE_CAIRO=${MAKE_CAIRO} \
 		MAKE_GNOME=${MAKE_GNOME} \
-		MAKE_MOZILLA=${MAKE_MOZILLA}
+		MAKE_MOZILLA=${MAKE_MOZILLA} \
+		JAVA_HOME=${JAVA_HOME}
 
 .if (${ARCH} == "amd64")
 DIST_EXT=	gtk-linux-x86_64
@@ -85,10 +80,6 @@ DIST_EXT=	gtk-linux-x86
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
 	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|' \
-		${WRKSRC}/build.sh
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}

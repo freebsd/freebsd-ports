@@ -1,5 +1,5 @@
 --- build.xml.orig	2005-12-05 15:14:46.000000000 -0500
-+++ build.xml	2007-10-11 13:30:41.000000000 -0400
++++ build.xml	2007-10-11 13:38:48.000000000 -0400
 @@ -1,55 +1,57 @@
  <?xml version="1.0" encoding="UTF-8"?>
 +<project name="org.eclipse.swt.gtk.freebsd.x86_64" default="build.jar" basedir=".">
