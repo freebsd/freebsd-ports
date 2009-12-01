@@ -5019,7 +5019,6 @@ gtkpod                          ports/audio/gtkpod
 gtkpool                         ports/games/gtkpool
 gtkportscan                     ports/security/gtkportscan
 gtkradiant                      ports/games/gtkradiant
-gtkscintilla                    ports/x11-toolkits/gtkscintilla
 gtksee                          ports/graphics/gtksee
 gtksourceview                   ports/x11-toolkits/gtksourceview
 gtksourceview-reference         ports/x11-toolkits/gtksourceview-reference
@@ -5409,6 +5408,7 @@ husky-smapi                     ports/news/husky-smapi
 husky-smapi-devel               ports/news/husky-smapi-devel
 husky-sqpack                    ports/news/husky-sqpack
 hvsc-update                     ports/audio/HVSC-Update
+hwstat                          ports/sysutils/hwstat
 hx                              ports/net-p2p/hx
 hy-aspell                       ports/textproc/hy-aspell
 hybserv                         ports/irc/hybserv
@@ -8906,7 +8906,6 @@ mod_auth_kerb2                  ports/www/mod_auth_kerb2
 mod_auth_ldap                   ports/www/mod_auth_ldap
 mod_auth_mysql                  ports/www/mod_auth_mysql
 mod_auth_mysql2                 ports/www/mod_auth_mysql2
-mod_auth_mysql41_ap2            ports/www/mod_auth_mysql41_ap2
 mod_auth_mysql_another          ports/www/mod_auth_mysql_another
 mod_auth_openid                 ports/www/mod_auth_openid
 mod_auth_pam                    ports/www/mod_auth_pam
@@ -12818,6 +12817,7 @@ p5-Pg                           ports/databases/p5-Pg
 p5-Pipeline                     ports/devel/p5-Pipeline
 p5-PlRPC                        ports/net/p5-PlRPC
 p5-Plack                        ports/www/p5-Plack
+p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-Plack-Request                ports/www/p5-Plack-Request
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
@@ -16396,6 +16396,7 @@ p5-php-session                  ports/www/p5-PHP-Session
 p5-pip                          ports/devel/p5-pip
 p5-pipeline                     ports/devel/p5-Pipeline
 p5-plack                        ports/www/p5-Plack
+p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-plack-request                ports/www/p5-Plack-Request
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
@@ -19556,7 +19557,6 @@ py-gtk                          ports/x11-toolkits/py-gtk
 py-gtk2                         ports/x11-toolkits/py-gtk2
 py-gtkextra                     ports/x11-toolkits/py-gtkextra
 py-gtkglext                     ports/x11-toolkits/py-gtkglext
-py-gtkscintilla                 ports/x11-toolkits/py-gtkscintilla
 py-gtksourceview                ports/x11-toolkits/py-gtksourceview
 py-gui                          ports/x11-toolkits/py-gui
 py-gvgen                        ports/graphics/py-gvgen
@@ -22071,12 +22071,6 @@ squeezeboxserver-lazysearch     ports/audio/squeezeboxserver-lazysearch
 squeezeboxserver-sqlplaylist    ports/audio/squeezeboxserver-sqlplaylist
 squeezeboxserver-superdatetime  ports/audio/squeezeboxserver-superdatetime
 squeezeboxserver-trackstat      ports/audio/squeezeboxserver-trackstat
-squeezecenter                   ports/audio/squeezecenter
-squeezecenter-dynamicplaylist   ports/audio/squeezecenter-dynamicplaylist
-squeezecenter-lazysearch        ports/audio/squeezecenter-lazysearch
-squeezecenter-sqlplaylist       ports/audio/squeezecenter-sqlplaylist
-squeezecenter-superdatetime     ports/audio/squeezecenter-superdatetime
-squeezecenter-trackstat         ports/audio/squeezecenter-trackstat
 squid                           ports/www/squid
 squid30                         ports/www/squid30
 squid31                         ports/www/squid31
