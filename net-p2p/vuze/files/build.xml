@@ -19,7 +19,8 @@
 
    <target name="compile" depends="init" description="compile the source " >
      <!-- Compile the java code from ${src} into ${build} -->
-     <javac srcdir="." destdir="${build}" fork="yes" memoryMaximumSize="512m">
+     <javac srcdir="." destdir="${build}" fork="yes" source="1.5" target="1.5"
+       memoryMaximumSize="512m">
        <include name="**/*.java"/>
        <exclude name="**/Win32*.java"/>
        <exclude name="**/swt/osx/**"/>
@@ -33,10 +34,11 @@
      <mkdir dir="${dist}/lib"/>
 
      <copy todir="${build}">
-       <fileset dir="." includes="**/*.gif **/*.jpg, **/*.png **/*.properties" />
+       <fileset dir="." includes="**/*.gif **/*.jpg, **/*.png" />
        <fileset dir="." includes="**/*.dat **/*.stf **/*.xsd" />
        <fileset dir="." includes="**/*.css **/*.html **/*.js **/*.php **/*.tmpl **/*.txt" />
        <fileset dir="." includes="**/*.ico **/*.wav" />
+       <fileset dir="." includes="**/*.properties" />
      </copy>
      <!-- Put everything in ${build} into the azureus.jar file -->
      <jar jarfile="${dist}/lib/vuze.jar" basedir="${build}"/>
