@@ -9,7 +9,7 @@ PORTNAME=	Crypt_HMAC
 PORTVERSION=	1.0.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to calculate RFC 2104 compliant hashes
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

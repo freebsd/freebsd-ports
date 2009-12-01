@@ -9,7 +9,7 @@ PORTNAME=	XML_Parser
 PORTVERSION=	1.3.2
 CATEGORIES=	devel pear
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR XML parsing class based on PHP's bundled expat
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
