@@ -9,7 +9,7 @@ PORTNAME=	HTTP
 PORTVERSION=	1.4.1
 CATEGORIES=	www devel pear
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR miscellaneous HTTP utilities
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

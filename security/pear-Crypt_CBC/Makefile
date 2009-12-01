@@ -9,7 +9,7 @@ PORTNAME=	Crypt_CBC
 PORTVERSION=	1.0.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to emulate Perl's Crypt::CBC module
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

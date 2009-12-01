@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0.r2
 CATEGORIES=	security www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for blowfish encryption
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
