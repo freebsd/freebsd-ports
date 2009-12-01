@@ -31,6 +31,7 @@ SUB_LIST=	PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
 
 EXAMPLESDIR=		${PREFIX}/share/examples/pykde4
 
+.include "${.CURDIR}/../../devel/kdebindings4/files/Makefile.kdebindings"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
@@ -55,7 +56,5 @@ post-install:
 	cd ${BUILD_WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 	${INSTALL_DATA} ${WRKDIR}/kdebindings4.pth ${PYTHON_SITELIBDIR}
-
-.include "${.CURDIR}/../../devel/kdebindings4/files/Makefile.kdebindings"
 
 .include <bsd.port.post.mk>
