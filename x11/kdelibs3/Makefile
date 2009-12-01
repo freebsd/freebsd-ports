@@ -45,7 +45,9 @@ CONFIGURE_ARGS+=--disable-cups
 PLIST=		${.CURDIR}/../kdelibs3-nocups/pkg-plist
 .else
 CONFLICTS+=	kdelibs-nocups-[0-9]*
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
+BUILD_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-base
+RUN_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-base
 .endif
 
 USE_BZIP2=	yes
@@ -58,7 +60,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_LDCONFIG=	yes
 
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--disable-as-needed \
 		--enable-mt \
