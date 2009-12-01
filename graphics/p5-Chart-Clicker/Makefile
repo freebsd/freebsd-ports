@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.44
+PORTVERSION=	2.49
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Powerful, extensible charting
 
-BUILD_DEPENDS=	p5-Color-Palette>=0.091400:${PORTSDIR}/graphics/p5-Color-Palette \
+RUN_DEPENDS=	p5-Color-Palette>=0.091400:${PORTSDIR}/graphics/p5-Color-Palette \
 		p5-Color-Scheme>=1.02:${PORTSDIR}/graphics/p5-Color-Scheme \
 		p5-Moose>=0.76:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-AttributeHelpers>=0.17:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-Color-Palette>=0.091400:${PORTSDIR}/graphics/p5-Color-Palette 
 		p5-Graphics-Primitive>=0.42:${PORTSDIR}/graphics/p5-Graphics-Primitive \
 		p5-Graphics-Primitive-Driver-Cairo>=0.39:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
 		p5-Layout-Manager>=0.29:${PORTSDIR}/graphics/p5-Layout-Manager
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
