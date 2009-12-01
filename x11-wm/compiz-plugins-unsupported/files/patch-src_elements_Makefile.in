@@ -1,0 +1,18 @@
+--- src/elements/Makefile.in.orig	2009-11-03 08:45:02.000000000 -0600
++++ src/elements/Makefile.in	2009-11-03 08:45:51.000000000 -0600
+@@ -247,12 +247,12 @@
+ 
+ BUILT_SOURCES = $(nodist_libelements_la_SOURCES)
+ INCLUDES = \
+-	@COMPIZ_CFLAGS@                  \
++	-I$(top_srcdir)/include             \
++	@COMPIZ_CFLAGS@                     \
+ 	-DDATADIR='"$(compdatadir)"'        \
+ 	-DLIBDIR='"$(libdir)"'              \
+ 	-DLOCALEDIR="\"@datadir@/locale\""  \
+-	-DIMAGEDIR='"$(imagedir)"'          \
+-	-I$(top_srcdir)/include
++	-DIMAGEDIR='"$(imagedir)"'
+ 
+ moduledir = $(plugindir)
+ module_LTLIBRARIES = libelements.la
