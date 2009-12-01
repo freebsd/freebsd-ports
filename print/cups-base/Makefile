@@ -8,7 +8,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
@@ -35,7 +35,8 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-docdir=${DOCSDIR}		\
 			--with-icondir=${PREFIX}/share/icons	\
 			--with-menudir=${DESKTOPDIR}		\
-			--with-domainsocket=${CUPS_SOCKET}
+			--with-domainsocket=${CUPS_SOCKET}	\
+			--enable-ssl
 
 OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		PHP		"Build PHP support" off \
@@ -98,8 +99,10 @@ PLIST_SUB+=		OVERWRITE="@comment "
 .endif
 
 .if !defined(WITHOUT_GNUTLS)
-CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
+CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
+CONFIGURE_ENV+=		PKGCONFIG="${LOCALBASE}/bin/pkg-config"
 LIB_DEPENDS+=		gnutls-openssl.40:${PORTSDIR}/security/gnutls
+BUILD_DEPENDS+=		pkg-config:${PORTSDIR}/devel/pkg-config
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
