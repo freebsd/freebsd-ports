@@ -631,10 +631,15 @@ share/doc/HTML/es/kgpg/keys.png
 share/doc/HTML/es/kgpg/kicker.png
 share/doc/HTML/es/kgpg/options.png
 share/doc/HTML/es/khangman/common
+share/doc/HTML/es/khangman/getnewstuff.png
 share/doc/HTML/es/khangman/index.cache.bz2
 share/doc/HTML/es/khangman/index.docbook
-share/doc/HTML/es/khangman/khangman1.png
+share/doc/HTML/es/khangman/khangman-desert.png
+share/doc/HTML/es/khangman/khangman-main.png
 share/doc/HTML/es/khangman/man-khangman.6.docbook
+share/doc/HTML/es/khangman/settings-general.png
+share/doc/HTML/es/khangman/settings-languages.png
+share/doc/HTML/es/khangman/settings-timers.png
 share/doc/HTML/es/khelpcenter/faq/about.docbook
 share/doc/HTML/es/khelpcenter/faq/common
 share/doc/HTML/es/khelpcenter/faq/configkde.docbook
@@ -1325,10 +1330,19 @@ share/doc/HTML/es/ktimer/index.docbook
 share/doc/HTML/es/ktimetracker/common
 share/doc/HTML/es/ktimetracker/index.cache.bz2
 share/doc/HTML/es/ktimetracker/index.docbook
+share/doc/HTML/es/ktouch/color_options.png
 share/doc/HTML/es/ktouch/common
+share/doc/HTML/es/ktouch/general_options.png
 share/doc/HTML/es/ktouch/index.cache.bz2
 share/doc/HTML/es/ktouch/index.docbook
+share/doc/HTML/es/ktouch/keyboard_options.png
+share/doc/HTML/es/ktouch/main_screen_default_color.png
+share/doc/HTML/es/ktouch/main_window_german.png
 share/doc/HTML/es/ktouch/man-ktouch.1.docbook
+share/doc/HTML/es/ktouch/sound_options.png
+share/doc/HTML/es/ktouch/statistics_dialog.png
+share/doc/HTML/es/ktouch/statistics_dialog_chart.png
+share/doc/HTML/es/ktouch/training_options.png
 share/doc/HTML/es/kttsd/addtalker.png
 share/doc/HTML/es/kttsd/audio.png
 share/doc/HTML/es/kttsd/common
@@ -1381,6 +1395,22 @@ share/doc/HTML/es/kweather/index.docbook
 share/doc/HTML/es/kwordquiz/common
 share/doc/HTML/es/kwordquiz/index.cache.bz2
 share/doc/HTML/es/kwordquiz/index.docbook
+share/doc/HTML/es/kwordquiz/kwq-dlg-characters.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-configure-appearance.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-configure-characters.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-configure-editor.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-configure-general.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-configure-quiz.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-languages.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-print-exam.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-print-flashcard.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-print-list.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-print-type.png
+share/doc/HTML/es/kwordquiz/kwq-dlg-rowscolumns.png
+share/doc/HTML/es/kwordquiz/kwq-editor.png
+share/doc/HTML/es/kwordquiz/kwq-flashcard.png
+share/doc/HTML/es/kwordquiz/kwq-multiple.png
+share/doc/HTML/es/kwordquiz/kwq-qanda.png
 share/doc/HTML/es/kwrite/common
 share/doc/HTML/es/kwrite/index.cache.bz2
 share/doc/HTML/es/kwrite/index.docbook
@@ -1407,6 +1437,19 @@ share/doc/HTML/es/lokalize/index.docbook
 share/doc/HTML/es/lskat/common
 share/doc/HTML/es/lskat/index.cache.bz2
 share/doc/HTML/es/lskat/index.docbook
+share/doc/HTML/es/marble/common
+share/doc/HTML/es/marble/configure-cacheproxy.png
+share/doc/HTML/es/marble/configure-navigation.png
+share/doc/HTML/es/marble/configure-plugins.png
+share/doc/HTML/es/marble/configure-view.png
+share/doc/HTML/es/marble/index.cache.bz2
+share/doc/HTML/es/marble/index.docbook
+share/doc/HTML/es/marble/logo-1.png
+share/doc/HTML/es/marble/mapview-1.png
+share/doc/HTML/es/marble/measure-1.png
+share/doc/HTML/es/marble/quick-1.png
+share/doc/HTML/es/marble/search-1.png
+share/doc/HTML/es/marble/search-2.png
 share/doc/HTML/es/okteta/basics.docbook
 share/doc/HTML/es/okteta/common
 share/doc/HTML/es/okteta/credits.docbook
@@ -1420,12 +1463,29 @@ share/doc/HTML/es/okular/configure.png
 share/doc/HTML/es/okular/embedded-files-bar.png
 share/doc/HTML/es/okular/index.cache.bz2
 share/doc/HTML/es/okular/index.docbook
+share/doc/HTML/es/parley/common
+share/doc/HTML/es/parley/get-new-stuff.png
+share/doc/HTML/es/parley/index.cache.bz2
+share/doc/HTML/es/parley/index.docbook
+share/doc/HTML/es/parley/parley-configure-practice.png
+share/doc/HTML/es/parley/parley-download-basic-file-survival-training-written-practice.png
+share/doc/HTML/es/parley/parley-download-basic-file.png
+share/doc/HTML/es/parley/parley-download-new.png
+share/doc/HTML/es/parley/parley-main-water.png
+share/doc/HTML/es/parley/parley-practice-multiple-choice.png
+share/doc/HTML/es/parley/parley-quick-start-first-start.png
+share/doc/HTML/es/parley/parley-search.png
 share/doc/HTML/es/plasma/common
 share/doc/HTML/es/plasma/index.cache.bz2
 share/doc/HTML/es/plasma/index.docbook
 share/doc/HTML/es/sonnet/common
 share/doc/HTML/es/sonnet/index.cache.bz2
 share/doc/HTML/es/sonnet/index.docbook
+share/doc/HTML/es/step/common
+share/doc/HTML/es/step/examples.docbook
+share/doc/HTML/es/step/index.cache.bz2
+share/doc/HTML/es/step/index.docbook
+share/doc/HTML/es/step/tutorials.docbook
 share/doc/HTML/es/superkaramba/common
 share/doc/HTML/es/superkaramba/index.cache.bz2
 share/doc/HTML/es/superkaramba/index.docbook
@@ -2063,10 +2123,13 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/umbrello
 @dirrm share/doc/HTML/es/systemsettings
 @dirrm share/doc/HTML/es/superkaramba
+@dirrm share/doc/HTML/es/step
 @dirrm share/doc/HTML/es/sonnet
 @dirrm share/doc/HTML/es/plasma
+@dirrm share/doc/HTML/es/parley
 @dirrm share/doc/HTML/es/okular
 @dirrm share/doc/HTML/es/okteta
+@dirrm share/doc/HTML/es/marble
 @dirrm share/doc/HTML/es/lskat
 @dirrm share/doc/HTML/es/lokalize
 @dirrm share/doc/HTML/es/lilo-config

@@ -31,6 +31,12 @@ SUB_LIST=	PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
 
 EXAMPLESDIR=		${PREFIX}/share/examples/pykde4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+BROKEN=		Fails to build with RTLD_NOLOAD
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's,$${SIP_DEFAULT_SIP_DIR},${PREFIX}/${SIPDIR_REL},g' \
 		-e 's,$${PYTHON_SITE_PACKAGES_DIR},${PYTHONPREFIX_SITELIBDIR},g' \
@@ -51,4 +57,5 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/kdebindings4.pth ${PYTHON_SITELIBDIR}
 
 .include "${.CURDIR}/../../devel/kdebindings4/files/Makefile.kdebindings"
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>

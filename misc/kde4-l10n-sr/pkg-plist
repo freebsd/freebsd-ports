@@ -35,6 +35,9 @@ share/doc/HTML/sr/dolphin/index.cache.bz2
 share/doc/HTML/sr/dolphin/index.docbook
 share/doc/HTML/sr/dolphin/toolbarbuttons.png
 share/doc/HTML/sr/dolphin/workspacebuttons.png
+share/doc/HTML/sr/dragonplayer/common
+share/doc/HTML/sr/dragonplayer/index.cache.bz2
+share/doc/HTML/sr/dragonplayer/index.docbook
 share/doc/HTML/sr/gwenview/common
 share/doc/HTML/sr/gwenview/index.cache.bz2
 share/doc/HTML/sr/gwenview/index.docbook
@@ -42,6 +45,9 @@ share/doc/HTML/sr/gwenview/interface.docbook
 share/doc/HTML/sr/gwenview/introduction.docbook
 share/doc/HTML/sr/gwenview/keybindings.docbook
 share/doc/HTML/sr/gwenview/mouse.docbook
+share/doc/HTML/sr/juk/common
+share/doc/HTML/sr/juk/index.cache.bz2
+share/doc/HTML/sr/juk/index.docbook
 share/doc/HTML/sr/kcontrol/autostart/common
 share/doc/HTML/sr/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/sr/kcontrol/autostart/index.docbook
@@ -157,6 +163,9 @@ share/doc/HTML/sr/kfind/common
 share/doc/HTML/sr/kfind/index.cache.bz2
 share/doc/HTML/sr/kfind/index.docbook
 share/doc/HTML/sr/kfind/man-kfind.1.docbook
+share/doc/HTML/sr/kget/common
+share/doc/HTML/sr/kget/index.cache.bz2
+share/doc/HTML/sr/kget/index.docbook
 share/doc/HTML/sr/khelpcenter/common
 share/doc/HTML/sr/khelpcenter/contact.docbook
 share/doc/HTML/sr/khelpcenter/help.docbook
@@ -270,6 +279,9 @@ share/doc/HTML/sr/kinfocenter/usb/index.docbook
 share/doc/HTML/sr/kinfocenter/xserver/common
 share/doc/HTML/sr/kinfocenter/xserver/index.cache.bz2
 share/doc/HTML/sr/kinfocenter/xserver/index.docbook
+share/doc/HTML/sr/kioslave/audiocd/common
+share/doc/HTML/sr/kioslave/audiocd/index.cache.bz2
+share/doc/HTML/sr/kioslave/audiocd/index.docbook
 share/doc/HTML/sr/kioslave/bookmarks/common
 share/doc/HTML/sr/kioslave/bookmarks/index.cache.bz2
 share/doc/HTML/sr/kioslave/bookmarks/index.docbook
@@ -357,6 +369,9 @@ share/doc/HTML/sr/kioslave/thumbnail/index.docbook
 share/doc/HTML/sr/kioslave/webdav/common
 share/doc/HTML/sr/kioslave/webdav/index.cache.bz2
 share/doc/HTML/sr/kioslave/webdav/index.docbook
+share/doc/HTML/sr/kmix/common
+share/doc/HTML/sr/kmix/index.cache.bz2
+share/doc/HTML/sr/kmix/index.docbook
 share/doc/HTML/sr/knetattach/common
 share/doc/HTML/sr/knetattach/index.cache.bz2
 share/doc/HTML/sr/knetattach/index.docbook
@@ -380,6 +395,21 @@ share/doc/HTML/sr/konqueror/sidebar.docbook
 share/doc/HTML/sr/konsole/common
 share/doc/HTML/sr/konsole/index.cache.bz2
 share/doc/HTML/sr/konsole/index.docbook
+share/doc/HTML/sr/kopete/chatstyle.docbook
+share/doc/HTML/sr/kopete/common
+share/doc/HTML/sr/kopete/index.cache.bz2
+share/doc/HTML/sr/kopete/index.docbook
+share/doc/HTML/sr/kopete/menus.docbook
+share/doc/HTML/sr/kopete/pipes.docbook
+share/doc/HTML/sr/krdc/common
+share/doc/HTML/sr/krdc/index.cache.bz2
+share/doc/HTML/sr/krdc/index.docbook
+share/doc/HTML/sr/krfb/common
+share/doc/HTML/sr/krfb/index.cache.bz2
+share/doc/HTML/sr/krfb/index.docbook
+share/doc/HTML/sr/kscd/common
+share/doc/HTML/sr/kscd/index.cache.bz2
+share/doc/HTML/sr/kscd/index.docbook
 share/doc/HTML/sr/kwrite/common
 share/doc/HTML/sr/kwrite/index.cache.bz2
 share/doc/HTML/sr/kwrite/index.docbook
@@ -396,6 +426,9 @@ share/doc/HTML/sr/sonnet/index.docbook
 share/doc/HTML/sr@latin/dolphin/common
 share/doc/HTML/sr@latin/dolphin/index.cache.bz2
 share/doc/HTML/sr@latin/dolphin/index.docbook
+share/doc/HTML/sr@latin/dragonplayer/common
+share/doc/HTML/sr@latin/dragonplayer/index.cache.bz2
+share/doc/HTML/sr@latin/dragonplayer/index.docbook
 share/doc/HTML/sr@latin/gwenview/common
 share/doc/HTML/sr@latin/gwenview/index.cache.bz2
 share/doc/HTML/sr@latin/gwenview/index.docbook
@@ -403,6 +436,9 @@ share/doc/HTML/sr@latin/gwenview/interface.docbook
 share/doc/HTML/sr@latin/gwenview/introduction.docbook
 share/doc/HTML/sr@latin/gwenview/keybindings.docbook
 share/doc/HTML/sr@latin/gwenview/mouse.docbook
+share/doc/HTML/sr@latin/juk/common
+share/doc/HTML/sr@latin/juk/index.cache.bz2
+share/doc/HTML/sr@latin/juk/index.docbook
 share/doc/HTML/sr@latin/kcontrol/autostart/common
 share/doc/HTML/sr@latin/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol/autostart/index.docbook
@@ -518,6 +554,9 @@ share/doc/HTML/sr@latin/kfind/common
 share/doc/HTML/sr@latin/kfind/index.cache.bz2
 share/doc/HTML/sr@latin/kfind/index.docbook
 share/doc/HTML/sr@latin/kfind/man-kfind.1.docbook
+share/doc/HTML/sr@latin/kget/common
+share/doc/HTML/sr@latin/kget/index.cache.bz2
+share/doc/HTML/sr@latin/kget/index.docbook
 share/doc/HTML/sr@latin/khelpcenter/common
 share/doc/HTML/sr@latin/khelpcenter/contact.docbook
 share/doc/HTML/sr@latin/khelpcenter/help.docbook
@@ -631,6 +670,9 @@ share/doc/HTML/sr@latin/kinfocenter/usb/index.docbook
 share/doc/HTML/sr@latin/kinfocenter/xserver/common
 share/doc/HTML/sr@latin/kinfocenter/xserver/index.cache.bz2
 share/doc/HTML/sr@latin/kinfocenter/xserver/index.docbook
+share/doc/HTML/sr@latin/kioslave/audiocd/common
+share/doc/HTML/sr@latin/kioslave/audiocd/index.cache.bz2
+share/doc/HTML/sr@latin/kioslave/audiocd/index.docbook
 share/doc/HTML/sr@latin/kioslave/bookmarks/common
 share/doc/HTML/sr@latin/kioslave/bookmarks/index.cache.bz2
 share/doc/HTML/sr@latin/kioslave/bookmarks/index.docbook
@@ -718,6 +760,9 @@ share/doc/HTML/sr@latin/kioslave/thumbnail/index.docbook
 share/doc/HTML/sr@latin/kioslave/webdav/common
 share/doc/HTML/sr@latin/kioslave/webdav/index.cache.bz2
 share/doc/HTML/sr@latin/kioslave/webdav/index.docbook
+share/doc/HTML/sr@latin/kmix/common
+share/doc/HTML/sr@latin/kmix/index.cache.bz2
+share/doc/HTML/sr@latin/kmix/index.docbook
 share/doc/HTML/sr@latin/knetattach/common
 share/doc/HTML/sr@latin/knetattach/index.cache.bz2
 share/doc/HTML/sr@latin/knetattach/index.docbook
@@ -741,6 +786,21 @@ share/doc/HTML/sr@latin/konqueror/sidebar.docbook
 share/doc/HTML/sr@latin/konsole/common
 share/doc/HTML/sr@latin/konsole/index.cache.bz2
 share/doc/HTML/sr@latin/konsole/index.docbook
+share/doc/HTML/sr@latin/kopete/chatstyle.docbook
+share/doc/HTML/sr@latin/kopete/common
+share/doc/HTML/sr@latin/kopete/index.cache.bz2
+share/doc/HTML/sr@latin/kopete/index.docbook
+share/doc/HTML/sr@latin/kopete/menus.docbook
+share/doc/HTML/sr@latin/kopete/pipes.docbook
+share/doc/HTML/sr@latin/krdc/common
+share/doc/HTML/sr@latin/krdc/index.cache.bz2
+share/doc/HTML/sr@latin/krdc/index.docbook
+share/doc/HTML/sr@latin/krfb/common
+share/doc/HTML/sr@latin/krfb/index.cache.bz2
+share/doc/HTML/sr@latin/krfb/index.docbook
+share/doc/HTML/sr@latin/kscd/common
+share/doc/HTML/sr@latin/kscd/index.cache.bz2
+share/doc/HTML/sr@latin/kscd/index.docbook
 share/doc/HTML/sr@latin/kwrite/common
 share/doc/HTML/sr@latin/kwrite/index.cache.bz2
 share/doc/HTML/sr@latin/kwrite/index.docbook
@@ -1289,95 +1349,69 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/icons/oxygen/48x48/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/48x48/apps/l10n/sr
 @dirrm share/icons/oxygen/48x48/apps/l10n
-@dirrm share/icons/oxygen/48x48/apps
 @dirrm share/icons/oxygen/48x48/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/48x48/actions/l10n/sr
 @dirrm share/icons/oxygen/48x48/actions/l10n
-@dirrm share/icons/oxygen/48x48/actions
-@dirrm share/icons/oxygen/48x48
 @dirrm share/icons/oxygen/32x32/status/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/status/l10n/sr
 @dirrm share/icons/oxygen/32x32/status/l10n
-@dirrm share/icons/oxygen/32x32/status
 @dirrm share/icons/oxygen/32x32/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/apps/l10n/sr
 @dirrm share/icons/oxygen/32x32/apps/l10n
-@dirrm share/icons/oxygen/32x32/apps
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr
 @dirrm share/icons/oxygen/32x32/actions/l10n
-@dirrm share/icons/oxygen/32x32/actions
-@dirrm share/icons/oxygen/32x32
 @dirrm share/icons/oxygen/256x256
 @dirrm share/icons/oxygen/22x22/status/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/status/l10n/sr
 @dirrm share/icons/oxygen/22x22/status/l10n
-@dirrm share/icons/oxygen/22x22/status
 @dirrm share/icons/oxygen/22x22/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/apps/l10n/sr
 @dirrm share/icons/oxygen/22x22/apps/l10n
-@dirrm share/icons/oxygen/22x22/apps
 @dirrm share/icons/oxygen/22x22/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/actions/l10n/sr
 @dirrm share/icons/oxygen/22x22/actions/l10n
-@dirrm share/icons/oxygen/22x22/actions
-@dirrm share/icons/oxygen/22x22
 @dirrm share/icons/oxygen/16x16/status/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/status/l10n/sr
 @dirrm share/icons/oxygen/16x16/status/l10n
-@dirrm share/icons/oxygen/16x16/status
 @dirrm share/icons/oxygen/16x16/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/apps/l10n/sr
 @dirrm share/icons/oxygen/16x16/apps/l10n
-@dirrm share/icons/oxygen/16x16/apps
 @dirrm share/icons/oxygen/16x16/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/16x16/actions/l10n/sr
 @dirrm share/icons/oxygen/16x16/actions/l10n
-@dirrm share/icons/oxygen/16x16/actions
-@dirrm share/icons/oxygen/16x16
 @dirrm share/icons/oxygen/128x128/status/l10n/sr@latin
 @dirrm share/icons/oxygen/128x128/status/l10n/sr
 @dirrm share/icons/oxygen/128x128/status/l10n
-@dirrm share/icons/oxygen/128x128/status
 @dirrm share/icons/oxygen/128x128/apps/l10n/sr@latin
 @dirrm share/icons/oxygen/128x128/apps/l10n/sr
 @dirrm share/icons/oxygen/128x128/apps/l10n
-@dirrm share/icons/oxygen/128x128/apps
-@dirrm share/icons/oxygen/128x128
-@dirrm share/icons/oxygen
 @dirrm share/icons/hicolor/scalable/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/scalable/actions/l10n/sr
 @dirrm share/icons/hicolor/scalable/actions/l10n
-@dirrm share/icons/hicolor/scalable/actions
-@dirrm share/icons/hicolor/scalable
 @dirrm share/icons/hicolor/48x48/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/48x48/actions/l10n/sr
 @dirrm share/icons/hicolor/48x48/actions/l10n
-@dirrm share/icons/hicolor/48x48/actions
-@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/32x32/actions/l10n/sr
 @dirrm share/icons/hicolor/32x32/actions/l10n
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/22x22/actions/l10n/sr
 @dirrm share/icons/hicolor/22x22/actions/l10n
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr
 @dirrm share/icons/hicolor/16x16/actions/l10n
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/sr@latin/sonnet
 @dirrm share/doc/HTML/sr@latin/lokalize
 @dirrm share/doc/HTML/sr@latin/kwrite
+@dirrm share/doc/HTML/sr@latin/kscd
+@dirrm share/doc/HTML/sr@latin/krfb
+@dirrm share/doc/HTML/sr@latin/krdc
+@dirrm share/doc/HTML/sr@latin/kopete
 @dirrm share/doc/HTML/sr@latin/konsole
 @dirrm share/doc/HTML/sr@latin/konqueror
 @dirrm share/doc/HTML/sr@latin/knetattach
+@dirrm share/doc/HTML/sr@latin/kmix
 @dirrm share/doc/HTML/sr@latin/kioslave/webdav
 @dirrm share/doc/HTML/sr@latin/kioslave/thumbnail
 @dirrm share/doc/HTML/sr@latin/kioslave/telnet
@@ -1407,6 +1441,7 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr@latin/kioslave/cgi
 @dirrm share/doc/HTML/sr@latin/kioslave/bzip2
 @dirrm share/doc/HTML/sr@latin/kioslave/bookmarks
+@dirrm share/doc/HTML/sr@latin/kioslave/audiocd
 @dirrm share/doc/HTML/sr@latin/kioslave
 @dirrm share/doc/HTML/sr@latin/kinfocenter/xserver
 @dirrm share/doc/HTML/sr@latin/kinfocenter/usb
@@ -1429,6 +1464,7 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr@latin/khelpcenter/userguide
 @dirrm share/doc/HTML/sr@latin/khelpcenter/quickstart
 @dirrm share/doc/HTML/sr@latin/khelpcenter
+@dirrm share/doc/HTML/sr@latin/kget
 @dirrm share/doc/HTML/sr@latin/kfind
 @dirrm share/doc/HTML/sr@latin/kdesu
 @dirrm share/doc/HTML/sr@latin/kdepasswd
@@ -1467,15 +1503,22 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr@latin/kcontrol/background
 @dirrm share/doc/HTML/sr@latin/kcontrol/autostart
 @dirrm share/doc/HTML/sr@latin/kcontrol
+@dirrm share/doc/HTML/sr@latin/juk
 @dirrm share/doc/HTML/sr@latin/gwenview
+@dirrm share/doc/HTML/sr@latin/dragonplayer
 @dirrm share/doc/HTML/sr@latin/dolphin
 @dirrm share/doc/HTML/sr@latin
 @dirrm share/doc/HTML/sr/sonnet
 @dirrm share/doc/HTML/sr/lokalize
 @dirrm share/doc/HTML/sr/kwrite
+@dirrm share/doc/HTML/sr/kscd
+@dirrm share/doc/HTML/sr/krfb
+@dirrm share/doc/HTML/sr/krdc
+@dirrm share/doc/HTML/sr/kopete
 @dirrm share/doc/HTML/sr/konsole
 @dirrm share/doc/HTML/sr/konqueror
 @dirrm share/doc/HTML/sr/knetattach
+@dirrm share/doc/HTML/sr/kmix
 @dirrm share/doc/HTML/sr/kioslave/webdav
 @dirrm share/doc/HTML/sr/kioslave/thumbnail
 @dirrm share/doc/HTML/sr/kioslave/telnet
@@ -1505,6 +1548,7 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr/kioslave/cgi
 @dirrm share/doc/HTML/sr/kioslave/bzip2
 @dirrm share/doc/HTML/sr/kioslave/bookmarks
+@dirrm share/doc/HTML/sr/kioslave/audiocd
 @dirrm share/doc/HTML/sr/kioslave
 @dirrm share/doc/HTML/sr/kinfocenter/xserver
 @dirrm share/doc/HTML/sr/kinfocenter/usb
@@ -1527,6 +1571,7 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr/khelpcenter/userguide
 @dirrm share/doc/HTML/sr/khelpcenter/quickstart
 @dirrm share/doc/HTML/sr/khelpcenter
+@dirrm share/doc/HTML/sr/kget
 @dirrm share/doc/HTML/sr/kfind
 @dirrm share/doc/HTML/sr/kdesu
 @dirrm share/doc/HTML/sr/kdepasswd
@@ -1565,10 +1610,11 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr/kcontrol/background
 @dirrm share/doc/HTML/sr/kcontrol/autostart
 @dirrm share/doc/HTML/sr/kcontrol
+@dirrm share/doc/HTML/sr/juk
 @dirrm share/doc/HTML/sr/gwenview
+@dirrm share/doc/HTML/sr/dragonplayer
 @dirrm share/doc/HTML/sr/dolphin
 @dirrm share/doc/HTML/sr/common
-@dirrm share/doc/HTML/sr
 @dirrm share/apps/kvtml/sr@latin
 @dirrm share/apps/kvtml/sr
 @dirrm share/apps/kvtml
@@ -1579,9 +1625,6 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr@latin
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr
 @dirrm share/apps/desktoptheme/default/widgets/l10n
-@dirrm share/apps/desktoptheme/default/widgets
-@dirrm share/apps/desktoptheme/default
-@dirrm share/apps/desktoptheme
 @dirrmtry man/sr@latin/man1
 @dirrmtry man/sr@latin
 @dirrmtry man/sr/man1

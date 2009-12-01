@@ -89,6 +89,7 @@ share/icons/oxygen/128x128/apps/akonadi.png
 share/icons/oxygen/128x128/apps/akregator.png
 share/icons/oxygen/128x128/apps/basket.png
 share/icons/oxygen/128x128/apps/bovo.png
+share/icons/oxygen/128x128/apps/charm.png
 share/icons/oxygen/128x128/apps/device-notifier.png
 share/icons/oxygen/128x128/apps/digikam.png
 share/icons/oxygen/128x128/apps/esd.png
@@ -1026,9 +1027,11 @@ share/icons/oxygen/16x16/actions/user-group-delete.png
 share/icons/oxygen/16x16/actions/user-group-new.png
 share/icons/oxygen/16x16/actions/user-group-properties.png
 share/icons/oxygen/16x16/actions/user-properties.png
+share/icons/oxygen/16x16/actions/view-calendar-agenda.png
 share/icons/oxygen/16x16/actions/view-calendar-birthday.png
 share/icons/oxygen/16x16/actions/view-calendar-day.png
 share/icons/oxygen/16x16/actions/view-calendar-holiday.png
+share/icons/oxygen/16x16/actions/view-calendar-journal.png
 share/icons/oxygen/16x16/actions/view-calendar-list.png
 share/icons/oxygen/16x16/actions/view-calendar-month.png
 share/icons/oxygen/16x16/actions/view-calendar-special-occasion.png
@@ -1039,6 +1042,7 @@ share/icons/oxygen/16x16/actions/view-calendar-upcoming-days.png
 share/icons/oxygen/16x16/actions/view-calendar-upcoming-events.png
 share/icons/oxygen/16x16/actions/view-calendar-wedding-anniversary.png
 share/icons/oxygen/16x16/actions/view-calendar-week.png
+share/icons/oxygen/16x16/actions/view-calendar-whatsnext.png
 share/icons/oxygen/16x16/actions/view-calendar-workweek.png
 share/icons/oxygen/16x16/actions/view-calendar.png
 share/icons/oxygen/16x16/actions/view-choose.png
@@ -1066,6 +1070,7 @@ share/icons/oxygen/16x16/actions/view-pim-mail.png
 share/icons/oxygen/16x16/actions/view-pim-news.png
 share/icons/oxygen/16x16/actions/view-pim-notes.png
 share/icons/oxygen/16x16/actions/view-pim-summary.png
+share/icons/oxygen/16x16/actions/view-pim-tasks-pending.png
 share/icons/oxygen/16x16/actions/view-pim-tasks.png
 share/icons/oxygen/16x16/actions/view-presentation.png
 share/icons/oxygen/16x16/actions/view-preview.png
@@ -2109,9 +2114,11 @@ share/icons/oxygen/22x22/actions/user-group-delete.png
 share/icons/oxygen/22x22/actions/user-group-new.png
 share/icons/oxygen/22x22/actions/user-group-properties.png
 share/icons/oxygen/22x22/actions/user-properties.png
+share/icons/oxygen/22x22/actions/view-calendar-agenda.png
 share/icons/oxygen/22x22/actions/view-calendar-birthday.png
 share/icons/oxygen/22x22/actions/view-calendar-day.png
 share/icons/oxygen/22x22/actions/view-calendar-holiday.png
+share/icons/oxygen/22x22/actions/view-calendar-journal.png
 share/icons/oxygen/22x22/actions/view-calendar-list.png
 share/icons/oxygen/22x22/actions/view-calendar-month.png
 share/icons/oxygen/22x22/actions/view-calendar-special-occasion.png
@@ -2122,6 +2129,7 @@ share/icons/oxygen/22x22/actions/view-calendar-upcoming-days.png
 share/icons/oxygen/22x22/actions/view-calendar-upcoming-events.png
 share/icons/oxygen/22x22/actions/view-calendar-wedding-anniversary.png
 share/icons/oxygen/22x22/actions/view-calendar-week.png
+share/icons/oxygen/22x22/actions/view-calendar-whatsnext.png
 share/icons/oxygen/22x22/actions/view-calendar-workweek.png
 share/icons/oxygen/22x22/actions/view-calendar.png
 share/icons/oxygen/22x22/actions/view-choose.png
@@ -2149,6 +2157,7 @@ share/icons/oxygen/22x22/actions/view-pim-mail.png
 share/icons/oxygen/22x22/actions/view-pim-news.png
 share/icons/oxygen/22x22/actions/view-pim-notes.png
 share/icons/oxygen/22x22/actions/view-pim-summary.png
+share/icons/oxygen/22x22/actions/view-pim-tasks-pending.png
 share/icons/oxygen/22x22/actions/view-pim-tasks.png
 share/icons/oxygen/22x22/actions/view-presentation.png
 share/icons/oxygen/22x22/actions/view-preview.png
@@ -2385,6 +2394,12 @@ share/icons/oxygen/22x22/devices/modem.png
 share/icons/oxygen/22x22/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/22x22/devices/multimedia-player.png
 share/icons/oxygen/22x22/devices/network-wired.png
+share/icons/oxygen/22x22/devices/network-wireless-connected-00.png
+share/icons/oxygen/22x22/devices/network-wireless-connected-100.png
+share/icons/oxygen/22x22/devices/network-wireless-connected-25.png
+share/icons/oxygen/22x22/devices/network-wireless-connected-50.png
+share/icons/oxygen/22x22/devices/network-wireless-connected-75.png
+share/icons/oxygen/22x22/devices/network-wireless-disconnected.png
 share/icons/oxygen/22x22/devices/network-wireless.png
 share/icons/oxygen/22x22/devices/pda.png
 share/icons/oxygen/22x22/devices/phone-openmoko-freerunner.png
@@ -2793,7 +2808,10 @@ share/icons/oxygen/22x22/status/weather-snow.png
 share/icons/oxygen/22x22/status/weather-storm.png
 share/icons/oxygen/22x22/status/window-suppressed.png
 share/icons/oxygen/256x256/apps/MameExecutor.png
+share/icons/oxygen/256x256/apps/accessories-calculator.png
+share/icons/oxygen/256x256/apps/accessories-dictionary.png
 share/icons/oxygen/256x256/apps/akonadi.png
+share/icons/oxygen/256x256/apps/charm.png
 share/icons/oxygen/256x256/apps/k3b.png
 share/icons/oxygen/256x256/apps/karbon.png
 share/icons/oxygen/256x256/apps/kbruch.png
@@ -2813,6 +2831,7 @@ share/icons/oxygen/256x256/apps/krita.png
 share/icons/oxygen/256x256/apps/kspread.png
 share/icons/oxygen/256x256/apps/kword.png
 share/icons/oxygen/256x256/apps/lokalize.png
+share/icons/oxygen/256x256/apps/multimedia-volume-control.png
 share/icons/oxygen/256x256/apps/oxygen.png
 share/icons/oxygen/256x256/apps/partitionmanager.png
 share/icons/oxygen/256x256/apps/preferences-desktop-locale.png
@@ -2820,6 +2839,7 @@ share/icons/oxygen/256x256/apps/preferences-desktop-screensaver.png
 share/icons/oxygen/256x256/apps/qelectrotech.png
 share/icons/oxygen/256x256/apps/quassel.png
 share/icons/oxygen/256x256/apps/strigi.png
+share/icons/oxygen/256x256/apps/system-diagnosis.png
 share/icons/oxygen/256x256/apps/yakuake.png
 share/icons/oxygen/256x256/categories/applications-engineering.png
 share/icons/oxygen/256x256/categories/applications-graphics.png
@@ -2828,7 +2848,9 @@ share/icons/oxygen/256x256/categories/applications-multimedia.png
 share/icons/oxygen/256x256/categories/applications-office.png
 share/icons/oxygen/256x256/categories/applications-other.png
 share/icons/oxygen/256x256/categories/applications-science.png
+share/icons/oxygen/256x256/categories/applications-system.png
 share/icons/oxygen/256x256/categories/preferences-desktop.png
+share/icons/oxygen/256x256/categories/preferences-other.png
 share/icons/oxygen/256x256/categories/preferences-system-network.png
 share/icons/oxygen/256x256/categories/preferences-system.png
 share/icons/oxygen/256x256/devices/audio-card.png
@@ -2842,11 +2864,14 @@ share/icons/oxygen/256x256/devices/media-flash.png
 share/icons/oxygen/256x256/devices/media-floppy.png
 share/icons/oxygen/256x256/devices/media-optical-audio.png
 share/icons/oxygen/256x256/devices/media-optical-blu-ray.png
+share/icons/oxygen/256x256/devices/media-optical-data.png
+share/icons/oxygen/256x256/devices/media-optical-dvd-data.png
 share/icons/oxygen/256x256/devices/media-optical-dvd-video.png
 share/icons/oxygen/256x256/devices/media-optical-dvd.png
 share/icons/oxygen/256x256/devices/media-optical-recordable.png
 share/icons/oxygen/256x256/devices/media-optical-video.png
 share/icons/oxygen/256x256/devices/media-optical.png
+share/icons/oxygen/256x256/devices/network-wired.png
 share/icons/oxygen/256x256/devices/network-wireless-connected-00.png
 share/icons/oxygen/256x256/devices/network-wireless-connected-100.png
 share/icons/oxygen/256x256/devices/network-wireless-connected-25.png
@@ -3346,9 +3371,11 @@ share/icons/oxygen/32x32/actions/user-group-delete.png
 share/icons/oxygen/32x32/actions/user-group-new.png
 share/icons/oxygen/32x32/actions/user-group-properties.png
 share/icons/oxygen/32x32/actions/user-properties.png
+share/icons/oxygen/32x32/actions/view-calendar-agenda.png
 share/icons/oxygen/32x32/actions/view-calendar-birthday.png
 share/icons/oxygen/32x32/actions/view-calendar-day.png
 share/icons/oxygen/32x32/actions/view-calendar-holiday.png
+share/icons/oxygen/32x32/actions/view-calendar-journal.png
 share/icons/oxygen/32x32/actions/view-calendar-list.png
 share/icons/oxygen/32x32/actions/view-calendar-month.png
 share/icons/oxygen/32x32/actions/view-calendar-special-occasion.png
@@ -3359,6 +3386,7 @@ share/icons/oxygen/32x32/actions/view-calendar-upcoming-days.png
 share/icons/oxygen/32x32/actions/view-calendar-upcoming-events.png
 share/icons/oxygen/32x32/actions/view-calendar-wedding-anniversary.png
 share/icons/oxygen/32x32/actions/view-calendar-week.png
+share/icons/oxygen/32x32/actions/view-calendar-whatsnext.png
 share/icons/oxygen/32x32/actions/view-calendar-workweek.png
 share/icons/oxygen/32x32/actions/view-calendar.png
 share/icons/oxygen/32x32/actions/view-choose.png
@@ -3386,6 +3414,7 @@ share/icons/oxygen/32x32/actions/view-pim-mail.png
 share/icons/oxygen/32x32/actions/view-pim-news.png
 share/icons/oxygen/32x32/actions/view-pim-notes.png
 share/icons/oxygen/32x32/actions/view-pim-summary.png
+share/icons/oxygen/32x32/actions/view-pim-tasks-pending.png
 share/icons/oxygen/32x32/actions/view-pim-tasks.png
 share/icons/oxygen/32x32/actions/view-presentation.png
 share/icons/oxygen/32x32/actions/view-preview.png
@@ -3626,6 +3655,12 @@ share/icons/oxygen/32x32/devices/modem.png
 share/icons/oxygen/32x32/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/32x32/devices/multimedia-player.png
 share/icons/oxygen/32x32/devices/network-wired.png
+share/icons/oxygen/32x32/devices/network-wireless-connected-00.png
+share/icons/oxygen/32x32/devices/network-wireless-connected-100.png
+share/icons/oxygen/32x32/devices/network-wireless-connected-25.png
+share/icons/oxygen/32x32/devices/network-wireless-connected-50.png
+share/icons/oxygen/32x32/devices/network-wireless-connected-75.png
+share/icons/oxygen/32x32/devices/network-wireless-disconnected.png
 share/icons/oxygen/32x32/devices/network-wireless.png
 share/icons/oxygen/32x32/devices/pda.png
 share/icons/oxygen/32x32/devices/phone-openmoko-freerunner.png
@@ -4375,9 +4410,11 @@ share/icons/oxygen/48x48/actions/user-group-delete.png
 share/icons/oxygen/48x48/actions/user-group-new.png
 share/icons/oxygen/48x48/actions/user-group-properties.png
 share/icons/oxygen/48x48/actions/user-properties.png
+share/icons/oxygen/48x48/actions/view-calendar-agenda.png
 share/icons/oxygen/48x48/actions/view-calendar-birthday.png
 share/icons/oxygen/48x48/actions/view-calendar-day.png
 share/icons/oxygen/48x48/actions/view-calendar-holiday.png
+share/icons/oxygen/48x48/actions/view-calendar-journal.png
 share/icons/oxygen/48x48/actions/view-calendar-list.png
 share/icons/oxygen/48x48/actions/view-calendar-month.png
 share/icons/oxygen/48x48/actions/view-calendar-special-occasion.png
@@ -4388,6 +4425,7 @@ share/icons/oxygen/48x48/actions/view-calendar-upcoming-days.png
 share/icons/oxygen/48x48/actions/view-calendar-upcoming-events.png
 share/icons/oxygen/48x48/actions/view-calendar-wedding-anniversary.png
 share/icons/oxygen/48x48/actions/view-calendar-week.png
+share/icons/oxygen/48x48/actions/view-calendar-whatsnext.png
 share/icons/oxygen/48x48/actions/view-calendar-workweek.png
 share/icons/oxygen/48x48/actions/view-calendar.png
 share/icons/oxygen/48x48/actions/view-choose.png
@@ -4412,6 +4450,7 @@ share/icons/oxygen/48x48/actions/view-pim-mail.png
 share/icons/oxygen/48x48/actions/view-pim-news.png
 share/icons/oxygen/48x48/actions/view-pim-notes.png
 share/icons/oxygen/48x48/actions/view-pim-summary.png
+share/icons/oxygen/48x48/actions/view-pim-tasks-pending.png
 share/icons/oxygen/48x48/actions/view-pim-tasks.png
 share/icons/oxygen/48x48/actions/view-presentation.png
 share/icons/oxygen/48x48/actions/view-preview.png
@@ -5616,6 +5655,12 @@ share/icons/oxygen/8x8/emblems/emblem-important.png
 share/icons/oxygen/8x8/emblems/emblem-link.png
 share/icons/oxygen/8x8/emblems/emblem-mounted.png
 share/icons/oxygen/8x8/emblems/emblem-unmounted.png
+share/icons/oxygen/8x8/emblems/vcs-added.png
+share/icons/oxygen/8x8/emblems/vcs-conflicting.png
+share/icons/oxygen/8x8/emblems/vcs-locally-modified.png
+share/icons/oxygen/8x8/emblems/vcs-normal.png
+share/icons/oxygen/8x8/emblems/vcs-removed.png
+share/icons/oxygen/8x8/emblems/vcs-update-required.png
 share/icons/oxygen/index.theme
 @dirrmtry share/icons/oxygen/64x64/intl
 @dirrmtry share/icons/oxygen/64x64/filesystems

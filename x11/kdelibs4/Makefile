@@ -59,8 +59,7 @@ USE_GNOME=	libxml2 libxslt
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_FAM:BOOL=Off \
-		-DWITH_ACL:BOOL=Off \
-		-DKDE4_PREFIX:String=${KDE4_PREFIX}
+		-DWITH_ACL:BOOL=Off
 
 MAN1=	checkXML.1 \
 	kde4-config.1 \
