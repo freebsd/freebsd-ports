@@ -243,6 +243,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE
 .if defined(WITH_HTTP_UPLOAD_PROGRESS)
 NGINX_UPLOADPROGRESS_MODULE_VERSION=	0.7
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:uploadprogress/}
+MASTER_SITE_SUBDIR+=	osa/:uploadprogress
 DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}
 .endif
