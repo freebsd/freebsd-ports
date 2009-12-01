@@ -66,6 +66,10 @@ PLIST_SUB+=		X11=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|have_introspection=true|have_introspection=false|g' \
+		${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
 
 .endif
