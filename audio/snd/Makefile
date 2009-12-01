@@ -7,7 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 .if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=	gsl.13:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.14:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--without-gsl
 .endif

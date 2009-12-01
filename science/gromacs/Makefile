@@ -7,6 +7,7 @@
 
 PORTNAME=	gromacs
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -62,7 +63,7 @@ CONFIGURE_ARGS+=	--with-fft=fftpack
 
 .if !defined(WITHOUT_GSL)
 CONFIGURE_ARGS+=	--with-gsl
-LIB_DEPENDS+=	gsl.13:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.14:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--without-gsl
 .endif

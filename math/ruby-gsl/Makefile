@@ -7,7 +7,7 @@
 
 PORTNAME=	gsl
 PORTVERSION=	1.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rb-${PORTNAME}
@@ -18,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Ruby extension library for GSL (GNU Scientific Library)
 
-LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.14:${PORTSDIR}/math/gsl
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
