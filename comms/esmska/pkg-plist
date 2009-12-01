@@ -3,40 +3,52 @@ bin/esmska
 %%DATADIR%%/icons/esmska.ico
 %%DATADIR%%/icons/esmska.png
 %%DATADIR%%/icons/esmska.svg
+%%DATADIR%%/lib/android-vcard-1.0.jar
 %%DATADIR%%/lib/beansbinding-1.2.1.jar
-%%DATADIR%%/lib/commons-cli-1.1.jar
+%%DATADIR%%/lib/commons-cli-1.2.jar
 %%DATADIR%%/lib/commons-codec-1.3.jar
 %%DATADIR%%/lib/commons-httpclient-3.1.jar
 %%DATADIR%%/lib/commons-io-1.4.jar
 %%DATADIR%%/lib/commons-lang-2.4.jar
 %%DATADIR%%/lib/commons-logging-1.1.1.jar
 %%DATADIR%%/lib/javacsv-2.0.jar
-%%DATADIR%%/lib/jpim.jar
 %%DATADIR%%/lib/js-engine.jar
 %%DATADIR%%/lib/js-1.7R1.jar
 %%DATADIR%%/lib/looks-2.1.4.jar
 %%DATADIR%%/lib/org-openide-awt.jar
 %%DATADIR%%/lib/org-openide-util.jar
-%%DATADIR%%/lib/substance-extras-5.0.jar
-%%DATADIR%%/lib/substance-5.1dev081129.jar
+%%DATADIR%%/lib/substance-extras-5.1.jar
+%%DATADIR%%/lib/substance-5.2.jar
 %%DATADIR%%/license/gnu-agpl.txt
 %%DATADIR%%/license/license.txt
 %%DATADIR%%/operators/[CZ]O2.operator
 %%DATADIR%%/operators/[CZ]O2.png
+%%DATADIR%%/operators/[CZ]SMSmania_(O2).operator
+%%DATADIR%%/operators/[CZ]SMSmania_(O2).png
 %%DATADIR%%/operators/[CZ]SMS.cz.operator
 %%DATADIR%%/operators/[CZ]SMS.cz.png
 %%DATADIR%%/operators/[CZ]T-mobile.operator
 %%DATADIR%%/operators/[CZ]T-mobile.png
 %%DATADIR%%/operators/[CZ]t-zones.operator
 %%DATADIR%%/operators/[CZ]t-zones.png
-%%DATADIR%%/operators/[CZ]Vodafone samoobsluha.operator
-%%DATADIR%%/operators/[CZ]Vodafone samoobsluha.png
+%%DATADIR%%/operators/[CZ]Vodafone_samoobsluha.operator
+%%DATADIR%%/operators/[CZ]Vodafone_samoobsluha.png
 %%DATADIR%%/operators/[CZ]Vodafone.operator
 %%DATADIR%%/operators/[CZ]Vodafone.png
+%%DATADIR%%/operators/[DK]CoolSMS_(FriSMS).operator
+%%DATADIR%%/operators/[DK]CoolSMS_(FriSMS).png
+%%DATADIR%%/operators/[DK]CoolSMS_(GratisSMS).operator
+%%DATADIR%%/operators/[DK]CoolSMS_(GratisSMS).png
 %%DATADIR%%/operators/[INT]SMSdiscount.operator
 %%DATADIR%%/operators/[INT]SMSdiscount.png
+%%DATADIR%%/operators/[LT]dos.lt.operator
+%%DATADIR%%/operators/[LT]dos.lt.png
+%%DATADIR%%/operators/[LT]sms4you.operator
+%%DATADIR%%/operators/[LT]sms4you.png
 %%DATADIR%%/operators/[SK]Orange.operator
 %%DATADIR%%/operators/[SK]Orange.png
+%%DATADIR%%/operators/[SK]Orange_(plateny).operator
+%%DATADIR%%/operators/[SK]Orange_(plateny).png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/license
