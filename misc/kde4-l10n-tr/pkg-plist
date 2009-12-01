@@ -367,6 +367,7 @@ share/locale/tr/LC_MESSAGES/ksendemail.mo
 share/locale/tr/LC_MESSAGES/kshisen.mo
 share/locale/tr/LC_MESSAGES/kshorturifilter.mo
 share/locale/tr/LC_MESSAGES/ksirk.mo
+share/locale/tr/LC_MESSAGES/ksirkskineditor.mo
 share/locale/tr/LC_MESSAGES/ksmserver.mo
 share/locale/tr/LC_MESSAGES/ksnapshot.mo
 share/locale/tr/LC_MESSAGES/kspaceduel.mo
@@ -454,6 +455,7 @@ share/locale/tr/LC_MESSAGES/libphonon.mo
 share/locale/tr/LC_MESSAGES/libplasma.mo
 share/locale/tr/LC_MESSAGES/libplasmaclock.mo
 share/locale/tr/LC_MESSAGES/libplasmaweather.mo
+share/locale/tr/LC_MESSAGES/librtm.mo
 share/locale/tr/LC_MESSAGES/libtaskmanager.mo
 share/locale/tr/LC_MESSAGES/lokalize.mo
 share/locale/tr/LC_MESSAGES/lskat.mo

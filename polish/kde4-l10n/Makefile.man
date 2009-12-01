@@ -6,4 +6,8 @@ MAN1=	kappfinder.1 \
 	kdesu.1 \
 	kfind.1 \
 	kmplot.1 \
+	ktouch.1 \
 	plasmaengineexplorer.1
+
+MAN6=	amor.6 \
+	khangman.6

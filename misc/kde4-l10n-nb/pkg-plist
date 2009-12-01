@@ -209,6 +209,8 @@ share/locale/nb/LC_MESSAGES/kappfinder.mo
 share/locale/nb/LC_MESSAGES/kapptemplate.mo
 share/locale/nb/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/nb/LC_MESSAGES/kate.mo
+share/locale/nb/LC_MESSAGES/kate_kttsd.mo
+share/locale/nb/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/nb/LC_MESSAGES/katebuild-plugin.mo
 share/locale/nb/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/nb/LC_MESSAGES/katefilebrowserplugin.mo
@@ -585,6 +587,7 @@ share/locale/nb/LC_MESSAGES/libphonon.mo
 share/locale/nb/LC_MESSAGES/libplasma.mo
 share/locale/nb/LC_MESSAGES/libplasmaclock.mo
 share/locale/nb/LC_MESSAGES/libplasmaweather.mo
+share/locale/nb/LC_MESSAGES/librtm.mo
 share/locale/nb/LC_MESSAGES/libtaskmanager.mo
 share/locale/nb/LC_MESSAGES/lokalize.mo
 share/locale/nb/LC_MESSAGES/lskat.mo

@@ -26,6 +26,7 @@ share/locale/is/LC_MESSAGES/imagerename_plugin.mo
 share/locale/is/LC_MESSAGES/irkick.mo
 share/locale/is/LC_MESSAGES/joystick.mo
 share/locale/is/LC_MESSAGES/juk.mo
+share/locale/is/LC_MESSAGES/kabc.mo
 share/locale/is/LC_MESSAGES/kabc_akonadi.mo
 share/locale/is/LC_MESSAGES/kabc_dir.mo
 share/locale/is/LC_MESSAGES/kabc_file.mo
@@ -48,6 +49,7 @@ share/locale/is/LC_MESSAGES/kate.mo
 share/locale/is/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/is/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/is/LC_MESSAGES/katefiletemplates.mo
+share/locale/is/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/is/LC_MESSAGES/katehelloworld.mo
 share/locale/is/LC_MESSAGES/katehtmltools.mo
 share/locale/is/LC_MESSAGES/katekjswrapper.mo
@@ -222,6 +224,7 @@ share/locale/is/LC_MESSAGES/kio_info.mo
 share/locale/is/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/is/LC_MESSAGES/kio_ldap.mo
 share/locale/is/LC_MESSAGES/kio_man.mo
+share/locale/is/LC_MESSAGES/kio_mbox.mo
 share/locale/is/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/is/LC_MESSAGES/kio_nfs.mo
 share/locale/is/LC_MESSAGES/kio_nntp.mo
@@ -365,7 +368,9 @@ share/locale/is/LC_MESSAGES/kxkb.mo
 share/locale/is/LC_MESSAGES/kxsconfig.mo
 share/locale/is/LC_MESSAGES/kxsldbg.mo
 share/locale/is/LC_MESSAGES/lancelot.mo
+share/locale/is/LC_MESSAGES/libakonadi.mo
 share/locale/is/LC_MESSAGES/libconversion.mo
+share/locale/is/LC_MESSAGES/libkblog.mo
 share/locale/is/LC_MESSAGES/libkcal.mo
 share/locale/is/LC_MESSAGES/libkcddb.mo
 share/locale/is/LC_MESSAGES/libkcompactdisc.mo
@@ -374,13 +379,23 @@ share/locale/is/LC_MESSAGES/libkdeedu.mo
 share/locale/is/LC_MESSAGES/libkdegames.mo
 share/locale/is/LC_MESSAGES/libkdepim.mo
 share/locale/is/LC_MESSAGES/libkholidays.mo
+share/locale/is/LC_MESSAGES/libkimap.mo
+share/locale/is/LC_MESSAGES/libkldap.mo
 share/locale/is/LC_MESSAGES/libkleopatra.mo
 share/locale/is/LC_MESSAGES/libkmahjongg.mo
+share/locale/is/LC_MESSAGES/libkmime.mo
 share/locale/is/LC_MESSAGES/libkonq.mo
+share/locale/is/LC_MESSAGES/libkpimidentities.mo
+share/locale/is/LC_MESSAGES/libkpimtextedit.mo
+share/locale/is/LC_MESSAGES/libkpimutils.mo
+share/locale/is/LC_MESSAGES/libkresources.mo
 share/locale/is/LC_MESSAGES/libksane.mo
 share/locale/is/LC_MESSAGES/libkscreensaver.mo
 share/locale/is/LC_MESSAGES/libksieve.mo
+share/locale/is/LC_MESSAGES/libktnef.mo
 share/locale/is/LC_MESSAGES/libkworkspace.mo
+share/locale/is/LC_MESSAGES/libkxmlrpcclient.mo
+share/locale/is/LC_MESSAGES/libmailtransport.mo
 share/locale/is/LC_MESSAGES/libocsclient.mo
 share/locale/is/LC_MESSAGES/liboktetacore.mo
 share/locale/is/LC_MESSAGES/libphonon.mo

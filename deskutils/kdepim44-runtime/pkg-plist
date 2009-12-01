@@ -10,8 +10,6 @@ bin/akonadi_kolabproxy_resource
 bin/akonadi_localbookmarks_resource
 bin/akonadi_maildir_resource
 bin/akonadi_microblog_resource
-bin/akonadi_nepomuk_contact_feeder
-bin/akonadi_nepomuk_email_feeder
 bin/akonadi_nepomuktag_resource
 bin/akonadi_nntp_resource
 bin/akonadi_strigi_feeder
@@ -66,8 +64,6 @@ share/akonadi/agents/kolabproxyresource.desktop
 share/akonadi/agents/localbookmarksresource.desktop
 share/akonadi/agents/maildirresource.desktop
 share/akonadi/agents/microblog.desktop
-share/akonadi/agents/nepomukcontactfeeder.desktop
-share/akonadi/agents/nepomukemailfeeder.desktop
 share/akonadi/agents/nepomuktagresource.desktop
 share/akonadi/agents/nntpresource.desktop
 share/akonadi/agents/notesresource.desktop

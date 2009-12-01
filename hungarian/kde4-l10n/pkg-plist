@@ -367,6 +367,7 @@ share/locale/hu/LC_MESSAGES/kappfinder.mo
 share/locale/hu/LC_MESSAGES/kapptemplate.mo
 share/locale/hu/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/hu/LC_MESSAGES/kate.mo
+share/locale/hu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/hu/LC_MESSAGES/katebuild-plugin.mo
 share/locale/hu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/hu/LC_MESSAGES/katefilebrowserplugin.mo
@@ -631,6 +632,7 @@ share/locale/hu/LC_MESSAGES/krandr.mo
 share/locale/hu/LC_MESSAGES/krdb.mo
 share/locale/hu/LC_MESSAGES/krdc.mo
 share/locale/hu/LC_MESSAGES/kreadconfig.mo
+share/locale/hu/LC_MESSAGES/kres-migrator.mo
 share/locale/hu/LC_MESSAGES/kres_birthday.mo
 share/locale/hu/LC_MESSAGES/kres_blog.mo
 share/locale/hu/LC_MESSAGES/kres_bugzilla.mo
@@ -641,6 +643,7 @@ share/locale/hu/LC_MESSAGES/kres_remote.mo
 share/locale/hu/LC_MESSAGES/kres_scalix.mo
 share/locale/hu/LC_MESSAGES/kres_tvanytime.mo
 share/locale/hu/LC_MESSAGES/kres_xmlrpc.mo
+share/locale/hu/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/hu/LC_MESSAGES/kreversi.mo
 share/locale/hu/LC_MESSAGES/krfb.mo
 share/locale/hu/LC_MESSAGES/kruler.mo
