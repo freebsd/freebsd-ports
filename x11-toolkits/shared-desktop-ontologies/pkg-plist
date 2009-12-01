@@ -1,0 +1,46 @@
+libdata/pkgconfig/shared-desktop-ontologies.pc
+share/cmake/SharedDesktopOntologies/SharedDesktopOntologiesConfig.cmake
+share/cmake/SharedDesktopOntologies/SharedDesktopOntologiesConfigVersion.cmake
+share/ontology/core/rdf.ontology
+share/ontology/core/rdf.trig
+share/ontology/core/rdfs.ontology
+share/ontology/core/rdfs.trig
+share/ontology/dc/dces.ontology
+share/ontology/dc/dces.trig
+share/ontology/dc/dcterms.ontology
+share/ontology/dc/dcterms.trig
+share/ontology/dc/dctype.ontology
+share/ontology/dc/dctype.trig
+share/ontology/nepomuk/nao.ontology
+share/ontology/nepomuk/nao.trig
+share/ontology/nepomuk/nrl.ontology
+share/ontology/nepomuk/nrl.trig
+share/ontology/nepomuk/nso.ontology
+share/ontology/nepomuk/nso.trig
+share/ontology/nie/ncal.ontology
+share/ontology/nie/ncal.trig
+share/ontology/nie/nco.ontology
+share/ontology/nie/nco.trig
+share/ontology/nie/nexif.ontology
+share/ontology/nie/nexif.trig
+share/ontology/nie/nfo.ontology
+share/ontology/nie/nfo.trig
+share/ontology/nie/nid3.ontology
+share/ontology/nie/nid3.trig
+share/ontology/nie/nie.ontology
+share/ontology/nie/nie.trig
+share/ontology/nie/nmm.ontology
+share/ontology/nie/nmm.trig
+share/ontology/nie/nmo.ontology
+share/ontology/nie/nmo.trig
+share/ontology/pimo/pimo.ontology
+share/ontology/pimo/pimo.trig
+share/ontology/pimo/tmo.ontology
+share/ontology/pimo/tmo.trig
+@dirrm share/ontology/pimo
+@dirrm share/ontology/nie
+@dirrm share/ontology/nepomuk
+@dirrm share/ontology/dc
+@dirrm share/ontology/core
+@dirrm share/ontology
+@dirrm share/cmake/SharedDesktopOntologies

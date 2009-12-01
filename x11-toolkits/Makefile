@@ -264,6 +264,7 @@
     SUBDIR += scintilla
     SUBDIR += sdl_gui
     SUBDIR += sdl_pango
+    SUBDIR += shared-desktop-ontologies
     SUBDIR += slgtk
     SUBDIR += slgtkdatabox
     SUBDIR += slingshot

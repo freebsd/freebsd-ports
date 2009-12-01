@@ -1,0 +1,6 @@
+The shared-desktop-ontologies package brings the semantic web to
+the desktop in terms of vocabulary. It contains the well known core
+ontologies such as RDF and RDFS as well as the Nepomuk ontologies
+which are used by projects like KDE or Strigi.
+
+WWW:	http://oscaf.sourceforge.net
