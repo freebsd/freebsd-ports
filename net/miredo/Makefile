@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		miredo
-PORTVERSION=	 	1.1.7
-PORTREVISION=		1
+PORTVERSION=	 	1.2.2
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 
@@ -38,10 +37,4 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
