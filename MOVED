@@ -456,7 +456,6 @@ devel/ptl||2003-08-07|port was marked broken for 3 months with no fix submitted
 lang/wxbasic||2003-08-07|port was marked broken for 3 months with no fix submitted
 math/siag||2003-08-07|port was marked broken for 3 months with no fix submitted
 net/samba-tng||2003-08-07|port was marked broken for 3 months with no fix submitted
-print/xpp||2003-08-07|port was marked broken for 3 months with no fix submitted
 www/viewml||2003-08-07|port was marked broken for 3 months with no fix submitted
 x11/wscan||2003-08-07|port was marked broken for 3 months with no fix submitted
 x11-toolkits/ruby-fltk||2003-08-07|port was marked broken for 3 months with no fix submitted
@@ -619,7 +618,6 @@ lang/jgnat-doc-ps||2003-11-03|Broken and not supported by ACT
 lang/jgnat-doc-txt||2003-11-03|Broken and not supported by ACT
 devel/amulet||2003-11-03|Development stopped in 1998; see OpenAmulet instead
 german/cheapcall||2003-11-03|Mastersite disappeared, author no longer available
-news/pan|news/pan2|2003-11-03|Stable release can be found in news/pan2
 misc/solfege|audio/solfege|2003-11-05|better category
 print/pktrace|print/mftrace|2003-11-05|program renamed
 databases/mysql-jdbc-mm|databases/mysql-connector-java|2003-11-05|renamed
@@ -754,7 +752,6 @@ java/xalan-j|textproc/xalan-j|2004-01-22|moved to textproc category
 x11-toolkits/render|x11/renderext|2004-01-24|moved to x11 category
 x11-toolkits/xrender|x11/libXrender|2004-01-24|moved to x11 category
 net/py-rrdtool||2004-01-28|mastersite disappeared and functionality exists in net/py-rrdtool_lgpl
-graphics/sketch|graphics/skencil|2004-01-28|Project renamed
 devel/linux-atk|accessibility/linux-atk|2004-01-29|new category
 lang/ifc8||2004-01-31|should be updated in ifc
 net/forgate|net/4g8|2004-02-01|Project renamed
@@ -1011,7 +1008,6 @@ security/libgcrypt-devel|security/libgcrypt|2004-05-03|1.2.0 is now the new stab
 security/newpg|security/gnupg-devel|2004-05-03|newpg replaced by gnupg-devel
 graphics/p5-GD1|graphics/p5-GD|2004-05-01|removed (obsolete)
 japanese/gd1|japanese/gd|2004-05-01|removed (obsolete)
-russian/gd|ukrainian/gd|2004-05-01|removed (obsolete)
 graphics/gd1|graphics/gd|2004-05-01|removed (obsolete)
 lang/pike75|lang/pike76|2004-05-06|finished repocopy
 net/coda_doc||2004-05-07|finished removing coda 4.x
@@ -1470,7 +1466,6 @@ emulators/linux_base-6||2005-06-10|security bugs
 www/netscape7||2005-06-10|security bugs
 devel/p5-File-Spec|devel/p5-PathTools|2005-06-11|module was merged with Cwd and renamed
 textproc/p5-PodParser|textproc/p5-Pod-Parser|2005-06-11|module was renamed
-graphics/ruby-evas|graphics/ruby-evas|2005-06-16|out of date, and not compatible with new evas
 arabic/openoffice-1.1||2005-06-29|localized version should be built via knob
 chinese/openoffice-1.0-zh_CN||2005-06-29|no longer maintained
 chinese/openoffice-1.0-zh_TW||2005-06-29|no longer maintained
@@ -2021,7 +2016,6 @@ x11-toolkits/freeglut|graphics/freeglut|2006-01-16|Move to category where libglu
 databases/myodbc|databases/mysql-connector-odbc|2006-01-17|Now called MySQL Connector ODBC
 devel/p5-release|devel/p5-Module-Release|2006-01-23|module was renamed
 www/zope31|www/zope3|2006-01-23|Renamed to zope3 when updated to 3.2
-mail/qmailadmin-devel|mail/qmailadmin|2006-01-27|Devel releases are no longer maintained
 databases/py-PySQLite2|databases/py-pysqlite20|2006-01-27|Moved
 ftp/jigdo|net-p2p/jigdo|2006-01-30|Moved to new category
 net/amule1|net-p2p/amule1|2006-01-30|Moved to new category
@@ -2199,7 +2193,6 @@ math/xwpl||2006-03-31|Has expired: source not available and no recent binary
 sysutils/nwclient||2006-03-31|Removed due to security problems
 sysutils/nwclient602||2006-03-31|Removed due to security problems
 lang/ruby18-nopthreads||2006-03-31|Removed since pthread support of ruby18 is disabled by default
-net-mgmt/nfdump-devel|net-mgmt/nfdump|2006-04-02|Development port no longer needed
 devel/py-twistedXish|net-im/py-twistedWords|2006-04-05|Incorporated into net-im/py-twistedWords
 devel/upp602|devel/upp|2006-04-05|Was created in a bad directory
 textproc/pyenchant|textproc/py-enchant|2006-04-06|Rename to consistency with other Python ports
@@ -2225,9 +2218,7 @@ java/diablo-jdk13||2006-04-24|Removed due to security problems and no longer bei
 java/diablo-jre13||2006-04-24|Removed due to security problems and no longer being distributed
 audio/gstreamer-plugins-artsd|audio/gstreamer-plugins-artsd80|2006-04-29|Not part of gstreamer 0.10 yet
 audio/gstreamer-plugins-audiofile|audio/gstreamer-plugins-audiofile80|2006-04-29|Not part of gstreamer 0.10 yet
-sysutils/gstreamer-plugins-cdio|sysutils/gstreamer-plugins-cdio80|2006-04-29|Not part of gstreamer 0.10 yet
 multimedia/gstreamer-plugins-dirac|multimedia/gstreamer-plugins-dirac80|2006-04-29|Not part of gstreamer 0.10 yet
-graphics/gstreamer-plugins-gdkpixbuf|graphics/gstreamer-plugins-gdkpixbuf80|2006-04-29|Not part of gstreamer 0.10 yet
 graphics/gstreamer-plugins-hermes|graphics/gstreamer-plugins-hermes80|2006-04-29|Not part of gstreamer 0.10 yet
 multimedia/gstreamer-plugins-libfame|multimedia/gstreamer-plugins-libfame80|2006-04-29|Not part of gstreamer 0.10 yet
 graphics/gstreamer-plugins-libmng|graphics/gstreamer-plugins-libmng80|2006-04-29|Not part of gstreamer 0.10 yet
@@ -2353,7 +2344,6 @@ www/linux-flashplugin6||2006-06-14|Has expired: "This port has known security fl
 lang/glibstdc++28||2006-06-18|Has expired: Use any variant of lang/gcc that is less than six years old instead
 graphics/magickwand|graphics/php-magickwand|2006-06-18|Already in the tree with the name graphics/php-magickwand
 devel/p5-Filesys-Statvfs_Df|sysutils/p5-Filesys-Statvfs|2006-06-19|Vendor split port into 2 separate modules: sysutils/p5-Filesys-Statvfs and sysutils/p5-Filesys-Df
-www/opera-devel|www/opera|2006-06-20|Merged into the stable port
 archivers/bsdtar|archivers/libarchive|2006-06-20|Merged into the libarchive port
 lang/fpc2||2006-06-21|Removed because lang/fpc will be updated to 2.x
 devel/fpc-gdb||2006-06-21|Obsoleted after lang/fpc was updated to 2.0.2
@@ -2381,7 +2371,6 @@ sysutils/lineak_xosdplugin|sysutils/lineak-xosdplugin|2006-07-09|port name chang
 japanese/phpgroupware||2006-04-10|removed at maintainer request (is broken and has vulnerabilities)
 www/p5-Catalyst|www/p5-Catalyst-Runtime|2006-07-10|follow CPAN split of package
 textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-07-12|The textproc/p5-YAML-Syck port now includes JSON functionality
-x11/settitle||2006-07-14|Has expired: Download unavailable anymore
 net-im/simicq|net-im/sim-im|2006-07-15|renamed
 cad/gschem|cad/geda-gschem|2006-07-16|renamed
 cad/gnetlist|cad/geda-netlist|2006-07-16|renamed
@@ -2891,11 +2880,9 @@ emulators/kmamerun||2007-04-10|Has expired: Project was abandoned 4 years ago an
 japanese/firefox-ja||2007-04-10|Has expired: Incomplete pkg-plist
 japanese/lookup-xemacs||2007-04-10|Has expired: Does not install
 lang/linux-hla||2007-04-10|Has expired: Does not compile
-mail/vmailmgr||2007-04-10|Has expired: Incomplete pkg-plist
 multimedia/qvamps||2007-04-10|Has expired: Touches filesystem prior to 'make install'
 net-mgmt/sting||2007-04-10|Has expired: Broken on all supported versions of FreeBSD
 net-mgmt/tas||2007-04-10|Has expired: Incomplete pkg-plist
-net-p2p/verlihub-plugins||2007-04-10|Has expired: Does not configure, it needs at least verlihub 1.0
 news/inn-stable||2007-04-10|Has expired: Fails to patch
 palm/malsync||2007-04-10|Has expired: Does not build with new pilot-link
 russian/elm.language||2007-04-10|Has expired: Leaves behind files on deinstall
@@ -2924,7 +2911,6 @@ chinese/mldonkey-core||2007-04-26|Obsoleted by net-p2p/mldonkey version 2.8.5
 graphics/gstreamer-plugins-libcaca80||2007-04-29|Obsoleted, use 0.10.x version instead
 devel/make||2007-04-29|Port was only useful on FreeBSD 4.x
 multimedia/libdts|multimedia/libdca|2007-05-01|Project renamed
-dns/dnscap||2007-05-03|Removed on authors request until it has reached stability
 net-im/libgaim|net-im/libpurple|2007-05-03|Project renamed
 net-im/gaim-devel|net-im/pidgin|2007-05-03|Project renamed
 net-im/gaim-consoleui-devel|net-im/finch|2007-05-03|Project renamed
@@ -2936,7 +2922,6 @@ x11/xorg-clients|x11/xorg-apps|2007-05-19|Rename to new xorg-apps meta-port
 x11/libXfont|x11-fonts/libXfont|2007-05-19|Move to the x11-fonts category
 x11-servers/xorg-fontserver|x11-fonts/xfs|2007-05-19|Rename to follow X.org name
 x11/xlibs|x11/xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
-multimedia/ffmpeg-devel|multimedia/ffmpeg|2007-05-25|Merged multimedia/ffmpeg-devel into multimedia/ffmpeg
 devel/wfut||2007-05-27|Obsolete
 net-im/gaim-hotkeys|net-im/pidgin-hotkeys|2007-05-28|Project renamed
 devel/ruby-inline||2007-05-28|Has expired: New versions only available in rubygems. Use devel/rubygem-inline instead
@@ -3004,7 +2989,6 @@ multimedia/py-gstreamer80|multimedia/py-gstreamer|2007-06-01|Gstreamer 0.8 has b
 net/gstreamer-plugins-libmms80|net/gstreamer-plugins-libmms|2007-06-01|Gstreamer 0.8 has been removed
 sysutils/gstreamer-plugins-cdio80||2007-06-01|Gstreamer 0.8 has been removed
 x11-toolkits/gstreamer-plugins-pango80|x11-toolkits/gstreamer-plugins-pango|2007-06-01|Gstreamer 0.8 has been removed
-audio/goobox||2007-06-01|Gstreamer 0.8 has been removed
 audio/jamboree||2007-06-01|Gstreamer 0.8 has been removed
 audio/klira||2007-06-01|Gstreamer 0.8 has been removed
 audio/lindele||2007-06-01|Gstreamer 0.8 has been removed
@@ -3126,7 +3110,6 @@ www/p5-Kwiki-Icons-Gnome||2007-08-01|Has expired: already bundled in www/p5-Kwik
 x11-fm/endeavour||2007-08-01|Has expired: Development ceased, this port should be updated to Endeavour Mark II
 security/p5-openxpki-client-soap-lite||2007-08-01|Has expired: No longer maintained by developers
 net-mgmt/aircrack|net-mgmt/aircrack-ng|2007-08-01|Has expired: Please use net-mgmt/aircrack-ng
-databases/ruby-postgres|databases/rubygem-postgres|2007-08-03|Port updated in rubygem version
 editors/flim113||2007-08-05|Expired: distfile no longer available
 editors/semi113||2007-08-05|Expired: distfile no longer available
 deskutils/intclock|x11-clocks/intclock|2007-08-08|Moved to a more appropriate category
@@ -3304,7 +3287,6 @@ security/p5-Digest-SHA2||2007-10-16|Has expired: Has numerous known bugs, deprec
 devel/p5-Devel-Peek||2007-10-16|Has expired: depends on antique versions of perl
 devel/bison2|devel/bison|2007-10-17|Bison 1.x to 2.x conversion
 games/actioncube|games/assaultcube|2007-10-19|Project name changed
-x11-fm/pcmanfm||2007-10-21|Has expired: Unmaintained upstream
 graphics/gimp-devel|graphics/gimp|2007-10-24|Gimp 2.4.0 released
 graphics/gimp-app-devel|graphics/gimp-app|2007-10-24|Gimp 2.4.0 released
 print/gimp-devel-gutenprint|print/gimp-gutenprint|2007-10-24|Gimp 2.4.0 released
@@ -3421,7 +3403,6 @@ www/scout||2008-03-12|Has expired: Abandonware, website disappeared.
 security/nmapfe|security/zenmap|2008-03-14|Project renamed
 x11/hs-x11-extras-ghc||2008-03-14|Has expired: Use x11/hs-x11-ghc instead
 www/mod_dosevasise20||2008-03-14|Has expired: Use www/mod_evasive20 instead
-textproc/p5-Text-ParseWords||2008-03-16|Module included in core perl
 devel/hc12mem|devel/hcs12mem|2008-03-17|Project renamed
 mail/claws-mail-maildir||2008-03-21|Has expired: no longer supported by developers
 x11/e17-module-devian||2008-03-21|Has expired: abandoned by developer
@@ -3460,7 +3441,6 @@ arabic/katoob||2008-04-30|Removed on maintainers request due to inactivity of pr
 security/drupal4-ldap_integration||2008-04-30|Removed due to being broken and clearly not used
 www/neon|www/neon26|2008-05-05|Moved to be able to integrate www/neon26
 ports-mgmt/instant-tinderbox||2008-05-07|No longer functional in the current infrastructure
-x11-toolkits/gtkdatabox|x11-toolkits/gtkdatabox2|2008-05-08|This old version has been superseeded by x11-toolkits/gtkdatabox2
 devel/swigruby||2008-05-11|Has expired: use devel/swig13 instead, last release was 8 years ago
 japanese/epson-ttfonts||2008-05-12|Removed because of extremely restrictive license
 x11-servers/xorg-printserver||2008-05-15|Has expired, software is obsolete
@@ -3487,7 +3467,6 @@ emulators/linux-winetools||2008-06-18|Has expired: very old, discontinued, and r
 games/linux-x-plane||2008-06-18|Relies on expired, unfetchable installer port
 games/linux-x-plane-net-installer||2008-06-18|Has expired: unfetchable
 japanese/vje30||2008-06-18|Has expired: depends on forbidden port misc/compat3x
-math/sc||2008-06-18|Has expired: distfile disappeared
 math/umfpack||2008-06-18|Has expired: Outdated subset of math/suitesparse
 net/apache-soap||2008-06-18|Has expired: Development has been ceased, superseded by www/axis.
 net/archie||2008-06-18|Has expired: No servers active anymore
@@ -3536,7 +3515,6 @@ chinese/php_doc-hk||2008-08-04|Manual in this language was removed
 chinese/php_doc-tw||2008-08-04|Manual in this language was removed
 chinese/php_doc-zh||2008-08-04|Manual in this language was removed
 hungarian/php_doc||2008-08-04|Manual in this language was removed
-korean/php_doc|korean/php_doc|2008-08-04|Manual in this language was (temporary) removed
 mbone/rtpmon||2008-08-16|Abandoned upstream and needs gcc32 which is going to be removed
 games/ssc||2008-08-16|Abandoned upstream and needs gcc32 which is going to be removed
 mail/mutt-ng||2008-08-18|Has expired: Abandonware by upstream maintainers. Use mail/mutt-devel
@@ -3588,7 +3566,6 @@ print/ghostscript-gnu-nox11|print/ghostscript7-nox11|2008-09-05|Renamed for bett
 print/ghostscript-gnu-commfont|print/ghostscript7-commfont|2008-09-05|Renamed for better naming
 japanese/ghostscript-gnu-jpnfont|print/ghostscript7-jpnfont|2008-09-05|Renamed for better naming
 korean/ghostscript-gnu-korfont|print/ghostscript7-korfont|2008-09-05|Renamed for better naming
-print/ghostscript-gpl|print/ghostscript8|2008-09-05|Renamed for better naming
 print/ghostscript-gpl-nox11|print/ghostscript8-nox11|2008-09-05|Renamed for better naming
 chinese/acroread-zh_CN|chinese/acroread8-zh_CN|2008-09-06|Removed because of security vulnerability
 chinese/acroread-zh_TW|chinese/acroread8-zh_TW|2008-09-06|Removed because of security vulnerability
@@ -3663,7 +3640,6 @@ emulators/linux_base-gentoo-stage2||2008-11-24|Removed
 emulators/linux_dist-gentoo-stage2||2008-11-24|Removed
 mail/libspf-alt||2008-12-03|Removed
 portuguese/aspell|portuguese/aspell-pt_PT|2008-12-07|Repocopy finished for proper package naming
-x11-wm/flwm||2008-12-07|Has expired: Project is dead, and uses obsolete version of fltk
 x11-wm/kahakai||2008-12-07|Has expired: "Development ceased"
 palm/synce-gnomevfs||2008-12-07|Has expired: No longer supported by developers
 palm/synce-kde||2008-12-07|Has expired: No longer supported by developers
@@ -3676,7 +3652,6 @@ japanese/escpf||2008-12-07|Has expired: Has been broken for more than 6 months
 java/java-gcj-compat||2008-12-07|Has expired: Has been broken for more than 6 months
 lang/screamer||2008-12-07|Has expired: Has been broken for more than 6 months
 misc/documancer||2008-12-07|Has expired: Unmaintained upstream
-misc/ipbt||2008-12-07|Has expired: Has been broken for more than 6 months
 multimedia/manslide||2008-12-07|Has expired: Use multimedia/smile instead
 net/globus4||2008-12-07|Has expired: Has been broken for more than 6 months
 net/p5-Parallel-MPI||2008-12-07|Has expired: Has been broken for more than 6 months
@@ -3971,7 +3946,6 @@ net-p2p/deluge05||2009-06-05|Has expired: use net-p2p/deluge instead
 textproc/gmat||2009-06-05|Has expired: failed to build for a long time, no maintainer and apparently no users either
 devel/powerpc-gcc||2009-06-06|Has expired: use cross-gcc instead
 devel/powerpc-binutils||2009-06-06|Has expired: use cross-binutils instead
-x11-wm/enlightenment|x11-wm/e16|2009-06-07|Renamed
 www/apache-jserv|www/tomcat6|2009-06-08|Has expired: superceeded by tomcat
 lang/perl5.6||2009-06-08|Has expired: no longer under development, use lang/perl5.10 or lang/perl5.8
 multimedia/dplay|multimedia/playd|2009-06-10|Port renamed
@@ -4026,7 +4000,6 @@ news/inn-current||2009-06-13|Removed
 science/elmerfront||2009-06-13|Removed
 science/openfoam||2009-06-13|Removed
 www/cacheboy||2009-06-13|Removed
-www/gforge||2009-06-13|Removed
 www/p5-HTML-Embperl||2009-06-13|Removed
 www/thttpd-st||2009-06-13|Removed
 www/toofpy||2009-06-13|Removed
@@ -4238,4 +4211,3 @@ x11-toolkits/gtkscintilla||2009-11-30|Has expired: no longer under development, 
 x11-toolkits/py-gtkscintilla||2009-11-30|Has expired: no longer under development, last release in 2002
 www/xulrunner|www/libxul|2009-12-02|Superseded by www/libxul
 secuirty/nettel2|security/nettel|2009-12-02|Please use security/nettel
-
