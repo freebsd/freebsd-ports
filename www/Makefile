@@ -1804,7 +1804,6 @@
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
     SUBDIR += xsp
-    SUBDIR += xulrunner
     SUBDIR += yabb
     SUBDIR += yahoo-ui
     SUBDIR += yanopaste
