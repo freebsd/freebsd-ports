@@ -159,6 +159,7 @@
     SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva
+    SUBDIR += chrpath
     SUBDIR += cil
     SUBDIR += cl-asdf
     SUBDIR += cl-asdf-clisp

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-12-01 20:39:04.000000000 +0000
++++ Makefile.in	2009-12-01 20:39:13.000000000 +0000
+@@ -66,7 +66,7 @@
+ 
+ SUBDIRS = testsuite deb
+ 
+-docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/$(PACKAGE)
+ 
+ doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README
+ 
