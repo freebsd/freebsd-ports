@@ -366,6 +366,7 @@
     SUBDIR += isomaster
     SUBDIR += isomd5sum
     SUBDIR += ispman
+    SUBDIR += istatd
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jailer

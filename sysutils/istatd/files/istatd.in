@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: istatd
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# istatd_enable (bool):   Set to NO by default.
+#               Set it to YES to enable istatd.
+#
+
+. %%RC_SUBR%%
+
+name="istatd"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config $name
+
+: ${istatd_enable="NO"}
+: ${istatd_config="%%PREFIX%%/etc/istat.conf"}
+
+command_args="-d -c $istatd_config"
+
+run_rc_command "$1"
+
