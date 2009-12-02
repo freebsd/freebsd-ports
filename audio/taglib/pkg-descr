@@ -1,4 +1,6 @@
-taglib is a fast, lightweight, library for manipulating ID3v1 and ID3v2 tags in 
-MP3 and OGG formatted audio files.
- 
-WWW: http://ktown.kde.org/~wheeler/taglib.html
+TagLib is a library for reading and editing the meta-data of several popular
+audio formats. Currently it supports both ID3v1 and ID3v2 for MP3 files, Ogg
+Vorbis comments and ID3 tags and Vorbis comments in FLAC, MPC, Speex, WavPack
+and TrueAudio files.
+
+WWW: http://developer.kde.org/~wheeler/taglib.html
