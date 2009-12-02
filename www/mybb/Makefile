@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mybb
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.mybboard.net/download/latest/
-DISTNAME=	${PORTNAME}_1409
+DISTNAME=	${PORTNAME}_1410
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP-based bulletin board / discussion forum system

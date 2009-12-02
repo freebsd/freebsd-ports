@@ -500,6 +500,7 @@
 %%WWWDIR%%/inc/functions_post.php
 %%WWWDIR%%/inc/functions_rebuild.php
 %%WWWDIR%%/inc/functions_search.php
+%%WWWDIR%%/inc/functions_serverstats.php
 %%WWWDIR%%/inc/functions_task.php
 %%WWWDIR%%/inc/functions_time.php
 %%WWWDIR%%/inc/functions_upload.php
