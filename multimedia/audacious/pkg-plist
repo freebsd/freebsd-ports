@@ -1,15 +1,14 @@
+bin/audacious
 bin/audacious2
+%%WITH_DBUS%%bin/audtool
 %%WITH_DBUS%%bin/audtool2
 %%WITH_DBUS%%include/audacious/audctrl.h
 include/audacious/audconfig.h
 include/audacious/auddrct.h
-include/audacious/audtag.h
-include/audacious/audutil.h
 include/audacious/configdb.h
 include/audacious/custom_uri.h
 include/audacious/dbus.h
 include/audacious/dbus-service.h
-include/audacious/discovery.h
 include/audacious/equalizer_preset.h
 include/audacious/eventqueue.h
 include/audacious/flow.h
@@ -22,262 +21,53 @@ include/audacious/main.h
 include/audacious/mime.h
 include/audacious/output.h
 include/audacious/playback.h
-include/audacious/playlist.h
 include/audacious/playlist_container.h
 include/audacious/plugin.h
 include/audacious/preferences.h
 include/audacious/rcfile.h
-include/audacious/scanner.h
 include/audacious/ui_fileinfopopup.h
 include/audacious/ui_plugin_menu.h
 include/audacious/ui_preferences.h
 include/audacious/util.h
-include/audacious/vis_runner.h
 include/libSAD/libSAD.h
 include/libSAD/common.h
 include/libSAD/dither.h
 include/libaudcore/audstrings.h
+include/libaudcore/index.h
+include/libaudcore/stringpool.h
 include/libaudcore/tuple.h
 include/libaudcore/tuple_compiler.h
 include/libaudcore/tuple_formatter.h
+include/libaudcore/log.h
+include/libaudcore/md5.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_buffer.h
 include/libaudcore/vfs_buffered_file.h
+include/libaudgui/libaudgui.h
+include/libaudtag/audtag.h
+include/libaudtag/util.h
 %%WITH_DBUS%%lib/libaudclient.so
 %%WITH_DBUS%%lib/libaudclient.so.2
 %%WITH_DBUS%%lib/libaudclient.so.2.0.0
 lib/libaudcore.so
 lib/libaudcore.so.1
 lib/libaudcore.so.1.0.0
+lib/libaudgui.so
+lib/libaudgui.so.1
+lib/libaudgui.so.1.0.0
 lib/libaudid3tag.so
 lib/libaudid3tag.so.2
 lib/libaudid3tag.so.2.0.0
 lib/libaudtag.so
 lib/libaudtag.so.1
 lib/libaudtag.so.1.0.0
-lib/libaudutil.so
-lib/libaudutil.so.1
-lib/libaudutil.so.1.0.0
 lib/libSAD.so
 lib/libSAD.so.2
 lib/libSAD.so.2.0.0
 libdata/pkgconfig/audacious.pc
 libdata/pkgconfig/audclient.pc
 share/applications/audacious2.desktop
-%%DATADIR%%/Skins/Classic/balance.png
-%%DATADIR%%/Skins/Classic/cbuttons.png
-%%DATADIR%%/Skins/Classic/eq_ex.png
-%%DATADIR%%/Skins/Classic/eqmain.png
-%%DATADIR%%/Skins/Classic/main.png
-%%DATADIR%%/Skins/Classic/monoster.png
-%%DATADIR%%/Skins/Classic/nums_ex.png
-%%DATADIR%%/Skins/Classic/playpaus.png
-%%DATADIR%%/Skins/Classic/pledit.png
-%%DATADIR%%/Skins/Classic/pledit.txt
-%%DATADIR%%/Skins/Classic/posbar.png
-%%DATADIR%%/Skins/Classic/shufrep.png
-%%DATADIR%%/Skins/Classic/skin.hints
-%%DATADIR%%/Skins/Classic/skin-classic.hints
-%%DATADIR%%/Skins/Classic/text.png
-%%DATADIR%%/Skins/Classic/titlebar.png
-%%DATADIR%%/Skins/Classic/viscolor.txt
-%%DATADIR%%/Skins/Classic/volume.png
-%%DATADIR%%/Skins/Classic1.3/balance.png
-%%DATADIR%%/Skins/Classic1.3/cbuttons.png
-%%DATADIR%%/Skins/Classic1.3/eq_ex.png
-%%DATADIR%%/Skins/Classic1.3/eqmain.png
-%%DATADIR%%/Skins/Classic1.3/main.png
-%%DATADIR%%/Skins/Classic1.3/monoster.png
-%%DATADIR%%/Skins/Classic1.3/nums_ex.png
-%%DATADIR%%/Skins/Classic1.3/playpaus.png
-%%DATADIR%%/Skins/Classic1.3/pledit.png
-%%DATADIR%%/Skins/Classic1.3/pledit.txt
-%%DATADIR%%/Skins/Classic1.3/posbar.png
-%%DATADIR%%/Skins/Classic1.3/shufrep.png
-%%DATADIR%%/Skins/Classic1.3/skin-classic.hints
-%%DATADIR%%/Skins/Classic1.3/skin.hints
-%%DATADIR%%/Skins/Classic1.3/text.png
-%%DATADIR%%/Skins/Classic1.3/titlebar.png
-%%DATADIR%%/Skins/Classic1.3/viscolor.txt
-%%DATADIR%%/Skins/Classic1.3/volume.png
-%%DATADIR%%/Skins/Default/cbuttons.png
-%%DATADIR%%/Skins/Default/eq_ex.png
-%%DATADIR%%/Skins/Default/eqmain.png
-%%DATADIR%%/Skins/Default/main.png
-%%DATADIR%%/Skins/Default/monoster.png
-%%DATADIR%%/Skins/Default/nums_ex.png
-%%DATADIR%%/Skins/Default/playpaus.png
-%%DATADIR%%/Skins/Default/pledit.png
-%%DATADIR%%/Skins/Default/pledit.txt
-%%DATADIR%%/Skins/Default/posbar.png
-%%DATADIR%%/Skins/Default/shufrep.png
-%%DATADIR%%/Skins/Default/skin.hints
-%%DATADIR%%/Skins/Default/text.png
-%%DATADIR%%/Skins/Default/titlebar.png
-%%DATADIR%%/Skins/Default/viscolor.txt
-%%DATADIR%%/Skins/Default/volume.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Arrows/arrow-down.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Arrows/arrow-insens.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Arrows/arrow-left.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Arrows/arrow-right.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Arrows/arrow-up.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Buttons/button-insensitive.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Buttons/button-normal.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Buttons/button-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/check1.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/check2.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/check3.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/check4.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/check5.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/check6.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/option1.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/option2.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/option3.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/option4.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/option5.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio/option6.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Frame-Gap/frame-gap-end.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Frame-Gap/frame-gap-start.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Frame-Gap/frame.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Handles/handle-h.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Handles/handle-v.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Lines/line-h.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Lines/line-v.png
-%%DATADIR%%/Skins/Default/gtk-2.0/ListHeaders/list_header-insens.png
-%%DATADIR%%/Skins/Default/gtk-2.0/ListHeaders/list_header-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/ListHeaders/list_header-pressed.png
-%%DATADIR%%/Skins/Default/gtk-2.0/ListHeaders/list_header.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Menu-Menubar/menu.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Menu-Menubar/menubar-item-active.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Menu-Menubar/menubar-item.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Menu-Menubar/menubar.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Others/null.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Others/ruler.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Panel/panel-bg.png
-%%DATADIR%%/Skins/Default/gtk-2.0/ProgressBar/progressbar-horiz.png
-%%DATADIR%%/Skins/Default/gtk-2.0/ProgressBar/trough-progressbar-horiz.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Range/slider-horiz-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Range/slider-horiz.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Range/slider-vert-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Range/slider-vert.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Range/trough-horizontal.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Range/trough-vertical.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-horiz-pre.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-horiz.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-vert-pre.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-vert.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/slider-horiz-pre.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/slider-horiz.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/slider-vert-pre.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/slider-vert.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-down-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-down.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-left-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-left.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-right-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-right.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-up-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/stepper-up.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/trough-scrollbar-horiz.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars/trough-scrollbar-vert.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Shadows/shadow-in.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Shadows/shadow-out.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Shadows/text-.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Shadows/text-entry.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Spin/spin-down-disable.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Spin/spin-down-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Spin/spin-down.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Spin/spin-up-disable.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Spin/spin-up-prelight.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Spin/spin-up.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-bottom-left.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-bottom-right.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-left-bottom.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-left-top.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-right-bottom.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-right-top.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-top-current.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-top-left.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/gap-top-right.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/notebook.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-bottom-active.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-bottom.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-left-active.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-left.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-right-active.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-right.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-top-active.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Tabs/tab-top.png
-%%DATADIR%%/Skins/Default/gtk-2.0/Toolbar/toolbar.png
-%%DATADIR%%/Skins/Default/gtk-2.0/gtkrc
-%%DATADIR%%/Skins/Default/gtk-2.0/panel.rc
-%%DATADIR%%/Skins/Ivory/balance.png
-%%DATADIR%%/Skins/Ivory/cbuttons.png
-%%DATADIR%%/Skins/Ivory/eq_ex.png
-%%DATADIR%%/Skins/Ivory/eqmain.png
-%%DATADIR%%/Skins/Ivory/main.png
-%%DATADIR%%/Skins/Ivory/monoster.png
-%%DATADIR%%/Skins/Ivory/nums_ex.png
-%%DATADIR%%/Skins/Ivory/playpaus.png
-%%DATADIR%%/Skins/Ivory/pledit.png
-%%DATADIR%%/Skins/Ivory/pledit.txt
-%%DATADIR%%/Skins/Ivory/posbar.png
-%%DATADIR%%/Skins/Ivory/shufrep.png
-%%DATADIR%%/Skins/Ivory/skin.hints
-%%DATADIR%%/Skins/Ivory/text.png
-%%DATADIR%%/Skins/Ivory/titlebar.png
-%%DATADIR%%/Skins/Ivory/viscolor.txt
-%%DATADIR%%/Skins/Ivory/volume.png
-%%DATADIR%%/Skins/Osmosis/balance.png
-%%DATADIR%%/Skins/Osmosis/cbuttons.png
-%%DATADIR%%/Skins/Osmosis/eq_ex.png
-%%DATADIR%%/Skins/Osmosis/eqmain.png
-%%DATADIR%%/Skins/Osmosis/main.png
-%%DATADIR%%/Skins/Osmosis/monoster.png
-%%DATADIR%%/Skins/Osmosis/nums_ex.png
-%%DATADIR%%/Skins/Osmosis/playpaus.png
-%%DATADIR%%/Skins/Osmosis/pledit.png
-%%DATADIR%%/Skins/Osmosis/pledit.txt
-%%DATADIR%%/Skins/Osmosis/posbar.png
-%%DATADIR%%/Skins/Osmosis/shufrep.png
-%%DATADIR%%/Skins/Osmosis/skin.hints
-%%DATADIR%%/Skins/Osmosis/text.png
-%%DATADIR%%/Skins/Osmosis/titlebar.png
-%%DATADIR%%/Skins/Osmosis/viscolor.txt
-%%DATADIR%%/Skins/Osmosis/volume.png
-%%DATADIR%%/Skins/Refugee/cbuttons.png
-%%DATADIR%%/Skins/Refugee/eq_ex.png
-%%DATADIR%%/Skins/Refugee/eqmain.png
-%%DATADIR%%/Skins/Refugee/main.png
-%%DATADIR%%/Skins/Refugee/monoster.png
-%%DATADIR%%/Skins/Refugee/nums_ex.png
-%%DATADIR%%/Skins/Refugee/playpaus.png
-%%DATADIR%%/Skins/Refugee/pledit.png
-%%DATADIR%%/Skins/Refugee/pledit.txt
-%%DATADIR%%/Skins/Refugee/posbar.png
-%%DATADIR%%/Skins/Refugee/shufrep.png
-%%DATADIR%%/Skins/Refugee/skin.hints
-%%DATADIR%%/Skins/Refugee/text.png
-%%DATADIR%%/Skins/Refugee/titlebar.png
-%%DATADIR%%/Skins/Refugee/viscolor.txt
-%%DATADIR%%/Skins/Refugee/volume.png
-%%DATADIR%%/Skins/TinyPlayer/balance.png
-%%DATADIR%%/Skins/TinyPlayer/cbuttons.png
-%%DATADIR%%/Skins/TinyPlayer/eq_ex.png
-%%DATADIR%%/Skins/TinyPlayer/eqmain.png
-%%DATADIR%%/Skins/TinyPlayer/main.png
-%%DATADIR%%/Skins/TinyPlayer/monoster.png
-%%DATADIR%%/Skins/TinyPlayer/nums_ex.png
-%%DATADIR%%/Skins/TinyPlayer/playpaus.png
-%%DATADIR%%/Skins/TinyPlayer/pledit.png
-%%DATADIR%%/Skins/TinyPlayer/pledit.txt
-%%DATADIR%%/Skins/TinyPlayer/posbar.png
-%%DATADIR%%/Skins/TinyPlayer/shufrep.png
-%%DATADIR%%/Skins/TinyPlayer/skin.hints
-%%DATADIR%%/Skins/TinyPlayer/text.png
-%%DATADIR%%/Skins/TinyPlayer/titlebar.png
-%%DATADIR%%/Skins/TinyPlayer/viscolor.txt
-%%DATADIR%%/Skins/TinyPlayer/volume.png
+share/applications/audacious2-gtkui.desktop
 %%DATADIR%%/images/about-logo.png
 %%DATADIR%%/images/audacious_eq.xpm
 %%DATADIR%%/images/audacious_playlist.xpm
@@ -290,7 +80,6 @@ share/applications/audacious2.desktop
 %%DATADIR%%/images/menu_plugin.png
 %%DATADIR%%/images/menu_queue_toggle.png
 %%DATADIR%%/images/menu_randomize_playlist.png
-%%DATADIR%%/images/mouse.png
 %%DATADIR%%/images/playback.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/plugins.png
@@ -336,37 +125,13 @@ share/applications/audacious2.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
 share/pixmaps/audacious2.png
-@dirrm %%DATADIR%%/Skins/Classic
-@dirrm %%DATADIR%%/Skins/Classic1.3
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Arrows
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Buttons
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Check-Radio
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Frame-Gap
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Handles
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Lines
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/ListHeaders
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Menu-Menubar
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Others
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Panel
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/ProgressBar
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Range
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Scrollbars
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Shadows
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Spin
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Tabs
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Toolbar
-@dirrm %%DATADIR%%/Skins/Default/gtk-2.0
-@dirrm %%DATADIR%%/Skins/Default
-@dirrm %%DATADIR%%/Skins/Ivory
-@dirrm %%DATADIR%%/Skins/Osmosis
-@dirrm %%DATADIR%%/Skins/Refugee
-@dirrm %%DATADIR%%/Skins/TinyPlayer
-@dirrm %%DATADIR%%/Skins
 @dirrmtry %%DATADIR%%/images
 @dirrm %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
 @dirrm include/audacious
 @dirrm include/libSAD
 @dirrm include/libaudcore
+@dirrm include/libaudgui
+@dirrm include/libaudtag
 @dirrmtry lib/audacious
 @dirrmtry share/applications

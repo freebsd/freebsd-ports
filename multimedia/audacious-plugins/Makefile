@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -32,9 +31,9 @@ WANT_SDL=	yes
 PORTDOCS=	AUTHORS
 
 # no ports for:
-#		PULSE		"Enable PulseAudio output plugin"	off \
-#		COREAUDIO	"Enable CoreAudio output plugin"	off \
-#		PROJECTM	"Enable projectM vis plugin"		off \
+#		PULSE		"Enable PulseAudio output plugin"	on \
+#		COREAUDIO	"Enable CoreAudio output plugin"	on \
+#		PROJECTM	"Enable projectM vis plugin"		on \
 
 OPTIONS=	DBUS		"Enable dbus support"			on  \
 		ESOUND		"Enable Esound output output"		off \
@@ -51,20 +50,16 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		AAC		"Enable aac plugin"			on  \
 		SNDFILE 	"Enable sndfile extensions"		off \
 		MODPLUG 	"Enable ModPlug plugin"			off \
-		MPC		"Enable musepack input plugin"		off \
-		WMA		"Enable wma plugin"			on  \
 		JACK		"Enable jack output plugin"		off \
 		SID		"Enable sid input plugin"		off \
 		OSS		"Enable OSS output plugin"		on  \
 		OSS4		"Enable OSS4 output plugin"		off \
-		TIMIDITY	"Enable timidity plugin"		off \
 		CDAUDIO		"Enable cdaudio-ng input plugin"        on  \
 		NEON		"Enable neon (HTTP) support"            on  \
 		MMS		"Enable mms support"			off \
 		MTP		"Enable MTP upload support"             off \
 		PARANORMAL	"Enable paranormal vis plugin"		on  \
 		XSPF		"Enable XSPF support"			on  \
-		TTA		"Enable TrueAudio plugin"		on  \
 		GNOME		"Build with gnomevfs/gconf support"	off \
 		NLS		"Native Language Support"		on  \
 		CURL		"curl for lastfm/scrobbler support"	off \
@@ -210,24 +205,6 @@ PLIST_SUB+=	MODPLUG="@comment "
 CONFIGURE_ARGS+=--disable-modplug
 .endif
 
-.if defined(WITH_MPC)
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
-		tag.1:${PORTSDIR}/audio/taglib
-PLIST_SUB+=	MPCPLUGIN=""
-CONFIGURE_ARGS+=--enable-musepack
-.else
-PLIST_SUB+=	MPCPLUGIN="@comment "
-CONFIGURE_ARGS+=--disable-musepack
-.endif
-
-.if !defined(WITHOUT_WMA)
-CONFIGURE_ARGS+=--enable-wma
-PLIST_SUB+=	WMAPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-wma
-PLIST_SUB+=	WMAPLUGIN="@comment "
-.endif
-
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
@@ -274,15 +251,6 @@ CONFIGURE_ARGS+=--enable-sid
 .else
 PLIST_SUB+=	SIDPLUGIN="@comment "
 CONFIGURE_ARGS+=--disable-sid
-.endif
-
-.if !defined(WITHOUT_TIMIDITY)
-RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
-CONFIGURE_ARGS+=--enable-timidity
-PLIST_SUB+=	TIMIDITYPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-timidity
-PLIST_SUB+=	TIMIDITYPLUGIN="@comment "
 .endif
 
 .if defined(WITH_CDAUDIO)
@@ -344,14 +312,6 @@ CONFIGURE_ARGS+=--disable-xspf
 PLIST_SUB+=	XSPFPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_TTA)
-CONFIGURE_ARGS+=--enable-tta
-PLIST_SUB+=	TTAPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-tta
-PLIST_SUB+=	TTAPLUGIN="@comment "
-.endif
-
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomevfs2 gconf2
 CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
@@ -389,8 +349,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g; \
 		s| -ldl||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/lib/|g' \
-		${WRKSRC}/src/timidity/xmms-timidity.c
 
 pre-configure:
 .if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)

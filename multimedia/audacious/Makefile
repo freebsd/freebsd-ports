@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -80,13 +80,15 @@ CONFIGURE_ARGS+=--with-xml-prefix=/
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's|+= $${LIB_CPPFLAGS} -I..|= -I.. $${LIB_CPPFLAGS}|' \
-		${WRKSRC}/src/libid3tag/Makefile
+#	@${REINPLACE_CMD} 's|+= $${LIB_CPPFLAGS} -I..|= -I.. $${LIB_[8$CPPFLAGS}|' \
+#		${WRKSRC}/src/libid3tag/Makefile
+	@${REINPLACE_CMD} 's|CPPFLAGS +=|CPPFLAGS =|g' \
+		${WRKSRC}/src/libid3tag/Makefile \
+		${WRKSRC}/src/libaudgui/Makefile
 	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|g; \
 		s|OUTPUT_PLUGIN_INIT_FOUND_DEVICES,|OUTPUT_PLUGIN_INIT_FOUND_DEVICES|g' \
 		${WRKSRC}/src/audacious/plugin.h
-	@${REINPLACE_CMD} 's|WIDGET_COMBO_BOX,|WIDGET_COMBO_BOX|g; \
-		s|VALUE_NULL,|VALUE_NULL|g' \
+	@${REINPLACE_CMD} 's|VALUE_NULL,|VALUE_NULL|g' \
 		${WRKSRC}/src/audacious/preferences.h
 	@${REINPLACE_CMD} 's|glib-2\.0/||g' \
 		${WRKSRC}/src/libaudtag/util.h \
