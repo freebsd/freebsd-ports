@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2hs
 PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	SF
@@ -17,13 +17,13 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A GTK2 Binding for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		xulrunner:${PORTSDIR}/www/xulrunner \
 		gstreamer-plugins>=0.10:${PORTSDIR}/multimedia/gstreamer-plugins
 LIB_DEPENDS=	gstreamer-0.10:${PORTSDIR}/multimedia/gstreamer \
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	gnomelibs gtk20 libglade2 gtksourceview2 gconf2 librsvg2 gnomevfs2
+USE_GECKO=	libxul
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 SUB_FILES=	pkg-install
