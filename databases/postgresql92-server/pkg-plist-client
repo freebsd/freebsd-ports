@@ -178,6 +178,7 @@ include/postgresql/server/executor/tstoreReceiver.h
 include/postgresql/server/executor/tuptable.h
 include/postgresql/server/fmgr.h
 include/postgresql/server/funcapi.h
+include/postgresql/server/foreign/foreign.h
 include/postgresql/server/getaddrinfo.h
 include/postgresql/server/getopt_long.h
 include/postgresql/server/lib/dllist.h
@@ -481,6 +482,7 @@ include/postgresql/server/windowapi.h
 @dirrm include/postgresql/server/mb
 @dirrm include/postgresql/server/libpq
 @dirrm include/postgresql/server/lib
+@dirrm include/postgresql/server/foreign
 @dirrm include/postgresql/server/executor
 @dirrm include/postgresql/server/commands
 @dirrm include/postgresql/server/catalog
@@ -573,6 +575,12 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/psql-8.4.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/pgscripts-8.4.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_config-8.4.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/ecpg-8.4.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/ecpglib6-8.4.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/libpq5-8.4.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_config-8.4.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pgscripts-8.4.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/psql-8.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/libpq5-8.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/ecpglib6-8.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/ecpg-8.4.mo
