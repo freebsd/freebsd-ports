@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Devel/Backtrace/Point.pm
+%%SITE_PERL%%/Devel/DollarAt.pm
+%%SITE_PERL%%/Devel/Backtrace.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace/.packlist
+@dirrmtry %%SITE_PERL%%/auto/Devel/Backtrace
+@dirrmtry %%SITE_PERL%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/Devel/Backtrace
+@dirrmtry %%SITE_PERL%%/Devel
+@dirrmtry %%SITE_PERL%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry blib/script
