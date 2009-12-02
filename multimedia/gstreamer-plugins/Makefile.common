@@ -187,7 +187,7 @@ gst_cdparanoia_PLIST_FILES=	${GST_LIB_DIR}/libgstcdparanoia.la \
 gst_cdparanoia_DIST=	base
 
 # cdio
-gst_cdio_LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
+gst_cdio_LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
 gst_cdio_PLIST_FILES=	${GST_LIB_DIR}/libgstcdio.la \
 		${GST_LIB_DIR}/libgstcdio.so
 gst_cdio_DIST=		ugly
