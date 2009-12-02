@@ -1,0 +1,2 @@
+chrpath allows you to modify the dynamic library load path (rpath) of
+compiled programs. Only removing and modifying the rpath is supported.
