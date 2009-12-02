@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.4.0
+DISTVERSION?=	8.4.1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -57,7 +57,6 @@ BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_p
 INSTALL_DIRS?=	${BUILD_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
-PORTREVISION=	1
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
@@ -100,7 +99,7 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
-OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
+OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
 
 #.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 #USE_AUTOTOOLS=	autoconf:262
@@ -133,8 +132,8 @@ CONFIGURE_ARGS+=--with-system-tzdata=/usr/share/zoneinfo
 PLIST_SUB+=	TZDATA="@comment "
 .  endif
 
-.  if defined(WITH_INTDATE)
-CONFIGURE_ARGS+=--enable-integer-datetimes
+.  if defined(WITHOUT_INTDATE)
+CONFIGURE_ARGS+=--disable-integer-datetimes
 .  endif
 
 .  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))

@@ -1,6 +1,6 @@
---- src/backend/utils/misc/postgresql.conf.sample.orig	2008-01-30 19:35:55.000000000 +0100
-+++ src/backend/utils/misc/postgresql.conf.sample	2008-02-18 13:49:42.000000000 +0100
-@@ -231,6 +231,7 @@
+--- ./src/backend/utils/misc/postgresql.conf.sample.orig	2009-08-24 22:08:40.000000000 +0200
++++ ./src/backend/utils/misc/postgresql.conf.sample	2009-10-04 19:21:09.000000000 +0200
+@@ -230,6 +230,7 @@
  
  # - Where to Log -
  
@@ -8,20 +8,21 @@
  #log_destination = 'stderr'		# Valid values are combinations of
  					# stderr, csvlog, syslog and eventlog,
  					# depending on platform.  csvlog
-@@ -313,6 +314,7 @@
- 					# and their durations, > 0 logs only
- 					# statements running at least this time.
+@@ -264,6 +265,7 @@
+ #syslog_facility = 'LOCAL0'
+ #syslog_ident = 'postgres'
  
 +silent_mode = on
- #silent_mode = off			# DO NOT USE without syslog or
+ #silent_mode = off			# Run server silently.
+ 					# DO NOT USE without syslog or
  					# logging_collector
- 					# (change requires restart)
-@@ -365,6 +367,8 @@
+@@ -367,6 +369,9 @@
  #track_counts = on
- #update_process_title = on
- 
+ #track_functions = none			# none, pl, all
+ #track_activity_query_size = 1024
++
 +# On FreeBSD, this is a performance hog, so keep it off if you need speed
 +update_process_title = off
- 
- # - Statistics Monitoring -
+ #update_process_title = on
+ #stats_temp_directory = 'pg_stat_tmp'
  
