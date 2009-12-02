@@ -37,26 +37,35 @@ include/nettle/sexp.h
 include/nettle/sha.h
 include/nettle/twofish.h
 include/nettle/yarrow.h
-@dirrm include/nettle
+lib/libhogweed.a
+lib/libhogweed.so
+lib/libhogweed.so.1
+lib/libhogweed.so.1.0
 lib/libnettle.a
 lib/libnettle.so
-lib/libnettle.so.2
+lib/libnettle.so.3
+lib/libnettle.so.3.0
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/nettle.html
+%%PORTDOCS%%%%DOCSDIR%%/nettle.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eratosthenes.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getopt.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getopt.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getopt1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/io.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/io.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nettle-benchmark.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nettle-openssl.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/next-prime.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/read_rsa_key.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-decrypt.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-encrypt.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-keygen.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-session.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-sign.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-verify.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/getopt.c
-%%EXAMPLESDIR%%/getopt.h
-%%EXAMPLESDIR%%/getopt1.c
-%%EXAMPLESDIR%%/io.c
-%%EXAMPLESDIR%%/io.h
-%%EXAMPLESDIR%%/nettle-benchmark.c
-%%EXAMPLESDIR%%/nettle-openssl.c
-%%EXAMPLESDIR%%/rsa-decrypt.c
-%%EXAMPLESDIR%%/rsa-encrypt.c
-%%EXAMPLESDIR%%/rsa-keygen.c
-%%EXAMPLESDIR%%/rsa-session.h
-%%EXAMPLESDIR%%/rsa-sign.c
-%%EXAMPLESDIR%%/rsa-verify.c
-@dirrm %%EXAMPLESDIR%%
+@dirrm include/nettle
