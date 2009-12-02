@@ -7,7 +7,7 @@
 
 PORTNAME=	transkode
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE/Qt based frontend for various audio transcoding tools
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	amarok:${PORTSDIR}/audio/amarok
 
 USE_BZIP2=	yes

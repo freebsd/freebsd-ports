@@ -451,7 +451,7 @@ gst_swfdec_LIB_DEPENDS+=swfdec-0.4.1:${PORTSDIR}/graphics/swfdec
 gst_swfdec_DIST=	bad
 
 # taglib
-gst_taglib_LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+gst_taglib_LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 gst_taglib_PLIST_FILES=		${GST_LIB_DIR}/libgsttaglib.la \
 				${GST_LIB_DIR}/libgsttaglib.so
 

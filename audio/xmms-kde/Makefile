@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-kde
 PORTVERSION=	3.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	Integrates XMMS into the KDE3 Panel
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tag.6:${PORTSDIR}/audio/taglib \
+		tag.1:${PORTSDIR}/audio/taglib \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 

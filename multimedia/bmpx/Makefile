@@ -7,14 +7,14 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.40.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.backtrace.info/releases/0.40/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Media player geared towards usability, technical efficiency and looks
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		cdio.12:${PORTSDIR}/sysutils/libcdio \

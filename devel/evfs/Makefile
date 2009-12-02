@@ -8,7 +8,7 @@
 
 PORTNAME=	evfs
 PORTVERSION=	20080223
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -46,8 +46,8 @@ PLIST_SUB+=	FTP=""
 PLIST_SUB+=	FTP="@comment "
 .endif
 
-.if !defined(WITHOUT_TAGLIB) || exists(${LOCALBASE}/lib/libtag.so.6)
-LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+.if !defined(WITHOUT_TAGLIB) || exists(${LOCALBASE}/lib/libtag.so.1)
+LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 PLIST_SUB+=	TAGLIB=""
 .else
 PLIST_SUB+=	TAGLIB="@comment "

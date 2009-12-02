@@ -7,6 +7,7 @@
 
 PORTNAME=	gmm
 PORTVERSION=	0.10.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	musicmanager-${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	Music collection manager and player
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 		\
 		xine.1:${PORTSDIR}/multimedia/libxine		\
-		tag.6:${PORTSDIR}/audio/taglib			\
+		tag.1:${PORTSDIR}/audio/taglib			\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3		\
 		dbus-1:${PORTSDIR}/devel/dbus
 

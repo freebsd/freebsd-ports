@@ -6,7 +6,7 @@
 
 PORTNAME=	taglib
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=	namingmuse
@@ -16,7 +16,7 @@ DISTNAME=	python-taglib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the taglib audio file tagging library
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
 WRKSRC=		${WRKDIR}/python-taglib-${PORTVERSION}
 

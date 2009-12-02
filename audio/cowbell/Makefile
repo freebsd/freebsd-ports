@@ -7,7 +7,7 @@
 
 PORTNAME=	cowbell
 PORTVERSION=	0.2.7.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://more-cowbell.org/releases/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libtunepimp-old
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/musicbrainz/ \

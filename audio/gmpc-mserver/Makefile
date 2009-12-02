@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc-mserver
 PORTVERSION=	0.19.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +17,7 @@ COMMENT=	A plugin for gmpc that serves music.
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		curl.5:${PORTSDIR}/ftp/curl \
-		tag.6:${PORTSDIR}/audio/taglib \
+		tag.1:${PORTSDIR}/audio/taglib \
 		microhttpd:${PORTSDIR}/www/libmicrohttpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc

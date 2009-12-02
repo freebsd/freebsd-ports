@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -212,7 +212,7 @@ CONFIGURE_ARGS+=--disable-modplug
 
 .if defined(WITH_MPC)
 LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
-		tag.6:${PORTSDIR}/audio/taglib
+		tag.1:${PORTSDIR}/audio/taglib
 PLIST_SUB+=	MPCPLUGIN=""
 CONFIGURE_ARGS+=--enable-musepack
 .else

@@ -8,6 +8,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	2.28.1
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +20,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
     		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		cdio.12:${PORTSDIR}/sysutils/libcdio \
-    		tag.6:${PORTSDIR}/audio/taglib \
+    		tag.1:${PORTSDIR}/audio/taglib \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		brasero-media.2:${PORTSDIR}/sysutils/brasero

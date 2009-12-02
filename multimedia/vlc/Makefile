@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -457,7 +457,7 @@ CONFIGURE_ARGS+=--disable-live555
 .endif
 
 .if !defined(WITHOUT_TAGLIB)
-LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=--enable-taglib
 .else
 CONFIGURE_ARGS+=--disable-taglib

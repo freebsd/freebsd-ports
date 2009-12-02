@@ -7,13 +7,14 @@
 
 PORTNAME=	tagutil
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://files.kaworu.ch/
 
 MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	A tool to manage tags in music files
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
 USE_GNOME=	pkgconfig
 MAKE_JOBS_SAFE=	yes
