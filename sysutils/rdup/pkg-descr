@@ -4,8 +4,9 @@ rdup itself does not backup anything; it only prints a list of the names of
 files that have changed since the last backup. It also handles files that are
 removed, allowing for correct incremental backups.
 
-Example scripts that implement a backup strategy are included.
-(These scripts require GNU date and cp, which are not installed by
-this FreeBSD port.)
+Example scripts named rdup-simple and rdup-ln are included to show how to 
+implement a simple snapshot-style backup strategy.  These bash scripts require 
+GNU date and cp, which are not installed by this FreeBSD port. If you want to 
+use the scripts, you should also install the sysutils/coreutils port.
 
 WWW: http://miek.nl/projects/rdup

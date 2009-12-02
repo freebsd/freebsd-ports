@@ -1,0 +1,23 @@
+--- sh/rdup-ln.orig	2009-10-09 23:37:34.000000000 -0700
++++ sh/rdup-ln	2009-10-09 23:39:40.000000000 -0700
+@@ -27,7 +27,7 @@
+ fi
+ 
+ DATESTR='+%Y%m/%d'
+-TODAY=$(date $DATESTR)
++TODAY=$(gdate $DATESTR)
+ TOPDIR=$1
+ 
+ if [[ -z $TOPDIR ]]; then
+@@ -44,9 +44,9 @@
+ 
+ let i=1
+ while [[ $i -le $LOOKBACK ]]; do
+-	D=$(date $DATESTR --date "$i days ago")
++	D=$(gdate $DATESTR --date "$i days ago")
+ 	if [[ -d $TOPDIR/$D ]]; then
+-	    if ! cp -plr $TOPDIR/$D/* $TOPDIR/$TODAY; then
++	    if ! gcp -plr $TOPDIR/$D/* $TOPDIR/$TODAY; then
+ 		exit 2
+ 	    fi
+ 	    exit 0
