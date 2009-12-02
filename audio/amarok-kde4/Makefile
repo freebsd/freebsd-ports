@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -14,10 +13,9 @@ MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 MAINTAINER=	datahead4@gmail.com
 COMMENT=	Media player for KDE4
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
-		tag-extras.0:${PORTSDIR}/audio/taglib-extras \
-		lastfm.0:${PORTSDIR}/audio/liblastfm \
-		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
+		tag-extras.1:${PORTSDIR}/audio/taglib-extras \
+		lastfm.0:${PORTSDIR}/audio/liblastfm
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
