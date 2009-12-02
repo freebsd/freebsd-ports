@@ -5,30 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	taglib-extras
-PORTVERSION=	0.1.7
+PORTVERSION=	1.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kollide.net/~jefferai/
 
 MAINTAINER=	datahead4@gmail.com
-COMMENT=	Extra taglib features for Amarok 2.1
+COMMENT=	Extra taglib features for Amarok 2.2
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
-USE_KDE4=	automoc4 kdehier
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build phonon
 USE_CMAKE=	yes
 
-OPTIONS=	KDE4_MIME "Resolve file types with KMimeTypeResolve" ON
-
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_KDE4_MIME)
-CMAKE_ARGS+=	-DWITH_KDE:BOOL=Off
-.else
-USE_KDE4+=		kdelibs
-CMAKE_ARGS+=	-DWITH_KDE:BOOL=On
-.endif
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \

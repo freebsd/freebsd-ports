@@ -1,31 +1,14 @@
 bin/taglib-extras-config
-include/taglib-extras/asfattribute.h
-include/taglib-extras/asffile.h
-include/taglib-extras/asffiletyperesolver.h
-include/taglib-extras/asfproperties.h
-include/taglib-extras/asftag.h
 include/taglib-extras/audiblefile.h
 include/taglib-extras/audiblefiletyperesolver.h
 include/taglib-extras/audibleproperties.h
 include/taglib-extras/audibletag.h
-include/taglib-extras/mp4atom.h
-include/taglib-extras/mp4file.h
-include/taglib-extras/mp4filetyperesolver.h
-include/taglib-extras/mp4item.h
-include/taglib-extras/mp4properties.h
-include/taglib-extras/mp4tag.h
 include/taglib-extras/realmediafile.h
 include/taglib-extras/realmediafiletyperesolver.h
 include/taglib-extras/taglib-extras_export.h
-include/taglib-extras/tdebug.h
 include/taglib-extras/tfile_helper.h
-include/taglib-extras/tplugins.h
-include/taglib-extras/wavfile.h
-include/taglib-extras/wavfiletyperesolver.h
-include/taglib-extras/wavproperties.h
 lib/libtag-extras.so
-lib/libtag-extras.so.0
-lib/libtag-extras.so.0.1.0
+lib/libtag-extras.so.1
+lib/libtag-extras.so.1.0.0
 libdata/pkgconfig/taglib-extras.pc
-@dirrmtry lib/pkgconfig
 @dirrm include/taglib-extras
