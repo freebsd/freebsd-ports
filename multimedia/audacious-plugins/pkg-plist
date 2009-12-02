@@ -20,29 +20,21 @@ lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
 lib/audacious/General/streambrowser.so
 lib/audacious/General/vfstrace.so
-%%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
-lib/audacious/Input/alac.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
-lib/audacious/Input/cuesheet_ng.so
 lib/audacious/Input/console.so
-lib/audacious/Input/demac.so
 %%FLACPLUGIN%%lib/audacious/Input/flacng.so
 %%MP3PLUGIN%%lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
 %%MODPLUG%%lib/audacious/Input/modplug.so
 %%MTPPLUGIN%%lib/audacious/General/mtp_up.so
-%%MPCPLUGIN%%lib/audacious/Input/musepack.so
 lib/audacious/Input/psf2.so
 %%SIDPLUGIN%%lib/audacious/Input/sid.so
 %%SNDFILEPLUGIN%%lib/audacious/Input/sndfile.so
-%%TIMIDITYPLUGIN%%lib/audacious/Input/timidity.so
 lib/audacious/Input/tonegen.so
-%%TTAPLUGIN%%lib/audacious/Input/tta.so
 %%VORBISPLUGIN%%lib/audacious/Input/vorbis.so
 lib/audacious/Input/vtx.so
 %%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
-%%WMAPLUGIN%%lib/audacious/Input/wma.so
 lib/audacious/Input/xsf.so
 %%OSSPLUGIN%%lib/audacious/Output/OSS.so
 %%OSS4PLUGIN%%lib/audacious/Output/OSS4.so
@@ -52,9 +44,9 @@ lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
 lib/audacious/Transport/gio.so
-%%CURLPLUGIN%%lib/audacious/Transport/lastfm.so
 %%MMSPLUGIN%%lib/audacious/Transport/mms.so
 %%NEONPLUGIN%%lib/audacious/Transport/neon.so
+lib/audacious/Transport/unix-io.so
 lib/audacious/Visualization/blur_scope.so
 %%PARANORMALPLUGIN%%lib/audacious/Visualization/paranormal.so
 %%ROCKLIGHTPLUGIN%%lib/audacious/Visualization/rocklight.so
@@ -100,6 +92,220 @@ share/audacious/images/shoutcast.png
 share/audacious/images/streambrowser-16x16.png
 share/audacious/images/streambrowser-64x64.png
 share/audacious/images/xiph.png
+share/audacious/Skins/Classic/balance.png
+share/audacious/Skins/Classic/cbuttons.png
+share/audacious/Skins/Classic/eq_ex.png
+share/audacious/Skins/Classic/eqmain.png
+share/audacious/Skins/Classic/main.png
+share/audacious/Skins/Classic/monoster.png
+share/audacious/Skins/Classic/nums_ex.png
+share/audacious/Skins/Classic/playpaus.png
+share/audacious/Skins/Classic/pledit.png
+share/audacious/Skins/Classic/pledit.txt
+share/audacious/Skins/Classic/posbar.png
+share/audacious/Skins/Classic/shufrep.png
+share/audacious/Skins/Classic/skin.hints
+share/audacious/Skins/Classic/skin-classic.hints
+share/audacious/Skins/Classic/text.png
+share/audacious/Skins/Classic/titlebar.png
+share/audacious/Skins/Classic/viscolor.txt
+share/audacious/Skins/Classic/volume.png
+share/audacious/Skins/Classic1.3/balance.png
+share/audacious/Skins/Classic1.3/cbuttons.png
+share/audacious/Skins/Classic1.3/eq_ex.png
+share/audacious/Skins/Classic1.3/eqmain.png
+share/audacious/Skins/Classic1.3/main.png
+share/audacious/Skins/Classic1.3/monoster.png
+share/audacious/Skins/Classic1.3/nums_ex.png
+share/audacious/Skins/Classic1.3/playpaus.png
+share/audacious/Skins/Classic1.3/pledit.png
+share/audacious/Skins/Classic1.3/pledit.txt
+share/audacious/Skins/Classic1.3/posbar.png
+share/audacious/Skins/Classic1.3/shufrep.png
+share/audacious/Skins/Classic1.3/skin-classic.hints
+share/audacious/Skins/Classic1.3/skin.hints
+share/audacious/Skins/Classic1.3/text.png
+share/audacious/Skins/Classic1.3/titlebar.png
+share/audacious/Skins/Classic1.3/viscolor.txt
+share/audacious/Skins/Classic1.3/volume.png
+share/audacious/Skins/Default/cbuttons.png
+share/audacious/Skins/Default/eq_ex.png
+share/audacious/Skins/Default/eqmain.png
+share/audacious/Skins/Default/main.png
+share/audacious/Skins/Default/monoster.png
+share/audacious/Skins/Default/nums_ex.png
+share/audacious/Skins/Default/playpaus.png
+share/audacious/Skins/Default/pledit.png
+share/audacious/Skins/Default/pledit.txt
+share/audacious/Skins/Default/posbar.png
+share/audacious/Skins/Default/shufrep.png
+share/audacious/Skins/Default/skin.hints
+share/audacious/Skins/Default/text.png
+share/audacious/Skins/Default/titlebar.png
+share/audacious/Skins/Default/viscolor.txt
+share/audacious/Skins/Default/volume.png
+share/audacious/Skins/Default/gtk-2.0/Arrows/arrow-down.png
+share/audacious/Skins/Default/gtk-2.0/Arrows/arrow-insens.png
+share/audacious/Skins/Default/gtk-2.0/Arrows/arrow-left.png
+share/audacious/Skins/Default/gtk-2.0/Arrows/arrow-right.png
+share/audacious/Skins/Default/gtk-2.0/Arrows/arrow-up.png
+share/audacious/Skins/Default/gtk-2.0/Buttons/button-insensitive.png
+share/audacious/Skins/Default/gtk-2.0/Buttons/button-normal.png
+share/audacious/Skins/Default/gtk-2.0/Buttons/button-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/check1.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/check2.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/check3.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/check4.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/check5.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/check6.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/option1.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/option2.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/option3.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/option4.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/option5.png
+share/audacious/Skins/Default/gtk-2.0/Check-Radio/option6.png
+share/audacious/Skins/Default/gtk-2.0/Frame-Gap/frame-gap-end.png
+share/audacious/Skins/Default/gtk-2.0/Frame-Gap/frame-gap-start.png
+share/audacious/Skins/Default/gtk-2.0/Frame-Gap/frame.png
+share/audacious/Skins/Default/gtk-2.0/Handles/handle-h.png
+share/audacious/Skins/Default/gtk-2.0/Handles/handle-v.png
+share/audacious/Skins/Default/gtk-2.0/Lines/line-h.png
+share/audacious/Skins/Default/gtk-2.0/Lines/line-v.png
+share/audacious/Skins/Default/gtk-2.0/ListHeaders/list_header-insens.png
+share/audacious/Skins/Default/gtk-2.0/ListHeaders/list_header-prelight.png
+share/audacious/Skins/Default/gtk-2.0/ListHeaders/list_header-pressed.png
+share/audacious/Skins/Default/gtk-2.0/ListHeaders/list_header.png
+share/audacious/Skins/Default/gtk-2.0/Menu-Menubar/menu.png
+share/audacious/Skins/Default/gtk-2.0/Menu-Menubar/menubar-item-active.png
+share/audacious/Skins/Default/gtk-2.0/Menu-Menubar/menubar-item.png
+share/audacious/Skins/Default/gtk-2.0/Menu-Menubar/menubar.png
+share/audacious/Skins/Default/gtk-2.0/Others/null.png
+share/audacious/Skins/Default/gtk-2.0/Others/ruler.png
+share/audacious/Skins/Default/gtk-2.0/Panel/panel-bg.png
+share/audacious/Skins/Default/gtk-2.0/ProgressBar/progressbar-horiz.png
+share/audacious/Skins/Default/gtk-2.0/ProgressBar/trough-progressbar-horiz.png
+share/audacious/Skins/Default/gtk-2.0/Range/slider-horiz-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Range/slider-horiz.png
+share/audacious/Skins/Default/gtk-2.0/Range/slider-vert-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Range/slider-vert.png
+share/audacious/Skins/Default/gtk-2.0/Range/trough-horizontal.png
+share/audacious/Skins/Default/gtk-2.0/Range/trough-vertical.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-horiz-pre.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-horiz.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-vert-pre.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/scroll-thumb-vert.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/slider-horiz-pre.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/slider-horiz.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/slider-vert-pre.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/slider-vert.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-down-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-down.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-left-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-left.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-right-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-right.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-up-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/stepper-up.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/trough-scrollbar-horiz.png
+share/audacious/Skins/Default/gtk-2.0/Scrollbars/trough-scrollbar-vert.png
+share/audacious/Skins/Default/gtk-2.0/Shadows/shadow-in.png
+share/audacious/Skins/Default/gtk-2.0/Shadows/shadow-out.png
+share/audacious/Skins/Default/gtk-2.0/Shadows/text-.png
+share/audacious/Skins/Default/gtk-2.0/Shadows/text-entry.png
+share/audacious/Skins/Default/gtk-2.0/Spin/spin-down-disable.png
+share/audacious/Skins/Default/gtk-2.0/Spin/spin-down-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Spin/spin-down.png
+share/audacious/Skins/Default/gtk-2.0/Spin/spin-up-disable.png
+share/audacious/Skins/Default/gtk-2.0/Spin/spin-up-prelight.png
+share/audacious/Skins/Default/gtk-2.0/Spin/spin-up.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-bottom-left.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-bottom-right.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-left-bottom.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-left-top.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-right-bottom.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-right-top.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-top-current.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-top-left.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/gap-top-right.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/notebook.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-bottom-active.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-bottom.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-left-active.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-left.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-right-active.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-right.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-top-active.png
+share/audacious/Skins/Default/gtk-2.0/Tabs/tab-top.png
+share/audacious/Skins/Default/gtk-2.0/Toolbar/toolbar.png
+share/audacious/Skins/Default/gtk-2.0/gtkrc
+share/audacious/Skins/Default/gtk-2.0/panel.rc
+share/audacious/Skins/Ivory/balance.png
+share/audacious/Skins/Ivory/cbuttons.png
+share/audacious/Skins/Ivory/eq_ex.png
+share/audacious/Skins/Ivory/eqmain.png
+share/audacious/Skins/Ivory/main.png
+share/audacious/Skins/Ivory/monoster.png
+share/audacious/Skins/Ivory/nums_ex.png
+share/audacious/Skins/Ivory/playpaus.png
+share/audacious/Skins/Ivory/pledit.png
+share/audacious/Skins/Ivory/pledit.txt
+share/audacious/Skins/Ivory/posbar.png
+share/audacious/Skins/Ivory/shufrep.png
+share/audacious/Skins/Ivory/skin.hints
+share/audacious/Skins/Ivory/text.png
+share/audacious/Skins/Ivory/titlebar.png
+share/audacious/Skins/Ivory/viscolor.txt
+share/audacious/Skins/Ivory/volume.png
+share/audacious/Skins/Osmosis/balance.png
+share/audacious/Skins/Osmosis/cbuttons.png
+share/audacious/Skins/Osmosis/eq_ex.png
+share/audacious/Skins/Osmosis/eqmain.png
+share/audacious/Skins/Osmosis/main.png
+share/audacious/Skins/Osmosis/monoster.png
+share/audacious/Skins/Osmosis/nums_ex.png
+share/audacious/Skins/Osmosis/playpaus.png
+share/audacious/Skins/Osmosis/pledit.png
+share/audacious/Skins/Osmosis/pledit.txt
+share/audacious/Skins/Osmosis/posbar.png
+share/audacious/Skins/Osmosis/shufrep.png
+share/audacious/Skins/Osmosis/skin.hints
+share/audacious/Skins/Osmosis/text.png
+share/audacious/Skins/Osmosis/titlebar.png
+share/audacious/Skins/Osmosis/viscolor.txt
+share/audacious/Skins/Osmosis/volume.png
+share/audacious/Skins/Refugee/cbuttons.png
+share/audacious/Skins/Refugee/eq_ex.png
+share/audacious/Skins/Refugee/eqmain.png
+share/audacious/Skins/Refugee/main.png
+share/audacious/Skins/Refugee/monoster.png
+share/audacious/Skins/Refugee/nums_ex.png
+share/audacious/Skins/Refugee/playpaus.png
+share/audacious/Skins/Refugee/pledit.png
+share/audacious/Skins/Refugee/pledit.txt
+share/audacious/Skins/Refugee/posbar.png
+share/audacious/Skins/Refugee/shufrep.png
+share/audacious/Skins/Refugee/skin.hints
+share/audacious/Skins/Refugee/text.png
+share/audacious/Skins/Refugee/titlebar.png
+share/audacious/Skins/Refugee/viscolor.txt
+share/audacious/Skins/Refugee/volume.png
+share/audacious/Skins/TinyPlayer/balance.png
+share/audacious/Skins/TinyPlayer/cbuttons.png
+share/audacious/Skins/TinyPlayer/eq_ex.png
+share/audacious/Skins/TinyPlayer/eqmain.png
+share/audacious/Skins/TinyPlayer/main.png
+share/audacious/Skins/TinyPlayer/monoster.png
+share/audacious/Skins/TinyPlayer/nums_ex.png
+share/audacious/Skins/TinyPlayer/playpaus.png
+share/audacious/Skins/TinyPlayer/pledit.png
+share/audacious/Skins/TinyPlayer/pledit.txt
+share/audacious/Skins/TinyPlayer/posbar.png
+share/audacious/Skins/TinyPlayer/shufrep.png
+share/audacious/Skins/TinyPlayer/skin.hints
+share/audacious/Skins/TinyPlayer/text.png
+share/audacious/Skins/TinyPlayer/titlebar.png
+share/audacious/Skins/TinyPlayer/viscolor.txt
+share/audacious/Skins/TinyPlayer/volume.png
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/audacious-plugins.mo
@@ -122,5 +328,31 @@ share/audacious/images/xiph.png
 @dirrmtry lib/audacious
 %%PARANORMALPLUGIN%%@dirrm share/audacious/paranormal/Presets
 %%PARANORMALPLUGIN%%@dirrm share/audacious/paranormal
+@dirrm share/audacious/Skins/Classic
+@dirrm share/audacious/Skins/Classic1.3
+@dirrm share/audacious/Skins/Default/gtk-2.0/Arrows
+@dirrm share/audacious/Skins/Default/gtk-2.0/Buttons
+@dirrm share/audacious/Skins/Default/gtk-2.0/Check-Radio
+@dirrm share/audacious/Skins/Default/gtk-2.0/Frame-Gap
+@dirrm share/audacious/Skins/Default/gtk-2.0/Handles
+@dirrm share/audacious/Skins/Default/gtk-2.0/Lines
+@dirrm share/audacious/Skins/Default/gtk-2.0/ListHeaders
+@dirrm share/audacious/Skins/Default/gtk-2.0/Menu-Menubar
+@dirrm share/audacious/Skins/Default/gtk-2.0/Others
+@dirrm share/audacious/Skins/Default/gtk-2.0/Panel
+@dirrm share/audacious/Skins/Default/gtk-2.0/ProgressBar
+@dirrm share/audacious/Skins/Default/gtk-2.0/Range
+@dirrm share/audacious/Skins/Default/gtk-2.0/Scrollbars
+@dirrm share/audacious/Skins/Default/gtk-2.0/Shadows
+@dirrm share/audacious/Skins/Default/gtk-2.0/Spin
+@dirrm share/audacious/Skins/Default/gtk-2.0/Tabs
+@dirrm share/audacious/Skins/Default/gtk-2.0/Toolbar
+@dirrm share/audacious/Skins/Default/gtk-2.0
+@dirrm share/audacious/Skins/Default
+@dirrm share/audacious/Skins/Ivory
+@dirrm share/audacious/Skins/Osmosis
+@dirrm share/audacious/Skins/Refugee
+@dirrm share/audacious/Skins/TinyPlayer
+@dirrm share/audacious/Skins
 @dirrmtry share/audacious/images
 @dirrmtry share/audacious

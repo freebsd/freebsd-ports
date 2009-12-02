@@ -13,4 +13,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/include/gtk-2.0 \
 		-I${LOCALBASE}/include/atk-1.0
 MASTERDIR=	${.CURDIR}/../xmms-crossfade
 
+BROKEN=		Does not compile
+
 .include "${MASTERDIR}/Makefile"
