@@ -7,6 +7,7 @@
 
 PORTNAME=	smstools
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -62,11 +63,16 @@ CFLAGS+=	-I${LOCALBASE}/include
 .else
 CFLAGS+=	-DNOSTATS
 .endif
+.if ${OSVERSION} < 800045
+SMSTOOLS_DEFAULT_COMPORT?= /dev/cuad0
+.else
+SMSTOOLS_DEFAULT_COMPORT?= /dev/cuau0
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile \
 		${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.c
-	@${REINPLACE_CMD} 's|/dev/ttyS0|/dev/cuad0|g' \
+	@${REINPLACE_CMD} 's|/dev/ttyS0|${SMSTOOLS_DEFAULT_COMPORT}|g' \
 		${WRKSRC}/examples/smsd.conf.easy \
 		${WRKSRC}/examples/smsd.conf.full \
 		${WRKSRC}/examples/smsd.conf.non-root
