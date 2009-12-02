@@ -1,0 +1,11 @@
+--- sh/rdup-simple.in.orig	2009-10-09 23:37:15.000000000 -0700
++++ sh/rdup-simple.in	2009-10-09 23:44:36.000000000 -0700
+@@ -41,7 +41,7 @@
+ }
+ 
+ PROGNAME=$0
+-NOW=`date +%Y%m/%d`
++NOW=`gdate +%Y%m/%d`
+ DAYS=8
+ ssh=
+ trans=

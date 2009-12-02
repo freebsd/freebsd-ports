@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rdup
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
@@ -29,6 +29,8 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/rdup \
+		bin/rdup-ln \
+		bin/rdup-simple \
 		bin/rdup-tr \
 		bin/rdup-up
 
@@ -38,21 +40,8 @@ MAN1=		rdup.1 \
 
 MAN7=		rdup-backups.7
 
-.ifndef(NOPORTEXAMPLES)
-PORTEXAMPLES=	rdup-ln.sh \
-		rdup-simple.sh
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/lib/rdup|${EXAMPLESDIR}|g' \
-		${WRKSRC}/doc/rdup-backups.7
-
-post-install:
-.ifndef(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-.for example in ${PORTEXAMPLES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/sh/${example} ${EXAMPLESDIR}
-.endfor
-.endif
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/sh/rdup-simple.in
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/sh/rdup-ln
 
 .include <bsd.port.mk>
