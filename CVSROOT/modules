@@ -18302,6 +18302,7 @@ pecl-mongo                      ports/databases/pecl-mongo
 pecl-newt                       ports/devel/pecl-newt
 pecl-oauth                      ports/net/pecl-oauth
 pecl-operator                   ports/devel/pecl-operator
+pecl-pam                        ports/security/pecl-pam
 pecl-params                     ports/devel/pecl-params
 pecl-pdflib                     ports/print/pecl-pdflib
 pecl-pecl_http                  ports/www/pecl-pecl_http
@@ -18322,6 +18323,7 @@ pecl-ssh2                       ports/security/pecl-ssh2
 pecl-statgrab                   ports/devel/pecl-statgrab
 pecl-stats                      ports/math/pecl-stats
 pecl-stem                       ports/textproc/pecl-stem
+pecl-stomp                      ports/net-im/pecl-stomp
 pecl-svn                        ports/devel/pecl-svn
 pecl-swish                      ports/www/pecl-swish
 pecl-syck                       ports/textproc/pecl-syck
@@ -21137,6 +21139,7 @@ rubygem-chronic                 ports/devel/rubygem-chronic
 rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
+rubygem-configuration           ports/devel/rubygem-configuration
 rubygem-crack                   ports/devel/rubygem-crack
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-data_objects            ports/databases/rubygem-data_objects
@@ -21144,6 +21147,7 @@ rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-deprecated              ports/devel/rubygem-deprecated
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
+rubygem-directory_watcher       ports/devel/rubygem-directory_watcher
 rubygem-ditz                    ports/devel/rubygem-ditz
 rubygem-dnsruby                 ports/dns/rubygem-dnsruby
 rubygem-do_mysql                ports/databases/rubygem-do_mysql
@@ -21193,9 +21197,13 @@ rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-kirbybase               ports/databases/rubygem-kirbybase
+rubygem-launchy                 ports/devel/rubygem-launchy
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-linecache               ports/devel/rubygem-linecache
+rubygem-little_plugger          ports/devel/rubygem-little_plugger
 rubygem-lockfile                ports/devel/rubygem-lockfile
+rubygem-logging                 ports/devel/rubygem-logging
+rubygem-loquacious              ports/devel/rubygem-loquacious
 rubygem-macaddr                 ports/net/rubygem-macaddr
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-main                    ports/devel/rubygem-main
@@ -21312,6 +21320,7 @@ rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-warbler                 ports/devel/rubygem-warbler
+rubygem-webby                   ports/devel/rubygem-webby
 rubygem-xml-simple              ports/textproc/rubygem-xml-simple
 rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
 rubygem-yadis                   ports/net/rubygem-yadis
