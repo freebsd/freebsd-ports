@@ -1,22 +1,23 @@
-# New ports collection makefile for:   gammu
-# Date created:        12 december 2003
-# Whom:                Kirill Bezzubets <kirill@solaris.ru>
+# New ports collection makefile for:	gammu-devel
+# Date created:		2009-10-15
+# Whom:			Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.26.1
+PORTVERSION=	1.26.90
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	GNU All Mobile Management Utilities
+MAINTAINER=	sylvio@FreeBSD.org
+COMMENT=	GNU All Mobile Management Utilities - Development version
 
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
-CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
+CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${PREFIX}/libdata
 
 USE_CMAKE=	yes
 USE_GNOME=	pkgconfig
@@ -43,7 +44,7 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "sparc64")
+.if (${ARCH} == "amd64" || ${ARCH} == "sparc64")
 USE_GCC=	4.3
 .endif
 
