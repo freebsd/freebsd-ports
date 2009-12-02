@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	YAPE-Regex
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/P/PI/PINYAN
@@ -14,9 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another Parser/Extractor for Regular Expressions
-
-BUILD_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
