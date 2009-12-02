@@ -7,7 +7,7 @@
 
 PORTNAME=	taglookup
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kamaz.org.uk/taglookup/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	alex@kamaz.org.uk
 COMMENT=	Utility for tagging groups of audio files using CDDB
 
 LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
-		tag.6:${PORTSDIR}/audio/taglib
+		tag.1:${PORTSDIR}/audio/taglib
 
 MAN1=		taglookup.1
 PLIST_FILES=	bin/taglookup

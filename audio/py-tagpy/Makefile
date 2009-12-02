@@ -7,7 +7,7 @@
 
 PORTNAME=	tagpy
 PORTVERSION=	0.94.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -17,7 +17,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python bindings for Scott Wheeler's TagLib
 
 LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs \
-		tag.6:${PORTSDIR}/audio/taglib
+		tag.1:${PORTSDIR}/audio/taglib
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py

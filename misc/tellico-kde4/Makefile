@@ -7,6 +7,7 @@
 
 PORTNAME=	tellico
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 

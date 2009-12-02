@@ -6,7 +6,7 @@
 
 PORTNAME=	pod
 PORTVERSION=	0.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils audio
 MASTER_SITES=	SF/fuse${PORTNAME}/fuse${PORTNAME}/FUSEPod%20v${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
@@ -17,7 +17,7 @@ COMMENT=	FUSE-based filesystem for iPod
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs\
 		gpod.5:${PORTSDIR}/audio/libgpod\
-		tag.6:${PORTSDIR}/audio/taglib
+		tag.1:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_BZIP2=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	melodie
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	audio gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
@@ -15,7 +16,7 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project music player
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
+LIB_DEPENDS=	tag.1${PORTSDIR}/audio/taglib \
 		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 USE_BZIP2=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	taglib
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.hakubi.us/ruby-taglib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

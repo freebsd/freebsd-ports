@@ -7,7 +7,7 @@
 
 PORTNAME=	gimmix
 PORTVERSION=	0.5.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gimmix
@@ -16,7 +16,7 @@ MAINTAINER=	matt.guegan@free.fr
 COMMENT=	Gimmix is a graphical MPD client written in C using GTK+2
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		tag.6:${PORTSDIR}/audio/taglib \
+		tag.1:${PORTSDIR}/audio/taglib \
 		nxml:${PORTSDIR}/textproc/libnxml
 
 USE_GNOME=	gtk20 intltool libglade2

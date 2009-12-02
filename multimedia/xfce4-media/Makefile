@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -34,7 +34,7 @@ OPTIONS=	TAGLIB	"Enable metadata editing"		off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TAGLIB)
-LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=--with-taglib
 .else
 CONFIGURE_ARGS+=--without-taglib

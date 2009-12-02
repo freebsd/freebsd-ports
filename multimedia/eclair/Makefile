@@ -8,14 +8,14 @@
 
 PORTNAME=	eclair
 PORTVERSION=	20080223
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An EFL powered media player
 
-LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

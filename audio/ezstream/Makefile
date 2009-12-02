@@ -7,6 +7,7 @@
 
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
 		http://svn.xiph.org/releases/ezstream/
@@ -40,7 +41,7 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .if defined(WITHOUT_TAGLIB)
 CONFIGURE_ARGS+=	--without-taglib
 .else
-LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib=${LOCALBASE}
 .endif
 

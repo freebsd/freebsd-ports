@@ -7,6 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/
 
@@ -16,7 +17,7 @@ COMMENT=	BitTorrent client for KDE
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		qca.2:${PORTSDIR}/devel/qca \
 		streamanalyzer.0:${PORTSDIR}/deskutils/strigi \
-		tag.6:${PORTSDIR}/audio/taglib
+		tag.1:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
