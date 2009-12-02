@@ -19,7 +19,7 @@
      Deny from all
      Allow from 127.0.0.1
      php_flag engine on
-     php_admin_value open_basedir %%PREFIX%%/%%NAGIOSWWWDIR%%/ %%NAGIOSDIR%%/
+     php_admin_value open_basedir %%PREFIX%%/%%NAGIOSWWWDIR%%/:%%NAGIOSDIR%%/
    </Directory>
 
    <Directory %%PREFIX%%/%%NAGIOSWWWDIR%%/cgi-bin>
