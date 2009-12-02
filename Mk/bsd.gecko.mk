@@ -14,7 +14,7 @@
 # WITH_GECKO=	firefox
 #
 # The valid backends are:
-# firefox flock nvu seamonkey thunderbird xulrunner
+# firefox flock seamonkey thunderbird
 #
 # See below for more details.
 # ======================= /USERS ================================
@@ -78,7 +78,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #		${MOZSRC}/configure
 #  .endif
 
-_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock mozilla \
+_GECKO_ALL=	firefox seamonkey thunderbird flock mozilla \
 		libxul
 
 thunderbird_PORTSDIR=	mail
