@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_PHPLIB
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	bg1tpt@gmail.com
