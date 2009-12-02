@@ -4237,3 +4237,5 @@ www/mod_auth_mysql41_ap2||2009-11-30|Has expired: distfile no longer fetchable
 x11-toolkits/gtkscintilla||2009-11-30|Has expired: no longer under development, last release in 2002
 x11-toolkits/py-gtkscintilla||2009-11-30|Has expired: no longer under development, last release in 2002
 www/xulrunner|www/libxul|2009-12-02|Superseded by www/libxul
+secuirty/nettel2|security/nettel|2009-12-02|Please use security/nettel
+
