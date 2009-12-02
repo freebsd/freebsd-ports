@@ -17,7 +17,7 @@ COMMENT=	KDE Multimedia applications
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 		ogg.6:${PORTSDIR}/audio/libogg \
-		tag.1:${PORTSDIR}/audio/taglib \
+		tag.6:${PORTSDIR}/audio/taglib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
