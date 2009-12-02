@@ -16,7 +16,7 @@ MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	An easy to use but powerful document formatting/preparation language
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		getopt:${PORTSDIR}/misc/getopt
+		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
