@@ -159,12 +159,12 @@
 # WITH_DVDREAD=yes
 #  Enable Regular DVD support (non-menu)
 #
-# WITH_GECKO= [firefox|mozilla|seamonkey|nvu]
+# WITH_GECKO= libxul
 # WITH_VLC_MOZILLA_PLUGIN= yes
 #  Enable A mozilla plugin for VLC
 #  See http://www.videolan.org/doc/vlc-user-guide/en/ch07.html#id2529837
 #  for more info on using this plugin.
-#   defaults to www/mozilla
+#   defaults to www/firefox/Makefile.webplugins
 #
 #  NOTE: The www/mplayer-plugin is much more complete.
 #
