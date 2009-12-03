@@ -7,6 +7,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.4.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -48,8 +49,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zl
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck \
 		${SITE_PERL}/${PERL_ARCH}/EV.pm:${PORTSDIR}/devel/p5-EV \
 		${SITE_PERL}/${PERL_ARCH}/Audio/Scan.pm:${PORTSDIR}/audio/p5-Audio-Scan \
-		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor \
-		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor/Array.pm:${PORTSDIR}/devel/p5-Class-XSAccessor-Array
+		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
