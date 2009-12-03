@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/phpBB%203/phpBB%20${PORTVERSION}
+MASTER_SITES=	http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
 DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	bg1tpt@gmail.com

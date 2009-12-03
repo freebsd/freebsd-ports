@@ -75,6 +75,7 @@
 %%PHPBBDIR%%/adm/style/acp_disallow.html
 %%PHPBBDIR%%/adm/style/acp_email.html
 %%PHPBBDIR%%/adm/style/acp_forums.html
+%%PHPBBDIR%%/adm/style/acp_forums_copy_perm.html
 %%PHPBBDIR%%/adm/style/acp_groups.html
 %%PHPBBDIR%%/adm/style/acp_icons.html
 %%PHPBBDIR%%/adm/style/acp_inactive.html
@@ -92,6 +93,7 @@
 %%PHPBBDIR%%/adm/style/acp_ranks.html
 %%PHPBBDIR%%/adm/style/acp_reasons.html
 %%PHPBBDIR%%/adm/style/acp_search.html
+%%PHPBBDIR%%/adm/style/acp_send_statistics.html
 %%PHPBBDIR%%/adm/style/acp_styles.html
 %%PHPBBDIR%%/adm/style/acp_update.html
 %%PHPBBDIR%%/adm/style/acp_users.html
@@ -101,8 +103,15 @@
 %%PHPBBDIR%%/adm/style/acp_users_prefs.html
 %%PHPBBDIR%%/adm/style/acp_users_profile.html
 %%PHPBBDIR%%/adm/style/acp_users_signature.html
+%%PHPBBDIR%%/adm/style/acp_users_warnings.html
 %%PHPBBDIR%%/adm/style/acp_words.html
 %%PHPBBDIR%%/adm/style/admin.css
+%%PHPBBDIR%%/adm/style/captcha_default_acp_demo.html
+%%PHPBBDIR%%/adm/style/captcha_gd_acp.html
+%%PHPBBDIR%%/adm/style/captcha_qa_acp.html
+%%PHPBBDIR%%/adm/style/captcha_qa_acp_demo.html
+%%PHPBBDIR%%/adm/style/captcha_recaptcha.html
+%%PHPBBDIR%%/adm/style/captcha_recaptcha_acp.html
 %%PHPBBDIR%%/adm/style/colour_swatch.html
 %%PHPBBDIR%%/adm/style/confirm_body.html
 %%PHPBBDIR%%/adm/style/confirm_body_prune.html
@@ -119,6 +128,7 @@
 %%PHPBBDIR%%/adm/style/message_body.html
 %%PHPBBDIR%%/adm/style/overall_footer.html
 %%PHPBBDIR%%/adm/style/overall_header.html
+%%PHPBBDIR%%/adm/style/permission_forum_copy.html
 %%PHPBBDIR%%/adm/style/permission_mask.html
 %%PHPBBDIR%%/adm/style/permission_roles_mask.html
 %%PHPBBDIR%%/adm/style/permission_trace.html
@@ -133,6 +143,7 @@
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
 %%PHPBBDIR%%/common.php
+%%PHPBBDIR%%/config.php
 %%PHPBBDIR%%/cron.php
 %%PHPBBDIR%%/docs/AUTHORS
 %%PHPBBDIR%%/docs/CHANGELOG.html
@@ -153,6 +164,7 @@
 %%PHPBBDIR%%/download/file.php
 %%PHPBBDIR%%/download/index.htm
 %%PHPBBDIR%%/faq.php
+%%PHPBBDIR%%/feed.php
 %%PHPBBDIR%%/files/.htaccess
 %%PHPBBDIR%%/files/index.htm
 %%PHPBBDIR%%/images/avatars/gallery/index.htm
@@ -219,7 +231,13 @@
 %%PHPBBDIR%%/images/upload_icons/wav.gif
 %%PHPBBDIR%%/images/upload_icons/xls.gif
 %%PHPBBDIR%%/images/upload_icons/zip.gif
+%%PHPBBDIR%%/includes/acm/acm_apc.php
+%%PHPBBDIR%%/includes/acm/acm_eaccelerator.php
 %%PHPBBDIR%%/includes/acm/acm_file.php
+%%PHPBBDIR%%/includes/acm/acm_memcache.php
+%%PHPBBDIR%%/includes/acm/acm_memory.php
+%%PHPBBDIR%%/includes/acm/acm_null.php
+%%PHPBBDIR%%/includes/acm/acm_xcache.php
 %%PHPBBDIR%%/includes/acp/acp_attachments.php
 %%PHPBBDIR%%/includes/acp/acp_ban.php
 %%PHPBBDIR%%/includes/acp/acp_bbcodes.php
@@ -246,6 +264,7 @@
 %%PHPBBDIR%%/includes/acp/acp_ranks.php
 %%PHPBBDIR%%/includes/acp/acp_reasons.php
 %%PHPBBDIR%%/includes/acp/acp_search.php
+%%PHPBBDIR%%/includes/acp/acp_send_statistics.php
 %%PHPBBDIR%%/includes/acp/acp_styles.php
 %%PHPBBDIR%%/includes/acp/acp_update.php
 %%PHPBBDIR%%/includes/acp/acp_users.php
@@ -277,6 +296,7 @@
 %%PHPBBDIR%%/includes/acp/info/acp_ranks.php
 %%PHPBBDIR%%/includes/acp/info/acp_reasons.php
 %%PHPBBDIR%%/includes/acp/info/acp_search.php
+%%PHPBBDIR%%/includes/acp/info/acp_send_statistics.php
 %%PHPBBDIR%%/includes/acp/info/acp_styles.php
 %%PHPBBDIR%%/includes/acp/info/acp_update.php
 %%PHPBBDIR%%/includes/acp/info/acp_users.php
@@ -288,8 +308,16 @@
 %%PHPBBDIR%%/includes/auth/index.htm
 %%PHPBBDIR%%/includes/bbcode.php
 %%PHPBBDIR%%/includes/cache.php
+%%PHPBBDIR%%/includes/captcha/captcha_factory.php
 %%PHPBBDIR%%/includes/captcha/captcha_gd.php
+%%PHPBBDIR%%/includes/captcha/captcha_gd_wave.php
 %%PHPBBDIR%%/includes/captcha/captcha_non_gd.php
+%%PHPBBDIR%%/includes/captcha/plugins/captcha_abstract.php
+%%PHPBBDIR%%/includes/captcha/plugins/phpbb_captcha_gd_plugin.php
+%%PHPBBDIR%%/includes/captcha/plugins/phpbb_captcha_gd_wave_plugin.php
+%%PHPBBDIR%%/includes/captcha/plugins/phpbb_captcha_nogd_plugin.php
+%%PHPBBDIR%%/includes/captcha/plugins/phpbb_captcha_qa_plugin.php
+%%PHPBBDIR%%/includes/captcha/plugins/phpbb_recaptcha_plugin.php
 %%PHPBBDIR%%/includes/constants.php
 %%PHPBBDIR%%/includes/db/db_tools.php
 %%PHPBBDIR%%/includes/db/dbal.php
@@ -328,6 +356,7 @@
 %%PHPBBDIR%%/includes/mcp/info/mcp_logs.php
 %%PHPBBDIR%%/includes/mcp/info/mcp_main.php
 %%PHPBBDIR%%/includes/mcp/info/mcp_notes.php
+%%PHPBBDIR%%/includes/mcp/info/mcp_pm_reports.php
 %%PHPBBDIR%%/includes/mcp/info/mcp_queue.php
 %%PHPBBDIR%%/includes/mcp/info/mcp_reports.php
 %%PHPBBDIR%%/includes/mcp/info/mcp_warn.php
@@ -337,12 +366,14 @@
 %%PHPBBDIR%%/includes/mcp/mcp_logs.php
 %%PHPBBDIR%%/includes/mcp/mcp_main.php
 %%PHPBBDIR%%/includes/mcp/mcp_notes.php
+%%PHPBBDIR%%/includes/mcp/mcp_pm_reports.php
 %%PHPBBDIR%%/includes/mcp/mcp_post.php
 %%PHPBBDIR%%/includes/mcp/mcp_queue.php
 %%PHPBBDIR%%/includes/mcp/mcp_reports.php
 %%PHPBBDIR%%/includes/mcp/mcp_topic.php
 %%PHPBBDIR%%/includes/mcp/mcp_warn.php
 %%PHPBBDIR%%/includes/message_parser.php
+%%PHPBBDIR%%/includes/questionnaire/questionnaire.php
 %%PHPBBDIR%%/includes/search/fulltext_mysql.php
 %%PHPBBDIR%%/includes/search/fulltext_native.php
 %%PHPBBDIR%%/includes/search/index.htm
@@ -410,8 +441,6 @@
 %%PHPBBDIR%%/index.php
 %%PHPBBDIR%%/install/convertors/convert_phpbb20.php
 %%PHPBBDIR%%/install/convertors/functions_phpbb20.php
-%%PHPBBDIR%%/install/data/confusables.php
-%%PHPBBDIR%%/install/data/new_normalizer.php
 %%PHPBBDIR%%/install/database_update.php
 %%PHPBBDIR%%/install/index.php
 %%PHPBBDIR%%/install/install_convert.php
@@ -447,6 +476,8 @@
 %%PHPBBDIR%%/language/en/acp/search.php
 %%PHPBBDIR%%/language/en/acp/styles.php
 %%PHPBBDIR%%/language/en/acp/users.php
+%%PHPBBDIR%%/language/en/captcha_qa.php
+%%PHPBBDIR%%/language/en/captcha_recaptcha.php
 %%PHPBBDIR%%/language/en/common.php
 %%PHPBBDIR%%/language/en/email/admin_activate.txt
 %%PHPBBDIR%%/language/en/email/admin_send_email.txt
@@ -462,6 +493,8 @@
 %%PHPBBDIR%%/language/en/email/index.htm
 %%PHPBBDIR%%/language/en/email/installed.txt
 %%PHPBBDIR%%/language/en/email/newtopic_notify.txt
+%%PHPBBDIR%%/language/en/email/pm_report_closed.txt
+%%PHPBBDIR%%/language/en/email/pm_report_deleted.txt
 %%PHPBBDIR%%/language/en/email/post_approved.txt
 %%PHPBBDIR%%/language/en/email/post_disapproved.txt
 %%PHPBBDIR%%/language/en/email/privmsg_notify.txt
@@ -584,6 +617,9 @@
 %%PHPBBDIR%%/styles/prosilver/style.cfg
 %%PHPBBDIR%%/styles/prosilver/template/attachment.html
 %%PHPBBDIR%%/styles/prosilver/template/bbcode.html
+%%PHPBBDIR%%/styles/prosilver/template/captcha_default.html
+%%PHPBBDIR%%/styles/prosilver/template/captcha_qa.html
+%%PHPBBDIR%%/styles/prosilver/template/captcha_recaptcha.html
 %%PHPBBDIR%%/styles/prosilver/template/confirm_body.html
 %%PHPBBDIR%%/styles/prosilver/template/custom_profile_fields.html
 %%PHPBBDIR%%/styles/prosilver/template/drafts.html
@@ -637,6 +673,7 @@
 %%PHPBBDIR%%/styles/prosilver/template/posting_review.html
 %%PHPBBDIR%%/styles/prosilver/template/posting_smilies.html
 %%PHPBBDIR%%/styles/prosilver/template/posting_topic_review.html
+%%PHPBBDIR%%/styles/prosilver/template/quickreply_editor.html
 %%PHPBBDIR%%/styles/prosilver/template/report_body.html
 %%PHPBBDIR%%/styles/prosilver/template/search_body.html
 %%PHPBBDIR%%/styles/prosilver/template/search_results.html
@@ -695,6 +732,7 @@
 %%PHPBBDIR%%/styles/prosilver/theme/images/bg_header.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/bg_list.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/bg_menu.gif
+%%PHPBBDIR%%/styles/prosilver/theme/images/bg_menu_rtl.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/bg_tabs1.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/bg_tabs2.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/corners_left.gif
@@ -704,6 +742,7 @@
 %%PHPBBDIR%%/styles/prosilver/theme/images/corners_right.png
 %%PHPBBDIR%%/styles/prosilver/theme/images/corners_right2.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/created_by.jpg
+%%PHPBBDIR%%/styles/prosilver/theme/images/feed.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/gradient.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/icon_bookmark.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/icon_bump.gif
@@ -724,6 +763,7 @@
 %%PHPBBDIR%%/styles/prosilver/theme/images/index.htm
 %%PHPBBDIR%%/styles/prosilver/theme/images/no_avatar.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/quote.gif
+%%PHPBBDIR%%/styles/prosilver/theme/images/quote_rtl.gif
 %%PHPBBDIR%%/styles/prosilver/theme/index.htm
 %%PHPBBDIR%%/styles/prosilver/theme/large.css
 %%PHPBBDIR%%/styles/prosilver/theme/links.css
@@ -810,6 +850,9 @@
 %%PHPBBDIR%%/styles/subsilver2/template/attachment.html
 %%PHPBBDIR%%/styles/subsilver2/template/bbcode.html
 %%PHPBBDIR%%/styles/subsilver2/template/breadcrumbs.html
+%%PHPBBDIR%%/styles/subsilver2/template/captcha_default.html
+%%PHPBBDIR%%/styles/subsilver2/template/captcha_qa.html
+%%PHPBBDIR%%/styles/subsilver2/template/captcha_recaptcha.html
 %%PHPBBDIR%%/styles/subsilver2/template/confirm_body.html
 %%PHPBBDIR%%/styles/subsilver2/template/custom_profile_fields.html
 %%PHPBBDIR%%/styles/subsilver2/template/editor.js
@@ -862,6 +905,7 @@
 %%PHPBBDIR%%/styles/subsilver2/template/posting_review.html
 %%PHPBBDIR%%/styles/subsilver2/template/posting_smilies.html
 %%PHPBBDIR%%/styles/subsilver2/template/posting_topic_review.html
+%%PHPBBDIR%%/styles/subsilver2/template/quickreply_editor.html
 %%PHPBBDIR%%/styles/subsilver2/template/report_body.html
 %%PHPBBDIR%%/styles/subsilver2/template/search_body.html
 %%PHPBBDIR%%/styles/subsilver2/template/search_results.html
@@ -929,9 +973,6 @@
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
-@exec [ -f %D/%%PHPBBDIR%%/config.php ] || touch %D/%%PHPBBDIR%%/config.php
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
-@unexec [ -s %D/%%PHPBBDIR%%/config.php ] || rm -f %D/%%PHPBBDIR%%/config.php
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme/images
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme
 @dirrm %%PHPBBDIR%%/styles/subsilver2/template
@@ -952,7 +993,6 @@
 @dirrm %%PHPBBDIR%%/language/en
 @dirrm %%PHPBBDIR%%/language
 @dirrm %%PHPBBDIR%%/install/schemas
-@dirrm %%PHPBBDIR%%/install/data
 @dirrm %%PHPBBDIR%%/install/convertors
 @dirrm %%PHPBBDIR%%/install
 @dirrm %%PHPBBDIR%%/includes/utf/data
@@ -960,11 +1000,13 @@
 @dirrm %%PHPBBDIR%%/includes/ucp/info
 @dirrm %%PHPBBDIR%%/includes/ucp
 @dirrm %%PHPBBDIR%%/includes/search
+@dirrm %%PHPBBDIR%%/includes/questionnaire
 @dirrm %%PHPBBDIR%%/includes/mcp/info
 @dirrm %%PHPBBDIR%%/includes/mcp
 @dirrm %%PHPBBDIR%%/includes/hooks
 @dirrm %%PHPBBDIR%%/includes/diff
 @dirrm %%PHPBBDIR%%/includes/db
+@dirrm %%PHPBBDIR%%/includes/captcha/plugins
 @dirrm %%PHPBBDIR%%/includes/captcha
 @dirrm %%PHPBBDIR%%/includes/auth
 @dirrm %%PHPBBDIR%%/includes/acp/info
@@ -988,5 +1030,5 @@
 @dirrm %%PHPBBDIR%%/adm/style
 @dirrm %%PHPBBDIR%%/adm/images
 @dirrm %%PHPBBDIR%%/adm
-@dirrmtry %%PHPBBDIR%%
+@dirrm %%PHPBBDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
