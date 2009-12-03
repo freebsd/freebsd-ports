@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	papi
-PORTVERSION=	3.6.2
-PORTREVISION=	2
+PORTVERSION=	3.7.1
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
@@ -200,7 +199,6 @@ PAPI_C_TESTS=	ipc \
 	first \
 	exeinfo \
 	zero \
-	zero_fork \
 	branches \
 	dmem_info \
 	all_native_events \
@@ -219,22 +217,10 @@ PAPI_C_TESTS=	ipc \
 	flops \
 	second \
 	johnmay2 \
-	overflow \
-	overflow_force_software \
-	overflow_single_event \
-	overflow_twoevents \
-	timer_overflow \
-	overflow2 \
 	matrix-hl \
 	tenth \
 	encode \
 	encode2 \
-	profile \
-	sprofile \
-	profile_twoevents \
-	byte_profile \
-	overflow_index \
-	overflow_one_and_read \
 	multiplex1_pthreads \
 	multiplex3_pthreads \
 	kufrin \
@@ -245,12 +231,9 @@ PAPI_C_TESTS=	ipc \
 	sdsc2-mpx \
 	sdsc4-mpx \
 	thrspecific \
-	profile_pthreads \
-	overflow_pthreads \
 	zero_pthreads \
 	unregister_pthreads \
 	clockres_pthreads \
-	overflow3_pthreads \
 	locks_pthreads
 
 do-install:
