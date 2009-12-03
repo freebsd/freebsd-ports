@@ -31,11 +31,11 @@ COMMENT=	Linux plugin support for the native Opera browser
 
 RUN_DEPENDS=	${PREFIX}/share/opera/bin/operapluginwrapper:${PORTSDIR}/www/opera
 
-OPERA_VER=	10.00
+OPERA_VER=	10.10
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20090830
-OPERA_BUILD=	4585
+OPERA_DATE=	20091120
+OPERA_BUILD=	4742
 MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/i386/shared/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.gcc3-shared-qt3.i386
 
