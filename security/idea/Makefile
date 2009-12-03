@@ -7,10 +7,10 @@
 
 PORTNAME=	idea
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.funet.fi/pub/org/CERT/ftp.cert.dfn.de/pub/tools/crypt/idea/ \
-		http://www.de-moliner.ch/richard/downloads/ \
-		http://ftp.at.linuxfromscratch.org/infosys/security/dfn/tools/crypt/idea/
+MASTER_SITES=	http://www.de-moliner.ch/richard/downloads/ \
+		CRITICAL
 DISTNAME=	${PORTNAME}.V${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
@@ -19,7 +19,7 @@ COMMENT=	A command line idea encryption and decryption utility
 
 MAKE_JOBS_SAFE=	yes
 
-RESTRICTED=	"Crypto; IDEA is a patented algorithm that requires proper licensing"
+RESTRICTED=	Crypto; IDEA is a patented algorithm that requires proper licensing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -27,7 +27,7 @@ MANL=		idea.l
 MANCOMPRESSED=	no
 
 .if !defined(MAKE_IDEA) || ${MAKE_IDEA} == "no" || ${MAKE_IDEA} == "NO"
-IGNORE=		"you chose not to use idea related code"
+IGNORE=		you chose not to use idea related code
 .endif
 
 do-build:
