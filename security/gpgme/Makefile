@@ -7,6 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -45,8 +46,12 @@ CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg \
 BUILD_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg2 \
-		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
 		--with-gpgconf=${LOCALBASE}/bin/gpgconf
+.if exists(${LOCALBASE}/bin/gpgsm)
+CONFIGURE_ARGS+=--with-gpgsm=${LOCALBASE}/bin/gpgsm
+.else
+CONFIGURE_ARGS+=--with-gpgsm=no
+.endif
 .endif
 
 .if defined(WITH_PTH)
