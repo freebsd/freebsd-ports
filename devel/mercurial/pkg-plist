@@ -122,6 +122,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/relink.py
 %%PYTHON_SITELIBDIR%%/hgext/relink.pyc
 %%PYTHON_SITELIBDIR%%/hgext/relink.pyo
+%%PYTHON_SITELIBDIR%%/hgext/schemes.py
+%%PYTHON_SITELIBDIR%%/hgext/schemes.pyc
+%%PYTHON_SITELIBDIR%%/hgext/schemes.pyo
 %%PYTHON_SITELIBDIR%%/hgext/share.py
 %%PYTHON_SITELIBDIR%%/hgext/share.pyc
 %%PYTHON_SITELIBDIR%%/hgext/share.pyo
