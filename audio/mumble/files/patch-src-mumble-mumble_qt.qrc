@@ -1,0 +1,19 @@
+--- src/mumble/mumble_qt.qrc.orig	2009-12-02 23:08:46.000000000 +0100
++++ src/mumble/mumble_qt.qrc	2009-12-02 23:11:31.000000000 +0100
+@@ -1,10 +1,10 @@
+ <!DOCTYPE RCC><RCC version="1.0">
+ <qresource>
+- <file>qt_de.qm</file>
+- <file>qt_es.qm</file>
+- <file>qt_fr.qm</file>
+- <file>qt_ru.qm</file>
+- <file>qt_pl.qm</file>
+- <file>qt_ja_jp.qm</file>
++ <file>qt_de.ts</file>
++ <file>qt_es.ts</file>
++ <file>qt_fr.ts</file>
++ <file>qt_ru.ts</file>
++ <file>qt_pl.ts</file>
++ <file>qt_ja_jp.ts</file>
+ </qresource>
+ </RCC>
