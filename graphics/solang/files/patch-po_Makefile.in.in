@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- po/Makefile.in.in.orig
++++ po/Makefile.in.in
+@@ -34,7 +34,7 @@
+ datarootdir = @datarootdir@
+ libdir = @libdir@
+ DATADIRNAME = @DATADIRNAME@
+-itlocaledir = $(prefix)/$(DATADIRNAME)/locale
++itlocaledir = $(datarootdir)/locale
+ subdir = po
+ install_sh = @install_sh@
+ # Automake >= 1.8 provides @mkdir_p@.

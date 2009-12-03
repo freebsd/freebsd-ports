@@ -1,0 +1,20 @@
+Solang - A photo manager for GNOME
+
+Features:
+---------
+- Browser, editor, enlarged and slideshow renderer for viewing the entire
+  collection, editing, a single photo and slideshows respectively.
+- Camera, Flickr and folder importer to import photos from cameras in PTP mode
+  Flickr and folders respectively.
+- Folder exporter to export selected photos to a folder.
+- Date view for showing photo dates.
+- Basic editing like brightness, contrast, flipping, rotation, saturation and
+  scaling, and undo, redo of operations.
+- Ability to copy a set of applied operations from one photo and paste it
+  onto others.
+- Support for tagging photos and Exif data.
+- Thumbnails for showing RAW files in the browser renderer.
+- Search basket for drag and drop search using multiple tags, Exif fields
+  and/or dates.
+
+WWW:	https://savannah.nongnu.org/projects/solang

@@ -1,0 +1,74 @@
+bin/solang
+share/locale/bg/LC_MESSAGES/solang.mo
+share/locale/it/LC_MESSAGES/solang.mo
+share/applications/solang.desktop
+%%DOCSDIR%%/ARTISTS
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/COPYING.GPLv2
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+share/icons/hicolor/128x128/apps/solang.png
+share/icons/hicolor/16x16/apps/solang.png
+share/icons/hicolor/22x22/apps/solang.png
+share/icons/hicolor/24x24/apps/solang.png
+share/icons/hicolor/32x32/apps/solang.png
+share/icons/hicolor/48x48/apps/solang.png
+share/icons/hicolor/96x96/apps/solang.png
+share/icons/hicolor/scalable/apps/solang.svg
+%%DATADIR%%/pixmaps/camera-photo-16.png
+%%DATADIR%%/pixmaps/camera-photo-22.png
+%%DATADIR%%/pixmaps/camera-photo-24.png
+%%DATADIR%%/pixmaps/camera-photo-32.png
+%%DATADIR%%/pixmaps/camera-photo.svg
+%%DATADIR%%/pixmaps/flickr.png
+%%DATADIR%%/pixmaps/flip-object-horizontal.png
+%%DATADIR%%/pixmaps/flip-object-vertical.png
+%%DATADIR%%/pixmaps/mode-browse-16.png
+%%DATADIR%%/pixmaps/mode-browse-22.png
+%%DATADIR%%/pixmaps/mode-browse-24.png
+%%DATADIR%%/pixmaps/mode-browse-32.png
+%%DATADIR%%/pixmaps/mode-browse.svg
+%%DATADIR%%/pixmaps/mode-image-edit-16.png
+%%DATADIR%%/pixmaps/mode-image-edit-22.png
+%%DATADIR%%/pixmaps/mode-image-edit-24.png
+%%DATADIR%%/pixmaps/object-rotate-left.png
+%%DATADIR%%/pixmaps/object-rotate-right.png
+%%DATADIR%%/pixmaps/slideshow-play-16.png
+%%DATADIR%%/pixmaps/slideshow-play-22.png
+%%DATADIR%%/pixmaps/slideshow-play-24.png
+%%DATADIR%%/pixmaps/slideshow-play-32.png
+%%DATADIR%%/pixmaps/slideshow-play-48.png
+%%DATADIR%%/pixmaps/slideshow-play.svg
+%%DATADIR%%/pixmaps/stock-resize-16.png
+%%DATADIR%%/pixmaps/tag-16.png
+%%DATADIR%%/pixmaps/tag-22.png
+%%DATADIR%%/pixmaps/tag-new-16.png
+%%DATADIR%%/pixmaps/tag-new-22.png
+%%DATADIR%%/pixmaps/tag-new-24.png
+%%DATADIR%%/pixmaps/view-far-16.png
+%%DATADIR%%/pixmaps/view-far-22.png
+%%DATADIR%%/pixmaps/view-far-24.png
+%%DATADIR%%/pixmaps/view-near-16.png
+%%DATADIR%%/pixmaps/view-near-22.png
+%%DATADIR%%/pixmaps/view-near-24.png
+%%DATADIR%%/solang-layout.xml
+%%DATADIR%%/ui/solang-browser-renderer-thumbnail.ui
+%%DATADIR%%/ui/solang-browser-renderer.ui
+%%DATADIR%%/ui/solang-editor-renderer.ui
+%%DATADIR%%/ui/solang-editor.ui
+%%DATADIR%%/ui/solang-enlarged-renderer.ui
+%%DATADIR%%/ui/solang-importer.ui
+%%DATADIR%%/ui/solang-slideshow-renderer.ui
+%%DATADIR%%/ui/solang-slideshow.ui
+%%DATADIR%%/ui/solang-tag-manager.ui
+%%DATADIR%%/ui/solang-thumbnail-popup.ui
+%%DATADIR%%/ui/solang.ui
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

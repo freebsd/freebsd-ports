@@ -855,6 +855,7 @@
     SUBDIR += sng
     SUBDIR += snx101util
     SUBDIR += sodipodi
+    SUBDIR += solang
     SUBDIR += spcaview
     SUBDIR += springgraph
     SUBDIR += sswf
