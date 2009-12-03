@@ -4,3 +4,6 @@ SIZE (gcc-core-4.2-20090325.tar.bz2) = 16062670
 MD5 (gcc-g++-4.2-20090325.tar.bz2) = dd0d0ef2f7fd6c112b9efdfb52501e35
 SHA256 (gcc-g++-4.2-20090325.tar.bz2) = abe6f2f91a5f27b03948cb3cc2d6672540bae0f8c89055a054c0043ba57f7bb1
 SIZE (gcc-g++-4.2-20090325.tar.bz2) = 4826743
+MD5 (gcc-objc-4.2-20090325.tar.bz2) = 4f90a23bf249df24682e5fc1d4042a23
+SHA256 (gcc-objc-4.2-20090325.tar.bz2) = ed7489522fbfb9ed6be9a028e3fe73018d406e206f4dd9d79b892c4b04bd3366
+SIZE (gcc-objc-4.2-20090325.tar.bz2) = 196233
