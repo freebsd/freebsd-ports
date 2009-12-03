@@ -1,2 +1,6 @@
 chrpath allows you to modify the dynamic library load path (rpath) of
 compiled programs. Only removing and modifying the rpath is supported.
+
+Note: The modification performed is in-place; the new DT_RPATH cannot
+be longer than the existing DT_RPATH value. Also, the binary can only
+work with the ELF class of the host system.
