@@ -1,23 +1,23 @@
 bin/etherape
 etc/etherape/services
 share/applications/etherape.desktop
-share/etherape/doc/etherape/C/etherape.xml
-share/etherape/doc/etherape/C/figures/appmain.png
-share/etherape/doc/etherape/C/figures/capture_file_dlg.png
-share/etherape/doc/etherape/C/figures/color_select_dlg.png
-share/etherape/doc/etherape/C/figures/eth_toolbar.png
-share/etherape/doc/etherape/C/figures/link_info.png
-share/etherape/doc/etherape/C/figures/node_info.png
-share/etherape/doc/etherape/C/figures/pref_colors_dlg.png
-share/etherape/doc/etherape/C/figures/pref_diagram_dlg.png
-share/etherape/doc/etherape/C/figures/pref_timings_dlg.png
-share/etherape/doc/etherape/C/figures/proto_info.png
-share/etherape/doc/etherape/C/figures/protocol_edit_dlg.png
-share/etherape/glade/etherape.glade2
-share/etherape/glade/etherape.png
-share/etherape/glade/pause.xpm
-share/etherape/glade/play.xpm
-share/etherape/glade/stop.xpm
+%%DATADIR%%/doc/etherape/C/etherape.xml
+%%DATADIR%%/doc/etherape/C/figures/appmain.png
+%%DATADIR%%/doc/etherape/C/figures/capture_file_dlg.png
+%%DATADIR%%/doc/etherape/C/figures/color_select_dlg.png
+%%DATADIR%%/doc/etherape/C/figures/eth_toolbar.png
+%%DATADIR%%/doc/etherape/C/figures/link_info.png
+%%DATADIR%%/doc/etherape/C/figures/node_info.png
+%%DATADIR%%/doc/etherape/C/figures/pref_colors_dlg.png
+%%DATADIR%%/doc/etherape/C/figures/pref_diagram_dlg.png
+%%DATADIR%%/doc/etherape/C/figures/pref_timings_dlg.png
+%%DATADIR%%/doc/etherape/C/figures/proto_info.png
+%%DATADIR%%/doc/etherape/C/figures/protocol_edit_dlg.png
+%%DATADIR%%/glade/etherape.glade
+%%DATADIR%%/glade/etherape.png
+%%DATADIR%%/glade/pause.xpm
+%%DATADIR%%/glade/play.xpm
+%%DATADIR%%/glade/stop.xpm
 share/omf/etherape/etherape-C.omf
 share/pixmaps/etherape.png
 share/locale/es/LC_MESSAGES/etherape.mo
@@ -25,11 +25,11 @@ share/locale/fr/LC_MESSAGES/etherape.mo
 share/locale/nl/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
 @dirrm share/omf/etherape
-@dirrm share/etherape/glade
-@dirrm share/etherape/doc/etherape/C/figures
-@dirrm share/etherape/doc/etherape/C
-@dirrm share/etherape/doc/etherape
-@dirrm share/etherape/doc
-@dirrm share/etherape
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/doc/etherape/C/figures
+@dirrm %%DATADIR%%/doc/etherape/C
+@dirrm %%DATADIR%%/doc/etherape
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
 @dirrm etc/etherape
 @dirrmtry share/applications

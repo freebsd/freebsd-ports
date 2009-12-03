@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	etherape
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
