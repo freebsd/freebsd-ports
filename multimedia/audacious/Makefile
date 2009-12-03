@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-xspf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
