@@ -30,6 +30,10 @@ OPTIONS=	NLS "Native language support" on
 
 .include <bsd.port.pre.mk>
 
+.if !exists(${LOCALBASE}/bin/gpgsm)
+IGNORE=		requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON, then rebuild security/gpgme if installed
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
