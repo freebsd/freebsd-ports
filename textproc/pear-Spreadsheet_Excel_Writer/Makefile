@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet_Excel_Writer
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	pav@FreeBSD.org
@@ -17,9 +16,10 @@ BUILD_DEPENDS=	${PEARDIR}/OLE/OLE.php:${PORTSDIR}/devel/pear-OLE \
 		${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Spreadsheet/Excel
-FILES=		Writer.php Writer/BIFFwriter.php Writer/Format.php Writer/Parser.php \
-		Writer/Validator.php Writer/Workbook.php Writer/Worksheet.php
+FILES=		Spreadsheet/Excel/Writer.php Spreadsheet/Excel/Writer/BIFFwriter.php \
+		Spreadsheet/Excel/Writer/Format.php Spreadsheet/Excel/Writer/Parser.php \
+		Spreadsheet/Excel/Writer/Validator.php Spreadsheet/Excel/Writer/Workbook.php \
+		Spreadsheet/Excel/Writer/Worksheet.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
