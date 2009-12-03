@@ -1,0 +1,6 @@
+MD5 (solang-0.3.tar.gz) = 6f82d34174815deacb4392b88a4134ed
+SHA256 (solang-0.3.tar.gz) = 0d3c85c4f96f829eefc8851713510e068f3cf6b90a0cb084035d98f4d69cb00a
+SIZE (solang-0.3.tar.gz) = 658189
+MD5 (0001-Ported-to-libgdamm-4.x.patch) = 4afe92dff02a4359b2bea3d9c358b274
+SHA256 (0001-Ported-to-libgdamm-4.x.patch) = 55bdf02d4c22b947a0e718baced9437949e55480e8ad4fd2ad6ee34b38f29c4f
+SIZE (0001-Ported-to-libgdamm-4.x.patch) = 23747
