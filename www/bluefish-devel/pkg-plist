@@ -1,0 +1,270 @@
+bin/bluefish-unstable
+lib/bluefish-unstable/about.so
+lib/bluefish-unstable/about.la
+lib/bluefish-unstable/entities.so
+lib/bluefish-unstable/entities.la
+lib/bluefish-unstable/htmlbar.so
+lib/bluefish-unstable/htmlbar.la
+lib/bluefish-unstable/infbrowser.so
+lib/bluefish-unstable/infbrowser.la
+lib/bluefish-unstable/snippets.so
+lib/bluefish-unstable/snippets.la
+share/applications/bluefish-unstable.desktop
+%%DATADIR%%/bflang/all-html.bfinc
+%%DATADIR%%/bflang/all-javascript.bfinc
+%%DATADIR%%/bflang/all-php.bfinc
+%%DATADIR%%/bflang/all-vbscript.bfinc
+%%DATADIR%%/bflang/css-rules.bfinc
+%%DATADIR%%/bflang/css-selectors.bfinc
+%%DATADIR%%/bflang/ada.bflang2
+%%DATADIR%%/bflang/asp.bflang2
+%%DATADIR%%/bflang/asp-vbscript.bflang2
+%%DATADIR%%/bflang/bflang2.bflang2
+%%DATADIR%%/bflang/c.bflang2
+%%DATADIR%%/bflang/cpp.bflang2
+%%DATADIR%%/bflang/css.bflang2
+%%DATADIR%%/bflang/d.bflang2
+%%DATADIR%%/bflang/html.bflang2
+%%DATADIR%%/bflang/java.bflang2
+%%DATADIR%%/bflang/javascript.bflang2
+%%DATADIR%%/bflang/jsp.bflang2
+%%DATADIR%%/bflang/perl.bflang2
+%%DATADIR%%/bflang/php.bflang2
+%%DATADIR%%/bflang/po.bflang2
+%%DATADIR%%/bflang/python.bflang2
+%%DATADIR%%/bflang/ruby.bflang2
+%%DATADIR%%/bflang/shell.bflang2
+%%DATADIR%%/bflang/smarty.bflang2
+%%DATADIR%%/bflang/text.bflang2
+%%DATADIR%%/bflang/vbscript.bflang2
+%%DATADIR%%/bflang/xhtml.bflang2
+%%DATADIR%%/bflang/xml.bflang2
+%%DATADIR%%/bflib/bflib_css2.xml.gz
+%%DATADIR%%/bflib/bflib_dom.xml.gz
+%%DATADIR%%/bflib/bflib_php4.xml.gz
+%%DATADIR%%/bflib/bflib_php5_with_examples.xml.gz
+%%DATADIR%%/bflib/bflib_php5.xml.gz
+%%DATADIR%%/bflib/bflib_python_2.3.xml.gz
+%%DATADIR%%/bflib/bflib_xhtml.xml.gz
+%%DATADIR%%/bflib/bflib_XHTML_1_0_Strict.xml.gz
+%%DATADIR%%/bflib/bflib_XHTML_1_0_Transitional.xml.gz
+%%DATADIR%%/bflib/bflib_XHTML_1_0_Frameset.xml.gz
+%%DATADIR%%/bflib/bflib_XHTML_1_1.xml.gz
+%%DATADIR%%/bflib/bflib_SVG_1_0.xml.gz
+%%DATADIR%%/bflib/bflib_SVG_1_1_Full.xml.gz
+%%DATADIR%%/bflib/bflib_SVG_1_1_Basic.xml.gz
+%%DATADIR%%/bflib/bflib_SVG_1_1_Tiny.xml.gz
+%%DATADIR%%/bflib/bflib_XHTML_1_0_W3C.xml.gz
+%%DATADIR%%/bflib/bflib_DocBook_4_5.xml.gz
+%%DATADIR%%/bflib/bflib_DocBook_5_0.xml.gz
+%%DATADIR%%/encodings
+%%DATADIR%%/bluefish_splash.png
+share/icons/hicolor/16x16/apps/bluefish-unstable.png
+share/icons/hicolor/16x16/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/22x22/apps/bluefish-unstable.png
+share/icons/hicolor/22x22/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/32x32/apps/bluefish-unstable.png
+share/icons/hicolor/32x32/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/36x36/apps/bluefish-unstable.png
+share/icons/hicolor/36x36/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/48x48/apps/bluefish-unstable.png
+share/icons/hicolor/48x48/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/64x64/apps/bluefish-unstable.png
+share/icons/hicolor/64x64/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/72x72/apps/bluefish-unstable.png
+share/icons/hicolor/72x72/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/96x96/apps/bluefish-unstable.png
+share/icons/hicolor/96x96/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/128x128/apps/bluefish-unstable.png
+share/icons/hicolor/128x128/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/192x192/apps/bluefish-unstable.png
+share/icons/hicolor/192x192/mimetypes/application-x-bluefish-project.png
+share/icons/hicolor/scalable/apps/bluefish-icon.svg
+share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
+share/locale/da/LC_MESSAGES/bluefish-unstable.mo
+share/locale/da/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/da/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/da/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/da/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/da/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/da/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/de/LC_MESSAGES/bluefish-unstable.mo
+share/locale/de/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/de/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/de/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/de/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/de/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/de/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/es/LC_MESSAGES/bluefish-unstable.mo
+share/locale/es/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/es/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/es/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/es/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/es/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/es/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/eu/LC_MESSAGES/bluefish-unstable.mo
+share/locale/eu/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/eu/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/eu/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/eu/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/eu/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/eu/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/fi/LC_MESSAGES/bluefish-unstable.mo
+share/locale/fi/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/fi/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/fi/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/fi/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/fi/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/fi/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/fr/LC_MESSAGES/bluefish-unstable.mo
+share/locale/fr/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/fr/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/fr/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/fr/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/fr/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/fr/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/it/LC_MESSAGES/bluefish-unstable.mo
+share/locale/it/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/it/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/it/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/it/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/it/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/it/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/ja/LC_MESSAGES/bluefish-unstable.mo
+share/locale/ja/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/ja/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/ja/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/ja/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/ja/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/ja/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/ko_KR/LC_MESSAGES/bluefish-unstable.mo
+share/locale/ko_KR/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/ko_KR/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/ko_KR/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/ko_KR/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/ko_KR/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/ko_KR/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/nb/LC_MESSAGES/bluefish-unstable.mo
+share/locale/nb/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/nb/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/nb/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/nb/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/nb/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/nb/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/nl/LC_MESSAGES/bluefish-unstable.mo
+share/locale/nl/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/nl/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/nl/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/nl/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/nl/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/nl/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/pl/LC_MESSAGES/bluefish-unstable.mo
+share/locale/pl/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/pl/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/pl/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/pl/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/pl/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/pl/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/pt/LC_MESSAGES/bluefish-unstable.mo
+share/locale/pt/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/pt/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/pt/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/pt/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/pt/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/pt/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish-unstable.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/ru/LC_MESSAGES/bluefish-unstable.mo
+share/locale/ru/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/ru/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/ru/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/ru/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/ru/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/ru/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/sk/LC_MESSAGES/bluefish-unstable.mo
+share/locale/sk/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/sk/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/sk/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/sk/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/sk/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/sk/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/sr/LC_MESSAGES/bluefish-unstable.mo
+share/locale/sr/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/sr/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/sr/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/sr/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/sr/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/sr/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/sv/LC_MESSAGES/bluefish-unstable.mo
+share/locale/sv/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/sv/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/sv/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/sv/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/sv/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/sv/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/ta/LC_MESSAGES/bluefish-unstable.mo
+share/locale/ta/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/ta/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/ta/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/ta/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/ta/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/ta/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/tr/LC_MESSAGES/bluefish-unstable.mo
+share/locale/tr/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/tr/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/tr/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/tr/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/tr/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/tr/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish-unstable.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish-unstable.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish-unstable_plugin_about.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish-unstable_plugin_charmap.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish-unstable_plugin_entities.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish-unstable_plugin_htmlbar.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish-unstable_plugin_infbrowser.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish-unstable_plugin_snippets.mo
+share/mime/application/x-bluefish-language2.xml
+share/mime/application/x-bluefish-project.xml
+share/mime/packages/bluefish-unstable.xml
+share/pixmaps/application-x-bluefish-project.png
+share/pixmaps/bluefish-unstable.png
+@dirrm lib/bluefish-unstable
+@dirrm %%DATADIR%%/bflang
+@dirrm %%DATADIR%%/bflib
+@dirrm %%DATADIR%%
+@dirrm share/locale/ko_KR/LC_MESSAGES
+@dirrmtry share/locale/ko_KR
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22/mimetypes
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/36x36/apps
+@dirrmtry share/icons/hicolor/36x36/mimetypes
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72/mimetypes
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96/mimetypes
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128/mimetypes
+@dirrmtry share/icons/hicolor/192x192/apps
+@dirrmtry share/icons/hicolor/192x192/mimetypes
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable/mimetypes
