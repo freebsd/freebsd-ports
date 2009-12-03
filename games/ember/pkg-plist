@@ -11,17 +11,6 @@ etc/ember/ogre.cfg
 etc/ember/resources.cfg
 etc/ember/terrain.cfg
 share/applications/ember.desktop
-share/ember/carpenter/blockspec/adapters.blockspec.xml
-share/ember/carpenter/blockspec/fences.blockspec.xml
-share/ember/carpenter/blockspec/floors.blockspec.xml
-share/ember/carpenter/blockspec/roofs.blockspec.xml
-share/ember/carpenter/blockspec/slopewalls.blockspec.xml
-share/ember/carpenter/blockspec/walls.blockspec.xml
-share/ember/carpenter/blueprints/empty.blueprint.xml
-share/ember/carpenter/blueprints/house.blueprint.xml
-share/ember/carpenter/blueprints/sty.blueprint.xml
-share/ember/carpenter/modelblockspecs/general.modelblocks.xml
-share/ember/jesus/modelmappings/general.modelmapping.xml
 share/ember/media/shared/COPYING.txt
 share/ember/media/shared/LICENSING.txt
 share/ember/media/shared/common/3d_objects/environment/models/boulder/graniteA.mesh
@@ -147,18 +136,6 @@ share/ember/media/shared/common/3d_objects/environment/textures/stone_yellow/S.p
 share/ember/media/shared/common/3d_objects/environment/textures/water/D.png
 share/ember/media/shared/common/3d_objects/environment/textures/water/N.png
 share/ember/media/shared/common/3d_objects/environment/textures/water/S.png
-share/ember/media/shared/common/3d_objects/items/building_element/models/columns/pillar_fractured.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/columns/pillar_segmented.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/door_element/door_element.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/gallows/gallows.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/normal_slope_roof/normal_slope_roof.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/normal_slope_wall/normal_slope_wall.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/standard_wall/standard_wall.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/wall_blocks/floor_3x3x0_3.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/wall_blocks/wall_1_5x3x0_3.mesh
-share/ember/media/shared/common/3d_objects/items/building_element/models/wall_blocks/wall_3x3x0_3.mesh
-share/ember/media/shared/common/3d_objects/items/building_primitives/models/columns/turned_cylindrical_column.mesh
-share/ember/media/shared/common/3d_objects/items/building_primitives/models/jetty/jetty.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/barrel/barrel.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/bottle/bottle.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/bottlejug/bottlejug.mesh
@@ -322,6 +299,7 @@ share/ember/media/shared/common/3d_objects/plants/grass/textures/ducktail_yellow
 share/ember/media/shared/common/3d_objects/plants/grass/textures/ducktail_yellow/S.png
 share/ember/media/shared/common/3d_objects/plants/mushrooms/models/amanita/amanita.mesh
 share/ember/media/shared/common/3d_objects/plants/mushrooms/models/galerina/galerina.mesh
+share/ember/media/shared/common/3d_objects/plants/mushrooms/models/silkfoot/silkfoot.mesh
 share/ember/media/shared/common/3d_objects/plants/mushrooms/textures/amanita/D.png
 share/ember/media/shared/common/3d_objects/plants/mushrooms/textures/amanita/N.png
 share/ember/media/shared/common/3d_objects/plants/mushrooms/textures/amanita/S.png
@@ -337,6 +315,7 @@ share/ember/media/shared/common/3d_objects/plants/mushrooms/textures/silkfoot/S.
 share/ember/media/shared/common/3d_objects/plants/shrubs/models/bush/bush.mesh
 share/ember/media/shared/common/3d_objects/plants/shrubs/models/fern/fern.mesh
 share/ember/media/shared/common/3d_objects/plants/shrubs/models/leaf/leaves.mesh
+share/ember/media/shared/common/3d_objects/plants/shrubs/models/shrub_A/shrub_A.mesh
 share/ember/media/shared/common/3d_objects/plants/shrubs/models/shrub_B/shrub_B.mesh
 share/ember/media/shared/common/3d_objects/plants/shrubs/textures/bush_gnarly_brown/D.png
 share/ember/media/shared/common/3d_objects/plants/shrubs/textures/bush_gnarly_brown/N.png
@@ -468,6 +447,7 @@ share/ember/media/shared/common/3d_objects/structures/models/cg_smithy/cg_smithy
 share/ember/media/shared/common/3d_objects/structures/models/concrete_stairs/concrete_stairs.mesh
 share/ember/media/shared/common/3d_objects/structures/models/fire_place_A/fire_place_A.mesh
 share/ember/media/shared/common/3d_objects/structures/models/ground_pallisade/ground_pallisade.mesh
+share/ember/media/shared/common/3d_objects/structures/models/jetty/jetty.mesh
 share/ember/media/shared/common/3d_objects/structures/models/log/tree_log.mesh
 share/ember/media/shared/common/3d_objects/structures/models/market_tent/market_tent.mesh
 share/ember/media/shared/common/3d_objects/structures/models/marketstall/marketstall_canvasA.mesh
@@ -791,6 +771,7 @@ share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures/dee
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures/greyhair/greyhair256.png
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures/mottled_oker/quadruped_v2.png
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures/pink_pig/low/quadruped_v2.png
+share/ember/media/shared/common/3d_skeletons/creatures/tubular/models/bluegill/animation/bluegill.skeleton
 share/ember/media/shared/common/3d_skeletons/creatures/tubular/models/fish_01/fish_01.mesh
 share/ember/media/shared/common/3d_skeletons/creatures/tubular/textures/scaly_brown_white/tubular.png
 share/ember/media/shared/common/3d_skeletons/insects/models/spider/animation/spider.skeleton
@@ -870,30 +851,30 @@ share/ember/media/shared/common/resources/ogre/scripts/materials/vegetation.mate
 share/ember/media/shared/common/resources/ogre/scripts/overlays/Compass.overlay
 share/ember/media/shared/common/resources/ogre/scripts/particle/smoke.particle
 share/ember/media/shared/common/resources/ogre/scripts/particle/sun.particle
-share/ember/media/shared/common/resources/ogre/scripts/programs/All_In_Wonder.cg
-share/ember/media/shared/common/resources/ogre/scripts/programs/All_In_Wonder.program
-share/ember/media/shared/common/resources/ogre/scripts/programs/Animation.cg
 share/ember/media/shared/common/resources/ogre/scripts/programs/Common.program
 share/ember/media/shared/common/resources/ogre/scripts/programs/DepthShadowmap.material
 share/ember/media/shared/common/resources/ogre/scripts/programs/DepthShadowmap.program
 share/ember/media/shared/common/resources/ogre/scripts/programs/DepthShadowmapCasterFp.glsl
 share/ember/media/shared/common/resources/ogre/scripts/programs/DepthShadowmapCasterVp.glsl
-share/ember/media/shared/common/resources/ogre/scripts/programs/Example_Basic.cg
-share/ember/media/shared/common/resources/ogre/scripts/programs/Example_BumpMapping.cg
-share/ember/media/shared/common/resources/ogre/scripts/programs/Example_CelShading.cg
 share/ember/media/shared/common/resources/ogre/scripts/programs/Example_Fresnel.cg
-share/ember/media/shared/common/resources/ogre/scripts/programs/Example_Projection.cg
-share/ember/media/shared/common/resources/ogre/scripts/programs/Examples.program
 share/ember/media/shared/common/resources/ogre/scripts/programs/Grass.cg
-share/ember/media/shared/common/resources/ogre/scripts/programs/Light.cg
 share/ember/media/shared/common/resources/ogre/scripts/programs/LightingFp.glsl
 share/ember/media/shared/common/resources/ogre/scripts/programs/LightingVp.glsl
-share/ember/media/shared/common/resources/ogre/scripts/programs/OffsetMapping.cg
-share/ember/media/shared/common/resources/ogre/scripts/programs/OffsetMappingFp.glsl
-share/ember/media/shared/common/resources/ogre/scripts/programs/OffsetMappingVp.glsl
 share/ember/media/shared/common/resources/ogre/scripts/programs/Splat.cg
 share/ember/media/shared/common/resources/ogre/scripts/programs/Splat.program
 share/ember/media/shared/common/resources/ogre/scripts/programs/SplatFp.glsl
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/All_In_Wonder.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/All_In_Wonder.program
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/Animation.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/Example_Basic.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/Example_BumpMapping.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/Example_CelShading.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/Example_Projection.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/Examples.program
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/Light.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/OffsetMapping.cg
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/OffsetMappingFp.glsl
+share/ember/media/shared/common/resources/ogre/scripts/programs/old/OffsetMappingVp.glsl
 share/ember/media/shared/common/resources/ogre/textures/axes.png
 share/ember/media/shared/common/resources/ogre/textures/dark.png
 share/ember/media/shared/common/resources/ogre/textures/flare.png
@@ -939,9 +920,6 @@ share/ember/media/shared/core/axes.png
 share/ember/media/shared/core/ember_progress_bar.png
 share/ember/media/shared/core/ember_progress_bar_frame.png
 share/ember/media/shared/core/ember_splash.png
-share/ember/media/user/COPYING.txt
-share/ember/media/user/LICENSING.txt
-share/ember/media/user/README
 share/ember/media/shared/entityrecipes/barrel.entityrecipe
 share/ember/media/shared/entityrecipes/birch.entityrecipe
 share/ember/media/shared/entityrecipes/boulder.entityrecipe
@@ -956,6 +934,8 @@ share/ember/media/shared/entityrecipes/mushroom.entityrecipe
 share/ember/media/shared/entityrecipes/oak.entityrecipe
 share/ember/media/shared/entityrecipes/stone_palissade.entityrecipe
 share/ember/media/shared/entityrecipes/test.entityrecipe
+share/ember/media/shared/entityrecipes/tinderbox.entityrecipe
+share/ember/media/shared/entityrecipes/torch.entityrecipe
 share/ember/media/shared/entityrecipes/vegetables.entityrecipe
 share/ember/media/shared/gui/CEGUIConfig.xsd
 share/ember/media/shared/gui/Falagard.xsd
@@ -984,6 +964,7 @@ share/ember/media/shared/gui/cegui/datafiles/layouts/EntityBrowser.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityCreator.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityEditor.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPicker.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPickerSelector.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Environment.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/GUILayout.xsd
 share/ember/media/shared/gui/cegui/datafiles/layouts/Give.layout
@@ -1006,6 +987,7 @@ share/ember/media/shared/gui/cegui/datafiles/layouts/PickingInfo.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Quit.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/ScriptEdit.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/ServerBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ServerLogger.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/ServerWidget.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Status.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Tasks.layout
@@ -1038,7 +1020,6 @@ share/ember/media/shared/modeldefinitions/bed.modeldef
 share/ember/media/shared/modeldefinitions/birchA.modeldef
 share/ember/media/shared/modeldefinitions/birchB.modeldef
 share/ember/media/shared/modeldefinitions/birchC.modeldef
-share/ember/media/shared/modeldefinitions/birch_mk1.modeldef
 share/ember/media/shared/modeldefinitions/boat.modeldef
 share/ember/media/shared/modeldefinitions/bottle.modeldef
 share/ember/media/shared/modeldefinitions/bowls.modeldef
@@ -1078,6 +1059,7 @@ share/ember/media/shared/modeldefinitions/deer.modeldef
 share/ember/media/shared/modeldefinitions/don_jon.modeldef
 share/ember/media/shared/modeldefinitions/door.modeldef
 share/ember/media/shared/modeldefinitions/edibles.modeldef
+share/ember/media/shared/modeldefinitions/entitymappings.entitymap.xml
 share/ember/media/shared/modeldefinitions/environment.modeldef.xml
 share/ember/media/shared/modeldefinitions/fencepole.modeldef
 share/ember/media/shared/modeldefinitions/fencesection.modeldef
@@ -1114,7 +1096,6 @@ share/ember/media/shared/modeldefinitions/market_tent.modeldef
 share/ember/media/shared/modeldefinitions/marketstall_canvasA.modeldef
 share/ember/media/shared/modeldefinitions/marketstall_canvasB.modeldef
 share/ember/media/shared/modeldefinitions/marketstall_canvasC.modeldef
-share/ember/media/shared/modeldefinitions/modelmappings.modelmap.xml
 share/ember/media/shared/modeldefinitions/monster_skeleton.modeldef
 share/ember/media/shared/modeldefinitions/moraf.terrain
 share/ember/media/shared/modeldefinitions/morafboulder.modeldef
@@ -1124,6 +1105,7 @@ share/ember/media/shared/modeldefinitions/oakC.modeldef
 share/ember/media/shared/modeldefinitions/oak_mk1.modeldef
 share/ember/media/shared/modeldefinitions/oak_sapling.modeldef
 share/ember/media/shared/modeldefinitions/oak_young.modeldef
+share/ember/media/shared/modeldefinitions/ocean.modeldef
 share/ember/media/shared/modeldefinitions/open_crate.modeldef
 share/ember/media/shared/modeldefinitions/outerwall.modeldef
 share/ember/media/shared/modeldefinitions/painting.modeldef
@@ -1136,8 +1118,10 @@ share/ember/media/shared/modeldefinitions/placeholder.modeldef.xml
 share/ember/media/shared/modeldefinitions/primitives.modeldef
 share/ember/media/shared/modeldefinitions/roots.modeldef
 share/ember/media/shared/modeldefinitions/scythe.modeldef
+share/ember/media/shared/modeldefinitions/shrubA.modeldef
 share/ember/media/shared/modeldefinitions/shrubB.modeldef
 share/ember/media/shared/modeldefinitions/shutters.modeldef
+share/ember/media/shared/modeldefinitions/silkfoot.modeldef
 share/ember/media/shared/modeldefinitions/spade.modeldef
 share/ember/media/shared/modeldefinitions/spanish_moss.modeldef
 share/ember/media/shared/modeldefinitions/spider.modeldef
@@ -1183,19 +1167,17 @@ share/ember/media/shared/scripting/lua/Performance.lua
 share/ember/media/shared/scripting/lua/PickingInfo.lua
 share/ember/media/shared/scripting/lua/ScriptEdit.lua
 share/ember/media/shared/scripting/lua/ServerBrowser.lua
+share/ember/media/shared/scripting/lua/ServerLogger.lua
 share/ember/media/shared/scripting/lua/Status.lua
 share/ember/media/shared/scripting/lua/Tasks.lua
 share/ember/media/shared/scripting/lua/TerrainEditor.lua
+share/ember/media/user/COPYING.txt
+share/ember/media/user/LICENSING.txt
+share/ember/media/user/README
 share/icons/worldforge/ember.png
 @dirrm etc/ember
 @dirrmtry share/applications
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
-@dirrm share/ember/carpenter/blockspec
-@dirrm share/ember/carpenter/blueprints
-@dirrm share/ember/carpenter/modelblockspecs
-@dirrm share/ember/carpenter
-@dirrm share/ember/jesus/modelmappings
-@dirrm share/ember/jesus
 @dirrm share/ember/media/shared/common/3d_objects/environment/models/boulder
 @dirrm share/ember/media/shared/common/3d_objects/environment/models/cave
 @dirrm share/ember/media/shared/common/3d_objects/environment/models/monster_skeleton
@@ -1249,19 +1231,6 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/water
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures
 @dirrm share/ember/media/shared/common/3d_objects/environment
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/columns
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/door_element
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/gallows
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/normal_slope_roof
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/normal_slope_wall
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/standard_wall
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/wall_blocks
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models
-@dirrm share/ember/media/shared/common/3d_objects/items/building_element
-@dirrm share/ember/media/shared/common/3d_objects/items/building_primitives/models/columns
-@dirrm share/ember/media/shared/common/3d_objects/items/building_primitives/models/jetty
-@dirrm share/ember/media/shared/common/3d_objects/items/building_primitives/models
-@dirrm share/ember/media/shared/common/3d_objects/items/building_primitives
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/barrel
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/bottle
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/bottlejug
@@ -1396,10 +1365,13 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/3d_objects/plants/mushrooms/textures/galerina
 @dirrm share/ember/media/shared/common/3d_objects/plants/mushrooms/textures/silkfoot
 @dirrm share/ember/media/shared/common/3d_objects/plants/mushrooms/textures
+@dirrm share/ember/media/shared/common/3d_objects/plants/mushrooms/models/silkfoot
+@dirrm share/ember/media/shared/common/3d_objects/plants/mushrooms/models
 @dirrm share/ember/media/shared/common/3d_objects/plants/mushrooms
 @dirrm share/ember/media/shared/common/3d_objects/plants/shrubs/models/bush
 @dirrm share/ember/media/shared/common/3d_objects/plants/shrubs/models/fern
 @dirrm share/ember/media/shared/common/3d_objects/plants/shrubs/models/leaf
+@dirrm share/ember/media/shared/common/3d_objects/plants/shrubs/models/shrub_A
 @dirrm share/ember/media/shared/common/3d_objects/plants/shrubs/models/shrub_B
 @dirrm share/ember/media/shared/common/3d_objects/plants/shrubs/models
 @dirrm share/ember/media/shared/common/3d_objects/plants/shrubs/textures/bush_gnarly_brown
@@ -1453,6 +1425,7 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/concrete_stairs
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/fire_place_A
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/ground_pallisade
+@dirrm share/ember/media/shared/common/3d_objects/structures/models/jetty
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/log
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/market_tent
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/marketstall
@@ -1645,6 +1618,8 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures/pink_pig
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2
+@dirrm share/ember/media/shared/common/3d_skeletons/creatures/tubular/models/bluegill/animation
+@dirrm share/ember/media/shared/common/3d_skeletons/creatures/tubular/models/bluegill
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/tubular/models/fish_01
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/tubular/models
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/tubular/textures/scaly_brown_white
@@ -1674,6 +1649,7 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/materials
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/overlays
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/particle
+@dirrm share/ember/media/shared/common/resources/ogre/scripts/programs/old
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/programs
 @dirrm share/ember/media/shared/common/resources/ogre/scripts
 @dirrm share/ember/media/shared/common/resources/ogre/textures
