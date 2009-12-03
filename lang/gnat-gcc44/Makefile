@@ -52,9 +52,9 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-# This port only works on 7.0 at the moment
-.if ${OSVERSION} < 700000 || ${OSVERSION} >= 800000
-IGNORE=			only works on 7.0
+# This port only works on 7.0+ at the moment
+.if ${OSVERSION} < 700000
+IGNORE=			only works on 7.0+
 .endif
 
 srcdir=			${WRKDIR}/gcc-${PORTVERSION}
@@ -63,7 +63,7 @@ fsf_mans=		fsf-funding gfdl gpl
 fsf_suffix=		-${PORTNAME}${gcc_suffix}
 targlib=		${PREFIX}/lib/gcc-${PORTVERSION}
 gcc_link=		${PREFIX}/bin/gcc${gcc_suffix}/gcc
-boot_stamp=		${ARCH}-freebsd-${OSREL:C/\.[0-9.]*//:S/8/7/}
+boot_stamp=		${ARCH}-freebsd-${OSREL:C/\.[0-9.]*//}
 check_target=		check # XXX
 
 PATCH_WRKSRC=		${srcdir}
