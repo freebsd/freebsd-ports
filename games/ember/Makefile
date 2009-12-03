@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTVERSION=	0.5.7
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -18,15 +17,16 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.6.3.so:${PORTSDIR}/graphics/ogre3d
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.6.3.so:${PORTSDIR}/graphics/ogre3d
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.6.4.so:${PORTSDIR}/graphics/ogre3d
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.6.4.so:${PORTSDIR}/graphics/ogre3d
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.6:${PORTSDIR}/devel/mercator \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
-		wfut-0.2:${PORTSDIR}/devel/libwfut
+		wfut-0.2:${PORTSDIR}/devel/libwfut \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit --enable-debug
 CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua" \
