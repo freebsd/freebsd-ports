@@ -34,7 +34,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.70
+EXIM_VERSION=	4.71
 SA_EXIM_VERSION=4.2
 
 .if !defined(EXIMON_ONLY)
@@ -311,8 +311,8 @@ SEDLIST+=	-e 's,^(LOOKUP_LIBS=),\# \1,' \
 		-e 's,^(LOOKUP_INCLUDE=),\# \1,'
 .endif
 
-.if !defined(WITHOUT_DNSDB)
-SEDLIST+=	-e 's,^\# (LOOKUP_DNSDB=),\1,'
+.if !defined(WITH_DNSDB)
+SEDLIST+=	-e 's,^(LOOKUP_DNSDB=),\# \1,'
 .endif
 
 .if !defined(WITHOUT_MAILDIR)
