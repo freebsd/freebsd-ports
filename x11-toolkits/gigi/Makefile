@@ -7,7 +7,7 @@
 
 PORTNAME=	gigi
 PORTVERSION=	0.6.0.729
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -39,9 +39,9 @@ WRKSRC=		${WRKDIR}/gigi/GG
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OGRE)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libOgreMain-1.6.3.so:${PORTSDIR}/graphics/ogre3d \
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libOgreMain-1.6.4.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
-RUN_DEPENDS+=	${LOCALBASE}/lib/libOgreMain-1.6.3.so:${PORTSDIR}/graphics/ogre3d \
+RUN_DEPENDS+=	${LOCALBASE}/lib/libOgreMain-1.6.4.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
 PLIST_SUB+=	OGRE=""
 GIGI_LIBS+=	GiGiOgre GiGiOgrePlugin_OIS

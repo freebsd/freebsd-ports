@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogre3d
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/ogre/ogre/${PORTVERSION}
 DISTNAME=	ogre-v${PORTVERSION:S/./-/g:S/-r1/RC1/g}

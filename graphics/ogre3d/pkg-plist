@@ -251,10 +251,10 @@ lib/OGRE/libPlugin_PCZSceneManager.so
 lib/libCEGUIOgreRenderer.a
 lib/libCEGUIOgreRenderer.la
 lib/libCEGUIOgreRenderer.so
-lib/libCEGUIOgreRenderer-1.6.3.so
+lib/libCEGUIOgreRenderer-1.6.4.so
 lib/libOgreMain.la
 lib/libOgreMain.so
-lib/libOgreMain-1.6.3.so
+lib/libOgreMain-1.6.4.so
 libdata/pkgconfig/CEGUI-OGRE.pc
 libdata/pkgconfig/OGRE.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
