@@ -24,6 +24,9 @@
 #                          -- group to run searchd as
 # %%PORTNAME%%_logdir="%%SPHINX_LOG%%"
 #                          -- directory searchd writes logs to
+# %%PORTNAME%%_dir="%%SPHINX_DIR%%"
+#                          -- working directory used by searchd et al:
+#                             must match setting in ${%%PORTNAME%%_conffile}
 #
 . /etc/rc.subr
 
@@ -38,6 +41,7 @@ load_rc_config ${name}
 : ${%%PORTNAME%%_user="%%SPHINX_USR%%"}
 : ${%%PORTNAME%%_group="%%SPHINX_GRP%%"}
 : ${%%PORTNAME%%_logdir="%%SPHINX_LOG%%"}
+: ${%%PORTNAME%%_dir="%%SPHINX_DIR%%"}
 
 command=%%PREFIX%%/sbin/searchd
 pidfile=${%%PORTNAME%%_pidfile}
@@ -55,6 +59,11 @@ start_precmd=%%PORTNAME%%_prestart
 	mkdir -m 755 -p ${%%PORTNAME%%_logdir}
 	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} \
 	    ${%%PORTNAME%%_logdir}
+    fi
+    if [ ! -d ${%%PORTNAME%%_dir} ]; then
+	mkdir -m 755 -p ${%%PORTNAME%%_dir} ${%%PORTNAME%%_dir}/data
+	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} \
+	    ${%%PORTNAME%%_dir}
     fi
 }
 

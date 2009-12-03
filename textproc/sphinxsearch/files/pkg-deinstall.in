@@ -6,15 +6,15 @@
 sphinx_usr=%%SPHINX_USR%%
 sphinx_grp=%%SPHINX_GRP%%
 sphinx_dir=%%SPHINX_DIR%%
-sphinx_name=%%PORTNAME%%
+portname=%%PORTNAME%%
 
 case $2 in
     POST-DEINSTALL)
 
     cat <<EOMSG
 
-The $sphinx_name port has been deleted.  If you are not
-upgrading and don't intend to use $sphinx_name any more
+The $portname port has been deleted.  If you are not
+upgrading and don't intend to use $portname any more
 then you may wish to delete the $sphinx_usr account,
 and the $sphinx_grp group together with the working
 directory $sphinx_dir; which can be done with the
