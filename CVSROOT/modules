@@ -1528,6 +1528,7 @@ chpp                            ports/textproc/chpp
 chromium-bsu                    ports/games/chromium-bsu
 chroot_safe                     ports/security/chroot_safe
 chrootuid                       ports/security/chrootuid
+chrpath                         ports/devel/chrpath
 chryzodus                       ports/math/chryzodus
 chtml                           ports/www/chtml
 chu                             ports/comms/chu
@@ -5747,6 +5748,7 @@ ispell                          ports/textproc/ispell
 ispman                          ports/sysutils/ispman
 isql-viewer                     ports/databases/isql-viewer
 isreal                          ports/graphics/isreal
+istatd                          ports/sysutils/istatd
 istgt                           ports/net/istgt
 istream                         ports/audio/istream
 isync                           ports/mail/isync
@@ -9577,7 +9579,6 @@ netstrain                       ports/net/netstrain
 netsurf                         ports/www/netsurf
 nettest                         ports/net/nettest
 nettle                          ports/security/nettle
-nettle2                         ports/security/nettle2
 nettoe                          ports/games/nettoe
 nettop                          ports/net-mgmt/nettop
 netustad                        ports/net-mgmt/netustad
@@ -11272,6 +11273,7 @@ p5-DateTimeX-Easy               ports/devel/p5-DateTimeX-Easy
 p5-Decision-ACL                 ports/devel/p5-Decision-ACL
 p5-DelimMatch                   ports/textproc/p5-DelimMatch
 p5-Devel-Arena                  ports/devel/p5-Devel-Arena
+p5-Devel-Backtrace              ports/devel/p5-Devel-Backtrace
 p5-Devel-Caller                 ports/devel/p5-Devel-Caller
 p5-Devel-Caller-Perl            ports/devel/p5-Devel-Caller-Perl
 p5-Devel-Callsite               ports/devel/p5-Devel-Callsite
@@ -14535,6 +14537,7 @@ p5-config-std                   ports/devel/p5-Config-Std
 p5-config-tiny                  ports/devel/p5-Config-Tiny
 p5-configreader                 ports/devel/p5-ConfigReader
 p5-configreader-simple          ports/devel/p5-ConfigReader-Simple
+p5-constant-boolean             ports/devel/p5-constant-boolean
 p5-constant-def                 ports/devel/p5-constant-def
 p5-constant-lexical             ports/devel/p5-constant-lexical
 p5-context-preserve             ports/devel/p5-Context-Preserve
@@ -14888,6 +14891,7 @@ p5-dbz_file                     ports/databases/p5-DBZ_File
 p5-decision-acl                 ports/devel/p5-Decision-ACL
 p5-delimmatch                   ports/textproc/p5-DelimMatch
 p5-devel-arena                  ports/devel/p5-Devel-Arena
+p5-devel-backtrace              ports/devel/p5-Devel-Backtrace
 p5-devel-caller                 ports/devel/p5-Devel-Caller
 p5-devel-caller-perl            ports/devel/p5-Devel-Caller-Perl
 p5-devel-callsite               ports/devel/p5-Devel-Callsite
@@ -21662,6 +21666,7 @@ sh-rtems-gdb                    ports/devel/sh-rtems-gdb
 sha                             ports/security/sha
 shaaft                          ports/games/shaaft
 shapelib                        ports/devel/shapelib
+shared-desktop-ontologies       ports/x11-toolkits/shared-desktop-ontologies
 shared-mime-info                ports/misc/shared-mime-info
 sharedance                      ports/databases/sharedance
 sharefonts                      ports/x11-fonts/sharefonts
@@ -24876,7 +24881,6 @@ xtu                             ports/x11-clocks/xtu
 xtuner                          ports/audio/xtuner
 xtux                            ports/games/xtux
 xtypo                           ports/misc/xtypo
-xulrunner                       ports/www/xulrunner
 xv                              ports/graphics/xv
 xv-m17n                         ports/graphics/xv-m17n
 xvattr                          ports/x11/xvattr
