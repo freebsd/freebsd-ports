@@ -9,15 +9,13 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	0.9.8.1
+PORTVERSION=	0.9.9
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
 DISTNAME=	sphinx-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Sphinx Full-Text Search Engine
-
-CONFLICTS=	sphinxsearch-devel-[0-9]*
 
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
@@ -33,42 +31,9 @@ OPTIONS=	MYSQL            "MySQL support"                    on  \
 ## FFR
 ##		LIBSTEMMER	 "compile with libstemmer support"  off
 
-SPHINX_USR?=	_sphinx
-SPHINX_UID?=	312
-SPHINX_GRP?=	_sphinx
-SPHINX_GID?=	312
-SPHINX_DIR?=	/var/db/${PORTNAME}
-SPHINX_RUN?=	/var/run/${PORTNAME}
-SPHINX_LOG?=	/var/log/${PORTNAME}
+CONFLICTS=	sphinxsearch-devel-[0-9]*
 
-# Yes, the conflation of CPPFLAGS and CXXFLAGS is deliberate.  No,
-# don't ask.
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=		CC=${CC} CPPFLAGS="${CXXFLAGS}"
-CFGFILE=	${PREFIX}/etc/sphinx.conf
-USE_RC_SUBR=	sphinxsearch.sh
-SUB_LIST+=	PORTNAME=${PORTNAME}     \
-		CFGFILE=${CFGFILE}       \
-		SPHINX_USR=${SPHINX_USR} \
-		SPHINX_UID=${SPHINX_UID} \
-		SPHINX_GRP=${SPHINX_GRP} \
-		SPHINX_GID=${SPHINX_GID} \
-		SPHINX_DIR=${SPHINX_DIR} \
-		SPHINX_RUN=${SPHINX_RUN} \
-		SPHINX_LOG=${SPHINX_LOG}
-SUB_FILES+=	pkg-install pkg-deinstall
-
-.if !defined(NOPORTEXAMPLES)
-EXAMPLES=	example.sql api
-PORTEXAMPLES=	*
-.endif
-
-.if !defined(NOPORTDOCS)
-DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
-.endif
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # The port will successfully compile with both PGSQL and MYSQL support
 # simultaneously.  Not sure how useful that is in practice though.
@@ -122,6 +87,38 @@ CONFIGURE_ARGS+=	--enable-id64
 ## CONFIGURE_ARGS+=	--without-libstemmer
 ## .endif
 
+USERS?=		_sphinx
+GROUPS?=	_sphinx
+
+SPHINX_DIR?=	/var/db/${PORTNAME}
+SPHINX_RUN?=	/var/run/${PORTNAME}
+SPHINX_LOG?=	/var/log/${PORTNAME}
+
+# Yes, the conflation of CPPFLAGS and CXXFLAGS is deliberate.  No,
+# don't ask.
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=		CC=${CC} CPPFLAGS="${CXXFLAGS}"
+CFGFILE=	${PREFIX}/etc/sphinx.conf
+USE_RC_SUBR=	sphinxsearch.sh
+SUB_LIST+=	PORTNAME=${PORTNAME}     \
+		CFGFILE=${CFGFILE}       \
+		SPHINX_USR=${USERS}	 \
+		SPHINX_GRP=${GROUPS}	 \
+		SPHINX_DIR=${SPHINX_DIR} \
+		SPHINX_RUN=${SPHINX_RUN} \
+		SPHINX_LOG=${SPHINX_LOG}
+SUB_FILES+=	pkg-deinstall
+
+.if !defined(NOPORTEXAMPLES)
+EXAMPLES=	example.sql api
+PORTEXAMPLES=	*
+.endif
+
+.if !defined(NOPORTDOCS)
+DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
+.endif
+
 # Fix up the sample configuration file to correspond to FreeBSD norms
 
 post-patch:
@@ -131,9 +128,6 @@ post-patch:
 	    -e "s!@CONFDIR@/log/searchd.log!${SPHINX_LOG}/searchd.log!"    \
 	    -e "s!@CONFDIR@!${SPHINX_DIR}!"                                \
 	    ${WRKSRC}/sphinx.conf.in
-
-pre-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install: install-bin install-docs install-examples
 
@@ -159,12 +153,9 @@ install-examples:
 .endfor
 .endif
 
-post-install: post-install-cfg
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 post-install-cfg:
 	@if [ ! -f ${CFGFILE} ]; then \
 	  ${CP} -p ${CFGFILE}.sample ${CFGFILE} ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

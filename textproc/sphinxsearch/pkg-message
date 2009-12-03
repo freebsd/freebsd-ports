@@ -1,0 +1,17 @@
+
+   Note: for people upgrading from earlier versions to sphinx-0.9.9
+   ================================================================
+
+   Please be aware that sphinx now uses these IANA[1] sanctioned port
+   numbers by default:
+
+    sphinxql        9306/tcp    Sphinx search server (MySQL listener)
+    #                           Andrew Aksyonoff <shodan&sphinxsearch.com> 20 October 2009
+
+    sphinxapi       9312/tcp    Sphinx search server
+    #                           Andrew Aksyonoff <shodan&sphinxsearch.com> 20 October 2009
+
+   This is a change from the port numbers used by default in earlier
+   versions.
+
+       [1] http://www.iana.org/assignments/port-numbers
