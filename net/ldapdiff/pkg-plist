@@ -1,7 +1,7 @@
 @unexec if cmp -s %D/etc/ldapdiff.conf %D/etc/ldapdiff.conf.sample; then rm -f %D/etc/ldapdiff.conf; fi
 bin/ldapdiff
 etc/ldapdiff.conf.sample
-%%DATADIR%%/samples/addentry
+%%DATADIR%%/samples/addentry.sh
 %%DATADIR%%/samples/webtomware_without_jpeg.user.ldif
 %%DATADIR%%/samples/webtomware.init.ldif
 %%DATADIR%%/samples/webtomware.user.ldif

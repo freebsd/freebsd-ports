@@ -8,4 +8,4 @@ delta files in ldap version 3 format, which can be fed, into tools like
 "ldapmodify", "ldapdelete" etc. ldapdiff is also able to modify, delete
 and add entries/attributes online.
 
-WWW: http://webtomware.rhoen.de/
+WWW: http://launchpad.net/ldapdiff

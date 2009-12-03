@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ldapdiff
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.ale.org/pub/mirrors/openpkg/sources/DST/ldapdiff/ \
-		http://webtomware.rhoen.de/
+MASTER_SITES=	http://launchpadlibrarian.net/20391352/
+DISTNAME=	${PORTNAME}-${PORTVERSION}_src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A utility for patching LDAP directories using LDIF files
@@ -21,17 +21,18 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
 		--with-ldap-dir=${LOCALBASE} \
 		--with-iconv-dir=${LOCALBASE}
-SAMPLES=	addentry webtomware_without_jpeg.user.ldif \
+SAMPLES=	addentry.sh webtomware_without_jpeg.user.ldif \
 		webtomware.init.ldif webtomware.user.ldif
 MAN1=		ldapdiff.1
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	CHANGES ChangeLog README TODO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/ldapdiff.conf \
-		${PREFIX}/etc/ldapdiff.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/ldapdiff.conf.sample ${PREFIX}/etc/
 	@${MKDIR} ${DATADIR}/samples
 .for sample in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/samples/${sample} ${DATADIR}/samples
