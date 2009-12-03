@@ -42,6 +42,7 @@ post-configure:
                 ${CONFIGURE_WRKSRC}/type.c \
                 ${CONFIGURE_WRKSRC}/usericons.c \
                 ${CONFIGURE_WRKSRC}/xdgmime.c
+	@${TOUCH} ${CONFIGURE_WRKSRC}/config.status
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Filer
