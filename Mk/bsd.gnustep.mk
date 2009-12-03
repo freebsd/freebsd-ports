@@ -23,20 +23,8 @@
 # GNUSTEP_WITH_BASE_GCC=yes
 #	use system compiler (does not work on all architectures).
 #
-# GNUSTEP_WITH_GCC32=yes
-#	use gcc 3.2.x with objective C shared libraries.
-#
-# GNUSTEP_WITH_GCC33=yes
-#	use gcc 3.3.x with objective C shared libraries.
-#
 # GNUSTEP_WITH_GCC34=yes
 #	use gcc 3.4.x with objective C shared libraries (default).
-#
-# GNUSTEP_WITH_GCC40=yes
-#	use gcc 4.0.x with objective C shared libraries.
-#
-# GNUSTEP_WITH_GCC41=yes
-#	use gcc 4.1.x with objective C shared libraries.
 #
 # GNUSTEP_WITH_GCC42=yes
 #	use gcc 4.2.x with objective C shared libraries.
@@ -229,24 +217,12 @@ GNUSTEP_WITH_GCC42=	yes
 .endif
 .endif
 
-.if defined(GNUSTEP_WITH_GCC32)
-GCCSUFFIX=32
-GNUSTEP_GCC_PORT?=	lang/gcc-objc
-.endif
-.if defined(GNUSTEP_WITH_GCC33)
-GCCSUFFIX=33
-.endif
 .if defined(GNUSTEP_WITH_GCC34)
 GCCSUFFIX=34
 .endif
-.if defined(GNUSTEP_WITH_GCC40)
-GCCSUFFIX=40
-.endif
-.if defined(GNUSTEP_WITH_GCC41)
-GCCSUFFIX=41
-.endif
 .if defined(GNUSTEP_WITH_GCC42)
 GCCSUFFIX=42
+BROKEN=		objc support in gcc42 was removed
 .endif
 CC=		gcc${GCCSUFFIX}
 CXX=		g++${GCCSUFFIX}
