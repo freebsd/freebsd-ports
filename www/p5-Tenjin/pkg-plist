@@ -1,0 +1,11 @@
+bin/pltenjin
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tenjin/.packlist
+%%SITE_PERL%%/Tenjin.pm
+%%SITE_PERL%%/Tenjin/Context.pm
+%%SITE_PERL%%/Tenjin/Engine.pm
+%%SITE_PERL%%/Tenjin/HTML.pm
+%%SITE_PERL%%/Tenjin/Preprocessor.pm
+%%SITE_PERL%%/Tenjin/Template.pm
+%%SITE_PERL%%/Tenjin/Util.pm
+@dirrmtry %%SITE_PERL%%/Tenjin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tenjin
