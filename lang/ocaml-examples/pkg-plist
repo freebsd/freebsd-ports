@@ -30,6 +30,8 @@
 %%EXAMPLESDIR%%/basics/queens.ml
 %%EXAMPLESDIR%%/basics/queens_lazy.ml
 %%EXAMPLESDIR%%/basics/queens_tail.ml
+%%EXAMPLESDIR%%/basics/read_points.ml
+%%EXAMPLESDIR%%/basics/read_points.txt
 %%EXAMPLESDIR%%/basics/realloc.ml
 %%EXAMPLESDIR%%/basics/realloc.mli
 %%EXAMPLESDIR%%/basics/reverse_rec.ml
@@ -78,12 +80,17 @@
 %%EXAMPLESDIR%%/camltktutorial/complexegui.ml
 %%EXAMPLESDIR%%/camltktutorial/complexegui0.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/biconnect.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/biout.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/bipipe.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/bipipe.mli
 %%EXAMPLESDIR%%/camltktutorial/servers/compute.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/connect.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/fork.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/gui.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/make_appli
+%%EXAMPLESDIR%%/camltktutorial/servers/mk_seq.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/multiconnect
+%%EXAMPLESDIR%%/camltktutorial/servers/pipe.ml
 %%EXAMPLESDIR%%/camltktutorial/simple.ml
 %%EXAMPLESDIR%%/colwheel/colwheel.ml
 %%EXAMPLESDIR%%/colwheel/loadall.ml
@@ -107,12 +114,15 @@
 %%EXAMPLESDIR%%/demonstr/loadall.ml
 %%EXAMPLESDIR%%/demonstr/prop.ml
 %%EXAMPLESDIR%%/demonstr/prop.mli
-%%EXAMPLESDIR%%/dlls/MakefileByteCode
-%%EXAMPLESDIR%%/dlls/MakefileNative
-%%EXAMPLESDIR%%/dlls/client.c
-%%EXAMPLESDIR%%/dlls/fib.ml
-%%EXAMPLESDIR%%/dlls/fibwrap.c
-%%EXAMPLESDIR%%/dlls/modwrap.c
+%%EXAMPLESDIR%%/dlls/unix/client.c
+%%EXAMPLESDIR%%/dlls/unix/fib.ml
+%%EXAMPLESDIR%%/dlls/unix/fib_wrappers.c
+%%EXAMPLESDIR%%/dlls/windows/MakefileByteCode
+%%EXAMPLESDIR%%/dlls/windows/MakefileNative
+%%EXAMPLESDIR%%/dlls/windows/client.c
+%%EXAMPLESDIR%%/dlls/windows/fib.ml
+%%EXAMPLESDIR%%/dlls/windows/fibwrap.c
+%%EXAMPLESDIR%%/dlls/windows/modwrap.c
 %%EXAMPLESDIR%%/docteur/docteur.ml
 %%EXAMPLESDIR%%/docteur/loadall.ml
 %%EXAMPLESDIR%%/doctor/doctor.ml
@@ -133,14 +143,14 @@
 %%EXAMPLESDIR%%/grep/grep.ml
 %%EXAMPLESDIR%%/grep/loadall.ml
 %%EXAMPLESDIR%%/grep/makefast
-%%EXAMPLESDIR%%/hanoi/grahanoi-eng.ml
-%%EXAMPLESDIR%%/hanoi/grahanoi-fra.ml
-%%EXAMPLESDIR%%/hanoi/hanoi-eng.ml
-%%EXAMPLESDIR%%/hanoi/hanoi-fra.ml
+%%EXAMPLESDIR%%/hanoi/grahanoi_eng.ml
+%%EXAMPLESDIR%%/hanoi/grahanoi_fra.ml
+%%EXAMPLESDIR%%/hanoi/hanoi_eng.ml
+%%EXAMPLESDIR%%/hanoi/hanoi_fra.ml
 %%EXAMPLESDIR%%/hanoi/koch.ml
 %%EXAMPLESDIR%%/hanoi/loadall.ml
-%%EXAMPLESDIR%%/hanoi/txthanoi-eng.ml
-%%EXAMPLESDIR%%/hanoi/txthanoi-fra.ml
+%%EXAMPLESDIR%%/hanoi/txthanoi_eng.ml
+%%EXAMPLESDIR%%/hanoi/txthanoi_fra.ml
 %%EXAMPLESDIR%%/kb/README
 %%EXAMPLESDIR%%/kb/equation.ml
 %%EXAMPLESDIR%%/kb/go.ml
@@ -174,6 +184,73 @@
 %%EXAMPLESDIR%%/minilogo/langage.mli
 %%EXAMPLESDIR%%/minilogo/loadall.ml
 %%EXAMPLESDIR%%/minilogo/logo.ml
+%%EXAMPLESDIR%%/modules/functors/expert/compile.sh
+%%EXAMPLESDIR%%/modules/functors/expert/fapply.ml
+%%EXAMPLESDIR%%/modules/functors/expert/fapply.mli
+%%EXAMPLESDIR%%/modules/functors/expert/fmod.ml
+%%EXAMPLESDIR%%/modules/functors/expert/fmod.mli
+%%EXAMPLESDIR%%/modules/functors/expert/ftype.mli
+%%EXAMPLESDIR%%/modules/functors/expert/imod.ml
+%%EXAMPLESDIR%%/modules/functors/expert/imod.mli
+%%EXAMPLESDIR%%/modules/functors/expert/itype.mli
+%%EXAMPLESDIR%%/modules/functors/expert/main.ml
+%%EXAMPLESDIR%%/modules/functors/expert/restype.mli
+%%EXAMPLESDIR%%/modules/functors/naive/compile.sh
+%%EXAMPLESDIR%%/modules/functors/naive/fmod.ml
+%%EXAMPLESDIR%%/modules/functors/naive/fmod.mli
+%%EXAMPLESDIR%%/modules/functors/naive/ftype.mli
+%%EXAMPLESDIR%%/modules/functors/naive/imod.ml
+%%EXAMPLESDIR%%/modules/functors/naive/imod.mli
+%%EXAMPLESDIR%%/modules/functors/naive/itype.mli
+%%EXAMPLESDIR%%/modules/functors/naive/main.ml
+%%EXAMPLESDIR%%/modules/functors/wrong/compile.sh
+%%EXAMPLESDIR%%/modules/functors/wrong/fapply.ml
+%%EXAMPLESDIR%%/modules/functors/wrong/fapply.mli
+%%EXAMPLESDIR%%/modules/functors/wrong/fapplytype.ml
+%%EXAMPLESDIR%%/modules/functors/wrong/fmod.ml
+%%EXAMPLESDIR%%/modules/functors/wrong/fmod.mli
+%%EXAMPLESDIR%%/modules/functors/wrong/ftype.mli
+%%EXAMPLESDIR%%/modules/functors/wrong/imod.ml
+%%EXAMPLESDIR%%/modules/functors/wrong/imod.mli
+%%EXAMPLESDIR%%/modules/functors/wrong/itype.mli
+%%EXAMPLESDIR%%/modules/functors/wrong/main.ml
+%%EXAMPLESDIR%%/modules/functors/wrong/restype.mli
+%%EXAMPLESDIR%%/modules/libraries/restriction/src/inside.ml
+%%EXAMPLESDIR%%/modules/libraries/restriction/src/inside.mli
+%%EXAMPLESDIR%%/modules/libraries/restriction/src/outside.ml
+%%EXAMPLESDIR%%/modules/libraries/restriction/src/outside.mli
+%%EXAMPLESDIR%%/modules/libraries/restriction/test/use_inside_my_lib.ml
+%%EXAMPLESDIR%%/modules/libraries/restriction/test/use_my_lib.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/base_module.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/base_module.mli
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/compile
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/doc
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_aggregate.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_aggregate.mli
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_backbone_link.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_backbone_link.mli
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_chemical_group.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_chemical_group.mli
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_formulae.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_formulae.mli
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_lib_frames.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_lib_frames.mli
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/module_types.mli
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/path.ml
+%%EXAMPLESDIR%%/modules/module_inclusion/with_include/path.mli
+%%EXAMPLESDIR%%/modules/module_types/modtype_fun.ml
+%%EXAMPLESDIR%%/parsing/polish/compile
+%%EXAMPLESDIR%%/parsing/polish/lexer.ml
+%%EXAMPLESDIR%%/parsing/polish/lexer.mll
+%%EXAMPLESDIR%%/parsing/polish/main.ml
+%%EXAMPLESDIR%%/parsing/polish/parser.mly
+%%EXAMPLESDIR%%/parsing/polish/parsetree.mli
+%%EXAMPLESDIR%%/parsing/polish/print_ast.ml
+%%EXAMPLESDIR%%/parsing/polish/print_ast.mli
+%%EXAMPLESDIR%%/parsing/polish/scoping.ml
+%%EXAMPLESDIR%%/parsing/polish/scoping.mli
+%%EXAMPLESDIR%%/parsing/polish/treat.ml
+%%EXAMPLESDIR%%/parsing/polish/treat.mli
 %%EXAMPLESDIR%%/pascal/compil.ml
 %%EXAMPLESDIR%%/pascal/compil.mli
 %%EXAMPLESDIR%%/pascal/cpascal.ml
@@ -210,24 +287,84 @@
 %%EXAMPLESDIR%%/picomach/stockage.mli
 %%EXAMPLESDIR%%/showsort/loadall.ml
 %%EXAMPLESDIR%%/showsort/showsort.ml
+%%EXAMPLESDIR%%/simples/date.ml
+%%EXAMPLESDIR%%/simples/date.pl
+%%EXAMPLESDIR%%/simples/libperl.ml
+%%EXAMPLESDIR%%/simples/mots_islandais
+%%EXAMPLESDIR%%/simples/reminder.pl
+%%EXAMPLESDIR%%/simples/scan_list.ml
+%%EXAMPLESDIR%%/simples/test_chomp.pl
+%%EXAMPLESDIR%%/simples/trad.ml
+%%EXAMPLESDIR%%/simples/trad.pl
 %%EXAMPLESDIR%%/soli/soli.ml
 %%EXAMPLESDIR%%/soli/soli_opt.ml
 %%EXAMPLESDIR%%/spirals/loadall-bw.ml
 %%EXAMPLESDIR%%/spirals/loadall.ml
-%%EXAMPLESDIR%%/spirals/spir-bw.ml
+%%EXAMPLESDIR%%/spirals/spir_bw.ml
 %%EXAMPLESDIR%%/spirals/spir.ml
-%%EXAMPLESDIR%%/tools/add_banner
-%%EXAMPLESDIR%%/tools/add_banner.ml
-%%EXAMPLESDIR%%/tools/address_book.new.ml
-%%EXAMPLESDIR%%/tools/address_book.old.ml
-%%EXAMPLESDIR%%/tools/banner
-%%EXAMPLESDIR%%/tools/reverse_file_jfm.ml
-@dirrm %%EXAMPLESDIR%%/tools
+%%EXAMPLESDIR%%/sudoku/README
+%%EXAMPLESDIR%%/sudoku/clean
+%%EXAMPLESDIR%%/sudoku/compile.bin
+%%EXAMPLESDIR%%/sudoku/compile.byt
+%%EXAMPLESDIR%%/sudoku/main.ml
+%%EXAMPLESDIR%%/sudoku/read.ml
+%%EXAMPLESDIR%%/sudoku/resolve.ml
+%%EXAMPLESDIR%%/sudoku/solve.ml
+%%EXAMPLESDIR%%/sudoku/types.mli
+%%EXAMPLESDIR%%/sudoku/utils.ml
+%%EXAMPLESDIR%%/sudoku_general/README
+%%EXAMPLESDIR%%/sudoku_general/clean
+%%EXAMPLESDIR%%/sudoku_general/compile.bin
+%%EXAMPLESDIR%%/sudoku_general/compile.byt
+%%EXAMPLESDIR%%/sudoku_general/example.txt
+%%EXAMPLESDIR%%/sudoku_general/example100.txt
+%%EXAMPLESDIR%%/sudoku_general/example101.txt
+%%EXAMPLESDIR%%/sudoku_general/example400.txt
+%%EXAMPLESDIR%%/sudoku_general/example401.txt
+%%EXAMPLESDIR%%/sudoku_general/example51.txt
+%%EXAMPLESDIR%%/sudoku_general/example81.txt
+%%EXAMPLESDIR%%/sudoku_general/example82.txt
+%%EXAMPLESDIR%%/sudoku_general/example83.txt
+%%EXAMPLESDIR%%/sudoku_general/example93.txt
+%%EXAMPLESDIR%%/sudoku_general/example94.txt
+%%EXAMPLESDIR%%/sudoku_general/example95.txt
+%%EXAMPLESDIR%%/sudoku_general/example96.txt
+%%EXAMPLESDIR%%/sudoku_general/example97.txt
+%%EXAMPLESDIR%%/sudoku_general/example98.txt
+%%EXAMPLESDIR%%/sudoku_general/example99.txt
+%%EXAMPLESDIR%%/sudoku_general/main.ml
+%%EXAMPLESDIR%%/sudoku_general/read.ml
+%%EXAMPLESDIR%%/sudoku_general/resolve.ml
+%%EXAMPLESDIR%%/sudoku_general/rules.ml
+%%EXAMPLESDIR%%/sudoku_general/sols.txt
+%%EXAMPLESDIR%%/sudoku_general/solve.ml
+%%EXAMPLESDIR%%/sudoku_general/solve0.ml
+%%EXAMPLESDIR%%/sudoku_general/types.mli
+%%EXAMPLESDIR%%/sudoku_general/utils.ml
+@dirrm %%EXAMPLESDIR%%/sudoku_general
+@dirrm %%EXAMPLESDIR%%/sudoku
 @dirrm %%EXAMPLESDIR%%/spirals
 @dirrm %%EXAMPLESDIR%%/soli
+@dirrm %%EXAMPLESDIR%%/simples
 @dirrm %%EXAMPLESDIR%%/showsort
 @dirrm %%EXAMPLESDIR%%/picomach
 @dirrm %%EXAMPLESDIR%%/pascal
+@dirrm %%EXAMPLESDIR%%/parsing/polish
+@dirrm %%EXAMPLESDIR%%/parsing
+@dirrm %%EXAMPLESDIR%%/modules/module_types
+@dirrm %%EXAMPLESDIR%%/modules/module_inclusion/with_sharing
+@dirrm %%EXAMPLESDIR%%/modules/module_inclusion/with_include
+@dirrm %%EXAMPLESDIR%%/modules/module_inclusion
+@dirrm %%EXAMPLESDIR%%/modules/libraries/restriction/test
+@dirrm %%EXAMPLESDIR%%/modules/libraries/restriction/src
+@dirrm %%EXAMPLESDIR%%/modules/libraries/restriction/lib
+@dirrm %%EXAMPLESDIR%%/modules/libraries/restriction
+@dirrm %%EXAMPLESDIR%%/modules/libraries
+@dirrm %%EXAMPLESDIR%%/modules/functors/wrong
+@dirrm %%EXAMPLESDIR%%/modules/functors/naive
+@dirrm %%EXAMPLESDIR%%/modules/functors/expert
+@dirrm %%EXAMPLESDIR%%/modules/functors
+@dirrm %%EXAMPLESDIR%%/modules
 @dirrm %%EXAMPLESDIR%%/minilogo
 @dirrm %%EXAMPLESDIR%%/minicaml
 @dirrm %%EXAMPLESDIR%%/kb
@@ -235,6 +372,8 @@
 @dirrm %%EXAMPLESDIR%%/grep
 @dirrm %%EXAMPLESDIR%%/doctor
 @dirrm %%EXAMPLESDIR%%/docteur
+@dirrm %%EXAMPLESDIR%%/dlls/windows
+@dirrm %%EXAMPLESDIR%%/dlls/unix
 @dirrm %%EXAMPLESDIR%%/dlls
 @dirrm %%EXAMPLESDIR%%/demonstr
 @dirrm %%EXAMPLESDIR%%/config

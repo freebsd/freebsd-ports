@@ -2,16 +2,13 @@
 # Date created:		2006-07-27
 # Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
 #
-# $MBSDlabs$
 # $FreeBSD$
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.08
+PORTVERSION=	3.11
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/distrib/ \
-		ftp://ftp.inria.fr/INRIA/caml-light/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/
+MASTER_SITES=   http://cristal.inria.fr/caml_examples/
 PKGNAMESUFFIX=	-examples
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
