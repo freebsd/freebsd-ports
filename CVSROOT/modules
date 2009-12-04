@@ -21940,6 +21940,7 @@ softflowd                       ports/net-mgmt/softflowd
 softmaker-office                ports/editors/softmaker-office
 sokoban                         ports/games/sokoban
 sol                             ports/games/sol
+solang                          ports/graphics/solang
 solarconquest                   ports/games/solarconquest
 solarwolf                       ports/games/solarwolf
 solfege                         ports/audio/solfege
