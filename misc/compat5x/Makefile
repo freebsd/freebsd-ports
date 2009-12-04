@@ -36,6 +36,10 @@ EXTRACT_PRESERVE_OWNERSHIP=	yes	# Files in archive have scfg-flag set
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: fails to link lib/compat/libpthread.so.1
+.endif
+
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA=""
 .else
