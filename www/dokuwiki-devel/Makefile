@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${DIST_VER}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	A simple and easy to use wiki, no database required
 
 WRKSRC=	${WRKDIR}/${PORTNAME}

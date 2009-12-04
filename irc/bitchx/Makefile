@@ -12,7 +12,7 @@ CATEGORIES+=	irc
 MASTER_SITES=	SF/bitchx/ircii-pana/ircii-pana-1.1
 DISTNAME=	ircii-pana-1.1-final
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	chris@officialunix.com
 COMMENT?=	ircII color client with GTK/GNOME support
 
 WRKSRC=		${WRKDIR}/BitchX

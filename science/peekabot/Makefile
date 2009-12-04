@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7.x/ \
 		http://distfiles.officialunix.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \

@@ -21,7 +21,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 		http://analog.netsoc.ucd.ie/ \
 		http://analog.tzone.it/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	An extremely fast program for analysing WWW logfiles
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
