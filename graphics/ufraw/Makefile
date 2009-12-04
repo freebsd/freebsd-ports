@@ -7,7 +7,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.16
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -30,10 +30,13 @@ CPPFLAGS=	-I"${LOCALBASE}/include"
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 PC_FALSE+=	cinepaint
 
-OPTIONS=	EXIV2	"EXIF support via exiv2 library"	on	\
+OPTIONS=	CONTRAST "Enable contrast setting"		on	\
+		DST	" Use local time for timestamps"	off	\
+		EXIV2	"EXIF support via exiv2 library"	on	\
+		FITS	"Enable FITS output support"		off	\
 		GIMP	"Install GIMP UFRaw plugin"		on	\
-		LENSFUN	"Build with LenFun library support"	on	\
-		FITS	"Enable FITS output support"		off
+		HOTPIXEL "Enable hot pixels elimination"	on	\
+		LENSFUN	"Build with LenFun library support"	on
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +58,15 @@ CONFIGURE_ARGS+=	--with-lensfun
 .endif
 .if defined(WITH_FITS) || exists(${LOCALBASE}/lib/libcfitsio.so)
 LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
+.endif
+.if !defined(WITHOUT_CONTRAST)
+CONFIGURE_ARGS+=	--enable-contrast
+.endif
+.if !defined(WITHOUT_HOTPIXEL)
+CONFIGURE_ARGS+=	--enable-hotpixels
+.endif
+.if defined(WITH_DST)
+CONFIGURE_ARGS+=	--enable-dst-correction
 .endif
 
 MAN1=	ufraw.1
