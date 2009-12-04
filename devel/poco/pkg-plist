@@ -5,6 +5,10 @@ include/Poco/AbstractEvent.h
 include/Poco/AbstractObserver.h
 include/Poco/AbstractPriorityDelegate.h
 include/Poco/AbstractStrategy.h
+include/Poco/AccessExpirationDecorator.h
+include/Poco/AccessExpireCache.h
+include/Poco/AccessExpireLRUCache.h
+include/Poco/AccessExpireStrategy.h
 include/Poco/ActiveDispatcher.h
 include/Poco/ActiveMethod.h
 include/Poco/ActiveResult.h
@@ -14,6 +18,7 @@ include/Poco/Activity.h
 include/Poco/Any.h
 include/Poco/ArchiveStrategy.h
 include/Poco/AsyncChannel.h
+include/Poco/AtomicCounter.h
 include/Poco/AutoPtr.h
 include/Poco/AutoReleasePool.h
 include/Poco/Base64Decoder.h
@@ -135,6 +140,8 @@ include/Poco/Format.h
 include/Poco/Formatter.h
 include/Poco/FormattingChannel.h
 include/Poco/Foundation.h
+include/Poco/FunctionDelegate.h
+include/Poco/FunctionPriorityDelegate.h
 include/Poco/Glob.h
 include/Poco/HMACEngine.h
 include/Poco/Hash.h
@@ -169,6 +176,7 @@ include/Poco/MD4Engine.h
 include/Poco/MD5Engine.h
 include/Poco/Manifest.h
 include/Poco/MemoryPool.h
+include/Poco/MemoryStream.h
 include/Poco/Message.h
 include/Poco/MetaObject.h
 include/Poco/MetaProgramming.h
@@ -307,6 +315,7 @@ include/Poco/Poco.h
 include/Poco/PriorityDelegate.h
 include/Poco/PriorityEvent.h
 include/Poco/PriorityExpire.h
+include/Poco/PriorityNotificationQueue.h
 include/Poco/Process.h
 include/Poco/Process_UNIX.h
 include/Poco/Process_VMS.h
@@ -387,8 +396,10 @@ include/Poco/TextIterator.h
 include/Poco/Thread.h
 include/Poco/ThreadLocal.h
 include/Poco/ThreadPool.h
+include/Poco/ThreadTarget.h
 include/Poco/Thread_POSIX.h
 include/Poco/Thread_WIN32.h
+include/Poco/TimedNotificationQueue.h
 include/Poco/Timer.h
 include/Poco/Timespan.h
 include/Poco/Timestamp.h
@@ -409,6 +420,9 @@ include/Poco/UnWindows.h
 include/Poco/UnbufferedStreamBuf.h
 include/Poco/Unicode.h
 include/Poco/UnicodeConverter.h
+include/Poco/UniqueAccessExpireCache.h
+include/Poco/UniqueAccessExpireLRUCache.h
+include/Poco/UniqueAccessExpireStrategy.h
 include/Poco/UniqueExpireCache.h
 include/Poco/UniqueExpireLRUCache.h
 include/Poco/UniqueExpireStrategy.h
@@ -434,6 +448,9 @@ include/Poco/Util/RegExpValidator.h
 include/Poco/Util/ServerApplication.h
 include/Poco/Util/Subsystem.h
 include/Poco/Util/SystemConfiguration.h
+include/Poco/Util/Timer.h
+include/Poco/Util/TimerTask.h
+include/Poco/Util/TimerTaskAdapter.h
 include/Poco/Util/Util.h
 include/Poco/Util/Validator.h
 include/Poco/Util/WinRegistryConfiguration.h
@@ -458,21 +475,21 @@ include/Poco/XML/expat_external.h
 include/Poco/zconf.h
 include/Poco/zlib.h
 lib/libPocoFoundation.so
-lib/libPocoFoundation.so.5
+lib/libPocoFoundation.so.9
 lib/libPocoFoundationd.so
-lib/libPocoFoundationd.so.5
+lib/libPocoFoundationd.so.9
 lib/libPocoNet.so
-lib/libPocoNet.so.5
+lib/libPocoNet.so.9
 lib/libPocoNetd.so
-lib/libPocoNetd.so.5
+lib/libPocoNetd.so.9
 lib/libPocoUtil.so
-lib/libPocoUtil.so.5
+lib/libPocoUtil.so.9
 lib/libPocoUtild.so
-lib/libPocoUtild.so.5
+lib/libPocoUtild.so.9
 lib/libPocoXML.so
-lib/libPocoXML.so.5
+lib/libPocoXML.so.9
 lib/libPocoXMLd.so
-lib/libPocoXMLd.so.5
+lib/libPocoXMLd.so.9
 @dirrmtry include/Poco/DOM
 @dirrmtry include/Poco/Net
 @dirrmtry include/Poco/SAX
