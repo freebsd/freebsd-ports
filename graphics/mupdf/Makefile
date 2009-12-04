@@ -42,4 +42,10 @@ do-install:
 	${INSTALL} ${WRKSRC}/build/$f ${PREFIX}/bin/mu_$f ;
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
+.include <bsd.port.post.mk>
