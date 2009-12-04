@@ -6,6 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -15,7 +16,8 @@ COMMENT=	Media player for KDE4
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		tag-extras.1:${PORTSDIR}/audio/taglib-extras \
-		lastfm.0:${PORTSDIR}/audio/liblastfm
+		lastfm.0:${PORTSDIR}/audio/liblastfm \
+		qca.2:${PORTSDIR}/devel/qca
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
