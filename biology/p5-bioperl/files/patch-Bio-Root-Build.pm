@@ -1,10 +1,10 @@
---- Bio/Root/Build.pm.orig	2009-01-25 02:19:26.000000000 -0300
-+++ Bio/Root/Build.pm	2009-02-22 02:24:05.000000000 -0300
-@@ -141,48 +141,8 @@
+--- Bio/Root/Build.pm.orig	2009-09-30 00:33:53.000000000 +0800
++++ Bio/Root/Build.pm	2009-12-01 10:31:39.000000000 +0800
+@@ -124,48 +124,8 @@
          }
      }
      closedir($scripts_dir);
--    my $question = $int_ok ? "Install [a]ll Bioperl scripts, [n]one, or choose groups [i]nteractively?" : "Install [a]ll Bioperl scripts or [n]one?";
+-    my $question = $int_ok ? "Install [a]ll BioPerl scripts, [n]one, or choose groups [i]nteractively?" : "Install [a]ll BioPerl scripts or [n]one?";
 -    
 -    my $prompt = $accept ? 'a' : $self->prompt($question, 'a');
 -    
@@ -47,11 +47,11 @@
 -    }
 -    
 +    $self->log_info("  - will install all scripts\n");
-+    $self->notes(chosen_scripts => 'all');    
++    $self->notes(chosen_scripts => 'all'); 
      print "\n";
  }
  
-@@ -1177,16 +1137,9 @@
+@@ -1205,16 +1165,9 @@
  sub prompt_for_network {
      my ($self, $accept) = @_;
  
