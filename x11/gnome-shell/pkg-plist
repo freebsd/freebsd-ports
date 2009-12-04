@@ -2,6 +2,9 @@ bin/gnome-shell
 lib/gnome-shell/Big-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
+lib/mutter/plugins/libgnome-shell.a
+lib/mutter/plugins/libgnome-shell.la
+lib/mutter/plugins/libgnome-shell.so
 share/applications/gnome-shell.desktop
 %%DATADIR%%/images/app-well-glow.png
 %%DATADIR%%/images/add-workspace.svg
