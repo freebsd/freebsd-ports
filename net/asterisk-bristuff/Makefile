@@ -75,6 +75,10 @@ OPTIONS+=	ZAPTEL		"Enable Zaptel support" on
 .include "$(PORTSDIR)/Mk/bsd.port.options.mk"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: does not create codec_dahdi.so
+.endif
+
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
 CONFIGURE_ARGS+= --without-h323
