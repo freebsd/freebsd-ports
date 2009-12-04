@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bioperl
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://bioperl.org/DIST/ \
 		CPAN
@@ -64,7 +63,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/l
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CONFLICTS=	p5-bioperl-1.[13579]*
+#CONFLICTS=	p5-bioperl-1.[13579]*
 
 PERL_MODBUILD=	YES
 
@@ -80,6 +79,7 @@ MAN1=		bp_aacomp.pl.1 \
 		bp_composite_LD.pl.1 \
 		bp_dbsplit.pl.1 \
 		bp_download_query_genbank.pl.1 \
+		bp_einfo.pl.1 \
 		bp_extract_feature_seq.pl.1 \
 		bp_fast_load_gff.pl.1 \
 		bp_fastam9_to_table.pl.1 \
@@ -91,6 +91,7 @@ MAN1=		bp_aacomp.pl.1 \
 		bp_genbank2gff3.pl.1 \
 		bp_generate_histogram.pl.1 \
 		bp_heterogeneity_test.pl.1 \
+		bp_hivq.pl.1 \
 		bp_hmmer_to_table.pl.1 \
 		bp_index.pl.1 \
 		bp_load_gff.pl.1 \
@@ -110,6 +111,7 @@ MAN1=		bp_aacomp.pl.1 \
 		bp_process_wormbase.pl.1 \
 		bp_query_entrez_taxa.pl.1 \
 		bp_remote_blast.pl.1 \
+		bp_revtrans-motif.pl.1 \
 		bp_search2BSML.pl.1 \
 		bp_search2alnblocks.pl.1 \
 		bp_search2gff.pl.1 \
@@ -227,7 +229,6 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::ClusterIO::unigene.3 \
 		Bio::CodonUsage::IO.3 \
 		Bio::CodonUsage::Table.3 \
-		Bio::ConfigData.3 \
 		Bio::Coordinate::Chain.3 \
 		Bio::Coordinate::Collection.3 \
 		Bio::Coordinate::ExtrapolatingPair.3 \
@@ -338,6 +339,9 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::DB::SeqFeature::Store.3 \
 		Bio::DB::SeqFeature::Store::DBI::Iterator.3 \
 		Bio::DB::SeqFeature::Store::DBI::mysql.3 \
+		Bio::DB::SeqFeature::Store::DBI::Pg.3 \
+		Bio::DB::SeqFeature::Store::DBI::SQLite.3 \
+		Bio::DB::SeqFeature::Store::berkeleydb3.3 \
 		Bio::DB::SeqFeature::Store::FeatureFileLoader.3 \
 		Bio::DB::SeqFeature::Store::GFF2Loader.3 \
 		Bio::DB::SeqFeature::Store::GFF3Loader.3 \
@@ -650,6 +654,9 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::Search::Result::WABAResult.3 \
 		Bio::Search::SearchUtils.3 \
 		Bio::Search::StatisticsI.3 \
+		Bio::Search::Tiling::MapTileUtils.3 \
+		Bio::Search::Tiling::MapTiling.3 \
+		Bio::Search::Tiling::TilingI.3 \
 		Bio::SearchDist.3 \
 		Bio::SearchIO.3 \
 		Bio::SearchIO::EventHandlerI.3 \
@@ -678,6 +685,7 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::SearchIO::hmmer.3 \
 		Bio::SearchIO::hmmer_pull.3 \
 		Bio::SearchIO::infernal.3 \
+		Bio::SearchIO::gmap_f9.3 \
 		Bio::SearchIO::megablast.3 \
 		Bio::SearchIO::psl.3 \
 		Bio::SearchIO::rnamotif.3 \
@@ -861,6 +869,7 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::Tools::EUtilities::Summary.3 \
 		Bio::Tools::EUtilities::Summary::DocSum.3 \
 		Bio::Tools::EUtilities::Summary::Item.3 \
+		Bio::Tools::EUtilities::Summary::ItemContainerI.3 \
 		Bio::Tools::Eponine.3 \
 		Bio::Tools::Est2Genome.3 \
 		Bio::Tools::Fgenesh.3 \
@@ -875,7 +884,6 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::Tools::Glimmer.3 \
 		Bio::Tools::Grail.3 \
 		Bio::Tools::GuessSeqFormat.3 \
-		Bio::Tools::HMM.3 \
 		Bio::Tools::HMMER::Domain.3 \
 		Bio::Tools::HMMER::Results.3 \
 		Bio::Tools::HMMER::Set.3 \
@@ -919,6 +927,7 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::Tools::Run::StandAloneWUBlast.3 \
 		Bio::Tools::Run::WrapperBase.3 \
 		Bio::Tools::Seg.3 \
+		Bio::Tools::SeqPattern::Backtranslate.3 \
 		Bio::Tools::SeqPattern.3 \
 		Bio::Tools::SeqStats.3 \
 		Bio::Tools::SeqWords.3 \
@@ -987,7 +996,7 @@ post-install:
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for doc in AUTHORS BUGS Changes DEPENDENCIES DEPRECATED INSTALL LICENSE MANIFEST PLATFORMS README
+.for doc in AUTHORS BUGS Changes DEPENDENCIES DEPRECATED INSTALL LICENSE MANIFEST README
 	${INSTALL_MAN} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 	${CP} -R ${WRKSRC}/doc ${DOCSDIR}

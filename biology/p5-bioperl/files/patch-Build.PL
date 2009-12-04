@@ -1,6 +1,6 @@
---- Build.PL.orig	2009-01-25 02:19:13.000000000 -0300
-+++ Build.PL	2009-02-22 02:21:33.000000000 -0300
-@@ -36,7 +36,7 @@
+--- Build.PL.orig	2009-09-30 00:33:45.000000000 +0800
++++ Build.PL	2009-12-01 10:25:51.000000000 +0800
+@@ -37,7 +37,7 @@
                              'Test::More'                => 0,
                              'Module::Build'             => 0.2805,
                              'Test::Harness'             => 2.62,
@@ -9,7 +9,7 @@
                             },
      recommends          => { # does what you would expect of recommends, except more informative output and generates optional_features in META.yml
                              'Ace'                       => '0/access of ACeDB database/Bio::DB::Ace,Bio::DB::GFF::Adaptor::ace',
-@@ -214,83 +214,8 @@
+@@ -234,86 +234,9 @@
  
  sub prompt_for_biodb {
      my $accept = shift;
@@ -19,7 +19,7 @@
 -    
 -    if ($proceed) {
 -        my @driver_choices;
--        foreach my $poss ('mysql', 'Pg', 'Oracle') {
+-        foreach my $poss ('SQLite', 'mysql', 'Pg', 'Oracle') {
 -            if (grep {/$poss/i} @drivers) {
 -                my $choice = $poss;
 -                $choice =~ s/^(.)/[$1]/;
@@ -44,6 +44,9 @@
 -        elsif ($driver =~ /^[oO]/) {
 -            $driver = 'Oracle';
 -        }
+-        elsif ($driver =~ /^[sS]/) {
+-            $driver = 'SQLite';
+-        }
 -        
 -        my $test_db = $build->prompt("Which database should I use for testing the $driver driver?\n".
 -                                     "This database should already be present but doesn't have to ".
@@ -58,7 +61,7 @@
 -        }
 -        
 -        my $test_dsn;
--        if ($driver eq 'Pg') {
+-        if ($driver eq 'Pg' || $driver eq 'SQLite') {
 -            $test_dsn = "dbi:$driver:dbname=$test_db";
 -            $mysql_ok = 0;
 -        }
@@ -84,12 +87,12 @@
 -                        "    User     $test_user\n",
 -                        "    Password $test_pass\n");
 -        $build->log_info("  - will not run the BioDBSeqFeature live ".
--                         "database tests (requires MySQL driver)\n") unless ($driver eq 'mysql');
+-                         "database tests (requires MySQL or Pg driver)\n") unless ($driver eq 'mysql' or $driver eq 'Pg');
 -    }
 -    else {
 -        $build->log_info("  - will not run the BioDBGFF or BioDBSeqFeature live database tests\n");
 -    }
--    
+     
 +    my $proceed = 0;
 +    $build->log_info("  - will not run the BioDBGFF or BioDBSeqFeature live database tests\n");
      $build->log_info("\n");
