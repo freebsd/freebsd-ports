@@ -3023,7 +3023,6 @@ share/config/kthemestylerc
 share/config/language.codes
 share/config/ui/kprintpreviewui.rc
 share/config/ui/ui_standards.rc
-share/cups/model/postscript.ppd.gz
 share/doc/HTML/en/common/1.png
 share/doc/HTML/en/common/10.png
 share/doc/HTML/en/common/2.png

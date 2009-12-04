@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -46,8 +46,6 @@ PLIST=		${.CURDIR}/../kdelibs3-nocups/pkg-plist
 .else
 CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
-BUILD_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-base
-RUN_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-base
 .endif
 
 USE_BZIP2=	yes
@@ -83,7 +81,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 pre-configure:
 	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp
-	${REINPLACE_CMD} -e "s,ac_cups_share_test=.*,ac_cups_share_test=\`\$$kde_cups_config --datadir\`,g" \
+	${REINPLACE_CMD} -e "s,ac_cups_share_test=.*,ac_cups_share_test=,g" \
 			 -e "s,pcreposix.h,pcre.h,g" ${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s,applications.menu,kde-applications.menu,g" \
 		${WRKSRC}/kded/Makefile.in ${WRKSRC}/kded/kbuildsycoca.cpp
