@@ -32,6 +32,10 @@ STALIN_SRC=	"stalin-SPARC64.c"
 .endif
 STALIN_LIBDIR=	${PREFIX}/lib/stalin
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: includes i386 asm
+.endif
+
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 SUB_FILES=	stalin.sh
 MAN1=	stalin.1
