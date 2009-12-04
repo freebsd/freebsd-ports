@@ -34,6 +34,8 @@ SUB_FILES=	pkg-message
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
 
+IGNORE=		please use ports-mgmt/tinderbox instand
+
 PATCH_STRIP=	-p2
 
 .include <bsd.port.pre.mk>
