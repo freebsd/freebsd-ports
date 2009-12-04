@@ -17,7 +17,7 @@ COMMENT=	Omnipresent versatile search interface
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${LOCALBASE}/share/doc/py26-simplejson:${PORTSDIR}/devel/py-simplejson
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
