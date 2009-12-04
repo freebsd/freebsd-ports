@@ -2,6 +2,11 @@ etc/rc.d/tinderbox
 tinderbox/scripts/.version
 tinderbox/scripts/README
 tinderbox/scripts/ds.ph.dist
+tinderbox/scripts/contrib/hooks/make-jobs-safe/README.txt
+tinderbox/scripts/contrib/hooks/make-jobs-safe/make-jobs-safe.sh
+tinderbox/scripts/contrib/hooks/kse-fix/libmap.conf
+tinderbox/scripts/contrib/hooks/kse-fix/README.txt
+tinderbox/scripts/contrib/hooks/kse-fix/kse-fix.sh
 tinderbox/scripts/etc/env/.keep_me
 tinderbox/scripts/etc/rc.d/tinderd
 tinderbox/scripts/lib/Tinderbox/Build.pm
@@ -52,6 +57,8 @@ tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.0_to_3.1.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.1_to_3.2.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.0_to_3.1.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.1_to_3.2.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2_to_3.2.1.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2_to_3.2.1.sql
 tinderbox/scripts/upgrade/order.lst
 tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
@@ -137,5 +144,9 @@ tinderbox/scripts/upgrade/user_permissions.map
 @dirrm tinderbox/scripts/etc/rc.d
 @dirrm tinderbox/scripts/etc/env
 @dirrm tinderbox/scripts/etc
+@dirrm tinderbox/scripts/contrib/hooks/kse-fix
+@dirrm tinderbox/scripts/contrib/hooks/make-jobs-safe
+@dirrm tinderbox/scripts/contrib/hooks
+@dirrm tinderbox/scripts/contrib
 @dirrm tinderbox/scripts
 @dirrmtry tinderbox
