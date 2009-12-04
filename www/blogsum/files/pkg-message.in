@@ -2,24 +2,33 @@
 
 1)  Setup the SQLite database:
 
-	$ sudo -u www sqlite3 %%WWWROOT%%/blogsum/data/site.db < \
-		%%WWWROOT%%/blogsum/examples/create_sqlite.sql
+	$ su -m %%WWWOWN%% -c 'sqlite3 %%WWWDIR%%/data/site.db < \
+		%%WWWDIR%%/examples/create_sqlite.sql'
 
 2)  Create your local configuration and modify as necessary:
 
-	$ sudo cp %%WWWROOT%%/blogsum/Blogsum/Config.pm.dist \
-		%%WWWROOT%%/blogsum/Blogsum/Config.pm
+	$ cp %%WWWDIR%%/Blogsum/Config.pm.dist \
+		%%WWWDIR%%/Blogsum/Config.pm
+
+################################################################
+NOTE: If you are updating from blogsum 0.9 you should merge the
+relevant changes from %%WWWDIR%%/Blogsum/Config.pm.dist 
+into your current %%WWWDIR%%/Blogsum/Config.pm
+###############################################################
 
 3)  If comments will be enabled, visit the CAPTCHA (http://www.captcha.net/)
     project and register your account.  Add your keys to Config.pm.
 
-4)  Edit the example httpd-blogsum.conf and enable it for your site:
+4)  Edit the example httpd-blogsum.conf (httpd2-blogsum.conf if you are using
+    apache2+) and enable it for your site:
 
-	$ sudo cp %%WWWROOT%%/blogsum/examples/httpd-blogsum.conf %%PREFIX%%/%%APACHEETCDIR%%/conf
+	$ cp %%WWWDIR%%/examples/httpd-blogsum.conf %%PREFIX%%/%%APACHEETCDIR%%/conf
+	or
+	$ cp %%WWWDIR%%/examples/httpd2-blogsum.conf %%PREFIX%%/%%APACHEETCDIR%%/conf
 
 5)  Create your AuthUserFile file as defined in httpd-blogsum.conf:
 
-	$ sudo htpasswd -c %%APACHEETCDIR%%/conf/blogsum.htpasswd
+	$ sudo htpasswd -c %%PREFIX%%/%%APACHEETCDIR%%/conf/blogsum.htpasswd
 
 6)  Enable the following modules in %%APACHEETCDIR%%/httpd.conf:
 
@@ -28,7 +37,6 @@
 	LoadModule perl_module		%%APACHEMODDIR%%/mod_perl.so
 
 7)  Stop and start your Apache service.
-
 
 The installation should now be complete.  Your blogsum installation can be
 viewed at http://localhost/blogsum/index.cgi.  Posts can be created and

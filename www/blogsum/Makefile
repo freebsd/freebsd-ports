@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	blogsum
-PORTVERSION=	0.9
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.dixongroup.net/
 
 MAINTAINER=	jhuldtgren@gmail.com
 COMMENT=	Simple weblog
-
-WWWROOT?=	${PREFIX}/www/
 
 PERL_MODULES=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
@@ -43,10 +41,9 @@ PERL_MODULES+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 .endif
 
 RUN_DEPENDS+=	${PERL_MODULES}
-PLIST_SUB=	WWWROOT=${WWWROOT:S,${PREFIX}/,,}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	WWWROOT=${WWWROOT} APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR}
+SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR} WWWOWN=${WWWOWN}
 
 .include <bsd.port.pre.mk>
 
@@ -54,13 +51,13 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_APACHE2=1			Use apache2+ instead of apache 1.3"
-	@${ECHO_MSG} "WWWROOT=${PREFIX}/www/        Where do you put httpd's document root?"
+	@${ECHO_MSG} "WITH_APACHE2=yes			Use apache2+ instead of apache 1.3"
+	@${ECHO_MSG} "WWWDIR=${WWWDIR}	Where do you put httpd's document root?"
 	@${ECHO_MSG} ""
 
 do-install:
-	${MKDIR} ${WWWROOT}/blogsum
-	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWROOT}/blogsum
+	@${MKDIR} ${WWWDIR}
+	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
 
 post-install:
 	@${ECHO_MSG} ""
