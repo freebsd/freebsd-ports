@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -42,7 +41,6 @@ IGNORE=	is useless without a database. Please (re)run 'make config' and choose o
 .endif
 
 .if defined(WITH_WEBUI)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
@@ -53,6 +51,7 @@ PLIST_SUB+=	WEBUI="@comment "
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 .if defined(WITH_WEBUI)
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
 USE_PHP+=	pgsql
 .endif
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
@@ -60,6 +59,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 
 .if !defined(WITHOUT_MYSQL)
 .if defined(WITH_WEBUI)
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
 USE_PHP+=	mysql
 .endif
 USE_MYSQL=	yes
