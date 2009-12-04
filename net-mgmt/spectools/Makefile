@@ -57,8 +57,12 @@ IGNORE=	is unsupported on systems prior to FreeBSD v700027
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .endif
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} > 800000
+.if ${ARCH} == "sparc64"
+.if ${OSVERSION} > 800000
 BROKEN=		Does not build on sparc64-8: duplicate definition of malloc
+.else
+BROKEN=		Does not compile on sparc64: fails to build wispy_hw_dbx.c
+.endif
 .endif
 
 do-install:
