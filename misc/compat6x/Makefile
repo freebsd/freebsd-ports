@@ -32,6 +32,10 @@ USE_LDCONFIG=	${TARGET_DIR}
 IGNORE=		is for FreeBSD 7.x and newer
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: fails to link lib/compat/libpthread.so.2
+.endif
+
 .if ${ARCH} == amd64
 PLIST_SUB+=	LDCONFIG_LIB32="${LDCONFIG} -32"
 USE_LDCONFIG32=	${TARGET32_DIR}
