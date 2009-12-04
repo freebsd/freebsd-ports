@@ -10,7 +10,7 @@ PORTVERSION=	2.5.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	A multiplayer-capable and modified version of ID's classic DOOM game
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg

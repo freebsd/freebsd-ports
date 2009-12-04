@@ -11,7 +11,7 @@ CATEGORIES=	editors ruby
 MASTER_SITES=	http://purepistos.net/diakonos/ \
 		http://distfiles.officialunix.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	A Linux editor for the masses
 
 USE_RUBY=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	SF \
 		http://distfiles.officialunix.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	Cross platform audio loop slicer
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \

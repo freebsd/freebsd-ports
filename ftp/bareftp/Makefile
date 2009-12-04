@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@officialunix.com
 COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes
