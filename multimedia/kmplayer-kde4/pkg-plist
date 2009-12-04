@@ -4,11 +4,22 @@ bin/kphononplayer
 lib/kde4/libkmplayerpart.so
 lib/libkdeinit4_kmplayer.so
 lib/libkmplayercommon.so
+share/apps/kmplayer/blip-api.xsl
 share/apps/kmplayer/bookmarks.xml
+share/apps/kmplayer/find-media.sh
+share/apps/kmplayer/generators/find-media.xml
+share/apps/kmplayer/generators/shoutcast.xml
+share/apps/kmplayer/generators/youtube-query.xml
+share/apps/kmplayer/generators/blip-tv.xml
 share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
 share/apps/kmplayer/pluginsinfo
+share/apps/kmplayer/shoutcast.xsl
+share/apps/kmplayer/youtube.xsl
 share/applications/kde4/kmplayer.desktop                                      
+share/doc/HTML/en/kmplayer/common
+share/doc/HTML/en/kmplayer/index.cache.bz2
+share/doc/HTML/en/kmplayer/index.docbook
 share/icons/hicolor/128x128/apps/kmplayer.png
 share/icons/hicolor/16x16/apps/kmplayer.png
 share/icons/hicolor/22x22/apps/kmplayer.png
@@ -16,44 +27,49 @@ share/icons/hicolor/32x32/apps/kmplayer.png
 share/icons/hicolor/48x48/apps/kmplayer.png
 share/icons/hicolor/64x64/apps/kmplayer.png
 share/icons/hicolor/scalable/apps/kmplayer.svgz
-share/icons/oxygen/128x128/apps/kmplayer.png
-share/icons/oxygen/16x16/apps/kmplayer.png
-share/icons/oxygen/22x22/apps/kmplayer.png
-share/icons/oxygen/32x32/apps/kmplayer.png
-share/icons/oxygen/48x48/apps/kmplayer.png
-share/icons/oxygen/64x64/apps/kmplayer.png
 share/icons/oxygen/scalable/apps/kmplayer.svgz
 share/kde4/services/kmplayer_part.desktop
 share/config/kmplayerrc
 share/locale/cs/LC_MESSAGES/kmplayer.mo
+share/locale/da/LC_MESSAGES/kmplayer.mo
 share/locale/de/LC_MESSAGES/kmplayer.mo
 share/locale/el/LC_MESSAGES/kmplayer.mo
+share/locale/en_GB/LC_MESSAGES/kmplayer.mo
 share/locale/es/LC_MESSAGES/kmplayer.mo
 share/locale/et/LC_MESSAGES/kmplayer.mo
 share/locale/fr/LC_MESSAGES/kmplayer.mo
 share/locale/ga/LC_MESSAGES/kmplayer.mo
 share/locale/gl/LC_MESSAGES/kmplayer.mo
+share/locale/it/LC_MESSAGES/kmplayer.mo
 share/locale/ja/LC_MESSAGES/kmplayer.mo
+share/locale/km/LC_MESSAGES/kmplayer.mo
+share/locale/ku/LC_MESSAGES/kmplayer.mo
+share/locale/lt/LC_MESSAGES/kmplayer.mo
 share/locale/lv/LC_MESSAGES/kmplayer.mo
+share/locale/mai/LC_MESSAGES/kmplayer.mo
 share/locale/nb/LC_MESSAGES/kmplayer.mo
 share/locale/nds/LC_MESSAGES/kmplayer.mo
 share/locale/nl/LC_MESSAGES/kmplayer.mo
 share/locale/nn/LC_MESSAGES/kmplayer.mo
 share/locale/pl/LC_MESSAGES/kmplayer.mo
 share/locale/pt/LC_MESSAGES/kmplayer.mo
+share/locale/pt_BR/LC_MESSAGES/kmplayer.mo
+share/locale/ro/LC_MESSAGES/kmplayer.mo
 share/locale/ru/LC_MESSAGES/kmplayer.mo
+share/locale/sk/LC_MESSAGES/kmplayer.mo
 share/locale/sv/LC_MESSAGES/kmplayer.mo
 share/locale/tr/LC_MESSAGES/kmplayer.mo
 share/locale/uk/LC_MESSAGES/kmplayer.mo
 share/locale/x-test/LC_MESSAGES/kmplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
-share/doc/HTML/en/doc/index.cache.bz2
-share/doc/HTML/en/doc/index.docbook
-share/doc/HTML/en/doc/common
+share/locale/zh_TW/LC_MESSAGES/kmplayer.mo
 @dirrmtry share/applications
+@dirrmtry share/doc/HTML/en/kmplayer
 @dirrmtry share/pixmaps
+@dirrmtry share/apps/kmplayer/generators
 @dirrmtry share/apps/kmplayer
 @dirrmtry lib/kde4
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/x-test/LC_MESSAGES
 @dirrmtry share/locale/x-test
-@dirrmtry share/doc/HTML/en/doc
