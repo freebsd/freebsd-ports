@@ -7,6 +7,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.352
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -22,7 +23,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		nettle.2:${PORTSDIR}/security/nettle \
+		nettle.3:${PORTSDIR}/security/nettle \
 		mird.1:${PORTSDIR}/databases/mird \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
@@ -86,14 +87,11 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--with-perl
 USE_PERL5=	YES
 
+PLIST_FILES=	bin/pike bin/pike78 bin/hilfe
+
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-.if ${OSVERSION} >= 800000
-BROKEN=		Incorrect pkg-plist
-.endif
 
 .ifdef(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
@@ -146,6 +144,11 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/pike/${PORTVERSION}/bin/pike
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/hilfe ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/pike.1 ${MAN1PREFIX}/man/man1
+	@cd ${PREFIX} && ${FIND} pike/${PORTVERSION} ! -type d >> ${TMPPLIST}
+	@cd ${PREFIX} && ${FIND} pike/${PORTVERSION} -type d -empty -delete
+	@cd ${PREFIX} && ${FIND} -d pike/${PORTVERSION} -type d | \
+		${SED} 's,^,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/pike 2>/dev/null || true' >> ${TMPPLIST}
 
 verify:
 	@(cd ${WRKSRC}; make verify)
