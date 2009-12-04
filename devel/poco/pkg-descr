@@ -6,12 +6,12 @@ etc.), as well as a large number of useful utility classes, such
 various stream buffer and stream classes, URI handling, and many
 more.
 
+The Net library contains network classes (sockets, HTTP, etc.)
+
 The XML library contains an XML parser with SAX2 and DOM interfaces,
 as well as an XMLWriter.
 
 The Util library contains classes for working with configuration
 files and command line arguments, as well as various utility classes.
 
-The Net library contains network classes (sockets, HTTP, etc.)
-
-WWW: http://poco.appinf.com/
+WWW: http://pocoproject.org/
