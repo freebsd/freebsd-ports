@@ -1,6 +1,5 @@
 bin/audacity
 share/applications/audacity.desktop
-%%DATADIR%%/audacity.xpm
 %%DATADIR%%/nyquist/bug.lsp
 %%DATADIR%%/nyquist/dspprims.lsp
 %%DATADIR%%/nyquist/envelopes.lsp
@@ -60,6 +59,7 @@ share/locale/fr/LC_MESSAGES/audacity.mo
 share/locale/ga/LC_MESSAGES/audacity.mo
 share/locale/gl/LC_MESSAGES/audacity.mo
 share/locale/he/LC_MESSAGES/audacity.mo
+share/locale/hi/LC_MESSAGES/audacity.mo
 share/locale/hu/LC_MESSAGES/audacity.mo
 share/locale/id/LC_MESSAGES/audacity.mo
 share/locale/it/LC_MESSAGES/audacity.mo
@@ -87,9 +87,16 @@ share/locale/vi/LC_MESSAGES/audacity.mo
 share/locale/zh/LC_MESSAGES/audacity.mo
 share/locale/zh_TW/LC_MESSAGES/audacity.mo
 share/mime/packages/audacity.xml
+share/pixmaps/audacity.xpm
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
-@dirrm share/audacity/plug-ins
-@dirrm share/audacity/nyquist
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrm %%DATADIR%%/plug-ins
+@dirrm %%DATADIR%%/nyquist
 @dirrm share/audacity
 @dirrm share/applications
