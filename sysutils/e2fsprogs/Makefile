@@ -49,6 +49,10 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: fails self-test
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
