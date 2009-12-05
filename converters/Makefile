@@ -35,6 +35,7 @@
     SUBDIR += libiconv
     SUBDIR += libticonv
     SUBDIR += libutf-8
+    SUBDIR += lua-iconv
     SUBDIR += mimelib
     SUBDIR += mmencode
     SUBDIR += mpack

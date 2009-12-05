@@ -1,0 +1,21 @@
+--- Makefile.orig	Wed Nov  5 21:26:49 2003
++++ Makefile	Mon Aug  7 00:38:38 2006
+@@ -1,13 +1,13 @@
+ # makefile for POSIX library for Lua
+ 
+ # change these to reflect your Lua installation
+-LUA= /tmp/lhf/lua-5.0
+-LUAINC= $(LUA)/include
+-LUALIB= $(LUA)/lib
+-LUABIN= $(LUA)/bin
++LUA= ${PREFIX}
++LUAINC= $(LUA_INCDIR)
++LUALIB= $(LUA_LIBDIR)
++LUABIN= $(LUA_BINDIR)
+ 
+ # no need to change anything below here
+-CFLAGS= -fPIC $(INCS) $(WARN) -O2 $G
++CFLAGS+= -fPIC $(INCS) $(WARN) -O2 $G
+ WARN= -pedantic -Wall
+ INCS= -I$(LUAINC)
+ 
