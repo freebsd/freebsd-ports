@@ -14,7 +14,7 @@ DISTFILES=	ts2_server_rc2_202319.tar.bz2:0 server_linux:1
 DIST_SUBDIR=	teamspeak
 EXTRACT_ONLY=	ts2_server_rc2_202319.tar.bz2
 
-MAINTAINER=	tremere@cainites.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side of the TeamSpeak group voice chat system
 
 WRKSRC=		${WRKDIR}/tss2_rc2
