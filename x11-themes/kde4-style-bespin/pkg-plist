@@ -1,0 +1,12 @@
+bin/bespin
+lib/kde4/kstyle_bespin_config.so
+lib/kde4/kwin3_bespin.so
+lib/kde4/kwin_bespin_config.so
+lib/kde4/plasma_applet_xbar.so
+lib/libQtBespin.so
+share/apps/kstyle/themes/bespin.themerc
+share/apps/kwin/bespin.desktop
+share/kde4/services/plasma-applet-xbar.desktop
+@cwd %%LOCALBASE%%
+lib/qt4/plugins/styles/libbespin.so
+@dirrmtry lib/qt4/plugins/styles

@@ -156,6 +156,8 @@
     SUBDIR += kde-style-lipstik
     SUBDIR += kde-style-polyester
     SUBDIR += kde4-icons-oxygen
+    SUBDIR += kde4-style-bespin
+    SUBDIR += kde4-style-nitrogen
     SUBDIR += kde4-style-polyester
     SUBDIR += kde4-windeco-aurorae
     SUBDIR += kde4-windeco-crystal
