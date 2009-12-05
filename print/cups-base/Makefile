@@ -46,6 +46,7 @@ OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		PAM		"Build with PAM support" off \
 		LDAP		"Build with LDAP support" off \
 		DBUS		"Build with DBUS support" off \
+		LIBUSB		"Build with USB support" off \
 		GHOSTSCRIPT	"Build pdftps with GHOSTSCRIPT" on \
 		XDG_OPEN	"Build with XDG_OPEN as browser" off
 
@@ -170,6 +171,10 @@ CONFIGURE_ARGS+=	--disable-dbus
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_XDG_OPEN)
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
+.endif
+
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBUSB)
+LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
 .endif
 
 .if defined(CUPS_CLIENT)
