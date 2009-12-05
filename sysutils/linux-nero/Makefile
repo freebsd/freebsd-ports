@@ -17,6 +17,8 @@ DIST_SUBDIR=	rpm
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	CD/DVD disk burner
 
+BROKEN=		unfetchable
+
 RESTRICTED=	Get a serial number at http://www.nero.com/eng/NeroLINUX.html
 
 ONLY_FOR_ARCH=	i386 amd64
