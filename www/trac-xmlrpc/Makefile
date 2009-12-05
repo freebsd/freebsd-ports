@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xmlrpc
-PORTVERSION=	0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.6
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/download/trac/
+MASTER_SITES=	http://shuqun.com/files/ \
+		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
