@@ -89,6 +89,10 @@ include/wine/windows/appmgmt.h
 include/wine/windows/asynot.idl
 include/wine/windows/asysta.idl
 include/wine/windows/audevcod.h
+include/wine/windows/audioclient.h
+include/wine/windows/audioclient.idl
+include/wine/windows/audiopolicy.h
+include/wine/windows/audiopolicy.idl
 include/wine/windows/audiosessiontypes.h
 include/wine/windows/austream.h
 include/wine/windows/austream.idl
@@ -178,6 +182,8 @@ include/wine/windows/ddstream.h
 include/wine/windows/ddstream.idl
 include/wine/windows/devenum.idl
 include/wine/windows/devguid.h
+include/wine/windows/devicetopology.h
+include/wine/windows/devicetopology.idl
 include/wine/windows/digitalv.h
 include/wine/windows/dimm.h
 include/wine/windows/dimm.idl
@@ -833,6 +839,7 @@ lib/wine/fakedlls/extrac32.exe
 lib/wine/fakedlls/faultrep.dll
 lib/wine/fakedlls/fltlib.dll
 lib/wine/fakedlls/fusion.dll
+lib/wine/fakedlls/fwpuclnt.dll
 lib/wine/fakedlls/gdi32.dll
 lib/wine/fakedlls/gdiplus.dll
 lib/wine/fakedlls/glu32.dll
@@ -1120,6 +1127,7 @@ lib/wine/fakedlls/xmllite.dll
 lib/wine/faultrep.dll.so
 lib/wine/fltlib.dll.so
 lib/wine/fusion.dll.so
+lib/wine/fwpuclnt.dll.so
 lib/wine/gdi.exe16
 lib/wine/gdi32.dll.so
 lib/wine/gdiplus.dll.so
