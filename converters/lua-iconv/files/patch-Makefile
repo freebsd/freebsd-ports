@@ -1,0 +1,14 @@
+--- Makefile.orig	2009-12-04 12:50:49.000000000 +0800
++++ Makefile	2009-12-04 12:54:18.000000000 +0800
+@@ -31,8 +31,9 @@
+ OMIT_FRAME_POINTER = -fomit-frame-pointer
+ 
+ # Name of .pc file. "lua5.1" on Debian/Ubuntu
+-LUAPKG = lua5.1
+-CFLAGS = `pkg-config $(LUAPKG) --cflags` -fPIC -O3 -Wall
++LUAPKG = lua-5.1
++CFLAGS += `pkg-config $(LUAPKG) --cflags` -fPIC %%INCDIR%%
++LIBS = `pkg-config $(LUAPKG) --libs` -liconv %%LIBDIR%%
+ LFLAGS = -shared $(OMIT_FRAME_POINTER)
+ INSTALL_PATH = `pkg-config $(LUAPKG) --variable=INSTALL_CMOD`
+ 
