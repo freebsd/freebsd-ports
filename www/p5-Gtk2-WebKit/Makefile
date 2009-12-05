@@ -34,4 +34,10 @@ MAN3=		Gtk2::WebKit.3 \
 		Gtk2::WebKit::NetworkRequest.3 \
 		Gtk2::WebKit::WebHistoryItem.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		hangs during build
+.endif
+
+.include <bsd.port.post.mk>
