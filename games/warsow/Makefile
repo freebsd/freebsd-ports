@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	warsow
-PORTVERSION=	0.42
-PORTREVISION=	3
+PORTVERSION=	0.5
 CATEGORIES=	games
-MASTER_SITES=	http://data.rodix.free.fr/warsow/files/ \
-		http://88.191.19.21/wsw/
+MASTER_SITES=	http://woe.crying-wolves.net/ \
+		http://www.derchris.eu/warsow/ \
+		http://warsow.hangy.de/ \
+		http://static.warsow.net/release/ \
+		http://rewq.de/scratch/wsw05/ \
+		http://weseo.de/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_sdk
 DIST_SUBDIR=	${PORTNAME}
 
@@ -18,14 +21,13 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast paced first person shooter game
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${DATADIR}/basewsw/data0.pk3:${PORTSDIR}/games/warsow-data
+RUN_DEPENDS=	${DATADIR}/basewsw/data0_05.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_ZIP=	yes
-USE_DOS2UNIX=	game/q_shared.h
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/sdk/src/}/source
+WRKSRC=		${WRKDIR}/source
 ALL_TARGET=	game
 MAKE_ARGS=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 RELEASEDIR=	${WRKSRC}/release
@@ -117,6 +119,9 @@ post-patch: .SILENT
 # FreeBSD does not use stupid `64' suffix for 64-bit readdir(3)
 	${REINPLACE_CMD} -e 's/FILE64_SOURCE)/& || defined(__FreeBSD__)/' \
 		${WRKSRC}/unix/unix_fs.c
+# Adjust architecture names, get rid of ``freebsd_'' prefix
+	${REINPLACE_CMD} -e 's/x86_64/amd64/ ; s/freebsd_//' \
+		${WRKSRC}/gameshared/q_arch.h
 
 do-install:
 .for b in ${WSWBIN}

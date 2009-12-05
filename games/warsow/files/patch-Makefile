@@ -1,8 +1,8 @@
---- Makefile.orig	2006-06-08 22:44:02.000000000 +0200
-+++ Makefile	2008-04-11 13:18:40.000000000 +0200
-@@ -34,19 +34,12 @@
- CC=i586-mingw32msvc-gcc
- LD=i586-mingw32msvc-gcc
+--- Makefile.orig
++++ Makefile
+@@ -51,19 +51,12 @@
+ #CC=gcc
+ #LD=gcc
  else
 -CC?=gcc
 -LD=gcc
@@ -23,7 +23,7 @@
  SHARED_LIBRARY_EXTENSION=so
  endif
  
-@@ -134,7 +127,7 @@
+@@ -161,7 +154,7 @@
  LIB=lib
  endif
  
@@ -32,25 +32,16 @@
  LDFLAGS_DED=-lz $(shell curl-config --libs)
  LDFLAGS_MODULE=-shared
  LDFLAGS_TV_SERVER=-lz
-@@ -149,11 +142,7 @@
- 
- # sdl
- ifeq ($(BUILD_SND_QF),YES)
--ifeq ($(OS),FreeBSD)
--SDL_CONFIG?=sdl11-config
--else
- SDL_CONFIG?=sdl-config
--endif
- 
- CFLAGS_SDL=$(shell $(SDL_CONFIG) --cflags)
- LDFLAGS_QF=$(shell $(SDL_CONFIG) --libs) -lvorbisfile
-@@ -193,8 +182,7 @@
+@@ -217,10 +210,8 @@
  ######################################################################################################
  # Helper functions
  ######################################################################################################
 -DO_CC=echo "  > Compiling $<" && \
 -	$(CC) $(CFLAGS_COMMON) -c $< -o $@
+-DO_CXX=echo "  > Compiling (c++) $<" && \
+-	$(CXX) $(CFLAGS_COMMON) $(CXXFLAGS_COMMON) -c $< -o $@
 +DO_CC=$(CC) $(CFLAGS_COMMON) -c $< -o $@
++DO_CXX=$(CXX) $(CFLAGS_COMMON) $(CXXFLAGS_COMMON) -c $< -o $@
+ 
  
  DO_CC_CLIENT=$(DO_CC) $(CFLAGS_CLIENT)
- DO_CC_DED=$(DO_CC) $(CFLAGS_DED)
