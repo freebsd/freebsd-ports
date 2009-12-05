@@ -2,6 +2,7 @@ bin/plackup
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/.packlist
 %%SITE_PERL%%/HTTP/Message/PSGI.pm
 %%SITE_PERL%%/Plack.pm
+%%SITE_PERL%%/Plack/App/Cascade.pm
 %%SITE_PERL%%/Plack/App/Directory.pm
 %%SITE_PERL%%/Plack/App/FCGIDispatcher.pm
 %%SITE_PERL%%/Plack/App/File.pm
