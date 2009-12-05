@@ -1,4 +1,4 @@
 bin/fpdns
 %%SITE_PERL%%/Net/DNS/Fingerprint.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Fingerprint
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Fingerprint
 @dirrm %%SITE_PERL%%/Net/DNS
