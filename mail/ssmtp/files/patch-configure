@@ -9,3 +9,16 @@
  fi
  enableval=""
  
+--- configure.orig	2009-11-01 23:52:55.000000000 +0200
++++ configure	2009-11-01 23:53:42.000000000 +0200
+@@ -1591,7 +1591,8 @@
+ #define MD5AUTH 1
+ EOF
+ 
+-	SRCS="$SRCS md5auth/md5c.c md5auth/hmac_md5.c"
++	SRCS="$SRCS md5auth/hmac_md5.c"
++	LIBS="$LIBS -lmd"
+ fi
+ enableval=""
+ 
+
