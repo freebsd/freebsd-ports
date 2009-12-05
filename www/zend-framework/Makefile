@@ -7,6 +7,7 @@
 
 PORTNAME=	ZendFramework
 PORTVERSION=	1.9.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ \
 		GENTOO/distfiles
@@ -21,6 +22,7 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
+IGNORE_WITH_PHP=4
 USE_GETTEXT=	yes
 
 SUB_FILES=	pkg-message
@@ -39,8 +41,6 @@ OPTIONS=	\
 		OPTPHP "Install optional PHP dependencies" Off
 
 .include <bsd.port.pre.mk>
-
-IGNORE_WITH_PHP=4
 
 # Check for mutually-exclusive options
 .if defined(WITH_EDOJO) && defined(WITH_PDOJO)
