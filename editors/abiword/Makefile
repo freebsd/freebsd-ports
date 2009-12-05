@@ -8,6 +8,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -94,7 +95,5 @@ PLIST_SUB+=		CLIPART="@comment "
 post-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}-${ABIVERSION}/plugins
 	@-update-desktop-database
-	@${MKDIR} ${PREFIX}/share/mime-info/packages
-	@-update-mime-database ${PREFIX}/share/mime-info
 
 .include <bsd.port.post.mk>

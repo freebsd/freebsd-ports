@@ -303,6 +303,4 @@ share/mime-info/abiword.keys
 @dirrmtry lib/abiword-%%ABIVERSION%%
 @dirrm include/abiword-%%ABIVERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime-info > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime-info > /dev/null || /usr/bin/true
