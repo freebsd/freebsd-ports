@@ -17,21 +17,13 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding of MPI (Message Passing Interface)
 
-BUILD_DEPENDS=	${LOCALBASE}/mpich${MPICH_VER}/lib/libmpich.a:${PORTSDIR}/net/mpich${MPICH_VER}
-RUN_DEPENDS=	${LOCALBASE}/mpich${MPICH_VER}/lib/libmpich.a:${PORTSDIR}/net/mpich${MPICH_VER}
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmpich.a:${PORTSDIR}/net/mpich2
+RUN_DEPENDS=	${LOCALBASE}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-mpi-path=${LOCALBASE}/mpich${MPICH_VER}
-
-.if defined(WITH_MPICH1)
-USE_FORTRAN=	yes
-FORTRANLIBDIR2=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
-CONFIGURE_ENV+=	LDFLAGS="-L${FORTRANLIBDIR2} -lgfortran"
-.else
-MPICH_VER=	2
-.endif
+CONFIGURE_ARGS+=	--with-mpi-path=${LOCALBASE}/mpich2
 
 MAN1=		mpi_ruby.1
 MAN3=		MPI_Comm.3 MPI_Exception.3 MPI_Group.3 MPI_Keyval.3 MPI_Op.3 MPI_Request.3 \
