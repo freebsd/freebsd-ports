@@ -1,17 +1,23 @@
---- ssmtp.c.orig	2004-07-23 01:58:48.000000000 -0400
-+++ ssmtp.c	2009-01-15 14:13:10.000000000 -0500
-@@ -12,8 +12,9 @@
+--- ssmtp.c.orig	2008-03-06 22:01:22.000000000 +0200
++++ ssmtp.c	2009-12-04 02:22:14.000000000 +0200
+@@ -10,7 +10,7 @@
   See COPYRIGHT for the license
  
  */
--#define VERSION "2.60.4"
-+#define VERSION "2.61-11.1"
+-#define VERSION "2.62"
++#define VERSION "2.62.3"
+ #define _GNU_SOURCE
  
-+#include <sys/types.h>
  #include <sys/socket.h>
- #include <netinet/in.h>
- #include <sys/param.h>
-@@ -54,20 +55,20 @@
+@@ -25,6 +25,7 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <netdb.h>
++#include <libgen.h>
+ #ifdef HAVE_SSL
+ #include <openssl/crypto.h>
+ #include <openssl/x509.h>
+@@ -55,21 +56,21 @@
  
  #define ARPADATE_LENGTH 32		/* Current date in RFC format */
  char arpadate[ARPADATE_LENGTH];
@@ -25,7 +31,7 @@
 +char *auth_method = NULL;		/* Mechanism for SMTP authentication */
 +char *mail_domain = NULL;
 +char *from = NULL;		/* Use this as the From: address */
- char hostname[MAXHOSTNAMELEN] = "localhost";
+ char *hostname;
  char *mailhost = "mailhub";
 -char *minus_f = (char)NULL;
 -char *minus_F = (char)NULL;
@@ -35,33 +41,41 @@
 -char *prog = (char)NULL;
 +char *prog = NULL;
  char *root = NULL;
- char *tls_cert = "/etc/ssl/certs/ssmtp.pem";	/* Default Certificate */
+-char *tls_cert = "/etc/ssl/certs/ssmtp.pem";	/* Default Certificate */
 -char *uad = (char)NULL;
+-char *config_file = (char)NULL;		/* alternate configuration file */
++char *tls_cert = "/usr/local/etc/ssmtp/ssmtp.pem";	/* Default Certificate */
 +char *uad = NULL;
++char *config_file = NULL;		/* alternate configuration file */
  
  headers_t headers, *ht;
  
-@@ -220,16 +221,16 @@
- 	char buf[MAXPATHLEN +1], *p;
- 
- 	if((p = strrchr(str, '/'))) {
--		if(strncpy(buf, ++p, MAXPATHLEN) == (char *)NULL) {
-+		if(strncpy(buf, ++p, MAXPATHLEN) == NULL) {
- 			die("basename() -- strncpy() failed");
- 		}
- 	}
- 	else {
--		if(strncpy(buf, str, MAXPATHLEN) == (char *)NULL) {
-+		if(strncpy(buf, str, MAXPATHLEN) == NULL) {
- 			die("basename() -- strncpy() failed");
- 		}
- 	}
--	buf[MAXPATHLEN] = (char)NULL;
-+	buf[MAXPATHLEN] = '\0';
- 
- 	return(strdup(buf));
+@@ -239,6 +240,24 @@
  }
-@@ -256,7 +257,7 @@
+ #endif /* _GNU_SOURCE */
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version < 701101
++char *
++strndup(const char *str, size_t n)
++{
++	size_t len;
++	char *copy;
++
++	for (len = 0; len < n && str[len]; len++)
++		continue;
++
++	if ((copy = malloc(len + 1)) == NULL)
++		return (NULL);
++	memcpy(copy, str, len);
++	copy[len] = '\0';
++	return (copy);
++}
++#endif
++
+ /*
+ strip_pre_ws() -- Return pointer to first non-whitespace character
+ */
+@@ -261,7 +280,7 @@
  
  	p = (str + strlen(str));
  	while(isspace(*--p)) {
@@ -70,7 +84,7 @@
  	}
  
  	return(p);
-@@ -274,7 +275,7 @@
+@@ -279,7 +298,7 @@
  #endif
  
  	/* Simple case with email address enclosed in <> */
@@ -79,7 +93,7 @@
  		die("addr_parse(): strdup()");
  	}
  
-@@ -282,7 +283,7 @@
+@@ -287,7 +306,7 @@
  		q++;
  
  		if((p = strchr(q, '>'))) {
@@ -88,7 +102,7 @@
  		}
  
  #if 0
-@@ -305,7 +306,7 @@
+@@ -310,7 +329,7 @@
  	q = strip_post_ws(p);
  	if(*q == ')') {
  		while((*--q != '('));
@@ -97,60 +111,48 @@
  	}
  	(void)strip_post_ws(p);
  
-@@ -323,7 +324,7 @@
+@@ -347,28 +366,26 @@
+ /*
+ standardise() -- Trim off '\n's and double leading dots
+ */
+-void standardise(char *str)
++bool_t standardise(char *str, bool_t *linestart)
  {
- 	char buf[(BUF_SZ + 1)];
- 
--	if(strchr(str, '@') == (char *)NULL) {
-+	if(strchr(str, '@') == NULL) {
- 		if(snprintf(buf, BUF_SZ, "%s@%s", str,
- #ifdef REWRITE_DOMAIN
- 			rewrite_domain == True ? mail_domain : hostname
-@@ -348,7 +349,7 @@
+ 	size_t sl;
  	char *p;
- 
- 	if((p = strchr(str, '\n'))) {
+-
+-	if((p = strchr(str, '\n'))) {
 -		*p = (char)NULL;
-+		*p = '\0';
- 	}
+-	}
++	bool_t leadingdot = False;
  
  	/* Any line beginning with a dot has an additional dot inserted;
-@@ -374,31 +375,58 @@
- {
- 	char buf[(BUF_SZ + 1)], *p;
- 	FILE *fp;
-+#ifdef USERPREFS
-+	char *file=NULL;
-+	if (pw->pw_dir != NULL) {
-+		file = (char *)malloc (strlen (pw->pw_dir) + 1 + strlen (".ssmtprc") + 1);
-+		sprintf (file, "%s/.ssmtprc", pw->pw_dir);
-+	}
-+
-+	if ((file != NULL) && (fp = fopen(file, "r")) ) {
-+		while(fgets(buf, sizeof(buf), fp)) {
-+				/* Make comments invisible */
-+				if((p = strchr(buf, '#'))) {
-+					*p = '\0';
-+				}
+-	not just a line consisting solely of a dot. Thus we have to slide
+-	the buffer down one */
+-	sl = strlen(str);
++	not just a line consisting solely of a dot. Thus we have to move
++	the buffer start up one */
  
-+			/* Ignore malformed lines and comments */
-+				if(strchr(buf, '@') == NULL) {
-+					continue;
-+				}
-+				if((p = strtok(buf, "\n"))) {
-+                                        if((uad = strdup(p)) == NULL) {
-+                                                die("revaliases() -- strdup() failed");
-+                                        }
-+				}
-+			}
-+		fclose(fp);
- 	/* Try to open the reverse aliases file */
--	if((fp = fopen(REVALIASES_FILE, "r"))) {
-+	} else if ((fp = fopen(REVALIASES_FILE, "r"))) {
-+#else
-+	if ((fp = fopen(REVALIASES_FILE, "r"))) {
-+#endif
- 		/* Search if a reverse alias is defined for the sender */
+-	if(*str == '.') {
+-		if((sl + 2) > BUF_SZ) {
+-			die("standardise() -- Buffer overflow");
+-		}
+-		(void)memmove((str + 1), str, (sl + 1));	/* Copy trailing \0 */
++	if(*linestart && *str == '.') {
++		leadingdot = True;
++	}
++	*linestart = False;
+ 
+-		*str = '.';
++	if((p = strchr(str, '\n'))) {
++		*p = '\0';
++		*linestart = True;
+ 	}
++	return(leadingdot);
+ }
+ 
+ /*
+@@ -386,7 +403,7 @@
  		while(fgets(buf, sizeof(buf), fp)) {
  			/* Make comments invisible */
  			if((p = strchr(buf, '#'))) {
@@ -159,36 +161,19 @@
  			}
  
  			/* Ignore malformed lines and comments */
--			if(strchr(buf, ':') == (char *)NULL) {
-+			if(strchr(buf, ':') == NULL) {
- 				continue;
+@@ -485,6 +502,11 @@
+ 				die("from_format() -- snprintf() failed");
  			}
- 
- 			/* Parse the alias */
- 			if(((p = strtok(buf, ":"))) && !strcmp(p, pw->pw_name)) {
- 				if((p = strtok(NULL, ": \t\r\n"))) {
--					if((uad = strdup(p)) == (char *)NULL) {
-+					if((uad = strdup(p)) == NULL) {
- 						die("revaliases() -- strdup() failed");
- 					}
- 				}
- 
- 				if((p = strtok(NULL, " \t\r\n:"))) {
--					if((mailhost = strdup(p)) == (char *)NULL) {
-+					if((mailhost = strdup(p)) == NULL) {
- 						die("revaliases() -- strdup() failed");
- 					}
- 
-@@ -435,7 +463,7 @@
+ 		}
++		else {
++			if(snprintf(buf, BUF_SZ, "%s", str) == -1) {
++				die("from_format() -- snprintf() failed");
++			}
++		}
  	}
  
- 	/* Remove the real name if necessary - just send the address */
--	if((p = addr_parse(str)) == (char *)NULL) {
-+	if((p = addr_parse(str)) == NULL) {
- 		die("from_strip() -- addr_parse() failed");
- 	}
  #if 0
-@@ -511,11 +539,11 @@
+@@ -516,11 +538,11 @@
  #endif
  
  	/* Ignore missing usernames */
@@ -202,7 +187,7 @@
  		die("rcpt_save() -- strdup() failed");
  	}
  
-@@ -540,7 +568,7 @@
+@@ -545,7 +567,7 @@
  	(void)fprintf(stderr, "*** rcpt_parse(): str = [%s]\n", str);
  #endif
  
@@ -211,7 +196,7 @@
  		die("rcpt_parse(): strdup() failed");
  	}
  	q = p;
-@@ -568,7 +596,7 @@
+@@ -573,7 +595,7 @@
  		}
  
  		/* End of string? */
@@ -220,7 +205,7 @@
  			got_addr = True;
  		}
  
-@@ -576,7 +604,7 @@
+@@ -581,7 +603,7 @@
  		if((*q == ',') && (in_quotes == False)) {
  			got_addr = True;
  
@@ -229,43 +214,7 @@
  		}
  
  		if(got_addr) {
-@@ -599,19 +627,21 @@
- {
- 	int i;
- 	unsigned char digest[MD5_DIGEST_LEN];
--	unsigned char digascii[MD5_DIGEST_LEN * 2];
-+	char digascii[MD5_DIGEST_LEN * 2];
- 	unsigned char challenge[(BUF_SZ + 1)];
--	unsigned char response[(BUF_SZ + 1)];
--	unsigned char secret[(MD5_BLOCK_LEN + 1)]; 
-+	char response[(BUF_SZ + 1)];
-+	char secret[(MD5_BLOCK_LEN + 1)]; 
-+	int challenge_len;
- 
- 	memset (secret,0,sizeof(secret));
- 	memset (challenge,0,sizeof(challenge));
- 	strncpy (secret, password, sizeof(secret));	
- 	if (!challengeb64 || strlen(challengeb64) > sizeof(challenge) * 3 / 4)
- 		return 0;
--	from64tobits(challenge, challengeb64);
-+	challenge_len = from64tobits(challenge, challengeb64);
- 
--	hmac_md5(challenge, strlen(challenge), secret, strlen(secret), digest);
-+	hmac_md5(challenge, challenge_len, 
-+		 (unsigned char *)secret, strlen(secret), digest);
- 
- 	for (i = 0; i < MD5_DIGEST_LEN; i++) {
- 		digascii[2 * i] = hextab[digest[i] >> 4];
-@@ -625,7 +655,7 @@
- 	strncpy (response, username, sizeof(response) - sizeof(digascii) - 2);
- 	strcat (response, " ");
- 	strcat (response, digascii);
--	to64frombits(responseb64, response, strlen(response));
-+	to64frombits(responseb64, (unsigned char *)response, strlen(response));
- 
- 	return 1;
- }
-@@ -660,7 +690,7 @@
+@@ -665,7 +687,7 @@
  	(void)fprintf(stderr, "header_save(): str = [%s]\n", str);
  #endif
  
@@ -274,7 +223,7 @@
  		die("header_save() -- strdup() failed");
  	}
  	ht->string = p;
-@@ -668,7 +698,7 @@
+@@ -673,7 +695,7 @@
  	if(strncasecmp(ht->string, "From:", 5) == 0) {
  #if 1
  		/* Hack check for NULL From: line */
@@ -283,12 +232,12 @@
  			return;
  		}
  #endif
-@@ -727,19 +757,19 @@
+@@ -736,19 +758,19 @@
  void header_parse(FILE *stream)
  {
  	size_t size = BUF_SZ, len = 0;
 -	char *p = (char *)NULL, *q;
-+	char *p = NULL, *q = NULL;
++	char *p = NULL, *q;
  	bool_t in_header = True;
 -	char l = (char)NULL;
 +	char l = '\0';
@@ -307,7 +256,7 @@
  				die("header_parse() -- realloc() failed");
  			}
  			q = (p + len);
-@@ -764,9 +794,9 @@
+@@ -773,9 +795,9 @@
  						in_header = False;
  
  				default:
@@ -319,8 +268,20 @@
  						}
  						header_save(p);
  
-@@ -796,17 +826,17 @@
- 	while(fgets(buf, sizeof(buf), fp)) {
+@@ -806,9 +828,9 @@
+ 						in_header = False;
+ 
+ 				default:
+-						*q = (char)NULL;
++						*q = '\0';
+ 						if((q = strrchr(p, '\n'))) {
+-							*q = (char)NULL;
++							*q = '\0';
+ 						}
+ 						header_save(p);
+ 
+@@ -873,11 +895,11 @@
+ 		char *rightside;
  		/* Make comments invisible */
  		if((p = strchr(buf, '#'))) {
 -			*p = (char)NULL;
@@ -332,17 +293,17 @@
 +		if(strchr(buf, '=') == NULL) continue;
  
  		/* Parse out keywords */
--		if(((p = strtok(buf, "= \t\n")) != (char *)NULL)
--			&& ((q = strtok(NULL, "= \t\n:")) != (char *)NULL)) {
-+		if(((p = strtok(buf, "= \t\n")) != NULL)
-+			&& ((q = strtok(NULL, "= \t\n:")) != NULL)) {
+ 		p=firsttok(&begin, "= \t\n");
+@@ -887,7 +909,7 @@
+ 		}
+ 		if(p && q) {
  			if(strcasecmp(p, "Root") == 0) {
 -				if((root = strdup(q)) == (char *)NULL) {
 +				if((root = strdup(q)) == NULL) {
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -815,7 +845,7 @@
+@@ -896,7 +918,7 @@
  				}
  			}
  			else if(strcasecmp(p, "MailHub") == 0) {
@@ -351,7 +312,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -851,7 +881,7 @@
+@@ -946,7 +968,7 @@
  					mail_domain = strdup(q);
  				}
  
@@ -360,7 +321,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  				rewrite_domain = True;
-@@ -927,7 +957,7 @@
+@@ -1022,7 +1044,7 @@
  				}
  			}
  			else if(strcasecmp(p, "TLSCert") == 0) {
@@ -369,7 +330,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -938,7 +968,7 @@
+@@ -1033,7 +1055,7 @@
  #endif
  			/* Command-line overrides these */
  			else if(strcasecmp(p, "AuthUser") == 0 && !auth_user) {
@@ -378,7 +339,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -947,7 +977,7 @@
+@@ -1042,7 +1064,7 @@
  				}
  			}
  			else if(strcasecmp(p, "AuthPass") == 0 && !auth_pass) {
@@ -387,7 +348,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -956,7 +986,7 @@
+@@ -1051,7 +1073,7 @@
  				}
  			}
  			else if(strcasecmp(p, "AuthMethod") == 0 && !auth_method) {
@@ -396,7 +357,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -982,11 +1012,11 @@
+@@ -1104,11 +1126,11 @@
  #ifdef INET6
  	struct addrinfo hints, *ai0, *ai;
  	char servname[NI_MAXSERV];
@@ -410,16 +371,7 @@
  #endif
  
  #ifdef HAVE_SSL
-@@ -996,7 +1026,7 @@
- 	/* Init SSL stuff */
- 	SSL_CTX *ctx;
- 	SSL_METHOD *meth;
--	X509 *server_cert;
-+	const X509 *server_cert;
- 
- 	SSL_load_error_strings();
- 	SSLeay_add_ssl_algorithms();
-@@ -1179,7 +1209,7 @@
+@@ -1301,7 +1323,7 @@
  			buf[i++] = c;
  		}
  	}
@@ -428,7 +380,43 @@
  
  	return(buf);
  }
-@@ -1293,14 +1323,14 @@
+@@ -1356,12 +1378,12 @@
+ */
+ ssize_t smtp_write(int fd, char *format, ...)
+ {
+-	char buf[(BUF_SZ + 1)];
++	char buf[(BUF_SZ + 2)];
+ 	va_list ap;
+ 	ssize_t outbytes = 0;
+ 
+ 	va_start(ap, format);
+-	if(vsnprintf(buf, (BUF_SZ - 2), format, ap) == -1) {
++	if(vsnprintf(buf, (BUF_SZ - 1), format, ap) == -1) {
+ 		die("smtp_write() -- vsnprintf() failed");
+ 	}
+ 	va_end(ap);
+@@ -1399,16 +1421,18 @@
+ */
+ int ssmtp(char *argv[])
+ {
+-	char buf[(BUF_SZ + 1)], *p, *q;
++	char b[(BUF_SZ + 2)], *buf = b+1, *p, *q;
+ #ifdef MD5AUTH
+ 	char challenge[(BUF_SZ + 1)];
+ #endif
+ 	struct passwd *pw;
+ 	int i, sock;
+ 	uid_t uid;
+-	bool_t minus_v_save;
++	bool_t minus_v_save, leadingdot, linestart = True;
+ 	int timeout = 0;
++	int bufsize = sizeof(b)-1;
+ 
++	b[0] = '.';
+ 	outbytes = 0;
+ 	ht = &headers;
+ 
+@@ -1423,14 +1447,14 @@
  	}
  
  	if((p = strtok(pw->pw_gecos, ";,"))) {
@@ -445,7 +433,7 @@
  		uad = append_domain(pw->pw_name);
  	}
  
-@@ -1349,7 +1379,7 @@
+@@ -1478,7 +1502,7 @@
  	/* Try to log in if username was supplied */
  	if(auth_user) {
  #ifdef MD5AUTH
@@ -454,16 +442,93 @@
  			auth_pass = strdup("");
  		}
  
-@@ -1377,7 +1407,7 @@
- 		}
- 		memset(buf, 0, sizeof(buf));
+@@ -1491,12 +1515,12 @@
+ 			}
+ 			strncpy(challenge, strchr(buf,' ') + 1, sizeof(challenge));
  
--		to64frombits(buf, auth_pass, strlen(auth_pass));
-+		to64frombits(buf, (unsigned char *)auth_pass, strlen(auth_pass));
- #ifdef MD5AUTH
+-			memset(buf, 0, sizeof(buf));
++			memset(buf, 0, bufsize);
+ 			crammd5(challenge, auth_user, auth_pass, buf);
  		}
+ 		else {
  #endif
-@@ -1549,7 +1579,7 @@
+-		memset(buf, 0, sizeof(buf));
++		memset(buf, 0, bufsize);
+ 		to64frombits(buf, auth_user, strlen(auth_user));
+ 		if (use_oldauth) {
+ 			outbytes += smtp_write(sock, "AUTH LOGIN %s", buf);
+@@ -1508,7 +1532,7 @@
+ 				die("Server didn't like our AUTH LOGIN (%s)", buf);
+ 			}
+ 			/* we assume server asked us for Username */
+-			memset(buf, 0, sizeof(buf));
++			memset(buf, 0, bufsize);
+ 			to64frombits(buf, auth_user, strlen(auth_user));
+ 			outbytes += smtp_write(sock, buf);
+ 		}
+@@ -1517,7 +1541,7 @@
+ 		if(smtp_read(sock, buf) != 3) {
+ 			die("Server didn't accept AUTH LOGIN (%s)", buf);
+ 		}
+-		memset(buf, 0, sizeof(buf));
++		memset(buf, 0, bufsize);
+ 
+ 		to64frombits(buf, auth_pass, strlen(auth_pass));
+ #ifdef MD5AUTH
+@@ -1626,28 +1650,40 @@
+ 	  stdio functions like fgets in the first place */
+ 	fcntl(STDIN_FILENO,F_SETFL,O_NONBLOCK);
+ 
+-	/* don't hang forever when reading from stdin */
+-	while(!feof(stdin) && timeout < MEDWAIT) {
+-		if (!fgets(buf, sizeof(buf), stdin)) {
++	while(!feof(stdin)) {
++		if (!fgets(buf, bufsize, stdin)) {
+ 			/* if nothing was received, then no transmission
+ 			 * over smtp should be done */
+ 			sleep(1);
+-			timeout++;
++			/* don't hang forever when reading from stdin */
++			if (++timeout >= MEDWAIT) {
++				log_event(LOG_ERR, "killed: timeout on stdin while reading body -- message saved to dead.letter.");
++				die("Timeout on stdin while reading body");
++			}
+ 			continue;
+ 		}
+ 		/* Trim off \n, double leading .'s */
+-		standardise(buf);
+-
+-		outbytes += smtp_write(sock, "%s", buf);
++		leadingdot = standardise(buf, &linestart);
+ 
++		if (linestart || feof(stdin)) {
++			linestart = True;
++			outbytes += smtp_write(sock, "%s", leadingdot ? b : buf);
++		} else {
++			if (log_level > 0) {
++				log_event(LOG_INFO, "Sent a very long line in chunks");
++			}
++			if (leadingdot) {
++				outbytes += fd_puts(sock, b, sizeof(b));
++			} else {
++				outbytes += fd_puts(sock, buf, bufsize);
++			}
++		}
+ 		(void)alarm((unsigned) MEDWAIT);
+ 	}
+-	/* End of body */
+-
+-	if (timeout >= MEDWAIT) {
+-		log_event(LOG_ERR, "killed: timeout on stdin while reading body -- message saved to dead.letter.");
+-		die("Timeout on stdin while reading body");
++	if(!linestart) {
++		smtp_write(sock, "");
+ 	}
++	/* End of body */
+ 
+ 	outbytes += smtp_write(sock, ".");
+ 	(void)alarm((unsigned) MAXWAIT);
+@@ -1714,7 +1750,7 @@
  		j = 0;
  
  		add = 1;
@@ -472,7 +537,7 @@
  			switch(argv[i][j]) {
  #ifdef INET6
  			case '6':
-@@ -1567,14 +1597,14 @@
+@@ -1732,14 +1768,14 @@
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_user = strdup(argv[i+1]);
@@ -489,7 +554,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1584,14 +1614,14 @@
+@@ -1749,14 +1785,14 @@
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_pass = strdup(argv[i+1]);
@@ -506,7 +571,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1669,14 +1699,14 @@
+@@ -1847,14 +1883,14 @@
  			case 'F':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_F = strdup(argv[(i + 1)]);
@@ -523,7 +588,7 @@
  						die("parse_options() -- strdup() failed");
  					}
  				}
-@@ -1688,14 +1718,14 @@
+@@ -1866,14 +1902,14 @@
  			case 'r':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_f = strdup(argv[(i + 1)]);
