@@ -13216,6 +13216,7 @@ p5-Template-Provider-Encoding   ports/www/p5-Template-Provider-Encoding
 p5-Template-Provider-FromDATA   ports/www/p5-Template-Provider-FromDATA
 p5-Template-Timer               ports/www/p5-Template-Timer
 p5-Template-Toolkit             ports/www/p5-Template-Toolkit
+p5-Tenjin                       ports/www/p5-Tenjin
 p5-Term-ANSIColor               ports/devel/p5-Term-ANSIColor
 p5-Term-ANSIScreen              ports/devel/p5-Term-ANSIScreen
 p5-Term-Animation               ports/devel/p5-Term-Animation
@@ -16898,6 +16899,7 @@ p5-template-provider-encoding   ports/www/p5-Template-Provider-Encoding
 p5-template-provider-fromdata   ports/www/p5-Template-Provider-FromDATA
 p5-template-timer               ports/www/p5-Template-Timer
 p5-template-toolkit             ports/www/p5-Template-Toolkit
+p5-tenjin                       ports/www/p5-Tenjin
 p5-term-animation               ports/devel/p5-Term-Animation
 p5-term-ansicolor               ports/devel/p5-Term-ANSIColor
 p5-term-ansiscreen              ports/devel/p5-Term-ANSIScreen
