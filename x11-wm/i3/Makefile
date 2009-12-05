@@ -25,7 +25,7 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/i3 \
 		bin/i3-msg \
