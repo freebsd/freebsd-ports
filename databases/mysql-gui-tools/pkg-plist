@@ -246,6 +246,9 @@
 %%ADMINISTRATOR%%%%DATADIR%%/administrator/variable_disabled.png
 %%ADMINISTRATOR%%%%DATADIR%%/administrator/variable_editable.png
 %%ADMINISTRATOR%%share/applications/MySQLAdministrator.desktop
+%%ADMINISTRATOR%%share/locale/de/LC_MESSAGES/mysql-administrator.mo
+%%ADMINISTRATOR%%share/locale/ja/LC_MESSAGES/mysql-administrator.mo
+%%ADMINISTRATOR%%share/locale/pt_BR/LC_MESSAGES/mysql-administrator.mo
 
 @comment MySQL Query Browser
 %%QUERY_BROWSER%%bin/mysql-query-browser
@@ -411,6 +414,7 @@
 %%QUERY_BROWSER%%%%DATADIR%%/query-browser/trans_started.png
 %%QUERY_BROWSER%%%%DATADIR%%/query-browser/workarea.glade
 %%QUERY_BROWSER%%share/applications/MySQLQueryBrowser.desktop
+%%QUERY_BROWSER%%share/locale/pt_BR/LC_MESSAGES/mysql-query-browser.mo
 
 @comment Directories
 %%ADMINISTRATOR%%@dirrm %%DATADIR%%/administrator
