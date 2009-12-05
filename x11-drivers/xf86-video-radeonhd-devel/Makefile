@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.3.0.20091101
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -24,7 +24,7 @@ XORG_CAT=	driver
 USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 USE_AUTOTOOLS=	aclocal:19 autoconf:262 libtool:22
 
-CONFLICTS=	xf86-video-radeonhd-[0-9]* xf86-video-ati-[0-9]*
+CONFLICTS=	xf86-video-radeonhd-[0-9]*
 
 MAN4=		radeonhd.4x
 
