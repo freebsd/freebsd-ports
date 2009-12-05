@@ -20,6 +20,7 @@ lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
 lib/audacious/General/streambrowser.so
 lib/audacious/General/vfstrace.so
+%%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
