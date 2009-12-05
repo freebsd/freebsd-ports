@@ -7,6 +7,7 @@
 
 PORTNAME=	cakephp
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://cakeforge.org/frs/download.php/733/ \
 		LOCAL/glarkin
@@ -33,6 +34,8 @@ NO_BUILD=	yes
 USE_GETTEXT=	yes
 USE_PHP=	session
 WANT_PHP_WEB=	yes
+DEFAULT_PHP_VER=5
+IGNORE_WITH_PHP=4
 
 CAKE_CONF_FILES=	\
 		app/config/acl.ini.php \
@@ -64,9 +67,6 @@ CGI_EXT=	-cgi
 .else
 CGI_EXT=
 .endif
-
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	cakephp
 PORTVERSION=	1.1.19.6305
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://cakeforge.org/frs/download.php/591/
 DISTNAME=	cake_${PORTVERSION}
@@ -27,8 +27,11 @@ SLAVE_PORT_MODULES=	rewrite
 
 CONFLICTS=	cakephp-1.[23].*
 NO_BUILD=	yes
+
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
+DEFAULT_PHP_VER=5
+IGNORE_WITH_PHP=4
 
 SUB_FILES=	pkg-message
 
@@ -53,9 +56,6 @@ CGI_EXT=	-cgi
 .else
 CGI_EXT=
 .endif
-
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
