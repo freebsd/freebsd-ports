@@ -182,6 +182,7 @@ PLIST_SUB+=	WAVPACKPLUGIN="@comment "
 .if !defined(WITHOUT_AAC)
 CONFIGURE_ARGS+=--enable-aac
 PLIST_SUB+=	AACPLUGIN=""
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
 PLIST_SUB+=	AACPLUGIN="@comment "
