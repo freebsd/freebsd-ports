@@ -29,14 +29,23 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gecko=${GECKO} \
 		--with-gecko-home=${LOCALBASE}/lib/${GECKO}
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GCONF_SCHEMAS=	yelp.schemas
 
+.include <bsd.port.pre.mk>
+
+# Around the time GCC stack protection (aka Propolice) for userland
+# was enabled on src/share/mk/bsd.sys.mk
+# SVN rev 180012 on 2008-06-25 21:33:28Z by ru
+.if ${OSVERSION} >= 800040
+LDFLAGS+=	-fstack-protector
+.endif
+
 post-extract:
 	${RM} -f ${WRKSRC}/data/yelp.schemas
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
