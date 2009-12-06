@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -31,7 +31,6 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		idn:${PORTSDIR}/dns/libidn \
-		utempter:${PORTSDIR}/sysutils/libutempter \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		lzma.0:${PORTSDIR}/archivers/xz \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
@@ -77,6 +76,11 @@ MAN8=	kbuildsycoca4.8 \
 	meinproc4.8
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900004
+LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ConfigureChecks.cmake
+.endif
 
 .if exists(${LOCALBASE}/include/avahi-compat-libdns_sd/dns_sd.h) || defined(WITH_LIBDNS)
 LIB_DEPENDS+=	avahi-qt4:${PORTSDIR}/net/avahi-qt4 \
