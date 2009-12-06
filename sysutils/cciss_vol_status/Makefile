@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cciss_vol_status
-PORTVERSION=	1.03
+PORTVERSION=	1.06
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/cciss/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/cciss/${PORTNAME}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Reports status of logical drives on ciss(4) controllers
