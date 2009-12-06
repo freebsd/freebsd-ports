@@ -6690,6 +6690,8 @@ kde4-l10n-th                    ports/misc/kde4-l10n-th
 kde4-l10n-tr                    ports/misc/kde4-l10n-tr
 kde4-l10n-wa                    ports/misc/kde4-l10n-wa
 kde4-shared-mime-info           ports/misc/kde4-shared-mime-info
+kde4-style-bespin               ports/x11-themes/kde4-style-bespin
+kde4-style-nitrogen             ports/x11-themes/kde4-style-nitrogen
 kde4-style-polyester            ports/x11-themes/kde4-style-polyester
 kde4-windeco-aurorae            ports/x11-themes/kde4-windeco-aurorae
 kde4-windeco-crystal            ports/x11-themes/kde4-windeco-crystal
@@ -8405,6 +8407,7 @@ lua                             ports/lang/lua
 lua-bitlib                      ports/devel/lua-bitlib
 lua-filename                    ports/devel/lua-filename
 lua-gettext                     ports/devel/lua-gettext
+lua-iconv                       ports/converters/lua-iconv
 lua-mode.el                     ports/lang/lua-mode.el
 lua-posix                       ports/devel/lua-posix
 lua-pty                         ports/devel/lua-pty
