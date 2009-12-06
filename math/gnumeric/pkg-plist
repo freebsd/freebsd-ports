@@ -104,7 +104,6 @@ include/libspreadsheet-1.10/spreadsheet/sheet-style.h
 include/libspreadsheet-1.10/spreadsheet/sheet-utils.h
 include/libspreadsheet-1.10/spreadsheet/sheet-view.h
 include/libspreadsheet-1.10/spreadsheet/sheet.h
-include/libspreadsheet-1.10/spreadsheet/solver.h
 include/libspreadsheet-1.10/spreadsheet/sort.h
 include/libspreadsheet-1.10/spreadsheet/stf-export.h
 include/libspreadsheet-1.10/spreadsheet/stf-parse.h
@@ -115,6 +114,7 @@ include/libspreadsheet-1.10/spreadsheet/style-conditions.h
 include/libspreadsheet-1.10/spreadsheet/style-font.h
 include/libspreadsheet-1.10/spreadsheet/style.h
 include/libspreadsheet-1.10/spreadsheet/symbol.h
+include/libspreadsheet-1.10/spreadsheet/tools/gnm-solver.h
 include/libspreadsheet-1.10/spreadsheet/validation-combo.h
 include/libspreadsheet-1.10/spreadsheet/validation.h
 include/libspreadsheet-1.10/spreadsheet/value.h
@@ -197,6 +197,9 @@ lib/gnumeric/%%VERSION%%/plugins/fn-tsa/plugin.xml
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.la
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
+lib/gnumeric/1.9.16/plugins/glpk/glpk.la
+lib/gnumeric/1.9.16/plugins/glpk/glpk.so
+lib/gnumeric/1.9.16/plugins/glpk/plugin.xml
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.la
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.so
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/plugin.xml
@@ -341,6 +344,7 @@ share/gnumeric/%%VERSION%%/glade/histogram.glade
 share/gnumeric/%%VERSION%%/glade/hyperlink.glade
 share/gnumeric/%%VERSION%%/glade/insert-cells.glade
 share/gnumeric/%%VERSION%%/glade/kaplan-meier.glade
+share/gnumeric/%%VERSION%%/glade/normality-tests.glade
 share/gnumeric/%%VERSION%%/glade/mean-tests.glade
 share/gnumeric/%%VERSION%%/glade/merge.glade
 share/gnumeric/%%VERSION%%/glade/moving-averages.glade
@@ -978,6 +982,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-glossary
 %%GNOMEDB%%@dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-db
+@dirrm lib/gnumeric/%%VERSION%%/plugins/glpk
 %%GNOMEDB%%@dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-tsa
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-string
@@ -1004,6 +1009,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
+@dirrm include/libspreadsheet-1.10/spreadsheet/tools
 @dirrm include/libspreadsheet-1.10/spreadsheet
 @dirrm include/libspreadsheet-1.10
 @unexec update-desktop-database > /dev/null || /usr/bin/true
