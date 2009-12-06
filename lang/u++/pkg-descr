@@ -1,0 +1,5 @@
+The uC++ project extends C++ with new constructs providing advanced
+control-flow including light-weight concurrency on shared-memory uni-
+and multi-processor computers running UNIX and Linux operating systems.
+
+WWW:	http://plg.uwaterloo.ca/~usystem/uC++.html
