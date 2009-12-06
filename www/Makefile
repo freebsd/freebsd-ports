@@ -379,6 +379,7 @@
     SUBDIR += ljsm
     SUBDIR += llgal
     SUBDIR += logtools
+    SUBDIR += lusca-head
     SUBDIR += lws
     SUBDIR += lynx
     SUBDIR += lynx-current
