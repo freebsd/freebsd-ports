@@ -336,7 +336,7 @@ SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
 			Hebrew Hungarian Italian Japanese Korean Lithuanian \
 			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
 			Serbian Simplify_Chinese Slovak Spanish Swedish \
-			Traditional_Chinese Turkish English
+			Traditional_Chinese Turkish
 SQUID_DEFAULT_LANG?=	English
 CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 			--enable-default-err-language=${SQUID_DEFAULT_LANG}
