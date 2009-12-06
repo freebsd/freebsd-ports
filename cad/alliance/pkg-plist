@@ -187,6 +187,8 @@ alliance/etc/xgra.par
 alliance/etc/xpat.par
 alliance/etc/xsch.par
 alliance/etc/xvpn.par
+alliance/etc/profile.d/alc_env.csh
+alliance/etc/profile.d/alc_env.sh
 alliance/bin/x2vy
 alliance/bin/druc
 alliance/bin/alcbanner
@@ -1809,5 +1811,6 @@ alliance/examples/alliance-examples/tuner/tuner_io.c
 @dirrm alliance/examples/alliance-examples/tuner
 @dirrm alliance/examples/alliance-examples
 @dirrm alliance/examples
+@dirrmtry alliance/etc/profile.d
 @dirrmtry alliance/etc
 @dirrmtry alliance

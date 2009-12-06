@@ -6,6 +6,7 @@
 
 PORTNAME=	alliance
 PORTVERSION=	5.0.20090901
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		${MASTER_SITE_LOCAL}
@@ -19,6 +20,8 @@ NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	${PKGNAME} does not build on ${ARCH}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -192,5 +195,8 @@ pre-configure:
 
 pre-su-install:
 	${MKDIR} ${ALLIANCE_TOP}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
