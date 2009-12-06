@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091206:
+  AFFECTS: users of emulators/qemu
+  AUTHOR: nox@FreeBSD.org
+
+  The port has been updated to 0.11.1, which no longer enables kqemu
+  by default (if built with the kqemu knob on), now you have to also
+  pass -enable-kqemu (or -kernel-kqemu as with the previous versions)
+  if you want to use it.  Also note the 0.11 stable branch is the last
+  qemu branch that still supports kqemu, so if you depend on reasonable
+  fast emulation on FreeBSD you should start looking for alternatives
+  some time soon.  (virtualbox?)
+
 20091120:
   AFFECTS: users of mail/postfixadmin
   AUTHOR: Terry Sposato (tabmow@freenode.net)
