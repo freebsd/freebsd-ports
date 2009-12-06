@@ -63,6 +63,7 @@ LIB_DEPENDS+=	tracker-gtk:${PORTSDIR}/sysutils/tracker-libtrackergtk
 BUILD_WRKSRC=	${WRKSRC}/src/tracker-applet
 INSTALL_WRKSRC=	${WRKSRC}/src/tracker-applet
 EXTRA_WRKSRC=	src/tracker-preferences src/tracker-search-tool
+BUILD_DEPENDS+=	${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
 RUN_DEPENDS+=	${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
 USE_GNOME+=	gnomedesktop libgsf
 MAN1+=		tracker-applet.1 tracker-search-tool.1 tracker-preferences.1
