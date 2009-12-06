@@ -131,7 +131,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 
 etc_files=	squid/cachemgr.conf.default \
 		squid/mib.txt squid/mime.conf.default \
-		squid/msntauth.conf.default squid/squid.conf.default
+		squid/msntauth.conf.default squid/squid.conf.default \
+		squid/squid.conf.clean
 
 icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
 		anthony-box2.gif anthony-c.gif anthony-compressed.gif \
