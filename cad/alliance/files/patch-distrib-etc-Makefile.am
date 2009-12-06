@@ -1,0 +1,10 @@
+--- distrib/etc/Makefile.am.orig	2009-12-07 00:51:37.000000000 +0900
++++ distrib/etc/Makefile.am	2009-12-07 00:51:49.000000000 +0900
+@@ -1,6 +1,6 @@
+ # $Id: Makefile.am,v 1.5 2009/09/01 21:33:39 jpc Exp $
+ 
+-etcdir=/etc/profile.d
++etcdir=$(prefix)/etc/profile.d
+ 
+ etc_SCRIPTS=alc_env.csh alc_env.sh
+ 
