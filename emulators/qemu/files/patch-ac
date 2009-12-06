@@ -1,8 +1,8 @@
 Index: qemu/configure
-@@ -540,7 +540,7 @@
+@@ -868,7 +868,7 @@
  sdl_too_old=no
  
- if test -z "$sdl" ; then
+ if test "$sdl" = "yes" ; then
 -    sdl_config="sdl-config"
 +    sdl_config="${SDL_CONFIG}"
      sdl=no

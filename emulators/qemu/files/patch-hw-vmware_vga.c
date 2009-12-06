@@ -72,13 +72,3 @@ Index: qemu/hw/vmware_vga.c
          badcmd:
              while (args --)
                  vmsvga_fifo_read(s);
-@@ -914,7 +914,7 @@
-     s->width = -1;
-     s->height = -1;
-     s->svgaid = SVGA_ID;
--    s->depth = 24;
-+    s->depth = 32;
-     s->bypp = (s->depth + 7) >> 3;
-     s->cursor.on = 0;
-     s->redraw_fifo_first = 0;
-

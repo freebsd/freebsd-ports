@@ -1,9 +1,9 @@
 bin/qemu
 bin/qemu-img
-%%ALLTARGETS%%bin/qemu-sparc64
 %%ALLTARGETS%%bin/qemu-system-arm
 %%ALLTARGETS%%bin/qemu-system-cris
 %%ALLTARGETS%%bin/qemu-system-m68k
+%%ALLTARGETS%%bin/qemu-system-microblaze
 %%ALLTARGETS%%bin/qemu-system-mips
 %%ALLTARGETS%%bin/qemu-system-mips64
 %%ALLTARGETS%%bin/qemu-system-mips64el
@@ -14,6 +14,7 @@ bin/qemu-img
 %%ALLTARGETS%%bin/qemu-system-sh4
 %%ALLTARGETS%%bin/qemu-system-sh4eb
 %%ALLTARGETS%%bin/qemu-system-sparc
+%%ALLTARGETS%%bin/qemu-system-sparc64
 bin/qemu-system-x86_64
 @unexec if cmp -s %D/etc/qemu-ifup.sample %D/etc/qemu-ifup; then rm -f %D/etc/qemu-ifup; fi
 etc/qemu-ifup.sample
@@ -36,6 +37,8 @@ etc/qemu-ifdown.sample
 %%DATADIR%%/pxe-ne2k_pci.bin
 %%DATADIR%%/pxe-rtl8139.bin
 %%DATADIR%%/pxe-pcnet.bin
+%%DATADIR%%/multiboot.bin
+%%DATADIR%%/petalogix-s3adsp1800.dtb
 %%DATADIR%%/bamboo.dtb
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/common

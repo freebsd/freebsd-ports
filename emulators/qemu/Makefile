@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.10.6
-PORTREVISION=	3
+PORTVERSION=	0.11.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://bellard.org/qemu/
@@ -34,7 +33,6 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
 		PCAP "pcap dependency (networking with bpf)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
-		PHYS_CDROM "Physical CDROM fixes" On \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
 		ALL_TARGETS "Also build non-x86 targets" On
 
@@ -52,7 +50,7 @@ CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 
 .if defined(WITHOUT_SDL)
-CONFIGURE_ARGS+=	--disable-sdl --disable-gfx-check
+CONFIGURE_ARGS+=	--disable-sdl
 .else
 USE_SDL=	sdl
 .endif
@@ -70,6 +68,9 @@ CONFIGURE_ARGS+=	--enable-pcap
 .if defined(WITH_ADD_AUDIO)
 CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
 .endif
+
+# XXX
+CONFIGURE_ARGS+=	--disable-bsd-user
 
 .if defined(WITH_SAMBA)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3
@@ -110,9 +111,6 @@ post-patch:
 .endif
 .if defined(WITHOUT_CDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
-.endif
-.if defined(WITH_PHYS_CDROM)
-	@cd ${WRKSRC} && ${PATCH} -p1 --quiet < ${FILESDIR}/phys-cdrom-freebsd-patch
 .endif
 	@${REINPLACE_CMD} -E \
 		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing|" \
