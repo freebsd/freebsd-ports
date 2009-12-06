@@ -1,10 +1,14 @@
 Index: qemu/configure
-@@ -1348,7 +1348,7 @@
+@@ -1395,9 +1395,9 @@
  fi
  
  # Check if tools are available to build documentation.
 -if test "$build_docs" = "yes" -a \( ! -x "`which texi2html 2>/dev/null`" -o ! -x "`which pod2man 2>/dev/null`" \) ; then
-+if test "$build_docs" = "yes" -a \( "x$NOPORTDOCS" != "x" -o ! -x "`which texi2html 2>/dev/null`" -o ! -x "`which pod2man 2>/dev/null`" \) ; then
-   build_docs="no"
- fi
+-  build_docs="no"
+-fi
++#if test "$build_docs" = "yes" -a \( ! -x "`which texi2html 2>/dev/null`" -o ! -x "`which pod2man 2>/dev/null`" \) ; then
++#  build_docs="no"
++#fi
  
+ ##########################################
+ # Do we need librt
