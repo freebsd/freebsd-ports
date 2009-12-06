@@ -9,7 +9,7 @@
 #     math/gnumeric science/gchemutils
 
 PORTNAME=	goffice
-PORTVERSION=	0.7.15
+PORTVERSION=	0.7.16
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
