@@ -1,0 +1,3 @@
+%%SITE_PERL%%/String/Truncate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Truncate/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Truncate
