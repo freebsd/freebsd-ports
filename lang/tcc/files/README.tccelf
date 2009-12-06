@@ -1,17 +1,11 @@
+The patches in this directory include some updates to tcc 0.9.25.
+Some of them have been committed in the main tcc repository so
+we will not need them in future updates.
 
-I think i have managed to solve the problem and produce
-almost valid elf files on FreeBSD. The two patches attached
-should go in ports/tcc/files (patch-libtcc.c replaces
-the existing one with the same name) and bumping PORTREVISION
-should complete the job. I can do the commit myself if the
-maintainer has no time.
+In particular:
 
-The patches address a few problems (trying to explain to the
-best of my knowledge; i am not very familiar with ELF and
-the FreeBSD ELF conventions):
-
-1. ELF file format
-   tcc produces an ELF executable which is good for linux but
+1. ELF file format (merged upstream)
+   tcc 0.9.25 produces an ELF executable which is good for linux but
    not for FreeBSD. It misses the PHDR section which is almost
    mandatory for shared executables, puts in the .dynsym section
    some relocation info that FreeBSD expects to be in .got,
@@ -23,21 +17,23 @@ the FreeBSD ELF conventions):
    loader through an environment variable (this is important to
    debug tcc).
 
-2. predefined macros
+   The resulting elf file is still not 100% correct -- if you strip it,
+   the program will not run (presumably there is some dangling reference).
+   Other than that, program do seem to run correctly.
 
+2. predefined macros (partially merged upstream)
    patch-libtcc.c adds/fixes some predefined macros when compiling
    on FreeBSD: these are __FreeBSD__ and the usual set of
    __i386__ and __unix__ variants.
-   It also sets __INTEL_COMPILER so we can grab the __aligned
-   macro from cdefs.h , otherwise many programs would fail
+   It also #defines __builtin_inline(x,y), __PRETTY_FUNCTION__,
+   __CC_SUPPORTS___INLINE, __aligned(x), __packed that are used
+   in cdefs.h and by several user programs.
+   Note that tcc recognises the __aligned__ and __packed__
+   attributes but does not honor them.
 
-The resulting elf file is still not 100% correct -- if you strip it,
-the program will not run (presumably there is some dangling reference).
-Other than that, program do seem to run correctly.
-
-I am going to submit the patch upstream to see if the maintainers
-want to integrate it
-
-	cheers
-	luigi
+3. -include, -M and other preprocessor directives
+   patch-z1-preproc (name chosen because it must be applied after
+   the other two) implements -include, -M (and related options),
+   and makes tcc ignore -isystem and -std= which are often used
+   to build code.
 

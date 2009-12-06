@@ -1,0 +1,223 @@
+diff -ubwr --exclude .svn ./libtcc.c /usr/ports-luigi/tcc/work/tcc-0.9.25/libtcc.c
+--- ./libtcc.c	2009-12-06 14:35:51.000000000 +0100
++++ /usr/ports-luigi/tcc/work/tcc-0.9.25/libtcc.c	2009-12-06 14:34:34.000000000 +0100
+@@ -1108,7 +1108,15 @@
+     bf->fd = fd;
+     bf->buf_ptr = bf->buffer;
+     bf->buf_end = bf->buffer;
++    if (s1->include_len <= 0) {
+     bf->buffer[0] = CH_EOB; /* put eob symbol */
++    } else { /* add the list of -include */
++	if (s1->include_len >= sizeof(bf->buffer))
++	    error("too many '-include directives %s\n", s1->include_buf);
++	memcpy(bf->buf_ptr, s1->include_buf, s1->include_len);
++	bf->buffer[s1->include_len] = CH_EOB; /* put eob symbol */
++	s1->include_len = -s1->include_len;
++    }
+     pstrcpy(bf->filename, sizeof(bf->filename), filename);
+ #ifdef _WIN32
+     normalize_slashes(bf->filename);
+@@ -1945,6 +1955,9 @@
+     if (ext[0])
+         ext++;
+ 
++    /* enable -include on each new file */
++    if (s1->include_len < 0)
++	s1->include_len = -s1->include_len;
+     /* open the file */
+     saved_file = file;
+     file = tcc_open(s1, filename);
+@@ -2121,7 +2134,9 @@
+ {
+     char buf[1024];
+ 
+-    s->output_type = output_type;
++    s->output_type = output_type & 7;
++    s->mode_m = output_type & 8;
++    output_type = s->output_type;
+ 
+     if (!s->nostdinc) {
+         /* default include paths */
+diff -ubwr --exclude .svn ./tcc.c /usr/ports-luigi/tcc/work/tcc-0.9.25/tcc.c
+--- ./tcc.c	2009-05-18 16:27:06.000000000 +0200
++++ /usr/ports-luigi/tcc/work/tcc-0.9.25/tcc.c	2009-12-06 13:42:09.000000000 +0100
+@@ -66,6 +66,7 @@
+ static int multiple_files;
+ static int print_search_dirs;
+ static int output_type;
++static int mode_m;
+ static int reloc_output;
+ static const char *outfile;
+ static int do_bench = 0;
+@@ -111,6 +112,10 @@
+     TCC_OPTION_w,
+     TCC_OPTION_pipe,
+     TCC_OPTION_E,
++    TCC_OPTION_M,	/* -M and related options */
++    TCC_OPTION_std,	/* -std= */
++    TCC_OPTION_isystem,	/* -isystem x */
++    TCC_OPTION_include,	/* -include x */
+ };
+ 
+ static const TCCOption tcc_options[] = {
+@@ -148,6 +153,10 @@
+     { "w", TCC_OPTION_w, 0 },
+     { "pipe", TCC_OPTION_pipe, 0},
+     { "E", TCC_OPTION_E, 0},
++    { "M", TCC_OPTION_M, TCC_OPTION_HAS_ARG | TCC_OPTION_NOSEP },
++    { "std=", TCC_OPTION_std, TCC_OPTION_HAS_ARG | TCC_OPTION_NOSEP },
++    { "isystem", TCC_OPTION_isystem, TCC_OPTION_HAS_ARG },
++    { "include", TCC_OPTION_include, TCC_OPTION_HAS_ARG },
+     { NULL },
+ };
+ 
+@@ -399,10 +408,45 @@
+                     }
+                 }
+                 break;
++            case TCC_OPTION_include:
++		{
++		    int len = strlen(optarg) + s->include_len + 12; /* #include ""\n */
++		    char *dst;
++		     s->include_buf = (s->include_len == 0) ?
++			tcc_malloc(len + 1) :
++			tcc_realloc(s->include_buf, len + 1);
++		    dst = s->include_buf + s->include_len;
++		    sprintf(dst, "#include \"%s\"\n", optarg);
++		    s->include_len = len; /* exclude '\0' */
++		}
++		break;
++            case TCC_OPTION_isystem:
++		break; /* ignore isystem */
++            case TCC_OPTION_std:
++		break; /* ignore -std= */
++            case TCC_OPTION_M:
++                mode_m |= 8;
++		if (optarg[0] == '\0')	/* plain -M */
++			;
++		else if (optarg[0] == 'D')	/* add output filename */
++			;
++		else if (optarg[0] == 'F') { /* output filename */
++			if (optind < argc)
++				outfile = argv[optind++];
++		} else if (optarg[0] == 'T') { /* target filename */
++			if (optind < argc)
++			    s->target_name = argv[optind++];
++		} else if (optarg[0] == 'P') { /* phony filename */
++			;
++		} else {
++                    goto l_default;
++		}
++		/* FALLTHROUGH */
+             case TCC_OPTION_E:
+                 output_type = TCC_OUTPUT_PREPROCESS;
+                 break;
+             default:
++l_default:
+                 if (s->warn_unsupported) {
+                 unsupported_option:
+                     warning("unsupported option '%s'", r);
+@@ -502,7 +546,7 @@
+         start_time = getclock_us();
+     }
+ 
+-    tcc_set_output_type(s, output_type);
++    tcc_set_output_type(s, output_type | mode_m);
+ 
+     /* compile or add each files or library */
+     for(i = 0; i < nb_files && ret == 0; i++) {
+diff -ubwr --exclude .svn ./tcc.h /usr/ports-luigi/tcc/work/tcc-0.9.25/tcc.h
+--- ./tcc.h	2009-05-18 16:27:06.000000000 +0200
++++ /usr/ports-luigi/tcc/work/tcc-0.9.25/tcc.h	2009-12-06 13:28:32.000000000 +0100
+@@ -475,6 +475,10 @@
+ 
+     /* output file for preprocessing */
+     FILE *outfile;
++    int mode_m;	/* tcc -M */
++    const char *target_name; /* set with -MT or -MQ */
++    char *include_buf;	/* -include ... */
++    int include_len;	/* length of -include ... */
+ 
+     /* for tcc_relocate */
+     int runtime_added;
+diff -ubwr --exclude .svn ./tccpp.c /usr/ports-luigi/tcc/work/tcc-0.9.25/tccpp.c
+--- ./tccpp.c	2009-05-18 16:27:06.000000000 +0200
++++ /usr/ports-luigi/tcc/work/tcc-0.9.25/tccpp.c	2009-12-05 15:18:13.000000000 +0100
+@@ -2897,6 +2897,7 @@
+     Sym *define_start;
+     BufferedFile *file_ref;
+     int token_seen, line_ref;
++    const char *base_file;
+ 
+     preprocess_init(s1);
+     define_start = define_stack;
+@@ -2908,6 +2909,15 @@
+     line_ref = 0;
+     file_ref = NULL;
+ 
++    base_file = file->filename;
++    if (s1->mode_m) {
++	int l = strlen(base_file);
++	if (s1->target_name)
++	    fprintf(s1->outfile, "%s: %s", s1->target_name, base_file);
++	else
++	    fprintf(s1->outfile, "%.*s.o: %s", l-2, base_file, base_file);
++    }
++
+     for (;;) {
+         next();
+         if (tok == TOK_EOF) {
+@@ -2919,16 +2929,25 @@
+             token_seen = 0;
+         } else if (!token_seen) {
+             int d = file->line_num - line_ref;
++	  if (s1->mode_m) {
++	    if (file != file_ref && file->filename != base_file &&
++		!search_cached_include(s1, '>', file->filename))
++	      fprintf(s1->outfile, " \\\n  %s", file->filename);
++	  } else {
+             if (file != file_ref || d < 0 || d >= 8)
+                 fprintf(s1->outfile, "# %d \"%s\"\n", file->line_num, file->filename);
+             else
+                 while (d)
+                     fputs("\n", s1->outfile), --d;
++	  }
+             line_ref = (file_ref = file)->line_num;
+             token_seen = 1;
+         }
++      if (!s1->mode_m)
+         fputs(get_tok_str(tok, &tokc), s1->outfile);
+     }
++    if (s1->mode_m)
++	fprintf(s1->outfile, "\n");
+     free_defines(define_start); 
+     return 0;
+ }
+diff -ubwr --exclude .svn ./tcc.c /usr/ports-luigi/tcc/work/tcc-0.9.25/tcc.c
+--- ./tcc.c	2009-12-06 15:42:02.000000000 +0100
++++ /usr/ports-luigi/tcc/work/tcc-0.9.25/tcc.c	2009-12-06 15:42:40.000000000 +0100
+@@ -40,8 +40,11 @@
+            "Preprocessor options:\n"
+            "  -E          preprocess only\n"
+            "  -Idir       add include path 'dir'\n"
++           "  -include f  #include file 'f' before everything else\n"
+            "  -Dsym[=val] define 'sym' with value 'val'\n"
+            "  -Usym       undefine 'sym'\n"
++           "  -M          generate include list. Implies -E\n"
++           "  -MT file    use 'file' as target for -M.\n"
+            "Linker options:\n"
+            "  -Ldir       add library path 'dir'\n"
+            "  -llib       link with dynamic or static library 'lib'\n"
+@@ -58,6 +61,12 @@
+ #ifdef CONFIG_TCC_BACKTRACE
+            "  -bt N       show N callers in stack traces\n"
+ #endif
++           "Ignored options (for gcc compatibility):\n"
++           "  -std=X      \n"
++           "  -MD name\n"
++           "  -MP\n"
++           "  -isystem dir\n"
++ 
+            );
+ }
+ 
