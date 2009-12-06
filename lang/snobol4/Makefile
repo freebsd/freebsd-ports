@@ -5,16 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	snobol4
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ultimate.com/snobol/
 
 MAINTAINER=	wes@FreeBSD.org
-COMMENT=	A port of Macro SNOBOL4, supports full SNOBOL4 plus SPITBOL.
+COMMENT=	A port of Macro SNOBOL4, supports full SNOBOL4 plus SPITBOL
 
-#GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
 MAN1=		snobol4.1
+MAN3=		snolib.3 snobol4dbm.3 snobol4tcl.3
 
 .include <bsd.port.mk>

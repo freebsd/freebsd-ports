@@ -1,5 +1,6 @@
 bin/snobol4
-bin/snobol4-1.1
+bin/snobol4-1.2
+man/man1/snobol4.1
 man/man3/snolib.3
 man/man3/snobol4dbm.3
 man/man3/snobol4tcl.3
