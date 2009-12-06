@@ -1,0 +1,18 @@
+lib/kde4/kstyle_skulpture_config.so
+lib/kde4/kwin3_skulpture.so
+lib/kde4/kwin_skulpture_config.so
+share/apps/kwin/skulpture.desktop
+share/apps/color-schemes/SkulptureChocolate.colors
+share/apps/color-schemes/SkulptureIce.colors
+share/apps/color-schemes/SkulptureMint.colors
+share/apps/color-schemes/SkulptureStone.colors
+share/apps/color-schemes/SkulptureStrawberry.colors
+share/apps/color-schemes/SkulptureVanilla.colors
+share/apps/kstyle/themes/skulpture.themerc
+share/apps/skulpture/pics/skulpture.png
+share/apps/skulpture/skulptureui.rc
+@dirrm share/apps/skulpture/pics
+@dirrm share/apps/skulpture
+@cwd %%LOCALBASE%%
+lib/qt4/plugins/styles/libskulpture.so
+@dirrmtry lib/qt4/plugins/styles
