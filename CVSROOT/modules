@@ -8440,6 +8440,7 @@ luma                            ports/sysutils/luma
 luna                            ports/astro/luna
 luola                           ports/games/luola
 lupe                            ports/x11/lupe
+lusca-head			ports/www/lusca-head
 lusernet                        ports/news/lusernet
 lush                            ports/lang/lush
 lv                              ports/misc/lv
