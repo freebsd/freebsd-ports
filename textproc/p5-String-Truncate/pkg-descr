@@ -1,0 +1,4 @@
+This module handles the simple but common problem of long strings
+and finite terminal width.
+
+WWW: http://search.cpan.org/dist/String-Truncate/
