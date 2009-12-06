@@ -1,28 +1,15 @@
---- src/cf.data.pre.orig	Tue Jun 26 01:34:57 2007
-+++ src/cf.data.pre	Mon Jul 16 20:02:21 2007
-@@ -1207,6 +1207,21 @@
- 
- 	Note that for coss, max-size must be less than COSS_MEMBUF_SZ
- 	(hard coded at 1 MB).
-+
-+	Note for FreeBSD users:
-+	COSS -- like aufs -- uses async IO so if you compiled Squid without
-+	support for the aufs storage type, COSS will use POSIX AIO.
-+	This means that you need to add the line
-+
-+	options VFS_AIO
-+
-+	to your kernel configuration in order to use COSS.
-+
-+	On FreeBSD 5 and higher you can load the aio(4) module and do not
-+	necessarily need to recompile your kernel.
-+
-+	If you compiled Squid with both support for aufs and COSS, COSS
-+	will use aufs' routines and does not need special kernel support.
- DOC_END
- 
- NAME: logformat
-@@ -1439,6 +1454,10 @@
+--- src/cf.data.pre.orig	2009-07-27 04:46:32.000000000 +0000
++++ src/cf.data.pre	2009-12-06 10:15:24.000000000 +0000
+@@ -2024,7 +2024,7 @@
+ NAME: cache_dir
+ TYPE: cachedir
+ DEFAULT: none
+-DEFAULT_IF_NONE: ufs @DEFAULT_SWAP_DIR@ 100 16 256
++DEFAULT_IF_NONE: aufs @DEFAULT_SWAP_DIR@ 100 16 256
+ LOC: Config.cacheSwap
+ DOC_START
+ 	Usage:
+@@ -2549,6 +2549,10 @@
  LOC: Config.pidFilename
  DOC_START
  	A filename to write the process-id to.  To disable, enter "none".
@@ -33,7 +20,7 @@
  DOC_END
  
  NAME: debug_options
-@@ -3275,12 +3294,12 @@
+@@ -3975,12 +3979,12 @@
  
  NAME: cache_effective_user
  TYPE: string
