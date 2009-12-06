@@ -1,0 +1,11 @@
+--- configure.orig	2009-12-06 09:45:03.000000000 +0000
++++ configure	2009-12-06 09:45:26.000000000 +0000
+@@ -5111,7 +5111,7 @@
+     fi
+ 
+ else
+-  ERR_DEFAULT_LANGUAGE="templates"
++  ERR_DEFAULT_LANGUAGE="English"
+ fi
+ 
+ 
