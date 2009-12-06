@@ -5,7 +5,7 @@
  	-DDATADIR=\""$(datadir)"\"		 	\
  	-DSYSCONFDIR=\""$(sysconfdir)"\"		\
 -	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\"	\
-+	-DLIBLOCALEDIR=\""$(prefix)/share/locale"\"	\
++	-DLIBLOCALEDIR=\""/usr/share/locale"\"	\
  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
  	-DGLADEDIR=\""$(pkgdatadir)"\" 	\
  	-DLIBEXECDIR=\""$(libexecdir)"\" 		\
