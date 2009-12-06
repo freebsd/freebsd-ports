@@ -6,6 +6,7 @@
 
 PORTNAME=	glut
 PORTVERSION=	2.1.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/GLUT/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -50,7 +51,7 @@ BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.13
+HSCOLOUR_VERSION=	1.15
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 PORTDOCS=	*

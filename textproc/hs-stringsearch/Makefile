@@ -6,7 +6,7 @@
 
 PORTNAME=	stringsearch
 PORTVERSION=	0.2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/stringsearch/${PORTVERSION}/ \
 		http://kerneled.org/tmp/
@@ -45,7 +45,7 @@ BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.13
+HSCOLOUR_VERSION=	1.15
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 PORTDOCS=	*

@@ -7,6 +7,7 @@
 
 PORTNAME=	digest
 PORTVERSION=	0.0.0.6
+PORTREVISION=	1
 CATEGORIES=	security haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -45,7 +46,7 @@ BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.13
+HSCOLOUR_VERSION=	1.15
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 PORTDOCS=	*

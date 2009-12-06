@@ -7,6 +7,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/dist/ \
 		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
@@ -41,7 +42,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-HSCOLOUR_VERSION=	1.13
+HSCOLOUR_VERSION=	1.15
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 CABAL_CMD=	runghc Setup.lhs

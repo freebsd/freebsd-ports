@@ -6,6 +6,7 @@
 
 PORTNAME=	Stream
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/ \
 		http://carte.kerneled.org/mirror/
@@ -49,7 +50,7 @@ BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.13
+HSCOLOUR_VERSION=	1.15
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 PORTDOCS=	*

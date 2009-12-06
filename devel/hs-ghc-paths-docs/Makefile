@@ -6,6 +6,7 @@
 
 PORTNAME=	ghc-paths
 PORTVERSION=	0.1.0.5
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -23,7 +24,7 @@ PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 
-HSCOLOUR_VERSION=	1.13
+HSCOLOUR_VERSION=	1.15
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 CABAL_CMD=	runghc Setup.hs

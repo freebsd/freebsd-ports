@@ -6,6 +6,7 @@
 
 PORTNAME=	zlib
 PORTVERSION=	0.5.2.0
+PORTREVISION=	1
 CATEGORIES=	archivers haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/ \
 		http://kerneled.org/tmp/
@@ -44,7 +45,7 @@ BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.13
+HSCOLOUR_VERSION=	1.15
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 PORTDOCS=	*
