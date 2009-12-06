@@ -1,0 +1,144 @@
+From 08fd2f30bd3ee5d04596da8293689af4d4f7eb6c Mon Sep 17 00:00:00 2001
+From: Kevin Wolf <kwolf@redhat.com>
+Date: Thu, 3 Dec 2009 10:28:44 +0100
+Subject: [PATCH] qcow2: Bring synchronous read/write back to life
+
+When the synchronous read and write functions were dropped, they were replaced
+by generic emulation functions. Unfortunately, these emulation functions don't
+provide the same semantics as the original functions did.
+
+The original bdrv_read would mean that we read some data synchronously and that
+we won't be interrupted during this read. The latter assumption is no longer
+true with the emulation function which needs to use qemu_aio_poll and therefore
+allows the callback of any other concurrent AIO request to be run during the
+read. Which in turn means that (meta)data read earlier could have changed and
+be invalid now. qcow2 is not prepared to work in this way and it's just scary
+how many places there are where other requests could run.
+
+I'm not sure yet where exactly it breaks, but you'll see breakage with virtio
+on qcow2 with a backing file. Providing synchronous functions again fixes the
+problem for me.
+
+Patchworks-ID: 35437
+Signed-off-by: Kevin Wolf <kwolf@redhat.com>
+Signed-off-by: Anthony Liguori <aliguori@us.ibm.com>
+(cherry picked from commit ef845c3bf421290153154635dc18eaa677cecb43)
+
+Signed-off-by: Kevin Wolf <kwolf@redhat.com>
+Signed-off-by: Aurelien Jarno <aurelien@aurel32.net>
+---
+ block/qcow2-cluster.c |    6 ++--
+ block/qcow2.c         |   51 +++++++++++++++++++++++++++++++++++++++++++++++-
+ block/qcow2.h         |    3 ++
+ 3 files changed, 55 insertions(+), 5 deletions(-)
+
+diff --git a/block/qcow2-cluster.c b/block/qcow2-cluster.c
+index d4631c3..4d0ce16 100644
+--- a/block/qcow2-cluster.c
++++ b/block/qcow2-cluster.c
+@@ -306,8 +306,8 @@ void qcow2_encrypt_sectors(BDRVQcowState *s, int64_t sector_num,
+ }
+ 
+ 
+-static int qcow_read(BlockDriverState *bs, int64_t sector_num,
+-                     uint8_t *buf, int nb_sectors)
++int qcow2_read(BlockDriverState *bs, int64_t sector_num, uint8_t *buf,
++    int nb_sectors)
+ {
+     BDRVQcowState *s = bs->opaque;
+     int ret, index_in_cluster, n, n1;
+@@ -358,7 +358,7 @@ static int copy_sectors(BlockDriverState *bs, uint64_t start_sect,
+     n = n_end - n_start;
+     if (n <= 0)
+         return 0;
+-    ret = qcow_read(bs, start_sect + n_start, s->cluster_data, n);
++    ret = qcow2_read(bs, start_sect + n_start, s->cluster_data, n);
+     if (ret < 0)
+         return ret;
+     if (s->crypt_method) {
+diff --git a/block/qcow2.c b/block/qcow2.c
+index dd32ea2..ced257e 100644
+--- a/block/qcow2.c
++++ b/block/qcow2.c
+@@ -855,6 +855,51 @@ static int qcow_make_empty(BlockDriverState *bs)
+     return 0;
+ }
+ 
++static int qcow2_write(BlockDriverState *bs, int64_t sector_num,
++                     const uint8_t *buf, int nb_sectors)
++{
++    BDRVQcowState *s = bs->opaque;
++    int ret, index_in_cluster, n;
++    uint64_t cluster_offset;
++    int n_end;
++    QCowL2Meta l2meta;
++
++    while (nb_sectors > 0) {
++        memset(&l2meta, 0, sizeof(l2meta));
++
++        index_in_cluster = sector_num & (s->cluster_sectors - 1);
++        n_end = index_in_cluster + nb_sectors;
++        if (s->crypt_method &&
++            n_end > QCOW_MAX_CRYPT_CLUSTERS * s->cluster_sectors)
++            n_end = QCOW_MAX_CRYPT_CLUSTERS * s->cluster_sectors;
++        cluster_offset = qcow2_alloc_cluster_offset(bs, sector_num << 9,
++                                              index_in_cluster,
++                                              n_end, &n, &l2meta);
++        if (!cluster_offset)
++            return -1;
++        if (s->crypt_method) {
++            qcow2_encrypt_sectors(s, sector_num, s->cluster_data, buf, n, 1,
++                            &s->aes_encrypt_key);
++            ret = bdrv_pwrite(s->hd, cluster_offset + index_in_cluster * 512,
++                              s->cluster_data, n * 512);
++        } else {
++            ret = bdrv_pwrite(s->hd, cluster_offset + index_in_cluster * 512, buf, n * 512);
++        }
++        if (ret != n * 512 || qcow2_alloc_cluster_link_l2(bs, cluster_offset, &l2meta) < 0) {
++            qcow2_free_any_clusters(bs, cluster_offset, l2meta.nb_clusters);
++            return -1;
++        }
++        nb_sectors -= n;
++        sector_num += n;
++        buf += n * 512;
++        if (l2meta.nb_clusters != 0) {
++            LIST_REMOVE(&l2meta, next_in_flight);
++        }
++    }
++    s->cluster_cache_offset = -1; /* disable compressed cache */
++    return 0;
++}
++
+ /* XXX: put compressed sectors first, then all the cluster aligned
+    tables to avoid losing bytes in alignment */
+ static int qcow_write_compressed(BlockDriverState *bs, int64_t sector_num,
+@@ -1037,8 +1082,10 @@ static BlockDriver bdrv_qcow2 = {
+     .bdrv_set_key	= qcow_set_key,
+     .bdrv_make_empty	= qcow_make_empty,
+ 
+-    .bdrv_aio_readv	= qcow_aio_readv,
+-    .bdrv_aio_writev	= qcow_aio_writev,
++    .bdrv_read          = qcow2_read,
++    .bdrv_write         = qcow2_write,
++    .bdrv_aio_readv     = qcow_aio_readv,
++    .bdrv_aio_writev    = qcow_aio_writev,
+     .bdrv_write_compressed = qcow_write_compressed,
+ 
+     .bdrv_snapshot_create   = qcow2_snapshot_create,
+diff --git a/block/qcow2.h b/block/qcow2.h
+index 965a2f4..b41aa63 100644
+--- a/block/qcow2.h
++++ b/block/qcow2.h
+@@ -202,6 +202,9 @@ uint64_t qcow2_alloc_compressed_cluster_offset(BlockDriverState *bs,
+ int qcow2_alloc_cluster_link_l2(BlockDriverState *bs, uint64_t cluster_offset,
+     QCowL2Meta *m);
+ 
++int qcow2_read(BlockDriverState *bs, int64_t sector_num, uint8_t *buf,
++    int nb_sectors);
++
+ /* qcow2-snapshot.c functions */
+ int qcow2_snapshot_create(BlockDriverState *bs, QEMUSnapshotInfo *sn_info);
+ int qcow2_snapshot_goto(BlockDriverState *bs, const char *snapshot_id);
+-- 
+1.6.5.2
+

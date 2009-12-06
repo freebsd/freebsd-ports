@@ -15,34 +15,41 @@ for example time sleep 1 takes 49 seconds and booting sleeps for
 minutes at the acd0 probe with a FreeSBIE 1.0 guest, thats because
 its kernel is built with HZ=5000, and FreeBSD's default is 100...
 (no longer a problem with FreeSBIE 1.1.)  The linux 2.6 kernel uses
-1000 by default btw (changed to 250 recently).  Enabling /dev/rtc doesn't
-seem to help either (not included since it needs a patch to emulators/rtc.)
-- using physical media doesn't work on 4.x hosts (missing DIOCGMEDIASIZE
-ioctl.)
+1000 by default btw. (changed to 250 later, and recent linux kernels now
+no longer have a fixed HZ, aka `tickless kernel'...)  Enabling /dev/rtc
+doesn't seem to help either (not included since it needs a patch to
+emulators/rtc.)
+- update: the above problem has gotten worse with FreeBSD guests
+somewhere before 8.0, mainly since the kernel now usually wants
+double or even quadruple number of timer irqs compared to HZ if it
+detects an apic (and at least early versions of FreeBSD 8 had a bug that
+essentially halved qemu's clock rate too); the only reason you usually
+don't see symptoms of this with FreeBSD 8 guests is they automatically
+reduce their HZ to 100 when running in a VM while the default for the
+host kernel is still HZ=1000.  workarounds:  for i386 guests you can
+disable the apic in the guest by setting
+	hint.apic.0.disabled=1
+in loader.conf(5) (or manually at the loader prompt), otherwise the
+only thing you can do is either reduce the guest's HZ to, say, 100
+by setting e.g.
+	kern.hz="100"
+from the loader as above (which usually is a good idea in a VM anyway
+and FreeBSD 8 now does by itself as mentioned), or if that's not
+possible increase the host's HZ to 2000 or even 4000 from the loader
+in the same way.
 - the -smb option (smb-export local dir to guest) needs the net/samba3
 port/package installed in addition to qemu.
-- RELENG_6 and up guests often crash while accessing the emulated cdrom
-(see kern/84102, http://www.freebsd.org/cgi/query-pr.cgi?pr=kern/84102),
-using a kernel without PREEMPTION has been reported to fix this problem.
-(or do an ftp install instead of installing from the emulated cdrom, and
-then make a new kernel.)  [fixed since 6.0-R.]
-- 6.0-RC1 was released with an ed driver that doesn't like qemu's emulated
-RTL8029 nic, this has been fixed in the meantime but if for some reason
-you need to use that version as a guest you can temporarily add the patch
-in this message: http://docs.freebsd.org/cgi/mid.cgi?200510131428.21211.jkim
-(not included in the port since the used VIA VT86C926 PCI ID does not
-really match the emulated nic exactly, it just `happens' to work with
-6.0-RC1's driver.)
 - if you want to use usb devices connected to the host in the guest
-(usb_add host:... monitor command; this doesn't work on -current atm
-because of the new usb stack - help updating the usb-bsd.c code is
-more than welcome here!) you need to make sure the host isn't claiming
-them, e.g. for umass devices (like memory sticks or external harddrives)
-make sure umass isn't in the kernel (you can then still load it as a kld
-when needed), also unless you are running qemu as root you then need to
-fix permissions for /dev/ugen* device nodes: if you are on 5.x or later
-(devfs) put a rule in /etc/devfs.rules, activate it in /etc/rc.conf
-and run /etc/rc.d/devfs restart.  example devfs.rules:
+(usb_add host:... monitor command; this doesn't work on FreeBSD 8 and
+-current atm because of the new usb stack - help updating the usb-bsd.c
+code is more than welcome here!) you need to make sure the host isn't
+claiming them, e.g. for umass devices (like memory sticks or external
+harddrives) make sure umass isn't in the kernel (you can then still
+load it as a kld when needed), also unless you are running qemu as
+root you then need to fix permissions for /dev/ugen* device nodes:
+if you are on 5.x or later (devfs) put a rule in /etc/devfs.rules,
+activate it in /etc/rc.conf and run /etc/rc.d/devfs restart.
+example devfs.rules:
 	[ugen_ruleset=20]
 	add path 'ugen*' mode 660 group operator
 corresponding rc.conf line:
@@ -102,7 +109,7 @@ box needs to be run with -n in order to accept requests from ports >= 1024.
 - unfortunately there can still be guests that don't run correctly with
 kqemu and -kernel-kqemu especially on amd64 - not much you can do about that
 other than help debugging (k)qemu... (well or falling back to unaccellerated
-qemu/leaving out -kernel-kqemu if its that what's causing the problems.
+qemu/using only -enable-kqemu if its that what's causing the problems.
 note however that kqemu now can also be used with the 32 bit qemu even
 on amd64 hosts as of the 20080620 update.)
 - the new (optional) pcap code cannot talk to the host on 6.x because
@@ -113,8 +120,6 @@ kernel parameter with linux), or if that doesn't work force qemu onto
 a single cpu by doing e.g. `cpuset -l 0 qemu ..' (see the cpuset(1) manpage
 for details; cpuset isn't avalable before 7.1.  This can only be a problem
 on smp hosts.)
-- the new sparc64-bsd-user target (qemu-sparc64) is entirely untested and
-probably only works on amd64 hosts, if at all.
 - (not FreeBSD-specific:) there have been reports of qcow2 corruption with
 (at least) win2k guests on recent kvm (which uses similar qcow2 code than
 qemu now, see this thread:
@@ -124,20 +129,23 @@ been experimental and you should use raw images if you want reliability;
 raw is also usually faster.)  You should be able to migrate existing images
 to raw using qemu-img(1)'s convert function; raw doesn't support advanced
 features like snapshots tho.
-[an important qcow2 bugfix has been committed in the meantime so this
-_might_ be less of an issue now.]
+[a few important qcow2 bugfixed have been committed in the meantime so
+this _might_ be less of an issue now.]
 - (also not FreeBSD-specific:)  It is recommended to pass raw images using
 the new -drive syntax, specifying format=raw explicitly in order to avoid
 malicious guests being able to exploit the format autodetection thats
 otherwise getting used.  (Not that you should run malicious guests anyway,
 but this eleminates at least a known attack vector.)
-- The patch currently applied by the PHYS_CDROM knob improves physical
-cdrom support, but still has at least one known problem: you need to have
-the guest eject the disc if you want to change it/take it out, or otherwise
-the guest may continue using state (like size) of the old disc.  (You can
-also do like `change ide1-cd0 /dev/acd0' in the monitor after taking out
-the disc if a guest cannot eject it itself.)
+- qemu now has improved physical cdrom support, but still there still
+is at least one known problem: you need to have the guest eject the disc
+if you want to change it/take it out, or otherwise the guest may continue
+using state (like size) of the old disc.  (You can also do like
+`change ide1-cd0 /dev/acd0' in the monitor after taking out the disc
+if a guest cannot eject it itself.)
 - The default configuration location (qemu-ifup script etc.) has been
 changed from /etc to PREFIX/etc (usually /usr/local/etc).  Move your
 files accordingly.
+- kqemu still works in the 0.11 branch, but is disabled by default now
+so you'll have to pass -enable-kqemu (or -kernel-kqemu as with the
+previous versions) if you want to use it.
 ====

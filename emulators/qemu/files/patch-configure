@@ -1,10 +1,10 @@
 Index: qemu/configure
-@@ -689,7 +689,7 @@
- fi # test "$curses"
+@@ -1348,7 +1348,7 @@
+ fi
  
  # Check if tools are available to build documentation.
--if [ -x "`which texi2html 2>/dev/null`" ] && \
-+if [ "x$NOPORTDOCS" != "x" -o -x "`which texi2html 2>/dev/null`" ] && \
-    [ -x "`which pod2man 2>/dev/null`" ]; then
-   build_docs="yes"
+-if test "$build_docs" = "yes" -a \( ! -x "`which texi2html 2>/dev/null`" -o ! -x "`which pod2man 2>/dev/null`" \) ; then
++if test "$build_docs" = "yes" -a \( "x$NOPORTDOCS" != "x" -o ! -x "`which texi2html 2>/dev/null`" -o ! -x "`which pod2man 2>/dev/null`" \) ; then
+   build_docs="no"
  fi
+ 

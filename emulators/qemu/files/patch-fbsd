@@ -1,26 +1,26 @@
 Index: qemu/Makefile
-@@ -38,7 +38,10 @@
+@@ -45,7 +45,10 @@
  LIBS+=-lwinmm -lws2_32 -liphlpapi
  endif
  
--all: $(TOOLS) $(DOCS) recurse-all
-+all: bsd/libmath.a $(TOOLS) $(DOCS) recurse-all
+-build-all: $(TOOLS) $(DOCS) recurse-all
++build-all: bsd/libmath.a $(TOOLS) $(DOCS) recurse-all
 +
 +bsd/libmath.a:
 +	( cd bsd ; unset MAKEFLAGS ; $(BSD_MAKE) CC=$(CC) )
  
- SUBDIR_RULES=$(patsubst %,subdir-%, $(TARGET_DIRS))
- 
-@@ -195,6 +198,7 @@
+ config-host.mak: configure
+ ifneq ($(wildcard config-host.mak),)
+@@ -242,6 +245,7 @@
  
  clean:
  # avoid old build problems by removing potentially incorrect old files
 +	( cd bsd ; $(BSD_MAKE) clean )
  	rm -f config.mak config.h op-i386.h opc-i386.h gen-op-i386.h op-arm.h opc-arm.h gen-op-arm.h
  	rm -f *.o *.d *.a $(TOOLS) TAGS cscope.* *.pod *~ */*~
- 	rm -f slirp/*.o slirp/*.d audio/*.o audio/*.d
+ 	rm -f slirp/*.o slirp/*.d audio/*.o audio/*.d block/*.o block/*.d
 Index: qemu/Makefile.target
-@@ -417,7 +417,7 @@
+@@ -339,7 +339,7 @@
  # WARNING: this LDFLAGS is _very_ tricky : qemu is an ELF shared object
  # that the kernel ELF loader considers as an executable. I think this
  # is the simplest way to make it self virtualizable!
@@ -29,52 +29,48 @@ Index: qemu/Makefile.target
  endif
  endif
  
-@@ -491,7 +491,7 @@
+@@ -408,7 +408,7 @@
  # cpu_signal_handler() in cpu-exec.c.
  signal.o: CFLAGS += $(HELPER_CFLAGS)
  
--$(QEMU_PROG): $(OBJS) ../libqemu_user.a
-+$(QEMU_PROG): $(OBJS) ../libqemu_user.a ../bsd/libmath.a
- 	$(LINK)
+-ARLIBS=libqemu.a ../libqemu_user.a
++ARLIBS=libqemu.a ../libqemu_user.a ../bsd/libmath.a
  
  endif #CONFIG_BSD_USER
-@@ -717,9 +717,9 @@
- main.o: CFLAGS+=-p
- endif
  
--$(QEMU_PROG): LIBS += $(SDL_LIBS) $(COCOA_LIBS) $(CURSES_LIBS) $(BRLAPI_LIBS) $(VDE_LIBS)
-+$(QEMU_PROG): LIBS += $(SDL_LIBS) $(COCOA_LIBS) $(CURSES_LIBS) $(BRLAPI_LIBS) $(VDE_LIBS) ../bsd/libmath.a
+@@ -658,7 +658,7 @@
+ monitor.o: qemu-monitor.h
  
--$(QEMU_PROG): $(OBJS) ../libqemu_common.a libqemu.a
-+$(QEMU_PROG): $(OBJS) ../libqemu_common.a libqemu.a ../bsd/libmath.a
- 	$(LINK)
+ LIBS += $(SDL_LIBS) $(COCOA_LIBS) $(CURSES_LIBS) $(BRLAPI_LIBS) $(VDE_LIBS) $(CURL_LIBS)
+-ARLIBS=../libqemu_common.a libqemu.a $(HWLIB)
++ARLIBS=../libqemu_common.a libqemu.a $(HWLIB) ../bsd/libmath.a
  
  endif # !CONFIG_USER_ONLY
+ 
 Index: qemu/fpu/softfloat-native.c
-@@ -2,11 +2,16 @@
-    context is supported */
- #include "softfloat.h"
- #include <math.h>
+@@ -6,10 +6,15 @@
+ #include <fenv.h>
+ #endif
+ 
 +#if defined(__FreeBSD__) && __FreeBSD_version < 500000
 +#include <ieeefp.h>
 +#endif
- 
++
  void set_float_rounding_mode(int val STATUS_PARAM)
  {
      STATUS(float_rounding_mode) = val;
--#if defined(_BSD) && !defined(__APPLE__) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
-+#if defined(_BSD) && !defined(__APPLE__) && !defined(__FreeBSD__) || \
+-#if defined(HOST_BSD) && !defined(__APPLE__) ||         \
++#if defined(HOST_BSD) && !defined(__APPLE__) && !defined(__FreeBSD__) || \
 +    (defined(__FreeBSD__) && __FreeBSD_version < 500000) || \
-+    (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
+     (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
      fpsetround(val);
  #elif defined(__arm__)
-     /* nothing to do */
-@@ -22,7 +25,7 @@
+@@ -26,7 +31,7 @@
  }
  #endif
  
--#if defined(_BSD) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
-+#if (defined(_BSD) && !defined(__FreeBSD__)) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
+-#if defined(HOST_BSD) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
++#if (defined(HOST_BSD) && !defined(__FreeBSD__)) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
  #define lrint(d)		((int32_t)rint(d))
  #define llrint(d)		((int64_t)rint(d))
  #define lrintf(f)		((int32_t)rint(f))
@@ -83,7 +79,7 @@ Index: qemu/fpu/softfloat-native.h
  /* Native implementation of soft float functions */
  #include <math.h>
  
--#if (defined(_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
+-#if (defined(HOST_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
 +#ifdef __FreeBSD__
 +#include <osreldate.h>
 +long double fabsl(long double x);
@@ -94,7 +90,7 @@ Index: qemu/fpu/softfloat-native.h
 +long long llrintl(long double x);
 +#endif
 +
-+#if (defined(_BSD) && !defined(__APPLE__) && \
++#if (defined(HOST_BSD) && !defined(__APPLE__) && \
 +     (!defined(__FreeBSD__) || __FreeBSD_version < 500000)) || \
 +    defined(HOST_SOLARIS)
  #include <ieeefp.h>
@@ -112,8 +108,8 @@ Index: qemu/fpu/softfloat-native.h
 @@ -109,6 +109,8 @@
  | Software IEC/IEEE floating-point rounding mode.
  *----------------------------------------------------------------------------*/
--#if (defined(_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
-+#if (defined(_BSD) && !defined(__APPLE__) && \
+-#if (defined(HOST_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
++#if (defined(HOST_BSD) && !defined(__APPLE__) && \
 +      (!defined(__FreeBSD__) || __FreeBSD_version < 500000)) || \
 +     defined(HOST_SOLARIS)
  #if defined(__OpenBSD__)
@@ -124,9 +120,9 @@ Index: qemu/fpu/softfloat.h
  #define FLOAT128
  #else
  /* native float support */
--#if (defined(__i386__) || defined(__x86_64__)) && !defined(_BSD)
+-#if (defined(__i386__) || defined(__x86_64__)) && !defined(HOST_BSD)
 +#if (defined(__i386__) || defined(__x86_64__)) && \
-+    (!defined(_BSD) || defined(__FreeBSD__))
++    (!defined(HOST_BSD) || defined(__FreeBSD__))
  #define FLOATX80
  #endif
  #endif /* !CONFIG_SOFTFLOAT */

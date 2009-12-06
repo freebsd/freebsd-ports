@@ -1,51 +1,55 @@
---- Makefile.target.orig	2009-09-02 16:09:39.000000000 -0400
-+++ Makefile.target	2009-09-02 16:09:39.000000000 -0400
-@@ -687,6 +687,9 @@
+--- Makefile.target.orig	2008-07-18 15:18:11.000000000 -0400
++++ Makefile.target	2008-07-18 15:23:11.000000000 -0400
+@@ -619,6 +619,13 @@
  COCOA_LIBS+=-framework CoreAudio
  endif
  endif
 +ifdef CONFIG_PCAP
-+LIBS+=$(PCAP_LIBS)
++ifdef CONFIG_WIN32
++LIBS+=-lwpcap
++else
++LIBS+=-lpcap
++endif
 +endif
  ifdef CONFIG_SLIRP
  CPPFLAGS+=-I$(SRC_PATH)/slirp
  endif
---- configure.orig	2009-09-02 16:09:39.000000000 -0400
-+++ configure	2009-09-02 16:09:39.000000000 -0400
-@@ -188,6 +188,9 @@
- blobs="yes"
- fdt="yes"
+Index: configure
+@@ -203,6 +203,9 @@
  sdl_x11="no"
+ xen="yes"
+ pkgversion=""
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
  
  # OS specific
  if check_define __linux__ ; then
-@@ -388,6 +391,8 @@
+@@ -428,6 +431,8 @@
    ;;
-   --disable-vnc-tls) vnc_tls="no"
+   --disable-vnc-sasl) vnc_sasl="no"
    ;;
 +  --enable-pcap) pcap="yes"
 +  ;;
    --disable-slirp) slirp="no"
    ;;
    --disable-vde) vde="no"
-@@ -822,6 +827,47 @@
+@@ -925,6 +930,48 @@
  fi
  
  ##########################################
 +# pcap probe
++
 +if test "$pcap" = "yes" ; then
++  cat > $TMPC << EOF
++#include <pcap.h>
++int main(void) { return (pcap_lib_version() == (char *)0 ? 1 : 0); }
++EOF
 +  if test "$mingw32" = "no" ; then
 +    libpcap=-lpcap
 +  else
 +    libpcap=-lwpcap
 +  fi
-+  cat > $TMPC << EOF
-+#include <pcap.h>
-+int main(void) { return (pcap_lib_version() == (char *)0 ? 1 : 0); }
-+EOF
 +  if ! $cc $ARCH_CFLAGS -o $TMPE $libpcap $TMPC 2> /dev/null ; then
 +    echo
 +    echo "Error: Could not find pcap"
@@ -79,32 +83,38 @@
  # VNC TLS detection
  if test "$vnc_tls" = "yes" ; then
  cat > $TMPC <<EOF
-@@ -1365,6 +1411,17 @@
+@@ -1436,6 +1484,7 @@
+     echo "    SASL CFLAGS    $vnc_sasl_cflags"
+     echo "    SASL LIBS      $vnc_sasl_libs"
+ fi
++echo "pcap support      $pcap"
+ if test -n "$sparc_cpu"; then
+     echo "Target Sparc Arch $sparc_cpu"
+ fi
+@@ -1589,6 +1638,16 @@
  if test $profiler = "yes" ; then
-   echo "#define CONFIG_PROFILER 1" >> $config_h
+   echo "#define CONFIG_PROFILER 1" >> $config_host_h
  fi
 +if test "$pcap" = "yes" ; then
-+  echo "CONFIG_PCAP=yes" >> $config_mak
-+  echo "#define CONFIG_PCAP 1" >> $config_h
++  echo "CONFIG_PCAP=yes" >> $config_host_mak
++  echo "#define CONFIG_PCAP 1" >> $config_host_h
 +  if test "$pcap_create" = "yes" ; then
-+    echo "#define CONFIG_PCAP_CREATE 1" >> $config_h
++    echo "#define HAVE_PCAP_CREATE 1" >> $config_host_h
 +  fi
 +  if test "$bpf" = "yes" ; then
-+    echo "#define CONFIG_BPF 1" >> $config_h
++    echo "#define HAVE_BPF 1" >> $config_host_h
 +  fi
-+  echo "PCAP_LIBS=$libpcap" >> $config_mak
 +fi
  if test "$slirp" = "yes" ; then
-   echo "CONFIG_SLIRP=yes" >> $config_mak
-   echo "#define CONFIG_SLIRP 1" >> $config_h
---- net.c.orig	2009-09-02 16:09:39.000000000 -0400
-+++ net.c	2009-09-02 16:11:38.000000000 -0400
-@@ -481,6 +481,166 @@
-     return max_len;
+   echo "CONFIG_SLIRP=y" >> $config_host_mak
+   echo "#define CONFIG_SLIRP 1" >> $config_host_h
+Index: net.c
+@@ -688,6 +688,166 @@
+     va_end(ap);
  }
  
 +#if defined(CONFIG_PCAP)
-+#if defined(CONFIG_BPF)
++#if defined(HAVE_BPF)
 +#define PCAP_DONT_INCLUDE_PCAP_BPF_H
 +#include <net/bpf.h>
 +#endif
@@ -115,11 +125,11 @@
 +    pcap_t *handle;
 +} PCAPState;
 +
-+static void pcap_receive(void *opaque, const uint8_t *buf, int size)
++static ssize_t pcap_receive(VLANClientState *vc, const uint8_t *buf, size_t size)
 +{
-+    PCAPState *s = (PCAPState *)opaque;
++    PCAPState *s = (PCAPState *)vc->opaque;
 +
-+    pcap_sendpacket(s->handle, (u_char*)buf, size);
++    return pcap_inject(s->handle, (u_char*)buf, size);
 +}
 +
 +static void pcap_callback(u_char *user, struct pcap_pkthdr *phdr, u_char *pdata)
@@ -158,11 +168,11 @@
 +	return -1;
 +
 +    if (ifname == NULL && (ifname = pcap_lookupdev(errbuf)) == NULL) {
-+	fprintf(stderr, "qemu: pcap_create: %s\n", errbuf);
++	fprintf(stderr, "qemu: pcap_lookupdev: %s\n", errbuf);
 +	goto fail;
 +    }
 +
-+#if defined(CONFIG_PCAP_CREATE) || defined(_WIN32)
++#if defined(HAVE_PCAP_CREATE) || defined(_WIN32)
 +    /*
 +     * Create pcap handle for the device, set promiscuous mode and activate.
 +     */
@@ -203,7 +213,7 @@
 +	goto fail;
 +    }
 +#else /* !_WIN32 */
-+#if defined(CONFIG_BPF)
++#if defined(HAVE_BPF)
 +#if defined(BIOCIMMEDIATE)
 +    /*
 +     * Tell the kernel that the packet has to be seen immediately.
@@ -230,10 +240,10 @@
 +	}
 +    }
 +#endif /* BIOCFEEDBACK */
-+#endif /* CONFIG_BPF */
++#endif /* HAVE_BPF */
 +#endif /* _WIN32 */
 +
-+    s->vc = qemu_new_vlan_client(vlan, model, name, pcap_receive, NULL, pcap_cleanup, s);
++    s->vc = qemu_new_vlan_client(vlan, model, name, NULL, pcap_receive, NULL, pcap_cleanup, s);
 +    snprintf(s->vc->info_str, sizeof(s->vc->info_str), "pcap redirector");
 +
 +#if defined(_WIN32)
@@ -266,7 +276,7 @@
  #if defined(CONFIG_SLIRP)
  
  /* slirp network adapter */
-@@ -1755,6 +1915,16 @@
+@@ -2598,6 +2758,16 @@
             are wanted */
          ret = 0;
      } else
@@ -282,17 +292,16 @@
 +#endif
  #ifdef CONFIG_SLIRP
      if (!strcmp(device, "user")) {
-         if (get_param_value(buf, sizeof(buf), "hostname", p)) {
---- vl.c.orig	2009-09-02 16:09:39.000000000 -0400
-+++ vl.c	2009-09-02 16:09:39.000000000 -0400
-@@ -3990,6 +3990,10 @@
-            "Network options:\n"
-            "-net nic[,vlan=n][,macaddr=addr][,model=type][,name=str]\n"
-            "                create a new Network Interface Card and connect it to VLAN 'n'\n"
+         static const char * const slirp_params[] = {
+Index: qemu-options.hx
+@@ -782,6 +782,10 @@
+     "                connect the user mode network stack to VLAN 'n', configure its\n"
+     "                DHCP server and enabled optional services\n"
+ #endif
 +#ifdef CONFIG_PCAP
-+           "-net pcap[,vlan=n][,name=str][,ifname=name]\n"
-+           "                connect the host network interface using PCAP to VLAN 'n'\n"
++    "-net pcap[,vlan=n][,name=str][,ifname=name]\n"
++    "                connect the host network interface using PCAP to VLAN 'n'\n"
 +#endif
- #ifdef CONFIG_SLIRP
-            "-net user[,vlan=n][,name=str][,hostname=host]\n"
-            "                connect the user mode network stack to VLAN 'n' and send\n"
+ #ifdef _WIN32
+     "-net tap[,vlan=n][,name=str],ifname=name\n"
+     "                connect the host TAP network interface to VLAN 'n'\n"
