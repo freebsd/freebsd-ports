@@ -22,7 +22,7 @@ $FreeBSD$
  		;;
  	*-*-*openbsd*)
  		platform_win32=no
-@@ -39146,8 +39147,8 @@
+@@ -39414,8 +39415,8 @@
  INTERP_SUPPORTED=no
  LIBC="libc.so.6"
  INTL="libc.so.6"
@@ -32,4 +32,13 @@ $FreeBSD$
 +SQLITE3="libsqlite3.so.8"
  X11="libX11.so"
  
- jit_wanted=false
+ sizeof_register="SIZEOF_VOID_P"
+@@ -39675,7 +39676,7 @@
+ 		jit_wanted=true
+ 		;;
+ 	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
+-        powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* )
++        powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* | powerpc-*-freebsd* )
+ 		if test "x$ac_cv_sizeof_void_p" = "x8"; then
+ 			TARGET=POWERPC64;
+ 			CPPFLAGS="$CPPFLAGS -D__mono_ppc__ -D__mono_ppc64__"
