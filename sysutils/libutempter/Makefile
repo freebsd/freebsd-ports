@@ -17,4 +17,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900004
+IGNORE=		is now contained in the base system
+.endif
+
+.include <bsd.port.post.mk>
