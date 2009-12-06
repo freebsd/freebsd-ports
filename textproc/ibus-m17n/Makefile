@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-m17n
-PORTVERSION=	1.2.0.20090930
+PORTVERSION=	1.2.0.20091120
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
