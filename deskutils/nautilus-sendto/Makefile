@@ -7,6 +7,7 @@
 
 PORTNAME=	nautilus-sendto
 PORTVERSION=	2.28.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -29,11 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/pidgin)
-BUILD_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
-PLIST_SUB+=	PIDGIN=""
-.else
-PLIST_SUB+=	PIDGIN="@comment "
 .endif
 
 .include <bsd.port.post.mk>
