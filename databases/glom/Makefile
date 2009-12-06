@@ -17,7 +17,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
 LIB_DEPENDS=	gdamm-4.0.12:${PORTSDIR}/databases/libgdamm \
-		gconfmm-2.0.1:${PORTSDIR}/devel/gconfmm26 \
+		gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26 \
 		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
 		epc-1.0.2:${PORTSDIR}/www/libepc \
