@@ -13,10 +13,17 @@
 
 name=musicpd
 rcvar=`set_rcvar`
+stop_cmd="${name}_stop"
 
 config=%%PREFIX%%/etc/mpd.conf
 command=%%PREFIX%%/bin/mpd
 required_files=$config
+
+musicpd_stop()
+{
+	echo -n "Stopping musicpd: ";
+	${command} --kill ${config} && echo "stopped.";
+}
 
 load_rc_config $name
 

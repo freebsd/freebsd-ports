@@ -17,6 +17,9 @@ Then start the server with
 
 or reboot.
 
+The example configuration of MPD server requires music files to
+be stored at %%MPDDIR%%/music .
+
 NOTE: The musicpd server is pretty useless without a client.
       You might want to install one of the following ports too:
       mpc, ncmpc, glurp, gmpc, kmp, or phpmp.

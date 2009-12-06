@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -37,8 +37,6 @@ PORTDOCS=	mpdconf.example AUTHORS README COPYING NEWS UPGRADING
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/mpd
-
 OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 		IPV6            "Support IPv6 protocol"                 on \
 		FLAC            "Support FLAC audio format"             on \
@@ -60,6 +58,25 @@ OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 		LAME		"Support for MP3 Icecast Streams"	off \
 		HTTPD		"Support for httpd output streaming"	off \
 		SAMPLERATE	"Support sample rate conversion"	off
+
+MPDDIR=	var/mpd
+MPDUSER=	mpd
+MPDGROUP=	mpd
+
+USERS=	${MPDUSER}
+GROUPS=	${MPDGROUP}
+
+MPDUID=	137
+MPDGID=	137
+
+PLIST_SUB=	MPDUSER=${MPDUSER} \
+		MPDGROUP=${MPDGROUP}
+
+SUB_LIST+=	MPDUSER=${MPDUSER} \
+		MPDGROUP=${MPDGROUP} \
+		MPDDIR=${PREFIX}/${MPDDIR} \
+		MPDUID=${MPDUID} \
+		MPDGID=${MPDGID}
 
 .include <bsd.port.pre.mk>
 
@@ -201,13 +218,17 @@ LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-lsr
 .endif
 
-.if defined(NOPORTDOCS)
 post-patch:
+	@${REINPLACE_CMD} -e "s/%%MPDDIR%%/${PREFIX:C/\//\\\//g}\/${MPDDIR:C/\//\\\//g}/g" -e "s/%%MPDUSER%%/${MPDUSER}/g" \
+		${WRKSRC}/doc/mpdconf.example
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|install-docDATA ||' \
 		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
+	@${MKDIR} ${PREFIX}/${MPDDIR}
+	@${CHOWN} -R ${MPDUSER}:${MPDGROUP} ${PREFIX}/${MPDDIR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
