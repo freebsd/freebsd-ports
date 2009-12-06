@@ -8,7 +8,7 @@ catfontsdir ()
     while read _IN
     do
       case "${_IN}" in
-      *-ipa-mona*-|[0-9]*|"") ;;
+      *-ipa-mona*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
     done
