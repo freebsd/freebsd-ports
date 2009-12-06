@@ -10,8 +10,8 @@ lib/nautilus-sendto/plugins/libnstevolution.la
 lib/nautilus-sendto/plugins/libnstevolution.so
 lib/nautilus-sendto/plugins/libnstgajim.la
 lib/nautilus-sendto/plugins/libnstgajim.so
-%%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.la
-%%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.so
+lib/nautilus-sendto/plugins/libnstpidgin.la
+lib/nautilus-sendto/plugins/libnstpidgin.so
 lib/nautilus-sendto/plugins/libnstremovable_devices.la
 lib/nautilus-sendto/plugins/libnstremovable_devices.so
 lib/nautilus/extensions-2.0/libnautilus-sendto.la
