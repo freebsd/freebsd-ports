@@ -11,9 +11,9 @@ bin/pyfasta
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/fasta.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/fasta.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/fasta.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/backends.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/backends.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/backends.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/records.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/records.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/records.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/split_fasta.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/split_fasta.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyfasta/split_fasta.pyo
