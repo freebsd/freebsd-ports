@@ -458,6 +458,7 @@ share/pixmaps/pidgin/protocols/16/irc.png
 share/pixmaps/pidgin/protocols/16/jabber.png
 share/pixmaps/pidgin/protocols/16/meanwhile.png
 share/pixmaps/pidgin/protocols/16/msn.png
+share/pixmaps/pidgin/protocols/16/mxit.png
 share/pixmaps/pidgin/protocols/16/myspace.png
 share/pixmaps/pidgin/protocols/16/novell.png
 share/pixmaps/pidgin/protocols/16/qq.png
@@ -489,6 +490,7 @@ share/pixmaps/pidgin/protocols/48/irc.png
 share/pixmaps/pidgin/protocols/48/jabber.png
 share/pixmaps/pidgin/protocols/48/meanwhile.png
 share/pixmaps/pidgin/protocols/48/msn.png
+share/pixmaps/pidgin/protocols/48/mxit.png
 share/pixmaps/pidgin/protocols/48/myspace.png
 share/pixmaps/pidgin/protocols/48/novell.png
 share/pixmaps/pidgin/protocols/48/qq.png
@@ -505,6 +507,7 @@ share/pixmaps/pidgin/protocols/scalable/irc.svg
 share/pixmaps/pidgin/protocols/scalable/jabber.svg
 share/pixmaps/pidgin/protocols/scalable/meanwhile.svg
 share/pixmaps/pidgin/protocols/scalable/msn.svg
+share/pixmaps/pidgin/protocols/scalable/mxit.svg
 share/pixmaps/pidgin/protocols/scalable/novell.svg
 share/pixmaps/pidgin/protocols/scalable/qq.svg
 share/pixmaps/pidgin/protocols/scalable/silc.svg
