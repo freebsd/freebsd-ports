@@ -4,14 +4,18 @@ The Foundation library contains a platform abstraction layer
 (including classes for multithreading, file system access, logging,
 etc.), as well as a large number of useful utility classes, such
 various stream buffer and stream classes, URI handling, and many
-more.
+more.  The remaining libraries include:
 
-The XML library contains an XML parser with SAX2 and DOM interfaces,
-as well as an XMLWriter.
+ o Crypto - Encrypt/decrypt data or I/O streams
+ o Data - database access ODBC, SQLite, MySQL client
+ o Net - network classes (sockets, HTTP, etc.)
+ o NetSSL - SSL/TLS protocol sockets based on OpenSSL
+ o PageCompiler - C++ Server Page Compiler, for dynamic HTML in C++ apps
+ o XML - parser with SAX2 and DOM interfaces and an XMLWriter
+ o Util - config files and command line arguments, various utility classes
+ o Zip classes for (de)compressing data or I/O streams
 
-The Util library contains classes for working with configuration
-files and command line arguments, as well as various utility classes.
+This is now known as the '-all' distribution by the Poco project,
+but the FreeBSD port remains named -ssl for hysterical raisins.
 
-The Net library contains network classes (sockets, HTTP, etc.)
-
-WWW: http://poco.appinf.com/
+WWW: http://pocoproject.org
