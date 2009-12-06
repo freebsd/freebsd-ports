@@ -1,0 +1,13 @@
+Lusca is a continuation of Squid-2 development which focuses on stability
+whilst improving performance, functionality and compliance.
+
+Lusca supports all of the features found in Squid-2. This release
+currently doesn't support ICAP as it was never intergrated into the Squid-2
+release.
+
+Lusca is a drop-in compatible replacement for the Squid-2 and Cacheboy packages.
+The "squid" configuration parameters, directories and rc script setup is
+mirrored from the Squid packages to facilitate this.
+
+WWW: http://www.lusca.net/
+WWW: http://code.google.com/p/lusca-cache/

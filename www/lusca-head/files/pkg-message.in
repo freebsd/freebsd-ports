@@ -1,0 +1,37 @@
+
+     o This port looks a lot like Squid. Yes, thats because its based
+       on Squid-2.HEAD. The binaries and paths are the same as Squid -
+       this is intended to make migrating from Squid-2.X to Lusca
+       (sans ICAP) as effortless as possible.
+
+     o You can find the configuration files for this package in the
+       directory %%PREFIX%%/etc/squid.
+
+     o A cache directory has been created in %%PREFIX%%/squid/cache.
+       Log files will be written to %%PREFIX%%/squid/logs.
+
+       Note:
+       You must initialize new cache directories before you can start
+       squid.  Do this by running "squid -z" as 'root' or '%%SQUID_UID%%'.
+       If your cache directories are already initialized (e.g. after an
+       upgrade of squid) you do not need to initialize them again.
+
+     o The default configuration will deny everyone access to the
+       proxy service. Edit the "http_access" directives in
+       %%PREFIX%%/etc/squid/squid.conf to suit your needs.
+
+     Please note that the Lusca start script is an rc.d style script.
+     This means that Lusca will not start automatically at boot
+     time unless it is explicitly enabled.
+
+     To enable Lusca, set squid_enable=yes in either
+     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
+     Please see %%PREFIX%%/etc/rc.d/squid(.sh) for further details.
+
+     Note:
+     If you just updated your Lusca installation from Squid 2.5 or earlier,
+     make sure to check your Lusca configuration against the default
+     configuration file %%PREFIX%%/etc/squid/squid.conf.default.
+
+     Additionally, you should check your configuration by calling
+     'squid -f /path/to/squid.conf -k parse' before starting Lusca.

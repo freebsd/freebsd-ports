@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	Sun May 14 18:30:04 2006
++++ tools/Makefile.in	Sun May 14 18:31:02 2006
+@@ -297,7 +297,7 @@
+ EXTRA_DIST = \
+ 	cachemgr.conf
+ 
+-DEFAULT_CACHEMGR_CONFIG = $(sysconfdir)/cachemgr.conf
++DEFAULT_CACHEMGR_CONFIG = $(sysconfdir)/cachemgr.conf.default
+ 
+ # Don't automatically uninstall config files
+ #	@if test -f $(DESTDIR)$(DEFAULT_CONFIG_FILE) ; then \
