@@ -278,6 +278,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GogLegend.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogObject.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogOutlinedObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/GocPixbuf.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogPlot.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogRegCurve.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogRegEqn.html
@@ -332,7 +333,6 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GORegression.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOUndo.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOUrl.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GocPixbuf.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogAxisMap.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogChartMap.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogGuru.html
