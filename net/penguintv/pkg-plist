@@ -15,7 +15,7 @@ share/penguintv/pixmaps/throbber.gif
 share/pixmaps/penguintvicon.png
 share/dbus-1/services/penguintv.service
 
-%%PYTHON_SITELIBDIR%%/PenguinTV-4.0.0-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/PenguinTV-4.0.0-py2.6.egg-info
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedUtils.py
