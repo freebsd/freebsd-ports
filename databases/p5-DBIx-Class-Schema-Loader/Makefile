@@ -7,7 +7,7 @@
 
 PORTNAME=	DBIx-Class-Schema-Loader
 PORTVERSION=	0.04006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,17 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamic definition of a DBIx::Class::Schema
 
-BUILD_DEPENDS=	p5-Data-Dump>=1.06:${PORTSDIR}/devel/p5-Data-Dump \
-		p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
-		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced \
+RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Accessor>=0.30:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-Data-Accessor>=0.03:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-Class-C3>=0.18:${PORTSDIR}/devel/p5-Class-C3 \
-		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-Class-Data-Accessor>=0.03:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-DBIx-Class>=0.07006:${PORTSDIR}/databases/p5-DBIx-Class
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-DBIx-Class>=0.07006:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-Data-Dump>=1.06:${PORTSDIR}/devel/p5-Data-Dump \
+		p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
+		p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	5.8.0+
 
