@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,7 +19,6 @@ COMMENT=	Basic applications for the KDE system
 
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		dbus-1.3:${PORTSDIR}/devel/dbus \
-		utempter:${PORTSDIR}/sysutils/libutempter \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		polkit-qt-core.0:${PORTSDIR}/sysutils/policykit-qt \
 		xklavier.12:${PORTSDIR}/x11/libxklavier
@@ -66,6 +66,10 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .endif
 
+.if ${OSVERSION} < 900004
+LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${PATCH_WRKSRC}/startkde.cmake \
@@ -83,10 +87,12 @@ pre-configure:
 		redmond/redmond.cpp
 	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
 		${PATCH_WRKSRC}/kwin/clients/${item}
+.endfor
+.if ${OSVERSION} < 900004
 	${REINPLACE_CMD} -e 's|addToUtmp ""|addToUtmp "${LOCALBASE}/lib"|' \
 		-e 's|(utempter.h|(${LOCALBASE}/include/utempter.h|' \
 	${PATCH_WRKSRC}/kwrited/CMakeLists.txt
-.endfor
+.endif
 
 post-install:
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
