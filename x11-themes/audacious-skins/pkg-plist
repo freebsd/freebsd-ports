@@ -83,3 +83,4 @@
 %%DATADIR%%/Skins/titanium.tar.gz
 %%DATADIR%%/Skins/xmmearth.tar.gz
 %%DATADIR%%/Skins/xmms-256.tar.gz
+@dirrmtry %%DATADIR%%/Skins
