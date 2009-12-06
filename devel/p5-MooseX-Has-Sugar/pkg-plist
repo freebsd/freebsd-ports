@@ -1,7 +1,6 @@
 %%SITE_PERL%%/MooseX/Has/Sugar.pm
 %%SITE_PERL%%/MooseX/Has/Sugar/Saccharin.pm
 %%SITE_PERL%%/MooseX/Has/Sugar/Minimal.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has/Sugar/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has/Sugar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

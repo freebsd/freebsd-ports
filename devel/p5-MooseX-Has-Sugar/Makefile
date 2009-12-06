@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Has-Sugar
-PORTVERSION=	0.0404
+PORTVERSION=	0.0405
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		MooseX::Has::Sugar.3 \
 		MooseX::Has::Sugar::Saccharin.3 \
