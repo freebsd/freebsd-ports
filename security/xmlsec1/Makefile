@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.13
-PORTREVISION=	1
+PORTVERSION=	1.2.14
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -34,6 +33,8 @@ MAN1=	xmlsec1.1 xmlsec1-config.1
 # The software comes with its own tests, but it is nauseating to sort,
 # which failures are, and which aren't legitimate. Some other day, maybe.
 #ALL_TARGET=	all check-all
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
 MAKE_ARGS+=	-EABS_BUILDDIR
 
