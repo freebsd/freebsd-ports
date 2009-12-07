@@ -1,0 +1,3 @@
+Catalyst::Plugin::AutoCRUD is a instant AJAX web front-end for DBIx::Class.
+
+WWW: http://search.cpan.org/~OLIVER/Catalyst-Plugin-AutoCRUD
