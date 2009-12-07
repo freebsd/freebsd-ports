@@ -578,6 +578,7 @@
     SUBDIR += npc
     SUBDIR += nscache
     SUBDIR += nspluginwrapper
+    SUBDIR += nspluginwrapper-devel
     SUBDIR += ocaml-net
     SUBDIR += ocsigen
     SUBDIR += ojs2
