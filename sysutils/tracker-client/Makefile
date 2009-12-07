@@ -63,12 +63,12 @@ LIB_DEPENDS+=	tracker-gtk:${PORTSDIR}/sysutils/tracker-libtrackergtk
 BUILD_WRKSRC=	${WRKSRC}/src/tracker-applet
 INSTALL_WRKSRC=	${WRKSRC}/src/tracker-applet
 EXTRA_WRKSRC=	src/tracker-preferences src/tracker-search-tool
-BUILD_DEPENDS+=	${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
-RUN_DEPENDS+=	${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
+RUN_DEPENDS+=	${LOCALBASE}/libexec/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
 USE_GNOME+=	gnomedesktop libgsf
 MAN1+=		tracker-applet.1 tracker-search-tool.1 tracker-preferences.1
 CONFIGURE_ARGS+=--enable-deskbar-applet \
-		--with-deskbar-applet-handler-dir=${LOCALBASE}/lib/deskbar-applet/handlers
+		--with-deskbar-applet-handler-dir=${LOCALBASE}/libexec/deskbar-applet/handlers
 . endif
 . if defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="libtrackergtk"
 PKGNAMESUFFIX=	-libtrackergtk
