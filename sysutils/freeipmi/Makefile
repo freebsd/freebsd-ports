@@ -24,8 +24,8 @@ MASTER_SITES=	http://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
 MAINTAINER=	frol@nov.net
 COMMENT=	Library and tools to support IPMI-capable hardware
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt \
+		argp:${PORTSDIR}/devel/argp-standalone
 
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
