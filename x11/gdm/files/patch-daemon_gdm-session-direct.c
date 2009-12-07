@@ -1,4 +1,3 @@
-
 --- daemon/gdm-session-direct.c.orig	2009-12-02 15:15:33.000000000 +0100
 +++ daemon/gdm-session-direct.c	2009-12-02 15:15:41.000000000 +0100
 @@ -608,6 +608,7 @@
