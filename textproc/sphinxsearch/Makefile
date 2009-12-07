@@ -26,7 +26,8 @@ OPTIONS=	MYSQL            "MySQL support"                    on  \
 		PGSQL            "PostgreSQL support"               off \
 		ICONV		 "Iconv support"		    on  \
 		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)"  off \
-		ID64		 "use 64-bit document and word IDs" off
+		ID64		 "use 64-bit document and word IDs" off \
+		UNIXODBC	 "unixODBC support"		    off
 
 ## FFR
 ##		LIBSTEMMER	 "compile with libstemmer support"  off
@@ -68,6 +69,13 @@ CXXFLAGS+=		-O3 -fomit-frame-pointer
 # changes in DB schema.  Disabled by default.
 .if defined(WITH_ID64)
 CONFIGURE_ARGS+=	--enable-id64
+.endif
+
+.if defined(WITH_UNIXODBC)
+CONFIGURE_ARGS+=	--with-unixodbc
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+.else
+CONFIGURE_ARGS+=	--without-unixodbc
 .endif
 
 ## FFR.  The snowball project doesn't release numbered versions of it's
