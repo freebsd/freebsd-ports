@@ -1,0 +1,6 @@
+pear-Crypt_HMAC2 is a implementation of Hashed Message Authentication
+Code for PHP5.It use the hash or mhash extensions when enabled to
+extend the range of cryptographic hash functions beyond the natively
+implemented MD5 and SHA1.
+
+WWW: http://pear.php.net/package/Crypt_HMAC2/
