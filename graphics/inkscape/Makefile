@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.47
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -39,7 +39,7 @@ MAN1=		inkscape.1
 MAN1_EN=	inkview.1
 MANLANG=	"" fr
 
-OPTIONS=	POPPLER	"Enable libpoppler-cairo for rendering PDF preview" off
+OPTIONS=	POPPLER	"Enable libpoppler-cairo for rendering PDF preview" on
 
 .include <bsd.port.pre.mk>
 
