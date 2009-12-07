@@ -19,6 +19,8 @@ COMMENT=	A compatibility plugin for Netscape 4 (NPAPI) plugins
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
+CONFLICTS=	nspluginwrapper-1.3.*
+
 RPMFILE=	${PORTNAME}-i386-${PORTVERSION}-1.x86_64.rpm
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -1,16 +1,16 @@
 bin/nspluginplayer
 bin/nspluginwrapper
-%%LIBDIR%%/%%ARCH%%/freebsd/npconfig
-%%LIBDIR%%/%%ARCH%%/freebsd/npplayer
-%%LIBDIR%%/%%ARCH%%/freebsd/npwrapper.so
+%%LIBDIR%%/%%HOST_ARCH%%/freebsd/npconfig
+%%LIBDIR%%/%%HOST_ARCH%%/freebsd/npplayer
+%%LIBDIR%%/%%HOST_ARCH%%/freebsd/npwrapper.so
 %%LIBDIR%%/i386/linux/libnoxshm.so
 %%LIBDIR%%/i386/linux/libxpcom.so
 %%LIBDIR%%/i386/linux/npviewer
 %%LIBDIR%%/i386/linux/npviewer.bin
-%%LIBDIR%%/noarch/npviewer
+%%LIBDIR%%/noarch/npviewer.sh
 @dirrm %%LIBDIR%%/noarch
 @dirrm %%LIBDIR%%/i386/linux
-@dirrm %%LIBDIR%%/%%ARCH%%/freebsd
+@dirrm %%LIBDIR%%/%%HOST_ARCH%%/freebsd
 @dirrm %%LIBDIR%%/i386
-@dirrmtry %%LIBDIR%%/%%ARCH%%
+@dirrmtry %%LIBDIR%%/%%HOST_ARCH%%
 @dirrm %%LIBDIR%%
