@@ -1,6 +1,12 @@
---- lib/imlib/imxport.c.orig	2002-10-03 18:35:31.000000000 +0900
-+++ lib/imlib/imxport.c	2008-11-08 16:02:24.000000000 +0900
-@@ -31,10 +31,12 @@
+Index: lib/imlib/imxport.c
+===================================================================
+RCS file: /home/cvs/private/hrs/kinput2/lib/imlib/imxport.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- lib/imlib/imxport.c	7 Dec 2009 06:36:04 -0000	1.1.1.1
++++ lib/imlib/imxport.c	7 Dec 2009 06:44:58 -0000	1.2
+@@ -31,10 +31,12 @@ static char *rcsid = "$Id: imxport.c,v 1
  
  #ifdef IM_UNIX_TRANSPORT
  #include <sys/un.h>
@@ -13,7 +19,7 @@
  #endif
  
  extern int errno;
-@@ -412,8 +414,9 @@
+@@ -412,8 +414,9 @@ IMConnection *conn;
  
  #ifdef IM_TCP_TRANSPORT
  int
@@ -24,7 +30,7 @@
  {
      struct sockaddr_in addr;
      int optval = 1;
-@@ -431,7 +434,22 @@
+@@ -431,7 +434,22 @@ int *portp;
  		     (char *)&optval, sizeof(optval));
  #endif /* SO_REUSEADDR */
  
@@ -48,7 +54,7 @@
      addr.sin_family = AF_INET;
      addr.sin_port = htons(*portp);
  
-@@ -495,6 +513,7 @@
+@@ -495,6 +513,7 @@ char *path;
  {
      struct sockaddr_un addr;
      int sock;
@@ -56,7 +62,7 @@
  
      TRACE(("IMCreateUnixService(%s)\n", path));
      if ((sock = socket(PF_UNIX, SOCK_STREAM, 0)) < 0) {
-@@ -510,15 +529,21 @@
+@@ -510,15 +529,21 @@ char *path;
       * Remove socket which is created by the previous process.
       */
      (void)unlink(path);

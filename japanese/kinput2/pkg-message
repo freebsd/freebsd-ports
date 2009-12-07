@@ -1,5 +1,14 @@
-############################################################
-Default key-binding is changed to "egg" key-binding by defining
-*CcWnn.ccdef:           ccdef.kinput2.egg
-in ${LOCALBASE}/lib/X11/app-defaults/Kinput2.
-############################################################"
+---------------------------------------------------------------------------
+- The default key-binding is now "egg" style.  See the following line in
+  in ${LOCALBASE}/lib/X11/app-defaults/Kinput2:
+
+*CcWnn.ccdef:	ccdef.kinput2.egg
+
+- The default CcWnn.Jserver is now "unix"; via unix domain socket.  To use
+  TCP/IP, modify the following line:
+
+*CcWnn.Jserver:	unix
+
+  Note that $JSERVER environment variable can be used to override the
+  configuration file.
+---------------------------------------------------------------------------

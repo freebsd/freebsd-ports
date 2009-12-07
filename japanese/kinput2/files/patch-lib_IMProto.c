@@ -1,6 +1,12 @@
---- lib/IMProto.c.orig	2002-10-03 18:35:28.000000000 +0900
-+++ lib/IMProto.c	2008-11-08 16:03:58.000000000 +0900
-@@ -259,7 +259,7 @@
+Index: lib/IMProto.c
+===================================================================
+RCS file: /home/cvs/private/hrs/kinput2/lib/IMProto.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- lib/IMProto.c	7 Dec 2009 06:36:04 -0000	1.1.1.1
++++ lib/IMProto.c	7 Dec 2009 06:44:58 -0000	1.2
+@@ -259,7 +259,7 @@ Cardinal *num_args;
  #ifdef IM_TCP_TRANSPORT
      if (ipw->imp.use_tcp_transport) {
  	ipw->imp.tcp_port = 0;	/* let the system choose the port number */
@@ -9,7 +15,7 @@
      }
      if (ipw->imp.tcp_sock >= 0) {
  	TRACE(("call XtAppAddInput for tcp socket(%d)\n", ipw->imp.tcp_sock));
-@@ -281,7 +281,7 @@
+@@ -281,7 +281,7 @@ Cardinal *num_args;
  	 * The unix domain socket pathname has the following form:
  	 *   <UNIX_SOCKET_DIR>/<Display Name>-<Language>
  	 */
@@ -18,7 +24,7 @@
  #ifdef S_IFLNK
  	{
  	    /*
-@@ -292,11 +292,11 @@
+@@ -292,11 +292,11 @@ Cardinal *num_args;
  	    struct stat st;
  	    if (lstat(UNIX_SOCKET_DIR, &st) == 0 &&
  		(st.st_mode & S_IFMT) == S_IFDIR) {

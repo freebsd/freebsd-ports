@@ -1,6 +1,12 @@
---- cmd/Kinput2.ad.orig	2002-10-03 18:35:26.000000000 +0900
-+++ cmd/Kinput2.ad	2008-11-08 03:30:03.000000000 +0900
-@@ -32,9 +32,12 @@
+Index: cmd/Kinput2.ad
+===================================================================
+RCS file: /home/cvs/private/hrs/kinput2/cmd/Kinput2.ad,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- cmd/Kinput2.ad	7 Dec 2009 06:36:04 -0000	1.1.1.1
++++ cmd/Kinput2.ad	7 Dec 2009 06:44:56 -0000	1.2
+@@ -32,9 +32,12 @@ Kinput2.height: 1
  !!
  !!	Wnn setup
  !!
