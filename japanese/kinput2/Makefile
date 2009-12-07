@@ -7,7 +7,7 @@
 
 PORTNAME=	kinput2
 PORTVERSION=	3.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -98,5 +98,8 @@ CONF+=		TRANSPORTDEFS="-DNO_TCP_TRANSPORT"
 pre-configure: apply-slist
 	${INSTALL_DATA} ${WRKDIR}/Kinput2.conf ${WRKSRC}/Kinput2.conf
 	${PRINTF} "%s\n" ${CONF} > ${WRKSRC}/Kinput2_im.conf
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
