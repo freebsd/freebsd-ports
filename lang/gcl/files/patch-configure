@@ -1,5 +1,10 @@
---- configure.orig	2005-01-15 11:17:17.000000000 -0800
+--- configure	2005-01-15 11:17:17.000000000 -0800
 +++ configure	2007-09-22 18:17:38.000000000 -0700
+@@ -1713,3 +1713,3 @@
+ 	if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-	    system=MP-RAS-`${AWK} '{print $3}' /etc/.relid'`
++	    system=MP-RAS-`${AWK} '{print $3}' /etc/.relid`
+ 	fi
 @@ -6368,4 +6368,4 @@
    else
 -  if test -f /usr/include/tcl${TCL_VERSION}/tk.h ; then
