@@ -7,7 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
@@ -37,6 +37,8 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
+OPTIONS=	NO_ASSERTS	"Disable assertions (needed by graphics/opengtl)" off
+
 .if defined(NOPORTDOCS)
 DOCSRCDIR=
 .else
@@ -55,6 +57,16 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CONFIGURE_ARGS+=	--enable-pic --with-pic
+.endif
+
+.ifdef(WITH_NO_ASSERTS)
+CONFIGURE_ARGS+=	--disable-assertions
+.else
+CONFIGURE_ARGS+=	--enable-assertions
 .endif
 
 post-patch:
