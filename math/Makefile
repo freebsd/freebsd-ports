@@ -330,6 +330,7 @@
     SUBDIR += p5-Math-Polynomial-Solve
     SUBDIR += p5-Math-Random
     SUBDIR += p5-Math-Random-ISAAC
+    SUBDIR += p5-Math-Random-ISAAC-XS
     SUBDIR += p5-Math-Random-MT
     SUBDIR += p5-Math-Random-MT-Auto
     SUBDIR += p5-Math-Random-OO
