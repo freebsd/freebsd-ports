@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 USE_BZIP2=	yes
 USE_RUBY=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-mpi-path=${LOCALBASE}/mpich2
 
 MAN1=		mpi_ruby.1
 MAN3=		MPI_Comm.3 MPI_Exception.3 MPI_Group.3 MPI_Keyval.3 MPI_Op.3 MPI_Request.3 \
