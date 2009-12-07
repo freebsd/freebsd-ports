@@ -1,0 +1,6 @@
+HTML::FormHandler allows you to define HTML form fields and validators.
+It can be used for both database and non-database forms, and will
+automatically update or create rows in a database. It can also be used
+to process structured data that doesn't come from an HTML form.
+
+WWW: http://search.cpan.org/~GSHANK/HTML-FormHandler
