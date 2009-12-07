@@ -1225,6 +1225,7 @@
     SUBDIR += pear-HTTP_WebDAV_Client
     SUBDIR += pear-HTTP_WebDAV_Server
     SUBDIR += pear-Services_Amazon
+    SUBDIR += pear-Services_Amazon_S3
     SUBDIR += pear-Services_Blogging
     SUBDIR += pear-Services_Compete
     SUBDIR += pear-Services_Delicious
