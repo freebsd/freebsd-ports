@@ -1,0 +1,13 @@
+%%SITE_PERL%%/MooseX/InsideOut.pm
+%%SITE_PERL%%/MooseX/InsideOut/Role/Meta/Instance.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/InsideOut/.packlist
+@dirrmtry %%SITE_PERL%%/MooseX/InsideOut/Role/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/InsideOut/Role
+@dirrmtry %%SITE_PERL%%/MooseX/InsideOut
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrmtry %%SITE_PERL%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/InsideOut
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry blib/script
