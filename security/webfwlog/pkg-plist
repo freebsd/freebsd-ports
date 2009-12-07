@@ -45,7 +45,6 @@ etc/webfwlog.conf.sample
 %%WWWDIR%%/include/static.php
 %%WWWDIR%%/include/syslog.php
 %%WWWDIR%%/include/update_cache.php
-%%WWWDIR%%/include/config.php.in
 %%WWWDIR%%/style.css
 %%WWWDIR%%/index.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pgsql/scripts

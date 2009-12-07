@@ -1,4 +1,4 @@
-Webfwlog-0.91 has been installed.  You should read the README in the mysql or
+Webfwlog-%%VERSION%% has been installed.  You should read the README in the mysql or
 pgsql directoy in %%DOCSDIR%% for information
 on setting up your MySQL or PostgreSQL server for use with webfwlog, and also
 copy the webfwlog.conf.sample file in %%PREFIX%%/etc to webfwlog.conf and

@@ -1,3 +1,6 @@
 MD5 (webfwlog-0.94.tar.gz) = 5af2fbbd36b039c004592e9dbf10ccc1
 SHA256 (webfwlog-0.94.tar.gz) = c1b84dd4036aa9f81fc4fbd527eda202e51c3767659b8f1eef12bfb3381c5b36
 SIZE (webfwlog-0.94.tar.gz) = 288138
+MD5 (webfwlog-0.94-tcpflags.patch) = 4d8a8e5f926832e504b196582b0fc85d
+SHA256 (webfwlog-0.94-tcpflags.patch) = b29df0df2b62ec99f121e50033b852e1a5177f0db1b31ecf12a8c535a16812dd
+SIZE (webfwlog-0.94-tcpflags.patch) = 455

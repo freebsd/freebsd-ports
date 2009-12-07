@@ -7,45 +7,55 @@
 
 PORTNAME=	webfwlog
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+
+PATCHFILES=	webfwlog-0.94-tcpflags.patch
+PATCH_SITES=	http://devel.webfwlog.net/download/patches/
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	A web-based firewall log analyzer
 
 OPTIONS=	MYSQL "Include MySQL Support" on \
-		POSTGRESQL "Include PostgreSQL Support" off
+		PGSQL "Include PostgreSQL Support" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-html-doc-root=${PREFIX}/${HTML_DOC_ROOT}
-CONFIGURE_ARGS+=--enable-syslog
+CONFIGURE_ARGS+=	--with-html-doc-root=${PREFIX}
+CONFIGURE_ARGS+=	--enable-syslog
 
-USE_PHP=	yes
+USE_PHP=	session pcre
 WANT_PHP_WEB=	yes
 
-# Set HTML_DOC_ROOT to your webserver's Document Root where you
-# want to install webfwlog, relative to ${PREFIX}.
-
 SUB_FILES=	pkg-message
+SUB_LIST+=	VERSION=${PORTVERSION}
 
 PORTDOCS=	AUTHORS COPYING CREDITS ChangeLog INSTALL \
 		README ReleaseNotes
 PORTEXAMPLES=	*
 
+.include <bsd.port.options.mk>
+
 .if defined(WITH_MYSQL)
+USE_PHP+=	mysql
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql
+CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-.if defined(WITH_POSTGRESQL)
-USE_PGSQL=
-CONFIGURE_ARGS+=--with-pgsql
+.if defined(WITH_PGSQL)
+USE_PHP+=	pgsql
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=	--with-pgsql
 .endif
+
+BINMODE=	4550
+BINGRP=	${WWWGRP}
 
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@${MKDIR} ${WWWDIR}/include/
-	@(cd ${WRKSRC}/webfwlog/include/ && ${COPYTREE_SHARE} \* ${WWWDIR}/include/)
+	@(cd ${WRKSRC}/webfwlog/include/ && ${COPYTREE_SHARE} \*.php ${WWWDIR}/include/)
+	${CHMOD} 555 ${WWWDIR}/include
 	${INSTALL_PROGRAM} ${WRKSRC}/syslog/wfwl_syslog ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/webfwlog/style.css ${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webfwlog/index.php ${WWWDIR}
