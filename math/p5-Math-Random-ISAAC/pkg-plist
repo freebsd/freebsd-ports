@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Math/Random/ISAAC/PP.pm
+%%SITE_PERL%%/Math/Random/ISAAC.pm
+@dirrmtry %%SITE_PERL%%/Math/Random/ISAAC
+@dirrmtry %%SITE_PERL%%/Math/Random
+@dirrmtry %%SITE_PERL%%/Math
