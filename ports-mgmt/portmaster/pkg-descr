@@ -1,6 +1,5 @@
 This script uses the existing ports infrastructure to track dependencies,
-and to keep those dependencies up to date.  Because it is written in /bin/sh,
-it needs no other languages installed.
+and keep them up to date.  It is written in /bin/sh so it has no dependencies.
 
 Portmaster has the following features:
   * User can specify the port to upgrade (or install) either by directory
@@ -11,7 +10,6 @@ Portmaster has the following features:
   * Runs make config recursively through all ports before starting build
   * Recursively checks and upgrades (or installs) all dependencies
   * User can force upgrades of all dependent ports
-  * Runs make clean before starting the build (can be disabled)
   * Offers the user the opportunity to delete stale distfiles
   * Supports /usr/ports/MOVED
   * Supports non-default settings of PORTSDIR and PKG_DBDIR
@@ -20,5 +18,7 @@ Portmaster has the following features:
   * Options to make packages out of installed, and new ports
   * Option to clean out stale port dependencies
   * Downloads distfiles in the background
+  * Packages can be used for installation either exclusively, if available,
+    or only for build dependencies
 
 WWW: http://dougbarton.us/portmaster.html

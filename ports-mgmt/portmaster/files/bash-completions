@@ -8,7 +8,10 @@ _portmaster () {
 	*/*)	COMPREPLY=( $( compgen -d /usr/ports/$cur ) ) ;;
 	--*)	COMPREPLY=( $( compgen -W '--force-config --show-work \
 		--clean-distfiles --clean-distfiles-all	--check-depends \
-		--check-port-dbdir --list-origins --help --version' -- $cur ) )
+		--check-port-dbdir --list-origins --packages --packages-only \
+		--packages-build --packages-if-newer --delete-build-only \
+		--always-fetch --local-packagedir= \
+		--help --version' -- $cur ) )
 		;;
 	*)	COMPREPLY=( $( compgen -d /var/db/pkg/$cur ) )
 		COMPREPLY=( ${COMPREPLY[@]#/var/db/pkg/} )
