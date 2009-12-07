@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	CQL-Parser
-PORTVERSION=	1.0
+PORTVERSION=	1.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/E/ES/ESUMMERS
+MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRICAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiles CQL strings into parse trees of Node subtypes
 
-BUILD_DEPENDS=	${SITE_PERL}/String/Tokenizer.pm:${PORTSDIR}/textproc/p5-String-Tokenizer \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=    p5-Class-Accessor>=0.1:${PORTSDIR}/devel/p5-Class-Accessor \
+                p5-Clone>=0.15:${PORTSDIR}/devel/p5-Clone \
+                p5-String-Tokenizer>=0.05:${PORTSDIR}/textproc/p5-String-Tokenizer
+BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
 
 MAN3=	CQL::AndNode.3 \
 	CQL::BooleanNode.3 \
@@ -30,6 +31,7 @@ MAN3=	CQL::AndNode.3 \
 	CQL::Parser.3 \
 	CQL::Prefix.3 \
 	CQL::PrefixNode.3 \
+	CQL::ProxModifierSet.3 \
 	CQL::ProxNode.3 \
 	CQL::Relation.3 \
 	CQL::TermNode.3 \

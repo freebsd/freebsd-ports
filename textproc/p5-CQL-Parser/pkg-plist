@@ -8,6 +8,7 @@
 %%SITE_PERL%%/CQL/Parser.pm
 %%SITE_PERL%%/CQL/Prefix.pm
 %%SITE_PERL%%/CQL/PrefixNode.pm
+%%SITE_PERL%%/CQL/ProxModifierSet.pm
 %%SITE_PERL%%/CQL/ProxNode.pm
 %%SITE_PERL%%/CQL/Relation.pm
 %%SITE_PERL%%/CQL/TermNode.pm
