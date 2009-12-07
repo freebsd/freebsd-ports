@@ -7,6 +7,7 @@
 
 PORTNAME=	Shell-Perl
 PORTVERSION=	0.0018
+PORTREVISION=	1
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,9 @@ COMMENT=	A read-eval-print loop in Perl
 RUN_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/Data/Dump.pm:${PORTSDIR}/devel/p5-Data-Dump \
-		${SITE_PERL}/${PERL_ARCH}/Data/Dump/Streamer.pm:${PORTSDIR}/devel/p5-Data-Dump-Streamer
+		${SITE_PERL}/${PERL_ARCH}/Data/Dump/Streamer.pm:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
+		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
+		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir
 BUILD_DEPENDS=	${SITE_PERL}/Test/Script.pm:${PORTSDIR}/devel/p5-Test-Script \
 		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
