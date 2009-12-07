@@ -11,7 +11,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_2.62.orig
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	aragon@phat.za.net
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
