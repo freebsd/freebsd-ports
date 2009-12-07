@@ -1,10 +1,5 @@
-Index: h/FreeBSD.h
-===================================================================
-RCS file: /cvsroot/gcl/gcl/h/FreeBSD.h,v
-retrieving revision 1.2.6.2.2.2
-diff -u -d -r1.2.6.2.2.2 FreeBSD.h
---- h/FreeBSD.h	12 Jun 2004 16:28:15 -0000	1.2.6.2.2.2
-+++ h/FreeBSD.h	18 Aug 2004 16:29:43 -0000
+--- h/FreeBSD.h	2004-06-12 12:28:15.000000000 -0400
++++ h/FreeBSD.h	2009-12-07 12:07:37.000000000 -0500
 @@ -32,6 +32,11 @@
  #endif
  #include "linux.h"
@@ -17,3 +12,16 @@ diff -u -d -r1.2.6.2.2.2 FreeBSD.h
  #if defined(__i386__)
  #define I386
  #endif
+@@ -68,7 +73,11 @@
+ #ifdef CLOCKS_PER_SEC
+ #define HZ CLOCKS_PER_SEC
+ #else
+-#define HZ 128
++#	ifdef _SC_CLK_TCK	/* Define HZ properly: */
++#		define HZ	sysconf(_SC_CLK_TCK)
++#	elif	!defined(HZ)
++#		define HZ	128
++#	endif
+ #endif
+ /* #define ss_base ss_sp */
+ 

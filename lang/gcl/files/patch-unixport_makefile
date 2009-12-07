@@ -1,0 +1,9 @@
+--- unixport/makefile	2005-01-15 11:34:45.000000000 -0500
++++ unixport/makefile	2009-12-07 12:35:23.000000000 -0500
+@@ -15,5 +15,5 @@
+ 
+ LD_LIBS_PRE=$(FIRST_FILE) $(addprefix -u ,$(PATCHED_SYMBOLS))
+-LD_LIBS_POST=$(LIBS) $(LIBC) -lgclp $(LAST_FILE)
++LD_LIBS_POST=-lgclp $(LIBS) $(LAST_FILE)
+ 
+ ifeq ($(ARRS),)

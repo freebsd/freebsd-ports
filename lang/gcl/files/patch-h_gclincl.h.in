@@ -1,0 +1,17 @@
+--- h/gclincl.h.in	2005-01-15 14:17:18.000000000 -0500
++++ h/gclincl.h.in	2009-12-07 12:11:34.000000000 -0500
+@@ -10,7 +10,5 @@
+ #undef X_DISPLAY_MISSING
+ 
+-#define DBEGIN 0
+-
+-#define MAXPAGE 128*1024
++#define MAXPAGE (128*1024*(SIZEOF_LONG>>2)/(1<<(PAGEWIDTH-12)))
+ #define VSSIZE 128*1024
+ #define BDSSIZE 2*1024
+@@ -205,5 +203,4 @@
+ #undef HOST_SYSTEM
+ #undef GCL_GPROF_START
+-#undef HZ
+ 
+ /* The number of bytes in a long.  */
