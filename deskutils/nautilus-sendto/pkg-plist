@@ -92,6 +92,7 @@ share/nautilus-sendto/ui/nautilus-sendto.ui
 @dirrm share/nautilus-sendto
 @dirrm lib/nautilus-sendto/plugins
 @dirrm lib/nautilus-sendto
+@dirrm include/nautilus-sendto
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/rw/LC_MESSAGES
