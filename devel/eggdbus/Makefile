@@ -18,6 +18,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_GNOME=	pkgconfig glib20 gnomehack
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
