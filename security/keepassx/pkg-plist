@@ -86,6 +86,7 @@ share/applications/keepassx.desktop
 %%DATADIR%%/icons/trashcan.png
 %%DATADIR%%/icons/up.png
 %%DATADIR%%/license.html
+share/mime/application/x-keepass.xml
 share/mime/packages/keepassx.xml
 share/mimelnk/application/x-keepass.desktop
 share/pixmaps/keepassx.xpm
