@@ -7,7 +7,7 @@
 
 PORTNAME=	gcl
 PORTVERSION=	2.6.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcl
@@ -19,13 +19,12 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
 ONLY_FOR_ARCHS=	i386
 
-USE_TK=	84
+USE_TK=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11
 CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--enable-ansi \
-	--enable-debug \
 	--enable-machine=FreeBSD \
 	--enable-info=${PREFIX}/info \
 	--enable-tkconfig=${LOCALBASE}/lib/tk${TCL_VER} \
