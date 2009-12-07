@@ -15,23 +15,21 @@ MASTER_SITE_SUBDIR=	gcl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Common Lisp
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
-		gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
 ONLY_FOR_ARCHS=	i386
 
-DEPRECATED=		fails to build on FreeBSD 7.x
-EXPIRATION_DATE=	2010-01-12
-
+USE_TK=	84
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11
 CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--enable-ansi \
+	--enable-debug \
 	--enable-machine=FreeBSD \
 	--enable-info=${PREFIX}/info \
-	--enable-tkconfig=${LOCALBASE}/lib/tk8.4 \
-	--enable-tclconfig=${LOCALBASE}/lib/tcl8.4 \
+	--enable-tkconfig=${LOCALBASE}/lib/tk${TCL_VER} \
+	--enable-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
 	--with-x \
 	--disable-dlopen \
 	--disable-dynsysbfd \
@@ -47,14 +45,10 @@ PLIST_SUB=	GCL_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Gcl compiled with gcc42 dumps core
-.endif
-
 pre-configure:
 	${SED} -i '' \
 		-e 's|@@CFLAGS@@|${CFLAGS} -I${LOCALBASE}/include|' \
-		-e 's|@@LOCALLIBS@@|-L${LOCALBASE}/lib -lgmp -lm -lreadline|' \
+		-e 's|@@LOCALLIBS@@|-lreadline -lm -L${LOCALBASE}/lib -lgmp|' \
 		${WRKSRC}/h/FreeBSD.defs
 
 .include <bsd.port.post.mk>

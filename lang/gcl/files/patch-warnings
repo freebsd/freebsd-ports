@@ -1,0 +1,63 @@
+--- o/plttest.c	2004-03-19 21:08:12.000000000 -0500
++++ o/plttest.c	2009-12-07 11:55:41.000000000 -0500
+@@ -20,24 +20,24 @@
+   setjmp(env);
+ 
+-  cos(d);
+-  sin(d);
+-  tan(d);
+-
+-  acos(d);
+-  asin(d);
+-  atan(d);
+-
+-  cosh(d);
+-  sinh(d);
+-  tanh(d);
++  (void)cos(d);
++  (void)sin(d);
++  (void)tan(d);
++
++  (void)acos(d);
++  (void)asin(d);
++  (void)atan(d);
++
++  (void)cosh(d);
++  (void)sinh(d);
++  (void)tanh(d);
+ 
+ #ifndef _WIN32
+-  acosh(d);
+-  asinh(d);
+-  atanh(d);
++  (void)acosh(d);
++  (void)asinh(d);
++  (void)atanh(d);
+ #endif
+ 
+-  exp(d);
+-  log(d);
++  (void)exp(d);
++  (void)log(d);
+   
+   return 0;
+--- o/run_process.c	2005-07-18 13:07:24.000000000 -0400
++++ o/run_process.c	2009-12-07 12:18:25.000000000 -0500
+@@ -453,5 +453,5 @@
+   check_arg(2);
+   vs_base[0] = make_socket_stream(vs_base[0], vs_base[1]);
+-  vs_pop;
++  (void)vs_pop;
+ }
+ 
+--- gcl-tk/tkMain.c	2003-09-26 09:46:54.000000000 -0400
++++ gcl-tk/tkMain.c	2009-12-07 15:04:38.000000000 -0500
+@@ -496,6 +496,6 @@
+ 	      || code)
+ 	    {
+-	      unsigned char buf[4];
+-	      unsigned char *p = buf;
++	      char buf[4];
++	      char *p = buf;
+ 	      /*header */
+ 	      *p++ = (code ? '1' : '0');
