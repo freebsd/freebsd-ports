@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tracker search tool and indexer metaport
 
-RUN_DEPENDS=	trackerd:${PORTSDIR}/sysutils/tracker-client
+RUN_DEPENDS=	${LOCALBASE}/libexec/trackerd:${PORTSDIR}/sysutils/tracker-client
 
 NO_BUILD=	yes
 OPTIONS=	GNOME "Gnome preferences, panel applet, and search tool" Off \
