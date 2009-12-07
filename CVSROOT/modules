@@ -6693,6 +6693,7 @@ kde4-shared-mime-info           ports/misc/kde4-shared-mime-info
 kde4-style-bespin               ports/x11-themes/kde4-style-bespin
 kde4-style-nitrogen             ports/x11-themes/kde4-style-nitrogen
 kde4-style-polyester            ports/x11-themes/kde4-style-polyester
+kde4-style-skulpture            ports/x11-themes/kde4-style-skulpture
 kde4-windeco-aurorae            ports/x11-themes/kde4-windeco-aurorae
 kde4-windeco-crystal            ports/x11-themes/kde4-windeco-crystal
 kde4-windeco-dekorator          ports/x11-themes/kde4-windeco-dekorator
@@ -8440,7 +8441,7 @@ luma                            ports/sysutils/luma
 luna                            ports/astro/luna
 luola                           ports/games/luola
 lupe                            ports/x11/lupe
-lusca-head			ports/www/lusca-head
+lusca-head                      ports/www/lusca-head
 lusernet                        ports/news/lusernet
 lush                            ports/lang/lush
 lv                              ports/misc/lv
@@ -13137,6 +13138,7 @@ p5-String-ShowDiff              ports/textproc/p5-String-ShowDiff
 p5-String-Similarity            ports/devel/p5-String-Similarity
 p5-String-Strip                 ports/textproc/p5-String-Strip
 p5-String-Tokenizer             ports/textproc/p5-String-Tokenizer
+p5-String-Truncate              ports/textproc/p5-String-Truncate
 p5-Sub-Current                  ports/devel/p5-Sub-Current
 p5-Sub-Delete                   ports/devel/p5-Sub-Delete
 p5-Sub-Exporter                 ports/devel/p5-Sub-Exporter
@@ -16789,6 +16791,7 @@ p5-string-showdiff              ports/textproc/p5-String-ShowDiff
 p5-string-similarity            ports/devel/p5-String-Similarity
 p5-string-strip                 ports/textproc/p5-String-Strip
 p5-string-tokenizer             ports/textproc/p5-String-Tokenizer
+p5-string-truncate              ports/textproc/p5-String-Truncate
 p5-sub-current                  ports/devel/p5-Sub-Current
 p5-sub-delete                   ports/devel/p5-Sub-Delete
 p5-sub-exporter                 ports/devel/p5-Sub-Exporter
@@ -23169,6 +23172,7 @@ typo                            ports/www/typo
 typo3                           ports/www/typo3
 typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
+u++                             ports/lang/u++
 u-boot                          ports/devel/u-boot
 uDrawGraph                      ports/graphics/uDrawGraph
 ua                              ports/sysutils/ua
