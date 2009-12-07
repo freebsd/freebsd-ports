@@ -2155,6 +2155,15 @@ www/ilias/Services/Language/templates/default/tpl.lang_maintenance.html
 www/ilias/Services/Language/templates/default/tpl.lang_settings.html
 www/ilias/Services/Language/templates/default/tpl.lang_statistics.html
 www/ilias/Services/Language/templates/default/tpl.translation_link.html
+www/ilias/Services/LoadTest/classes/class.ilDataLoader.php
+www/ilias/Services/LoadTest/config/cfg.loadtest.php
+www/ilias/Services/LoadTest/config/cfg.loadtest.template.php
+www/ilias/Services/LoadTest/jmx/getusersonline.jmx
+www/ilias/Services/LoadTest/jmx/test1.jmx
+www/ilias/Services/LoadTest/jmx/test1_local.jmx
+www/ilias/Services/LoadTest/results/test1.jtl
+www/ilias/Services/LoadTest/scripts/run_loadtest
+www/ilias/Services/LoadTest/scripts/loadtestdbgen.php
 www/ilias/Services/Logging/classes/class.ilLog.php
 www/ilias/Services/Mail/classes/class.ilAccountMail.php
 www/ilias/Services/Mail/classes/class.ilAddressbook.php
@@ -5419,6 +5428,12 @@ www/ilias/xml/netucateXMLAPI.dtd
 @dirrm www/ilias/Services/Mail
 @dirrm www/ilias/Services/Logging/classes
 @dirrm www/ilias/Services/Logging
+@dirrm www/ilias/Services/LoadTest/classes
+@dirrm www/ilias/Services/LoadTest/config
+@dirrm www/ilias/Services/LoadTest/jmx
+@dirrm www/ilias/Services/LoadTest/results
+@dirrm www/ilias/Services/LoadTest/scripts
+@dirrm www/ilias/Services/LoadTest
 @dirrm www/ilias/Services/Language/templates/default
 @dirrm www/ilias/Services/Language/templates
 @dirrm www/ilias/Services/Language/classes
