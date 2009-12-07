@@ -131,12 +131,8 @@ PLIST_SUB+=	LDAP_PTLOADER="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/pass8bit.diff
 .endif
 
-.if !exists(/usr/lib/libkrb5.a)
+.if !exists(/usr/lib/libkrb5.a) || ${OSVERSION} >= 800037
 CONFIGURE_ARGS+=--disable-gssapi
-.endif
-
-.if ${OSVERSION} >= 800037
-BROKEN=		does not compile
 .endif
 
 CYRUS_USER?=	cyrus
