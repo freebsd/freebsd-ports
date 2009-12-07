@@ -1,8 +1,3 @@
-IMPORTANT - READ CAREFULLY: Please read the COPYRIGHT included with these fonts
-before using.  The copyright can be found at
-
-	%%PREFIX%%/%%FONTSDIR%%/OFL
-
 To use these fonts, add the following line to the "Files" section of
 xorg.conf:
 

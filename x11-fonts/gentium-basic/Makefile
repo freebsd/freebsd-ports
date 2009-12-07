@@ -7,21 +7,20 @@
 # This port is shamelessly copied from Joe Marcus Clarke's bitstream-vera
 # port.
 
-PORTNAME=	gentium
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTNAME=	gentium-basic
+PORTVERSION=	1.1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=Gentium_102_L_tar&_sc=1&filename=/
-DISTNAME=	ttf-sil-${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=GentiumBasic_${PORTVERSION:C@\.@@g}_tar&filename=/
+DISTNAME=	ttf-sil-${PORTNAME}_${PORTVERSION:C@\.[[:digit:]]+$@@}.orig
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
-COMMENT=	Gentium TrueType font collection
+COMMENT=	Gentium Basic and Gentium Book Basic TrueType fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/ttf-sil-${PORTNAME}-${PORTVERSION:C@\.([[:digit:]]+)$@\1@}
+WRKSRC=		${WRKDIR}/ttf-sil-${PORTNAME}-${PORTVERSION:C@\.[[:digit:]]+$@@}
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR}" \
 		FONTNAME="${FONTNAME}"
@@ -37,9 +36,7 @@ FONTNAME=	${PORTNAME}
 FONTSDIR?=	lib/X11/fonts/${FONTNAME}
 FONTSTGT=	${PREFIX}/${FONTSDIR}
 
-DOCSLIST=	FONTLOG GENTIUM-FAQ Gentium-Greek-Specimen.pdf \
-		Gentium-RU-A3Proofs.pdf Gentium-RU-Specimen.pdf \
-		OFL-FAQ QUOTES README
+DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt
 
 .SILENT:
 
@@ -47,18 +44,13 @@ DOCSLIST=	FONTLOG GENTIUM-FAQ Gentium-Greek-Specimen.pdf \
 # Install
 #
 
-do-install: install-fonts install-conf install-docs
+do-install: install-fonts install-docs
 
 install-fonts:
 	${MKDIR} ${FONTSTGT}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSTGT}
 	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSTGT}
-	${INSTALL_DATA} ${WRKSRC}/OFL ${FONTSTGT}
-
-install-conf:
-	${MKDIR} ${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${WRKSRC}/local.conf \
-		${PREFIX}/etc/fonts/conf.d/${FONTNAME}.conf
+	${INSTALL_DATA} ${WRKSRC}/OFL.txt ${FONTSTGT}
 
 install-docs:
 .if !defined(NOPORTDOCS)

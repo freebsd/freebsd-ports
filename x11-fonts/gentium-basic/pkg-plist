@@ -1,20 +1,17 @@
-etc/fonts/conf.d/%%FONTNAME%%.conf
-%%FONTSDIR%%/GenAI102.ttf
-%%FONTSDIR%%/GenAR102.ttf
-%%FONTSDIR%%/GenI102.ttf
-%%FONTSDIR%%/GenR102.ttf
-%%FONTSDIR%%/OFL
+%%FONTSDIR%%/GenBasB.ttf
+%%FONTSDIR%%/GenBasBI.ttf
+%%FONTSDIR%%/GenBasI.ttf
+%%FONTSDIR%%/GenBasR.ttf
+%%FONTSDIR%%/GenBkBasB.ttf
+%%FONTSDIR%%/GenBkBasBI.ttf
+%%FONTSDIR%%/GenBkBasI.ttf
+%%FONTSDIR%%/GenBkBasR.ttf
+%%FONTSDIR%%/OFL.txt
 %%FONTSDIR%%/fonts.dir
-%%PORTDOCS%%%%DOCSDIR%%/FONTLOG
-%%PORTDOCS%%%%DOCSDIR%%/GENTIUM-FAQ
-%%PORTDOCS%%%%DOCSDIR%%/Gentium-Greek-Specimen.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Gentium-RU-A3Proofs.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Gentium-RU-Specimen.pdf
-%%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ
-%%PORTDOCS%%%%DOCSDIR%%/QUOTES
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/FONTLOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/GENTIUM-FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
-@dirrmtry etc/fonts/conf.d

@@ -74,6 +74,7 @@
     SUBDIR += fslsfonts
     SUBDIR += geminifonts
     SUBDIR += gentium
+    SUBDIR += gentium-basic
     SUBDIR += getbdf
     SUBDIR += gfe
     SUBDIR += gnome-font-sampler

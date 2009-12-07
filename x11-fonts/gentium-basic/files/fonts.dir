@@ -1,45 +1,41 @@
-44
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-ascii-0
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-fcd8859-15
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso10646-1
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-1
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-10
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-15
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-2
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-3
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-4
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-7
-GenAI102.ttf -misc-GentiumAlt-medium-i-normal--0-0-0-0-p-0-iso8859-9
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-ascii-0
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-fcd8859-15
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso10646-1
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-1
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-10
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-15
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-2
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-3
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-4
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-7
-GenAR102.ttf -misc-GentiumAlt-medium-r-normal--0-0-0-0-p-0-iso8859-9
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-ascii-0
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-fcd8859-15
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso10646-1
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-1
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-10
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-15
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-2
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-3
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-4
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-7
-GenI102.ttf -misc-Gentium-medium-i-normal--0-0-0-0-p-0-iso8859-9
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-ascii-0
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-fcd8859-15
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso10646-1
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-1
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-10
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-15
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-2
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-3
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-4
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-7
-GenR102.ttf -misc-Gentium-medium-r-normal--0-0-0-0-p-0-iso8859-9
+40
+GenBasBI.ttf -sil-Gentium Basic-bold-i-normal--0-0-0-0-p-0-ascii-0
+GenBasBI.ttf -sil-Gentium Basic-bold-i-normal--0-0-0-0-p-0-iso10646-1
+GenBasBI.ttf -sil-Gentium Basic-bold-i-normal--0-0-0-0-p-0-iso8859-1
+GenBasBI.ttf -sil-Gentium Basic-bold-i-normal--0-0-0-0-p-0-iso8859-15
+GenBasBI.ttf -sil-Gentium Basic-bold-i-normal--0-0-0-0-p-0-iso8859-9
+GenBkBasBI.ttf -sil-Gentium Book Basic-bold-i-normal--0-0-0-0-p-0-ascii-0
+GenBkBasBI.ttf -sil-Gentium Book Basic-bold-i-normal--0-0-0-0-p-0-iso10646-1
+GenBkBasBI.ttf -sil-Gentium Book Basic-bold-i-normal--0-0-0-0-p-0-iso8859-1
+GenBkBasBI.ttf -sil-Gentium Book Basic-bold-i-normal--0-0-0-0-p-0-iso8859-15
+GenBkBasBI.ttf -sil-Gentium Book Basic-bold-i-normal--0-0-0-0-p-0-iso8859-9
+GenBkBasR.ttf -sil-Gentium Book Basic-medium-r-normal--0-0-0-0-p-0-ascii-0
+GenBkBasR.ttf -sil-Gentium Book Basic-medium-r-normal--0-0-0-0-p-0-iso10646-1
+GenBkBasR.ttf -sil-Gentium Book Basic-medium-r-normal--0-0-0-0-p-0-iso8859-1
+GenBkBasR.ttf -sil-Gentium Book Basic-medium-r-normal--0-0-0-0-p-0-iso8859-15
+GenBkBasR.ttf -sil-Gentium Book Basic-medium-r-normal--0-0-0-0-p-0-iso8859-9
+GenBkBasB.ttf -sil-Gentium Book Basic-bold-r-normal--0-0-0-0-p-0-ascii-0
+GenBkBasB.ttf -sil-Gentium Book Basic-bold-r-normal--0-0-0-0-p-0-iso10646-1
+GenBkBasB.ttf -sil-Gentium Book Basic-bold-r-normal--0-0-0-0-p-0-iso8859-1
+GenBkBasB.ttf -sil-Gentium Book Basic-bold-r-normal--0-0-0-0-p-0-iso8859-15
+GenBkBasB.ttf -sil-Gentium Book Basic-bold-r-normal--0-0-0-0-p-0-iso8859-9
+GenBasI.ttf -sil-Gentium Basic-medium-i-normal--0-0-0-0-p-0-ascii-0
+GenBasI.ttf -sil-Gentium Basic-medium-i-normal--0-0-0-0-p-0-iso10646-1
+GenBasI.ttf -sil-Gentium Basic-medium-i-normal--0-0-0-0-p-0-iso8859-1
+GenBasI.ttf -sil-Gentium Basic-medium-i-normal--0-0-0-0-p-0-iso8859-15
+GenBasI.ttf -sil-Gentium Basic-medium-i-normal--0-0-0-0-p-0-iso8859-9
+GenBasB.ttf -sil-Gentium Basic-bold-r-normal--0-0-0-0-p-0-ascii-0
+GenBasB.ttf -sil-Gentium Basic-bold-r-normal--0-0-0-0-p-0-iso10646-1
+GenBasB.ttf -sil-Gentium Basic-bold-r-normal--0-0-0-0-p-0-iso8859-1
+GenBasB.ttf -sil-Gentium Basic-bold-r-normal--0-0-0-0-p-0-iso8859-15
+GenBasB.ttf -sil-Gentium Basic-bold-r-normal--0-0-0-0-p-0-iso8859-9
+GenBkBasI.ttf -sil-Gentium Book Basic-medium-i-normal--0-0-0-0-p-0-ascii-0
+GenBkBasI.ttf -sil-Gentium Book Basic-medium-i-normal--0-0-0-0-p-0-iso10646-1
+GenBkBasI.ttf -sil-Gentium Book Basic-medium-i-normal--0-0-0-0-p-0-iso8859-1
+GenBkBasI.ttf -sil-Gentium Book Basic-medium-i-normal--0-0-0-0-p-0-iso8859-15
+GenBkBasI.ttf -sil-Gentium Book Basic-medium-i-normal--0-0-0-0-p-0-iso8859-9
+GenBasR.ttf -sil-Gentium Basic-medium-r-normal--0-0-0-0-p-0-ascii-0
+GenBasR.ttf -sil-Gentium Basic-medium-r-normal--0-0-0-0-p-0-iso10646-1
+GenBasR.ttf -sil-Gentium Basic-medium-r-normal--0-0-0-0-p-0-iso8859-1
+GenBasR.ttf -sil-Gentium Basic-medium-r-normal--0-0-0-0-p-0-iso8859-15
+GenBasR.ttf -sil-Gentium Basic-medium-r-normal--0-0-0-0-p-0-iso8859-9
