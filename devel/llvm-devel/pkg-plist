@@ -1,6 +1,7 @@
 bin/bugpoint
 bin/ccc-analyzer
 bin/clang
+bin/clang++
 bin/llc
 bin/lli
 bin/llvm-ar
@@ -68,10 +69,10 @@ include/clang/Analysis/Analyses/LiveVariables.h
 include/clang/Analysis/Analyses/UninitializedValues.h
 include/clang/Analysis/AnalysisDiagnostic.h
 include/clang/Analysis/CFG.h
-include/clang/Analysis/CallGraph.h
 include/clang/Analysis/FlowSensitive/DataflowSolver.h
 include/clang/Analysis/FlowSensitive/DataflowValues.h
 include/clang/Analysis/LocalCheckers.h
+include/clang/Analysis/ManagerRegistry.h
 include/clang/Analysis/PathDiagnostic.h
 include/clang/Analysis/PathSensitive/AnalysisContext.h
 include/clang/Analysis/PathSensitive/AnalysisManager.h
@@ -81,13 +82,7 @@ include/clang/Analysis/PathSensitive/BugType.h
 include/clang/Analysis/PathSensitive/Checker.h
 include/clang/Analysis/PathSensitive/CheckerVisitor.def
 include/clang/Analysis/PathSensitive/CheckerVisitor.h
-include/clang/Analysis/PathSensitive/Checkers/AttrNonNullChecker.h
-include/clang/Analysis/PathSensitive/Checkers/BadCallChecker.h
 include/clang/Analysis/PathSensitive/Checkers/DereferenceChecker.h
-include/clang/Analysis/PathSensitive/Checkers/DivZeroChecker.h
-include/clang/Analysis/PathSensitive/Checkers/UndefinedArgChecker.h
-include/clang/Analysis/PathSensitive/Checkers/UndefinedAssignmentChecker.h
-include/clang/Analysis/PathSensitive/Checkers/VLASizeChecker.h
 include/clang/Analysis/PathSensitive/ConstraintManager.h
 include/clang/Analysis/PathSensitive/Environment.h
 include/clang/Analysis/PathSensitive/ExplodedGraph.h
@@ -116,7 +111,6 @@ include/clang/Analysis/Support/SaveAndRestore.h
 include/clang/Analysis/Visitors/CFGRecStmtDeclVisitor.h
 include/clang/Analysis/Visitors/CFGRecStmtVisitor.h
 include/clang/Analysis/Visitors/CFGStmtVisitor.h
-include/clang/Analysis/Visitors/CFGVarDeclVisitor.h
 include/clang/Basic/Builtins.def
 include/clang/Basic/Builtins.h
 include/clang/Basic/BuiltinsPPC.def
@@ -154,24 +148,32 @@ include/clang/Basic/SourceManager.h
 include/clang/Basic/SourceManagerInternals.h
 include/clang/Basic/TargetBuiltins.h
 include/clang/Basic/TargetInfo.h
+include/clang/Basic/TargetOptions.h
 include/clang/Basic/TemplateKinds.h
 include/clang/Basic/TokenKinds.def
 include/clang/Basic/TokenKinds.h
 include/clang/Basic/TypeTraits.h
 include/clang/Basic/Version.h
+include/clang/CodeGen/CodeGenOptions.h
 include/clang/CodeGen/ModuleBuilder.h
 include/clang/Driver/Action.h
 include/clang/Driver/Arg.h
 include/clang/Driver/ArgList.h
+include/clang/Driver/CC1Options.h
+include/clang/Driver/CC1Options.inc
 include/clang/Driver/Compilation.h
 include/clang/Driver/Driver.h
 include/clang/Driver/DriverDiagnostic.h
 include/clang/Driver/HostInfo.h
 include/clang/Driver/Job.h
+include/clang/Driver/OptSpecifier.h
+include/clang/Driver/OptTable.h
 include/clang/Driver/Option.h
-include/clang/Driver/Options.def
 include/clang/Driver/Options.h
+include/clang/Driver/Options.inc
 include/clang/Driver/Phases.h
+include/clang/Driver/Release/CC1Options.inc.tmp
+include/clang/Driver/Release/Options.inc.tmp
 include/clang/Driver/Tool.h
 include/clang/Driver/ToolChain.h
 include/clang/Driver/Types.def
@@ -181,29 +183,40 @@ include/clang/Frontend/ASTConsumers.h
 include/clang/Frontend/ASTUnit.h
 include/clang/Frontend/Analyses.def
 include/clang/Frontend/AnalysisConsumer.h
+include/clang/Frontend/ChainedDiagnosticClient.h
 include/clang/Frontend/CommandLineSourceLoc.h
-include/clang/Frontend/CompileOptions.h
+include/clang/Frontend/CompilerInstance.h
+include/clang/Frontend/CompilerInvocation.h
 include/clang/Frontend/DeclContextXML.def
 include/clang/Frontend/DeclXML.def
+include/clang/Frontend/DependencyOutputOptions.h
 include/clang/Frontend/DiagnosticOptions.h
 include/clang/Frontend/DocumentXML.def
 include/clang/Frontend/DocumentXML.h
 include/clang/Frontend/FixItRewriter.h
+include/clang/Frontend/FrontendAction.h
+include/clang/Frontend/FrontendActions.h
 include/clang/Frontend/FrontendDiagnostic.h
-include/clang/Frontend/InitHeaderSearch.h
-include/clang/Frontend/InitPreprocessor.h
-include/clang/Frontend/ManagerRegistry.h
+include/clang/Frontend/FrontendOptions.h
+include/clang/Frontend/FrontendPluginRegistry.h
+include/clang/Frontend/HeaderSearchOptions.h
+include/clang/Frontend/LangStandard.h
+include/clang/Frontend/LangStandards.def
 include/clang/Frontend/PCHBitCodes.h
 include/clang/Frontend/PCHReader.h
 include/clang/Frontend/PCHWriter.h
 include/clang/Frontend/PathDiagnosticClients.h
+include/clang/Frontend/PreprocessorOptions.h
+include/clang/Frontend/PreprocessorOutputOptions.h
 include/clang/Frontend/StmtXML.def
 include/clang/Frontend/TextDiagnosticBuffer.h
 include/clang/Frontend/TextDiagnosticPrinter.h
 include/clang/Frontend/TypeXML.def
 include/clang/Frontend/Utils.h
+include/clang/Frontend/VerifyDiagnosticsClient.h
 include/clang/Index/ASTLocation.h
 include/clang/Index/Analyzer.h
+include/clang/Index/CallGraph.h
 include/clang/Index/DeclReferenceMap.h
 include/clang/Index/Entity.h
 include/clang/Index/GlobalSelector.h
@@ -242,6 +255,7 @@ include/clang/Parse/Ownership.h
 include/clang/Parse/ParseDiagnostic.h
 include/clang/Parse/Parser.h
 include/clang/Parse/Scope.h
+include/clang/Parse/Template.h
 include/clang/Rewrite/DeltaTree.h
 include/clang/Rewrite/HTMLRewrite.h
 include/clang/Rewrite/RewriteRope.h
@@ -266,6 +280,7 @@ include/llvm/ADT/APFloat.h
 include/llvm/ADT/APInt.h
 include/llvm/ADT/APSInt.h
 include/llvm/ADT/BitVector.h
+include/llvm/ADT/DeltaAlgorithm.h
 include/llvm/ADT/DenseMap.h
 include/llvm/ADT/DenseMapInfo.h
 include/llvm/ADT/DenseSet.h
@@ -322,9 +337,11 @@ include/llvm/Analysis/Dominators.h
 include/llvm/Analysis/FindUsedTypes.h
 include/llvm/Analysis/IVUsers.h
 include/llvm/Analysis/InlineCost.h
+include/llvm/Analysis/InstructionSimplify.h
 include/llvm/Analysis/Interval.h
 include/llvm/Analysis/IntervalIterator.h
 include/llvm/Analysis/IntervalPartition.h
+include/llvm/Analysis/LazyValueInfo.h
 include/llvm/Analysis/LibCallAliasAnalysis.h
 include/llvm/Analysis/LibCallSemantics.h
 include/llvm/Analysis/LiveValues.h
@@ -333,6 +350,7 @@ include/llvm/Analysis/LoopInfo.h
 include/llvm/Analysis/LoopPass.h
 include/llvm/Analysis/MemoryBuiltins.h
 include/llvm/Analysis/MemoryDependenceAnalysis.h
+include/llvm/Analysis/PHITransAddr.h
 include/llvm/Analysis/Passes.h
 include/llvm/Analysis/PointerTracking.h
 include/llvm/Analysis/PostDominators.h
@@ -411,6 +429,7 @@ include/llvm/CodeGen/MachineOperand.h
 include/llvm/CodeGen/MachinePassRegistry.h
 include/llvm/CodeGen/MachineRegisterInfo.h
 include/llvm/CodeGen/MachineRelocation.h
+include/llvm/CodeGen/MachineSSAUpdater.h
 include/llvm/CodeGen/ObjectCodeEmitter.h
 include/llvm/CodeGen/Passes.h
 include/llvm/CodeGen/ProcessImplicitDefs.h
@@ -440,6 +459,7 @@ include/llvm/CompilerDriver/Plugin.h
 include/llvm/CompilerDriver/Tool.h
 include/llvm/Config/AsmParsers.def
 include/llvm/Config/AsmPrinters.def
+include/llvm/Config/Disassemblers.def
 include/llvm/Config/Targets.def
 include/llvm/Config/config.h
 include/llvm/Config/config.h.cmake
@@ -702,6 +722,7 @@ lib/libLLVMTransformUtils.a
 lib/libLLVMX86AsmParser.a
 lib/libLLVMX86AsmPrinter.a
 lib/libLLVMX86CodeGen.a
+lib/libLLVMX86Disassembler.a
 lib/libLLVMX86Info.a
 lib/libLLVMXCoreAsmPrinter.a
 lib/libLLVMXCoreCodeGen.a
@@ -811,8 +832,6 @@ libexec/clang-cc
 %%DOCSDIR%%/html/index.html
 %%DOCSDIR%%/html/libIndex.html
 %%DOCSDIR%%/html/llvm.css
-%%DOCSDIR%%/html/tutorial/JITTutorial1.html
-%%DOCSDIR%%/html/tutorial/JITTutorial2.html
 %%DOCSDIR%%/html/tutorial/LangImpl1.html
 %%DOCSDIR%%/html/tutorial/LangImpl2.html
 %%DOCSDIR%%/html/tutorial/LangImpl3.html
@@ -879,6 +898,7 @@ libexec/clang-cc
 @dirrm include/clang/Lex
 @dirrm include/clang/Index
 @dirrm include/clang/Frontend
+@dirrm include/clang/Driver/Release
 @dirrm include/clang/Driver
 @dirrm include/clang/CodeGen
 @dirrm include/clang/Basic/Release

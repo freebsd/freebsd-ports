@@ -41,6 +41,8 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
+OPTIONS=	NO_ASSERTS "Disable assertions (needed by graphics/opengtl) " off
+
 MAN1=		bugpoint.1 clang.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
@@ -59,6 +61,16 @@ SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d
 BROKEN=		does not compile
 .elif ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CONFIGURE_ARGS+=	--enable-pic --with-pic
+.endif
+
+.ifdef(WITH_NO_ASSERTS)
+CONFIGURE_ARGS+=	--disable-assertions
+.else
+CONFIGURE_ARGS+=	--enable-assertions
 .endif
 
 .if defined(BOOTSTRAP)
@@ -84,19 +96,19 @@ post-patch:
 	${REINPLACE_CMD} -e 's,\(PROJ_mandir.*:=\).*$$,\1${MANPREFIX}/man,g' \
 		${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
-		${WRKSRC}/tools/clang/utils/scan-build
+		${WRKSRC}/tools/clang/tools/scan-build/scan-build
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
-	    ${WRKSRC}/tools/clang/utils/ccc-analyzer \
-	    ${WRKSRC}/tools/clang/utils/scan-build
+	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
+	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc-analyzer \
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 	    ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/scan-build \
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
 	    ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/scanview.css ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/sorttable.js ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}

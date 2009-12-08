@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- tools/clang/utils/scan-build.orig
-+++ tools/clang/utils/scan-build
-@@ -406,7 +406,7 @@
+--- tools/clang/tools/scan-build/scan-build.orig
++++ tools/clang/tools/scan-build/scan-build
+@@ -423,7 +423,7 @@
  
    my $Dir = shift;
  
@@ -12,7 +12,7 @@ $FreeBSD$
    
    DieDiag("Cannot find 'sorttable.js'.\n")
      if (! -r $JS);  
-@@ -410,7 +410,7 @@
+@@ -433,7 +433,7 @@
    DieDiag("Could not copy 'sorttable.js' to '$Dir'.\n")
      if (! -r "$Dir/sorttable.js");
      
