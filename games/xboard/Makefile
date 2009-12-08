@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
@@ -17,8 +17,6 @@ COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 OPTIONS=	XAW3D	"Use Xaw3d widgets (instead of Xaw)"	On
 
 USE_XORG=	xt xpm xaw
-USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:19 aclocal:19
-AUTOMAKE_ARGS=	-a
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 MAN6=		xboard.6
@@ -40,9 +38,9 @@ BROKEN=		Does not install on sparc64
 .endif
 
 post-patch:
-		@${REINPLACE_CMD} -e '/^$$/s/$$/bin_SCRIPTS = cmail /' \
-			-e '/^info/s/copyright.texi//' \
-			${WRKSRC}/Makefile.am
 		@${REINPLACE_CMD} -e 's/fairymax/gnuchessx/' ${WRKSRC}/xboard.h
+
+post-install:
+		@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
