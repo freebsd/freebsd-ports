@@ -173,8 +173,13 @@ CONFIGURE_ARGS+=	--disable-dbus
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBUSB)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBUSB) && ${OSVERSION}>800062
+CPPFLAGS+=		-I/usr/include
+LDFLAGS+=		-L/usr/lib
+.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBUSB) && ${OSVERSION}<800063
 LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
+.else
+CONFIGURE_ARGS+=	--disable-libusb
 .endif
 
 .if defined(CUPS_CLIENT)
