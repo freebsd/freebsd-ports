@@ -1,0 +1,49 @@
+--- Applications/StreamingParaView/CMakeLists.txt.orig	2009-09-27 20:18:57.000000000 +0700
++++ Applications/StreamingParaView/CMakeLists.txt	2009-09-27 20:19:25.000000000 +0700
+@@ -198,26 +198,26 @@
+   SET (QTLIBLIST ${QTLIBLIST} QTASSISTANT)
+ ENDIF (WIN32)
+ 
+-IF(NOT Q_WS_MAC)
+-  FOREACH(qtlib ${QTLIBLIST})
+-    IF (NOT WIN32)
+-      #INSTALL(FILES ${QT_${qtlib}_LIBRARY_RELEASE} DESTINATION ${PV_INSTALL_LIB_DIR})
+-      GET_FILENAME_COMPONENT(QT_LIB_DIR_tmp ${QT_${qtlib}_LIBRARY_RELEASE} PATH)
+-      GET_FILENAME_COMPONENT(QT_LIB_NAME_tmp ${QT_${qtlib}_LIBRARY_RELEASE} NAME)
+-      FILE(GLOB QT_LIB_LIST RELATIVE ${QT_LIB_DIR_tmp} "${QT_${qtlib}_LIBRARY_RELEASE}*")
+-      INSTALL(CODE "
+-MESSAGE(STATUS \"Installing \${CMAKE_INSTALL_PREFIX}/${PV_INSTALL_LIB_DIR}/${QT_LIB_NAME_tmp}\")
+-EXECUTE_PROCESS (WORKING_DIRECTORY ${QT_LIB_DIR_tmp}
+-                 COMMAND tar c ${QT_LIB_LIST}
+-                 COMMAND tar -xC \${CMAKE_INSTALL_PREFIX}/${PV_INSTALL_LIB_DIR})
+-        " COMPONENT Runtime)
+-    ELSE (NOT WIN32)
+-      GET_FILENAME_COMPONENT(QT_DLL_PATH_tmp ${QT_QMAKE_EXECUTABLE} PATH)
+-      INSTALL(FILES ${QT_DLL_PATH_tmp}/${qtlib}4.dll DESTINATION ${PV_INSTALL_BIN_DIR} COMPONENT Runtime)
+-    ENDIF (NOT WIN32)
+-    
+-  ENDFOREACH(qtlib)
+-ENDIF(NOT Q_WS_MAC)
++#IF(NOT Q_WS_MAC)
++#  FOREACH(qtlib ${QTLIBLIST})
++#    IF (NOT WIN32)
++#      #INSTALL(FILES ${QT_${qtlib}_LIBRARY_RELEASE} DESTINATION ${PV_INSTALL_LIB_DIR})
++#      GET_FILENAME_COMPONENT(QT_LIB_DIR_tmp ${QT_${qtlib}_LIBRARY_RELEASE} PATH)
++#      GET_FILENAME_COMPONENT(QT_LIB_NAME_tmp ${QT_${qtlib}_LIBRARY_RELEASE} NAME)
++#      FILE(GLOB QT_LIB_LIST RELATIVE ${QT_LIB_DIR_tmp} "${QT_${qtlib}_LIBRARY_RELEASE}*")
++#      INSTALL(CODE "
++#MESSAGE(STATUS \"Installing \${CMAKE_INSTALL_PREFIX}/${PV_INSTALL_LIB_DIR}/${QT_LIB_NAME_tmp}\")
++#EXECUTE_PROCESS (WORKING_DIRECTORY ${QT_LIB_DIR_tmp}
++#                 COMMAND tar c ${QT_LIB_LIST}
++#                 COMMAND tar -xC \${CMAKE_INSTALL_PREFIX}/${PV_INSTALL_LIB_DIR})
++#        " COMPONENT Runtime)
++#    ELSE (NOT WIN32)
++#      GET_FILENAME_COMPONENT(QT_DLL_PATH_tmp ${QT_QMAKE_EXECUTABLE} PATH)
++#      INSTALL(FILES ${QT_DLL_PATH_tmp}/${qtlib}4.dll DESTINATION ${PV_INSTALL_BIN_DIR} COMPONENT Runtime)
++#    ENDIF (NOT WIN32)
++#    
++#  ENDFOREACH(qtlib)
++#ENDIF(NOT Q_WS_MAC)
+ 
+ # Hard-coded install rules for anything left to install. These should
+ # probably go to a local cmake file. Change to match the build system's
