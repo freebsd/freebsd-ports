@@ -1,0 +1,58 @@
+The latest FreeTDS defines CS_VERSION_foo without also defining
+BLK_VERSION_foo. So we have to check these defines independently.
+
+	-mi
+
+--- src/cmd_bcp.c	2004-11-22 02:10:23.000000000 -0500
++++ src/cmd_bcp.c	2008-06-25 22:39:55.000000000 -0400
+@@ -341,24 +341,37 @@
+ 
+     /*-- Find the appropriate BLK_VERSION_xxx value --*/
++    if (blk_ver == -1)
++	switch(g_cs_ver) {
+ #if defined(CS_VERSION_150)
+-    if(blk_ver == -1 && g_cs_ver == CS_VERSION_150) {
+-	blk_ver = BLK_VERSION_150;
+-    }
++	case CS_VERSION_150:
++#	if defined(BLK_VERSION_150)
++		blk_ver = BLK_VERSION_150;
++		break;
++#	endif
+ #endif
+ #if defined(CS_VERSION_125)
+-    if(blk_ver == -1 && g_cs_ver == CS_VERSION_125) {
+-	blk_ver = BLK_VERSION_125;
+-    }
++	case CS_VERSION_125:
++#	if defined(BLK_VERSION_125)
++		blk_ver = BLK_VERSION_125;
++		break;
++#	endif
+ #endif
+-#if defined(CS_VERSION_120)
+-    if(blk_ver == -1 && g_cs_ver == CS_VERSION_120)
+-	blk_ver = BLK_VERSION_120;
++#if defined(CS_VERSION_120) && CS_VERSION_120 != CS_VERSION_110
++	case CS_VERSION_120:
++#	if defined(BLK_VERSION_120)
++		blk_ver = BLK_VERSION_120;
++		break;
++#	endif
+ #endif
+ #if defined(CS_VERSION_110)
+-    if(blk_ver == -1 && g_cs_ver == CS_VERSION_110)
+-	blk_ver = BLK_VERSION_110;
++	case CS_VERSION_110:
++#	if defined(BLK_VERSION_110)
++		blk_ver = BLK_VERSION_110;
++		break;
++#	endif
+ #endif
+-    if(blk_ver == -1)
+-	blk_ver = BLK_VERSION_100;
++	default:
++		blk_ver = BLK_VERSION_100;
++	}
+ 
+     /*-- Initialize the command --*/
