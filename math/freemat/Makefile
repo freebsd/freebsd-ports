@@ -7,7 +7,7 @@
 
 PORTNAME=		FreeMat
 PORTVERSION=		3.6
-PORTREVISION=	5
+PORTREVISION=		6
 CATEGORIES=		math science
 MASTER_SITES=		SF
 .ifdef WITH_MPI
@@ -21,8 +21,6 @@ LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\
 			pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 
-BROKEN=			does not compile
-
 .ifdef WITH_MPI
 IGNORE=			no MPI support at the moment
 .endif
@@ -32,6 +30,7 @@ FFLAGS+=		-O2
 
 USE_GL=			yes
 USE_QT_VER=		4
+USE_GCC=		4.3+
 USE_GMAKE=		yes
 QT_COMPONENTS=		gui network opengl moc_build rcc_build uic_build xml svg
 GNU_CONFIGURE=		yes
