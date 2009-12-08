@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A wav player and recorder
 
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	Doesn't work on !i386
+
 MAN1=		wavplay.1
 
 PLIST_FILES=	bin/wavplay bin/wavrec
