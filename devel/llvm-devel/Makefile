@@ -52,6 +52,7 @@ MAN1=		bugpoint.1 clang.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 .include <bsd.port.pre.mk>
 
 .if defined(BOOTSTRAP)
+LANG=		"C"
 SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"
