@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc4
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
@@ -15,9 +15,11 @@ DISTNAME=	${PKGNAMEPREFIX}gcc-4.2-${PORTVERSION}.source
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A gcc4 frontend for LLVM
 
-BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	llc:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
-BROKEN=		does not compile
+CONFLICTS=	llvm-devel-[0-9]* llvm-2.[0-5]*
 
 GNU_CONFIGURE=	yes
 USE_BISON=	build
@@ -34,6 +36,7 @@ CONFIGURE_ARGS=	--enable-llvm=${LOCALBASE} \
 		--enable-languages=c,c++ \
 		--disable-nls \
 		--with-system-zlib \
+		--with-as=${LOCALBASE}/bin/as \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-prefix=llvm- \
 		--libdir=${TARGLIB} \
