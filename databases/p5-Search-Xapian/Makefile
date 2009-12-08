@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.0.16.0
+PORTVERSION=	1.0.17.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,7 +38,7 @@ MAN3=	Search::Xapian.3 \
 	Search::Xapian::Weight.3 \
 	Search::Xapian::WritableDatabase.3
 
-post-extract:
-	${PERL} -i -pe 's/^if \(defined \$$builddir/if (0/' ${WRKSRC}/Makefile.PL
+post-patch:
+	@${REINPLACE_CMD} -e 's/^if (defined $$builddir/if (0/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
