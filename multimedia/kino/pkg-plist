@@ -319,6 +319,7 @@ share/kino/scripts/dvdauthor/growisofs.sh
 share/kino/scripts/dvdauthor/none.sh
 share/kino/scripts/dvdauthor/qdvdauthor.sh
 share/kino/scripts/exports/extract_chapters
+share/kino/scripts/exports/ffmpeg2dirac.sh
 share/kino/scripts/exports/ffmpeg2theora.sh
 share/kino/scripts/exports/ffmpeg_3gp.sh
 share/kino/scripts/exports/ffmpeg_divx.sh
@@ -400,6 +401,7 @@ share/locale/it/LC_MESSAGES/kino.mo
 share/locale/nb/LC_MESSAGES/kino.mo
 share/locale/no/LC_MESSAGES/kino.mo
 share/locale/ru/LC_MESSAGES/kino.mo
+share/locale/sl/LC_MESSAGES/kino.mo
 share/locale/sv/LC_MESSAGES/kino.mo
 share/locale/uk/LC_MESSAGES/kino.mo
 share/locale/zh_TW/LC_MESSAGES/kino.mo
