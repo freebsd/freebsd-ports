@@ -24,6 +24,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 CONFLICTS=	llvm-devel-2.[0-9]*
 
 GNU_CONFIGURE=	yes
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes
