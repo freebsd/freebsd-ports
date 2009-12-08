@@ -16,6 +16,4 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-ebcdic.h
 
 MASTERDIR=	${.CURDIR}/../../archivers/unzip
 
-BROKEN=		does not patch
-
 .include "${MASTERDIR}/Makefile"
