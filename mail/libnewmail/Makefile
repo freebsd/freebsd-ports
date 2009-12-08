@@ -19,6 +19,8 @@ LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
 		oop.4:${PORTSDIR}/devel/liboop
 
 BROKEN=		does not configure
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_AUTOTOOLS=	libltdl:22 libtool:22
 GNU_CONFIGURE=	yes

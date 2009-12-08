@@ -19,6 +19,8 @@ RUN_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	asis-3.15*
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_GMAKE=	yes
 

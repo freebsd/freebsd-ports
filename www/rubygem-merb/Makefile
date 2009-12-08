@@ -39,6 +39,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	rubygem-rubigen>0:${PORTSDIR}/devel/rubygem-rubigen
 
 BROKEN=		fails to install
+DEPRECATED=	has been broken for 5 months
+EXPIRATION_DATE=2010-01-08
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

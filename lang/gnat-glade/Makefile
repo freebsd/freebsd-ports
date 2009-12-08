@@ -19,6 +19,8 @@ COMMENT=	GNU Ada distributed systems annex
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_AUTOTOOLS=	automake:14 autoconf:262
 USE_GMAKE=	yes

@@ -21,6 +21,8 @@ BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
 BROKEN=		checksum mismatch
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 NO_SIZE=	yes # Most mirrors don't provide size-data
 

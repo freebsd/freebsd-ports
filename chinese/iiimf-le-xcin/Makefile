@@ -19,6 +19,8 @@ EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_XORG=	x11 xproto
 WRKSRC=		${WRKDIR}/iiimf-xcin

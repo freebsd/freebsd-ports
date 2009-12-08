@@ -16,6 +16,8 @@ COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 LIB_DEPENDS=	saml.5:${PORTSDIR}/security/opensaml
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 OPTIONS=	APACHE22 "Use Apache version 2.2 instead of version 2.0"  on
 

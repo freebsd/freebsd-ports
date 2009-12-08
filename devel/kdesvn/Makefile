@@ -32,6 +32,8 @@ EXTRA_PATCHES=	${FILESDIR}/nls-patch-CMakeLists.txt
 .endif
 
 BROKEN=		fails to build
+DEPRECATED=	has been broken for 4 months
+EXPIRATION_DATE=2010-01-08
 
 DOCSDIR=	${PREFIX}/share/doc
 

@@ -15,6 +15,8 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		TeX applet used to generate correct Chinese PDF bookmarks
 
 BROKEN=	does not fetch
+DEPRECATED=	has been broken for 6 months
+EXPIRATION_DATE=2010-01-08
 
 PLIST_FILES=		bin/gbk2uni
 

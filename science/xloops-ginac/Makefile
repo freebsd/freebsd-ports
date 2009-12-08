@@ -18,6 +18,8 @@ COMMENT=	A program calculating Feynman diagrams
 LIB_DEPENDS=	ginac-1.5.0:${PORTSDIR}/math/GiNaC
 
 BROKEN=		does not build with latest GiNaC version.
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes

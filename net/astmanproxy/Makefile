@@ -18,6 +18,8 @@ COMMENT=	A multi-threaded proxy server for Asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 BROKEN=		does not fetch
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

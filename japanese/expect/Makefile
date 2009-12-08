@@ -17,6 +17,8 @@ COMMENT=	A sophisticated scripter based on Japanized tcl/tk
 LIB_DEPENDS=	tk80jp.1:${PORTSDIR}/japanese/tk80
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \

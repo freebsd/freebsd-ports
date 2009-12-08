@@ -19,6 +19,8 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
 BROKEN=		does not compile with ffmpeg 0.5 and later
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

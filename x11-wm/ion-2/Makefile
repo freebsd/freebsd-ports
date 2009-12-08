@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiling tabbed window manager
 
 BROKEN=		Does not build with new libltdl 2.2
+DEPRECATED=	has been broken for 4 months
+EXPIRATION_DATE=2010-01-08
 
 CONFLICTS=	ion-2002* ion-devel-* pwm-*
 

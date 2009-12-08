@@ -31,6 +31,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg			\
 #		lirc_client:${PORTSDIR}/comms/lirc
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

@@ -26,6 +26,8 @@ USE_GNOME=	gnomepanel
 USE_RUBY_EXTCONF=	yes
 
 BROKEN=		does not build with GNOME 2.26.
+DEPRECATED=	has been broken for 7 months
+EXPIRATION_DATE=2010-01-08
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 

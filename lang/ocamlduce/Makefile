@@ -23,6 +23,8 @@ USE_OCAML_PLIST=	yes
 
 ALL_TARGET=	all opt
 BROKEN=		does not build with current version of lang/ocaml
+DEPRECATED=	has been broken for 7 months
+EXPIRATION_DATE=2010-01-08
 
 .include <bsd.port.pre.mk>
 

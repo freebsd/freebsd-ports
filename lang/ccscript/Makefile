@@ -19,6 +19,8 @@ COMMENT=	State-event driven class extendible C++ script interpreter
 LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp
 
 BROKEN=		Does not build with libtool 2.2.
+DEPRECATED=	has been broken for 4 months
+EXPIRATION_DATE=2010-01-08
 
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig gnometarget

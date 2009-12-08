@@ -24,5 +24,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 BROKEN=		does not install, requires exact version of oauth
+DEPRECATED=	has been broken for 5 months
+EXPIRATION_DATE=2010-01-08
 
 .include <bsd.port.mk>

@@ -19,5 +19,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 .include <bsd.port.mk>

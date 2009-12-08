@@ -17,6 +17,8 @@ COMMENT=	An Ada-binding to the X Window System and *tif
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_MOTIF=	yes
 USE_XORG=	x11

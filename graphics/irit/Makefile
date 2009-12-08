@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
 		${LOCALBASE}/lib/libungif.a:${PORTSDIR}/graphics/libungif
 
 BROKEN=		checksum mismatch
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

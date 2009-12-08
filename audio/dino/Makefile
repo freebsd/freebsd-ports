@@ -29,5 +29,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for 7 months
+EXPIRATION_DATE=2010-01-08
 
 .include <bsd.port.mk>

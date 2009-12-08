@@ -18,6 +18,8 @@ BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 RUN_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src

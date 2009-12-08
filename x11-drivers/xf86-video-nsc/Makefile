@@ -14,6 +14,8 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org nsc display driver
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 5 months
+EXPIRATION_DATE=2010-01-08
 
 XORG_CAT=	driver
 USE_XORG=	videoproto xextproto xf86dgaproto

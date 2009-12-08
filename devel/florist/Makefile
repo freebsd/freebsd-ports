@@ -29,6 +29,8 @@ MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} LN=${LN} \
 USE_LDCONFIG=	yes
 
 BROKEN= 	Does not build after gpl 2009 update to lang/gnat
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 post-extract:
 # add FreeBSD configuration

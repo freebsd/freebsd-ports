@@ -27,6 +27,8 @@ COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 # but right now it does not.
 ONLY_FOR_ARCHS=	i386
 BROKEN=		does not build
+DEPRECATED=	has been broken for 4 months
+EXPIRATION_DATE=2010-01-08
 
 USE_AUTOTOOLS=	autoconf:262:env
 USE_BZIP2=	YES

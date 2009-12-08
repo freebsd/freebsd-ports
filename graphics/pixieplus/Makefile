@@ -19,6 +19,8 @@ LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 		ungif:${PORTSDIR}/graphics/libungif
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for 6 months
+EXPIRATION_DATE=2010-01-08
 
 USE_AUTOTOOLS=	libtool:22
 USE_KDELIBS_VER=3

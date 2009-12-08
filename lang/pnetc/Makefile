@@ -20,6 +20,8 @@ BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 5 months
+EXPIRATION_DATE=2010-01-08
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -17,6 +17,8 @@ COMMENT=	P4::Client - Perl extension for the Perforce API
 BUILD_DEPENDS=	${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for 11 months
+EXPIRATION_DATE=2010-01-08
 
 PERL_CONFIGURE=	yes
 CC=	${CXX}

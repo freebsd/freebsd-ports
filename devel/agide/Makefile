@@ -18,6 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/aap:${PORTSDIR}/devel/aap \
 		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 6 months
+EXPIRATION_DATE=2010-01-08
 
 MAN1=		agide.1
 
