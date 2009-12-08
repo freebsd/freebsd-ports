@@ -1,0 +1,14 @@
+XORP is the eXtensible Open Router Platform.
+
+The XORP project is developing an open source software router. The software
+is intended to be stable and fully featured enough for production use, and
+flexible and extensible enough for research use.  The software is covered by
+a mixture of LGPLv2 / GPLv2 licenses, and the code is publicly available,
+allowing for production deployment and commercial development.
+
+This port is for the latest SVN version of XORP.
+
+WWW: http://www.xorp.org/
+
+Bruce
+bms@FreeBSD.org
