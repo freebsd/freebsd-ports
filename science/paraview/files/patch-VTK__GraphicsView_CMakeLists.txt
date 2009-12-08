@@ -1,0 +1,11 @@
+--- VTK/Examples/GUI/Qt/GraphicsView/CMakeLists.txt.orig	2009-12-03 14:37:13.000000000 +0600
++++ VTK/Examples/GUI/Qt/GraphicsView/CMakeLists.txt	2009-12-03 14:37:25.000000000 +0600
+@@ -26,7 +26,7 @@
+ )
+ 
+ # Use the include path and library for Qt that is used by VTK.
+-INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR}
++INCLUDE_DIRECTORIES(BEFORE ${QT_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR}
+                      ${QT_QTCORE_INCLUDE_DIR})
+ 
+ ADD_EXECUTABLE( qtgraphicsview MACOSX_BUNDLE ${SRCS})
