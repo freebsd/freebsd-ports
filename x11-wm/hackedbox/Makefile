@@ -10,7 +10,9 @@ PORTNAME=	hackedbox
 PORTVERSION=	0.8.4
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/
+MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/ \
+		http://www.sourcefiles.org/Window_Managers/ \
+		http://mirror.bytemark.co.uk/freebsd/distfiles/
 
 MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	Hackedbox is a small and fast window manager based on Blackbox
