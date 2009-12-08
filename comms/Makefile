@@ -24,6 +24,7 @@
     SUBDIR += conserver-com
     SUBDIR += cutecom
     SUBDIR += cwdaemon
+    SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += ebook2cw
     SUBDIR += echolinux
