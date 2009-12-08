@@ -4,4 +4,8 @@ and Reporting Technology System (S.M.A.R.T.) built into most modern ATA and
 SCSI hard disks.  It is derived from the smartsuite package, and includes
 support for ATA/ATAPI-5 disks.
 
+Compared to version 5.38 this SVN snapshot brings more USB hardware support:
+ http://sourceforge.net/apps/trac/smartmontools/wiki/Supported_USB-Devices
+as well as other improvements.
+
 WWW: http://smartmontools.sourceforge.net
