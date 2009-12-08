@@ -1,9 +1,0 @@
-Jakarta Tomcat is a web server written in 100% Pure Java. The
-Tomcat 4 branch is the reference implementation for the Java
-Servlet 2.3 and JavaServer Pages 1.2 technologies.
-
-The Tomcat 4.0.x series are being replaced by the Tomcat 4.1.x
-series, which is a refactoring of 4.0 with some minor feature
-enhancements.
-
-WWW: http://jakarta.apache.org/tomcat/
