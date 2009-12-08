@@ -15,21 +15,13 @@ DISTNAME=		big-sister-${PORTVERSION}
 MAINTAINER=	freebsd@troback.com
 COMMENT=	SNMP-based network and system monitor with web interface
 
-RUN_DEPENDS=	\
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp \
 		rrdtool:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
-
-# net-snmp provides SNMP.pm. ucd-snmp does not; requires p5-SNMP.
-# Depend on net-snmp by default.
-.if defined(WITH_UCDSNMP)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/p5-SNMP
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp
-.endif
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
