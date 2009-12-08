@@ -17,25 +17,3 @@ diff -ubwr ../../work/syslinux-3.72/libinstaller/bin2c.pl ./libinstaller/bin2c.p
 +printf "\nunsigned char *%s = _%s;\n", $table_name, $table_name;
  
  exit 0;
-diff -ubwr ../../work/syslinux-3.72/libinstaller/syslinux.h ./libinstaller/syslinux.h
---- ../../work/syslinux-3.72/libinstaller/syslinux.h	2008-09-26 01:46:02.000000000 +0200
-+++ ./libinstaller/syslinux.h	2008-11-26 13:32:23.000000000 +0100
-@@ -17,15 +17,15 @@
- #include "advconst.h"
- 
- /* The standard boot sector and ldlinux image */
--extern unsigned char syslinux_bootsect[];
-+extern unsigned char *syslinux_bootsect;
- extern unsigned int  syslinux_bootsect_len;
- extern int           syslinux_bootsect_mtime;
- 
--extern unsigned char syslinux_ldlinux[];
-+extern unsigned char *syslinux_ldlinux;
- extern unsigned int  syslinux_ldlinux_len;
- extern int           syslinux_ldlinux_mtime;
- 
--extern unsigned char syslinux_mbr[];
-+extern unsigned char *syslinux_mbr;
- extern unsigned int  syslinux_mbr_len;
- extern int           syslinux_mbr_mtime;
- 

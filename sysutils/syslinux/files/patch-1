@@ -24,18 +24,6 @@ diff -ubwr ./Makefile ../../work/syslinux-3.72/Makefile
  # Things to install in /usr/lib/syslinux
  INSTALL_AUX   =	core/pxelinux.0 gpxe/gpxelinux.0 core/isolinux.bin \
  		core/isolinux-debug.bin \
-diff -ubwr ./com32/lib/MCONFIG ../../work/syslinux-3.72/com32/lib/MCONFIG
---- ./com32/lib/MCONFIG	2008-09-26 01:46:02.000000000 +0200
-+++ ../../work/syslinux-3.72/com32/lib/MCONFIG	2008-11-25 11:32:22.000000000 +0100
-@@ -47,7 +47,7 @@
- 	$(CC) $(CFLAGS) -S -o $@ $<
- 
- .S.o:
--	$(CC) $(CFLAGS) -D__ASSEMBLY__ -c -o $@ $<
-+	$(CC) $(filter-out -std=gnu99, $(CFLAGS)) -D__ASSEMBLY__ -c -o $@ $<
- 
- .S.s:
- 	$(CC) $(CFLAGS) -D__ASSEMBLY__ -E -o $@ $<
 diff -ubwr ./com32/libutil/md5.c ../../work/syslinux-3.72/com32/libutil/md5.c
 --- ./com32/libutil/md5.c	2008-09-26 01:46:02.000000000 +0200
 +++ ../../work/syslinux-3.72/com32/libutil/md5.c	2008-11-25 11:32:22.000000000 +0100
@@ -76,67 +64,3 @@ diff -ubwr ./com32/libutil/sha512crypt.c ../../work/syslinux-3.72/com32/libutil/
  #include <errno.h>
  #include <limits.h>
  #include <stdbool.h>
-diff -ubwr ./mtools/syslinux.c ../../work/syslinux-3.72/mtools/syslinux.c
---- ./mtools/syslinux.c	2008-09-26 01:46:02.000000000 +0200
-+++ ../../work/syslinux-3.72/mtools/syslinux.c	2008-11-25 11:32:22.000000000 +0100
-@@ -38,6 +38,8 @@
- #include "syslinux.h"
- #include "libfat.h"
- 
-+int verbose=0;
-+
- char *program;			/* Name of program */
- char *device;			/* Device to install to */
- pid_t mypid;
-@@ -159,6 +161,8 @@
-       while ( *opt ) {
- 	if ( *opt == 's' ) {
- 	  stupid = 1;
-+	} else if ( *opt == 'v' ) {
-+	  verbose++;
- 	} else if ( *opt == 'r' ) {
- 	  raid_mode = 1;
- 	} else if ( *opt == 'f' ) {
-@@ -217,11 +221,9 @@
-   fprintf(mtc,
- 	  /* "MTOOLS_NO_VFAT=1\n" */
- 	  "MTOOLS_SKIP_CHECK=1\n" /* Needed for some flash memories */
--	  "drive s:\n"
--	  "  file=\"/proc/%lu/fd/%d\"\n"
-+	  "drive s: file=\"%s\"\n"
- 	  "  offset=%llu\n",
--	  (unsigned long)mypid,
--	  dev_fd,
-+	  device,
- 	  (unsigned long long)filesystem_offset);
-   fclose(mtc);
- 
-@@ -234,8 +236,10 @@
-   }
- 
-   /* This command may fail legitimately */
-+if (verbose) fprintf(stderr, "doing mattrib\n");
-   system("mattrib -h -r -s s:/ldlinux.sys 2>/dev/null");
- 
-+if (verbose) fprintf(stderr, "doing mcopy\n");
-   mtp = popen("mcopy -D o -D O -o - s:/ldlinux.sys", "w");
-   if ( !mtp ||
-        (fwrite(syslinux_ldlinux, 1, syslinux_ldlinux_len, mtp)
-@@ -248,7 +252,9 @@
-    * Now, use libfat to create a block map
-    */
-   fs = libfat_open(libfat_xpread, dev_fd);
-+if (verbose) fprintf(stderr, "libfat_open returns %p\n", fs);
-   ldlinux_cluster = libfat_searchdir(fs, 0, "LDLINUX SYS", NULL);
-+if (verbose) fprintf(stderr, "libfat_searchdir returns %d\n", ldlinux_cluster);
-   secp = sectors;
-   nsectors = 0;
-   s = libfat_clustertosector(fs, ldlinux_cluster);
-@@ -256,6 +262,7 @@
-     *secp++ = s;
-     nsectors++;
-     s = libfat_nextsector(fs, s);
-+if (verbose) fprintf(stderr, "libfat_nextsector returns %d\n", s);
-   }
-   libfat_close(fs);
- 

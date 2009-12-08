@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	syslinux
-PORTVERSION=	3.72
+PORTVERSION=	3.83
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	linux/boot/syslinux/Old
+MASTER_SITE_SUBDIR=	linux/boot/syslinux
 
 MAINTAINER=	luigi@FreeBSD.org
 COMMENT=	Syslinux for FreeBSD
