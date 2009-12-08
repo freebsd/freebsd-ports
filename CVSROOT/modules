@@ -4107,6 +4107,7 @@ genproto                        ports/devel/genproto
 gens                            ports/emulators/gens
 gensig                          ports/mail/gensig
 gentium                         ports/x11-fonts/gentium
+gentium-basic                   ports/x11-fonts/gentium-basic
 gentoo                          ports/x11-fm/gentoo
 geoapi                          ports/graphics/geoapi
 geogebra-i18n                   ports/math/geogebra-i18n
@@ -9735,6 +9736,7 @@ nslint                          ports/dns/nslint
 nsm-console                     ports/security/nsm-console
 nsping                          ports/dns/nsping
 nspluginwrapper                 ports/www/nspluginwrapper
+nspluginwrapper-devel           ports/www/nspluginwrapper-devel
 nspmod                          ports/audio/nspmod
 nspr                            ports/devel/nspr
 nss                             ports/security/nss
@@ -10692,6 +10694,7 @@ p5-Catalyst-Plugin-Authentication-Store-DBIC  ports/www/p5-Catalyst-Plugin-Authe
 p5-Catalyst-Plugin-Authentication-Store-Htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-Catalyst-Plugin-Authorization-ACL  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
+p5-Catalyst-Plugin-AutoCRUD     ports/www/p5-Catalyst-Plugin-AutoCRUD
 p5-Catalyst-Plugin-AutoRestart  ports/www/p5-Catalyst-Plugin-AutoRestart
 p5-Catalyst-Plugin-Browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-Catalyst-Plugin-C3           ports/www/p5-Catalyst-Plugin-C3
@@ -11723,6 +11726,7 @@ p5-HTML-FillInForm              ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-HTML-FormFu                  ports/www/p5-HTML-FormFu
 p5-HTML-FormFu-Model-DBIC       ports/www/p5-HTML-FormFu-Model-DBIC
+p5-HTML-FormHandler             ports/www/p5-HTML-FormHandler
 p5-HTML-Format                  ports/textproc/p5-HTML-Format
 p5-HTML-FormatText-WithLinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction                ports/textproc/p5-HTML-Fraction
@@ -12241,6 +12245,8 @@ p5-Math-Pari                    ports/math/p5-Math-Pari
 p5-Math-Polygon                 ports/math/p5-Math-Polygon
 p5-Math-Polynomial-Solve        ports/math/p5-Math-Polynomial-Solve
 p5-Math-Random                  ports/math/p5-Math-Random
+p5-Math-Random-ISAAC            ports/math/p5-Math-Random-ISAAC
+p5-Math-Random-ISAAC-XS         ports/math/p5-Math-Random-ISAAC-XS
 p5-Math-Random-MT               ports/math/p5-Math-Random-MT
 p5-Math-Random-MT-Auto          ports/math/p5-Math-Random-MT-Auto
 p5-Math-Random-OO               ports/math/p5-Math-Random-OO
@@ -12349,6 +12355,7 @@ p5-MooseX-Emulate-Class-Accessor-Fast  ports/devel/p5-MooseX-Emulate-Class-Acces
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-Has-Sugar             ports/devel/p5-MooseX-Has-Sugar
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
+p5-MooseX-InsideOut             ports/devel/p5-MooseX-InsideOut
 p5-MooseX-LazyRequire           ports/devel/p5-MooseX-LazyRequire
 p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
@@ -14227,6 +14234,7 @@ p5-catalyst-plugin-authentication-store-dbic  ports/www/p5-Catalyst-Plugin-Authe
 p5-catalyst-plugin-authentication-store-htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-catalyst-plugin-authorization-acl  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-catalyst-plugin-authorization-roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
+p5-catalyst-plugin-autocrud     ports/www/p5-Catalyst-Plugin-AutoCRUD
 p5-catalyst-plugin-autorestart  ports/www/p5-Catalyst-Plugin-AutoRestart
 p5-catalyst-plugin-browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-catalyst-plugin-c3           ports/www/p5-Catalyst-Plugin-C3
@@ -15378,6 +15386,7 @@ p5-html-format                  ports/textproc/p5-HTML-Format
 p5-html-formattext-withlinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-html-formfu                  ports/www/p5-HTML-FormFu
 p5-html-formfu-model-dbic       ports/www/p5-HTML-FormFu-Model-DBIC
+p5-html-formhandler             ports/www/p5-HTML-FormHandler
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
 p5-html-fromansi                ports/www/p5-HTML-FromANSI
 p5-html-fromtext                ports/www/p5-HTML-FromText
@@ -15863,6 +15872,8 @@ p5-math-pari                    ports/math/p5-Math-Pari
 p5-math-polygon                 ports/math/p5-Math-Polygon
 p5-math-polynomial-solve        ports/math/p5-Math-Polynomial-Solve
 p5-math-random                  ports/math/p5-Math-Random
+p5-math-random-isaac            ports/math/p5-Math-Random-ISAAC
+p5-math-random-isaac-xs         ports/math/p5-Math-Random-ISAAC-XS
 p5-math-random-mt               ports/math/p5-Math-Random-MT
 p5-math-random-mt-auto          ports/math/p5-Math-Random-MT-Auto
 p5-math-random-oo               ports/math/p5-Math-Random-OO
@@ -15992,6 +16003,7 @@ p5-moosex-declare               ports/devel/p5-MooseX-Declare
 p5-moosex-emulate-class-accessor-fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-has-sugar             ports/devel/p5-MooseX-Has-Sugar
+p5-moosex-insideout             ports/devel/p5-MooseX-InsideOut
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
 p5-moosex-lazyrequire           ports/devel/p5-MooseX-LazyRequire
 p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
@@ -17725,7 +17737,7 @@ pear-Crypt_CBC                  ports/security/pear-Crypt_CBC
 pear-Crypt_CHAP                 ports/security/pear-Crypt_CHAP
 pear-Crypt_DiffieHellman        ports/security/pear-Crypt_DiffieHellman
 pear-Crypt_GPG                  ports/security/pear-Crypt_GPG
-pear-Crypt_HMAC                 ports/security/pear-Crypt_HMAC
+pear-Crypt_HMAC2                ports/security/pear-Crypt_HMAC2
 pear-Crypt_MicroID              ports/security/pear-Crypt_MicroID
 pear-Crypt_RC4                  ports/security/pear-Crypt_RC4
 pear-Crypt_RSA                  ports/security/pear-Crypt_RSA
@@ -17907,6 +17919,7 @@ pear-Pager                      ports/devel/pear-Pager
 pear-PhpDocumentor              ports/devel/pear-PhpDocumentor
 pear-SOAP                       ports/net/pear-SOAP
 pear-Services_Amazon            ports/www/pear-Services_Amazon
+pear-Services_Amazon_S3         ports/www/pear-Services_Amazon_S3
 pear-Services_Blogging          ports/www/pear-Services_Blogging
 pear-Services_Compete           ports/www/pear-Services_Compete
 pear-Services_Delicious         ports/www/pear-Services_Delicious
@@ -18007,7 +18020,7 @@ pear-crypt_cbc                  ports/security/pear-Crypt_CBC
 pear-crypt_chap                 ports/security/pear-Crypt_CHAP
 pear-crypt_diffiehellman        ports/security/pear-Crypt_DiffieHellman
 pear-crypt_gpg                  ports/security/pear-Crypt_GPG
-pear-crypt_hmac                 ports/security/pear-Crypt_HMAC
+pear-crypt_hmac2                ports/security/pear-Crypt_HMAC2
 pear-crypt_microid              ports/security/pear-Crypt_MicroID
 pear-crypt_rc4                  ports/security/pear-Crypt_RC4
 pear-crypt_rsa                  ports/security/pear-Crypt_RSA
@@ -18188,6 +18201,7 @@ pear-phpunit                    ports/devel/pear-PHPUnit
 pear-phpunit2                   ports/devel/pear-PHPUnit2
 pear-phpunit3                   ports/devel/pear-PHPUnit3
 pear-services_amazon            ports/www/pear-Services_Amazon
+pear-services_amazon_s3         ports/www/pear-Services_Amazon_S3
 pear-services_blogging          ports/www/pear-Services_Blogging
 pear-services_compete           ports/www/pear-Services_Compete
 pear-services_delicious         ports/www/pear-Services_Delicious
