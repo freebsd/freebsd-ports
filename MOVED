@@ -4212,3 +4212,4 @@ x11-toolkits/py-gtkscintilla||2009-11-30|Has expired: no longer under developmen
 www/xulrunner|www/libxul|2009-12-02|Superseded by www/libxul
 secuirty/nettel2|security/nettel|2009-12-02|Please use security/nettel
 security/pear-Crypt_HMAC||2009-12-07|Please use security/pear-Crypt_HMAC2
+mail/dovecot-devel|mail/dovecot|2009-12-08|Non-devel version is newer
