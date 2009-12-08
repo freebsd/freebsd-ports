@@ -138,7 +138,6 @@
     SUBDIR += nedi
     SUBDIR += nefu
     SUBDIR += net-snmp
-    SUBDIR += net-snmp-tkmib
     SUBDIR += net-snmp4
     SUBDIR += netams
     SUBDIR += netams-front
