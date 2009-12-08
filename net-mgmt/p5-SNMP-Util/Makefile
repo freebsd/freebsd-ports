@@ -15,15 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl modules to perform SNMP set,get,walk,next,walk_hash etc
 
-#
-# Define WITH_NETSNMP4 to use net-mgmt/net-snmp4 instead of net-mgmt/net-snmp.
-#
-.if !defined(WITH_NETSNMP4)
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp
-EXTRA_PATCHES+=	${PATCHDIR}/extra-net-snmp-patch-Makefile.PL
-.else
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/p5-SNMP
-.endif
+
+EXTRA_PATCHES=	${PATCHDIR}/extra-net-snmp-patch-Makefile.PL
 
 PERL_CONFIGURE=	yes
 

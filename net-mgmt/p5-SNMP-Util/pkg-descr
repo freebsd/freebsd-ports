@@ -1,3 +1,3 @@
 This Perl library is a set of utilities for configuring and monitoring
-SNMP based devices.  This library requires the UCD port of SNMP and the
-SNMP.pm module written by Joe Marzot.
+SNMP based devices.  This library requires the Net-SNMP implementation of SNMP
+and the SNMP.pm module written by Joe Marzot.

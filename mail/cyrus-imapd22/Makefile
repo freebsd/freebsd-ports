@@ -48,8 +48,7 @@ OPTIONS=	DRAC		"Enable DRAC support"			off \
 		MURDER		"Enable IMAP Murder support"		off \
 		NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off \
 		NNTP		"Enable NNTP support"			off \
-		SNMP_4		"Enable SNMP support using net-snmp v4"	off \
-		SNMP_5		"Enable SNMP support using net-snmp v5"	off \
+		SNMP_5		"Enable SNMP support"			off \
 		PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 
 .include <bsd.port.pre.mk>
@@ -105,15 +104,8 @@ CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
-.if defined(WITH_SNMP_4) && defined(WITH_SNMP_5)
-BROKEN=		Multiple net-snmp versions selected.  Run 'make config' again!
-.endif
-.if defined(WITH_SNMP_4)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-.elif defined(WITH_SNMP_5)
+.if defined(WITH_SNMP_5)
 LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
-.endif
-.if defined(WITH_SNMP_4) || defined(WITH_SNMP_5)
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no
