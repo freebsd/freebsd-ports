@@ -541,6 +541,7 @@
     SUBDIR += mod_webkit
     SUBDIR += mod_webobjects
     SUBDIR += mod_wsgi
+    SUBDIR += mod_wsgi3
     SUBDIR += mod_xmlns
     SUBDIR += mod_xsendfile
     SUBDIR += moinmoin
