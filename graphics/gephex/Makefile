@@ -17,6 +17,8 @@ COMMENT=	Software-based interactive video-effect system
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 OPTIONS=	SDL	"Turn on SDL support"		on \
 		AALIB	"Turn on AALIB support"		on \

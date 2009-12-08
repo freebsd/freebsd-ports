@@ -27,6 +27,8 @@ do-install:
 		tar -C ${PREFIX}/lib/${XXE_DIR}/addon -xf -
 
 BROKEN=	does not compile
+DEPRECATED=	has been broken for 4 months
+EXPIRATION_DATE=2010-01-08
 
 #.include "${.CURDIR}/../xxe/Makefile.inc"
 

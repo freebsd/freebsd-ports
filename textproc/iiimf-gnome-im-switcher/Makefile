@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IIIMF gnome input method switcher
 
 BROKEN=		It removes a few files in /usr/local/* during the configure. Therefore, it is not safe
+DEPRECATED=	has been broken for 4 months
+EXPIRATION_DATE=2010-01-08
 
 ONLY_FOR_ARCHS=	i386
 

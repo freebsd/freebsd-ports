@@ -26,6 +26,8 @@ BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 5 months
+EXPIRATION_DATE=2010-01-08
 
 CFLOWD_FLOWSCAN_PATCH=	yes
 HAS_CONFIGURE=		yes

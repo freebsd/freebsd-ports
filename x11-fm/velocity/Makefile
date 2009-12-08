@@ -22,16 +22,12 @@ USE_GNOME=	libgnomeui gnomedesktop librsvg2
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \
 		LIBS="`pkg-config --libs libgnomeui-2.0`"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile
-.endif
-
-BROKEN=	does not build with GNOME 2.26
+BROKEN=		does not build with GNOME 2.26
+DEPRECATED=	has been broken for 7 months
+EXPIRATION_DATE=2010-01-08
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 			${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

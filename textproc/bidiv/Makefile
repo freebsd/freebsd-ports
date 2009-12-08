@@ -22,6 +22,8 @@ MAN1=		bidiv.1
 MAKE_ENV+=	CC_OPT_FLAGS="${CFLAGS}"
 
 BROKEN=	needs update for the new fribidi paragraph API
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 post-patch:
 	${REINPLACE_CMD} -E "s/^(PREFIX|CC_OPT_FLAGS).+//g;" ${WRKSRC}/Makefile

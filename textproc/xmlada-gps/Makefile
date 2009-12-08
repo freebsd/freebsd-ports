@@ -19,6 +19,8 @@ BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	xmlada-[0-9]*
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

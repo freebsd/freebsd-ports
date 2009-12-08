@@ -19,6 +19,8 @@ BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	gtkada-[0-9]* gtkada-devel-[0-9]* gtkada-gcc-[0-9]*
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_GNOME=	gtk20 libglade2
 USE_GMAKE=	yes

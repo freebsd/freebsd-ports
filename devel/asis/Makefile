@@ -24,6 +24,9 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 BROKEN= 	Does not build after gpl 2009 update to lang/gnat
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
+
 WITHOUT_CPU_CFLAGS=	yes
 CFLAGS=		-O2 -pipe
 USE_GMAKE=	yes

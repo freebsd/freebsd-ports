@@ -36,6 +36,8 @@ NO_BUILD=	yes
 USE_PHP=	mysql pcre session
 
 BROKEN=		bad plist
+DEPRECATED=	has been broken for 17 months
+EXPIRATION_DATE=2010-01-08
 
 .if defined(WITH_PHP5)
 DEFAULT_PHP_VER=5

@@ -17,6 +17,8 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 BROKEN=		checksum mismatch
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 USE_GMAKE=	yes
 USE_QT_VER=	3

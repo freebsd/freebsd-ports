@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rails:${PORTSDIR}/www/rubygem-rails
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386

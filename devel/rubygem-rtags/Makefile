@@ -19,5 +19,7 @@ RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rtags
 
 BROKEN=		does not install
+DEPRECATED=	has been broken for 5 months
+EXPIRATION_DATE=2010-01-08
 
 .include <bsd.port.mk>

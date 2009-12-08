@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level XML tools for Python
 
 BROKEN=		leaves files behind after deinstallation
+DEPRECATED=	has been broken for 4 months
+EXPIRATION_DATE=2010-01-08
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes

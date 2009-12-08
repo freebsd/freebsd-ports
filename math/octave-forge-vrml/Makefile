@@ -18,6 +18,8 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:${PORTSDIR}/math/octave-forge-struct
 RUN_DEPENDS+=	${TARBALLS_DIR}/statistics.tar.gz:${PORTSDIR}/math/octave-forge-statistics
 
 BROKEN=		Does not install with octave-3.2.2
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"

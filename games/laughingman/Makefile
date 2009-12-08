@@ -21,6 +21,8 @@ LIB_DEPENDS=	cv.1:${PORTSDIR}/graphics/opencv
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
 BROKEN=		does not link
+DEPRECATED=	has been broken for 3 months
+EXPIRATION_DATE=2010-01-08
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=xiq2

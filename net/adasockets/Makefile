@@ -18,6 +18,8 @@ BUILD_DEPENDS=		gnatmake:${PORTSDIR}/lang/gnat \
 			texi2dvi:${PORTSDIR}/print/teTeX
 
 BROKEN=			does not build
+DEPRECATED=		has been broken for 3 months
+EXPIRATION_DATE=	2010-01-08
 
 USE_AUTOTOOLS=		autoconf:262
 GNU_CONFIGURE=		yes
