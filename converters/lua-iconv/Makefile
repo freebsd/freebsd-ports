@@ -17,6 +17,7 @@ COMMENT=	Iconv binding for Lua 5
 WRKSRC=		${WRKDIR}/lua-${PORTNAME}-${PORTVERSION}
 USE_LUA?=	5.1
 USE_GNOME=	pkgconfig
+USE_ICONV=	yes
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/iconv.so
 
