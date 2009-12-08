@@ -8,7 +8,7 @@
 
 PORTNAME=	abiword-plugins
 PORTVERSION=	2.6.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gnometarget gtk20 libglade2
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
