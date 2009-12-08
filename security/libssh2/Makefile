@@ -18,15 +18,30 @@ COMMENT=	A library implementing the SSH2 protocol
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-OPTIONS=	GCRYPT "Use libgcrypt instead of OpenSSL" off
+
+OPTIONS=	GCRYPT "Use libgcrypt instead of OpenSSL" off \
+		TRACE "Enable debug packet traces" off \
+		ZLIB "Enable compression" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_TRACE)
+CONFIGURE_ARGS+=	--enable-debug
+.else
+CONFIGURE_ARGS+=	--disable-debug
+.endif
 
 .if defined(WITH_GCRYPT)
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-libgcrypt -with-libgcrypt-prefix=${LOCALBASE} --without-openssl
 CFLAGS+=-I${LOCALBASE}/include
 LDFLAGS+=-L${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_ZLIB)
+CONFIGURE_ARGS+=	--with-libz
+.else
+CONFIGURE_ARGS+=	--without-libz
 .endif
 
 MAN3=	libssh2_banner_set.3 \
@@ -125,9 +140,6 @@ MAN3=	libssh2_banner_set.3 \
 	libssh2_version.3
 
 post-patch:
-	@${REINPLACE_CMD} -e '/ssh2_sample\.o/d' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|SHLIB_SUFFIX_NAME@ |SHLIB_SUFFIX_NAME@.0 |g' \
-		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
