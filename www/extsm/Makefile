@@ -21,8 +21,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 
-OPTIONS=	TOMCAT4		"Use Jakarta Tomcat 4"		off	\
-		TOMCAT41	"Use Jakarta Tomcat 4.1"	off	\
+OPTIONS=	TOMCAT41	"Use Jakarta Tomcat 4.1"	off	\
 		TOMCAT5		"Use Jakarta Tomcat 5"		on	\
 		TOMCAT55	"Use Jakarta Tomcat 5.55"	off	\
 		RESIN2		"Use Resin 2"			off	\
@@ -31,11 +30,6 @@ OPTIONS=	TOMCAT4		"Use Jakarta Tomcat 4"		off	\
 .include <bsd.port.pre.mk>
 
 WEBAPP_DIRS=	#empty
-.if defined(WITH_TOMCAT4)
-WEBAPP_DIRS+=	jakarta-tomcat4.0
-RUN_DEPENDS+=	${PREFIX}/jakarta-tomcat4.0/bin/bootstrap.jar:${PORTSDIR}/www/jakarta-tomcat4
-.endif
-
 .if defined(WITH_TOMCAT41)
 WEBAPP_DIRS+=	tomcat4.1
 RUN_DEPENDS+=	${PREFIX}/tomcat4.1/bin/bootstrap.jar:${PORTSDIR}/www/tomcat41

@@ -30,10 +30,6 @@ RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat5:${PORTSDIR}/www/jakarta-tomcat5
 WEBAPPDIR=	${PREFIX}/jakarta-tomcat4.1/webapps
 BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/tomcat41
 RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/tomcat41
-.elif exists(${LOCALBASE}/jakarta-tomcat4.0.6/webapps)
-WEBAPPDIR=	${PREFIX}/jakarta-tomcat4.0.6/webapps
-BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.0.6:${PORTSDIR}/www/jakarta-tomcat4
-RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.0.6:${PORTSDIR}/www/jakarta-tomcat4
 .else
 WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
 BUILD_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
