@@ -1,0 +1,15 @@
+include/QtGTL/QImageBuffer.h
+include/QtGTL/QImageImage.h
+include/QtShiva/KernelParametersWidget.h
+include/QtShiva/ParametersWidgetBase.h
+include/QtShiva/SourceParametersWidget.h
+lib/libQtGTL.so
+lib/libQtGTL.so.0
+lib/libQtGTL.so.0.9.0
+lib/libQtShiva.so
+lib/libQtShiva.so.0
+lib/libQtShiva.so.0.9.0
+libdata/pkgconfig/QtGTL.pc
+libdata/pkgconfig/QtShiva.pc
+@dirrm include/QtShiva
+@dirrm include/QtGTL
