@@ -1,0 +1,11 @@
+--- configure.orig	2009-12-07 19:13:21.000000000 -0500
++++ configure	2009-12-07 19:14:18.000000000 -0500
+@@ -17128,7 +17128,7 @@ fi
+ 	if test "x$prefix" = "x$ac_default_prefix"; then
+ 		PANELAPPLET_LIBDIR=`$PKG_CONFIG --variable=libdir libpanelapplet-2.0`
+ 	fi
+-	if test "x$PANELAPPLET_LIBDIR" != "x"; then
++	if test "x$PANELAPPLET_LIBDIR" != "x" -a "x$PANELAPPLET_SERVER_DIR" = "x" ; then
+ 		PANELAPPLET_SERVER_DIR="$PANELAPPLET_LIBDIR/bonobo/servers"
+ 	fi
+ 	# Set PANELAPPLET_SERVER_DIR default if it's not already set
