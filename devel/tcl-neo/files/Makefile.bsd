@@ -8,6 +8,7 @@ CFLAGS+=	-DNEO_LIBRARY=\"${NEO_LIBRARY}\"
 CFLAGS+=	-DHAVE_TERMIOS_H -DHAVE_STDLIB_H -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H
 CFLAGS+=	-DNEO_DB # -DDB_185_COMPAT -- seems broken :-(
 CFLAGS+=	-DNEOSOFT_TCL_ENCRYPTION -DCUTE
+CFLAGS+=	-Wall -Wno-parentheses -Werror
 # OpenLDAP requires db3, while the NEO_DB stuff works only with db2.
 # Disable NEO_LDAP until the NEW_DB is upgraded
 # CFLAGS+=	-DNEO_LDAP
@@ -18,7 +19,7 @@ SRCS=		neoXcrypt.c neoPkgInit.c neoXwww.c neoXgeneral.c \
 
 SHLIB_NAME=	libneo82.so.1
 
-LDADD+=		-lcrypt -L${PREFIX}/lib -ltcl${TCL_DVER} -lm -lmd -ldb2 # -ldap -llber
+LDADD+=		-lcrypt -L${PREFIX}/lib -lmd -ldb2 # -ldap -llber
 
 LIBDIR=		${PREFIX}/lib
 

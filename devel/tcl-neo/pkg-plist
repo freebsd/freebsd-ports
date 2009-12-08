@@ -4,10 +4,8 @@ lib/neo8.2/pkgIndex.tcl
 lib/neo8.2/tclIndex
 lib/neo8.2/debugger/README.DEBUG
 lib/neo8.2/debugger/ndebug.tcl
-lib/neo8.2/irc/Makefile
 lib/neo8.2/irc/README
 lib/neo8.2/irc/ircbot.tcl
-lib/neo8.2/neo_tklib/Makefile
 lib/neo8.2/neo_tklib/README
 lib/neo8.2/neo_tklib/boxwindow.tcl
 lib/neo8.2/neo_tklib/filereq.tcl
@@ -25,10 +23,8 @@ lib/neo8.2/neo_tklib/notepad.tcl
 lib/neo8.2/neo_tklib/textclass.tcl
 lib/neo8.2/neo_tklib/thermometer.tcl
 lib/neo8.2/neo_tklib/tkpassword.tcl
-lib/neo8.2/neodb/Makefile
 lib/neo8.2/neodb/README
 lib/neo8.2/neodb/tsv-class.tcl
-lib/neo8.2/neolib/Makefile
 lib/neo8.2/neolib/README
 lib/neo8.2/neolib/arrayutil.tcl
 lib/neo8.2/neolib/catchers.tcl
@@ -43,17 +39,13 @@ lib/neo8.2/neolib/spawn.tcl
 lib/neo8.2/neolib/stanza.tcl
 lib/neo8.2/neolib/timedate.tcl
 lib/neo8.2/neolib/xkeylget.tcl
-lib/neo8.2/oracle/Makefile
 lib/neo8.2/oracle/basic.tcl
-lib/neo8.2/postgres95/Makefile
 lib/neo8.2/postgres95/basic.tcl
-lib/neo8.2/rcmp/Makefile
 lib/neo8.2/rcmp/README
 lib/neo8.2/rcmp/neo-shared-object.tcl
 lib/neo8.2/rcmp/neodpClient.tcl
 lib/neo8.2/rcmp/neodpServer.tcl
 lib/neo8.2/rcmp/rcmpc.tcl
-lib/neo8.2/www/Makefile
 lib/neo8.2/www/http-helpers.tcl
 lib/neo8.2/www/iwebforms.tcl
 @dirrm lib/neo8.2/debugger

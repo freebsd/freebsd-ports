@@ -1,7 +1,36 @@
---- neoXcute.c	Thu Apr 20 09:16:00 2000
-+++ neoXcute.c	Fri Aug 17 00:23:11 2001
-@@ -98,3 +98,3 @@
+--- neoXcute.c	2000-04-20 09:16:00.000000000 -0400
++++ neoXcute.c	2009-12-08 00:33:27.000000000 -0500
+@@ -46,4 +46,5 @@
+ 
+ #include <signal.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+@@ -97,5 +98,5 @@
+     perror (s);
      fflush (stderr);
 -    panic ();
 +    abort ();
  }
+ 
+@@ -665,5 +666,5 @@
+ int len;
+ {
+-    static previous_was_cr = 0;
++    static int previous_was_cr = 0;
+     char c;
+     static char cr = '\r';
+@@ -721,5 +722,5 @@
+     }
+ 
+-    if (Tcl_GetOpenFile (interp, argv[1], 1, 1, &cute_captureFileP) != TCL_OK) {
++    if (Tcl_GetOpenFile (interp, argv[1], 1, 1, (ClientData *)&cute_captureFileP) != TCL_OK) {
+ 	cute_captureFileP = NULL;
+ 	return TCL_ERROR;
+@@ -1243,5 +1244,5 @@
+     if (cute_isline_up(interp, argv[0]) == TCL_ERROR) return TCL_ERROR;
+ 
+-    if (ioctl(cute_linefd, TCFLSH, (struct termio *) flusharg) < 0) {
++    if (ioctl(cute_linefd, TCFLSH, flusharg) < 0) {
+         perror("flushing remote line");
+     }

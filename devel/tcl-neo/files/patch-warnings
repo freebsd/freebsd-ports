@@ -1,0 +1,498 @@
+--- neo.h	2000-04-20 09:16:00.000000000 -0400
++++ neo.h	2009-12-08 00:25:35.000000000 -0500
+@@ -43,7 +43,9 @@
+ 
+ extern int
+-Tcl_LassignArrayCmd _ANSI_ARGS_((ClientData, Tcl_Interp*, int, char**));
++Tcl_LassignArrayCmd _ANSI_ARGS_((ClientData, Tcl_Interp*, int, const char**));
+ 
+ extern int
+-Tcl_LassignFieldsCmd _ANSI_ARGS_((ClientData, Tcl_Interp*, int, char**));
++Tcl_LassignFieldsCmd _ANSI_ARGS_((ClientData, Tcl_Interp*, int, const char**));
+ 
++Tcl_AppInitProc	NeoSoft_InitEncrypt, Neo_XwwwInit, Neo_dbInit;
++Tcl_AppInitProc	Cute_InitComm, Neo_initGeneral, TclX_InitKDebug, Neo_initList;
+--- neoXcrypt.c	2000-04-20 09:16:00.000000000 -0400
++++ neoXcrypt.c	2009-12-07 22:16:37.000000000 -0500
+@@ -13,4 +13,6 @@
+ #include "neo.h"
+ 
++#include <string.h>
++
+ #ifdef HAVE_CRYPT_H
+ #include <crypt.h>
+@@ -60,6 +62,6 @@
+ long fileOffset;
+ {
+-    char *baseFileName, *workFileName;
+-    char *encryptedFileVarValue;
++    const char *baseFileName, *workFileName;
++    const char *encryptedFileVarValue;
+ 
+     baseFileName = workFileName = fileName;
+--- neoXwww.c	2000-04-20 09:16:01.000000000 -0400
++++ neoXwww.c	2009-12-08 00:06:41.000000000 -0500
+@@ -20,4 +20,5 @@
+ #include "neo.h"
+ 
++#include <ctype.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -48,5 +49,5 @@
+ {
+     int currentValue;
+-    char *currentValueString;
++    const char *currentValueString;
+     char newValueText[16];
+ 
+@@ -96,7 +97,7 @@
+ {
+     int largc;
+-    char **largv;
++    char **largv = NULL;
+     char hourNumberString[32];
+-    long dateSeconds, firstDate;
++    long dateSeconds = 0, firstDate = 0;
+     char *virtualHost;
+     char *endptr;
+@@ -104,6 +105,6 @@
+ 
+     char *urlPtr;
+-    char *urlPiece;
+-char *remoteName, *remoteLogname, *command, *status, *bytesSent, *user;
++    char *command, *urlPiece;
++    const char *remoteName, *remoteLogname, *status, *bytesSent, *user;
+     int depth;
+     long accessCount = 0, errorCount = 0;
+@@ -116,7 +117,8 @@
+     Tcl_DString *dsElement = &dsElementData;
+     Tcl_DString *dsInput = &dsInputData;
+-    char *date;
+-    char *commandVerb, *url, *httpType;
+-    char *hourlyArrayName;
++    const char *date;
++    char *commandVerb, *url;
++    const char *httpType;
++    const char *hourlyArrayName;
+     Tcl_Channel chanHandle;
+ 
+@@ -169,7 +171,18 @@
+ 	Tcl_ResetResult (interp);
+ 
++	if (largv)
++	    Tcl_Free((char *)argv); /* Free the array created by the previous iteration */
++
++	if (accessCount)
++	    Tcl_DStringFree (dsInput);
++
+ 	Tcl_DStringInit (dsInput);
++
++/*
++893859545 205.130.235.207 {} {} 200 3138 www.Powersource.com {GET /cccs/richard/wage.htm HTTP/1.0} {Mozilla/3.0Gold (WinNT; I)}
++*/
+ 	if (Tcl_Gets (chanHandle, dsInput) < 0) {
+ 	    if (Tcl_Eof (chanHandle)) break;
++	    Tcl_DStringFree (dsInput);
+ 	    return TCL_ERROR;
+ 	}
+@@ -177,13 +190,13 @@
+ 	accessCount++;
+ 
+-/*
+-893859545 205.130.235.207 {} {} 200 3138 www.Powersource.com {GET /cccs/richard/wage.htm HTTP/1.0} {Mozilla/3.0Gold (WinNT; I)}
+-*/
+-
+-        if (Tcl_SplitList (interp, Tcl_DStringValue(dsInput), &largc, &largv) == TCL_ERROR) {
++	/*
++	 * dsInput is OWR OWN string, so it is Ok to lie about us not
++	 * changing it. We want to be able to lowercase parts of it and
++	 * making a separate copy just for that purpose is silly.
++	 */
++        if (Tcl_SplitList (interp, Tcl_DStringValue(dsInput), &largc, (const char ***)&largv) == TCL_ERROR) {
+ 	    /* fprintf (stderr, "%s: %s\n", interp->result, buf); */
+ 	    continue;
+ 	}
+-	Tcl_DStringFree (dsInput);
+ 
+         /* kill invalid log entries */
+@@ -367,7 +380,11 @@
+ 	}
+ 	Tcl_DStringFree (dsArray);
+-	ckfree ((char *)largv);
+     }
+ 
++    if (largv)
++	Tcl_Free((char *)argv); /* Free the array */
++    if (accessCount)
++	Tcl_DStringFree (dsInput);
++
+     Tcl_ResetResult (interp);
+     sprintf (interp->result, "%ld %ld %ld %ld", 
+@@ -413,5 +430,5 @@
+     Tcl_DString *dsElement = &dsElementData;
+     char *dummy;
+-    char *date, *firstDate;
++    char *date = "", *firstDate = "";
+     char *commandVerb, *url, *httpType;
+     char *hourlyArrayName;
+@@ -433,5 +450,5 @@
+ 
+     if ((fp = fopen (fileName, "r")) == NULL) {
+-	interp->result = Tcl_PosixError (interp);
++	Tcl_SetResult(interp, (char *)Tcl_PosixError (interp), TCL_STATIC);
+ 	return TCL_ERROR;
+     }
+@@ -635,5 +652,5 @@
+ 
+     if (ferror (fp)) {
+-	interp->result = Tcl_PosixError (interp);
++	Tcl_SetResult(interp, (char *)Tcl_PosixError(interp), TCL_STATIC);
+ 	return TCL_ERROR;
+     }
+@@ -1024,5 +1041,5 @@
+ 
+     if ((fp = fopen (fileName, "r")) == NULL) {
+-	interp->result = Tcl_PosixError (interp);
++	Tcl_SetResult(interp, (char *)Tcl_PosixError(interp), TCL_STATIC);
+ 	return TCL_ERROR;
+     }
+@@ -1036,5 +1053,5 @@
+ 
+     if (ferror (fp)) {
+-	interp->result = Tcl_PosixError (interp);
++	Tcl_SetResult(interp, (char *)Tcl_PosixError(interp), TCL_STATIC);
+ 	return TCL_ERROR;
+     }
+@@ -1081,3 +1098,2 @@
+     return TCL_OK;
+ }
+-
+--- neoXgeneral.c	2000-04-20 09:16:01.000000000 -0400
++++ neoXgeneral.c	2009-12-08 00:21:20.000000000 -0500
+@@ -8,3 +8,5 @@
+ 
++#include <string.h>
++
+ #include "neo.h"
+ 
+@@ -41,4 +44,6 @@
+ 
+-    if ((objc != 2) && (objc != 3))
+-	return TclX_WrongArgs (interp, objv [0], " varName ?increment?\"");
++    if ((objc != 2) && (objc != 3)) {
++	Tcl_WrongNumArgs (interp, 1, objv, " varName ?increment?\"");
++	return TCL_ERROR;
++    }
+ 
+@@ -133,5 +140,7 @@
+ 
+-    if (objc != 3)
+-	return TclX_WrongArgs (interp, objv [0], 
++    if (objc != 3) {
++	Tcl_WrongNumArgs (interp, 1, objv, 
+ 		" varName value");
++	return TCL_ERROR;
++    }
+ 
+@@ -245,5 +254,7 @@
+ 
+-    if (objc != 3)
+-	return TclX_WrongArgs (interp, objv [0], 
++    if (objc != 3) {
++	Tcl_WrongNumArgs (interp, 1, objv, 
+ 		" list1 list2");
++	return TCL_ERROR;
++    }
+ 
+@@ -370,3 +381,2 @@
+ {
+-    Tcl_Obj *objectPtr;
+     char    *subString;
+@@ -376,3 +386,4 @@
+       err:
+-	return TclX_WrongArgs (interp, objv [0], "subcommand [arg]");
++	Tcl_WrongNumArgs (interp, 1, objv, "subcommand ?arg?");
++	return TCL_ERROR;
+     }
+@@ -460,7 +471,8 @@
+     int        newStringLength;
+-    int        needsQuoting = 0;
+     Tcl_Obj   *newStringObj;
+ 
+-    if (objc != 2)
+-	return TclX_WrongArgs (interp, objv [0], "value");
++    if (objc != 2) {
++	Tcl_WrongNumArgs (interp, 1, objv, "value");
++	return TCL_ERROR;
++    }
+ 
+--- neoXcomma.c	2000-04-20 09:16:00.000000000 -0400
++++ neoXcomma.c	2009-12-08 00:39:06.000000000 -0500
+@@ -71,6 +71,8 @@
+     int          Neo_quotePairsWithinStrings = 1;
+ 
+-    if (objc != 2)
+-        return TclX_WrongArgs (interp, objv[0], "string");
++    if (objc != 2) {
++        Tcl_WrongNumArgs (interp, 1, objv, "string");
++	return TCL_ERROR;
++    }
+ 
+     /* get access to a textual representation of the object */
+@@ -230,6 +232,8 @@
+     int         stringLength;
+ 
+-    if (objc != 2)
+-        return TclX_WrongArgs (interp, objv[0], "list");
++    if (objc != 2) {
++        Tcl_WrongNumArgs (interp, 1, objv, "list");
++	return TCL_ERROR;
++    }
+ 
+     resultPtr = Tcl_GetObjResult (interp);
+@@ -299,9 +303,9 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char**argv;
+ {
+     int        listArgc, listIdx, idx, remaining;
+-    char     **listArgv;
+-    char      *varValue;
++    const char **listArgv;
++    const char  *varValue;
+ 
+     if (argc < 4) {
+@@ -353,10 +357,10 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char **argv;
+ {
+     int        listArgc, listIdx, idx;
+-    char     **listArgv;
+-    char      *varValue;
+-    char      *fieldPositionText;
++    const char **listArgv;
++    const char  *varValue;
++    const char  *fieldPositionText;
+ 
+     if (argc < 5) {
+--- neoXkdebug.c	2000-04-20 09:16:01.000000000 -0400
++++ neoXkdebug.c	2009-12-08 00:47:57.000000000 -0500
+@@ -49,4 +49,6 @@
+ #define MAXINT (int)((~0u) >> 1)
+ 
++#include <string.h>
++
+ /*
+  * Clientdata structure for trace commands.
+@@ -63,14 +65,2 @@
+ typedef struct traceInfo_t *traceInfo_pt;
+ 
+-static void
+-TraceRoutine _ANSI_ARGS_((ClientData    clientData,
+-                          Tcl_Interp   *interp,
+-                          int           level,
+-                          char         *command,
+-                          int           (*cmdProc)(),
+-                          ClientData    cmdClientData,
+-                          int           argc,
+-                          char         *argv[]));
+-
+-static void
+-CleanUpDebug _ANSI_ARGS_((ClientData clientData));
+@@ -84,6 +74,5 @@
+  *----------------------------------------------------------------------
+  */
+-/* static void */
+-void
++static void
+ TraceRoutine (clientData, interp, level, command, cmdProc, cmdClientData, 
+               argc, argv)
+@@ -91,16 +80,15 @@
+     Tcl_Interp   *interp;
+     int           level;
+-    char         *command;
++    const char   *command;
+     int           (*cmdProc)();
+     ClientData    cmdClientData;
+     int           argc;
+-    char         *argv[];
++    const char   *argv[];
+ {
+     traceInfo_pt traceInfoPtr = (traceInfo_pt) clientData;
+-    int          idx, cmdLen, printLen;
+     int          result;
+-    char         depthText[12];
++    char         depthText[12], *freeme;
+     char        *stepCommand;
+-    char        *stepArgs[4];
++    const char  *stepArgs[4];
+ 
+     static int   inTraceRoutine = 0;
+@@ -129,9 +117,9 @@
+     stepArgs[1] = depthText;
+     stepArgs[2] = command;
+-    stepArgs[3] = Tcl_Merge (argc, argv);
++    stepArgs[3] = freeme = Tcl_Merge (argc, argv);
+ 
+     stepCommand = Tcl_Merge (4, stepArgs);
+ 
+-    ckfree (stepArgs[3]);
++    ckfree (freeme);
+ 
+     result = Tcl_Eval (interp, stepCommand);
+@@ -167,5 +155,4 @@
+ {
+     traceInfo_pt infoPtr = (traceInfo_pt) clientData;
+-    int          idx;
+ 
+     if (argc < 2)
+@@ -221,8 +208,7 @@
+     Tcl_Interp   *interp;
+     int           argc;
+-    char        **argv;
++    const char  **argv;
+ {
+     traceInfo_pt infoPtr = (traceInfo_pt) clientData;
+-    int          idx;
+     char        *commandToBeTraced;
+     int          result;
+--- neoXlist.c	2000-04-20 09:16:01.000000000 -0400
++++ neoXlist.c	2009-12-08 00:55:06.000000000 -0500
+@@ -30,5 +30,6 @@
+ 
+     if( objc < 3 ) {
+-        return TclX_WrongArgs(interp, objv[0], "?mode? ?-all? list pattern");
++        Tcl_WrongNumArgs(interp, 1, objv, "?mode? ?-all? list pattern");
++	return TCL_ERROR;
+     }
+ 
+@@ -69,8 +70,10 @@
+     }
+ 
+-    if( list >= objc - 1 ) 
+-        return TclX_WrongArgs(interp, objv[0], "?mode? ?-all? list pattern");
++    if (list >= objc - 1) {
++        Tcl_WrongNumArgs(interp, 1, objv, "?mode? ?-all? list pattern");
++	return TCL_ERROR;
++    }
+ 
+-    if( Tcl_ListObjGetElements(interp, objv[list],
++    if (Tcl_ListObjGetElements(interp, objv[list],
+                                &listObjc, &listObjv) != TCL_OK)
+         return TCL_ERROR;
+@@ -181,5 +184,5 @@
+  *-----------------------------------------------------------------------------
+  */
+-void
++int
+ Neo_initList(interp)
+     Tcl_Interp *interp;
+@@ -192,3 +195,5 @@
+                          (ClientData) NULL,
+ 			 (Tcl_CmdDeleteProc*) NULL);
++
++    return TCL_OK;
+ }
+--- neoXdb.c	2009-12-08 00:55:34.000000000 -0500
++++ neoXdb.c	2009-12-08 01:02:55.000000000 -0500
+@@ -92,23 +92,18 @@
+     char	**argv;
+ {
+-    int             i, j, k, id, length, length2, errno;
++    int             i, id, length, length2, errno = 0;
+     int             mode = 0644, result = 0;
+-    u_int32_t       flags = NULL, locker;
++    u_int32_t       flags = 0;
+     u_int           dbflags;
+-    ino_t	   *ino;
+-    int		    cur_pid;
+-    struct stat	    lock_stat;
+     t_desc         *td = NULL;
+     char           *p, *mark;
+-    char            buf[64], buf2[64], lockdir[LOCK_DIR_SIZE];
++    char            buf[64];
+     Tcl_DString     dbPathBuf;
+     Tcl_HashEntry  *hash;
+     DB             *d;
+-    DBT             key, content, lock_dbt;
++    DBT             key, content;
+     DBC		   *cursorp;
+     DBTYPE          dbtype;
+     DB_INFO         dbi;
+-    DB_LOCKTAB	   *lockr;
+-    DB_LOCK	    lock;
+     db_lockmode_t   lock_type;
+     Tcl_Obj *objScript;
+@@ -116,6 +111,4 @@
+     static char *badDbSeqArgs = "db seq <sess> <flag> [<key>] [<var>]";
+     static char *badDbCmdArgs = "db {open|close|del|cursor|get|put|seq|forall|searchall|sync}";
+-    int varNameIndex;
+-    int keyIndex;
+ 
+     /* DB 2.0 requires DBT structs to be zeroed out */
+@@ -296,23 +289,4 @@
+ 	td->db = d;
+ 
+-/*
+-	stat(Tcl_DStringValue(&dbPathBuf), &lock_stat);
+-	ino = malloc(sizeof(ino_t));
+-	*ino = lock_stat.st_ino;
+-	lock_dbt.data = ino;
+-	lock_dbt.size = sizeof(lock_stat.st_ino);
+-	locker = (u_int32_t) getpid();
+-
+-	if (errno = lock_get(lockr, locker, NULL, &lock_dbt, lock_type, &lock)) {
+-		Tcl_AppendResult(interp, "unable to get lock: ",
+-			strerror(errno), NULL);
+-		return TCL_ERROR;
+-	}
+-
+-	td->lock = lock;
+-	td->lockr = lockr;
+-
+-	free(ino);
+- */
+ 	Tcl_DStringFree (&dbPathBuf);
+ 
+@@ -472,5 +446,5 @@
+ 
+ 	length = strlen(argv[2]);
+-	*mark = NULL;
++	*mark = '\0';
+ 
+ 	if (!(td = TclX_HandleXlate (interp, cd->handles, argv[2])))
+@@ -653,5 +627,5 @@
+     if (STREQU (*argv, "close")) {
+ 	CHKNARG (2, 2, "db close <sess>");
+-	td->db->close (td->db, NULL);
++	td->db->close (td->db, 0);
+ 
+ /*
+@@ -1092,5 +1066,5 @@
+  */
+ 
+-void
++int
+ Neo_dbInit (interp)
+ Tcl_Interp	*interp;
+@@ -1103,4 +1077,6 @@
+ 
+     Tcl_CreateCommand (interp, "db", DbProc, (ClientData)cd, 0);
++
++    return TCL_OK;
+ }
+ 
+@@ -1108,8 +1084,9 @@
+ #else
+ 
+-void
++int
+ Neo_dbInit (interp)
+ Tcl_Interp	*interp;
+ {
++    return TCL_OK;
+ }
+ 
