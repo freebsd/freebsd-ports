@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asql
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.steve.org.uk/Software/asql/
 
