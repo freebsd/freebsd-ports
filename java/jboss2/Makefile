@@ -47,9 +47,9 @@ STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
-		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
-		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh
+REPLACE_FILES=	${FILESDIR}/daemonctl.c \
+		${FILESDIR}/daemonctl.1 \
+		${FILESDIR}/startup.sh
 JAR_FILE=	bin/run.jar
 
 .include <bsd.port.pre.mk>
