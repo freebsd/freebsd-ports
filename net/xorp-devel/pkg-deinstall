@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/net/xorp-devel/pkg-deinstall,v 1.1 2009-12-08 10:53:09 bms Exp $
+#
+
+PATH=/bin:/usr/sbin
+
+if [ -z "${XORP_GROUP}" ]; then
+	XORP_GROUP=xorp
+fi
+
+case $2 in
+	POST-DEINSTALL)
+		if pw group show ${XORP_GROUP} 2>/dev/null 
+		then
+			echo "Deleting group ${XORP_GROUP}..."
+			pw groupdel -n ${XORP_GROUP} 2>/dev/null
+		else
+			echo "Group ${XORP_GROUP} not found!"
+		fi
+	;;
+esac

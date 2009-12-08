@@ -1,0 +1,108 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# A sample XORP startup script.
+#
+
+# PROVIDE: xorp
+# REQUIRE: netif routing mountcritlocal
+# BEFORE:  NETWORKING
+
+# Add the following lines to /etc/rc.conf to enable xorp:
+#
+#xorp_enable="YES"
+#xorp_conf="%%PREFIX%%/etc/xorp.conf.sample"
+#
+
+. %%RC_SUBR%%
+
+name="xorp"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${xorp_enable="NO"}
+: ${xorp_conf="%%PREFIX%%/etc/xorp.conf"}
+: ${xorp_flags=""}
+: ${xorp_rtrmgr_pidfile="/var/run/xorp_rtrmgr.pid"}
+: ${xorp_rtrmgr_logfile="/var/log/xorp_rtrmgr.log"}
+: ${xorp_rtrmgr_poll_enable=true}
+: ${xorp_rtrmgr_poll_timeout=90}
+: ${xorp_hardkill_enable=false}
+
+required_files=${xorp_conf}
+command=%%PREFIX%%/sbin/xorp_rtrmgr
+command_args="-c ${xorp_conf}"
+pidfile=${xorp_rtrmgr_pidfile}
+sig_stop=INT
+
+start_precmd="xorp_prestart"
+start_cmd="xorp_start"
+stop_postcmd="xorp_poststop"
+
+xorp_prestart()
+{
+	touch ${xorp_rtrmgr_logfile}
+	return 0
+}
+
+# FIXME use XORP's built-in syslog capability
+
+xorp_start() 
+{
+	pidfile=${xorp_rtrmgr_pidfile}
+
+	echo -n 'Starting XORP router processes:'
+
+	# FIXME use XORP's built-in daemonization
+	echo -n ' xorp_rtrmgr'
+	if ! daemon </dev/null >>${xorp_rtrmgr_logfile} 2>&1 -c -p ${pidfile} \
+	     ${command} ${command_args} ; then
+		warn 'could not bring up xorp_rtrmgr.'
+		return 1
+	fi
+
+	${xorp_rtrmgr_poll_enable} || return 0
+
+	# If startup polling is enabled, then poll xorp_rtrmgr every
+	# second to see if it died, or if it logged successful bringup.
+	# XXX This may be racy on very fast machines, but without
+	# daemonizing support from xorp_rtrmgr it's difficult not to race.
+
+	pid=$(cat ${xorp_rtrmgr_pidfile})
+	timeout=${xorp_rtrmgr_poll_timeout}
+	tick=0
+	fail=true
+
+	until [ $tick = $timeout ];
+	do
+		sleep 1 ; kill -0 ${pid} || break
+		if ( tail -5 ${xorp_rtrmgr_logfile} | \
+		    grep 'No more tasks to run' > /dev/null 2>&1 ) ; then
+			fail=false
+			break
+		fi
+		tick=$((tick + 1))
+	done
+
+	if $fail ; then
+		warn 'xorp_rtrmgr failed to start'
+		return 1
+	fi
+
+	echo '.'
+	return 0
+}
+
+xorp_poststop()
+{
+	rm -f ${xorp_rtrmgr_pidfile} >/dev/null 2>&1 || true
+
+	${xorp_hardkill_enable} || return 0
+	killall -9 -m xorp_\* || true
+
+	return 0
+}
+
+run_rc_command "$1"

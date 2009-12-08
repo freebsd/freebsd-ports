@@ -1090,6 +1090,7 @@
     SUBDIR += xmlrpc-c-devel
     SUBDIR += xmlrpc-epi
     SUBDIR += xorp
+    SUBDIR += xorp-devel
     SUBDIR += xprobe
     SUBDIR += xpvm
     SUBDIR += xrdesktop
