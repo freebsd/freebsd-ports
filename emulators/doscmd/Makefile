@@ -27,10 +27,4 @@ MAKE_ARGS+=	MANDIR="${PREFIX}/man/man"
 MAN1=		doscmd.1
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000	 
-BROKEN=		does not build	 
-.endif	 
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
