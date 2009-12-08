@@ -20,6 +20,11 @@
 %%OVERWRITE%%@exec if test -e /usr/bin/lpr; then chmod -h 0 /usr/bin/lpr; fi
 %%OVERWRITE%%@exec if test -e /usr/bin/lprm; then chmod -h 0 /usr/bin/lprm; fi
 %%OVERWRITE%%@exec if test -e /usr/sbin/lpc; then chmod -h 0 /usr/sbin/lpc; fi
+%%OVERWRITE%%@unexec if test -e /usr/bin/lp; then chmod -h 0555 /usr/bin/lp; fi
+%%OVERWRITE%%@unexec if test -e /usr/bin/lpq; then chmod -h 06555 /usr/bin/lpq; fi
+%%OVERWRITE%%@unexec if test -e /usr/bin/lpr; then chmod -h 06555 /usr/bin/lpr; fi
+%%OVERWRITE%%@unexec if test -e /usr/bin/lprm; then chmod -h 06555 /usr/bin/lprm; fi
+%%OVERWRITE%%@unexec if test -e /usr/sbin/lpc; then chmod -h 02555 /usr/sbin/lpc; fi
 @unexec if cmp -s %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; then rm -f %D/etc/cups/cupsd.conf; fi
 etc/cups/cupsd.conf.N
 @exec if test ! -f %D/etc/cups/cupsd.conf; then cp -p %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; fi

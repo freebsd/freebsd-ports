@@ -24,4 +24,8 @@ To enable printing under Gimp and MS-Windows clients do the following:
 1) Uncomment application/octet-stream line in mime.types
 2) Uncomment application/octet-stream line in mime.convs
 3) Restart cupsd
+
+If you are using libusb, it is important that no device driver, e.g.
+ulpt(4) is attached to the device you wish to use. In this case please
+ensure the cups user and group has read/write access to /dev/ugen*
 ======================================================================
