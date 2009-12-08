@@ -196,7 +196,6 @@
     SUBDIR += p5-NetAddr-IP-Lite
     SUBDIR += p5-NetApp
     SUBDIR += p5-POE-Component-SNMP
-    SUBDIR += p5-SNMP
     SUBDIR += p5-SNMP-Info
     SUBDIR += p5-SNMP-MIB-Compiler
     SUBDIR += p5-SNMP-Simple
