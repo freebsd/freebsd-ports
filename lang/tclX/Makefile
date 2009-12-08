@@ -16,8 +16,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
 USE_BZIP2=	yes
-USE_TCL_BUILD=	yes
-USE_TCL=	yes
+USE_TCL=	83+
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
