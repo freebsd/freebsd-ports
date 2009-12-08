@@ -557,6 +557,7 @@
     SUBDIR += opendx
     SUBDIR += openexr_ctl
     SUBDIR += opengl-man
+    SUBDIR += opengtl
     SUBDIR += openjpeg
     SUBDIR += openjump
     SUBDIR += openrm
@@ -777,6 +778,7 @@
     SUBDIR += qt4-imageformats
     SUBDIR += qt4-pixeltool
     SUBDIR += qt4-svg
+    SUBDIR += qtgtl
     SUBDIR += qtpfsgui
     SUBDIR += quat
     SUBDIR += quat-gui

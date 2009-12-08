@@ -1,0 +1,83 @@
+bin/ctlc
+bin/ctli
+bin/ctltc
+bin/gtlconvert
+bin/imagecompare
+bin/shiva
+bin/shivac
+bin/shivainfo
+bin/shivatester
+include/GTLCore/AbstractImage.h
+include/GTLCore/Array.h
+include/GTLCore/Buffer.h
+include/GTLCore/BufferImage.h
+include/GTLCore/CategoriesManager.h
+include/GTLCore/Category.h
+include/GTLCore/ErrorMessage.h
+include/GTLCore/Export.h
+include/GTLCore/Function.h
+include/GTLCore/Image.h
+include/GTLCore/Macros.h
+include/GTLCore/Metadata/Entry.h
+include/GTLCore/Metadata/Group.h
+include/GTLCore/Metadata/ParameterEntry.h
+include/GTLCore/Metadata/TextEntry.h
+include/GTLCore/Parameter.h
+include/GTLCore/PixelDescription.h
+include/GTLCore/ProgressReport.h
+include/GTLCore/Region.h
+include/GTLCore/RegionF.h
+include/GTLCore/ScopedName.h
+include/GTLCore/String.h
+include/GTLCore/Type.h
+include/GTLCore/TypesManager.h
+include/GTLCore/Value.h
+include/GTLCore/Version.h
+include/GTLImageIO/Export.h
+include/GTLImageIO/ImageDC.h
+include/GTLImageIO/ImageDCRegistry.h
+include/OpenCTL/Export.h
+include/OpenCTL/Module.h
+include/OpenCTL/ModulesManager.h
+include/OpenCTL/Program.h
+include/OpenCTL/Template.h
+include/OpenCTL/Version.h
+include/OpenShiva/Export.h
+include/OpenShiva/Kernel.h
+include/OpenShiva/LibrariesManager.h
+include/OpenShiva/Library.h
+include/OpenShiva/Metadata.h
+include/OpenShiva/Source.h
+include/OpenShiva/SourcesCollection.h
+include/OpenShiva/Version.h
+lib/GTLImageIO/Extensions/libPngDC.so
+lib/GTLImageIO/Extensions/libRawDC.so
+lib/libGTLCore.so
+lib/libGTLCore.so.0
+lib/libGTLCore.so.0.9.12
+lib/libGTLImageIO.so
+lib/libGTLImageIO.so.0
+lib/libGTLImageIO.so.0.9.12
+lib/libOpenCTL.so
+lib/libOpenCTL.so.0
+lib/libOpenCTL.so.0.9.12
+lib/libOpenShiva.so
+lib/libOpenShiva.so.0
+lib/libOpenShiva.so.0.9.12
+libdata/pkgconfig/GTLCore.pc
+libdata/pkgconfig/GTLImageIO.pc
+libdata/pkgconfig/OpenCTL.pc
+libdata/pkgconfig/OpenShiva.pc
+share/OpenGTL/ctl/ctlstdlib.ctl
+share/OpenGTL/shiva/libraries/shivastdlib.shiva
+@dirrm share/OpenGTL/shiva/libraries
+@dirrm share/OpenGTL/shiva
+@dirrm share/OpenGTL/ctl
+@dirrm share/OpenGTL
+@dirrm lib/GTLImageIO/Extensions
+@dirrm lib/GTLImageIO
+@dirrm include/OpenShiva
+@dirrm include/OpenCTL
+@dirrm include/GTLImageIO
+@dirrm include/GTLCore/Metadata
+@dirrm include/GTLCore
