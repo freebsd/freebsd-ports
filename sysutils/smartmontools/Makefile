@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	marck@FreeBSD.org
 COMMENT=	S.M.A.R.T. disk monitoring tools
 
+CONFLICTS=	smartmontools-devel-[0-9]*
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --enable-sample
