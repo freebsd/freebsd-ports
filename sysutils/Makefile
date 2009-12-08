@@ -45,14 +45,14 @@
     SUBDIR += autopsy
     SUBDIR += avfs
     SUBDIR += b43-fwcutter
-    SUBDIR += bacula2-client
-    SUBDIR += bacula2-server
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-devel
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
     SUBDIR += bacula-server-devel
+    SUBDIR += bacula2-client
+    SUBDIR += bacula2-server
     SUBDIR += bashburn
     SUBDIR += batmon
     SUBDIR += battfink
@@ -283,8 +283,8 @@
     SUBDIR += gconf-editor
     SUBDIR += gdmap
     SUBDIR += geomgui
-    SUBDIR += geteltorito
     SUBDIR += getdelta
+    SUBDIR += geteltorito
     SUBDIR += gfslicer
     SUBDIR += ghasher
     SUBDIR += gkfreq
@@ -729,6 +729,7 @@
     SUBDIR += sloth
     SUBDIR += slst
     SUBDIR += smartmontools
+    SUBDIR += smartmontools-devel
     SUBDIR += snap
     SUBDIR += snowlog
     SUBDIR += socket
