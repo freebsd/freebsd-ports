@@ -21,4 +21,6 @@ RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 
 GNU_CONFIGURE=	yes
 
+BROKEN=	requires author to publish updated distfile
+
 .include <bsd.port.mk>
