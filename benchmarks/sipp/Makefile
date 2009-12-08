@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sipp
-PORTVERSION=	3.1.20090121
-PORTREVISION=	1
+PORTVERSION=	3.1.20090729
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://sipp.sourceforge.net/snapshots/
-DISTNAME=	${PORTNAME}.2009-01-21
+DISTNAME=	${PORTNAME}.2009-07-29
 
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	SIP testing tool
