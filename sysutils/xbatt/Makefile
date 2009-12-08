@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
 
-MAINTAINER=	nobu@psrc.isac.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Laptop battery status display for X11
 
 ONLY_FOR_ARCHS=	i386
