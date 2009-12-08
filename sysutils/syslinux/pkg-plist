@@ -17,7 +17,6 @@ share/syslinux/ethersel.c32
 share/syslinux/ifcpu64.c32
 share/syslinux/kbdmap.c32
 share/syslinux/linux.c32
-#share/syslinux/mboot.c32
 share/syslinux/meminfo.c32
 share/syslinux/pcitest.c32
 share/syslinux/pmload.c32
