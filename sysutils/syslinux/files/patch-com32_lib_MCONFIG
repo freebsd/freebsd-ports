@@ -1,0 +1,11 @@
+--- com32/lib/MCONFIG.orig	2009-10-06 02:06:06.000000000 +0400
++++ com32/lib/MCONFIG	2009-12-04 09:46:19.000000000 +0300
+@@ -45,7 +45,7 @@
+ 	$(CC) $(MAKEDEPS) $(CFLAGS) -S -o $@ $<
+ 
+ .S.o:
+-	$(CC) $(MAKEDEPS) $(CFLAGS) -D__ASSEMBLY__ -c -o $@ $<
++	$(CC) $(MAKEDEPS) $(filter-out -std=gnu99, $(CFLAGS)) -D__ASSEMBLY__ -c -o $@ $<
+ 
+ .S.s:
+ 	$(CC) $(MAKEDEPS) $(CFLAGS) -D__ASSEMBLY__ -E -o $@ $<
