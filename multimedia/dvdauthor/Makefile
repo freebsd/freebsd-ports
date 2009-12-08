@@ -28,7 +28,7 @@ MAN1=	dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
 .if exists(${LOCALBASE}/lib/libfreetype.so.9)
 WITH_FREETYPE=		yes
 .endif
-.if exists(${LOCALBASE}/lib/libfridibi.so.0)
+.if exists(${LOCALBASE}/lib/libfridibi.so.3)
 WITH_FRIBIDI=		yes
 .endif
 .if exists(${LOCALBASE}/lib/libiconv.so)
