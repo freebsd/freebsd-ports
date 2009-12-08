@@ -7,7 +7,7 @@
 
 PORTNAME=	neotcl
 PORTVERSION=	8.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/nws/nws/3.3
 DISTNAME=	neowebscript-3.3
@@ -18,6 +18,7 @@ COMMENT=	The NeoTCL part of NeoWebScript -- an Apache TCL mod
 LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
 BUILD_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX
 RUN_DEPENDS=	${BUILD_DEPENDS}
+MAKE_JOBS_SAFE=	yes
 
 # Not yet -- openldap used db3, neo used db2 :(
 #		ldap.2:${PORTSDIR}/net/openldap20-client
@@ -27,10 +28,10 @@ USE_LDCONFIG=	yes
 SUBDIR=		neowebscript-3.3/neotcl8.3.0-lite/neo${PORTVERSION}
 WRKSRC=		${WRKDIR}/${SUBDIR}/generic
 
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - ${SUBDIR}/generic ${SUBDIR}/neolibs
+EXTRACT_AFTER_ARGS?=	| ${TAR} --exclude Makefile -xpf - ${SUBDIR}/generic ${SUBDIR}/neolibs
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-TCL_VER?=	8.4
+USE_TCL=	83+
 MAKE_ENV+=	NEO_LIBRARY=${NEO_LIBRARY} TCL_VER=${TCL_VER}
 
 DDIR=		${PREFIX}/lib/tcl${TCLV}/Trf
