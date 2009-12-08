@@ -13,8 +13,6 @@ COMMENT=	Ruby bindings for version control system
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
-BROKEN=		bad plist
-
 CONFIGURE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 USE_RUBY=		yes
