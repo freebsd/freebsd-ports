@@ -113,3 +113,14 @@
 %%PYTHON_SITELIBDIR%%/paramiko/win_pageant.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/win_pageant.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/paramiko
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_sftp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_simple.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/forward.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interactive.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rforward.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_rsa.key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_rsa_key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_rsa_key.pub
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
