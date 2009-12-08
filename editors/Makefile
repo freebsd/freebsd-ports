@@ -7,8 +7,6 @@
     SUBDIR += MathPlanner
     SUBDIR += abiword
     SUBDIR += abiword-docs
-    SUBDIR += abiword-extras
-    SUBDIR += abiword-plugins
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += apel

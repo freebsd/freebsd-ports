@@ -1,9 +1,0 @@
-AbiWord Plugins extend AbiWord in various ways. Note that some of these
-plugins are not available on all platforms that AbiWord supports.
-
-The plugins are often packaged as bundles for your convenience. One bundle is
-comprised of import and export plugins, which read and write various file and
-component formats, and the other bundle is comprised of tools and utilities
-that perform various helpful tasks from within AbiWord.
-
-WWW: http://www.abisource.com/twiki/bin/view/Abiword/PluginMatrix
