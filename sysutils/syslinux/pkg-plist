@@ -9,11 +9,13 @@ share/syslinux/menu.c32
 share/syslinux/vesamenu.c32
 share/syslinux/chain.c32
 share/syslinux/cmd.c32
+share/syslinux/config.c32
 share/syslinux/cpuidtest.c32
 share/syslinux/disk.c32
 share/syslinux/dmitest.c32
 share/syslinux/elf.c32
 share/syslinux/ethersel.c32
+share/syslinux/gpxecmd.c32
 share/syslinux/ifcpu64.c32
 share/syslinux/kbdmap.c32
 share/syslinux/linux.c32
