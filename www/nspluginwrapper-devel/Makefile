@@ -20,6 +20,8 @@ COMMENT=	A compatibility plugin for Mozilla NPAPI (development version)
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
+LATEST_LINK=	${PORTNAME}-devel
+
 CONFLICTS=	nspluginwrapper-1.2.*
 
 RPMFILE=	${PORTNAME}-i386-${PORTVERSION}-1.x86_64.rpm
