@@ -293,10 +293,9 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
 		--with-openssl-dir=${OPENSSLBASE} \
 		--enable-ucd-snmp-hack
 
+LIB_DEPENDS+=   netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 LDFLAGS+=       -L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=    yes
-
-OPTIONS=	SNMP4 "Use old UCD SNMP instead of the new NET SNMP" off
 .endif
 
 .if ${PHP_MODNAME} == "sockets"
@@ -464,14 +463,6 @@ post-extract:
 .if ${PHP_MODNAME} == "pfpro"
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/pfpro.c
-.endif
-
-.if ${PHP_MODNAME} == "snmp"
-.	if defined(WITH_SNMP4) || exists(${LOCALBASE}/lib/libsnmp.so.4)
-LIB_DEPENDS+=   snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-.	else
-LIB_DEPENDS+=   netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
-.	endif
 .endif
 
 .if ${PHP_MODNAME} == "zlib"

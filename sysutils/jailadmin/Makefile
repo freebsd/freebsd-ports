@@ -22,11 +22,7 @@ PORTDOCS=	INSTALL README
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SNMP)
-.if exists(${LOCALBASE}/lib/libsnmp.so.4) || defined(WITH_SNMP4)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-.else
 LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
-.endif
 PLIST_SUB+=	SNMP=""
 .else
 INSTALL_TARGET=	installbase
