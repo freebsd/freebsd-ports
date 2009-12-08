@@ -84,6 +84,7 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.image
 .else
+PORTREVISION=	2
 CUPS_SUFFIX=	-base
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
@@ -95,8 +96,10 @@ USE_RC_SUBR=	cupsd
 
 .if defined(CUPS_OVERWRITE_BASE)
 PLIST_SUB+=		OVERWRITE=""
+CONFIGURE_ARGS+=	--with-printcap=/etc/printcap
 .else
 PLIST_SUB+=		OVERWRITE="@comment "
+CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 .endif
 
 .if !defined(WITHOUT_GNUTLS)
