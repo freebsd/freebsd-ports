@@ -35,6 +35,66 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5f030587-e39a-11de-881e-001aa0166822">
+    <topic>expat2 -- Parser crash with specially formatted UTF-8 sequences</topic>
+    <affects>
+      <package>
+	<name>expat2</name>
+	<range><lt>2.0.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3720">
+	  <p>The updatePosition function in lib/xmltok_impl.c in
+	  libexpat in Expat 2.0.1, as used in Python, PyXML,
+	  w3c-libwww, and other software, allows context-dependent
+	  attackers to cause a denial of service (application crash)
+	  via an XML document with crafted UTF-8 sequences that
+	  trigger a buffer over-read.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3720</cvename>
+    </references>
+    <dates>
+      <discovery>2009-01-17</discovery>
+      <entry>2009-12-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e9fca207-e399-11de-881e-001aa0166822">
+    <topic>expat2 -- buffer over-read and crash</topic>
+    <affects>
+      <package>
+	<name>expat2</name>
+	<range><lt>2.0.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3560">
+	  <p>The big2_toUtf8 function in lib/xmltok.c in libexpat in
+	  Expat 2.0.1, as used in the XML-Twig module for Perl, allows
+	  context-dependent attackers to cause a denial of service
+	  (application crash) via an XML document with malformed UTF-8
+	  sequences that trigger a buffer over-read, related to the
+	  doProlog function in lib/xmlparse.c.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3560</cvename>
+    </references>
+    <dates>
+      <discovery>2009-10-05</discovery>
+      <entry>2009-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6431c4db-deb4-11de-9078-0030843d3802">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
