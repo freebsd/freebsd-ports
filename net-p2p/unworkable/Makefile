@@ -15,6 +15,8 @@ COMMENT=	A Free BitTorrent Implementation
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
 
+BROKEN=		does not build with libevent-1.4.13
+
 USE_SCONS=	yes
 USE_OPENSSL=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
