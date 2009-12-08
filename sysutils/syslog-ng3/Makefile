@@ -64,9 +64,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/syslog-ng
 .endif
-	@if [ ! -f ${PREFIX}/etc/syslog-ng/syslog-ng.conf.sample ]; then \
-		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/etc/syslog-ng; \
-		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc/syslog-ng; \
+	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf.sample ]; then \
+		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 

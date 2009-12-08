@@ -1,5 +1,5 @@
 @unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
-etc/syslog-ng/syslog-ng.conf.sample
+etc/syslog-ng.conf.sample
 bin/loggen
 sbin/syslog-ng
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -9,4 +9,3 @@ sbin/syslog-ng
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sgml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/syslog-ng
