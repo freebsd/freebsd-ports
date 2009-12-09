@@ -2,6 +2,3 @@ Net::SFTP is a pure Ruby implementation of the SFTP client protocol
 (versions 1 through 5).
 
 WWW: http://net-ssh.rubyforge.org/
-
-- Roderick van Domburg
-r.s.a.vandomburg@nedforce.nl
