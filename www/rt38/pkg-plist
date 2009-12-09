@@ -303,6 +303,7 @@ share/rt38/html/Admin/Elements/PickCustomFields
 share/rt38/html/Admin/Elements/PickObjects
 share/rt38/html/Admin/Elements/QueueRightsForUser
 share/rt38/html/Admin/Elements/QueueTabs
+share/rt38/html/Admin/Elements/SelectCustomField
 share/rt38/html/Admin/Elements/SelectCustomFieldLookupType
 share/rt38/html/Admin/Elements/SelectCustomFieldType
 share/rt38/html/Admin/Elements/SelectGroups
@@ -388,7 +389,6 @@ share/rt38/html/Approvals/Elements/ShowDependency
 share/rt38/html/Approvals/Elements/Tabs
 share/rt38/html/Approvals/autohandler
 share/rt38/html/Approvals/index.html
-share/rt38/html/CalPopup.html
 share/rt38/html/Dashboards/Elements/DashboardsForObject
 share/rt38/html/Dashboards/Elements/DashboardsForObjects
 share/rt38/html/Dashboards/Elements/Deleted
