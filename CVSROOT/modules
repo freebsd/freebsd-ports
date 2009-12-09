@@ -258,8 +258,6 @@ abills                          ports/net/abills
 abinit                          ports/science/abinit
 abiword                         ports/editors/abiword
 abiword-docs                    ports/editors/abiword-docs
-abiword-extras                  ports/editors/abiword-extras
-abiword-plugins                 ports/editors/abiword-plugins
 abntex                          ports/print/abntex
 abook                           ports/mail/abook
 abraca                          ports/audio/abraca
@@ -2242,6 +2240,7 @@ devstat                         ports/sysutils/devstat
 devtodo                         ports/devel/devtodo
 dfileserver                     ports/www/dfileserver
 dfm                             ports/x11-fm/dfm
+dfu-programmer                  ports/comms/dfu-programmer
 dfu-util                        ports/comms/dfu-util
 dfuife-curses                   ports/devel/dfuife-curses
 dgd                             ports/net/dgd
@@ -2469,7 +2468,6 @@ dotproject-devel                ports/www/dotproject-devel
 dotter                          ports/biology/dotter
 dovecot                         ports/mail/dovecot
 dovecot-antispam                ports/mail/dovecot-antispam
-dovecot-devel                   ports/mail/dovecot-devel
 dovecot-managesieve             ports/mail/dovecot-managesieve
 dovecot-sieve                   ports/mail/dovecot-sieve
 downtime                        ports/sysutils/downtime
@@ -6259,7 +6257,6 @@ jakarta-oro                     ports/java/jakarta-oro
 jakarta-poi                     ports/textproc/jakarta-poi
 jakarta-regexp                  ports/java/jakarta-regexp
 jakarta-struts                  ports/java/jakarta-struts
-jakarta-tomcat4                 ports/www/jakarta-tomcat4
 jakarta-tomcat5                 ports/www/jakarta-tomcat5
 jakelib2                        ports/devel/jakelib2
 jalbum                          ports/graphics/jalbum
@@ -9032,6 +9029,7 @@ mod_webapp                      ports/www/mod_webapp
 mod_webkit                      ports/www/mod_webkit
 mod_webobjects                  ports/www/mod_webobjects
 mod_wsgi                        ports/www/mod_wsgi
+mod_wsgi3                       ports/www/mod_wsgi3
 mod_xmlns                       ports/www/mod_xmlns
 mod_xsendfile                   ports/www/mod_xsendfile
 mode-info                       ports/editors/mode-info
@@ -9511,7 +9509,6 @@ nessus-plugins                  ports/security/nessus-plugins
 net-http                        ports/net/net-http
 net-p2p_dcd                     ports/net-p2p/dcd
 net-snmp                        ports/net-mgmt/net-snmp
-net-snmp-tkmib                  ports/net-mgmt/net-snmp-tkmib
 net-snmp4                       ports/net-mgmt/net-snmp4
 net2ftp                         ports/ftp/net2ftp
 net6                            ports/net/net6
@@ -10073,6 +10070,7 @@ opengl-man                      ports/graphics/opengl-man
 openglad                        ports/games/openglad
 opengoo                         ports/deskutils/opengoo
 opengrok                        ports/devel/opengrok
+opengtl                         ports/graphics/opengtl
 openh323                        ports/net/openh323
 openhbci                        ports/finance/openhbci
 openjade                        ports/textproc/openjade
@@ -11660,7 +11658,6 @@ p5-Getopt-Popt                  ports/devel/p5-Getopt-Popt
 p5-Git-PurePerl                 ports/devel/p5-Git-PurePerl
 p5-Glade2                       ports/x11-toolkits/p5-Glade2
 p5-Glib2                        ports/devel/p5-Glib2
-p5-Gnome                        ports/x11-toolkits/p5-Gnome
 p5-Gnome2                       ports/x11-toolkits/p5-Gnome2
 p5-Gnome2-Canvas                ports/x11-toolkits/p5-Gnome2-Canvas
 p5-Gnome2-GConf                 ports/devel/p5-Gnome2-GConf
@@ -12957,7 +12954,6 @@ p5-SMS-Send-DeviceGsm           ports/comms/p5-SMS-Send-DeviceGsm
 p5-SMS-Send-TW-PChome           ports/comms/p5-SMS-Send-TW-PChome
 p5-SMS-Send-TW-ShareSMS         ports/comms/p5-SMS-Send-TW-ShareSMS
 p5-SMS-Send-TW-emome            ports/comms/p5-SMS-Send-TW-emome
-p5-SNMP                         ports/net-mgmt/p5-SNMP
 p5-SNMP-Info                    ports/net-mgmt/p5-SNMP-Info
 p5-SNMP-MIB-Compiler            ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-SNMP-Persist                 ports/devel/p5-SNMP-Persist
@@ -15296,7 +15292,6 @@ p5-github_creator               ports/devel/p5-github_creator
 p5-glade2                       ports/x11-toolkits/p5-Glade2
 p5-glib2                        ports/devel/p5-Glib2
 p5-gmail-imapd                  ports/mail/p5-GMail-IMAPD
-p5-gnome                        ports/x11-toolkits/p5-Gnome
 p5-gnome2                       ports/x11-toolkits/p5-Gnome2
 p5-gnome2-canvas                ports/x11-toolkits/p5-Gnome2-Canvas
 p5-gnome2-gconf                 ports/devel/p5-Gnome2-GConf
@@ -16703,7 +16698,6 @@ p5-sms-send-devicegsm           ports/comms/p5-SMS-Send-DeviceGsm
 p5-sms-send-tw-emome            ports/comms/p5-SMS-Send-TW-emome
 p5-sms-send-tw-pchome           ports/comms/p5-SMS-Send-TW-PChome
 p5-sms-send-tw-sharesms         ports/comms/p5-SMS-Send-TW-ShareSMS
-p5-snmp                         ports/net-mgmt/p5-SNMP
 p5-snmp-info                    ports/net-mgmt/p5-SNMP-Info
 p5-snmp-mib-compiler            ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-snmp-persist                 ports/devel/p5-SNMP-Persist
@@ -20391,6 +20385,7 @@ qtcurve-kde4                    ports/x11-themes/qtcurve-kde4
 qtella                          ports/net-p2p/qtella
 qtemu                           ports/emulators/qtemu
 qtfw                            ports/security/qtfw
+qtgtl                           ports/graphics/qtgtl
 qtiplot                         ports/math/qtiplot
 qtiplot-doc                     ports/math/qtiplot-doc
 qtm                             ports/deskutils/qtm
@@ -21878,6 +21873,7 @@ smartdoc                        ports/textproc/smartdoc
 smartdoc-devel                  ports/textproc/smartdoc-devel
 smarteiffel                     ports/lang/smarteiffel
 smartmontools                   ports/sysutils/smartmontools
+smartmontools-devel             ports/sysutils/smartmontools-devel
 smarty                          ports/www/smarty
 smasher                         ports/audio/smasher
 smb2www                         ports/www/smb2www
@@ -24630,6 +24626,7 @@ xorg-vfbserver                  ports/x11-servers/xorg-vfbserver
 xorgramana                      ports/games/xorgramana
 xoris                           ports/graphics/xoris
 xorp                            ports/net/xorp
+xorp-devel                      ports/net/xorp-devel
 xorriso                         ports/sysutils/xorriso
 xorsearch                       ports/security/xorsearch
 xoscope                         ports/audio/xoscope
