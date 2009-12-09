@@ -1,0 +1,26 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading/WithOverloading.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading/WithOverloading.so
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/Composite/ToClass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/Composite/ToRole.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/Composite/ToInstance.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/ToRole.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/ToInstance.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/FixOverloadedRefs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/Composite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/ToClass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Composite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/Composite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto

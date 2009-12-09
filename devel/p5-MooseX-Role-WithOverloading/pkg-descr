@@ -1,0 +1,6 @@
+MooseX::Role::WithOverloading allows you to write a Moose::Role which
+defines overloaded operators and allows those operator overloadings
+to be composed into the classes/roles/instances it's compiled to,
+while plain Moose::Roles would lose the overloading.
+
+WWW: http://search.cpan.org/dist/MooseX-Role-WithOverloading/
