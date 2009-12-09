@@ -38,6 +38,13 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_LOG_DAEMON)
+do-configure:
+	@${REINPLACE_CMD} \
+		-e 's:LOG_LOCAL7:LOG_DAEMON:' \
+		${WRKSRC}/common/common.c
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix-console/aiccu ${PREFIX}/sbin/sixxs-aiccu
 .ifndef(NOPORTDOCS)
