@@ -6,20 +6,23 @@
 #
 
 PORTNAME=		FreeMat
-PORTVERSION=		3.6
-PORTREVISION=		6
+PORTVERSION=		4.0
+DISTVERSIONSUFFIX=	-Source
 CATEGORIES=		math science
 MASTER_SITES=		SF
+MASTER_SITE_SUBDIR=	freemat/FreeMat4
 .ifdef WITH_MPI
 PKGNAMESUFFIX=		-mpi
 .endif
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		glarkin@FreeBSD.org
 COMMENT=		An environment for rapid engineering and scientific processing
 
 LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\
 			pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
+
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}.1${DISTVERSIONSUFFIX}
 
 .ifdef WITH_MPI
 IGNORE=			no MPI support at the moment
@@ -30,13 +33,10 @@ FFLAGS+=		-O2
 
 USE_GL=			yes
 USE_QT_VER=		4
-USE_GCC=		4.3+
-USE_GMAKE=		yes
-QT_COMPONENTS=		gui network opengl moc_build rcc_build uic_build xml svg
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-blas="${BLAS}" --without-llvm
+USE_CMAKE=		yes
+QT_COMPONENTS=		gui network opengl moc_build rcc_build uic_build \
+			qmake_build xml svg
 CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 SLAVEDIRS=	math/freemat-mpi
 
@@ -94,7 +94,7 @@ pre-everything::
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's| == x| = x|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${RM} ${WRKSRC}/CMakeCache.txt
 
 post-configure:
 	# Avoid conflict with QT3

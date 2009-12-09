@@ -1,0 +1,15 @@
+--- ./libs/libFN/CMakeLists.txt.orig	2009-11-13 20:28:30.000000000 -0500
++++ ./libs/libFN/CMakeLists.txt	2009-11-13 22:38:43.000000000 -0500
+@@ -13,6 +13,12 @@
+ 	 mathfunc4.cpp
+   )
+ ENDIF( MSVC )
++
++IF (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++  SET(LIBM_FILES
++	mathfunc4.cpp
++  )
++ENDIF(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+ 
+ ADD_LIBRARY( FN
+ FNFun.cpp 
