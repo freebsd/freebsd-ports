@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}.example zlin.conf
