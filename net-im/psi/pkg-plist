@@ -1,4 +1,5 @@
 bin/psi
+%%DEBUG%%bin/psi.debug
 share/applications/psi.desktop
 share/icons/hicolor/128x128/apps/psi.png
 share/icons/hicolor/16x16/apps/psi.png
