@@ -24,4 +24,10 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_XFCE=	configenv libexo thunar
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
+.include <bsd.port.post.mk>
