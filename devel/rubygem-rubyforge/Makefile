@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	rubyforge
-PORTVERSION=	1.0.4
+PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	codeforpeople
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Simplistic script which automates rubyforge operations
+
+BUILD_DEPENDS=	rubygem-json_pure>=1.1.7:${PORTSDIR}/devel/rubygem-json_pure
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
