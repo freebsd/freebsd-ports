@@ -23,6 +23,12 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not link on 6.X
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -31,4 +37,5 @@ post-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
