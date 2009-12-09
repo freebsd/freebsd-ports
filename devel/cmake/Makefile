@@ -7,6 +7,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
@@ -47,5 +48,6 @@ post-patch:
 		${WRKSRC}/bootstrap
 	@${REINPLACE_CMD} -e 's,/opt/kde4,${LOCALBASE}/kde4,g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
+	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
 .include <bsd.port.mk>
