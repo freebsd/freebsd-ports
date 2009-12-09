@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
@@ -78,7 +79,7 @@ CONFIGURE_ARGS+=	--without-x
 
 .if defined(WITH_MPEG2)
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
-CONFIGURE_ARGS+=	--with-libmpeg2-prefix=${LOCALBASE} --enable-libmpeg2
+CONFIGURE_ARGS+=	--with-libmpeg2-prefix=${LOCALBASE} --enable-libmpeg2 --enable-libmpeg2convert
 .else
 CONFIGURE_ARGS+=	--disable-libmpeg2
 .endif
