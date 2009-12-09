@@ -35,6 +35,34 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eab8c3bd-e50c-11de-9cd0-001a926c7637">
+    <topic>ruby -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>1.9.1,1</ge><lt>1.9.1.376,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2009/12/07/heap-overflow-in-string/">
+	  <p>There is a heap overflow vulnerability in String#ljust,
+	    String#center and String#rjust. This has allowed an attacker to run
+	    arbitrary code in some rare cases.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-4124</cvename>
+      <url>http://www.ruby-lang.org/en/news/2009/12/07/heap-overflow-in-string/</url>
+    </references>
+    <dates>
+      <discovery>2009-11-30</discovery>
+      <entry>2009-12-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="714c1406-e4cf-11de-883a-003048590f9e">
     <topic>rt -- Session fixation vulnerability</topic>
     <affects>
