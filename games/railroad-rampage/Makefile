@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	railroad-rampage
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	RailroadRampage_Linux
+DISTNAME=	RailroadRampage_${PORTVERSION}_Linux
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tower Defence-like Arcade and Strategy combination
@@ -22,6 +22,7 @@ RUN_DEPENDS=	bgdi:${PORTSDIR}/devel/bennugd-core \
 USE_ZIP=	yes
 MAKE_JOBS_SAFE=	yes
 
+WRKSRC=		${WRKDIR}/RailroadRampage_Linux
 SUB_FILES=	${PORTNAME}
 
 PORTDOCS=	ReadMe.txt
