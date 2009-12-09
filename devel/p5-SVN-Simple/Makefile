@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SVN-Simple
-PORTVERSION=	0.27
-PORTREVISION=	3
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +20,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		SVN::Simple::Edit.3 SVN::Simple::Editor.3
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
