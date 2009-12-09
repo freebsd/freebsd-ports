@@ -31,6 +31,15 @@ Index: src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c
      .rcvmsg =     ng_vboxnetflt_rcvmsg,
      .shutdown =    ng_vboxnetflt_shutdown,
      .newhook =    ng_vboxnetflt_newhook,
+@@ -122,7 +122,7 @@
+     .cmdlist =    ng_vboxnetflt_cmdlist,
+ };
+ NETGRAPH_INIT(vboxnetflt, &ng_vboxnetflt_typestruct);
+-MODULE_VERSION(ng_vboxnetflt, 1);
++MODULE_VERSION(vboxnetflt, 1);
+ MODULE_DEPEND(ng_vboxnetflt, vboxdrv, 1, 1, 1);
+ 
+ /**
 @@ -267,16 +267,12 @@
      if (strcmp(name, NG_VBOXNETFLT_HOOK_IN) == 0)
      {
