@@ -1,5 +1,5 @@
 bin/tsclient
-lib/bonobo/servers/GNOME_TSClientApplet.server
+libdata/bonobo/servers/GNOME_TSClientApplet.server
 libexec/tsclient-applet
 share/application-registry/tsclient.applications
 share/applications/tsclient.desktop
@@ -69,4 +69,3 @@ share/pixmaps/tsclient/tsclient.png
 @dirrmtry share/locale/gr/LC_MESSAGES
 @dirrmtry share/locale/gr
 @dirrmtry share/applications
-@dirrmtry lib/bonobo/servers
