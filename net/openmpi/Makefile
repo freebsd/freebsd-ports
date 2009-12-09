@@ -9,10 +9,9 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.3.3
-PORTREVISION=	1
+DISTVERSION=	1.4
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.3/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.4/downloads/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A High Performance Message Passing Library
