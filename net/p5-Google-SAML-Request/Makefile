@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Google-SAML-Request
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create or parse Google\'s SAML requests
 
 RUN_DEPENDS=	p5-Compress-Zlib>0:${PORTSDIR}/archivers/p5-Compress-Zlib \
