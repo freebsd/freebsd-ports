@@ -83,7 +83,7 @@
 %%MPIDIR%%/include/vampirtrace/vt_user_count.h
 %%MPIDIR%%/include/vampirtrace/vt_user_count.inc
 %%MPIDIR%%/lib/libmca_common_sm.la
-%%MPIDIR%%/lib/libmca_common_sm.so.0
+%%MPIDIR%%/lib/libmca_common_sm.so.1
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so.0
 %%MPIDIR%%/lib/libmpi_cxx.la
@@ -198,6 +198,8 @@
 %%MPIDIR%%/lib/openmpi/mca_pubsub_orte.so
 %%MPIDIR%%/lib/openmpi/mca_rcache_vma.la
 %%MPIDIR%%/lib/openmpi/mca_rcache_vma.so
+%%MPIDIR%%/lib/openmpi/mca_rmaps_load_balance.la
+%%MPIDIR%%/lib/openmpi/mca_rmaps_load_balance.so
 %%MPIDIR%%/lib/openmpi/mca_rmaps_rank_file.la
 %%MPIDIR%%/lib/openmpi/mca_rmaps_rank_file.so
 %%MPIDIR%%/lib/openmpi/mca_rmaps_round_robin.la
@@ -227,6 +229,7 @@
 %%MPIDIR%%/share/openmpi/help-mca-param.txt
 %%MPIDIR%%/share/openmpi/help-mpi-api.txt
 %%MPIDIR%%/share/openmpi/help-mpi-btl-base.txt
+%%MPIDIR%%/share/openmpi/help-mpi-common-sm.txt
 %%MPIDIR%%/share/openmpi/help-mpi-errors.txt
 %%MPIDIR%%/share/openmpi/help-mpi-runtime.txt
 %%MPIDIR%%/share/openmpi/help-mpool-base.txt
@@ -250,6 +253,7 @@
 %%MPIDIR%%/share/openmpi/help-orte-odls-base.txt
 %%MPIDIR%%/share/openmpi/help-orte-ps.txt
 %%MPIDIR%%/share/openmpi/help-orte-rmaps-base.txt
+%%MPIDIR%%/share/openmpi/help-orte-rmaps-lb.txt
 %%MPIDIR%%/share/openmpi/help-orte-rmaps-rr.txt
 %%MPIDIR%%/share/openmpi/help-orte-rmaps-seq.txt
 %%MPIDIR%%/share/openmpi/help-orte-runtime.txt
