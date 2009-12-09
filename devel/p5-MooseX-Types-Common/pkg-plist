@@ -1,0 +1,10 @@
+%%SITE_PERL%%/MooseX/Types/Common.pm
+%%SITE_PERL%%/MooseX/Types/Common/Numeric.pm
+%%SITE_PERL%%/MooseX/Types/Common/String.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Common/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Common
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Types/Common
+@dirrmtry %%SITE_PERL%%/MooseX/Types
+@dirrmtry %%SITE_PERL%%/MooseX
