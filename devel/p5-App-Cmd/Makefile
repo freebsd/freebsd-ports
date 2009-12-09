@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Cmd
-PORTVERSION=	0.203
+PORTVERSION=	0.304
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	\
 		p5-Getopt-Long-Descriptive>=0.06:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Sub-Exporter>=0.975:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-IO-TieCombine>=0:${PORTSDIR}/devel/p5-IO-TieCombine \
 		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
