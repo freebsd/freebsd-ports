@@ -22,6 +22,7 @@
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormFu.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormHandler.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/10_Appendices.pod
 %%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD
