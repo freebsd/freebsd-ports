@@ -1,0 +1,20 @@
+--- ./CMakeLists.txt.orig	2009-11-13 18:28:43.000000000 -0500
++++ ./CMakeLists.txt	2009-11-13 19:28:04.000000000 -0500
+@@ -217,7 +217,7 @@
+   INCLUDE_DIRECTORIES(${PORTAUDIO_SYS_INCLUDE_DIR})
+   SET (PORTAUDIO_LIBRARY ${PORTAUDIO_SYS_LIBRARY})
+ ENDIF (FORCE_BUNDLED_PORTAUDIO OR NOT SYSTEM_PORTAUDIO_AVAILABLE)
+-ADD_DEFINITIONS( -DHAVE_PORTAUDIO19)
++ADD_DEFINITIONS( -DHAVE_PORTAUDIO18)
+ SET(OPTIONAL_LIBS ${OPTIONAL_LIBS} ${PORTAUDIO_LIBRARY})
+ IF (APPLE)
+    FIND_LIBRARY(COREAUDIO_LIBRARY CoreAudio)
+@@ -245,7 +245,7 @@
+ ######################################################################
+ # LLVM Support
+ ######################################################################
+-OPTION(USE_LLVM "Build with LLVM support?" ON)
++OPTION(USE_LLVM "Build with LLVM support?" OFF)
+ 
+ IF( USE_LLVM )
+   set(LLVM_FOUND FALSE)
