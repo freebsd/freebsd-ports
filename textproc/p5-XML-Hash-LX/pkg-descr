@@ -1,0 +1,10 @@
+This module is a companion for XML::LibXML. It operates with LibXML
+objects, could return or accept LibXML objects, and may be used for
+easy data transformations.
+
+It is faster in parsing then XML::Simple, XML::Hash, XML::Twig and
+of course much slower than XML::Bare.
+
+It is faster in composing than XML::Hash, but slower than XML::Simple.
+
+WWW:	http://http://search.cpan.org/dist/XML-Hash-LX/
