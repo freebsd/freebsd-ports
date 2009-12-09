@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net-sftp
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	net-ssh
