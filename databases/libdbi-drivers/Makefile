@@ -7,7 +7,7 @@
 
 PORTNAME=	libdbi-drivers
 DISTVERSION=	0.8.3-1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.8.3-1
 
@@ -98,7 +98,8 @@ PLIST_SUB+=	INGRES="@comment "
 PLIST_SUB+=	ORACLE="@comment "
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' \
+		-e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${TOUCH} ${WRKSRC}/drivers/*/dbd_*/*
 
 .include <bsd.port.post.mk>
