@@ -1,22 +1,44 @@
 bin/minitube
 share/applications/minitube.desktop
 share/icons/hicolor/128x128/apps/minitube.png
+share/icons/hicolor/16x16/apps/minitube.png
+share/icons/hicolor/256x256/apps/minitube.png
+share/icons/hicolor/32x32/apps/minitube.png
+share/icons/hicolor/48x48/apps/minitube.png
+share/icons/hicolor/64x64/apps/minitube.png
 share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/cs_CZ.qm
 %%NLS%%%%DATADIR%%/locale/de_DE.qm
+%%NLS%%%%DATADIR%%/locale/es.qm
 %%NLS%%%%DATADIR%%/locale/es_AR.qm
 %%NLS%%%%DATADIR%%/locale/es_ES.qm
+%%NLS%%%%DATADIR%%/locale/fr_FR.qm
+%%NLS%%%%DATADIR%%/locale/gl.qm
 %%NLS%%%%DATADIR%%/locale/he_IL.qm
+%%NLS%%%%DATADIR%%/locale/hr_HR.qm
+%%NLS%%%%DATADIR%%/locale/hu_HU.qm
 %%NLS%%%%DATADIR%%/locale/it_IT.qm
 %%NLS%%%%DATADIR%%/locale/ja_JP.qm
+%%NLS%%%%DATADIR%%/locale/lat.qm
 %%NLS%%%%DATADIR%%/locale/pl_PL.qm
 %%NLS%%%%DATADIR%%/locale/pt_BR.qm
 %%NLS%%%%DATADIR%%/locale/ru_RU.qm
+%%NLS%%%%DATADIR%%/locale/tr_TR.qm
 %%NLS%%%%DATADIR%%/locale/uk.qm
 %%NLS%%@dirrm %%DATADIR%%/locale
 %%NLS%%@dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
