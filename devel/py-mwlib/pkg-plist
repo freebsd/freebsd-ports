@@ -3,6 +3,7 @@ bin/mw-check-service
 bin/mw-client
 bin/mw-parse
 bin/mw-post
+bin/mw-qserve
 bin/mw-render
 bin/mw-serve
 bin/mw-show
@@ -60,6 +61,24 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps/watch.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps/watch.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps/watch.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/jobs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/jobs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/jobs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/qserve.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/qserve.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/qserve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcclient.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcclient.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcclient.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcserver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcserver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcserver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/slave.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/slave.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/slave.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/authors.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/authors.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/authors.pyo
@@ -147,6 +166,9 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/pod.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/pod.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/pod.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/sapi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/sapi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/sapi.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/nshandling.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/nshandling.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/nshandling.pyo
@@ -429,6 +451,7 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/zipwiki.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/refine
