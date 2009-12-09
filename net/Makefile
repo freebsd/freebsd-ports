@@ -678,6 +678,7 @@
     SUBDIR += p5-XML-Compile-SOAP
     SUBDIR += p5-XML-Compile-SOAP-Daemon
     SUBDIR += p5-XML-RPC
+    SUBDIR += p5-XML-RPC-Fast
     SUBDIR += p5-XPC
     SUBDIR += p5-ZConf
     SUBDIR += p5-ZConf-Bookmarks
