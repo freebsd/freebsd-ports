@@ -40,7 +40,8 @@ CORE_DEPS=	p5-Encode>=2.13:${PORTSDIR}/converters/p5-Encode \
 			${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 			${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
 			${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-			${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
+			${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
+			p5-Parse-BooleanLogic>=0.09:${PORTSDIR}/textproc/p5-Parse-BooleanLogic
 
 DASHBOARD_DEPS=	p5-MIME-Types>=1.25:${PORTSDIR}/mail/p5-MIME-Types \
 			p5-HTML-RewriteAttributes>=0.02:${PORTSDIR}/textproc/p5-HTML-RewriteAttributes

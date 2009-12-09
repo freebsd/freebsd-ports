@@ -1,11 +1,11 @@
---- Makefile.in.orig	2008-08-18 11:13:58.000000000 -0400
-+++ Makefile.in	2009-01-25 11:57:09.000000000 -0500
+--- Makefile.in.orig	2009-12-04 17:30:18.000000000 -0500
++++ Makefile.in	2009-12-04 17:33:01.000000000 -0500
 @@ -58,7 +58,7 @@
  
  CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
- CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_Config.pm
--SITE_CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
-+SITE_CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm-dist
+ CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
+-SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
++SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm-dist
  
  
  RT_VERSION_MAJOR	=	@RT_VERSION_MAJOR@
@@ -13,21 +13,24 @@
  RT_VAR_PATH		=	@RT_VAR_PATH_R@
  RT_DOC_PATH		=	@RT_DOC_PATH_R@
  RT_LOCAL_PATH		=	@RT_LOCAL_PATH_R@
--LOCAL_PLUGIN_PATH		=	@RT_LOCAL_PATH_R@/plugins
-+LOCAL_PLUGIN_PATH		=	@RT_LOCAL_PATH_R@/share/rt38/plugins
+-LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/plugins
++LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/share/rt38/plugins
  LOCAL_ETC_PATH		=	@LOCAL_ETC_PATH_R@
  LOCAL_LIB_PATH		=	@LOCAL_LIB_PATH_R@
  LOCAL_LEXICON_PATH	=	@LOCAL_LEXICON_PATH_R@
-@@ -283,7 +283,7 @@
+@@ -282,9 +282,9 @@
+ 	@echo "    $(RT_SBIN_PATH)/rt-setup-database --dba $(DB_DBA) --prompt-for-dba-password --action upgrade"
  
- upgrade: testdeps config-install dirs files-install fixperms upgrade-instruct
+ 
+-upgrade: testdeps config-install dirs files-install fixperms upgrade-instruct
++upgrade:  config-install dirs files-install fixperms upgrade-instruct
  
 -upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install fixperms
-+upgrade-noclobber: config-install dirs libs-install html-install bin-install doc-install
++upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install
  
  
  # {{{ dependencies
-@@ -301,14 +301,6 @@
+@@ -302,13 +302,6 @@
  
  # {{{ fixperms
  fixperms:
@@ -35,22 +38,21 @@
 -	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_PATH)
 -	chown -R $(LIBS_OWNER) $(DESTDIR)$(RT_LIB_PATH)
 -	chgrp -R $(LIBS_GROUP) $(DESTDIR)$(RT_LIB_PATH)
--	chmod -R  u+rwX,go-w,go+rX 	$(DESTDIR)$(RT_LIB_PATH)
+-	chmod -R  u+rwX,go-w,go+rX $(DESTDIR)$(RT_LIB_PATH)
 -
 -
--	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
+ 	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
  
  	chmod 0755 $(DESTDIR)$(RT_ETC_PATH)
- 	cd $(DESTDIR)$(RT_ETC_PATH) && chmod 0400 $(ETC_FILES)
-@@ -361,9 +353,9 @@
+@@ -362,9 +355,9 @@
  	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_LEXICON_PATH)
  # }}}
  
 -install: testdeps config-install dirs files-install fixperms instruct
-+install: config-install dirs files-install fixperms
++install: config-install dirs files-install fixperms instruct
  
 -files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install
 +files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install
  
  config-install:
- @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)	
+ @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
