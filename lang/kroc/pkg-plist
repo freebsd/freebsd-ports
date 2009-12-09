@@ -173,7 +173,9 @@ lib/kroc/examples/occSDL/sound_test
 lib/kroc/examples/occade/bounce
 lib/kroc/examples/occade/breakout
 lib/kroc/examples/occade/collision-test
+lib/kroc/examples/occade/flipbook
 lib/kroc/examples/occade/parrot_attack
+lib/kroc/examples/occade/scrollytext
 lib/kroc/examples/occbench/fft2
 lib/kroc/examples/occbench/fft2-noresched
 lib/kroc/examples/occbench/fft3
@@ -622,6 +624,7 @@ share/kroc/occade/images/green-ball.png
 share/kroc/occade/images/lifeno.png
 share/kroc/occade/images/lifeyes.png
 share/kroc/occade/images/missile.png
+share/kroc/occade/images/numbers.png
 share/kroc/occade/images/orange-ball.png
 share/kroc/occade/images/parrot1.png
 share/kroc/occade/images/parrot2.png
