@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	20090815
+DISTVERSION=	20091210.01
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Programatically simulate keyboard input or mouse activity
 
+USE_PERL5_BUILD=	yes
+USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_XORG=	x11 xtst
-ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/xdotool
+MAN1=		xdotool.1
+PLIST_FILES=	bin/xdotool lib/libxdo.so lib/libxdo.so.0
 MAKE_JOBS_SAFE=	yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xdotool ${PREFIX}/bin
 
 # Older GCC on RELENG_6 doesn't like -Wno-missing-field-initializers
 post-patch:
