@@ -68,12 +68,33 @@ start_precmd()
 
 start_cmd()
 {
-    eval $command -p $qpsmtpd_port -c $qpsmtpd_max_connections -u $qpsmtpd_users -m $qpsmtpd_max_per_ip -l $qpsmtpd_listen_on --pid-file $pidfile
+	if [ -e $pidfile ]; then
+		echo "$name already running as PID `cat $pidfile`."
+		exit 1
+	else
+		eval $command \
+		-p $qpsmtpd_port \
+		-c $qpsmtpd_max_connections \
+		-u $qpsmtpd_user \
+		-m $qpsmtpd_max_per_ip \
+		-l $qpsmtpd_listen_on \
+		--pid-file $pidfile \
+		-d \
+		&& echo "$name started as PID `cat $pidfile`." \
+		|| echo "Failed to start $name"
+	fi
 }
 
 stop_cmd()
 {
-    kill `cat $pidfile`
+	if [ -e $pidfile ]; then
+		kill `cat $pidfile` \
+		&& echo "$name stopped." \
+		|| echo "Could not stop `cat $pidfile`."
+	else
+		echo "Cannot find $pidfile - $name not running?"
+		exit 1
+	fi
 }
 
 run_rc_command "$1"
