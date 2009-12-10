@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.09.0
+PORTVERSION=	1.10.5
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,23 +16,26 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Critique Perl source for style and standards
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/B/Keywords.pm:${PORTSDIR}/devel/p5-B-Keywords \
-		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
-		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
-		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
-		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
-		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly \
-		p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
+		p5-Config-Tiny>=2:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-File-Path>=0:${PORTSDIR}/devel/p5-File-Path \
+		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-List-MoreUtils>=0.19:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Module-Pluggable>=3.1:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-PPI>=1.205:${PORTSDIR}/textproc/p5-PPI \
+		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
+		p5-String-Format>=1.13:${PORTSDIR}/textproc/p5-String-Format \
+		p5-version>=0:${PORTSDIR}/devel/p5-version \
+		perltidy:${PORTSDIR}/devel/perltidy
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
 MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
+	Perl::Critic::Annotation.3 \
+	Perl::Critic::Command.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
 	Perl::Critic::Document.3 \
@@ -40,6 +43,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Exception::AggregateConfiguration.3 \
 	Perl::Critic::Exception::Configuration.3 \
 	Perl::Critic::Exception::Configuration::Generic.3 \
+	Perl::Critic::Exception::Configuration::NonExistentPolicy.3 \
 	Perl::Critic::Exception::Configuration::Option.3 \
 	Perl::Critic::Exception::Configuration::Option::Global.3 \
 	Perl::Critic::Exception::Configuration::Option::Global::ExtraParameter.3 \
@@ -110,6 +114,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedOpen.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedSyscalls.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitFormats.3 \
+	Perl::Critic::Policy::Miscellanea::ProhibitUnrestrictedNoCritic.3 \
+	Perl::Critic::Policy::Miscellanea::ProhibitUselessNoCritic.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
 	Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3 \
@@ -122,9 +128,9 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Modules::RequireFilenameMatchesPackage.3 \
 	Perl::Critic::Policy::Modules::RequireNoMatchVarsWithUseEnglish.3 \
 	Perl::Critic::Policy::Modules::RequireVersionVar.3 \
+	Perl::Critic::Policy::NamingConventions::Capitalization.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitAmbiguousNames.3 \
-	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs.3 \
-	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars.3 \
+	Perl::Critic::Policy::Objects::ProhibitIndirectSyntax.3 \
 	Perl::Critic::Policy::References::ProhibitDoubleSigils.3 \
 	Perl::Critic::Policy::RegularExpressions::ProhibitCaptureWithoutTest.3 \
 	Perl::Critic::Policy::RegularExpressions::ProhibitComplexRegexes.3 \
@@ -135,6 +141,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::RegularExpressions::ProhibitUnusedCapture.3 \
 	Perl::Critic::Policy::RegularExpressions::ProhibitUnusualDelimiters.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireBracesForMultiline.3 \
+	Perl::Critic::Policy::RegularExpressions::RequireDotMatchAnything.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireLineBoundaryMatching.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitAmpersandSigils.3 \
@@ -143,6 +150,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitExplicitReturnUndef.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitManyArgs.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitNestedSubs.3 \
+	Perl::Critic::Policy::Subroutines::ProhibitReturnSort.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitSubroutinePrototypes.3 \
 	Perl::Critic::Policy::Subroutines::ProtectPrivateSubs.3 \
 	Perl::Critic::Policy::Subroutines::RequireArgUnpacking.3 \
@@ -154,6 +162,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireUseStrict.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireUseWarnings.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitCommaSeparatedStatements.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitComplexVersion.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitConstantPragma.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEscapedCharacters.3 \
@@ -166,7 +175,9 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMixedBooleanOperators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitNoisyQuotes.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitQuotesAsQuotelikeOperatorDelimiters.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitSpecialLiteralHeredocTerminator.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitVersionStrings.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::RequireConstantVersion.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireInterpolationOfMetachars.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireQuotedHeredocTerminator.3 \
@@ -177,6 +188,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::ProhibitPackageVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPerl4PackageNames.3 \
 	Perl::Critic::Policy::Variables::ProhibitPunctuationVars.3 \
+	Perl::Critic::Policy::Variables::ProhibitReusedNames.3 \
 	Perl::Critic::Policy::Variables::ProhibitUnusedVariables.3 \
 	Perl::Critic::Policy::Variables::ProtectPrivateVars.3 \
 	Perl::Critic::Policy::Variables::RequireInitializationForLocalVars.3 \
@@ -207,6 +219,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Utils::POD.3 \
 	Perl::Critic::Utils::PPI.3 \
 	Perl::Critic::Utils::PPIRegexp.3 \
+	Perl::Critic::Utils::Perl.3 \
 	Perl::Critic::Violation.3
 
 .include <bsd.port.mk>
