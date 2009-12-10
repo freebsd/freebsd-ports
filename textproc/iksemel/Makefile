@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	markocpc@gmail.com
+MAINTAINER=	rhaamo@gruik.at
 COMMENT=	XML parser library mainly designed for Jabber applications
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
