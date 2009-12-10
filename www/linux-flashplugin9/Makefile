@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	9.0r246
+PORTVERSION=	9.0r260
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://download.macromedia.com/pub/flashplayer/installers/current/9/:plugin \
 		http://tijl.ulyssis.be/mirror/:suplib \
@@ -28,7 +28,7 @@ RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlibflashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/install_flash_player_9_linux
+WRKSRC=		${WRKDIR}
 LATEST_LINK=	flash9
 
 USE_NPAPI=	linux-*
