@@ -35,6 +35,36 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30211c45-e52a-11de-b5cd-00e0815b8da8">
+    <topic>dovecot -- Insecure directory permissions</topic>
+    <affects>
+      <package>
+	<name>dovecot</name>
+	<range><lt>1.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dovecot author reports:</p>
+	<blockquote cite="http://www.dovecot.org/list/dovecot-news/2009-November/000143.html">
+	  <p>Dovecot v1.2.x had been creating base_dir (and its parents if
+	  necessary) with 0777 permissions. The base_dir's permissions get
+	  changed to 0755 automatically at startup, but you may need to
+	  chmod the parent directories manually.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3897</cvename>
+      <bid>37084</bid>
+      <url>http://secunia.com/advisories/37443</url>
+    </references>
+    <dates>
+      <discovery>2009-11-20</discovery>
+      <entry>2009-12-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3c1a672e-e508-11de-9f4a-001b2134ef46">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
