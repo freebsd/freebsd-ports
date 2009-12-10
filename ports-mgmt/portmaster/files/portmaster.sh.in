@@ -50,7 +50,7 @@ version () {
 
 	echo ''
 	[ "${cvs#$}" != 'FreeBSD$' ] &&
-		{ echo "===>>> FreeBSD version $cvs" ; return 0; }
+		{ echo "===>>> Version $cvs" ; return 0; }
 	echo "===>>> Development version $rcs"
 }
 
@@ -331,7 +331,7 @@ usage () {
 	echo ''
 	echo '--check-depends cross-check and update dependency information for all ports'
 	echo ''
-	echo "--check-port-dbdir check for stale entries in $port_dbdir"
+	echo "--check-port-dbdir [-v] check for stale entries in $port_dbdir"
 	echo ''
 	echo "--list-origins list directories from $pd for root and leaf ports"
 	echo ''
@@ -414,7 +414,7 @@ e2="The --packages-build option and the -P[P] options are mutually exclusive"
 
 for var in "$@" ; do
 	case "$var" in
-	-PP[A-Za-z0-9]*|*[A-Za-z0-9]PP*)
+	-PP[A-Za-z0-9]*|-*[A-Za-z0-9]PP*)
 				fail "The -PP option must stand alone" ;;
 	--packages)		packages_init first
 				PM_PACKAGES=first ; export PM_PACKAGES ;;
@@ -453,7 +453,6 @@ done
 
 set -- $newopts
 unset var newopts
-unset -f packages_init
 
 #=============== Begin functions relevant to --features and main ===============
 
@@ -745,6 +744,13 @@ ports_by_category () {
 	done
 }
 
+delete_empty_dist_subdirs () {
+	# Get back to somewhere safe so we do not
+	# delete our CWD out from under ourselves
+	pm_cd $distdir || fail "Cannot cd into $distdir"
+	find -d $distdir -type d \( -empty -and ! -path \*\.zfs/\* \) -delete
+}
+
 #=============== End functions relevant to --features and main ===============
 #=============== Begin code relevant only to --features ===============
 
@@ -771,7 +777,7 @@ if [ -n "$CLEAN_DISTFILES" ]; then
 		fi
 	done
 
-	find -d $distdir -type d -empty -delete
+	delete_empty_dist_subdirs
 	safe_exit
 fi
 
@@ -829,7 +835,7 @@ IFS='
 fi
 
 if [ -n "$CHECK_PORT_DBDIR" ]; then
-	if [ "$2" = "-v" ]; then PM_VERBOSE=vopt; fi
+	if [ "$1" = "-v" ]; then PM_VERBOSE=vopt; fi
 
 	unique_list=':'
 
@@ -936,6 +942,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	esac
 done
 shift $(( $OPTIND - 1 ))
+unset -f packages_init
 
 [ -n "$PM_EXCL" ] && export PM_EXCL
 
@@ -1112,20 +1119,42 @@ init_packages () {
 	export packages pbu
 }
 
-backup_package () {
-	echo "===>>> Creating a backup package for old version $1"
-	pm_cd $pbu || fail "Cannot cd into $pbu to create a package"
-	if $PM_SU_CMD pkg_create -b $1; then
-		if [ -n "$BACKUP" ]; then
-			echo "	===>>> Package saved to $pbu"
-			echo ''
-		else
-			local pkg ; pkg=`echo $1.*`
-			NB_DELETE="${NB_DELETE}${pkg} "
+pm_pkg_create () {
+	local pkgdir
+
+	if [ "$1" = "${packages}" ]; then
+		pm_mkdir_s ${1}/All ${1}/Latest ${1}/${portdir%/*}
+		pkgdir=${packages}/All
+		echo "===>>> Creating a package for new version $2"
+	else
+		pkgdir=$1
+		echo "===>>> Creating a backup package for old version $2"
+	fi
+
+	pm_cd $pkgdir || fail "Cannot cd into $pkgdir to create a package"
+	if $PM_SU_CMD pkg_create -b $2; then
+		if [ "$1" = "$pbu" ]; then
+			if [ -n "$BACKUP" ]; then
+				echo "	===>>> Package saved to $1" ; echo ''
+			else
+				local pkg ; pkg=`echo $2.*`
+				NB_DELETE="${NB_DELETE}${pkg} "
+			fi
+		elif [ "$1" = "${packages}" ]; then
+			local pkg latest_link
+
+			pkg=`echo $2.*`
+			pm_cd $pd/$portdir
+			latest_link=`pm_make -V LATEST_LINK`
+			pm_cd ${1}/Latest
+			ln -sf ../All/$pkg ${latest_link}.tbz
+			cd ${1}/${portdir%/*}
+			ln -sf ../All/$pkg $pkg
+			echo "  ===>>> Package saved to ${1}/All" ; echo ''
 		fi
 	else
 		echo ''
-		echo "===>>> Backup package creation failed for ${1}!"
+		echo "===>>> Package creation failed for ${2}!"
 		echo ''
 		echo "===>>> Ignore this error  [i]"
 		echo "===>>> Abort              [a]"
@@ -1133,7 +1162,7 @@ backup_package () {
 		echo -n "===>>> How would you like to proceed? [i] "
 		local answer ; read answer
 		case "$answer" in
-		a)	fail "Backup package creation failed for $1" ;;
+		a)	fail "Package creation failed for $2" ;;
 		esac
 	fi
 }
@@ -1378,12 +1407,7 @@ delete_all_distfiles () {
 		[ -n "$distfiles" ] && eval rm -f $distfiles
 	fi
 	delete_stale_distfiles $origin
-
-	# Get back to somewhere safe so we do not
-	# delete our CWD out from under ourselves
-	pm_cd $distdir || fail "Cannot cd into $distdir"
-
-	find -d $distdir -type d -empty -delete
+	delete_empty_dist_subdirs
 }
 
 #=============== End functions for getopts features and main ===============
@@ -1461,7 +1485,7 @@ if [ -n "$EXPUNGE" ]; then
 		esac
 	fi
 
-	[ -n "$BACKUP" ] && { init_packages ; backup_package $EXPUNGE; }
+	[ -n "$BACKUP" ] && { init_packages ; pm_pkg_create $pbu $EXPUNGE; }
 	[ -z "$DONT_SCRUB_DISTFILES" ] && delete_all_distfiles $origin
 
 	delete_dist_list
@@ -1502,7 +1526,7 @@ if [ -n "$CLEAN_STALE" ]; then
 		case "$answer" in
 		[yY])	if [ -n "$BACKUP" ]; then
 				[ -z "$packages" ] && init_packages
-				backup_package $iport
+				pm_pkg_create $pbu $iport
 			fi
 
 			[ -z "$DONT_SCRUB_DISTFILES" ] &&
@@ -1888,7 +1912,14 @@ multiport () {
 	if [ -n "$CONFIG_ONLY" ]; then
 		if [ -n "$PM_BUILD_ONLY_LIST" ]; then
 			PM_BUILD_ONLY_LIST=pmp_doing_build_deps
-			run_dl_g='' ; build_only_dl_g=''
+			for port in $worklist; do
+				case "$port" in
+				*/*)	run_dl_g="$run_dl_g ${pd}/${port} " ;;
+				*)
+			run_dl_g="$run_dl_g ${pd}/`origin_from_pdb $port` " ;;
+				esac
+			done
+			build_only_dl_g=''
 			export run_dl_g build_only_dl_g
 		fi
 		if [ -n "$PM_DEL_BUILD_ONLY" ]; then
@@ -2657,7 +2688,7 @@ if [ -n "$upg_port" ]; then
 	UPGRADE_PORT_VER=`echo $UPGRADE_PORT | sed 's#.*-\(.*\)#\1#'`
 	export UPGRADE_PORT UPGRADE_PORT_VER
 
-	[ -z "$NO_BACKUP" ] && backup_package $upg_port
+	[ -z "$NO_BACKUP" ] && pm_pkg_create $pbu $upg_port
 
 	if [ -n "$SAVE_SHARED" ]; then
 		ldconfig_out=`pm_mktemp ldconfig`
@@ -2718,7 +2749,6 @@ install_failed () {
 	fail "Installation of $1 ($portdir) failed"
 }
 
-echo ''
 if [ -z "$use_package" ]; then
 	[ -n "$PM_SU_VERBOSE" ] && echo "===>>> Running make install"
 
@@ -2816,20 +2846,28 @@ if [ -n "$distfiles" ]; then
 	pm_unlink $dist_list_temp ; unset ds dist_list_temp
 fi
 
+if [ -n "$use_package" ]; then
+	if grep -q DEPORIGIN $pdb/$new_port/+CONTENTS; then
+echo "===>>> Updating dependencies for $new_port to match installed versions"
+		update_contents $pdb/$new_port/+CONTENTS
+		echo ''
+	fi
+fi
+
 if [ -n "$MAKE_PACKAGE" ]; then
-	echo "===>>> Creating a package for new version $new_port"
-	pm_make_s package >/dev/null ||
-		fail "Package creation of $new_port failed"
-	echo "	===>>> Package saved to $packages/All" ; echo ''
+	if [ -z "$use_package" ]; then
+		echo "===>>> Creating a package for new version $new_port"
+		pm_make_s package >/dev/null ||
+			fail "Package creation of $new_port failed"
+		echo "	===>>> Package saved to $packages/All" ; echo ''
+	else
+		pm_pkg_create $packages $new_port
+	fi
 fi
 
 if [ -z "$use_package" ]; then
 	[ -z "$DONT_POST_CLEAN" ] && {
 		pm_make clean NOCLEANDEPENDS=ncd2 ; echo ''; }
-elif grep -q DEPORIGIN $pdb/$new_port/+CONTENTS; then
-echo "===>>> Updating dependencies for $new_port to match installed versions"
-	update_contents $pdb/$new_port/+CONTENTS
-	echo ''
 fi
 
 check_dependency_files $portdir $new_port
