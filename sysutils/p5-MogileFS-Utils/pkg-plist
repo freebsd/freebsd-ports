@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS-Utils/.packlist
 %%SITE_PERL%%/MogileFS/Utils.pm
 bin/mogadm
+bin/mogstats
 bin/mogtool
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS-Utils
 @dirrmtry %%SITE_PERL%%/MogileFS
