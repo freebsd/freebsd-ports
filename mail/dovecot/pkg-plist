@@ -91,6 +91,7 @@ lib/dovecot/lib21_fts_squat_plugin.a
 lib/dovecot/lib21_fts_squat_plugin.la
 lib/dovecot/lib21_fts_squat_plugin.so
 @dirrmtry lib/dovecot
+libexec/dovecot/authtest
 libexec/dovecot/checkpassword-reply
 libexec/dovecot/convert-tool
 %%LDA%%libexec/dovecot/deliver
@@ -105,8 +106,8 @@ libexec/dovecot/imap-utf7
 libexec/dovecot/listview
 libexec/dovecot/logview
 libexec/dovecot/maildirlock
-%%POP3%%libexec/dovecot/pop3
-%%POP3%%libexec/dovecot/pop3-login
+libexec/dovecot/pop3
+libexec/dovecot/pop3-login
 libexec/dovecot/rawlog
 libexec/dovecot/ssl-build-param
 libexec/dovecot/threadview

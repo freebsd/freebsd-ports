@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
 		http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
@@ -52,12 +51,11 @@ PORTDOCS=	*.txt wiki ${DOCS}
 DOVECOT_UID?=	143
 DOVECOT_GID?=	143
 
-PROTOCOLS=	imap
+PROTOCOLS=	imap pop3
 
 OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		SSL		"SSL support"		on  \
 		IPV6		"IPv6 support"		on  \
-		POP3		"POP3 support"		on  \
 		LDA		"LDA support"		on  \
 		MANAGESIEVE	"ManageSieve support"	on  \
 		GSSAPI		"GSSAPI support"	off \
@@ -91,7 +89,7 @@ CONFIGURE_ARGS+=	--with-ioloop=kqueue
 ## SSL support
 #
 .if defined(WITH_SSL) && !defined(WITHOUT_SSL)
-PROTOCOLS+=	imaps
+PROTOCOLS+=		imaps pop3s
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
@@ -100,19 +98,6 @@ CONFIGURE_ARGS+=	--without-ssl
 #
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-## POP3 support
-#
-.if defined(WITHOUT_POP3)
-CONFIGURE_ARGS+=	--without-pop3d
-PLIST_SUB+=		POP3="@comment "
-.else
-PROTOCOLS+=		pop3
-.if defined(WITH_SSL) && !defined(WITHOUT_SSL)
-PROTOCOLS+=		pop3s
-.endif
-PLIST_SUB+=		POP3=""
 .endif
 
 ## LDA support
