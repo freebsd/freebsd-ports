@@ -1,4 +1,7 @@
 %%SITE_PERL%%/Test/Group.pm
 %%SITE_PERL%%/Test/Group/Extending.pod
+%%SITE_PERL%%/Test/Group/NoWarnings.pm
+%%SITE_PERL%%/Test/Group/Plan.pm
+%%SITE_PERL%%/Test/Group/Tester.pm
 @dirrmtry %%SITE_PERL%%/Test/Group
 @dirrmtry %%SITE_PERL%%/Test
