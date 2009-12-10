@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current16/src/ \
 MAINTAINER=	koziol@hdfgroup.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
+CONFLICTS=	hdf5-1.8.*
+
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
