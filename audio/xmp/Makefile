@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xmp
-PORTVERSION=	3.0.0.20090929
-DISTVERSIONSUFFIX=.808d9ae
+PORTVERSION=	3.0.0
+PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	CRITICAL \
-		ftp://ftp.lissyara.su/users/Guest/distfiles/
+MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
