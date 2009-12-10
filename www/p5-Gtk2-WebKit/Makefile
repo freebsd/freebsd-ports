@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2/CodeGen.pm:${PORTSDIR}/x11-toolkit
 		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:${PORTSDIR}/www/webkit-gtk2
 
+BROKEN=		hangs during build
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Gtk2::WebKit.3 \
@@ -34,10 +36,4 @@ MAN3=		Gtk2::WebKit.3 \
 		Gtk2::WebKit::NetworkRequest.3 \
 		Gtk2::WebKit::WebHistoryItem.3
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		hangs during build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
