@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	alac
-PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	audio
-MASTER_SITES=	http://crazney.net/programs/itunes/files/
+MASTER_SITES=	http://craz.net/programs/itunes/files/
 DISTNAME=	${PORTNAME}_decoder-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Basic decoder for Apple Lossless Audio Codec files (ALAC)
