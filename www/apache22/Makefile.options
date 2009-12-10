@@ -69,6 +69,7 @@ OPTIONS+= \
 	 PROXY_HTTP "Enable mod_proxy_http" OFF \
 	 PROXY_AJP "Enable mod_proxy_ajp" OFF \
 	 PROXY_BALANCER "Enable mod_proxy_balancer" OFF \
+	 PROXY_SCGI "Enable mod_proxy_scgi" OFF \
 	 SSL "Enable mod_ssl" ON \
 	 SUEXEC "Enable mod_suexec" OFF \
 	 CGID "Enable mod_cgid" OFF \
