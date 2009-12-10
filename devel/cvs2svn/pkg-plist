@@ -1,4 +1,10 @@
+bin/cvs2bzr
+bin/cvs2git
 bin/cvs2svn
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2bzr-example.options
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2git-example.options
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2hg-example.options
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2svn-example.options
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/apple_single_filter.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/apple_single_filter.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/apple_single_filter.pyo
@@ -8,6 +14,9 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/artifact_manager.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/artifact_manager.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/artifact_manager.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/bzr_run_options.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/bzr_run_options.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/bzr_run_options.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/changeset.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/changeset.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/changeset.pyo
@@ -77,6 +86,9 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/git_revision_recorder.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/git_revision_recorder.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/git_revision_recorder.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/git_run_options.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/git_run_options.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/git_run_options.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/key_generator.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/key_generator.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/key_generator.pyo
@@ -86,6 +98,9 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/main.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/main.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/main.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/man_writer.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/man_writer.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/man_writer.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/metadata.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/metadata.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/metadata.pyo
@@ -164,6 +179,9 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_delegate.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_delegate.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_delegate.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_run_options.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_run_options.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_run_options.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/symbol.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/symbol.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/symbol.pyo
@@ -209,5 +227,6 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/__init__.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/__init__.pyo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse
 @dirrm %%PYTHON_SITELIBDIR%%/cvs2svn_lib
