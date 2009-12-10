@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	The Simple WATCHer and filter
 
-BUILD_DEPENDS=	${BUILD_DEPENDS_56} \
+BUILD_DEPENDS=	\
 	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
