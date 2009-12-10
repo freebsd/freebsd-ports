@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-greylist-devel
-DISTVERSION=	4.3.3
+DISTVERSION=	4.3.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${DISTVERSION}
@@ -25,7 +25,7 @@ LIBS+=		${PTHREAD_LIBS}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-user=smmsp
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS}"
+CONFIGURE_ENV+=	LIBS="${LIBS}"
 
 ALL_TARGET=	milter-greylist
 
