@@ -12363,6 +12363,7 @@ p5-MooseX-Object-Pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
 p5-MooseX-Role-Parameterized    ports/devel/p5-MooseX-Role-Parameterized
+p5-MooseX-Role-WithOverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
@@ -13745,6 +13746,7 @@ p5-XML-Handler-Dtd2DocBook      ports/textproc/p5-XML-Handler-Dtd2DocBook
 p5-XML-Handler-Dtd2Html         ports/textproc/p5-XML-Handler-Dtd2Html
 p5-XML-Handler-Trees            ports/textproc/p5-XML-Handler-Trees
 p5-XML-Handler-YAWriter         ports/textproc/p5-XML-Handler-YAWriter
+p5-XML-Hash-LX                  ports/textproc/p5-XML-Hash-LX
 p5-XML-LibRSVG                  ports/textproc/p5-XML-LibRSVG
 p5-XML-LibXML                   ports/textproc/p5-XML-LibXML
 p5-XML-LibXML-Iterator          ports/textproc/p5-XML-LibXML-Iterator
@@ -13768,6 +13770,7 @@ p5-XML-Pastor                   ports/devel/p5-XML-Pastor
 p5-XML-Quote                    ports/textproc/p5-XML-Quote
 p5-XML-RAI                      ports/textproc/p5-XML-RAI
 p5-XML-RPC                      ports/net/p5-XML-RPC
+p5-XML-RPC-Fast                 ports/net/p5-XML-RPC-Fast
 p5-XML-RSS                      ports/textproc/p5-XML-RSS
 p5-XML-RSS-Feed                 ports/textproc/p5-XML-RSS-Feed
 p5-XML-RSS-JavaScript           ports/textproc/p5-XML-RSS-JavaScript
@@ -16010,6 +16013,7 @@ p5-moosex-object-pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-role-parameterized    ports/devel/p5-MooseX-Role-Parameterized
+p5-moosex-role-withoverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
@@ -17445,6 +17449,7 @@ p5-xml-handler-dtd2docbook      ports/textproc/p5-XML-Handler-Dtd2DocBook
 p5-xml-handler-dtd2html         ports/textproc/p5-XML-Handler-Dtd2Html
 p5-xml-handler-trees            ports/textproc/p5-XML-Handler-Trees
 p5-xml-handler-yawriter         ports/textproc/p5-XML-Handler-YAWriter
+p5-xml-hash-lx                  ports/textproc/p5-XML-Hash-LX
 p5-xml-liberal                  ports/textproc/p5-XML-Liberal
 p5-xml-librsvg                  ports/textproc/p5-XML-LibRSVG
 p5-xml-libxml                   ports/textproc/p5-XML-LibXML
@@ -17470,6 +17475,7 @@ p5-xml-rai                      ports/textproc/p5-XML-RAI
 p5-xml-reader                   ports/textproc/p5-XML-Reader
 p5-xml-regexp                   ports/textproc/p5-XML-RegExp
 p5-xml-rpc                      ports/net/p5-XML-RPC
+p5-xml-rpc-fast                 ports/net/p5-XML-RPC-Fast
 p5-xml-rss                      ports/textproc/p5-XML-RSS
 p5-xml-rss-feed                 ports/textproc/p5-XML-RSS-Feed
 p5-xml-rss-javascript           ports/textproc/p5-XML-RSS-JavaScript
