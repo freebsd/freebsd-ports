@@ -253,6 +253,7 @@ libexec/apache22/httpd.exp
 %%MOD_PROXY_CONNECT%%libexec/apache22/mod_proxy_connect.so
 %%MOD_PROXY_FTP%%libexec/apache22/mod_proxy_ftp.so
 %%MOD_PROXY_HTTP%%libexec/apache22/mod_proxy_http.so
+%%MOD_PROXY_SCGI%%libexec/apache22/mod_proxy_scgi.so
 %%MOD_REWRITE%%libexec/apache22/mod_rewrite.so
 %%MOD_SETENVIF%%libexec/apache22/mod_setenvif.so
 %%MOD_SPELING%%libexec/apache22/mod_speling.so
