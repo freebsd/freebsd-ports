@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -20,6 +20,8 @@ COMMENT=	This port tracks the stable version of the XEmacs text editor
 CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+
+MAKE_JOBS_SAFE=	yes
 
 XEMACS_REL=	21.4
 XEMACS_VER=	21.4.22
@@ -106,7 +108,6 @@ WITH_WIDGETS=	--with-widgets=athena
 .if defined(WITH_XAW3D)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
-MAKE_JOBS_SAFE=  yes
 CONFIGURE_ARGS+=	--with-athena=3d
 .endif
 .endif
