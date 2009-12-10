@@ -35,6 +35,49 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3c1a672e-e508-11de-9f4a-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>9.0r260</lt></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.0r42</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb09-19.html">
+	  <p>Critical vulnerabilities have been identified in Adobe
+	    Flash Player version 10.0.32.18 and earlier.  These
+	    vulnerabilities could cause the application to crash and
+	    could potentially allow an attacker to take control of the
+	    affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3794</cvename>
+      <cvename>CVE-2009-3796</cvename>
+      <cvename>CVE-2009-3797</cvename>
+      <cvename>CVE-2009-3798</cvename>
+      <cvename>CVE-2009-3799</cvename>
+      <cvename>CVE-2009-3800</cvename>
+      <cvename>CVE-2009-3951</cvename>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-09-092/</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-09-093/</url>
+      <url>http://www.adobe.com/support/security/bulletins/apsb09-19.html</url>
+    </references>
+    <dates>
+      <discovery>2009-07-14</discovery>
+      <entry>2009-12-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eab8c3bd-e50c-11de-9cd0-001a926c7637">
     <topic>ruby -- heap overflow vulnerability</topic>
     <affects>
