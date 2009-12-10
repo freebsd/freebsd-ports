@@ -33,7 +33,6 @@ FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
 FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE}	\
-		--with-gsl-prefix=${LOCALBASE}	\
 		--with-med-prefix=${LOCALBASE}	\
 		--with-jpeg-prefix=${LOCALBASE}	\
 		--with-blas-lapack-prefix=${LOCALBASE} \
