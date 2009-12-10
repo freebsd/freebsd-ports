@@ -1,19 +1,4 @@
-A set of commonly-used type constraints that do not ship with Moose by default.
-
-    use MooseX::Types::Common::String qw/SimpleStr/;
-    has short_str => (is => 'rw', isa => SimpleStr);
-
-    ...
-    #this will fail
-    $object->short_str("string\nwith\nbreaks");
-
-
-
-    use MooseX::Types::Common::Numeric qw/PositiveInt/;
-    has count => (is => 'rw', isa => PositiveInt);
-
-    ...
-    #this will fail
-    $object->count(-33);
+MooseX::Types::Common is a set of commonly-used type constraints
+that do not ship with Moose by default.
 
 WWW: http://search.cpan.org/dist/MooseX-Types-Common/
