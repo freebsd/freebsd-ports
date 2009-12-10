@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Size
-PORTVERSION=	3.2
+PORTVERSION=	3.220
 CATEGORIES=	graphics www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ RUN_DEPENDS=	p5-Compress-Zlib>=2:${PORTSDIR}/archivers/p5-Compress-Zlib
 
 PERL_CONFIGURE=	yes
 
+MAN1=		imgsize.1
 MAN3=		Image::Size.3
 
 .include <bsd.port.mk>
