@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	superdatetime
-PORTVERSION=	5.8.8
+PORTVERSION=	5.8.9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.gregbrown.net/squeeze/SuperDateTime/
 PKGNAMEPREFIX=	squeezeboxserver-
