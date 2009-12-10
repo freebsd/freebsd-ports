@@ -7,6 +7,7 @@
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
