@@ -22,14 +22,23 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Engine/FastCGI.pm
 %%SITE_PERL%%/Catalyst/Engine/HTTP.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
+%%SITE_PERL%%/Catalyst/Exception/Basic.pm
 %%SITE_PERL%%/Catalyst/Exception/Detach.pm
 %%SITE_PERL%%/Catalyst/Exception/Go.pm
+%%SITE_PERL%%/Catalyst/Exception/Interface.pm
 %%SITE_PERL%%/Catalyst/Log.pm
 %%SITE_PERL%%/Catalyst/Model.pm
 %%SITE_PERL%%/Catalyst/Request.pm
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
 %%SITE_PERL%%/Catalyst/Response.pm
 %%SITE_PERL%%/Catalyst/Runtime.pm
+%%SITE_PERL%%/Catalyst/Script/CGI.pm
+%%SITE_PERL%%/Catalyst/Script/Create.pm
+%%SITE_PERL%%/Catalyst/Script/FastCGI.pm
+%%SITE_PERL%%/Catalyst/Script/Server.pm
+%%SITE_PERL%%/Catalyst/Script/Test.pm
+%%SITE_PERL%%/Catalyst/ScriptRole.pm
+%%SITE_PERL%%/Catalyst/ScriptRunner.pm
 %%SITE_PERL%%/Catalyst/Stats.pm
 %%SITE_PERL%%/Catalyst/Test.pm
 %%SITE_PERL%%/Catalyst/Upgrading.pod
@@ -38,11 +47,9 @@ bin/catalyst.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Runtime/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Runtime
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Script
 @dirrmtry %%SITE_PERL%%/Catalyst/Request
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Installation
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual
 @dirrmtry %%SITE_PERL%%/Catalyst/Exception
-@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
 @dirrmtry %%SITE_PERL%%/Catalyst/Component
