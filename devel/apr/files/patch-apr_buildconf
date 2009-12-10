@@ -4,7 +4,7 @@
  
  echo "buildconf: Using libtool.m4 at ${ltfile}."
  
-+chmod 644 build/libtool.m4
++chmod 664 build/libtool.m4
  cat $ltfile | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
  
  # libtool.m4 from 1.6 requires ltsugar.m4
