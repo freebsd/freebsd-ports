@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd December 1, 2009
+.Dd December 2, 2009
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -108,6 +108,7 @@ and/or multiple globs from /var/db/pkg
 .Fl -check-depends
 .Nm
 .Fl -check-port-dbdir
+.Op Fl v
 .Nm
 .Fl -list-origins
 .Nm
@@ -440,7 +441,7 @@ If not, offer to delete the stale file.
 does the same as above, but deletes all files without prompting.
 .It Fl -check-depends
 cross-check and update dependency information for all ports
-.It Fl -check-port-dbdir
+.It [-v] Fl -check-port-dbdir
 check for stale entries in
 .Pa /var/db/ports
 .It Fl -list-origins
@@ -770,7 +771,8 @@ to do a complete reinstallation of all your ports:
 .Dl "7. rm -rf /usr/local/lib/compat/pkg"
 .Dl "8. Manually check /usr/local and /var/db/pkg"
 .Dl "   to make sure that they are really empty"
-.Dl "9. portmaster `cat ~/installed-port-list`"
+.Dl "9. Re-install portmaster"
+.Dl "10. portmaster `cat ~/installed-port-list`"
 .Pp
 You probably want to use the -D option for the installation
 and then run --clean-distfiles[-all] again when you are done.
