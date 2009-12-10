@@ -1,3 +1,4 @@
+bin/imgsize
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size/.packlist
 %%SITE_PERL%%/Image/Size.pm
 %%SITE_PERL%%/auto/Image/Size/autosplit.ix
