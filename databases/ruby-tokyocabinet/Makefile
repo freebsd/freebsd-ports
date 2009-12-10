@@ -7,6 +7,7 @@
 
 PORTNAME=	tokyocabinet
 PORTVERSION=	1.29
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://1978th.net/tokyocabinet/rubypkg/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
