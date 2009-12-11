@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avra
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
 MASTER_SITES=	SF
@@ -15,12 +14,13 @@ MASTER_SITES=	SF
 MAINTAINER=	wes@FreeBSD.org
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}
-BUILD_WRKSRC=	${WRKSRC}/SOURCE
-INSTALL_WRKSRC=	${WRKSRC}/SOURCE
+USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110
+AUTOMAKE_ARGS=	-a
 
 PORTDOCS=	README
+
+# Install the Avra README file as docs
 
 post-install:
 .if !defined(NOPORTDOCS)

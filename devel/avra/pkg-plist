@@ -1,1 +1,3 @@
 bin/avra
+share/nls/POSIX
+share/nls/en_US.US-ASCII
