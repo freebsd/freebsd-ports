@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08114
-PORTREVISION=	1
+PORTVERSION=	0.08115
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -122,11 +121,11 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Role::QueryCounter.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
 	DBIx::Class::Storage::DBI::Sybase.3 \
-	DBIx::Class::Storage::DBI::Sybase::Common.3 \
+	DBIx::Class::Storage::DBI::Sybase::ASE.3 \
+	DBIx::Class::Storage::DBI::Sybase::ASE::NoBindVars.3 \
 	DBIx::Class::Storage::DBI::Sybase::MSSQL.3 \
 	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server::NoBindVars.3 \
-	DBIx::Class::Storage::DBI::Sybase::NoBindVars.3 \
 	DBIx::Class::Storage::DBI::mysql.3 \
 	DBIx::Class::Storage::Statistics.3 \
 	DBIx::Class::Storage::TxnScopeGuard.3 \
