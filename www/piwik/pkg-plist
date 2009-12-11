@@ -39,6 +39,7 @@
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddMetadata.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackDeleteRow.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackReplace.php
+%%WWWDIR%%/core/DataTable/Filter/ColumnDelete.php
 %%WWWDIR%%/core/DataTable/Filter/ExcludeLowPopulation.php
 %%WWWDIR%%/core/DataTable/Filter/Limit.php
 %%WWWDIR%%/core/DataTable/Filter/MetadataCallbackAddMetadata.php
@@ -135,15 +136,16 @@
 %%WWWDIR%%/core/Updates/0.2.13.php
 %%WWWDIR%%/core/Updates/0.2.24.php
 %%WWWDIR%%/core/Updates/0.2.27.php
+%%WWWDIR%%/core/Updates/0.2.32.php
 %%WWWDIR%%/core/Updates/0.2.33.php
 %%WWWDIR%%/core/Updates/0.2.34.php
 %%WWWDIR%%/core/Updates/0.2.35.php
 %%WWWDIR%%/core/Updates/0.2.37.php
 %%WWWDIR%%/core/Updates/0.4.1.php
 %%WWWDIR%%/core/Updates/0.4.2.php
-%%WWWDIR%%/core/Updates/0.4.3.php
 %%WWWDIR%%/core/Updates/0.4.4.php
 %%WWWDIR%%/core/Updates/0.4.php
+%%WWWDIR%%/core/Updates/0.5.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -175,6 +177,7 @@
 %%WWWDIR%%/js/index.php
 %%WWWDIR%%/js/piwik.js
 %%WWWDIR%%/lang/be.php
+%%WWWDIR%%/lang/bg.php
 %%WWWDIR%%/lang/ca.php
 %%WWWDIR%%/lang/cs.php
 %%WWWDIR%%/lang/da.php
@@ -198,6 +201,7 @@
 %%WWWDIR%%/lang/ro.php
 %%WWWDIR%%/lang/ru.php
 %%WWWDIR%%/lang/sk.php
+%%WWWDIR%%/lang/sq.php
 %%WWWDIR%%/lang/sr.php
 %%WWWDIR%%/lang/sv.php
 %%WWWDIR%%/lang/th.php
@@ -465,6 +469,7 @@
 %%WWWDIR%%/libs/Zend/Feed/Reader/Feed/Rss.php
 %%WWWDIR%%/libs/Zend/Feed/Reader/FeedAbstract.php
 %%WWWDIR%%/libs/Zend/Feed/Reader/FeedInterface.php
+%%WWWDIR%%/libs/Zend/Feed/Reader/FeedSet.php
 %%WWWDIR%%/libs/Zend/Feed/Reader.php
 %%WWWDIR%%/libs/Zend/Feed/Rss.php
 %%WWWDIR%%/libs/Zend/Feed.php
@@ -481,6 +486,13 @@
 %%WWWDIR%%/libs/Zend/Http/Exception.php
 %%WWWDIR%%/libs/Zend/Http/Response.php
 %%WWWDIR%%/libs/Zend/Loader.php
+%%WWWDIR%%/libs/Zend/Loader/Autoloader/Interface.php
+%%WWWDIR%%/libs/Zend/Loader/Autoloader/Resource.php
+%%WWWDIR%%/libs/Zend/Loader/PluginLoader/Exception.php
+%%WWWDIR%%/libs/Zend/Loader/PluginLoader/Interface.php
+%%WWWDIR%%/libs/Zend/Loader/Exception.php
+%%WWWDIR%%/libs/Zend/Loader/Autoloader.php
+%%WWWDIR%%/libs/Zend/Loader/PluginLoader.php
 %%WWWDIR%%/libs/Zend/Log/Exception.php
 %%WWWDIR%%/libs/Zend/Log/Filter/Interface.php
 %%WWWDIR%%/libs/Zend/Log/Filter/Message.php
@@ -611,27 +623,34 @@
 %%WWWDIR%%/libs/javascript/json2.js
 %%WWWDIR%%/libs/javascript/sprintf.js
 %%WWWDIR%%/libs/jquery/fdd2div-modified.js
-%%WWWDIR%%/libs/jquery/jquery-calendar.css
-%%WWWDIR%%/libs/jquery/jquery-calendar.js
+%%WWWDIR%%/libs/jquery/jquery.bgiframe.js
 %%WWWDIR%%/libs/jquery/jquery.blockUI.js
-%%WWWDIR%%/libs/jquery/jquery.dimensions.js
 %%WWWDIR%%/libs/jquery/jquery.history.js
 %%WWWDIR%%/libs/jquery/jquery.js
 %%WWWDIR%%/libs/jquery/jquery.scrollTo-min.js
 %%WWWDIR%%/libs/jquery/jquery.scrollTo.js
-%%WWWDIR%%/libs/jquery/macFFBgHack.png
-%%WWWDIR%%/libs/jquery/original lib/jquery-calendar.js
+%%WWWDIR%%/libs/jquery/jquery-ui.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.blockUI.js
-%%WWWDIR%%/libs/jquery/original lib/jquery.dimensions.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.history.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.scrollTo.js
-%%WWWDIR%%/libs/jquery/original lib/ui.mouse.js
+%%WWWDIR%%/libs/jquery/original lib/jquery-ui.js
 %%WWWDIR%%/libs/jquery/stop.png
 %%WWWDIR%%/libs/jquery/superfish_modified.js
-%%WWWDIR%%/libs/jquery/thickbox-loading.gif
-%%WWWDIR%%/libs/jquery/thickbox.css
-%%WWWDIR%%/libs/jquery/thickbox.js
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/jquery/themes/base/jquery-ui.css
 %%WWWDIR%%/libs/jquery/tooltip/___jquery.tooltip.js
 %%WWWDIR%%/libs/jquery/tooltip/bg.gif
 %%WWWDIR%%/libs/jquery/tooltip/changelog.txt
@@ -646,8 +665,6 @@
 %%WWWDIR%%/libs/jquery/tooltip/shadow.png
 %%WWWDIR%%/libs/jquery/tooltip/shadow2.png
 %%WWWDIR%%/libs/jquery/truncate/jquery.truncate.js
-%%WWWDIR%%/libs/jquery/ui.mouse.js
-%%WWWDIR%%/libs/jquery/ui.sortable_modif.js
 %%WWWDIR%%/libs/json/json.js
 %%WWWDIR%%/libs/open-flash-chart/README.txt
 %%WWWDIR%%/libs/open-flash-chart/open-flash-chart.swf
@@ -742,9 +759,11 @@
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
 %%WWWDIR%%/plugins/API/templates/listAllAPI.tpl
+%%WWWDIR%%/plugins/API/templates/styles.css
 %%WWWDIR%%/plugins/Actions/API.php
 %%WWWDIR%%/plugins/Actions/Actions.php
 %%WWWDIR%%/plugins/Actions/Controller.php
+%%WWWDIR%%/plugins/Actions/tests/Actions.test.php
 %%WWWDIR%%/plugins/CoreAdminHome/Controller.php
 %%WWWDIR%%/plugins/CoreAdminHome/CoreAdminHome.php
 %%WWWDIR%%/plugins/CoreAdminHome/templates/footer.tpl
@@ -758,6 +777,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/broadcast.js
 %%WWWDIR%%/plugins/CoreHome/templates/calendar.js
 %%WWWDIR%%/plugins/CoreHome/templates/cloud.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/cloud.css
 %%WWWDIR%%/plugins/CoreHome/templates/datatable.css
 %%WWWDIR%%/plugins/CoreHome/templates/datatable.js
 %%WWWDIR%%/plugins/CoreHome/templates/datatable.tpl
@@ -842,6 +862,7 @@
 %%WWWDIR%%/plugins/ExampleUI/images/icons-planet/venus.png
 %%WWWDIR%%/plugins/Feedback/Controller.php
 %%WWWDIR%%/plugins/Feedback/Feedback.php
+%%WWWDIR%%/plugins/Feedback/templates/feedback.js
 %%WWWDIR%%/plugins/Feedback/templates/index.tpl
 %%WWWDIR%%/plugins/Feedback/templates/sent.tpl
 %%WWWDIR%%/plugins/Goals/API.php
@@ -865,6 +886,7 @@
 %%WWWDIR%%/plugins/Installation/View.php
 %%WWWDIR%%/plugins/Installation/templates/allSteps.tpl
 %%WWWDIR%%/plugins/Installation/templates/databaseSetup.tpl
+%%WWWDIR%%/plugins/Installation/templates/databaseCheck.tpl
 %%WWWDIR%%/plugins/Installation/templates/displayJavascriptCode.tpl
 %%WWWDIR%%/plugins/Installation/templates/finished.tpl
 %%WWWDIR%%/plugins/Installation/templates/firstWebsiteSetup.tpl
@@ -882,6 +904,16 @@
 %%WWWDIR%%/plugins/Live/Controller.php
 %%WWWDIR%%/plugins/Live/Live.php
 %%WWWDIR%%/plugins/Live/Visitor.php
+%%WWWDIR%%/plugins/Live/templates/images/file0.png
+%%WWWDIR%%/plugins/Live/templates/images/file1.png
+%%WWWDIR%%/plugins/Live/templates/images/file2.png
+%%WWWDIR%%/plugins/Live/templates/images/file3.png
+%%WWWDIR%%/plugins/Live/templates/images/file4.png
+%%WWWDIR%%/plugins/Live/templates/images/file5.png
+%%WWWDIR%%/plugins/Live/templates/images/file6.png
+%%WWWDIR%%/plugins/Live/templates/images/file7.png
+%%WWWDIR%%/plugins/Live/templates/images/file8.png
+%%WWWDIR%%/plugins/Live/templates/images/file9.png
 %%WWWDIR%%/plugins/Live/templates/images/pause.gif
 %%WWWDIR%%/plugins/Live/templates/images/pause_disabled.gif
 %%WWWDIR%%/plugins/Live/templates/images/play.gif
@@ -890,7 +922,7 @@
 %%WWWDIR%%/plugins/Live/templates/index.tpl
 %%WWWDIR%%/plugins/Live/templates/lastVisits.tpl
 %%WWWDIR%%/plugins/Live/templates/scripts/spy.js
-%%WWWDIR%%/plugins/Live/templates/structure.tpl
+%%WWWDIR%%/plugins/Live/templates/totalVisits.tpl
 %%WWWDIR%%/plugins/Login/Auth.php
 %%WWWDIR%%/plugins/Login/Controller.php
 %%WWWDIR%%/plugins/Login/Form.php
@@ -1621,6 +1653,9 @@
 @dirrm %%WWWDIR%%/libs/Zend/Http/Client/Adapter
 @dirrm %%WWWDIR%%/libs/Zend/Http/Client
 @dirrm %%WWWDIR%%/libs/Zend/Http
+@dirrm %%WWWDIR%%/libs/Zend/Loader/Autoloader
+@dirrm %%WWWDIR%%/libs/Zend/Loader/PluginLoader
+@dirrm %%WWWDIR%%/libs/Zend/Loader
 @dirrm %%WWWDIR%%/libs/Zend/Log/Filter
 @dirrm %%WWWDIR%%/libs/Zend/Log/Formatter
 @dirrm %%WWWDIR%%/libs/Zend/Log/Writer
@@ -1649,6 +1684,9 @@
 @dirrm %%WWWDIR%%/libs/Zend
 @dirrm %%WWWDIR%%/libs/javascript
 @dirrm %%WWWDIR%%/libs/jquery/original lib
+@dirrm %%WWWDIR%%/libs/jquery/themes/base/images
+@dirrm %%WWWDIR%%/libs/jquery/themes/base
+@dirrm %%WWWDIR%%/libs/jquery/themes
 @dirrm %%WWWDIR%%/libs/jquery/tooltip
 @dirrm %%WWWDIR%%/libs/jquery/truncate
 @dirrm %%WWWDIR%%/libs/jquery
@@ -1667,6 +1705,7 @@
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/plugins/API/templates
 @dirrm %%WWWDIR%%/plugins/API
+@dirrm %%WWWDIR%%/plugins/Actions/tests
 @dirrm %%WWWDIR%%/plugins/Actions
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/templates
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome
