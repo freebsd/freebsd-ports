@@ -16,7 +16,4 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
-MAN1=		snobol4.1
-MAN3=		snolib.3 snobol4dbm.3 snobol4tcl.3
-
 .include <bsd.port.mk>
