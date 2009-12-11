@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	unworkable
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://p2presearch.com/unworkable/dist/
+MASTER_SITES=	http://p2presearch.com/unworkable/dist/\
+		http://unworkable.googlecode.com/files/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Free BitTorrent Implementation
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
-
-BROKEN=		does not build with libevent-1.4.13
 
 USE_SCONS=	yes
 USE_OPENSSL=	yes
