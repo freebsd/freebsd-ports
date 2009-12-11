@@ -48,9 +48,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Dovecot author reports:</p>
 	<blockquote cite="http://www.dovecot.org/list/dovecot-news/2009-November/000143.html">
 	  <p>Dovecot v1.2.x had been creating base_dir (and its parents if
-	  necessary) with 0777 permissions. The base_dir's permissions get
-	  changed to 0755 automatically at startup, but you may need to
-	  chmod the parent directories manually.</p>
+	    necessary) with 0777 permissions. The base_dir's permissions get
+	    changed to 0755 automatically at startup, but you may need to
+	    chmod the parent directories manually.</p>
 	</blockquote>
       </body>
     </description>
@@ -146,20 +146,20 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Secuna reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/37546">
 	  <p>A vulnerability has been reported in RT, which can be exploited by
-	  malicious people to conduct session fixation attacks.
-	  The vulnerability is caused due to an error in the handling of
-	  sessions and can be exploited to hijack another user's session by
-	  tricking the user into logging in after following a specially crafted
-	  link.</p>
+	    malicious people to conduct session fixation attacks.
+	    The vulnerability is caused due to an error in the handling of
+	    sessions and can be exploited to hijack another user's session by
+	    tricking the user into logging in after following a specially crafted
+	    link.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <cvename>CVE-2009-3585</cvename>
       <bid>37162</bid>
+      <cvename>CVE-2009-3585</cvename>
     </references>
     <dates>
       <discovery>2009-12-01</discovery>
@@ -180,11 +180,11 @@ Note:  Please add new entries to the beginning of this file.
 	<p>CVE reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3720">
 	  <p>The updatePosition function in lib/xmltok_impl.c in
-	  libexpat in Expat 2.0.1, as used in Python, PyXML,
-	  w3c-libwww, and other software, allows context-dependent
-	  attackers to cause a denial of service (application crash)
-	  via an XML document with crafted UTF-8 sequences that
-	  trigger a buffer over-read.</p>
+	    libexpat in Expat 2.0.1, as used in Python, PyXML,
+	    w3c-libwww, and other software, allows context-dependent
+	    attackers to cause a denial of service (application crash)
+	    via an XML document with crafted UTF-8 sequences that
+	    trigger a buffer over-read.</p>
 	</blockquote>
       </body>
     </description>
@@ -210,11 +210,11 @@ Note:  Please add new entries to the beginning of this file.
 	<p>CVE reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3560">
 	  <p>The big2_toUtf8 function in lib/xmltok.c in libexpat in
-	  Expat 2.0.1, as used in the XML-Twig module for Perl, allows
-	  context-dependent attackers to cause a denial of service
-	  (application crash) via an XML document with malformed UTF-8
-	  sequences that trigger a buffer over-read, related to the
-	  doProlog function in lib/xmlparse.c.</p>
+	    Expat 2.0.1, as used in the XML-Twig module for Perl, allows
+	    context-dependent attackers to cause a denial of service
+	    (application crash) via an XML document with malformed UTF-8
+	    sequences that trigger a buffer over-read, related to the
+	    doProlog function in lib/xmlparse.c.</p>
 	</blockquote>
       </body>
     </description>
@@ -277,8 +277,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia.com</p>
 	<blockquote cite="http://secunia.com/advisories/37414/">
 	  <p>Do not attempt to load an unqualified module.la file from the 
-	  current directory (by default) since doing so is insecure and is 
-	  not compliant with the documentation.</p>
+	    current directory (by default) since doing so is insecure and is 
+	    not compliant with the documentation.</p>
 	</blockquote>
       </body>
     </description>
