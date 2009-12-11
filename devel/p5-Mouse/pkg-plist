@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Mouse/Meta/Method.pm
 %%SITE_PERL%%/Mouse/Meta/Method/Accessor.pm
 %%SITE_PERL%%/Mouse/Meta/Method/Constructor.pm
+%%SITE_PERL%%/Mouse/Meta/Method/Delegation.pm
 %%SITE_PERL%%/Mouse/Meta/Method/Destructor.pm
 %%SITE_PERL%%/Mouse/Meta/Module.pm
 %%SITE_PERL%%/Mouse/Meta/Role.pm
@@ -13,15 +14,21 @@
 %%SITE_PERL%%/Mouse/Meta/Role/Method.pm
 %%SITE_PERL%%/Mouse/Meta/TypeConstraint.pm
 %%SITE_PERL%%/Mouse/Object.pm
+%%SITE_PERL%%/Mouse/PurePerl.pm
 %%SITE_PERL%%/Mouse/Role.pm
 %%SITE_PERL%%/Mouse/Spec.pm
 %%SITE_PERL%%/Mouse/Tiny.pm
+%%SITE_PERL%%/Mouse/Tiny.pod
 %%SITE_PERL%%/Mouse/TypeRegistry.pm
 %%SITE_PERL%%/Mouse/Util.pm
+%%SITE_PERL%%/Mouse/Util/MetaRole.pm
 %%SITE_PERL%%/Mouse/Util/TypeConstraints.pm
+%%SITE_PERL%%/Mouse/XS.pod
 %%SITE_PERL%%/Squirrel.pm
 %%SITE_PERL%%/Squirrel/Role.pm
+%%SITE_PERL%%/Test/Mouse.pm
 %%SITE_PERL%%/ouse.pm
+@dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/Squirrel
 @dirrmtry %%SITE_PERL%%/Mouse/Util
 @dirrmtry %%SITE_PERL%%/Mouse/Meta/Role
