@@ -718,6 +718,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.6.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
