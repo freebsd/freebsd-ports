@@ -7,10 +7,12 @@
 
 PORTNAME=	portaudit
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.geocities.com/ntb4real/proj/
+MASTER_SITES=	http://codelabs.ru/fbsd/distfiles/ \
+		http://fbsd.inse.ru/distfiles/
 PKGNAMEPREFIX=	nagios-
-DISTNAME=	check_portaudit
+DISTNAME=	check_portaudit-${PORTVERSION}
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Nagios plug-in to get portaudit/portupgrade status
