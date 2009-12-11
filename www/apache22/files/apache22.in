@@ -122,6 +122,8 @@ fi
 
 apache22_requirepidfile()
 {
+    apache22_checkconfig
+
 	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
 		echo "${name} not running? (check $pidfile)."
 		exit 1
