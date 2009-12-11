@@ -34,6 +34,7 @@ USE_GMAKE=	yes
 USE_GNOME=	libgda4 intltool
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
+USE_GCC=	4.2+
 
 post-install:
 	@-update-desktop-database
