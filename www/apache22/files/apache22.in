@@ -49,21 +49,13 @@ required_files=%%PREFIX%%/etc/apache22/httpd.conf
 [ -z "$apache22_fib" ] && apache22_fib="NO"
 
 apache22_accf() {
-	retcode=0
-	if checkyesno apache22_http_accept_enable
-	then
-		/sbin/kldstat -v | grep accf_http >/dev/null 2>&1
-		retcode=${?}
-		if [ ${retcode} -ne 0 ]
-		then
-			/sbin/kldload accf_http 2> /dev/null
-			retcode=${?}
-		fi
-	else
-		apache22_flags="${apache22_flags} -DNOHTTPACCEPT"
-	fi
-	[ ${retcode} -ne 0 ] && echo "Unable to load accf_http module"
-	return ${retcode}
+
+  if checkyesno apache22_http_accept_enable; then
+    /sbin/kldstat -v | grep accf_http > /dev/null 2>&1 || /sbin/kldload accf_http || return ${?}
+    /sbin/kldstat -v | grep accf_data > /dev/null 2>&1 || /sbin/kldload accf_data || return ${?}
+  else
+    apache22_flags="${apache22_flags} -DNOHTTPACCEPT"
+  fi
 }
 
 load_rc_config $name
@@ -125,7 +117,7 @@ else
 fi
 
 if [ "${1}" != "stop" ] ; then \
-	apache22_accf || apache22_flags="${apache22_flags} -DNOHTTPACCEPT"
+	apache22_accf
 fi
 
 apache22_requirepidfile()
