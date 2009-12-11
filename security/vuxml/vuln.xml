@@ -35,6 +35,38 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fcbf56dd-e667-11de-920a-00248c9b4be7">
+    <topic>piwik -- php code execution</topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><lt>0.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/37649">
+	  <p>Stefan Esser has reported a vulnerability in Piwik, which can be
+	    exploited by malicious people to compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to the core/Cookie.php script using
+	    "unserialize()" with user controlled input. This can be exploited to
+	    e.g. execute arbitrary PHP code via the "__wakeup()" or "__destruct()"
+	    methods of a serialized object passed via an HTTP cookie.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/37649/</url>
+      <url>http://www.sektioneins.de/de/advisories/advisory-032009-piwik-cookie-unserialize-vulnerability/index.html</url>
+      <url>http://piwik.org/blog/2009/12/piwik-response-to-shocking-news-in-php-exploitation/</url>
+    </references>
+    <dates>
+      <discovery>2009-12-10</discovery>
+      <entry>2009-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30211c45-e52a-11de-b5cd-00e0815b8da8">
     <topic>dovecot -- Insecure directory permissions</topic>
     <affects>
