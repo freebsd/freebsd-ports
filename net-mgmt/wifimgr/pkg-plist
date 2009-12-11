@@ -21,6 +21,7 @@ share/icons/hicolor/32x32/apps/wifimgr.png
 share/icons/hicolor/48x48/apps/wifimgr.png
 share/icons/hicolor/64x64/apps/wifimgr.png
 share/icons/hicolor/scalable/apps/wifimgr.svg
+%%NLS%%share/locale/fr/LC_MESSAGES/wifimgr.mo
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +20,13 @@ USE_XORG=	x11
 USE_GNOME=	gtk20 pkgconfig
 INSTALLS_ICONS=	yes
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
 CFLAGS+=	-DWITHOUT_NLS
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 MAN8=		wifimgr.8
 
