@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	iodine
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	net
-MASTER_SITES=	http://code.kryo.se/iodine/
+MASTER_SITES=	http://code.kryo.se/iodine/ \
+		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tunnel IPv4 data through a DNS server
 
 PLIST_FILES=	bin/iodine sbin/iodined
-
-BUILD_WRKSRC=	${WRKSRC}/src
 
 PORTDOCS=	CHANGELOG README TODO
 
