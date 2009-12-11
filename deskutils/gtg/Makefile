@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gtg
-PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTVERSION=	0.1.99
 CATEGORIES=	deskutils gnome python
-MASTER_SITES=	http://launchpad.net/gtg/trunk/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/gtg/trunk/0.2/+download/
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GTD organizer for the GNOME desktop environment
@@ -23,7 +22,7 @@ USE_GNOME=	pygtk2 desktopfileutils
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
-MAN1=		gtg.1
+MAN1=		gtg.1 gtg_new_task.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
