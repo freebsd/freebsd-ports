@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -190,7 +190,7 @@ show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 #optionally enable mod_proxy_connect patch
-.if defined(PATCH_PROXY_CONNECT)
+.if defined(WITH_PATCH_PROXY_CONNECT)
 EXTRA_PATCHES+= ${FILESDIR}/opt-patch-modules:proxy:mod_proxy_connect.c
 .endif
 
