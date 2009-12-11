@@ -4,7 +4,7 @@ bin/mongod
 bin/mongodump
 bin/mongoexport
 bin/mongofiles
-bin/mongoimportjson
+bin/mongoimport
 bin/mongorestore
 bin/mongos
 bin/mongosniff
