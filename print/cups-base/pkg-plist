@@ -835,6 +835,7 @@ share/locale/zh_TW/cups_zh_TW.po
 @exec  mkdir -p %D/%%DATADIR%%/profiles
 @dirrm %%DATADIR%%/profiles
 @dirrm %%DATADIR%%/ppdc
+@exec  mkdir -p %D/%%DATADIR%%/model
 @dirrmtry %%DATADIR%%/model
 @dirrm %%DATADIR%%/mime
 @dirrm %%DATADIR%%/fonts
