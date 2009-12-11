@@ -8,9 +8,8 @@
 PORTNAME=	geom
 PORTVERSION=	1.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.geocities.com/ntb4real/proj/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	wxs
+MASTER_SITES=	http://codelabs.ru/fbsd/distfiles/ \
+		http://fbsd.inse.ru/distfiles/
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	check_geom-${PORTVERSION}
 
