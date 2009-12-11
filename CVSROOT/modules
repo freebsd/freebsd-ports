@@ -6257,7 +6257,6 @@ jakarta-oro                     ports/java/jakarta-oro
 jakarta-poi                     ports/textproc/jakarta-poi
 jakarta-regexp                  ports/java/jakarta-regexp
 jakarta-struts                  ports/java/jakarta-struts
-jakarta-tomcat5                 ports/www/jakarta-tomcat5
 jakelib2                        ports/devel/jakelib2
 jalbum                          ports/graphics/jalbum
 jalingo                         ports/textproc/jalingo
@@ -12372,6 +12371,7 @@ p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-MooseX-Traits                ports/devel/p5-MooseX-Traits
 p5-MooseX-Traits-Pluggable      ports/devel/p5-MooseX-Traits-Pluggable
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
+p5-MooseX-Types-Common          ports/devel/p5-MooseX-Types-Common
 p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
@@ -16022,6 +16022,7 @@ p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-moosex-traits                ports/devel/p5-MooseX-Traits
 p5-moosex-traits-pluggable      ports/devel/p5-MooseX-Traits-Pluggable
 p5-moosex-types                 ports/devel/p5-MooseX-Types
+p5-moosex-types-common          ports/devel/p5-MooseX-Types-Common
 p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
