@@ -97,6 +97,7 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Glyph/processed_transcript.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/segmented_keyglyph.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/anchored_arrow.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/allele_tower.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/redgreen_segment.pm
 @dirrm %%SITE_PERL%%/Bio/Graphics/FeatureFile
 @dirrm %%SITE_PERL%%/Bio/Graphics/Wiggle
