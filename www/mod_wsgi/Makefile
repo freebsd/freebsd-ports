@@ -17,7 +17,7 @@ COMMENT=	Python WSGI adapter module for Apache
 
 MAKE_JOBS_SAFE=	yes
 
-LATEST_LINK=	mod_wsgi
+LATEST_LINK=	mod_wsgi2
 CONFLICTS=	mod_wsgi-3.*
 
 PROJECTHOST=	modwsgi
