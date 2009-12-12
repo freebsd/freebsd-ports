@@ -17,6 +17,8 @@ COMMENT=	A virtual printer for CUPS to produce PDF files
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
+BROKEN=		does not install
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GHOSTSCRIPT_RUN=	yes

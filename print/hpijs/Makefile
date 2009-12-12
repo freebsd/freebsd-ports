@@ -16,6 +16,8 @@ COMMENT=	Drivers and support resources for HP Inkjet Printers
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		does not install
+
 CONFLICTS=	hplip-[0-9]*
 
 GNU_CONFIGURE=	yes
