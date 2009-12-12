@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	punbb
-PORTVERSION=	1.2.21
+PORTVERSION=	1.2.22
 CATEGORIES=	www
 MASTER_SITES=	http://punbb.informer.com/download/ \
 		http://punbb.informer.com/download/plugins/:plugins \
@@ -22,7 +22,7 @@ COMMENT=	A fast and lightweight PHP-powered discussion board
 
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
-PORTEXAMPLES=	12_to_1221_update.php example_config.php \
+PORTEXAMPLES=	12_to_1222_update.php example_config.php \
 		turn_off_maintenance_mode.php
 SUB_FILES=	pkg-message
 
@@ -36,56 +36,56 @@ OPTIONS=	LANGUAGE_PACK "Install language packs" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_LANGUAGE_PACK)
-LANGFILES+=	lang_packs-${PORTVERSION}/Arabic.zip \
-		lang_packs-${PORTVERSION}/Bangla_UTF8.zip \
-		lang_packs-${PORTVERSION}/Belarusian.zip \
-		lang_packs-${PORTVERSION}/Bosnian.zip \
-		lang_packs-${PORTVERSION}/Brazilian_Portuguese.zip \
-		lang_packs-${PORTVERSION}/Bulgarian.zip \
-		lang_packs-${PORTVERSION}/Bulgarian_UTF8.zip \
-		lang_packs-${PORTVERSION}/Catalan.zip \
-		lang_packs-${PORTVERSION}/Czech.zip \
-		lang_packs-${PORTVERSION}/Czech_UTF8.zip \
-		lang_packs-${PORTVERSION}/Danish.zip \
-		lang_packs-${PORTVERSION}/Dutch.zip \
-		lang_packs-${PORTVERSION}/Estonian.zip \
-		lang_packs-${PORTVERSION}/Farsi.zip \
-		lang_packs-${PORTVERSION}/Finnish.zip \
-		lang_packs-${PORTVERSION}/French.zip \
-		lang_packs-${PORTVERSION}/Galician.zip \
-		lang_packs-${PORTVERSION}/German.zip \
-		lang_packs-${PORTVERSION}/Greek.zip \
-		lang_packs-${PORTVERSION}/Hebrew.zip \
-		lang_packs-${PORTVERSION}/Hindi.zip \
-		lang_packs-${PORTVERSION}/Hrvatski.zip \
-		lang_packs-${PORTVERSION}/Hungarian.zip \
-		lang_packs-${PORTVERSION}/Icelandic.zip \
-		lang_packs-${PORTVERSION}/Indonesian.zip \
-		lang_packs-${PORTVERSION}/Italian.zip \
-		lang_packs-${PORTVERSION}/Japanese.zip \
-		lang_packs-${PORTVERSION}/Korean.zip \
-		lang_packs-${PORTVERSION}/Kurdish.zip \
-		lang_packs-${PORTVERSION}/Latvian.zip \
-		lang_packs-${PORTVERSION}/Lithuanian.zip \
-		lang_packs-${PORTVERSION}/Norwegian.zip \
-		lang_packs-${PORTVERSION}/Polish.zip \
-		lang_packs-${PORTVERSION}/Polish_UTF8.zip \
-		lang_packs-${PORTVERSION}/Portuguese.zip \
-		lang_packs-${PORTVERSION}/Romanian.zip \
-		lang_packs-${PORTVERSION}/Russian.zip \
-		lang_packs-${PORTVERSION}/Serbian.zip \
-		lang_packs-${PORTVERSION}/Simplified_Chinese.zip \
-		lang_packs-${PORTVERSION}/Slovak.zip \
-		lang_packs-${PORTVERSION}/Slovak_UTF8.zip \
-		lang_packs-${PORTVERSION}/Slovenian.zip \
-		lang_packs-${PORTVERSION}/Spanish.zip \
-		lang_packs-${PORTVERSION}/Swedish.zip \
-		lang_packs-${PORTVERSION}/Traditional_Chinese.zip \
-		lang_packs-${PORTVERSION}/Turkish.zip \
-		lang_packs-${PORTVERSION}/Ukrainian.zip \
-		lang_packs-${PORTVERSION}/Ukrainian_UTF8.zip \
-		lang_packs-${PORTVERSION}/Urdu.zip \
-		lang_packs-${PORTVERSION}/Vietnamese.zip
+LANGFILES+=	Arabic.zip \
+		Bangla_UTF8.zip \
+		Belarusian.zip \
+		Bosnian.zip \
+		Brazilian_Portuguese.zip \
+		Bulgarian.zip \
+		Bulgarian_UTF8.zip \
+		Catalan.zip \
+		Czech.zip \
+		Czech_UTF8.zip \
+		Danish.zip \
+		Dutch.zip \
+		Estonian.zip \
+		Farsi.zip \
+		Finnish.zip \
+		French.zip \
+		Galician.zip \
+		German.zip \
+		Greek.zip \
+		Hebrew.zip \
+		Hindi.zip \
+		Hrvatski.zip \
+		Hungarian.zip \
+		Icelandic.zip \
+		Indonesian.zip \
+		Italian.zip \
+		Japanese.zip \
+		Korean.zip \
+		Kurdish.zip \
+		Latvian.zip \
+		Lithuanian.zip \
+		Norwegian.zip \
+		Polish.zip \
+		Polish_UTF8.zip \
+		Portuguese.zip \
+		Romanian.zip \
+		Russian.zip \
+		Serbian.zip \
+		Simplified_Chinese.zip \
+		Slovak.zip \
+		Slovak_UTF8.zip \
+		Slovenian.zip \
+		Spanish.zip \
+		Swedish.zip \
+		Traditional_Chinese.zip \
+		Turkish.zip \
+		Ukrainian.zip \
+		Ukrainian_UTF8.zip \
+		Urdu.zip \
+		Vietnamese.zip
 PLIST_SUB+=	LANGUAGE_PACK=""
 .else
 PLIST_SUB+=	LANGUAGE_PACK="@comment "

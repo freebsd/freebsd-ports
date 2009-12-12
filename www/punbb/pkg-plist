@@ -1,4 +1,3 @@
-@unexec rm -R %D/share/doc/punbb/style 2>&1 >/dev/null || true
 %%WWWDIR%%/admin_bans.php
 %%WWWDIR%%/admin_categories.php
 %%WWWDIR%%/admin_censoring.php
@@ -1189,7 +1188,6 @@
 %%WWWDIR%%/viewtopic.php
 @dirrm %%WWWDIR%%/style/imports
 @dirrm %%WWWDIR%%/style
-%%PLUGINS%%@exec mkdir -p %D/%%WWWDIR%%/plugins/AP_News_Generator/archive
 %%PLUGINS%%@dirrm %%WWWDIR%%/plugins/AP_News_Generator/archive
 %%PLUGINS%%@dirrm %%WWWDIR%%/plugins/AP_News_Generator
 @dirrm %%WWWDIR%%/plugins
@@ -1291,7 +1289,6 @@
 %%LANGUAGE_PACK%%@dirrm %%WWWDIR%%/lang/Arabic/mail_templates
 %%LANGUAGE_PACK%%@dirrm %%WWWDIR%%/lang/Arabic
 @dirrm %%WWWDIR%%/lang
-@exec mkdir -p %D/%%WWWDIR%%/include/user
 @dirrm %%WWWDIR%%/include/user
 @dirrm %%WWWDIR%%/include/template
 @dirrm %%WWWDIR%%/include/dblayer
