@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/mox.py
+%%PYTHON_SITELIBDIR%%/mox.pyc
+%%PYTHON_SITELIBDIR%%/mox.pyo
+%%PYTHON_SITELIBDIR%%/stubout.py
+%%PYTHON_SITELIBDIR%%/stubout.pyc
+%%PYTHON_SITELIBDIR%%/stubout.pyo
+@comment %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
