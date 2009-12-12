@@ -4,4 +4,4 @@ available, including adding spam and virus information header fields,
 modifying Subject, adding address extensions and removing certain recipients
 from delivery while delivering the same message to the rest.
 
-WWW: http://sourceforge.net/projects/amavisd-milter/ 
+WWW: http://amavisd-milter.sourceforge.net
