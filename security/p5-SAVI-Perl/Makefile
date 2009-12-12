@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.csupomona.edu/~henson/www/projects/SAVI-Perl/dist/
 MASTER_SITE_SUBDIR=	security
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	Gary@Hayers.net
+MAINTAINER=	Gary@Hayers.org
 COMMENT=	Perl5 module interface to Sophos AntiVirus
 
 MAN3=		SAVI.3
