@@ -40,7 +40,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 NO_MOZPKGINSTALL=yes
-CONFLICTS=	firefox-3.0.*
+CONFLICTS=	firefox-3.0.* firefox-3.6*
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
