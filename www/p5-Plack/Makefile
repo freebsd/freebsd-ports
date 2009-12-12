@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9018
+PORTVERSION=	0.9021
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -16,7 +16,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of PSGI reference implementation and utilities
 
 RUN_DEPENDS=	\
-	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 	p5-Devel-StackTrace>0:${PORTSDIR}/devel/p5-Devel-StackTrace \
 	p5-Devel-StackTrace-AsHTML>0:${PORTSDIR}/devel/p5-Devel-StackTrace-AsHTML \
 	p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
@@ -34,12 +33,15 @@ PERL_CONFIGURE=	yes
 MAN1=	plackup.1
 MAN3=	HTTP::Message::PSGI.3 \
 	Plack.3 \
+	Plack::App::CGIBin.3 \
 	Plack::App::Cascade.3 \
 	Plack::App::Directory.3 \
 	Plack::App::FCGIDispatcher.3 \
 	Plack::App::File.3 \
+	Plack::App::PSGIBin.3 \
 	Plack::App::URLMap.3 \
 	Plack::Builder.3 \
+	Plack::Component.3 \
 	Plack::HTTPParser.3 \
 	Plack::HTTPParser::PP.3 \
 	Plack::Loader.3 \
@@ -74,6 +76,7 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Test::MockHTTP.3 \
 	Plack::Test::Server.3 \
 	Plack::Test::Suite.3 \
-	Plack::Util.3
+	Plack::Util.3 \
+	Plack::Util::Accessor.3
 
 .include <bsd.port.mk>

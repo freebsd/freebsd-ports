@@ -3,11 +3,14 @@ bin/plackup
 %%SITE_PERL%%/HTTP/Message/PSGI.pm
 %%SITE_PERL%%/Plack.pm
 %%SITE_PERL%%/Plack/App/Cascade.pm
+%%SITE_PERL%%/Plack/App/CGIBin.pm
 %%SITE_PERL%%/Plack/App/Directory.pm
 %%SITE_PERL%%/Plack/App/FCGIDispatcher.pm
 %%SITE_PERL%%/Plack/App/File.pm
+%%SITE_PERL%%/Plack/App/PSGIBin.pm
 %%SITE_PERL%%/Plack/App/URLMap.pm
 %%SITE_PERL%%/Plack/Builder.pm
+%%SITE_PERL%%/Plack/Component.pm
 %%SITE_PERL%%/Plack/HTTPParser.pm
 %%SITE_PERL%%/Plack/HTTPParser/PP.pm
 %%SITE_PERL%%/Plack/Loader.pm
@@ -45,9 +48,11 @@ bin/plackup
 %%SITE_PERL%%/Plack/Test/Server.pm
 %%SITE_PERL%%/Plack/Test/Suite.pm
 %%SITE_PERL%%/Plack/Util.pm
+%%SITE_PERL%%/Plack/Util/Accessor.pm
 %%SITE_PERL%%/auto/share/dist/Plack/face.jpg
 %%SITE_PERL%%/auto/share/dist/Plack/kyoto.jpg
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack
+@dirrm %%SITE_PERL%%/Plack/Util
 @dirrm %%SITE_PERL%%/Plack/Test
 @dirrm %%SITE_PERL%%/Plack/Server/Standalone
 @dirrm %%SITE_PERL%%/Plack/Server
