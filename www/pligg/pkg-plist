@@ -26,6 +26,7 @@
 %%WWWDIR%%/admin/admin_comments.php
 %%WWWDIR%%/admin/admin_config.php
 %%WWWDIR%%/admin/admin_delete_cache.php
+%%WWWDIR%%/admin/admin_delete_comments.php
 %%WWWDIR%%/admin/admin_delete_stories.php
 %%WWWDIR%%/admin/admin_editor.php
 %%WWWDIR%%/admin/admin_group.php
@@ -78,7 +79,6 @@
 %%WWWDIR%%/install/footer.php
 %%WWWDIR%%/install/functions.php
 %%WWWDIR%%/install/header.php
-%%WWWDIR%%/install/index.html
 %%WWWDIR%%/install/index.php
 %%WWWDIR%%/install/install.php
 %%WWWDIR%%/install/install0.php
@@ -116,8 +116,10 @@
 %%WWWDIR%%/languages/lang_chinese_simplified.conf.default
 %%WWWDIR%%/languages/lang_english.conf.default
 %%WWWDIR%%/languages/lang_german.conf.default
+%%WWWDIR%%/languages/lang_italian.conf.default
 %%WWWDIR%%/languages/lang_russian.conf.default
 %%WWWDIR%%/languages/lang_thai.conf.default
+%%WWWDIR%%/languages/lang_turkmen.conf.default
 %%WWWDIR%%/languages/readme_thai.html
 %%WWWDIR%%/languages/translit.txt
 %%WWWDIR%%/libs/admin_config.php
@@ -282,35 +284,6 @@
 %%WWWDIR%%/modules/admin_snippet/templates/admin_snippet_javascript.tpl
 %%WWWDIR%%/modules/admin_snippet/templates/admin_snippet_main.tpl
 %%WWWDIR%%/modules/admin_snippet/templates/index.html
-%%WWWDIR%%/modules/akismet/_akismet_main.php
-%%WWWDIR%%/modules/akismet/akismet_cron.php
-%%WWWDIR%%/modules/akismet/akismet_init.php
-%%WWWDIR%%/modules/akismet/akismet_install.php
-%%WWWDIR%%/modules/akismet/akismet_main.php
-%%WWWDIR%%/modules/akismet/akismet_readme.htm
-%%WWWDIR%%/modules/akismet/akismet_settings.php
-%%WWWDIR%%/modules/akismet/images/exclamation.png
-%%WWWDIR%%/modules/akismet/images/index.html
-%%WWWDIR%%/modules/akismet/images/key.png
-%%WWWDIR%%/modules/akismet/images/shield.png
-%%WWWDIR%%/modules/akismet/images/tick.png
-%%WWWDIR%%/modules/akismet/images/wrench.png
-%%WWWDIR%%/modules/akismet/index.html
-%%WWWDIR%%/modules/akismet/lang.conf
-%%WWWDIR%%/modules/akismet/lang_russian.conf
-%%WWWDIR%%/modules/akismet/libs/Akismet.class_4.php
-%%WWWDIR%%/modules/akismet/libs/Akismet.class_5.php
-%%WWWDIR%%/modules/akismet/libs/akismet.class.php
-%%WWWDIR%%/modules/akismet/libs/index.html
-%%WWWDIR%%/modules/akismet/story.php
-%%WWWDIR%%/modules/akismet/templates/akismet_admin_main_link.tpl
-%%WWWDIR%%/modules/akismet/templates/index.html
-%%WWWDIR%%/modules/akismet/templates/main.tpl
-%%WWWDIR%%/modules/akismet/templates/manageKey.tpl
-%%WWWDIR%%/modules/akismet/templates/manageSettings.tpl
-%%WWWDIR%%/modules/akismet/templates/manageSpam.tpl
-%%WWWDIR%%/modules/akismet/templates/manageSpamcomments.tpl
-%%WWWDIR%%/modules/akismet/templates/spam_link_in_menu.tpl
 %%WWWDIR%%/modules/anonymous/anonymous_init.php
 %%WWWDIR%%/modules/anonymous/anonymous_install.php
 %%WWWDIR%%/modules/anonymous/anonymous_main.php
@@ -339,6 +312,25 @@
 %%WWWDIR%%/modules/anonymous_story/lang.conf
 %%WWWDIR%%/modules/anonymous_story/lang_russian.conf
 %%WWWDIR%%/modules/anonymous_story/templates/anonymous_story.tpl
+%%WWWDIR%%/modules/auto_update/archive.php
+%%WWWDIR%%/modules/auto_update/auto_update_backup.php
+%%WWWDIR%%/modules/auto_update/auto_update_init.php
+%%WWWDIR%%/modules/auto_update/auto_update_install.php
+%%WWWDIR%%/modules/auto_update/auto_update_main.php
+%%WWWDIR%%/modules/auto_update/auto_update_readme.htm
+%%WWWDIR%%/modules/auto_update/auto_update_settings.php
+%%WWWDIR%%/modules/auto_update/images/loader.gif
+%%WWWDIR%%/modules/auto_update/lang.conf
+%%WWWDIR%%/modules/auto_update/templates/auto_update.tpl
+%%WWWDIR%%/modules/auto_update/templates/auto_update_breadcrumb.tpl
+%%WWWDIR%%/modules/auto_update/templates/auto_update_main.tpl
+%%WWWDIR%%/modules/auto_update/templates/auto_update_step2.tpl
+%%WWWDIR%%/modules/auto_update/templates/auto_update_step3.tpl
+%%WWWDIR%%/modules/auto_update/templates/auto_update_step4.tpl
+%%WWWDIR%%/modules/auto_update/templates/auto_update_step5.tpl
+%%WWWDIR%%/modules/auto_update/templates/auto_update_step6.tpl
+%%WWWDIR%%/modules/auto_update/upload.php
+%%WWWDIR%%/modules/auto_update/zip.class.php
 %%WWWDIR%%/modules/blocker/blocker_init.php
 %%WWWDIR%%/modules/blocker/blocker_install.php
 %%WWWDIR%%/modules/blocker/blocker_readme.htm
@@ -378,6 +370,7 @@
 %%WWWDIR%%/modules/captcha/templates/captcha_admin_main_link.tpl
 %%WWWDIR%%/modules/captcha/templates/captcha_configure.tpl
 %%WWWDIR%%/modules/captcha/templates/captcha_home.tpl
+%%WWWDIR%%/modules/captcha/templates/captcha_incorrect.tpl
 %%WWWDIR%%/modules/captcha/templates/index.html
 %%WWWDIR%%/modules/captcha/templates/show_register_captcha.tpl
 %%WWWDIR%%/modules/codemirror/codemirror_init.php
@@ -473,51 +466,6 @@
 %%WWWDIR%%/modules/multibox_admin/templates/index.html
 %%WWWDIR%%/modules/multibox_admin/templates/multibox_admin_body_end.tpl
 %%WWWDIR%%/modules/multibox_admin/templates/multibox_admin_head_start.tpl
-%%WWWDIR%%/modules/pligg_update/cache_end.php
-%%WWWDIR%%/modules/pligg_update/cache_start.php
-%%WWWDIR%%/modules/pligg_update/curl.php
-%%WWWDIR%%/modules/pligg_update/curl_test.php
-%%WWWDIR%%/modules/pligg_update/lang.conf
-%%WWWDIR%%/modules/pligg_update/pligg_update_init.php
-%%WWWDIR%%/modules/pligg_update/pligg_update_install.php
-%%WWWDIR%%/modules/pligg_update/pligg_update_readme.htm
-%%WWWDIR%%/modules/pligg_update/pligg_update_settings.php
-%%WWWDIR%%/modules/pligg_update/templates/pligg_update.tpl
-%%WWWDIR%%/modules/rss_import/admin_rss_import.php
-%%WWWDIR%%/modules/rss_import/class.rssimport.php
-%%WWWDIR%%/modules/rss_import/create_feed_tables.php
-%%WWWDIR%%/modules/rss_import/images/feed_add.gif
-%%WWWDIR%%/modules/rss_import/images/feed_bullet.gif
-%%WWWDIR%%/modules/rss_import/images/feed_delete.gif
-%%WWWDIR%%/modules/rss_import/images/feed_go.gif
-%%WWWDIR%%/modules/rss_import/images/manage_rss.gif
-%%WWWDIR%%/modules/rss_import/import.php
-%%WWWDIR%%/modules/rss_import/index.html
-%%WWWDIR%%/modules/rss_import/js/EditInPlace.js
-%%WWWDIR%%/modules/rss_import/js/pligg_effects.js
-%%WWWDIR%%/modules/rss_import/lang.conf
-%%WWWDIR%%/modules/rss_import/lang_russian.conf
-%%WWWDIR%%/modules/rss_import/magpierss/extlib/Snoopy.class.inc
-%%WWWDIR%%/modules/rss_import/magpierss/extlib/index.html
-%%WWWDIR%%/modules/rss_import/magpierss/index.html
-%%WWWDIR%%/modules/rss_import/magpierss/rss_cache.inc
-%%WWWDIR%%/modules/rss_import/magpierss/rss_fetch.inc
-%%WWWDIR%%/modules/rss_import/magpierss/rss_parse.inc
-%%WWWDIR%%/modules/rss_import/magpierss/rss_utils.inc
-%%WWWDIR%%/modules/rss_import/qeip_0_3.php
-%%WWWDIR%%/modules/rss_import/rss_import_init.php
-%%WWWDIR%%/modules/rss_import/rss_import_install.php
-%%WWWDIR%%/modules/rss_import/rss_import_main.php
-%%WWWDIR%%/modules/rss_import/rss_import_readme.htm
-%%WWWDIR%%/modules/rss_import/rss_import_settings.php
-%%WWWDIR%%/modules/rss_import/templates/admin_rss_center.tpl
-%%WWWDIR%%/modules/rss_import/templates/admin_rss_center2.tpl
-%%WWWDIR%%/modules/rss_import/templates/import_fields_center.tpl
-%%WWWDIR%%/modules/rss_import/templates/index.html
-%%WWWDIR%%/modules/rss_import/templates/rss_import_admin_link.tpl
-%%WWWDIR%%/modules/rss_import/templates/rss_import_admin_main_link.tpl
-%%WWWDIR%%/modules/rss_import/templates/stopwords.txt
-%%WWWDIR%%/modules/rss_import/templates/test.php
 %%WWWDIR%%/modules/send_announcement/index.html
 %%WWWDIR%%/modules/send_announcement/lang.conf
 %%WWWDIR%%/modules/send_announcement/send_announcement_init.php
@@ -577,6 +525,7 @@
 %%WWWDIR%%/modules/simple_messaging/images/ajax-loader.gif
 %%WWWDIR%%/modules/simple_messaging/images/cross.png
 %%WWWDIR%%/modules/simple_messaging/images/delete.png
+%%WWWDIR%%/modules/simple_messaging/images/email.png
 %%WWWDIR%%/modules/simple_messaging/images/gotoinbox.png
 %%WWWDIR%%/modules/simple_messaging/images/index.html
 %%WWWDIR%%/modules/simple_messaging/images/new.png
@@ -596,7 +545,10 @@
 %%WWWDIR%%/modules/simple_messaging/templates/inbox.tpl
 %%WWWDIR%%/modules/simple_messaging/templates/inbox_link_in_menu.tpl
 %%WWWDIR%%/modules/simple_messaging/templates/index.html
+%%WWWDIR%%/modules/simple_messaging/templates/menu.tpl
+%%WWWDIR%%/modules/simple_messaging/templates/sent.tpl
 %%WWWDIR%%/modules/simple_messaging/templates/show_message.tpl
+%%WWWDIR%%/modules/simple_messaging/templates/show_sent_message.tpl
 %%WWWDIR%%/modules/social_bookmark/images/ask.gif
 %%WWWDIR%%/modules/social_bookmark/images/delicious.png
 %%WWWDIR%%/modules/social_bookmark/images/digg.png
@@ -619,13 +571,29 @@
 %%WWWDIR%%/modules/social_bookmark/social_bookmark_settings.php
 %%WWWDIR%%/modules/social_bookmark/templates/index.html
 %%WWWDIR%%/modules/social_bookmark/templates/social_bookmark_index.tpl
+%%WWWDIR%%/modules/spam_trigger/index.html
+%%WWWDIR%%/modules/spam_trigger/lang.conf
+%%WWWDIR%%/modules/spam_trigger/spam_trigger_init.php
+%%WWWDIR%%/modules/spam_trigger/spam_trigger_install.php
+%%WWWDIR%%/modules/spam_trigger/spam_trigger_main.php
+%%WWWDIR%%/modules/spam_trigger/spam_trigger_readme.htm
+%%WWWDIR%%/modules/spam_trigger/spam_trigger_settings.php
+%%WWWDIR%%/modules/spam_trigger/templates/comments.tpl
+%%WWWDIR%%/modules/spam_trigger/templates/index.html
+%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger.css
+%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger.gif
+%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_admin_link.tpl
+%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_admin_main_link.tpl
+%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_css.tpl
+%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_main.tpl
+%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_notify.tpl
+%%WWWDIR%%/modules/spam_trigger/templates/story.tpl
 %%WWWDIR%%/modules/submit_antispam/css/index.html
 %%WWWDIR%%/modules/submit_antispam/css/submit_antispam.css
 %%WWWDIR%%/modules/submit_antispam/images/error_stop.png
 %%WWWDIR%%/modules/submit_antispam/images/index.html
 %%WWWDIR%%/modules/submit_antispam/images/tab_back.png
 %%WWWDIR%%/modules/submit_antispam/index.html
-%%WWWDIR%%/modules/submit_antispam/js/countdow n
 %%WWWDIR%%/modules/submit_antispam/js/countdown.js
 %%WWWDIR%%/modules/submit_antispam/js/index.html
 %%WWWDIR%%/modules/submit_antispam/lang.conf
@@ -713,11 +681,30 @@
 %%WWWDIR%%/plugins/function.embedvideos.php
 %%WWWDIR%%/plugins/function.eval.php
 %%WWWDIR%%/plugins/function.html_options.php
+%%WWWDIR%%/plugins/function.mailto.php
+%%WWWDIR%%/plugins/function.math.php
+%%WWWDIR%%/plugins/function.resize_image.php
 %%WWWDIR%%/plugins/function.ypn.php
 %%WWWDIR%%/plugins/index.html
+%%WWWDIR%%/plugins/modifier.capitalize.php
+%%WWWDIR%%/plugins/modifier.cat.php
+%%WWWDIR%%/plugins/modifier.count_characters.php
+%%WWWDIR%%/plugins/modifier.count_paragraphs.php
+%%WWWDIR%%/plugins/modifier.count_sentences.php
+%%WWWDIR%%/plugins/modifier.count_words.php
+%%WWWDIR%%/plugins/modifier.default.php
 %%WWWDIR%%/plugins/modifier.escape.php
+%%WWWDIR%%/plugins/modifier.indent.php
+%%WWWDIR%%/plugins/modifier.lower.php
+%%WWWDIR%%/plugins/modifier.regex_replace.php
 %%WWWDIR%%/plugins/modifier.repeat_count.php
+%%WWWDIR%%/plugins/modifier.replace.php
 %%WWWDIR%%/plugins/modifier.sanitize.php
+%%WWWDIR%%/plugins/modifier.spacify.php
+%%WWWDIR%%/plugins/modifier.string_format.php
+%%WWWDIR%%/plugins/modifier.strip.php
+%%WWWDIR%%/plugins/modifier.truncate.php
+%%WWWDIR%%/plugins/modifier.upper.php
 %%WWWDIR%%/plugins/shared.escape_chars.php
 %%WWWDIR%%/profile.php
 %%WWWDIR%%/query.log
@@ -1102,16 +1089,15 @@
 @dirrm %%WWWDIR%%/modules/admin_language
 @dirrm %%WWWDIR%%/modules/admin_snippet/templates
 @dirrm %%WWWDIR%%/modules/admin_snippet
-@dirrm %%WWWDIR%%/modules/akismet/images
-@dirrm %%WWWDIR%%/modules/akismet/libs
-@dirrm %%WWWDIR%%/modules/akismet/templates
-@dirrm %%WWWDIR%%/modules/akismet
 @dirrm %%WWWDIR%%/modules/anonymous/templates
 @dirrm %%WWWDIR%%/modules/anonymous
 @dirrm %%WWWDIR%%/modules/anonymous_comments/templates
 @dirrm %%WWWDIR%%/modules/anonymous_comments
 @dirrm %%WWWDIR%%/modules/anonymous_story/templates
 @dirrm %%WWWDIR%%/modules/anonymous_story
+@dirrm %%WWWDIR%%/modules/auto_update/images
+@dirrm %%WWWDIR%%/modules/auto_update/templates
+@dirrm %%WWWDIR%%/modules/auto_update
 @dirrm %%WWWDIR%%/modules/blocker/templates
 @dirrm %%WWWDIR%%/modules/blocker
 @dirrm %%WWWDIR%%/modules/captcha/captchas/WhiteHat
@@ -1136,14 +1122,6 @@
 @dirrm %%WWWDIR%%/modules/multibox_admin/js
 @dirrm %%WWWDIR%%/modules/multibox_admin/templates
 @dirrm %%WWWDIR%%/modules/multibox_admin
-@dirrm %%WWWDIR%%/modules/pligg_update/templates
-@dirrm %%WWWDIR%%/modules/pligg_update
-@dirrm %%WWWDIR%%/modules/rss_import/images
-@dirrm %%WWWDIR%%/modules/rss_import/js
-@dirrm %%WWWDIR%%/modules/rss_import/magpierss/extlib
-@dirrm %%WWWDIR%%/modules/rss_import/magpierss
-@dirrm %%WWWDIR%%/modules/rss_import/templates
-@dirrm %%WWWDIR%%/modules/rss_import
 @dirrm %%WWWDIR%%/modules/send_announcement/templates
 @dirrm %%WWWDIR%%/modules/send_announcement
 @dirrm %%WWWDIR%%/modules/share_revenue/images
@@ -1166,6 +1144,8 @@
 @dirrm %%WWWDIR%%/modules/social_bookmark/images
 @dirrm %%WWWDIR%%/modules/social_bookmark/templates
 @dirrm %%WWWDIR%%/modules/social_bookmark
+@dirrm %%WWWDIR%%/modules/spam_trigger/templates
+@dirrm %%WWWDIR%%/modules/spam_trigger
 @dirrm %%WWWDIR%%/modules/submit_antispam/css
 @dirrm %%WWWDIR%%/modules/submit_antispam/images
 @dirrm %%WWWDIR%%/modules/submit_antispam/js

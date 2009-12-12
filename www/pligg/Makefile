@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	pligg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3b
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://forums.pligg.com/attachments/current-version/
-DISTNAME=	2168d1250290502-pligg-content-management-system-1-0-1-pligg-cms-1.0.1
+DISTNAME=	2400d1259797181-pligg-content-management-system-1-0-1-pligg-cms-1.0.1
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source Web2.0 CMS
 
 USE_ZIP=	yes
 USE_PHP=	mysql
-WRKSRC=		${WRKDIR}/Pligg\ ${PORTVERSION}
+WRKSRC=		${WRKDIR}/pligg
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
