@@ -1,0 +1,5 @@
+Reusable django application for writting pluggable reusable django applications.
+Allows 3rd party apps to dynamically insert template inclusions into your apps
+at pre-defined plugin points.
+
+WWW:    http://code.google.com/p/django-app-plugins/
