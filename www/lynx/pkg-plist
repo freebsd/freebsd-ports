@@ -1,10 +1,10 @@
 bin/lynx
-@unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.sample; then rm -f %D/etc/lynx.cfg; fi
+@unexec if cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.sample; then rm -f %D/etc/lynx.cfg; fi
 etc/lynx.cfg.sample
-@exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
-@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.sample; then rm -f %D/etc/lynx.lss; fi
+@exec if [ ! -f %B/lynx.cfg ]; then cp -p %D/%F %B/lynx.cfg; fi
+@unexec if cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.sample; then rm -f %D/etc/lynx.lss; fi
 etc/lynx.lss.sample
-@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
+@exec if [ ! -f %B/lynx.lss ]; then cp -p %D/%F %B/lynx.lss; fi
 @exec mkdir -p %D/share/lynx_help
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYHEADER
