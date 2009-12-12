@@ -20,6 +20,8 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	URL extractor/launcher
 
+BROKEN=		fails to package
+
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
 SUB_FILES=	gecko.sh
