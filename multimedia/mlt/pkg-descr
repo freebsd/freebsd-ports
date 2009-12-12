@@ -1,8 +1,8 @@
 MLT is an open source multimedia framework, designed and developed for
 television broadcasting. It provides a toolkit for broadcasters, video
-editors, media players, transcoders, web streamers and many more types of
-applications. The functionality of the system is provided via an assortment
-of ready to use tools, XML authoring components, and an extensible plug-in
-based API.
+editors, media players, transcoders, web streamers and many more types
+of applications. The functionality of the system is provided via an
+assortment of ready to use tools, XML authoring components, and an
+extensible plug-in based API.
 
 WWW: http://www.mltframework.org

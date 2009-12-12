@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -28,8 +28,7 @@ USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mlt
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64 (invokes i386 asm)
 
-PORTDOCS=	AUTHORS ChangeLog COPYING \
-		NEWS README docs demo
+PORTDOCS=	AUTHORS ChangeLog NEWS README docs demo
 
 OPTIONS=	AVFORMAT	"Avformat module" on \
 		DV	"Quasar DV Codec module" on \
@@ -99,7 +98,7 @@ LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv \
 CONFIGURE_ARGS+=	--enable-kino
 PLIST_SUB+=	KINO=""
 .else
-CONFIGURE+ARGS+=	--disable-kino
+CONFIGURE_ARGS+=	--disable-kino
 PLIST_SUB+=	KINO="@comment "
 .endif
 
