@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	libxcb
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	x11 python
-#MASTER_SITES=	XORG/current/src/extras
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	wahjava@gmail.com
@@ -17,11 +16,9 @@ COMMENT=	The X protocol C-language Binding (XCB) library
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
-		xcb-proto>=1.5:${PORTSDIR}/x11/xcb-proto \
+		xcb-proto>=1.6:${PORTSDIR}/x11/xcb-proto \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
-		xcb-proto>=1.5:${PORTSDIR}/x11/xcb-proto \
-		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 
 CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen
 
@@ -30,7 +27,7 @@ USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xau xdmcp
-USE_PYTHON=	2.5+
+USE_PYTHON_BUILD=	2.5+
 
 GNU_CONFIGURE=	yes
 .for f in XPROTO_CFLAGS XPROTO_LIBS XDMCP_CFLAGS XDMCP_LIBS NEEDED_CFLAGS NEEDED_LIBS
