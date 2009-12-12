@@ -33,6 +33,8 @@ OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
 
 SUB_FILES=	pkg-message
 
+BROKEN=		fails to build with new cmake.
+
 .include <bsd.port.pre.mk>
 
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
