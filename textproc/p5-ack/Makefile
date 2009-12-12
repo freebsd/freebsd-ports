@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ack
-PORTVERSION=	1.90
+PORTVERSION=	1.92
 CATEGORIES=	textproc perl5 sysutils
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	App
@@ -21,6 +21,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		ack.1
-MAN3=		Ack.3 Basic.3 Plugin.3 Repository.3 Resource.3
 
 .include <bsd.port.mk>
