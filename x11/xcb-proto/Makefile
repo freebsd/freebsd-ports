@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcb-proto
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
