@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-07-28 22:29:34.000000000 +0200
++++ Makefile	2009-12-10 13:10:07.000000000 +0100
+@@ -7,7 +7,7 @@
+ all:
+ 	cd library  && make all && cd ..
+ 	cd programs && make all && cd ..
+-	cd tests && make all && cd ..
++#	cd tests && make all && cd ..
+ 
+ install:
+ 	mkdir -p $(DESTDIR)/include/polarssl

@@ -636,6 +636,7 @@
     SUBDIR += pks
     SUBDIR += pktsuckers
     SUBDIR += poc
+    SUBDIR += polarssl
     SUBDIR += poly1305aes
     SUBDIR += portscanner
     SUBDIR += portsentry
