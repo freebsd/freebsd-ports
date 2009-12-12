@@ -1318,6 +1318,7 @@
     SUBDIR += py-clientform
     SUBDIR += py-cssutils
     SUBDIR += py-django
+    SUBDIR += py-django-app-plugins
     SUBDIR += py-django-devel
     SUBDIR += py-django-registration
     SUBDIR += py-django-tagging
