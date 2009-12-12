@@ -1,0 +1,3 @@
+Read and process an SNMP trap from Net-SNMP's snmptrapd
+
+WWW: http://search.cpan.org/dist/SNMP-Trapinfo/
