@@ -1,16 +1,16 @@
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2009-03-05 22:32:55.000000000 +0100
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2009-04-21 14:15:46.135700268 +0200
-@@ -70,6 +70,9 @@
- ifeq (Darwin,$(OS_ARCH))
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2009-09-16 04:41:25.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2009-10-03 21:30:21.000000000 +0200
+@@ -73,6 +73,9 @@
  DEFINES		+= -DKEEP_STACK_16_BYTE_ALIGNED
+ CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixish_x86.cpp
  endif
 +ifeq (x86_64,$(OS_TEST))
 +CPPSRCS		:= xptcinvoke_x86_64_linux.cpp xptcstubs_x86_64_linux.cpp
 +endif
  endif
  endif
- #
-@@ -87,7 +90,7 @@
+ 
+@@ -96,7 +99,7 @@
  endif
  endif
  # IA64 Linux
@@ -19,20 +19,18 @@
  ifneq (,$(findstring ia64,$(OS_TEST)))
  CPPSRCS		:= xptcinvoke_ipf64.cpp xptcstubs_ipf64.cpp
  ASFILES		:= xptcstubs_asm_ipf64.s xptcinvoke_asm_ipf64.s
-@@ -100,6 +103,12 @@
- CPPSRCS		:= xptcinvoke_amd64_openbsd.cpp xptcstubs_amd64_openbsd.cpp
- endif
+@@ -111,8 +114,8 @@
  #
-+# FreeBSD/amd64
-+#
+ # FreeBSD/amd64
+ #
+-ifeq ($(OS_ARCH)$(OS_TEST),FreeBSDx86_64)
+-CPPSRCS		:= xptcinvoke_amd64_linux.cpp xptcstubs_amd64_linux.cpp
 +ifeq ($(OS_ARCH)$(OS_TEST),FreeBSDamd64)
 +CPPSRCS         := xptcinvoke_amd64_openbsd.cpp xptcstubs_amd64_openbsd.cpp
-+endif
-+#
- # BeOS/Intel (uses the same unixish_x86 code)
+ endif
  #
- ifeq ($(OS_ARCH)$(OS_TEST),BeOSBePC)
-@@ -150,9 +159,15 @@
+ # BeOS/Intel (uses the same unixish_x86 code)
+@@ -165,9 +168,15 @@
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
  #
@@ -49,7 +47,7 @@
  CPPSRCS		:= xptcinvoke_linux_alpha.cpp xptcstubs_linux_alpha.cpp
  endif
  #
-@@ -307,7 +322,7 @@
+@@ -322,7 +331,7 @@
  #
  # Linux/PPC
  #
@@ -58,7 +56,7 @@
  CPPSRCS		:= xptcinvoke_ppc_linux.cpp xptcstubs_ppc_linux.cpp
  ASFILES		:= xptcinvoke_asm_ppc_linux.s xptcstubs_asm_ppc_linux.s
  AS		:= $(CC) -c -x assembler-with-cpp
-@@ -385,6 +400,15 @@
+@@ -400,6 +409,15 @@
  ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
  endif
  #

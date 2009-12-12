@@ -1,16 +1,16 @@
---- js/src/jsnum.cpp.orig	2009-04-28 11:19:57.888134991 +0000
-+++ js/src/jsnum.cpp	2009-04-28 11:21:35.786147448 +0000
-@@ -45,6 +45,9 @@
- #if defined(XP_WIN) || defined(XP_OS2)
- #include <float.h>
- #endif
+--- js/src/jsnum.cpp.orig	2009-10-14 18:03:30.000000000 +0200
++++ js/src/jsnum.cpp	2009-10-15 21:49:44.000000000 +0200
+@@ -43,6 +43,9 @@
+ /*
+  * JS number type and wrapper class.
+  */
 +#if defined(__FreeBSD__)
 +#include <sys/param.h>
 +#endif
  #ifdef XP_OS2
  #define _PC_53  PC_53
  #define _MCW_EM MCW_EM
-@@ -659,8 +662,16 @@
+@@ -691,8 +694,16 @@
  
  #else
  

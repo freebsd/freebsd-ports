@@ -1,16 +1,15 @@
---- media/libsydneyaudio/src/Makefile.in_orgi  2009-04-10 12:12:45.000000000 +0200
-+++ media/libsydneyaudio/src/Makefile.in       2009-04-10 12:13:12.000000000 +0200
+--- media/libsydneyaudio/src/Makefile.in.orig	2009-08-11 16:28:21.000000000 +0200
++++ media/libsydneyaudio/src/Makefile.in	2009-08-11 16:29:08.000000000 +0200
 @@ -45,6 +45,12 @@
- LIBRARY_NAME  = sydneyaudio
+ LIBRARY_NAME	= sydneyaudio
  FORCE_STATIC_LIB= 1
-
+ 
 +ifeq ($(OS_ARCH),FreeBSD)
-+CSRCS         = \
-+              sydney_audio_oss.c \
-+              $(NULL)
++CSRCS		= \
++		sydney_audio_oss.c \
++		$(NULL)
 +endif
 +
  ifeq ($(OS_ARCH),Linux)
- CSRCS         = \
-               sydney_audio_alsa.c \
-
+ CSRCS		= \
+ 		sydney_audio_alsa.c \

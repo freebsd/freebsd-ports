@@ -1,0 +1,13 @@
+--- js/src/configure.in.orig	2009-09-21 00:26:58.000000000 +0200
++++ js/src/configure.in	2009-10-08 07:00:27.000000000 +0200
+@@ -2456,10 +2456,6 @@
+     ENABLE_JIT=1
+     NANOJIT_ARCH=ARM
+     ;;
+-sparc*-*)
+-    ENABLE_JIT=1
+-    NANOJIT_ARCH=Sparc
+-    ;;
+ esac
+ 
+ MOZ_ARG_DISABLE_BOOL(jit,
