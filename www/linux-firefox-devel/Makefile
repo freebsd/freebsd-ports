@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.0b2
-PORTREVISION=	1
+DISTVERSION=	3.5.5
 CATEGORIES=	www
 MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 PKGNAMESUFFIX=		-devel
@@ -17,7 +16,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 USE_BZIP2=	yes
 
-FORBIDDEN=	Security issues http://www.vuxml.org/freebsd/f29fea8f-b19f-11dd-a55e-00163e000016.html 
+USE_LINUX_APPS=	dbusglib dbuslibs alsalib
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>
