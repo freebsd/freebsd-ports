@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pmwiki.org/pub/pmwiki/
@@ -18,8 +18,9 @@ COMMENT=	A WikiWikiWeb clone using PHP
 USE_PHP=	mbstring session
 WANT_PHP_WEB=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
+
+PORTDOCS=	*
 
 PLIST_SUB+=	PMWIKIDIR=${PMWIKIDIR}
 SUB_LIST+=	PMWIKIDIR=${PMWIKIDIR}
@@ -35,10 +36,21 @@ pre-fetch:
 
 PMWIKIDIR?=	www/pmwiki
 
+CPIOFLAGS=	--quiet -pdm -R ${WWWOWN}:${WWWGRP}
+
+post-extract:
+	@${MV} ${WRKSRC}/README.txt ${WRKSRC}/docs
+	@${MV} ${WRKSRC}/docs/sample-config.php ${WRKSRC}
+
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/${PMWIKIDIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PMWIKIDIR}
+	@cd ${WRKSRC} && ${FIND} . ! \( -name docs -prune \) | \
+		${CPIO} ${CPIOFLAGS} ${PREFIX}/${PMWIKIDIR}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${PMWIKIDIR}
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/docs/* ${DOCSDIR}
+.endif
 
 post-install:
 	@${MKDIR} -m 775 ${PREFIX}/${PMWIKIDIR}/wiki.d
