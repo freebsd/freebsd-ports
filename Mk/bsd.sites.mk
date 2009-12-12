@@ -247,10 +247,12 @@ MASTER_SITE_EXIM+=	\
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
+# put me back first when I'm working again
+#       http://archives.fedoraproject.org/pub/archive/fedora/linux/core/%SUBDIR%/ \
+# and move ftp.udl.es back to the place it was in 1.484
 MASTER_SITE_FEDORA_LINUX+= \
         http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
-	http://archives.fedoraproject.org/pub/archive/fedora/linux/core/%SUBDIR%/ \
 	http://mirrors.kernel.org/fedora/core/%SUBDIR%/ \
 	ftp://mirrors.kernel.org/fedora/core/%SUBDIR%/ \
 	http://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
@@ -328,8 +330,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://ftp.uni-koeln.de/mirrors/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.uni-koeln.de/mirrors/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-frankfurt.de/pub/linux/Mirror/ftp.redhat.com/fedora/core/%SUBDIR%/ \
-	http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
 	http://mirrors.ircam.fr/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://mirrors.ircam.fr/pub/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.crihan.fr/mirrors/fedora.redhat.com/fedora/linux/core/%SUBDIR%/ \
