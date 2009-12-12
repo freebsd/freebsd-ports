@@ -35,6 +35,46 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bec38383-e6cb-11de-bdd4-000c2930e89b">
+    <topic>pligg -- Cross-Site Scripting and Cross-Site Request Forgery</topic>
+    <affects>
+      <package>
+        <name>pligg</name>
+        <range><lt>1.0.3b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>secunia reports:</p>
+        <blockquote cite="http://secunia.com/advisories/37349">
+          <p>Russ McRee has discovered some vulnerabilities in Pligg, which can
+            be exploited by malicious people to conduct cross-site scripting and
+            request forgery attacks.</p>
+          <p>Input passed via the "Referer" HTTP header to various scripts (e.g.
+            admin/admin_config.php, admin/admin_modules.php, delete.php, editlink.php,
+            submit.php, submit_groups.php, user_add_remove_links.php, and
+            user_settings.php) is not properly sanitised before being returned to
+            the user. This can be exploited to execute arbitrary HTML and script
+            code in a user's browser session in context of an affected site.</p>
+          <p>The application allows users to perform certain actions via HTTP
+            requests without performing any validity checks to verify the requests.
+            This can be exploited to e.g. create an arbitrary user with administrative
+            privileges if a logged-in administrative user visits a malicious web
+            site.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/37349/</url>
+      <url>http://www.pligg.com/blog/775/pligg-cms-1-0-3-release/</url>
+    </references>
+    <dates>
+      <discovery>2009-12-02</discovery>
+      <entry>2009-12-12</entry>
+    </dates>
+  </vuln>
+
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="fcbf56dd-e667-11de-920a-00248c9b4be7">
     <topic>piwik -- php code execution</topic>
     <affects>
