@@ -7,10 +7,11 @@
 
 PORTNAME=	stfl
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clifford.at/stfl/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Structured Terminal Forms Language/Library
 
 USE_LDCONFIG=	yes
@@ -18,7 +19,8 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	libstfl.so
-PLIST_FILES=	lib/libstfl.so.1 lib/libstfl.so include/stfl.h
+PLIST_FILES=	lib/libstfl.so.1 lib/libstfl.so include/stfl.h \
+		libdata/pkgconfig/stfl.pc
 CFLAGS+=	-I${LOCALBASE}/include
 LDLIBS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDLIBS="${LDLIBS}"
@@ -44,9 +46,14 @@ pre-build:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV}\
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} Makefile.deps
 
+post-build:
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV}\
+		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} stfl.pc
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/libstfl.so ${PREFIX}/lib/libstfl.so.1
 	@${LN} -sf ${PREFIX}/lib/libstfl.so.1 ${PREFIX}/lib/libstfl.so
 	@${INSTALL_DATA} ${WRKSRC}/stfl.h ${PREFIX}/include/
+	@${INSTALL_DATA} ${WRKSRC}/stfl.pc ${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.post.mk>
