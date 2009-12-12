@@ -1,11 +1,4 @@
-%%PMWIKIDIR%%/README.txt
 %%PMWIKIDIR%%/cookbook/.htaccess
-%%PMWIKIDIR%%/docs/.htaccess
-%%PMWIKIDIR%%/docs/COPYING.txt
-%%PMWIKIDIR%%/docs/DOCUMENTATION.txt
-%%PMWIKIDIR%%/docs/INSTALL.txt
-%%PMWIKIDIR%%/docs/UPGRADE.txt
-%%PMWIKIDIR%%/docs/sample-config.php
 %%PMWIKIDIR%%/local/.htaccess
 %%PMWIKIDIR%%/pmwiki.php
 %%PMWIKIDIR%%/pub/guiedit/README
@@ -46,6 +39,7 @@
 %%PMWIKIDIR%%/pub/skins/print/print.css
 %%PMWIKIDIR%%/pub/skins/print/print.php
 %%PMWIKIDIR%%/pub/skins/print/print.tmpl
+%%PMWIKIDIR%%/sample-config.php
 %%PMWIKIDIR%%/scripts/.htaccess
 %%PMWIKIDIR%%/scripts/author.php
 %%PMWIKIDIR%%/scripts/authuser.php
@@ -221,6 +215,5 @@
 @dirrm %%PMWIKIDIR%%/pub/css
 @dirrm %%PMWIKIDIR%%/pub
 @dirrm %%PMWIKIDIR%%/local
-@dirrm %%PMWIKIDIR%%/docs
 @dirrm %%PMWIKIDIR%%/cookbook
 @dirrmtry %%PMWIKIDIR%%
