@@ -2707,11 +2707,8 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox</name>
-	<range><lt>3.0.11</lt></range>
-      </package>
-      <package>
 	<name>linux-firefox-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.0.11</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -2771,7 +2768,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-06-11</discovery>
       <entry>2009-06-12</entry>
-      <modified>2009-08-07</modified>
+      <modified>2009-12-12</modified>
     </dates>
   </vuln>
 
@@ -3818,10 +3815,10 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
 	<range><lt>3.0.9</lt></range>
       </package>
       <package>
-	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
       </package>
@@ -3886,7 +3883,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-04-21</discovery>
       <entry>2009-04-22</entry>
-      <modified>2009-07-12</modified>
+      <modified>2009-12-12</modified>
     </dates>
   </vuln>
 
@@ -4950,10 +4947,10 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
 	<range><lt>3.0.6</lt></range>
       </package>
       <package>
-	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
       </package>
@@ -5001,7 +4998,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-02-04</discovery>
       <entry>2009-02-11</entry>
-      <modified>2009-07-12</modified>
+      <modified>2009-12-12</modified>
     </dates>
   </vuln>
 
@@ -8904,6 +8901,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
 	<range><lt>2.0.0.17</lt></range>
       </package>
       <package>
@@ -8922,7 +8920,6 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.0</lt></range>
       </package>
       <package>
-	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
       </package>
@@ -8977,7 +8974,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-24</discovery>
       <entry>2008-09-24</entry>
-      <modified>2009-05-05</modified>
+      <modified>2009-12-12</modified>
     </dates>
   </vuln>
 
@@ -11191,6 +11188,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
 	<range><lt>2.0.0.14</lt></range>
       </package>
       <package>
@@ -11204,7 +11202,6 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.1.2</lt></range>
       </package>
       <package>
-	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
       </package>
@@ -11238,7 +11235,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-04-16</discovery>
       <entry>2008-04-25</entry>
-      <modified>2008-04-28</modified>
+      <modified>2009-12-12</modified>
     </dates>
   </vuln>
 
@@ -11768,6 +11765,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
 	<range><lt>2.0.0.13</lt></range>
       </package>
       <package>
@@ -11781,7 +11779,6 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.1.1</lt></range>
       </package>
       <package>
-	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
       </package>
@@ -11830,7 +11827,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-03-26</discovery>
       <entry>2008-03-30</entry>
-      <modified>2008-05-03</modified>
+      <modified>2009-12-12</modified>
     </dates>
   </vuln>
 
@@ -12272,6 +12269,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
 	<range><lt>2.0.0.12</lt></range>
       </package>
       <package>
@@ -12285,7 +12283,6 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.0.9</lt></range>
       </package>
       <package>
-	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
       </package>
@@ -12342,6 +12339,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-02-07</discovery>
       <entry>2008-02-22</entry>
+      <modified>2009-12-12</modified>
     </dates>
   </vuln>
 
