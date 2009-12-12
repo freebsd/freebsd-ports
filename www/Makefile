@@ -1322,6 +1322,7 @@
     SUBDIR += py-django-devel
     SUBDIR += py-django-registration
     SUBDIR += py-django-tagging
+    SUBDIR += py-django-threaded-multihost
     SUBDIR += py-dtflickr
     SUBDIR += py-ez_web
     SUBDIR += py-fcgi
