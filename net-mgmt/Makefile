@@ -200,6 +200,7 @@
     SUBDIR += p5-SNMP-Info
     SUBDIR += p5-SNMP-MIB-Compiler
     SUBDIR += p5-SNMP-Simple
+    SUBDIR += p5-SNMP-Trapinfo
     SUBDIR += p5-SNMP-Util
     SUBDIR += p5-SNMP_Session
     SUBDIR += p5-Telnet-Cisco

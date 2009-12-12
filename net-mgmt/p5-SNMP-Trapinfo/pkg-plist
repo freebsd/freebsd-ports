@@ -1,0 +1,6 @@
+%%SITE_PERL%%/SNMP/Trapinfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Trapinfo/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Trapinfo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/SNMP
