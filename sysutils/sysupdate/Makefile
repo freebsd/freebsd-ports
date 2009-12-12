@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysupdate
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lvl/FreeBSD%20System%20Update/${PORTNAME}.sh%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}.sh-${PORTVERSION}
@@ -27,7 +27,7 @@ OPTIONS=	FASTEST_CVSUP "Support fastest_cvsup" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FASTEST_CVSUP)
-RUN_DEPENDS=	fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup
+RUN_DEPENDS+=	fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup
 .endif
 
 post-patch:
