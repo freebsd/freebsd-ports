@@ -11203,6 +11203,7 @@ p5-Data-Visitor                 ports/devel/p5-Data-Visitor
 p5-Data-Visitor-Encode          ports/devel/p5-Data-Visitor-Encode
 p5-Date-Calc                    ports/devel/p5-Date-Calc
 p5-Date-Calc-Iterator           ports/devel/p5-Date-Calc-Iterator
+p5-Date-Calc-XS                 ports/devel/p5-Date-Calc-XS
 p5-Date-DayOfWeek               ports/devel/p5-Date-DayOfWeek
 p5-Date-Easter                  ports/devel/p5-Date-Easter
 p5-Date-EzDate                  ports/devel/p5-Date-EzDate
@@ -14749,6 +14750,7 @@ p5-data-visitor                 ports/devel/p5-Data-Visitor
 p5-data-visitor-encode          ports/devel/p5-Data-Visitor-Encode
 p5-date-calc                    ports/devel/p5-Date-Calc
 p5-date-calc-iterator           ports/devel/p5-Date-Calc-Iterator
+p5-date-calc-xs                 ports/devel/p5-Date-Calc-XS
 p5-date-dayofweek               ports/devel/p5-Date-DayOfWeek
 p5-date-easter                  ports/devel/p5-Date-Easter
 p5-date-ezdate                  ports/devel/p5-Date-EzDate
