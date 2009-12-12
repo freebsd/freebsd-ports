@@ -1321,6 +1321,7 @@
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-devel
     SUBDIR += py-django-registration
+    SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-tagging
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-dtflickr

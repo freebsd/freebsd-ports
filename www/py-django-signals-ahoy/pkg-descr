@@ -1,0 +1,3 @@
+Provides an extended set of signals for use by Django apps.
+
+WWW:    http://bitbucket.org/bkroeze/django-signals-ahoy/
