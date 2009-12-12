@@ -11,7 +11,7 @@ CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kappa@freebsd.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to Mozilla JavaScript implementation
 
 LIB_DEPENDS=	js.1:${PORTSDIR}/lang/spidermonkey
