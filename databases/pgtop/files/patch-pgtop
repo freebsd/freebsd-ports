@@ -1,0 +1,11 @@
+--- pgtop.orig	2009-12-12 22:59:39.014936884 +0900
++++ pgtop	2009-12-12 22:59:47.966070360 +0900
+@@ -149,7 +149,7 @@
+     "idle|i"              => \$config{idle},
+     "resolve|r"           => \$config{resolve},
+     "prompt!"             => \$config{prompt},
+-    "long|!"              => \$config{long_nums},
++    "long!"               => \$config{long_nums},
+ );
+ 
+ ## User may have put the port with the host.
