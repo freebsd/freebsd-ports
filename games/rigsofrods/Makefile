@@ -26,6 +26,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 RUN_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 		xset:${PORTSDIR}/x11/xset
 
+BROKEN=		does not build
+
 USE_ZIP=	yes
 USE_XORG=	x11 xt xaw sm ice xext
 WRKSRC=		${WRKDIR}/${PORTNAME}-source-${PORTVERSION}/build
