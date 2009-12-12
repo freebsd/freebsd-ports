@@ -1,0 +1,26 @@
+include/cyassl/openssl/crypto.h
+include/cyassl/openssl/cyassl_callbacks.h
+include/cyassl/openssl/des.h
+include/cyassl/openssl/engine.h
+include/cyassl/openssl/err.h
+include/cyassl/openssl/evp.h
+include/cyassl/openssl/hmac.h
+include/cyassl/openssl/lhash.h
+include/cyassl/openssl/md4.h
+include/cyassl/openssl/md5.h
+include/cyassl/openssl/ocsp.h
+include/cyassl/openssl/opensslconf.h
+include/cyassl/openssl/opensslv.h
+include/cyassl/openssl/rand.h
+include/cyassl/openssl/rsa.h
+include/cyassl/openssl/sha.h
+include/cyassl/openssl/ssl.h
+lib/cyassl/libcrypto.a
+lib/cyassl/libcyassl.a
+lib/cyassl/libcyassl.so
+lib/cyassl/libcyassl.so.0
+lib/cyassl/libssl.a
+@dirrm lib/cyassl
+@dirrm include/cyassl/openssl
+@dirrm include/cyassl
+@dirrm cyassl

@@ -856,6 +856,7 @@
     SUBDIR += xyssl
     SUBDIR += yafic
     SUBDIR += yapet
+    SUBDIR += yassl
     SUBDIR += yersinia
     SUBDIR += zebedee
     SUBDIR += zenmap
