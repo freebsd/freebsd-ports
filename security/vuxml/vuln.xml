@@ -74,7 +74,6 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="fcbf56dd-e667-11de-920a-00248c9b4be7">
     <topic>piwik -- php code execution</topic>
     <affects>
