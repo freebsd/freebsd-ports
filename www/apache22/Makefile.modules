@@ -80,6 +80,9 @@ PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT="@comment "
 .if !defined(WITH_DBM)
 .   if defined(WITH_BDB) || defined(WITH_BDB_BASE) || defined(WITH_BERKELEYDB)
 WITH_DBM=bdb
+PLIST_SUB+=	BDB=""
+.   else
+PLIST_SUB+=	BDB="@comment "
 .   endif
 .endif
 
