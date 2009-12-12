@@ -1,5 +1,7 @@
---- srclib/apr-util/build/dbm.m4.orig	2008-06-25 01:54:26.000000000 +0200
-+++ srclib/apr-util/build/dbm.m4	2008-12-09 22:40:21.000000000 +0100
+Index: srclib/apr-util/build/dbm.m4
+diff -u srclib/apr-util/build/dbm.m4.orig srclib/apr-util/build/dbm.m4
+--- srclib/apr-util/build/dbm.m4.orig	2008-11-21 15:32:58.000000000 +0900
++++ srclib/apr-util/build/dbm.m4	2009-12-01 15:02:29.374250645 +0900
 @@ -315,8 +315,8 @@
    fi
    APU_CHECK_BERKELEY_DB(1, -1, -1,
@@ -69,19 +71,19 @@
    fi
  ])
 +dnl
-+dnl APU_CHECK_DB47: is DB4.7 present?
++dnl APU_CHECK_DB48: is DB4.8 present?
 +dnl
 +dnl if present: sets apu_db_header, apu_db_lib, and apu_db_version
 +dnl
-+AC_DEFUN([APU_CHECK_DB47], [
++AC_DEFUN([APU_CHECK_DB48], [
 +  places=$1
 +  if test -z "$places"; then
-+    places="std /usr/local/BerkeleyDB.4.7 /boot/home/config"
++    places="std /usr/local/BerkeleyDB.4.8 /boot/home/config"
 +  fi
-+  APU_CHECK_BERKELEY_DB("4", "7", "-1",
++  APU_CHECK_BERKELEY_DB("4", "8", "-1",
 +    "$places",
-+    "db47/db.h db4/db.h db.h",
-+    "db-4.7 db4-4.7 db47 db4 db"
++    "db48/db.h db4/db.h db.h",
++    "db-4.8 db4-4.8 db48 db4 db"
 +  )
 +  if test "$apu_have_db" = "1"; then
 +    apu_db_version=4
@@ -94,8 +96,8 @@
        AC_MSG_ERROR(Berkeley db4 not found)
      fi
      ;;
-+  db47)
-+    APU_CHECK_DB47("$check_places")
++  db48)
++    APU_CHECK_DB48("$check_places")
 +    if test "$apu_db_version" != "4"; then
 +      AC_MSG_ERROR(Berkeley db4 not found)
 +    fi
@@ -107,7 +109,7 @@
        apu_use_db=1
        apu_default_dbm=db4
        ;;
-+    db47)
++    db48)
 +      apu_use_db=1
 +      apu_default_dbm=db4
 +      ;;
