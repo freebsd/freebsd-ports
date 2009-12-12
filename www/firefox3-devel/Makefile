@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.5rc3
+DISTVERSION=	3.6b4
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.7:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 
-USE_AUTOTOOLS=	autoconf:213:run
+USE_AUTOTOOLS=	autoconf:213
 LATEST_LINK=	firefox3-devel
 USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty
@@ -28,8 +29,7 @@ MOZILLA_SUFX=	3
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
 MOZ_TOOLKIT=	cairo-gtk2
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
-			lib/${MOZILLA}/include lib/${MOZILLA}/lib \
-			lib/${MOZILLA}/sdk/idl lib/${MOZILLA}/sdk/include
+			lib/${MOZILLA}/include lib/${MOZILLA}/lib
 
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
@@ -39,10 +39,9 @@ EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 NO_MOZPKGINSTALL=yes
-CONFLICTS=      firefox-3.0.*
-
-IGNORE=	please use www/firefox35
+CONFLICTS=	firefox-3.[0,5].*
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
@@ -51,7 +50,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-svg --enable-svg-renderer=cairo \
 		--enable-application=browser \
 		--enable-official-branding \
-		--enable-canvas --enable-libxul
+		--enable-canvas --enable-libxul --disable-necko-wifi
 
 SYSTEM_PREFS=		${FAKEDIR}/lib/${MOZILLA}/defaults/pref/firefox.js
 
@@ -61,10 +60,6 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .if ${OSVERSION} < 700000
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
@@ -72,7 +67,7 @@ EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
 .endif
 
-WRKSRC:=	${WRKSRC}-1.9.1
+WRKSRC:=	${WRKSRC}-1.9.2
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
@@ -90,7 +85,6 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
 post-extract::
-	@(cd ${WRKSRC} && ${AUTOCONF})
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
@@ -109,6 +103,10 @@ post-patch:
 		s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/js/src/configure
 
+pre-configure:
+	(cd ${WRKSRC} && ${AUTOCONF})
+	(cd ${WRKSRC}/js/src/ && ${AUTOCONF})
+
 port-pre-install:
 #	${SED} -e 's|1.9a7|0|' ${WRKSRC}/dist/bin/application.ini ${FAKEDIR}/lib
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
@@ -126,5 +124,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

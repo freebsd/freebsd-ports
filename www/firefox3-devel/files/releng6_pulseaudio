@@ -1,34 +1,32 @@
---- media/libsydneyaudio/src/Makefile.in_orgi  2009-04-10 12:12:45.000000000 +0200
-+++ media/libsydneyaudio/src/Makefile.in       2009-04-10 12:13:12.000000000 +0200
+--- media/libsydneyaudio/src/Makefile.in.orig	2009-08-11 17:22:08.000000000 +0200
++++ media/libsydneyaudio/src/Makefile.in	2009-08-11 17:22:36.000000000 +0200
 @@ -45,6 +45,12 @@
- LIBRARY_NAME  = sydneyaudio
+ LIBRARY_NAME	= sydneyaudio
  FORCE_STATIC_LIB= 1
-
+ 
 +ifeq ($(OS_ARCH),FreeBSD)
-+CSRCS         = \
-+              sydney_audio_pulseaudio.c \
-+              $(NULL)
++CSRCS		= \
++		sydney_audio_pulseaudio.c \
++		$(NULL)
 +endif
 +
  ifeq ($(OS_ARCH),Linux)
- CSRCS         = \
-               sydney_audio_alsa.c \
-
---- toolkit/library/Makefile.in.orig   2009-04-24 03:47:06.000000000 +0200
-+++ toolkit/library/Makefile.in        2009-05-11 11:05:23.000000000 +0200
-@@ -228,12 +228,12 @@
+ CSRCS		= \
+ 		sydney_audio_alsa.c \
+--- toolkit/library/Makefile.in.orig	2009-08-11 17:22:45.000000000 +0200
++++ toolkit/library/Makefile.in	2009-08-11 17:23:22.000000000 +0200
+@@ -231,12 +231,12 @@
  endif
-
+ 
  ifeq (gtk2,$(MOZ_WIDGET_TOOLKIT))
--EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0
-+EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0 -lpulse -lpthread
+-EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XEXT_LIBS) $(XCOMPOSITE_LIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0
++EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XEXT_LIBS) $(XCOMPOSITE_LIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0  -lpulse -lpthread
  EXTRA_DSO_LDOPTS += $(FT2_LIBS)
  endif
-
+ 
  ifeq (qt,$(MOZ_WIDGET_TOOLKIT))
 -EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XT_LIBS) $(MOZ_QT_LIBS) -lgthread-2.0
 +EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XT_LIBS) $(MOZ_QT_LIBS) -lgthread-2.0 -lpulse -lpthread
  EXTRA_DSO_LDOPTS += $(FT2_LIBS)
  endif
-
-
+ 
