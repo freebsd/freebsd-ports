@@ -14,7 +14,7 @@
 name=mpdas
 rcvar=`set_rcvar`
 
-command=%%PREFIX%/bin/mpdas
+command=%%PREFIX%%/bin/mpdas
 
 load_rc_config $name
 
