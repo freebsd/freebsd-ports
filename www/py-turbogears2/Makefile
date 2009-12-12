@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TurboGears2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	www python
 MASTER_SITES=	http://www.turbogears.org/2.0/downloads/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

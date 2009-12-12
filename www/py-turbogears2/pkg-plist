@@ -62,27 +62,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/config/test_config.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/config/test_config.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/config/test_config.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/controllers/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/controllers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/controllers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/controllers/root.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/controllers/root.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/controllers/root.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/test_database.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/test_database.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/test_database.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/error.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/error.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/error.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/root.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/root.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers/root.pyo
@@ -95,6 +80,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/fixture/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/fixture/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/fixture/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/i18n/ru/LC_MESSAGES/tests.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/i18n/ru/LC_MESSAGES/tests.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/lib/__init__.pyo
@@ -104,9 +91,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/lib/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/lib/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/lib/helpers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/model/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/model/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/model/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/__init__.pyo
@@ -133,9 +117,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_base.mak.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_base.mak.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_custom_format.mak
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_custom_format.mak.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_custom_format.mak.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_custom_format.mak.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_inherits.mak
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_inherits.mak.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates/mako_inherits.mak.pyc
@@ -175,6 +156,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/fixtures/model.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/fixtures/model.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/fixtures/model.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/de/LC_MESSAGES/tests.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/de/LC_MESSAGES/tests.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/ru/LC_MESSAGES/tests.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/ru/LC_MESSAGES/tests.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/non_overridden.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/overridden.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/test.html
@@ -213,18 +198,23 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/config/controllers
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/config
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database/controllers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/database
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch/controllers
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/dispatch
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/fixture
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/i18n/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/i18n/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/lib
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/model
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/controllers
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack/rendering
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/test_stack
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/fixtures
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tg
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
