@@ -2,6 +2,7 @@ include/xcb/bigreq.h
 include/xcb/composite.h
 include/xcb/damage.h
 include/xcb/dpms.h
+include/xcb/dri2.h
 include/xcb/glx.h
 include/xcb/randr.h
 include/xcb/record.h
@@ -37,6 +38,10 @@ lib/libxcb-dpms.a
 lib/libxcb-dpms.la
 lib/libxcb-dpms.so
 lib/libxcb-dpms.so.0
+lib/libxcb-dri2.a
+lib/libxcb-dri2.la
+lib/libxcb-dri2.so
+lib/libxcb-dri2.so.0
 lib/libxcb-glx.a
 lib/libxcb-glx.la
 lib/libxcb-glx.so
@@ -112,6 +117,7 @@ lib/libxcb.so.2
 libdata/pkgconfig/xcb-composite.pc
 libdata/pkgconfig/xcb-damage.pc
 libdata/pkgconfig/xcb-dpms.pc
+libdata/pkgconfig/xcb-dri2.pc
 libdata/pkgconfig/xcb-glx.pc
 libdata/pkgconfig/xcb-randr.pc
 libdata/pkgconfig/xcb-record.pc
