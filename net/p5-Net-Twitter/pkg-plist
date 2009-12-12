@@ -7,9 +7,10 @@
 %%SITE_PERL%%/Net/Twitter/Role/API/REST.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/Search.pm
 %%SITE_PERL%%/Net/Twitter/Role/InflateObjects.pm
-%%SITE_PERL%%/Net/Twitter/Role/OAuth.pm
-%%SITE_PERL%%/Net/Twitter/Role/WrapError.pm
 %%SITE_PERL%%/Net/Twitter/Role/Legacy.pm
+%%SITE_PERL%%/Net/Twitter/Role/OAuth.pm
+%%SITE_PERL%%/Net/Twitter/Role/RateLimit.pm
+%%SITE_PERL%%/Net/Twitter/Role/WrapError.pm
 %%SITE_PERL%%/Net/Twitter/Error.pm
 %%SITE_PERL%%/Net/Twitter/API.pm
 %%SITE_PERL%%/Net/Twitter/Core.pm
