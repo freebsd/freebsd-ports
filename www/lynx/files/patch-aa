@@ -1,17 +1,22 @@
---- makefile.in.orig	Mon Sep  4 01:25:39 2006
-+++ makefile.in	Tue Jul 31 10:37:26 2007
-@@ -366,7 +366,9 @@
+--- makefile.in.orig	2006-09-03 19:25:39.000000000 -0400
++++ makefile.in	2009-08-08 04:44:18.000000000 -0400
+@@ -361,12 +361,12 @@
+ 			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
+ 		fi'
+ 	@echo Updating $(sysconfdir)/lynx.cfg
+-	@ECHO_CC@$(SHELL) -c 'if test -f $(SYSCONFDIR)/lynx.cfg ; then \
+-		mv $(SYSCONFDIR)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
++	@ECHO_CC@$(SHELL) -c 'if test -f $(SYSCONFDIR)/lynx.cfg.sample ; then \
++		mv $(SYSCONFDIR)/lynx.cfg.sample $(SYSCONFDIR)/lynx.tmp ; \
  	else \
  		cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
  	fi'
 -	@echo Updating $(sysconfdir)/lynx.cfg to point to installed help-files
-+	@echo Updating $(srcdir)/lynx.cfg.sample
-+	@cp $(srcdir)/lynx.cfg $(srcdir)/lynx.tmp
-+	@echo Updating $(srcdir)/lynx.cfg.sample to point to installed help-files
++	@echo Updating $(SYSCONFDIR)/lynx.cfg.sample to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
  		$(SYSCONFDIR)/lynx.tmp | \
-@@ -374,9 +376,11 @@
+@@ -374,9 +374,11 @@
  	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
@@ -25,7 +30,7 @@
  
  LYHelp.h : help_files.sed LYHelp.hin
  	@echo Creating $@
-@@ -398,18 +402,17 @@
+@@ -398,18 +400,17 @@
  	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(SYSCONFDIR)
