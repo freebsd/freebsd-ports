@@ -47,6 +47,7 @@
 %%ADODB_DIR%%/drivers/adodb-borland_ibase.inc.php
 %%ADODB_DIR%%/drivers/adodb-csv.inc.php
 %%ADODB_DIR%%/drivers/adodb-db2.inc.php
+%%ADODB_DIR%%/drivers/adodb-db2oci.inc.php
 %%ADODB_DIR%%/drivers/adodb-fbsql.inc.php
 %%ADODB_DIR%%/drivers/adodb-firebird.inc.php
 %%ADODB_DIR%%/drivers/adodb-ibase.inc.php
