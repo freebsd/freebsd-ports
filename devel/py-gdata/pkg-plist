@@ -106,6 +106,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/acl/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/acl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/acl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/acl/data.py
+%%PYTHON_SITELIBDIR%%/gdata/acl/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/acl/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/alt/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/alt/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/alt/__init__.pyo
@@ -118,6 +124,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/analytics/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/analytics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/analytics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/analytics/client.py
+%%PYTHON_SITELIBDIR%%/gdata/analytics/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/analytics/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/analytics/data.py
+%%PYTHON_SITELIBDIR%%/gdata/analytics/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/analytics/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.py
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyo
@@ -175,12 +187,18 @@
 %%PYTHON_SITELIBDIR%%/gdata/books/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/books/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/books/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/books/data.py
+%%PYTHON_SITELIBDIR%%/gdata/books/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/books/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/books/service.py
 %%PYTHON_SITELIBDIR%%/gdata/books/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/books/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/calendar/data.py
+%%PYTHON_SITELIBDIR%%/gdata/calendar/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/calendar/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyo
@@ -196,6 +214,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/contacts/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/contacts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/contacts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/contacts/client.py
+%%PYTHON_SITELIBDIR%%/gdata/contacts/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/contacts/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/contacts/data.py
+%%PYTHON_SITELIBDIR%%/gdata/contacts/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/contacts/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.py
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyo
@@ -205,15 +229,30 @@
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/docs/client.py
+%%PYTHON_SITELIBDIR%%/gdata/docs/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/docs/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/docs/data.py
+%%PYTHON_SITELIBDIR%%/gdata/docs/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/docs/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/docs/service.py
 %%PYTHON_SITELIBDIR%%/gdata/docs/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/docs/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/dublincore/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/dublincore/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/dublincore/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/dublincore/data.py
+%%PYTHON_SITELIBDIR%%/gdata/dublincore/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/dublincore/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/finance/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/finance/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/finance/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/finance/data.py
+%%PYTHON_SITELIBDIR%%/gdata/finance/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/finance/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/finance/service.py
 %%PYTHON_SITELIBDIR%%/gdata/finance/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/finance/service.pyo
@@ -223,6 +262,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/geo/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/geo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/geo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/geo/data.py
+%%PYTHON_SITELIBDIR%%/gdata/geo/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/geo/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/health/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/health/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/health/__init__.pyo
@@ -241,12 +283,27 @@
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/media/data.py
+%%PYTHON_SITELIBDIR%%/gdata/media/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/media/data.pyo
+%%PYTHON_SITELIBDIR%%/gdata/notebook/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/notebook/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/notebook/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/notebook/data.py
+%%PYTHON_SITELIBDIR%%/gdata/notebook/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/notebook/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/oauth/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/oauth/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/oauth/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/oauth/rsa.py
 %%PYTHON_SITELIBDIR%%/gdata/oauth/rsa.pyc
 %%PYTHON_SITELIBDIR%%/gdata/oauth/rsa.pyo
+%%PYTHON_SITELIBDIR%%/gdata/opensearch/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/opensearch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/opensearch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/opensearch/data.py
+%%PYTHON_SITELIBDIR%%/gdata/opensearch/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/opensearch/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/photos/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/photos/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/photos/__init__.pyo
@@ -487,12 +544,18 @@
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/data.py
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.py
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/youtube/data.py
+%%PYTHON_SITELIBDIR%%/gdata/youtube/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/youtube/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.py
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyo
@@ -506,13 +569,16 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/sites
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/projecthosting
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/opensearch
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/oauth
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/notebook
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/media
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/maps
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/health
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/finance
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/dublincore
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
@@ -527,6 +593,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/analytics
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/alt
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/acl
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Util
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol
@@ -535,6 +602,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto
 @dirrm %%PYTHON_SITELIBDIR%%/gdata
 @dirrm %%PYTHON_SITELIBDIR%%/atom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/account_feed_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/data_feed_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/adminsettings_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authsub/secure_authsub.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseAttributesQueryExample.py
@@ -616,4 +685,5 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/base
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/authsub
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/analytics
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
