@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kappa@freebsd.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin that adds Config::Auto support to CGI::Application
 
 RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \

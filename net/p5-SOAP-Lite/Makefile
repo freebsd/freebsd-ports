@@ -12,7 +12,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kappa@freebsd.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SOAP::Lite - Client and server side SOAP implementation
 
 RUN_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
