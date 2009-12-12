@@ -1,0 +1,10 @@
+--- ./srclib/apr/buildconf.orig	2009-12-12 00:36:35.693177242 +0000
++++ ./srclib/apr/buildconf	2009-12-12 00:37:00.222653819 +0000
+@@ -71,6 +71,7 @@
+ 
+ echo "buildconf: Using libtool.m4 at ${ltfile}."
+ 
++chmod 664 build/libtool.m4
+ cat $ltfile | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
+ 
+ # libtool.m4 from 1.6 requires ltsugar.m4
