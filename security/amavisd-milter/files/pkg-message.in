@@ -2,7 +2,7 @@
 *******************************************************************
 
  To configure amavisd-milter, sendmail and amavisd-new point
- your browser to %%WEBSITE%%
+ your browser to http://amavisd-milter.sourceforge.net
 
  Enable amavisd-milter in /etc/rc.conf with the following line:
 
