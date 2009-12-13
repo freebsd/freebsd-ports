@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	6.5
+PORTVERSION=	6.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.complang.org/ragel/
 
@@ -21,6 +21,9 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${PREFIX}/bin
