@@ -6,22 +6,30 @@
 #
 
 PORTNAME=	lwm
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jfc.org.uk/files/lwm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight window manager
 
-USE_IMAKE=	yes
 USE_XORG=	sm x11 xext
+MAKEFILE=	no_xmkmf_makefile
+MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 
-MAN1=		lwm.1
+MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
-PLIST_FILES=	bin/lwm
+PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
+CFLAGS+=	`pkg-config --cflags sm x11 xext` -DSHAPE
+LDFLAGS=	`pkg-config --libs sm x11 xext`
+
+post-patch:
+	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
