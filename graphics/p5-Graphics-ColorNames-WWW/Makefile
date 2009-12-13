@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-ColorNames-WWW
-PORTVERSION=	1.00
+PORTVERSION=	1.10
 CATEGORIES=	graphics
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,13 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	WWW color names and equivalent RGB values
 
 RUN_DEPENDS=	p5-Graphics-ColorNames>=0.32:${PORTSDIR}/graphics/p5-Graphics-ColorNames
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_CONFIGURE=	Yes
-MAN3=		Graphics::ColorNames::IE.3 \
+
+MAN3=		Graphics::ColorNames::CSS.3 \
+		Graphics::ColorNames::IE.3 \
 		Graphics::ColorNames::SVG.3 \
 		Graphics::ColorNames::WWW.3
 
