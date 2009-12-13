@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	hamsterdb
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://hamsterdb.com/public/dl/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Lightweight Embedded Database Engine
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+HAM_DOCS=	README INSTALL ChangeLog TODO AUTHORS CREDITS
+
+post-extract:
+	${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/unittests/Makefile.in
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/documentation/Doxyfile ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/documentation/tutorial.odt ${DOCSDIR}
+.for i in ${HAM_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
