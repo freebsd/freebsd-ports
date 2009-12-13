@@ -16,7 +16,7 @@ DISTNAME=	autocompleteusersplugin-r${REL}
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	A plugin for autocompletion of user names in ticket fields
 
-BUILD_DEPENDS+=	${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
 USE_PYTHON=	2.5+
