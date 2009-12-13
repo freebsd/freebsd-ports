@@ -12,7 +12,7 @@ MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/K/KH/KHAMPTON
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=			pgollucci@FreeBSD.org
+MAINTAINER=			perl@FreeBSD.org
 COMMENT=			Provides a way to pass info from the Apache::Request to XSLT params
 
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	xml/axkit
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML Delivery Toolkit for Apache/Perl
 
 BUILD_DEPENDS=	\
