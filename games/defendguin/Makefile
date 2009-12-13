@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	defendguin
-PORTVERSION=	0.0.11
-PORTREVISION=	3
+PORTVERSION=	0.0.12
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/defendguin/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	Another shoot-the-Bill game
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
