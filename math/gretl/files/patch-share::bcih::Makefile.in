@@ -1,11 +1,11 @@
---- share/bcih/Makefile.in.orig	2008-03-24 21:48:14.000000000 +0900
-+++ share/bcih/Makefile.in	2008-06-18 16:13:23.000000000 +0900
-@@ -1,7 +1,7 @@
- topsrc = @top_srcdir@
+--- share/bcih/Makefile.in.orig	2009-11-24 00:57:13.000000000 +0900
++++ share/bcih/Makefile.in	2009-12-04 04:05:47.000000000 +0900
+@@ -2,7 +2,7 @@
  
  CC = @CC@
+ HOSTCC = @HOSTCC@
 -INSTALL_DATA = cp -fp
 +INSTALL_DATA = @INSTALL_DATA@
  
- prefix = @prefix@
- gretldir = $(prefix)/share/gretl
+ ifeq ($(HOSTCC),)
+   HOSTCC = $(CC)
