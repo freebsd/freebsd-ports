@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames/WWW/.packlist
+%%SITE_PERL%%/Graphics/ColorNames/CSS.pm
 %%SITE_PERL%%/Graphics/ColorNames/IE.pm
 %%SITE_PERL%%/Graphics/ColorNames/WWW.pm
 %%SITE_PERL%%/Graphics/ColorNames/SVG.pm
