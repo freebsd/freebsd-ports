@@ -1,0 +1,6 @@
+abgx360gui is a frontend for the command-line application
+sysutils/abgx360. It allows the user to easily select abgx360 options.
+It can output an abgx360 log to a new xterm window, a text file,
+or an HTML file.
+
+WWW: http://abgx360.net/
