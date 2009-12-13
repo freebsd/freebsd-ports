@@ -276,7 +276,13 @@
     SUBDIR += xymon-server
     SUBDIR += yabm
     SUBDIR += yaf
-    SUBDIR += zabbix
+    SUBDIR += zabbix16-agent
+    SUBDIR += zabbix16-frontend
+    SUBDIR += zabbix16-proxy
+    SUBDIR += zabbix16-server
     SUBDIR += zabbix-agent
+    SUBDIR += zabbix-frontend
+    SUBDIR += zabbix-proxy
+    SUBDIR += zabbix-server
 
 .include <bsd.port.subdir.mk>

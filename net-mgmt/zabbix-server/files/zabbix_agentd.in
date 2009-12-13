@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: zabbix_agentd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_agentd:
+#
+# zabbix_agentd_enable (bool): Set to NO by default.  Set it to YES to
+#         enable zabbix_agentd.
+#
+
+. %%RC_SUBR%%
+
+name="zabbix_agentd"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%ETCDIR%%/${name}.conf"
+
+load_rc_config $name
+
+: ${zabbix_agentd_enable="NO"}
+
+run_rc_command "$1"

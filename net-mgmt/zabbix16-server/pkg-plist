@@ -1,0 +1,48 @@
+@comment $FreeBSD$
+%%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
+sbin/zabbix_%%ZABBIX_BUILD%%
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Hub.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Hub_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Network.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Network_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Notebook.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Notebook_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Phone.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Phone_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Printer.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Printer_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Router.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Router_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Satellite.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Satellite_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Server.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Server_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/UPS.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/UPS_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Workstation.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images/Workstation_small.png
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images_mysql.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images_oracle.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images_pgsql.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images_sqlite3.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/schema/mysql.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/schema/oracle.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/schema/postgresql.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/create/schema/sqlite.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/mysql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/oracle/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/postgresql/patch.sql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/postgresql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/oracle
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/mysql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/create/schema
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/create/data/images
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/create/data
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/create
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%

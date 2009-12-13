@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: zabbix_server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_server:
+#
+# zabbix_server_enable (bool): Set to NO by default.  Set it to YES to
+#         enable zabbix_server.
+#
+
+. %%RC_SUBR%%
+
+name="zabbix_server"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%ETCDIR%%/${name}.conf"
+
+load_rc_config $name
+
+: ${zabbix_server_enable="NO"}
+
+run_rc_command "$1"

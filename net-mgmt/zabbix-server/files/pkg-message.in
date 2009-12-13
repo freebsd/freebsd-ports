@@ -1,0 +1,11 @@
+======================================================================
+Zabbix requires a database.  If you are using SQLite, one will be
+created automatically.  Otherwise you can install one as follows (<db>
+is your database engine and <db_client> is its client program):
+
+% cd %%DATADIR%%/%%ZABBIX_BUILD%%/create
+% cat schema/<db>.sql data/data.sql data/images_<db>.sql | <db_client>
+
+To upgrade an existing database, see the scripts in
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades.
+======================================================================

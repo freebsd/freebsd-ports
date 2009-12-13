@@ -1,0 +1,11 @@
+--- src/zabbix_sender/Makefile.in.bak	2009-12-10 21:00:56.000000000 -0600
++++ src/zabbix_sender/Makefile.in	2009-12-10 21:01:11.000000000 -0600
+@@ -213,7 +213,7 @@
+ prefix = @prefix@
+ program_transform_name = @program_transform_name@
+ psdir = @psdir@
+-sbindir = @sbindir@
++sbindir = @bindir@
+ sharedstatedir = @sharedstatedir@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
