@@ -84,14 +84,14 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
-PATCHFILES=
+PATCHFILES=	squid-3.1-9822.patch
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy (BETA Version)
 
 LATEST_LINK=	squid31
 
-SQUID_BETA_VER=	14
+SQUID_BETA_VER=	15
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
@@ -110,7 +110,9 @@ PORTEXAMPLES=	*
 SUB_FILES+=	pkg-deinstall pkg-install pkg-message
 SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
-OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
+OPTIONS=	SQUID_KERB_AUTH "Install Kerberos authentication helpers" on \
+		SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
+		SQUID_NIS_AUTH "Install NIS/YP authentication helpers" on \
 		SQUID_SASL_AUTH "Install SASL authentication helpers" off \
 		SQUID_IPV6 "Enable IPv6 support" on \
 		SQUID_DELAY_POOLS "Enable delay pools" off \
@@ -261,7 +263,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 basic_auth+=	SASL
 libexec+=	sasl_auth
 .endif
-.if !defined(NO_NIS) && !defined(WITHOUT_NIS)
+# POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
+.if defined(WITH_SQUID_NIS_AUTH) && !defined(NO_NIS) && !defined(WITHOUT_NIS)
 basic_auth+=	YP
 libexec+=	yp_auth
 .endif
@@ -270,7 +273,8 @@ CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="smb_lm"
-.if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
+# POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
+.if defined(WITH_SQUID_KERB_AUTH) && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
 libexec+=	negotiate_kerb_auth negotiate_kerb_auth_test \
 		squid_kerb_auth squid_kerb_auth_test

@@ -72,7 +72,7 @@ PRE-INSTALL)
 	if [ ! -d ${squid_confdir} ]; then
 		echo "Creating ${squid_confdir}..."
 		install -d -o root -g ${squid_group} \
-		    -m 0750 ${squid_confdir}
+		    -m 0755 ${squid_confdir}
 	fi
 	;;
 POST-INSTALL)
