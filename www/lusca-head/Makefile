@@ -76,7 +76,7 @@
 
 PORTNAME=	lusca
 DISTVERSION=	r14281
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	lusca-cache
@@ -166,7 +166,7 @@ libexec=	cachemgr.cgi digest_pw_auth logfile-daemon \
 libexec+=	unlinkd
 .endif
 
-sbin=		RunCache squidclient squid
+sbin=		RunCache squidclient squid coss_newfs ufs_log_dump ufs_newfs
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
