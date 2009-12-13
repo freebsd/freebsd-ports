@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.3.13
+PORTVERSION=	2.3.14
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -18,8 +18,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-included-regex
 
-MAN1=		zile.1
-PLIST_FILES=	bin/zile %%DATADIR%%/FAQ %%DATADIR%%/dotzile.sample
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FAQ %%DATADIR%%/dotzile.sample
 PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS=	-isystem /usr/include/gnu
