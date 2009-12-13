@@ -15,6 +15,9 @@ DISTFILES=	${PORTNAME}${EXTRACT_SUFX}:0
 MAINTAINER=	wes@FreeBSD.org
 COMMENT=	Tom's AVR Assembler
 
+DEPRECATED=     No longer maintained, use devel/avra instead
+EXPIRATION_DATE=2010-04-08
+
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 USE_BISON=	build
