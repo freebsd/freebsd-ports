@@ -7,7 +7,7 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
@@ -16,9 +16,8 @@ COMMENT=	ODBC library suite for Unix
 
 CONFLICTS=	libiodbc-[0-9]*
 
-USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:22
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
@@ -32,8 +31,8 @@ CONFIGURE_ENV=	MOC="${MOC}" \
 		QTINC="${QT_PREFIX}/include" \
 		QTLIB="${QT_PREFIX}/lib" \
 		USER_INCLUDES="${QTCPPFLAGS}" \
-		USER_LDFLAGS="${QTCFGLIBS}"
-CONFIGURE_ENV+=	QTMAX=030400
+		USER_LDFLAGS="${QTCFGLIBS}" \
+		QTMAX=030400
 CONFIGURE_ARGS+=--enable-gui
 PLIST_SUB=	GUI:=""
 .else
@@ -41,13 +40,9 @@ CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB=	GUI:="@comment "
 .endif
 
-.if !defined(WITHOUT_THREADS) || defined(WITH_GUI)
-CONFIGURE_ARGS+=--enable-threads=yes
-.else
-CONFIGURE_ARGS+=--enable-threads=no
-.endif
-
 post-patch:
+	@${REINPLACE_CMD} 's,$$LIBS $$THREADLIB,$$LIBS,;s,$$CFLAGS -pthread,$$CFLAGS,' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,@MSQL_TRUE@lib_LTLIBRARIES,#&,' \
 		${WRKSRC}/Drivers/MiniSQL/Makefile.in
 
