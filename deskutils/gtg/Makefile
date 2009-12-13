@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gtg
-PORTVERSION=	0.1.99
+PORTVERSION=	0.2
 CATEGORIES=	deskutils gnome python
-MASTER_SITES=	http://launchpad.net/gtg/trunk/0.2/+download/
+MASTER_SITES=	http://launchpad.net/gtg/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GTD organizer for the GNOME desktop environment
