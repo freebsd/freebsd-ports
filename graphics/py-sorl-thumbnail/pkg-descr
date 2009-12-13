@@ -1,0 +1,6 @@
+The sorl-thumbnail package provides an easy way to generate image
+thumbnails.
+Although not required to use, sorl-thumbnail is heavily integrated with
+the Django framework.
+
+WWW:    http://code.google.com/p/sorl-thumbnail/
