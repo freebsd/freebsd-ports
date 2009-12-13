@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abby
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.6.1
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -33,7 +33,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abby ${PREFIX}/bin/abby
 
 .if defined(WITHOUT_CCLIVE)
-RUN_DEPENDS+=	cclive>=0.5.0:${PORTSDIR}/multimedia/cclive
+RUN_DEPENDS+=	cclive>=0.5.6:${PORTSDIR}/multimedia/cclive
 .endif
 
 .if defined(WITH_CLIVE)
