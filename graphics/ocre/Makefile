@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocre
-PORTVERSION=	0.032
+PORTVERSION=	0.033
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
@@ -30,11 +30,6 @@ MAKE_ENV=	CFLAGS1="${CFLAGS}"
 MANLANG=	"" es
 MAN1=		${PORTNAME}.1
 
-post-extract:
-	@${FIND} ${WRKSRC}/.. -type l -delete
-	@${MKDIR} ${WRKSRC}/id3
-	@${LN} -sf ../../id3 ${WRKSRC}/src/id3
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC =|CC ?=|g ; \
 		 s|^CFLAGS1=|CFLAGS1 ?=| ; \
@@ -55,7 +50,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}-es.1 ${MAN1PREFIX}/man/es/man1/${PORTNAME}.1
 	${INSTALL_DATA} ${WRKSRC}/../po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/${PORTNAME}.mo
 	@${MKDIR} ${DATADIR}
-	@${TAR} xof ${WRKSRC}/ocre-decsWood-${PORTVERSION}.tgz -C ${DATADIR}
+	@${TAR} --exclude "*.orig" -xof ${WRKSRC}/ocre-decsWood-${PORTVERSION}.tgz -C ${DATADIR}
 	@${CHMOD} -h 755 ${DATADIR}/decsWood
 
 .include <bsd.port.mk>
