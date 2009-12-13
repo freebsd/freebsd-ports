@@ -4,11 +4,16 @@ lib/libhamsterdb.so
 lib/libhamsterdb.so.1
 include/ham/hamsterdb.h
 include/ham/hamsterdb_int.h
+include/ham/hamsterdb_stats.h
 include/ham/types.h
 include/ham/hamsterdb.hpp
 bin/ham_info
 bin/ham_dump
 @dirrm include/ham
-%%PORTDOCS%%%%DOCSDIR%%/Doxyfile
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.odt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
