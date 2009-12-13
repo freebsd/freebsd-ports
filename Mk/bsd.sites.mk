@@ -247,10 +247,8 @@ MASTER_SITE_EXIM+=	\
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
-# put me back first when I'm working again
-#       http://archives.fedoraproject.org/pub/archive/fedora/linux/core/%SUBDIR%/ \
-# and move ftp.udl.es back to the place it was in 1.484
 MASTER_SITE_FEDORA_LINUX+= \
+	http://archives.fedoraproject.org/pub/archive/fedora/linux/core/%SUBDIR%/ \
         http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
         http://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
         ftp://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
