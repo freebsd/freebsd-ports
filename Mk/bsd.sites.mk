@@ -357,7 +357,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://ftp.kaist.ac.kr/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.kaist.ac.kr/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.kreonet.re.kr/pub/Linux/fedora/core/%SUBDIR%/ \
-	http://fedora.ifc.unam.mx/fedora/core/%SUBDIR%/ \
 	ftp://fedora.ifc.unam.mx/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.quicknet.nl/pub/Linux/download.fedora.redhat.com/core/%SUBDIR%/ \
