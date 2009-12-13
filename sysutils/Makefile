@@ -13,6 +13,7 @@
     SUBDIR += aaccli
     SUBDIR += abck
     SUBDIR += abgx360
+    SUBDIR += abgx360gui
     SUBDIR += acidlaunch
     SUBDIR += adtool
     SUBDIR += afbinit
