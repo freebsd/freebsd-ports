@@ -227,6 +227,7 @@
     SUBDIR += py-snmp4-mibs
     SUBDIR += py-twistedSNMP
     SUBDIR += py-yapsnmp
+    SUBDIR += qkismet
     SUBDIR += rancid
     SUBDIR += rancid-devel
     SUBDIR += rate
