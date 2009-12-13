@@ -20,7 +20,7 @@ DISTFILES=	ReportLab_${PORTVERSION:S/./_/g}.tgz \
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Library to create PDF documents using the Python language
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Reportlab
 

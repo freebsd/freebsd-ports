@@ -17,7 +17,7 @@ COMMENT=	A Python library that provides easy scripting with Jabber
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=1.7.1:${PORTSDIR}/dns/py-dnspython
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
 post-patch:

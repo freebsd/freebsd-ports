@@ -17,7 +17,7 @@ COMMENT=	PPolicy is tool for extending Postfix checking capabilities
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 USE_TWISTED=	yes
 NO_BUILD=	yes

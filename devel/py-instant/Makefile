@@ -17,7 +17,7 @@ COMMENT=	Python module for instant inlining of C and C++ code in Python
 
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Instant
 PYDISTUTILS_PKGVERSION=	0.8

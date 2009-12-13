@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	PkgDB/pkg-plist generator by tracking installation
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 INSTALLS_EGGINFO=	yes
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 

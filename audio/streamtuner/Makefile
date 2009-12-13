@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=		PYTHON="@comment "
 .else
 PLIST_SUB+=		PYTHON=""
-USE_PYTHON=		2.3+
+USE_PYTHON=		2.4+
 # we need to manually include this, because USE_PYTHON is defined
 # after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.python.mk"

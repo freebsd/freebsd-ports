@@ -18,7 +18,7 @@ COMMENT=	Official plugin pack for Supybot
 
 RUN_DEPENDS=	supybot:${PORTSDIR}/irc/py-supybot
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 USE_BZIP2=	yes
 
 post-extract:

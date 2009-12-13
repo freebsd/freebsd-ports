@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mock object library for Python
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 .if !defined(NOPORTDOCS)

@@ -16,7 +16,7 @@ DISTNAME=	pyparsing-${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	General parsing module for Python
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyparsing
 

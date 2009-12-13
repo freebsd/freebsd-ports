@@ -20,7 +20,7 @@ COMMENT=	Python-based SPAM reduction system
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 .endif
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 
 SUB_FILES=	pkg-message
 

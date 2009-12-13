@@ -14,7 +14,7 @@ MAINTAINER=	timbob@bigpond.com
 COMMENT=	GUI application for downloading album cover art
 
 USE_GMAKE=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 RUN_DEPENDS+=	py*-qt>=3.1:${PORTSDIR}/x11-toolkits/py-qt

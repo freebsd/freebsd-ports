@@ -18,7 +18,7 @@ COMMENT=	A personal workout diary program for bodybuilders
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/__init__.py:${PORTSDIR}/databases/py-PySQLite11
 
 USE_GETTEXT=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_WX=		2.6
 WX_COMPS=	python

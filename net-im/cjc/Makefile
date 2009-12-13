@@ -17,7 +17,7 @@ COMMENT=	The Console Jabber Client
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.0.0.644:${PORTSDIR}/net-im/py-pyxmpp
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 MAKE_ENV+=	prefix=${PREFIX} pkg_datadir=${DATADIR} INSTALL_DIR="${INSTALL} -d"
 MAKE_ARGS+=	-E prefix -E pkg_datadir -E pkg_docdir -E INSTALL -E INSTALL_DATA \
 		-E INSTALL_DIR

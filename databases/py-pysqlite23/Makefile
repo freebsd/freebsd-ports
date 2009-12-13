@@ -20,7 +20,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 CONFLICTS=	py*-pysqlite-2.[0-24-9].*
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 DOCSBASE=	share/doc/py-${PORTNAME}2

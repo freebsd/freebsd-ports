@@ -18,7 +18,7 @@ RUN_DEPENDS=		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imagi
 
 USE_XORG=	x11
 USE_GNOME=		pygtk2
-USE_PYTHON=		2.3+
+USE_PYTHON=		2.4+
 NO_BUILD=		yes
 
 PYC=			PYTHON="${PYTHON_CMD}" ${SH} ${SCRIPTDIR}/py-compile

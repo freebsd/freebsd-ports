@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/xode/__init__.py:${PORTSDIR}/devel/py-ode
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 NO_BUILD=	yes
 
 SUB_FILES=	kimboot

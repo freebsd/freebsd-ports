@@ -16,7 +16,7 @@ COMMENT=	A forensics tool to examine Thumbs.db files
 
 OPTIONS=	IMAGING "Build with ability to extract graphic thumbnails" on
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	0.06alpha
 

@@ -19,7 +19,7 @@ USE_RC_SUBR=	mediaproxy.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 
 OPTIONS=	ACCOUNTING "ACCOUNTING support (Requires MySQL)" off
 

@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_PYTHON)
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 CONFIGURE_ARGS+=	--with-pythondir=${LOCALBASE}
 .endif
 

@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gcooper@FreeBSD.org
 COMMENT=	A discovery-based unittest extension
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 MAN1=		nosetests.1
 
