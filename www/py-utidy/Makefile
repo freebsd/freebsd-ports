@@ -21,7 +21,7 @@ COMMENT=	Python interface to tidy-lib
 LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 
 USE_ZIP=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	uTidylib
 

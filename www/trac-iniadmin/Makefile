@@ -18,7 +18,7 @@ COMMENT=	Edit all trac.ini option via the WebAdminPlugin
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	IniAdmin
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}

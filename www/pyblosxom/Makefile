@@ -15,7 +15,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	A lightweight weblog system
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
 

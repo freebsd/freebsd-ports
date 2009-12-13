@@ -20,7 +20,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		htmldoc:${PORTSDIR}/textproc/htmldoc
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin

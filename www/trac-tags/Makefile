@@ -18,7 +18,7 @@ COMMENT=	A generic tags frontend for trac
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	TracTags

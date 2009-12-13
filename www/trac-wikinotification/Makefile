@@ -19,7 +19,7 @@ COMMENT=	Allow email notifications on wiki page changes
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	TracWikiNotification
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/p/rc/}

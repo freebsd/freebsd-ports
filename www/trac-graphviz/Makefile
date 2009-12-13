@@ -21,7 +21,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urw
 		tracd:${PORTSDIR}/www/trac
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	graphviz

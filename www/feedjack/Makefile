@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedpars
 		django-admin.py:${PORTSDIR}/www/py-django
 
 DIST_SUBDIR=	python
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Feedjack
 

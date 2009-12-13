@@ -19,7 +19,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=        easy_install
 PYDISTUTILS_PKGNAME=    TracTicketDelete
 PYDISTUTILS_PKGVERSION= ${PORTVERSION:R}

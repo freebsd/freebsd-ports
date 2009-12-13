@@ -16,7 +16,7 @@ COMMENT=	A Python based templating framework
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}" PYVER="${PYTHON_VERSION:S/python//}"
 
