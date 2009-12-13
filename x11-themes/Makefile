@@ -87,6 +87,7 @@
     SUBDIR += gtk-ana-theme
     SUBDIR += gtk-aquaextremesunken-theme
     SUBDIR += gtk-aqualightblue-theme
+    SUBDIR += gtk-aurora-engine
     SUBDIR += gtk-bluecurve-theme
     SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-digital-cream-theme

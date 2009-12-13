@@ -1,0 +1,27 @@
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libaurora.la
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libaurora.so
+share/themes/Aurora/gtk-2.0/gtkrc
+share/themes/Aurora/metacity-1/close.png
+share/themes/Aurora/metacity-1/close_prelight.png
+share/themes/Aurora/metacity-1/close_prelight_glow.png
+share/themes/Aurora/metacity-1/close_small.png
+share/themes/Aurora/metacity-1/close_small_prelight.png
+share/themes/Aurora/metacity-1/maximize.png
+share/themes/Aurora/metacity-1/maximize_prelight.png
+share/themes/Aurora/metacity-1/menu.png
+share/themes/Aurora/metacity-1/menu_prelight.png
+share/themes/Aurora/metacity-1/menu_small.png
+share/themes/Aurora/metacity-1/menu_small_prelight.png
+share/themes/Aurora/metacity-1/metacity-theme-1.xml
+share/themes/Aurora/metacity-1/metacity-theme-2.xml
+share/themes/Aurora/metacity-1/minimize.png
+share/themes/Aurora/metacity-1/minimize_prelight.png
+share/themes/Aurora/metacity-1/restore.png
+share/themes/Aurora/metacity-1/restore_prelight.png
+@dirrm share/themes/Aurora/gtk-2.0
+@dirrm share/themes/Aurora/metacity-1
+@dirrm share/themes/Aurora
+@dirrm share/themes
+@dirrm lib/gtk-2.0/%%GTK2_VERSION%%/engines
+@dirrm lib/gtk-2.0/%%GTK2_VERSION%%
+@dirrm lib/gtk-2.0
