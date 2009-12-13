@@ -1359,6 +1359,7 @@
     SUBDIR += py-recaptcha
     SUBDIR += py-restclient
     SUBDIR += py-routes
+    SUBDIR += py-satchmo
     SUBDIR += py-scgi
     SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
