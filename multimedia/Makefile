@@ -24,6 +24,7 @@
     SUBDIR += castpodder
     SUBDIR += cclive
     SUBDIR += cheese
+    SUBDIR += clipgrab
     SUBDIR += clive
     SUBDIR += clive-utils
     SUBDIR += clive1
