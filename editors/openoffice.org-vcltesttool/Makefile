@@ -13,6 +13,8 @@ MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
 EXTRACT_ONLY=	${OOOSRC}
 
+#de facto maintainer is maho@FreeBSD.org
+#patch submitters must sign SCA; see http://porting.openoffice.org/freebsd/#policy
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Automated testtool for the openoffice.org
 

@@ -18,6 +18,8 @@ MASTER_SITE_SUBDIR+=	seamonkey/releases/${SEAMONKEY_VERSION}/:mozsrc
 DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
 EXTRACT_ONLY=	${OOOSRC}
 
+#de facto maintainer is maho@FreeBSD.org
+#patch submitters must sign SCA; see http://porting.openoffice.org/freebsd/#policy
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 

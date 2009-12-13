@@ -16,6 +16,8 @@ MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 MASTER_SITE_SUBDIR+=	seamonkey/releases/${SEAMONKEY_VERSION}/:mozsrc
 DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
 
+#de facto maintainer is maho@FreeBSD.org
+#patch submitters must sign SCA; see http://porting.openoffice.org/freebsd/#policy
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
 
