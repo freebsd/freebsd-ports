@@ -68,3 +68,5 @@ lib/u++/uScheduler-d.a
 lib/u++/uScheduler-m-d.a
 lib/u++/uScheduler-m.a
 lib/u++/uScheduler.a
+@dirrm include/u++
+@dirrm lib/u++
