@@ -139,10 +139,8 @@
 %%WWWDIR%%/wp-admin/import.php
 %%WWWDIR%%/wp-admin/import/blogger.php
 %%WWWDIR%%/wp-admin/import/blogware.php
-%%WWWDIR%%/wp-admin/import/btt.php
 %%WWWDIR%%/wp-admin/import/dotclear.php
 %%WWWDIR%%/wp-admin/import/greymatter.php
-%%WWWDIR%%/wp-admin/import/jkw.php
 %%WWWDIR%%/wp-admin/import/livejournal.php
 %%WWWDIR%%/wp-admin/import/mt.php
 %%WWWDIR%%/wp-admin/import/opml.php
@@ -305,7 +303,6 @@
 %%WWWDIR%%/wp-admin/wpmu-blogs.php
 %%WWWDIR%%/wp-admin/wpmu-edit.php
 %%WWWDIR%%/wp-admin/wpmu-options.php
-%%WWWDIR%%/wp-admin/wpmu-sitewide-plugins.php
 %%WWWDIR%%/wp-admin/wpmu-themes.php
 %%WWWDIR%%/wp-admin/wpmu-upgrade-site.php
 %%WWWDIR%%/wp-admin/wpmu-users.php
