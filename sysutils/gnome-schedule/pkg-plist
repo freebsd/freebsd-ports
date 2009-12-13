@@ -1,45 +1,174 @@
 bin/gnome-schedule
-%%DATADIR%%/applications/gnome-schedule.desktop
-%%PORTDOCS%%%%DOCSDIR%%/addingandediting.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%DATADIR%%/gnome-schedule/addWindow.py
-%%DATADIR%%/gnome-schedule/addWindow.pyc
-%%DATADIR%%/gnome-schedule/addWindow.pyo
-%%DATADIR%%/gnome-schedule/at.py
-%%DATADIR%%/gnome-schedule/at.pyc
-%%DATADIR%%/gnome-schedule/at.pyo
-%%DATADIR%%/gnome-schedule/atEditor.py
-%%DATADIR%%/gnome-schedule/atEditor.pyc
-%%DATADIR%%/gnome-schedule/atEditor.pyo
-%%DATADIR%%/gnome-schedule/config.py
-%%DATADIR%%/gnome-schedule/config.pyc
-%%DATADIR%%/gnome-schedule/config.pyo
-%%DATADIR%%/gnome-schedule/crontab.py
-%%DATADIR%%/gnome-schedule/crontab.pyc
-%%DATADIR%%/gnome-schedule/crontab.pyo
-%%DATADIR%%/gnome-schedule/crontabEditor.py
-%%DATADIR%%/gnome-schedule/crontabEditor.pyc
-%%DATADIR%%/gnome-schedule/crontabEditor.pyo
-%%DATADIR%%/gnome-schedule/crontabEditorHelper.py
-%%DATADIR%%/gnome-schedule/crontabEditorHelper.pyc
-%%DATADIR%%/gnome-schedule/crontabEditorHelper.pyo
-%%DATADIR%%/gnome-schedule/gnome-schedule.glade
-%%DATADIR%%/gnome-schedule/gnome-schedule.py
-%%DATADIR%%/gnome-schedule/gnome-schedule.pyc
-%%DATADIR%%/gnome-schedule/gnome-schedule.pyo
-%%DATADIR%%/gnome-schedule/lang.py
-%%DATADIR%%/gnome-schedule/lang.pyc
-%%DATADIR%%/gnome-schedule/lang.pyo
-%%DATADIR%%/gnome-schedule/mainWindow.py
-%%DATADIR%%/gnome-schedule/mainWindow.pyc
-%%DATADIR%%/gnome-schedule/mainWindow.pyo
-%%DATADIR%%/gnome-schedule/preset.py
-%%DATADIR%%/gnome-schedule/preset.pyc
-%%DATADIR%%/gnome-schedule/preset.pyo
-%%DATADIR%%/gnome-schedule/setuserWindow.py
-%%DATADIR%%/gnome-schedule/setuserWindow.pyc
-%%DATADIR%%/gnome-schedule/setuserWindow.pyo
-%%DATADIR%%/pixmaps/gnome-schedule.png
-@dirrm %%DATADIR%%/gnome-schedule
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/applications
+libdata/bonobo/servers/GNOME_GnomeSchedule.server
+share/applications/gnome-schedule.desktop
+%%DATADIR%%/addWindow.py
+%%DATADIR%%/addWindow.pyc
+%%DATADIR%%/addWindow.pyo
+%%DATADIR%%/at.py
+%%DATADIR%%/at.pyc
+%%DATADIR%%/at.pyo
+%%DATADIR%%/atEditor.py
+%%DATADIR%%/atEditor.pyc
+%%DATADIR%%/atEditor.pyo
+%%DATADIR%%/config.py
+%%DATADIR%%/config.pyc
+%%DATADIR%%/config.pyo
+%%DATADIR%%/crontab.py
+%%DATADIR%%/crontab.pyc
+%%DATADIR%%/crontab.pyo
+%%DATADIR%%/crontabEditor.py
+%%DATADIR%%/crontabEditor.pyc
+%%DATADIR%%/crontabEditor.pyo
+%%DATADIR%%/crontabEditorHelper.py
+%%DATADIR%%/crontabEditorHelper.pyc
+%%DATADIR%%/crontabEditorHelper.pyo
+%%DATADIR%%/data.py
+%%DATADIR%%/data.pyc
+%%DATADIR%%/data.pyo
+%%DATADIR%%/gnome-schedule-applet.xml
+%%DATADIR%%/gnome-schedule.glade
+%%DATADIR%%/gnome-schedule.py
+%%DATADIR%%/gnome-schedule.pyc
+%%DATADIR%%/gnome-schedule.pyo
+%%DATADIR%%/lang.py
+%%DATADIR%%/lang.pyc
+%%DATADIR%%/lang.pyo
+%%DATADIR%%/mainWindow.py
+%%DATADIR%%/mainWindow.pyc
+%%DATADIR%%/mainWindow.pyo
+%%DATADIR%%/scheduleapplet.py
+%%DATADIR%%/scheduleapplet.pyc
+%%DATADIR%%/scheduleapplet.pyo
+%%DATADIR%%/setuserWindow.py
+%%DATADIR%%/setuserWindow.pyc
+%%DATADIR%%/setuserWindow.pyo
+%%DATADIR%%/template.py
+%%DATADIR%%/template.pyc
+%%DATADIR%%/template.pyo
+%%DATADIR%%/template_chooser.py
+%%DATADIR%%/template_chooser.pyc
+%%DATADIR%%/template_chooser.pyo
+%%DATADIR%%/template_manager.py
+%%DATADIR%%/template_manager.pyc
+%%DATADIR%%/template_manager.pyo
+%%DATADIR%%/xwrapper.py
+%%DATADIR%%/xwrapper.pyc
+%%DATADIR%%/xwrapper.pyo
+share/gnome/help/gnome-schedule/C/figures/gnome-schedule_main.png
+share/gnome/help/gnome-schedule/C/figures/gnome-schedule_new_task.png
+share/gnome/help/gnome-schedule/C/figures/gnome-schedule_new_task_once.png
+share/gnome/help/gnome-schedule/C/figures/gnome-schedule_new_task_recurrent.png
+share/gnome/help/gnome-schedule/C/figures/gnome-schedule_templates.png
+share/gnome/help/gnome-schedule/C/gnome-schedule.xml
+share/gnome/help/gnome-schedule/C/legal.xml
+share/gnome/help/gnome-schedule/de/figures/gnome-schedule_main.png
+share/gnome/help/gnome-schedule/de/figures/gnome-schedule_new_task.png
+share/gnome/help/gnome-schedule/de/figures/gnome-schedule_new_task_once.png
+share/gnome/help/gnome-schedule/de/figures/gnome-schedule_new_task_recurrent.png
+share/gnome/help/gnome-schedule/de/figures/gnome-schedule_templates.png
+share/gnome/help/gnome-schedule/de/gnome-schedule.xml
+share/gnome/help/gnome-schedule/es/figures/gnome-schedule_main.png
+share/gnome/help/gnome-schedule/es/figures/gnome-schedule_new_task.png
+share/gnome/help/gnome-schedule/es/figures/gnome-schedule_new_task_once.png
+share/gnome/help/gnome-schedule/es/figures/gnome-schedule_new_task_recurrent.png
+share/gnome/help/gnome-schedule/es/figures/gnome-schedule_templates.png
+share/gnome/help/gnome-schedule/es/gnome-schedule.xml
+share/gnome/help/gnome-schedule/fr/figures/gnome-schedule_main.png
+share/gnome/help/gnome-schedule/fr/figures/gnome-schedule_new_task.png
+share/gnome/help/gnome-schedule/fr/figures/gnome-schedule_new_task_once.png
+share/gnome/help/gnome-schedule/fr/figures/gnome-schedule_new_task_recurrent.png
+share/gnome/help/gnome-schedule/fr/figures/gnome-schedule_templates.png
+share/gnome/help/gnome-schedule/fr/gnome-schedule.xml
+share/gnome/help/gnome-schedule/it/figures/gnome-schedule_main.png
+share/gnome/help/gnome-schedule/it/figures/gnome-schedule_new_task.png
+share/gnome/help/gnome-schedule/it/figures/gnome-schedule_new_task_once.png
+share/gnome/help/gnome-schedule/it/figures/gnome-schedule_new_task_recurrent.png
+share/gnome/help/gnome-schedule/it/figures/gnome-schedule_templates.png
+share/gnome/help/gnome-schedule/it/gnome-schedule.xml
+share/gnome/help/gnome-schedule/oc/figures/gnome-schedule_main.png
+share/gnome/help/gnome-schedule/oc/figures/gnome-schedule_new_task.png
+share/gnome/help/gnome-schedule/oc/figures/gnome-schedule_new_task_once.png
+share/gnome/help/gnome-schedule/oc/figures/gnome-schedule_new_task_recurrent.png
+share/gnome/help/gnome-schedule/oc/figures/gnome-schedule_templates.png
+share/gnome/help/gnome-schedule/oc/gnome-schedule.xml
+share/gnome/help/gnome-schedule/sv/figures/gnome-schedule_main.png
+share/gnome/help/gnome-schedule/sv/figures/gnome-schedule_new_task.png
+share/gnome/help/gnome-schedule/sv/figures/gnome-schedule_new_task_once.png
+share/gnome/help/gnome-schedule/sv/figures/gnome-schedule_new_task_recurrent.png
+share/gnome/help/gnome-schedule/sv/figures/gnome-schedule_templates.png
+share/gnome/help/gnome-schedule/sv/gnome-schedule.xml
+share/locale/ar/LC_MESSAGES/gnome-schedule.mo
+share/locale/bg/LC_MESSAGES/gnome-schedule.mo
+share/locale/ca/LC_MESSAGES/gnome-schedule.mo
+share/locale/cs/LC_MESSAGES/gnome-schedule.mo
+share/locale/da/LC_MESSAGES/gnome-schedule.mo
+share/locale/de/LC_MESSAGES/gnome-schedule.mo
+share/locale/dz/LC_MESSAGES/gnome-schedule.mo
+share/locale/el/LC_MESSAGES/gnome-schedule.mo
+share/locale/en_CA/LC_MESSAGES/gnome-schedule.mo
+share/locale/en_GB/LC_MESSAGES/gnome-schedule.mo
+share/locale/es/LC_MESSAGES/gnome-schedule.mo
+share/locale/fi/LC_MESSAGES/gnome-schedule.mo
+share/locale/fr/LC_MESSAGES/gnome-schedule.mo
+share/locale/gl/LC_MESSAGES/gnome-schedule.mo
+share/locale/gu/LC_MESSAGES/gnome-schedule.mo
+share/locale/hu/LC_MESSAGES/gnome-schedule.mo
+share/locale/it/LC_MESSAGES/gnome-schedule.mo
+share/locale/lt/LC_MESSAGES/gnome-schedule.mo
+share/locale/nb/LC_MESSAGES/gnome-schedule.mo
+share/locale/ne/LC_MESSAGES/gnome-schedule.mo
+share/locale/nl/LC_MESSAGES/gnome-schedule.mo
+share/locale/nn/LC_MESSAGES/gnome-schedule.mo
+share/locale/oc/LC_MESSAGES/gnome-schedule.mo
+share/locale/pa/LC_MESSAGES/gnome-schedule.mo
+share/locale/pt/LC_MESSAGES/gnome-schedule.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-schedule.mo
+share/locale/ru/LC_MESSAGES/gnome-schedule.mo
+share/locale/rw/LC_MESSAGES/gnome-schedule.mo
+share/locale/sl/LC_MESSAGES/gnome-schedule.mo
+share/locale/sq/LC_MESSAGES/gnome-schedule.mo
+share/locale/sv/LC_MESSAGES/gnome-schedule.mo
+share/locale/uk/LC_MESSAGES/gnome-schedule.mo
+share/locale/vi/LC_MESSAGES/gnome-schedule.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-schedule.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-schedule.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-schedule.mo
+share/omf/gnome-schedule/gnome-schedule-C.omf
+share/omf/gnome-schedule/gnome-schedule-de.omf
+share/omf/gnome-schedule/gnome-schedule-es.omf
+share/omf/gnome-schedule/gnome-schedule-fr.omf
+share/omf/gnome-schedule/gnome-schedule-it.omf
+share/omf/gnome-schedule/gnome-schedule-oc.omf
+share/omf/gnome-schedule/gnome-schedule-sv.omf
+share/pixmaps/gnome-schedule/at.svg
+share/pixmaps/gnome-schedule/calendar.svg
+share/pixmaps/gnome-schedule/crontab.svg
+share/pixmaps/gnome-schedule/gnome-schedule.svg
+share/pixmaps/gnome-schedule/template.svg
+@dirrm share/pixmaps/gnome-schedule
+@dirrm share/omf/gnome-schedule
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrm share/gnome/help/gnome-schedule/sv/figures
+@dirrm share/gnome/help/gnome-schedule/sv
+@dirrm share/gnome/help/gnome-schedule/oc/figures
+@dirrm share/gnome/help/gnome-schedule/oc
+@dirrm share/gnome/help/gnome-schedule/it/figures
+@dirrm share/gnome/help/gnome-schedule/it
+@dirrm share/gnome/help/gnome-schedule/fr/figures
+@dirrm share/gnome/help/gnome-schedule/fr
+@dirrm share/gnome/help/gnome-schedule/es/figures
+@dirrm share/gnome/help/gnome-schedule/es
+@dirrm share/gnome/help/gnome-schedule/de/figures
+@dirrm share/gnome/help/gnome-schedule/de
+@dirrm share/gnome/help/gnome-schedule/C/figures
+@dirrm share/gnome/help/gnome-schedule/C
+@dirrm share/gnome/help/gnome-schedule
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
