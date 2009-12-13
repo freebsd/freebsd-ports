@@ -382,16 +382,11 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.tlk-l.net/pub/mirrors/fedora.redhat.com/linux/core/%SUBDIR%/ \
 	http://limestone.uoregon.edu/ftp/fedora/%SUBDIR%/ \
 	ftp://limestone.uoregon.edu/fedora/%SUBDIR%/ \
-	http://mirrors.tiatera.com/fedora/core/%SUBDIR%/ \
-	ftp://mirrors.tiatera.com/fedora/core/%SUBDIR%/ \
 	ftp://fedora.bu.edu/core/%SUBDIR%/ \
 	http://mirror.anl.gov/pub/fedora-linux-core/%SUBDIR%/ \
 	ftp://mirror.anl.gov/pub/fedora-linux-core/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Linux/fedora/linux/core/%SUBDIR%/ \
-	http://coblitz.planet-lab.org/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.software.umn.edu/linux/fedora/core/%SUBDIR%/ \
-	http://fedora.omnispring.com/core/%SUBDIR%/ \
-	ftp://fedora.omnispring.com/core/%SUBDIR%/ \
 	ftp://ftp.applios.net/pub/fedora/linux/core/%SUBDIR%/ \
 	http://fedora.mirror.facebook.com/linux/core/%SUBDIR%/ \
 	http://mirror.steadfast.net/fedora/core/%SUBDIR%/ \
