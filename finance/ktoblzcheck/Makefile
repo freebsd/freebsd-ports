@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check bank codes of German banks
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes

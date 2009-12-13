@@ -18,7 +18,7 @@ COMMENT=	An xmpp to irc transport
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
 		${PYTHON_SITELIBDIR}/irclib.py:${PORTSDIR}/irc/py-irclib
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 NO_BUILD=	yes
 FILES=		irc.py jep0106.py jep0133.py test_jep0106.py
 PFILES=		${FILES:S.^.%%PYTHON_SITELIBDIR%%/xmpp/irc/.}

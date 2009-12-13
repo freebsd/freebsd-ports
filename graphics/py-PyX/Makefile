@@ -18,7 +18,7 @@ COMMENT=	A Python package for the creation of encapsulated PostScript figures
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	etc/pyxrc

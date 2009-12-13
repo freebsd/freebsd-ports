@@ -19,7 +19,7 @@ COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_OPENSSL=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes

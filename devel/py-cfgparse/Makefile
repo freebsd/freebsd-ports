@@ -15,7 +15,7 @@ DISTNAME=	cfgparse-v01_02
 MAINTAINER=	jdferrell3@yahoo.com
 COMMENT=	Python module for parsing configuration files
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	cfgparse
 PYDISTUTILS_EGGINFO=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-v01_02-${PYTHON_VERSION:S/thon//}.egg-info

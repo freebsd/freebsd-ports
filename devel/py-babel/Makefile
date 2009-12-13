@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A collection of tools for internationalizing Python applications
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 
 .if !defined(NOPORTDOCS)

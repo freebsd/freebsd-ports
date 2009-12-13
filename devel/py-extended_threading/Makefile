@@ -17,7 +17,7 @@ DISTNAME=	extended_threading-0_2
 MAINTAINER=	fbsdporter@var-dev.net
 COMMENT=	A library to extend pythons threading library
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 
 USE_BZIP2=	YES
 

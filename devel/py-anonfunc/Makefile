@@ -15,7 +15,7 @@ PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python module that provides easy anonymous function
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>

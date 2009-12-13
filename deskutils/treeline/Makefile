@@ -27,7 +27,7 @@ OPTIONS=	ASPELL "install with aspell support" off \
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	4
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
