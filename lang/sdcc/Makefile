@@ -11,7 +11,7 @@ DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
 
 WRKSRC=		${WRKDIR}/sdcc

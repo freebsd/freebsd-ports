@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.11
 DISTNAME=	tilibs2-20080328
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator file types library
 
 LIB_DEPENDS=	ticonv.3:${PORTSDIR}/converters/libticonv

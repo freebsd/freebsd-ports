@@ -13,7 +13,7 @@ DISTFILES=	simutrans-src-102-0.zip \
 		simulinux-102-0.zip \
 		pak64-102-0.zip
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	Transport business simulation game
 
 MAKE_ARGS=	BACKEND=mixer_sdl \

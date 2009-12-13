@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/${PORTNAME}-linux/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI Linking Program
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config

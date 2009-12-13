@@ -9,7 +9,7 @@ PORTNAME=	flashplugin
 PORTVERSION=	10.0r42
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
-		http://tijl.ulyssis.be/mirror/:suplib LOCAL/pav:suplib
+		http://tijl.ulyssis.fm/mirror/:suplib LOCAL/pav:suplib
 PKGNAMEPREFIX=	linux-f8-
 DISTFILES=	install_flash_player_10_linux.tar.gz:plugin \
 		linux-f8-flashsupport-9.0.1.i386.tar.gz:suplib

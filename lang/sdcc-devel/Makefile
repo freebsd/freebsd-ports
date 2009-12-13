@@ -9,10 +9,10 @@ PORTNAME=	sdcc
 PORTVERSION=	2.9.1.2009.05.18
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
-		http://tijl.ulyssis.be/mirror/
+		http://tijl.fastmail.fm/mirror/
 DISTNAME=	${PORTNAME}-src-20090518-5457
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
 
 WRKSRC=		${WRKDIR}/sdcc
