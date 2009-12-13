@@ -8,14 +8,49 @@
 #
 # Note:
 # Set "squid_enable=yes" in either /etc/rc.conf, /etc/rc.conf.local or
-# /etc/rc.conf.d/squid to make this script actually do something. There
-# you can also set squid_chdir, squid_pidfile, squid_user, and squid_flags.
+# /etc/rc.conf.d/squid to activate Squid.
 #
-# Please see squid(8), rc.conf(5) and rc(8) for further details.
+# Additional variables you can define in one of these files:
+#
+# squid_chdir:	the directory into which the rc system moves into before
+# 		starting Squid. Default: %%PREFIX%%/squid
+#
+# squid_conf:	The configuration file that Squid should use.
+#		Default: %%PREFIX%%/etc/squid/squid.conf
+#
+# squid_fib:	The alternative routing table id that Squid should use.
+#		Default: none
+#		See setfib(1) for further details. Note that the setfib(2)
+#		system call is not available in FreeBSD versions prior to 7.1.
+#
+# squid_user:	The user id that should be used to run the Squid master
+#		process. Default: %%SQUID_UID%%.
+#		Note that you probably need to define "squid_user=root" if
+#		you want to run Squid in reverse proxy setups or if you want
+#		Squid to listen on a "privileged" port < 1024.
+#
+# squid_pidfile:
+#		The name (including the full path) of the Squid
+#		master process' PID file.
+#		Default: %%PREFIX%%/squid/squid.pid.
+#		You only need to change this if you changed the
+#		corresponding entry in your Squid configuration.
+#
+# squid_flags:	Additional commandline arguments for Squid you might want to
+#		use. See squid(8) for further details.
 #
 
 squid_checkrunning() {
 	${command} ${squid_flags} -k check 2>/dev/null
+}
+
+squid_setfib() {
+	sysctl net.fibs >/dev/null 2>&1 || return 0
+	if [ "x${squid_fib}" != "xNONE" ]; then
+		command="setfib -F ${squid_fib} ${command}"
+	else
+		return 0
+	fi
 }
 
 squid_stop() {
@@ -32,28 +67,26 @@ rcvar=${name}_enable
 command=%%PREFIX%%/sbin/squid
 extra_commands=reload
 reload_cmd="${command} ${squid_flags} -k reconfigure"
+start_precmd="squid_setfib"
 stop_precmd="squid_checkrunning"
 stop_cmd="squid_stop"
 
 load_rc_config ${name}
 
 squid_chdir=${squid_chdir:-"%%PREFIX%%/squid"}
+squid_conf=${squid_conf:-"%%PREFIX%%/etc/squid/squid.conf"}
 squid_enable=${squid_enable:-"NO"}
+squid_fib=${squid_fib:-"NONE"}
 squid_pidfile=${squid_pidfile:-"%%PREFIX%%/squid/squid.pid"}
 squid_user=${squid_user:-%%SQUID_UID%%}
-default_config=%%PREFIX%%/etc/squid/squid.conf
 
 pidfile=${squid_pidfile}
 required_dirs=${squid_chdir}
 
-# squid(8) will not start if ${default_config} is not present so try
+# squid(8) will not start if ${squid_conf} is not present so try
 # to catch that beforehand via ${required_files} rather than make
 # squid(8) crash.
-# If you remove the default configuration file make sure to add
-# '-f /path/to/your/squid.conf' to squid_flags
 
-if [ -z "${squid_flags}" ]; then
-	required_files=${default_config}
-fi
+required_files=${squid_conf}
 
 run_rc_command "$1"
