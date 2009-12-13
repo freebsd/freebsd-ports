@@ -13,7 +13,7 @@ MASTER_SITES=	SF/gnatsperl/gnatsperl/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to GNU Gnats daemon
 
 MAKE_JOBS_SAFE=	yes

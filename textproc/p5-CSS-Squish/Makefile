@@ -11,7 +11,7 @@ CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compact many CSS files into one big file
 
 BUILD_DEPENDS=	p5-Test-LongString>0:${PORTSDIR}/devel/p5-Test-LongString

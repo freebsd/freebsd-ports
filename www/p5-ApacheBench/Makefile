@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	HTTPD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for HTTP benchmarking
 
 MAKE_JOBS_SAFE=  yes

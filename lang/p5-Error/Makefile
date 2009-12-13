@@ -11,7 +11,7 @@ CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to provide Error/exception support for perl: Error
 
 MAKE_JOBS_SAFE=  yes

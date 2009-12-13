@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IPC::Run::SafeHandles - Safe guarding for IPC::Run(3)
 
 MAKE_JOBS_SAFE=  yes

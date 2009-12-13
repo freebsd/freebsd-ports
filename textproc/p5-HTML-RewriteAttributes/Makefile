@@ -10,7 +10,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple yet powerful HTML attribute rewriting
 
 MAKE_JOBS_SAFE=  yes

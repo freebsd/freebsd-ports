@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module for converting Perl structures to strings and back
 
 MAKE_JOBS_SAFE=  yes

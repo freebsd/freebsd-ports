@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CG/CGILMORE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that implements authentication caching
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Object.pm:${PORTSDIR}/devel/p5-Time-Object \
