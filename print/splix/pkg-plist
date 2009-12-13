@@ -49,3 +49,4 @@ share/cups/model/xerox/wc3119.ppd
 @dirrm share/cups/model/dell
 @dirrm share/cups/model/samsung
 @dirrm share/cups/model/xerox
+@dirrmtry share/cups/model
