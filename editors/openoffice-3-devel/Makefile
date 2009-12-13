@@ -72,11 +72,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		66
+MILESTONE?=		67
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20091205
+SNAPDATE=		20091213
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -145,7 +145,8 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-presenter-console			\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
-			--enable-report-builder
+			--enable-report-builder				\
+			--with-vendor="FreeBSD ports system"
 
 OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -194,6 +195,13 @@ post-extract:
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
+
+pre-build:
+#i107644#
+	cd ${WRKSRC}; ${CP} -R sdext/source/presenter/help/en-US/com.sun.PresenterScreen-linux_x86 sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86
+	cd ${WRKSRC}; ${CP} -R sdext/source/presenter/help/en-US/com.sun.PresenterScreen-linux_x86_64 sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86_64
+	cd ${WRKSRC}; ${REINPLACE_CMD} -e 's/linux/freebsd/g' sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86/presenter.xhp
+	cd ${WRKSRC}; ${REINPLACE_CMD} -e 's/linux/freebsd/g' sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86_64/presenter.xhp
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
