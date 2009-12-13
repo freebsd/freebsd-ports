@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.8.12
+PORTVERSION=	1.9.0
 CATEGORIES=	databases pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An SQL Builder, Object Interface to Database Tables
 
-BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
-		${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
+BUILD_DEPENDS=	pear-DB>=1.7.0:${PORTSDIR}/databases/pear-DB \
+		pear-Date>=1.4.3:${PORTSDIR}/devel/pear-Date
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	DB
@@ -32,11 +32,11 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PEAR_MDB2)
-RUN_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
+RUN_DEPENDS+=	pear-MDB2>=2.3.0:${PORTSDIR}/databases/pear-MDB2
 .endif
 
 .if defined(WITH_PEAR_VALIDATE)
-RUN_DEPENDS+=	${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
+RUN_DEPENDS+=	pear-Validate>=0.1.1:${PORTSDIR}/devel/pear-Validate
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
