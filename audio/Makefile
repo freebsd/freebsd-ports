@@ -431,6 +431,7 @@
     SUBDIR += mbrolavox
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
+    SUBDIR += mehdiaplayer
     SUBDIR += mhwaveedit
     SUBDIR += midimountain
     SUBDIR += mikmod
