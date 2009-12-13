@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 MAINTAINER=	wes@freebsd.org
 COMMENT=	An Eclipse Plugin for Designing Java Swing & SWT GUIs
 
+DEPRECATED=     Not useful with Eclipse 3.x
+EXPIRATION_DATE=2010-06-08
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
