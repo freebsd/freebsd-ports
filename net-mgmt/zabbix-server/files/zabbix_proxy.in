@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: zabbix_proxy
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_proxy:
+#
+# zabbix_proxy_enable (bool): Set to NO by default.  Set it to YES to
+#         enable zabbix_proxy.
+#
+
+. %%RC_SUBR%%
+
+name="zabbix_proxy"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%ETCDIR%%/${name}.conf"
+
+load_rc_config $name
+
+: ${zabbix_proxy_enable="NO"}
+
+run_rc_command "$1"

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%ETCDIR%%/zabbix_agent.conf.sample
+%%ETCDIR%%/zabbix_agentd.conf.sample
+bin/zabbix_get
+bin/zabbix_sender
+sbin/zabbix_agent
+sbin/zabbix_agentd
+@dirrmtry %%ETCDIR%%

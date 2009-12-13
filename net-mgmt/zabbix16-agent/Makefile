@@ -1,6 +1,6 @@
-# Ports collection makefile for:	zabbix-agent
-# Date created:		Jun 18 2003
-# Whom:			Sergey Akifyev <asa@gascom.ru>
+# New ports collection makefile for:	zabbix16-agent
+# Date created:		2009-12-10
+# Whom:			Jim Riggs <ports@christianserving.org>
 #
 # $FreeBSD$
 #
@@ -8,7 +8,7 @@
 PORTNAME=	zabbix
 PKGNAMESUFFIX=	-agent
 
-MASTERDIR=	${.CURDIR}/../zabbix-server
+MASTERDIR=	${.CURDIR}/../zabbix16-server
 
 PLIST=		${PKGDIR}/pkg-plist.agent
 

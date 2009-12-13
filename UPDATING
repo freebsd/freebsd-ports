@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091213
+  AFFECTS: users of net-mgmt/zabbix, net-mgmt/zabbix-agent
+  AUTHOR: Jim Riggs <ports@christianserving.org>
+
+  In order to simplify configuration and better separate the different
+  components of Zabbix, the former zabbix port has been split into
+  three: zabbix-server, zabbix-proxy, and zabbix-frontend.  Each
+  component has distinct functionality and may be installed
+  independently on separate systems.  The existing zabbix-agent port
+  remains.
+
+  Additionally, the new zabbix-frontend port now (correctly) installs
+  the PHP frontend in PREFIX/www/zabbix.  The old zabbix port
+  installed the files in PREFIX/share/zabbix/php.  Web server
+  configurations must be updated accordingly.
+
+  Finally, Zabbix has been updated to version 1.8.  Not everyone may
+  be able to upgradee from version 1.6 immediately, though, so 1.6.8
+  versions of the ports are also available as zabbix16-server,
+  zabbix16-proxy, zabbix16-agent, and zabbix16-frontend.
+
 20091206:
   AFFECTS: users of emulators/qemu
   AUTHOR: nox@FreeBSD.org
