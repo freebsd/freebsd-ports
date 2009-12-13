@@ -1,3 +1,4 @@
+etc/xorp.conf.sample
 lib/xorp/bin/bgp_print_peers
 lib/xorp/bin/bgp_print_routes
 lib/xorp/bin/cli_generic
