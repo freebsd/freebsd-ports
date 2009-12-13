@@ -12,6 +12,7 @@
     SUBDIR += Tee
     SUBDIR += aaccli
     SUBDIR += abck
+    SUBDIR += abgx360
     SUBDIR += acidlaunch
     SUBDIR += adtool
     SUBDIR += afbinit
