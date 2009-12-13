@@ -1,13 +1,49 @@
-%%SITE_PERL%%/Catalyst/Helper.pm
 %%SITE_PERL%%/Catalyst/Devel.pm
+%%SITE_PERL%%/Catalyst/Helper.pm
 %%SITE_PERL%%/Catalyst/Restarter.pm
 %%SITE_PERL%%/Catalyst/Restarter/Forking.pm
 %%SITE_PERL%%/Catalyst/Restarter/Win32.pm
 %%SITE_PERL%%/Module/Install/Catalyst.pm
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/Changes.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/Makefile.PL.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/README.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/Helper/compclass.pm.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/MyApp.pm.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/MyApp/Controller/Root.pm.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/myapp.conf.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/favicon.ico.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_120x50_built.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_120x50_built_shadow.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_120x50_powered.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_120x50_powered_shadow.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_88x31_built.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_88x31_built_shadow.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_88x31_powered.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_88x31_powered_shadow.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/catalyst_logo.png.bin
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/script/myapp_cgi.pl.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/script/myapp_create.pl.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/script/myapp_fastcgi.pl.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/script/myapp_server.pl.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/script/myapp_test.pl.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t/01app.t.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t/02pod.t.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t/03podcoverage.t.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t/comptest.tt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Devel/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Devel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrm %%SITE_PERL%%/Catalyst/Restarter
-@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/script
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/MyApp/Controller
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/MyApp
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/Helper
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel
 @dirrmtry %%SITE_PERL%%/Module/Install
 @dirrmtry %%SITE_PERL%%/Module
+@dirrmtry %%SITE_PERL%%/Catalyst/Restarter
+@dirrmtry %%SITE_PERL%%/Catalyst
