@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20091113
+PORTVERSION=	3.20091202
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/

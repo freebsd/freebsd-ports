@@ -32,6 +32,7 @@
 %%DATADIR%%/directives/ikiwiki/directive/copy.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/cut.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/cutpaste.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/date.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/edittemplate.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/format.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/fortune.mdwn
@@ -441,6 +442,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/cutpaste.pm
 %%SITE_PERL%%/IkiWiki/Plugin/cvs.pm
 %%SITE_PERL%%/IkiWiki/Plugin/darcs.pm
+%%SITE_PERL%%/IkiWiki/Plugin/date.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editpage.pm
@@ -558,6 +560,7 @@ share/locale/gu/LC_MESSAGES/ikiwiki.mo
 share/locale/it/LC_MESSAGES/ikiwiki.mo
 share/locale/pl/LC_MESSAGES/ikiwiki.mo
 share/locale/sv/LC_MESSAGES/ikiwiki.mo
+share/locale/tr/LC_MESSAGES/ikiwiki.mo
 share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm etc/ikiwiki
 @dirrm lib/ikiwiki/plugins
