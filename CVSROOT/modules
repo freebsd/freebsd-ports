@@ -1226,6 +1226,7 @@ bsh                             ports/lang/bsh
 bsmtp                           ports/mail/bsmtp
 bsmtrace                        ports/security/bsmtrace
 bsnes                           ports/emulators/bsnes
+bsnmp-jails                     ports/net-mgmt/bsnmp-jails
 bsnmp-regex                     ports/net-mgmt/bsnmp-regex
 bsnmp-ucd                       ports/net-mgmt/bsnmp-ucd
 bsnmptools                      ports/net-mgmt/bsnmptools
@@ -12960,6 +12961,7 @@ p5-SNMP-Info                    ports/net-mgmt/p5-SNMP-Info
 p5-SNMP-MIB-Compiler            ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-SNMP-Persist                 ports/devel/p5-SNMP-Persist
 p5-SNMP-Simple                  ports/net-mgmt/p5-SNMP-Simple
+p5-SNMP-Trapinfo                ports/net-mgmt/p5-SNMP-Trapinfo
 p5-SNMP-Util                    ports/net-mgmt/p5-SNMP-Util
 p5-SNMP_Session                 ports/net-mgmt/p5-SNMP_Session
 p5-SOAP                         ports/net/p5-SOAP
@@ -16709,6 +16711,7 @@ p5-snmp-info                    ports/net-mgmt/p5-SNMP-Info
 p5-snmp-mib-compiler            ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-snmp-persist                 ports/devel/p5-SNMP-Persist
 p5-snmp-simple                  ports/net-mgmt/p5-SNMP-Simple
+p5-snmp-trapinfo                ports/net-mgmt/p5-SNMP-Trapinfo
 p5-snmp-util                    ports/net-mgmt/p5-SNMP-Util
 p5-snmp_session                 ports/net-mgmt/p5-SNMP_Session
 p5-snort-rule                   ports/security/p5-Snort-Rule
@@ -18940,6 +18943,7 @@ poink                           ports/net/poink
 poker-engine                    ports/games/poker-engine
 poker-eval                      ports/games/poker-eval
 pokerth                         ports/games/pokerth
+polarssl                        ports/security/polarssl
 policyd2                        ports/mail/policyd2
 policykit                       ports/sysutils/policykit
 policykit-gnome                 ports/sysutils/policykit-gnome
@@ -19489,9 +19493,12 @@ py-dialog                       ports/devel/py-dialog
 py-distorm                      ports/devel/py-distorm
 py-distutils                    ports/misc/py-distutils
 py-django                       ports/www/py-django
+py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-devel                 ports/www/py-django-devel
 py-django-registration          ports/www/py-django-registration
+py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-tagging               ports/www/py-django-tagging
+py-django-threaded-multihost    ports/www/py-django-threaded-multihost
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
 py-docutils                     ports/textproc/py-docutils
@@ -19689,6 +19696,7 @@ py-ming                         ports/graphics/py-ming
 py-miniupnpc                    ports/net/py-miniupnpc
 py-mlpy                         ports/science/py-mlpy
 py-mnemosyne                    ports/games/py-mnemosyne
+py-mox                          ports/devel/py-mox
 py-mp-random                    ports/net/py-mp-random
 py-mpd                          ports/audio/py-mpd
 py-mpmath                       ports/math/py-mpmath
@@ -24999,6 +25007,7 @@ yaps                            ports/comms/yaps
 yasm                            ports/devel/yasm
 yasql                           ports/databases/yasql
 yasr                            ports/accessibility/yasr
+yassl                           ports/security/yassl
 yate-devel                      ports/net/yate-devel
 yatex                           ports/print/yatex
 yatex-xemacs                    ports/print/yatex-xemacs
