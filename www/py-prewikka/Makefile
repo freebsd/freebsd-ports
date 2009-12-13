@@ -20,7 +20,7 @@ BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
 LIB_DEPENDS=	prelude.20:${PORTSDIR}/security/libprelude \
 		preludedb.4:${PORTSDIR}/security/libpreludedb
 
-USE_PYTHON=		2.3+
+USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	yes
 
 .if !defined(WITHOUT_NLS)

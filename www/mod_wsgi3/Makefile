@@ -23,7 +23,7 @@ CONFLICTS=	mod_wsgi-2.*
 PROJECTHOST=	modwsgi
 
 USE_APACHE=	1.3+
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"

@@ -17,7 +17,7 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	An object-based web application platform
 
 WRKSRC=		${WRKDIR}/Zope-${PORTVERSION}-final
-USE_PYTHON=	2.3-2.4
+USE_PYTHON=	2.4
 USE_RC_SUBR=	${PORTNAME}28.sh zeo28.sh
 LATEST_LINK=	zope28
 

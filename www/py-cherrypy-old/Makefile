@@ -17,7 +17,7 @@ DISTNAME=	CherryPy-${PORTVERSION:C/\.b$/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pythonic, object-oriented web development framework
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	CherryPy
 

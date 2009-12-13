@@ -24,7 +24,7 @@ OPTIONS=	MINFOENH "Enable mergeinfo display enhancer" On \
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracRevtreePlugin
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}dev

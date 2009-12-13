@@ -21,7 +21,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 NO_BUILD=	yes
 USE_ZIP=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 
 PLIST_FILES=	bin/tracremind.py etc/tracremind.conf
 
