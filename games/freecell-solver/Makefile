@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.34.0
+PORTVERSION=	2.36.0
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		BERLIOS/fc-solve
@@ -65,7 +65,8 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS INSTALL README README.win32.txt TODO USAGE
+.for file in AUTHORS.txt HACKING.txt INSTALL.txt NEWS.txt README.txt \
+	README.win32.txt TODO.txt USAGE.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
