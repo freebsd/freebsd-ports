@@ -87,6 +87,10 @@
 %%XPI_XPIDIR%%/locale/gl-ES/gm-manage.properties
 %%XPI_XPIDIR%%/locale/gl-ES/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/gl-ES/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/he/gm-browser.properties
+%%XPI_XPIDIR%%/locale/he/gm-manage.properties
+%%XPI_XPIDIR%%/locale/he/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/he/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/he-IL/gm-browser.properties
 %%XPI_XPIDIR%%/locale/he-IL/gm-manage.properties
 %%XPI_XPIDIR%%/locale/he-IL/greasemonkey.dtd
@@ -197,6 +201,7 @@
 @dirrm %%XPI_XPIDIR%%/locale/fi-FI
 @dirrm %%XPI_XPIDIR%%/locale/fr-FR
 @dirrm %%XPI_XPIDIR%%/locale/gl-ES
+@dirrm %%XPI_XPIDIR%%/locale/he
 @dirrm %%XPI_XPIDIR%%/locale/he-IL
 @dirrm %%XPI_XPIDIR%%/locale/hr-HR
 @dirrm %%XPI_XPIDIR%%/locale/hu-HU
