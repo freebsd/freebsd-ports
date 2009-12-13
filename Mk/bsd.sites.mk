@@ -252,6 +252,8 @@ MASTER_SITE_EXIM+=	\
 # and move ftp.udl.es back to the place it was in 1.484
 MASTER_SITE_FEDORA_LINUX+= \
         http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
+        http://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
+        ftp://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
 	http://mirrors.kernel.org/fedora/core/%SUBDIR%/ \
 	ftp://mirrors.kernel.org/fedora/core/%SUBDIR%/ \
@@ -337,11 +339,7 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.univ-pau.fr/pub/mirrors/fedora/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/linux/distributions/fedora/%SUBDIR%/ \
 	http://fr.rpmfind.net/linux/fedora/core/%SUBDIR%/ \
-	http://zeniiia.linux.org.uk/pub/distributions/fedora/linux/core/%SUBDIR%/ \
-	ftp://zeniiia.linux.org.uk/pub/distributions/fedora/linux/core/%SUBDIR%/ \
 	http://www.gtlib.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
-	http://download.stmc.edu.hk/fedora/linux/core/%SUBDIR%/ \
-	ftp://download.stmc.edu.hk/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.unina.it/pub/linux/distributions/fedora/%SUBDIR%/ \
@@ -359,7 +357,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://ftp.kaist.ac.kr/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.kaist.ac.kr/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.kreonet.re.kr/pub/Linux/fedora/core/%SUBDIR%/ \
-	ftp://mirror.hostway.co.kr/pub/fedora/%SUBDIR%/ \
 	http://fedora.ifc.unam.mx/fedora/core/%SUBDIR%/ \
 	ftp://fedora.ifc.unam.mx/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/fedora/linux/core/%SUBDIR%/ \
@@ -379,8 +376,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.chg.ru/pub/Linux/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.rhd.ru/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.rhd.ru/pub/fedora/linux/core/%SUBDIR%/ \
-	http://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.port80.se/fedora/core/%SUBDIR%/ \
 	ftp://ftp.port80.se/fedora/core/%SUBDIR%/ \
 	http://ftp.upjs.sk/pub/fedora/linux/core/%SUBDIR%/ \
