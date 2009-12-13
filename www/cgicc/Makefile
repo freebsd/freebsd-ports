@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cgicc
-PORTVERSION=	3.2.8
+PORTVERSION=	3.2.9
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
@@ -15,25 +15,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ class library for writing CGI applications
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
-ACLOCAL_ARGS=	-I m4 --install
-AUTOMAKE_ARGS=	--add-missing
+USE_AUTOTOOLS=	libtool:22
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
+		AUTOMAKE="${TRUE}"
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-post-extract:
-	@${FIND} ${WRKSRC} -type l -delete
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/CXXFLAGS/s|-pedantic||g' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e '/CXXFLAGS/s|-pedantic||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
 
-pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} ${ACLOCAL_ARGS} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} ${AUTOHEADER_ARGS} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE})
+post-build:
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${ALL_TARGET})
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
