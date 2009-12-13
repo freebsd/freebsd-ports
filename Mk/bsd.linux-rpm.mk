@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.22 2009-07-01 20:35:34 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.23 2009-12-13 19:29:34 bsam Exp $
 #
 
 # Variables:
@@ -78,7 +78,7 @@ IGNORE=		bsd.linux-rpm.mk test failed: default package building at OSVERSION>=80
 .  if ${LINUX_DIST_VER} == 8 || ${LINUX_DIST_VER} == 10
 # let's check for apropriate compat.linux.osrelease
 .    if (${LINUX_OSRELEASE} != "2.6.16")
-IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported at 8-CURRENT and has a limitted support at 7-STABLE
+IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported at 8-CURRENT and has a limited support at 7-STABLE
 .    endif
 # the default for OSVERSION < 800076
 .    if ${OSVERSION} < 800076
