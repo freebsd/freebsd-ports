@@ -1,0 +1,26 @@
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/__init__.py
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/autocompleteusers.py
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/autocompleteusers.pyc
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/autocompleteusers.pyo
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/css/indicator.gif
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/css/autocomplete.css
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/js/autocomplete_ticket.js
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/js/format_item.js
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/js/autocomplete_ticket_cc.js
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/js/autocomplete_newticket.js
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/js/autocomplete.js
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/js/autocomplete_newticket_cc.js
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/EGG-INFO/top_level.txt
+@dirrm %%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/js
+@dirrm %%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs/css
+@dirrm %%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers/htdocs
+@dirrm %%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/autocompleteusers
+@dirrm %%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/AutocompleteUsers-0.4.1-py%%PYTHON_VER%%.egg

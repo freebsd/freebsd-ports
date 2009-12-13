@@ -1536,6 +1536,7 @@
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
     SUBDIR += trac-advancedticketworkflow
+    SUBDIR += trac-autocomplete
     SUBDIR += trac-batchmodify
     SUBDIR += trac-bzr
     SUBDIR += trac-calendar
