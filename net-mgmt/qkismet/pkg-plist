@@ -1,0 +1,22 @@
+bin/qkismet
+share/qkismet/img/alert.png
+share/qkismet/img/document-save.png
+share/qkismet/img/edit-clear.png
+share/qkismet/img/edit-copy.png
+share/qkismet/img/edit-select-all.png
+share/qkismet/img/emblem-important.png
+share/qkismet/img/error.png
+share/qkismet/img/fatal.png
+share/qkismet/img/help-about.png
+share/qkismet/img/icon.svg
+share/qkismet/img/info.png
+share/qkismet/img/media-playback-pause.png
+share/qkismet/img/media-playback-start.png
+share/qkismet/img/network-connect.png
+share/qkismet/img/network-disconnect.png
+share/qkismet/img/network-workgroup.png
+share/qkismet/img/text-x-generic.png
+share/qkismet/img/utilities-system-monitor.png
+share/qkismet/img/view-filter.png
+@dirrm share/qkismet/img
+@dirrm share/qkismet/
