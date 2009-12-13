@@ -1,0 +1,66 @@
+%%PYTHON_SITELIBDIR%%/sorl/__init__.py
+%%PYTHON_SITELIBDIR%%/sorl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sorl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/__init__.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/base.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/base.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/base.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/defaults.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/defaults.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/defaults.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/fields.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/fields.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/fields.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/main.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/main.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/main.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/__init__.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/commands/thumbnail_cleanup.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/commands/thumbnail_cleanup.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/commands/thumbnail_cleanup.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/models.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/models.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/models.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/processors.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/processors.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/processors.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/templatetags/thumbnail.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/templatetags/thumbnail.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/templatetags/thumbnail.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/base.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/base.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/base.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/classes.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/classes.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/classes.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/fields.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/fields.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/fields.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/templatetags.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/templatetags.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/templatetags.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/utils.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/utils.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests/utils.pyo
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/utils.py
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/utils.pyc
+%%PYTHON_SITELIBDIR%%/sorl/thumbnail/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/sorl/thumbnail/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/sorl/thumbnail/management
+@dirrm %%PYTHON_SITELIBDIR%%/sorl/thumbnail/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/sorl/thumbnail/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sorl/thumbnail
+@dirrm %%PYTHON_SITELIBDIR%%/sorl
