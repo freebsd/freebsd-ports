@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=		SF/tilp/OldFiles
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator library
 
 LIB_DEPENDS=	ticables.12:${PORTSDIR}/comms/libticables \

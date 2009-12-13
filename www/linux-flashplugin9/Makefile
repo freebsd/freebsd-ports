@@ -9,7 +9,7 @@ PORTNAME=	flashplugin
 PORTVERSION=	9.0r260
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://download.macromedia.com/pub/flashplayer/installers/current/9/:plugin \
-		http://tijl.ulyssis.be/mirror/:suplib \
+		http://tijl.ulyssis.fm/mirror/:suplib \
 		LOCAL/pav:suplib
 PKGNAMEPREFIX=	linux-
 DISTFILES=	install_flash_player_9.tar.gz:plugin \

@@ -12,7 +12,7 @@ CATEGORIES=	converters
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.10
 DISTNAME=	tilibs2-20080110
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator character set library
 
 USE_AUTOTOOLS=	libtool:22

@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.10
 DISTNAME=	tilibs2-20080110
 
-MAINTAINER=	tijl@ulyssis.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator link cables library
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
