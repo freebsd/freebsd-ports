@@ -1,0 +1,22 @@
+--- directory/c-sdk/ldap/libraries/libssldap/Makefile.in.orig	2009-09-10 17:36:39.000000000 +0200
++++ directory/c-sdk/ldap/libraries/libssldap/Makefile.in	2009-09-10 17:37:28.000000000 +0200
+@@ -42,7 +42,7 @@
+ NSPR_LIBS   = @NSPR_LIBS@
+ NSPR_CFLAGS = @NSPR_CFLAGS@
+ NSS_LIBS   = @NSS_LIBS@
+-NSS_CFLAGS = @NSS_CFLAGS@
++NSS_CFLAGS = @NSS_CFLAGS@ -I/usr/local/include/nss/nss
+ 
+ include $(MOD_DEPTH)/config/autoconf.mk
+ include $(topsrcdir)/build.mk
+@@ -180,6 +180,10 @@
+ CUSTOM_LIBS=1
+ endif
+ 
++ifeq ($(OS_ARCH), FreeBSD)
++CUSTOM_LIBS=1
++endif
++
+ ifndef CUSTOM_LIBS
+ EXTRA_LIBS = -L$(dist_libdir) -l$(LDAP_LIBNAME) -l$(PRLDAP_LIBNAME)
+ EXTRA_LIBS += $(NSSLINK) 

@@ -1,24 +1,24 @@
---- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ipf64.s.orig	Sun Jul 20 00:05:32 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ipf64.s	Sun Jul 20 00:06:37 2003
+--- mozilla/xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ipf64.s.orig	2009-08-26 18:47:07.000000000 +0200
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ipf64.s	2009-08-26 18:49:39.000000000 +0200
 @@ -8,6 +8,7 @@
  // Section has executable code
          .section .text, "ax","progbits"
- // procedure named 'XPTC_InvokeByIndex'
-+	.global	XPTC_InvokeByIndex
-         .proc   XPTC_InvokeByIndex
+ // procedure named 'NS_InvokeByIndex_P'
++	.global XPTC_InvokeByIndex
+         .proc   NS_InvokeByIndex_P
  // manual bundling
          .explicit
 @@ -24,7 +25,7 @@
  
  // XPTC_InvokeByIndex(nsISupports* that, PRUint32 methodIndex,
  //   PRUint32 paramCount, nsXPTCVariant* params);
--XPTC_InvokeByIndex::
-+XPTC_InvokeByIndex:
+-NS_InvokeByIndex_P::
++NS_InvokeByIndex_P:
          .prologue
          .save ar.pfs, r37
  // allocate 4 input args, 6 local args, and 8 output args
---- xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s.orig	Tue May 24 11:30:54 2005
-+++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s	Fri Sep 16 15:50:20 2005
+--- mozilla/xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s.orig	2009-08-26 18:47:07.000000000 +0200
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ipf64.s	2009-08-26 18:47:34.000000000 +0200
 @@ -6,6 +6,7 @@
  // Section has executable code
          .section .text, "ax","progbits"

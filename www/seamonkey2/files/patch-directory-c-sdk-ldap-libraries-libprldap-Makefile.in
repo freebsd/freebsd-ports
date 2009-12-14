@@ -1,0 +1,14 @@
+--- directory/c-sdk/ldap/libraries/libprldap/Makefile.in.orig	2008-09-11 16:38:35.000000000 +0200
++++ directory/c-sdk/ldap/libraries/libprldap/Makefile.in	2009-12-01 10:18:43.000000000 +0100
+@@ -147,6 +147,11 @@
+ CUSTOM_LIBS=1
+ endif
+ 
++ifeq ($(OS_ARCH), FreeBSD)
++EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME) -lpthread
++CUSTOM_LIBS=1
++endif
++
+ # no extra libs on HP-UX
+ ifeq ($(OS_ARCH), HP-UX)
+ CUSTOM_LIBS=1

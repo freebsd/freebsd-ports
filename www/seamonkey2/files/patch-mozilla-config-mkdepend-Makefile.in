@@ -1,5 +1,5 @@
---- config/mkdepend/Makefile.in.orig	Sun Apr 18 14:17:26 2004
-+++ config/mkdepend/Makefile.in	Sun Dec 12 09:42:11 2004
+--- mozilla/config/mkdepend/Makefile.in.orig	2009-09-11 19:30:23.000000000 +0200
++++ mozilla/config/mkdepend/Makefile.in	2009-09-11 19:29:53.000000000 +0200
 @@ -73,6 +73,7 @@
  include $(topsrcdir)/config/rules.mk
  

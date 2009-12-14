@@ -1,5 +1,5 @@
---- security/manager/ssl/src/nsNSSComponent.cpp.orig	Mon May 29 23:10:54 2006
-+++ security/manager/ssl/src/nsNSSComponent.cpp	Mon May 29 23:12:22 2006
+--- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Mon May 29 23:10:54 2006
++++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Mon May 29 23:12:22 2006
 @@ -110,6 +110,7 @@
  #include "nss.h"
  #include "pk11func.h"
