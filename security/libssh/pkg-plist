@@ -1,9 +1,9 @@
-lib/libssh.so
-lib/libssh.so.3
-lib/libssh.so.3.4.0
+include/libssh/callbacks.h
 include/libssh/libssh.h
-include/libssh/sftp.h
-include/libssh/crypto.h
 include/libssh/server.h
+include/libssh/sftp.h
 include/libssh/ssh2.h
+lib/libssh.so
+lib/libssh.so.4
+lib/libssh.so.4.0.0
 @dirrm include/libssh
