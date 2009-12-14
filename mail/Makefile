@@ -684,6 +684,8 @@
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
     SUBDIR += thunderbird-i18n
+    SUBDIR += thunderbird3
+    SUBDIR += thunderbird3-i18n
     SUBDIR += tkrat2
     SUBDIR += tlb
     SUBDIR += tmda
