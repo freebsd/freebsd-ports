@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	twitter
-PORTVERSION=	0.6.11
+PORTVERSION=	0.7.0
 CATEGORIES=	net rubygems
-MASTER_SITES=	RF
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= pgollucci
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
@@ -22,9 +23,5 @@ RUN_DEPENDS=	rubygem-oauth>=0.3.4:${PORTSDIR}/net/rubygem-oauth \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-BROKEN=		does not install, requires exact version of oauth
-DEPRECATED=	has been broken for 5 months
-EXPIRATION_DATE=2010-01-08
 
 .include <bsd.port.mk>
