@@ -1,13 +1,13 @@
---- spserver/Makefile.orig	2008-06-27 23:18:18.000000000 +0800
-+++ spserver/Makefile	2008-09-30 10:39:35.000000000 +0800
-@@ -11,8 +11,8 @@
+--- spserver/Makefile.orig	2009-12-13 10:02:38.000000000 +0800
++++ spserver/Makefile	2009-12-14 14:43:58.000000000 +0800
+@@ -11,8 +11,8 @@ LINKER = $(CC)
  LINT = lint -c
  RM = /bin/rm -f
  
 -LIBEVENT_INCL = -I$(HOME)/libevent/
--LIBEVENT_LIB  = -L$(HOME)/libevent -levent
-+LIBEVENT_INCL = -I/usr/local/include
-+LIBEVENT_LIB  = -L. -L/usr/local/lib -levent
+-LIBEVENT_LIB  = -L$(HOME)/libevent -levent -lrt
++LIBEVENT_INCL = -I%PREFIX%/include
++LIBEVENT_LIB  = -L%PREFIX%/lib -levent
  
  CFLAGS  += $(LIBEVENT_INCL)
  LDFLAGS += $(LIBEVENT_LIB)
