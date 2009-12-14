@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.2.16
+PORTVERSION=	1.2.18
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/1.2/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -29,11 +29,9 @@ SUB_LIST+=	NAME=slon
 
 OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
 
-CONFLICTS?=     slony1v2-2*
+CONFLICTS?=	slony1v2-2*
 
 .include <bsd.port.pre.mk>
-
-IGNORE_WITH_PGSQL=	84
 
 .if defined(WITH_PERLTOOLS)
 USE_PERL5=	yes
@@ -55,19 +53,6 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
   --with-pglibdir=${LOCALBASE}/lib \
   --with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
   --with-pgsharedir=${LOCALBASE}/share/postgresql
-
-DEFAULT_PGSQL_VER?=80
-
-# Setting/finding PostgreSQL version we want.
-.if exists(${LOCALBASE}/bin/postmaster)
-PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
-		${SED} -En 's/.*PostgreSQL[^0-9]*([0-9]+)\.([0-9]+)\..*/\1\2/p'
-.elif exists(${LOCALBASE}/bin/pg_config)
-PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
-		${SED} -En 's/PostgreSQL[^0-9]*([0-9]*)\.([0-9]+)\..*/\1\2/p'
-.else
-PGSQL_VER=	${DEFAULT_PGSQL_VER}
-.endif
 
 .if ! defined(NO_INSTALL_MANPAGES)
 MAN1=	slon.1 slonik.1
