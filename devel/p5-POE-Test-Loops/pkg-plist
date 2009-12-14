@@ -9,6 +9,7 @@ bin/poe-gen-tests
 %%SITE_PERL%%/POE/Test/Loops/k_alarms.pm
 %%SITE_PERL%%/POE/Test/Loops/k_aliases.pm
 %%SITE_PERL%%/POE/Test/Loops/k_detach.pm
+%%SITE_PERL%%/POE/Test/Loops/k_run_returns.pm
 %%SITE_PERL%%/POE/Test/Loops/k_selects.pm
 %%SITE_PERL%%/POE/Test/Loops/k_signals.pm
 %%SITE_PERL%%/POE/Test/Loops/k_signals_rerun.pm
