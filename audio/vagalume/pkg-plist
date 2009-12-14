@@ -6,15 +6,16 @@ share/applications/vagalume.desktop
 share/icons/hicolor/48x48/apps/vagalume.png
 share/pixmaps/vagalume.xpm
 %%DATADIR%%/cover.png
-%%DATADIR%%/icons/hicolor/scalable/actions/accessories-text-editor.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/document-save.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/emblem-favorite.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/list-add.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/mail-message-new.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/media-playback-start.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/media-playback-stop.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/media-skip-forward.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/process-stop.svg
+%%DATADIR%%/servers.xml
+%%DATADIR%%/icons/hicolor/scalable/apps/accessories-text-editor.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/document-save.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/emblem-favorite.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/list-add.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/mail-message-new.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/media-playback-start.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/media-playback-stop.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/media-skip-forward.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/process-stop.svg
 %%NLS%%share/locale/de/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/es/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/vagalume.mo
@@ -22,9 +23,10 @@ share/pixmaps/vagalume.xpm
 %%NLS%%share/locale/gl/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/it/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/vagalume.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/vagalume.mo
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
+@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
 @dirrm %%DATADIR%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
@@ -47,6 +49,8 @@ share/pixmaps/vagalume.xpm
 %%NLS%%@dirrmtry share/locale/it
 %%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/lv
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
 %%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pt
 %%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
