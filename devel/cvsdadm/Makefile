@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
     		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	serge.gagnon.1@ulaval.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for CVSd pserver user administration
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

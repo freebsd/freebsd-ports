@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 DISTNAME=	Ftptool${PORTVERSION}
 
-MAINTAINER=	serge.gagnon.1@ulaval.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic ftp shell based on xview
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview

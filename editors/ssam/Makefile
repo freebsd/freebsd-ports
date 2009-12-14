@@ -10,7 +10,7 @@ PORTVERSION=	1.9
 CATEGORIES=	editors plan9
 MASTER_SITES=	http://www.westley.demon.co.uk/src/
 
-MAINTAINER=	serge.gagnon.1@ulaval.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stream editor that uses the UTF routines with the sam(1) command set
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ure.h:${PORTSDIR}/misc/libutf

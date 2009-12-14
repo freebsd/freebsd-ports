@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 		${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	serge.gagnon.1@ulaval.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterened after plan9
 
 USE_XORG=	x11

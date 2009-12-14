@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	editors plan9
 MASTER_SITES=	SF/${PORTNAME}/baseline/${PORTVERSION}
 
-MAINTAINER=	serge.gagnon.1@ulaval.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the Plan9 editor `acme'
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc \
