@@ -1,0 +1,27 @@
+diff -urN configure.in configure.in
+--- configure.in	2007-10-05 22:42:17.000000000 +0200
++++ configure.in	2007-10-14 20:19:40.000000000 +0200
+@@ -155,14 +155,16 @@
+ AC_CHECK_HEADER(cups/cups.h,,AC_MSG_ERROR(CUPS headers are not installed!))
+ 
+ dnl Check for FLTK...
+-AC_PATH_PROG(FLTKCONFIG,fltk-config)
++AC_ARG_WITH([fltk], AS_HELP_STRING([--with-fltk], [Build with fltk library GUI (default: disabled)]))
+ 
+-if test "x$FLTKCONFIG" = x; then
+-#	AC_MSG_ERROR([Sorry, the CUPS DDK requires FLTK 1.1.x.])
+-	GUILIBS=""
+-else
+-	CXXFLAGS="`$FLTKCONFIG --cflags` $CXXFLAGS"
+-	GUILIBS="`$FLTKCONFIG --use-images --ldstaticflags`"
++if test "x$with_fltk" == "xyes"; then
++	AC_PATH_PROG(FLTKCONFIG,fltk-config)
++	if test "x$FLTKCONFIG" = x; then
++		AC_MSG_ERROR([Sorry, the CUPS DDK GUI requires FLTK 1.1.x.])
++	else
++		CXXFLAGS="`$FLTKCONFIG --cflags` $CXXFLAGS"
++		GUILIBS="`$FLTKCONFIG --use-images --ldstaticflags`"
++	fi
+ fi
+ 
+ AC_SUBST(FLTKCONFIG)
