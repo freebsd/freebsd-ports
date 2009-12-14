@@ -1,33 +1,24 @@
---- configure.orig	2008-10-30 23:05:30.000000000 +0100
-+++ configure	2009-07-22 15:14:23.000000000 +0200
-@@ -1047,7 +1047,7 @@
- 
- MOZJPEG=62
- MOZPNG=10217
--MOZZLIB=1.2.3
-+MOZZLIB=1.2.2
- NSPR_VERSION=4
- NSS_VERSION=3
- 
-@@ -5408,7 +5408,7 @@
+--- configure.orig	2009-10-08 04:03:59.000000000 +0200
++++ configure	2009-10-10 19:56:41.000000000 +0200
+@@ -5794,7 +5794,7 @@
      CPU_ARCH=sparc
      ;;
  
--x86_64 | sparc | ppc | ia64)
-+amd64 | x86_64 | sparc | ppc | ia64)
+-x86_64 | ia64)
++amd64 | x86_64 | ia64)
      CPU_ARCH="$OS_TEST"
      ;;
  esac
-@@ -10442,7 +10442,7 @@
+@@ -10890,7 +10890,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 10448 "configure"
+ #line 10896 "configure"
  #include "confdefs.h"
-@@ -10473,7 +10473,7 @@
+@@ -10921,7 +10921,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -36,16 +27,16 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for libiconv in -liconv""... $ac_c" 1>&6
-@@ -10483,7 +10483,7 @@
+@@ -10931,7 +10931,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 10489 "configure"
+ #line 10937 "configure"
  #include "confdefs.h"
-@@ -10514,7 +10514,7 @@
+@@ -10962,7 +10962,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6

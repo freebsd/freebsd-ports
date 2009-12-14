@@ -1,5 +1,5 @@
---- embedding/base/nsEmbedAPI.cpp.orig	2007-10-09 20:00:30.000000000 -0400
-+++ embedding/base/nsEmbedAPI.cpp	2007-10-09 20:01:45.000000000 -0400
+--- mozilla/embedding/base/nsEmbedAPI.cpp.orig	2007-10-09 20:00:30.000000000 -0400
++++ mozilla/embedding/base/nsEmbedAPI.cpp	2007-10-09 20:01:45.000000000 -0400
 @@ -53,7 +53,12 @@ static PRBool             sRegistryIniti
  static PRUint32           sInitCounter = 0;
  
