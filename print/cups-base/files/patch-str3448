@@ -1,0 +1,16 @@
+diff -up cups-1.4.2/cups/dest.c.str3448 cups-1.4.2/cups/dest.c
+--- cups/dest.c.str3448	2009-08-28 23:54:34.000000000 +0100
++++ cups/dest.c	2009-12-10 18:15:50.910079549 +0000
+@@ -145,6 +145,12 @@ cupsAddDest(const char  *name,		/* I  - 
+ 
+     dest = cups_add_dest(name, instance, &num_dests, dests);
+ 
++   /*
++    * Find the base dest again now the array has been realloc'd.
++    */
++
++    parent = cupsGetDest(name, NULL, num_dests, *dests);
++
+     if (instance && parent && parent->num_options > 0)
+     {
+      /*
