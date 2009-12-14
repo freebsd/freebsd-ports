@@ -1470,6 +1470,7 @@
     SUBDIR += script4rss
     SUBDIR += seamonkey
     SUBDIR += seamonkey2
+    SUBDIR += seamonkey2-i18n
     SUBDIR += selenium
     SUBDIR += serendipity
     SUBDIR += serendipity-devel

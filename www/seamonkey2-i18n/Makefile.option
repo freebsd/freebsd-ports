@@ -1,0 +1,25 @@
+# New ports collection makefile.option for:    firefox3-i18n
+# Date created:         30 Nov 2008
+# Whom:                 Koji Yokota <yokota@res.otaru-uc.ac.jp>
+#
+# $FreeBSD$
+#
+
+OPTIONS=		LANG_BE "Byelorussian"          off \
+				LANG_CA "Catalan"               off \
+				LANG_CS "Czech"                 off \
+				LANG_NL "Dutch"                 off \
+				LANG_GL "Galician"              off \
+				LANG_KA "Georgian"              off \
+				LANG_DE "German"                on \
+				LANG_FR "French"                on \
+				LANG_HU "Hungarian"             off \
+				LANG_LT "Lithuanian"            off \
+				LANG_NB "Norwegian"             off \
+				LANG_PL "Polish"                off \
+				LANG_PT "Portuguese"            off \
+				LANG_RU "Russian"               on \
+				LANG_ES "Spanish"               on \
+				LANG_SA "Spanish (Argentina)"   off \
+				LANG_SK "Slovak"                off \
+				LANG_TR "Turkish"               off
