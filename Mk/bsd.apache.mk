@@ -121,7 +121,8 @@ CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-alias --disable-filter \
 			--disable-proxy --disable-proxy-connect \
 			--disable-proxy-ftp --disable-proxy-http \
-			--disable-proxy-ajp --disable-proxy-balancer
+			--disable-proxy-ajp --disable-proxy-balancer \
+			--disable-proxy-scgi
 .endif
 
 .if defined(OPTIONS) && !(make(make-options-list))
