@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Simutrans
+GenericName=Transportation Simulation Game
+Exec=simutrans
+Categories=Game;Simulation;
+StartupNotify=false

@@ -1,0 +1,13 @@
+bin/simutrans
+bin/simutrans-bin
+share/applications/simutrans.desktop
+@exec mkdir -p %D/%%DATADIR%%/text/be
+@exec mkdir -p %D/%%DATADIR%%/text/ca
+@exec mkdir -p %D/%%DATADIR%%/text/cn
+@exec mkdir -p %D/%%DATADIR%%/text/et
+@exec mkdir -p %D/%%DATADIR%%/text/fi
+@exec mkdir -p %D/%%DATADIR%%/text/hr
+@exec mkdir -p %D/%%DATADIR%%/text/id
+@exec mkdir -p %D/%%DATADIR%%/text/lt
+@exec mkdir -p %D/%%DATADIR%%/text/no
+@dirrmtry share/applications
