@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.06.36
+PORTVERSION=	1.06.38
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Xmlrpc-c%20Super%20Stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -40,21 +40,21 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-DNDEBUG
 .endif
 
-.if defined(WITHOUT_CURL)
-CONFIGURE_ARGS+=	--disable-curl-client
-.else
+.if defined(WITH_CURL)
 LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
-OPT_CURL=	yes
+CONFIGURE_ARGS+=	--enable-curl-client
+.else
+CONFIGURE_ARGS+=	--disable-curl-client
 .endif
 
 .if defined(WITH_LIBWWW)
 LIB_DEPENDS+=	wwwcore.1:${PORTSDIR}/www/libwww
-OPT_LIBWWW=	yes
+CONFIGURE_ARGS+=	--enable-libwww-client
 .else
 CONFIGURE_ARGS+=	--disable-libwww-client
 .endif
 
-.if !defined(OPT_LIBWWW) && !defined(OPT_CURL)
+.if defined(WITHOUT_LIBWWW) && defined(WITHOUT_CURL)
 PLIST_SUB+=	CLIENT="@comment "
 .else
 PLIST_SUB+=	CLIENT=""
