@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}-tcl
 
-MAINTAINER=	serge.gagnon.1@ulaval.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	F/Calc is a calculator for photographic formulas
 
 RUN_DEPENDS=	${LOCALBASE}/lib/tix8.1/Tix.tcl:${PORTSDIR}/x11-toolkits/tix

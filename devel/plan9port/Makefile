@@ -13,7 +13,7 @@ MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	serge.gagnon.1@ulaval.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of the bulk of the Plan9 software build environment to Unix
 
 USE_XORG=	x11 xt xi xaw
