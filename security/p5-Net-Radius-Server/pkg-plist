@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius/Server/.packlist
 %%SITE_PERL%%/Net/Radius/Server.pm
 %%SITE_PERL%%/Net/Radius/Server/Base.pm
+%%SITE_PERL%%/Net/Radius/Server/DBStore.pm
 %%SITE_PERL%%/Net/Radius/Server/Dump.pm
 %%SITE_PERL%%/Net/Radius/Server/Match.pm
 %%SITE_PERL%%/Net/Radius/Server/Match/LDAP.pm
@@ -14,7 +15,10 @@
 %%SITE_PERL%%/Net/Radius/Server/Set/Replace.pm
 %%SITE_PERL%%/Net/Radius/Server/Set/Simple.pm
 bin/nrsd
+bin/nrsdbtoyaml
 bin/pam-client
+bin/rad-bulk
+bin/rad-bulk-make
 bin/rad-client
 @dirrmtry %%SITE_PERL%%/Net/Radius/Server/Set
 @dirrmtry %%SITE_PERL%%/Net/Radius/Server/Match
