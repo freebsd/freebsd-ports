@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091214:
+  AFFECTS: users of net/grdc
+  AUTHOR: avl@FreeBSD.org
+
+  Grdc has been renamed to Remmina upstream. The port has also been renamed.
+  After installing remmina port you will need to download the grdc2remmina.sh
+  script and run it as in your normal users that have ~/.grdc. The script
+  only will create ~/.remmina directory and move grdc config files to the
+  new path; it does not affect on anything else.
+
+  $ fetch http://people.freebsd.org/~avl/script/grdc2remmina.sh
+  $ sh grdc2remmina.sh
+
 20091213
   AFFECTS: users of net-mgmt/zabbix, net-mgmt/zabbix-agent
   AUTHOR: Jim Riggs <ports@christianserving.org>
