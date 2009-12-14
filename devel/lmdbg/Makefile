@@ -6,16 +6,22 @@
 #
 
 PORTNAME=	lmdbg
-PORTVERSION=	0.9.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Lightweight malloc debugger
 
-HAS_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+BUILD_DEPENDS=	${LOCALBASE}/share/mk/_mkc.ver.mk:${PORTSDIR}/devel/mk-configure
+
+MAN1=		lmdbg-run.1 lmdbg-leaks.1 lmdbg-sysleaks.1 lmdbg-sym.1 lmdbg.1
+
+do-build:
+	bmake -C ${WRKSRC}
+
+do-install:
+	bmake -C ${WRKSRC} install-dirs install
 
 post-install:
 .if !defined(NOPORTDOCS)
