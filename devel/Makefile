@@ -882,6 +882,7 @@
     SUBDIR += mips-rtems-gcc
     SUBDIR += mips-rtems-gdb
     SUBDIR += mk
+    SUBDIR += mk-configure
     SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += ml-doc
