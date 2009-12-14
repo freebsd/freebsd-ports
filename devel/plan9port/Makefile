@@ -1,6 +1,6 @@
-# New ports collection makefile for:	plan9port
+# New ports collection makefile for:	Plan 9 from User Space
 # Date created:				Wed Mar 31 17:11:24 EST 2004
-# Whom:					Serge Gagnon serge.gagnon@b2b2c.ca
+# Whom:					Serge Gagnon <serge.gagnon@b2b2c.ca>
 #
 # $FreeBSD$
 #
@@ -13,8 +13,8 @@ MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Port of the bulk of the Plan9 software build environment to Unix
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Port of many Plan 9 programs to Unix-like operating systems
 
 USE_XORG=	x11 xt xi xaw
 USE_PERL5_BUILD=YES
