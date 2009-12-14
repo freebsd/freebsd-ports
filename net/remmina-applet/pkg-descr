@@ -1,10 +1,13 @@
-Grdc is a remote desktop client based on GTK+ and GNOME.
+Remmina is a remote desktop client written in GTK+, aiming to be useful for
+system administrators and travellers, who need to work with lots of remote
+computers in front of either large monitors or tiny netbooks. Remmina supports
+multiple network protocols in an integrated and consistant user interface.
 
-The Grdc GNOME applet:
+The Remmina GNOME applet:
 
- * A GNOME Desktop applet for easy-access of Grdc main features
+ * A GNOME Desktop applet for easy-access of Remmina main features
  * List all remote desktop files and make the connection easily
  * Support remote desktop files grouping feature
  * Automatic service discovery using Avahi
 
-WWW: http://grdc.sourceforge.net/
+WWW: http://remmina.sourceforge.net/

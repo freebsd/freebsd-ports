@@ -5,30 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	grdc
-PORTVERSION=	0.6.0
+PORTNAME=	remmina
+PORTVERSION=	0.7.0
 CATEGORIES=	net gnome
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-gnome/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/0.7/
 PKGNAMESUFFIX=	-applet
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
-COMMENT=	A GNOME Desktop applet for GTK+/GNOME remote desktop client
+COMMENT=	A GNOME Desktop applet for Remmina
 
-RUN_DEPENDS=	grdc:${PORTSDIR}/net/grdc
+RUN_DEPENDS=	remmina:${PORTSDIR}/net/remmina
+
+OPTIONS=	AVAHI	"Build with Avahi support"	off
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack glib20 gtk20 gnomepanel
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix glib20 gtk20 gnomepanel
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+PLIST_SUB+=	NLS=""
+.endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|"grdc"|"${LOCALBASE}/bin/grdc"|' \
-		${WRKSRC}/src/grdcapplet.c
+.if defined(WITH_AVAHI)
+LIB_DEPENDS+=	avahi-ui.0:${PORTSDIR}/net/avahi-gtk
+.else
+CONFIGURE_ARGS+=	--disable-avahi
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

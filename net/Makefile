@@ -194,7 +194,6 @@
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gq
-    SUBDIR += grdc-applet
     SUBDIR += grdesktop
     SUBDIR += grsync
     SUBDIR += gsambad
@@ -842,6 +841,7 @@
     SUBDIR += relay
     SUBDIR += relayd
     SUBDIR += remmina
+    SUBDIR += remmina-applet
     SUBDIR += remotedesk
     SUBDIR += repeater
     SUBDIR += rexx-sock
