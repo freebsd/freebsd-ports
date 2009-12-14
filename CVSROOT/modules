@@ -253,6 +253,8 @@ abcm2ps                         ports/print/abcm2ps
 abcmidi                         ports/audio/abcmidi
 abcselect                       ports/audio/abcselect
 abe                             ports/games/abe
+abgx360                         ports/sysutils/abgx360
+abgx360gui                      ports/sysutils/abgx360gui
 abi-compliance-checker          ports/devel/abi-compliance-checker
 abills                          ports/net/abills
 abinit                          ports/science/abinit
@@ -1631,6 +1633,7 @@ clig                            ports/devel/clig
 climm                           ports/net-im/climm
 clint                           ports/devel/clint
 clip                            ports/databases/clip
+clipgrab                        ports/multimedia/clipgrab
 clips                           ports/lang/clips
 clisp                           ports/lang/clisp
 clisp-hyperspec                 ports/devel/clisp-hyperspec
@@ -4929,6 +4932,7 @@ gtk-aluminumalloy-volcanic-theme  ports/x11-themes/gtk-aluminumalloy-volcanic-th
 gtk-ana-theme                   ports/x11-themes/gtk-ana-theme
 gtk-aquaextremesunken-theme     ports/x11-themes/gtk-aquaextremesunken-theme
 gtk-aqualightblue-theme         ports/x11-themes/gtk-aqualightblue-theme
+gtk-aurora-engine               ports/x11-themes/gtk-aurora-engine
 gtk-bluecurve-theme             ports/x11-themes/gtk-bluecurve-theme
 gtk-cleanice-engine             ports/x11-themes/gtk-cleanice-engine
 gtk-digital-cream-theme         ports/x11-themes/gtk-digital-cream-theme
@@ -8661,6 +8665,7 @@ medusa                          ports/security/medusa
 megacli                         ports/sysutils/megacli
 megapov                         ports/graphics/megapov
 megarc                          ports/sysutils/megarc
+mehdiaplayer                    ports/audio/mehdiaplayer
 meld                            ports/textproc/meld
 memcached                       ports/databases/memcached
 memcachedb                      ports/databases/memcachedb
@@ -11887,6 +11892,7 @@ p5-IO-Compress-Bzip2            ports/archivers/p5-IO-Compress-Bzip2
 p5-IO-Compress-Zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-IO-Digest                    ports/devel/p5-IO-Digest
 p5-IO-INET6                     ports/net/p5-IO-INET6
+p5-IO-Interactive               ports/devel/p5-IO-Interactive
 p5-IO-Interface                 ports/net/p5-IO-Interface
 p5-IO-KQueue                    ports/devel/p5-IO-KQueue
 p5-IO-Lambda                    ports/devel/p5-IO-Lambda
@@ -15569,6 +15575,7 @@ p5-io-compress-zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-io-csvheaderfile             ports/textproc/p5-IO-CSVHeaderFile
 p5-io-digest                    ports/devel/p5-IO-Digest
 p5-io-inet6                     ports/net/p5-IO-INET6
+p5-io-interactive               ports/devel/p5-IO-Interactive
 p5-io-interface                 ports/net/p5-IO-Interface
 p5-io-kqueue                    ports/devel/p5-IO-KQueue
 p5-io-lambda                    ports/devel/p5-IO-Lambda
@@ -19913,6 +19920,7 @@ py-ruledispatch                 ports/devel/py-ruledispatch
 py-rxp                          ports/textproc/py-rxp
 py-s3cmd                        ports/net/py-s3cmd
 py-samba                        ports/net/py-samba
+py-satchmo                      ports/www/py-satchmo
 py-scgi                         ports/www/py-scgi
 py-scientific                   ports/math/py-scientific
 py-sciparam                     ports/x11-toolkits/py-SciParam
@@ -19946,6 +19954,7 @@ py-snmp4-mibs                   ports/net-mgmt/py-snmp4-mibs
 py-soappy                       ports/net/py-soappy
 py-soappy-devel                 ports/net/py-soappy-devel
 py-soapy                        ports/net/py-soapy
+py-sorl-thumbnail               ports/graphics/py-sorl-thumbnail
 py-south                        ports/databases/py-south
 py-soya3d                       ports/graphics/py-soya3d
 py-spambayes                    ports/mail/py-spambayes
@@ -20269,6 +20278,7 @@ qinx                            ports/x11-themes/qinx
 qiv                             ports/graphics/qiv
 qix                             ports/games/qix
 qjackctl                        ports/audio/qjackctl
+qkismet                         ports/net-mgmt/qkismet
 qkmj                            ports/games/qkmj
 qlabels                         ports/deskutils/qlabels
 qlandkartegt                    ports/astro/qlandkartegt
@@ -22930,6 +22940,7 @@ trac                            ports/www/trac
 trac-accountmanager             ports/www/trac-accountmanager
 trac-addcomment                 ports/www/trac-addcomment
 trac-advancedticketworkflow     ports/www/trac-advancedticketworkflow
+trac-autocomplete               ports/www/trac-autocomplete
 trac-batchmodify                ports/www/trac-batchmodify
 trac-bzr                        ports/www/trac-bzr
 trac-calendar                   ports/www/trac-calendar
