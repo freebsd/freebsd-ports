@@ -10,7 +10,7 @@ PORTVERSION=	0.8.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Geoip implementation for rubygems
 
 RUN_DEPENDS=	geoiplookup:${PORTSDIR}/net/GeoIP
