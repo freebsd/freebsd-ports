@@ -12,6 +12,7 @@
     SUBDIR += bind94-geoip
     SUBDIR += bind95
     SUBDIR += bind96
+    SUBDIR += bind97
     SUBDIR += bindgraph
     SUBDIR += c-ares
     SUBDIR += checkdns

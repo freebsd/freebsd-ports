@@ -1,0 +1,20 @@
+Some of the new features of BIND 9.7.x are:
+
+	- Fully automatic signing of zones by "named"
+	- Simplified configuration of DNSSEC Lookaside Validation (DLV)
+	- Simplified configuration of Dynamic DNS, using the "ddns-confgen"
+	  command line tool or the "local" update-policy option
+	- New named option "attach-cache" that allows multiple views to
+	  share a single cache
+	- DNS rebinding attack prevention
+	- New default values for dnssec-keygen parameters
+	- Support for RFC 5011 automated trust anchor maintenance
+	  (see README.rfc5011 for additional details)
+	- Smart signing: simplified tools for zone signing and key
+	  maintenance
+	- Improved PKCS#11 support
+
+WWW: https://www.isc.org/software/bind
+
+- Doug Barton
+DougB@FreeBSD.org
