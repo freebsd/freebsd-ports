@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.0.3
-PORTREVISION=	4
+DISTVERSION=	1.0.4
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -70,6 +69,10 @@ USE_GNOME=	gnomehack gnometarget libxml2
 .if !defined(WITHOUT_SDL) && !defined(WITHOUT_X11)
 WANT_SDL=	yes
 .endif
+.if !defined(WITHOUT_QT4) && !defined(WITHOUT_X11)
+USE_QT_VER+=	4
+QT_COMPONENTS+=	gui corelib moc_build rcc_build uic_build
+.endif
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 
@@ -109,8 +112,6 @@ BROKEN=	Does not compile with perl ${PERL_VERSION}
 .endif
 
 .if !defined(WITHOUT_QT4) && !defined(WITHOUT_X11)
-USE_QT_VER+=	4
-QT_COMPONENTS+=	gui corelib moc_build rcc_build uic_build
 CONFIGURE_ARGS+=--enable-qt4
 .else
 CONFIGURE_ARGS+=--disable-qt4
