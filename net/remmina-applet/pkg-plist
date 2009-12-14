@@ -1,8 +1,14 @@
-bin/grdc-applet
-libdata/bonobo/servers/Grdc_Applet.server
-share/locale/el/LC_MESSAGES/grdc-gnome.mo
-share/locale/es/LC_MESSAGES/grdc-gnome.mo
-share/locale/pl/LC_MESSAGES/grdc-gnome.mo
-share/locale/zh_CN/LC_MESSAGES/grdc-gnome.mo
+bin/remmina-applet
+libdata/bonobo/servers/Remmina_Applet.server
+%%NLS%%share/locale/de/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/el/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/es/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/it/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina-gnome.mo
 @dirrmtry libdata/bonobo/servers
 @dirrmtry libdata/bonobo

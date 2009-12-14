@@ -1,8 +1,0 @@
-bin/grdc-applet
-libdata/bonobo/servers/Grdc_Applet.server
-share/locale/el/LC_MESSAGES/grdc-gnome.mo
-share/locale/es/LC_MESSAGES/grdc-gnome.mo
-share/locale/pl/LC_MESSAGES/grdc-gnome.mo
-share/locale/zh_CN/LC_MESSAGES/grdc-gnome.mo
-@dirrmtry libdata/bonobo/servers
-@dirrmtry libdata/bonobo
