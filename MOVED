@@ -4221,3 +4221,4 @@ editors/abiword-extras|editors/abiword|2009-12-08|This subport has been included
 editors/abiword-plugins|editors/abiword|2009-12-08|This subport has been included in the main port.
 www/jakarta-tomcat5||2009-12-10|Has expired: Old version, consider using www/tomcat55 or www/tomcat6 instead
 net-mgmt/zabbix|net-mgmt/zabbix-server|2009-12-13|port was split into three components
+net/grdc|net/remmina|2009-12-14|Project was renamed

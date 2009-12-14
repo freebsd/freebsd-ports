@@ -194,7 +194,6 @@
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gq
-    SUBDIR += grdc
     SUBDIR += grdc-applet
     SUBDIR += grdesktop
     SUBDIR += grsync
@@ -842,6 +841,7 @@
     SUBDIR += redir
     SUBDIR += relay
     SUBDIR += relayd
+    SUBDIR += remmina
     SUBDIR += remotedesk
     SUBDIR += repeater
     SUBDIR += rexx-sock
