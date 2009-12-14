@@ -2,7 +2,8 @@
 #
 
 # PROVIDE: quagga
-# REQUIRE: NETWORKING %%RCLDCONFIG%%
+# REQUIRE: netif routing 
+# KEYWORD: nojail
 
 #
 # Add the following line to /etc/rc.conf to enable quagga:
@@ -15,9 +16,8 @@
 #  zebra_flags="-dP 0"
 #  bgpd_flags="-dnrP 0" and so on
 # If you want to give the routing deamons a chance to catchup before
-# continueing, set quagga_delay to a certain amount of seconds.
-#  quagga_delay="30"
-#
+# continueing, set quagga_wait_for to a "default" or certain prefix.
+#  quagga_wait_for="default"
 #
 # If the quagga daemons require additional shared libraries to start,
 # use the following variable to run ldconfig(8) in advance:
@@ -29,8 +29,23 @@
 name="quagga"
 rcvar=`set_rcvar`
 
-
+start_postcmd=start_postcmd
 stop_postcmd=stop_postcmd
+
+start_postcmd()
+{
+	# Wait only when last daemon has started.
+	if [ "${quagga_daemons}" = "${quagga_daemons% ${name}}" ]; then
+		return;
+	fi
+        if [ ${quagga_wait_for} ]; then
+		echo Waiting for ${quagga_wait_for} route...
+		while true; do
+			/sbin/route -n get ${quagga_wait_for} >/dev/null 2>&1 && break;
+			sleep 1;
+		done
+	fi
+}
 
 stop_postcmd()
 {
@@ -64,7 +79,7 @@ load_rc_config $name
 : ${quagga_flags="-d"}
 : ${quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
 : ${quagga_extralibs_path=""}
-: ${quagga_delay="0"}
+: ${quagga_wait_for=""}
 
 quagga_cmd=$1
 
@@ -98,8 +113,3 @@ case "${quagga_cmd}" in
 	do_cmd "${quagga_cmd}"
 	;;
 esac
-
-if [ "${quagga_delay}" != "0" ]; then
-    echo "Sleeping ${quagga_delay} seconds to obtain dynamic routing information..."
-    sleep ${quagga_delay}
-fi
