@@ -1361,6 +1361,7 @@
     SUBDIR += py-routes
     SUBDIR += py-satchmo
     SUBDIR += py-scgi
+    SUBDIR += py-scrapy
     SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
     SUBDIR += py-textile
