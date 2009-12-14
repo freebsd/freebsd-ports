@@ -26,6 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
+		--disable-symtable \
 		--with-randomdev=/dev/random
 
 CONFLICTS=	bind9*-9.[3456].* bind9-sdb-* host-*
