@@ -1,6 +1,16 @@
---- sysdeps/freebsd/procmap.c.orig	2009-12-13 13:47:22.000000000 -0500
-+++ sysdeps/freebsd/procmap.c	2009-12-13 13:47:27.000000000 -0500
-@@ -111,18 +111,18 @@ _glibtop_sysdeps_freebsd_dev_inode (glib
+--- sysdeps/freebsd/procmap.c.orig	2009-12-13 18:53:02.827740000 -0500
++++ sysdeps/freebsd/procmap.c	2009-12-13 19:00:04.000000000 -0500
+@@ -85,7 +85,9 @@ _glibtop_sysdeps_freebsd_dev_inode (glib
+         char tagstr[12];
+         struct inode inode;
+         struct cdev_priv priv;
++#if __FreeBSD_version < 800039
+         struct cdev si;
++#endif
+ 
+         *inum = 0;
+         *dev = 0;
+@@ -111,18 +113,18 @@ _glibtop_sysdeps_freebsd_dev_inode (glib
                  return;
          }
  

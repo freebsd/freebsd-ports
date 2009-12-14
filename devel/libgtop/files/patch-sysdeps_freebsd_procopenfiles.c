@@ -1,28 +1,30 @@
---- sysdeps/freebsd/procopenfiles.c.orig	2008-08-18 11:23:36.000000000 -0400
-+++ sysdeps/freebsd/procopenfiles.c	2008-12-07 00:17:26.000000000 -0500
+--- sysdeps/freebsd/procopenfiles.c.orig	2009-12-13 18:53:02.827740000 -0500
++++ sysdeps/freebsd/procopenfiles.c	2009-12-13 18:54:55.000000000 -0500
 @@ -35,6 +35,9 @@
  #include <sys/user.h>
  #include <netinet/in.h>
  #include <arpa/inet.h>
-+#ifdef HAVE_KINFO_PROC
++#ifdef HAVE_KINFO_GETFILE
 +#include <libutil.h>
 +#endif
  #include <string.h>
  #include <stdlib.h>
  
-@@ -263,8 +266,12 @@ glibtop_get_proc_open_files_s (glibtop *
+@@ -263,9 +266,13 @@ glibtop_get_proc_open_files_s (glibtop *
  {
  #if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
  	struct kinfo_file *freep, *kif;
 +#ifndef HAVE_KINFO_GETFILE
  	int name[4];
  	size_t len;
+-	size_t i;
 +#else
 +	int cnt;
 +#endif
- 	size_t i;
++	ssize_t i;
  #else
  	char *output;
+ #endif
 @@ -274,6 +281,7 @@ glibtop_get_proc_open_files_s (glibtop *
  	memset(buf, 0, sizeof (glibtop_proc_open_files));
  
