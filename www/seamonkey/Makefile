@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
+CONFLICTS=	seamonkey-2*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GECKO=	gecko
