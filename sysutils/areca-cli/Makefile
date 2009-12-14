@@ -8,8 +8,8 @@
 PORTNAME=	areca-cli
 DISTVERSION=	${CLI_VER}.${CLI_REV}
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.unnet.nl/pub/areca/RaidCards/AP_Drivers/FreeBSD/CLI/ \
-		ftp://ftp.areca.com.tw/RaidCards/AP_Drivers/FreeBSD/CLI/
+MASTER_SITES=	ftp://ftp.areca.com.tw/RaidCards/AP_Drivers/FreeBSD/CLI/ \
+		CRITICAL
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	v${CLI_VER}_${CLI_REV}
 
@@ -23,8 +23,8 @@ PERIODICSCRIPT=	407.status-areca-raid
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-CLI_VER=	1.82
-CLI_REV=	81103
+CLI_VER=	1.83
+CLI_REV=	091103
 
 SUB_FILES+=	${PERIODICSCRIPT}
 
