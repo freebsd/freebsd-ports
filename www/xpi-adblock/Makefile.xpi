@@ -85,7 +85,7 @@ USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 XPI_DISTNAME?=	${PORTNAME}
-XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock* *sunbird*
+XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock* *sunbird* *seamonkey*
 
 XPI_APPS_ALL=	firefox firefox3 firefox35 linux-firefox linux-firefox-devel \
 		flock linux-flock thunderbird thunderbird3 linux-thunderbird \
