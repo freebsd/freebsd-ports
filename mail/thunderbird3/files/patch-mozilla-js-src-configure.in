@@ -1,0 +1,13 @@
+--- mozilla/js/src/configure.in.orig	2009-09-17 11:09:10.000000000 +0200
++++ mozilla/js/src/configure.in	2009-09-17 11:09:33.000000000 +0200
+@@ -2467,10 +2467,6 @@
+     ENABLE_JIT=1
+     NANOJIT_ARCH=ARM
+     ;;
+-sparc*-*)
+-    ENABLE_JIT=1
+-    NANOJIT_ARCH=Sparc
+-    ;;
+ esac
+ 
+ MOZ_ARG_DISABLE_BOOL(jit,
