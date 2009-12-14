@@ -1,6 +1,6 @@
---- common-src/Makefile.in.orig	2009-01-22 22:51:24.000000000 +0900
-+++ common-src/Makefile.in	2009-01-27 07:25:59.000000000 +0900
-@@ -1074,6 +1074,7 @@
+--- common-src/Makefile.in.orig	2009-11-06 05:11:37.000000000 +0900
++++ common-src/Makefile.in	2009-12-14 10:29:52.479439079 +0900
+@@ -1091,6 +1091,7 @@
  
  sbin_SCRIPTS_PERL = \
  	    $(sbin_CHECK_PERL)
@@ -8,7 +8,7 @@
  
  amlibexec_CHECK_PERL = 
  amlibexec_SCRIPTS_PERL = \
-@@ -1084,6 +1085,7 @@
+@@ -1101,6 +1102,7 @@
  	    amaespipe \
  	    amcrypt-ossl \
  	    amcrypt-ossl-asym
@@ -16,28 +16,34 @@
  
  amlibexec_SCRIPTS_SHELL = 
  SCRIPTS_INCLUDE = \
-@@ -1137,15 +1139,15 @@
+@@ -1155,18 +1157,18 @@
  versuff.c: $(top_builddir)/config.status $(srcdir)/versuff.c.in
  	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
  install-amlibLTLIBRARIES: $(amlib_LTLIBRARIES)
 -	@$(NORMAL_INSTALL)
 -	test -z "$(amlibdir)" || $(MKDIR_P) "$(DESTDIR)$(amlibdir)"
--	@list='$(amlib_LTLIBRARIES)'; for p in $$list; do \
+-	@list='$(amlib_LTLIBRARIES)'; test -n "$(amlibdir)" || list=; \
+-	list2=; for p in $$list; do \
 -	  if test -f $$p; then \
--	    f=$(am__strip_dir) \
--	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(amlibdir)/$$f'"; \
--	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(amlibdir)/$$f"; \
+-	    list2="$$list2 $$p"; \
 -	  else :; fi; \
--	done
+-	done; \
+-	test -z "$$list2" || { \
+-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(amlibdir)'"; \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(amlibdir)"; \
+-	}
 +@WANT_CLIENT_TRUE@	@$(NORMAL_INSTALL)
 +@WANT_CLIENT_TRUE@	test -z "$(amlibdir)" || $(MKDIR_P) "$(DESTDIR)$(amlibdir)"
-+@WANT_CLIENT_TRUE@	@list='$(amlib_LTLIBRARIES)'; for p in $$list; do \
++@WANT_CLIENT_TRUE@	@list='$(amlib_LTLIBRARIES)'; test -n "$(amlibdir)" || list=; \
++@WANT_CLIENT_TRUE@	list2=; for p in $$list; do \
 +@WANT_CLIENT_TRUE@	  if test -f $$p; then \
-+@WANT_CLIENT_TRUE@	    f=$(am__strip_dir) \
-+@WANT_CLIENT_TRUE@	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(amlibdir)/$$f'"; \
-+@WANT_CLIENT_TRUE@	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(amlibdir)/$$f"; \
++@WANT_CLIENT_TRUE@	    list2="$$list2 $$p"; \
 +@WANT_CLIENT_TRUE@	  else :; fi; \
-+@WANT_CLIENT_TRUE@	done
++@WANT_CLIENT_TRUE@	done; \
++@WANT_CLIENT_TRUE@	test -z "$$list2" || { \
++@WANT_CLIENT_TRUE@	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(amlibdir)'"; \
++@WANT_CLIENT_TRUE@	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(amlibdir)"; \
++@WANT_CLIENT_TRUE@	}
  
  uninstall-amlibLTLIBRARIES:
  	@$(NORMAL_UNINSTALL)
