@@ -3,10 +3,9 @@ bin/pip
 %%PYTHON_SITELIBDIR%%/pip.py
 %%PYTHON_SITELIBDIR%%/pip.pyc
 %%PYTHON_SITELIBDIR%%/pip.pyo
-%%PORTDOCS%%%%DOCSDIR%%/genindex.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/news.html
-%%PORTDOCS%%%%DOCSDIR%%/requirement-format.html
-%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/configuration.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/news.txt
+%%PORTDOCS%%%%DOCSDIR%%/requirement-format.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
