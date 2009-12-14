@@ -601,7 +601,6 @@
     SUBDIR += pecl-ssh2
     SUBDIR += pecl-tcpwrap
     SUBDIR += pft
-    SUBDIR += pfw
     SUBDIR += pgp
     SUBDIR += pgp6
     SUBDIR += pgpdump
