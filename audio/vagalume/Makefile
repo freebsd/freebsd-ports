@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	vagalume
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
-		http://vagalume.igalia.com/files/source/
+MASTER_SITES=	http://vagalume.igalia.com/files/source/ \
+		${MASTER_SITE_DEBIAN_POOL}
 MASTER_SITE_SUBDIR=	pool/main/v/vagalume/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
@@ -20,12 +19,12 @@ COMMENT=	A GTK+-based client for the Last.fm online radio
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		curl.5:${PORTSDIR}/ftp/curl
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:22 autoconf:262
+USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gtk20
-USE_GSTREAMER=	good mad
+USE_GSTREAMER=	good mad gconf
 INSTALLS_ICONS=	yes
 
 MAN1=		vagalume.1
