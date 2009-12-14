@@ -7,43 +7,45 @@
 
 PORTNAME=	kiki
 PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Kiki the nanobot is a 3-D puzzle game
 
-USE_PYTHON=	2.3
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+
+USE_PYTHON=	2.3+
 USE_GMAKE=	yes
-USE_GL=		glut
+USE_GL=		gl glu glut
 USE_SDL=	sdl mixer image
 USE_DOS2UNIX=	kodilib/linux/Makefile src/main/KikiController.cpp linux/Makefile kodilib/src/types/KVector.h src/main/KikiPythonWidget.h
+MAKE_ENV=	PYTHON_VER=${PYTHON_VERSION:C/^python//}
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/kiki
 
+DESKTOP_ENTRIES="kiki the nanobot" \
+		"3-D puzzle game" \
+		"" \
+		"kiki" \
+		"Game;LogicGame;" \
+		false
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|.*|CXXFLAGS+=$$(KODI_INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`|' ${WRKSRC}/kodilib/linux/Makefile
-	@${REINPLACE_CMD} -e '/^X11_INCLUDES/ s|/.*/|${LOCALBASE}/include|' ${WRKSRC}/linux/Makefile
-	@${REINPLACE_CMD} -e '/PYTHON/ s|/usr|${LOCALBASE}|' ${WRKSRC}/linux/Makefile
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/linux/Makefile
-	@${REINPLACE_CMD} -e 's|CXXFLAGS =|CXXFLAGS +=|' ${WRKSRC}/linux/Makefile
-	@${REINPLACE_CMD} -e 's|PYTHON_VERSION|PYTHON_VER|' ${WRKSRC}/linux/Makefile
-	@${REINPLACE_CMD} -e '/^GLLIBS/ s|$$| -L${LOCALBASE}/lib|' ${WRKSRC}/linux/Makefile
 	@${REINPLACE_CMD} -e 's|getenv("KIKI_HOME")|"${DATADIR}"|' ${WRKSRC}/src/main/KikiController.cpp
 
 do-build:
-	@cd ${WRKSRC}/kodilib/linux && ${SETENV} ${MAKE_ENV} ${GMAKE}
-	@cd ${WRKSRC}/linux && ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC}/SWIG && swig -c++ -python -globals kiki -o KikiPy_wrap.cpp KikiPy.i
+	cd ${WRKSRC}/kodilib/linux && ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS}
+	cd ${WRKSRC}/linux && ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/kiki ${PREFIX}/bin
-.for d in py sound
-	@cd ${WRKSRC}/${d} && \
-		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/${d}/{} \; ;\
-		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/${d}/{} \;
-.endfor
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "py sound" ${DATADIR}/
 
 .include <bsd.port.mk>
