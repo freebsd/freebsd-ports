@@ -57,8 +57,9 @@
 # Gecko 1.8 xpi engine tries to detect various compatibility issues all by itself.
 # Thus, xpi's are installed into ${LOCALBASE}/lib/xpi/${XPI_ID} by default and
 # links are made to all apps which have the engine (firefox, thunderbird, sunbird
-# and flock at the moment). relink and relink-all targets can be invoked to refarm
-# the links of a single extensions or all installed extensions accordingly.
+# thunderbird3, seamonkey and flock at the moment). relink and relink-all targets
+# can be invoked to refarm the links of a single extensions or all installed
+# extensions accordingly.
 #
 # In case an xpi does not have chrome.manifest, it should be generated manually by
 # a maintainer and placed in files, where it will be noticed. 
@@ -84,15 +85,12 @@ USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 XPI_DISTNAME?=	${PORTNAME}
-XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock* *sunbird* \
-					*netscape-navigator* *netscape-messenger*
-# *nvu*
-XPI_APPS_ALL=	firefox firefox-devel firefox3 firefox35\
-		linux-firefox linux-firefox-devel flock linux-flock \
-		thunderbird linux-thunderbird \
-		linux-netscape-navigator linux-netscape-messenger \
-		sunbird linux-sunbird
-# nvu linux-nvu kompozer linux-kompozer
+XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock* *sunbird*
+
+XPI_APPS_ALL=	firefox firefox3 firefox35 linux-firefox linux-firefox-devel \
+		flock linux-flock thunderbird thunderbird3 linux-thunderbird \
+		seamonkey sunbird linux-sunbird
+# kompozer linux-kompozer
 # Other apps: mango
 
 # === Let's process WITH_XPI into WITH_XPI_APPS
