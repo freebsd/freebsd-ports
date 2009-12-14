@@ -57,4 +57,3 @@ share/icons/hicolor/scalable/apps/remmina.svg
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
