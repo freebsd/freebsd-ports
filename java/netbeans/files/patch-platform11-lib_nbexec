@@ -1,5 +1,5 @@
---- platform10/lib/nbexec.orig	2009-07-02 21:02:40.000000000 +0200
-+++ platform10/lib/nbexec	2009-07-02 21:06:25.000000000 +0200
+--- platform11/lib/nbexec.orig	2009-12-14 09:28:56.000000000 +0100
++++ platform11/lib/nbexec	2009-12-14 09:36:27.000000000 +0100
 @@ -150,15 +150,15 @@
          Darwin*)
          jdkhome="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home"
@@ -21,10 +21,10 @@
                      elif [ -f "/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/bin/java" ] ; then
 @@ -191,7 +191,7 @@
  # if heap dump on OOME is supported enable it
- if "${jdkhome}/bin/java" -XX:+HeapDumpOnOutOfMemoryError > /dev/null ; then
+ if "${jdkhome}/bin/java" -XX:+HeapDumpOnOutOfMemoryError > /dev/null 2>&1 ; then
     jargs="$jargs -XX:+HeapDumpOnOutOfMemoryError"
--   if ! echo $jargs | grep -- "-XX:HeapDumpPath=" > /dev/null ; then
-+   if ! echo $jargs | %%GREP%% -- "-XX:HeapDumpPath=" > /dev/null ; then
+-   if echo $jargs | grep -v -- "-XX:HeapDumpPath=" > /dev/null ; then
++   if echo $jargs | %%GREP%% -v -- "-XX:HeapDumpPath=" > /dev/null ; then
        jargs="$jargs -XX:HeapDumpPath=\"${userdir}/var/log/heapdump.hprof\""
     fi
  fi
@@ -37,7 +37,7 @@
                      if [ ! -z "$cp" ] ; then cp="$cp:" ; fi
                      cp="$cp$x"
                      if [ ! -z "$paths" ] ; then paths="$paths:" ; fi
-@@ -352,7 +352,7 @@
+@@ -351,7 +351,7 @@
  }
  
  detect_gnome_proxy () {
@@ -46,7 +46,16 @@
      if [ -x  $gconftool ] ; then
          proxy_mode=`$gconftool --get /system/proxy/mode 2>/dev/null`
          if [ "$proxy_mode" = "manual" ] ; then
-@@ -384,18 +384,18 @@
+@@ -360,7 +360,7 @@
+             http_proxy_tmp=$http_proxy_host:$http_proxy_port
+             http_non_proxy_hosts=`$gconftool --get /system/http_proxy/ignore_hosts 2>/dev/null`
+             if [ $? ] ; then
+-                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/\]//'`
++                http_non_proxy_hosts=`echo $http_non_proxy_hosts | %%SED%% 's/\]//'`
+             fi
+             socks_proxy_host=`$gconftool --get /system/proxy/socks_host 2>/dev/null`
+             socks_proxy_port=`$gconftool --get /system/proxy/socks_port 2>/dev/null`
+@@ -383,18 +383,18 @@
  detect_kde_proxy () {
      kioslaverc="${HOME}/.kde/share/config/kioslaverc"
      if [ -f $kioslaverc ] ; then
@@ -55,21 +64,23 @@
 +        if %%GREP%% -q 'ProxyType=1' "$kioslaverc" ; then
 +            http_proxy_tmp=`%%GREP%% 'httpProxy=http://' "$kioslaverc"`
              if [ $? ] ; then
-                 http_proxy_tmp=`echo $http_proxy_tmp | /bin/sed 's/httpProxy=http:\/\///'`
+-                http_proxy_tmp=`echo $http_proxy_tmp | /bin/sed 's/httpProxy=http:\/\///'`
++                http_proxy_tmp=`echo $http_proxy_tmp | %%SED%% 's/httpProxy=http:\/\///'`
                  return 0
              fi
 -            http_non_proxy_hosts=`/bin/grep 'NoProxyFor=' "$kioslaverc"`
 +            http_non_proxy_hosts=`%%GREP%% 'NoProxyFor=' "$kioslaverc"`
              if [ $? ] ; then
-                 http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/NoProxyFor=//'`
+-                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/NoProxyFor=//'`
++                http_non_proxy_hosts=`echo $http_non_proxy_hosts | %%SED%% 's/NoProxyFor=//'`
              fi
          else
 -            if /bin/grep -q 'ProxyType=0' "$kioslaverc" ; then
-+            if %%GREP%% -q 'ProxyType=0' "$kioslaverc" ; then
++            if %%GREP%%-q 'ProxyType=0' "$kioslaverc" ; then
                  detect_system_proxy
                  if [ -z "$http_proxy_tmp" ]; then
                      http_proxy_tmp="DIRECT"
-@@ -419,14 +419,14 @@
+@@ -418,14 +418,14 @@
  close
  EOF
  
@@ -84,7 +95,7 @@
 -	http_proxy_port=`/usr/bin/grep HTTPPort ${scutil_out} | /usr/bin/awk '{print $3} '`
 +    if %%GREP%% -q "HTTPEnable *: *1" ${scutil_out} ; then
 +	http_proxy_host=`%%GREP%% HTTPProxy ${scutil_out} | %%AWK%% '{print $3}'`
-+	http_proxy_port=`%%GREP%% HTTPPort ${scutil_out} | %%AWK%% '{print $4} '`
++	http_proxy_port=`%%GREP%% HTTPPort ${scutil_out} | %%AWK%% '{print $3} '`
          http_proxy_tmp=$http_proxy_host:$http_proxy_port
          rm ${scutil_out}
          return 0
