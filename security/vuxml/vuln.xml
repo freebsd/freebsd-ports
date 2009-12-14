@@ -767,7 +767,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.0</lt></range>
       </package>
     </affects>
     <description>
@@ -828,6 +828,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-10-27</discovery>
       <entry>2009-10-28</entry>
+      <modified>2009-12-14</modified>
     </dates>
   </vuln>
 
