@@ -11,14 +11,15 @@ lib/midori/libpage-holder.so
 lib/midori/libshortcuts.so
 lib/midori/libstatusbar-features.so
 lib/midori/libtab-panel.so
+lib/midori/libtab-switcher.so
 lib/midori/libtoolbar-editor.so
+lib/midori/libweb-cache.so
 %%NLS%%share/applications/midori.desktop
 %%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/EXPAT
 %%DOCSDIR%%/README
-%%DOCSDIR%%/TRANSLATE
 share/icons/hicolor/16x16/apps/midori.png
 share/icons/hicolor/16x16/categories/extension.png
 share/icons/hicolor/16x16/status/news-feed.png
@@ -53,6 +54,7 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%NLS%%share/locale/ja/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/no/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/midori.mo
@@ -66,8 +68,8 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%NLS%%share/locale/uk/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/midori.mo
-%%DATADIR%%/autosuggestcontrol.css
-%%DATADIR%%/autosuggestcontrol.js
+%%DATADIR%%/res/autosuggestcontrol.css
+%%DATADIR%%/res/autosuggestcontrol.js
 %%DATADIR%%/res/error.html
 %%DATADIR%%/res/logo-shade.png
 %%DATADIR%%/res/mootools.js
@@ -79,8 +81,10 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%NLS%%@dirrmtry share/locale/sr@latin
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrm lib/midori
-@dirrmtry share/applications
 @dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrm lib/midori
 @dirrm etc/xdg/midori
 @dirrmtry etc/xdg
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
