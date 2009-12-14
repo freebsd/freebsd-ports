@@ -1,5 +1,5 @@
---- lib/mc-wrapper.csh.in.orig	Wed Nov  6 00:46:12 2002
-+++ lib/mc-wrapper.csh.in	Tue Jun 15 03:16:29 2004
+--- contrib/mc-wrapper.csh.in.orig	Wed Nov  6 00:46:12 2002
++++ contrib/mc-wrapper.csh.in	Tue Jun 15 03:16:29 2004
 @@ -14,5 +14,5 @@
  	unsetenv MC_PWD
  endif
@@ -7,8 +7,8 @@
 -rm -f "$MC_PWD_FILE"
 +/bin/rm -f "$MC_PWD_FILE"
  unsetenv MC_PWD_FILE
---- lib/mc-wrapper.sh.in.orig	Wed Nov  6 00:46:12 2002
-+++ lib/mc-wrapper.sh.in	Tue Jun 15 03:16:29 2004
+--- contrib/mc-wrapper.sh.in.orig	Wed Nov  6 00:46:12 2002
++++ contrib/mc-wrapper.sh.in	Tue Jun 15 03:16:29 2004
 @@ -9,5 +9,5 @@
  	unset MC_PWD
  fi
