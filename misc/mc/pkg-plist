@@ -2,8 +2,27 @@ bin/mc
 %%EDITOR%%bin/mcedit
 bin/mcmfmt
 bin/mcview
-bin/midc
+%%EDITOR%%etc/mc/Syntax
+etc/mc/cedit.menu
+%%EDITOR%%etc/mc/edit.indent.rc
+%%EDITOR%%etc/mc/edit.spell.rc
+etc/mc/extfs/extfs.ini
+etc/mc/extfs/sfs.ini
+etc/mc/filehighlight.ini
+%%CHARSETS%%etc/mc/mc.charsets
+etc/mc/mc.ext
+etc/mc/mc.keymap
+etc/mc/mc.keymap.default
+etc/mc/mc.keymap.emacs
+etc/mc/mc.lib
+etc/mc/mc.menu
+etc/mc/mc.menu.sr
+libexec/mc/mc-wrapper.csh
+libexec/mc/mc-wrapper.sh
+libexec/mc/mc.csh
+libexec/mc/mc.sh
 %%NLS%%share/locale/az/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/be-tarask/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/be/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/mc.mo
@@ -22,8 +41,8 @@ bin/midc
 %%NLS%%share/locale/lt/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/mn/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/mc.mo
-%%NLS%%share/locale/no/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mc.mo
@@ -40,13 +59,6 @@ bin/midc
 %%NLS%%share/locale/wa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mc.mo
-%%DATADIR%%/bin/mc-wrapper.csh
-%%DATADIR%%/bin/mc-wrapper.sh
-%%DATADIR%%/bin/mc.csh
-%%DATADIR%%/bin/mc.sh
-%%DATADIR%%/cedit.menu
-%%DATADIR%%/edit.indent.rc
-%%DATADIR%%/edit.spell.rc
 %%DATADIR%%/extfs/README
 %%DATADIR%%/extfs/a
 %%DATADIR%%/extfs/apt
@@ -56,7 +68,6 @@ bin/midc
 %%DATADIR%%/extfs/deba
 %%DATADIR%%/extfs/debd
 %%DATADIR%%/extfs/dpkg
-%%DATADIR%%/extfs/extfs.ini
 %%DATADIR%%/extfs/hp48
 %%DATADIR%%/extfs/iso9660
 %%DATADIR%%/extfs/lslR
@@ -64,19 +75,21 @@ bin/midc
 %%DATADIR%%/extfs/patchfs
 %%DATADIR%%/extfs/rpm
 %%DATADIR%%/extfs/rpms
-%%DATADIR%%/extfs/sfs.ini
+%%DATADIR%%/extfs/srpm
 %%DATADIR%%/extfs/trpm
 %%DATADIR%%/extfs/u7z
+%%DATADIR%%/extfs/uace
 %%DATADIR%%/extfs/ualz
 %%DATADIR%%/extfs/uar
+%%DATADIR%%/extfs/uarc
 %%DATADIR%%/extfs/uarj
+%%DATADIR%%/extfs/uc1541
+%%DATADIR%%/extfs/ucab
 %%DATADIR%%/extfs/uha
 %%DATADIR%%/extfs/ulha
 %%DATADIR%%/extfs/urar
 %%DATADIR%%/extfs/uzip
 %%DATADIR%%/extfs/uzoo
-%%CHARSETS%%%%DATADIR%%/mc.charsets
-%%DATADIR%%/mc.ext
 %%DATADIR%%/mc.hint
 %%NLS%%%%DATADIR%%/mc.hint.cs
 %%NLS%%%%DATADIR%%/mc.hint.es
@@ -95,13 +108,15 @@ bin/midc
 %%NLS%%%%DATADIR%%/mc.hlp.pl
 %%NLS%%%%DATADIR%%/mc.hlp.ru
 %%NLS%%%%DATADIR%%/mc.hlp.sr
-%%DATADIR%%/mc.lib
-%%DATADIR%%/mc.menu
-%%NLS%%%%DATADIR%%/mc.menu.sr
-%%EDITOR%%%%DATADIR%%/syntax/Syntax
+%%DATADIR%%/skins/darkfar.ini
+%%DATADIR%%/skins/default.ini
+%%DATADIR%%/skins/double-lines.ini
+%%DATADIR%%/skins/featured.ini
+%%DATADIR%%/skins/gotar.ini
 %%EDITOR%%%%DATADIR%%/syntax/ada95.syntax
 %%EDITOR%%%%DATADIR%%/syntax/aspx.syntax
 %%EDITOR%%%%DATADIR%%/syntax/assembler.syntax
+%%EDITOR%%%%DATADIR%%/syntax/awk.syntax
 %%EDITOR%%%%DATADIR%%/syntax/c.syntax
 %%EDITOR%%%%DATADIR%%/syntax/changelog.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cs.syntax
@@ -114,8 +129,12 @@ bin/midc
 %%EDITOR%%%%DATADIR%%/syntax/debian-sources-list.syntax
 %%EDITOR%%%%DATADIR%%/syntax/diff.syntax
 %%EDITOR%%%%DATADIR%%/syntax/dos.syntax
+%%EDITOR%%%%DATADIR%%/syntax/ebuild.syntax
 %%EDITOR%%%%DATADIR%%/syntax/eiffel.syntax
+%%EDITOR%%%%DATADIR%%/syntax/erlang.syntax
+%%EDITOR%%%%DATADIR%%/syntax/f90.syntax
 %%EDITOR%%%%DATADIR%%/syntax/fortran.syntax
+%%EDITOR%%%%DATADIR%%/syntax/haskell.syntax
 %%EDITOR%%%%DATADIR%%/syntax/html.syntax
 %%EDITOR%%%%DATADIR%%/syntax/idl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/java.syntax
@@ -128,6 +147,8 @@ bin/midc
 %%EDITOR%%%%DATADIR%%/syntax/mail.syntax
 %%EDITOR%%%%DATADIR%%/syntax/makefile.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ml.syntax
+%%EDITOR%%%%DATADIR%%/syntax/named.syntax
+%%EDITOR%%%%DATADIR%%/syntax/nemerle.syntax
 %%EDITOR%%%%DATADIR%%/syntax/nroff.syntax
 %%EDITOR%%%%DATADIR%%/syntax/octave.syntax
 %%EDITOR%%%%DATADIR%%/syntax/pascal.syntax
@@ -135,6 +156,7 @@ bin/midc
 %%EDITOR%%%%DATADIR%%/syntax/php.syntax
 %%EDITOR%%%%DATADIR%%/syntax/po.syntax
 %%EDITOR%%%%DATADIR%%/syntax/povray.syntax
+%%EDITOR%%%%DATADIR%%/syntax/procmail.syntax
 %%EDITOR%%%%DATADIR%%/syntax/python.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ruby.syntax
 %%EDITOR%%%%DATADIR%%/syntax/sh.syntax
@@ -142,14 +164,18 @@ bin/midc
 %%EDITOR%%%%DATADIR%%/syntax/smalltalk.syntax
 %%EDITOR%%%%DATADIR%%/syntax/spec.syntax
 %%EDITOR%%%%DATADIR%%/syntax/sql.syntax
+%%EDITOR%%%%DATADIR%%/syntax/strace.syntax
 %%EDITOR%%%%DATADIR%%/syntax/swig.syntax
 %%EDITOR%%%%DATADIR%%/syntax/syntax.syntax
 %%EDITOR%%%%DATADIR%%/syntax/tcl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/texinfo.syntax
 %%EDITOR%%%%DATADIR%%/syntax/unknown.syntax
+%%EDITOR%%%%DATADIR%%/syntax/verilog.syntax
+%%EDITOR%%%%DATADIR%%/syntax/vhdl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/xml.syntax
-%%EDITOR%%@dirrm %%DATADIR%%/syntax
+@dirrm %%DATADIR%%/syntax
+@dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/extfs
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%
 @dirrm libexec/mc
+@dirrm etc/mc/extfs
+@dirrm etc/mc
