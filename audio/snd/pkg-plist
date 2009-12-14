@@ -167,6 +167,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/mix1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/mix2.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/mixcmn.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/mixdialog.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/mixer.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/mixname.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/multifm.png
@@ -219,6 +220,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/rksin3.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/rmspk.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/roundinterp.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/rr2.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/s.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/samplesviacolormap.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/saveas.png
@@ -435,6 +437,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/poly.scm
 %%SCHEME%%%%DATADIR%%/popup.scm
 %%SCHEME%%%%DATADIR%%/prc95.scm
+%%SCHEME%%%%DATADIR%%/pretty-print.scm
 %%SCHEME%%%%DATADIR%%/pvoc.scm
 %%SCHEME%%%%DATADIR%%/rgb.scm
 %%SCHEME%%%%DATADIR%%/rt-clm-ins.scm
@@ -461,6 +464,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/snd8.scm
 %%SCHEME%%%%DATADIR%%/snd9.scm
 %%SCHEME%%%%DATADIR%%/snd10.scm
+%%SCHEME%%%%DATADIR%%/snd11.scm
 %%SCHEME%%%%DATADIR%%/snd_conffile.scm
 %%SCHEME%%%%DATADIR%%/snddiff.scm
 %%SCHEME%%%%DATADIR%%/sndlib-ws.scm
