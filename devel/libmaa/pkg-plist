@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 include/maa.h
 lib/libmaa.la
-lib/libmaa.so.1
+lib/libmaa.so.2
 lib/libmaa.so
 lib/libmaa.a
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
