@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	fauna
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Rake tasks for docs, extension compiling, testing and deployment
 
 RUN_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
