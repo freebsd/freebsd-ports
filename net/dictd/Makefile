@@ -8,13 +8,14 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES+=	net textproc
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER?=	clsung@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
-LIB_DEPENDS=	maa.1:${PORTSDIR}/devel/libmaa
+LIB_DEPENDS=	maa.2:${PORTSDIR}/devel/libmaa
 
 MAN1=		dictzip.1
 MAN8=		dictd.8
