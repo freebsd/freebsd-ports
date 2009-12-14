@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-Radius-Server
-PORTVERSION=	1.004
+PORTVERSION=	1.116
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for RADIUS Servers
 
 RUN_DEPENDS=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM \
@@ -24,12 +24,17 @@ RUN_DEPENDS=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 PERL_CONFIGURE=	yes
+USE_PERL5=	5.10.0+
 
 MAN1=		nrsd.1 \
+		nrsdbtoyaml.1 \
 		pam-client.1 \
+		rad-bulk-make.1 \
+		rad-bulk.1 \
 		rad-client.1
 MAN3=		Net::Radius::Server.3 \
 		Net::Radius::Server::Base.3 \
+		Net::Radius::Server::DBStore.3 \
 		Net::Radius::Server::Dump.3 \
 		Net::Radius::Server::Match.3 \
 		Net::Radius::Server::Match::LDAP.3 \
