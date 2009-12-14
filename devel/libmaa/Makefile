@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	libmaa
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Provides a few data structures and helpful functions
 
 GNU_CONFIGURE=	yes
