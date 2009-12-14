@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procwd.c.orig	2008-08-18 11:23:36.000000000 -0400
-+++ sysdeps/freebsd/procwd.c	2008-12-07 00:19:44.000000000 -0500
+--- sysdeps/freebsd/procwd.c.orig	2009-12-13 18:53:02.827740000 -0500
++++ sysdeps/freebsd/procwd.c	2009-12-13 18:59:27.000000000 -0500
 @@ -27,6 +27,9 @@
  #include <sys/sysctl.h>
  #include <sys/param.h>
@@ -10,6 +10,15 @@
  #include <string.h>
  
  static const unsigned long _glibtop_sysdeps_proc_wd =
+@@ -40,7 +43,7 @@ _glibtop_init_proc_wd_s(glibtop *server)
+ 	server->sysdeps.proc_wd = _glibtop_sysdeps_proc_wd;
+ }
+ 
+-#if (__FreeBSD_version >= 800000 && __FreeBSD_version < 800019) || _FreeBSD_version < 700104
++#if (__FreeBSD_version >= 800000 && __FreeBSD_version < 800019) || __FreeBSD_version < 700104
+ static GPtrArray *
+ parse_output(const char *output, glibtop_proc_wd *buf)
+ {
 @@ -101,10 +104,14 @@ glibtop_get_proc_wd_s(glibtop *server, g
  #if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
  	struct kinfo_file *freep, *kif;

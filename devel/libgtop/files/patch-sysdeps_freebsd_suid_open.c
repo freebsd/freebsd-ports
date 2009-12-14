@@ -1,6 +1,6 @@
---- sysdeps/freebsd/suid_open.c.orig	2008-09-29 17:22:12.000000000 -0400
-+++ sysdeps/freebsd/suid_open.c	2008-09-29 17:23:35.000000000 -0400
-@@ -0,0 +1,91 @@
+--- sysdeps/freebsd/suid_open.c.orig	2009-12-13 13:47:12.739004000 -0500
++++ sysdeps/freebsd/suid_open.c	2009-12-13 18:37:51.000000000 -0500
+@@ -0,0 +1,92 @@
 +/* Copyright (C) 1998 Joshua Sled
 +   This file is part of LibGTop 1.0.
 +
@@ -58,6 +58,7 @@
 +		const unsigned long features,
 +		const unsigned flags)
 +{
++	char errbuf[_POSIX2_LINE_MAX];
 +#ifdef DEBUG
 +	fprintf (stderr, "DEBUG (%d): glibtop_open_p ()\n", getpid ());
 +#endif
@@ -68,7 +69,7 @@
 +	server->machine.gid = getgid ();
 +	server->machine.egid = getegid ();
 +	/* Setup machine-specific data */
-+	server->machine.kd = kvm_open (NULL, NULL, NULL, O_RDONLY, "kvm_open");
++	server->machine.kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
 +
 +	if (server->machine.kd == NULL)
 +		glibtop_error_io_r (server, "kvm_open");
