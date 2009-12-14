@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twirssi
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://twirssi.com/
 EXTRACT_SUFX=	.pl
@@ -25,10 +25,14 @@ NO_BUILD=	yes
 PLIST_FILES=	%%DATADIR%%/${PORTNAME}.pl
 PLIST_DIRS=	%%DATADIR%%
 
+post-extract:
+	@${MKDIR} ${WRKSRC}
+	@${INSTALL_SCRIPT} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl \
+		${WRKSRC}/${PORTNAME}.pl
+
 do-install:
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_SCRIPT} -v ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl \
-		${DATADIR}/${PORTNAME}.pl
+	@${INSTALL_SCRIPT} -v ${WRKSRC}/${PORTNAME}.pl ${DATADIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
