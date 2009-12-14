@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	CLANG "Build with LLVM/Clang (required for blocks support)" off
+OPTIONS=	CLANG "Build with LLVM/Clang (required for blocks support)" on
 
 MAN3=	dispatch.3 dispatch_after.3 dispatch_api.3 dispatch_apply.3 \
 	dispatch_async.3 dispatch_benchmark.3 dispatch_group_create.3 \
@@ -80,11 +80,7 @@ post-configure:
 IGNORE=	is not supported on this OS version
 .endif
 
-.if defined(WITH_CLANG)
-BROKEN=	does not compile
-.endif
-
-.if defined(WITH_CLANG)
+.if !defined(WITHOUT_CLANG)
 BUILD_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
 RUN_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
