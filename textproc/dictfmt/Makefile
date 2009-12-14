@@ -7,6 +7,7 @@
 
 PORTNAME=	dictfmt
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/dict/dictd/dictd-${PORTVERSION}
 DISTNAME=	dictd-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	dictd-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
-LIB_DEPENDS=	maa.1:${PORTSDIR}/devel/libmaa
+LIB_DEPENDS=	maa.2:${PORTSDIR}/devel/libmaa
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
