@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	thunderbird-i18n
-PORTVERSION=	2.0.0.23
+PORTNAME=	thunderbird3-i18n
+PORTVERSION=	3.0
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,16 +16,17 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-.ifndef WITHOUT_SWITCHER
-RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
-.endif
+# xpi-quick-locale-switcher doesn't work with thunderbird3 yet
+#.ifndef WITHOUT_SWITCHER
+#RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
+#.endif
 
 NO_BUILD=	yes
-USE_XPI=	*thunderbird
+USE_XPI=	*thunderbird-3.0
 
-THUNDERBIRD_I18N_ALL=	af be bg ca cs da de el en-GB es-AR es-ES eu fi fr ga-IE \
-			he hu it ja ko lt mk nb-NO nl nn-NO pa-IN pl pt-BR \
-			pt-PT ru sk sl sv-SE tr uk zh-CN zh-TW
+THUNDERBIRD_I18N_ALL=	af be bg ca cs de el en-GB es-AR es-ES eu fi fr ga-IE \
+			he hu it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR \
+			pt-PT ru sk sv-SE tr uk zh-CN zh-TW
 .ifdef PACKAGE_BUILDING
 THUNDERBIRD_I18N?=	all
 .else
@@ -42,8 +43,8 @@ WDIR=	langpack-*@thunderbird.mozilla.org
 XPI_DISTNAMES=	${THUNDERBIRD_I18N_}
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
-XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar chrome/chromelist.txt
-XPI_DIRS_${dist}=	chrome
+XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar defaults/pref/all-l10n.js
+XPI_DIRS_${dist}=	chrome defaults/pref defaults
 .endfor
 
 do-extract:
