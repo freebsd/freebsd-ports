@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pip
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Pip installs (Python) packages. An easy_install replacement
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6c9:${PORTSDIR}/devel/py-setuptools
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
@@ -29,7 +31,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs/_build && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
