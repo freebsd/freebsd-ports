@@ -1,0 +1,5 @@
+The NetBSD Packages Collection (pkgsrc) is a framework for building third-party
+software on NetBSD and other UNIX-like systems. mk-files is an important part
+of pkgsrc but could also be useful for other projects.
+
+WWW: http://www.netbsd.org/docs/software/packages.html

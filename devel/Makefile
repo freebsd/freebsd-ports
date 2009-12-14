@@ -918,6 +918,7 @@
     SUBDIR += ndesk-dbus
     SUBDIR += ndesk-dbus-glib
     SUBDIR += nemiver
+    SUBDIR += netbsd-pkgsrc-mk-files
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
