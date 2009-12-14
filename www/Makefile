@@ -1469,6 +1469,7 @@
     SUBDIR += screem
     SUBDIR += script4rss
     SUBDIR += seamonkey
+    SUBDIR += seamonkey2
     SUBDIR += selenium
     SUBDIR += serendipity
     SUBDIR += serendipity-devel
