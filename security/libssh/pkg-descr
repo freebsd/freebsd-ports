@@ -10,12 +10,13 @@ libssh features:
  * Full C library functions for manipulating a client-side SSH connection
  * SSH2 and SSH1 protocol compliant
  * Fully configurable sessions
- * Server support
- * Support for AES-128,AES-192,AES-256,blowfish,3des in cbc mode
+ * Server support, SSH agent authentication support
+ * Support for AES-128, AES-192, AES-256, Blowfish, 3DES in CBC mode
  * Use multiple SSH connections in a same process, at same time
  * Use multiple channels in the same connection
  * Thread safety when using different sessions at same time
- * Basic but correct SFTP implementation (secure file transfer)
+ * POSIX-like SFTP implementation with openssh extension support
+ * SCP implementation
  * RSA and DSS server public key supported
  * Compression support (with zlib)
  * Public key (RSA and DSS), password and keyboard-interactive authentication
