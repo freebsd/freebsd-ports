@@ -1,0 +1,33 @@
+--- linux/Makefile.orig	2004-04-03 15:12:51.000000000 +0400
++++ linux/Makefile	2009-12-14 00:58:21.000000000 +0300
+@@ -5,20 +5,16 @@
+ # you might have to change these to match your system
+ #
+ 
+-X11_INCLUDES = -I /usr/X11/include/
+-PYTHON_VERSION=2.3
+-PYTHON_INCLUDES = -I /usr/include/python$(PYTHON_VERSION)
+-
+-SDLCFLAGS = $(shell sdl-config --cflags)
+-SDLLIBS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer
+-
+-GLLIBS = -lglut -lGLU -lGL
+-
+-PYTHONHOME = /usr/lib/python$(PYTHON_VERSION)/
+-PYTHONLIBS = $(PYTHONHOME)/config/libpython$(PYTHON_VERSION).a -lutil \
+-             $(PYTHONHOME)/lib-dynload/math.so \
+-	     $(PYTHONHOME)/lib-dynload/time.so \
+-	     $(PYTHONHOME)/lib-dynload/_random.so
++X11_INCLUDES = -I ${LOCALBASE}/include/
++PYTHON_INCLUDES = -I ${LOCALBASE}/include/python$(PYTHON_VER)
++
++SDLCFLAGS = $(shell ${SDL_CONFIG} --cflags)
++SDLLIBS = $(shell ${SDL_CONFIG} --libs) -lSDL_image -lSDL_mixer
++
++GLLIBS = -lglut -lGLU -lGL -L${LOCALBASE}/lib
++
++PYTHONHOME = ${LOCALBASE}/lib/python$(PYTHON_VER)/
++PYTHONLIBS = $(PYTHONHOME)/config/libpython$(PYTHON_VER).a -lutil -lpython${PYTHON_VER}
+ 
+ # change this, if the kodilib directory isn't parallel to the kiki directory
+ 
