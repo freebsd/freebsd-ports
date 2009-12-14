@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 
