@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Audio-MPD
-PORTVERSION=	0.19.10
+PORTVERSION=	1.093170
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN1=		mpd-dynamic.1
-MAN3=		Audio::MPD.3 Audio::MPD::Collection.3 \
-		Audio::MPD::Playlist.3
+MAN3=		Audio::MPD.3 \
+		Audio::MPD::Collection.3 \
+		Audio::MPD::Playlist.3 \
+		Audio::MPD::Types.3
 
 .include <bsd.port.mk>
