@@ -2,8 +2,8 @@ bin/plackup
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/.packlist
 %%SITE_PERL%%/HTTP/Message/PSGI.pm
 %%SITE_PERL%%/Plack.pm
-%%SITE_PERL%%/Plack/App/Cascade.pm
 %%SITE_PERL%%/Plack/App/CGIBin.pm
+%%SITE_PERL%%/Plack/App/Cascade.pm
 %%SITE_PERL%%/Plack/App/Directory.pm
 %%SITE_PERL%%/Plack/App/FCGIDispatcher.pm
 %%SITE_PERL%%/Plack/App/File.pm
@@ -29,7 +29,6 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/Lint.pm
 %%SITE_PERL%%/Plack/Middleware/MethodOverride.pm
 %%SITE_PERL%%/Plack/Middleware/RearrangeHeaders.pm
-%%SITE_PERL%%/Plack/Middleware/Restarter.pm
 %%SITE_PERL%%/Plack/Middleware/SimpleContentFilter.pm
 %%SITE_PERL%%/Plack/Middleware/StackTrace.pm
 %%SITE_PERL%%/Plack/Middleware/Static.pm
@@ -64,5 +63,4 @@ bin/plackup
 @dirrm %%SITE_PERL%%/Plack/App
 @dirrm %%SITE_PERL%%/Plack
 @dirrmtry %%SITE_PERL%%/HTTP/Message
-@dirrmtry %%SITE_PERL%%/HTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
