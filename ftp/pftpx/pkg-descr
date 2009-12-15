@@ -1,7 +1,0 @@
-pftpx is a ftp proxy with many advanced features such as:
-
-1) it handles all ftp modes: PORT, PASV, EPRT, EPSV
-2) it handles ipv6
-3) it should scale: one process handles all sessions using libevent
-4) it works with "strict" ftp clients (clients that want data connections 
-   to the same IP as the control connection)
