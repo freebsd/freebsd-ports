@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Image-Size-FillFullSelect
-PORTVERSION=	0.0.1
+PORTVERSION=	0.1.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Choose whether an image fill setting for a image should be fill or full
+COMMENT=	Pick whether an image fill setting for a image should be fill or full
 
 RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size
 
