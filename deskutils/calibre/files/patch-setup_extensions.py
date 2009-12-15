@@ -1,5 +1,5 @@
---- setup/extensions.py.orig	2009-10-10 06:15:00.000000000 +0400
-+++ setup/extensions.py	2009-10-11 19:37:56.000000000 +0400
+--- setup/extensions.py.orig	2009-12-11 15:04:40.000000000 -0800
++++ setup/extensions.py	2009-12-14 18:25:26.000000000 -0800
 @@ -11,7 +11,7 @@
  
  from PyQt4.pyqtconfig import QtGuiModuleMakefile
@@ -18,7 +18,19 @@
  
  make = 'make' if isunix else NMAKE
  
-@@ -146,6 +146,13 @@
+@@ -141,6 +141,11 @@
+         ['calibre/devices/libusb.c'],
+         ldflags=['-lusb-1.0']))
+ 
++if isfreebsd:
++    if os.environ.get('WITH_USB', 'no') == 'yes':
++        extensions.append(Extension('libusb',
++            ['calibre/devices/libusb.c'],
++            ldflags=['-lusb']))
+ 
+ if isunix:
+     cc = os.environ.get('CC', 'gcc')
+@@ -160,6 +165,13 @@
      ldflags.append('-lpython'+sysconfig.get_python_version())
  
  
