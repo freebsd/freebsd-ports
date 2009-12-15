@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Business-MaxMind-CreditCardFraudDetection
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/B/BO/BORISZ
@@ -24,16 +24,13 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Business::MaxMind::CreditCardFraudDetection.3 \
 	Business::MaxMind::HTTPBase.3 \
-	Business::MaxMind::LocationVerification.3 \
 	Business::MaxMind::TelephoneVerification.3 \
 
 PLIST_FILES=	\
 	%%SITE_PERL%%/Business/MaxMind/CreditCardFraudDetection.pm \
 	%%SITE_PERL%%/Business/MaxMind/HTTPBase.pm \
-	%%SITE_PERL%%/Business/MaxMind/LocationVerification.pm \
 	%%SITE_PERL%%/Business/MaxMind/TelephoneVerification.pm \
 	%%SITE_PERL%%/Business/example.pl \
-	%%SITE_PERL%%/Business/example_locv.pl \
 	%%SITE_PERL%%/Business/example_telv.pl \
 	%%SITE_PERL%%/auto/Business/MaxMind/HTTPBase/autosplit.ix \
 	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/MaxMind/.packlist
