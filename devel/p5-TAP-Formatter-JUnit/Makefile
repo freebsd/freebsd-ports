@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TAP-Formatter-JUnit
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,14 +17,11 @@ COMMENT=	Perl extension for Harness output delegate for JUnit output
 RUN_DEPENDS=	\
 	p5-Class-Field>0:${PORTSDIR}/devel/p5-Class-Field \
 	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
-	p5-Test-Harness>=3.12:${PORTSDIR}/devel/p5-Test-Harness \
 	p5-XML-Generator>0:${PORTSDIR}/textproc/p5-XML-Generator
 BUILD_DEPENDS=	\
 	p5-Class-Field>0:${PORTSDIR}/devel/p5-Class-Field \
 	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
-	p5-Test-Harness>=3.12:${PORTSDIR}/devel/p5-Test-Harness \
-	p5-XML-Generator>0:${PORTSDIR}/textproc/p5-XML-Generator \
-	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
+	p5-XML-Generator>0:${PORTSDIR}/textproc/p5-XML-Generator
 
 PERL_MODBUILD=	yes
 
