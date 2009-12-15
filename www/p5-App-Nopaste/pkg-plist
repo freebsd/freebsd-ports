@@ -1,7 +1,8 @@
-bin/nopaste
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste/.packlist
 %%SITE_PERL%%/App/Nopaste.pm
 %%SITE_PERL%%/App/Nopaste/Command.pm
 %%SITE_PERL%%/App/Nopaste/Service.pm
+%%SITE_PERL%%/App/Nopaste/Service/Debian.pm
 %%SITE_PERL%%/App/Nopaste/Service/Gist.pm
 %%SITE_PERL%%/App/Nopaste/Service/Husk.pm
 %%SITE_PERL%%/App/Nopaste/Service/Mathbin.pm
@@ -10,9 +11,9 @@ bin/nopaste
 %%SITE_PERL%%/App/Nopaste/Service/Rafb.pm
 %%SITE_PERL%%/App/Nopaste/Service/Shadowcat.pm
 %%SITE_PERL%%/App/Nopaste/Service/Snitch.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+bin/nopaste
 @dirrm %%SITE_PERL%%/App/Nopaste/Service
 @dirrm %%SITE_PERL%%/App/Nopaste
 @dirrm %%SITE_PERL%%/App
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
