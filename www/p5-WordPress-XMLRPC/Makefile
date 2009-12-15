@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordPress-XMLRPC
-PORTVERSION=	1.19
+PORTVERSION=	1.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/L/LE/LEOCHARRE
@@ -20,6 +20,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 PERL_CONFIGURE=	yes
 MAN3=		WordPress::XMLRPC.3
 PLIST_FILES=	%%SITE_PERL%%/WordPress/XMLRPC.pm \
+				%%SITE_PERL%%/WordPress/XMLRPC.pod \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress/XMLRPC/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/WordPress \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress/XMLRPC \
