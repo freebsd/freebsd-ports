@@ -8,9 +8,16 @@ bin/da65
 bin/grc
 bin/ld65
 bin/od65
+lib/cc65
+lib/cc65/asminc
 lib/cc65/asminc/_file.inc
 lib/cc65/asminc/_heap.inc
+lib/cc65/asminc/apple2.inc
 lib/cc65/asminc/atari.inc
+lib/cc65/asminc/c128.inc
+lib/cc65/asminc/c64.inc
+lib/cc65/asminc/cbm510.inc
+lib/cc65/asminc/cbm610.inc
 lib/cc65/asminc/ctype.inc
 lib/cc65/asminc/em-error.inc
 lib/cc65/asminc/em-kernel.inc
@@ -22,17 +29,34 @@ lib/cc65/asminc/joy-kernel.inc
 lib/cc65/asminc/lynx.inc
 lib/cc65/asminc/modload.inc
 lib/cc65/asminc/mouse-kernel.inc
+lib/cc65/asminc/nes.inc
 lib/cc65/asminc/o65.inc
+lib/cc65/asminc/plus4.inc
 lib/cc65/asminc/rs232.inc
 lib/cc65/asminc/ser-error.inc
 lib/cc65/asminc/ser-kernel.inc
 lib/cc65/asminc/signal.inc
 lib/cc65/asminc/stdio.inc
+lib/cc65/asminc/supervision.inc
 lib/cc65/asminc/tgi-error.inc
 lib/cc65/asminc/tgi-kernel.inc
 lib/cc65/asminc/tgi-mode.inc
+lib/cc65/asminc/time.inc
 lib/cc65/asminc/utsname.inc
+lib/cc65/asminc/vic20.inc
 lib/cc65/asminc/zeropage.inc
+lib/cc65/cfg/apple2-dos33.cfg
+lib/cc65/cfg/apple2-loader.cfg
+lib/cc65/cfg/apple2-reboot.cfg
+lib/cc65/cfg/apple2-system.cfg
+lib/cc65/cfg/apple2enh-dos33.cfg
+lib/cc65/cfg/apple2enh-loader.cfg
+lib/cc65/cfg/apple2enh-reboot.cfg
+lib/cc65/cfg/apple2enh-system.cfg
+lib/cc65/cfg/supervision-128k.cfg
+lib/cc65/cfg/supervision-16k.cfg
+lib/cc65/cfg/supervision-64k.cfg
+lib/cc65/cfg/vic20-32k.cfg
 lib/cc65/emd/a2.auxmem.emd
 lib/cc65/emd/a2e.auxmem.emd
 lib/cc65/emd/c128-georam.emd
@@ -102,6 +126,7 @@ lib/cc65/include/geos/gsprite.h
 lib/cc65/include/geos/gstruct.h
 lib/cc65/include/geos/gsym.h
 lib/cc65/include/geos/gsys.h
+lib/cc65/include/inttypes.h
 lib/cc65/include/iso646.h
 lib/cc65/include/joystick.h
 lib/cc65/include/joystick/joy-kernel.h
@@ -140,6 +165,7 @@ lib/cc65/include/vic20.h
 lib/cc65/include/zlib.h
 lib/cc65/joy/a2.stdjoy.joy
 lib/cc65/joy/a2e.stdjoy.joy
+lib/cc65/joy/atarimj8.joy
 lib/cc65/joy/ataristd.joy
 lib/cc65/joy/c128-ptvjoy.joy
 lib/cc65/joy/c128-stdjoy.joy
@@ -157,49 +183,38 @@ lib/cc65/joy/plus4-stdjoy.joy
 lib/cc65/joy/vic20-ptvjoy.joy
 lib/cc65/joy/vic20-stdjoy.joy
 lib/cc65/lib/apple2.lib
-lib/cc65/lib/apple2.o
 lib/cc65/lib/apple2enh.lib
-lib/cc65/lib/apple2enh.o
 lib/cc65/lib/atari.lib
-lib/cc65/lib/atari.o
 lib/cc65/lib/atmos.lib
-lib/cc65/lib/atmos.o
 lib/cc65/lib/c128.lib
-lib/cc65/lib/c128.o
 lib/cc65/lib/c16.lib
-lib/cc65/lib/c16.o
 lib/cc65/lib/c64.lib
-lib/cc65/lib/c64.o
 lib/cc65/lib/cbm510.lib
-lib/cc65/lib/cbm510.o
 lib/cc65/lib/cbm610.lib
-lib/cc65/lib/cbm610.o
 lib/cc65/lib/geos.lib
-lib/cc65/lib/geos.o
 lib/cc65/lib/lynx.lib
-lib/cc65/lib/lynx.o
 lib/cc65/lib/nes.lib
-lib/cc65/lib/nes.o
 lib/cc65/lib/pet.lib
-lib/cc65/lib/pet.o
 lib/cc65/lib/plus4.lib
-lib/cc65/lib/plus4.o
 lib/cc65/lib/supervision.lib
-lib/cc65/lib/supervision.o
 lib/cc65/lib/vic20.lib
-lib/cc65/lib/vic20.o
 lib/cc65/mou/a2.stdmou.mou
 lib/cc65/mou/a2e.stdmou.mou
 lib/cc65/mou/c128-1351.mou
 lib/cc65/mou/c128-joy.mou
+lib/cc65/mou/c128-pot.mou
 lib/cc65/mou/c64-1351.mou
 lib/cc65/mou/c64-joy.mou
+lib/cc65/mou/c64-pot.mou
+lib/cc65/obj/apple2-iobuf-0800.o
+lib/cc65/obj/apple2enh-iobuf-0800.o
 lib/cc65/ser/a2.ssc.ser
 lib/cc65/ser/a2e.ssc.ser
 lib/cc65/ser/c128-swlink.ser
 lib/cc65/ser/c64-swlink.ser
 lib/cc65/ser/cbm510-std.ser
 lib/cc65/ser/cbm610-std.ser
+lib/cc65/ser/lynx-comlynx.ser
 lib/cc65/ser/plus4-stdser.ser
 lib/cc65/tgi/a2.hi.tgi
 lib/cc65/tgi/a2.lo.tgi
@@ -213,38 +228,15 @@ lib/cc65/tgi/geos-tgi.tgi
 lib/cc65/tgi/lynx-160-102-16.tgi
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/apple2.cfg
-%%PORTDOCS%%%%DOCSDIR%%/atari.cfg
 %%PORTDOCS%%%%DOCSDIR%%/atari.mac
-%%PORTDOCS%%%%DOCSDIR%%/atmos.cfg
-%%PORTDOCS%%%%DOCSDIR%%/bbc.cfg
-%%PORTDOCS%%%%DOCSDIR%%/c128.cfg
-%%PORTDOCS%%%%DOCSDIR%%/c16.cfg
-%%PORTDOCS%%%%DOCSDIR%%/c64.cfg
 %%PORTDOCS%%%%DOCSDIR%%/cbm.mac
-%%PORTDOCS%%%%DOCSDIR%%/cbm510.cfg
-%%PORTDOCS%%%%DOCSDIR%%/cbm610.cfg
 %%PORTDOCS%%%%DOCSDIR%%/compile.txt
 %%PORTDOCS%%%%DOCSDIR%%/cpu.mac
 %%PORTDOCS%%%%DOCSDIR%%/generic.mac
-%%PORTDOCS%%%%DOCSDIR%%/geos.cfg
 %%PORTDOCS%%%%DOCSDIR%%/internal.txt
 %%PORTDOCS%%%%DOCSDIR%%/longbranch.mac
-%%PORTDOCS%%%%DOCSDIR%%/lunix.cfg
-%%PORTDOCS%%%%DOCSDIR%%/lynx.cfg
-%%PORTDOCS%%%%DOCSDIR%%/module.cfg
-%%PORTDOCS%%%%DOCSDIR%%/nes.cfg
 %%PORTDOCS%%%%DOCSDIR%%/newvers.txt
-%%PORTDOCS%%%%DOCSDIR%%/none.cfg
-%%PORTDOCS%%%%DOCSDIR%%/osa65.cfg
-%%PORTDOCS%%%%DOCSDIR%%/pet.cfg
-%%PORTDOCS%%%%DOCSDIR%%/plus4.cfg
 %%PORTDOCS%%%%DOCSDIR%%/readme.1st
-%%PORTDOCS%%%%DOCSDIR%%/supervision.cfg
-%%PORTDOCS%%%%DOCSDIR%%/supervision128.cfg
-%%PORTDOCS%%%%DOCSDIR%%/supervision16.cfg
-%%PORTDOCS%%%%DOCSDIR%%/supervision64.cfg
-%%PORTDOCS%%%%DOCSDIR%%/vic20.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/ascii.c
@@ -280,6 +272,9 @@ lib/cc65/tgi/lynx-160-102-16.tgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/mousedemo.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/nachtm.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/overlaydemo-apple2enh.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/overlaydemo-c64.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/overlaydemo.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/plasma.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/sieve.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/tgidemo.c
@@ -292,6 +287,7 @@ lib/cc65/tgi/lynx-160-102-16.tgi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cc65/tgi
 @dirrm lib/cc65/ser
+@dirrm lib/cc65/obj
 @dirrm lib/cc65/mou
 @dirrm lib/cc65/lib
 @dirrm lib/cc65/joy
@@ -303,5 +299,6 @@ lib/cc65/tgi/lynx-160-102-16.tgi
 @dirrm lib/cc65/include/em
 @dirrm lib/cc65/include
 @dirrm lib/cc65/emd
+@dirrm lib/cc65/cfg
 @dirrm lib/cc65/asminc
 @dirrm lib/cc65
