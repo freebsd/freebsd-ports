@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.18a
-PORTREVISION=	1
+PORTVERSION=	1.19
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.18 \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.19 \
 		http://www.littlecms.com/
 
 
@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/lcms-1.18
+WRKSRC=		${WRKDIR}/lcms-1.19
 
 OPTIONS=	TIFFICC "Build color profile applier for tiff" off \
 		JPEGICC "Build color profile applier for JPEG" off
