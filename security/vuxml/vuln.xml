@@ -36,7 +36,7 @@ Note:  Please add new entries to the beginning of this file.
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="1b3f854b-e4bd-11de-b276-000d8787e1be">
-    <topic> freeradius -- A free RADIUS server implementation </topic>
+    <topic>freeradius -- remote packet of death vulnerability</topic>
     <affects>
       <package>
 	<name>freeradius</name>
@@ -67,6 +67,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-09-09</discovery>
       <entry>2009-12-14</entry>
+      <modified>2009-12-14</modified>
     </dates>
   </vuln>
 
