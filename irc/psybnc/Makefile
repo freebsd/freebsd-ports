@@ -11,7 +11,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.psybnc.at/download/beta/ CENKES
 DISTNAME=	psyBNC-${DISTVERSION}
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful IRC bouncer
 
 WRKSRC=		${WRKDIR}/psybnc

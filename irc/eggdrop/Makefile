@@ -18,7 +18,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl-rootie.patch.gz:ssl \
 PATCH_SITES=	http://www.egghelp.org/files/patches/:ssl \
 		ftp://ftp.eggheads.org/pub/eggdrop/patches/official/1.6/:ctcpfix
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 USE_TCL=	82+

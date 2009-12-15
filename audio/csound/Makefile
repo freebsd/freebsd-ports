@@ -2,7 +2,6 @@
 # Date created:				2000-10-11
 # Whom:					trevor
 #
-# $Carpetsmoker: ports/audio/csound/Makefile,v 1.5 2007/11/18 11:10:22 carpetsmoker Exp $
 # $FreeBSD$
 #
 
@@ -18,7 +17,7 @@ DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 DIST_SUBDIR=	csound
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
