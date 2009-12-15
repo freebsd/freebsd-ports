@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Gtk2-Ex-PodViewer
-PORTVERSION=	0.17
-PORTREVISION=	3
+PORTVERSION=	0.18
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
 		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
