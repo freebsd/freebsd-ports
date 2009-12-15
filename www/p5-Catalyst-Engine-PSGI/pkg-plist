@@ -1,13 +1,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/PSGI/.packlist
+%%SITE_PERL%%/Catalyst/Controller/Metal.pm
 %%SITE_PERL%%/Catalyst/Engine/PSGI.pm
 %%SITE_PERL%%/Catalyst/Helper/PSGI.pm
 %%SITE_PERL%%/Plack/Test/Adopt/Catalyst.pm
 @dirrmtry %%SITE_PERL%%/Plack/Test/Adopt
 @dirrmtry %%SITE_PERL%%/Plack/Test
 @dirrmtry %%SITE_PERL%%/Plack
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/Catalyst
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/PSGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/PSGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

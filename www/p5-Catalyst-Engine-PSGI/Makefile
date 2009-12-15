@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Engine-PSGI
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Catalyst::Engine::PSGI.3 \
+MAN3=	Catalyst::Controller::Metal.3 \
+	Catalyst::Engine::PSGI.3 \
 	Catalyst::Helper::PSGI.3 \
 	Plack::Test::Adopt::Catalyst.3
 
