@@ -73,13 +73,11 @@ PLIST_SUB+=	EDITOR="@comment "
 PLIST_SUB+=	EDITOR=""
 .endif
 
-.if defined(WITH_UTF8)
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-CONFIGURE_ARGS+=--with-screen=slang
-.elif !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
+.if !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
-CONFIGURE_ARGS+=--with-screen=mcslang
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+CONFIGURE_ARGS+=--with-screen=slang
 .endif
 
 .if !defined(WITH_SUBSHELL) && (defined(WITHOUT_SUBSHELL) || defined(MINIMAL))
@@ -91,10 +89,5 @@ _MAN1=		mc.1
 .for lang in ${_MANLANG}
 _MANPAGES+=	${_MAN1:S%^%${MAN1PREFIX}/man/${lang}/man1/%}
 .endfor
-
-post-patch:
-#	@${REINPLACE_CMD} -e 's|/usr/bin/zip|${LOCALBASE}/bin/zip|' \
-#		-e 's|/usr/bin/unzip|${LOCALBASE}/bin/unzip|' \
-#		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
