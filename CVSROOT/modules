@@ -1010,6 +1010,7 @@ bind94                          ports/dns/bind94
 bind94-geoip                    ports/dns/bind94-geoip
 bind95                          ports/dns/bind95
 bind96                          ports/dns/bind96
+bind97                          ports/dns/bind97
 bindgraph                       ports/dns/bindgraph
 bindtest                        ports/net/bindtest
 bing                            ports/net/bing
@@ -4768,7 +4769,6 @@ grass                           ports/databases/grass
 graveman                        ports/sysutils/graveman
 grc                             ports/misc/grc
 grc-aspell                      ports/textproc/grc-aspell
-grdc-applet                     ports/net/grdc-applet
 grdesktop                       ports/net/grdesktop
 greed                           ports/games/greed
 gregarius                       ports/www/gregarius
@@ -18432,7 +18432,6 @@ pftabled                        ports/net-mgmt/pftabled
 pftop                           ports/sysutils/pftop
 pftpd                           ports/ftp/pftpd
 pftpx                           ports/ftp/pftpx
-pfw                             ports/security/pfw
 pg_filedump                     ports/databases/pg_filedump
 pgaccess                        ports/databases/pgaccess
 pgadmin3                        ports/databases/pgadmin3
@@ -19034,7 +19033,6 @@ ports_fish                      ports/shells/fish
 ports_getopt                    ports/misc/getopt
 ports_gperf                     ports/devel/gperf
 ports_gpt                       ports/misc/gpt
-ports_grdc                      ports/net/grdc
 ports_gzip                      ports/archivers/gzip
 ports_host                      ports/dns/host
 ports_ja-man                    ports/japanese/man
@@ -19925,6 +19923,7 @@ py-scgi                         ports/www/py-scgi
 py-scientific                   ports/math/py-scientific
 py-sciparam                     ports/x11-toolkits/py-SciParam
 py-scipy                        ports/science/py-scipy
+py-scrapy                       ports/www/py-scrapy
 py-scriptaculous                ports/www/py-scriptaculous
 py-sendfile                     ports/devel/py-sendfile
 py-serial                       ports/comms/py-serial
@@ -20643,6 +20642,8 @@ remarp                          ports/net-mgmt/remarp
 remember.el                     ports/deskutils/remember.el
 remind                          ports/deskutils/remind
 reminiscence                    ports/games/reminiscence
+remmina                         ports/net/remmina
+remmina-applet                  ports/net/remmina-applet
 remotedesk                      ports/net/remotedesk
 renaissance                     ports/x11-toolkits/renaissance
 rename                          ports/sysutils/rename
@@ -21608,6 +21609,8 @@ seahorse                        ports/security/seahorse
 seahorse-plugins                ports/security/seahorse-plugins
 seam-carving-gui                ports/graphics/seam-carving-gui
 seamonkey                       ports/www/seamonkey
+seamonkey2                      ports/www/seamonkey2
+seamonkey2-i18n                 ports/www/seamonkey2-i18n
 searchmonkey                    ports/sysutils/searchmonkey
 seatools                        ports/sysutils/seatools
 seaview                         ports/biology/seaview
@@ -22726,6 +22729,8 @@ thunar-volman-plugin            ports/sysutils/thunar-volman-plugin
 thunderbird                     ports/mail/thunderbird
 thunderbird-dictionaries        ports/mail/thunderbird-dictionaries
 thunderbird-i18n                ports/mail/thunderbird-i18n
+thunderbird3                    ports/mail/thunderbird3
+thunderbird3-i18n               ports/mail/thunderbird3-i18n
 ticker.app                      ports/sysutils/ticker.app
 tide                            ports/devel/tide
 tidy                            ports/www/tidy
@@ -25056,8 +25061,14 @@ yzis                            ports/editors/yzis
 z80-asm                         ports/devel/z80-asm
 z80asm                          ports/devel/z80asm
 z88                             ports/cad/z88
-zabbix                          ports/net-mgmt/zabbix
 zabbix-agent                    ports/net-mgmt/zabbix-agent
+zabbix-frontend                 ports/net-mgmt/zabbix-frontend
+zabbix-proxy                    ports/net-mgmt/zabbix-proxy
+zabbix-server                   ports/net-mgmt/zabbix-server
+zabbix16-agent                  ports/net-mgmt/zabbix16-agent
+zabbix16-frontend               ports/net-mgmt/zabbix16-frontend
+zabbix16-proxy                  ports/net-mgmt/zabbix16-proxy
+zabbix16-server                 ports/net-mgmt/zabbix16-server
 zabit                           ports/mail/zabit
 zangband                        ports/games/zangband
 zaptel                          ports/misc/zaptel
