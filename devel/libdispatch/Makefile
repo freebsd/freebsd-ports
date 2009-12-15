@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdispatch
-PORTVERSION=	171
+PORTVERSION=	174
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	${PORTNAME}-r${PORTVERSION}
