@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
@@ -24,6 +23,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB+=	SHLIB_VERSION=${PORTVERSION}
+
+CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 ALL_TARGET=	all static
 INSTALL_TARGET=	install install-static
