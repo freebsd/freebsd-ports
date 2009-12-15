@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	pandoc
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	textproc haskell
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	A general markup converter
 
-BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+BUILD_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc \
 		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc \
 		hs-zip-archive-ghc>=0.1:${PORTSDIR}/archivers/hs-zip-archive-ghc
 
