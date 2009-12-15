@@ -50,6 +50,12 @@
       <extension-mimetype ignore-unknown="no">
         <map from="mp3" to="audio/mpeg"/>
         <map from="ogg" to="application/ogg"/>
+        <map from="mpg" to="video/mpeg"/>
+        <map from="mpeg" to="video/mpeg"/>
+        <map from="vob" to="video/mpeg"/>
+        <map from="vro" to="video/mpeg"/>
+        <map from="m2ts" to="video/avc"/>
+        <map from="mts" to="video/avc"/>
         <map from="asf" to="video/x-ms-asf"/>
         <map from="asx" to="video/x-ms-asf"/>
         <map from="wma" to="audio/x-ms-wma"/>
