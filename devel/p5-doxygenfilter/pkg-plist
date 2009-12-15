@@ -1,8 +1,9 @@
 bin/doxygenfilter
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DoxyGen/Filter/.packlist
-%%SITE_PERL%%/DoxyGen/SQLFilter.pm
 %%SITE_PERL%%/DoxyGen/Filter.pm
 %%SITE_PERL%%/DoxyGen/PerlFilter.pm
+%%SITE_PERL%%/DoxyGen/SQLFilter.pm
+%%SITE_PERL%%/DoxyGen/VBFilter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DoxyGen/Filter/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DoxyGen/Filter
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DoxyGen
 @dirrm %%SITE_PERL%%/DoxyGen
