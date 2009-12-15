@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-Audit-Attach
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mail::Audit plugin for attachment handling
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit \
-		${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/MIME/Head.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Mail-Audit>=2:${PORTSDIR}/mail/p5-Mail-Audit \
+		p5-Mail-Tools>=1:${PORTSDIR}/mail/p5-Mail-Tools
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes
 
