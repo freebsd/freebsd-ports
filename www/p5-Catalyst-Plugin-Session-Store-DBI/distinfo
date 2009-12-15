@@ -1,3 +1,3 @@
-MD5 (Catalyst-Plugin-Session-Store-DBI-0.13.tar.gz) = fda0bc9f14049e375921dbf36e7fbb25
-SHA256 (Catalyst-Plugin-Session-Store-DBI-0.13.tar.gz) = 17a1941006bc7c9b11fedefc5db316ad51d2b75246c8d32d704b2cf2b7773f66
-SIZE (Catalyst-Plugin-Session-Store-DBI-0.13.tar.gz) = 23603
+MD5 (Catalyst-Plugin-Session-Store-DBI-0.15.tar.gz) = 17084da3ce9e4a41cf10cbec7bd03233
+SHA256 (Catalyst-Plugin-Session-Store-DBI-0.15.tar.gz) = 0d71ade1cf9aabd1813aacb0a50e54fa910136f8133f7295d133502050b59d52
+SIZE (Catalyst-Plugin-Session-Store-DBI-0.15.tar.gz) = 28084
