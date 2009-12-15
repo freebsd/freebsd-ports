@@ -1,10 +1,6 @@
 This is 9menu, a simple program that allows you to create X menus from the
-shell, where each menu item will run a command. 9menu is intended for use
+shell, where each menu item will run a command.  9menu is intended for use
 with 9wm, but can be used with any other window manager.
 
-The idea of a command line menu generator is from xmenu, but xmenu was
-exclusively a pop-up menu, not what I wanted.
-
---
-Arnold Robbins
-arnold@gnu.ai.mit.edu
+The idea of a command line menu generator is from xmenu, but xmenu is
+exclusively a pop-up menu, not what everyone wants.
