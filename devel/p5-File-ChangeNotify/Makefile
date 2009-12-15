@@ -5,7 +5,7 @@
 # Generated with portupload. Do not edit directly, please
 
 PORTNAME=	File-ChangeNotify
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
