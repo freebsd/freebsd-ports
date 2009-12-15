@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	wings
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.16
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A polygon mesh modeler written in Erlang
