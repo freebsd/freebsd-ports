@@ -413,8 +413,8 @@
     SUBDIR += libboard
     SUBDIR += libcaca
     SUBDIR += libchamplain
-    SUBDIR += libdrm
     SUBDIR += libdmtx
+    SUBDIR += libdrm
     SUBDIR += libemf
     SUBDIR += libexif
     SUBDIR += libexif-gtk
@@ -520,8 +520,8 @@
     SUBDIR += mapyrus
     SUBDIR += maverik
     SUBDIR += megapov
-    SUBDIR += mesagl
     SUBDIR += mesa-demos
+    SUBDIR += mesagl
     SUBDIR += meshviewer
     SUBDIR += metacam
     SUBDIR += metapixel
@@ -570,9 +570,9 @@
     SUBDIR += p5-Acme-Steganography-Image-Png
     SUBDIR += p5-CAD-Drawing
     SUBDIR += p5-CAD-Drawing-Template
-    SUBDIR += p5-Captcha-reCAPTCHA-Mailhide
     SUBDIR += p5-Cairo
     SUBDIR += p5-Captcha-reCAPTCHA
+    SUBDIR += p5-Captcha-reCAPTCHA-Mailhide
     SUBDIR += p5-Chart-Clicker
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
@@ -912,6 +912,7 @@
     SUBDIR += white_dune
     SUBDIR += wildmagic
     SUBDIR += wings
+    SUBDIR += wings-devel
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
     SUBDIR += wxsvg
