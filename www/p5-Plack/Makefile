@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9021
+PORTVERSION=	0.9022
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -59,7 +59,6 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware::Lint.3 \
 	Plack::Middleware::MethodOverride.3 \
 	Plack::Middleware::RearrangeHeaders.3 \
-	Plack::Middleware::Restarter.3 \
 	Plack::Middleware::SimpleContentFilter.3 \
 	Plack::Middleware::StackTrace.3 \
 	Plack::Middleware::Static.3 \
