@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authorization-Roles
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
