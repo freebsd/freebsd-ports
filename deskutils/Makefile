@@ -212,6 +212,7 @@
     SUBDIR += plans
     SUBDIR += plasma-applet-cwp
     SUBDIR += plasma-applet-daisy
+    SUBDIR += plasma-applet-fancytasks
     SUBDIR += plasma-applet-panelspacer
     SUBDIR += plasma-applet-playwolf
     SUBDIR += plasma-applet-simpleweatherforecast
