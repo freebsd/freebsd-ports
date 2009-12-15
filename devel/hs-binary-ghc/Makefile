@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	binary
-PORTVERSION=	0.5.0.1
-PORTREVISION=	2
+PORTVERSION=	0.5.0.2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
