@@ -16,17 +16,21 @@ EXTRACT_SUFX=	.shar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterned after Plan9
 
-EXTRACT_CMD=	zcat
+EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	| sh
+EXTRACT_AFTER_ARGS=	| ${SH}
 
 USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.noimake
+ALL_TARGET=	9menu
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lX11"
 PLIST_FILES=	bin/9menu
 MAN1=		9menu.1
-MANCOMPRESSED=	yes	# vendor installation routine does this for us
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
