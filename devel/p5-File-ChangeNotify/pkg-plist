@@ -1,13 +1,19 @@
-%%SITE_PERL%%/File/ChangeNotify.pm
 %%SITE_PERL%%/File/ChangeNotify/Event.pm
-%%SITE_PERL%%/File/ChangeNotify/Watcher.pm
-%%SITE_PERL%%/File/ChangeNotify/Watcher/Default.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher/Inotify.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher/KQueue.pm
+%%SITE_PERL%%/File/ChangeNotify/Watcher/Default.pm
+%%SITE_PERL%%/File/ChangeNotify/Watcher.pm
+%%SITE_PERL%%/File/ChangeNotify.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ChangeNotify/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ChangeNotify
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/auto/File/ChangeNotify
+@dirrmtry %%SITE_PERL%%/auto/File
+@dirrmtry %%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%/File/ChangeNotify/Watcher
 @dirrmtry %%SITE_PERL%%/File/ChangeNotify
 @dirrmtry %%SITE_PERL%%/File
+@dirrmtry %%SITE_PERL%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ChangeNotify
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry blib/script
