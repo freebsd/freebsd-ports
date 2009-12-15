@@ -10,7 +10,7 @@ PORTVERSION=	3.9.8
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \

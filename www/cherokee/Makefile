@@ -33,7 +33,7 @@ MASTER_SITES=	http://www.cherokee-project.com/download/0.99/${PORTVERSION}/ \
 		http://mirror.yandex.ru/mirrors/cherokee-project.com/0.99/\${PORTVERSION}/ \
 		http://sunsite.rediris.es/mirror/cherokee/0.99/\${PORTVERSION}/
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
