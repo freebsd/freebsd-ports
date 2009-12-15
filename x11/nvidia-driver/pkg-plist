@@ -18,14 +18,15 @@ lib/libGLcore.so.1
 lib/libGLcore.so
 lib/libvdpau.so.1
 lib/libvdpau.so
-lib/libvdpau_nvidia.so.1
+lib/vdpau/libvdpau_nvidia.so.1
 lib/libvdpau_nvidia.so
-lib/libvdpau_trace.so.1
+lib/vdpau/libvdpau_trace.so.1
 lib/libvdpau_trace.so
 lib/libXvMCNVIDIA.so.1
 lib/libXvMCNVIDIA.so
 lib/libXvMCNVIDIA.a
 lib/libXvMCNVIDIA_dynamic.so.1
+@dirrm lib/vdpau
 %%MODULESDIR%%/libnvidia-wfb.so.1
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/libglx.so.1
@@ -44,9 +45,12 @@ nvidia.ko
 %%LINUX%%usr/lib/libnvidia-tls.so.1
 %%LINUX%%usr/lib/libvdpau.so.%%SHLIB_VERSION%%
 %%LINUX%%usr/lib/libvdpau.so.1
-%%LINUX%%usr/lib/libvdpau_nvidia.so.%%SHLIB_VERSION%%
 %%LINUX%%usr/lib/libvdpau_nvidia.so
-%%LINUX%%usr/lib/libvdpau_trace.so.%%SHLIB_VERSION%%
 %%LINUX%%usr/lib/libvdpau_trace.so
+%%LINUX%%usr/lib/vdpau/libvdpau_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/vdpau/libvdpau_nvidia.so.1
+%%LINUX%%usr/lib/vdpau/libvdpau_trace.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/vdpau/libvdpau_trace.so.1
+%%LINUX%%@dirrm usr/lib/vdpau
 %%LINUX%%@exec %D/sbin/ldconfig -r %D
 %%LINUX%%@unexec %D/sbin/ldconfig -r %D
