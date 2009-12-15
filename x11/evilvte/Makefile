@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	evilvte
-PORTVERSION=	0.4.4
-PORTREVISION=	3
-CATEGORIES=	x11-toolkits gnome
+PORTVERSION=	0.4.5
+CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
-		LOCAL/chinsan/${PORTNAME}/
+		LOCAL/glarkin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aragon@phat.za.net
 COMMENT=	A VTE based, super lightweight terminal emulator
 
 USE_GMAKE=	yes
@@ -20,12 +19,25 @@ USE_GNOME=	vte
 
 MAN1=		evilvte.1 showvte.1
 
+pre-everything::
+.if !defined(EVILVTE_CONF)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "!! NOTE !!"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can build evilvte with your own config.h using the EVILVTE_CONF knob:"
+	@${ECHO_MSG} "make EVILVTE_CONF=/path/to/evilvte-config.h install clean"
+	@${ECHO_MSG}
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e '40,41 d' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|\(FONT_SIZE\).*|\1 12|' ${WRKSRC}/src/config.h
+	# disable man page installation
+	@${REINPLACE_CMD} -e '53,54 d' ${WRKSRC}/Makefile
+.if defined(EVILVTE_CONF)
+	@${ECHO_MSG} "creating config.h from ${EVILVTE_CONF}"
+	@${CP} ${EVILVTE_CONF} ${WRKSRC}/src/config.h
+.endif
 
 post-install:
-# install manual
 	${INSTALL_MAN} ${WRKSRC}/misc/evilvte.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/misc/showvte.1 ${PREFIX}/man/man1
 
