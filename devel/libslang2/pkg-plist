@@ -8,6 +8,7 @@ lib/libslang.so.%%SHLIB_VERSION%%
 lib/libslang.so.2
 lib/libslang.so
 lib/slang/v2/modules/fcntl-module.so
+lib/slang/v2/modules/fork-module.so
 %%PCRE%%lib/slang/v2/modules/pcre-module.so
 %%PNG%%lib/slang/v2/modules/png-module.so
 %%ICONV%%lib/slang/v2/modules/iconv-module.so
@@ -16,8 +17,11 @@ lib/slang/v2/modules/rand-module.so
 lib/slang/v2/modules/select-module.so
 lib/slang/v2/modules/slsmg-module.so
 lib/slang/v2/modules/socket-module.so
+lib/slang/v2/modules/sysconf-module.so
 lib/slang/v2/modules/termios-module.so
 lib/slang/v2/modules/varray-module.so
+lib/slang/v2/modules/zlib-module.so
+libdata/pkgconfig/slang.pc
 %%DATADIR%%/arrayfuns.sl
 %%DATADIR%%/autoload.sl
 %%DATADIR%%/cmaps/cool.map
@@ -44,14 +48,17 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/cmaps/wysiwyg.map
 %%DATADIR%%/cmdopt.sl
 %%DATADIR%%/fcntl.sl
+%%DATADIR%%/fork.sl
 %%DATADIR%%/glob.sl
 %%DATADIR%%/help/arrayfuns.hlp
 %%DATADIR%%/help/cmdopt.hlp
+%%DATADIR%%/help/forkfuns.hlp
 %%DATADIR%%/help/glob.hlp
 %%DATADIR%%/help/onigfuns.hlp
 %%DATADIR%%/help/pcrefuns.hlp
 %%DATADIR%%/help/pngfuns.hlp
 %%DATADIR%%/help/print.hlp
+%%DATADIR%%/help/process.hlp
 %%DATADIR%%/help/profile.hlp
 %%DATADIR%%/help/randfuns.hlp
 %%DATADIR%%/help/readascii.hlp
@@ -63,6 +70,7 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/pcre.sl
 %%DATADIR%%/png.sl
 %%DATADIR%%/print.sl
+%%DATADIR%%/process.sl
 %%DATADIR%%/profile.sl
 %%DATADIR%%/rand.sl
 %%DATADIR%%/readascii.sl
@@ -88,8 +96,10 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/socket.sl
 %%DATADIR%%/stkcheck.sl
 %%DATADIR%%/structfuns.sl
+%%DATADIR%%/sysconf.sl
 %%DATADIR%%/termios.sl
 %%DATADIR%%/varray.sl
+%%DATADIR%%/zlib.sl
 @exec mkdir -p %D/%%DATADIR%%/local-packages
 @dirrmtry lib/slang/v2/modules
 @dirrmtry lib/slang/v2
