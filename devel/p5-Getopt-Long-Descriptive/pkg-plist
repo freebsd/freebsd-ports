@@ -1,9 +1,10 @@
-%%SITE_PERL%%/Getopt/Long/Descriptive.pm
-%%SITE_PERL%%/Getopt/Long/Descriptive/Usage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long/Descriptive/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long/Descriptive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
-@dirrmtry %%SITE_PERL%%/Getopt/Long/Descriptive
-@dirrmtry %%SITE_PERL%%/Getopt/Long
-@dirrmtry %%SITE_PERL%%/Getopt
+%%SITE_PERL%%/Getopt/Long/Descriptive.pm
+%%SITE_PERL%%/Getopt/Long/Descriptive/Opts.pm
+%%SITE_PERL%%/Getopt/Long/Descriptive/Usage.pm
+@dirrm %%SITE_PERL%%/Getopt/Long/Descriptive
+@dirrm %%SITE_PERL%%/Getopt/Long
+@dirrm %%SITE_PERL%%/Getopt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long/Descriptive
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
