@@ -56,6 +56,7 @@ www/dotproject/images/clip.png
 www/dotproject/images/colorchart.gif
 www/dotproject/images/corner-dots.gif
 www/dotproject/images/googlemaps.gif
+www/dotproject/images/helpdesk.png
 www/dotproject/images/icons/1.gif
 www/dotproject/images/icons/admin.gif
 www/dotproject/images/icons/calendar.gif
@@ -1058,6 +1059,7 @@ www/dotproject/modules/public/selector.php
 www/dotproject/modules/resources/addedit.js
 www/dotproject/modules/resources/addedit.php
 www/dotproject/modules/resources/do_resource_aed.php
+www/dotproject/modules/resources/images/helpdesk.png
 www/dotproject/modules/resources/index.php
 www/dotproject/modules/resources/resources.class.php
 www/dotproject/modules/resources/setup.php
@@ -1260,6 +1262,7 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/modules/smartsearch/searchobjects
 @dirrm www/dotproject/modules/smartsearch/images
 @dirrm www/dotproject/modules/smartsearch
+@dirrm www/dotproject/modules/resources/images
 @dirrm www/dotproject/modules/resources
 @dirrm www/dotproject/modules/public
 @dirrm www/dotproject/modules/projects/reports
