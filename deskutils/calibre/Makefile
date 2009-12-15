@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.6.18
+PORTVERSION=	0.6.27
 CATEGORIES=	deskutils python
-MASTER_SITES=	http://calibre.kovidgoyal.net/downloads/
+MASTER_SITES=	http://calibre-ebook.googlecode.com/files/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ebook management application
@@ -32,6 +32,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
+		py*-qt4-svg>=0:${PORTSDIR}/graphics/py-qt4-svg \
 		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		py*-qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
 
@@ -60,7 +61,11 @@ MANCOMPRESSED=	no
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+MAKE_ENV+=	WITH_USB=no
+PLIST_SUB+=	USB="@comment "
+.else
+MAKE_ENV+=	WITH_USB=yes
+PLIST_SUB+=	USB=""
 .endif
 .if !defined(WITHOUT_PODOFO) || exists(${LOCALBASE}/lib/libpodofo.so)
 LIB_DEPENDS+=	podofo:${PORTSDIR}/graphics/podofo
