@@ -1,46 +1,46 @@
-bin/spkg.pl
-bin/sbase.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress/.packlist
-%%SITE_PERL%%/HTML/sbase.pl
-%%SITE_PERL%%/HTML/Seamstress.pod
-%%SITE_PERL%%/HTML/spkg.pl
-%%SITE_PERL%%/HTML/pod2htmd.tmp
-%%SITE_PERL%%/HTML/pod2htmi.tmp
-%%SITE_PERL%%/HTML/Seamstress.pm
 %%SITE_PERL%%/HTML/Seamstress.html
-%%SITE_PERL%%/HTML/c
-%%SITE_PERL%%/HTML/Seamstress/Quickstart.html
-%%SITE_PERL%%/HTML/Seamstress/tt.pl
-%%SITE_PERL%%/HTML/Seamstress/Quickstart.pod
-%%SITE_PERL%%/HTML/Seamstress/pod2htmd.tmp
-%%SITE_PERL%%/HTML/Seamstress/pod2htmi.tmp
-%%SITE_PERL%%/HTML/Seamstress/EDIT_Quickstart.tt_ONLY
-%%SITE_PERL%%/HTML/Seamstress/Quickstart.tt-out
+%%SITE_PERL%%/HTML/Seamstress.pm
+%%SITE_PERL%%/HTML/Seamstress.pod
+%%SITE_PERL%%/HTML/Seamstress/Doc/FAQ.pod
 %%SITE_PERL%%/HTML/Seamstress/EDIT_Quickstart.tt_DO_NOT_EDIT_Quickstart.pod
+%%SITE_PERL%%/HTML/Seamstress/EDIT_Quickstart.tt_ONLY
+%%SITE_PERL%%/HTML/Seamstress/Quickstart.html
+%%SITE_PERL%%/HTML/Seamstress/Quickstart.pod
 %%SITE_PERL%%/HTML/Seamstress/Quickstart.tt
+%%SITE_PERL%%/HTML/Seamstress/Quickstart.tt-out
 %%SITE_PERL%%/HTML/Seamstress/Quickstart/callGreeting.pl
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/slowClean.pl
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/greeting-treebuilder.pl
 %%SITE_PERL%%/HTML/Seamstress/Quickstart/callGreetingAbs.pl
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/greeting-seamstress-pure.pl
 %%SITE_PERL%%/HTML/Seamstress/Quickstart/greeting-seamstress-pure-mapped.pl
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/greeting-seamstress-pure.pl
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/greeting-treebuilder.pl
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/Greeting.pm
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/GreetingAbs.html
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/GreetingAbs.pm
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/farewell.html
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/greeting.html
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/menu.html
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/tmp
 %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML/Greeting.pm
 %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML/Seamstress/Base.pm
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/GreetingAbs.html
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/greeting.html
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/farewell.html
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/menu.html
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/Greeting.pm
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/tmp
-%%SITE_PERL%%/HTML/Seamstress/Quickstart/html/GreetingAbs.pm
+%%SITE_PERL%%/HTML/Seamstress/Quickstart/slowClean.pl
+%%SITE_PERL%%/HTML/Seamstress/pod2htmd.tmp
+%%SITE_PERL%%/HTML/Seamstress/pod2htmi.tmp
+%%SITE_PERL%%/HTML/Seamstress/tt.pl
+%%SITE_PERL%%/HTML/c
+%%SITE_PERL%%/HTML/pod2htmd.tmp
+%%SITE_PERL%%/HTML/pod2htmi.tmp
+%%SITE_PERL%%/HTML/sbase.pl
+%%SITE_PERL%%/HTML/spkg.pl
 %%SITE_PERL%%/XML/Seamstress.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/XML
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML/Seamstress
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/html
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart
+@dirrmtry %%SITE_PERL%%/HTML/Seamstress/Doc
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress
-@dirrmtry %%SITE_PERL%%/HTML
-@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress
+bin/sbase.pl
+bin/spkg.pl
