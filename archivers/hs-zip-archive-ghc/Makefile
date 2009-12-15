@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zip-archive
-PORTVERSION=	0.1.1.3
-PORTREVISION=	2
+PORTVERSION=	0.1.1.4
 CATEGORIES=	archivers haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,12 +15,12 @@ PKGNAMESUFFIX=	-ghc
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for working with zip archives
 
-BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+BUILD_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc \
 		hs-zlib>=0.5:${PORTSDIR}/archivers/hs-zlib \
 		hs-binary-ghc>=0.4:${PORTSDIR}/devel/hs-binary-ghc \
 		hs-utf8-string-ghc>=0.3.1:${PORTSDIR}/devel/hs-utf8-string-ghc \
 		hs-digest-ghc>=0.0.0.1:${PORTSDIR}/security/hs-digest-ghc
-RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+RUN_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc \
 		hs-zlib>=0.5:${PORTSDIR}/archivers/hs-zlib \
 		hs-binary-ghc>=0.4:${PORTSDIR}/devel/hs-binary-ghc \
 		hs-utf8-string-ghc>=0.3.1:${PORTSDIR}/devel/hs-utf8-string-ghc \
