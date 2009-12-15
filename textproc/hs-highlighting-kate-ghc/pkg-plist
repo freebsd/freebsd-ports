@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShighlighting-kate-%%HLKATE_VERSION%%.o
+%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_highlighting_kate.hi
 %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate.hi
 %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Common.hi
 %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Definitions.hi

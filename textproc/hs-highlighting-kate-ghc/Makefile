@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	highlighting-kate
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.5.1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,9 +15,9 @@ PKGNAMESUFFIX=	-ghc
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell syntax highlighting library for 50+ languages
 
-BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+BUILD_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc \
 		hs-pcre-light-ghc>=0.3:${PORTSDIR}/devel/hs-pcre-light-ghc
-RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+RUN_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc \
 		hs-pcre-light-ghc>=0.3:${PORTSDIR}/devel/hs-pcre-light-ghc
 
 GHC_VERSION=	6.10.4
