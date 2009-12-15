@@ -15,7 +15,6 @@
     SUBDIR += efltk
     SUBDIR += enhance
     SUBDIR += etk
-    SUBDIR += evilvte
     SUBDIR += ewl
     SUBDIR += fl_editor
     SUBDIR += flowcanvas

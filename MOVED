@@ -4225,3 +4225,4 @@ net/grdc|net/remmina|2009-12-14|Project was renamed
 net/grdc-applet|net/remmina-applet|2009-12-14|Project was renamed
 security/pfw||2009-12-14|Project is no longer maintainer
 ftp/pftpx||2009-12-15|Broken by libevent update and the project is dead
+x11-toolkits/evilvte|x11/evilvte|2009-12-15|Moved to x11 category
