@@ -1,99 +1,107 @@
-bin/mojo
-bin/mojolicious
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo/.packlist
+%%SITE_PERL%%/Mojo.pm
+%%SITE_PERL%%/Mojo/Asset.pm
+%%SITE_PERL%%/Mojo/Asset/File.pm
+%%SITE_PERL%%/Mojo/Asset/Memory.pm
 %%SITE_PERL%%/Mojo/Base.pm
 %%SITE_PERL%%/Mojo/Buffer.pm
 %%SITE_PERL%%/Mojo/ByteStream.pm
 %%SITE_PERL%%/Mojo/Client.pm
-%%SITE_PERL%%/Mojo/Content/MultiPart.pm
+%%SITE_PERL%%/Mojo/Command.pm
+%%SITE_PERL%%/Mojo/Command/Cgi.pm
+%%SITE_PERL%%/Mojo/Command/Daemon.pm
+%%SITE_PERL%%/Mojo/Command/DaemonPrefork.pm
+%%SITE_PERL%%/Mojo/Command/Fastcgi.pm
+%%SITE_PERL%%/Mojo/Command/Generate.pm
+%%SITE_PERL%%/Mojo/Command/Generate/App.pm
+%%SITE_PERL%%/Mojo/Command/Generate/Makefile.pm
+%%SITE_PERL%%/Mojo/Command/Get.pm
+%%SITE_PERL%%/Mojo/Command/Test.pm
+%%SITE_PERL%%/Mojo/Commands.pm
 %%SITE_PERL%%/Mojo/Content.pm
+%%SITE_PERL%%/Mojo/Content/MultiPart.pm
+%%SITE_PERL%%/Mojo/Content/Single.pm
 %%SITE_PERL%%/Mojo/Cookie.pm
 %%SITE_PERL%%/Mojo/Cookie/Request.pm
 %%SITE_PERL%%/Mojo/Cookie/Response.pm
+%%SITE_PERL%%/Mojo/CookieJar.pm
 %%SITE_PERL%%/Mojo/Date.pm
-%%SITE_PERL%%/Mojo/File/Memory.pm
-%%SITE_PERL%%/Mojo/File.pm
-%%SITE_PERL%%/Mojo/Filter/Chunked.pm
+%%SITE_PERL%%/Mojo/Exception.pm
 %%SITE_PERL%%/Mojo/Filter.pm
+%%SITE_PERL%%/Mojo/Filter/Chunked.pm
 %%SITE_PERL%%/Mojo/Headers.pm
 %%SITE_PERL%%/Mojo/HelloWorld.pm
 %%SITE_PERL%%/Mojo/Home.pm
-%%SITE_PERL%%/Mojolicious/Context.pm
-%%SITE_PERL%%/Mojolicious/Controller.pm
-%%SITE_PERL%%/Mojolicious/Dispatcher.pm
-%%SITE_PERL%%/Mojolicious.pm
-%%SITE_PERL%%/Mojolicious/Renderer.pm
-%%SITE_PERL%%/Mojolicious/Script/Daemon.pm
-%%SITE_PERL%%/Mojolicious/Script/Generate/App.pm
-%%SITE_PERL%%/Mojolicious/Script/Generate.pm
-%%SITE_PERL%%/Mojolicious/Script/Mojo.pm
-%%SITE_PERL%%/Mojolicious/Scripts.pm
-%%SITE_PERL%%/Mojolicious/Script/Test.pm
+%%SITE_PERL%%/Mojo/IOLoop.pm
+%%SITE_PERL%%/Mojo/JSON.pm
 %%SITE_PERL%%/Mojo/Loader.pm
 %%SITE_PERL%%/Mojo/Log.pm
-%%SITE_PERL%%/Mojo/Manual/CodingGuidelines.pod
-%%SITE_PERL%%/Mojo/Manual/Cookbook.pod
-%%SITE_PERL%%/Mojo/Manual/Deployment.pod
-%%SITE_PERL%%/Mojo/Manual/FAQ.pod
-%%SITE_PERL%%/Mojo/Manual/FrameworkBuilding.pod
-%%SITE_PERL%%/Mojo/Manual/GettingStarted.pod
-%%SITE_PERL%%/Mojo/Manual/HTTPGuide.pod
-%%SITE_PERL%%/Mojo/Manual/Mojolicious.pod
-%%SITE_PERL%%/Mojo/Manual.pod
+%%SITE_PERL%%/Mojo/Message.pm
 %%SITE_PERL%%/Mojo/Message/Request.pm
 %%SITE_PERL%%/Mojo/Message/Response.pm
-%%SITE_PERL%%/Mojo/Message.pm
 %%SITE_PERL%%/Mojo/Parameters.pm
 %%SITE_PERL%%/Mojo/Path.pm
-%%SITE_PERL%%/Mojo.pm
-%%SITE_PERL%%/Mojo/Script/Cgi.pm
-%%SITE_PERL%%/Mojo/Script/Daemon.pm
-%%SITE_PERL%%/Mojo/Script/DaemonPrefork.pm
-%%SITE_PERL%%/Mojo/Script/Fastcgi.pm
-%%SITE_PERL%%/Mojo/Script/Generate/App.pm
-%%SITE_PERL%%/Mojo/Script/Generate.pm
-%%SITE_PERL%%/Mojo/Script.pm
-%%SITE_PERL%%/Mojo/Scripts.pm
-%%SITE_PERL%%/Mojo/Script/Test.pm
+%%SITE_PERL%%/Mojo/Server.pm
 %%SITE_PERL%%/Mojo/Server/CGI.pm
 %%SITE_PERL%%/Mojo/Server/Daemon.pm
 %%SITE_PERL%%/Mojo/Server/Daemon/Prefork.pm
 %%SITE_PERL%%/Mojo/Server/FastCGI.pm
-%%SITE_PERL%%/Mojo/Server.pm
 %%SITE_PERL%%/Mojo/Stateful.pm
 %%SITE_PERL%%/Mojo/Template.pm
+%%SITE_PERL%%/Mojo/Template/Exception.pm
 %%SITE_PERL%%/Mojo/Transaction.pm
-%%SITE_PERL%%/Mojo/Upload.pm
+%%SITE_PERL%%/Mojo/Transaction/Pipeline.pm
+%%SITE_PERL%%/Mojo/Transaction/Single.pm
 %%SITE_PERL%%/Mojo/URL.pm
-%%SITE_PERL%%/MojoX/Context.pm
-%%SITE_PERL%%/MojoX/Dispatcher/Routes/Context.pm
-%%SITE_PERL%%/MojoX/Dispatcher/Routes/Controller.pm
+%%SITE_PERL%%/Mojo/Upload.pm
 %%SITE_PERL%%/MojoX/Dispatcher/Routes.pm
+%%SITE_PERL%%/MojoX/Dispatcher/Routes/Controller.pm
 %%SITE_PERL%%/MojoX/Dispatcher/Static.pm
 %%SITE_PERL%%/MojoX/Renderer.pm
+%%SITE_PERL%%/MojoX/Routes.pm
 %%SITE_PERL%%/MojoX/Routes/Match.pm
 %%SITE_PERL%%/MojoX/Routes/Pattern.pm
-%%SITE_PERL%%/MojoX/Routes.pm
 %%SITE_PERL%%/MojoX/Types.pm
+%%SITE_PERL%%/Mojolicious.pm
+%%SITE_PERL%%/Mojolicious/Book.pod
+%%SITE_PERL%%/Mojolicious/Command/Generate.pm
+%%SITE_PERL%%/Mojolicious/Command/Generate/App.pm
+%%SITE_PERL%%/Mojolicious/Command/Generate/LiteApp.pm
+%%SITE_PERL%%/Mojolicious/Command/Routes.pm
+%%SITE_PERL%%/Mojolicious/Commands.pm
+%%SITE_PERL%%/Mojolicious/Controller.pm
+%%SITE_PERL%%/Mojolicious/Lite.pm
+%%SITE_PERL%%/Mojolicious/Plugin.pm
+%%SITE_PERL%%/Mojolicious/Plugin/AgentCondition.pm
+%%SITE_PERL%%/Mojolicious/Plugin/DefaultHelpers.pm
+%%SITE_PERL%%/Mojolicious/Plugin/EpRenderer.pm
+%%SITE_PERL%%/Mojolicious/Plugin/EplRenderer.pm
+%%SITE_PERL%%/Mojolicious/Plugin/RequestTimer.pm
+%%SITE_PERL%%/Mojolicious/Plugins.pm
+%%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/Test/Mojo/Server.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo
-@dirrm %%SITE_PERL%%/Test/Mojo
+bin/mojo
+bin/mojolicious
+@dirrmtry %%SITE_PERL%%/Test/Mojo
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/MojoX/Routes
-@dirrm %%SITE_PERL%%/MojoX/Dispatcher/Routes
-@dirrm %%SITE_PERL%%/MojoX/Dispatcher
-@dirrm %%SITE_PERL%%/MojoX
-@dirrm %%SITE_PERL%%/Mojo/Content
-@dirrm %%SITE_PERL%%/Mojo/Cookie
-@dirrm %%SITE_PERL%%/Mojo/File
-@dirrm %%SITE_PERL%%/Mojo/Filter
-@dirrm %%SITE_PERL%%/Mojo/Manual
-@dirrm %%SITE_PERL%%/Mojo/Message
-@dirrm %%SITE_PERL%%/Mojo/Server/Daemon
-@dirrm %%SITE_PERL%%/Mojo/Server
-@dirrm %%SITE_PERL%%/Mojo/Script/Generate
-@dirrm %%SITE_PERL%%/Mojo/Script
-@dirrm %%SITE_PERL%%/Mojo
-@dirrm %%SITE_PERL%%/Mojolicious/Script/Generate
-@dirrm %%SITE_PERL%%/Mojolicious/Script
-@dirrm %%SITE_PERL%%/Mojolicious
+@dirrmtry %%SITE_PERL%%/Mojolicious/Plugin
+@dirrmtry %%SITE_PERL%%/Mojolicious/Command/Generate
+@dirrmtry %%SITE_PERL%%/Mojolicious/Command
+@dirrmtry %%SITE_PERL%%/Mojolicious
+@dirrmtry %%SITE_PERL%%/MojoX/Routes
+@dirrmtry %%SITE_PERL%%/MojoX/Dispatcher/Routes
+@dirrmtry %%SITE_PERL%%/MojoX/Dispatcher
+@dirrmtry %%SITE_PERL%%/MojoX
+@dirrmtry %%SITE_PERL%%/Mojo/Transaction
+@dirrmtry %%SITE_PERL%%/Mojo/Template
+@dirrmtry %%SITE_PERL%%/Mojo/Server/Daemon
+@dirrmtry %%SITE_PERL%%/Mojo/Server
+@dirrmtry %%SITE_PERL%%/Mojo/Message
+@dirrmtry %%SITE_PERL%%/Mojo/Filter
+@dirrmtry %%SITE_PERL%%/Mojo/Cookie
+@dirrmtry %%SITE_PERL%%/Mojo/Content
+@dirrmtry %%SITE_PERL%%/Mojo/Command/Generate
+@dirrmtry %%SITE_PERL%%/Mojo/Command
+@dirrmtry %%SITE_PERL%%/Mojo/Asset
+@dirrmtry %%SITE_PERL%%/Mojo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo
