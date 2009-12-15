@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devede
-DISTVERSION=	3.14.0
+DISTVERSION=	3.15.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
@@ -51,18 +51,15 @@ PORTDOCS=	docs/*
 
 DEVEDE_INTERFACE=	aboutdialog1.ui add_subtitle.ui add_subtitle2.ui \
 			codepages.lst languages.lst waborted_dialog.ui \
-			wcancel_dialog.ui wcancel_job_dialog.ui \
-			wdel_chapter_dialog.ui wdel_subtitle.ui \
-			wdel_title_dialog.ui wdisk_type.ui \
-			wempty_titles_dialog.ui wend_dialog.ui \
-			werase_dialog.ui werror_dialog.ui wfile.ui \
-			wfolder_dialog.ui wfolder_exists.ui \
-			wloadconfig.ui wloosecurrent.ui wmain.ui \
-			wmenu_preview_ntsc.ui wmenu_preview_pal.ui \
+			wcancel_dialog.ui wcancel_job_dialog.ui wdel_chapter_dialog.ui \
+			wdel_subtitle.ui wdel_title_dialog.ui wdisk_type.ui \
+			wempty_titles_dialog.ui wend_dialog.ui werase_dialog.ui \
+			werror_dialog.ui wfile.ui wfolder_dialog.ui \
+			wfolder_exists.ui wloadconfig.ui wloosecurrent.ui \
+			wmain.ui wmenu_preview_ntsc.ui wmenu_preview_pal.ui \
 			wmenu_properties.ui wnofonts.ui wpreview_dialog.ui \
-			wpreviewagain_dialog.ui wprograms.ui \
-			wprogress.ui wsaveconfig.ui \
-			wtitle_properties_dialog.ui wwarning_dialog.ui
+			wpreviewagain_dialog.ui wprograms.ui wprogress.ui \
+			wsaveconfig.ui wtitle_properties_dialog.ui wwarning_dialog.ui
 DEVEDE_LIBS=	devede_bincue.py devede_convert.py devede_delete.py \
 		devede_dialogs.py devede_disctype.py devede_dvd.py \
 		devede_dvdmenu.py devede_executor.py devede_fonts.py \
@@ -72,8 +69,8 @@ DEVEDE_LIBS=	devede_bincue.py devede_convert.py devede_delete.py \
 		devede_xml_menu.py
 DEVEDE_PIXMAPS=	background.png barras.png base_ntsc.mpg base_ntsc_wide.mpg \
 		base_pal.mpg base_pal_wide.mpg estira.png icon_cvd.png \
-		icon_divx.png icon_dvd.png icon_svcd.png icon_vcd.png \
-		silence.mp3
+		icon_divx.png icon_dvd.png icon_svcd.png icon_vcd.png silence.ogg
+DEVEDE_BACKGROUNDS=	biglens.png default_bg.png dvdfilm.png
 
 .if defined(WITH_PSYCO)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
@@ -96,10 +93,15 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/devede.py ${PREFIX}/bin/devede
 	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}/backgrounds
 	${INSTALL_DATA} ${WRKSRC}/devede.svg ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/devedesans.ttf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/changes.txt ${DATADIR}
 .for pixmap in ${DEVEDE_PIXMAPS}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/${pixmap} ${DATADIR}
+.endfor
+.for background in ${DEVEDE_BACKGROUNDS}
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/backgrounds/${background} ${DATADIR}/backgrounds
 .endfor
 .for interface in ${DEVEDE_INTERFACE}
 	${INSTALL_DATA} ${WRKSRC}/interface/${interface} ${DATADIR}
@@ -128,6 +130,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/po/ru.mo ${PREFIX}/share/locale/ru/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/sk.mo ${PREFIX}/share/locale/sk/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/sv.mo ${PREFIX}/share/locale/sv/LC_MESSAGES/devede.mo
+	${INSTALL_DATA} ${WRKSRC}/po/zh_CN.mo ${PREFIX}/share/locale/zh_CN/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/zh_TW.mo ${PREFIX}/share/locale/zh_TW/LC_MESSAGES/devede.mo
 .endif
 

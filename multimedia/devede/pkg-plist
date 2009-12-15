@@ -28,6 +28,7 @@ share/applications/devede.desktop
 %%DATADIR%%/base_pal.mpg
 %%DATADIR%%/base_pal_wide.mpg
 %%DATADIR%%/codepages.lst
+%%DATADIR%%/changes.txt
 %%DATADIR%%/devede.svg
 %%DATADIR%%/devedesans.ttf
 %%DATADIR%%/estira.png
@@ -37,7 +38,7 @@ share/applications/devede.desktop
 %%DATADIR%%/icon_svcd.png
 %%DATADIR%%/icon_vcd.png
 %%DATADIR%%/languages.lst
-%%DATADIR%%/silence.mp3
+%%DATADIR%%/silence.ogg
 %%DATADIR%%/waborted_dialog.ui
 %%DATADIR%%/wcancel_dialog.ui
 %%DATADIR%%/wcancel_job_dialog.ui
@@ -66,6 +67,9 @@ share/applications/devede.desktop
 %%DATADIR%%/wsaveconfig.ui
 %%DATADIR%%/wtitle_properties_dialog.ui
 %%DATADIR%%/wwarning_dialog.ui
+%%DATADIR%%/backgrounds/biglens.png
+%%DATADIR%%/backgrounds/default_bg.png
+%%DATADIR%%/backgrounds/dvdfilm.png
 %%PORTDOCS%%%%DOCSDIR%%/html/basic.html
 %%PORTDOCS%%%%DOCSDIR%%/html/choose.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/contact.html
@@ -101,8 +105,8 @@ share/applications/devede.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/subs.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/title.html
 %%PORTDOCS%%%%DOCSDIR%%/html/title_prop.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/ubuntu_9_10.png
 %%PORTDOCS%%%%DOCSDIR%%/html/versions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/versions.html~
 %%NLS%%share/locale/ca/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/da/LC_MESSAGES/devede.mo
@@ -120,8 +124,10 @@ share/applications/devede.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/devede.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+@dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/devede
