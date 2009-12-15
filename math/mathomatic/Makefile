@@ -7,6 +7,7 @@
 
 PORTNAME=	mathomatic
 PORTVERSION=	15.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
@@ -25,8 +26,7 @@ PORTDOCS=	*
 MAN1=		mathomatic.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS/ s|-O2||; /^LDFLAGS/ s|-s||' \
-		${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e '/^CFLAGS/ s|-O||' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${PREFIX}/bin
