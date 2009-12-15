@@ -1,0 +1,7 @@
+zope.event provides a simple event system on which application-specific
+event systems can be built.
+
+Application code can generate events without being concerned about the
+event-processing frameworks that might handle the events.
+
+WWW:  http://pypi.python.org/pypi/zope.event 
