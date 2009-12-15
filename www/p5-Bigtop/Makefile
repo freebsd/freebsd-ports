@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bigtop
-PORTVERSION=	0.30
+PORTVERSION=	0.33
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,12 +27,15 @@ RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General 
 
 PERL_MODBUILD=	yes
 
-MAN1=		bigtop.1 tentmaker.1
-
-MAN3=		Bigtop.3 Bigtop::Backend::CGI.3 \
-		Bigtop::Backend::CGI::Gantry.3 Bigtop::Backend::Conf.3 \
+MAN1=		bigtop.1 \
+		tentmaker.1
+MAN3=		Bigtop.3 \
+		Bigtop::Backend::CGI.3 \
+		Bigtop::Backend::CGI::Gantry.3 \
+		Bigtop::Backend::Conf.3 \
 		Bigtop::Backend::Conf::Gantry.3 \
-		Bigtop::Backend::Conf::General.3 Bigtop::Backend::Control.3 \
+		Bigtop::Backend::Conf::General.3 \
+		Bigtop::Backend::Control.3 \
 		Bigtop::Backend::Control::Gantry.3 \
 		Bigtop::Backend::HttpdConf.3 \
 		Bigtop::Backend::HttpdConf::Gantry.3 \
@@ -40,21 +43,29 @@ MAN3=		Bigtop.3 Bigtop::Backend::CGI.3 \
 		Bigtop::Backend::Model.3 \
 		Bigtop::Backend::Model::GantryCDBI.3 \
 		Bigtop::Backend::Model::GantryDBIxClass.3 \
-		Bigtop::Backend::SQL.3 Bigtop::Backend::SQL::MySQL.3 \
+		Bigtop::Backend::SQL.3 \
+		Bigtop::Backend::SQL::DB2.3 \
+		Bigtop::Backend::SQL::MySQL.3 \
 		Bigtop::Backend::SQL::Postgres.3 \
 		Bigtop::Backend::SQL::SQLite.3 \
 		Bigtop::Backend::SiteLook::GantryDefault.3 \
-		Bigtop::Deparser.3 Bigtop::Docs::About.3 \
+		Bigtop::Deparser.3 \
+		Bigtop::Docs::About.3 \
 		Bigtop::Docs::AutoBackends.3 \
 		Bigtop::Docs::Cookbook.3 \
 		Bigtop::Docs::FullKeywords.3 \
 		Bigtop::Docs::Modules.3 \
 		Bigtop::Docs::QuickKeywords.3 \
 		Bigtop::Docs::QuickStart.3 \
-		Bigtop::Docs::Syntax.3 Bigtop::Docs::TOC.3 \
-		Bigtop::Docs::TentRef.3 Bigtop::Docs::TentTut.3 \
-		Bigtop::Docs::Tutorial.3 Bigtop::Docs::Vim.3 \
-		Bigtop::Grammar.3 Bigtop::Keywords.3 Bigtop::Parser.3 \
+		Bigtop::Docs::Syntax.3 \
+		Bigtop::Docs::TOC.3 \
+		Bigtop::Docs::TentRef.3 \
+		Bigtop::Docs::TentTut.3 \
+		Bigtop::Docs::Tutorial.3 \
+		Bigtop::Docs::Vim.3 \
+		Bigtop::Grammar.3 \
+		Bigtop::Keywords.3 \
+		Bigtop::Parser.3 \
 		Bigtop::ScriptHelp.3 \
 		Bigtop::ScriptHelp::Style.3 \
 		Bigtop::ScriptHelp::Style::Kickstart.3 \

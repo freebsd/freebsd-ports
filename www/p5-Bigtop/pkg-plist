@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Bigtop.pm
 %%SITE_PERL%%/Bigtop/Backend/CGI.pm
 %%SITE_PERL%%/Bigtop/Backend/CGI/Gantry.pm
@@ -14,6 +13,7 @@
 %%SITE_PERL%%/Bigtop/Backend/Model/GantryCDBI.pm
 %%SITE_PERL%%/Bigtop/Backend/Model/GantryDBIxClass.pm
 %%SITE_PERL%%/Bigtop/Backend/SQL.pm
+%%SITE_PERL%%/Bigtop/Backend/SQL/DB2.pm
 %%SITE_PERL%%/Bigtop/Backend/SQL/MySQL.pm
 %%SITE_PERL%%/Bigtop/Backend/SQL/Postgres.pm
 %%SITE_PERL%%/Bigtop/Backend/SQL/SQLite.pm
