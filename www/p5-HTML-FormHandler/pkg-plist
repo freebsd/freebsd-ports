@@ -1,114 +1,104 @@
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/NoRender.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Textarea.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Password.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Select.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Hidden.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Checkbox.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Reset.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Compound.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Text.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/RadioGroup.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Upload.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Submit.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/ApplyRole.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Simple.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Table.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/None.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Base.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Form/Simple.pm
-%%SITE_PERL%%/HTML/FormHandler/Widget/Form/Table.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/.packlist
+%%SITE_PERL%%/HTML/FormHandler.pm
+%%SITE_PERL%%/HTML/FormHandler/BuildFields.pm
+%%SITE_PERL%%/HTML/FormHandler/Field.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Boolean.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Checkbox.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Compound.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Date.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/DateMDY.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/DateTime.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Display.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Duration.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Email.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Hidden.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Hour.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/HtmlArea.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/IntRange.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Integer.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Minute.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Money.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Month.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/MonthDay.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/MonthName.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Multiple.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Nested.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Password.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/PasswordConf.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/PosInteger.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/PrimaryKey.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Radio.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Repeatable.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Repeatable/Instance.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Reset.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Result.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Second.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Select.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Submit.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Text.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/TextArea.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Upload.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Month.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Money.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Result.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Checkbox.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Hidden.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Text.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Year.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Hour.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Integer.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Select.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Nested.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Display.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/PrimaryKey.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Weekday.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/PasswordConf.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/MonthDay.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/IntRange.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/HtmlArea.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Multiple.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Radio.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Password.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Email.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Boolean.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/DateTime.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Repeatable.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/DateMDY.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Submit.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Repeatable/Instance.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Date.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/PosInteger.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Second.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Duration.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Reset.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/MonthName.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Compound.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Minute.pm
-%%SITE_PERL%%/HTML/FormHandler/Moose/Role.pm
-%%SITE_PERL%%/HTML/FormHandler/Result.pm
-%%SITE_PERL%%/HTML/FormHandler/Render/Simple.pm
-%%SITE_PERL%%/HTML/FormHandler/Render/Table.pm
-%%SITE_PERL%%/HTML/FormHandler/Validate/Actions.pm
-%%SITE_PERL%%/HTML/FormHandler/Manual.pod
-%%SITE_PERL%%/HTML/FormHandler/Result/Role.pm
-%%SITE_PERL%%/HTML/FormHandler/I18N.pm
-%%SITE_PERL%%/HTML/FormHandler/BuildFields.pm
-%%SITE_PERL%%/HTML/FormHandler/Model/Object.pm
-%%SITE_PERL%%/HTML/FormHandler/Model/CDBI.pm
-%%SITE_PERL%%/HTML/FormHandler/Model.pm
-%%SITE_PERL%%/HTML/FormHandler/Manual/Catalyst.pod
-%%SITE_PERL%%/HTML/FormHandler/Manual/Intro.pod
-%%SITE_PERL%%/HTML/FormHandler/Manual/Templates.pod
-%%SITE_PERL%%/HTML/FormHandler/Manual/Cookbook.pod
-%%SITE_PERL%%/HTML/FormHandler/Manual/Rendering.pod
-%%SITE_PERL%%/HTML/FormHandler/Manual/Tutorial.pod
-%%SITE_PERL%%/HTML/FormHandler/Manual/Reference.pod
-%%SITE_PERL%%/HTML/FormHandler/Field.pm
-%%SITE_PERL%%/HTML/FormHandler/Meta/Role.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Year.pm
 %%SITE_PERL%%/HTML/FormHandler/Fields.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/en_us.pm
 %%SITE_PERL%%/HTML/FormHandler/InitResult.pm
-%%SITE_PERL%%/HTML/FormHandler/Validate.pm
-%%SITE_PERL%%/HTML/FormHandler/Types.pm
+%%SITE_PERL%%/HTML/FormHandler/Manual.pod
+%%SITE_PERL%%/HTML/FormHandler/Manual/Catalyst.pod
+%%SITE_PERL%%/HTML/FormHandler/Manual/Cookbook.pod
+%%SITE_PERL%%/HTML/FormHandler/Manual/Intro.pod
+%%SITE_PERL%%/HTML/FormHandler/Manual/Reference.pod
+%%SITE_PERL%%/HTML/FormHandler/Manual/Rendering.pod
+%%SITE_PERL%%/HTML/FormHandler/Manual/Templates.pod
+%%SITE_PERL%%/HTML/FormHandler/Manual/Tutorial.pod
+%%SITE_PERL%%/HTML/FormHandler/Meta/Role.pm
+%%SITE_PERL%%/HTML/FormHandler/Model.pm
+%%SITE_PERL%%/HTML/FormHandler/Model/CDBI.pm
+%%SITE_PERL%%/HTML/FormHandler/Model/Object.pm
 %%SITE_PERL%%/HTML/FormHandler/Moose.pm
+%%SITE_PERL%%/HTML/FormHandler/Moose/Role.pm
 %%SITE_PERL%%/HTML/FormHandler/Params.pm
-%%SITE_PERL%%/HTML/FormHandler.pm
-%%SITE_PERL%%/Perl/Critic/Policy/FormHandler/Deprecations.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/.packlist
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/FormHandler
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy
-@dirrmtry %%SITE_PERL%%/Perl/Critic
-@dirrmtry %%SITE_PERL%%/Perl
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/I18N
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Meta
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Manual
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Model
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Result
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Validate
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Render
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Moose
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Field/Repeatable
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Field
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Form
+%%SITE_PERL%%/HTML/FormHandler/Render/Simple.pm
+%%SITE_PERL%%/HTML/FormHandler/Render/Table.pm
+%%SITE_PERL%%/HTML/FormHandler/Result.pm
+%%SITE_PERL%%/HTML/FormHandler/Result/Role.pm
+%%SITE_PERL%%/HTML/FormHandler/Types.pm
+%%SITE_PERL%%/HTML/FormHandler/Validate.pm
+%%SITE_PERL%%/HTML/FormHandler/Validate/Actions.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/ApplyRole.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Checkbox.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/CheckboxGroup.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Compound.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Hidden.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/NoRender.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Password.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/RadioGroup.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Reset.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Select.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Submit.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Text.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Textarea.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Upload.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Form/Simple.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Form/Table.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Base.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/None.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Simple.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Table.pm
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Form
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Field
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Validate
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Result
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Render
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Moose
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Model
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Meta
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Manual
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/I18N
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Field/Repeatable
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Field
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler
-@dirrmtry %%SITE_PERL%%/HTML
-@dirrmtry %%SITE_PERL%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry blib/script
