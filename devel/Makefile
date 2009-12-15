@@ -2623,6 +2623,7 @@
     SUBDIR += py-zconfig
     SUBDIR += py-zope.exceptions
     SUBDIR += py-zopeInterface
+    SUBDIR += py-zopeevent
     SUBDIR += py-zopetesting
     SUBDIR += py_otp_interface
     SUBDIR += pybaz
