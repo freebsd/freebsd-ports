@@ -36,7 +36,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_r
 .endif
 
 .if defined(WITH_GSASL)
-LIB_DEPENDS+=	gsasl.13:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.14:${PORTSDIR}/security/gsasl
 .else
 CONFIGURE_ARGS+=	--without-gsasl
 .endif

@@ -171,7 +171,7 @@ CONFIGURE_ARGS+=	--with-sasl=cyrus
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .else
 CONFIGURE_ARGS+=	--with-sasl=gsasl
-LIB_DEPENDS+=	gsasl.13:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.14:${PORTSDIR}/security/gsasl
 .endif
 
 MAN8=		c2s.8 jabberd.8 router.8 s2s.8 sm.8
