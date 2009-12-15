@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION?=	1.1.7
-PORTREVISION?=	4
+PORTVERSION?=	1.1.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
