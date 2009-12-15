@@ -1,6 +1,6 @@
---- include/private/gcconfig.h.rorig	Sat Oct 15 16:40:25 2005
-+++ include/private/gcconfig.h	Sat Oct 15 16:42:43 2005
-@@ -62,7 +62,7 @@
+--- include/private/gcconfig.h.orig	2008-02-20 22:23:00.000000000 +0300
++++ include/private/gcconfig.h	2009-10-20 01:08:38.000000000 +0400
+@@ -64,7 +64,7 @@
  /* Determine the machine type: */
  # if defined(__arm__) || defined(__thumb__)
  #    define ARM32
@@ -9,7 +9,7 @@
  #      define NOSYS
  #      define mach_type_known
  #    endif
-@@ -334,10 +334,22 @@
+@@ -334,10 +334,26 @@
  #    define X86_64
  #    define mach_type_known
  # endif
@@ -17,11 +17,14 @@
 +#    define X86_64
 +#    define mach_type_known
 +# endif
++# if defined(__FreeBSD__) && defined(__ia64__)
++#    define IA64
++#    define mach_type_known
++# endif
  # if defined(FREEBSD) && defined(__sparc__)
  #    define SPARC
  #    define mach_type_known
--#endif
-+# endif
+ # endif
 +# if defined(FREEBSD) && defined(__powerpc__)
 +#    define POWERPC
 +#    define mach_type_known
@@ -33,9 +36,9 @@
  # if defined(bsdi) && (defined(i386) || defined(__i386__))
  #    define I386
  #    define BSDI
-@@ -845,6 +857,16 @@
- #     define DATASTART GC_data_start
- #     define DYNAMIC_LOADING
+@@ -1771,6 +1787,16 @@
+ #     define OS_TYPE "MSWINCE"
+ #     define DATAEND /* not needed */
  #   endif
 +#   ifdef FREEBSD
 +#   define ALIGNMENT 4
@@ -48,41 +51,13 @@
 +#	define SEARCH_FOR_DATA_START
 +#   endif
  #   ifdef NOSYS
- #     define ALIGNMENT 4
- #     define OS_TYPE "NOSYS"
-@@ -1807,6 +1829,17 @@
- #	endif
- #       define USE_GENERIC_PUSH_REGS
+       /* __data_start is usually defined in the target linker script.  */
+       extern int __data_start[];
+@@ -1800,6 +1826,7 @@
+ #     define OS_TYPE "MSWINCE"
+ #     define DATAEND /* not needed */
  #   endif
-+#   ifdef FREEBSD
-+#   define ALIGNMENT 4
-+#       define OS_TYPE "FREEBSD"
-+#       ifdef __ELF__
-+#           define DYNAMIC_LOADING
-+#       endif
-+#       define HEURISTIC2
-+	extern char etext[];
-+#       define SEARCH_FOR_DATA_START
-+#   endif
 +		   
  #   ifdef LINUX
- #       define OS_TYPE "LINUX"
- #       define LINUX_STACKBOTTOM
-@@ -1957,6 +1990,17 @@
- #	ifdef __ELF__
- #	    define DYNAMIC_LOADING
- #	endif
-+#	define HEURISTIC2
-+	extern char etext[];
-+#	define SEARCH_FOR_DATA_START
-+#   endif
-+#   ifdef FREEBSD
-+#       define OS_TYPE "FREEBSD"
-+#       define SIG_SUSPEND SIGUSR1
-+#       define SIG_THR_RESTART SIGUSR2
-+#       ifdef __ELF__
-+#           define DYNAMIC_LOADING
-+#       endif
- #	define HEURISTIC2
- 	extern char etext[];
- #	define SEARCH_FOR_DATA_START
+ #     define OS_TYPE "LINUX"
+ #     define LINUX_STACKBOTTOM

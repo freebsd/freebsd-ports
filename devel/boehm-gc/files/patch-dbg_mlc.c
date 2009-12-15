@@ -1,6 +1,6 @@
---- dbg_mlc.c.orig	Tue May 13 16:59:49 2003
-+++ dbg_mlc.c	Wed May 12 20:13:19 2004
-@@ -414,6 +414,23 @@
+--- dbg_mlc.c.orig	2009-10-20 00:34:39.000000000 +0400
++++ dbg_mlc.c	2009-10-20 00:41:22.000000000 +0400
+@@ -456,10 +456,34 @@
      GC_register_displacement((word)sizeof(oh) + offset);
  }
  
@@ -21,13 +21,11 @@
 +#define GC_caller_func(ad, symp, offp)
 +#endif
 +
- # ifdef __STDC__
-     GC_PTR GC_debug_malloc(size_t lb, GC_EXTRA_PARAMS)
- # else
-@@ -428,6 +445,13 @@
+ void * GC_debug_malloc(size_t lb, GC_EXTRA_PARAMS)
  {
-     GC_PTR result = GC_malloc(lb + DEBUG_BYTES);
-     
+     void * result = GC_malloc(lb + DEBUG_BYTES);
+-    
++
 +#ifdef GC_ADD_CALLER
 +    if (s == NULL) {
 +      GC_caller_func_offset(ra, &s, &i);
@@ -36,11 +34,11 @@
 +    }
 +#endif
      if (result == 0) {
-         GC_err_printf1("GC_debug_malloc(%ld) returning NIL (",
-         	       (unsigned long) lb);
-@@ -789,6 +813,13 @@
-     register size_t old_sz;
-     register hdr * hhdr;
+         GC_err_printf("GC_debug_malloc(%lu) returning NIL (",
+         	      (unsigned long) lb);
+@@ -764,6 +788,13 @@
+     size_t old_sz;
+     hdr * hhdr;
      
 +#ifdef GC_ADD_CALLER
 +    if (s == NULL) {
@@ -51,8 +49,8 @@
 +#endif
      if (p == 0) return(GC_debug_malloc(lb, OPT_RA s, i));
      if (base == 0) {
-         GC_err_printf1(
-@@ -1094,7 +1125,11 @@
+         GC_err_printf("Attempt to reallocate invalid pointer %p\n", p);
+@@ -1041,17 +1072,21 @@
  }
  
  #ifdef GC_ADD_CALLER
@@ -65,17 +63,14 @@
  #else
  # define RA
  #endif
-@@ -1102,12 +1137,12 @@
- GC_PTR GC_debug_malloc_replacement(lb)
- size_t lb;
+ 
+ void * GC_debug_malloc_replacement(size_t lb)
  {
 -    return GC_debug_malloc(lb, RA "unknown", 0);
 +    return GC_debug_malloc(lb, RA NULL, 0);
  }
  
- GC_PTR GC_debug_realloc_replacement(p, lb)
- GC_PTR p;
- size_t lb;
+ void * GC_debug_realloc_replacement(void *p, size_t lb)
  {
 -    return GC_debug_realloc(p, lb, RA "unknown", 0);
 +    return GC_debug_realloc(p, lb, RA NULL, 0);

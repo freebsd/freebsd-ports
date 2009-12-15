@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	boehm-gc
-PORTVERSION=	6.8
+PORTVERSION=	7.1
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
-DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
+DISTNAME=	gc-${PORTVERSION:S/.a/alpha/}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
-USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget gnomehack
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-cplusplus
+CONFIGURE_ARGS=	--enable-cplusplus --disable-static
 OPTIONS=	REDIRECT "Define malloc(3)-family replacements" off \
-		FULLDEBUG "full-debug support (see documentation)" off \
+		FULLDEBUG "Debugging support (see documentation)" off \
 		THREADING "POSIX thread support" off \
 		PARALLEL_MARK "Parallel-thread marking (faster for SMP)" off
 
@@ -44,18 +43,25 @@ CONFIGURE_ARGS+=	--enable-redirect-malloc
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+redirect
 .endif
 .if defined(WITH_FULLDEBUG)
-CONFIGURE_ARGS+=	--enable-full-debug
+CONFIGURE_ARGS+=	--enable-gc-debug
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+fulldebug
 .endif
 
 MAN3=		gc.3
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+BROKEN=	"Does not compile on ia64"
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/gc.man
+
+#
+# Get rid of .la and static library files
+#
+post-configure:
+	@${REINPLACE_CMD} -E -e \
+	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
