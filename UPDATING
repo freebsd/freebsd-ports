@@ -9,67 +9,65 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net/grdc
   AUTHOR: avl@FreeBSD.org
 
-  Grdc has been renamed to Remmina upstream. The port has also been renamed.
-  After installing remmina port you will need to download the grdc2remmina.sh
-  script and run it as in your normal users that have ~/.grdc. The script
-  only will create ~/.remmina directory and move grdc config files to the
-  new path; it does not affect on anything else.
+  Grdc has been renamed to Remmina upstream, and the port was also renamed
+  to reflect this.  After installing remmina port you will need to download
+  the ``grdc2remmina.sh'' script and run it as your normal user(s) that
+  have ~/.grdc.  The script will only create ~/.remmina directory and move
+  grdc config files to the new path; it does not affect anything else.
 
-  $ fetch http://people.freebsd.org/~avl/script/grdc2remmina.sh
-  $ sh grdc2remmina.sh
+	$ fetch http://people.freebsd.org/~avl/script/grdc2remmina.sh
+	$ sh grdc2remmina.sh
 
 20091213
   AFFECTS: users of net-mgmt/zabbix, net-mgmt/zabbix-agent
   AUTHOR: Jim Riggs <ports@christianserving.org>
 
   In order to simplify configuration and better separate the different
-  components of Zabbix, the former zabbix port has been split into
-  three: zabbix-server, zabbix-proxy, and zabbix-frontend.  Each
-  component has distinct functionality and may be installed
-  independently on separate systems.  The existing zabbix-agent port
-  remains.
+  components of Zabbix, the former zabbix port has been split into three:
+  zabbix-server, zabbix-proxy, and zabbix-frontend.  Each component has
+  distinct functionality and may be installed independently on separate
+  systems.  The existing zabbix-agent port remains.
 
-  Additionally, the new zabbix-frontend port now (correctly) installs
-  the PHP frontend in PREFIX/www/zabbix.  The old zabbix port
-  installed the files in PREFIX/share/zabbix/php.  Web server
-  configurations must be updated accordingly.
+  Additionally, the new zabbix-frontend port now (correctly) installs the
+  PHP frontend in PREFIX/www/zabbix.  The old zabbix port installed the
+  files in PREFIX/share/zabbix/php.  Web server configurations must be
+  updated accordingly.
 
-  Finally, Zabbix has been updated to version 1.8.  Not everyone may
-  be able to upgradee from version 1.6 immediately, though, so 1.6.8
-  versions of the ports are also available as zabbix16-server,
-  zabbix16-proxy, zabbix16-agent, and zabbix16-frontend.
+  Finally, Zabbix has been updated to version 1.8.  Not everyone may be
+  able to upgrade from version 1.6 immediately, though, so 1.6.8 versions
+  of the ports are also available as zabbix16-server, zabbix16-proxy,
+  zabbix16-agent, and zabbix16-frontend.
 
 20091206:
   AFFECTS: users of emulators/qemu
   AUTHOR: nox@FreeBSD.org
 
-  The port has been updated to 0.11.1, which no longer enables kqemu
-  by default (if built with the kqemu knob on), now you have to also
+  The port has been updated to 0.11.1, which no longer enables kqemu by
+  default (if built with KQEMU knob on), now you also have to explicitly
   pass -enable-kqemu (or -kernel-kqemu as with the previous versions)
   if you want to use it.  Also note the 0.11 stable branch is the last
-  qemu branch that still supports kqemu, so if you depend on reasonable
+  qemu branch that still supports kqemu, so if you depend on reasonably
   fast emulation on FreeBSD you should start looking for alternatives
-  some time soon.  (virtualbox?)
+  some time soon.  (VirtualBox?)
 
 20091120:
   AFFECTS: users of mail/postfixadmin
-  AUTHOR: Terry Sposato (tabmow@freenode.net)
+  AUTHOR: Terry Sposato <tabmow@freenode.net>
 
-  Due to a bug in the previous postfixadmin port, existing users
-  need to backup their config.inc.php before they upgrade to
-  postfixadmin-2.3 or later and put it in place after the upgrade
-  is complete.
+  Due to a bug in the previous postfixadmin port, existing users need to
+  backup their config.inc.php before they upgrade to postfixadmin-2.3 or
+  later and put it in place after the upgrade is complete.
 
 20091120:
   AFFECTS: users of security/f-prot
   AUTHOR: Tim Bishop <tdb@FreeBSD.org>
 
-  The main f-prot command is now named fpscan. Virus definitions are
-  updated using the fpupdate command. fpupdate will automatically run
-  from periodic every day. To disable set the following option in
+  The main f-prot command is now named fpscan.  Virus definitions are
+  updated using the fpupdate command.  fpupdate will automatically run
+  from periodic every day.  To disable set the following option in
   /etc/periodic.conf:
 
-  fpupdate_enable="NO"
+	fpupdate_enable="NO"
 
   The f-prot port now only works on i386.
 
@@ -77,104 +75,107 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of java/jboss5
   AUTHOR: Jonathan Chen <jonc@chen.org.nz>
 
-  The JBoss directory structure has been reorganised to more
-  closely follow hier(7) guidelines; in particular moving transient
-  and deployment files to /var/jboss5, and allowing /usr to be
-  read-only.
+  The JBoss directory structure has been reorganised to follow hier(7)
+  guidelines more closely; in particular, transient and deployment files
+  were moved to /var/jboss5, thus allowing /usr to be read-only.
 
 20091118:
   AFFECTS: users of www/redmine
   AUTHOR: Bernhard Froehlich <decke@bluelife.at>
 
   After the upgrade you need to generate a session secret before restarting
-  the application. This is to protect you from Cross site request forgery.
+  the application.  This is to protect you from cross-site request forgery.
   From your Redmine directory, simply run the following command once:
 
-  # rake config/initializers/session_store.rb
+	# rake config/initializers/session_store.rb
 
-  then upgrade as usual
+  then upgrade as usual:
 
-  # rake db:migrate RAILS_ENV=production
+	# rake db:migrate RAILS_ENV=production
 
 20091114:
   AFFECTS: users of emulators/win4bsd
   AUTHOR: Mario S F Ferreira <lioux@FreeBSD.org>
 
-  The new port now depends on emulators/kqemu-kmod instead of
-  installing its own version. Therefore, you should make sure
-  that no other kqemu.ko modules are installed.
+  The new port now depends on emulators/kqemu-kmod instead of installing
+  its own version.  Therefore, you should make sure that no other kqemu.ko
+  modules are installed:
 
 	# pkg_delete -f win4bsd\*
   	# rm -f /boot/kernel/kqemu.ko
   	# pkg_delete -f kqemu-kmod\*
   	# portinstall emulators/win4bsd
 
-  Do not forget to enable kqemu on rc.conf since win4bsd will not
-  work without it.
+  Do not forget to enable kqemu on rc.conf since win4bsd will not work
+  without it.
 
 20091018:
   AFFECTS: users of databases/mysql54-server
   AUTHOR: Alex Dupre <ale@FreeBSD.org>
 
-  After the upgrade the server may fail to start due to changes in
-  the default values of innodb_log_files_in_group and
-  innodb_log_file_size, which differ from those in earlier 5.4 releases.
+  After the upgrade the server may fail to start due to changes in the
+  default values of innodb_log_files_in_group and innodb_log_file_size,
+  which differ from those in earlier 5.4 releases.
+
   You should discard the old InnoDB log files and let MySQL 5.4.3 create
-  new ones. It is necessary to shut down your current server cleanly so
+  new ones.  It is necessary to shut down your current server cleanly so
   that no outstanding transaction information remains in the log.
 
-  See: http://dev.mysql.com/doc/refman/5.4/en/news-5-4-3.html
+  See here: http://dev.mysql.com/doc/refman/5.4/en/news-5-4-3.html
 
 20091014:
   AFFECTS: users of mail/heirloom-mailx
   AUTHOR: Alexander Logvinov <avl@FreeBSD.org>
 
   Since SourceForge switched to the new File Release System,
-  mail/heirloom-mailx has wrong package name. All users who have
+  mail/heirloom-mailx has wrong package name.  All users who have
   mail/heirloom-mailx installed after 22 August 2009 should run the
   following commands:
 
-  # pkg_delete "\-mailx-12.4_1"
+	# pkg_delete "\-mailx-12.4_1"
   or
-  # rm -r /var/db/pkg/-mailx-12.4_1
+	# rm -r /var/db/pkg/-mailx-12.4_1
 
-  # rm -r /var/db/ports/-mailx
-  # cd /usr/ports/mail/heirloom-mailx && make install clean
+	# rm -r /var/db/ports/-mailx
+	# cd /usr/ports/mail/heirloom-mailx && make install clean
 
 20090921:
   AFFECTS: users of archivers/lzmautils, archivers/lzmautils-devel
   AUTHOR: Christian Weisgerber <naddy@FreeBSD.org>
 
-  The XZ Utils distribution has superseded LZMA Utils, so the xz
-  port has been added and the lzmautils ports have been removed.
-  To perform the move, run one of the following commands:
+  The XZ Utils distribution has superseded LZMA Utils, so the xz port has
+  been added and the lzmautils ports have been removed.  To perform the
+  move, run one of the following commands:
 
   If using portupgrade:
-  # portupgrade -o archivers/xz lzmautils\*
+
+	# portupgrade -o archivers/xz lzmautils\*
 
   If using portmaster:
-  # portmaster -o archivers/xz archivers/lzmautils
+
+	# portmaster -o archivers/xz archivers/lzmautils
   or
-  # portmaster -o archivers/xz archivers/lzmautils-devel
+	# portmaster -o archivers/xz archivers/lzmautils-devel
+
   as applicable.
 
 20090919:
   AFFECTS: users of mail/postfix-postfwd
   AUTHOR: Sahil Tandon <sahil@tandon.net>
 
-  The recipient rate-limiting feature is now called via rcpt()
-  command instead of with mrcpt() as in previous versions. Make
-  sure to update your postfwd.conf if you use this feature.
+  The recipient rate-limiting feature is now called via rcpt() command
+  instead of with mrcpt() as in previous versions.  Make sure to update
+  your postfwd.conf if you use this feature.
 
 20090917:
   AFFECTS: users of www/epiphany, x11/yelp, graphics/librsvg2,
-           x11/toolkits/py-gnome-extras, and www/epiphany-extensions
+	   x11/toolkits/py-gnome-extras, and www/epiphany-extensions
   AUTHOR: gnome@FreeBSD.org
 
   The default Gecko provider has been changed from www/firefox to
-  www/libxul.  Firefox 2.x is now forbidden for security reasons, and
-  libxul is the new, stable Gecko provider.  Libxul uses the same Gecko
-  engine as Firefox 3.0.x.
+  www/libxul.  Firefox 2.x is now marked FORBIDDEN for security reasons,
+  and libxul is new, stable, and preferred Gecko provider.  Libxul uses
+  the same Gecko engine as Firefox 3.0.x.
 
   Some ports may fail to upgrade or run when both www/firefox and libxul
   are installed on the same system.  To make sure everything runs smoothly,
@@ -185,13 +186,13 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of sysutils/gosa
   AUTHOR: Denis Shaposhnikov <dsh@wizard.volgograd.ru>
 
-  Read
+  Plese read the following:
 
     https://oss.gonicus.de/labs/gosa/wiki/DocumentationInstallingUpdatingGOsa
 
   before upgrading this port.  And don't forget to check your slapd.conf
-  because gosa scheme files was changed.  If you'll have any troubles during
-  LDAP migration step try to restart your PHP process.
+  because gosa scheme files were changed.  Should you have any problems
+  during LDAP migration step, try to restart your PHP process.
 
 20090913:
   AFFECTS: users of www/ikiwiki
@@ -233,11 +234,11 @@ you update your ports collection, before attempting any port upgrades.
   Due to the move of several plugins from gstreamer-plugins-bad to
   gstreamer-plugins-good, it is necessary to update gstreamer-plugins-bad first:
 
-        portupgrade -R gstreamer-plugins-bad
+	portupgrade -R gstreamer-plugins-bad
 
   or, using portmaster:
 
-        portmaster gstreamer-plugins-bad
+	portmaster gstreamer-plugins-bad
 
   After this step, the normal upgrade procedure can be used.
 
@@ -254,8 +255,9 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: yds@CoolRat.org
 
   dovecot-sieve has been updated to a new implementation compatible with
-  dovecot 1.2.x. For details of what this means please see:
-  http://wiki.dovecot.org/LDA/Sieve/Dovecot#Migration_from_CMUSieve
+  dovecot 1.2.x.  For details of what this means please refer to:
+
+    http://wiki.dovecot.org/LDA/Sieve/Dovecot#Migration_from_CMUSieve
 
 20090827:
   AFFECTS: users of www/mediawiki
@@ -268,9 +270,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
-  gnutls has been updated to 2.8.3 and all shared libraries' versions have
+  GnuTLS has been updated to 2.8.3 and all shared libraries' versions have
   been bumped.  So you need to rebuild all applications that depend on
-  gnutls. Do something like:
+  gnutls.  Do something like:
 
 	portupgrade -rf gnutls
 
@@ -301,8 +303,8 @@ you update your ports collection, before attempting any port upgrades.
   favor of their qt4 equivalents.  You can still use multimedia/phonon-xine
   however.  A number of files have been moved between packages.  The
   recommended update procedure is to delete phonon, phonon-gstreamer,
-  kdebase-*4*, kdepim-4*, then update ports as usual and install
-  desirable KDE4 ports:
+  kdebase-*4*, kdepim-4*, then update ports as usual and install desirable
+  KDE4 ports:
 
   # pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
   # portmaster -a (or portupgrade -a)
