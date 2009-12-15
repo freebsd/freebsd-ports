@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gnomehack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-cplusplus --disable-static
+MAKE_JOBS_UNSAFE=	yes
 OPTIONS=	REDIRECT "Define malloc(3)-family replacements" off \
 		FULLDEBUG "Debugging support (see documentation)" off \
 		THREADING "POSIX thread support" off \
