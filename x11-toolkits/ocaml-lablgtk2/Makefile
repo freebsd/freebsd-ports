@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	lablgtk2
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.14.0
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
