@@ -7,6 +7,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2478/
 
@@ -18,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	pgpool-3.*
+CONFLICTS=	pgpool-3.* pgpool-II-2.3*
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp

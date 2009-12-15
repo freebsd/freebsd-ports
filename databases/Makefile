@@ -462,6 +462,7 @@
     SUBDIR += pgloader
     SUBDIR += pgpool
     SUBDIR += pgpool-II
+    SUBDIR += pgpool-II-22
     SUBDIR += pgpoolAdmin
     SUBDIR += pgtcl
     SUBDIR += pgtop
