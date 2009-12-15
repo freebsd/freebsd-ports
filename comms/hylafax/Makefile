@@ -13,6 +13,10 @@ MASTER_SITES=	ftp://ftp.hylafax.org/source/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fax software
 
+OPTIONS=	PAM "Include pam support" ON \
+		NLS "Native Language Support" ON \
+		GAWK "Use gawk for scripts" OFF \
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
