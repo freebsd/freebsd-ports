@@ -1,5 +1,0 @@
-evilvte is a terminal emulator.  It supports almost everything VTE provides.
-It also supports tabs, tabbar autohide, and switch encoding at runtime.
-Configuration is via editing source code and recompilation.
-
-WWW: http://www.calno.com/evilvte/
