@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enet
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
