@@ -8,7 +8,8 @@
 PORTNAME=	calibre
 PORTVERSION=	0.6.27
 CATEGORIES=	deskutils python
-MASTER_SITES=	http://calibre-ebook.googlecode.com/files/
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
+		http://calibre-ebook.googlecode.com/files/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ebook management application
