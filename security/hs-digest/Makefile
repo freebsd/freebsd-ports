@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	digest
-PORTVERSION=	0.0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.0.8
 CATEGORIES=	security haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,8 +15,8 @@ PKGNAMESUFFIX=	-ghc
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient cryptographic hash implementations in Haskell
 
-BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc
 
 GHC_VERSION=	6.10.4
 DIGEST_VERSION=	${PORTVERSION}
