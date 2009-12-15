@@ -124,6 +124,7 @@ lib/jed/lib/occur.sl
 lib/jed/lib/os.sl
 lib/jed/lib/paste.sl
 lib/jed/lib/perl.sl
+lib/jed/lib/perlxtra.sl
 lib/jed/lib/php.sl
 lib/jed/lib/pipe.sl
 lib/jed/lib/popups.sl
@@ -162,6 +163,7 @@ lib/jed/lib/textmode.sl
 lib/jed/lib/tiasm.sl
 lib/jed/lib/tmisc.sl
 lib/jed/lib/tmmode.sl
+lib/jed/lib/tmpfile.sl
 lib/jed/lib/tpascal.sl
 lib/jed/lib/untab.sl
 lib/jed/lib/util.sl

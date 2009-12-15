@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	jed
-PORTVERSION=	0.99.18
-PORTREVISION=	3
+PORTVERSION=	0.99.19
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/editors/jed/v${PORTVERSION:R}/ \
-		ftp://ftp.ntua.gr/pub/lang/slang/jed/v${PORTVERSION:R}/ \
-		http://download.gna.org/jed/v${PORTVERSION:R}/
+		ftp://ftp.ntua.gr/pub/lang/slang/jed/v${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	garga@FreeBSD.org
