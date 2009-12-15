@@ -2620,6 +2620,7 @@
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
     SUBDIR += py-ydbf
+    SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
     SUBDIR += py-zope.exceptions
     SUBDIR += py-zopeInterface
