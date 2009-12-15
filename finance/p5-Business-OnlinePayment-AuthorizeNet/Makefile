@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Business-OnlinePayment-AuthorizeNet
-PORTVERSION=	3.20
+PORTVERSION=	3.21
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
