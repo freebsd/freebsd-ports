@@ -1,0 +1,7 @@
+Dump fixtures from source database to filesystem then import to
+another database (with same schema) at any time.  Use as a constant
+dataset for running tests against or for populating development
+databases when impractical to use production clones.  Describe fixture
+set using relations and conditions based on your DBIx::Class schema.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-Fixtures/
