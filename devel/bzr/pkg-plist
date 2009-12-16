@@ -1685,6 +1685,7 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches_data/binary-after-normal.patch
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches_data/binary.patch
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches_data/diff
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches_data/diff-2
