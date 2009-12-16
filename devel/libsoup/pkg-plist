@@ -3,6 +3,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-auth-domain-basic.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-domain-digest.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-domain.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth.h
+include/libsoup-%%VERSION%%/libsoup/soup-content-decoder.h
 include/libsoup-%%VERSION%%/libsoup/soup-content-sniffer.h
 include/libsoup-%%VERSION%%/libsoup/soup-cookie-jar-text.h
 include/libsoup-%%VERSION%%/libsoup/soup-cookie-jar.h
