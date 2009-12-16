@@ -10,7 +10,10 @@ CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	ade@FreeBSD.org
+# note: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
+MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	Autotools meta-port
 
 RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool22
