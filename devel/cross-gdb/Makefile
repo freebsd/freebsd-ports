@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	6.8
+PORTVERSION=	7.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
 PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 
-PATCH_SITES=	ftp://ftp.Springdaemons.com/soft/
+PATCH_SITES=	ftp://ftp.rtems.org/pub/rtems/SOURCES/4.10/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
@@ -32,12 +32,15 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
+DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}{PORTNAME}
 
 DEPENDS_ARGS=	TGTARCH="${TGTARCH}" TGTABI="${TGTABI}"
 
 CONFIGURE_ARGS+=	--disable-nls \
 			--exec-prefix=${EPRFX}/ \
-			--target=${OURTARGET}
+			--target=${OURTARGET} \
+			--with-python=no \
+			--datadir="${DATADIR}"
 
 OURTARGET=	${TGTARCH}-${TGTABI}
 
@@ -52,7 +55,7 @@ INFO=		${OURTARGET}-annotate \
 EPRFX=		${PREFIX}/libexec/${OURTARGET}-gdb
 
 .if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.9-20080917.diff
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.10-20091007.diff
 .endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
@@ -117,6 +120,10 @@ post-install:
 #
 	@${FIND} ${EPRFX}/ ! -type d | ${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -ds ${EPRFX}/ -type d | \
+		${SED} -E -e 's,(.*),@unexec rmdir \1 2>/dev/null || true,' >> \
+		${TMPPLIST}
+	@${FIND} ${DATADIR}/ ! -type d | ${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} -ds ${DATADIR}/ -type d | \
 		${SED} -E -e 's,(.*),@unexec rmdir \1 2>/dev/null || true,' >> \
 		${TMPPLIST}
 
