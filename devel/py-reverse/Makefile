@@ -18,17 +18,10 @@ COMMENT=	A set of tools for reverse engineering Python code
 
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML} \
-		${PYTHONPREFIX_SITELIBDIR}/logilab/__init__.py:${PORTSDIR}/devel/py-logilab-common
+		pytest:${PORTSDIR}/devel/py-logilab-common
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyreverse
-
-post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/logilab/pyreverse ! -type d | \
-		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/logilab/pyreverse -type d | ${SORT} -r | \
-		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/%%PYTHSON_SITELIBDIR%%/logilab 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
