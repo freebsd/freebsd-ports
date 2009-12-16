@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.7.0.0
+PORTVERSION=	1.7.1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		CRITICAL
