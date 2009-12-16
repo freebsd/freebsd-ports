@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Doctrine
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.1
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pear.phpdoctrine.org/get/ \
 		LOCAL/glarkin
@@ -15,7 +15,6 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Doctrine is a PHP object relational mapper
 
 OPTIONS=	DBLIB "Install PHP DBO driver for DBLIB" Off \
-		FIREBIRD "Install PHP DBO driver for Firebird" Off \
 		MYSQL "Install PHP DBO driver for MySQL" On \
 		ODBC "Install PHP DBO driver for ODBC" Off \
 		OCI "Install PHP DBO driver for OCI" Off \
@@ -42,9 +41,6 @@ WANT_PHP_CLI=	yes
 .if defined(WITH_DBLIB)
 RUN_DEPENDS+=	databases/php${PHP_VER}-pdo_dblib
 .endif
-.if defined(WITH_FIREBIRD)
-RUN_DEPENDS+=	databases/php${PHP_VER}-pdo_firebird
-.endif
 .if defined (WITH_MYSQL)
 USE_PHP+=	pdo_mysql
 .endif
@@ -66,11 +62,9 @@ _DOCSDIR=
 FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Adapter/Statement/Mock.php \
 		lib/Doctrine/Adapter/Statement/Oracle.php \
-		lib/Doctrine/Adapter/Db2.php \
 		lib/Doctrine/Adapter/Exception.php \
 		lib/Doctrine/Adapter/Interface.php \
 		lib/Doctrine/Adapter/Mock.php \
-		lib/Doctrine/Adapter/Mysqli.php \
 		lib/Doctrine/Adapter/Oracle.php \
 		lib/Doctrine/Adapter/Statement.php \
 		lib/Doctrine/AuditLog/Listener.php \
@@ -91,9 +85,8 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Collection/Exception.php \
 		lib/Doctrine/Collection/Iterator.php \
 		lib/Doctrine/Collection/Offset.php \
+		lib/Doctrine/Collection/OnDemand.php \
 		lib/Doctrine/Compiler/Exception.php \
-		lib/Doctrine/Connection/Firebird/Exception.php \
-		lib/Doctrine/Connection/Informix/Exception.php \
 		lib/Doctrine/Connection/Mssql/Exception.php \
 		lib/Doctrine/Connection/Mysql/Exception.php \
 		lib/Doctrine/Connection/Oracle/Exception.php \
@@ -103,8 +96,6 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Connection/Common.php \
 		lib/Doctrine/Connection/Db2.php \
 		lib/Doctrine/Connection/Exception.php \
-		lib/Doctrine/Connection/Firebird.php \
-		lib/Doctrine/Connection/Informix.php \
 		lib/Doctrine/Connection/Mock.php \
 		lib/Doctrine/Connection/Module.php \
 		lib/Doctrine/Connection/Mssql.php \
@@ -119,8 +110,6 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Data/Export.php \
 		lib/Doctrine/Data/Import.php \
 		lib/Doctrine/DataDict/Exception.php \
-		lib/Doctrine/DataDict/Firebird.php \
-		lib/Doctrine/DataDict/Informix.php \
 		lib/Doctrine/DataDict/Mssql.php \
 		lib/Doctrine/DataDict/Mysql.php \
 		lib/Doctrine/DataDict/Oracle.php \
@@ -130,9 +119,6 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/EventListener/Exception.php \
 		lib/Doctrine/EventListener/Interface.php \
 		lib/Doctrine/Export/Exception.php \
-		lib/Doctrine/Export/Firebird.php \
-		lib/Doctrine/Export/Frontbase.php \
-		lib/Doctrine/Export/Informix.php \
 		lib/Doctrine/Export/Mssql.php \
 		lib/Doctrine/Export/Mysql.php \
 		lib/Doctrine/Export/Oracle.php \
@@ -142,8 +128,6 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Export/Sqlite.php \
 		lib/Doctrine/Expression/Driver.php \
 		lib/Doctrine/Expression/Exception.php \
-		lib/Doctrine/Expression/Firebird.php \
-		lib/Doctrine/Expression/Informix.php \
 		lib/Doctrine/Expression/Mock.php \
 		lib/Doctrine/Expression/Mssql.php \
 		lib/Doctrine/Expression/Mysql.php \
@@ -158,14 +142,18 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Hook/WordLike.php \
 		lib/Doctrine/Hydrator/Abstract.php \
 		lib/Doctrine/Hydrator/ArrayDriver.php \
+		lib/Doctrine/Hydrator/ArrayHierarchyDriver.php \
 		lib/Doctrine/Hydrator/Exception.php \
+		lib/Doctrine/Hydrator/Graph.php \
+		lib/Doctrine/Hydrator/NoneDriver.php \
 		lib/Doctrine/Hydrator/RecordDriver.php \
+		lib/Doctrine/Hydrator/RecordHierarchyDriver.php \
+		lib/Doctrine/Hydrator/ScalarDriver.php \
+		lib/Doctrine/Hydrator/SingleScalarDriver.php \
 		lib/Doctrine/I18n/Exception.php \
 		lib/Doctrine/Import/Builder/Exception.php \
 		lib/Doctrine/Import/Builder.php \
 		lib/Doctrine/Import/Exception.php \
-		lib/Doctrine/Import/Firebird.php \
-		lib/Doctrine/Import/Informix.php \
 		lib/Doctrine/Import/Mssql.php \
 		lib/Doctrine/Import/Mysql.php \
 		lib/Doctrine/Import/Oracle.php \
@@ -202,16 +190,14 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Pager/Exception.php \
 		lib/Doctrine/Pager/Layout.php \
 		lib/Doctrine/Pager/Range.php \
-		lib/Doctrine/Parser/Spyc/YamlNode.php \
-		lib/Doctrine/Parser/YamlSf/Dumper.php \
-		lib/Doctrine/Parser/YamlSf/Inline.php \
-		lib/Doctrine/Parser/YamlSf/Parser.php \
+		lib/Doctrine/Parser/sfYaml/sfYaml.php \
+		lib/Doctrine/Parser/sfYaml/sfYamlDumper.php \
+		lib/Doctrine/Parser/sfYaml/sfYamlInline.php \
+		lib/Doctrine/Parser/sfYaml/sfYamlParser.php \
 		lib/Doctrine/Parser/Exception.php \
 		lib/Doctrine/Parser/Json.php \
 		lib/Doctrine/Parser/Serialize.php \
-		lib/Doctrine/Parser/Spyc.php \
 		lib/Doctrine/Parser/Xml.php \
-		lib/Doctrine/Parser/YamlSf.php \
 		lib/Doctrine/Parser/Yml.php \
 		lib/Doctrine/Query/Filter/Chain.php \
 		lib/Doctrine/Query/Filter/Interface.php \
@@ -274,8 +260,6 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Search/Record.php \
 		lib/Doctrine/Sequence/Db2.php \
 		lib/Doctrine/Sequence/Exception.php \
-		lib/Doctrine/Sequence/Firebird.php \
-		lib/Doctrine/Sequence/Informix.php \
 		lib/Doctrine/Sequence/Mssql.php \
 		lib/Doctrine/Sequence/Mysql.php \
 		lib/Doctrine/Sequence/Oracle.php \
@@ -301,10 +285,10 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Task/GenerateModelsDb.php \
 		lib/Doctrine/Task/GenerateModelsYaml.php \
 		lib/Doctrine/Task/GenerateSql.php \
+		lib/Doctrine/Task/Migrate.php \
 		lib/Doctrine/Task/GenerateYamlDb.php \
 		lib/Doctrine/Task/GenerateYamlModels.php \
 		lib/Doctrine/Task/LoadData.php \
-		lib/Doctrine/Task/Migrate.php \
 		lib/Doctrine/Task/RebuildDb.php \
 		lib/Doctrine/Template/Listener/Sluggable.php \
 		lib/Doctrine/Template/Listener/SoftDelete.php \
@@ -318,8 +302,6 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Template/Timestampable.php \
 		lib/Doctrine/Template/Versionable.php \
 		lib/Doctrine/Transaction/Exception.php \
-		lib/Doctrine/Transaction/Firebird.php \
-		lib/Doctrine/Transaction/Informix.php \
 		lib/Doctrine/Transaction/Mock.php \
 		lib/Doctrine/Transaction/Mssql.php \
 		lib/Doctrine/Transaction/Mysql.php \
@@ -356,22 +338,21 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Validator/Usstate.php \
 		lib/Doctrine/View/Exception.php \
 		lib/Doctrine/Access.php \
-		lib/Doctrine/Adapter.php \
 		lib/Doctrine/AuditLog.php \
 		lib/Doctrine/Builder.php \
-		lib/Doctrine/Cache.php \
 		lib/Doctrine/Cli.php \
 		lib/Doctrine/Collection.php \
 		lib/Doctrine/Column.php \
 		lib/Doctrine/Compiler.php \
 		lib/Doctrine/Configurable.php \
 		lib/Doctrine/Connection.php \
+		lib/Doctrine/Core.php \
 		lib/Doctrine/Data.php \
 		lib/Doctrine/DataDict.php \
-		lib/Doctrine/DataType.php \
 		lib/Doctrine/Event.php \
 		lib/Doctrine/EventListener.php \
 		lib/Doctrine/Exception.php \
+		lib/Doctrine/Lib.php \
 		lib/Doctrine/Export.php \
 		lib/Doctrine/Expression.php \
 		lib/Doctrine/File.php \
@@ -382,7 +363,6 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Import.php \
 		lib/Doctrine/Inflector.php \
 		lib/Doctrine/IntegrityMapper.php \
-		lib/Doctrine/Lib.php \
 		lib/Doctrine/Locator.php \
 		lib/Doctrine/Manager.php \
 		lib/Doctrine/Migration.php \
@@ -405,16 +385,34 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Util.php \
 		lib/Doctrine/Validator.php \
 		lib/Doctrine/View.php \
+		lib/vendor/.peardummy \
+		lib/vendor/sfYaml/sfYaml.php \
+		lib/vendor/sfYaml/sfYamlDumper.php \
+		lib/vendor/sfYaml/sfYamlInline.php \
+		lib/vendor/sfYaml/sfYamlParser.php \
 		lib/Doctrine.php
 TESTS=		Cache/Query/SqliteTestCase.php \
 		Cache/ApcTestCase.php \
-		Cache/FileTestCase.php \
 		Cache/MemcacheTestCase.php \
 		Cache/QuerySqliteTestCase.php \
 		Cache/SqliteTestCase.php \
+		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/DoctrineStyleTask.php \
+		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/EmptyFile.php \
+		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/InvalidClassNameForATask.php \
+		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/should-be-ignored.php \
+		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/TaskDeclaredInAnIncFile.inc.php \
+		CliTestCase/baz.php \
+		CliTestCase/bip.php \
+		CliTestCase/cli-default.php \
+		CliTestCase/cli-with-custom-tasks.php \
+		CliTestCase/cli-without-autoregistered-custom-tasks.php \
+		CliTestCase/CustomDoctrineStyleTask.php \
+		CliTestCase/doctrine.php \
+		CliTestCase/foo.php \
+		CliTestCase/TaskDeclaredInAnIncFile.inc.php \
+		CliTestCase/TestTask02.php \
 		Collection/SnapshotTestCase.php \
-		Connection/FirebirdTestCase.php \
-		Connection/InformixTestCase.php \
+		Connection/CustomTestCase.php \
 		Connection/MssqlTestCase.php \
 		Connection/MysqlTestCase.php \
 		Connection/OracleTestCase.php \
@@ -424,8 +422,6 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Connection/UnitOfWork.php \
 		Data/ExportTestCase.php \
 		Data/ImportTestCase.php \
-		DataDict/FirebirdTestCase.php \
-		DataDict/InformixTestCase.php \
 		DataDict/MssqlTestCase.php \
 		DataDict/MysqlTestCase.php \
 		DataDict/OracleTestCase.php \
@@ -443,8 +439,6 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		DoctrineTest/UnitTestCase.php \
 		EventListener/ChainTestCase.php \
 		Export/CheckConstraintTestCase.php \
-		Export/FirebirdTestCase.php \
-		Export/InformixTestCase.php \
 		Export/MssqlTestCase.php \
 		Export/MysqlTestCase.php \
 		Export/OracleTestCase.php \
@@ -453,19 +447,22 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Export/SchemaTestCase.php \
 		Export/SqliteTestCase.php \
 		Expression/DriverTestCase.php \
-		Expression/FirebirdTestCase.php \
-		Expression/InformixTestCase.php \
 		Expression/MssqlTestCase.php \
 		Expression/MysqlTestCase.php \
 		Expression/OracleTestCase.php \
 		Expression/PgsqlTestCase.php \
 		Expression/SqliteTestCase.php \
+		Extension/.peardummy \
+		Extension/TestExtension/.peardummy \
+		Extension/TestExtension/lib/.peardummy \
+		Extension/TestExtension/lib/Doctrine/Template/TestBehavior.php \
+		Extension/TestExtension/lib/Doctrine/Test.php \
 		Hydrate/CollectionInitializationTestCase.php \
+		Hydrate/DriverTestCase.php \
 		Hydrate/FetchModeTestCase.php \
+		Hydrate/PerformanceTestCase.php \
 		Hydrate/ScalarTestCase.php \
 		Import/BuilderTestCase.php \
-		Import/FirebirdTestCase.php \
-		Import/InformixTestCase.php \
 		Import/MssqlTestCase.php \
 		Import/MysqlTestCase.php \
 		Import/OracleTestCase.php \
@@ -473,21 +470,22 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Import/PluginHierarchyTestCase.php \
 		Import/SchemaTestCase.php \
 		Import/SqliteTestCase.php \
+		Migration/Diff/.peardummy \
 		Migration/Diff/schema/from.yml \
 		Migration/Diff/schema/to.yml \
-		Migration/Diff/.peardummy \
+		Migration/BaseTestCase.php \
 		Migration/DiffTestCase.php \
 		migration_classes/1224120878_add_phonenumber.class.php \
 		migration_classes/1224120879_add_user.class.php \
 		migration_classes/1224120880_add_profile.class.php \
 		migration_classes/1224120881_drop_profile.class.php.php \
+		ModelLoadingTest/.peardummy \
 		ModelLoadingTest/Aggressive/Models.php \
 		ModelLoadingTest/Aggressive/MoreModels.php \
 		ModelLoadingTest/Conservative/BaseConservativeModelLoadingUser.php \
 		ModelLoadingTest/Conservative/ConservativeModelLoadingContact.php \
 		ModelLoadingTest/Conservative/ConservativeModelLoadingProfile.php \
 		ModelLoadingTest/Conservative/ConservativeModelLoadingUser.php \
-		ModelLoadingTest/.peardummy \
 		models/export/Cms_Category.php \
 		models/export/Cms_CategoryLanguages.php \
 		models/Account.php \
@@ -509,12 +507,12 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		models/Bookmark.php \
 		models/BookmarkUser.php \
 		models/BooleanTest.php \
+		models/ClientModel.php \
 		models/CascadeDeleteRelatedTest.php \
 		models/CascadeDeleteRelatedTest2.php \
 		models/CascadeDeleteTest.php \
 		models/CategoryWithPosition.php \
 		models/CheckConstraintTest.php \
-		models/ClientModel.php \
 		models/ColumnAliasTest.php \
 		models/ConcreteEmail.php \
 		models/ConcreteGroup.php \
@@ -526,6 +524,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		models/CPK_Test.php \
 		models/CPK_Test2.php \
 		models/CustomPK.php \
+		models/JC1.php \
 		models/CustomSequenceRecord.php \
 		models/Data_File.php \
 		models/DateTest.php \
@@ -567,7 +566,6 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		models/InheritanceDeal.php \
 		models/InheritanceDealUser.php \
 		models/InheritanceUser.php \
-		models/JC1.php \
 		models/JC2.php \
 		models/JC3.php \
 		models/LiabilityCodeN.php \
@@ -586,8 +584,8 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		models/mmrUser_C.php \
 		models/MyGroup.php \
 		models/MyOneThing.php \
-		models/MyOtherThing.php \
 		models/MysqlGroup.php \
+		models/MyOtherThing.php \
 		models/MysqlGroupMember.php \
 		models/MysqlIndexTestRecord.php \
 		models/MysqlTestRecord.php \
@@ -676,6 +674,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		models/ZeroValueTest.php \
 		mysql_migration_classes/001_mysql_add_table.php \
 		mysql_migration_classes/002_mysql_change_column.php \
+		NestedSet/HydrationTestCase.php \
 		NestedSet/MultiRootTestCase.php \
 		NestedSet/SingleRootTestCase.php \
 		NestedSet/TimestampableMultiRootTestCase.php \
@@ -708,8 +707,8 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Query/ReferenceModelTestCase.php \
 		Query/RegistryTestCase.php \
 		Query/RemoveQueryPartTestCase.php \
-		Query/SelectExpressionTestCase.php \
 		Query/SelectTestCase.php \
+		Query/SelectExpressionTestCase.php \
 		Query/ShortAliasesTestCase.php \
 		Query/SubqueryTestCase.php \
 		Query/UpdateTestCase.php \
@@ -734,6 +733,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Relation/NestTestCase.php \
 		Relation/OneToManyTestCase.php \
 		Relation/OneToOneTestCase.php \
+		Relation/OrderByTestCase.php \
 		Relation/ParserTestCase.php \
 		Search/_files/content.html \
 		Search/_files/content.txt \
@@ -741,8 +741,6 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Search/IndexerTestCase.php \
 		Search/QueryTestCase.php \
 		Search/QueryWeightTestCase.php \
-		Sequence/FirebirdTestCase.php \
-		Sequence/InformixTestCase.php \
 		Sequence/MssqlTestCase.php \
 		Sequence/MysqlTestCase.php \
 		Sequence/OracleTestCase.php \
@@ -750,17 +748,24 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Sequence/SqliteTestCase.php \
 		Table/NamedQueryTestCase.php \
 		Table/RemoveColumnTestCase.php \
+		TaskTestCase/TestTask004.php \
+		TaskTestCase/TestTask005.php \
+		TaskTestCase/TestTask006.php \
+		Ticket/1727/.peardummy \
 		Ticket/1727/models1/Ticket_1727_Model1.php \
 		Ticket/1727/models1/Ticket_1727_Model2.php \
 		Ticket/1727/models2/Ticket_1727_Model3.php \
 		Ticket/1727/models2/Ticket_1727_Model4.php \
-		Ticket/1727/.peardummy \
+		Ticket/2375/.peardummy \
 		Ticket/2375/models1/Ticket_2375_Model1.php \
 		Ticket/2375/models1/Ticket_2375_Model2.php \
 		Ticket/2375/models2/Ticket_2375_Model3.php \
 		Ticket/2375/models2/Ticket_2375_Model4.php \
 		Ticket/2375/models2/Ticket_2375_Model5.php \
-		Ticket/2375/.peardummy \
+		Ticket/DC95/schema.yml \
+		Ticket/DC221/TestMigration.php \
+		Ticket/DC292/from.yml \
+		Ticket/DC292/to.yml \
 		Ticket/255TestCase.php \
 		Ticket/381TestCase.php \
 		Ticket/384TestCase.php \
@@ -841,7 +846,6 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Ticket/1208TestCase.php \
 		Ticket/1211TestCase.php \
 		Ticket/1213TestCase.php \
-		Ticket/1215TestCase.php \
 		Ticket/1225TestCase.php \
 		Ticket/1228TestCase.php \
 		Ticket/1230TestCase.php \
@@ -916,13 +920,16 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Ticket/1621bTestCase.php \
 		Ticket/1621TestCase.php \
 		Ticket/1622TestCase.php \
+		Ticket/1623TestCase.php \
 		Ticket/1628TestCase.php \
 		Ticket/1629TestCase.php \
 		Ticket/1630TestCase.php \
 		Ticket/1636TestCase.php \
 		Ticket/1641TestCase.php \
+		Ticket/1652TestCase.php \
 		Ticket/1653TestCase.php \
 		Ticket/1658TestCase.php \
+		Ticket/1674TestCase.php \
 		Ticket/1703TestCase.php \
 		Ticket/1706TestCase.php \
 		Ticket/1713TestCase.php \
@@ -939,6 +946,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Ticket/1793TestCase.php \
 		Ticket/1795TestCase.php \
 		Ticket/1799TestCase.php \
+		Ticket/1808TestCase.php \
 		Ticket/1818TestCase.php \
 		Ticket/1821TestCase.php \
 		Ticket/1824TestCase.php \
@@ -962,6 +970,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Ticket/2015TestCase.php \
 		Ticket/2032TestCase.php \
 		Ticket/2105TestCase.php \
+		Ticket/2123TestCase.php \
 		Ticket/2158TestCase.php \
 		Ticket/2159TestCase.php \
 		Ticket/2160TestCase.php \
@@ -972,20 +981,55 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Ticket/2251TestCase.php \
 		Ticket/2292TestCase.php \
 		Ticket/2295TestCase.php \
+		Ticket/2298TestCase.php \
 		Ticket/2334TestCase.php \
 		Ticket/2355TestCase.php \
+		Ticket/2367TestCase.php \
 		Ticket/2375TestCase.php \
 		Ticket/2377TestCase.php \
 		Ticket/2398TestCase.php \
 		Ticket/AyoubTestCase.php \
+		Ticket/DC7TestCase.php \
+		Ticket/DC14TestCase.php \
+		Ticket/DC23bTestCase.php \
+		Ticket/DC23TestCase.php \
+		Ticket/DC24TestCase.php \
 		Ticket/DC25TestCase.php \
 		Ticket/DC28TestCase.php \
+		Ticket/DC39TestCase.php \
 		Ticket/DC56TestCase.php \
 		Ticket/DC57TestCase.php \
+		Ticket/DC63TestCase.php \
+		Ticket/DC64TestCase.php \
+		Ticket/DC69TestCase.php \
+		Ticket/DC74TestCase.php \
+		Ticket/DC82TestCase.php \
+		Ticket/DC86TestCase.php \
+		Ticket/DC95TestCase.php \
+		Ticket/DC101TestCase.php \
+		Ticket/DC112TestCase.php \
+		Ticket/DC136TestCase.php \
+		Ticket/DC141TestCase.php \
+		Ticket/DC147TestCase.php \
+		Ticket/DC169TestCase.php \
+		Ticket/DC171TestCase.php \
+		Ticket/DC187TestCase.php \
+		Ticket/DC198TestCase.php \
+		Ticket/DC217TestCase.php \
+		Ticket/DC221TestCase.php \
+		Ticket/DC236TestCase.php \
+		Ticket/DC238TestCase.php \
+		Ticket/DC240TestCase.php \
+		Ticket/DC241TestCase.php \
+		Ticket/DC242TestCase.php \
+		Ticket/DC266TestCase.php \
+		Ticket/DC267TestCase.php \
+		Ticket/DC276TestCase.php \
+		Ticket/DC292TestCase.php \
+		Ticket/DC302TestCase.php \
+		Ticket/DC317TestCase.php \
 		Ticket/NewTicketTestCase.php \
 		Ticket/NjeroTestCase.php \
-		Transaction/FirebirdTestCase.php \
-		Transaction/InformixTestCase.php \
 		Transaction/MssqlTestCase.php \
 		Transaction/MysqlTestCase.php \
 		Transaction/OracleTestCase.php \
@@ -998,9 +1042,10 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		AuditLogTestCase.php \
 		BaseTestCase.php \
 		BatchIteratorTestCase.php \
+		bootstrap.php \
 		CacheSqliteTestCase.php \
-		CacheTestCase.php \
 		ClassTableInheritanceTestCase.php \
+		CliTestCase.php \
 		CollectionOffsetTestCase.php \
 		CollectionTestCase.php \
 		ColumnAggregationInheritanceTestCase.php \
@@ -1022,7 +1067,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		EventListenerTestCase.php \
 		ExportTestCase.php \
 		ExpressionTestCase.php \
-		foo.sq3 \
+		ExtensionTestCase.php \
 		ForeignKeyTestCase.php \
 		HookTestCase.php \
 		HydrateTestCase.php \
@@ -1034,6 +1079,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		MigrationTestCase.php \
 		NewCoreTestCase.php \
 		OneTableOneClassInheritanceTestCase.php \
+		run.php \
 		ParserTestCase.php \
 		PessimisticLockingTestCase.php \
 		PluginTestCase.php \
@@ -1043,7 +1089,6 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		RecordTestCase.php \
 		RelationTestCase.php \
 		RepositoryTestCase.php \
-		run.php \
 		schema.xml \
 		schema.yml \
 		SearchTestCase.php \
@@ -1052,6 +1097,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		SoftDeleteBCTestCase.php \
 		SoftDeleteTestCase.php \
 		TableTestCase.php \
+		TaskTestCase.php \
 		template.tpl \
 		TemplateTestCase.php \
 		TokenizerTestCase.php \
@@ -1067,7 +1113,11 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
-DUMMYDIRS=	tests/Migration/Diff \
+DUMMYDIRS=	lib/vendor \
+		tests/Extension \
+		tests/Extension/TestExtension \
+		tests/Extension/TestExtension/lib \
+		tests/Migration/Diff \
 		tests/ModelLoadingTest \
 		tests/Ticket/1727 \
 		tests/Ticket/2375
