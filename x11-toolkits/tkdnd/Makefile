@@ -36,4 +36,10 @@ post-install:
 	@${LN} -sf ${USE_LDCONFIG}/lib${TKPKG}.so ${USE_LDCONFIG}/lib${TKPKG}.so.0
 	@${INSTALL_MAN} ${WRKSRC}/doc/tkDND.n ${MANNPREFIX}/man/mann/${MANN}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
