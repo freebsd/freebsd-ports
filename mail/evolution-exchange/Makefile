@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.28.1
+PORTVERSION=	2.28.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
