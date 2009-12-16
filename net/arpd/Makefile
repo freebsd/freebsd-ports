@@ -17,6 +17,8 @@ COMMENT=	A daemon to service arp replies
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
 		dnet.1:${PORTSDIR}/net/libdnet
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
