@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/f-prot/f-prot:${PORTSDIR}/security/f-prot \
 		${SITE_PERL}/Anomy/Sanitizer/FProt.pm:${PORTSDIR}/mail/anomy-sanitizer
 
 RESTRICTED=	Restrictive 60 day evaluation license
+BROKEN=		does not build
 
 WRKSRC=		${WRKDIR}/f-prot
 NO_BUILD=	yes
