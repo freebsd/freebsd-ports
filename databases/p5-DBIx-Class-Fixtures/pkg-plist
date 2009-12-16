@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Fixtures/.packlist
+%%SITE_PERL%%/DBIx/Class/Fixtures.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/DBI.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/DBI/Pg.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/DBI/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/Schema.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Fixtures/DBI
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Fixtures
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Fixtures
