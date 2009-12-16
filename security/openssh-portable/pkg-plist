@@ -18,6 +18,7 @@ etc/ssh/sshd_config-dist
 %%BASE%%@cwd %%BASEPREFIX%%
 %%NOTBASE%%@exec if [ ! -f %D/etc/ssh/ssh_config ]; then cp -p %D/etc/ssh/ssh_config-dist %D/etc/ssh/ssh_config ; fi
 %%NOTBASE%%@exec if [ ! -f %D/etc/ssh/sshd_config ]; then cp -p %D/etc/ssh/sshd_config-dist %D/etc/ssh/sshd_config ; fi
+%%NOTBASE%%%%X509%%@dirrmtry etc/ssh/ca
 %%NOTBASE%%@dirrmtry etc/ssh
 sbin/sshd
 share/Ssh.bin
