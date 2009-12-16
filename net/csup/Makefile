@@ -18,6 +18,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mux@FreeBSD.org
 COMMENT=	A rewrite of the CVSup file updating client in C
 
+DEPRECATED=		is already included in base system of all supported releases
+EXPIRATION_DATE=	2010-02-16
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/csup \
 		man/man1/csup.1.gz
