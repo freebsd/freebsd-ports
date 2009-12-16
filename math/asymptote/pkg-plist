@@ -1,6 +1,87 @@
 @comment $FreeBSD$
 bin/asy
 bin/xasy
+%%PORTDOCS%%info/asymptote/Bode.png
+%%PORTDOCS%%info/asymptote/CAD1.png
+%%PORTDOCS%%info/asymptote/CDlabel.png
+%%PORTDOCS%%info/asymptote/GaussianSurface.png
+%%PORTDOCS%%info/asymptote/HermiteSpline.png
+%%PORTDOCS%%info/asymptote/Hobbycontrol.png
+%%PORTDOCS%%info/asymptote/Hobbydir.png
+%%PORTDOCS%%info/asymptote/asymptote.info
+%%PORTDOCS%%info/asymptote/axis3.png
+%%PORTDOCS%%info/asymptote/bezier.png
+%%PORTDOCS%%info/asymptote/bezier2.png
+%%PORTDOCS%%info/asymptote/beziercurve.png
+%%PORTDOCS%%info/asymptote/bigdiagonal.png
+%%PORTDOCS%%info/asymptote/binarytreetest.png
+%%PORTDOCS%%info/asymptote/brokenaxis.png
+%%PORTDOCS%%info/asymptote/colons.png
+%%PORTDOCS%%info/asymptote/colors.png
+%%PORTDOCS%%info/asymptote/cube.png
+%%PORTDOCS%%info/asymptote/cylinderskeleton.png
+%%PORTDOCS%%%%PORTDOCS%%info/asymptote/datagraph.png
+%%PORTDOCS%%info/asymptote/diagonal.png
+%%PORTDOCS%%info/asymptote/diatom.png
+%%PORTDOCS%%info/asymptote/dots.png
+%%PORTDOCS%%info/asymptote/eetomumu.png
+%%PORTDOCS%%info/asymptote/elliptic.png
+%%PORTDOCS%%info/asymptote/errorbars.png
+%%PORTDOCS%%info/asymptote/exp.png
+%%PORTDOCS%%info/asymptote/filegraph.png
+%%PORTDOCS%%info/asymptote/flow.png
+%%PORTDOCS%%info/asymptote/flowchartdemo.png
+%%PORTDOCS%%info/asymptote/generalaxis.png
+%%PORTDOCS%%info/asymptote/generalaxis3.png
+%%PORTDOCS%%info/asymptote/graphmarkers.png
+%%PORTDOCS%%info/asymptote/grid3xyz.png
+%%PORTDOCS%%info/asymptote/hatch.png
+%%PORTDOCS%%info/asymptote/helix.png
+%%PORTDOCS%%info/asymptote/histogram.png
+%%PORTDOCS%%info/asymptote/icon.png
+%%PORTDOCS%%info/asymptote/image.png
+%%PORTDOCS%%info/asymptote/imagecontour.png
+%%PORTDOCS%%info/asymptote/irregularcontour.png
+%%PORTDOCS%%info/asymptote/join.png
+%%PORTDOCS%%info/asymptote/join3.png
+%%PORTDOCS%%info/asymptote/knots.png
+%%PORTDOCS%%info/asymptote/labelsquare.png
+%%PORTDOCS%%info/asymptote/latexusage.png
+%%PORTDOCS%%info/asymptote/leastsquares.png
+%%PORTDOCS%%info/asymptote/legend.png
+%%PORTDOCS%%info/asymptote/lineargraph.png
+%%PORTDOCS%%info/asymptote/lineargraph0.png
+%%PORTDOCS%%info/asymptote/linetype.png
+%%PORTDOCS%%info/asymptote/log2graph.png
+%%PORTDOCS%%info/asymptote/loggraph.png
+%%PORTDOCS%%info/asymptote/loggrid.png
+%%PORTDOCS%%info/asymptote/logimage.png
+%%PORTDOCS%%info/asymptote/logo.png
+%%PORTDOCS%%info/asymptote/logticks.png
+%%PORTDOCS%%info/asymptote/makepen.png
+%%PORTDOCS%%info/asymptote/markers1.png
+%%PORTDOCS%%info/asymptote/markers2.png
+%%PORTDOCS%%info/asymptote/mexicanhat.png
+%%PORTDOCS%%info/asymptote/monthaxis.png
+%%PORTDOCS%%info/asymptote/multicontour.png
+%%PORTDOCS%%info/asymptote/onecontour.png
+%%PORTDOCS%%info/asymptote/parametricgraph.png
+%%PORTDOCS%%info/asymptote/penimage.png
+%%PORTDOCS%%info/asymptote/planes.png
+%%PORTDOCS%%info/asymptote/quartercircle.png
+%%PORTDOCS%%info/asymptote/saddle.png
+%%PORTDOCS%%info/asymptote/scaledgraph.png
+%%PORTDOCS%%info/asymptote/secondaryaxis.png
+%%PORTDOCS%%info/asymptote/shadedtiling.png
+%%PORTDOCS%%info/asymptote/slopefield1.png
+%%PORTDOCS%%info/asymptote/square.png
+%%PORTDOCS%%info/asymptote/subpictures.png
+%%PORTDOCS%%info/asymptote/superpath.png
+%%PORTDOCS%%info/asymptote/tile.png
+%%PORTDOCS%%info/asymptote/triangulate.png
+%%PORTDOCS%%info/asymptote/unitcircle3.png
+%%PORTDOCS%%info/asymptote/vectorfield.png
+%%PORTDOCS%%info/asymptote/westnile.png
 %%DATADIR%%/CAD.asy
 %%DATADIR%%/GUI/CubicBezier.py
 %%DATADIR%%/GUI/UndoRedoStack.py
@@ -20,6 +101,7 @@ bin/xasy
 %%DATADIR%%/animation.asy
 %%DATADIR%%/annotate.asy
 %%DATADIR%%/asy-init.el
+%%DATADIR%%/asy-kate.sh
 %%DATADIR%%/asy-keywords.el
 %%DATADIR%%/asy-mode.el
 %%DATADIR%%/asy.vim
@@ -40,11 +122,13 @@ bin/xasy
 %%DATADIR%%/graph.asy
 %%DATADIR%%/graph3.asy
 %%DATADIR%%/graph_settings.asy
+%%DATADIR%%/graph_splinetype.asy
 %%DATADIR%%/grid3.asy
 %%DATADIR%%/interpolate.asy
 %%DATADIR%%/labelpath.asy
 %%DATADIR%%/labelpath3.asy
 %%DATADIR%%/latin1.asy
+%%DATADIR%%/lmfit.asy
 %%DATADIR%%/markers.asy
 %%DATADIR%%/math.asy
 %%DATADIR%%/metapost.asy
@@ -78,7 +162,6 @@ bin/xasy
 %%DATADIR%%/slide.asy
 %%DATADIR%%/slopefield.asy
 %%DATADIR%%/solids.asy
-%%DATADIR%%/splinetype.asy
 %%DATADIR%%/stats.asy
 %%DATADIR%%/syzygy.asy
 %%DATADIR%%/texcolors.asy
@@ -87,6 +170,7 @@ bin/xasy
 %%DATADIR%%/three_light.asy
 %%DATADIR%%/three_margins.asy
 %%DATADIR%%/three_surface.asy
+%%DATADIR%%/three_tube.asy
 %%DATADIR%%/tree.asy
 %%DATADIR%%/trembling.asy
 %%DATADIR%%/tube.asy
@@ -107,6 +191,7 @@ bin/xasy
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/100d.views
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1overx.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierPatch.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierSurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Bode.asy
@@ -120,6 +205,9 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Hobbycontrol.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Hobbydir.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Klein.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NURBScurve.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NURBSsphere.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NURBSsurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pythagoras.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PythagoreanTree.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/RiemannSurface.asy
@@ -133,6 +221,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/embeddedmovie.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/embeddedu3d.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/externalmovie.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/glmovie.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/heatequation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/inlinemovie.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/inlinemovie3.tex
@@ -149,7 +238,8 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier2.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beziercurve.asy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bigsquare.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bigdiagonal.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/billboard.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/binarytreetest.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/brokenaxis.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buildcycle.asy
@@ -195,6 +285,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalprc.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/extrudedcontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fano.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fequlogo.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fermi.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filegraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filegraph.dat
@@ -242,8 +333,10 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labelbox.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labelsquare.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/laserlattice.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/latexusage.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latexusage.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latticeshading.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layers.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/leastsquares.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/leastsquares.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/legend.asy
@@ -253,6 +346,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lineargraph0.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lines.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/linetype.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lmfit1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/log.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/log2graph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logdown.asy
@@ -275,9 +369,11 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mosquito.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/near_earth.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/odetest.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/onecontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneoverx.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orthocenter.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/p-orbital.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricelevation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricgraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricsurface.asy
@@ -301,6 +397,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rainbow.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/randompath3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ring.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/roll.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/roundpath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sacone.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sacone3D.asy
@@ -322,12 +419,16 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slidemovies.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slopefield1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smoothelevation.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soccerball.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrum.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sphere.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spheresilhouette.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sphereskeleton.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sphericalharmonic.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spiral.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spiral3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spline.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpatch.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spring.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spring0.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spring2.asy
@@ -335,6 +436,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sqrtx01y1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/square.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/star.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stereoscopic.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stroke3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/strokepath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/strokeshade.asy
@@ -355,6 +457,8 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/triangle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/triangulate.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/triceratops.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trumpet.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/truncatedIcosahedron.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tvgen.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twistedtubes.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitcircle.asy
@@ -371,6 +475,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/westnile.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/westnile.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/workcone.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/worksheet.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xsin1x.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xxsq01.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xxsq01x-1.asy
@@ -378,14 +483,15 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yingyang.asy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animations
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm info/asymptote
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/asy-faq.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/GUI
-@dirrm %%DATADIR%%
 share/texmf-local/tex/context/third/asymptote/colo-asy.tex
 share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
-share/texmf-local/tex/latex/asymptote/asycolors.sty
+share/texmf-local/tex/latex/asymptote/ocg.sty
+@dirrm %%DATADIR%%/GUI
+@dirrm %%DATADIR%%
 @dirrm share/texmf-local/tex/latex/asymptote
 @dirrm share/texmf-local/tex/context/third/asymptote
 @dirrm share/texmf-local/tex/context/third
