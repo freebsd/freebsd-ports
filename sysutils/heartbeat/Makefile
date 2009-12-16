@@ -7,7 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -57,12 +57,16 @@ SUB_LIST=	BATCH=${BATCH}
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		cl_status.1 ha_logger.1 hb_addnode.1 hb_delnode.1 hb_standby.1 hb_takeover.1
 MAN8=		apphbd.8 cibadmin.8 crm_resource.8 ha_logd.8 heartbeat.8 \
 		meatclient.8 stonith.8
 
 OPTIONS=	MGMT "Enable X11 Management Utilities" Off \
-		LDIRECTORD "Enable Linux Director Daemon" Off
+		LDIRECTORD "Enable Linux Director Daemon" Off \
+		APCSNMP "Enable APC SNMP Stonith Device" Off \
+		DRAC3 "Enable Dell DRACIII Stonith Device" Off
 
 .include <bsd.port.pre.mk>
 
@@ -91,8 +95,50 @@ CONFIGURE_ARGS+=	--disable-ldirectord
 PLIST_SUB+=		LDIRECTORD="@comment "
 .endif
 
+.if defined(WITH_APCSNMP) || exists (${PREFIX}/lib/libnetsnmp.so)
+LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+PLIST_SUB+=	APCSNMP=""
+.else
+PLIST_SUB+=	APCSNMP="@comment "
+.endif
+
+.if defined(WITH_DRAC3) || exists (${PREFIX}/lib/libcurl.so)
+USE_CURL=	yes
+PLIST_SUB+=	DRAC3=""
+.else
+PLIST_SUB+=	DRAC3="@comment "
+.endif
+
+.if defined(NOPORTDOCS)
+PLIST_SUB+=		NOPORTDOCS="@comment "
+.else
+PLIST_SUB+=		NOPORTDOCS=""
+.endif
+
+# BladeHPI Stonith Automagic Building
+.if exists (${PREFIX}/include/openhpi/SaHpi.h)
+PLIST_SUB+=	HPI=""
+.else
+PLIST_SUB+=	HPI="@comment "
+.endif
+
+# IPMI Lan Stonight Automagic Building
+.if exists (${PREFIX}/include/ipmilan.h)
+PLIST_SUB+=	IPMI=""
+.else
+PLIST_SUB+=	IPMI="@comment "
+.endif
+
+# VACM Stonith Automagic Building
+.if exists (${PREFIX}/include/vacmclient_api.h)
+PLIST_SUB+=	VACM=""
+.else
+PLIST_SUB+=	VACM="@comment "
+.endif
+
 pre-patch:
 	@${MV} ${WRKDIR}/Heartbeat-STABLE-2-1-${DISTNAME} ${WRKSRC}
+	@${CP} -f ${FILESDIR}/heartbeat.in ${WRKSRC}/heartbeat/init.d/
 
 post-patch:
 	@${LN} -s ${WRKSRC}/include/config.h ${WRKSRC}/config.h
@@ -107,7 +153,10 @@ post-patch:
 	${TAR} -cf libltdl.tar libltdl && \
 	${RM} -rf libltdl
 
-.if !defined(NOPORTDOCS)
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's| doc | |' \
+		${WRKSRC}/Makefile.am
+.else
 	@${REINPLACE_CMD} -e 's|^\(docdir.*doc/\).*|\1${PORTNAME}|' \
 		${WRKSRC}/configure.in \
 		${WRKSRC}/doc/Makefile.am
@@ -117,6 +166,10 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+
+.if !defined(NOPORTDOCS)
+	# Install sample configuration
+
 	@if [ ! -f ${PREFIX}/etc/ha.d/authkeys ]; then \
 		${CP} -p ${DOCSDIR}/authkeys ${PREFIX}/etc/ha.d/authkeys ; \
 	fi
@@ -132,6 +185,7 @@ post-install:
 		${CP} -p ${DOCSDIR}/logd.cf ${PREFIX}/etc/ha.d/logd.cf ; \
 	fi
 	${CP} -p ${DOCSDIR}/logd.cf ${PREFIX}/etc/ha.d/logd.cf.sample
+.endif
 
 .if defined(WITH_LDIRECTORD)
 	@if [ ! -f ${PREFIX}/etc/ha.d/ldirectord.cf ]; then \
@@ -144,6 +198,9 @@ post-install:
 	# those man pages manually if NOPORTDOCS is defined.
 
 .if defined(NOPORTDOCS)
+	# Some subdirs treat man as documentation, therefor we have to install
+	# those man pages manually if NOPORTDOCS is defined.
+
 .for f in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/${f} ${MANPREFIX}/man/man1
 .endfor
