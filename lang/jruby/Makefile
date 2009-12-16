@@ -14,7 +14,7 @@ MASTER_SITES=	http://dist.codehaus.org/jruby/ \
 		http://dist.codehaus.org/jruby/previous/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of Ruby Interpreter in Pure Java
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

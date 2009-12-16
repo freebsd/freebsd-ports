@@ -11,7 +11,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Scheme Underground's implementation of R5RS
 
 USE_GMAKE=	yes
