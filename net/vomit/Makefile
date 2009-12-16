@@ -24,6 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		vomit.1
 PLIST_FILES=	bin/vomit
 
+BROKEN=		does not build with new libevent
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -Wall -g|@CFLAGS@|g' ${WRKSRC}/Makefile.in
 
