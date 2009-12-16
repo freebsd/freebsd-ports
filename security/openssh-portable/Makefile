@@ -126,12 +126,6 @@ CONFIGURE_ARGS+=	--with-kerberos5
 EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 .endif
 .endif
-
-.if ${OSVERSION} >= 800000
-.if !defined(WITHOUT_KERBEROS)
-BROKEN=		does not link
-.endif
-.endif
 .endif
 
 .if ${OPENSSLBASE} != "/usr"
@@ -184,6 +178,9 @@ EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-5.1_p1-lpk-64bit.patch
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-6.2/
 PATCHFILES+=		openssh-5.2p1+x509-6.2.diff.gz
+PLIST_SUB+=		X509=""
+.else
+PLIST_SUB+=		X509="@comment "
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
