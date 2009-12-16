@@ -1,5 +1,5 @@
---- texk/tetex/updmap.orig	Sat Feb  5 06:34:26 2005
-+++ texk/tetex/updmap	Sat Sep  9 19:19:14 2006
+--- texk/tetex/updmap.orig	2005-02-05 06:34:26.000000000 +0900
++++ texk/tetex/updmap	2009-12-07 00:15:13.000000000 +0900
 @@ -266,6 +266,7 @@
  ###############################################################################
  catMaps()
@@ -235,3 +235,12 @@
  
    processOptions ${1+"$@"}
  
+@@ -1360,7 +1431,7 @@
+     esac
+   fi
+ 
+-  $mkmapEnabled || return
++  $mkmapEnabled || true && return
+   setupDestDir
+   mkMaps
+ }
