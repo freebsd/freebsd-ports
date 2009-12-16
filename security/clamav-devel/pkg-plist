@@ -11,15 +11,12 @@ bin/sigtool
 sbin/clamd
 include/clamav.h
 include/clamav-config.h
-lib/libclamav.a
 lib/libclamav.la
 lib/libclamav.so
 lib/libclamav.so.6
-%%UNRAR%%lib/libclamunrar.a
 %%UNRAR%%lib/libclamunrar.la
 %%UNRAR%%lib/libclamunrar.so
 %%UNRAR%%lib/libclamunrar.so.6
-%%UNRAR%%lib/libclamunrar_iface.a
 %%UNRAR%%lib/libclamunrar_iface.la
 %%UNRAR%%lib/libclamunrar_iface.so
 %%UNRAR%%lib/libclamunrar_iface.so.6
