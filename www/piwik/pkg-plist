@@ -146,6 +146,8 @@
 %%WWWDIR%%/core/Updates/0.4.4.php
 %%WWWDIR%%/core/Updates/0.4.php
 %%WWWDIR%%/core/Updates/0.5.php
+%%WWWDIR%%/core/Updates/0.5.2.php
+%%WWWDIR%%/core/Updates/0.5.3.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -815,6 +817,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline.js
 %%WWWDIR%%/plugins/CoreHome/templates/styles.css
 %%WWWDIR%%/plugins/CoreHome/templates/top_bar.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/top_screen.tpl
 %%WWWDIR%%/plugins/CorePluginsAdmin/Controller.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/CorePluginsAdmin.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/templates/manage.tpl
@@ -936,6 +939,20 @@
 %%WWWDIR%%/plugins/Login/templates/passwordchanged.tpl
 %%WWWDIR%%/plugins/Login/templates/passwordsent.tpl
 %%WWWDIR%%/plugins/Login/templates/resetPassword.tpl
+%%WWWDIR%%/plugins/MultiSites/Controller.php
+%%WWWDIR%%/plugins/MultiSites/MultiSites.php
+%%WWWDIR%%/plugins/MultiSites/images/arrow_asc.gif
+%%WWWDIR%%/plugins/MultiSites/images/arrow_desc.gif
+%%WWWDIR%%/plugins/MultiSites/images/arrow_down.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_up.png
+%%WWWDIR%%/plugins/MultiSites/images/door_in.png
+%%WWWDIR%%/plugins/MultiSites/images/link.gif
+%%WWWDIR%%/plugins/MultiSites/images/loading-blue.gif
+%%WWWDIR%%/plugins/MultiSites/images/stop.png
+%%WWWDIR%%/plugins/MultiSites/templates/common.js
+%%WWWDIR%%/plugins/MultiSites/templates/index.tpl
+%%WWWDIR%%/plugins/MultiSites/templates/row.tpl
+%%WWWDIR%%/plugins/MultiSites/templates/styles.css
 %%WWWDIR%%/plugins/Provider/API.php
 %%WWWDIR%%/plugins/Provider/Controller.php
 %%WWWDIR%%/plugins/Provider/Provider.php
@@ -1129,6 +1146,41 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/zoohoo.cz.png
 %%WWWDIR%%/plugins/Referers/templates/index.tpl
 %%WWWDIR%%/plugins/Referers/templates/searchEngines_Keywords.tpl
+%%WWWDIR%%/plugins/SecurityInfo/Controller.php
+%%WWWDIR%%/plugins/SecurityInfo/LICENSE
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/PhpSecInfo.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Application/php.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Application/piwik.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/CGI/force_redirect.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/allow_url_fopen.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/allow_url_include.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/display_errors.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/expose_php.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/file_uploads.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/gid.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/magic_quotes_gpc.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/memory_limit.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/open_basedir.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/post_max_size.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/register_globals.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/uid.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/upload_max_filesize.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core/upload_tmp_dir.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Curl/file_support.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Session/save_path.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Session/use_trans_sid.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Suhosin/extension.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Suhosin/patch.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Application.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Cgi.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Core.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Curl.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Session.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Suhosin.php
+%%WWWDIR%%/plugins/SecurityInfo/README
+%%WWWDIR%%/plugins/SecurityInfo/SecurityInfo.php
+%%WWWDIR%%/plugins/SecurityInfo/templates/index.tpl
 %%WWWDIR%%/plugins/SitesManager/API.php
 %%WWWDIR%%/plugins/SitesManager/Controller.php
 %%WWWDIR%%/plugins/SitesManager/SitesManager.php
@@ -1745,11 +1797,24 @@
 @dirrm %%WWWDIR%%/plugins/Live
 @dirrm %%WWWDIR%%/plugins/Login/templates
 @dirrm %%WWWDIR%%/plugins/Login
+@dirrm %%WWWDIR%%/plugins/MultiSites/images
+@dirrm %%WWWDIR%%/plugins/MultiSites/templates
+@dirrm %%WWWDIR%%/plugins/MultiSites
 @dirrm %%WWWDIR%%/plugins/Provider
 @dirrm %%WWWDIR%%/plugins/Referers/images/searchEngines
 @dirrm %%WWWDIR%%/plugins/Referers/images
 @dirrm %%WWWDIR%%/plugins/Referers/templates
 @dirrm %%WWWDIR%%/plugins/Referers
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Application
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/CGI
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Curl
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Session
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Suhosin
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/templates
+@dirrm %%WWWDIR%%/plugins/SecurityInfo
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates
 @dirrm %%WWWDIR%%/plugins/SitesManager/tests
 @dirrm %%WWWDIR%%/plugins/SitesManager
