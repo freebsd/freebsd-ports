@@ -1,9 +1,10 @@
---- bmake/common/rules.shared.basic.orig	2007-05-23 19:30:02.000000000 -0400
-+++ bmake/common/rules.shared.basic	2008-07-15 17:25:37.000000000 -0400
-@@ -10,6 +10,8 @@
+--- bmake/common/rules.shared.basic.orig	2007-05-24 01:30:02.000000000 +0200
++++ bmake/common/rules.shared.basic	2009-12-16 23:57:27.000000000 +0100
+@@ -10,6 +10,9 @@
  shared_solaris2: shared_solaris
  shared_solaris2_gnu: shared_solaris_gnu
  
++shared_freebsd9: shared_freebsd
 +shared_freebsd8: shared_freebsd
 +shared_freebsd7: shared_freebsd
  shared_freebsd6: shared_freebsd
