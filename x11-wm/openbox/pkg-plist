@@ -132,9 +132,9 @@ share/xsessions/openbox-kde.desktop
 @dirrm share/themes/Bear2/openbox-3
 @dirrm share/themes/Bear2
 @dirrm share/themes/Clearlooks/openbox-3
-@dirrm share/themes/Clearlooks
+@dirrmtry share/themes/Clearlooks
 @dirrm share/themes/Clearlooks-Olive/openbox-3
-@dirrm share/themes/Clearlooks-Olive
+@dirrmtry share/themes/Clearlooks-Olive
 @dirrm share/themes/Mikachu/openbox-3
 @dirrm share/themes/Mikachu
 @dirrm share/themes/Natura/openbox-3
