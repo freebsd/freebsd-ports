@@ -19,6 +19,8 @@ COMMENT=	Automated tool for detecting steganographic content in JPEGs
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 .endif
 
+BROKEN=		does not build
+
 # Note: stegdetect includes a modified version of jpeg-6b linked statically
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
