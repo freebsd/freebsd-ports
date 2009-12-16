@@ -778,6 +778,7 @@
     SUBDIR += pxe
     SUBDIR += py-GeoIP
     SUBDIR += py-avahi
+    SUBDIR += py-cloudfiles
     SUBDIR += py-dpkt
     SUBDIR += py-google
     SUBDIR += py-impacket

@@ -1,0 +1,29 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/cloudfiles/__init__.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/authentication.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/authentication.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/authentication.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/connection.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/connection.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/connection.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/consts.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/consts.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/consts.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/container.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/container.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/container.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/errors.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/errors.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/errors.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/fjson.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/fjson.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/fjson.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/storage_object.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/storage_object.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/storage_object.pyo
+%%PYTHON_SITELIBDIR%%/cloudfiles/utils.py
+%%PYTHON_SITELIBDIR%%/cloudfiles/utils.pyc
+%%PYTHON_SITELIBDIR%%/cloudfiles/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/cloudfiles
