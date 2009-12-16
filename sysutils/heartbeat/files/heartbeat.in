@@ -1,0 +1,211 @@
+#!/bin/sh
+#
+
+# PROVIDE: heartbeat
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable heartbeat:
+#
+# heartbeat_enable="YES"		Set to NO by default.
+#								Set to YES to enable heartbeat.
+# heartbeat_gracefulstop="YES"	Set to NO by default.
+#								Set to YES to enable more graceful resource
+#								stopping behaviour at shutdown.
+
+# Includes
+. /etc/rc.subr
+HA_DIR=@sysconfdir@/ha.d; export HA_DIR
+. $HA_DIR/shellfuncs
+
+LOCKDIR=@localstatedir@/lock/subsys
+SUBSYS=heartbeat
+RUNDIR=@localstatedir@/run
+
+name="heartbeat"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+: ${heartbeat_enable="NO"}
+: ${heartbeat_gracefulstop="NO"}
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+reload_cmd="${name}_reload"
+restart_cmd="${name}_restart"
+gracefulstop_cmd="${name}_gracefulstop"
+command="$HA_BIN/heartbeat"
+pidfile="$RUNDIR/heartbeat.pid"
+required_files="$HA_DIR/ha.cf"
+
+if checkyesno heartbeat_gracefulstop; then
+	stop_cmd="${gracefulstop_cmd}"
+fi
+
+heartbeat_checkyesno() {
+	case `ha_parameter $1 | tr '[A-Z]' '[a-z]'` in
+	
+		y|yes|enable|on|true|1|manual) true;;
+		
+		*) false;;
+	esac
+}
+
+heartbeat_gracefulstop() {
+	# Run cluster pre-stop
+	heartbeat_runstartstop pre-stop
+
+	# Stop heartbeat daemon
+	$HA_BIN/heartbeat -k >/dev/null 2>&1
+	RC=$?
+
+	sleeptime=$((`ha_parameter deadtime` + 10))
+	
+	echo -n "Sleeping $sleeptime seconds to allow complete resource takeover: "
+	sleep $sleeptime
+	echo "OK"
+
+	# ???
+	if [ $RC -eq 0 ]; then
+		rm -f $LOCKDIR/$SUBSYS
+	fi
+
+	# Run cluster post-stop
+	heartbeat_runstartstop post-stop $RC
+
+	# Stop Logd
+	logd_stop
+
+	return $RC
+}
+
+heartbeat_reload() {
+	# Re-reads configuration files. Will *keep* it's resources.
+	$HA_BIN/heartbeat -r >/dev/null 2>&1
+}
+
+heartbeat_restart() {
+	sleeptime=$((`ha_parameter deadtime` + 10))
+	
+	if `heartbeat_stop`; then
+		echo -n "Sleeping $sleeptime seconds to allow complete resource takeover: "
+		sleep $sleeptime
+		echo "OK"
+		echo ""
+		echo "Starting heartbeat."
+		heartbeat_start
+	else
+		echo "Heartbeat did not stop correctly."
+		exit 1
+	fi
+}
+
+heartbeat_runstartstop() {
+	# Run custom cluster commands before/after operations
+	if [ -f $HA_RESOURCEDIR/startstop ]; then
+		$HA_RESOURCEDIR/startstop  "$@"
+	fi
+}
+
+heartbeat_start() {
+
+	# Start Logd
+	logd_start
+	
+	# Run cluster pre-startup
+	heartbeat_runstartstop pre-start
+	
+	# Check if CRM enabled
+	if ! `heartbeat_checkyesno crm`; then
+	
+		# Heartbeat v1 configuration
+		$HA_NOARCHBIN/ResourceManager verifyallidle
+	fi
+	
+	# ???
+	rm -f $RUNDIR/ppp.d/*
+
+	if [ ! -d $RUNDIR/heartbeat ]; then
+		mkdir -p $RUNDIR/heartbeat/ccm
+		mkdir -p $RUNDIR/heartbeat/crm
+		chown -R @HA_CCMUSER@:@HA_APIGROUP@ $RUNDIR/heartbeat
+		chmod -R 750 $RUNDIR/heartbeat
+	fi
+
+	# Heartbeat v1 configuration files
+	if [ -f $HA_DIR/ipresources -a ! -f $HA_DIR/haresources ]; then
+		mv $HA_DIR/ipresources $HA_DIR/haresources
+	fi
+
+	# Start heartbeat daemon
+	$HA_BIN/heartbeat > /dev/null 2>&1
+	RC=$?
+	
+	# ???
+	if [ $RC -eq 0 ]; then
+		if [ ! -d $LOCKDIR ]; then
+			mkdir -p $LOCKDIR
+		fi
+		touch $LOCKDIR/$SUBSYS
+	fi
+
+	# Run cluster post-startup
+	heartbeat_runstartstop post-start $RC
+
+	return $RC
+}
+
+heartbeat_stop() {
+	# Run cluster pre-stop
+	heartbeat_runstartstop pre-stop
+
+	# Stop heartbeat daemon
+	$HA_BIN/heartbeat -k >/dev/null 2>&1
+	RC=$?
+
+	# ???
+	if [ $RC -eq 0 ]; then
+		rm -f $LOCKDIR/$SUBSYS
+	fi
+
+	# Run cluster post-stop
+	heartbeat_runstartstop post-stop $RC
+
+	# Stop Logd
+	logd_stop
+
+	return $RC
+}
+
+logd_start() {
+	# Check if enabled.
+	if `heartbeat_checkyesno use_logd`; then
+
+		# Check if running
+		if ! `$HA_BIN/ha_logd -s >/dev/null 2>&1`; then
+
+			# Start
+			if ! `$HA_BIN/ha_logd -d -c $HA_DIR/logd.cf >/dev/null 2>&1`; then
+				exit 1
+			fi
+		fi
+	fi
+}
+
+logd_stop() {
+	# Check if enabled.
+	if `heartbeat_checkyesno use_logd`; then
+
+		# Check if running
+		if `$HA_BIN/ha_logd -s >/dev/null 2>&1`; then
+
+			# Stop
+			$HA_BIN/ha_logd -k >/dev/null 2>&1
+		fi
+	fi
+}
+
+extra_commands="reload gracefulstop"
+run_rc_command "$1"
+

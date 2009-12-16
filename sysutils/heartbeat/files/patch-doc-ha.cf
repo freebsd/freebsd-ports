@@ -1,0 +1,17 @@
+--- doc/ha.cf.orig	2008-08-18 12:32:19.000000000 +0000
++++ doc/ha.cf	2009-12-13 00:16:02.245124213 +0000
+@@ -13,6 +13,14 @@
+ #
+ #	All will be fine if you keep them ordered as in this example.
+ #
++
++#	Enable the Heartbeat v2 Cluster Resource Manager
++#
++#	Don't forget to read how to configure v2 and heartbeat in general @
++#	http://www.linux-ha.org/GettingStartedRevisedV2
++#	http://www.linux-ha.org/ha.cf
++crm on
++
+ #
+ #       Note on logging:
+ #       If all of debugfile, logfile and logfacility are not defined, 

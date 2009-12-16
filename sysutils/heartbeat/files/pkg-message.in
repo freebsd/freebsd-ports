@@ -7,6 +7,13 @@
 ##                                                    ##
 #                                                      #
 
+    CONFIGURATION:
+    - Please read the below site for configuration
+      changes between version 1 and 2.
+
+      http://www.linux-ha.org/GettingStartedRevisedV2
+
+
     INFORMATION:
     - Configuration directory: %%PREFIX%%/etc/ha.d 
 

@@ -6,6 +6,7 @@ UID=275
 GID=${UID}
 
 BATCH=${BATCH:-%%BATCH%%}
+PREFIX=${PREFIX:-%%PREFIX%%}
 
 case $2 in
 
@@ -81,9 +82,9 @@ DEINSTALL)
 	# Check for running processes
 	echo -n "Checking if heartbeat is running... "
 	if ps -axc | grep -q heartbeat; then
-		echo -n "FOUND "
-		killall heartbeat
-		echo "KILLED"
+		echo -n "FOUND. Stopping... "
+		${PREFIX}/etc/rc.d/heartbeat forcestop
+		echo "STOPPED"
 	else
 		echo "NO"
 	fi
