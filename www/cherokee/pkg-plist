@@ -127,8 +127,6 @@ lib/cherokee/libplugin_or.la
 lib/cherokee/libplugin_or.so
 lib/cherokee/libplugin_pam.la
 lib/cherokee/libplugin_pam.so
-lib/cherokee/libplugin_phpcgi.la
-lib/cherokee/libplugin_phpcgi.so
 lib/cherokee/libplugin_plain.la
 lib/cherokee/libplugin_plain.so
 lib/cherokee/libplugin_proxy.la
@@ -137,6 +135,8 @@ lib/cherokee/libplugin_redir.la
 lib/cherokee/libplugin_redir.so
 lib/cherokee/libplugin_rehost.la
 lib/cherokee/libplugin_rehost.so
+lib/cherokee/libplugin_render_rrd.so
+lib/cherokee/libplugin_render_rrd.la
 lib/cherokee/libplugin_request.la
 lib/cherokee/libplugin_request.so
 lib/cherokee/libplugin_round_robin.la
@@ -155,6 +155,8 @@ lib/cherokee/libplugin_streaming.la
 lib/cherokee/libplugin_streaming.so
 lib/cherokee/libplugin_target_ip.so
 lib/cherokee/libplugin_target_ip.la
+lib/cherokee/libplugin_url_arg.la
+lib/cherokee/libplugin_url_arg.so
 lib/cherokee/libplugin_uwsgi.so
 lib/cherokee/libplugin_uwsgi.la
 lib/cherokee/libplugin_wildcard.la
@@ -179,6 +181,7 @@ share/aclocal/cherokee.m4
 %%NLS%%share/locale/de/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/en/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/es/LC_MESSAGES/cherokee.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/cherokee.mo
@@ -282,6 +285,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/ModuleStreaming.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleTargetIp.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleTargetIp.pyc
+%%ADMIN%%%%DATADIR%%/admin/ModuleUrlArg.py
+%%ADMIN%%%%DATADIR%%/admin/ModuleUrlArg.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleUwsgi.py
 %%ADMIN%%%%DATADIR%%/admin/ModuleUwsgi.pyc
 %%ADMIN%%%%DATADIR%%/admin/ModuleWildcard.py
@@ -330,6 +335,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/Wizard_rTorrent.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_CommonStatic.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_CommonStatic.pyc
+%%ADMIN%%%%DATADIR%%/admin/Wizard_Concrete5.py
+%%ADMIN%%%%DATADIR%%/admin/Wizard_Concrete5.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Django.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Django.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Drupal.py
@@ -340,6 +347,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Icons.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Mailman.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Mailman.pyc
+%%ADMIN%%%%DATADIR%%/admin/Wizard_MoinMoin.py
+%%ADMIN%%%%DATADIR%%/admin/Wizard_MoinMoin.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_PHP.py
 %%ADMIN%%%%DATADIR%%/admin/Wizard_PHP.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard_Redirect.py
@@ -382,11 +391,14 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/config.pyc
 %%ADMIN%%%%DATADIR%%/admin/configured.py
 %%ADMIN%%%%DATADIR%%/admin/configured.pyc
+%%ADMIN%%%%DATADIR%%/admin/config_version.py
+%%ADMIN%%%%DATADIR%%/admin/config_version.pyc
 %%ADMIN%%%%DATADIR%%/admin/consts.py
 %%ADMIN%%%%DATADIR%%/admin/consts.pyc
 %%ADMIN%%%%DATADIR%%/admin/default.template.html
 %%ADMIN%%%%DATADIR%%/admin/error_couldnt_launch.template.html
 %%ADMIN%%%%DATADIR%%/admin/error_icons_dir_missing.template.html
+%%ADMIN%%%%DATADIR%%/admin/error_internal.template.html
 %%ADMIN%%%%DATADIR%%/admin/error_not_writable.template.html
 %%ADMIN%%%%DATADIR%%/admin/flags.py
 %%ADMIN%%%%DATADIR%%/admin/flags.pyc
@@ -400,6 +412,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/arrow_ns.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/arrow_ns_h.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/background.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/background-nobar.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/bin.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/button-left.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/button-right.png
@@ -409,6 +422,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/dialog-error.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/dialog-information.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/dialog-warning.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/error.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/expanded.gif
 %%ADMIN%%%%DATADIR%%/admin/static/images/favicon.ico
 %%ADMIN%%%%DATADIR%%/admin/static/images/feedback.png
@@ -673,11 +687,14 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/tick.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/top-bar.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/common_static.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/concrete5.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/django.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/drupal.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/gallery.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/hotlinking.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/icons.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/mailman.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/moinmoin.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/php.jpg
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/redirect.jpg
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/ror.png
@@ -720,6 +737,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/js/ui.tabs.js
 %%ADMIN%%%%DATADIR%%/admin/static/js/wizards.js
 %%ADMIN%%%%DATADIR%%/admin/status.template.html
+%%ADMIN%%%%DATADIR%%/admin/upgrade_config.py
+%%ADMIN%%%%DATADIR%%/admin/upgrade_config.pyc
 %%ADMIN%%%%DATADIR%%/admin/util.py
 %%ADMIN%%%%DATADIR%%/admin/util.pyc
 %%ADMIN%%%%DATADIR%%/admin/validations.py
@@ -730,7 +749,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/deps/error_redir.deps
 %%DATADIR%%/deps/fastcgi.deps
 %%DATADIR%%/deps/fcgi.deps
-%%DATADIR%%/deps/phpcgi.deps
+%%DATADIR%%/deps/render_rrd.deps
 %%DATADIR%%/deps/scgi.deps
 %%DATADIR%%/deps/secdownload.deps
 %%DATADIR%%/deps/streaming.deps
