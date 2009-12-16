@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	FCGI-Spawn
-PORTVERSION=	0.14
+PORTVERSION=	0.15.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	peter@vereshagin.org
-COMMENT=	Process manager/application server for FastCGI protocol
+COMMENT=	Process manager/(CGI-like)application server for FastCGI protocol
 
 RUN_DEPENDS=	${SITE_PERL}/FCGI/ProcManager.pm:${PORTSDIR}/www/p5-FCGI-ProcManager
 
