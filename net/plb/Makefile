@@ -16,6 +16,8 @@ COMMENT=	A high-performance HTTP load balancer
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 
