@@ -236,6 +236,7 @@ share/omf/glom/glom-sv.omf
 @dirrm share/gnome/help/glom/C
 @dirrm share/gnome/help/glom
 @dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
