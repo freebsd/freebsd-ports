@@ -6,16 +6,10 @@
 %%XPI_XPIDIR%%/modules/base_records/crypto.js
 %%XPI_XPIDIR%%/modules/base_records/keys.js
 %%XPI_XPIDIR%%/modules/base_records/wbo.js
-%%XPI_XPIDIR%%/modules/engines/themes.js
 %%XPI_XPIDIR%%/modules/engines/clientData.js
-%%XPI_XPIDIR%%/modules/engines/cookies.js
-%%XPI_XPIDIR%%/modules/engines/extensions.js
 %%XPI_XPIDIR%%/modules/engines/forms.js
 %%XPI_XPIDIR%%/modules/engines/history.js
-%%XPI_XPIDIR%%/modules/engines/input.js
-%%XPI_XPIDIR%%/modules/engines/microformats.js
 %%XPI_XPIDIR%%/modules/engines/passwords.js
-%%XPI_XPIDIR%%/modules/engines/plugins.js
 %%XPI_XPIDIR%%/modules/engines/prefs.js
 %%XPI_XPIDIR%%/modules/engines/tabs.js
 %%XPI_XPIDIR%%/modules/engines/bookmarks.js
