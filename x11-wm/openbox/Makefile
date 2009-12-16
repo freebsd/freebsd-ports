@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.4.7.2
+PORTVERSION=	3.4.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/${PORTNAME}/releases/ \
 		http://offload1.icculus.org/openbox/releases/ \
-		http://sorcerer.mirrors.pair.com/mirror/
+		http://sorcerer.mirrors.pair.com/mirror/ \
+		http://dougbarton.us/Downloads/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A standards compliant, fast, light-weight, extensible window manager
@@ -45,6 +46,8 @@ CONFIGURE_ARGS+=	--disable-pango
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '83s|_isexecfile(path):|_isexecfile(self, path):|g' \
+		${WRKSRC}/tools/xdg-autostart/xdg-autostart
 
 post-configure:
 	@${CHMOD} +x ${WRKSRC}/install-sh
