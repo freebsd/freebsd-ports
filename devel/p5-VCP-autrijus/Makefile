@@ -6,6 +6,7 @@
 
 PORTNAME=	VCP
 PORTVERSION=	0.9.20050110
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -18,15 +19,12 @@ COMMENT=	A tool for copying files between various SCM repositories
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/XML/ValidWriter.pm:${PORTSDIR}/textproc/p5-XML-AutoWriter \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/IPC/Run3.pm:${PORTSDIR}/devel/p5-IPC-Run3 \
 		${SITE_PERL}/Pod/Links.pm:${PORTSDIR}/www/p5-PodToHTML \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
 		${SITE_PERL}/BFD.pm:${PORTSDIR}/devel/p5-BFD \
-		${SITE_PERL}/Text/Table.pm:${PORTSDIR}/textproc/p5-Text-Table \
-		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		${SITE_PERL}/Text/Table.pm:${PORTSDIR}/textproc/p5-Text-Table
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
