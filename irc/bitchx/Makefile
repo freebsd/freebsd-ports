@@ -1,6 +1,6 @@
-# New ports collection makefile for:	BitchX ircII client
-# Date created:		26 Jan 1998
-# Whom:			griffin
+# New ports collection makefile for:	BitchX
+# Date created:				26 Jan 1998
+# Whom:				Jimbo Bahooli <griffin@blackhole.iceworld.org>
 #
 # $FreeBSD$
 #
@@ -12,8 +12,8 @@ CATEGORIES+=	irc
 MASTER_SITES=	SF/bitchx/ircii-pana/ircii-pana-1.1
 DISTNAME=	ircii-pana-1.1-final
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	ircII color client with GTK/GNOME support
+MAINTAINER?=	danfe@FreeBSD.org
+COMMENT?=	Feature-rich scriptable IRC client
 
 WRKSRC=		${WRKDIR}/BitchX
 USE_PERL5=	yes
@@ -25,19 +25,18 @@ CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS}"
+		CFLAGS="${CFLAGS}" LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		BitchX.1
 
-OPTIONS=	ESOUND "With ESOUND support" off \
-		GNOME "With GTK/GNOME1 Frontend" off \
-		IPV6 "With IPV6 support" off \
-		LATIN "Recommended if you are using an ISO-8859-1 display" off \
-		PLUGINS "With BitchX Plugins" off \
-		SOCKS5 "With SOCKS5 support" off \
-		SSL "With SSL" off \
-		XMMS "With XMMS plugin" off
+OPTIONS=	ESOUND	"Enable EsounD support"			off \
+		GNOME	"Build with legacy GTK/GNOME frontend"	off \
+		IPV6	"Enable IPv6 support"			off \
+		LATIN	"Recommended for an ISO-8859-1 display"	off \
+		PLUGINS	"Build handful of BitchX plugins"	off \
+		SOCKS5	"Enable SOCKS5 proxy support"		off \
+		SSL	"Enable SSL support"			off \
+		XMMS	"Build XMMS plugin"			off
 
 .include <bsd.port.pre.mk>
 
@@ -104,17 +103,18 @@ CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
 
 pre-patch:
 .if defined(WITH_LATIN)
-	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|g' ${WRKSRC}/include/config.h
+	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|g' \
+		${WRKSRC}/include/config.h
 .endif
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/bx/help
+	@${MKDIR} ${PREFIX}/share/bx/help
 	${TAR} --directory ${WRKSRC}/bitchx-docs -cf - . | \
-	${TAR} --directory ${PREFIX}/share/bx/help -xf -
+		${TAR} --directory ${PREFIX}/share/bx/help -xf -
 .else
-	${RMDIR} ${PREFIX}/share/bx/help
+	@${RMDIR} ${PREFIX}/share/bx/help
 .endif
 .if defined(WITH_GNOME)
 	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX-1.1-final
@@ -122,6 +122,6 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/bin/BitchX-1.1-final
 	${STRIP_CMD} ${PREFIX}/bin/scr-bx
 .endif
-	${TOUCH} ${PREFIX}/share/bx/plugins/.placeholder
+	@${TOUCH} ${PREFIX}/share/bx/plugins/.placeholder
 
 .include <bsd.port.post.mk>
