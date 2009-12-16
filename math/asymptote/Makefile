@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.75
-PORTREVISION=	2
+PORTVERSION=	1.90
+PORTREVISION=	0
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/old/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+		SF/${PORTNAME}/${PORTNAME}/old/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 EXTRACT_SUFX=	.tgz
 
@@ -31,7 +32,8 @@ BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		texi2dvi:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_3:${PORTSDIR}/graphics/py-imaging
 
 ONLY_FOR_ARCHS=	i386 amd64
 # it requires boehm-gc 7.X
@@ -52,17 +54,17 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 
-ALL_TARGET=	asy
-INSTALL_TARGET=	install-asy
+ALL_TARGET=	asy asy-keywords.el
+INSTALL_TARGET=	install-asy install-texhash
 
 # Documentation
 .if !defined(NOPORTDOCS)
 MAN1=	asy.1 xasy.1x
-INFO=	${PORTNAME} asy-faq
+INFO=	asy-faq
 
-ALL_TARGET+=	doc
+ALL_TARGET+=	html man
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
-INSTALL_TARGET+=	install-doc
+INSTALL_TARGET+=	install-html install-man
 .endif
 RM_OPTS=	-R
 
