@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk16-addons
-PORTVERSION=	1.6.0.3
+PORTVERSION=	1.6.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
