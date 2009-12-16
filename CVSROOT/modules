@@ -8837,6 +8837,7 @@ mixmos                          ports/audio/mixmos
 mixxx                           ports/audio/mixxx
 mjpegtools                      ports/multimedia/mjpegtools
 mk-aspell                       ports/textproc/mk-aspell
+mk-configure                    ports/devel/mk-configure
 mkapachepw                      ports/www/mkapachepw
 mkbold                          ports/x11-fonts/mkbold
 mkbold-mkitalic                 ports/x11-fonts/mkbold-mkitalic
@@ -9530,6 +9531,7 @@ netbeans5                       ports/java/netbeans5
 netbeans55                      ports/java/netbeans55
 netbeans61                      ports/java/netbeans61
 netboot                         ports/net/netboot
+netbsd-pkgsrc-mk-files          ports/devel/netbsd-pkgsrc-mk-files
 netcat                          ports/net/netcat
 netcdf                          ports/science/netcdf
 netcdf-ftn                      ports/science/netcdf-ftn
@@ -18430,7 +18432,6 @@ pft                             ports/security/pft
 pftabled                        ports/net-mgmt/pftabled
 pftop                           ports/sysutils/pftop
 pftpd                           ports/ftp/pftpd
-pftpx                           ports/ftp/pftpx
 pg_filedump                     ports/databases/pg_filedump
 pgaccess                        ports/databases/pgaccess
 pgadmin3                        ports/databases/pgadmin3
@@ -18453,7 +18454,9 @@ pgplot                          ports/graphics/pgplot
 pgpmoose                        ports/news/pgpmoose
 pgpool                          ports/databases/pgpool
 pgpool-II                       ports/databases/pgpool-II
+pgpool-II-22                    ports/databases/pgpool-II-22
 pgpool-ii                       ports/databases/pgpool-II
+pgpool-ii-22                    ports/databases/pgpool-II-22
 pgpoolAdmin                     ports/databases/pgpoolAdmin
 pgpooladmin                     ports/databases/pgpoolAdmin
 pgpsendmail                     ports/mail/pgpsendmail
@@ -20127,10 +20130,12 @@ py-yapsnmp                      ports/net-mgmt/py-yapsnmp
 py-ydbf                         ports/devel/py-ydbf
 py-yenc                         ports/news/py-yenc
 py-yolk                         ports/misc/py-yolk
+py-zclockfile                   ports/devel/py-zclockfile
 py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
 py-zope.exceptions              ports/devel/py-zope.exceptions
 py-zopeInterface                ports/devel/py-zopeInterface
+py-zopeevent                    ports/devel/py-zopeevent
 py-zopeinterface                ports/devel/py-zopeInterface
 py-zopeproxy                    ports/net/py-zopeproxy
 py-zopetesting                  ports/devel/py-zopetesting
@@ -22337,6 +22342,7 @@ sudoku_solver                   ports/games/sudoku_solver
 sudoscript                      ports/security/sudoscript
 sudosh                          ports/security/sudosh
 sudosh2                         ports/security/sudosh2
+sudosh3                         ports/security/sudosh3
 sudsol                          ports/games/sudsol
 sugarcrm                        ports/deskutils/sugarcrm
 suitesparse                     ports/math/suitesparse
@@ -23773,6 +23779,7 @@ wine                            ports/emulators/wine
 wine-doors                      ports/emulators/wine-doors
 winefish                        ports/editors/winefish
 wings                           ports/graphics/wings
+wings-devel                     ports/graphics/wings-devel
 wingz                           ports/math/wingz
 wingz3                          ports/math/wingz3
 wininfo                         ports/devel/wininfo
