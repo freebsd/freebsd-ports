@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	gcc
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.4.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
 		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gcc \
 		newlib-${NEWLIB_VERSION}${NEWLIB_EXTRACT_SUFX}:newlib
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.9/
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.10/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
@@ -55,7 +55,7 @@ CONFIGURE_SCRIPT=	../${WRKSRC:C,^${WRKDIR}/?,,}/configure
 #
 # Newlib version to use
 #
-NEWLIB_VERSION=	1.16.0
+NEWLIB_VERSION=	1.17.0
 NEWLIB_EXTRACT_SUFX=.tar.gz
 
 OURTARGET=	${TGTARCH}-${TGTABI}
@@ -121,8 +121,8 @@ CONFIGURE_ARGS+=--with-float=${WITH_FLOAT_TYPE}
 .endif
 
 .if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	gcc-core-4.3.2-rtems4.9-20081214.diff \
-		newlib-${NEWLIB_VERSION}-rtems4.9-20081203.diff
+PATCHFILES+=	gcc-core-4.4.2-rtems4.10-20091015.diff \
+		newlib-${NEWLIB_VERSION}-rtems4.10-20091009.diff
 .endif
 
 #
