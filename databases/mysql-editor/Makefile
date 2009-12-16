@@ -16,11 +16,10 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	CGI scripts in Perl to edit your MySQL tables
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${CGI_BIN}:${PORTSDIR}/${APACHE_PORT}	\
-		${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-NO_BUILD=	True
-APACHE_COMPAT=	True
+USE_APACHE=	1.3
+NO_BUILD=	yes
 USE_PERL5=	yes
 
 CGI_BIN=	${LOCALBASE}/www/cgi-bin
@@ -32,7 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dat.conf ${CGI_BIN}/mysql-editor/dat.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mysql-editor
-	${INSTALL_DATA} ${WRKSRC}/readme.html ${PREFIX}/share/doc/mysql-editor
+	${INSTALL_DATA} ${WRKSRC}/readme.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
