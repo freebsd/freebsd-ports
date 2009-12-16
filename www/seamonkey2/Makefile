@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.0
+DISTVERSION=	2.0.1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -149,10 +149,10 @@ post-patch:
 	${LN} -s  ${WRKSRC}/suite ${WRKSRC}/mozilla/suite
 
 port-pre-install:
-	@${REINPLACE_CMD} -e 's|seamonkey-2.0|seamonkey|' \
+	@${REINPLACE_CMD} -e 's|seamonkey-${PORTVERSION}|seamonkey|' \
 		${FAKEDIR}/bin/seamonkey
 	@${RM} -f ${FAKEDIR}/bin/seamonkey.bak
-	${MV} ${FAKEDIR}/lib/seamonkey-2.0 ${FAKEDIR}/lib/seamonkey
+	${MV} ${FAKEDIR}/lib/seamonkey-${PORTVERSION} ${FAKEDIR}/lib/seamonkey
 
 pre-install:
 	${ECHO_CMD} share/applications/seamonkey.desktop >> ${PLIST}
