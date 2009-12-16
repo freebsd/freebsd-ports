@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	josm
-PORTVERSION=	2255
+PORTVERSION=	2561
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://svn.openstreetmap.org/applications/editors/josm/plugins/wmsplugin/:wmsplugin
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}.jar
 DISTFILES=	${DISTNAME}:josm ${WEBKITIMG_SRC}:wmsplugin
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	A comprehensive editor for OpenStreetMap.org database
