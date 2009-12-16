@@ -21,13 +21,12 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3 \
 		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
 		cnewsdo:${PORTSDIR}/news/cnews \
-		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT} \
 		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 # Don't let stupid programs ask for configuration.
 
 BATCH=		YES
-APACHE_COMPAT=	YES
+USE_APACHE=	1.3
 NO_BUILD=	yes
 
 # comms/hylafax irc/ircd-hybrid
