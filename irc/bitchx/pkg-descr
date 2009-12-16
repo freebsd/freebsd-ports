@@ -1,7 +1,15 @@
 BitchX is an IRC (Internet Relay Chat) client by Colten Edwards aka
-panasync@efnet, it is based on it's predecessors ircII and EPIC.
-BitchX was originally started as a script by Trench and HappyCrappy
-for the popular UNIX IRC client ircII. Around Christmas of 1994 the
-script was patched directly into the client by panasync.
+panasync@EFnet, it is based on its predecessors ircII and Epic.
+
+BitchX was originally started as a script by Trench and HappyCrappy for
+the popular Unix IRC client ircII.  Around Christmas of 1994 the script
+was patched directly into the client by Colten Edwards.
+
+BitchX includes features which make it an eggdrop, a bouncer, and a
+friendly IRC client at the same time.
+
+BitchX is one the most popular IRC clients among Unix systems.  It is
+highly customizable and capable of running scripts, so it can be used
+as an IRC bot too.
 
 WWW: http://www.bitchx.org/
