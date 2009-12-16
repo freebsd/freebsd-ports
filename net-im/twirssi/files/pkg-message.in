@@ -4,6 +4,6 @@ To use twirssi on your irssi installation, just create a symlink on irssi
 scripts dir:
 
 # mkdir -p ~/.irssi/scripts
-# ln -sf %%DATADIR%%/twirssi/twirssi.pl ~/.irssi/scripts
+# ln -sf %%DATADIR%%/twirssi.pl ~/.irssi/scripts
 
 -------------------------------------------------------------------------
