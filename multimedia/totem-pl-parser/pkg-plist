@@ -47,6 +47,7 @@ share/locale/dz/LC_MESSAGES/totem-pl-parser.mo
 share/locale/el/LC_MESSAGES/totem-pl-parser.mo
 share/locale/en_CA/LC_MESSAGES/totem-pl-parser.mo
 share/locale/en_GB/LC_MESSAGES/totem-pl-parser.mo
+share/locale/en@shaw/LC_MESSAGES/totem-pl-parser.mo
 share/locale/es/LC_MESSAGES/totem-pl-parser.mo
 share/locale/et/LC_MESSAGES/totem-pl-parser.mo
 share/locale/eu/LC_MESSAGES/totem-pl-parser.mo
@@ -142,6 +143,8 @@ share/locale/zh_TW/LC_MESSAGES/totem-pl-parser.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
