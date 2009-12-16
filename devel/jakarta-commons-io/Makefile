@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of I/O utilities for Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
