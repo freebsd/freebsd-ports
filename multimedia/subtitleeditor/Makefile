@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.30.0
-PORTREVISION=	1
+PORTVERSION=	0.34.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.30/
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.34/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Subtitle editor
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
+		gstreamermm-0.10.2:${PORTSDIR}/multimedia/gstreamermm \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		pcre.0:${PORTSDIR}/devel/pcre
 
