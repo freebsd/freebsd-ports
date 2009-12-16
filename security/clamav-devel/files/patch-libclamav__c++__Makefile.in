@@ -1,0 +1,11 @@
+--- libclamav/c++/Makefile.in.orig	2009-12-16 00:16:57.000000000 -0200
++++ libclamav/c++/Makefile.in	2009-12-16 10:42:05.000000000 -0200
+@@ -805,7 +805,7 @@
+ LLVM_CXXFLAGS = -Woverloaded-virtual -pedantic -Wno-long-long -Wall -W -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -Wno-variadic-macros
+ EXTRA_DIST = $(top_srcdir)/llvm llvmdejagnu.sh
+ libllvmsystem_la_LDFLAGS = -pthread
+-libllvmsystem_la_LIBADD = -ldl
++libllvmsystem_la_LIBADD =
+ libllvmsystem_la_SOURCES = \
+ 	llvm/lib/System/Alarm.cpp\
+ 	llvm/lib/System/Atomic.cpp\
