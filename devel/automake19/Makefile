@@ -13,7 +13,10 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+# note: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
+MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (1.9)
 
 RUN_DEPENDS=	${AUTOCONF_DEPENDS} \

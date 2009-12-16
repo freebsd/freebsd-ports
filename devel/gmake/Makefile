@@ -13,7 +13,10 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
 DISTNAME=	make-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+# note: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
+MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU version of 'make' utility
 
 USE_BZIP2=	yes
