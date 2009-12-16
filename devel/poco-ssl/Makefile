@@ -17,6 +17,8 @@ MAINTAINER=	wes@FreeBSD.org
 COMMENT=	C++ Portable Components library with NetSSL library
 CONFLICTS=	poco-[0-9]*
 
+BROKEN=		bad plist
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
