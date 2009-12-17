@@ -11093,6 +11093,7 @@ p5-DBIx-Class-DynamicDefault    ports/databases/p5-DBIx-Class-DynamicDefault
 p5-DBIx-Class-DynamicSubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-DBIx-Class-EncodedColumn     ports/databases/p5-DBIx-Class-EncodedColumn
+p5-DBIx-Class-Fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-DBIx-Class-HTML-FormFu       ports/databases/p5-DBIx-Class-HTML-FormFu
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
@@ -14876,6 +14877,7 @@ p5-dbix-class-dynamicdefault    ports/databases/p5-DBIx-Class-DynamicDefault
 p5-dbix-class-dynamicsubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-dbix-class-encodedcolumn     ports/databases/p5-DBIx-Class-EncodedColumn
+p5-dbix-class-fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-dbix-class-html-formfu       ports/databases/p5-DBIx-Class-HTML-FormFu
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
@@ -18867,6 +18869,7 @@ planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
 plasma-applet-cwp               ports/deskutils/plasma-applet-cwp
 plasma-applet-daisy             ports/deskutils/plasma-applet-daisy
+plasma-applet-fancytasks        ports/deskutils/plasma-applet-fancytasks
 plasma-applet-geekclock         ports/x11-clocks/plasma-applet-geekclock
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-playwolf          ports/deskutils/plasma-applet-playwolf
@@ -19469,6 +19472,7 @@ py-cjkcodecs                    ports/converters/py-cjkcodecs
 py-cjson                        ports/devel/py-cjson
 py-clamav                       ports/security/py-clamav
 py-clientform                   ports/www/py-clientform
+py-cloudfiles                   ports/net/py-cloudfiles
 py-clutter                      ports/graphics/py-clutter
 py-clutter-gtk                  ports/graphics/py-clutter-gtk
 py-cmdln                        ports/devel/py-cmdln
