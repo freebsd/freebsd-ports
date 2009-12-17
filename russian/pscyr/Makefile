@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/psfonts/ \
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/${PATCH_LEVEL}$/-patch&/}-tex.tar.gz \
 		${PORTNAME}-${PORTVERSION:S/${PATCH_LEVEL}$/-patch&/}-type1.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Cyrillic PostScript Type1 fonts for use with TeX
 
 RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
@@ -38,10 +38,4 @@ post-install:
 	${UPDMAP_SYS} --quiet --nomkmap --enable Map=pscyr.map
 	${UPDMAP_SYS} --quiet --enable Map=pscyr2.map
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
