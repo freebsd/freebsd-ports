@@ -10,7 +10,7 @@ PORTVERSION=	3.1.7
 CATEGORIES=	net benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTNAME}%203.1
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software suite for testing network throughput and Internet services
 
 PLIST_FILES=	bin/tptestclient bin/tptestserver
