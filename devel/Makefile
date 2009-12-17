@@ -2880,6 +2880,7 @@
     SUBDIR += sh-rtems-gcc
     SUBDIR += sh-rtems-gdb
     SUBDIR += shapelib
+    SUBDIR += shflags
     SUBDIR += shmap
     SUBDIR += showgrammar
     SUBDIR += shtool
