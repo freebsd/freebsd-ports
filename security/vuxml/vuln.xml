@@ -35,6 +35,58 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e7bc5600-eaa0-11de-bd9c-00215c6a37bb">
+    <topic>postgresql -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>postgresql-client</name>
+	<name>postgresql-server</name>
+	<range><ge>7.4</ge><lt>7.4.27</lt></range>
+	<range><ge>8.0</ge><lt>8.0.23</lt></range>
+	<range><ge>8.1</ge><lt>8.1.19</lt></range>
+	<range><ge>8.2</ge><lt>8.2.15</lt></range>
+	<range><ge>8.3</ge><lt>8.3.9</lt></range>
+	<range><ge>8.4</ge><lt>8.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4034">
+	  <p>PostgreSQL 7.4.x before 7.4.27, 8.0.x before 8.0.23,
+	    8.1.x before 8.1.19, 8.2.x before 8.2.15, 8.3.x before 8.3.9,
+	    and 8.4.x before 8.4.2 does not properly handle a '\0' character
+	    in a domain name in the subject's Common Name (CN) field of an
+	    X.509 certificate, which (1) allows man-in-the-middle attackers
+	    to spoof arbitrary SSL-based PostgreSQL servers via a crafted
+	    server certificate issued by a legitimate Certification Authority,
+	    and (2) allows remote attackers to bypass intended client-hostname
+	    restrictions via a crafted client certificate issued by a legitimate
+	    Certification Authority, a related issue to CVE-2009-2408.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4136">
+	  <p>PostgreSQL 7.4.x before 7.4.27, 8.0.x before 8.0.23,
+	    8.1.x before 8.1.19, 8.2.x before 8.2.15, 8.3.x before 8.3.9,
+	    and 8.4.x before 8.4.2 does not properly manage session-local
+	    state during execution of an index function by a database
+	    superuser, which allows remote authenticated users to gain
+	    privileges via a table with crafted index functions, as
+	    demonstrated by functions that modify (1) search_path or
+	    (2) a prepared statement, a related issue to CVE-2007-6600
+	    and CVE-2009-3230. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-4034</cvename>
+      <cvename>CVE-2009-4136</cvename>
+    </references>
+    <dates>
+      <discovery>2009-11-20</discovery>
+      <entry>2009-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5486669e-ea9f-11de-bd9c-00215c6a37bb">
     <topic>tptest -- pwd Remote Stack Buffer Overflow</topic>
     <affects>
