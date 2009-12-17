@@ -8,7 +8,7 @@
 PORTNAME=	mod_hosts_access
 PORTVERSION=	1.1.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.klomp.org/mod_hosts_access/
+MASTER_SITES=	LOCAL/pgollucci
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
