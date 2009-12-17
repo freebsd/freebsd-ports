@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.19.2
-PORTREVISION=	1
+PORTVERSION=	5.20.1
 CATEGORIES=	math tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
