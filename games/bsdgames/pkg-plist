@@ -114,6 +114,7 @@ phantasia/motd
 phantasia/scoreboard
 @dirrmtry phantasia
 @exec chmod 0775 %D/phantasia
+@comment atc_score
 battlestar.log
 cfscores
 criblog
