@@ -7,7 +7,7 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
@@ -18,6 +18,7 @@ OPTIONS+=	ANALOG "Enable quickml-analog" on \
 		LIMIT  "Enable Creators and Members Limitation Patch" off
 
 PKGINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES+=	pkg-install
 
 QUICKML_USER=	quickml
 QUICKML_GROUP=	quickml
@@ -26,9 +27,8 @@ USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 
-USE_RC_SUBR=	yes
-FILES_SUB=	USER=${QUICKML_USER} GROUP=${QUICKML_GROUP} \
-		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} RUBY=${RUBY}
+USE_RC_SUBR=	${PORTNAME}
+SUB_LIST+=	USER=${QUICKML_USER} GROUP=${QUICKML_GROUP} RUBY=${RUBY}
 
 CONFIGURE_ARGS+=	--datadir="${PREFIX}/share/quickml"
 CONFIGURE_ARGS+=	--with-ruby="${RUBY}"
@@ -57,15 +57,11 @@ post-patch:
 .if !defined(WITHOUT_LIMIT)
 	@${PATCH} ${PATCH_DIST_ARGS} < ${DISTDIR}/${PORTNAME}-${PORTVERSION}-limited.patch
 .endif
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/quickml.sh > ${WRKDIR}/quickml.sh
 .if defined(WITHOUT_ANALOG)
 	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/without_quickml-analog
 .endif
 
 pre-install:
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-install > ${PKGINSTALL}
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
@@ -79,10 +75,5 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/with-mta.en.rd ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/with-mta.ja.rd ${DOCSDIR}
 .endif
-.if !exists(${PREFIX}/etc/rc.d/quickml.sh)
-	@${ECHO} "Installing ${PREFIX}/etc/rc.d/quickml.sh startup file."
-	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/quickml.sh ${PREFIX}/etc/rc.d/quickml.sh
-.endif
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' -e 's|%%DOCSDIR%%|${DOCSDIR}|g' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
