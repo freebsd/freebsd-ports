@@ -17,6 +17,8 @@ COMMENT=	A high-performance HTTP load balancer
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 BROKEN=		does not build
+DEPRECATED=	broken; abandoned by author; use net/relayd or www/nginx instead
+EXPIRATION_DATE=	2010-02-16
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
