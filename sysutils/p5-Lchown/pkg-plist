@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Lchown.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lchown/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lchown/Lchown.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lchown/Lchown.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lchown
