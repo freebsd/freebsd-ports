@@ -29,7 +29,7 @@ INFO=		gmp
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/gmp.info*
 
-regression-test: build
+regression-test check: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
