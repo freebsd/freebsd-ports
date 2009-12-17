@@ -1,5 +1,3 @@
-etc/rc.d/zope.sh
-etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/Products/00readme-freebsd.txt
 %%ZOPEBASEDIR%%/bin/README.txt
 %%ZOPEBASEDIR%%/bin/analyze.py
