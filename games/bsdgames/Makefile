@@ -19,6 +19,7 @@ COMMENT=	Traditional BSD games taken from DragonFly BSD
 
 WRKSRC=		${WRKDIR}/dragonfly
 USE_BZIP2=	yes
+MAKE_ENV+=	NO_WERROR=1
 MAN6=	adventure.6 \
 	arithmetic.6 \
 	atc.6 \
