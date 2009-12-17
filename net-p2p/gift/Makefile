@@ -27,7 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	giftd
 
 MAN1=		giftd.1
 
@@ -36,19 +36,12 @@ DOC_FILES=	AUTHORS COPYING src/ChangeLog \
 
 .include <bsd.port.pre.mk>
 
-SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 	${WRKSRC}/lib/Makefile.in
 
-post-build:
-	@${SED} ${SED_SCRIPT} <${FILESDIR}/giftd.sh >${WRKDIR}/giftd.sh
-
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/giftd.sh ${PREFIX}/etc/rc.d/
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOC_FILES}
