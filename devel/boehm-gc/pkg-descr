@@ -7,12 +7,6 @@ no longer has pointers to.  As a result, garbage collectors can also
 inform you of memory leaks (if they find memory they can free, it means
 you have lost all of your pointers to it, but you didn't free it).
 
-This package has two libraries and some include files:
-libgc.a - a garbage collection library, replaces malloc/free/new/delete/etc
-    with versions that do automatic garbage collection
-libleak.a - a leak detection library, which is just libgc.a compiled with
-    different switches.
-
 C programs may be linked against either of these, and should run (with
 GC or leak detection) without change.  C++ programs must include a header
 to use garbage collection, though leak detection should work without
