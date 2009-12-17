@@ -6,6 +6,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	1.3.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
@@ -29,23 +30,29 @@ USE_GCC=	4.2+
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_WX=		2.8
-MAKE_JOBS_SAFE=	yes
 WX_COMPS=	wx
+MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README.txt LICENSE.txt
-
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	VORBIS		"Use libvorbis for Ogg Vorbis support"	on \
-		MAD		"Use libmad for mp2/3 decoding support"	on \
+OPTIONS=	DEBUG		"enable debug support" off \
+		FFMPEG		"Use ffmpeg for import and export support" on \
 		FLAC		"Use libFLAC for FLAC support" on \
 		ID3TAG		"Use libid3tag for mp3 id3 tag support" on \
+		LADSPA		"enable LADSPA plug-in support" on \
+		MAD		"Use libmad for mp2/3 decoding support"	on \
+		MIDI		"Use portSMF for Midi support" on \
+		NYQUIST		"enable Nyquist plug-in support" on \
+		PORTMIXER	"compile with PortMixer" on \
 		SAMPLERATE	"Use libresample for sample rate conversion" on \
 		SBSMS		"Use libsbsms for pitch and tempo changing" on \
 		SOUNDTOUCH 	"Use libSoundTouch for pitch and tempo changing" on\
+		TAGLIB		"use TagLib for metadata support" on \
 		TWOLAME		"Use libtwolame for MP2 export support" on \
-		FFMPEG		"Use ffmpeg for import and export support" on \
-		MIDI		"Use portSMF for Midi support" on
+		UNICODE		"enable unicode support" on \
+		VORBIS		"Use libvorbis for Ogg Vorbis support"	on \
+		VAMP		"use libvamp for Vamp plug-in support" on
 
 .include <bsd.port.pre.mk>
 
@@ -63,14 +70,12 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 MAKE_ENV=	DOC=yes
 .endif
 
-CONFIGURE_ARGS+=	--enable-unicode=no
-
-.if defined(WITH_VORBIS)
-CONFIGURE_ARGS+=	--with-libvorbis
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debug
 .endif
 
-.if defined(WITH_MAD)
-CONFIGURE_ARGS+=	--with-libmad
+.if defined(WITH_FFMPEG)
+CONFIGURE_ARGS+=	--with-ffmpeg
 .endif
 
 .if defined(WITH_FLAC)
@@ -79,6 +84,26 @@ CONFIGURE_ARGS+=	--with-libflac
 
 .if defined(WITH_ID3TAG)
 CONFIGURE_ARGS+=	--with-libid3tag
+.endif
+
+.if defined(WITH_LADSPA)
+CONFIGURE_ARGS+=	--with-ladspa
+.endif
+
+.if defined(WITH_MAD)
+CONFIGURE_ARGS+=	--with-libmad
+.endif
+
+.if defined(WITH_MIDI)
+CONFIGURE_ARGS+=	--with-midi
+.endif
+
+.if defined(WITH_NYQUIST)
+CONFIGURE_ARGS+=	--with-nyquist
+.endif
+
+.if defined(WITH_PORTMIXER)
+CONFIGURE_ARGS+=	--with-portmixer
 .endif
 
 .if defined(WITH_SAMPLERATE)
@@ -97,12 +122,21 @@ CONFIGURE_ARGS+=	--with-soundtouch
 CONFIGURE_ARGS+=	--with-libtwolame
 .endif
 
-.if defined(WITH_FFMPEG)
-CONFIGURE_ARGS+=	--with-ffmpeg
+.if defined(WITH_TAGLIB)
+CONFIGURE_ARGS+=	--with-taglib
 .endif
 
-.if defined(WITH_MIDI)
-CONFIGURE_ARGS+=	--with-midi
+.if defined(WITH_UNICODE)
+WX_UNICODE=	yes
+CONFIGURE_ARGS+=	--enable-unicode
+.endif
+
+.if defined(WITH_VAMP)
+CONFIGURE_ARGS+=	--with-libvamp
+.endif
+
+.if defined(WITH_VORBIS)
+CONFIGURE_ARGS+=	--with-libvorbis
 .endif
 
 .include <bsd.port.post.mk>

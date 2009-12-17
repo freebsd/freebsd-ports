@@ -16,4 +16,3 @@
  /* Apple CC */
  #ifdef __APPLE__
  #define NNODES 2000
-
