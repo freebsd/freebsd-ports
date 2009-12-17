@@ -7,7 +7,7 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.7.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/Zope-${PORTVERSION}/:src \
 		http://www.zope.org/Products/Zope/Hotfix-2007-03-20/Hotfix-20070320/:hotfix
@@ -19,7 +19,7 @@ COMMENT=	An object-based web application platform
 
 WRKSRC=		${WRKDIR}/Zope-${PORTVERSION}-final
 USE_PYTHON=	2.4
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	${PORTNAME}
 DIST_SUBDIR=	zope
 HOTFIX=		Hotfix_20070320
 
@@ -50,8 +50,6 @@ ALL_TARGET=	build
 MAKEFILE=	makefile
 
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
 CONFIG_SUB=	ZOPEBASEDIR=${ZOPEBASEDIR} \
 		ZOPE_USER=${ZOPE_USER} \
 		ZOPEINSTANCEDIR=${ZOPEINSTANCEDIR}
@@ -77,12 +75,6 @@ post-install:
 	@${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in ${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} < ${FILESDIR}/pkg-message.in \
 		> ${PKGMESSAGE}
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/zope.sh > ${PREFIX}/etc/rc.d/zope.sh
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/zope.sh
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/zeo.sh > ${PREFIX}/etc/rc.d/zeo.sh
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/zeo.sh
 	@${MKDIR} ${ZOPEBASEDIR}/Products
 	@${CP} ${FILESDIR}/Products_00readme-freebsd.txt ${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 	@${CAT} ${PKGMESSAGE}
