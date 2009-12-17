@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pycogent
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	biology python
 MASTER_SITES=	SF/${PORTNAME}/PyCogent/${PORTVERSION}
 DISTNAME=	PyCogent-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A toolkit for statistical analysis of biological sequences
 
 BUILD_DEPENDS=	${PYNUMPY} \
