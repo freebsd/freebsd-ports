@@ -127,6 +127,7 @@ share/locale/da/LC_MESSAGES/gnome-keyring.mo
 share/locale/de/LC_MESSAGES/gnome-keyring.mo
 share/locale/dz/LC_MESSAGES/gnome-keyring.mo
 share/locale/el/LC_MESSAGES/gnome-keyring.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-keyring.mo
 share/locale/en_CA/LC_MESSAGES/gnome-keyring.mo
 share/locale/en_GB/LC_MESSAGES/gnome-keyring.mo
 share/locale/es/LC_MESSAGES/gnome-keyring.mo
@@ -219,6 +220,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
