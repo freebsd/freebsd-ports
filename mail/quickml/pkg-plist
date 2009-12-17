@@ -13,7 +13,6 @@ sbin/quickml
 sbin/quickml-ctl
 @unexec if cmp -s %D/etc/quickmlrc %D/etc/quickmlrc.sample; then rm -f %D/etc/quickmlrc; fi
 etc/quickmlrc.sample
-etc/rc.d/quickml.sh
 %%DATADIR%%/messages.ja
 @dirrm %%DATADIR%%
 @dirrm %%RUBY_LIBDIR%%/quickml
