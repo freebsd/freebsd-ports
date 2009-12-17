@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Elixir
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 PORTREVISION=	0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP \
@@ -20,13 +20,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.4.0:${PORTSDIR}/databases/py-s
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-
-.if !defined(NOPORTEXAMPLES)
-EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
-
-post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
