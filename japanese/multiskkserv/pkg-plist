@@ -1,4 +1,3 @@
 sbin/multiskkserv
 sbin/multiskkserv-ctl
 bin/skkdic-p2cdb
-etc/rc.d/multiskkserv.sh
