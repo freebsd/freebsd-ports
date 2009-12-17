@@ -4,8 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	SDL
-PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DG/DGOEHRIG
@@ -83,9 +82,9 @@ MAN3=	SDL.3		\
 # Workaround for Build.PL bug
 post-install:
 	if [ -d ${SITE_PERL}/${PERL_ARCH}/auto/src ]; then \
-		mv ${SITE_PERL}/${PERL_ARCH}/auto/src/SDL* \
+		${MV} ${SITE_PERL}/${PERL_ARCH}/auto/src/SDL* \
 		${SITE_PERL}/${PERL_ARCH}/auto/; \
-		rmdir ${SITE_PERL}/${PERL_ARCH}/auto/src; \
+		${RMDIR} ${SITE_PERL}/${PERL_ARCH}/auto/src; \
 	fi
 
 	if [ -n ${PERL} ]; then \
@@ -95,5 +94,5 @@ post-install:
 			${ECHO_MSG} "or launch any program that use this port with LD_PRELOAD=/usr/lib/libc_r.so"; \
 		fi; \
 	fi
- 
+
 .include <bsd.port.post.mk>
