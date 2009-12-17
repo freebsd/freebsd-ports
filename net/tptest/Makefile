@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTNAME}%203.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software suite for testing network throughput and Internet services
 
+DEPRECATED=		superceded by online website http://bredbandskollen.se
+EXPIRATION_DATE=	2010-02-16
+
 PLIST_FILES=	bin/tptestclient bin/tptestserver
 
 do-build:
