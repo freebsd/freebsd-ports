@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	webob
-PORTVERSION=	0.9.6.1
-#PORTREVISION=	0
+PORTVERSION=	0.9.7
+PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -20,12 +20,5 @@ COMMENT=	WSGI request and response Python object
 PYDISTUTILS_PKGNAME=	WebOb
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-
-DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
-
-.if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR} && cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
