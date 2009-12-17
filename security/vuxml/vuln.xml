@@ -35,6 +35,57 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="39a25a63-eb5c-11de-b650-00215c6a37bb">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP developers reports:</p>
+	<blockquote cite="http://www.php.net/releases/5_2_12.php">
+	  <p>This release focuses on improving the stability of the
+	    PHP 5.2.x branch with over 60 bug fixes, some of which
+	    are security related. All users of PHP 5.2 are encouraged
+	    to upgrade to this release.</p>
+	  <p>Security Enhancements and Fixes in PHP 5.2.12:</p>
+	  <ul>
+	    <li>Fixed a safe_mode bypass in tempnam() identified by
+	      Grzegorz Stachowiak. (CVE-2009-3557, Rasmus)</li>
+	    <li>Fixed a open_basedir bypass in posix_mkfifo()
+	      identified by Grzegorz Stachowiak. (CVE-2009-3558, Rasmus)</li>
+	    <li>Added "max_file_uploads" INI directive, which can
+	      be set to limit the number of file uploads per-request
+	      to 20 by default, to prevent possible DOS via temporary
+	      file exhaustion, identified by Bogdan Calin.
+	      (CVE-2009-4017, Ilia)</li>
+	    <li>Added protection for $_SESSION from interrupt
+	      corruption and improved "session.save_path" check,
+	      identified by Stefan Esser. (CVE-2009-4143, Stas)</li>
+	    <li>Fixed bug #49785 (insufficient input string
+	       validation of htmlspecialchars()). (CVE-2009-4142,
+	       Moriyoshi, hello at iwamot dot com)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3557</cvename>
+      <cvename>CVE-2009-3558</cvename>
+      <cvename>CVE-2009-4017</cvename>
+      <cvename>CVE-2009-4142</cvename>
+      <cvename>CVE-2009-4143</cvename>
+      <url>http://www.php.net/releases/5_2_12.php</url>
+    </references>
+    <dates>
+      <discovery>2009-12-17</discovery>
+      <entry>2009-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e7bc5600-eaa0-11de-bd9c-00215c6a37bb">
     <topic>postgresql -- multiple vulnerabilities</topic>
     <affects>
