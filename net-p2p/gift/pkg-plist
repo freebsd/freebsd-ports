@@ -1,4 +1,3 @@
-etc/rc.d/giftd.sh
 bin/gift-setup
 bin/giftd
 include/libgift/array.h
