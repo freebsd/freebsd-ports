@@ -294,6 +294,7 @@ share/locale/mk/LC_MESSAGES/evince.mo
 share/locale/ml/LC_MESSAGES/evince.mo
 share/locale/mr/LC_MESSAGES/evince.mo
 share/locale/nb/LC_MESSAGES/evince.mo
+share/locale/nds/LC_MESSAGES/evince.mo
 share/locale/ne/LC_MESSAGES/evince.mo
 share/locale/nl/LC_MESSAGES/evince.mo
 share/locale/nn/LC_MESSAGES/evince.mo
@@ -433,6 +434,8 @@ share/locale/sr@latin/LC_MESSAGES/evince.mo
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
