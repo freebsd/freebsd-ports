@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -52,8 +51,8 @@ PYTHON=		"@comment "
 
 .include <bsd.port.pre.mk>
 
-# A workaround for broken OpenSSL on 6.4 amd64
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 604000 && ${OSVERSION} < 700000
+# broken OpenSSL on 6.4
+.if ${OSVERSION} >= 604000 && ${OSVERSION} < 700000
 CONFIGURE_ARGS+=	--disable-sha2
 .endif
 
