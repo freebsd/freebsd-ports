@@ -17,8 +17,7 @@ COMMENT=	Abstract Class::DBI SQL with SQL::Abstract
 RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
 		${SITE_PERL}/SQL/Abstract/Limit.pm:${PORTSDIR}/databases/p5-SQL-Abstract-Limit
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
