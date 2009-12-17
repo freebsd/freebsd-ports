@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2009-12-11 22:16:43.000000000 +0900
++++ src/Makefile.in	2009-12-16 23:12:26.000000000 +0900
+@@ -241,7 +241,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-INCLUDES = @REMMINA_CFLAGS@ @LIBGCRYPT_CFLAGS@ @VNC_CFLAGS@ \
++INCLUDES = @VNC_CFLAGS@ @REMMINA_CFLAGS@ @LIBGCRYPT_CFLAGS@ \
+     -DREMMINA_LOCALEDIR=\"$(remmina_localedir)\" \
+     -DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\" \
+     -DREMMINA_DATADIR=\"$(pkgdatadir)\"
