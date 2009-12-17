@@ -1,0 +1,11 @@
+--- configure.orig	2005-05-19 17:52:05.000000000 +0200
++++ configure	2009-12-17 22:30:42.000000000 +0100
+@@ -3775,7 +3775,7 @@
+   ;;
+   *)
+   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH:/usr/local/kun/bin:/usr/local/bin
++for as_dir in $PATH
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
