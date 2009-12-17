@@ -7,15 +7,16 @@
 #
 
 PORTNAME=	ncftp
-PORTVERSION=	3.2.2
-PORTREVISION?=	1
+PORTVERSION=	3.2.3
+PORTREVISION?=	0
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
+MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/ \
+		ftp://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
 .if !defined(WITHOUT_NCFTP_IPV6) && !defined(WITHOUT_IPV6)
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-322-v6-20080821.diff.gz
+PATCHFILES=	ncftp-323-v6-20091109.diff.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -35,6 +36,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses
+CONFIGURE_ENV=	TAR=/usr/bin/tar
 PLIST_SUB=	NCFTP=${LATEST_LINK}
 MAN1=		${LATEST_LINK}.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \
 		ncftpspooler.1
@@ -50,10 +52,6 @@ pre-fetch:
 	@${ECHO} ""
 
 pre-build:
-	${REINPLACE_CMD} -e 's|$$(CCDV)$$(CC)|$$(CCDV) $$(CC)|' \
-	    ${WRKSRC}/libncftp/Makefile
-	${REINPLACE_CMD} -e 's|$$(CCDV)$$(CC)|$$(CCDV) $$(CC)|' \
-	    ${WRKSRC}/sio/Makefile
 	cd ${WRKSRC}/Strn ; make so
 	cd ${WRKSRC}/libncftp ; make so
 	cd ${WRKSRC}/sio; make so
@@ -61,7 +59,7 @@ pre-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/ncftp ${PREFIX}/bin/${LATEST_LINK}
 	@cd ${WRKSRC}/bin ; ${INSTALL_PROGRAM} \
-		ncftpbatch ncftpget ncftpls ncftpput ncftpbookmarks \
+		ncftpbatch ncftpbookmarks ncftpget ncftpls ncftpput \
 		${PREFIX}/bin
 	@cd ${PREFIX}/bin && ${LN} -f ncftpbatch ncftpspooler
 	@cd ${WRKSRC} && ${INSTALL_DATA} \

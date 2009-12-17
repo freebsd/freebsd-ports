@@ -7,8 +7,8 @@ lib/libsio.so
 lib/libsio.so.5
 bin/%%NCFTP%%
 bin/ncftpbatch
+bin/ncftpbookmarks
 bin/ncftpget
 bin/ncftpls
 bin/ncftpput
-bin/ncftpbookmarks
 bin/ncftpspooler
