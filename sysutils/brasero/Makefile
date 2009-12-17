@@ -6,8 +6,7 @@
 #    $MCom: ports/sysutils/brasero/Makefile,v 1.59 2009/10/24 01:52:39 avl Exp $
 
 PORTNAME=	brasero
-PORTVERSION=	2.28.2
-PORTREVISION=	1
+PORTVERSION=	2.28.3
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

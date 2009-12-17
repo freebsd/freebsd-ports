@@ -90,6 +90,7 @@ libdata/pkgconfig/libbrasero-media.pc
 share/applications/brasero.desktop
 share/applications/brasero-copy-medium.desktop
 %%NAUTILUS%%share/applications/brasero-nautilus.desktop
+share/doc/libbrasero-burn/annotation-glossary.html
 share/doc/libbrasero-burn/api-index-full.html
 share/doc/libbrasero-burn/ch01.html
 share/doc/libbrasero-burn/home.png
@@ -125,6 +126,7 @@ share/doc/libbrasero-burn/object-tree.html
 share/doc/libbrasero-burn/right.png
 share/doc/libbrasero-burn/style.css
 share/doc/libbrasero-burn/up.png
+share/doc/libbrasero-media/annotation-glossary.html
 share/doc/libbrasero-media/api-index-full.html
 share/doc/libbrasero-media/ch01.html
 share/doc/libbrasero-media/home.png
@@ -376,6 +378,7 @@ share/locale/mk/LC_MESSAGES/brasero.mo
 share/locale/ml/LC_MESSAGES/brasero.mo
 share/locale/mr/LC_MESSAGES/brasero.mo
 share/locale/nb/LC_MESSAGES/brasero.mo
+share/locale/nds/LC_MESSAGES/brasero.mo
 share/locale/nl/LC_MESSAGES/brasero.mo
 share/locale/oc/LC_MESSAGES/brasero.mo
 share/locale/or/LC_MESSAGES/brasero.mo
@@ -486,6 +489,8 @@ share/omf/brasero/brasero-zh_TW.omf
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
