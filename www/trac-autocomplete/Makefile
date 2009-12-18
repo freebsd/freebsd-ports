@@ -7,10 +7,10 @@
 
 PORTNAME=	autocomplete
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://codelabs.ru/fbsd/distfiles/ \
-		http://dist.codelabs.ru/fbsd/
-PKGNAMEPREFIX=	trac
+MASTER_SITES=	http://dist.codelabs.ru/fbsd/
+PKGNAMEPREFIX=	trac-
 DISTNAME=	autocompleteusersplugin-r${REL}
 
 MAINTAINER=	rea-fbsd@codelabs.ru
@@ -33,8 +33,8 @@ PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 # Directory permissions are fine (they aren't stored inside ZIP
 # file), but we set them too -- just in case.
 post-extract:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} chmod 644
-	@${FIND} ${WRKSRC} -type d | ${XARGS} chmod 755
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
+	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 
 # Target to generate packaging list
 plist:
