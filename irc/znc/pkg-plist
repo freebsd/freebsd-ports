@@ -14,6 +14,7 @@ include/znc/MD5.h
 include/znc/Modules.h
 include/znc/Nick.h
 include/znc/Server.h
+include/znc/SHA256.h
 include/znc/Socket.h
 include/znc/Template.h
 include/znc/Timers.h
@@ -23,91 +24,116 @@ include/znc/ZNCString.h
 include/znc/defines.h
 include/znc/main.h
 include/znc/znc.h
-lib/znc/admin.so
-lib/znc/autoattach.so
-lib/znc/autocycle.so
-lib/znc/autoop.so
-lib/znc/away.so
-lib/znc/awaynick.so
-lib/znc/chansaver.so
-lib/znc/crypt.so
-lib/znc/email.so
-lib/znc/fail2ban.so
-lib/znc/imapauth.so
-lib/znc/keepnick.so
-lib/znc/kickrejoin.so
-lib/znc/modperl.pm
-lib/znc/modperl.so
-lib/znc/nickserv.so
-lib/znc/partyline.so
-lib/znc/perform.so
-lib/znc/q.so
-lib/znc/raw.so
-lib/znc/sample.so
-%%SASL%%lib/znc/saslauth.so
-lib/znc/savebuff.so
-lib/znc/schat.so
-lib/znc/shell.so
-lib/znc/simple_away.so
-lib/znc/stickychan.so
-lib/znc/watch.so
-lib/znc/webadmin.so
 libdata/pkgconfig/znc.pc
-%%DATADIR%%/webadmin/skins/dark-clouds/Channel.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/Error.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/Footer.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/Header.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/ListUsers.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/Main.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/Settings.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/UserPage.tmpl
-%%DATADIR%%/webadmin/skins/dark-clouds/data/clouds-header.jpg
-%%DATADIR%%/webadmin/skins/dark-clouds/data/favicon.ico
-%%DATADIR%%/webadmin/skins/dark-clouds/data/main.css
-%%DATADIR%%/webadmin/skins/default/Channel.tmpl
-%%DATADIR%%/webadmin/skins/default/Error.tmpl
-%%DATADIR%%/webadmin/skins/default/Footer.tmpl
-%%DATADIR%%/webadmin/skins/default/Header.tmpl
-%%DATADIR%%/webadmin/skins/default/ListUsers.tmpl
-%%DATADIR%%/webadmin/skins/default/Main.tmpl
-%%DATADIR%%/webadmin/skins/default/Settings.tmpl
-%%DATADIR%%/webadmin/skins/default/UserPage.tmpl
-%%DATADIR%%/webadmin/skins/default/data/favicon.ico
-%%DATADIR%%/webadmin/skins/default/data/main.css
-%%DATADIR%%/webadmin/skins/graphiX/Channel.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/Error.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/Footer.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/Header.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/ListUsers.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/Main.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/Settings.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/UserPage.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/data/favicon.ico
-%%DATADIR%%/webadmin/skins/graphiX/data/graphix_bg.jpg
-%%DATADIR%%/webadmin/skins/graphiX/data/graphix_header.jpg
-%%DATADIR%%/webadmin/skins/graphiX/data/main.css
-%%DATADIR%%/webadmin/skins/ice/Channel.tmpl
-%%DATADIR%%/webadmin/skins/ice/Error.tmpl
-%%DATADIR%%/webadmin/skins/ice/Footer.tmpl
-%%DATADIR%%/webadmin/skins/ice/Header.tmpl
-%%DATADIR%%/webadmin/skins/ice/ListUsers.tmpl
-%%DATADIR%%/webadmin/skins/ice/Main.tmpl
-%%DATADIR%%/webadmin/skins/ice/Settings.tmpl
-%%DATADIR%%/webadmin/skins/ice/UserPage.tmpl
-%%DATADIR%%/webadmin/skins/ice/data/favicon.ico
-%%DATADIR%%/webadmin/skins/ice/data/linkbg.jpg
-%%DATADIR%%/webadmin/skins/ice/data/main.css
-%%DATADIR%%/webadmin/skins/ice/data/pagebg.gif
-@dirrm %%DATADIR%%/webadmin/skins/ice/data
-@dirrm %%DATADIR%%/webadmin/skins/ice
-@dirrm %%DATADIR%%/webadmin/skins/graphiX/data
-@dirrm %%DATADIR%%/webadmin/skins/graphiX
-@dirrm %%DATADIR%%/webadmin/skins/default/data
-@dirrm %%DATADIR%%/webadmin/skins/default
-@dirrm %%DATADIR%%/webadmin/skins/dark-clouds/data
-@dirrm %%DATADIR%%/webadmin/skins/dark-clouds
-@dirrm %%DATADIR%%/webadmin/skins
-@dirrm %%DATADIR%%/webadmin
-@dirrm %%DATADIR%%
-@dirrm lib/znc
+%%MODULES%%lib/znc/admin.so
+%%MODULES%%lib/znc/adminlog.so
+%%MODULES%%lib/znc/autoattach.so
+%%MODULES%%lib/znc/autocycle.so
+%%MODULES%%lib/znc/autoop.so
+%%MODULES%%lib/znc/autoreply.so
+%%MODULES%%lib/znc/awaynick.so
+%%MODULES%%lib/znc/buffextras.so
+%%MODULES%%lib/znc/chansaver.so
+%%MODULES%%lib/znc/email.so
+%%MODULES%%lib/znc/fail2ban.so
+%%MODULES%%lib/znc/fixfreenode.so
+%%MODULES%%lib/znc/imapauth.so
+%%MODULES%%lib/znc/keepnick.so
+%%MODULES%%lib/znc/kickrejoin.so
+%%MODULES%%lib/znc/nickserv.so
+%%MODULES%%lib/znc/partyline.so
+%%MODULES%%lib/znc/perform.so
+%%MODULES%%lib/znc/q.so
+%%MODULES%%lib/znc/raw.so
+%%MODULES%%lib/znc/route_replies.so
+%%MODULES%%lib/znc/sample.so
+%%MODULES%%lib/znc/shell.so
+%%MODULES%%lib/znc/simple_away.so
+%%MODULES%%lib/znc/stickychan.so
+%%MODULES%%lib/znc/watch.so
+%%MODULES%%lib/znc/webadmin.so
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/data/favicon.ico
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/data/clouds-header.jpg
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/data/main.css
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/Footer.tmpl
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/ListUsers.tmpl
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/UserPage.tmpl
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/Error.tmpl
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/Channel.tmpl
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/Header.tmpl
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/Settings.tmpl
+%%MODULES%%share/znc/webadmin/skins/dark-clouds/Main.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/data/favicon.ico
+%%MODULES%%share/znc/webadmin/skins/default/data/main.css
+%%MODULES%%share/znc/webadmin/skins/default/Footer.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/ListUsers.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/UserPage.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/Error.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/Header.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/Channel.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/Settings.tmpl
+%%MODULES%%share/znc/webadmin/skins/default/Main.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/data/favicon.ico
+%%MODULES%%share/znc/webadmin/skins/graphiX/data/main.css
+%%MODULES%%share/znc/webadmin/skins/graphiX/data/graphix_header.jpg
+%%MODULES%%share/znc/webadmin/skins/graphiX/data/graphix_bg.jpg
+%%MODULES%%share/znc/webadmin/skins/graphiX/Footer.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/ListUsers.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/UserPage.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/Error.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/Header.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/Channel.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/Settings.tmpl
+%%MODULES%%share/znc/webadmin/skins/graphiX/Main.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/data/favicon.ico
+%%MODULES%%share/znc/webadmin/skins/ice/data/main.css
+%%MODULES%%share/znc/webadmin/skins/ice/data/pagebg.gif
+%%MODULES%%share/znc/webadmin/skins/ice/data/linkbg.jpg
+%%MODULES%%share/znc/webadmin/skins/ice/Footer.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/ListUsers.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/UserPage.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/Error.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/Header.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/Channel.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/Settings.tmpl
+%%MODULES%%share/znc/webadmin/skins/ice/Main.tmpl
+%%MODULES%%%%EXTRA%%lib/znc/log.so
+%%MODULES%%%%EXTRA%%lib/znc/antiidle.so
+%%MODULES%%%%EXTRA%%lib/znc/autovoice.so
+%%MODULES%%%%EXTRA%%lib/znc/blockuser.so
+%%MODULES%%%%EXTRA%%lib/znc/connect_throttle.so
+%%MODULES%%%%EXTRA%%lib/znc/ctcpflood.so
+%%MODULES%%%%EXTRA%%lib/znc/discon_kick.so
+%%MODULES%%%%EXTRA%%lib/znc/droproot.so
+%%MODULES%%%%EXTRA%%lib/znc/fakeonline.so
+%%MODULES%%%%EXTRA%%lib/znc/lastseen.so
+%%MODULES%%%%EXTRA%%lib/znc/listsockets.so
+%%MODULES%%%%EXTRA%%lib/znc/motdfile.so
+%%MODULES%%%%EXTRA%%lib/znc/notify_connect.so
+%%MODULES%%%%EXTRA%%lib/znc/send_raw.so
+%%MODULES%%%%OPENSSL%%lib/znc/away.so
+%%MODULES%%%%OPENSSL%%lib/znc/crypt.so
+%%MODULES%%%%OPENSSL%%lib/znc/savebuff.so
+%%MODULES%%%%OPENSSL%%lib/znc/schat.so
+%%MODULES%%%%PERL%%lib/znc/modperl.pm
+%%MODULES%%%%PERL%%lib/znc/modperl.so
+%%MODULES%%%%SASL%%lib/znc/saslauth.so
+%%MODULES%%%%TCL%%lib/znc/modtcl.so
+%%MODULES%%%%TCL%%share/znc/modtcl/modtcl.tcl
+%%MODULES%%%%TCL%%share/znc/modtcl/binds.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/znc.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/znc
+@dirrmtry lib/znc
+@dirrmtry share/znc/webadmin/skins/ice/data
+@dirrmtry share/znc/webadmin/skins/ice
+@dirrmtry share/znc/webadmin/skins/graphiX/data
+@dirrmtry share/znc/webadmin/skins/graphiX
+@dirrmtry share/znc/webadmin/skins/default/data
+@dirrmtry share/znc/webadmin/skins/default
+@dirrmtry share/znc/webadmin/skins/dark-clouds/data
+@dirrmtry share/znc/webadmin/skins/dark-clouds
+@dirrmtry share/znc/webadmin/skins
+@dirrmtry share/znc/webadmin
+@dirrmtry share/znc/modtcl
+@dirrmtry share/znc
