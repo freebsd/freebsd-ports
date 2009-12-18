@@ -21735,6 +21735,7 @@ sheerdns                        ports/dns/sheerdns
 shell-fm                        ports/multimedia/shell-fm
 shell-include                   ports/shells/shell-include
 shelldap                        ports/net/shelldap
+shflags                         ports/devel/shflags
 shftool                         ports/converters/shftool
 shibboleth-sp                   ports/security/shibboleth-sp
 shim                            ports/graphics/shim
