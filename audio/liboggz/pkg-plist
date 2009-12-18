@@ -1,5 +1,6 @@
 bin/oggz
 bin/oggz-chop
+bin/oggz-codecs
 bin/oggz-comment
 bin/oggz-diff
 bin/oggz-dump
@@ -17,6 +18,7 @@ include/oggz/oggz_deprecated.h
 include/oggz/oggz_io.h
 include/oggz/oggz_off_t.h
 include/oggz/oggz_off_t_generated.h
+include/oggz/oggz_packet.h
 include/oggz/oggz_read.h
 include/oggz/oggz_seek.h
 include/oggz/oggz_stream.h
@@ -25,7 +27,7 @@ include/oggz/oggz_write.h
 lib/liboggz.a
 lib/liboggz.la
 lib/liboggz.so
-lib/liboggz.so.6
+lib/liboggz.so.8
 libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
@@ -64,6 +66,8 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__io_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__off__t_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__off__t_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__packet_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__packet_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__read_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__read_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__seek_8h-source.html
@@ -75,6 +79,8 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__write_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__write_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/structOggzComment.html
+%%PORTDOCS%%%%DOCSDIR%%/html/structoggz__packet.html
+%%PORTDOCS%%%%DOCSDIR%%/html/structoggz__position.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
@@ -103,6 +109,7 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__deprecated_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__io_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__off__t_8h.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/oggz__packet_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__read_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__seek_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__stream_8h.tex
@@ -110,6 +117,8 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__write_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/refman.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/structOggzComment.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/structoggz__packet.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/structoggz__position.tex
 @dirrm include/oggz
 @dirrmtry libdata/pkgconfig
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
