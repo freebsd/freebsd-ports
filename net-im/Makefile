@@ -118,6 +118,7 @@
     SUBDIR += pidgin-libnotify
     SUBDIR += pidgin-manualsize
     SUBDIR += pidgin-msn-pecan
+    SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pidgin-sipe
