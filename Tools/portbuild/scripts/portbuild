@@ -137,13 +137,13 @@ ulimit -f 819200
 ulimit -t 7200
 
 # directories to clean
-cleandirs="${LOCALBASE} ${X11BASE} /compat /var/db/pkg"
+cleandirs="${LOCALBASE} /compat /var/db/pkg"
 
 # 15 minutes
 export FTP_TIMEOUT=900
 export HTTP_TIMEOUT=900
 
-export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin:${X11BASE}/bin
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin
 
 echo "building $pkgname in $chroot"
 
