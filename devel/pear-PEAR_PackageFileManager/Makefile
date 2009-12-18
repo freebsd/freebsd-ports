@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PEAR_PackageFileManager
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -20,10 +20,8 @@ OPTIONS=	PEAR_PHP_COMPATINFO "PEAR::PHP_CompatInfo support" off \
 		PEAR_XML_TREE "PEAR::XML_Tree support" off
 
 CATEGORY=	PEAR
-FILES=		PackageFileManager/Cvs.php PackageFileManager/File.php \
-		PackageFileManager/Perforce.php \
-		PackageFileManager/SimpleGenerator.php \
-		PackageFileManager/Svn.php \
+
+FILES=		PackageFileManager/SimpleGenerator.php \
 		PackageFileManager/XMLOutput.php PackageFileManager.php
 EXAMPLES=	createPhpDocumentor_package.xml.php generatePackage.xml.php
 TESTS=		addConfigureOption/test_invalid_nosetoptions.phpt \
@@ -42,14 +40,6 @@ TESTS=		addConfigureOption/test_invalid_nosetoptions.phpt \
 		addMaintainer/test_valid_replace.phpt \
 		addReplacement/test_invalid_replacement.phpt \
 		addReplacement/test_valid_replacement.phpt \
-		addRole/test_invalid_role.phpt \
-		addRole/test_valid_role.phpt \
-		footest/blarfoo/blartest.txt \
-		footest/subfoo/subsubfoo/boo.txt \
-		footest/subfoo/test11.txt footest/subfoo/test12.txt \
-		footest/testCVS/testEntries \
-		footest/testCVS/testEntries.Extra footest/.test \
-		footest/test1.txt footest/test2.txt \
 		generateNewPackageXML/test_invalid_nodescription.phpt \
 		generateNewPackageXML/test_invalid_nopackage.phpt \
 		generateNewPackageXML/test_invalid_nosummary.phpt \
@@ -65,56 +55,6 @@ TESTS=		addConfigureOption/test_invalid_nosetoptions.phpt \
 		getExistingPackageXML/test_valid_simple.phpt \
 		importOptions/test_invalid.phpt \
 		importOptions/test_valid.phpt \
-		PEAR_PackageFileManager_CVS/footest/blarfoo/blartest.txt \
-		PEAR_PackageFileManager_CVS/footest/subfoo/subsubfoo/boo.txt \
-		PEAR_PackageFileManager_CVS/footest/subfoo/test11.txt \
-		PEAR_PackageFileManager_CVS/footest/subfoo/test12.txt \
-		PEAR_PackageFileManager_CVS/footest/testCVS/testEntries \
-		PEAR_PackageFileManager_CVS/footest/testCVS/testEntries.Extra \
-		PEAR_PackageFileManager_CVS/footest/.test \
-		PEAR_PackageFileManager_CVS/footest/test1.txt \
-		PEAR_PackageFileManager_CVS/footest/test2.txt \
-		PEAR_PackageFileManager_CVS/setup.php.inc \
-		PEAR_PackageFileManager_CVS/test_dirList_invalid.phpt \
-		PEAR_PackageFileManager_CVS/test_dirList_valid.phpt \
-		PEAR_PackageFileManager_CVS/test_dirList_valid_with_ignore.phpt \
-		PEAR_PackageFileManager_CVS/test_dirList_valid_with_include.phpt \
-		PEAR_PackageFileManager_CVS/test_general_valid1.phpt \
-		PEAR_PackageFileManager_CVS/test_general_valid2.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_complex_multiple_no.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_complex_multiple_pass.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_complex_no.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_emptyarray.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_nonarray.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_simple_dir_no.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_simple_dir_pass.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_simple_no.phpt \
-		PEAR_PackageFileManager_File/checkIgnore/test_simple_pass.phpt \
-		PEAR_PackageFileManager_File/dirList/test_bug1217/0 \
-		PEAR_PackageFileManager_File/dirList/test_bug1217/firstfile.php \
-		PEAR_PackageFileManager_File/dirList/test_bug1217/fourthfile.php \
-		PEAR_PackageFileManager_File/dirList/test_bug1217/secondfile.php \
-		PEAR_PackageFileManager_File/dirList/test_bug1217.phpt \
-		PEAR_PackageFileManager_File/dirList/test_invalid.phpt \
-		PEAR_PackageFileManager_File/dirList/test_valid.phpt \
-		PEAR_PackageFileManager_File/dirList/test_valid_addhiddenfiles.phpt \
-		PEAR_PackageFileManager_File/dirList/test_valid_with_ignore.phpt \
-		PEAR_PackageFileManager_File/dirList/test_valid_with_include.phpt \
-		PEAR_PackageFileManager_File/getFileList/test_valid.phpt \
-		PEAR_PackageFileManager_File/getRegExpableSearchString/test_1.phpt \
-		PEAR_PackageFileManager_File/getRegExpableSearchString/test_dir_regexp.phpt \
-		PEAR_PackageFileManager_File/getRegExpableSearchString/test_file_regexp.phpt \
-		PEAR_PackageFileManager_File/setDir/test_concept.phpt \
-		PEAR_PackageFileManager_File/setupDirs/test_concept.phpt \
-		PEAR_PackageFileManager_File/setupDirs/test_valid.phpt \
-		PEAR_PackageFileManager_File/setupIgnore/test_complex.phpt \
-		PEAR_PackageFileManager_File/setupIgnore/test_complex_multiple.phpt \
-		PEAR_PackageFileManager_File/setupIgnore/test_emptyarray.phpt \
-		PEAR_PackageFileManager_File/setupIgnore/test_nonarray.phpt \
-		PEAR_PackageFileManager_File/setupIgnore/test_simple.phpt \
-		PEAR_PackageFileManager_File/setupIgnore/test_simple_0.phpt \
-		PEAR_PackageFileManager_File/setupIgnore/test_simple_dir.phpt \
-		PEAR_PackageFileManager_File/setup.php.inc \
 		PEAR_PackageFileManager_XMLOutput/test_valid1.phpt \
 		setOptions/test_invalid_badfilelistgenerator1.phpt \
 		setOptions/test_invalid_badfilelistgenerator2.phpt \
