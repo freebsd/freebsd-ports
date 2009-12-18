@@ -9,11 +9,6 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/concepts.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/env.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/index.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/intro.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part00/index.xhtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part00/listings/echothing/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part00/listings/echothing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part00/listings/echothing/__init__.pyo
@@ -25,7 +20,6 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part00/listings/nevow/plugins/echothing_package.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part00/listings/nevow/plugins/echothing_package.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part00/listings/nevow/plugins/echothing_package.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part01/index.xhtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part01/listings/chatthing/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part01/listings/chatthing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part01/listings/chatthing/__init__.pyo
@@ -37,20 +31,11 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part01/listings/nevow/plugins/chatthing_package.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part01/listings/nevow/plugins/chatthing_package.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/chattutorial/part01/listings/nevow/plugins/chatthing_package.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/deployment.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/gettingstarted.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/glossary.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/index.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/intro.xhtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/listings/gettingstarted/helloworld.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/listings/gettingstarted/helloworld.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/listings/gettingstarted/helloworld.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/listings/gettingstarted/helloworld.tac
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/publishing.xhtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/stylesheet.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/template.tpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/traversal.xhtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/howto/xmltemplates.xhtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/html/default.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/man/nevow-xmlgettext.1
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/old/nevow.doc
@@ -86,7 +71,6 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formless/webform.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formless/webform.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formless/webform.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/Canvas.fla
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/Canvas.swf
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/__init__.pyc
@@ -109,11 +93,9 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/athena.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/athena.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/athena.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/athena_private/connection-status-down.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/blocks.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/blocks.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/blocks.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/canvas.as
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/canvas.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/canvas.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/canvas.pyo
@@ -126,10 +108,14 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/context.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/context.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/context.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/css/Nevow/TagLibrary/TabbedPane.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/css/Nevow/TagLibrary/__init__.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/css/Nevow/__init__.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/dirlist.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/dirlist.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/dirlist.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/empty.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/empty-module.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/empty-module.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/entities.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/entities.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/entities.pyo
@@ -283,7 +269,6 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary/progressbar.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary/progressbar.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary/progressbar.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary/tabbedPane.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary/tabbedPane.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary/tabbedPane.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary/tabbedPane.pyo
@@ -299,6 +284,9 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/acceptance/reconnect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/acceptance/reconnect.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/acceptance/reconnect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/acceptance/tabbedpane.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/acceptance/tabbedpane.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/acceptance/tabbedpane.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/livetest_athena.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/livetest_athena.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/livetest_athena.pyo
@@ -374,11 +362,6 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_nit.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_nit.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_nit.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/.test/Foo.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/Foo/.foo.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/Foo/Bar.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/Foo/Baz/Quux.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/Foo/__init__.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_passobj.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_passobj.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_passobj.pyo
@@ -394,6 +377,9 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_static.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_static.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_static.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_tabbedpane.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_tabbedpane.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_tabbedpane.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_tags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_tags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_tags.pyo
@@ -435,34 +421,19 @@ bin/nit
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twisted/plugins/nevow_widget.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twisted/plugins/nevow_widget.pyo
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/concepts.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/env.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/index.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/intro.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part00/index.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part00/listings/echothing/__init__.py
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part00/listings/echothing/echobox.py
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part00/listings/echothing/js/EchoThing.js
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part00/listings/echothing/template.html
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part00/listings/nevow/plugins/echothing_package.py
-%%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part01/index.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part01/listings/chatthing/__init__.py
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part01/listings/chatthing/chatterbox.py
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part01/listings/chatthing/js/ChatThing.js
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part01/listings/chatthing/template.html
 %%PORTDOCS%%%%DOCSDIR%%/howto/chattutorial/part01/listings/nevow/plugins/chatthing_package.py
-%%PORTDOCS%%%%DOCSDIR%%/howto/deployment.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/gettingstarted.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/glossary.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/index.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/intro.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/howto/listings/gettingstarted/helloworld.py
 %%PORTDOCS%%%%DOCSDIR%%/howto/listings/gettingstarted/helloworld.tac
-%%PORTDOCS%%%%DOCSDIR%%/howto/publishing.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/howto/stylesheet.css
-%%PORTDOCS%%%%DOCSDIR%%/howto/template.tpl
-%%PORTDOCS%%%%DOCSDIR%%/howto/traversal.xhtml
-%%PORTDOCS%%%%DOCSDIR%%/howto/xmltemplates.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/html/default.css
 %%PORTDOCS%%%%DOCSDIR%%/man/nevow-xmlgettext.1
 %%PORTDOCS%%%%DOCSDIR%%/old/nevow.doc
@@ -532,14 +503,6 @@ bin/nit
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/canvas/canvas.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/canvas/canvas.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/canvas/canvas.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/Chatola.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/__init__.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/__init__.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/chatola.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/chatola.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/chatola.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatola/chatola.tac
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/children/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/children/__init__.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/children/__init__.pyo
@@ -868,7 +831,6 @@ bin/nit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/static
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/pastebin/web
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/pastebin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/objcontainer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nestedsequence
@@ -905,7 +867,6 @@ bin/nit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/db
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/customform
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/children
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/chatola
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/canvas
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cal
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogengine/styles
@@ -936,10 +897,6 @@ bin/nit
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twisted/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twisted
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/Foo/Baz
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/Foo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package/.test
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/test_package
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test/acceptance
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/taglibrary
@@ -957,7 +914,9 @@ bin/nit
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/js/Divmod
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/flat
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/athena_private
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/css/Nevow/TagLibrary
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/css/Nevow
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nevow
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formless/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formless

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nevow
-PORTVERSION=	0.9.33
+PORTVERSION=	0.10.0
 PORTREVISION=	0
 CATEGORIES=	www python devel
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/ \
@@ -29,9 +29,6 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-
-post-extract:
-	${FIND} -d ${WRKSRC} -type d -name ".svn" -exec ${RM} -R {} ";"
 
 post-install:
 .if !defined(NOPORTDOCS)
