@@ -1,6 +1,11 @@
---- Makefile.orig	Thu Apr  1 01:00:12 1999
-+++ Makefile	Fri Apr 16 18:11:12 1999
-@@ -29,5 +29,5 @@
+--- Makefile.orig	1999-04-01 09:00:12.000000000 +0200
++++ Makefile	2009-12-18 20:35:57.000000000 +0100
+@@ -26,8 +26,10 @@
+ #	 Makefile for libutf-8 library
+ #
+ 
++CFLAGS+=	-fPIC
++
  all: libutf-8.so.1
  
  libutf-8.so.1: fget.utf-8.o sget.utf-8.o fput.utf-8.o sput.utf-8.o nomacros.o
