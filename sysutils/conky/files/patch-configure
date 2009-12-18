@@ -1,5 +1,23 @@
---- configure.orig	2009-09-17 09:53:21.000000000 +0300
-+++ configure	2009-09-17 10:13:11.000000000 +0300
+--- configure.orig
++++ configure
+@@ -15930,7 +15930,7 @@
+ 
+ 			fi
+ 		fi
+-		for ac_prog in tolua++ tolua++5.1
++		for ac_prog in tolua++ tolua++5.1 tolua++-5.1
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -16006,7 +16006,7 @@
+   return 0;
+ }
+ _ACEOF
+-for ac_lib in '' tolua++ tolua++5.1; do
++for ac_lib in '' tolua++-5.1 tolua++ tolua++5.1; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
 @@ -19845,7 +19845,6 @@
  ac_res=$ac_cv_search_clock_gettime
  if test "$ac_res" != no; then

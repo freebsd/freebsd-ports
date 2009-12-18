@@ -10,13 +10,11 @@ PKGNAMESUFFIX=	-awesome
 MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	An advanced, highly configurable system monitor (configured for x11-wm/awesome)
 
-MASTERDIR=	${.CURDIR}/../../sysutils/conky
+MASTERDIR=	${.CURDIR}/../conky
 DESCR=		${.CURDIR}/pkg-descr
 
 CONFLICTS=	conky-[0-9]*
 
 USE_XORG=	# This is a comment
-USE_GNOME=	pkgconfig
-CONFIGURE_ARGS+=	--disable-x11 --disable-own-window
 
 .include "${MASTERDIR}/Makefile"

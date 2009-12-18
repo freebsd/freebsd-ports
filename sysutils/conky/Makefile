@@ -7,7 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -17,6 +17,7 @@ COMMENT?=	An advanced, highly configurable system monitor for X
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
 
+USE_ICONV=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XORG?=	x11 xext xdamage
@@ -24,7 +25,9 @@ USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
-			--disable-hddtemp
+			--disable-hddtemp \
+			--disable-apcupsd \
+			--disable-iostats
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
@@ -36,21 +39,29 @@ PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 
 OPTIONS+=	AUDACIOUS "Enable Audacious support" Off \
 		BMPX "Enable BMPX support" Off \
-		LUA "Enable Lua support" Off \
 		MPD "Enable MPD support" Off \
+		RSS "Enable RSS support" Off \
 		XMMS2 "Enable XMMS2 support" Off
 
 .if !empty(USE_XORG)
 OPTIONS+=	DOUBLE_BUFFER "Enable double buffering" On \
 		IMLIB2 "Enable Imlib2 support" Off \
+		LUA "Enable Lua support" Off \
+		LUA_CAIRO "Enable Lua-Cairo binding (impl. Lua)" Off \
+		LUA_IMLIB2 "Enable Lua-Imlib2 binding (impl. Lua/Imlib2)" Off \
 		XFT "Enable Xft support" Off
+.else
+OPTIONS+=	LUA "Enable Lua support" Off
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if empty(USE_XORG)
 WITHOUT_DOUBLE_BUFFER=	On
+CONFIGURE_ARGS+=	--disable-x11 --disable-own-window
 .undef WITH_IMLIB2
+.undef WITH_LUA_CAIRO
+.undef WITH_LUA_IMLIB2
 .undef WITH_XFT
 .endif
 
@@ -70,18 +81,29 @@ CONFIGURE_ARGS+=	--enable-bmpx
 CONFIGURE_ARGS+=	--disable-bmpx
 .endif
 
-.if defined(WITH_LUA)
+.if defined(WITH_LUA) || defined(WITH_LUA_CAIRO) || defined(WITH_LUA_IMLIB2)
 USE_LUA=		5.1+
 CONFIGURE_ARGS+=	--enable-lua
 .else
 CONFIGURE_ARGS+=	--disable-lua
 .endif
 
-.if defined(WITH_IMLIB2)
+.if defined(WITH_LUA_CAIRO)
+LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
+BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+CONFIGURE_ARGS+=	--enable-lua-cairo
+.endif
+
+.if defined(WITH_IMLIB2) || defined(WITH_LUA_IMLIB2)
 LIB_DEPENDS+=		Imlib2.5:${PORTSDIR}/graphics/imlib2
 CONFIGURE_ARGS+=	--enable-imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
+.endif
+
+.if defined(WITH_LUA_IMLIB2)
+BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+CONFIGURE_ARGS+=	--enable-lua-imlib2
 .endif
 
 .if defined(WITH_XFT)
@@ -93,6 +115,13 @@ CONFIGURE_ARGS+=	--disable-xft
 
 .if defined(WITHOUT_MPD)
 CONFIGURE_ARGS+=	--disable-mpd
+.endif
+
+.if defined(WITH_RSS)
+LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl \
+			xml2.5:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=	--enable-rss
+USE_GNOME+=		glib20
 .endif
 
 .if defined(WITH_XMMS2)
