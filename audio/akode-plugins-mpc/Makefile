@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=   akode-plugins-${PORTNAMESUFX}
-PORTVERSION=    2.0.2
-PORTEPOCH=  1
-CATEGORIES= audio kde
-MASTER_SITES=   ${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=distfiles
-DISTNAME=   30375-akode-${PORTVERSION}.tar.bz2
-												
-EXTRACT_SUFX=	# none
+PORTNAME=	akode-plugins-${PORTNAMESUFX}
+PORTVERSION=	2.0.2
+PORTEPOCH=	1
+CATEGORIES=	audio kde
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
+DISTNAME=	30375-akode-${PORTVERSION}.tar.bz2
+EXTRACT_SUFX=
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Musepack decoder plugin for akode
@@ -24,11 +23,15 @@ PLUGIN=		mpc_decoder
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
 USE_AUTOTOOLS=	libltdl
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/akode-${PORTVERSION}
 USE_LDCONFIG=	yes
+
+PLIST_FILES=	lib/libakode_mpc_decoder.a \
+		lib/libakode_mpc_decoder.la \
+		lib/libakode_mpc_decoder.so
 
 CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
 CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
