@@ -20,7 +20,6 @@
     SUBDIR += dxf2fig
     SUBDIR += electric
     SUBDIR += electric-ng
-    SUBDIR += fandango
     SUBDIR += feappv
     SUBDIR += findhier
     SUBDIR += freehdl
