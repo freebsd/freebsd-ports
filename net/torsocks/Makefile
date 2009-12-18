@@ -6,11 +6,11 @@
 
 PORTNAME=	torsocks
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-gamma
+DISTNAME=	${PORTNAME}-${PORTVERSION}-epsilon
 
 MAINTAINER=	andy.lavr@gmail.com
 COMMENT=	Most SOCKS-friendly applications way with Tor
