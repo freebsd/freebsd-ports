@@ -9,6 +9,7 @@ PORTNAME=	downthemall
 PORTVERSION=	1.1.7
 DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/addons/201/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Lets you download all the links in a webpage and much more
