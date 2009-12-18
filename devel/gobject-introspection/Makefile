@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -33,4 +33,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		g-ir-compiler.1 g-ir-generate.1 g-ir-scanner.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|'cc'|'${CC}'|g' \
+		${WRKSRC}/giscanner/sourcescanner.py
+
+.include <bsd.port.post.mk>
+

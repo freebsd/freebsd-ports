@@ -1,14 +1,17 @@
---- gir/Makefile.in.orig	2009-08-29 18:41:56.000000000 -0400
-+++ gir/Makefile.in	2009-08-29 18:49:29.000000000 -0400
-@@ -737,10 +737,9 @@ GLib-2.0.gir: $(SCANNER_BIN) $(SCANNER_L
- 	    --pkg glib-2.0 \
- 	    $(CPPFLAGS) \
- 	    -I$(GLIB_INCLUDEDIR) \
--	    -I$(GLIB_LIBDIR)/glib-2.0/include \
- 	    -DGETTEXT_PACKAGE=Dummy \
- 	    -D__G_I18N_LIB_H__ \
--	    $(GLIB_LIBDIR)/glib-2.0/include/glibconfig.h \
-+	    $(GLIB_INCLUDEDIR)/glibconfig.h \
- 	    $(srcdir)/glib-2.0.c \
- 	    -DGLIB_COMPILATION \
- 	    $(GLIB_INCLUDEDIR)/glib/*.h
+--- gir/Makefile.in.orig	2009-12-18 18:25:43.000000000 +0100
++++ gir/Makefile.in	2009-12-18 18:25:54.000000000 +0100
+@@ -359,13 +359,12 @@ GLib_2_0_gir_SCANNERFLAGS = --noclosure 
+ GLib_2_0_gir_PACKAGES = glib-2.0
+ GLib_2_0_gir_CFLAGS = $(CPPFLAGS) \
+             -I$(GLIB_INCLUDEDIR) \
+-            -I$(GLIB_LIBDIR)/glib-2.0/include \
+             -DGETTEXT_PACKAGE=Dummy \
+             -D__G_I18N_LIB_H__
+ 
+ GLib_2_0_gir_ASSERTIONS = $(srcdir)/GLib-2.0.xpath
+ GLib_2_0_gir_FILES = \
+-                $(GLIB_LIBDIR)/glib-2.0/include/glibconfig.h \
++                $(GLIB_INCLUDEDIR)/glibconfig.h \
+             $(GLIB_INCLUDEDIR)/glib/*.h \
+                 $(srcdir)/glib-2.0.c
+ 
