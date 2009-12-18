@@ -1,5 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface/.packlist
 %%SITE_PERL%%/GnuPG/Fingerprint.pm
 %%SITE_PERL%%/GnuPG/Handles.pm
+%%SITE_PERL%%/GnuPG/HashInit.pm
 %%SITE_PERL%%/GnuPG/Interface.pm
 %%SITE_PERL%%/GnuPG/Key.pm
 %%SITE_PERL%%/GnuPG/Options.pm
@@ -9,30 +11,6 @@
 %%SITE_PERL%%/GnuPG/Signature.pm
 %%SITE_PERL%%/GnuPG/SubKey.pm
 %%SITE_PERL%%/GnuPG/UserId.pm
-%%SITE_PERL%%/auto/GnuPG/Interface/autosplit.ix
-%%SITE_PERL%%/auto/GnuPG/Interface/clearsign.al
-%%SITE_PERL%%/auto/GnuPG/Interface/decrypt.al
-%%SITE_PERL%%/auto/GnuPG/Interface/detach_sign.al
-%%SITE_PERL%%/auto/GnuPG/Interface/encrypt.al
-%%SITE_PERL%%/auto/GnuPG/Interface/encrypt_symmetrically.al
-%%SITE_PERL%%/auto/GnuPG/Interface/export_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/get_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/get_public_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/get_public_keys_with_sigs.al
-%%SITE_PERL%%/auto/GnuPG/Interface/get_secret_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/import_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/list_public_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/list_secret_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/list_sigs.al
-%%SITE_PERL%%/auto/GnuPG/Interface/recv_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/send_keys.al
-%%SITE_PERL%%/auto/GnuPG/Interface/sign.al
-%%SITE_PERL%%/auto/GnuPG/Interface/sign_and_encrypt.al
-%%SITE_PERL%%/auto/GnuPG/Interface/test_default_key_passphrase.al
-%%SITE_PERL%%/auto/GnuPG/Interface/verify.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface/.packlist
 @dirrmtry %%SITE_PERL%%/GnuPG
-@dirrmtry %%SITE_PERL%%/auto/GnuPG/Interface
-@dirrmtry %%SITE_PERL%%/auto/GnuPG
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG
