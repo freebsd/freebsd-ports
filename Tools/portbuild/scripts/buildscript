@@ -117,7 +117,6 @@ RD=$7
 export MALLOC_OPTIONS=AJ
 
 L=`echo ${LOCALBASE} | sed 's,^/,,'`
-X=`echo ${X11BASE} | sed 's,^/,,'`
 Z=`ident ${dir}/Makefile | grep 'FreeBSD:' | sed 's/^[ \t]*//'`
 
 cd $dir || exit 1
@@ -148,7 +147,7 @@ if [ $phase = 1 ]; then
   echo "BUILD_DEPENDS=${BD}"
   echo "RUN_DEPENDS=${RD}"
 
-  echo "prefixes: LOCALBASE=${L} X11BASE=${X}"
+  echo "prefixes: LOCALBASE=${L}"
 
   #Allow ports to notice they're being run on bento
   export PACKAGE_BUILDING=1
@@ -263,7 +262,7 @@ EOF
   cd $dir
   /pnohang $TIMEOUT /tmp/make.log5 ${pkgname} make -k regression-test
   cat /tmp/make.log5
-  mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/local/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|var/db/fontconfig/* )" > /tmp/list.preinstall
+  mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${L}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|${L}/info/dir|${L}/lib/X11/fonts/.*/fonts\.|usr/local/man/..( |/man. )|${L}/lib/X11/fonts/TrueType|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|var/db/fontconfig/* )" > /tmp/list.preinstall
 
   if [ -s /tmp/list.preinstall ]; then
     echo "================================================================"
@@ -309,7 +308,7 @@ EOF
     cleanup 7
   fi
 
-  mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/local/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|var/db/fontconfig/* )" > /tmp/list3
+  mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${L}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|${L}/info/dir|${L}/lib/X11/fonts/.*/fonts\.|usr/local/man/..( |/man. )|${L}/lib/X11/fonts/TrueType|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|var/db/fontconfig/* )" > /tmp/list3
 
   # Compare the state of the filesystem now to before the 'make install' phase
   dirty=0
@@ -319,7 +318,7 @@ EOF
     grep ' missing$' /tmp/list3 > /tmp/list5
     grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
     if [ "x${NOPLISTCHECK}" = "x" ]; then
-      if grep -vqE "($X|$L)/etc/" /tmp/list4; then
+      if grep -vq "$L/etc/" /tmp/list4; then
         echo "1" > /tmp/status
         dirty=1
       fi
@@ -363,7 +362,7 @@ EOF
   fi
 
   # Compare the state of the filesystem now to clean system (should again be clean)
-  mtree -X /tmp/mtree.preexclude -x -f /tmp/mtree.pristine -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/local/man/..( |/man. )|${X}/lib/X11/fonts/TrueType )" > /tmp/list3
+  mtree -X /tmp/mtree.preexclude -x -f /tmp/mtree.pristine -p / | egrep -v "^(${L}/var|${L}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|${L}/info/dir|${L}/lib/X11/fonts/.*/fonts\.|usr/local/man/..( |/man. )|${L}/lib/X11/fonts/TrueType )" > /tmp/list3
 
   echo
   echo "=== Checking filesystem state after all packages deleted"
@@ -374,7 +373,7 @@ EOF
     grep ' missing$' /tmp/list3 > /tmp/list5
     grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
     if [ "x${NOPLISTCHECK}" = "x" ]; then
-      if grep -vqE "($X|$L)/etc/" /tmp/list4; then
+      if grep -vq "$L/etc/" /tmp/list4; then
         #echo "1" > /tmp/status
       fi
       if [ -s /tmp/list5 ]; then
