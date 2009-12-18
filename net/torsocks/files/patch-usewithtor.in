@@ -1,124 +1,28 @@
---- src/usewithtor.in	2008-10-26 22:51:20.000000000 +0100
-+++ src/usewithtor.in	2009-08-18 07:35:08.000000000 +0200
-@@ -1,3 +1,4 @@
-+#! /bin/sh
+--- src/usewithtor.in.orig	2009-11-08 14:35:11.000000000 +0200
++++ src/usewithtor.in	2009-11-13 17:10:26.726475549 +0200
+@@ -1,4 +1,4 @@
+-#! /bin/sh
++#!/bin/sh
  # ***************************************************************************
  # *                                                                         *
  # * $Id: usewithtor.in,v 1.3 2008-07-06 15:17:35 hoganrobert Exp $*
-@@ -25,50 +26,84 @@
+@@ -26,8 +26,8 @@
  # *   Original copyright notice from tsocks source file follows:            *
  # ***************************************************************************
  
--
--#! /bin/sh
--
--# Wrapper script for use of the torsocks(8) transparent socksification library
--# See the torsocks(1) and usewithtor(1) manpages.
-+# Wrapper script for use of the tsocks(8) transparent socksification library
-+# See the tsocks(1) and torify(1) manpages.
+-# Wrapper script for use of the tsocks(8) transparent socksification library
+-# See the tsocks(1) and torify(1) manpages.
++# Wrapper script for use of the torsocks(8) transparent socksification library
++# See the torsocks(1) and torify(1) manpages.
  
  # Copyright (c) 2004, 2006 Peter Palfrader
  # Modified by Jacob Appelbaum <jacob@appelbaum.net> April 16th 2006
--# Modified by Robert Hogan <robert@roberthogan.net> March 2007
-+# Modified by Marcus Griep <marcus@griep.us> June 16 2009
+@@ -35,7 +35,7 @@
  # May be distributed under the same terms as Tor itself
  
  
--# Define and ensure we have torsocks
-+# Define and ensure we have tsocks
+-# Define and ensure we have tsocks
++# Define and ensure we have torsocks
  # XXX: what if we don't have which?
--TSOCKS="`which torsocks`"
--if [ ! -x "$TSOCKS" ]
--then
--        echo "$0: Can't find torsocks in PATH. Perhaps you haven't installed it?" >&2
--        exit 1
--fi
-+TORSOCKS="`which torsocks`"
-+PROG=
-+VERBOSE=
-+
-+usage () {
-+	echo "Usage: $0 [-hv] <command> [<options>...]"
-+}
-+
-+set_id () {
-+	echo "ERROR: $1 is set${2}id. usewithtor will not work on a set${2}id executable." >&2
-+	exit 1
-+}
- 
- # Check for any argument list
--if [ "$#" = 0 ]
--then
--        echo "Usage: $0 <command> [<options>...]" >&2
--        exit 1
-+if [ "$#" = 0 ]; then
-+	usage >&2
-+	exit 1
- fi
--if [ "$#" = 1 ] && ( [ "$1" = "-h" ] || [ "$1" = "--help" ] )
--then
--        echo "Usage: $0 <command> [<options>...]"
--        exit 0
-+
-+while [ "$1" ]; do
-+	case "$1" in
-+		-h|--h*)
-+			usage
-+			exit 0
-+			;;
-+		-v|--v*)
-+			VERBOSE=YesPlease
-+			shift
-+			;;
-+		*)
-+			break;
-+	esac
-+done
-+
-+if [ -u `which "$1"` ]; then
-+	set_id $1 u
-+elif [ -g `which "$1"` ]; then
-+	set_id $1 g
- fi
- 
--# Define our torsocks config file
--TSOCKS_CONF_FILE="@CONFDIR@/torsocks.conf"
--export TSOCKS_CONF_FILE
--
--# Check that we've got a torsocks config file
--if [ -r "$TSOCKS_CONF_FILE" ]
--then
--	exec torsocks "$@"
--	echo "$0: Failed to exec torsocks $@" >&2
--	exit 1
-+if [ -x "$TORSOCKS" ]; then
-+	PROG=torsocks
- else
--	echo "$0: Missing torsocks configuration file \"$TSOCKS_CONF_FILE\"." >&2
-+	echo "$0: Unable to find torsocks in PATH." >&2
-+	echo "    Perhaps you haven't installed it?" >&2
- 	exit 1
- fi
-+
-+if [ "$VERBOSE" ]; then
-+	echo "We're armed with the following torsocks: $TORSOCKS"
-+	echo "We're attempting to use $PROG for all tor action."
-+fi
-+
-+if [ "$PROG" = "torsocks" ]; then
-+	# Define our torsocks config file
-+	TSOCKS_CONF_FILE="@CONFDIR@/torsocks.conf"
-+	export TSOCKS_CONF_FILE
-+
-+	# Check that we've got a torsocks config file
-+	if [ -r "$TSOCKS_CONF_FILE" ]; 	then
-+		exec torsocks "$@"
-+	else
-+		echo "$0: Missing torsocks configuration file \"$TSOCKS_CONF_FILE\" - torsocks will use defaults sensible for Tor." >&2
-+		exec torsocks "$@"
-+	fi
-+fi
-+
-+# We should have hit an exec. If we get here, we didn't exec
-+echo "$0: failed to exec $PROG $@" >&2
-+exit 1
+ TORSOCKS="`which torsocks`"
+ PROG=
