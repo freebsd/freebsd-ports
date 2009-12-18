@@ -18,7 +18,7 @@ BUILD_DEPENDS+=	svnversion:${PORTSDIR}/devel/subversion
 PLIST=		${.CURDIR}/../ioquake3/pkg-plist
 PATCHDIR=	${WRKDIR}/freebsd-patchset/
 
-SVNREVISION=	1583
+SVNREVISION=	1754
 BINSUFFIX=	-devel
 
 .include "${.CURDIR}/../ioquake3/Makefile"

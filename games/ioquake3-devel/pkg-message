@@ -1,10 +1,6 @@
 ==============================================================================
 
-The input devices are now handled by SDL. Some mouse buttons will have
-different aliases and the mouse speed needs to be readjusted.
-
-The configuration files are saved to ~/.ioquake3-devel instead of ~/.ioquake3
-if you prefer both versions to share the configurations files create a
-symlink.
+Should you encounter freezes when playing a demo or single player game,
+rebuild without client libraries.
 
 ==============================================================================
