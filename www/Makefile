@@ -560,7 +560,6 @@
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
     SUBDIR += nd
-    SUBDIR += neon26
     SUBDIR += neon28
     SUBDIR += neon29
     SUBDIR += neonpp
