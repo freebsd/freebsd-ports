@@ -24,6 +24,8 @@ CSUFF=		${_USE_GCC:S/.//}
 # needs gcj
 LIB_DEPENDS=	gcj:${PORTSDIR}/lang/gcc${CSUFF}
 
+BROKEN=		gcj is not currently available in the GCC toolchain
+
 USE_GCC=	4.4+
 USE_GMAKE=	yes
 USE_ICONV=	yes
