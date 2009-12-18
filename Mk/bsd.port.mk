@@ -1396,13 +1396,10 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid value is 'xorg'
 .endif
 
-.if ${OSVERSION} < 602000
-.if ${X11BASE} != ${LOCALBASE} && !defined(USE_NONDEFAULT_X11BASE)
+.if ${X11BASE} != ${LOCALBASE}
 .BEGIN:
-	@${ECHO_MSG} "On FreeBSD before 6.2 ports system unfortunately can not set default X11BASE by itself so please help it a bit by setting X11BASE=\$${LOCALBASE} in make.conf."
-	@${ECHO_MSG} "On the other hand, if you do wish to use non-default X11BASE, please set variable USE_NONDEFAULT_X11BASE."
+	@${ECHO_MSG} "X11BASE is now deprecated.  Unset X11BASE in make.conf and try again."
 	@${FALSE}
-.endif
 .endif
 
 .if defined(USE_XORG) || defined(XORG_CAT)

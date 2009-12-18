@@ -106,8 +106,6 @@ ${INDEXDIR}/${INDEXFILE}:
 	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		export LOCALBASE=/nonexistentlocal; \
-		export X11BASE=/nonexistentx; \
-		export USE_NONDEFAULT_X11BASE=1; \
 	fi; \
 	tmpdir=`/usr/bin/mktemp -d -t index` || exit 1; \
 	trap "rm -rf $${tmpdir}; exit 1" 1 2 3 5 10 13 15; \
@@ -140,8 +138,7 @@ ${INDEXDIR}/${INDEXFILE}:
 		sort -t '|' +1 -2 | \
 		sed -e 's../.g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
-		sed -e "s,$${LOCALBASE},/usr/local," -e "s,$${X11BASE},/usr/X11R6," \
-			${INDEXDIR}/${INDEXFILE}.tmp > ${INDEXDIR}/${INDEXFILE}; \
+		sed -e "s,$${LOCALBASE},/usr/local," ${INDEXDIR}/${INDEXFILE}.tmp > ${INDEXDIR}/${INDEXFILE}; \
 	else \
 		mv ${INDEXDIR}/${INDEXFILE}.tmp ${INDEXDIR}/${INDEXFILE}; \
 	fi; \
