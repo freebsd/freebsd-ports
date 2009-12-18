@@ -111,6 +111,7 @@
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
     SUBDIR += boehm-gc-redirect
+    SUBDIR += boehm-gc-threaded
     SUBDIR += bonobo
     SUBDIR += bonobo-conf
     SUBDIR += boost-all
