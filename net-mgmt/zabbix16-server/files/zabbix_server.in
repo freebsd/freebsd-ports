@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: zabbix_server
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON%%ZABBIX_REQUIRE%%
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
