@@ -2,11 +2,8 @@
 etc/ezb.conf.default
 @exec if [ ! -f %D/etc/ezb.conf ] ; then cp -p %D/%F %B/ezb.conf; fi
 sbin/ezbounce
-%%MDIDENTD%%sbin/mdidentd
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%SSL%%%%DOCSDIR%%/README.SSL
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/worklog
-%%MDIDENTD%%%%PORTDOCS%%%%DOCSDIR%%/mdidentd.README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

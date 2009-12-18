@@ -26,6 +26,7 @@
     SUBDIR += epic5
     SUBDIR += evangeline
     SUBDIR += ezbounce
+    SUBDIR += ezbounce-devel
     SUBDIR += fisg
     SUBDIR += garnaxfs
     SUBDIR += gdesklets-irc
