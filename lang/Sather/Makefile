@@ -8,7 +8,7 @@
 
 PORTNAME=	sather
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,8 @@ COMMENT=	Sather compiler
 #
 # NOTE: currently build fails with threaded Tk
 #
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
+		gc-redirect.1:${PORTSDIR}/devel/boehm-gc-redirect
 BUILD_DEPENDS=	${LOCALBASE}/bin/libtool:${PORTSDIR}/devel/libtool22
 
 USE_BZIP2=	yes
@@ -29,11 +30,11 @@ MAN1=		sabrowse.1 sacomp.1
 
 INFO=		sather sather-mode sather-tutorial
 
-SAT_CFLAGS=	${CFLAGS} -I. -I${BC_DIR}/include \
+SAT_CFLAGS=	${CFLAGS} -I. \
 		-I../System/Common \
 		-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4
-SAT_LIBS=	-L${BC_DIR}/.libs -L${LOCALBASE}/lib -lgc -lm
+SAT_LIBS=	-L${LOCALBASE}/lib -lgc-redirect -lm
 SAT_LIBDIR=	${PREFIX}/lib/sather
 
 OPTIONS=	EMACS "Install Emacs syntax files" off
@@ -43,12 +44,6 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		boehm-gc is broken on ia64
-.endif
-
-BC_DIR!=	cd ${PORTSDIR}/devel/boehm-gc && ${MAKE} -V WRKSRC
 
 post-extract:
 #
@@ -109,17 +104,6 @@ post-patch:
 # We have this function in stdlib
 #
 	@${ECHO_CMD} \"abort2\" >> ${WRKSRC}/System/FORBID
-
-pre-build:
-#
-# We need to clean since REDIRECT is required
-#
-	@(cd ${PORTSDIR}/devel/boehm-gc && \
-		${MAKE} BATCH=yes WITH_REDIRECT=yes clean all)
-#
-# We're wanting static linking
-#
-	@${RM} -f ${BC_DIR}/.libs/*.so*
 
 post-build:
 .for file in sather-tutorial.texinfo sather-mode.texinfo sather.texinfo
