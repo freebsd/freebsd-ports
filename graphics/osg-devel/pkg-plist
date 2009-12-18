@@ -3,7 +3,7 @@ bin/osgconv
 bin/osgfilecache
 bin/osgversion
 bin/osgviewer
-bin/present3D-osg
+bin/present3D
 include/OpenThreads/Atomic
 include/OpenThreads/Barrier
 include/OpenThreads/Block
@@ -21,6 +21,7 @@ include/osg/AnimationPath
 include/osg/ApplicationUsage
 include/osg/ArgumentParser
 include/osg/Array
+include/osg/ArrayDispatchers
 include/osg/AudioStream
 include/osg/AutoTransform
 include/osg/Billboard
@@ -66,6 +67,7 @@ include/osg/FrameStamp
 include/osg/FrontFace
 include/osg/GL
 include/osg/GL2Extensions
+include/osg/GLBeginEndAdapter
 include/osg/GLExtensions
 include/osg/GLObjects
 include/osg/GLU
@@ -130,6 +132,7 @@ include/osg/Shape
 include/osg/ShapeDrawable
 include/osg/State
 include/osg/StateAttribute
+include/osg/StateAttributeCallback
 include/osg/StateSet
 include/osg/Stats
 include/osg/Stencil
@@ -181,26 +184,35 @@ include/osg/io_utils
 include/osg/observer_ptr
 include/osg/ref_ptr
 include/osgAnimation/Action
+include/osgAnimation/ActionAnimation
+include/osgAnimation/ActionBlendIn
+include/osgAnimation/ActionBlendOut
 include/osgAnimation/ActionCallback
+include/osgAnimation/ActionStripAnimation
 include/osgAnimation/ActionVisitor
 include/osgAnimation/Animation
 include/osgAnimation/AnimationManagerBase
 include/osgAnimation/Assert
 include/osgAnimation/BasicAnimationManager
 include/osgAnimation/Bone
+include/osgAnimation/BoneMapVisitor
 include/osgAnimation/Channel
+include/osgAnimation/ComputeBindMatrixVisitor
 include/osgAnimation/CubicBezier
 include/osgAnimation/EaseMotion
 include/osgAnimation/Export
+include/osgAnimation/FindParentAnimationManagerVisitor
 include/osgAnimation/FrameAction
 include/osgAnimation/Interpolator
 include/osgAnimation/Keyframe
 include/osgAnimation/LinkVisitor
 include/osgAnimation/MorphGeometry
 include/osgAnimation/RigGeometry
+include/osgAnimation/RigTransform
+include/osgAnimation/RigTransformHardware
+include/osgAnimation/RigTransformSoftware
 include/osgAnimation/Sampler
 include/osgAnimation/Skeleton
-include/osgAnimation/Skinning
 include/osgAnimation/StatsHandler
 include/osgAnimation/StatsVisitor
 include/osgAnimation/Target
@@ -246,6 +258,7 @@ include/osgFX/Cartoon
 include/osgFX/Effect
 include/osgFX/Export
 include/osgFX/MultiTextureControl
+include/osgFX/Outline
 include/osgFX/Registry
 include/osgFX/Scribe
 include/osgFX/SpecularHighlights
@@ -285,6 +298,7 @@ include/osgManipulator/Scale2DDragger
 include/osgManipulator/ScaleAxisDragger
 include/osgManipulator/Selection
 include/osgManipulator/TabBoxDragger
+include/osgManipulator/TabBoxTrackballDragger
 include/osgManipulator/TabPlaneDragger
 include/osgManipulator/TabPlaneTrackballDragger
 include/osgManipulator/TrackballDragger
@@ -333,6 +347,11 @@ include/osgParticle/SmokeTrailEffect
 include/osgParticle/VariableRateCounter
 include/osgParticle/Version
 include/osgParticle/range
+include/osgPresentation/AnimationMaterial
+include/osgPresentation/CompileSlideCallback
+include/osgPresentation/PickEventHandler
+include/osgPresentation/SlideEventHandler
+include/osgPresentation/SlideShowConstructor
 include/osgShadow/ConvexPolyhedron
 include/osgShadow/DebugShadowMap
 include/osgShadow/Export
@@ -437,6 +456,7 @@ include/osgUtil/UpdateVisitor
 include/osgUtil/Version
 include/osgViewer/CompositeViewer
 include/osgViewer/Export
+include/osgViewer/GraphicsHandleX11
 include/osgViewer/GraphicsWindow
 include/osgViewer/GraphicsWindowX11
 include/osgViewer/PixelBufferX11
@@ -447,6 +467,7 @@ include/osgViewer/View
 include/osgViewer/Viewer
 include/osgViewer/ViewerBase
 include/osgViewer/ViewerEventHandlers
+include/osgViewer/api/X11/GraphicsHandleX11
 include/osgViewer/api/X11/GraphicsWindowX11
 include/osgViewer/api/X11/PixelBufferX11
 include/osgVolume/Export
@@ -507,6 +528,9 @@ lib/libosgManipulator.so.%%OSG_SHLIBVER%%
 lib/libosgParticle.so
 lib/libosgParticle.so.%%OSG_VERSION%%
 lib/libosgParticle.so.%%OSG_SHLIBVER%%
+lib/libosgPresentation.so
+lib/libosgPresentation.so.%%OSG_VERSION%%
+lib/libosgPresentation.so.%%OSG_SHLIBVER%%
 lib/libosgShadow.so
 lib/libosgShadow.so.%%OSG_VERSION%%
 lib/libosgShadow.so.%%OSG_SHLIBVER%%
@@ -633,6 +657,7 @@ libdata/pkgconfig/openthreads.pc
 @dirrm include/osgTerrain
 @dirrm include/osgSim
 @dirrm include/osgShadow
+@dirrm include/osgPresentation
 @dirrm include/osgParticle
 @dirrm include/osgManipulator
 @dirrm include/osgGA
