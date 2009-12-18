@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-EPP-Proxy
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A proxy server for the EPP protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/Net/EPP.pm:${PORTSDIR}/net/p5-Net-EPP \
-		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
+		p5-Net-EPP>=0.03:${PORTSDIR}/net/p5-Net-EPP \
+		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=	Net::EPP::Proxy.3
 
