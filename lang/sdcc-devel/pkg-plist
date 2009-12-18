@@ -1,33 +1,27 @@
-%%Z80%%bin/as-gbz80
-%%HC08%%bin/as-hc08
-%%Z80%%bin/as-z80
-%%MCS51DS390%%bin/aslink
 bin/asranlib
-%%MCS51DS390%%bin/asx8051
-%%Z80%%bin/link-gbz80
-%%HC08%%bin/link-hc08
-%%Z80%%bin/link-z80
 bin/makebin
 %%PACKIHX%%bin/packihx
 %%UCSIM%%%%MCS51DS390%%bin/s51
 %%UCSIM%%%%AVR%%bin/savr
+%%HC08%%bin/sdas6808
+%%MCS51DS390%%bin/sdas8051
+%%Z80%%bin/sdasgb
+%%Z80%%bin/sdasz80
 bin/sdcc
 bin/sdcclib
 %%UCSIM%%%%MCS51%%bin/sdcdb
 %%UCSIM%%%%MCS51%%bin/sdcdb.el
 %%UCSIM%%%%MCS51%%bin/sdcdbsrc.el
 bin/sdcpp
+%%MCS51DS390%%bin/sdld
+%%HC08%%bin/sdld6808
+%%Z80%%bin/sdldgb
+%%Z80%%bin/sdldz80
 %%UCSIM%%%%HC08%%bin/shc08
 %%UCSIM%%%%Z80%%bin/sz80
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TININative.txt
-%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/README
-%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/abstra.txt
-%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/appendk.txt
-%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/asmlnk.txt
-%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/asxhtm.html
-%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/format.txt
 %%PORTDOCS%%%%DOCSDIR%%/avr/avr_design.txt
 %%PORTDOCS%%%%DOCSDIR%%/builtins.txt
 %%PORTDOCS%%%%DOCSDIR%%/choices.txt
@@ -83,7 +77,6 @@ bin/sdcpp
 %%PORTDOCS%%%%DOCSDIR%%/z80/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/z80/README
 %%PORTDOCS%%%%DOCSDIR%%/z80/combined_i186_z80_design.tex
-%%DATADIR%%/include/80c51xa.h
 %%DATADIR%%/include/asm/default/features.h
 %%DATADIR%%/include/asm/ds390/features.h
 %%DATADIR%%/include/asm/gbz80/features.h
@@ -93,7 +86,8 @@ bin/sdcpp
 %%DATADIR%%/include/asm/z80/features.h
 %%DATADIR%%/include/assert.h
 %%DATADIR%%/include/ctype.h
-%%DATADIR%%/include/ds400rom.h
+%%DS390%%%%DATADIR%%/include/ds390/serial390.h
+%%DS390%%%%DATADIR%%/include/ds400/ds400rom.h
 %%DATADIR%%/include/ds80c390.h
 %%DATADIR%%/include/errno.h
 %%DATADIR%%/include/float.h
@@ -138,6 +132,7 @@ bin/sdcpp
 %%MCS51%%%%DATADIR%%/include/mcs51/SST89x5xRDx.h
 %%MCS51%%%%DATADIR%%/include/mcs51/XC866.h
 %%MCS51%%%%DATADIR%%/include/mcs51/at89S8252.h
+%%MCS51%%%%DATADIR%%/include/mcs51/at89Sx051.h
 %%MCS51%%%%DATADIR%%/include/mcs51/at89c51ed2.h
 %%MCS51%%%%DATADIR%%/include/mcs51/at89c51snd1c.h
 %%MCS51%%%%DATADIR%%/include/mcs51/at89c55.h
@@ -155,7 +150,10 @@ bin/sdcpp
 %%MCS51%%%%DATADIR%%/include/mcs51/msc1210.h
 %%MCS51%%%%DATADIR%%/include/mcs51/msm8xc154s.h
 %%MCS51%%%%DATADIR%%/include/mcs51/p89c66x.h
+%%MCS51%%%%DATADIR%%/include/mcs51/p89lpc9321.h
+%%MCS51%%%%DATADIR%%/include/mcs51/p89lpc9331.h
 %%MCS51%%%%DATADIR%%/include/mcs51/p89lpc933_4.h
+%%MCS51%%%%DATADIR%%/include/mcs51/p89lpc9351.h
 %%MCS51%%%%DATADIR%%/include/mcs51/p89lpc935_6.h
 %%MCS51%%%%DATADIR%%/include/mcs51/p89lpc938.h
 %%MCS51%%%%DATADIR%%/include/mcs51/p89v51rd2.h
@@ -164,6 +162,9 @@ bin/sdcpp
 %%MCS51%%%%DATADIR%%/include/mcs51/reg764.h
 %%MCS51%%%%DATADIR%%/include/mcs51/regc515c.h
 %%MCS51%%%%DATADIR%%/include/mcs51/sab80515.h
+%%MCS51%%%%DATADIR%%/include/mcs51/ser.h
+%%MCS51%%%%DATADIR%%/include/mcs51/ser_ir.h
+%%MCS51%%%%DATADIR%%/include/mcs51/serial.h
 %%MCS51%%%%DATADIR%%/include/mcs51/serial_IO.h
 %%MCS51%%%%DATADIR%%/include/mcs51/uPSD32xx.h
 %%MCS51%%%%DATADIR%%/include/mcs51/uPSD33xx.h
@@ -272,6 +273,8 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic16devices.txt
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f1220.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f1320.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f13k50.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f14k50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2220.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2221.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2320.h
@@ -288,6 +291,7 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f248.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2480.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f24j10.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f24j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f24k20.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2510.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2515.h
@@ -300,12 +304,14 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2580.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f25j10.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f25j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f25k20.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2610.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2620.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2680.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2682.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2685.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f26j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f26k20.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4220.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4221.h
@@ -323,6 +329,7 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f448.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4480.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f44j10.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f44j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f44k20.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4510.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4515.h
@@ -335,35 +342,45 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4580.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f45j10.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f45j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f45k20.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4610.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4620.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4680.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4682.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4685.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f46j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f46k20.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6520.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f6527.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f65j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6620.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f6622.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f6627.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6680.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f66j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f66j55.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f66j60.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f66j65.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6720.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f6722.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f67j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f67j60.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8520.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f8527.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f85j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8620.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f8622.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f8627.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8680.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f86j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f86j55.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f86j60.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f86j65.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8720.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f8722.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f87j50.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f87j60.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f96j60.h
@@ -380,10 +397,6 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/string.h
 %%PIC16%%%%DATADIR%%/include/pic16/usart.h
 %%DATADIR%%/include/sdcc-lib.h
-%%DATADIR%%/include/ser.h
-%%DATADIR%%/include/ser_ir.h
-%%DATADIR%%/include/serial.h
-%%DATADIR%%/include/serial390.h
 %%DATADIR%%/include/setjmp.h
 %%DATADIR%%/include/stdarg.h
 %%DATADIR%%/include/stdbool.h
@@ -395,8 +408,9 @@ bin/sdcpp
 %%DATADIR%%/include/time.h
 %%DATADIR%%/include/tinibios.h
 %%DATADIR%%/include/typeof.h
-%%DATADIR%%/include/z180.h
+%%XA51%%%%DATADIR%%/include/xa51/80c51xa.h
 %%Z80%%%%DATADIR%%/include/z80/types.h
+%%Z80%%%%DATADIR%%/include/z80/z180.h
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/libds390.lib
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/libfloat.lib
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/libint.lib
@@ -407,6 +421,7 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/libint.lib
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/liblong.lib
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/libsdcc.lib
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/crt0.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/gbz80.lib
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/hc08.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/libfloat.lib
@@ -515,6 +530,8 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdebug.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f1220.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f1320.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f13k50.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f14k50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2220.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2221.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2320.lib
@@ -531,6 +548,7 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f248.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2480.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f24j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f24j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f24k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2510.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2515.lib
@@ -543,12 +561,14 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f25j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f25j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f25k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2610.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2682.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f2685.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f26j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f26k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4220.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4221.lib
@@ -566,6 +586,7 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f448.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4480.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f44j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f44j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f44k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4510.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4515.lib
@@ -578,35 +599,45 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f45j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f45j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f45k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4610.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4682.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f4685.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f46j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f46k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6527.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f65j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6620.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6622.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6627.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f66j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f66j55.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f66j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f66j65.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6720.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f6722.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f67j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f67j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8527.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f85j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8620.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8622.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8627.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f86j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f86j55.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f86j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f86j65.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8720.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f8722.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f87j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f87j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f96j60.lib
@@ -614,6 +645,8 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libdev18f97j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f1220.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f1320.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f13k50.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f14k50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2220.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2221.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2320.lib
@@ -630,6 +663,7 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f248.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2480.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f24j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f24j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f24k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2510.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2515.lib
@@ -642,12 +676,14 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f25j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f25j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f25k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2610.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2682.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2685.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f26j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f26k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4220.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4221.lib
@@ -665,6 +701,7 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f448.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4480.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f44j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f44j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f44k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4510.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4515.lib
@@ -677,35 +714,45 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f45j10.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f45j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f45k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4610.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4682.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4685.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f46j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f46k20.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6527.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f65j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6620.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6622.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6627.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f66j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f66j55.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f66j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f66j65.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6720.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6722.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f67j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f67j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8527.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f85j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8620.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8622.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8627.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f86j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f86j55.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f86j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f86j65.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8720.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8722.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f87j50.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f87j60.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f96j60.lib
@@ -740,6 +787,8 @@ bin/sdcpp
 %%DEVLIB%%@dirrm %%DATADIR%%/lib
 @exec mkdir -p %D/%%DATADIR%%/include/z80
 @dirrm %%DATADIR%%/include/z80
+@exec mkdir -p %D/%%DATADIR%%/include/xa51
+@dirrm %%DATADIR%%/include/xa51
 @exec mkdir -p %D/%%DATADIR%%/include/pic16
 @dirrm %%DATADIR%%/include/pic16
 @exec mkdir -p %D/%%DATADIR%%/include/pic
@@ -748,6 +797,10 @@ bin/sdcpp
 @dirrm %%DATADIR%%/include/mcs51
 @exec mkdir -p %D/%%DATADIR%%/include/hc08
 @dirrm %%DATADIR%%/include/hc08
+@exec mkdir -p %D/%%DATADIR%%/include/ds400
+@dirrm %%DATADIR%%/include/ds400
+@exec mkdir -p %D/%%DATADIR%%/include/ds390
+@dirrm %%DATADIR%%/include/ds390
 @dirrm %%DATADIR%%/include/asm/z80
 @dirrm %%DATADIR%%/include/asm/pic16
 @dirrm %%DATADIR%%/include/asm/pic
@@ -761,5 +814,4 @@ bin/sdcpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/z80
 %%UCSIM%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ucsim
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/avr
-%%Z80%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/aslink
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

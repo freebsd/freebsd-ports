@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.9.1.2009.05.18
+PORTVERSION=	2.9.4.2009.12.15
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
-DISTNAME=	${PORTNAME}-src-20090518-5457
+DISTNAME=	${PORTNAME}-src-20091215-5595
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
@@ -103,6 +103,9 @@ PLIST_SUB+=		PIC16=""
 
 .if defined(WITHOUT_XA51)
 CONFIGURE_ARGS+=	--disable-xa51-port
+PLIST_SUB+=		XA51="@comment "
+.else
+PLIST_SUB+=		XA51=""
 .endif
 
 .if defined(WITHOUT_HC08)
@@ -143,7 +146,6 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
-		${WRKSRC}/as/Makefile.in \
 		${WRKSRC}/sim/ucsim/packages_in.mk
 .endif
 
