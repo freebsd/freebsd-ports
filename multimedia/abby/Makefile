@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	abby
-PORTVERSION=	0.4.6.1
+PORTVERSION=	0.4.7
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	legatvs@gmail.com
 COMMENT=	Front-end for c/clive
 
-OPTIONS=	CCLIVE "Use cclive backend" on \
-		CLIVE  "Use clive backend" off
+OPTIONS=	CCLIVE "Use cclive backend (instead of clive)" on
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -32,11 +31,9 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abby ${PREFIX}/bin/abby
 
-.if defined(WITHOUT_CCLIVE)
+.if defined(WITH_CCLIVE)
 RUN_DEPENDS+=	cclive>=0.5.6:${PORTSDIR}/multimedia/cclive
-.endif
-
-.if defined(WITH_CLIVE)
+.else
 RUN_DEPENDS+=	clive>=2.2.5:${PORTSDIR}/multimedia/clive
 .endif
 
