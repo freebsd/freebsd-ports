@@ -1,0 +1,43 @@
+%%SITE_PERL%%/Net/IMAP/Server/Command/Unsubscribe.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Authenticate.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Examine.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Expunge.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Delete.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Capability.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Check.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Namespace.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/List.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Select.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Login.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Lsub.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Fetch.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Id.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Starttls.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Uid.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Status.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Noop.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Search.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Rename.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Copy.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Store.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Subscribe.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Append.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Logout.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Create.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command/Close.pm
+%%SITE_PERL%%/Net/IMAP/Server/Connection.pm
+%%SITE_PERL%%/Net/IMAP/Server/Error.pm
+%%SITE_PERL%%/Net/IMAP/Server/Command.pm
+%%SITE_PERL%%/Net/IMAP/Server/Mailbox.pm
+%%SITE_PERL%%/Net/IMAP/Server/Message.pm
+%%SITE_PERL%%/Net/IMAP/Server/DefaultModel.pm
+%%SITE_PERL%%/Net/IMAP/Server/DefaultAuth.pm
+%%SITE_PERL%%/Net/IMAP/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP/Server/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/IMAP/Server/Command
+@dirrmtry %%SITE_PERL%%/Net/IMAP/Server
+@dirrmtry %%SITE_PERL%%/Net/IMAP
+@dirrmtry %%SITE_PERL%%/Net
