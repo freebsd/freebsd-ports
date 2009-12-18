@@ -1,0 +1,22 @@
+Pure Python
+All code, at first, is written in pure Python so that py-postgresql will work
+anywhere that you can install Python 3. Optimizations in C are made where
+needed, but are always optional.
+
+Prepared Statements
+Using the PG-API interface, protocol-level prepared statements may be created
+and used multiple times. db.prepare(sql)(*args)
+
+COPY Support
+Use the convenient COPY interface to directly copy data from one connection to
+another. No intermediate files or tricks are necessary.
+
+Arrays and Composite Typescw
+Arrays and composites are fully supported. Queries requesting them will returns
+objects that provide access to the elements within.
+
+"pg_python" Quick Console
+Get a Python console with a connection to PostgreSQL for quick tests and simple
+scripts.
+
+WWW: http://python.projects.postgresql.org/
