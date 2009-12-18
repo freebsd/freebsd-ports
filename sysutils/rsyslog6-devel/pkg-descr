@@ -1,16 +1,21 @@
 Rsyslog is an enhanced multi-threaded syslogd with a focus on security and
 reliability.
 
-Among others, it offers support for on-demand disk buffering, reliable syslog
-over TCP, SSL, TLS and RELP, writing to databases (MySQL, PostgreSQL, Oracle,
-and many more), email alerting, fully configurable output formats (including
+Among others, it offers support for on-demand disk buffering, reliable 
+syslog
+over TCP, SSL, TLS and RELP, writing to databases (MySQL, PostgreSQL, 
+Oracle,
+and many more), email alerting, fully configurable output formats 
+(including
 high-precision timestamps),the ability to filter on any part of the syslog
 message, on-the-wire message compression, and the ability to convert text
 files to syslog.
 
-It is a drop-in replacement for stock syslogd and able to work with the same
+It is a drop-in replacement for stock syslogd and able to work with the 
+same
 configuration file syntax. Its advanced features make it suitable for
-enterprise-class, encryption protected syslog relay chains while at the same
+enterprise-class, encryption protected syslog relay chains while at the 
+same
 time being very easy to setup for the novice user.
 
 WWW: http://www.rsyslog.com/

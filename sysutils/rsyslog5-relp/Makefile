@@ -6,7 +6,7 @@
 #
 
 COMMENT=	RELP input/output module for rsyslog
-MASTERDIR=	${.CURDIR}/../rsyslog4
+MASTERDIR=	${.CURDIR}/../rsyslog5
 
 MNAME=	relp
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config

@@ -3,6 +3,7 @@
 # $FreeBSD$
 #
 
+
 # PROVIDE: rsyslogd
 # REQUIRE: mountcritremote cleanvar newsyslog ldconfig
 # BEFORE:  SERVERS

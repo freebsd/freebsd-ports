@@ -5,7 +5,7 @@ add the following lines to rc.conf(5):
  rsyslogd_enable="YES"
 To avoid warnings about rsyslogd running in compatibility mode, add
 this:
- rsyslogd_flags="-c4"
+ rsyslogd_flags="-c3"
 It's recommended to copy syslog.conf(5) to
 %%PREFIX%%/etc/rsyslog.conf and edit it there. Otherwise add
 this:
