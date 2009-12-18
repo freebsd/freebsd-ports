@@ -62,9 +62,9 @@ DEMODIR=	src/demo/org/apache/lucene/demo
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-core-${PORTVERSION}.jar ${JAVAJARDIR}
 .if defined(WITH_CONTRIB)
-	@${INSTALL_DATA} \
-	    ${CONTRIBS:C,^(.*$,${WRKSRC}/contrib/\1/${PORTNAME}-\1-${PORTVERSION}.jar,} \
-	    ${JAVADIR}
+	${INSTALL_DATA} \
+	    ${CONTRIBS:C,^(.*)$,${WRKSRC}/contrib/\1/${PORTNAME}-\1-${PORTVERSION}.jar,} \
+	    ${JAVAJARDIR}
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
