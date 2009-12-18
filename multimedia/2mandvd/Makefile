@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	2ManDVD
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
@@ -28,7 +28,8 @@ RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 USE_QT_VER=	4
 USE_CDRTOOLS=	true
 USE_PERL5_RUN=	yes
-QT_COMPONENTS=	qmake_build gui corelib rcc_build moc_build uic_build
+QT_COMPONENTS=	qmake_build gui corelib rcc_build moc_build uic_build \
+		webkit
 
 MAKE_ENV+=	QTDIR=${QT_PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -36,7 +37,7 @@ MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="2ManDVD" \
 		"DVD Maker" \
-		"" \
+		"mandvdico.png" \
 		"2ManDVD" \
 		"Application;AudioVideo;" \
 		false
@@ -57,6 +58,7 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "Bibliotheque Interface" ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/2ManDVD ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/Interface/mandvdico.png ${PREFIX}/share/pixmaps/mandvdico.png
 	${LN} -fs ${DATADIR}/2ManDVD ${PREFIX}/bin/
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 bin/2ManDVD
+share/pixmaps/mandvdico.png
 %%DATADIR%%/2ManDVD
 %%DATADIR%%/2mandvd_de.qm
 %%DATADIR%%/2mandvd_en.qm
@@ -7,6 +8,19 @@ bin/2ManDVD
 %%DATADIR%%/2mandvd_pl.qm
 %%DATADIR%%/2mandvd_pt.qm
 %%DATADIR%%/2mandvd_ru.qm
+%%DATADIR%%/Bibliotheque/Animations/bebe_005.gif
+%%DATADIR%%/Bibliotheque/Animations/chien_018.gif
+%%DATADIR%%/Bibliotheque/Animations/perroquet_008.gif
+%%DATADIR%%/Bibliotheque/Animations/mouette_005.gif
+%%DATADIR%%/Bibliotheque/Animations/mouette_003.gif
+%%DATADIR%%/Bibliotheque/Animations/oiseau_022.gif
+%%DATADIR%%/Bibliotheque/Animations/fete_divers_006.gif
+%%DATADIR%%/Bibliotheque/Animations/chandelle_014.gif
+%%DATADIR%%/Bibliotheque/Animations/explosif_011.gif
+%%DATADIR%%/Bibliotheque/Animations/tweety1.gif
+%%DATADIR%%/Bibliotheque/Animations/earth.gif
+%%DATADIR%%/Bibliotheque/Animations/cheval_001.gif
+%%DATADIR%%/Bibliotheque/Animations/espace_038.gif
 %%DATADIR%%/Bibliotheque/Luma/Blinds_001.png
 %%DATADIR%%/Bibliotheque/Luma/Blinds_002.png
 %%DATADIR%%/Bibliotheque/Luma/Brule_001.png
@@ -628,6 +642,7 @@ bin/2ManDVD
 @dirrm %%DATADIR%%/Bibliotheque/Themes
 @dirrm %%DATADIR%%/Bibliotheque/Luma
 @dirrm %%DATADIR%%/Bibliotheque/Masks
+@dirrm %%DATADIR%%/Bibliotheque/Animations
 @dirrm %%DATADIR%%/Bibliotheque
 @dirrm %%DATADIR%%/Interface
 @dirrm %%DATADIR%%
