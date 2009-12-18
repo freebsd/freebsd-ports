@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	2.5.9
-PORTREVISION=	1
+PORTVERSION=	2.5.11
 CATEGORIES=	www security
 MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
@@ -15,7 +14,7 @@ DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
 		apr-1.3:${PORTSDIR}/devel/apr
@@ -46,33 +45,49 @@ OPTIONS=	LUA "Embedded Lua language support" off \
 SUB_FILES+=	pkg-message.rules
 .if defined(WITH_MLOGC)
 PLIST_FILES+=	bin/mlogc
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fix-6.x-link
-.endif
 .endif
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules
+PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/base_rules
+PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/util
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2
-
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/CHANGELOG
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/LICENSE
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/README
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_23_request_limits.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/util/modsec-clamscan.pl
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/util/runav.pl
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/util/httpd-guardian.pl
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_config.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_20_protocol_violations.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_21_protocol_anomalies.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_30_http_policy.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_35_bad_robots.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_40_generic_attacks.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_45_trojans.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_50_outbound.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_global_config.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_20_protocol_violations.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_21_protocol_anomalies.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_generic_attacks.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_42_comment_spam.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_42_tight_security.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_55_marketing.conf
-
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_xss_attacks.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_41_sql_injection_attacks.data
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_45_trojans.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_filters.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_50_outbound.data
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_web_rules.data
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_46_et_sql_injection.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_47_common_exceptions.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_converter.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_20_protocol_violations.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_49_enforcement.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_21_protocol_anomalies.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_35_bad_robots.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_30_http_policy.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_46_et_web_rules.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_40_generic_attacks.data
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_50_outbound.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_sql_injection.data
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_23_request_limits.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_sql_injection_attacks.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_40_generic_attacks.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_48_local_exceptions.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_60_correlation.conf
 .endif
 
 .if defined(WITH_LUA)
