@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.2.18
+PORTVERSION=	1.2.20
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/1.2/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
