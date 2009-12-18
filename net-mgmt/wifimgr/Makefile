@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 		${MASTER_SITE_LOCAL}
