@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noc
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	http://trac.nocproject.org/trac/downloads/
 DISTNAME=	noc-${PORTVERSION}
