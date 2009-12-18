@@ -173,9 +173,12 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/verilog.syntax
 %%EDITOR%%%%DATADIR%%/syntax/vhdl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/xml.syntax
+%%NLS%%@dirrmtry share/locale/be-tarask/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be-tarask
 @dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/extfs
+@dirrm %%DATADIR%%
 @dirrm libexec/mc
 @dirrm etc/mc/extfs
 @dirrm etc/mc
