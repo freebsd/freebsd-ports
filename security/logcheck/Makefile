@@ -7,7 +7,7 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.2.54
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -40,12 +40,22 @@ DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
 PORTDOCS=	${DOCS:T}
 MAN8=		logcheck.8 logtail.8
 
+PATCH_LIST=	extra-patch-debian__logcheck.cron.d \
+		extra-patch-docs__logcheck.8 \
+		extra-patch-etc__logcheck.conf \
+		extra-patch-src__logcheck
+EXTRA_PATCHES=	${PATCH_LIST:C|^|${WRKDIR}/|g}
+
+pre-patch:
+.for patch in ${PATCH_LIST}
+	@${SED} ${_SUB_LIST_TEMP} ${FILESDIR}/${patch}.in > ${WRKDIR}/${patch}
+.endfor
+
 do-build:
 	@${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
 		${WRKSRC}/etc/logcheck.logfiles
-	@${REINPLACE_CMD} -e 's!/etc/logcheck!${ETCDIR}!' \
-		-e 's!/usr/share/doc/logcheck-database/README.logcheck-database.gz!${DOCSDIR}/README.logcheck-database!' \
-		${WRKSRC}/docs/logcheck.sgml
+	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|" \
+		${WRKSRC}/src/logtail
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin

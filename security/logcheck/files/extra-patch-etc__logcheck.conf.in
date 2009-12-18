@@ -10,7 +10,7 @@
 -# Alternatively, set to "1" to enable extra summary.
 -
 -#SYSLOGSUMMARY=0
-+#RULEDIR="/usr/local/etc/logcheck"
++#RULEDIR="%%ETCDIR%%"
  
  # Controls Subject: lines on logcheck reports:
  

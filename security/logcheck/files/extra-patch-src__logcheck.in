@@ -1,5 +1,5 @@
---- ./src/logcheck.orig	2007-01-16 01:13:27.000000000 -0500
-+++ ./src/logcheck	2008-09-09 18:10:02.000000000 -0400
+--- src/logcheck.orig	2007-01-16 01:13:27.000000000 -0500
++++ src/logcheck	2009-12-17 19:33:34.000000000 -0500
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
@@ -11,7 +11,7 @@
  if [ $UID == 0 ]; then
      echo "logcheck should not be run as root. Use su to invoke logcheck:"
 -    echo "su -s /bin/bash -c \"/usr/sbin/logcheck${@:+ $@}\" logcheck"
-+    echo "su -m logcheck -c \"/usr/local/bin/bash /usr/local/sbin/logcheck${@:+ $@}\""
++    echo "su -m logcheck -c \"/usr/local/bin/bash %%PREFIX%%/sbin/logcheck${@:+ $@}\""
      echo "Or use sudo: sudo -u logcheck logcheck${@:+ $@}."
      # you may want to uncomment that hack to let logcheck invoke itself.
 -    # su -s /bin/bash -c "$0 $*" logcheck
@@ -36,12 +36,12 @@
 -LOGFILES_LIST="/etc/logcheck/logcheck.logfiles"
 -LOGFILE_FALLBACK="/var/log/syslog"
 -LOGTAIL="/usr/sbin/logtail"
-+RULEDIR="/usr/local/etc/logcheck"
-+CONFFILE="/usr/local/etc/logcheck/logcheck.conf"
++RULEDIR="%%ETCDIR%%"
++CONFFILE="%%ETCDIR%%/logcheck.conf"
 +STATEDIR="/var/db/logcheck"
-+LOGFILES_LIST="/usr/local/etc/logcheck/logcheck.logfiles"
++LOGFILES_LIST="%%ETCDIR%%/logcheck.logfiles"
 +LOGFILE_FALLBACK="/var/log/messages"
-+LOGTAIL="/usr/local/sbin/logtail"
++LOGTAIL="%%PREFIX%%/sbin/logtail"
  CAT="/bin/cat"
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
@@ -95,6 +95,37 @@
         fi
  	
      fi
+@@ -168,7 +151,7 @@
+ ${TMPDIR:+Check temporary directory: $TMPDIR
+ }
+ Also verify that the logcheck user can read all files referenced in
+-/etc/logcheck/logcheck.logfiles!
++%%ETCDIR%%/logcheck.logfiles!
+ 
+ $(export)
+ EOF
+@@ -185,8 +168,8 @@
+ 
+ # Add an identification line at the beginning of the sent mail
+ setintro() {
+-    if [ -f /etc/logcheck/header.txt -a -r /etc/logcheck/header.txt ] ; then
+-       $CAT /etc/logcheck/header.txt >> $TMPDIR/report \
++    if [ -f %%ETCDIR%%/header.txt -a -r %%ETCDIR%%/header.txt ] ; then
++       $CAT %%ETCDIR%%/header.txt >> $TMPDIR/report \
+            || error "Could not append header to $TMPDIR/report."
+     fi
+ }
+@@ -194,8 +177,8 @@
+ 
+ # Add a footer to the report.
+ setfooter() {
+-    if [ -f /etc/logcheck/footer.txt -a -r /etc/logcheck/footer.txt ] ; then
+-       $CAT /etc/logcheck/footer.txt >> $TMPDIR/report \
++    if [ -f %%ETCDIR%%/footer.txt -a -r %%ETCDIR%%/footer.txt ] ; then
++       $CAT %%ETCDIR%%/footer.txt >> $TMPDIR/report \
+            || error "Could not append footer to $TMPDIR/report."
+     fi
+ }
 @@ -212,8 +195,7 @@
  	    mkdir $cleaned \
  	        || error "Could not make dir $cleaned for cleaned rulefiles."
