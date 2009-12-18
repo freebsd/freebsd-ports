@@ -12,7 +12,7 @@ CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.yasgursfarm.us/download/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	freebsd@next-generation.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A search tool for Eijiro by ruby
 
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mmap.so:${PORTSDIR}/devel/ruby-mmap
