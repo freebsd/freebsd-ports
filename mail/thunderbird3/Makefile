@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source/
@@ -45,7 +46,8 @@ MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZILLA_PLIST_DIRS=	bin lib
 MOZ_PKGCONFIG_FILES=
 
-PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/icons/default.xpm
+PORTNAME_ICON=	${PORTNAME}.png
+PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
@@ -80,8 +82,7 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
 post-extract::
-	${SED} -e 's|@MOZILLA_ICON@|${MOZILLA_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
-		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
+	${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 	${LN} -s  ${WRKSRC}/mail ${WRKSRC}/mozilla/mail
 
@@ -112,10 +113,12 @@ port-pre-install:
 
 pre-install:
 	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
+	@${ECHO_CMD} 'share/pixmaps/${PORTNAME_ICON}' >> ${PLIST}
 	@${ECHO_CMD} '@dirrmtry share/applications' >> ${PLIST}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${PREFIX}/share/applications
+	${LN} -sf ${PORTNAME_ICON_SRC} ${PREFIX}/share/pixmaps/${PORTNAME_ICON}
 
 .include <bsd.port.post.mk>
