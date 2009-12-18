@@ -4228,3 +4228,5 @@ ftp/pftpx||2009-12-15|Broken by libevent update and the project is dead
 x11-toolkits/evilvte|x11/evilvte|2009-12-15|Moved to x11 category
 lang/python23||2009-12-18|no longer under development
 lang/python30||2009-12-18|no longer under development
+cad/fandango||2009-12-18|no longer under development
+
