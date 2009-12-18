@@ -8,4 +8,7 @@ they have additional variables which would be removed if other engines
 overwrite them. But you can safely copy the original directory to the new one
 for the first time.
 
+Should you encounter freezes when playing a demo or single player game,
+rebuild without client libraries.
+
 ==============================================================================

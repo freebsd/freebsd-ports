@@ -21,29 +21,27 @@ USE_ZIP?=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	CLIENT "Build client" on \
-		GAMELIBS "Build game libraries (when not mandatory)" on \
+		GAMELIBS "Build game libraries (when not mandatory)" off \
 		DEDICATED "Build dedicated server" on \
-		SMP "Build SMP (threaded) client" on \
 		VORBIS "Enable Ogg Vorbis support" on
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
 		DEFAULT_LIBDIR="${LIBDIR}" \
 		HOMEPATH="/.${PORTNAME}" \
-		ARCH="${LINUX_ARCH}"
+		ARCH="${ARCH}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
-		ARCH="${LINUX_ARCH}" \
+		ARCH="${ARCH}" \
 		BINSUFFIX="${BINSUFFIX}"
 ALL_TARGET=	release
 MAKE_JOBS_SAFE=	yes
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-BUILDDIR=	${WRKSRC}/build/release-${OPSYS:L}-${LINUX_ARCH}
-LINUX_ARCH=	${ARCH:C/amd64/x86_64/:C/i386/x86/}
+BUILDDIR=	${WRKSRC}/build/release-${OPSYS:L}-${ARCH}
 BINSUFFIX?=
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-# Make sure TARGET and CFLAGS fit together.
+# Make sure TARGET and CFLAGS fit together for cross-compiling.
 MACHINE_ARCH=	${ARCH}
 .include <bsd.cpu.mk>
 
@@ -90,6 +88,7 @@ PLIST_SUB+=	GAMELIBS=""
 PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
+# Note that SMP is only supported on OS-X, hence the option has been removed.
 .if defined(WITH_SMP)
 MAKE_ARGS+=	BUILD_CLIENT_SMP=1
 PLIST_SUB+=	SMP=""
@@ -100,7 +99,7 @@ PLIST_SUB+=	SMP="@comment "
 
 do-install:
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${LINUX_ARCH} \
+	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${ARCH} \
 		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
 .if defined(WITH_GAMELIBS)
