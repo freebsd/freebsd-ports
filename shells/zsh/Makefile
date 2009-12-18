@@ -9,9 +9,10 @@ PORTNAME=	zsh
 PORTVERSION=	4.3.10
 PORTREVISION=	2
 CATEGORIES=	shells
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
+		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src ${DISTNAME}-doc${EXTRACT_SUFX}:doc
 .endif
 
 MAINTAINER=	des@FreeBSD.org
@@ -33,8 +34,8 @@ CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
-EXTRA_COMPLETION_FILES= _fstat _procstat _sockstat
-EXTRA_COMPLETION_DIR= Completion/BSD/Command
+EXTRA_COMPLETION_FILES=	_fstat _procstat _sockstat
+EXTRA_COMPLETION_DIR=	Completion/BSD/Command
 
 OPTIONS=	ZSH_GDBM	"Enable GDBM support (GPL)" off \
 		ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
@@ -103,13 +104,13 @@ post-patch:
 	@${SED} -i "" -e "s,/etc/,${LOCALBASE}/etc/," \
 		${WRKSRC}/Functions/MIME/zsh-mime-setup
 .ifdef EXTRA_COMPLETION_FILES
-	@echo "===>  Installing extra completion files"
+	@${ECHO} "===>  Installing extra completion files"
 .for COMPFILE in ${EXTRA_COMPLETION_FILES}
 	@(if [ -f ${WRKSRC}/${EXTRA_COMPLETION_DIR}/${COMPFILE} ] ; then \
-		echo "${EXTRA_COMPLETION_DIR}/${COMPFILE} already exists" ; \
+		${ECHO} "${EXTRA_COMPLETION_DIR}/${COMPFILE} already exists" ; \
 		exit 1 ; \
 	else \
-		echo ${EXTRA_COMPLETION_DIR}/${COMPFILE} ; \
+		${ECHO} ${EXTRA_COMPLETION_DIR}/${COMPFILE} ; \
 		${CP} ${FILESDIR}/${COMPFILE} \
 			${WRKSRC}/${EXTRA_COMPLETION_DIR}/${COMPFILE} ; \
 	fi)
