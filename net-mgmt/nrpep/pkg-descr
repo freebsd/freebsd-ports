@@ -1,5 +1,5 @@
-This addon was designed as a replacemnt for the netsaint_statd and
-nrpe addons. Although this addon is similiar in function to nrpe, it
+This addon was designed as a replacement for the netsaint_statd and
+nrpe addons. Although this addon is similar in function to nrpe, it
 is written in Perl and implements TripleDES encryption for the data in
 transit. It is also designed to run under inetd and make use of the
 TCP Wrappers package for access control.
