@@ -7,11 +7,14 @@
 
 PORTNAME=	neko
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	The Neko Programming Language
+
+LIB_DEPENDS=	gc-threaded.1:${PORTSDIR}/devel/boehm-gc-threaded
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -28,13 +31,8 @@ OPTIONS=	APACHE13 "Build with mod_neko for Apache 1.3.x" off \
 
 .include <bsd.port.pre.mk>
 
-# Neko needs boehm-gc with POSIX thread support.
-BC_DIR!=	cd ${PORTSDIR}/devel/boehm-gc && ${MAKE} -V WRKSRC
-BC_MAKEARGS=	BATCH=yes WITH_THREADING=true
-
-BC_CFLAGS:=	${CFLAGS}
-CFLAGS+=	-I${WRKSRC} -I${LOCALBASE}/include
-LDFLAGS+=	-L${BC_DIR}/.libs -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 LIBKEYNAME=
 
 .if defined(WITH_APACHE13) && defined(WITH_APACHE22)
@@ -113,7 +111,6 @@ PLIST_SUB+=	GTK2="@comment "
 .endif
 
 .if ${ARCH} == "amd64"
-BC_CFLAGS+=	-fPIC
 CFLAGS+=	-D_64BITS -fPIC
 .endif
 
@@ -122,7 +119,8 @@ post-patch:
 	    -e '/INSTALL_PREFIX/s,/usr/local,${PREFIX},' \
 	    -e '/^CFLAGS =/s,.$$, ${CFLAGS},' \
 	    -e '/LIBNEKO_LIBS =/s,[-]ldl,${LDFLAGS},' \
-	    -e '/LIBNEKO_LIBS =/s,[-]lgc,-lnekogc,' \
+	    -e '/LIBNEKO_LIBS =/s,[-]lgc,-lgc-threaded,' \
+	    -e '/NEKOVM_FLAGS =/s,[-]lneko,-L${LOCALBASE}/lib -lneko -lgc-threaded,' \
 	    -e '/mkdir/s,\(INSTALL_PREFIX[}]/include\),\1/neko,' \
 	    -e '/cp vm[/]neko[*][.]h/s,\(INSTALL_PREFIX[}]/include\),\1/neko,' \
 	    ${WRKSRC}/Makefile
@@ -170,15 +168,6 @@ post-patch:
 	@${ECHO_CMD}
 .endif
 
-pre-build:
-	@(cd ${PORTSDIR}/devel/boehm-gc/ && \
-	    ${MAKE} CFLAGS="${BC_CFLAGS}" ${BC_MAKEARGS} clean all)
-	@${RM} -f ${BC_DIR}/.libs/*.so*
-	@for BLIB in `${LS} ${BC_DIR}/.libs/libgc.*`; do \
-	    ${MV} $${BLIB} `echo $${BLIB} | ${SED} -e 's/libgc/libnekogc/'`; \
-	done
-	@${LN} -sf ${BC_DIR}/include ${WRKSRC}/gc
-
 post-install:
 .if defined(WITH_APACHE13) || defined(WITH_APACHE22)
 	@${ECHO_CMD}
@@ -191,8 +180,5 @@ post-install:
 	@${ECHO_CMD} "======================================================="
 	@${ECHO_CMD}
 .endif
-
-pre-clean:
-	@(cd ${PORTSDIR}/devel/boehm-gc/ && ${MAKE} clean)
 
 .include <bsd.port.post.mk>
