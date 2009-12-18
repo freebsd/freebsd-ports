@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.26.1
+PORTVERSION=	1.26.2
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME \
@@ -61,10 +61,6 @@ PLIST_SUB+=		X11=""
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|have_introspection=true|have_introspection=false|g' \
