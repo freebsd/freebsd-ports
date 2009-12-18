@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	http
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
