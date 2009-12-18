@@ -197,9 +197,9 @@ lib/gnumeric/%%VERSION%%/plugins/fn-tsa/plugin.xml
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.la
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
-lib/gnumeric/1.9.16/plugins/glpk/glpk.la
-lib/gnumeric/1.9.16/plugins/glpk/glpk.so
-lib/gnumeric/1.9.16/plugins/glpk/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/glpk/glpk.la
+lib/gnumeric/%%VERSION%%/plugins/glpk/glpk.so
+lib/gnumeric/%%VERSION%%/plugins/glpk/plugin.xml
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.la
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.so
 %%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/plugin.xml
@@ -364,6 +364,8 @@ share/gnumeric/%%VERSION%%/glade/search-replace.glade
 share/gnumeric/%%VERSION%%/glade/sheet-order.glade
 share/gnumeric/%%VERSION%%/glade/sheet-resize.glade
 share/gnumeric/%%VERSION%%/glade/shuffle.glade
+share/gnumeric/%%VERSION%%/glade/sign-test-two.glade
+share/gnumeric/%%VERSION%%/glade/sign-test.glade
 share/gnumeric/%%VERSION%%/glade/simulation.glade
 share/gnumeric/%%VERSION%%/glade/so-button.glade
 share/gnumeric/%%VERSION%%/glade/so-checkbox.glade
