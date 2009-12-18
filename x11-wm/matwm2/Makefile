@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	matwm2
-PORTVERSION=	0.0.89
+PORTVERSION=	0.0.90
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.gatorgitter.com/~maties/
 
