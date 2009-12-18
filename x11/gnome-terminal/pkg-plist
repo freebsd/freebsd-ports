@@ -72,7 +72,6 @@ share/gnome/help/gnome-terminal/uk/gnome-terminal.xml
 share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/zh_CN/gnome-terminal.xml
-share/gnome/help/gnome-terminal/zh_CN/legal.xml
 share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/zh_TW/gnome-terminal.xml
@@ -130,6 +129,7 @@ share/locale/mn/LC_MESSAGES/gnome-terminal.mo
 share/locale/mr/LC_MESSAGES/gnome-terminal.mo
 share/locale/ms/LC_MESSAGES/gnome-terminal.mo
 share/locale/nb/LC_MESSAGES/gnome-terminal.mo
+share/locale/nds/LC_MESSAGES/gnome-terminal.mo
 share/locale/ne/LC_MESSAGES/gnome-terminal.mo
 share/locale/nl/LC_MESSAGES/gnome-terminal.mo
 share/locale/nn/LC_MESSAGES/gnome-terminal.mo
@@ -244,6 +244,8 @@ share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
