@@ -31,7 +31,7 @@ NO_LATEST_LINK=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800059
-BROKEN=		does not build
+EXTRA_PATCHES=	${FILESDIR}/extra-src_ptlib_unix_socket.cxx
 .endif
 
 CONFIGURE_ENV=	\
