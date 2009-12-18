@@ -417,6 +417,7 @@
     SUBDIR += p5-Mail-Verify
     SUBDIR += p5-Mail-Verp
     SUBDIR += p5-Mail-Webmail-Gmail
+    SUBDIR += p5-Net-IMAP-Server
     SUBDIR += p5-Net-IMAP-Simple
     SUBDIR += p5-Net-IMAP-Simple-SSL
     SUBDIR += p5-Net-ManageSieve
