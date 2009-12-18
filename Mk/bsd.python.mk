@@ -6,7 +6,7 @@
 
 .if !defined(_POSTMKINCLUDED) && !defined(Python_Pre_Include)
 
-Python_Pre_Include=			bsd.python.mk
+Python_Pre_Include=		bsd.python.mk
 Python_Include_MAINTAINER=	python@FreeBSD.org
 
 # This file contains some variable definitions that are supposed to
@@ -214,7 +214,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 
 _PYTHON_PORTBRANCH=		2.6
-_PYTHON_ALLBRANCHES=	2.6 2.5 2.4 2.3 3.1 3.0 # preferred first
+_PYTHON_ALLBRANCHES=	2.6 2.5 2.4 3.1 # preferred first
 _ZOPE_PORTBRANCH=		2.7
 _ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
 
@@ -377,14 +377,6 @@ PYTHON_REL=			311
 PYTHON_SUFFIX=		31
 PYTHON_VER=			3.1
 
-# Python-3.0
-.elif ${PYTHON_VERSION} == "python3.0"
-PYTHON_PORTVERSION?=3.0.1
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python30
-PYTHON_REL=			301
-PYTHON_SUFFIX=		30
-PYTHON_VER=			3.0
-
 # Python-2.6
 .elif ${PYTHON_VERSION} == "python2.6"
 PYTHON_PORTVERSION?=2.6.4
@@ -409,14 +401,6 @@ PYTHON_REL=			245
 PYTHON_SUFFIX=		24
 PYTHON_VER=			2.4
 
-# Python-2.3
-.elif ${PYTHON_VERSION} == "python2.3"
-PYTHON_PORTVERSION?=2.3.7
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python23
-PYTHON_REL=			237
-PYTHON_SUFFIX=		23
-PYTHON_VER=			2.3
-
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
 PYTHON_PORTSDIR=	# empty
@@ -431,11 +415,9 @@ PYTHON_VER!=		${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
 check-makevars::
 	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
-	@${ECHO} "  python2.3"
 	@${ECHO} "  python2.4"
 	@${ECHO} "  python2.5"
 	@${ECHO} "  python2.6 (default)"
-	@${ECHO} "  python3.0"
 	@${ECHO} "  python3.1"
 	@${FALSE}
 .endif
