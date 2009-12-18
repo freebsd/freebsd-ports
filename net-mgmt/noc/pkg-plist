@@ -606,6 +606,9 @@ noc/fm/rules/classification/DLink/__init__.pyo
 noc/fm/rules/classification/Force10/FTOS/__init__.py
 noc/fm/rules/classification/Force10/FTOS/__init__.pyc
 noc/fm/rules/classification/Force10/FTOS/__init__.pyo
+noc/fm/rules/classification/Force10/FTOS/auth.py
+noc/fm/rules/classification/Force10/FTOS/auth.pyc
+noc/fm/rules/classification/Force10/FTOS/auth.pyo
 noc/fm/rules/classification/Force10/FTOS/config.py
 noc/fm/rules/classification/Force10/FTOS/config.pyc
 noc/fm/rules/classification/Force10/FTOS/config.pyo
@@ -724,6 +727,7 @@ noc/ip/admin.pyc
 noc/ip/admin.pyo
 noc/ip/allocate_block.html
 noc/ip/assign_address.html
+noc/ip/bind_vc.html
 noc/ip/index.html
 noc/ip/migrations/0001_initial.py
 noc/ip/migrations/0001_initial.pyc
@@ -746,6 +750,9 @@ noc/ip/migrations/0006_vrf_description.pyo
 noc/ip/migrations/0007_ipv4addressrange.py
 noc/ip/migrations/0007_ipv4addressrange.pyc
 noc/ip/migrations/0007_ipv4addressrange.pyo
+noc/ip/migrations/0008_ipv4block_vc.py
+noc/ip/migrations/0008_ipv4block_vc.pyc
+noc/ip/migrations/0008_ipv4block_vc.pyo
 noc/ip/migrations/__init__.py
 noc/ip/migrations/__init__.pyc
 noc/ip/migrations/__init__.pyo
@@ -852,6 +859,9 @@ noc/lib/__init__.pyo
 noc/lib/colors.py
 noc/lib/colors.pyc
 noc/lib/colors.pyo
+noc/lib/crypto.py
+noc/lib/crypto.pyc
+noc/lib/crypto.pyo
 noc/lib/daemon.py
 noc/lib/daemon.pyc
 noc/lib/daemon.pyo
@@ -1138,9 +1148,6 @@ noc/peer/admin.py
 noc/peer/admin.pyc
 noc/peer/admin.pyo
 noc/peer/as_dot.html
-noc/peer/builder.py
-noc/peer/builder.pyc
-noc/peer/builder.pyo
 noc/peer/lg.html
 noc/peer/migrations/0001_initial.py
 noc/peer/migrations/0001_initial.pyc
@@ -1199,12 +1206,40 @@ noc/peer/migrations/0019_no_rcmd.pyo
 noc/peer/migrations/0020_no_masklen.py
 noc/peer/migrations/0020_no_masklen.pyc
 noc/peer/migrations/0020_no_masklen.pyo
+noc/peer/migrations/0021_whois.py
+noc/peer/migrations/0021_whois.pyc
+noc/peer/migrations/0021_whois.pyo
+noc/peer/migrations/0022_default_ripe_lookups.py
+noc/peer/migrations/0022_default_ripe_lookups.pyc
+noc/peer/migrations/0022_default_ripe_lookups.pyo
+noc/peer/migrations/0023_peer_status.py
+noc/peer/migrations/0023_peer_status.pyc
+noc/peer/migrations/0023_peer_status.pyo
+noc/peer/migrations/0024_as_name_and_routes_maintainer.py
+noc/peer/migrations/0024_as_name_and_routes_maintainer.pyc
+noc/peer/migrations/0024_as_name_and_routes_maintainer.pyo
+noc/peer/migrations/0025_as_fields.py
+noc/peer/migrations/0025_as_fields.pyc
+noc/peer/migrations/0025_as_fields.pyo
+noc/peer/migrations/0026_peer_remark.py
+noc/peer/migrations/0026_peer_remark.pyc
+noc/peer/migrations/0026_peer_remark.pyo
+noc/peer/migrations/0027_maintainer_password.py
+noc/peer/migrations/0027_maintainer_password.pyc
+noc/peer/migrations/0027_maintainer_password.pyo
 noc/peer/migrations/__init__.py
 noc/peer/migrations/__init__.pyc
 noc/peer/migrations/__init__.pyo
 noc/peer/models.py
 noc/peer/models.pyc
 noc/peer/models.pyo
+noc/peer/periodics/__init__.py
+noc/peer/periodics/__init__.pyc
+noc/peer/periodics/__init__.pyo
+noc/peer/periodics/update_whois_cache.py
+noc/peer/periodics/update_whois_cache.pyc
+noc/peer/periodics/update_whois_cache.pyo
+noc/peer/prefix_list.html
 noc/peer/resolver.py
 noc/peer/resolver.pyc
 noc/peer/resolver.pyo
@@ -1293,7 +1328,8 @@ noc/pm/probes/test.pyo
 noc/pm/urls.py
 noc/pm/urls.pyc
 noc/pm/urls.pyo
-noc/pm/view.html
+noc/pm/view_chart.html
+noc/pm/view_ts.html
 noc/pm/views.py
 noc/pm/views.pyc
 noc/pm/views.pyo
@@ -1669,6 +1705,9 @@ noc/sa/profiles/Generic/__init__.pyo
 noc/sa/profiles/Generic/commands.py
 noc/sa/profiles/Generic/commands.pyc
 noc/sa/profiles/Generic/commands.pyo
+noc/sa/profiles/Generic/configure.py
+noc/sa/profiles/Generic/configure.pyc
+noc/sa/profiles/Generic/configure.pyo
 noc/sa/profiles/Generic/has_local_user.py
 noc/sa/profiles/Generic/has_local_user.pyc
 noc/sa/profiles/Generic/has_local_user.pyo
@@ -1681,15 +1720,24 @@ noc/sa/profiles/Generic/sync_vlans.pyo
 noc/sa/profiles/HP/GbE2/__init__.py
 noc/sa/profiles/HP/GbE2/__init__.pyc
 noc/sa/profiles/HP/GbE2/__init__.pyo
+noc/sa/profiles/HP/GbE2/add_vlan.py
+noc/sa/profiles/HP/GbE2/add_vlan.pyc
+noc/sa/profiles/HP/GbE2/add_vlan.pyo
 noc/sa/profiles/HP/GbE2/get_config.py
 noc/sa/profiles/HP/GbE2/get_config.pyc
 noc/sa/profiles/HP/GbE2/get_config.pyo
 noc/sa/profiles/HP/GbE2/get_version.py
 noc/sa/profiles/HP/GbE2/get_version.pyc
 noc/sa/profiles/HP/GbE2/get_version.pyo
+noc/sa/profiles/HP/GbE2/get_vlans.py
+noc/sa/profiles/HP/GbE2/get_vlans.pyc
+noc/sa/profiles/HP/GbE2/get_vlans.pyo
 noc/sa/profiles/HP/GbE2/highlight.py
 noc/sa/profiles/HP/GbE2/highlight.pyc
 noc/sa/profiles/HP/GbE2/highlight.pyo
+noc/sa/profiles/HP/GbE2/remove_vlan.py
+noc/sa/profiles/HP/GbE2/remove_vlan.pyc
+noc/sa/profiles/HP/GbE2/remove_vlan.pyo
 noc/sa/profiles/HP/GbE2/supported.csv
 noc/sa/profiles/HP/__init__.py
 noc/sa/profiles/HP/__init__.pyc
@@ -1847,6 +1895,18 @@ noc/sa/profiles/Raisecom/ROS/supported.csv
 noc/sa/profiles/Raisecom/__init__.py
 noc/sa/profiles/Raisecom/__init__.pyc
 noc/sa/profiles/Raisecom/__init__.pyo
+noc/sa/profiles/Raritan/DominionSX/__init__.py
+noc/sa/profiles/Raritan/DominionSX/__init__.pyc
+noc/sa/profiles/Raritan/DominionSX/__init__.pyo
+noc/sa/profiles/Raritan/DominionSX/get_config.py
+noc/sa/profiles/Raritan/DominionSX/get_config.pyc
+noc/sa/profiles/Raritan/DominionSX/get_config.pyo
+noc/sa/profiles/Raritan/DominionSX/get_version.py
+noc/sa/profiles/Raritan/DominionSX/get_version.pyc
+noc/sa/profiles/Raritan/DominionSX/get_version.pyo
+noc/sa/profiles/Raritan/__init__.py
+noc/sa/profiles/Raritan/__init__.pyc
+noc/sa/profiles/Raritan/__init__.pyo
 noc/sa/profiles/Sun/__init__.py
 noc/sa/profiles/Sun/__init__.pyc
 noc/sa/profiles/Sun/__init__.pyo
@@ -2030,6 +2090,15 @@ noc/sa/scripts/result_report.pyo
 noc/sa/scripts/vlan_provisioning_report.py
 noc/sa/scripts/vlan_provisioning_report.pyc
 noc/sa/scripts/vlan_provisioning_report.pyo
+noc/sa/servers/__init__.py
+noc/sa/servers/__init__.pyc
+noc/sa/servers/__init__.pyo
+noc/sa/servers/ftp.py
+noc/sa/servers/ftp.pyc
+noc/sa/servers/ftp.pyo
+noc/sa/servers/http.py
+noc/sa/servers/http.pyc
+noc/sa/servers/http.pyo
 noc/sa/syslogcollector.py
 noc/sa/syslogcollector.pyc
 noc/sa/syslogcollector.pyo
@@ -2131,6 +2200,7 @@ noc/share/doc/en/ug/profiles/Linksys.SPS2xx.rst
 noc/share/doc/en/ug/profiles/MikroTik.RouterOS.rst
 noc/share/doc/en/ug/profiles/Protei.MediaGateway.rst
 noc/share/doc/en/ug/profiles/Raisecom.ROS.rst
+noc/share/doc/en/ug/profiles/Raritan.DominionSX.rst
 noc/share/doc/en/ug/profiles/Sun.iLOM3.rst
 noc/share/doc/en/ug/profiles/Ubiquity.AirOS.rst
 noc/share/doc/en/ug/profiles/VoiceFinder.AddPack.rst
@@ -2173,7 +2243,10 @@ noc/share/mibs/CISCO-VTP-MIB.mib
 noc/share/mibs/CISCOTRAP-MIB.mib
 noc/share/mibs/DIAL-CONTROL-MIB.mib
 noc/share/mibs/ENTITY-MIB.mib
+noc/share/mibs/F10-CHASSIS-MIB.mib
 noc/share/mibs/F5-BIGIP-COMMON-MIB.mib
+noc/share/mibs/FORCE10-SMI.mib
+noc/share/mibs/FORCE10-TC.mib
 noc/share/mibs/HCNUM-TC.mib
 noc/share/mibs/IANAifType-MIB.mib
 noc/share/mibs/IEEE802dot11-MIB.mib
@@ -2237,6 +2310,7 @@ noc/static/js/jquery.rotate_text.js
 noc/static/js/jquery.svg.js
 noc/static/js/jquery.tablesorter.js
 noc/static/js/menu.js
+noc/static/js/noc.chart.js
 noc/template/admin/base.html
 noc/template/admin/base_site.html
 noc/template/admin/change_list.html
@@ -2364,6 +2438,7 @@ noc/vc/views.pyo
 @dirrm noc/share/dns
 @dirrm noc/share
 @dirrm noc/scripts
+@dirrm noc/sa/servers
 @dirrm noc/sa/scripts
 @dirrm noc/sa/reports
 @dirrm noc/sa/protocols
@@ -2382,6 +2457,8 @@ noc/vc/views.pyo
 @dirrm noc/sa/profiles/Ubiquiti
 @dirrm noc/sa/profiles/Sun/iLOM3
 @dirrm noc/sa/profiles/Sun
+@dirrm noc/sa/profiles/Raritan/DominionSX
+@dirrm noc/sa/profiles/Raritan
 @dirrm noc/sa/profiles/Raisecom/ROS
 @dirrm noc/sa/profiles/Raisecom
 @dirrm noc/sa/profiles/Protei/MediaGateway
@@ -2433,6 +2510,7 @@ noc/vc/views.pyo
 @dirrm noc/pm/management/commands
 @dirrm noc/pm/management
 @dirrm noc/pm
+@dirrm noc/peer/periodics
 @dirrm noc/peer/migrations
 @dirrm noc/peer
 @dirrm noc/main/templatetags
