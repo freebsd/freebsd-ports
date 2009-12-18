@@ -24,7 +24,7 @@ CSUFF=		${_USE_GCC:S/.//}
 # needs gcj
 LIB_DEPENDS=	gcj:${PORTSDIR}/lang/gcc${CSUFF}
 
-USE_GCC=	4.2+
+USE_GCC=	4.4+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
