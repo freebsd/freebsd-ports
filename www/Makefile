@@ -562,6 +562,7 @@
     SUBDIR += nd
     SUBDIR += neon26
     SUBDIR += neon28
+    SUBDIR += neon29
     SUBDIR += neonpp
     SUBDIR += neowebscript
     SUBDIR += netoffice

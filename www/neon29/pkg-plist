@@ -1,6 +1,7 @@
 bin/neon-config
 include/neon/ne_207.h
 include/neon/ne_acl.h
+include/neon/ne_acl3744.h
 include/neon/ne_alloc.h
 include/neon/ne_auth.h
 include/neon/ne_basic.h
@@ -22,7 +23,7 @@ include/neon/ne_utils.h
 include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
 include/neon/ne_pkcs11.h
-lib/libneon.so.28
+lib/libneon.so.29
 lib/libneon.so
 lib/libneon.la
 lib/libneon.a
@@ -79,6 +80,7 @@ libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/reftok.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refvers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refxml.html
+%%PORTDOCS%%%%DOCSDIR%%/html/security.html
 %%PORTDOCS%%%%DOCSDIR%%/html/using.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xml.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
