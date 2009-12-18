@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liboggz
-DISTVERSION=	0.9.9
+DISTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 		http://wickedmachine.net/mirror/
@@ -22,6 +22,20 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} --program-transform-name=""
 CONFIGURE_ENV=	HAVE_DOCBOOK2HTML=false DOCBOOKTOMAN=false HAVE_DOXYGEN=false HAVE_VALGRIND=false
+
+MAN1=	oggz.1 \
+	oggz-diff.1 \
+	oggz-dump.1 \
+	oggz-info.1 \
+	oggz-known-codecs.1 \
+	oggz-merge.1 \
+	oggz-chop.1 \
+	oggz-sort.1 \
+	oggz-rip.1 \
+	oggz-comment.1 \
+	oggz-scan.1 \
+	oggz-validate.1 \
+	oggz-codecs.1
 
 # First REINPLACE_CMD line makes all timestimes relative to localtime, crude hack
 post-patch:
