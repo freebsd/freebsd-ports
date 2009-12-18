@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Facebook
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
