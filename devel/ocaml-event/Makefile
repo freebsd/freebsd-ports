@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	event
-PORTVERSION=	0.5.0
-PORTREVISION=	7
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -31,16 +30,17 @@ PORTDOCS=	*
 EXAMPLE_FILES=	\
 		Makefile \
 		fifo_example.ml \
+		http_server.ml \
 		signal_example.ml
 LIB_FILES=	\
-		libevent.a \
-		libevent.cmxa \
-		libmlevent.a \
-		libevent.cma \
-		libevent.mli \
-		libevent.cmi
+		liboevent.a \
+		liboevent.cmxa \
+		libmloevent.a \
+		liboevent.cma \
+		liboevent.mli \
+		liboevent.cmi
 LIB_STUB_FILES=	\
-		dllmlevent.so
+		dllmloevent.so
 
 # examples to install
 PLIST_DIRS+=	${EXAMPLESDIR:S,^${PREFIX}/,,}
@@ -65,7 +65,7 @@ post-configure:
 		${WRKSRC}/Makefile
 
 pre-build:
-.for file in libevent.cmi
+.for file in liboevent.cmi
 	@cd ${WRKSRC} && ${GMAKE} ${file}
 .endfor
 
