@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	neon28
-PORTVERSION=	0.28.6
+PORTNAME=	neon29
+PORTVERSION=	0.29.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -14,7 +14,7 @@ DISTNAME=	neon-${PORTVERSION}
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
 
-CONFLICTS=	neon2[6|9]-[0-9]*
+CONFLICTS=	neon2[6|8]-[0-9]*
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
