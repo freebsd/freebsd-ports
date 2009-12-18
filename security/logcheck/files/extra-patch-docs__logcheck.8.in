@@ -99,11 +99,11 @@
 +Set the report level to "workstation".
 +.SH "FILES"
 +.PP
-+/usr/local/etc/logcheck/logcheck.conf is the main configuration file.
++%%ETCDIR%%/logcheck.conf is the main configuration file.
 +.PP
-+/usr/local/etc/logcheck/logcheck.logfiles is the list of files to monitor.
++%%ETCDIR%%/logcheck.logfiles is the list of files to monitor.
 +.PP
-+/usr/local/share/doc/logcheck/README.logcheck-database for hints on how to write, test and maintain rules.
++%%DOCSDIR%%/README.logcheck-database for hints on how to write, test and maintain rules.
 +.SH "EXIT STATUS"
 +.PP
 +0 upon success; 1 upon failure

@@ -1,13 +1,13 @@
 ----------------------------------------------------------------------------
 Please make sure that all files listed in
 
-  %%PREFIX%%/etc/logcheck/logcheck.logfiles
+  %%ETCDIR%%/logcheck.logfiles
 
 are readable to the '%%LOGCHECK_GROUP%%' group (see also /etc/newsyslog.conf),
 or remove them from the aforementioned logcheck configuration file.
 
 For information on how to write local rulesets see
 
-  %%PREFIX%%/share/doc/logcheck/README.logcheck-database
+  %%DOCSDIR%%/README.logcheck-database
 
 ----------------------------------------------------------------------------

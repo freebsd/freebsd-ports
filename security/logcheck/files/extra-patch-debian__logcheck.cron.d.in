@@ -12,5 +12,5 @@
 -2 * * * *       logcheck    if [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck; fi
 -
 -# EOF
-+@reboot    if [ -x /usr/local/sbin/logcheck ]; then nice -n10 /usr/local/sbin/logcheck -R; fi
-+2 * * * *  if [ -x /usr/local/sbin/logcheck ]; then nice -n10 /usr/local/sbin/logcheck; fi
++@reboot    if [ -x %%PREFIX%%/sbin/logcheck ]; then nice -n10 %%PREFIX%%/sbin/logcheck -R; fi
++2 * * * *  if [ -x %%PREFIX%%/sbin/logcheck ]; then nice -n10 %%PREFIX%%/sbin/logcheck; fi
