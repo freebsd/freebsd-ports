@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}_source/src
 CFLAGS+=	-fsigned-char
 ALL_TARGET=	#empty
+MALE_JOBS_SAFE=	yes
 
 OPTIONS=	CLIENT		"Build client"			on \
 		DEDICATED	"Build dedicated server"	on \
