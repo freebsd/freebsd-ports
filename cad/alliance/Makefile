@@ -34,6 +34,12 @@ CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile
+.else
+BROKEN=		incomplete plist
+.endif
+
 ALLIANCE_TOP=	${PREFIX}/alliance
 SRCDIRLIST!=	${CAT} ${FILESDIR}/srcdirs.list
 CFLAGS+=	${SRCDIRLIST:S,^,-I${WRKSRC}/,}
