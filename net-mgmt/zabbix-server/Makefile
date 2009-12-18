@@ -24,11 +24,6 @@ CONFLICTS+=	${PORTNAME}-1.[0-6]*
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
-LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
-		curl:${PORTSDIR}/ftp/curl
-
-SUB_FILES=	pkg-message
-
 .if ${ZABBIX_BUILD} != "agent"
 MAN8=		${PORTNAME}_${ZABBIX_BUILD}.8
 USE_RC_SUBR=	${PORTNAME}_${ZABBIX_BUILD}
@@ -43,13 +38,20 @@ USERS=		zabbix
 GROUPS=		zabbix
 
 PLIST_SUB=	ZABBIX_BUILD=${ZABBIX_BUILD}
-SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD}
+SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD} ZABBIX_REQUIRE=${ZABBIX_REQUIRE}
 
 MAKE_ARGS+=	ARCH=freebsd
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} --with-net-snmp
+CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD}
 
 .if ${ZABBIX_BUILD} != "agent"
+LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
+		curl:${PORTSDIR}/ftp/curl
+
+SUB_FILES=	pkg-message
+
+CONFIGURE_ARGS+=	--with-net-snmp
+
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
@@ -62,12 +64,15 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 .include <bsd.port.options.mk>
 
 .ifndef WITHOUT_MYSQL
+ZABBIX_REQUIRE=	" mysql"
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 .elifdef WITH_PGSQL
+ZABBIX_REQUIRE=	" postgresql"
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql
 .elifdef WITH_SQLITE
+ZABBIX_REQUIRE=
 USE_SQLITE=	yes
 CONFIGURE_ARGS+=	--with-sqlite3
 .else
