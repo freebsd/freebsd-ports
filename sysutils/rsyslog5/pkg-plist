@@ -26,6 +26,8 @@ lib/rsyslog/lmtcpclt.la
 lib/rsyslog/lmtcpclt.so
 lib/rsyslog/lmtcpsrv.la
 lib/rsyslog/lmtcpsrv.so
+lib/rsyslog/lmzlibw.la
+lib/rsyslog/lmzlibw.so
 lib/rsyslog/ommail.la
 lib/rsyslog/ommail.so
 lib/rsyslog/omtesting.la
@@ -55,9 +57,9 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/ipv6.html
 %%PORTDOCS%%%%DOCSDIR%%/licensing.html
 %%PORTDOCS%%%%DOCSDIR%%/log_rotation_fix_size.html
-%%PORTDOCS%%%%DOCSDIR%%/man_rsyslogd.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
+%%PORTDOCS%%%%DOCSDIR%%/multi_ruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/netstream.html
 %%PORTDOCS%%%%DOCSDIR%%/ns_gtls.html
 %%PORTDOCS%%%%DOCSDIR%%/ns_ptcp.html
@@ -67,6 +69,8 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/omoracle.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
+%%PORTDOCS%%%%DOCSDIR%%/omstdout.html
+%%PORTDOCS%%%%DOCSDIR%%/omudpspoof.html
 %%PORTDOCS%%%%DOCSDIR%%/professional_support.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic.jpg
@@ -139,6 +143,8 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert_udp_relay.html
 %%PORTDOCS%%%%DOCSDIR%%/troubleshoot.html
 %%PORTDOCS%%%%DOCSDIR%%/v3compatibility.html
+%%PORTDOCS%%%%DOCSDIR%%/v4compatibility.html
+%%PORTDOCS%%%%DOCSDIR%%/v5compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/version_naming.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsyslog-example.conf
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

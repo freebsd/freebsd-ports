@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	4.4.2
+PORTVERSION=	5.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 .ifdef MNAME
@@ -14,15 +14,15 @@ PKGNAMESUFFIX?=	-${MNAME}
 .endif
 
 MAINTAINER=	cristianorolim@hotmail.com
-COMMENT=	Syslogd supporting SQL, TCP and TLS
+COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
-RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog4
+RUN_DEPENDS=	rsyslog>=5:${PORTSDIR}/sysutils/rsyslog5
 
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
-CONFLICTS=	rsyslog-[!4].[0-9]*
+CONFLICTS=	rsyslog-[2-4].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
@@ -75,8 +75,12 @@ IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
 
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
-DESCR?=		${.CURDIR}/../rsyslog4/pkg-descr
-MD5_FILE?=	${.CURDIR}/../rsyslog4/distinfo
+DESCR?=		${.CURDIR}/../rsyslog5/pkg-descr
+MD5_FILE?=	${.CURDIR}/../rsyslog5/distinfo
+.endif
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
 .endif
 
 .include <bsd.port.post.mk>

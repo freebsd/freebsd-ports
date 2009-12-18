@@ -1,7 +1,8 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/rsyslog55/files/Attic/rsyslogd.in,v 1.1 2009-01-27 19:40:41 pgollucci Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/rsyslog55/files/Attic/rsyslogd.in,v 1.2 2009-12-18 20:44:28 miwi Exp $
 #
+
 
 # PROVIDE: rsyslogd
 # REQUIRE: mountcritremote cleanvar newsyslog ldconfig

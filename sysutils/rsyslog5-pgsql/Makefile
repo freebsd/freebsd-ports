@@ -6,7 +6,7 @@
 #
 
 COMMENT=	PostgreSQL output module for rsyslog
-MASTERDIR=	${.CURDIR}/../rsyslog4
+MASTERDIR=	${.CURDIR}/../rsyslog5
 
 MNAME=	pgsql
 USE_PGSQL=	yes
