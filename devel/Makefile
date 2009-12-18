@@ -110,6 +110,7 @@
     SUBDIR += bnfc
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
+    SUBDIR += boehm-gc-redirect
     SUBDIR += bonobo
     SUBDIR += bonobo-conf
     SUBDIR += boost-all
