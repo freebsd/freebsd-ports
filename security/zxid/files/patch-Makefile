@@ -1,22 +1,22 @@
---- Makefile.orig	2008-04-17 09:47:50.000000000 +0800
-+++ Makefile	2008-04-18 15:30:13.000000000 +0800
-@@ -26,13 +26,13 @@
+--- Makefile.orig	2009-10-16 19:37:47.000000000 +0400
++++ Makefile	2009-10-30 00:02:20.000000000 +0300
+@@ -31,13 +31,13 @@
  
- default: seehelp zxid zxidsp zxidhlo zxidhlowsf zxidsimple zxidwsctool zxlogview zxidhrxmlwsc zxidhrxmlwsp
+ default: seehelp precheck zxid zxidhlo zxididp zxidhlowsf zxidsimple zxidwsctool zxlogview zxidhrxmlwsc zxidhrxmlwsp zxdecode zxcot
  
--all: seehelp zxid zxidsp zxidhlo zxidsimple zxlogview samlmod phpzxid javazxid apachezxid
-+all: seehelp zxid zxidsp zxidhlo zxidsimple zxlogview
+-all: seehelp precheck precheck_apache zxid zxidhlo zxididp zxidsimple zxlogview samlmod phpzxid javazxid apachezxid zxdecode zxcot smime
++all: seehelp precheck zxid zxidhlo zxididp zxidsimple zxlogview zxdecode zxcot smime
  
- ZXIDREL=0.25
- ZXIDVERSION=0x000025
+ ZXIDREL=0.38
+ ZXIDVERSION=0x000038
  
  ### Where package is installed (use `make PREFIX=/your/path' to change)
 -PREFIX=/usr/local/zxid/$(ZXIDREL)
 +PREFIX?=/usr/local/zxid/$(ZXIDREL)
  
  ### Where runtime configuration and temporary data is kept.
- ### If you change the following, be sure to edit zxidconf.h as well. N.B. Trailing / is needed.
-@@ -60,8 +60,8 @@
+ ### If you change the following, be sure to edit zxidconf.h as
+@@ -64,8 +64,8 @@
  ###
  
  TOP=$(shell pwd)
@@ -25,9 +25,9 @@
 +CURL_ROOT?=/usr/local
 +OPENSSL_ROOT?=/usr/local/ssl
  PHP_CONFIG=php-config
- APACHE_ROOT=/usr/local/httpd
- 
-@@ -75,11 +75,11 @@
+ CSHARP_CONFIG=true
+ PY_CONFIG=true
+@@ -82,11 +82,11 @@
  SWIG=swig
  AR=ar -crs
  ARX=ar -x
@@ -43,22 +43,16 @@
 +CFLAGS+=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
  #CFLAGS += -Os    # gcc-3.4.6 miscompiles with -Os on ix86
  CFLAGS += -Wall -Wno-parentheses -DMAYBE_UNUSED='__attribute__ ((unused))'
- 
-@@ -112,7 +112,7 @@
- CDEF+= -DUSE_CURL
- # Without OpenSSL signing and signature verification are not possible
- CDEF+= -DUSE_OPENSSL
--LIBS=-lpthread -L$(CURL_ROOT)/lib -L$(OPENSSL_ROOT)/lib -lcrypto -ldl -lcurl -lz
-+LIBS=-lpthread -L$(CURL_ROOT)/lib -L$(OPENSSL_ROOT)/lib -lcrypto -lcurl -lz
- 
- # Following ld flags as well as C flag -ffunction-sections are a quest to
- # eliminate unused functions from final link.
-@@ -848,7 +848,7 @@
- 	@$(ECHO)
- 	@$(ECHO) "to make sure the zxid CGI script can write to the $(ZXID_PATH)"
- 	@$(ECHO) "directory (substitute nobody with the user your web server runs as)."
--	@$(ECHO)/
-+	@$(ECHO)
+ CFLAGS += -ffunction-sections -fdata-sections
+@@ -1090,11 +1090,6 @@
  
  install: zxid libzxid.a libzxid.so.0.0 dir
  	@$(ECHO) "===== Installing in $(PREFIX) (to change do make install PREFIX=/your/path)"
+-	-mkdir -p $(PREFIX) $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include/zxid
+-	cp zxidhlo zxididp $(PREFIX)/bin
+-	cp libzxid.a libzxid.so* $(PREFIX)/lib
+-	cp libzxid.so.0.0 $(PREFIX)/lib
+-	cp *.h c/*.h $(PREFIX)/include/zxid
+ 	@$(ECHO) "You will need to copy zxidhlo binary where your web server can find it and"
+ 	@$(ECHO) "make sure your web server is configured to recognize zxidhlo as a CGI script."
+ 	@$(ECHO)

@@ -1,7 +1,12 @@
 @comment $FreeBSD$
-bin/zxid
+bin/zxidhlo
+bin/zxididp
 include/zxid/errmac.h
+include/zxid/logprint.h
+include/zxid/macglue.h
+include/zxid/platform.h
 include/zxid/saml2.h
+include/zxid/smimeutil.h
 include/zxid/wsf.h
 include/zxid/zx-a-data.h
 include/zxid/zx-ac-data.h
@@ -68,6 +73,6 @@ include/zxid/zxidnoswig.h
 include/zxid/zxidvers.h
 include/zxid/zxwsc.h
 lib/libzxid.a
+lib/libzxid.so
 lib/libzxid.so.0
-lib/libzxid.so.0.0
 @dirrmtry include/zxid
