@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 bin/clive
 %%SITE_PERL%%/clive/Host/Vimeo.pm
-%%SITE_PERL%%/clive/Host/Redtube.pm
 %%SITE_PERL%%/clive/Host/Evisor.pm
 %%SITE_PERL%%/clive/Host/Liveleak.pm
 %%SITE_PERL%%/clive/Host/Dailymotion.pm
