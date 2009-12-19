@@ -55,7 +55,7 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_EVOLUTION) && ${HAVE_GNOME:Mevolutiondataserver}!=""
+.if !defined(WITHOUT_EVOLUTION) && ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=	evolutiondataserver
 CONFIGURE_ARGS+=--enable-eds
 .else
