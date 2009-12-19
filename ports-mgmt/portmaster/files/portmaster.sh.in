@@ -423,8 +423,7 @@ for var in "$@" ; do
 	--packages-build)	packages_init build
 				unset PM_PACKAGES
 				PM_PACKAGES_BUILD=pmp_build
-				PM_BUILD_ONLY_LIST=pm_bol
-				export PM_PACKAGES_BUILD PM_BUILD_ONLY_LIST ;;
+				export PM_PACKAGES_BUILD ;;
 	--packages-if-newer)	packages_init newer
 				PM_PACKAGES_NEWER=pmp_newer
 				export PM_PACKAGES_NEWER ;;
@@ -434,8 +433,7 @@ for var in "$@" ; do
 				export LOCAL_PACKAGEDIR ;;
 	-[A-Za-z0-9]*)		newopts="$newopts $var" ;;
 	--delete-build-only)	PM_DEL_BUILD_ONLY=pm_dbo
-				PM_BUILD_ONLY_LIST=pm_bol
-				export PM_DEL_BUILD_ONLY PM_BUILD_ONLY_LIST ;;
+				export PM_DEL_BUILD_ONLY ;;
 	--help)			usage 0 ;;
 	--version)		version ; exit 0 ;;
 	--clean-distfiles)	CLEAN_DISTFILES=clean_distfiles ;;
@@ -450,6 +448,11 @@ for var in "$@" ; do
 	*)			newopts="$newopts $var" ;;
 	esac
 done
+
+if [ -n "$PM_PACKAGES_BUILD" -o -n "$PM_DEL_BUILD_ONLY" ]; then
+	PM_BUILD_ONLY_LIST=pm_bol
+	export PM_BUILD_ONLY_LIST
+fi
 
 set -- $newopts
 unset var newopts
@@ -1123,7 +1126,10 @@ pm_pkg_create () {
 	local pkgdir
 
 	if [ "$1" = "${packages}" ]; then
-		pm_mkdir_s ${1}/All ${1}/Latest ${1}/${portdir%/*}
+		for pkgdir in All Latest ${portdir%/*}; do
+			pm_mkdir_s ${packages}/${pkgdir} ||
+				fail "Cannot mkdir -p ${packages}/${pkgdir}"
+		done
 		pkgdir=${packages}/All
 		echo "===>>> Creating a package for new version $2"
 	else
@@ -1674,6 +1680,19 @@ update_port () {
 	return 0
 }
 
+clean_build_only_list () {
+	local dep temp_bodlg
+
+	for dep in $build_only_dl_g; do
+		case "$run_dl_g" in
+		*" ${dep} "*)	;;
+		*)	temp_bodlg="$temp_bodlg $dep" ;;
+		esac
+	done
+
+	build_only_dl_g=" $temp_bodlg "
+}
+
 dependency_check () {
 	# Global: doing_dep_check
 	# Global: run_dl_g build_only_dl_g
@@ -1700,7 +1719,7 @@ dependency_check () {
 	fi
 
 	if [ "$PM_BUILD_ONLY_LIST" = pmp_doing_build_deps ]; then
-		local rundeps dep run_dl build_only_dl temp_bodlg
+		local rundeps dep run_dl build_only_dl
 
 		if [ -z "$RECURSE_THOROUGH" ]; then
 			rundeps=`pm_make run-depends-list | sort -u`
@@ -1729,14 +1748,7 @@ dependency_check () {
 			esac
 		done
 
-		for dep in $build_only_dl_g; do
-			case "$run_dl_g" in
-			*" ${dep} "*)	;;
-			*)		temp_bodlg="$temp_bodlg $dep" ;;
-			esac
-		done
-
-		build_only_dl_g=" $temp_bodlg "
+		clean_build_only_list
 	fi
 
 	local d_port origin iport conflicts glob confl_p udf
@@ -1853,13 +1865,25 @@ create_master_rb_list () {
 	[ -n "$MASTER_RB_LIST" ] && export MASTER_RB_LIST=" $MASTER_RB_LIST"
 }
 
-pca () {
+post_config () {
+	local action
+
+	action=build
 	if [ "$PM_PACKAGES" = only ]; then
-		echo install
+		action=install
 	elif [ -n "$PM_PACKAGES" ]; then
-		echo 'build and/or install'
-	else
-		echo build
+		action='build and/or install'
+	fi
+
+	echo ''
+	echo "===>>> Starting $action for $* <<<==="
+	echo ''
+
+	unset CONFIG_SEEN_LIST CONFIG_ONLY
+
+	if [ -n "$PM_BUILD_ONLY_LIST" ]; then
+		unset run_dl_g
+		PM_BUILD_ONLY_LIST=pm_bol
 	fi
 }
 
@@ -1919,28 +1943,15 @@ multiport () {
 			run_dl_g="$run_dl_g ${pd}/`origin_from_pdb $port` " ;;
 				esac
 			done
-			build_only_dl_g=''
-			export run_dl_g build_only_dl_g
-		fi
-		if [ -n "$PM_DEL_BUILD_ONLY" ]; then
-			build_deps_il=''
-			export build_deps_il
 		fi
 
 		for port in $worklist; do
 			($0 $ARGS $port) || fail "Update for $port failed"
 			. $IPC_SAVE
 		done
-		check_fetch_only
-		unset CONFIG_SEEN_LIST CONFIG_ONLY
-		echo ''
-		echo "===>>> Starting `pca` for multiple ports <<<==="
-		echo ''
 
-		if [ -n "$PM_BUILD_ONLY_LIST" ]; then
-			unset run_dl_g
-			PM_BUILD_ONLY_LIST=pm_bol
-		fi
+		check_fetch_only
+		post_config multiple ports
 	fi
 
 	export PM_BUILDING=pmbuildingmultiport
@@ -2016,6 +2027,14 @@ if [ "$$" -eq "$PM_PARENT_PID" -a -z "$SHOW_WORK" ]; then
 		CONFIG_SEEN_LIST=':' ; CONFIG_ONLY=config_only
 		NO_DEP_UPDATES=no_dep_updates
 		export CONFIG_SEEN_LIST CONFIG_ONLY NO_DEP_UPDATES
+
+		if [ -n "$PM_BUILD_ONLY_LIST" ]; then
+			run_dl_g='' ; build_only_dl_g=''
+			export run_dl_g build_only_dl_g
+		fi
+		if [ -n "$PM_DEL_BUILD_ONLY" ]; then
+			build_deps_il='' ; export build_deps_il
+		fi
 	fi
 
 	[ -n "$NO_BACKUP" -a -z "$MAKE_PACKAGE" ] || init_packages
@@ -2052,6 +2071,9 @@ all_config () {
 		origin=`origin_from_pdb $iport`
 		case "$CONFIG_SEEN_LIST" in *:${origin}:*) continue ;; esac
 
+		[ -n "$PM_BUILD_ONLY_LIST" ] &&
+			run_dl_g="$run_dl_g ${pd}/${origin} "
+
 		check_exclude $iport || continue
 
 		PM_DEPTH=
@@ -2064,6 +2086,9 @@ all_config () {
 
 	ports_by_category
 	echo "===>>> Starting check of installed ports for available updates"
+
+	[ -n "$PM_BUILD_ONLY_LIST" ] &&
+		PM_BUILD_ONLY_LIST=pmp_doing_build_deps
 
 	if [ -n "$CONFIG_ONLY" ]; then
 		[ -n "$FETCH_ONLY" ] && export ALL_FETCH=all_fetch
@@ -2089,10 +2114,9 @@ all_config () {
 			safe_exit
 		fi
 
-		unset CONFIG_SEEN_LIST CONFIG_ONLY
-		echo ''
-		echo "===>>> Starting `pca` for ports that need updating <<<==="
-		echo ''
+		post_config for ports that need updating
+
+		[ -n "$PM_BUILD_ONLY_LIST" ] && clean_build_only_list
 	fi
 
 	export PM_BUILDING=pmbuildingall
@@ -2336,18 +2360,8 @@ dofetch () {
 fi
 
 if [ -n "$CONFIG_ONLY" ]; then
-	if [ "$$" -eq "$PM_PARENT_PID" ]; then
-		# Keep in sync in multiport()
-		if [ -n "$PM_BUILD_ONLY_LIST" ]; then
-			PM_BUILD_ONLY_LIST=pmp_doing_build_deps
-			run_dl_g='' ; build_only_dl_g=''
-			export run_dl_g build_only_dl_g
-		fi
-		if [ -n "$PM_DEL_BUILD_ONLY" ]; then
-			build_deps_il=''
-			export build_deps_il
-		fi
-	fi
+	[ "$$" -eq "$PM_PARENT_PID" -a -n "$PM_BUILD_ONLY_LIST" ] &&
+		PM_BUILD_ONLY_LIST=pmp_doing_build_deps
 
 	[ -z "$PM_PACKAGES" ] && make_config
 
@@ -2400,15 +2414,8 @@ if [ -n "$CONFIG_ONLY" ]; then
 		unset URB_YES MASTER_RB_LIST ; URB_DONE_LIST=':'
 	fi
 
-	if [ -n "$PM_BUILD_ONLY_LIST" ]; then
-		unset run_dl_g
-		PM_BUILD_ONLY_LIST=pm_bol
-	fi
-
 	check_fetch_only
-	unset CONFIG_SEEN_LIST CONFIG_ONLY
-	echo "===>>> Starting `pca` for $portdir <<<==="
-	echo ''
+	post_config $portdir
 fi
 
 [ -z "$PM_BUILDING" ] && export PM_BUILDING=pmbuildingmain
@@ -2505,7 +2512,7 @@ fetch_package () {
 				release=packages-${release%%\.*}-stable ;;
 		[678]\.[0-9]-RELEASE*)
 				release=packages-${release%-RELEASE*}-release ;;
-		9\.0-CURRENT)	release=packages-8-current ;;	# XXX
+		9\.0-CURRENT)	release=packages-9-current ;;
 		*RC[0-9]*)	release=${release%-RC[0-9]}
 				release=packages-${release}-release ;;
 		*BETA[0-9]*)	release=${release%-BETA[0-9]}
@@ -2537,13 +2544,21 @@ fetch_package () {
 	fi
 
 	if [ -z "$latest_pv" ]; then
-		case "$new_port" in
-		*\.*)	s=${new_port%%\.*} ;;
-		*)	s=`pm_make -V LATEST_LINK` ;;
-		esac
-		latest_pv=`fetch -q -o - ${sitepath} 2>/dev/null | grep "href=\"${s}"`
+		dirlist=`echo ${TMPDIR}/f-${PM_PARENT_PID}-dl-${portdir%/*}*`
+		if [ ! -r "$dirlist" ]; then
+			pm_unlink $dirlist		# JIC
+			dirlist=`pm_mktemp dl-${portdir%/*}`
+			fetch -q -o - ${sitepath} 2>/dev/null |
+				sed -e "s#%2[cC]#,#g" -e "s#%2[bB]#+#g" > \
+				$dirlist
+		fi
+
+		for s in ${new_port%\.*} ${new_port%%\.*} ${new_port%-*}; do
+			latest_pv=`grep "href=\"${s}" $dirlist`
+			[ -n "$latest_pv" ] && break
+		done
 	fi
-	unset s
+	unset dirlist s
 
 	if [ -z "$latest_pv" ]; then
 		fetch_package $new_port try
@@ -2552,19 +2567,18 @@ fetch_package () {
 		fi
 	fi
 
+	ponly_err="Try --packages-if-newer, or do not use -PP/--packages-only"
+
 	if [ -z "$latest_pv" ]; then
 		echo "===>>> Package and/or archive not found at:"
 		echo "${sitepath}"
 		echo ''
 		echo "       Check the pkg_add(1) man page for information"
 		echo "       on setting the PACKAGESITE environment variable"
-		fail 'No package archive found'
+		[ "$PM_PACKAGES" = only ] && fail $ponly_err
 	else
 		latest_pv=${latest_pv#*href=\"}
 		latest_pv=${latest_pv%%\.tbz*}
-		case "$latest_pv" in
-		*%2[cC]*)	latest_pv=`echo $latest_pv | sed s#%2[cC]#,#` ;;
-		esac
 	fi
 
 notnewer () {
@@ -2579,7 +2593,7 @@ notnewer () {
 		use_package=up_equal
 		[ -n "$PM_VERBOSE" ] &&
 	echo "===>>> Available package ($latest_pv) matches the ports tree"
-	elif [ -n "$PM_PACKAGES_NEWER" ]; then
+	elif [ -n "$latest_pv" -a -n "$PM_PACKAGES_NEWER" ]; then
 		if [ -n "$upg_port" ]; then
 			case `pkg_version -t $upg_port $latest_pv` in
 			\<)	use_package=up_newer
@@ -2598,7 +2612,7 @@ notnewer () {
 			[ -n "$PM_VERBOSE" ] &&
 			echo "===>>> There is a package available ($latest_pv)"
 		fi
-	else
+	elif [ -n "$latest_pv" ]; then
 		case `pkg_version -t $new_port $latest_pv` in
 		\<)	# Could happen if ports tree is out of date
 			use_package=up_old_tree
@@ -2620,7 +2634,7 @@ notnewer () {
 						use_package=up_force2
 				echo "===>>> Installing anyway due to -f"
 					else
-	fail "Try --packages-if-newer, or do not use -PP/--packages-only"
+						fail $ponly_err
 					fi
 				fi
 			fi ;;
