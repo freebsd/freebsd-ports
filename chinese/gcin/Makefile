@@ -36,6 +36,14 @@ MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		gcin-message.1 gcin-setup.1 gtab-merge.1 juyin-learn.1 \
 		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_QT_IM_MODULE)
+USE_QT_VER=	4
+QT_COMPONENTS=	inputmethods qmake_build moc_build corelib gui
+LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
@@ -62,12 +70,6 @@ post-extract:
 		${WRKSRC}/data/Makefile
 	@${REINPLACE_CMD} -e 's,noseeing-inst,noseeing-inst noseeadd.rb,' \
 		${WRKSRC}/scripts/Makefile
-.endif
-
-.if defined(WITH_QT_IM_MODULE)
-USE_QT_VER=	4
-QT_COMPONENTS=	inputmethods qmake_build moc_build corelib gui
-LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
 .endif
 
 post-patch:
@@ -115,13 +117,13 @@ PLIST_SUB+=	QT_IM_MODULE="@comment "
 
 post-build:
 .if !defined(DEBUG_FLAGS)
-	@${FIND} ${WRKSRC} -name "*.so*" | ${XARGS} strip
+	@${FIND} ${WRKSRC} -name "*.so*" | ${XARGS} ${STRIP_CMD}
 .endif
 
 post-install:
 .if !defined(DEBUG_FLAGS)
 .for f in gcin* gtab-merge juyin-learn phoa2* sim2trad trad2sim ts*
-	@strip ${PREFIX}/bin/${f}
+	@${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
