@@ -57,6 +57,10 @@ CONFIGURE_ARGS+=	--enable-poppler-cairo
 CONFIGURE_ARGS+=	--enable-poppler-cairo=no
 .endif
 
+.if ${OSVERSION} < 700000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_document.cpp
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|ieefp.h|ieeefp.h|' \
 		${WRKSRC}/src/2geom/bezier-utils.cpp
