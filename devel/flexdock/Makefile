@@ -22,6 +22,12 @@ MAKE_ARGS=	dist
 
 PORTDOCS=	"User Guide.pdf" api
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not install on 6.x
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${UNZIP_CMD} ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
@@ -38,4 +44,4 @@ post-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
