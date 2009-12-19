@@ -6,8 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.21
-PORTREVISION=	3
+PORTVERSION=	0.22
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
@@ -18,18 +17,20 @@ COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-RUN_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
+RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
 
 CONFLICTS=	mythtv-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
-USE_QT_VER=	3
+USE_QT_VER=	4
+QT_COMPONENTS=	gui sql network script linguist_build l10n \
+		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+REINPLACE_ARGS=	-i ""
 
 DATADIR=	${PREFIX}/share/mythtv
 
@@ -41,31 +42,19 @@ CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" CPPFLAGS="${CPPFLAGS}  ${Q
 
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-v4l --disable-ivtv --disable-firewire \
 		--disable-dvb --disable-dbox2 --disable-hdhomerun --disable-iptv \
-		--without-bindings=perl,python --enable-xvmc --enable-xvmc-pro --disable-xvmcw \
-		--enable-glx-procaddrarb
+		--disable-hdpvr --without-bindings=perl,python \
+		--enable-xvmc --enable-xvmc-pro --disable-xvmcw --enable-glx-procaddrarb
 
-QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
+
+DESKTOP_ENTRIES="MythTV Frontend" "MythTV is a homebrew PVR project" "" \
+		"mythfrontend" "AudioVideo;Video;" false
 
 OPTIONS=	ARTS "arts sound driver" off \
 		JACK "JACK sound driver" off \
-		OPENGL "OpenGL video support (see pre-build message)" off
+		OPENGL "OpenGL support" on
 
 .include <bsd.port.pre.mk>
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Please hit Ctrl-C right now and install QT 3.3 with"
-	@${ECHO_MSG} "OpenGL support with the following command, if it isn't"
-	@${ECHO_MSG} "already:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "    cd /usr/ports/x11-toolkits/qt33"
-	@${ECHO_MSG} "    make WITH_OPENGL=yes install clean"
-	@${ECHO_MSG}
-	@sleep 3
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-	${WRKSRC}/configure
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
@@ -86,5 +75,13 @@ CONFIGURE_ARGS+=	--enable-opengl-video
 .else
 CONFIGURE_ARGS+=	--disable-opengl-video
 .endif
+
+post-patch:
+		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+			${WRKSRC}/libs/libmythtv/libmythtv.pro \
+			${WRKSRC}/libs/libavformat/libavformat.pro \
+			${WRKSRC}/bindings/perl/MythTV/Recording.pm \
+			${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
+			${WRKSRC}/programs/scripts/database/mythconverg_backup.pl
 
 .include <bsd.port.post.mk>

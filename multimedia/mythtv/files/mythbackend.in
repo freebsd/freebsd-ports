@@ -7,23 +7,26 @@
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
-# Define mythbackend_enable in one of these places:
-#       /etc/rc.conf
-#       /etc/rc.conf.local
+# Define mythbackend_enable in /etc/rc.conf[.local] to enable mythbackend
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-mythbackend_enable=${mythbackend_enable-"NO"}
-PATH=${PATH}:%%PREFIX%%/bin
+# mythbackend_enable (bool):  Set to "NO" by default.
+#                             Set it to "YES" to enable mythbackend.
+# mythbackend_logfile (str):  Custom logfile for mythbackend.
+#                             (default /var/log/mythbackend.log)
+# mythbackend_flags (str):    Additional flags for mythbackend.
 
 . %%RC_SUBR%%
 
 name="mythbackend"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/bin/mythbackend &"
+command="%%PREFIX%%/bin/${name}"
 
 load_rc_config $name
 
-start_cmd="echo \"Starting ${name}.\"; ${command}"
+: ${mythbackend_enable="NO"}
+: ${mythbackend_logfile="/var/log/${name}.log"}
+: ${mythbackend_flags=""}
+
+command_args="-d -l ${mythbackend_logfile}"
 
 run_rc_command "$1"
