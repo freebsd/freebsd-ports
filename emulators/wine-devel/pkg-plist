@@ -232,6 +232,8 @@ include/wine/windows/dxgi.idl
 include/wine/windows/dxgitype.h
 include/wine/windows/dxgitype.idl
 include/wine/windows/dyngraph.idl
+include/wine/windows/endpointvolume.h
+include/wine/windows/endpointvolume.idl
 include/wine/windows/errorrep.h
 include/wine/windows/errors.h
 include/wine/windows/evcode.h
@@ -331,6 +333,8 @@ include/wine/windows/minmax.h
 include/wine/windows/mlang.h
 include/wine/windows/mlang.idl
 include/wine/windows/mmddk.h
+include/wine/windows/mmdeviceapi.h
+include/wine/windows/mmdeviceapi.idl
 include/wine/windows/mmreg.h
 include/wine/windows/mmstream.h
 include/wine/windows/mmstream.idl
@@ -840,6 +844,7 @@ lib/wine/fakedlls/faultrep.dll
 lib/wine/fakedlls/fltlib.dll
 lib/wine/fakedlls/fusion.dll
 lib/wine/fakedlls/fwpuclnt.dll
+lib/wine/fakedlls/gdi.exe16
 lib/wine/fakedlls/gdi32.dll
 lib/wine/fakedlls/gdiplus.dll
 lib/wine/fakedlls/glu32.dll
@@ -887,6 +892,7 @@ lib/wine/fakedlls/mciseq.dll
 lib/wine/fakedlls/mciwave.dll
 lib/wine/fakedlls/midimap.dll
 lib/wine/fakedlls/mlang.dll
+lib/wine/fakedlls/mmdevapi.dll
 lib/wine/fakedlls/mmdevldr.vxd
 lib/wine/fakedlls/mmsystem.dll16
 lib/wine/fakedlls/monodebg.vxd
@@ -1080,6 +1086,7 @@ lib/wine/fakedlls/wineesd.drv
 lib/wine/fakedlls/winefile.exe
 lib/wine/fakedlls/winejack.drv
 lib/wine/fakedlls/winejoystick.drv
+lib/wine/fakedlls/winemapi.dll
 lib/wine/fakedlls/winemenubuilder.exe
 lib/wine/fakedlls/winemine.exe
 lib/wine/fakedlls/winenas.drv
@@ -1128,7 +1135,7 @@ lib/wine/faultrep.dll.so
 lib/wine/fltlib.dll.so
 lib/wine/fusion.dll.so
 lib/wine/fwpuclnt.dll.so
-lib/wine/gdi.exe16
+lib/wine/gdi.exe16.so
 lib/wine/gdi32.dll.so
 lib/wine/gdiplus.dll.so
 lib/wine/glu32.dll.so
@@ -1326,6 +1333,7 @@ lib/wine/mciseq.dll.so
 lib/wine/mciwave.dll.so
 lib/wine/midimap.dll.so
 lib/wine/mlang.dll.so
+lib/wine/mmdevapi.dll.so
 lib/wine/mmdevldr.vxd.so
 lib/wine/mmsystem.dll16.so
 lib/wine/monodebg.vxd.so
@@ -1520,6 +1528,7 @@ lib/wine/wineesd.drv.so
 lib/wine/winefile.exe.so
 lib/wine/winejack.drv.so
 lib/wine/winejoystick.drv.so
+lib/wine/winemapi.dll.so
 lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
 lib/wine/winenas.drv.so
