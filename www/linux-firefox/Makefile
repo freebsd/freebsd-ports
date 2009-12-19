@@ -7,9 +7,10 @@
 
 PORTNAME=	firefox
 PORTVERSION=	3.0.16
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
+MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}-real/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
