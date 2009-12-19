@@ -8,6 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.28.1.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -28,7 +29,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		libtool:${PORTSDIR}/devel/libtool22 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
-		exctags:${PORTSDIR}/devel/ctags
+		exctags:${PORTSDIR}/devel/ctags \
+		gdb66:${PORTSDIR}/devel/gdb6
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autotools:run
