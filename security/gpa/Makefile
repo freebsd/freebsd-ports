@@ -7,6 +7,7 @@
 
 PORTNAME=	gpa
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/603/
 
@@ -22,8 +23,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
+		GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap"
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	NLS "Native language support" on
