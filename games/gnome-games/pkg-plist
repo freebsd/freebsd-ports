@@ -851,6 +851,11 @@ share/gnome/help/glines/cs/figures/glines-gameover.png
 share/gnome/help/glines/cs/figures/glines-startgame.png
 share/gnome/help/glines/cs/figures/preferences.png
 share/gnome/help/glines/cs/glines.xml
+share/gnome/help/glchess/da/figures/game.png
+share/gnome/help/glchess/da/figures/new_game.png
+share/gnome/help/glchess/da/figures/preferences_game.png
+share/gnome/help/glchess/da/figures/preferences_view.png
+share/gnome/help/glchess/da/glchess.xml
 share/gnome/help/glines/de/figures/glines-gameover.png
 share/gnome/help/glines/de/figures/glines-startgame.png
 share/gnome/help/glines/de/figures/preferences.png
@@ -1977,6 +1982,7 @@ share/omf/blackjack/blackjack-sv.omf
 share/omf/glchess/glchess-C.omf
 share/omf/glchess/glchess-ca.omf
 share/omf/glchess/glchess-cs.omf
+share/omf/glchess/glchess-da.omf
 share/omf/glchess/glchess-de.omf
 share/omf/glchess/glchess-el.omf
 share/omf/glchess/glchess-en_GB.omf
@@ -2532,6 +2538,8 @@ share/omf/same-gnome/same-gnome-sv.omf
 @dirrm share/gnome/help/glchess/el
 @dirrm share/gnome/help/glchess/de/figures
 @dirrm share/gnome/help/glchess/de
+@dirrm share/gnome/help/glchess/da/figures
+@dirrm share/gnome/help/glchess/da
 @dirrm share/gnome/help/glchess/cs/figures
 @dirrm share/gnome/help/glchess/cs
 @dirrm share/gnome/help/glchess/ca/figures
