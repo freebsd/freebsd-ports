@@ -146,8 +146,7 @@
 %%WWWDIR%%/core/Updates/0.4.4.php
 %%WWWDIR%%/core/Updates/0.4.php
 %%WWWDIR%%/core/Updates/0.5.php
-%%WWWDIR%%/core/Updates/0.5.2.php
-%%WWWDIR%%/core/Updates/0.5.3.php
+%%WWWDIR%%/core/Updates/0.5.4.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
