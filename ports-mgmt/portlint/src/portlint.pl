@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.187 2009/07/18 21:39:30 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.191 2009/12/19 21:19:43 marcus Exp $
 #
 
 use strict;
@@ -29,7 +29,7 @@ use IPC::Open2;
 use POSIX qw(strftime);
 
 sub perror($$$$);
-our ($opt_a, $opt_A, $opt_b, $opt_C, $opt_c, $opt_g, $opt_h, $opt_t, $opt_v, $opt_M, $opt_N, $opt_B, $opt_V, @ALLOWED_FULL_PATHS);
+our ($opt_a, $opt_A, $opt_b, $opt_C, $opt_c, $opt_g, $opt_h, $opt_t, $opt_v, $opt_M, $opt_N, $opt_B, $opt_V, @ALLOWED_FULL_PATHS, @MASTERSITES_WHITELIST);
 
 my ($err, $warn);
 my ($extrafile, $parenwarn, $committer, $verbose, $usetabs, $newport,
@@ -46,11 +46,12 @@ $contblank = 1;
 $portdir = '.';
 
 @ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/inetd.conf);
+@MASTERSITES_WHITELIST = qw(googlecode.com);
 
 # version variables
 my $major = 2;
 my $minor = 12;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -708,6 +709,11 @@ sub checkplist {
 			&perror("WARN", $file, $., "use \%\%SITE_PERL\%\% ".
 					"instead of lib/perl5/site_perl/\%\%PERL_VER\%\%.");
 		}
+		if ($osname ne 'NetBSD' && m'([\w\d]+-portbld-freebsd\d+\.\d+)') {
+			&perror("WARN", $file, $., "possible direct use of the ".
+				"CONFIGURE_TARGET value ($1).  Consider using the plist ".
+				"substitution %%CONFIGURE_TARGET%% instead.");
+		}
 		$seen_special++ if /[\%\@]/;
 		$seen_dirrm_docsdir++ if /^(\%\%PORTDOCS\%\%)?\@dirrm\s+\%\%DOCSDIR\%\%/ || /^(\%\%PORTDOCS\%\%)?\@unexec\s+(\/bin\/)?rmdir\s+\%D\/\%\%DOCSDIR\%\%\s+2\>\s*\/dev\/null\s+\|\|\s+(\/usr\/bin\/)?true/;
 		if ($_ =~ /^\@/) {
@@ -839,7 +845,7 @@ sub checkplist {
 				"If possible, install this file with a different name.");
 		}
 
-		if ($_ =~ m|/a.out$| && $_ !~ /^\@/) {
+		if ($_ =~ m|/a\.out$| && $_ !~ /^\@/) {
 			&perror("WARN", $file, $., "this port installs a file named ".
 				"\"a.out\".  This file may be deleted if ".
 				"daily_clean_disks_enable=\"YES\" in /etc/periodic.conf.  ".
@@ -2293,7 +2299,8 @@ DIST_SUBDIR EXTRACT_ONLY
 	}
 
 	# check number of MASTER_SITES
-	if ($makevar{MASTER_SITES} ne '') {
+	if ($makevar{MASTER_SITES} ne '' &&
+		! grep {$makevar{MASTER_SITES} =~ m|$_|} @MASTERSITES_WHITELIST) {
 		my @sites = split(/\s+/, $makevar{MASTER_SITES});
 		if (scalar(@sites) == 1) {
 			&perror("WARN", $file, -1, "only one MASTER_SITE configured.  ".
