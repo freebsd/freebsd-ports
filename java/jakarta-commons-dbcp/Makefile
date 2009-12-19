@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${JAVAJARDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections \
 		${JAVAJARDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
 
-BROKEN=		does not build
+BROKEN=		does not build unless jakarta-commons-collections is compiled with jdk15
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4 1.5
