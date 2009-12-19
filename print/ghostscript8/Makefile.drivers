@@ -122,6 +122,8 @@ GS_lp8500c	"D: Epson LP-8500C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lp3000c	"D: Epson LP-3000C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lp8200c	"D: Epson LP-8200C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lp8000c	"D: Epson LP-8000C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_eplmono	"D: Epson Esc/Page Generic driver, mono"	${OPTIONS_GS_DEFAULT_ON} \
+GS_eplcolor	"D: Epson Esc/Page Generic driver, color"	${OPTIONS_GS_DEFAULT_ON} \
 GS_epl6100	"D: Epson EPL-6100 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
 GS_epl5900	"D: Epson EPL-5900 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
 GS_epl5800	"D: Epson EPL-5800 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
@@ -163,6 +165,7 @@ GS_photoex	"D: Epson Stylus Color Photo/Photo EX/Photo 700"	${OPTIONS_GS_DEFAULT
 GS_fmlbp	"D: Fujitsu contrib2xx Page Printer"	${OPTIONS_GS_DEFAULT_ON} \
 GS_fmpr		"D: Fujitsu contrib"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lp2563	"D: HP 2563B line printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdnj500	"D: HP DesignJet 500"	${OPTIONS_GS_DEFAULT_ON} \
 GS_dnj650c	"D: HP DesignJet 650C"	${OPTIONS_GS_DEFAULT_ON} \
 GS_deskjet	"D: HP DeskJet and DeskJet Plus"	${OPTIONS_GS_DEFAULT_ON} \
 GS_djet500	"D: HP DeskJet 500 (for DeskJet 600 use -r600)"	${OPTIONS_GS_DEFAULT_ON} \
