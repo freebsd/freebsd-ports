@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mongo
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL classes for Mongo Database Driver
 
 BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/spl.so:${PORTSDIR}/devel/php5-spl
