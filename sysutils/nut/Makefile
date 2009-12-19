@@ -165,6 +165,10 @@ CONFIGURE_ARGS+=	--with-ipv6
 CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|<hal/|<|' ${WRKSRC}/drivers/main-hal.c ${WRKSRC}/drivers/dstate-hal.c ${WRKSRC}/drivers/dstate-hal.h
+	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share| ; s|$${datarootdir}|${PREFIX}/share|' ${WRKSRC}/m4/nut_check_libhal.m4
+
 pre-install:
 	@${MKDIR} ${PREFIX}/libexec/nut
 	@${MKDIR} ${STATEDIR}
