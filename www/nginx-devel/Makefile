@@ -45,6 +45,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		MAIL_SSL_MODULE		"Enable mail_ssl module" off \
 		WWW			"Enable html sample files" on \
 		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
+		HTTP_AUTH_PAM_MODULE    "3rd party http_auth_pam module" off \
 		HTTP_EVAL_MODULE	"3rd party eval module" off \
 		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
 		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
@@ -135,6 +136,13 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_
 
 .if defined(WITH_HTTP_ADDITION_MODULE)
 CONFIGURE_ARGS+=--with-http_addition_module
+.endif
+
+.if defined(WITH_HTTP_AUTH_PAM_MODULE)
+NGINX_AUTH_PAM_MODULE_VERSION=	1.1
+MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
+DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}.tar.gz:auth_pam
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}
 .endif
 
 .if defined(WITHOUT_HTTP_CACHE_MODULE)
