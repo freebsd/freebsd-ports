@@ -62,18 +62,21 @@ failures on 6.x-stable:
 failures on 7.x-stable:
 <a href="amd64-7-failure.html">amd64</a>
 <a href="i386-7-failure.html">i386</a>
+<a href="ia64-7-failure.html">ia64</a>
 <a href="sparc64-7-failure.html">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
 failures on 8.x-current:
 <a href="amd64-8-failure.html">amd64</a>
 <a href="i386-8-failure.html">i386</a>
+<a href="ia64-8-failure.html">ia64</a>
 <a href="sparc64-8-failure.html">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
 failures on 9.x-current:
 <a href="amd64-9-failure.html">amd64</a>
 <a href="i386-9-failure.html">i386</a>
+<a href="ia64-9-failure.html">ia64</a>
 <a href="sparc64-9-failure.html">sparc64</a>
 <br>
 <br>
@@ -122,36 +125,42 @@ on 6.x-stable:
 on 7.x-stable:
 <a href="amd64-7-full/">amd64</a>
 <a href="i386-7-full/">i386</a>
+<a href="ia64-7-full/">ia64</a>
 <a href="sparc64-7-full/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
 on 7.x-stable:
 <a href="amd64-7-latest/">amd64</a>
 <a href="i386-7-latest/">i386</a>
+<a href="ia64-7-latest/">ia64</a>
 <a href="sparc64-7-latest/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
 on 8.x-current:
 <a href="amd64-8-full/">amd64</a>
 <a href="i386-8-full/">i386</a>
+<a href="ia64-8-full/">ia64</a>
 <a href="sparc64-8-full/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
 on 8.x-current:
 <a href="amd64-8-latest/">amd64</a>
 <a href="i386-8-latest/">i386</a>
+<a href="ia64-8-latest/">ia64</a>
 <a href="sparc64-8-latest/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
 on 9.x-current:
 <a href="amd64-9-full/">amd64</a>
 <a href="i386-9-full/">i386</a>
+<a href="ia64-9-full/">ia64</a>
 <a href="sparc64-9-full/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
 on 9.x-current:
 <a href="amd64-9-latest/">amd64</a>
 <a href="i386-9-latest/">i386</a>
+<a href="ia64-9-latest/">ia64</a>
 <a href="sparc64-9-latest/">sparc64</a>
 <br>
 <br>
@@ -219,36 +228,42 @@ on 6.x-stable:
 on 7.x-stable:
 <a href="amd64-7-full-logs">amd64</a>
 <a href="i386-7-full-logs">i386</a>
+<a href="ia64-7-full-logs">ia64</a>
 <a href="sparc64-7-full-logs">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
 7.x-stable:
 <a href="amd64-7-latest-logs">amd64</a>
 <a href="i386-7-latest-logs">i386</a>
+<a href="ia64-7-latest-logs">ia64</a>
 <a href="sparc64-7-latest-logs">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
 on 8.x-current:
 <a href="amd64-8-full-logs">amd64</a>
 <a href="i386-8-full-logs">i386</a>
+<a href="ia64-8-full-logs">ia64</a>
 <a href="sparc64-8-full-logs">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
 8.x-current:
 <a href="amd64-8-latest-logs">amd64</a>
 <a href="i386-8-latest-logs">i386</a>
+<a href="ia64-8-latest-logs">ia64</a>
 <a href="sparc64-8-latest-logs">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
 on 9.x-current:
 <a href="amd64-9-full-logs">amd64</a>
 <a href="i386-9-full-logs">i386</a>
+<a href="ia64-9-full-logs">ia64</a>
 <a href="sparc64-9-full-logs">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
 9.x-current:
 <a href="amd64-9-latest-logs">amd64</a>
 <a href="i386-9-latest-logs">i386</a>
+<a href="ia64-9-latest-logs">ia64</a>
 <a href="sparc64-9-latest-logs">sparc64</a>
 <br>
 <br>
@@ -309,18 +324,21 @@ latest run on 6-stable:
 latest run on 7-stable:
 <a href="amd64-7-packages-latest/">amd64</a>
 <a href="i386-7-packages-latest/">i386</a>
+<a href="ia64-7-packages-latest/">ia64</a>
 <a href="sparc64-7-packages-latest/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
 latest run on 8-current:
 <a href="amd64-8-packages-latest/">amd64</a>
 <a href="i386-8-packages-latest/">i386</a>
+<a href="ia64-8-packages-latest/">ia64</a>
 <a href="sparc64-8-packages-latest/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
 latest run on 9-current:
 <a href="amd64-9-packages-latest/">amd64</a>
 <a href="i386-9-packages-latest/">i386</a>
+<a href="ia64-9-packages-latest/">ia64</a>
 <a href="sparc64-9-packages-latest/">sparc64</a>
 <br>
 <br>
@@ -413,7 +431,7 @@ Bill Fenner's distfile checker</a>
 for that.</li>
 
 <li>The ports are built on machines that are mostly running
- 7.x-STABLE, with some 6.x-STABLE machines.  If your port depends on
+ 9-CURRENT, with some 8.x-STABLE machines.  If your port depends on
  the result of uname(3) or sysctl to determine the running version of
  FreeBSD, change it to use uname(1) instead (the builds use a dummy
  uname(1) that reports the target version of FreeBSD), or change it to
