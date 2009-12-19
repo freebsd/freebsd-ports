@@ -19,6 +19,9 @@ COMMENT=	Eclipse Modeling Framework
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+DEPRECATED=	This plugin can be installed from within eclipse via the updater
+EXPIRATION_DATE=2010-01-19
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
