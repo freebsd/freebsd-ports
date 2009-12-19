@@ -270,6 +270,7 @@ share/locale/mn/LC_MESSAGES/eog.mo
 share/locale/mr/LC_MESSAGES/eog.mo
 share/locale/ms/LC_MESSAGES/eog.mo
 share/locale/nb/LC_MESSAGES/eog.mo
+share/locale/nds/LC_MESSAGES/eog.mo
 share/locale/ne/LC_MESSAGES/eog.mo
 share/locale/nl/LC_MESSAGES/eog.mo
 share/locale/nn/LC_MESSAGES/eog.mo
@@ -429,6 +430,8 @@ share/omf/eog/eog-zh_TW.omf
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
