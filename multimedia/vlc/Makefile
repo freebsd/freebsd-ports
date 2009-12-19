@@ -24,13 +24,12 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-
 
 OPTIONS=	A52 "a52 audio support, many DVDs use this" On \
 		AALIB "Aalib Console Graphics Support" Off \
-		ARTS "Enable arts sound support" Off \
 		AVAHI "Avahi (Rendezvous/Bonjour (R) ) networking" On \
 		CACA "Libcaca Console Graphics Support" Off \
 		DBUS "Enable D-Bus control support" On \
 		DEBUG "Enable debuging support" Off \
+		DIRAC "Enable Dirac support" Off \
 		DTS "DTS decoder support, many DVDs use this" On \
-		ESOUND "Esound Support" Off \
 		FAAC "Faac audio encoder (mp4/aac) support" Off \
 		FAAD "Faad audio decoder (mp4/aac) support" On \
 		FLAC "Flac audio codec support" On \
@@ -62,17 +61,6 @@ OPTIONS=	A52 "a52 audio support, many DVDs use this" On \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-.if !defined(WITHOUT_X11)
-WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnometarget libxml2
-.endif
-.if !defined(WITHOUT_SDL) && !defined(WITHOUT_X11)
-WANT_SDL=	yes
-.endif
-.if !defined(WITHOUT_QT4) && !defined(WITHOUT_X11)
-USE_QT_VER+=	4
-QT_COMPONENTS+=	gui corelib moc_build rcc_build uic_build
-.endif
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 
@@ -99,7 +87,26 @@ MAN1=		vlc.1 \
 		vlc-config.1 \
 		vlc-wrapper.1
 
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_X11)
+WANT_GNOME=	yes
+USE_GNOME=	gnomehack gnometarget libxml2
+.endif
+.if !defined(WITHOUT_SDL) && !defined(WITHOUT_X11)
+WANT_SDL=	yes
+.endif
+.if !defined(WITHOUT_QT4) && !defined(WITHOUT_X11)
+USE_QT_VER=	4
+QT_COMPONENTS=	gui corelib moc_build rcc_build uic_build
+.endif
+
 .include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 700042) && defined(WITH_QT4)
+IGNORE=	does not build on FreeBSD 6.x with Qt4.x, set this OPTION to off or define\
+	WITHOUT_QT4 to build CLI only version
+.endif
 
 .if (${OSVERSION} < 701000)
 CFLAGS+=	-DHAVE_SYS_MOUNT_H
@@ -242,13 +249,6 @@ CONFIGURE_ARGS+=--enable-hal
 CONFIGURE_ARGS+=--disable-hal
 .endif
 
-.if (defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so)) && !defined(WITHOUT_ARTS) && !defined(WITHOUT_X11)
-LIB_DEPENDS+=	 artsc.0:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=	--enable-arts
-.else
-CONFIGURE_ARGS+=	--disable-arts
-.endif
-
 .if !defined(WITHOUT_AVAHI)
 LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-bonjour
@@ -300,13 +300,6 @@ CONFIGURE_ARGS+=--enable-dvdread
 CONFIGURE_ARGS+=--disable-dvdread
 .endif
 
-.if (defined(WITH_ESOUND) || defined(HAVE_GNOME) && ${HAVE_GNOME:Mesound}!="") && !defined(WITHOUT_ESOUND) && !defined(WITHOUT_X11)
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=--enable-esd
-.else
-CONFIGURE_ARGS+=--disable-esd
-.endif
-
 .if defined(WITH_FAAC) && !defined(WITHOUT_FAAC)
 CONFIGURE_ARGS+=--with-ffmpeg-faac
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
@@ -341,8 +334,7 @@ CONFIGURE_ARGS+=--disable-aa
 .endif
 
 .if (defined(WITH_DIRAC) || exists(${LOCALBASE}/lib/libdirac_decoder.a)) && !defined(WITHOUT_DIRAC)
-BROKEN=		doesn't build with dirac
-LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
+LIB_DEPENDS+=	dirac_decoder.1:${PORTSDIR}/multimedia/dirac
 CONFIGURE_ARGS+=--enable-dirac
 CPPFLAGS+=	-I${LOCALBASE}/include/dirac
 .else
