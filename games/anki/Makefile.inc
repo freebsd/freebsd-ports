@@ -10,8 +10,6 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_PYDISTUTILS=	easy_install
 
-.include <bsd.port.pre.mk>
-
 .if !defined(PKGNAMEPREFIX)
 BUILD_DEPENDS=	${PYNUMPY} \
 		py*-qt4-core>=4.4:${PORTSDIR}/devel/py-qt4-core \
@@ -47,4 +45,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/req/d' ${WRKSRC}/setup.py
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
