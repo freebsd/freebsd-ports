@@ -10,7 +10,8 @@ PKGNAMESUFFIX=	-bat
 
 COMMENT=	The network backup solution (GUI)
 
-LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
+		bac.1:${PORTSDIR}/sysutils/bacula-client
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build
@@ -39,7 +40,11 @@ post-install:
 
 do-install:
 	# Install config files and preserve existing ones
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin
+	@if [ -f ${WRKSRC}/src/qt-console/bat ]; then \
+		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin; \
+	else \
+		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin; \
+	fi
 	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bat.conf.sample
 	${GZIP_CMD} ${WRKSRC}/manpages/bat.1
 	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1.gz          ${PREFIX}/man/man1/
