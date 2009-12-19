@@ -21,6 +21,7 @@ UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
+.if !defined(WITH_BAT)
 PORTDOCS=	VERIFYING \
 		technotes \
 		ChangeLog \
@@ -28,6 +29,7 @@ PORTDOCS=	VERIFYING \
 		ReleaseNotes \
 		LICENSE \
 		INSTALL
+.endif
 
 .if !defined(WITH_BAT)
 .if !defined(WITH_CLIENT_ONLY)
@@ -115,11 +117,6 @@ USE_GNOME=	libgnome gnomelibs libgnomeui
 
 .if !defined(WITH_BAT)
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
-.endif
-
-# sysutils/bacula-bat does not install PORTDOCS.
-.if defined(WITH_BAT)
-PORTDOCS=
 .endif
 
 .include <bsd.port.pre.mk>
