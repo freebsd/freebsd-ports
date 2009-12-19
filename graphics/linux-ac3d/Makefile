@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ac3d
-PORTVERSION=	6.205
+PORTVERSION=	6.430
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.inivis.com/ac3d/download/release6/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -28,8 +28,9 @@ USE_LINUX_APPS+=dri
 RESTRICTED=	no distribution permitted
 
 ONLY_FOR_ARCHS=	i386 amd64
+# needs f8 or higher
 USE_LINUX=	yes
-USE_LINUX_APPS=	jpeg png10 tiff xorglibs
+USE_LINUX_APPS+=	jpeg png10 tiff xorglibs
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
@@ -60,12 +61,16 @@ do-install:
 # Tcl/Tk scripts library (which is ${LOCALBASE}/lib for version
 # from ports).
 # data
-	${MKDIR} ${DATADIR}/lib/tcl8.4
-	${INSTALL_DATA} ${WRKSRC}/lib/tcl8.4/tclIndex ${DATADIR}/lib/tcl8.4
-	${INSTALL_DATA} ${WRKSRC}/lib/tcl8.4/*.tcl ${DATADIR}/lib/tcl8.4
-	${MKDIR} ${DATADIR}/lib/tk8.4
-	${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/tclIndex ${DATADIR}/lib/tk8.4
-	${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/*.tcl ${DATADIR}/lib/tk8.4
+	${MKDIR} ${DATADIR}/lib/tcl8.5
+	${INSTALL_DATA} ${WRKSRC}/lib/tcl8.5/license.terms ${DATADIR}/lib/tcl8.5
+	${INSTALL_DATA} ${WRKSRC}/lib/tcl8.5/tclIndex ${DATADIR}/lib/tcl8.5
+	${INSTALL_DATA} ${WRKSRC}/lib/tcl8.5/*.tcl ${DATADIR}/lib/tcl8.5
+	${MKDIR} ${DATADIR}/lib/tk8.5
+	${INSTALL_DATA} ${WRKSRC}/lib/tk8.5/license.terms ${DATADIR}/lib/tk8.5
+	${INSTALL_DATA} ${WRKSRC}/lib/tk8.5/tclIndex ${DATADIR}/lib/tk8.5
+	${INSTALL_DATA} ${WRKSRC}/lib/tk8.5/*.tcl ${DATADIR}/lib/tk8.5
+	${MKDIR} ${DATADIR}/lib/tk8.5/ttk
+	${INSTALL_DATA} ${WRKSRC}/lib/tk8.5/ttk/*.tcl ${DATADIR}/lib/tk8.5/ttk
 	${MKDIR} ${DATADIR}/tcl
 
 .for i in tcl
@@ -74,8 +79,14 @@ do-install:
 
 #images
 	${MKDIR} ${DATADIR}/tcl/images
-.for i in gif
+	${MKDIR} ${DATADIR}/tcl/images/toolbar
+
+.for i in gif png
 	${INSTALL_DATA} ${WRKSRC}/tcl/images/*.${i} ${DATADIR}/tcl/images
+.endfor
+
+.for i in png
+	${INSTALL_DATA} ${WRKSRC}/tcl/images/toolbar/*.${i} ${DATADIR}/tcl/images/toolbar
 .endfor
 
 # fonts
@@ -102,5 +113,13 @@ do-install:
 # examples
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/models/samples/* ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/SecondLife
+
+.for i in ac tga
+	${INSTALL_DATA} ${WRKSRC}/models/SecondLife/*.${i} ${EXAMPLESDIR}/SecondLife
+.endfor
+
+	${MKDIR} ${EXAMPLESDIR}/SecondLife/avatar
+	${INSTALL_DATA} ${WRKSRC}/models/SecondLife/avatar/* ${EXAMPLESDIR}/SecondLife/avatar
 
 .include <bsd.port.mk>
