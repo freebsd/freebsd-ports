@@ -126,13 +126,13 @@ PLIST_SUB+=	QT_IM_MODULE="@comment "
 
 post-build:
 .if !defined(DEBUG_FLAGS)
-	@${FIND} ${WRKSRC} -name "*.so*" | ${XARGS} ${STRIP}
+	@${FIND} ${WRKSRC} -name "*.so*" | ${XARGS} ${STRIP_CMD}
 .endif
 
 post-install:
 .if !defined(DEBUG_FLAGS)
 .for f in gcin* gtab-merge juyin-learn phoa2* sim2trad trad2sim ts*
-	@${STRIP} ${PREFIX}/bin/${f}
+	@${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
