@@ -72,6 +72,7 @@ libdata/pkgconfig/libupsclient.pc
 sbin/upsd
 sbin/upsmon
 sbin/upssched
+%%NUT_HAL%%share/hal/fdi/information/20thirdparty/20-ups-nut-device.fdi
 %%NUT_CGI%%%%CGIDIR%%/upsimage.cgi
 %%NUT_CGI%%%%CGIDIR%%/upsset.cgi
 %%NUT_CGI%%%%CGIDIR%%/upsstats.cgi
@@ -88,4 +89,5 @@ sbin/upssched
 @dirrmtry libexec/nut
 @dirrmtry %%STATEDIR%%
 %%NUT_CGI%%@dirrm %%CGIDIR%%
+%%NUT_CGI%%@dirrmtry www/cgi-bin
 %%NUT_CGI%%@dirrm %%WWWDIR%%
