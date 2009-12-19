@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.6.7
-PORTREVISION?=	3
+DISTVERSION=	2.6.8
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
