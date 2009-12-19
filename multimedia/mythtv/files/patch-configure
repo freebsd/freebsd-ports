@@ -1,29 +1,44 @@
---- configure.orig	2008-03-04 16:23:23.000000000 -0500
-+++ configure	2009-03-03 18:10:09.000000000 -0500
-@@ -1149,6 +1149,17 @@
-     fi 
- fi 
+--- configure.orig	2009-10-09 00:30:46.000000000 +0200
++++ configure	2009-12-02 19:24:10.000000000 +0100
+@@ -633,21 +633,21 @@
+     log check_cc "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS "$@" -c -o $TMPO $TMPC
++    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPC
+ }
  
-+# BSD.
-+if uname -s | grep BSD > 0; then
-+    dmesg=/var/run/dmesg.boot
-+    if test -f $dmesg ; then
-+        processor=`grep ^CPU: $dmesg`
-+# processor_flags is used only to determine whether the processor
-+# supports MMX.  The script expexts lower-case 'mmx'.  Give it to it.
-+        processor_flags=`grep '^  Features=' $dmesg | tr "[:upper:]" "[:lower:]"`
-+    fi
-+fi
-+
- # OS
- targetos=$(tolower $(uname -s))
+ check_cpp(){
+     log check_cpp "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS "$@" -E -o $TMPO $TMPC
++    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS -I${prefix}/include "$@" -E -o $TMPO $TMPC
+ }
  
-@@ -1466,7 +1477,7 @@
-   x86_64|amd64)
-     arch="x86_32"
-     enable fast_unaligned
--    canon_arch="`$cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
-+    canon_arch="`$cxx -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
-     if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
-       if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
-         arch="x86_64"
+ check_cxx(){
+     log check_cxx "$@"
+     cat > $TMPCXX
+     log_file $TMPCXX
+-    check_cmd $cxx $ECXXFLAGS "$@" -c -o $TMPO $TMPCXX
++    check_cmd $cxx $ECXXFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPCXX
+ }
+ 
+ check_as(){
+@@ -2174,7 +2174,6 @@
+         append CCONFIG "freebsd"
+         # Workaround compile errors from missing u_int/uint def
+         CFLAGS=`echo $CFLAGS | sed 's/-D_POSIX_C_SOURCE=200112//'`
+-        disable ivtv
+         disable need_memalign
+         enable backend
+         ;;
+@@ -4254,6 +4253,8 @@
+ #       directories, it cannot be modified.
+ QMAKE_LIBDIR_QT -= $libdir
+ LATE_LIBS            += -L$libdir
++CONFIG_INCLUDEPATH=
++FREETYPE_CFLAGS -= -I/usr/local/include
+ EOF
+ 
+ diff $TMPH $MYTH_CONFIG_H >/dev/null 2>&1

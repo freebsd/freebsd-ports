@@ -1,0 +1,2171 @@
+--- ./libs/libmyth/dbutil.h.orig	2009-09-20 02:29:45.000000000 +0000
++++ ./libs/libmyth/dbutil.h	2009-10-15 22:09:13.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef DBUTIL_H_
+ #define DBUTIL_H_
+ 
+-#include <qstringlist.h>
+-#include <qmap.h>
++#include <QStringList>
++#include <QMap>
+ 
+ #include "mythexp.h"
+ #include "mythdbcon.h"
+--- ./libs/libmyth/langsettings.cpp.orig	2009-10-03 22:01:21.000000000 +0000
++++ ./libs/libmyth/langsettings.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -1,5 +1,5 @@
+-#include <qapplication.h>
+-#include <qsqldatabase.h>
++#include <QApplication>
++#include <QSqlDatabase>
+ #include <QTranslator>
+ 
+ using namespace std;
+--- ./libs/libmyth/mythcontext.h.orig	2009-10-15 21:08:23.000000000 +0000
++++ ./libs/libmyth/mythcontext.h	2009-10-15 21:10:04.000000000 +0000
+@@ -11,7 +11,8 @@
+ #include <QMutex>
+ #include <QList>
+ 
+-#include <qevent.h>
++#include <QEvent>
++#include <QKeyEvent>
+ 
+ #include "mythexp.h"
+ #include "mythobservable.h"
+--- ./libs/libmyth/mythmediamonitor.h.orig	2009-08-04 00:34:05.000000000 +0000
++++ ./libs/libmyth/mythmediamonitor.h	2009-10-15 22:21:14.000000000 +0000
+@@ -2,9 +2,9 @@
+ #define MYTH_MEDIA_MONITOR_H
+ 
+ #include <QList>
+-#include <qpointer.h>
+-#include <qthread.h>
+-#include <qstring.h>
++#include <QPointer>
++#include <QThread>
++#include <QString>
+ #include <QStringList>
+ #include <QMutex>
+ #include <QEvent>
+--- ./libs/libmyth/util.h.orig	2009-10-15 21:16:47.000000000 +0000
++++ ./libs/libmyth/util.h	2009-10-15 21:17:12.000000000 +0000
+@@ -4,9 +4,9 @@
+ #include <algorithm>
+ using namespace std;
+ 
+-#include <qstringlist.h>
+-#include <qdatetime.h>
+-#include <qcolor.h>
++#include <QStringList>
++#include <QDateTime>
++#include <QColor>
+ #include <QPixmap>
+ 
+ #include <stdint.h>
+--- ./libs/libmyth/visual.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmyth/visual.h	2009-10-15 22:12:52.000000000 +0000
+@@ -7,7 +7,7 @@
+ #ifndef __visual_h
+ #define __visual_h
+ 
+-#include <qmutex.h>
++#include <QMutex>
+ 
+ class Decoder;
+ class AudioOutput;
+--- ./libs/libmyth/volumebase.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmyth/volumebase.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -1,4 +1,4 @@
+-#include <qstring.h>
++#include <QString>
+ #include <cstdio>
+ #include <cstdlib>
+ 
+--- ./libs/libmyth/volumebase.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmyth/volumebase.h	2009-10-15 22:09:13.000000000 +0000
+@@ -4,7 +4,7 @@
+ #include <iostream>
+ using namespace std;
+ 
+-#include <qstring.h>
++#include <QString>
+ #include "mythcontext.h"
+ 
+ typedef enum {
+--- libs/libmyth/xmlparse.h.orig	2009-07-26 16:00:20.000000000 +0000
++++ libs/libmyth/xmlparse.h	2009-10-15 23:20:07.000000000 +0000
+@@ -3,10 +3,10 @@
+ 
+ #include "uitypes.h"
+ #include "mythcontext.h"
+-#include <qimage.h>
+-#include <qrect.h>
+-#include <qlabel.h>
+-#include <qdom.h>
++#include <QImage>
++#include <QRect>
++#include <QLabel>
++#include <Qt/qdom.h>
+ 
+ class MythUIHelper;
+ 
+--- ./libs/libmythdb/decodeencode.h.orig	2009-09-28 18:46:50.000000000 +0000
++++ ./libs/libmythdb/decodeencode.h	2009-10-15 22:09:13.000000000 +0000
+@@ -4,7 +4,7 @@
+ #include <algorithm>
+ using namespace std;
+ 
+-#include <qstringlist.h>
++#include <QStringList>
+ 
+ // This is necessary for GCC 3.3, which has llabs(long long)
+ // // but not abs(long long) or std::llabs(long long)
+--- ./libs/libmythdb/httpcomms.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythdb/httpcomms.h	2009-10-15 22:14:18.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef HTTPCOMMS_H_
+ #define HTTPCOMMS_H_
+ 
+-#include <qurl.h>
+-#include <qobject.h>
++#include <QUrl>
++#include <QObject>
+ #include <QByteArray>
+ #include <QString>
+ #include <QTimer>
+--- libs/libmythdb/msocketdevice_win.cpp.orig	2009-10-15 22:45:16.000000000 +0000
++++ libs/libmythdb/msocketdevice_win.cpp	2009-10-15 22:45:49.000000000 +0000
+@@ -43,9 +43,8 @@
+ 
+ #include "msocketdevice.h"
+ #include "qwindowdefs.h"
+-#include "qdatetime.h"
+-
+-#include <qcoreapplication.h>
++#include <QDateTime>
++#include <QCoreApplication>
+ 
+ #include <string.h>
+ 
+--- ./libs/libmythdb/mythobservable.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythdb/mythobservable.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -1,5 +1,5 @@
+-#include <qobject.h>
+-#include <qapplication.h>
++#include <QObject>
++#include <QApplication>
+ 
+ #include "mythobservable.h"
+ 
+--- ./libs/libmythdb/oldsettings.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythdb/oldsettings.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -12,7 +12,7 @@
+ #include "oldsettings.h"
+ #include "mythverbose.h"
+ 
+-#include <qstring.h>
++#include <QString>
+ #include <fstream>
+ #include <cstdlib>
+ #include <cstdio>
+@@ -23,7 +23,7 @@
+ 
+ using namespace std;
+ 
+-#include <qdir.h>
++#include <QDir>
+ 
+ Settings::Settings(QString strSettingsFile)
+ {
+--- ./libs/libmythdb/oldsettings.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythdb/oldsettings.h	2009-10-15 22:09:13.000000000 +0000
+@@ -9,7 +9,7 @@
+ 
+ #ifndef OLDSETTINGS_H
+ #define OLDSETTINGS_H
+-#include <qstring.h>
++#include <QString>
+ #include <QPixmap>
+ #include <map>
+ 
+--- ./libs/libmythfreemheg/BaseClasses.h.orig	2009-07-06 20:42:28.000000000 +0000
++++ ./libs/libmythfreemheg/BaseClasses.h	2009-10-15 22:09:13.000000000 +0000
+@@ -27,7 +27,7 @@
+ #include <malloc.h>
+ #endif
+ 
+-#include <qstring.h>
++#include <QString>
+ 
+ #include "Logging.h" // For MHASSERT
+ 
+--- ./libs/libmythfreemheg/Engine.cpp.orig	2009-07-15 19:04:28.000000000 +0000
++++ ./libs/libmythfreemheg/Engine.cpp	2009-10-15 22:14:18.000000000 +0000
+@@ -20,7 +20,7 @@
+ */
+ 
+ #include <QStringList>
+-#include <qregexp.h>
++#include <QRegExp>
+ 
+ #include "Engine.h"
+ #include "ParseNode.h"
+--- ./libs/libmythfreemheg/Engine.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythfreemheg/Engine.h	2009-10-15 22:15:44.000000000 +0000
+@@ -30,9 +30,9 @@
+ #include "Visible.h"
+ #include "Actions.h"
+ #include "Link.h"
+-#include <qstring.h>
+-#include <qrect.h>
+-#include <qregion.h>
++#include <QString>
++#include <QRect>
++#include <QRegion>
+ #include <QList>
+ #include <QStack>
+ #include <QQueue>
+--- ./libs/libmythfreemheg/Groups.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythfreemheg/Groups.h	2009-10-15 22:09:13.000000000 +0000
+@@ -22,8 +22,8 @@
+ 
+ #if !defined(GROUPCLASS_H)
+ #define GROUPCLASS_H
+-#include <qstring.h>
+-#include <qdatetime.h> 
++#include <QString>
++#include <QDateTime> 
+ #include <QList>
+ 
+ #include "Root.h"
+--- ./libs/libmythfreemheg/Ingredients.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythfreemheg/Ingredients.h	2009-10-15 22:09:13.000000000 +0000
+@@ -26,7 +26,7 @@
+ #include "BaseClasses.h"
+ #include "Actions.h"
+ #include "BaseActions.h"
+-#include <qstring.h>
++#include <QString>
+ 
+ class MHParseNode;
+ 
+--- ./libs/libmythfreemheg/Link.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythfreemheg/Link.h	2009-10-15 22:09:13.000000000 +0000
+@@ -28,7 +28,7 @@
+ #include "Actions.h"
+ #include "BaseActions.h"
+ 
+-#include <qstring.h>
++#include <QString>
+ 
+ class MHParseNode;
+ 
+--- libs/libmythfreemheg/Logging.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ libs/libmythfreemheg/Logging.h	2009-10-15 22:49:01.000000000 +0000
+@@ -23,7 +23,7 @@
+ #define LOGGING_H
+ 
+ #include <qglobal.h> // For Q_ASSERT
+-#include <qstring.h> // For QString
++#include <QString> // For QString
+ 
+ #include "freemheg.h" // For MHLogError
+ 
+--- ./libs/libmythfreemheg/TokenGroup.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythfreemheg/TokenGroup.h	2009-10-15 22:21:14.000000000 +0000
+@@ -31,7 +31,7 @@
+ #include "BaseActions.h"
+ #include "Actions.h"
+ 
+-#include <qpoint.h>
++#include <QPoint>
+ #include <QList>
+ 
+ class MHEngine;
+--- ./libs/libmythfreemheg/Visible.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythfreemheg/Visible.h	2009-10-15 22:15:44.000000000 +0000
+@@ -21,7 +21,7 @@
+ 
+ #if !defined(VISIBLE_H)
+ #define VISIBLE_H
+-#include <qregion.h>
++#include <QRegion>
+ 
+ #include "Presentable.h"
+ // Dependencies
+--- ./libs/libmythfreemheg/freemheg.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythfreemheg/freemheg.h	2009-10-15 22:15:44.000000000 +0000
+@@ -22,7 +22,7 @@
+ #if !defined(FREEMHEG_H)
+ #define FREEMHEG_H
+ 
+-#include <qregion.h>
++#include <QRegion>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+--- ./libs/libmythfreesurround/freesurround.cpp.orig	2009-09-29 12:25:02.000000000 +0000
++++ ./libs/libmythfreesurround/freesurround.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -29,8 +29,8 @@
+ #include <map>
+ #include <math.h>
+ 
+-#include <qstring.h>
+-#include <qdatetime.h>
++#include <QString>
++#include <QDateTime>
+ 
+ using namespace std;
+ 
+--- ./libs/libmythtv/NuppelVideoRecorder.h.orig	2009-08-23 11:07:56.000000000 +0000
++++ ./libs/libmythtv/NuppelVideoRecorder.h	2009-10-15 22:09:13.000000000 +0000
+@@ -26,8 +26,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qmap.h>
++#include <QString>
++#include <QMap>
+ 
+ // MythTV headers
+ #include "recorderbase.h"
+--- ./libs/libmythtv/RingBuffer.h.orig	2009-10-15 21:22:42.000000000 +0000
++++ ./libs/libmythtv/RingBuffer.h	2009-10-15 21:23:15.000000000 +0000
+@@ -3,9 +3,9 @@
+ #ifndef RINGBUFFER
+ #define RINGBUFFER
+ 
+-#include <qstring.h>
+-#include <qwaitcondition.h>
+-#include <qmutex.h>
++#include <QString>
++#include <QWaitCondition>
++#include <QMutex>
+ #include <pthread.h>
+ 
+ extern "C" {
+--- ./libs/libmythtv/ThreadedFileWriter.h.orig	2009-10-15 21:24:11.000000000 +0000
++++ ./libs/libmythtv/ThreadedFileWriter.h	2009-10-15 21:24:35.000000000 +0000
+@@ -3,9 +3,9 @@
+ #define TFW_H_
+ 
+ #include <pthread.h>
+-#include <qmutex.h>
+-#include <qwaitcondition.h>
+-#include <qstring.h>
++#include <QMutex>
++#include <QWaitCondition>
++#include <QString>
+ #include <stdint.h>
+ 
+ class ThreadedFileWriter
+--- ./libs/libmythtv/avcinfo.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/avcinfo.h	2009-10-15 22:09:13.000000000 +0000
+@@ -8,7 +8,7 @@
+ #include <stdint.h>
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ QString guid_to_string(uint64_t guid);
+ uint64_t string_to_guid(const QString &guid);
+--- ./libs/libmythtv/avformatdecoder.h.orig	2009-10-14 14:51:54.000000000 +0000
++++ ./libs/libmythtv/avformatdecoder.h	2009-10-15 22:09:13.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef AVFORMATDECODER_H_
+ #define AVFORMATDECODER_H_
+ 
+-#include <qstring.h>
+-#include <qmap.h>
++#include <QString>
++#include <QMap>
+ #include <QList>
+ 
+ #include "programinfo.h"
+--- ./libs/libmythtv/cardutil.h.orig	2009-09-14 19:18:27.000000000 +0000
++++ ./libs/libmythtv/cardutil.h	2009-10-15 22:09:13.000000000 +0000
+@@ -11,8 +11,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstringlist.h>
+-#include <qmap.h>
++#include <QStringList>
++#include <QMap>
+ 
+ class InputInfo;
+ class CardInput;
+--- ./libs/libmythtv/cc608decoder.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/cc608decoder.h	2009-10-15 22:12:52.000000000 +0000
+@@ -8,8 +8,8 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qmutex.h>
+-#include <qstringlist.h>
++#include <QMutex>
++#include <QStringList>
+ 
+ #include "format.h"
+ 
+--- ./libs/libmythtv/cc708decoder.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/cc708decoder.h	2009-10-15 22:09:13.000000000 +0000
+@@ -6,7 +6,7 @@
+ 
+ #include <stdint.h>
+ 
+-#include <qstringlist.h>
++#include <QStringList>
+ 
+ #include "format.h"
+ #include "compat.h"
+--- ./libs/libmythtv/cc708window.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/cc708window.h	2009-10-15 22:12:52.000000000 +0000
+@@ -7,9 +7,9 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qstring.h>
+-#include <qmutex.h>
+-#include <qcolor.h>
++#include <QString>
++#include <QMutex>
++#include <QColor>
+ 
+ class CC708CharacterAttribute
+ {
+--- ./libs/libmythtv/channelbase.h.orig	2009-04-18 00:45:58.000000000 +0000
++++ ./libs/libmythtv/channelbase.h	2009-10-15 22:09:13.000000000 +0000
+@@ -4,8 +4,8 @@
+ #define CHANNELBASE_H
+ 
+ // Qt headers
+-#include <qmap.h>
+-#include <qstringlist.h>
++#include <QMap>
++#include <QStringList>
+ 
+ // MythTV headers
+ #include "channelutil.h"
+--- ./libs/libmythtv/channelscan/channelscan_sm.h.orig	2009-09-14 21:51:47.000000000 +0000
++++ ./libs/libmythtv/channelscan/channelscan_sm.h	2009-10-15 22:12:52.000000000 +0000
+@@ -33,13 +33,13 @@
+ #include <pthread.h> 
+ 
+ // Qt includes
+-#include <qobject.h>
+-#include <qstring.h>
+-#include <qmap.h>
+-#include <qmutex.h>
++#include <QObject>
++#include <QString>
++#include <QMap>
++#include <QMutex>
+ #include <QList>
+ #include <QPair>
+-#include <qdatetime.h>
++#include <QDateTime>
+ 
+ // MythTV includes
+ #include "frequencytables.h"
+--- ./libs/libmythtv/channelscan/frequencytablesetting.cpp.orig	2009-08-13 23:02:30.000000000 +0000
++++ ./libs/libmythtv/channelscan/frequencytablesetting.cpp	2009-10-15 22:15:44.000000000 +0000
+@@ -30,7 +30,7 @@
+ #include "frequencytablesetting.h"
+ 
+ // Qt headers
+-#include <qlocale.h>
++#include <QLocale>
+ 
+ ScanFrequencyTable::ScanFrequencyTable() : ComboBoxSetting(this)
+ {
+--- ./libs/libmythtv/channelscan/panedvbutilsimport.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/channelscan/panedvbutilsimport.h	2009-10-15 22:12:52.000000000 +0000
+@@ -31,8 +31,8 @@
+ #define _PANE_DVB_UTILS_IMPORT_H_
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qobject.h>
++#include <QString>
++#include <QObject>
+ 
+ // MythTV headers
+ #include "channelscanmiscsettings.h"
+--- ./libs/libmythtv/channelscan/paneexistingscanimport.h.orig	2009-04-18 00:45:58.000000000 +0000
++++ ./libs/libmythtv/channelscan/paneexistingscanimport.h	2009-10-15 22:12:52.000000000 +0000
+@@ -30,8 +30,8 @@
+ #define _PANE_EXISTING_SCAN_IMPORT_H_
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qobject.h>
++#include <QString>
++#include <QObject>
+ 
+ // MythTV headers
+ #include "channelscanmiscsettings.h"
+--- ./libs/libmythtv/channelscan/scaninfo.h.orig	2009-04-20 02:25:39.000000000 +0000
++++ ./libs/libmythtv/channelscan/scaninfo.h	2009-10-15 22:09:13.000000000 +0000
+@@ -10,8 +10,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qdatetime.h>
++#include <QString>
++#include <QDateTime>
+ 
+ // MythTV headers
+ #include "mythexp.h"
+--- ./libs/libmythtv/channelscan/scanmonitor.cpp.orig	2009-09-02 22:05:54.000000000 +0000
++++ ./libs/libmythtv/channelscan/scanmonitor.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -33,7 +33,7 @@
+ #include "channelscanner.h"
+ 
+ // Qt headers
+-#include <qapplication.h>
++#include <QApplication>
+ 
+ /// Percentage to set to after the transports have been scanned
+ #define TRANSPORT_PCT 6
+--- ./libs/libmythtv/channelsettings.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/channelsettings.h	2009-10-15 22:25:30.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef CHANNELSETTINGS_H
+ #define CHANNELSETTINGS_H
+ 
+-#include <qwidget.h>
+-#include <qsqldatabase.h>
++#include <QWidget>
++#include <QSqlDatabase>
+ 
+ #include <cstdlib>
+ 
+--- ./libs/libmythtv/darwinavcinfo.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/darwinavcinfo.h	2009-10-15 22:09:13.000000000 +0000
+@@ -16,7 +16,7 @@
+ #include <IOKit/avc/IOFireWireAVCLib.h>
+ 
+ // Qt headers
+-#include <qmap.h>
++#include <QMap>
+ 
+ // MythTV headers
+ #include "avcinfo.h"
+--- ./libs/libmythtv/dbox2channel.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/dbox2channel.cpp	2009-10-15 22:25:30.000000000 +0000
+@@ -9,7 +9,7 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <q3http.h>
++#include <Q3Http>
+ 
+ // MythTV headers
+ #include "mythverbose.h"
+--- ./libs/libmythtv/dbox2channel.h.orig	2009-07-06 20:42:28.000000000 +0000
++++ ./libs/libmythtv/dbox2channel.h	2009-10-15 22:12:52.000000000 +0000
+@@ -13,8 +13,8 @@
+ #endif
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qmutex.h>
++#include <QString>
++#include <QMutex>
+ 
+ // MythTV headers
+ #include "channelbase.h"
+--- ./libs/libmythtv/dbox2epg.cpp.orig	2009-05-28 22:06:48.000000000 +0000
++++ ./libs/libmythtv/dbox2epg.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -4,7 +4,7 @@
+  *  Distributed as part of MythTV under GPL v2 and later.
+  */
+ 
+-#include <qdatetime.h>
++#include <QDateTime>
+ #include <QHttp>
+ 
+ #include "dbox2channel.h"
+--- ./libs/libmythtv/diseqc.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/diseqc.h	2009-10-15 22:12:52.000000000 +0000
+@@ -15,9 +15,9 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qmap.h>
+-#include <qstring.h>
+-#include <qmutex.h>
++#include <QMap>
++#include <QString>
++#include <QMutex>
+ 
+ class DTVMultiplex;
+ 
+--- ./libs/libmythtv/dtvconfparser.cpp.orig	2009-08-16 21:35:50.000000000 +0000
++++ ./libs/libmythtv/dtvconfparser.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -31,7 +31,7 @@
+ 
+ // Qt headers
+ #include <QTextStream>
+-#include <qfile.h>
++#include <QFile>
+ 
+ // MythTV headers
+ #include "mythcontext.h"
+--- ./libs/libmythtv/dtvconfparser.h.orig	2009-08-16 21:35:50.000000000 +0000
++++ ./libs/libmythtv/dtvconfparser.h	2009-10-15 22:09:13.000000000 +0000
+@@ -41,7 +41,7 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ // MythTV headers
+ #include "dtvchannel.h"
+--- ./libs/libmythtv/dtvconfparserhelpers.h.orig	2009-10-05 16:02:07.000000000 +0000
++++ ./libs/libmythtv/dtvconfparserhelpers.h	2009-10-15 22:09:13.000000000 +0000
+@@ -32,7 +32,7 @@
+ #ifndef _DTVCONFPARSERHELPERS_H_
+ #define _DTVCONFPARSERHELPERS_H_
+ 
+-#include <qstring.h>
++#include <QString>
+ 
+ // The following are a set of helper classes to allow easy translation
+ // between the different string representations of various tuning params.
+--- ./libs/libmythtv/dtvmultiplex.h.orig	2009-09-14 21:51:47.000000000 +0000
++++ ./libs/libmythtv/dtvmultiplex.h	2009-10-15 22:09:13.000000000 +0000
+@@ -11,7 +11,7 @@
+ #include <stdint.h>
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ // MythTV headers
+ #include "dtvconfparserhelpers.h"
+--- ./libs/libmythtv/dtvrecorder.h.orig	2009-08-03 17:23:43.000000000 +0000
++++ ./libs/libmythtv/dtvrecorder.h	2009-10-15 22:09:13.000000000 +0000
+@@ -12,7 +12,7 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qdatetime.h>
++#include <QDateTime>
+ 
+ #include "recorderbase.h"
+ #include "H264Parser.h"
+--- ./libs/libmythtv/dummychannel.h.orig	2009-08-17 23:52:49.000000000 +0000
++++ ./libs/libmythtv/dummychannel.h	2009-10-15 22:09:13.000000000 +0000
+@@ -6,7 +6,7 @@
+ #ifndef DUMMYCHANNEL_H
+ #define DUMMYCHANNEL_H
+ 
+-#include <qstring.h>
++#include <QString>
+ #include "tv_rec.h"
+ #include "channelbase.h"
+ 
+--- ./libs/libmythtv/dvbcam.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/dvbcam.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -33,8 +33,8 @@
+  *
+  */
+ 
+-#include <qdatetime.h>
+-#include <qvariant.h>
++#include <QDateTime>
++#include <QVariant>
+ 
+ #include <iostream>
+ #include <vector>
+--- ./libs/libmythtv/dvbcam.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/dvbcam.h	2009-10-15 22:12:52.000000000 +0000
+@@ -4,7 +4,7 @@
+ #include <deque>
+ using namespace std;
+ 
+-#include <qmutex.h>
++#include <QMutex>
+ 
+ #include "mpegtables.h"
+ 
+--- ./libs/libmythtv/dvbrecorder.h.orig	2009-08-04 13:48:39.000000000 +0000
++++ ./libs/libmythtv/dvbrecorder.h	2009-10-15 22:12:52.000000000 +0000
+@@ -14,7 +14,7 @@
+ using namespace std;
+ 
+ // Qt includes
+-#include <qmutex.h>
++#include <QMutex>
+ 
+ #include "dtvrecorder.h"
+ #include "tspacket.h"
+--- ./libs/libmythtv/dvbsignalmonitor.h.orig	2009-10-15 22:35:53.000000000 +0000
++++ ./libs/libmythtv/dvbsignalmonitor.h	2009-10-15 22:36:12.000000000 +0000
+@@ -4,7 +4,7 @@
+ #define DVBSIGNALMONITOR_H
+ 
+ #include "dtvsignalmonitor.h"
+-#include "qstringlist.h"
++#include <QStringList>
+ 
+ class DVBChannel;
+ class DVBStreamHandler;
+--- ./libs/libmythtv/dvbtypes.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/dvbtypes.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -1,7 +1,7 @@
+ // -*- Mode: c++ -*-
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ // MythTV headers
+ #include "dvbtypes.h"
+--- ./libs/libmythtv/eitcache.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/eitcache.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -6,7 +6,7 @@
+  */
+ 
+ 
+-#include <qdatetime.h>
++#include <QDateTime>
+ 
+ #include "eitcache.h"
+ #include "mythcontext.h"
+--- ./libs/libmythtv/eitcache.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/eitcache.h	2009-10-15 22:12:52.000000000 +0000
+@@ -9,9 +9,9 @@
+ #include <stdint.h>
+ 
+ // Qt headers
+-#include <qmap.h>
+-#include <qmutex.h>
+-#include <qstring.h>
++#include <QMap>
++#include <QMutex>
++#include <QString>
+ 
+ #include "mythexp.h"
+ 
+--- ./libs/libmythtv/eitscanner.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/eitscanner.h	2009-10-15 22:14:18.000000000 +0000
+@@ -3,12 +3,12 @@
+ #define EITSCANNER_H
+ 
+ // Qt includes
+-#include <qmutex.h>
+-#include <qobject.h>
+-#include <qdatetime.h>
+-#include <qstringlist.h>
+-#include <qwaitcondition.h>
+-#include <qthread.h>
++#include <QMutex>
++#include <QObject>
++#include <QDateTime>
++#include <QStringList>
++#include <QWaitCondition>
++#include <QThread>
+ 
+ class TVRec;
+ class ChannelBase;
+--- ./libs/libmythtv/firewiredevice.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/firewiredevice.h	2009-10-15 22:12:52.000000000 +0000
+@@ -12,8 +12,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qmutex.h>
++#include <QString>
++#include <QMutex>
+ 
+ // MythTV headers
+ #include "streamlisteners.h"
+--- ./libs/libmythtv/firewiresignalmonitor.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/firewiresignalmonitor.h	2009-10-15 22:12:52.000000000 +0000
+@@ -3,9 +3,9 @@
+ #ifndef _FIREWIRESIGNALMONITOR_H_
+ #define _FIREWIRESIGNALMONITOR_H_
+ 
+-#include <qmap.h>
+-#include <qmutex.h>
+-#include <qdatetime.h>
++#include <QMap>
++#include <QMutex>
++#include <QDateTime>
+ 
+ #include "dtvsignalmonitor.h"
+ #include "firewiredevice.h"
+--- ./libs/libmythtv/frequencytables.h.orig	2009-08-19 23:49:27.000000000 +0000
++++ ./libs/libmythtv/frequencytables.h	2009-10-15 22:12:52.000000000 +0000
+@@ -9,9 +9,9 @@
+ using namespace std;
+ 
+ // Qt includes
+-#include <qmap.h>
+-#include <qstring.h>
+-#include <qmutex.h>
++#include <QMap>
++#include <QString>
++#include <QMutex>
+ 
+ // MythTV includes
+ #include "dtvchannel.h"
+--- ./libs/libmythtv/hdhrsignalmonitor.h.orig	2009-10-15 22:33:36.000000000 +0000
++++ ./libs/libmythtv/hdhrsignalmonitor.h	2009-10-15 22:33:54.000000000 +0000
+@@ -4,7 +4,7 @@
+ #define HDHRSIGNALMONITOR_H
+ 
+ #include "dtvsignalmonitor.h"
+-#include "qstringlist.h"
++#include <QStringList>
+ 
+ class HDHRChannel;
+ class HDHRStreamHandler;
+--- ./libs/libmythtv/inputgroupmap.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/inputgroupmap.h	2009-10-15 22:09:13.000000000 +0000
+@@ -7,7 +7,7 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qmap.h>
++#include <QMap>
+ 
+ // MythTV headers
+ #include "mythexp.h"
+--- ./libs/libmythtv/inputinfo.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/inputinfo.h	2009-10-15 22:09:13.000000000 +0000
+@@ -3,8 +3,8 @@
+ #define _INPUTINFO_H_
+ 
+ // Qt headers
+-#include <qstringlist.h>
+-#include <qmap.h>
++#include <QStringList>
++#include <QMap>
+ 
+ // MythTV headers
+ #include "channelutil.h" // for DBChanList
+--- ./libs/libmythtv/iptv/iptvchannelinfo.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/iptv/iptvchannelinfo.h	2009-10-15 22:09:13.000000000 +0000
+@@ -6,8 +6,8 @@
+ #ifndef _IPTV_CHANNELINFO_H_
+ #define _IPTV_CHANNELINFO_H_
+ 
+-#include <qmap.h>
+-#include <qstring.h>
++#include <QMap>
++#include <QString>
+ 
+ class IPTVChannelInfo
+ {
+--- ./libs/libmythtv/iptv/iptvfeederlive.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/iptv/iptvfeederlive.h	2009-10-15 22:14:18.000000000 +0000
+@@ -12,8 +12,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qwaitcondition.h>
+-#include <qmutex.h>
++#include <QWaitCondition>
++#include <QMutex>
+ 
+ // Mythtv headers
+ #include "iptvfeeder.h"
+--- ./libs/libmythtv/iptv/iptvfeederwrapper.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/iptv/iptvfeederwrapper.h	2009-10-15 22:12:52.000000000 +0000
+@@ -10,8 +10,8 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qmutex.h>
+-#include <qstring.h>
++#include <QMutex>
++#include <QString>
+ 
+ class IPTVFeeder;
+ class TSDataListener;
+--- ./libs/libmythtv/iptv/iptvmediasink.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/iptv/iptvmediasink.h	2009-10-15 22:12:52.000000000 +0000
+@@ -10,7 +10,7 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qmutex.h>
++#include <QMutex>
+ 
+ #include <MediaSink.hh>
+ 
+--- ./libs/libmythtv/iptvchannel.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/iptvchannel.h	2009-10-15 22:12:52.000000000 +0000
+@@ -10,7 +10,7 @@
+ #include "dtvchannel.h"
+ #include "iptvchannelinfo.h"
+ 
+-#include <qmutex.h>
++#include <QMutex>
+ 
+ class IPTVFeederWrapper;
+ 
+--- ./libs/libmythtv/iptvrecorder.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/iptvrecorder.h	2009-10-15 22:14:18.000000000 +0000
+@@ -8,7 +8,7 @@
+ #ifndef _IPTV_RECORDER_H_
+ #define _IPTV_RECORDER_H_
+ 
+-#include <qwaitcondition.h>
++#include <QWaitCondition>
+ 
+ #include "dtvrecorder.h"
+ #include "streamlisteners.h"
+--- ./libs/libmythtv/ivtvdecoder.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/ivtvdecoder.h	2009-10-15 22:09:13.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef IVTVDECODER_H_
+ #define IVTVDECODER_H_
+ 
+-#include <qstring.h>
+-#include <qmap.h>
++#include <QString>
++#include <QMap>
+ 
+ #include "programinfo.h"
+ #include "format.h"
+--- ./libs/libmythtv/jobqueue.h.orig	2009-08-20 03:31:28.000000000 +0000
++++ ./libs/libmythtv/jobqueue.h	2009-10-15 20:56:23.000000000 +0000
+@@ -1,13 +1,12 @@
+ #ifndef JOBQUEUE_H_
+ #define JOBQUEUE_H_
+ 
+-#include <qobject.h>
+-#include <qmap.h>
+-#include <qmutex.h>
+-#include <qobject.h>
+-#include <qsqldatabase.h>
++#include <QObject>
++#include <QMap>
++#include <QMutex>
++#include <QSqlDatabase>
+ #include <QEvent>
+-#include <qwaitcondition.h>
++#include <QWaitCondition>
+ #include <pthread.h>
+ 
+ 
+--- ./libs/libmythtv/linuxavcinfo.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/linuxavcinfo.h	2009-10-15 22:09:13.000000000 +0000
+@@ -11,7 +11,7 @@
+ #include <libavc1394/rom1394.h>
+ 
+ // Qt headers
+-#include <qmap.h>
++#include <QMap>
+ 
+ // MythTV headers
+ #include "avcinfo.h"
+--- ./libs/libmythtv/linuxfirewiredevice.cpp.orig	2009-06-27 22:32:06.000000000 +0000
++++ ./libs/libmythtv/linuxfirewiredevice.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -28,7 +28,7 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qdatetime.h>
++#include <QDateTime>
+ 
+ // MythTV headers
+ #include "linuxfirewiredevice.h"
+--- ./libs/libmythtv/mhi.cpp.orig	2009-07-23 14:40:59.000000000 +0000
++++ ./libs/libmythtv/mhi.cpp	2009-10-15 22:25:30.000000000 +0000
+@@ -1,7 +1,7 @@
+ #include <unistd.h>
+ 
+ #include <QRegion>
+-#include <qbitarray.h>
++#include <QBitArray>
+ 
+ #include <QVector>
+ 
+--- ./libs/libmythtv/mpeg/atsc_huffman.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/mpeg/atsc_huffman.h	2009-10-15 22:09:13.000000000 +0000
+@@ -5,7 +5,7 @@
+ #include <unistd.h>
+ 
+ // Qt header
+-#include <qstring.h>
++#include <QString>
+ 
+ QString atsc_huffman1_to_string(const unsigned char *compressed,
+                                 uint size, uint table);
+--- ./libs/libmythtv/mpeg/atsctables.cpp.orig	2009-10-15 22:34:14.000000000 +0000
++++ ./libs/libmythtv/mpeg/atsctables.cpp	2009-10-15 22:34:28.000000000 +0000
+@@ -2,7 +2,7 @@
+ // Copyright (c) 2003-2004, Daniel Thor Kristjansson
+ #include "atsctables.h"
+ #include "atscdescriptors.h"
+-#include "qstring.h"
++#include <QString>
+ 
+ QString MasterGuideTable::TableClassString(uint i) const 
+ {
+--- ./libs/libmythtv/mpeg/dishdescriptors.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/mpeg/dishdescriptors.h	2009-10-15 22:09:13.000000000 +0000
+@@ -6,7 +6,7 @@
+ #include <cassert>
+ 
+ using namespace std;
+-#include <qstring.h>
++#include <QString>
+ 
+ #include "mythcontext.h"
+ #include "atscdescriptors.h"
+--- ./libs/libmythtv/mpeg/dvbdescriptors.h.orig	2009-08-21 19:29:37.000000000 +0000
++++ ./libs/libmythtv/mpeg/dvbdescriptors.h	2009-10-15 22:12:52.000000000 +0000
+@@ -6,8 +6,8 @@
+ #include <cassert>
+ #include <vector>
+ #include <map>
+-#include <qmutex.h>
+-#include <qstring.h>
++#include <QMutex>
++#include <QString>
+ #include "mythcontext.h"
+ #include "mythexp.h" // MPUBLIC - Symbol Visibility
+ #include "mpegdescriptors.h"
+--- ./libs/libmythtv/mpeg/dvbtables.cpp.orig	2009-10-15 22:35:21.000000000 +0000
++++ ./libs/libmythtv/mpeg/dvbtables.cpp	2009-10-15 22:35:40.000000000 +0000
+@@ -5,7 +5,7 @@
+ 
+ #include "dvbtables.h"
+ #include "dvbdescriptors.h"
+-#include "qstring.h"
++#include <QString>
+ 
+ void NetworkInformationTable::Parse(void) const
+ {
+--- ./libs/libmythtv/mpeg/dvbtables.h.orig	2009-04-19 22:07:22.000000000 +0000
++++ ./libs/libmythtv/mpeg/dvbtables.h	2009-10-15 22:09:13.000000000 +0000
+@@ -3,7 +3,7 @@
+ #ifndef _DVB_TABLES_H_
+ #define _DVB_TABLES_H_
+ 
+-#include <qstring.h>
++#include <QString>
+ #include <stdint.h>  // uint32_t
+ #include "mpegtables.h"
+ #include "dvbdescriptors.h"
+--- ./libs/libmythtv/mpeg/freesat_huffman.cpp.orig	2009-06-09 21:28:48.000000000 +0000
++++ ./libs/libmythtv/mpeg/freesat_huffman.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -1,6 +1,6 @@
+ #include "freesat_huffman.h"
+ 
+-#include <qstring.h>
++#include <QString>
+ 
+ struct fsattab {
+     unsigned int value;
+--- ./libs/libmythtv/mpeg/freesat_huffman.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/mpeg/freesat_huffman.h	2009-10-15 22:09:13.000000000 +0000
+@@ -5,7 +5,7 @@
+ #include <unistd.h>
+ 
+ // Qt header
+-#include <qstring.h>
++#include <QString>
+ 
+ QString freesat_huffman_to_string(const unsigned char *compressed, uint size);
+ 
+--- ./libs/libmythtv/mpeg/iso639.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/mpeg/iso639.h	2009-10-15 22:09:13.000000000 +0000
+@@ -2,9 +2,9 @@
+ #ifndef _ISO_639_2_H_
+ #define _ISO_639_2_H_
+ 
+-#include <qmap.h>
+-#include <qstring.h>
+-#include <qstringlist.h>
++#include <QMap>
++#include <QString>
++#include <QStringList>
+ #include <vector>
+ #include "mythexp.h"
+ using namespace std;
+--- ./libs/libmythtv/mpeg/mpegstreamdata.h.orig	2009-08-27 19:38:29.000000000 +0000
++++ ./libs/libmythtv/mpeg/mpegstreamdata.h	2009-10-15 22:09:13.000000000 +0000
+@@ -6,7 +6,7 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qmap.h>
++#include <QMap>
+ #include <stdint.h>  // uint64_t
+ #include "tspacket.h"
+ #include "util.h"
+--- ./libs/libmythtv/mpeg/premieredescriptors.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/mpeg/premieredescriptors.h	2009-10-15 22:09:13.000000000 +0000
+@@ -5,8 +5,8 @@
+ #include <stdint.h>
+ #include <inttypes.h>
+ 
+-#include <qstring.h>
+-#include <qdatetime.h>
++#include <QString>
++#include <QDateTime>
+ 
+ #include "mpegdescriptors.h"
+ 
+--- ./libs/libmythtv/mpeg/premieretables.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/mpeg/premieretables.h	2009-10-15 22:09:13.000000000 +0000
+@@ -2,7 +2,7 @@
+ #ifndef _PRIVATE_TABLES_H_
+ #define _PRIVATE_TABLES_H_
+ 
+-#include <qstring.h>
++#include <QString>
+ #include <stdint.h>  // uint32_t
+ #include "mpegtables.h"
+ #include "dvbdescriptors.h"
+--- ./libs/libmythtv/mpeg/tsstats.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/mpeg/tsstats.h	2009-10-15 22:09:13.000000000 +0000
+@@ -3,8 +3,8 @@
+ #ifndef __TS_STATS__
+ #define __TS_STATS__
+ 
+-#include <qstring.h>
+-#include <qmap.h>
++#include <QString>
++#include <QMap>
+ 
+ /** \class TSStats
+  *  \brief Collects statistics on the number of TSPacket's seen on each PID.
+--- ./libs/libmythtv/openglcontext.h.orig	2009-08-31 07:53:52.000000000 +0000
++++ ./libs/libmythtv/openglcontext.h	2009-10-15 22:12:52.000000000 +0000
+@@ -6,8 +6,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qrect.h>
++#include <QString>
++#include <QRect>
+ 
+ #ifdef USING_X11
+ // MythTV headers
+--- ./libs/libmythtv/openglvideo.h.orig	2009-09-07 02:13:12.000000000 +0000
++++ ./libs/libmythtv/openglvideo.h	2009-10-15 22:12:52.000000000 +0000
+@@ -5,8 +5,8 @@
+ #include <map>
+ using namespace std;
+ 
+-#include <qrect.h>
+-#include <qmap.h>
++#include <QRect>
++#include <QMap>
+ 
+ #include "videooutbase.h"
+ #include "videoouttypes.h"
+--- libs/libmythtv/osd.h.orig	2009-07-17 13:23:54.000000000 +0000
++++ libs/libmythtv/osd.h	2009-10-15 23:19:10.000000000 +0000
+@@ -5,17 +5,17 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qstring.h>
+-#include <qstringlist.h>
+-#include <qrect.h>
+-#include <qpoint.h>
++#include <QString>
++#include <QStringList>
++#include <QRect>
++#include <QPoint>
+ #include <QKeyEvent>
+ #include <ctime>
+-#include <qmap.h>
+-#include <qdom.h>
+-#include <qmutex.h>
+-#include <qobject.h>
+-#include <qregexp.h>
++#include <QMap>
++#include <Qt/qdom.h>
++#include <QMutex>
++#include <QObject>
++#include <QRegExp>
+ 
+ // Mythtv Headers
+ #include "themeinfo.h"
+--- ./libs/libmythtv/osdsurface.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/osdsurface.h	2009-10-15 22:15:44.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef OSDSURFACE_H_
+ #define OSDSURFACE_H_
+ 
+-#include <qregion.h>
+-#include <qmutex.h>
++#include <QRegion>
++#include <QMutex>
+ #include "blend.h"
+ 
+ #define MAX_NEG_CROP 1024
+--- ./libs/libmythtv/playgroup.cpp.orig	2009-06-02 16:44:12.000000000 +0000
++++ ./libs/libmythtv/playgroup.cpp	2009-10-15 22:14:18.000000000 +0000
+@@ -1,8 +1,8 @@
+ #include "mythcontext.h"
+ #include "mythdb.h"
+-#include <qsqldatabase.h>
+-#include <qcursor.h>
+-#include <qlayout.h>
++#include <QSqlDatabase>
++#include <QCursor>
++#include <QLayout>
+ #include <iostream>
+ #include "playgroup.h"
+ #include "programinfo.h"
+--- ./libs/libmythtv/playgroup.h.orig	2009-10-15 22:32:53.000000000 +0000
++++ ./libs/libmythtv/playgroup.h	2009-10-15 22:33:15.000000000 +0000
+@@ -1,7 +1,7 @@
+ #ifndef PLAYGROUP_H
+ #define PLAYGROUP_H
+ 
+-#include "qstringlist.h"
++#include <QStringList>
+ #include "settings.h"
+ #include "mythwidgets.h"
+ 
+--- ./libs/libmythtv/previewgenerator.h.orig	2009-08-21 19:29:37.000000000 +0000
++++ ./libs/libmythtv/previewgenerator.h	2009-10-15 22:12:52.000000000 +0000
+@@ -4,8 +4,8 @@
+ 
+ #include <pthread.h>
+ 
+-#include <qstring.h>
+-#include <qmutex.h>
++#include <QString>
++#include <QMutex>
+ 
+ #include "programinfo.h"
+ #include "util.h"
+--- ./libs/libmythtv/profilegroup.cpp.orig	2009-06-02 16:44:12.000000000 +0000
++++ ./libs/libmythtv/profilegroup.cpp	2009-10-15 22:14:18.000000000 +0000
+@@ -5,9 +5,9 @@
+ #include "mythdb.h"
+ #include "mythuihelper.h"
+ #include "cardutil.h"
+-#include <qsqldatabase.h>
+-#include <qcursor.h>
+-#include <qlayout.h>
++#include <QSqlDatabase>
++#include <QCursor>
++#include <QLayout>
+ #include <iostream>
+ 
+ QString ProfileGroupStorage::GetWhereClause(MSqlBindings &bindings) const
+--- ./libs/libmythtv/recorderbase.h.orig	2009-10-08 16:06:13.000000000 +0000
++++ ./libs/libmythtv/recorderbase.h	2009-10-15 22:14:18.000000000 +0000
+@@ -2,11 +2,11 @@
+ #ifndef RECORDERBASE_H_
+ #define RECORDERBASE_H_
+ 
+-#include <qmutex.h>
+-#include <qstring.h>
+-#include <qmap.h>
+-#include <qsqldatabase.h>
+-#include <qwaitcondition.h>
++#include <QMutex>
++#include <QString>
++#include <QMap>
++#include <QSqlDatabase>
++#include <QWaitCondition>
+ 
+ #include <pthread.h>
+ 
+--- ./libs/libmythtv/remoteencoder.h.orig	2009-10-15 21:20:35.000000000 +0000
++++ ./libs/libmythtv/remoteencoder.h	2009-10-15 21:20:55.000000000 +0000
+@@ -1,9 +1,9 @@
+ #ifndef REMOTEENCODER_H_
+ #define REMOTEENCODER_H_
+ 
+-#include <qstringlist.h>
+-#include <qmutex.h>
+-#include <qmap.h>
++#include <QStringList>
++#include <QMutex>
++#include <QMap>
+ 
+ #include "mythexp.h"
+ #include "videoouttypes.h"
+--- ./libs/libmythtv/signalmonitor.h.orig	2009-07-17 17:16:29.000000000 +0000
++++ ./libs/libmythtv/signalmonitor.h	2009-10-15 22:12:52.000000000 +0000
+@@ -13,8 +13,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qobject.h>
+-#include <qmutex.h>
++#include <QObject>
++#include <QMutex>
+ 
+ // MythTV headers
+ #include "signalmonitorvalue.h"
+--- ./libs/libmythtv/signalmonitorvalue.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/signalmonitorvalue.h	2009-10-15 22:09:13.000000000 +0000
+@@ -3,7 +3,7 @@
+ #define SIGNALMONITORVALUES_H
+ 
+ #include <vector>
+-#include <qstringlist.h>
++#include <QStringList>
+ #include <mythcontext.h>
+ 
+ class SignalMonitorValue
+--- ./libs/libmythtv/sourceutil.h.orig	2009-09-14 18:59:30.000000000 +0000
++++ ./libs/libmythtv/sourceutil.h	2009-10-15 22:09:13.000000000 +0000
+@@ -7,7 +7,7 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ #include "mythexp.h"
+ 
+--- ./libs/libmythtv/teletextdecoder.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/teletextdecoder.h	2009-10-15 22:14:18.000000000 +0000
+@@ -3,9 +3,9 @@
+ 
+ #include <stdint.h>
+ 
+-#include <qwaitcondition.h>
+-#include <qobject.h>
+-#include <qmutex.h>
++#include <QWaitCondition>
++#include <QObject>
++#include <QMutex>
+ 
+ class OSDType;
+ 
+--- ./libs/libmythtv/textsubtitleparser.cpp.orig	2009-07-13 18:41:55.000000000 +0000
++++ ./libs/libmythtv/textsubtitleparser.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -8,7 +8,7 @@
+ #include <cstring>
+ #include <climits>
+ #include <algorithm>
+-#include <qtextcodec.h>
++#include <QTextCodec>
+ 
+ #include "mythcontext.h"
+ #include "RingBuffer.h"
+--- ./libs/libmythtv/transporteditor.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/transporteditor.h	2009-10-15 22:12:52.000000000 +0000
+@@ -32,7 +32,7 @@
+ #ifndef _TRANSPORT_EDITOR_H_
+ #define _TRANSPORT_EDITOR_H_
+ 
+-#include <qobject.h>
++#include <QObject>
+ #include "settings.h"
+ 
+ class VideoSourceSelector;
+--- ./libs/libmythtv/ttfont.h.orig	2009-07-06 20:42:28.000000000 +0000
++++ ./libs/libmythtv/ttfont.h	2009-10-15 22:12:52.000000000 +0000
+@@ -5,9 +5,9 @@
+ #include FT_FREETYPE_H
+ #include FT_GLYPH_H
+ 
+-#include <qstring.h>
+-#include <qmap.h>
+-#include <qcolor.h>
++#include <QString>
++#include <QMap>
++#include <QColor>
+ 
+ #include "mythconfig.h"
+ 
+--- ./libs/libmythtv/tv.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythtv/tv.h	2009-10-15 22:09:13.000000000 +0000
+@@ -1,7 +1,7 @@
+ #ifndef TV_H
+ #define TV_H
+ 
+-#include <qstring.h>
++#include <QString>
+ #include "videoouttypes.h"
+ 
+ /** \brief ChannelChangeDirection is an enumeration of possible channel
+--- ./libs/libmythtv/tv_play.h.orig	2009-09-19 06:32:08.000000000 +0000
++++ ./libs/libmythtv/tv_play.h	2009-10-15 22:14:18.000000000 +0000
+@@ -3,17 +3,17 @@
+ #ifndef TVPLAY_H
+ #define TVPLAY_H
+ 
+-#include <qstring.h>
+-#include <qmap.h>
++#include <QString>
++#include <QMap>
+ #include <QHash>
+-#include <qdatetime.h>
++#include <QDateTime>
+ #include <QKeyEvent>
+ #include <QEvent>
+ #include <pthread.h>
+-#include <qmutex.h>
+-#include <qstringlist.h>
+-#include <qregexp.h>
+-#include <qwaitcondition.h>
++#include <QMutex>
++#include <QStringList>
++#include <QRegExp>
++#include <QWaitCondition>
+ #include <QThread>
+ #include <QReadWriteLock>
+ 
+@@ -28,7 +28,7 @@
+ #include "inputinfo.h"
+ #include "channelgroup.h"
+ 
+-#include <qobject.h>
++#include <QObject>
+ 
+ #include <vector>
+ using namespace std;
+--- ./libs/libmythtv/tv_rec.cpp.orig	2009-10-01 18:01:46.000000000 +0000
++++ ./libs/libmythtv/tv_rec.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -11,8 +11,8 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qapplication.h>
+-#include <qsqldatabase.h>
++#include <QApplication>
++#include <QSqlDatabase>
+ 
+ // MythTV headers
+ #include "mythconfig.h"
+--- ./libs/libmythtv/tvosdmenuentry.h.orig	2009-08-08 12:26:02.000000000 +0000
++++ ./libs/libmythtv/tvosdmenuentry.h	2009-10-15 22:12:52.000000000 +0000
+@@ -1,9 +1,9 @@
+ #ifndef TVOSDMENUENTRY_H_
+ #define TVOSDMENUENTRY_H_
+ 
+-#include <qstring.h>
+-#include <qstringlist.h>
+-#include <qmutex.h>
++#include <QString>
++#include <QStringList>
++#include <QMutex>
+ #include <QVariant>
+ #include "tv.h"
+ #include "mythexp.h"
+--- ./libs/libmythtv/util-opengl.h.orig	2009-08-22 11:11:52.000000000 +0000
++++ ./libs/libmythtv/util-opengl.h	2009-10-15 22:09:13.000000000 +0000
+@@ -25,7 +25,7 @@
+ #endif
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ #ifndef GL_TEXTTURE0
+ #define GL_TEXTURE0 0x84C0
+--- ./libs/libmythtv/util-xv.h.orig	2009-08-26 04:39:14.000000000 +0000
++++ ./libs/libmythtv/util-xv.h	2009-10-15 22:09:13.000000000 +0000
+@@ -3,7 +3,7 @@
+ #ifndef _UTIL_XV_H_
+ #define _UTIL_XV_H_
+ 
+-#include <qmap.h>
++#include <QMap>
+ 
+ #include "videobuffers.h"
+ #include "exitcodes.h"
+--- ./libs/libmythtv/videobuffers.h.orig	2009-07-06 11:33:40.000000000 +0000
++++ ./libs/libmythtv/videobuffers.h	2009-10-15 22:25:30.000000000 +0000
+@@ -8,9 +8,9 @@
+ }
+ #include <vector>
+ #include <map>
+-#include <qmutex.h>
+-#include <qstring.h>
+-#include <qwaitcondition.h>
++#include <QMutex>
++#include <QString>
++#include <QWaitCondition>
+ #include "mythdeque.h"
+ 
+ #ifdef USING_XVMC
+--- ./libs/libmythtv/videodisplayprofile.h.orig	2009-06-08 01:42:55.000000000 +0000
++++ ./libs/libmythtv/videodisplayprofile.h	2009-10-15 22:14:18.000000000 +0000
+@@ -6,10 +6,10 @@
+ #include <vector>
+ using namespace std;
+ 
+-#include <qstringlist.h>
+-#include <qmutex.h>
+-#include <qsize.h>
+-#include <qmap.h>
++#include <QStringList>
++#include <QMutex>
++#include <QSize>
++#include <QMap>
+ 
+ #include "mythcontext.h"
+ 
+--- ./libs/libmythtv/videoout_d3d.cpp.orig	2009-09-03 05:05:37.000000000 +0000
++++ ./libs/libmythtv/videoout_d3d.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -20,7 +20,7 @@
+ #include "mmsystem.h"
+ #include "tv.h"
+ 
+-#include <qapplication.h>
++#include <QApplication>
+ 
+ #undef UNICODE
+ 
+--- ./libs/libmythtv/videoout_directfb.h.orig	2009-06-30 11:47:43.000000000 +0000
++++ ./libs/libmythtv/videoout_directfb.h	2009-10-15 22:12:52.000000000 +0000
+@@ -1,7 +1,7 @@
+ #ifndef VIDEOOUT_DIRECTFB_H
+ #define VIDEOOUT_DIRECTFB_H
+ 
+-#include <qobject.h>
++#include <QObject>
+ #include "videooutbase.h"
+ 
+ class NuppelVideoPlayer;
+--- ./libs/libmythtv/videoout_dvdv.mm.orig	2008-11-12 18:32:17.000000000 +0000
++++ ./libs/libmythtv/videoout_dvdv.mm	2009-10-15 22:25:30.000000000 +0000
+@@ -11,11 +11,11 @@
+ #import <AGL/agl.h>
+ #import <OpenGL/glext.h>
+ 
+-#include <qmutex.h>
+-#include <qstring.h>
+-#include <q3ptrqueue.h>
+-#include <qmap.h>
+-#include <qsize.h>
++#include <QMutex>
++#include <QString>
++#include <Q3PtrQueue>
++#include <QMap>
++#include <QSize>
+ 
+ #include "libmyth/mythconfig.h"
+ #include "libmyth/mythverbose.h"
+--- ./libs/libmythtv/videoout_ivtv.h.orig	2009-06-30 11:47:43.000000000 +0000
++++ ./libs/libmythtv/videoout_ivtv.h	2009-10-15 22:12:52.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef VIDEOOUT_IVTV_H_
+ #define VIDEOOUT_IVTV_H_
+ 
+-#include <qstring.h>
+-#include <qmutex.h>
++#include <QString>
++#include <QMutex>
+ 
+ #include "videooutbase.h"
+ 
+--- ./libs/libmythtv/videoout_null.h.orig	2009-06-30 11:47:43.000000000 +0000
++++ ./libs/libmythtv/videoout_null.h	2009-10-15 22:12:52.000000000 +0000
+@@ -1,7 +1,7 @@
+ #ifndef VIDEOOUT_NULL_H_
+ #define VIDEOOUT_NULL_H_
+ 
+-#include <qmutex.h>
++#include <QMutex>
+ 
+ #include "videooutbase.h"
+ 
+--- libs/libmythupnp/configuration.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ libs/libmythupnp/configuration.h	2009-10-15 23:22:02.000000000 +0000
+@@ -24,8 +24,8 @@
+ #ifndef __CONFIGURATION_H__
+ #define __CONFIGURATION_H__
+ 
+-#include <qdom.h>
+-#include <qstringlist.h>
++#include <Qt/qdom.h>
++#include <QStringList>
+ 
+ class Configuration 
+ {
+--- libs/libmythupnp/mythxmlclient.h.orig	2009-04-14 02:33:12.000000000 +0000
++++ libs/libmythupnp/mythxmlclient.h	2009-10-15 23:21:42.000000000 +0000
+@@ -24,8 +24,8 @@
+ #ifndef MYTHXMLCLIENT_H_
+ #define MYTHXMLCLIENT_H_
+ 
+-#include <qdom.h>
+-#include <qbuffer.h>
++#include <Qt/qdom.h>
++#include <QBuffer>
+ 
+ #include "httpcomms.h"
+ 
+--- ./libs/libmythupnp/refcounted.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythupnp/refcounted.h	2009-10-15 22:12:52.000000000 +0000
+@@ -24,7 +24,7 @@
+ #ifndef __REFCOUNTED_H__
+ #define __REFCOUNTED_H__
+ 
+-#include <qmutex.h>
++#include <QMutex>
+ 
+ /////////////////////////////////////////////////////////////////////////////
+ /////////////////////////////////////////////////////////////////////////////
+--- ./libs/libmythupnp/soapclient.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythupnp/soapclient.cpp	2009-10-15 22:15:44.000000000 +0000
+@@ -21,7 +21,7 @@
+ //
+ //////////////////////////////////////////////////////////////////////////////
+ 
+-#include <qbuffer.h>
++#include <QBuffer>
+ 
+ #include "soapclient.h"
+ 
+--- libs/libmythupnp/soapclient.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ libs/libmythupnp/soapclient.h	2009-10-15 23:21:25.000000000 +0000
+@@ -24,7 +24,7 @@
+ #ifndef SOAPCLIENT_H_
+ #define SOAPCLIENT_H_
+ 
+-#include <qdom.h>
++#include <Qt/qdom.h>
+ 
+ #include "httpcomms.h"
+ #include "upnputil.h"
+--- ./libs/libmythupnp/ssdp.cpp.orig	2009-08-12 16:30:58.000000000 +0000
++++ ./libs/libmythupnp/ssdp.cpp	2009-10-15 22:14:18.000000000 +0000
+@@ -29,11 +29,11 @@
+ #include "multicast.h"
+ #include "broadcast.h"
+ 
+-#include <qregexp.h>
++#include <QRegExp>
+ 
+ #include <unistd.h>
+ #include <stdlib.h>
+-#include <qstringlist.h>
++#include <QStringList>
+ #include <sys/time.h>
+ 
+ /////////////////////////////////////////////////////////////////////////////
+--- ./libs/libmythupnp/taskqueue.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./libs/libmythupnp/taskqueue.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -23,7 +23,7 @@
+ 
+ #include "taskqueue.h"
+ #include <sys/time.h>
+-#include <qdatetime.h>
++#include <QDateTime>
+ 
+ #include <iostream>
+ 
+--- ./libs/libmythupnp/upnpdevice.cpp.orig	2009-04-14 02:21:29.000000000 +0000
++++ ./libs/libmythupnp/upnpdevice.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -28,7 +28,7 @@
+ #include <unistd.h>
+ #include <cerrno>
+ 
+-#include <qfile.h>
++#include <QFile>
+ #include <QTextStream>
+ 
+ int DeviceLocation::g_nAllocated   = 0;       // Debugging only
+--- ./libs/libmythupnp/upnpmsrr.cpp.orig	2009-07-08 07:46:10.000000000 +0000
++++ ./libs/libmythupnp/upnpmsrr.cpp	2009-10-15 22:14:18.000000000 +0000
+@@ -9,7 +9,7 @@
+ #include "upnpmsrr.h"
+ 
+ #include <math.h>
+-#include <qregexp.h>
++#include <QRegExp>
+ 
+ /////////////////////////////////////////////////////////////////////////////
+ //
+--- libs/libmythupnp/upnpmsrr.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ libs/libmythupnp/upnpmsrr.h	2009-10-15 23:21:08.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef UPnpMSRR_H_
+ #define UPnpMSRR_H_
+ 
+-#include <qdom.h>
+-#include <qdatetime.h> 
++#include <Qt/qdom.h>
++#include <QDateTime> 
+ 
+ #include "httpserver.h"
+ #include "eventing.h"
+--- ./libs/libmythupnp/upnputil.cpp.orig	2009-07-06 20:42:28.000000000 +0000
++++ ./libs/libmythupnp/upnputil.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -27,7 +27,7 @@
+ #include <cerrno>
+ 
+ // Qt headers
+-#include <quuid.h>
++#include <QUuid>
+ 
+ // MythTV headers
+ #include "upnputil.h"
+--- ./programs/mythbackend/autoexpire.cpp.orig	2009-08-21 05:32:05.000000000 +0000
++++ ./programs/mythbackend/autoexpire.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -3,10 +3,10 @@
+ #include <signal.h>
+ 
+ 
+-#include <qregexp.h>
+-#include <qstring.h>
+-#include <qdatetime.h>
+-#include <qfileinfo.h>
++#include <QRegExp>
++#include <QString>
++#include <QDateTime>
++#include <QFileInfo>
+ 
+ #include <iostream>
+ #include <algorithm>
+--- ./programs/mythbackend/autoexpire.h.orig	2009-08-12 08:25:42.000000000 +0000
++++ ./programs/mythbackend/autoexpire.h	2009-10-15 22:14:18.000000000 +0000
+@@ -9,10 +9,10 @@
+ #include <vector>
+ #include <set>
+ 
+-#include <qmap.h> 
+-#include <qmutex.h>
+-#include <qwaitcondition.h>
+-#include <qobject.h>
++#include <QMap> 
++#include <QMutex>
++#include <QWaitCondition>
++#include <QObject>
+ 
+ using namespace std;
+ class ProgramInfo;
+--- ./programs/mythbackend/backendutil.cpp.orig	2009-09-05 13:55:01.000000000 +0000
++++ ./programs/mythbackend/backendutil.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -8,9 +8,9 @@
+ #include <sys/vfs.h>
+ #endif
+ 
+-#include <qdir.h>
+-#include <qmutex.h>
+-#include <qmap.h>
++#include <QDir>
++#include <QMutex>
++#include <QMap>
+ 
+ #include "backendutil.h"
+ #include "remoteutil.h"
+--- ./programs/mythbackend/encoderlink.h.orig	2009-05-09 18:51:42.000000000 +0000
++++ ./programs/mythbackend/encoderlink.h	2009-10-15 22:09:13.000000000 +0000
+@@ -1,7 +1,7 @@
+ #ifndef ENCODERLINK_H_
+ #define ENCODERLINK_H_
+ 
+-#include <qstring.h>
++#include <QString>
+ 
+ #include "tv.h"
+ #include "programinfo.h"
+--- ./programs/mythbackend/filetransfer.h.orig	2009-08-06 03:14:47.000000000 +0000
++++ ./programs/mythbackend/filetransfer.h	2009-10-15 22:14:18.000000000 +0000
+@@ -9,9 +9,9 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
+-#include <qmutex.h>
+-#include <qwaitcondition.h>
++#include <QString>
++#include <QMutex>
++#include <QWaitCondition>
+ 
+ class ProgramInfo;
+ class RingBuffer;
+--- ./programs/mythbackend/housekeeper.cpp.orig	2009-08-21 13:39:14.000000000 +0000
++++ ./programs/mythbackend/housekeeper.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -1,12 +1,12 @@
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+-#include <qsqldatabase.h>
+-#include <qsqlquery.h>
+-#include <qstring.h>
+-#include <qdatetime.h>
+-#include <qstringlist.h>
+-#include <qfileinfo.h>
++#include <QSqlDatabase>
++#include <QSqlQuery>
++#include <QString>
++#include <QDateTime>
++#include <QStringList>
++#include <QFileInfo>
+ 
+ #include <iostream>
+ #include <cstdlib>
+--- programs/mythbackend/httpstatus.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ programs/mythbackend/httpstatus.h	2009-10-15 23:20:47.000000000 +0000
+@@ -11,8 +11,8 @@
+ #ifndef HTTPSTATUS_H_
+ #define HTTPSTATUS_H_
+ 
+-#include <qdom.h>
+-#include <qdatetime.h> 
++#include <Qt/qdom.h>
++#include <QDateTime> 
+ 
+ #include "httpserver.h"
+ #include "mainserver.h"
+--- ./programs/mythbackend/mediaserver.h.orig	2009-09-06 07:47:00.000000000 +0000
++++ ./programs/mythbackend/mediaserver.h	2009-10-15 22:12:52.000000000 +0000
+@@ -11,8 +11,8 @@
+ #ifndef __MEDIASERVER_H__
+ #define __MEDIASERVER_H__
+ 
+-#include <qobject.h>
+-#include <qmutex.h>
++#include <QObject>
++#include <QMutex>
+ 
+ #include "libmythupnp/upnp.h"
+ 
+--- ./programs/mythbackend/playbacksock.h.orig	2009-10-01 19:43:38.000000000 +0000
++++ ./programs/mythbackend/playbacksock.h	2009-10-15 22:12:52.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef PLAYBACKSOCK_H_
+ #define PLAYBACKSOCK_H_
+ 
+-#include <qstring.h>
+-#include <qmutex.h>
++#include <QString>
++#include <QMutex>
+ 
+ #include "programinfo.h"
+ 
+--- ./programs/mythbackend/scheduler.cpp.orig	2009-09-18 00:30:33.000000000 +0000
++++ ./programs/mythbackend/scheduler.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -1,10 +1,10 @@
+ #include <unistd.h>
+-#include <qsqldatabase.h>
+-#include <qsqlquery.h>
+-#include <qregexp.h>
+-#include <qstring.h>
+-#include <qdatetime.h>
+-#include <qfile.h>
++#include <QSqlDatabase>
++#include <QSqlQuery>
++#include <QRegExp>
++#include <QString>
++#include <QDateTime>
++#include <QFile>
+ 
+ #include <iostream>
+ #include <algorithm>
+--- ./programs/mythbackend/scheduler.h.orig	2009-09-14 18:20:41.000000000 +0000
++++ ./programs/mythbackend/scheduler.h	2009-10-15 22:14:18.000000000 +0000
+@@ -8,10 +8,10 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qmutex.h>
+-#include <qwaitcondition.h>
+-#include <qmap.h> 
+-#include <qobject.h>
++#include <QMutex>
++#include <QWaitCondition>
++#include <QMap> 
++#include <QObject>
+ 
+ // MythTV headers
+ #include "recordinginfo.h"
+--- ./programs/mythbackend/upnpcdsmusic.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythbackend/upnpcdsmusic.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -10,7 +10,7 @@
+ 
+ #include "upnpcdsmusic.h"
+ #include "httprequest.h"
+-#include <qfileinfo.h>
++#include <QFileInfo>
+ #include <limits.h>
+ #include "mythcontext.h"
+ 
+--- ./programs/mythbackend/upnpmedia.cpp.orig	2009-09-06 07:47:00.000000000 +0000
++++ ./programs/mythbackend/upnpmedia.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -1,8 +1,8 @@
+ #include "httprequest.h"
+-#include <qfileinfo.h>
+-#include <qregexp.h>
+-#include <qurl.h>
+-#include <qdir.h>
++#include <QFileInfo>
++#include <QRegExp>
++#include <QUrl>
++#include <QDir>
+ #include <limits.h>
+ #include <unistd.h>
+ #include "util.h"
+--- ./programs/mythcommflag/CustomEventRelayer.h.orig	2009-10-15 22:37:58.000000000 +0000
++++ ./programs/mythcommflag/CustomEventRelayer.h	2009-10-15 22:38:22.000000000 +0000
+@@ -1,8 +1,8 @@
+ #ifndef _CUSTOMEVENTRELAYER_H_
+ #define _CUSTOMEVENTRELAYER_H_
+ 
+-#include "qobject.h"
+-#include "qstring.h"
++#include <QObject>
++#include <QString>
+ #include <QEvent>
+ 
+ #include "mythcontext.h"
+--- ./programs/mythcommflag/FrameAnalyzer.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythcommflag/FrameAnalyzer.h	2009-10-15 22:09:13.000000000 +0000
+@@ -10,7 +10,7 @@
+ /* Base class for commercial flagging video frame analyzers. */
+ 
+ #include <limits.h>
+-#include <qmap.h>
++#include <QMap>
+ 
+ /*  
+  * At least FreeBSD doesn't define LONG_LONG_MAX, but it does define  
+--- ./programs/mythcommflag/LogoDetectorBase.h.orig	2009-10-15 22:37:30.000000000 +0000
++++ ./programs/mythcommflag/LogoDetectorBase.h	2009-10-15 22:37:45.000000000 +0000
+@@ -1,7 +1,7 @@
+ #ifndef _LOGODETECTORBASE_H_
+ #define _LOGODETECTORBASE_H_
+ 
+-#include "qobject.h"
++#include <QObject>
+ 
+ class NuppelVideoPlayer;
+ 
+--- ./programs/mythcommflag/SceneChangeDetectorBase.h.orig	2009-10-15 22:38:34.000000000 +0000
++++ ./programs/mythcommflag/SceneChangeDetectorBase.h	2009-10-15 22:38:46.000000000 +0000
+@@ -1,7 +1,7 @@
+ #ifndef _SCENECHANGEDETECTORBASE_H_
+ #define _SCENECHANGEDETECTORBASE_H_
+ 
+-#include "qobject.h"
++#include <QObject>
+ 
+ class SceneChangeDetectorBase : public QObject
+ {
+--- ./programs/mythfilldatabase/channeldata.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythfilldatabase/channeldata.h	2009-10-15 22:09:13.000000000 +0000
+@@ -2,7 +2,7 @@
+ #define _CHANNELDATA_H_
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ #include <QList>
+ 
+ class ChanInfo
+--- ./programs/mythfilldatabase/filldata.cpp.orig	2009-08-08 12:15:46.000000000 +0000
++++ ./programs/mythfilldatabase/filldata.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -11,10 +11,10 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qmap.h>
+-#include <qdatetime.h>
+-#include <qdir.h>
+-#include <qfile.h>
++#include <QMap>
++#include <QDateTime>
++#include <QDir>
++#include <QFile>
+ #include <QProcess>
+ #include <QList>
+ 
+--- ./programs/mythfilldatabase/filldata.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythfilldatabase/filldata.h	2009-10-15 22:09:13.000000000 +0000
+@@ -6,7 +6,7 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ // libmythtv headers
+ #include "datadirect.h"
+--- ./programs/mythfilldatabase/fillutil.cpp.orig	2009-07-13 21:52:19.000000000 +0000
++++ ./programs/mythfilldatabase/fillutil.cpp	2009-10-15 22:09:13.000000000 +0000
+@@ -1,6 +1,6 @@
+ // Qt headers
+-#include <qfile.h>
+-#include <qdir.h>
++#include <QFile>
++#include <QDir>
+ 
+ // libmyth headers
+ #include "mythcontext.h"
+--- ./programs/mythfilldatabase/fillutil.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythfilldatabase/fillutil.h	2009-10-15 22:09:13.000000000 +0000
+@@ -5,7 +5,7 @@
+ #include <cstdio>
+ 
+ // Qt headers
+-#include <qstring.h>
++#include <QString>
+ 
+ class QFile;
+ 
+--- programs/mythfrontend/exitprompt.cpp.orig	2009-10-15 23:37:14.000000000 +0000
++++ programs/mythfrontend/exitprompt.cpp	2009-10-15 23:37:41.000000000 +0000
+@@ -16,7 +16,7 @@
+ void ExitPrompter::halt()
+ {
+     QString halt_cmd = gContext->GetSetting("HaltCommand",
+-                                            "sudo /sbin/halt -p");
++                                            "/sbin/shutdown -p now");
+     if (!halt_cmd.isEmpty())
+     {
+         myth_system(halt_cmd);
+--- ./programs/mythlcdserver/lcdprocclient.cpp.orig	2009-08-08 11:45:29.000000000 +0000
++++ ./programs/mythlcdserver/lcdprocclient.cpp	2009-10-15 22:25:30.000000000 +0000
+@@ -11,8 +11,8 @@
+ #include <stdlib.h>
+ #include <cmath>
+ 
+-#include <qapplication.h>
+-#include <q3textstream.h>
++#include <QApplication>
++#include <Q3TextStream>
+ 
+ #include "lcdprocclient.h"
+ #include "mythcontext.h"
+--- ./programs/mythlcdserver/lcdprocclient.h.orig	2009-10-15 21:55:16.000000000 +0000
++++ ./programs/mythlcdserver/lcdprocclient.h	2009-10-15 21:56:09.000000000 +0000
+@@ -1,12 +1,12 @@
+ #ifndef LCDPROCCLIENT_H_
+ #define LCDPROCCLIENT_H_
+ 
+-#include <qobject.h>
+-#include <qstringlist.h>
+-#include <q3valuevector.h>
+-#include <q3socket.h>
+-#include <qtimer.h>
+-#include <qdatetime.h>
++#include <QObject>
++#include <QStringList>
++#include <Q3ValueVector>
++#include <Q3Socket>
++#include <QTimer>
++#include <QDateTime>
+ #include <QEvent>
+ #include <Q3PtrList>
+ 
+--- ./programs/mythlcdserver/lcdserver.cpp.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythlcdserver/lcdserver.cpp	2009-10-15 22:14:18.000000000 +0000
+@@ -56,10 +56,10 @@
+ */
+ 
+ #include <stdlib.h>
+-#include <qstringlist.h>
+-#include <qregexp.h>
+-#include <qdir.h>
+-#include <qapplication.h>
++#include <QStringList>
++#include <QRegExp>
++#include <QDir>
++#include <QApplication>
+ #include <Q3PtrList>
+ 
+ #include "util.h"
+--- ./programs/mythlcdserver/lcdserver.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythlcdserver/lcdserver.h	2009-10-15 22:12:52.000000000 +0000
+@@ -7,8 +7,8 @@
+ 
+ */
+ 
+-#include <qobject.h>
+-#include <qstringlist.h>
++#include <QObject>
++#include <QStringList>
+ 
+ #include "serversocket.h"
+ #include "lcdprocclient.h"
+--- ./programs/mythlcdserver/main.cpp.orig	2009-08-08 11:45:29.000000000 +0000
++++ ./programs/mythlcdserver/main.cpp	2009-10-15 22:25:30.000000000 +0000
+@@ -13,7 +13,7 @@
+ 
+ #include <QApplication>
+ #include <QFile>
+-#include <q3textstream.h>
++#include <Q3TextStream>
+ 
+ #include "exitcodes.h"
+ #include "mythcontext.h"
+--- ./programs/mythlcdserver/serversocket.h.orig	2009-04-11 00:04:30.000000000 +0000
++++ ./programs/mythlcdserver/serversocket.h	2009-10-15 22:25:30.000000000 +0000
+@@ -10,8 +10,8 @@
+ 
+ */
+ 
+-#include <q3socket.h>
+-#include <q3serversocket.h>
++#include <Q3Socket>
++#include <Q3ServerSocket>
+ 
+ 
+ 
+--- ./programs/mythtranscode/mpeg2fix.h.orig	2009-10-01 15:24:45.000000000 +0000
++++ ./programs/mythtranscode/mpeg2fix.h	2009-10-15 22:25:30.000000000 +0000
+@@ -23,9 +23,9 @@
+ #include <QStringList>
+ #include <QDateTime>
+ 
+-#include <q3ptrlist.h>
+-#include <q3ptrqueue.h>
+-#include <q3valuelist.h>
++#include <Q3PtrList>
++#include <Q3PtrQueue>
++#include <Q3ValueList>
+ 
+ #include "transcodedefs.h"
+ 
+@@ -265,7 +265,7 @@
+ };
+ 
+ #ifdef NO_MYTH
+-    #include <qdatetime.h>
++    #include <QDateTime>
+     #include <iostream>
+ 
+     using namespace std;
+--- ./programs/mythtvosd/main.cpp.orig	2009-08-08 11:45:29.000000000 +0000
++++ ./programs/mythtvosd/main.cpp	2009-10-15 22:21:14.000000000 +0000
+@@ -9,11 +9,11 @@
+ using namespace std;
+ 
+ // Qt headers
+-#include <qapplication.h>
++#include <QApplication>
+ #include <QUdpSocket>
+-#include <qstring.h>
+-#include <qfile.h>
+-#include <qhostaddress.h>
++#include <QString>
++#include <QFile>
++#include <QHostAddress>
+ 
+ // MythTV headers
+ #include "exitcodes.h"
+--- ./programs/mythwelcome/welcomedialog.cpp.orig	2009-10-12 16:08:03.000000000 +0000
++++ ./programs/mythwelcome/welcomedialog.cpp	2009-10-15 22:12:52.000000000 +0000
+@@ -5,7 +5,7 @@
+ #include <unistd.h>
+ 
+ // qt
+-#include <qapplication.h>
++#include <QApplication>
+ #include <QKeyEvent>
+ #include <QLabel>
+ #include <QEvent>

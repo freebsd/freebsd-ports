@@ -1,63 +1,36 @@
---- configure.orig	2009-04-22 21:32:14.000000000 -0400
-+++ configure	2009-04-22 21:32:19.000000000 -0400
-@@ -163,6 +163,7 @@
-   echo "                           directory with frontend.h [$dvb_path]"
-   echo "  --disable-x11            disable X11 support"
-   echo "  --x11-path=X11LOC        location of X11 include files [$x11_include_path-path]"
-+#  echo "  --enable-glx-procaddrarb use glXGetProcAddressARB() instead of glXGetProcAddress()"
-   echo "  --disable-xrandr         disable X11 resolution switching"
-   echo "  --disable-xv             disable XVideo   (X11 video output accel.)"
-   echo "  --disable-xvmc           disable XvMC     (Linux/BSD MPEG accel.)"
-@@ -273,13 +274,13 @@
-     exit 1
+--- configure.orig	2009-10-09 00:30:46.000000000 +0200
++++ configure	2009-11-22 23:33:55.000000000 +0100
+@@ -633,21 +633,21 @@
+     log check_cc "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS "$@" -c -o $TMPO $TMPC
++    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPC
  }
  
--# "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
-+# Avoid locale weirdness, besides we really just want to translate ASCII.
- toupper(){
--    echo "$@" | tr '[a-z]' '[A-Z]'
-+    echo "$@" | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ check_cpp(){
+     log check_cpp "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS "$@" -E -o $TMPO $TMPC
++    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS -I${prefix}/include "$@" -E -o $TMPO $TMPC
  }
  
- tolower(){
--    echo "$@" | tr '[A-Z]' '[a-z]'
-+    echo "$@" | tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+ check_cxx(){
+     log check_cxx "$@"
+     cat > $TMPCXX
+     log_file $TMPCXX
+-    check_cmd $cxx $ECXXFLAGS "$@" -c -o $TMPO $TMPCXX
++    check_cmd $cxx $ECXXFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPCXX
  }
  
- set_all(){
-@@ -904,6 +905,7 @@
-     xvmc_vld
-     dvdv
-     fribidi
-+    glx_proc_addr_arb
- '
+ check_as(){
+@@ -4254,6 +4254,8 @@
+ #       directories, it cannot be modified.
+ QMAKE_LIBDIR_QT -= $libdir
+ LATE_LIBS            += -L$libdir
++CONFIG_INCLUDEPATH=
++FREETYPE_CFLAGS -= -I/usr/local/include
+ EOF
  
- MYTHTV_LIST='
-@@ -1189,6 +1191,7 @@
- xvmc_opengl="yes"
- xvmc_vld="yes"
- xvmcw="yes"
-+glx_proc_addr_arb="no"
- 
- # libraries
- enable zlib
-@@ -1353,6 +1356,10 @@
-   ;;
-   --xvmc-lib=*) xvmc_lib="$optval"
-   ;;
-+  --enable-glx-procaddrarb) glx_proc_addr_arb="yes"
-+  ;;
-+  --disable-glx-procaddrarb) glx_proc_addr_arb="no"
-+  ;;
-   --enable-mac-accel) dvdv="yes"
-   ;;
-   --disable-mac-accel) dvdv="no"
-@@ -1466,7 +1473,7 @@
-   x86_64|amd64)
-     arch="x86_32"
-     enable fast_unaligned
--    canon_arch="`$cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
-+    canon_arch="`$cxx -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
-     if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
-       if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
-         arch="x86_64"
+ diff $TMPH $MYTH_CONFIG_H >/dev/null 2>&1

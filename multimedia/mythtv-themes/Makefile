@@ -6,8 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.21
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
@@ -17,16 +16,17 @@ DISTNAME=	myththemes-${PORTVERSION}
 MAINTAINER=	decke@bluelife.at
 COMMENT=	The official MythTV Themes for your PVR
 
-BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv-frontend \
-		qmake:${PORTSDIR}/devel/qmake
+BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv-frontend
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build
 
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 
 CONFIGURE_ARGS=	--prefix="${PREFIX}"
 
-QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
 .include <bsd.port.mk>
