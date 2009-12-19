@@ -1020,6 +1020,7 @@
     SUBDIR += ttbudget
     SUBDIR += ttlscan
     SUBDIR += ttt
+    SUBDIR += tucan
     SUBDIR += tvark
     SUBDIR += twinkle
     SUBDIR += twitux

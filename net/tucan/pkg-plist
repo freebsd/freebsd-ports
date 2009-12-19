@@ -1,0 +1,206 @@
+bin/tucan
+share/applications/tucan.desktop
+share/pixmaps/tucan.svg
+%%DATADIR%%/core/__init__.py
+%%DATADIR%%/core/accounts.py
+%%DATADIR%%/core/config.py
+%%DATADIR%%/core/cons.py
+%%DATADIR%%/core/core.py
+%%DATADIR%%/core/download_manager.py
+%%DATADIR%%/core/download_plugin.py
+%%DATADIR%%/core/downloader.py
+%%DATADIR%%/core/events.py
+%%DATADIR%%/core/log_stream.py
+%%DATADIR%%/core/misc.py
+%%DATADIR%%/core/service_config.py
+%%DATADIR%%/core/service_manager.py
+%%DATADIR%%/core/service_update.py
+%%DATADIR%%/core/sessions.py
+%%DATADIR%%/core/slots.py
+%%DATADIR%%/core/tesseract.py
+%%DATADIR%%/core/uploader.py
+%%DATADIR%%/core/url_open.py
+%%DATADIR%%/default_plugins/4shared/__init__.py
+%%DATADIR%%/default_plugins/4shared/anonymous_download.py
+%%DATADIR%%/default_plugins/4shared/favicon_4shared.ico
+%%DATADIR%%/default_plugins/4shared/parsers.py
+%%DATADIR%%/default_plugins/4shared/service.conf
+%%DATADIR%%/default_plugins/badongo/__init__.py
+%%DATADIR%%/default_plugins/badongo/anonymous_download.py
+%%DATADIR%%/default_plugins/badongo/favicon_badongo.ico
+%%DATADIR%%/default_plugins/badongo/parsers.py
+%%DATADIR%%/default_plugins/badongo/service.conf
+%%DATADIR%%/default_plugins/depositfiles/__init__.py
+%%DATADIR%%/default_plugins/depositfiles/anonymous_download.py
+%%DATADIR%%/default_plugins/depositfiles/favicon_depositfiles.ico
+%%DATADIR%%/default_plugins/depositfiles/parsers.py
+%%DATADIR%%/default_plugins/depositfiles/service.conf
+%%DATADIR%%/default_plugins/easy-share/__init__.py
+%%DATADIR%%/default_plugins/easy-share/anonymous_download.py
+%%DATADIR%%/default_plugins/easy-share/favicon_easy-share.ico
+%%DATADIR%%/default_plugins/easy-share/parsers.py
+%%DATADIR%%/default_plugins/easy-share/service.conf
+%%DATADIR%%/default_plugins/filefactory/__init__.py
+%%DATADIR%%/default_plugins/filefactory/anonymous_download.py
+%%DATADIR%%/default_plugins/filefactory/favicon_filefactory.ico
+%%DATADIR%%/default_plugins/filefactory/parsers.py
+%%DATADIR%%/default_plugins/filefactory/service.conf
+%%DATADIR%%/default_plugins/gigasize/__init__.py
+%%DATADIR%%/default_plugins/gigasize/anonymous_download.py
+%%DATADIR%%/default_plugins/gigasize/check_links.py
+%%DATADIR%%/default_plugins/gigasize/favicon_gigasize.ico
+%%DATADIR%%/default_plugins/gigasize/service.conf
+%%DATADIR%%/default_plugins/hotfile/__init__.py
+%%DATADIR%%/default_plugins/hotfile/anonymous_download.py
+%%DATADIR%%/default_plugins/hotfile/favicon_hotfile.ico
+%%DATADIR%%/default_plugins/hotfile/parsers.py
+%%DATADIR%%/default_plugins/hotfile/service.conf
+%%DATADIR%%/default_plugins/mediafire/__init__.py
+%%DATADIR%%/default_plugins/mediafire/anonymous_download.py
+%%DATADIR%%/default_plugins/mediafire/favicon_mediafire.ico
+%%DATADIR%%/default_plugins/mediafire/parsers.py
+%%DATADIR%%/default_plugins/mediafire/service.conf
+%%DATADIR%%/default_plugins/megaupload/__init__.py
+%%DATADIR%%/default_plugins/megaupload/anonymous_download.py
+%%DATADIR%%/default_plugins/megaupload/captcha.py
+%%DATADIR%%/default_plugins/megaupload/check_links.py
+%%DATADIR%%/default_plugins/megaupload/favicon_megaupload.ico
+%%DATADIR%%/default_plugins/megaupload/premium_cookie.py
+%%DATADIR%%/default_plugins/megaupload/premium_download.py
+%%DATADIR%%/default_plugins/megaupload/premium_parser.py
+%%DATADIR%%/default_plugins/megaupload/service.conf
+%%DATADIR%%/default_plugins/rapidshare/__init__.py
+%%DATADIR%%/default_plugins/rapidshare/anonymous_download.py
+%%DATADIR%%/default_plugins/rapidshare/check_links.py
+%%DATADIR%%/default_plugins/rapidshare/favicon_rapidshare.ico
+%%DATADIR%%/default_plugins/rapidshare/premium_cookie.py
+%%DATADIR%%/default_plugins/rapidshare/premium_download.py
+%%DATADIR%%/default_plugins/rapidshare/service.conf
+%%DATADIR%%/default_plugins/sendspace/__init__.py
+%%DATADIR%%/default_plugins/sendspace/anonymous_download.py
+%%DATADIR%%/default_plugins/sendspace/favicon_sendspace.ico
+%%DATADIR%%/default_plugins/sendspace/parsers.py
+%%DATADIR%%/default_plugins/sendspace/service.conf
+%%DATADIR%%/default_plugins/zshare/__init__.py
+%%DATADIR%%/default_plugins/zshare/anonymous_download.py
+%%DATADIR%%/default_plugins/zshare/favicon_zshare.ico
+%%DATADIR%%/default_plugins/zshare/parsers.py
+%%DATADIR%%/default_plugins/zshare/service.conf
+%%DATADIR%%/i18n/cs/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/cs/cs.po
+%%DATADIR%%/i18n/de/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/de/de.po
+%%DATADIR%%/i18n/en/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/en/en.po
+%%DATADIR%%/i18n/es/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/es/es.po
+%%DATADIR%%/i18n/fr/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/fr/fr.po
+%%DATADIR%%/i18n/gr/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/gr/gr.po
+%%DATADIR%%/i18n/it/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/it/it.po
+%%DATADIR%%/i18n/pl/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/pl/pl.po
+%%DATADIR%%/i18n/pt/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/pt/pt.po
+%%DATADIR%%/i18n/ru/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/ru/ru.po
+%%DATADIR%%/i18n/se/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/se/se.po
+%%DATADIR%%/i18n/sk/LC_MESSAGES/tucan.mo
+%%DATADIR%%/i18n/sk/sk.po
+%%DATADIR%%/i18n/tucan.pot
+%%DATADIR%%/media/application-x-executable.svg
+%%DATADIR%%/media/applications-system.svg
+%%DATADIR%%/media/contact-new.svg
+%%DATADIR%%/media/document-save.svg
+%%DATADIR%%/media/edit-delete.svg
+%%DATADIR%%/media/go-down.svg
+%%DATADIR%%/media/go-up.svg
+%%DATADIR%%/media/image-missing.svg
+%%DATADIR%%/media/mail-reply-sender.svg
+%%DATADIR%%/media/media-playback-start.svg
+%%DATADIR%%/media/media-playback-stop.svg
+%%DATADIR%%/media/network-error.svg
+%%DATADIR%%/media/package-x-generic.svg
+%%DATADIR%%/media/preferences-desktop-locale.svg
+%%DATADIR%%/media/preferences-desktop.svg
+%%DATADIR%%/media/preferences-system.svg
+%%DATADIR%%/media/software-update-available.svg
+%%DATADIR%%/media/software-update-urgent.svg
+%%DATADIR%%/media/system-software-update.svg
+%%DATADIR%%/media/system-users.svg
+%%DATADIR%%/media/tucan.svg
+%%DATADIR%%/media/user-home.svg
+%%DATADIR%%/tucan.py
+%%DATADIR%%/ui/__init__.py
+%%DATADIR%%/ui/console/__init__.py
+%%DATADIR%%/ui/console/cli.py
+%%DATADIR%%/ui/console/no_ui.py
+%%DATADIR%%/ui/console/wizard.py
+%%DATADIR%%/ui/gtk/__init__.py
+%%DATADIR%%/ui/gtk/about.py
+%%DATADIR%%/ui/gtk/advanced_packages.py
+%%DATADIR%%/ui/gtk/file_chooser.py
+%%DATADIR%%/ui/gtk/gui.py
+%%DATADIR%%/ui/gtk/input_files.py
+%%DATADIR%%/ui/gtk/input_links.py
+%%DATADIR%%/ui/gtk/log_view.py
+%%DATADIR%%/ui/gtk/media.py
+%%DATADIR%%/ui/gtk/menu_bar.py
+%%DATADIR%%/ui/gtk/message.py
+%%DATADIR%%/ui/gtk/preferences.py
+%%DATADIR%%/ui/gtk/report.py
+%%DATADIR%%/ui/gtk/service_preferences.py
+%%DATADIR%%/ui/gtk/shutdown.py
+%%DATADIR%%/ui/gtk/statusbar.py
+%%DATADIR%%/ui/gtk/toolbar.py
+%%DATADIR%%/ui/gtk/tray_icon.py
+%%DATADIR%%/ui/gtk/tree.py
+%%DATADIR%%/ui/gtk/update_manager.py
+@dirrm share/tucan/ui/gtk
+@dirrm share/tucan/ui/console
+@dirrm share/tucan/ui
+@dirrm share/tucan/media
+@dirrm share/tucan/i18n/sk/LC_MESSAGES
+@dirrm share/tucan/i18n/sk
+@dirrm share/tucan/i18n/se/LC_MESSAGES
+@dirrm share/tucan/i18n/se
+@dirrm share/tucan/i18n/ru/LC_MESSAGES
+@dirrm share/tucan/i18n/ru
+@dirrm share/tucan/i18n/pt/LC_MESSAGES
+@dirrm share/tucan/i18n/pt
+@dirrm share/tucan/i18n/pl/LC_MESSAGES
+@dirrm share/tucan/i18n/pl
+@dirrm share/tucan/i18n/it/LC_MESSAGES
+@dirrm share/tucan/i18n/it
+@dirrm share/tucan/i18n/gr/LC_MESSAGES
+@dirrm share/tucan/i18n/gr
+@dirrm share/tucan/i18n/fr/LC_MESSAGES
+@dirrm share/tucan/i18n/fr
+@dirrm share/tucan/i18n/es/LC_MESSAGES
+@dirrm share/tucan/i18n/es
+@dirrm share/tucan/i18n/en/LC_MESSAGES
+@dirrm share/tucan/i18n/en
+@dirrm share/tucan/i18n/de/LC_MESSAGES
+@dirrm share/tucan/i18n/de
+@dirrm share/tucan/i18n/cs/LC_MESSAGES
+@dirrm share/tucan/i18n/cs
+@dirrm share/tucan/i18n
+@dirrm share/tucan/default_plugins/zshare
+@dirrm share/tucan/default_plugins/sendspace
+@dirrm share/tucan/default_plugins/rapidshare
+@dirrm share/tucan/default_plugins/megaupload
+@dirrm share/tucan/default_plugins/mediafire
+@dirrm share/tucan/default_plugins/hotfile
+@dirrm share/tucan/default_plugins/gigasize
+@dirrm share/tucan/default_plugins/filefactory
+@dirrm share/tucan/default_plugins/easy-share
+@dirrm share/tucan/default_plugins/depositfiles
+@dirrm share/tucan/default_plugins/badongo
+@dirrm share/tucan/default_plugins/4shared
+@dirrm share/tucan/default_plugins
+@dirrm share/tucan/core
+@dirrm share/tucan
+@dirrmtry share/applications
