@@ -20,15 +20,9 @@
 #
 # Audio Knobs:
 #
-# WITH_ARTS=yes
-#  Arts Support
-#
 # WITHOUT_DTS=yes
 #  DTS decoder Support
 #  useful for many dvds
-#
-# WITH_ESOUND=yes
-#  Esound Support
 #
 # WITH_FAAC=yes
 #  Faac audio encoder (mp4/aac) Support
