@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	centerim
-DISTVERSION=	4.22.8-19-gd2bb
-PORTREVISION=	1
+DISTVERSION=	4.22.8-25-g633d
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
@@ -23,8 +22,8 @@ USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS+="-I${LOCALBASE}/include" \
+		CXXFLAGS+="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-[0-9]*
