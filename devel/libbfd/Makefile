@@ -17,7 +17,7 @@ COMMENT=	Universal BFD library from GNU binutils
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty
 
-CONFLICTS=	mingw-binutils-[0-9]*
+CONFLICTS=	mingw-binutils-[0-9]* binutils-[0-9]*
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
