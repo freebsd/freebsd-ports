@@ -1129,6 +1129,8 @@ bochs                           ports/emulators/bochs
 boclient                        ports/net/boclient
 bodr                            ports/science/bodr
 boehm-gc                        ports/devel/boehm-gc
+boehm-gc-redirect               ports/devel/boehm-gc-redirect
+boehm-gc-threaded               ports/devel/boehm-gc-threaded
 bogged                          ports/games/bogged
 bogofilter                      ports/mail/bogofilter
 bogofilter-sqlite               ports/mail/bogofilter-sqlite
@@ -3180,6 +3182,7 @@ eyeos-themes                    ports/www/eyeos-themes
 ez-ipupdate                     ports/dns/ez-ipupdate
 ez-pine-gpg                     ports/mail/ez-pine-gpg
 ezbounce                        ports/irc/ezbounce
+ezbounce-devel                  ports/irc/ezbounce-devel
 ezfm                            ports/x11-fm/ezfm
 ezjail                          ports/sysutils/ezjail
 ezload                          ports/misc/ezload
@@ -3213,7 +3216,6 @@ fakeroot                        ports/security/fakeroot
 falconseye                      ports/games/falconseye
 fam                             ports/devel/fam
 fampp                           ports/devel/fampp
-fandango                        ports/cad/fandango
 fann                            ports/math/fann
 fanout                          ports/sysutils/fanout
 fapg                            ports/audio/fapg
@@ -9502,6 +9504,7 @@ nemiver                         ports/devel/nemiver
 nenscript                       ports/print/nenscript
 neon26                          ports/www/neon26
 neon28                          ports/www/neon28
+neon29                          ports/www/neon29
 neonpp                          ports/www/neonpp
 neowebscript                    ports/www/neowebscript
 nepenthes                       ports/net/nepenthes
@@ -11421,6 +11424,7 @@ p5-Email-Valid-Loose            ports/mail/p5-Email-Valid-Loose
 p5-Encode                       ports/converters/p5-Encode
 p5-Encode-Detect                ports/converters/p5-Encode-Detect
 p5-Encode-DoubleEncodedUTF8     ports/converters/p5-Encode-DoubleEncodedUTF8
+p5-Encode-IMAPUTF7              ports/converters/p5-Encode-IMAPUTF7
 p5-Encode-JIS2K                 ports/converters/p5-Encode-JIS2K
 p5-Encode-compat                ports/converters/p5-Encode-compat
 p5-Encoding-FixLatin            ports/converters/p5-Encoding-FixLatin
@@ -12487,6 +12491,7 @@ p5-Net-GrowlClient              ports/net/p5-Net-GrowlClient
 p5-Net-HL7                      ports/net/p5-Net-HL7
 p5-Net-Hiveminder               ports/net/p5-Net-Hiveminder
 p5-Net-ICQ2000                  ports/net-im/p5-Net-ICQ2000
+p5-Net-IMAP-Server              ports/mail/p5-Net-IMAP-Server
 p5-Net-IMAP-Simple              ports/mail/p5-Net-IMAP-Simple
 p5-Net-IMAP-Simple-SSL          ports/mail/p5-Net-IMAP-Simple-SSL
 p5-Net-INET6Glue                ports/net/p5-Net-INET6Glue
@@ -15062,6 +15067,7 @@ p5-encode                       ports/converters/p5-Encode
 p5-encode-compat                ports/converters/p5-Encode-compat
 p5-encode-detect                ports/converters/p5-Encode-Detect
 p5-encode-doubleencodedutf8     ports/converters/p5-Encode-DoubleEncodedUTF8
+p5-encode-imaputf7              ports/converters/p5-Encode-IMAPUTF7
 p5-encode-jis2k                 ports/converters/p5-Encode-JIS2K
 p5-encoding-fixlatin            ports/converters/p5-Encoding-FixLatin
 p5-enum                         ports/devel/p5-enum
@@ -16152,6 +16158,7 @@ p5-net-hiveminder               ports/net/p5-Net-Hiveminder
 p5-net-hl7                      ports/net/p5-Net-HL7
 p5-net-icq2000                  ports/net-im/p5-Net-ICQ2000
 p5-net-ident                    ports/net/p5-Net-Ident
+p5-net-imap-server              ports/mail/p5-Net-IMAP-Server
 p5-net-imap-simple              ports/mail/p5-Net-IMAP-Simple
 p5-net-imap-simple-ssl          ports/mail/p5-Net-IMAP-Simple-SSL
 p5-net-inet6glue                ports/net/p5-Net-INET6Glue
@@ -18721,6 +18728,7 @@ pidgin-libnotify                ports/net-im/pidgin-libnotify
 pidgin-manualsize               ports/net-im/pidgin-manualsize
 pidgin-msn-pecan                ports/net-im/pidgin-msn-pecan
 pidgin-musictracker             ports/audio/pidgin-musictracker
+pidgin-osd                      ports/net-im/pidgin-osd
 pidgin-otr                      ports/security/pidgin-otr
 pidgin-pidgimpd                 ports/net-im/pidgin-pidgimpd
 pidgin-rhythmbox                ports/net-im/pidgin-rhythmbox
@@ -19711,7 +19719,6 @@ py-mox                          ports/devel/py-mox
 py-mp-random                    ports/net/py-mp-random
 py-mpd                          ports/audio/py-mpd
 py-mpmath                       ports/math/py-mpmath
-py-mpz                          ports/math/py-mpz
 py-msnp                         ports/net-im/py-msnp
 py-mssql                        ports/databases/py-mssql
 py-mt                           ports/www/py-mt
@@ -19792,6 +19799,7 @@ py-poker-eval                   ports/games/py-poker-eval
 py-polib                        ports/devel/py-polib
 py-poppler                      ports/graphics/py-poppler
 py-posix1e                      ports/security/py-posix1e
+py-postgresql                   ports/databases/py-postgresql
 py-postmarkup                   ports/www/py-postmarkup
 py-pow                          ports/security/py-pow
 py-pp                           ports/devel/py-pp
@@ -20215,11 +20223,9 @@ python-doc-pdf-letter           ports/lang/python-doc-pdf-letter
 python-doc-postscript-a4        ports/lang/python-doc-postscript-a4
 python-doc-postscript-letter    ports/lang/python-doc-postscript-letter
 python-mode.el                  ports/lang/python-mode.el
-python23                        ports/lang/python23
 python24                        ports/lang/python24
 python25                        ports/lang/python25
 python26                        ports/lang/python26
-python30                        ports/lang/python30
 python31                        ports/lang/python31
 pythoncad                       ports/cad/pythoncad
 pythonchess                     ports/games/pythonchess
@@ -20836,6 +20842,15 @@ rsyslog4-pgsql                  ports/sysutils/rsyslog4-pgsql
 rsyslog4-relp                   ports/sysutils/rsyslog4-relp
 rsyslog4-rfc3195                ports/sysutils/rsyslog4-rfc3195
 rsyslog4-snmp                   ports/sysutils/rsyslog4-snmp
+rsyslog5                        ports/sysutils/rsyslog5
+rsyslog5-dbi                    ports/sysutils/rsyslog5-dbi
+rsyslog5-gnutls                 ports/sysutils/rsyslog5-gnutls
+rsyslog5-gssapi                 ports/sysutils/rsyslog5-gssapi
+rsyslog5-mysql                  ports/sysutils/rsyslog5-mysql
+rsyslog5-pgsql                  ports/sysutils/rsyslog5-pgsql
+rsyslog5-relp                   ports/sysutils/rsyslog5-relp
+rsyslog5-rfc3195                ports/sysutils/rsyslog5-rfc3195
+rsyslog5-snmp                   ports/sysutils/rsyslog5-snmp
 rt2-demo                        ports/games/rt2-demo
 rt36                            ports/www/rt36
 rt38                            ports/www/rt38
@@ -22964,6 +22979,7 @@ trac-codetags                   ports/www/trac-codetags
 trac-ctxtnavadd                 ports/www/trac-ctxtnavadd
 trac-customfieldadmin           ports/www/trac-customfieldadmin
 trac-customroadmap              ports/www/trac-customroadmap
+trac-datefield                  ports/www/trac-datefield
 trac-down                       ports/www/trac-down
 trac-email2trac                 ports/www/trac-email2trac
 trac-fullblog                   ports/www/trac-fullblog
@@ -25143,6 +25159,7 @@ zh-fcitx                        ports/chinese/fcitx
 zh-firebird                     ports/chinese/firebird
 zh-fireflyttf                   ports/chinese/fireflyttf
 zh-font-std                     ports/chinese/font-std
+zh-fortune                      ports/chinese/fortune
 zh-fortunetw                    ports/chinese/fortunetw
 zh-fqterm                       ports/chinese/fqterm
 zh-freewnn-lib                  ports/chinese/FreeWnn-lib
