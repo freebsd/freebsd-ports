@@ -4,6 +4,7 @@ lib/scim-1.0/1.4.0/IMEngine/chewing.so
 lib/scim-1.0/1.4.0/SetupUI/chewing-imengine-setup.a
 lib/scim-1.0/1.4.0/SetupUI/chewing-imengine-setup.la
 lib/scim-1.0/1.4.0/SetupUI/chewing-imengine-setup.so
+share/locale/nl/LC_MESSAGES/scim-chewing.mo
 share/locale/zh_TW/LC_MESSAGES/scim-chewing.mo
 share/scim/icons/scim-chewing-swap-colors.png
 share/scim/icons/scim-chewing.png
