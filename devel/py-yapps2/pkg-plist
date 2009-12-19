@@ -1,0 +1,17 @@
+bin/yapps2
+%%PYTHON_SITELIBDIR%%/yapps/__init__.py
+%%PYTHON_SITELIBDIR%%/yapps/__init__.pyc
+%%PYTHON_SITELIBDIR%%/yapps/__init__.pyo
+%%PYTHON_SITELIBDIR%%/yapps/grammar.py
+%%PYTHON_SITELIBDIR%%/yapps/grammar.pyc
+%%PYTHON_SITELIBDIR%%/yapps/grammar.pyo
+%%PYTHON_SITELIBDIR%%/yapps/parsetree.py
+%%PYTHON_SITELIBDIR%%/yapps/parsetree.pyc
+%%PYTHON_SITELIBDIR%%/yapps/parsetree.pyo
+%%PYTHON_SITELIBDIR%%/yapps/yapps_grammar.py
+%%PYTHON_SITELIBDIR%%/yapps/yapps_grammar.pyc
+%%PYTHON_SITELIBDIR%%/yapps/yapps_grammar.pyo
+%%PYTHON_SITELIBDIR%%/yapps/yappsrt.py
+%%PYTHON_SITELIBDIR%%/yapps/yappsrt.pyc
+%%PYTHON_SITELIBDIR%%/yapps/yappsrt.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/yapps

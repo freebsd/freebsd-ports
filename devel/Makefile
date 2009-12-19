@@ -2621,6 +2621,7 @@
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
+    SUBDIR += py-yapps2
     SUBDIR += py-ydbf
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig

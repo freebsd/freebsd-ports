@@ -1,0 +1,16 @@
+Yapps (Yet Another Python Parser System) is an easy to use parser
+generator that is written in Python and generates Python code.  Yapps
+is simple, is easy to use, and produces human-readable parsers. It is
+not fast, powerful, or particularly flexible.  Yapps is designed to be
+used when regular expressions are not enough and other parser systems
+are too much: situations where you may write your own recursive
+descent parser.  Yapps 1 is more like a functional language (concise
+grammars of the form when you see this, return this), while Yapps 2 is
+more like an imperative language (more verbose grammars of the form
+if/while you see this, do this).  Yapps 2 is more flexible than Yapps
+1 but it requires Python 1.5 and is not backwards-compatible with
+Yapps 1.
+
+This is the development version of Yapps 2.
+
+WWW: http://theory.stanford.edu/~amitp/yapps/
