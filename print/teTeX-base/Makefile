@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
