@@ -45,6 +45,10 @@ INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.x
+.endif
+
 #.if defined(WITH_SELF_HOSTING)
 # Note: USE_PGSQL has already been set above.
 BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
