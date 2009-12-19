@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libxul
-PORTVERSION=	1.9.0.15
+PORTVERSION=	1.9.0.16
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	xulrunner/releases/${PORTVERSION}/source/
@@ -48,10 +48,6 @@ MOZ_PKGCONFIG_FILES=	libxul-embedding-unstable libxul-embedding \
 		mozilla-gtkmozembed mozilla-js mozilla-nss mozilla-plugin
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
