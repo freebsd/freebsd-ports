@@ -38,10 +38,6 @@ MAN1=		seed.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
 		${WRKSRC}/configure
