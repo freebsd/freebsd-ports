@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/libgmp4 \
 		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
 
+CONFLICTS=	libbfd-[0-9]*
+
 OPTIONS=	NLS "Enable National Language Support" off
 
 CFLAGS+=	-I${LOCALBASE}/include
