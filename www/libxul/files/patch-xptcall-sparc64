@@ -1,6 +1,6 @@
---- /dev/null	Mon May 26 13:22:00 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_sparc64_freebsd.cpp	Mon May 26 04:12:55 2003
-@@ -0,0 +1,123 @@
+--- xpcom/reflect/xptcall/src/md/unix/xptcstubs_sparc64_freebsd.cpp.orig	2009-09-30 22:48:25.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_sparc64_freebsd.cpp	2009-09-30 23:09:48.000000000 +0200
+@@ -0,0 +1,125 @@
 +/* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
 + *
 + * The contents of this file are subject to the Mozilla Public
@@ -27,6 +27,7 @@
 +/* Implement shared vtbl methods. */
 +
 +#include "xptcprivate.h"
++#include "xptiprivate.h"
 +
 +#if defined(sparc) || defined(__sparc__)
 +
@@ -38,7 +39,6 @@
 +
 +    nsXPTCMiniVariant paramBuffer[PARAM_BUFFER_COUNT];
 +    nsXPTCMiniVariant* dispatchParams = NULL;
-+    nsIInterfaceInfo* iface_info = NULL;
 +    const nsXPTMethodInfo* info;
 +    PRUint8 paramCount;
 +    PRUint8 i;
@@ -46,11 +46,10 @@
 +
 +    NS_ASSERTION(self,"no self");
 +
-+    self->GetInterfaceInfo(&iface_info);
-+    NS_ASSERTION(iface_info,"no interface info");
-+
-+    iface_info->GetMethodInfo(PRUint16(methodIndex), &info);
-+    NS_ASSERTION(info,"no interface info");
++    self->mEntry->GetMethodInfo(PRUint16(methodIndex), &info);
++    NS_ASSERTION(info,"no method info");
++    if (! info)
++        return NS_ERROR_UNEXPECTED;
 +
 +    paramCount = info->GetParamCount();
 +
@@ -59,7 +58,11 @@
 +        dispatchParams = new nsXPTCMiniVariant[paramCount];
 +    else
 +        dispatchParams = paramBuffer;
++
 +    NS_ASSERTION(dispatchParams,"no place for params");
++
++    if (! dispatchParams)
++      return NS_ERROR_OUT_OF_MEMORY;
 +
 +    PRUint64* ap = args;
 +    for(i = 0; i < paramCount; i++, ap++)
@@ -95,10 +98,9 @@
 +        }
 +    }
 +
-+    result = self->CallMethod((PRUint16)methodIndex, info, dispatchParams);
-+
-+    NS_RELEASE(iface_info);
-+
++    result = self->mOuter->CallMethod((PRUint16)methodIndex, info,
++                                      dispatchParams);
++ 
 +    if(dispatchParams != paramBuffer)
 +        delete [] dispatchParams;
 +
@@ -124,8 +126,8 @@
 +#include "xptcstubsdef.inc"
 +
 +#endif /* sparc || __sparc__ */
---- /dev/null	Mon May 26 13:22:00 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_sparc64_freebsd.s	Mon May 26 04:06:09 2003
+--- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_sparc64_freebsd.s.orig	2009-09-30 22:48:25.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_sparc64_freebsd.s	2009-09-30 22:48:25.000000000 +0200
 @@ -0,0 +1,104 @@
 +/* -*- Mode: asm; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
 + *
@@ -161,15 +163,15 @@
 +    The SCD is available from http://www.sparc.com/.
 +*/
 +
-+        .global XPTC_InvokeByIndex
-+        .type   XPTC_InvokeByIndex, #function
++        .global NS_InvokeByIndex_P
++        .type   NS_InvokeByIndex_P, #function
 +
 +/*
-+    XPTC_InvokeByIndex(nsISupports* that, PRUint32 methodIndex,
++    NS_InvokeByIndex_P(nsISupports* that, PRUint32 methodIndex,
 +                   PRUint32 paramCount, nsXPTCVariant* params);
 +    
 +*/
-+XPTC_InvokeByIndex:
++NS_InvokeByIndex_P:
 +        save    %sp,-(128 + 64),%sp ! room for the register window and
 +                                    ! struct pointer, rounded up to 0 % 64
 +        sll     %i2,4,%l0           ! assume the worst case
@@ -230,9 +232,9 @@
 +        ret
 +        restore
 +
-+        .size    XPTC_InvokeByIndex, .-XPTC_InvokeByIndex
---- /dev/null	Mon May 26 14:00:00 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_sparc64_freebsd.cpp	Mon May 26 14:00:49 2003
++        .size    NS_InvokeByIndex_P, .-NS_InvokeByIndex_P
+--- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_sparc64_freebsd.cpp.orig	2009-09-30 22:48:25.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_sparc64_freebsd.cpp	2009-09-30 22:48:25.000000000 +0200
 @@ -0,0 +1,91 @@
 +/* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
 + *
