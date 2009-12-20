@@ -3,8 +3,8 @@ Support for the OpenBSD-Ports and PkgSrc is planned for a future release.
 
 It is designed to make managing your applications easier and more pleasent.
 
-This is the Port based on the new Qt4-only codebase. You cannot(!) use this to
-actually install and remove packages. If you need to do that use the version
-based on KDE3: ports-mgmt/kports.
+This is the Port based on the new Qt4-only codebase. You cannot use this to
+actually install and remove packages. If you need that use the version based
+on KDE3: ports-mgmt/kports.
 
 WWW: http://kports.sf.net
