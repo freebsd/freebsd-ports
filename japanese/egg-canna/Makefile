@@ -7,7 +7,7 @@
 
 PORTNAME=	egg-canna
 PORTVERSION=	20011110
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese editors elisp
 MASTER_SITES=	http://cgi18.plala.or.jp/nyy/canna/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -23,6 +23,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_EMACS=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} == "emacs23"
+IGNORE=		does not build with Emacs 23
+.endif
 
 .if ${EMACS_PORT_NAME} == emacs20
 EMACS_SUFFIX=	${PKGNAMESUFFIX}

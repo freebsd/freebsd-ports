@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	org-mode.el
-PORTVERSION=	6.05b
-PORTREVISION=	1
+PORTVERSION=	6.33f
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://orgmode.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -18,8 +17,6 @@ COMMENT=	An Emacs mode for notes and project planning
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
-EMACS_PORT_NAME?=	emacs22
 MAKE_FLAGS=	prefix=${PREFIX}
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

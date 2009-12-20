@@ -7,6 +7,7 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.7.b.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://people.freebsd.org/~nobutaka/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -24,6 +25,10 @@ CONFLICTS=	wanderlust-*-2.14.*
 NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
+
+.if (${EMACS_PORT_NAME} == "emacs23")
+BROKEN=     can not be installed with Emacs 23
+.endif
 
 MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}
 MIMEUI_PRODUCT=	semi

@@ -7,7 +7,7 @@
 
 PORTNAME=	elscreen
 PORTVERSION=	1.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old

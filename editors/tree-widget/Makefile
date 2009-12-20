@@ -7,7 +7,7 @@
 
 PORTNAME=	tree-widget
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF/emhacks/${PORTNAME}/${PORTVERSION} \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -18,11 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tree widget for Emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
-
-.if ${EMACS_PORT_NAME} != "emacs22"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 NO_WRKSUBDIR=	yes
@@ -45,4 +40,10 @@ do-install:
 			${LISPDIR}/tree-widget-themes/${i}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} != "emacs23"
+PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.endif
+
+.include <bsd.port.post.mk>

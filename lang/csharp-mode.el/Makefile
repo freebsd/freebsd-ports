@@ -7,7 +7,7 @@
 
 PORTNAME=	csharp-mode.el
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://mfgames.com/releases/csharp-mode/ \
 		http://gentoo.kiev.ua/ftp/distfiles/ \
@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
 
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/csharp-mode.el \
 		${EMACS_SITE_LISPDIR}/csharp-mode.elc

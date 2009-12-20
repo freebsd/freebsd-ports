@@ -18,16 +18,18 @@
 %%TRAMP_LISPDIR%%/tramp-fish.elc
 %%TRAMP_LISPDIR%%/tramp-ftp.el
 %%TRAMP_LISPDIR%%/tramp-ftp.elc
+%%TRAMP_LISPDIR%%/tramp-gvfs.el
+%%TRAMP_LISPDIR%%/tramp-gvfs.elc
 %%TRAMP_LISPDIR%%/tramp-gw.el
 %%TRAMP_LISPDIR%%/tramp-gw.elc
 %%TRAMP_LISPDIR%%/tramp-smb.el
 %%TRAMP_LISPDIR%%/tramp-smb.elc
-%%TRAMP_LISPDIR%%/tramp-util.el
-%%TRAMP_LISPDIR%%/tramp-util.elc
+@comment %%TRAMP_LISPDIR%%/tramp-util.el
+@comment %%TRAMP_LISPDIR%%/tramp-util.elc
 %%TRAMP_LISPDIR%%/tramp-uu.el
 %%TRAMP_LISPDIR%%/tramp-uu.elc
-%%TRAMP_LISPDIR%%/tramp-vc.el
-%%TRAMP_LISPDIR%%/tramp-vc.elc
+@comment %%TRAMP_LISPDIR%%/tramp-vc.el
+@comment %%TRAMP_LISPDIR%%/tramp-vc.elc
 %%TRAMP_LISPDIR%%/tramp.el
 %%TRAMP_LISPDIR%%/tramp.elc
 %%TRAMP_LISPDIR%%/tramp-cache.el

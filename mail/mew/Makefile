@@ -8,7 +8,7 @@
 
 PORTNAME=	mew
 PORTVERSION=	6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.Mew.org/Release/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -20,7 +20,6 @@ OPTIONS=	DATABASE "Database feature support (with Ruby & Sqlite3)" on
 
 # emacs port setup
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
 
 .include <bsd.port.pre.mk>
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	cedet
 PORTVERSION=	1.0.p4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0pre4 \
 				http://dryice.name/computer/FreeBSD/distfiles/
@@ -20,7 +20,6 @@ COMMENT=	Collection of Emacs Development Environment Tools
 
 PORTCLASS=	master
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
 MAKE_JOBS_UNSAFE=	yes
 
 CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

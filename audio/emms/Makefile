@@ -7,7 +7,7 @@
 
 PORTNAME=	emms
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gnu.org/software/emms/download/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -16,16 +16,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EMMS is the Emacs Multi-Media System
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
-
-.if ${EMACS_PORT_NAME} != "emacs22"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
-
 USE_GMAKE=	yes
 MAKE_ENV+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
 INFO=		emms
 MAN1=		emms-print-metadata.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} != "emacs23"
+PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.endif
+
+.include <bsd.port.post.mk>

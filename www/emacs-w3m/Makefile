@@ -50,7 +50,11 @@ SHIMBUN=	""
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs22")
+.if (${EMACS_PORT_NAME} == "emacs23")
+BROKEN=		this version does not support Emacs 23
+.endif
+
+.if (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs23")
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
 INSTALL_TARGET= install install-icons
@@ -83,7 +87,7 @@ RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
 		wvHtml:${PORTSDIR}/textproc/wv \
 		xlhtml:${PORTSDIR}/textproc/xlhtml
 
-.if ${EMACS_PORT_NAME} != "emacs22"
+.if (${EMACS_PORT_NAME} != "emacs22") && (${EMACS_PORT_NAME} != "emacs23")
 RUN_DEPENDS+=	${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
 .endif
 .endif

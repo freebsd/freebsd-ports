@@ -7,7 +7,7 @@
 
 PORTNAME=	ecb
 PORTVERSION=	2.32
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -18,11 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Code Browser
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
-
-.if ${EMACS_PORT_NAME} != "emacs22"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 ICONSRC=	${WRKSRC}/ecb-images
@@ -102,4 +97,10 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} != "emacs23"
+PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.endif
+
+.include <bsd.port.post.mk>

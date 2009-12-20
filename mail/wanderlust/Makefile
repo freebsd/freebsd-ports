@@ -24,6 +24,10 @@ CONFLICTS=	wanderlust-*-2.15.*
 
 .include <bsd.port.pre.mk>
 
+.if (${EMACS_PORT_NAME} == "emacs23")
+BROKEN=		can not be installed with Emacs 23
+.endif
+
 EMACS_W3M_PORT_NAME?=	emacs-w3m
 EMACS_W3M_LISP_FILE?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/shimbun.el
 
