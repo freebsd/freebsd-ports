@@ -5,10 +5,4 @@ Hop on over to http://www.xastir.org/ for details on getting
 maps and for more information on using Xastir.
 
 Your map directory is %%PREFIX%%/share/xastir/maps
-
-WARNING!  File locations have changed since Xastir 1.2.0 (the stable
-version).  What used to be in /usr/local/xastir is now in
-%%PREFIX%%/share/xastir. If you are upgrading from 1.2.0 or earlier
-then you need to follow the instructions in the UPGRADING document
-in %%PREFIX%%/share/xastir/doc.
 ********************************************************************

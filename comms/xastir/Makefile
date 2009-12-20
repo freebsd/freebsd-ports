@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xastir
-PORTVERSION=	1.9.4
-PORTREVISION=	4
+PORTVERSION=	1.9.6
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -33,18 +32,16 @@ OPTIONS=	SHAPELIB "Include Shapelib support" On \
 		INCSHAPE "Use Shapelib included with Xastir" On \
 		PCRE "Include Perl Compat Regular Expression Support" On \
 		DBFAWK "Include DBFAWK Support" On \
-		MAGICK "Include ImageMagick Support" On \
+		MAGICK "Include [Image|Graphics]Magick Support" On \
+		GRAPHICK "Use GraphicsMagick instead of ImageMagick" Off \
 		CURL "Include CURL Internet Image support" On \
 		GEOTIFF "Include GeoTIFF Support" Off \
 		GDAL "Include GDAL Support" Off \
 		GPSMAN "Include GPSMAN Support" Off \
 		FESTIVAL "Include Festival Voice Synthesis Support" Off \
-		RTREE "Enable spatial indexing of shapefiles" Off \
+		RTREE "Enable spatial indexing of shapefiles" On \
 		ERRORPOP "Send error popups to stderr" Off \
-		DB40 "Tiger Map Caching using Berkeley DB v4.0" Off \
-		DB41 "Tiger Map Caching using Berkeley DB v4.1" Off \
-		DB42 "Tiger Map Caching using Berkeley DB v4.2" Off \
-		DB43 "Tiger Map Caching using Berkeley DB v4.3" Off \
+		BDB "Tiger Map Caching using Berkeley DB" On \
 		OPTCFLAGS "Use optimized CFLAGS (-O2 -pipe)" Off
 
 .include <bsd.port.pre.mk>
@@ -53,8 +50,10 @@ OPTIONS=	SHAPELIB "Include Shapelib support" On \
 .if defined(WITH_SHAPELIB)
 .if defined(WITH_INCSHAPE)
 CONFIGURE_ARGS+=	--with-internal-shapelib
+PLIST_SUB=	INCSHAPE=
 .else
 LIB_DEPENDS+=	shp.1:${PORTSDIR}/devel/shapelib
+PLIST_SUB=	INCSHAPE="@comment "
 .endif
 .else
 CONFIGURE_ARGS+=	--without-shapelib
@@ -63,8 +62,12 @@ CONFIGURE_ARGS+=	--without-shapelib
 .if defined(WITHOUT_MAGICK)
 CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
 .else
+.if defined(WITH_GRAPHICK)
+LIB_DEPENDS+=	GraphicsMagickWand.3:${PORTSDIR}/graphics/GraphicsMagick
+.else
 LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--without-graphicsmagick
+.endif
 .endif
 
 .if defined(WITHOUT_DBFAWK)
@@ -115,24 +118,11 @@ CONFIGURE_ARGS+=	--with-rtree
 CONFIGURE_ARGS+=	--with-errorpopups
 .endif
 
-.if defined(WITH_DB40)
-USE_BDB=	40
-.endif
-
-.if defined(WITH_DB41)
-USE_BDB=	41
-.endif
-
-.if defined(WITH_DB42)
-USE_BDB=	42
-.endif
-
-.if defined(WITH_DB43)
-USE_BDB=	43
-.endif
-
-.if defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-CONFIGURE_ARGS+=	 --with-bdb-incdir=${BDB_INCLUDE_DIR}
+.if defined(WITH_BDB)
+USE_BDB=		41+
+WITH_BDB_HIGHEST=	${TRUE}
+INVALID_BDB_VER=	2 3 40
+CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR} --with-bdb-libdir=${BDB_LIB_DIR}
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
