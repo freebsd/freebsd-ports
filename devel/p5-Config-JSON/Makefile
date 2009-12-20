@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-JSON
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5000
 CATEGORIES=	devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,10 +18,9 @@ RUN_DEPENDS=    p5-Class-InsideOut>=1.06:${PORTSDIR}/devel/p5-Class-InsideOut \
 		p5-JSON>=2.12:${PORTSDIR}/converters/p5-JSON
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 BUILD_DEPENDS+= p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
-
-WRKSRC=		${WRKDIR}/Config-JSON
 
 PERL_CONFIGURE=	Yes
 MAN3=		Config::JSON.3
