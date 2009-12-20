@@ -1,4 +1,9 @@
 bin/callpass
+%%INCSHAPE%%bin/dbfadd
+%%INCSHAPE%%bin/dbfcreate
+%%INCSHAPE%%bin/shpadd
+%%INCSHAPE%%bin/shpcreate
+bin/testdbfawk
 bin/xastir
 bin/xastir_udp_client
 lib/xastir/Coordinate.pm
@@ -8,17 +13,25 @@ lib/xastir/get-NWSdata
 lib/xastir/get-fcc-rac.pl
 lib/xastir/get-gnis
 lib/xastir/get-maptools.sh
+lib/xastir/get-pop
 lib/xastir/get_shapelib.sh
 lib/xastir/gpx2shape
 lib/xastir/icontable.pl
 lib/xastir/inf2geo.pl
 lib/xastir/kiss-off.pl
+lib/xastir/langElmerFudd.pl
+lib/xastir/langMuppetsChef.pl
+lib/xastir/langOldeEnglish.pl
+lib/xastir/langPigLatin.pl
+lib/xastir/langPirateEnglish.pl
 lib/xastir/mapblast2geo.pl
 lib/xastir/mapfgd.pl
 lib/xastir/object2shp.pl
 lib/xastir/overlay.pl
 lib/xastir/ozi2geo.pl
 lib/xastir/permutations.pl
+lib/xastir/pos2shp.pl
+lib/xastir/slideshow.pl
 lib/xastir/split_gnis.bash
 lib/xastir/split_gnis.pl
 lib/xastir/test_coord.pl
@@ -26,6 +39,8 @@ lib/xastir/toporama250k.pl
 lib/xastir/toporama50k.pl
 lib/xastir/track-get.pl
 lib/xastir/update_langfile.pl
+lib/xastir/values
+lib/xastir/values.pl
 lib/xastir/waypoint-get.pl
 lib/xastir/xastir-fixcfg.sh
 lib/xastir/xastir-migrate.sh
@@ -46,15 +61,27 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/Counties/placeholder
 %%DATADIR%%/GNIS/placeholder
 %%DATADIR%%/config/24kgrid.dbfawk
+%%DATADIR%%/config/arealm.dbfawk
+%%DATADIR%%/config/areawater.dbfawk
+%%DATADIR%%/config/cousub.dbfawk
+%%DATADIR%%/config/cousub00.dbfawk
+%%DATADIR%%/config/edge.dbfawk
+%%DATADIR%%/config/featnames.dbfawk
 %%DATADIR%%/config/gps_wpt.dbfawk
 %%DATADIR%%/config/language-Dutch.sys
+%%DATADIR%%/config/language-ElmerFudd.sys
 %%DATADIR%%/config/language-English.sys
 %%DATADIR%%/config/language-French.sys
 %%DATADIR%%/config/language-German.sys
 %%DATADIR%%/config/language-Italian.sys
+%%DATADIR%%/config/language-MuppetsChef.sys
+%%DATADIR%%/config/language-OldeEnglish.sys
+%%DATADIR%%/config/language-PigLatin.sys
+%%DATADIR%%/config/language-PirateEnglish.sys
 %%DATADIR%%/config/language-Portuguese.sys
 %%DATADIR%%/config/language-Spanish.sys
 %%DATADIR%%/config/nwsc_ddmmyy.dbfawk
+%%DATADIR%%/config/nwsc_ddmmyy_09.dbfawk
 %%DATADIR%%/config/nwsmzddmmyy.dbfawk
 %%DATADIR%%/config/nwsmzoddmmyy.dbfawk
 %%DATADIR%%/config/nwsozddmmyy.dbfawk
@@ -62,9 +89,11 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/nwsz1ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy.dbfawk
 %%DATADIR%%/config/nwszoddmmyy.dbfawk
+%%DATADIR%%/config/pointlm.dbfawk
 %%DATADIR%%/config/predefined_EVENT.sys
 %%DATADIR%%/config/predefined_SAR.sys
 %%DATADIR%%/config/stored_track.dbfawk
+%%DATADIR%%/config/tabblock.dbfawk
 %%DATADIR%%/config/tgr2shp.dbfawk
 %%DATADIR%%/config/tgr2shppoly.dbfawk
 %%DATADIR%%/config/tgr2shppoly_2006.dbfawk
@@ -137,5 +166,4 @@ lib/xastir/xastir-migrate.sh
 @dirrm %%DATADIR%%/Counties
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrm share/xastir
 @dirrm lib/xastir
