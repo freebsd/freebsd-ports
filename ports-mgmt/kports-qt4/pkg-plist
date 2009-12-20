@@ -1,13 +1,15 @@
 bin/kports
+sbin/portsnap_patched
 share/applications/kports.desktop
-share/icons/hicolor/128x128/apps/kports.png
 share/icons/hicolor/16x16/apps/kports.png
 share/icons/hicolor/22x22/apps/kports.png
-share/icons/hicolor/256x256/apps/kports.png
 share/icons/hicolor/32x32/apps/kports.png
 share/icons/hicolor/48x48/apps/kports.png
 share/icons/hicolor/64x64/apps/kports.png
+share/icons/hicolor/128x128/apps/kports.png
+share/icons/hicolor/256x256/apps/kports.png
 share/icons/hicolor/scalable/apps/kports.svgz
+share/kports/translations/kports_pt_BR.qm
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/64x64/apps
@@ -27,3 +29,5 @@ share/icons/hicolor/scalable/apps/kports.svgz
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
+@dirrm share/kports/translations
+@dirrm share/kports

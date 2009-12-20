@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	kports
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	ports-mgmt kde
 MASTER_SITES=	SF
 
 MAINTAINER=	kports@soulrebel.in-berlin.de
-COMMENT=	 Qt4-Version of your favorite frontend to the Ports
+COMMENT=	Qt4-Version of your favorite frontend to the Ports
 
-RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
+RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit \
+		uma:${PORTSDIR}/sysutils/bsdadminscripts
 
 CONFLICTS=	kports-0.[0-7]*
 
@@ -30,15 +30,17 @@ HAS_CONFIGURE=	yes
 LATEST_LINK=	kports-qt4
 
 OPTIONS=	DEBUG "Add Debugging Symbols" off \
-		KDE "Pull in kdebase-runtime" on
+		OXYGEN "Pull in Oxygen icons (recommended)" on \
+		KDEBASE "Pull in kdebase-runtime for kdesu" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_KDE)
-RUN_DEPENDS+=	${LOCALBASE}/kde4/lib/kde4/libexec/kdesu:${PORTSDIR}/x11/kdebase4-runtime \
-		${LOCALBASE}/kde4/share/icons/oxygen/index.theme:${PORTSDIR}/x11-themes/kde4-icons-oxygen
-.else
-PKGMESSAGE=	pkg-message.nokdebase
+.if !defined(WITHOUT_OXYGEN)
+USE_KDE4=	oxygen
+.endif
+
+.if !defined(WITHOUT_KDEBASE)
+USE_KDE4=	runtime
 .endif
 
 post-patch:
@@ -47,6 +49,9 @@ post-patch:
 .if defined(WITH_DEBUG)
 pre-configure:
 	@(${ECHO_CMD} "CONFIG += debug" >> ${WRKSRC}/src/src.pro)
+	@(${ECHO_CMD} "CONFIG -= release warn_off" >> ${WRKSRC}/src/src.pro)
+	@(${ECHO_CMD} "CONFIG += debug warn_on" >> ${WRKSRC}/src/src.pro)
+	@(${ECHO_CMD} "DEFINES -= QT_NO_DEBUG_OUTPUT" >> ${WRKSRC}/src/src.pro)
 .endif
 
 do-configure:
@@ -54,8 +59,12 @@ do-configure:
 		${QMAKE} -unix ${QMAKE_ARGS} kports.pro
 
 post-install:
-.if defined(WITHOUT_KDE)
-	@${CAT} ${PKGMESSAGE}
+.if defined(WITHOUT_OXYGEN)
+	@${CAT} pkg-message.nooxygen
 .endif
 
-.include <bsd.port.post.mk>
+.if defined(WITHOUT_KDEBASE)
+	@${CAT} pkg-message.nokdebase
+.endif
+
+.include <bsd.port.mk>
