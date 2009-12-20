@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: minissdpd
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+
+. %%RC_SUBR%%
+
+# Add the following line to /etc/rc.conf to enable minissdpd
+# minissdpd_enable="YES"
+# minissdpd_flags="<set as needed>"
+
+name=minissdpd
+rcvar=`set_rcvar`
+load_rc_config $name
+
+minissdpd_enable=${minissdpd_enable:-"NO"}
+
+command="%%PREFIX%%/sbin/minissdpd"
+pidfile="/var/run/${name}.pid"
+sockfile="/var/run/${name}.sock"
+address="0.0.0.0"
+command_args="-s ${sockfile} -p ${pidfile} -i ${address}"
+
+run_rc_command "$1"
