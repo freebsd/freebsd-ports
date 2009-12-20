@@ -23,7 +23,7 @@ NO_BUILD=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-.if !exists (/usr/games/fortune) || !exists(/usr/games/strfile)
+.if !exists(/usr/games/fortune) || !exists(/usr/games/strfile)
 IGNORE=		needs the FreeBSD games distribution
 .endif
 
