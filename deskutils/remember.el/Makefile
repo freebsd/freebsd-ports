@@ -26,6 +26,10 @@ OPTIONS+=	PLANNER "Planner.el support" off
 
 .include <bsd.port.pre.mk>
 
+.if (${EMACS_PORT_NAME} == "emacs23")
+IGNORE=		incorporated into Emacs 23
+.endif
+
 .if !defined(WITHOUT_BBDB)
 .if ${EMACS_NAME} == "xemacs"
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb-com.el:${PORTSDIR}/editors/xemacs-packages

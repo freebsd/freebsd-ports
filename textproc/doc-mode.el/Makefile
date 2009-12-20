@@ -7,7 +7,7 @@
 
 PORTNAME=	doc-mode.el
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc elisp
 MASTER_SITES=	SF/xpt/doc-mode/doc-mode-${PORTVERSION}
 DISTNAME=	doc-mode-${PORTVERSION}
@@ -17,8 +17,6 @@ MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	Asciidoc fontlocking for emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=emacs22
-
 NO_BUILD=	yes
 
 do-install:

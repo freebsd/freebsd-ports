@@ -7,7 +7,7 @@
 
 PORTNAME=	xtla
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://download.gna.org/xtla-el/ \
@@ -22,11 +22,6 @@ BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
-
-.if ${EMACS_PORT_NAME} != "emacs22"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
@@ -49,4 +44,10 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} != "emacs23"
+PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.endif
+
+.include <bsd.port.post.mk>

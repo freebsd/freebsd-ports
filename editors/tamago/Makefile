@@ -7,7 +7,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20041122.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -36,7 +36,7 @@ POSTPATCHES=	${FILESDIR}/post-patch-*
 
 .include <bsd.port.pre.mk>
 
-.if ${EMACS_PORT_NAME} == emacs21 || ${EMACS_PORT_NAME} == emacs22
+.if ${EMACS_PORT_NAME} == emacs21 || ${EMACS_PORT_NAME} == emacs22 || ${EMACS_PORT_NAME} == emacs23
 PLIST_SUB+=	HAS_JISX0213=""
 .else
 PLIST_SUB+=	HAS_JISX0213="@comment "

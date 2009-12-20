@@ -46,6 +46,7 @@
     SUBDIR += emacs-nox11
     SUBDIR += emacs.app
     SUBDIR += emacs21
+    SUBDIR += emacs22
     SUBDIR += etoile-typewriter
     SUBDIR += f4l
     SUBDIR += fb

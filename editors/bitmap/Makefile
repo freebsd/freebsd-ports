@@ -7,7 +7,7 @@
 
 PORTNAME=	bitmap
 PORTVERSION=	${BITMAP_VER}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/ \
 		ftp://ftp.jpl.org/pub/elisp/bitmap/snapshots/
@@ -66,7 +66,7 @@ MAKE_ARGS=	PREFIX="${LOCALBASE}" \
 # depends on apel
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
-.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs-devel")
+.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs-devel")
 DESCR=		${PKGDIR}/pkg-descr.emacs21
 PLIST=		${PKGDIR}/pkg-plist.emacs21
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	planner.el
 PORTVERSION=	3.42
+PORTREVISION=	1
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://download.gna.org/planner-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -18,11 +19,6 @@ COMMENT=	PlannerMode is an organizer and day planner for Emacs
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
-EMACS_PORT_NAME?=	emacs22
-
-.if ${EMACS_PORT_NAME} != "emacs22"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/muse/muse.el:${PORTSDIR}/textproc/muse
 
@@ -35,6 +31,10 @@ OPTIONS+=	WL "Wanderlust support" off
 OPTIONS+=	XTLA "XTLA support" off
 
 .include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} != "emacs23"
+PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.endif
 
 .if (${EMACS_PORT_NAME} == "emacs21")
 PLIST_SUB+=	HAS_ICAL="@comment "

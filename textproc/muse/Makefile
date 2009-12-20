@@ -7,7 +7,7 @@
 
 PORTNAME=	muse
 PORTVERSION=	3.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		${MASTER_SITE_LOCAL} \
@@ -20,13 +20,8 @@ COMMENT=	An authoring and publishing environment for Emacs
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
-EMACS_PORT_NAME?=	emacs22
 
 INFO=		muse
-
-.if ${EMACS_PORT_NAME} != "emacs22"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 LISPDIR=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 
@@ -58,4 +53,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_PORT_NAME} != "emacs23"
+PORTNAMESUFFIX=	${PKGNAMESUFFIX}
+.endif
+
+.include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/comp/emacsen/lisp/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -45,12 +45,12 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
-.if (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs-devel")
+.if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs-devel")
 DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 .endif
-.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs-devel")
+.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs-devel")
 PLIST=		${PKGDIR}/pkg-plist.emacs20
 .endif
 # depends on flim

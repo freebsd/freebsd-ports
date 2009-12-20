@@ -7,7 +7,7 @@
 
 PORTNAME=	nxml-mode
 PORTVERSION=	${NXML_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.thaiopensource.com/download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -45,4 +45,10 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${EMACS_PORT_NAME} == "emacs23")
+IGNORE=     incorporated into Emacs 23
+.endif
+
+.include <bsd.port.post.mk>

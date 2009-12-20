@@ -7,7 +7,7 @@
 
 PORTNAME=	bigloo
 PORTVERSION=	3.2b.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 		ftp://kaolin.unice.fr/pub/Bigloo/
@@ -43,6 +43,10 @@ MAN1=		bigloo.1
 INFO=		bigloo
 
 .include <bsd.port.pre.mk>
+
+.if (${EMACS_PORT_NAME} == "emacs23")
+BROKEN=     is not compiled with Emacs 23
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64

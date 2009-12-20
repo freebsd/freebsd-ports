@@ -13,7 +13,7 @@ PLIST=		${MASTERDIR}/pkg-plist
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
+EMACS_PORT_NAME=	emacs22
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel \
 		migemo:${PORTSDIR}/japanese/migemo

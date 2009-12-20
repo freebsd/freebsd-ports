@@ -7,7 +7,7 @@
 
 PORTNAME=	caml-mode
 PORTVERSION=	3.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		${MASTER_SITE_LOCAL}

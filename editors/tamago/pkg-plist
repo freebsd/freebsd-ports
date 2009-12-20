@@ -73,13 +73,3 @@ bin/egg-helper
 @dirrm %%ELISPDIR%%/egg/egg
 @dirrm %%ELISPDIR%%/egg/its
 @dirrm %%ELISPDIR%%/egg
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.1997-1998
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2000-2001
-%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
-%%PORTDOCS%%%%DOCSDIR%%/README.Debian
-%%PORTDOCS%%%%DOCSDIR%%/README.ja.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/changelog.Debian
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

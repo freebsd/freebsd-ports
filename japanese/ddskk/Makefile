@@ -7,7 +7,7 @@
 
 PORTNAME=	ddskk
 PORTVERSION=	13.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/ \
 		ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
@@ -22,7 +22,7 @@ USE_EMACS=      yes
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
-.if (${EMACS_PORT_NAME} == "emacs22")
+.if (${EMACS_PORT_NAME} == "emacs23")
 DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
