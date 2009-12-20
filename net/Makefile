@@ -355,6 +355,7 @@
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
     SUBDIR += minisapserver
+    SUBDIR += minissdpd
     SUBDIR += miniupnpc
     SUBDIR += miniupnpd
     SUBDIR += miredo

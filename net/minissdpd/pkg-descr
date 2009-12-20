@@ -1,0 +1,11 @@
+Every UPnP device and UPnP client (or control point in UPnP terminology) needs
+to listen to SSDP packets broadcasted to the group 239.255.255.250:1900. When
+several UPnP devices are running on the same server, or several UPnP control
+points are trying a discovery process on the same server, there is concurence to
+open a bind a socket on the UDP port 1900.
+
+MiniSSDPd can also provide a history of the SSDP NOTIFY packets sent on the
+network during a period of a few minutes and it keeps track of all UPnP devices
+that announced themselves on the network through SSDP NOTIFY packets.
+
+WWW: http://miniupnp.free.fr/minissdpd.html
