@@ -9502,7 +9502,6 @@ nekobee                         ports/audio/nekobee
 nemesis                         ports/net/nemesis
 nemiver                         ports/devel/nemiver
 nenscript                       ports/print/nenscript
-neon26                          ports/www/neon26
 neon28                          ports/www/neon28
 neon29                          ports/www/neon29
 neonpp                          ports/www/neonpp
@@ -20138,6 +20137,7 @@ py-xoltar-toolkit               ports/devel/py-xoltar-toolkit
 py-yabt                         ports/misc/py-YABT
 py-yadis                        ports/net/py-yadis
 py-yaml                         ports/devel/py-yaml
+py-yapps2                       ports/devel/py-yapps2
 py-yapsnmp                      ports/net-mgmt/py-yapsnmp
 py-ydbf                         ports/devel/py-ydbf
 py-yenc                         ports/news/py-yenc
@@ -23117,6 +23117,7 @@ ttyrec                          ports/misc/ttyrec
 ttytter                         ports/net-im/ttytter
 tuareg-mode.el                  ports/lang/tuareg-mode.el
 tuc                             ports/converters/tuc
+tucan                           ports/net/tucan
 tulip                           ports/graphics/tulip
 tumgreyspf                      ports/mail/tumgreyspf
 tunapie                         ports/multimedia/tunapie
