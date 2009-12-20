@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	arcconf
-DISTVERSION=	v6_10_18359
+DISTVERSION=	v6_40_18530
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
 DISTNAME=	asm_freebsd${DIST_TYPE}_${DIST_EXT}_${DISTVERSION}
@@ -15,10 +15,12 @@ COMMENT=	Adaptec SCSI RAID administration tool
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+PERIODICSCRIPT=	410.status-aac-raid
+
+SUB_FILES+=	${PERIODICSCRIPT}
+
 RESTRICTED=	May not be redistributed in binary form
 NO_CDROM=	yes
-
-PLIST_FILES=	sbin/arcconf
 
 .include <bsd.port.pre.mk>
 
@@ -41,5 +43,7 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/opt/StorMan/arcconf  ${PREFIX}/sbin
+	@${MKDIR} ${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${PREFIX}/etc/periodic/daily
 
 .include <bsd.port.post.mk>
