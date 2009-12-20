@@ -46,9 +46,6 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Media_Signalling.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Media_Signalling.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Media_Signalling.pyo
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Media_Signalling_Future.py
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Media_Signalling_Future.pyc
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Media_Signalling_Future.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Messages.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Messages.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Messages.pyo
@@ -76,9 +73,6 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Streamed_Media.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Streamed_Media.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Streamed_Media.pyo
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Streamed_Media_Future.py
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Streamed_Media_Future.pyc
-%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Streamed_Media_Future.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Stream_Tube.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Stream_Tube.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Type_Stream_Tube.pyo
@@ -112,6 +106,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Avatars.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Avatars.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Avatars.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Balance.py
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Balance.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Balance.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Capabilities.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Capabilities.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Connection_Interface_Capabilities.pyo
