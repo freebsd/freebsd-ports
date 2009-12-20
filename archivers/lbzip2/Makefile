@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	lbzip2
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	archivers
 MASTER_SITES=	http://lacos.web.elte.hu/pub/lbzip2/
 
