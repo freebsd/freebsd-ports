@@ -440,13 +440,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.html5parser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.Worker-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_etree.ETreeWriteTestCase-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_etree.ETreeErrorLogTest-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xmlschema.ETreeXMLSchemaResolversTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser.HTMLParser-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree.SerialisationError-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser.XHTMLParser-class.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.2.2.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.2.4.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/style.css
