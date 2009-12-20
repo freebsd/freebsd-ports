@@ -29,10 +29,13 @@ share/devhelp/books/vala/types.html
 share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/alsa.vapi
 %%DATADIR%%/vapi/atk.vapi
+%%DATADIR%%/vapi/avahi-gobject.deps
+%%DATADIR%%/vapi/avahi-gobject.vapi
 %%DATADIR%%/vapi/bzlib.vapi
 %%DATADIR%%/vapi/cairo-xcb.deps
 %%DATADIR%%/vapi/cairo-xcb.vapi
 %%DATADIR%%/vapi/cairo.vapi
+%%DATADIR%%/vapi/ccss-1.vapi
 %%DATADIR%%/vapi/clutter-1.0.deps
 %%DATADIR%%/vapi/clutter-1.0.vapi
 %%DATADIR%%/vapi/clutter-json-1.0.vapi
@@ -54,7 +57,6 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/gio-2.0.vapi
 %%DATADIR%%/vapi/gio-unix-2.0.deps
 %%DATADIR%%/vapi/gio-unix-2.0.vapi
-%%DATADIR%%/vapi/gl-1.0.vapi
 %%DATADIR%%/vapi/glib-2.0.vapi
 %%DATADIR%%/vapi/gmodule-2.0.vapi
 %%DATADIR%%/vapi/gnet-2.0.deps
@@ -115,6 +117,8 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/hildon-fm-2.deps
 %%DATADIR%%/vapi/hildon-fm-2.vapi
 %%DATADIR%%/vapi/json-glib-1.0.vapi
+%%DATADIR%%/vapi/libarchive.deps
+%%DATADIR%%/vapi/libarchive.vapi
 %%DATADIR%%/vapi/libbonoboui-2.0.vapi
 %%DATADIR%%/vapi/libdaemon.vapi
 %%DATADIR%%/vapi/libepc-1.0.vapi
@@ -132,7 +136,9 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/libgnomeui-2.0.vapi
 %%DATADIR%%/vapi/libgsf-1.deps
 %%DATADIR%%/vapi/libgsf-1.vapi
+%%DATADIR%%/vapi/libmagic.vapi
 %%DATADIR%%/vapi/libnl-1.vapi
+%%DATADIR%%/vapi/libnl-2.0.vapi
 %%DATADIR%%/vapi/libnotify.deps
 %%DATADIR%%/vapi/libnotify.vapi
 %%DATADIR%%/vapi/liboobs-1.vapi
@@ -167,6 +173,7 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/posix.vapi
 %%DATADIR%%/vapi/raptor.vapi
 %%DATADIR%%/vapi/rasqal.vapi
+%%DATADIR%%/vapi/readline.vapi
 %%DATADIR%%/vapi/rest.deps
 %%DATADIR%%/vapi/rest.vapi
 %%DATADIR%%/vapi/sdl-gfx.vapi
@@ -179,6 +186,8 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/taglib_c.vapi
 %%DATADIR%%/vapi/tiff.vapi
 %%DATADIR%%/vapi/tracker-indexer-module-1.0.vapi
+%%DATADIR%%/vapi/twitter-glib-1.0.deps
+%%DATADIR%%/vapi/twitter-glib-1.0.vapi
 %%DATADIR%%/vapi/unique-1.0.deps
 %%DATADIR%%/vapi/unique-1.0.vapi
 %%DATADIR%%/vapi/v4l2.vapi
