@@ -37,14 +37,17 @@ MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}" \
 		SOC_LOADER="dxmainc.c"
-CONFIGURE_ENV=	${MAKE_ENV} \
-		CPPFLAGS="-DUPD_SIGNAL=0 -I. -I${WRKSRC}/jasper/src/libjasper/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	${MAKE_ENV} CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
 		--with-ijs \
 		--with-jasper
+CPPFLAGS=	-DUPD_SIGNAL=0 -I. \
+		-I${WRKSRC}/jasper/src/libjasper/include \
+		-I${LOCALBASE}/include/libpng \
+		-I${LOCALBASE}/include
 XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	${PTHREAD_LIBS}
 
@@ -192,6 +195,7 @@ CONFIGURE_ARGS+=	--disable-fontconfig
 .if !defined(WITHOUT_FT_BRIDGE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".so"
+CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
 PLIST_SUB+=	FAPI=""
 .else
 PLIST_SUB+=	FAPI="@comment "
@@ -245,10 +249,6 @@ pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/freetype/objs
 	${LN} -s -f ${LOCALBASE}/lib/libfreetype.so \
 		${WRKSRC}/freetype/objs/freetype214MT_D.so
-# bug in 8.64.  Fixed in r9467.
-	${MV} ${WRKSRC}/base/write_t[12].[ch] \
-		${WRKSRC}/base/wrfont.[ch] \
-		${WRKSRC}/psi
 .endif
 
 pre-su-install:
