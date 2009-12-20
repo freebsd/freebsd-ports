@@ -1067,7 +1067,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rerolling-distfiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-uid-and-gids.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-workarounds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/freebsd-versions.html
@@ -1128,6 +1127,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-porttools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-tinderbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/users-and-groups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-emacs.html
