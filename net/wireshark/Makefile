@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -71,7 +71,7 @@ OPTIONS=	RTP "Enable support for playing back RTP streams" off \
 		PCRE "Enable regular expression matching support" on \
 		IPV6 "Enable IPv6 support" on \
 		GEOIP "Enable GeoIP lookups" on \
-		LUA " Enable LUA scripting integration" off
+		LUA "Enable LUA scripting integration" off
 .endif
 
 .include <bsd.port.pre.mk>
