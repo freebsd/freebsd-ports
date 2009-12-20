@@ -27,8 +27,10 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
 		--with-html-dir=${DOCSDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS=-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 ${PTHREAD_CFLAGS}
+LDFLAGS=-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 .if !defined(SLAVEPORT)
 OPTIONS=	CAIRO "Enable cairo output backend" on \
@@ -70,6 +72,7 @@ QT_COMPONENTS=	gui corelib xml qtestlib moc_build
 # can read more PDF files than without, tested with demos's poppler_qt4viewer.
 #BUILD_WRKSRC=	${WRKSRC}/qt4
 INSTALL_WRKSRC=	${WRKSRC}/qt4
+.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .else
 CONFIGURE_ARGS+=--disable-poppler-qt4
 .endif
