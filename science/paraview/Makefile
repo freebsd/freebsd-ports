@@ -52,6 +52,12 @@ CMAKE2INST=	ParaViewConfig.cmake \
 		ParaViewLibraryDepends.cmake cmake_install.cmake
 LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.x
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
@@ -64,4 +70,4 @@ post-install:
 	${INSTALL_DATA} ${PATCH_WRKSRC}/ParaViewUse.cmake \
 		${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
