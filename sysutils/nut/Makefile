@@ -7,7 +7,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -127,7 +127,7 @@ PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
 .if !defined(WITHOUT_NEON)
-LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
+LIB_DEPENDS+=	neon.29:${PORTSDIR}/www/neon29
 CONFIGURE_ARGS+=	--with-neonxml
 MAN8+=		netxml-ups.8
 PLIST_SUB+=	NUT_NEON=""
