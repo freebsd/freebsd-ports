@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MouseX-AttributeHelpers
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MASAKI
@@ -16,8 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to extend your attribute interfaces
 
 RUN_DEPENDS=	\
-	p5-Class-Method-Modifiers>0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
-	p5-Mouse>=0.37:${PORTSDIR}/devel/p5-Mouse
+	p5-Mouse>=0.40:${PORTSDIR}/devel/p5-Mouse
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
