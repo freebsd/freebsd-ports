@@ -401,6 +401,7 @@ share/postgresql/timezone/Asia/Makassar
 share/postgresql/timezone/Asia/Manila
 share/postgresql/timezone/Asia/Muscat
 share/postgresql/timezone/Asia/Nicosia
+share/postgresql/timezone/Asia/Novokuznetsk
 share/postgresql/timezone/Asia/Novosibirsk
 share/postgresql/timezone/Asia/Omsk
 share/postgresql/timezone/Asia/Oral
