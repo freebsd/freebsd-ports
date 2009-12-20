@@ -4,6 +4,7 @@ lib/libgtkspell.la
 lib/libgtkspell.so
 lib/libgtkspell.so.0
 libdata/pkgconfig/gtkspell-2.0.pc
+share/locale/af/LC_MESSAGES/gtkspell.mo
 share/locale/be/LC_MESSAGES/gtkspell.mo
 share/locale/cs/LC_MESSAGES/gtkspell.mo
 share/locale/da/LC_MESSAGES/gtkspell.mo
@@ -23,10 +24,13 @@ share/locale/it/LC_MESSAGES/gtkspell.mo
 share/locale/ja/LC_MESSAGES/gtkspell.mo
 share/locale/ky/LC_MESSAGES/gtkspell.mo
 share/locale/lt/LC_MESSAGES/gtkspell.mo
+share/locale/lv/LC_MESSAGES/gtkspell.mo
 share/locale/mn/LC_MESSAGES/gtkspell.mo
+share/locale/ms/LC_MESSAGES/gtkspell.mo
 share/locale/nb/LC_MESSAGES/gtkspell.mo
 share/locale/nl/LC_MESSAGES/gtkspell.mo
 share/locale/pl/LC_MESSAGES/gtkspell.mo
+share/locale/pt/LC_MESSAGES/gtkspell.mo
 share/locale/pt_BR/LC_MESSAGES/gtkspell.mo
 share/locale/rm/LC_MESSAGES/gtkspell.mo
 share/locale/ro/LC_MESSAGES/gtkspell.mo
@@ -34,8 +38,10 @@ share/locale/ru/LC_MESSAGES/gtkspell.mo
 share/locale/rw/LC_MESSAGES/gtkspell.mo
 share/locale/sk/LC_MESSAGES/gtkspell.mo
 share/locale/sl/LC_MESSAGES/gtkspell.mo
+share/locale/sq/LC_MESSAGES/gtkspell.mo
 share/locale/sr/LC_MESSAGES/gtkspell.mo
 share/locale/sv/LC_MESSAGES/gtkspell.mo
+share/locale/th/LC_MESSAGES/gtkspell.mo
 share/locale/tr/LC_MESSAGES/gtkspell.mo
 share/locale/uk/LC_MESSAGES/gtkspell.mo
 share/locale/vi/LC_MESSAGES/gtkspell.mo
