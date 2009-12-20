@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
@@ -21,8 +21,9 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 USE_OPENSSL=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui iconengines network qtestlib script svg xml \
-		webkit moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	corelib dbus gui iconengines network phonon qtestlib script \
+		svg webkit xml linguist_build moc_build qmake_build \
+		rcc_build uic_build
 
 CONFLICTS=	bibletime-kde3-1*
 
@@ -32,6 +33,6 @@ CONFLICTS=	bibletime-kde3-1*
 CMAKE_USE_PTHREAD=	yes
 .endif
 
-CMAKE_BUILD_TYPE=	Release
+CMAKE_BUILD_TYPE=	release
 
 .include <bsd.port.post.mk>
