@@ -1,9 +1,0 @@
---- common/putil.c	2007-12-12 13:57:26.000000000 -0500
-+++ common/putil.c	2008-01-28 13:04:02.000000000 -0500
-@@ -577,5 +577,5 @@
- /* These platforms are likely to use Olson timezone IDs. */
- #define CHECK_LOCALTIME_LINK 1
--#if defined(U_LINUX)
-+#if defined(U_LINUX) || defined(U_BSD)
- #define TZDEFAULT       "/etc/localtime"
- #define TZZONEINFO      "/usr/share/zoneinfo/"
