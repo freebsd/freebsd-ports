@@ -198,6 +198,7 @@ lib/libiculx.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libiculx.so
 lib/libiculx.so.%%ICUMAJOR%%
 lib/libsicuio.a
+lib/libsicutu.a
 lib/libicuio.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicuio.so
 lib/libicuio.so.%%ICUMAJOR%%
