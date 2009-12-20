@@ -1,7 +1,44 @@
 bin/geos-config
 include/geos.h
+include/geos/algorithm/locate/IndexedPointInAreaLocator.h
+include/geos/algorithm/locate/PointOnGeometryLocator.h
+include/geos/algorithm/locate/SimplePointInAreaLocator.h
+include/geos/algorithm/distance/DiscreteHausdorffDistance.h
+include/geos/algorithm/distance/DistanceToPoint.h
+include/geos/algorithm/distance/PointPairDistance.h
+include/geos/algorithm/Angle.h
+include/geos/algorithm/BoundaryNodeRule.h
+include/geos/algorithm/CentralEndpointIntersector.h
+include/geos/algorithm/CentroidArea.h
+include/geos/algorithm/CentroidLine.h
+include/geos/algorithm/CentroidPoint.h
+include/geos/algorithm/CGAlgorithms.h
+include/geos/algorithm/ConvexHull.h
+include/geos/algorithm/ConvexHull.inl
+include/geos/algorithm/ExtractLineByLocation.h
+include/geos/algorithm/HCoordinate.h
+include/geos/algorithm/InteriorPointArea.h
+include/geos/algorithm/InteriorPointLine.h
+include/geos/algorithm/InteriorPointPoint.h
+include/geos/algorithm/LengthIndexedLine.h
+include/geos/algorithm/LengthIndexOfPoint.h
+include/geos/algorithm/LengthLocationMap.h
+include/geos/algorithm/LinearGeometryBuilder.h
+include/geos/algorithm/LinearIterator.h
+include/geos/algorithm/LinearLocation.h
 include/geos/algorithm/LineIntersector.h
+include/geos/algorithm/LocationIndexOfLine.h
+include/geos/algorithm/LocationIndexOfPoint.h
+include/geos/algorithm/MCPointInRing.h
+include/geos/algorithm/MinimumDiameter.h
+include/geos/algorithm/NotRepresentableException.h
+include/geos/algorithm/PointInRing.h
 include/geos/algorithm/PointLocator.h
+include/geos/algorithm/RayCrossingCounter.h
+include/geos/algorithm/RobustDeterminant.h
+include/geos/algorithm/SimplePointInRing.h
+include/geos/algorithm/SIRtreePointInRing.h
+include/geos/export.h
 include/geos/geom.h
 include/geos/geom/BinaryOp.h
 include/geos/geom/Coordinate.h
@@ -13,6 +50,7 @@ include/geos/geom/CoordinateFilter.h
 include/geos/geom/CoordinateList.h
 include/geos/geom/CoordinateSequence.h
 include/geos/geom/CoordinateSequenceFactory.h
+include/geos/geom/CoordinateSequenceFilter.h
 include/geos/geom/Dimension.h
 include/geos/geom/Envelope.h
 include/geos/geom/Envelope.inl
@@ -40,6 +78,7 @@ include/geos/geom/Point.h
 include/geos/geom/Polygon.h
 include/geos/geom/PrecisionModel.h
 include/geos/geom/PrecisionModel.inl
+include/geos/geom/Triangle.h
 include/geos/geom/prep/AbstractPreparedPolygonContains.h
 include/geos/geom/prep/BasicPreparedGeometry.h
 include/geos/geom/prep/PreparedGeometryFactory.h
@@ -65,15 +104,29 @@ include/geos/geom/util/PolygonExtracter.h
 include/geos/geom/util/ShortCircuitedGeometryVisitor.h
 include/geos/geomUtil.h
 include/geos/geomgraph.h
+include/geos/geomgraph/Depth.h
+include/geos/geomgraph/DirectedEdge.h
+include/geos/geomgraph/DirectedEdge.inl
+include/geos/geomgraph/DirectedEdgeStar.h
+include/geos/geomgraph/Edge.h
 include/geos/geomgraph/EdgeEnd.h
 include/geos/geomgraph/EdgeEndStar.h
+include/geos/geomgraph/EdgeIntersection.h
+include/geos/geomgraph/EdgeIntersectionList.h
 include/geos/geomgraph/EdgeList.h
+include/geos/geomgraph/EdgeNodingValidator.h
+include/geos/geomgraph/EdgeRing.h
 include/geos/geomgraph/GeometryGraph.h
 include/geos/geomgraph/GeometryGraph.inl
 include/geos/geomgraph/GraphComponent.h
+include/geos/geomgraph/Label.h
 include/geos/geomgraph/Node.h
+include/geos/geomgraph/NodeFactory.h
 include/geos/geomgraph/NodeMap.h
 include/geos/geomgraph/PlanarGraph.h
+include/geos/geomgraph/Position.h
+include/geos/geomgraph/Quadrant.h
+include/geos/geomgraph/TopologyLocation.h
 include/geos/geomgraph/index/EdgeSetIntersector.h
 include/geos/geomgraph/index/MonotoneChain.h
 include/geos/geomgraph/index/MonotoneChainEdge.h
@@ -91,16 +144,33 @@ include/geos/index/ItemVisitor.h
 include/geos/index/SpatialIndex.h
 include/geos/index/bintree/Bintree.h
 include/geos/index/bintree/Interval.h
+include/geos/index/bintree/Key.h
+include/geos/index/bintree/NodeBase.h
+include/geos/index/bintree/Node.h
+include/geos/index/bintree/Root.h
 include/geos/index/chain/MonotoneChain.h
+include/geos/index/chain/MonotoneChainBuilder.h
 include/geos/index/chain/MonotoneChainOverlapAction.h
 include/geos/index/chain/MonotoneChainSelectAction.h
+include/geos/index/intervalrtree/IntervalRTreeBranchNode.h
+include/geos/index/intervalrtree/IntervalRTreeLeafNode.h
+include/geos/index/intervalrtree/IntervalRTreeNode.h
+include/geos/index/intervalrtree/SortedPackedIntervalRTree.h
+include/geos/index/quadtree/DoubleBits.h
+include/geos/index/quadtree/IntervalSize.h
+include/geos/index/quadtree/Key.h
+include/geos/index/quadtree/Node.h
 include/geos/index/quadtree/NodeBase.h
 include/geos/index/quadtree/Quadtree.h
 include/geos/index/quadtree/Root.h
+include/geos/index/sweepline/SweepLineEvent.h
+include/geos/index/sweepline/SweepLineIndex.h
+include/geos/index/sweepline/SweepLineInterval.h
 include/geos/index/strtree/AbstractNode.h
 include/geos/index/strtree/AbstractSTRtree.h
 include/geos/index/strtree/Boundable.h
 include/geos/index/strtree/Interval.h
+include/geos/index/strtree/ItemBoundable.h
 include/geos/index/strtree/SIRtree.h
 include/geos/index/strtree/STRtree.h
 include/geos/index/sweepline/SweepLineOverlapAction.h
@@ -117,14 +187,49 @@ include/geos/io/ByteOrderDataInStream.inl
 include/geos/io/ByteOrderValues.h
 include/geos/io/CLocalizer.h
 include/geos/io/ParseException.h
+include/geos/io/StringTokenizer.h
 include/geos/io/WKBConstants.h
 include/geos/io/WKBReader.h
 include/geos/io/WKBWriter.h
 include/geos/io/WKTReader.h
 include/geos/io/WKTReader.inl
 include/geos/io/WKTWriter.h
+include/geos/io/Writer.h
 include/geos/noding.h
 include/geos/nodingSnapround.h
+include/geos/noding/snapround/HotPixel.h
+include/geos/noding/snapround/HotPixel.inl
+include/geos/noding/snapround/MCIndexPointSnapper.h
+include/geos/noding/snapround/MCIndexSnapRounder.h
+include/geos/noding/snapround/MCIndexSnapRounder.inl
+include/geos/noding/snapround/SimpleSnapRounder.h
+include/geos/noding/BasicSegmentString.h
+include/geos/noding/FastNodingValidator.h
+include/geos/noding/FastSegmentSetIntersectionFinder.h
+include/geos/noding/IntersectionAdder.h
+include/geos/noding/IntersectionFinderAdder.h
+include/geos/noding/IteratedNoder.h
+include/geos/noding/MCIndexNoder.h
+include/geos/noding/MCIndexNoder.inl
+include/geos/noding/MCIndexSegmentSetMutualIntersector.h
+include/geos/noding/NodableSegmentString.h
+include/geos/noding/NodedSegmentString.h
+include/geos/noding/Noder.h
+include/geos/noding/NodingValidator.h
+include/geos/noding/Octant.h
+include/geos/noding/OrientedCoordinateArray.h
+include/geos/noding/ScaledNoder.h
+include/geos/noding/SegmentIntersectionDetector.h
+include/geos/noding/SegmentIntersector.h
+include/geos/noding/SegmentNode.h
+include/geos/noding/SegmentNodeList.h
+include/geos/noding/SegmentSetMutualIntersector.h
+include/geos/noding/SegmentString.h
+include/geos/noding/SegmentString.inl
+include/geos/noding/SegmentStringUtil.h
+include/geos/noding/SimpleNoder.h
+include/geos/noding/SingleInteriorIntersectionFinder.h
+include/geos/noding/SinglePassNoder.h
 include/geos/opBuffer.h
 include/geos/opDistance.h
 include/geos/opLinemerge.h
@@ -134,40 +239,108 @@ include/geos/opPredicate.h
 include/geos/opRelate.h
 include/geos/opValid.h
 include/geos/operation.h
-include/geos/operation/EndpointInfo.h
 include/geos/operation/GeometryGraphOperation.h
 include/geos/operation/IsSimpleOp.h
+include/geos/operation/buffer/BufferBuilder.h
 include/geos/operation/buffer/BufferOp.h
+include/geos/operation/buffer/BufferParameters.h
+include/geos/operation/buffer/BufferSubgraph.h
 include/geos/operation/buffer/OffsetCurveBuilder.h
+include/geos/operation/buffer/OffsetCurveSetBuilder.h
+include/geos/operation/buffer/RightmostEdgeFinder.h
+include/geos/operation/buffer/SubgraphDepthLocater.h
+include/geos/operation/distance/ConnectedElementLocationFilter.h
+include/geos/operation/distance/ConnectedElementPointFilter.h
 include/geos/operation/distance/DistanceOp.h
+include/geos/operation/distance/GeometryLocation.h
+include/geos/operation/linemerge/EdgeString.h
+include/geos/operation/linemerge/LineMergeDirectedEdge.h
+include/geos/operation/linemerge/LineMergeEdge.h
 include/geos/operation/linemerge/LineMergeGraph.h
 include/geos/operation/linemerge/LineMerger.h
+include/geos/operation/linemerge/LineSequencer.h
+include/geos/operation/overlay/EdgeSetNoder.h
+include/geos/operation/overlay/ElevationMatrix.h
+include/geos/operation/overlay/ElevationMatrixCell.h
+include/geos/operation/overlay/FuzzyPointLocator.h
+include/geos/operation/overlay/LineBuilder.h
+include/geos/operation/overlay/MaximalEdgeRing.h
+include/geos/operation/overlay/MinimalEdgeRing.h
+include/geos/operation/overlay/MinimalEdgeRing.inl
+include/geos/operation/overlay/OffsetPointGenerator.h
+include/geos/operation/overlay/OverlayNodeFactory.h
 include/geos/operation/overlay/OverlayOp.h
+include/geos/operation/overlay/OverlayResultValidator.h
+include/geos/operation/overlay/PointBuilder.h
+include/geos/operation/overlay/PolygonBuilder.h
+include/geos/operation/overlay/snap/GeometrySnapper.h
+include/geos/operation/overlay/snap/LineStringSnapper.h
+include/geos/operation/overlay/snap/SnapIfNeededOverlayOp.h
+include/geos/operation/overlay/snap/SnapOverlayOp.h
+include/geos/operation/polygonize/EdgeRing.h
+include/geos/operation/polygonize/PolygonizeDirectedEdge.h
+include/geos/operation/polygonize/PolygonizeEdge.h
+include/geos/operation/polygonize/PolygonizeGraph.h
 include/geos/operation/polygonize/Polygonizer.h
+include/geos/operation/predicate/RectangleContains.h
+include/geos/operation/predicate/RectangleIntersects.h
+include/geos/operation/predicate/SegmentIntersectionTester.h
+include/geos/operation/relate/EdgeEndBuilder.h
+include/geos/operation/relate/EdgeEndBundle.h
+include/geos/operation/relate/EdgeEndBundleStar.h
 include/geos/operation/relate/RelateComputer.h
+include/geos/operation/relate/RelateNode.h
+include/geos/operation/relate/RelateNodeFactory.h
+include/geos/operation/relate/RelateNodeGraph.h
 include/geos/operation/relate/RelateOp.h
+include/geos/operation/valid/ConnectedInteriorTester.h
+include/geos/operation/valid/ConsistentAreaTester.h
 include/geos/operation/valid/IsValidOp.h
+include/geos/operation/valid/QuadtreeNestedRingTester.h
+include/geos/operation/valid/RepeatedPointTester.h
+include/geos/operation/valid/SimpleNestedRingTester.h
+include/geos/operation/valid/SweeplineNestedRingTester.h
 include/geos/operation/valid/TopologyValidationError.h
 include/geos/planargraph.h
+include/geos/planargraph/algorithm/ConnectedSubgraphFinder.h
+include/geos/planargraph/DirectedEdge.h
+include/geos/planargraph/DirectedEdgeStar.h
+include/geos/planargraph/Edge.h
+include/geos/planargraph/GraphComponent.h
+include/geos/planargraph/Node.h
 include/geos/planargraph/NodeMap.h
 include/geos/planargraph/PlanarGraph.h
+include/geos/planargraph/Subgraph.h
 include/geos/platform.h
 include/geos/precision.h
+include/geos/precision/CommonBits.h
 include/geos/precision/CommonBitsOp.h
 include/geos/precision/CommonBitsRemover.h
 include/geos/precision/EnhancedPrecisionOp.h
-include/geos/precision/GeometrySnapper.h
 include/geos/precision/SimpleGeometryPrecisionReducer.h
+include/geos/profiler.h
+include/geos/simplify/DouglasPeuckerLineSimplifier.h
 include/geos/simplify/DouglasPeuckerSimplifier.h
+include/geos/simplify/LineSegmentIndex.h
+include/geos/simplify/TaggedLineSegment.h
+include/geos/simplify/TaggedLinesSimplifier.h
+include/geos/simplify/TaggedLineString.h
+include/geos/simplify/TaggedLineStringSimplifier.h
 include/geos/simplify/TopologyPreservingSimplifier.h
 include/geos/spatialIndex.h
 include/geos/timeval.h
 include/geos/unload.h
 include/geos/util.h
+include/geos/util/Assert.h
+include/geos/util/AssertionFailedException.h
+include/geos/util/CoordinateArrayFilter.h
 include/geos/util/GEOSException.h
 include/geos/util/GeometricShapeFactory.h
 include/geos/util/IllegalArgumentException.h
+include/geos/util/math.h
 include/geos/util/TopologyException.h
+include/geos/util/UniqueCoordinateArrayFilter.h
+include/geos/util/UnsupportedOperationException.h
 include/geos/version.h
 include/geos_c.h
 lib/libgeos.a
@@ -181,19 +354,22 @@ lib/libgeos_c.so.7
 @dirrm include/geos/util
 @dirrm include/geos/simplify
 @dirrm include/geos/precision
+@dirrm include/geos/planargraph/algorithm
 @dirrm include/geos/planargraph
 @dirrm include/geos/operation/valid
 @dirrm include/geos/operation/union
 @dirrm include/geos/operation/relate
+@dirrm include/geos/operation/predicate
 @dirrm include/geos/operation/polygonize
+@dirrm include/geos/operation/overlay/snap
 @dirrm include/geos/operation/overlay
 @dirrm include/geos/operation/linemerge
 @dirrm include/geos/operation/distance
 @dirrm include/geos/operation/buffer
 @dirrm include/geos/operation
+@dirrm include/geos/noding/snapround
+@dirrm include/geos/noding
 @dirrm include/geos/io
-@dirrm include/geos/algorithm/locate
-@dirrm include/geos/algorithm
 @dirrm include/geos/index/sweepline
 @dirrm include/geos/index/strtree
 @dirrm include/geos/index/quadtree
@@ -206,4 +382,7 @@ lib/libgeos_c.so.7
 @dirrm include/geos/geom/util
 @dirrm include/geos/geom/prep
 @dirrm include/geos/geom
+@dirrm include/geos/algorithm/locate
+@dirrm include/geos/algorithm/distance
+@dirrm include/geos/algorithm
 @dirrm include/geos
