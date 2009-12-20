@@ -1,6 +1,6 @@
 # New ports collection makefile for: zh-fortune
 # Date created:                17 Dec 2009
-# Whom:                        Ju Pengfei
+# Whom:                        Ju Pengfei <jupengfei@gmail.com>
 #
 # $FreeBSD$
 #
@@ -23,11 +23,16 @@ NO_BUILD=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
+.if !exists (/usr/games/fortune) || !exists(/usr/games/strfile)
+IGNORE=		needs the FreeBSD games distribution
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
 		-e "s|/usr/bin/fortune|/usr/games/fortune|" \
 		${WRKSRC}/src/fortune-zh
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|" \
+		-e "s|strfile|/usr/games/strfile|" \
 		${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
