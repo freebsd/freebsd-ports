@@ -1,5 +1,5 @@
---- lib/SVN/Web/Revision.pm.org	2008-07-17 11:24:07.000000000 +0900
-+++ lib/SVN/Web/Revision.pm	2008-07-17 11:24:50.000000000 +0900
+--- lib/SVN/Web/Revision.pm	Sun Apr 29 23:22:51 2007
++++ lib/SVN/Web/Revision.pm	Sun Dec 14 00:25:26 2008
 @@ -211,7 +211,7 @@
          )
          if $rev > $yrev;
