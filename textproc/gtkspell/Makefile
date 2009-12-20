@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	gtkspell
-PORTVERSION=	2.0.15
-PORTREVISION?=	1
+PORTVERSION=	2.0.16
+PORTREVISION?=	0
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://gtkspell.sourceforge.net/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	marcus
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GTK+ 2 spell checking component
