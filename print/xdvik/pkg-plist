@@ -1,8 +1,7 @@
 @comment $FreeBSD$
 bin/oxdvi
 bin/xdvi
-bin/xdvi-motif.bin
-bin/xdvizilla
+bin/xdvi-motif
 %%TEXMFDIR%%/xdvi/XDvi
 %%TEXMFDIR%%/xdvi/xdvi.cfg
 %%TEXMFDIR%%/xdvi/pixmaps/toolbar.xpm
