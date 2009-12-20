@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xdvik
-PORTVERSION=	22.84.10
-PORTREVISION=	3
+PORTVERSION=	22.84.16
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-tetex
@@ -41,7 +40,7 @@ CONFLICTS=	xdvi-[0-9]* xdvi-*-[0-9]* \
 		*-xdvi-[0-9]* xdvi-*-[0-9]* \
 		*-xdvik-[0-9]* ja-ptex-tetex-[0-9]*
 
-MAN1=		xdvi.1 xdvizilla.1
+MAN1=		xdvi.1
 MLINKS=		xdvi.1 oxdvi.1
 
 TEXMFDIR=	share/texmf
