@@ -28,4 +28,10 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .	endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		unsupported FreeBSD version
+.endif
+
+.include <bsd.port.post.mk>
