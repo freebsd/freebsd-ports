@@ -8,6 +8,7 @@
 
 PORTNAME=	dejavu
 DISTVERSION=	2.30
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-fonts-ttf-${DISTVERSION}
@@ -15,10 +16,10 @@ DISTNAME=	${PORTNAME}-fonts-ttf-${DISTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
 
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
-USE_XORG=	x11
 NO_BUILD=	yes
 PORTDOCS=	README status.txt unicover.txt langcover.txt
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}/"
