@@ -35,6 +35,36 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4465c897-ee5c-11de-b6ef-00215c6a37bb">
+    <topic>monkey -- improper input validation vulnerability</topic>
+    <affects>
+      <package>
+	<name>monkey</name>
+	<range><lt>0.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Census Labs reports:</p>
+	<blockquote cite="http://census-labs.com/news/2009/12/14/monkey-httpd/">
+	  <p>We have discovered a remotely exploitable
+	    "improper input validation" vulnerability in the Monkey
+	    web server that allows an attacker to perform denial of
+	    service attacks by repeatedly crashing worker threads 
+	    that process HTTP requests. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://census-labs.com/news/2009/12/14/monkey-httpd/</url>
+      <url>http://groups.google.com/group/monkeyd/browse_thread/thread/055b4e9b83973861/</url>
+    </references>
+    <dates>
+      <discovery>2009-12-14</discovery>
+      <entry>2009-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="39a25a63-eb5c-11de-b650-00215c6a37bb">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
