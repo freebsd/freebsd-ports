@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 
@@ -22,8 +22,10 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--disable-unique
+CONFIGURE_ARGS+=--disable-unique \
+		--jobs=${MAKE_JOBS_NUMBER}
 
+MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
