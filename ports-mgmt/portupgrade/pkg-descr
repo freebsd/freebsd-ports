@@ -18,5 +18,6 @@ pkg_glob:	Expands package globs.
 pkg_which:	Checks which package a file came from quickly.
 pkgdb:		Manages and searches the package database.
 
-Author: Akinori MUSHA <knu@FreeBSD.org>
+Author: Akinori MUSHA <knu@FreeBSD.org> (Not the current maintainer)
+Maintainer: freebsd-ruby mailing list <ruby@FreeBSD.org>
 WWW: http://wiki.freebsd.org/portupgrade
