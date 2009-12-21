@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	Apache2 module to wrap served pages with a header and/or footer
+COMMENT=	Apache2.2 module to wrap served pages with a header and/or footer
 
 MAKE_JOBS_SAFE=  yes
 
