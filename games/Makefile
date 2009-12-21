@@ -86,6 +86,7 @@
     SUBDIR += blockade
     SUBDIR += blockout
     SUBDIR += blokish
+    SUBDIR += bloodfrontier
     SUBDIR += blue
     SUBDIR += bogged
     SUBDIR += bomb

@@ -5,34 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sauerbraten
-PORTVERSION=	20090504
-PORTREVISION=	1
+PORTNAME=	bloodfrontier
+DISTVERSION=	B2
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2009_05_04
-DISTNAME=	${PORTNAME}_2009_05_04_trooper_edition_linux
+MASTER_SITES=	SF/${PORTNAME}/Blood%20Frontier/Blood%20Frontier%20Beta%202
+DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
 
-MAINTAINER=	acm@FreeBSD.org
-COMMENT=	First person shooter based on Cube
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	Single- and multi-player first-person shooter based on Cube 2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-CONFIGURE_ENV=	ACLOCAL=true AUTOCONF=true AUTOMAKE=true
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
-ALL_TARGET=	libenet
+
+ALL_TARGET=	libenet ${BINARIES}
 MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	*
+SUB_FILES=	bfclient bfserver pkg-message
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on
 
-SUB_FILES=	sauer_client sauer_server pkg-message
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
 IGNORE=		needs at least one executable (CLIENT or DEDICATED)
@@ -41,44 +38,31 @@ IGNORE=		needs at least one executable (CLIENT or DEDICATED)
 .if !defined(WITHOUT_CLIENT)
 USE_GL=		yes
 USE_SDL=	image mixer sdl
-ALL_TARGET+=	client
-PLIST_SUB+=	CLIENT=""
-SAUER_BIN+=	client
-.else
-PLIST_SUB+=	CLIENT="@comment "
+PLIST_FILES+=	bin/bfclient libexec/bfclient
+BINARIES+=	client
 .endif
 
 .if !defined(WITHOUT_DEDICATED)
-ALL_TARGET+=	server
-PLIST_SUB+=	DEDICATED=""
-SAUER_BIN+=	server
-.else
-PLIST_SUB+=	DEDICATED="@comment "
+PLIST_FILES+=	bin/bfserver libexec/bfserver
+BINARIES+=	server
 .endif
-
-post-extract:
-	@${FIND} ${WRKSRC} -type d -name CVS -type d -print0 | \
-		${XARGS} -0 ${RM} -R
-
-post-patch:
-	@${REINPLACE_CMD} -Ee '/^#define (HAS_GETHOSTBY(NAME|ADDR)_R) 1/d' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
-.for f in ${SAUER_BIN}
-	${INSTALL_SCRIPT} ${WRKDIR}/sauer_${f} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sauer_${f} ${PREFIX}/libexec
+.for f in ${BINARIES}
+	${INSTALL_SCRIPT} ${WRKDIR}/bf${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bf${f} ${PREFIX}/libexec
 .endfor
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "packages data" ${DATADIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} "." ${DATADIR}/
 
 post-install:
+	@${FIND} ${DATADIR} -type f | \
+		${SED} -e 's|^${PREFIX}/||' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} -e 's|^${PREFIX}/|@dirrm |' >> ${TMPPLIST}
+
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
