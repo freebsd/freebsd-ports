@@ -7,6 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	0.99.19
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v${PORTVERSION:R}/ \
@@ -17,7 +18,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor
 
-LIB_DEPENDS=   slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 CONFLICTS=	jed-devel-[0-9]*
 
