@@ -59,7 +59,8 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
-		PASSENGER_MODULE	"3rd party passenger module" off
+		PASSENGER_MODULE	"3rd party passenger module" off \
+		SUPERVISORD_MODULE	"3rd party supervisord modle" off
 
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
@@ -276,7 +277,7 @@ DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}.t
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}
 .endif
 
-.if defined(WITH_HTTP_UPSTREAM_FAIR)
+.if defined(WITH_HTTP_UPSTREAM_FAIR) || defined(WITH_SUPERVISORD_MODULE)
 NGINX_UPSTREAM_FAIR_VERSION=	20081012
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
 MASTER_SITE_SUBDIR+=	osa/:upstreamfair
@@ -318,6 +319,13 @@ PASSENGER_VERSION=	2.2.8
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
+.endif
+
+.if defined(WITH_SUPERVISORD_MODULE)
+NGINX_SUPERVISORD_MODULE_VERSION=	1.2
+MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
+DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}.tar.gz:supervisord
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}
 .endif
 
 .if defined(WITH_WWW)
@@ -399,6 +407,14 @@ post-patch:
 	@${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
 		s!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
+.endif
+.if defined(WITH_SUPERVISORD_MODULE)
+	( cd ${WRKDIR}/nginx_upstream_fair-20081012 && \
+		${PATCH} -p0 < \
+			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_fair_module.patch )
+	( cd ${WRKSRC} && \
+		${PATCH} -p0 < \
+			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
 .endif
 
 do-build:
