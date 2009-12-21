@@ -16,6 +16,3 @@ Emil is able to:
 - do one-way conversions of 8bit text to the Swedish national variant of
 	ISO-646 or to US-ASCII.
 - convert to and from RFC1522 format headers.
-
--- 
-Josh Gilliam                    <josh@quick.net>
