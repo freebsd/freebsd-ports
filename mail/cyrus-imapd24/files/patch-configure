@@ -1,7 +1,7 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	2009-03-13 21:19:01.000000000 +0900
-+++ configure	2009-03-15 16:16:50.000000000 +0900
+--- configure.orig	2009-12-21 23:20:56.817376076 +0900
++++ configure	2009-12-21 23:21:49.196653299 +0900
 @@ -642,6 +642,7 @@
  IMAP_COM_ERR_LIBS
  LIB_RT
@@ -9,16 +9,17 @@ diff -u configure.orig configure
 +LDFLAGS_UCDSNMP
  SNMP_CONFIG
  LIB_WRAP
- CMU_LIB_SUBDIR
-@@ -19030,6 +19031,7 @@
-     EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
+ SNMP_SUBDIRS
+@@ -20173,7 +20174,7 @@
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
-+    eval `${PERL} -V:cccdlflags`
-     PERL_CCCDLFLAGS="$cccdlflags"
- 
- fi
-@@ -19984,7 +19986,9 @@
+     case "${target_os}" in
+-        linux*|netbsd*)
++        linux*|netbsd*|freebsd*)
+             { $as_echo "$as_me:$LINENO: checking for perl cccdlflags needed on \"${target_os}\"" >&5
+ $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
+             eval `${PERL} -V:cccdlflags`
+@@ -20749,7 +20750,9 @@
  
      if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
        CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
@@ -29,7 +30,7 @@ diff -u configure.orig configure
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_NETSNMP 1
-@@ -20224,7 +20228,7 @@
+@@ -21135,7 +21138,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF
  

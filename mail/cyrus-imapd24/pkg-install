@@ -53,7 +53,7 @@ case $2 in
 			echo
 		else
 			echo
-			echo "** Please add an entry for the sieve protocol (2000/tcp)"
+			echo "** Please add an entry for the sieve protocol (4190/tcp)"
 			echo "   to /etc/services"
 			echo
 		fi
