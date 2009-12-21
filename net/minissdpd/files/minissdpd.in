@@ -5,6 +5,7 @@
 
 # PROVIDE: minissdpd
 # REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# BEFORE: miniupnpd
 
 . %%RC_SUBR%%
 
