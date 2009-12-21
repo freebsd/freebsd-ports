@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20091029
+PORTVERSION=	20091221
 PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
