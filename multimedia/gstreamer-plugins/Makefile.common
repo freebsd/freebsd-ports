@@ -13,25 +13,33 @@ BASE_GST_ALL_PLUGINS= \
 		vorbis
 # bad
 BAD_GST_ALL_PLUGINS+= \
-		alsa \
-		amrwb \
+		alsaspdif \
+		amrwbenc \
 		apexsink \
+		assrender \
 		bz2 \
 		cdaudio \
 		celt \
+		cog \
 		dc1394 \
-		directfb \
 		dirac \
+		directfb \
 		divx \
 		dts \
-		dvb \
 		faac \
 		faad \
+		gme \
 		gsm \
 		ivorbis \
 		jack \
+		jp2k \
+		kate \
+		ladspa \
 		libmms \
+		lv2 \
 		metadata \
+		mimic \
+		modplug \
 		mpeg2enc \
 		mplex \
 		musepack \
@@ -40,23 +48,18 @@ BAD_GST_ALL_PLUGINS+= \
 		nas \
 		neon \
 		ofa \
-		oss4 \
-		qtwrapper \
 		resindvd \
+		rsvg \
+		schroedinger \
 		sdl \
-		sf \
 		sndfile \
 		soundtouch \
 		spc \
 		swfdec \
-		theoraexpdec \
+		theora \
 		timidity \
-		twolame \
-		vcdsrc \
-		wildmidi \
-		wininet \
-		x264 \
-		xvid
+		xvid \
+		zbar
 
 # good
 GOOD_GST_ALL_PLUGINS+= \
@@ -85,13 +88,16 @@ GOOD_GST_ALL_PLUGINS+= \
 UGLY_GST_ALL_PLUGINS+= \
 		a52dec \
 		amrnb \
+		amrwbdec \
 		cdio \
-		dvdnav \
 		dvdread \
 		lame \
 		mad \
 		mpeg2dec \
-		sidplay
+		sidplay \
+		twolame \
+		x264
+
 
 .for i in ${BASE_GST_ALL_PLUGINS} ${BAD_GST_ALL_PLUGINS} ${UGLY_GST_ALL_PLUGINS}
 gst_${i}_GCONF_SCHEMAS?=	# Empty
@@ -205,14 +211,9 @@ gst_dv_PLIST_FILES=	${GST_LIB_DIR}/libgstdv.la \
 			${GST_LIB_DIR}/libgstdv.so
 
 # dvd
-gst_dvd_EXTRA_LIBS+=	-ldvdnav
-gst_dvd_LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav \
-			dvdread.4:${PORTSDIR}/multimedia/libdvdread
-gst_dvd_GST_PLUGIN_DIR=	ext/dvdnav \
-		ext/dvdread
-gst_dvd_PLIST_FILES=	${GST_LIB_DIR}/libgstdvdnav.la \
-		${GST_LIB_DIR}/libgstdvdnav.so \
-		${GST_LIB_DIR}/libgstdvdread.la \
+gst_dvd_LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+gst_dvd_GST_PLUGIN_DIR=	ext/dvdread
+gst_dvd_PLIST_FILES=	${GST_LIB_DIR}/libgstdvdread.la \
 		${GST_LIB_DIR}/libgstdvdread.so
 gst_dvd_DIST=	ugly
 
