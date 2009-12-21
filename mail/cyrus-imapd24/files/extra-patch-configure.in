@@ -1,13 +1,13 @@
 Index: configure.in
 diff -u configure.in.orig configure.in
---- configure.in.orig	Sat May 29 04:59:21 2004
-+++ configure.in	Sat May 29 05:03:04 2004
-@@ -933,7 +933,7 @@
- dnl add perl cccdlflags when building libraries -- this ensures that the
+--- configure.in.orig	2009-12-21 23:17:00.962723262 +0900
++++ configure.in	2009-12-21 23:18:07.032701766 +0900
+@@ -1145,7 +1145,7 @@
  dnl libraries will be compiled as PIC if perl requires PIC objects
- dnl -- this is needed on NetBSD, but seems to cause problems on atleast Solaris --
--dnl    eval `${PERL} -V:cccdlflags`
-+    eval `${PERL} -V:cccdlflags`
-     PERL_CCCDLFLAGS="$cccdlflags"
-     AC_SUBST(PERL_CCCDLFLAGS)
- fi
+ dnl -- this is needed on NetBSD and Linux, but seems to cause problems on atleast Solaris --
+     case "${target_os}" in
+-        linux*|netbsd*)
++        linux*|netbsd*|freebsd*)
+             AC_MSG_CHECKING(for perl cccdlflags needed on "${target_os}")
+             eval `${PERL} -V:cccdlflags`
+             PERL_CCCDLFLAGS="$cccdlflags"
