@@ -8,6 +8,7 @@
 PORTNAME=	quick-locale-switcher
 PORTVERSION=	1.6.10
 DISTVERSIONSUFFIX=	-fx+mz+sm+tb+sb
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
