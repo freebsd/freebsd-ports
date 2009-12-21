@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	monkey
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	www
-MASTER_SITES=	http://monkeyd.sourceforge.net/versions/
+MASTER_SITES=	http://www.monkey-project.com/versions/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, powerful, and fast Web server written in C
