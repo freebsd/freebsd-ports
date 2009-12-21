@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	echinus
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.rootshell.be/~polachok/code/
 
@@ -32,6 +32,9 @@ PLIST_FILES=	bin/echinus \
 
 PLIST_DIRS=	etc/echinus
 SUB_FILES=	pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/VERSION/${PORTVERSION}/g' ${WRKSRC}/echinus.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
