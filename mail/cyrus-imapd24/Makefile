@@ -119,8 +119,10 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .if defined(WITH_DRAC)
 EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4 \
-		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4 \
-		${FILESDIR}/extra-patch-configure.in
+		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4
+.if ${OSVERSION} >= 800037
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in
+.endif
 USE_AUTOTOOLS=	autoconf:262 autoheader:262
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
