@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GStreamer
-PORTVERSION=	0.09
-PORTREVISION=	2
+PORTVERSION=	0.15
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -57,10 +56,6 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Bus.3 \
 	GStreamer::TypeFindFactory.3 GStreamer::index.3
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == "sparc64"
-BROKEN=		Coredump during build on ${ARCH}
-.endif
 
 PERL_THREADED!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || true
 .if ${PERL_THREADED} == ""
