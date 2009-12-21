@@ -1,10 +1,18 @@
 bin/module-setup
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Setup/.packlist
+%%SITE_PERL%%/Module/MEMOja.pod
 %%SITE_PERL%%/Module/Setup.pm
+%%SITE_PERL%%/Module/Setup/Devel.pm
 %%SITE_PERL%%/Module/Setup/Distribute.pm
 %%SITE_PERL%%/Module/Setup/Flavor.pm
+%%SITE_PERL%%/Module/Setup/Flavor/CatalystStarter.pm
 %%SITE_PERL%%/Module/Setup/Flavor/CodeRepos.pm
 %%SITE_PERL%%/Module/Setup/Flavor/Default.pm
+%%SITE_PERL%%/Module/Setup/Flavor/GitHub.pm
+%%SITE_PERL%%/Module/Setup/Flavor/PBP.pm
+%%SITE_PERL%%/Module/Setup/Flavor/SelectVC.pm
+%%SITE_PERL%%/Module/Setup/Flavor/XS.pm
+%%SITE_PERL%%/Module/Setup/Helper.pm
 %%SITE_PERL%%/Module/Setup/Path.pm
 %%SITE_PERL%%/Module/Setup/Path/Additional.pm
 %%SITE_PERL%%/Module/Setup/Path/Base.pm
@@ -18,13 +26,19 @@ bin/module-setup
 %%SITE_PERL%%/Module/Setup/Plugin.pm
 %%SITE_PERL%%/Module/Setup/Plugin/Additional.pm
 %%SITE_PERL%%/Module/Setup/Plugin/Config/Basic.pm
+%%SITE_PERL%%/Module/Setup/Plugin/Helper.pm
+%%SITE_PERL%%/Module/Setup/Plugin/Site/GitHub.pm
 %%SITE_PERL%%/Module/Setup/Plugin/Template.pm
 %%SITE_PERL%%/Module/Setup/Plugin/Test/Makefile.pm
 %%SITE_PERL%%/Module/Setup/Plugin/VC/Git.pm
 %%SITE_PERL%%/Module/Setup/Plugin/VC/SVK.pm
 %%SITE_PERL%%/Module/Setup/Plugin/VC/SVN.pm
+%%SITE_PERL%%/Module/Setup/Test/Flavor.pm
+%%SITE_PERL%%/Module/Setup/Test/Utils.pm
+@dirrm %%SITE_PERL%%/Module/Setup/Test
 @dirrm %%SITE_PERL%%/Module/Setup/Plugin/VC
 @dirrm %%SITE_PERL%%/Module/Setup/Plugin/Test
+@dirrm %%SITE_PERL%%/Module/Setup/Plugin/Site
 @dirrm %%SITE_PERL%%/Module/Setup/Plugin/Config
 @dirrm %%SITE_PERL%%/Module/Setup/Plugin
 @dirrm %%SITE_PERL%%/Module/Setup/Path
