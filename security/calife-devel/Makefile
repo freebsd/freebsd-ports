@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	calife
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://postfix.eu.org/pub/calife/ \
-		http://www.keltia.net/download/ \
-		http://dev.keltia.net/attachments/download/4/
-DISTNAME=	calife-3.0
+MASTER_SITES=	http://dev.keltia.net/attachments/download/8/ \
+		http://static.keltia.net/download/
+DISTNAME=	calife-3.0.1
 
+MAKE_JOBS_SAFE=yes
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	A lightweight alternative to sudo
 
