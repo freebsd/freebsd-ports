@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.6.4
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -46,7 +46,6 @@ AMAVISGROUP?=	vscan
 AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
 DAEMON?=	/usr/sbin/daemon -p
-HOSTNAME!=	/bin/hostname
 
 OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
 		SNMP	"Install amavisd snmp subagent"	off \
@@ -245,7 +244,7 @@ post-patch:
 			-e "s|/var/lib/amavis|${AMAVISDIR}|" \
 			-e 's|$$log_level = 2;|$$log_level = 0;|' \
 			-e "s|/var/virusmails|${AMAVISQUARANTINE}|" \
-			-e "s|\$localhost_name = \'localhost\';|\$localhost_name = \'${HOSTNAME}\';|g" \
+			-e 's|$$localhost_name = .localhost.;|$$localhost_name = $$myhostname;|' \
 			-e 's|/var/run/clamav/clamd|/var/run/clamav/clamd.sock|g' \
 			${WRKSRC}/${i}
 .endfor
@@ -260,7 +259,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
 				-e "s|/usr/bin/perl|${PERL}|" \
 				-e "s|/var/amavis|${AMAVISDIR}|g" \
-				-e "s|\$localhost_name = \'localhost\';|\$localhost_name = \'${HOSTNAME}\';|g" \
+				-e 's|$$localhost_name = .localhost.;|$$localhost_name = $$myhostname;|' \
 			${WRKSRC}/amavisd
 
 .if defined(AMAVIS_NOAMAVIS)
