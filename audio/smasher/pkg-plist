@@ -1,4 +1,11 @@
 bin/smasher
+bin/smashercsound
+%%DATADIR%%/csd/declick.csd
+%%DATADIR%%/csd/enhance.csd
+%%DATADIR%%/csd/eq.csd
+%%DATADIR%%/csd/freeverb.csd
+%%DATADIR%%/csd/pandelay.csd
+%%DATADIR%%/csd/smasher_fx_aux.csd
 %%DATADIR%%/png/media-playlist-shuffle-inv.png
 %%DATADIR%%/png/stock_help-agent.png
 %%DATADIR%%/png/edit-clear-gs.png
@@ -33,20 +40,20 @@ bin/smasher
 %%DATADIR%%/presets/amen_break_i.smash
 %%DATADIR%%/presets/amen_break_ii.smash
 %%DATADIR%%/presets/amen_break_iii.smash
+%%DATADIR%%/presets/artemis_i.smash
+%%DATADIR%%/presets/artemis_ii.smash
+%%DATADIR%%/presets/bill_ray_i.smash
+%%DATADIR%%/presets/bill_ray_ii.smash
 %%DATADIR%%/presets/blank.smash
-%%DATADIR%%/presets/electric_guitar.smash
-%%DATADIR%%/presets/guitar.smash
-%%DATADIR%%/presets/piano_i.smash
-%%DATADIR%%/presets/piano_ii.smash
-%%DATADIR%%/presets/synth_i.smash
-%%DATADIR%%/presets/synth_ii.smash
-%%DATADIR%%/presets/tr-808.smash
+%%DATADIR%%/presets/jan_hanford_i.smash
+%%DATADIR%%/presets/jan_hanford_ii.smash
+%%DATADIR%%/presets/john_williams_i.smash
+%%DATADIR%%/presets/john_williams_ii.smash
 %%DATADIR%%/samples/Amen_Break.wav
-%%DATADIR%%/samples/Piano.wav
-%%DATADIR%%/samples/TR-808.wav
-%%DATADIR%%/samples/Synth.wav
-%%DATADIR%%/samples/Guitar.wav
-%%DATADIR%%/samples/Electric_Guitar.wav
+%%DATADIR%%/samples/Artemis.wav
+%%DATADIR%%/samples/Bill_Ray.wav
+%%DATADIR%%/samples/Jan_Hanford.wav
+%%DATADIR%%/samples/John_Williams.wav
 %%DATADIR%%/samples/Sine_Wave.wav
 %%DATADIR%%/xpm/smashericon.xpm
 %%DATADIR%%/help/ar01s02.html
@@ -64,4 +71,5 @@ share/pixmaps/smasher.png
 @dirrm %%DATADIR%%/png
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/presets
+@dirrm %%DATADIR%%/csd
 @dirrm %%DATADIR%%
