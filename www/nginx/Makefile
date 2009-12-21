@@ -48,6 +48,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
 		HTTP_MP4_H264_MODULE	"3rd party mp4/h264 module" off \
 		HTTP_NOTICE_MODULE	"3rd party notice module" off \
+		HTTP_PUSH_MODULE	"3rd party push module" off \
 		HTTP_REDIS_MODULE	"3rd party http_redis module" off \
 		HTTP_RESPONSE_MODULE	"3rd party http_response module" off \
 		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
@@ -199,6 +200,13 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-notice-2
 CATEGORIES+=	perl5
 CONFIGURE_ARGS+=--with-http_perl_module
 USE_PERL5=	yes
+.endif
+
+.if defined(WITH_HTTP_PUSH_MODULE)
+NGINX_PUSH_MODULE_VERSION=	0.69
+MASTER_SITES+=	http://pushmodule.slact.net/downloads/:push
+DISTFILES+=	nginx_http_push_module-${NGINX_PUSH_MODULE_VERSION}.tar.gz:push
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_RANDOM_INDEX_MODULE)
