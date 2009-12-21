@@ -1,8 +1,8 @@
---- build.sh.orig	2008-12-28 07:36:50.000000000 +0900
-+++ build.sh	2009-04-11 23:23:57.000000000 +0900
-@@ -136,11 +136,11 @@
-   exit 1
- fi
+--- build.sh.orig	2009-12-18 07:52:08.000000000 +0900
++++ build.sh	2009-12-21 01:30:05.000000000 +0900
+@@ -158,11 +158,11 @@
+   ;;
+ esac
  
 -if [ ! -r $QTBIN/moc ]; then
 +if [ ! -r $QTBIN/moc-qt4 ]; then
@@ -14,8 +14,21 @@
    echo "*** ERROR: unable to locate Qt UIC in $QTBIN"
    exit 1
  fi
-@@ -249,12 +249,12 @@
-   echo "Build done."
+@@ -268,21 +268,21 @@
+ 
+ # -- Installing binaries  --
+ 
+-echo "Installing binaries .."
+-cd $BUILD
+-$MAKE_PRG install
+-cd $CURR_DIR
++#echo "Installing binaries .."
++#cd $BUILD
++#$MAKE_PRG install
++#cd $CURR_DIR
+ echo "Build done."
+ 
+ if [ $WIN_CYGWIN = 0 ]; then
    echo ""
    echo "Final binary is ready in $BIN/$EXEC_NAME."
 -  echo "To run it, you may need to add the following to your LD_LIBRARY_PATH:"
@@ -29,6 +42,6 @@
 +  #LD_LIBRARY_PATH=$QTLIB:$LD_LIBRARY_PATH
 +  #$BIN/$EXEC_NAME -v
 +  #$BIN/$EXEC_NAME -h
+ fi
  
- else 
- 
+ exit 0
