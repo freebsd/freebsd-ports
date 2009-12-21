@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# The executable needs to be run from its data directory, and needs to store
+# configuration in it. We therefore mirror the data directory hierarchy in
+# ~/.bloodfrontier, and create symlinks to the data files.
+
+if [ -d ~/.bloodfrontier ]
+then
+	echo "Using existing ~/.bloodfrontier directory."
+else
+	echo "Creating ~/.bloodfrontier directory."
+	cd %%DATADIR%% || exit 1
+	find * -type d -exec mkdir -p ~/.bloodfrontier/{} \;
+	find * -type f -exec ln -s %%DATADIR%%/{} ~/.bloodfrontier/{} \; 2>/dev/null
+fi
+
+cd ~/.bloodfrontier || exit 1
+exec %%PREFIX%%/libexec/bfserver "$@"

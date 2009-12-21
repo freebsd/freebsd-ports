@@ -1,8 +1,8 @@
 ###############################################################################
 
-1) First time, sauerbraten creates a ~/.sauerbraten directory with symlinks.
-2) Config files are in the ~/.sauerbraten directory.
-3) If you want add new bindings into ~/.sauerbraten/config.cfg, see
+1) First time, bloodfrontier creates a ~/.bloodfrontier directory with symlinks.
+2) Config files are in the ~/.bloodfrontier directory.
+3) If you want add new bindings into ~/.bloodfrontier/config.cfg, see
 
    %%DATADIR%%/data/keymap.cfg.
 
