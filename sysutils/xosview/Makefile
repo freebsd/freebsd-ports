@@ -21,6 +21,10 @@ MAN1=		xosview.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		unsupported FreeBSD version
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,iostream.h,iostream,' \
 		${WRKSRC}/xwin.h \
