@@ -35,7 +35,7 @@ do-build:
 			-qtlib ${QT_LIBDIR}
 
 do-install:
-	cd ${WRKSRC}/build.${PLATFORMKEYWORD}/main && \
+	cd ${WRKSRC}/bin.${PLATFORMKEYWORD} && \
 		${INSTALL_PROGRAM} ${PLIST_FILES:S,^bin/,,} \
 		${PREFIX}/bin
 
