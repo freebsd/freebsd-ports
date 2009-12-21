@@ -5,5 +5,3 @@ the command   as the entered user. So if the username was root, then the
 command will be executed as root.
 
 WWW: http://xsu.sourceforge.net/
-
-Philip Van Hoof <freax@pandora.be>

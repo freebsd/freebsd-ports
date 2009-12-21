@@ -12,6 +12,3 @@ Mmencode is part of metamail, and can be installed as part of that package.
 It is provided here as an independent package since some programs require
 mmencode only and hence you can avoid having to install the entire metalmail
 package when not required.
-
-  -Kelly
-  ~kbyanc@posi.net~

@@ -18,7 +18,4 @@ symbolic links are made:
 "/usr/local/bin/Wnn6" to "${PKG_PREFIX}/OMRONWnn6/Wnn6fbsd" and,
 "/usr/local/lib/wnn6" to "${PKG_PREFIX}/OMRONWnn6/wnn6fbsd".
 
-- S. Taoka
-taoka@FreeBSD.org
-
 WWW: http://www.omronsoft.co.jp/

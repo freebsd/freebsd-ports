@@ -2,5 +2,3 @@ Shared lib for embedding the perl interpreter into other apps. This
 is not needed by the Perl interpreter itself.
 
 WWW: http://perl.com/
-
--- lioux@FreeBSD.org

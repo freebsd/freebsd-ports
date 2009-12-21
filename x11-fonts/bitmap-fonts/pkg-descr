@@ -4,5 +4,3 @@ Bitmap font, (6x12, 7x14, 8x16, 12x24) dots bitmap font.
 
   Bitmap font is installed the following directory tree:
 	${LOCALBASE}/lib/X11/fonts/local/
-
---- Porting by shige <shige@FreeBSD.org>

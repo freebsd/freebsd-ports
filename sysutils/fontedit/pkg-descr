@@ -1,5 +1,2 @@
 These programs can be used to dump a syscons font file to human readable
 form for editing, and then converted back to a raw syscons font file.
-
-- Ben Smithurst
-  <ben@FreeBSD.org>

@@ -12,6 +12,3 @@ echo "Here are the tarballs you requested" | biabam \
 
 If no text is piped into biabam, it will wait for text on standard input
 (finish with CTRL-D)
-
-- Mads Martin Joergensen
-mmj@mmj.dk

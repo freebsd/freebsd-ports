@@ -19,6 +19,3 @@ Audio support is somewhat flaky on FreeBSD (synchronization problems).
 It works better with the old Voxware driver than with the current pcm driver.
 
 WWW: http://home.tu-clausthal.de/student/iMaze/
-
-- Ronald Kuehn
-rk@ronald.org

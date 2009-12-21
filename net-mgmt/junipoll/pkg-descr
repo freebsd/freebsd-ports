@@ -5,6 +5,3 @@ containing a bytes and a pkts data source suitable for graphing using
 RRGrapher or RRDTOOL.
 
 WWW: http://net.doit.wisc.edu/~plonka/junipoll/
-
-- Bill Fumerola
-billf@FreeBSD.org

@@ -15,4 +15,3 @@ and sanity tests. The comparison routines are the exception for which
 there will be more extensive tests in a future release.
 
 WWW: http://search.cpan.org/dist/Number-WithError
-Author: Steffen Mueller <symbolic-module@steffen-mueller.net>

@@ -5,5 +5,4 @@ dpkg and more, allowing you to build, install, make RPMs,
 make Debian packages and more, all from a single maintainable 
 'Makefile+' script. 
 
-Author:	Richard W.M. Jones <rich@annexia.org>
 WWW:	http://www.annexia.org/freeware/makeplus/

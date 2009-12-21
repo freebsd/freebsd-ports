@@ -4,6 +4,3 @@ the Ivy msn client. pymsn uses the glib mainloop to process the network
 events in an asynchronous manner.
 
 WWW: http://telepathy.freedesktop.org/
-
-- Florent Thoumie
-flz@FreeBSD.org

@@ -20,5 +20,3 @@ those tolerances.  It also tells by how much they differ. A simple example:
 ### Maximum relative error in matching lines = 8.64e-51 at line 129 field 4
 
 WWW: http://www.math.utah.edu/~beebe/software/ndiff/
-
-Have fun.         Stefan   (sad@mailaps.org)

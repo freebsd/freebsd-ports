@@ -4,14 +4,11 @@ Software (Addison-Wesley Professional Computing Series, 1997,
 ISBN 0-201-49841-3).
 
 For installation instructions, see install.html.
-
 For a summary of the distribution's revision history, see history.html.
 
-WWW: http://www.cs.princeton.edu/software/cii/
------
-Author: David R. Hanson
-drh@microsoft.com / http://www.research.microsoft.com/~drh/
----
+David R. Hanson
+http://www.research.microsoft.com/~drh/
+
 FreeBSD note: in /usr/local
 lib/libcii.a	->	lib/cii/1/libcii.a
 include/cii	->	lib/cii/1/include
@@ -21,3 +18,5 @@ source of CII		share/doc/cii/src
 source of examples	share/doc/cii/examples
 
 There is no documentation other than the book and its web site.
+
+WWW: http://www.cs.princeton.edu/software/cii/

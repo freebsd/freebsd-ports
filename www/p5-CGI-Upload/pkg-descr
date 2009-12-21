@@ -10,6 +10,3 @@ modules and offers some tidy and succinct methods for the
 handling of files uploaded via multipart/form-data requests. 
 
 WWW: http://search.cpan.org/dist/CGI-Upload/
-
-- Daniel B. Hemmerich
-ports-freebsd@FreeBSDsecurity.com

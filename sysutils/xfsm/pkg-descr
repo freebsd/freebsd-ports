@@ -4,6 +4,3 @@ to make monitoring your file systems' status easy by displaying
 a simple bar graph for each file system greater than size 0. It
 updates the file systems' statistics at regular, user definable 
 intervals.
-
-- Vanilla
-vanilla@MinJe.com.TW

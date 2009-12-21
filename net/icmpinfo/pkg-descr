@@ -19,6 +19,3 @@ icmpinfo -s    o Also decode the ip_src field which is the address of the
                  for hosts with a single network interface. 
 icmpinfo -l    o Run like a daemon (forks) and output to SYSLOG.
                  (It now checks that you are root for that)
-
--- David
-   obrien@NUXI.com

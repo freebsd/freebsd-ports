@@ -6,6 +6,3 @@ Mouse click to toggle encoding (Win-CP1251/KOI8).
 Cyrillic fonts for X11 (koi8 and cp1251):
 ${MASTER_SITES}/XFree86-3_cyr_fonts_koi_cp1251.tar.gz
 ${MASTER_SITES}/XFree86-4_cyr_fonts_cp1251.tar.gz
-
-Veselin Slavov - vess 
-vess@slavof.net

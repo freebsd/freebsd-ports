@@ -3,7 +3,5 @@ providing Unicode support (p.ex. character set conversions, locales,
 normalization, transliteration, etc.).
 
 More information on ICU can be found on the homepage
-WWW: http://oss.software.ibm.com/icu/
 
-- Bjoern A. Zeeb
-bzeeb+freebsdports@zabbadoz.net
+WWW: http://oss.software.ibm.com/icu/

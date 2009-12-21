@@ -3,4 +3,3 @@ dynamic DNS records. This is done via an http get using the libwww-perl
 modules.
 
 WWW: http://search.cpan.org/dist/DNS-EasyDNS
-Author: Gavin Brock <gbrock@cpan.org>

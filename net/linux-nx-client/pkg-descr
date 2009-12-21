@@ -6,6 +6,3 @@ This port provides NoMachine NX Client, which can access KDE, GNOME,
 Microsoft RDP, Citrix ICA and VNC desktops remotely.
 
 WWW: http://www.nomachine.com/
-
-- Jean-Yves Lefort
-jylefort@FreeBSD.org

@@ -6,5 +6,3 @@ information about a PNG image and to verify that it conforms to
 the PNG specification. It also includes partial support for MNG animations.  
 
 WWW: http://www.libpng.org/pub/png/apps/pngcheck.html
-
-- Will <andrews@technologist.com>

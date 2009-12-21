@@ -2,6 +2,3 @@ Wmfsm monitors your filesystem usage. It features three display modes,
 different colorschemes and exclusion of filesystems (eg /cdrom).
 
 WWW: http://www.cs.ubc.ca/~cmg/
-
-- Steven
-panic@subphase.de

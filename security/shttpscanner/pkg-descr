@@ -3,4 +3,3 @@ check for directories and files on the remote web server and get some
 server information like the webserver running.
 
 WWW: http://sourceforge.net/projects/shttpscanner/
-Author: Paisterist <paisterist@users.sourceforge.net>

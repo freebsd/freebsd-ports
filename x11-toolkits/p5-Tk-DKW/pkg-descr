@@ -19,4 +19,3 @@ Tk::Signals     - A publish and subscribe object signalling method like
 		  application level events.
 
 WWW: http://search.cpan.org/dist/Tk-DKW/
-Author: Damion K. Wilson <dkw@rcm.bm>

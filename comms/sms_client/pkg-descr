@@ -10,6 +10,3 @@ but instead simple user interfaces for interactive use by a user dialing up
 with a modem. For several UK based services such as these drivers have been
 written, note that providers often offer more that one service and as such 
 you may require a different driver for each one.
-
-- George Reid
-greid@ukug.uk.freebsd.org

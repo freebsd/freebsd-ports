@@ -2,5 +2,3 @@ A very simple dockable pager for Window Maker.  Up to nine workspaces
 my be selected with buttons that send the appropriate synthetic ALT
 1..9 key code to the root window.  If you love Window Maker but can't
 live without a pager, this app may be of use to you. 
-
-- Jim <jim@FreeBSD.org>

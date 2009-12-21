@@ -1,9 +1,6 @@
 COREBlog2 is a fully-featured Blog Product works fine with Plone 2.1.
 
-WWW: http://coreblog.org/
-
 If you want to migrate your COREBlog1 (www/zope-coreblog) instance
 to COREBlog2, see details at Products/COREBlog2/migration/readme.txt.
 
-- Yasushi Hayashi
-yasi@yasi.to
+WWW: http://coreblog.org/

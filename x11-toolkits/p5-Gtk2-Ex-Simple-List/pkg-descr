@@ -17,4 +17,3 @@ expanded by defining arbitrary new column types before calling the new
 function.
 
 WWW: http://search.cpan.org/dist/Gtk2-Ex-Simple-List/
-Author: Ross McFarland <rmcfarla@neces.com>

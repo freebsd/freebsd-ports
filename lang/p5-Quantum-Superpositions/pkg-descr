@@ -19,5 +19,3 @@ an operation is applied to a superposition, it is applied (notionally) in
 parallel to each of the states in that superposition.
 
 WWW: http://search.cpan.org/dist/Quantum-Superpositions
-Authors: Damian Conway <damian@conway.org>
-         Steven Lembark <lembark@wrkhors.com>

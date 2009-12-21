@@ -6,4 +6,3 @@ This port is similar to x11/xsel, but with different CLI syntax and
 a bit more functionality. It is a lot more popular, too.
 
 WWW: http://www.vergenet.net/~conrad/software/xsel/
-Author: Conrad Parker <conrad@vergenet.net>

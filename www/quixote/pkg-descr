@@ -16,9 +16,6 @@ objects on the Web, and the publishing loop can be customized by subclassing
 the Publisher class.  You can think of it as a toolkit to build your own
 smaller, simpler version of Zope, specialized for your application.
 
-Authors:  A.M. Kuchling, Neil Schemenauer, Greg Ward
-          <{amk,nas,gward}@mems-exchange.org>
-WWW:      http://www.mems-exchange.org/software/quixote/
 See also: http://www.amk.ca/python/writing/mx-architecture/
 
--- Johann Visagie <wjv@FreeBSD.org>
+WWW:      http://www.mems-exchange.org/software/quixote/

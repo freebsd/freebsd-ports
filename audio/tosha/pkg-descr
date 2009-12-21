@@ -11,5 +11,3 @@ example MpegTV (see http://www.mpegtv.com/).
 tosha reads the digital audio / video data through the SCSI
 bus; therefore it does not work with IDE/ATAPI CD-ROM drives
 nor with proprietary interfaces.
-
-Oliver Fromme <oliver.fromme@heim3.tu-clausthal.de>

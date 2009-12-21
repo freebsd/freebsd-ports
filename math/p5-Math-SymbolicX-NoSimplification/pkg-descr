@@ -14,4 +14,3 @@ heuristics turned on because most expressions cannot be simplified
 significantly.)
 
 WWW: http://search.cpan.org/dist/Math-SymbolicX-NoSimplification
-Author: Steffen Mueller <symbolic-module@steffen-mueller.net>

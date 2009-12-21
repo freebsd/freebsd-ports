@@ -8,5 +8,3 @@ There are also filter filterm which allow to make separate input and output
 conversions of the encodings for the given command. It can help e.g. when
 our terminal is unable to display non-ASCII characters or to enter them
 from the keyboard.
-
-Maintains: Alex Semenyaka <alexs@snark.rinet.ru>

@@ -5,5 +5,3 @@ be useful for portable sorting of large files, or for any system that
 doesn't have a sort(1) and is virtual-memory-deprived (including Windows).
 
 WWW: http://search.cpan.org/dist/File-Sort/
-
-Seamus Venasse <svenasse@polaris.ca>

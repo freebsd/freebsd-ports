@@ -6,5 +6,4 @@ not likely to be usable as the basis for a 64K microcomputer implementation.
 The interpreter was written primarily by Daniel Van Blerkom, Brian Harvey,
 Michael Katz, and Douglas Orleans.  Thanks to Fred Gilham for the X11 code.
 
-Author: Brian Harvey <bh@cs.berkeley.edu> et al. 
 WWW: http://www.cs.berkeley.edu/~bh/logo.html

@@ -10,6 +10,3 @@ from introduction/about.txt:
 
 More docs are in ``${PREFIX}/eiffel/doc'' and ``${PREFIX}/eiffel/introduction''
 Some examples are in ``${PREFIX}/eiffel/examples''.
-
---
-erich@freebsd.org

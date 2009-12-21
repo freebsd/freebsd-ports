@@ -1,4 +1,4 @@
-JFConv is a quick port by Andreas Mock <AMock@osram.com> from the
+JFConv is a quick port from the
 original gui-based, object-oriented program jconvpro.exe with
 permissions from J.J. Lehett.  All object-oriented and gui-derived
 stuff is thrown away. The source code was "c-ified" and command line

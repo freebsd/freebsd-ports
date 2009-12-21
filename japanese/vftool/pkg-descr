@@ -13,6 +13,3 @@ p2pn    virtual font for transform from dvi file of pTeX to NTT JTeX.
 
 If you make use of Japanese "Takegaki" style in pTeX or pLaTeX2e, you must be
 installed this port before installing dvi2ps.
-
-- Kiriyama Kazuhiko
-kiri@FreeBSD.org

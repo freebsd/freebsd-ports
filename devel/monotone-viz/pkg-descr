@@ -8,6 +8,3 @@ an OCaml binding for GTK+), and it uses the dot program
 from the Graphviz package.
 
 WWW: http://oandrieu.nerim.net/monotone-viz/
-
-- Tarasov Alexey
-master@preved.cn

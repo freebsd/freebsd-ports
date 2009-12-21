@@ -5,7 +5,3 @@ number of bits with that the integer types unsigned char, unsigned
 short, unsigned int, and unsigned long have on your machine.  The
 module automatically determines the number of bits of each integer
 type and adjusts its internal constants accordingly.
-
-Author: Steffen Beyer <sb@sdm.de>
-
---will

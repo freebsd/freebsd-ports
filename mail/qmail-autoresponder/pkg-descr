@@ -10,5 +10,4 @@ Rate-limited autoresponder for qmail:
   to a single inode.
 - Optional support for MySQL
 
-Author:	Bruce Guenter <bruceg@em.ca>
 WWW:	http://untroubled.org/qmail-autoresponder/

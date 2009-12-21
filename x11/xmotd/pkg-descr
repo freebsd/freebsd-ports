@@ -4,6 +4,3 @@ network.  xmotd periodically checks whether a file has been modified
 and pops up and displays the contents of the file, if it has.
 
 WWW: http://www.ee.ryerson.ca/~elf/xmotd/
-
---
-mwest@uct.ac.za

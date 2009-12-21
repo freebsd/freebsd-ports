@@ -1,5 +1,2 @@
 Musicbox is a simple one-file-at-a-time audio tag editor. It can edit
 ID3, Vorbis and FLAC tags via the TagLib library.
-
-- Jean-Yves Lefort
-jylefort@FreeBSD.org

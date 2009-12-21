@@ -15,5 +15,3 @@ The HTML::Clean module encapsulates a number of HTML optimizations
 and cleanups.  The end result is HTML that loads faster, displays
 properly in more browsers.  Think of it as a compiler that
 translates HTML input into optimized machine readable code.
-
--- Alex Kapranoff <kapr@crosswinds.net>

@@ -18,7 +18,3 @@ to use Ctrl-h and BS key to delete-char, set to $HOME/.oleorc as below:
 	bind-key generic-main backward-delete-char ^H
 
 WWW: http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
-Acknowledgments:	Kuniaki HAYASHIDA<hh.iij4u.or.jp>
-			Takeshi MUTOH <mutoh@sentinel.info.nara-k.ac.jp>
----
-Yoshiro MIHIRA (sanpei@sanpei.org)

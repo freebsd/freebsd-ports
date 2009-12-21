@@ -13,5 +13,4 @@ maildirsmtp without pestering the sysadmin. The user can also decide
 whether undeliverable messages should be left for POP retrieval or
 bounced back to the sender.
 
-Author:	D. J. Bernstein <djb@cr.yp.to>
 WWW:	http://cr.yp.to/serialmail.html

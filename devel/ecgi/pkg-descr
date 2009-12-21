@@ -7,6 +7,3 @@ compatibility to cgic 0.5.
 It also contains a library independent introduction to CGI programming
 with C, a .html to .h HTML template preprocessor, and fast,
 block-allocating memory files.
-
-- George Reid
-greid@ukug.uk.freebsd.org

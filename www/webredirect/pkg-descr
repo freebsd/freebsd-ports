@@ -4,6 +4,3 @@ The webredirect program is an extremely small web server that gives the
 unsupported and result in a "501 Not Supported" response.
 
 WWW: http://www.Stacken.KTH.se/~kaj/hack/webredirect
-
-- Rasmus Kaj
-rasmus@kaj.se

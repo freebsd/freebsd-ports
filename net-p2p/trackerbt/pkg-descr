@@ -16,5 +16,3 @@ be reduced, and if one tracker goes offline new peers would still
 be able to contact one of the other trackers and join the download.
 
 WWW: http://www.alhem.net/project/trackerbt/index.html
-
--- lioux@FreeBSD.org

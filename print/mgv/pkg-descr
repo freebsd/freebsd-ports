@@ -1,5 +1,3 @@
 Mgv is a Motif-based PostScript and PDF previewer based on Tim 
 Theisen's ghostview-1.5.  Mgv uses the Motif widget set, but the 
 author claims full Lesstif-compliance.
-
-Author: Eric A. Howe <mu@trends.net>

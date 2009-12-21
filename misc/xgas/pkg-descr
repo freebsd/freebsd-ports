@@ -20,5 +20,3 @@ Options:
       -mm   Sets the maxMolecules resource.
       -fg   Sets the foreground.
       -bg   Sets the background.
-
-Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>

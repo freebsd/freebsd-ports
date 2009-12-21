@@ -3,4 +3,3 @@ The spotted connections can be killed by injecting RST packets into the
 stream.
 
 WWW: http://www.signedness.org/tools/
-Author: Claes M. Nyberg <md0claes@mdstud.chalmers.se>

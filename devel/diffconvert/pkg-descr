@@ -8,6 +8,3 @@ forms are "context diffs" and "unidiffs".
   udiffreverse   reverses a unidiff.
 
 cd2ud is dedicated to David S. Miller "context diffs make my head spin".
-
-- George Reid
-greid@ukug.uk.freebsd.org

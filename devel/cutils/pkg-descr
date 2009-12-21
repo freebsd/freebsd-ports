@@ -9,7 +9,4 @@ cunloop - unloop C loops
 yyextract - extract grammar rules from yacc grammar
 yyref - yacc grammar reference program
 
-Sandro Sigala
-ssigala@globalnet.it
-
 WWW: http://www.sigala.it/sandro/software.php#cutils

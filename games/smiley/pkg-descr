@@ -4,5 +4,3 @@ it to generate a random prompt when there is a status line available
 to hold the information I would otherwise put into my prompt.  Hence
 smiley(1) does not contain the invisible smiley or any multi-line
 smileys.
-
-Author: DaviD W. Sanderson (dws@cs.wisc.edu)

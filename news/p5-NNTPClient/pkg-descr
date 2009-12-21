@@ -3,6 +3,3 @@ application to talk to NNTP servers.  It uses the OOP (Object Oriented
 Programming) interface introduced with Perl 5.
 
 WWW: http://search.cpan.org/dist/NNTPClient/
-
-- Pete
-petef@FreeBSD.org

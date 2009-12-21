@@ -18,5 +18,3 @@ RIJNDAEL-128 (AES), RIJNDAEL-256, SERPENT, TWOFISH, CAST 256, SAFER+, LOKI97,
 other project to save data in files in a simple and safe way.
 
 WWW: http://gringotts.berlios.de/
-
-- Anders Nordby <anders@fix.no>

@@ -1,6 +1,3 @@
 The mserver program is a network modem sharing server which allows modems to 
 be exported to any number of hosts on the (local) internet. Access control to
 each individually exported modem is performed on a per-host basis.
-
-- Maxim Sobolev
-sobomax@FreeBSD.org

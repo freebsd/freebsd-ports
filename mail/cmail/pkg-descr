@@ -9,5 +9,3 @@ new messages. Example of output -
 This may be useful if you split your mail into multiple files using something
 like procmail. I'm not sure if the new/old mail determination works with
 anything other than mutt.
-
-Chip Marshall <chip@chocobo.cx> 

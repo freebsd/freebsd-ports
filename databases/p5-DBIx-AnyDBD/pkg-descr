@@ -6,5 +6,3 @@ platforms, but to simply provide a platform that uses the right
 class at the right time for whatever DB is currently in use.
 
 WWW: http://search.cpan.org/dist/DBIx-AnyDBD/
-
-Seamus Venasse <svenasse@polaris.ca>

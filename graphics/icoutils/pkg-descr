@@ -10,7 +10,4 @@ PNG images. (Each icon/cursor file may contain multiple images,
 usually of different sizes and with different number of colors.)
 Icotool can also create icon/cursor files from PNG images.
 
-Author: Oskar Liljeblad <oskar@osk.mine.nu>
 WWW: http://www.nongnu.org/icoutils/
-
--- lioux@FreeBSD.org

@@ -9,6 +9,3 @@ on the size of log files, and forks a rotator/compressor when it exceeds 2
 MBytes.
 
 WWW: http://www.egbok.com/sudoscript
-
-- Howard Owen
-hbo@egbok.com

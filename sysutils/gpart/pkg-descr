@@ -6,5 +6,4 @@ Supported (guessable) filesystem or partition types: DOS/Windows FAT, Linux
 ext2 and swap, OS/2 HPFS, Windows NTFS, FreeBSD and Solaris/x86 disklabels,
 Minix FS, Reiser FS
 
-Author: Michail Brzitwa <mb@ichabod.han.de>
 WWW: http://www.stud.uni-hannover.de/user/76201/gpart/

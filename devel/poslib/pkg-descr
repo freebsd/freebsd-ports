@@ -11,5 +11,4 @@ Poslib library of functions, you can easily create DNS servers,
 without worrying about low-level details such as DNS message compilation, 
 domain-name compression and UDP/TCP transmission. 
 
-Author:	Meilof Veeningen <meilof@users.sourceforge.net>
 WWW:	http://posadis.sourceforge.net/projects/poslib.php

@@ -4,6 +4,4 @@ is presented to the user in pieces for quick zooming and scrolling.
 Unlike other implementations that offer similar functionalities,
 GridPix doesn't use plugins or applets -- it is pure HTML.
 
-- Satoshi
-asami@FreeBSD.org
 WWW: http://now.cs.berkeley.edu/Td/GridPix/

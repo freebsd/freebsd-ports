@@ -11,5 +11,3 @@ You can list catalog entries. There is some preliminary schema exporting
 utility. And you can export data out to CSV (comma separated value) format. 
 
 WWW: http://mdbtools.sourceforge.net/
-
-- Anders Nordby <anders@fix.no>

@@ -4,6 +4,3 @@ structure, and writing back to file.  It was originally written for `rolo', but
 has been split-off as a generic library for general use.
 
 WWW: http://rolo.sourceforge.net/
-
--- Oliver Braun
-obraun@FreeBSD.org

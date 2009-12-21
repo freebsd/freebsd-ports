@@ -19,5 +19,3 @@ Some features are:
   * Determines whether file is PostScript or text and prints it appropriately
   * Can automatically perform page reversal for the benefit of printers
     that stack face-up.
-
-  -- David O'Brien	(obrien@cs.ucdavis.edu)

@@ -5,8 +5,3 @@ returnvalue. If the given lines have infinite intersection points, -1 is
 returned.
 
 WWW: http://search.cpan.org/dist/Math-Intersection-StraightLine/
-Author: Renee Baecker <module@renee-baecker.de>
-
--- 
-Aaron Dalton
-aaron@FreeBSD.org

@@ -3,6 +3,3 @@ command line options, translates them, and calls GnuPG (Gnu Privacy
 Guard) to perform the desired action.
 
 WWW: http://www.nessie.de/mroth/pgpgpg/
-
-- Matt Behrens
-  matt@zigg.com

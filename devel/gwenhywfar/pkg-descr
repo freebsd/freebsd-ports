@@ -13,5 +13,4 @@ Gwenhywfar includes the following features, among several others:
 - High-level cryptographic functions on top of OpenSSL functionality
   (src/crypt/)
 
-Author:	Martin Preuss <martin@libchipcard.de>
 WWW:	http://www.aquamaniac.de/

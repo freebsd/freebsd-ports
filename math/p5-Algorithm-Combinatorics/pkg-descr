@@ -6,8 +6,4 @@ sequences, where efficient means:
 
 Tuples are generated in lexicographic order.
 
-Author: Xavier Noria (FXN) <fxn@cpan.org>
 WWW: http://search.cpan.org/dist/Algorithm-Combinatorics/
-
-- Aaron Dalton
-aaron@FreeBSD.org

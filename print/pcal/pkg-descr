@@ -4,6 +4,3 @@ year.  By default, it looks for a file in the home directory named
 calendar, and prints any following text under the appropriate day.
 
 WWW: http://pcal.sourceforge.net/
-
---
-mwest@uct.ac.za

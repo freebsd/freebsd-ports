@@ -13,5 +13,3 @@ flavours. (As far as i am aware, this exceeds support provided by any
 other serialization framework, regardless of the implementation language!) 
 
 WWW: http://s11n.net
-Author: Stephan Beal <stephan@s11n.net>
-

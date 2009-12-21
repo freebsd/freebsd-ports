@@ -3,6 +3,4 @@ filenames into your favourite editor (presumably vi).  Any changes to the
 filenames will result in renaming the respective files. Read the comments in
 the script for details.
 
-AUTHOR: Oliver Fromme  <olli@fromme.com>
-
 BSD-style copyright and standard disclaimer applies.

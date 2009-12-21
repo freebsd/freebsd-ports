@@ -12,7 +12,4 @@ Python's SocketServer class, and an XML-RPC handler for Medusa.
 
 Version 0.9.9 is regarded as a beta-quality development release.
 
-Author: Fredrik Lundh <fredrik@pythonware.com>
 WWW:    http://www.pythonware.com/products/xmlrpc/
-
--- Johann Visagie <wjv@FreeBSD.org>

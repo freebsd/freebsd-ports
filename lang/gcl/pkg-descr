@@ -5,8 +5,6 @@ by William Schelter and continued through 1994.  In 1994 AKCL was
 released as GCL (GNU Common Lisp) under the GNU public library
 license.
 
-WWW: http://www.gnu.org/software/gcl/
-
 NOTE: GCL supports Tk bindings with Tcl 8 and Tk 8.
 
-Tim Pierce <twp@unchi.org>
+WWW: http://www.gnu.org/software/gcl/

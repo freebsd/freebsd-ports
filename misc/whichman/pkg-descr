@@ -17,5 +17,3 @@ This package holds THREE little search utilities:
   your PATH and uses a fault tolerant search algorithem.
 
 WWW: http://main.linuxfocus.org/~guido/#whichman
---
-Guido Socher <guido.s@writeme.com>

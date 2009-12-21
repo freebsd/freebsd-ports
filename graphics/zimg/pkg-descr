@@ -4,6 +4,3 @@ numbers. It can output in either EDF or PNG. It uses the
 GD library for image creation.
 
 WWW: http://zimg.sourceforge.net/
-Author: Johannes Zellner <johannes@zellner.org>
-
-- Will <andrews@technologist.com>

@@ -11,9 +11,3 @@ state machine that adheres to either model--hence the more generic FSA
 moniker.
 
 WWW: http://search.cpan.org/dist/FSA-Rules/
-Authors: David Wheeler <david@kineticode.com>
-Curtis "Ovid" Poe <eop_divo_sitruc@yahoo.com> (reverse the name to email him)
-
--- 
-Aaron Dalton
-aaron@FreeBSD.org

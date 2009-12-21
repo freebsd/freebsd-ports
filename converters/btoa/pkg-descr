@@ -12,6 +12,3 @@ Patch 1 is an unofficial, non-platform-specific patch to version
 5.2 of btoa.  It allows for automatic decoding of btoa files if
 the program is invoked as "atob" (no -a argument necessary).  It
 also outfits the Makefile to do clean and install.
-
-Brent J. Nordquist (nordquist@platinum.com)
-Fri Apr  5 23:50:09  1996

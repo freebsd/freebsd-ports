@@ -20,4 +20,3 @@ in the editable mode, the Button activates a popup Listbox from which a
 single item can be selected.
 
 WWW: http://search.cpan.org/dist/Tk-JComboBox/
-Author: Rob Seegel <RobSeegel@comcast.net>

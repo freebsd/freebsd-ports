@@ -8,5 +8,3 @@ web hosts).
 
 This module does not use locale or unicode and is written in pure Perl, 
 so it will probably work at any computer.
-
-Alex Kapranoff <kapr@crosswinds.net>

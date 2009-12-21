@@ -4,6 +4,3 @@ IPv6 addresses and forward all data to IPv4 or IPv6 (default) host.
 It can be used for example as an ipv6-capable IRC proxy.
 
 WWW: http://toxygen.net/6tunnel/
-
-- Vassili Tchersky
-vt@bsd-fr.org

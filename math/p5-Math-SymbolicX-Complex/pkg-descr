@@ -5,4 +5,3 @@ complex constants. (Math::Symbolic::Variable objects have been able to
 contain complex number objects since the very beginning.)
 
 WWW: http://search.cpan.org/dist/Math-SymbolicX-Complex
-Author: Steffen Mueller <symbolic-module@steffen-mueller.net>

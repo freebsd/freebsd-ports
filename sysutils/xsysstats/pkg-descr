@@ -8,7 +8,3 @@ For example, you could have it display the percentage of cpu being utilized
 of half a dozen (or more) different hosts.  Also, splitting the window
 into smaller windows is now supported (similar to what the perfmeter
 in OW 3 allows)
-
-(above taken from the original README)
-- Satoshi
-asami@cs.berkeley.edu

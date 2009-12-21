@@ -6,5 +6,4 @@ It includes several useful Domain Name System (DNS) tools:
   command-line interfaces to DNS
 - dnsq, dnstrace, dnstracesort: DNS debugging tools
 
-Author:	Daniel J. Bernstein <djb@cr.yp.to>
 WWW:	http://cr.yp.to/djbdns.html

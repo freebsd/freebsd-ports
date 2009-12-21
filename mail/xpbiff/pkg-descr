@@ -13,12 +13,3 @@ known problem:
 	assumes "the conversion does not makes the string longer".   But
 	when converting so-called 'hankaku-kana', this assumption breaks.
 Thank you.
-
-Acknowledgements for this port:
-		Makoto MATSUSHITA <matusita@ics.es.osaka-u.ac.jp>
-		Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
-		Nozomu MATSUI <nozomu@yy.cs.keio.ac.jp>
-		Gaku TASHIRO <manabu@yy.cs.keio.ac.jp>
-
-- Yoshiro MIHIRA
-(sanpei@sanpei.org)

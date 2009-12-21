@@ -10,6 +10,3 @@ use. It implements most of the mail functionality in one program and
 it does not require any additional tools.
 
 WWW: http://www.xfmail.org/
-
-- Mike
-mikeh@FreeBSD.org

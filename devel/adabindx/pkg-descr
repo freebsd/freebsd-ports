@@ -10,13 +10,9 @@ names, e.g.
 security of Ada by controlling the creation and release of pointer types
 wherever possible."
 
-WWW: http://home.arcor.de/hfvogt/programming.html
-
-- David Holm
-david@realityrift.com
-
-
-Patch supplied by Vadim Godunko <vgodunko@vipmail.ru>
+Patch supplied by Vadim Godunko
 
 It adds support for OpenMotif 2.2 to configuration as well as support for
 XmColumn, XmDataField and widgets from OpenMotif2.2.
+
+WWW: http://home.arcor.de/hfvogt/programming.html

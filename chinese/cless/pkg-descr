@@ -10,6 +10,3 @@ Also, the help can be displayed in either Simple Chinese, Complex Chinese,
 or English by setting the LESSHELP environmental variable to the correct
 helpfile.  Cless should be run w/in a CXterm or simular terminal emulator
 supporting Chinese language encodings.
-
-David O'Brien
-obrien@cs.ucdavis.edu

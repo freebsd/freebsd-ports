@@ -6,5 +6,4 @@ From the README:
 
 PyGreSQL includes a DB-API 2.0 compliant API wrapper.
 
-Author:   D'Arcy J.M. Cain <darcy@druid.net>
 WWW:      http://www.pygresql.org

@@ -8,12 +8,9 @@ of numbers and strings that Java expects are handled automatically by the
 language. NetRexx classes and Java classes are entirely equivalent --
 NetRexx can use any Java class (and vice versa).
 
-For formal details of the language, please see the NetRexx documentation
-at
-
-WWW: http://www-306.ibm.com/software/awdtools/netrexx/
-
-Mike Cowlishaw <mfc@uk.ibm.com>
-___________________
 NOTE: Remember to add NetRexxC.jar to your Java CLASSPATH or NETREXX_JAVA
 environment.
+
+For formal details of the language, please see the NetRexx documentation at
+
+WWW: http://www-306.ibm.com/software/awdtools/netrexx/

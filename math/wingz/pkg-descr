@@ -16,7 +16,3 @@ From the README:
 
 This port uses the linux-compat system, but hopefully that'll be
 invisible to the end user.
-
-eric.
---
-erich@FreeBSD.org

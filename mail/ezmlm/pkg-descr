@@ -20,5 +20,4 @@ memory. ezmlm hashes the subscription list into a set of independent
 files so that it can handle subscription requests quickly. ezmlm uses
 qmail for blazingly fast parallel SMTP deliveries.
 
-Author:	D.J. Bernstein <djb@cr.yp.to>
 WWW:	http://cr.yp.to/ezmlm.html

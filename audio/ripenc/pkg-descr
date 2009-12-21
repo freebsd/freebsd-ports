@@ -5,11 +5,7 @@ CDDB lookups to name the songs as they are ripped.  Cda, which is
 included in the XMCD package, must be used if you wish to utilize CDDB
 naming. A manual naming option is also available.
 
-Author: Michael J. Parmeley
-WWW:   http://home.kc.rr.com/ripenc/
-
-- Joao Carlos Mendes Luis
-<jonny@jonny.eng.br>
-
 Note: This port does not depend on the binary utilities referenced
 above.  Choose and install then based on your own preferences.
+
+WWW:   http://home.kc.rr.com/ripenc/

@@ -4,6 +4,3 @@ from the command line or from standard input.
 See RFC 1738, section 2.2, for an eplanation of URL encoding.
 
 WWW: http://www.whizkidtech.redprince.net/urlendec/
-
-G. Adam Stanislav
-adam@redprince.net

@@ -3,5 +3,3 @@ for lines containing an IP address matched to the given CIDR.
 grepip finds IP in any context of a line, while grepcidr only if all line is IP.
 
 WWW: http://www.lexa.ru/lexa/
-
-- Serge Maslov <serge@maslov.biz>

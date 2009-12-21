@@ -2,5 +2,3 @@ These Perl modules provide a method of reading and writing uncompressed
 Microsoft WAV files.
 
 WWW: http://search.cpan.org/dist/Audio-Wav/
-Authors: Nick Peskett (see http://www.peskett.co.uk/ for contact details)
-         Kurt George Gjerde <kurt.gjerde@media.uib.no>. (0.02-0.03)

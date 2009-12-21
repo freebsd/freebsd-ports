@@ -10,7 +10,3 @@ in games for such things as decision trees. Binary trees are a well studied
 data structure and there is a wealth of information on the web about them.
 
 WWW: http://search.cpan.org/dist/Tree-Binary/
-Author: Stevan Little <stevan@iinteractive.com>
-
-- Aaron Dalton
-aaron@daltons.ca

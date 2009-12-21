@@ -9,5 +9,3 @@ You can instruct contool to filter and ignore certain common console
 messages, or act upon them.  The man page explains how to create a file of
 filters in ~/.contool; the included sample.filter is how my filters are set
 up.  You can modify this to suit yourself, and copy it to ~/.contool.
-
-(port maintained by nsayer@quack.kfu.com)

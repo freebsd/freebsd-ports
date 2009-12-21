@@ -4,4 +4,3 @@ periodically. It rereads automatically when the file has been
 modified. If you run in a tail-mode, it ticks only the last line.
 
 WWW: http://seiichisato.jp/dockapps/#wmmemmon
-Author: Seiichi SATO <me@seiichisato.jp>

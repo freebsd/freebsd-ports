@@ -11,5 +11,3 @@ This port of CVSup includes the GUI and requires X11.  For a version
 that does not include the GUI, use the "net/cvsup-without-gui" port.
 
 WWW: http://www.cvsup.org/
-
-jdp@polstra.com

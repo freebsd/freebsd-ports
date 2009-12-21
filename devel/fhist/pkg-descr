@@ -1,5 +1,4 @@
 This package contains three source control utilities from Peter Miller
-<millerp@canb.auug.org.au>:
 
     fhist: Keeps track of versions of a file.  
     fcomp: Compares two versions of a file.
@@ -15,5 +14,3 @@ Myers'', Software Practice and Experience, Volume 15, No. 11,
 November 1985.
 
 WWW:	http://fhist.sourceforge.net/fhist.html
-
-- Joseph Koshy <jkoshy@freebsd.org>

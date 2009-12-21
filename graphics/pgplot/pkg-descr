@@ -1,7 +1,6 @@
 PGPLOT is a Fortran subroutine package for drawing graphs on a variety
 of display devices. For more details, see the manual ``PGPLOT Graphics
 Subroutine Library'' available from T. J. Pearson
-(tjp@astro.caltech.edu).
 
 The CPGPLOT library adds an intermediate level of wrapper functions
 between C programs and the PGPLOT library. These functions hide the

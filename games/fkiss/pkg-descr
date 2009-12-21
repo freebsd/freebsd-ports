@@ -3,10 +3,7 @@ KISekae Set system (KISS) for X Window System.
 KISS is a software for playing Paper-doll on any computers.
 "Kisekae" means "changing clothes".
 
-WWW: http://www.oersted.co.jp/~yav/soft/index.html#fkiss
-
 For example, type
 % fkiss /usr/local/share/examples/fkiss/frkismi4.lzh
 
-- Seiichirou Hiraoka
-flathill@FreeBSD.ORG
+WWW: http://www.oersted.co.jp/~yav/soft/index.html#fkiss

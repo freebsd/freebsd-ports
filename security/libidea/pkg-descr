@@ -5,6 +5,3 @@ data in blocks.  IDEA has a block size of 64 bits, and a keylength of
 key is used both for encryption and for decryption.
 
 WWW: http://www.mediacrypt.com/engl/Community/index.asp
-
- -- Jim Geovedi
-    jim@corebsd.or.id

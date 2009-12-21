@@ -10,4 +10,3 @@ the access required was read-only. Last, I wanted a user friendly, higher
 level API to access TTF file.
 
 WWW: http://search.cpan.org/dist/Font-TTFMetrics
-Author: Malay <curiouser@ccmb.res.in>

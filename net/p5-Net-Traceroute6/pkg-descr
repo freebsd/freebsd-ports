@@ -4,6 +4,3 @@ is currently implemented as a parser around the system traceroute
 command.
 
 WWW: http://search.cpan.org/dist/Net-Traceroute6/
-
-- Pete
-petef@FreeBSD.org

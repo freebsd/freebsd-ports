@@ -12,6 +12,3 @@ window will be highlighted.
 Besides all the classical file manipulation functions (copy, move,
 ...), Pash also acts as a shell, allowing you to control Processes and
 IPC devices.
-
-- George Reid
-greid@ukug.uk.freebsd.org

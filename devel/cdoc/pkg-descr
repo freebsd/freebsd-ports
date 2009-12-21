@@ -1,7 +1,4 @@
 cdoc is perldoc-like documentation tool for C programs and libraries.  
 It takes inline embedded comments and turns them into manual pages. 
 
-Author:	Richard W.M. Jones <rich@annexia.org>
 WWW:	http://www.annexia.org/freeware/cdoc/
-
--- AlanE
