@@ -35,6 +35,32 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4d6076fe-ee7a-11de-9cd0-001a926c7637">
+    <topic>fuser -- missing user's privileges check</topic>
+    <affects>
+      <package>
+	<name>fuser</name>
+	<range><lt>1142334561_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Denis Barov reports:</p>
+	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/141852">
+	  <p>sysutils/fuser allows user to send any signal to any process when
+	    installed with suid bit.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/141852</url>
+    </references>
+    <dates>
+      <discovery>2009-09-15</discovery>
+      <entry>2009-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4465c897-ee5c-11de-b6ef-00215c6a37bb">
     <topic>monkey -- improper input validation vulnerability</topic>
     <affects>
