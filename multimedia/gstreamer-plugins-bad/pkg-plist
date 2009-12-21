@@ -157,3 +157,4 @@ share/locale/vi/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
+@dirrmtry include/gstreamer-%%VERSION%%/gst/signalprocessor
