@@ -5,44 +5,42 @@
 # $FreeBSD$
 #
 
-PORTNAME=		jadetex
-PORTVERSION=		3.13
-PORTREVISION=	3
-CATEGORIES=		print
-MASTER_SITES=		SF
+PORTNAME=	jadetex
+PORTVERSION=	3.13
+PORTREVISION=	4
+CATEGORIES=	print
+MASTER_SITES=	SF
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
-BUILD_DEPENDS=		etex:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=		etex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
 
-TETEXBASE?=		${LOCALBASE}
+MAKE_ENV=	TEXMFCNF=${FILESDIR}:${TEXMFDIR}/web2c
 
-MAKE_ENV=		TEXMFCNF=${FILESDIR}:${TETEXBASE}/share/texmf/web2c
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+PLIST_SUB=	TEXMFDIR=share/texmf
 
-MESSAGE=		${PKGDIR}/pkg-message
-PKGMESSAGE=		${WRKDIR}/pkg-message
+MAN1=		jadetex.1 pdfjadetex.1
 
-MAN1=			jadetex.1 pdfjadetex.1
-
-pre-patch:
-	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${MESSAGE} > ${PKGMESSAGE}
+TEXMFDIR?=	${LOCALBASE}/share/texmf
 
 do-install:
-	@cd ${WRKSRC}; TEXMFMAIN=${TETEXBASE}/share/texmf; \
-	 ${INSTALL_DATA} jadetex.fmt pdfjadetex.fmt $$TEXMFMAIN/web2c; \
-	 ${MKDIR} -m 555 $$TEXMFMAIN/tex/jadetex; \
-	 ${INSTALL_DATA} dsssl.def jadetex.ltx $$TEXMFMAIN/tex/jadetex; \
-	 ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-	@${LN} -sf ${PREFIX}/bin/etex ${PREFIX}/bin/jadetex
-	@${LN} -sf ${PREFIX}/bin/pdfetex ${PREFIX}/bin/pdfjadetex
+	${MKDIR} -m 555 ${TEXMFDIR}/tex/jadetex
+	cd ${WRKSRC} && \
+	  ${INSTALL_DATA} jadetex.fmt pdfjadetex.fmt ${TEXMFDIR}/web2c && \
+	  ${INSTALL_DATA} dsssl.def jadetex.ltx ${TEXMFDIR}/tex/jadetex && \
+	  ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	${LN} -sf ${LOCALBASE}/bin/etex ${PREFIX}/bin/jadetex
+	${LN} -sf ${LOCALBASE}/bin/pdfetex ${PREFIX}/bin/pdfjadetex
 
 post-install: rebuild-tex-database display-message
 
 rebuild-tex-database:
-	${LOCALBASE}/bin/mktexlsr
+	${LOCALBASE}/bin/mktexlsr ${TEXMFDIR}
 
 display-message:
 	@${CAT} ${PKGMESSAGE}
