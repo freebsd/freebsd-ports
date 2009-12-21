@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Setup
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,17 +22,29 @@ RUN_DEPENDS=	\
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit \
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML \
-	p5-Module-Install-AuthorTests>0:${PORTSDIR}/devel/p5-Module-Install-AuthorTests
+	p5-Module-Install-AuthorTests>0:${PORTSDIR}/devel/p5-Module-Install-AuthorTests \
+	p5-Text-Patch>0:${PORTSDIR}/textproc/p5-Text-Patch
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN1=		module-setup.1
-MAN3=		Module::Setup.3 \
+MAN3=		Module::MEMOja.3 \
+		Module::Setup.3 \
+		Module::Setup::Devel.3 \
 		Module::Setup::Flavor.3 \
+		Module::Setup::Flavor::CatalystStarter.3 \
 		Module::Setup::Flavor::CodeRepos.3 \
 		Module::Setup::Flavor::Default.3 \
+		Module::Setup::Flavor::GitHub.3 \
+		Module::Setup::Flavor::PBP.3 \
+		Module::Setup::Flavor::SelectVC.3 \
+		Module::Setup::Flavor::XS.3 \
+		Module::Setup::Helper.3 \
 		Module::Setup::Plugin.3 \
-		Module::Setup::Plugin::VC::Git.3
+		Module::Setup::Plugin::Helper.3 \
+		Module::Setup::Plugin::VC::Git.3 \
+		Module::Setup::Test::Flavor.3 \
+		Module::Setup::Test::Utils.3
 
 .include <bsd.port.mk>
