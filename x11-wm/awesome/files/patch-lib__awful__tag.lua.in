@@ -1,0 +1,10 @@
+--- lib/awful/tag.lua.in
++++ lib/awful/tag.lua.in
+@@ -374,7 +374,6 @@ capi.client.add_signal("manage", function(c, startup)
+             c.screen = capi.mouse.screen
+         end
+     end
+-    withcurrent(c, startup)
+     c:add_signal("property::screen", withcurrent)
+ end)
+ 
