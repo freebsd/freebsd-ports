@@ -10,7 +10,7 @@
 
 # Add the following line to /etc/rc.conf to enable minissdpd
 # minissdpd_enable="YES"
-# minissdpd_flags="<set as needed>"
+# minissdpd_flags="-i listen_addr"
 
 name=minissdpd
 rcvar=`set_rcvar`
@@ -21,7 +21,6 @@ minissdpd_enable=${minissdpd_enable:-"NO"}
 command="%%PREFIX%%/sbin/minissdpd"
 pidfile="/var/run/${name}.pid"
 sockfile="/var/run/${name}.sock"
-address="0.0.0.0"
-command_args="-s ${sockfile} -p ${pidfile} -i ${address}"
+command_args="-s ${sockfile} -p ${pidfile}"
 
 run_rc_command "$1"
