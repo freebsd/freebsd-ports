@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Thrift/HttpClient.pm
 %%SITE_PERL%%/Thrift/MemoryBuffer.pm
 %%SITE_PERL%%/Thrift/Protocol.pm
+%%SITE_PERL%%/Thrift/Server.pm
 %%SITE_PERL%%/Thrift/Socket.pm
 %%SITE_PERL%%/Thrift/Transport.pm
 @dirrm %%SITE_PERL%%/Thrift
