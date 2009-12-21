@@ -53,6 +53,8 @@ post-install:
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 .include <bsd.port.post.mk>

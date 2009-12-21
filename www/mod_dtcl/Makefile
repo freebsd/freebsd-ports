@@ -24,6 +24,10 @@ MAKE_ENV+=	TCL_VERSION=${TCL_VER}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=	does not build
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmod_dtcl.so.1* \
 		${PREFIX}/libexec/apache/mod_dtcl.so
