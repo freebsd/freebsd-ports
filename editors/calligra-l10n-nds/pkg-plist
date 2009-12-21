@@ -42,3 +42,6 @@ share/locale/nds/LC_MESSAGES/kspreadsolver.mo
 share/locale/nds/LC_MESSAGES/kthesaurus.mo
 share/locale/nds/LC_MESSAGES/kword.mo
 share/locale/nds/LC_MESSAGES/thesaurus_tool.mo
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/apps/koffice/autocorrect

@@ -419,5 +419,6 @@ share/locale/sv/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/sv/koffice
 @dirrm share/doc/HTML/sv/kivio
 @dirrm share/doc/HTML/sv/kformula
+@dirrm share/doc/HTML/sv/kexi
 @dirrm share/doc/HTML/sv/kchart
 @dirrm share/doc/HTML/sv/karbon
