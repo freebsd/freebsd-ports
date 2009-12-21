@@ -3091,7 +3091,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>openssl -- denial of service in DTLS implementation</topic>
     <affects>
       <package>
-	<name>opensll</name>
+	<name>openssl</name>
         <range><ge>0.9.8</ge><lt>0.9.8k_1</lt></range>
       </package>
     </affects>
@@ -3118,6 +3118,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-05-18</discovery>
       <entry>2009-05-30</entry>
+      <modified>2009-12-21</modified>
     </dates>
   </vuln>
 
