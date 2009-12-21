@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	java mail
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Reference Implementation of JSR 919
@@ -23,18 +23,18 @@ JAVA_VERSION=	1.4+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_CDROM=	See the license
-DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=javamail-1.4.1-oth-JPR@CDS-CDS_Developer
+DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=javamail-${PORTVERSION}-oth-JPR@CDS-CDS_Developer
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JavaMail-1.1-changes.txt JavaMail-1.2-changes.txt \
 		JavaMail-1.4.pdf JavaMail-1.3-changes.txt \
 		JavaMail-1.4-changes.txt Providers.pdf javadocs
-DOCFILES2=	CHANGES.txt LICENSE.txt NOTES.txt README.txt SSLNOTES.txt \
-		distributionREADME.txt
+DOCFILES2=	CHANGES.txt COMPAT.txt COPYRIGHT.txt LICENSE.txt NOTES.txt \
+		NTLMNOTES.txt README.txt SSLNOTES.txt distributionREADME.txt
 PORTDOCS=	${DOCFILES1} ${DOCFILES2}
 .endif
 
-JARFILES=	mail.jar imap.jar mailapi.jar pop3.jar smtp.jar
+JARFILES=	mail.jar dsn.jar imap.jar mailapi.jar pop3.jar smtp.jar
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 .include <bsd.port.pre.mk>
@@ -50,7 +50,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}..."
 	@${INSTALL_DATA} ${WRKSRC}/mail.jar ${JAVAJARDIR}/
-	@cd ${WRKSRC}/lib && ${INSTALL_DATA} imap.jar mailapi.jar pop3.jar smtp.jar ${JAVAJARDIR}/
+	@cd ${WRKSRC}/lib && ${INSTALL_DATA} dsn.jar imap.jar mailapi.jar pop3.jar smtp.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
