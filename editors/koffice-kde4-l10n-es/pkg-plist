@@ -203,3 +203,4 @@ share/locale/es/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/es/kformula
 @dirrm share/doc/HTML/es/kchart
 @dirrm share/doc/HTML/es/karbon
+@dirrmtry share/apps/koffice/autocorrect
