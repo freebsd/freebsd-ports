@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	firefox3-i18n
-PORTVERSION=	3.0.15
+PORTVERSION=	3.0.16
 CATEGORIES=	www
-MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
+MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}-real/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
-MAINTAINER=	yokota@res.otaru-uc.ac.jp
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Firefox3
 
 USE_XPI=	*firefox3
