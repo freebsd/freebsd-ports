@@ -38,6 +38,8 @@ MAN1=		tkrat.1
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Build fails on sparc64
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 post-install:
