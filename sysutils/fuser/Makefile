@@ -7,7 +7,7 @@
 
 PORTNAME=	fuser
 PORTVERSION=	1142334561
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
@@ -32,7 +32,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra::patch-fuser.c \
 EXTRA_PATCHES+=	${FILESDIR}/extra::patch-msdosfs.c
 .endif
 .if ${OSVERSION} >= 800101
-BROKEN=		does not compile on 8.X
+EXTRA_PATCHES+=	${FILESDIR}/extra::patch-nfs.c
 .endif
 
 do-install:
