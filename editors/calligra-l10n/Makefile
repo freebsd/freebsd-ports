@@ -1,48 +1,59 @@
-# New ports collection makefile for:	koffice-i18n
-# Date created:				27 April 2003
-# Whom:					Michael Nottebrock <michaelnottebrock@gmx.net>
+# New ports collection makefile for:    koffice-kde4-l10n
+# Date created:                         28 November 2009
+# Whom:                                 Dima Panov <fluffy@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	koffice-i18n
-PORTVERSION=	1.6.3
-PORTREVISION=	1
-CATEGORIES=	editors kde
+PORTNAME=	koffice-l10n
+PORTVERSION=	${KOFFICE2_VERSION}
+CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for KDE
+COMMENT=	Localized messages and documentation for KOffice2
 
-RUN_DEPENDS+=\
-	${LOCALBASE}/share/locale/km/LC_MESSAGES/example.mo:${PORTSDIR}/editors/koffice-i18n-km\
-	${LOCALBASE}/share/locale/ar/LC_MESSAGES/kword.mo:${PORTSDIR}/arabic/koffice-i18n\
-	${LOCALBASE}/share/locale/de/LC_MESSAGES/kword.mo:${PORTSDIR}/german/koffice-i18n\
-	${LOCALBASE}/share/locale/fr/LC_MESSAGES/kword.mo:${PORTSDIR}/french/koffice-i18n\
-	${LOCALBASE}/share/locale/hu/LC_MESSAGES/kword.mo:${PORTSDIR}/hungarian/koffice-i18n\
-	${LOCALBASE}/share/locale/he/LC_MESSAGES/kword.mo:${PORTSDIR}/hebrew/koffice-i18n\
-	${LOCALBASE}/share/locale/ja/LC_MESSAGES/kword.mo:${PORTSDIR}/japanese/koffice-i18n\
-	${LOCALBASE}/share/locale/pl/LC_MESSAGES/kword.mo:${PORTSDIR}/polish/koffice-i18n\
-	${LOCALBASE}/share/locale/pt/LC_MESSAGES/kword.mo:${PORTSDIR}/portuguese/koffice-i18n\
-	${LOCALBASE}/share/locale/pt_BR/LC_MESSAGES/kword.mo:${PORTSDIR}/portuguese/koffice-i18n-pt_BR\
-	${LOCALBASE}/share/locale/ru/LC_MESSAGES/kword.mo:${PORTSDIR}/russian/koffice-i18n\
-	${LOCALBASE}/share/locale/sr@Latn/LC_MESSAGES/kword.mo:${PORTSDIR}/editors/koffice-i18n-sr_Latn \
-	${LOCALBASE}/share/locale/uk/LC_MESSAGES/kword.mo:${PORTSDIR}/ukrainian/koffice-i18n\
-	${LOCALBASE}/share/locale/zh_CN/LC_MESSAGES/kword.mo:${PORTSDIR}/chinese/koffice-i18n-zh_CN \
-	${LOCALBASE}/share/locale/zh_TW/LC_MESSAGES/kword.mo:${PORTSDIR}/chinese/koffice-i18n-zh_TW
+NO_BUILD=	yes
+# NO_INSTALL=	yes
+USE_KDE4=	kdeprefix
 
-.for LANG in af bg br bs ca cs cy da el en_GB eo es et eu fa fi ga gl hi hsb is it \
-	lo lt lv mk ms mt nb nl nn ro se sk sl sr sv ta tg th tr uz ven xh zu
-RUN_DEPENDS+=\
-${LOCALBASE}/share/locale/${LANG}/LC_MESSAGES/kword.mo:${PORTSDIR}/editors/koffice-i18n-${LANG}
+KOFFICE2_LANG_ALL=	ca da de el en_GB es et fr fy gl hne it ja kk \
+			nb nds nl pl pt pt_BR sv tr uk wa zh_CN zh_TW
+
+de_PORT=	german/koffice-kde4-l10n
+fr_PORT=	french/koffice-kde4-l10n
+ja_PORT=	japanese/koffice-kde4-l10n
+pl_PORT=	polish/koffice-kde4-l10n
+pt_BR_PORT=	portuguese/koffice-kde4-l10n-pt_BR
+pt_PORT=	portuguese/koffice-kde4-l10n
+uk_PORT=	ukrainian/koffice-kde4-l10n
+zh_CN_PORT=	chinese/koffice-kde4-l10n-zh_CN
+zh_TW_PORT=	chinese/koffice-kde4-l10n-zh_TW
+
+.include <${.CURDIR}/../../misc/kde4-l10n/files/kde4-lang-names>
+
+.for lang in ${KOFFICE2_LANG_ALL}
+${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/LC_MESSAGES/koffice.mo
+${lang}_PORT?=		editors/koffice-kde4-l10n-${lang}
+${lang}_NAME?=		${lang}
 .endfor
 
-USE_KDELIBS_VER=3
-NO_BUILD=	yes
-KDE_I18N=	yes
+OPTIONS=	ALL "All localizations" on
+.for lang in ${KOFFICE2_LANG_ALL}
+OPTIONS+=	${lang} "${${lang}_NAME} localization" off
+.endfor
 
-do-install:	# none
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.for lang in ${KOFFICE2_LANG_ALL}
+.if defined(WITH_ALL) || defined(WITH_${lang})
+RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
+.endif
+.endfor
+
+do-install:
+	${DO_NADA}
+
+.include <bsd.port.post.mk>

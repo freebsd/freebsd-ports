@@ -1,56 +1,97 @@
-# New ports collection makefile for:	koffice
-# Date created:				Sun May 14 2000 16:33:15
-# Whom:					Will Andrews <will@FreeBSD.org>
+# New ports collection makefile for:	koffice-kde4
+# Date created:		2008-07-22
+# Whom:			Max Brazhnikov <makc@issp.ac.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	koffice
-PORTVERSION=	1.6.3
-PORTREVISION=	11
-PORTEPOCH=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION:S/a//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
+PKGNAMESUFFIX=	-kde4
 DIST_SUBDIR=	KDE/koffice
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Office Suite for KDE3
+COMMENT=	Office suite for KDE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
+BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
+		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
+# Kivio, KFormula and Kexi will not be released as part of koffice-2.0
+# ${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
-		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
-		aspell.16:${PORTSDIR}/textproc/aspell \
-		exif.12:${PORTSDIR}/graphics/libexif \
+		exiv2.7:${PORTSDIR}/graphics/exiv2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		paper.2:${PORTSDIR}/print/libpaper \
-		poppler-qt.2:${PORTSDIR}/graphics/poppler-qt \
-		wpd-0.8.8:${PORTSDIR}/textproc/libwpd \
-		wv2.4:${PORTSDIR}/textproc/wv2
-RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
+		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
+		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		png.5:${PORTSDIR}/graphics/png \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		wpg-0.1:${PORTSDIR}/graphics/libwpg \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		qca.2:${PORTSDIR}/devel/qca \
+		GLEW.1:${PORTSDIR}/graphics/glew \
+		gsl:${PORTSDIR}/math/gsl \
+		wv2.4:${PORTSDIR}/textproc/wv2 \
+		kipi.7:${PORTSDIR}/graphics/kdegraphics4
+# RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
-USE_AUTOTOOLS=	libtool:22
-USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_KDELIBS_VER=3
-USE_MYSQL=	yes
-USE_PYTHON=	yes
-USE_RUBY=	yes
-USE_PGSQL=	yes
-USE_GNOME=	libxml2 libxslt
+USE_CMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
+KDE4_BUILDENV=	yes
+USE_KDE4=	kdelibs pimlibs kdehier kdeprefix sharedmime automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib phonon qmake_build moc_build porting_build rcc_build uic_build \
+		uic3_build
+USE_GL=		glut
+USE_LDCONFIG=	yes
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+#USE_MYSQL=	yes
+#USE_PGSQL=	yes
 
-CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
-		--with-pgsqllibdir=${LOCALBASE}/lib \
-		--with-pqxx-includes=${LOCALBASE}/include \
-		--with-pqxx-libraries=${LOCALBASE}/lib
+CMAKE_VERBOSE=	yes
+CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include"
+#		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${KDE4_PREFIX}/lib -L${LOCALBASE}/lib" \
+#		-DCMAKE_MODULE_LINKER_FLAGS:STRING="-L${KDE4_PREFIX}/lib -L${LOCALBASE}/lib" \
+#		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${KDE4_PREFIX}/lib -L${LOCALBASE}/lib"
+
+OPTIONS=	GTL	"Color transformations in Krita (requires devel/llvm)" on
+
+.include <bsd.port.pre.mk>
+
+.ifndef(WITHOUT_GTL)
+LIB_DEPENDS+=	OpenCTL.0:${PORTSDIR}/graphics/opengtl \
+		QtShiva.0:${PORTSDIR}/graphics/qtgtl
+PLIST_SUB+=	GTL=""
+.else
+PLIST_SUB+=	GTL="@comment "
+.endif
+
+.if exists(${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so:${PORTSDIR}/graphics/pstoedit
+RUN_DEPENDS+=	${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so:${PORTSDIR}/graphics/pstoedit
+PLIST_SUB+=	EPS=""
+.else
+PLIST_SUB+=	EPS="@comment "
+.endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PYTHON_VER%%|${PYTHON_VER}|g' ${WRKSRC}/configure
+# prevent updating mime during build/install
+	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
+		${PATCH_WRKSRC}/krita/plugins/formats/ora/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
+		${PATCH_WRKSRC}/cmake/modules/FindWPD.cmake
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
+		${PATCH_WRKSRC}/cmake/modules/FindGLEW.cmake
+	${REINPLACE_CMD} -e 's|/opt/local|${LOCALBASE}|' \
+		${PATCH_WRKSRC}/cmake/modules/FindImageMagick.cmake
 
-.include <bsd.port.mk>
+post-install:
+	@-update-mime-database ${PREFIX}/share/mime
+
+.include <bsd.port.post.mk>

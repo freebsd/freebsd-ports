@@ -1,30 +1,18 @@
-# New ports collection makefile for:	koffice-i18n-el
-# Date created:                         27 April 2003
-# Whom:                                 Michael Nottebrock <michaelnottebrock@gmx.net>
+# New ports collection makefile for:    koffice-kde4-l10n-el
+# Date created:                         28 November 2009
+# Whom:                                 Dima Panov <fluffy@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	koffice-i18n
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTNAME=	koffice-l10n
+PORTVERSION=	${KOFFICE2_VERSION}
 CATEGORIES?=	editors kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
-PKGNAMEPREFIX=	el-
-DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	(Modern) greek messages and documentation for koffice
+COMMENT=	Modern Greek messages and documentation for KOffice2
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+KOFFICE2_L10N=	el
 
-USE_KDELIBS_VER=3
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-KDE_I18N=	yes
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
+.include "${.CURDIR}/../../editors/koffice-kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

@@ -67,6 +67,8 @@
     SUBDIR += kde4-l10n-zh_TW
     SUBDIR += koffice-i18n-zh_CN
     SUBDIR += koffice-i18n-zh_TW
+    SUBDIR += koffice-kde4-l10n-zh_CN
+    SUBDIR += koffice-kde4-l10n-zh_TW
     SUBDIR += kon2
     SUBDIR += libchewing
     SUBDIR += libtabe
