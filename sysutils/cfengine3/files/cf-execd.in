@@ -17,13 +17,13 @@
 
 . %%RC_SUBR%%
 
-name="cf-execd"
+name="cf_execd"
 rcvar=${name}_enable
 
 command="%%PREFIX%%/sbin/${name}"
 
 load_rc_config $name
 
-: ${cf-execd_enable="NO"}
+: ${cf_execd_enable="NO"}
 
 run_rc_command "$1"

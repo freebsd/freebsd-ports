@@ -17,13 +17,13 @@
 
 . %%RC_SUBR%%
 
-name="cf-serverd"
+name="cf_serverd"
 rcvar=${name}_enable
 
 command="%%PREFIX%%/sbin/${name}"
 
 load_rc_config $name
 
-: ${cf-serverd_enable="NO"}
+: ${cf_serverd_enable="NO"}
 
 run_rc_command "$1"
