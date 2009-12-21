@@ -8810,6 +8810,7 @@ minimalist                      ports/mail/minimalist
 minirsyslogd                    ports/sysutils/minirsyslogd
 minisapserver                   ports/net/minisapserver
 minised                         ports/textproc/minised
+minissdpd                       ports/net/minissdpd
 minitube                        ports/multimedia/minitube
 miniupnpc                       ports/net/miniupnpc
 miniupnpd                       ports/net/miniupnpd
@@ -13415,6 +13416,7 @@ p5-Text-PDF                     ports/print/p5-Text-PDF
 p5-Text-ParagraphDiff           ports/textproc/p5-Text-ParagraphDiff
 p5-Text-ParseWords              ports/textproc/p5-Text-ParseWords
 p5-Text-Password-Pronounceable  ports/security/p5-Text-Password-Pronounceable
+p5-Text-Patch                   ports/textproc/p5-Text-Patch
 p5-Text-Query                   ports/textproc/p5-Text-Query
 p5-Text-Query-SQL               ports/databases/p5-Text-Query-SQL
 p5-Text-Quote                   ports/textproc/p5-Text-Quote
@@ -17113,6 +17115,7 @@ p5-text-original                ports/textproc/p5-Text-Original
 p5-text-paragraphdiff           ports/textproc/p5-Text-ParagraphDiff
 p5-text-parsewords              ports/textproc/p5-Text-ParseWords
 p5-text-password-pronounceable  ports/security/p5-Text-Password-Pronounceable
+p5-text-patch                   ports/textproc/p5-Text-Patch
 p5-text-pdf                     ports/print/p5-Text-PDF
 p5-text-query                   ports/textproc/p5-Text-Query
 p5-text-query-sql               ports/databases/p5-Text-Query-SQL
