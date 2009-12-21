@@ -4,6 +4,3 @@ command to view a specific item.
 
 urlview uses a regular expression to extract URLs from the
 specified text files.
-
--- 
-Josh Gilliam                    <josh@quick.net>
