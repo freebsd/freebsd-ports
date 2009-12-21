@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-video-openchrome
-PORTVERSION=	0.2.903
-PORTREVISION=	2
+PORTVERSION=	0.2.904
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.openchrome.org/releases/
 
@@ -18,7 +17,6 @@ USE_GL=		gl
 
 XORG_CAT=	driver
 USE_XORG=	videoproto xf86driproto xextproto xvmc glproto
-MAN4=		openchrome.4x
 
 MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
 
