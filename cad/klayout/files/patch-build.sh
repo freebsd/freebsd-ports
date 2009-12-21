@@ -1,5 +1,14 @@
 --- build.sh.orig	2009-12-18 07:52:08.000000000 +0900
-+++ build.sh	2009-12-21 01:30:05.000000000 +0900
++++ build.sh	2009-12-22 02:13:06.000000000 +0900
+@@ -1,7 +1,7 @@
+ #!/bin/sh 
+ 
+ EXEC_NAME=klayout
+-OTHER_BIN="strm2gds strm2oas strmcmp strmclip"
++OTHER_BIN="strm2gds strm2oas strm2txt strmcmp strmclip strmxor"
+ 
+ CURR_DIR=`pwd`
+ USOURCE=$CURR_DIR/src
 @@ -158,11 +158,11 @@
    ;;
  esac
@@ -14,20 +23,7 @@
    echo "*** ERROR: unable to locate Qt UIC in $QTBIN"
    exit 1
  fi
-@@ -268,21 +268,21 @@
- 
- # -- Installing binaries  --
- 
--echo "Installing binaries .."
--cd $BUILD
--$MAKE_PRG install
--cd $CURR_DIR
-+#echo "Installing binaries .."
-+#cd $BUILD
-+#$MAKE_PRG install
-+#cd $CURR_DIR
- echo "Build done."
- 
+@@ -277,12 +277,12 @@
  if [ $WIN_CYGWIN = 0 ]; then
    echo ""
    echo "Final binary is ready in $BIN/$EXEC_NAME."
