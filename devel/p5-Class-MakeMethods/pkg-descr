@@ -5,5 +5,3 @@ specify a name for each method desired. The methods are dynamically
 generated and installed in the calling package.
 
 WWW: http://search.cpan.org/dist/Class-MakeMethods/
-
-Seamus Venasse <svenasse@polaris.ca>

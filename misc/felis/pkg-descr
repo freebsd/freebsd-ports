@@ -2,5 +2,3 @@ Felis sends one or more files to stdin. Unlike cat, felis will place all
 of its output to a single line.
 
 WWW: http://www.whizkidtech.redprince.net/fports/
-
-adam@redprince.net

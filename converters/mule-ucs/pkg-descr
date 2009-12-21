@@ -19,6 +19,3 @@ Predefined conversions for Mule-UCS included in this package are:
   (1) ... Unicode(UTF-7/8/16) support.
   (2) ... Big5 <-> CNS conversion support.
   (3) ... JIS X 0213 support.
-
----
-Ported by okazaki@FreeBSD.org

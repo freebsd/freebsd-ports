@@ -11,6 +11,3 @@ This is an IRC proxy server.  Features:
     + Can cooperate with some identd's for non-root operation, or
       (if root) can change UID/GID according to client's IP addr.
     + Extensive documentation
-
-
-Ported by Eugeny Kuzakov (CoreDumped@CoreDumped.null.ru)

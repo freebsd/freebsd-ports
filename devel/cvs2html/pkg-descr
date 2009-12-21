@@ -2,5 +2,3 @@ cvs2html is a perl script that turns ``cvs log''
 output into HTML for easy log perusal.
 
 WWW: http://cvs.sslug.dk/cvs2html/
-
-- Will <andrews@technologist.com>

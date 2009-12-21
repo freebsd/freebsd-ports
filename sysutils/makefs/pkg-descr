@@ -3,6 +3,3 @@ makefs will generate a file system image, without requiring any
 special devices, kernel support, or privileges.
 
 WWW: http://www.daemonology.net/makefs/
-
-- Colin Percival
-cperciva@daemonology.net

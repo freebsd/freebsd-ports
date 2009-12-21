@@ -5,6 +5,3 @@ o It will remove capitalization from filenames
 o It can create ID3 tags using the filename
 o It can reorganize your mp3's into an organizational hierarchy 
 o id3butler can also lookup tags for mp3 via MusicBrainz and FreeDB databases
-	
-- Christopher Preston
-rbg@gayteenresource.org

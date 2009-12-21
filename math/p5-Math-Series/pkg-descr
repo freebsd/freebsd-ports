@@ -25,4 +25,3 @@ Every element in the series may only access its predecessor, not the
 elements before that.
 
 WWW: http://search.cpan.org/dist/Math-Series
-Author: Steffen Mueller <series-module@steffen-mueller.net>

@@ -5,9 +5,3 @@ from a FIFO; this allows you to redirect multiple commands to the FIFO
 and monitor their output.
 
 WWW: http://sourceforge.net/projects/xrootconsole/
-
-Enjoy!
-
-Cheers,
-Joe Gorse
-incabulos@mac.com

@@ -1,11 +1,8 @@
 * ja-perl-5.005.03
 	This port collection was used:
 		port collection lang/perl5
-				by markm@FreeBSD.ORG,
 	    and jperl5.005_03-990822
-				by yasushi@cs.washington.edu,
 		port collection japanese/perl5
-				by shige@FreeBSD.ORG
 
 ----------- From lang/perl5/pkg/DESC
 From the distribution README:
@@ -14,11 +11,4 @@ Perl is a language that combines some of the features of C, sed, awk
 and shell.  See the manual page for more hype.  There are also two Nutshell
 Handbooks published by O'Reilly & Assoc.  See pod/perlbook.pod
 for more information.
-
---
-
-This port will not work on FreeBSD 2.0, nor will it work on earlier snapshots.
-This is due to a bug in vprintf in the C library.
-
-- MarkM
 ----------

@@ -7,5 +7,3 @@ any schema in a way that is comfortable to the perl coder who is
 not familiar with the underlying schema, or even SQL.
 
 WWW: http://search.cpan.org/dist/DBIx-Table/
-
-Seamus Venasse <svenasse@polaris.ca>

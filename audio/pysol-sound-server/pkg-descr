@@ -1,7 +1,4 @@
 A Python extension module that plays WAV samples together with MP3
 or MOD background music.
 
-- Maxim Sobolev
-sobomax@FreeBSD.org
-
 WWW: http://www.oberhumer.com/opensource/pysol/

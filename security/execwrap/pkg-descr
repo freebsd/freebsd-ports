@@ -3,4 +3,3 @@ it can be used in any environment as long as arguments can be passed
 from the server to its children via the environment.
 
 WWW: http://cyanite.org/execwrap/
-Author: Sune Foldager <cryo@cyanite.org>

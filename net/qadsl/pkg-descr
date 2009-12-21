@@ -4,6 +4,3 @@ It features a keep-alive daemon with login/logout functions. The daemon
 periodically connects to the ISP to ensure you are not logged out. 
 
 WWW: http://savannah.gnu.org/projects/alive 
-
--- Arne Lundberg
-arlu@telia.com

@@ -10,7 +10,6 @@ Currently, pyexif provides the following functionality:
 - Provide a simple cmdline interfaces to format the data in human-readable
   format.
 
-WWW: http://pyexif.sourceforge.net/
 EXIF specification:  http://www.pima.net/standards/it10/PIMA15740/exif.htm
 
--- Johann Visagie <wjv@FreeBSD.org>
+WWW: http://pyexif.sourceforge.net/

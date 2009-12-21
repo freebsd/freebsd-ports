@@ -4,5 +4,3 @@ exceptions in order to reduce the amount of error handling code without
 making your program less robust.
 
 WWW: http://www.ossp.org/pkg/lib/ex/
-
--- AlanE@FreeBSD.org

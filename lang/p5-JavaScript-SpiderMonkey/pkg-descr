@@ -3,4 +3,3 @@ JavaScript Engine. It is different from Claes Jacobsson's
 "JavaScript.pm" in that it offers more friendly, Perl-like API.
 
 WWW: http://search.cpan.org/dist/JavaScript-SpiderMonkey/
-Author: Mike Schilli <m@perlmeister.com>

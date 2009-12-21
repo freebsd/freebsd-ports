@@ -14,8 +14,5 @@ on a Solaris box doesn't mean you have to graph it on one too).
 Written in Perl, uses RRDtool for data storage and graph generation.
 
 Lots more information and examples at
+
 WWW:	http://www.orcaware.com/orca/
-
-
-- John
-jsellens@generalconcepts.com

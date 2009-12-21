@@ -12,4 +12,3 @@ iterators of any other source (for example, files), and usable with the
 iterator manipulation functions in the Iterator::Util module.
 
 WWW: http://search.cpan.org/dist/Iterator-DBI/
-Author: Eric J. Roode <roode@cpan.org>

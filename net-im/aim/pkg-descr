@@ -10,5 +10,3 @@ This port consists of AOL's Linux AIM client which runs on FreeBSD using the
 linux emulation system.
 
 WWW: http://www.aim.aol.com/
-
-Roger Hardiman <roger@freebsd.org>

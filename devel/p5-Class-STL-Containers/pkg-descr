@@ -5,4 +5,3 @@ provide the glue to transparently generate common functions, and will
 enable you to put your Perl application together very quickly.
 
 WWW: http://search.cpan.org/dist/Class-STL-Containers
-Author: m gaffiero <gaffie@users.sourceforge.net>

@@ -7,7 +7,4 @@ To use this, put the following into your ~/.emacs:
         (autoload 'caml-mode "caml" "Major mode for editing Caml code." t)
         (autoload 'run-caml "inf-caml" "Run an inferior Caml process." t)
 
-- Koshy
-  jkoshy@freebsd.org
-
 WWW: http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/ocaml.html

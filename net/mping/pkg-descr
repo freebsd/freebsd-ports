@@ -7,6 +7,3 @@ Mping is based on original ping(8) with following new features:
 - Prints 10/50/90-percentile as well as min/avg/max.
 
 WWW: http://mping.uninett.no/
-
--- Babak Farrokhi
-babak@farrokhi.net

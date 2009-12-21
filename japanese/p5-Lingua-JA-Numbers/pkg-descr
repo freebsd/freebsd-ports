@@ -13,4 +13,3 @@ far more comprehensive. As of 0.03, it even does its to_string() upon
 request.
 
 WWW: http://search.cpan.org/dist/Lingua-JA-Numbers
-Author: Dan Kogai <dankogai@intra>

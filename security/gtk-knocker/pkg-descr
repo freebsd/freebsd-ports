@@ -3,6 +3,3 @@ scanner which is able to analyze hosts and all of the different
 services started on them. (GTK+ version)
 
 WWW: http://knocker.sourceforge.net/
-Author: Gabriele Giorgetti <g.gabriele@europe.com>
-
-- Patrick Li <pat@FreeBSD.org>

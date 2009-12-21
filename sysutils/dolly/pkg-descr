@@ -17,5 +17,4 @@ muLinux) to do the cloning. On newer machines we use PXE to boot a
 small system in a RAM disk. From that system we then clone the hard
 disks in the machines.
 
-Author: Felix Rauch <rauch@inf.ethz.ch>
 WWW: http://www.cs.inf.ethz.ch/CoPs/patagonia/dolly.html

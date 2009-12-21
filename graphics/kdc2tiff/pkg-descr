@@ -9,6 +9,3 @@ Bayer pattern of the CCD (pixels have one colour only,
 not three) and the exact (non-square) dimensions of the pixels. 
 
 WWW: http://kdc2tiff.sourceforge.net/
-Author: Chris Studholme <Chris.Studholme@canada.com>
-
-- Will <andrews@technologist.com>

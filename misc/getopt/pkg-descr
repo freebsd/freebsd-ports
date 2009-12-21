@@ -10,5 +10,4 @@ Rewrite of getopt(1) with the following features:
 * It can report parse errors as coming from the shell script.
 * It compiles cleanly with both libc-5 and glibc-2.
 
-Author:	Frodo Looijaard <frodo@frodo.looijaard.name>
 WWW:	http://software.frodo.looijaard.name/getopt/

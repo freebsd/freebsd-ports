@@ -4,4 +4,3 @@ SDL_image library it will support the following formats: png, lbm, jpg,
 tif, gif, pcx, tga, bmp, pnm, xpm, xcf.
 
 WWW: http://corp.efnet.net/~lamer/pegasosppc/shim.html
-Author: Jeroen van Aart <aq@ownaq.com>

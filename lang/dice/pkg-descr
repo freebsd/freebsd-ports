@@ -4,6 +4,3 @@ relocatable and fixed address (ROM) based code. Quite suitable for embedded
 68K development on chips such as the 68000 / 68302 / 68306. 
 
 WWW: http://www.obviously.com/dice/
-Author: Matt Dillon <dillon@apollo.backplane.com>
-
--Adam Weinberger <adamw@FreeBSD.org>

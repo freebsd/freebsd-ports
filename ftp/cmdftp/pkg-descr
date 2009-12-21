@@ -9,4 +9,3 @@ names, autologin using classic ~/.netrc approach, large file support,
 and more.
     
 WWW: http://www.nongnu.org/cmdftp/
-Author:	Claudio Fontana <claudio@gnu.org>

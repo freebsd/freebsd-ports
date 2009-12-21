@@ -3,5 +3,3 @@ files.  This makes it easy to generate files in which cdbmultiget can
 return more than one key.
 
 WWW: http://search.cpan.org/dist/CDB_File-Generator/
-
-Seamus Venasse <svenasse@polaris.ca>

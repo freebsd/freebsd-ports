@@ -3,7 +3,4 @@ of the CVSROOT/passwd, CVSROOT/readers, CVSROOT/writers files when
 pserver authentication is being used for the repository. cvsdadm
 is a fork of cvspadm.
 
-- Serge Gagnon
-serge.gagnon@b2b2c.ca
-
 WWW: http://quenix2.dyndns.org:8080/Unix-soft/cvsdadm.html

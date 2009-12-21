@@ -10,5 +10,3 @@ Features:
 	S_IFDIR, S_IFCHR, S_IFIFO); 
 
 WWW: http://www.nongnu.org/cfvers/
-
-Janos Mohacsi <janos.mohacsi@bsd.hu>

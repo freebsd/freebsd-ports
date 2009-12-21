@@ -28,6 +28,3 @@ script as:
   # /usr/local/share/doc/prom-mew/byte-compile xemacs-mule i18n-man-ja i18n-man-ja.el i18n-man.el
 
 For usage of byte_compile scripts, run byte_compile with -h option.
-
--KIRIYAMA Kazuhiko
-<kiri@kiri.toba-cmt.ac.jp>

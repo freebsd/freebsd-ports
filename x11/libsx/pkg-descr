@@ -5,6 +5,3 @@ portion of the uglier details that arise while programming in X and
 it fills in some gaps that exist with the Athena Widget set (such as 
 a widget for drawing graphics); libsx tries to simplify the common 
 case down to a single function call with only a few arguments.
-
- 			by	Dominic Giamapolo
-			     	dbg@sgi.com

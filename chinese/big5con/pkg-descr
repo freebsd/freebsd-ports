@@ -4,11 +4,6 @@ shared memory.
 
 This version supports ja_JP.ujis ja_JP.sjis zh_TW.big5 zh_CN.ugb ko_KR.euc.
 
-Orignal kon written by manabe@papilio.tutics.tut.ac.jp.
-This port is done by ogura@st.rim.or.jp.
-
-Big5 console, ported by Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
-
 /usr/local/bin/et to start big5con, *under ttyvX ONLY*.
 
 Modify /usr/local/bin/et and /usr/local/etc/big5con.cfg to your needs.

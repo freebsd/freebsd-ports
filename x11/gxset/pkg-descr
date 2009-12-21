@@ -7,8 +7,4 @@ It also has a font path editor. GTK xset can save a xset command,
 which restores all settings, to the file file ~/.xset.sh. This file
 can be read from .xinitrc or other startup file.
 
-Author: rene@seindal.dk
 WWW: http://www.seindal.dk/rene/software/gxset/
-
-Bruce
-bms@spc.org

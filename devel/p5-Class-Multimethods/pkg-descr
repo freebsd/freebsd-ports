@@ -23,4 +23,3 @@ performs polymorphic dispatch on every argument of a method, not just the
 first.
 
 WWW: http://search.cpan.org/dist/Class-Multimethods
-Author: Damian Conway <damian@conway.org>

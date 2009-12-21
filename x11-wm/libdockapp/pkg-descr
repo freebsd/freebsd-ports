@@ -3,5 +3,3 @@ dockapps. It provides functions and structures to define and display
 command-line options, create a dockable icon, handle events, etc.
 
 WWW: http://solfertje.student.utwente.nl/~dalroi/libdockapp/
-
-- Jim <jim@FreeBSD.org>

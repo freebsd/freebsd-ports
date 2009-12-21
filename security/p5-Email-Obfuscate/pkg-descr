@@ -7,7 +7,3 @@ randomly selected and used as a basis for obfuscation when
 obfuscate_email_address() is called.
 
 WWW: http://search.cpan.org/dist/Email-Obfuscate/
-Author: Adam J. Foxson <afoxson@pobox.com>
-
-- Aaron Dalton
-aaron@daltons.ca

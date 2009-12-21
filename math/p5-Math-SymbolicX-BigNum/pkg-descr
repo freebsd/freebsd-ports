@@ -5,4 +5,3 @@ arbitrary precision constants. (Math::Symbolic::Variable objects have been
 able to contain arbitrary precision objects since the very beginning.)
 
 WWW: http://search.cpan.org/dist/Math-SymbolicX-BigNum
-Author: Steffen Mueller <symbolic-module@steffen-mueller.net>

@@ -5,6 +5,3 @@ entirely new log types. log_analysis natively understands about
 100 different kinds of syslog messages, as well as wtmp messages.
 
 WWW: http://lug.umbc.edu/~mabzug1/log_analysis.html
-
-- Pete
-petef@databits.net

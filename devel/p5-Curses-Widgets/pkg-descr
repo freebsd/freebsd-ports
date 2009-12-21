@@ -4,6 +4,3 @@ Should work reliably with both Curses and nCurses
 libraries.
 
 WWW: http://search.cpan.org/dist/curses_widgets/
-
-- Pete
-petef@databits.net

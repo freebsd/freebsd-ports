@@ -8,8 +8,3 @@ Usage of Acme::ButFirst is lexically scoped. ButFirstification can be
 explicitly disabled by using no Acme::ButFirst.
 
 WWW: http://search.cpan.org/dist/Acme-ButFirst/
-Author: Paul Fenwick <pjf@cpan.org>
-
--- 
-Aaron Dalton
-aaron@FreeBSD.org

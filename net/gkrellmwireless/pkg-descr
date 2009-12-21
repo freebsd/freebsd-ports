@@ -2,5 +2,3 @@ A plugin for gkrellm that monitors the signal quality of a wireless card
 (wi0 only).
 
 WWW:	http://gkrellm.luon.net/gkrellmwireless.phtml
-
-- jim <jim@FreeBSD.org>

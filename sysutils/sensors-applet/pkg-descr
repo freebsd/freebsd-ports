@@ -5,6 +5,3 @@ On FreeBSD, sensor values are obtained from the sysutils/mbmon (for
 motherboards) and sysutils/smartmontools (for hard disks) ports.
 
 WWW: http://sensors-applet.sourceforge.net/
-
-- Jean-Yves Lefort
-jylefort@FreeBSD.org

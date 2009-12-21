@@ -7,6 +7,3 @@ To use this, your script should load this library as
 + require "jcode.pl";
 or
 + require('jcode.pl');
-
-- SADA Kenji
-sada@FreeBSD.org

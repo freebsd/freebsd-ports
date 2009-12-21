@@ -3,6 +3,3 @@ It supports both BSD-type and SysV-type mailbox formats. Cucipop
 assumes that the mailbox it serves is not simultaneously accessed
 by a mailreader. Concurrency and locking issues are handled
 graciously if they restrict themselves to the mail delivery agent.
-
-- Igor
-igor@zynaps.ru

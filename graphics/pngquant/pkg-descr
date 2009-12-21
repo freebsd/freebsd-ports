@@ -20,5 +20,5 @@ as grayscale and truecolor images.  Some images, such as Henri Sivonen's alpha
 button (http://www.pp.htv.fi/hsivone1/css-test/bitmapstyle.html), can be made
 smaller as full 32-bit RGBA images (4076 bytes in this case) than as either
 FS-dithered palette (4550 bytes) or ordered-dither palette (4482 bytes) images.
+
 WWW: http://www.libpng.org/pub/png/apps/pngquant.html
-Greg Roelofs <newt@pobox.com>

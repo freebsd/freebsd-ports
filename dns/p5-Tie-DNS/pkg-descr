@@ -4,5 +4,3 @@ that are easy in Net::DNS trivial, and operations that are
 hard in Net::DNS easy.
 
 WWW: http://search.cpan.org/dist/Tie-DNS/
-
-Seamus Venasse <svenasse@polaris.ca>

@@ -3,5 +3,4 @@ two or "n" populations assuming a migration matrix model with asymmetric
 migration rates and different subpopulation sizes.  The n-population migrate
 can use sequence data, microsatellite data or electrophoretic data.
 
-Author: Peter Beerli <beerli@scs.fsu.edu>
 WWW:    http://popgen.csit.fsu.edu/Migrate-n.html

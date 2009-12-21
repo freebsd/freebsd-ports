@@ -7,5 +7,3 @@ vs. /usr/local/stow/perl, for example) while making them appear to be
 installed in the same place (/usr/local).
 
 WWW: http://xstow.sourceforge.net/
-
--- AlanE <alane@freebsd.org> 20021231

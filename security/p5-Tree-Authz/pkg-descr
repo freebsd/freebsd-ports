@@ -14,4 +14,3 @@ All roles are automatically capable of authorizing actions named for the
 singular and plural of the role name.
 
 WWW: http://search.cpan.org/dist/Tree-Authz
-Author: David Baird <cpan@riverside-cms.co.uk>

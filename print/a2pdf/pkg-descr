@@ -2,4 +2,3 @@ a2pdf converts ASCII text to PDF format, with optional line/page
 numbering and Perl syntax highlighting.
 
 WWW: http://perl.jonallen.info/projects/a2pdf
-Author: Jon Allen <jj@jonallen.info>

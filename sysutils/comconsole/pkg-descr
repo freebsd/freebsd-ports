@@ -3,6 +3,3 @@ device.
 Note that this is a special package and you should pkg_add this on a newly
 installed system. This is intended to install from installer floppy disk
 on a system without its own display nor keyboard. 
-
-- SADA Kenji
-sada@FreeBSD.ORG

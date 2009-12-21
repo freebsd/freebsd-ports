@@ -4,5 +4,4 @@ rewriting. In an SPF-compliant world, forwarded mail must be
 rewritten to carry a local return path.
 Read all about SRS at http://spf.pobox.com/srs.html
 
-Author: James Couzens <jcouzens@6o4.ca>
 WWW: http://www.libsrs.org/

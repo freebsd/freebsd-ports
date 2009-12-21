@@ -10,5 +10,3 @@ make CC="replay cc"
 
 Then if cc bombs you don't have to restart make, you can just fix your
 source file and resume your build.
-
--Alfred Perlstein <alfred@freebsd.org>

@@ -17,4 +17,3 @@ Calling unregister on your subclass restores whichever simplification
 routines where in place before.
 
 WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Simplification
-Author: Steffen Mueller <symbolic-module@steffen-mueller.net>

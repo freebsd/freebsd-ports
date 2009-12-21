@@ -3,4 +3,3 @@ picks fluff off html pages, much in the same way traditional lint picks fluff
 off C programs.
 
 WWW: http://search.cpan.org/dist/weblint
-Author: brian d foy <bdfoy@cpan.org>

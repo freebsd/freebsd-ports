@@ -21,6 +21,4 @@ If you want to enable wcol at boot time, put in your /etc/rc.conf.local:
 
 	wcol_enable="YES"
 
----
-Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 WWW: http://shika.aist-nara.ac.jp/products/wcol/wcol.html

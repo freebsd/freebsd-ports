@@ -13,4 +13,3 @@ Math::Symbolic::Custom::Pattern::Export module. Refer to that module for
 details on is_of_form().)
 
 WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Pattern
-Author: Steffen Mueller <symbolic-module@steffen-mueller.net>

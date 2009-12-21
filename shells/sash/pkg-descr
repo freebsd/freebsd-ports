@@ -10,9 +10,5 @@ Shell includes: echo pwd cd mkdir mknod rmdir sync rm chmod
 Commands include: dd ed grep gzip ls tar file find mount chattr 
 
 SASH is a port from Linux version (David Bell) by Andrzej Bialecki
-<abial@FreeBSD.org>.
 
 WWW: http://www.pcug.org.au/~dbell/
-
-Patrick Gardella
-<patrick@freebsd.org>

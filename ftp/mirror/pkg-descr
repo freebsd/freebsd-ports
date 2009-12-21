@@ -5,5 +5,3 @@ file timestamps and sizes before transferring.  Amongst other things
 Mirror can optionally compress, gzip, and split files.
 
 WWW: http://ry.ca/mirror/mirror/
-
-- Ryan Thompson <ryan@sasknow.com>

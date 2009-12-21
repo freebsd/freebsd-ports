@@ -6,7 +6,4 @@ and spam.  It also includes extensive documentation.
 Hagelslag currently only has a command-line interface, but it provides a
 (documented) API which may be used to write a GUI.
 
-Author: Fokko Beekhof <lucifer@tiefighter.et.tudelft.nl>
 WWW:    http://tiefighter.et.tudelft.nl/hagelslag/
-
--- Johann Visagie <johann@egenetics.com>

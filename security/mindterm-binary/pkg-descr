@@ -11,5 +11,3 @@ the JDK first (${PORTSDIR}/java/jdk/).
 A commercial version for SSH-2 is available here:
 WWW: http://www.mindbright.se/mindterm/
 (This version is no longer supported)
-
-- Alexander Langer <alex@FreeBSD.org>

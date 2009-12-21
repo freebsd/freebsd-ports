@@ -12,7 +12,3 @@ more carefully in Games::AlphaBeta::Position which is a base class you can
 use to implement your position object.
 
 WWW: http://search.cpan.org/dist/Games-AlphaBeta/
-Author: Stig Brautaset <stig@brautaset.org>
-
-- Aaron Dalton
-aaron@daltons.ca

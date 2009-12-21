@@ -17,6 +17,3 @@ Fujifilm digital cameras, like the DS-7 and MX-700, using the serial link.
 After installation with this port, you should be symlink /dev/fujifilm to
 your serial line device through which comunicate with your camera.
 For more detail infomation, see /usr/local/share/doc/fujiplay/README.
-
--KIRIYAMA Kazuhiko
-<kiri@FreeBSD.org>

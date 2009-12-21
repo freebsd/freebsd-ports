@@ -6,8 +6,3 @@ testing modules. The reason why they're here is that this way users become
 aware of how to test their non-deterministic functions.
 
 WWW: http://search.cpan.org/dist/Test-RandomResults/
-Author: Jose Castro <cog@cpan.org>
-
--- 
-Aaron Dalton
-aaron@FreeBSD.org

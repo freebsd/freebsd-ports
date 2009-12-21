@@ -7,4 +7,3 @@ The beauty of this method is that it immediately and transparently
 enables the entire python library to support timeouts on TCP sockets.
 
 WWW: http://www.timo-tasi.org/python/timeoutsocket.py
-Author: Timothy O'Malley <timo@alum.mit.edu>

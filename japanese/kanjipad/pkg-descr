@@ -5,5 +5,4 @@ The user draws a character into the box, then requests translation.
 The best candidates are displayed along the right hand side of
 the window and can be selected for pasting into other programs.
 
-Author: Owen Taylor <otaylor@fishsoup.net>
 WWW: http://fishsoup.net/software/kanjipad/

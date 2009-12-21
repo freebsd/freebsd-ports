@@ -4,5 +4,4 @@ It strives to be stable, fast, flexible, and RFC compliant.
 For those familiar with qmail-pop3d, this IMAP server will be the natural
 choice. It is invoked similarily and uses checkpassword to authenticate. 
 
-Author:	Andreas Aardal Hanssen <bincimap@andreas.hanssen.name>
 WWW:	http://www.bincimap.org/

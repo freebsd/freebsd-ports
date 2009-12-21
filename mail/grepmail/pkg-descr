@@ -3,6 +3,3 @@ regular expression, and returns those emails that match it. Piped input is
 allowed, and date restrictions are supported.
 
 WWW: http://grepmail.sourceforge.net/
-
-- Chris D. Faulhaber
- <jedgar@FreeBSD.org>

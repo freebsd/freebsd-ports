@@ -17,5 +17,3 @@ examined simultaneously. See section 6.1 of the Handbook for details.
 On FreeBSD 4.0 or later versions, use the following line instead:
 
 pseudo-device  bpf     4  # Berkeley packet filter
-
-- oddbjorn <oddbjorn@tricknology.org>

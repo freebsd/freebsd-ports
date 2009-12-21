@@ -9,6 +9,3 @@ programming language?
 ScriptBasic is a BASIC implementation, which aims not less than
 becoming the most widely used scripting tool on UNIX systems. It is
 portable, it is BASIC, it is a scripting tool and it is GNU LGPL.
-
-- George Reid
-greid@ukug.uk.freebsd.org

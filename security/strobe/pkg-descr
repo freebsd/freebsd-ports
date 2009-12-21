@@ -8,5 +8,3 @@ nally. In non-linear multi-host mode it attempts to appor-
 tion bandwidth and sockets amoung  the  hosts  very  effi-
 ciently.   This  can  reap  appreciable gains in speed for
 multiple distinct hosts/routes.
-
-Author:	Julian Assange <proff@suburbia.net>

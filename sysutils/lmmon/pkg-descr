@@ -15,6 +15,3 @@ In addition, lmmon supports simple text output that can be easily
 used by external programs (e.g. UCD SNMP Daemon) for monitoring.
 
 WWW: http://www.fxp.org/~jedgar/lmmon/
-
-- Chris D. Faulhaber
- <jedgar@FreeBSD.org>

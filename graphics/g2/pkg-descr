@@ -3,5 +3,3 @@ comprehensive set of functions for simultaneous generation of graphical output
 on different types of devices. Presently, the following devices are supported:
 PostScript, GIF and X11 (xfig is in development). g2 is written in C (ANSI) 
 and additionally has a Fortran interface. 
-
-Bill Fumerola <billf@chc-chimes.com>

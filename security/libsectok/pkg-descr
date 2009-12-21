@@ -3,6 +3,3 @@ for OpenBSD. This is a quick port of the library itself; it contains an
 API for working with ISO 7816 Smart Card devices.
 
 WWW: http://www.citi.umich.edu/projects/smartcard/sectok.html
-
-Bruce
-bms@FreeBSD.org

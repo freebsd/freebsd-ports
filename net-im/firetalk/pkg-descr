@@ -6,6 +6,3 @@ near future. The package also includes a simple AIM client that has
 many of the same command names as functions in the library. This
 allows developers to examine the behavior of the library closely while
 writing their own code.
-
-- George Reid
-greid@ukug.uk.freebsd.org

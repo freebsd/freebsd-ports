@@ -15,6 +15,3 @@ The example .xcoralrc is in ${PREFIX}/share/xcoral/xcoralrc.fl; cp it
 to ~/.xcoralrc, and fire up xcoral.
 
 WWW: http://xcoral.free.fr/
-
-eric.
-erich@rrnet.com

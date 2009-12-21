@@ -9,4 +9,3 @@ Log::Message also provides a powerful way of searching through items by
 regexes on messages, tags and level.
 
 WWW: http://search.cpan.org/dist/Log-Message
-Author: Jos Boumans <kane@cpan.org>

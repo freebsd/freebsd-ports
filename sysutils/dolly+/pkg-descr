@@ -20,5 +20,4 @@ copying, for example, finishes in almost same minutes for one-to-one
 copy. In addition, time out sensing 'bypass' mechanism makes the
 copy process pretty robust in the case of a client machine trouble.
 
-Author: Atsushi Manabe <manabe@corvus.kek.jp>
 WWW: http://corvus.kek.jp/~manabe/pcf/dolly/

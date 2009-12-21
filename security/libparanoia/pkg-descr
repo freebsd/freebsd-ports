@@ -19,5 +19,3 @@ shell script) - in this case you'll get any application,
 which uses shared libc, automatically protected.
 
 WWW: http://www.lexa.ru/snar/libparanoia/
--- 
-Alexandre Snarskii <snar@paranoia.ru>. 	Baltika-3 is better :)

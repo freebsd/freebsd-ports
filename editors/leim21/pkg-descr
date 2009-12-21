@@ -20,5 +20,3 @@ The "language name" you can choose is one of these:
   - Thai		- Tibetan		- Vietnamese
 
 In the default keybindings, (toggle-input-method) is bound to `C-\'.
-
-Ported by shige@FreeBSD.ORG

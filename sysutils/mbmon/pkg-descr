@@ -11,5 +11,3 @@ the superuser privilege, so it may cause a system crash.  Please test
 "mbmon -d" or "xmbmon -debug" first.
 
 WWW: http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/download.html
--- 
-kaz@kobe1995.net (NAKAMURA Kazushi)

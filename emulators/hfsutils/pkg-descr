@@ -10,6 +10,3 @@
         variety of transfer modes (MacBinary, BinHex, text, etc.)
     * A Tcl package and interface for scriptable access to volumes
     * A C library for low-level access to volumes
-
-- Vanilla
-vanilla@FreeBSD.ORG

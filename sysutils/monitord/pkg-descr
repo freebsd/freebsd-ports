@@ -7,6 +7,3 @@ monitored. The configuration file is simple and easily setup.
 
 Note: version 0.4.1 has a different configuration file format and
 any previous configuration file should be updated accordingly.
-
-- Walt
-walt@erudition.net

@@ -8,8 +8,8 @@ will be replaced by .fig.   Otherwise, .fig  is appended to the input
 filename.  If file does not exist, then pic2fig tries appending .pic
 to the name.
 
-Updated to produce FIG 3.2 format by Patrick Powell <papowell@astart.com>
-
-Web Site: ftp://ftp.x.org/contrib/utilities/
+Updated to produce FIG 3.2 format by Patrick Powell
 
 Note:  this version does not support the groff/pic 'thickness' attribute.
+
+WWW: ftp://ftp.x.org/contrib/utilities/

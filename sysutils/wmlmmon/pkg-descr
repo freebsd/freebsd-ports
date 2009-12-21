@@ -11,6 +11,3 @@ Currently, the /dev/smb0 interface is only supported in FreeBSD
 3.x and some non-LM78/79 motherboards.
 
 WWW: http://www.fxp.org/~jedgar/wmlmmon/
-
-- Chris D. Faulhaber
- <jedgar@FreeBSD.org>

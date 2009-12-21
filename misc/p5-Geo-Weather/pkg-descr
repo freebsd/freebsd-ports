@@ -5,6 +5,3 @@ the module can print a general weather report, or return specific values
 current numerical values for wind speed, temperature, dew point, etc).
 
 WWW: http://search.cpan.org/dist/Geo-Weather/
-
-- Pete
-petef@databits.net

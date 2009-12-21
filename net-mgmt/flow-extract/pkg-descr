@@ -13,7 +13,3 @@ first, then look at this program.
 
 In order for this to compile you will need flowtools from Mark
 Fullmer's (net-mgmt/flow-tools port).
-
----
-E. Larry Lidz, ellidz@uchicago.edu
-Brought to FreeBSD by Marcin Cieslak

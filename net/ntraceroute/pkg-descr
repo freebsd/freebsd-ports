@@ -3,6 +3,3 @@ features such as MPLS label decode, Path MTU discovery, AS lookup,
 and spray mode. It is maintained by a collection of volunteers.
 
 WWW: ftp://ftp.login.com/pub/software/traceroute/
-
-Bruce
-bms@FreeBSD.org

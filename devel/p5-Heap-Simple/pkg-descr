@@ -18,7 +18,3 @@ the functionality mentioned above. You will need to install something like
 Heap::Simple::XS or Heap::Simple::Perl to be able to actually do anything.
 
 WWW: http://search.cpan.org/dist/Heap-Simple/
-Author: Ton Hospel <cpan@ton.iguana.be>
-
-- Aaron Dalton
-aaron@daltons.ca

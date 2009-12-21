@@ -4,5 +4,3 @@ does not use smbfs to view files, it runs on almost all Unix (Solaris, OSF1,
 NetBSD ... )
 
 WWW: http://www2.iastate.edu/~chadspen/
-
-Roman Shterenzon <roman@xpert.com>

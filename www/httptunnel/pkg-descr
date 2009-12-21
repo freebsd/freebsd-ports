@@ -1,5 +1,3 @@
-Maintained under FreeBSD by: brian@awfulhak.org
-
 httptunnel creates a bidirectional virtual data path tunnelled in HTTP
 requests.  The requests can be sent via an HTTP proxy if so desired.
 

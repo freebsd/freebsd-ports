@@ -16,7 +16,4 @@ From the PKG-INFO:
   enforcing types is fairly complete and well-documented, so you can use
   Grouch's type system in other ways as well.
         
-Author: Greg Ward <gward@mems-exchange.org>
 WWW:    http://www.mems-exchange.org/software/grouch/
-
--- Johann Visagie <wjv@FreeBSD.org>

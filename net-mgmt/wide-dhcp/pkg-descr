@@ -15,10 +15,6 @@ hostname via DHCP infomation.
 		  o `-n' is reset HOSTNAME
 Please read more information in /usr/local/share/doc/dhcp/intro.dhcp or
 intro.dhcp.jis.  
-Thanks to:  Hirotaka TAKETA<taketa@csk.co.jp>,
-Hajimu UMEMOTO<ume@calm.imasy.or.jp>, Tamotsu KANOH<kanoh@kanoh.iijnet.or.jp>,
-Junichi SATOH <junichi@astec.co.jp>,
-Hisashi HIRAMOTO <hiramoto@phys.chs.nihon-u.ac.jp>,
-Takeshi TAGUCHI<taguchi@tohoku.iij.ad.jp> and
-Keisuke INOUE<keisuke@aa.cs.keio.ac.jp>
-- Yoshiro MIHIRA (sanpei@yy.cs.keio.ac.jp)
+
+Thanks to:  Hirotaka TAKETA, Hajimu UMEMOTO, Tamotsu KANOH, Junichi SATOH,
+Hisashi HIRAMOTO, Takeshi TAGUCHI, Keisuke INOUE, and Yoshiro MIHIRA.

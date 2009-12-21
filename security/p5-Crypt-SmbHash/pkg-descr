@@ -2,6 +2,3 @@
 Perl implementation of lanman and nt md4 hash functions.
 
 WWW: http://search.cpan.org/dist/Crypt-SmbHash/
-
-- Florent Thoumie
-flz@xbsd.org

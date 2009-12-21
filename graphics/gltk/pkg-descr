@@ -4,6 +4,3 @@ A simple OpenGL and Tk interface used for the OpenGL tutorial in
 
 Other than changing "-lMesatk" to "-lgltk" and "#include <gltk.h>" to
 "#include <GL/gltk.h>", everything should work as described on that page.
-
-- Satoshi
-asami@FreeBSD.org

@@ -3,6 +3,5 @@ written in Tcl/Tk.  It requires Tcl/Tk 8.3 or later or 8.0jp (`jp'
 means `Japanized version').  BookView can talk to NDTPD and dserver.
 
 You can get information about BookView from their website.
-WWW: http://www.sra.co.jp/people/m-kasahr/bookview/
 
--- Kazu TAKAMUNE <takamune2004@yahoo.co.jp>
+WWW: http://www.sra.co.jp/people/m-kasahr/bookview/

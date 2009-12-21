@@ -3,6 +3,3 @@ It can be used to purge expired entries automatically, e.g. by
 calling it from cron.
 
 WWW: http://slrn.sourceforge.net/cleanscore/
-
-- Oliver Braun
-obraun@informatik.unibw-muenchen.de

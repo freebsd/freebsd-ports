@@ -4,7 +4,7 @@ chipset. It consists of a shim for the Linux binary only object file.
 I have tested this code on a Dell Inspiron 8000, and a Mitsubishi Diamond Voice
 internal PCI modem. Mr Watanabe has tested it on a ThinkPad i1124.
 
-The shim code was written Watanabe Kiyoshi <aab10490@pop16.odn.net.jp>
+The shim code was written Watanabe Kiyoshi
 
 Home page of the Linux driver :- http://www.heby.de/ltmodem
 

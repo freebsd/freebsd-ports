@@ -5,6 +5,4 @@ the newroot subtree and privileges are restricted to those of the
 newuser account (which must be a known account in the unrestricted
 environment).
 
-See also jail(8) in FreeBSD 4.0.
-
--- Don Lewis	(truckman@FreeBSD.org)
+See also jail(8)

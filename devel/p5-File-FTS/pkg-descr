@@ -2,5 +2,3 @@ This is similar to File::Find, but works non recursively.
 Symbolic links to directories are skipped.
 
 WWW: http://search.cpan.org/dist/File-FTS/
-
-Seamus Venasse <svenasse@polaris.ca>

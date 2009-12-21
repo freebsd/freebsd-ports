@@ -9,5 +9,3 @@ For encryptions, libGringotts makes use of the MCrypt and MHash libs by Nikos
 Mavroyanopoulos.
 
 WWW: http://gringotts.berlios.de/
-
-- Anders Nordby <anders@fix.no>

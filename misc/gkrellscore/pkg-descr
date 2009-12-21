@@ -5,7 +5,3 @@ second, the tooltip that comes up shows the full names of both
 teams, their scores, the period of the game (if applicable), the
 time that it will start if it hasn't yet, the date of the game,
 etc.
-
-Author: Paul Cannon <paul@cannon.cs.usu.edu>
-
-- Patrick Li <pat@FreeBSD.org>
