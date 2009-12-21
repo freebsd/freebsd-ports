@@ -2772,6 +2772,7 @@
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-chronic
+    SUBDIR += rubygem-classifier
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-crack
