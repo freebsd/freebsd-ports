@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose-Autobox
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RJ/RJBS/
@@ -17,12 +17,10 @@ COMMENT=	Autoboxed wrappers for Native Perl datatypes
 
 BUILD_DEPENDS=	p5-autobox>=2.23:${PORTSDIR}/devel/p5-autobox \
 		p5-Moose>=0.42:${PORTSDIR}/devel/p5-Moose \
-		p5-Perl6-Junction>=1.40000:${PORTSDIR}/devel/p5-Perl6-Junction \
-		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
+		p5-Perl6-Junction>=1.40000:${PORTSDIR}/devel/p5-Perl6-Junction
 RUN_DEPENDS=	p5-autobox>=2.23:${PORTSDIR}/devel/p5-autobox \
 		p5-Moose>=0.42:${PORTSDIR}/devel/p5-Moose \
-		p5-Perl6-Junction>=1.40000:${PORTSDIR}/devel/p5-Perl6-Junction \
-		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
+		p5-Perl6-Junction>=1.40000:${PORTSDIR}/devel/p5-Perl6-Junction
 
 PERL_CONFIGURE=	5.6.0+
 
