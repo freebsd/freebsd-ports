@@ -7,7 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
