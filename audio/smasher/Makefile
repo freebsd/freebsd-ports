@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	smasher
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.6
 CATEGORIES=	audio
-MASTER_SITES=	SF \
-		http://distfiles.officialunix.com/
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform audio loop slicer
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		mad.2:${PORTSDIR}/audio/libmad
-
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	At the momment does not build on AMD64 ia64
+		mad.2:${PORTSDIR}/audio/libmad \
+		csound64.5:${PORTSDIR}/audio/csound
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
