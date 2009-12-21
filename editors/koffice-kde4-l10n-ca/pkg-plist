@@ -33,11 +33,8 @@ share/doc/HTML/ca/kivio/working.docbook
 share/doc/HTML/ca/koffice/common
 share/doc/HTML/ca/koffice/index.cache.bz2
 share/doc/HTML/ca/koffice/index.docbook
-share/doc/HTML/ca/koshell/common
-share/doc/HTML/ca/koshell/index.cache.bz2
-share/doc/HTML/ca/koshell/index.docbook
-share/doc/HTML/ca/kplato/commands.docbook
 share/doc/HTML/ca/kplato/common
+share/doc/HTML/ca/kplato/commands.docbook
 share/doc/HTML/ca/kplato/definitions.docbook
 share/doc/HTML/ca/kplato/index.cache.bz2
 share/doc/HTML/ca/kplato/index.docbook
@@ -85,136 +82,69 @@ share/doc/HTML/ca/krita/using-views.docbook
 share/doc/HTML/ca/kspread/a11y.docbook
 share/doc/HTML/ca/kspread/advanced.docbook
 share/doc/HTML/ca/kspread/basics.docbook
-share/doc/HTML/ca/kspread/cellformat0.png
-share/doc/HTML/ca/kspread/cellformat1.png
-share/doc/HTML/ca/kspread/cellformat2.png
-share/doc/HTML/ca/kspread/cellformat3.png
-share/doc/HTML/ca/kspread/cellformat4.png
-share/doc/HTML/ca/kspread/cellformat5.png
-share/doc/HTML/ca/kspread/cellformat6.png
-share/doc/HTML/ca/kspread/cellformat7.png
-share/doc/HTML/ca/kspread/cellprotection1.png
-share/doc/HTML/ca/kspread/cellprotection2.png
 share/doc/HTML/ca/kspread/commands.docbook
 share/doc/HTML/ca/kspread/common
 share/doc/HTML/ca/kspread/config.docbook
 share/doc/HTML/ca/kspread/configdialog.docbook
-share/doc/HTML/ca/kspread/configure1.png
-share/doc/HTML/ca/kspread/configure2.png
-share/doc/HTML/ca/kspread/configure3.png
-share/doc/HTML/ca/kspread/configure4.png
-share/doc/HTML/ca/kspread/configure5.png
-share/doc/HTML/ca/kspread/configure6.png
 share/doc/HTML/ca/kspread/faq.docbook
 share/doc/HTML/ca/kspread/format.docbook
 share/doc/HTML/ca/kspread/importexport.docbook
 share/doc/HTML/ca/kspread/index.cache.bz2
 share/doc/HTML/ca/kspread/index.docbook
-share/doc/HTML/ca/kspread/mousenav.png
-share/doc/HTML/ca/kspread/newdocument.png
-share/doc/HTML/ca/kspread/sheetproperties.png
-share/doc/HTML/ca/kspread/shortcut1.png
-share/doc/HTML/ca/kspread/shortcut2.png
-share/doc/HTML/ca/kspread/shortcut3.png
-share/doc/HTML/ca/kspread/tts.png
-share/doc/HTML/ca/kugar/common
-share/doc/HTML/ca/kugar/datadtd.docbook
-share/doc/HTML/ca/kugar/dataref.docbook
-share/doc/HTML/ca/kugar/designer.docbook
-share/doc/HTML/ca/kugar/index.cache.bz2
-share/doc/HTML/ca/kugar/index.docbook
-share/doc/HTML/ca/kugar/progguide.docbook
-share/doc/HTML/ca/kugar/starting.docbook
-share/doc/HTML/ca/kugar/template-elements.docbook
-share/doc/HTML/ca/kugar/template.docbook
-share/doc/HTML/ca/kugar/templatedtd.docbook
-share/doc/HTML/ca/kugar/tutorial.docbook
-share/doc/HTML/ca/kword/a11y.docbook
-share/doc/HTML/ca/kword/basics.docbook
-share/doc/HTML/ca/kword/bookmarks.docbook
-share/doc/HTML/ca/kword/chapnumb.docbook
-share/doc/HTML/ca/kword/columns.docbook
-share/doc/HTML/ca/kword/common
-share/doc/HTML/ca/kword/doccomments.docbook
-share/doc/HTML/ca/kword/doclinks.docbook
-share/doc/HTML/ca/kword/docstruct.docbook
-share/doc/HTML/ca/kword/docvariables.docbook
-share/doc/HTML/ca/kword/editing.docbook
-share/doc/HTML/ca/kword/expressions.docbook
-share/doc/HTML/ca/kword/footendnotes.docbook
-share/doc/HTML/ca/kword/formatchar.docbook
-share/doc/HTML/ca/kword/formatframes.docbook
-share/doc/HTML/ca/kword/formatpara.docbook
-share/doc/HTML/ca/kword/formulas.docbook
-share/doc/HTML/ca/kword/frames.docbook
-share/doc/HTML/ca/kword/fundimentals.docbook
-share/doc/HTML/ca/kword/graphics.docbook
-share/doc/HTML/ca/kword/headerfooter.docbook
-share/doc/HTML/ca/kword/index.cache.bz2
-share/doc/HTML/ca/kword/index.docbook
-share/doc/HTML/ca/kword/insertfile.docbook
-share/doc/HTML/ca/kword/kparts.docbook
-share/doc/HTML/ca/kword/lists.docbook
-share/doc/HTML/ca/kword/mailmerge.docbook
-share/doc/HTML/ca/kword/mbtb.docbook
-share/doc/HTML/ca/kword/migrating.docbook
-share/doc/HTML/ca/kword/opt.docbook
-share/doc/HTML/ca/kword/pageformat.docbook
-share/doc/HTML/ca/kword/storeprint.docbook
-share/doc/HTML/ca/kword/styles.docbook
-share/doc/HTML/ca/kword/table.docbook
-share/doc/HTML/ca/kword/tabstops.docbook
-share/doc/HTML/ca/kword/techinfo.docbook
-share/doc/HTML/ca/kword/templatecreation.docbook
-share/doc/HTML/ca/kword/toc.docbook
-share/doc/HTML/ca/kword/tutorial.docbook
 share/doc/HTML/ca/thesaurus/common
 share/doc/HTML/ca/thesaurus/index.cache.bz2
 share/doc/HTML/ca/thesaurus/index.docbook
+share/locale/ca/LC_MESSAGES/ArtisticTextShape.mo
+share/locale/ca/LC_MESSAGES/AutocorrectPlugin.mo
+share/locale/ca/LC_MESSAGES/CalendarTool.mo
+share/locale/ca/LC_MESSAGES/ChangecasePlugin.mo
+share/locale/ca/LC_MESSAGES/ChartShape.mo
+share/locale/ca/LC_MESSAGES/DivineProportion.mo
+share/locale/ca/LC_MESSAGES/FormulaShape.mo
+share/locale/ca/LC_MESSAGES/KarbonDockersPlugin.mo
+share/locale/ca/LC_MESSAGES/KarbonTools.mo
+share/locale/ca/LC_MESSAGES/MusicShape.mo
+share/locale/ca/LC_MESSAGES/ParagraphTool.mo
+share/locale/ca/LC_MESSAGES/PathShapes.mo
+share/locale/ca/LC_MESSAGES/PictureShape.mo
+share/locale/ca/LC_MESSAGES/SpellCheckPlugin.mo
+share/locale/ca/LC_MESSAGES/TableShape.mo
+share/locale/ca/LC_MESSAGES/TextShape.mo
+share/locale/ca/LC_MESSAGES/VariablesPlugin.mo
 share/locale/ca/LC_MESSAGES/desktop_koffice.mo
-share/locale/ca/LC_MESSAGES/example.mo
 share/locale/ca/LC_MESSAGES/karbon.mo
 share/locale/ca/LC_MESSAGES/kchart.mo
-share/locale/ca/LC_MESSAGES/kexi.mo
-share/locale/ca/LC_MESSAGES/kfile_abiword.mo
-share/locale/ca/LC_MESSAGES/kfile_gnumeric.mo
-share/locale/ca/LC_MESSAGES/kfile_koffice.mo
-share/locale/ca/LC_MESSAGES/kfile_ooo.mo
-share/locale/ca/LC_MESSAGES/kformdesigner.mo
 share/locale/ca/LC_MESSAGES/kformula.mo
-share/locale/ca/LC_MESSAGES/kivio.mo
+share/locale/ca/LC_MESSAGES/kocolorspaces.mo
 share/locale/ca/LC_MESSAGES/koconverter.mo
+share/locale/ca/LC_MESSAGES/koffice-defaulttools.mo
+share/locale/ca/LC_MESSAGES/koffice-dockers.mo
+share/locale/ca/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/ca/LC_MESSAGES/koffice.mo
 share/locale/ca/LC_MESSAGES/kofficefilters.mo
-share/locale/ca/LC_MESSAGES/koproperty.mo
-share/locale/ca/LC_MESSAGES/koshell.mo
 share/locale/ca/LC_MESSAGES/kounavail.mo
 share/locale/ca/LC_MESSAGES/kplato.mo
+share/locale/ca/LC_MESSAGES/kplatolibs.mo
+share/locale/ca/LC_MESSAGES/kplatowork.mo
 share/locale/ca/LC_MESSAGES/kpresenter.mo
 share/locale/ca/LC_MESSAGES/krita.mo
+share/locale/ca/LC_MESSAGES/krossmodulekplato.mo
+share/locale/ca/LC_MESSAGES/krossmodulekspread.mo
+share/locale/ca/LC_MESSAGES/krossmodulekword.mo
 share/locale/ca/LC_MESSAGES/kscan_plugin.mo
-share/locale/ca/LC_MESSAGES/kscreenshot_plugin.mo
 share/locale/ca/LC_MESSAGES/kspread.mo
-share/locale/ca/LC_MESSAGES/kspreadcalc_calc.mo
-share/locale/ca/LC_MESSAGES/kspreadinsertcalendar.mo
+share/locale/ca/LC_MESSAGES/kspreadsolver.mo
 share/locale/ca/LC_MESSAGES/kthesaurus.mo
-share/locale/ca/LC_MESSAGES/kugar.mo
 share/locale/ca/LC_MESSAGES/kword.mo
 share/locale/ca/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/ca/thesaurus
-@dirrm share/doc/HTML/ca/kword
-@dirrm share/doc/HTML/ca/kugar
 @dirrm share/doc/HTML/ca/kspread
 @dirrm share/doc/HTML/ca/krita
 @dirrm share/doc/HTML/ca/kpresenter
 @dirrm share/doc/HTML/ca/kplato
-@dirrm share/doc/HTML/ca/koshell
 @dirrm share/doc/HTML/ca/koffice
 @dirrm share/doc/HTML/ca/kivio
 @dirrm share/doc/HTML/ca/kformula
 @dirrm share/doc/HTML/ca/kexi
 @dirrm share/doc/HTML/ca/kchart
 @dirrm share/doc/HTML/ca/karbon
-@dirrm share/doc/HTML/ca
-@dirrm share/apps/koffice/autocorrect
-@dirrm share/apps/koffice

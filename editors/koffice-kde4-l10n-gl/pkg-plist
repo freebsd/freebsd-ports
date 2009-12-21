@@ -1,51 +1,59 @@
 share/doc/HTML/gl/karbon/common
 share/doc/HTML/gl/karbon/index.cache.bz2
 share/doc/HTML/gl/karbon/index.docbook
-share/doc/HTML/gl/kchart/common
-share/doc/HTML/gl/kchart/index.cache.bz2
-share/doc/HTML/gl/kchart/index.docbook
-share/doc/HTML/gl/koffice/common
-share/doc/HTML/gl/koffice/index.cache.bz2
-share/doc/HTML/gl/koffice/index.docbook
-share/doc/HTML/gl/koshell/common
-share/doc/HTML/gl/koshell/index.cache.bz2
-share/doc/HTML/gl/koshell/index.docbook
+share/doc/HTML/gl/kplato/commands.docbook
+share/doc/HTML/gl/kplato/common
+share/doc/HTML/gl/kplato/definitions.docbook
+share/doc/HTML/gl/kplato/index.cache.bz2
+share/doc/HTML/gl/kplato/index.docbook
+share/doc/HTML/gl/kplato/mainwindow.docbook
+share/doc/HTML/gl/kplato/options.docbook
+share/doc/HTML/gl/kplato/wbs.docbook
 share/doc/HTML/gl/thesaurus/common
 share/doc/HTML/gl/thesaurus/index.cache.bz2
 share/doc/HTML/gl/thesaurus/index.docbook
+share/locale/gl/LC_MESSAGES/ArtisticTextShape.mo
+share/locale/gl/LC_MESSAGES/AutocorrectPlugin.mo
+share/locale/gl/LC_MESSAGES/CalendarTool.mo
+share/locale/gl/LC_MESSAGES/ChangecasePlugin.mo
+share/locale/gl/LC_MESSAGES/ChartShape.mo
+share/locale/gl/LC_MESSAGES/DivineProportion.mo
+share/locale/gl/LC_MESSAGES/FormulaShape.mo
+share/locale/gl/LC_MESSAGES/KarbonDockersPlugin.mo
+share/locale/gl/LC_MESSAGES/KarbonTools.mo
+share/locale/gl/LC_MESSAGES/MusicShape.mo
+share/locale/gl/LC_MESSAGES/ParagraphTool.mo
+share/locale/gl/LC_MESSAGES/PathShapes.mo
+share/locale/gl/LC_MESSAGES/PictureShape.mo
+share/locale/gl/LC_MESSAGES/SpellCheckPlugin.mo
+share/locale/gl/LC_MESSAGES/TableShape.mo
+share/locale/gl/LC_MESSAGES/TextShape.mo
+share/locale/gl/LC_MESSAGES/VariablesPlugin.mo
 share/locale/gl/LC_MESSAGES/desktop_koffice.mo
-share/locale/gl/LC_MESSAGES/example.mo
 share/locale/gl/LC_MESSAGES/karbon.mo
 share/locale/gl/LC_MESSAGES/kchart.mo
-share/locale/gl/LC_MESSAGES/kexi.mo
-share/locale/gl/LC_MESSAGES/kfile_abiword.mo
-share/locale/gl/LC_MESSAGES/kfile_gnumeric.mo
-share/locale/gl/LC_MESSAGES/kfile_koffice.mo
-share/locale/gl/LC_MESSAGES/kfile_ooo.mo
-share/locale/gl/LC_MESSAGES/kformdesigner.mo
-share/locale/gl/LC_MESSAGES/kformula.mo
-share/locale/gl/LC_MESSAGES/kivio.mo
+share/locale/gl/LC_MESSAGES/kocolorspaces.mo
 share/locale/gl/LC_MESSAGES/koconverter.mo
+share/locale/gl/LC_MESSAGES/koffice-defaulttools.mo
+share/locale/gl/LC_MESSAGES/koffice-dockers.mo
+share/locale/gl/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/gl/LC_MESSAGES/koffice.mo
 share/locale/gl/LC_MESSAGES/kofficefilters.mo
-share/locale/gl/LC_MESSAGES/koproperty.mo
-share/locale/gl/LC_MESSAGES/koshell.mo
 share/locale/gl/LC_MESSAGES/kounavail.mo
 share/locale/gl/LC_MESSAGES/kplato.mo
+share/locale/gl/LC_MESSAGES/kplatolibs.mo
+share/locale/gl/LC_MESSAGES/kplatowork.mo
 share/locale/gl/LC_MESSAGES/kpresenter.mo
 share/locale/gl/LC_MESSAGES/krita.mo
+share/locale/gl/LC_MESSAGES/krossmodulekplato.mo
+share/locale/gl/LC_MESSAGES/krossmodulekspread.mo
+share/locale/gl/LC_MESSAGES/krossmodulekword.mo
 share/locale/gl/LC_MESSAGES/kscan_plugin.mo
-share/locale/gl/LC_MESSAGES/kscreenshot_plugin.mo
 share/locale/gl/LC_MESSAGES/kspread.mo
-share/locale/gl/LC_MESSAGES/kspreadcalc_calc.mo
-share/locale/gl/LC_MESSAGES/kspreadinsertcalendar.mo
+share/locale/gl/LC_MESSAGES/kspreadsolver.mo
 share/locale/gl/LC_MESSAGES/kthesaurus.mo
-share/locale/gl/LC_MESSAGES/kugar.mo
 share/locale/gl/LC_MESSAGES/kword.mo
 share/locale/gl/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/gl/thesaurus
-@dirrm share/doc/HTML/gl/koshell
-@dirrm share/doc/HTML/gl/koffice
-@dirrm share/doc/HTML/gl/kchart
+@dirrm share/doc/HTML/gl/kplato
 @dirrm share/doc/HTML/gl/karbon
-@dirrm share/doc/HTML/gl
