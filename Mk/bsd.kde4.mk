@@ -54,6 +54,9 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 
 KDE4_VERSION=		4.3.4
 KDE4_BRANCH?=		stable
+KOFFICE2_VERSION=	2.1.0
+KOFFICE2_BRANCH?=	stable
+
 
 #
 # KDE4 is installed into its own prefix to not conflict with KDE3
