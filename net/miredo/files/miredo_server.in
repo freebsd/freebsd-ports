@@ -20,7 +20,7 @@ name=miredo_server
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
-required_files=%%PREFIX%%/etc/miredo-server.conf
+required_files=%%PREFIX%%/etc/miredo/miredo-server.conf
 
 load_rc_config ${name}
 run_rc_command "$1"
