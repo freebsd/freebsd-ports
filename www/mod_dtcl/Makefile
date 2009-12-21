@@ -24,7 +24,7 @@ MAKE_ENV+=	TCL_VERSION=${TCL_VER}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 800000
 BROKEN=	does not build
 .endif
 
