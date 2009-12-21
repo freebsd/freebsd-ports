@@ -96,7 +96,8 @@ lib/csound/plugins64/libvosim.so
 lib/csound/plugins64/libimage.so
 lib/csound/plugins64/libhrtfnew.so
 lib/libcsladspa.so
-lib/libcsound64.so.5.2
+lib/libcsound64.so
+lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/ATSadd.html
 %%PORTDOCS%%%%DOCSDIR%%/ATSaddnz.html
 %%PORTDOCS%%%%DOCSDIR%%/ATSbufread.html

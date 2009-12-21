@@ -7,7 +7,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	5.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.11/:src \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.10/:manual
@@ -56,6 +56,8 @@ post-patch: apply-slist
 	@${MV} ${WRKDIR}/custom.py ${WRKSRC}
 	@${REINPLACE_CMD} -e "s|'unsupported'|'linux'|; \
 		s|ENV = {'PATH' : os.environ\['PATH'\]}|ENV = os.environ|; \
+		s|'csPerfThread.hpp'|'interfaces/csPerfThread.hpp'|; \
+		s|'5.2'|'5'|; \
 		s|'dl'|''|; \
 		s|'asound'|''|;" \
 		${WRKSRC}/SConstruct
@@ -64,6 +66,7 @@ post-patch: apply-slist
 		${WRKSRC}/frontends/CsoundAC/Counterpoint.hpp
 
 post-install:
+	${LN} -s libcsound64.so.5 ${PREFIX}/lib/libcsound64.so
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${ECHO_MSG} " Installing the manual."
