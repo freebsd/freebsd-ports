@@ -5,22 +5,18 @@ lib/libmopac7.la
 lib/libmopac7.so
 lib/libmopac7.so.0
 libdata/pkgconfig/libmopac7.pc
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/1scf.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/elements.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/force.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/geometry.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/keys.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/nch34+.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/oldgeo.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/paras.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_cos.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_ef_.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_gre.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_pol.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_cos.OUT
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_ef_.OUT
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_gre.OUT
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/test_pol.OUT
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/test
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/1scf.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/elements.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/force.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/geometry.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/keys.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/nch34+.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/oldgeo.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/paras.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/test_cos.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/test_ef_.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/test_gre.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/test_pol.dat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/mopac7

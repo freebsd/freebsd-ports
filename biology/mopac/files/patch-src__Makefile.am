@@ -1,0 +1,12 @@
+--- src/Makefile.am.orig	2005-08-22 20:06:45.000000000 +0900
++++ src/Makefile.am	2009-12-17 03:23:46.000000000 +0900
+@@ -42,7 +42,8 @@
+ if HAVE_F2C
+ noinst_PROGRAMS = mopac7
+ mopac7_SOURCES = mopac7app.c
+-mopac7_LDFLAGS = -lmopac7 -lf2c -lm
++mopac7_LDADD = libmopac7.la
++mopac7_LDFLAGS = -lf2c -lm
+ else
+ # the executable is not built!
+ # so nothing here...
