@@ -1,0 +1,66 @@
+--- src/main.c.orig	2009-12-22 21:06:08.000000000 +0100
++++ src/main.c	2009-12-22 21:10:13.000000000 +0100
+@@ -21,6 +21,9 @@
+  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  */
++#include <sys/utsname.h>
++#include <signal.h>
++#include <time.h>
+ #include "E.h"
+ #include "comms.h"
+ #include "cursors.h"
+@@ -38,9 +41,6 @@
+ #include "snaps.h"
+ #include "user.h"
+ #include "xwin.h"
+-#include <sys/utsname.h>
+-#include <signal.h>
+-#include <time.h>
+ 
+ const char          e_wm_name[] = "e16";
+ const char          e_wm_version[] = VERSION;
+--- src/session.c.orig	2009-12-22 21:11:00.000000000 +0100
++++ src/session.c	2009-12-22 21:11:11.000000000 +0100
+@@ -21,6 +21,10 @@
+  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  */
++#include <fcntl.h>
++#include <signal.h>
++#include <sys/time.h>
++
+ #include "E.h"
+ #include "dialog.h"
+ #include "e16-ecore_hints.h"
+@@ -33,9 +37,6 @@
+ #include "snaps.h"
+ #include "user.h"
+ #include "xwin.h"
+-#include <fcntl.h>
+-#include <signal.h>
+-#include <sys/time.h>
+ 
+ #ifdef USE_EXT_INIT_WIN
+ static Window       new_init_win_ext = None;
+--- src/setup.c.orig	2009-12-22 21:11:26.000000000 +0100
++++ src/setup.c	2009-12-22 21:11:36.000000000 +0100
+@@ -21,14 +21,16 @@
+  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  */
++
++#include <signal.h>
++#include <X11/keysym.h>
++
+ #include "E.h"
+ #include "events.h"
+ #include "ewins.h"
+ #include "screen.h"
+ #include "session.h"
+ #include "xwin.h"
+-#include <signal.h>
+-#include <X11/keysym.h>
+ 
+ static void
+ HandleXIOError(void)
