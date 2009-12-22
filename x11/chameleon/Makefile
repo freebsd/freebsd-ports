@@ -19,6 +19,9 @@ DISTNAME=	chameleon_${PORTVERSION}.orig
 MAINTAINER=	gavin.atkinson@ury.york.ac.uk
 COMMENT=	Application for putting pictures or colors onto the root window
 
+DEPRECATED=		No longer under development, master site disappeared years ago
+EXPIRATION_DATE=	2010-07-01
+
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_GNOME=	gtk12
