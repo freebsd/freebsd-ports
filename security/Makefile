@@ -593,6 +593,7 @@
     SUBDIR += pear-HTML_Crypt
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
+    SUBDIR += pear-Net_Portscan
     SUBDIR += pear-Text_Password
     SUBDIR += pecl-crack
     SUBDIR += pecl-gnupg

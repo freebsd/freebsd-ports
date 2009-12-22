@@ -1,0 +1,5 @@
+The Net_Portscan package allows one to perform basic portscanning
+functions with PHP. It supports checking an individual port or
+checking a whole range of ports on a machine.
+
+WWW: http://pear.php.net/package/Net-Portscan/
