@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mwlib
-PORTVERSION=	0.12.11
+PORTVERSION=	0.12.12
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,7 +32,7 @@ PYEASYINSTALL_ARCHDEP=	yes
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|odfpy==0.9|odfpy==0.9.1|' \
+		-e 's|odfpy==0.9|odfpy>=0.9.1|' \
 		-e 's|, "twisted>=8.2"||' \
 		${WRKSRC}/setup.py
 
