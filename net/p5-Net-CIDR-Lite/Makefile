@@ -7,14 +7,13 @@
 
 PORTNAME=	Net-CIDR-Lite
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for merging IPv4 or IPv6 CIDR addresses
-
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
