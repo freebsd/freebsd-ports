@@ -6,72 +6,65 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	0.15.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	gpodder
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		help2man:${PORTSDIR}/misc/help2man
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23 \
+RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
+		py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
+		py*-notify>=0:${PORTSDIR}/devel/py-notify \
+		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		wget:${PORTSDIR}/ftp/wget \
-		xdg-open:${PORTSDIR}/devel/xdg-utils
+		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
+		py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser
 
-USE_GMAKE=	yes
-USE_GNOME=	pygtk2 libglade2
-USE_GETTEXT=	yes
-USE_PYTHON=	yes
-PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
-INSTALLS_ICONS=	yes
-
-MANCOMPRESSED=	no
-MAN1=		${PORTNAME}.1 gpodder-backup.1
-
-PORTDOCS=	COPYING PKG-INFO README
-
-OPTIONS=	IPOD "iPod synchronization support" off \
-		VIDEO "Video media support using mplayer" off \
+OPTIONS=	COVERART "Cover Art syncing support" off \
+		IPOD "iPod synchronization support" off \
 		MP3TAG "MP3 ID3 tag update support" off \
-		OGGTAG "Ogg Vorbis ID3 tag update support" off \
-		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off
+		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off \
+		SHOWNOTES "HTML episode shownotes support" off \
+		VIDEO "Video media support using mplayer" off
+
+USE_PYTHON=	yes
+USE_GNOME=	pygtk2
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
+INSTALLS_EGGINFO=yes
+
+MAN1=		gpo.1 ${PORTNAME}.1 ${PORTNAME}-backup.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
+.if defined(WITH_COVERART)
+RUN_DEPENDS+=	py*-imaging>=0:${PORTSDIR}/graphics/py-imaging
 .endif
 
 .if defined(WITH_IPOD)
 LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
+RUN_DEPENDS+=	py*-mad>=0:${PORTSDIR}/audio/py-mad
+.if !exists(${PYTHON_SITELIBDIR}/gpod/__init__.py)
+IGNORE=		Requires Python bindings for libgpod. Please uninstall libgpod and reinstall with Python support.
 .endif
-
-.if defined(WITH_VIDEO)
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer \
-		${PYTHON_SITELIBDIR}/ID3.py:${PORTSDIR}/audio/py-id3
 .endif
 
 .if defined(WITH_MP3TAG)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
-.endif
-
-.if defined(WITH_OGGTAG)
-RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS+=	py*-eyed3>=0:${PORTSDIR}/audio/py-eyed3
 .endif
 
 .if defined(WITH_OGG2MP3)
-RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools \
-		lame:${PORTSDIR}/audio/lame
+RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame \
+		oggdec:${PORTSDIR}/audio/vorbis-tools
+.endif
+
+.if defined(WITH_SHOWNOTES)
+USE_GNOME+=	pygnomeextras
+.endif
+
+.if defined(WITH_VIDEO)
+RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 post-patch:
@@ -79,9 +72,9 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for file in PKG-INFO README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
