@@ -242,6 +242,7 @@
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
+    SUBDIR += gimp-save-for-web
     SUBDIR += gimpfx-foundry
     SUBDIR += gimpshop
     SUBDIR += gir-repository-goocanvas
