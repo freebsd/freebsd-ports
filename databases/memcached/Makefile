@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -21,19 +21,20 @@ USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
 
-OPTIONS=	REPCACHED	"Enable data replication feature"	off
+OPTIONS=	REPCACHED	"Enable data replication feature"	off \
+		SASL		"Enable SASL support"			off
 
 MAN1=		memcached.1
 
 PLIST_FILES=	bin/memcached \
 		bin/memcached-tool
 
-PORTDOCS=	memory_management.txt protocol.txt
+PORTDOCS=	protocol.txt threads.txt readme.txt
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800000
-BROKEN=		does not link
+CFLAGS+=       -fstack-protector
 .endif
 
 .if defined(WITH_REPCACHED)
@@ -43,6 +44,17 @@ PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/repcached\/repcached\/2.2-${
 PATCH_DIST_STRIP+=	-p1
 PATCHFILES+=		repcached-2.2-${PORTVERSION}.patch.gz
 CONFIGURE_ARGS+=	--enable-replication --disable-threads
+.endif
+
+.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=	--enable-sasl
+CFLAGS+=		-I${LOCALBASE}/include
+CPPFLAGS=		${CFLAGS}
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.else
+CONFIGURE_ARGS+=	--disable-sasl
 .endif
 
 post-configure:
