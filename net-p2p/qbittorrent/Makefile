@@ -6,33 +6,37 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	1.5.6
+PORTVERSION=	2.0.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent
 
-LIB_DEPENDS=	ccext2-1.7.0:${PORTSDIR}/devel/commoncpp \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		zzip.13:${PORTSDIR}/devel/zziplib \
-		curl.5:${PORTSDIR}/ftp/curl \
+BUILD_DEPENDS=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS=	NOTIFY "Enable libnotify support" off
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network xml \
 		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libcurl-inc="${LOCALBASE}/include" \
-		--with-libcurl-lib="${LOCALBASE}/lib" \
-		--with-libzzip-inc="${LOCALBASE}/include" \
-		--with-libzzip-lib="${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-libboost-inc="${LOCALBASE}/include"
 INSTALLS_ICONS=	yes
 
 MAN1=		qbittorrent.1
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_NOTIFY)
+LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+.else
+CONFIGURE_ARGS+=	--disable-libnotify
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$$$PREFIX/share/man|${MANPREFIX}/man|' \
