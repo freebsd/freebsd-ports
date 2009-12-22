@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gobby
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.12
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/
 
@@ -18,6 +18,8 @@ LIB_DEPENDS=	obby-0.4.1:${PORTSDIR}/devel/obby \
 		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
+OPTIONS=	GTKSPELL "Enable GtkSpell support" off
+
 USE_GNOME=	gnomehack gtksourceview2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -26,4 +28,13 @@ INSTALLS_ICONS=	yes
 
 MAN1=		${PORTNAME}.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+CONFIGURE_ARGS+=--with-gtkspell
+.else
+CONFIGURE_ARGS+=--without-gtkspell
+.endif
+
+.include <bsd.port.post.mk>

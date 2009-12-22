@@ -27,6 +27,7 @@ share/locale/ca/LC_MESSAGES/gobby.mo
 share/locale/cs/LC_MESSAGES/gobby.mo
 share/locale/de/LC_MESSAGES/gobby.mo
 share/locale/el/LC_MESSAGES/gobby.mo
+share/locale/en_GB/LC_MESSAGES/gobby.mo
 share/locale/es/LC_MESSAGES/gobby.mo
 share/locale/fr/LC_MESSAGES/gobby.mo
 share/locale/he/LC_MESSAGES/gobby.mo
@@ -39,18 +40,19 @@ share/locale/pt/LC_MESSAGES/gobby.mo
 share/locale/pt_BR/LC_MESSAGES/gobby.mo
 share/locale/ru/LC_MESSAGES/gobby.mo
 share/locale/sv/LC_MESSAGES/gobby.mo
+share/locale/uk/LC_MESSAGES/gobby.mo
 share/locale/zh_CN/LC_MESSAGES/gobby.mo
-@dirrm share/icons/HighContrastLargePrintInverse/scalable/apps
-@dirrm share/icons/HighContrastLargePrintInverse/scalable
-@dirrm share/icons/HighContrastLargePrintInverse/48x48/apps
-@dirrm share/icons/HighContrastLargePrintInverse/48x48
-@dirrm share/icons/HighContrastLargePrintInverse
-@dirrm share/icons/HighContrastLargePrint/scalable/apps
-@dirrm share/icons/HighContrastLargePrint/scalable
-@dirrm share/icons/HighContrastLargePrint/48x48/apps
-@dirrm share/icons/HighContrastLargePrint/48x48
-@dirrm share/icons/HighContrastLargePrint
-@dirrm share/icons
+@dirrmtry share/icons/HighContrastLargePrintInverse/scalable/apps
+@dirrmtry share/icons/HighContrastLargePrintInverse/scalable
+@dirrmtry share/icons/HighContrastLargePrintInverse/48x48/apps
+@dirrmtry share/icons/HighContrastLargePrintInverse/48x48
+@dirrmtry share/icons/HighContrastLargePrintInverse
+@dirrmtry share/icons/HighContrastLargePrint/scalable/apps
+@dirrmtry share/icons/HighContrastLargePrint/scalable
+@dirrmtry share/icons/HighContrastLargePrint/48x48/apps
+@dirrmtry share/icons/HighContrastLargePrint/48x48
+@dirrmtry share/icons/HighContrastLargePrint
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/icons/hicolor/48x48/actions
