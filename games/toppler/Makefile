@@ -6,39 +6,39 @@
 #
 
 PORTNAME=	toppler
-PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTVERSION=	1.1.4
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game where you have to climb the tower and avoid the monsters
 
-USE_GNOME=	gnometarget
 USE_SDL=	mixer sdl
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"  \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--localstatedir=/var/games
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share
 
-MAN6=		toppler.6
+MAN6=		${PORTNAME}.6
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|DATA install-dist_pkgdocDATA|DATA|g' ${WRKSRC}/Makefile.in
 
 post-install:
+	@${CHMOD} 2755 ${PREFIX}/bin/${PORTNAME}
+	@${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
+	@${CHMOD} 0664 ${DATADIR}/${PORTNAME}.hsc
+	@${CHOWN} root:games ${DATADIR}/${PORTNAME}.hsc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	@${CHOWN} root:games ${PREFIX}/bin/toppler
-	@${CHMOD} g+s ${PREFIX}/bin/toppler
-	@${SETENV} "PKG_PREFIX=${PREFIX}" \
-		${SH} pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ share/pixmaps/toppler.xpm
 %%DATADIR%%/m2.ttm
 %%DATADIR%%/pasi2.ttm
 %%DATADIR%%/toppler.dat
+%%DATADIR%%/toppler.hsc
 %%DATADIR%%/toppler.ogg
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/cz/LC_MESSAGES
