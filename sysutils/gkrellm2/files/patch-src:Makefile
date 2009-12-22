@@ -1,25 +1,19 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	2008-10-04 09:22:09.000000000 +0900
-+++ src/Makefile	2008-10-04 23:03:23.000000000 +0900
-@@ -45,7 +45,15 @@
- ifeq ($(without-libsensors),1)
- 	CONFIGURE_ARGS += --without-libsensors
+--- src/Makefile.orig	2008-10-15 07:06:30.000000000 +0900
++++ src/Makefile	2009-12-22 10:55:44.127838425 +0900
+@@ -51,7 +51,9 @@
+ ifeq ($(without-ntlm),1)
+ 	CONFIGURE_ARGS += --without-ntlm
  endif
 -DUMMY_VAR := $(shell ./configure $(CONFIGURE_ARGS))
-+ifeq ($(without-ntlm),yes)
-+	CONFIGURE_ARGS += --without-ntlm
-+endif
-+ifeq ($(without-ntlm),1)
-+	CONFIGURE_ARGS += --without-ntlm
-+endif
 +DUMMY_VAR := $(shell env OPENSSLINC=$(OPENSSLINC) OPENSSLLIB=$(OPENSSLLIB) \
 +		GNUTLSINC=$(GNUTLSINC) GNUTLSLIB=$(GNUTLSLIB) \
 +		./configure $(CONFIGURE_ARGS))
  
  HAVE_GNUTLS = $(shell grep -c HAVE_GNUTLS configure.h)
  HAVE_SSL = $(shell grep -c HAVE_SSL configure.h)
-@@ -53,10 +61,10 @@
+@@ -59,10 +61,10 @@
  HAVE_LIBSENSORS = $(shell grep -c HAVE_LIBSENSORS configure.h)
  
  ifeq ($(HAVE_GNUTLS),1)
@@ -32,13 +26,13 @@ diff -u src/Makefile.orig src/Makefile
  else
      EXTRAOBJS ?= md5c.o
  endif
-@@ -78,9 +86,17 @@
+@@ -85,9 +87,17 @@
  PKG_INCLUDE = `$(PKG_CONFIG) --cflags gtk+-2.0 gthread-2.0`
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
 -FLAGS = -O2 -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC) \
 +FLAGS = -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC) \
-  -DGKRELLM_CLIENT
+  ${NTLM_INCLUDES} -DGKRELLM_CLIENT
  
 +ifeq ($(HAVE_GNUTLS),1)
 +    FLAGS+= -I$(GNUTLSINC)
@@ -48,10 +42,10 @@ diff -u src/Makefile.orig src/Makefile
 +endif
 +endif
 +
- LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(NTLM_LIBS) $(SENSORS_LIBS)
+ LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS) \
+  $(NTLM_LIBS)
  
- ifeq ($(debug),1)
-@@ -113,7 +129,7 @@
+@@ -121,7 +131,7 @@
  endif
  
  
@@ -60,7 +54,7 @@ diff -u src/Makefile.orig src/Makefile
  
  OBJS =	main.o alerts.o battery.o base64.o clock.o cpu.o disk.o fs.o \
  	hostname.o inet.o mail.o mem.o net.o proc.o sensors.o uptime.o \
-@@ -138,13 +154,20 @@
+@@ -146,13 +156,20 @@
  	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellm
  endif
  
@@ -72,7 +66,7 @@ diff -u src/Makefile.orig src/Makefile
  	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellm
  endif
  
-+freebsd5 freebsd6 freebsd7 freebsd8 freebsd:
++freebsd5 freebsd6 freebsd7 freebsd8 freebsd9 freebsd:
 +ifeq ($(HAVE_SSL),1)
 +	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat" gkrellm
 +else
