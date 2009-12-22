@@ -7,11 +7,12 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20091221
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	pkgtools-${DISTVERSION}
+DISTNAME=	pkgtools-${DISTVERSION}_1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
