@@ -7,6 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
@@ -18,8 +19,6 @@ COMMENT=	Office suite for KDE
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
 		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
-# Kivio, KFormula and Kexi will not be released as part of koffice-2.0
-# ${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		exiv2.7:${PORTSDIR}/graphics/exiv2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
@@ -37,8 +36,7 @@ LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		gsl:${PORTSDIR}/math/gsl \
 		wv2.4:${PORTSDIR}/textproc/wv2 \
-		kipi.7:${PORTSDIR}/graphics/kdegraphics4
-# RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
+		kipi.6:${PORTSDIR}/graphics/kdegraphics4
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -51,14 +49,8 @@ QT_COMPONENTS=	corelib phonon qmake_build moc_build porting_build rcc_build uic_
 USE_GL=		glut
 USE_LDCONFIG=	yes
 
-#USE_MYSQL=	yes
-#USE_PGSQL=	yes
-
 CMAKE_VERBOSE=	yes
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include"
-#		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${KDE4_PREFIX}/lib -L${LOCALBASE}/lib" \
-#		-DCMAKE_MODULE_LINKER_FLAGS:STRING="-L${KDE4_PREFIX}/lib -L${LOCALBASE}/lib" \
-#		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${KDE4_PREFIX}/lib -L${LOCALBASE}/lib"
 
 OPTIONS=	GTL	"Color transformations in Krita (requires devel/llvm)" on
 
