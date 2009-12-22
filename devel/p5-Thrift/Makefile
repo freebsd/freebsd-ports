@@ -19,6 +19,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vec
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract \
 		${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vector
 
+PERL_CONFIGURE=	YES
+
 post-extract:
 	@${LN} -sfh \
 	`cd ${PORTSDIR}/devel/thrift && ${MAKE} -V WRKSRC`/lib/perl ${WRKSRC}
