@@ -5,103 +5,18 @@
 
 PATH=/usr/sbin:/usr/bin:/bin ; export PATH
 
-pma_dir=%%WWWDIR%%
+WWWDIR=%%WWWDIR%%
 pma_usr=%%PMA_USR%%
-pma_uid=%%PMA_UID%%
 pma_grp=%%PMA_GRP%%
-pma_gid=%%PMA_GID%%
-
-pma_gcos="%%PMA_GCOS%%"
-pma_home=%%PMA_HOME%%
-pma_shell=%%PMA_SHELL%%
-
-create_group() {
-    local user uid group gid gcos home shell
-
-    user=$1
-    uid=$2
-    group=$3
-    gid=$4
-    gcos=$5
-    home=$6
-    shell=$7
-
-
-    if pw group show -n $group >/dev/null 2>&1 ; then
-	echo "===> Using pre-existing group $group"
-    else
-	if pw groupadd -n $group -g $gid ; then
-	    echo "===> Group $group created"
-	else
-	    cat <<-EOERRORMSG
- 		*** Failed to create the $group group.
-
-		Please add the $user user and $group group
-		manually with the commands:
-
-		    pw groupadd -n $group -g $gid
-		    pw useradd -n $user -u $uid -g $group -c "$gcos" \\
-		        -d $home -s $shell -h -
-
-		and retry installing this package.
-		EOERRORMSG
-	    exit 1
-	fi
-    fi
-
-}
-
-
-create_user() {
-    local user uid group gid gcos home shell
-
-    user=$1
-    uid=$2
-    group=$3
-    gid=$4
-    gcos=$5
-    home=$6
-    shell=$7
-
-    if pw user show -n $user >/dev/null 2>&1 ; then
-	echo "===> Using pre-existing user $user"
-    else
-	if pw useradd -n $user -u $uid -g $group -c "$gcos" \
-	    -d $home -s $shell -h - ; then
-	    echo "===> Created $user user"
-	else
-	    cat <<-EOERRORMSG
-		*** Failed to create the $user user.
-
-		Please add the $user user manually with the command:
-
-		    pw useradd -n $user -u $uid -g $group -c "$gcos" \\
-		       -d $home -s $shell -h -
-
-		and retry installing this package.
-		EOERRORMSG
-	    exit 1
-	fi
-    fi
-}
-
 
 case $2 in
-    PRE-INSTALL)
-
-        # Create the pma user and group if they do not already exist
-	create_group $pma_usr $pma_uid $pma_grp $pma_gid \
-                     "$pma_gcos" $pma_home $pma_shell
-	create_user  $pma_usr $pma_uid $pma_grp $pma_gid \
-                     "$pma_gcos" $pma_home $pma_shell
-	;;
 
     POST-INSTALL)
 
     	# Change ownership of the phpMyAdm directory
 
-        echo "===> Adjusting file ownership in $pma_dir"
-        chown -R $pma_usr:$pma_grp $pma_dir || exit 1
+        echo "===> Adjusting file ownership in $WWWDIR"
+        chown -R $pma_usr:$pma_grp $WWWDIR || exit 1
 	;;
 esac
 
