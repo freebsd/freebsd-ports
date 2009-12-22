@@ -16,6 +16,9 @@ DIST_SUBDIR=	mpd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4) [legacy version]
 
+DEPRECATED=	obsoleted, unsupported port. Use net/mpd4, net/mpd5 instead
+EXPIRATION_DATE=	2010-01-22
+
 # lang/mpd
 CONFLICTS=	mpd-[^3]*
 
