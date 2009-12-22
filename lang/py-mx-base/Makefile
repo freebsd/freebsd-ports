@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mx-base
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	lang python
 MASTER_SITES=	http://downloads.egenix.com/python/
-MASTER_SITE_SUBDIR=	tg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eGenix mx-Extension Series for Python
 
 USE_PYTHON=	yes
