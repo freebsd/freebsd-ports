@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME:S/50//}-${DISTVERSION}
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
+DEPRECATED=	Old version: please use databases/mysql-connector-java instead
+EXPIRATION_DATE=	2010-02-20
+
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
 CONFLICTS=	mysql-connector-java-5.1.*
