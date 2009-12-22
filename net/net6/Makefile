@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	net6
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.11
 CATEGORIES=	net devel
-MASTER_SITES=	http://releases.0x539.de/net6/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://releases.0x539.de/net6/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network access framework for IPv4/IPv6
@@ -17,19 +16,20 @@ COMMENT=	Network access framework for IPv4/IPv6
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
-USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262
 USE_GNOME=	gnomehack pkgconfig
+USE_AUTOTOOLS=	libtool:22
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-USE_ICONV=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-PLIST_SUB=	NLS=""
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .else
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB=	NLS="@comment "
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 .endif
 
 .include <bsd.port.mk>
