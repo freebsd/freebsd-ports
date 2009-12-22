@@ -1086,6 +1086,7 @@ blogd                           ports/www/blogd
 blogsum                         ports/www/blogsum
 blogtk                          ports/deskutils/blogtk
 blokish                         ports/games/blokish
+bloodfrontier                   ports/games/bloodfrontier
 blop                            ports/audio/blop
 blt                             ports/x11-toolkits/blt
 blue                            ports/games/blue
@@ -2882,6 +2883,7 @@ emacs-wget                      ports/ftp/emacs-wget
 emacs-wiki                      ports/textproc/emacs-wiki
 emacs.app                       ports/editors/emacs.app
 emacs21                         ports/editors/emacs21
+emacs22                         ports/editors/emacs22
 embassy                         ports/biology/embassy
 embedded_innodb                 ports/databases/embedded_innodb
 ember                           ports/games/ember
