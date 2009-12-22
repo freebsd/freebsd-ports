@@ -36,6 +36,9 @@
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.pyo
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.py
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.pyc
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.pyo
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testjohn.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testjohn.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testjohn.pyo
