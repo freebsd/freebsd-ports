@@ -1,0 +1,27 @@
+--- src/Makefile.in.bak	2009-11-05 01:32:15.000000000 +0900
++++ src/Makefile.in	2009-11-24 18:12:19.000000000 +0900
+@@ -51,7 +51,7 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ libvdk_@VDK_VERSION_MAJOR@_la_LIBADD =
+-am_libvdk_@VDK_VERSION_MAJOR@_la_OBJECTS = regex.lo gtksourcebuffer.lo \
++am_libvdk_@VDK_VERSION_MAJOR@_la_OBJECTS = gtksourcebuffer.lo \
+ 	gtktextsearch.lo gtksourcetag.lo gtksourceview.lo \
+ 	gtkundomanager.lo gtksourceview-marshal.lo gtktextregion.lo \
+ 	vdkeditor.lo gtkdatabox.lo gtkdataboxmarshal.lo \
+@@ -238,7 +238,6 @@
+ lib_LTLIBRARIES = libvdk-@VDK_VERSION_MAJOR@.la
+ vdkincludedir = $(includedir)/vdk-@VDK_VERSION_MAJOR@
+ libvdk_@VDK_VERSION_MAJOR@_la_SOURCES = \
+-	regex.c\
+ 	gtksourcebuffer.c\
+ 	gtktextsearch.c \
+ 	gtksourcetag.c\
+@@ -434,7 +433,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rawobj.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rawpixbuf.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rawpixmap.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/regex.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scrolled.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/separator.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/slider.Plo@am__quote@
