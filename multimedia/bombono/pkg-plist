@@ -1,0 +1,103 @@
+bin/bombono-dvd
+bin/mpeg2demux
+share/applications/bombono-dvd.desktop
+%%DATADIR%%/resources/about-back.png
+%%DATADIR%%/resources/about-front.png
+%%DATADIR%%/resources/area-back.jpg
+%%DATADIR%%/resources/button/001.ico
+%%DATADIR%%/resources/button/002.ico
+%%DATADIR%%/resources/button/003.ico
+%%DATADIR%%/resources/button/004.ico
+%%DATADIR%%/resources/button/005.ico
+%%DATADIR%%/resources/button/006.ico
+%%DATADIR%%/resources/button/007.ico
+%%DATADIR%%/resources/button/008.ico
+%%DATADIR%%/resources/button/still.ico
+%%DATADIR%%/resources/cap400.png
+%%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen.svg
+%%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/12.png
+%%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/16.png
+%%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/28.png
+%%DATADIR%%/resources/dvdmark.png
+%%DATADIR%%/resources/emblems/README
+%%DATADIR%%/resources/emblems/audio-x-generic.png
+%%DATADIR%%/resources/emblems/camera-photo.png
+%%DATADIR%%/resources/emblems/media-playback-start.png
+%%DATADIR%%/resources/emblems/media-playback-start_mini.png
+%%DATADIR%%/resources/emblems/stock_about.png
+%%DATADIR%%/resources/emblems/stock_graphic-styles.png
+%%DATADIR%%/resources/emblems/stock_navigator-open-toolbar.png
+%%DATADIR%%/resources/emblems/tmp/applets-screenshooter.png
+%%DATADIR%%/resources/emblems/tmp/application-x-executable.png
+%%DATADIR%%/resources/emblems/tmp/applications-multimedia.png
+%%DATADIR%%/resources/emblems/tmp/audio-volume-high.png
+%%DATADIR%%/resources/emblems/tmp/emblem-new.png
+%%DATADIR%%/resources/emblems/tmp/media-optical.png
+%%DATADIR%%/resources/emblems/tmp/stock_3dsound.png
+%%DATADIR%%/resources/emblems/tmp/stock_animation.png
+%%DATADIR%%/resources/emblems/tmp/stock_color.png
+%%DATADIR%%/resources/emblems/tmp/stock_draw-circle.png
+%%DATADIR%%/resources/emblems/tmp/stock_draw-rounded-square.png
+%%DATADIR%%/resources/emblems/tmp/stock_effects-sound.png
+%%DATADIR%%/resources/emblems/tmp/stock_form-image-button.png
+%%DATADIR%%/resources/emblems/tmp/stock_headphones.png
+%%DATADIR%%/resources/emblems/tmp/stock_insert-sound-plugin.png
+%%DATADIR%%/resources/emblems/tmp/stock_insert-video-plugin.png
+%%DATADIR%%/resources/emblems/tmp/stock_navigator.png
+%%DATADIR%%/resources/emblems/tmp/stock_shadow.png
+%%DATADIR%%/resources/emblems/tmp/stock_signature.png
+%%DATADIR%%/resources/emblems/tmp/stock_tools-macro.png
+%%DATADIR%%/resources/emblems/tmp/stock_video-conferencing.png
+%%DATADIR%%/resources/emblems/tmp/stock_wallpaper-fill.png
+%%DATADIR%%/resources/emblems/tmp/weather-clear-night.png
+%%DATADIR%%/resources/emblems/tmp/weather-clear.png
+%%DATADIR%%/resources/emblems/video-x-generic.png
+%%DATADIR%%/resources/frames/cell/frame.png
+%%DATADIR%%/resources/frames/cell/vframe.png
+%%DATADIR%%/resources/frames/gradient/frame.png
+%%DATADIR%%/resources/frames/gradient/vframe.png
+%%DATADIR%%/resources/frames/make_menu.sh
+%%DATADIR%%/resources/frames/ogradient/frame.png
+%%DATADIR%%/resources/frames/ogradient/vframe.png
+%%DATADIR%%/resources/frames/oval/frame.png
+%%DATADIR%%/resources/frames/oval/vframe.png
+%%DATADIR%%/resources/frames/rect/frame.png
+%%DATADIR%%/resources/frames/rect/vframe.png
+%%DATADIR%%/resources/frames/roundrect/frame.png
+%%DATADIR%%/resources/frames/roundrect/vframe.png
+%%DATADIR%%/resources/frames/samples/background.png
+%%DATADIR%%/resources/frames/stonerect/frame.png
+%%DATADIR%%/resources/frames/stonerect/vframe.png
+%%DATADIR%%/resources/gtkrc
+%%DATADIR%%/resources/icons/bombono-dvd_128px.png
+%%DATADIR%%/resources/icons/bombono-dvd_16px.png
+%%DATADIR%%/resources/icons/bombono-dvd_32px.png
+%%DATADIR%%/resources/icons/bombono-dvd_48px.png
+%%DATADIR%%/resources/icons/bombono-dvd_64px.png
+%%DATADIR%%/resources/scons_authoring/ADVD.py
+%%DATADIR%%/resources/scons_authoring/README
+%%DATADIR%%/resources/scons_authoring/SConsTwin.py
+%%DATADIR%%/resources/scons_authoring/SConstruct
+%%DATADIR%%/resources/scons_authoring/menu_SConscript
+%%DATADIR%%/resources/tool-pointer.png
+%%DATADIR%%/resources/tool-text.png
+share/pixmaps/bombono-dvd.png
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/resources/scons_authoring
+@dirrm %%DATADIR%%/resources/icons
+@dirrm %%DATADIR%%/resources/frames/stonerect
+@dirrm %%DATADIR%%/resources/frames/samples
+@dirrm %%DATADIR%%/resources/frames/roundrect
+@dirrm %%DATADIR%%/resources/frames/rect
+@dirrm %%DATADIR%%/resources/frames/oval
+@dirrm %%DATADIR%%/resources/frames/ogradient
+@dirrm %%DATADIR%%/resources/frames/gradient
+@dirrm %%DATADIR%%/resources/frames/cell
+@dirrm %%DATADIR%%/resources/frames
+@dirrm %%DATADIR%%/resources/emblems/tmp
+@dirrm %%DATADIR%%/resources/emblems
+@dirrm %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen
+@dirrm %%DATADIR%%/resources/copy-n-paste
+@dirrm %%DATADIR%%/resources/button
+@dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%

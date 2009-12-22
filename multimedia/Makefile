@@ -19,6 +19,7 @@
     SUBDIR += beep-media-player
     SUBDIR += bmp-extra-plugins
     SUBDIR += bmpx
+    SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += castpodder
