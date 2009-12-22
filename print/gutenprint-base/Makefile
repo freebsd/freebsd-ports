@@ -7,10 +7,10 @@
 #
 
 PORTNAME?=	gutenprint
-PORTVERSION=	5.1.7
-PORTREVISION?=	2
+PORTVERSION=	5.2.4
+PORTREVISION?=	0
 CATEGORIES=	print
-MASTER_SITES=	SF/gimp-print/gutenprint-5.1/${PORTVERSION}
+MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -60,8 +60,7 @@ RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
 CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
 			--enable-cups-ppds \
 			--enable-cups-level3-ppds
-MAN8+=	cups-calibrate.8 cups-genppd.8 cups-genppdconfig.8 \
-	cups-genppdupdate.8
+MAN8+=	cups-calibrate.8 cups-genppd.8 cups-genppdupdate.8
 BUILD_WRKSRC=	${WRKSRC}/src/cups
 INSTALL_WRKSRC=	${WRKSRC}/src/cups
 .else
@@ -108,6 +107,11 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|= $$(pkglibdir)|= ${PREFIX}/libexec/cups|' \
 		${WRKSRC}/src/cups/Makefile.in
+
+pre-build:
+.if defined(GUT_SLAVE) && (${GUT_SLAVE}=="foomatic" || ${GUT_SLAVE}=="cups")
+	@(cd ${WRKSRC}/src/xml && ${MAKE})
+.endif
 
 post-install:
 .if ${SLAVE_PORT}=="yes"
