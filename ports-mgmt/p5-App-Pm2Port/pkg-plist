@@ -1,0 +1,6 @@
+bin/pm2port
+%%SITE_PERL%%/App/Pm2Port.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Pm2Port/.packlist
+@dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Pm2Port
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
