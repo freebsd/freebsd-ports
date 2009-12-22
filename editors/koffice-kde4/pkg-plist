@@ -2984,8 +2984,8 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/koffice/icons/hicolor/16x16
 @dirrm share/apps/koffice/icons/hicolor
 @dirrm share/apps/koffice/icons
-@dirrm share/apps/koffice/autocorrect
-@dirrm share/apps/koffice
+@dirrmtry share/apps/koffice/autocorrect
+@dirrmtry share/apps/koffice
 @dirrm share/apps/kformula
 @dirrm share/apps/kchart/templates/chart/.source
 @dirrm share/apps/kchart/templates/chart
