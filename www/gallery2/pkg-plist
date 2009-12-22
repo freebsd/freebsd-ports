@@ -853,6 +853,8 @@
 %%WWWDIR%%/modules/comment/po/ru.po
 %%WWWDIR%%/modules/comment/po/sk.mo
 %%WWWDIR%%/modules/comment/po/sk.po
+%%WWWDIR%%/modules/comment/po/sl.mo
+%%WWWDIR%%/modules/comment/po/sl.po
 %%WWWDIR%%/modules/comment/po/sr.mo
 %%WWWDIR%%/modules/comment/po/sr.po
 %%WWWDIR%%/modules/comment/po/strings.raw
@@ -989,9 +991,9 @@
 %%WWWDIR%%/modules/core/classes/GalleryPersistent.class
 %%WWWDIR%%/modules/core/classes/GalleryPhotoItem.class
 %%WWWDIR%%/modules/core/classes/GalleryPhpVm.class
+%%WWWDIR%%/modules/core/classes/GalleryPlatform.class
 %%WWWDIR%%/modules/core/classes/GalleryPlatform/UnixPlatform.class
 %%WWWDIR%%/modules/core/classes/GalleryPlatform/WinNtPlatform.class
-%%WWWDIR%%/modules/core/classes/GalleryPlatform.class
 %%WWWDIR%%/modules/core/classes/GalleryPlugin.class
 %%WWWDIR%%/modules/core/classes/GalleryRenderer.class
 %%WWWDIR%%/modules/core/classes/GalleryRepository.class
@@ -1001,6 +1003,7 @@
 %%WWWDIR%%/modules/core/classes/GallerySmarty.class
 %%WWWDIR%%/modules/core/classes/GallerySortInterface_1_2.class
 %%WWWDIR%%/modules/core/classes/GalleryStatus.class
+%%WWWDIR%%/modules/core/classes/GalleryStorage.class
 %%WWWDIR%%/modules/core/classes/GalleryStorage/Db2CreateUdfs.sql
 %%WWWDIR%%/modules/core/classes/GalleryStorage/Db2Storage.class
 %%WWWDIR%%/modules/core/classes/GalleryStorage/GNUmakefile
@@ -1047,7 +1050,6 @@
 %%WWWDIR%%/modules/core/classes/GalleryStorage/xml-src/T_InstallerTest_2.xml
 %%WWWDIR%%/modules/core/classes/GalleryStorage/xml-src/T_InstallerTest_3.xml
 %%WWWDIR%%/modules/core/classes/GalleryStorage/xml-src/T_InstallerTest_4.xml
-%%WWWDIR%%/modules/core/classes/GalleryStorage.class
 %%WWWDIR%%/modules/core/classes/GalleryTemplate.class
 %%WWWDIR%%/modules/core/classes/GalleryTemplateAdapter.class
 %%WWWDIR%%/modules/core/classes/GalleryTheme.class
@@ -4421,11 +4423,17 @@
 %%WWWDIR%%/modules/notification/po/pl.po
 %%WWWDIR%%/modules/notification/po/ru.mo
 %%WWWDIR%%/modules/notification/po/ru.po
+%%WWWDIR%%/modules/notification/po/sk.mo
+%%WWWDIR%%/modules/notification/po/sk.po
+%%WWWDIR%%/modules/notification/po/sl.mo
+%%WWWDIR%%/modules/notification/po/sl.po
 %%WWWDIR%%/modules/notification/po/sr.mo
 %%WWWDIR%%/modules/notification/po/sr.po
 %%WWWDIR%%/modules/notification/po/strings.raw
 %%WWWDIR%%/modules/notification/po/sv.mo
 %%WWWDIR%%/modules/notification/po/sv.po
+%%WWWDIR%%/modules/notification/po/zh_TW.mo
+%%WWWDIR%%/modules/notification/po/zh_TW.po
 %%WWWDIR%%/modules/notification/templates/NotificationEmail.tpl
 %%WWWDIR%%/modules/notification/templates/NotificationItemAdmin.tpl
 %%WWWDIR%%/modules/notification/templates/NotificationSiteAdmin.tpl
@@ -5310,6 +5318,8 @@
 %%WWWDIR%%/modules/register/po/ru.po
 %%WWWDIR%%/modules/register/po/sk.mo
 %%WWWDIR%%/modules/register/po/sk.po
+%%WWWDIR%%/modules/register/po/sl.mo
+%%WWWDIR%%/modules/register/po/sl.po
 %%WWWDIR%%/modules/register/po/sr.mo
 %%WWWDIR%%/modules/register/po/sr.po
 %%WWWDIR%%/modules/register/po/strings.raw
@@ -5936,6 +5946,8 @@
 %%WWWDIR%%/modules/shutterfly/po/ro.po
 %%WWWDIR%%/modules/shutterfly/po/ru.mo
 %%WWWDIR%%/modules/shutterfly/po/ru.po
+%%WWWDIR%%/modules/shutterfly/po/sk.mo
+%%WWWDIR%%/modules/shutterfly/po/sk.po
 %%WWWDIR%%/modules/shutterfly/po/sr.mo
 %%WWWDIR%%/modules/shutterfly/po/sr.po
 %%WWWDIR%%/modules/shutterfly/po/strings.raw
@@ -5995,6 +6007,8 @@
 %%WWWDIR%%/modules/sitemap/po/ro.po
 %%WWWDIR%%/modules/sitemap/po/ru.mo
 %%WWWDIR%%/modules/sitemap/po/ru.po
+%%WWWDIR%%/modules/sitemap/po/sk.mo
+%%WWWDIR%%/modules/sitemap/po/sk.po
 %%WWWDIR%%/modules/sitemap/po/sr.mo
 %%WWWDIR%%/modules/sitemap/po/sr.po
 %%WWWDIR%%/modules/sitemap/po/strings.raw
