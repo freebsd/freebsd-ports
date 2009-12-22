@@ -7,12 +7,13 @@
 
 PORTNAME=	drood
 PORTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Lightweight kqueue-based http/1.1 server
-LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
 
 MAN8=           drood.8 scgid.8
 

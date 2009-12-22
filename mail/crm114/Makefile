@@ -6,6 +6,7 @@
 
 PORTNAME=	crm114
 PORTVERSION=	20090423
+PORTREVISION=	1
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -19,7 +20,7 @@ DISTNAME=	${PORTNAME}-200904023-${CRM114RELEASENAME}.src
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	A Markov based SpamFilter
 
-LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
 
 CRM114RELEASENAME=BlameSteveJobs
 
