@@ -7,6 +7,7 @@
 
 PORTNAME=	diffuse
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -20,7 +21,6 @@ USE_GNOME=	pygtk2
 USE_BZIP2=	yes
 
 MAN1=		diffuse.1
-PORTDATA=	syntax
 
 OPTIONS=	MENU	"Add desktop menu (needs desktop-file-utils)"	on \
 		OMF	"Install OMF manual (needs scrollkeeper)"	on \
@@ -30,6 +30,10 @@ OPTIONS=	MENU	"Add desktop menu (needs desktop-file-utils)"	on \
 
 .ifndef (NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING ChangeLog README
+.endif
+
+.ifndef (NOPORTDATA)
+PORTDATA=	syntax
 .endif
 
 .ifdef (WITH_MENU)
@@ -56,8 +60,18 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
+.ifndef (NOPORTDATA)
 	${REINPLACE_CMD} -e 's|../usr|${PREFIX}|g; s|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/src/etc/${PORTNAME}rc
+.else
+	${REINPLACE_CMD} -e 's|import ../usr|\#(Disabled by NOPORTDATA !) \
+		import ${PREFIX}|g; s|/etc|${PREFIX}/etc|g' \
+		${WRKSRC}/src/etc/${PORTNAME}rc
+.endif
+
+	${REINPLACE_CMD} -e 's|../../etc|${PREFIX}/etc|g' \
+		${WRKSRC}/src/usr/bin/${PORTNAME}
+
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/src/usr/share/omf/${PORTNAME}/${PORTNAME}-C.omf
 
@@ -67,9 +81,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/etc/${PORTNAME}rc ${PREFIX}/etc/
 
 post-install:
-	${MKDIR} ${DATADIR}/syntax
-	(cd ${WRKSRC}/src/usr/share/${PORTNAME}/ && \
-		${COPYTREE_SHARE} \* ${DATADIR}/)
 	${INSTALL_MAN} ${WRKSRC}/src/usr/share/man/man1/*.1 \
 		${MANPREFIX}/man/man1/
 
@@ -78,6 +89,12 @@ post-install:
 	for n in ${PORTDOCS}; do \
 		${INSTALL_MAN} ${WRKSRC}/$${n} ${DOCSDIR}/; \
 	done
+.endif
+
+.ifndef (NOPORTDATA)
+	${MKDIR} ${DATADIR}/syntax
+	(cd ${WRKSRC}/src/usr/share/${PORTNAME}/ && \
+		${COPYTREE_SHARE} \* ${DATADIR}/)
 .endif
 
 .ifndef (WITHOUT_NLS)
