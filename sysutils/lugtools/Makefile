@@ -46,4 +46,10 @@ do-build:
 do-install:
 	@${EXEC} cd ${WRKSRC} ; ${WRKSRC}/install ${PREFIX}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
