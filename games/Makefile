@@ -354,6 +354,7 @@
     SUBDIR += gtktetcolor
     SUBDIR += gturing
     SUBDIR += gtypist
+    SUBDIR += gunfudeadlands
     SUBDIR += gweled
     SUBDIR += hangman
     SUBDIR += hattrickorganizer
