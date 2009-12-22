@@ -7,6 +7,7 @@
 
 PORTNAME=	opendkim
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF/opendkim
 

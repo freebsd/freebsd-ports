@@ -7,6 +7,7 @@
 
 PORTNAME=	streamripper
 PORTVERSION=	1.64.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28current%29/${PORTVERSION} \
 		http://gd.tuwien.ac.at/hci/cdk/:cdk
@@ -18,7 +19,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		tre.6:${PORTSDIR}/textproc/libtre
+		tre.5:${PORTSDIR}/textproc/libtre
 
 OPTIONS=	FAAD "Include FAAD mpeg4 codec support" on \
 		VORBIS "Include Ogg Vorbis codec support" on
