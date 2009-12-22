@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mwlib.ext
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Provide Dependencies for mwlib
 
 USE_PYTHON=		2.5+
