@@ -57,6 +57,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
+		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord modle" off
 
 WANT_GNOME=	yes
@@ -307,6 +308,13 @@ PASSENGER_VERSION=	2.2.8
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
+.endif
+
+.if defined(WITH_SLOWFS_CACHE_MODULE)
+NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.1
+MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
+DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
 .endif
 
 .if defined(WITH_SUPERVISORD_MODULE)
