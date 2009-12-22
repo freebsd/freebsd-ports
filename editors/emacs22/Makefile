@@ -66,6 +66,8 @@ INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 		org pcl-cvs pgg rcirc reftex sc ses sieve smtpmail speedbar \
 		tramp url vip viper widget woman
 
+LATEST_LINK=	emacs22
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

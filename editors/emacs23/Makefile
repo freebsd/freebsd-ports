@@ -77,8 +77,6 @@ INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
 		org pcl-cvs pgg rcirc reftex remember sasl sc ses sieve \
 		smtpmail speedbar tramp url vip viper widget woman
 
-LATEST_LINK=	emacs23
-
 OPTIONS=	SOURCES	"Install source code"	ON
 
 .include <bsd.port.pre.mk>

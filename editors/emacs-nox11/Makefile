@@ -9,5 +9,6 @@ WITHOUT_X11=    yes
 PKGNAMESUFFIX=	-nox11
 
 MASTERDIR=      ${.CURDIR}/../emacs
+LATEST_LINK=	emacs-nox11
 
 .include "${MASTERDIR}/Makefile"
