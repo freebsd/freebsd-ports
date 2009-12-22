@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION?=	4.2.4p7
+PORTVERSION?=	4.2.6p1.r1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
@@ -20,7 +20,7 @@ COMMENT=	The Network Time Protocol Distribution
 LATEST_LINK=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19
+USE_AUTOTOOLS=	automake:110
 
 .if defined(ENABLE_RAWDCF)
 CONFIGURE_ARGS+=	--enable-RAWDCF
@@ -39,12 +39,15 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 MAN1=		sntp.1 \
 		ntpd.1 \
-		ntpdsim.1 \
 		ntpdc.1 \
 		ntpq.1 \
+		ntpsnmpd.1 \
 		ntp-keygen.1 \
 
 .include <bsd.port.pre.mk>
+
+pre-configure:
+	@cd ${WRKSRC} && ./bootstrap
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
