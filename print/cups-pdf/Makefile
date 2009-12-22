@@ -17,8 +17,6 @@ COMMENT=	A virtual printer for CUPS to produce PDF files
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
-BROKEN=		does not install
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GHOSTSCRIPT_RUN=	yes
@@ -83,9 +81,12 @@ do-build:
 	cd ${WRKSRC}/src; ${CC} ${CFLAGS} -o cups-pdf cups-pdf.c
 
 do-install:
+	${MKDIR} ${PREFIX}/libexec/cups/backend
 	${INSTALL} -o root -g wheel -m 0700 ${WRKSRC}/src/cups-pdf ${PREFIX}/libexec/cups/backend
+	${MKDIR} ${PREFIX}/share/cups/model
 	${INSTALL_DATA} ${WRKSRC}/extra/CUPS-PDF.ppd \
 	${PREFIX}/share/cups/model/CUPS-PDF.ppd
+	${MKDIR} ${PREFIX}/etc/cups
 	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
 	${PREFIX}/etc/cups/cups-pdf.conf.sample
 .if !defined(NOPORTDOCS)
