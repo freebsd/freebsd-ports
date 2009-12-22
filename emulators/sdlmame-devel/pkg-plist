@@ -11,7 +11,7 @@ libexec/sdlmame-devel/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0135u1.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0135u3.txt
 %%DATADIR%%/ui.bdf
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
