@@ -236,3 +236,4 @@ share/locale/de/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/de/kchart
 @dirrm share/doc/HTML/de/karbon
 @dirrmtry share/apps/koffice/autocorrect
+@dirrmtry share/apps/koffice

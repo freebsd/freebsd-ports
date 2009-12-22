@@ -338,3 +338,4 @@ share/locale/fr/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/fr/kchart
 @dirrm share/doc/HTML/fr/karbon
 @dirrmtry share/apps/koffice/autocorrect
+@dirrmtry share/apps/koffice

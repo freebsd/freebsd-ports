@@ -149,3 +149,4 @@ share/locale/ca/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/ca/kchart
 @dirrm share/doc/HTML/ca/karbon
 @dirrmtry share/apps/koffice/autocorrect
+@dirrmtry share/apps/koffice
