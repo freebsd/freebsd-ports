@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vagalume
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	audio
 MASTER_SITES=	http://vagalume.igalia.com/files/source/ \
 		${MASTER_SITE_DEBIAN_POOL}
@@ -69,5 +69,9 @@ CONFIGURE_ARGS+=--enable-gconf
 post-patch:
 	@${REINPLACE_CMD} -e 's|serviceentrydir = @serviceentrydir@|serviceentrydir = ${PREFIX}/share/dbus-1/services|' \
 		${WRKSRC}/Makefile.in
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e 's|SUBDIRS = src po|SUBDIRS = src|' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.post.mk>
