@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
@@ -54,6 +54,8 @@ PLIST_FILES+=	libdata/bonobo/servers/pnee.server \
 PNEE_DIR=	%%DATADIR%%/pixmaps
 .else
 CONFIGURE_ARGS+=	--disable-gnome-applet
+CONFIGURE_ENV+=	libgnomeui_CFLAGS="${TRUE}" \
+		libgnomeui_LIBS="${TRUE}"
 .endif
 
 post-patch:
@@ -69,15 +71,14 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|: install-docDATA|:|g' ${WRKSRC}/cnee/src/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|src test|src|g' ${WRKSRC}/libxnee/Makefile.in
+		's|$$(libgnomeui_CFLAGS)||g ; \
+		 s|$$(libgnomeui_LIBS)||g' ${WRKSRC}/gnee/src/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|ap=NULL;|ap;|g' ${WRKSRC}/libxnee/src/feedback.c
+		's|src test|src|g' ${WRKSRC}/libxnee/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|cp pnee|$$(INSTALL_DATA) pnee|g' ${WRKSRC}/pnee/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
-	@${REINPLACE_CMD} -e \
-		'/<gnome.h>/d' ${WRKSRC}/pnee/src/pnee_impl.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
