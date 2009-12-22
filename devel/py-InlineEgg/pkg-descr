@@ -1,0 +1,8 @@
+InlineEgg is a Python module that provides the user with a toolbox of
+convenient classes for writing small assembly programs. Only that instead of
+having to remember confusing assembly mnemonics and requiring the developer
+to remember how to use complex tools like assemblers and linkers, everything
+is done the easy way: in Python. InlineEgg is oriented - but not limited -
+to developing shellcode (sometimes called eggs) for use in exploits.
+
+WWW:	http://oss.corest.com/projects/inlineegg.html
