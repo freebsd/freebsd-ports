@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/inlineegg/WindowsSyscall.py
+%%PYTHON_SITELIBDIR%%/inlineegg/WindowsSyscall.pyc
+%%PYTHON_SITELIBDIR%%/inlineegg/WindowsSyscall.pyo
+%%PYTHON_SITELIBDIR%%/inlineegg/__init__.py
+%%PYTHON_SITELIBDIR%%/inlineegg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/inlineegg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/inlineegg/exelib.py
+%%PYTHON_SITELIBDIR%%/inlineegg/exelib.pyc
+%%PYTHON_SITELIBDIR%%/inlineegg/exelib.pyo
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg.py
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg.pyc
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg.pyo
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg_test.py
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg_test.pyc
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg_test.pyo
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg_win_test.py
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg_win_test.pyc
+%%PYTHON_SITELIBDIR%%/inlineegg/inlineegg_win_test.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/inlineegg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example5.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example6.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xored_shell_client.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

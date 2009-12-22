@@ -2410,6 +2410,7 @@
     SUBDIR += py-Breve
     SUBDIR += py-BytecodeAssembler
     SUBDIR += py-EnthoughtBase
+    SUBDIR += py-InlineEgg
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
     SUBDIR += py-PEAK-Rules
