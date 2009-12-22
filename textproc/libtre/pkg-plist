@@ -1,10 +1,11 @@
 bin/tre_agrep
 include/tre/regex.h
+include/tre/tre.h
 include/tre/tre-config.h
 lib/libtre.a
 lib/libtre.la
 lib/libtre.so
-lib/libtre.so.6
+lib/libtre.so.5
 libdata/pkgconfig/tre.pc
 %%NLS%%share/locale/fi/LC_MESSAGES/tre.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tre.mo
