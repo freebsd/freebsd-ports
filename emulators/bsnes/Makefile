@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	bsnes
-PORTVERSION=	0.57
-PORTREVISION=	1
+PORTVERSION=	0.58
 CATEGORIES=	emulators
 MASTER_SITES=	http://byuu.org/files/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}${EXTRACT_SUFX} snesreader_v009${EXTRACT_SUFX} \
-		snesfilter_v006${EXTRACT_SUFX} supergameboy_v013
+DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}${EXTRACT_SUFX} snesreader_v010${EXTRACT_SUFX} \
+		snesfilter_v007${EXTRACT_SUFX} supergameboy_v014
 
 MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	Super Nintendo/Super Famicom emulator
