@@ -21,6 +21,7 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.3
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.4
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.5
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.6
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.60.0
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
@@ -58,6 +59,12 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/core/mimetypes_.py
 %%PYTHON_SITELIBDIR%%/itools/core/mimetypes_.pyc
 %%PYTHON_SITELIBDIR%%/itools/core/mimetypes_.pyo
+%%PYTHON_SITELIBDIR%%/itools/core/py25.py
+%%PYTHON_SITELIBDIR%%/itools/core/py25.pyc
+%%PYTHON_SITELIBDIR%%/itools/core/py25.pyo
+%%PYTHON_SITELIBDIR%%/itools/core/py26.py
+%%PYTHON_SITELIBDIR%%/itools/core/py26.pyc
+%%PYTHON_SITELIBDIR%%/itools/core/py26.pyo
 %%PYTHON_SITELIBDIR%%/itools/core/subprocess_.py
 %%PYTHON_SITELIBDIR%%/itools/core/subprocess_.pyc
 %%PYTHON_SITELIBDIR%%/itools/core/subprocess_.pyo
