@@ -16,6 +16,9 @@ DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
+OPTIONS=	SSL "Build with OpenSSL support (requires >= 7.x)" on \
+		TCP_WRAPPERS "Build with TCP Wrappers" off 
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 
@@ -35,19 +38,18 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
 CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` ${CFLAGS}" \
-		LDFLAGS="`${LIBNET_CONFIG} --libs` ${LDFLAGS}" \
-		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
-		OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
+		LDFLAGS="`${LIBNET_CONFIG} --libs` ${LDFLAGS}" 
 
+.if defined (WITH_SSL)
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
+		OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
+.endif
 
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=--enable-tcp-wrapper
 .endif
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 700000
-BROKEN=		Does not build under FreeBSD 6.4
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
