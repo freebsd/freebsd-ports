@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.6
+PORTVERSION=	2.13.9
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
@@ -42,11 +42,9 @@ OPTIONS=	WEBDOCS	"Include web documentation" off
 MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
 		lilypond.1 lilysong.1 convert-ly.1 abc2ly.1 etf2ly.1 \
 		midi2ly.1 musicxml2ly.1
-
 INFO=		lilypond-changes lilypond-contributor lilypond-essay \
-		lilypond-extending lilypond-general lilypond-internals \
-		lilypond-learning lilypond-notation lilypond-usage \
-		music-glossary
+		lilypond-extending lilypond-internals lilypond-learning \
+		lilypond-notation lilypond-usage lilypond-web music-glossary
 
 USE_AUTOTOOLS=	autoconf:262
 USE_BISON=	build
@@ -57,7 +55,7 @@ USE_GNOME=	pango
 INSTALLS_OMF=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" MAKEINFO="${LOCALBASE}/bin/makeinfo"
+CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 NOCCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -85,18 +83,22 @@ post-patch:
 	    ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
 	    ${WRKSRC}/lily/include/includable-lexer.hh
-#	Documentation in Spanish does not build...
-	${REINPLACE_CMD} -e '70s|es, ||' ${WRKSRC}/python/langdefs.py
 	${REINPLACE_CMD} -e 's|sed|gsed|g' ${WRKSRC}/Documentation/GNUmakefile
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e '17,21d' ${WRKSRC}/po/GNUmakefile
+.endif
+
+pre-install:
+.if exists(${PREFIX}/info/dir)
+	${REINPLACE_CMD} -i '' -e '/LilyPond/d' ${PREFIX}/info/dir
 .endif
 
 post-install:
 	@${LN} -s ${DATADIR}/${PORTVERSION} ${DATADIR}/current
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
 	@echo "Installing documentation... this takes a while..."
-	@(cd ${WRKSRC}/out-www/offline-root && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	cd ${WRKSRC} && ${GMAKE} install-doc
+#	@(cd ${WRKSRC}/out-www/offline-root && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>

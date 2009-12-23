@@ -1,3 +1,5 @@
+
+
 bin/lilypond-book
 bin/lilypond-invoke-editor
 bin/lilypond
@@ -165,6 +167,7 @@ share/locale/zh_TW/LC_MESSAGES/lilypond.mo
 %%DATADIR%%/%%PORTVERSION%%/ly/bagpipe.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/catalan.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/chord-modifiers-init.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/chord-repetition-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/declarations-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/deutsch.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/drumpitch-init.ly
@@ -194,6 +197,7 @@ share/locale/zh_TW/LC_MESSAGES/lilypond.mo
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-fretboards-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-guitar-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-guitar-ninth-fretboards.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/predefined-ukulele-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/property-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/scale-definitions-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/script-init.ly
@@ -16857,4 +16861,3 @@ share/locale/zh_TW/LC_MESSAGES/lilypond.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%/dvips
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
-@dirrmtry info/dir
