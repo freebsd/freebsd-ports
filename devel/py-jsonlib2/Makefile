@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jsonlib2
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	JSON Serializer/Deserializer for Python
 
 USE_PYTHON=		yes
