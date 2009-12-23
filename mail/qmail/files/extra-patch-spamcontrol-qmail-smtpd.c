@@ -1,6 +1,6 @@
---- qmail-smtpd.c.orig	2009-06-16 13:17:52.000000000 -0300
-+++ qmail-smtpd.c	2009-06-16 13:20:56.000000000 -0300
-@@ -137,6 +137,27 @@
+--- qmail-smtpd.c.orig	2009-12-23 15:20:45.000000000 -0200
++++ qmail-smtpd.c	2009-12-23 15:23:40.000000000 -0200
+@@ -136,6 +136,27 @@
    logs(s1,s2,s3,s4,s5,s6,s7);
    return;
    }
@@ -28,7 +28,7 @@
  void err_brcptto(s1,s2,s3,s4,s5,s6,s7) char *s1, *s2, *s3, *s4, *s5, *s6, *s7; {
    out("550 sorry, your envelope recipient is in my badrcptto list (#5.7.1)\r\n");
    logs(s1,s2,s3,s4,s5,s6,s7);
-@@ -281,6 +302,8 @@
+@@ -282,6 +303,8 @@
  
  char *auth;
  char *reqauth;
@@ -44,10 +44,10 @@
 +  rbl2smtpd = env_get("RBL2SMTPD");
 +  rblmatch = env_get("RBLMATCH");
 +
- #ifdef DELIVERTO
    delivermailto = env_get("DELIVERTO");
- #endif
-@@ -888,6 +914,10 @@
+   if (delivermailto) {
+     if (!stralloc_cats(&mailto,delivermailto)) die_nomem();
+@@ -909,6 +935,10 @@
        return; 
      }
  
