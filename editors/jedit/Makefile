@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	4.2
-PORTREVISION=	3
+PORTVERSION=	4.3
+PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}install
+DISTNAME=	${PORTNAME}${PORTVERSION}install
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -19,10 +19,10 @@ COMMENT=	Powerful programmer\'s text editor written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-CONFLICTS=	jedit-4.3*
+CONFLICTS=	jedit-4.3.p*
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 USE_XORG=	x11
 NO_BUILD=	yes
@@ -46,6 +46,5 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
