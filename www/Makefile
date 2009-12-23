@@ -1045,6 +1045,7 @@
     SUBDIR += p5-Plack-Request
     SUBDIR += p5-Plack-Server-AnyEvent
     SUBDIR += p5-Plack-Server-Coro
+    SUBDIR += p5-Plack-Server-POE
     SUBDIR += p5-Plack-Server-ReverseHTTP
     SUBDIR += p5-Plack-Server-ServerSimple
     SUBDIR += p5-PodToHTML
