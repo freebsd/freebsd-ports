@@ -1148,6 +1148,7 @@ bomb                            ports/games/bomb
 bomberclone                     ports/games/bomberclone
 bomberinstinct                  ports/games/bomberinstinct
 bombermaze                      ports/games/bombermaze
+bombono                         ports/multimedia/bombono
 bomns                           ports/games/bomns
 bomstrip                        ports/textproc/bomstrip
 bonk                            ports/audio/bonk
@@ -2168,6 +2169,7 @@ de-kde3-i18n                    ports/german/kde3-i18n
 de-kde4-l10n                    ports/german/kde4-l10n
 de-kheisereg                    ports/german/kheisereg
 de-koffice-i18n                 ports/german/koffice-i18n
+de-koffice-kde4-l10n            ports/german/koffice-kde4-l10n
 de-ksteak                       ports/german/ksteak
 de-linux-eagle                  ports/german/linux-eagle
 de-manpages                     ports/german/manpages
@@ -3660,6 +3662,7 @@ fr-jdictionary-fre-hun          ports/french/jdictionary-fre-hun
 fr-kde3-i18n                    ports/french/kde3-i18n
 fr-kde4-l10n                    ports/french/kde4-l10n
 fr-koffice-i18n                 ports/french/koffice-i18n
+fr-koffice-kde4-l10n            ports/french/koffice-kde4-l10n
 fr-med                          ports/french/med
 fr-mozilla-flp                  ports/french/mozilla-flp
 fr-php_doc                      ports/french/php_doc
@@ -5935,6 +5938,7 @@ ja-kde4-l10n                    ports/japanese/kde4-l10n
 ja-kdrill                       ports/japanese/kdrill
 ja-kinput2                      ports/japanese/kinput2
 ja-koffice-i18n                 ports/japanese/koffice-i18n
+ja-koffice-kde4-l10n            ports/japanese/koffice-kde4-l10n
 ja-kon2-14dot                   ports/japanese/kon2-14dot
 ja-kon2-16dot                   ports/japanese/kon2-16dot
 ja-kpcal                        ports/japanese/kpcal
@@ -6986,6 +6990,26 @@ koffice-i18n-ven                ports/editors/koffice-i18n-ven
 koffice-i18n-xh                 ports/editors/koffice-i18n-xh
 koffice-i18n-zu                 ports/editors/koffice-i18n-zu
 koffice-kde3                    ports/editors/koffice-kde3
+koffice-kde4                    ports/editors/koffice-kde4
+koffice-kde4-l10n               ports/editors/koffice-kde4-l10n
+koffice-kde4-l10n-ca            ports/editors/koffice-kde4-l10n-ca
+koffice-kde4-l10n-da            ports/editors/koffice-kde4-l10n-da
+koffice-kde4-l10n-el            ports/editors/koffice-kde4-l10n-el
+koffice-kde4-l10n-en_GB         ports/editors/koffice-kde4-l10n-en_GB
+koffice-kde4-l10n-en_gb         ports/editors/koffice-kde4-l10n-en_GB
+koffice-kde4-l10n-es            ports/editors/koffice-kde4-l10n-es
+koffice-kde4-l10n-et            ports/editors/koffice-kde4-l10n-et
+koffice-kde4-l10n-fy            ports/editors/koffice-kde4-l10n-fy
+koffice-kde4-l10n-gl            ports/editors/koffice-kde4-l10n-gl
+koffice-kde4-l10n-hne           ports/editors/koffice-kde4-l10n-hne
+koffice-kde4-l10n-it            ports/editors/koffice-kde4-l10n-it
+koffice-kde4-l10n-kk            ports/editors/koffice-kde4-l10n-kk
+koffice-kde4-l10n-nb            ports/editors/koffice-kde4-l10n-nb
+koffice-kde4-l10n-nds           ports/editors/koffice-kde4-l10n-nds
+koffice-kde4-l10n-nl            ports/editors/koffice-kde4-l10n-nl
+koffice-kde4-l10n-sv            ports/editors/koffice-kde4-l10n-sv
+koffice-kde4-l10n-tr            ports/editors/koffice-kde4-l10n-tr
+koffice-kde4-l10n-wa            ports/editors/koffice-kde4-l10n-wa
 kojoney                         ports/net/kojoney
 komodo-edit                     ports/editors/komodo-edit
 komparator                      ports/sysutils/komparator
@@ -10371,6 +10395,7 @@ p5-App-Control                  ports/devel/p5-App-Control
 p5-App-Info                     ports/devel/p5-App-Info
 p5-App-Nopaste                  ports/www/p5-App-Nopaste
 p5-App-Options                  ports/devel/p5-App-Options
+p5-App-Pm2Port                  ports/ports-mgmt/p5-App-Pm2Port
 p5-App-SVN-Bisect               ports/devel/p5-App-SVN-Bisect
 p5-App-Trace                    ports/devel/p5-App-Trace
 p5-AppConfig                    ports/devel/p5-AppConfig
@@ -13994,6 +14019,7 @@ p5-app-control                  ports/devel/p5-App-Control
 p5-app-info                     ports/devel/p5-App-Info
 p5-app-nopaste                  ports/www/p5-App-Nopaste
 p5-app-options                  ports/devel/p5-App-Options
+p5-app-pm2port                  ports/ports-mgmt/p5-App-Pm2Port
 p5-app-svn-bisect               ports/devel/p5-App-SVN-Bisect
 p5-app-trace                    ports/devel/p5-App-Trace
 p5-appconfig                    ports/devel/p5-AppConfig
@@ -17907,6 +17933,7 @@ pear-Net_NNTP                   ports/net/pear-Net_NNTP
 pear-Net_Nmap                   ports/net/pear-Net_Nmap
 pear-Net_POP3                   ports/net/pear-Net_POP3
 pear-Net_Ping                   ports/net/pear-Net_Ping
+pear-Net_Portscan               ports/security/pear-Net_Portscan
 pear-Net_SMS                    ports/net/pear-Net_SMS
 pear-Net_SMTP                   ports/net/pear-Net_SMTP
 pear-Net_Server                 ports/net/pear-Net_Server
@@ -18190,6 +18217,7 @@ pear-net_nmap                   ports/net/pear-Net_Nmap
 pear-net_nntp                   ports/net/pear-Net_NNTP
 pear-net_ping                   ports/net/pear-Net_Ping
 pear-net_pop3                   ports/net/pear-Net_POP3
+pear-net_portscan               ports/security/pear-Net_Portscan
 pear-net_server                 ports/net/pear-Net_Server
 pear-net_sieve                  ports/net/pear-Net_Sieve
 pear-net_smartirc               ports/irc/pear-Net_SmartIRC
@@ -18862,6 +18890,7 @@ pl-kadu                         ports/polish/kadu
 pl-kde3-i18n                    ports/polish/kde3-i18n
 pl-kde4-l10n                    ports/polish/kde4-l10n
 pl-koffice-i18n                 ports/polish/koffice-i18n
+pl-koffice-kde4-l10n            ports/polish/koffice-kde4-l10n
 pl-libgadu                      ports/polish/libgadu
 pl-libtlen                      ports/polish/libtlen
 pl-php_doc                      ports/polish/php_doc
@@ -19317,6 +19346,9 @@ pt-kde4-l10n-pt_br              ports/portuguese/kde4-l10n-pt_BR
 pt-koffice-i18n                 ports/portuguese/koffice-i18n
 pt-koffice-i18n-pt_BR           ports/portuguese/koffice-i18n-pt_BR
 pt-koffice-i18n-pt_br           ports/portuguese/koffice-i18n-pt_BR
+pt-koffice-kde4-l10n            ports/portuguese/koffice-kde4-l10n
+pt-koffice-kde4-l10n-pt_BR      ports/portuguese/koffice-kde4-l10n-pt_BR
+pt-koffice-kde4-l10n-pt_br      ports/portuguese/koffice-kde4-l10n-pt_BR
 pt-php_doc-br                   ports/portuguese/php_doc-br
 pt-staroffice52                 ports/portuguese/staroffice52
 pt-webalizer-pt_BR              ports/portuguese/webalizer-pt_BR
@@ -19397,6 +19429,7 @@ py-GeoIP                        ports/net/py-GeoIP
 py-GinGin                       ports/www/py-GinGin
 py-HTMLgen                      ports/www/py-HTMLgen
 py-HyperText                    ports/textproc/py-HyperText
+py-InlineEgg                    ports/devel/py-InlineEgg
 py-Jinja                        ports/devel/py-Jinja
 py-Jinja2                       ports/devel/py-Jinja2
 py-Lightbox                     ports/www/py-Lightbox
@@ -19644,6 +19677,7 @@ py-imaging                      ports/graphics/py-imaging
 py-imdbpy                       ports/www/py-imdbpy
 py-impacket                     ports/net/py-impacket
 py-iniparse                     ports/devel/py-iniparse
+py-inlineegg                    ports/devel/py-InlineEgg
 py-instant                      ports/devel/py-instant
 py-interface                    ports/devel/py-interface
 py-ipaddr                       ports/devel/py-ipaddr
@@ -21214,6 +21248,7 @@ rubygem-callsign                ports/comms/rubygem-callsign
 rubygem-capistrano              ports/sysutils/rubygem-capistrano
 rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-chronic                 ports/devel/rubygem-chronic
+rubygem-classifier              ports/devel/rubygem-classifier
 rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
@@ -21377,6 +21412,7 @@ rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
 rubygem-staticmatic             ports/www/rubygem-staticmatic
+rubygem-stemmer                 ports/devel/rubygem-stemmer
 rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
@@ -23310,6 +23346,7 @@ uk-ispell                       ports/ukrainian/ispell
 uk-kde3-i18n                    ports/ukrainian/kde3-i18n
 uk-kde4-l10n                    ports/ukrainian/kde4-l10n
 uk-koffice-i18n                 ports/ukrainian/koffice-i18n
+uk-koffice-kde4-l10n            ports/ukrainian/koffice-kde4-l10n
 uk-monacofonts                  ports/ukrainian/monacofonts
 uk-phone                        ports/misc/uk-phone
 uk-postcodes                    ports/misc/uk-postcodes
@@ -25201,6 +25238,10 @@ zh-koffice-i18n-zh_CN           ports/chinese/koffice-i18n-zh_CN
 zh-koffice-i18n-zh_TW           ports/chinese/koffice-i18n-zh_TW
 zh-koffice-i18n-zh_cn           ports/chinese/koffice-i18n-zh_CN
 zh-koffice-i18n-zh_tw           ports/chinese/koffice-i18n-zh_TW
+zh-koffice-kde4-l10n-zh_CN      ports/chinese/koffice-kde4-l10n-zh_CN
+zh-koffice-kde4-l10n-zh_TW      ports/chinese/koffice-kde4-l10n-zh_TW
+zh-koffice-kde4-l10n-zh_cn      ports/chinese/koffice-kde4-l10n-zh_CN
+zh-koffice-kde4-l10n-zh_tw      ports/chinese/koffice-kde4-l10n-zh_TW
 zh-kon2                         ports/chinese/kon2
 zh-libchewing                   ports/chinese/libchewing
 zh-libtabe                      ports/chinese/libtabe
