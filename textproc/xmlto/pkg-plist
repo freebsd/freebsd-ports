@@ -18,15 +18,25 @@ bin/xmlto
 %%DATADIR%%/format/docbook/htmlhelp
 %%DATADIR%%/format/docbook/javahelp
 @dirrm %%DATADIR%%/format/docbook
-%%PASSIVETEX%%%%DATADIR%%/format/fo/awt
-%%PASSIVETEX%%%%DATADIR%%/format/fo/dvi
-%%PASSIVETEX%%%%DATADIR%%/format/fo/mif
-%%PASSIVETEX%%%%DATADIR%%/format/fo/pcl
-%%PASSIVETEX%%%%DATADIR%%/format/fo/pdf
-%%PASSIVETEX%%%%DATADIR%%/format/fo/ps
-%%PASSIVETEX%%%%DATADIR%%/format/fo/svg
-%%PASSIVETEX%%%%DATADIR%%/format/fo/txt
-%%PASSIVETEX%%@dirrm %%DATADIR%%/format/fo
+%%DATADIR%%/format/xhtml1/dvi
+%%DATADIR%%/format/xhtml1/fo
+%%DATADIR%%/format/xhtml1/pdf
+%%DATADIR%%/format/xhtml1/ps
+%%DATADIR%%/format/xhtml1/txt
+%%DATADIR%%/format/xhtml1/awt
+%%DATADIR%%/format/xhtml1/mif
+%%DATADIR%%/format/xhtml1/pcl
+%%DATADIR%%/format/xhtml1/svg
+@dirrm %%DATADIR%%/format/xhtml1
+%%DATADIR%%/format/fo/awt
+%%DATADIR%%/format/fo/dvi
+%%DATADIR%%/format/fo/mif
+%%DATADIR%%/format/fo/pcl
+%%DATADIR%%/format/fo/pdf
+%%DATADIR%%/format/fo/ps
+%%DATADIR%%/format/fo/svg
+%%DATADIR%%/format/fo/txt
+@dirrm %%DATADIR%%/format/fo
 @dirrm %%DATADIR%%/format
 %%DATADIR%%/xmlto.mak
 @dirrm %%DATADIR%%
