@@ -4,3 +4,4 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
 @dirrmtry %%SITE_PERL%%/Locale/Maketext
+@dirrmtry %%SITE_PERL%%/Locale
