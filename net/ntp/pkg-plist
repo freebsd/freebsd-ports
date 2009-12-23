@@ -8,7 +8,6 @@ bin/ntptime
 bin/ntptrace
 bin/sntp
 bin/tickadj
-sbin/ntpsnmpd
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
 %%PORTDOCS%%%%DOCSDIR%%/audio.html
