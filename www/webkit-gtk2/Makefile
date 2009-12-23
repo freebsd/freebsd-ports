@@ -8,6 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.1.15.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
@@ -15,7 +16,7 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An opensource browser engine
 
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	icutu.38:${PORTSDIR}/devel/icu \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		curl.5:${PORTSDIR}/ftp/curl \
