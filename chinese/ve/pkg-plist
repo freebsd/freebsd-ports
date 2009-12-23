@@ -1,4 +1,3 @@
 bin/ve
-share/ve/00readme.txt
 share/ve/ve.hlp
 @dirrm share/ve
