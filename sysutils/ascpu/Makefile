@@ -7,7 +7,7 @@
 
 PORTNAME=	ascpu
 PORTVERSION=	1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/ascpu/
 
