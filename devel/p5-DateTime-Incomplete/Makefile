@@ -7,6 +7,7 @@
 
 PORTNAME=	DateTime-Incomplete
 PORTVERSION=	0.04.00
+PORTREVISION=	1
 DISTVERSION=	${PORTVERSION:C/\.(..)$//}
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -17,8 +18,7 @@ COMMENT=	An incomplete DateTime, like January 5
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Set.pm:${PORTSDIR}/devel/p5-DateTime-Set \
-		${SITE_PERL}/DateTime/Event/Recurrence.pm:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+		${SITE_PERL}/DateTime/Event/Recurrence.pm:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

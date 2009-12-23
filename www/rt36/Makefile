@@ -24,14 +24,10 @@ CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.8*
 PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		p5-CGI.pm>=3.10:${PORTSDIR}/www/p5-CGI.pm \
 		p5-DBIx-SearchBuilder>=0.53:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
 		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber \
 		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
 		${SITE_PERL}/Locale/Maketext/Fuzzy.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
@@ -40,14 +36,12 @@ PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Module/Versions/Report.pm:${PORTSDIR}/devel/p5-Module-Versions-Report \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		${SITE_PERL}/Text/Quoted.pm:${PORTSDIR}/textproc/p5-Text-Quoted \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Text/WikiFormat.pm:${PORTSDIR}/textproc/p5-Text-WikiFormat \
 		${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
