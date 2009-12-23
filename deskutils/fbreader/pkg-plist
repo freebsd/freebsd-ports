@@ -1,8 +1,8 @@
 bin/FBReader
-lib/libzlcore.so.0.11
-lib/libzlcore.so.%%VERSION%%
-lib/libzltext.so.0.11
-lib/libzltext.so.%%VERSION%%
+lib/libzlcore.so.0.12
+lib/libzlcore.so.0.12.1
+lib/libzltext.so.0.12
+lib/libzltext.so.0.12.1
 lib/zlibrary/ui/zlui-%%UI%%.so
 share/FBReader/default/config.xml
 share/FBReader/default/external.xml
@@ -23,9 +23,17 @@ share/FBReader/help/MiniHelp.fi.fb2
 share/FBReader/help/MiniHelp.fr.fb2
 share/FBReader/help/MiniHelp.id.fb2
 share/FBReader/help/MiniHelp.it.fb2
+share/FBReader/help/MiniHelp.lt.fb2
 share/FBReader/help/MiniHelp.ru.fb2
 share/FBReader/help/MiniHelp.sv.fb2
 share/FBReader/help/MiniHelp.uk.fb2
+share/FBReader/help/MiniHelp.zh.fb2
+share/FBReader/network/booksonboard.com.xml
+share/FBReader/network/certificates/litres.ru.crt
+share/FBReader/network/feedbooks.com.xml
+share/FBReader/network/manybooks.net.xml
+share/FBReader/network/shucang.com.xml
+share/FBReader/network/smashwords.com.xml
 share/FBReader/resources/ar.xml
 share/FBReader/resources/cs.xml
 share/FBReader/resources/de.xml
@@ -34,17 +42,26 @@ share/FBReader/resources/fi.xml
 share/FBReader/resources/fr.xml
 share/FBReader/resources/id.xml
 share/FBReader/resources/it.xml
+share/FBReader/resources/lt.xml
 share/FBReader/resources/ru.xml
 share/FBReader/resources/sv.xml
 share/FBReader/resources/uk.xml
+share/FBReader/resources/zh.xml
 share/applications/FBReader.desktop
 share/pixmaps/FBReader.png
 share/pixmaps/FBReader/addBook.png
 share/pixmaps/FBReader/advancedSearchOnNetwork.png
 share/pixmaps/FBReader/bookInfo.png
+share/pixmaps/FBReader/booktree-author.png
+share/pixmaps/FBReader/booktree-book.png
+share/pixmaps/FBReader/booktree-tag.png
 share/pixmaps/FBReader/byAuthor.png
 share/pixmaps/FBReader/byTag.png
 share/pixmaps/FBReader/fb2.png
+share/pixmaps/FBReader/feed-feedbooks.png
+share/pixmaps/FBReader/feed-litres.png
+share/pixmaps/FBReader/feed-shucang.png
+share/pixmaps/FBReader/feed-smashwords.png
 share/pixmaps/FBReader/findNext.png
 share/pixmaps/FBReader/findPrevious.png
 share/pixmaps/FBReader/folder.png
@@ -60,6 +77,7 @@ share/pixmaps/FBReader/redo.png
 share/pixmaps/FBReader/rotate.png
 share/pixmaps/FBReader/rtf.png
 share/pixmaps/FBReader/search.png
+share/pixmaps/FBReader/searchresult.png
 share/pixmaps/FBReader/showHelp.png
 share/pixmaps/FBReader/showLibrary.png
 share/pixmaps/FBReader/showNetLibrary.png
@@ -67,20 +85,6 @@ share/pixmaps/FBReader/showReading.png
 share/pixmaps/FBReader/showRecent.png
 share/pixmaps/FBReader/tcr.png
 share/pixmaps/FBReader/toc.png
-share/pixmaps/FBReader/tree-authorinfo.png
-share/pixmaps/FBReader/tree-bookinfo.png
-share/pixmaps/FBReader/tree-download-epub.png
-share/pixmaps/FBReader/tree-download-fb2.png
-share/pixmaps/FBReader/tree-download-mobi.png
-share/pixmaps/FBReader/tree-local-epub.png
-share/pixmaps/FBReader/tree-local-fb2.png
-share/pixmaps/FBReader/tree-local-mobi.png
-share/pixmaps/FBReader/tree-open-in-browser.png
-share/pixmaps/FBReader/tree-order-series.png
-share/pixmaps/FBReader/tree-removebook.png
-share/pixmaps/FBReader/tree-removetag.png
-share/pixmaps/FBReader/tree-strut.png
-share/pixmaps/FBReader/tree-taginfo.png
 share/pixmaps/FBReader/undo.png
 share/pixmaps/FBReader/unknown.png
 share/pixmaps/FBReader/upfolder.png
@@ -120,9 +124,11 @@ share/zlibrary/resources/fi.xml
 share/zlibrary/resources/fr.xml
 share/zlibrary/resources/id.xml
 share/zlibrary/resources/it.xml
+share/zlibrary/resources/lt.xml
 share/zlibrary/resources/ru.xml
 share/zlibrary/resources/sv.xml
 share/zlibrary/resources/uk.xml
+share/zlibrary/resources/zh.xml
 share/zlibrary/unicode.xml.gz
 @dirrm lib/zlibrary/ui
 @dirrm lib/zlibrary
@@ -132,11 +138,13 @@ share/zlibrary/unicode.xml.gz
 @dirrm share/FBReader/formats/xhtml
 @dirrm share/FBReader/formats
 @dirrm share/FBReader/help
+@dirrm share/FBReader/network/certificates
+@dirrm share/FBReader/network
 @dirrm share/FBReader/resources
 @dirrm share/FBReader
-@dirrmtry share/applications
 @dirrm share/pixmaps/FBReader
 @dirrm share/zlibrary/default
 @dirrm share/zlibrary/encodings
 @dirrm share/zlibrary/resources
 @dirrm share/zlibrary
+@dirrmtry share/applications
