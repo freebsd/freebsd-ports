@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20091221
+PORTVERSION=	20091223
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -51,7 +51,8 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-readdir_r \
 		--enable-gethostbyname_r \
 		--disable-dependency-tracking \
-		--enable-experimental
+		--enable-experimental \
+		--enable-llvm=no
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
