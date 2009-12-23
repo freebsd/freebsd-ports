@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smartmontools
-PORTVERSION=	5.38
-PORTREVISION=	8
+PORTVERSION=	5.39
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -17,6 +16,8 @@ COMMENT=	S.M.A.R.T. disk monitoring tools
 CONFLICTS=	smartmontools-devel-[0-9]*
 
 USE_GMAKE=	yes
+# hack to prevent gmake failure on 6.xx
+GMAKE=		make
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --enable-sample
 
