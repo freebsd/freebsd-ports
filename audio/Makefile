@@ -534,6 +534,7 @@
     SUBDIR += p5-Music-Audioscrobbler-MPD
     SUBDIR += p5-Music-Audioscrobbler-Submit
     SUBDIR += p5-MusicBrainz-Client
+    SUBDIR += p5-MusicBrainz-DiscID
     SUBDIR += p5-MusicBrainz-Queries
     SUBDIR += p5-MusicBrainz-TRM
     SUBDIR += p5-Net-DAAP-Client
