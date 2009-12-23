@@ -1,6 +1,6 @@
---- ./zlibrary/core/src/unix/time/ZLUnixTime.cpp.orig	Tue Apr 17 22:53:30 2007
-+++ ./zlibrary/core/src/unix/time/ZLUnixTime.cpp	Sat Apr 28 00:13:29 2007
-@@ -18,21 +18,22 @@
+--- ./zlibrary/core/src/unix/time/ZLUnixTime.cpp.orig	2009-12-13 11:03:09.000000000 +0300
++++ ./zlibrary/core/src/unix/time/ZLUnixTime.cpp	2009-12-23 09:34:03.273539781 +0300
+@@ -17,33 +17,37 @@
   * 02110-1301, USA.
   */
  
@@ -29,4 +29,22 @@
 -	return localtime(&seconds)->tm_min;
 +	time_t st = seconds;
 +	return localtime(&st)->tm_min;
+ }
+ 
+ short ZLUnixTimeManager::yearBySeconds(long seconds) const {
+-	return localtime(&seconds)->tm_year + 1900;
++	time_t st = seconds;
++	return localtime(&st)->tm_year + 1900;
+ }
+ 
+ short ZLUnixTimeManager::monthBySeconds(long seconds) const {
+-	return localtime(&seconds)->tm_mon + 1;
++	time_t st = seconds;
++	return localtime(&st)->tm_mon + 1;
+ }
+ 
+ short ZLUnixTimeManager::dayOfMonthBySeconds(long seconds) const {
+-	return localtime(&seconds)->tm_mday;
++	time_t st = seconds;
++	return localtime(&st)->tm_mday;
  }
