@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.30
+PORTVERSION=	0.8.31
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -232,7 +232,7 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_REDIS_MODULE)
-NGINX_REDIS_MODULE_VERSION=	0.2.0
+NGINX_REDIS_MODULE_VERSION=	0.3.0
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
 MASTER_SITE_SUBDIR+=	osa/:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
@@ -396,10 +396,6 @@ post-patch:
 .if defined(WITH_HTTP_NOTICE_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
-.endif
-.if defined(WITH_HTTP_REDIS_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_redis_module.c
 .endif
 .if defined(WITH_HTTP_UPLOAD_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
