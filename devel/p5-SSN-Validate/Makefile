@@ -7,16 +7,13 @@
 
 PORTNAME=	SSN-Validate
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../../authors/id/K/KM/KMELTZ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to do SSN Validation
-
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

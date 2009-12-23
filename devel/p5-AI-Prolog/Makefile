@@ -8,6 +8,7 @@
 
 PORTNAME=	AI-Prolog
 PORTVERSION=	0.740
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,11 +21,6 @@ RUN_DEPENDS=	p5-aliased>=0.11:${PORTSDIR}/devel/p5-aliased \
 		p5-Exporter-Tidy>=0.06:${PORTSDIR}/devel/p5-Exporter-Tidy \
 		p5-Hash-AsObject>=0.05:${PORTSDIR}/devel/p5-Hash-AsObject \
 		p5-Regexp-Common>=2.119:${PORTSDIR}/textproc/p5-Regexp-Common \
-		p5-Test-Differences>=0.47:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-Exception>=0.20:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-MockModule>=0.04:${PORTSDIR}/devel/p5-Test-MockModule \
-		p5-Test-Warn>=0.08:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-Text-Balanced>=1.95:${PORTSDIR}/textproc/p5-Text-Balanced \
 		p5-Text-Quote>=0.03:${PORTSDIR}/textproc/p5-Text-Quote \
 		p5-Term-ReadKey>=2.21:${PORTSDIR}/devel/p5-Term-ReadKey
 BUILD_DEPENDS=	${RUN_DEPENDS}
