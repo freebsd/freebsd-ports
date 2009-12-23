@@ -1238,6 +1238,7 @@
     SUBDIR += p5-Data-Integer
     SUBDIR += p5-Data-Lazy
     SUBDIR += p5-Data-Localize
+    SUBDIR += p5-Data-MessagePack
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-ParseBinary
