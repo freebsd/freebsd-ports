@@ -4230,3 +4230,9 @@ lang/python23||2009-12-18|no longer under development
 lang/python30||2009-12-18|no longer under development
 cad/fandango||2009-12-18|no longer under development
 www/neon26|www/neon28|2009-12-19|Removed due to security vulnerabilities
+misc/bsdiff||2009-12-24|Incorporated into base system long ago
+security/freebsd-update||2009-12-24|Incorporated into base system long ago
+sysutils/est||2009-12-24|Incorporated into base system long ago
+sysutils/estctrl||2009-12-24|Incorporated into base system long ago
+sysutils/freebsd-sha1||2009-12-24|Incorporated into base system long ago
+sysutils/freebsd-sha256||2009-12-24|Incorporated into base system long ago
