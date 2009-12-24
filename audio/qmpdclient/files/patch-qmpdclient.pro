@@ -1,29 +1,20 @@
---- qmpdclient.pro.orig	2008-05-28 23:32:48.000000000 +0400
-+++ qmpdclient.pro	2008-05-28 23:36:27.000000000 +0400
-@@ -1,15 +1,5 @@
--# installation prefix on *nix/osx
--PREFIX = /usr/local
--
--
--# Most people need not muck about below here
--
--!contains(QT_MAJOR_VERSION, 4){
--    error(QMPDClient requires Qt 4)
--}
--
--CONFIG += qt debug # release
--#CONFIG -= debug # Needed to avoid console on win32
-+CONFIG += qt release
-+CONFIG -= debug
+--- qmpdclient.pro.orig	2009-12-02 14:42:07.000000000 +0700
++++ qmpdclient.pro	2009-12-02 14:48:21.000000000 +0700
+@@ -8,7 +8,7 @@ CONFIG += qt
+ # addition ldflags for release build
+ QMAKE_LFLAGS_RELEASE += -O2 -g0 -s
+ 
+-# CONFIG -= debug # Needed to avoid console on win32
++CONFIG -= debug # Needed to avoid console on win32
  TEMPLATE = app
  RESOURCES = qmpdclient.qrc
- VERSION = 1.0.9
-@@ -189,13 +179,12 @@
+ VERSION = 1.1.1
+@@ -202,13 +202,12 @@ unix {
          SOURCES += src/qmpdclient_x11.cpp
  
          # Check for dbus support
--        contains(QT_CONFIG, qdbus){
-+        contains(CONFIG, qdbus){
+-        contains(QT_CONFIG, dbus) {
++        contains(CONFIG, dbus) {
              message(DBus notifier: enabled)
 -            CONFIG += qdbus
              SOURCES += src/notifications_dbus.cpp
