@@ -135,7 +135,6 @@
     SUBDIR += fprint_demo
     SUBDIR += fragroute
     SUBDIR += fragrouter
-    SUBDIR += freebsd-update
     SUBDIR += fressh
     SUBDIR += fsh
     SUBDIR += fswatch

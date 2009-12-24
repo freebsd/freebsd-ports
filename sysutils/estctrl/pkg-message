@@ -1,7 +1,0 @@
-To start the Enhanced Speedstep daemon at boot:
-	echo 'estctrl_enable="YES"' >> /etc/rc.conf
-
-To run the processor at minimum or maximum frequency when on AC or 
-battery power, set the estctrl_speed_ac or estctrl_speed_battery
-variables to "min" or "max".
-
