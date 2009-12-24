@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	e16
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.1.002
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
@@ -20,7 +22,7 @@ USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-esdtest --disable-dependency-tracking \
-		--disable-rpath --enable-mans
+		--disable-rpath --enable-mans SHELL=${LOCALBASE}/bin/bash
 
 .if !defined(WITHOUT_ESOUND)
 USE_GNOME=	esound
