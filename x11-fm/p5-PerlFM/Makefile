@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PerlFM
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-String-ShellQuote>=1.03:${PORTSDIR}/textproc/p5-String-ShellQuote \
 		p5-File-Stat-Bits>=1.01:${PORTSDIR}/sysutils/p5-File-Stat-Bits \
 		p5-ZConf-Bookmarks>=0.2.3:${PORTSDIR}/net/p5-ZConf-Bookmarks \
-		p5-ZConf-Runner>=2.1.1:${PORTSDIR}/deskutils/p5-ZConf-Runner
+		p5-ZConf-Runner>=2.1.1:${PORTSDIR}/deskutils/p5-ZConf-Runner \
+		p5-Dir-Watch>=0.0.0:${PORTSDIR}/devel/p5-Dir-Watch
 
 PERL_CONFIGURE=	yes
 
