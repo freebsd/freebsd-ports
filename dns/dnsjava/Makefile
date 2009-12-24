@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	dnsjava
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	dns java
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.dnsjava.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of DNS in Java
