@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Frame-Layer-ICMPv6
-PORTVERSION=	1.02
+PORTVERSION=	1.05
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,8 @@ MAN3=		Net::Frame::Layer::ICMPv6.3 \
 		Net::Frame::Layer::ICMPv6::Echo.3 \
 		Net::Frame::Layer::ICMPv6::Option.3 \
 		Net::Frame::Layer::ICMPv6::NeighborAdvertisement.3 \
-		Net::Frame::Layer::ICMPv6::NeighborSolicitation.3
+		Net::Frame::Layer::ICMPv6::NeighborSolicitation.3 \
+  		Net::Frame::Layer::ICMPv6::RouterAdvertisement.3 \
+  		Net::Frame::Layer::ICMPv6::RouterSolicitation.3
 
 .include <bsd.port.mk>
