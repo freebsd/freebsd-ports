@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Vimana
-PORTVERSION=	0.09
+PORTVERSION=	2009.336031
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CO/CORNELIUS
@@ -35,10 +35,12 @@ MAN1=		vimana.1
 MAN3=		Vimana.3 \
 		Vimana::AutoInstall.3 \
 		Vimana::Command::Install.3 \
+		Vimana::Command::Installed.3 \
 		Vimana::Index.3 \
 		Vimana::Logger.3 \
 		Vimana::Manual.3 \
 		Vimana::PackageFile.3 \
+		Vimana::Record.3 \
 		Vimana::Util.3
 
 .include <bsd.port.mk>
