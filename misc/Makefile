@@ -33,7 +33,6 @@
     SUBDIR += boxes
     SUBDIR += boxquote.el
     SUBDIR += brs
-    SUBDIR += bsdiff
     SUBDIR += buffer
     SUBDIR += c-hey
     SUBDIR += callid

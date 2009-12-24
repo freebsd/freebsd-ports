@@ -193,8 +193,6 @@
     SUBDIR += env4801
     SUBDIR += epylog
     SUBDIR += eroaster
-    SUBDIR += est
-    SUBDIR += estctrl
     SUBDIR += etcmerge
     SUBDIR += etoile-behavior
     SUBDIR += etoile-installer
@@ -238,8 +236,6 @@
     SUBDIR += fpc-users
     SUBDIR += fpc-utmp
     SUBDIR += fpkg
-    SUBDIR += freebsd-sha1
-    SUBDIR += freebsd-sha256
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
