@@ -76,7 +76,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.7.${SQUID_STABLE_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -115,7 +115,7 @@ COMMENT=	HTTP Caching Proxy
 
 SQUID_STABLE_VER=	7
 
-CONFLICTS=	squid-2.[^7]* squid-3.* cacheboy-[0-9]*
+CONFLICTS=	squid-2.[^7]* squid-3.* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -131,7 +131,9 @@ PORTEXAMPLES=	passwd.sql
 SUB_FILES+=	pkg-deinstall pkg-install pkg-message
 SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
-OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
+OPTIONS=	SQUID_KERB_AUTH "Install Kerberos authentication helpers" on \
+		SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
+		SQUID_NIS_AUTH "Install NIS/YP authentication helpers" on \
 		SQUID_SASL_AUTH "Install SASL authentication helpers" off \
 		SQUID_DELAY_POOLS "Enable delay pools" off \
 		SQUID_SNMP "Enable SNMP support" off \
@@ -233,7 +235,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 basic_auth+=	SASL
 libexec+=	sasl_auth
 .endif
-.if !defined(NO_NIS) && !defined(WITHOUT_NIS)
+# POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
+.if defined(WITH_SQUID_NIS_AUTH) && !defined(NO_NIS) && !defined(WITHOUT_NIS)
 basic_auth+=	YP
 libexec+=	yp_auth
 .endif
@@ -242,7 +245,8 @@ CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB"
-.if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
+# POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
+.if defined(WITH_SQUID_KERB_AUTH) && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
 # XXX This currently only works with heimdal from the base system,
 #     see files/patch-helpers_negotiate_auth-squid_kerb_auth_*
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
