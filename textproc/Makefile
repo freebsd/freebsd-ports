@@ -1053,6 +1053,7 @@
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
+    SUBDIR += rubygem-liquid
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-opml
