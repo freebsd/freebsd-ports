@@ -1,16 +1,16 @@
 Description: Fix a grammatical error.
 Author: Peter Pentchev <roam@FreeBSD.org>
-Bug: http://rt.cpan.org/Public/Bug/Display.html?id=49593
-Last-Update: 2009-09-10
+Bug: http://rt.cpan.org/Public/Bug/Display.html?id=53063
+Last-Update: 2009-12-24
 
 --- lib/WWW/Curl.pm.orig
 +++ lib/WWW/Curl.pm
-@@ -311,7 +311,7 @@
+@@ -273,7 +273,7 @@
  
- Version 3.01 added some support for pre-multi versions of libcurl.
+ =item curl_multi_fdset
  
--Version 3.00 adds WWW::Curl::Multi interface, and a new module names
-+Version 3.00 adds WWW::Curl::Multi interface, and new module names
- following perl conventions (WWW::Curl::Easy rather than WWW::Curl::easy),
- by Sebastian Riedel <sri at cpan.org>.
+-This method returns three arrayrefs: the read, write and exception fds libcurl knows about.
++This method returns three arrayrefs: the read, write, and exception fds libcurl knows about.
+ In the case of no file descriptors in the given set, an empty array is returned.
  
+ =back
