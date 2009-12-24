@@ -437,6 +437,8 @@ lib/mono/2.0/ilasm.exe
 lib/mono/2.0/ilasm.exe.mdb
 lib/mono/2.0/installutil.exe
 lib/mono/2.0/installutil.exe.mdb
+lib/mono/2.0/lc.exe
+lib/mono/2.0/lc.exe.mdb
 lib/mono/2.0/mconfig.exe
 lib/mono/2.0/mconfig.exe.mdb
 lib/mono/2.0/mdoc.exe
@@ -824,6 +826,7 @@ lib/mono/gac/nunit.mocks/2.4.8.0__96d09a1eb7f44a77/nunit.mocks.dll.mdb
 lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.dll
 lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.dll.mdb
 lib/mono/monodoc/monodoc.dll
+lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications/Microsoft.WebApplication.targets
 lib/monodoc/monodoc.xml
 lib/monodoc/sources/Mono.source
 lib/monodoc/sources/Mono.tree
@@ -861,6 +864,7 @@ libdata/pkgconfig/monodoc.pc
 libdata/pkgconfig/smcs.pc
 libdata/pkgconfig/system.web.extensions.design_1.0.pc
 libdata/pkgconfig/system.web.extensions_1.0.pc
+libdata/pkgconfig/system.web.mvc.pc
 libdata/pkgconfig/wcf.pc
 share/jay/ACKNOWLEDGEMENTS
 share/jay/NEW_FEATURES
@@ -912,6 +916,11 @@ share/locale/ja/LC_MESSAGES/mcs.mo
 @dirrm share/jay
 @dirrm lib/monodoc/sources
 @dirrm lib/monodoc
+@dirrm lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications
+@dirrm lib/mono/xbuild/Microsoft/VisualStudio/v9.0
+@dirrm lib/mono/xbuild/Microsoft/VisualStudio
+@dirrm lib/mono/xbuild/Microsoft
+@dirrm lib/mono/xbuild
 @dirrm lib/mono/monodoc
 @dirrm lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77
 @dirrm lib/mono/gac/nunit.util
