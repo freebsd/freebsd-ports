@@ -754,11 +754,13 @@
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/clipboard.swf
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushAS3.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushBash.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushColdFusion.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushCpp.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushCSharp.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushCss.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushDelphi.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushDiff.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushErlang.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushGroovy.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushJava.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushJavaFX.js
@@ -785,11 +787,11 @@
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/shCore.css
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/shThemeDefault.css
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/shThemeDjango.css
+%%WWWDIR%%/inc/js/syntaxhighlighter/styles/shThemeEclipse.css
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/shThemeEmacs.css
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/shThemeFadeToGrey.css
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/shThemeMidnight.css
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/shThemeRDark.css
-%%WWWDIR%%/inc/js/syntaxhighlighter/styles/wrapping.png
 %%WWWDIR%%/inc/js/syntaxhighlighter/test.html
 %%WWWDIR%%/inc/Language.php
 %%WWWDIR%%/inc/Ldap.php
