@@ -6,40 +6,40 @@
 #
 
 PORTNAME=	qmpdclient
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://havtknut.tihlde.org/qmpdclient/files/%SUBDIR%/:src,i18n
-MASTER_SITE_SUBDIR=	translations/:i18n
-DISTFILES=	${EXTRACT_ONLY}:src ${I18N_DISTFILES}
-DIST_SUBDIR=	${DISTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://dump.bitcheese.net/files/dedycec/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	uyamba@gmail.com
 COMMENT=	Easy to use musicpd client written in QT4
 
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
 		corelib xml gui
 QMAKE_ARGS=	-unix PREFIX=${PREFIX}
+QMAKE_PRO=	${PORTNAME}.pro
 
 OPTIONS=	DBUS	"Enable D-BUS support"	off
 
 DATADIR=	${PREFIX}/share/QMPDClient
 PLIST_FILES=	bin/${PORTNAME}
 
-USE_DOS2UNIX=	qmpdclient.pro
+USE_DOS2UNIX=	${QMAKE_PRO}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include  <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
 QT_COMPONENTS+=	linguist_build
 
-TRANSLATIONS=	de_DE fr_FR it_IT nl_NL nn_NO no_NO ru_RU \
-		sv_SE tr_TR zh_CN zh_TW
+TRANSLATIONS=	cs_CZ de_DE fr_FR it_IT nl_NL nn_NO pt_BR no_NO \
+		ru_RU sv_SE tr_TR uk_UA zh_CN zh_TW
 
 .for lang in ${TRANSLATIONS}
-I18N_DISTFILES+=${lang}.ts:i18n
 PLIST_FILES+=	${DATADIR_REL}/translations/${lang}.qm
 .endfor
 PLIST_DIRS=	${DATADIR_REL}/translations \
@@ -53,14 +53,13 @@ QMAKE_ARGS+=	CONFIG+=qdbus
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		${QMAKE_ARGS} qmpdclient.pro
+		${QMAKE_ARGS} ${QMAKE_PRO}
 
 post-build:
 .if !defined(WITHOUT_NLS)
 .for lang in ${TRANSLATIONS}
 	@${QT_PREFIX}/bin/lrelease-qt4 -compress \
-		${DISTDIR}/${DIST_SUBDIR}/${lang}.ts \
-		-qm ${WRKDIR}/${lang}.qm
+		${WRKSRC}/lang/${lang}.ts
 .endfor
 .else
 	@${DO_NADA}
@@ -71,7 +70,7 @@ do-install:
 .if !defined(WITHOUT_NLS)
 	${MKDIR} ${DATADIR}/translations
 .for lang in ${TRANSLATIONS}
-	${INSTALL_DATA} ${WRKDIR}/${lang}.qm \
+	${INSTALL_DATA} ${WRKSRC}/lang/${lang}.qm \
 		${DATADIR}/translations/${lang}.qm
 .endfor
 .endif
