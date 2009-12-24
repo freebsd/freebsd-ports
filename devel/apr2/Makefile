@@ -6,6 +6,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -25,7 +26,8 @@ OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			NDBM	"Enable NDBM support in apr-util"			off \
 			LDAP	"Enable LDAP support in apr-util"			off \
 			MYSQL	"Enable MySQL suport in apr-util"			off \
-			PGSQL	"Enable Postgresql suport in apr-util"		off
+			PGSQL	"Enable Postgresql suport in apr-util"		off \
+			SQLITE  "Enable SQLite3 support in apr-util"			off
 
 APR_VERSION=	1.3.9
 APU_VERSION=	1.3.9
@@ -169,6 +171,21 @@ PKGNAMESUFFIX=	-pgsql
 .endif
 .else
 PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if defined(WITH_SQLITE)
+APU_EXTRAS=	yes
+PLIST_SUB+=	SQLITE3=""
+USE_SQLITE=	YES
+CONFIGURE_ARGS+= --with-sqlite3=${LOCALBASE}
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-sqlite3
+.else
+PKGNAMESUFFIX=	-sqlite3
+.endif
+.else
+CONFIGURE_ARGS+= --without-sqlite3
+PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if defined(APU_EXTRAS)

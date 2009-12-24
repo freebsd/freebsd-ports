@@ -108,6 +108,10 @@ lib/libaprutil-1.so.%%SHLIB_MAJOR%%
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.so
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.la
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.a
+%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3-1.so
+%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.so
+%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.la
+%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.a
 %%APU_EXTRAS%%@dirrm lib/apr-util-1
 @dirrm %%DATADIR%%/build-1
 @dirrm %%DATADIR%%
