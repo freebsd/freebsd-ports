@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.076
+PORTVERSION=	0.078
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF
 
@@ -108,11 +108,5 @@ PLIST_SUB+=		EXTRA="@comment "
 
 MANCOMPRESSED=	yes
 MAN1=		znc.1 znc-buildmod.1 znc-config.1
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/znc.conf ${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.post.mk>
