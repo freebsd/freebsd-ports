@@ -5,24 +5,25 @@
 # $FreeBSD$
 
 PORTNAME=	samesame
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://samesame.kruijff.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
 
 MAINTAINER=	samesame@akruijff.dds.nl
-COMMENT=	Find identical files and optionally link them together
+COMMENT=	Find duplicate files and optionally link them together
 
 CONFLICTS=	samefile-[0-9]*
 
 MAN1=	samesame.1 samearchive.1 samearchive-lite.1 samefile.1 sameln.1 \
-	samecp.1 samemv.1 samerm.1
+	samecp.1 samemv.1 samerm.1 samechflags.1 samechmod.1 samechown.1
 MANCOMPRESSED=	no
 
 PLIST_FILES=	bin/samearchive		bin/samefile 	bin/samecp \
 		bin/samearchive-lite	bin/sameln 	bin/samemv \
-		etc/rc.d/samesame.sh	bin/samerm
+		etc/rc.d/samesame.sh	bin/samerm	bin/samechflags \
+		bin/samechmod		bin/samechown
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --prefix="${PREFIX}" \
@@ -32,6 +33,7 @@ USE_BZIP2=	yes
 OPTIONS=	DEBUG "Enables debugging support" Off \
 		DISK_STORAGE "Allows temporarily storage on disk" Off \
 		LOW_MEMORY_PROFILE "Low memory profile reduces functionality" Off \
+		EXPERIMENTAL "Enables experimental functionality" Off \
 		TEST "Run quality assurance test" Off
 
 .include <bsd.port.pre.mk>
@@ -44,8 +46,12 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-disk-storage
 .endif
 
+.if defined(WITH_EXPERIMENTAL)
+CONFIGURE_ARGS+=	--enable-experimental
+.endif
+
 .if defined(WITH_LOW_MEMORY_PROFILE)
-CONFIGURE_ARGS+=	--enable-low-memory-profile
+CONFIGURE_ARGS+=	--enable-low-memory-profile --disable-read-onces
 .endif
 
 regression-test: build
@@ -62,6 +68,9 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/bin/samearchive
 	${STRIP_CMD} ${PREFIX}/bin/samearchive-lite
 	${STRIP_CMD} ${PREFIX}/bin/samecp
+	${STRIP_CMD} ${PREFIX}/bin/samechflags
+	${STRIP_CMD} ${PREFIX}/bin/samechmod
+	${STRIP_CMD} ${PREFIX}/bin/samechown
 	${STRIP_CMD} ${PREFIX}/bin/sameln
 	${STRIP_CMD} ${PREFIX}/bin/samemv
 	${STRIP_CMD} ${PREFIX}/bin/samerm
