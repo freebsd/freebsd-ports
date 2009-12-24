@@ -1,8 +1,4 @@
 bin/callpass
-%%INCSHAPE%%bin/dbfadd
-%%INCSHAPE%%bin/dbfcreate
-%%INCSHAPE%%bin/shpadd
-%%INCSHAPE%%bin/shpcreate
 bin/testdbfawk
 bin/xastir
 bin/xastir_udp_client
