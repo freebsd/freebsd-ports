@@ -41,7 +41,6 @@ bin/starte16
 %%DATADIR%%/config/fonts.xft.cfg
 %%DATADIR%%/config/fonts.pango.cfg
 %%DATADIR%%/config/matches.cfg
-%%DATADIR%%/config/menus.cfg
 %%DATADIR%%/config/menus/desktop.menu
 %%DATADIR%%/config/menus/enlightenment.menu
 %%DATADIR%%/config/menus/maintenance.menu
@@ -53,16 +52,15 @@ bin/starte16
 %%DATADIR%%/config/menus/winops_opacity.menu
 %%DATADIR%%/config/menus/winops_size.menu
 %%DATADIR%%/config/pix/about.png
-%%DATADIR%%/config/pix/apple.png
 %%DATADIR%%/config/pix/areas.png
 %%DATADIR%%/config/pix/bg.png
-%%DATADIR%%/config/pix/calc.png
-%%DATADIR%%/config/pix/clock.png
+%%DATADIR%%/config/pix/default.png
 %%DATADIR%%/config/pix/desktops.png
-%%DATADIR%%/config/pix/easter.png
+%%DATADIR%%/config/pix/e.png
 %%DATADIR%%/config/pix/elogo48.png
 %%DATADIR%%/config/pix/focus.png
 %%DATADIR%%/config/pix/fx.png
+%%DATADIR%%/config/pix/iconbox.png
 %%DATADIR%%/config/pix/key_blank.png
 %%DATADIR%%/config/pix/key_ctrl.png
 %%DATADIR%%/config/pix/key_lock.png
@@ -81,16 +79,12 @@ bin/starte16
 %%DATADIR%%/config/pix/mouse_5.png
 %%DATADIR%%/config/pix/mouse_any.png
 %%DATADIR%%/config/pix/moveres.png
-%%DATADIR%%/config/pix/note.png
 %%DATADIR%%/config/pix/pager.png
 %%DATADIR%%/config/pix/place.png
-%%DATADIR%%/config/pix/pumpkin.png
 %%DATADIR%%/config/pix/raise.png
 %%DATADIR%%/config/pix/snapshots.png
 %%DATADIR%%/config/pix/sound.png
-%%DATADIR%%/config/pix/spider.png
 %%DATADIR%%/config/pix/tips.png
-%%DATADIR%%/config/pix/tv2.png
 %%DATADIR%%/config/pix/wait1.png
 %%DATADIR%%/config/pix/wait10.png
 %%DATADIR%%/config/pix/wait11.png
@@ -103,7 +97,6 @@ bin/starte16
 %%DATADIR%%/config/pix/wait7.png
 %%DATADIR%%/config/pix/wait8.png
 %%DATADIR%%/config/pix/wait9.png
-%%DATADIR%%/config/pix/world.png
 %%DATADIR%%/misc/e16.desktop-app
 %%DATADIR%%/misc/e16.desktop
 %%DATADIR%%/misc/e16.png
@@ -408,8 +401,7 @@ share/applications/e16.desktop
 share/xsessions/e16.desktop
 share/xsessions/e16-gnome.desktop
 share/xsessions/e16-kde.desktop
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/e16-docs.html
+%%PORTDOCS%%%%DOCSDIR%%/e16.html
 @dirrm lib/e16
 @dirrm %%DATADIR%%/E-docs
 @dirrm %%DATADIR%%/config/menus
