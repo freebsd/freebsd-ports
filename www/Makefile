@@ -409,6 +409,7 @@
     SUBDIR += mod_accounting
     SUBDIR += mod_antiloris
     SUBDIR += mod_auth_any
+    SUBDIR += mod_auth_cas
     SUBDIR += mod_auth_cookie_mysql
     SUBDIR += mod_auth_cookie_mysql2
     SUBDIR += mod_auth_external

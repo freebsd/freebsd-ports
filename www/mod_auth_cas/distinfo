@@ -1,0 +1,6 @@
+MD5 (mod_auth_cas/mod_auth_cas.c) = e36050d7f5a921839160911d33420408
+SHA256 (mod_auth_cas/mod_auth_cas.c) = 0603d66013bac281067d67067a0400c00e036f63a1075ee8257afe049a70a683
+SIZE (mod_auth_cas/mod_auth_cas.c) = 67710
+MD5 (mod_auth_cas/mod_auth_cas.h) = 9a0287b4a5fa46367151c80c6376af8a
+SHA256 (mod_auth_cas/mod_auth_cas.h) = e0359ac88a290f9c8f9686b9d60ea61ec230f28146abf4ac6a3239feeadaad28
+SIZE (mod_auth_cas/mod_auth_cas.h) = 7409
