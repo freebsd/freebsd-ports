@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Natural
-PORTVERSION=	0.77
+PORTVERSION=	0.81
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,10 +27,14 @@ PERL_MODBUILD=	yes
 MAN1=		dateparse.1
 
 MAN3=		DateTime::Format::Natural.3 \
-  			DateTime::Format::Natural::Base.3 \
-  			DateTime::Format::Natural::Compat.3 \
-  			DateTime::Format::Natural::Helpers.3 \
-			DateTime::Format::Natural::Lang::Base.3 \
-			DateTime::Format::Natural::Lang::EN.3
+		DateTime::Format::Natural::Base.3 \
+		DateTime::Format::Natural::Compat.3 \
+		DateTime::Format::Natural::Duration.3 \
+		DateTime::Format::Natural::Helpers.3 \
+		DateTime::Format::Natural::Lang::Base.3 \
+		DateTime::Format::Natural::Lang::EN.3 \
+		DateTime::Format::Natural::Test.3 \
+		DateTime::Format::Natural::Utils.3 \
+		DateTime::Format::Natural::Wrappers.3
 
 .include <bsd.port.mk>
