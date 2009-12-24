@@ -6,7 +6,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -28,7 +27,7 @@ OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			MYSQL	"Enable MySQL suport in apr-util"			off \
 			PGSQL	"Enable Postgresql suport in apr-util"		off
 
-APR_VERSION=	1.3.8
+APR_VERSION=	1.3.9
 APU_VERSION=	1.3.9
 
 USE_ICONV=		yes
