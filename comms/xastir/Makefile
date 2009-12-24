@@ -7,6 +7,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	1.9.6
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -29,8 +30,6 @@ MAN1=		xastir.1
 SUB_FILES=	pkg-message
 
 OPTIONS=	SHAPELIB "Include Shapelib support" On \
-		INCSHAPE "Use Shapelib included with Xastir" On \
-		PCRE "Include Perl Compat Regular Expression Support" On \
 		DBFAWK "Include DBFAWK Support" On \
 		MAGICK "Include [Image|Graphics]Magick Support" On \
 		GRAPHICK "Use GraphicsMagick instead of ImageMagick" Off \
@@ -46,15 +45,8 @@ OPTIONS=	SHAPELIB "Include Shapelib support" On \
 
 .include <bsd.port.pre.mk>
 
-# Split this way to keep portlint happy.
 .if defined(WITH_SHAPELIB)
-.if defined(WITH_INCSHAPE)
-CONFIGURE_ARGS+=	--with-internal-shapelib
-PLIST_SUB=	INCSHAPE=
-.else
 LIB_DEPENDS+=	shp.1:${PORTSDIR}/devel/shapelib
-PLIST_SUB=	INCSHAPE="@comment "
-.endif
 .else
 CONFIGURE_ARGS+=	--without-shapelib
 .endif
@@ -72,12 +64,6 @@ CONFIGURE_ARGS+=	--without-graphicsmagick
 
 .if defined(WITHOUT_DBFAWK)
 CONFIGURE_ARGS+=	--without-dbfawk
-WITH_PCRE=	true
-.undef WITHOUT_PCRE
-.endif
-
-.if defined(WITHOUT_PCRE)
-CONFIGURE_ARGS+=	--without-pcre
 .else
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
