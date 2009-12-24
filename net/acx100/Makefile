@@ -41,6 +41,10 @@ PLIST_SUB+=	KMODDIR=${KMODDIR}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900002
+IGNORE=		depends on removed if_watchdog member in struct ifnet
+.endif
+
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires the kernel sources to be available
