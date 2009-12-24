@@ -14,6 +14,7 @@
     SUBDIR += animenfo-client-gtk
     SUBDIR += aolserver-nsmysql
     SUBDIR += aolserver-nspostgres
+    SUBDIR += autobackupmysql
     SUBDIR += bbdb
     SUBDIR += buzhug
     SUBDIR += cassandra
