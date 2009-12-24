@@ -8,7 +8,7 @@
 PORTNAME=	playd2
 PORTVERSION=	2.1.2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://pub.ocpsys.com/bsd/killasmurf86/playd/
 
 MAINTAINER=	killasmurf86@gmail.com
 COMMENT=	Very easy to use mplayer Perl wrapper script, with useful features
