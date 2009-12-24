@@ -1,0 +1,128 @@
+From nobody@FreeBSD.org  Fri Nov  6 21:56:23 2009
+Return-Path: <nobody@FreeBSD.org>
+Received: from mx1.freebsd.org (mx1.freebsd.org [IPv6:2001:4f8:fff6::34])
+	by hub.freebsd.org (Postfix) with ESMTP id 4FF8C1065676
+	for <freebsd-gnats-submit@FreeBSD.org>; Fri,  6 Nov 2009 21:56:23 +0000 (UTC)
+	(envelope-from nobody@FreeBSD.org)
+Received: from www.freebsd.org (www.freebsd.org [IPv6:2001:4f8:fff6::21])
+	by mx1.freebsd.org (Postfix) with ESMTP id 248C68FC16
+	for <freebsd-gnats-submit@FreeBSD.org>; Fri,  6 Nov 2009 21:56:23 +0000 (UTC)
+Received: from www.freebsd.org (localhost [127.0.0.1])
+	by www.freebsd.org (8.14.3/8.14.3) with ESMTP id nA6LuMTq093018
+	for <freebsd-gnats-submit@FreeBSD.org>; Fri, 6 Nov 2009 21:56:22 GMT
+	(envelope-from nobody@www.freebsd.org)
+Received: (from nobody@localhost)
+	by www.freebsd.org (8.14.3/8.14.3/Submit) id nA6LuMjk093017;
+	Fri, 6 Nov 2009 21:56:22 GMT
+	(envelope-from nobody)
+Message-Id: <200911062156.nA6LuMjk093017@www.freebsd.org>
+Date: Fri, 6 Nov 2009 21:56:22 GMT
+From: Kimo <kimor79@yahoo.com>
+To: freebsd-gnats-submit@FreeBSD.org
+Subject: New port: www/mod_auth_cas Apache 2.0/2.2 compliant module that supports the CASv1 and CASv2 protocols
+X-Send-Pr-Version: www-3.1
+X-GNATS-Notify:
+
+>Number:         140348
+>Category:       ports
+>Synopsis:       New port: www/mod_auth_cas Apache 2.0/2.2 compliant module that supports the CASv1 and CASv2 protocols
+>Confidential:   no
+>Severity:       non-critical
+>Priority:       low
+>Responsible:    pgollucci
+>State:          open
+>Quarter:        
+>Keywords:       
+>Date-Required:  
+>Class:          change-request
+>Submitter-Id:   current-users
+>Arrival-Date:   Fri Nov 06 22:00:08 UTC 2009
+>Closed-Date:    
+>Last-Modified:  Thu Dec 24 06:34:30 UTC 2009
+>Originator:     Kimo
+>Release:        
+>Organization:
+>Environment:
+>Description:
+This is a request to add a new port for mod_auth_cas which is a CAS SingleSingOn apache module:
+
+http://www.ja-sig.org/wiki/display/CASC/mod_auth_cas
+>How-To-Repeat:
+
+>Fix:
+
+
+Patch attached with submission follows:
+
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	./
+#	./pkg-descr
+#	./Makefile
+#	./distinfo
+#
+echo c - ./
+mkdir -p ./ > /dev/null 2>&1
+echo x - ./pkg-descr
+sed 's/^X//' >./pkg-descr << '0e313719ff012ceaf97a028d51caa8f5'
+Xmod_auth_cas is an Apache 2.0/2.2 compliant module that
+Xsupports the CASv1 and CASv2 protocols.
+X
+XWWW: http://www.ja-sig.org/wiki/display/CASC/mod_auth_cas
+0e313719ff012ceaf97a028d51caa8f5
+echo x - ./Makefile
+sed 's/^X//' >./Makefile << '464ef7c6571951809b23e262cbe26e19'
+XPORTNAME=	mod_auth_cas
+XPORTVERSION=	1.0.8
+XCATEGORIES=	www
+XMASTER_SITES=	https://www.ja-sig.org/svn/cas-clients/mod_auth_cas/tags/mod_auth_cas-1.0.8/src/
+X
+XDISTFILES=	mod_auth_cas.c mod_auth_cas.h
+XEXTRACT_ONLY=
+XDIST_SUBDIR=	mod_auth_cas
+XNO_WRKSUBDIR=	yes
+X
+XMAINTAINER=	apache@FreeBSD.org
+XCOMMENT=	Apache 2.0/2.2 compliant module that supports the CASv1 and CASv2 protocols
+X
+XMAKE_JOBS_SAFE=  yes
+X
+XUSE_APACHE=	2.0+
+XAP_FAST_BUILD=	yes
+XAP_GENPLIST=	yes
+X
+Xpost-extract:
+X	${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_auth_cas.c ${WRKSRC}/mod_auth_cas.c
+X	${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_auth_cas.h ${WRKSRC}/mod_auth_cas.h
+X
+X.include <bsd.port.mk>
+464ef7c6571951809b23e262cbe26e19
+echo x - ./distinfo
+sed 's/^X//' >./distinfo << 'aec8793adfd5b7c3f00e62ae41a09ac2'
+XMD5 (mod_auth_cas/mod_auth_cas.c) = e36050d7f5a921839160911d33420408
+XSHA256 (mod_auth_cas/mod_auth_cas.c) = 0603d66013bac281067d67067a0400c00e036f63a1075ee8257afe049a70a683
+XSIZE (mod_auth_cas/mod_auth_cas.c) = 67710
+XMD5 (mod_auth_cas/mod_auth_cas.h) = 9a0287b4a5fa46367151c80c6376af8a
+XSHA256 (mod_auth_cas/mod_auth_cas.h) = e0359ac88a290f9c8f9686b9d60ea61ec230f28146abf4ac6a3239feeadaad28
+XSIZE (mod_auth_cas/mod_auth_cas.h) = 7409
+aec8793adfd5b7c3f00e62ae41a09ac2
+exit
+
+
+
+>Release-Note:
+>Audit-Trail:
+Responsible-Changed-From-To: freebsd-ports-bugs->pgollucci 
+Responsible-Changed-By: pgollucci 
+Responsible-Changed-When: Thu Dec 24 06:34:29 UTC 2009 
+Responsible-Changed-Why:  
+I'll take it. 
+
+http://www.freebsd.org/cgi/query-pr.cgi?pr=140348 
+>Unformatted:
+
