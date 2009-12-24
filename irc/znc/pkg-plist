@@ -101,7 +101,6 @@ libdata/pkgconfig/znc.pc
 %%MODULES%%%%EXTRA%%lib/znc/antiidle.so
 %%MODULES%%%%EXTRA%%lib/znc/autovoice.so
 %%MODULES%%%%EXTRA%%lib/znc/blockuser.so
-%%MODULES%%%%EXTRA%%lib/znc/connect_throttle.so
 %%MODULES%%%%EXTRA%%lib/znc/ctcpflood.so
 %%MODULES%%%%EXTRA%%lib/znc/discon_kick.so
 %%MODULES%%%%EXTRA%%lib/znc/droproot.so
@@ -121,8 +120,6 @@ libdata/pkgconfig/znc.pc
 %%MODULES%%%%TCL%%lib/znc/modtcl.so
 %%MODULES%%%%TCL%%share/znc/modtcl/modtcl.tcl
 %%MODULES%%%%TCL%%share/znc/modtcl/binds.tcl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/znc.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/znc
 @dirrmtry lib/znc
 @dirrmtry share/znc/webadmin/skins/ice/data
