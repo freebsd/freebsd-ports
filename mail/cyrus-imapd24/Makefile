@@ -88,7 +88,9 @@ PLIST_SUB+=	IDLED="@comment "
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
+CONFIGURE_ARGS+=--with-mysql=yes \
+		--with-mysql-libdir=${LOCALBASE}/lib/mysql \
+		--with-mysql-incdir=${LOCALBASE}/include/mysql
 .endif
 
 .if defined(WITH_PGSQL)
