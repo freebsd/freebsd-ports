@@ -4222,6 +4222,7 @@ gimp-help                       ports/graphics/gimp-help
 gimp-lqr-plugin                 ports/graphics/gimp-lqr-plugin
 gimp-manual-html                ports/graphics/gimp-manual-html
 gimp-manual-pdf                 ports/graphics/gimp-manual-pdf
+gimp-save-for-web               ports/graphics/gimp-save-for-web
 gimpfx-foundry                  ports/graphics/gimpfx-foundry
 gimpshop                        ports/graphics/gimpshop
 ginac                           ports/math/GiNaC
@@ -5075,6 +5076,7 @@ guilib                          ports/graphics/guilib
 guiloader                       ports/devel/guiloader
 guiloader-c++                   ports/devel/guiloader-c++
 guitartex                       ports/print/guitartex
+gunfudeadlands                  ports/games/gunfudeadlands
 gup                             ports/news/gup
 guppi                           ports/math/guppi
 gupsc                           ports/sysutils/gupsc
@@ -11201,6 +11203,7 @@ p5-Data-Integer                 ports/devel/p5-Data-Integer
 p5-Data-JavaScript              ports/lang/p5-Data-JavaScript
 p5-Data-Lazy                    ports/devel/p5-Data-Lazy
 p5-Data-Localize                ports/devel/p5-Data-Localize
+p5-Data-MessagePack             ports/devel/p5-Data-MessagePack
 p5-Data-ObjectDriver            ports/devel/p5-Data-ObjectDriver
 p5-Data-OptList                 ports/devel/p5-Data-OptList
 p5-Data-Page                    ports/databases/p5-Data-Page
@@ -12377,6 +12380,7 @@ p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
 p5-Mojo                         ports/www/p5-Mojo
 p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mon                          ports/net-mgmt/p5-Mon
+p5-MongoDB                      ports/databases/p5-MongoDB
 p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
@@ -12426,6 +12430,7 @@ p5-MouseX-Types-Path-Class      ports/devel/p5-MouseX-Types-Path-Class
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-Client           ports/audio/p5-MusicBrainz-Client
+p5-MusicBrainz-DiscID           ports/audio/p5-MusicBrainz-DiscID
 p5-MusicBrainz-Queries          ports/audio/p5-MusicBrainz-Queries
 p5-MusicBrainz-TRM              ports/audio/p5-MusicBrainz-TRM
 p5-Mysql                        ports/databases/p5-Mysql
@@ -12875,6 +12880,7 @@ p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-Plack-Request                ports/www/p5-Plack-Request
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
+p5-Plack-Server-POE             ports/www/p5-Plack-Server-POE
 p5-Plack-Server-ReverseHTTP     ports/www/p5-Plack-Server-ReverseHTTP
 p5-Plack-Server-ServerSimple    ports/www/p5-Plack-Server-ServerSimple
 p5-Plagger                      ports/textproc/p5-Plagger
@@ -14754,6 +14760,7 @@ p5-data-integer                 ports/devel/p5-Data-Integer
 p5-data-javascript              ports/lang/p5-Data-JavaScript
 p5-data-lazy                    ports/devel/p5-Data-Lazy
 p5-data-localize                ports/devel/p5-Data-Localize
+p5-data-messagepack             ports/devel/p5-Data-MessagePack
 p5-data-objectdriver            ports/devel/p5-Data-ObjectDriver
 p5-data-optlist                 ports/devel/p5-Data-OptList
 p5-data-page                    ports/databases/p5-Data-Page
@@ -16036,6 +16043,7 @@ p5-mogilefs-utils               ports/sysutils/p5-MogileFS-Utils
 p5-mojo                         ports/www/p5-Mojo
 p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
+p5-mongodb                      ports/databases/p5-MongoDB
 p5-moose                        ports/devel/p5-Moose
 p5-moose-autobox                ports/devel/p5-Moose-Autobox
 p5-moose-policy                 ports/devel/p5-Moose-Policy
@@ -16093,6 +16101,7 @@ p5-mrtg-parse                   ports/net-mgmt/p5-MRTG-Parse
 p5-music-audioscrobbler-mpd     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-music-audioscrobbler-submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-musicbrainz-client           ports/audio/p5-MusicBrainz-Client
+p5-musicbrainz-discid           ports/audio/p5-MusicBrainz-DiscID
 p5-musicbrainz-queries          ports/audio/p5-MusicBrainz-Queries
 p5-musicbrainz-trm              ports/audio/p5-MusicBrainz-TRM
 p5-mysql                        ports/databases/p5-Mysql
@@ -16473,6 +16482,7 @@ p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-plack-request                ports/www/p5-Plack-Request
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
+p5-plack-server-poe             ports/www/p5-Plack-Server-POE
 p5-plack-server-reversehttp     ports/www/p5-Plack-Server-ReverseHTTP
 p5-plack-server-serversimple    ports/www/p5-Plack-Server-ServerSimple
 p5-plagger                      ports/textproc/p5-Plagger
