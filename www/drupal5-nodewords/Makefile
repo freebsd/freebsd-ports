@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nodewords
-DISTVERSION=	5.x-1.12
+DISTVERSION=	5.x-1.13
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
