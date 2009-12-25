@@ -7,7 +7,7 @@
 
 PORTNAME=	rt
 PORTVERSION?=	3.6.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -21,8 +21,7 @@ COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.8*
 
-PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
-		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
+PERL_MODULES =	${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		p5-DBIx-SearchBuilder>=0.53:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
@@ -45,9 +44,9 @@ PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
-	        ${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-	        ${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
-	        ${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
+        ${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
+        ${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
+        ${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/CSS/Squish.pm:${PORTSDIR}/textproc/p5-CSS-Squish \
 		p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
@@ -58,11 +57,7 @@ LATEST_LINK=	rt36
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
-.if defined(WITH_APACHE2)
-USE_APACHE=	2.0+
-.else
 USE_APACHE=	1.3+
-.endif
 
 CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \
@@ -77,25 +72,17 @@ CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--with-db-database=${DB_DATABASE} \
 		--with-db-dba=${DB_DBA_USER}
 
+.include <bsd.port.pre.mk>
 .if defined(WITH_FASTCGI)
-.if defined(WITH_APACHE2)
 PERL_MODULES+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.else
-PERL_MODULES+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.endif
 PERL_MODULES+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
-DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 .else
 PERL_MODULES+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
-.if defined(WITH_APACHE2)
+.	if ${APACHE_VERSION} == 13
+PERL_MODULES+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+.	else
 PERL_MODULES+=	${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
-DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
-DEPENDS_ARGS+=	WITH_MODPERL2=yes
-.else
-# XXX - probe for static mod_perl using `httpd -l | grep perl`
-PERL_MODULES+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
-.endif
+.	endif
 .endif
 .if defined(MULTIPLE_INSTANCES)
 EXTRA_PATCHES+=	${FILESDIR}/multiple*
@@ -147,8 +134,6 @@ UPGRADES+=	3.3.0 3.3.11
 UPGRADES+=	3.5.1
 .endif
 
-.include <bsd.port.pre.mk>
-
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -158,7 +143,6 @@ pre-fetch:
 	@${ECHO} "      UPGRADE_RT34                    Upgrading from a RT 3.4 installation"
 	@${ECHO} "      INITIAL_INSTALL                 Do initialize DB (for initial install only)"
 	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
-	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
 	@${ECHO} "      MULTIPLE_INSTANCES              Patch RT to allow for multiple instances"
 	@${ECHO} "                 (see: http://wiki.bestpractical.com/index.cgi?MultipleInstances)"
 	@${ECHO} ""
