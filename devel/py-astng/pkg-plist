@@ -10,6 +10,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_nodes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_nodes_ast.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_nodes_ast.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/_nodes_ast.pyo
@@ -34,6 +37,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/manager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/manager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/manager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/node_classes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/node_classes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/node_classes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/nodes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/nodes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/astng/nodes.pyo
