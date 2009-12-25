@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	String-RewritePrefix
-PORTVERSION=	0.004
+PORTVERSION=	0.005
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RJ/RJBS/
