@@ -44,8 +44,10 @@
 %%HORDIR%%/locale/da_DK/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/dimp.mo
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/dimp.mo
+%%HORDIR%%/locale/hr_HR/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/dimp.mo
 %%HORDIR%%/locale/ja_JP/LC_MESSAGES/dimp.mo
@@ -61,8 +63,10 @@
 %%HORDIR%%/po/de_DE.po
 %%HORDIR%%/po/dimp.pot
 %%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/hr_HR.po
 %%HORDIR%%/po/hu_HU.po
 %%HORDIR%%/po/it_IT.po
 %%HORDIR%%/po/ja_JP.po
@@ -259,10 +263,14 @@
 @dirrm %%HORDIR%%/locale/de_DE
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
 @dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fi_FI
 @dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/hr_HR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hr_HR
 @dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/hu_HU
 @dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES

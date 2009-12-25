@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dimp
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
