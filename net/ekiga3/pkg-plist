@@ -1,0 +1,539 @@
+bin/ekiga
+bin/ekiga-config-tool
+%%DBUS%%bin/ekiga-helper
+%%NO_GCONF%%etc/ekiga/ekiga.schemas
+share/locale/am/LC_MESSAGES/ekiga.mo
+share/locale/ar/LC_MESSAGES/ekiga.mo
+share/locale/as/LC_MESSAGES/ekiga.mo
+share/locale/az/LC_MESSAGES/ekiga.mo
+share/locale/be/LC_MESSAGES/ekiga.mo
+share/locale/bg/LC_MESSAGES/ekiga.mo
+share/locale/bn/LC_MESSAGES/ekiga.mo
+share/locale/bn_IN/LC_MESSAGES/ekiga.mo
+share/locale/bs/LC_MESSAGES/ekiga.mo
+share/locale/ca/LC_MESSAGES/ekiga.mo
+share/locale/ca@valencia/LC_MESSAGES/ekiga.mo
+share/locale/crh/LC_MESSAGES/ekiga.mo
+share/locale/cs/LC_MESSAGES/ekiga.mo
+share/locale/cy/LC_MESSAGES/ekiga.mo
+share/locale/da/LC_MESSAGES/ekiga.mo
+share/locale/de/LC_MESSAGES/ekiga.mo
+share/locale/dz/LC_MESSAGES/ekiga.mo
+share/locale/el/LC_MESSAGES/ekiga.mo
+share/locale/en_CA/LC_MESSAGES/ekiga.mo
+share/locale/en_GB/LC_MESSAGES/ekiga.mo
+share/locale/eo/LC_MESSAGES/ekiga.mo
+share/locale/es/LC_MESSAGES/ekiga.mo
+share/locale/et/LC_MESSAGES/ekiga.mo
+share/locale/eu/LC_MESSAGES/ekiga.mo
+share/locale/fa/LC_MESSAGES/ekiga.mo
+share/locale/fi/LC_MESSAGES/ekiga.mo
+share/locale/fr/LC_MESSAGES/ekiga.mo
+share/locale/ga/LC_MESSAGES/ekiga.mo
+share/locale/gl/LC_MESSAGES/ekiga.mo
+share/locale/gu/LC_MESSAGES/ekiga.mo
+share/locale/he/LC_MESSAGES/ekiga.mo
+share/locale/hi/LC_MESSAGES/ekiga.mo
+share/locale/hr/LC_MESSAGES/ekiga.mo
+share/locale/hu/LC_MESSAGES/ekiga.mo
+share/locale/id/LC_MESSAGES/ekiga.mo
+share/locale/is/LC_MESSAGES/ekiga.mo
+share/locale/it/LC_MESSAGES/ekiga.mo
+share/locale/ja/LC_MESSAGES/ekiga.mo
+share/locale/ka/LC_MESSAGES/ekiga.mo
+share/locale/kn/LC_MESSAGES/ekiga.mo
+share/locale/ko/LC_MESSAGES/ekiga.mo
+share/locale/ku/LC_MESSAGES/ekiga.mo
+share/locale/lt/LC_MESSAGES/ekiga.mo
+share/locale/lv/LC_MESSAGES/ekiga.mo
+share/locale/mai/LC_MESSAGES/ekiga.mo
+share/locale/mk/LC_MESSAGES/ekiga.mo
+share/locale/ml/LC_MESSAGES/ekiga.mo
+share/locale/mn/LC_MESSAGES/ekiga.mo
+share/locale/mr/LC_MESSAGES/ekiga.mo
+share/locale/ms/LC_MESSAGES/ekiga.mo
+share/locale/nb/LC_MESSAGES/ekiga.mo
+share/locale/ne/LC_MESSAGES/ekiga.mo
+share/locale/nl/LC_MESSAGES/ekiga.mo
+share/locale/nn/LC_MESSAGES/ekiga.mo
+share/locale/oc/LC_MESSAGES/ekiga.mo
+share/locale/or/LC_MESSAGES/ekiga.mo
+share/locale/pa/LC_MESSAGES/ekiga.mo
+share/locale/pl/LC_MESSAGES/ekiga.mo
+share/locale/pt/LC_MESSAGES/ekiga.mo
+share/locale/pt_BR/LC_MESSAGES/ekiga.mo
+share/locale/ro/LC_MESSAGES/ekiga.mo
+share/locale/ru/LC_MESSAGES/ekiga.mo
+share/locale/rw/LC_MESSAGES/ekiga.mo
+share/locale/si/LC_MESSAGES/ekiga.mo
+share/locale/sk/LC_MESSAGES/ekiga.mo
+share/locale/sl/LC_MESSAGES/ekiga.mo
+share/locale/sq/LC_MESSAGES/ekiga.mo
+share/locale/sr/LC_MESSAGES/ekiga.mo
+share/locale/sr@latin/LC_MESSAGES/ekiga.mo
+share/locale/sv/LC_MESSAGES/ekiga.mo
+share/locale/ta/LC_MESSAGES/ekiga.mo
+share/locale/te/LC_MESSAGES/ekiga.mo
+share/locale/th/LC_MESSAGES/ekiga.mo
+share/locale/tr/LC_MESSAGES/ekiga.mo
+share/locale/uk/LC_MESSAGES/ekiga.mo
+share/locale/vi/LC_MESSAGES/ekiga.mo
+share/locale/wa/LC_MESSAGES/ekiga.mo
+share/locale/xh/LC_MESSAGES/ekiga.mo
+share/locale/zh_CN/LC_MESSAGES/ekiga.mo
+share/locale/zh_HK/LC_MESSAGES/ekiga.mo
+share/locale/zh_TW/LC_MESSAGES/ekiga.mo
+share/applications/ekiga.desktop
+%%DBUS%%share/dbus-1/services/org.ekiga.Ekiga.service
+%%DBUS%%share/dbus-1/services/org.ekiga.Helper.service
+%%GNOMEHELP%%share/gnome/help/ekiga/C/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/C/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/bg/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ca/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/de/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/el/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/en_GB/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/es/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/eu/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fi/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/fr/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/oc/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/pt_BR/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/ru/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/sv/figures/lumi.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/ekiga.xml
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/accounts_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/accounts_h323.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/accounts_sip.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/audio_codecs.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/call_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d1.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d2.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d3.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d4.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d5.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d6.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d7.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/config_d8.png
+%%GNOMEHELP%%share/gnome/help/ekiga/uk/figures/lumi.png
+share/icons/hicolor/128x128/apps/ekiga.png
+share/icons/hicolor/16x16/apps/ekiga.png
+share/icons/hicolor/22x22/apps/ekiga.png
+share/icons/hicolor/32x32/apps/ekiga.png
+share/icons/hicolor/48x48/apps/ekiga.png
+share/icons/hicolor/64x64/apps/ekiga.png
+share/icons/hicolor/72x72/apps/ekiga.png
+%%GNOMEHELP%%share/omf/ekiga/ekiga-C.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-bg.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-ca.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-de.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-el.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-en_GB.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-es.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-eu.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-fi.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-fr.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-oc.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-pt_BR.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-ru.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-sv.omf
+%%GNOMEHELP%%share/omf/ekiga/ekiga-uk.omf
+share/pixmaps/ekiga/ekiga-logo.png
+share/sounds/ekiga/busytone.wav
+share/sounds/ekiga/dialtone.wav
+share/sounds/ekiga/newmessage.wav
+share/sounds/ekiga/ring.wav
+share/sounds/ekiga/voicemail.wav
+@dirrm share/pixmaps/ekiga
+@dirrm share/sounds/ekiga
+@dirrm lib/locale/zh_TW/LC_MESSAGES
+@dirrm lib/locale/zh_TW
+@dirrm lib/locale/zh_HK/LC_MESSAGES
+@dirrm lib/locale/zh_HK
+@dirrm lib/locale/zh_CN/LC_MESSAGES
+@dirrm lib/locale/zh_CN
+@dirrm lib/locale/xh/LC_MESSAGES
+@dirrm lib/locale/xh
+@dirrm lib/locale/wa/LC_MESSAGES
+@dirrm lib/locale/wa
+@dirrm lib/locale/vi/LC_MESSAGES
+@dirrm lib/locale/vi
+@dirrm lib/locale/uk/LC_MESSAGES
+@dirrm lib/locale/uk
+@dirrm lib/locale/tr/LC_MESSAGES
+@dirrm lib/locale/tr
+@dirrm lib/locale/th/LC_MESSAGES
+@dirrm lib/locale/th
+@dirrm lib/locale/te/LC_MESSAGES
+@dirrm lib/locale/te
+@dirrm lib/locale/ta/LC_MESSAGES
+@dirrm lib/locale/ta
+@dirrm lib/locale/sv/LC_MESSAGES
+@dirrm lib/locale/sv
+@dirrm lib/locale/sr@latin/LC_MESSAGES
+@dirrm lib/locale/sr@latin
+@dirrm lib/locale/sr/LC_MESSAGES
+@dirrm lib/locale/sr
+@dirrm lib/locale/sq/LC_MESSAGES
+@dirrm lib/locale/sq
+@dirrm lib/locale/sl/LC_MESSAGES
+@dirrm lib/locale/sl
+@dirrm lib/locale/sk/LC_MESSAGES
+@dirrm lib/locale/sk
+@dirrm lib/locale/si/LC_MESSAGES
+@dirrm lib/locale/si
+@dirrm lib/locale/rw/LC_MESSAGES
+@dirrm lib/locale/rw
+@dirrm lib/locale/ru/LC_MESSAGES
+@dirrm lib/locale/ru
+@dirrm lib/locale/ro/LC_MESSAGES
+@dirrm lib/locale/ro
+@dirrm lib/locale/pt_BR/LC_MESSAGES
+@dirrm lib/locale/pt_BR
+@dirrm lib/locale/pt/LC_MESSAGES
+@dirrm lib/locale/pt
+@dirrm lib/locale/pl/LC_MESSAGES
+@dirrm lib/locale/pl
+@dirrm lib/locale/pa/LC_MESSAGES
+@dirrm lib/locale/pa
+@dirrm lib/locale/or/LC_MESSAGES
+@dirrm lib/locale/or
+@dirrm lib/locale/oc/LC_MESSAGES
+@dirrm lib/locale/oc
+@dirrm lib/locale/nn/LC_MESSAGES
+@dirrm lib/locale/nn
+@dirrm lib/locale/nl/LC_MESSAGES
+@dirrm lib/locale/nl
+@dirrm lib/locale/ne/LC_MESSAGES
+@dirrm lib/locale/ne
+@dirrm lib/locale/nb/LC_MESSAGES
+@dirrm lib/locale/nb
+@dirrm lib/locale/ms/LC_MESSAGES
+@dirrm lib/locale/ms
+@dirrm lib/locale/mr/LC_MESSAGES
+@dirrm lib/locale/mr
+@dirrm lib/locale/mn/LC_MESSAGES
+@dirrm lib/locale/mn
+@dirrm lib/locale/ml/LC_MESSAGES
+@dirrm lib/locale/ml
+@dirrm lib/locale/mk/LC_MESSAGES
+@dirrm lib/locale/mk
+@dirrm lib/locale/mai/LC_MESSAGES
+@dirrm lib/locale/mai
+@dirrm lib/locale/lv/LC_MESSAGES
+@dirrm lib/locale/lv
+@dirrm lib/locale/lt/LC_MESSAGES
+@dirrm lib/locale/lt
+@dirrm lib/locale/ku/LC_MESSAGES
+@dirrm lib/locale/ku
+@dirrm lib/locale/ko/LC_MESSAGES
+@dirrm lib/locale/ko
+@dirrm lib/locale/kn/LC_MESSAGES
+@dirrm lib/locale/kn
+@dirrm lib/locale/ka/LC_MESSAGES
+@dirrm lib/locale/ka
+@dirrm lib/locale/ja/LC_MESSAGES
+@dirrm lib/locale/ja
+@dirrm lib/locale/it/LC_MESSAGES
+@dirrm lib/locale/it
+@dirrm lib/locale/is/LC_MESSAGES
+@dirrm lib/locale/is
+@dirrm lib/locale/id/LC_MESSAGES
+@dirrm lib/locale/id
+@dirrm lib/locale/hu/LC_MESSAGES
+@dirrm lib/locale/hu
+@dirrm lib/locale/hr/LC_MESSAGES
+@dirrm lib/locale/hr
+@dirrm lib/locale/hi/LC_MESSAGES
+@dirrm lib/locale/hi
+@dirrm lib/locale/he/LC_MESSAGES
+@dirrm lib/locale/he
+@dirrm lib/locale/gu/LC_MESSAGES
+@dirrm lib/locale/gu
+@dirrm lib/locale/gl/LC_MESSAGES
+@dirrm lib/locale/gl
+@dirrm lib/locale/ga/LC_MESSAGES
+@dirrm lib/locale/ga
+@dirrm lib/locale/fr/LC_MESSAGES
+@dirrm lib/locale/fr
+@dirrm lib/locale/fi/LC_MESSAGES
+@dirrm lib/locale/fi
+@dirrm lib/locale/fa/LC_MESSAGES
+@dirrm lib/locale/fa
+@dirrm lib/locale/eu/LC_MESSAGES
+@dirrm lib/locale/eu
+@dirrm lib/locale/et/LC_MESSAGES
+@dirrm lib/locale/et
+@dirrm lib/locale/es/LC_MESSAGES
+@dirrm lib/locale/es
+@dirrm lib/locale/eo/LC_MESSAGES
+@dirrm lib/locale/eo
+@dirrm lib/locale/en_GB/LC_MESSAGES
+@dirrm lib/locale/en_GB
+@dirrm lib/locale/en_CA/LC_MESSAGES
+@dirrm lib/locale/en_CA
+@dirrm lib/locale/el/LC_MESSAGES
+@dirrm lib/locale/el
+@dirrm lib/locale/dz/LC_MESSAGES
+@dirrm lib/locale/dz
+@dirrm lib/locale/de/LC_MESSAGES
+@dirrm lib/locale/de
+@dirrm lib/locale/da/LC_MESSAGES
+@dirrm lib/locale/da
+@dirrm lib/locale/cy/LC_MESSAGES
+@dirrm lib/locale/cy
+@dirrm lib/locale/cs/LC_MESSAGES
+@dirrm lib/locale/cs
+@dirrm lib/locale/crh/LC_MESSAGES
+@dirrm lib/locale/crh
+@dirrm lib/locale/ca@valencia/LC_MESSAGES
+@dirrm lib/locale/ca@valencia
+@dirrm lib/locale/ca/LC_MESSAGES
+@dirrm lib/locale/ca
+@dirrm lib/locale/bs/LC_MESSAGES
+@dirrm lib/locale/bs
+@dirrm lib/locale/bn_IN/LC_MESSAGES
+@dirrm lib/locale/bn_IN
+@dirrm lib/locale/bn/LC_MESSAGES
+@dirrm lib/locale/bn
+@dirrm lib/locale/bg/LC_MESSAGES
+@dirrm lib/locale/bg
+@dirrm lib/locale/be/LC_MESSAGES
+@dirrm lib/locale/be
+@dirrm lib/locale/az/LC_MESSAGES
+@dirrm lib/locale/az
+@dirrm lib/locale/as/LC_MESSAGES
+@dirrm lib/locale/as
+@dirrm lib/locale/ar/LC_MESSAGES
+@dirrm lib/locale/ar
+@dirrm lib/locale/am/LC_MESSAGES
+@dirrm lib/locale/am
+@dirrm lib/locale
+%%GNOMEHELP%%@dirrm share/omf/ekiga
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/uk/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/uk
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/sv/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/sv
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ru/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ru
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/pt_BR/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/pt_BR
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/oc/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/oc
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fr/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fr
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fi/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fi
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/eu/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/eu
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/es/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/es
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/en_GB/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/en_GB
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/el/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/el
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/de/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/de
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ca/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ca
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/bg/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/bg
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/C/figures
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/C
+%%GNOMEHELP%%@dirrm share/gnome/help/ekiga
+@dirrmtry share/applications
