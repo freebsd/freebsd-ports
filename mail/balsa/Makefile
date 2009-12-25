@@ -8,6 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -18,7 +19,7 @@ COMMENT=	A mail reader for the GNOME 2 desktop
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
-		gmime-2.0.4:${PORTSDIR}/mail/gmime2 \
+		gmime-2.4.6:${PORTSDIR}/mail/gmime24 \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 
