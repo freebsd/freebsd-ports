@@ -20,7 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		${SITE_PERL}/DateTime/Calendar/Christian.pm:${PORTSDIR}/devel/p5-DateTime-Calendar-Christian \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_MODBUILD=	yes
 

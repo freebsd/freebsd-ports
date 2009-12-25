@@ -7,6 +7,7 @@
 
 PORTNAME=	Gearman-Client-Async
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/B/BR/BRADFITZ
@@ -17,8 +18,7 @@ COMMENT=	Asynchronous client module for Gearman for Danga::Socket applications
 
 RUN_DEPENDS=	\
 	${SITE_PERL}/Danga/Socket.pm:${PORTSDIR}/devel/p5-Danga-Socket \
-	${SITE_PERL}/Gearman/Client.pm:${PORTSDIR}/devel/p5-Gearman \
-	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
+	${SITE_PERL}/Gearman/Client.pm:${PORTSDIR}/devel/p5-Gearman
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PERL=	yes
