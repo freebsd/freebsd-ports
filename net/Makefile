@@ -133,6 +133,7 @@
     SUBDIR += echoping
     SUBDIR += ecore-con
     SUBDIR += ekiga
+    SUBDIR += ekiga3
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += entitymib
@@ -767,12 +768,12 @@
     SUBDIR += pppload
     SUBDIR += pppoa
     SUBDIR += pptpclient
-    SUBDIR += ptpd
     SUBDIR += prosearch
     SUBDIR += proxy-connect
     SUBDIR += proxy-suite
     SUBDIR += proxychains
     SUBDIR += prtunnel
+    SUBDIR += ptpd
     SUBDIR += ptunnel
     SUBDIR += pvm
     SUBDIR += pvm++
@@ -948,8 +949,8 @@
     SUBDIR += spnetkit
     SUBDIR += spoofer
     SUBDIR += spread
-    SUBDIR += spread4
     SUBDIR += spread-j
+    SUBDIR += spread4
     SUBDIR += sprinkle
     SUBDIR += spserver
     SUBDIR += ss5
