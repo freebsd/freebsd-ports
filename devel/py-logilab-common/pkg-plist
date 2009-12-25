@@ -71,9 +71,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/logging_ext.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/logging_ext.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/logging_ext.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/meminfo.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/meminfo.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/meminfo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/modutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/modutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/modutils.pyo
@@ -271,12 +268,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/x.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/x.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/x.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/xtest_foo.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/xtest_foo.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/xtest_foo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/testlib.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/testlib.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/testlib.pyo
