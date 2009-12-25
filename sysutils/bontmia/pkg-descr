@@ -1,0 +1,9 @@
+This is a port of bontmia, which is a tool to make incremental backups
+over network using rsync and ssh. It supports storing of a given number
+of archives in wich files that has not been changed since last backup
+will be hard linked to previous archive to save space and bandwidth.
+
+Bontmia is an acromyn of Backup Over Network To Multiple Incremental
+Archives wich pretty good sums up its intended use.
+
+WWW: http://kosmos.ttyv0.se/projects/show/bontmia
