@@ -40,16 +40,6 @@ bin/XMLRPCsh.pl
 %%SITE_PERL%%/XMLRPC/Transport/TCP.pm
 %%SITE_PERL%%/XMLRPC/Transport/HTTP.pm
 %%SITE_PERL%%/XMLRPC/Transport/POP3.pm
-%%SITE_PERL%%/OldDocs/SOAP/Lite.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/TCP.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/POP3.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/HTTP.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/FTP.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/MQ.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/JABBER.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/IO.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/LOCAL.pm
-%%SITE_PERL%%/OldDocs/SOAP/Transport/MAILTO.pm
 %%SITE_PERL%%/Apache/SOAP.pm
 %%SITE_PERL%%/Apache/XMLRPC/Lite.pm
 %%SITE_PERL%%/UDDI/Lite.pm
