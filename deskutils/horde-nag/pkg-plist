@@ -56,6 +56,8 @@
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/nag.mo
 %%HORDIR%%/locale/fi_FI/help.xml
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/hr_HR/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/hr_HR/help.xml
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/nag.mo
 %%HORDIR%%/locale/hu_HU/help.xml
 %%HORDIR%%/locale/id_ID/LC_MESSAGES/nag.mo
@@ -95,6 +97,7 @@
 %%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/hr_HR.po
 %%HORDIR%%/po/hu_HU.po
 %%HORDIR%%/po/id_ID.po
 %%HORDIR%%/po/it_IT.po
@@ -127,7 +130,9 @@
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2.oci8.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
+%%HORDIR%%/scripts/upgrades/2.2_to_2.3.oci8.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.sql
 %%HORDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
@@ -246,6 +251,8 @@
 @dirrm %%HORDIR%%/locale/fi_FI
 @dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/hr_HR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hr_HR
 @dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/hu_HU
 @dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
