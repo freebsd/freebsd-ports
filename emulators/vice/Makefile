@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
@@ -18,7 +17,8 @@ COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 .if defined(VICE_WITH_XAW3D)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
@@ -52,7 +52,10 @@ USE_XORG+=	xaw
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
+PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
+CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 --disable-dependency-tracking
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \
 		vice.1 x128.1 \
@@ -66,6 +69,14 @@ INFO=		vice
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LIBUSB)
+.if ${OSVERSION}<800063
+LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
+.endif
+.else
+CONFIGURE_ARGS+=        --disable-libusb
+.endif
 
 .if exists(${LOCALBASE}/bin/fc-cache)
 PLIST_SUB+=		FCCACHE=""
