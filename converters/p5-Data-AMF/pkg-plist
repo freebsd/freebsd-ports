@@ -1,0 +1,23 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/AMF/.packlist
+%%SITE_PERL%%/Data/AMF.pm
+%%SITE_PERL%%/Data/AMF/Formatter.pm
+%%SITE_PERL%%/Data/AMF/Formatter/AMF0.pm
+%%SITE_PERL%%/Data/AMF/Formatter/AMF3.pm
+%%SITE_PERL%%/Data/AMF/Header.pm
+%%SITE_PERL%%/Data/AMF/IO.pm
+%%SITE_PERL%%/Data/AMF/Message.pm
+%%SITE_PERL%%/Data/AMF/Packet.pm
+%%SITE_PERL%%/Data/AMF/Parser.pm
+%%SITE_PERL%%/Data/AMF/Parser/AMF0.pm
+%%SITE_PERL%%/Data/AMF/Parser/AMF3.pm
+%%SITE_PERL%%/Data/AMF/Remoting.pm
+%%SITE_PERL%%/Data/AMF/Type/Boolean.pm
+%%SITE_PERL%%/Data/AMF/Type/ByteArray.pm
+%%SITE_PERL%%/Data/AMF/Type/Null.pm
+@dirrm %%SITE_PERL%%/Data/AMF/Type
+@dirrm %%SITE_PERL%%/Data/AMF/Parser
+@dirrm %%SITE_PERL%%/Data/AMF/Formatter
+@dirrm %%SITE_PERL%%/Data/AMF
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/AMF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
