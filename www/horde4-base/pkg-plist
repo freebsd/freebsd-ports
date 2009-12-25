@@ -722,6 +722,8 @@
 %%HORDIR%%/locale/fr_FR/help.xml
 %%HORDIR%%/locale/gl_ES/LC_MESSAGES/horde.mo
 %%HORDIR%%/locale/he_IL/LC_MESSAGES/horde.mo
+%%HORDIR%%/locale/hr_HR/LC_MESSAGES/horde.mo
+%%HORDIR%%/locale/hr_HR/help.xml
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/horde.mo
 %%HORDIR%%/locale/hu_HU/help.xml
 %%HORDIR%%/locale/id_ID/LC_MESSAGES/horde.mo
@@ -786,6 +788,7 @@
 %%HORDIR%%/po/gl_ES.po
 %%HORDIR%%/po/he_IL.po
 %%HORDIR%%/po/horde.pot
+%%HORDIR%%/po/hr_HR.po
 %%HORDIR%%/po/hu_HU.po
 %%HORDIR%%/po/id_ID.po
 %%HORDIR%%/po/is_IS.po
@@ -830,7 +833,7 @@
 %%HORDIR%%/scripts/set_perms.sh
 %%HORDIR%%/scripts/sql/README
 %%HORDIR%%/scripts/sql/README.OCI8
-%%HORDIR%%/scripts/sql/create.msde.sql
+%%HORDIR%%/scripts/sql/create.mssql.sql
 %%HORDIR%%/scripts/sql/create.mysql.sql
 %%HORDIR%%/scripts/sql/create.oci8.sql
 %%HORDIR%%/scripts/sql/create.pgsql.sql
@@ -891,7 +894,7 @@
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.mysql.sql
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.oci8.sql
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.sql
-%%HORDIR%%/scripts/upgrades/3.1_to_3.2.msde.sql
+%%HORDIR%%/scripts/upgrades/3.1_to_3.2.mssql.sql
 %%HORDIR%%/scripts/upgrades/3.1_to_3.2.mysql.sql
 %%HORDIR%%/scripts/upgrades/3.1_to_3.2.oci8.sql
 %%HORDIR%%/scripts/upgrades/3.1_to_3.2.pgsql.sql
@@ -3915,6 +3918,8 @@
 @dirrm %%HORDIR%%/locale/gl_ES
 @dirrm %%HORDIR%%/locale/he_IL/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/he_IL
+@dirrm %%HORDIR%%/locale/hr_HR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hr_HR
 @dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/hu_HU
 @dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
