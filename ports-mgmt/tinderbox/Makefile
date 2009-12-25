@@ -23,7 +23,8 @@ OPTIONS=	PGSQL "With pgsql" Off \
 		WEBUI   "Install web interface" On \
 		APACHE "Use Apache for web interface" On \
 		LIGHTTPD "Use LightHTTPD for web interface" Off \
-		CHECK_FOR_ROOT "Check it ./tc is run by uid 0" On
+		CHECK_FOR_ROOT "Check if ./tc is run by uid 0" On \
+		LSOF "For killMountProcesses() when using nullfs" On
 
 NO_BUILD=	yes
 WANT_PERL=	yes
@@ -83,6 +84,10 @@ USE_APACHE=	1.3+
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
+.if defined(WITH_LSOF)
+RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
+.endif
+
 pre-everything::
 .if (!defined(WITHOUT_APACHE) || defined(WITH_LIGHTTPD)) && !defined(WITH_WEBUI)
 	@${ECHO_CMD} "It doesn't make sense to depend on Apache or LightHTTPD if not using either web interface."
@@ -97,7 +102,7 @@ post-extract:
 post-patch:
 .ifdef WITHOUT_CHECK_FOR_ROOT
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
-			${WRKSRC}/tc
+		${WRKSRC}/tc
 .endif
 	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 
