@@ -7,15 +7,13 @@
 
 PORTNAME=	Test-RandomResults
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test non-deterministic functions
-
-BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	Test::RandomResults.3
 

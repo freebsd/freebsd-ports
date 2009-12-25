@@ -7,7 +7,7 @@
 
 PORTNAME=	OurNet-BBS
 PORTVERSION=	1.66
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/
 		${SITE_PERL}/${PERL_ARCH}/Crypt/TEA.pm:${PORTSDIR}/security/p5-Crypt-TEA \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/Twofish.pm:${PORTSDIR}/security/p5-Crypt-Twofish \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/Twofish2.pm:${PORTSDIR}/security/p5-Crypt-Twofish2 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Crypt/Blowfish_PP.pm:${PORTSDIR}/security/p5-Crypt-Blowfish_PP \
 		${SITE_PERL}/Crypt/DES_PP.pm:${PORTSDIR}/security/p5-Crypt-DES_PP \
