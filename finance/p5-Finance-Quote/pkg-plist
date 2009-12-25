@@ -44,6 +44,7 @@
 %%SITE_PERL%%/Finance/Quote/Yahoo/Europe.pm
 %%SITE_PERL%%/Finance/Quote/Yahoo/NZ.pm
 %%SITE_PERL%%/Finance/Quote/Yahoo/USA.pm
+%%SITE_PERL%%/Finance/Quote/HU.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
 @dirrm %%SITE_PERL%%/Finance/Quote/Yahoo
 @dirrm %%SITE_PERL%%/Finance/Quote

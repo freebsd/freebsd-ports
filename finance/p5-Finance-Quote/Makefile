@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,6 +45,7 @@ MAN3=		Finance::Quote.3 Finance::Quote::AEX.3 \
 		Finance::Quote::Yahoo::Australia.3 \
 		Finance::Quote::Yahoo::Base.3 Finance::Quote::Yahoo::Brasil.3 \
 		Finance::Quote::Yahoo::Europe.3 Finance::Quote::Yahoo::NZ.3 \
-		Finance::Quote::Yahoo::USA.3 Finance::Quote::ZA.3
+		Finance::Quote::Yahoo::USA.3 Finance::Quote::ZA.3 \
+		Finance::Quote::HU.3
 
 .include <bsd.port.mk>
