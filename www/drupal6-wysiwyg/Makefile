@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wysiwyg
-DISTVERSION=	6.x-2.0-alpha1
+DISTVERSION=	6.x-2.0
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
@@ -20,7 +20,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${TINYMCEDIR}:${PORTSDIR}/www/tinymce3
 PLIST_FILES+=	${DRUPAL_MODDIR}/tinymce
 
 DRUPAL6_MODULE=	yes
-MODULE_FILES=	editors/css/markitup-1.css \
+MODULE_FILES=	editors/css/openwysiwyg.css \
 		editors/css/tinymce-2.css \
 		editors/css/tinymce-3.css \
 		editors/js/fckeditor-2.6.js \
@@ -54,10 +54,6 @@ MODULE_FILES=	editors/css/markitup-1.css \
 		plugins/break/images/spacer.gif \
 		plugins/break/break.css \
 		plugins/break/break.js \
-		plugins/break/langs/ca.js \
-		plugins/break/langs/de.js \
-		plugins/break/langs/en.js \
-		plugins/break/langs/es.js \
 		plugins/break.inc \
 		translations/wysiwyg.pot \
 		translations/da.po \
