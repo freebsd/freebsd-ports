@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Workflow
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Lightweight workflow system
 
 BUILD_DEPENDS=	p5-Moose>=0.37:${PORTSDIR}/devel/p5-Moose \
 		p5-Set-Object>=1.19:${PORTSDIR}/devel/p5-Set-Object \
+		p5-MooseX-Clone>=0.04:${PORTSDIR}/devel/p5-MooseX-Clone \
 		${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS=	${BUILD_DEPENDS}
