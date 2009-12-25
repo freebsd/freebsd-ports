@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	seo_checklist
-DISTVERSION=	6.x-1.0-beta3
+DISTVERSION=	6.x-2.0
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Drupal module to provide checklist of actions for SEO
 
 DRUPAL6_MODULE=	yes
-MODULE_FILES=	SEOChecklist.info SEOChecklist.install SEOChecklist.module
-
+MODULE_FILES=	seochecklist.info seochecklist.install seochecklist.module
 DOC_FILES=	LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
