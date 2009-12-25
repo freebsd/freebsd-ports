@@ -10,7 +10,7 @@ PORTVERSION=	0.2.24
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
-MAINTAINER=	samflanker@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetXMS - network monitoring system
 
 NO_PACKAGE=	yes
