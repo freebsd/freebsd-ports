@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsmanshp
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tcl geography
 MASTER_SITES=	http://www.ncc.up.pt/gpsmanshp/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
