@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	squidclamav
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.samse.fr/GPL/squidclamav/ \
+MASTER_SITES=	SF \
+		http://www.samse.fr/GPL/squidclamav/ \
 		http://www.darold.net/projects/squidclamav/
 
 MAINTAINER=	llevier@argosnet.com
@@ -18,11 +19,15 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 NO_LATEST_LINK=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/squidclamav etc/squidclamav.conf.dist
+
+post-configure:
+	@${REINPLACE_CMD} -E 's|^(LDFLAGS = ).*|\1-L${LOCALBASE}/lib|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/squidclamav ${PREFIX}/bin
