@@ -1219,7 +1219,6 @@ bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
 bsdgames                        ports/games/bsdgames
 bsdgrep                         ports/textproc/bsdgrep
 bsdhwmon                        ports/sysutils/bsdhwmon
-bsdiff                          ports/misc/bsdiff
 bsdproxy                        ports/net/bsdproxy
 bsdrain                         ports/games/bsdrain
 bsdsar                          ports/sysutils/bsdsar
@@ -3006,8 +3005,6 @@ esniper                         ports/misc/esniper
 esound                          ports/audio/esound
 espeak                          ports/audio/espeak
 esperanza                       ports/audio/esperanza
-est                             ports/sysutils/est
-estctrl                         ports/sysutils/estctrl
 estic                           ports/misc/estic
 estickies                       ports/deskutils/estickies
 estraier                        ports/textproc/estraier
@@ -3701,11 +3698,8 @@ freebsd-doc-sr                  ports/misc/freebsd-doc-sr
 freebsd-doc-tr                  ports/misc/freebsd-doc-tr
 freebsd-doc-zh_cn               ports/misc/freebsd-doc-zh_cn
 freebsd-doc-zh_tw               ports/misc/freebsd-doc-zh_tw
-freebsd-sha1                    ports/sysutils/freebsd-sha1
-freebsd-sha256                  ports/sysutils/freebsd-sha256
 freebsd-snapshot                ports/sysutils/freebsd-snapshot
 freebsd-tftp                    ports/net/freebsd-tftp
-freebsd-update                  ports/security/freebsd-update
 freebsd-uucp                    ports/net/freebsd-uucp
 freecell-solver                 ports/games/freecell-solver
 freeciv                         ports/games/freeciv
@@ -8935,6 +8929,7 @@ mod_accesscookie                ports/www/mod_accesscookie
 mod_accounting                  ports/www/mod_accounting
 mod_antiloris                   ports/www/mod_antiloris
 mod_auth_any                    ports/www/mod_auth_any
+mod_auth_cas                    ports/www/mod_auth_cas
 mod_auth_cookie_mysql           ports/www/mod_auth_cookie_mysql
 mod_auth_cookie_mysql2          ports/www/mod_auth_cookie_mysql2
 mod_auth_external               ports/www/mod_auth_external
@@ -10696,6 +10691,7 @@ p5-Catalyst-Authentication-Store-DBIx-Class  ports/www/p5-Catalyst-Authenticatio
 p5-Catalyst-Authentication-Store-LDAP  ports/www/p5-Catalyst-Authentication-Store-LDAP
 p5-Catalyst-Component-ACCEPT_CONTEXT  ports/www/p5-Catalyst-Component-ACCEPT_CONTEXT
 p5-Catalyst-Component-InstancePerContext  ports/www/p5-Catalyst-Component-InstancePerContext
+p5-Catalyst-Controller-ActionRole  ports/www/p5-Catalyst-Controller-ActionRole
 p5-Catalyst-Controller-BindLex  ports/www/p5-Catalyst-Controller-BindLex
 p5-Catalyst-Controller-FormBuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-Catalyst-Controller-HTML-FormFu  ports/www/p5-Catalyst-Controller-HTML-FormFu
@@ -14250,6 +14246,7 @@ p5-catalyst-authentication-store-dbix-class  ports/www/p5-Catalyst-Authenticatio
 p5-catalyst-authentication-store-ldap  ports/www/p5-Catalyst-Authentication-Store-LDAP
 p5-catalyst-component-accept_context  ports/www/p5-Catalyst-Component-ACCEPT_CONTEXT
 p5-catalyst-component-instancepercontext  ports/www/p5-Catalyst-Component-InstancePerContext
+p5-catalyst-controller-actionrole  ports/www/p5-Catalyst-Controller-ActionRole
 p5-catalyst-controller-bindlex  ports/www/p5-Catalyst-Controller-BindLex
 p5-catalyst-controller-formbuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-catalyst-controller-html-formfu  ports/www/p5-Catalyst-Controller-HTML-FormFu
@@ -25318,6 +25315,7 @@ zh-qt4-codecs-cn                ports/chinese/qt4-codecs-cn
 zh-qt4-codecs-tw                ports/chinese/qt4-codecs-tw
 zh-qterm                        ports/chinese/qterm
 zh-reciteword                   ports/chinese/reciteword
+zh-scim-array                   ports/chinese/scim-array
 zh-scim-chewing                 ports/chinese/scim-chewing
 zh-scim-fcitx                   ports/chinese/scim-fcitx
 zh-scim-pinyin                  ports/chinese/scim-pinyin
@@ -25365,7 +25363,6 @@ zms                             ports/mail/zms
 zmtx-zmrx                       ports/comms/zmtx-zmrx
 znavigator                      ports/www/znavigator
 znc                             ports/irc/znc
-znc-extra                       ports/irc/znc-extra
 znibbles                        ports/games/znibbles
 zniper                          ports/net/zniper
 zodb3                           ports/databases/zodb3
