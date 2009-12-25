@@ -16,7 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
-OPTIONS=	DEBUG			"Enable nginx debugging" off \
+OPTIONS=	DEBUG			"Build with debug" off \
+		DEBUGLOG		"Enable debug log (--with-debug)" off \
 		IPV6			"Enable IPv6" off \
 		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
 		HTTP_MODULE		"Enable HTTP module" on \
@@ -102,8 +103,11 @@ IGNORE=		requires at least HTTP_MODULE or MAIL_MODULE to \
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g -DNGX_DEBUG_MALLOC
-CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
+.endif
+
+.if defined(WITH_DEBUGLOG)
+CONFIGURE_ARGS+=--with-debug
 .endif
 
 .if defined(WITH_IPV6)
