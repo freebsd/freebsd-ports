@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20090423
+PORTVERSION=	20091209
 PORTREVISION=	1
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
@@ -15,14 +15,14 @@ MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 # Oliver Eikemeier recommended the following construction
 # to avoid the reduncany of the CRM114RELEASENAME and .src and
 # .css extention.
-DISTNAME=	${PORTNAME}-200904023-${CRM114RELEASENAME}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	A Markov based SpamFilter
 
 LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
 
-CRM114RELEASENAME=BlameSteveJobs
+CRM114RELEASENAME=BlameMichelson
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
