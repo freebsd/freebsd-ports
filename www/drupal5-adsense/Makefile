@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adsense
-DISTVERSION=	5.x-3.0
+DISTVERSION=	5.x-3.2
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
