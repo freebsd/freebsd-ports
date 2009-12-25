@@ -1,0 +1,44 @@
+--- lib/portbuild.orig	2009-11-27 18:32:31.000000000 +0100
++++ lib/portbuild	2009-12-25 21:07:00.000000000 +0100
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ #
+-# $MCom: portstools/tinderbox/lib/portbuild,v 1.123.2.5 2009/10/17 19:48:36 marcus Exp $
++# $MCom: portstools/tinderbox/lib/portbuild,v 1.123.2.6 2009/12/24 17:23:32 marcus Exp $
+ 
+ . ${pb}/scripts/lib/tinderlib.sh
+ 
+@@ -170,7 +170,7 @@
+ fi
+ 
+ # directories to clean
+-cleandirs="${LOCALBASE} ${X11BASE} /compat /var/db/pkg"
++cleandirs="${LOCALBASE} /compat /var/db/pkg"
+ 
+ for dir in ${cleandirs}; do
+     cleanDirs ${build} ${chroot}${dir}
+@@ -194,15 +194,6 @@
+     	>/dev/null 2>&1
+ fi
+ 
+-mkdir -p ${chroot}${X11BASE}
+-case "${X_WINDOW_SYSTEM}" in
+-  "xfree86-3")	_X_MTREE="BSD.x11.dist";;
+-  *)		_X_MTREE="BSD.x11-4.dist";;
+-esac
+-mkdir -p ${chroot}${X11BASE}
+-mtree -deU -f ${chroot}/etc/mtree/${_X_MTREE} -p ${chroot}${X11BASE} \
+-      >/dev/null 2>&1
+-
+ # mount linprocfs if required
+ if [ "${ARCH}" = "i386" -o "${ARCH}" = "amd64" ]; then
+     mkdir -p ${chroot}/compat/linux/proc
+@@ -244,7 +235,7 @@
+ ulimit -f 16384000
+ ulimit -t 7200
+ 
+-export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin:${X11BASE}/bin
++export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin
+ 
+ # Set HOME to be /root to avoid errant leftover files
+ export HOME=/root
