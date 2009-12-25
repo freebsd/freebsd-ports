@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	2.28.2
+PORTREVISION=	1
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +18,8 @@ COMMENT=	Personal file-sharing service for the GNOME Desktop
 
 LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app \
 		canberra.0:${PORTSDIR}/audio/libcanberra \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.1:${PORTSDIR}/devel/libnotify \
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dnssd.so:${PORTSDIR}/www/mod_dnssd \
     		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
 
