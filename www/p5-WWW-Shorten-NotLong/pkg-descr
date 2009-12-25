@@ -1,0 +1,5 @@
+A Perl interface to the web site notlong.com. Notlong.com simply
+maintains a database of long URLs, each of which has a unique
+identifier.
+
+WWW: http://search.cpan.org/dist/WWW-Shorten-NotLong/
