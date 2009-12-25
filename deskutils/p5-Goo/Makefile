@@ -7,6 +7,7 @@
 
 PORTNAME=	Goo
 PORTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	deskutils sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stick Things together with The Goo
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/Config/Auto.pm:${PORTSDIR}/devel/p5-Config-Auto \
+BUILD_DEPENDS=	${SITE_PERL}/Config/Auto.pm:${PORTSDIR}/devel/p5-Config-Auto \
 		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
@@ -23,15 +23,10 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
 		${SITE_PERL}/LWP/ConnCache.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
 		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
-		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
 		${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Text/FormatTable.pm:${PORTSDIR}/textproc/p5-Text-FormatTable \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+		${SITE_PERL}/Text/FormatTable.pm:${PORTSDIR}/textproc/p5-Text-FormatTable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN1=	goo.1 goo.pl.1
