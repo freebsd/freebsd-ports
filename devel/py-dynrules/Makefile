@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynrules
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.11
 CATEGORIES=	devel python
 MASTER_SITES=	http://sysfault.org/projects/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,14 +19,10 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	dynrules
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@cd ${WRKSRC}/doc/examples && \
-		${INSTALL_DATA} ./* ${EXAMPLESDIR}/
-.endif
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/html
 	@${TAR} -C ${WRKSRC}/doc/html -cf - . | \
 		${TAR} -C ${DOCSDIR}/html -xf -
 .endif
+
 .include <bsd.port.mk>
