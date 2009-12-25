@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.24.0
-PORTREVISION=	1
+PORTVERSION=	2.26.0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -33,9 +32,10 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 dotty.1 gc.1 \
-		gv2gxl.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 lneato.1 \
-		nop.1 osage.1 prune.1 sccmap.1 tred.1 unflatten.1
-MAN3=		cdt.3 cgraph.3 graph.3 gvc.3 pathplan.3
+		gml2gv.1 gv2gxl.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 \
+		lneato.1 nop.1 osage.1 prune.1 sccmap.1 smyrna.1 tred.1 \
+		unflatten.1
+MAN3=		cdt.3 cgraph.3 graph.3 gvc.3 pathplan.3 xdot.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
 		dot.1 fdp.1 \
