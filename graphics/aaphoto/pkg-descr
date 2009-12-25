@@ -1,0 +1,7 @@
+Auto Adjust Photo is a small command-line image manipulation tool that
+allows the user to easily correct family photos. It tries to make the
+picture look better. The program does this by analyzing the input image
+and then sets the most optimal contrast, gamma, color balance and
+saturation for it.
+
+WWW: http://log69.com/aaphoto_en.html
