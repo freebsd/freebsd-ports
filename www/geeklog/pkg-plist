@@ -1,7 +1,8 @@
+@unexec if [ "`md5 -q %D/%%WWWDIR%%/db-config.php`" = "e152b8b4ebd7e8b5bf05c9466f618bfa" ]; then rm -f %D/%%WWWDIR%%/db-config.php; fi
+@unexec if [ "`md5 -q %D/%%WWWDIR%%/public_html/siteconfig.php`" = "a713c0e73d143db728d350010f7cf289" ]; then rm -f %D/%%WWWDIR%%/public_html/siteconfig.php; fi
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/backups/README
 %%WWWDIR%%/data/README
-%%WWWDIR%%/db-config.php
 %%WWWDIR%%/emailgeeklogstories
 %%WWWDIR%%/language/afrikaans.php
 %%WWWDIR%%/language/afrikaans_utf-8.php
@@ -58,6 +59,8 @@
 %%WWWDIR%%/language/romanian_utf-8.php
 %%WWWDIR%%/language/russian.php
 %%WWWDIR%%/language/russian_utf-8.php
+%%WWWDIR%%/language/serbian.php
+%%WWWDIR%%/language/serbian_utf-8.php
 %%WWWDIR%%/language/slovak.php
 %%WWWDIR%%/language/slovak_utf-8.php
 %%WWWDIR%%/language/slovenian.php
@@ -76,6 +79,7 @@
 %%WWWDIR%%/logs/access.log
 %%WWWDIR%%/logs/error.log
 %%WWWDIR%%/logs/spamx.log
+%%WWWDIR%%/plugins/calendar/autoinstall.php
 %%WWWDIR%%/plugins/calendar/functions.inc
 %%WWWDIR%%/plugins/calendar/install_defaults.php
 %%WWWDIR%%/plugins/calendar/language/README
@@ -109,7 +113,9 @@
 %%WWWDIR%%/plugins/calendar/language/ukrainian_koi8-u.php
 %%WWWDIR%%/plugins/calendar/language/ukrainian_utf-8.php
 %%WWWDIR%%/plugins/calendar/sql/mssql_install.php
+%%WWWDIR%%/plugins/calendar/sql/mssql_updates.php
 %%WWWDIR%%/plugins/calendar/sql/mysql_install.php
+%%WWWDIR%%/plugins/calendar/sql/mysql_updates.php
 %%WWWDIR%%/plugins/calendar/templates/addevent.thtml
 %%WWWDIR%%/plugins/calendar/templates/addeventoption.thtml
 %%WWWDIR%%/plugins/calendar/templates/addremoveevent.thtml
@@ -132,6 +138,7 @@
 %%WWWDIR%%/plugins/calendar/templates/weekview/events.thtml
 %%WWWDIR%%/plugins/calendar/templates/weekview/weekview.thtml
 %%WWWDIR%%/plugins/links/README
+%%WWWDIR%%/plugins/links/autoinstall.php
 %%WWWDIR%%/plugins/links/functions.inc
 %%WWWDIR%%/plugins/links/install_defaults.php
 %%WWWDIR%%/plugins/links/language/README
@@ -182,6 +189,7 @@
 %%WWWDIR%%/plugins/links/templates/links.thtml
 %%WWWDIR%%/plugins/links/templates/pagenavigation.thtml
 %%WWWDIR%%/plugins/links/templates/submitlink.thtml
+%%WWWDIR%%/plugins/polls/autoinstall.php
 %%WWWDIR%%/plugins/polls/functions.inc
 %%WWWDIR%%/plugins/polls/install_defaults.php
 %%WWWDIR%%/plugins/polls/language/README
@@ -213,7 +221,9 @@
 %%WWWDIR%%/plugins/polls/language/ukrainian_koi8-u.php
 %%WWWDIR%%/plugins/polls/language/ukrainian_utf-8.php
 %%WWWDIR%%/plugins/polls/sql/mssql_install.php
+%%WWWDIR%%/plugins/polls/sql/mssql_updates.php
 %%WWWDIR%%/plugins/polls/sql/mysql_install.php
+%%WWWDIR%%/plugins/polls/sql/mysql_updates.php
 %%WWWDIR%%/plugins/polls/templates/admin/pollansweroption.thtml
 %%WWWDIR%%/plugins/polls/templates/admin/polleditor.thtml
 %%WWWDIR%%/plugins/polls/templates/admin/pollquestions.thtml
@@ -230,7 +240,6 @@
 %%WWWDIR%%/plugins/spamx/BaseCommand.class.php
 %%WWWDIR%%/plugins/spamx/BlackList.Examine.class.php
 %%WWWDIR%%/plugins/spamx/DeleteComment.Action.class.php
-%%WWWDIR%%/plugins/spamx/Developer.txt
 %%WWWDIR%%/plugins/spamx/EditBlackList.Admin.class.php
 %%WWWDIR%%/plugins/spamx/EditHeader.Admin.class.php
 %%WWWDIR%%/plugins/spamx/EditIP.Admin.class.php
@@ -246,9 +255,9 @@
 %%WWWDIR%%/plugins/spamx/SLVbase.class.php
 %%WWWDIR%%/plugins/spamx/SLVreport.Action.class.php
 %%WWWDIR%%/plugins/spamx/SLVwhitelist.Admin.class.php
+%%WWWDIR%%/plugins/spamx/autoinstall.php
 %%WWWDIR%%/plugins/spamx/functions.inc
 %%WWWDIR%%/plugins/spamx/install_defaults.php
-%%WWWDIR%%/plugins/spamx/language/._hebrew_utf-8.php
 %%WWWDIR%%/plugins/spamx/language/english.php
 %%WWWDIR%%/plugins/spamx/language/english_utf-8.php
 %%WWWDIR%%/plugins/spamx/language/estonian.php
@@ -271,11 +280,11 @@
 %%WWWDIR%%/plugins/spamx/language/ukrainian.php
 %%WWWDIR%%/plugins/spamx/language/ukrainian_koi8-u.php
 %%WWWDIR%%/plugins/spamx/language/ukrainian_utf-8.php
-%%WWWDIR%%/plugins/spamx/rss.inc.php
 %%WWWDIR%%/plugins/spamx/sql/mssql_install.php
 %%WWWDIR%%/plugins/spamx/sql/mysql_install.php
 %%WWWDIR%%/plugins/spamx/templates/admin.thtml
 %%WWWDIR%%/plugins/spamx/templates/install.thtml
+%%WWWDIR%%/plugins/staticpages/autoinstall.php
 %%WWWDIR%%/plugins/staticpages/functions.inc
 %%WWWDIR%%/plugins/staticpages/install_defaults.php
 %%WWWDIR%%/plugins/staticpages/language/README
@@ -321,13 +330,27 @@
 %%WWWDIR%%/plugins/staticpages/language/ukrainian_utf-8.php
 %%WWWDIR%%/plugins/staticpages/services.inc.php
 %%WWWDIR%%/plugins/staticpages/sql/mssql_install.php
+%%WWWDIR%%/plugins/staticpages/sql/mssql_updates.php
 %%WWWDIR%%/plugins/staticpages/sql/mysql_install.php
+%%WWWDIR%%/plugins/staticpages/sql/mysql_updates.php
 %%WWWDIR%%/plugins/staticpages/templates/admin/editor.thtml
 %%WWWDIR%%/plugins/staticpages/templates/admin/editor_advanced.thtml
 %%WWWDIR%%/plugins/staticpages/templates/centerblock.thtml
 %%WWWDIR%%/plugins/staticpages/templates/printable.thtml
 %%WWWDIR%%/plugins/staticpages/templates/spcomments.thtml
 %%WWWDIR%%/plugins/staticpages/templates/staticpage.thtml
+%%WWWDIR%%/plugins/xmlsitemap/autoinstall.php
+%%WWWDIR%%/plugins/xmlsitemap/functions.inc
+%%WWWDIR%%/plugins/xmlsitemap/install_defaults.php
+%%WWWDIR%%/plugins/xmlsitemap/language/english.php
+%%WWWDIR%%/plugins/xmlsitemap/language/english_utf-8.php
+%%WWWDIR%%/plugins/xmlsitemap/language/estonian.php
+%%WWWDIR%%/plugins/xmlsitemap/language/estonian_utf-8.php
+%%WWWDIR%%/plugins/xmlsitemap/language/hebrew_utf-8.php
+%%WWWDIR%%/plugins/xmlsitemap/language/japanese_utf-8.php
+%%WWWDIR%%/plugins/xmlsitemap/sql/mssql_install.php
+%%WWWDIR%%/plugins/xmlsitemap/sql/mysql_install.php
+%%WWWDIR%%/plugins/xmlsitemap/xmlsitemap.class.php
 %%WWWDIR%%/public_html/404.php
 %%WWWDIR%%/public_html/admin/auth.inc.php
 %%WWWDIR%%/public_html/admin/block.php
@@ -335,12 +358,13 @@
 %%WWWDIR%%/public_html/admin/database.php
 %%WWWDIR%%/public_html/admin/group.php
 %%WWWDIR%%/public_html/admin/index.php
+%%WWWDIR%%/public_html/admin/install/bigdump.php
 %%WWWDIR%%/public_html/admin/install/config-install.php
 %%WWWDIR%%/public_html/admin/install/configinfo.php
 %%WWWDIR%%/public_html/admin/install/help.php
 %%WWWDIR%%/public_html/admin/install/index.php
 %%WWWDIR%%/public_html/admin/install/info.php
-%%WWWDIR%%/public_html/admin/install/install.php
+%%WWWDIR%%/public_html/admin/install/install-plugins.php
 %%WWWDIR%%/public_html/admin/install/language/chinese_simplified_utf-8.php
 %%WWWDIR%%/public_html/admin/install/language/chinese_traditional_utf-8.php
 %%WWWDIR%%/public_html/admin/install/language/english.php
@@ -351,23 +375,20 @@
 %%WWWDIR%%/public_html/admin/install/layout/header-bg.png
 %%WWWDIR%%/public_html/admin/install/layout/logo.png
 %%WWWDIR%%/public_html/admin/install/layout/style.css
+%%WWWDIR%%/public_html/admin/install/lib-install.php
+%%WWWDIR%%/public_html/admin/install/lib-upgrade.php
+%%WWWDIR%%/public_html/admin/install/migrate.php
 %%WWWDIR%%/public_html/admin/install/success.php
-%%WWWDIR%%/public_html/admin/install/toinnodb.php
 %%WWWDIR%%/public_html/admin/mail.php
 %%WWWDIR%%/public_html/admin/moderation.php
 %%WWWDIR%%/public_html/admin/plugins.php
 %%WWWDIR%%/public_html/admin/plugins/calendar/index.php
-%%WWWDIR%%/public_html/admin/plugins/calendar/install.php
 %%WWWDIR%%/public_html/admin/plugins/links/category.php
 %%WWWDIR%%/public_html/admin/plugins/links/index.php
-%%WWWDIR%%/public_html/admin/plugins/links/install.php
 %%WWWDIR%%/public_html/admin/plugins/polls/index.php
-%%WWWDIR%%/public_html/admin/plugins/polls/install.php
 %%WWWDIR%%/public_html/admin/plugins/spamx/images/spamx.png
 %%WWWDIR%%/public_html/admin/plugins/spamx/index.php
-%%WWWDIR%%/public_html/admin/plugins/spamx/install.php
 %%WWWDIR%%/public_html/admin/plugins/staticpages/index.php
-%%WWWDIR%%/public_html/admin/plugins/staticpages/install.php
 %%WWWDIR%%/public_html/admin/sectest.php
 %%WWWDIR%%/public_html/admin/story.php
 %%WWWDIR%%/public_html/admin/syndication.php
@@ -384,29 +405,43 @@
 %%WWWDIR%%/public_html/calendar/style.css
 %%WWWDIR%%/public_html/comment.php
 %%WWWDIR%%/public_html/directory.php
-%%WWWDIR%%/public_html/docs/calendar.html
 %%WWWDIR%%/public_html/docs/changed-files
-%%WWWDIR%%/public_html/docs/changes.html
-%%WWWDIR%%/public_html/docs/config.html
 %%WWWDIR%%/public_html/docs/docstyle.css
+%%WWWDIR%%/public_html/docs/english/calendar.html
+%%WWWDIR%%/public_html/docs/english/changes.html
+%%WWWDIR%%/public_html/docs/english/config.html
+%%WWWDIR%%/public_html/docs/english/index.html
+%%WWWDIR%%/public_html/docs/english/install.html
+%%WWWDIR%%/public_html/docs/english/links.html
+%%WWWDIR%%/public_html/docs/english/polls.html
+%%WWWDIR%%/public_html/docs/english/spamx.html
+%%WWWDIR%%/public_html/docs/english/staticpages.html
+%%WWWDIR%%/public_html/docs/english/support.html
+%%WWWDIR%%/public_html/docs/english/theme.html
+%%WWWDIR%%/public_html/docs/english/themevars.html
+%%WWWDIR%%/public_html/docs/english/trackback.html
 %%WWWDIR%%/public_html/docs/history
 %%WWWDIR%%/public_html/docs/images/de.png
 %%WWWDIR%%/public_html/docs/images/fr.png
 %%WWWDIR%%/public_html/docs/images/jp.png
 %%WWWDIR%%/public_html/docs/images/newlogo.gif
 %%WWWDIR%%/public_html/docs/images/pl.png
-%%WWWDIR%%/public_html/docs/index.html
-%%WWWDIR%%/public_html/docs/install.html
+%%WWWDIR%%/public_html/docs/japanese/calendar.html
+%%WWWDIR%%/public_html/docs/japanese/changes.html
+%%WWWDIR%%/public_html/docs/japanese/config.html
+%%WWWDIR%%/public_html/docs/japanese/docstyle.css
+%%WWWDIR%%/public_html/docs/japanese/history.html
+%%WWWDIR%%/public_html/docs/japanese/index.html
+%%WWWDIR%%/public_html/docs/japanese/install.html
+%%WWWDIR%%/public_html/docs/japanese/links.html
+%%WWWDIR%%/public_html/docs/japanese/polls.html
+%%WWWDIR%%/public_html/docs/japanese/spamx.html
+%%WWWDIR%%/public_html/docs/japanese/staticpages.html
+%%WWWDIR%%/public_html/docs/japanese/support.html
+%%WWWDIR%%/public_html/docs/japanese/theme.html
+%%WWWDIR%%/public_html/docs/japanese/themevars.html
+%%WWWDIR%%/public_html/docs/japanese/trackback.html
 %%WWWDIR%%/public_html/docs/license
-%%WWWDIR%%/public_html/docs/links.html
-%%WWWDIR%%/public_html/docs/plugin.html
-%%WWWDIR%%/public_html/docs/polls.html
-%%WWWDIR%%/public_html/docs/spamx.html
-%%WWWDIR%%/public_html/docs/staticpages.html
-%%WWWDIR%%/public_html/docs/support.html
-%%WWWDIR%%/public_html/docs/theme.html
-%%WWWDIR%%/public_html/docs/themevars.html
-%%WWWDIR%%/public_html/docs/trackback.html
 %%WWWDIR%%/public_html/fckeditor/_documentation.html
 %%WWWDIR%%/public_html/fckeditor/_upgrade.html
 %%WWWDIR%%/public_html/fckeditor/_whatsnew.html
@@ -480,6 +515,7 @@
 %%WWWDIR%%/public_html/fckeditor/editor/_source/internals/fckcommands.js
 %%WWWDIR%%/public_html/fckeditor/editor/_source/internals/fckconfig.js
 %%WWWDIR%%/public_html/fckeditor/editor/_source/internals/fckdebug.js
+%%WWWDIR%%/public_html/fckeditor/editor/_source/internals/fckdebug_empty.js
 %%WWWDIR%%/public_html/fckeditor/editor/_source/internals/fckdialog.js
 %%WWWDIR%%/public_html/fckeditor/editor/_source/internals/fckdocumentprocessor.js
 %%WWWDIR%%/public_html/fckeditor/editor/_source/internals/fckdomtools.js
@@ -540,6 +576,7 @@
 %%WWWDIR%%/public_html/fckeditor/editor/dialog/fck_button.html
 %%WWWDIR%%/public_html/fckeditor/editor/dialog/fck_checkbox.html
 %%WWWDIR%%/public_html/fckeditor/editor/dialog/fck_colorselector.html
+%%WWWDIR%%/public_html/fckeditor/editor/dialog/fck_div.html
 %%WWWDIR%%/public_html/fckeditor/editor/dialog/fck_docprops.html
 %%WWWDIR%%/public_html/fckeditor/editor/dialog/fck_docprops/fck_document_preview.html
 %%WWWDIR%%/public_html/fckeditor/editor/dialog/fck_flash.html
@@ -658,14 +695,14 @@
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/browser/default/images/spacer.gif
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/browser/default/js/common.js
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/browser/default/js/fckxml.js
-%%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/util.php
+%%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/basexml.php
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/commands.php
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/config.php
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/connector.php
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/io.php
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/phpcompat.php
 %%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/upload.php
-%%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/basexml.php
+%%WWWDIR%%/public_html/fckeditor/editor/filemanager/connectors/php/util.php
 %%WWWDIR%%/public_html/fckeditor/editor/images/anchor.gif
 %%WWWDIR%%/public_html/fckeditor/editor/images/arrow_ltr.gif
 %%WWWDIR%%/public_html/fckeditor/editor/images/arrow_rtl.gif
@@ -720,10 +757,12 @@
 %%WWWDIR%%/public_html/fckeditor/editor/lang/fr-ca.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/fr.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/gl.js
+%%WWWDIR%%/public_html/fckeditor/editor/lang/gu.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/he.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/hi.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/hr.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/hu.js
+%%WWWDIR%%/public_html/fckeditor/editor/lang/is.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/it.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/ja.js
 %%WWWDIR%%/public_html/fckeditor/editor/lang/km.js
@@ -818,6 +857,9 @@
 %%WWWDIR%%/public_html/fckeditor/editor/skins/silver/images/toolbar.expand.gif
 %%WWWDIR%%/public_html/fckeditor/editor/skins/silver/images/toolbar.separator.gif
 %%WWWDIR%%/public_html/fckeditor/editor/skins/silver/images/toolbar.start.gif
+%%WWWDIR%%/public_html/fckeditor/editor/wsc/ciframe.html
+%%WWWDIR%%/public_html/fckeditor/editor/wsc/tmpFrameset.html
+%%WWWDIR%%/public_html/fckeditor/editor/wsc/w.html
 %%WWWDIR%%/public_html/fckeditor/fckconfig.js
 %%WWWDIR%%/public_html/fckeditor/fckeditor.js
 %%WWWDIR%%/public_html/fckeditor/fckeditor.php
@@ -830,9 +872,13 @@
 %%WWWDIR%%/public_html/fckeditor/myconfig.js
 %%WWWDIR%%/public_html/getimage.php
 %%WWWDIR%%/public_html/help/advancedsearch.html
+%%WWWDIR%%/public_html/help/cccommentsubmission.html
+%%WWWDIR%%/public_html/help/ccdraftsubmission.html
 %%WWWDIR%%/public_html/help/cceventsubmission.html
 %%WWWDIR%%/public_html/help/cclinksubmission.html
 %%WWWDIR%%/public_html/help/ccstorysubmission.html
+%%WWWDIR%%/public_html/help/ccusersubmission.html
+%%WWWDIR%%/public_html/help/index.html
 %%WWWDIR%%/public_html/help/submitevent.html
 %%WWWDIR%%/public_html/help/submitlink.html
 %%WWWDIR%%/public_html/help/submitstory.html
@@ -939,6 +985,7 @@
 %%WWWDIR%%/public_html/layout/professional/admin/lists/field.thtml
 %%WWWDIR%%/public_html/layout/professional/admin/lists/header.thtml
 %%WWWDIR%%/public_html/layout/professional/admin/lists/index.html
+%%WWWDIR%%/public_html/layout/professional/admin/lists/inline.thtml
 %%WWWDIR%%/public_html/layout/professional/admin/lists/list.thtml
 %%WWWDIR%%/public_html/layout/professional/admin/lists/listitem.thtml
 %%WWWDIR%%/public_html/layout/professional/admin/lists/searchmenu.thtml
@@ -1052,15 +1099,28 @@
 %%WWWDIR%%/public_html/layout/professional/images/list.png
 %%WWWDIR%%/public_html/layout/professional/images/logo.png
 %%WWWDIR%%/public_html/layout/professional/images/mail.png
-%%WWWDIR%%/public_html/layout/professional/images/pdf.png
 %%WWWDIR%%/public_html/layout/professional/images/person.png
 %%WWWDIR%%/public_html/layout/professional/images/print.png
 %%WWWDIR%%/public_html/layout/professional/images/sendping.png
 %%WWWDIR%%/public_html/layout/professional/images/smallcamera.png
 %%WWWDIR%%/public_html/layout/professional/images/sysmessage.png
+%%WWWDIR%%/public_html/layout/professional/images/update.png
 %%WWWDIR%%/public_html/layout/professional/leftblocks.thtml
 %%WWWDIR%%/public_html/layout/professional/list.thtml
 %%WWWDIR%%/public_html/layout/professional/listitem.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/index.html
+%%WWWDIR%%/public_html/layout/professional/lists/inline/index.html
+%%WWWDIR%%/public_html/layout/professional/lists/inline/item_field.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/inline/item_row.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/inline/list.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/inline/page_limit.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/inline/page_sort.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/table/index.html
+%%WWWDIR%%/public_html/layout/professional/lists/table/item_field.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/table/item_row.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/table/list.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/table/page_limit.thtml
+%%WWWDIR%%/public_html/layout/professional/lists/table/page_sort.thtml
 %%WWWDIR%%/public_html/layout/professional/loginform.thtml
 %%WWWDIR%%/public_html/layout/professional/loginform_openid.thtml
 %%WWWDIR%%/public_html/layout/professional/menuitem.thtml
@@ -1092,6 +1152,7 @@
 %%WWWDIR%%/public_html/layout/professional/preferences/theme.thtml
 %%WWWDIR%%/public_html/layout/professional/preferences/username.thtml
 %%WWWDIR%%/public_html/layout/professional/preferences/userphoto.thtml
+%%WWWDIR%%/public_html/layout/professional/print.css
 %%WWWDIR%%/public_html/layout/professional/profiles/contactauthorform.thtml
 %%WWWDIR%%/public_html/layout/professional/profiles/contactuserform.thtml
 %%WWWDIR%%/public_html/layout/professional/profiles/index.html
@@ -1153,7 +1214,6 @@
 %%WWWDIR%%/public_html/profiles.php
 %%WWWDIR%%/public_html/robots.txt
 %%WWWDIR%%/public_html/search.php
-%%WWWDIR%%/public_html/siteconfig.php
 %%WWWDIR%%/public_html/staticpages/images/staticpages.png
 %%WWWDIR%%/public_html/staticpages/index.php
 %%WWWDIR%%/public_html/stats.php
@@ -1166,17 +1226,11 @@
 %%WWWDIR%%/readme
 %%WWWDIR%%/sql/mssql_tableanddata.php
 %%WWWDIR%%/sql/mysql_tableanddata.php
-%%WWWDIR%%/sql/updates/0.1_to_0.2.sql
-%%WWWDIR%%/sql/updates/0.2_to_0.3.sql
-%%WWWDIR%%/sql/updates/0.3_to_0.4.sql
-%%WWWDIR%%/sql/updates/0.4_to_0.5.sql
-%%WWWDIR%%/sql/updates/0.5_to_1.0.sql
-%%WWWDIR%%/sql/updates/1.0_to_1.1.sql
-%%WWWDIR%%/sql/updates/1.1_to_1.2.sql
-%%WWWDIR%%/sql/updates/1.2.5-1_to_1.3.NOTES
-%%WWWDIR%%/sql/updates/1.2.5-1_to_1.3.sql
-%%WWWDIR%%/sql/updates/1.2_to_1.2.2.sql
 %%WWWDIR%%/sql/updates/mssql_1.4.1_to_1.5.0.php
+%%WWWDIR%%/sql/updates/mssql_1.5.0_to_1.5.1.php
+%%WWWDIR%%/sql/updates/mssql_1.5.1_to_1.5.2.php
+%%WWWDIR%%/sql/updates/mssql_1.5.2_to_1.6.0.php
+%%WWWDIR%%/sql/updates/mssql_1.6.0_to_1.6.1.php
 %%WWWDIR%%/sql/updates/mysql_1.2.5-1_to_1.3.php
 %%WWWDIR%%/sql/updates/mysql_1.3.10_to_1.3.11.php
 %%WWWDIR%%/sql/updates/mysql_1.3.11_to_1.4.0.php
@@ -1193,16 +1247,16 @@
 %%WWWDIR%%/sql/updates/mysql_1.4.1_to_1.5.0.php
 %%WWWDIR%%/sql/updates/mysql_1.5.0_to_1.5.1.php
 %%WWWDIR%%/sql/updates/mysql_1.5.1_to_1.5.2.php
-%%WWWDIR%%/sql/updates/mssql_1.5.0_to_1.5.1.php
-%%WWWDIR%%/sql/updates/mssql_1.5.1_to_1.5.2.php
+%%WWWDIR%%/sql/updates/mysql_1.5.2_to_1.6.0.php
+%%WWWDIR%%/sql/updates/mysql_1.6.0_to_1.6.1.php
 %%WWWDIR%%/system/classes/authentication/LDAP.auth.class.php
 %%WWWDIR%%/system/classes/authentication/LiveJournal.auth.class.php
 %%WWWDIR%%/system/classes/authentication/ldap/config.php
 %%WWWDIR%%/system/classes/calendar.class.php
 %%WWWDIR%%/system/classes/config.class.php
-%%WWWDIR%%/system/classes/conversion.class.php
 %%WWWDIR%%/system/classes/downloader.class.php
 %%WWWDIR%%/system/classes/kses.class.php
+%%WWWDIR%%/system/classes/listfactory.class.php
 %%WWWDIR%%/system/classes/navbar.class.php
 %%WWWDIR%%/system/classes/openid/COPYING
 %%WWWDIR%%/system/classes/openid/LICENSE
@@ -1218,6 +1272,7 @@
 %%WWWDIR%%/system/classes/plugin.class.php
 %%WWWDIR%%/system/classes/sanitize.class.php
 %%WWWDIR%%/system/classes/search.class.php
+%%WWWDIR%%/system/classes/searchcriteria.class.php
 %%WWWDIR%%/system/classes/story.class.php
 %%WWWDIR%%/system/classes/syndication/atom.feed.class.php
 %%WWWDIR%%/system/classes/syndication/feedparserbase.class.php
@@ -1226,6 +1281,8 @@
 %%WWWDIR%%/system/classes/syndication/rss.feed.class.php
 %%WWWDIR%%/system/classes/template.class.php
 %%WWWDIR%%/system/classes/timer.class.php
+%%WWWDIR%%/system/classes/timezoneconfig.class.php
+%%WWWDIR%%/system/classes/unpacker.class.php
 %%WWWDIR%%/system/classes/upload.class.php
 %%WWWDIR%%/system/classes/url.class.php
 %%WWWDIR%%/system/databases/mssql.class.php
@@ -1252,6 +1309,7 @@
 %%WWWDIR%%/system/pear/Auth/SASL/Common.php
 %%WWWDIR%%/system/pear/Auth/SASL/CramMD5.php
 %%WWWDIR%%/system/pear/Auth/SASL/DigestMD5.php
+%%WWWDIR%%/system/pear/Auth/SASL/External.php
 %%WWWDIR%%/system/pear/Auth/SASL/Login.php
 %%WWWDIR%%/system/pear/Auth/SASL/Plain.php
 %%WWWDIR%%/system/pear/Console/Getopt.php
@@ -1260,9 +1318,7 @@
 %%WWWDIR%%/system/pear/Date/Human.php
 %%WWWDIR%%/system/pear/Date/Span.php
 %%WWWDIR%%/system/pear/Date/TimeZone.php
-%%WWWDIR%%/system/pear/HTTP/._Request.php
 %%WWWDIR%%/system/pear/HTTP/Request.php
-%%WWWDIR%%/system/pear/HTTP/Request/._Listener.php
 %%WWWDIR%%/system/pear/HTTP/Request/Listener.php
 %%WWWDIR%%/system/pear/Mail.php
 %%WWWDIR%%/system/pear/Mail/RFC822.php
@@ -1383,90 +1439,6 @@
 %%WWWDIR%%/system/pear/PEAR/Validate.php
 %%WWWDIR%%/system/pear/PEAR/Validator/PECL.php
 %%WWWDIR%%/system/pear/PEAR/XMLParser.php
-%%WWWDIR%%/system/pear/PHP/Compat.php
-%%WWWDIR%%/system/pear/PHP/Compat/Components.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/DIRECTORY_SEPARATOR.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/E_STRICT.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/FILE.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/PATH_SEPARATOR.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/PHP_EOL.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/STD.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/T.php
-%%WWWDIR%%/system/pear/PHP/Compat/Constant/UPLOAD_ERR.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_change_key_case.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_chunk.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_combine.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_diff_assoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_diff_key.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_diff_uassoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_diff_ukey.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_intersect_assoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_intersect_key.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_intersect_uassoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_intersect_ukey.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_key_exists.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_product.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_search.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_udiff.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_udiff_assoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_udiff_uassoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_uintersect.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_uintersect_assoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_uintersect_uassoc.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/array_walk_recursive.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/bcinvert.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/bcpowmod.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/call_user_func_array.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/clone.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/constant.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/convert_uudecode.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/convert_uuencode.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/debug_print_backtrace.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/file_get_contents.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/file_put_contents.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/floatval.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/fprintf.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/fputcsv.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/get_headers.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/get_include_path.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/html_entity_decode.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/htmlspecialchars_decode.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/http_build_query.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/ibase_timefmt.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/idate.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/image_type_to_mime_type.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/inet_ntop.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/inet_pton.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/ini_get_all.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/is_a.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/md5_file.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/mhash.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/mime_content_type.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/ob_clean.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/ob_flush.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/ob_get_clean.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/ob_get_flush.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/pg_affected_rows.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/pg_escape_bytea.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/pg_unescape_bytea.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/php_strip_whitespace.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/restore_include_path.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/scandir.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/set_include_path.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/str_ireplace.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/str_rot13.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/str_shuffle.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/str_split.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/str_word_count.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/stripos.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/strpbrk.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/strripos.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/substr_compare.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/time_sleep_until.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/var_export.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/version_compare.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/vprintf.php
-%%WWWDIR%%/system/pear/PHP/Compat/Function/vsprintf.php
 %%WWWDIR%%/system/pear/README
 %%WWWDIR%%/system/pear/System.php
 %%WWWDIR%%/system/pear/Text/Wiki.php
@@ -1672,10 +1644,6 @@
 @dirrm %%WWWDIR%%/system/pear/Text/Wiki/Parse
 @dirrm %%WWWDIR%%/system/pear/Text/Wiki
 @dirrm %%WWWDIR%%/system/pear/Text
-@dirrm %%WWWDIR%%/system/pear/PHP/Compat/Function
-@dirrm %%WWWDIR%%/system/pear/PHP/Compat/Constant
-@dirrm %%WWWDIR%%/system/pear/PHP/Compat
-@dirrm %%WWWDIR%%/system/pear/PHP
 @dirrm %%WWWDIR%%/system/pear/PEAR/Validator
 @dirrm %%WWWDIR%%/system/pear/PEAR/Task/Windowseol
 @dirrm %%WWWDIR%%/system/pear/PEAR/Task/Unixeol
@@ -1733,6 +1701,9 @@
 @dirrm %%WWWDIR%%/public_html/layout/professional/preferences
 @dirrm %%WWWDIR%%/public_html/layout/professional/navbar/images
 @dirrm %%WWWDIR%%/public_html/layout/professional/navbar
+@dirrm %%WWWDIR%%/public_html/layout/professional/lists/table
+@dirrm %%WWWDIR%%/public_html/layout/professional/lists/inline
+@dirrm %%WWWDIR%%/public_html/layout/professional/lists
 @dirrm %%WWWDIR%%/public_html/layout/professional/images/icons
 @dirrm %%WWWDIR%%/public_html/layout/professional/images/admin
 @dirrm %%WWWDIR%%/public_html/layout/professional/images
@@ -1769,6 +1740,7 @@
 @dirrm %%WWWDIR%%/public_html/images/admin
 @dirrm %%WWWDIR%%/public_html/images
 @dirrm %%WWWDIR%%/public_html/help
+@dirrm %%WWWDIR%%/public_html/fckeditor/editor/wsc
 @dirrm %%WWWDIR%%/public_html/fckeditor/editor/skins/silver/images
 @dirrm %%WWWDIR%%/public_html/fckeditor/editor/skins/silver
 @dirrm %%WWWDIR%%/public_html/fckeditor/editor/skins/office2003/images
@@ -1824,7 +1796,9 @@
 @dirrm %%WWWDIR%%/public_html/fckeditor/editor/_source
 @dirrm %%WWWDIR%%/public_html/fckeditor/editor
 @dirrm %%WWWDIR%%/public_html/fckeditor
+@dirrm %%WWWDIR%%/public_html/docs/japanese
 @dirrm %%WWWDIR%%/public_html/docs/images
+@dirrm %%WWWDIR%%/public_html/docs/english
 @dirrm %%WWWDIR%%/public_html/docs
 @dirrm %%WWWDIR%%/public_html/calendar/images
 @dirrm %%WWWDIR%%/public_html/calendar
@@ -1840,7 +1814,10 @@
 @dirrm %%WWWDIR%%/public_html/admin/install/language
 @dirrm %%WWWDIR%%/public_html/admin/install
 @dirrm %%WWWDIR%%/public_html/admin
-@dirrm %%WWWDIR%%/public_html
+@dirrmtry %%WWWDIR%%/public_html
+@dirrm %%WWWDIR%%/plugins/xmlsitemap/sql
+@dirrm %%WWWDIR%%/plugins/xmlsitemap/language
+@dirrm %%WWWDIR%%/plugins/xmlsitemap
 @dirrm %%WWWDIR%%/plugins/staticpages/templates/admin
 @dirrm %%WWWDIR%%/plugins/staticpages/templates
 @dirrm %%WWWDIR%%/plugins/staticpages/sql
@@ -1872,4 +1849,4 @@
 @dirrm %%WWWDIR%%/language
 @dirrm %%WWWDIR%%/data
 @dirrm %%WWWDIR%%/backups
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
