@@ -1,15 +1,6 @@
---- configure.orig	2009-01-01 17:16:25.000000000 -0500
-+++ configure	2009-01-01 17:18:27.000000000 -0500
-@@ -23250,7 +23250,7 @@ cat >>confdefs.h <<\_ACEOF
- #define HAVE_GTK_PRINT 1
- _ACEOF
- 
--  gnome_print_extras=""
-+  #gnome_print_extras=""
- else
-   gnome_print_extras="libgnomeprint-2.2 >= 2.1.4 libgnomeprintui-2.2 >= 2.1.4"
- fi
-@@ -23889,7 +23889,7 @@ if { as_var=$as_ac_Lib; eval "test \"\${
+--- configure.orig	2009-12-25 12:47:41.000000000 -0500
++++ configure	2009-12-25 12:55:51.000000000 -0500
+@@ -15258,7 +15258,7 @@ if { as_var=$as_ac_Lib; eval "test \"\${
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24383,7 +24383,7 @@ if test "${ac_cv_lib_ldap_ldap_search+se
+@@ -15752,7 +15752,7 @@ if test "${ac_cv_lib_ldap_ldap_search+se
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -27,7 +18,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24448,7 +24448,7 @@ cat >>confdefs.h <<\_ACEOF
+@@ -15817,7 +15817,7 @@ cat >>confdefs.h <<\_ACEOF
  #define ENABLE_LDAP 1
  _ACEOF
  
@@ -36,7 +27,7 @@
  else
    { { $as_echo "$as_me:$LINENO: error: *** You enabled LDAP but ldap library is not found." >&5
  $as_echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}
-@@ -26363,13 +26363,13 @@ _ACEOF
+@@ -18216,13 +18216,13 @@ _ACEOF
  else
  
  
@@ -54,7 +45,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -26383,11 +26383,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -18236,11 +18236,11 @@ cat >>conftest.$ac_ext <<_ACEOF
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -68,7 +59,7 @@
    ;
    return 0;
  }
-@@ -26413,12 +26413,12 @@ $as_echo "$ac_try_echo") >&5
+@@ -18266,12 +18266,12 @@ $as_echo "$ac_try_echo") >&5
  	 test "$cross_compiling" = yes ||
  	 $as_test_x conftest$ac_exeext
         }; then
@@ -83,7 +74,7 @@
  fi
  
  rm -rf conftest.dSYM
-@@ -26426,19 +26426,19 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -18279,19 +18279,19 @@ rm -f core conftest.err conftest.$ac_obj
        conftest$ac_exeext conftest.$ac_ext
  LIBS=$ac_check_lib_save_LIBS
  fi
@@ -109,7 +100,7 @@
     { (exit 1); exit 1; }; }
  
  fi
-@@ -26446,18 +26446,18 @@ fi
+@@ -18299,18 +18299,18 @@ fi
  
  fi
  
@@ -136,7 +127,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -26465,7 +26465,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -18318,7 +18318,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -145,7 +136,7 @@
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -26498,15 +26498,15 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -18351,15 +18351,15 @@ rm -f core conftest.err conftest.$ac_obj
  $as_echo "$ac_header_compiler" >&6; }
  
  # Is the header present?
@@ -164,7 +155,7 @@
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
  case "(($ac_try" in
-@@ -26540,44 +26540,44 @@ $as_echo "$ac_header_preproc" >&6; }
+@@ -18393,44 +18393,44 @@ $as_echo "$ac_header_preproc" >&6; }
  # So?  What about this header?
  case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
    yes:no: )
@@ -234,3 +225,12 @@
     { (exit 1); exit 1; }; }
  fi
  
+@@ -18733,7 +18733,7 @@ fi
+ 
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define _XOPEN_SOURCE 500
++/*#define _XOPEN_SOURCE 500*/
+ _ACEOF
+ 
+ { $as_echo "$as_me:$LINENO: checking whether localtime_r is declared" >&5
