@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google_analytics
-DISTVERSION=	5.x-1.7
+DISTVERSION=	5.x-1.9
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
