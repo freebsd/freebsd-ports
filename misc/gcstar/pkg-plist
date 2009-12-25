@@ -1,5 +1,4 @@
 bin/gcstar
-lib/gcstar/GCBackend/GCBackendLibXml.pm
 lib/gcstar/GCBackend/GCBackendXmlCommon.pm
 lib/gcstar/GCBackend/GCBackendXmlParser.pm
 lib/gcstar/GCBookmarks.pm
@@ -36,7 +35,8 @@ lib/gcstar/GCImport/GCImportList.pm
 lib/gcstar/GCImport/GCImportMyMovies.pm
 lib/gcstar/GCImport/GCImportTarGz.pm
 lib/gcstar/GCImport/GCImportTellico.pm
-lib/gcstar/GCItemsLists.pm
+lib/gcstar/GCItemsLists/GCImageLists.pm
+lib/gcstar/GCItemsLists/GCTextLists.pm
 lib/gcstar/GCLang.pm
 lib/gcstar/GCLang/AR/GCExport/GCExportCSV.pm
 lib/gcstar/GCLang/AR/GCExport/GCExportHTML.pm
@@ -57,7 +57,10 @@ lib/gcstar/GCLang/AR/GCModels/GCcoins.pm
 lib/gcstar/GCLang/AR/GCModels/GCcomics.pm
 lib/gcstar/GCLang/AR/GCModels/GCfilms.pm
 lib/gcstar/GCLang/AR/GCModels/GCgames.pm
+lib/gcstar/GCLang/AR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/AR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/AR/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/AR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/AR/GCModels/GCwines.pm
 lib/gcstar/GCLang/AR/GCstar.pm
 lib/gcstar/GCLang/BG/GCExport/GCExportCSV.pm
@@ -79,7 +82,10 @@ lib/gcstar/GCLang/BG/GCModels/GCcoins.pm
 lib/gcstar/GCLang/BG/GCModels/GCcomics.pm
 lib/gcstar/GCLang/BG/GCModels/GCfilms.pm
 lib/gcstar/GCLang/BG/GCModels/GCgames.pm
+lib/gcstar/GCLang/BG/GCModels/GCminicars.pm
 lib/gcstar/GCLang/BG/GCModels/GCmusics.pm
+lib/gcstar/GCLang/BG/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/BG/GCModels/GCstamps.pm
 lib/gcstar/GCLang/BG/GCModels/GCwines.pm
 lib/gcstar/GCLang/BG/GCstar.pm
 lib/gcstar/GCLang/CA/GCExport/GCExportCSV.pm
@@ -101,7 +107,10 @@ lib/gcstar/GCLang/CA/GCModels/GCcoins.pm
 lib/gcstar/GCLang/CA/GCModels/GCcomics.pm
 lib/gcstar/GCLang/CA/GCModels/GCfilms.pm
 lib/gcstar/GCLang/CA/GCModels/GCgames.pm
+lib/gcstar/GCLang/CA/GCModels/GCminicars.pm
 lib/gcstar/GCLang/CA/GCModels/GCmusics.pm
+lib/gcstar/GCLang/CA/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/CA/GCModels/GCstamps.pm
 lib/gcstar/GCLang/CA/GCModels/GCwines.pm
 lib/gcstar/GCLang/CA/GCstar.pm
 lib/gcstar/GCLang/CS/GCExport/GCExportCSV.pm
@@ -123,7 +132,10 @@ lib/gcstar/GCLang/CS/GCModels/GCcoins.pm
 lib/gcstar/GCLang/CS/GCModels/GCcomics.pm
 lib/gcstar/GCLang/CS/GCModels/GCfilms.pm
 lib/gcstar/GCLang/CS/GCModels/GCgames.pm
+lib/gcstar/GCLang/CS/GCModels/GCminicars.pm
 lib/gcstar/GCLang/CS/GCModels/GCmusics.pm
+lib/gcstar/GCLang/CS/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/CS/GCModels/GCstamps.pm
 lib/gcstar/GCLang/CS/GCModels/GCwines.pm
 lib/gcstar/GCLang/CS/GCstar.pm
 lib/gcstar/GCLang/DE/GCExport/GCExportCSV.pm
@@ -145,7 +157,10 @@ lib/gcstar/GCLang/DE/GCModels/GCcoins.pm
 lib/gcstar/GCLang/DE/GCModels/GCcomics.pm
 lib/gcstar/GCLang/DE/GCModels/GCfilms.pm
 lib/gcstar/GCLang/DE/GCModels/GCgames.pm
+lib/gcstar/GCLang/DE/GCModels/GCminicars.pm
 lib/gcstar/GCLang/DE/GCModels/GCmusics.pm
+lib/gcstar/GCLang/DE/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/DE/GCModels/GCstamps.pm
 lib/gcstar/GCLang/DE/GCModels/GCwines.pm
 lib/gcstar/GCLang/DE/GCstar.pm
 lib/gcstar/GCLang/EL/GCExport/GCExportCSV.pm
@@ -167,7 +182,10 @@ lib/gcstar/GCLang/EL/GCModels/GCcoins.pm
 lib/gcstar/GCLang/EL/GCModels/GCcomics.pm
 lib/gcstar/GCLang/EL/GCModels/GCfilms.pm
 lib/gcstar/GCLang/EL/GCModels/GCgames.pm
+lib/gcstar/GCLang/EL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/EL/GCModels/GCmusics.pm
+lib/gcstar/GCLang/EL/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/EL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/EL/GCModels/GCwines.pm
 lib/gcstar/GCLang/EL/GCstar.pm
 lib/gcstar/GCLang/EN/GCExport/GCExportCSV.pm
@@ -189,7 +207,10 @@ lib/gcstar/GCLang/EN/GCModels/GCcoins.pm
 lib/gcstar/GCLang/EN/GCModels/GCcomics.pm
 lib/gcstar/GCLang/EN/GCModels/GCfilms.pm
 lib/gcstar/GCLang/EN/GCModels/GCgames.pm
+lib/gcstar/GCLang/EN/GCModels/GCminicars.pm
 lib/gcstar/GCLang/EN/GCModels/GCmusics.pm
+lib/gcstar/GCLang/EN/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/EN/GCModels/GCstamps.pm
 lib/gcstar/GCLang/EN/GCModels/GCwines.pm
 lib/gcstar/GCLang/EN/GCstar.pm
 lib/gcstar/GCLang/ES/GCExport/GCExportCSV.pm
@@ -211,7 +232,10 @@ lib/gcstar/GCLang/ES/GCModels/GCcoins.pm
 lib/gcstar/GCLang/ES/GCModels/GCcomics.pm
 lib/gcstar/GCLang/ES/GCModels/GCfilms.pm
 lib/gcstar/GCLang/ES/GCModels/GCgames.pm
+lib/gcstar/GCLang/ES/GCModels/GCminicars.pm
 lib/gcstar/GCLang/ES/GCModels/GCmusics.pm
+lib/gcstar/GCLang/ES/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/ES/GCModels/GCstamps.pm
 lib/gcstar/GCLang/ES/GCModels/GCwines.pm
 lib/gcstar/GCLang/ES/GCstar.pm
 lib/gcstar/GCLang/FR/GCExport/GCExportCSV.pm
@@ -233,7 +257,10 @@ lib/gcstar/GCLang/FR/GCModels/GCcoins.pm
 lib/gcstar/GCLang/FR/GCModels/GCcomics.pm
 lib/gcstar/GCLang/FR/GCModels/GCfilms.pm
 lib/gcstar/GCLang/FR/GCModels/GCgames.pm
+lib/gcstar/GCLang/FR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/FR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/FR/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/FR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/FR/GCModels/GCwines.pm
 lib/gcstar/GCLang/FR/GCstar.pm
 lib/gcstar/GCLang/GCLangUtils.pm
@@ -256,7 +283,10 @@ lib/gcstar/GCLang/GL/GCModels/GCcoins.pm
 lib/gcstar/GCLang/GL/GCModels/GCcomics.pm
 lib/gcstar/GCLang/GL/GCModels/GCfilms.pm
 lib/gcstar/GCLang/GL/GCModels/GCgames.pm
+lib/gcstar/GCLang/GL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/GL/GCModels/GCmusics.pm
+lib/gcstar/GCLang/GL/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/GL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/GL/GCModels/GCwines.pm
 lib/gcstar/GCLang/GL/GCstar.pm
 lib/gcstar/GCLang/HU/GCExport/GCExportCSV.pm
@@ -278,7 +308,10 @@ lib/gcstar/GCLang/HU/GCModels/GCcoins.pm
 lib/gcstar/GCLang/HU/GCModels/GCcomics.pm
 lib/gcstar/GCLang/HU/GCModels/GCfilms.pm
 lib/gcstar/GCLang/HU/GCModels/GCgames.pm
+lib/gcstar/GCLang/HU/GCModels/GCminicars.pm
 lib/gcstar/GCLang/HU/GCModels/GCmusics.pm
+lib/gcstar/GCLang/HU/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/HU/GCModels/GCstamps.pm
 lib/gcstar/GCLang/HU/GCModels/GCwines.pm
 lib/gcstar/GCLang/HU/GCstar.pm
 lib/gcstar/GCLang/ID/GCExport/GCExportCSV.pm
@@ -300,7 +333,10 @@ lib/gcstar/GCLang/ID/GCModels/GCcoins.pm
 lib/gcstar/GCLang/ID/GCModels/GCcomics.pm
 lib/gcstar/GCLang/ID/GCModels/GCfilms.pm
 lib/gcstar/GCLang/ID/GCModels/GCgames.pm
+lib/gcstar/GCLang/ID/GCModels/GCminicars.pm
 lib/gcstar/GCLang/ID/GCModels/GCmusics.pm
+lib/gcstar/GCLang/ID/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/ID/GCModels/GCstamps.pm
 lib/gcstar/GCLang/ID/GCModels/GCwines.pm
 lib/gcstar/GCLang/ID/GCstar.pm
 lib/gcstar/GCLang/IT/GCExport/GCExportCSV.pm
@@ -322,7 +358,10 @@ lib/gcstar/GCLang/IT/GCModels/GCcoins.pm
 lib/gcstar/GCLang/IT/GCModels/GCcomics.pm
 lib/gcstar/GCLang/IT/GCModels/GCfilms.pm
 lib/gcstar/GCLang/IT/GCModels/GCgames.pm
+lib/gcstar/GCLang/IT/GCModels/GCminicars.pm
 lib/gcstar/GCLang/IT/GCModels/GCmusics.pm
+lib/gcstar/GCLang/IT/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/IT/GCModels/GCstamps.pm
 lib/gcstar/GCLang/IT/GCModels/GCwines.pm
 lib/gcstar/GCLang/IT/GCstar.pm
 lib/gcstar/GCLang/IT/README.txt
@@ -345,7 +384,10 @@ lib/gcstar/GCLang/NL/GCModels/GCcoins.pm
 lib/gcstar/GCLang/NL/GCModels/GCcomics.pm
 lib/gcstar/GCLang/NL/GCModels/GCfilms.pm
 lib/gcstar/GCLang/NL/GCModels/GCgames.pm
+lib/gcstar/GCLang/NL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/NL/GCModels/GCmusics.pm
+lib/gcstar/GCLang/NL/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/NL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/NL/GCModels/GCwines.pm
 lib/gcstar/GCLang/NL/GCstar.pm
 lib/gcstar/GCLang/PL/GCExport/GCExportCSV.pm
@@ -367,7 +409,10 @@ lib/gcstar/GCLang/PL/GCModels/GCcoins.pm
 lib/gcstar/GCLang/PL/GCModels/GCcomics.pm
 lib/gcstar/GCLang/PL/GCModels/GCfilms.pm
 lib/gcstar/GCLang/PL/GCModels/GCgames.pm
+lib/gcstar/GCLang/PL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/PL/GCModels/GCmusics.pm
+lib/gcstar/GCLang/PL/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/PL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/PL/GCModels/GCwines.pm
 lib/gcstar/GCLang/PL/GCstar.pm
 lib/gcstar/GCLang/PT/GCExport/GCExportCSV.pm
@@ -389,7 +434,10 @@ lib/gcstar/GCLang/PT/GCModels/GCcoins.pm
 lib/gcstar/GCLang/PT/GCModels/GCcomics.pm
 lib/gcstar/GCLang/PT/GCModels/GCfilms.pm
 lib/gcstar/GCLang/PT/GCModels/GCgames.pm
+lib/gcstar/GCLang/PT/GCModels/GCminicars.pm
 lib/gcstar/GCLang/PT/GCModels/GCmusics.pm
+lib/gcstar/GCLang/PT/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/PT/GCModels/GCstamps.pm
 lib/gcstar/GCLang/PT/GCModels/GCwines.pm
 lib/gcstar/GCLang/PT/GCstar.pm
 lib/gcstar/GCLang/RO/GCExport/GCExportCSV.pm
@@ -411,7 +459,10 @@ lib/gcstar/GCLang/RO/GCModels/GCcoins.pm
 lib/gcstar/GCLang/RO/GCModels/GCcomics.pm
 lib/gcstar/GCLang/RO/GCModels/GCfilms.pm
 lib/gcstar/GCLang/RO/GCModels/GCgames.pm
+lib/gcstar/GCLang/RO/GCModels/GCminicars.pm
 lib/gcstar/GCLang/RO/GCModels/GCmusics.pm
+lib/gcstar/GCLang/RO/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/RO/GCModels/GCstamps.pm
 lib/gcstar/GCLang/RO/GCModels/GCwines.pm
 lib/gcstar/GCLang/RO/GCstar.pm
 lib/gcstar/GCLang/RU/GCExport/GCExportCSV.pm
@@ -433,7 +484,10 @@ lib/gcstar/GCLang/RU/GCModels/GCcoins.pm
 lib/gcstar/GCLang/RU/GCModels/GCcomics.pm
 lib/gcstar/GCLang/RU/GCModels/GCfilms.pm
 lib/gcstar/GCLang/RU/GCModels/GCgames.pm
+lib/gcstar/GCLang/RU/GCModels/GCminicars.pm
 lib/gcstar/GCLang/RU/GCModels/GCmusics.pm
+lib/gcstar/GCLang/RU/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/RU/GCModels/GCstamps.pm
 lib/gcstar/GCLang/RU/GCModels/GCwines.pm
 lib/gcstar/GCLang/RU/GCstar.pm
 lib/gcstar/GCLang/SR/GCExport/GCExportCSV.pm
@@ -455,7 +509,10 @@ lib/gcstar/GCLang/SR/GCModels/GCcoins.pm
 lib/gcstar/GCLang/SR/GCModels/GCcomics.pm
 lib/gcstar/GCLang/SR/GCModels/GCfilms.pm
 lib/gcstar/GCLang/SR/GCModels/GCgames.pm
+lib/gcstar/GCLang/SR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/SR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/SR/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/SR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/SR/GCModels/GCwines.pm
 lib/gcstar/GCLang/SR/GCstar.pm
 lib/gcstar/GCLang/SV/GCExport/GCExportCSV.pm
@@ -477,7 +534,10 @@ lib/gcstar/GCLang/SV/GCModels/GCcoins.pm
 lib/gcstar/GCLang/SV/GCModels/GCcomics.pm
 lib/gcstar/GCLang/SV/GCModels/GCfilms.pm
 lib/gcstar/GCLang/SV/GCModels/GCgames.pm
+lib/gcstar/GCLang/SV/GCModels/GCminicars.pm
 lib/gcstar/GCLang/SV/GCModels/GCmusics.pm
+lib/gcstar/GCLang/SV/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/SV/GCModels/GCstamps.pm
 lib/gcstar/GCLang/SV/GCModels/GCwines.pm
 lib/gcstar/GCLang/SV/GCstar.pm
 lib/gcstar/GCLang/TR/GCExport/GCExportCSV.pm
@@ -499,7 +559,10 @@ lib/gcstar/GCLang/TR/GCModels/GCcoins.pm
 lib/gcstar/GCLang/TR/GCModels/GCcomics.pm
 lib/gcstar/GCLang/TR/GCModels/GCfilms.pm
 lib/gcstar/GCLang/TR/GCModels/GCgames.pm
+lib/gcstar/GCLang/TR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/TR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/TR/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/TR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/TR/GCModels/GCwines.pm
 lib/gcstar/GCLang/TR/GCstar.pm
 lib/gcstar/GCLang/UK/GCExport/GCExportCSV.pm
@@ -521,7 +584,10 @@ lib/gcstar/GCLang/UK/GCModels/GCcoins.pm
 lib/gcstar/GCLang/UK/GCModels/GCcomics.pm
 lib/gcstar/GCLang/UK/GCModels/GCfilms.pm
 lib/gcstar/GCLang/UK/GCModels/GCgames.pm
+lib/gcstar/GCLang/UK/GCModels/GCminicars.pm
 lib/gcstar/GCLang/UK/GCModels/GCmusics.pm
+lib/gcstar/GCLang/UK/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/UK/GCModels/GCstamps.pm
 lib/gcstar/GCLang/UK/GCModels/GCwines.pm
 lib/gcstar/GCLang/UK/GCstar.pm
 lib/gcstar/GCMail.pm
@@ -535,10 +601,11 @@ lib/gcstar/GCModels/GCcoins.gcm
 lib/gcstar/GCModels/GCcomics.gcm
 lib/gcstar/GCModels/GCfilms.gcm
 lib/gcstar/GCModels/GCgames.gcm
+lib/gcstar/GCModels/GCminicars.gcm
 lib/gcstar/GCModels/GCmusics.gcm
+lib/gcstar/GCModels/GCperiodicals.gcm
+lib/gcstar/GCModels/GCstamps.gcm
 lib/gcstar/GCModels/GCwines.gcm
-lib/gcstar/GCModule.pm
-lib/gcstar/GCModule/GCModuleFirst.pm
 lib/gcstar/GCOptions.pm
 lib/gcstar/GCPanel.pm
 lib/gcstar/GCPlugins.pm
@@ -547,6 +614,7 @@ lib/gcstar/GCPlugins/GCTVepisodes/GCTVepisodesCommon.pm
 lib/gcstar/GCPlugins/GCTVepisodes/GCTvdb.pm
 lib/gcstar/GCPlugins/GCTVepisodes/GCTvdbES.pm
 lib/gcstar/GCPlugins/GCTVepisodes/GCTvdbFR.pm
+lib/gcstar/GCPlugins/GCTVepisodes/GCTvdbIT.pm
 lib/gcstar/GCPlugins/GCboardgames/GCReservoirJeux.pm
 lib/gcstar/GCPlugins/GCboardgames/GCboardgamegeek.pm
 lib/gcstar/GCPlugins/GCboardgames/GCboardgamesCommon.pm
@@ -555,6 +623,7 @@ lib/gcstar/GCPlugins/GCbooks/GCAdlibrisFI.pm
 lib/gcstar/GCPlugins/GCbooks/GCAdlibrisSV.pm
 lib/gcstar/GCPlugins/GCbooks/GCAlapage.pm
 lib/gcstar/GCPlugins/GCbooks/GCAmazon.pm
+lib/gcstar/GCPlugins/GCbooks/GCAmazonCA.pm
 lib/gcstar/GCPlugins/GCbooks/GCAmazonDE.pm
 lib/gcstar/GCPlugins/GCbooks/GCAmazonFR.pm
 lib/gcstar/GCPlugins/GCbooks/GCAmazonUK.pm
@@ -577,15 +646,18 @@ lib/gcstar/GCPlugins/GCbooks/GCMediabooks.pm
 lib/gcstar/GCPlugins/GCbooks/GCMerlin.pm
 lib/gcstar/GCPlugins/GCbooks/GCNUKat.pm
 lib/gcstar/GCPlugins/GCbooks/GCNooSFere.pm
+lib/gcstar/GCPlugins/GCbooks/GCSaraiva.pm
 lib/gcstar/GCPlugins/GCbooks/GCbooksAdlibrisCommon.pm
 lib/gcstar/GCPlugins/GCbooks/GCbooksAmazonCommon.pm
 lib/gcstar/GCPlugins/GCbooks/GCbooksCommon.pm
 lib/gcstar/GCPlugins/GCcomics/GCbedetheque.pm
 lib/gcstar/GCPlugins/GCcomics/GCcomicbookdb.pm
 lib/gcstar/GCPlugins/GCcomics/GCcomicsCommon.pm
+lib/gcstar/GCPlugins/GCcomics/GCmangasanctuary.pm
 lib/gcstar/GCPlugins/GCfilms/GCAlapage.pm
 lib/gcstar/GCPlugins/GCfilms/GCAllmovie.pm
 lib/gcstar/GCPlugins/GCfilms/GCAllocine.pm
+lib/gcstar/GCPlugins/GCfilms/GCAlpacineES.pm
 lib/gcstar/GCPlugins/GCfilms/GCAmazon.pm
 lib/gcstar/GCPlugins/GCfilms/GCAmazonDE.pm
 lib/gcstar/GCPlugins/GCfilms/GCAmazonFR.pm
@@ -606,8 +678,11 @@ lib/gcstar/GCPlugins/GCfilms/GCFilmAffinityEN.pm
 lib/gcstar/GCPlugins/GCfilms/GCFilmAffinityES.pm
 lib/gcstar/GCPlugins/GCfilms/GCFilmUP.pm
 lib/gcstar/GCPlugins/GCfilms/GCFilmWeb.pm
+lib/gcstar/GCPlugins/GCfilms/GCIbs.pm
 lib/gcstar/GCPlugins/GCfilms/GCImdb.pm
+lib/gcstar/GCPlugins/GCfilms/GCKinopoisk.pm
 lib/gcstar/GCPlugins/GCfilms/GCMediadis.pm
+lib/gcstar/GCPlugins/GCfilms/GCMetropoliES.pm
 lib/gcstar/GCPlugins/GCfilms/GCMonsieurCinema.pm
 lib/gcstar/GCPlugins/GCfilms/GCMovieClubFR.pm
 lib/gcstar/GCPlugins/GCfilms/GCMovieClubNL.pm
@@ -619,10 +694,12 @@ lib/gcstar/GCPlugins/GCfilms/GCOdeonHU.pm
 lib/gcstar/GCPlugins/GCfilms/GCOnet.pm
 lib/gcstar/GCPlugins/GCfilms/GCPortHU.pm
 lib/gcstar/GCPlugins/GCfilms/GCStopklatka.pm
+lib/gcstar/GCPlugins/GCfilms/GCThemoviedb.pm
 lib/gcstar/GCPlugins/GCfilms/GCfilmsAmazonCommon.pm
 lib/gcstar/GCPlugins/GCfilms/GCfilmsCommon.pm
 lib/gcstar/GCPlugins/GCgames/GCAlapage.pm
 lib/gcstar/GCPlugins/GCgames/GCAmazon.pm
+lib/gcstar/GCPlugins/GCgames/GCAmazonCA.pm
 lib/gcstar/GCPlugins/GCgames/GCAmazonDE.pm
 lib/gcstar/GCPlugins/GCgames/GCAmazonFR.pm
 lib/gcstar/GCPlugins/GCgames/GCAmazonJP.pm
@@ -633,6 +710,7 @@ lib/gcstar/GCPlugins/GCgames/GCJeuxVideoCom.pm
 lib/gcstar/GCPlugins/GCgames/GCJeuxVideoFr.pm
 lib/gcstar/GCPlugins/GCgames/GCLudus.pm
 lib/gcstar/GCPlugins/GCgames/GCMobyGames.pm
+lib/gcstar/GCPlugins/GCgames/GCNextGame.pm
 lib/gcstar/GCPlugins/GCgames/GCTheLegacy.pm
 lib/gcstar/GCPlugins/GCgames/GCgamesAmazonCommon.pm
 lib/gcstar/GCPlugins/GCgames/GCgamesCommon.pm
@@ -655,6 +733,10 @@ share/applications/gcstar.desktop
 %%DATADIR%%/html_models/GCboardgames/piwi.png
 %%DATADIR%%/html_models/GCbooks/FloFred
 %%DATADIR%%/html_models/GCbooks/FloFred.png
+%%DATADIR%%/html_models/GCbooks/NellistosDark
+%%DATADIR%%/html_models/GCbooks/NellistosDark.png
+%%DATADIR%%/html_models/GCbooks/NellistosLight
+%%DATADIR%%/html_models/GCbooks/NellistosLight.png
 %%DATADIR%%/html_models/GCbooks/Shelf
 %%DATADIR%%/html_models/GCbooks/Shelf.png
 %%DATADIR%%/html_models/GCbooks/Simple
@@ -684,6 +766,8 @@ share/applications/gcstar.desktop
 %%DATADIR%%/html_models/GCgames/Simple.png
 %%DATADIR%%/html_models/GCgames/Tabs
 %%DATADIR%%/html_models/GCgames/Tabs.png
+%%DATADIR%%/html_models/GCminicars/Tian-Jim
+%%DATADIR%%/html_models/GCminicars/Tian-Jim.png
 %%DATADIR%%/html_models/GCmusics/Shelf
 %%DATADIR%%/html_models/GCmusics/Shelf.png
 %%DATADIR%%/html_models/GCmusics/Simple
@@ -693,25 +777,45 @@ share/applications/gcstar.desktop
 %%DATADIR%%/html_models/GCstar/Simple
 %%DATADIR%%/html_models/GCstar/Simple.png
 %%DATADIR%%/icons/GCstar.ico
+%%DATADIR%%/icons/gcstar_128x128.png
 %%DATADIR%%/icons/gcstar_16x16.png
+%%DATADIR%%/icons/gcstar_192x192.png
+%%DATADIR%%/icons/gcstar_22x22.png
 %%DATADIR%%/icons/gcstar_24x24.png
+%%DATADIR%%/icons/gcstar_256x256.png
 %%DATADIR%%/icons/gcstar_32x32.png
+%%DATADIR%%/icons/gcstar_36x36.png
 %%DATADIR%%/icons/gcstar_48x48.png
 %%DATADIR%%/icons/gcstar_64x64.png
+%%DATADIR%%/icons/gcstar_72x72.png
+%%DATADIR%%/icons/gcstar_96x96.png
+%%DATADIR%%/icons/gcstar_scalable.svg
 %%DATADIR%%/icons/icon_install.ico
 %%DATADIR%%/icons/star.png
 %%DATADIR%%/icons/star_hover.png
 %%DATADIR%%/icons/stardark.png
 %%DATADIR%%/icons/stardark_hover.png
 %%DATADIR%%/icons/web.ico
+%%DATADIR%%/list_bg/Box/group.png
 %%DATADIR%%/list_bg/Box/list_bg.png
+%%DATADIR%%/list_bg/Box/style
+%%DATADIR%%/list_bg/Dark_Glass/group.png
 %%DATADIR%%/list_bg/Dark_Glass/list_bg.png
 %%DATADIR%%/list_bg/Dark_Glass/list_fg.png
+%%DATADIR%%/list_bg/Dark_Glass/style
+%%DATADIR%%/list_bg/Glass/group.png
 %%DATADIR%%/list_bg/Glass/list_bg.png
 %%DATADIR%%/list_bg/Glass/list_fg.png
+%%DATADIR%%/list_bg/Glass/style
+%%DATADIR%%/list_bg/Marble/group.png
 %%DATADIR%%/list_bg/Marble/list_bg.png
+%%DATADIR%%/list_bg/Marble/style
+%%DATADIR%%/list_bg/Wood/group.png
 %%DATADIR%%/list_bg/Wood/list_bg.png
+%%DATADIR%%/list_bg/Wood/style
+%%DATADIR%%/list_bg/Wood2/group.png
 %%DATADIR%%/list_bg/Wood2/list_bg.png
+%%DATADIR%%/list_bg/Wood2/style
 %%DATADIR%%/logos/Peri.png
 %%DATADIR%%/logos/Peri_main_logo.png
 %%DATADIR%%/logos/Peri_main_logo.svg
@@ -724,8 +828,11 @@ share/applications/gcstar.desktop
 %%DATADIR%%/logos/find.png
 %%DATADIR%%/logos/install.png
 %%DATADIR%%/logos/no.png
+%%DATADIR%%/logos/no_minicars.png
+%%DATADIR%%/logos/no_stamp.png
 %%DATADIR%%/logos/periscope_main_logo.svg
 %%DATADIR%%/logos/splash.png
+%%DATADIR%%/overlays/canevas-timbre.png
 %%DATADIR%%/overlays/cd.png
 %%DATADIR%%/overlays/dvd.png
 %%DATADIR%%/overlays/favourite_large.png
@@ -741,6 +848,7 @@ share/applications/gcstar.desktop
 %%DATADIR%%/overlays/lend_small.png
 %%DATADIR%%/overlays/lend_verysmall.png
 %%DATADIR%%/overlays/lend_xlarge.png
+%%DATADIR%%/overlays/minicars.png
 %%DATADIR%%/overlays/subtle.png
 %%DATADIR%%/panels/Classic
 %%DATADIR%%/panels/Dark
@@ -882,7 +990,7 @@ share/applications/gcstar.desktop
 %%DATADIR%%/xml_models/GCfilms/DVDProfiler
 %%DATADIR%%/xslt/applyXSLT.pl
 %%DATADIR%%/xslt/createGCSValidator.xsl
-share/mime/application/gcstar.xml
+share/mime/packages/gcstar.xml
 share/pixmaps/gcstar.png
 @dirrmtry share/mime/application
 @dirrmtry share/mime
@@ -941,6 +1049,7 @@ share/pixmaps/gcstar.png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/html_models/GCstar
 @dirrm %%DATADIR%%/html_models/GCmusics
+@dirrm %%DATADIR%%/html_models/GCminicars
 @dirrm %%DATADIR%%/html_models/GCgames
 @dirrm %%DATADIR%%/html_models/GCfilms
 @dirrm %%DATADIR%%/html_models/GCcoins
@@ -960,7 +1069,6 @@ share/pixmaps/gcstar.png
 @dirrm lib/gcstar/GCPlugins/GCboardgames
 @dirrm lib/gcstar/GCPlugins/GCTVepisodes
 @dirrm lib/gcstar/GCPlugins
-@dirrm lib/gcstar/GCModule
 @dirrm lib/gcstar/GCModels
 @dirrm lib/gcstar/GCLang/UK/GCModels
 @dirrm lib/gcstar/GCLang/UK/GCImport
@@ -1051,6 +1159,7 @@ share/pixmaps/gcstar.png
 @dirrm lib/gcstar/GCLang/AR/GCExport
 @dirrm lib/gcstar/GCLang/AR
 @dirrm lib/gcstar/GCLang
+@dirrm lib/gcstar/GCItemsLists
 @dirrm lib/gcstar/GCImport
 @dirrm lib/gcstar/GCExtract
 @dirrm lib/gcstar/GCExport
@@ -1058,3 +1167,5 @@ share/pixmaps/gcstar.png
 @dirrm lib/gcstar
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
