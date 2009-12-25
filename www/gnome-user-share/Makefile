@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	2.28.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,6 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_APACHE=	2.2+
+USE_XORG=	sm
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
