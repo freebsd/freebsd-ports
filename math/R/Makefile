@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.9.2
-PORTREVISION=	1
+PORTVERSION=	2.10.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -58,7 +57,7 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
 CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
-		FCFLAGS="${FFLAGS}"
+		FCFLAGS="${FFLAGS}" TAR="${TAR}"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
 		rdocdir=${DOCSDIR}
 
@@ -72,7 +71,7 @@ CONFIGURE_ARGS+=--with-blas="-lf77blas -latlas"
 CONFIGURE_ARGS+=--with-lapack="-lalapack -lcblas"
 .endif
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas	\
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
 		lapack.4:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS+=--with-blas="-lblas" --with-lapack="-llapack -lblas"
 .endif
@@ -183,8 +182,6 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/config.site \
 		${WRKSRC}/src/extra/tzone/tzfile.h \
-		${WRKSRC}/src/library/base/man/Startup.Rd \
-		${WRKSRC}/src/library/profile/Rprofile.unix \
 		${WRKSRC}/src/scripts/javareconf
 .if defined(WITHOUT_NLS)
 	@(cd ${WRKSRC}/src/library/Recommended; \
