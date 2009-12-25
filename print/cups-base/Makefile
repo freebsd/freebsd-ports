@@ -91,6 +91,9 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/${PKGCATEGORY}/cups-client
 COMMENT2=	Server
 USE_RC_SUBR=	cupsd
+.if ${ARCH} == "ia64"
+BROKEN=		stack-protector not supported on ia64
+.endif
 .endif
 
 .if defined(CUPS_OVERWRITE_BASE)
