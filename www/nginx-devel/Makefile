@@ -18,6 +18,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
 OPTIONS=	DEBUG			"Enable nginx debugging" off \
+		DEBUGLOG		"Enable debug log (--with-debug)" off \
 		FILE_AIO		"Enable file aio" off \
 		IPV6			"Enable IPv6" off \
 		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
@@ -105,8 +106,11 @@ IGNORE=		requires at least HTTP_MODULE or MAIL_MODULE to \
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g -DNGX_DEBUG_MALLOC
-CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
+.endif
+
+.if defined(WITH_DEBUGLOG)
+CONFIGURE_ARGS+=--with-debug
 .endif
 
 .if defined(WITH_FILE_AIO)
