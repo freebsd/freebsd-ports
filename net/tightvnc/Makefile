@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Enhanced version of VNC
+MAKE_JOBS_UNSAFE=	yes
 
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
