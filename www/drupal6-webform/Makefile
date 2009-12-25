@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webform
-DISTVERSION=	6.x-2.7
+DISTVERSION=	6.x-2.9
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
