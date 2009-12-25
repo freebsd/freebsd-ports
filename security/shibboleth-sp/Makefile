@@ -15,11 +15,9 @@ COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
 LIB_DEPENDS=	saml.5:${PORTSDIR}/security/opensaml
 
-BROKEN=		does not build
+BROKEN=	does not build
 DEPRECATED=	has been broken for 3 months
-EXPIRATION_DATE=2010-01-08
-
-OPTIONS=	APACHE22 "Use Apache version 2.2 instead of version 2.0"  on
+EXPIRATION_DATE=	2010-01-08
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -27,16 +25,12 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	shibboleth-sp
 WRKSRC=		${WRKDIR}/shibboleth-1.3
 
+USE_APACHE=	2.0+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_APACHE22)
-USE_APACHE=	22
-CONFIGURE_ARGS=	--enable-apache-22 --with-apxs22=${APXS}
-.else
-USE_APACHE=	20
-CONFIGURE_ARGS=	--enable-apache-20 --with-apxs2=${APXS}
-.endif
-CONFIGURE_ARGS+=	--localstatedir=/var
+CONFIGURE_ARGS=	--enable-apache-${APACHE_VERSION} \
+	--with-apxs${APACHE_VERSION}=${APXS} \
+	--localstatedir=/var
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/run|/run/shibboleth|' ${WRKSRC}/configs/Makefile.in
