@@ -167,6 +167,7 @@
     SUBDIR += lives
     SUBDIR += lsdvd
     SUBDIR += lxdvdrip
+    SUBDIR += m2tstoavi
     SUBDIR += mandvd
     SUBDIR += mediainfo
     SUBDIR += mencoder
