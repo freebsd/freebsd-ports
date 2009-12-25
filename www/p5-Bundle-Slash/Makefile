@@ -31,7 +31,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
@@ -47,16 +46,19 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/DBIx/Password.pm:${PORTSDIR}/databases/p5-DBIx-Password
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if !defined(WITH_APACHE2)
+PERL_CONFIGURE=	yes
+USE_APACHE=	1.3+
+USE_MYSQL=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} == 13
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Cookie.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 .endif
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-PERL_CONFIGURE=	yes
-
 MAN3=		Bundle::Slash.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
