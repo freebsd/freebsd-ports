@@ -1,15 +1,15 @@
---- libbalsa/mailbox_local.c.orig	Thu Dec 29 01:47:25 2005
-+++ libbalsa/mailbox_local.c	Thu Dec 29 01:48:23 2005
-@@ -375,7 +375,7 @@ typedef struct {
- #else                           /* GLIB_CHECK_VERSION(2, 8, 0) */
-     int fd;
- #endif                          /* GLIB_CHECK_VERSION(2, 8, 0) */
+--- libbalsa/mailbox_local.c.orig	2009-05-23 03:02:12.000000000 -0400
++++ libbalsa/mailbox_local.c	2009-12-25 12:39:52.000000000 -0500
+@@ -440,7 +440,7 @@ libbalsa_mailbox_local_load_config(LibBa
+ 
+ typedef struct {
+     GArray * array;
 -    guint (*fileno)(LibBalsaMailboxLocal * local, guint msgno);
 +    guint (*sti_fileno)(LibBalsaMailboxLocal * local, guint msgno);
      LibBalsaMailboxLocal *local;
  } LibBalsaMailboxLocalSaveTreeInfo;
  
-@@ -399,9 +399,9 @@ lbm_local_save_tree_item(guint msgno, gu
+@@ -464,9 +464,9 @@ lbm_local_save_tree_item(guint msgno, gu
      if (msgno == 0) {
          info.msgno = msgno;
          info.value.total = a;
@@ -22,12 +22,12 @@
      } else {
          info.msgno = msgno;
          info.value.parent = a;
-@@ -466,7 +466,7 @@ lbm_local_save_tree(LibBalsaMailboxLocal
+@@ -524,7 +524,7 @@ lbm_local_save_tree(LibBalsaMailboxLocal
          return;
      }
  
 -    save_info.fileno = LIBBALSA_MAILBOX_LOCAL_GET_CLASS(local)->fileno;
 +    save_info.sti_fileno = LIBBALSA_MAILBOX_LOCAL_GET_CLASS(local)->sti_fileno;
      save_info.local = local;
- #if GLIB_CHECK_VERSION(2, 8, 0)
      save_info.array =
+         g_array_new(FALSE, FALSE, sizeof(LibBalsaMailboxLocalTreeInfo));
