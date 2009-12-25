@@ -57,16 +57,16 @@
 %%HORDIR%%/lib/Block/tree_alarms.php
 %%HORDIR%%/lib/Block/tree_menu.php
 %%HORDIR%%/lib/Day.php
-%%HORDIR%%/lib/Driver.php
 %%HORDIR%%/lib/Driver/holidays.php
 %%HORDIR%%/lib/Driver/ical.php
 %%HORDIR%%/lib/Driver/kolab.php
 %%HORDIR%%/lib/Driver/sql.php
-%%HORDIR%%/lib/FBView.php
+%%HORDIR%%/lib/Driver.php
 %%HORDIR%%/lib/FBView/day.php
 %%HORDIR%%/lib/FBView/month.php
 %%HORDIR%%/lib/FBView/week.php
 %%HORDIR%%/lib/FBView/workweek.php
+%%HORDIR%%/lib/FBView.php
 %%HORDIR%%/lib/Forms/CreateCalendar.php
 %%HORDIR%%/lib/Forms/DeleteCalendar.php
 %%HORDIR%%/lib/Forms/EditCalendar.php
@@ -74,18 +74,18 @@
 %%HORDIR%%/lib/Forms/SubscribeRemoteCalendar.php
 %%HORDIR%%/lib/Forms/UnsubscribeRemoteCalendar.php
 %%HORDIR%%/lib/FreeBusy.php
-%%HORDIR%%/lib/Imple.php
 %%HORDIR%%/lib/Imple/ContactAutoCompleter.php
 %%HORDIR%%/lib/Imple/Embed.php
+%%HORDIR%%/lib/Imple.php
 %%HORDIR%%/lib/JSON.php
 %%HORDIR%%/lib/Kronolith.php
 %%HORDIR%%/lib/Maintenance/Task/purge_events.php
 %%HORDIR%%/lib/Maintenance/kronolith.php
 %%HORDIR%%/lib/Recurrence.php
 %%HORDIR%%/lib/Scheduler/kronolith.php
-%%HORDIR%%/lib/Storage.php
 %%HORDIR%%/lib/Storage/kolab.php
 %%HORDIR%%/lib/Storage/sql.php
+%%HORDIR%%/lib/Storage.php
 %%HORDIR%%/lib/Views/Day.php
 %%HORDIR%%/lib/Views/DeleteEvent.php
 %%HORDIR%%/lib/Views/EditEvent.php
@@ -127,6 +127,8 @@
 %%HORDIR%%/locale/fi_FI/help.xml
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/fr_FR/help.xml
+%%HORDIR%%/locale/hr_HR/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/hr_HR/help.xml
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/hu_HU/help.xml
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/kronolith.mo
@@ -167,6 +169,7 @@
 %%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/hr_HR.po
 %%HORDIR%%/po/hu_HU.po
 %%HORDIR%%/po/it_IT.po
 %%HORDIR%%/po/ja_JP.po
@@ -204,12 +207,14 @@
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2.oci8.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.oci8.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.sql
 %%HORDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
+%%HORDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
@@ -379,125 +384,127 @@
 %%HORDIR%%/week.php
 %%HORDIR%%/workweek.php
 %%HORDIR%%/year.php
-@dirrm %%HORDIR%%/themes/tango-blue/graphics
-@dirrm %%HORDIR%%/themes/tango-blue
-@dirrm %%HORDIR%%/themes/sounds
-@dirrm %%HORDIR%%/themes/simplex
-@dirrm %%HORDIR%%/themes/silver/graphics
-@dirrm %%HORDIR%%/themes/silver
-@dirrm %%HORDIR%%/themes/print
-@dirrm %%HORDIR%%/themes/mozilla
-@dirrm %%HORDIR%%/themes/graphics
-@dirrm %%HORDIR%%/themes/fadetogreen/graphics
-@dirrm %%HORDIR%%/themes/fadetogreen
-@dirrm %%HORDIR%%/themes/burntorange
-@dirrm %%HORDIR%%/themes/bluewhite
-@dirrm %%HORDIR%%/themes
-@dirrm %%HORDIR%%/templates/year
-@dirrm %%HORDIR%%/templates/week
-@dirrm %%HORDIR%%/templates/view
-@dirrm %%HORDIR%%/templates/search
-@dirrm %%HORDIR%%/templates/prefs
-@dirrm %%HORDIR%%/templates/perms
-@dirrm %%HORDIR%%/templates/month
-@dirrm %%HORDIR%%/templates/javascript
-@dirrm %%HORDIR%%/templates/feeds
-@dirrm %%HORDIR%%/templates/fbview
-@dirrm %%HORDIR%%/templates/edit
-@dirrm %%HORDIR%%/templates/delete
-@dirrm %%HORDIR%%/templates/day
-@dirrm %%HORDIR%%/templates/data
-@dirrm %%HORDIR%%/templates/contacts
-@dirrm %%HORDIR%%/templates/attendees
-@dirrm %%HORDIR%%/templates
-@dirrm %%HORDIR%%/scripts/upgrades
-@dirrm %%HORDIR%%/scripts/sql
-@dirrm %%HORDIR%%/scripts
-@dirrm %%HORDIR%%/po
-@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_TW
-@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_CN
-@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/uk_UA
-@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/tr_TR
-@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sv_SE
-@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sl_SI
-@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sk_SK
-@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ru_RU
-@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ro_RO
-@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_PT
-@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_BR
-@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pl_PL
-@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nn_NO
-@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nl_NL
-@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nb_NO
-@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lv_LV
-@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lt_LT
-@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ko_KR
-@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ja_JP
-@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/it_IT
-@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/hu_HU
-@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fr_FR
-@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fi_FI
-@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/eu_ES
-@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/et_EE
-@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/es_ES
-@dirrm %%HORDIR%%/locale/en_US
-@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/el_GR
-@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/de_DE
-@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/da_DK
-@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/cs_CZ
-@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ca_ES
-@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bg_BG
-@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ar_SY
-@dirrm %%HORDIR%%/locale
-@dirrm %%HORDIR%%/lib/tests
-@dirrm %%HORDIR%%/lib/Views
-@dirrm %%HORDIR%%/lib/Storage
-@dirrm %%HORDIR%%/lib/Scheduler
-@dirrm %%HORDIR%%/lib/Maintenance/Task
-@dirrm %%HORDIR%%/lib/Maintenance
-@dirrm %%HORDIR%%/lib/Imple
-@dirrm %%HORDIR%%/lib/Forms
-@dirrm %%HORDIR%%/lib/FBView
-@dirrm %%HORDIR%%/lib/Driver
-@dirrm %%HORDIR%%/lib/Block
-@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/calendars
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/feed
 @dirrm %%HORDIR%%/js/src
 @dirrm %%HORDIR%%/js
-@dirrm %%HORDIR%%/feed
-@dirrmtry %%HORDIR%%/config
-@dirrm %%HORDIR%%/calendars
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib/FBView
+@dirrm %%HORDIR%%/lib/Forms
+@dirrm %%HORDIR%%/lib/Imple
+@dirrm %%HORDIR%%/lib/Maintenance/Task
+@dirrm %%HORDIR%%/lib/Maintenance
+@dirrm %%HORDIR%%/lib/Scheduler
+@dirrm %%HORDIR%%/lib/Storage
+@dirrm %%HORDIR%%/lib/Views
+@dirrm %%HORDIR%%/lib/tests
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar_SY
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el_GR
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/et_EE
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/hr_HR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hr_HR
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
+@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko_KR
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv_LV
+@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb_NO
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/uk_UA
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/attendees
+@dirrm %%HORDIR%%/templates/contacts
+@dirrm %%HORDIR%%/templates/data
+@dirrm %%HORDIR%%/templates/day
+@dirrm %%HORDIR%%/templates/delete
+@dirrm %%HORDIR%%/templates/edit
+@dirrm %%HORDIR%%/templates/fbview
+@dirrm %%HORDIR%%/templates/feeds
+@dirrm %%HORDIR%%/templates/javascript
+@dirrm %%HORDIR%%/templates/month
+@dirrm %%HORDIR%%/templates/perms
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/search
+@dirrm %%HORDIR%%/templates/view
+@dirrm %%HORDIR%%/templates/week
+@dirrm %%HORDIR%%/templates/year
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/bluewhite
+@dirrm %%HORDIR%%/themes/burntorange
+@dirrm %%HORDIR%%/themes/fadetogreen/graphics
+@dirrm %%HORDIR%%/themes/fadetogreen
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/mozilla
+@dirrm %%HORDIR%%/themes/print
+@dirrm %%HORDIR%%/themes/silver/graphics
+@dirrm %%HORDIR%%/themes/silver
+@dirrm %%HORDIR%%/themes/simplex
+@dirrm %%HORDIR%%/themes/sounds
+@dirrm %%HORDIR%%/themes/tango-blue/graphics
+@dirrm %%HORDIR%%/themes/tango-blue
+@dirrm %%HORDIR%%/themes
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
