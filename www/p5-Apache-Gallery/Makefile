@@ -7,7 +7,7 @@
 
 PORTNAME=	Apache-Gallery
 PORTVERSION=	1.0.r3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
@@ -26,10 +26,13 @@ BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
-.else
+USE_APACHE=	1.3+
+
+.include <bsd.port.pre.mk>
+.if ${APACHE_VERSION} == 13
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
 
 PERL_CONFIGURE=	yes
@@ -61,4 +64,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

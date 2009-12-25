@@ -16,16 +16,13 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that implements authentication caching
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Object.pm:${PORTSDIR}/devel/p5-Time-Object \
-		${SITE_PERL}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache
+		${SITE_PERL}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache \
+		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes
 
-.if defined(WITH_APACHE2)
-IGNORE=		this module is only for www/mod_perl
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
-.endif
+USE_APACHE=	1.3
 
 PERL_CONFIGURE=	yes
 
