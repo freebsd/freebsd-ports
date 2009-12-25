@@ -1,5 +1,7 @@
+bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
+bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf/NYTProf.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/benchmark.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/perftest.pl
@@ -17,17 +19,35 @@ bin/nytprofhtml
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/asc.png
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/bg.png
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/desc.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/._gradient50.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient40.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/._gradient30.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/._jit.js
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient50.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/._gradient40.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/jit-yc.js
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/jit.js
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient-cushion1.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient20.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient30.png
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/._jit-yc.js
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/Treemap.css
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jquery-tablesorter-min.js
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jquery-min.js
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/style-tablesorter.css
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/NYTProf.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/NYTProf.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Run.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/FileHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/PgPLPerl.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
