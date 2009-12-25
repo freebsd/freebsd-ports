@@ -773,6 +773,7 @@
     SUBDIR += snortsam
     SUBDIR += snortsms
     SUBDIR += snortsnarf
+    SUBDIR += softhsm
     SUBDIR += spike-proxy
     SUBDIR += spybye
     SUBDIR += sqlmap
