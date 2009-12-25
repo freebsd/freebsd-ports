@@ -45,6 +45,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/similar.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/similar.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/similar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/string_format.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/string_format.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/string_format.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/typecheck.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/typecheck.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylint/checkers/typecheck.pyo

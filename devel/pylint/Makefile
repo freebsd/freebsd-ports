@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.18.1
-PORTREVISION=	1
+PORTVERSION=	0.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -15,7 +14,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab_astng-0.19.1-py2.6.egg/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
+RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab_astng-0.19.3-py2.6.egg/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
