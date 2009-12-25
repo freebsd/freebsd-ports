@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Enzyme
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,9 +32,7 @@ BUILD_DEPENDS=	\
 	p5-DBI-Shell>=0:${PORTSDIR}/databases/p5-DBI-Shell \
 	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
-	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 	p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	HTTP-Async
 PORTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +17,7 @@ COMMENT=	Process multiple HTTP requests in parallel without blocking
 
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Test-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=		HTTP::Async.3 HTTP::Async::Polite.3

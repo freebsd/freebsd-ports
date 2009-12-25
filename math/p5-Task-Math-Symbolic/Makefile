@@ -29,9 +29,7 @@ RUN_DEPENDS=	p5-Math-Symbolic>=0.163:${PORTSDIR}/math/p5-Math-Symbolic \
 		p5-Math-SymbolicX-NoSimplification>=0:${PORTSDIR}/math/p5-Math-SymbolicX-NoSimplification \
 		p5-Math-SymbolicX-ParserExtensionFactory>=0:${PORTSDIR}/math/p5-Math-SymbolicX-ParserExtensionFactory \
 		p5-Math-SymbolicX-Statistics-Distributions>=0:${PORTSDIR}/math/p5-Math-SymbolicX-Statistics-Distributions
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
