@@ -1,0 +1,52 @@
+bin/namebench.py
+%%PYTHON_SITELIBDIR%%/libnamebench/__init__.py
+%%PYTHON_SITELIBDIR%%/libnamebench/base_ui.py
+%%PYTHON_SITELIBDIR%%/libnamebench/benchmark.py
+%%PYTHON_SITELIBDIR%%/libnamebench/benchmark_test.py
+%%PYTHON_SITELIBDIR%%/libnamebench/better_webbrowser.py
+%%PYTHON_SITELIBDIR%%/libnamebench/charts.py
+%%PYTHON_SITELIBDIR%%/libnamebench/charts_test.py
+%%PYTHON_SITELIBDIR%%/libnamebench/cli.py
+%%PYTHON_SITELIBDIR%%/libnamebench/config.py
+%%PYTHON_SITELIBDIR%%/libnamebench/conn_quality.py
+%%PYTHON_SITELIBDIR%%/libnamebench/history_parser.py
+%%PYTHON_SITELIBDIR%%/libnamebench/mocks.py
+%%PYTHON_SITELIBDIR%%/libnamebench/nameserver.py
+%%PYTHON_SITELIBDIR%%/libnamebench/nameserver_list.py
+%%PYTHON_SITELIBDIR%%/libnamebench/nameserver_test.py
+%%PYTHON_SITELIBDIR%%/libnamebench/selectors.py
+%%PYTHON_SITELIBDIR%%/libnamebench/selectors_test.py
+%%PYTHON_SITELIBDIR%%/libnamebench/tk.py
+%%PYTHON_SITELIBDIR%%/libnamebench/util.py
+%%PYTHON_SITELIBDIR%%/libnamebench/util_test.py
+%%PYTHON_SITELIBDIR%%/libnamebench/__init__.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/base_ui.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/benchmark.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/benchmark_test.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/better_webbrowser.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/charts.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/charts_test.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/cli.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/config.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/conn_quality.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/history_parser.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/mocks.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/nameserver.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/nameserver_list.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/nameserver_test.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/selectors.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/selectors_test.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/tk.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/util.pyc
+%%PYTHON_SITELIBDIR%%/libnamebench/util_test.pyc
+%%PYTHON_SITELIBDIR%%/namebench.py
+%%PYTHON_SITELIBDIR%%/namebench.pyc
+%%DATADIR%%/namebench.cfg
+%%DATADIR%%/templates/ascii.tmpl
+%%DATADIR%%/templates/html.tmpl
+%%DATADIR%%/templates/style.css
+%%DATADIR%%/data/alexa-top-10000-global.txt
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/libnamebench
