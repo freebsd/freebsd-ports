@@ -6,44 +6,34 @@
 #
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	0.710.08
-PORTREVISION=	1
+PORTVERSION=	0.710.10
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	SOAP::Lite - Client and server side SOAP implementation
 
-RUN_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-XML-Parser>=2.23:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-version>=0:${PORTSDIR}/devel/p5-version \
+		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--noprompt
+CONFIGURE_ARGS+=--noprompt
 INSTALL_TARGET=	pure_install
 
 MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1 stubmaker.pl.1
 MAN3=		Apache::SOAP.3 \
 		Apache::XMLRPC::Lite.3 \
-		OldDocs::SOAP::Lite.3 \
-		OldDocs::SOAP::Transport::FTP.3 \
-		OldDocs::SOAP::Transport::HTTP.3 \
-		OldDocs::SOAP::Transport::IO.3 \
-		OldDocs::SOAP::Transport::JABBER.3 \
-		OldDocs::SOAP::Transport::LOCAL.3 \
-		OldDocs::SOAP::Transport::MAILTO.3 \
-		OldDocs::SOAP::Transport::MQ.3 \
-		OldDocs::SOAP::Transport::POP3.3 \
-		OldDocs::SOAP::Transport::TCP.3 \
 		SOAP::Client.3 \
 		SOAP::Constants.3 \
 		SOAP::Data.3 \
