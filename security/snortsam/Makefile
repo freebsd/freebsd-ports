@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snortsam
-PORTVERSION=	2.60
+PORTVERSION=	2.63
 CATEGORIES=	security
 MASTER_SITES=	http://www.snortsam.net/files/snortsam/ \
 		http://www.freebsdbrasil.com.br/~urisso/files/snortsam/
