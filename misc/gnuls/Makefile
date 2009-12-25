@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnuls
-PORTVERSION=	7.5
+PORTVERSION=	8.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	coreutils
@@ -32,10 +32,4 @@ do-install:
 	${CP} ${WRKSRC}/man/ls.1 ${WRKSRC}/man/gnuls.1
 	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/,} ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800039
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-stty.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
