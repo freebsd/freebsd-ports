@@ -18,6 +18,7 @@
     SUBDIR += SciPlot
     SUBDIR += a2png
     SUBDIR += aalib
+    SUBDIR += aaphoto
     SUBDIR += acidwarp
     SUBDIR += agave
     SUBDIR += agg
