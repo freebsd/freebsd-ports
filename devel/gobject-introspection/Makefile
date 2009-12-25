@@ -36,7 +36,7 @@ MAN1=		g-ir-compiler.1 g-ir-generate.1 g-ir-scanner.1
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|'cc'|'${CC}'|g' \
+	@${REINPLACE_CMD} -e 's|'cc'|'${CC:Q}'|g' \
 		${WRKSRC}/giscanner/sourcescanner.py
 
 .include <bsd.port.post.mk>
