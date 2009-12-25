@@ -1,0 +1,5 @@
+An experiment in benchmarking DNS name services. This tool
+is designed to help you as a user determine what name services
+are the best to use for an individual machine.
+
+WWW: http://namebench.googlecode.com/
