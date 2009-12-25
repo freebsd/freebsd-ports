@@ -6,6 +6,8 @@ Local/Applications/batmon.app/Resources/batmon.desktop
 Local/Applications/batmon.app/Resources/batmon.gorm/data.classes
 Local/Applications/batmon.app/Resources/batmon.gorm/data.info
 Local/Applications/batmon.app/Resources/batmon.gorm/objects.gorm
+Local/Applications/batmon.app/Resources/small_battery.tif
+Local/Applications/batmon.app/Resources/small_plug.tif
 Local/Applications/batmon.app/batmon
 Local/Applications/batmon.app/stamp.make
 Local/Tools/batmon
