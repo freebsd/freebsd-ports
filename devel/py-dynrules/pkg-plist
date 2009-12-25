@@ -19,6 +19,12 @@ include/%%PYTHON_VERSION%%/dynrules/dynrules.h
 %%PYTHON_SITELIBDIR%%/dynrules/RuleSet.py
 %%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.py
+%%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.py
+%%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.pyo
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/capi.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/intro.txt
@@ -59,7 +65,7 @@ include/%%PYTHON_VERSION%%/dynrules/dynrules.h
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/learnsystem.py
+@dirrm %%PYTHON_SITELIBDIR%%/dynrules/examples
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules
 @dirrm include/%%PYTHON_VERSION%%/dynrules
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources/ref
@@ -68,4 +74,3 @@ include/%%PYTHON_VERSION%%/dynrules/dynrules.h
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
