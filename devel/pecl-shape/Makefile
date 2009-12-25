@@ -7,6 +7,7 @@
 
 PORTNAME=	shape
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
