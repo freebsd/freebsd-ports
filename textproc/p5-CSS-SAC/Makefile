@@ -7,6 +7,7 @@
 
 PORTNAME=	CSS-SAC
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	textproc perl5 www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	SAC CSS (Simple API for CSS) parser
 
-BUILD_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-		${SITE_PERL}/Class/ArrayObjects.pm:${PORTSDIR}/devel/p5-Class-ArrayObjects
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Class-ArrayObjects>=0.04:${PORTSDIR}/devel/p5-Class-ArrayObjects
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -35,5 +35,10 @@ MAN3=		CSS::SAC.3 CSS::SAC::Condition.3 \
 		CSS::SAC::Selector::Sibling.3 CSS::SAC::Selector::Simple.3 \
 		CSS::SAC::SelectorFactory.3 CSS::SAC::SelectorList.3 \
 		CSS::SAC::TestWriter.3 CSS::SAC::Writer.3
+
+# Bareword "_out_" not allowed while "strict subs"
+post-patch:
+	@${REINPLACE_CMD} -e "s,_out_,'_out_',g" ${WRKSRC}/lib/CSS/SAC/TestWriter.pm
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 .include <bsd.port.mk>
