@@ -7,7 +7,7 @@
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		http://sunpoet.net/distfiles/
@@ -23,7 +23,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PROJ4 "Cartographic Projections library" off
 
-SHAPELIB_VER=	${PORTVERSION}a2
+SHAPELIB_VER=	${PORTVERSION}b1
 
 .include <bsd.port.pre.mk>
 
