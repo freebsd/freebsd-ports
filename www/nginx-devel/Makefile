@@ -397,6 +397,10 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 .endif
+.if defined(WITH_HTTP_REDIS_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_redis_module.c
+.endif
 .if defined(WITH_HTTP_UPLOAD_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_upload_module.c
