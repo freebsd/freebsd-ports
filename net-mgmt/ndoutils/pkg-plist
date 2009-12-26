@@ -16,6 +16,7 @@ etc/nagios/ndoutils.cfg-sample
 %%DATADIR%%/installdb
 %%DATADIR%%/mysql-mods-1.4b5.sql
 %%DATADIR%%/mysql-mods-1.4b7.sql
+%%DATADIR%%/mysql-mods-1.4b8.sql
 %%DATADIR%%/mysql-upgrade-1.3.sql
 %%DATADIR%%/mysql-upgrade-1.4b1.sql
 %%DATADIR%%/mysql-upgrade-1.4b2.sql
@@ -23,6 +24,7 @@ etc/nagios/ndoutils.cfg-sample
 %%DATADIR%%/mysql-upgrade-1.4b4.sql
 %%DATADIR%%/mysql-upgrade-1.4b5.sql
 %%DATADIR%%/mysql-upgrade-1.4b6.sql
+%%DATADIR%%/mysql-upgrade-1.4b8.sql
 %%DATADIR%%/mysql.sql
 %%DATADIR%%/prepsql
 %%DATADIR%%/queries/comment_history.sql

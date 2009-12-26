@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ndoutils
-PORTVERSION=	1.4b7
-PORTREVISION=	1
+PORTVERSION=	1.4b8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-1.x/${PORTNAME}-${PORTVERSION}
 
@@ -16,21 +15,21 @@ COMMENT=	Keep Nagios perfdata in MySQL or Postgresql database
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
 
+OPTIONS=	MYSQL	"MySQL Backend"		on \
+			PGSQL	"Postgresql Backend"	off
+
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
-
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils
 
 CFG_FILES=	misccommands ndo2db ndomod
 
 USE_RC_SUBR=	ndo2db
-
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=yes
 CONFIGURE_ARGS+=	--enable-mysql \
