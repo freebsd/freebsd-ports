@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xfce4-places-plugin
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	http://archive.xfce.org/src/panel-plugins/${PORTNAME}/1.2/
 DIST_SUBDIR=	xfce4
+#DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A file browser launcher for XFce4 panel plugin
