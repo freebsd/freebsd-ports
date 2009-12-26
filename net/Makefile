@@ -204,6 +204,7 @@
     SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gtic
     SUBDIR += gtk-vnc
+    SUBDIR += gupnp
     SUBDIR += gutenfetch
     SUBDIR += gwhois
     SUBDIR += haproxy
