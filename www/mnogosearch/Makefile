@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.3.9
-PORTREVISION=	1
+PORTVERSION=	3.3.10
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
@@ -16,6 +15,16 @@ COMMENT=	Full featured SQL-based hypertext search engine
 
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
+
+OPTIONS=	\
+		THREADS "Enable pthreads"		on  \
+		SSL     "Enable SSL"			on  \
+		ASIAN   "Enable asian charsets"	off \
+		SYSLOG  "Send logs to syslog"   on  \
+		PGSQL   "Use PGSQL"				off \
+		MSQL    "Use MSQL"				off \
+		MYSQL   "Use MySQL"				off \
+		SQLITE  "Use SQLite 2.x"		on
 
 USE_LDCONFIG=	yes
 USE_GNOME=	lthack
@@ -33,21 +42,11 @@ SHLIB_VER=	1
 
 SUB_FILES+=	pkg-message
 
-OPTIONS= \
-		THREADS "Enable pthreads"		on  \
-		SSL     "Enable SSL"			on  \
-		ASIAN   "Enable asian charsets"	off \
-		SYSLOG  "Send logs to syslog"   on  \
-		PGSQL   "Use PGSQL"				off \
-		MSQL    "Use MSQL"				off \
-		MYSQL   "Use MySQL"				off \
-		SQLITE  "Use SQLite 2.x"		on
+.include <bsd.port.options.mk>
 
-.if !defined(NO_OPENSSL)
+.if defined(WITH_SSL)
 USE_OPENSSL=	yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 .ifdef WITHOUT_THREADS
 CONFIGURE_ARGS+=	--disable-pthreads
@@ -58,7 +57,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 .endif
 
-.if !defined(WITHOUT_SSL) || !defined(NO_OPENSSL)
+.if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
@@ -110,10 +109,12 @@ post-install:
 		${PREFIX}/lib/libmnogosearch-${PORTVERSION:R}.so.${SHLIB_VER}
 	${CHMOD} 700 /var/mnogosearch/cache
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/mnogosearch
+.if !defined (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
+.endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/samples/* ${EXAMPLESDIR}/
@@ -121,4 +122,4 @@ post-install:
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
