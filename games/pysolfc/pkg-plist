@@ -419,9 +419,6 @@ bin/pysolfc
 %%PYTHON_SITELIBDIR%%/pysollib/stats.py
 %%PYTHON_SITELIBDIR%%/pysollib/stats.pyc
 %%PYTHON_SITELIBDIR%%/pysollib/stats.pyo
-%%PYTHON_SITELIBDIR%%/pysollib/tile/Tile.py
-%%PYTHON_SITELIBDIR%%/pysollib/tile/Tile.pyc
-%%PYTHON_SITELIBDIR%%/pysollib/tile/Tile.pyo
 %%PYTHON_SITELIBDIR%%/pysollib/tile/__init__.py
 %%PYTHON_SITELIBDIR%%/pysollib/tile/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysollib/tile/__init__.pyo
@@ -485,6 +482,9 @@ bin/pysolfc
 %%PYTHON_SITELIBDIR%%/pysollib/tile/tkhtml.py
 %%PYTHON_SITELIBDIR%%/pysollib/tile/tkhtml.pyc
 %%PYTHON_SITELIBDIR%%/pysollib/tile/tkhtml.pyo
+%%PYTHON_SITELIBDIR%%/pysollib/tile/ttk.py
+%%PYTHON_SITELIBDIR%%/pysollib/tile/ttk.pyc
+%%PYTHON_SITELIBDIR%%/pysollib/tile/ttk.pyo
 %%PYTHON_SITELIBDIR%%/pysollib/tile/tkstats.py
 %%PYTHON_SITELIBDIR%%/pysollib/tile/tkstats.pyc
 %%PYTHON_SITELIBDIR%%/pysollib/tile/tkstats.pyo
@@ -1237,58 +1237,54 @@ bin/pysolfc
 %%DATADIR%%/cardset-hexadeck/xshadow11.gif
 %%DATADIR%%/cardset-hexadeck/xshadow12.gif
 %%DATADIR%%/cardset-hexadeck/xshadow13.gif
+%%DATADIR%%/cardset-kintengu/01a.gif
+%%DATADIR%%/cardset-kintengu/01b.gif
 %%DATADIR%%/cardset-kintengu/01c.gif
 %%DATADIR%%/cardset-kintengu/01d.gif
+%%DATADIR%%/cardset-kintengu/01e.gif
+%%DATADIR%%/cardset-kintengu/01f.gif
+%%DATADIR%%/cardset-kintengu/01g.gif
 %%DATADIR%%/cardset-kintengu/01h.gif
-%%DATADIR%%/cardset-kintengu/01s.gif
+%%DATADIR%%/cardset-kintengu/01i.gif
+%%DATADIR%%/cardset-kintengu/01j.gif
+%%DATADIR%%/cardset-kintengu/01k.gif
+%%DATADIR%%/cardset-kintengu/01l.gif
+%%DATADIR%%/cardset-kintengu/02a.gif
+%%DATADIR%%/cardset-kintengu/02b.gif
 %%DATADIR%%/cardset-kintengu/02c.gif
 %%DATADIR%%/cardset-kintengu/02d.gif
+%%DATADIR%%/cardset-kintengu/02e.gif
+%%DATADIR%%/cardset-kintengu/02f.gif
+%%DATADIR%%/cardset-kintengu/02g.gif
 %%DATADIR%%/cardset-kintengu/02h.gif
-%%DATADIR%%/cardset-kintengu/02s.gif
+%%DATADIR%%/cardset-kintengu/02i.gif
+%%DATADIR%%/cardset-kintengu/02j.gif
+%%DATADIR%%/cardset-kintengu/02k.gif
+%%DATADIR%%/cardset-kintengu/02l.gif
+%%DATADIR%%/cardset-kintengu/03a.gif
+%%DATADIR%%/cardset-kintengu/03b.gif
 %%DATADIR%%/cardset-kintengu/03c.gif
 %%DATADIR%%/cardset-kintengu/03d.gif
+%%DATADIR%%/cardset-kintengu/03e.gif
+%%DATADIR%%/cardset-kintengu/03f.gif
+%%DATADIR%%/cardset-kintengu/03g.gif
 %%DATADIR%%/cardset-kintengu/03h.gif
-%%DATADIR%%/cardset-kintengu/03s.gif
+%%DATADIR%%/cardset-kintengu/03i.gif
+%%DATADIR%%/cardset-kintengu/03j.gif
+%%DATADIR%%/cardset-kintengu/03k.gif
+%%DATADIR%%/cardset-kintengu/03l.gif
+%%DATADIR%%/cardset-kintengu/04a.gif
+%%DATADIR%%/cardset-kintengu/04b.gif
 %%DATADIR%%/cardset-kintengu/04c.gif
 %%DATADIR%%/cardset-kintengu/04d.gif
+%%DATADIR%%/cardset-kintengu/04e.gif
+%%DATADIR%%/cardset-kintengu/04f.gif
+%%DATADIR%%/cardset-kintengu/04g.gif
 %%DATADIR%%/cardset-kintengu/04h.gif
-%%DATADIR%%/cardset-kintengu/04s.gif
-%%DATADIR%%/cardset-kintengu/05c.gif
-%%DATADIR%%/cardset-kintengu/05d.gif
-%%DATADIR%%/cardset-kintengu/05h.gif
-%%DATADIR%%/cardset-kintengu/05s.gif
-%%DATADIR%%/cardset-kintengu/06c.gif
-%%DATADIR%%/cardset-kintengu/06d.gif
-%%DATADIR%%/cardset-kintengu/06h.gif
-%%DATADIR%%/cardset-kintengu/06s.gif
-%%DATADIR%%/cardset-kintengu/07c.gif
-%%DATADIR%%/cardset-kintengu/07d.gif
-%%DATADIR%%/cardset-kintengu/07h.gif
-%%DATADIR%%/cardset-kintengu/07s.gif
-%%DATADIR%%/cardset-kintengu/08c.gif
-%%DATADIR%%/cardset-kintengu/08d.gif
-%%DATADIR%%/cardset-kintengu/08h.gif
-%%DATADIR%%/cardset-kintengu/08s.gif
-%%DATADIR%%/cardset-kintengu/09c.gif
-%%DATADIR%%/cardset-kintengu/09d.gif
-%%DATADIR%%/cardset-kintengu/09h.gif
-%%DATADIR%%/cardset-kintengu/09s.gif
-%%DATADIR%%/cardset-kintengu/10c.gif
-%%DATADIR%%/cardset-kintengu/10d.gif
-%%DATADIR%%/cardset-kintengu/10h.gif
-%%DATADIR%%/cardset-kintengu/10s.gif
-%%DATADIR%%/cardset-kintengu/11c.gif
-%%DATADIR%%/cardset-kintengu/11d.gif
-%%DATADIR%%/cardset-kintengu/11h.gif
-%%DATADIR%%/cardset-kintengu/11s.gif
-%%DATADIR%%/cardset-kintengu/12c.gif
-%%DATADIR%%/cardset-kintengu/12d.gif
-%%DATADIR%%/cardset-kintengu/12h.gif
-%%DATADIR%%/cardset-kintengu/12s.gif
-%%DATADIR%%/cardset-kintengu/13c.gif
-%%DATADIR%%/cardset-kintengu/13d.gif
-%%DATADIR%%/cardset-kintengu/13h.gif
-%%DATADIR%%/cardset-kintengu/13s.gif
+%%DATADIR%%/cardset-kintengu/04i.gif
+%%DATADIR%%/cardset-kintengu/04j.gif
+%%DATADIR%%/cardset-kintengu/04k.gif
+%%DATADIR%%/cardset-kintengu/04l.gif
 %%DATADIR%%/cardset-kintengu/COPYRIGHT
 %%DATADIR%%/cardset-kintengu/back01.gif
 %%DATADIR%%/cardset-kintengu/back02.gif
@@ -2241,7 +2237,6 @@ bin/pysolfc
 %%DATADIR%%/html/rules/germanpatience.html
 %%DATADIR%%/html/rules/ghulam.html
 %%DATADIR%%/html/rules/giant.html
-%%DATADIR%%/html/rules/glenwood.html
 %%DATADIR%%/html/rules/golf.html
 %%DATADIR%%/html/rules/goodmeasure.html
 %%DATADIR%%/html/rules/grandduchess.html
@@ -2251,6 +2246,7 @@ bin/pysolfc
 %%DATADIR%%/html/rules/greaterqueue.html
 %%DATADIR%%/html/rules/greatwall.html
 %%DATADIR%%/html/rules/griffon.html
+%%DATADIR%%/html/rules/groundsforadivorce.html
 %%DATADIR%%/html/rules/gypsy.html
 %%DATADIR%%/html/rules/hanafudafourseasons.html
 %%DATADIR%%/html/rules/hanafudafourwinds.html
@@ -2494,6 +2490,26 @@ bin/pysolfc
 %%DATADIR%%/images/buttons/bluecurve/cancel.gif
 %%DATADIR%%/images/buttons/bluecurve/new.gif
 %%DATADIR%%/images/buttons/bluecurve/ok.gif
+%%DATADIR%%/images/cards/bottoms/french/bottom02-n.png
+%%DATADIR%%/images/cards/bottoms/french/bottom02.png
+%%DATADIR%%/images/cards/bottoms/french/bottom03-n.png
+%%DATADIR%%/images/cards/bottoms/french/bottom03.png
+%%DATADIR%%/images/cards/bottoms/french/bottom04-n.png
+%%DATADIR%%/images/cards/bottoms/french/bottom04.png
+%%DATADIR%%/images/cards/bottoms/french/bottom05-n.png
+%%DATADIR%%/images/cards/bottoms/french/bottom05.png
+%%DATADIR%%/images/cards/bottoms/french/bottom06-n.png
+%%DATADIR%%/images/cards/bottoms/french/bottom06.png
+%%DATADIR%%/images/cards/bottoms/french/bottom07-n.png
+%%DATADIR%%/images/cards/bottoms/french/bottom07.png
+%%DATADIR%%/images/cards/bottoms/french/l01-n.png
+%%DATADIR%%/images/cards/bottoms/french/l01.png
+%%DATADIR%%/images/cards/bottoms/french/l02-n.png
+%%DATADIR%%/images/cards/bottoms/french/l02.png
+%%DATADIR%%/images/cards/bottoms/french/l03-n.png
+%%DATADIR%%/images/cards/bottoms/french/l03.png
+%%DATADIR%%/images/cards/bottoms/french/l04-n.png
+%%DATADIR%%/images/cards/bottoms/french/l04.png
 %%DATADIR%%/images/cards/large/01c.gif
 %%DATADIR%%/images/cards/large/01d.gif
 %%DATADIR%%/images/cards/large/01h.gif
@@ -2625,8 +2641,10 @@ bin/pysolfc
 %%DATADIR%%/images/pause/pause02.gif
 %%DATADIR%%/images/pause/pause03.gif
 %%DATADIR%%/images/redeal.gif
+%%DATADIR%%/images/redeal.png
 %%DATADIR%%/images/selectgame.gif
 %%DATADIR%%/images/shadow.gif
+%%DATADIR%%/images/stopsign.png
 %%DATADIR%%/images/stats/barchart.gif
 %%DATADIR%%/images/stats/progression.jpg
 %%DATADIR%%/images/stoplight.gif
@@ -2712,6 +2730,18 @@ bin/pysolfc
 %%DATADIR%%/images/toolbar/default/small/save.gif
 %%DATADIR%%/images/toolbar/default/small/statistics.gif
 %%DATADIR%%/images/toolbar/default/small/undo.gif
+%%DATADIR%%/images/toolbar/human/small/autodrop.png
+%%DATADIR%%/images/toolbar/human/small/new.png
+%%DATADIR%%/images/toolbar/human/small/open.png
+%%DATADIR%%/images/toolbar/human/small/pause.gif
+%%DATADIR%%/images/toolbar/human/small/quit.png
+%%DATADIR%%/images/toolbar/human/small/redo.png
+%%DATADIR%%/images/toolbar/human/small/restart.png
+%%DATADIR%%/images/toolbar/human/small/rules.png
+%%DATADIR%%/images/toolbar/human/small/save.png
+%%DATADIR%%/images/toolbar/human/small/shuffle.png
+%%DATADIR%%/images/toolbar/human/small/statistics.png
+%%DATADIR%%/images/toolbar/human/small/undo.png
 %%DATADIR%%/images/tree/emptynode.gif
 %%DATADIR%%/images/tree/folder.gif
 %%DATADIR%%/images/tree/minusnode.gif
@@ -2887,6 +2917,7 @@ bin/pysolfc
 %%DATADIR%%/tiles/Orange_Ornaments.gif
 %%DATADIR%%/tiles/Pale_Satin.gif
 %%DATADIR%%/tiles/Rainbow.gif
+%%DATADIR%%/tiles/save-aspect/Paradise_Wide.jpg
 %%DATADIR%%/tiles/stretch/Blue_Fractal.jpg
 %%DATADIR%%/tiles/stretch/Castle.gif
 %%DATADIR%%/tiles/stretch/Sunset.gif
@@ -2894,8 +2925,14 @@ bin/pysolfc
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/pysol.mo
 share/pixmaps/pysol.xbm
 share/pixmaps/pysol.xpm
+share/applications/pysol.desktop
+share/icons/pysol01.png
+share/icons/pysol02.png
 %%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU
+@dirrmtry share/applications
+@dirrmtry share/icons
+@dirrm %%DATADIR%%/tiles/save-aspect
 @dirrm %%DATADIR%%/tiles/stretch
 @dirrm %%DATADIR%%/tiles
 @dirrm %%DATADIR%%/themes/clearlooks/clearlooks
@@ -2907,6 +2944,8 @@ share/pixmaps/pysol.xpm
 @dirrm %%DATADIR%%/sound/extra
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%/images/tree
+@dirrm %%DATADIR%%/images/toolbar/human/small
+@dirrm %%DATADIR%%/images/toolbar/human
 @dirrm %%DATADIR%%/images/toolbar/default/small
 @dirrm %%DATADIR%%/images/toolbar/default/large
 @dirrm %%DATADIR%%/images/toolbar/default
@@ -2929,6 +2968,8 @@ share/pixmaps/pysol.xpm
 @dirrm %%DATADIR%%/images/demo
 @dirrm %%DATADIR%%/images/cards/small
 @dirrm %%DATADIR%%/images/cards/large
+@dirrm %%DATADIR%%/images/cards/bottoms/french
+@dirrm %%DATADIR%%/images/cards/bottoms
 @dirrm %%DATADIR%%/images/cards
 @dirrm %%DATADIR%%/images/buttons/bluecurve
 @dirrm %%DATADIR%%/images/buttons

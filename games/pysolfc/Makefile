@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pysolfc
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION}
 DISTNAME=	PySolFC-${PORTVERSION}
@@ -14,7 +14,8 @@ DISTNAME=	PySolFC-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the sucessor of PySol
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
