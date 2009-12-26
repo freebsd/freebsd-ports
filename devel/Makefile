@@ -830,6 +830,7 @@
     SUBDIR += log4shib
     SUBDIR += loki
     SUBDIR += looks
+    SUBDIR += love
     SUBDIR += lpc21isp
     SUBDIR += lrmi
     SUBDIR += lua-bitlib

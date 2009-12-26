@@ -14,7 +14,7 @@ DISTNAME=	GunFuDeadlands_${PORTVERSION:C/\.//}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Far West themed 2D shooter featuring bullet time
 
-RUN_DEPENDS=	love:${PORTSDIR}/games/love
+RUN_DEPENDS=	love:${PORTSDIR}/devel/love
 
 USE_ZIP=	yes
 NO_BUILD=	yes

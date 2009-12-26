@@ -4237,3 +4237,4 @@ sysutils/estctrl||2009-12-24|Incorporated into base system long ago
 sysutils/freebsd-sha1||2009-12-24|Incorporated into base system long ago
 sysutils/freebsd-sha256||2009-12-24|Incorporated into base system long ago
 irc/znc-extras||2009-12-24|Has expired: Migrate to irc/znc instead
+games/love|devel/love|2009-12-26|Move to better category
