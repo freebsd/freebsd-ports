@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://archive.xfce.org/src/panel-plugins/${PORTNAME}/1.7/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Sticky notes panel plugin for XFce4
+
+LIB_DEPENDS=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
