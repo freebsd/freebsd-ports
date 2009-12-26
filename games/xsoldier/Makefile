@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xsoldier
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/xsoldier/
 
@@ -19,7 +18,7 @@ CONFIGURE_ARGS=	--localstatedir=/var
 MAKE_ARGS=	CC_OPTIMIZE="${CFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
-USE_XORG=	x11 ice xpm
+USE_XORG=	x11 ice sm xpm
 MAN6=		xsoldier.6
 
 SCOREFILE=	/var/games/xsoldier.scores
