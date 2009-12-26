@@ -1,6 +1,6 @@
---- configure.in.orig	2008-05-28 07:31:05.000000000 +0930
-+++ configure.in	2008-08-10 17:08:44.000000000 +0930
-@@ -12,8 +12,6 @@
+--- configure.in.orig	2009-09-16 10:20:34.000000000 +0200
++++ configure.in	2009-12-17 15:42:34.486203026 +0100
+@@ -11,8 +11,6 @@
  RELEASE=1
  AC_SUBST(RELEASE)
  
@@ -9,16 +9,15 @@
  dnl Deprecated configure options
  
  
-@@ -43,7 +41,7 @@
- AC_PROG_CC
+@@ -43,6 +41,7 @@
  gl_EARLY
  AC_PROG_GCC_TRADITIONAL
--AC_PROG_LIBTOOL
+ AC_PROG_LIBTOOL
 +AC_PROG_RANLIB
  
  AM_PROG_CC_C_O
  
-@@ -180,11 +178,12 @@
+@@ -200,11 +199,12 @@
  	ACX_HELP_STRING([--with-pgsql=DIR],
  		[sets path to pgsql installation]),
  	PGSQL=$withval,)
@@ -33,7 +32,7 @@
    fi
    AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
-@@ -221,37 +220,42 @@
+@@ -241,37 +241,42 @@
    AC_MSG_WARN([Skipping PostgreSQL plugin (check_pgsql)])
    AC_MSG_WARN([install lib crypt and PostgreSQL libs to compile this plugin (see REQUIREMENTS).])
  fi
@@ -89,7 +88,7 @@
    AC_CHECK_FUNCS(ldap_set_option)
    EXTRAS="$EXTRAS check_ldap"
  	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -260,6 +264,7 @@
+@@ -280,6 +285,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
@@ -97,7 +96,7 @@
  
  dnl Check for headers used by check_ide_smart
  AC_CHECK_HEADER(linux/hdreg.h, FOUNDINCLUDE=yes, FOUNDINCLUDE=no)
-@@ -578,22 +583,10 @@
+@@ -597,22 +603,10 @@
  dnl 	ac_cv_ps_cols=8
  dnl 	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -123,11 +122,11 @@
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
  	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -601,9 +594,8 @@
+@@ -620,9 +614,8 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
--dnl Some *BSDs have different format for ps. This is mainly to catch FreeBSD 4. 
+-dnl Some *BSDs have different format for ps. This is mainly to catch FreeBSD 4.
 -dnl Limitation: Only first 16 chars returned for ucomm field
 -dnl Must come before ps -weo
 +dnl FreeBSD 4.x
@@ -135,7 +134,7 @@
  elif ps -axwo 'stat uid pid ppid vsz rss pcpu ucomm command' 2>/dev/null | \
  	egrep -i ["^ *STAT +UID +PID +PPID +VSZ +RSS +%CPU +UCOMM +COMMAND"] > /dev/null
  then
-@@ -613,209 +605,6 @@
+@@ -632,209 +625,6 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -204,9 +203,9 @@
 -	ac_cv_ps_cols=9
 -	AC_MSG_RESULT([$ac_cv_ps_command])
 -
--dnl Tru64 - needs %*[ +<>] in PS_FORMAT. 
+-dnl Tru64 - needs %*[ +<>] in PS_FORMAT.
 -dnl Has /usr/bin/ps and /sbin/ps - force sbin version
--dnl Can't use vsize and rssize because comes back with text (eg, 1.5M instead 
+-dnl Can't use vsize and rssize because comes back with text (eg, 1.5M instead
 -dnl of 1500). Will need big changes to check_procs to support
 -elif /sbin/ps -eo 'stat uid pid ppid pcpu etime comm args' 2>/dev/null | \
 -	egrep -i ["^ *S +[UID]+ +[PID]+ +[PID]+ +[%CPU]+ +[ELAPSD]+ +[COMMAND]+ +[COMMAND]+"] > /dev/null
@@ -332,7 +331,7 @@
 -	ac_cv_ps_cols=8
 -	AC_MSG_RESULT([$ac_cv_ps_command])
 -
--dnl UnixWare 
+-dnl UnixWare
 -elif ps -Al 2>/dev/null | \
 -	egrep -i ["^ *F +S +UID +PID +PPID +CLS +PRI +NI +C +ADDR +SZ +WCHAN +TTY +TIME +COMD"] >/dev/null
 -then
@@ -345,7 +344,7 @@
  else
  	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
  fi
-@@ -1193,6 +982,8 @@
+@@ -1212,6 +1002,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -354,7 +353,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  AC_ARG_WITH(snmpget_command,
              ACX_HELP_STRING([--with-snmpget-command=PATH],
-@@ -1223,7 +1014,10 @@
+@@ -1242,7 +1034,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -365,7 +364,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  AC_ARG_WITH(qstat_command,
-@@ -1248,7 +1042,10 @@
+@@ -1267,7 +1062,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -376,7 +375,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  AC_ARG_WITH(fping_command,
              ACX_HELP_STRING([--with-fping-command=PATH],
-@@ -1260,6 +1057,7 @@
+@@ -1279,6 +1077,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -384,7 +383,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  AC_ARG_WITH(ssh_command,
-@@ -1327,32 +1125,12 @@
+@@ -1346,32 +1145,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  
