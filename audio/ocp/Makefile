@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ocp
-PORTVERSION=	0.1.17
-PORTREVISION=	1
+PORTVERSION=	0.1.18
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	http://stian.cubic.org/ocp/ \
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player
@@ -56,7 +56,8 @@ PFILES=		configure cpiface/cpianal.c cpiface/cpidots.c \
 OPTIONS=	ADPLUG "Build with adplug support" on \
 		FLAC   "Build with FLAC support" on \
 		MIDI   "Build with timidity support" on \
-		X11    "Build with X11 support" on
+		X11    "Build with X11 support" on \
+		SDL    "Build with SDL support" on
 
 .include <bsd.port.pre.mk>
 
@@ -85,6 +86,15 @@ PLIST_SUB+=		ADPLUG=""
 .else
 PLIST_SUB+=		ADPLUG="@comment "
 CONFIGURE_ARGS+=	--without-adplug
+.endif
+
+.if defined(WITH_SDL)
+USE_SDL=		sound
+CONFIGURE_ARGS+=	--with-sdl=yes
+PLIST_SUB+=		SDL=""
+.else
+CONFIGURE_ARGS+=	--with-sdl=no
+PLIST_SUB+=		SDL="@comment "
 .endif
 
 .if defined(WITH_FLAC)

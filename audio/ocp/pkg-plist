@@ -1,4 +1,7 @@
 bin/ocp
+bin/ocp-curses
+%%XORG%%bin/ocp-x11
+%%SDL%%bin/ocp-sdl
 bin/ultrafix.sh
 %%XORG%%etc/X11/wmconfig/opencubicplayer
 lib/ocp/autoload/10-compat.so
