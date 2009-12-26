@@ -753,6 +753,7 @@ aunit                           ports/devel/aunit
 aureal-kmod                     ports/audio/aureal-kmod
 auth_ldap                       ports/www/auth_ldap
 authforce                       ports/security/authforce
+autobackupmysql                 ports/databases/autobackupmysql
 autobench                       ports/benchmarks/autobench
 autobook                        ports/devel/autobook
 autocd                          ports/audio/autocd
@@ -1156,6 +1157,7 @@ bonnie                          ports/benchmarks/bonnie
 bonnie++                        ports/benchmarks/bonnie++
 bonobo                          ports/devel/bonobo
 bonobo-conf                     ports/devel/bonobo-conf
+bontmia                         ports/sysutils/bontmia
 boo                             ports/lang/boo
 boodler                         ports/audio/boodler
 bookmarkbridge                  ports/www/bookmarkbridge
@@ -2834,6 +2836,7 @@ ejabberd                        ports/net-im/ejabberd
 eject                           ports/sysutils/eject
 ekhtml                          ports/textproc/ekhtml
 ekiga                           ports/net/ekiga
+ekiga3                          ports/net/ekiga3
 el                              ports/games/el
 el-aspell                       ports/textproc/el-aspell
 el-data                         ports/games/el-data
@@ -8505,6 +8508,7 @@ m17n-docs                       ports/devel/m17n-docs
 m17n-im-config                  ports/textproc/m17n-im-config
 m17n-lib                        ports/devel/m17n-lib
 m2000                           ports/emulators/m2000
+m2tstoavi                       ports/multimedia/m2tstoavi
 m6811-binutils                  ports/devel/m6811-binutils
 m68k-rtems-binutils             ports/devel/m68k-rtems-binutils
 m68k-rtems-gcc                  ports/devel/m68k-rtems-gcc
@@ -10687,6 +10691,7 @@ p5-Carp-Datum                   ports/devel/p5-Carp-Datum
 p5-Catalyst-Action-REST         ports/www/p5-Catalyst-Action-REST
 p5-Catalyst-Action-RenderView   ports/www/p5-Catalyst-Action-RenderView
 p5-Catalyst-Authentication-Credential-HTTP  ports/www/p5-Catalyst-Authentication-Credential-HTTP
+p5-Catalyst-Authentication-Credential-OpenID  ports/www/p5-Catalyst-Authentication-Credential-OpenID
 p5-Catalyst-Authentication-Store-DBIx-Class  ports/www/p5-Catalyst-Authentication-Store-DBIx-Class
 p5-Catalyst-Authentication-Store-LDAP  ports/www/p5-Catalyst-Authentication-Store-LDAP
 p5-Catalyst-Component-ACCEPT_CONTEXT  ports/www/p5-Catalyst-Component-ACCEPT_CONTEXT
@@ -11171,6 +11176,7 @@ p5-Daemon-Generic               ports/net/p5-Daemon-Generic
 p5-Danga-Socket                 ports/devel/p5-Danga-Socket
 p5-Danga-Socket-Callback        ports/devel/p5-Danga-Socket-Callback
 p5-Data-ACL                     ports/devel/p5-Data-ACL
+p5-Data-AMF                     ports/converters/p5-Data-AMF
 p5-Data-Alias                   ports/devel/p5-Data-Alias
 p5-Data-Bind                    ports/devel/p5-Data-Bind
 p5-Data-Buffer                  ports/misc/p5-Data-Buffer
@@ -11411,6 +11417,7 @@ p5-Digest-TransformPath         ports/devel/p5-Digest-TransformPath
 p5-Digest-Whirlpool             ports/security/p5-Digest-Whirlpool
 p5-Dir-Project                  ports/devel/p5-Dir-Project
 p5-Dir-Purge                    ports/sysutils/p5-Dir-Purge
+p5-Dir-Watch                    ports/devel/p5-Dir-Watch
 p5-Directory-Scratch            ports/devel/p5-Directory-Scratch
 p5-Directory-Scratch-Structured  ports/devel/p5-Directory-Scratch-Structured
 p5-DocSet                       ports/textproc/p5-DocSet
@@ -14242,6 +14249,7 @@ p5-carp-datum                   ports/devel/p5-Carp-Datum
 p5-catalyst-action-renderview   ports/www/p5-Catalyst-Action-RenderView
 p5-catalyst-action-rest         ports/www/p5-Catalyst-Action-REST
 p5-catalyst-authentication-credential-http  ports/www/p5-Catalyst-Authentication-Credential-HTTP
+p5-catalyst-authentication-credential-openid  ports/www/p5-Catalyst-Authentication-Credential-OpenID
 p5-catalyst-authentication-store-dbix-class  ports/www/p5-Catalyst-Authentication-Store-DBIx-Class
 p5-catalyst-authentication-store-ldap  ports/www/p5-Catalyst-Authentication-Store-LDAP
 p5-catalyst-component-accept_context  ports/www/p5-Catalyst-Component-ACCEPT_CONTEXT
@@ -14730,6 +14738,7 @@ p5-danga-socket                 ports/devel/p5-Danga-Socket
 p5-danga-socket-callback        ports/devel/p5-Danga-Socket-Callback
 p5-data-acl                     ports/devel/p5-Data-ACL
 p5-data-alias                   ports/devel/p5-Data-Alias
+p5-data-amf                     ports/converters/p5-Data-AMF
 p5-data-bind                    ports/devel/p5-Data-Bind
 p5-data-buffer                  ports/misc/p5-Data-Buffer
 p5-data-clearsilver-hdf         ports/devel/p5-Data-ClearSilver-HDF
@@ -15051,6 +15060,7 @@ p5-digest-transformpath         ports/devel/p5-Digest-TransformPath
 p5-digest-whirlpool             ports/security/p5-Digest-Whirlpool
 p5-dir-project                  ports/devel/p5-Dir-Project
 p5-dir-purge                    ports/sysutils/p5-Dir-Purge
+p5-dir-watch                    ports/devel/p5-Dir-Watch
 p5-directory-scratch            ports/devel/p5-Directory-Scratch
 p5-directory-scratch-structured  ports/devel/p5-Directory-Scratch-Structured
 p5-djabberd                     ports/net-im/p5-DJabberd
@@ -21313,6 +21323,7 @@ rubygem-imagesize               ports/graphics/rubygem-imagesize
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
+rubygem-jekyll                  ports/www/rubygem-jekyll
 rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
@@ -21320,6 +21331,7 @@ rubygem-kirbybase               ports/databases/rubygem-kirbybase
 rubygem-launchy                 ports/devel/rubygem-launchy
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-linecache               ports/devel/rubygem-linecache
+rubygem-liquid                  ports/textproc/rubygem-liquid
 rubygem-little_plugger          ports/devel/rubygem-little_plugger
 rubygem-lockfile                ports/devel/rubygem-lockfile
 rubygem-logging                 ports/devel/rubygem-logging
@@ -22058,6 +22070,7 @@ socks5                          ports/net/socks5
 sodipodi                        ports/graphics/sodipodi
 softfail                        ports/mail/softfail
 softflowd                       ports/net-mgmt/softflowd
+softhsm                         ports/security/softhsm
 softmaker-office                ports/editors/softmaker-office
 sokoban                         ports/games/sokoban
 sol                             ports/games/sol
