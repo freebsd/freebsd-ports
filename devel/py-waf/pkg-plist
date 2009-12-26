@@ -35,6 +35,9 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/Utils.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Utils.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Utils.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.py
+%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/__init__.py
 %%PYTHON_SITELIBDIR%%/wafadmin/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/__init__.pyo
@@ -56,9 +59,6 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/bison.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/bison.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/bison.pyo
-%%PYTHON_SITELIBDIR%%/wafadmin/Tools/boost.py
-%%PYTHON_SITELIBDIR%%/wafadmin/Tools/boost.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/Tools/boost.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/cc.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/cc.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/cc.pyo
