@@ -2387,7 +2387,6 @@
     SUBDIR += projectmanager
     SUBDIR += protobuf
     SUBDIR += prototype
-    SUBDIR += pstreams
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
     SUBDIR += psptoolchain-gcc-stage1
@@ -2396,6 +2395,7 @@
     SUBDIR += psptoolchain-newlib
     SUBDIR += psptoolchain-pspsdk-stage1
     SUBDIR += psptoolchain-pspsdk-stage2
+    SUBDIR += pstreams
     SUBDIR += psvn
     SUBDIR += pth
     SUBDIR += pth-hard
@@ -2807,8 +2807,8 @@
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-launchy
-    SUBDIR += rubygem-little_plugger
     SUBDIR += rubygem-linecache
+    SUBDIR += rubygem-little_plugger
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
     SUBDIR += rubygem-loquacious
@@ -2833,13 +2833,13 @@
     SUBDIR += rubygem-rspec
     SUBDIR += rubygem-rtags
     SUBDIR += rubygem-rubigen
-    SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
     SUBDIR += rubygem-ruby-debug-ide
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby2ruby
+    SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-runt
