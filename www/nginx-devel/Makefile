@@ -46,7 +46,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		MAIL_SSL_MODULE		"Enable mail_ssl module" off \
 		WWW			"Enable html sample files" on \
 		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
-		HTTP_AUTH_PAM_MODULE    "3rd party http_auth_pam module" off \
+		HTTP_AUTH_PAM_MODULE	"3rd party http_auth_pam module" off \
 		HTTP_EVAL_MODULE	"3rd party eval module" off \
 		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
 		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
@@ -236,7 +236,7 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_REDIS_MODULE)
-NGINX_REDIS_MODULE_VERSION=	0.3.0
+NGINX_REDIS_MODULE_VERSION=	0.3.1
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
 MASTER_SITE_SUBDIR+=	osa/:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
@@ -400,10 +400,6 @@ post-patch:
 .if defined(WITH_HTTP_NOTICE_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
-.endif
-.if defined(WITH_HTTP_REDIS_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_redis_module.c
 .endif
 .if defined(WITH_HTTP_UPLOAD_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
