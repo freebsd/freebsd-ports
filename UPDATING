@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091226:
+  AFFECTS: users of net-mgmt/ndoutils
+  AUTHOR: pgollucci@FreeBSD.org
+
+  When upgrading you'll need to run ./upgradedb
+  See UPGRADING file
+
 20091214:
   AFFECTS: users of net/grdc
   AUTHOR: avl@FreeBSD.org
