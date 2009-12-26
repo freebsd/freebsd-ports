@@ -1,11 +1,9 @@
-mod_fcgid -- an alternative FastCGI module for Apache2
+mod_fcgid is a high performance alternative to mod_cgi or mod_cgid,
+which starts a sufficient number instances of the CGI program to
+handle concurrent requests, and these programs remain running to
+handle further incoming requests. It is favored by the PHP developers,
+for example, as a preferred alternative to running mod_php in-process,
+delivering very similar performance.
 
-mod_fcgid has a new process management strategy, which concentrates on
-reducing the number of fastcgi server, and kick out the corrupt
-fastcgi server as soon as possible.
-
-mod_fcgid is binary-compatible with mod_fastcgi so your existing fastcgi
-programs do not need to be recompiled.  mod_fcgid supports suEXEC.
-
-License: GPL
-WWW: http://fastcgi.coremail.cn/
+License: Apache License
+WWW: http://httpd.apache.org/mod_fcgid/

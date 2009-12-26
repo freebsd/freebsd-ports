@@ -1,6 +1,6 @@
---- fcgid_conf.c.orig	2007-07-31 04:09:20.000000000 -0500
-+++ fcgid_conf.c	2007-10-08 08:17:12.000000000 -0500
-@@ -17,8 +17,8 @@
+--- modules/fcgid/fcgid_conf.c.orig	2009-10-07 05:16:08.000000000 +0200
++++ modules/fcgid/fcgid_conf.c	2009-12-11 16:18:09.000000000 +0100
+@@ -35,8 +35,8 @@
  #define DEFAULT_ERROR_SCAN_INTERVAL 3
  #define DEFAULT_ZOMBIE_SCAN_INTERVAL 3
  #define DEFAULT_PROC_LIFETIME (60*60)
