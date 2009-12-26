@@ -7,4 +7,8 @@ lines to your server configuration file:
   <IfModule mod_fcgid.c>
     AddHandler fcgid-script .fcgi
   </IfModule>
+
+If you are upgrading from mod_fcgid 2.2, you have to rename
+the directives you have used in the config files:
+http://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html#upgrade
 ************************************************************

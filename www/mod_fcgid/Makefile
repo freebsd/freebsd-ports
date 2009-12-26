@@ -6,19 +6,27 @@
 #
 
 PORTNAME=	mod_fcgid
-PORTVERSION=	2.2
+PORTVERSION=	2.3.4
 CATEGORIES=	www
-MASTER_SITES=	SF/mod-fcgid/OldFiles
-DISTNAME=	${PORTNAME}.${PORTVERSION}
+MASTER_SITES=		${MASTER_SITE_APACHE_HTTPD}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	An alternative FastCGI module for Apache2
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	2.0+
 
+HAS_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	configure.apxs
+
+INSTALL_WRKSRC=	${WRKSRC}/modules/fcgid
+
 SUB_FILES=	pkg-message
+SUB_LIST+=	APACHEMODDIR=${APACHEMODDIR}
+PLIST_SUB+=	APACHEMODDIR=${APACHEMODDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -26,17 +34,20 @@ SUB_FILES=	pkg-message
 MAKE_ARGS+=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION}"
 MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION} -I${LOCALBASE}/include/apr-1"
 INSTALL_TARGET=	install-modules-yes
-PLIST_SUB+=	APACHE_VERSION=${APACHE_VERSION}
-SUB_LIST+=	APACHE_VERSION=${APACHE_VERSION}
+DOCSDIR=	${PREFIX}/share/doc/apache22/mod
 .else
 MAKE_ARGS+=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION:S/20/2/}"
 MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION:S/20/2/}"
 INSTALL_TARGET=	install-modules
-PLIST_SUB+=	APACHE_VERSION=${APACHE_VERSION:S/20/2/}
-SUB_LIST+=	APACHE_VERSION=${APACHE_VERSION:S/20/2/}
+DOCSDIR=	${PREFIX}/share/doc/apache2/mod
 .endif
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/manual/mod/mod_fcgid.html ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/manual/mod/mod_fcgid.html.en ${DOCSDIR}
+.endif
 	${MKDIR} -m 700 /var/run/fcgidsock
 	${CHOWN} www:www /var/run/fcgidsock
 	@${CAT} ${PKGMESSAGE}
