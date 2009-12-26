@@ -7,6 +7,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -25,7 +26,7 @@ OPTIONS+=	PGSQL "PostgreSQL back-end (use pgsql PHP extension)" off
 
 .include <bsd.port.pre.mk>
 
-USE_PHP=	pcre session mbstring
+USE_PHP=	pcre session mbstring sql xmlrpc
 
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
