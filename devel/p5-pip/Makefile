@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pip
-PORTVERSION=	0.13
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-CPAN-Inject>=0.07:${PORTSDIR}/devel/p5-CPAN-Inject \
 		p5-Params-Util>=0.21:${PORTSDIR}/devel/p5-Params-Util \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
