@@ -7,23 +7,25 @@
 .\" 1. Redistributions of source code must retain the above copyright
 .\"    notice, this list of conditions and the following disclaimer.
 .\" 2. Redistributions in binary form must reproduce the above copyright
-.\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
+.\"    notice, this list of conditions and the following disclaimer in
+.\"    the documentation and/or other materials provided with the
+.\"    distribution.
 .\"
-.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS''
+.\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+.\" TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+.\" PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR
+.\" CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+.\" SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+.\" LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+.\" USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+.\" ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+.\" OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+.\" OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd August 9, 2009
+.Dd December 25, 2009
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -38,21 +40,23 @@
 .Pp
 .Sh DESCRIPTION
 .Nm
-is a simple tool written in sh(1) for displaying information about ports.  Its 
-main goal is to provide a quick way to display all kinds of useful info about 
-installed ports and the whole ports tree.
+is a simple tool written in sh(1) for displaying information about
+ports.  Its main goal is to provide a quick way to display all kinds of
+useful info about installed ports and the whole ports tree.
 .Sh OPTIONS
 The following command line arguments are supported:
 .Bl -tag -width F1
 .It Fl a
-show what dependent ports are, and are not installed.  [portmaster required] 
+show what dependent ports are, and are not installed.  [portmaster
+required]
 .It Fl B
-create backup packages in /var/tmp/bpkg/ from all locally installed ports.
+create backup packages in /var/tmp/bpkg/ from all locally installed
+ports.
 .It Fl b
 create backup package in /var/tmp/bpkg/ from a locally installed port.
 .It Fl C
-clean all distfiles in /usr/ports/distfiles/* and also all work directories
-of the ports tree /usr/ports/*/*/work/ [no arguments]
+clean all distfiles in /usr/ports/distfiles/* and also all work
+directories of the ports tree /usr/ports/*/*/work/  [no arguments]
 .It Fl c
 clean all distfiles in /usr/ports/distfiles/*  [no arguments]
 .It Fl D
@@ -66,12 +70,12 @@ browse www.freshports.org port's entry.  [text WWW browser required]
 .It Fl f
 show the packing list instructions for the port.
 .It Fl g
-show files that do not match the recorded checksum in the specified installed
-port.
+show files that do not match the recorded checksum in the specified
+installed port.
 .It Fl h
 display help.  [no arguments]
 .It Fl i
-display info about the port (priority - installed ports). 
+display info about the port (priority - installed ports).
 .It Fl I
 display short info about the port (priority - installed ports).
 .It Fl j
@@ -93,9 +97,11 @@ display config OPTIONS for the specified port.
 .It Fl p
 search the ports tree and display short info about the port.
 .It Fl Q
-display the latest available package in the FreeBSD repository.  [-STABLE]
+display the latest available package in the FreeBSD repository.  
+[-STABLE]
 .It Fl q
-display the latest available package in the FreeBSD repository.  [-RELEASE]
+display the latest available package in the FreeBSD repository.  
+[-RELEASE]
 .It Fl r
 show the list of all port's dependencies.
 .It Fl S
@@ -103,7 +109,8 @@ search the ports tree and display info about the port.
 .It Fl s
 show the total size occupied by files installed within the port.
 .It Fl t
-list all installed ports with dates of their installation.  [no arguments]
+list all installed ports with dates of their installation.  [no
+arguments]
 .It Fl w
 which installed port owns the specified file.
 .It Fl v
@@ -121,19 +128,19 @@ of the
 .Nm
 command:
 .Pp
-.Dl "> bpkg -i foo" 
+.Dl "plato> bpkg -i foo" 
 .Pp
 Display info about port foo.
 .Pp
-.Dl "> bpkg -S 'foo[0-9]+$'"
+.Dl "plato> bpkg -S 'foo[0-9]+$'"
 .Pp
 Display all ports matching the regular expression.
 .Pp
-.Dl "> bpkg -t | head"
+.Dl "plato> bpkg -t | head"
 .Pp
 Display 10 most recently installed ports.
 .Pp
-.Dl "> bpkg -b 'foo bar'"
+.Dl "plato> bpkg -b 'foo bar'"
 .Pp
 Create backup packages of foo and bar in /var/tmp/bpkg/ directory.
 .Sh SEE ALSO
