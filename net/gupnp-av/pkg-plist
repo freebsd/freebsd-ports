@@ -1,0 +1,43 @@
+include/gupnp-av-1.0/libgupnp-av/gupnp-av-error.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-av.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-container.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-descriptor.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-item.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-object.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-parser.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-resource.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-didl-lite-writer.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-dlna.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-last-change-parser.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-protocol-info.h
+include/gupnp-av-1.0/libgupnp-av/gupnp-search-criteria-parser.h
+lib/libgupnp-av-1.0.a
+lib/libgupnp-av-1.0.la
+lib/libgupnp-av-1.0.so
+lib/libgupnp-av-1.0.so.2
+libdata/pkgconfig/gupnp-av-1.0.pc
+share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteParser.html
+share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteResource.html
+share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteWriter.html
+share/gtk-doc/html/gupnp-av/GUPnPLastChangeParser.html
+share/gtk-doc/html/gupnp-av/GUPnPSearchCriteriaParser.html
+share/gtk-doc/html/gupnp-av/ch01.html
+share/gtk-doc/html/gupnp-av/ch02.html
+share/gtk-doc/html/gupnp-av/gupnp-av-Error-codes.html
+share/gtk-doc/html/gupnp-av/gupnp-av-GUPnPDIDLLiteContainer.html
+share/gtk-doc/html/gupnp-av/gupnp-av-GUPnPDIDLLiteItem.html
+share/gtk-doc/html/gupnp-av/gupnp-av-GUPnPDIDLLiteObject.html
+share/gtk-doc/html/gupnp-av/gupnp-av.devhelp
+share/gtk-doc/html/gupnp-av/gupnp-av.devhelp2
+share/gtk-doc/html/gupnp-av/home.png
+share/gtk-doc/html/gupnp-av/index.html
+share/gtk-doc/html/gupnp-av/index.sgml
+share/gtk-doc/html/gupnp-av/left.png
+share/gtk-doc/html/gupnp-av/right.png
+share/gtk-doc/html/gupnp-av/style.css
+share/gtk-doc/html/gupnp-av/up.png
+@dirrmtry share/gtk-doc/html/gupnp-av
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrmtry include/gupnp-av-1.0/libgupnp-av
+@dirrmtry include/gupnp-av-1.0

@@ -205,6 +205,7 @@
     SUBDIR += gtic
     SUBDIR += gtk-vnc
     SUBDIR += gupnp
+    SUBDIR += gupnp-av
     SUBDIR += gupnp-ui
     SUBDIR += gutenfetch
     SUBDIR += gwhois
