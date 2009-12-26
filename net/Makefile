@@ -200,6 +200,7 @@
     SUBDIR += gsambad
     SUBDIR += gsk
     SUBDIR += gspoof
+    SUBDIR += gssdp
     SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gtic
     SUBDIR += gtk-vnc
