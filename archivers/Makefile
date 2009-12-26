@@ -156,7 +156,6 @@
     SUBDIR += sharutils
     SUBDIR += squsq
     SUBDIR += star
-    SUBDIR += star-devel
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += tardy
