@@ -1,0 +1,5 @@
+PAM module which permits authentication for arbitrary services via
+ssh-agent. Written with sudo in mind, but like any auth PAM module,
+can be used for for many purposes.
+
+WWW: http://pamsshagentauth.sourceforge.net/
