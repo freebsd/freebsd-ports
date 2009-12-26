@@ -1,0 +1,50 @@
+bin/parole
+include/parole/parole-file.h
+include/parole/parole-provider-player.h
+include/parole/parole-provider-plugin.h
+include/parole/parole-stream.h
+include/parole/parole.h
+lib/parole-0/stream-properties.la
+lib/parole-0/stream-properties.so
+lib/parole-0/tray-icon.la
+lib/parole-0/tray-icon.so
+lib/parole-0/window-title.la
+lib/parole-0/window-title.so
+share/applications/parole.desktop
+share/icons/hicolor/16x16/apps/parole.png
+share/icons/hicolor/22x22/apps/parole.png
+share/icons/hicolor/32x32/apps/parole.png
+share/icons/hicolor/48x48/apps/parole.png
+share/icons/hicolor/scalable/apps/parole.svg
+%%NLS%%share/locale/ast/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/da/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/de/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/es/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/id/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/parole.mo
+share/parole/parole-plugins-0/stream-properties.desktop
+share/parole/parole-plugins-0/system-tray.desktop
+share/parole/parole-plugins-0/window-title.desktop
+share/parole/pixmaps/parole.png
+@dirrm share/parole/pixmaps
+@dirrm share/parole/parole-plugins-0
+@dirrm share/parole
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrmtry share/applications
+@dirrm lib/parole-0
+@dirrm include/parole
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
