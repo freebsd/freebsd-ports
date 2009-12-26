@@ -303,6 +303,7 @@
     SUBDIR += xawtv
     SUBDIR += xdvshow
     SUBDIR += xfce4-media
+    SUBDIR += xfce4-parole
     SUBDIR += xfce4-xmms-plugin
     SUBDIR += xfmedia-remote-plugin
     SUBDIR += xine
