@@ -307,6 +307,7 @@ sbin/indexer
 %%DOCSDIR%%/msearch-cmdref-checkmp3only.html
 %%DOCSDIR%%/msearch-cmdref-checkonly.html
 %%DOCSDIR%%/msearch-cmdref-collectlinks.html
+%%DOCSDIR%%/msearch-cmdref-complexsynonyms.html
 %%DOCSDIR%%/msearch-cmdref-crosswords.html
 %%DOCSDIR%%/msearch-cmdref-customlog.html
 %%DOCSDIR%%/msearch-cmdref-cvsignore.html
@@ -338,6 +339,7 @@ sbin/indexer
 %%DOCSDIR%%/msearch-cmdref-htdblimit.html
 %%DOCSDIR%%/msearch-cmdref-htdblist.html
 %%DOCSDIR%%/msearch-cmdref-httpheader.html
+%%DOCSDIR%%/msearch-cmdref-idffactor.html
 %%DOCSDIR%%/msearch-cmdref-importenv.html
 %%DOCSDIR%%/msearch-cmdref-include.html
 %%DOCSDIR%%/msearch-cmdref-index.html
@@ -504,4 +506,3 @@ sbin/indexer
 @dirrm %%ETCDIR%%/langmap
 @dirrm %%ETCDIR%%
 @dirrm %%DOCSDIR%%
-
