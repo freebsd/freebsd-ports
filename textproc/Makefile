@@ -645,6 +645,7 @@
     SUBDIR += p5-Text-DoubleMetaphone
     SUBDIR += p5-Text-Emoticon
     SUBDIR += p5-Text-Emoticon-GoogleTalk
+    SUBDIR += p5-Text-Emoticon-MSN
     SUBDIR += p5-Text-EtText
     SUBDIR += p5-Text-ExtractWords
     SUBDIR += p5-Text-FillIn
