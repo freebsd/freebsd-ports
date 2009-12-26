@@ -935,6 +935,7 @@
     SUBDIR += p5-HTML-Template-HashWrapper
     SUBDIR += p5-HTML-Template-JIT
     SUBDIR += p5-HTML-Template-Pluggable
+    SUBDIR += p5-HTML-Toc
     SUBDIR += p5-HTML-TokeParser-Simple
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTML-TreeBuilder-LibXML
