@@ -1,5 +1,9 @@
 bin/grok
-bin/grok_patfind.pl
-@unexec if cmp -s %D/etc/grok.conf.sample %D/etc/grok.conf; then rm -f %D/etc/grok.conf; fi
-etc/grok.conf.sample
-@exec if [ ! -f %D/etc/grok.conf ] ; then cp -p %D/%F %B/grok.conf; fi
+include/grok.h
+include/grok_capture.h
+include/grok_capture_xdr.h
+include/grok_logging.h
+include/grok_match.h
+include/grok_pattern.h
+include/grokre.h
+lib/libgrok.so

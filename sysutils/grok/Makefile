@@ -6,49 +6,41 @@
 #
 
 PORTNAME=	grok
-PORTVERSION=	20070915
+PORTVERSION=	20091225.01
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.semicomplete.com/files/grok/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	An expert system for real-time log analysis
 
-RUN_DEPENDS=	${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	gperf>=3.0.3:${PORTSDIR}/devel/gperf \
+		libevent>=1.3:${PORTSDIR}/devel/libevent \
+		pcre>=7.6:${PORTSDIR}/devel/pcre \
+		tokyocabinet>=1.4.9:${PORTSDIR}/databases/tokyocabinet
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
-USE_RC_SUBR=	grok.sh
-NO_BUILD=	yes
+MAKE_ENV+=	GPERF=${LOCALBASE}/bin/gperf \
+		EXTRA_CFLAGS=-I${LOCALBASE}/include \
+		EXTRA_LDFLAGS=-L${LOCALBASE}/lib
+
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PERL=${PERL}
 
-PORTDOCS=	CHANGELIST
-PORTEXAMPLES=	line-to-byte-offset.conf
-MAN1=	grok.1
+PROJECTHOST=	semicomplete
+PORTDOCS=	CHANGELIST INSTALL
+MAN1=		grok.1
 
-do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/grok ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/grok_patfind.pl ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/grok.conf ${PREFIX}/etc/grok.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/grok.1 ${MANPREFIX}/man/man1
+post-patch:
+	@${REINPLACE_CMD} 's|PREFIX=|PREFIX?=|; s|-g root|-g wheel|' \
+		${WRKSRC}/Makefile
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/grok.conf ]; then \
-		${CP} -p ${PREFIX}/etc/grok.conf.sample ${PREFIX}/etc/grok.conf ; \
-	fi
+	${INSTALL_MAN} ${WRKSRC}/grok.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@cd ${WRKSRC}/examples/ && \
-		${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
