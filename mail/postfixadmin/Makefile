@@ -26,7 +26,7 @@ OPTIONS+=	PGSQL "PostgreSQL back-end (use pgsql PHP extension)" off
 
 .include <bsd.port.pre.mk>
 
-USE_PHP=	pcre session mbstring sql xmlrpc
+USE_PHP=	pcre session mbstring spl xmlrpc
 
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
