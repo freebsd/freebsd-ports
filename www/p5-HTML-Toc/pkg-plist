@@ -1,0 +1,9 @@
+%%SITE_PERL%%/HTML/Toc.pm
+%%SITE_PERL%%/HTML/Toc.pod
+%%SITE_PERL%%/HTML/TocGenerator.pm
+%%SITE_PERL%%/HTML/TocInsertor.pm
+%%SITE_PERL%%/HTML/TocUpdator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Toc/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Toc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML
