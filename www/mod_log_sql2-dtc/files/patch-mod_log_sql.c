@@ -1,5 +1,5 @@
---- mod_log_sql.c.orig	Thu Feb 16 05:30:51 2006
-+++ mod_log_sql.c	Wed Nov 16 19:35:10 2005
+--- ./mod_log_sql.c.orig	2006-11-07 02:43:23.000000000 +0000
++++ ./mod_log_sql.c	2009-12-27 01:39:36.463108543 +0000
 @@ -37,6 +37,11 @@
  #define DEFAULT_HOUT_TABLE_NAME		"headers_out"
  #define DEFAULT_COOKIE_TABLE_NAME	"cookies"
@@ -22,7 +22,7 @@
  } logsql_state;
  
  
-@@ -638,6 +646,9 @@
+@@ -648,6 +656,9 @@
  	cls->hout_table_name = DEFAULT_HOUT_TABLE_NAME;
  	cls->cookie_table_name = DEFAULT_COOKIE_TABLE_NAME;
  	cls->preserve_file = DEFAULT_PRESERVE_FILE;
@@ -32,7 +32,7 @@
  
  	cls->transfer_ignore_list = apr_array_make(p, 1, sizeof(char *));
  	cls->transfer_accept_list = apr_array_make(p, 1, sizeof(char *));
-@@ -748,6 +759,15 @@
+@@ -759,6 +770,15 @@
  	if (child->cookie_table_name == DEFAULT_COOKIE_TABLE_NAME)
  		child->cookie_table_name = parent->cookie_table_name;
  
@@ -48,7 +48,7 @@
  	DO_MERGE_ARRAY(parent->transfer_ignore_list, child->transfer_ignore_list, subp);
  	DO_MERGE_ARRAY(parent->transfer_accept_list, child->transfer_accept_list, subp);
  	DO_MERGE_ARRAY(parent->remhost_ignore_list, child->remhost_ignore_list, subp);
-@@ -779,6 +799,10 @@
+@@ -790,6 +810,11 @@
  	const char *hout_tablename = cls->hout_table_name;
  	const char *hin_tablename = cls->hin_table_name;
  	const char *cookie_tablename = cls->cookie_table_name;
@@ -56,10 +56,11 @@
 +	const char *scoreboard_subdomain = cls->scoreboard_subdomain;
 +	const char *scoreboard_table_name = cls->scoreboard_table_name;
 +	struct timeval now_time;
- 
- 	/* We handle mass virtual hosting differently.  Dynamically determine the name
- 	 * of the table from the virtual server's name, and flag it for creation.
-@@ -1097,6 +1121,29 @@
++
+     if (global_config.driver == NULL) {
+         return OK;
+     }
+@@ -1110,6 +1135,29 @@
  		if (cookie_query)
  		  	safe_sql_insert(orig, LOGSQL_TABLE_COOKIES,cookie_tablename,cookie_query);
  
@@ -89,11 +90,10 @@
  		return OK;
  	}
  }
-@@ -1157,6 +1204,18 @@
- 	AP_INIT_TAKE1("LogSQLCookieLogTable", set_server_nmv_string_slot,
+@@ -1171,6 +1219,18 @@
  	 (void *)APR_OFFSETOF(logsql_state, cookie_table_name), RSRC_CONF,
  	 "The database table that holds the cookie info")
-+	,
+ 	,
 +	AP_INIT_TAKE1("LogSQLScoreDomain", set_server_nmv_string_slot,
 +	 (void *)APR_OFFSETOF(logsql_state, scoreboard_domain), RSRC_CONF,
 +	 "The domain to set in scoreboard")
@@ -105,6 +105,7 @@
 +	AP_INIT_TAKE1("LogSQLScoreTable", set_server_nmv_string_slot,
 +	 (void *)APR_OFFSETOF(logsql_state, scoreboard_table_name), RSRC_CONF,
 +	 "The scoreboard to log in")
- 	,
++	,
  	/* Log format */
  	AP_INIT_TAKE1("LogSQLTransferLogFormat", set_logformat_slot,
+ 	 NULL, RSRC_CONF,

@@ -1,5 +1,5 @@
---- functions13.h.orig	Fri Apr 16 15:03:25 2004
-+++ functions13.h	Fri Apr 16 15:03:46 2004
+--- ./functions13.h.orig	2004-04-29 18:05:24.000000000 +0000
++++ ./functions13.h	2009-12-27 01:38:18.620401873 +0000
 @@ -37,7 +37,7 @@
  
  static const char *extract_request_duration(request_rec *r, char *a)
