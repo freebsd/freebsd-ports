@@ -8,8 +8,8 @@
 PORTNAME=	clustalw
 PORTVERSION=	2.0.12
 CATEGORIES=	biology
-MASTER_SITES=	http://www.clustal.org/download/%SUBDIR%/ \
-		ftp://ftp.ebi.ac.uk/pub/software/clustalw2/
+MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/clustalw2/%SUBDIR%/ \
+		http://www.clustal.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
