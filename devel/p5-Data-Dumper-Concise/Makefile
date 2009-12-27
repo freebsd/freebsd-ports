@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Dumper-Concise
-PORTVERSION=	1.002
+PORTVERSION=	1.100
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,8 @@ COMMENT=	Less indentation and newlines plus sub deparsing
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Data::Dumper::Concise.3
+MAN3=		Data::Dumper::Concise.3 \
+		Data::Dumper::Concise::Sugar.3 \
+		Devel::Dwarn.3
 
 .include <bsd.port.mk>
