@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	ngircd
-PORTVERSION=	0.10.1
+PORTVERSION=	0.15
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITES=	${MASTER_SITE_BERLIOS} \
+		ftp://ngircd.barton.de/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-15
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
 USE_RC_SUBR=	ngircd
@@ -25,6 +27,8 @@ MAN8=		ngircd.8
 OPTIONS=	TCP_WRAPPERS	"Enable TCP wrappers support"	on \
 		SYSLOG		"Enable SYSLOG support"		on \
 		ZLIB		"Enable ZLIB compression"	on \
+		OPENSSL		"Enable OpenSSL support"	off \
+		GNUTLS		"Enable GnuTLS support"		off \
 		IRCPLUS		"Enable IRC+ protocol"		on \
 		IDENT		"Enable IDENT (AUTH) protocol support"	off \
 		SNIFFER		"Enable IRC traffic sniffer"	off \
@@ -42,6 +46,15 @@ CONFIGURE_ARGS+=	--without-syslog
 
 .if defined(WITHOUT_ZLIB)
 CONFIGURE_ARGS+=	--without-zlib
+.endif
+
+.if defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=	--with-openssl
+.endif
+
+.if defined(WITH_GNUTLS)
+CONFIGURE_ARGS+=	--with-gnutls
+USE_OPENSSL=yes
 .endif
 
 .if defined(WITHOUT_IRCPLUS)
