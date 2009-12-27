@@ -52,6 +52,7 @@
     SUBDIR += hanzim
     SUBDIR += hc
     SUBDIR += hztty
+    SUBDIR += ibus-chewing
     SUBDIR += ibus-pinyin
     SUBDIR += iiimf-le-newpy
     SUBDIR += iiimf-le-ude
