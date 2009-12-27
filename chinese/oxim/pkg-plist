@@ -1,6 +1,5 @@
 bin/oxim
 bin/oxim-conv
-%%SETUP%%bin/oxim-setup
 bin/oxim2tab
 etc/oxim/locale.list
 etc/oxim/oxim.conf
@@ -24,15 +23,16 @@ lib/oxim/tables/cnscj.tab
 lib/oxim/tables/cnsphone.tab
 lib/oxim/tables/default.phr
 lib/oxim/tables/symbol.list
-share/applications/oxim-setup.desktop
-share/pixmaps/oxim-setup.png
-@dirrmtry share/applications
+share/locale/zh_CN/LC_MESSAGES/oxim.mo
+share/locale/zh_HK/LC_MESSAGES/oxim.mo
+share/locale/zh_TW/LC_MESSAGES/oxim.mo
 @dirrm etc/oxim
 @dirrm lib/oxim/immodules
 @dirrm lib/oxim/modules
 @dirrm lib/oxim/panels
 @dirrm lib/oxim/tables
 @dirrm lib/oxim
+@dirrmtry share/locale/zh_HK
 %%GTK2%%@dirrmtry lib/gtk-2.0/immodules
 %%GTK2%%@dirrmtry lib/gtk-2.0
 %%GTK2%%@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules

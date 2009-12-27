@@ -1,15 +1,15 @@
---- ./configure.orig	Fri Sep 22 17:19:58 2006
-+++ ./configure	Mon Oct  9 09:38:36 2006
-@@ -29055,9 +29055,9 @@
+--- configure.orig	2009-03-25 08:36:16.000000000 +0800
++++ configure	2009-12-27 14:42:27.000000000 +0800
+@@ -30785,9 +30785,9 @@
  
-     echo "$as_me:$LINENO: checking for qmake" >&5
- echo $ECHO_N "checking for qmake... $ECHO_C" >&6
+     { $as_echo "$as_me:$LINENO: checking for qmake" >&5
+ $as_echo_n "checking for qmake... " >&6; }
 -    if test -f ${qt_dir}/bin/qmake ; then
--	echo "$as_me:$LINENO: result: ${qt_dir}/bin/qmake" >&5
--echo "${ECHO_T}${qt_dir}/bin/qmake" >&6
+-	{ $as_echo "$as_me:$LINENO: result: ${qt_dir}/bin/qmake" >&5
+-$as_echo "${qt_dir}/bin/qmake" >&6; }
 +    if test -f ${LOCALBASE}/bin/qmake ; then
-+	echo "$as_me:$LINENO: result: ${LOCALBASE}/bin/qmake" >&5
-+echo "${ECHO_T}${LOCALBASE}/bin/qmake" >&6
++	{ $as_echo "$as_me:$LINENO: result: ${LOCALBASE}/bin/qmake" >&5
++$as_echo "${LOCALBASE}/bin/qmake" >&6; }
  	have_qmake="yes"
      else
- 	echo "$as_me:$LINENO: result: not found!" >&5
+ 	{ $as_echo "$as_me:$LINENO: result: not found!" >&5
