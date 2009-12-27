@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION?=	4.2.6p1.r1
-PORTREVISION=	1
+PORTVERSION?=	4.2.6p1.r2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
@@ -52,7 +51,7 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 
 .if defined(WITH_NTPSNMPD)
-PLIST_FILES+=		sbin/ntpsnmpd
+PLIST_FILES+=		bin/ntpsnmpd
 BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
 .else
