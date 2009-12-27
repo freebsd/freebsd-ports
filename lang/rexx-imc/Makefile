@@ -36,6 +36,10 @@ RMEFILES=	README README.Y2K README.bugreport README.docs \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
 post-patch:
 # CFLAGS safeness for ARCHs other than i386
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Make
