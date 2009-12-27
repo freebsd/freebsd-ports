@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	price
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	SF/${PORTNAME}/PRICE%20source/${PORTVERSION}
 DISTNAME=	PRICE-${PORTVERSION}
@@ -21,5 +21,9 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/PRICE-${PORTVERSION}
+
+post-patch:
+	${RM} ${WRKSRC}/Resources/Convolve55.gorm/.#*.*
+	${RM} ${WRKSRC}/Resources/MainMenu.gorm/.#*.*
 
 .include <bsd.port.mk>
