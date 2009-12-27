@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oxim
-PORTVERSION=	1.1.6
-PORTREVISION=	3
+PORTVERSION=	1.2.2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
@@ -23,8 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chine
 
 OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 		CHEWING "Enable Chewing input module" On \
-		UNICODE "Enable Unicode input module" On \
-		SETUP "Enable GUI Setup Tool" On
+		UNICODE "Enable Unicode input module" On
 
 USE_ICONV=	yes
 USE_XORG=	x11 xft xpm xtst
@@ -42,6 +40,8 @@ CONFIGURE_ARGS+=--disable-bimsphone-module \
 # oxim requires qinputcontextplugin.h which only exists in Debian package
 CONFIGURE_ARGS+=--disable-qt-immodule
 
+MAN1=		oxim.1
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_GTK2)
@@ -55,8 +55,8 @@ PLIST_SUB+=	GTK2=""
 
 .if !defined(WITHOUT_CHEWING)
 # make sure we have the required libchewing
-BUILD_DEPENDS+=	zh-libchewing>=0.3.0_1:${PORTSDIR}/chinese/libchewing
-RUN_DEPENDS+=	zh-libchewing>=0.3.0_1:${PORTSDIR}/chinese/libchewing
+BUILD_DEPENDS+=	zh-libchewing>=0.3.2:${PORTSDIR}/chinese/libchewing
+RUN_DEPENDS+=	zh-libchewing>=0.3.2:${PORTSDIR}/chinese/libchewing
 
 CONFIGURE_ARGS+=	--enable-chewing-module
 CONFIGURE_ENV+=	CHEWING_CFLAGS=-I${LOCALBASE}/include
@@ -72,23 +72,6 @@ PLIST_SUB+=	UNICODE=""
 .else
 CONFIGURE_ARGS+=	--disable-unicode-module
 PLIST_SUB+=	UNICODE="@comment "
-.endif
-
-.if !defined(WITHOUT_SETUP)
-BUILD_DEPENDS+=	qmake:${PORTSDIR}/devel/qmake
-
-CONFIGURE_ARGS+=	--enable-setup-tool
-PLIST_SUB+=	SETUP=""
-
-USE_QT_VER=	3
-.include "${PORTSDIR}/Mk/bsd.kde.mk"
-
-QMAKESPEC?=	freebsd-g++
-CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
-MAKE_ARGS+=	LOCALBASE="${LOCALBASE}" MAKE="${MAKE}" QMAKESPEC="${QMAKESPEC}"
-.else
-CONFIGURE_ARGS+=	--disable-setup-tool
-PLIST_SUB+=	SETUP="@comment "
 .endif
 
 # TODO WITHOUT_NLS knob
