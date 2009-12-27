@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -31,8 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cairo"
 USE_GCC=	4.2+
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-
-GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 
 MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
@@ -157,8 +156,6 @@ port-pre-install:
 pre-install:
 	${ECHO_CMD} share/applications/seamonkey.desktop >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${CP} ${WRKSRC}/other-licenses/branding/sunbird/default.xpm \
-		${FAKEDIR}/lib/${MOZILLA}/chrome/icons/default/
 
 do-install:
 	${MKDIR} ${PREFIX}/share/applications
