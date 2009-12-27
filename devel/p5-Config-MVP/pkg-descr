@@ -1,0 +1,6 @@
+Config::MVP is a perl module for multivalue-property package-oriented
+configuration.MVP is a mechanism for loading configuration (or other
+information) for libraries.It doesn't read a file or a database.
+It's a helper for things that do.
+
+WWW: http://search.cpan.org/dist/Config-MVP

@@ -1196,6 +1196,7 @@
     SUBDIR += p5-Config-JFDI
     SUBDIR += p5-Config-JSON
     SUBDIR += p5-Config-Model
+    SUBDIR += p5-Config-MVP
     SUBDIR += p5-Config-Objective
     SUBDIR += p5-Config-Options
     SUBDIR += p5-Config-Properties

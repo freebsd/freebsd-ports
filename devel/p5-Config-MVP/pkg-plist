@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Config/MVP.pm
+%%SITE_PERL%%/Config/MVP/Assembler.pm
+%%SITE_PERL%%/Config/MVP/Assembler/WithBundles.pm
+%%SITE_PERL%%/Config/MVP/Reader.pm
+%%SITE_PERL%%/Config/MVP/Reader/Findable.pm
+%%SITE_PERL%%/Config/MVP/Reader/Finder.pm
+%%SITE_PERL%%/Config/MVP/Reader/Hash.pm
+%%SITE_PERL%%/Config/MVP/Section.pm
+%%SITE_PERL%%/Config/MVP/Sequence.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP/.packlist
+@dirrmtry %%SITE_PERL%%/Config/MVP/Reader
+@dirrmtry %%SITE_PERL%%/Config/MVP/Assembler
+@dirrmtry %%SITE_PERL%%/Config/MVP
+@dirrmtry %%SITE_PERL%%/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
