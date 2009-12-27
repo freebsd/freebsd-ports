@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/tcamgr
+bin/tcamttest
 bin/tcatest
 bin/tcbmgr
 bin/tcbmttest
@@ -10,12 +11,12 @@ bin/tcftest
 bin/tchmgr
 bin/tchmttest
 bin/tchtest
-bin/tcucodec
-bin/tcumttest
-bin/tcutest
 bin/tctmgr
 bin/tctmttest
 bin/tcttest
+bin/tcucodec
+bin/tcumttest
+bin/tcutest
 include/tcadb.h
 include/tcbdb.h
 include/tcfdb.h

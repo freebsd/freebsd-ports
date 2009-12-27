@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.30
+PORTVERSION=	1.4.41
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	http://1978th.net/tokyocabinet/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A modern implementation of DBM
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
 .endif
 
-MAN1=		tcamgr.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
+MAN1=		tcamgr.1 tcamttest.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
 		tcfmgr.1 tcfmttest.1 tcftest.1 \
 		tchmgr.1 tchmttest.1 tchtest.1 tcucodec.1 tcumttest.1 \
 		tcutest.1 tctmgr.1 tctmttest.1 tcttest.1
@@ -83,8 +83,8 @@ CONFIGURE_ARGS+=	--disable-pthread
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-SHLIB_VER=	8.21.0
-SHLIB_VER_MAJ=	8
+SHLIB_VER=	9.4.0
+SHLIB_VER_MAJ=	9
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
