@@ -3,12 +3,17 @@
 %%DATADIR%%/ume-pgc5.ttf
 %%DATADIR%%/ume-pgo4.ttf
 %%DATADIR%%/ume-pgo5.ttf
+%%DATADIR%%/ume-pgs4.ttf
+%%DATADIR%%/ume-pgs5.ttf
 %%DATADIR%%/ume-pmo3.ttf
+%%DATADIR%%/ume-pms3.ttf
 %%DATADIR%%/ume-tgc4.ttf
 %%DATADIR%%/ume-tgc5.ttf
 %%DATADIR%%/ume-tgo4.ttf
 %%DATADIR%%/ume-tgo5.ttf
+%%DATADIR%%/ume-tgs4.ttf
 %%DATADIR%%/ume-tmo3.ttf
+%%DATADIR%%/ume-tms3.ttf
 %%DATADIR%%/ume-ugo4.ttf
 %%DATADIR%%/ume-ugo5.ttf
 @dirrm %%DATADIR%%
@@ -16,12 +21,18 @@
 %%LOCAL_FONTSDIR%%/TTF/ume-pgc5.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-pgo4.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-pgo5.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-pgs4.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-pgs5.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-pmo3.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-pms3.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-tgc4.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-tgc5.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-tgo4.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-tgo5.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tgs4.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tgs5.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-tmo3.ttf
+%%LOCAL_FONTSDIR%%/TTF/ume-tms3.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-ugo4.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-ugo5.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TTF
@@ -36,12 +47,18 @@ etc/fonts/conf.avail/62-fonts-ume.conf
 %%X_FONTSDIR%%/TTF/ume-pgc5.ttf
 %%X_FONTSDIR%%/TTF/ume-pgo4.ttf
 %%X_FONTSDIR%%/TTF/ume-pgo5.ttf
+%%X_FONTSDIR%%/TTF/ume-pgs4.ttf
+%%X_FONTSDIR%%/TTF/ume-pgs5.ttf
 %%X_FONTSDIR%%/TTF/ume-pmo3.ttf
+%%X_FONTSDIR%%/TTF/ume-pms3.ttf
 %%X_FONTSDIR%%/TTF/ume-tgc4.ttf
 %%X_FONTSDIR%%/TTF/ume-tgc5.ttf
 %%X_FONTSDIR%%/TTF/ume-tgo4.ttf
 %%X_FONTSDIR%%/TTF/ume-tgo5.ttf
+%%X_FONTSDIR%%/TTF/ume-tgs4.ttf
+%%X_FONTSDIR%%/TTF/ume-tgs5.ttf
 %%X_FONTSDIR%%/TTF/ume-tmo3.ttf
+%%X_FONTSDIR%%/TTF/ume-tms3.ttf
 %%X_FONTSDIR%%/TTF/ume-ugo4.ttf
 %%X_FONTSDIR%%/TTF/ume-ugo5.ttf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
