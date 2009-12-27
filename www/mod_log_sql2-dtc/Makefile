@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_log_sql
-PORTVERSION=	1.100
-PORTREVISION=	3
+PORTVERSION=	1.101
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	-dtc
@@ -14,7 +13,7 @@ PKGNAMESUFFIX=	-dtc
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	mod_log_sql2-dtc
 GNU_CONFIGURE=	yes
