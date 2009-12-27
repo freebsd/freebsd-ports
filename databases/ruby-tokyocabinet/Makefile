@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dgerow@FreeBSD.org
 COMMENT=	Ruby interface to the Tokyo Cabinet DB engine
 
-LIB_DEPENDS=	tokyocabinet.8:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
