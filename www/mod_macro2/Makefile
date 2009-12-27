@@ -13,7 +13,9 @@ MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 2.0.x module for use macros in config files
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
+
+PORTSCOUT=	limit:^1.1.6
 
 USE_APACHE=	20
 LATEST_LINK=	mod_macro2
