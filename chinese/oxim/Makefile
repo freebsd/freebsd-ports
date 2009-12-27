@@ -36,7 +36,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
-		--with-conf-dir=${PREFIX}/etc/${PORTNAME}
+		--with-conf-dir=${PREFIX}/etc/${PORTNAME} \
+		--enable-setup-tool=no
 # oxim requires qinputcontextplugin.h which only exists in Debian package
 CONFIGURE_ARGS+=--disable-qt-immodule
 
