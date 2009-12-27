@@ -7,11 +7,11 @@
 
 PORTNAME=	flex
 PORTVERSION=	2.5.35
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Fast lexical analyzer generator
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
@@ -21,17 +21,23 @@ USE_BISON=	build
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.
-CONFIGURE_ARGS=	--disable-nls --includedir=${PREFIX}/include/flex
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex
 USE_GMAKE=	yes
 MAN1=		flex.1
 INFO=		flex
-PLIST_FILES=	bin/flex include/flex/FlexLexer.h lib/libfl.a lib/libfl_pic.a
-PLIST_DIRS=	include/flex
+
+.if !defined(WITHOUT_NLS)
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} \
-		-e 's/po //;s/tests//' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} 's/@MAKEINFO@/& --no-split/g' \
+	${REINPLACE_CMD} -e 's/tests//' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's/@MAKEINFO@/& --no-split/g' \
 		${WRKSRC}/doc/Makefile.in
 	${RM} -f ${WRKSRC}/doc/*.info*
 
