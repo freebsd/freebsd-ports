@@ -35,6 +35,8 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 IGNORE=		ignored due to cast from pointer to integer of different size
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 post-patch:

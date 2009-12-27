@@ -38,6 +38,8 @@ USE_LDCONFIG=	yes
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64 (needs -fPIC)
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 .if !defined(NOPORTDOCS)

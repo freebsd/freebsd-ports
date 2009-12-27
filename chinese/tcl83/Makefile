@@ -414,6 +414,10 @@ MLINKS=	Access.3 Tcl_Access.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
 post-install:
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}

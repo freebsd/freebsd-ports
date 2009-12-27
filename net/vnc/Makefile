@@ -39,6 +39,10 @@ MAN1=		vncviewer.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
 .if !defined(WITHOUT_SERVER)
 # This is a placeholder MASTER_SITES entry -- see the pre-fetch target.
 MASTER_SITES+=	${MASTER_SITE_XFREE:S/$/:x/}
