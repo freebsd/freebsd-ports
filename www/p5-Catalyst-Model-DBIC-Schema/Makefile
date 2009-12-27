@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Model-DBIC-Schema
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,7 +33,8 @@ PERL_CONFIGURE=	5.8.1+
 MAN3=	Catalyst::Helper::Model::DBIC::Schema.3 \
 	Catalyst::Model::DBIC::Schema.3 \
 	Catalyst::TraitFor::Model::DBIC::Schema::Caching.3 \
-	Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3
+	Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3 \
+	Catalyst::TraitFor::Model::DBIC::Schema::SchemaProxy.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^feature, .. m,;$$,' ${WRKSRC}/Makefile.PL
