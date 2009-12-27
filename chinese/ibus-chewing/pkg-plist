@@ -1,0 +1,9 @@
+libexec/ibus-engine-chewing
+%%DATADIR%%/icons/ibus-chewing-orig.png
+%%DATADIR%%/icons/ibus-chewing.png
+%%DATADIR%%/icons/settings.png
+share/ibus/component/chewing.xml
+share/locale/zh_CN/LC_MESSAGES/ibus-chewing.mo
+share/locale/zh_TW/LC_MESSAGES/ibus-chewing.mo
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
