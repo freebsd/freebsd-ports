@@ -241,6 +241,7 @@ aafid2                          ports/security/aafid2
 aalib                           ports/graphics/aalib
 aamath                          ports/math/aamath
 aap                             ports/devel/aap
+aaphoto                         ports/graphics/aaphoto
 abacus                          ports/deskutils/abacus
 abakus                          ports/math/abakus
 abby                            ports/multimedia/abby
@@ -4844,6 +4845,7 @@ gspeakers                       ports/audio/gspeakers
 gspiceui                        ports/cad/gspiceui
 gspoof                          ports/net/gspoof
 gss                             ports/security/gss
+gssdp                           ports/net/gssdp
 gstopd                          ports/sysutils/gstopd
 gstreamer                       ports/multimedia/gstreamer
 gstreamer-ffmpeg                ports/multimedia/gstreamer-ffmpeg
@@ -5075,6 +5077,10 @@ guiloader-c++                   ports/devel/guiloader-c++
 guitartex                       ports/print/guitartex
 gunfudeadlands                  ports/games/gunfudeadlands
 gup                             ports/news/gup
+gupnp                           ports/net/gupnp
+gupnp-av                        ports/net/gupnp-av
+gupnp-igd                       ports/net/gupnp-igd
+gupnp-ui                        ports/net/gupnp-ui
 guppi                           ports/math/guppi
 gupsc                           ports/sysutils/gupsc
 gurlchecker                     ports/www/gurlchecker
@@ -8400,7 +8406,7 @@ lostirc                         ports/irc/lostirc
 lottanzb                        ports/news/lottanzb
 loudmouth                       ports/net-im/loudmouth
 lout                            ports/print/lout
-love                            ports/games/love
+love                            ports/devel/love
 lp_solve                        ports/math/lp_solve
 lpac                            ports/audio/lpac
 lpairs                          ports/games/lpairs
@@ -11764,6 +11770,7 @@ p5-HTML-Entities-ImodePictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
 p5-HTML-Entities-Numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-EscapeEvil              ports/textproc/p5-HTML-EscapeEvil
 p5-HTML-ExtractContent          ports/www/p5-HTML-ExtractContent
+p5-HTML-Field                   ports/www/p5-HTML-Field
 p5-HTML-FillInForm              ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-HTML-FormFu                  ports/www/p5-HTML-FormFu
@@ -11829,6 +11836,7 @@ p5-HTML-Template-JIT            ports/www/p5-HTML-Template-JIT
 p5-HTML-Template-Pluggable      ports/www/p5-HTML-Template-Pluggable
 p5-HTML-Tidy                    ports/textproc/p5-HTML-Tidy
 p5-HTML-Tiny                    ports/textproc/p5-HTML-Tiny
+p5-HTML-Toc                     ports/www/p5-HTML-Toc
 p5-HTML-TokeParser-Simple       ports/www/p5-HTML-TokeParser-Simple
 p5-HTML-Tree                    ports/www/p5-HTML-Tree
 p5-HTML-TreeBuilder-LibXML      ports/www/p5-HTML-TreeBuilder-LibXML
@@ -12354,6 +12362,7 @@ p5-Module-Install               ports/devel/p5-Module-Install
 p5-Module-Install-AuthorRequires  ports/devel/p5-Module-Install-AuthorRequires
 p5-Module-Install-AuthorTests   ports/devel/p5-Module-Install-AuthorTests
 p5-Module-Install-Repository    ports/devel/p5-Module-Install-Repository
+p5-Module-Install-Template      ports/devel/p5-Module-Install-Template
 p5-Module-List                  ports/devel/p5-Module-List
 p5-Module-Load                  ports/devel/p5-Module-Load
 p5-Module-Load-Conditional      ports/devel/p5-Module-Load-Conditional
@@ -13121,6 +13130,7 @@ p5-Sledge-Template-Expr         ports/www/p5-Sledge-Template-Expr
 p5-Smart-Comments               ports/devel/p5-Smart-Comments
 p5-Snort-Rule                   ports/security/p5-Snort-Rule
 p5-Socket-Class                 ports/net/p5-Socket-Class
+p5-Socket-GetAddrInfo           ports/net/p5-Socket-GetAddrInfo
 p5-Socket-Multicast6            ports/net/p5-Socket-Multicast6
 p5-Socket6                      ports/net/p5-Socket6
 p5-Socks                        ports/net/p5-Socks
@@ -13413,6 +13423,7 @@ p5-Text-Diff3                   ports/textproc/p5-Text-Diff3
 p5-Text-DoubleMetaphone         ports/textproc/p5-Text-DoubleMetaphone
 p5-Text-Emoticon                ports/textproc/p5-Text-Emoticon
 p5-Text-Emoticon-GoogleTalk     ports/textproc/p5-Text-Emoticon-GoogleTalk
+p5-Text-Emoticon-MSN            ports/textproc/p5-Text-Emoticon-MSN
 p5-Text-EtText                  ports/textproc/p5-Text-EtText
 p5-Text-ExtractWords            ports/textproc/p5-Text-ExtractWords
 p5-Text-FIGlet                  ports/misc/p5-Text-FIGlet
@@ -13676,6 +13687,7 @@ p5-WWW-Mechanize-Meta           ports/www/p5-WWW-Mechanize-Meta
 p5-WWW-Mechanize-Pluggable      ports/www/p5-WWW-Mechanize-Pluggable
 p5-WWW-Mechanize-Plugin-phpBB   ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-WWW-Mechanize-Shell          ports/www/p5-WWW-Mechanize-Shell
+p5-WWW-Mechanize-TreeBuilder    ports/www/p5-WWW-Mechanize-TreeBuilder
 p5-WWW-Mediawiki-Client         ports/www/p5-WWW-Mediawiki-Client
 p5-WWW-Mixi                     ports/www/p5-WWW-Mixi
 p5-WWW-Mixi-Scraper             ports/www/p5-WWW-Mixi-Scraper
@@ -13702,6 +13714,7 @@ p5-WWW-Shorten                  ports/www/p5-WWW-Shorten
 p5-WWW-Shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-WWW-Shorten-Bitly            ports/www/p5-WWW-Shorten-Bitly
 p5-WWW-Shorten-KUSO             ports/www/p5-WWW-Shorten-KUSO
+p5-WWW-Shorten-NotLong          ports/www/p5-WWW-Shorten-NotLong
 p5-WWW-Shorten-isgd             ports/www/p5-WWW-Shorten-isgd
 p5-WWW-SourceForge              ports/www/p5-WWW-SourceForge
 p5-WWW-Spinn3r                  ports/www/p5-WWW-Spinn3r
@@ -15440,6 +15453,7 @@ p5-html-entities-imodepictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
 p5-html-entities-numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-html-escapeevil              ports/textproc/p5-HTML-EscapeEvil
 p5-html-extractcontent          ports/www/p5-HTML-ExtractContent
+p5-html-field                   ports/www/p5-HTML-Field
 p5-html-fillinform              ports/www/p5-HTML-FillInForm
 p5-html-fillinform-forceutf8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-html-format                  ports/textproc/p5-HTML-Format
@@ -15505,6 +15519,7 @@ p5-html-template-jit            ports/www/p5-HTML-Template-JIT
 p5-html-template-pluggable      ports/www/p5-HTML-Template-Pluggable
 p5-html-tidy                    ports/textproc/p5-HTML-Tidy
 p5-html-tiny                    ports/textproc/p5-HTML-Tiny
+p5-html-toc                     ports/www/p5-HTML-Toc
 p5-html-tokeparser-simple       ports/www/p5-HTML-TokeParser-Simple
 p5-html-tree                    ports/www/p5-HTML-Tree
 p5-html-treebuilder-libxml      ports/www/p5-HTML-TreeBuilder-LibXML
@@ -16020,6 +16035,7 @@ p5-module-install               ports/devel/p5-Module-Install
 p5-module-install-authorrequires  ports/devel/p5-Module-Install-AuthorRequires
 p5-module-install-authortests   ports/devel/p5-Module-Install-AuthorTests
 p5-module-install-repository    ports/devel/p5-Module-Install-Repository
+p5-module-install-template      ports/devel/p5-Module-Install-Template
 p5-module-list                  ports/devel/p5-Module-List
 p5-module-load                  ports/devel/p5-Module-Load
 p5-module-load-conditional      ports/devel/p5-Module-Load-Conditional
@@ -16786,6 +16802,7 @@ p5-soap-lite-060                ports/net/p5-SOAP-Lite-060
 p5-soap-mysoap                  ports/net/p5-SOAP-MySOAP
 p5-soap-wsdl                    ports/devel/p5-SOAP-WSDL
 p5-socket-class                 ports/net/p5-Socket-Class
+p5-socket-getaddrinfo           ports/net/p5-Socket-GetAddrInfo
 p5-socket-multicast6            ports/net/p5-Socket-Multicast6
 p5-socket6                      ports/net/p5-Socket6
 p5-socks                        ports/net/p5-Socks
@@ -17122,6 +17139,7 @@ p5-text-diff3                   ports/textproc/p5-Text-Diff3
 p5-text-doublemetaphone         ports/textproc/p5-Text-DoubleMetaphone
 p5-text-emoticon                ports/textproc/p5-Text-Emoticon
 p5-text-emoticon-googletalk     ports/textproc/p5-Text-Emoticon-GoogleTalk
+p5-text-emoticon-msn            ports/textproc/p5-Text-Emoticon-MSN
 p5-text-ettext                  ports/textproc/p5-Text-EtText
 p5-text-extractwords            ports/textproc/p5-Text-ExtractWords
 p5-text-figlet                  ports/misc/p5-Text-FIGlet
@@ -17417,6 +17435,7 @@ p5-www-mechanize-meta           ports/www/p5-WWW-Mechanize-Meta
 p5-www-mechanize-pluggable      ports/www/p5-WWW-Mechanize-Pluggable
 p5-www-mechanize-plugin-phpbb   ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-www-mechanize-shell          ports/www/p5-WWW-Mechanize-Shell
+p5-www-mechanize-treebuilder    ports/www/p5-WWW-Mechanize-TreeBuilder
 p5-www-mediawiki-client         ports/www/p5-WWW-Mediawiki-Client
 p5-www-mixi                     ports/www/p5-WWW-Mixi
 p5-www-mixi-scraper             ports/www/p5-WWW-Mixi-Scraper
@@ -17444,6 +17463,7 @@ p5-www-shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-www-shorten-bitly            ports/www/p5-WWW-Shorten-Bitly
 p5-www-shorten-isgd             ports/www/p5-WWW-Shorten-isgd
 p5-www-shorten-kuso             ports/www/p5-WWW-Shorten-KUSO
+p5-www-shorten-notlong          ports/www/p5-WWW-Shorten-NotLong
 p5-www-sourceforge              ports/www/p5-WWW-SourceForge
 p5-www-spinn3r                  ports/www/p5-WWW-Spinn3r
 p5-www-tinysong                 ports/www/p5-WWW-TinySong
@@ -17661,6 +17681,7 @@ pam_pseudo                      ports/security/pam_pseudo
 pam_pwdfile                     ports/security/pam_pwdfile
 pam_require                     ports/security/pam_require
 pam_smb                         ports/security/pam_smb
+pam_ssh_agent_auth              ports/security/pam_ssh_agent_auth
 paman                           ports/audio/paman
 paml                            ports/biology/paml
 pamsfs                          ports/security/pamsfs
@@ -19790,6 +19811,7 @@ py-myghtyutils                  ports/devel/py-myghtyutils
 py-mysql                        ports/databases/py-MySQL
 py-mysqldb                      ports/databases/py-MySQLdb
 py-mysqldb-devel                ports/databases/py-MySQLdb-devel
+py-namebench                    ports/dns/py-namebench
 py-nautilus                     ports/x11-fm/py-nautilus
 py-ncurses                      ports/devel/py-ncurses
 py-netCDF4                      ports/science/py-netCDF4
@@ -22324,7 +22346,6 @@ stalonetray                     ports/x11/stalonetray
 stamp                           ports/graphics/stamp
 stan                            ports/misc/stan
 star                            ports/archivers/star
-star-devel                      ports/archivers/star-devel
 stardates                       ports/astro/stardates
 stardict2                       ports/textproc/stardict2
 stardict2-dictd_mova            ports/textproc/stardict2-dictd_mova
@@ -24388,6 +24409,7 @@ xfce4-notes-plugin              ports/deskutils/xfce4-notes-plugin
 xfce4-notification-daemon       ports/deskutils/xfce4-notification-daemon
 xfce4-notifyd                   ports/deskutils/xfce4-notifyd
 xfce4-panel                     ports/x11-wm/xfce4-panel
+xfce4-parole                    ports/multimedia/xfce4-parole
 xfce4-places-plugin             ports/sysutils/xfce4-places-plugin
 xfce4-power-manager             ports/sysutils/xfce4-power-manager
 xfce4-print                     ports/print/xfce4-print
