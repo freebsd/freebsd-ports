@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20091227:
+  AFFECTS: users of sysutils/grok
+  AUTHOR: Wesley Shields <wxs@FreeBSD.org>
+
+  The sysutils/grok port has been completely re-written. Configuration files
+  will need to be reviewed. Also, the RC script has been removed until it can
+  be made to work with the new version.
+
 20091226:
   AFFECTS: users of net-mgmt/ndoutils
   AUTHOR: pgollucci@FreeBSD.org
