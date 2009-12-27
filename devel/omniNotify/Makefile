@@ -42,6 +42,8 @@ CONFIGURE_ARGS=	--with-omniorb=${LOCALBASE}
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 pre-configure:
