@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	3.0.4
-PORTREVISION=	3
+PORTVERSION=	3.1.3
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -37,5 +36,8 @@ pre-everything::
 	@${ECHO_MSG} "Cancel this installation now and export your databases"
 	@${ECHO_MSG} "to GRAMPS XML file format as gedcom if you have not"
 	@${ECHO_MSG} "already have done so."
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
