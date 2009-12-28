@@ -75,7 +75,7 @@ libexec/mc/mc.sh
 %%DATADIR%%/extfs/patchfs
 %%DATADIR%%/extfs/rpm
 %%DATADIR%%/extfs/rpms
-%%DATADIR%%/extfs/srpm
+%%DATADIR%%/extfs/s3
 %%DATADIR%%/extfs/trpm
 %%DATADIR%%/extfs/u7z
 %%DATADIR%%/extfs/uace
@@ -113,11 +113,13 @@ libexec/mc/mc.sh
 %%DATADIR%%/skins/double-lines.ini
 %%DATADIR%%/skins/featured.ini
 %%DATADIR%%/skins/gotar.ini
+%%EDITOR%%%%DATADIR%%/syntax/PKGBUILD.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ada95.syntax
 %%EDITOR%%%%DATADIR%%/syntax/aspx.syntax
 %%EDITOR%%%%DATADIR%%/syntax/assembler.syntax
 %%EDITOR%%%%DATADIR%%/syntax/awk.syntax
 %%EDITOR%%%%DATADIR%%/syntax/c.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cabal.syntax
 %%EDITOR%%%%DATADIR%%/syntax/changelog.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cs.syntax
 %%EDITOR%%%%DATADIR%%/syntax/css.syntax
@@ -133,10 +135,12 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/eiffel.syntax
 %%EDITOR%%%%DATADIR%%/syntax/erlang.syntax
 %%EDITOR%%%%DATADIR%%/syntax/f90.syntax
+%%EDITOR%%%%DATADIR%%/syntax/filehighlight.syntax
 %%EDITOR%%%%DATADIR%%/syntax/fortran.syntax
 %%EDITOR%%%%DATADIR%%/syntax/haskell.syntax
 %%EDITOR%%%%DATADIR%%/syntax/html.syntax
 %%EDITOR%%%%DATADIR%%/syntax/idl.syntax
+%%EDITOR%%%%DATADIR%%/syntax/j.syntax
 %%EDITOR%%%%DATADIR%%/syntax/java.syntax
 %%EDITOR%%%%DATADIR%%/syntax/js.syntax
 %%EDITOR%%%%DATADIR%%/syntax/latex.syntax
@@ -157,6 +161,7 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/po.syntax
 %%EDITOR%%%%DATADIR%%/syntax/povray.syntax
 %%EDITOR%%%%DATADIR%%/syntax/procmail.syntax
+%%EDITOR%%%%DATADIR%%/syntax/properties.syntax
 %%EDITOR%%%%DATADIR%%/syntax/python.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ruby.syntax
 %%EDITOR%%%%DATADIR%%/syntax/sh.syntax
@@ -169,13 +174,17 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/syntax.syntax
 %%EDITOR%%%%DATADIR%%/syntax/tcl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/texinfo.syntax
+%%EDITOR%%%%DATADIR%%/syntax/tt.syntax
 %%EDITOR%%%%DATADIR%%/syntax/unknown.syntax
 %%EDITOR%%%%DATADIR%%/syntax/verilog.syntax
 %%EDITOR%%%%DATADIR%%/syntax/vhdl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/xml.syntax
-%%NLS%%@dirrmtry share/locale/be-tarask/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/be-tarask
-@dirrm %%DATADIR%%/syntax
+%%EDITOR%%%%DATADIR%%/syntax/yum-repo.syntax
+%%EDITOR%%%%DATADIR%%/syntax/yxx.syntax
+%%EDITOR%%@dirrm %%DATADIR%%/syntax
+%%NLS%%@dirrmtry be-tarask/LC_MESSAGES
+%%NLS%%@dirrmtry be-tarask
+@dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/extfs
 @dirrm %%DATADIR%%
