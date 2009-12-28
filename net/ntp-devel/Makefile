@@ -21,8 +21,6 @@ LATEST_LINK=	${PORTNAME}-dev
 
 GNU_CONFIGURE=	yes
 
-MAN1=		sntp.1
-
 .if defined(ENABLE_RAWDCF)
 CONFIGURE_ARGS+=	--enable-RAWDCF
 .endif
@@ -41,7 +39,7 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-MAN1=		ntp-keygen.1 ntpd.1 ntpdc.1 ntpq.1 sntp.1
+MAN1=		ntp-keygen.1 ntpd.1 ntpdc.1 ntpq.1 sntp.1 ntpsnmpd.1
 
 pre-everything::
 	@${ECHO}
@@ -57,7 +55,6 @@ pre-everything::
 # uses it. If detected, modify dependencies and package list.
 BUILD_DEPENDS=	${LOCALBASE}/bin/net-snmp-config:${PORTSDIR}/net-mgmt/net-snmp
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
-MAN1+=		ntpsnmpd.1
 PLIST_SUB+=	NETSNMP=""
 .else
 PLIST_SUB+=	NETSNMP="@comment "
