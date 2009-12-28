@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mc
-PORTVERSION=	4.7.0pre4
+PORTVERSION=	4.7.0
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/pre/-pre/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITES}
 
