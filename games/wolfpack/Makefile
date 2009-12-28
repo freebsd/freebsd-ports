@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.3.22
+PORTVERSION=	4.3.23
 CATEGORIES=	games
-MASTER_SITES=	SF/empserver/empserver/Empire%20Server%20v${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	empserver/${DISTNAME}
 DISTNAME=	empire-${PORTVERSION}
 
 MAINTAINER=	johans@stack.nl
@@ -19,7 +20,11 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 BINDIR=		${PREFIX}/lib/${PORTNAME}
+VARDIR=		${PREFIX}/var/${PORTNAME}
 CONFIGURE_ARGS+=	--bindir=${BINDIR} --sbindir=${BINDIR}
+
+USERS=		wolfpack
+GROUPS=		wolfpack
 
 USE_RC_SUBR=	wolfpack
 SUB_FILES+=	pkg-message
@@ -37,16 +42,13 @@ post-patch:
 		${WRKSRC}/src/lib/lwp/lwpint.h
 .endif
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
 	@${LN} -s ${BINDIR}/emp_server ${PREFIX}/bin/emp_server
 	@${LN} -s ${BINDIR}/empire ${PREFIX}/bin/emp_client
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	@${PREFIX}/lib/wolfpack/pconfig > ${ETCDIR}/econfig.orig
+	@${CHOWN} -R ${USERS}:${GROUPS} ${DATADIR} ${ETCDIR} ${VARDIR}
+	@${CHMOD} -R u+w,o-rx ${DATADIR} ${ETCDIR} ${VARDIR}
 	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.post.mk>

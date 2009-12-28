@@ -7,8 +7,6 @@ lib/wolfpack/empsched
 lib/wolfpack/pconfig
 lib/wolfpack/files
 lib/wolfpack/fairland
-etc/wolfpack/econfig.orig
-etc/wolfpack/schedule
 %%DATADIR%%/README
 %%DATADIR%%/builtin/infra.config
 %%DATADIR%%/builtin/item.config
@@ -297,6 +295,10 @@ etc/wolfpack/schedule
 %%DATADIR%%/info.nr/work
 %%DATADIR%%/info.nr/xdump
 %%DATADIR%%/info.nr/zdone
+etc/wolfpack/schedule
+@unexec if cmp -s %B/econfig.orig %B/econfig; then rm -f %B/econfig; fi
+etc/wolfpack/econfig.orig
+@exec if [ ! -f %B/econfig ] ; then cp -p %D/%F %B/econfig; fi
 @dirrm %%DATADIR%%/builtin
 @dirrm %%DATADIR%%/info.nr
 @dirrm %%DATADIR%%

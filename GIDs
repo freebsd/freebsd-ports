@@ -69,6 +69,7 @@ undernet:*:134:
 rabbitmq:*:135:
 dhcpd:*:136:
 mpd:*:137:
+wolfpack:*:138:
 ladvd:*:142:
 dovecot:*:143:
 rbldns:*:153:
