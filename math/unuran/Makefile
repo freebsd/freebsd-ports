@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unuran
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/
 
@@ -19,13 +19,16 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstream \
 		--enable-info
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 USE_LDCONFIG=	yes
 INFO=		unuran
 PORTDOCS=	unuran.pdf unuran.txt
 
 post-patch:
-	${FIND} -X ${WRKSRC} -name 'Makefile.\in' | ${XARGS} ${REINPLACE_CMD} -e \
+	${FIND} -X ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
 		's/sinclude/#sinclude/g'
 
 .ifndef(NOPORTDOCS)
