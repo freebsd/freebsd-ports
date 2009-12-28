@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -2,7 +2,6 @@
+ 
+ # install configuration
+ DESTDIR =
+-PREFIX = /usr/local
+ BINDIR = ${PREFIX}/bin
+ DATADIR = ${PREFIX}/share/postgresql_autodoc
+ 
