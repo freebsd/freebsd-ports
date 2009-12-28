@@ -2475,6 +2475,7 @@
     SUBDIR += py-game
     SUBDIR += py-gamin
     SUBDIR += py-gdata
+    SUBDIR += py-gearman
     SUBDIR += py-generate
     SUBDIR += py-geojson
     SUBDIR += py-geotypes
