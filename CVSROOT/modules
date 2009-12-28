@@ -10973,6 +10973,7 @@ p5-Config-IniHash               ports/devel/p5-Config-IniHash
 p5-Config-IniRegEx              ports/devel/p5-Config-IniRegEx
 p5-Config-JFDI                  ports/devel/p5-Config-JFDI
 p5-Config-JSON                  ports/devel/p5-Config-JSON
+p5-Config-MVP                   ports/devel/p5-Config-MVP
 p5-Config-Model                 ports/devel/p5-Config-Model
 p5-Config-Objective             ports/devel/p5-Config-Objective
 p5-Config-Options               ports/devel/p5-Config-Options
@@ -14610,6 +14611,7 @@ p5-config-iniregex              ports/devel/p5-Config-IniRegEx
 p5-config-jfdi                  ports/devel/p5-Config-JFDI
 p5-config-json                  ports/devel/p5-Config-JSON
 p5-config-model                 ports/devel/p5-Config-Model
+p5-config-mvp                   ports/devel/p5-Config-MVP
 p5-config-objective             ports/devel/p5-Config-Objective
 p5-config-options               ports/devel/p5-Config-Options
 p5-config-properties            ports/devel/p5-Config-Properties
@@ -25259,6 +25261,7 @@ zh-gugod-clean                  ports/chinese/gugod-clean
 zh-hanzim                       ports/chinese/hanzim
 zh-hc                           ports/chinese/hc
 zh-hztty                        ports/chinese/hztty
+zh-ibus-chewing                 ports/chinese/ibus-chewing
 zh-ibus-pinyin                  ports/chinese/ibus-pinyin
 zh-iiimf-le-newpy               ports/chinese/iiimf-le-newpy
 zh-iiimf-le-ude                 ports/chinese/iiimf-le-ude
