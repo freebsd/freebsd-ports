@@ -1,0 +1,16 @@
+====
+
+GRAMPS needs py-bsddb to be compiled with:
+
+WITH_BERKELEYDB=db43
+WITH_BDB_VER=43
+
+
+You can do like this to make that happen:
+
+echo "WITH_BERKELEYDB=db43" >> /etc/make.conf
+echo "WITH_BDB_VER=43" >> /etc/make.conf
+cd /usr/ports/databases/py-bsddb
+make clean all deinstall reinstall clean
+
+====
