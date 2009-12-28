@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tc
 
 MAINTAINER=	matthias.andree@gmx.de
 # Blanket approval for changes by Zach Thompson (address above)
 
-LIB_DEPENDS=	tokyocabinet.8:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
 
 CONFLICTS=	bogofilter-[0-9]* [a-z][a-z]-bogofilter-[1-9]* bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]*
 
