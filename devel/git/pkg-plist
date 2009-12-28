@@ -47,7 +47,6 @@ libexec/git-core/git-diff-tree
 libexec/git-core/git-fast-export
 libexec/git-core/git-fast-import
 libexec/git-core/git-fetch
-libexec/git-core/git-fetch--tool
 libexec/git-core/git-fetch-pack
 libexec/git-core/git-filter-branch
 libexec/git-core/git-fmt-merge-msg
@@ -62,6 +61,7 @@ libexec/git-core/git-grep
 %%GUI%%libexec/git-core/git-gui--askpass
 libexec/git-core/git-hash-object
 libexec/git-core/git-help
+libexec/git-core/git-http-backend
 %%CURL%%libexec/git-core/git-http-fetch
 %%CURL%%libexec/git-core/git-http-push
 libexec/git-core/git-imap-send
@@ -93,6 +93,7 @@ libexec/git-core/git-mktag
 libexec/git-core/git-mktree
 libexec/git-core/git-mv
 libexec/git-core/git-name-rev
+libexec/git-core/git-notes
 libexec/git-core/git-pack-objects
 libexec/git-core/git-pack-redundant
 libexec/git-core/git-pack-refs
@@ -215,6 +216,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/win32.tcl
 %%GUI%%share/git-gui/lib/win32_shortcut.js
 %%GUI%%share/git-gui/lib/msgs/de.msg
+%%GUI%%share/git-gui/lib/msgs/el.msg
 %%GUI%%share/git-gui/lib/msgs/fr.msg
 %%GUI%%share/git-gui/lib/msgs/hu.msg
 %%GUI%%share/git-gui/lib/msgs/it.msg
@@ -226,6 +228,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/gitk/lib/msgs/es.msg
 %%GUI%%share/gitk/lib/msgs/de.msg
 %%GUI%%share/gitk/lib/msgs/it.msg
+%%GUI%%share/gitk/lib/msgs/ja.msg
 %%GUI%%share/gitk/lib/msgs/ru.msg
 %%GUI%%share/gitk/lib/msgs/sv.msg
 %%HTMLDOCS%%%%DOCSDIR%%/git-add.html
@@ -235,6 +238,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-archimport.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-archive.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-bisect.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-bisect-lk2009.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-bisect-lk2009.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-blame.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-branch.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-bundle.html
@@ -278,6 +283,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-gui.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-hash-object.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-help.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-http-backend.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-http-backend.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-http-fetch.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-http-push.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-imap-send.html
@@ -304,6 +311,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-mktree.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-mv.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-name-rev.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-notes.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-notes.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-pack-objects.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-pack-redundant.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-pack-refs.html
@@ -511,6 +520,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-tree-walking.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-history-graph.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/pack-heuristics.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/protocol-common.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/protocol-capabilities.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gittutorial.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-help.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote.txt
@@ -720,6 +731,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.6.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.5.7.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.6.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
