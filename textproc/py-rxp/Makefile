@@ -27,6 +27,10 @@ DOCSDIR=	${PREFIX}/share/doc/py-rxp
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/freebsd4/freebsd4", "freebsd5", "freebsd6", "freebsd7", "freebsd8/g' ${WRKSRC}/setup.py
 
