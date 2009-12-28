@@ -30,6 +30,10 @@ OPTIONS=	ICANNA	"Enable icanna support"	off
 
 .include <bsd.port.pre.mk>
 
+.if $(EMACS_MAJOR_VER) >= 23
+BROKEN=		Does not support emacs23.x or later
+.endif
+
 .if defined(WITH_ICANNA)
 RUN_DEPENDS+=	${LOCALBASE}/bin/icanna:${PORTSDIR}/japanese/icanna
 .endif
