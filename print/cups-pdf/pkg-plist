@@ -7,6 +7,5 @@ etc/cups/cups-pdf.conf.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry libexec/cups/backend
 @dirrmtry libexec/cups
-@dirrmtry share/cups/model
 @dirrmtry share/cups
 @dirrmtry etc/cups
