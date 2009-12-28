@@ -1,4 +1,9 @@
 @comment $FreeBSD$
+bin/%%GNU_HOST%%-c++%%SUFFIX%%
+bin/%%GNU_HOST%%-g++%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
+bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
 bin/g++%%SUFFIX%%
@@ -6,11 +11,6 @@ bin/gcc%%SUFFIX%%
 bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
-bin/%%GNU_HOST%%-c++%%SUFFIX%%
-bin/%%GNU_HOST%%-g++%%SUFFIX%%
-bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
-bin/%%GNU_HOST%%-gcc%%SUFFIX%%
-bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
 share/gcc-%%GCC_VER%%/python/libstdcxx/__init__.py
 share/gcc-%%GCC_VER%%/python/libstdcxx/v6/__init__.py
@@ -19,6 +19,7 @@ share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
 @dirrm share/gcc-%%GCC_VER%%/python/libstdcxx
 @dirrm share/gcc-%%GCC_VER%%/python
 @dirrm share/gcc-%%GCC_VER%%
+%%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
 %%JAVA%%bin/aot-compile%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
 %%JAVA%%bin/gc-analyze%%SUFFIX%%
@@ -37,10 +38,9 @@ share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
 %%JAVA%%bin/grmiregistry%%SUFFIX%%
 %%JAVA%%bin/gserialver%%SUFFIX%%
 %%JAVA%%bin/gtnameserv%%SUFFIX%%
-%%JAVA%%bin/jv-convert%%SUFFIX%%
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
+%%JAVA%%bin/jv-convert%%SUFFIX%%
 %%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
-%%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
 %%JAVA%%libdata/pkgconfig/libgcj-4.5.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
