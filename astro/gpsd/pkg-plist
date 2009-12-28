@@ -5,7 +5,6 @@ bin/cgps
 bin/gpscat
 bin/gpsctl
 bin/gpsdecode
-bin/gpsflash
 bin/gpsprof
 bin/gpsfake
 bin/gpsmon
@@ -18,7 +17,7 @@ include/libgpsmm.h
 lib/libgps.a
 lib/libgps.la
 lib/libgps.so
-lib/libgps.so.18
+lib/libgps.so.19
 libdata/pkgconfig/libgps.pc
 libdata/pkgconfig/libgpsd.pc
 %%PYTHON_SITELIBDIR%%/gpslib.so
