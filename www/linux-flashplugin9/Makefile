@@ -34,7 +34,7 @@ LATEST_LINK=	flash9
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so
 
-CONFLICTS=	linux-flashplugin-7*
+CONFLICTS=	linux-flashplugin-7* linux-f8-flashplugin-10* linux-f10-flashplugin-10*
 
 post-install:
 	@${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/libflashsupport.so ${LINUXBASE}/usr/lib
