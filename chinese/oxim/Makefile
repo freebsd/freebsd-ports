@@ -9,13 +9,9 @@ PORTNAME=	oxim
 PORTVERSION=	1.2.2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
-		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
-		ftp://ftp4.tnc.edu.tw/pub3/opendesktop-tw/odp/OXIM/Source/ \
-		ftp://140.111.66.34/odp/OXIM/Source/ \
-		ftp://140.111.128.66/odp/OXIM/Source/ \
-		LOCAL/rafan
+		ftp://140.111.128.66/odp/OXIM/Source/
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Open X Input Method server
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chinese/fireflyttf
