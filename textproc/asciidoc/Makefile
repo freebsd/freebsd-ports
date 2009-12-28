@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION=	8.4.5
-PORTREVISION=	1
+PORTVERSION=	8.5.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF
@@ -29,13 +28,5 @@ MAN1=		a2x.1 asciidoc.1
 # a future improvement to this port is to also install the vim syntax
 # highlighing mode which is currently disabled by being patched away in
 # Makefile.in
-
-pre-patch:
-	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|g" \
-		${WRKSRC}/a2x ${WRKSRC}/asciidoc.py
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${LOCALBASE}|g" \
-		${WRKSRC}/a2x
 
 .include <bsd.port.mk>
