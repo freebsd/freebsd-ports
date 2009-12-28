@@ -49,3 +49,9 @@
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
+@@ -81,5 +101,3 @@
+         sed -e 's,;+,,' -e 's; DATA ;;' -e 's,;;,,' -e 's,;.*,;,' > $@
+ 
+ G++INCLUDES		= -I/usr/include/g++
+-
+-INCLUDES		+= -I/usr/X11R6/include
