@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Email-MIME
-PORTVERSION=	1.902
-PORTREVISION=	1
+PORTVERSION=	1.903
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Easy MIME message parsing
 
-BUILD_DEPENDS=	p5-Email-Simple>=2.00.4:${PORTSDIR}/mail/p5-Email-Simple \
+BUILD_DEPENDS=	p5-Email-Simple>=2.100:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Email-MessageID>=0:${PORTSDIR}/mail/p5-Email-MessageID \
 		p5-Email-MIME-Encodings>=1.313:${PORTSDIR}/mail/p5-Email-MIME-Encodings \
 		p5-Email-MIME-ContentType>=1.01.1:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
