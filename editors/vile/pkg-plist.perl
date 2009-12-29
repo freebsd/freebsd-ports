@@ -75,6 +75,7 @@ lib/vile/vile-vile-filt
 lib/vile/vile-vlog-filt
 lib/vile/vile-wbt-filt
 lib/vile/vile-xml-filt
+lib/vile/vile-xq-filt
 lib/vile/vile-xres-filt
 lib/vile/vile-xs-filt
 lib/vile/vile-yacc-filt
@@ -226,6 +227,7 @@ share/vile/vlog.keywords
 share/vile/wbt.keywords
 share/vile/which.rc
 share/vile/xml.keywords
+share/vile/xq.keywords
 share/vile/xres.keywords
 share/vile/xs.keywords
 share/vile/xsl.keywords
