@@ -20,7 +20,7 @@ LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		sidplay.1:${PORTSDIR}/audio/libsidplay
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
