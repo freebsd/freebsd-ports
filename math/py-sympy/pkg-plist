@@ -1,10 +1,48 @@
+bin/doctest
 bin/isympy
+bin/test
 %%PYTHON_SITELIBDIR%%/sympy/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sympy/abc.py
 %%PYTHON_SITELIBDIR%%/sympy/abc.pyc
 %%PYTHON_SITELIBDIR%%/sympy/abc.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/ask.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/ask.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/ask.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/assume.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/assume.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/assume.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/calculus.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/calculus.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/calculus.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/ntheory.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/ntheory.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/ntheory.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/order.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/order.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/order.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/sets.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/sets.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers/sets.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/refine.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/refine.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/refine.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_assumptions_2.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_assumptions_2.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_assumptions_2.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_query.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_query.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_query.pyo
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_refine.py
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_refine.pyc
+%%PYTHON_SITELIBDIR%%/sympy/assumptions/tests/test_refine.pyo
 %%PYTHON_SITELIBDIR%%/sympy/concrete/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/concrete/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/concrete/__init__.pyo
@@ -65,9 +103,6 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/function.py
 %%PYTHON_SITELIBDIR%%/sympy/core/function.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/function.pyo
-%%PYTHON_SITELIBDIR%%/sympy/core/interval.py
-%%PYTHON_SITELIBDIR%%/sympy/core/interval.pyc
-%%PYTHON_SITELIBDIR%%/sympy/core/interval.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/logic.py
 %%PYTHON_SITELIBDIR%%/sympy/core/logic.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/logic.pyo
@@ -89,6 +124,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/relational.py
 %%PYTHON_SITELIBDIR%%/sympy/core/relational.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/relational.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/sets.py
+%%PYTHON_SITELIBDIR%%/sympy/core/sets.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/sets.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/symbol.py
 %%PYTHON_SITELIBDIR%%/sympy/core/symbol.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/symbol.pyo
@@ -128,6 +166,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_evalf.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_evalf.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_evalf.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expand.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expand.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expand.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_facts.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_facts.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_facts.pyo
@@ -146,9 +187,15 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_numbers.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_numbers.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_numbers.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_operations.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_operations.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_operations.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_relational.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_relational.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_relational.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_sets.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_sets.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_sets.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_subs.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_subs.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_subs.pyo
@@ -458,9 +505,6 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/elliptic_torture_tests.py
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/elliptic_torture_tests.pyc
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/elliptic_torture_tests.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/runtests.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/runtests.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/runtests.pyo
@@ -539,6 +583,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/test_trig.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/test_trig.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/test_trig.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/torture.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/torture.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/torture.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/usertools.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/usertools.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/usertools.pyo
@@ -722,6 +769,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/printing/ccode.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/ccode.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/ccode.pyo
+%%PYTHON_SITELIBDIR%%/sympy/printing/conventions.py
+%%PYTHON_SITELIBDIR%%/sympy/printing/conventions.pyc
+%%PYTHON_SITELIBDIR%%/sympy/printing/conventions.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/gtk.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/gtk.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/gtk.pyo
@@ -773,6 +823,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_ccode.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_ccode.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_ccode.pyo
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_conventions.py
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_conventions.pyc
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_conventions.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_gtk.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_gtk.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_gtk.pyo
@@ -875,6 +928,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/solvers/ode.py
+%%PYTHON_SITELIBDIR%%/sympy/solvers/ode.pyc
+%%PYTHON_SITELIBDIR%%/sympy/solvers/ode.pyo
 %%PYTHON_SITELIBDIR%%/sympy/solvers/pde.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/pde.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/pde.pyo
@@ -887,6 +943,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/solvers/solvers.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/solvers.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/solvers.pyo
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_constantsimp.py
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_constantsimp.pyc
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_constantsimp.pyo
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_numeric.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_numeric.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_numeric.pyo
@@ -929,6 +988,18 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/carbon.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/carbon.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/carbon.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/win32.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/win32.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/win32.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/xlib.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/xlib.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app/xlib.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/clock.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/clock.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/clock.pyo
@@ -1025,12 +1096,33 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/gl/wglext_nv.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/gl/wglext_nv.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/gl/wglext_nv.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/allocation.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/allocation.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/allocation.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexattribute.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexattribute.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexattribute.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexbuffer.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexbuffer.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexbuffer.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexdomain.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexdomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics/vertexdomain.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/atlas.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/atlas.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/atlas.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/bmp.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/bmp.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/bmp.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/dds.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/dds.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/dds.pyo
@@ -1040,6 +1132,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/gdkpixbuf2.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/gdkpixbuf2.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/gdkpixbuf2.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/gif.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/gif.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/gif.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/pil.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/pil.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/pil.pyo
@@ -1055,6 +1150,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/s3tc.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/s3tc.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs/s3tc.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/info.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/info.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/info.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/lib.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/lib.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/lib.pyo
@@ -1067,12 +1165,6 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/alsa/__init__.py
-%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/alsa/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/alsa/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/alsa/asound.py
-%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/alsa/asound.pyc
-%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/alsa/asound.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/directsound/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/directsound/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/directsound/__init__.pyo
@@ -1097,6 +1189,42 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/riff.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/riff.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/riff.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/resource.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/resource.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/resource.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/sprite.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/sprite.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/sprite.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/caret.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/caret.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/caret.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/document.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/document.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/document.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/attributed.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/attributed.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/attributed.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/html.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/html.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/html.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/plaintext.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/plaintext.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/plaintext.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/structured.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/structured.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats/structured.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/layout.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/layout.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/layout.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/runlist.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/runlist.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/runlist.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/__init__.pyo
@@ -1145,6 +1273,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib/xlib.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib/xlib.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib/xlib.pyo
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib/xsync.py
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib/xsync.pyc
+%%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib/xsync.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/__init__.pyo
@@ -1187,12 +1318,12 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.pyo
-%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.py
-%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.pyc
-%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_codegen.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_decorator.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_decorator.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_decorator.pyo
@@ -1214,6 +1345,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_tests_names.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_tests_names.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_tests_names.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/concrete/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/concrete
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/core/tests
@@ -1264,15 +1398,18 @@ bin/isympy
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/statistics/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/statistics
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/test_external
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/font
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/gl
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/alsa
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/directsound
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/openal
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/carbon
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/win32
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib
