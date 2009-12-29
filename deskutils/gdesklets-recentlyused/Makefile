@@ -9,35 +9,31 @@ PORTNAME=	recentlyused
 PORTVERSION=	0.6
 PORTREVISION=	10
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-
-DISTNAME=	recently-used-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolbar for the most recently used items from ~/.recently-used
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
+WRKSRC=		${WRKDIR}/${NAME}
+
+NO_BUILD=	yes
 USE_PYTHON=	yes
+
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
+DATADIR=	${PREFIX}/share/gdesklets
 NAME=		RecentlyUsed
-DATADIR=	${PREFIX}/share
-
-do-build:
-	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}
-	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/AUTHORS ${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${CP} ${WRKSRC}/${NAME}/.recently-used ${DATADIR}/gdesklets/Sensors/${NAME}/
-
-post-install:
+	@${MKDIR} ${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/Sensors/${NAME}/*.py ${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/Sensors/${NAME}/AUTHORS ${DATADIR}/Sensors/${NAME}
+	@${CP} ${WRKSRC}/Sensors/${NAME}/.recently-used ${DATADIR}/Sensors/${NAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
