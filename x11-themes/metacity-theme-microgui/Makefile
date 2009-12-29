@@ -9,8 +9,8 @@ PORTNAME=	microgui
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	${MASTER_SITE_THEMES}
-MASTER_SITE_SUBDIR=	mcitymicrogui
+MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
+		http://code.douglasthrift.net/files/${PORTNAME}/
 DISTNAME=	mcitymicrogui-default
 
 MAINTAINER=	douglas@douglasthrift.net
