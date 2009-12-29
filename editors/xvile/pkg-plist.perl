@@ -1,7 +1,10 @@
+bin/uxvile
 bin/vileget
 bin/xvile
 bin/xvile-pager
 bin/xshell.sh
+lib/X11/app-defaults/UXVile
+lib/X11/app-defaults/XVile
 lib/xvile/atr2ansi
 lib/xvile/atr2html
 lib/xvile/atr2text
@@ -76,6 +79,7 @@ lib/xvile/vile-vlog-filt
 lib/xvile/vile-vile-filt
 lib/xvile/vile-wbt-filt
 lib/xvile/vile-xml-filt
+lib/xvile/vile-xq-filt
 lib/xvile/vile-xres-filt
 lib/xvile/vile-xs-filt
 lib/xvile/vile-yacc-filt
@@ -91,6 +95,7 @@ lib/xvile/vile-yacc-filt
 %%PORTDOCS%%share/doc/xvile/perl.doc
 %%PORTDOCS%%share/doc/xvile/visvile.doc
 @dirrmtry share/doc/xvile
+share/pixmaps/vile.xbm
 share/xvile/vile/perl/Vile/Exporter.pm
 share/xvile/vile/perl/Vile/Manual.pm
 share/xvile/vile/perl/Breadcrumbs.pm
@@ -213,6 +218,7 @@ share/xvile/vile/texi.keywords
 share/xvile/vile/ti.keywords
 share/xvile/vile/wbt.keywords
 share/xvile/vile/xml.keywords
+share/xvile/vile/xq.keywords
 share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
 share/xvile/vile/xsl.keywords
