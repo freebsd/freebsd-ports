@@ -1,0 +1,10 @@
+The Analysis & Resynthesis Sound Spectrograph (formerly known as the Analysis &
+Reconstruction Sound Engine), or ARSS, is a program that analyses a sound file
+into a spectrogram and is able to synthesise this spectrogram, or any other
+user-created image, back into a sound.
+
+ARSS is now superseded by Photosounder, which makes use of most of the
+techniques offered by ARSS in a simple to use and powerful graphical user
+interface and built in editor.
+
+WWW: http://arss.sourceforge.net/
