@@ -355,6 +355,7 @@
     SUBDIR += libmp3splt
     SUBDIR += libmpcdec
     SUBDIR += libmpd
+    SUBDIR += libmpdclient
     SUBDIR += libmtp
     SUBDIR += libmusicbrainz
     SUBDIR += libmusicbrainz3
