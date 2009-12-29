@@ -620,7 +620,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # Set the following to specify all manpages that your port installs.
 # These manpages will be automatically listed in ${PLIST}.  Depending
-# on the setting of NOMANCOMPRESS, the make rules will compress the
+# on the setting of NO_MANCOMPRESS, the make rules will compress the
 # manpages for you.
 #
 # MAN<sect>		- A list of manpages, categorized by section.  For
@@ -653,7 +653,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # MANCOMPRESSED	- This variable can take values "yes", "no" or
 #				  "maybe".  "yes" means manpages are installed
 #				  compressed; "no" means they are not; "maybe" means
-#				  it changes depending on the value of NOMANCOMPRESS.
+#				  it changes depending on the value of NO_MANCOMPRESS.
 #				  Default: "yes" if USE_IMAKE is set and NO_INSTALL_MANPAGES
 #				  is not set, and "no" otherwise.
 #
@@ -2291,7 +2291,7 @@ EXTRACT_BEFORE_ARGS?=	-dc
 .if defined(EXTRACT_PRESERVE_OWNERSHIP)
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
 .else
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner --no-same-permissions
 .endif
 .if defined(USE_BZIP2)
 EXTRACT_CMD?=			${BZIP2_CMD}
@@ -2955,7 +2955,7 @@ MANNPREFIX?=	${MANPREFIX}
 
 MANLANG?=	""	# english only by default
 
-.if !defined(NOMANCOMPRESS)
+.if !defined(NO_MANCOMPRESS)
 MANEXT=	.gz
 .endif
 
@@ -3039,7 +3039,7 @@ _TMLINKS=
 
 .if defined(_MANPAGES)
 
-.if defined(NOMANCOMPRESS)
+.if defined(NO_MANCOMPRESS)
 __MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%}
 .else
 __MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
@@ -4253,10 +4253,10 @@ _CHROOT_SEQ=	post-chroot
 .else
 _CHROOT_SEQ=
 .endif
-_SANITY_SEQ=	${_CHROOT_SEQ} pre-everything check-makefile check-categories \
-				check-makevars check-desktop-entries check-depends \
-				check-deprecated check-vulnerable buildanyway-message \
-				options-message
+_SANITY_SEQ=	${_CHROOT_SEQ} pre-everything check-makefile \
+				check-categories check-makevars check-desktop-entries \
+				check-conflicts check-depends check-deprecated \
+				check-vulnerable buildanyway-message options-message
 _FETCH_DEP=		check-sanity
 _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
@@ -4275,8 +4275,7 @@ _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
 _INSTALL_DEP=	build
-_INSTALL_SEQ=	install-message check-conflicts \
-				run-depends lib-depends apply-slist pre-install \
+_INSTALL_SEQ=	install-message run-depends lib-depends apply-slist pre-install \
 				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script create-users-groups do-install \
@@ -5479,7 +5478,7 @@ missing:
 . if !target(describe)
 _EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
 _PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
-_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} 
+_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
 _LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
 _BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
 _RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
@@ -5502,7 +5501,7 @@ describe:
 			break; \
 			;; \
 		esac; \
-	done < ${DESCR}; ${ECHO_CMD} 
+	done < ${DESCR}; ${ECHO_CMD}
 . endif
 .else
 . if !target(describe)
@@ -5875,10 +5874,10 @@ install-rc-script:
 .if !target(compress-man)
 compress-man:
 .if defined(_MANPAGES) || defined(_MLINKS)
-.if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
+.if ${MANCOMPRESSED} == yes && defined(NO_MANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
 	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
-.elif ${MANCOMPRESSED} == no && !defined(NOMANCOMPRESS)
+.elif ${MANCOMPRESSED} == no && !defined(NO_MANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
 	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
 .endif

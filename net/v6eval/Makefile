@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
 
 USE_PERL5=	yes
 USE_OPENSSL=	yes
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 MAN1PREFIX=	${PREFIX}/v6eval
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		pktctl.1.gz pktsend.1.gz

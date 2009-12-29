@@ -100,7 +100,7 @@ MAKE_ARGS+=	ARCH=x86
 # Erlang man pages are more of internal documentation using the man format than
 # actual system man pages. (erl.1 and epmd.1 perhaps being the exception).
 
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 
 MAN1PREFIX=	${PREFIX}/lib/erlang
 MAN3PREFIX=	${PREFIX}/lib/erlang

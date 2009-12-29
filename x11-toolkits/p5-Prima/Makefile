@@ -51,7 +51,7 @@ CONFIGURE_SCRIPT=	Makefile.PL
 USE_XORG=		x11 xpm xext xrender
 USE_PERL5=		yes
 MAN3PREFIX=		lib/perl5/${PERL_VERSION}
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 
 post-configure:
 	@cd ${CONFIGURE_WRKSRC} && ${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}

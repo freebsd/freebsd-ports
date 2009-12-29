@@ -10,7 +10,7 @@ PREFIX?=	/usr/X11R6
 DESTDIR=	${PREFIX}
 BINDIR=		/bin
 MANDIR=		/man/man
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 
 FILES=	cham.xpm
 FILESDIR=	/share/pixmaps

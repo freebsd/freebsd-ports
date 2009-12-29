@@ -18,8 +18,8 @@ COMMENT=	Linux-compatability ktrace.out processor
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/emulators/linux_base-gentoo-stage3
 
 ONLY_FOR_ARCHS=	i386 amd64
+NO_MANCOMPRESS=	yes
 MAN1=		linux_kdump.1.gz
-NOMANCOMPRESS=	true
 PLIST_FILES=	bin/linux_kdump
 
 .include <bsd.port.pre.mk>

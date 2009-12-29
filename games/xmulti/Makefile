@@ -21,7 +21,7 @@ USE_IMAKE=	yes
 USE_XORG=	x11 xext xaw xmu xt xpm sm ice
 
 MAN1=		xmaid.1
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 DOCSDIR=	${PREFIX}/share/doc/ja/{PORTNAME}
 
 post-install:

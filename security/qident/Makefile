@@ -20,7 +20,7 @@ MAN1=		qident.1
 MANCOMPRESSED=	maybe
 
 # MAN page COMPression SUFFIX
-.if !defined(NOMANCOMPRESS)
+.if !defined(NO_MANCOMPRESS)
 MANCOMPSUFFIX=	.gz
 .else
 MANCOMPSUFFIX=
