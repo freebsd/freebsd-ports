@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.14
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
@@ -32,6 +32,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|= @mixer_flag@|= @INTLLIBS@ @mixer_flag@|g ; \
 		 s|--mode=666||g' ${WRKSRC}/src/Makefile.in
 
