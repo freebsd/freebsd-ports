@@ -1,33 +1,39 @@
 --- ./eiskaltdc/CMakeLists.txt.orig	2009-10-23 02:33:43.000000000 +1100
 +++ ./eiskaltdc/CMakeLists.txt	2009-11-06 16:51:20.000000000 +1000
-@@ -384,7 +384,7 @@
- 		)
- 	MESSAGE (STATUS "Build svn revision: ${SVNVERSION}")
- ENDIF (NOT DEFINED SVNVERSION)
+@@ -253,7 +253,7 @@
+ IF (NOT SVNVERSION)
+     SET (SVNVERSION "release")
+ ENDIF (NOT SVNVERSION)
 -#CONFIGURE_FILE(eiskaltdc-1.1.0.pc.cmake.in ${CMAKE_BINARY_DIR}/eiskaltdc-1.1.0.pc)
 +CONFIGURE_FILE(eiskaltdc-1.1.0.pc.cmake.in ${CMAKE_BINARY_DIR}/eiskaltdc-1.1.0.pc)
  CONFIGURE_FILE (${PROJECT_SOURCE_DIR}/config.h.in ${PROJECT_SOURCE_DIR}/config.h)
  # actual targets:
  IF (UNIX)
-@@ -447,9 +447,9 @@
- 	INSTALL (DIRECTORY icons/appl icons/emot icons/user DESTINATION ${EISKALT_ICONS_DEST} PATTERN ".svn" EXCLUDE)
- 	INSTALL (FILES ${FLAG} DESTINATION ${EISKALT_ICONS_DEST}/appl/default )
- 	INSTALL (DIRECTORY sounds/ DESTINATION ${EISKALT_SOUNDS_DEST} PATTERN ".svn" EXCLUDE
--	PATTERN "Makefile.am" EXCLUDE)
-+	PATTERN "Makefile.am" EXCLUDE PATTERN "Makefile.in" EXCLUDE)
- 	INSTALL (FILES ../COPYING DESTINATION share/eiskaltdc)
--	#INSTALL (FILES ${HDRS} ${hdrs} DESTINATION include/eiskaltdc)
-+	INSTALL (FILES ${HDRS} ${hdrs} DESTINATION include/eiskaltdc)
- 	INSTALL (FILES icons/icon_128x128.png DESTINATION share/icons/hicolor/128x128/apps RENAME eiskaltdc.png)
- 	INSTALL (FILES icons/icon_64x64.png DESTINATION share/icons/hicolor/64x64/apps RENAME eiskaltdc.png)
- 	INSTALL (FILES icons/icon_32x32.png DESTINATION share/icons/hicolor/32x32/apps RENAME eiskaltdc.png)
-@@ -460,7 +460,7 @@
- 	INSTALL (FILES icons/icon_128x128.png DESTINATION share/pixmaps/ RENAME eiskaltdc.png)
+@@ -286,7 +286,7 @@
+         INSTALL (TARGETS eiskalt eiskaltdc
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION ${LIBDIR}
+-        NAMELINK_SKIP)
++        )
+         #INSTALL (FILES ${CMAKE_BINARY_DIR}/eiskaltdc/libeiskaltdcstatic.a DESTINATION lib RENAME libeiskaltdc.a)
+         INSTALL (FILES ${COMPILED_TRANSLATIONS} DESTINATION ${EISKALT_TRANSLATIONS_DEST})
+         INSTALL (DIRECTORY icons/appl icons/emot icons/user DESTINATION ${EISKALT_ICONS_DEST} PATTERN ".svn" EXCLUDE)
+@@ -294,7 +294,7 @@
+         INSTALL (DIRECTORY sounds/ DESTINATION ${EISKALT_SOUNDS_DEST} PATTERN ".svn" EXCLUDE
+         PATTERN "Makefile.*" EXCLUDE)
+         INSTALL (FILES ../COPYING DESTINATION share/eiskaltdc)
+-        #INSTALL (FILES ${HDRS} ${hdrs} DESTINATION include/eiskaltdc)
++        INSTALL (FILES ${HDRS} ${hdrs} DESTINATION include/eiskaltdc)
+         INSTALL (FILES icons/icon_128x128.png DESTINATION share/icons/hicolor/128x128/apps RENAME eiskaltdc.png)
+         INSTALL (FILES icons/icon_64x64.png DESTINATION share/icons/hicolor/64x64/apps RENAME eiskaltdc.png)
+         INSTALL (FILES icons/icon_32x32.png DESTINATION share/icons/hicolor/32x32/apps RENAME eiskaltdc.png)
+@@ -305,7 +305,7 @@
+         INSTALL (FILES icons/icon_128x128.png DESTINATION share/pixmaps/ RENAME eiskaltdc.png)
  IF (UNIX)
- 	INSTALL (FILES ../eiskaltdc.desktop DESTINATION share/applications RENAME eiskaltdc.desktop)
--	INSTALL (FILES docs/en/eiskaltdc.1.gz DESTINATION share/man/man1)
--	#INSTALL (FILES ${CMAKE_BINARY_DIR}/eiskaltdc-1.1.0.pc DESTINATION include/pkgconfig)
-+	INSTALL (FILES docs/en/eiskaltdc.1.gz DESTINATION man/man1)
-+	INSTALL (FILES ${CMAKE_BINARY_DIR}/eiskaltdc-1.1.0.pc DESTINATION libdata/pkgconfig)
+         INSTALL (FILES ../eiskaltdc.desktop DESTINATION share/applications RENAME eiskaltdc.desktop)
+-        INSTALL (FILES docs/en/eiskaltdc.1.gz DESTINATION share/man/man1)
+-        #INSTALL (FILES ${CMAKE_BINARY_DIR}/eiskaltdc-1.1.0.pc DESTINATION include/pkgconfig)
++        INSTALL (FILES docs/en/eiskaltdc.1.gz DESTINATION man/man1)
++        INSTALL (FILES ${CMAKE_BINARY_DIR}/eiskaltdc-1.1.0.pc DESTINATION libdata/pkgconfig)
  ENDIF (UNIX)
  
