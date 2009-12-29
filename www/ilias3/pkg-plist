@@ -3166,6 +3166,7 @@ www/ilias/Services/Utilities/classes/class.ilConfirmationGUI.php
 www/ilias/Services/Utilities/classes/class.ilDOMUtil.php
 www/ilias/Services/Utilities/classes/class.ilFileUtils.php
 www/ilias/Services/Utilities/classes/class.ilFileUtilsException.php
+www/ilias/Services/Utilities/classes/class.ilMimeTypeUtil.php
 www/ilias/Services/Utilities/classes/class.ilMWParserAdapter.php
 www/ilias/Services/Utilities/classes/class.ilSaxController.php
 www/ilias/Services/Utilities/classes/class.ilStr.php
