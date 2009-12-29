@@ -6,33 +6,47 @@
 #
 
 PORTNAME=	griffith
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	deskutils
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
-		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
-		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.4.8:${PORTSDIR}/databases/py-sqlalchemy
+RUN_DEPENDS=	py*-pysqlite>=2.0:${PORTSDIR}/databases/py-pysqlite23 \
+		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
+		py*-imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		py*-reportlab>=1.19:${PORTSDIR}/print/py-reportlab \
+		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
+		${PYXML}
 
-USE_GETTEXT=	yes
+USE_GNOME=	pygtk2
+WANT_GNOME=	yes
 USE_PYTHON=	yes
-USE_GNOME=	pygtk2 pygnomeextras
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes
-MAN1=		${PORTNAME}.1
+
 MANLANG=	"" pl pt
+MAN1=		${PORTNAME}.1
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mpygnomeextras}!=""
+USE_GNOME+=	pygnomeextras
+.endif
 
 post-patch:
-	@${FIND} ${WRKSRC}/ -name Makefile |\
-		${XARGS} ${REINPLACE_CMD} -e '/^PREFIX/d' -e '/^MANDIR/s|=.*|=${MANPREFIX}/man|'
-	@${REINPLACE_CMD} -e '/^LANGUAGES=/s|find.*|cd i18n/\&\&ls -d *)|' ${WRKSRC}/Makefile
-#	@${REINPLACE_CMD} -e 's|/usr/share/fonts|${LOCALBASE}/lib/X11/fonts|' ${WRKSRC}/${PORTNAME}
+.for file in Makefile
+	@${REINPLACE_CMD} -e \
+		'/^LANGUAGES=/s|find.*|cd i18n/\&\&ls -d *)|g ; \
+		 /^PREFIX/s|^|#|g ; \
+		 /^ETCDIR/s|=.*|= $$(PREFIX)/etc|g' ${WRKSRC}/${file}
+.endfor
+.for file in docs/en/Makefile docs/pl/Makefile docs/pt/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^PREFIX/s|^|#|g ; \
+		 /^MANDIR/s|=.*|=${MANPREFIX}/man|g' ${WRKSRC}/${file}
+.endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
