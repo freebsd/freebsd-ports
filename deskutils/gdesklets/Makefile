@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.35.4
-PORTREVISION=	6
+PORTVERSION=	0.36.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.de/files/ \
-		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
-DISTNAME=	gDesklets-${PORTVERSION}
+		GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for Gnome 2.x for desktop applets
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
-INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
+OPTIONS=	GDBM "install py-gdbm instead py-bsddb for config storage" off
+
+WRKSRC=		${WRKDIR}/gDesklets-${PORTVERSION}
+
+USE_GNOME=	gnomehack gnomeprefix intlhack librsvg2 pygnomeextras
+USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack librsvg2 pygnomeextras
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_ICONS=	yes
 
-OPTIONS=	GDBM "install py-gdbm instead py-bsddb for config storage" off
+MAN1=		${PORTNAME}.1
 
-MAN1=	gdesklets.1
-MANCOMPRESSED=	no
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -39,13 +41,12 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
 post-install:
-	@${MKDIR} ${PREFIX}/share/gdesklets/Displays
-	@${MKDIR} ${PREFIX}/share/gdesklets/Sensors
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets
+	@${MKDIR} ${DATADIR}/Displays
+	@${TOUCH} ${DATADIR}/Displays/.keep_me
+	@${MKDIR} ${DATADIR}/Sensors
+	@${TOUCH} ${DATADIR}/Sensors/.keep_me
+	@-update-mime-database ${PREFIX}/share/mime
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

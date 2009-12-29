@@ -1,19 +1,33 @@
 bin/gdesklets
-lib/gdesklets/ctrlinfo
-lib/gdesklets/Controls/ArrayBuffer/__init__.py
-lib/gdesklets/Controls/ArrayBuffer/__init__.pyc
+lib/gdesklets/Additions/bg/black.svg
+lib/gdesklets/Additions/bg/blue.svg
+lib/gdesklets/Additions/bg/fancy-blue.png
+lib/gdesklets/Additions/bg/glass.svg
+lib/gdesklets/Additions/bg/grass.png
+lib/gdesklets/Additions/bg/green.svg
+lib/gdesklets/Additions/bg/grey.svg
+lib/gdesklets/Additions/bg/old-paper-edges.png
+lib/gdesklets/Additions/bg/old-paper.png
+lib/gdesklets/Additions/bg/old-paper2.png
+lib/gdesklets/Additions/bg/red.svg
 lib/gdesklets/Controls/ArrayBuffer/IArrayBuffer.py
 lib/gdesklets/Controls/ArrayBuffer/IArrayBuffer.pyc
-lib/gdesklets/Controls/EventPipe/__init__.py
-lib/gdesklets/Controls/EventPipe/__init__.pyc
-lib/gdesklets/Controls/EventPipe/IEventPipe.py
-lib/gdesklets/Controls/EventPipe/IEventPipe.pyc
+lib/gdesklets/Controls/ArrayBuffer/IArrayBuffer.pyo
+lib/gdesklets/Controls/ArrayBuffer/__init__.py
+lib/gdesklets/Controls/ArrayBuffer/__init__.pyc
+lib/gdesklets/Controls/ArrayBuffer/__init__.pyo
 lib/gdesklets/Controls/Calendar/ICalendar.py
 lib/gdesklets/Controls/Calendar/ICalendar.pyc
 lib/gdesklets/Controls/Calendar/ICalendar.pyo
 lib/gdesklets/Controls/Calendar/__init__.py
 lib/gdesklets/Controls/Calendar/__init__.pyc
 lib/gdesklets/Controls/Calendar/__init__.pyo
+lib/gdesklets/Controls/EventPipe/IEventPipe.py
+lib/gdesklets/Controls/EventPipe/IEventPipe.pyc
+lib/gdesklets/Controls/EventPipe/IEventPipe.pyo
+lib/gdesklets/Controls/EventPipe/__init__.py
+lib/gdesklets/Controls/EventPipe/__init__.pyc
+lib/gdesklets/Controls/EventPipe/__init__.pyo
 lib/gdesklets/Controls/HDDTemp/IHDDTemp.py
 lib/gdesklets/Controls/HDDTemp/IHDDTemp.pyc
 lib/gdesklets/Controls/HDDTemp/IHDDTemp.pyo
@@ -23,6 +37,12 @@ lib/gdesklets/Controls/HDDTemp/__init__.pyo
 lib/gdesklets/Controls/HDDTemp/impl.py
 lib/gdesklets/Controls/HDDTemp/impl.pyc
 lib/gdesklets/Controls/HDDTemp/impl.pyo
+lib/gdesklets/Controls/Random/IRandom.py
+lib/gdesklets/Controls/Random/IRandom.pyc
+lib/gdesklets/Controls/Random/IRandom.pyo
+lib/gdesklets/Controls/Random/__init__.py
+lib/gdesklets/Controls/Random/__init__.pyc
+lib/gdesklets/Controls/Random/__init__.pyo
 lib/gdesklets/Controls/Sensors/ISensor.py
 lib/gdesklets/Controls/Sensors/ISensor.pyc
 lib/gdesklets/Controls/Sensors/ISensor.pyo
@@ -50,6 +70,165 @@ lib/gdesklets/Controls/URI/__init__.pyo
 lib/gdesklets/Controls/__init__.py
 lib/gdesklets/Controls/__init__.pyc
 lib/gdesklets/Controls/__init__.pyo
+lib/gdesklets/Displays/15pieces/15pieces.display
+lib/gdesklets/Displays/15pieces/COPYING
+lib/gdesklets/Displays/15pieces/GNU/1.png
+lib/gdesklets/Displays/15pieces/GNU/10.png
+lib/gdesklets/Displays/15pieces/GNU/11.png
+lib/gdesklets/Displays/15pieces/GNU/12.png
+lib/gdesklets/Displays/15pieces/GNU/13.png
+lib/gdesklets/Displays/15pieces/GNU/14.png
+lib/gdesklets/Displays/15pieces/GNU/15.png
+lib/gdesklets/Displays/15pieces/GNU/2.png
+lib/gdesklets/Displays/15pieces/GNU/3.png
+lib/gdesklets/Displays/15pieces/GNU/4.png
+lib/gdesklets/Displays/15pieces/GNU/5.png
+lib/gdesklets/Displays/15pieces/GNU/6.png
+lib/gdesklets/Displays/15pieces/GNU/7.png
+lib/gdesklets/Displays/15pieces/GNU/8.png
+lib/gdesklets/Displays/15pieces/GNU/9.png
+lib/gdesklets/Displays/15pieces/GNU/bg.png
+lib/gdesklets/Displays/15pieces/GNU/free.png
+lib/gdesklets/Displays/15pieces/GNU/restart.png
+lib/gdesklets/Displays/15pieces/Globe/1.png
+lib/gdesklets/Displays/15pieces/Globe/10.png
+lib/gdesklets/Displays/15pieces/Globe/11.png
+lib/gdesklets/Displays/15pieces/Globe/12.png
+lib/gdesklets/Displays/15pieces/Globe/13.png
+lib/gdesklets/Displays/15pieces/Globe/14.png
+lib/gdesklets/Displays/15pieces/Globe/15.png
+lib/gdesklets/Displays/15pieces/Globe/2.png
+lib/gdesklets/Displays/15pieces/Globe/3.png
+lib/gdesklets/Displays/15pieces/Globe/4.png
+lib/gdesklets/Displays/15pieces/Globe/5.png
+lib/gdesklets/Displays/15pieces/Globe/6.png
+lib/gdesklets/Displays/15pieces/Globe/7.png
+lib/gdesklets/Displays/15pieces/Globe/8.png
+lib/gdesklets/Displays/15pieces/Globe/9.png
+lib/gdesklets/Displays/15pieces/Globe/bg.png
+lib/gdesklets/Displays/15pieces/Globe/free.png
+lib/gdesklets/Displays/15pieces/Globe/restart.png
+lib/gdesklets/Displays/15pieces/Gnome/1.png
+lib/gdesklets/Displays/15pieces/Gnome/10.png
+lib/gdesklets/Displays/15pieces/Gnome/11.png
+lib/gdesklets/Displays/15pieces/Gnome/12.png
+lib/gdesklets/Displays/15pieces/Gnome/13.png
+lib/gdesklets/Displays/15pieces/Gnome/14.png
+lib/gdesklets/Displays/15pieces/Gnome/15.png
+lib/gdesklets/Displays/15pieces/Gnome/2.png
+lib/gdesklets/Displays/15pieces/Gnome/3.png
+lib/gdesklets/Displays/15pieces/Gnome/4.png
+lib/gdesklets/Displays/15pieces/Gnome/5.png
+lib/gdesklets/Displays/15pieces/Gnome/6.png
+lib/gdesklets/Displays/15pieces/Gnome/7.png
+lib/gdesklets/Displays/15pieces/Gnome/8.png
+lib/gdesklets/Displays/15pieces/Gnome/9.png
+lib/gdesklets/Displays/15pieces/Gnome/bg.png
+lib/gdesklets/Displays/15pieces/Gnome/free.png
+lib/gdesklets/Displays/15pieces/Gnome/restart.png
+lib/gdesklets/Displays/15pieces/Numbers/1.png
+lib/gdesklets/Displays/15pieces/Numbers/10.png
+lib/gdesklets/Displays/15pieces/Numbers/11.png
+lib/gdesklets/Displays/15pieces/Numbers/12.png
+lib/gdesklets/Displays/15pieces/Numbers/13.png
+lib/gdesklets/Displays/15pieces/Numbers/14.png
+lib/gdesklets/Displays/15pieces/Numbers/15.png
+lib/gdesklets/Displays/15pieces/Numbers/2.png
+lib/gdesklets/Displays/15pieces/Numbers/3.png
+lib/gdesklets/Displays/15pieces/Numbers/4.png
+lib/gdesklets/Displays/15pieces/Numbers/5.png
+lib/gdesklets/Displays/15pieces/Numbers/6.png
+lib/gdesklets/Displays/15pieces/Numbers/7.png
+lib/gdesklets/Displays/15pieces/Numbers/8.png
+lib/gdesklets/Displays/15pieces/Numbers/9.png
+lib/gdesklets/Displays/15pieces/Numbers/bg.png
+lib/gdesklets/Displays/15pieces/Numbers/free.png
+lib/gdesklets/Displays/15pieces/Numbers/restart.png
+lib/gdesklets/Displays/15pieces/README
+lib/gdesklets/Displays/15pieces/Tux/1.png
+lib/gdesklets/Displays/15pieces/Tux/10.png
+lib/gdesklets/Displays/15pieces/Tux/11.png
+lib/gdesklets/Displays/15pieces/Tux/12.png
+lib/gdesklets/Displays/15pieces/Tux/13.png
+lib/gdesklets/Displays/15pieces/Tux/14.png
+lib/gdesklets/Displays/15pieces/Tux/15.png
+lib/gdesklets/Displays/15pieces/Tux/2.png
+lib/gdesklets/Displays/15pieces/Tux/3.png
+lib/gdesklets/Displays/15pieces/Tux/4.png
+lib/gdesklets/Displays/15pieces/Tux/5.png
+lib/gdesklets/Displays/15pieces/Tux/6.png
+lib/gdesklets/Displays/15pieces/Tux/7.png
+lib/gdesklets/Displays/15pieces/Tux/8.png
+lib/gdesklets/Displays/15pieces/Tux/9.png
+lib/gdesklets/Displays/15pieces/Tux/bg.png
+lib/gdesklets/Displays/15pieces/Tux/free.png
+lib/gdesklets/Displays/15pieces/Tux/restart.png
+lib/gdesklets/Displays/15pieces/gDesklets/1.png
+lib/gdesklets/Displays/15pieces/gDesklets/10.png
+lib/gdesklets/Displays/15pieces/gDesklets/11.png
+lib/gdesklets/Displays/15pieces/gDesklets/12.png
+lib/gdesklets/Displays/15pieces/gDesklets/13.png
+lib/gdesklets/Displays/15pieces/gDesklets/14.png
+lib/gdesklets/Displays/15pieces/gDesklets/15.png
+lib/gdesklets/Displays/15pieces/gDesklets/2.png
+lib/gdesklets/Displays/15pieces/gDesklets/3.png
+lib/gdesklets/Displays/15pieces/gDesklets/4.png
+lib/gdesklets/Displays/15pieces/gDesklets/5.png
+lib/gdesklets/Displays/15pieces/gDesklets/6.png
+lib/gdesklets/Displays/15pieces/gDesklets/7.png
+lib/gdesklets/Displays/15pieces/gDesklets/8.png
+lib/gdesklets/Displays/15pieces/gDesklets/9.png
+lib/gdesklets/Displays/15pieces/gDesklets/bg.png
+lib/gdesklets/Displays/15pieces/gDesklets/free.png
+lib/gdesklets/Displays/15pieces/gDesklets/restart.png
+lib/gdesklets/Displays/15pieces/gfx/dummy.png
+lib/gdesklets/Displays/15pieces/make_tiles.sh
+lib/gdesklets/Displays/Calendar/COPYING
+lib/gdesklets/Displays/Calendar/Calendar.display
+lib/gdesklets/Displays/Calendar/README
+lib/gdesklets/Displays/Calendar/cal.png
+lib/gdesklets/Displays/Calendar/calendar_mod.script
+lib/gdesklets/Displays/Calendar/events.script
+lib/gdesklets/Displays/Calendar/lang.script
+lib/gdesklets/Displays/Calendar/months/0.png
+lib/gdesklets/Displays/Calendar/months/1.png
+lib/gdesklets/Displays/Calendar/months/10.png
+lib/gdesklets/Displays/Calendar/months/11.png
+lib/gdesklets/Displays/Calendar/months/12.png
+lib/gdesklets/Displays/Calendar/months/2.png
+lib/gdesklets/Displays/Calendar/months/3.png
+lib/gdesklets/Displays/Calendar/months/4.png
+lib/gdesklets/Displays/Calendar/months/5.png
+lib/gdesklets/Displays/Calendar/months/6.png
+lib/gdesklets/Displays/Calendar/months/7.png
+lib/gdesklets/Displays/Calendar/months/8.png
+lib/gdesklets/Displays/Calendar/months/9.png
+lib/gdesklets/Displays/Calendar/months/README
+lib/gdesklets/Displays/Clock/COPYING
+lib/gdesklets/Displays/Clock/README
+lib/gdesklets/Displays/Clock/clock.display
+lib/gdesklets/Displays/Clock/gfx/aero.png
+lib/gdesklets/Displays/Clock/gfx/chrome.png
+lib/gdesklets/Displays/Clock/gfx/default.png
+lib/gdesklets/Displays/Clock/gfx/dull.png
+lib/gdesklets/Displays/Clock/gfx/fx.png
+lib/gdesklets/Displays/Clock/gfx/fxtux.png
+lib/gdesklets/Displays/Clock/gfx/gd.png
+lib/gdesklets/Displays/Clock/gfx/gnome.png
+lib/gdesklets/Displays/Clock/gfx/modern.png
+lib/gdesklets/Displays/Clock/gfx/moon.png
+lib/gdesklets/Displays/Clock/gfx/osX.png
+lib/gdesklets/Displays/Clock/gfx/pocketwatch.png
+lib/gdesklets/Displays/Clock/gfx/raf.png
+lib/gdesklets/Displays/Clock/gfx/rome.png
+lib/gdesklets/Displays/Clock/gfx/station.png
+lib/gdesklets/Displays/Clock/gfx/tux.png
+lib/gdesklets/Displays/Clock/timezones.script
+lib/gdesklets/Displays/Quote-of-the-Day/COPYING
+lib/gdesklets/Displays/Quote-of-the-Day/README
+lib/gdesklets/Displays/Quote-of-the-Day/quote.display
+lib/gdesklets/Displays/Quote-of-the-Day/quote.png
+lib/gdesklets/Displays/Quote-of-the-Day/quotes.script
 lib/gdesklets/Sensors/External/__init__.py
 lib/gdesklets/Sensors/External/__init__.pyc
 lib/gdesklets/Sensors/External/__init__.pyo
@@ -68,12 +247,15 @@ lib/gdesklets/config/ConfigButton.pyo
 lib/gdesklets/config/ConfigColor.py
 lib/gdesklets/config/ConfigColor.pyc
 lib/gdesklets/config/ConfigColor.pyo
-lib/gdesklets/config/ConfigDialog.py
-lib/gdesklets/config/ConfigDialog.pyc
-lib/gdesklets/config/ConfigDialog.pyo
 lib/gdesklets/config/ConfigDPI.py
 lib/gdesklets/config/ConfigDPI.pyc
 lib/gdesklets/config/ConfigDPI.pyo
+lib/gdesklets/config/ConfigDate.py
+lib/gdesklets/config/ConfigDate.pyc
+lib/gdesklets/config/ConfigDate.pyo
+lib/gdesklets/config/ConfigDialog.py
+lib/gdesklets/config/ConfigDialog.pyc
+lib/gdesklets/config/ConfigDialog.pyo
 lib/gdesklets/config/ConfigEnum.py
 lib/gdesklets/config/ConfigEnum.pyc
 lib/gdesklets/config/ConfigEnum.pyo
@@ -83,18 +265,24 @@ lib/gdesklets/config/ConfigFloat.pyo
 lib/gdesklets/config/ConfigFont.py
 lib/gdesklets/config/ConfigFont.pyc
 lib/gdesklets/config/ConfigFont.pyo
+lib/gdesklets/config/ConfigInfo.py
+lib/gdesklets/config/ConfigInfo.pyc
+lib/gdesklets/config/ConfigInfo.pyo
 lib/gdesklets/config/ConfigInteger.py
 lib/gdesklets/config/ConfigInteger.pyc
 lib/gdesklets/config/ConfigInteger.pyo
 lib/gdesklets/config/ConfigKeyBinding.py
 lib/gdesklets/config/ConfigKeyBinding.pyc
 lib/gdesklets/config/ConfigKeyBinding.pyo
+lib/gdesklets/config/ConfigList.py
+lib/gdesklets/config/ConfigList.pyc
+lib/gdesklets/config/ConfigList.pyo
 lib/gdesklets/config/ConfigManager.py
 lib/gdesklets/config/ConfigManager.pyc
 lib/gdesklets/config/ConfigManager.pyo
-lib/gdesklets/config/ConfigUnit.py
-lib/gdesklets/config/ConfigUnit.pyc
-lib/gdesklets/config/ConfigUnit.pyo
+lib/gdesklets/config/ConfigRadio.py
+lib/gdesklets/config/ConfigRadio.pyc
+lib/gdesklets/config/ConfigRadio.pyo
 lib/gdesklets/config/ConfigString.py
 lib/gdesklets/config/ConfigString.pyc
 lib/gdesklets/config/ConfigString.pyo
@@ -104,6 +292,9 @@ lib/gdesklets/config/ConfigTitle.pyo
 lib/gdesklets/config/ConfigURI.py
 lib/gdesklets/config/ConfigURI.pyc
 lib/gdesklets/config/ConfigURI.pyo
+lib/gdesklets/config/ConfigUnit.py
+lib/gdesklets/config/ConfigUnit.pyc
+lib/gdesklets/config/ConfigUnit.pyo
 lib/gdesklets/config/ConfigWidget.py
 lib/gdesklets/config/ConfigWidget.pyc
 lib/gdesklets/config/ConfigWidget.pyo
@@ -122,7 +313,9 @@ lib/gdesklets/config/__init__.pyo
 lib/gdesklets/config/settings.py
 lib/gdesklets/config/settings.pyc
 lib/gdesklets/config/settings.pyo
+lib/gdesklets/ctrlinfo
 lib/gdesklets/data/about.png
+lib/gdesklets/data/calendar.png
 lib/gdesklets/data/gdesklets.png
 lib/gdesklets/display/ContainerTarget.py
 lib/gdesklets/display/ContainerTarget.pyc
@@ -202,6 +395,15 @@ lib/gdesklets/display/__init__.pyo
 lib/gdesklets/display/targetregistry.py
 lib/gdesklets/display/targetregistry.pyc
 lib/gdesklets/display/targetregistry.pyo
+lib/gdesklets/doc/basic/Images/desklet-context-menu.png
+lib/gdesklets/doc/basic/Images/desklet-start-shell.png
+lib/gdesklets/doc/basic/Images/gdesklets.png
+lib/gdesklets/doc/basic/Images/open-command.png
+lib/gdesklets/doc/basic/Images/preferences.png
+lib/gdesklets/doc/basic/Images/profile.png
+lib/gdesklets/doc/basic/Images/remote.png
+lib/gdesklets/doc/basic/Images/shell.png
+lib/gdesklets/doc/basic/gdesklets-doc.xml
 lib/gdesklets/factory/ControlFactory.py
 lib/gdesklets/factory/ControlFactory.pyc
 lib/gdesklets/factory/ControlFactory.pyo
@@ -219,9 +421,6 @@ lib/gdesklets/gdesklets-daemon
 lib/gdesklets/gdesklets-logview
 lib/gdesklets/gdesklets-migration-tool
 lib/gdesklets/gdesklets-shell
-lib/gdesklets/layout/__init__.py
-lib/gdesklets/layout/__init__.pyc
-lib/gdesklets/layout/__init__.pyo
 lib/gdesklets/layout/HashPQueue.py
 lib/gdesklets/layout/HashPQueue.pyc
 lib/gdesklets/layout/HashPQueue.pyo
@@ -231,6 +430,9 @@ lib/gdesklets/layout/LayoutObject.pyo
 lib/gdesklets/layout/Unit.py
 lib/gdesklets/layout/Unit.pyc
 lib/gdesklets/layout/Unit.pyo
+lib/gdesklets/layout/__init__.py
+lib/gdesklets/layout/__init__.pyc
+lib/gdesklets/layout/__init__.pyo
 lib/gdesklets/libdesklets/__init__.py
 lib/gdesklets/libdesklets/__init__.pyc
 lib/gdesklets/libdesklets/__init__.pyo
@@ -347,12 +549,12 @@ lib/gdesklets/plugin/PluginRegistry.pyo
 lib/gdesklets/plugin/__init__.py
 lib/gdesklets/plugin/__init__.pyc
 lib/gdesklets/plugin/__init__.pyo
-lib/gdesklets/scripting/ElementWrapper.py
-lib/gdesklets/scripting/ElementWrapper.pyc
-lib/gdesklets/scripting/ElementWrapper.pyo
 lib/gdesklets/scripting/ControlWrapper.py
 lib/gdesklets/scripting/ControlWrapper.pyc
 lib/gdesklets/scripting/ControlWrapper.pyo
+lib/gdesklets/scripting/ElementWrapper.py
+lib/gdesklets/scripting/ElementWrapper.pyc
+lib/gdesklets/scripting/ElementWrapper.pyo
 lib/gdesklets/scripting/Script.py
 lib/gdesklets/scripting/Script.pyc
 lib/gdesklets/scripting/Script.pyo
@@ -462,8 +664,12 @@ lib/gdesklets/shell/plugins/ViewSwitch/__init__.pyo
 lib/gdesklets/shell/plugins/gDeskletsClient/__init__.py
 lib/gdesklets/shell/plugins/gDeskletsClient/__init__.pyc
 lib/gdesklets/shell/plugins/gDeskletsClient/__init__.pyo
-lib/gdesklets/test-control.py
-lib/gdesklets/test-control.pyc
+lib/gdesklets/utils/BGWatcher.py
+lib/gdesklets/utils/BGWatcher.pyc
+lib/gdesklets/utils/BGWatcher.pyo
+lib/gdesklets/utils/BinTree.py
+lib/gdesklets/utils/BinTree.pyc
+lib/gdesklets/utils/BinTree.pyo
 lib/gdesklets/utils/DOM.py
 lib/gdesklets/utils/DOM.pyc
 lib/gdesklets/utils/DOM.pyo
@@ -473,21 +679,15 @@ lib/gdesklets/utils/Element.pyo
 lib/gdesklets/utils/ErrorFormatter.py
 lib/gdesklets/utils/ErrorFormatter.pyc
 lib/gdesklets/utils/ErrorFormatter.pyo
-lib/gdesklets/utils/BGWatcher.py
-lib/gdesklets/utils/BGWatcher.pyc
-lib/gdesklets/utils/BGWatcher.pyo
-lib/gdesklets/utils/BinTree.py
-lib/gdesklets/utils/BinTree.pyc
-lib/gdesklets/utils/BinTree.pyo
 lib/gdesklets/utils/HIGDialog.py
 lib/gdesklets/utils/HIGDialog.pyc
 lib/gdesklets/utils/HIGDialog.pyo
-lib/gdesklets/utils/LogView.py
-lib/gdesklets/utils/LogView.pyc
-lib/gdesklets/utils/LogView.pyo
 lib/gdesklets/utils/KeyBinding.py
 lib/gdesklets/utils/KeyBinding.pyc
 lib/gdesklets/utils/KeyBinding.pyo
+lib/gdesklets/utils/LogView.py
+lib/gdesklets/utils/LogView.pyc
+lib/gdesklets/utils/LogView.pyo
 lib/gdesklets/utils/MetaDataRegistry.py
 lib/gdesklets/utils/MetaDataRegistry.pyc
 lib/gdesklets/utils/MetaDataRegistry.pyo
@@ -535,8 +735,6 @@ lib/gdesklets/utils/pwstore.pyc
 lib/gdesklets/utils/pwstore.pyo
 lib/gdesklets/utils/svg.la
 lib/gdesklets/utils/svg.so
-lib/gdesklets/utils/systray.la
-lib/gdesklets/utils/systray.so
 lib/gdesklets/utils/tiling.la
 lib/gdesklets/utils/tiling.so
 lib/gdesklets/utils/typeconverter.py
@@ -554,9 +752,8 @@ lib/gdesklets/utils/xdr.py
 lib/gdesklets/utils/xdr.pyc
 lib/gdesklets/utils/xdr.pyo
 share/applications/gdesklets.desktop
-share/pixmaps/gdesklets.png
-@exec mkdir -p %D/share/gdesklets/Displays
-@exec mkdir -p %D/share/gdesklets/Sensors
+%%DATADIR%%/Displays/.keep_me
+%%DATADIR%%/Sensors/.keep_me
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gdesklets-display.png
 share/locale/ar/LC_MESSAGES/gdesklets.mo
 share/locale/az/LC_MESSAGES/gdesklets.mo
@@ -564,12 +761,15 @@ share/locale/bg/LC_MESSAGES/gdesklets.mo
 share/locale/ca/LC_MESSAGES/gdesklets.mo
 share/locale/cs/LC_MESSAGES/gdesklets.mo
 share/locale/de/LC_MESSAGES/gdesklets.mo
+share/locale/dz/LC_MESSAGES/gdesklets.mo
 share/locale/el/LC_MESSAGES/gdesklets.mo
 share/locale/en_CA/LC_MESSAGES/gdesklets.mo
 share/locale/en_GB/LC_MESSAGES/gdesklets.mo
 share/locale/es/LC_MESSAGES/gdesklets.mo
 share/locale/eu/LC_MESSAGES/gdesklets.mo
+share/locale/fi/LC_MESSAGES/gdesklets.mo
 share/locale/fr/LC_MESSAGES/gdesklets.mo
+share/locale/gl/LC_MESSAGES/gdesklets.mo
 share/locale/he/LC_MESSAGES/gdesklets.mo
 share/locale/hr/LC_MESSAGES/gdesklets.mo
 share/locale/hu/LC_MESSAGES/gdesklets.mo
@@ -578,10 +778,12 @@ share/locale/it/LC_MESSAGES/gdesklets.mo
 share/locale/ja/LC_MESSAGES/gdesklets.mo
 share/locale/ko/LC_MESSAGES/gdesklets.mo
 share/locale/lt/LC_MESSAGES/gdesklets.mo
+share/locale/lv/LC_MESSAGES/gdesklets.mo
 share/locale/ms/LC_MESSAGES/gdesklets.mo
 share/locale/nb/LC_MESSAGES/gdesklets.mo
 share/locale/ne/LC_MESSAGES/gdesklets.mo
 share/locale/nl/LC_MESSAGES/gdesklets.mo
+share/locale/oc/LC_MESSAGES/gdesklets.mo
 share/locale/pa/LC_MESSAGES/gdesklets.mo
 share/locale/pl/LC_MESSAGES/gdesklets.mo
 share/locale/pt/LC_MESSAGES/gdesklets.mo
@@ -594,18 +796,21 @@ share/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
 share/locale/sv/LC_MESSAGES/gdesklets.mo
 share/locale/tr/LC_MESSAGES/gdesklets.mo
 share/locale/uk/LC_MESSAGES/gdesklets.mo
-share/locale/zh_CN/LC_MESSAGES/gdesklets.mo
-share/locale/zh_TW/LC_MESSAGES/gdesklets.mo
-share/locale/lv/LC_MESSAGES/gdesklets.mo
 share/locale/vi/LC_MESSAGES/gdesklets.mo
-share/locale/fi/LC_MESSAGES/gdesklets.mo
-share/locale/gl/LC_MESSAGES/gdesklets.mo
+share/locale/zh_CN/LC_MESSAGES/gdesklets.mo
 share/locale/zh_HK/LC_MESSAGES/gdesklets.mo
-share/mime/application/x-gdesklets-display.xml
+share/locale/zh_TW/LC_MESSAGES/gdesklets.mo
 share/mime/packages/gdesklets.xml
-@dirrm share/gdesklets/Sensors
-@dirrm share/gdesklets/Displays
-@dirrm share/gdesklets
+share/pixmaps/gdesklets.png
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/icons/gnome/48x48/mimetypes
+@dirrm %%DATADIR%%/Sensors
+@dirrm %%DATADIR%%/Displays
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm lib/gdesklets/utils
 @dirrm lib/gdesklets/shell/plugins/gDeskletsClient
 @dirrm lib/gdesklets/shell/plugins/ViewSwitch
@@ -627,7 +832,6 @@ share/mime/packages/gdesklets.xml
 @dirrm lib/gdesklets/scripting
 @dirrm lib/gdesklets/plugin
 @dirrm lib/gdesklets/main
-@dirrm lib/gdesklets/layout
 @dirrm lib/gdesklets/libdesklets/system/OpenBSD
 @dirrm lib/gdesklets/libdesklets/system/NetBSD
 @dirrm lib/gdesklets/libdesklets/system/Linux
@@ -635,28 +839,43 @@ share/mime/packages/gdesklets.xml
 @dirrm lib/gdesklets/libdesklets/system
 @dirrm lib/gdesklets/libdesklets/controls
 @dirrm lib/gdesklets/libdesklets
+@dirrm lib/gdesklets/layout
 @dirrm lib/gdesklets/factory
+@dirrm lib/gdesklets/doc/basic/Images
+@dirrm lib/gdesklets/doc/basic
+@dirrm lib/gdesklets/doc
 @dirrm lib/gdesklets/display
 @dirrm lib/gdesklets/data
 @dirrm lib/gdesklets/config
 @dirrm lib/gdesklets/Sensors/FontSelector
 @dirrm lib/gdesklets/Sensors/External
 @dirrm lib/gdesklets/Sensors
+@dirrm lib/gdesklets/Displays/Quote-of-the-Day
+@dirrm lib/gdesklets/Displays/Clock/gfx
+@dirrm lib/gdesklets/Displays/Clock
+@dirrm lib/gdesklets/Displays/Calendar/months
+@dirrm lib/gdesklets/Displays/Calendar
+@dirrm lib/gdesklets/Displays/15pieces/gfx
+@dirrm lib/gdesklets/Displays/15pieces/gDesklets
+@dirrm lib/gdesklets/Displays/15pieces/Tux
+@dirrm lib/gdesklets/Displays/15pieces/Numbers
+@dirrm lib/gdesklets/Displays/15pieces/Gnome
+@dirrm lib/gdesklets/Displays/15pieces/Globe
+@dirrm lib/gdesklets/Displays/15pieces/GNU
+@dirrm lib/gdesklets/Displays/15pieces
+@dirrm lib/gdesklets/Displays
 @dirrm lib/gdesklets/Controls/URI
 @dirrm lib/gdesklets/Controls/Time
 @dirrm lib/gdesklets/Controls/System
 @dirrm lib/gdesklets/Controls/Sensors
+@dirrm lib/gdesklets/Controls/Random
 @dirrm lib/gdesklets/Controls/HDDTemp
-@dirrm lib/gdesklets/Controls/Calendar
 @dirrm lib/gdesklets/Controls/EventPipe
+@dirrm lib/gdesklets/Controls/Calendar
 @dirrm lib/gdesklets/Controls/ArrayBuffer
 @dirrm lib/gdesklets/Controls
+@dirrm lib/gdesklets/Additions/bg
+@dirrm lib/gdesklets/Additions
 @dirrm lib/gdesklets
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/icons/gnome/48x48/mimetypes
-@dirrmtry share/applications
