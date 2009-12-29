@@ -1,75 +1,81 @@
-share/gdesklets/Displays/StarterBar/README
-share/gdesklets/Displays/StarterBar/gfx/bg-e.png
-share/gdesklets/Displays/StarterBar/gfx/bg-n.png
-share/gdesklets/Displays/StarterBar/gfx/bg-ne.png
-share/gdesklets/Displays/StarterBar/gfx/bg-nw.png
-share/gdesklets/Displays/StarterBar/gfx/bg-s.png
-share/gdesklets/Displays/StarterBar/gfx/bg-se.png
-share/gdesklets/Displays/StarterBar/gfx/bg-sw.png
-share/gdesklets/Displays/StarterBar/gfx/bg-w.png
-share/gdesklets/Displays/StarterBar/gfx/bg.png
-share/gdesklets/Displays/StarterBar/gfx/preview.png
-share/gdesklets/Displays/StarterBar/gfx/waterbath.png
-share/gdesklets/Displays/StarterBar/starterbar.display
-share/gdesklets/Sensors/StarterBar/.order
-share/gdesklets/Sensors/StarterBar/ChangeLog
-share/gdesklets/Sensors/StarterBar/FileWatcher.py
-share/gdesklets/Sensors/StarterBar/FileWatcher.pyc
-share/gdesklets/Sensors/StarterBar/FileWatcher.pyo
-share/gdesklets/Sensors/StarterBar/GConfWatcher.py
-share/gdesklets/Sensors/StarterBar/GConfWatcher.pyc
-share/gdesklets/Sensors/StarterBar/GConfWatcher.pyo
-share/gdesklets/Sensors/StarterBar/Icon.py
-share/gdesklets/Sensors/StarterBar/Icon.pyc
-share/gdesklets/Sensors/StarterBar/Icon.pyo
-share/gdesklets/Sensors/StarterBar/IconSet.py
-share/gdesklets/Sensors/StarterBar/IconSet.pyc
-share/gdesklets/Sensors/StarterBar/IconSet.pyo
-share/gdesklets/Sensors/StarterBar/README
-share/gdesklets/Sensors/StarterBar/__init__.py
-share/gdesklets/Sensors/StarterBar/__init__.pyc
-share/gdesklets/Sensors/StarterBar/__init__.pyo
-share/gdesklets/Sensors/StarterBar/home.desktop
-share/gdesklets/Sensors/StarterBar/locale/ca/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/cs/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/de/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/es/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/fr/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/hr/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/nl/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/pt/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/sq/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/sr/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
-share/gdesklets/Sensors/StarterBar/locale/sv/LC_MESSAGES/gdesklets.mo
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sv/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sv
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sr@Latn
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sr/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sr
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sq/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/sq
-@dirrm share/gdesklets/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/pt_BR
-@dirrm share/gdesklets/Sensors/StarterBar/locale/pt/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/pt
-@dirrm share/gdesklets/Sensors/StarterBar/locale/nl/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/nl
-@dirrm share/gdesklets/Sensors/StarterBar/locale/hr/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/hr
-@dirrm share/gdesklets/Sensors/StarterBar/locale/fr/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/fr
-@dirrm share/gdesklets/Sensors/StarterBar/locale/es/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/es
-@dirrm share/gdesklets/Sensors/StarterBar/locale/de/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/de
-@dirrm share/gdesklets/Sensors/StarterBar/locale/cs/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/cs
-@dirrm share/gdesklets/Sensors/StarterBar/locale/ca/LC_MESSAGES
-@dirrm share/gdesklets/Sensors/StarterBar/locale/ca
-@dirrm share/gdesklets/Sensors/StarterBar/locale
-@dirrm share/gdesklets/Sensors/StarterBar
-@dirrm share/gdesklets/Displays/StarterBar/gfx
-@dirrm share/gdesklets/Displays/StarterBar
+%%DATADIR%%/Displays/StarterBar/README
+%%DATADIR%%/Displays/StarterBar/gfx/bg-e.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg-n.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg-ne.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg-nw.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg-s.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg-se.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg-sw.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg-w.png
+%%DATADIR%%/Displays/StarterBar/gfx/bg.png
+%%DATADIR%%/Displays/StarterBar/gfx/preview.png
+%%DATADIR%%/Displays/StarterBar/gfx/waterbath.png
+%%DATADIR%%/Displays/StarterBar/starterbar.display
+%%DATADIR%%/Sensors/StarterBar/.order
+%%DATADIR%%/Sensors/StarterBar/ChangeLog
+%%DATADIR%%/Sensors/StarterBar/FileWatcher.py
+%%DATADIR%%/Sensors/StarterBar/FileWatcher.pyc
+%%DATADIR%%/Sensors/StarterBar/FileWatcher.pyo
+%%DATADIR%%/Sensors/StarterBar/GConfWatcher.py
+%%DATADIR%%/Sensors/StarterBar/GConfWatcher.pyc
+%%DATADIR%%/Sensors/StarterBar/GConfWatcher.pyo
+%%DATADIR%%/Sensors/StarterBar/Icon.py
+%%DATADIR%%/Sensors/StarterBar/Icon.pyc
+%%DATADIR%%/Sensors/StarterBar/Icon.pyo
+%%DATADIR%%/Sensors/StarterBar/IconSet.py
+%%DATADIR%%/Sensors/StarterBar/IconSet.pyc
+%%DATADIR%%/Sensors/StarterBar/IconSet.pyo
+%%DATADIR%%/Sensors/StarterBar/README
+%%DATADIR%%/Sensors/StarterBar/__init__.py
+%%DATADIR%%/Sensors/StarterBar/__init__.pyc
+%%DATADIR%%/Sensors/StarterBar/__init__.pyo
+%%DATADIR%%/Sensors/StarterBar/home.desktop
+%%DATADIR%%/Sensors/StarterBar/locale/ca/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/cs/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/de/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/en_CA/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/en_GB/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/es/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/fr/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/hr/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/nl/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/pt/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/sq/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/sr/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
+%%DATADIR%%/Sensors/StarterBar/locale/sv/LC_MESSAGES/gdesklets.mo
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sv/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sv
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr@Latn
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sq/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sq
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt_BR
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/nl/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/nl
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/hr/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/hr
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/fr
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/es/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/es
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_GB/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_GB
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_CA/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_CA
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/de/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/de
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/cs/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/cs
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/ca/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale/ca
+@dirrm %%DATADIR%%/Sensors/StarterBar/locale
+@dirrm %%DATADIR%%/Sensors/StarterBar
+@dirrm %%DATADIR%%/Displays/StarterBar/gfx
+@dirrm %%DATADIR%%/Displays/StarterBar
