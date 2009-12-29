@@ -6,35 +6,42 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	5.8.0
-PORTREVISION=	4
+PORTVERSION=	5.9.5
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
+		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
+		freetype.9:${PORTSDIR}/print/freetype2 \
 		gd.4:${PORTSDIR}/graphics/gd \
 		qhull.5:${PORTSDIR}/math/qhull
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
+		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 
 USE_AUTOTOOLS=	libltdl:22
+USE_CMAKE=	yes
+USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
+USE_GNOME=	pango
+USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"	\
+		LDFLAGS="-L${LOCALBASE}/lib"		\
+		WITH_FREETYPE=ON
+CMAKE_ARGS+=	-DENABLE_java:BOOL=OFF -DENABLE_octave:BOOL=OFF	\
+		-DENABLE_ada:BOOL=OFF -DENABLE_d:BOOL=OFF	\
+		-DPLD_plmeta=ON
 
-CONFIGURE_ARGS=	--disable-cgm --disable-java --disable-octave \
-		--with-gd-incdir=${LOCALBASE}/include \
-		--with-gd-libdir=${LOCALBASE}/lib \
-		--with-freetype-font-dir=${LOCALBASE}
 USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION="${PORTVERSION}"
 
-MAN1=		plm2gif.1 plplot_libtool.1 plpr.1 pltek.1 pstex2eps.1
+MAN1=		plm2gif.1 plpr.1 pltek.1 plrender.1
 
 .if !defined(WITHOUT_PTHREAD)
-CONFIGURE_ARGS+=	--with-pthreads
+CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:BOOL=OFF
 .endif
 
 .if defined(WITHOUT_X11)
@@ -50,59 +57,53 @@ PLIST_SUB+=	X11=""
 .if defined(WITH_FORTRAN)
 PKGNAMESUFFIX=	-fortran
 USE_FORTRAN=	yes
-CONFIGURE_ARGS+=	--enable-f95
+CONFIGURE_ENV+=	CMAKE_Fortran_COMPILER=${FC}
 PLIST_SUB+=	FORTRAN=""
 .else
-CONFIGURE_ARGS+=	--disable-f77
+CMAKE_ARGS+=	-DENABLE_f95:BOOL=OFF
 PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
-.if defined(WITH_GNOME)
-.undef WITHOUT_X11
-USE_GNOME=	libgnomeprintui libgnomeui
-PLIST_SUB+=	GNOME=""
-.else
-PLIST_SUB+=	GNOME="@comment "
-CONFIGURE_ARGS+=	--disable-gcw
-.endif
-
 .if defined(WITH_PYTHON)
-BROKEN= 	does not build with PYTHON
+BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13	\
+		f2py:${PORTSDIR}/math/py-numpy
+RUN_DEPENDS+=	f2py:${PORTSDIR}//math/py-numpy
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 CONFIGURE_ENV+=	PYTHON_VERSION="${PYTHON_VERSION}"
 .else
-CONFIGURE_ARGS+=	--disable-python
+CMAKE_ARGS+=	-DENABLE_python:BOOL=OFF
 PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
-PLIST_SUB+=	SVGALIB=""
-.else
-CONFIGURE_ARGS+=	--disable-linuxvga
-PLIST_SUB+=	SVGALIB="@comment "
 .endif
 
 .if defined(WITH_TCLTK)
 .undef WITHOUT_X11
 PKGNAMESUFFIX=	-tcltk
 LIB_DEPENDS+=	itk.3:${PORTSDIR}/x11-toolkits/itk
-CONFIGURE_ENV+=	ITKINCDIR="${LOCALBASE}/include/itk3.3" \
-		ITKLIBDIR="${LOCALBASE}/lib"	\
-		TKINCDIR="${LOCALBASE}/include/tk8.4"	\
-		TKPRIVATEINCDIR="${LOCALBASE}/include/tk8.4/generic"	\
-		TKLIBDIR="${LOCALBASE}/lib"	\
-		ITCLINCDIR="${LOCALBASE}/include/itcl3.3"	\
-		ITCLLIBDIR="${LOCALBASE}/lib" \
-		TCLINCDIR="${LOCALBASE}/include/tcl8.4" \
-		TCLPRIVATEINCDIR="${LOCALBASE}/include/tcl8.4/generic"	\
-		TCLLIBDIR="${LOCALBASE}/lib"
-MAN1+=		plrender.1 plserver.1 pltcl.1
+USE_TK=		84
+ITCL_VER=	3.3
+CONFIGURE_ENV+=	ENABLE_tcl=TRUE ENABLE_tk=TRUE		\
+		ENABLE_itcl=TRUE ENABLE_itk=TRUE
+MAN1+=		plserver.1 pltcl.1
 PLIST_SUB+=	TCLTK=""
 .else
-CONFIGURE_ARGS+=	--disable-itcl --disable-tcl --disable-tk
+CMAKE_ARGS+=	-DENABLE_tk:BOOL=OFF
 PLIST_SUB+=	TCLTK="@comment "
+.endif
+
+.if defined(WITH_QT)
+.undef WITHOUT_X11
+PKGNAMESUFFIX=	-qt
+USE_QT_VER=	4
+QT_COMPONENTS=	assistant assistantclient clucene corelib dbus	\
+		designer doc gui help help-tools linguist moc	\
+		network opengl phonon qmake qt3support qtestlib	\
+		rcc script scripttools sql svg uic uic3 webkit	\
+		xml xmlpatterns
+PLIST_SUB+=	QT=""
+.else
+CMAKE_ARGS+=	-DENABLE_qt:BOOL=OFF -DDEFAULT_NO_QT_DEVICES:BOOL=ON
+PLIST_SUB+=	QT="@comment "
 .endif
 
 pre-everything::
@@ -112,32 +113,25 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_PTHREAD=yes	Turns off pthread support"
 	@${ECHO_MSG} "	WITHOUT_X11=yes		Turns off X11 support"
 	@${ECHO_MSG} "	WITH_FORTRAN=yes	Turns on Fortran support"
-	@${ECHO_MSG} "	WITH_GNOME=yes		Turns on GNOME driver support"
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python support"
-	@${ECHO_MSG} "	WITH_SVGALIB=yes	Turns on SVGAlib support"
+	@${ECHO_MSG} "	WITH_QT=yes		Turns on Qt4 support"
 	@${ECHO_MSG} "	WITH_TCLTK=yes		Turns on Tcl/Tk support"
 	@${ECHO_MSG} ""
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ltk$$|-ltk84|g ; \
-		 s|-ltcl$$|-ltcl84|g ; \
-		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
-		 s|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| tclsh | ${LOCALBASE}/bin/tclsh8.4 |g' \
-		${WRKSRC}/scripts/mktclIndex
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog Copyright FAQ NEWS PROBLEMS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/drivers/README.drivers \
-		${DOCSDIR}/README.drivers
-	${INSTALL_DATA} ${WRKSRC}/lib/csa/README \
-		${DOCSDIR}/README.csa
-	${INSTALL_DATA} ${WRKSRC}/lib/csa/README.1st \
-		${DOCSDIR}/README.1st.csa
+pre-configure:
+	${REINPLACE_CMD} -e 's|/usr/share/fonts/truetype/freefont|${LOCALBASE}/lib/X11/fonts/freefont-ttf|'\
+		${WRKSRC}/cmake/modules/freetype.cmake
+.if defined(WITH_TCLTK)
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; \
+		s|/usr/include|${LOCALBASE}/include|'		\
+		${WRKSRC}/cmake/modules/FindTCL.cmake
+	${REINPLACE_CMD} -e 's|%%ITCL_VER%%|${ITCL_VER}|'	\
+		${WRKSRC}/cmake/modules/tcl-related.cmake
+# To be removed when x11-toolkits/itk will be compatible with tk-8.5
+. for fc in TCL Tclsh
+	${REINPLACE_CMD} -e 's|8.5||g;s|85||g'	\
+		${WRKSRC}/cmake/modules/Find${fc}.cmake
+. endfor
 .endif
 
 .include <bsd.port.mk>
