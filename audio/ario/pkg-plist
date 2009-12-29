@@ -80,40 +80,60 @@ share/icons/hicolor/64x64/apps/ario.png
 share/icons/hicolor/72x72/apps/ario.png
 share/icons/hicolor/96x96/apps/ario.png
 share/icons/hicolor/scalable/apps/ario.svg
-share/locale/ar/LC_MESSAGES/ario.mo
-share/locale/ca/LC_MESSAGES/ario.mo
-share/locale/cs/LC_MESSAGES/ario.mo
 share/locale/da/LC_MESSAGES/ario.mo
-share/locale/de/LC_MESSAGES/ario.mo
-share/locale/en_GB/LC_MESSAGES/ario.mo
-share/locale/es/LC_MESSAGES/ario.mo
-share/locale/fi/LC_MESSAGES/ario.mo
-share/locale/fr/LC_MESSAGES/ario.mo
-share/locale/ga/LC_MESSAGES/ario.mo
-share/locale/he/LC_MESSAGES/ario.mo
-share/locale/hr/LC_MESSAGES/ario.mo
-share/locale/hu/LC_MESSAGES/ario.mo
-share/locale/id/LC_MESSAGES/ario.mo
-share/locale/it/LC_MESSAGES/ario.mo
-share/locale/ja/LC_MESSAGES/ario.mo
-share/locale/nb/LC_MESSAGES/ario.mo
-share/locale/nds/LC_MESSAGES/ario.mo
-share/locale/nl/LC_MESSAGES/ario.mo
-share/locale/pl/LC_MESSAGES/ario.mo
-share/locale/pt/LC_MESSAGES/ario.mo
-share/locale/pt_BR/LC_MESSAGES/ario.mo
-share/locale/ro/LC_MESSAGES/ario.mo
-share/locale/ru/LC_MESSAGES/ario.mo
-share/locale/sv/LC_MESSAGES/ario.mo
-share/locale/th/LC_MESSAGES/ario.mo
 share/locale/tr/LC_MESSAGES/ario.mo
 share/locale/zh_CN/LC_MESSAGES/ario.mo
+share/locale/ca/LC_MESSAGES/ario.mo
 share/locale/zh_TW/LC_MESSAGES/ario.mo
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrm share/icons/hicolor/256x256/apps
-@dirrm share/icons/hicolor/256x256
-@dirrm share/icons
+share/locale/ro/LC_MESSAGES/ario.mo
+share/locale/it/LC_MESSAGES/ario.mo
+share/locale/ru/LC_MESSAGES/ario.mo
+share/locale/id/LC_MESSAGES/ario.mo
+share/locale/fi/LC_MESSAGES/ario.mo
+share/locale/sv/LC_MESSAGES/ario.mo
+share/locale/pt/LC_MESSAGES/ario.mo
+share/locale/th/LC_MESSAGES/ario.mo
+share/locale/de/LC_MESSAGES/ario.mo
+share/locale/ja/LC_MESSAGES/ario.mo
+share/locale/pt_BR/LC_MESSAGES/ario.mo
+share/locale/nds/LC_MESSAGES/ario.mo
+share/locale/nl/LC_MESSAGES/ario.mo
+share/locale/fr/LC_MESSAGES/ario.mo
+share/locale/he/LC_MESSAGES/ario.mo
+share/locale/ar/LC_MESSAGES/ario.mo
+share/locale/cs/LC_MESSAGES/ario.mo
+share/locale/pl/LC_MESSAGES/ario.mo
+share/locale/es/LC_MESSAGES/ario.mo
+share/locale/hu/LC_MESSAGES/ario.mo
+share/locale/hr/LC_MESSAGES/ario.mo
+share/locale/en_GB/LC_MESSAGES/ario.mo
+share/locale/et/LC_MESSAGES/ario.mo
+share/locale/nb/LC_MESSAGES/ario.mo
+share/locale/ga/LC_MESSAGES/ario.mo
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/plugins/icons
 @dirrm %%DATADIR%%/plugins
