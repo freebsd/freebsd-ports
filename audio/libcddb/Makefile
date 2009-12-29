@@ -7,7 +7,7 @@
 #      $Id: Makefile 17 2006-10-17 02:09:55Z buhnux $
 
 PORTNAME=	libcddb
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
