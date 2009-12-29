@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	EBook-Tools
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.6
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,8 +32,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tidy:${PORTSDIR}/www/tidy
 
 PERL_CONFIGURE=	yes
 
-MAN3=		EBook::Tools::Unpack.3 EBook::Tools::MSReader.3 EBook::Tools::LZSS.3 \
-		EBook::Tools::Mobipocket.3 EBook::ebook.3 EBook::Tools::EReader.3 \
-		EBook::Tools::IMP.3 EBook::Tools::PalmDoc.3 EBook::Tools.3
+MAN1=	ebook.1
+MAN3=		EBook::Tools.3 \
+		EBook::Tools::EReader.3 \
+		EBook::Tools::IMP.3 \
+		EBook::Tools::LZSS.3 \
+		EBook::Tools::MSReader.3 \
+		EBook::Tools::Mobipocket.3 \
+		EBook::Tools::PalmDoc.3 \
+		EBook::Tools::Unpack.3 \
 
 .include <bsd.port.mk>
