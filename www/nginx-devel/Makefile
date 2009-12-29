@@ -49,6 +49,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_AUTH_PAM_MODULE	"3rd party http_auth_pam module" off \
 		HTTP_EVAL_MODULE	"3rd party eval module" off \
 		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
+		HTTP_GUNZIP_FILTER	"3rd party http_gunzip_filter module" off \
 		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
 		HTTP_MP4_H264_MODULE	"3rd party mp4/h264 module" off \
 		HTTP_NOTICE_MODULE	"3rd party notice module" off \
@@ -174,6 +175,13 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
 MASTER_SITE_SUBDIR+=	osa/:fancyindex
 DISTFILES+=	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}
+.endif
+
+.if defined(WITH_HTTP_GUNZIP_FILTER)
+NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.1
+MASTER_SITES+=	http://mdounin.ru/files/:gunzipfilter
+DISTFILES+=	ngx_http_gunzip_filter_module-0.1.tar.gz:gunzipfilter
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_FLV_MODULE)
