@@ -118,7 +118,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.20
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -442,6 +442,10 @@ post-patch::
 .endif
 .if defined(WITH_MUTT_GREETING_PATCH)
 PATCHFILES+=	mutt-${VC_PATCH_VERSION}.vc.greeting:vc
+.endif
+.if defined(WITH_MUTT_TRASH_PATCH)
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-trash-purge
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
