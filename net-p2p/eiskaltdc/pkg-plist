@@ -15,7 +15,9 @@ include/eiskaltdc/dceditserver.h
 include/eiskaltdc/dcedittransfer.h
 include/eiskaltdc/dcevent.h
 include/eiskaltdc/dcfilebrowser.h
-include/eiskaltdc/dcfilebrowseritems.h
+include/eiskaltdc/dcfilebrowserhistory.h
+include/eiskaltdc/dcfilebrowsersearchengine.h
+include/eiskaltdc/dcfilehasher.h
 include/eiskaltdc/dcfilelistdecompressor.h
 include/eiskaltdc/dcfiletool.h
 include/eiskaltdc/dcfiletransferinfo.h
@@ -48,11 +50,12 @@ include/eiskaltdc/dctranslator.h
 include/eiskaltdc/dcusercommandeditor.h
 include/eiskaltdc/dcuserslist.h
 include/eiskaltdc/dcwidget.h
+include/eiskaltdc/filebrowsermodel.h
 include/eiskaltdc/filteronlyproxy.h
+include/eiskaltdc/hublistmodel.h
 include/eiskaltdc/ipfiltermodel.h
 include/eiskaltdc/publichubsmodel.h
 include/eiskaltdc/publichubsproxy.h
-include/eiskaltdc/search-result-columns.h
 include/eiskaltdc/searchresultmodel.h
 include/eiskaltdc/searchspymodel.h
 include/eiskaltdc/userlistmodel.h
@@ -129,6 +132,9 @@ share/applications/eiskaltdc.desktop
 %%DATADIR%%/icons/appl/default/folder_blue_open.png
 %%DATADIR%%/icons/appl/default/folder_red.png
 %%DATADIR%%/icons/appl/default/globe.png
+%%DATADIR%%/icons/appl/default/go-next.png
+%%DATADIR%%/icons/appl/default/go-previous.png
+%%DATADIR%%/icons/appl/default/go-up.png
 %%DATADIR%%/icons/appl/default/gui.png
 %%DATADIR%%/icons/appl/default/help.png
 %%DATADIR%%/icons/appl/default/icon_appl.png
@@ -155,6 +161,7 @@ share/applications/eiskaltdc.desktop
 %%DATADIR%%/icons/appl/default/reload_plugins.png
 %%DATADIR%%/icons/appl/default/save.png
 %%DATADIR%%/icons/appl/default/server.png
+%%DATADIR%%/icons/appl/default/slots_up.png
 %%DATADIR%%/icons/appl/default/sort-down-arrow.png
 %%DATADIR%%/icons/appl/default/spam.png
 %%DATADIR%%/icons/appl/default/splash.png
@@ -170,6 +177,8 @@ share/applications/eiskaltdc.desktop
 %%DATADIR%%/icons/appl/default/users.png
 %%DATADIR%%/icons/appl/default/users_22x22.png
 %%DATADIR%%/icons/appl/default/users_32x32.png
+%%DATADIR%%/icons/appl/default/view-list-details.png
+%%DATADIR%%/icons/appl/default/view-list-icons.png
 %%DATADIR%%/icons/appl/default/view_sidetree.png
 %%DATADIR%%/icons/appl/default/vru.png
 %%DATADIR%%/icons/appl/default/windows_cl_all.png
