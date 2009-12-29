@@ -365,7 +365,6 @@ bin/tvbrowser
 %%DATADIR%%/plugins/ProgramListPlugin.jar
 %%DATADIR%%/plugins/RadioTimesDataService.jar
 %%DATADIR%%/plugins/SchedulesDirectDataService.jar
-%%DATADIR%%/plugins/ShowviewPlugin.jar
 %%DATADIR%%/plugins/SimpleMarkerPlugin.jar
 %%DATADIR%%/plugins/SweDBTvDataService.jar
 %%DATADIR%%/plugins/TVRaterPlugin.jar
