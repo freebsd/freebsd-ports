@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 ALL_TARGET+=	doc
 INSTALL_TARGET+=install-manpages
 
-NOMANCOMPRESS=	true
+NO_MANCOMPRESS=	yes
 MANCOMPRESSED=	no
 MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 	ldns_buffer2pkt_wire.3 ldns_buffer_at.3 ldns_buffer_available.3 \

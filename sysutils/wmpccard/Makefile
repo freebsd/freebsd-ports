@@ -16,7 +16,7 @@ COMMENT=	PCcard monitor for FreeBSD + PAO
 
 USE_XORG=	x11 xpm
 MAN1=		wmpccard.1.gz
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 PLIST_FILES=	bin/wmpccard
 
 do-install:

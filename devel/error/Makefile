@@ -20,7 +20,7 @@ MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/error
 
 # MAN page COMPression SUFFIX
-.if !defined(NOMANCOMPRESS)
+.if !defined(NO_MANCOMPRESS)
 MANCOMPSUFFIX=	.gz
 .else
 MANCOMPSUFFIX=

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Clas
 
 PERL_CONFIGURE=	yes
 
-NOMANCOMPRESS=	no
+NO_MANCOMPRESS=	no
 MAN3=		AMF::Perl.3 AMF::Perl::App::Executive.3 \
 		AMF::Perl::IO::Deserializer.3 AMF::Perl::IO::InputStream.3 \
 		AMF::Perl::IO::OutputStream.3 AMF::Perl::IO::Serializer.3 \

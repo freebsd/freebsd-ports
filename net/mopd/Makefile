@@ -23,7 +23,7 @@ COMMENT=	MOP Loader Daemon for netbooting DEC machines
 
 .include <bsd.port.pre.mk>
 
-MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man NOMANCOMPRESS=true
+MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man NO_MANCOMPRESS=true
 MAN1=		mopprobe.1 moptrace.1 mopchk.1 mopa.out.1
 MAN8=		mopd.8
 

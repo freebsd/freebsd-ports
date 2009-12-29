@@ -17,7 +17,7 @@ PERL_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/p5-Palm-1.003_000
 
 # Just so that the .packlist conforms to reality
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 MAN1=		pdbdump.1
 MAN3=		Palm::Address.3 \
 		Palm::Datebook.3 \

@@ -4,7 +4,7 @@
 +DESTDIR=       ${PREFIX}
 +BINDIR=                /bin
 +MANDIR=                /man/man
-+NOMANCOMPRESS= 1
++NO_MANCOMPRESS= 1
 +
  PROG=	dialog
  SRCS=	dialog.c 

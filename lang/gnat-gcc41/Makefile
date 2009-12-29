@@ -37,7 +37,7 @@ MAN1=			cpp${gcc_suffix}.1 \
 			gcc${gcc_suffix}.1 \
 			gcov${gcc_suffix}.1
 MAN7=			${fsf_mans:S/$/${fsf_suffix}.7/}
-NOMANCOMPRESS=		yes # XXX 5-cur and releng4 problems?
+NO_MANCOMPRESS=		yes # XXX 5-cur and releng4 problems?
 INFO=			gcc${gcc_suffix}/cpp \
 			gcc${gcc_suffix}/cppinternals \
 			gcc${gcc_suffix}/gcc \

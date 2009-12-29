@@ -70,7 +70,7 @@ BROKEN=		does not compile
 .for manlang in ${MANLANG_GAME}
 MAN6_${manlang:U}=	wesnoth.6
 
-.if defined(NOMANCOMPRESS)
+.if defined(NO_MANCOMPRESS)
 PLIST_FILES+=	man/${manlang}/man6/wesnoth.6
 .else
 PLIST_FILES+=	man/${manlang}/man6/wesnoth.6.gz
@@ -208,7 +208,7 @@ BROKEN=		NOPORT(DOCS|DATA) is not supported
 post-install:	.SILENT
 	-update-desktop-database
 
-.if !defined(NOMANCOMPRESS)
+.if !defined(NO_MANCOMPRESS)
 .	for manlang in ${MANLANG_GAME}
 		${GZIP_CMD} ${PREFIX}/man/${manlang}/man6/wesnoth.6
 .	endfor

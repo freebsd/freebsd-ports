@@ -23,7 +23,7 @@ manpages=	${PORTNAME}-${PORTVERSION}
 
 do-build:
 	makewhatis ${WRKSRC}/${manpages}
-.if !defined(NOMANCOMPRESS)
+.if !defined(NO_MANCOMPRESS)
 	${GZIP_CMD} -r ${WRKSRC}/${manpages}/man* || exit 0
 .endif
 

@@ -29,7 +29,7 @@ MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
 MAKE_JOBS_UNSAFE=	yes
 
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 MAN1=		mined.1 minmacs.1 mpico.1 mstar.1 umined.1 uterm.1 xmined.1
 
 PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\

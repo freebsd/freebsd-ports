@@ -19,7 +19,7 @@ COMMENT=	Graphical frontend for the BSD ports system
 USE_GNOME=	gtk20
 MAKE_ENV=	MANDIR=${PREFIX}/man/man \
 		BINDIR=${PREFIX}/bin \
-		NOMANCOMPRESS=YES
+		NO_MANCOMPRESS=YES
 CFLAGS+= 	-DINDEXFILE=\\\"${PORTSDIR}/${INDEXFILE}\\\" \
 		-DPORTS_DIR=\\\"${PORTSDIR}\\\"
 PLIST_FILES=	bin/pbrowser

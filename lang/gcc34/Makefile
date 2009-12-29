@@ -33,7 +33,7 @@ USE_PERL5_BUILD=yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
+NO_MANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 

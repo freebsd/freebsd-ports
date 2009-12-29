@@ -8,7 +8,7 @@
 +DESTDIR=       ${PREFIX}
 +BINDIR=                /bin
 +MANDIR=                /man/man
-+NOMANCOMPRESS= 1
++NO_MANCOMPRESS= 1
  
 -LDADD=  -lz -L/usr/local/lib/ -liberty
 +CFLAGS+= -I${LOCALBASE}/include -Wall -pedantic

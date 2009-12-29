@@ -16,7 +16,7 @@ COMMENT=	Time synchronization over http utility
 USE_BZIP2=	yes
 
 MANCOMPRESSED=	no
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 MAN8=	htpdate.8.gz
 
 PLIST_FILES=	bin/htpdate

@@ -16,7 +16,7 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	More than 120 free- and share-ware fonts to extend enscript-1.5
 
 NO_WRKSUBDIR=	YES
-NOMANCOMPRESS=	YES
+NO_MANCOMPRESS=	YES
 NO_BUILD=	YES
 SUB_FILES+=	pkg-message
 

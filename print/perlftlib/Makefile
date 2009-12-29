@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 USE_FREETYPE=	yes
 USE_PERL5=	yes
-NOMANCOMPRESS=	yes
+NO_MANCOMPRESS=	yes
 MAN1=		mkttfdir.1 ftinfo.1
 MAN3=		FreeType.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

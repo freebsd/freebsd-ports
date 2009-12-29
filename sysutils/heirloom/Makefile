@@ -56,7 +56,7 @@ _M1LINKS=	df.1	dfspace.1 \
 		more.1	page.1 \
 		pgrep.1	pkill.1 \
 
-.if !defined(NOMANCOMPRESS)
+.if !defined(NO_MANCOMPRESS)
 MANEXT=		.gz
 .endif
 
