@@ -1,17 +1,20 @@
 bin/parano
-share/locale/fr/LC_MESSAGES/parano.mo
-share/mime/packages/parano.xml
-share/applications/parano.desktop
 share/application-registry/parano.applications
+share/applications/parano.desktop
+share/locale/fr/LC_MESSAGES/parano.mo
+share/locale/sv_SE/LC_MESSAGES/parano.mo
+share/mime/packages/parano.xml
 share/mime-info/parano.keys
 share/mime-info/parano.mime
-share/pixmaps/parano-icon.png
 %%DATADIR%%/parano.png
 %%DATADIR%%/parano-icon.png
 %%DATADIR%%/parano.glade
+share/pixmaps/parano-icon.png
 @dirrm %%DATADIR%%
+@dirrmtry share/mime-info
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
 @dirrmtry share/applications
 @dirrmtry share/application-registry
-@dirrmtry share/mime-info
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
