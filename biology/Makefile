@@ -83,6 +83,7 @@
     SUBDIR += pycogent
     SUBDIR += pyfasta
     SUBDIR += pymol
+    SUBDIR += python-nexus
     SUBDIR += rasmol
     SUBDIR += recombine
     SUBDIR += ruby-bio

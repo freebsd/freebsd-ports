@@ -1,0 +1,8 @@
+bin/nexus_randomise.py
+bin/nexus_calc_missings.py
+bin/nexus_remove_uniquechars.py
+bin/nexus_deinterleave.py
+bin/nexus_detranslate.py
+bin/nexus_remove_constantchars.py
+bin/nexus_combine_nexus.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
