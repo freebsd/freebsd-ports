@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9pre6
-PORTREVISION=	10
+DISTVERSION=	0.9rc3
 CATEGORIES=	science lang
-MASTER_SITES=	SF/${PORTNAME}/gdl/0.9pre6
+MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
@@ -30,7 +29,7 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 #
 #---------------------------------------------------------------------------
 
-LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
+LIB_DEPENDS+=	plplotd.9:${PORTSDIR}/math/plplot	\
 		gsl.14:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs		\
 		readline.6:${PORTSDIR}/devel/readline
@@ -80,7 +79,7 @@ CONFIGURE_ARGS+=--with-hdf=no
 .endif
 
 .if !defined(WITHOUT_PYTHON) || defined(BUILD_PYTHON_MODULE)
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray \
 		${PYTHON_SITELIBDIR}/matplotlib:${PORTSDIR}/math/py-matplotlib
@@ -108,7 +107,7 @@ do-install:
 
 .if !defined(BUILD_PYTHON_MODULE)
 post-install:
-. if !defined(NOPORTDOCS)
+. if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/testsuite
 	(cd ${WRKSRC}/src/pro && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/testsuite/)
