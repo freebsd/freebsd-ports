@@ -33,8 +33,6 @@ OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
 
 SUB_FILES=	pkg-message
 
-BROKEN=		fails to build with new cmake.
-
 .include <bsd.port.pre.mk>
 
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
@@ -136,6 +134,19 @@ post-patch:
 		${WRKSRC}/utils/acc/parse.c
 	@${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
 		${WRKSRC}/utils/acc/strlist.c
+
+.if defined(WITH_LAUNCHER)
+	@${REINPLACE_CMD} -e '/add_definitions($${wxWidgets_DEFINITIONS})/d; \
+			s/include_directories($${wxWidgets_INCLUDE_DIRS})/include($${wxWidgets_USE_FILE})/' \
+		${WRKSRC}/utils/vlaunch/CMakeLists.txt
+.endif
+
+post-configure:
+.if defined(WITH_LAUNCHER)
+	@${REINPLACE_CMD} -e 's/-pthread;-D_THREAD_SAFE //; \
+			s/-isystem /-I/g' \
+		${WRKSRC}/utils/vlaunch/CMakeFiles/vlaunch.dir/flags.make
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
