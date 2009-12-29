@@ -17,6 +17,7 @@ MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 PATCHDIR=	${.CURDIR}/files
 EXTRA_PATCHES=	${MASTERDIR}/files/patch-configure.in \
-		${MASTERDIR}/files/patch-wxOil_compatdef.h
+		${MASTERDIR}/files/patch-wxOil_compatdef.h \
+		${MASTERDIR}/files/patch-wxOil_ftfonts.cpp
 
 .include "${MASTERDIR}/Makefile"
