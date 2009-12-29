@@ -660,6 +660,7 @@ share/locale/km/LC_MESSAGES/miro.mo
 share/locale/kn/LC_MESSAGES/miro.mo
 share/locale/ko/LC_MESSAGES/miro.mo
 share/locale/ku/LC_MESSAGES/miro.mo
+share/locale/lb/LC_MESSAGES/miro.mo
 share/locale/lt/LC_MESSAGES/miro.mo
 share/locale/lv/LC_MESSAGES/miro.mo
 share/locale/mk/LC_MESSAGES/miro.mo
@@ -841,7 +842,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/searchengines/bliptv.xml
 %%DATADIR%%/resources/searchengines/blogdigger.xml
 %%DATADIR%%/resources/searchengines/dailymotion.xml
-%%DATADIR%%/resources/searchengines/everyzing.xml
+%%DATADIR%%/resources/searchengines/everyzing.xml.disabled
 %%DATADIR%%/resources/searchengines/google.xml
 %%DATADIR%%/resources/searchengines/metavid.xml
 %%DATADIR%%/resources/searchengines/mininova.xml
@@ -866,6 +867,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/olddatabase.bug.3163
 %%DATADIR%%/resources/testdata/olddatabase.bug.4039
 %%DATADIR%%/resources/testdata/olddatabase.bug.4039.part2
+%%DATADIR%%/resources/testdata/olddatabase.empty_feedparser_output_test
 %%DATADIR%%/resources/testdata/olddatabase.predbupgrade88
 %%DATADIR%%/resources/testdata/olddatabase.v71
 %%DATADIR%%/resources/testdata/olddatabase.v78
@@ -909,6 +911,8 @@ share/pixmaps/miro.xpm
 @dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/lb/LC_MESSAGES
+@dirrmtry share/locale/lb
 @dirrmtry share/locale/fy/LC_MESSAGES
 @dirrmtry share/locale/fy
 @dirrmtry share/locale/fo/LC_MESSAGES

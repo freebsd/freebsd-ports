@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Miro
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTNAME=	miro
+PORTVERSION=	2.5.4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -28,6 +27,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb	\
 BUILD_WRKSRC=	${WRKSRC}/platform/gtk-x11
 INSTALL_WRKSRC=	${WRKSRC}/platform/gtk-x11
 
+CONFLICTS=	Miro-[0-9]*
+
 USE_GCC=	4.3+
 USE_GNOME=	gtk20 pygnomeextras
 USE_GECKO=	libxul seamonkey
@@ -36,15 +37,12 @@ USE_PYTHON=	yes
 WANT_GSTREAMER=	yes
 USE_GETTEXT=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	${PORTNAME:L}
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}"
 INSTALLS_ICONS=	yes
 INSTALLS_EGGINFO=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		miro.1 miro.real.1
-
-DATADIR=	${PREFIX}/share/${PORTNAME:L}
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
@@ -69,7 +67,8 @@ XULRUNNER_19=	False
 
 post-patch:
 .for file in setup.py plat/resources.py
-	${REINPLACE_CMD} -e 's|%%XPCOM_LIB%%|${XPCOM_LIB}|g ; \
+	${REINPLACE_CMD} -e 's|%%XPCOM_RUNTIME_PATH%%|${LOCALBASE}/lib/${GECKO}|g ; \
+		 s|%%XPCOM_LIB%%|${XPCOM_LIB}|g ; \
 		 s|%%GTKMOZEMBED_LIB%%|${GTKMOZEMBED_LIB}|g ; \
 		 s|%%XULRUNNER_19%%|${XULRUNNER_19}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \

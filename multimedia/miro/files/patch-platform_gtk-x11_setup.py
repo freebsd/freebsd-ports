@@ -1,5 +1,14 @@
---- platform/gtk-x11/setup.py.orig	2009-07-25 12:41:12.000000000 +0900
-+++ platform/gtk-x11/setup.py	2009-07-30 15:52:08.000000000 +0900
+--- platform/gtk-x11/setup.py.orig	2009-12-03 01:40:42.000000000 +0900
++++ platform/gtk-x11/setup.py	2009-12-21 06:10:08.000000000 +0900
+@@ -70,7 +70,7 @@
+ # Examples:
+ # XPCOM_RUNTIME_PATH = "/usr/lib/firefox"
+ # XPCOM_RUNTIME_PATH = "/usr/lib/xulrunner-1.9.0.1"
+-XPCOM_RUNTIME_PATH = None
++XPCOM_RUNTIME_PATH = "%%XPCOM_RUNTIME_PATH%%"
+ 
+ # Location of xulrunner/firefox components for gtkmozembed.set_comp_path.
+ # See documentation for set_comp_path here:
 @@ -112,14 +112,15 @@
  # XPCOM_LIB = "firefox-xpcom"
  # GTKMOZEMBED_LIB = "firefox-gtkmozembed"
@@ -143,17 +152,17 @@
 +        dest = '%%PREFIX%%/share/miro/resources/app.config'
  
          config_file = util.read_simple_config_file(source)
-         print "Trying to figure out the svn revision...."
-@@ -737,7 +743,7 @@
- 
-         for source in glob (os.path.join (locale_dir, "*.mo")):
+         print "Trying to figure out the git revision...."
+@@ -739,7 +745,7 @@
              lang = os.path.basename(source)[:-3]
+             if 'LINGUAS' in os.environ and lang not in os.environ['LINGUAS']:
+                 continue
 -            dest = '/usr/share/locale/%s/LC_MESSAGES/miro.mo' % lang
 +            dest = '%%PREFIX%%/share/locale/%s/LC_MESSAGES/miro.mo' % lang
              if self.root:
                  dest = change_root(self.root, dest)
              self.mkpath(os.path.dirname(dest))
-@@ -766,7 +772,7 @@
+@@ -768,7 +774,7 @@
  
  #### install_theme installs a specified theme .zip
  class install_theme(Command):
@@ -162,7 +171,7 @@
      user_options = [("theme=", None, 'ZIP file containing the theme')]
  
      def initialize_options(self):
-@@ -794,7 +800,7 @@
+@@ -796,7 +802,7 @@
              raise DistutilsOptionError, "invalid theme file"
          self.zipfile = zf
          self.theme_name = themeName
