@@ -7,6 +7,7 @@
 
 PORTNAME=	scummvm
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -38,7 +39,8 @@ OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
 MAN6=		scummvm.6
 
 PORTDOCS=	NEWS README TODO
-PLIST_FILES=	bin/scummvm
+PLIST_FILES=	bin/scummvm %%DATADIR%%/scummmodern.zip
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
@@ -93,6 +95,8 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/gui/themes/scummmodern.zip ${DATADIR}
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
