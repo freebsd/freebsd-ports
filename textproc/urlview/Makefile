@@ -8,7 +8,7 @@
 
 PORTNAME=	urlview
 PORTVERSION=	0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc www
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 		ftp://ftp.sunsite.auc.dk/pub/mail/mutt/contrib/ \
@@ -20,8 +20,6 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	URL extractor/launcher
 
-BROKEN=		fails to package
-
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
 SUB_FILES=	gecko.sh
@@ -30,10 +28,14 @@ SUB_LIST=	GECKO=${GECKO}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GECKO)
-USE_GECKO=	firefox firefox-devel seamonkey mozilla
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+USE_GECKO=	firefox-devel firefox35 seamonkey
+.include <bsd.gecko.mk>
+.elif defined(WITH_SEAMONKEY)
+RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey
+GECKO=		seamonkey
 .else
-GECKO=		firefox
+RUN_DEPENDS+=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox35
+GECKO=		firefox3
 .endif
 
 post-patch:
@@ -43,6 +45,7 @@ post-patch:
 		"s,/etc/urlview.conf,${PREFIX}/etc/urlview.conf,g" ${WRKSRC}/*
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/url_handler.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/url_handler.sh ${WRKDIR}/gecko.sh	\
+		${PREFIX}/bin
 
 .include <bsd.port.post.mk>
