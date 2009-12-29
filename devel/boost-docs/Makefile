@@ -17,7 +17,6 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/boost-all/common.mk"
-.include "${PORTSDIR}/devel/boost-all/sites.mk"
 
 do-install:
 # Documentation & examples

@@ -16,15 +16,14 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		ICU		"Boost.Regex with ICU unicode support" on \
 		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
 
-BOOST_LIBS=     date_time filesystem graph iostreams\
-                math_c99 math_c99f math_tr1 math_tr1f\
-                prg_exec_monitor program_options regex\
-                serialization signals system thread unit_test_framework\
-                wave wserialization
+BOOST_LIBS=	date_time filesystem graph iostreams\
+		math_c99 math_c99f math_tr1 math_tr1f\
+		prg_exec_monitor program_options regex\
+		serialization signals system thread unit_test_framework\
+		wave wserialization
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/boost-all/common.mk"
-.include "${PORTSDIR}/devel/boost-all/sites.mk"
 .include "${PORTSDIR}/devel/boost-all/compiled.mk"
 
 .if defined (WITH_ICU)
@@ -33,9 +32,11 @@ BJAM_OPTIONS+=	-sICU_PATH=${LOCALBASE}
 .endif
 
 post-patch: customize-boost-build
+# The following directory is empty and causes issues with pkg_{add,delete}
+	${RMDIR} ${WRKSRC}/boost/interprocess/containers/detail
 # Remove Boost.Python
 .if !defined(WITH_PYTHON)
-	@${RM} -rf ${WRKSRC}/boost/python* ${WRKSRC}/libs/python
+	${RM} -rf ${WRKSRC}/boost/python* ${WRKSRC}/libs/python
 .endif
 
 do-build:

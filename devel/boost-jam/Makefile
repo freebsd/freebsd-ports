@@ -11,7 +11,6 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/boost-all/common.mk"
-.include "${PORTSDIR}/devel/boost-all/sites.mk"
 
 .if ${ARCH} == alpha
 BJAM-SUFFIX=	axp
@@ -26,7 +25,7 @@ BJAM-SUFFIX=	x86
 .elif ${ARCH} == amd64
 BJAM-SUFFIX=	x86_64
 .else
-BJAM-SUFFIX=	
+BJAM-SUFFIX=	#
 .endif
 
 BJAM=		${WRKSRC}/tools/jam/src/bin.freebsd${BJAM-SUFFIX}/bjam
