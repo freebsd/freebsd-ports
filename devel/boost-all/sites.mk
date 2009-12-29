@@ -1,4 +1,0 @@
-
-MASTER_SITES=	SF/boost/boost/${PORTVERSION}
-
-WRKSRC=		${WRKDIR}/${DISTNAME}

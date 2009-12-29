@@ -1,15 +1,31 @@
---- boost/test/impl/execution_monitor.ipp	Mon Oct 13 12:20:26 2008
-+++ boost/test/impl/execution_monitor.ipp	Sun Nov  9 00:36:42 2008
-@@ -289,50 +289,11 @@
- 
+--- boost/test/impl/execution_monitor.ipp.orig	2009-09-23 16:44:57.000000000 +0400
++++ boost/test/impl/execution_monitor.ipp	2009-09-23 16:59:44.000000000 +0400
+@@ -319,48 +319,7 @@
      switch( m_sig_info->si_signo ) {
      case SIGILL:
--        switch( m_sig_info->si_code ) {
+         switch( m_sig_info->si_code ) {
+-#ifndef BOOST_TEST_LIMITED_SIGNAL_DETAILS
 -        case ILL_ILLOPC:
 -            report_error( execution_exception::system_fatal_error,
 -                          "signal: illegal opcode; address of failing instruction: 0x%08lx",
 -                          m_sig_info->si_addr );
 -            break;
+-        case ILL_ILLTRP:
+-            report_error( execution_exception::system_fatal_error,
+-                          "signal: illegal trap; address of failing instruction: 0x%08lx",
+-                          m_sig_info->si_addr );
+-            break;
+-        case ILL_PRVREG:
+-            report_error( execution_exception::system_fatal_error,
+-                          "signal: privileged register; address of failing instruction: 0x%08lx",
+-                          m_sig_info->si_addr );
+-            break;
+-        case ILL_BADSTK:
+-            report_error( execution_exception::system_fatal_error,
+-                          "signal: internal stack error; address of failing instruction: 0x%08lx",
+-                          m_sig_info->si_addr );
+-            break;
+-#endif
 -        case ILL_ILLOPN:
 -            report_error( execution_exception::system_fatal_error,
 -                          "signal: illegal operand; address of failing instruction: 0x%08lx",
@@ -20,19 +36,9 @@
 -                          "signal: illegal addressing mode; address of failing instruction: 0x%08lx",
 -                          m_sig_info->si_addr );
 -            break;
--        case ILL_ILLTRP:
--            report_error( execution_exception::system_fatal_error,
--                          "signal: illegal trap; address of failing instruction: 0x%08lx",
--                          m_sig_info->si_addr );
--            break;
 -        case ILL_PRVOPC:
 -            report_error( execution_exception::system_fatal_error,
 -                          "signal: privileged opcode; address of failing instruction: 0x%08lx",
--                          m_sig_info->si_addr );
--            break;
--        case ILL_PRVREG:
--            report_error( execution_exception::system_fatal_error,
--                          "signal: privileged register; address of failing instruction: 0x%08lx",
 -                          m_sig_info->si_addr );
 -            break;
 -        case ILL_COPROC:
@@ -40,26 +46,15 @@
 -                          "signal: co-processor error; address of failing instruction: 0x%08lx",
 -                          m_sig_info->si_addr );
 -            break;
--        case ILL_BADSTK:
--            report_error( execution_exception::system_fatal_error,
--                          "signal: internal stack error; address of failing instruction: 0x%08lx",
--                          m_sig_info->si_addr );
--            break;
--        }
-+        // FreeBSD 6.2 does not provide details for this signal as required by SUSv3
-+        report_error( execution_exception::system_fatal_error,
-+		      "signal: SIGILL (illegal instruction)" );
-         break;
--
-+	
-     case SIGFPE:
-         switch( m_sig_info->si_code ) {
-         case FPE_INTDIV:
-@@ -379,73 +340,21 @@
-         break;
++	  // FreeBSD 6.x does not provide details for this signal as required by SUSv3
+         default: 
+             report_error( execution_exception::system_fatal_error, 
+                           "signal: SIGILL, si_code: %d (illegal instruction; address of failing instruction: 0x%08lx)", 
+@@ -421,18 +380,7 @@
  
      case SIGSEGV:
--        switch( m_sig_info->si_code ) {
+         switch( m_sig_info->si_code ) {
+-#ifndef BOOST_TEST_LIMITED_SIGNAL_DETAILS
 -        case SEGV_MAPERR:
 -            report_error( execution_exception::system_fatal_error,
 -                          "memory access violation at address: 0x%08lx: no mapping at fault address",
@@ -70,14 +65,16 @@
 -                          "memory access violation at address: 0x%08lx: invalid permissions",
 -                          m_sig_info->si_addr );
 -            break;
--        }
-+        // FreeBSD 6.2 does not provide details for this signal as required by SUSv3
-+        report_error( execution_exception::system_fatal_error,
-+                      "signal: SIGSEGV (invalid memory reference)" );
-         break;
+-#endif
++	  // FreeBSD 6.x does not provide details for this signal as required by SUSv3
+         default:
+             report_error( execution_exception::system_fatal_error,
+                           "signal: SIGSEGV, si_code: %d (memory access violation at address: 0x%08lx)",
+@@ -443,23 +391,7 @@
  
      case SIGBUS:
--        switch( m_sig_info->si_code ) {
+         switch( m_sig_info->si_code ) {
+-#ifndef BOOST_TEST_LIMITED_SIGNAL_DETAILS
 -        case BUS_ADRALN:
 -            report_error( execution_exception::system_fatal_error,
 -                          "memory access violation at address: 0x%08lx: invalid address alignment",
@@ -93,14 +90,16 @@
 -                          "memory access violation at address: 0x%08lx: object specific hardware error",
 -                          m_sig_info->si_addr );
 -            break;
--        }
-+        // FreeBSD 6.2 does not provide details for this signal as required by SUSv3
-+        report_error( execution_exception::system_fatal_error,
-+                      "signal: SIGBUS (access to an undefined portion of a memory object)" );
-         break;
+-#endif
++	  // FreeBSD 6.x does not provide details for this signal as required by SUSv3
+         default:
+             report_error( execution_exception::system_fatal_error,
+                           "signal: SIGSEGV, si_code: %d (memory access violation at address: 0x%08lx)",
+@@ -470,38 +402,7 @@
  
      case SIGCHLD:
--        switch( m_sig_info->si_code ) {
+         switch( m_sig_info->si_code ) {
+-#ifndef BOOST_TEST_LIMITED_SIGNAL_DETAILS
 -        case CLD_EXITED:
 -            report_error( execution_exception::system_error,
 -                          "child has exited; pid: %d; uid: %d; exit value: %d",
@@ -131,20 +130,25 @@
 -                          "stopped child had continued; pid: %d; uid: %d; exit value: %d",
 -                          (int)m_sig_info->si_pid, (int)m_sig_info->si_uid, (int)m_sig_info->si_status );
 -            break;
--        }
-+        // FreeBSD 6.2 does not provide details for this signal as required by SUSv3
-+        report_error( execution_exception::system_error,
-+                      "signal: SIGCHLD (child process terminated, stopped, or continued)" );
-         break;
- 
- #if defined(BOOST_TEST_CATCH_SIGPOLL)
-@@ -695,7 +604,8 @@
+-#endif
++	  // FreeBSD 6.x does not provide details for this signal as required by SUSv3
+         default:
+             report_error( execution_exception::system_error,
+                           "signal: SIGCHLD, si_code: %d (child process has terminated; pid: %d; uid: %d; exit value: %d)",
+@@ -771,15 +672,7 @@
  
  static bool ignore_sigchild( siginfo_t* info )
  {
--    return info->si_signo == SIGCHLD && info->si_code == CLD_EXITED 
-+    // for now just use an assumption that children always exit normally
-+    return true //info->si_signo == SIGCHLD && info->si_code == CLD_EXITED 
- #ifdef BOOST_TEST_IGNORE_NON_ZERO_CHILD_CODE
-             ;
- #else
+-    return info->si_signo == SIGCHLD
+-#ifndef BOOST_TEST_LIMITED_SIGNAL_DETAILS
+-            && info->si_code == CLD_EXITED 
+-#endif
+-#ifdef BOOST_TEST_IGNORE_NON_ZERO_CHILD_CODE
+-            ;
+-#else
+-            && (int)info->si_status == 0;
+-#endif
++    return info->si_signo == SIGCHLD && (int)info->si_status == 0;
+ }
+ 
+ //____________________________________________________________________________//

@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	boost-python-libs
-PORTREVISION=	1
 COMMENT=	Framework for interfacing Python and C++
 
 USE_BZIP2=	yes
@@ -18,7 +17,6 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/boost-all/common.mk"
-.include "${PORTSDIR}/devel/boost-all/sites.mk"
 .include "${PORTSDIR}/devel/boost-all/compiled.mk"
 
 MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
@@ -28,12 +26,7 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/libboost_thread.so.${BOOST_SHARED_LIB_VER}:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
-.if defined(WITH_PYSTE)
-RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml
-PLIST_SUB+=	PYSTE=
-.else
-PLIST_SUB+=	PYSTE="@comment "
-.endif
+
 BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 
@@ -44,24 +37,11 @@ PLIST_SUB+=	PYTHON_VERSION=${PYTHON_VERSION:C/python//1}
 
 post-patch: customize-boost-build
 
-.if defined(WITH_PYSTE)
-post-configure:
-# Configure pyste, the Boost.Python code generator
-	@cd ${BUILD_WRKSRC}/libs/python/pyste/install && \
-	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
-		config ${PYDISTUTILS_CONFIGUREARGS}
-.endif
-
 do-build:
 # build the library
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
 		--toolset=${BOOST_TOOLS} --with-python
-
-# Build pyste, the Boost.Python code generator
-	cd ${BUILD_WRKSRC}/libs/python/pyste/install && \
-	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
-		build ${PYDISTUTILS_BUILDARGS}
 
 # Remove non-python headers
 	cd ${WRKSRC} && \
@@ -89,13 +69,6 @@ do-install:
 	cd ${WRKSRC} && \
 	${FIND} boost -type f -a \! -name "*.orig"\
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
-
-.if defined(WITH_PYSTE)
-# Install pyste, the Boost.Python code generator
-	cd ${WRKSRC}/libs/python/pyste/install && \
-	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
-		install ${PYDISTUTILS_INSTALLARGS}
-.endif
 
 post-install:
 # display pkg-message
