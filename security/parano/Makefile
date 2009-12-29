@@ -6,26 +6,19 @@
 #
 
 PORTNAME=	parano
-PORTVERSION=	0.3.4
-PORTREVISION=	4
+PORTVERSION=	0.3.5
 CATEGORIES=	security
-MASTER_SITES=	CENKES BERLIOS
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gnome program to deal with hashfiles
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-GNU_CONFIGURE=	yes
+USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,#!.*python,#!${PYTHON_CMD},' ${WRKSRC}/src/parano.py
 
 .include <bsd.port.mk>
