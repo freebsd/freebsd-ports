@@ -19660,6 +19660,7 @@ py-gdata                        ports/devel/py-gdata
 py-gdbm                         ports/databases/py-gdbm
 py-gdchart                      ports/graphics/py-gdchart
 py-gdchart2                     ports/graphics/py-gdchart2
+py-gearman                      ports/devel/py-gearman
 py-generate                     ports/devel/py-generate
 py-genshi                       ports/textproc/py-genshi
 py-genshi-devel                 ports/textproc/py-genshi-devel
