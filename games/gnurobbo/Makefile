@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gnurobbo
-PORTVERSION=	0.61
+PORTVERSION=	0.64
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
+EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Reimplementation of LK Avalon's Robbo for the Atari XE/XL
 
 USE_GMAKE=	yes
-USE_SDL=	sdl ttf
+USE_SDL=	sdl ttf mixer image
 
 MAKE_ENV=	DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
