@@ -22,6 +22,11 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail client
 
+DEPRECATED=	The mozilla team has shifted the development branch of mozilla to \
+		seamonkey, this port is outdated. \
+		Please consider using www/seamonkey or mail/thunderbird instead.
+EXPIRATION_DATE=2010-01-10
+
 EXTRACT_DEPENDS?=	${NONEXISTENT}:${PORTSDIR}/${LOCAL_SRCDIR}:configure \
 		zip:${PORTSDIR}/archivers/zip \
 		gmake:${PORTSDIR}/devel/gmake \
