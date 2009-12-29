@@ -7,6 +7,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
@@ -32,7 +33,8 @@ CONFIGURE_ARGS+=--disable-sdltest \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's,  x86_64),  x86_64|amd64),' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,  x86_64),  x86_64|amd64),; \
+		/ac_lib/ s,compat,,' ${WRKSRC}/configure
 .if ${ARCH}=="amd64"
 	@${REINPLACE_CMD} -e 's|#define OC_X86_ASM|#undef OC_X86_ASM|' ${WRKSRC}/configure
 .endif
