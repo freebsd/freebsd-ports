@@ -90,7 +90,7 @@ USE_TCL_NO_THREADS=	yes
 WANT_PERL=	yes
 .endif
 
-.if !defined(WITHOUT_X11)
+.if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF)
 WANT_GNOME=	yes
 .endif
 
@@ -124,37 +124,38 @@ MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE
 
 .if !defined(WITHOUT_X11)
 #	for now default the GUI to the GTK+ one
-#	will be reviewed when the GTK+ 1.{3,4} behemoth is released
-.if !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK2)
-USE_GNOME=	gtk12
-.endif
+. if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK) && !defined(WITH_GTK2)
+WITH_GTK=	yes
+. endif
 
-.if defined(WITH_ATHENA)
+. if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
-.elif defined(WITH_GTK2)
+. elif defined(WITH_GTK)
+USE_GNOME=	gtk12
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${LOCALBASE}" ${I18N}
+MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+USE_XORG+=	xt
+. elif defined(WITH_GTK2)
 USE_GNOME=	gtk20
 PKGNAMESUFFIX=	-gtk2
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
-.elif defined(WITH_GNOME)
-.if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
+. elif defined(WITH_GNOME)
+.  if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
 	${WITH_GNOME}=="1"
 USE_GNOME=	gnomelibs gnomeprefix
 PKGNAMESUFFIX=	-gnome
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
-.else
-USE_GNOME=	gtk12
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${LOCALBASE}" ${I18N}
-MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
-USE_XORG+=	xt
-.endif
-.elif defined(WITH_MOTIF)
+.  endif
+. elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${LOCALBASE} ${I18N}
-.endif
+. elif defined(WITH_X11_ONLY)
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --with-x" ${I18N}
+. endif
 .else	# WITHOUT_X11
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" ${I18N}
 .endif	# WITHOUT_X11
