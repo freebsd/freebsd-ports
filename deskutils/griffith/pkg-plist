@@ -1,4 +1,5 @@
 bin/griffith
+etc/bash_completion.d/griffith
 share/applications/griffith.desktop
 %%DATADIR%%/export_templates/csv/config.xml
 %%DATADIR%%/export_templates/csv/page.tpl
@@ -61,15 +62,19 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/__init__.py
 %%DATADIR%%/lib/about.py
 %%DATADIR%%/lib/add.py
+%%DATADIR%%/lib/advfilter.py
 %%DATADIR%%/lib/amazon.py
 %%DATADIR%%/lib/backup.py
 %%DATADIR%%/lib/config.py
 %%DATADIR%%/lib/cover.py
+%%DATADIR%%/lib/db/__init__.py
+%%DATADIR%%/lib/db/_movie.py
+%%DATADIR%%/lib/db/_objects.py
+%%DATADIR%%/lib/db/tables.py
 %%DATADIR%%/lib/dbupgrade.py
 %%DATADIR%%/lib/delete.py
 %%DATADIR%%/lib/edit.py
 %%DATADIR%%/lib/gconsole.py
-%%DATADIR%%/lib/gdebug.py
 %%DATADIR%%/lib/gemail.py
 %%DATADIR%%/lib/griffith
 %%DATADIR%%/lib/gutils.py
@@ -79,15 +84,21 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/movie.py
 %%DATADIR%%/lib/people.py
 %%DATADIR%%/lib/plugins/__init__.py
+%%DATADIR%%/lib/plugins/export/PluginExportAMC.py
 %%DATADIR%%/lib/plugins/export/PluginExportCSV.py
+%%DATADIR%%/lib/plugins/export/PluginExportDVDProfilerXMLExportV2.py
+%%DATADIR%%/lib/plugins/export/PluginExportDVDProfilerXMLExportV3.py
+%%DATADIR%%/lib/plugins/export/PluginExportGCstar.py
 %%DATADIR%%/lib/plugins/export/PluginExportHTML.py
 %%DATADIR%%/lib/plugins/export/PluginExportPDF.py
 %%DATADIR%%/lib/plugins/export/PluginExportXML.py
 %%DATADIR%%/lib/plugins/export/PluginExportiPod.py
 %%DATADIR%%/lib/plugins/export/__init__.py
+%%DATADIR%%/lib/plugins/imp/AMC.py
 %%DATADIR%%/lib/plugins/imp/CSV.py
 %%DATADIR%%/lib/plugins/imp/__init__.py
 %%DATADIR%%/lib/plugins/movie/PluginMovie7arte.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieAllMovie.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAllocine.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAmazon.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAniDB.py
@@ -110,7 +121,9 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieKinoDe.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieMediadis.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieMovieMeter.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieMoviefone.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieMyMoviesIt.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieOFDb.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieOnet.py
 %%DATADIR%%/lib/plugins/movie/PluginMoviePTGate.py
@@ -123,68 +136,9 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/quick_filter.py
 %%DATADIR%%/lib/sql.py
 %%DATADIR%%/lib/test_movieplugins.py
-%%DATADIR%%/lib/update.py
 %%DATADIR%%/lib/version.py
 %%DATADIR%%/lib/view.py
 %%DATADIR%%/lib/widgets.py
-%%DATADIR%%/lib/sqlalchemy/databases
-%%DATADIR%%/lib/sqlalchemy/databases/__init__.py
-%%DATADIR%%/lib/sqlalchemy/databases/firebird.py
-%%DATADIR%%/lib/sqlalchemy/databases/information_schema.py
-%%DATADIR%%/lib/sqlalchemy/databases/informix.py
-%%DATADIR%%/lib/sqlalchemy/databases/mssql.py
-%%DATADIR%%/lib/sqlalchemy/databases/mysql.py
-%%DATADIR%%/lib/sqlalchemy/databases/oracle.py
-%%DATADIR%%/lib/sqlalchemy/databases/postgres.py
-%%DATADIR%%/lib/sqlalchemy/databases/sqlite.py
-%%DATADIR%%/lib/sqlalchemy/engine
-%%DATADIR%%/lib/sqlalchemy/engine/__init__.py
-%%DATADIR%%/lib/sqlalchemy/engine/base.py
-%%DATADIR%%/lib/sqlalchemy/engine/default.py
-%%DATADIR%%/lib/sqlalchemy/engine/strategies.py
-%%DATADIR%%/lib/sqlalchemy/engine/threadlocal.py
-%%DATADIR%%/lib/sqlalchemy/engine/url.py
-%%DATADIR%%/lib/sqlalchemy/ext
-%%DATADIR%%/lib/sqlalchemy/ext/__init__.py
-%%DATADIR%%/lib/sqlalchemy/ext/activemapper.py
-%%DATADIR%%/lib/sqlalchemy/ext/assignmapper.py
-%%DATADIR%%/lib/sqlalchemy/ext/associationproxy.py
-%%DATADIR%%/lib/sqlalchemy/ext/orderinglist.py
-%%DATADIR%%/lib/sqlalchemy/ext/proxy.py
-%%DATADIR%%/lib/sqlalchemy/ext/selectresults.py
-%%DATADIR%%/lib/sqlalchemy/ext/sessioncontext.py
-%%DATADIR%%/lib/sqlalchemy/ext/sqlsoup.py
-%%DATADIR%%/lib/sqlalchemy/mods
-%%DATADIR%%/lib/sqlalchemy/mods/__init__.py
-%%DATADIR%%/lib/sqlalchemy/mods/legacy_session.py
-%%DATADIR%%/lib/sqlalchemy/mods/selectresults.py
-%%DATADIR%%/lib/sqlalchemy/mods/threadlocal.py
-%%DATADIR%%/lib/sqlalchemy/orm
-%%DATADIR%%/lib/sqlalchemy/orm/__init__.py
-%%DATADIR%%/lib/sqlalchemy/orm/attributes.py
-%%DATADIR%%/lib/sqlalchemy/orm/dependency.py
-%%DATADIR%%/lib/sqlalchemy/orm/interfaces.py
-%%DATADIR%%/lib/sqlalchemy/orm/mapper.py
-%%DATADIR%%/lib/sqlalchemy/orm/properties.py
-%%DATADIR%%/lib/sqlalchemy/orm/query.py
-%%DATADIR%%/lib/sqlalchemy/orm/session.py
-%%DATADIR%%/lib/sqlalchemy/orm/strategies.py
-%%DATADIR%%/lib/sqlalchemy/orm/sync.py
-%%DATADIR%%/lib/sqlalchemy/orm/unitofwork.py
-%%DATADIR%%/lib/sqlalchemy/orm/uowdumper.py
-%%DATADIR%%/lib/sqlalchemy/orm/util.py
-%%DATADIR%%/lib/sqlalchemy/__init__.py
-%%DATADIR%%/lib/sqlalchemy/ansisql.py
-%%DATADIR%%/lib/sqlalchemy/exceptions.py
-%%DATADIR%%/lib/sqlalchemy/logging.py
-%%DATADIR%%/lib/sqlalchemy/pool.py
-%%DATADIR%%/lib/sqlalchemy/queue.py
-%%DATADIR%%/lib/sqlalchemy/schema.py
-%%DATADIR%%/lib/sqlalchemy/sql.py
-%%DATADIR%%/lib/sqlalchemy/sql_util.py
-%%DATADIR%%/lib/sqlalchemy/topological.py
-%%DATADIR%%/lib/sqlalchemy/types.py
-%%DATADIR%%/lib/sqlalchemy/util.py
 share/locale/bg/LC_MESSAGES/griffith.mo
 share/locale/ca/LC_MESSAGES/griffith.mo
 share/locale/cs/LC_MESSAGES/griffith.mo
@@ -220,25 +174,22 @@ share/locale/uk/LC_MESSAGES/griffith.mo
 share/locale/zh_CN/LC_MESSAGES/griffith.mo
 share/pixmaps/griffith.png
 share/pixmaps/griffith.xpm
-@dirrm share/locale/nds/LC_MESSAGES
-@dirrm share/locale/nds
-@dirrm %%DATADIR%%/export_templates/csv
-@dirrm %%DATADIR%%/export_templates/html_table
-@dirrm %%DATADIR%%/export_templates/html_tables
-@dirrm %%DATADIR%%/export_templates/latex
-@dirrm %%DATADIR%%/export_templates/xml
-@dirrm %%DATADIR%%/export_templates
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/lib/plugins/export
-@dirrm %%DATADIR%%/lib/plugins/imp
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrm %%DATADIR%%/lib/plugins/movie
+@dirrm %%DATADIR%%/lib/plugins/imp
+@dirrm %%DATADIR%%/lib/plugins/export
 @dirrm %%DATADIR%%/lib/plugins
-@dirrm %%DATADIR%%/lib/sqlalchemy/databases
-@dirrm %%DATADIR%%/lib/sqlalchemy/engine
-@dirrm %%DATADIR%%/lib/sqlalchemy/ext
-@dirrm %%DATADIR%%/lib/sqlalchemy/mods
-@dirrm %%DATADIR%%/lib/sqlalchemy/orm
-@dirrm %%DATADIR%%/lib/sqlalchemy
+@dirrm %%DATADIR%%/lib/db
 @dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/export_templates/xml
+@dirrm %%DATADIR%%/export_templates/latex
+@dirrm %%DATADIR%%/export_templates/html_tables
+@dirrm %%DATADIR%%/export_templates/html_table
+@dirrm %%DATADIR%%/export_templates/csv
+@dirrm %%DATADIR%%/export_templates
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry etc/bash_completion.d
