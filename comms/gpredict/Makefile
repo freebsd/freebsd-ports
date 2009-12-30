@@ -5,19 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	gpredict
-PORTVERSION=	0.9.0
-PORTREVISION=	4
+PORTVERSION=	1.1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/groundstation/Gpredict/${PORTVERSION}
+MASTER_SITES=	SF/gpredict/Gpredict/${PORTVERSION}
 
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio satellite tracking and prediction
 
-LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib:install
-BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
+		goocanvas:${PORTSDIR}/graphics/goocanvas
+BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-network
 USE_GMAKE=	yes
