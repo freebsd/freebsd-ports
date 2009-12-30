@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mmap
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
