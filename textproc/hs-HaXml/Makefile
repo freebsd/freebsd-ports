@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.19.7
-PORTREVISION=	1
+PORTVERSION=	1.20
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/HaXml/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -54,8 +53,6 @@ HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 PORTDOCS=	*
 .endif
 
-PYSHARE=	${SH} -c '(${FIND} -d $$0 $$2)'
-
 .SILENT:
 
 do-configure:
@@ -67,16 +64,13 @@ do-build:
 		     && ${SETUP_CMD} register --gen-script
 
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source \
+	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source --executables \
 					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif
 
 do-install:
 	cd ${WRKSRC} && ${SETUP_CMD} install \
 		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${HAXML_LIBDIR_REL}/register.sh
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR} " -not -regex HaXml.* "
-.endif
 
 post-install:
 	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
