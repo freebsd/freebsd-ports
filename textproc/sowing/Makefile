@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	sowing
-PORTVERSION=	1.1.12
-PORTREVISION=	1
+PORTVERSION=	1.1.15
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/sowing/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processing tools to generate documentation from source files
 
 BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm	\
