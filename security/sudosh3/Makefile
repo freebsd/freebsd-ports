@@ -17,6 +17,8 @@ CONFLICTS=		sudosh-*
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
+BROKEN=			does not package
+
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
