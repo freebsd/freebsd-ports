@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}%201.2/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME:S/-devel//g}-${PORTVERSION}
+PORTSCOUT=	limit:^1\.2\. skipb:1
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A web-based calendar application
