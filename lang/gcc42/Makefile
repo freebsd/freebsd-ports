@@ -8,15 +8,15 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.5.20090325
-PORTREVISION=	1
-CATEGORIES=	lang
+PORTREVISION=	2
+CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
 
-MAINTAINER=	gerald@FreeBSD.org
+MAINTAINER?=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.2
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
@@ -32,11 +32,16 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
+WANT_GNOME=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386 && ${ARCH} != amd64
+WITHOUT_JAVA=	yes
+.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -49,7 +54,7 @@ WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-nls \
+CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-gmp=${LOCALBASE} \
@@ -74,10 +79,54 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/libgomp
 
+.if ! defined(WITHOUT_JAVA)
+DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
+BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
+EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
+# FIXME: we are currently getting weird build failures with libjava on
+# some 4.x and 5.x systems, which the following works around. PR 81788.
+CONFIGURE_ARGS+=--disable-rpath --enable-libgcj
+MAKE_ENV+=	JAR=no
+MAN1+=		gcj${SUFFIX}.1 \
+		gcj-dbtool${SUFFIX}.1 \
+		gcjh${SUFFIX}.1 \
+		gij${SUFFIX}.1 \
+		gjnih${SUFFIX}.1 \
+		grmic${SUFFIX}.1 \
+		grmiregistry${SUFFIX}.1 \
+		jcf-dump${SUFFIX}.1 \
+		jv-scan${SUFFIX}.1 \
+		jv-convert${SUFFIX}.1
+INFO+=		gcc${SUFFIX}/gcj
+PLIST_SUB+=	JAVA=""
+
+post-patch::
+	@cd ${SRCDIR} && ${CHMOD} 755 ./contrib/download_ecj && ./contrib/download_ecj
+
+.if defined(WITH_JAVA_AWT)
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+USE_GNOME=	gtk20 libartlgpl2
+CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
+			--enable-gtk-cairo
+.endif
+
+.else
+CONFIGURE_ARGS+=--disable-libgcj
+PLIST_SUB+=	JAVA="@comment "
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 
-post-patch:
+pre-extract:
+	@# Building libgcj with lang/gcc295 installed is causing a failure
+	@# about "hidden symbol `__eprintf'" in libgcc.a(_eprintf.o).
+	@if type gcc295 >/dev/null ; then \
+	  echo "This port will not build in the presence of lang/gcc295."; \
+	  exit 1; \
+	fi
+
+post-patch::
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 	    ${SRCDIR}/gcc/version.c
 
@@ -92,7 +141,7 @@ post-install:
 	${RM} -f ${TARGLIB}/*.la
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
+.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
