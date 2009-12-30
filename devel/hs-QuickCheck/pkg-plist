@@ -5,6 +5,7 @@
 %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Exception.hi
 %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Function.hi
 %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Gen.hi
+%%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Modifiers.hi
 %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Monadic.hi
 %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Poly.hi
 %%QUICKCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Property.hi

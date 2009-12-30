@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	QuickCheck
-PORTVERSION=	2.1.0.1
-PORTREVISION=	1
+PORTVERSION=	2.1.0.2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
