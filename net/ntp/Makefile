@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-RC/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
@@ -20,7 +20,7 @@ COMMENT=	The Network Time Protocol Distribution
 LATEST_LINK=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:110
+USE_AUTOTOOLS=	automake:110 libtool:22
 
 MAN1=		sntp.1 \
 		ntpd.1 \
