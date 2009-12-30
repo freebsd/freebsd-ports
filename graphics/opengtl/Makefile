@@ -22,6 +22,12 @@ USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-patch:
 #disable layex doc, it not ready yer
 	${REINPLACE_CMD} -e '/add_subdirectory.*doc/d' \
@@ -38,4 +44,4 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|(int) pthread_self|(unsigned long long) pthread_self|' \
 		${PATCH_WRKSRC}/OpenGTL/GTLCore/MemoryManager_p.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
