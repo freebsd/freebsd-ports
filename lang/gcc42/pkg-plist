@@ -10,4 +10,24 @@ bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
+%%JAVA%%bin/addr2name.awk%%SUFFIX%%
+%%JAVA%%bin/gappletviewer%%SUFFIX%%
+%%JAVA%%bin/gcj%%SUFFIX%%
+%%JAVA%%bin/gcj-dbtool%%SUFFIX%%
+%%JAVA%%bin/gcjh%%SUFFIX%%
+%%JAVA%%bin/gij%%SUFFIX%%
+%%JAVA%%bin/gjarsigner%%SUFFIX%%
+%%JAVA%%bin/gjnih%%SUFFIX%%
+%%JAVA%%bin/gkeytool%%SUFFIX%%
+%%JAVA%%bin/grmic%%SUFFIX%%
+%%JAVA%%bin/grmiregistry%%SUFFIX%%
+%%JAVA%%bin/jar%%SUFFIX%%
+%%JAVA%%bin/jv-convert%%SUFFIX%%
+%%JAVA%%bin/jv-scan%%SUFFIX%%
+%%JAVA%%bin/jcf-dump%%SUFFIX%%
+%%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
+%%JAVA%%bin/%%GNU_HOST%%-gcjh%%SUFFIX%%
+%%JAVA%%libdata/pkgconfig/libgcj-4.2.pc
+%%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
+%%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
 @comment Insert PLIST.lib here
