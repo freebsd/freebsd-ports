@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	pango
 USE_GHOSTSCRIPT=yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="-L${LOCALBASE}/lib"		\
 		WITH_FREETYPE=ON
@@ -46,7 +45,6 @@ CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:BOOL=OFF
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
-CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11="@comment "
 .else
 USE_XORG=	x11
@@ -121,6 +119,10 @@ pre-everything::
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share/fonts/truetype/freefont|${LOCALBASE}/lib/X11/fonts/freefont-ttf|'\
 		${WRKSRC}/cmake/modules/freetype.cmake
+.if defined(WITHOUT_X11)
+	${REINPLACE_CMD} -e 's|^find_package(X11)|SET(X11_FOUND "FALSE")|' \
+		${WRKSRC}/cmake/modules/plplot.cmake
+.endif
 .if defined(WITH_TCLTK)
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; \
 		s|/usr/include|${LOCALBASE}/include|'		\
