@@ -5,19 +5,77 @@ bin/gpredict
 %%DATADIR%%/NEWS
 %%DATADIR%%/README
 %%DATADIR%%/TODO
-%%DATADIR%%/data/Amateur.mod
-%%DATADIR%%/data/amateur.tle
-%%DATADIR%%/data/cubesat.tle
-%%DATADIR%%/data/galileo.tle
-%%DATADIR%%/data/geo.tle
-%%DATADIR%%/data/gps-ops.tle
-%%DATADIR%%/data/iridium.tle
-%%DATADIR%%/data/locations.dat
-%%DATADIR%%/data/military.tle
-%%DATADIR%%/data/radar.tle
 %%DATADIR%%/data/sample.qth
-%%DATADIR%%/data/science.tle
-%%DATADIR%%/data/weather.tle
+%%DATADIR%%/data/locations.dat
+%%DATADIR%%/data/Amateur.mod
+%%DATADIR%%/data/satdata/satellites.dat 
+%%DATADIR%%/data/satdata/amateur.cat    
+%%DATADIR%%/data/satdata/cubesat.cat    
+%%DATADIR%%/data/satdata/dmc.cat        
+%%DATADIR%%/data/satdata/education.cat  
+%%DATADIR%%/data/satdata/engineering.cat
+%%DATADIR%%/data/satdata/galileo.cat    
+%%DATADIR%%/data/satdata/geo.cat        
+%%DATADIR%%/data/satdata/geodetic.cat   
+%%DATADIR%%/data/satdata/glo-ops.cat    
+%%DATADIR%%/data/satdata/globalstar.cat 
+%%DATADIR%%/data/satdata/goes.cat       
+%%DATADIR%%/data/satdata/gorizont.cat   
+%%DATADIR%%/data/satdata/gps-ops.cat    
+%%DATADIR%%/data/satdata/intelsat.cat   
+%%DATADIR%%/data/satdata/iridium.cat    
+%%DATADIR%%/data/satdata/military.cat   
+%%DATADIR%%/data/satdata/molniya.cat    
+%%DATADIR%%/data/satdata/musson.cat     
+%%DATADIR%%/data/satdata/nnss.cat       
+%%DATADIR%%/data/satdata/noaa.cat       
+%%DATADIR%%/data/satdata/orbcomm.cat    
+%%DATADIR%%/data/satdata/other-comm.cat 
+%%DATADIR%%/data/satdata/other.cat      
+%%DATADIR%%/data/satdata/radar.cat      
+%%DATADIR%%/data/satdata/raduga.cat     
+%%DATADIR%%/data/satdata/resource.cat   
+%%DATADIR%%/data/satdata/sarsat.cat     
+%%DATADIR%%/data/satdata/sbas.cat       
+%%DATADIR%%/data/satdata/science.cat    
+%%DATADIR%%/data/satdata/tdrss.cat      
+%%DATADIR%%/data/satdata/tle-new.cat    
+%%DATADIR%%/data/satdata/visual.cat     
+%%DATADIR%%/data/satdata/weather.cat    
+%%DATADIR%%/data/satdata/x-comm.cat     
+%%DATADIR%%/data/trsp/20439.trsp        
+%%DATADIR%%/data/trsp/20442.trsp        
+%%DATADIR%%/data/trsp/22825.trsp        
+%%DATADIR%%/data/trsp/22826.trsp        
+%%DATADIR%%/data/trsp/23439.trsp        
+%%DATADIR%%/data/trsp/24278.trsp        
+%%DATADIR%%/data/trsp/24786.trsp        
+%%DATADIR%%/data/trsp/25338.trsp        
+%%DATADIR%%/data/trsp/25397.trsp        
+%%DATADIR%%/data/trsp/25544.trsp        
+%%DATADIR%%/data/trsp/26352.trsp        
+%%DATADIR%%/data/trsp/26536.trsp        
+%%DATADIR%%/data/trsp/26871.trsp        
+%%DATADIR%%/data/trsp/26931.trsp        
+%%DATADIR%%/data/trsp/27453.trsp        
+%%DATADIR%%/data/trsp/27607.trsp        
+%%DATADIR%%/data/trsp/27844.trsp        
+%%DATADIR%%/data/trsp/27848.trsp        
+%%DATADIR%%/data/trsp/27939.trsp        
+%%DATADIR%%/data/trsp/28375.trsp
+%%DATADIR%%/data/trsp/28650.trsp
+%%DATADIR%%/data/trsp/28654.trsp
+%%DATADIR%%/data/trsp/28895.trsp
+%%DATADIR%%/data/trsp/32785.trsp
+%%DATADIR%%/data/trsp/32787.trsp
+%%DATADIR%%/data/trsp/32789.trsp
+%%DATADIR%%/data/trsp/32791.trsp
+%%DATADIR%%/data/trsp/33493.trsp
+%%DATADIR%%/data/trsp/33498.trsp
+%%DATADIR%%/data/trsp/33499.trsp
+%%DATADIR%%/data/trsp/33591.trsp
+%%DATADIR%%/data/trsp/35865.trsp
+%%DATADIR%%/data/trsp/7530.trsp
 share/pixmaps/gpredict/icons/gpredict-antenna.png
 share/pixmaps/gpredict/icons/gpredict-azel-small.png
 share/pixmaps/gpredict/icons/gpredict-calendar.png
@@ -46,9 +104,29 @@ share/pixmaps/gpredict/maps/nasa-topo_1024.jpg
 share/pixmaps/gpredict/maps/nasa-topo_1600.jpg
 share/pixmaps/gpredict/maps/nasa-topo_2048.jpg
 share/pixmaps/gpredict/maps/nasa-topo_800.png
+share/pixmaps/gpredict/maps/nasa-bmng-01_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-03_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-05_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-07_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-08_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-01_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-03_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-05_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-07_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-08_2048.jpg
+share/pixmaps/gpredict/icons/gpredict-antenna-small.png
+share/pixmaps/gpredict/icons/gpredict-oscilloscope-small.png
+share/pixmaps/gpredict/icons/gpredict-shuttle.png
+share/pixmaps/gpredict/icons/gpredict-shuttle-small.png
+share/locale/fr/LC_MESSAGES/gpredict.mo
+share/locale/en_GB/LC_MESSAGES/gpredict.mo
+share/locale/en_US/LC_MESSAGES/gpredict.mo                        
 @dirrm share/pixmaps/gpredict/maps
 @dirrm share/pixmaps/gpredict/icons
 @dirrm share/pixmaps/gpredict
+@dirrm %%DATADIR%%/data/satdata
+@dirrm %%DATADIR%%/data/trsp
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry lib/locale
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
