@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.4.8
+PORTVERSION=	3.4.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/${PORTNAME}/releases/ \
 		http://offload1.icculus.org/openbox/releases/ \
@@ -46,8 +46,6 @@ CONFIGURE_ARGS+=	--disable-pango
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '83s|_isexecfile(path):|_isexecfile(self, path):|g' \
-		${WRKSRC}/tools/xdg-autostart/xdg-autostart
 
 post-configure:
 	@${CHMOD} +x ${WRKSRC}/install-sh

@@ -1,5 +1,6 @@
 bin/gnome-panel-control
 bin/gdm-control
+bin/obprop
 bin/openbox
 bin/openbox-gnome-session
 bin/openbox-kde-session
@@ -29,6 +30,7 @@ lib/libobrender.so.21
 lib/openbox/xdg-autostart
 libdata/pkgconfig/obparser-3.0.pc
 libdata/pkgconfig/obrender-3.0.pc
+share/applications/openbox.desktop
 share/gnome/wm-properties/openbox.desktop
 share/pixmaps/openbox.png
 share/themes/Artwiz-boxed/openbox-3/themerc
@@ -167,3 +169,4 @@ share/xsessions/openbox-kde.desktop
 @dirrm etc/xdg/openbox
 @dirrmtry etc/xdg
 @dirrmtry share/xsessions
+@dirrmtry share/applications
