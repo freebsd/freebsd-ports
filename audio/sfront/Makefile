@@ -6,34 +6,27 @@
 #
 
 PORTNAME=	sfront
-PORTVERSION=	0.91
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A translator that converts MP4-SA files into efficient C programs
 
-PORTDOCS=	book sfman
-
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-
 USE_BISON=	build
 MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-
 ALL_TARGET=	${PORTNAME}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sfront ${PREFIX}/bin
-	${CP} -R ${WRKDIR}/sfront/examples/ ${EXAMPLESDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for d in ${PORTDOCS}
-	${CP} -R ${WRKDIR}/sfront/${d} ${DOCSDIR}/
-.endfor
-.endif
+PLIST_FILES=	bin/sfront
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^(OPT|CC|DBUG)/d' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
