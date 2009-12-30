@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lazysmallcheck
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,8 +15,8 @@ PKGNAMESUFFIX=	-ghc
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A library for demand-driven testing of Haskell programs
 
-BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc
 
 GHC_VERSION=		6.10.4
 LAZYSMALLCHECK_VERSION=	${PORTVERSION}
@@ -25,6 +24,7 @@ LAZYSMALLCHECK_VERSION=	${PORTVERSION}
 GHC_CMD=	${LOCALBASE}/bin/ghc
 SETUP_CMD=	./setup
 
+EXAMPLESDIR=	${PREFIX}/share/examples/${DISTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 LAZYSMALLCHECK_LIBDIR_REL=	lib/${DISTNAME}
 
@@ -52,6 +52,8 @@ HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 PORTDOCS=	*
 .endif
 
+PORTEXAMPLES=	*
+
 .SILENT:
 
 do-configure:
@@ -70,6 +72,10 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${SETUP_CMD} install \
 		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${LAZYSMALLCHECK_LIBDIR_REL}/register.sh
+
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR} && cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+.endif
 
 post-install:
 	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
