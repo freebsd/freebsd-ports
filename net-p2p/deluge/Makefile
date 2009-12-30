@@ -7,7 +7,7 @@
 
 PORTNAME=	deluge
 PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
 
