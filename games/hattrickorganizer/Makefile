@@ -16,6 +16,9 @@ DISTNAME=	HO_${PORTVERSION:S/.//g}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A management tool for Hattrick.org written in Java
 
+DEPRECATED=	Has been broken for quite some time
+EXPIRATION_DATE=	2010-01-12
+
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USE_ZIP=	  yes
