@@ -619,6 +619,7 @@ arping                          ports/net/arping
 arprelease                      ports/net/arprelease
 arpscan                         ports/net-mgmt/arpscan
 arpwatch                        ports/net-mgmt/arpwatch
+arss                            ports/audio/arss
 artemis                         ports/biology/artemis
 arts                            ports/audio/arts
 arts++                          ports/net-mgmt/arts++
@@ -1167,6 +1168,7 @@ boost-all                       ports/devel/boost-all
 boost-docs                      ports/devel/boost-docs
 boost-jam                       ports/devel/boost-jam
 boost-libs                      ports/devel/boost-libs
+boost-pyste                     ports/devel/boost-pyste
 boost-python-libs               ports/devel/boost-python-libs
 boost_build                     ports/devel/boost_build
 bopm                            ports/irc/bopm
@@ -7635,6 +7637,7 @@ libmp3splt                      ports/audio/libmp3splt
 libmpcbdm                       ports/devel/libmpcbdm
 libmpcdec                       ports/audio/libmpcdec
 libmpd                          ports/audio/libmpd
+libmpdclient                    ports/audio/libmpdclient
 libmpeg2                        ports/multimedia/libmpeg2
 libmpeg3                        ports/multimedia/libmpeg3
 libmrss                         ports/textproc/libmrss
@@ -20304,6 +20307,7 @@ python-doc-pdf-letter           ports/lang/python-doc-pdf-letter
 python-doc-postscript-a4        ports/lang/python-doc-postscript-a4
 python-doc-postscript-letter    ports/lang/python-doc-postscript-letter
 python-mode.el                  ports/lang/python-mode.el
+python-nexus                    ports/biology/python-nexus
 python24                        ports/lang/python24
 python25                        ports/lang/python25
 python26                        ports/lang/python26
