@@ -10,6 +10,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pear.phpdoctrine.org/get/ \
 		LOCAL/glarkin
+PORTSCOUT=	limit:^1\.2\.
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Doctrine is a PHP object relational mapper
