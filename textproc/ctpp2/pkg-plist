@@ -30,6 +30,7 @@ include/ctpp2/SimpleCompiler.hpp
 include/ctpp2/SimpleVM.hpp
 include/ctpp2/StaticData.hpp
 include/ctpp2/StaticText.hpp
+include/ctpp2/StreamOutputCollector.hpp
 include/ctpp2/StringIconvOutputCollector.hpp
 include/ctpp2/StringOutputCollector.hpp
 include/ctpp2/SyscallFactory.hpp
