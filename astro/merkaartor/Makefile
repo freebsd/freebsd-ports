@@ -6,39 +6,46 @@
 #
 
 PORTNAME=	merkaartor
-PORTVERSION=	0.13.2
-PORTREVISION=	2
+PORTVERSION=	0.14
 CATEGORIES=	astro
 MASTER_SITES=	http://www.merkaartor.org/downloads/source/
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	An openstreetmap mapping program
 
-LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2
-
 USE_BZIP2=	yes
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build linguist_build \
+QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build \
 		gui network svg webkit xml imageformats script scripttools
+MAKE_JOBS_SAFE=	yes
+
+QMAKEFLAGS=	PREFIX=${PREFIX}
 
 MAN1=		merkaartor.1
 
-HAS_CONFIGURE=	yes
+OPTIONS=	GEOIMAGE "Enable geotagged images (needs exiv2)" on
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/lrelease|&-qt4|' \
-		${WRKSRC}/Merkaartor.pro
+.include <bsd.port.options.mk>
 
-# Don't ask. If the compiler_TSQM_make_all target is not called before
-# calling qmake-qt4, then the install_translations target won't show
-# up in the Makefile.
+.if !defined(WITHOUT_GEOIMAGE)
+QMAKEFLAGS+=	GEOIMAGE=1
+LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+.endif
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+QT_COMPONENTS+=	linguist_build
+
+pre-build:
+	@cd ${WRKSRC}/translations && lrelease-qt4 ../src/src.pro
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} PREFIX=${PREFIX}
-	cd ${WRKSRC} && ${MAKE} compiler_TSQM_make_all
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} PREFIX=${PREFIX}
+		${QMAKE} ${QMAKEFLAGS}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/debian/merkaartor.1 ${PREFIX}/man/man1
