@@ -1,11 +1,32 @@
 bin/merkaartor
-%%DATADIR%%/translations/merkaartor_ar.qm
-%%DATADIR%%/translations/merkaartor_cs.qm
-%%DATADIR%%/translations/merkaartor_de.qm
-%%DATADIR%%/translations/merkaartor_es.qm
-%%DATADIR%%/translations/merkaartor_fr.qm
-%%DATADIR%%/translations/merkaartor_it.qm
-%%DATADIR%%/translations/merkaartor_pl.qm
-%%DATADIR%%/translations/merkaartor_ru.qm
+lib/merkaartor/plugins/background/libMYahooBackgroundPlugin.so
+lib/merkaartor/plugins/styles/libskulpture.so
+share/applications/merkaartor.desktop
+share/icons/hicolor/48x48/apps/merkaartor.png
+%%DATADIR%%/BookmarksList.xml
+%%DATADIR%%/Projections.xml
+%%DATADIR%%/TmsServersList.xml
+%%DATADIR%%/WmsServersList.xml
+%%NLS%%%%DATADIR%%/translations/merkaartor_ar.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_cs.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_de.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_es.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_fr.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_it.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_ja.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_nl.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_pl.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_ru.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_sv.qm
+%%DATADIR%%/world_background.osb
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrm lib/merkaartor/plugins/styles
+@dirrm lib/merkaartor/plugins/background
+@dirrm lib/merkaartor/plugins
+@dirrm lib/merkaartor
