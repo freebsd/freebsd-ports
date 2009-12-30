@@ -1,0 +1,26 @@
+--- ./src/tohtml/Makefile.in.orig	2009-12-28 17:03:12.000000000 +0100
++++ ./src/tohtml/Makefile.in	2009-12-30 14:36:54.000000000 +0100
+@@ -4,14 +4,14 @@
+ include ../../Makerules
+ top_srcdir=@top_srcdir@
+ srcdir=@srcdir@
+-datarootdir     = @datarootdir@
++datadir     = @datadir@
+ @VPATH@
+ 
+ LIBS      =  ../../lib/libsowing.a
+ INCLUDES   = -I${top_srcdir}/include -I. -I../../include
+ DEFS      =   -DPSPATH='"@bindir@/"' \
+-              -DBMSOURCE='"@datarootdir@/"' \
+-	      -DBASEDEF='"@datarootdir@/basedefs.txt"'
++              -DBMSOURCE='"@datadir@/"' \
++	      -DBASEDEF='"@datadir@/basedefs.txt"'
+ PROGRAMS = tohtml tortf 
+ 
+ BASEOBJS = search.o texactio.o rdaux.o rdindx.o label.o scan.o \
+@@ -40,4 +40,4 @@
+ install:
+ 	$(INSTALL_PROGRAM) tohtml @bindir@/tohtml
+ 	$(INSTALL_PROGRAM) xwdsize @bindir@/xwdsize
+-	$(INSTALL_DATA) basedefs.txt @datarootdir@/basedefs.txt
++	$(INSTALL_DATA) basedefs.txt @datadir@/basedefs.txt
