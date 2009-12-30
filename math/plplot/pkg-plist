@@ -144,7 +144,7 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/c/Makefile
 %%DATADIR%%/examples/c/README.cairo
 %%DATADIR%%/examples/c/ext-cairo-test.c
-%%DATADIR%%/examples/c/extXdrawable_demo.c
+%%X11%%%%DATADIR%%/examples/c/extXdrawable_demo.c
 %%DATADIR%%/examples/c/plcdemos.h
 %%DATADIR%%/examples/c/test_plend.c
 %%DATADIR%%/examples/c/tutor.c
