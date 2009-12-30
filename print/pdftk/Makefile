@@ -7,6 +7,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdfhacks.com/pdftk/ \
 		http://www.accesspdf.com/pdftk/
@@ -15,20 +16,21 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}.${PORTVERSION:E}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A simple tool for doing everyday things with PDF documents
 
-# gcj/libgcj don't exist on these platforms
-NOT_FOR_ARCHS=	amd64 ia64 sparc64
+# Make this explicit for all OS versions.  For __FreeBSD_version < 700042,
+# we need to build gcc 4.2+ to get gcj42, and for OS versions with gcc 4.2+
+# in the base system, we need to build the port anyway to get gcj42.
+BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
 
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
 
-# needs gcj
-LIB_DEPENDS=	gcj:${PORTSDIR}/lang/gcc${CSUFF}
-
-BROKEN=		gcj is not currently available in the GCC toolchain
-
-USE_GCC=	4.4+
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_ICONV=	yes
+
+# gcj/libgcj don't exist on some platforms
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	GNU gcj does not exist on this platform
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
