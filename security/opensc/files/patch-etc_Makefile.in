@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2008-08-26 15:53:25.000000000 +0200
-+++ etc/Makefile.in	2008-08-26 15:53:42.000000000 +0200
-@@ -423,11 +423,7 @@
+--- etc/Makefile.in.orig	2009-12-18 14:26:18.000000000 +0100
++++ etc/Makefile.in	2009-12-29 17:48:48.000000000 +0100
+@@ -472,11 +472,7 @@
  		-e 's|@DEFAULT_PCSC_PROVIDER[@]|$(DEFAULT_PCSC_PROVIDER)|g' \
  		< $< > $@
  install-exec-hook:	install-sysconfDATA opensc.conf
@@ -10,6 +10,6 @@
 -		$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf"; \
 -	fi
 +	$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf-sample"; \
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
