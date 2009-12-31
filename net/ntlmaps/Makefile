@@ -6,7 +6,7 @@
 
 PORTNAME=	ntlmaps
 PORTVERSION=	0.9.9.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,11 +14,12 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A proxy that authenticates the user using the NTLM protocol
 
 USE_PYTHON=	yes
+USE_DOS2UNIX=	yes
 
 DOCS=		COPYING Install.txt changelog.txt readme.txt research.txt
 
 post-patch:
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 	    's,^#! /usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/main.py
 	@${RM} -rf ${WRKSRC}/main.py.bak
 
