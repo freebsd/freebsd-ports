@@ -1,0 +1,22 @@
+#! /bin/sh
+# $FreeBSD#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+POST-INSTALL)
+	DIR=/var/log/pootle
+	echo "===> Creating directory ${DIR}"
+	mkdir -p ${DIR}
+	echo "===> Changing ownership of ${DIR}"
+	chown -R nobody:nobody ${DIR}
+	echo "===> Changing permissions of ${DIR}"
+	chmod -R 770 ${DIR}
+	DIR=/var/db/pootle
+	echo "===> Changing ownership of ${DIR}"
+	chown -R nobody:nobody ${DIR}
+	echo "===> Changing permissions of ${DIR}"
+	chmod -R 770 ${DIR}
+	;;
+esac

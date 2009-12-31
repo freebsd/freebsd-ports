@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pootle
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run pootle:
+#
+# pootle_enable (bool):		Set it to "YES" to enable pootle.
+#				Default is "NO".
+# pootle_flags (flags):		Set extra flags here. More options in pootle(1)
+#				Default is empty "".
+# pootle_user (user):		Set user to run pootle.
+#				Default is "nobody".
+#
+
+. %%RC_SUBR%%
+
+name=pootle
+rcvar=${name}_enable
+pidfile="/var/run/pootle.pid"
+command_interpreter="%%PYTHON_CMD%%"
+
+required_files="%%PREFIX%%/etc/pootle/localsettings.py"
+
+command="%%PREFIX%%/bin/PootleServer"
+pootle_flags=" >>/var/log/pootle/access.log 2>>/var/log/pootle/error.log"
+
+load_rc_config $name
+: ${pootle_enable="NO"}
+: ${pootle_user="nobody"}
+
+start_cmd="/usr/sbin/daemon -p ${pidfile} -u ${pootle_user} ${command} ${pootle_flags}"
+
+start_precmd="touch ${pidfile}; chown ${pootle_user} ${pidfile}"
+
+run_rc_command "$1"
