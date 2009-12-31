@@ -45,6 +45,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 PORTDOCS=	*
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SYNC_DEBUG)
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=DEBUG2 -DTRACE_SYNC=true -DSYNCDEBUG=true
+.endif
+
+.if ${OSVERSION} < 700042
+BROKEN=		does not build in 6.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E -e '/FIND_PACKAGE.*(Python|JNI)/ d' \
 		${WRKSRC}/tools/unitsync/CMakeLists.txt
@@ -63,4 +73,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
