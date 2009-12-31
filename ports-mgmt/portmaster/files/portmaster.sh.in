@@ -449,9 +449,15 @@ for var in "$@" ; do
 	esac
 done
 
-if [ -n "$PM_PACKAGES_BUILD" -o -n "$PM_DEL_BUILD_ONLY" ]; then
-	PM_BUILD_ONLY_LIST=pm_bol
-	export PM_BUILD_ONLY_LIST
+if [ "$$" -eq "$PM_PARENT_PID" ]; then
+	if [ -n "$PM_PACKAGES_BUILD" -o -n "$PM_DEL_BUILD_ONLY" ]; then
+		PM_BUILD_ONLY_LIST=pm_bol
+		export PM_BUILD_ONLY_LIST
+	fi
+	if [ -n "$PM_PACKAGES" -o -n "$PM_PACKAGES_BUILD" ]; then
+		[ `/sbin/sysctl -n kern.osreldate 2>/dev/null` -lt 600400 ] &&
+		fail Package installation support requires FreeBSD 6.4 or newer
+	fi
 fi
 
 set -- $newopts
