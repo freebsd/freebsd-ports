@@ -1,5 +1,5 @@
---- configure.orig	2009-05-15 19:50:52.000000000 +0200
-+++ configure	2009-09-16 09:49:41.000000000 +0200
+--- configure.orig	2009-12-28 20:05:40.000000000 +0100
++++ configure	2009-12-31 10:43:58.000000000 +0100
 @@ -831,6 +831,7 @@
  # NB: use ANSI C prototype to weed out non-ANSI compilers.
  #
@@ -125,15 +125,6 @@
  #include "tiffio.h"
  main()
  {
-@@ -2551,7 +2587,7 @@
- 	if [ ${header_ver} -ge 19960307 ]; then
- 	    case ${lib_ver} in
- 		3.4)		tiff_runlen_t="uint16" ;;
--		3.[5678])	tiff_runlen_t="uint32" ;;
-+		3.[56789])	tiff_runlen_t="uint32" ;;
- 	    esac
- 	fi
-     else
 @@ -3233,7 +3269,7 @@
      strtoul
      writev
