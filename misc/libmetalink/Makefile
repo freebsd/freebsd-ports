@@ -17,7 +17,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 FETCH_ARGS=
 USE_BZIP2=	yes
-USE_GCC=	4.3+
+USE_GCC=	4.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--with-libexpat-prefix="${LOCALBASE}" \
