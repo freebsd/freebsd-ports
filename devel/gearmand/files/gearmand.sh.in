@@ -9,6 +9,7 @@
 . "%%RC_SUBR%%"
 
 name="gearmand"
+rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/gearmand"
 
 load_rc_config "$name"
