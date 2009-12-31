@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
 		http://freebsd.unixfreunde.de/sources/
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
 		iso-codes>=1.3:${PORTSDIR}/misc/iso-codes \
 		bash:${PORTSDIR}/shells/bash \
 		py*-utidy>=0:${PORTSDIR}/www/py-utidy
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 

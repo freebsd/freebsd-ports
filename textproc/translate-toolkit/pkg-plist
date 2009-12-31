@@ -426,8 +426,10 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ko-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ml-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ne-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ngram-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.poedit-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.st-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.sv-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.te-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ur-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.vi-module.html
@@ -454,6 +456,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.typecheck.mixins-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.typecheck.sets-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.typecheck.typeclasses-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.wsgi-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.wStringIO-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.xml_helpers-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.misc.xmlwrapper-module.html
@@ -480,6 +483,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.directory-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.dtd-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.factory-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.fpo-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.html-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.ical-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.ini-module.html
@@ -487,6 +491,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.mo-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.odf_io-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.odf_shared-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.omegat-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.oo-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.php-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.placeables-module.html
@@ -805,11 +810,19 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ne-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ne-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ne.ne-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram.Generate-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram.NGram-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram._NGram-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.poedit-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.poedit-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.st-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.st-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.st.st-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.sv-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.sv-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.sv.sv-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.te-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.te-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.te.te-class.html
@@ -958,6 +971,8 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.typecheck.sets.Set-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.typecheck.typeclasses-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.typecheck.typeclasses-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.wsgi-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.wsgi-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.wStringIO-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.wStringIO-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.misc.wStringIO.CatchStringOutput-class.html
@@ -1013,7 +1028,6 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.services.tmserver-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.services.tmserver-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.services.tmserver.TMServer-class.html
-%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.services.tmserver.TMServer.RequestHandler-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.base-module.html
@@ -1045,6 +1059,10 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.dtd.dtdunit-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.factory-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.factory-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.fpo-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.fpo-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.fpo.pofile-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.fpo.pounit-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.html-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.html-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.html.POHTMLParser-class.html
@@ -1073,6 +1091,12 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.odf_io-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.odf_shared-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.odf_shared-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.omegat-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.omegat-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.omegat.OmegaTDialect-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.omegat.OmegaTFile-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.omegat.OmegaTFileTab-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.omegat.OmegaTUnit-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.oo-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.oo-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.oo.oofile-class.html
@@ -1558,6 +1582,12 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_301.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_302.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_303.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_304.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_305.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_306.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_307.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_308.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_309.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_31.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_32.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_33.png
@@ -1875,12 +1905,18 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/lang/ne.py
 %%PYTHON_SITELIBDIR%%/translate/lang/ne.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/ne.pyo
+%%PYTHON_SITELIBDIR%%/translate/lang/ngram.py
+%%PYTHON_SITELIBDIR%%/translate/lang/ngram.pyc
+%%PYTHON_SITELIBDIR%%/translate/lang/ngram.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.py
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/st.py
 %%PYTHON_SITELIBDIR%%/translate/lang/st.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/st.pyo
+%%PYTHON_SITELIBDIR%%/translate/lang/sv.py
+%%PYTHON_SITELIBDIR%%/translate/lang/sv.pyc
+%%PYTHON_SITELIBDIR%%/translate/lang/sv.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/te.py
 %%PYTHON_SITELIBDIR%%/translate/lang/te.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/te.pyo
@@ -1905,6 +1941,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/lang/test_fr.py
 %%PYTHON_SITELIBDIR%%/translate/lang/test_fr.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/test_fr.pyo
+%%PYTHON_SITELIBDIR%%/translate/lang/test_identify.py
+%%PYTHON_SITELIBDIR%%/translate/lang/test_identify.pyc
+%%PYTHON_SITELIBDIR%%/translate/lang/test_identify.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/test_km.py
 %%PYTHON_SITELIBDIR%%/translate/lang/test_km.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/test_km.pyo
@@ -2023,6 +2062,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/misc/typecheck/typeclasses.py
 %%PYTHON_SITELIBDIR%%/translate/misc/typecheck/typeclasses.pyc
 %%PYTHON_SITELIBDIR%%/translate/misc/typecheck/typeclasses.pyo
+%%PYTHON_SITELIBDIR%%/translate/misc/wsgi.py
+%%PYTHON_SITELIBDIR%%/translate/misc/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/translate/misc/wsgi.pyo
 %%PYTHON_SITELIBDIR%%/translate/misc/wStringIO.py
 %%PYTHON_SITELIBDIR%%/translate/misc/wStringIO.pyc
 %%PYTHON_SITELIBDIR%%/translate/misc/wStringIO.pyo
@@ -2089,6 +2131,62 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/services/tmserver.py
 %%PYTHON_SITELIBDIR%%/translate/services/tmserver.pyc
 %%PYTHON_SITELIBDIR%%/translate/services/tmserver.pyo
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/README
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/afrikaans.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/albanian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/arabic.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/basque.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/belarus.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/bosnian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/breton.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/catalan.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/chinese_simplified.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/chinese_traditional.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/croatian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/czech.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/danish.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/dutch.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/english.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/esperanto.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/estonian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/finnish.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/fpdb.conf
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/french.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/frisian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/german.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/greek.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/hebrew.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/hungarian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/icelandic.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/indonesian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/irish_gaelic.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/italian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/japanese.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/latin.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/latvian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/lithuanian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/malay.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/manx_gaelic.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/norwegian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/polish.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/portuguese.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/quechua.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/romanian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/romansh.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/russian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/scots.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/scots_gaelic.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/serbian_ascii.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/slovak_ascii.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/slovenian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/spanish.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/swahili.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/swedish.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/tagalog.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/turkish.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/ukrainian.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/vietnamese.lm
+%%PYTHON_SITELIBDIR%%/translate/share/langmodels/welsh.lm
 %%PYTHON_SITELIBDIR%%/translate/share/stoplist-en
 %%PYTHON_SITELIBDIR%%/translate/storage/__init__.py
 %%PYTHON_SITELIBDIR%%/translate/storage/__init__.pyc
@@ -2114,6 +2212,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/storage/factory.py
 %%PYTHON_SITELIBDIR%%/translate/storage/factory.pyc
 %%PYTHON_SITELIBDIR%%/translate/storage/factory.pyo
+%%PYTHON_SITELIBDIR%%/translate/storage/fpo.py
+%%PYTHON_SITELIBDIR%%/translate/storage/fpo.pyc
+%%PYTHON_SITELIBDIR%%/translate/storage/fpo.pyo
 %%PYTHON_SITELIBDIR%%/translate/storage/html.py
 %%PYTHON_SITELIBDIR%%/translate/storage/html.pyc
 %%PYTHON_SITELIBDIR%%/translate/storage/html.pyo
@@ -2135,6 +2236,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/storage/odf_shared.py
 %%PYTHON_SITELIBDIR%%/translate/storage/odf_shared.pyc
 %%PYTHON_SITELIBDIR%%/translate/storage/odf_shared.pyo
+%%PYTHON_SITELIBDIR%%/translate/storage/omegat.py
+%%PYTHON_SITELIBDIR%%/translate/storage/omegat.pyc
+%%PYTHON_SITELIBDIR%%/translate/storage/omegat.pyo
 %%PYTHON_SITELIBDIR%%/translate/storage/oo.py
 %%PYTHON_SITELIBDIR%%/translate/storage/oo.pyc
 %%PYTHON_SITELIBDIR%%/translate/storage/oo.pyo
@@ -2453,6 +2557,7 @@ bin/xliff2po
 @dirrm %%PYTHON_SITELIBDIR%%/translate/storage/versioncontrol
 @dirrm %%PYTHON_SITELIBDIR%%/translate/storage/placeables
 @dirrm %%PYTHON_SITELIBDIR%%/translate/storage
+@dirrm %%PYTHON_SITELIBDIR%%/translate/share/langmodels
 @dirrm %%PYTHON_SITELIBDIR%%/translate/share
 @dirrm %%PYTHON_SITELIBDIR%%/translate/services
 @dirrm %%PYTHON_SITELIBDIR%%/translate/search/indexing
