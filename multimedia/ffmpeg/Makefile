@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -43,6 +43,7 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder" off \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VHOOK	"Video hook support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
+		X11GRAB "enable X11 grabbing" off \
 		X264	"H.264 encoder" on \
 		XVID	"Xvid encoder via xvidcore" on
 
@@ -84,7 +85,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-avfilter \
 		--enable-avfilter-lavf \
 		--enable-pthreads \
-		--enable-x11grab \
 		--enable-memalign-hack \
 		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
@@ -276,6 +276,15 @@ FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .else
 CONFIGURE_ARGS+=	--disable-libvorbis
 .endif
+
+# x11grab
+.if defined(WITH_X11GRAB) && !defined(WITHOUT_X11)
+USE_XORG=	x11 xext
+CONFIGURE_ARGS+=	--enable-x11grab
+.else
+CONFIGURE_ARGS+=	--disable-x11grab
+.endif
+
 
 # x264
 .ifndef(WITHOUT_X264)
