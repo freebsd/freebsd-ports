@@ -362,8 +362,8 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/analyze.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/analyze.so
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/boost.la
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/boost.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/convolve.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/convolve.so
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick++.so
