@@ -1,36 +1,43 @@
 @comment $FreeBSD$
 bin/gearman
+include/libgearman-server/client.h
+include/libgearman-server/conf.h
+include/libgearman-server/conf_module.h
+include/libgearman-server/conn.h
+include/libgearman-server/constants.h
+include/libgearman-server/function.h
+include/libgearman-server/gearmand.h
+include/libgearman-server/gearmand_con.h
+include/libgearman-server/gearmand_thread.h
+include/libgearman-server/job.h
+include/libgearman-server/packet.h
+include/libgearman-server/protocol_http.h
+%%MEMCACHED%%include/libgearman-server/queue_libmemcached.h
+%%PG%%include/libgearman-server/queue_libpq.h
+%%SQLITE%%include/libgearman-server/queue_libsqlite3.h
+include/libgearman-server/server.h
+include/libgearman-server/structs.h
+include/libgearman-server/thread.h
+include/libgearman-server/worker.h
 include/libgearman/client.h
-include/libgearman/conf.h
-include/libgearman/conf_module.h
 include/libgearman/conn.h
 include/libgearman/constants.h
 include/libgearman/gearman.h
-include/libgearman/gearmand.h
-include/libgearman/gearmand_con.h
-include/libgearman/gearmand_thread.h
 include/libgearman/job.h
 include/libgearman/packet.h
-include/libgearman/protocol_http.h
-%%PG%%include/libgearman/queue_libpq.h
-%%SQLITE%%include/libgearman/queue_libsqlite3.h
-include/libgearman/server.h
-include/libgearman/server_client.h
-include/libgearman/server_con.h
-include/libgearman/server_function.h
-include/libgearman/server_job.h
-include/libgearman/server_packet.h
-include/libgearman/server_thread.h
-include/libgearman/server_worker.h
 include/libgearman/structs.h
 include/libgearman/task.h
 include/libgearman/visibility.h
 include/libgearman/worker.h
+lib/libgearman-server.a
+lib/libgearman-server.la
+lib/libgearman-server.so
+lib/libgearman-server.so.0
 lib/libgearman.a
 lib/libgearman.la
 lib/libgearman.so
-lib/libgearman.so.1
+lib/libgearman.so.3
 libdata/pkgconfig/gearmand.pc
 sbin/gearmand
-@dirrmtry libdata/pkgconfig
-@dirrm include/libgearman
+@dirrmtry include/libgearman-server
+@dirrmtry include/libgearman
