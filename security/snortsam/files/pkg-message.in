@@ -1,0 +1,18 @@
+================================================================
+NOTE:   SNORT have to be build with OPTION SNORTSAM.
+
+	To enable snortsam as output plugin for snort a config
+	line like the following should be present in snort.conf
+
+	  output alert_fwsam: <snortsambox>:<port>/<password>
+
+	With samtool it is possible to send alerts to snortsam,
+	this way you can test and adjust your FW rules.
+
+        For more information read the INSTALL, FAQ, README 
+        files in %%DOCSDIR%%
+
+        Additional consolidate http://snortsam.net
+
+==============================================================
+
