@@ -1587,6 +1587,7 @@
     SUBDIR += trac-tags
     SUBDIR += trac-themeengine
     SUBDIR += trac-ticketdelete
+    SUBDIR += trac-ticketimport
     SUBDIR += trac-tocmacro
     SUBDIR += trac-tweakui
     SUBDIR += trac-wantedpages
