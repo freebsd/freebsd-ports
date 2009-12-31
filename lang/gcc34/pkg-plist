@@ -1,4 +1,8 @@
 @comment $FreeBSD$
+bin/%%GNU_HOST%%-c++%%SUFFIX%%
+bin/%%GNU_HOST%%-g++%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
 bin/g++%%SUFFIX%%
@@ -6,15 +10,11 @@ bin/g77-%%SUFFIX%%
 bin/gcc%%SUFFIX%%
 bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
-bin/%%GNU_HOST%%-c++%%SUFFIX%%
-bin/%%GNU_HOST%%-g++%%SUFFIX%%
-bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
-bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/f771
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1obj
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/collect2
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/f771
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixinc.sh
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixincl
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders

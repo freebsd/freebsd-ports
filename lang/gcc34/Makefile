@@ -28,12 +28,11 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-MAKE_JOBS_SAFE=	yes
 USE_PERL5_BUILD=yes
+MAKE_JOBS_SAFE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-NO_MANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
