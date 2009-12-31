@@ -7,7 +7,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -21,14 +21,13 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
-.if !defined(WITHOUT_NLS)
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
-.else
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-.endif
+
 CFLAGS+=	-fPIC
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 USE_XORG=	xaw xv
@@ -157,14 +156,6 @@ CONFIGURE_ARGS+=	--enable-mmx
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
-.endif
-
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:

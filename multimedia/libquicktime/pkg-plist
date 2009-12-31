@@ -46,6 +46,6 @@ lib/libquicktime/lqt_vorbis.so
 %%X264%%lib/libquicktime/lqt_x264.so
 libdata/pkgconfig/libquicktime.pc
 share/aclocal/lqt.m4
-%%NLS%%share/locale/de/LC_MESSAGES/libquicktime.mo
+share/locale/de/LC_MESSAGES/libquicktime.mo
 @dirrm lib/libquicktime
 @dirrm include/lqt
