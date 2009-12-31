@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Authentication-Store-LDAP
-PORTVERSION=	0.1005
+PORTVERSION=	1.006
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Authentication from an LDAP Directory for Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Catalyst/Plugin/Authentication.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication
+		p5-Catalyst-Plugin-Authentication>=0.10003:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
