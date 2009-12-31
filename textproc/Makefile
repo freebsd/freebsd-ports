@@ -914,6 +914,7 @@
     SUBDIR += php5-xsl
     SUBDIR += po4a
     SUBDIR += pocketreader
+    SUBDIR += pootle
     SUBDIR += popup
     SUBDIR += popup-stacks
     SUBDIR += ppower4
