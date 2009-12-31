@@ -1,31 +1,30 @@
 #!/bin/sh
-# $FreeBSD:
+# $FreeBSD$
 
 # PROVIDE: snortsam
 # REQUIRE: DAEMON
-# BEFORE: LOGIN
+# BEFORE:  LOGIN
 # KEYWORD: shutdown
 
-# Add the following lines to /etc/rc.conf to enable snortsam:
-# snortsam_enable (bool):		Set to YES to enable snortsam
-# 				Default: NO
-# snortsam_flags (str):		Extra flags passed to snortsam
-#				Default: ""
-# snortsam_conf (str):		Snortsam configuration file
-#				Default: ${PREFIX}/etc/snortsam/snortsam.conf
 #
-
+# Add the following line to /etc/rc.conf to enable snortsam:
+#
+#  snortsam_enable="YES"
+#
+#  # optional Snortsam configuration file:
+#  snortsam_conf="%%ETCDIR%%/snortsam.conf"
+#
+# DO NOT CHANGE THE DEFAULT VALUES HERE
+#
 . %%RC_SUBR%%
 
 name="snortsam"
 rcvar=`set_rcvar`
+load_rc_config snortsam
 
+# defaults
 command="%%PREFIX%%/sbin/snortsam"
-
-load_rc_config $name
-
-[ -z "$snortsam_enable" ]    && snortsam_enable="NO"
-[ -z "$snortsam_conf" ]      && snortsam_conf="%%PREFIX%%/etc/snortsam/snortsam.conf"
-[ -n "$snortsam_conf" ]      && snortsam_flags="$snortsam_flags $snortsam_conf"
+snortsam_enable=${snortsam_enable:-"NO"}
+snortsam_flags=${snortsam_conf:-"%%ETCDIR%%/snortsam.conf"}
 
 run_rc_command "$1"

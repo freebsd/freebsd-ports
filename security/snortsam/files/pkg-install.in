@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+ETCDIR=${ETCDIR:=%%ETCDIR%%}
+
+# snortsam config file contain sensitive data like 
+# passwords needed to block IP's on the firewalls.
+# Set permission of the config dir to 700 so only
+# root:wheel can access this directory.
+if [ "$2" = "POST-INSTALL" ]; then
+    if [ -d ${ETCDIR} ]; then
+        /usr/sbin/chown root:wheel ${ETCDIR}
+        /bin/chmod 700 ${ETCDIR}
+    fi
+fi
+
