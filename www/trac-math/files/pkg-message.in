@@ -1,0 +1,11 @@
+To use the plugin, you must add at least the following to your trac.ini.
+
+	[tracmath]
+	latex_cmd = %%LOCALBASE%%/bin/latex
+	dvipng_cmd = %%LOCALBASE%%/bin/dvipng
+
+You may also wish to set:
+
+	cache_dir = <cache directory>
+	max_png = <max number of pngs in cache - defaults to 500>
+	use_dollars = enabled
