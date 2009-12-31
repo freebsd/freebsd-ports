@@ -15,6 +15,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/HTTPParser/PP.pm
 %%SITE_PERL%%/Plack/Loader.pm
 %%SITE_PERL%%/Plack/Loader/Reloadable.pm
+%%SITE_PERL%%/Plack/MIME.pm
 %%SITE_PERL%%/Plack/Middleware.pm
 %%SITE_PERL%%/Plack/Middleware/AccessLog.pm
 %%SITE_PERL%%/Plack/Middleware/AccessLog/Timed.pm
@@ -35,6 +36,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/Writer.pm
 %%SITE_PERL%%/Plack/Middleware/XFramework.pm
 %%SITE_PERL%%/Plack/Middleware/XSendfile.pm
+%%SITE_PERL%%/Plack/Runner.pm
 %%SITE_PERL%%/Plack/Server.pm
 %%SITE_PERL%%/Plack/Server/Apache1.pm
 %%SITE_PERL%%/Plack/Server/Apache2.pm
