@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fspd
-PORTVERSION=	2.8.1.25
+PORTVERSION=	2.8.1.26
 CATEGORIES=	net
-MASTER_SITES=	SF/fsp/fsp/2.8.1b25
-DISTNAME=	fsp-2.8.1b25
+MASTER_SITES=	SF/fsp/fsp/2.8.1b26
+DISTNAME=	fsp-2.8.1b26
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	FSP daemon, clients and scanner
