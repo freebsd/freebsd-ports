@@ -57,6 +57,9 @@ sbin/probemodem
 sbin/lockname
 sbin/ondelay
 sbin/hylafax
+%%WITH_NLS%%share/locale/de/LC_MESSAGES/hylafax-client.mo
+%%WITH_NLS%%share/locale/de/LC_MESSAGES/hylafax-server.mo
+%%WITH_NLS%%share/locale/de/LC_MESSAGES/libhylafax.mo
 %%WITH_NLS%%share/locale/es/LC_MESSAGES/hylafax-client.mo
 %%WITH_NLS%%share/locale/es/LC_MESSAGES/hylafax-server.mo
 %%WITH_NLS%%share/locale/es/LC_MESSAGES/libhylafax.mo
