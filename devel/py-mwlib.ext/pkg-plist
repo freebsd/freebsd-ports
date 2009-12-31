@@ -11,10 +11,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_extversion.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_extversion.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_extversion.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_rl_accel.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_rl_accel.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_rl_accel.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_rl_accel.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/ext/_rl_accel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/ext/_rl_accel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/ext/_rl_accel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/ext/_rl_accel.so
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/ext/__init__.pyo
