@@ -10,7 +10,7 @@ PORTVERSION=	2.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	Converts GIF images to a PNG format
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

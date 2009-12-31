@@ -10,7 +10,7 @@ PORTVERSION=	2.6
 CATEGORIES=	www java
 MASTER_SITES=	SF/jerichohtml/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	A java library to analyse and manipulate HTML
 
 USE_ZIP=	yes

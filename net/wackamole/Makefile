@@ -10,7 +10,7 @@ PORTVERSION=	2.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://mirrors.omniti.com/wackamole/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	Peer-to-peer high availability cluster
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
