@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 		LOCAL/bms
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	A library to access SMI MIB information
 
 USE_AUTOTOOLS=	libtool:22

@@ -13,7 +13,7 @@ MASTER_SITES=	http://beej.us/c64bdf/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	Commodore 64 X11 fonts
 
 NO_BUILD=	yes

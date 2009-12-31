@@ -11,7 +11,7 @@ CATEGORIES=	sysutils java
 MASTER_SITES=	SF/jt400/JTOpen-full/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	JTOpen is a Java library to access OS/400 or i5/OS system
 
 USE_ZIP=	yes

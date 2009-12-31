@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	lang www
 MASTER_SITES=	http://saper.info/distfiles/ LOCAL/chinsan
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@saper.info
 COMMENT=	Motion-Twin ActionScript 2 Compiler
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/extlib/IO.cmi:${PORTSDIR}/devel/ocaml-extlib
