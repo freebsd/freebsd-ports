@@ -1590,6 +1590,7 @@
     SUBDIR += trac-ticketimport
     SUBDIR += trac-tocmacro
     SUBDIR += trac-tweakui
+    SUBDIR += trac-vote
     SUBDIR += trac-wantedpages
     SUBDIR += trac-webadmin
     SUBDIR += trac-wikigoodies
