@@ -15,7 +15,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 
 LATEST_LINK=	${PORTNAME}4
 
