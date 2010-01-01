@@ -4,8 +4,8 @@ implementation. Try to trim this insanity, where we can...
 	-mi
 
 diff -ruN src/definition.cpp src/definition.cpp
---- src/definition.cpp.orig	2009-06-13 09:42:16.000000000 -0400
-+++ src/definition.cpp	2009-08-21 00:54:43.000000000 -0400
+--- src/definition.cpp.orig	2009-12-08 14:19:28.000000000 -0500
++++ src/definition.cpp	2009-12-31 11:52:30.000000000 -0500
 @@ -18,6 +18,7 @@
  #include "qtbc.h"
  #include <ctype.h>
@@ -14,7 +14,7 @@ diff -ruN src/definition.cpp src/definition.cpp
  #include <md5.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -363,13 +364,11 @@
+@@ -364,13 +365,11 @@
  
  bool Definition::_docsAlreadyAdded(const QCString &doc)
  {
@@ -30,8 +30,8 @@ diff -ruN src/definition.cpp src/definition.cpp
    {
      m_impl->docSignatures+=":"+sigStr;
 diff -ruN src/dirdef.cpp src/dirdef.cpp
---- src/dirdef.cpp.orig	2009-05-02 09:05:03.000000000 -0400
-+++ src/dirdef.cpp	2009-08-21 00:56:06.000000000 -0400
+--- src/dirdef.cpp.orig	2009-10-04 15:15:11.000000000 -0400
++++ src/dirdef.cpp	2009-12-31 11:55:59.000000000 -0500
 @@ -1,3 +1,4 @@
 +#include <sys/types.h>
  #include <md5.h>
@@ -50,8 +50,8 @@ diff -ruN src/dirdef.cpp src/dirdef.cpp
  
    // old algorithm
 diff -ruN src/dot.cpp src/dot.cpp
---- src/dot.cpp.orig	2009-08-13 15:15:42.000000000 -0400
-+++ src/dot.cpp	2009-08-21 00:57:50.000000000 -0400
+--- src/dot.cpp.orig	2009-10-10 06:50:28.000000000 -0400
++++ src/dot.cpp	2009-12-31 11:57:49.000000000 -0500
 @@ -39,6 +39,7 @@
  #include <qdir.h>
  #include <qfile.h>
@@ -60,7 +60,7 @@ diff -ruN src/dot.cpp src/dot.cpp
  #include <md5.h>
  
  #define MAP_CMD "cmapx"
-@@ -1100,10 +1101,8 @@
+@@ -1144,10 +1145,8 @@
      }
      writeGraphFooter(md5stream);
      resetReNumbering();
@@ -69,10 +69,10 @@ diff -ruN src/dot.cpp src/dot.cpp
 -    MD5Buffer((const unsigned char *)theGraph.ascii(),theGraph.length(),md5_sig);
 -    MD5SigToString(md5_sig,sigStr.data(),33);
 +    MD5Data((const unsigned char *)theGraph.ascii(),theGraph.length(),sigStr.data());
-     if (checkAndUpdateMd5Signature(baseName,sigStr) || 
-         !QFileInfo(mapName).exists())
-     { 
-@@ -1761,10 +1760,8 @@
+     if (checkAndUpdateMd5Signature(absBaseName,sigStr) || 
+         !QFileInfo(absMapName).exists())
+     {
+@@ -1805,10 +1804,8 @@
      }
    }
    writeGraphFooter(md5stream);
@@ -86,13 +86,13 @@ diff -ruN src/dot.cpp src/dot.cpp
      resetReNumbering();
 diff -ruN src/doxygen.pro.in src/doxygen.pro.in
 --- src/doxygen.pro.in.orig	2009-08-02 09:55:02.000000000 -0400
-+++ src/doxygen.pro.in	2009-08-21 00:58:38.000000000 -0400
++++ src/doxygen.pro.in	2009-12-31 11:58:49.000000000 -0500
 @@ -18,7 +18,7 @@
  CONFIG       =	console warn_on $extraopts
  HEADERS      =	doxygen.h 
  SOURCES      =	main.cpp 
 -unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 
-+unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd 
++unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd
  win32:INCLUDEPATH          += .
  win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 
  win32-msvc:LIBS            += qtools.lib md5.lib doxygen.lib doxycfg.lib shell32.lib iconv.lib
@@ -106,8 +106,8 @@ diff -ruN src/doxygen.pro.in src/doxygen.pro.in
  TARGET                     =  doxygen
  unix:TARGETDEPS            =  ../lib/libdoxygen.a ../lib/libdoxycfg.a
 diff -ruN src/memberdef.cpp src/memberdef.cpp
---- src/memberdef.cpp.orig	2009-08-13 15:15:43.000000000 -0400
-+++ src/memberdef.cpp	2009-08-21 00:59:48.000000000 -0400
+--- src/memberdef.cpp.orig	2009-11-21 17:58:04.000000000 -0500
++++ src/memberdef.cpp	2009-12-31 12:00:03.000000000 -0500
 @@ -17,6 +17,7 @@
  
  #include <stdio.h>
@@ -116,7 +116,7 @@ diff -ruN src/memberdef.cpp src/memberdef.cpp
  #include <assert.h>
  #include <md5.h>
  #include "memberdef.h"
-@@ -2561,10 +2562,8 @@
+@@ -2516,10 +2517,8 @@
    memAnchor.prepend(definition());
    
    // convert to md5 hash
@@ -129,8 +129,8 @@ diff -ruN src/memberdef.cpp src/memberdef.cpp
  }
  
 diff -ruN src/membergroup.cpp src/membergroup.cpp
---- src/membergroup.cpp.orig	2009-08-23 15:28:48.000000000 -0400
-+++ src/membergroup.cpp	2009-08-25 13:04:39.000000000 -0400
+--- src/membergroup.cpp.orig	2009-12-22 06:35:39.000000000 -0500
++++ src/membergroup.cpp	2009-12-31 12:01:18.000000000 -0500
 @@ -261,10 +261,8 @@
  
  QCString MemberGroup::anchor() const
@@ -144,8 +144,8 @@ diff -ruN src/membergroup.cpp src/membergroup.cpp
  }
  
 diff -ruN src/util.cpp src/util.cpp
---- src/util.cpp.orig	2009-08-20 08:13:51.000000000 -0400
-+++ src/util.cpp	2009-08-21 01:03:39.000000000 -0400
+--- src/util.cpp.orig	2009-12-28 06:00:55.000000000 -0500
++++ src/util.cpp	2009-12-31 12:03:47.000000000 -0500
 @@ -19,6 +19,7 @@
  #include <ctype.h>
  #include <errno.h>
@@ -154,7 +154,7 @@ diff -ruN src/util.cpp src/util.cpp
  #include <md5.h>
  
  #include "qtbc.h"
-@@ -4851,16 +4852,16 @@
+@@ -4844,16 +4845,16 @@
      if (resultLen>=128) // prevent names that cannot be created!
      {
        // third algorithm based on MD5 hash
@@ -174,7 +174,7 @@ diff -ruN src/util.cpp src/util.cpp
  
  #if MAP_ALGO==ALGO_COUNT 
      // old algorithm, has the problem that after regeneration the
-@@ -4891,12 +4892,13 @@
+@@ -4884,12 +4885,13 @@
      l2Dir = (dirNum>>4)&0xff;
  #elif MAP_ALGO==ALGO_MD5
      // third algorithm based on MD5 hash
