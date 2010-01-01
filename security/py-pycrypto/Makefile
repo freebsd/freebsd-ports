@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pycrypto
-PORTVERSION=	2.0.1
-PORTREVISION=	4
+PORTVERSION=	2.1.0
 CATEGORIES=	security python
-MASTER_SITES=	http://www.amk.ca/files/python/crypto/
+MASTER_SITES=	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kmgaughan@eircom.net
+MAINTAINER=	k@stereochro.me
 COMMENT=	The Python Cryptography Toolkit
 
 USE_PYTHON=	yes
@@ -20,13 +19,7 @@ USE_PYDISTUTILS=yes
 
 LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 
-pre-configure:
+pre-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/setup.py
 
-.include <bsd.port.pre.mk>
-
-.if (${PYTHON_REL} >= 250)
-EXTRA_PATCHES+=	${FILESDIR}/python25+.txt
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
