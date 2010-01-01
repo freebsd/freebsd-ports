@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${PNAME}/LAM/${PORTVERSION}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
@@ -25,7 +25,7 @@ WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
 
 PNAME=		lam
-PORTDOCS=	docs COPYING HISTORY INSTALL README copyright
+PORTDOCS=	docs COPYING HISTORY README copyright
 LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html
 WWWDIR?=	${PREFIX}/www/${PNAME}
 SUB_FILES=	pkg-message
