@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build
 RUN_DEPENDS=	ipcount:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA \
 		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
 MAKE_JOBS_SAFE=	yes
@@ -43,6 +44,8 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Resolver::Base.3 Net::DNS::Resolver::UNIX.3 \
 		Net::DNS::RR::Unknown.3 Net::DNS::Resolver::Recurse.3 \
 		Net::DNS::RR::APL.3 Net::DNS::RR::APL::ApItem.3 \
+		Net::DNS::RR::DHCID.3 Net::DNS::Domain.3 \
+		Net::DNS::RR::KX.3 Net::DNS::RR::HIP.3 \
 		Net::DNS::Resolver::Cygwin.3 Net::DNS::RR::SPF.3
 
 OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on
