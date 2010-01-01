@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	bioruby
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RF \
+		http://rubyforge.org/frs/download.php/68266/
 DISTNAME=	bio-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
 PLIST_FILES=	bin/bioruby \
