@@ -9,7 +9,7 @@ PORTNAME=	portsman
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://download.berlios.de/portsman/
+MASTER_SITES=	BERLIOS
 # temporary
 DISTNAME=	${PORTNAME}-${PORTVERSION}-rc2
 
