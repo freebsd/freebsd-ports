@@ -1,0 +1,8 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: Log4net
+Description: Log4net - Logging library for C# and VB.NET
+Version: %%PORTVERSION%%
+Libs: -r:${libdir}/mono/2.0/log4net.dll

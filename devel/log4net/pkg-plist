@@ -1,0 +1,5 @@
+lib/mono/2.0/log4net.dll
+lib/mono/gac/log4net/1.2.10.0__1b44e1d426115821/log4net.dll
+libdata/pkgconfig/log4net.pc
+@dirrm lib/mono/gac/log4net/1.2.10.0__1b44e1d426115821
+@dirrm lib/mono/gac/log4net
