@@ -1,11 +1,15 @@
-bin/s3put
-bin/sdbadmin
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/elbadmin
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/fetch_file
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/launch_instance
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/list_instances
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/s3put
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/sdbadmin
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/__init__.pyc
@@ -19,6 +23,18 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/exception.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/exception.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/exception.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/identity.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/identity.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/identity.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/logging.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/logging.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/logging.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/object.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/object.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/object.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/signers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/signers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront/signers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/connection.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/connection.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/connection.pyo
@@ -58,6 +74,9 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/autoscale/trigger.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/autoscale/trigger.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/autoscale/trigger.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/blockdevicemapping.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/blockdevicemapping.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/blockdevicemapping.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/buyreservation.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/buyreservation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/buyreservation.pyo
@@ -106,6 +125,9 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/keypair.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/keypair.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/keypair.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/launchspecification.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/launchspecification.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/launchspecification.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/regioninfo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/regioninfo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/regioninfo.pyo
@@ -118,6 +140,15 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/snapshot.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/snapshot.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/snapshot.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotdatafeedsubscription.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotdatafeedsubscription.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotdatafeedsubscription.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotinstancerequest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotinstancerequest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotinstancerequest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotpricehistory.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotpricehistory.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/spotpricehistory.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/volume.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/volume.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/volume.pyo
@@ -130,6 +161,27 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/handler.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/handler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/cmdshell.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/cmdshell.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/cmdshell.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/propget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/propget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/propget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/server.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/server.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/server.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/task.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/task.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/task.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/test_manage.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/test_manage.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/test_manage.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/volume.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/volume.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage/volume.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/mashups/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/mashups/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/mashups/__init__.pyo
@@ -277,6 +329,9 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/queryresultset.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/queryresultset.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/queryresultset.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/regioninfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/regioninfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/regioninfo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/services/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/services/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/services/__init__.pyo
@@ -325,6 +380,9 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/devpay_s3.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/devpay_s3.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/devpay_s3.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/test.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/test.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests/test.pyo
@@ -343,24 +401,32 @@ bin/sdbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/contrib
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/autoscale
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/cloudwatch
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/elb
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/mashups
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/mturk
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/pyami
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3
+bin/elbadmin
+bin/fetch_file
+bin/launch_instance
+bin/list_instances
+bin/s3put
+bin/sdbadmin
+bin/taskadmin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sqs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/services
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/persist
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/persist
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/services
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sqs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/pyami
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/mturk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/mashups
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/elb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/cloudwatch
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2/autoscale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/ec2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
