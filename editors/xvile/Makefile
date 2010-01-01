@@ -7,6 +7,7 @@
 
 PORTNAME=	xvile
 PORTVERSION=	9.7y
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://invisible-island.net/vile/ \
 		ftp://dickey.his.com/vile/ \
