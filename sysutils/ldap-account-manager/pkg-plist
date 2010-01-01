@@ -9,6 +9,7 @@
 %%WWWDIR%%/config/language
 %%WWWDIR%%/config/passwordMailTemplate.txt
 %%WWWDIR%%/config/pdf/.htaccess
+%%WWWDIR%%/config/pdf/default.asteriskExt.xml
 %%WWWDIR%%/config/pdf/default.dhcp.xml
 %%WWWDIR%%/config/pdf/default.group.xml
 %%WWWDIR%%/config/pdf/default.host.xml
@@ -19,6 +20,7 @@
 %%WWWDIR%%/config/pdf/logos/.htaccess
 %%WWWDIR%%/config/pdf/logos/printLogo.jpg
 %%WWWDIR%%/config/profiles/.htaccess
+%%WWWDIR%%/config/profiles/default.asteriskExt
 %%WWWDIR%%/config/profiles/default.dhcp
 %%WWWDIR%%/config/profiles/default.group
 %%WWWDIR%%/config/profiles/default.host
@@ -31,6 +33,8 @@
 %%WWWDIR%%/config/shells
 %%WWWDIR%%/graphics/.htaccess
 %%WWWDIR%%/graphics/add.png
+%%WWWDIR%%/graphics/asterisk.png
+%%WWWDIR%%/graphics/asteriskExt.png
 %%WWWDIR%%/graphics/back.gif
 %%WWWDIR%%/graphics/banner.jpg
 %%WWWDIR%%/graphics/bigPeople.png
@@ -49,6 +53,7 @@
 %%WWWDIR%%/graphics/eduPerson.png
 %%WWWDIR%%/graphics/error.png
 %%WWWDIR%%/graphics/exit.png
+%%WWWDIR%%/graphics/exitBig.png
 %%WWWDIR%%/graphics/fail.png
 %%WWWDIR%%/graphics/favicon.ico
 %%WWWDIR%%/graphics/files.png
@@ -100,6 +105,8 @@
 %%WWWDIR%%/graphics/refresh.png
 %%WWWDIR%%/graphics/samba.png
 %%WWWDIR%%/graphics/save.png
+%%WWWDIR%%/graphics/saveBig.png
+%%WWWDIR%%/graphics/schemaBrowser.png
 %%WWWDIR%%/graphics/script.png
 %%WWWDIR%%/graphics/security.png
 %%WWWDIR%%/graphics/select.png
@@ -110,6 +117,7 @@
 %%WWWDIR%%/graphics/sort_asc.png
 %%WWWDIR%%/graphics/sort_desc.png
 %%WWWDIR%%/graphics/star.png
+%%WWWDIR%%/graphics/tests.png
 %%WWWDIR%%/graphics/tools-no.png
 %%WWWDIR%%/graphics/tools.png
 %%WWWDIR%%/graphics/tree_info.png
@@ -125,6 +133,7 @@
 %%WWWDIR%%/help/.htaccess
 %%WWWDIR%%/index.html
 %%WWWDIR%%/lib/.htaccess
+%%WWWDIR%%/lib/tools.inc
 %%WWWDIR%%/lib/account.inc
 %%WWWDIR%%/lib/baseModule.inc
 %%WWWDIR%%/lib/baseType.inc
@@ -151,6 +160,8 @@
 %%WWWDIR%%/lib/ldap.inc
 %%WWWDIR%%/lib/lists.inc
 %%WWWDIR%%/lib/modules.inc
+%%WWWDIR%%/lib/modules/asteriskAccount.inc
+%%WWWDIR%%/lib/modules/asteriskExtension.inc
 %%WWWDIR%%/lib/modules/ddns.inc
 %%WWWDIR%%/lib/modules/dhcp_settings.inc
 %%WWWDIR%%/lib/modules/fixed_ip.inc
@@ -162,7 +173,6 @@
 %%WWWDIR%%/lib/modules/inetOrgPerson.inc
 %%WWWDIR%%/lib/modules/kolabUser.inc
 %%WWWDIR%%/lib/modules/ldapPublicKey.inc
-%%WWWDIR%%/lib/types/netgroup.inc
 %%WWWDIR%%/lib/modules/nisMailAlias.inc
 %%WWWDIR%%/lib/modules/nisnetgroup.inc
 %%WWWDIR%%/lib/modules/phpGroupwareGroup.inc
@@ -182,12 +192,21 @@
 %%WWWDIR%%/lib/security.inc
 %%WWWDIR%%/lib/selfService.inc
 %%WWWDIR%%/lib/status.inc
-%%WWWDIR%%/lib/tree.inc
 %%WWWDIR%%/lib/types.inc
+%%WWWDIR%%/lib/tree.inc
+%%WWWDIR%%/lib/tools/fileUpload.inc
+%%WWWDIR%%/lib/tools/ouEditor.inc
+%%WWWDIR%%/lib/tools/pdfEdit.inc
+%%WWWDIR%%/lib/tools/profileEditor.inc
+%%WWWDIR%%/lib/tools/schemaBrowser.inc
+%%WWWDIR%%/lib/tools/serverInfo.inc
+%%WWWDIR%%/lib/tools/tests.inc
+%%WWWDIR%%/lib/types/asteriskExt.inc
 %%WWWDIR%%/lib/types/dhcp.inc
 %%WWWDIR%%/lib/types/group.inc
 %%WWWDIR%%/lib/types/host.inc
 %%WWWDIR%%/lib/types/mailAlias.inc
+%%WWWDIR%%/lib/types/netgroup.inc
 %%WWWDIR%%/lib/types/smbDomain.inc
 %%WWWDIR%%/lib/types/user.inc
 %%WWWDIR%%/lib/ufpdf.php
@@ -223,6 +242,7 @@
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/sess/.htaccess
 %%WWWDIR%%/style/.htaccess
+%%WWWDIR%%/style/type_asteriskExt.css
 %%WWWDIR%%/style/type_dhcp.css
 %%WWWDIR%%/style/layout.css
 %%WWWDIR%%/style/type_group.css
@@ -258,6 +278,7 @@
 %%WWWDIR%%/templates/massDoUpload.php
 %%WWWDIR%%/templates/masscreate.php
 %%WWWDIR%%/templates/ou_edit.php
+%%WWWDIR%%/templates/serverInfo.php
 %%WWWDIR%%/templates/pdfedit/pdfdelete.php
 %%WWWDIR%%/templates/pdfedit/pdfmain.php
 %%WWWDIR%%/templates/pdfedit/pdfpage.php
@@ -342,6 +363,7 @@
 @dirrm %%WWWDIR%%/locale/ca_ES/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ca_ES
 @dirrm %%WWWDIR%%/locale
+@dirrm %%WWWDIR%%/lib/tools/
 @dirrm %%WWWDIR%%/lib/types
 @dirrm %%WWWDIR%%/lib/modules/sambaSamAccount
 @dirrm %%WWWDIR%%/lib/modules
