@@ -19054,6 +19054,7 @@ polymer                         ports/x11-themes/polymer
 polyml                          ports/lang/polyml
 polypuzzle                      ports/games/polypuzzle
 pongix                          ports/games/pongix
+pootle                          ports/textproc/pootle
 pop-before-smtp                 ports/mail/pop-before-smtp
 pop3gwd                         ports/mail/pop3gwd
 pop3lite                        ports/mail/pop3lite
