@@ -16,7 +16,7 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
 
-MAINTAINER?=	gerald@FreeBSD.org
+MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.2
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
@@ -32,7 +32,6 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 MAKE_JOBS_SAFE=	yes
-WANT_GNOME=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
@@ -103,13 +102,6 @@ PLIST_SUB+=	JAVA=""
 post-patch::
 	@cd ${SRCDIR} && ${CHMOD} 755 ./contrib/download_ecj && ./contrib/download_ecj
 
-.if defined(WITH_JAVA_AWT)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
-USE_GNOME=	gtk20 libartlgpl2
-CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
-			--enable-gtk-cairo
-.endif
-
 .else
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
@@ -117,14 +109,6 @@ PLIST_SUB+=	JAVA="@comment "
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-
-pre-extract:
-	@# Building libgcj with lang/gcc295 installed is causing a failure
-	@# about "hidden symbol `__eprintf'" in libgcc.a(_eprintf.o).
-	@if type gcc295 >/dev/null ; then \
-	  echo "This port will not build in the presence of lang/gcc295."; \
-	  exit 1; \
-	fi
 
 post-patch::
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
