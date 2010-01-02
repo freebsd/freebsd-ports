@@ -7,13 +7,14 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.14.7
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	rb
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-rasterbar-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client (devel version)
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
