@@ -186,7 +186,7 @@ _USE_GCC:=${_GCC_FOUND}
 
 #
 # Determine if the installed OS already has this GCCVERSION, and if not
-# then set BUILD_DEPENDS, CC, and CXX.
+# then set proper dependencies, CC, and CXX.
 #
 .for v in ${GCCVERSIONS}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
@@ -203,6 +203,9 @@ CXX:=			g++${V}
 
 .if defined(_GCC_BUILD_DEPENDS)
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+. if ${_USE_GCC} != 3.4
+RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+. endif
 .endif
 
 .endif
