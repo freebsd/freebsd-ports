@@ -23072,6 +23072,7 @@ trac-customroadmap              ports/www/trac-customroadmap
 trac-datefield                  ports/www/trac-datefield
 trac-down                       ports/www/trac-down
 trac-email2trac                 ports/www/trac-email2trac
+trac-fivestarvote               ports/www/trac-fivestarvote
 trac-fullblog                   ports/www/trac-fullblog
 trac-gantt                      ports/www/trac-gantt
 trac-gitplugin                  ports/www/trac-gitplugin
@@ -23081,6 +23082,7 @@ trac-iniadmin                   ports/www/trac-iniadmin
 trac-ldap                       ports/www/trac-ldap
 trac-macropost                  ports/www/trac-macropost
 trac-mastertickets              ports/www/trac-mastertickets
+trac-math                       ports/www/trac-math
 trac-mercurial                  ports/www/trac-mercurial
 trac-multirepos                 ports/www/trac-multirepos
 trac-nav                        ports/www/trac-nav
@@ -23098,8 +23100,10 @@ trac-spam-filter                ports/www/trac-spam-filter
 trac-tags                       ports/www/trac-tags
 trac-themeengine                ports/www/trac-themeengine
 trac-ticketdelete               ports/www/trac-ticketdelete
+trac-ticketimport               ports/www/trac-ticketimport
 trac-tocmacro                   ports/www/trac-tocmacro
 trac-tweakui                    ports/www/trac-tweakui
+trac-vote                       ports/www/trac-vote
 trac-wantedpages                ports/www/trac-wantedpages
 trac-webadmin                   ports/www/trac-webadmin
 trac-wikigoodies                ports/www/trac-wikigoodies
