@@ -527,6 +527,7 @@
     SUBDIR += hptools
     SUBDIR += hs-ObjectName
     SUBDIR += hs-QuickCheck
+    SUBDIR += hs-StateVar
     SUBDIR += hs-Stream
     SUBDIR += hs-alex
     SUBDIR += hs-binary-ghc
