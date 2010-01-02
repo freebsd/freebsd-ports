@@ -4,7 +4,7 @@
  static void vxn_init(void *);
  static void vxn_start(struct ifnet *);
  static int vxn_ioctl(struct ifnet *, u_long, caddr_t);
-+#if __FreeBSD_version >= 900000
++#if __FreeBSD_version <= 900000
  static void vxn_watchdog(struct ifnet *);
 +#endif
  static void vxn_intr (void *);
@@ -14,7 +14,7 @@
     ifp->if_ioctl = vxn_ioctl;
     ifp->if_output = ether_output;
     ifp->if_start = vxn_start;
-+#if __FreeBSD_version >= 900000
++#if __FreeBSD_version <= 900000
     ifp->if_watchdog = vxn_watchdog;
 +#endif
     ifp->if_init = vxn_init;
@@ -24,7 +24,7 @@
     return error;
  }
  
-+#if __FreeBSD_version >= 800087
++#if __FreeBSD_version <= 900000
  /*
   *-----------------------------------------------------------------------------
   * vxn_watchdog --
