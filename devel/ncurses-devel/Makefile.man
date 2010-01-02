@@ -418,6 +418,8 @@ MLINKS+=\
 	curs_trace.3x _nc_tracebits.3x \
 	curs_trace.3x _traceattr.3x \
 	curs_trace.3x _traceattr2.3x \
+	curs_trace.3x _tracecchar_t.3x \
+	curs_trace.3x _tracecchar_t2.3x \
 	curs_trace.3x _tracechar.3x \
 	curs_trace.3x _tracechtype.3x \
 	curs_trace.3x _tracechtype2.3x \
