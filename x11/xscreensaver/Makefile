@@ -137,16 +137,6 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 CFLAGS+=	-O0
 .endif
 
-pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${ECHO} ''
-	@${ECHO} '*** This is the non-gnome version of the port.'
-	@${ECHO} '    If you want gnome support, hit Ctrl-C now,'
-	@${ECHO} '    and cd ../xscreensaver-gnome.'
-	@${ECHO} ''
-	@sleep 2
-.endif
-
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
