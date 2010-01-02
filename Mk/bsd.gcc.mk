@@ -234,5 +234,5 @@ test-gcc:
 	@echo CC=${CC} - CXX=${CXX} - CFLAGS=\"${CFLAGS}\"
 	@echo F77=${F77} - FC=${FC} - FFLAGS=\"${FFLAGS}\"
 	@echo LDFLAGS=\"${LDFLAGS}\"
-	@echo BUILD_DEPENDS=${BUILD_DEPENDS}
-	@echo RUN_DEPENDS=${RUN_DEPENDS}
+	@echo "BUILD_DEPENDS=${BUILD_DEPENDS}"
+	@echo "RUN_DEPENDS=${RUN_DEPENDS}"
