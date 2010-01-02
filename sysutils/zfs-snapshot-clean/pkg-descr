@@ -1,0 +1,16 @@
+zfs-snapshot-clean
+------------------
+
+This is a tool to sieve ZFS snapshots as per given spec a la
+`pdumpfs-clean'.
+
+Typical usage is as follows:
+
+  for vol in zpool/home zpool/var; do
+    zfs snapshot "$vol@$(date +%Y-%m-%d)" && zfs-snapshot-clean "$vol"
+  done
+
+Run `zfs-snapshot-clean -h' for details.
+
+Author: Akinori MUSHA <knu@iDaemons.org>
+WWW:	http://github.com/knu/zfs-snapshot-clean

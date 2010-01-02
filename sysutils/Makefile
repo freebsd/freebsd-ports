@@ -925,6 +925,7 @@
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zfs-replicate
+    SUBDIR += zfs-snapshot-clean
     SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
