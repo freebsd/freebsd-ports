@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.0.4
-CATEGORIES=	net-p2p
+PORTVERSION=	2.0.5
+CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent
 
 BUILD_DEPENDS=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
@@ -18,7 +18,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	NOTIFY "Enable libnotify support" off
+OPTIONS=	NOTIFY "Enable libnotify support" on
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network xml \
