@@ -59,6 +59,7 @@
     SUBDIR += gsystem
     SUBDIR += gtamsanalyzer
     SUBDIR += gwyddion
+    SUBDIR += harminv
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += hdf5-18

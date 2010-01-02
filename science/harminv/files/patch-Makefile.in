@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-01-02 09:36:55.000000000 +0800
++++ Makefile.in	2010-01-02 09:38:14.000000000 +0800
+@@ -221,7 +221,7 @@
+ lib_LTLIBRARIES = libharminv.la
+ include_HEADERS = harminv.h
+ dist_man_MANS = harminv.1
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = %%PKGDIR%%/pkgconfig
+ pkgconfig_DATA = harminv.pc
+ ACLOCAL_AMFLAGS = -I .
+ EXTRA_DIST = COPYRIGHT harminv.pc.in acx_blas.m4 acx_lapack.m4
