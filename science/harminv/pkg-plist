@@ -1,0 +1,6 @@
+bin/harminv
+include/harminv.h
+lib/libharminv.a
+lib/libharminv.la
+libdata/pkgconfig/harminv.pc
+@dirrmtry libdata/pkgconfig
