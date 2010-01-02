@@ -315,6 +315,7 @@ bin/gpsman
 %%DATADIR%%/gmsrc/metadata.tcl
 %%DATADIR%%/gmsrc/navigate.tcl
 %%DATADIR%%/gmsrc/options.tcl
+%%DATADIR%%/gmsrc/plugins.tcl
 %%DATADIR%%/gmsrc/posncomp.tcl
 %%DATADIR%%/gmsrc/projections.tcl
 %%DATADIR%%/gmsrc/projs_main.tcl
@@ -324,6 +325,7 @@ bin/gpsman
 %%DATADIR%%/gmsrc/rgb.tcl
 %%DATADIR%%/gmsrc/search.tcl
 %%DATADIR%%/gmsrc/serial.tcl
+%%DATADIR%%/gmsrc/setup.tcl
 %%DATADIR%%/gmsrc/symbols.tcl
 %%DATADIR%%/gmsrc/trtort.tcl
 %%DATADIR%%/gmsrc/util.tcl
@@ -407,6 +409,11 @@ bin/gpsman
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_66.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_67.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_68.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_69.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_70.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_71.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_72.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_73.html
 %%PORTDOCS%%%%DOCSDIR%%/html/backgr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/blank.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo-small.gif
