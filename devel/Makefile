@@ -542,6 +542,7 @@
     SUBDIR += hs-haddock-docs
     SUBDIR += hs-happy
     SUBDIR += hs-haskeline
+    SUBDIR += hs-haskell-src-exts
     SUBDIR += hs-hat
     SUBDIR += hs-hdoc
     SUBDIR += hs-hmake
