@@ -12,11 +12,17 @@ name=wnn
 rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/Wnn4/jserver
 procname=%%PREFIX%%/bin/Wnn4/jserver
-
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+WTCMD=%%PREFIX%%/bin/Wnn4/wnntouch
 
 start_precmd()
 {
 	rm -f /tmp/jd_sockV4
+	install -d -o wnn -m 755 %%PREFIX%%/lib/wnn/ja_JP/dic/usr
+	${WTCMD} %%PREFIX%%/lib/wnn/ja_JP/dic/pubdic/* \
+	    %%PREFIX%%/lib/wnn/ja_JP/dic/wnncons/* \
+	    %%PREFIX%%/lib/wnn/ja_JP/dic/gerodic/*
 }
 
 stop_postcmd()

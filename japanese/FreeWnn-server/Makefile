@@ -7,7 +7,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE_JP}
@@ -24,7 +24,9 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:22
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	# defined below
-MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}"
+MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \
+		LIBRARY_WNNMANDIR="" \
+		SERVER_WNNMANDIR="2.env 4.cmd 6.jutil"
 ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man
 SUB_FILES=	pkg-install
@@ -36,7 +38,7 @@ WNNTYPE?=	WNN
 CONFIGURE_ARGS=	--enable-libraries=no \
 		${CONFIGURE_ARGS.${WNNTYPE}}
 .if !defined(WITHOUT_INET6)
-CONFIGURE_ARGS+=--enable-ipv6  
+CONFIGURE_ARGS+=--enable-ipv6
 .endif
 
 # Wnn
