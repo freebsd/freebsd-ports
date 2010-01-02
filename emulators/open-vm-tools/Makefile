@@ -77,6 +77,8 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not compile on 6.X
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 .if ${ARCH} == "sparc64"
