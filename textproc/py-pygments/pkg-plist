@@ -63,6 +63,9 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/_asybuiltins.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/_asybuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/_asybuiltins.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/_clbuiltins.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/_clbuiltins.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/_clbuiltins.pyo
@@ -153,6 +156,9 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/manni.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/manni.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/manni.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/monokai.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/monokai.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/monokai.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/murphy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/murphy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/murphy.pyo
