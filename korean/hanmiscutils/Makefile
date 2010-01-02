@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 
-MAINTAINER=	cjh@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	Collection of various Hangul-related sources
 
 GNU_CONFIGURE=	YES

@@ -10,6 +10,4 @@ lpd print spooler. The options accepted by magicfilter are exactly the
 ones passed to the input filter by lpd (unless you build it on a LPRng 
 system -- in that case, magicfilter accepts no options.) 
 
---
-CHOI Junho <cjh@FreeBSD.org>
 WWW: http://www.pell.portland.or.us/~orc/Code/magicfilter/

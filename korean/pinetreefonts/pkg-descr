@@ -5,6 +5,3 @@ It is hangul font made by Yong-Jae Lee(yjlee@cglab.snu.ac.kr). Its encoding
 is KSC5601-1987-0, so it can be used in many X11 programs, such as Netscape.
 It is very useful because it provides many size and styles(bold, normal,
 8-24 points), and it is propositional fonts not common in hangul fonts.
-
---
-CHOI Junho <cjh@FreeBSD.org>

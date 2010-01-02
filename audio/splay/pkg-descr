@@ -10,6 +10,5 @@ You can use this program under GPL.
 You can use these libraries under Library GPL.
 
 * This version of splay was not compiled with pthread library.
---
-CHOI Junho <cjh@FreeBSD.org>
+
 WWW: http://splay.sourceforge.net/

@@ -12,7 +12,7 @@ PORTVERSION=		0.9.5.2
 CATEGORIES=		audio
 MASTER_SITES=		http://splay.sourceforge.net/tgz/
 
-MAINTAINER=		cjh@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	An audio player that decodes MPEG Layer I,II,III and WAV files
 
 GNU_CONFIGURE=		yes

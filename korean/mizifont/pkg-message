@@ -15,6 +15,3 @@ Please note:
 
  Don't forget to add the directory to your /etc/XF86Config, for
  add the correct font path after you reboots X.
-
---
-CHOI Junho <cjh@FreeBSD.org>

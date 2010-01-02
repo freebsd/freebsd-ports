@@ -12,7 +12,7 @@ CATEGORIES=	korean x11-fonts
 MASTER_SITES=	http://hanterm.org/download/font/
 DISTNAME=	hanterm-font-${PORTVERSION}
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul fonts for X11(johab) used in many hangul-related programs
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \

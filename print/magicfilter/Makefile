@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/magicfilter/
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Customizable, extensible automatic printer filter
 
 USE_GHOSTSCRIPT=	yes

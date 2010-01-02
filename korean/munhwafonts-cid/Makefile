@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 DISTFILES=	${CID_FONTS_KO}
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Munhwa CID fonts collection(Basic set)
 
 # sample fonts(cid, free Korean fonts is just only one.. :< )

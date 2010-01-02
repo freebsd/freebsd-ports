@@ -12,7 +12,7 @@ CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	${PORTNAME}-ko-${PORTVERSION}
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean enabled Texinfo formatter
 
 RUN_DEPENDS=	hbibtex:${PORTSDIR}/korean/hlatex

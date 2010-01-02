@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/hanIM/
 DISTNAME=	xfntmizi-1.1-2.noarch
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mizi Research's Korean X11 Font(ksc5601.1987-[01] encoding)
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul Printing Filter for Netscape with embedded font
 
 do-install:

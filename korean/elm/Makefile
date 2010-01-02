@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/mail/old/Others/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/mail/old/Others/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELM Mail User Agent, patched for Korean E-Mail
 
 MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 filter.1\

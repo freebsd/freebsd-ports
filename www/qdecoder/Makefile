@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.qdecoder.org/pub/qDecoder/
 DISTNAME=	qDecoder-${PORTVERSION}
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ language library including CGI supports
 
 CONFLICTS=	qDecoder-[5-7]*

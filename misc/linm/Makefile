@@ -13,7 +13,7 @@ MASTER_SITES=	http://kldp.net/frs/download.php/3152/ \
 		ftp://ftp.kr.freebsd.org/pub/kldp.net/download/mls/1.LinMStable/LinM${LINM_VER}/
 DISTNAME=	linm_${LINM_VER}-1
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Mdir, mc-style terminal file manager
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config

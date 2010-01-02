@@ -9,6 +9,3 @@ And it is also used by Linux HOWTO, FreeBSD documentation, XFree86 Project.
 
 This version of Linuxdoc-SGML supports Korean language, it supports
 LaTeX(LaTeX2e, HLaTeX-0.95, hlatexp), GNU info, ASCII format for Korean.
-
---
-CHOI Junho <cjh@FreeBSD.org>

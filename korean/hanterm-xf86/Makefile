@@ -13,7 +13,7 @@ MASTER_SITES=	http://kldp.net/frs/download.php/282/
 PKGNAMESUFFIX=	-xf
 DISTNAME=	hanterm${PKGNAMESUFFIX}-2.0.5-173
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11R6-based xterm hacked for managing Korean languages
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf

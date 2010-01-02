@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
 DISTNAME=	hpscat-jshin
 DISTFILES=	hpscat-jshin.tar.gz ked.tar.gz
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul Text Printing Utility
 
 RUN_DEPENDS=    hcode:${PORTSDIR}/korean/hcode

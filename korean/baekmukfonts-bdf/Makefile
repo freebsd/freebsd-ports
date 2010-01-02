@@ -18,7 +18,7 @@ DISTFILES=	baekmuk-${PORTVERSION}${EXTRACT_SUFX} \
 		gulim10.bdf.gz gulim10b.bdf.gz 
 EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	cjh@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Hangul fonts for X11(baekmuk)
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \

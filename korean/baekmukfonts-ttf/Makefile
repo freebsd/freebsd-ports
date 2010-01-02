@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	baekmuk${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Baekmuk family Korean TrueType Fonts
 
 NO_BUILD=	yes
