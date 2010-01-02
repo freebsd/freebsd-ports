@@ -1,0 +1,37 @@
+@comment $FreeBSD$
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShaskell-src-exts-%%HASKELLSRCEXTS_VERSION%%.o
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Annotated.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Annotated/Build.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Annotated/ExactPrint.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Annotated/Fixity.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Annotated/Simplify.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Annotated/Syntax.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Build.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Comments.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/ExtScheme.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Extension.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Fixity.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/InternalParser.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Lexer.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/ParseMonad.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/ParseSyntax.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/ParseUtils.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Parser.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Pretty.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/SrcLoc.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Syntax.hi
+%%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShaskell-src-exts-%%HASKELLSRCEXTS_VERSION%%.a
+%%HASKELLSRCEXTS_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts/Annotated
+@dirrm %%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Exts
+@dirrm %%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell
+@dirrm %%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%HASKELLSRCEXTS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HASKELLSRCEXTS_LIBDIR_REL%%
+@exec /bin/sh %D/%%HASKELLSRCEXTS_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister haskell-src-exts
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
