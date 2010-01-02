@@ -1,0 +1,7 @@
+A vastly expanded collection of Haskell modules implementing various
+ideas from category theory. Notable bits include: comonads,
+adjunctions, and various recursion schemes a'la the research paper
+"Functional Programming with Bananas, Lenses, Envelopes and
+Barbed Wire".
+
+WWW: http://comonad.com/reader/
