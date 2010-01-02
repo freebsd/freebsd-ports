@@ -16,6 +16,8 @@ COMMENT=	LMTP server compliant with RFC 2033 and Maildir++
 
 LIB_DEPENDS=	home.1:${PORTSDIR}/misc/libhome
 
+BROKEN=		does not compile
+
 USE_ICONV=	yes
 
 OPTIONS=	PCRE "Support for PCRE" on
