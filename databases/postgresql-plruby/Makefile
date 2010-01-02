@@ -7,11 +7,16 @@
 
 PORTNAME=	plruby
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	RF/${PORTNAME} \
 		ftp://ftp.iDaemons.org/pub/distfiles/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	ruby
+
+PATCHFILES=	df2c4d39cdda35e1cb842106b22aaa10df2760e6.diff
+PATCH_SITES=	http://github.com/knu/postgresql-plruby/commit/
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
