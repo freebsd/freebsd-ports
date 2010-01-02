@@ -1,6 +1,6 @@
 --- modules/freebsd/vmmemctl/os.c.orig	2009-04-09 15:18:08.000000000 -0400
 +++ modules/freebsd/vmmemctl/os.c	2009-04-09 15:34:06.000000000 -0400
-@@ -260,12 +260,14 @@
+@@ -413,12 +413,14 @@
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -20,7 +20,7 @@
  }
  
  static vm_page_t os_kmem_alloc(int alloc_normal_failed)
-@@ -275,8 +277,11 @@
+@@ -430,8 +432,11 @@
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -32,7 +32,7 @@
        return NULL;
     }
  
-@@ -297,6 +302,7 @@
+@@ -452,6 +457,7 @@
     if (!page) {
        os_pmap_putindex(pmap, pindex);
     }
