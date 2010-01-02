@@ -20,7 +20,7 @@ bin/xasy
 %%PORTDOCS%%info/asymptote/colors.png
 %%PORTDOCS%%info/asymptote/cube.png
 %%PORTDOCS%%info/asymptote/cylinderskeleton.png
-%%PORTDOCS%%%%PORTDOCS%%info/asymptote/datagraph.png
+%%PORTDOCS%%info/asymptote/datagraph.png
 %%PORTDOCS%%info/asymptote/diagonal.png
 %%PORTDOCS%%info/asymptote/diatom.png
 %%PORTDOCS%%info/asymptote/dots.png
@@ -213,6 +213,8 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/RiemannSurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/RiemannSurfaceRoot.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Sierpinski.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SierpinskiGasket.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SierpinskiSponge.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advection.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alignbox.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alignedaxis.asy
@@ -257,6 +259,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contextfonts.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/controlsystem.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cos2theta.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cos3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cosaddition.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpkcolors.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube.asy
@@ -282,6 +285,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/equilchord.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorbars.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exp.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exp3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalprc.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/extrudedcontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fano.asy
@@ -389,6 +393,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/planes.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/polararea.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/polarcircle.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polardatagraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poster.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progrid.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/projectelevation.asy
@@ -413,6 +418,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shellmethod.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shellsqrtx01.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sin1x.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sin3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sinc.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sinxlex.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slidedemo.asy
@@ -469,6 +475,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vectorfield3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vectorfieldsphere.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/venn.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/venn3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertexshading.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/washermethod.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wedge.asy
