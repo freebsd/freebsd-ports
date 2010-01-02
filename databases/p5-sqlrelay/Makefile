@@ -21,6 +21,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=		sqlrclient.0:${SQLRELAY_PORTDIR}
 
+BROKEN=		does not build
+
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -60,9 +62,5 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build"
-.endif
 
 .include <bsd.port.post.mk>
