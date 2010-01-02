@@ -7,7 +7,7 @@
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.imapproxy.org/downloads/
 PKGNAMEPREFIX=	up-
@@ -16,7 +16,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	A caching IMAP proxy server
 
-GNU_CONFIGURE=	YES
+USE_AUTOTOOLS=	autoheader:262
+
 USE_RC_SUBR=	imapproxyd.sh
 DOCS=		COPYING ChangeLog README README.debian \
 		README.known_issues README.ssl
@@ -25,10 +26,6 @@ SBINS=		in.imapproxyd pimpstat
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-
-post-patch:
-	${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g" \
-		-e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 do-install:
 .if !defined(NOPORTDOCS)

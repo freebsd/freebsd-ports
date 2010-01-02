@@ -1,0 +1,12 @@
+--- configure.in.orig	2009-03-26 15:13:59.000000000 +0100
++++ configure.in	2009-03-26 15:14:54.000000000 +0100
+@@ -129,7 +129,8 @@
+ LIBS="$save_LIBS"
+ AC_SUBST(LIB_CURSES)
+ 
+-
++eval expanded_sysconfdir="\"$sysconfdir\""
++AC_DEFINE_UNQUOTED(DEFAULT_CONFIG_FILE, "$expanded_sysconfdir/imapproxyd.conf", [default location of config file])
+ AC_CONFIG_HEADER(config.h)
+ 
+ 
