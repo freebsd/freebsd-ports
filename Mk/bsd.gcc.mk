@@ -35,19 +35,13 @@
 
 GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
-#
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
-#
 GCCVERSIONS=	030402 040200 040300 040400 040500
 
-#
-# Versions of GCC shipped.
-# The first field if the OSVERSION in which it appeared in the base system.
-# The second field is the OSVERSION in which it disappeared from
-# the base system.
+# The first field if the OSVERSION in which it appeared in the base.
+# The second field is the OSVERSION in which it disappeared from the base.
 # The third field is the version as USE_GCC would use.
-#
 GCCVERSION_030402=	502126 700042 3.4
 GCCVERSION_040200=	700042 999999 4.2
 GCCVERSION_040300=	999999 999999 4.3
@@ -58,6 +52,19 @@ GCCVERSION_040500=	999999 999999 4.5
 # No configurable parts below this.
 #
 
+# Extract the fields from GCCVERSION_...
+.for v in ${GCCVERSIONS}
+. for j in ${GCCVERSION_${v}}
+.  if !defined(_GCCVERSION_${v}_L)
+_GCCVERSION_${v}_L=	${j}
+.  elif !defined(_GCCVERSION_${v}_R)
+_GCCVERSION_${v}_R=	${j}
+.  elif !defined(_GCCVERSION_${v}_V)
+_GCCVERSION_${v}_V=	${j}
+.  endif
+. endfor
+.endfor
+
 #
 # bsd.gcc.mk can also be used only for FC, F77 settings; in this case we
 # do not define USE_GCC.
@@ -67,14 +74,9 @@ GCCVERSION_040500=	999999 999999 4.5
 
 # The default case, with a current lang/gcc port.
 . if ${USE_FORTRAN} == yes
-BUILD_DEPENDS+=	gfortran44:${PORTSDIR}/lang/gcc44
-RUN_DEPENDS+=	gfortran44:${PORTSDIR}/lang/gcc44
+_USE_GCC:=	4.4
 FC:=	gfortran44
 F77:=	gfortran44
-CC:=	gcc44
-CXX:=	g++44
-CFLAGS+=	-Wl,-rpath=${PREFIX}/lib/gcc44
-LDFLAGS+=	-Wl,-rpath=${PREFIX}/lib/gcc44
 
 # Intel Fortran compiler from lang/ifc.
 . elif ${USE_FORTRAN} == ifort
@@ -117,21 +119,11 @@ _USE_GCC:=	${USE_GCC:S/+//}
 _GCC_ORLATER:=	true
 .endif
 
-#
-# Extract the fields from GCCVERSION_ and check if USE_GCC points to a valid
-# version.
-#
+# Check if USE_GCC points to a valid version.
 .for v in ${GCCVERSIONS}
 . for j in ${GCCVERSION_${v}}
-.  if !defined(_GCCVERSION_${v}_L)
-_GCCVERSION_${v}_L=	${j}
-.  elif !defined(_GCCVERSION_${v}_R)
-_GCCVERSION_${v}_R=	${j}
-.  elif !defined(_GCCVERSION_${v}_V)
-_GCCVERSION_${v}_V=	${j}
-.   if ${_USE_GCC}==${j}
+.  if ${_USE_GCC}==${j}
 _GCCVERSION_OKAY=	true;
-.   endif
 .  endif
 . endfor
 .endfor
@@ -184,10 +176,13 @@ _GCC_FOUND:=	${_GCCVERSION_${v}_V}
 _USE_GCC:=${_GCC_FOUND}
 .endif
 
-#
-# Determine if the installed OS already has this GCCVERSION, and if not
-# then set proper dependencies, CC, and CXX.
-#
+.endif # defined(USE_GCC)
+
+
+.if defined(_USE_GCC)
+# A concrete version has been selected.  Determine if the installed OS 
+# features this version in the base, and if not then set proper ports
+# dependencies, CC, CXX, and flags.
 .for v in ${GCCVERSIONS}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
@@ -196,6 +191,10 @@ _GCC_BUILD_DEPENDS:=	gcc${V}
 _GCC_PORT_DEPENDS:=	gcc${V}
 CC:=			gcc${V}
 CXX:=			g++${V}
+.   if ${_USE_GCC} != 3.4
+CFLAGS+=		-Wl,-rpath=${PREFIX}/lib/${_GCC_BUILD_DEPENDS}
+LDFLAGS+=		-Wl,-rpath=${PREFIX}/lib/${_GCC_BUILD_DEPENDS}
+.   endif
 .  endif
 . endif
 .endfor
@@ -207,9 +206,7 @@ BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 . endif
 .endif
-
-.endif
-# defined(USE_GCC)
+.endif # defined(_USE_GCC)
 
 
 test-gcc:
