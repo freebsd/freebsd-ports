@@ -220,6 +220,7 @@
     SUBDIR += hs-highlighting-kate-ghc
     SUBDIR += hs-polyparse-ghc
     SUBDIR += hs-stringsearch
+    SUBDIR += hs-tagsoup
     SUBDIR += hsb-aspell
     SUBDIR += htdig
     SUBDIR += html
