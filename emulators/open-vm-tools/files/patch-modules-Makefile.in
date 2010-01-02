@@ -1,6 +1,6 @@
 --- modules/Makefile.in.orig	2009-04-06 18:44:58.000000000 -0400
 +++ modules/Makefile.in	2009-04-06 18:45:57.000000000 -0400
-@@ -435,11 +435,11 @@
+@@ -528,11 +528,11 @@
  @SOLARIS_TRUE@	   $(MAKE) VM_UNAME=$(KERNEL_RELEASE) MV=mv RM=rm                      \
  @SOLARIS_TRUE@	      -C "$(modulesrc)/$(MODULES_OS)/$$MOD" install || exit 1;         \
  @SOLARIS_TRUE@	done

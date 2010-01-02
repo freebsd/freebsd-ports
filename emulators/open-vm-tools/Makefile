@@ -15,9 +15,10 @@ DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
-RELEASE_DATE=		2009.05.22
-BUILD_VER=		167859
+RELEASE_DATE=		2009.11.16
+BUILD_VER=		210370
 
+WRKSRC=			${WRKDIR}/open-vm-tools-2009.11.17-210370
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 
@@ -77,8 +78,6 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not compile on 6.X
-.elif ${OSVERSION} >= 900000
-BROKEN=		does not build
 .endif
 
 .if ${ARCH} == "sparc64"

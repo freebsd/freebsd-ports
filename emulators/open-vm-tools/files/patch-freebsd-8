@@ -12,49 +12,9 @@
     HgfsAccessMode accessMode = 0;
     Bool isDir = vp->v_type == VDIR;
     if (mode & VREAD) {
---- modules/freebsd/vmblock/vnops.c.orig	2009-03-18 03:03:21.000000000 -0400
-+++ modules/freebsd/vmblock/vnops.c	2009-04-04 20:33:28.000000000 -0400
-@@ -726,7 +726,11 @@
-        * NB:  Allowing only the superuser to open this directory breaks
-        *      readdir() of the filesystem root for non-privileged users.
-        */
--      if ((retval = suser(ap->a_td)) == 0) {
-+ #if __FreeBSD_version >= 800001
-+       if ((retval = priv_check(ap->a_td, PRIV_VFS_GETFH)) == 0) {
-+ #else
-+        if ((retval = suser(ap->a_td)) == 0) {
-+ #endif
- #if __FreeBSD_version >= 700055
-          fp = ap->a_fp;
- #else
-@@ -1010,7 +1014,11 @@
- */
- {
-    struct vnode *vp = ap->a_vp;
-+#if __FreeBSD_version >= 800001
-+   mode_t mode = ap->a_accmode;
-+#else
-    mode_t mode = ap->a_mode;
-+#endif
- 
-    /*
-     * Disallow write attempts on read-only layers; unless the file is a
 --- modules/freebsd/vmblock/vfsops.c.orig	2009-03-18 03:03:21.000000000 -0400
 +++ modules/freebsd/vmblock/vfsops.c	2009-05-23 02:25:50.892549675 -0400
-@@ -113,8 +113,12 @@
-  */
- 
- static int
-+#if __FreeBSD_version >= 800087
-+VMBlockVFSMount(struct mount *mp)
-+#else
- VMBlockVFSMount(struct mount *mp,       // IN: mount(2) parameters
-                 struct thread *td)      // IN: caller's kernel thread context
-+#endif
- {
-    struct VMBlockMount *xmp;
-    struct nameidata nd, *ndp = &nd;
-@@ -122,6 +126,11 @@
+@@ -126,6 +126,11 @@
     char *target;
     int len, error = 0;
  
@@ -66,22 +26,7 @@
     VMBLOCKDEBUG("VMBlockVFSMount(mp = %p)\n", (void *)mp);
  
     /*
-@@ -253,9 +262,14 @@
-  */
- 
- static int
-+#if __FreeBSD_version >= 800087
-+VMBlockVFSUnmount(struct mount *mp,
-+                  int mntflags)
-+#else
- VMBlockVFSUnmount(struct mount *mp,     // IN: filesystem to unmount
-                   int mntflags,         // IN: unmount(2) flags (ex: MNT_FORCE)
-                   struct thread *td)    // IN: caller's kernel thread context
-+#endif
- {
-    struct VMBlockMount *xmp;
-    struct vnode *vp;
-@@ -263,6 +277,11 @@
+@@ -273,6 +278,11 @@
     int error;
     int flags = 0, removed = 0;
  
@@ -93,69 +38,10 @@
     VMBLOCKDEBUG("VMBlockVFSUnmount: mp = %p\n", (void *)mp);
  
     xmp = MNTTOVMBLOCKMNT(mp);
-@@ -336,13 +355,24 @@
-  */
- 
- static int
-+#if __FreeBSD_version >= 800087
-+VMBlockVFSRoot(struct mount *mp,
-+               int flags,
-+	       struct vnode **vpp)
-+#else
- VMBlockVFSRoot(struct mount *mp,        // IN: vmblock file system
-                int flags,               // IN: lockmgr(9) flags
-                struct vnode **vpp,      // OUT: root vnode
-                struct thread *td)       // IN: caller's thread context
-+#endif
- {
-    struct vnode *vp;
- 
-+#if __FreeBSD_version >= 800087
-+   struct thread *td;
-+   td = curthread;
-+#endif
-+
-    /*
-     * Return locked reference to root.
-     */
-@@ -373,12 +403,21 @@
-  */
- 
- static int
-+#if __FreeBSD_version >= 800087
-+VMBlockVFSStatFS(struct mount *mp,
-+                 struct statfs *sbp)
-+#else
- VMBlockVFSStatFS(struct mount *mp,      // IN: vmblock file system
-                  struct statfs *sbp,    // OUT: statfs(2) arg container
-                  struct thread *td)     // IN: caller's thread context
-+#endif
- {
-    int error;
-    struct statfs mstat;
-+#if __FreeBSD_version >= 800087
-+   struct thread *td;
-+   td = curthread;
-+#endif
- 
-    VMBLOCKDEBUG("VMBlockVFSStatFS(mp = %p, vp = %p->%p)\n", (void *)mp,
-        (void *)MNTTOVMBLOCKMNT(mp)->rootVnode,
-@@ -386,7 +425,11 @@
- 
-    bzero(&mstat, sizeof mstat);
- 
-+#if __FreeBSD_version >= 800087
-+   error = VFS_STATFS(MNTTOVMBLOCKMNT(mp)->mountVFS, &mstat);
-+#else
-    error = VFS_STATFS(MNTTOVMBLOCKMNT(mp)->mountVFS, &mstat, td);
-+#endif
-    if (error) {
-       return error;
-    }
-@@ -423,9 +466,14 @@
-  */
- 
- static int
+@@ -448,10 +458,15 @@
+ VMBlockVFSSync(struct mount *mp,        // Ignored
+                int waitfor)             // Ignored
+ #else
 +#if __FreeBSD_version >= 800087
 +VMBlockVFSSync(struct mount *mp,
 +               int waitfor)
@@ -163,6 +49,7 @@
  VMBlockVFSSync(struct mount *mp,        // Ignored
                 int waitfor,             // Ignored
                 struct thread *td)       // Ignored
+ #endif
 +#endif
  {
     return 0;

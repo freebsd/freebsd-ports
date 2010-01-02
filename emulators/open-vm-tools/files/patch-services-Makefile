@@ -11,7 +11,7 @@
  
 --- services/Makefile.in.orig	2009-02-28 20:48:52.000000000 +0100
 +++ services/Makefile.in	2009-02-28 20:49:46.000000000 +0100
-@@ -564,8 +564,8 @@
+@@ -576,8 +576,8 @@
  
  
  install-exec-local:

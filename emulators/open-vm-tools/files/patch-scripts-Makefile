@@ -8,7 +8,7 @@
  conf_SCRIPTS += $(MODULES_OS)/poweron-vm-default
 --- scripts/Makefile.in.orig	2008-07-22 01:13:57.000000000 +0200
 +++ scripts/Makefile.in	2008-07-22 01:18:30.000000000 +0200
-@@ -186,7 +186,7 @@
+@@ -236,7 +236,7 @@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
