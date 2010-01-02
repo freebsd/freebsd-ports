@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.7
 CATEGORIES=	databases python
 MASTER_SITES=	SF \
 		CHEESESHOP
