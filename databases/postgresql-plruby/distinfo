@@ -1,3 +1,6 @@
 MD5 (ruby/plruby-0.5.4.tar.bz2) = 473891176b2cb24ca071955c7e0ff914
 SHA256 (ruby/plruby-0.5.4.tar.bz2) = 8ba24ea19d9e365dc8b32f28e7c287e0dfe993fc865d4ba392acf96947f03bc2
 SIZE (ruby/plruby-0.5.4.tar.bz2) = 96126
+MD5 (ruby/df2c4d39cdda35e1cb842106b22aaa10df2760e6.diff) = bb5f86e20f2395716b29a9f9948f0253
+SHA256 (ruby/df2c4d39cdda35e1cb842106b22aaa10df2760e6.diff) = 90a081b4dfd45a4793a1b97a1aef8554acf83afbefae674581703df0c43d0e2a
+SIZE (ruby/df2c4d39cdda35e1cb842106b22aaa10df2760e6.diff) = 261
