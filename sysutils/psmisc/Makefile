@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	psmisc
-PORTVERSION=	21.9
+PORTVERSION=	22.9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the Linux pstree, killall and pidof commands
