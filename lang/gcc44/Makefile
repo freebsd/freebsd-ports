@@ -35,7 +35,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
@@ -118,14 +117,6 @@ MAN1+=		aot-compile${SUFFIX}.1 \
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
-
-.if defined(WITH_JAVA_AWT)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
-USE_GNOME=	gtk20 libartlgpl2
-CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
-			--enable-gtk-cairo
-.endif
-
 .else
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
