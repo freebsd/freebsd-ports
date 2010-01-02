@@ -88,8 +88,10 @@ libdata/pkgconfig/libwpg-stream-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG2Parser-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG2Parser.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classWPG2Parser.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG2Parser_1_1ObjectCharacterization-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG2Parser_1_1ObjectCharacterization.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG2TransformMatrix-members.html
@@ -108,6 +110,7 @@ libdata/pkgconfig/libwpg-stream-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPGInternalInputStream.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPGXParser-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPGXParser.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classWPGXParser.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1AllocTable-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1AllocTable.html
@@ -157,6 +160,7 @@ libdata/pkgconfig/libwpg-stream-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGMemoryStreamPrivate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGPaintInterface-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGPaintInterface.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGPaintInterface.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGPath-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGPath.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGPathElement-members.html
@@ -175,6 +179,7 @@ libdata/pkgconfig/libwpg-stream-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGRect.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGSVGGenerator-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGSVGGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGSVGGenerator.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGString-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGString.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGStringPrivate-members.html
