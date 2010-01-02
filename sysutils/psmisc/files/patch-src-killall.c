@@ -1,15 +1,24 @@
---- src/killall.c.orig	Thu Dec  1 22:32:19 2005
-+++ src/killall.c	Thu Jan  5 23:32:33 2006
-@@ -59,35 +59,31 @@
-            quiet = 0, wait_until_dead = 0, process_group = 0,
+--- src/killall.c.orig	2009-12-18 21:45:36.000000000 +0900
++++ src/killall.c	2010-01-03 00:37:34.818411284 +0900
+@@ -36,6 +36,8 @@
+ #include <dirent.h>
+ #include <signal.h>
+ #include <errno.h>
++#include <limits.h>
++#include <locale.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <getopt.h>
+@@ -83,40 +85,35 @@
             ignore_case = 0, pidof;
+ static long younger_than = 0, older_than = 0;
  
-+/*
-+ * This is the implementation from 21.5, as the one in 21.6 and newer uses
-+ * Linux specific functions getline() and rpmatch()
-+ */
++ /*
++  * This is based on the implementation from 21.5, as the one in 21.6
++  * and newer uses Linux specific functions getline() and rpmatch()
++  */
  static int
- ask (char *name, pid_t pid)
+ ask (char *name, pid_t pid, const int signal)
  {
 -  int res;
 -  size_t len;
@@ -19,8 +28,14 @@
 -  len = 0;
 -
 -  do {
--    printf (_("Kill %s(%s%d) ? (y/N) "), name, process_group ? "pgid " : "",
--	    pid);
+-    if (signal == SIGTERM)
+-        printf (_("Kill %s(%s%d) ? (y/N) "), name, process_group ? "pgid " : "",
+-	        pid);
+-    else
+-        printf (_("Signal %s(%s%d) ? (y/N) "), name, process_group ? "pgid " : "",
+-	        pid);
++  int ch, c;
+ 
 -    fflush (stdout);
 -
 -    if (getline (&line, &len, stdin) < 0)
@@ -34,12 +49,14 @@
 -    if (res >= 0) {
 -      free(line);
 -      return res;
-+  int ch, c;
-+
 +  do
 +    {
-+      printf (_("Kill %s(%s%d) ? (y/n) "), name, process_group ? "pgid " : "",
-+	      pid);
++      if (signal == SIGTERM)
++          printf (_("Kill %s(%s%d) ? (y/N) "), name, process_group ? "pgid " : "",
++                  pid);
++      else
++          printf (_("Signal %s(%s%d) ? (y/N) "), name, process_group ? "pgid " : "",
++                  pid);
 +      fflush (stdout);
 +      do
 +	if ((ch = getchar ()) == EOF)
@@ -56,8 +73,8 @@
 +  return ch == 'y' || ch == 'Y';
  }
  
- static int
-@@ -267,7 +263,7 @@
+ static double
+@@ -356,7 +353,7 @@
          }
  #endif /*WITH_SELINUX*/
        /* load process name */
@@ -66,15 +83,16 @@
  	continue;
        if (!(file = fopen (path, "r"))) 
  	{
-@@ -275,72 +271,13 @@
+@@ -364,7 +361,7 @@
  	  continue;
  	}
        free (path);
 -      okay = fscanf (file, "%*d (%15[^)]", comm) == 1;
 +      okay = fscanf (file, "%s", comm) == 1;
-       (void) fclose (file);
-       if (!okay)
+       if (!okay) {
+ 	fclose(file);
  	continue;
+@@ -386,65 +383,6 @@
        got_long = 0;
        command = NULL;		/* make gcc happy */
        length = strlen (comm);
@@ -140,21 +158,21 @@
        /* mach by process name */
        for (j = 0; j < names; j++)
  	{
-@@ -372,7 +309,7 @@
- 	        }
- 	      else
+@@ -495,7 +433,7 @@
  	        {
+ 		  int ok = 1;
+ 
 -	          if (asprintf (&path, PROC_BASE "/%d/exe", pid_table[i]) < 0)
 +	          if (asprintf (&path, PROC_BASE "/%d/file", pid_table[i]) < 0)
  		    continue;
  
  	          if (stat (path, &st) < 0) 
-@@ -697,7 +634,7 @@
-       fprintf (stderr, _("Maximum number of names is %d\n"), MAX_NAMES);
-       exit (1);
-     }
--  if (stat("/proc/self/stat", &isproc)==-1)
-+  if (stat("/proc/curproc/status", &isproc)==-1)
-     {
-       fprintf (stderr, _("%s is empty (not mounted ?)\n"), PROC_BASE);
-       exit (1);
+@@ -842,7 +780,7 @@
+     fprintf (stderr, _("Maximum number of names is %d\n"), MAX_NAMES);
+     exit (1);
+   }
+-  if (stat("/proc/self/stat", &isproc)==-1) {
++  if (stat("/proc/curproc/status", &isproc)==-1) {
+     fprintf (stderr, _("%s is empty (not mounted ?)\n"), PROC_BASE);
+     exit (1);
+   }
