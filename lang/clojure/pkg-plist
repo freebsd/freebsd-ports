@@ -1,4 +1,2 @@
 bin/clojure
 %%JAVAJARDIR%%/clojure.jar
-%%DATADIR%%/main.clj
-@dirrm %%DATADIR%%

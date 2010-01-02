@@ -2,11 +2,5 @@
 #
 # $FreeBSD$
 
-if [ -z "$1" ]
-then
-    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/jline.jar:%%JAVAJARDIR%%/clojure.jar:$CLASSPATH" %%CLOJURE_JLINE_RUNNER%% clojure.lang.Repl
-else
-    SCRIPT="$1"
-    shift 1
-    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar:$CLASSPATH" clojure.lang.Script "$SCRIPT" -- "$@"
-fi
+JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/jline.jar:%%JAVAJARDIR%%/clojure.jar:$CLASSPATH" %%CLOJURE_JLINE_RUNNER%% clojure.main "$@"
+
