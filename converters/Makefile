@@ -22,6 +22,7 @@
     SUBDIR += fpc-iconvenc
     SUBDIR += fribidi
     SUBDIR += gbase
+    SUBDIR += hs-json
     SUBDIR += htx
     SUBDIR += i18ntools
     SUBDIR += ical2html
