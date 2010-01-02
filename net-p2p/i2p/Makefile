@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://mirror.i2p2.de/:i2p \
 		${MASTER_SITE_GOOGLE_CODE}:i2p \
 		SF/jetty/OldFiles:jetty
 DISTFILES=	\
-		i2psource-${PORTVERSION}${EXTRACT_SUFX}:i2p \
+		i2psource_${PORTVERSION}${EXTRACT_SUFX}:i2p \
 		${JETTY_DISTFILE}:jetty
-EXTRACT_ONLY=	i2psource-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymizing network
