@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.pjrc.com/tech/8051/tools/
 DISTNAME=	${PORTNAME}_beta3
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free 8051 assembler
 
 .ifndef(WITHOUT_X11)

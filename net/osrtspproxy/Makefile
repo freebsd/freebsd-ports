@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://docs.real.com/docs/proxykit/
 DISTNAME=	${PORTNAME}_2_0
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The RTSP Proxy Kit is a reference implementation of an RTSP proxy
 
 HAS_CONFIGURE=	YES

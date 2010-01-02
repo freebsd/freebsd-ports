@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cis.unisa.edu.au/~pizza/gj/Distribution/
 PKGNAMESUFFIX=	-${JDKSUBDIR}
 DISTNAME=	gjdist${GJDIST}
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of the Java programming language that supports generic types
 
 WRKSRC=		${WRKDIR}/gj

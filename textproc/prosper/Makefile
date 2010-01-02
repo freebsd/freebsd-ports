@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} contrib-prosper-1.0.0.tar.gz
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX class for writing transparencies
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base

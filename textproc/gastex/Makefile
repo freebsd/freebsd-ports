@@ -14,7 +14,7 @@ DISTFILES=	gastex.sty gastex.pro ex-gastex.tex
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	#
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphs and Automata Simplified in TeX
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base

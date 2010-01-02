@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows X-Faces from slrn in X11 terminal emulator
 
 LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
