@@ -3,10 +3,10 @@ Index: kWnn/etc/Makefile.in
 RCS file: /home/cvs/private/hrs/freewnn/kWnn/etc/Makefile.in,v
 retrieving revision 1.1.1.1
 retrieving revision 1.2
-diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-kWnn-etc-Makefile.in,v 1.1 2009-01-02 23:08:15 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.2
+diff -u -p -r1.1.1.1 -r1.2
 --- kWnn/etc/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
 +++ kWnn/etc/Makefile.in	2 Jan 2009 21:09:35 -0000	1.2
-@@ -35,10 +35,12 @@
+@@ -35,10 +35,12 @@ top_builddir = ../..
  INCLUDES = -I$(KWNNINCLUDESRC) -I$(TOP)
  DEFINES = $(KWNNDEFINES) $(KWNNLANGDEF)
  
@@ -21,7 +21,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-kWnn
  OBJS2= getopt.o getopt1.o
  
  all::
-@@ -199,6 +201,18 @@
+@@ -199,6 +201,18 @@ includes:: getopt1.c
  
  depend:: getopt1.c
  

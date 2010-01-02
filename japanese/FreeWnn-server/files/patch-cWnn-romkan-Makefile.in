@@ -1,0 +1,17 @@
+Index: cWnn/romkan/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/romkan/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- cWnn/romkan/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/romkan/Makefile.in	2 Jan 2010 12:10:16 -0000	1.2
+@@ -48,7 +48,7 @@ includes::
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $<
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $<
+ 
+ clean::
+ 	$(RM) -r .libs

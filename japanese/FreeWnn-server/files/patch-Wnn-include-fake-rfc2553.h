@@ -6,7 +6,7 @@ diff -N Wnn/include/fake-rfc2553.h
 +++ Wnn/include/fake-rfc2553.h	2 Jan 2009 21:09:34 -0000	1.1
 @@ -0,0 +1,173 @@
 +/* $Id: fake-rfc2553.h,v 1.13 2006/07/24 03:51:52 djm Exp $ */
-+/* $FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-include-fake-rfc2553.h,v 1.1 2009-01-02 23:08:15 hrs Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-include-fake-rfc2553.h,v 1.2 2010-01-02 14:47:19 hrs Exp $ */
 +
 +/*
 + * Copyright (C) 2000-2003 Damien Miller.  All rights reserved.

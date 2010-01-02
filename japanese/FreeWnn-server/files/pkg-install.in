@@ -19,28 +19,13 @@ PRE-INSTALL)
 POST-INSTALL)
 	case $1 in
 	ja-FreeWnn-*)
-		mkdir -p ${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
-		chown wnn ${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
 		chown wnn ${PKG_PREFIX}/bin/Wnn4/jserver
-		${PKG_PREFIX}/bin/Wnn4/wnntouch \
-			${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic/* \
-			${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons/* \
-			${PKG_PREFIX}/lib/wnn/ja_JP/dic/gerodic/*
 		;;
 	zh-FreeWnn-*)
-		mkdir -p ${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr
-		chown wnn ${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr
-		chown wnn ${PKG_PREFIX}/bin/cWnn4/cserver ${PKG_PREFIX}/bin/cWnn4/tserver
-		${PKG_PREFIX}/bin/cWnn4/cwnntouch \
-			${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys/* \
-			${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys/*
+		chown wnn ${PKG_PREFIX}/bin/cWnn4/cserver \
+		    ${PKG_PREFIX}/bin/cWnn4/tserver
 		;;
 	ko-FreeWnn-*)
-		mkdir -p ${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
-		chown wnn ${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
 		chown wnn ${PKG_PREFIX}/bin/kWnn4/kserver
-		${PKG_PREFIX}/bin/kWnn4/kwnntouch \
-			${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys/*
-		;;
 	esac
 esac

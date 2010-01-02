@@ -12,10 +12,15 @@ name=kwnn
 rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/kWnn4/kserver
 procname=%%PREFIX%%/bin/kWnn4/kserver
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+WTCMD=%%PREFIX%%/bin/kWnn4/kwnntouch
 
 start_precmd()
 {
 	rm -f /tmp/kd_sockV4
+	install -d -o wnn -m 755 %%PREFIX%%/lib/wnn/ko_KR/dic/usr
+	${WTCMD} %%PREFIX%%/lib/wnn/ko_KR/dic/sys/*
 }
 
 stop_postcmd()

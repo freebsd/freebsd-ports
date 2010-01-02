@@ -3,10 +3,10 @@ Index: kWnn/include/Makefile.in
 RCS file: /home/cvs/private/hrs/freewnn/kWnn/include/Makefile.in,v
 retrieving revision 1.1.1.1
 retrieving revision 1.2
-diff -d -u -I\$FreeBSD$ -w -r1.1.1.1 -r1.2
+diff -u -p -r1.1.1.1 -r1.2
 --- kWnn/include/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
 +++ kWnn/include/Makefile.in	2 Jan 2009 21:09:35 -0000	1.2
-@@ -36,7 +36,8 @@
+@@ -36,7 +36,8 @@ INSTALL      = @INSTALL@
  
  HEADERS = jllib.h jslib.h msg.h rk_spclval.h wnnerror.h commonhd.h cplib.h
  LINKS = wnn_config.h copyright.h demcom.h hinsi_file.h jd_sock.h jdata.h \
@@ -16,7 +16,7 @@ diff -d -u -I\$FreeBSD$ -w -r1.1.1.1 -r1.2
  LINKS2 = getopt.h
  
  all:: $(HEADERS) $(LINKS) $(LINKS2)
-@@ -257,6 +258,18 @@
+@@ -257,6 +258,18 @@ includes:: getopt.h
  
  depend:: getopt.h
  

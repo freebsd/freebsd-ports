@@ -12,10 +12,15 @@ name=cwnn
 rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/cWnn4/cserver
 procname=%%PREFIX%%/bin/cWnn4/cserver
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+WTCMD=%%PREFIX%%/bin/cWnn4/cwnntouch
 
 start_precmd()
 {
 	rm -f /tmp/cd_sockV4
+	install -d -o wnn -m 755 %%PREFIX%%/lib/wnn/zh_CN/dic/usr
+	%%PREFIX%%/lib/wnn/zh_CN/dic/sys/*
 }
 
 stop_postcmd()

@@ -1,17 +1,12 @@
---- Wnn/romkan/Makefile.in.orig	2009-07-12 22:17:42.000000000 -0500
-+++ Wnn/romkan/Makefile.in	2009-07-12 22:18:01.000000000 -0500
-@@ -46,7 +46,7 @@
- 
- .c.o:
- 	$(RM) $@
--	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $<
-+	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $<
- 
- clean::
- 	$(RM) -r .libs
---- Wnn/jlib.V3/Makefile.in.orig	2009-07-12 22:19:13.000000000 -0500
-+++ Wnn/jlib.V3/Makefile.in	2009-07-12 22:21:06.000000000 -0500
-@@ -71,12 +71,12 @@
+Index: Wnn/jlib.V3/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/Wnn/jlib.V3/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- Wnn/jlib.V3/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jlib.V3/Makefile.in	2 Jan 2010 12:10:14 -0000	1.2
+@@ -71,12 +71,12 @@ includes::
  
  .c.o:
  	$(RM) $@
@@ -26,7 +21,7 @@
  
  lintlib:: llib-ljd.ln
  
-@@ -87,7 +87,7 @@
+@@ -87,7 +87,7 @@ llib-ljd.ln: $(SRCS) $(EXTRALIBRARYDEPS)
  install:: libjd.la
  	@if [ -d $(DESTDIR)$(WNNLIBDIR) ]; then set +x; \
  	else (set -x; $(MKDIRHIER) $(DESTDIR)$(WNNLIBDIR)); fi
@@ -35,7 +30,7 @@
  
  install:: jlib.h
  	@if [ -d $(DESTDIR)$(JWNNINCDIR) ]; then set +x; \
-@@ -109,13 +109,13 @@
+@@ -109,13 +109,13 @@ $(WNNJLIB)::
  	done
  
  $(OBJ2) : $(SRC2)
@@ -52,25 +47,3 @@
  
  depend:: .depend
  
---- kWnn/romkan/Makefile.in.orig	2009-07-12 22:26:37.000000000 -0500
-+++ kWnn/romkan/Makefile.in	2009-07-12 22:26:55.000000000 -0500
-@@ -48,7 +48,7 @@
- 
- .c.o:
- 	$(RM) $@
--	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $<
-+	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $<
- 
- clean::
- 	$(RM) -r .libs
---- cWnn/romkan/Makefile.in.orig	2009-07-12 22:29:35.000000000 -0500
-+++ cWnn/romkan/Makefile.in	2009-07-12 22:29:49.000000000 -0500
-@@ -48,7 +48,7 @@
- 
- .c.o:
- 	$(RM) $@
--	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $<
-+	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $<
- 
- clean::
- 	$(RM) -r .libs
