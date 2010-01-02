@@ -1,8 +1,22 @@
-qBittorrent is a bittorrent client programmed in C++ / Qt4 that uses
-libtorrent (sometimes called rblibtorrent) by Arvid Norberg.
+qBittorrent v2 is the closest open source (GNU GPL v2 license) equivalent
+to utorrent.  It is based on the Qt4 toolkit and libtorrent-rasterbar.
 
-It aims to be a good alternative to all other bittorrent clients
-out there. qBittorrent is fast, stable and provides unicode
-support as well as many features.
+Features:
+
+	Well-integrated and extensible Search Engine
+	Simultaneous search in most famous BitTorrent search sites
+	Per-category-specific search requests (e.g. Books, Music, Movies)
+	All Bittorrent extensions
+		* DHT, Peer Exchange, Full encryption, Magnet URI
+	Remote control through a Web user interface
+		* Nearly identical to the regular UI, all in Ajax
+	Advanced control over trackers, peers and torrents
+		* Torrents queueing and prioritizing
+		* Torrent content selection and prioritizing
+	UPnP / NAT-PMP port forwarding support
+	Available in ~25 languages (Unicode support)
+	uTorrent spoofing to bypass private trackers whitelisting
+	Advanced RSS support with download filters (inc. regex)
+	IP Filtering (eMule and PeerGuardian compatible)
 
 WWW: http://www.qbittorrent.org/
