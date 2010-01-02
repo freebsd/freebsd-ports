@@ -29,7 +29,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700104
+.if ${OSVERSION} < 700104 || ${OSVERSION} >= 900000
 IGNORE=	your FreeBSD version is not supported
 .endif
 
