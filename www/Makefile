@@ -289,6 +289,7 @@
     SUBDIR += horde-trean
     SUBDIR += horde-wicked
     SUBDIR += hs-HTTP
+    SUBDIR += hs-cgi
     SUBDIR += hs-url
     SUBDIR += htdump
     SUBDIR += html2hdml
