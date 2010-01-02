@@ -288,6 +288,7 @@
     SUBDIR += horde-passwd
     SUBDIR += horde-trean
     SUBDIR += horde-wicked
+    SUBDIR += hs-HTTP
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml
