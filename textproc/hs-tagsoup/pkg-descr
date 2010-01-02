@@ -1,0 +1,8 @@
+TagSoup is a Haskell library for extracting information out of
+unstructured HTML code, sometimes known as tag-soup. The HTML does not
+have to be well formed, or render properly within any particular
+framework.  This library is for situations where the author of the HTML
+is not cooperating with the person trying to extract the information, but
+is also not trying to hide the information.
+
+WWW: http://www-users.cs.york.ac.uk/~ndm/tagsoup/
