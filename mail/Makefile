@@ -187,6 +187,7 @@
     SUBDIR += horde-turba
     SUBDIR += horde-vacation
     SUBDIR += hotwayd
+    SUBDIR += hs-mime
     SUBDIR += ifile
     SUBDIR += ilohamail
     SUBDIR += ilohamail-devel
