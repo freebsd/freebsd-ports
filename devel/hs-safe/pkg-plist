@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+%%SAFE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSsafe-%%SAFE_VERSION%%.o
+%%SAFE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Safe.hi
+%%SAFE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSsafe-%%SAFE_VERSION%%.a
+%%SAFE_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%SAFE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%SAFE_LIBDIR_REL%%
+@exec /bin/sh %D/%%SAFE_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister safe
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
