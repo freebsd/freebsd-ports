@@ -1,0 +1,8 @@
+Partial functions from the Haskell base library, such as head and !!, modified
+to return more descriptive error messages, programmer defined error messages,
+Maybe wrapped results and default values.
+
+These functions can be used to reduce the number of unsafe pattern matches in
+your code.
+
+WWW: http://www-users.cs.york.ac.uk/~ndm/safe/

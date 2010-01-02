@@ -551,6 +551,7 @@
     SUBDIR += hs-mmap
     SUBDIR += hs-pcre-light-ghc
     SUBDIR += hs-readline
+    SUBDIR += hs-safe
     SUBDIR += hs-uniplate
     SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
