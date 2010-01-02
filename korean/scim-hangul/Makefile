@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	korean
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module for Korean(Hangul) input
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim

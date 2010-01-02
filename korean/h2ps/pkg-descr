@@ -11,6 +11,3 @@ Korean text.
 It is relatively compact when comparing with nh2ps, and no need to another
 fonts or ghostscript. It can be printed with any PostScript printer only
 with english fonts because its fonts are embedded with output.
-
---
-CHOI Junho <cjh@FreeBSD.org>

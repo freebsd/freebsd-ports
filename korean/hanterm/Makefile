@@ -12,7 +12,7 @@ CATEGORIES=	korean x11
 MASTER_SITES=	http://hanterm.org/download/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm hacked for managing Korean languages
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts

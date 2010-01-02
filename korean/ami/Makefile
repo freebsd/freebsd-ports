@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.kldp.net/ami/ \
 DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz:hjdic ami.dic:amidic
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Well-known Korean X11 Input Method
 
 USE_GETTEXT=	yes

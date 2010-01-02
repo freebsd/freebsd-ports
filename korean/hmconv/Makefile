@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/code/hmconv/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/code/hmconv/
 DISTNAME=	hmconv1.0pl3
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul code conversion utility for E-mail
 
 WRKSRC=		${WRKDIR}/hmconv

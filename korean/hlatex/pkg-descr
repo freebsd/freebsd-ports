@@ -12,6 +12,4 @@ EUC-KR. UTF-8 means a kind of encoding form of Unicode.
 
 Currently it can be used with Lambda/Omega. teTeX 3.0 and above includes them.
 
---
-Ports by CHOI Junho <cjh@FreeBSD.org>
 WWW: http://project.ktug.or.kr/hlatex

@@ -10,7 +10,7 @@ PORTVERSION=	1.6bh2
 CATEGORIES=	korean textproc
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/sgml-tools-ko/old/
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean patch version of Linuxdoc-SGML
 
 USE_PERL5=	yes

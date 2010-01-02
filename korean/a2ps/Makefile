@@ -13,7 +13,7 @@ DISTNAME=	a2ps-h
 EXTRACT_SUFX=	.py
 EXTRACT_ONLY=
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple a2ps wrapper for Korean text printing
 
 PLIST_FILES=	bin/a2ps-h

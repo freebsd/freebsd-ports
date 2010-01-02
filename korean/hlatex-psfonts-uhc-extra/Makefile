@@ -14,7 +14,7 @@ DISTFILES=	${HLATEX_PSFONTS_EXTRA}
 DIST_SUBDIR=	hlatex
 EXTRACT_ONLY=
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra Korean PostScript font collection for HLaTeX(UHC encoding)
 
 RUN_DEPENDS=	hbibtex:${PORTSDIR}/korean/hlatex
