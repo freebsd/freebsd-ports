@@ -10,7 +10,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gccxml.org/files/v0.6/
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML output extension to GCC
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake

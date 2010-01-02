@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gprolog.org/
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free Prolog compiler
 
 ONLY_FOR_ARCHS=	i386

@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://apwal.free.fr/download/
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and powerful application launcher
 
 USE_GNOME=	gtk20 libxml2

@@ -10,7 +10,7 @@ PORTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://students.ceid.upatras.gr/~sxanth/ncc/
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program analysis tool and call-graph navigator
 
 ALL_TARGET=	# empty

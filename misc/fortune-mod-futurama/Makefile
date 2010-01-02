@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.netmeister.org/apps/
 
-MAINTAINER=	vs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compilation of quotes from the TV series "Futurama"
 
 USE_BZIP2=	yes
