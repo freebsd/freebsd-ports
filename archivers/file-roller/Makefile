@@ -8,6 +8,7 @@
 
 PORTNAME=	file-roller
 PORTVERSION=	2.28.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -18,7 +19,8 @@ COMMENT=	An archive manager for zip files, tar, etc
 
 OPTIONS=	NAUTILUS	"Enable Nautilus extension"	on
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
+    		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
@@ -47,8 +49,9 @@ CONFIGURE_ARGS+=	--disable-nautilus-actions
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/src/fr-command-tar.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/src/fr-command-tar.c \
+		${WRKSRC}/src/fr-command-zip.c
 
 post-install:
 	@-update-desktop-database
