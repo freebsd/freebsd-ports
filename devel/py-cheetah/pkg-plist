@@ -1,4 +1,6 @@
+@comment $FreeBSD$
 bin/cheetah
+bin/cheetah-analyze
 bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/CacheRegion.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/CacheRegion.pyc
@@ -12,6 +14,9 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Compiler.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Compiler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Compiler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/DirectiveAnalyzer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/DirectiveAnalyzer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/DirectiveAnalyzer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Django.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Django.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Django.pyo
@@ -70,15 +75,30 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Templates/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Templates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Templates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Analyzer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Analyzer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Analyzer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/CheetahWrapper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/CheetahWrapper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/CheetahWrapper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Cheps.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Cheps.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Cheps.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Filters.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Filters.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Filters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Misc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Misc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Misc.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/NameMapper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/NameMapper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/NameMapper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Performance.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Performance.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Performance.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Regressions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Regressions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/Regressions.pyo
@@ -97,9 +117,6 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/unittest_local_copy.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/unittest_local_copy.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/unittest_local_copy.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/xmlrunner.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/xmlrunner.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests/xmlrunner.pyo
@@ -128,9 +145,6 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/Misc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/Misc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/Misc.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/VerifyType.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/VerifyType.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/VerifyType.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/WebInputMixin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/WebInputMixin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/WebInputMixin.pyo
@@ -159,42 +173,6 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/_namemapper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/_namemapper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/_namemapper.so
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/blockparser.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/blockparser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/blockparser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/blockprocessors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/blockprocessors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/blockprocessors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/commandline.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/commandline.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/commandline.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/etree_loader.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/etree_loader.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/etree_loader.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/html4.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/html4.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/html4.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/inlinepatterns.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/inlinepatterns.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/inlinepatterns.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/odict.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/odict.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/odict.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/postprocessors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/postprocessors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/postprocessors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/preprocessors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/preprocessors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/preprocessors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/treeprocessors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/treeprocessors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown/treeprocessors.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/convertTmplPathToModuleName.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/convertTmplPathToModuleName.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/convertTmplPathToModuleName.pyo
@@ -203,13 +181,13 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/cheetah
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/cheetah-analyze
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib/markdown
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/contrib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tools
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Tests

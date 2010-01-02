@@ -5,18 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	cheetah
-PORTVERSION=	2.2.1
+PORTVERSION=	2.4.1
 PORTREVISION=	0
 CATEGORIES=	devel textproc www python
-MASTER_SITES=	SF/${PORTNAME}template/Cheetah/v${PORTVERSION}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Cheetah-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	HTML template engine for Python
-
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	cheetah-[0-9]*
 
