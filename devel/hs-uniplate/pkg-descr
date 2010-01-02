@@ -1,0 +1,5 @@
+Uniplate is a boilerplate removal library, with similar goals to the
+original Scrap Your Boilerplate work. It requires few extensions to
+Haskell.
+
+WWW: http://www-users.cs.york.ac.uk/~ndm/uniplate/
