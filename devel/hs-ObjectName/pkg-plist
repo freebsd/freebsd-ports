@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%OBJECTNAME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ObjectName.hi
+%%OBJECTNAME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSObjectName-%%OBJECTNAME_VERSION%%.o
+%%OBJECTNAME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSObjectName-%%OBJECTNAME_VERSION%%.a
+%%OBJECTNAME_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%OBJECTNAME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%OBJECTNAME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%OBJECTNAME_LIBDIR_REL%%
+@exec /bin/sh %D/%%OBJECTNAME_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister ObjectName
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
