@@ -6,7 +6,7 @@
 
 PORTNAME=	cheetah
 PORTVERSION=	2.4.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ DISTNAME=	Cheetah-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	HTML template engine for Python
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=2.0.3:${PORTSDIR}/textproc/py-markdown
 
 CONFLICTS=	cheetah-[0-9]*
 
