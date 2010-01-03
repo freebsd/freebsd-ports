@@ -35,6 +35,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialattribute2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets1.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets10.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets3.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets4.mapyrus
