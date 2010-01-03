@@ -12,7 +12,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	freebsd-ports@varju.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static analysis tool for Java source code
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
