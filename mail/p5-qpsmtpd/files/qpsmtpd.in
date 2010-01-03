@@ -1,100 +1,56 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: qpsmtpd
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: securelevel
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# qpsmtpd_enable (bool):	Set to NO by default
+#		Set it to YES to enable qpsmtpd
+# qpsmtpd_user (string):	Set to "nobody" by default
+#		The user to run qpsmtpd-forkserver as
+# qpsmtpd_group (string):	Set to "nogroup" by default
+#		The group the pid dir will be chowned to
+# qpsmtpd_port (int):		Set to 2525 by default
+#		The port it should listen on
+# qpsmtpd_max_per_ip (int):	Set to 3 by default
+#		Max connections per IP
+# qpsmtpd_max_connections (int): Set to 15 by default
+#		Maximum total connections
+# qpsmtpd_listen_on (address):	Set to 0.0.0.0 by default
+# 		IP address to listen on
 
-#variables
-#qpsmtpd_user = the user to run qpsmtpd-forkserver under
-#qpsmtpd_group = the group the pid dir will be chowned to
-#qpsmtpd_port = the port it should listen on
-#qpsmtpd_max_per_ip = max connections per IP
-#qpsmtpd_max_connections = maximum total connections
-#qpsmtpd_listen_on = IP to listen on
-
-. "/etc/rc.subr"
+. /etc/rc.subr
 
 name="qpsmtpd"
 rcvar=`set_rcvar`
-load_rc_config $name
 
 command="%%PREFIX%%/bin/qpsmtpd-forkserver"
+command_interpreter=%%PERL%%
 pidfile="/var/run/qpsmtpd/qpsmtpd.pid"
 
-start_precmd="start_precmd"
-start_cmd="start_cmd"
-stop_cmd="stop_cmd"
+start_precmd=${name}_prestart
 
-start_precmd()
+qpsmtpd_prestart()
 {
-    #exits if no user is specified
-    if [ -z $qpsmtpd_user ]; then
-	echo "qpsmtpd_user not set"
-	exit 1
-    fi
-
-    #exits if no group is specified
-    if [ -z $qpsmtpd_group ]; then
-	echo "qpsmtpd_group not set"
-	exit 1
-    fi
-
-    #sets it to the default if the port is not specified
-    if [ -z $qpsmtpd_port ]; then
-	qpsmtpd_port="2525"
-    fi
-    
-    #set it to the default max per ip
-    if [ -z $qpsmtpd_max_per_ip ]; then
-	qpsmtpd_max_per_ip="5"
-    fi
-    
-    #set it do the max number of connections total
-    if [ -z $qpsmtpd_max_connections ]; then
-	qpsmtpd_max_connections="15"
-    fi
-    
-    #set the default listen on to everything
-    if [ -z $qpsmtpd_listen_on ]; then
-	qpsmtpd_listen_on="0.0.0.0"
-    fi
-
-    if [ ! -d /var/run/qpsmtpd/ ] ; then
-	mkdir /var/run/qpsmtpd
-    fi
-    
-    chown $qpsmtpd_user:$qpsmtpd_group /var/run/qpsmtpd    
+	[ -d /var/run/qpsmtpd ] || mkdir /var/run/qpsmtpd
+	chown $qpsmtpd_user:$qpsmtpd_group /var/run/qpsmtpd
 }
 
-start_cmd()
-{
-	if [ -e $pidfile ]; then
-		echo "$name already running as PID `cat $pidfile`."
-		exit 1
-	else
-		eval $command \
-		-p $qpsmtpd_port \
-		-c $qpsmtpd_max_connections \
-		-u $qpsmtpd_user \
-		-m $qpsmtpd_max_per_ip \
-		-l $qpsmtpd_listen_on \
-		--pid-file $pidfile \
-		-d \
-		&& echo "$name started as PID `cat $pidfile`." \
-		|| echo "Failed to start $name"
-	fi
-}
+load_rc_config $name
 
-stop_cmd()
-{
-	if [ -e $pidfile ]; then
-		kill `cat $pidfile` \
-		&& echo "$name stopped." \
-		|| echo "Could not stop `cat $pidfile`."
-	else
-		echo "Cannot find $pidfile - $name not running?"
-		exit 1
-	fi
-}
+: ${qpsmtpd_enable="NO"}
+: ${qpsmtpd_user="nobody"}
+: ${qpsmtpd_group="nogroup"}
+: ${qpsmtpd_port="2525"}
+: ${qpsmtpd_max_per_ip="3"}
+: ${qpsmtpd_max_connections="15"}
+: ${qpsmtpd_listen_on="0.0.0.0"}
+
+command_args="-d -p $qpsmtpd_port -c $qpsmtpd_max_connections -u $qpsmtpd_user -m $qpsmtpd_max_per_ip -l $qpsmtpd_listen_on --pid-file $pidfile"
 
 run_rc_command "$1"
