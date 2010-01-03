@@ -6,7 +6,7 @@
 #    $MCom: ports/textproc/gtk-doc/Makefile,v 1.6 2008/03/19 21:35:45 ahze Exp $
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
@@ -40,7 +40,12 @@ PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML} \
 		CATALOG_DIR=${CATALOG_DIR}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|scrollkeeper-config.sk|rarian-sk-config|g' \
+	    	${WRKSRC}/gnome-doc-utils.make \
+		${WRKSRC}/help/manual/Makefile.in
+
 post-install:
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${CATALOG_DIR}/gtk-doc.cat
+	-@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${CATALOG_DIR}/gtk-doc.cat
 
 .include <bsd.port.mk>
