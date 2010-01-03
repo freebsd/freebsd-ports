@@ -174,13 +174,13 @@ post-install:
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
 			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
-		    	| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
+			| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
 	done | ${SORT} >> ${ERLANG_PLIST}
 
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
 			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
-		    	| ${SED} -e 's/^/@dirrm /g'; \
+			| ${SED} -e 's/^/@dirrm /g'; \
 	done | ${SORT} -r >> ${ERLANG_PLIST}
 
 # Other directories.
@@ -188,7 +188,7 @@ post-install:
 	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d | ${SORT} -r \
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
-	    	| ${SED} -e 's/^/@dirrm /g' \
+		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${ERLANG_PLIST}
 
 	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
