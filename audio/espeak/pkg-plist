@@ -4,7 +4,7 @@ include/espeak/speak_lib.h
 lib/libespeak.a
 lib/libespeak.so
 lib/libespeak.so.1
-lib/libespeak.so.1.1.41
+lib/libespeak.so.1.1.42
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/analyse.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
@@ -12,6 +12,19 @@ lib/libespeak.so.1.1.41
 %%PORTDOCS%%%%DOCSDIR%%/docindex.html
 %%PORTDOCS%%%%DOCSDIR%%/editor.html
 %%PORTDOCS%%%%DOCSDIR%%/editor_if.html
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/dir-wcprops
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/empty-file
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/entries
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/format
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/prop-base/lips.png.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/prop-base/sand-light.jpg.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/props/lips.png.svn-work
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/props/sand-light.jpg.svn-work
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/text-base/lips.png.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/text-base/sand-light.jpg.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/wcprops/lips.png.svn-work
+%%PORTDOCS%%%%DOCSDIR%%/images/.svn/wcprops/sand-light.jpg.svn-work
 %%PORTDOCS%%%%DOCSDIR%%/images/lips.png
 %%PORTDOCS%%%%DOCSDIR%%/images/sand-light.jpg
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -80,7 +93,6 @@ lib/libespeak.so.1.1.41
 %%DATADIR%%/espeak-data/no_dict
 %%DATADIR%%/espeak-data/pap_dict
 %%DATADIR%%/espeak-data/phondata
-%%DATADIR%%/espeak-data/phondata-manifest
 %%DATADIR%%/espeak-data/phonindex
 %%DATADIR%%/espeak-data/phontab
 %%DATADIR%%/espeak-data/pl_dict
@@ -218,8 +230,22 @@ lib/libespeak.so.1.1.41
 @dirrm %%DATADIR%%/espeak-data/mbrola
 @dirrm %%DATADIR%%/espeak-data
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/wcprops
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/props
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/text-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/props
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/prop-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/espeak
 @exec mkdir -p %D/%%DATADIR%%/espeak-data/soundicons
 @exec mkdir -p %D/%%DATADIR%%/espeak-data/mbrola
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/images/.svn/tmp/wcprops
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/images/.svn/tmp/text-base
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/images/.svn/tmp/props
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/images/.svn/tmp/prop-base
