@@ -291,6 +291,7 @@
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
     SUBDIR += hs-oeis
+    SUBDIR += hs-http-server
     SUBDIR += hs-url
     SUBDIR += htdump
     SUBDIR += html2hdml
