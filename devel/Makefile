@@ -2463,6 +2463,7 @@
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
     SUBDIR += py-demjson
+    SUBDIR += py-dexml
     SUBDIR += py-dialog
     SUBDIR += py-distorm
     SUBDIR += py-durus
