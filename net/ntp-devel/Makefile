@@ -61,6 +61,9 @@ PLIST_SUB+=	NETSNMP=""
 PLIST_SUB+=	NETSNMP="@comment "
 .endif
 
+pre-configure:
+	@cd ${WRKSRC} && ./bootstrap
+
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
