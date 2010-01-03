@@ -7,17 +7,16 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 		LOCAL/chinsan/${PORTNAME}
 DISTNAME=	${DIST_VER}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
-DIST_VER=	${PORTNAME}-2009-02-14
+DIST_VER=	${PORTNAME}-2009-12-25
 USE_PHP=	gd mbstring pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
