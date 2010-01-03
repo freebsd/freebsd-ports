@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Astro/Hipparcos/Record.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Astro/Hipparcos.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Hipparcos/Hipparcos.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Hipparcos/Hipparcos.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Hipparcos/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Astro/Hipparcos
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Astro
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Hipparcos
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
