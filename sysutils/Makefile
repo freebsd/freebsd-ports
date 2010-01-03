@@ -818,6 +818,7 @@
     SUBDIR += unieject
     SUBDIR += uniutils
     SUBDIR += unquote
+    SUBDIR += unstow
     SUBDIR += upsd
     SUBDIR += upsdaemon
     SUBDIR += upsmon
