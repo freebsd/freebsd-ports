@@ -27,6 +27,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 		${LOCALBASE}/include/cairomm-1.0/cairomm/cairomm.h:${PORTSDIR}/graphics/cairomm \
 		${LOCALBASE}/include/boost/python.hpp:${PORTSDIR}/devel/boost-python-libs
 
+BROKEN=		Does not build with boost-1.41
+
 USE_PGSQL=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
