@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- libmetrics/freebsd/metrics.c.orig
-+++ libmetrics/freebsd/metrics.c
+--- libmetrics/freebsd/metrics.c.orig	2010-01-03 20:00:03.213056511 +0000
++++ libmetrics/freebsd/metrics.c	2010-01-03 20:00:14.482769820 +0000
 @@ -106,7 +106,7 @@
  static size_t mibswap_size;
  static kvm_t *kd = NULL;
@@ -12,7 +9,26 @@ $FreeBSD$
  
  /* Function prototypes */
  static long percentages(int cnt, int *out, register long *new,
-@@ -881,7 +881,6 @@
+@@ -170,6 +170,18 @@
+    size_t len;
+    uint32_t freq = 0, tmpfreq;
+    uint64_t tscfreq;
++   unsigned int cpu_freq;
++
++   /*
++    * Try the portable sysctl (introduced on ia64).
++    */
++   cpu_freq = 0;
++   len = sizeof(cpu_freq);
++   if (sysctlbyname("hw.freq.cpu", &cpu_freq, &len, NULL, 0) != -1 &&
++       cpu_freq != 0) {
++      freq = cpu_freq;
++      goto done;
++   }
+ 
+    /*
+     * If the system supports it, the cpufreq driver provides the best
+@@ -881,7 +893,6 @@
  
  	netvfslist = makenetvfslist();
  	vfslist = makevfslist(netvfslist);
@@ -20,7 +36,7 @@ $FreeBSD$
  
  	mntsize = getmntinfo(&mntbuf, MNT_NOWAIT);
  	mntsize = regetmntinfo(&mntbuf, mntsize, vfslist);
-@@ -899,6 +898,8 @@
+@@ -899,6 +910,8 @@
  			*tot_avail += mntbuf[i].f_bavail / toru;
  		}
  	}
@@ -29,7 +45,7 @@ $FreeBSD$
  
  	return most_full;
  }
-@@ -955,7 +956,7 @@
+@@ -955,7 +968,7 @@
  		return (NULL);
  	if (fslist[0] == 'n' && fslist[1] == 'o') {
  		fslist += 2;
@@ -38,7 +54,7 @@ $FreeBSD$
  	}
  	for (i = 0, nextcp = fslist; *nextcp; nextcp++)
  		if (*nextcp == ',')
-@@ -1007,7 +1008,10 @@
+@@ -1007,7 +1020,10 @@
  		goto done;
  	}
  
@@ -50,7 +66,7 @@ $FreeBSD$
  		if (xvfsp->vfc_flags & VFCF_NONLOCAL)
  			continue;
  
-@@ -1057,10 +1061,13 @@
+@@ -1057,10 +1073,13 @@
  	 * Count up the string lengths, we need a extra byte to hold
  	 * the between entries ',' or the NUL at the end.
  	 */
@@ -67,7 +83,7 @@ $FreeBSD$
  
  	if ((str = malloc(slen)) == NULL) {
  		warnx("malloc failed");
-@@ -1069,10 +1076,11 @@
+@@ -1069,10 +1088,11 @@
  
  	str[0] = 'n';
  	str[1] = 'o';
