@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Client.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Job.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Task.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS/Worker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/XS/.packlist
