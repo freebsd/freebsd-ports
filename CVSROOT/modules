@@ -5156,6 +5156,7 @@ haproxy                         ports/net/haproxy
 haproxy-devel                   ports/net/haproxy-devel
 hapy                            ports/devel/hapy
 harbour                         ports/lang/harbour
+harminv                         ports/science/harminv
 harvest                         ports/www/harvest
 hashcash                        ports/mail/hashcash
 haskell-mode.el                 ports/lang/haskell-mode.el
@@ -8381,6 +8382,7 @@ log4cplus                       ports/devel/log4cplus
 log4cpp                         ports/devel/log4cpp
 log4cxx                         ports/devel/log4cxx
 log4j                           ports/devel/log4j
+log4net                         ports/devel/log4net
 log4sh                          ports/devel/log4sh
 log4shib                        ports/devel/log4shib
 log_analysis                    ports/sysutils/log_analysis
@@ -25214,6 +25216,7 @@ zeroinstall-injector            ports/devel/zeroinstall-injector
 zerowait-httpd                  ports/www/zerowait-httpd
 zetaback                        ports/sysutils/zetaback
 zfs-replicate                   ports/sysutils/zfs-replicate
+zfs-snapshot-clean              ports/sysutils/zfs-snapshot-clean
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
 zgv                             ports/graphics/zgv
 zh-CJKUnifonts                  ports/chinese/CJKUnifonts
