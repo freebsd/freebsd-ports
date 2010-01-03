@@ -26,12 +26,15 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/ix03.html
 %%DOCSDIR%%/ix04.html
 %%DOCSDIR%%/ix05.html
+%%DOCSDIR%%/ix06.html
 %%DOCSDIR%%/json-advanced.html
 %%DOCSDIR%%/json-base.html
-%%DOCSDIR%%/json-glib-GObject-integration.html
+%%DOCSDIR%%/json-glib-Boxed-Types-Serialization.html
+%%DOCSDIR%%/json-glib-GObject-Serialization.html
 %%DOCSDIR%%/json-glib-JSON-Array.html
 %%DOCSDIR%%/json-glib-JSON-Node.html
 %%DOCSDIR%%/json-glib-JSON-Object.html
+%%DOCSDIR%%/json-glib-Serializable-Interface.html
 %%DOCSDIR%%/json-glib-Versioning-information.html
 %%DOCSDIR%%/json-glib.devhelp
 %%DOCSDIR%%/json-glib.devhelp2
