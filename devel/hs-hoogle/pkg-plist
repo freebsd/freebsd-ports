@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/hoogle
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
