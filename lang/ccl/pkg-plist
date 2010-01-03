@@ -1,0 +1,4 @@
+bin/ccl
+@comment -=[ start of generated plist ]=-
+@comment -=[ end of generated plist ]=-
+@dirrm lib/ccl

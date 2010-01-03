@@ -21,6 +21,7 @@
     SUBDIR += bsh
     SUBDIR += bwbasic
     SUBDIR += caml-light
+    SUBDIR += ccl
     SUBDIR += ccscript
     SUBDIR += cduce
     SUBDIR += cfortran

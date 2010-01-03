@@ -1,0 +1,23 @@
+Clozure CL (formerly known as OpenMCL) is a free Common Lisp
+implementation. Features include:
+
+  * A fast, precise, compacting, generational garbage collector
+    written in hand-optimized C. The sizes of the generations are
+    fully configurable.
+
+  * Full native OS threads on all platforms. The API includes support
+    for shared memory, locking, and blocking for OS operations such
+    as I/O.
+
+  * Full Unicode support.
+
+  * Excellent debugging facilities. The names of all local variables
+    are available in a backtrace.
+
+  * A complete, mature foreign function interface.
+
+  * Many extensions including: files mapped to Common Lisp vectors
+    for fast file I/O; thread local hash tables and streams to
+    eliminate locking overhead; cons hashing support.
+
+WWW:	http://www.clozure.com/clozurecl.html
