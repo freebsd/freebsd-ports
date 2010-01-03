@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ka@nadoby.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl front end for the Gearman C library
 
 LIB_DEPENDS=	gearman.1:${PORTSDIR}/devel/gearmand
