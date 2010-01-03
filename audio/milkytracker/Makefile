@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	milkytracker
-PORTVERSION=	0.90.80
-PORTREVISION=	1
+PORTVERSION=	0.90.85
 CATEGORIES=	audio
-MASTER_SITES=	http://www.milkytracker.net/files/ \
+MASTER_SITES=	http://www.milkytracker.org/files/ \
 		CRITICAL/${PORTNAME}/${PORTVERSION}/${PORTREVISION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A free music creation tool inspired by Fast Tracker 2
 
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack \
+		zzip.13:${PORTSDIR}/devel/zziplib
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_SDL=	sdl
 MAKE_JOBS_SAFE=	yes
 
