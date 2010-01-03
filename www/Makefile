@@ -290,6 +290,7 @@
     SUBDIR += horde-wicked
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
+    SUBDIR += hs-oeis
     SUBDIR += hs-url
     SUBDIR += htdump
     SUBDIR += html2hdml
