@@ -1,0 +1,11 @@
+--- libs/util/CMakeLists.txt.orig	2009-12-31 13:34:07.000000000 +0100
++++ libs/util/CMakeLists.txt	2009-12-31 13:34:12.000000000 +0100
+@@ -33,7 +33,7 @@
+ 
+ set(linklibs ${Boost_FILESYSTEM_LIBRARY})
+ if(UNIX)
+-	list(APPEND linklibs dl)
++	list(APPEND linklibs)
+ elseif(WIN32)
+ 	list(APPEND linklibs ws2_32)
+ endif()

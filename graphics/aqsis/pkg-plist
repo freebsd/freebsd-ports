@@ -1,233 +1,273 @@
-bin/aqsis
 bin/aqsl
 bin/aqsltell
-bin/eqsl
+bin/aqsis
 bin/miqser
-bin/piqsl
 bin/teqser
+bin/eqsl
+bin/piqsl
 etc/aqsis/aqsisrc
 include/aqsis/aqsis.h
-include/aqsis/aqsis_compiler.h
-include/aqsis/aqsis_config.h
-include/aqsis/aqsis_types.h
-include/aqsis/aqsismath.h
-include/aqsis/bitvector.h
-include/aqsis/cellnoise.h
-include/aqsis/color.h
-include/aqsis/exception.h
-include/aqsis/execute.h
-include/aqsis/file.h
-include/aqsis/list.h
-include/aqsis/logging.h
-include/aqsis/logging_streambufs.h
-include/aqsis/lowdiscrep.h
-include/aqsis/matrix.h
-include/aqsis/matrix2d.h
-include/aqsis/memorysentry.h
-include/aqsis/multitimer.h
-include/aqsis/multitimer_system.h
-include/aqsis/ndspy.h
-include/aqsis/noise.h
-include/aqsis/noise1234.h
-include/aqsis/plugins.h
-include/aqsis/pool.h
-include/aqsis/random.h
-include/aqsis/refcount.h
-include/aqsis/ri.h
-include/aqsis/ri.inl
-include/aqsis/ri_types.h
-include/aqsis/riparamlist.h
-include/aqsis/shadeop.h
-include/aqsis/slo.h
-include/aqsis/slx.h
-include/aqsis/smartptr.h
-include/aqsis/socket.h
-include/aqsis/socket_system.h
-include/aqsis/spline.h
-include/aqsis/sstring.h
-include/aqsis/vector2d.h
-include/aqsis/vector3d.h
-include/aqsis/vector4d.h
-lib/aqsis/libd_bmp.so
-lib/aqsis/libd_exr.so
-lib/aqsis/libd_xpm.so
-lib/aqsis/libdisplay.so
-lib/aqsis/libpiqsldisplay.so
-lib/libaqsis.so
-lib/libaqsis.so.1
-lib/libaqsis.so.1.4
-lib/libaqsisargparse.so
-lib/libaqsisargparse.so.1
-lib/libaqsisargparse.so.1.4
-lib/libaqsistex.so
-lib/libaqsistex.so.1
-lib/libaqsistex.so.1.4
-lib/libaqsistypes.so
-lib/libaqsistypes.so.1
-lib/libaqsistypes.so.1.4
-lib/libri2rib.so
-lib/libri2rib.so.1
-lib/libri2rib.so.1.4
-lib/libshadervm.so
-lib/libshadervm.so.1
-lib/libshadervm.so.1.4
-lib/libslxargs.so
-lib/libslxargs.so.1
-lib/libslxargs.so.1.4
+include/aqsis/inttype.h
+include/aqsis/config.h
+include/aqsis/version.h
+include/aqsis/ri/ndspy.h
+include/aqsis/ri/ri.h
+include/aqsis/ri/ritypes.h
+include/aqsis/ri/rif.h
+include/aqsis/ri/shadeop.h
+include/aqsis/ri/slo.h
+include/aqsis/ri/slx.h
+include/aqsis/ri/ri.inl
+lib/libaqsis_math.so.1.6
+lib/libaqsis_math.so.1
+lib/libaqsis_math.so
+lib/libaqsis_util.so.1.6
+lib/libaqsis_util.so.1
+lib/libaqsis_util.so
+lib/libaqsis_riutil.so.1.6
+lib/libaqsis_riutil.so.1
+lib/libaqsis_riutil.so
+lib/libaqsis_ribparse.so.1.6
+lib/libaqsis_ribparse.so.1
+lib/libaqsis_ribparse.so
+lib/libaqsis_slcomp.so.1.6
+lib/libaqsis_slcomp.so.1
+lib/libaqsis_slcomp.so
+lib/aqsis/exr_dspy.so
+lib/aqsis/file_dspy.so
+lib/aqsis/piqsl_dspy.so
+lib/aqsis/bmp_dspy.so
+lib/aqsis/xpm_dspy.so
+lib/aqsis/hairgen.so
+lib/libaqsis_tex.so.1.6
+lib/libaqsis_tex.so.1
+lib/libaqsis_tex.so
+lib/libaqsis_shadervm.so.1.6
+lib/libaqsis_shadervm.so.1
+lib/libaqsis_shadervm.so
+lib/libaqsis_slxargs.so.1.6
+lib/libaqsis_slxargs.so.1
+lib/libaqsis_slxargs.so
+lib/libaqsis_ri2rib.so.1.6
+lib/libaqsis_ri2rib.so.1
+lib/libaqsis_ri2rib.so
+lib/libaqsis_core.so.1.6
+lib/libaqsis_core.so.1
+lib/libaqsis_core.so
+share/pixmaps/aqsis.png
+share/icons/hicolor/192x192/mimetypes/aqsis-doc.png
+share/mime/packages/aqsis.xml
 share/applications/aqsis.desktop
 share/applications/aqsl.desktop
 share/applications/aqsltell.desktop
 share/applications/eqsl.desktop
 share/applications/piqsl.desktop
-share/mime/packages/aqsis.xml
-share/pixmaps/aqsis-doc.png
-share/pixmaps/aqsis.png
 %%DATADIR%%/scripts/aqsis.sh
 %%DATADIR%%/scripts/aqsl.sh
 %%DATADIR%%/scripts/aqsltell.sh
-%%DATADIR%%/scripts/mpanalyse.py
-%%DATADIR%%/shaders/matte.sl
-%%DATADIR%%/shaders/ambientlight.sl
-%%DATADIR%%/shaders/background.sl
-%%DATADIR%%/shaders/metal.sl
-%%DATADIR%%/shaders/pointlight.sl
-%%DATADIR%%/shaders/bumpy.sl
-%%DATADIR%%/shaders/distantlight.sl
-%%DATADIR%%/shaders/spotlight.sl
-%%DATADIR%%/shaders/paintedplastic.sl
-%%DATADIR%%/shaders/plastic.sl
-%%DATADIR%%/shaders/shinymetal.sl
-%%DATADIR%%/shaders/fog.sl
-%%DATADIR%%/shaders/constant.sl
-%%DATADIR%%/shaders/depthcue.sl
-%%DATADIR%%/shaders/matte.slx
-%%DATADIR%%/shaders/ambientlight.slx
-%%DATADIR%%/shaders/background.slx
-%%DATADIR%%/shaders/metal.slx
-%%DATADIR%%/shaders/pointlight.slx
-%%DATADIR%%/shaders/bumpy.slx
-%%DATADIR%%/shaders/distantlight.slx
-%%DATADIR%%/shaders/fog.slx
-%%DATADIR%%/shaders/spotlight.slx
-%%DATADIR%%/shaders/paintedplastic.slx
-%%DATADIR%%/shaders/plastic.slx
-%%DATADIR%%/shaders/shinymetal.slx
-%%DATADIR%%/shaders/constant.slx
-%%DATADIR%%/shaders/depthcue.slx
-%%DATADIR%%/content/ribs/features/bake/bakesphere.rib
-%%DATADIR%%/content/ribs/features/bake/render.sh
-%%DATADIR%%/content/ribs/features/bake/sphere.rib
-%%DATADIR%%/content/ribs/features/curves/render.sh
-%%DATADIR%%/content/ribs/features/curves/bezier.rib
-%%DATADIR%%/content/ribs/features/objectinstance/singlepolygon.rib
-%%DATADIR%%/content/ribs/features/objectinstance/render.sh
-%%DATADIR%%/content/ribs/features/motionblur/camera.rib
-%%DATADIR%%/content/ribs/features/motionblur/render_deformation.sh
-%%DATADIR%%/content/ribs/features/motionblur/render_camera.sh
-%%DATADIR%%/content/ribs/features/motionblur/deformation.rib
-%%DATADIR%%/content/ribs/features/shadows/autoshadow.rib
-%%DATADIR%%/content/ribs/features/shadows/render_autoshadow.sh
-%%DATADIR%%/content/ribs/features/shadows/softshadow.rib
-%%DATADIR%%/content/ribs/features/shadows/render_softshadow.sh
-%%DATADIR%%/content/ribs/features/levelofdetail/render.sh
-%%DATADIR%%/content/ribs/features/levelofdetail/detail.rib
-%%DATADIR%%/content/ribs/features/layeredshaders/grid.tif
-%%DATADIR%%/content/ribs/features/layeredshaders/render.sh
-%%DATADIR%%/content/ribs/features/layeredshaders/texmap.sl
-%%DATADIR%%/content/ribs/features/layeredshaders/layered.rib
-%%DATADIR%%/content/ribs/features/subdivision/render.sh
-%%DATADIR%%/content/ribs/features/subdivision/creases.rib
-%%DATADIR%%/content/ribs/features/occlusion/simple.rib
-%%DATADIR%%/content/ribs/features/occlusion/occlmap.py
-%%DATADIR%%/content/ribs/features/occlusion/render.sh
-%%DATADIR%%/content/ribs/features/occlusion/occlmap.rib
-%%DATADIR%%/content/ribs/features/occlusion/envlight.sl
-%%DATADIR%%/content/ribs/features/occlusion/world.rib
-%%DATADIR%%/content/ribs/features/textures/grid.tif
-%%DATADIR%%/content/ribs/features/textures/render.sh
-%%DATADIR%%/content/ribs/features/textures/sticky.rib
-%%DATADIR%%/content/ribs/features/multipass/myval.sl
-%%DATADIR%%/content/ribs/features/multipass/render.sh
-%%DATADIR%%/content/ribs/features/multipass/aov.rib
-%%DATADIR%%/content/ribs/features/solidmodeling/csg.rib
-%%DATADIR%%/content/ribs/features/solidmodeling/render.sh
-%%DATADIR%%/content/ribs/scenes/fisheye/README.txt
-%%DATADIR%%/content/ribs/scenes/fisheye/fisheye_projection.sl
-%%DATADIR%%/content/ribs/scenes/fisheye/lights.rib
-%%DATADIR%%/content/ribs/scenes/fisheye/scene.rib
-%%DATADIR%%/content/ribs/scenes/fisheye/render.sh
-%%DATADIR%%/content/ribs/scenes/fisheye/envmap.rib
-%%DATADIR%%/content/ribs/scenes/fisheye/fisheye.rib
-%%DATADIR%%/content/ribs/scenes/fisheye/world.rib
-%%DATADIR%%/content/ribs/scenes/vase/vase.rib
-%%DATADIR%%/content/ribs/scenes/vase/render.sh
-%%DATADIR%%/content/ribs/scenes/microbe/microbe.rib
-%%DATADIR%%/content/ribs/scenes/microbe/render.sh
-%%DATADIR%%/content/shaders/displacement/AqDMap.sl
-%%DATADIR%%/content/shaders/displacement/borg_metal.sl
-%%DATADIR%%/content/shaders/displacement/micro_bumps.sl
-%%DATADIR%%/content/shaders/displacement/wavy.sl
-%%DATADIR%%/content/shaders/displacement/dented.sl
-%%DATADIR%%/content/shaders/include/patterns.sl
-%%DATADIR%%/content/shaders/surface/SpaceTest.sl
-%%DATADIR%%/content/shaders/surface/show_st.sl
-%%DATADIR%%/content/shaders/surface/expensive.sl
-%%DATADIR%%/content/shaders/surface/curvetube.sl
-%%DATADIR%%/content/shaders/surface/pinkGranite.sl
-%%DATADIR%%/content/shaders/surface/debug.sl
-%%DATADIR%%/content/shaders/surface/cddiffract.h
-%%DATADIR%%/content/shaders/surface/randgrid.sl
-%%DATADIR%%/content/shaders/surface/show_N.sl
-%%DATADIR%%/content/shaders/surface/uvtest.sl
-%%DATADIR%%/content/shaders/surface/AqSMap.sl
-%%DATADIR%%/content/shaders/surface/microscope.sl
-%%DATADIR%%/content/shaders/surface/sticky_texture.sl
-%%DATADIR%%/content/shaders/surface/DPProctext.h
-%%DATADIR%%/content/shaders/surface/showuser.sl
-%%DATADIR%%/content/shaders/surface/cellnoisetest.sl
-%%DATADIR%%/content/shaders/surface/cd.sl
-%%DATADIR%%/content/shaders/surface/face_plastic.sl
-%%DATADIR%%/content/shaders/surface/DPBlueMarble.sl
-%%DATADIR%%/content/shaders/light/shadowpoint.sl
-%%DATADIR%%/content/shaders/light/shadowdistant.sl
-%%DATADIR%%/content/shaders/light/shadowspot.sl
-%%DATADIR%%/content/shaders/imager/fakesky.sl
-%%DATADIR%%/content/shaders/imager/filmgrain.sl
-%%DATADIR%%/content/shaders/imager/bluescreen.sl
-%%DATADIR%%/content/shaders/imager/exposure.sl
-%%DATADIR%%/content/shaders/imager/gradient.sl
-%%DATADIR%%/content/shaders/imager/iramp.sl
-@dirrm etc/aqsis
-@dirrm include/aqsis
-@dirrm lib/aqsis
+%%DATADIR%%/plugins/houdini/README.txt
+%%DATADIR%%/plugins/houdini/scripts/out/targets/ribcreate_aqsis1.6.cmd
+%%DATADIR%%/plugins/houdini/soho/parameters/RIBaqsis1.6.ds
+%%DATADIR%%/plugins/houdini/soho/parameters/SOHOparameters
+%%DATADIR%%/plugins/houdini/soho/RIBaqsis1.6.py
+%%DATADIR%%/plugins/houdini/hshaders.otl
+%%DATADIR%%/plugins/houdini/post.sh
+%%DATADIR%%/plugins/houdini/slx2otl.py
+%%DATADIR%%/plugins/houdini/RIBtargets
+%%DATADIR%%/shaders/displacement/AqDMap.sl
+%%DATADIR%%/shaders/displacement/borg_metal.sl
+%%DATADIR%%/shaders/displacement/micro_bumps.sl
+%%DATADIR%%/shaders/displacement/bumpy.sl
+%%DATADIR%%/shaders/displacement/wavy.sl
+%%DATADIR%%/shaders/displacement/dented.sl
+%%DATADIR%%/shaders/displacement/AqDMap.slx
+%%DATADIR%%/shaders/displacement/borg_metal.slx
+%%DATADIR%%/shaders/displacement/micro_bumps.slx
+%%DATADIR%%/shaders/displacement/bumpy.slx
+%%DATADIR%%/shaders/displacement/wavy.slx
+%%DATADIR%%/shaders/displacement/dented.slx
+%%DATADIR%%/shaders/imager/background.sl
+%%DATADIR%%/shaders/imager/fakesky.sl
+%%DATADIR%%/shaders/imager/filmgrain.sl
+%%DATADIR%%/shaders/imager/bluescreen.sl
+%%DATADIR%%/shaders/imager/exposure.sl
+%%DATADIR%%/shaders/imager/gradient.sl
+%%DATADIR%%/shaders/imager/iramp.sl
+%%DATADIR%%/shaders/imager/background.slx
+%%DATADIR%%/shaders/imager/fakesky.slx
+%%DATADIR%%/shaders/imager/filmgrain.slx
+%%DATADIR%%/shaders/imager/bluescreen.slx
+%%DATADIR%%/shaders/imager/exposure.slx
+%%DATADIR%%/shaders/imager/gradient.slx
+%%DATADIR%%/shaders/imager/iramp.slx
+%%DATADIR%%/shaders/light/ambientlight.sl
+%%DATADIR%%/shaders/light/shadowpoint.sl
+%%DATADIR%%/shaders/light/shadowdistant.sl
+%%DATADIR%%/shaders/light/pointlight.sl
+%%DATADIR%%/shaders/light/distantlight.sl
+%%DATADIR%%/shaders/light/spotlight.sl
+%%DATADIR%%/shaders/light/shadowspot.sl
+%%DATADIR%%/shaders/light/ambientlight.slx
+%%DATADIR%%/shaders/light/shadowpoint.slx
+%%DATADIR%%/shaders/light/shadowdistant.slx
+%%DATADIR%%/shaders/light/pointlight.slx
+%%DATADIR%%/shaders/light/distantlight.slx
+%%DATADIR%%/shaders/light/spotlight.slx
+%%DATADIR%%/shaders/light/shadowspot.slx
+%%DATADIR%%/shaders/surface/SpaceTest.sl
+%%DATADIR%%/shaders/surface/show_st.sl
+%%DATADIR%%/shaders/surface/matte.sl
+%%DATADIR%%/shaders/surface/expensive.sl
+%%DATADIR%%/shaders/surface/curvetube.sl
+%%DATADIR%%/shaders/surface/pinkGranite.sl
+%%DATADIR%%/shaders/surface/debug.sl
+%%DATADIR%%/shaders/surface/metal.sl
+%%DATADIR%%/shaders/surface/cddiffract.h
+%%DATADIR%%/shaders/surface/randgrid.sl
+%%DATADIR%%/shaders/surface/show_N.sl
+%%DATADIR%%/shaders/surface/uvtest.sl
+%%DATADIR%%/shaders/surface/AqSMap.sl
+%%DATADIR%%/shaders/surface/microscope.sl
+%%DATADIR%%/shaders/surface/sticky_texture.sl
+%%DATADIR%%/shaders/surface/DPProctext.h
+%%DATADIR%%/shaders/surface/paintedplastic.sl
+%%DATADIR%%/shaders/surface/plastic.sl
+%%DATADIR%%/shaders/surface/shinymetal.sl
+%%DATADIR%%/shaders/surface/showuser.sl
+%%DATADIR%%/shaders/surface/constant.sl
+%%DATADIR%%/shaders/surface/cd.sl
+%%DATADIR%%/shaders/surface/cellnoisetest.sl
+%%DATADIR%%/shaders/surface/face_plastic.sl
+%%DATADIR%%/shaders/surface/DPBlueMarble.sl
+%%DATADIR%%/shaders/surface/SpaceTest.slx
+%%DATADIR%%/shaders/surface/show_st.slx
+%%DATADIR%%/shaders/surface/matte.slx
+%%DATADIR%%/shaders/surface/expensive.slx
+%%DATADIR%%/shaders/surface/curvetube.slx
+%%DATADIR%%/shaders/surface/pinkGranite.slx
+%%DATADIR%%/shaders/surface/debug.slx
+%%DATADIR%%/shaders/surface/metal.slx
+%%DATADIR%%/shaders/surface/randgrid.slx
+%%DATADIR%%/shaders/surface/show_N.slx
+%%DATADIR%%/shaders/surface/uvtest.slx
+%%DATADIR%%/shaders/surface/AqSMap.slx
+%%DATADIR%%/shaders/surface/microscope.slx
+%%DATADIR%%/shaders/surface/sticky_texture.slx
+%%DATADIR%%/shaders/surface/paintedplastic.slx
+%%DATADIR%%/shaders/surface/plastic.slx
+%%DATADIR%%/shaders/surface/shinymetal.slx
+%%DATADIR%%/shaders/surface/showuser.slx
+%%DATADIR%%/shaders/surface/constant.slx
+%%DATADIR%%/shaders/surface/cd.slx
+%%DATADIR%%/shaders/surface/cellnoisetest.slx
+%%DATADIR%%/shaders/surface/face_plastic.slx
+%%DATADIR%%/shaders/surface/DPBlueMarble.slx
+%%DATADIR%%/shaders/volume/fog.sl
+%%DATADIR%%/shaders/volume/depthcue.sl
+%%DATADIR%%/shaders/volume/fog.slx
+%%DATADIR%%/shaders/volume/depthcue.slx
+%%DATADIR%%/shaders/include/patterns.sl
+%%DATADIR%%/examples/features/bake/bakesphere.rib
+%%DATADIR%%/examples/features/bake/render.sh
+%%DATADIR%%/examples/features/bake/sphere.rib
+%%DATADIR%%/examples/features/curves/render.sh
+%%DATADIR%%/examples/features/curves/bezier.rib
+%%DATADIR%%/examples/features/objectinstance/singlepolygon.rib
+%%DATADIR%%/examples/features/objectinstance/render.sh
+%%DATADIR%%/examples/features/motionblur/camera.rib
+%%DATADIR%%/examples/features/motionblur/render_deformation.sh
+%%DATADIR%%/examples/features/motionblur/render_camera.sh
+%%DATADIR%%/examples/features/motionblur/deformation.rib
+%%DATADIR%%/examples/features/shadows/autoshadow.rib
+%%DATADIR%%/examples/features/shadows/render_autoshadow.sh
+%%DATADIR%%/examples/features/shadows/softshadow.rib
+%%DATADIR%%/examples/features/shadows/render_softshadow.sh
+%%DATADIR%%/examples/features/levelofdetail/render.sh
+%%DATADIR%%/examples/features/levelofdetail/detail.rib
+%%DATADIR%%/examples/features/layeredshaders/grid.tif
+%%DATADIR%%/examples/features/layeredshaders/render.sh
+%%DATADIR%%/examples/features/layeredshaders/texmap.sl
+%%DATADIR%%/examples/features/layeredshaders/layered.rib
+%%DATADIR%%/examples/features/subdivision/render.sh
+%%DATADIR%%/examples/features/subdivision/creases.rib
+%%DATADIR%%/examples/features/occlusion/simple.rib
+%%DATADIR%%/examples/features/occlusion/occlmap.py
+%%DATADIR%%/examples/features/occlusion/render.sh
+%%DATADIR%%/examples/features/occlusion/occlmap.rib
+%%DATADIR%%/examples/features/occlusion/envlight.sl
+%%DATADIR%%/examples/features/occlusion/world.rib
+%%DATADIR%%/examples/features/textures/grid.tif
+%%DATADIR%%/examples/features/textures/render.sh
+%%DATADIR%%/examples/features/textures/sticky.rib
+%%DATADIR%%/examples/features/archives/bike.rib
+%%DATADIR%%/examples/features/archives/bikeData.rib.gz
+%%DATADIR%%/examples/features/archives/render.sh
+%%DATADIR%%/examples/features/multipass/myval.sl
+%%DATADIR%%/examples/features/multipass/render.sh
+%%DATADIR%%/examples/features/multipass/aov.rib
+%%DATADIR%%/examples/features/solidmodeling/csg.rib
+%%DATADIR%%/examples/features/solidmodeling/render.sh
+%%DATADIR%%/examples/procedurals/menger/menger.rib
+%%DATADIR%%/examples/procedurals/menger/README.txt
+%%DATADIR%%/examples/procedurals/menger/menger.cpp
+%%DATADIR%%/examples/procedurals/menger/render.sh
+%%DATADIR%%/examples/scenes/fisheye/README.txt
+%%DATADIR%%/examples/scenes/fisheye/fisheye_projection.sl
+%%DATADIR%%/examples/scenes/fisheye/lights.rib
+%%DATADIR%%/examples/scenes/fisheye/scene.rib
+%%DATADIR%%/examples/scenes/fisheye/render.sh
+%%DATADIR%%/examples/scenes/fisheye/envmap.rib
+%%DATADIR%%/examples/scenes/fisheye/fisheye.rib
+%%DATADIR%%/examples/scenes/fisheye/world.rib
+%%DATADIR%%/examples/scenes/vase/vase.rib
+%%DATADIR%%/examples/scenes/vase/render.sh
+%%DATADIR%%/examples/scenes/microbe/microbe.rib
+%%DATADIR%%/examples/scenes/microbe/render.sh
+@dirrm %%DATADIR%%/shaders/volume
+@dirrm %%DATADIR%%/shaders/surface
+@dirrm %%DATADIR%%/shaders/light
+@dirrm %%DATADIR%%/shaders/include
+@dirrm %%DATADIR%%/shaders/imager
+@dirrm %%DATADIR%%/shaders/displacement
 @dirrm %%DATADIR%%/shaders
-@dirrm %%DATADIR%%/content/shaders/surface
-@dirrm %%DATADIR%%/content/shaders/light
-@dirrm %%DATADIR%%/content/shaders/include
-@dirrm %%DATADIR%%/content/shaders/imager
-@dirrm %%DATADIR%%/content/shaders/displacement
-@dirrm %%DATADIR%%/content/shaders
-@dirrm %%DATADIR%%/content/ribs/scenes/vase
-@dirrm %%DATADIR%%/content/ribs/scenes/microbe
-@dirrm %%DATADIR%%/content/ribs/scenes/fisheye
-@dirrm %%DATADIR%%/content/ribs/scenes
-@dirrm %%DATADIR%%/content/ribs/features/textures
-@dirrm %%DATADIR%%/content/ribs/features/subdivision
-@dirrm %%DATADIR%%/content/ribs/features/solidmodeling
-@dirrm %%DATADIR%%/content/ribs/features/shadows
-@dirrm %%DATADIR%%/content/ribs/features/occlusion
-@dirrm %%DATADIR%%/content/ribs/features/objectinstance
-@dirrm %%DATADIR%%/content/ribs/features/multipass
-@dirrm %%DATADIR%%/content/ribs/features/motionblur
-@dirrm %%DATADIR%%/content/ribs/features/levelofdetail
-@dirrm %%DATADIR%%/content/ribs/features/layeredshaders
-@dirrm %%DATADIR%%/content/ribs/features/curves
-@dirrm %%DATADIR%%/content/ribs/features/bake
-@dirrm %%DATADIR%%/content/ribs/features
-@dirrm %%DATADIR%%/content/ribs
-@dirrm %%DATADIR%%/content
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/plugins/houdini/soho/parameters
+@dirrm %%DATADIR%%/plugins/houdini/soho
+@dirrm %%DATADIR%%/plugins/houdini/scripts/out/targets
+@dirrm %%DATADIR%%/plugins/houdini/scripts/out
+@dirrm %%DATADIR%%/plugins/houdini/scripts
+@dirrm %%DATADIR%%/plugins/houdini
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/examples/scenes/vase
+@dirrm %%DATADIR%%/examples/scenes/microbe
+@dirrm %%DATADIR%%/examples/scenes/fisheye
+@dirrm %%DATADIR%%/examples/scenes
+@dirrm %%DATADIR%%/examples/procedurals/menger
+@dirrm %%DATADIR%%/examples/procedurals
+@dirrm %%DATADIR%%/examples/features/textures
+@dirrm %%DATADIR%%/examples/features/subdivision
+@dirrm %%DATADIR%%/examples/features/solidmodeling
+@dirrm %%DATADIR%%/examples/features/shadows
+@dirrm %%DATADIR%%/examples/features/occlusion
+@dirrm %%DATADIR%%/examples/features/objectinstance
+@dirrm %%DATADIR%%/examples/features/multipass
+@dirrm %%DATADIR%%/examples/features/motionblur
+@dirrm %%DATADIR%%/examples/features/levelofdetail
+@dirrm %%DATADIR%%/examples/features/layeredshaders
+@dirrm %%DATADIR%%/examples/features/curves
+@dirrm %%DATADIR%%/examples/features/bake
+@dirrm %%DATADIR%%/examples/features/archives
+@dirrm %%DATADIR%%/examples/features
+@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
+@dirrm lib/aqsis
+@dirrm include/aqsis/ri
+@dirrm include/aqsis
+@dirrm etc/aqsis
 @dirrmtry share/applications
+@dirrmtry share/icons/hicolor/192x192/mimetypes
+@dirrmtry share/icons/hicolor/192x192
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
