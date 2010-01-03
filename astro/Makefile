@@ -48,6 +48,7 @@
     SUBDIR += p5-Astro-Catalog
     SUBDIR += p5-Astro-DSS
     SUBDIR += p5-Astro-FITS-Header
+    SUBDIR += p5-Astro-Hipparcos
     SUBDIR += p5-Astro-MoonPhase
     SUBDIR += p5-Astro-SIMBAD
     SUBDIR += p5-Astro-SIMBAD-Client
