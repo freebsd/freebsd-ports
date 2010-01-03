@@ -63,6 +63,7 @@
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += hdf5-18
+    SUBDIR += hs-bio
     SUBDIR += ics
     SUBDIR += isaac-cfd
     SUBDIR += jmol
