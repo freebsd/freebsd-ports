@@ -14,6 +14,7 @@
 %%RUBY_SITELIBDIR%%/rvg/text.rb
 %%RUBY_SITELIBDIR%%/rvg/transformable.rb
 %%RUBY_SITELIBDIR%%/rvg/units.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/.cvsignore
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/.rmagick
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/InitialCoords.rb.html
