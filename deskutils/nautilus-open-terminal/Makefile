@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nautilus-open-terminal
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
