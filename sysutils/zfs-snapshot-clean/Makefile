@@ -8,7 +8,8 @@
 PORTNAME=	zfs-snapshot-clean
 PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.github.com/
+MASTER_SITES=	http://download.github.com/ \
+		ftp://ftp.iDaemons.org/pub/distfiles/
 DISTNAME=	knu-${PORTNAME}-d46cc04
 
 MAINTAINER=	knu@FreeBSD.org
