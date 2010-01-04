@@ -7,9 +7,9 @@
 
 PORTNAME=	ebichuclock
 PORTVERSION=	0.1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-clocks gnome
-MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,22 +18,23 @@ COMMENT=	A very simple clock with a small Ebichu picture in it
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${LOCALBASE}/share/gdesklets/Sensors/Clock/__init__.py:${PORTSDIR}/x11-clocks/gdesklets-clock
 
-USE_BZIP2=	yes
-USE_XORG=	x11
-
-NAME=		ebichuclock
-DATADIR=	${PREFIX}/share
-PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-do-build:
-	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
+NO_BUILD=	yes
+USE_PYTHON=	yes
+
+SUB_FILES=	pkg-message
+SUB_LIST=	NAME="${NAME}"
+
+DATADIR=	${PREFIX}/share/gdesklets
+NAME=		ebichuclock
 
 do-install:
-	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
-	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${MKDIR} ${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/Displays/${NAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
