@@ -20,6 +20,6 @@ include/fluidsynth/voice.h
 lib/libfluidsynth.a
 lib/libfluidsynth.la
 lib/libfluidsynth.so
-lib/libfluidsynth.so.2
+lib/libfluidsynth.so.4
 libdata/pkgconfig/fluidsynth.pc
 @dirrm include/fluidsynth
