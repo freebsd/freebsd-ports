@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.3.2b
+PORTREVISION=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -56,7 +57,7 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS=	proftpd-devel-1.[0-9].*
 
-USE_RC_SUBR=	proftpd.sh
+USE_RC_SUBR=	proftpd
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--with-pkgconfig=libdata/pkgconfig \
