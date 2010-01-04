@@ -7,6 +7,13 @@ lib/libflickcurl.la
 lib/libflickcurl.so
 lib/libflickcurl.so.0
 libdata/pkgconfig/flickcurl.pc
+%%DOCSDIR%%/appgarden-commercial-picker.png
+%%DOCSDIR%%/appgarden-edit-auth-flow-mobile.png
+%%DOCSDIR%%/appgarden-edit-auth-flow.png
+%%DOCSDIR%%/appgarden-get-your-api-key.png
+%%DOCSDIR%%/appgarden-new-api-key-secret.png
+%%DOCSDIR%%/appgarden-tell-us-about-your-app.png
+%%DOCSDIR%%/appgarden-test-app-page.png
 %%DOCSDIR%%/flickcurl-auth-authenticate.html
 %%DOCSDIR%%/flickcurl-auth-register.html
 %%DOCSDIR%%/flickcurl-auth-use.html
