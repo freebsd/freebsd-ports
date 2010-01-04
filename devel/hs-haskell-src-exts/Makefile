@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haskell-src-exts
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
