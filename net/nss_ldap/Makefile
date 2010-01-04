@@ -23,6 +23,8 @@ USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262 autoheader:262
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 
+OPTIONS=        LCLASS "Enable login classes via the loginClass attribute" on
+
 PLIST_FILES=	etc/nss_ldap.conf.sample \
 		lib/nss_ldap.so.1
 
@@ -39,6 +41,10 @@ MAN5=	nss_ldap.5
 .include <bsd.port.pre.mk>
 .if !defined(WITHOUT_KERBEROS)
 CONFIGURE_ARGS+=--enable-configurable-krb5-ccname-env
+.endif
+
+.if defined(WITH_LCLASS)
+CFLAGS+="-DHAVE_LOGIN_CLASSES"
 .endif
 
 post-extract:
