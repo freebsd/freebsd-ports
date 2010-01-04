@@ -1,0 +1,5 @@
+This package provides a command-line program for type-checking and
+compiling Agda programs. The program can also generate hyperlinked,
+highlighted HTML files from Agda sources.
+
+WWW:	http://wiki.portal.chalmers.se/agda/
