@@ -21,7 +21,7 @@ CONFLICTS=	coovachilli-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	chillispot
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message installguide.txt
 MAN8=		chilli.8
 
 OPTIONS=	RAW "Latest Release Of Apache & mySQL" Off \
@@ -56,7 +56,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/dictionary.chillispot ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/freeradius.users ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/hotspotlogin.cgi ${DATADIR}
-	${INSTALL_MAN} ${FILESDIR}/installguide.txt ${DATADIR}
+	${INSTALL_MAN} ${WRKDIR}/installguide.txt ${DATADIR}
 	${INSTALL_MAN} ${FILESDIR}/pf.conf.sample ${DATADIR}
 	${INSTALL_MAN} ${FILESDIR}/ipfw-config.sample ${DATADIR}
 .endif
