@@ -7,6 +7,7 @@
 
 PORTNAME=	ttcp
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
@@ -15,7 +16,7 @@ EXTRACT_ONLY=	#none
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
@@ -32,7 +33,9 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttcp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/doc/ttcp
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ttcp/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
