@@ -23,7 +23,7 @@ name=proftpd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/proftpd
-pidfile=/var/run/proftpd.pid
+pidfile=$(grep PidFile /usr/local/etc/proftpd.conf | awk '{print($2)}')
 required_files=%%PREFIX%%/etc/proftpd.conf
 
 stop_postcmd=stop_postcmd
