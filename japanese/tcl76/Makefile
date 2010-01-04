@@ -39,6 +39,8 @@ NO_LATEST_LINK=	yes
 
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 post-extract:
