@@ -14,7 +14,6 @@ bin/gnunet-transport-check
 bin/gnunet-unindex
 bin/gnunet-update
 bin/gnunetd
-bin/remotetest
 etc/gnunet.conf-dist
 etc/gnunetd.conf-dist
 include/GNUnet/gnunet_bootstrap_service.h
@@ -22,10 +21,12 @@ include/GNUnet/gnunet_chat_lib.h
 include/GNUnet/gnunet_collection_lib.h
 include/GNUnet/gnunet_core.h
 include/GNUnet/gnunet_datastore_service.h
-include/GNUnet/gnunet_dht_lib.h
-include/GNUnet/gnunet_dht_service.h
+include/GNUnet/gnunet_dhtlog_service.h
 include/GNUnet/gnunet_directories.h
 include/GNUnet/gnunet_dstore_service.h
+include/GNUnet/gnunet_dv_dht_lib.h
+include/GNUnet/gnunet_dv_dht_service.h
+include/GNUnet/gnunet_dv_service.h
 include/GNUnet/gnunet_ecrs_lib.h
 include/GNUnet/gnunet_fragmentation_service.h
 include/GNUnet/gnunet_fs_lib.h
@@ -86,15 +87,24 @@ lib/GNUnet/libgnunetmodule_chat.so
 lib/GNUnet/libgnunetmodule_datastore.a
 lib/GNUnet/libgnunetmodule_datastore.la
 lib/GNUnet/libgnunetmodule_datastore.so
-lib/GNUnet/libgnunetmodule_dht.a
-lib/GNUnet/libgnunetmodule_dht.la
-lib/GNUnet/libgnunetmodule_dht.so
+%%MYSQL%%lib/GNUnet/libgnunetmodule_dhtlog_mysql.a
+%%MYSQL%%lib/GNUnet/libgnunetmodule_dhtlog_mysql.la
+%%MYSQL%%lib/GNUnet/libgnunetmodule_dhtlog_mysql.so
 %%MYSQL%%lib/GNUnet/libgnunetmodule_dstore_mysql.a
 %%MYSQL%%lib/GNUnet/libgnunetmodule_dstore_mysql.la
 %%MYSQL%%lib/GNUnet/libgnunetmodule_dstore_mysql.so
 %%SQLITE%%lib/GNUnet/libgnunetmodule_dstore_sqlite.a
 %%SQLITE%%lib/GNUnet/libgnunetmodule_dstore_sqlite.la
 %%SQLITE%%lib/GNUnet/libgnunetmodule_dstore_sqlite.so
+lib/GNUnet/libgnunetmodule_dv.a
+lib/GNUnet/libgnunetmodule_dv.la
+lib/GNUnet/libgnunetmodule_dv.so
+lib/GNUnet/libgnunetmodule_dv_dht.a
+lib/GNUnet/libgnunetmodule_dv_dht.la
+lib/GNUnet/libgnunetmodule_dv_dht.so
+lib/GNUnet/libgnunetmodule_dv_tbench.a
+lib/GNUnet/libgnunetmodule_dv_tbench.la
+lib/GNUnet/libgnunetmodule_dv_tbench.so
 lib/GNUnet/libgnunetmodule_fragmentation.a
 lib/GNUnet/libgnunetmodule_fragmentation.la
 lib/GNUnet/libgnunetmodule_fragmentation.so
@@ -191,10 +201,10 @@ lib/libgnunetcore.a
 lib/libgnunetcore.la
 lib/libgnunetcore.so
 lib/libgnunetcore.so.0
-lib/libgnunetdhtapi.a
-lib/libgnunetdhtapi.la
-lib/libgnunetdhtapi.so
-lib/libgnunetdhtapi.so.0
+lib/libgnunetdvdhtapi.a
+lib/libgnunetdvdhtapi.la
+lib/libgnunetdvdhtapi.so
+lib/libgnunetdvdhtapi.so.0
 lib/libgnunetecrs.a
 lib/libgnunetecrs.la
 lib/libgnunetecrs.so
@@ -296,3 +306,5 @@ share/locale/vi/LC_MESSAGES/GNUnet.mo
 @dirrm share/GNUnet
 @dirrm lib/GNUnet
 @dirrm include/GNUnet
+@exec mkdir -p %%DBDIR%%
+@unexec rmdir %%DBDIR%% 2>/dev/null || true
