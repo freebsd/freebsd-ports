@@ -1,0 +1,9 @@
+Note that if you want to use the command-line program (agda), then
+you should also install the Agda-executable package. The Agda
+package includes an Emacs mode for Agda, but you need to set up the
+Emacs mode yourself (for instance by running agda-mode setup; see
+the README).
+
+Note also that this library does not follow the package versioning
+policy, because the library is only intended to be used by the Emacs
+mode and the Agda-executable package.

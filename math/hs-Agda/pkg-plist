@@ -1,0 +1,217 @@
+@comment $FreeBSD$
+bin/agda-mode
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto/Auto.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto/Convert.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto/NarrowingSearch.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto/Print.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto/SearchControl.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto/Syntax.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto/Typecheck.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Agate/Classify.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Agate/Common.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Agate/Main.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Agate/OptimizedPrinter.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Agate/TranslateName.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Agate/UntypedPrinter.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Alonzo/Haskell.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Alonzo/Main.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Alonzo/Names.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Alonzo/PatternMonad.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/HaskellTypes.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/MAlonzo/Compiler.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/MAlonzo/Encode.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/MAlonzo/Misc.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/MAlonzo/Pretty.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/MAlonzo/Primitives.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/BasicOps.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/CommandLine/CommandLine.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Exceptions.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/FindFile.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/GhciTop.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Highlighting/Emacs.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Highlighting/Generate.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Highlighting/HTML.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Highlighting/Precise.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Highlighting/Range.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Highlighting/Vim.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Imports.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/MakeCase.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Monad.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Options.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Main.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Abstract.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Abstract/Name.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Abstract/Pretty.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Abstract/Views.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Common.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete/Definitions.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete/Name.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete/Operators.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete/Operators/Parser.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete/Pretty.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Fixity.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Info.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Internal.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Internal/Generic.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Internal/Pattern.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Literal.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/Alex.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/Comments.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/Layout.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/LexActions.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/Lexer.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/LookAhead.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/Monad.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/Parser.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/StringLiterals.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser/Tokens.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Position.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Scope/Base.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Scope/Monad.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Strict.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Translation/AbstractToConcrete.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Translation/ConcreteToAbstract.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Translation/InternalToAbstract.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Termination/CallGraph.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Termination/Lexicographic.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Termination/Matrix.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Termination/Semiring.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Termination/TermCheck.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Termination/Termination.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Tests.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecker.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Abstract.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Constraints.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Conversion.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Coverage.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Coverage/Match.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/DisplayForm.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Empty.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Errors.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/EtaContract.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Free.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Implicit.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Injectivity.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Level.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/MetaVars.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/MetaVars/Occurs.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Base.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Builtin.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Closure.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Constraints.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Context.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Debug.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Env.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Exception.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Imports.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/MetaVars.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Mutual.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Open.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Options.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Signature.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/SizedTypes.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/State.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Statistics.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad/Trace.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Patterns/Match.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Polarity.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Positivity.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Pretty.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Primitive.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rebind.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Records.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Reduce.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/Builtin.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/Data.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/Decl.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/Def.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/LHS.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/LHS/Implicit.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/LHS/Instantiate.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/LHS/Problem.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/LHS/Split.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/LHS/Unify.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/Record.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/Term.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Serialise.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/SizedTypes.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Substitute.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Telescope.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Test/Generators.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Tests.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/With.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Char.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Either.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/FileName.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Fresh.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Function.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Generics.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Graph.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Hash.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/IO/Binary.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/IO/Locale.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/IO/UTF8.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Impossible.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/List.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Map.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Maybe.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Monad.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Permutation.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Pointer.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Pretty.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/QuickCheck.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/ReadP.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/SemiRing.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Size.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/String.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Suffix.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/TestHelpers.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Trace.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Trie.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Tuple.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Unicode.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/Warshall.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Version.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSAgda-%%AGDA_VERSION%%.o
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_Agda.hi
+%%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSAgda-%%AGDA_VERSION%%.a
+%%AGDA_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils/IO
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Utils
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Test
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules/LHS
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Rules
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Patterns
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Monad
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/MetaVars
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking/Coverage
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/TypeChecking
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Termination
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Translation
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Scope
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Parser
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Internal
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete/Operators
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Concrete
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax/Abstract
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Syntax
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/Highlighting
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction/CommandLine
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Interaction
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/MAlonzo
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Alonzo
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler/Agate
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Compiler
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda/Auto
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Agda
+@dirrm %%AGDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%AGDA_LIBDIR_REL%%
+@exec /bin/sh %D/%%AGDA_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister Agda
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
