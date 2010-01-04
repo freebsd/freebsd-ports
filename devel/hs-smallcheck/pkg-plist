@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%SMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSsmallcheck-%%SMALLCHECK_VERSION%%.o
+%%SMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/SmallCheck.hi
+%%SMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSsmallcheck-%%SMALLCHECK_VERSION%%.a
+%%SMALLCHECK_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%SMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test
+@dirrm %%SMALLCHECK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%SMALLCHECK_LIBDIR_REL%%
+@exec /bin/sh %D/%%SMALLCHECK_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister smallcheck
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
