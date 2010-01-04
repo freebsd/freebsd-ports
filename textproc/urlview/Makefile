@@ -29,7 +29,7 @@ SUB_LIST=	GECKO=${GECKO}
 
 .if defined(WITH_GECKO)
 USE_GECKO=	firefox-devel firefox35 seamonkey
-.include <bsd.gecko.mk>
+.include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .elif defined(WITH_SEAMONKEY)
 RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey
 GECKO=		seamonkey
