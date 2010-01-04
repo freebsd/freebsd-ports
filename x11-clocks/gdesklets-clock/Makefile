@@ -7,9 +7,9 @@
 
 PORTNAME=	clock
 PORTVERSION=	0.32
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-clocks gnome
-MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	clock-desklet-${PORTVERSION}
 
@@ -18,36 +18,37 @@ COMMENT=	Various clock displays for Gnome 2.x
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_XORG=	x11
 
+SUB_FILES=	pkg-message
+SUB_LIST=	NAME="${NAME}"
+
+DATADIR=	${PREFIX}/share/gdesklets
 NAME=		Clock
-DATADIR=	${PREFIX}/share
+
 LANG=		de fr pt sq sr sr@Latn sv
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${PATCH} ${WRKSRC}/Clock/__init__.py < ${FILESDIR}/Clock::__init__.py
 
 do-install:
-	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
+	@${MKDIR} ${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.xcf ${DATADIR}/Displays/${NAME}/gfx
+	@${MKDIR} ${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.dat ${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/Sensors/${NAME}
 .for ii in ${LANG}
-	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
-		${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES/
+	@${MKDIR} ${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
+		${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.dat ${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
-	@${INSTALL_DATA} ${WRKSRC}/gfx/*.xcf ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${LN} -s ${DATADIR}/gdesklets/Displays/${NAME}/README \
-		${DATADIR}/gdesklets/Sensors/${NAME}/README
-
-post-install:
+	@${LN} -s ${DATADIR}/Displays/${NAME}/README \
+		${DATADIR}/Sensors/${NAME}/README
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
