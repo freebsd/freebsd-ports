@@ -35,6 +35,43 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="56ba8728-f987-11de-b28d-00215c6a37bb">
+    <topic>PEAR -- Net_Ping and Net_Traceroute remote arbitrary command injection</topic>
+    <affects>
+      <package>
+	<name>pear-Net_Ping</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+      <package>
+	<name>pear-Net_Traceroute</name>
+	<range><lt>0.21.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PEAR Security Advisory reports:</p>
+	<blockquote cite="http://blog.pear.php.net/2009/11/14/net_traceroute-and-net_ping-security-advisory/">
+	  <p>Multiple remote arbitrary command injections have been
+	    found in the Net_Ping and Net_Traceroute.</p>
+	  <p>When input from forms are used directly, the attacker
+	    could pass variables that would allow him to execute
+	    remote arbitrary command injections.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>37093</bid>
+      <bid>37094</bid>
+      <cvename>CVE-2009-4024</cvename>
+      <cvename>CVE-2009-4025</cvename>
+      <url>http://pear.php.net/advisory20091114-01.txt</url>
+    </references>
+    <dates>
+      <discovery>2009-11-14</discovery>
+      <entry>2010-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="751823d4-f189-11de-9344-00248c9b4be7">
     <topic>drupal -- multiple cross-site scripting</topic>
     <affects>
