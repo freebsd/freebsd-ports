@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bouml-doc
-PORTVERSION=	4.12.4
+PORTVERSION=	4.17
 CATEGORIES=	devel
 MASTER_SITES=	SF/bouml/bouml%20documentation/reference%20manual%20${PORTVERSION}	\
 		http://bouml.free.fr/
-
 DISTNAME=	doc${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
