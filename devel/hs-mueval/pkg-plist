@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+bin/mueval
+bin/mueval-core
+%%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/HSmueval-%%MUEVAL_VERSION%%.o
+%%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/Mueval/ArgsParse.hi
+%%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/Mueval/Context.hi
+%%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/Mueval/Interpreter.hi
+%%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/Mueval/Parallel.hi
+%%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/Mueval/Resources.hi
+%%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/libHSmueval-%%MUEVAL_VERSION%%.a
+%%MUEVAL_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%MUEVAL_LIBDIR_REL%%/ghc-6.10.4/Mueval
+@dirrm %%MUEVAL_LIBDIR_REL%%/ghc-6.10.4
+@dirrm %%MUEVAL_LIBDIR_REL%%
+@exec /bin/sh %D/%%MUEVAL_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister mueval
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,0 +1,15 @@
+Mueval is a Haskell interpreter. It uses the GHC API to evaluate
+arbitrary Haskell expressions.
+
+Importantly, mueval takes many precautions to defang and avoid
+"evil" code. It uses resource limits, whitelisted modules, special
+Show instances for IO, threads, processes, changes of directory, and
+so on to sandbox the Haskell code.
+
+It is, in short, intended to be a standalone version of Lambdabot's
+famous evaluation functionality. For examples and explanations, please
+see the README file.
+
+Mueval is POSIX-only.
+
+WWW: http://code.haskell.org/mubot/
