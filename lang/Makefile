@@ -122,6 +122,7 @@
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck
+    SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += hugs
     SUBDIR += icc
