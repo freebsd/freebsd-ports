@@ -14,11 +14,10 @@ PKGNAMESUFFIX=	-gcc
 DISTNAME=	gnat-gcc-gtkada-4.1.1_2.8.1-r6.src
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	hopet@ics.muni.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 binding for lang/gnat-gcc41 port of GNAT Ada compiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gcc41/gcc41:${PORTSDIR}/lang/gnat-gcc41
-
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC=		${WRKDIR}/GtkAda-2_8_1
