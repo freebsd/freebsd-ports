@@ -17,6 +17,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+DEPRECATED=	The MySQL 6.0 development branch is deprecated and will be removed soon. \
+		Please consider using MySQL 5.5 instead.
+EXPIRATION_DATE=2010-01-10
+
 SLAVEDIRS=	databases/mysql60-client databases/mysql60-scripts
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
