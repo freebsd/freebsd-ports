@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%MONADCATCHIOMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/CatchIO.hi
+%%MONADCATCHIOMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSMonadCatchIO-mtl-%%MONADCATCHIOMTL_VERSION%%.o
+%%MONADCATCHIOMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSMonadCatchIO-mtl-%%MONADCATCHIOMTL_VERSION%%.a
+%%MONADCATCHIOMTL_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%MONADCATCHIOMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
+@dirrm %%MONADCATCHIOMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%MONADCATCHIOMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%MONADCATCHIOMTL_LIBDIR_REL%%
+@exec /bin/sh %D/%%MONADCATCHIOMTL_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister MonadCatchIO-mtl
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
