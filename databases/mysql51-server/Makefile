@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.41
+PORTVERSION=	5.1.42
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -17,7 +17,6 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -97,7 +96,7 @@ WANT_MYSQL_VER=	51
 
 LATEST_LINK=	mysql51-server
 
-CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.[04].* mysql-server-6.*
+CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.[02-9].* mysql-server-6.*
 
 USE_RC_SUBR=	mysql-server.sh
 
@@ -170,7 +169,7 @@ post-install:
 .if defined(CLIENT_ONLY)
 LATEST_LINK=	mysql51-client
 
-CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.[04].* mysql-client-6.*
+CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.[02-9].* mysql-client-6.*
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \
@@ -203,7 +202,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 LATEST_LINK=	mysql51-scripts
 
-CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.[04].* mysql-scripts-6.*
+CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.[02-9].* mysql-scripts-6.*
 
 MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_find_rows.1 \
 		mysql_fix_extensions.1 mysql_secure_installation.1 \
