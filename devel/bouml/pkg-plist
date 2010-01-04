@@ -231,6 +231,7 @@ bin/projectSynchro
 %%DATADIR%%/browsersort
 %%DATADIR%%/cpp_generator
 %%DATADIR%%/cpp_reverse
+%%DATADIR%%/cpp_roundtrip
 %%DATADIR%%/cpp_util
 %%DATADIR%%/cpp_utilities/1024.bodies
 %%DATADIR%%/cpp_utilities/1152.bodies
@@ -654,6 +655,7 @@ bin/projectSynchro
 %%DATADIR%%/empty/python_imports
 %%DATADIR%%/empty/stereotypes
 %%DATADIR%%/empty/tools
+%%DATADIR%%/es.lang
 %%DATADIR%%/file_control
 %%DATADIR%%/fr.lang
 %%DATADIR%%/genpro/1024.bodies
@@ -944,7 +946,6 @@ bin/projectSynchro
 %%DATADIR%%/html/tools
 %%DATADIR%%/idl_generator
 %%DATADIR%%/irose
-%%DATADIR%%/it.lang
 %%DATADIR%%/ixmi2
 %%DATADIR%%/java_catalog
 %%DATADIR%%/java_generator
@@ -955,6 +956,7 @@ bin/projectSynchro
 %%DATADIR%%/plug_out_upgrade
 %%DATADIR%%/projectControl
 %%DATADIR%%/projectSynchro
+%%DATADIR%%/pt_br.lang
 %%DATADIR%%/python_generator
 %%DATADIR%%/rose/1024.bodies
 %%DATADIR%%/rose/1152.bodies

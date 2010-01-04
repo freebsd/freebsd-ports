@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	4.16.4
+PORTVERSION=	4.17
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF	\
@@ -38,6 +38,7 @@ pre-configure:
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	${CHMOD} -R ${SHAREMODE} ${DATADIR}/xmi/*
+	${CHMOD} ${SHAREMODE} ${DATADIR}/*.lang
 	${FIND} ${DATADIR} -type f -perm 755 | ${XARGS} ${STRIP_CMD}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
