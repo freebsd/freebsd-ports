@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lynis
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.rootkit.nl/files/ \
 		http://downloads.rootkit.nl/
