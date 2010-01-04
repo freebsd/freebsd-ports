@@ -7,8 +7,8 @@
 
 PORTNAME=	easypg
 PORTVERSION=	0.0.16
-PORTREVISION=	1
-CATEGORIES=	security
+PORTREVISION=	2
+CATEGORIES=	security elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	epg/29289
 DISTNAME=	epg-${PORTVERSION}
@@ -21,10 +21,10 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
 
-.if defined(WITH_COMPILED_ELISP)
-PLIST_SUB=	COMPILED_ELISP=""
-.else
-PLIST_SUB=	COMPILED_ELISP="@comment "
+.include <bsd.port.pre.mk>
+
+.if (${EMACS_PORT_NAME} == "emacs23")
+IGNORE=		easyPG has been part of Emacs 23
 .endif
 
 INFO=	epa
@@ -35,11 +35,7 @@ PORTDOCS=	ChangeLog NEWS README
 do-install:
 	cd ${WRKSRC};\
 	${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}/epg;\
-	${INSTALL_DATA} *.el ${PREFIX}/${EMACS_SITE_LISPDIR}/epg
-.if defined(WITH_COMPILED_ELISP)
-	cd ${WRKSRC};\
-	${INSTALL_DATA} *.elc ${PREFIX}/${EMACS_SITE_LISPDIR}/epg
-.endif
+	${INSTALL_DATA} *.el *.elc ${PREFIX}/${EMACS_SITE_LISPDIR}/epg
 	cd ${WRKSRC};\
 	${INSTALL_MAN} epa.info ${PREFIX}/${INFO_PATH}
 .if !defined(NOPORTDOCS)
@@ -51,4 +47,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
