@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	2009-10-31 04:23:15.000000000 +0900
++++ src/Makefile.in	2009-11-03 15:44:55.000000000 +0900
+@@ -397,13 +397,15 @@
+ 	fluid_filerenderer.c \
+ 	fluid_aufile.c 
+ 
+-INCLUDES = -I$(top_srcdir)/include $(LASH_CFLAGS) $(LADCCA_CFLAGS) \
++INCLUDES = -I$(top_srcdir)/include \
++  $(PORTAUDIO_CFLAGS) $(LASH_CFLAGS) $(LADCCA_CFLAGS) \
+   $(READLINE_CFLAGS) $(JACK_CFLAGS) $(ALSA_CFLAGS) $(PULSE_CFLAGS) \
+-  $(PORTAUDIO_CFLAGS) $(DART_CFLAGS) $(GLIB_CFLAGS) $(LIBSNDFILE_CFLAGS)
++  $(DART_CFLAGS) $(GLIB_CFLAGS) $(LIBSNDFILE_CFLAGS)
+ 
+-libfluidsynth_la_LIBADD = $(LIBFLUID_LIBS) $(LASH_LIBS) $(LADCCA_LIBS) \
++libfluidsynth_la_LIBADD = $(LIBFLUID_LIBS) \
++  $(PORTAUDIO_LIBS) $(LASH_LIBS) $(LADCCA_LIBS) \
+   $(READLINE_LIBS) $(COREAUDIO_LIBS) $(COREMIDI_LIBS) $(JACK_LIBS) \
+-  $(ALSA_LIBS) $(PULSE_LIBS) $(PORTAUDIO_LIBS) $(DART_LIBS)  \
++  $(ALSA_LIBS) $(PULSE_LIBS) $(DART_LIBS)  \
+   $(GLIB_LIBS) $(LIBSNDFILE_LIBS)
+ 
+ libfluidsynth_la_LDFLAGS = \

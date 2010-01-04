@@ -6,30 +6,33 @@
 #
 
 PORTNAME=	fluidsynth
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	fluid
+MASTER_SITES=	SAVANNAH/fluid
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
+OPTIONS=	JACK "Enable Jack audio support" On \
+		LADSPA "Enable LADSPA audio support" Off \
+		PORTAUDIO "Enable PortAudio support" Off \
+		PULSEAUDIO "Enable PulseAudio support" Off \
+		SNDFILE "Enable Libsndfile support" Off
 
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	glib20 gnomehack pkgconfig
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-lash --disable-ladcca
+CONFIGURE_ARGS=	--disable-alsa-support --disable-midishare \
+		--disable-coreaudio --disable-coremidi \
+		--disable-dart --disable-lash \
+		--disable-ladcca
 USE_LDCONFIG=	yes
 
 MAN1=		fluidsynth.1
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-OPTIONS=	JACK "Enable Jack audio support" On \
-		LADSPA "Enable LADSPA audio support" Off
+CPPFLAGS=	${PA2_CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	${PA2_LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -43,6 +46,27 @@ CONFIGURE_ARGS+=	--disable-jack-support
 BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 CONFIGURE_ARGS+=	--enable-ladspa
+.endif
+
+.if defined(WITH_PORTAUDIO)
+BUILD_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
+PA2_CFLAGS=	`pkg-config --cflags-only-I portaudio-2.0`
+PA2_LIBS=	`pkg-config --libs-only-L portaudio-2.0`
+.else
+CONFIGURE_ARGS+=	--disable-portaudio-support
+.endif
+
+.if defined(WITH_PULSEAUDIO)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CONFIGURE_ARGS+=	--disable-pulse-support
+.endif
+
+.if defined(WITH_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+.else
+CONFIGURE_ARGS+=	--disable-libsndfile-support
 .endif
 
 post-patch:
