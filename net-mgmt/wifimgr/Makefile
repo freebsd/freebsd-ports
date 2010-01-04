@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+		LOCAL/pgollucci
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
