@@ -1,16 +1,16 @@
 ##
 To view the README:
 
-	cat ${PREFIX}/share/gdesklets/Displays/${name}/README
-	cat ${PREFIX}/share/gdesklets/Sensors/${name}/README
+	cat %%PREFIX%%/share/gdesklets/Displays/%%NAME%%/README
+	cat %%PREFIX%%/share/gdesklets/Sensors/%%NAME%%/README
 
-To view all installed applets:
+To view the installed applets:
 
-	ls ${PREFIX}/share/gdesklets/Displays
+	ls %%PREFIX%%/share/gdesklets/Displays
 
 To use those applets:
 
-	gdesklets open ${PREFIX}/share/gdesklets/Displays/${name}/${name}.display
+	gdesklets open %%PREFIX%%/share/gdesklets/Displays/%%NAME%%/${name}.display
 
 Replace ${name} with the correct name of the applets you want to use.
 
