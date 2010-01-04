@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -40,19 +40,12 @@ PATCHFILES+=	daemontools-0.76.sigq12.patch:sigq12
 PATCH_DIST_STRIP=	-p2
 .endif
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} SERVICEDIR=${SERVICEDIR} \
-		DAEMON="/usr/sbin/daemon -f"
+USE_RC_SUBR=	svscan
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
-
-SAMPLERC=	svscan.sh.sample
-SERVICEDIR?=	/var/service
-STARTUP_SCRIPT?=	${SAMPLERC:S/.sample//}
-PLIST_SUB+=	STARTUP_SCRIPT="${STARTUP_SCRIPT}"
 
 .if defined(WITHOUT_TESTS)
 EXTRA_PATCHES+=	${FILESDIR}/rts-skip.patch
@@ -61,10 +54,6 @@ EXTRA_PATCHES+=	${FILESDIR}/rts-skip.patch
 post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
-
-post-build:
-	@${SED}  ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${SAMPLERC} > ${WRKDIR}/${SAMPLERC}
 
 do-install:
 	(while read cmd; do \
@@ -76,7 +65,6 @@ do-install:
 	done) < ${WRKSRC}/../package/commands
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${SAMPLERC} ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
 .if !defined(WITHOUT_MAN)
 	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${PREFIX}/man/man8/
 .endif
