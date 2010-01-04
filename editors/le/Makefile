@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.14.2
+PORTVERSION=	1.14.3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
