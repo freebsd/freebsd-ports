@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	claroline
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Claroline/Claroline%20${PORTVERSION}
-DISTNAME=	claroline192
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source eLearning and eWorking platform

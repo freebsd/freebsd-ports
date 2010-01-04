@@ -248,6 +248,8 @@
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink/js/advlink.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink/langs/en_dlg.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autoresize/editor_plugin.js
+%%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autosave/editor_plugin_src.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/bbcode/editor_plugin.js
@@ -406,6 +408,8 @@
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/style/js/props.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/style/langs/en_dlg.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/tabfocus/editor_plugin.js
+%%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/tabfocus/editor_plugin_src.js
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/table/cell.htm
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/table/css/cell.css
 %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/table/css/row.css
@@ -839,6 +843,7 @@
 %%WWWDIR%%/claroline/inc/templates/course_index.tpl.php
 %%WWWDIR%%/claroline/inc/templates/document_create.tpl.php
 %%WWWDIR%%/claroline/inc/templates/footer.tpl.php
+%%WWWDIR%%/claroline/inc/templates/forum_viewtopic.tpl.php
 %%WWWDIR%%/claroline/inc/templates/header.tpl.php
 %%WWWDIR%%/claroline/inc/templates/help_claroline.tpl.php
 %%WWWDIR%%/claroline/inc/templates/help_document.tpl.php
@@ -1113,6 +1118,7 @@
 %%WWWDIR%%/claroline/phpbb/connector/tracking.cnr.php
 %%WWWDIR%%/claroline/phpbb/css/clfrm.css
 %%WWWDIR%%/claroline/phpbb/editpost.php
+%%WWWDIR%%/claroline/phpbb/export.php
 %%WWWDIR%%/claroline/phpbb/icon.png
 %%WWWDIR%%/claroline/phpbb/img/forum.png
 %%WWWDIR%%/claroline/phpbb/img/forum_new.png
@@ -1124,6 +1130,9 @@
 %%WWWDIR%%/claroline/phpbb/img/topic.png
 %%WWWDIR%%/claroline/phpbb/img/topic_new.png
 %%WWWDIR%%/claroline/phpbb/index.php
+%%WWWDIR%%/claroline/phpbb/lib/export.class.php
+%%WWWDIR%%/claroline/phpbb/lib/export.html.class.php
+%%WWWDIR%%/claroline/phpbb/lib/export.pdf.class.php
 %%WWWDIR%%/claroline/phpbb/manifest.xml
 %%WWWDIR%%/claroline/phpbb/newtopic.php
 %%WWWDIR%%/claroline/phpbb/reply.php
@@ -1401,10 +1410,11 @@
 %%WWWDIR%%/web/img/platformadmin.png
 %%WWWDIR%%/web/img/preview.png
 %%WWWDIR%%/web/img/processing.gif
+%%WWWDIR%%/web/img/question.png
 %%WWWDIR%%/web/img/replymessage.png
 %%WWWDIR%%/web/img/save.png
-%%WWWDIR%%/web/img/search.png
 %%WWWDIR%%/web/img/select.png
+%%WWWDIR%%/web/img/search.png
 %%WWWDIR%%/web/img/settings.png
 %%WWWDIR%%/web/img/spoiler.png
 %%WWWDIR%%/web/img/statistics.png
@@ -1420,9 +1430,12 @@
 %%WWWDIR%%/web/img/usersetting.png
 %%WWWDIR%%/web/img/visible.png
 %%WWWDIR%%/web/img/warning.png
+%%WWWDIR%%/web/js/Date.fr.js
+%%WWWDIR%%/web/js/Date.js
 %%WWWDIR%%/web/js/claroline.js
 %%WWWDIR%%/web/js/claroline.linker.js
 %%WWWDIR%%/web/js/claroline.ui.js
+%%WWWDIR%%/web/js/datetime.js
 %%WWWDIR%%/web/js/jquery.form.js
 %%WWWDIR%%/web/js/jquery.js
 %%WWWDIR%%/web/js/jquery.json.js
@@ -1516,6 +1529,7 @@
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink/langs
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autosave
+@dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autoresize
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/bbcode
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/claroimage/css
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/claroimage/img
@@ -1587,6 +1601,7 @@
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/style/js
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/style/langs
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/tabfocus
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/table/css
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/table/js
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/table/langs
@@ -1744,6 +1759,7 @@
 @dirrm %%WWWDIR%%/claroline/phpbb/connector
 @dirrm %%WWWDIR%%/claroline/phpbb/css
 @dirrm %%WWWDIR%%/claroline/phpbb/img
+@dirrm %%WWWDIR%%/claroline/phpbb/lib
 @dirrm %%WWWDIR%%/claroline/phpbb/setup
 @dirrm %%WWWDIR%%/claroline/phpbb
 @dirrm %%WWWDIR%%/claroline/right
