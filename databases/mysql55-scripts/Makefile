@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-scripts
 
 COMMENT=	Multithreaded SQL database (scripts)
 
-MASTERDIR=	${.CURDIR}/../mysql54-server
+MASTERDIR=	${.CURDIR}/../mysql55-server
 
 PKGINSTALL=	mustnotexist
 PKGMESSAGE=	mustnotexist
