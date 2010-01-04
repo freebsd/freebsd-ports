@@ -27,7 +27,7 @@ LATEST_LINK=		openjdk7
 
 USE_GMAKE=	YES
 USE_ICONV=	YES
-USE_XORG+=	xtst xi xt x11
+USE_XORG+=	x11 xext xi xrender xt xtst
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
