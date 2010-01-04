@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Ping
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	net pear
 
 MAINTAINER=	bg1tpt@gmail.com
