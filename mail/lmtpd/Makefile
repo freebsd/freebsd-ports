@@ -16,8 +16,6 @@ COMMENT=	LMTP server compliant with RFC 2033 and Maildir++
 
 LIB_DEPENDS=	home.1:${PORTSDIR}/misc/libhome
 
-BROKEN=		does not compile
-
 USE_ICONV=	yes
 
 OPTIONS=	PCRE "Support for PCRE" on
@@ -98,6 +96,9 @@ post-patch:
 		${REINPLACE_CMD}-e 's;in db4;in ${BDB_LIB_NAME};g' \
 			${WRKSRC}/configure ; \
 	fi
+.endif
+.if defined(WITH_TRE)
+	@${REINPLACE_CMD} -e "s|tre_r|libmtpd_&|g" ${WRKSRC}/re/re-tre.c
 .endif
 
 post-install:
