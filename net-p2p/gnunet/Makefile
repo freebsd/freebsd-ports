@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.8.0c
+PORTVERSION=	0.8.1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	GNU \
 		http://gnunet.org/download/
@@ -30,29 +30,32 @@ OPTIONS=	MYSQL	"Enable MySQL support"		on \
 		PGSQL	"Enable PostgreSQL support"	off \
 		SQLITE	"Enable SQLite support"		off
 
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack libglade2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl:22 libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-ltdl-install \
-		--without-dialog \
-		--without-cdialog \
-		--without-qt
+CONFIGURE_ARGS=	--with-dialog=no \
+		--with-cdialog=no \
+		--with-qt=no \
+		--with-daemon-home-dir=${DBDIR} \
+		--with-daemon-config-dir=${PREFIX}/etc
 USE_LDCONFIG=	yes
 
+PLIST_SUB=	DBDIR="${DBDIR}"
+
 MAN1=		gnunet-auto-share.1 gnunet-chat.1 gnunet-directory.1 \
-		gnunet-download-manager.1 gnunet-download.1 gnunet-insert.1 \
-		gnunet-peer-info.1 gnunet-pseudonym.1 gnunet-search.1 \
-		gnunet-setup.1 gnunet-stats.1 gnunet-tbench.1 \
-		gnunet-testbed.1 gnunet-tracekit.1 gnunet-transport-check.1 \
-		gnunet-unindex.1 gnunet-update.1 gnunet-vpn.1 \
-		gnunetd.1
+		gnunet-download.1 gnunet-insert.1 gnunet-peer-info.1 \
+		gnunet-pseudonym.1 gnunet-search.1 gnunet-setup.1 \
+		gnunet-stats.1 gnunet-tbench.1 gnunet-testbed.1 \
+		gnunet-tracekit.1 gnunet-transport-check.1 gnunet-unindex.1 \
+		gnunet-update.1 gnunet-vpn.1 gnunetd.1
 MAN5=		gnunet.conf.5 gnunetd.conf.5
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+DBDIR=		/var/db/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -90,6 +93,7 @@ post-patch:
 .endfor
 
 post-install:
+	@${MKDIR} ${DBDIR}
 .for i in gnunet.conf gnunetd.conf
 	${INSTALL_DATA}	${WRKSRC}/contrib/${i} ${PREFIX}/etc/${i}-dist
 .endfor
