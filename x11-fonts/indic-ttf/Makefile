@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	indic-ttf
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-indic-fonts
@@ -138,8 +138,7 @@ install-fonts:
 install-conf:
 	${MKDIR} ${CONFAVAILDIR}
 .for f in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/ttf-${f}${PKGNAMESUFFIX}.conf \
-	${CONFAVAILDIR}/61-ttf-${f}${PKGNAMESUFFIX}.conf
+	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/90-ttf-${f}${PKGNAMESUFFIX}.conf ${CONFAVAILDIR}/
 .endfor
 
 post-install:
