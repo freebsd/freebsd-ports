@@ -1,0 +1,4 @@
+Efficient algorithms for uvector unboxed arrays for Haskell.  Compilation
+with flags -O2, and -fvia-C -optc-O3 is recommended.
+
+WWW: http://code.haskell.org/~dolio/
