@@ -4239,3 +4239,7 @@ sysutils/freebsd-sha256||2009-12-24|Incorporated into base system long ago
 irc/znc-extras||2009-12-24|Has expired: Migrate to irc/znc instead
 games/love|devel/love|2009-12-26|Move to better category
 archivers/star-devel||2009-12-26|Removed
+databases/mysql54-client|databases/mysql55-client|2010-01-04|Updated to milestone 2
+databases/mysql54-server|databases/mysql55-server|2010-01-04|Updated to milestone 2
+databases/mysql54-scripts|databases/mysql55-scripts|2010-01-04|Updated to milestone 2
+databases/p5-DBD-mysql54|databases/p5-DBD-mysql55|2010-01-04|Updated to milestone 2

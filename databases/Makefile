@@ -211,9 +211,6 @@
     SUBDIR += mysql51-client
     SUBDIR += mysql51-scripts
     SUBDIR += mysql51-server
-    SUBDIR += mysql54-client
-    SUBDIR += mysql54-scripts
-    SUBDIR += mysql54-server
     SUBDIR += mysql55-client
     SUBDIR += mysql55-scripts
     SUBDIR += mysql55-server
@@ -306,7 +303,6 @@
     SUBDIR += p5-DBD-mysql41
     SUBDIR += p5-DBD-mysql50
     SUBDIR += p5-DBD-mysql51
-    SUBDIR += p5-DBD-mysql54
     SUBDIR += p5-DBD-mysql55
     SUBDIR += p5-DBD-mysql60
     SUBDIR += p5-DBI
