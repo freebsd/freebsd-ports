@@ -1,0 +1,4 @@
+This is an interpreter of the brainf*ck language,
+written in the pure, lazy, functional language Haskell.
+
+WWW: http://hackage.haskell.org/package/brainfuck
