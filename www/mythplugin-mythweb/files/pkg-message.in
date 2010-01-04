@@ -1,0 +1,7 @@
+mythweb has been installed into:
+
+    %%WWWDIR%%
+
+You need to configure mythweb now according to the instructions in
+
+    %%WWWDIR%%/INSTALL
