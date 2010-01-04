@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jmref
-PORTVERSION=	16.0
+PORTVERSION=	16.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://iphome.hhi.de/suehring/tml/download/
 DISTNAME=	jm${PORTVERSION}
 
-MAINTAINER=	steve@meatwad.mouf.net
+MAINTAINER=	steve@mouf.net
 COMMENT=	JM Reference Software
 
 USE_ZIP=	yes
