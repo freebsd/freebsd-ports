@@ -1035,6 +1035,7 @@
     SUBDIR += p5-Net-Flickr-API
     SUBDIR += p5-Net-Flickr-Backup
     SUBDIR += p5-Net-Flickr-RDF
+    SUBDIR += p5-Net-FreshBooks-API
     SUBDIR += p5-Net-GeoPlanet
     SUBDIR += p5-Net-Trac
     SUBDIR += p5-Net-eBay

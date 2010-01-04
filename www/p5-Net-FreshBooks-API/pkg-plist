@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreshBooks/API/.packlist
+%%SITE_PERL%%/Net/FreshBooks/API.pm
+%%SITE_PERL%%/Net/FreshBooks/API/Base.pm
+%%SITE_PERL%%/Net/FreshBooks/API/Client.pm
+%%SITE_PERL%%/Net/FreshBooks/API/Invoice.pm
+%%SITE_PERL%%/Net/FreshBooks/API/InvoiceLine.pm
+%%SITE_PERL%%/Net/FreshBooks/API/Iterator.pm
+%%SITE_PERL%%/Net/FreshBooks/API/Links.pm
+%%SITE_PERL%%/Net/FreshBooks/API/Payment.pm
+%%SITE_PERL%%/Net/FreshBooks/API/Recurring.pm
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreshBooks/API
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreshBooks
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
