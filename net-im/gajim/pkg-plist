@@ -1,42 +1,16 @@
 bin/gajim
 bin/gajim-history-manager
-%%DBUS%%bin/gajim-remote
-lib/gajim/gtkspell.la
-lib/gajim/gtkspell.so
-lib/gajim/idle.la
-lib/gajim/idle.so
+bin/gajim-remote
 lib/gajim/trayicon.la
 lib/gajim/trayicon.so
-%%NLS%%share/locale/be/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/be@latin/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/da/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/no/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/sr@Latn/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 share/applications/gajim.desktop
-share/pixmaps/gajim.png
-share/pixmaps/gajim.svg
-share/pixmaps/gajim_about.png
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/THANKS
+%%DOCSDIR%%/THANKS.artists
 %%DATADIR%%/data/activities/default/doing_chores/buying_groceries.png
 %%DATADIR%%/data/activities/default/doing_chores/category.png
 %%DATADIR%%/data/activities/default/doing_chores/cleaning.png
@@ -262,9 +236,9 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/change_password_dialog.glade
 %%DATADIR%%/data/glade/change_status_message_dialog.glade
 %%DATADIR%%/data/glade/chat_context_menu.glade
-%%DATADIR%%/data/glade/chat_control_popup_menu.glade
 %%DATADIR%%/data/glade/chat_to_muc_window.glade
 %%DATADIR%%/data/glade/choose_gpg_key_dialog.glade
+%%DATADIR%%/data/glade/contact_context_menu.glade
 %%DATADIR%%/data/glade/data_form_window.glade
 %%DATADIR%%/data/glade/dubbleinput_dialog.glade
 %%DATADIR%%/data/glade/edit_groups_dialog.glade
@@ -284,6 +258,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/manage_bookmarks_window.glade
 %%DATADIR%%/data/glade/manage_pep_services_window.glade
 %%DATADIR%%/data/glade/manage_proxies_window.glade
+%%DATADIR%%/data/glade/manage_sounds_window.glade
 %%DATADIR%%/data/glade/message_window.glade
 %%DATADIR%%/data/glade/passphrase_dialog.glade
 %%DATADIR%%/data/glade/popup_notification_window.glade
@@ -293,7 +268,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/profile_window.glade
 %%DATADIR%%/data/glade/progress_dialog.glade
 %%DATADIR%%/data/glade/remove_account_window.glade
-%%DATADIR%%/data/glade/roster_contact_context_menu.glade
+%%DATADIR%%/data/glade/roster_item_exchange_window.glade
 %%DATADIR%%/data/glade/roster_window.glade
 %%DATADIR%%/data/glade/search_window.glade
 %%DATADIR%%/data/glade/service_discovery_window.glade
@@ -306,29 +281,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/systray_context_menu.glade
 %%DATADIR%%/data/glade/vcard_information_window.glade
 %%DATADIR%%/data/glade/xml_console_window.glade
-%%DATADIR%%/data/glade/zeroconf_contact_context_menu.glade
 %%DATADIR%%/data/glade/zeroconf_context_menu.glade
 %%DATADIR%%/data/glade/zeroconf_information_window.glade
-%%DATADIR%%/data/iconsets/crystal/16x16/away.png
-%%DATADIR%%/data/iconsets/crystal/16x16/chat.png
-%%DATADIR%%/data/iconsets/crystal/16x16/closed.png
-%%DATADIR%%/data/iconsets/crystal/16x16/connecting.gif
-%%DATADIR%%/data/iconsets/crystal/16x16/dnd.png
-%%DATADIR%%/data/iconsets/crystal/16x16/error.png
-%%DATADIR%%/data/iconsets/crystal/16x16/event.gif
-%%DATADIR%%/data/iconsets/crystal/16x16/invisible.png
-%%DATADIR%%/data/iconsets/crystal/16x16/muc_active.png
-%%DATADIR%%/data/iconsets/crystal/16x16/muc_inactive.png
-%%DATADIR%%/data/iconsets/crystal/16x16/not_in_roster.png
-%%DATADIR%%/data/iconsets/crystal/16x16/offline.png
-%%DATADIR%%/data/iconsets/crystal/16x16/online.png
-%%DATADIR%%/data/iconsets/crystal/16x16/opened.png
-%%DATADIR%%/data/iconsets/crystal/16x16/requested.png
-%%DATADIR%%/data/iconsets/crystal/16x16/xa.png
-%%DATADIR%%/data/iconsets/crystal/32x32/muc_active.png
-%%DATADIR%%/data/iconsets/crystal/32x32/muc_inactive.png
-%%DATADIR%%/data/iconsets/crystal/48x48/offline.png
-%%DATADIR%%/data/iconsets/crystal/48x48/online.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/away.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/chat.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/closed.png
@@ -425,26 +379,6 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/goojim/32x32/xa.png
 %%DATADIR%%/data/iconsets/goojim/48x48/offline.png
 %%DATADIR%%/data/iconsets/goojim/48x48/online.png
-%%DATADIR%%/data/iconsets/gossip/16x16/away.png
-%%DATADIR%%/data/iconsets/gossip/16x16/chat.png
-%%DATADIR%%/data/iconsets/gossip/16x16/closed.png
-%%DATADIR%%/data/iconsets/gossip/16x16/connecting.gif
-%%DATADIR%%/data/iconsets/gossip/16x16/dnd.png
-%%DATADIR%%/data/iconsets/gossip/16x16/error.png
-%%DATADIR%%/data/iconsets/gossip/16x16/event.png
-%%DATADIR%%/data/iconsets/gossip/16x16/invisible.png
-%%DATADIR%%/data/iconsets/gossip/16x16/muc_active.png
-%%DATADIR%%/data/iconsets/gossip/16x16/muc_inactive.png
-%%DATADIR%%/data/iconsets/gossip/16x16/not_in_roster.png
-%%DATADIR%%/data/iconsets/gossip/16x16/offline.png
-%%DATADIR%%/data/iconsets/gossip/16x16/online.png
-%%DATADIR%%/data/iconsets/gossip/16x16/opened.png
-%%DATADIR%%/data/iconsets/gossip/16x16/requested.png
-%%DATADIR%%/data/iconsets/gossip/16x16/xa.png
-%%DATADIR%%/data/iconsets/gossip/32x32/muc_active.png
-%%DATADIR%%/data/iconsets/gossip/32x32/muc_inactive.png
-%%DATADIR%%/data/iconsets/gossip/48x48/offline.png
-%%DATADIR%%/data/iconsets/gossip/48x48/online.png
 %%DATADIR%%/data/iconsets/gota/16x16/away.png
 %%DATADIR%%/data/iconsets/gota/16x16/chat.png
 %%DATADIR%%/data/iconsets/gota/16x16/closed.png
@@ -509,66 +443,6 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/jabberbulb/32x32/xa.png
 %%DATADIR%%/data/iconsets/jabberbulb/48x48/offline.png
 %%DATADIR%%/data/iconsets/jabberbulb/48x48/online.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/away.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/chat.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/closed.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/connecting.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/dnd.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/error.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/event.gif
-%%DATADIR%%/data/iconsets/nuvola/16x16/invisible.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/muc_active.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/muc_inactive.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/not_in_roster.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/offline.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/online.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/opened.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/requested.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/xa.png
-%%DATADIR%%/data/iconsets/nuvola/32x32/muc_active.png
-%%DATADIR%%/data/iconsets/nuvola/32x32/muc_inactive.png
-%%DATADIR%%/data/iconsets/nuvola/48x48/offline.png
-%%DATADIR%%/data/iconsets/nuvola/48x48/online.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/away.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/chat.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/closed.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/connecting.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/dnd.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/error.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/event.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/invisible.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/muc_active.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/muc_inactive.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/not_in_roster.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/offline.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/online.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/opened.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/requested.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/xa.png
-%%DATADIR%%/data/iconsets/simplebulb/32x32/muc_active.png
-%%DATADIR%%/data/iconsets/simplebulb/32x32/muc_inactive.png
-%%DATADIR%%/data/iconsets/simplebulb/48x48/offline.png
-%%DATADIR%%/data/iconsets/simplebulb/48x48/online.png
-%%DATADIR%%/data/iconsets/stellar/16x16/away.png
-%%DATADIR%%/data/iconsets/stellar/16x16/chat.png
-%%DATADIR%%/data/iconsets/stellar/16x16/closed.png
-%%DATADIR%%/data/iconsets/stellar/16x16/connecting.gif
-%%DATADIR%%/data/iconsets/stellar/16x16/dnd.png
-%%DATADIR%%/data/iconsets/stellar/16x16/error.png
-%%DATADIR%%/data/iconsets/stellar/16x16/event.gif
-%%DATADIR%%/data/iconsets/stellar/16x16/invisible.png
-%%DATADIR%%/data/iconsets/stellar/16x16/muc_active.png
-%%DATADIR%%/data/iconsets/stellar/16x16/muc_inactive.png
-%%DATADIR%%/data/iconsets/stellar/16x16/not_in_roster.png
-%%DATADIR%%/data/iconsets/stellar/16x16/offline.png
-%%DATADIR%%/data/iconsets/stellar/16x16/online.png
-%%DATADIR%%/data/iconsets/stellar/16x16/opened.png
-%%DATADIR%%/data/iconsets/stellar/16x16/requested.png
-%%DATADIR%%/data/iconsets/stellar/16x16/xa.png
-%%DATADIR%%/data/iconsets/stellar/32x32/muc_active.png
-%%DATADIR%%/data/iconsets/stellar/32x32/muc_inactive.png
-%%DATADIR%%/data/iconsets/stellar/48x48/offline.png
-%%DATADIR%%/data/iconsets/stellar/48x48/online.png
 %%DATADIR%%/data/iconsets/sun/16x16/away.png
 %%DATADIR%%/data/iconsets/sun/16x16/chat.png
 %%DATADIR%%/data/iconsets/sun/16x16/closed.png
@@ -767,6 +641,46 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/xa.png
 %%DATADIR%%/data/iconsets/transports/yahoo/48x48/offline.png
 %%DATADIR%%/data/iconsets/transports/yahoo/48x48/online.png
+%%DATADIR%%/data/iconsets/wroop/16x16/away.png
+%%DATADIR%%/data/iconsets/wroop/16x16/chat.png
+%%DATADIR%%/data/iconsets/wroop/16x16/closed.png
+%%DATADIR%%/data/iconsets/wroop/16x16/connecting.gif
+%%DATADIR%%/data/iconsets/wroop/16x16/dnd.png
+%%DATADIR%%/data/iconsets/wroop/16x16/error.png
+%%DATADIR%%/data/iconsets/wroop/16x16/event.gif
+%%DATADIR%%/data/iconsets/wroop/16x16/invisible.png
+%%DATADIR%%/data/iconsets/wroop/16x16/muc_active.png
+%%DATADIR%%/data/iconsets/wroop/16x16/muc_inactive.png
+%%DATADIR%%/data/iconsets/wroop/16x16/not_in_roster.png
+%%DATADIR%%/data/iconsets/wroop/16x16/offline.png
+%%DATADIR%%/data/iconsets/wroop/16x16/online.png
+%%DATADIR%%/data/iconsets/wroop/16x16/opened.png
+%%DATADIR%%/data/iconsets/wroop/16x16/requested.png
+%%DATADIR%%/data/iconsets/wroop/16x16/xa.png
+%%DATADIR%%/data/iconsets/wroop/32x32/away.png
+%%DATADIR%%/data/iconsets/wroop/32x32/chat.png
+%%DATADIR%%/data/iconsets/wroop/32x32/dnd.png
+%%DATADIR%%/data/iconsets/wroop/32x32/error.png
+%%DATADIR%%/data/iconsets/wroop/32x32/invisible.png
+%%DATADIR%%/data/iconsets/wroop/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/wroop/32x32/muc_inactive.png
+%%DATADIR%%/data/iconsets/wroop/32x32/not_in_roster.png
+%%DATADIR%%/data/iconsets/wroop/32x32/offline.png
+%%DATADIR%%/data/iconsets/wroop/32x32/online.png
+%%DATADIR%%/data/iconsets/wroop/32x32/requested.png
+%%DATADIR%%/data/iconsets/wroop/32x32/xa.png
+%%DATADIR%%/data/iconsets/wroop/48x48/away.png
+%%DATADIR%%/data/iconsets/wroop/48x48/chat.png
+%%DATADIR%%/data/iconsets/wroop/48x48/dnd.png
+%%DATADIR%%/data/iconsets/wroop/48x48/error.png
+%%DATADIR%%/data/iconsets/wroop/48x48/invisible.png
+%%DATADIR%%/data/iconsets/wroop/48x48/muc_active.png
+%%DATADIR%%/data/iconsets/wroop/48x48/muc_inactive.png
+%%DATADIR%%/data/iconsets/wroop/48x48/not_in_roster.png
+%%DATADIR%%/data/iconsets/wroop/48x48/offline.png
+%%DATADIR%%/data/iconsets/wroop/48x48/online.png
+%%DATADIR%%/data/iconsets/wroop/48x48/requested.png
+%%DATADIR%%/data/iconsets/wroop/48x48/xa.png
 %%DATADIR%%/data/moods/default/afraid.png
 %%DATADIR%%/data/moods/default/amazed.png
 %%DATADIR%%/data/moods/default/amorous.png
@@ -901,6 +815,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/security-low-big.png
 %%DATADIR%%/data/pixmaps/security-low.png
 %%DATADIR%%/data/pixmaps/upload.png
+%%DATADIR%%/data/pixmaps/warning.png
 %%DATADIR%%/data/sounds/bounce.wav
 %%DATADIR%%/data/sounds/connected.wav
 %%DATADIR%%/data/sounds/disconnected.wav
@@ -912,9 +827,9 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/adhoc_commands.py
 %%DATADIR%%/src/adhoc_commands.pyc
 %%DATADIR%%/src/adhoc_commands.pyo
-%%DATADIR%%/src/advanced.py
-%%DATADIR%%/src/advanced.pyc
-%%DATADIR%%/src/advanced.pyo
+%%DATADIR%%/src/advanced_configuration_window.py
+%%DATADIR%%/src/advanced_configuration_window.pyc
+%%DATADIR%%/src/advanced_configuration_window.pyo
 %%DATADIR%%/src/atom_window.py
 %%DATADIR%%/src/atom_window.pyc
 %%DATADIR%%/src/atom_window.pyo
@@ -924,6 +839,36 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/chat_control.py
 %%DATADIR%%/src/chat_control.pyc
 %%DATADIR%%/src/chat_control.pyo
+%%DATADIR%%/src/command_system/__init__.py
+%%DATADIR%%/src/command_system/__init__.pyc
+%%DATADIR%%/src/command_system/__init__.pyo
+%%DATADIR%%/src/command_system/dispatching.py
+%%DATADIR%%/src/command_system/dispatching.pyc
+%%DATADIR%%/src/command_system/dispatching.pyo
+%%DATADIR%%/src/command_system/errors.py
+%%DATADIR%%/src/command_system/errors.pyc
+%%DATADIR%%/src/command_system/errors.pyo
+%%DATADIR%%/src/command_system/framework.py
+%%DATADIR%%/src/command_system/framework.pyc
+%%DATADIR%%/src/command_system/framework.pyo
+%%DATADIR%%/src/command_system/implementation/__init__.py
+%%DATADIR%%/src/command_system/implementation/__init__.pyc
+%%DATADIR%%/src/command_system/implementation/__init__.pyo
+%%DATADIR%%/src/command_system/implementation/custom.py
+%%DATADIR%%/src/command_system/implementation/custom.pyc
+%%DATADIR%%/src/command_system/implementation/custom.pyo
+%%DATADIR%%/src/command_system/implementation/hosts.py
+%%DATADIR%%/src/command_system/implementation/hosts.pyc
+%%DATADIR%%/src/command_system/implementation/hosts.pyo
+%%DATADIR%%/src/command_system/implementation/middleware.py
+%%DATADIR%%/src/command_system/implementation/middleware.pyc
+%%DATADIR%%/src/command_system/implementation/middleware.pyo
+%%DATADIR%%/src/command_system/implementation/standard.py
+%%DATADIR%%/src/command_system/implementation/standard.pyc
+%%DATADIR%%/src/command_system/implementation/standard.pyo
+%%DATADIR%%/src/command_system/mapping.py
+%%DATADIR%%/src/command_system/mapping.pyc
+%%DATADIR%%/src/command_system/mapping.pyo
 %%DATADIR%%/src/common/GnuPG.py
 %%DATADIR%%/src/common/GnuPG.pyc
 %%DATADIR%%/src/common/GnuPG.pyo
@@ -993,15 +938,21 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/common/i18n.py
 %%DATADIR%%/src/common/i18n.pyc
 %%DATADIR%%/src/common/i18n.pyo
+%%DATADIR%%/src/common/idle.py
+%%DATADIR%%/src/common/idle.pyc
+%%DATADIR%%/src/common/idle.pyo
+%%DATADIR%%/src/common/kwalletbinding.py
+%%DATADIR%%/src/common/kwalletbinding.pyc
+%%DATADIR%%/src/common/kwalletbinding.pyo
 %%DATADIR%%/src/common/latex.py
 %%DATADIR%%/src/common/latex.pyc
 %%DATADIR%%/src/common/latex.pyo
 %%DATADIR%%/src/common/logger.py
 %%DATADIR%%/src/common/logger.pyc
 %%DATADIR%%/src/common/logger.pyo
-%%DATADIR%%/src/common/nslookup.py
-%%DATADIR%%/src/common/nslookup.pyc
-%%DATADIR%%/src/common/nslookup.pyo
+%%DATADIR%%/src/common/logging_helpers.py
+%%DATADIR%%/src/common/logging_helpers.pyc
+%%DATADIR%%/src/common/logging_helpers.pyo
 %%DATADIR%%/src/common/optparser.py
 %%DATADIR%%/src/common/optparser.pyc
 %%DATADIR%%/src/common/optparser.pyo
@@ -1017,6 +968,9 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/common/pubsub.py
 %%DATADIR%%/src/common/pubsub.pyc
 %%DATADIR%%/src/common/pubsub.pyo
+%%DATADIR%%/src/common/resolver.py
+%%DATADIR%%/src/common/resolver.pyc
+%%DATADIR%%/src/common/resolver.pyo
 %%DATADIR%%/src/common/rst_xhtml_generator.py
 %%DATADIR%%/src/common/rst_xhtml_generator.pyc
 %%DATADIR%%/src/common/rst_xhtml_generator.pyo
@@ -1032,72 +986,51 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/common/xmpp/__init__.py
 %%DATADIR%%/src/common/xmpp/__init__.pyc
 %%DATADIR%%/src/common/xmpp/__init__.pyo
-%%DATADIR%%/src/common/xmpp/auth.py
-%%DATADIR%%/src/common/xmpp/auth.pyc
-%%DATADIR%%/src/common/xmpp/auth.pyo
 %%DATADIR%%/src/common/xmpp/auth_nb.py
 %%DATADIR%%/src/common/xmpp/auth_nb.pyc
 %%DATADIR%%/src/common/xmpp/auth_nb.pyo
-%%DATADIR%%/src/common/xmpp/browser.py
-%%DATADIR%%/src/common/xmpp/browser.pyc
-%%DATADIR%%/src/common/xmpp/browser.pyo
+%%DATADIR%%/src/common/xmpp/bosh.py
+%%DATADIR%%/src/common/xmpp/bosh.pyc
+%%DATADIR%%/src/common/xmpp/bosh.pyo
 %%DATADIR%%/src/common/xmpp/c14n.py
 %%DATADIR%%/src/common/xmpp/c14n.pyc
 %%DATADIR%%/src/common/xmpp/c14n.pyo
-%%DATADIR%%/src/common/xmpp/client.py
-%%DATADIR%%/src/common/xmpp/client.pyc
-%%DATADIR%%/src/common/xmpp/client.pyo
 %%DATADIR%%/src/common/xmpp/client_nb.py
 %%DATADIR%%/src/common/xmpp/client_nb.pyc
 %%DATADIR%%/src/common/xmpp/client_nb.pyo
-%%DATADIR%%/src/common/xmpp/commands.py
-%%DATADIR%%/src/common/xmpp/commands.pyc
-%%DATADIR%%/src/common/xmpp/commands.pyo
-%%DATADIR%%/src/common/xmpp/debug.py
-%%DATADIR%%/src/common/xmpp/debug.pyc
-%%DATADIR%%/src/common/xmpp/debug.pyo
-%%DATADIR%%/src/common/xmpp/dispatcher.py
-%%DATADIR%%/src/common/xmpp/dispatcher.pyc
-%%DATADIR%%/src/common/xmpp/dispatcher.pyo
 %%DATADIR%%/src/common/xmpp/dispatcher_nb.py
 %%DATADIR%%/src/common/xmpp/dispatcher_nb.pyc
 %%DATADIR%%/src/common/xmpp/dispatcher_nb.pyo
-%%DATADIR%%/src/common/xmpp/features.py
-%%DATADIR%%/src/common/xmpp/features.pyc
-%%DATADIR%%/src/common/xmpp/features.pyo
 %%DATADIR%%/src/common/xmpp/features_nb.py
 %%DATADIR%%/src/common/xmpp/features_nb.pyc
 %%DATADIR%%/src/common/xmpp/features_nb.pyo
-%%DATADIR%%/src/common/xmpp/filetransfer.py
-%%DATADIR%%/src/common/xmpp/filetransfer.pyc
-%%DATADIR%%/src/common/xmpp/filetransfer.pyo
 %%DATADIR%%/src/common/xmpp/idlequeue.py
 %%DATADIR%%/src/common/xmpp/idlequeue.pyc
 %%DATADIR%%/src/common/xmpp/idlequeue.pyo
+%%DATADIR%%/src/common/xmpp/plugin.py
+%%DATADIR%%/src/common/xmpp/plugin.pyc
+%%DATADIR%%/src/common/xmpp/plugin.pyo
 %%DATADIR%%/src/common/xmpp/protocol.py
 %%DATADIR%%/src/common/xmpp/protocol.pyc
 %%DATADIR%%/src/common/xmpp/protocol.pyo
-%%DATADIR%%/src/common/xmpp/roster.py
-%%DATADIR%%/src/common/xmpp/roster.pyc
-%%DATADIR%%/src/common/xmpp/roster.pyo
+%%DATADIR%%/src/common/xmpp/proxy_connectors.py
+%%DATADIR%%/src/common/xmpp/proxy_connectors.pyc
+%%DATADIR%%/src/common/xmpp/proxy_connectors.pyo
 %%DATADIR%%/src/common/xmpp/roster_nb.py
 %%DATADIR%%/src/common/xmpp/roster_nb.pyc
 %%DATADIR%%/src/common/xmpp/roster_nb.pyo
-%%DATADIR%%/src/common/xmpp/session.py
-%%DATADIR%%/src/common/xmpp/session.pyc
-%%DATADIR%%/src/common/xmpp/session.pyo
 %%DATADIR%%/src/common/xmpp/simplexml.py
 %%DATADIR%%/src/common/xmpp/simplexml.pyc
 %%DATADIR%%/src/common/xmpp/simplexml.pyo
-%%DATADIR%%/src/common/xmpp/transports.py
-%%DATADIR%%/src/common/xmpp/transports.pyc
-%%DATADIR%%/src/common/xmpp/transports.pyo
+%%DATADIR%%/src/common/xmpp/stringprepare.py
+%%DATADIR%%/src/common/xmpp/stringprepare.pyc
+%%DATADIR%%/src/common/xmpp/stringprepare.pyo
+%%DATADIR%%/src/common/xmpp/tls_nb.py
+%%DATADIR%%/src/common/xmpp/tls_nb.pyc
+%%DATADIR%%/src/common/xmpp/tls_nb.pyo
 %%DATADIR%%/src/common/xmpp/transports_nb.py
 %%DATADIR%%/src/common/xmpp/transports_nb.pyc
 %%DATADIR%%/src/common/xmpp/transports_nb.pyo
-%%DATADIR%%/src/common/xmpp_stringprep.py
-%%DATADIR%%/src/common/xmpp_stringprep.pyc
-%%DATADIR%%/src/common/xmpp_stringprep.pyo
 %%DATADIR%%/src/common/zeroconf/__init__.py
 %%DATADIR%%/src/common/zeroconf/__init__.pyc
 %%DATADIR%%/src/common/zeroconf/__init__.pyo
@@ -1164,6 +1097,12 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/gtkgui_helpers.py
 %%DATADIR%%/src/gtkgui_helpers.pyc
 %%DATADIR%%/src/gtkgui_helpers.pyo
+%%DATADIR%%/src/gtkspell.py
+%%DATADIR%%/src/gtkspell.pyc
+%%DATADIR%%/src/gtkspell.pyo
+%%DATADIR%%/src/gui_menu_builder.py
+%%DATADIR%%/src/gui_menu_builder.pyc
+%%DATADIR%%/src/gui_menu_builder.pyo
 %%DATADIR%%/src/history_manager.py
 %%DATADIR%%/src/history_manager.pyc
 %%DATADIR%%/src/history_manager.pyo
@@ -1224,136 +1163,146 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/vcard.py
 %%DATADIR%%/src/vcard.pyc
 %%DATADIR%%/src/vcard.pyo
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.html
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/THANKS.artists
-@dirrm lib/gajim
-@dirrmtry share/applications
+%%NLS%%share/locale/be/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/be@latin/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/br/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/el/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/no/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gajim.mo
+%%NLS%%%%NLS%%share/locale/sr/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/sr@Latn/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
+share/pixmaps/gajim.png
+share/pixmaps/gajim.svg
+share/pixmaps/gajim_about.png
 %%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be@latin
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
-@dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common/zeroconf
+@dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common
+@dirrm %%DATADIR%%/src/command_system/implementation
+@dirrm %%DATADIR%%/src/command_system
 @dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/data/glade
-@dirrm %%DATADIR%%/data/pixmaps/agents
+@dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data/pixmaps/events
+@dirrm %%DATADIR%%/data/pixmaps/agents
 @dirrm %%DATADIR%%/data/pixmaps
+@dirrm %%DATADIR%%/data/other
 @dirrm %%DATADIR%%/data/moods/default
 @dirrm %%DATADIR%%/data/moods
-@dirrm %%DATADIR%%/data/activities/default/doing_chores
-@dirrm %%DATADIR%%/data/activities/default/drinking
-@dirrm %%DATADIR%%/data/activities/default/eating
-@dirrm %%DATADIR%%/data/activities/default/exercising
-@dirrm %%DATADIR%%/data/activities/default/grooming
-@dirrm %%DATADIR%%/data/activities/default/having_appointment
-@dirrm %%DATADIR%%/data/activities/default/inactive
-@dirrm %%DATADIR%%/data/activities/default/relaxing
-@dirrm %%DATADIR%%/data/activities/default/talking
-@dirrm %%DATADIR%%/data/activities/default/traveling
-@dirrm %%DATADIR%%/data/activities/default/unknown
-@dirrm %%DATADIR%%/data/activities/default/working
-@dirrm %%DATADIR%%/data/activities/default
-@dirrm %%DATADIR%%/data/activities
-@dirrm %%DATADIR%%/data/other
-@dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/emoticons/animated
-@dirrm %%DATADIR%%/data/emoticons/static
-@dirrm %%DATADIR%%/data/emoticons/static-big
-@dirrm %%DATADIR%%/data/emoticons
-@dirrm %%DATADIR%%/data/iconsets/crystal/16x16
-@dirrm %%DATADIR%%/data/iconsets/crystal/32x32
-@dirrm %%DATADIR%%/data/iconsets/crystal/48x48
-@dirrm %%DATADIR%%/data/iconsets/crystal
-@dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
-@dirrm %%DATADIR%%/data/iconsets/dcraven/32x32
-@dirrm %%DATADIR%%/data/iconsets/dcraven/48x48
-@dirrm %%DATADIR%%/data/iconsets/dcraven
-@dirrm %%DATADIR%%/data/iconsets/gnome/16x16
-@dirrm %%DATADIR%%/data/iconsets/gnome/32x32
-@dirrm %%DATADIR%%/data/iconsets/gnome/48x48
-@dirrm %%DATADIR%%/data/iconsets/gnome
-@dirrm %%DATADIR%%/data/iconsets/goojim/16x16
-@dirrm %%DATADIR%%/data/iconsets/goojim/32x32
-@dirrm %%DATADIR%%/data/iconsets/goojim/48x48
-@dirrm %%DATADIR%%/data/iconsets/goojim
-@dirrm %%DATADIR%%/data/iconsets/gossip/16x16
-@dirrm %%DATADIR%%/data/iconsets/gossip/32x32
-@dirrm %%DATADIR%%/data/iconsets/gossip/48x48
-@dirrm %%DATADIR%%/data/iconsets/gossip
-@dirrm %%DATADIR%%/data/iconsets/gota/16x16
-@dirrm %%DATADIR%%/data/iconsets/gota/32x32
-@dirrm %%DATADIR%%/data/iconsets/gota/48x48
-@dirrm %%DATADIR%%/data/iconsets/gota
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/16x16
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/32x32
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/48x48
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb
-@dirrm %%DATADIR%%/data/iconsets/nuvola/16x16
-@dirrm %%DATADIR%%/data/iconsets/nuvola/32x32
-@dirrm %%DATADIR%%/data/iconsets/nuvola/48x48
-@dirrm %%DATADIR%%/data/iconsets/nuvola
-@dirrm %%DATADIR%%/data/iconsets/simplebulb/16x16
-@dirrm %%DATADIR%%/data/iconsets/simplebulb/32x32
-@dirrm %%DATADIR%%/data/iconsets/simplebulb/48x48
-@dirrm %%DATADIR%%/data/iconsets/simplebulb
-@dirrm %%DATADIR%%/data/iconsets/stellar/16x16
-@dirrm %%DATADIR%%/data/iconsets/stellar/32x32
-@dirrm %%DATADIR%%/data/iconsets/stellar/48x48
-@dirrm %%DATADIR%%/data/iconsets/stellar
-@dirrm %%DATADIR%%/data/iconsets/sun/16x16
-@dirrm %%DATADIR%%/data/iconsets/sun/32x32
-@dirrm %%DATADIR%%/data/iconsets/sun/48x48
-@dirrm %%DATADIR%%/data/iconsets/sun
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/aim
+@dirrm %%DATADIR%%/data/iconsets/wroop/48x48
+@dirrm %%DATADIR%%/data/iconsets/wroop/32x32
+@dirrm %%DATADIR%%/data/iconsets/wroop/16x16
+@dirrm %%DATADIR%%/data/iconsets/wroop
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo
+@dirrm %%DATADIR%%/data/iconsets/transports/weather/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/weather/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/weather
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen
+@dirrm %%DATADIR%%/data/iconsets/transports/sms/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/sms/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/sms
+@dirrm %%DATADIR%%/data/iconsets/transports/msn/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/msn/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/msn/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/msn
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim
+@dirrm %%DATADIR%%/data/iconsets/transports/irc/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/irc/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/irc
+@dirrm %%DATADIR%%/data/iconsets/transports/icq/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/icq/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/icq/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/icq
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu
 @dirrm %%DATADIR%%/data/iconsets/transports/facebook/48x48
 @dirrm %%DATADIR%%/data/iconsets/transports/facebook/32x32
 @dirrm %%DATADIR%%/data/iconsets/transports/facebook/16x16
 @dirrm %%DATADIR%%/data/iconsets/transports/facebook
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/icq
-@dirrm %%DATADIR%%/data/iconsets/transports/irc/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/irc/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/irc
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/msn
-@dirrm %%DATADIR%%/data/iconsets/transports/sms/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/sms/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/sms
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen
-@dirrm %%DATADIR%%/data/iconsets/transports/weather/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/weather/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/weather
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo
+@dirrm %%DATADIR%%/data/iconsets/transports/aim/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/aim/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/aim/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/aim
 @dirrm %%DATADIR%%/data/iconsets/transports
+@dirrm %%DATADIR%%/data/iconsets/sun/48x48
+@dirrm %%DATADIR%%/data/iconsets/sun/32x32
+@dirrm %%DATADIR%%/data/iconsets/sun/16x16
+@dirrm %%DATADIR%%/data/iconsets/sun
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb/48x48
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb/32x32
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb/16x16
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb
+@dirrm %%DATADIR%%/data/iconsets/gota/48x48
+@dirrm %%DATADIR%%/data/iconsets/gota/32x32
+@dirrm %%DATADIR%%/data/iconsets/gota/16x16
+@dirrm %%DATADIR%%/data/iconsets/gota
+@dirrm %%DATADIR%%/data/iconsets/goojim/48x48
+@dirrm %%DATADIR%%/data/iconsets/goojim/32x32
+@dirrm %%DATADIR%%/data/iconsets/goojim/16x16
+@dirrm %%DATADIR%%/data/iconsets/goojim
+@dirrm %%DATADIR%%/data/iconsets/gnome/48x48
+@dirrm %%DATADIR%%/data/iconsets/gnome/32x32
+@dirrm %%DATADIR%%/data/iconsets/gnome/16x16
+@dirrm %%DATADIR%%/data/iconsets/gnome
+@dirrm %%DATADIR%%/data/iconsets/dcraven/48x48
+@dirrm %%DATADIR%%/data/iconsets/dcraven/32x32
+@dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
+@dirrm %%DATADIR%%/data/iconsets/dcraven
 @dirrm %%DATADIR%%/data/iconsets
+@dirrm %%DATADIR%%/data/glade
+@dirrm %%DATADIR%%/data/emoticons/static-big
+@dirrm %%DATADIR%%/data/emoticons/static
+@dirrm %%DATADIR%%/data/emoticons/animated
+@dirrm %%DATADIR%%/data/emoticons
+@dirrm %%DATADIR%%/data/activities/default/working
+@dirrm %%DATADIR%%/data/activities/default/unknown
+@dirrm %%DATADIR%%/data/activities/default/traveling
+@dirrm %%DATADIR%%/data/activities/default/talking
+@dirrm %%DATADIR%%/data/activities/default/relaxing
+@dirrm %%DATADIR%%/data/activities/default/inactive
+@dirrm %%DATADIR%%/data/activities/default/having_appointment
+@dirrm %%DATADIR%%/data/activities/default/grooming
+@dirrm %%DATADIR%%/data/activities/default/exercising
+@dirrm %%DATADIR%%/data/activities/default/eating
+@dirrm %%DATADIR%%/data/activities/default/drinking
+@dirrm %%DATADIR%%/data/activities/default/doing_chores
+@dirrm %%DATADIR%%/data/activities/default
+@dirrm %%DATADIR%%/data/activities
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrm lib/gajim
