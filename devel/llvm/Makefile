@@ -56,8 +56,8 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if ${ARCH} == "sparc64" || ${ARCH} =="ia64"
+BROKEN=		Does not compile on ${ARCH}
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
