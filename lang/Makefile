@@ -121,6 +121,7 @@
     SUBDIR += haskell-mode.el
     SUBDIR += hla
     SUBDIR += hope
+    SUBDIR += hs-brainfuck
     SUBDIR += huc
     SUBDIR += hugs
     SUBDIR += icc
