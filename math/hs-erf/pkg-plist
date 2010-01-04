@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%ERF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Number/Erf.hi
+%%ERF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSerf-%%ERF_VERSION%%.o
+%%ERF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSerf-%%ERF_VERSION%%.a
+%%ERF_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%ERF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Number
+@dirrm %%ERF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%ERF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%ERF_LIBDIR_REL%%
+@exec /bin/sh %D/%%ERF_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister erf
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
