@@ -561,6 +561,7 @@
     SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
     SUBDIR += hs-uulib
+    SUBDIR += hs-uvector
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-gcc

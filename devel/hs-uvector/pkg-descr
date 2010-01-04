@@ -1,0 +1,7 @@
+Fast unboxed arrays with a flexible interface for Haskell. The library is
+built of fusible combinators, as described in the paper "Stream Fusion:
+From Lists to Streams to Nothing at All".
+
+For best results, compile with your user programs with -O2 -fvia-C -optc-O3.
+
+WWW: http://code.haskell.org/~dons/code/uvector
