@@ -9,7 +9,6 @@ libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%DATADIR%%/ui.bdf
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
