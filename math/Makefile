@@ -112,6 +112,7 @@
     SUBDIR += gsl
     SUBDIR += guppi
     SUBDIR += hexcalc
+    SUBDIR += hs-Agda
     SUBDIR += hs-category-extras
     SUBDIR += igraph
     SUBDIR += isabelle
