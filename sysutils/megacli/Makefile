@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	megacli
-PORTVERSION=	4.00.11
-PORTREVISION=	1
+PORTVERSION=	5.00.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/
 DISTNAME=	${PORTVERSION}_FreeBSD_MegaCLI
 
 MAINTAINER=	samflanker@gmail.com
-COMMENT=	MegaCLI SAS RAID Management Tool
+COMMENT=	SAS MegaRAID FreeBSD MegaCLI
 
 ONLY_FOR_ARCHS=	i386 amd64
 IA32_BINARY_PORT=	yes
