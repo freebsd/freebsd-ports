@@ -6,20 +6,19 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.4.3
+PORTVERSION=	5.5.0
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	MySQL-5.4
+MASTER_SITE_SUBDIR=	MySQL-5.5
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
+DISTNAME=	${PORTNAME}-${PORTVERSION}-m2
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-SLAVEDIRS=	databases/mysql54-client databases/mysql54-scripts
+SLAVEDIRS=	databases/mysql55-client databases/mysql55-scripts
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
@@ -94,11 +93,11 @@ CXXFLAGS+=	-fno-exceptions
 # MySQL-Server part
 .if !defined(CLIENT_ONLY) && !defined(SCRIPTS_ONLY)
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	54
+WANT_MYSQL_VER=	55
 
-LATEST_LINK=	mysql54-server
+LATEST_LINK=	mysql55-server
 
-CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.[01].* mysql-server-6.*
+CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.[0-46-9].* mysql-server-6.*
 
 USE_RC_SUBR=	mysql-server.sh
 
@@ -148,7 +147,7 @@ pre-fetch:
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ sql-common @sql_server_dirs@ libmysql storage scripts @sql_server@ @man_dirs@ @libmysqld_dirs@ support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ sql-common scripts libservices @sql_server_dirs@ libmysql @sql_server@ @man_dirs@ @libmysqld_dirs@ support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql mysql_system_tables.sql mysql_system_tables_data.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
@@ -169,9 +168,9 @@ post-install:
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
-LATEST_LINK=	mysql54-client
+LATEST_LINK=	mysql55-client
 
-CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.[01].* mysql-client-6.*
+CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.[0-46-9].* mysql-client-6.*
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \
@@ -182,7 +181,7 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 CONFIGURE_ARGS+=--without-server
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include sql-common scripts strings regex mysys dbug extra libmysql libmysql_r client @man_dirs@|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include sql-common scripts @sql_client_dirs@ @man_dirs@|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLIBRARIES|install-exec-am:|g" ${WRKSRC}/strings/Makefile.in ${WRKSRC}/mysys/Makefile.in ${WRKSRC}/dbug/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
@@ -195,16 +194,16 @@ post-install:
 .else
 # MySQL-Scripts part
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	54
+WANT_MYSQL_VER=	55
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql54
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql55
 .if ${PERL_LEVEL} <= 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
-LATEST_LINK=	mysql54-scripts
+LATEST_LINK=	mysql55-scripts
 
-CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.[01].* mysql-scripts-6.*
+CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.[0-46-9].* mysql-scripts-6.*
 
 MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_find_rows.1 \
 		mysql_fix_extensions.1 mysql_secure_installation.1 \

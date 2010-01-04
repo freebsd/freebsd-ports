@@ -39,6 +39,9 @@ include/mysql/mysqld_error.h
 include/mysql/plugin.h
 include/mysql/probes_mysql.h
 include/mysql/probes_mysql_nodtrace.h
+include/mysql/services.h
+include/mysql/service_my_snprintf.h
+include/mysql/service_thd_alloc.h
 include/mysql/sql_common.h
 include/mysql/sql_state.h
 include/mysql/sslopt-case.h

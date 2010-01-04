@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	Multithreaded SQL database (client)
 
-MASTERDIR=	${.CURDIR}/../mysql54-server
+MASTERDIR=	${.CURDIR}/../mysql55-server
 
 PKGINSTALL=	mustnotexist
 PKGMESSAGE=	mustnotexist
