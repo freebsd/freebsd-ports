@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.135
+PORTVERSION=	0.136
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/ \
-		http://rbelmont.mameworld.info/
+MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	SDL port of the popular MAME (Multi Arcade Machine Emulator)
 
-FETCH_ENV=	HTTP_USER_AGENT=defined
 USE_ZIP=	yes
 USE_XORG=	xext xrender xinerama xi
 USE_GL=		gl
