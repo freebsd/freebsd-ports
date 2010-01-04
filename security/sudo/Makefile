@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.6.9.20
+PORTVERSION=	1.7.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://obsd.isc.org/pub/sudo/ \
 		ftp://ftp.uwsg.indiana.edu/pub/security/sudo/ \
 		ftp://boulder.tele.dk/pub/sudo/ \
 		ftp://core.ring.gr.jp/pub/misc/sudo/ \
-		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	tmclaugh/sudo
-DISTNAME=	${PORTNAME}-1.6.9p20
+		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/
+DISTNAME=	${PORTNAME}-1.7.2p2
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -32,12 +31,15 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-long-otp-prompt \
 		--with-pam
 
-OPTIONS=	LDAP	"With LDAP support" off \
+OPTIONS=	LDAP "With LDAP support" off \
 		INSULTS "With all insults" off \
-		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off \
-		DISABLE_ROOT_SUDO	"Disable root sudo" off \
+		SHELL_SETS_HOME "Set HOME environment to target user in shell mode" off \
+		DISABLE_ROOT_SUDO "Disable root sudo" off \
 		DISABLE_AUTH "Disable authentication" off \
 		NOARGS_SHELL "Enable no arguments shell" off
+
+LOGFAC?=	local2
+CONFIGURE_ARGS+=--with-logfac=${LOGFAC}
 
 .include <bsd.port.pre.mk>
 
@@ -55,8 +57,10 @@ CONFIGURE_ARGS+=--with-all-insults
 .if defined(WITH_LDAP)
 USE_OPENLDAP=yes
 CONFIGURE_ARGS+=--with-ldap=${PREFIX}
-CONFIGURE_ARGS+=--with-ldap-conf-file=${PREFIX}/etc/ldap.conf
+SUDO_LDAP_CONF?=ldap.conf
+CONFIGURE_ARGS+=--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
 PLIST_SUB+=	LDAP=""
+MAN5+=	sudoers.ldap.5
 .else
 PLIST_SUB=	LDAP="@comment "
 .endif
@@ -77,7 +81,7 @@ CONFIGURE_ARGS+=--disable-authentication
 CONFIGURE_ARGS+=--enable-noargs-shell
 .endif
 
-MAN5=		sudoers.5
+MAN5+=		sudoers.5
 MAN8=		sudo.8 visudo.8
 MLINKS=		sudo.8 sudoedit.8
 
@@ -92,8 +96,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/BUGS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TROUBLESHOOTING ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/UPGRADE ${DOCSDIR}

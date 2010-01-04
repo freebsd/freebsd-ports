@@ -6,8 +6,7 @@ etc/pam.d/sudo.default
 etc/sudoers.default
 libexec/sudo_noexec.so
 sbin/visudo
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
