@@ -1,0 +1,7 @@
+This Haskell library allows exact computation with discrete random variables
+in terms of their distributions by using a monad.
+The monad is similar to the List monad for non-deterministic computations,
+but extends the List monad by a measure of probability.
+Small interface to R plotting.
+
+WWW: http://haskell.org/haskellwiki/Probabilistic_Functional_Programming
