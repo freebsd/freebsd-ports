@@ -118,6 +118,7 @@
     SUBDIR += hs-erf
     SUBDIR += hs-mwc-random
     SUBDIR += hs-probability
+    SUBDIR += hs-statistics
     SUBDIR += igraph
     SUBDIR += isabelle
     SUBDIR += itl
