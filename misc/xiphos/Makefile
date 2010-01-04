@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	xiphos
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.1.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
-RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell \
-		${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gal2 gtkhtml3 gnomelibs intlhack gnomedocutils
+INSTALLS_ICONS=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget gnomelibs gtkhtml3 \
+		intlhack libgsf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--disable-maintainer-mode --enable-paratab
+CONFIGURE_ARGS+=	--disable-maintainer-mode
 
-OPTIONS=	LIBXUL		"Build with libxul (default)" off \
-		GTKHTML		"Build with gtkhtml" off
+OPTIONS=	LIBXUL  "Build with libxul" on \
+		GTKHTML	"Build with gtkhtml" off \
 
 .include <bsd.port.pre.mk>
 
@@ -38,13 +37,12 @@ IGNORE=		choose only one of LIBXUL or GTKHTML
 .endif
 
 .if defined(WITH_GTKHTML) || defined(WITHOUT_LIBXUL)
-CONFIGURE_ARGS+=	--enable-gtkhtml --disable-gecko
+CONFIGURE_ARGS+=	--without-gecko
 .endif
 
 .if !defined(WITHOUT_LIBXUL) || !defined(WITH_GTKHTML)
 USE_GECKO=	libxul
-CONFIGURE_ARGS+=	--with-gecko=${GECKO} --disable-gtkhtml
-GTKHTML_CFLAGS+="-DXPCOM_GLUE"
+CONFIGURE_ARGS+=	--with-gecko=${GECKO} --with-gecko-home=${LOCALBASE}/lib/libxul
 .endif
 
 .include <bsd.port.post.mk>
