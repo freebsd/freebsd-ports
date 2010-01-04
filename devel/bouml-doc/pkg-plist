@@ -24,6 +24,7 @@
 %%DOCSDIR%%/content.html
 %%DOCSDIR%%/cppgenerator.html
 %%DOCSDIR%%/cppreverse.html
+%%DOCSDIR%%/cpproundtrip.html
 %%DOCSDIR%%/cpputil.html
 %%DOCSDIR%%/deploy.html
 %%DOCSDIR%%/deploymentdiagram.html
@@ -751,12 +752,14 @@
 %%DOCSDIR%%/figs/linegeo4.png
 %%DOCSDIR%%/figs/mark_menu.png
 %%DOCSDIR%%/figs/merge.png
+%%DOCSDIR%%/figs/messagestereotypes.png
 %%DOCSDIR%%/figs/misc_style_menu.png
 %%DOCSDIR%%/figs/misc_style_menu1.png
 %%DOCSDIR%%/figs/misc_style_menu2.png
 %%DOCSDIR%%/figs/multipleselectionmenu.png
 %%DOCSDIR%%/figs/multipleselectionmenu1.png
 %%DOCSDIR%%/figs/multipleselectionmenu2.png
+%%DOCSDIR%%/figs/multipleselectionmenu3.png
 %%DOCSDIR%%/figs/nodedrawing.png
 %%DOCSDIR%%/figs/nodedrawing_100.png
 %%DOCSDIR%%/figs/nodeedit1.png
@@ -991,6 +994,7 @@
 %%DOCSDIR%%/figs/stateactionpictmenu.png
 %%DOCSDIR%%/figs/stateactionstereotypes.png
 %%DOCSDIR%%/figs/stateactivity.png
+%%DOCSDIR%%/figs/statedecompindic.png
 %%DOCSDIR%%/figs/statediagram.png
 %%DOCSDIR%%/figs/statediagramdrawingsettings.png
 %%DOCSDIR%%/figs/statediagramdrawingsettings1.png
@@ -1031,6 +1035,7 @@
 %%DOCSDIR%%/figs/usecasedrawingsettings5.png
 %%DOCSDIR%%/figs/usecasedrawingsettings6.png
 %%DOCSDIR%%/figs/usecasedrawingsettings7.png
+%%DOCSDIR%%/figs/usecasedrawingsettings8.png
 %%DOCSDIR%%/figs/usecaseedit.png
 %%DOCSDIR%%/figs/usecasemenu.png
 %%DOCSDIR%%/figs/usecasepictmenu.png
@@ -1046,6 +1051,7 @@
 %%DOCSDIR%%/figs/usecaseviewdrawingsettings5.png
 %%DOCSDIR%%/figs/usecaseviewdrawingsettings6.png
 %%DOCSDIR%%/figs/usecaseviewdrawingsettings7.png
+%%DOCSDIR%%/figs/usecaseviewdrawingsettings8.png
 %%DOCSDIR%%/figs/usecaseviewedit.png
 %%DOCSDIR%%/figs/usecaseviewmenu.png
 %%DOCSDIR%%/figs/usecasewizard.png
@@ -1088,6 +1094,7 @@
 %%DOCSDIR%%/index_componentview.html
 %%DOCSDIR%%/index_cppgenerator.html
 %%DOCSDIR%%/index_cppreverse.html
+%%DOCSDIR%%/index_cpproundtrip.html
 %%DOCSDIR%%/index_cpputil.html
 %%DOCSDIR%%/index_deploy.html
 %%DOCSDIR%%/index_deploymentdiagram.html
