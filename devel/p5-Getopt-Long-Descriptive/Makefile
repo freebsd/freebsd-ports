@@ -7,6 +7,7 @@
 
 PORTNAME=	Getopt-Long-Descriptive
 PORTVERSION=	0.083
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,11 +21,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Getopt::Long::Descriptive::Opts.3 \
-  Getopt::Long::Descriptive.3 \
-  Getopt::Long::Descriptive::Usage.3 \
-  Getopt::Long::Descriptive::Opts.3 \
-  Getopt::Long::Descriptive.3 \
-  Getopt::Long::Descriptive::Usage.3
+MAN3=		Getopt::Long::Descriptive.3 \
+		Getopt::Long::Descriptive::Opts.3 \
+		Getopt::Long::Descriptive::Usage.3
 
 .include <bsd.port.mk>
