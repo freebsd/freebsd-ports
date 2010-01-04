@@ -115,6 +115,7 @@
     SUBDIR += hs-Agda
     SUBDIR += hs-Agda-executable
     SUBDIR += hs-category-extras
+    SUBDIR += hs-erf
     SUBDIR += igraph
     SUBDIR += isabelle
     SUBDIR += itl
