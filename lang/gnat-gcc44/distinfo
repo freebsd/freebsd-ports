@@ -16,3 +16,6 @@ SIZE (gnat-gcc44-boot-amd64-freebsd-7.tbz) = 51010737
 MD5 (gnat-gcc44-boot-amd64-freebsd-8.tbz) = bd3abd458a5a91a6f40d43ce00de8815
 SHA256 (gnat-gcc44-boot-amd64-freebsd-8.tbz) = 50fd26b3630807bcefb23e76003b6998f27405fc830936b81004aa18e11562d8
 SIZE (gnat-gcc44-boot-amd64-freebsd-8.tbz) = 54220591
+MD5 (gnat-gcc44-boot-i386-freebsd-8.tbz) = fee084e07acee08988f995bfbecbd950
+SHA256 (gnat-gcc44-boot-i386-freebsd-8.tbz) = 930e223950ab7b6f2d2b3e05d9f467a9cc4709d30a017144e638eabae132a414
+SIZE (gnat-gcc44-boot-i386-freebsd-8.tbz) = 51815579
