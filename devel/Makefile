@@ -525,6 +525,7 @@
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hptools
+    SUBDIR += hs-MonadCatchIO-mtl
     SUBDIR += hs-ObjectName
     SUBDIR += hs-QuickCheck
     SUBDIR += hs-StateVar
