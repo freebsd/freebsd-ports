@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
