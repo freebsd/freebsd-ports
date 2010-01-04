@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/agda
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -113,6 +113,7 @@
     SUBDIR += guppi
     SUBDIR += hexcalc
     SUBDIR += hs-Agda
+    SUBDIR += hs-Agda-executable
     SUBDIR += hs-category-extras
     SUBDIR += igraph
     SUBDIR += isabelle
