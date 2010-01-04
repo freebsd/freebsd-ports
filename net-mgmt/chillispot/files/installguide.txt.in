@@ -1,7 +1,7 @@
 			Installing Chillispot on FreeBSD
-				By Venture37
+				By Sevan Janiyan
 				www.geeklan.co.uk
-				venture37@geekla.co.uk 
+				venture37@geeklan.co.uk 
 
 
 This guide will cover how to get a basic Chillispot installation going with Apache 1.3 + mod_ssl, mySQL 4.1, freeRADIUS & OpenBSD's Packet Filter PF
@@ -26,32 +26,32 @@ goto {PORTSDIR}/www/apache13-modssl
 Answer the questions in each step & when you're finished you'll be given a summary of files & their functions
 Now copy those files from the summary by going to work/apache_1.X.XX/conf & copy the certs to your apache config directory 
 (replace X.XX with the relevant version number)
-cp work/apache_1.X.XX/conf/ssl.key/ca.key {PREFIX}/etc/apache/ssl.key/
-cp work/apache_1.XXX/conf/ssl.key/server.key {PREFIX}/etc/apache/ssl.key/
-cp work/apache_1.XXX/conf/ssl.crt/ca.crt {PREFIX}/etc/apache/ssl.crt/
-cp work/apache_1.XXX/conf/ssl.crt/server.crt {PREFIX}/etc/apache/ssl.crt/
-chmod 400 {PREFIX}/etc/apache/ssl.key/ca.key
-chmod 400 {PREFIX}/etc/apache/ssl.crt/ca.crt
+cp work/apache_1.X.XX/conf/ssl.key/ca.key %%PREFIX%%/etc/apache/ssl.key/
+cp work/apache_1.XXX/conf/ssl.key/server.key %%PREFIX%%/etc/apache/ssl.key/
+cp work/apache_1.XXX/conf/ssl.crt/ca.crt %%PREFIX%%/etc/apache/ssl.crt/
+cp work/apache_1.XXX/conf/ssl.crt/server.crt %%PREFIX%%/etc/apache/ssl.crt/
+chmod 400 %%PREFIX%%/etc/apache/ssl.key/ca.key
+chmod 400 %%PREFIX%%/etc/apache/ssl.crt/ca.crt
 
 Optional:
-rm {PREFIX}/etc/apache/ssl.key/snakeoil-*
-rm {PREFIX}/etc/apache/ssl.crt/snakeoil-*
-then goto  {PREFIX}/etc/apache/ssl.crt/ & delete the bunch of alphanumeric filenamed symbolic links
+rm %%PREFIX%%/etc/apache/ssl.key/snakeoil-*
+rm %%PREFIX%%/etc/apache/ssl.crt/snakeoil-*
+then goto  %%PREFIX%%/etc/apache/ssl.crt/ & delete the bunch of alphanumeric filenamed symbolic links
 
 4) Put Chillispots files into place:
-copy hotspotlogin.cgi from {PREFIX}/share/chillispot/ to {PREFIX}/www/cgi/
+copy hotspotlogin.cgi from %%PREFIX%%/share/chillispot/ to %%PREFIX%%/www/cgi/
 & make it executable:
-chmod 555 {PREFIX}/www/cgi-bin/hotspotlogin.cgi
+chmod 555 %%PREFIX%%/www/cgi-bin/hotspotlogin.cgi
 
 put chillispot.conf file into place
-cp {PREFIX}/share/chillispot/chilli.conf.sample {PREFIX}/etc/chilli.conf
+cp %%PREFIX%%/share/chillispot/chilli.conf.sample %%PREFIX%%/etc/chilli.conf
 
 freeRADIUS related files
-cp {PREFIX}/share/chillispot/dictionary.chillispot  {PREFIX}/etc/raddb/
-cp {PREFIX}/share/chillispot/freeradius.users  {PREFIX}/etc/raddb/
+cp %%PREFIX%%/share/chillispot/dictionary.chillispot  %%PREFIX%%/etc/raddb/
+cp %%PREFIX%%/share/chillispot/freeradius.users  %%PREFIX%%/etc/raddb/
 
 PF Config file
-cp {PREFIX}/share/chillispot/pf.conf.sample /etc/pf.conf
+cp %%PREFIX%%/share/chillispot/pf.conf.sample /etc/pf.conf
 
 5) Setup MySQL
 run ./mysql_install_db
@@ -66,10 +66,10 @@ quit;
 
 7) Import the freeRADIUS MySQL DB Schema
 by running the following:
-mysql -u dbusrname -p mydbname < {PREFIX}/share/doc/freeradius/examples/mysql.sql
+mysql -u dbusrname -p mydbname < %%PREFIX%%/share/doc/freeradius/examples/mysql.sql
 
 8) Configure freeRADIUS
-goto {PREFIX}/etc/raddb
+goto %%PREFIX%%/etc/raddb
 trim .sample from the end of the filenames off the following files:
 acct_users
 certs 
@@ -88,7 +88,7 @@ users
 
 9)  Before going ahead & configuring freeRADIUS to use MySQL 
 setup a basic account using the existing flatfiles to make sure everything is working so far
-edit {PREFIX}/etc/raddb/clients.conf
+edit %%PREFIX%%/etc/raddb/clients.conf
 & change the secret entry e.g:
 secret = s3cr3t
 
@@ -122,7 +122,7 @@ adduser: INFO: Successfully added (radiusd) to the user database.
 adduser: INFO: Password for (radiusd) is: blablabla123
 adduser: INFO: Account (radiusd) is locked.
 
-now edit  {PREFIX}/etc/raddb/radiusd.conf
+now edit  %%PREFIX%%/etc/raddb/radiusd.conf
 uncomment & change the user & group entries from
 #user = nobody to user = radiusd
 #group = nobody to group = radiusd
@@ -148,7 +148,7 @@ chown radiusd:radiusd /var/log/radutmp
 chown radiusd:radiusd /var/log/radwtmp
 
 10) Now fireup freeRADIUS in debug mode 
- by issuing {PREFIX}/sbin/radiusd -X
+ by issuing %%PREFIX%%/sbin/radiusd -X
 & using the radtest tool query freeRADIUS
 radtest steve testing localhost 1812 s3cr3t
 
@@ -175,7 +175,7 @@ radius          1812/udp   #RADIUS authentication protocol (IANA sanctioned)
 If everything went along ok without any errors edit users & remove the entries you added from chillispots freeradius.users files.
 
 11) Configuring freeRADIUS to use MySQL instead of flat files
-edit {PREFIX}/etc/raddb/sql.conf &
+edit %%PREFIX%%/etc/raddb/sql.conf &
 change the login, password & radius_db entries to those used in step 6
 then uncomment
  #sql_user_name = "%{Stripped-User-Name:-%{User-Name:-DEFAULT}}"
@@ -183,7 +183,7 @@ then uncomment
 if you'd like to use shortames (username minus realm) aswell as user@realm.f00 & :-DEFAULT
 then uncomment simul_count_query
 
-edit {PREFIX}/etc/raddb/radiusd.conf
+edit %%PREFIX%%/etc/raddb/radiusd.conf
 then uncomment sql in the Authorize {
 comment out unix in Authenticate {
 comment out files in preacct {
@@ -370,7 +370,7 @@ mysql> select * from radgroupreply;
 6 rows in set (0.00 sec)
 
 Test:
-{PREFIX}/bin/radtest fry walkingonsunshine localhost 1812 s3cr3t
+%%PREFIX%%/bin/radtest fry walkingonsunshine localhost 1812 s3cr3t
 Sending Access-Request of id 250 to 127.0.0.1 port 1812
         User-Name = "fry"
         User-Password = "walkingonsunshine"
@@ -386,7 +386,7 @@ rad_recv: Access-Accept packet from host 127.0.0.1:1812, id=250, length=106
         WISPr-Bandwidth-Max-Down = 512000
 
 13) Nearly There
-edit {PREFIX}/etc/chilli.conf 
+edit %%PREFIX%%/etc/chilli.conf 
 & change the dns1 & dns2 entries to your dns servers 
 (note, if you're not running a dns server locally you'll need to uncomment uamanydns)
 change radiusserver1 & radiusserver2 to localhost
@@ -395,7 +395,7 @@ e.g s3cr3t
 set dhcpif to your wifi card e.g ral0
 change uamserver to https://192.168.182.1/cgi-bin/hotspotlogin.cgi 
 (if you're not running a dns server locally, if you are use the fqdn)
-change the uamsecret to another value, then edit  {PREFIX}/www/cgi-bin/hotspotlogin.cgi & add the same value to $uamsecret
+change the uamsecret to another value, then edit  %%PREFIX%%/www/cgi-bin/hotspotlogin.cgi & add the same value to $uamsecret
 
 14) Finishing Stage 
 Edit /etc/pf.conf & make sure the $ext_if & $int_if are correct
@@ -417,10 +417,10 @@ this is enough for chilli to work:
 ifconfig_ral0="ssid chilli mediaopt hostap mode 11b"
 
 save & reboot or quit to back to the shell & run the following to get everything started
-{PREFIX}/etc/rc.d/chillispot start
-{PREFIX}/etc/rc.d/apache.sh start you'll be asked for the password that you assigned whilst generating the certs in the step 3
-{PREFIX}/etc/rc.d/mysql-server start
-{PREFIX}/etc/rc.d/radiusd start
+%%PREFIX%%/etc/rc.d/chillispot start
+%%PREFIX%%/etc/rc.d/apache.sh start you'll be asked for the password that you assigned whilst generating the certs in the step 3
+%%PREFIX%%/etc/rc.d/mysql-server start
+%%PREFIX%%/etc/rc.d/radiusd start
 pfctl -e
 pfctl -f /etc/pf.conf
 
