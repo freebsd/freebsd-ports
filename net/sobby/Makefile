@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sobby
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	net
 MASTER_SITES=	http://releases.0x539.de/sobby/
 
