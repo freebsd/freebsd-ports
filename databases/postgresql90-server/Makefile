@@ -46,9 +46,6 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_procs \
