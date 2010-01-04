@@ -7,44 +7,42 @@
 
 PORTNAME=	countdown
 PORTVERSION=	0.8
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-clocks gnome
-MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-
-DISTNAME=	Countdown-${PORTVERSION}
+DISTNAME=	juju-countdown-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Countdown the remaining time until a configurable date
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
-USE_XORG=	x11
+WRKSRC=		${WRKDIR}/juju-countdown
+
+NO_BUILD=	yes
 USE_PYTHON=	yes
 
-NAME=		Countdown
-DATADIR=	${PREFIX}/share
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	NAME="${NAME}"
 
-do-build:
-	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${WRKSRC}/Install_LTVFontSelector_Sensor.bin --nomsg ${WRKSRC}
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
-	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g' > ${PKGMESSAGE}
+DATADIR=	${PREFIX}/share/gdesklets
+NAME=		Countdown
 
 do-install:
-	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
-	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}
-	@${MKDIR} ${DATADIR}/gdesklets/Sensors/LTVFontSelector/
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/LTVFontSelector/*.py ${DATADIR}/gdesklets/Sensors/LTVFontSelector/
-	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/LTVFontSelector
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/LTVFontSelector
+	@${MKDIR} ${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/Displays/${NAME}/gfx
+	@${MKDIR} ${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/Sensors/${NAME}/*.py ${DATADIR}/Sensors/${NAME}
+	@${MKDIR} ${DATADIR}/Sensors/LTVFontSelector
+	${INSTALL_DATA} ${WRKSRC}/Sensors/LTVFontSelector/*.py ${DATADIR}/Sensors/LTVFontSelector
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/Sensors/${NAME}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/Sensors/${NAME}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/Sensors/LTVFontSelector
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/Sensors/LTVFontSelector
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
