@@ -15,7 +15,7 @@ MASTER_SITES=	https://libre2.adacore.com/GtkAda/ \
 DISTNAME=	GtkAda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hopet@ics.muni.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 binding for Ada
 
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
