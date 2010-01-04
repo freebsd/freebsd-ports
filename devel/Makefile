@@ -537,6 +537,7 @@
     SUBDIR += hs-cpphs
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
+    SUBDIR += hs-ghc-mtl
     SUBDIR += hs-ghc-paths
     SUBDIR += hs-ghc-paths-docs
     SUBDIR += hs-haddock
