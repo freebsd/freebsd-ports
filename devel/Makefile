@@ -547,6 +547,7 @@
     SUBDIR += hs-haskell-src-exts
     SUBDIR += hs-hat
     SUBDIR += hs-hdoc
+    SUBDIR += hs-hint
     SUBDIR += hs-hmake
     SUBDIR += hs-hoogle
     SUBDIR += hs-idoc
