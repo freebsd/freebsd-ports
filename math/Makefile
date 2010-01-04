@@ -116,6 +116,7 @@
     SUBDIR += hs-Agda-executable
     SUBDIR += hs-category-extras
     SUBDIR += hs-erf
+    SUBDIR += hs-probability
     SUBDIR += igraph
     SUBDIR += isabelle
     SUBDIR += itl
