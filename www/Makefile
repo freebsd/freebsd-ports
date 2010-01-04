@@ -1523,6 +1523,7 @@
     SUBDIR += srg
     SUBDIR += ssserver
     SUBDIR += suphp
+    SUBDIR += surf
     SUBDIR += surfraw
     SUBDIR += swfdec-plugin
     SUBDIR += swiggle
