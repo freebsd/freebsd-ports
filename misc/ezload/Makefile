@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://proj.bpsw.biz/ezload/downloads/
 
-MAINTAINER=	bahamasfranks@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firmware down/uploader for Cypress' EZ-USB chip
 
 MAN1=		ezupload.1 ezdownload.1 aw.1
@@ -24,5 +24,8 @@ MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man" MKDIR="${MKDIR}" INS
 .if ${OSVERSION} >= 800064
 BROKEN=		does not build
 .endif
+
+DEPRECATED=	does not build with new USB stack in 8-STABLE
+EXPIRATION_DATE=	2010-04-04
 
 .include <bsd.port.post.mk>
