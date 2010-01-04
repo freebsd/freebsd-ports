@@ -29,6 +29,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/pack.py
 %%PYTHON_SITELIBDIR%%/dulwich/pack.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/pack.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/patch.py
+%%PYTHON_SITELIBDIR%%/dulwich/patch.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/patch.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/protocol.py
 %%PYTHON_SITELIBDIR%%/dulwich/protocol.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/protocol.pyo
