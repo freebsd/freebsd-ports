@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.12.5
+PORTVERSION=	0.13.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.gajim.org/downloads/ \
+MASTER_SITES=	http://www.gajim.org/downloads/0.13/ \
 		http://ports.internal.vlink.ru/distfiles/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_PORTVERSION}:${PORTSDIR}/databases/py-sqlite3
 
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pygtk2
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_XORG=	x11 xext xscrnsaver
 
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
@@ -35,30 +39,10 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-MAN1=		gajim.1
+MAN1=		gajim.1 gajim-remote.1
 
-ACTIVITIES=	default
 EMOTICONS=	animated static static-big
-ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
-		simplebulb stellar sun transports
-MOODS=		default
-
-.if !defined(WITHOUT_DBUS)
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
-CONFIGURE_ARGS+=	--enable-remote
-MAN1+=		gajim-remote.1
-PLIST_SUB+=	DBUS=""
-.else
-CONFIGURE_ARGS+=	--disable-remote
-PLIST_SUB+=	DBUS="@comment "
-.endif
-
-post-patch:
-.for i in gajim-remote.py gajim.py history_manager.py
-		${REINPLACE_CMD} -e '1,1s/python/${PYTHON_VERSION}/' \
-			${WRKSRC}/src/$i
-.endfor
+ICONSETS=	dcraven gnome goojim gota jabberbulb sun transports wroop
 
 pre-build:
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
@@ -67,7 +51,7 @@ pre-build:
 post-install:
 		${MKDIR} ${DATADIR}/data/activities
 		(cd ${WRKSRC}/data/activities && \
-		${COPYTREE_SHARE} "${ACTIVITIES}" ${DATADIR}/data/activities)
+		${COPYTREE_SHARE} "default" ${DATADIR}/data/activities)
 
 		${MKDIR} ${DATADIR}/data/emoticons
 		(cd ${WRKSRC}/data/emoticons && \
@@ -79,14 +63,6 @@ post-install:
 
 		${MKDIR} ${DATADIR}/data/moods
 		(cd ${WRKSRC}/data/moods && \
-		${COPYTREE_SHARE} "${MOODS}" ${DATADIR}/data/moods)
+		${COPYTREE_SHARE} "default" ${DATADIR}/data/moods)
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 250
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-.else
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
