@@ -47,6 +47,9 @@ OPTIONS=	PWC                   "Philips and compatible cameras" off \
 BROKEN=		does not build on 7.x and greater
 .endif
 
+DEPRECATED=	no longer under development by author
+EXPIRATION_DATE=	2010-03-04
+
 .if defined(WITH_PWC)
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		kernel sources required for pwc
