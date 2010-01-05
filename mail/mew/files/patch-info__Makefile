@@ -1,6 +1,6 @@
---- info/Makefile.orig	2007-12-03 14:57:00.000000000 +0900
-+++ info/Makefile	2009-03-25 00:08:51.000000000 +0900
-@@ -15,12 +15,10 @@
+--- ./info/Makefile.orig	2009-08-12 16:51:05.000000000 +0900
++++ ./info/Makefile	2010-01-04 12:06:23.000000000 +0900
+@@ -15,10 +15,10 @@
  ## EDIT THE FOLLOWINGS
  ##
  
@@ -9,13 +9,11 @@
  infodir=$(prefix)/info
  
 -EMACS=emacs
--#EMACS = xemacs
--#EMACS = mule
 +EMACS=${EMACS_CMD}
  
  INSTALLINFO = `which install-info`
  #INSTALLINFO = /usr/local/bin/install-info
-@@ -53,20 +51,20 @@
+@@ -48,20 +48,20 @@
  info:
  	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
  	    -e 's/@set jp/@set us/' mew.texi > tmp.texi

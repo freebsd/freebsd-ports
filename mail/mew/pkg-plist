@@ -19,6 +19,7 @@ bin/smew
 %%PORTDOCS%%%%DOCSDIR%%/00changes.5.1
 %%PORTDOCS%%%%DOCSDIR%%/00changes.5.2
 %%PORTDOCS%%%%DOCSDIR%%/00changes.6.1
+%%PORTDOCS%%%%DOCSDIR%%/00changes.6.2
 %%PORTDOCS%%%%DOCSDIR%%/00copyright
 %%PORTDOCS%%%%DOCSDIR%%/00copyright.jis
 %%PORTDOCS%%%%DOCSDIR%%/00diff
