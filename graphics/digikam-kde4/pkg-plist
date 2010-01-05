@@ -1,5 +1,5 @@
+bin/cleanup_digikamdb
 bin/digikam
-bin/digikamthemedesigner
 bin/digitaglinktree
 bin/showfoto
 include/digikam/albumdb.h
@@ -7,6 +7,7 @@ include/digikam/bcgmodifier.h
 include/digikam/cietonguewidget.h
 include/digikam/colorgradientwidget.h
 include/digikam/colormodifier.h
+include/digikam/curvesbox.h
 include/digikam/curveswidget.h
 include/digikam/dcolor.h
 include/digikam/dcolorblend.h
@@ -17,8 +18,10 @@ include/digikam/dgradientslider.h
 include/digikam/dimg.h
 include/digikam/dimggaussianblur.h
 include/digikam/dimgimagefilters.h
+include/digikam/dimgrefocus.h
 include/digikam/dimgsharpen.h
 include/digikam/dimgthreadedfilter.h
+include/digikam/dimgunsharpmask.h
 include/digikam/dlogoaction.h
 include/digikam/dmetadata.h
 include/digikam/dpopupmenu.h
@@ -28,6 +31,7 @@ include/digikam/greycstorationiface.h
 include/digikam/greycstorationsettings.h
 include/digikam/greycstorationwidget.h
 include/digikam/histogrambox.h
+include/digikam/histogrampainter.h
 include/digikam/histogramwidget.h
 include/digikam/hslmodifier.h
 include/digikam/iccpreviewwidget.h
@@ -46,12 +50,14 @@ include/digikam/imageplugin.h
 include/digikam/imageregionwidget.h
 include/digikam/imagewidget.h
 include/digikam/iptcwidget.h
+include/digikam/knotificationwrapper.h
 include/digikam/libsinfodlg.h
 include/digikam/makernotewidget.h
 include/digikam/mdkeylistviewitem.h
 include/digikam/metadatalistview.h
 include/digikam/metadatalistviewitem.h
 include/digikam/metadatawidget.h
+include/digikam/noisereductionsettings.h
 include/digikam/paniconwidget.h
 include/digikam/photoinfocontainer.h
 include/digikam/previewwidget.h
@@ -62,6 +68,8 @@ include/digikam/statusled.h
 include/digikam/statusnavigatebar.h
 include/digikam/statusprogressbar.h
 include/digikam/statuszoombar.h
+include/digikam/template.h
+include/digikam/waveletsnr.h
 include/digikam/xmpwidget.h
 include/digikam_export.h
 lib/kde4/digikamimageplugin_adjustcurves.so
@@ -71,6 +79,7 @@ lib/kde4/digikamimageplugin_border.so
 lib/kde4/digikamimageplugin_channelmixer.so
 lib/kde4/digikamimageplugin_charcoal.so
 lib/kde4/digikamimageplugin_colorfx.so
+lib/kde4/digikamimageplugin_contentawareresizing.so
 lib/kde4/digikamimageplugin_core.so
 lib/kde4/digikamimageplugin_distortionfx.so
 lib/kde4/digikamimageplugin_emboss.so
@@ -81,7 +90,7 @@ lib/kde4/digikamimageplugin_infrared.so
 lib/kde4/digikamimageplugin_inpainting.so
 lib/kde4/digikamimageplugin_inserttext.so
 lib/kde4/digikamimageplugin_lenscorrection.so
-lib/kde4/digikamimageplugin_noisereduction.so
+lib/kde4/digikamimageplugin_localcontrast.so
 lib/kde4/digikamimageplugin_oilpaint.so
 lib/kde4/digikamimageplugin_perspective.so
 lib/kde4/digikamimageplugin_raindrop.so
@@ -90,10 +99,12 @@ lib/kde4/digikamimageplugin_sheartool.so
 lib/kde4/digikamimageplugin_superimpose.so
 lib/kde4/digikamimageplugin_texture.so
 lib/kde4/digikamimageplugin_whitebalance.so
+lib/kde4/digikamnepomukservice.so
 lib/kde4/kio_digikamalbums.so
 lib/kde4/kio_digikamdates.so
 lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
+lib/kde4/plugins/marble/ExternalDraw.so
 lib/libdigikamcore.so
 lib/libdigikamcore.so.1
 lib/libdigikamcore.so.1.0.0
@@ -102,20 +113,17 @@ lib/libdigikamdatabase.so.1
 lib/libdigikamdatabase.so.1.0.0
 share/applications/kde4/digikam.desktop
 share/applications/kde4/showfoto.desktop
-share/apps/digikam/about/box-bottom-left.png
-share/apps/digikam/about/box-bottom-middle.png
-share/apps/digikam/about/box-bottom-right.png
-share/apps/digikam/about/box-middle-left.png
-share/apps/digikam/about/box-middle-right.png
-share/apps/digikam/about/box-top-left.png
-share/apps/digikam/about/box-top-middle.png
-share/apps/digikam/about/box-top-right.png
-share/apps/digikam/about/infopage.css
-share/apps/digikam/about/infopage_rtl.css
+share/apps/digikam/about/digikam.css
 share/apps/digikam/about/main.html
 share/apps/digikam/about/top-left-digikam.png
-share/apps/digikam/about/top-middle.png
 share/apps/digikam/cameraui.rc
+share/apps/digikam/data/assistant-collection.png
+share/apps/digikam/data/assistant-metadata.png
+share/apps/digikam/data/assistant-openfile.png
+share/apps/digikam/data/assistant-preview.png
+share/apps/digikam/data/assistant-rawimport.png
+share/apps/digikam/data/assistant-scancollection.png
+share/apps/digikam/data/assistant-tooltips.png
 share/apps/digikam/data/banner-digikam.png
 share/apps/digikam/data/bluejean-texture.png
 share/apps/digikam/data/bothhorz.png
@@ -170,9 +178,11 @@ share/apps/digikam/data/stone-pattern.png
 share/apps/digikam/data/stone-texture.png
 share/apps/digikam/data/target.png
 share/apps/digikam/data/togglemouseover.png
+share/apps/digikam/data/topicset.iptc-subjectcode.xml
 share/apps/digikam/data/wall-pattern.png
 share/apps/digikam/data/wall-texture.png
 share/apps/digikam/data/wood-pattern.png
+share/apps/digikam/digikam.notifyrc
 share/apps/digikam/digikamimageplugin_adjustcurves_ui.rc
 share/apps/digikam/digikamimageplugin_adjustlevels_ui.rc
 share/apps/digikam/digikamimageplugin_blurfx_ui.rc
@@ -180,6 +190,7 @@ share/apps/digikam/digikamimageplugin_border_ui.rc
 share/apps/digikam/digikamimageplugin_channelmixer_ui.rc
 share/apps/digikam/digikamimageplugin_charcoal_ui.rc
 share/apps/digikam/digikamimageplugin_colorfx_ui.rc
+share/apps/digikam/digikamimageplugin_contentawareresizing_ui.rc
 share/apps/digikam/digikamimageplugin_core_ui.rc
 share/apps/digikam/digikamimageplugin_distortionfx_ui.rc
 share/apps/digikam/digikamimageplugin_emboss_ui.rc
@@ -190,7 +201,7 @@ share/apps/digikam/digikamimageplugin_infrared_ui.rc
 share/apps/digikam/digikamimageplugin_inpainting_ui.rc
 share/apps/digikam/digikamimageplugin_inserttext_ui.rc
 share/apps/digikam/digikamimageplugin_lenscorrection_ui.rc
-share/apps/digikam/digikamimageplugin_noisereduction_ui.rc
+share/apps/digikam/digikamimageplugin_localcontrast_ui.rc
 share/apps/digikam/digikamimageplugin_oilpaint_ui.rc
 share/apps/digikam/digikamimageplugin_perspective_ui.rc
 share/apps/digikam/digikamimageplugin_raindrop_ui.rc
@@ -205,6 +216,12 @@ share/apps/digikam/icons/hicolor/128x128/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/128x128/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/128x128/actions/adjustlevels.png
 share/apps/digikam/icons/hicolor/128x128/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfolder-importdir.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfolder-importdir2.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfolder-importimages.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfolder-new.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfolder-properties.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfolder-user-trash.png
 share/apps/digikam/icons/hicolor/128x128/actions/antivignetting.png
 share/apps/digikam/icons/hicolor/128x128/actions/autocorrection.png
 share/apps/digikam/icons/hicolor/128x128/actions/blurfx.png
@@ -247,11 +264,24 @@ share/apps/digikam/icons/hicolor/16x16/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/16x16/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/16x16/actions/adjustlevels.png
 share/apps/digikam/icons/hicolor/16x16/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfolder-importdir.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfolder-importdir2.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfolder-importimages.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfolder-new.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfolder-properties.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfolder-user-trash.png
 share/apps/digikam/icons/hicolor/16x16/actions/antivignetting.png
 share/apps/digikam/icons/hicolor/16x16/actions/autocorrection.png
 share/apps/digikam/icons/hicolor/16x16/actions/blurfx.png
 share/apps/digikam/icons/hicolor/16x16/actions/blurimage.png
 share/apps/digikam/icons/hicolor/16x16/actions/bordertool.png
+share/apps/digikam/icons/hicolor/16x16/actions/bqm-add.png
+share/apps/digikam/icons/hicolor/16x16/actions/bqm-addqueue.png
+share/apps/digikam/icons/hicolor/16x16/actions/bqm-commit.png
+share/apps/digikam/icons/hicolor/16x16/actions/bqm-diff.png
+share/apps/digikam/icons/hicolor/16x16/actions/bqm-remove.png
+share/apps/digikam/icons/hicolor/16x16/actions/bqm-rmqueue.png
+share/apps/digikam/icons/hicolor/16x16/actions/bqm-update.png
 share/apps/digikam/icons/hicolor/16x16/actions/bwtonal.png
 share/apps/digikam/icons/hicolor/16x16/actions/channelmixer.png
 share/apps/digikam/icons/hicolor/16x16/actions/charcoaltool.png
@@ -289,11 +319,24 @@ share/apps/digikam/icons/hicolor/22x22/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/22x22/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/22x22/actions/adjustlevels.png
 share/apps/digikam/icons/hicolor/22x22/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfolder-importdir.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfolder-importdir2.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfolder-importimages.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfolder-new.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfolder-properties.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfolder-user-trash.png
 share/apps/digikam/icons/hicolor/22x22/actions/antivignetting.png
 share/apps/digikam/icons/hicolor/22x22/actions/autocorrection.png
 share/apps/digikam/icons/hicolor/22x22/actions/blurfx.png
 share/apps/digikam/icons/hicolor/22x22/actions/blurimage.png
 share/apps/digikam/icons/hicolor/22x22/actions/bordertool.png
+share/apps/digikam/icons/hicolor/22x22/actions/bqm-add.png
+share/apps/digikam/icons/hicolor/22x22/actions/bqm-addqueue.png
+share/apps/digikam/icons/hicolor/22x22/actions/bqm-commit.png
+share/apps/digikam/icons/hicolor/22x22/actions/bqm-diff.png
+share/apps/digikam/icons/hicolor/22x22/actions/bqm-remove.png
+share/apps/digikam/icons/hicolor/22x22/actions/bqm-rmqueue.png
+share/apps/digikam/icons/hicolor/22x22/actions/bqm-update.png
 share/apps/digikam/icons/hicolor/22x22/actions/bwtonal.png
 share/apps/digikam/icons/hicolor/22x22/actions/channelmixer.png
 share/apps/digikam/icons/hicolor/22x22/actions/charcoaltool.png
@@ -333,14 +376,23 @@ share/apps/digikam/icons/hicolor/32x32/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/32x32/actions/adjustlevels.png
 share/apps/digikam/icons/hicolor/32x32/actions/adjustrgb.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfolder-importdir.png
+share/apps/digikam/icons/hicolor/32x32/actions/albumfolder-importdir2.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfolder-importimages.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfolder-new.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfolder-properties.png
+share/apps/digikam/icons/hicolor/32x32/actions/albumfolder-user-trash.png
 share/apps/digikam/icons/hicolor/32x32/actions/antivignetting.png
 share/apps/digikam/icons/hicolor/32x32/actions/autocorrection.png
 share/apps/digikam/icons/hicolor/32x32/actions/blurfx.png
 share/apps/digikam/icons/hicolor/32x32/actions/blurimage.png
 share/apps/digikam/icons/hicolor/32x32/actions/bordertool.png
+share/apps/digikam/icons/hicolor/32x32/actions/bqm-add.png
+share/apps/digikam/icons/hicolor/32x32/actions/bqm-addqueue.png
+share/apps/digikam/icons/hicolor/32x32/actions/bqm-commit.png
+share/apps/digikam/icons/hicolor/32x32/actions/bqm-diff.png
+share/apps/digikam/icons/hicolor/32x32/actions/bqm-remove.png
+share/apps/digikam/icons/hicolor/32x32/actions/bqm-rmqueue.png
+share/apps/digikam/icons/hicolor/32x32/actions/bqm-update.png
 share/apps/digikam/icons/hicolor/32x32/actions/bwtonal.png
 share/apps/digikam/icons/hicolor/32x32/actions/channelmixer.png
 share/apps/digikam/icons/hicolor/32x32/actions/charcoaltool.png
@@ -396,11 +448,24 @@ share/apps/digikam/icons/hicolor/48x48/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/48x48/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/48x48/actions/adjustlevels.png
 share/apps/digikam/icons/hicolor/48x48/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfolder-importdir.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfolder-importdir2.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfolder-importimages.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfolder-new.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfolder-properties.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfolder-user-trash.png
 share/apps/digikam/icons/hicolor/48x48/actions/antivignetting.png
 share/apps/digikam/icons/hicolor/48x48/actions/autocorrection.png
 share/apps/digikam/icons/hicolor/48x48/actions/blurfx.png
 share/apps/digikam/icons/hicolor/48x48/actions/blurimage.png
 share/apps/digikam/icons/hicolor/48x48/actions/bordertool.png
+share/apps/digikam/icons/hicolor/48x48/actions/bqm-add.png
+share/apps/digikam/icons/hicolor/48x48/actions/bqm-addqueue.png
+share/apps/digikam/icons/hicolor/48x48/actions/bqm-commit.png
+share/apps/digikam/icons/hicolor/48x48/actions/bqm-diff.png
+share/apps/digikam/icons/hicolor/48x48/actions/bqm-remove.png
+share/apps/digikam/icons/hicolor/48x48/actions/bqm-rmqueue.png
+share/apps/digikam/icons/hicolor/48x48/actions/bqm-update.png
 share/apps/digikam/icons/hicolor/48x48/actions/bwtonal.png
 share/apps/digikam/icons/hicolor/48x48/actions/channelmixer.png
 share/apps/digikam/icons/hicolor/48x48/actions/charcoaltool.png
@@ -439,11 +504,24 @@ share/apps/digikam/icons/hicolor/64x64/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/64x64/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/64x64/actions/adjustlevels.png
 share/apps/digikam/icons/hicolor/64x64/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfolder-importdir.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfolder-importdir2.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfolder-importimages.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfolder-new.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfolder-properties.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfolder-user-trash.png
 share/apps/digikam/icons/hicolor/64x64/actions/antivignetting.png
 share/apps/digikam/icons/hicolor/64x64/actions/autocorrection.png
 share/apps/digikam/icons/hicolor/64x64/actions/blurfx.png
 share/apps/digikam/icons/hicolor/64x64/actions/blurimage.png
 share/apps/digikam/icons/hicolor/64x64/actions/bordertool.png
+share/apps/digikam/icons/hicolor/64x64/actions/bqm-add.png
+share/apps/digikam/icons/hicolor/64x64/actions/bqm-addqueue.png
+share/apps/digikam/icons/hicolor/64x64/actions/bqm-commit.png
+share/apps/digikam/icons/hicolor/64x64/actions/bqm-diff.png
+share/apps/digikam/icons/hicolor/64x64/actions/bqm-remove.png
+share/apps/digikam/icons/hicolor/64x64/actions/bqm-rmqueue.png
+share/apps/digikam/icons/hicolor/64x64/actions/bqm-update.png
 share/apps/digikam/icons/hicolor/64x64/actions/bwtonal.png
 share/apps/digikam/icons/hicolor/64x64/actions/channelmixer.png
 share/apps/digikam/icons/hicolor/64x64/actions/charcoaltool.png
@@ -481,11 +559,24 @@ share/apps/digikam/icons/hicolor/64x64/mimetypes/raw.png
 share/apps/digikam/icons/hicolor/scalable/actions/adjustcurves.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/adjustlevels.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/adjustrgb.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfolder-importdir.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfolder-importdir2.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfolder-importimages.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfolder-new.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfolder-properties.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfolder-user-trash.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/antivignetting.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/autocorrection.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/blurfx.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/blurimage.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/bordertool.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bqm-add.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bqm-addqueue.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bqm-commit.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bqm-diff.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bqm-remove.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bqm-rmqueue.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bqm-update.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/bwtonal.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/channelmixer.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/colormanagement.svgz
@@ -510,21 +601,8 @@ share/apps/digikam/icons/hicolor/scalable/actions/shear.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/superimpose.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/texture.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/whitebalance.svgz
-share/apps/digikam/icons/oxygen/128x128/apps/digikam.png
-share/apps/digikam/icons/oxygen/128x128/apps/showfoto.png
-share/apps/digikam/icons/oxygen/16x16/apps/digikam.png
-share/apps/digikam/icons/oxygen/16x16/apps/showfoto.png
-share/apps/digikam/icons/oxygen/22x22/apps/digikam.png
-share/apps/digikam/icons/oxygen/22x22/apps/showfoto.png
-share/apps/digikam/icons/oxygen/32x32/apps/digikam.png
-share/apps/digikam/icons/oxygen/32x32/apps/showfoto.png
-share/apps/digikam/icons/oxygen/48x48/apps/digikam.png
-share/apps/digikam/icons/oxygen/48x48/apps/showfoto.png
-share/apps/digikam/icons/oxygen/64x64/apps/digikam.png
-share/apps/digikam/icons/oxygen/64x64/apps/showfoto.png
-share/apps/digikam/icons/oxygen/scalable/apps/digikam.svgz
-share/apps/digikam/icons/oxygen/scalable/apps/showfoto.svgz
 share/apps/digikam/lighttablewindowui.rc
+share/apps/digikam/queuemgrwindowui.rc
 share/apps/digikam/themes/Blue
 share/apps/digikam/themes/Clean
 share/apps/digikam/themes/DLR
@@ -545,6 +623,20 @@ share/apps/showfoto/data/logo-showfoto.png
 share/apps/showfoto/data/splash-showfoto.png
 share/apps/showfoto/showfotoui.rc
 share/apps/solid/actions/digikam-opencamera.desktop
+share/icons/hicolor/128x128/apps/digikam.png
+share/icons/hicolor/128x128/apps/showfoto.png
+share/icons/hicolor/16x16/apps/digikam.png
+share/icons/hicolor/16x16/apps/showfoto.png
+share/icons/hicolor/22x22/apps/digikam.png
+share/icons/hicolor/22x22/apps/showfoto.png
+share/icons/hicolor/32x32/apps/digikam.png
+share/icons/hicolor/32x32/apps/showfoto.png
+share/icons/hicolor/48x48/apps/digikam.png
+share/icons/hicolor/48x48/apps/showfoto.png
+share/icons/hicolor/64x64/apps/digikam.png
+share/icons/hicolor/64x64/apps/showfoto.png
+share/icons/hicolor/scalable/apps/digikam.svgz
+share/icons/hicolor/scalable/apps/showfoto.svgz
 share/kde4/services/digikamalbums.protocol
 share/kde4/services/digikamdates.protocol
 share/kde4/services/digikamimageplugin_adjustcurves.desktop
@@ -554,6 +646,7 @@ share/kde4/services/digikamimageplugin_border.desktop
 share/kde4/services/digikamimageplugin_channelmixer.desktop
 share/kde4/services/digikamimageplugin_charcoal.desktop
 share/kde4/services/digikamimageplugin_colorfx.desktop
+share/kde4/services/digikamimageplugin_contentawareresizing.desktop
 share/kde4/services/digikamimageplugin_core.desktop
 share/kde4/services/digikamimageplugin_distortionfx.desktop
 share/kde4/services/digikamimageplugin_emboss.desktop
@@ -564,7 +657,7 @@ share/kde4/services/digikamimageplugin_infrared.desktop
 share/kde4/services/digikamimageplugin_inpainting.desktop
 share/kde4/services/digikamimageplugin_inserttext.desktop
 share/kde4/services/digikamimageplugin_lenscorrection.desktop
-share/kde4/services/digikamimageplugin_noisereduction.desktop
+share/kde4/services/digikamimageplugin_localcontrast.desktop
 share/kde4/services/digikamimageplugin_oilpaint.desktop
 share/kde4/services/digikamimageplugin_perspective.desktop
 share/kde4/services/digikamimageplugin_raindrop.desktop
@@ -573,6 +666,7 @@ share/kde4/services/digikamimageplugin_sheartool.desktop
 share/kde4/services/digikamimageplugin_superimpose.desktop
 share/kde4/services/digikamimageplugin_texture.desktop
 share/kde4/services/digikamimageplugin_whitebalance.desktop
+share/kde4/services/digikamnepomukservice.desktop
 share/kde4/services/digikamsearch.protocol
 share/kde4/services/digikamtags.protocol
 share/kde4/servicetypes/digikamimageplugin.desktop
@@ -584,6 +678,8 @@ share/locale/cs/LC_MESSAGES/digikam.mo
 share/locale/da/LC_MESSAGES/digikam.mo
 share/locale/de/LC_MESSAGES/digikam.mo
 share/locale/el/LC_MESSAGES/digikam.mo
+share/locale/en_GB/LC_MESSAGES/digikam.mo
+share/locale/eo/LC_MESSAGES/digikam.mo
 share/locale/es/LC_MESSAGES/digikam.mo
 share/locale/et/LC_MESSAGES/digikam.mo
 share/locale/eu/LC_MESSAGES/digikam.mo
@@ -594,6 +690,7 @@ share/locale/ga/LC_MESSAGES/digikam.mo
 share/locale/gl/LC_MESSAGES/digikam.mo
 share/locale/he/LC_MESSAGES/digikam.mo
 share/locale/hi/LC_MESSAGES/digikam.mo
+share/locale/hne/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
 share/locale/ja/LC_MESSAGES/digikam.mo
@@ -624,25 +721,12 @@ share/locale/zh_CN/LC_MESSAGES/digikam.mo
 share/locale/zh_TW/LC_MESSAGES/digikam.mo
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
 @dirrm share/apps/showfoto/data
 @dirrm share/apps/showfoto
 @dirrm share/apps/digikam/utils
 @dirrm share/apps/digikam/themes
-@dirrm share/apps/digikam/icons/oxygen/scalable/apps
-@dirrm share/apps/digikam/icons/oxygen/scalable
-@dirrm share/apps/digikam/icons/oxygen/64x64/apps
-@dirrm share/apps/digikam/icons/oxygen/64x64
-@dirrm share/apps/digikam/icons/oxygen/48x48/apps
-@dirrm share/apps/digikam/icons/oxygen/48x48
-@dirrm share/apps/digikam/icons/oxygen/32x32/apps
-@dirrm share/apps/digikam/icons/oxygen/32x32
-@dirrm share/apps/digikam/icons/oxygen/22x22/apps
-@dirrm share/apps/digikam/icons/oxygen/22x22
-@dirrm share/apps/digikam/icons/oxygen/16x16/apps
-@dirrm share/apps/digikam/icons/oxygen/16x16
-@dirrm share/apps/digikam/icons/oxygen/128x128/apps
-@dirrm share/apps/digikam/icons/oxygen/128x128
-@dirrm share/apps/digikam/icons/oxygen
 @dirrm share/apps/digikam/icons/hicolor/scalable/actions
 @dirrm share/apps/digikam/icons/hicolor/scalable
 @dirrm share/apps/digikam/icons/hicolor/64x64/mimetypes
