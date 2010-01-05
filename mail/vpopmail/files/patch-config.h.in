@@ -1,11 +1,11 @@
 Description: Add two SpamAssassin-related definitions.
 Forwarded: not-needed
 Author: Alex Dupre <ale@FreeBSD.org>
-Last-Update: 2009-11-26
+Last-Update: 2010-01-05
 
 --- a/config.h.in
 +++ b/config.h.in
-@@ -280,6 +280,12 @@
+@@ -310,6 +310,12 @@
  #undef SPAMC_PROG
  
  /* "" */

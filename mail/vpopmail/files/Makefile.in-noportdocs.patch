@@ -2,12 +2,12 @@ Description: Do not install the documentation files.
  Only applied if NOPORTDOCS is defined during the port's build.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-26
+Last-Update: 2010-01-05
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -1065,7 +1065,7 @@
- @SET_MAKE@
+@@ -1049,7 +1049,7 @@
+ 	@echo ""                                                                                                                                                                     
  
  install-exec-am:
 -	for d in bin doc etc include lib ; do \
@@ -15,7 +15,7 @@ Last-Update: 2009-11-26
  	  if test ! -d $(DESTDIR)@vpopmaildir@/$$d; then \
  	    $(INSTALL) -d -g @vpopgroup@ -m 0755 -o @vpopuser@ \
  	      $(DESTDIR)@vpopmaildir@/$$d ; \
-@@ -1126,14 +1126,6 @@
+@@ -1111,14 +1111,6 @@
  		$(DESTDIR)@vpopmaildir@/include/ ; \
  	done
  

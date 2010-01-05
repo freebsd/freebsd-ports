@@ -3,11 +3,11 @@ Description: Install config files with -dist, do not add -fPIC.
  Do not unconditionally add -fPIC, this is done only for shared libs.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-26
+Last-Update: 2010-01-05
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -326,12 +326,11 @@
+@@ -320,12 +320,11 @@
  noinst_HEADERS = md5.h vpopmail.h file_lock.h vauth.h vlimits.h maildirquota.h vcdb.h vldap.h vmysql.h voracle.h vpgsql.h vsybase.h vlog.h global.h hmac_md5.h seek.h vutil.h
  COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c vutil.c vlistlib.c backfill.c client.c conf.c ippp.c
  CONFIG_CLEAN_FILES = vauth.c cdb/conf-cc cdb/conf-ld cdb/compile cdb/load
