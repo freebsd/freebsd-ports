@@ -163,7 +163,16 @@ lib/sbcl/sb-posix/sb-posix.fasl
 lib/sbcl/sb-posix/sb-posix.texinfo
 lib/sbcl/sb-posix/test-passed
 lib/sbcl/sb-posix/test-lab/.keep_me
+lib/sbcl/sb-queue/.cvsignore
+lib/sbcl/sb-queue/Makefile
+lib/sbcl/sb-queue/queue.fasl
+lib/sbcl/sb-queue/queue.lisp
+lib/sbcl/sb-queue/sb-queue.asd
+lib/sbcl/sb-queue/sb-queue.texinfo
 lib/sbcl/sb-queue/sb-queue.fasl
+lib/sbcl/sb-queue/test-passed
+lib/sbcl/sb-queue/test-queue.fasl
+lib/sbcl/sb-queue/test-queue.lisp
 lib/sbcl/sb-rotate-byte/.cvsignore
 lib/sbcl/sb-rotate-byte/Makefile
 lib/sbcl/sb-rotate-byte/README
