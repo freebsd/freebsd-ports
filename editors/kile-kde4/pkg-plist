@@ -228,6 +228,7 @@ share/apps/kile/icons/hicolor/16x16/actions/sqrt.png
 share/apps/kile/icons/hicolor/16x16/actions/structure.png
 share/apps/kile/icons/hicolor/16x16/actions/subsection.png
 share/apps/kile/icons/hicolor/16x16/actions/subsubsection.png
+share/apps/kile/icons/hicolor/16x16/actions/texlion.png
 share/apps/kile/icons/hicolor/16x16/actions/tilde.png
 share/apps/kile/icons/hicolor/16x16/actions/vec.png
 share/apps/kile/icons/hicolor/16x16/actions/verb.png
@@ -271,6 +272,7 @@ share/apps/kile/icons/hicolor/22x22/actions/newline.png
 share/apps/kile/icons/hicolor/22x22/actions/nroot.png
 share/apps/kile/icons/hicolor/22x22/actions/output_win.png
 share/apps/kile/icons/hicolor/22x22/actions/preview_env.png
+share/apps/kile/icons/hicolor/22x22/actions/preview_math.png
 share/apps/kile/icons/hicolor/22x22/actions/preview_sel.png
 share/apps/kile/icons/hicolor/22x22/actions/preview_subdoc.png
 share/apps/kile/icons/hicolor/22x22/actions/project_add.png
@@ -288,6 +290,7 @@ share/apps/kile/icons/hicolor/22x22/actions/sqrt.png
 share/apps/kile/icons/hicolor/22x22/actions/strong.png
 share/apps/kile/icons/hicolor/22x22/actions/tabbing.png
 share/apps/kile/icons/hicolor/22x22/actions/tabular.png
+share/apps/kile/icons/hicolor/22x22/actions/texlion.png
 share/apps/kile/icons/hicolor/22x22/actions/typewriter.png
 share/apps/kile/icons/hicolor/22x22/actions/verb.png
 share/apps/kile/icons/hicolor/22x22/actions/verbatim.png
@@ -1371,6 +1374,52 @@ share/apps/kile/test/test_plain.tex
 share/apps/kile/tips
 share/config.kcfg/kile.kcfg
 share/dbus-1/interfaces/net.sourceforge.kile.main.xml
+share/doc/HTML/en/kile/bullets.png
+share/doc/HTML/en/kile/command-view.png
+share/doc/HTML/en/kile/complete_cmd1.png
+share/doc/HTML/en/kile/complete_cmd2.png
+share/doc/HTML/en/kile/complete_env1.png
+share/doc/HTML/en/kile/complete_env2.png
+share/doc/HTML/en/kile/config-complete.png
+share/doc/HTML/en/kile/config-dblquotes.png
+share/doc/HTML/en/kile/config-encoding.png
+share/doc/HTML/en/kile/config-quickpreview.png
+share/doc/HTML/en/kile/config-userhelp.png
+share/doc/HTML/en/kile/delete.png
+share/doc/HTML/en/kile/dialog-addhelp.png
+share/doc/HTML/en/kile/dialog-docbrowser1.png
+share/doc/HTML/en/kile/dialog-docbrowser2.png
+share/doc/HTML/en/kile/dialog-pstools.png
+share/doc/HTML/en/kile/dialog-tabular.png
+share/doc/HTML/en/kile/environment.png
+share/doc/HTML/en/kile/includegraphics.png
+share/doc/HTML/en/kile/index.cache.bz2
+share/doc/HTML/en/kile/latex_example.png
+share/doc/HTML/en/kile/psutils1.png
+share/doc/HTML/en/kile/psutils15.png
+share/doc/HTML/en/kile/psutils16.png
+share/doc/HTML/en/kile/psutils2.png
+share/doc/HTML/en/kile/psutils3.png
+share/doc/HTML/en/kile/psutils5.png
+share/doc/HTML/en/kile/psutils6.png
+share/doc/HTML/en/kile/psutils7.png
+share/doc/HTML/en/kile/psutils8.png
+share/doc/HTML/en/kile/quickpreview.png
+share/doc/HTML/en/kile/select.png
+share/doc/HTML/en/kile/snap_autocomplete.png
+share/doc/HTML/en/kile/snap_compile_error.png
+share/doc/HTML/en/kile/snap_editusertag.png
+share/doc/HTML/en/kile/snap_encoding.png
+share/doc/HTML/en/kile/snap_kdvi_settings.png
+share/doc/HTML/en/kile/snap_okular_settings.png
+share/doc/HTML/en/kile/snap_projectview.png
+share/doc/HTML/en/kile/snap_projectview_add.png
+share/doc/HTML/en/kile/snap_ref_choose.png
+share/doc/HTML/en/kile/snap_ref_select.png
+share/doc/HTML/en/kile/snap_sidebarmenu.png
+share/doc/HTML/en/kile/snap_structview_label.png
+share/doc/HTML/en/kile/snap_usertag.png
+share/doc/HTML/en/kile/texgroup.png
 share/doc/kile/AUTHORS
 share/doc/kile/ChangeLog
 share/doc/kile/README
@@ -1388,6 +1437,7 @@ share/mimelink/text/x-kilepr.desktop
 @dirrmtry share/mimelink/text
 @dirrmtry share/mimelink
 @dirrm share/doc/kile
+@dirrm share/doc/HTML/en/kile
 @dirrm share/apps/kile/test
 @dirrm share/apps/kile/templates
 @dirrm share/apps/kile/pics
