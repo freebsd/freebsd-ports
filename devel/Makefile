@@ -123,6 +123,7 @@
     SUBDIR += boost_build
     SUBDIR += bouml
     SUBDIR += bouml-doc
+    SUBDIR += bsdcflow
     SUBDIR += bufferpool
     SUBDIR += bug-buddy
     SUBDIR += bugzilla
