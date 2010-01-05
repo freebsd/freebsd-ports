@@ -102,6 +102,7 @@
     SUBDIR += hex
     SUBDIR += hns
     SUBDIR += ibus-anthy
+    SUBDIR += ibus-skk
     SUBDIR += ical
     SUBDIR += icanna
     SUBDIR += iiimf-le-canna
