@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kchmviewer
-PORTVERSION=	4.2
+PORTVERSION=	5.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 
@@ -23,5 +23,10 @@ USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui network svg xml designer_build \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/build-${PORTVERSION}
+
+post-install:
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/packages/kchmviewer.png ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

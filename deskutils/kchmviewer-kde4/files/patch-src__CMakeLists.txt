@@ -1,12 +1,9 @@
---- ./src/CMakeLists.txt.orig	2008-12-02 04:43:24.000000000 +0300
-+++ ./src/CMakeLists.txt	2009-01-17 16:50:48.000000000 +0300
-@@ -46,7 +46,7 @@
+--- ./src/CMakeLists.txt.orig	2009-12-15 09:27:57.000000000 +0300
++++ ./src/CMakeLists.txt	2009-12-15 22:51:12.000000000 +0300
+@@ -51,5 +51,5 @@
  	${KDE4_KHTML_LIBS}
  	${KDE4_KFILE_LIBS}  )
  
 -INSTALL( TARGETS kchmviewer DESTINATION ${KDE4_BIN_INSTALL_DIR} )
--INSTALL( FILES kde/kchmviewer.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR} )
 +INSTALL( TARGETS kchmviewer DESTINATION ${BIN_INSTALL_DIR} )
-+INSTALL( FILES kde/kchmviewer.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
- ADD_SUBDIRECTORY( kde )
  
