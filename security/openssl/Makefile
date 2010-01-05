@@ -7,6 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8l
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -925,7 +926,7 @@ do-configure:
 .endif
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
+		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
 .if defined(WITH_FIPS)
