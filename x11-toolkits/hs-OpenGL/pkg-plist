@@ -2,7 +2,6 @@
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Antialiasing.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BasicTypes.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BeginEnd.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Bitmaps.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BlendingFactor.hi
@@ -21,7 +20,6 @@
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/EdgeFlag.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Evaluators.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Exception.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Extensions.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Face.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Feedback.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/FlushFinish.hi
@@ -59,9 +57,7 @@
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/SavingState.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Selection.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Shaders.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/StateVar.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/StringQueries.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Tensor.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Application.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hi
@@ -86,12 +82,10 @@
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Quadrics.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Tessellation.hi
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSOpenGL-%%HSOPENGL_VERSION%%.o
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsOpenGL.h
 %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSOpenGL-%%HSOPENGL_VERSION%%.a
 %%HSOPENGL_LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
 @dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU
 @dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing
 @dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles

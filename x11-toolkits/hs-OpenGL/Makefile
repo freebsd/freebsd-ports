@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengl
-PORTVERSION=	2.2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.4.0.1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/OpenGL/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,11 +15,19 @@ DISTNAME=	OpenGL-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	OpenGL bindings for Haskell programs
 
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
+		hs-OpenGLRaw-ghc>=1.1.0.0:${PORTSDIR}/x11-toolkits/hs-OpenGLRaw-ghc \
+		hs-GLURaw-ghc>=1.1.0.0:${PORTSDIR}/x11-toolkits/hs-GLURaw-ghc \
+		hs-StateVar>=1.0.0.0:${PORTSDIR}/devel/hs-StateVar \
+		hs-Tensor>=1.0.0.1:${PORTSDIR}/devel/hs-Tensor \
+		hs-ObjectName>=1.0.0.0:${PORTSDIR}/devel/hs-ObjectName
 
-USE_GL=		yes
-USE_XORG=	x11 xt
+RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
+		hs-OpenGLRaw-ghc>=1.1.0.0:${PORTSDIR}/x11-toolkits/hs-OpenGLRaw-ghc \
+		hs-GLURaw-ghc>=1.1.0.0:${PORTSDIR}/x11-toolkits/hs-GLURaw-ghc \
+		hs-StateVar>=1.0.0.0:${PORTSDIR}/devel/hs-StateVar \
+		hs-Tensor>=1.0.0.1:${PORTSDIR}/devel/hs-Tensor \
+		hs-ObjectName>=1.0.0.0:${PORTSDIR}/devel/hs-ObjectName
 
 GHC_VERSION=		6.10.4
 HSOPENGL_VERSION=	${PORTVERSION}
@@ -56,10 +63,6 @@ PORTDOCS=	*
 .endif
 
 .SILENT:
-
-post-patch:
-	@${REINPLACE_CMD} 's|/usr/local/include|${LOCALBASE}/include|g' \
-		${WRKSRC}/configure
 
 do-configure:
 	cd ${WRKSRC} && ${GHC_CMD} --make Setup.hs -o setup -package Cabal \
