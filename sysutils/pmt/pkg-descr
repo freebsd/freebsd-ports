@@ -1,0 +1,22 @@
+The Pipe Magic Tools (PMT) are a small collection of filters which
+can be added to UNIX pipes. The filters include:
+
+speed
+    Measures the speed of the data flowing through the pipe
+
+throttle
+    Controls the speed of the data flowing through the pipe
+
+rot13
+    The famous rot13 algorithm
+
+rot47
+    The not-so-famous rot47 algorithm
+
+tolower
+    Converts all alphabetic characters to lower case
+
+toupper
+    Converts all alphabetic characters to upper case
+
+WWW:    http://hansmi.ch/software/pipe-magic-tools

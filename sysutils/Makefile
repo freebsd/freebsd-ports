@@ -610,6 +610,7 @@
     SUBDIR += plconfig
     SUBDIR += plod
     SUBDIR += pmap
+    SUBDIR += pmt
     SUBDIR += policykit
     SUBDIR += policykit-gnome
     SUBDIR += policykit-qt
