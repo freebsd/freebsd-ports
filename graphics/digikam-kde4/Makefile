@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	digikam
-PORTVERSION=	0.10.0
-PORTREVISION=	3
+DISTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
@@ -19,10 +18,12 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		png.5:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper \
+		lqr-1.3:${PORTSDIR}/graphics/liblqr-1 \
 		kipi.6:${PORTSDIR}/graphics/kdegraphics4
 
 LATEST_LINK=	${PORTNAME}-kde4
 
+MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT_VER=	4
@@ -33,7 +34,8 @@ USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		digitaglinktree.1
+MAN1=		digitaglinktree.1 \
+		cleanup_digikamdb.1
 
 OPTIONS=	GPHOTO2 "Compile with gphoto2 support" on \
 		LENSFUN "Compile lens auto-correction image editor plugin" off \
