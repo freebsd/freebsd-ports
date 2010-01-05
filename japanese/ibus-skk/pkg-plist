@@ -1,0 +1,28 @@
+libexec/ibus-engine-skk
+libexec/ibus-setup-skk
+share/ibus/component/skk.xml
+%%DATADIR%%/engine/engine.py
+%%DATADIR%%/engine/engine.pyc
+%%DATADIR%%/engine/engine.pyo
+%%DATADIR%%/engine/factory.py
+%%DATADIR%%/engine/factory.pyc
+%%DATADIR%%/engine/factory.pyo
+%%DATADIR%%/engine/main.py
+%%DATADIR%%/engine/main.pyc
+%%DATADIR%%/engine/main.pyo
+%%DATADIR%%/engine/skk.py
+%%DATADIR%%/engine/skk.pyc
+%%DATADIR%%/engine/skk.pyo
+%%DATADIR%%/icons/ibus-skk.png
+%%DATADIR%%/setup/config.py
+%%DATADIR%%/setup/config.pyc
+%%DATADIR%%/setup/config.pyo
+%%DATADIR%%/setup/ibus-skk-preferences.ui
+%%DATADIR%%/setup/main.py
+%%DATADIR%%/setup/main.pyc
+%%DATADIR%%/setup/main.pyo
+share/locale/ja/LC_MESSAGES/ibus-skk.mo
+@dirrm %%DATADIR%%/engine
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/setup
+@dirrm %%DATADIR%%
