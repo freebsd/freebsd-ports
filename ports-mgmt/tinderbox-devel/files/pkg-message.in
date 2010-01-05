@@ -33,3 +33,20 @@ dir-listing.activate = "enable"
 
 =============================================================================
 
+tmpfs options:
+To enable the usage of FreeBSD's tmpfs implementation
+you need to add the tmpfs kernel module to your
+loader.conf
+
+tmpfs_load="YES"
+
+parallels options:
+
+The parallel patch allows to run multiple tinderd instances at the same time.
+You can enable multiple tinderd instances via /etc/rc.conf with
+tinderd_instances="X"
+
+Both patches are experimental and are not official supported by the Tinderbox
+distribution.
+
+=============================================================================

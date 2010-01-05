@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	3.2
-PORTREVISION=	5	# 2009-09-17 18:02:34 UTC
+DISTVERSION=	3.4-${SNAP}
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://tinderbox.marcuscom.com/ \
-		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	http://freebsd.unixfreunde.de/${PORTNAME}/
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	${PORTNAME}
 
@@ -21,22 +19,23 @@ CONFLICTS=	tinderbox-[0-9]*
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
 		CSUP  "Use csup for updates" On \
+		CVSUP "Use cvsup for updates" Off \
 		WEBUI   "Install web interface" On \
 		APACHE "Use Apache for web interface" On \
 		LIGHTTPD "Use LightHTTPD for web interface" Off \
 		CHECK_FOR_ROOT "Check if ./tc is run by uid 0" On \
-		LSOF "For killMountProcesses() when using nullfs" On
+		LSOF "For killMountProcesses() when using nullfs" On \
+		TMPFS "Enable TMPFS extra patch" Off \
+		PARALLEL "Enable PARALLEL extra patch" Off
 
 NO_BUILD=	yes
 WANT_PERL=	yes
 SUB_FILES=	pkg-message
 
+SNAP=	20100104 # 07:00 PM
+
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
-
-IGNORE=		please use ports-mgmt/tinderbox instand
-
-PATCH_STRIP=	-p2
 
 .include <bsd.port.pre.mk>
 
@@ -45,7 +44,6 @@ IGNORE=	is useless without a database. Please (re)run 'make config' and choose o
 .endif
 
 .if defined(WITH_WEBUI)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
@@ -56,6 +54,7 @@ PLIST_SUB+=	WEBUI="@comment "
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 .if defined(WITH_WEBUI)
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
 USE_PHP+=	pgsql
 .endif
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
@@ -63,6 +62,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 
 .if !defined(WITHOUT_MYSQL)
 .if defined(WITH_WEBUI)
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
 USE_PHP+=	mysql
 .endif
 USE_MYSQL=	yes
@@ -76,6 +76,10 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 .endif
 .endif
 
+.if defined(WITH_CVSUP)
+RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
+.endif
+
 .if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)
 USE_APACHE=	1.3+
 .elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
@@ -84,6 +88,14 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 
 .if defined(WITH_LSOF)
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
+.endif
+
+.if defined(WITH_TMPFS) && defined(WITH_PARALLEL)
+EXTRA_PATCHES+=		${FILESDIR}/extra-tmpfs_para.patch
+.elif defined(WITH_TMPFS) && !defined(WITH_PARALLEL)
+EXTRA_PATCHES+=		${FILESDIR}/extra-tmpfs.patch
+.elif defined(WITH_PARALLEL) && !defined(WITH_TMPFS)
+EXTRA_PATCHES+=		${FILESDIR}/extra-parallel.patch
 .endif
 
 pre-everything::
@@ -113,7 +125,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd ${PREFIX}/etc/rc.d/${PORTNAME}
 	@${ECHO_CMD} "Installing tinderbox ..."
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
-	${CP} ${WRKSRC}/.version ${PREFIX}/tinderbox/scripts
 	@${ECHO_CMD} "All Done"
 
 post-install:
