@@ -7,7 +7,7 @@
 
 PORTNAME=	scummvm
 DISTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if defined(WITH_FLUIDSYNTH)
-LIB_DEPENDS+=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-fluidsynth

@@ -7,14 +7,14 @@
 
 PORTNAME=	swami
 PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced instrument editor
 
-LIB_DEPENDS=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth \
+LIB_DEPENDS=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		popt.0:${PORTSDIR}/devel/popt \
