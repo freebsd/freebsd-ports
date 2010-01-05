@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.904
-PORTREVISION=	2
+PORTVERSION=	0.5.905
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/xine/${PORTNAME}%20%28GTK%20front%20end%29/${PORTVERSION}
+MASTER_SITES=	SF/xine/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An alternative GUI for the Xine media player
@@ -21,7 +20,6 @@ USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gtk20 gnomehier
 USE_GMAKE=	yes
 USE_GCC=	4.2+
-USE_XORG=	x11 xaw ice
 MAKE_ARGS+=	LDFLAGS=-shared-libgcc
 CNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-hal --with-libintl-prefix=${LOCALBASE}
@@ -33,24 +31,17 @@ MANLANG=	"" de es
 MAN1=		gxine.1 gxine_client.1
 MANCOMPRESSED=	no
 
-OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on \
+OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" off \
 		GNOME "Enable Gnome integration" off \
-		DBUS "Enable dbus support" on \
 		LIRC "Enable lirc support" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomevfs2 libgnomeui
-.else
-CONFIGURE_ARGS+=--disable-integration-wizard
-.endif
-
-.if !defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=--with-dbus
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .else
-CONFIGURE_ARGS+=--without-dbus
+CONFIGURE_ARGS+=--disable-integration-wizard --without-dbus
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -73,6 +64,7 @@ LIB_DEPENDS+=	js.1:${PORTSDIR}/lang/spidermonkey
 CONFIGURE_ARGS+=--without-browser-plugin --with-spidermonkey
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
+USE_XORG+=	xaw
 USE_GECKO=	seamonkey
 USE_WEBPLUGINS=	native
 WEBPLUGINS_DIR=	${PREFIX}/lib/gxine
@@ -93,4 +85,4 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s:@MAKE_PNG_TRUE@:#:g" \
 		${WRKSRC}/pixmaps/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
