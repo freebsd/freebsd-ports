@@ -42,24 +42,6 @@ NOPRECIOUSMAKEVARS=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
-		${LOCALBASE}/openjdk6 \
-		${LOCALBASE}/jdk1.6.0 \
-		${LOCALBASE}/diablo-jdk1.6.0
-
-# do we have valid native jdk installed?
-.for CJDK in ${BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${CJDK}
-.  endif
-.endfor
-
-# if no valid jdk found, set dependency
-.if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.6.0
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
-.endif
-
 MAKE_ENV+=	LANG="C" \
 		LC_ALL="C" \
 		JAVA_HOME="" \
@@ -85,6 +67,26 @@ MAKE_ENV+=	LANG="C" \
 
 .if defined(HOTSPOT_BUILD_JOBS)
 MAKE_ENV+=	HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}"
+.endif
+
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
+		${LOCALBASE}/openjdk6 \
+		${LOCALBASE}/jdk1.6.0 \
+		${LOCALBASE}/diablo-jdk1.6.0
+
+.include <bsd.port.pre.mk>
+
+# do we have valid native jdk installed?
+.for BJDK in ${BOOTSTRAP_JDKS}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${BJDK}
+.  endif
+.endfor
+
+# if no valid jdk found, set dependency
+.if !defined(BOOTSTRAPJDKDIR)
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.6.0
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
 .endif
 
 post-extract:
@@ -123,4 +125,4 @@ post-install:
 	# Register the VM
 	"${LOCALBASE}/bin/registervm" "${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
