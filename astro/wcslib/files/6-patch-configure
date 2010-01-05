@@ -1,0 +1,11 @@
+--- configure.orig	2010-01-03 16:00:48.000000000 +1100
++++ configure	2010-01-03 16:02:03.000000000 +1100
+@@ -9439,7 +9439,7 @@
+ 
+     SUBDIRS="C Fortran"
+     TSTDIRS="C Fortran"
+-    INSTDIR="pgsbox"
++    INSTDIR="Fortran"
+   fi
+ fi
+ 
