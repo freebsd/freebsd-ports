@@ -8,7 +8,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		${MASTER_SITE_LOCAL}/gahr/:fluid \
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill
-LIB_DEPENDS=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
 
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}
