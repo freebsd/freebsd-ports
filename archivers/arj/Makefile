@@ -34,6 +34,8 @@ PLIST_DIRS=	lib/arj
 
 MAN1=		arj-register.1 arj.1 arjdisp.1 rearj.1
 
+PORTSCOUT=	skipv:3.10g
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
 		 ${WRKSRC}/arj.c ${WRKSRC}/file_reg.c ${WRKSRC}/rearj.c

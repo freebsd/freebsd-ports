@@ -109,6 +109,8 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ARC)
