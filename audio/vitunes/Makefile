@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vitunes
-PORTVERSION=	0.93
+PORTVERSION=	1.0.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ryanflannery.net/hacking/vitunes/files/ \
+MASTER_SITES=	http://www.vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
@@ -24,8 +24,6 @@ LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 
 MAKE_ARGS=	LDFLAGS_DEPS="-L${LOCALBASE}/lib -lid3tag -lmp4v2 -logg -lvorbis -lvorbisfile" \
 		CFLAGS_DEPS="-I${LOCALBASE}/include"
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	vitunes
 PLIST_FILES=	bin/vitunes
