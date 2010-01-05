@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 
 OPTIONS=	LDAP "With LDAP support" off \
 		INSULTS "With all insults" off \
-		SHELL_SETS_HOME "Set HOME environment to target user in shell mode" off \
+		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off \
 		DISABLE_ROOT_SUDO "Disable root sudo" off \
 		DISABLE_AUTH "Disable authentication" off \
 		NOARGS_SHELL "Enable no arguments shell" off
