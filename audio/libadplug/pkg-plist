@@ -1,5 +1,6 @@
 bin/adplugdb
 include/adplug/a2m.h
+include/adplug/adl.h
 include/adplug/adlibemu.h
 include/adplug/adplug.h
 include/adplug/adtrack.h
@@ -8,12 +9,14 @@ include/adplug/analopl.h
 include/adplug/bam.h
 include/adplug/bmf.h
 include/adplug/cff.h
+include/adplug/cmf.h
 include/adplug/d00.h
 include/adplug/database.h
 include/adplug/dfm.h
 include/adplug/diskopl.h
 include/adplug/dmo.h
 include/adplug/dro.h
+include/adplug/dro2.h
 include/adplug/dtm.h
 include/adplug/emuopl.h
 include/adplug/flash.h
@@ -25,6 +28,7 @@ include/adplug/hsp.h
 include/adplug/hybrid.h
 include/adplug/hyp.h
 include/adplug/imf.h
+include/adplug/jbm.h
 include/adplug/kemuopl.h
 include/adplug/ksm.h
 include/adplug/lds.h
@@ -48,14 +52,14 @@ include/adplug/s3m.h
 include/adplug/sa2.h
 include/adplug/silentopl.h
 include/adplug/sng.h
+include/adplug/surroundopl.h
 include/adplug/temuopl.h
 include/adplug/u6m.h
 include/adplug/xad.h
 include/adplug/xsm.h
-include/adplug/adl.h
+lib/libadplug-2.2.so
+lib/libadplug-2.2.so.0
 lib/libadplug.a
 lib/libadplug.la
 lib/libadplug.so
-lib/libadplug-2.1.so.0
-lib/libadplug-2.1.so
 @dirrm include/adplug
