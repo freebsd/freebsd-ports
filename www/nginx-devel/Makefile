@@ -63,7 +63,8 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
-		SUPERVISORD_MODULE	"3rd party supervisord modle" off
+		SUPERVISORD_MODULE	"3rd party supervisord module" off \
+		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
 
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
@@ -283,7 +284,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_PROGRESS)
-NGINX_UPLOADPROGRESS_MODULE_VERSION=	0.7
+NGINX_UPLOADPROGRESS_MODULE_VERSION=	0.8
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:uploadprogress/}
 MASTER_SITE_SUBDIR+=	osa/:uploadprogress
 DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
@@ -291,7 +292,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module-${NGINX_UPLOA
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR) || defined(WITH_SUPERVISORD_MODULE)
-NGINX_UPSTREAM_FAIR_VERSION=	20081012
+NGINX_UPSTREAM_FAIR_VERSION=	20090923
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
 MASTER_SITE_SUBDIR+=	osa/:upstreamfair
 DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
@@ -342,10 +343,17 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MOD
 .endif
 
 .if defined(WITH_SUPERVISORD_MODULE)
-NGINX_SUPERVISORD_MODULE_VERSION=	1.2
+NGINX_SUPERVISORD_MODULE_VERSION=	1.3
 MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
 DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}.tar.gz:supervisord
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}
+.endif
+
+.if defined(WITH_UDPLOG_MODULE)
+NGINX_UDPLOG_MODULE_VERSION=	1.0.0
+MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
+DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}.tar.gz:udplog
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}
 .endif
 
 .if defined(WITH_WWW)
@@ -413,10 +421,6 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_upload_module.c
 .endif
-.if defined(WITH_HTTP_UPLOAD_PROGRESS)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
-.endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!g++!${CXX}!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/Rakefile
@@ -425,7 +429,7 @@ post-patch:
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
-	( cd ${WRKDIR}/nginx_upstream_fair-20081012 && \
+	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
 		${PATCH} -p0 < \
 			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_fair_module.patch )
 	( cd ${WRKSRC} && \
