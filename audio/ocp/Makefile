@@ -7,6 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.18
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.cubic.org/ocp/ \
@@ -80,7 +81,7 @@ EXTRA_PATCHES+=		${PATCHDIR}/extrapatch-*
 .endif
 
 .if defined(WITH_ADPLUG)
-LIB_DEPENDS+=		adplug-2.1:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS+=		adplug-2.2:${PORTSDIR}/audio/libadplug
 CONFIGURE_ARGS+=	--with-adplug
 PLIST_SUB+=		ADPLUG=""
 .else
