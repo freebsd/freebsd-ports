@@ -35,7 +35,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | xargs ${CHMOD} a+r
 
 pre-configure:
-	@invalid=`${PKG_INFO} -I ${SDLNOX11:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}`
+	@invalid=`${PKG_INFO} -I ${SDLNOX11:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`
 	@if [ ! -z "$$invalid" ]; then \
 		${ECHO_MSG} "${PKGNAME} is marked as broken: devel/sdl12 needs to be built with X11 support enabled."; \
 		exit 1; \
