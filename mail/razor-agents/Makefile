@@ -29,6 +29,8 @@ MAN3=		Razor2::Errorhandler.3 Razor2::Preproc::deHTMLxs.3 \
 		Razor2::Syslog.3
 MAN5=		razor-agents.5 razor-whitelist.5 razor-agent.conf.5
 
+PORTSCOUT=	skipv:2.85
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e 's|/etc/razor|${PREFIX}/etc|g'
 	@${PERL} -pi -e 's,share/man,man,g' ${WRKSRC}/${CONFIGURE_SCRIPT}

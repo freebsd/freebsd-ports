@@ -24,6 +24,8 @@ CONFLICTS+=	qmail-vida-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
 
+PORTSCOUT=	skipv:1.04
+
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_MYSQL)
 BARRIER_MAILDIRQUOTA_PATCH=	yes
