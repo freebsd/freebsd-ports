@@ -12,6 +12,7 @@ include/GG/DropDownList.h
 include/GG/DynamicGraphic.h
 include/GG/Edit.h
 include/GG/Enum.h
+include/GG/EveGlue.h
 include/GG/EventPump.h
 include/GG/Exception.h
 include/GG/Flags.h
@@ -24,6 +25,8 @@ include/GG/Menu.h
 include/GG/MultiEdit.h
 include/GG/MultiEditFwd.h
 include/GG/Ogre/OgreGUI.h
+include/GG/Ogre/Plugins/OISInput.h
+include/GG/Ogre/Plugins/OgreGUIInputPlugin.h
 include/GG/PluginInterface.h
 include/GG/PtRect.h
 include/GG/SDL/SDLGUI.h
@@ -75,6 +78,7 @@ libdata/pkgconfig/GiGi.pc
 libdata/pkgconfig/GiGiSDL.pc
 @dirrm include/GG/dialogs
 @dirrm include/GG/SDL
+@dirrm include/GG/Ogre/Plugins
 @dirrm include/GG/Ogre
 @dirrm include/GG/utf8
 @dirrm include/GG
