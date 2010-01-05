@@ -4,7 +4,7 @@ Description: SpamAssassin support, build optimization
 Forwarded: not-needed
 Author: Alex Dupre <ale@FreeBSD.org>,
 	Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-30
+Last-Update: 2010-01-05
 
 --- a/vdelivermail.c
 +++ b/vdelivermail.c
@@ -186,7 +186,7 @@ Last-Update: 2009-11-30
   int child;
   char *(args[4]);
   int wstat;
-@@ -1183,7 +1230,7 @@
+@@ -1186,7 +1233,7 @@
              maildir_to_email(newdir), date_header());
      }
  
