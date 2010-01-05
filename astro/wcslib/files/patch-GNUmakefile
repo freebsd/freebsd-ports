@@ -1,0 +1,16 @@
+--- GNUmakefile.orig	2010-01-05 09:25:18.000000000 +0800
++++ GNUmakefile	2010-01-05 09:26:17.000000000 +0800
+@@ -55,10 +55,10 @@
+ 	   $(INSTALL) -m 444 CHANGES $(INCDIR)/CHANGES
+ 	   $(INSTALL) -m 444 COPYING $(INCDIR)/COPYING
+ 	   $(INSTALL) -m 444 README  $(INCDIR)/README
+-	   if [ ! -d "$(LIBDIR)/pkgconfig" ] ; then \
+-	     $(INSTALL) -d -m 2775 $(LIBDIR)/pkgconfig ; \
++	   if [ ! -d "%%PKGDIR%%/pkgconfig" ] ; then \
++	     $(INSTALL) -d -m 2775 %%PKGDIR%%/pkgconfig ; \
+ 	   fi
+-	   $(INSTALL) -m 444 wcslib.pc $(LIBDIR)/pkgconfig/wcslib.pc
++	   $(INSTALL) -m 444 wcslib.pc %%PKGDIR%%/pkgconfig/wcslib.pc
+ 
+ realclean cleanest :
+ 	for DIR in $(SUBDIRS) doxygen ; do \
