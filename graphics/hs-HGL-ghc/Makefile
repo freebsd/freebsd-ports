@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	HGL
-PORTVERSION=	3.2.0.0
-PORTREVISION=	6
+PORTVERSION=	3.2.0.2
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	jacula@gmail.com
-COMMENT=	A simple graphics library based on X11 or Win32
+COMMENT=	A simple Haskell graphics library based on X11 or Win32
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-x11-ghc>=1.2.1:${PORTSDIR}/x11/hs-x11-ghc
