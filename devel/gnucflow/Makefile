@@ -15,7 +15,7 @@ DISTNAME=	cflow-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool to chart control flow within the C program
 
-CONFLICTS=	cflow-[0-9]*
+CONFLICTS=	bsdcflow-[0-9]* cflow-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

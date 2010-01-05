@@ -1,0 +1,5 @@
+cflow reads files as C or assembler program source and prints a graph
+a graph of the function call hierarchy. Called functions are indented
+according to their caller-callee relationship, in the order of occurance. 
+
+WWW:	http://www.sysfault.org/projects
