@@ -6,10 +6,8 @@
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks/Registration.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks/Window.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Colormap.hi
-%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Constants.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Debugging.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/DeviceControl.hi
-%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Extensions.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Fonts.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/GameMode.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Initialization.hi
@@ -17,17 +15,22 @@
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Objects.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Overlay.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/QueryUtils.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Raw.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Raw/APIEntry.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Raw/Callbacks.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Raw/Fonts.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Raw/Functions.hi
+%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Raw/Tokens.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/State.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Types.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Window.hi
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSGLUT-%%HSGLUT_VERSION%%.o
-%%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsGLUT.h
 %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSGLUT-%%HSGLUT_VERSION%%.a
 %%HSGLUT_LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
 @dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Callbacks
+@dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT/Raw
 @dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI/GLUT
 @dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/UI
 @dirrm %%HSGLUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
