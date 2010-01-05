@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeorion
-PORTVERSION=	0.3.12.3007
-PORTREVISION=	1
+PORTVERSION=	0.3.13.3318
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	oliver
@@ -23,7 +22,7 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 RUN_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
 
-USE_GCC=	4.3+
+USE_GCC=	4.4+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_SCONS=	yes
