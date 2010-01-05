@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw.hi
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw/APIEntry.hi
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw/Callbacks.hi
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw/Functions.hi
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw/Tokens.hi
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw/Types.hi
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw/TypesInternal.hi
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSGLURaw-%%HSGLURAW_VERSION%%.o
+%%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSGLURaw-%%HSGLURAW_VERSION%%.a
+%%HSGLURAW_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU/Raw
+@dirrm %%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/GLU
+@dirrm %%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering
+@dirrm %%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
+@dirrm %%HSGLURAW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HSGLURAW_LIBDIR_REL%%
+@exec /bin/sh %D/%%HSGLURAW_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister GLURaw
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
