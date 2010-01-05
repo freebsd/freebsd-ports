@@ -1,0 +1,24 @@
+--- ./Makefile.in.orig	2009-02-02 15:39:04.000000000 +0900
++++ ./Makefile.in	2010-01-04 12:06:16.000000000 +0900
+@@ -40,8 +40,8 @@
+ ## A directory where mew*.el[c] will be installed.
+ ##
+ 
+-elispdir = @elispdir@
+-#elispdir = $(prefix)/share/emacs/site-lisp/mew
++#elispdir = @elispdir@
++elispdir = $(prefix)/share/emacs/site-lisp/mew
+ #elispdir  = $(prefix)/lib/xemacs/site-lisp
+ #elispdir = $(prefix)/lib/emacs
+ 
+@@ -49,8 +49,8 @@
+ ## A directory where etc file will be installed.
+ ##
+ 
+-etcdir = @etcdir@
+-#etcdir = $(prefix)/share/emacs/site-lisp/mew/etc
++#etcdir = @etcdir@
++etcdir = $(prefix)/share/emacs/site-lisp/mew/etc
+ #etcdir = $(prefix)/lib/xemacs/etc/Mew
+ 
+ ################################################################
