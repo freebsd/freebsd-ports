@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	glut
-PORTVERSION=	2.1.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2.0
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/GLUT/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -19,10 +18,14 @@ COMMENT=	A Haskell binding for the OpenGL Utility Toolkit
 USE_GL=		glut
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
-		hs-opengl-ghc>=2.2:${PORTSDIR}/x11-toolkits/hs-opengl-ghc
+		hs-opengl-ghc>=2.3:${PORTSDIR}/x11-toolkits/hs-opengl-ghc \
+		hs-StateVar>=1.0.0.0:${PORTSDIR}/devel/hs-StateVar \
+		hs-Tensor>=1.0.0.1:${PORTSDIR}/devel/hs-Tensor
+
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
-		hs-opengl-ghc>=2.2:${PORTSDIR}/x11-toolkits/hs-opengl-ghc
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+		hs-opengl-ghc>=2.3:${PORTSDIR}/x11-toolkits/hs-opengl-ghc \
+		hs-StateVar>=1.0.0.0:${PORTSDIR}/devel/hs-StateVar \
+		hs-Tensor>=1.0.0.1:${PORTSDIR}/devel/hs-Tensor
 
 GHC_VERSION=	6.10.4
 HSGLUT_VERSION=	${PORTVERSION}
@@ -59,13 +62,11 @@ PORTDOCS=	*
 
 .SILENT:
 
-post-patch:
-	@${REINPLACE_CMD} 's|/usr/local/include|${LOCALBASE}/include|g' \
-		${WRKSRC}/configure
-
 do-configure:
 	cd ${WRKSRC} && ${GHC_CMD} --make Setup.hs -o setup -package Cabal \
-		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX}
+		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX} \
+		                               --extra-include-dirs=${LOCALBASE}/include \
+		                               --extra-lib-dirs=${LOCALBASE}/lib
 
 do-build:
 	cd ${WRKSRC} && ${SETUP_CMD} build \
