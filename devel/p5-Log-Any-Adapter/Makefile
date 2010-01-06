@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Any-Adapter
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to log anywhere
 
 RUN_DEPENDS=	\
-	p5-Log-Any>=0.05:${PORTSDIR}/devel/p5-Log-Any \
+	p5-Log-Any>=0.10:${PORTSDIR}/devel/p5-Log-Any \
 	p5-Scope-Guard>0:${PORTSDIR}/devel/p5-Scope-Guard
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
