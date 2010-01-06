@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.51
+PORTVERSION=	1.53
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
