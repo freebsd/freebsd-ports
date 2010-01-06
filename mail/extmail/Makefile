@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extmail
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extmail/ \
 		http://mirror3.extmail.net/dist/
