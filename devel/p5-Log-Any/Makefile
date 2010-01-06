@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Any
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ COMMENT=	Perl extension to bring loggers and listeners together
 PERL_CONFIGURE=	yes
 
 MAN3=	Log::Any.3 \
+	Log::Any::Adapter::Core.3 \
 	Log::Any::Adapter::Null.3 \
 	Log::Any::Test.3
 
