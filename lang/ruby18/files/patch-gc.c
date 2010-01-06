@@ -1,5 +1,5 @@
---- gc.c.orig	2009-03-27 13:25:23.000000000 +0300
-+++ gc.c	2009-09-29 01:09:29.000000000 +0400
+--- gc.c.orig	2009-12-24 00:28:08.000000000 -0800
++++ gc.c	2010-01-05 18:02:16.000000000 -0800
 @@ -30,6 +30,10 @@
  #include <sys/resource.h>
  #endif
@@ -64,7 +64,7 @@
      return ret;
  }
  
-@@ -1599,18 +1620,72 @@
+@@ -1607,18 +1628,72 @@
      }
      rb_gc_stack_start = addr;
  #endif
@@ -141,7 +141,7 @@
  }
  
  void ruby_init_stack(VALUE *addr
-@@ -1631,31 +1706,7 @@
+@@ -1639,31 +1714,7 @@
          rb_gc_register_stack_start = (VALUE*)bsp;
      }
  #endif
@@ -174,12 +174,3 @@
  }
  
  /*
-@@ -1980,7 +2031,7 @@
- chain_finalized_object(st_data_t key, st_data_t val, st_data_t arg)
- {
-     RVALUE *p = (RVALUE *)key, **final_list = (RVALUE **)arg;
--    if ((p->as.basic.flags & (FL_FINALIZE|FL_MARK)) == FL_FINALIZE) {
-+    if ((p->as.basic.flags & (FL_FINALIZE)) == FL_FINALIZE) {
- 	if (BUILTIN_TYPE(p) != T_DEFERRED) {
- 	    p->as.free.flags = FL_MARK | T_DEFERRED; /* remain marked */
- 	    RDATA(p)->dfree = 0;
