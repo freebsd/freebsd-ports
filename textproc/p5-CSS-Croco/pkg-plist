@@ -1,0 +1,22 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Selector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Statement.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Statement/Media.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Statement/RuleSet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/StyleSheet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/Hash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/Ident.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/Number.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/String.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/URI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/Croco.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/Croco.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Statement
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CSS
