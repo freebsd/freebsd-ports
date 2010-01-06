@@ -1,0 +1,11 @@
+lib/libfmodex-4.24.16.so
+lib/libfmodexp-4.24.16.so
+include/fmodex/fmod.h
+include/fmodex/fmod.hpp
+include/fmodex/fmod_codec.h
+include/fmodex/fmod_dsp.h
+include/fmodex/fmod_errors.h
+include/fmodex/fmod_memoryinfo.h
+include/fmodex/fmod_output.h
+include/fmodex/fmodlinux.h
+@dirrm include/fmodex

@@ -402,6 +402,7 @@
     SUBDIR += linux-f8-nas-libs
     SUBDIR += linux-f8-openal
     SUBDIR += linux-f8-sdl_mixer
+    SUBDIR += linux-fmodapi
     SUBDIR += linux-freealut
     SUBDIR += linux-genpuid
     SUBDIR += linux-libaudiofile

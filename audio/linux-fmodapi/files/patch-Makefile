@@ -1,0 +1,21 @@
+--- Makefile.orig	2009-07-27 22:55:17.000000000 +1000
++++ Makefile	2010-01-06 22:12:47.000000000 +1100
+@@ -1,8 +1,8 @@
+ VERSION = 4.24.16
+ LIBDIR     = api/lib
+ HDRDIR     = api/inc
+-DESTLIBDIR = /usr/local/lib
+-DESTHDRDIR = /usr/local/include/fmodex
++DESTLIBDIR = %%PREFIX%%/lib
++DESTHDRDIR = %%PREFIX%%/include/fmodex
+ 
+ all:
+ 	@echo "Possible targets:"
+@@ -51,7 +51,6 @@
+ 	@echo "Installing FMOD Ex libraries and headers..."
+ 	cp -f ${LIBDIR}/libfmodex-${VERSION}.so ${DESTLIBDIR}
+ 	cp -f ${LIBDIR}/libfmodexp-${VERSION}.so ${DESTLIBDIR}
+-	ldconfig -n ${DESTLIBDIR}
+ 	mkdir -p ${DESTHDRDIR}
+ 	cp -f ${HDRDIR}/*.h* ${DESTHDRDIR}
+ 	@echo "done."
