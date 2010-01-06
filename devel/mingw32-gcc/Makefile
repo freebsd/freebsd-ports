@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTNAME}-${GCCVERSION}
 PKGNAMEPREFIX=	mingw32-
 DISTFILES=	gcc-core-${GCCVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	FSF gcc-4.2 for Windows cross-development
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
