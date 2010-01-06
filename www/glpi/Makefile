@@ -7,6 +7,7 @@
 
 PORTNAME=	glpi
 DISTVERSION=	0.72.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
 
-USE_PHP=	mysql pcre session xml
+USE_PHP=	mysql pcre session xml json
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
