@@ -40,6 +40,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup_restarts.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ticker.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_websockets.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_xmlrpc.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/erlsom.hrl
@@ -50,7 +51,6 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/envelope.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/epam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/setuid_drv.so
-%%WITH_SENDFILE%%%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/soap.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/wsdl.xsd
@@ -98,9 +98,12 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup_restarts.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_vdir.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_websockets.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/ymnesia.erl
+%%WITH_SENDFILE%%%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
 %%WWWDIR%%/END
 %%WWWDIR%%/END2
 %%WWWDIR%%/HEAD
@@ -313,6 +316,9 @@ bin/yaws
 %%WWWDIR%%/upload0.yaws
 %%WWWDIR%%/urandom.yaws
 %%WWWDIR%%/urandom_from_pid.yaws
+%%WWWDIR%%/websockets.yaws
+%%WWWDIR%%/websockets_example.yaws
+%%WWWDIR%%/websockets_example_endpoint.yaws
 %%WWWDIR%%/yapp_intro.yaws
 %%WWWDIR%%/yaws-1.55_to_1.56.patch
 %%WWWDIR%%/ybed.erl
