@@ -58,6 +58,7 @@ OPTIONS=	DEBUG			"Build with debug" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
+		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
@@ -305,6 +306,14 @@ MASTER_SITES+=	${MASTER_SITE_GOOGLE_CODE}:zip
 PROJECTHOST=	mod-zip
 DISTFILES+=	mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
+.endif
+
+.if defined(WITH_MEMC_MODULE)
+NGINX_MEMC_MODULE_VERSION=	0.05
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:memc/}
+MASTER_SITE_SUBDIR+=	osa/:memc
+DISTFILES+=	ngx_http_memc_module-${NGINX_MEMC_MODULE_VERSION}.tar.gz:memc
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_memc_module-${NGINX_MEMC_MODULE_VERSION}
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
