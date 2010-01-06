@@ -20,8 +20,8 @@ stop_cmd="${name}_stop"
 
 #rcvar=`set_rcvar`
 
-command="%%DATADIR%%/instiki.rb"
-command_interpreter="/usr/bin/env"
+command="%%WWWDIR%%/instiki.rb"
+#command_interpreter="/usr/bin/env"
 
 : ${instiki_enable="NO"}
 : ${instiki_flags="--port %%INSTIKIPORT%% --daemon"}
