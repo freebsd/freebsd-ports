@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.7.6
-PORTREVISION=	2
+DISTVERSION=	0.9.7.11
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
@@ -16,13 +15,16 @@ COMMENT=	An Origin clone for data analysis and scientific plotting
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	gsl.14:${PORTSDIR}/math/gsl \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 		boost_date_time:${PORTSDIR}/devel/boost-libs
+# use bundled modified libraries
+# 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
+# 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build opengl svg qt3support network assistantclient
+QT_COMPONENTS=	gui opengl svg qt3support network assistantclient \
+		moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		PYTHON_CMD=${PYTHON_CMD}
@@ -35,14 +37,13 @@ DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"qtiplot" "" false
 
 OPTIONS=	DOCS "Install the QtiPlot Handbook" on \
-		PYTHON "Python scripting support (broken)" off
+		PYTHON "Python scripting support" on
 
 STRIP_FILES=	bin/qtiplot share/qtiplot/fitPlugins/*.so.1.0.0
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_PYTHON)
-BROKEN=		not compatible with PyQt-4.5
 USE_PYTHON=	yes
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
@@ -55,6 +56,7 @@ PLIST_SUB+=	PYTHON="@comment "
 
 .if !defined(WITHOUT_DOCS)
 RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
+QT_COMPONENTS+=	assistant-adp_run
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -66,23 +68,26 @@ PLIST_SUB+=	NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
+post-extract:
+	@${CP} ${FILESDIR}/build.conf ${WRKSRC}
+
 post-patch:
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e \
 		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
 		${WRKSRC}/${PORTNAME}/qtiplotrc.py
-	@${REINPLACE_CMD} -e \
-		"/^#SCRIPTING_LANGS.*Python/s|^#||" \
-		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .else
 	@${REINPLACE_CMD} -e \
-		"s/^SCRIPTING_LANGS.*Python//" \
-		${WRKSRC}/${PORTNAME}/qtiplot.pro
+		"s/SCRIPTING_LANGS.*Python//" \
+		${WRKSRC}/build.conf
 .endif
 	@${REINPLACE_CMD} -e \
 		's|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
 		${WRKSRC}/qtiplot/src/core/ApplicationWindow.cpp
-	@${REINPLACE_CMD} -e '/^system(lupdate/d; /^system(lrelease/d' \
+	@${REINPLACE_CMD} -e \
+		's|target.path=.*|target.path=${DATADIR}/fitPlugins|g' \
+		${WRKSRC}/fitPlugins/*/*.pro
+	@${REINPLACE_CMD} -e '/^system($$$$LUPDATE/d; /^system($$$$LRELEASE/d' \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .if defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e \
@@ -104,7 +109,6 @@ do-configure:
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
-	@${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin -I../3rdparty/qwtplot3d/include|' ${WRKSRC}/qtiplot/Makefile
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}

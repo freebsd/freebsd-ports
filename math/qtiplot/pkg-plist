@@ -15,16 +15,23 @@ bin/qtiplot
 %%DATADIR%%/fitPlugins/libfitRational1.so.1
 %%DATADIR%%/fitPlugins/libfitRational1.so.1.0
 %%DATADIR%%/fitPlugins/libfitRational1.so.1.0.0
+%%DATADIR%%/fitPlugins/libplanck_wavelength.so
+%%DATADIR%%/fitPlugins/libplanck_wavelength.so.1
+%%DATADIR%%/fitPlugins/libplanck_wavelength.so.1.0
+%%DATADIR%%/fitPlugins/libplanck_wavelength.so.1.0.0
 %%DATADIR%%/qtiplot.png
 %%PYTHON%%%%DATADIR%%/qtiUtil.py
 %%PYTHON%%%%DATADIR%%/qtiUtil.pyc
 %%PYTHON%%%%DATADIR%%/qti_wordlist.txt
 %%PYTHON%%%%DATADIR%%/qtiplotrc.py
 %%PYTHON%%%%DATADIR%%/qtiplotrc.pyc
+%%NLS%%%%DATADIR%%/translations/qtiplot_cn.qm
+%%NLS%%%%DATADIR%%/translations/qtiplot_cz.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_de.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_es.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_fr.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_ja.qm
+%%NLS%%%%DATADIR%%/translations/qtiplot_ro.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_ru.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_sv.qm
 %%NLS%%@dirrm %%DATADIR%%/translations
