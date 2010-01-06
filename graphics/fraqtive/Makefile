@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fraqtive
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/fraqtive/Fraqtive/Fraqtive%20${PORTVERSION}/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} -qmake ${QMAKE}
 
 OPTIONS=	SSE2 "Enable SSE2 optimization" off
 
-INSTALLS_ICONS=	yes
+STRIP_FILES=	bin/fraqtive
 
 .include <bsd.port.pre.mk>
 
@@ -38,5 +38,8 @@ post-configure:
 		-e 's|^LINK .*|LINK=${CXX}|' \
 		-e 's|^CFLAGS .*|CFLAGS=${CFLAGS} -Wall -W $$\(DEFINES\)|' \
 		-e 's|^CXXFLAGS .*|CXXFLAGS=${CXXFLAGS} -Wall -W $$\(DEFINES\)|'
+
+post-install:
+		${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 
 .include <bsd.port.post.mk>
