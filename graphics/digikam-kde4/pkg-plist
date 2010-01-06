@@ -104,7 +104,7 @@ lib/kde4/kio_digikamalbums.so
 lib/kde4/kio_digikamdates.so
 lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
-lib/kde4/plugins/marble/ExternalDraw.so
+%%MARBLE%%lib/kde4/plugins/marble/ExternalDraw.so
 lib/libdigikamcore.so
 lib/libdigikamcore.so.1
 lib/libdigikamcore.so.1.0.0

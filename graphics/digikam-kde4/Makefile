@@ -58,8 +58,10 @@ CMAKE_ARGS+=	-DWITH_LensFun:BOOL=OFF
 
 .if defined(WITH_MARBLE)
 LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/misc/kdeedu4
+PLIST_SUB+=		MARBLE=""
 .else
 CMAKE_ARGS+=	-DWITH_MarbleWidget:BOOL=OFF
+PLIST_SUB+=		MARBLE="@comment "
 .endif
 
 .if defined(WITHOUT_PIMLIBS)
