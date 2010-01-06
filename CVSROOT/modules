@@ -5944,6 +5944,7 @@ ja-gxditview                    ports/japanese/gxditview
 ja-hex                          ports/japanese/hex
 ja-hns                          ports/japanese/hns
 ja-ibus-anthy                   ports/japanese/ibus-anthy
+ja-ibus-skk                     ports/japanese/ibus-skk
 ja-ical                         ports/japanese/ical
 ja-icanna                       ports/japanese/icanna
 ja-iiimf-le-canna               ports/japanese/iiimf-le-canna
@@ -10446,6 +10447,7 @@ p5-ApacheBench                  ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig           ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger              ports/databases/p5-ApacheDBILogger
 p5-App-CLI                      ports/devel/p5-App-CLI
+p5-App-CLI-Extension            ports/devel/p5-App-CLI-Extension
 p5-App-Cache                    ports/devel/p5-App-Cache
 p5-App-Cmd                      ports/devel/p5-App-Cmd
 p5-App-Control                  ports/devel/p5-App-Control
@@ -10878,6 +10880,7 @@ p5-Cisco-Reconfig               ports/net-mgmt/p5-Cisco-Reconfig
 p5-Clamd                        ports/mail/p5-Clamd
 p5-Class-Accessor               ports/devel/p5-Class-Accessor
 p5-Class-Accessor-Chained       ports/devel/p5-Class-Accessor-Chained
+p5-Class-Accessor-Children      ports/devel/p5-Class-Accessor-Children
 p5-Class-Accessor-Fast-XS       ports/devel/p5-Class-Accessor-Fast-XS
 p5-Class-Accessor-Grouped       ports/devel/p5-Class-Accessor-Grouped
 p5-Class-Accessor-Lvalue        ports/devel/p5-Class-Accessor-Lvalue
@@ -12575,6 +12578,7 @@ p5-Net-Frame-Dump               ports/net/p5-Net-Frame-Dump
 p5-Net-Frame-Layer-ICMPv6       ports/net/p5-Net-Frame-Layer-ICMPv6
 p5-Net-Frame-Layer-IPv6         ports/net/p5-Net-Frame-Layer-IPv6
 p5-Net-FreeDB                   ports/audio/p5-Net-FreeDB
+p5-Net-FreshBooks-API           ports/www/p5-Net-FreshBooks-API
 p5-Net-GeoPlanet                ports/www/p5-Net-GeoPlanet
 p5-Net-GitHub                   ports/net/p5-Net-GitHub
 p5-Net-Gnats                    ports/net/p5-Net-Gnats
@@ -14088,6 +14092,7 @@ p5-apachedbilogconfig           ports/databases/p5-ApacheDBILogConfig
 p5-apachedbilogger              ports/databases/p5-ApacheDBILogger
 p5-app-cache                    ports/devel/p5-App-Cache
 p5-app-cli                      ports/devel/p5-App-CLI
+p5-app-cli-extension            ports/devel/p5-App-CLI-Extension
 p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
 p5-app-info                     ports/devel/p5-App-Info
@@ -14514,6 +14519,7 @@ p5-clamd                        ports/mail/p5-Clamd
 p5-class                        ports/devel/p5-CLASS
 p5-class-accessor               ports/devel/p5-Class-Accessor
 p5-class-accessor-chained       ports/devel/p5-Class-Accessor-Chained
+p5-class-accessor-children      ports/devel/p5-Class-Accessor-Children
 p5-class-accessor-fast-xs       ports/devel/p5-Class-Accessor-Fast-XS
 p5-class-accessor-grouped       ports/devel/p5-Class-Accessor-Grouped
 p5-class-accessor-lvalue        ports/devel/p5-Class-Accessor-Lvalue
@@ -16254,6 +16260,7 @@ p5-net-frame-dump               ports/net/p5-Net-Frame-Dump
 p5-net-frame-layer-icmpv6       ports/net/p5-Net-Frame-Layer-ICMPv6
 p5-net-frame-layer-ipv6         ports/net/p5-Net-Frame-Layer-IPv6
 p5-net-freedb                   ports/audio/p5-Net-FreeDB
+p5-net-freshbooks-api           ports/www/p5-Net-FreshBooks-API
 p5-net-fs-flickr                ports/net/p5-Net-FS-Flickr
 p5-net-fs-gmail                 ports/net/p5-Net-FS-Gmail
 p5-net-ftp-common               ports/ftp/p5-Net-FTP-Common
