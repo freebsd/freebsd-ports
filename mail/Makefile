@@ -642,7 +642,6 @@
     SUBDIR += squirrelmail-check_quota-plugin
     SUBDIR += squirrelmail-compatibility-plugin
     SUBDIR += squirrelmail-compatibility-plugin1
-    SUBDIR += squirrelmail-devel
     SUBDIR += squirrelmail-email_footer-plugin
     SUBDIR += squirrelmail-login_auth-plugin
     SUBDIR += squirrelmail-login_notes-plugin
