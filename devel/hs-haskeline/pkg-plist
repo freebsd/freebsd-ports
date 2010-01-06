@@ -8,6 +8,7 @@
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/Completion.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/History.hi
+%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/KillRing.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/Undo.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Completion.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Directory.hi
@@ -21,6 +22,7 @@
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/MonadException.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Monads.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Prefs.hi
+%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/RunCommand.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Term.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Vi.hi
 %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/h_iconv.h
