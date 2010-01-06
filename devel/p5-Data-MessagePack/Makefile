@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Data-MessagePack
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for MessagePack
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	--xs
 
 MAN3=	Data::MessagePack.3 \
 	Data::MessagePack::Unpacker.3
