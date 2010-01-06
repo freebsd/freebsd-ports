@@ -45,6 +45,7 @@
 %%WWWDIR%%/contrib/reset_extman_mysql_passwd.pl
 %%WWWDIR%%/contrib/sender.pl
 %%WWWDIR%%/contrib/updatecf.pl
+%%WWWDIR%%/daemon/cmd_plugin/freebsd-cmd
 %%WWWDIR%%/daemon/cmd_plugin/linux-cmd
 %%WWWDIR%%/daemon/cmdserver
 %%WWWDIR%%/docs/README.postfix
@@ -66,6 +67,7 @@
 %%WWWDIR%%/html/default/FOOTER.html
 %%WWWDIR%%/html/default/TOP_BAN.html
 %%WWWDIR%%/html/default/TOP_NAV.html
+%%WWWDIR%%/html/default/UTF8.inc
 %%WWWDIR%%/html/default/ac.js
 %%WWWDIR%%/html/default/autocomplete.css
 %%WWWDIR%%/html/default/changepwd.html
