@@ -7,11 +7,10 @@
 
 PORTNAME=	scrollz
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://scrollz.lysergide.net/ScrollZ/source/ \
-		http://www.xs4all.nl/~netraam/ScrollZ/source/ \
-		http://www.netraam.com/ScrollZ/source/
+		http://www.xs4all.nl/~netraam/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	mdv@unsavoury.net
@@ -32,6 +31,10 @@ MAN1=	scrollz.1
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libgnutls.a:${PORTSDIR}/security/gnutls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl
+.endif
+
+.if defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=	--with-openssl
 .endif
 
 pre-build:
