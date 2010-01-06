@@ -6,60 +6,54 @@
 #
 
 PORTNAME=	instiki
-PORTVERSION=	0.13.0
-PORTREVISION=	2
+PORTVERSION=	0.17.3
 CATEGORIES=	www ruby
-MASTER_SITES=	RF
-#DISTNAME=	${PORTNAME}-0.12.0
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	LOCAL/wen
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}iconv>=0:${PORTSDIR}/converters/ruby-iconv
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USE_LDCONFIG=	yes
-
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/parasew-instiki-4176ef2
 INSTIKIPORT?=	2500
-
-OPTIONS=	PORT_BLUECLOTH	"Use BlueCloth gem from ports" On
+INSTIKIDIR?=	www/instiki
+INSTIKILOGDIR=	${INSTIKIDIR}/log
+INSTIKI_DB=	db/production.db.sqlite3
+INSTIKI_DB_FILE=	${INSTIKIDIR}/${INSTIKI_DB}
 
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR=	${PORTNAME}
-SUB_LIST=	INSTIKIPORT=${INSTIKIPORT} \
-		RUBY_WITH_SUFFIX=${RUBY_WITH_SUFFIX}
-SUB_FILES+=	pkg-deinstall pkg-message
-RUBY_SHEBANG_FILES=instiki
-
-.if defined(WITH_PORT_BLUECLOTH)
-# can't include this because it redefines do-install.
-# .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-# For now, copy and paste the definition of SPEC_DIR from the above
-REV=		${RUBY_VER}
-GEMS_BASE_DIR=	lib/ruby/gems/${REV}
-SPEC_DIR=	${GEMS_BASE_DIR}/specifications
-BUILD_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/BlueCloth-1.0.1.gemspec:${PORTSDIR}/www/rubygem-bluecloth
-EXTRA_PATCHES+=	${FILESDIR}/bluecloth-patch-lib-chunks-engines-rb
-.endif
+PLIST=		${WRKDIR}/plist
+SUB_LIST=	INSTIKIPORT=${INSTIKIPORT}
+SUB_FILES+=	pkg-message
 
 post-extract:
-	@${FIND} -d ${WRKSRC} -type d -name .svn -exec ${RM} -rf {} \;
+	${MV} ${WRKSRC}/${INSTIKI_DB} ${WRKSRC}/${INSTIKI_DB}.sample
 
-post-patch:
-	${RM} ${WRKSRC}/lib/chunks/engines.rb.orig
+pre-install:
+	${FIND} -s -d ${WRKSRC} -type l | ${SED} "s?${WRKSRC}?${INSTIKIDIR}?g" >>${PLIST}
+	${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${INSTIKIDIR}?g" >>${PLIST}
 
-do-build:
-	( cd ${WRKSRC}/db/ && \
-	  ${RAKE_BIN} environment RAILS_ENV=production db:migrate )
+	@if [ ! -f ${PREFIX}/${INSTIKI_DB_FILE} ]; then \
+		${MKDIR} ${PREFIX}/${INSTIKIDIR}/db ; \
+		${CP} ${WRKSRC}/${INSTIKI_DB}.sample ${PREFIX}/${INSTIKI_DB_FILE} ; \
+		${ECHO_CMD} "${INSTIKI_DB_FILE}" >> ${PLIST} ; \
+	fi
+
+	@${ECHO} @dirrm ${INSTIKILOGDIR} >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${INSTIKIDIR}?g" >> ${PLIST}
 
 do-install:
-	@${FIND} -E ${WRKSRC} -type f -iregex ".*\._.+" -exec ${RM} "{}" \;
-	@${INSTALL} -d ${DATADIR}
-	@${CP} -pR ${WRKSRC}/ ${DATADIR}
-	@${CP} -n ${DATADIR}/db/production.db.sqlite3 ${DATADIR}/db/default.db.sqlite3
+	@${INSTALL} -d ${WWWDIR}
+	@${CP} -pR ${WRKSRC}/ ${WWWDIR}/
+
+	@${INSTALL} -d ${WWWDIR}/log
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
