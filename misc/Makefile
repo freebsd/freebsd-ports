@@ -22,7 +22,6 @@
     SUBDIR += bdelta
     SUBDIR += bestfit
     SUBDIR += bibletime
-    SUBDIR += bibletime-kde3
     SUBDIR += biblical-curse
     SUBDIR += bidwatcher
     SUBDIR += bigboard
@@ -487,7 +486,6 @@
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += sword
-    SUBDIR += sword15
     SUBDIR += table.el
     SUBDIR += talkfilters
     SUBDIR += tcb

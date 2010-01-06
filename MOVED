@@ -4243,3 +4243,6 @@ databases/mysql54-client|databases/mysql55-client|2010-01-04|Updated to mileston
 databases/mysql54-server|databases/mysql55-server|2010-01-04|Updated to milestone 2
 databases/mysql54-scripts|databases/mysql55-scripts|2010-01-04|Updated to milestone 2
 databases/p5-DBD-mysql54|databases/p5-DBD-mysql55|2010-01-04|Updated to milestone 2
+misc/sword15||2010-01-06|Has expired: use misc/sword
+misc/bibletime-kde3||2010-01-06|Has expired: use misc/bibletime
+mail/squirrelmail-devel||2010-01-06|Has expired: use mail/squirrelmail
