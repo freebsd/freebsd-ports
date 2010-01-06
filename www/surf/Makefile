@@ -23,6 +23,9 @@ MAN1=		surf.1
 PLIST_FILES=	bin/surf
 PORTDOCS=	LICENSE README
 
+# Name conflicts with the math/surf port
+NO_LATEST_LINK=	yes
+
 pre-everything::
 	@${ECHO_MSG} "You can build surf with your own config.h using the SURF_CONF knob:"
 	@${ECHO_MSG} "make SURF_CONF=/path/to/surf/config.h install clean"
