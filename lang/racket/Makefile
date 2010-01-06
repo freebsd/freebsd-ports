@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plt-scheme
-PORTVERSION=	4.1.4
-PORTREVISION=	2
+PORTVERSION=	4.2.3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/\
 		http://plt.cs.uchicago.edu/bundles/${PORTVERSION}/plt/\
