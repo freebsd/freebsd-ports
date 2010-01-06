@@ -1,5 +1,10 @@
---- Makefile.old	2007-10-30 12:18:08.000000000 +0200
-+++ Makefile	2007-10-30 12:18:16.000000000 +0200
+Description: Skip the run-time test suite if requested by the port options.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-01-05
+
+--- Makefile.orig
++++ Makefile
 @@ -264,7 +264,7 @@
  rts: envdir envuidgid fghack matchtest multilog pgrphack \
  readproctitle rts.tests setlock setuidgid softlimit supervise svc \
