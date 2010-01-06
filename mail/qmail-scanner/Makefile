@@ -71,7 +71,7 @@ SUB_LIST+=	QS_USER=${QS_USER} \
 
 .include <bsd.port.pre.mk>
 
-if ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 900000
 BROKEN=		does not build
 .endif
 
