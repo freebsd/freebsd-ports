@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -17,10 +17,30 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
 
 OPTIONS=	MAN	"Install Gerrit Pape's manual pages" on \
+		S_EARLY	"Start early, before the normal daemons" off \
+		S_NORMAL	"Start normally in the usual boot sequence" on \
 		SIGQ12	"Add svc support for QUIT, USR1, and USR2 signals" off \
 		TESTS	"Run the test suite, fails on NFS-mounted workdir" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_S_EARLY)
+. if defined(WITH_S_NORMAL)
+IGNORE=		Exactly one of S_EARLY and S_NORMAL must be specified.
+. else
+SVSCAN_REQUIRE?=	SERVERS
+SVSCAN_BEFORE?=		DAEMON
+. endif
+.else
+. if defined(WITH_S_NORMAL)
+SVSCAN_REQUIRE?=	LOGIN
+SVSCAN_BEFORE?=
+. else
+IGNORE=		Either S_EARLY or S_NORMAL must be specified.
+. endif
+.endif
+
+SUB_LIST+=	SVSCAN_REQUIRE=${SVSCAN_REQUIRE} SVSCAN_BEFORE=${SVSCAN_BEFORE}
 
 .if !defined(WITHOUT_MAN)
 MANDATE=	-20010714

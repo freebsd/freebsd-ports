@@ -1,5 +1,10 @@
---- Makefile.old	Fri Aug 31 15:16:47 2001
-+++ Makefile	Fri Aug 31 15:17:04 2001
+Description: Do not use the "home" file, FreeBSD has a different mechanism.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-01-06
+
+--- Makefile.orig
++++ Makefile
 @@ -82,10 +82,9 @@
  chkshsgr.o: chkshsgr.c compile
  	./compile chkshsgr.c
