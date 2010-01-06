@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openmap
-PORTVERSION=	4.6.2
-PORTREVISION=	3
+PORTVERSION=	4.6.4
 CATEGORIES=	astro java devel graphics geography
 MASTER_SITES=	http://openmap.bbn.com/src/
 

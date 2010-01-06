@@ -23,11 +23,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/IntHashtable.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/GifEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/ImageEncoder.html
-%%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/JpegEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/PpmEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/class-use/GifEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/class-use/ImageEncoder.html
-%%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/class-use/JpegEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/class-use/PpmEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/package-summary.html
@@ -218,6 +216,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDConstants.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDDirectoryHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDFrameACC.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDFrameCache.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDFrameCacheHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDFrameDSI.html
@@ -228,6 +227,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/DTEDSlopeGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/OMDTEDGrid.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/StandardDTEDNameTranslator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/class-use/DTEDFrameACC.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/class-use/DTEDAdmin.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/class-use/DTEDConstants.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/class-use/DTEDDirectoryHandler.html
@@ -246,6 +246,40 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/ErrImageTile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/ErrWorldFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/ImageReader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/ImageReaderLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/ImageTile.Cache.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/ImageTile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/WorldFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/WorldFileImageReader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/WorldFileImageReaderLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/ErrImageTile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/ErrWorldFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/ImageReader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/ImageReaderLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/ImageTile.Cache.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/ImageTile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/WorldFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/WorldFileImageReader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use/WorldFileImageReaderLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/GeoTIFFFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/GeoTIFFImageReader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/GeoTIFFImageReaderLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/GeoTIFFModelFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/class-use/GeoTIFFFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/class-use/GeoTIFFImageReader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/class-use/GeoTIFFImageReaderLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/class-use/GeoTIFFModelFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211/DDFConstants.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211/DDFDataType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211/DDFField.html
@@ -276,6 +310,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/DbfFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/DbfHandler.Op.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/DbfHandler.Rule.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/DbfHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriGraphicFactory.Header.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriGraphicFactory.ReadByteTracker.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriGraphicFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriIconPoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolygonM.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolygonMList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolygonZ.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolygonZList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolylineM.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolylineMList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolylineZ.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriPolylineZList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/EsriTextPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/DbfTableModel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/DrawingAttributesUtility.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/DrawingToolRenderException.html
@@ -306,6 +357,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriShapeExport.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/MetaDbfTableModel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/ShapeConstants.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/DbfFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/DbfHandler.Op.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/DbfHandler.Rule.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/DbfHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriGraphicFactory.Header.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriGraphicFactory.ReadByteTracker.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriGraphicFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriIconPoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolygonM.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolygonMList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolygonZ.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolygonZList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolylineM.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolylineMList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolylineZ.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriPolylineZList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/class-use/EsriTextPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/input/DbfInputStream.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/input/LittleEndianInputStream.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/input/ShpInputStream.html
@@ -334,6 +402,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/AbstractMouseMode.MouseWheelZoomEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/PanMouseMode.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ProjectionChangeVetoException.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ProjectionSupport.ProjectionChangeNotifier.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ZoomMouseMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/AbstractMouseMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/CenterEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/CenterListener.html
@@ -371,12 +444,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ProjMapBeanKeyListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ProjectionEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ProjectionListener.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ProjectionSupport.ProjectionChangedRunnable.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ProjectionSupport.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/SelectMouseMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ZoomEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ZoomListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/ZoomSupport.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/AbstractMouseMode.MouseWheelZoomEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/PanMouseMode.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ProjectionChangeVetoException.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ProjectionSupport.ProjectionChangeNotifier.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ZoomMouseMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/AbstractMouseMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/CenterEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/CenterListener.html
@@ -414,7 +491,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ProjMapBeanKeyListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ProjectionEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ProjectionListener.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ProjectionSupport.ProjectionChangedRunnable.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ProjectionSupport.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/SelectMouseMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/event/class-use/ZoomEvent.html
@@ -482,9 +558,99 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/examples/simple/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/examples/simple/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/examples/simple/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/BoundaryCrossing.Collector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/BoundaryCrossing.CrossingIntersection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/BoundaryCrossing.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/BoundingCircle.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/BoundingCircle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/ConvexHull.PivotAngleComparator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/ConvexHull.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/ExtentIndex.AbstractExtentIndex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/ExtentIndex.ArrayListExtentIndexImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/ExtentIndex.HashSetExtentIndexImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/ExtentIndex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/ExtentIndexImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoArray.Adapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoArray.Double.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoArray.Float.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoArray.Mutable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoArray.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoExtent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPath.Impl.PointIt.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPath.Impl.SegIt.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPath.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPath.PointIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPath.SegmentIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPath.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPoint.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoPoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoRegion.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoRegion.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoSegment.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/GeoSegment.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchCollector.CollectionMatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchCollector.Pair.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchCollector.PairArrayMatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchCollector.SetMatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchFilter.ExactMF.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchFilter.MatchParametersMF.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchFilter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchParameters.Standard.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/MatchParameters.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/Quadratic.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/RadialRegion.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/Ribbon.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/RibbonIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/Rotation.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/Geo.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/Intersection.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/Geo.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/BoundaryCrossing.Collector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/BoundaryCrossing.CrossingIntersection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/BoundaryCrossing.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/BoundingCircle.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/BoundingCircle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/ConvexHull.PivotAngleComparator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/ConvexHull.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/ExtentIndex.AbstractExtentIndex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/ExtentIndex.ArrayListExtentIndexImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/ExtentIndex.HashSetExtentIndexImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/ExtentIndex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/ExtentIndexImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoArray.Adapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoArray.Double.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoArray.Float.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoArray.Mutable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoArray.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoExtent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPath.Impl.PointIt.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPath.Impl.SegIt.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPath.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPath.PointIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPath.SegmentIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPath.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPoint.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoPoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoRegion.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoRegion.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoSegment.Impl.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/GeoSegment.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchCollector.CollectionMatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchCollector.Pair.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchCollector.PairArrayMatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchCollector.SetMatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchCollector.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchFilter.ExactMF.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchFilter.MatchParametersMF.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchFilter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchParameters.Standard.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/MatchParameters.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/Quadratic.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/RadialRegion.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/Ribbon.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/RibbonIterator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/Rotation.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/class-use/Intersection.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/geo/package-summary.html
@@ -564,8 +730,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/BasicMapPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/CombinedCoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/ControlMenu.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/CoordDialog.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/CoordInternalFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/CoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/DMSCoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/DefaultHelpMenu.html
@@ -617,13 +781,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/UTMCoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/UserGuideMenuItems.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/WindowSupport.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/WindowSupport.Dlg.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/WindowSupport.IntrnlFrm.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/WindowSupport.Frm.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/WindowSupport.WSDisplay.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/ZoomPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/AbstractOpenMapMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/BasicMapPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/CombinedCoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/ControlMenu.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/CoordDialog.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/CoordInternalFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/CoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/DMSCoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/DefaultHelpMenu.html
@@ -675,6 +841,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/UTMCoordPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/UserGuideMenuItems.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/WindowSupport.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/WindowSupport.Dlg.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/WindowSupport.IntrnlFrm.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/WindowSupport.Frm.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/WindowSupport.WSDisplay.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/class-use/ZoomPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/dock/BasicDockPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/gui/dock/DockConstraint.html
@@ -773,9 +943,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/AbstractImageFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/AcmeGifFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/AcmeGifHelper.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/AcmeJPEGFormatter.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/AcmeJPEGHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/BufferedImageHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/ColorReducer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/PNG32ImageFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/ImageScaler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/PNG8ImageFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/MagicPlanetImageComponent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/GIFImageIOFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/GeneratorTester.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/ImageFormatter.html
@@ -800,9 +973,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/AbstractImageFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/AcmeGifFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/AcmeGifHelper.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/AcmeJPEGFormatter.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/AcmeJPEGHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/BufferedImageHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/ColorReducer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/PNG32ImageFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/ImageScaler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/PNG8ImageFormatter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/MagicPlanetImageComponent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/GIFImageIOFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/GeneratorTester.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/ImageFormatter.html
@@ -824,6 +1000,34 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/SunJPEGFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/WMTConstants.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/class-use/XBMFile.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/CapabilitiesSupport.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/WMSException.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/DefaultFeatureInfoResponse.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/WmsLayerFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/DefaultLayerAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/WmsRequestHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/DefaultWmsLayerStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/DynamicWmsRequestHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/FeatureInfoResponse.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/IWmsLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/IWmsLayerStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/LayerFeatureInfoResponse.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/CapabilitiesSupport.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/DefaultFeatureInfoResponse.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/DefaultLayerAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/DefaultWmsLayerStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/DynamicWmsRequestHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/FeatureInfoResponse.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/IWmsLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/IWmsLayerStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/LayerFeatureInfoResponse.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/WMSException.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/WmsLayerFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use/WmsRequestHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/image/package-tree.html
@@ -974,6 +1178,22 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/etopo/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/etopo/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/etopo/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/ImageTileLayer.ImageListCellRenderer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/ImageTileLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/class-use/ImageTileLayer.ImageListCellRenderer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/class-use/ImageTileLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/BasicLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/InteractionLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/class-use/BasicLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/learn/class-use/InteractionLayer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/BufferedLinkLayer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/ClientLink.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/GraphicUpdate.html
@@ -986,6 +1206,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/LinkBoundingPoly.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/LinkCircle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/LinkConstants.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/LinkEllipse.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/LinkGUIList.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/LinkGUIRequest.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/LinkGraphic.html
@@ -1029,6 +1250,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkBoundingPoly.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkCircle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkConstants.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkEllipse.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkGUIList.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkGUIRequest.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkGraphic.html
@@ -1054,6 +1276,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/LinkUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/TestLinkServer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use/TestServerStarter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/DrawLinkLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/class-use/DrawLinkLayer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/link/package-tree.html
@@ -1100,8 +1328,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/class-use/LocationPopupMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/class-use/TimerLocationLayer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/class-use/URLRasterLocation.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/CSVLinkHandler.LinkDecoder.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/CSVLocationHandler.DefaultLocationDecoder.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/CSVLocationHandler.TokenDecoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/CSVLinkHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/CSVLocationHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/class-use/CSVLinkHandler.LinkDecoder.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/class-use/CSVLocationHandler.DefaultLocationDecoder.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/class-use/CSVLocationHandler.TokenDecoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/class-use/CSVLinkHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/class-use/CSVLocationHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/location/csv/package-frame.html
@@ -1274,6 +1508,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/RpfSubframe.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/RpfTocEntry.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/RpfTocHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/RpfUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/RpfViewAttributes.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/class-use/ChangeCase.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/class-use/MakeToc.Frame.html
@@ -1313,6 +1548,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/class-use/RpfSubframe.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/class-use/RpfTocEntry.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/class-use/RpfTocHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/class-use/RpfUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/class-use/RpfViewAttributes.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/rpf/package-summary.html
@@ -1335,9 +1571,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/ShapeFileCrop.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/ShapeIndex.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/ShapeLayer.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/ShapeLayer2.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/ShapeUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/SpatialIndex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/SpatialIndex.Entry.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/SpatialIndexHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/areas/AreaHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/areas/AreaShapeLayer.html
@@ -1365,8 +1601,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/ShapeFile.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/ShapeFileCrop.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/ShapeIndex.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/SpatialIndex.Entry.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/ShapeLayer.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/ShapeLayer2.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/ShapeUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/SpatialIndex.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/shape/class-use/SpatialIndexHandler.html
@@ -1387,6 +1623,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/terrain/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/terrain/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/HelloWorldLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/GeoCrossDemoLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/GeoIntersectionLayer.OMLineSegment.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/GeoIntersectionLayer.OMPolyRegion.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/GeoIntersectionLayer.RemoveShapesActionListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/GeoIntersectionLayer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/TestLayer.Circle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/TestLayer.GraphicBase.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/TestLayer.Line.html
@@ -1395,6 +1636,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/TestLayer.Text.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/TestLayer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/HelloWorldLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/GeoCrossDemoLayer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/GeoIntersectionLayer.OMLineSegment.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/GeoIntersectionLayer.OMPolyRegion.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/GeoIntersectionLayer.RemoveShapesActionListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/GeoIntersectionLayer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/TestLayer.Circle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/TestLayer.GraphicBase.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/test/class-use/TestLayer.Line.html
@@ -1451,6 +1697,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/HttpRequestEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/HttpRequestListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/HttpServer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/IHttpResponse.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/ReverseListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/SeparatorListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/SieveListener.html
@@ -1459,6 +1706,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/class-use/HttpRequestEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/class-use/HttpRequestListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/class-use/HttpServer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/class-use/IHttpResponse.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/class-use/ReverseListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/class-use/SeparatorListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/layer/util/http/class-use/SieveListener.html
@@ -1604,6 +1852,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/BasicStrokeEditorMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/Cubic.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/DrawingAttributes.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/DrawingAttributesPropertyEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/EditableOMAbstractLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/OMAbstractLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/OMGraphicHash.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/OMPoint.Image.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/EditableOMCircle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/EditableOMDecoratedSpline.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/EditableOMDistance.html
@@ -1683,6 +1936,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/awt/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/awt/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/awt/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/DrawingAttributesPropertyEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/OMGraphicHash.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/EditableOMAbstractLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/OMPoint.Image.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/OMAbstractLine.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/BasicStrokeEditor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/BasicStrokeEditorMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/class-use/Cubic.html
@@ -1867,6 +2125,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/event/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/event/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/BasicGeometry.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/NonRegional.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/PolygonGeometry.LL.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/PolygonGeometry.Offset.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/PolygonGeometry.XY.html
@@ -1884,19 +2143,26 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/class-use/PolylineGeometry.Offset.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/class-use/PolylineGeometry.XY.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/class-use/PolylineGeometry.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/class-use/NonRegional.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/geom/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ColorGeneratorLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ElevationBandGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ElevationBandGeneratorLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SimpleColorGenerator.ByteRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SimpleColorGenerator.CharRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SimpleColorGenerator.DoubleRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SimpleColorGenerator.FloatRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SimpleColorGenerator.IntRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SimpleColorGenerator.RasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SimpleColorGenerator.ShortRasterHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ColoredShadingColors.ColorHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ColoredShadingColors.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ContourLineGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ElevationColors.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ElevationFBandGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/ElevationMBandGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/GeneratorLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/GreyscaleSlopeColors.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/GreyscaleSlopeGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/GridData.Boolean.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/GridData.Byte.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/GridData.Char.html
@@ -1919,15 +2185,21 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SinkGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SlopeGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/SlopeGeneratorLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ColorGeneratorLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ElevationBandGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ElevationBandGeneratorLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/SimpleColorGenerator.ByteRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/SimpleColorGenerator.CharRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/SimpleColorGenerator.DoubleRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/SimpleColorGenerator.FloatRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/SimpleColorGenerator.IntRasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/SimpleColorGenerator.RasterHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/SimpleColorGenerator.ShortRasterHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ColoredShadingColors.ColorHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ColoredShadingColors.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ContourLineGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ElevationColors.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ElevationFBandGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/ElevationMBandGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/GeneratorLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/GreyscaleSlopeColors.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/GreyscaleSlopeGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/GridData.Boolean.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/GridData.Byte.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/omGraphics/grid/class-use/GridData.Char.html
@@ -2062,6 +2334,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/plugin/wms/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/plugin/wms/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/plugin/wms/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/AspectRatioProjection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/UTMProjectionLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/UTMProjection.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/AziDist.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Azimuth.AzimuthVar.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Azimuth.html
@@ -2069,7 +2344,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/CADRG.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/CADRGLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Clip.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Conic.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Cylindrical.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/DrawUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Ellipsoid.html
@@ -2081,11 +2355,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/LLXYLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/LLXYView.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/LambertConformal.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/LambertConformalConic.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/LambertConformalLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Length.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/LineType.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/MassStatePlane.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/Mercator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/MercatorLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/MercatorView.html
@@ -2105,6 +2377,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/ProjectionStackSupport.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/ProjectionStackTrigger.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/RhumbCalculator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/AspectRatioProjection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/UTMProjectionLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/UTMProjection.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/AziDist.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Azimuth.AzimuthVar.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Azimuth.html
@@ -2112,7 +2387,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/CADRG.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/CADRGLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Clip.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Conic.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Cylindrical.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/DrawUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Ellipsoid.html
@@ -2124,11 +2398,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/LLXYLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/LLXYView.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/LambertConformal.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/LambertConformalConic.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/LambertConformalLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Length.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/LineType.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/MassStatePlane.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/Mercator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/MercatorLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/MercatorView.html
@@ -2148,6 +2420,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/ProjectionStackSupport.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/ProjectionStackTrigger.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/class-use/RhumbCalculator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/AbstractGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/CoordinateReferenceSystem.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/GeoCoordTransformation.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/LatLonGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/MercatorMeterGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/UTMGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/ZonedUTMPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/DMSLatLonPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/ECEFPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/EnuFrame.html
@@ -2155,6 +2434,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/NedFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/UPSPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/UTMPoint.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/AbstractGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/CoordinateReferenceSystem.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/GeoCoordTransformation.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/LatLonGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/MercatorMeterGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/UTMGCT.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/ZonedUTMPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/DMSLatLonPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/ECEFPoint.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/coords/class-use/EnuFrame.html
@@ -2170,6 +2456,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/proj/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/OpenMapAppPartCollection.OpenMapAppPart.Circle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/OpenMapAppPartCollection.OpenMapAppPart.Poly.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/beanbox/BeanBox.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/beanbox/BeanBoxDnDCatcher.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/beanbox/BeanBoxHandler.html
@@ -2294,6 +2582,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/class-use/OMIconFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/class-use/OpenMapAppPartCollection.OpenMapAppPart.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/class-use/OpenMapAppPartCollection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/class-use/OpenMapAppPartCollection.OpenMapAppPart.Circle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/class-use/OpenMapAppPartCollection.OpenMapAppPart.Poly.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/tools/icon/package-tree.html
@@ -2428,6 +2718,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/FileUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/GraphicList.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/HandleError.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/OMLoggingFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/Palette.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/PaletteHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/PropUtils.html
@@ -2437,6 +2728,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/Tokenizer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/VHTransform.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/WebBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/CacheHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/CacheObject.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/class-use/CacheHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/class-use/CacheObject.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/ArgParser.Arg.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/ArgParser.HelpArg.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/ArgParser.html
@@ -2455,6 +2754,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/FileUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/GraphicList.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/HandleError.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/OMLoggingFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/Palette.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/PaletteHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com/bbn/openmap/util/class-use/PropUtils.html
@@ -2579,6 +2879,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/package-list
 %%PORTDOCS%%%%DOCSDIR%%/api/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/api/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/doc-index.html
@@ -2621,23 +2922,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/zoombar.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/zoombar.png
 %%PORTDOCS%%%%DOCSDIR%%/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/openmap-arch-1.html
-%%PORTDOCS%%%%DOCSDIR%%/openmap-arch-2.html
-%%PORTDOCS%%%%DOCSDIR%%/openmap-arch-3.html
-%%PORTDOCS%%%%DOCSDIR%%/openmap-arch-4.html
-%%PORTDOCS%%%%DOCSDIR%%/openmap-arch-5.html
-%%PORTDOCS%%%%DOCSDIR%%/openmap-arch-6.html
-%%PORTDOCS%%%%DOCSDIR%%/openmap-arch.html
 %%PORTDOCS%%%%DOCSDIR%%/prev.gif
 %%PORTDOCS%%%%DOCSDIR%%/sgml/FAQ.README
 %%PORTDOCS%%%%DOCSDIR%%/sgml/openmap-arch.sgml
 %%PORTDOCS%%%%DOCSDIR%%/sgml/user-guide.sgml
 %%PORTDOCS%%%%DOCSDIR%%/toc.gif
-%%PORTDOCS%%%%DOCSDIR%%/user-guide-1.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide-2.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide-3.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide-4.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide.html
 bin/openmap
 %%JAVAJARDIR%%/milStd2525_png.jar
 %%JAVAJARDIR%%/omcorba.jar
@@ -2655,6 +2944,8 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/edu/stanford/ejalbert
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/edu/stanford
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/edu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/wanderer/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/wanderer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/quadtree/class-use
@@ -2755,10 +3046,16 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/location
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/shape/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/shape
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/amp/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/amp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/learn/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/learn/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/etopo/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/etopo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/editor/class-use
@@ -2775,6 +3072,8 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/io/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/io
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/image/wms/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/image/wms
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/image/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/image
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/gui/time/class-use
@@ -2812,6 +3111,10 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/shape
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/iso8211
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/geotiff
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/image
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/dted
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/dataAccess/cgm/class-use
@@ -2830,5 +3133,6 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/Acme/JPM/Encoders
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/Acme/JPM
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/Acme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 @dirrm %%DOCSDIR%%
