@@ -22,4 +22,8 @@ PLIST_FILES=	bin/pmt
 do-install:
 	@${CP} ${WRKSRC}/pmt ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 800071
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config.mak
+.endif
+.include <bsd.port.post.mk>
