@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	GNU Binutils for Windows cross-development
 
 BINUTILVERSION=	2.19.1

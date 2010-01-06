@@ -16,7 +16,7 @@ DISTFILES=	mingwrt-${RUNTIMEVERSION}-mingw32-dev${EXTRACT_SUFX}:runtime \
 		w32api-${APIVERSION}-mingw32-dev${EXTRACT_SUFX}:api
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Headers and Libraries for Windows cross-development
 
 CONFLICTS=	mingw-bin-msvcrt-*
