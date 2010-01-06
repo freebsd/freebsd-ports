@@ -60,6 +60,12 @@ bin/scapy
 %%PYTHON_SITELIBDIR%%/scapy/config.py
 %%PYTHON_SITELIBDIR%%/scapy/config.pyc
 %%PYTHON_SITELIBDIR%%/scapy/config.pyo
+%%PYTHON_SITELIBDIR%%/scapy/crypto/__init__.py
+%%PYTHON_SITELIBDIR%%/scapy/crypto/__init__.pyc
+%%PYTHON_SITELIBDIR%%/scapy/crypto/__init__.pyo
+%%PYTHON_SITELIBDIR%%/scapy/crypto/cert.py
+%%PYTHON_SITELIBDIR%%/scapy/crypto/cert.pyc
+%%PYTHON_SITELIBDIR%%/scapy/crypto/cert.pyo
 %%PYTHON_SITELIBDIR%%/scapy/dadict.py
 %%PYTHON_SITELIBDIR%%/scapy/dadict.pyc
 %%PYTHON_SITELIBDIR%%/scapy/dadict.pyo
@@ -195,6 +201,9 @@ bin/scapy
 %%PYTHON_SITELIBDIR%%/scapy/plist.py
 %%PYTHON_SITELIBDIR%%/scapy/plist.pyc
 %%PYTHON_SITELIBDIR%%/scapy/plist.pyo
+%%PYTHON_SITELIBDIR%%/scapy/pton_ntop.py
+%%PYTHON_SITELIBDIR%%/scapy/pton_ntop.pyc
+%%PYTHON_SITELIBDIR%%/scapy/pton_ntop.pyo
 %%PYTHON_SITELIBDIR%%/scapy/route.py
 %%PYTHON_SITELIBDIR%%/scapy/route.pyc
 %%PYTHON_SITELIBDIR%%/scapy/route.pyo
@@ -231,6 +240,7 @@ bin/scapy
 @dirrm %%PYTHON_SITELIBDIR%%/scapy/tools
 @dirrm %%PYTHON_SITELIBDIR%%/scapy/modules
 @dirrm %%PYTHON_SITELIBDIR%%/scapy/layers
+@dirrm %%PYTHON_SITELIBDIR%%/scapy/crypto
 @dirrm %%PYTHON_SITELIBDIR%%/scapy/asn1
 @dirrm %%PYTHON_SITELIBDIR%%/scapy/arch
 @dirrm %%PYTHON_SITELIBDIR%%/scapy
