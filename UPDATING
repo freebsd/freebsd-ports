@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100106:
+  AFFECTS: users of devel/websvn
+  AUTHOR: miwi@FreeBSD.org
+
+  The default install directory for websvn has changed from
+  ${PREFIX}/www/data/websvn to ${PREFIX}/www/websvn.
+
+  If you are updating from a previous version, to preserve your settings
+  and data, please do the following:
+
+    mv /usr/local/www/data/websvn /usr/local/www
+
+  Then update as usual.
+
 20091227:
   AFFECTS: users of sysutils/grok
   AUTHOR: Wesley Shields <wxs@FreeBSD.org>
