@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: udpxy
+# REQUIRE: NETWORKING
+
+# The following variables are provided to control startup of udpxy:
+# rc configuration file (eg /etc/rc.conf):
+# udpxy_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable udpxy.
+# udpxy_flags (str):	Set to "" by default.
+#			Extra flags passed to start command.
+
+. %%RC_SUBR%%
+
+name="udpxy"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+command_args="${udpxy_flags}"
+udpxy_enable=${udpxy_enable-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"

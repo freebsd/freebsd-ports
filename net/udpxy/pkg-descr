@@ -1,0 +1,5 @@
+udpxy is a UDP-to-HTTP multicast traffic relay daemon:
+it forwards UDP traffic from a given multicast subscription
+to the requesting HTTP client.
+
+WWW: http://udpxy.sourceforge.net/

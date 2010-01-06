@@ -1034,6 +1034,7 @@
     SUBDIR += twitux
     SUBDIR += ucarp
     SUBDIR += udptunnel
+    SUBDIR += udpxy
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison
