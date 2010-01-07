@@ -43,7 +43,6 @@
     SUBDIR += dice
     SUBDIR += diveintopython
     SUBDIR += dlv
-    SUBDIR += drscheme
     SUBDIR += dylan
     SUBDIR += ecl
     SUBDIR += eiffel
