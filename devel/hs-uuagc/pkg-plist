@@ -1,4 +1,21 @@
 @comment $FreeBSD$
 bin/uuagc
-%%DOCSDIR%%/LICENSE
-@dirrm %%DOCSDIR%%
+%%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Simple/UUAGC.hi
+%%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Simple/UUAGC/AbsSyn.hi
+%%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Simple/UUAGC/Options.hi
+%%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Simple/UUAGC/Parser.hi
+%%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Simple/UUAGC/UUAGC.hi
+%%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSuuagc-%%UUAGC_VERSION%%.o
+%%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSuuagc-%%UUAGC_VERSION%%.a
+%%UUAGC_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Simple/UUAGC
+@dirrm %%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Simple
+@dirrm %%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution
+@dirrm %%UUAGC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%UUAGC_LIBDIR_REL%%
+@exec /bin/sh %D/%%UUAGC_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister uuagc
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
