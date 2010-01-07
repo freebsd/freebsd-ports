@@ -26,7 +26,7 @@ CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib \
 		-I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 
-OPTIONS=	NLS "Enable national language support" on
+OPTIONS?=	NLS "Enable national language support" on
 
 .if !defined(MASTERDIR)
 MAN1=		chattr.1 lsattr.1

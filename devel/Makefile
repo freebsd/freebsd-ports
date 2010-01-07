@@ -301,6 +301,7 @@
     SUBDIR += dwarfdump
     SUBDIR += dyncall
     SUBDIR += e00compr
+    SUBDIR += e2fsprogs-libss
     SUBDIR += e4graph
     SUBDIR += e_dbus
     SUBDIR += easygit

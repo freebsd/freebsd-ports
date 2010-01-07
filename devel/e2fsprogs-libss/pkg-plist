@@ -1,0 +1,12 @@
+bin/mk_cmds
+include/ss/ss.h
+include/ss/ss_err.h
+lib/libss.so.2.0
+lib/libss.so
+lib/libss.a
+lib/libss.so.2
+libdata/pkgconfig/ss.pc
+share/ss/ct_c.awk
+share/ss/ct_c.sed
+@dirrm	include/ss
+@dirrm	share/ss
