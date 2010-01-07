@@ -4,7 +4,7 @@ using an encrypted tunnel over the internet. It can operate over UDP or TCP,
 can use SSL or a pre-shared secret to authenticate peers, and in SSL mode, one
 server can handle many clients.
 
-WWW: http://openvpn.net/
+WWW: http://openvpn.net/index.php/open-source.html
 
 - Matthias Andree
-matthias.andree@gmx.de
+mandree@FreeBSD.org

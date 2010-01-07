@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100107:
+  AFFECTS: users of security/openvpn*
+  AUTHOR: mandree@FreeBSD.org
+
+  security/openvpn has been moved to security/openvpn20 and upgraded to 2.0.9.
+  security/openvpn has been upgraded to 2.1.1, and security/openvpn-devel has
+  been removed.
+
 20100106:
   AFFECTS: users of devel/websvn
   AUTHOR: miwi@FreeBSD.org

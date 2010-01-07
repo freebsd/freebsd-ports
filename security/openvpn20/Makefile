@@ -6,14 +6,7 @@
 #
 
 PORTNAME=	openvpn
-# -----------------------------------------------------
-# DO NOT BOTHER TO SEND NOTICES ABOUT OPENVPN 2.0.9
-# AS IT FIXES WINDOWS-ONLY BUGS THAT DON'T AFFECT *BSD
-# AND THUS DOES NOT WARRANT A PORT UPGRADE!
-# UPGRADE REQUESTS WILL BE DROPPED UNLESS BSD-RELATED.
-# -----------------------------------------------------
-PORTVERSION=	2.0.6
-PORTREVISION=	9
+PORTVERSION=	2.0.9
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -22,7 +15,8 @@ MASTER_SITES=	http://openvpn.net/release/
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
-CONFLICTS=	openvpn-devel-[0-9]*
+LATEST_LINK=	openvpn20
+CONFLICTS=	openvpn-2.[!0]* openvpn-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -36,7 +30,7 @@ OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off
 USE_RC_SUBR=	openvpn.sh
 USE_LDCONFIG=	${PREFIX}/lib
 
-SUB_FILES=	pkg-message pkg-req
+SUB_FILES=	pkg-message
 SUB_LIST+=	OSVERSION=${OSVERSION}
 
 .include <bsd.port.pre.mk>
@@ -54,7 +48,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "      LOG_OPENVPN={Valid syslog facility}"
+	@${ECHO} "      LOG_OPENVPN={Valid syslog facility, default LOG_DAEMON}"
 	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_DAEMON"
 	@${ECHO} ""
 .endif
@@ -81,9 +75,6 @@ post-build:
 	cd ${WRKSRC} && ${MAKE} check
 .endif
 
-pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
-
 post-install:
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib
@@ -98,7 +89,7 @@ post-install:
 .endfor
 .for dir in easy-rsa easy-rsa/2.0 sample-config-files
 	${MKDIR} ${DOCSDIR}/${dir}
-	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
+	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f \( -name '.*' -o -name Makefile \) -o -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
 .endfor
 .for dir in sample-scripts
 	${MKDIR} ${DOCSDIR}/${dir}
