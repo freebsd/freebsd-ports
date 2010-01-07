@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.3.3
+PORTVERSION=	5.3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 .ifdef MNAME
@@ -22,7 +22,7 @@ RUN_DEPENDS=	rsyslog>=5:${PORTSDIR}/sysutils/rsyslog5
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
-CONFLICTS=	rsyslog-[2-4].[0-9]*
+CONFLICTS=	rsyslog-[!5].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
