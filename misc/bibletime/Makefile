@@ -7,13 +7,14 @@
 
 PORTNAME=	bibletime
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	An opensource Bible study tool
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.1.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		clucene.0:${PORTSDIR}/textproc/clucene
@@ -24,8 +25,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui iconengines network phonon qtestlib script \
 		svg webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build
-
-CONFLICTS=	bibletime-kde3-1*
 
 .include <bsd.port.pre.mk>
 

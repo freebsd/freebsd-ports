@@ -7,13 +7,14 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.0.so:${PORTSDIR}/misc/sword
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.1.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GETTEXT=	yes
