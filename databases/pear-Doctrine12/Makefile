@@ -30,6 +30,7 @@ SUB_FILES=	pear-deinstall pear-install
 SUB_LIST+=	CHANNEL=${CHANNEL}
 PKGINSTALL=	${WRKDIR}/pear-install
 PKGDEINSTALL=	${WRKDIR}/pear-deinstall
+LATEST_LINK=	pear-Doctrine12
 
 .include <bsd.port.pre.mk>
 
