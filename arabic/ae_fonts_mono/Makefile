@@ -21,6 +21,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 
 USE_XORG=	x11
 USE_BZIP2=	yes
+SUB_FILES=	pkg-message
 
 do-build:
 	@mkfontdir ${WRKSRC}
@@ -31,7 +32,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/ae_fonts_mono
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|LOCALBASE|${LOCALBASE}|g" \
-		| ${SED} "s|PORTNAME|${PORTNAME}|g"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
