@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	9.9.3
-#PORTREVISION=	1
+PORTVERSION=	9.9.6
 CATEGORIES=	net www
 MASTER_SITES=	http://www.chifeng.name/dist/delegate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
