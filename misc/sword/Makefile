@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sword
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.6/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v1.6/ \
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	tabthorpe
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
 
-CONFLICTS=	sword-1.5*
+BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
 MAKE_JOBS_SAFE=	yes
 
@@ -35,18 +35,18 @@ CONFIGURE_ARGS+=	--without-curl
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 
+run-autotools::	run-autotools-aclocal
+
 pre-everything::
 	@${ECHO_CMD} "Define WITHOUT_CURL to disable remote fetch (curl) support in the installmanager"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.10.2|1.10.1|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|2.63|2.62|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
-	@@${REINPLACE_CMD} -e 's|:=|=|' ${WRKSRC}/Makefile.am \
-	${WRKSRC}/Makefile.in ${WRKSRC}/lib/Makefile.am \
-	${WRKSRC}/lib/Makefile.in
+		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|:=|=|' ${WRKSRC}/Makefile.am \
+		${WRKSRC}/Makefile.in ${WRKSRC}/lib/Makefile.am \
+		${WRKSRC}/lib/Makefile.in
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/sword/mods.d

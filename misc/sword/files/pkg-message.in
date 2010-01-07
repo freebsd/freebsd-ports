@@ -13,4 +13,4 @@ to risk detection, you should *not* try this.
      and unpack them in %%PREFIX%%/share/sword.
 
 You probably want to install a bible-application that uses sword,
-like bibletime or gnomesword.
+like bibletime or xiphos.
