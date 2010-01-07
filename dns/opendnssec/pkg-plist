@@ -1,0 +1,99 @@
+bin/hsmspeed
+bin/hsmutil
+bin/ksmutil
+bin/ods-auditor
+bin/ods-control
+bin/ods-hsmspeed
+bin/ods-hsmutil
+bin/ods-ksmutil
+bin/ods-kaspcheck
+bin/ods-signer
+%%ETCDIR%%/conf.xml
+%%ETCDIR%%/conf.xml.sample
+%%ETCDIR%%/kasp.xml
+%%ETCDIR%%/kasp.xml.sample
+%%ETCDIR%%/zonefetch.xml
+%%ETCDIR%%/zonefetch.xml.sample
+%%ETCDIR%%/zonelist.xml
+%%ETCDIR%%/zonelist.xml.sample
+include/hsmtest.h
+include/libhsm.h
+include/libhsmdns.h
+lib/libhsm.a
+lib/libhsm.la
+lib/libhsm.so
+lib/libhsm.so.1
+lib/opendnssec/kasp_auditor/auditor.rb
+lib/opendnssec/kasp_auditor/config.rb
+lib/opendnssec/kasp_auditor/key_tracker.rb
+lib/opendnssec/kasp_auditor/parse.rb
+lib/opendnssec/kasp_auditor/preparser.rb
+lib/opendnssec/kasp_auditor.rb
+lib/opendnssec/kasp_checker.rb
+lib/opendnssec/signer/Engine.py
+lib/opendnssec/signer/Engine.pyc
+lib/opendnssec/signer/Engine.pyo
+lib/opendnssec/signer/EngineConfig.py
+lib/opendnssec/signer/EngineConfig.pyc
+lib/opendnssec/signer/EngineConfig.pyo
+lib/opendnssec/signer/Util.py
+lib/opendnssec/signer/Util.pyc
+lib/opendnssec/signer/Util.pyo
+lib/opendnssec/signer/Worker.py
+lib/opendnssec/signer/Worker.pyc
+lib/opendnssec/signer/Worker.pyo
+lib/opendnssec/signer/Zone.py
+lib/opendnssec/signer/Zone.pyc
+lib/opendnssec/signer/Zone.pyo
+lib/opendnssec/signer/ZoneConfig.py
+lib/opendnssec/signer/ZoneConfig.pyc
+lib/opendnssec/signer/ZoneConfig.pyo
+lib/opendnssec/signer/ZoneList.py
+lib/opendnssec/signer/ZoneList.pyc
+lib/opendnssec/signer/ZoneList.pyo
+lib/opendnssec/time_shift.rb
+libexec/opendnssec/create_dnskey
+libexec/opendnssec/finalizer
+libexec/opendnssec/get_class
+libexec/opendnssec/get_serial
+libexec/opendnssec/nsec3er
+libexec/opendnssec/nseccer
+libexec/opendnssec/signer
+libexec/opendnssec/signer_threads
+libexec/opendnssec/sorter
+libexec/opendnssec/zone_fetcher
+libexec/opendnssec/zone_reader
+sbin/ods-enforcerd
+sbin/ods-signerd
+%%DATADIR%%.spec
+%%DATADIR%%/conf.rnc
+%%DATADIR%%/conf.rng
+%%DATADIR%%/database_create.sqlite3
+%%DATADIR%%/kasp.rnc
+%%DATADIR%%/kasp.rng
+%%DATADIR%%/kasp2html.xsl
+%%DATADIR%%/signconf.rnc
+%%DATADIR%%/signconf.rng
+%%DATADIR%%/zonefetch.rnc
+%%DATADIR%%/zonefetch.rng
+%%DATADIR%%/zonelist.rnc
+%%DATADIR%%/zonelist.rng
+@dirrm var/run/opendnssec
+@dirrm var/run
+@dirrm var/opendnssec/unsigned
+@dirrm var/opendnssec/tmp
+@dirrm var/opendnssec/signed
+@dirrm var/opendnssec/signconf
+@dirrm var/opendnssec
+@dirrm var
+@dirrm %%DATADIR%%
+@dirrm libexec/opendnssec
+@dirrm lib/opendnssec/kasp_auditor
+@dirrm lib/opendnssec/signer
+@dirrm lib/opendnssec
+@dirrm %%ETCDIR%%
+@exec mkdir -p %D/var/run/opendnssec
+@exec mkdir -p %D/var/opendnssec/unsigned
+@exec mkdir -p %D/var/opendnssec/tmp
+@exec mkdir -p %D/var/opendnssec/signed
+@exec mkdir -p %D/var/opendnssec/signconf
