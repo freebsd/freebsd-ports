@@ -97,6 +97,7 @@
     SUBDIR += p5-SMS-Send-DeviceGsm
     SUBDIR += p5-SMS-Send-TW-PChome
     SUBDIR += p5-SMS-Send-TW-ShareSMS
+    SUBDIR += p5-SMS-Send-TW-chtsns
     SUBDIR += p5-SMS-Send-TW-emome
     SUBDIR += picocom
     SUBDIR += pr
