@@ -4,10 +4,13 @@ include/TeXmacs.h
 libexec/TeXmacs/bin/bbox_add.pl
 libexec/TeXmacs/bin/maxima_detect
 libexec/TeXmacs/bin/maxima_filter
+libexec/TeXmacs/bin/perl-tm_asy
 libexec/TeXmacs/bin/r_install
 libexec/TeXmacs/bin/realpath
 libexec/TeXmacs/bin/realpath.py
 libexec/TeXmacs/bin/texmacs.bin
+libexec/TeXmacs/bin/tm_asy
+libexec/TeXmacs/bin/tm_asy2
 libexec/TeXmacs/bin/tm_axiom
 libexec/TeXmacs/bin/tm_dratex
 libexec/TeXmacs/bin/tm_eukleides
@@ -283,7 +286,6 @@ share/TeXmacs/doc/devel/format/basics/typesetting.de.tm
 share/TeXmacs/doc/devel/format/basics/typesetting.en.tm
 share/TeXmacs/doc/devel/format/env-vars.de.tm
 share/TeXmacs/doc/devel/format/env-vars.fr.tm
-share/TeXmacs/doc/devel/format/primitives.fr.tm
 share/TeXmacs/doc/devel/format/environment/env-font.de.tm
 share/TeXmacs/doc/devel/format/environment/env-font.en.tm
 share/TeXmacs/doc/devel/format/environment/env-general.de.tm
@@ -308,6 +310,7 @@ share/TeXmacs/doc/devel/format/format.de.tm
 share/TeXmacs/doc/devel/format/format.fr.tm
 share/TeXmacs/doc/devel/format/leaves.fr.tm
 share/TeXmacs/doc/devel/format/planned-changes.fr.tm
+share/TeXmacs/doc/devel/format/primitives.fr.tm
 share/TeXmacs/doc/devel/format/regular/prim-box.de.tm
 share/TeXmacs/doc/devel/format/regular/prim-box.en.tm
 share/TeXmacs/doc/devel/format/regular/prim-formatting.de.tm
@@ -1587,9 +1590,11 @@ share/TeXmacs/misc/convert/html_commands
 share/TeXmacs/misc/convert/special.pro
 share/TeXmacs/misc/convert/tex.pro
 share/TeXmacs/misc/convert/texps.pro
-share/TeXmacs/misc/images/tm_gnu1.png
 share/TeXmacs/misc/images/TeXmacs.svg
+share/TeXmacs/misc/images/left-head.png
+share/TeXmacs/misc/images/right-head.png
 share/TeXmacs/misc/images/text-texmacs.svg
+share/TeXmacs/misc/images/tm_gnu1.png
 share/TeXmacs/misc/images/tm_gnu1.ps
 share/TeXmacs/misc/images/tm_gnu2.png
 share/TeXmacs/misc/images/tm_gnu2.ps
@@ -1602,7 +1607,7 @@ share/TeXmacs/misc/mime/texmacs.desktop
 share/TeXmacs/misc/mime/texmacs.keys
 share/TeXmacs/misc/mime/texmacs.mime
 share/TeXmacs/misc/mime/texmacs.xml
-share/TeXmacs/misc/patterns/wood-xdark.png
+share/TeXmacs/misc/patterns/granite-dark.png
 share/TeXmacs/misc/patterns/granite-light.png
 share/TeXmacs/misc/patterns/granite-medium.png
 share/TeXmacs/misc/patterns/granite-xdark.png
@@ -1617,18 +1622,18 @@ share/TeXmacs/misc/patterns/paper-manila-light.png
 share/TeXmacs/misc/patterns/paper-manila-medium.png
 share/TeXmacs/misc/patterns/paper-ridged-bright.png
 share/TeXmacs/misc/patterns/paper-ridged-light.png
-share/TeXmacs/misc/patterns/pine.png
 share/TeXmacs/misc/patterns/paper-ridged-medium.png
 share/TeXmacs/misc/patterns/paper-rough-bright.png
 share/TeXmacs/misc/patterns/paper-rough-light.png
 share/TeXmacs/misc/patterns/paper-rough-medium.png
+share/TeXmacs/misc/patterns/pine.png
 share/TeXmacs/misc/patterns/ridged-brushed-dark.png
 share/TeXmacs/misc/patterns/ridged-brushed-light.png
 share/TeXmacs/misc/patterns/ridged-brushed-medium.png
 share/TeXmacs/misc/patterns/wood-dark.png
 share/TeXmacs/misc/patterns/wood-light.png
 share/TeXmacs/misc/patterns/wood-medium.png
-share/TeXmacs/misc/patterns/granite-dark.png
+share/TeXmacs/misc/patterns/wood-xdark.png
 share/TeXmacs/misc/pixmaps/LICENSE
 share/TeXmacs/misc/pixmaps/TeXmacs-einstein.xpm
 share/TeXmacs/misc/pixmaps/TeXmacs-gnu.xpm
@@ -1879,6 +1884,7 @@ share/TeXmacs/packages/example/bpr.ts
 share/TeXmacs/packages/example/doxygen.ts
 share/TeXmacs/packages/example/framed-envs.ts
 share/TeXmacs/packages/example/presentation.ts
+share/TeXmacs/packages/example/slides.ts
 share/TeXmacs/packages/example/vdh.ts
 share/TeXmacs/packages/gui/gui-brushed.ts
 share/TeXmacs/packages/gui/gui-form.ts
@@ -1920,6 +1926,9 @@ share/TeXmacs/packages/standard/std-utils.ts
 share/TeXmacs/packages/standard/std.ts
 share/TeXmacs/packages/test/algo.ts
 share/TeXmacs/packages/utilities/chat.ts
+share/TeXmacs/plugins/asymptote/progs/asymptote-menus.scm
+share/TeXmacs/plugins/asymptote/progs/init-asymptote.scm
+share/TeXmacs/plugins/asymptote/samples/asy-demo.tm
 share/TeXmacs/plugins/axiom/packages/session/axiom.ts
 share/TeXmacs/plugins/axiom/progs/axiom-input.scm
 share/TeXmacs/plugins/axiom/progs/init-axiom.scm
@@ -1928,6 +1937,8 @@ share/TeXmacs/plugins/dratex/examples/texts/dratex.tm
 share/TeXmacs/plugins/dratex/latex/AlDraTex.sty
 share/TeXmacs/plugins/dratex/latex/DraTex.sty
 share/TeXmacs/plugins/dratex/progs/init-dratex.scm
+share/TeXmacs/plugins/eukleides/progs/eukleides-figures-menu.scm
+share/TeXmacs/plugins/eukleides/progs/eukleides-menus.scm
 share/TeXmacs/plugins/eukleides/progs/init-eukleides.scm
 share/TeXmacs/plugins/feynmf/doc/feynmf-plugin_tutorial.tm
 share/TeXmacs/plugins/feynmf/progs/init-feynmf.scm
@@ -1960,6 +1971,7 @@ share/TeXmacs/plugins/maple/progs/maple-input.scm
 share/TeXmacs/plugins/maple/src.9/tm_maple_9.c
 share/TeXmacs/plugins/mathemagix/packages/session/mathemagix.ts
 share/TeXmacs/plugins/mathemagix/progs/init-mathemagix.scm
+share/TeXmacs/plugins/mathemagix/progs/mathemagix-edit.scm
 share/TeXmacs/plugins/mathemagix/progs/mathemagix-input.scm
 share/TeXmacs/plugins/mathematica/Makefile.lazy
 share/TeXmacs/plugins/mathematica/packages/session/mathematica.ts
@@ -1980,16 +1992,16 @@ share/TeXmacs/plugins/matlab/code/tmdisp.m
 share/TeXmacs/plugins/matlab/code/tmrepl.m
 share/TeXmacs/plugins/matlab/code/typeinfo.m
 share/TeXmacs/plugins/matlab/progs/init-matlab.scm
+share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.10.0.lisp
+share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.11.0.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.6.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.0.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.1.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.2.lisp
-share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.10.0.lisp
-share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.11.0.lisp
 share/TeXmacs/plugins/maxima/packages/session/maxima.ts
 share/TeXmacs/plugins/maxima/progs/init-maxima.scm
-share/TeXmacs/plugins/maxima/progs/maxima-kbd.scm
 share/TeXmacs/plugins/maxima/progs/maxima-input.scm
+share/TeXmacs/plugins/maxima/progs/maxima-kbd.scm
 share/TeXmacs/plugins/maxima/progs/maxima-menus.scm
 share/TeXmacs/plugins/mupad/packages/session/mupad.ts
 share/TeXmacs/plugins/mupad/progs/init-mupad.scm
@@ -2035,6 +2047,7 @@ share/TeXmacs/plugins/qcl/progs/qcl-input.scm
 share/TeXmacs/plugins/r/progs/init-r.scm
 share/TeXmacs/plugins/r/progs/r-input.scm
 share/TeXmacs/plugins/r/r/TeXmacs/DESCRIPTION
+share/TeXmacs/plugins/r/r/TeXmacs/R/TeXmacs.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/00Index
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.Hershey.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.Japanese.R
@@ -2046,7 +2059,6 @@ share/TeXmacs/plugins/r/r/TeXmacs/demo/T.persp.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.plotmath.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.recursion.R
 share/TeXmacs/plugins/r/r/TeXmacs/man/TeXmacs.Rd
-share/TeXmacs/plugins/r/r/TeXmacs/R/TeXmacs.R
 share/TeXmacs/plugins/reduce/install/README
 share/TeXmacs/plugins/reduce/install/reducerc
 share/TeXmacs/plugins/reduce/install/tmprint.red
@@ -2058,10 +2070,16 @@ share/TeXmacs/plugins/scilab/progs/init-scilab.scm
 share/TeXmacs/plugins/shell/progs/init-shell.scm
 share/TeXmacs/plugins/texgraph/LisezMoi.txt
 share/TeXmacs/plugins/texgraph/ReadMe.txt
-share/TeXmacs/plugins/texgraph/progs/2d-menu.scm
-share/TeXmacs/plugins/texgraph/progs/3d-menu.scm
+share/TeXmacs/plugins/texgraph/packages/texgraph-scripts.ts
 share/TeXmacs/plugins/texgraph/progs/init-texgraph.scm
+share/TeXmacs/plugins/texgraph/progs/texgraph-2d-menu.scm
+share/TeXmacs/plugins/texgraph/progs/texgraph-3d-menu.scm
+share/TeXmacs/plugins/texgraph/progs/texgraph-figures-menu.scm
+share/TeXmacs/plugins/texgraph/progs/texgraph-input.scm
 share/TeXmacs/plugins/texgraph/progs/texgraph-menus.scm
+share/TeXmacs/plugins/texgraph/progs/texgraph-scripts-edit.scm
+share/TeXmacs/plugins/texgraph/progs/texgraph-scripts-menu.scm
+share/TeXmacs/plugins/texgraph/texgraph_macros_texmacs.mac
 share/TeXmacs/plugins/xypic/progs/init-xypic.scm
 share/TeXmacs/plugins/yacas/progs/init-yacas.scm
 share/TeXmacs/progs/convert/html/htmlout.scm
@@ -2114,9 +2132,9 @@ share/TeXmacs/progs/convert/tools/xmltm.scm
 share/TeXmacs/progs/doc/docgrep.scm
 share/TeXmacs/progs/doc/help-funcs.scm
 share/TeXmacs/progs/doc/help-menu.scm
-share/TeXmacs/progs/doc/tmdoc.scm
 share/TeXmacs/progs/doc/tmdoc-drd.scm
 share/TeXmacs/progs/doc/tmdoc-kbd.scm
+share/TeXmacs/progs/doc/tmdoc.scm
 share/TeXmacs/progs/doc/tmweb.scm
 share/TeXmacs/progs/dynamic/dynamic-drd.scm
 share/TeXmacs/progs/dynamic/fold-edit.scm
@@ -2168,11 +2186,11 @@ share/TeXmacs/progs/kernel/drd/drd-query.scm
 share/TeXmacs/progs/kernel/drd/drd-rules.scm
 share/TeXmacs/progs/kernel/drd/drd-test.scm
 share/TeXmacs/progs/kernel/drd/drd-unify.scm
-share/TeXmacs/progs/kernel/gui/kbd-define.scm
 share/TeXmacs/progs/kernel/gui/gui-factory.scm
 share/TeXmacs/progs/kernel/gui/gui-form.scm
 share/TeXmacs/progs/kernel/gui/gui-test.scm
 share/TeXmacs/progs/kernel/gui/gui-widget.scm
+share/TeXmacs/progs/kernel/gui/kbd-define.scm
 share/TeXmacs/progs/kernel/gui/menu-define.scm
 share/TeXmacs/progs/kernel/gui/menu-widget.scm
 share/TeXmacs/progs/kernel/library/base.scm
@@ -2180,6 +2198,7 @@ share/TeXmacs/progs/kernel/library/content.scm
 share/TeXmacs/progs/kernel/library/iterator.scm
 share/TeXmacs/progs/kernel/library/list.scm
 share/TeXmacs/progs/kernel/library/tree.scm
+share/TeXmacs/progs/kernel/regexp/grammar.scm
 share/TeXmacs/progs/kernel/regexp/regexp-match.scm
 share/TeXmacs/progs/kernel/regexp/regexp-select.scm
 share/TeXmacs/progs/kernel/regexp/regexp-test.scm
@@ -2354,6 +2373,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/plugins/xypic/progs
 @dirrm share/TeXmacs/plugins/xypic
 @dirrm share/TeXmacs/plugins/texgraph/progs
+@dirrm share/TeXmacs/plugins/texgraph/packages
 @dirrm share/TeXmacs/plugins/texgraph
 @dirrm share/TeXmacs/plugins/shell/progs
 @dirrm share/TeXmacs/plugins/shell
@@ -2458,6 +2478,9 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/plugins/axiom/packages/session
 @dirrm share/TeXmacs/plugins/axiom/packages
 @dirrm share/TeXmacs/plugins/axiom
+@dirrm share/TeXmacs/plugins/asymptote/samples
+@dirrm share/TeXmacs/plugins/asymptote/progs
+@dirrm share/TeXmacs/plugins/asymptote
 @dirrm share/TeXmacs/plugins
 @dirrm share/TeXmacs/packages/utilities
 @dirrm share/TeXmacs/packages/test
@@ -2634,3 +2657,21 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm libexec/TeXmacs/lib
 @dirrm libexec/TeXmacs/bin
 @dirrm libexec/TeXmacs
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/world/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/substitute/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/secure/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/prompt/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/pnambic/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/nested/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/mutator/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/multiline/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/minimal/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/menus/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/markup/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/input/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/handler/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/formula/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/dynlink/lib
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/dynlink/bin
+@exec mkdir -p %D/share/TeXmacs/examples/plugins/complete/bin
+@exec mkdir -p %D/libexec/TeXmacs/lib

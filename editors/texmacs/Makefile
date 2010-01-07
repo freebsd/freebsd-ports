@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.7.2
+PORTVERSION=	1.0.7.3
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
-		http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
-		http://gd.tuwien.ac.at/editors/TeXmacs/targz/ \
-		ftp://gd.tuwien.ac.at/editors/TeXmacs/targz/
+		http://www.predatorlabs.net/dl/
 MASTER_SITE_SUBDIR=	targz old-targz
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A free WYSIWYG scientific text editor
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
@@ -55,6 +53,8 @@ post-patch:
 		 's|#!/bin/bash|#!/bin/sh|g'
 	@${REINPLACE_CMD} -e 's|type -p maxima|which maxima|g' \
 		${WRKSRC}/plugins/maxima/bin/maxima_detect
+	@${REINPLACE_CMD} -e 's|ICONV_LDFLAGS/-liconv|ICONV_LDFLAGS|' \
+		${WRKSRC}/configure
 
 post-install:
 	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/libexec/TeXmacs
