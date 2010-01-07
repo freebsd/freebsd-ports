@@ -13,6 +13,25 @@ you update your ports collection, before attempting any port upgrades.
   security/openvpn has been upgraded to 2.1.1, and security/openvpn-devel has
   been removed.
 
+  Regular upgrades of the security/openvpn port should succeed without
+  manual intervention, but if you want to stick to openvpn 2.0 or if you
+  had been using openvpn-devel, manual intervention is needed, as
+  follows:
+
+  If you'd been using the security/openvpn-devel port, please use one of
+  these commands for upgrading:
+
+    portmaster -m-DDISABLE_CONFLICTS -o security/openvpn security/openvpn-devel
+
+    portupgrade -m-DDISABLE_CONFLICTS -o security/openvpn security/openvpn-devel
+
+  If you want to stick to openvpn 2.0, please use one of these two
+  upgrade commands:
+
+    portmaster -m-DDISABLE_CONFLICTS -o security/openvpn20 security/openvpn
+
+    portupgrade -m-DDISABLE_CONFLICTS -o security/openvpn20 security/openvpn
+
 20100106:
   AFFECTS: users of devel/websvn
   AUTHOR: miwi@FreeBSD.org
