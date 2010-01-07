@@ -2387,6 +2387,7 @@
     SUBDIR += picprog
     SUBDIR += pikdev
     SUBDIR += piklab
+    SUBDIR += pinba_engine
     SUBDIR += pinstall
     SUBDIR += pipestatus
     SUBDIR += pkg-config
