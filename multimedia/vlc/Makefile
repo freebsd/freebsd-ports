@@ -317,7 +317,7 @@ CONFIGURE_ARGS+=--disable-faad
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--enable-flac
 .else
-CONFLGIRE_ARGS+=--disable-flac
+CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if (defined(WITH_FRIBIDI) || exists(${LOCALBASE}/bin/fribidi-config)) && !defined(WITHOUT_FRIBIDI)
