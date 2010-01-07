@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-EC2
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,12 +38,17 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::DescribeAddress.3 \
 		Net::Amazon::EC2::DescribeImageAttribute.3 \
 		Net::Amazon::EC2::DescribeImagesResponse.3 \
+		Net::Amazon::EC2::DescribeInstanceAttributeResponse.3 \
 		Net::Amazon::EC2::DescribeKeyPairsResponse.3 \
+		Net::Amazon::EC2::EbsBlockDevice.3 \
+		Net::Amazon::EC2::EbsInstanceBlockDeviceMapping.3 \
 		Net::Amazon::EC2::Error.3 \
 		Net::Amazon::EC2::Errors.3 \
 		Net::Amazon::EC2::GroupSet.3 \
+		Net::Amazon::EC2::InstanceBlockDeviceMapping.3 \
 		Net::Amazon::EC2::InstancePassword.3 \
 		Net::Amazon::EC2::InstanceState.3 \
+		Net::Amazon::EC2::InstanceStateChange.3 \
 		Net::Amazon::EC2::IpPermission.3 \
 		Net::Amazon::EC2::IpRange.3 \
 		Net::Amazon::EC2::KeyPair.3 \
@@ -61,7 +66,7 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::SecurityGroup.3 \
 		Net::Amazon::EC2::Snapshot.3 \
 		Net::Amazon::EC2::SnapshotAttribute.3 \
-		Net::Amazon::EC2::TerminateInstancesResponse.3 \
+		Net::Amazon::EC2::StateReason.3 \
 		Net::Amazon::EC2::UserData.3 \
 		Net::Amazon::EC2::UserIdGroupPair.3 \
 		Net::Amazon::EC2::Volume.3
