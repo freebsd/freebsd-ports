@@ -11,11 +11,14 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/examples/rclmon.sh
 %%DATADIR%%/examples/recoll.conf
 %%DATADIR%%/filters/rclabw
+%%DATADIR%%/filters/rclchm
 %%DATADIR%%/filters/rcldjvu
 %%DATADIR%%/filters/rcldoc
 %%DATADIR%%/filters/rcldvi
+%%DATADIR%%/filters/rclexecm.py
 %%DATADIR%%/filters/rclflac
 %%DATADIR%%/filters/rclgaim
+%%DATADIR%%/filters/rclics
 %%DATADIR%%/filters/rclid3
 %%DATADIR%%/filters/rclimg
 %%DATADIR%%/filters/rclkwd
@@ -38,6 +41,7 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/filters/rcluncomp
 %%DATADIR%%/filters/rclwpd
 %%DATADIR%%/filters/rclxls
+%%DATADIR%%/filters/rclzip
 %%DATADIR%%/filters/xdg-open
 %%DATADIR%%/images/document.png
 %%DATADIR%%/images/drawing.png
