@@ -55,7 +55,9 @@ MANCOMPRESSED=	no
 .endif
 
 .if defined(WITH_SIGQ12)
-PATCH_SITES+=	http://thedjbway.org/patches/:sigq12
+#PATCH_SITES+=	http://thedjbway.org/patches/:sigq12
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/%SUBDIR%\//roam\/sysutils\/daemontools\/:sigq12/} \
+		http://people.FreeBSD.org/~roam/ports/sysutils/daemontools/:sigq12
 PATCHFILES+=	daemontools-0.76.sigq12.patch:sigq12
 PATCH_DIST_STRIP=	-p2
 .endif
