@@ -57,7 +57,7 @@ bin/codelite_kill_children
 %%DATADIR%%/plugins/Gizmos.so
 %%DATADIR%%/plugins/QmakePlugin.so
 %%DATADIR%%/plugins/SnipWiz.so
-%%DATADIR%%/plugins/Subversion.so
+%%DATADIR%%/plugins/Subversion2.so
 %%DATADIR%%/plugins/UnitTestCPP.so
 %%DATADIR%%/plugins/abbreviation.so
 %%DATADIR%%/plugins/cscope.so
