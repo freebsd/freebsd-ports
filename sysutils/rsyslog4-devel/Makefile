@@ -16,6 +16,8 @@ PKGNAMESUFFIX?=	-${MNAME}
 MAINTAINER=	cristianorolim@hotmail.com
 COMMENT=	Syslogd supporting SQL, TCP and TLS
 
+NO_LATEST_LINK=	yes
+
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog4
 
