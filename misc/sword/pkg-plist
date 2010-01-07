@@ -20,6 +20,16 @@ include/sword/Greek2Greek.h
 include/sword/GreekChars.h
 include/sword/canon.h
 include/sword/canon_abbrevs.h
+include/sword/canon_german.h
+include/sword/canon_kjva.h
+include/sword/canon_leningrad.h
+include/sword/canon_luther.h
+include/sword/canon_mt.h
+include/sword/canon_nrsv.h
+include/sword/canon_nrsva.h
+include/sword/canon_null.h
+include/sword/canon_synodal.h
+include/sword/canon_vulg.h
 include/sword/cipherfil.h
 include/sword/curlftpt.h
 include/sword/curlhttpt.h
@@ -86,7 +96,6 @@ include/sword/rawstr.h
 include/sword/rawstr4.h
 include/sword/rawtext.h
 include/sword/rawverse.h
-include/sword/regex.h
 include/sword/roman.h
 include/sword/rtfhtml.h
 include/sword/sapphire.h
@@ -166,10 +175,11 @@ include/sword/zld.h
 include/sword/zstr.h
 include/sword/ztext.h
 include/sword/zverse.h
-lib/libsword-1.6.0.so
+lib/libsword-1.6.1.so
 lib/libsword.a
 lib/libsword.la
 lib/libsword.so
+share/sword/locales.d/locales.conf
 libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/abbr.conf
 %%DATADIR%%/locales.d/af-utf8.conf
@@ -188,7 +198,6 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/de.conf
 %%DATADIR%%/locales.d/de_abbrev-utf8.conf
 %%DATADIR%%/locales.d/de_abbrev.conf
-%%DATADIR%%/locales.d/en_GB.conf
 %%DATADIR%%/locales.d/es-utf8.conf
 %%DATADIR%%/locales.d/es.conf
 %%DATADIR%%/locales.d/et-utf8.conf
