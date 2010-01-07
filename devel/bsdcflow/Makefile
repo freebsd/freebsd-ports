@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdcflow
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sysfault.org/projects/
 DISTNAME=	cflow-${PORTVERSION}
