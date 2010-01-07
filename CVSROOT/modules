@@ -983,7 +983,6 @@ bib2html                        ports/textproc/bib2html
 bibcursed                       ports/print/bibcursed
 bibelot                         ports/palm/bibelot
 bibletime                       ports/misc/bibletime
-bibletime-kde3                  ports/misc/bibletime-kde3
 biblical-curse                  ports/misc/biblical-curse
 biblio-py                       ports/print/biblio-py
 bibtex2html                     ports/textproc/bibtex2html
@@ -1217,6 +1216,7 @@ bsd-splash-changer              ports/sysutils/bsd-splash-changer
 bsdadminscripts                 ports/sysutils/bsdadminscripts
 bsdar                           ports/archivers/bsdar
 bsdbktr_tvtune                  ports/multimedia/bsdbktr_tvtune
+bsdcflow                        ports/devel/bsdcflow
 bsdconv                         ports/converters/bsdconv
 bsdcrashtar                     ports/sysutils/bsdcrashtar
 bsddiff                         ports/textproc/bsddiff
@@ -5304,10 +5304,12 @@ hr-aspell                       ports/textproc/hr-aspell
 hrktorrent                      ports/net-p2p/hrktorrent
 hs-Agda                         ports/math/hs-Agda
 hs-Agda-executable              ports/math/hs-Agda-executable
+hs-GLURaw-ghc                   ports/x11-toolkits/hs-GLURaw-ghc
 hs-HGL-ghc                      ports/graphics/hs-HGL-ghc
 hs-HTTP                         ports/www/hs-HTTP
 hs-MonadCatchIO-mtl             ports/devel/hs-MonadCatchIO-mtl
 hs-ObjectName                   ports/devel/hs-ObjectName
+hs-OpenGLRaw-ghc                ports/x11-toolkits/hs-OpenGLRaw-ghc
 hs-QuickCheck                   ports/devel/hs-QuickCheck
 hs-StateVar                     ports/devel/hs-StateVar
 hs-Stream                       ports/devel/hs-Stream
@@ -5331,6 +5333,7 @@ hs-frantk                       ports/x11-toolkits/hs-frantk
 hs-ghc-mtl                      ports/devel/hs-ghc-mtl
 hs-ghc-paths                    ports/devel/hs-ghc-paths
 hs-ghc-paths-docs               ports/devel/hs-ghc-paths-docs
+hs-gluraw-ghc                   ports/x11-toolkits/hs-GLURaw-ghc
 hs-glut-ghc                     ports/x11-toolkits/hs-glut-ghc
 hs-gtk2hs                       ports/x11-toolkits/hs-gtk2hs
 hs-haddock                      ports/devel/hs-haddock
@@ -5363,6 +5366,7 @@ hs-mwc-random                   ports/math/hs-mwc-random
 hs-objectname                   ports/devel/hs-ObjectName
 hs-oeis                         ports/www/hs-oeis
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
+hs-openglraw-ghc                ports/x11-toolkits/hs-OpenGLRaw-ghc
 hs-pcre-light-ghc               ports/devel/hs-pcre-light-ghc
 hs-polyparse-ghc                ports/textproc/hs-polyparse-ghc
 hs-probability                  ports/math/hs-probability
@@ -8222,6 +8226,7 @@ linux-firefox-devel             ports/www/linux-firefox-devel
 linux-flashplugin7              ports/www/linux-flashplugin7
 linux-flashplugin9              ports/www/linux-flashplugin9
 linux-flock                     ports/www/linux-flock
+linux-fmodapi                   ports/audio/linux-fmodapi
 linux-foldingathome             ports/biology/linux-foldingathome
 linux-fontconfig                ports/x11-fonts/linux-fontconfig
 linux-freealut                  ports/audio/linux-freealut
@@ -17927,6 +17932,7 @@ pear-Date_Holidays_UNO          ports/devel/pear-Date_Holidays_UNO
 pear-Date_Holidays_USA          ports/devel/pear-Date_Holidays_USA
 pear-Date_Holidays_Ukraine      ports/devel/pear-Date_Holidays_Ukraine
 pear-Doctrine                   ports/databases/pear-Doctrine
+pear-Doctrine12                 ports/databases/pear-Doctrine12
 pear-Event_Dispatcher           ports/devel/pear-Event_Dispatcher
 pear-FSM                        ports/devel/pear-FSM
 pear-File                       ports/sysutils/pear-File
@@ -18211,6 +18217,7 @@ pear-db_table                   ports/databases/pear-DB_Table
 pear-dba                        ports/databases/pear-DBA
 pear-dba_relational             ports/databases/pear-DBA_Relational
 pear-doctrine                   ports/databases/pear-Doctrine
+pear-doctrine12                 ports/databases/pear-Doctrine12
 pear-event_dispatcher           ports/devel/pear-Event_Dispatcher
 pear-file                       ports/sysutils/pear-File
 pear-file_archive               ports/archivers/pear-File_Archive
@@ -19059,6 +19066,7 @@ pmars-sdl                       ports/games/pmars-sdl
 pmd                             ports/devel/pmd
 pmf                             ports/net/pmf
 pmk                             ports/devel/pmk
+pmt                             ports/sysutils/pmt
 pmw                             ports/print/pmw
 pmwiki                          ports/www/pmwiki
 pnet                            ports/lang/pnet
@@ -22328,7 +22336,6 @@ squirrelmail-change_sqlpass-plugin  ports/mail/squirrelmail-change_sqlpass-plugi
 squirrelmail-check_quota-plugin  ports/mail/squirrelmail-check_quota-plugin
 squirrelmail-compatibility-plugin  ports/mail/squirrelmail-compatibility-plugin
 squirrelmail-compatibility-plugin1  ports/mail/squirrelmail-compatibility-plugin1
-squirrelmail-devel              ports/mail/squirrelmail-devel
 squirrelmail-email_footer-plugin  ports/mail/squirrelmail-email_footer-plugin
 squirrelmail-login_auth-plugin  ports/mail/squirrelmail-login_auth-plugin
 squirrelmail-login_notes-plugin  ports/mail/squirrelmail-login_notes-plugin
@@ -22576,7 +22583,6 @@ swisswatch                      ports/x11-clocks/swisswatch
 switzerland                     ports/security/switzerland
 swm                             ports/x11-wm/swm
 sword                           ports/misc/sword
-sword15                         ports/misc/sword15
 swt                             ports/x11-toolkits/swt
 swt-devel                       ports/x11-toolkits/swt-devel
 swt31                           ports/x11-toolkits/swt31
