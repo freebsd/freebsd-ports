@@ -4,4 +4,4 @@ the format that can be read an written by svnadmin dump, so the
 data which is produced can easily be imported into a new Subversion
 repository.
 
-WWW:    http://saubue.boolsoft.org/projects/rsvndump/
+WWW:    http://rsvndump.sourceforge.net/
