@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	GNU Binutils for Windows cross-development
 
-BINUTILVERSION=	2.19.1
+BINUTILVERSION=	2.20
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -59,13 +59,12 @@ post-install:
 # UGLY HACK
 #
 add-plist-post:
-	@${ECHO_CMD} "@unexec rmdir -p %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir -p %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} -p %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} -p %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 .if (defined(PREFIX) && ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
-	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} %D 2> /dev/null || true" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
 .endif
 
 .include <bsd.port.mk>
-
