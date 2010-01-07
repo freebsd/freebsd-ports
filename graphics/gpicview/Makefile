@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpicview
-PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GPicView%20${PORTVERSION}
 
@@ -15,9 +14,9 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A Simple and Fast Image Viewer for X
 
 USE_GNOME=	gtk20
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_NLS)
