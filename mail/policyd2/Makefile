@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd2
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.10
 CATEGORIES=	mail
 MASTER_SITES=	SF/policyd/2.0.x%20%28Stable%29/v${PORTVERSION}
 DISTNAME=	cluebringer-${PORTVERSION}
@@ -54,6 +54,11 @@ do-install:
 	${INSTALL_DATA} -m 0644 ${WRKSRC}/cluebringer.conf ${PREFIX}/etc/cluebringer.conf.sample
 
 post-install:
+	@if [ ! -f ${PREFIX}/etc/cluebringer.conf ]; then \
+		${CP} -p ${PREFIX}/etc/cluebringer.conf.sample ${PREFIX}/etc/cluebringer.conf ; \
+		${CHMOD} +w ${PREFIX}/etc/cluebringer.conf ; \
+	fi
+
 .if !defined(NOPORTDATA)
 	@${INSTALL} -d ${DATADIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${DATADIR}
