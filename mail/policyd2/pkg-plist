@@ -117,7 +117,9 @@ www/policyd/tooltips/bt.gif
 %%SITE_PERL%%/cbp/version.pm
 bin/cbpadmin
 bin/cbpolicyd
+@unexec if cmp -s %D/etc/cluebringer.conf.sample %D/etc/cluebringer.conf; then rm -f %D/etc/cluebringer.conf; fi
 etc/cluebringer.conf.sample
+@exec if [ ! -f %D/etc/cluebringer.conf ] ; then cp -p %D/%F %B/etc/cluebringer.conf; chmod +w %B/etc/cluebringer.conf; fi
 @dirrm www/policyd/tooltips
 @dirrm www/policyd/includes
 @dirrm www/policyd/images
