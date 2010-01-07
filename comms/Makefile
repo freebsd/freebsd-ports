@@ -95,6 +95,7 @@
     SUBDIR += p5-Fax-Hylafax-Client
     SUBDIR += p5-SMS-Send
     SUBDIR += p5-SMS-Send-DeviceGsm
+    SUBDIR += p5-SMS-Send-TW-HiAir
     SUBDIR += p5-SMS-Send-TW-PChome
     SUBDIR += p5-SMS-Send-TW-ShareSMS
     SUBDIR += p5-SMS-Send-TW-chtsns
