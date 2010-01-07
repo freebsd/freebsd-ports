@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	yb@bashibuzuk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A daemon to service arp replies
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
