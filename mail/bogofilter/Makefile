@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.2.0
-PORTREVISION?=	3
+PORTVERSION=	1.2.1
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-stable/bogofilter-${PORTVERSION}
 
-MAINTAINER?=	matthias.andree@gmx.de
+MAINTAINER?=	mandree@FreeBSD.org
 COMMENT=	Fast, teachable, learning spam detector
 
 .if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
@@ -56,11 +56,6 @@ INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
 		bf_copy.1 bf_compact.1 bf_tar.1
-
-# remove files that were accidentally shipped, but should get rebuilt
-post-extract:
-	${RM} ${WRKSRC}/src/bogoupgrade
-	${RM} ${WRKSRC}/src/tests/t.query.config
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \
