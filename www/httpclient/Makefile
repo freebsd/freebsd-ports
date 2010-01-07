@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpclient
-DISTVERSION=	4.0
+DISTVERSION=	4.0.1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/httpcomponents-client-${DISTVERSION}
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME:S/client/mime/}.jar
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
@@ -41,10 +42,17 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${FIND} javadoc tutorial \
+	@cd ${WRKSRC} && ${FIND} tutorial \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${WRKSRC}/NTLM_SUPPORT.txt \
 		${DOCSDIR}/
+	@${ECHO_MSG} " [DONE]"
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${ECHO_MSG} -n ">> Installing examples..."
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [DONE]"
 .endif
 
