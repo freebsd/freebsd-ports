@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
-MAINTAINER=	yb@bashibuzuk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Aggregation-based Traffic Profiler
 
 .if defined(WITH_X11)
