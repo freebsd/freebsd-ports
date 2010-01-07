@@ -30,6 +30,8 @@ lib/rsyslog/lmzlibw.la
 lib/rsyslog/lmzlibw.so
 lib/rsyslog/ommail.la
 lib/rsyslog/ommail.so
+lib/rsyslog/omruleset.la
+lib/rsyslog/omruleset.so
 lib/rsyslog/omtesting.la
 lib/rsyslog/omtesting.so
 sbin/rsyslogd
@@ -107,6 +109,8 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_modload.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_repeatedmsgreduction.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_resetconfigvariables.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_rulesetcreatemainqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_rulesetparser.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_umask.html
 %%PORTDOCS%%%%DOCSDIR%%/rscript_abnf.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_conf.html
