@@ -1,0 +1,20 @@
+--- work/lib/ss/Makefile.in.orig	2009-11-28 23:03:52.000000000 +0000
++++ work/lib/ss/Makefile.in	2009-11-28 23:04:20.000000000 +0000
+@@ -20,7 +20,7 @@
+ ELF_IMAGE = libss
+ ELF_MYDIR = ss
+ ELF_INSTALL_DIR = $(root_libdir)
+-ELF_OTHER_LIBS = -L../.. -lcom_err $(DLOPEN_LIB)
++ELF_OTHER_LIBS = -lcom_err $(DLOPEN_LIB)
+ 
+ BSDLIB_VERSION = 1.0
+ BSDLIB_IMAGE = libss
+@@ -28,7 +28,7 @@
+ BSDLIB_INSTALL_DIR = $(root_libdir)
+ 
+ TAGS=etags
+-COMPILE_ET=../et/compile_et --build-tree
++COMPILE_ET=compile_et
+ MK_CMDS=_SS_DIR_OVERRIDE=. ./mk_cmds
+ 
+ # -I.. is so that ss/ss_err.h works

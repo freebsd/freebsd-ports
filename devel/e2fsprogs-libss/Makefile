@@ -1,0 +1,43 @@
+# New ports collection makefile for:	e2fsprogs-libss
+# Date created:			23 November 2009
+# Whom:				Ben Kaduk <kaduk@mit.edu>
+#
+# $FreeBSD$
+#
+
+PORTREVISION=	0
+CATEGORIES=	devel
+PKGNAMESUFFIX=	-libss
+
+MAINTAINER=	kaduk-fbsd@mit.edu
+COMMENT=	Command-line interface parsing library from e2fsprogs
+
+CONFLICTS=	heimdal-[0-9]*
+CONFLICTS+=	krb4-[0-9]*
+
+WITHOUT_NLS=	yes
+OPTIONS=	#
+CONFIGURE_ARGS=	--enable-elf-shlibs
+MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+ALL_TARGET=	subs
+INSTALL_WRKSRC=	${WRKSRC}/lib/ss
+FILESDIR=	${.CURDIR}/files
+
+EXTRA_PATCHES=	${FILESDIR}/patch-lib-ss-Makefile.in
+
+MAN1=	mk_cmds.1
+
+PKGDIR=		${.CURDIR}
+
+pre-build:
+	@(cd ${WRKSRC}/lib/ss && compile_et ss_err.et && \
+	${REINPLACE_CMD} -f ${FILESDIR}/fix-ss_err.h.sed ss_err.h)
+
+post-build:
+	@(cd ${WRKSRC}/lib/ss && ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+	${_MAKE_JOBS} ${MAKE_ARGS} all)
+
+.include "${MASTERDIR}/Makefile"
