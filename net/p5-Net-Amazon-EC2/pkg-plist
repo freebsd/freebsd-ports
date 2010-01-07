@@ -12,12 +12,17 @@
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeAddress.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImageAttribute.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImagesResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/DescribeInstanceAttributeResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeKeyPairsResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/EbsBlockDevice.pm
+%%SITE_PERL%%/Net/Amazon/EC2/EbsInstanceBlockDeviceMapping.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Error.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Errors.pm
 %%SITE_PERL%%/Net/Amazon/EC2/GroupSet.pm
+%%SITE_PERL%%/Net/Amazon/EC2/InstanceBlockDeviceMapping.pm
 %%SITE_PERL%%/Net/Amazon/EC2/InstancePassword.pm
 %%SITE_PERL%%/Net/Amazon/EC2/InstanceState.pm
+%%SITE_PERL%%/Net/Amazon/EC2/InstanceStateChange.pm
 %%SITE_PERL%%/Net/Amazon/EC2/IpPermission.pm
 %%SITE_PERL%%/Net/Amazon/EC2/IpRange.pm
 %%SITE_PERL%%/Net/Amazon/EC2/KeyPair.pm
@@ -35,7 +40,7 @@
 %%SITE_PERL%%/Net/Amazon/EC2/SecurityGroup.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Snapshot.pm
 %%SITE_PERL%%/Net/Amazon/EC2/SnapshotAttribute.pm
-%%SITE_PERL%%/Net/Amazon/EC2/TerminateInstancesResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/StateReason.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserData.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserIdGroupPair.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Volume.pm
