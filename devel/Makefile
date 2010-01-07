@@ -2371,6 +2371,7 @@
     SUBDIR += php5-pcntl
     SUBDIR += php5-pcre
     SUBDIR += php5-phing
+    SUBDIR += php5-pinba
     SUBDIR += php5-readline
     SUBDIR += php5-shmop
     SUBDIR += php5-spl
