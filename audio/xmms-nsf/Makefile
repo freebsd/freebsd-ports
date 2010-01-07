@@ -30,12 +30,15 @@ PLIST_FILES=	lib/xmms/Input/libnsf.a \
 		lib/xmms/Input/libnsf.la \
 		lib/xmms/Input/libnsf.so
 
+SUB_FILES=	pkg-message
+SUB_LIST=	VERSION=${PORTVERSION}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/nes/nestypes.h
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 post-install:
-	@${SED} -e 's|%%VERSION%%|${PORTVERSION}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
