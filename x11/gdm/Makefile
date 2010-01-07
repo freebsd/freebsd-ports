@@ -8,6 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.28.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,7 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 version of xdm display manager
 
-BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
+    		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
 		polkit-gtk-1.0:${PORTSDIR}/sysutils/polkit-gnome \
     		execinfo:${PORTSDIR}/devel/libexecinfo \
@@ -23,7 +25,8 @@ LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
-		gnome-session:${PORTSDIR}/x11/gnome-session
+		gnome-session:${PORTSDIR}/x11/gnome-session \
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USERS=		gdm
 GROUPS=		gdm
