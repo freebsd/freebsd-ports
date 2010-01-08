@@ -34,6 +34,8 @@ OPTIONS=	BAD "Install bad GStreamer plugins" On \
 		NLS "Native Language Support" On \
 		SEXY "UI enhancements"  On
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_BAD)
 USE_GSTREAMER+=	bad
 .endif
@@ -74,4 +76,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(XDG|$$(PREFIX)$$(XDG|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
