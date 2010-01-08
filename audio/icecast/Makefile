@@ -16,6 +16,7 @@ COMMENT=	A streaming mp3 audio server
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
+SUB_FILES=	pkg-message
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|<history.h>|<readline/history.h>|' \
