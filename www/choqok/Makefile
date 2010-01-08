@@ -14,15 +14,12 @@ MASTER_SITES=	http://mirror.umoss.org/download.ospdev.net/${PORTNAME}/${PORTNAME
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
 
-BROKEN=		does not compile
-
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
-USE_KDE4=	kdelibs automoc4
-INSTALLS_ICONS=	yes
+USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	gui imageformats_run moc_build network \
-		qmake_build rcc_build
+QT_COMPONENTS=	gui network imageformats_run moc_build \
+		qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>
