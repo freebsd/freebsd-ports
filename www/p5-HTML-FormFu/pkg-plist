@@ -35,6 +35,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Constraint/File/MIME.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/File/MaxSize.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/File/MinSize.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/Repeatable/Any.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator/Strftime.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator/CompoundDateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/CompoundDateTime.pm
@@ -195,6 +196,7 @@ man/man1/html_formfu_deploy.pl.1
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Element
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Deflator
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/File
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/Repeatable
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Plugin
 @dirrmtry %%SITE_PERL%%/HTML/FormFu
