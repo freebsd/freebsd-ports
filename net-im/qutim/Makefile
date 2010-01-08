@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qutim
-PORTVERSION=	0.2b
+PORTVERSION=	0.2
+PORTEPOCH=	1
 CATEGORIES=	net-im
-MASTER_SITES=	http://qutim.org/download/ \
-		http://dl.kibab.com/distfiles/qutim/ \
+MASTER_SITES=	http://dl.kibab.com/distfiles/qutim/ \
 		ftp://ftp.inferra.ru/pub/qutim/
-DISTNAME=	qutim_${PORTVERSION}_svn326
+DISTNAME=	qutim_${PORTVERSION}_svn529
 
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	A Qt4-based lightweight ICQ client with advanced features
