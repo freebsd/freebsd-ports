@@ -23,6 +23,8 @@ PLIST_FILES=	bin/httping
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		does not function correctly, a solution is in progress
+
 .if(${OSVERSION} >= 701101)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-str.c ${FILESDIR}/extra-patch-str.h
 .endif
