@@ -1656,6 +1656,7 @@
     SUBDIR += udmsearch
     SUBDIR += ump
     SUBDIR += usermanager
+    SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish
     SUBDIR += vee

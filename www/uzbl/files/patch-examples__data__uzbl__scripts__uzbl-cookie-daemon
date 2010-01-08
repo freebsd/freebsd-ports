@@ -1,0 +1,29 @@
+--- ./examples/data/uzbl/scripts/uzbl-cookie-daemon.orig	2010-01-05 20:17:29.000000000 +0100
++++ ./examples/data/uzbl/scripts/uzbl-cookie-daemon	2010-01-07 13:24:58.000000000 +0100
+@@ -187,7 +187,7 @@
+         raise Exception("directory at %r is not a socket" % cookie_socket)
+ 
+     try:
+-        sock = socket.socket(socket.AF_UNIX, socket.SOCK_SEQPACKET)
++        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+         sock.connect(cookie_socket)
+         sock.close()
+         echo("detected daemon listening on %r" % cookie_socket)
+@@ -210,7 +210,7 @@
+         return False
+ 
+     try:
+-        sock = socket.socket(socket.AF_UNIX, socket.SOCK_SEQPACKET)
++        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+         sock.connect(cookie_socket)
+         sock.send(cmd)
+         sock.close()
+@@ -420,7 +420,7 @@
+         mkbasedir(cookie_socket)
+ 
+         self.server_socket = socket.socket(socket.AF_UNIX,
+-          socket.SOCK_SEQPACKET)
++          socket.SOCK_STREAM)
+ 
+         self.server_socket.bind(cookie_socket)
+ 

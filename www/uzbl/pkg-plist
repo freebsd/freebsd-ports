@@ -1,0 +1,62 @@
+bin/uzbl-core
+bin/uzbl-browser
+bin/uzbl-cookie-daemon
+bin/uzbl-event-manager
+bin/uzbl-tabbed
+%%DATADIR%%/docs/url-editing
+%%DATADIR%%/docs/CONTRIBUTING
+%%DATADIR%%/docs/FAQ
+%%DATADIR%%/docs/INSTALL
+%%DATADIR%%/docs/TODO
+%%DATADIR%%/docs/config-syntax
+%%DATADIR%%/docs/multiple-instances-management
+%%DATADIR%%/docs/performance
+%%DATADIR%%/docs/COMMUNITY
+%%DATADIR%%/docs/config.h
+%%DATADIR%%/docs/AUTHORS
+%%DATADIR%%/docs/README
+%%DATADIR%%/examples/config/uzbl/config
+%%DATADIR%%/examples/config/uzbl/cookies
+%%DATADIR%%/examples/data/uzbl/forms/bbs.archlinux.org
+%%DATADIR%%/examples/data/uzbl/plugins/progress_bar.py
+%%DATADIR%%/examples/data/uzbl/plugins/completion.py
+%%DATADIR%%/examples/data/uzbl/plugins/config.py
+%%DATADIR%%/examples/data/uzbl/plugins/keycmd.py
+%%DATADIR%%/examples/data/uzbl/plugins/mode.py
+%%DATADIR%%/examples/data/uzbl/plugins/on_event.py
+%%DATADIR%%/examples/data/uzbl/plugins/plugin_template.py
+%%DATADIR%%/examples/data/uzbl/plugins/bind.py
+%%DATADIR%%/examples/data/uzbl/scripts/uzblcat
+%%DATADIR%%/examples/data/uzbl/scripts/download.sh
+%%DATADIR%%/examples/data/uzbl/scripts/extedit.js
+%%DATADIR%%/examples/data/uzbl/scripts/follow_Numbers.js
+%%DATADIR%%/examples/data/uzbl/scripts/follow_Numbers_Strings.js
+%%DATADIR%%/examples/data/uzbl/scripts/formfiller.pl
+%%DATADIR%%/examples/data/uzbl/scripts/formfiller.sh
+%%DATADIR%%/examples/data/uzbl/scripts/hint.js
+%%DATADIR%%/examples/data/uzbl/scripts/history.sh
+%%DATADIR%%/examples/data/uzbl/scripts/insert_bookmark.sh
+%%DATADIR%%/examples/data/uzbl/scripts/instance-select-wmii.sh
+%%DATADIR%%/examples/data/uzbl/scripts/linkfollow.js
+%%DATADIR%%/examples/data/uzbl/scripts/load_url_from_bookmarks.sh
+%%DATADIR%%/examples/data/uzbl/scripts/load_url_from_history.sh
+%%DATADIR%%/examples/data/uzbl/scripts/scheme.py
+%%DATADIR%%/examples/data/uzbl/scripts/scroll-percentage.js
+%%DATADIR%%/examples/data/uzbl/scripts/session.sh
+%%DATADIR%%/examples/data/uzbl/scripts/uzbl-cookie-daemon
+%%DATADIR%%/examples/data/uzbl/scripts/uzbl-tabbed
+%%DATADIR%%/examples/data/uzbl/scripts/uzbl-event-manager
+%%DATADIR%%/examples/data/uzbl/scripts/cookies.sh
+%%DATADIR%%/examples/data/uzbl/bookmarks
+%%DATADIR%%/examples/data/uzbl/style.css
+%%DATADIR%%/examples/data/uzbl/uzbl.png
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/examples/config/uzbl
+@dirrm %%DATADIR%%/examples/config
+@dirrm %%DATADIR%%/examples/data/uzbl/forms
+@dirrm %%DATADIR%%/examples/data/uzbl/plugins
+@dirrm %%DATADIR%%/examples/data/uzbl/scripts
+@dirrm %%DATADIR%%/examples/data/uzbl
+@dirrm %%DATADIR%%/examples/data
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%
