@@ -6,26 +6,61 @@
 #
 
 PORTNAME=	librcc
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.2.9
 CATEGORIES=	devel
-MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION}
+MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
+		http://dside.dyndns.org/files/rusxmms/
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library used by rusxmms for language autodetection
 
-LIB_DEPENDS=	rcd.1:${PORTSDIR}/devel/librcd
+LIB_DEPENDS=	rcd.1:${PORTSDIR}/devel/librcd \
+		enca.5:${PORTSDIR}/converters/enca \
+		aspell.16:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk12 libxml2
+USE_GNOME=	gnomehack lthack libxml2 glib12 gtk12
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	autoheader:262
 
-CONFIGURE_ARGS=--disable-bdb --disable-gtk2 --disable-glib2
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
+CPPFLAGS=	-I${LOCALBASE}/include
+LIBS=		-L${LOCALBASE}/lib
+
+OPTIONS=	BDB "Translation database support" on \
+		TRANSLATE "Online translation support" on \
+		GTK2 "Gtk+2 frontend" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_BDB)
+USE_BDB=	41+
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
+LIBS+=		-L${BDB_LIB_DIR}
+CONFIGURE_ARGS+=--enable-bdb
+.else
+CONFIGURE_ARGS+=--disable-bdb
+.endif
+
+.if defined(WITH_TRANSLATE)
+LIB_DEPENDS+=	translate.0:${PORTSDIR}/textproc/libtranslate
+CONFIGURE_ARGS+=--enable-libtranslate
+.else
+CONFIGURE_ARGS+=--disable-libtranslate
+.endif
+
+.if defined(WITH_GTK2)
+USE_GNOME+=	gtk20
+PLIST_SUB+=	WITH_GTK2=""
+.else
+CONFIGURE_ARGS+=--disable-glib1 --disable-gtk1
+PLIST_SUB+=	WITH_GTK2="@comment "
+.endif
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LIBS="${LIBS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
