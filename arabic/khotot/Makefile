@@ -29,6 +29,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/kacst_fonts/fonts.dir:${PORTSDIR}/arabi
 .endif
 
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -53,7 +54,6 @@ do-install:
 	# This is a meta-port, the do-install target is not needed
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|LOCALBASE|${LOCALBASE}|g" \
-		${PKGDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
