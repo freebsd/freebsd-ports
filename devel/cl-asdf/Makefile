@@ -17,7 +17,7 @@ COMMENT=		A system definition facility for Common Lisp
 
 SUB_FILES+=		pkg-message
 WRKSRC=			${WRKDIR}/${PORTNAME}
-NO_BUILD=		yes # Sources only, see cl-asdf-[cmucl|sbcl|clisp]
+NO_BUILD=		yes # Sources only, see cl-asdf-[sbcl|clisp]
 CL_LIBDIR=		${PREFIX}/lib/common-lisp
 ASDF_SYSTEM_REGISTRY=	${CL_LIBDIR}/system-registry
 DOCSDIR=		${PREFIX}/share/doc/${UNIQUENAME}
