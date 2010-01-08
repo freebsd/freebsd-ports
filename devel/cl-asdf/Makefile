@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 PKGNAMEPREFIX=		cl-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		A system definition facility for Common Lisp
 
 SUB_FILES+=		pkg-message
