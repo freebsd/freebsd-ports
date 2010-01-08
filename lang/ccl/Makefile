@@ -78,5 +78,6 @@ post-install:
 	@${ECHO_CMD} "r ${CCL_PLIST}"		>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@cd ${WRKDIR} && ex < ex.script > /dev/null
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
