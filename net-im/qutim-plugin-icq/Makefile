@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	icq
-PORTVERSION=	0.2b
+PORTVERSION=	0.2
+PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://qutim.org/download/ \
 		http://dl.kibab.com/distfiles/qutim/ \
 		ftp://ftp.inferra.ru/pub/qutim/
 PKGNAMEPREFIX=	qutim-plugin-
-DISTNAME=	qutim-icq_${PORTVERSION}_svn71
+DISTNAME=	qutim-icq_${PORTVERSION}_svn136
 
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	ICQ protocol plugin for qutIM
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 RUN_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
+
+MAKE_JOBS_SAFE=yes
 
 USE_GMAKE=	yes
 USE_QT_VER=	4
@@ -27,10 +30,10 @@ QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build uic_build
 WRKSRC=		${WRKDIR}/icq
 
 pre-build:
-	cd ${WRKDIR}/icq && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/qutim
-	@${INSTALL_PROGRAM} ${WRKSRC}/../libicq.so ${PREFIX}/lib/qutim
+	@${INSTALL_PROGRAM} ${WRKSRC}/libicq.so ${PREFIX}/lib/qutim
 
 .include <bsd.port.mk>
