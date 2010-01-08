@@ -1,0 +1,19 @@
+share/festival/lib/cap-signalization.scm
+share/festival/lib/events.scm
+share/festival/lib/fileio.scm
+share/festival/lib/multiwave.scm
+share/festival/lib/nopauses.scm
+share/festival/lib/oo.scm
+share/festival/lib/prosody-param.scm
+share/festival/lib/punctuation.scm
+share/festival/lib/recode.scm
+share/festival/lib/speech-dispatcher.scm
+share/festival/lib/spell-mode.scm
+share/festival/lib/ssml-mode.scm
+share/festival/lib/tokenize.scm
+share/festival/lib/util.scm
+share/festival/lib/voice-select.scm
+share/festival/lib/wave.scm
+share/festival/lib/word-mapping.scm
+@dirrmtry share/festival/lib
+@dirrmtry share/festival
