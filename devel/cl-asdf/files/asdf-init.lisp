@@ -29,12 +29,12 @@
 
 ;; A number of FreeBSD ports related to Common Lisp use the asdf
 ;; system definition library, available as devel/cl-asdf-* (which you
-;; obviously already have installed, scince this file is included with
+;; obviously already have installed, since this file is included with
 ;; that port). That implies that you will have to load and configure
 ;; asdf to use these ports with your Lisp system.
 ;;
-;; This file takes all neccessary actions. The easiest way is to load
-;; it in your Lisp everytime it starts, by putting
+;; This file takes all necessary actions. The easiest way is to load
+;; it in your Lisp every time it starts, by putting
 ;;
 ;;  (load "%%PREFIX%%/etc/freebsd-lisp-init")
 ;;
@@ -76,10 +76,10 @@
 ;; Additionally, all fasl files have the pathname-type "fasl", not
 ;; "x86f" or "fas". The reason is that I want to be prepared for the
 ;; case that CMUCL some lucky day might be supported on non-x86
-;; archs. Scince it encodes the arch in the fasl file-type (x86f,
+;; archs. Since it encodes the arch in the fasl file-type (x86f,
 ;; sparcf etc), hardcoding this in pkg-plists would then
 ;; break. Enforcing this policy for all implementations (for example,
-;; CLISP uses .fas by default) simply is more convenient then handling
+;; CLISP uses .fas by default) simply is more convenient than handling
 ;; CMUCL specially.
 
 ;; The drawback is that users cannot easily load compiled code unless
@@ -97,10 +97,10 @@
 ;; ${WRKSRC}. This situation is detected by checking if an environment
 ;; variable FBSD_ASDF_COMPILE_PORT is set (and if we have a WRKSRC
 ;; envvar as well), so each port Makefile has to create this variable
-;; in the envorinment in which it calls Lisp in do-build, see existing
+;; in the environment in which it calls Lisp in do-build, see existing
 ;; ports for examples.
 
-;; Note that it is only neccessary to modify
+;; Note that it is only necessary to modify
 ;; (output-files ((op compile-op)) ...), because asdf:load-op will use
 ;; this method too to decide which files are to be loaded, there is no
 ;; separate method for load-op.
@@ -108,7 +108,7 @@
 ;;;; Adding support for other Lisp implementations
 
 ;; In order to make all this work for not-handled-yet Lisps, it is
-;; only neccessary to change LISP-SPECIFIC-FASL-SUDBIR and GETENV. Of
+;; only necessary to change LISP-SPECIFIC-FASL-SUDBIR and GETENV. Of
 ;; course, you'll also have to create new binary ports, if that's what
 ;; you want.
 
