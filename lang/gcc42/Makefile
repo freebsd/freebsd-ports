@@ -79,7 +79,12 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/libgomp
 
 .if ! defined(WITHOUT_JAVA)
-DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
+ECJ_JAR=	ecj-4.3.jar
+MASTER_SITES+=	${MASTER_SITE_SOURCEWARE:S|$|:ecj|}
+MASTER_SITE_SUBDIR+=	java/:ecj
+DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
+		${ECJ_JAR}:ecj
+EXTRACT_ONLY=  ${DISTFILES:S|${ECJ_JAR}:ecj||}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
@@ -99,8 +104,9 @@ MAN1+=		gcj${SUFFIX}.1 \
 INFO+=		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
 
+# Preps the source tree for the gcj build
 post-patch::
-	@cd ${SRCDIR} && ${CHMOD} 755 ./contrib/download_ecj && ./contrib/download_ecj
+	@${CP} ${DISTDIR}/${ECJ_JAR} ${SRCDIR}/ecj.jar
 
 .else
 CONFIGURE_ARGS+=--disable-libgcj
