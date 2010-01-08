@@ -2511,7 +2511,6 @@ drood                           ports/www/drood
 dropbear                        ports/security/dropbear
 drpython                        ports/devel/drpython
 drraw                           ports/www/drraw
-drscheme                        ports/lang/drscheme
 drumpiler                       ports/audio/drumpiler
 drupal5                         ports/www/drupal5
 drupal5-adsense                 ports/www/drupal5-adsense
@@ -2698,6 +2697,7 @@ e17-theme-simply_white          ports/x11-themes/e17-theme-simply_white
 e17-utils                       ports/x11-wm/e17-utils
 e2fsprogs                       ports/sysutils/e2fsprogs
 e2fsprogs-libblkid              ports/misc/e2fsprogs-libblkid
+e2fsprogs-libss                 ports/devel/e2fsprogs-libss
 e2fsprogs-libuuid               ports/misc/e2fsprogs-libuuid
 e3                              ports/editors/e3
 e4graph                         ports/devel/e4graph
@@ -10153,6 +10153,7 @@ opendchub                       ports/net-p2p/opendchub
 opendd                          ports/dns/opendd
 opendis                         ports/graphics/opendis
 opendkim                        ports/mail/opendkim
+opendnssec                      ports/dns/opendnssec
 opendpi                         ports/net/opendpi
 opendx                          ports/graphics/opendx
 opendylan                       ports/lang/opendylan
@@ -10238,7 +10239,7 @@ openvmps                        ports/net-mgmt/openvmps
 openvpn                         ports/security/openvpn
 openvpn-admin                   ports/security/openvpn-admin
 openvpn-auth-ldap               ports/security/openvpn-auth-ldap
-openvpn-devel                   ports/security/openvpn-devel
+openvpn20                       ports/security/openvpn20
 openvrml                        ports/www/openvrml
 openwebmail                     ports/mail/openwebmail
 openwince-include               ports/devel/openwince-include
@@ -10725,6 +10726,7 @@ p5-CPANPLUS-Dist-Build          ports/devel/p5-CPANPLUS-Dist-Build
 p5-CQL-Parser                   ports/textproc/p5-CQL-Parser
 p5-CSP                          ports/security/p5-CSP
 p5-CSS                          ports/textproc/p5-CSS
+p5-CSS-Croco                    ports/textproc/p5-CSS-Croco
 p5-CSS-DOM                      ports/www/p5-CSS-DOM
 p5-CSS-Inliner                  ports/www/p5-CSS-Inliner
 p5-CSS-Minifier-XS              ports/textproc/p5-CSS-Minifier-XS
@@ -11795,6 +11797,7 @@ p5-Graphics-ColorNames          ports/graphics/p5-Graphics-ColorNames
 p5-Graphics-ColorNames-WWW      ports/graphics/p5-Graphics-ColorNames-WWW
 p5-Graphics-Primitive           ports/graphics/p5-Graphics-Primitive
 p5-Graphics-Primitive-Driver-Cairo  ports/graphics/p5-Graphics-Primitive-Driver-Cairo
+p5-Gravatar-URL                 ports/devel/p5-Gravatar-URL
 p5-Gtk                          ports/x11-toolkits/p5-Gtk
 p5-Gtk2                         ports/x11-toolkits/p5-Gtk2
 p5-Gtk2-Chmod                   ports/x11-toolkits/p5-Gtk2-Chmod
@@ -13073,8 +13076,10 @@ p5-SGMLSpm                      ports/textproc/p5-SGMLSpm
 p5-SHA                          ports/security/p5-SHA
 p5-SMS-Send                     ports/comms/p5-SMS-Send
 p5-SMS-Send-DeviceGsm           ports/comms/p5-SMS-Send-DeviceGsm
+p5-SMS-Send-TW-HiAir            ports/comms/p5-SMS-Send-TW-HiAir
 p5-SMS-Send-TW-PChome           ports/comms/p5-SMS-Send-TW-PChome
 p5-SMS-Send-TW-ShareSMS         ports/comms/p5-SMS-Send-TW-ShareSMS
+p5-SMS-Send-TW-chtsns           ports/comms/p5-SMS-Send-TW-chtsns
 p5-SMS-Send-TW-emome            ports/comms/p5-SMS-Send-TW-emome
 p5-SNMP-Info                    ports/net-mgmt/p5-SNMP-Info
 p5-SNMP-MIB-Compiler            ports/net-mgmt/p5-SNMP-MIB-Compiler
@@ -14797,6 +14802,7 @@ p5-crypt-x509                   ports/security/p5-Crypt-X509
 p5-crypt-xdbm_file              ports/security/p5-Crypt-xDBM_File
 p5-csp                          ports/security/p5-CSP
 p5-css                          ports/textproc/p5-CSS
+p5-css-croco                    ports/textproc/p5-CSS-Croco
 p5-css-dom                      ports/www/p5-CSS-DOM
 p5-css-inliner                  ports/www/p5-CSS-Inliner
 p5-css-minifier-xs              ports/textproc/p5-CSS-Minifier-XS
@@ -15463,6 +15469,7 @@ p5-graphviz                     ports/graphics/p5-GraphViz
 p5-graphviz-data-structure      ports/graphics/p5-GraphViz-Data-Structure
 p5-graphviz-dbi                 ports/databases/p5-GraphViz-DBI
 p5-graphviz-traverse            ports/graphics/p5-GraphViz-Traverse
+p5-gravatar-url                 ports/devel/p5-Gravatar-URL
 p5-gssapi                       ports/security/p5-GSSAPI
 p5-gstreamer                    ports/multimedia/p5-GStreamer
 p5-gtk                          ports/x11-toolkits/p5-Gtk
@@ -16849,7 +16856,9 @@ p5-sledge-template-expr         ports/www/p5-Sledge-Template-Expr
 p5-smart-comments               ports/devel/p5-Smart-Comments
 p5-sms-send                     ports/comms/p5-SMS-Send
 p5-sms-send-devicegsm           ports/comms/p5-SMS-Send-DeviceGsm
+p5-sms-send-tw-chtsns           ports/comms/p5-SMS-Send-TW-chtsns
 p5-sms-send-tw-emome            ports/comms/p5-SMS-Send-TW-emome
+p5-sms-send-tw-hiair            ports/comms/p5-SMS-Send-TW-HiAir
 p5-sms-send-tw-pchome           ports/comms/p5-SMS-Send-TW-PChome
 p5-sms-send-tw-sharesms         ports/comms/p5-SMS-Send-TW-ShareSMS
 p5-snmp-info                    ports/net-mgmt/p5-SNMP-Info
@@ -23427,6 +23436,7 @@ udmsearch                       ports/www/udmsearch
 udns                            ports/dns/udns
 udpcast                         ports/mbone/udpcast
 udptunnel                       ports/net/udptunnel
+udpxy                           ports/net/udpxy
 udrawgraph                      ports/graphics/uDrawGraph
 udunits                         ports/science/udunits
 uebimiau                        ports/mail/uebimiau
