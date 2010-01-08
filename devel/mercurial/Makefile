@@ -59,10 +59,7 @@ DOCS=	CONTRIBUTORS COPYING README doc/*.txt doc/*.html
 MAN1=	hg.1
 MAN5=	hgignore.5 hgrc.5
 
-PKGMESSAGE=	${WRKDIR}/MESSAGE
-
-post-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+SUB_FILES=	pkg-message
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
