@@ -1,0 +1,49 @@
+bin/picpuz
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TRANSLATIONS
+%%DOCSDIR%%/images/screenshot.jpg
+%%DOCSDIR%%/userguide-en.html
+share/pixmaps/picpuz.png
+%%DATADIR%%/icons/bigger.png
+%%DATADIR%%/icons/first-page.png
+%%DATADIR%%/icons/folder.png
+%%DATADIR%%/icons/folder128.png
+%%DATADIR%%/icons/folder256.png
+%%DATADIR%%/icons/gallery.png
+%%DATADIR%%/icons/last-page.png
+%%DATADIR%%/icons/line.png
+%%DATADIR%%/icons/next-page.png
+%%DATADIR%%/icons/next-row.png
+%%DATADIR%%/icons/open.png
+%%DATADIR%%/icons/picpuz.png
+%%DATADIR%%/icons/piece.png
+%%DATADIR%%/icons/prev-page.png
+%%DATADIR%%/icons/prev-row.png
+%%DATADIR%%/icons/show.png
+%%DATADIR%%/icons/smaller.png
+%%DATADIR%%/icons/tile.png
+%%DATADIR%%/locales/de/picpuz.po
+%%DATADIR%%/locales/de/zfuncs.po
+%%DATADIR%%/locales/es/picpuz.po
+%%DATADIR%%/locales/es/picpuz.po.old
+%%DATADIR%%/locales/es/zfuncs.po
+%%DATADIR%%/locales/fr/picpuz.po
+%%DATADIR%%/locales/fr/zfuncs.po
+%%DATADIR%%/locales/gl/picpuz.po
+%%DATADIR%%/locales/gl/picpuz.po.old
+%%DATADIR%%/locales/gl/zfuncs.po
+%%DATADIR%%/locales/zh_CN/picpuz.po
+%%DATADIR%%/locales/zh_CN/zfuncs.po
+@dirrm %%DATADIR%%/locales/zh_CN
+@dirrm %%DATADIR%%/locales/gl
+@dirrm %%DATADIR%%/locales/fr
+@dirrm %%DATADIR%%/locales/es
+@dirrm %%DATADIR%%/locales/de
+@dirrm %%DATADIR%%/locales
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

@@ -687,6 +687,7 @@
     SUBDIR += php5-ming
     SUBDIR += phplot
     SUBDIR += phpsview
+    SUBDIR += picpuz
     SUBDIR += picturebook
     SUBDIR += picviz
     SUBDIR += piddle
