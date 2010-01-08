@@ -162,6 +162,7 @@
     SUBDIR += festalon
     SUBDIR += festdoc
     SUBDIR += festival
+    SUBDIR += festival-freebsoft-utils
     SUBDIR += festlex-cmu
     SUBDIR += festlex-czech
     SUBDIR += festlex-oald
