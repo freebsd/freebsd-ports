@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DBIx/Class/QueryProfiler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/QueryProfiler/.packlist
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/QueryProfiler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
