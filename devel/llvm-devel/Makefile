@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
-OPTIONS=	NO_ASSERTS "Disable assertions (needed by graphics/opengtl) " off
+OPTIONS=	NO_ASSERTS "Disable assertions" off
 
 MAN1=		bugpoint.1 clang.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \

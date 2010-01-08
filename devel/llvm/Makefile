@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
-OPTIONS=	NO_ASSERTS	"Disable assertions (needed by graphics/opengtl)" off
+OPTIONS=	NO_ASSERTS	"Disable assertions" off
 
 .if defined(NOPORTDOCS)
 DOCSRCDIR=
