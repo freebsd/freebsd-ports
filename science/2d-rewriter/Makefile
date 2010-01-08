@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.crowdeduniverse.org/distfiles/
 
-MAINTAINER=	bt@turtle.freedns.us
+MAINTAINER=	iserikov@acm.org
 COMMENT=	Cellular automata simulator
 
 MAN1=		2d-rewriter.1
