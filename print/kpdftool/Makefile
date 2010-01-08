@@ -8,7 +8,8 @@ PORTNAME=	kpdftool
 PORTVERSION=	0.22
 PORTREVISION=	3
 CATEGORIES=	print kde
-MASTER_SITES=	http://www.yuanjue.net/download/
+MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
+DISTFILES=	33194-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to ease your PDF related work
@@ -16,14 +17,12 @@ COMMENT=	Tool to ease your PDF related work
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
-BROKEN=		checksum mismatch
-DEPRECATED=	has been broken for 3 months
-EXPIRATION_DATE=2010-01-08
-
 USE_GMAKE=	yes
+USE_ZIP=	yes
 USE_QT_VER=	3
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 MAKE_ARGS+=	QTDIR=${QT_PREFIX}
+MAKE_JOBS_SAFE=	yes
 
 do-configure:
 	cd ${WRKSRC}; \
