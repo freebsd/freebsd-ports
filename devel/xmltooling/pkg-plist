@@ -1,8 +1,33 @@
+%%DOCSDIR%%/CURL.LICENSE
+%%DOCSDIR%%/LICENSE.txt
+%%DOCSDIR%%/LOG4CPP.LICENSE
+%%DOCSDIR%%/NOTICE.txt
+%%DOCSDIR%%/OPENSSL.LICENSE
+%%DOCSDIR%%/README.txt
+include/xmltooling/AbstractAttributeExtensibleXMLObject.h
+include/xmltooling/AbstractComplexElement.h
+include/xmltooling/AbstractDOMCachingXMLObject.h
+include/xmltooling/AbstractSimpleElement.h
+include/xmltooling/AbstractXMLObject.h
+include/xmltooling/AttributeExtensibleXMLObject.h
+include/xmltooling/ConcreteXMLObjectBuilder.h
+include/xmltooling/ElementExtensibleXMLObject.h
+include/xmltooling/ElementProxy.h
+include/xmltooling/Lockable.h
+include/xmltooling/Namespace.h
+include/xmltooling/PluginManager.h
+include/xmltooling/QName.h
+include/xmltooling/XMLObject.h
+include/xmltooling/XMLObjectBuilder.h
+include/xmltooling/XMLToolingConfig.h
+include/xmltooling/base.h
 include/xmltooling/char_traits.h
+include/xmltooling/config_pub.h
 include/xmltooling/encryption/Decrypter.h
 include/xmltooling/encryption/EncryptedKeyResolver.h
 include/xmltooling/encryption/Encrypter.h
 include/xmltooling/encryption/Encryption.h
+include/xmltooling/exceptions.h
 include/xmltooling/impl/AnyElement.h
 include/xmltooling/impl/UnknownElement.h
 include/xmltooling/io/AbstractXMLObjectMarshaller.h
@@ -11,28 +36,7 @@ include/xmltooling/io/GenericRequest.h
 include/xmltooling/io/GenericResponse.h
 include/xmltooling/io/HTTPRequest.h
 include/xmltooling/io/HTTPResponse.h
-include/xmltooling/AbstractAttributeExtensibleXMLObject.h
-include/xmltooling/AbstractComplexElement.h
-include/xmltooling/AbstractDOMCachingXMLObject.h
-include/xmltooling/AbstractSimpleElement.h
-include/xmltooling/AbstractXMLObject.h
-include/xmltooling/AttributeExtensibleXMLObject.h
-include/xmltooling/base.h
-include/xmltooling/ConcreteXMLObjectBuilder.h
-include/xmltooling/config_pub.h
-include/xmltooling/ElementExtensibleXMLObject.h
-include/xmltooling/ElementProxy.h
-include/xmltooling/exceptions.h
-include/xmltooling/Lockable.h
 include/xmltooling/logging.h
-include/xmltooling/Namespace.h
-include/xmltooling/PluginManager.h
-include/xmltooling/QName.h
-include/xmltooling/unicode.h
-include/xmltooling/version.h
-include/xmltooling/XMLObject.h
-include/xmltooling/XMLObjectBuilder.h
-include/xmltooling/XMLToolingConfig.h
 include/xmltooling/security/AbstractPKIXTrustEngine.h
 include/xmltooling/security/BasicX509Credential.h
 include/xmltooling/security/ChainingTrustEngine.h
@@ -43,23 +47,24 @@ include/xmltooling/security/CredentialResolver.h
 include/xmltooling/security/KeyInfoCredentialContext.h
 include/xmltooling/security/KeyInfoResolver.h
 include/xmltooling/security/OpenSSLCredential.h
+include/xmltooling/security/OpenSSLCryptoX509CRL.h
+include/xmltooling/security/OpenSSLTrustEngine.h
 include/xmltooling/security/SecurityHelper.h
 include/xmltooling/security/SignatureTrustEngine.h
 include/xmltooling/security/TrustEngine.h
 include/xmltooling/security/X509Credential.h
 include/xmltooling/security/X509TrustEngine.h
-include/xmltooling/security/OpenSSLTrustEngine.h
 include/xmltooling/security/XSECCryptoX509CRL.h
-include/xmltooling/security/OpenSSLCryptoX509CRL.h
 include/xmltooling/signature/ContentReference.h
 include/xmltooling/signature/KeyInfo.h
 include/xmltooling/signature/Signature.h
 include/xmltooling/signature/SignatureValidator.h
+include/xmltooling/soap/HTTPSOAPTransport.h
+include/xmltooling/soap/OpenSSLSOAPTransport.h
 include/xmltooling/soap/SOAP.h
 include/xmltooling/soap/SOAPClient.h
 include/xmltooling/soap/SOAPTransport.h
-include/xmltooling/soap/HTTPSOAPTransport.h
-include/xmltooling/soap/OpenSSLSOAPTransport.h
+include/xmltooling/unicode.h
 include/xmltooling/util/CurlURLInputStream.h
 include/xmltooling/util/DateTime.h
 include/xmltooling/util/NDC.h
@@ -77,31 +82,25 @@ include/xmltooling/util/XMLHelper.h
 include/xmltooling/util/XMLObjectChildrenList.h
 include/xmltooling/validation/Validator.h
 include/xmltooling/validation/ValidatorSuite.h
+include/xmltooling/version.h
 lib/libxmltooling-lite.so
-lib/libxmltooling-lite.so.3
-lib/libxmltooling.so.3
+lib/libxmltooling-lite.so.4
 lib/libxmltooling.so
-%%DOCSDIR%%/README.txt
-%%DOCSDIR%%/LICENSE.txt
-%%DOCSDIR%%/NOTICE.txt
-%%DOCSDIR%%/OPENSSL.LICENSE
-%%DOCSDIR%%/LOG4CPP.LICENSE
-%%DOCSDIR%%/CURL.LICENSE
+lib/libxmltooling.so.4
 share/xml/xmltooling/catalog.xml
 share/xml/xmltooling/soap-envelope.xsd
 share/xml/xmltooling/xenc-schema.xsd
-share/xml/xmltooling/xmldsig-core-schema.xsd
 share/xml/xmltooling/xml.xsd
+share/xml/xmltooling/xmldsig-core-schema.xsd
 share/xml/xmltooling/xmltooling.xsd
-@dirrm %%DOCSDIR%%/api
 @dirrm %%DOCSDIR%%
-@dirrmtry include/xmltooling/validation
-@dirrmtry include/xmltooling/util
-@dirrmtry include/xmltooling/soap
-@dirrmtry include/xmltooling/signature
-@dirrmtry include/xmltooling/security
-@dirrmtry include/xmltooling/io
-@dirrmtry include/xmltooling/impl
 @dirrmtry include/xmltooling/encryption
+@dirrmtry include/xmltooling/impl
+@dirrmtry include/xmltooling/io
+@dirrmtry include/xmltooling/security
+@dirrmtry include/xmltooling/signature
+@dirrmtry include/xmltooling/soap
+@dirrmtry include/xmltooling/util
+@dirrmtry include/xmltooling/validation
 @dirrmtry include/xmltooling
 @dirrmtry share/xml/xmltooling
