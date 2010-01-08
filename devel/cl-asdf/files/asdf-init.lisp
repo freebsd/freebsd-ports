@@ -36,7 +36,7 @@
 ;; This file takes all necessary actions. The easiest way is to load
 ;; it in your Lisp every time it starts, by putting
 ;;
-;;  (load "%%PREFIX%%/etc/freebsd-lisp-init")
+;;  (load "%%PREFIX%%/etc/asdf-init.lisp")
 ;;
 ;; in your init file.
 ;;
@@ -174,7 +174,7 @@ system to Lisp. Note that this doesn't happen automatically for
 variables defined in a Makefile, you'll have to pass these to the
 environment in which Lisp runs explicitly.
 
-Scince accessing environment variables is not portable, this function
+Since accessing environment variables is not portable, this function
 has to be extended for each Lisp implementation that is to work with
 FreeBSDs Lisp ports. If you do this, you should probably extend
 LISP-SPECIFIC-FASL-SUBDIR as well."
@@ -232,5 +232,4 @@ LISP-SPECIFIC-FASL-SUBDIR as well."
 	:defaults default-output-file))))
 )
 
-
-;;; freebsd-lisp-init.lisp ends here
+;;; asdf-init.lisp ends here
