@@ -17,6 +17,7 @@ COMMENT=	Intelligent algorithms for DNA searches
 WRKTOP=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKTOP}/src
 MAKEFILE=	makefile
+SUB_FILES=	pkg-message
 
 #
 # Actually want an 'ALL_TARGET = all perl' which then requires
@@ -90,6 +91,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -E -e 's#PREFIX#${PREFIX}#' -e '/(^\[|]$$)/d' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
