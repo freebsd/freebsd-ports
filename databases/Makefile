@@ -687,6 +687,7 @@
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
     SUBDIR += tora
+    SUBDIR += tuning-primer
     SUBDIR += typhoon
     SUBDIR += unixODBC
     SUBDIR += useracc

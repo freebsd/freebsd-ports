@@ -1,0 +1,7 @@
+This script takes information from "SHOW STATUS LIKE..."
+and "SHOW VARIABLES LIKE..." then attempts to produce
+sane recommendations for tuning server variables.
+
+It is compatible with all versions of MySQL 3.23 - 5.1.
+
+WWW:	https://launchpad.net/mysql-tuning-primer
