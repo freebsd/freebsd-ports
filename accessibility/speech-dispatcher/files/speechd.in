@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# PROVIDE: speechd
+# REQUIRE: DAEMON dbus
+#
+# Add the following to /etc/rc.conf to start speech-dispatcher at boot time:
+#
+# speechd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+speechd_enable=${speechd_enable-"NO"}
+
+name="speechd"
+rcvar=`set_rcvar`
+
+real_name="speech-dispatcher"
+command="%%PREFIX%%/bin/${real_name}"
+command_args="-C %%ETCDIR%%"
+pidfile="/var/run/${real_name}.pid"
+
+start_precmd="${name}_prestart"
+stop_postcmd="${name}_poststop"
+
+speechd_prestart()
+{
+	mkdir -p /var/log/${real_name}
+}
+
+speechd_poststop()
+{
+	rm -f $pifile
+}
+
+load_rc_config $name
+run_rc_command "$1"

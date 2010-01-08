@@ -1,0 +1,11 @@
+--- config/modules/Makefile.in.orig	2009-12-09 08:34:23.051988348 +0000
++++ config/modules/Makefile.in	2009-12-09 08:38:28.256188947 +0000
+@@ -238,7 +238,7 @@
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+ 	  echo " $(dist_moduleconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(moduleconfdir)/$$f'"; \
+-	  $(dist_moduleconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(moduleconfdir)/$$f"; \
++	  $(dist_moduleconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(moduleconfdir)/$$f.sample"; \
+ 	done
+ 
+ uninstall-dist_moduleconfDATA:

@@ -1,0 +1,96 @@
+bin/clibrary
+bin/clibrary2
+bin/connection_recovery
+bin/long_message
+bin/run_test
+bin/spd-say
+bin/spdsend
+bin/speech-dispatcher
+@unexec if cmp -s %D/%%ETCDIR%%/clients/emacs.conf %D/%%ETCDIR%%/clients/emacs.conf.sample; then rm -f %D/%%ETCDIR%%/clients/emacs.conf; fi
+%%ETCDIR%%/clients/emacs.conf.sample
+@exec [ -f %B/emacs.conf ] || cp %D/%F %B/emacs.conf
+@unexec if cmp -s %D/%%ETCDIR%%/clients/gnome-speech.conf %D/%%ETCDIR%%/clients/gnome-speech.conf.sample; then rm -f %D/%%ETCDIR%%/clients/gnome-speech.conf; fi
+%%ETCDIR%%/clients/gnome-speech.conf.sample
+@exec [ -f %B/gnome-speech.conf ] || cp %D/%F %B/gnome-speech.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/cicero.conf %D/%%ETCDIR%%/modules/cicero.conf.sample; then rm -f %D/%%ETCDIR%%/modules/cicero.conf; fi
+%%ETCDIR%%/modules/cicero.conf.sample
+@exec [ -f %B/cicero.conf ] || cp %D/%F %B/cicero.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/dtk-generic.conf %D/%%ETCDIR%%/modules/dtk-generic.conf.sample; then rm -f %D/%%ETCDIR%%/modules/dtk-generic.conf; fi
+%%ETCDIR%%/modules/dtk-generic.conf.sample
+@exec [ -f %B/dtk-generic.conf ] || cp %D/%F %B/dtk-generic.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/epos-generic.conf %D/%%ETCDIR%%/modules/epos-generic.conf.sample; then rm -f %D/%%ETCDIR%%/modules/epos-generic.conf; fi
+%%ETCDIR%%/modules/epos-generic.conf.sample
+@exec [ -f %B/epos-generic.conf ] || cp %D/%F %B/epos-generic.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/espeak-generic.conf %D/%%ETCDIR%%/modules/espeak-generic.conf.sample; then rm -f %D/%%ETCDIR%%/modules/espeak-generic.conf; fi
+%%ETCDIR%%/modules/espeak-generic.conf.sample
+@exec [ -f %B/espeak-generic.conf ] || cp %D/%F %B/espeak-generic.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/espeak-mbrola-generic.conf %D/%%ETCDIR%%/modules/espeak-mbrola-generic.conf.sample; then rm -f %D/%%ETCDIR%%/modules/espeak-mbrola-generic.conf; fi
+%%ETCDIR%%/modules/espeak-mbrola-generic.conf.sample
+@exec [ -f %B/espeak-mbrola-generic.conf ] || cp %D/%F %B/espeak-mbrola-generic.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/espeak.conf %D/%%ETCDIR%%/modules/espeak.conf.sample; then rm -f %D/%%ETCDIR%%/modules/espeak.conf; fi
+%%ETCDIR%%/modules/espeak.conf.sample
+@exec [ -f %B/espeak.conf ] || cp %D/%F %B/espeak.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/festival.conf %D/%%ETCDIR%%/modules/festival.conf.sample; then rm -f %D/%%ETCDIR%%/modules/festival.conf; fi
+%%ETCDIR%%/modules/festival.conf.sample
+@exec [ -f %B/festival.conf ] || cp %D/%F %B/festival.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/flite.conf %D/%%ETCDIR%%/modules/flite.conf.sample; then rm -f %D/%%ETCDIR%%/modules/flite.conf; fi
+%%ETCDIR%%/modules/flite.conf.sample
+@exec [ -f %B/flite.conf ] || cp %D/%F %B/flite.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/ibmtts.conf %D/%%ETCDIR%%/modules/ibmtts.conf.sample; then rm -f %D/%%ETCDIR%%/modules/ibmtts.conf; fi
+%%ETCDIR%%/modules/ibmtts.conf.sample
+@exec [ -f %B/ibmtts.conf ] || cp %D/%F %B/ibmtts.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/ivona.conf %D/%%ETCDIR%%/modules/ivona.conf.sample; then rm -f %D/%%ETCDIR%%/modules/ivona.conf; fi
+%%ETCDIR%%/modules/ivona.conf.sample
+@exec [ -f %B/ivona.conf ] || cp %D/%F %B/ivona.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/llia_phon-generic.conf %D/%%ETCDIR%%/modules/llia_phon-generic.conf.sample; then rm -f %D/%%ETCDIR%%/modules/llia_phon-generic.conf; fi
+%%ETCDIR%%/modules/llia_phon-generic.conf.sample
+@exec [ -f %B/llia_phon-generic.conf ] || cp %D/%F %B/llia_phon-generic.conf
+@unexec if cmp -s %D/%%ETCDIR%%/modules/swift-generic.conf %D/%%ETCDIR%%/modules/swift-generic.conf.sample; then rm -f %D/%%ETCDIR%%/modules/swift-generic.conf; fi
+%%ETCDIR%%/modules/swift-generic.conf.sample
+@exec [ -f %B/swift-generic.conf ] || cp %D/%F %B/swift-generic.conf
+@unexec if cmp -s %D/%%ETCDIR%%/speechd.conf %D/%%ETCDIR%%/speechd.conf.sample; then rm -f %D/%%ETCDIR%%/speechd.conf; fi
+%%ETCDIR%%/speechd.conf.sample
+@exec [ -f %B/speechd.conf ] || cp %D/%F %B/speechd.conf
+include/libspeechd.h
+lib/libspeechd.a
+lib/libspeechd.la
+lib/libspeechd.so
+lib/libspeechd.so.3
+lib/speech-dispatcher-modules/sd_cicero
+lib/speech-dispatcher-modules/sd_dummy
+%%ESPEAK%%lib/speech-dispatcher-modules/sd_espeak
+lib/speech-dispatcher-modules/sd_festival
+%%FLITE%%lib/speech-dispatcher-modules/sd_flite
+lib/speech-dispatcher-modules/sd_generic
+lib/speech-dispatcher/libsdaudio.a
+lib/speech-dispatcher/libsdaudio.la
+lib/speech-dispatcher/libsdaudio.so
+lib/speech-dispatcher/libsdaudio.so.2
+share/sounds/speech-dispatcher/dummy-message.wav
+share/sounds/speech-dispatcher/test.wav
+%%DATADIR%%/conf/clients/emacs.conf
+%%DATADIR%%/conf/clients/gnome-speech.conf
+%%DATADIR%%/conf/modules/cicero.conf
+%%DATADIR%%/conf/modules/dtk-generic.conf
+%%DATADIR%%/conf/modules/epos-generic.conf
+%%DATADIR%%/conf/modules/espeak-generic.conf
+%%DATADIR%%/conf/modules/espeak-mbrola-generic.conf
+%%DATADIR%%/conf/modules/espeak.conf
+%%DATADIR%%/conf/modules/festival.conf
+%%DATADIR%%/conf/modules/flite.conf
+%%DATADIR%%/conf/modules/ibmtts.conf
+%%DATADIR%%/conf/modules/ivona.conf
+%%DATADIR%%/conf/modules/llia_phon-generic.conf
+%%DATADIR%%/conf/modules/swift-generic.conf
+%%DATADIR%%/conf/speechd.conf
+@dirrm %%DATADIR%%/conf/modules
+@dirrm %%DATADIR%%/conf/clients
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%
+@dirrm share/sounds/speech-dispatcher
+@dirrmtry share/sounds
+@dirrm lib/speech-dispatcher-modules
+@dirrm lib/speech-dispatcher
+@dirrmtry %%ETCDIR%%/modules
+@dirrmtry %%ETCDIR%%/clients
+@dirrmtry %%ETCDIR%%
