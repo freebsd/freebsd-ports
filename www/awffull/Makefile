@@ -7,19 +7,18 @@
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
 MASTER_SITES=	http://www.stedee.id.au/files/
 
 MAINTAINER?=	chad@wickdev.com
 COMMENT=	AWFFull is a webserver log analysis tool forked from Webalizer
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png \
 		pcre.0:${PORTSDIR}/devel/pcre
-
-RUN_DEPENDS?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
-BUILD_DEPENS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-awffull-[0-9]*
 
@@ -33,7 +32,8 @@ USE_GETTEXT=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-font-default=${FONTDEFAULT} \
-		--with-font-label=${FONTLABEL}
+		--with-font-label=${FONTLABEL} \
+		--with-etcdir=${PREFIX}/etc
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CPPFLAGS=	-I${LOCALBASE}/include
