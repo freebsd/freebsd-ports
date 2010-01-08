@@ -888,6 +888,7 @@
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-FillInForm-ForceUTF8
     SUBDIR += p5-HTML-FormFu
+    SUBDIR += p5-HTML-FormFu-Imager
     SUBDIR += p5-HTML-FormFu-Model-DBIC
     SUBDIR += p5-HTML-FormHandler
     SUBDIR += p5-HTML-FromANSI
