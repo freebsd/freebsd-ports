@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	lhs2tex
-PORTVERSION=	1.14
-PORTREVISION=	3
+PORTVERSION=	1.15
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://people.cs.uu.nl/andres/${PORTNAME}/
 
@@ -18,6 +17,8 @@ COMMENT=	A preprocessor to generate LaTeX code from literate Haskell sources
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
 		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc
+
+RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

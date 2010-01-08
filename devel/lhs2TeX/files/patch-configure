@@ -1,32 +1,32 @@
---- configure.orig	2008-02-19 01:11:52.000000000 -0500
-+++ configure	2008-02-19 01:42:57.000000000 -0500
-@@ -2637,54 +2637,6 @@
+--- ./configure.orig	2009-12-18 13:21:18.000000000 +0100
++++ ./configure	2010-01-07 19:34:38.000000000 +0100
+@@ -2745,54 +2745,6 @@
    POLYTABLE_INSTALL=yes
  fi
  
 -if test "z$POLYTABLE_INSTALL" = "zyes"; then
 -
--{ echo "$as_me:$LINENO: checking for the polytable package" >&5
--echo $ECHO_N "checking for the polytable package... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking for the polytable package" >&5
+-$as_echo_n "checking for the polytable package... " >&6; }
 -if test -x "$KPSEWHICH"; then
 -  POLYTABLE="`$KPSEWHICH polytable.sty`"
 -fi
 -if test -f "$POLYTABLE"; then
--  { echo "$as_me:$LINENO: result: $POLYTABLE" >&5
--echo "${ECHO_T}$POLYTABLE" >&6; }
--  { echo "$as_me:$LINENO: checking for version of polytable" >&5
--echo $ECHO_N "checking for version of polytable... $ECHO_C" >&6; }
+-  { $as_echo "$as_me:$LINENO: result: $POLYTABLE" >&5
+-$as_echo "$POLYTABLE" >&6; }
+-  { $as_echo "$as_me:$LINENO: checking for version of polytable" >&5
+-$as_echo_n "checking for version of polytable... " >&6; }
 -  POLYTABLE_VERSION=`$GREP " v.* .polytable. package" $POLYTABLE | $SED -e "s/^.*v\(.*\) .polytable. package.*$/\1/"`
--  { echo "$as_me:$LINENO: result: $POLYTABLE_VERSION" >&5
--echo "${ECHO_T}$POLYTABLE_VERSION" >&6; }
+-  { $as_echo "$as_me:$LINENO: result: $POLYTABLE_VERSION" >&5
+-$as_echo "$POLYTABLE_VERSION" >&6; }
 -else
--  { echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
+-  { $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
 -fi
 -
 -  # does polytable need to be installed?
--  { echo "$as_me:$LINENO: checking whether polytable needs to be installed" >&5
--echo $ECHO_N "checking whether polytable needs to be installed... $ECHO_C" >&6; }
+-  { $as_echo "$as_me:$LINENO: checking whether polytable needs to be installed" >&5
+-$as_echo_n "checking whether polytable needs to be installed... " >&6; }
 -  POLYTABLE_INSTALL=no
 -  if test -n $POLYTABLE; then
 -    if ( IFS=".";
@@ -48,19 +48,19 @@
 -  else
 -    POLYTABLE_INSTALL=yes
 -  fi
--  { echo "$as_me:$LINENO: result: $POLYTABLE_INSTALL" >&5
--echo "${ECHO_T}$POLYTABLE_INSTALL" >&6; }
+-  { $as_echo "$as_me:$LINENO: result: $POLYTABLE_INSTALL" >&5
+-$as_echo "$POLYTABLE_INSTALL" >&6; }
 -fi
 -
  # Extract the first word of "mktexlsr", so it can be a program name with args.
  set dummy mktexlsr; ac_word=$2
- { echo "$as_me:$LINENO: checking for $ac_word" >&5
-@@ -2727,7 +2679,7 @@
+ { $as_echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -2834,8 +2786,6 @@
  
  
- # docdir and expansion
+ 
+-# docdir and expansion
 -docdir="$datadir/doc/$PACKAGE_TARNAME-$PACKAGE_VERSION"
-+#docdir="$datadir/doc/$PACKAGE_TARNAME-$PACKAGE_VERSION"
  
  stydir="$datadir/$PACKAGE_TARNAME-$PACKAGE_VERSION"
  
