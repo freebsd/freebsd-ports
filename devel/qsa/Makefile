@@ -7,7 +7,7 @@
 
 PORTNAME=	qsa
 PORTVERSION=	1.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_QT}
 MASTER_SITE_SUBDIR=../../qsa/source
@@ -32,7 +32,7 @@ MAKE_ENV?=	QTDIR=${QT_PREFIX} \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-src
 
-PKGMESSAGE=	${WRKDIR}/message
+SUB_FILES=	pkg-message
 
 OPTIONS=	IDE "Enable the QSA Workbench (embedded scripting IDE)" on
 
@@ -53,10 +53,6 @@ pre-configure:
 
 # Disconnect a broken example from the build
 	@${REINPLACE_CMD} -e 's|enums||g' ${WRKSRC}/examples/examples.pro
-
-post-build:
-	@${CAT} ${PKGDIR}/pkg-message \
-		| ${SED} -e 's,%%PREFIX%%,${PREFIX},g' > ${PKGMESSAGE}
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
