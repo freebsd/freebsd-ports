@@ -19,8 +19,8 @@ LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debug
-CONFIGURE_ENV=	CXXFLAGS+="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS+="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 CONFLICTS=	libtorrent-[0-9]* \
 		libtorrent-devel-[0-9]* \
