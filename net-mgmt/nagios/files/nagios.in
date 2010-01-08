@@ -12,6 +12,8 @@
 # Add the following lines to /etc/rc.conf to enable nagios:
 # nagios_enable (bool):    Set to "NO" by default.
 #                          Set it to "YES" to enable nagios.
+# nagios_precache (bool):  Set to "NO" by default.
+#                          Set it to "YES" to enable pre-caching.
 # nagios_flags (str):      Set to "" by default.
 # nagios_configfile (str): Set to "%%PREFIX%%/etc/nagios/nagios.cfg" by default.
 #
@@ -30,16 +32,34 @@ nagios_user="%%NAGIOSUSER%%"
 start_precmd="start_precmd"
 stop_postcmd="stop_postcmd"
 restart_precmd="nagios_checkconfig"
-reload_precmd="nagios_checkconfig"
+reload_precmd="reload_precmd"
 sig_reload=HUP
 
 [ -z "${nagios_enable}" ]       && nagios_enable="NO"
 [ -z "${nagios_configfile}" ]   && nagios_configfile="%%PREFIX%%/etc/nagios/nagios.cfg"
+[ -z "${nagios_precache}" ]     && nagios_precache="NO"
 
 load_rc_config "${name}"
 
 required_files="${nagios_configfile}"
 command_args="${command_args} ${nagios_configfile}"
+
+nagios_cacheconfig() {
+  if ! checkyesno nagios_precache; then
+    return 0
+  fi
+
+  echo -n "Pre-Caching nagios configuration: "
+  ${command} -pv ${nagios_configfile} 2>&1 >/dev/null
+  if [ $? != 0 ]; then
+    echo "FAILED"
+    ${command} -v ${nagios_configfile}
+    return 1
+  else
+    command_args="-u -x ${command_args}"
+    echo "OK"
+  fi
+}
 
 nagios_checkconfig() {
   echo -n "Performing sanity check of nagios configuration: "
@@ -53,8 +73,22 @@ nagios_checkconfig() {
   fi
 }
 
+reload_precmd() {
+  if ! nagios_checkconfig; then
+    return 1
+  fi
+
+  if ! nagios_cacheconfig; then
+    return 1
+  fi
+}
+
 start_precmd() {
   if ! nagios_checkconfig; then
+    return 1
+  fi
+
+  if ! nagios_cacheconfig; then
     return 1
   fi
 
