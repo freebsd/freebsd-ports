@@ -12,6 +12,8 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	A drupal module which allows the end-user to set meta tags for nodes
 
+BROKEN=		does not install
+
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	basic_metatags extra_metatags site_verification translations
 MODULE_FILES=	basic_metatags/basic_metatags.info basic_metatags/basic_metatags.install \
