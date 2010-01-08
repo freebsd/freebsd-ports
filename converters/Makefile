@@ -67,6 +67,7 @@
     SUBDIR += p5-Encode-JIS2K
     SUBDIR += p5-Encode-compat
     SUBDIR += p5-Encoding-FixLatin
+    SUBDIR += p5-Format-Human-Bytes
     SUBDIR += p5-JSON
     SUBDIR += p5-JSON-XS-VersionOneAndTwo
     SUBDIR += p5-JSON1
