@@ -11,7 +11,7 @@ CATEGORIES=	devel textproc
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/:onig \
 		http://www.SpringDaemons.com/stas/:ruby
 DISTFILES=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}:onig \
-		ruby187p72-oniguruma.patch:ruby
+		ruby187p248-oniguruma.patch:ruby
 DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
 
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 DOCS=		HISTORY README doc/*
 
 post-patch:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/ruby187p72-oniguruma.patch \
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/ruby187p248-oniguruma.patch \
 		${WRKSRC}/ruby187.patch
 
 post-configure:
