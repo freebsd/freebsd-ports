@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_SCONS=	yes
 SCONS_ARGS=	with_builtin_sdlnet=0
-SCONS_BUILDENV=	PYTHON_LIB=${PYTHON_VERSION}
+SCONS_BUILDENV=	PYTHON_LIB=${PYTHON_VERSION} LINKFLAGS=${LDFLAGS}
 USE_SDL=	sdl net
 WRKSRC=		${WRKDIR}/${PORTNAME}/FreeOrion
 
@@ -40,13 +40,14 @@ SCONS_ARGS+=	release=yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|ND_coord_i|ND_coord|g' \
 		${WRKSRC}/UI/TechTreeWnd.cpp
-	@${REINPLACE_CMD} -e 's|"ogre_plugins.cfg"|"${DATADIR}/ogre_plugins.cfg"|g' \
-		${WRKSRC}/client/human/chmain.cpp
 	@${REINPLACE_CMD} -e 's|"OISInput.cfg"|"${DATADIR}/OISInput.cfg"|g' \
 		${WRKSRC}/client/human/HumanClientApp.cpp
 	@${REINPLACE_CMD} -e 's|Plugin=Plugin_CgProgramManager|#&|g; \
 		s|\(PluginFolder=\)\.|\1${LOCALBASE}/lib/OGRE|g' \
 		${WRKSRC}/ogre_plugins.cfg
+	@${REINPLACE_CMD} -e 's|\(prefix.*\)/usr/local|\1${PREFIX}|g; \
+		s|/usr/local/lib/OGRE|${LOCALBASE}/lib/OGRE|g' \
+		${WRKSRC}/SConstruct
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ogre_plugins.cfg ${DATADIR}
