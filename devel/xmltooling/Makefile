@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmltooling
-DISTVERSION=	1.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel security
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/2.2/
+MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/2.3/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Low level XML support for SAML
@@ -25,7 +25,13 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
+		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure
+
+.if defined(NOPORTDOCS)
+        @${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
