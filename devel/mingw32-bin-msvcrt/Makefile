@@ -9,7 +9,7 @@ PORTNAME=	bin-msvcrt
 PORTVERSION=	r${RUNTIMEVERSION}.a${APIVERSION}
 CATEGORIES=	devel
 MASTER_SITES=	SF/mingw/MinGW%20Runtime/mingwrt-${RUNTIMEVERSION}:runtime \
-		SF/mingw/MinGW%20API%20for%20MS-Windows/Current%20Release_%20w32api-${APIVERSION}:api
+		SF/mingw/MinGW%20API%20for%20MS-Windows/w32api-${APIVERSION}:api
 PKGNAMEPREFIX=	mingw32-
 DISTFILES=	mingwrt-${RUNTIMEVERSION}-mingw32-dev${EXTRACT_SUFX}:runtime \
 		mingwrt-${RUNTIMEVERSION}-mingw32-dll${EXTRACT_SUFX}:runtime \
@@ -21,8 +21,8 @@ COMMENT=	Headers and Libraries for Windows cross-development
 
 CONFLICTS=	mingw-bin-msvcrt-*
 
-RUNTIMEVERSION=	3.16
-APIVERSION=	3.13
+RUNTIMEVERSION=	3.17
+APIVERSION=	3.14
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
