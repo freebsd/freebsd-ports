@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 
-MAINTAINER=	e-masson@kisoft-services.com
+MAINTAINER=	emss@free.fr
 COMMENT=	A user level printer frontend
 
 USE_GHOSTSCRIPT_RUN=	yes

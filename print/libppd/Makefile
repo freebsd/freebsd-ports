@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF/lpr/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	e-masson@kisoft-services.com
+MAINTAINER=	emss@free.fr
 COMMENT=	A library providing routines for ppd files
 
 USE_AUTOTOOLS=	libtool:22

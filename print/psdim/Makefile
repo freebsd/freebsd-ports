@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/psdim/download/
 
-MAINTAINER=	e-masson@kisoft-services.com
+MAINTAINER=	emss@free.fr
 COMMENT=	Utility that calculates the optimal placement of the pages for n-up printing
 
 USE_GHOSTSCRIPT=yes
