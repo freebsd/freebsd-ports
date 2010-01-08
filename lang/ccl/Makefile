@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/ccl
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-BUILD_SCRIPT=	${WRKSRC}/build.lisp
 CCL_DIRECTORY=	${PREFIX}/lib/ccl
 CCL_PLIST=	${WRKDIR}/pkg-plist
 # the following files will not be installed
@@ -49,10 +48,9 @@ do-build:
 		${ECHO_MSG} "===>  This CPU doesn't support the SSE2 instruction set: cannot build port."; \
 		exit 1; \
 	fi
-	@${ECHO_CMD} "(ccl:rebuild-ccl :full t)" > ${BUILD_SCRIPT}
-	@${ECHO_CMD} "(quit)" >> ${BUILD_SCRIPT}
-	@cd ${WRKSRC} && (${ECHO_CMD} "(quit)" \
-		| ./${FX86CL} --batch --quiet --load ${BUILD_SCRIPT})
+	@cd ${WRKSRC} && ${ECHO_CMD} | ./${FX86CL} --no-init --batch --quiet \
+		--eval "(ccl:rebuild-ccl :full t)" \
+		--eval "(quit)"
 
 do-install:
 	@${MKDIR} ${CCL_DIRECTORY}
