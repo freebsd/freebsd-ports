@@ -7,7 +7,7 @@
 
 PORTNAME=		ae_fonts1_ttf
 PORTVERSION=		1.1
-PORTREVISION=	2
+PORTREVISION=		2
 CATEGORIES=		arabic x11-fonts
 MASTER_SITES=		SF/arabeyes/Fonts/ae_fonts
 DISTNAME=		ae_fonts1_ttf_${PORTVERSION}
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ae_fonts1-${PORTVERSION}
+SUB_FILES=	pkg-message
 
 .if !defined(WITHOUT_AAHS)
 FONTS=	AAHS
@@ -71,7 +72,6 @@ do-install:
 .endfor
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|LOCALBASE|${LOCALBASE}|g" \
-		| ${SED} "s|PORTNAME|ae_fonts1|g"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
