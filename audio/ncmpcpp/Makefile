@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
+
+LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
+		fftw3.5:${PORTSDIR}/math/fftw3
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -80,10 +82,6 @@ CONFIGURE_ARGS+=	--with-taglib=no
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 CONFIGURE_ARGS+=	--enable-visualizer
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/i18n/SUPPORTED|${LOCALBASE}/share/locale|g' \
-		-e 's|iconv.h|sys/iconv.h|g' ${WRKSRC}/configure*
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${PREFIX}/bin/
