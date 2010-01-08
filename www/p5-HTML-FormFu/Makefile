@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.05002
+PORTVERSION=	0.06000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,7 +43,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Test-NoWarnings>=0.083:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
+		p5-YAML-LibYAML>=0.32:${PORTSDIR}/textproc/p5-YAML-LibYAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
@@ -61,6 +61,7 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Constraint::File::MIME.3 \
 	HTML::FormFu::Manual::Cookbook.3 \
 	HTML::FormFu::Filter::UpperCase.3 \
+	HTML::FormFu::Constraint::Repeatable::Any.3 \
 	HTML::FormFu::Element::Radio.3 \
 	HTML::FormFu::Element::SimpleTable.3 \
 	HTML::FormFu::Element::Block.3 \
