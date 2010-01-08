@@ -23,11 +23,11 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I." LN="${LN} -sf" \
 USE_LDCONFIG=	yes
 
 do-install:
-	$(INSTALL_PROGRAM) ${WRKSRC}/arccat $(PREFIX)/bin
-	$(INSTALL_PROGRAM) ${WRKSRC}/$(SOLIB).$(SOVERSION) $(PREFIX)/lib
-	$(LN) -sf $(PREFIX)/lib/$(SOLIB).$(SOVERSION) $(PREFIX)/lib/$(SOLIB)
+	${INSTALL_PROGRAM} ${WRKSRC}/arccat ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${SOLIB}.${SOVERSION} ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/${SOLIB}.${SOVERSION} ${PREFIX}/lib/${SOLIB}
 	@${MKDIR} ${PREFIX}/include/libarc
 	${INSTALL_DATA} ${WRKSRC}/libarc/* ${PREFIX}/include/libarc
-	(cd ${WRKSRC} && $(INSTALL_DATA) unlzh.h zip.h $(PREFIX)/include/libarc)
+	(cd ${WRKSRC} && ${INSTALL_DATA} unlzh.h zip.h ${PREFIX}/include/libarc)
 
 .include <bsd.port.mk>
