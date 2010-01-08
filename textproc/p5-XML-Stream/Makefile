@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Stream
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN3=		XML::Stream.3 XML::Stream::Namespace.3 XML::Stream::Node.3 \
 		XML::Stream::Parser.3 XML::Stream::Parser::DTD.3 \
-		XML::Stream::Tree.3
+		XML::Stream::Tree.3 \
+		XML::Stream::IO::Select::Win32.3
 
 .include <bsd.port.mk>
