@@ -1,0 +1,11 @@
+--- config/speechd.conf.in.orig	2010-01-06 00:02:39.200150051 +0000
++++ config/speechd.conf.in	2010-01-06 00:03:20.389964326 +0000
+@@ -142,7 +142,7 @@
+ # PulseAudio is a sound server for POSIX and WIN32 systems. 
+ #
+ 
+-# AudioOutputMethod "alsa"
++AudioOutputMethod "oss"
+ 
+ # What ALSA device to use when Advanced Linux Sound Architecture is
+ # chosen for the audio output.

@@ -1,0 +1,11 @@
+--- config/Makefile.in.orig	2008-07-31 08:57:42.000000000 +0000
++++ config/Makefile.in	2009-12-09 08:40:24.020226284 +0000
+@@ -252,7 +252,7 @@
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+ 	  echo " $(spdconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(spdconfdir)/$$f'"; \
+-	  $(spdconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(spdconfdir)/$$f"; \
++	  $(spdconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(spdconfdir)/$$f.sample"; \
+ 	done
+ 
+ uninstall-spdconfDATA:

@@ -27,6 +27,7 @@
     SUBDIR += py-papi
     SUBDIR += qt4-accessible
     SUBDIR += ruby-atk
+    SUBDIR += speech-dispatcher
     SUBDIR += yasr
 
 .include <bsd.port.subdir.mk>

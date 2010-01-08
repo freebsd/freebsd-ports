@@ -1,0 +1,8 @@
+Speech Dispatcher is a device independent layer for speech synthesis,
+developed with the goal of making the usage of speech synthesis easier
+for application programmers. It takes care of most of the tasks
+necessary to solve in speech enabled applications. What is a very high
+level GUI library to graphics, Speech Dispatcher is to speech
+synthesis.
+
+WWW: http://www.freebsoft.org/speechd
