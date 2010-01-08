@@ -18,7 +18,7 @@ COMMENT=	Perl5 module interface to Sophos AntiVirus
 MAN3=		SAVI.3
 
 PERL_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
