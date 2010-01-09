@@ -12,7 +12,7 @@ CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An ANSI Common Lisp implementation
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 gc.1:${PORTSDIR}/devel/boehm-gc
