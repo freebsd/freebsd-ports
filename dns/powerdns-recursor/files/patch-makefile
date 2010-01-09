@@ -1,5 +1,5 @@
---- Makefile.orig	2008-03-30 22:41:25.000000000 +0200
-+++ Makefile	2008-04-02 00:13:01.000000000 +0200
+--- Makefile.orig	2010-01-03 15:26:42.000000000 +0100
++++ Makefile	2010-01-05 10:32:00.000000000 +0100
 @@ -2,7 +2,6 @@
  SBINDIR=/usr/sbin/
  BINDIR=/usr/bin/
@@ -8,19 +8,20 @@
  CXXFLAGS:= $(CXXFLAGS) -Wall -DBOOST_SP_DISABLE_THREADS $(OPTFLAGS) $(PROFILEFLAGS)
  CFLAGS:=$(CFLAGS) -Wall $(OPTFLAGS) $(PROFILEFLAGS)
  LINKCC=$(CXX)
-@@ -41,9 +40,9 @@
+@@ -41,10 +40,10 @@
  ifeq ($(STATIC),semi)
  	STATICFLAGS=-Wl,-Bstatic -lstdc++ $(LUALIBS) -lgcc -Wl,-Bdynamic -static-libgcc -lm -lc
  	LINKCC=$(CC)
 -	LDFLAGS += malloc.o -ldl -lm
 +	LDFLAGS += malloc.o -lm
- else ifeq ($(STATIC),full)
+ else
+ ifeq ($(STATIC),full)
 -	STATICFLAGS=-lstdc++ $(LUALIBS) -ldl -lm -static 
 +	STATICFLAGS=-lstdc++ $(LUALIBS) -lm -static 
  	LINKCC=$(CC)
  else
  	LDFLAGS += malloc.o $(LUALIBS)
-@@ -54,16 +53,14 @@
+@@ -72,16 +71,14 @@
  	 fi
  
  install: all
