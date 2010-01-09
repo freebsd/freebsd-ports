@@ -7,6 +7,7 @@
 
 PORTNAME=	udpxy
 PORTVERSION=	1.0.14
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${RELEASE_MASCOT}-${PORTVERSION:R}
 DISTNAME=	${PORTNAME}.${PORTVERSION:R}-${RELEASE_MASCOT}-${PORTVERSION:E}
@@ -20,12 +21,20 @@ USE_RC_SUBR=	udpxy
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 RELEASE_MASCOT=	Chipmunk
+CFLAGS+=	-DNDEBUG
+OPTIONS=	TRACING	"Enable tracing (verbose)"	off
 
 PLIST_FILES=	sbin/udpxy \
 		sbin/udpxrec
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/udpxy ${PREFIX}/sbin/
-	@${LN} -s ${PREFIX}/sbin/udpxy ${PREFIX}/sbin/udpxrec
+	@${LN} -s udpxy ${PREFIX}/sbin/udpxrec
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_TRACING
+CFLAGS+=	-DTRACE_MODULE
+.endif
+
+.include <bsd.port.post.mk>
