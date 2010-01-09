@@ -188,6 +188,7 @@
     SUBDIR += gladtex
     SUBDIR += glark
     SUBDIR += glimpse
+    SUBDIR += glpi-plugins-AdditionalReports
     SUBDIR += gmetadom
     SUBDIR += gnome-doc-utils
     SUBDIR += gnome-spell
