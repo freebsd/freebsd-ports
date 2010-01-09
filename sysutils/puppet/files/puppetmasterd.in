@@ -17,7 +17,7 @@
 name="puppetmasterd"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 command_interpreter="%%PREFIX%%/bin/ruby18"
 start_precmd="puppetmasterd_checkconfig"
 restart_precmd="puppetmasterd_checkconfig"

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	0.24.8
+PORTVERSION=	0.25.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	raj@csub.edu
 COMMENT=	A configuration management framework written in Ruby
@@ -37,7 +36,7 @@ SUB_LIST+=	PUPPET_RUNDIR="${PUPPET_RUNDIR}" \
 
 MANCOMPRESSED=	yes
 MAN8=	filebucket.8 pi.8 puppet.8 puppet.conf.8 puppetca.8 puppetd.8 \
-	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8
+	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8 puppetqd.8
 
 .include <bsd.port.pre.mk>
 
