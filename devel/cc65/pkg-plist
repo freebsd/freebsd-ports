@@ -8,8 +8,6 @@ bin/da65
 bin/grc
 bin/ld65
 bin/od65
-lib/cc65
-lib/cc65/asminc
 lib/cc65/asminc/_file.inc
 lib/cc65/asminc/_heap.inc
 lib/cc65/asminc/apple2.inc
