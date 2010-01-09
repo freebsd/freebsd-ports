@@ -40,7 +40,7 @@
 ;;
 ;; in your init file.
 ;;
-;; Each Lisp implementation has it's own files where this can be done:
+;; Each Lisp implementation has its own files where this can be done:
 ;;
 ;; CLISP:
 ;;   %%PREFIX%%/lib/clisp/config.lisp
@@ -68,9 +68,9 @@
 ;; We mess around with asdf:output-files in interesting ways to
 ;; enforce a filesystem layout that works without multiple Lisp
 ;; implementations overwriting their fasls. Basically, each lib has
-;; it's own directory in %%PREFIX%%/lib/common-lisp, initially
+;; its own directory in %%PREFIX%%/lib/common-lisp, initially
 ;; containing its sources. Each fasl port will create an
-;; implementation-specific subdirectory where all it's fasls go, for
+;; implementation-specific subdirectory where all its fasls go, for
 ;; example ./cmuclfasl, ./clispfasl etc.
 
 ;; Additionally, all fasl files have the pathname-type "fasl", not
@@ -123,7 +123,7 @@
 
 (in-package :freebsd-asdf)
 
-;;;; Pathes
+;;;; Paths
 
 (defvar *asdf-pathname*
   "%%PREFIX%%/lib/common-lisp/asdf/asdf"
@@ -150,7 +150,7 @@ should modify that in order to add other directories.")
 
 (defun lisp-specific-fasl-subdir ()
   "Return the subdirectory in which fasl files for this Lisp
-implementations should be stored, as a sting without any slashes.
+implementations should be stored, as a string without any slashes.
 
 If no subdirectory for the current implementation is known, signal an
 error of type UNSUPPORTED-LISP-IMPLEMENTATION.
