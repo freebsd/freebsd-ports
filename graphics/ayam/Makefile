@@ -7,7 +7,7 @@
 
 PORTNAME=	ayam
 PORTVERSION=	1.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Ayam/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D modeling environment for the RenderMan interface
 
-LIB_DEPENDS=	aqsis.1:${PORTSDIR}/graphics/aqsis \
+LIB_DEPENDS=	aqsis_util.1:${PORTSDIR}/graphics/aqsis \
 		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
