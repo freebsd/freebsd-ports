@@ -1,0 +1,20 @@
+share/tracker_agent/inc/communications_serveur.pm
+share/tracker_agent/inc/device_serials.pm
+share/tracker_agent/inc/devices/cisco.pm
+share/tracker_agent/inc/devices/hp.pm
+share/tracker_agent/inc/devices/samsung.pm
+share/tracker_agent/inc/devices/wyse.pm
+share/tracker_agent/inc/errors.pm
+share/tracker_agent/inc/functions.pm
+share/tracker_agent/inc/tracker_discovery.pm
+share/tracker_agent/inc/tracker_pid.pm
+share/tracker_agent/inc/tracker_query.pm
+share/tracker_agent/inc/tracker_snmp.pm
+share/tracker_agent/inc/tracker_xml.pm
+share/tracker_agent/tools/verif_descr.pl
+share/tracker_agent/tracker_agent.pl
+@dirrm share/tracker_agent/tools
+@dirrm share/tracker_agent/log
+@dirrm share/tracker_agent/inc/devices
+@dirrm share/tracker_agent/inc
+@dirrm share/tracker_agent

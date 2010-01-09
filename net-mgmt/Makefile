@@ -72,6 +72,7 @@
     SUBDIR += flowviewer
     SUBDIR += fprobe
     SUBDIR += fruity
+    SUBDIR += glpi-plugins-tracker-agent
     SUBDIR += glpi-plugins-tracker-server
     SUBDIR += gps
     SUBDIR += grepcidr

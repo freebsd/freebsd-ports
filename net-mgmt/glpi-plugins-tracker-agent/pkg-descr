@@ -1,0 +1,5 @@
+glpi-plugin-tracker-agent in a program writen in perl. It receive
+informations from glpi server and query networking devices to
+get informations like serial number, name, 
+cartridge and page counter of printers and on switchs, devices connected 
+on each port. After it send them to glpi server.
