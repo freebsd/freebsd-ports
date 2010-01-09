@@ -19,6 +19,8 @@ RUN_DEPENDS=	seq2:${PORTSDIR}/misc/seq2
 
 CONFLICTS=	rkward-0.4.*
 
+BROKEN=		does not package
+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build phonon
 
