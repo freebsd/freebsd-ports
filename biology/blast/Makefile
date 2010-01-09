@@ -27,7 +27,6 @@ NO_BUILD=	yes
 DOWNLOAD_URL=	http://blast.wustl.edu/licensing
 
 NO_WRKSUBDIR=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	COPYRIGHT FAQ-Indexing.html HISTORY LICENSE Memory.html \
 		README.html parameters.html tabular.html
@@ -36,6 +35,7 @@ BINS=		blasta gb2fasta gt2fasta memfile nrdb pam patdb \
 SCRIPTS=	wu-blastall wu-formatdb
 BLASTA_LINKS=	blastn blastp blastx tblastn tblastx
 XDFORMAT_LINKS=	setdb pressdb
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -48,9 +48,6 @@ DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-i686
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		You must manually fetch ${PORTNAME}${PORTVERSION:S/.0//} for the FreeBSD platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
-
-post-patch:
-	@${SED} -e 's,%%DATADIR%%,${DATADIR},g' < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
 .for bin in ${BINS}
