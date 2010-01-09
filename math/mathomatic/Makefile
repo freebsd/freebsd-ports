@@ -7,6 +7,7 @@
 
 PORTNAME=	mathomatic
 PORTVERSION=	15.0.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
@@ -25,7 +26,10 @@ PORTDOCS=	*
 MAN1=		mathomatic.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS/ s|-O||' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e '/^CFLAGS/ s|-O||' -e '/^CC/d' ${WRKSRC}/makefile
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${PREFIX}/bin
