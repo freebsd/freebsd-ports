@@ -7,6 +7,7 @@
 
 PORTNAME=	ccl
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.clozure.com/pub/release/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
@@ -39,6 +40,7 @@ SUB_LIST+=	FX86CL="${FX86CL}" CCL_DIRECTORY="${CCL_DIRECTORY}"
 SUB_FILES=	ccl.sh
 
 post-patch:
+	@${SED}	-i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/tools/asdf.lisp
 	@${FIND} ${WRKSRC} -name .svn -or -name .cvsignore | ${XARGS} ${RM} -r -f
 
 do-build:
