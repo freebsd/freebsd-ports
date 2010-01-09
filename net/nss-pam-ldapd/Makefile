@@ -6,12 +6,11 @@
 #
 
 PORTNAME=		nss_ldapd
-PORTVERSION=		0.6.11
-PORTREVISION=		1
+PORTVERSION=		0.7.1
 CATEGORIES=		net
-MASTER_SITES=		http://arthurdejong.org/nss-ldapd/ \
+MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			http://static.ipfw.ru/files/
-DISTNAME=		nss-ldapd-${PORTVERSION}
+DISTNAME=		nss-pam-ldapd-${PORTVERSION}
 
 MAINTAINER=		melifaro@ipfw.ru
 COMMENT=		Advanced fork of nss_ldap
@@ -26,7 +25,8 @@ NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
 
 OPTIONS=		NSS_COMPAT	"Enable nss_ldap compatibility" on \
-			SASL		"Enable SASL" off
+			SASL		"Enable SASL" off \
+			PAM		"Build pam_ldap" on
 
 .include <bsd.port.pre.mk>
 
@@ -46,9 +46,8 @@ CONFIGURE_ARGS+=	--with-nslcd-pidfile=${NSLCD_PIDFILE} \
 .endif
 
 .if defined(WITH_NSS_COMPAT)
-CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf
+CONFIGURE_ARGS+=	--enable-nss_compat --disable-configfile-checking --with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf
 PLIST_SUB+=		CONFIG="nss_ldap"
-EXTRA_PATCHES+=		${PATCHDIR}/nss_compat.diff
 .else
 CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldapd.conf
 PLIST_SUB+=		CONFIG="nss_ldapd"
@@ -63,8 +62,12 @@ CONFIGURE_ARGS+=	--disable-sasl
 
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--enable-pam
+MAN8+=			pam_ldap.8
+CONFLICTS+=		pam_ldap-1.*
+PLIST_SUB+=		PAM=""
 .else
 CONFIGURE_ARGS+=	--disable-pam
+PLIST_SUB+=		PAM="@comment "
 .endif
 
 .if defined(WITHOUT_NSS)
@@ -82,16 +85,14 @@ PLIST_SUB+=		NSLCD="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-nslcd
 PLIST_SUB+=		NSLCD=""
-MAN8=			nslcd.8
+MAN5+=			nslcd.conf.5
+MAN8+=			nslcd.8
 .endif
-
-MAN5=			nss-ldapd.conf.5
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
 	@${REINPLACE_CMD} -e 's/shadow.$$(OBJEXT)/shadow.$$(OBJEXT) bsdnss.$$(OBJEXT)/;s/shadow\.c/shadow.c bsdnss.c/;s/exports\.linux/exports.freebsd/' ${WRKSRC}/nss/Makefile.in
 	@${REINPLACE_CMD} -e 's/^NSS_VERS = .*/NSS_VERS = 1/;s/libnss_ldap\.so/nss_ldap.so/' ${WRKSRC}/nss/Makefile.in
-	@${MV} ${WRKSRC}/nss/exports.linux ${WRKSRC}/nss/exports.freebsd
 	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(NSS_LDAP_PATH_CONF)/$$(DESTDIR)$$(NSS_LDAP_PATH_CONF).sample/' ${WRKSRC}/Makefile.in
 
 post-install:
