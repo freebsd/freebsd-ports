@@ -1,24 +1,19 @@
---- ./nss/prototypes.h.orig	2008-05-02 21:00:10.000000000 +0000
-+++ ./nss/prototypes.h	2009-08-02 22:32:27.000000000 +0000
-@@ -24,13 +24,40 @@
+--- nss/prototypes.h.orig	2009-09-04 15:55:35.000000000 +0400
++++ nss/prototypes.h	2009-12-20 15:37:57.000000000 +0300
+@@ -24,7 +24,9 @@
  #define _NSS_EXPORTS_H 1
  
  #include <nss.h>
--#include <aliases.h>
-+#ifndef __FreeBSD__
++#ifdef HAVE_ALIASES_H
+ #include <aliases.h>
++#endif
+ #ifdef HAVE_NETINET_ETHER_H
  #include <netinet/ether.h>
-+#else
-+#include <net/ethernet.h>
-+#include <sys/socket.h>
-+#endif
- #include <sys/types.h>
- #include <grp.h>
- #include <netdb.h>
- #include <pwd.h>
-+#ifdef HAVE_SHADOW_H
- #include <shadow.h>
-+#endif
-+
+ #endif /* HAVE_NETINET_ETHER_H */
+@@ -84,6 +86,27 @@
+   void *nip; /* changed from `service_user *nip' */
+ };
+ 
 +#ifdef __FreeBSD__
 +/* 
 + * Import from aliases.h
@@ -39,10 +34,11 @@
 +};
 +
 +#endif
- 
- /* We define struct etherent here because it does not seem to
-    be defined in any publicly available header file exposed
-@@ -160,10 +187,12 @@
++
+ /*
+    These are prototypes for functions exported from the ldap NSS module.
+    For more complete definitions of these functions check the GLIBC
+@@ -166,10 +189,12 @@
  enum nss_status _nss_ldap_getservent_r(struct servent *result,char *buffer,size_t buflen,int *errnop);
  enum nss_status _nss_ldap_endservent(void);
  
