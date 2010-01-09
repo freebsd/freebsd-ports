@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.6b5
+DISTVERSION=	3.6rc1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -17,7 +17,6 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 
 USE_AUTOTOOLS=	autoconf:213
 LATEST_LINK=	firefox3-devel
@@ -79,9 +78,10 @@ MOZ_OPTIONS+=	--disable-gnomeui
 .endif
 
 .if defined(WITHOUT_DBUS)
-MOZ_OPTIONS+=	--disable-dbus
+MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .else
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		notify.1:${PORTSDIR}/devel/libnotify
 .endif
 
 post-extract::
