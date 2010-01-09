@@ -1,4 +1,4 @@
-Passenger is an Apache module allowing for simple deployment of Ruby on Rails 
-and Rack applications.
+Passenger are Apache and nginx modules allowing for simple deployment 
+of Ruby on Rails and Rack applications.
 
 WWW: http://www.modrails.com/
