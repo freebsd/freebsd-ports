@@ -42,6 +42,10 @@ COMMENT=	Pattern Extraction and Recognition Language + Japanese patches
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -Duseshrplib \
