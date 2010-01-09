@@ -7,6 +7,7 @@
 
 PORTNAME=	fmodapi
 PORTVERSION=	4.24.16
+PORTREVISION=	1
 CATEGORIES=	audio devel linux
 MASTER_SITES=	http://www.fmod.org/index.php/release/version/
 PKGNAMEPREFIX=	linux-
