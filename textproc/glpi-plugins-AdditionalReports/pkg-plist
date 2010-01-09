@@ -1,0 +1,126 @@
+www/glpi/plugins/reports/docs/CHANGELOG.txt
+www/glpi/plugins/reports/docs/LISEZMOI.txt
+www/glpi/plugins/reports/docs/README.txt
+www/glpi/plugins/reports/docs/ROADMAP.txt
+www/glpi/plugins/reports/front/plugin_reports.config.form.php
+www/glpi/plugins/reports/front/plugin_reports.profile.php
+www/glpi/plugins/reports/front/plugin_reports.reports.php
+www/glpi/plugins/reports/hook.php
+www/glpi/plugins/reports/inc/plugin_reports.autocriteria.class.php
+www/glpi/plugins/reports/inc/plugin_reports.autoreport.class.php
+www/glpi/plugins/reports/inc/plugin_reports.config.function.php
+www/glpi/plugins/reports/inc/plugin_reports.constant.php
+www/glpi/plugins/reports/inc/plugin_reports.defaultvalue.class.php
+www/glpi/plugins/reports/inc/plugin_reports.defaultvalue.function.php
+www/glpi/plugins/reports/inc/plugin_reports.function.php
+www/glpi/plugins/reports/inc/plugin_reports.profile.class.php
+www/glpi/plugins/reports/locales/de_DE.php
+www/glpi/plugins/reports/locales/en_GB.php
+www/glpi/plugins/reports/locales/fr_FR.php
+www/glpi/plugins/reports/locales/it_IT.php
+www/glpi/plugins/reports/locales/nl_NL.php
+www/glpi/plugins/reports/report/doublons/doublons.config.php
+www/glpi/plugins/reports/report/doublons/doublons.de_DE.php
+www/glpi/plugins/reports/report/doublons/doublons.en_GB.php
+www/glpi/plugins/reports/report/doublons/doublons.fr_FR.php
+www/glpi/plugins/reports/report/doublons/doublons.it_IT.php
+www/glpi/plugins/reports/report/doublons/doublons.nl_NL.php
+www/glpi/plugins/reports/report/doublons/doublons.php
+www/glpi/plugins/reports/report/equipmentbygroups/equipmentbygroups.de_DE.php
+www/glpi/plugins/reports/report/equipmentbygroups/equipmentbygroups.en_GB.php
+www/glpi/plugins/reports/report/equipmentbygroups/equipmentbygroups.fr_FR.php
+www/glpi/plugins/reports/report/equipmentbygroups/equipmentbygroups.it_IT.php
+www/glpi/plugins/reports/report/equipmentbygroups/equipmentbygroups.nl_NL.php
+www/glpi/plugins/reports/report/equipmentbygroups/equipmentbygroups.php
+www/glpi/plugins/reports/report/equipmentbylocation/equipmentbylocation.de_DE.php
+www/glpi/plugins/reports/report/equipmentbylocation/equipmentbylocation.en_GB.php
+www/glpi/plugins/reports/report/equipmentbylocation/equipmentbylocation.fr_FR.php
+www/glpi/plugins/reports/report/equipmentbylocation/equipmentbylocation.it_IT.php
+www/glpi/plugins/reports/report/equipmentbylocation/equipmentbylocation.nl_NL.php
+www/glpi/plugins/reports/report/equipmentbylocation/equipmentbylocation.php
+www/glpi/plugins/reports/report/globalhisto/globalhisto.en_GB.php
+www/glpi/plugins/reports/report/globalhisto/globalhisto.fr_FR.php
+www/glpi/plugins/reports/report/globalhisto/globalhisto.nl_NL.php
+www/glpi/plugins/reports/report/globalhisto/globalhisto.php
+www/glpi/plugins/reports/report/histohard/histohard.de_DE.php
+www/glpi/plugins/reports/report/histohard/histohard.en_GB.php
+www/glpi/plugins/reports/report/histohard/histohard.fr_FR.php
+www/glpi/plugins/reports/report/histohard/histohard.it_IT.php
+www/glpi/plugins/reports/report/histohard/histohard.nl_NL.php
+www/glpi/plugins/reports/report/histohard/histohard.php
+www/glpi/plugins/reports/report/histoinst/histoinst.de_DE.php
+www/glpi/plugins/reports/report/histoinst/histoinst.en_GB.php
+www/glpi/plugins/reports/report/histoinst/histoinst.fr_FR.php
+www/glpi/plugins/reports/report/histoinst/histoinst.it_IT.php
+www/glpi/plugins/reports/report/histoinst/histoinst.nl_NL.php
+www/glpi/plugins/reports/report/histoinst/histoinst.php
+www/glpi/plugins/reports/report/infocom/infocom.de_DE.php
+www/glpi/plugins/reports/report/infocom/infocom.en_GB.php
+www/glpi/plugins/reports/report/infocom/infocom.fr_FR.php
+www/glpi/plugins/reports/report/infocom/infocom.it_IT.php
+www/glpi/plugins/reports/report/infocom/infocom.nl_NL.php
+www/glpi/plugins/reports/report/infocom/infocom.php
+www/glpi/plugins/reports/report/licenses/licenses.de_DE.php
+www/glpi/plugins/reports/report/licenses/licenses.en_GB.php
+www/glpi/plugins/reports/report/licenses/licenses.fr_FR.php
+www/glpi/plugins/reports/report/licenses/licenses.it_IT.php
+www/glpi/plugins/reports/report/licenses/licenses.nl_NL.php
+www/glpi/plugins/reports/report/licenses/licenses.php
+www/glpi/plugins/reports/report/licensesexpires/licensesexpires.de_DE.php
+www/glpi/plugins/reports/report/licensesexpires/licensesexpires.en_GB.php
+www/glpi/plugins/reports/report/licensesexpires/licensesexpires.fr_FR.php
+www/glpi/plugins/reports/report/licensesexpires/licensesexpires.it_IT.php
+www/glpi/plugins/reports/report/licensesexpires/licensesexpires.nl_NL.php
+www/glpi/plugins/reports/report/licensesexpires/licensesexpires.php
+www/glpi/plugins/reports/report/listgroups/listgroups.de_DE.php
+www/glpi/plugins/reports/report/listgroups/listgroups.en_GB.php
+www/glpi/plugins/reports/report/listgroups/listgroups.fr_FR.php
+www/glpi/plugins/reports/report/listgroups/listgroups.it_IT.php
+www/glpi/plugins/reports/report/listgroups/listgroups.nl_NL.php
+www/glpi/plugins/reports/report/listgroups/listgroups.php
+www/glpi/plugins/reports/report/location/location.de_DE.php
+www/glpi/plugins/reports/report/location/location.en_GB.php
+www/glpi/plugins/reports/report/location/location.fr_FR.php
+www/glpi/plugins/reports/report/location/location.it_IT.php
+www/glpi/plugins/reports/report/location/location.nl_NL.php
+www/glpi/plugins/reports/report/location/location.php
+www/glpi/plugins/reports/report/pcsbyentity/pcsbyentity.de_DE.php
+www/glpi/plugins/reports/report/pcsbyentity/pcsbyentity.en_GB.php
+www/glpi/plugins/reports/report/pcsbyentity/pcsbyentity.fr_FR.php
+www/glpi/plugins/reports/report/pcsbyentity/pcsbyentity.it_IT.php
+www/glpi/plugins/reports/report/pcsbyentity/pcsbyentity.nl_NL.php
+www/glpi/plugins/reports/report/pcsbyentity/pcsbyentity.php
+www/glpi/plugins/reports/report/rules/rules.de_DE.php
+www/glpi/plugins/reports/report/rules/rules.en_GB.php
+www/glpi/plugins/reports/report/rules/rules.fr_FR.php
+www/glpi/plugins/reports/report/rules/rules.it_IT.php
+www/glpi/plugins/reports/report/rules/rules.nl_NL.php
+www/glpi/plugins/reports/report/rules/rules.php
+www/glpi/plugins/reports/report/statnightticketsbypriority/statnightticketsbypriority.en_GB.php
+www/glpi/plugins/reports/report/statnightticketsbypriority/statnightticketsbypriority.fr_FR.php
+www/glpi/plugins/reports/report/statnightticketsbypriority/statnightticketsbypriority.php
+www/glpi/plugins/reports/report/statticketsbypriority/statticketsbypriority.en_GB.php
+www/glpi/plugins/reports/report/statticketsbypriority/statticketsbypriority.fr_FR.php
+www/glpi/plugins/reports/report/statticketsbypriority/statticketsbypriority.php
+www/glpi/plugins/reports/setup.php
+@dirrm www/glpi/plugins/reports/report/statticketsbypriority
+@dirrm www/glpi/plugins/reports/report/statnightticketsbypriority
+@dirrm www/glpi/plugins/reports/report/rules
+@dirrm www/glpi/plugins/reports/report/pcsbyentity
+@dirrm www/glpi/plugins/reports/report/location
+@dirrm www/glpi/plugins/reports/report/listgroups
+@dirrm www/glpi/plugins/reports/report/licensesexpires
+@dirrm www/glpi/plugins/reports/report/licenses
+@dirrm www/glpi/plugins/reports/report/infocom
+@dirrm www/glpi/plugins/reports/report/histoinst
+@dirrm www/glpi/plugins/reports/report/histohard
+@dirrm www/glpi/plugins/reports/report/globalhisto
+@dirrm www/glpi/plugins/reports/report/equipmentbylocation
+@dirrm www/glpi/plugins/reports/report/equipmentbygroups
+@dirrm www/glpi/plugins/reports/report/doublons
+@dirrm www/glpi/plugins/reports/report
+@dirrm www/glpi/plugins/reports/locales
+@dirrm www/glpi/plugins/reports/inc
+@dirrm www/glpi/plugins/reports/front
+@dirrm www/glpi/plugins/reports/docs
+@dirrm www/glpi/plugins/reports
