@@ -1,0 +1,8 @@
+*****************************************************************
+Add in cron table to run server script : 
+
+*/5	*	*	*	*	www	%%PREFIX%%/%%GLPIPLUGINDIR%%/scripts/tracker_fullsync.sh
+
+This script will parse xml files get from agent and update glpi fields
+
+*****************************************************************

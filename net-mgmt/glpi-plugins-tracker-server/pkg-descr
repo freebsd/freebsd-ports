@@ -1,0 +1,4 @@
+glpi-tracker-server in a plugin for glpi witch make inventory of 
+devices by SNMP and get informations like serial number, name, 
+cartridge and page counter of printers and on switchs, devices connected 
+on each port.
