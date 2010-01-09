@@ -16,7 +16,7 @@ MASTER_SITES=	SF/${PORTNAME}/Source \
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/devel/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
