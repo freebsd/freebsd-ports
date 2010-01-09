@@ -7,11 +7,12 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	ntarmos@cs.uoi.gr
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A highly configurable, next generation framework window manager
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
