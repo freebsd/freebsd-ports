@@ -19,14 +19,11 @@ COMMENT=	A Chinese <-> English dictd words database
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
 
 NO_BUILD=	yes
-
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
 
 DICTFILES=	cedict pydict moecomp netterm
 
 do-install:
-	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
 	@${MKDIR} ${PREFIX}/lib/dict
 	for f in ${DICTFILES}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$${f}.dict.dz ${PREFIX}/lib/dict; \
