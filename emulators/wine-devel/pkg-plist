@@ -878,6 +878,7 @@ lib/wine/fakedlls/itss.dll
 lib/wine/fakedlls/jscript.dll
 lib/wine/fakedlls/kernel32.dll
 lib/wine/fakedlls/keyboard.drv16
+lib/wine/fakedlls/krnl386.exe16
 lib/wine/fakedlls/loadperf.dll
 lib/wine/fakedlls/localspl.dll
 lib/wine/fakedlls/localui.dll
@@ -885,6 +886,7 @@ lib/wine/fakedlls/lodctr.exe
 lib/wine/fakedlls/lz32.dll
 lib/wine/fakedlls/lzexpand.dll16
 lib/wine/fakedlls/mapi32.dll
+lib/wine/fakedlls/mapistub.dll
 lib/wine/fakedlls/mciavi32.dll
 lib/wine/fakedlls/mcicda.dll
 lib/wine/fakedlls/mciqtz32.dll
@@ -1049,6 +1051,7 @@ lib/wine/fakedlls/unlodctr.exe
 lib/wine/fakedlls/updspapi.dll
 lib/wine/fakedlls/url.dll
 lib/wine/fakedlls/urlmon.dll
+lib/wine/fakedlls/user.exe16
 lib/wine/fakedlls/user32.dll
 lib/wine/fakedlls/userenv.dll
 lib/wine/fakedlls/usp10.dll
@@ -1081,7 +1084,6 @@ lib/wine/fakedlls/winecoreaudio.drv
 lib/wine/fakedlls/wined3d.dll
 lib/wine/fakedlls/winedbg.exe
 lib/wine/fakedlls/winedevice.exe
-lib/wine/fakedlls/winedos.dll
 lib/wine/fakedlls/wineesd.drv
 lib/wine/fakedlls/winefile.exe
 lib/wine/fakedlls/winejack.drv
@@ -1169,7 +1171,7 @@ lib/wine/itss.dll.so
 lib/wine/jscript.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16.so
-lib/wine/krnl386.exe16
+lib/wine/krnl386.exe16.so
 lib/wine/libaclui.def
 lib/wine/libactiveds.def
 lib/wine/libadsiid.a
@@ -1228,6 +1230,7 @@ lib/wine/libimagehlp.def
 lib/wine/libimm32.def
 lib/wine/libinetcomm.def
 lib/wine/libiphlpapi.def
+lib/wine/libkernel.def
 lib/wine/libkernel32.def
 lib/wine/libloadperf.def
 lib/wine/liblz32.def
@@ -1326,6 +1329,7 @@ lib/wine/lodctr.exe.so
 lib/wine/lz32.dll.so
 lib/wine/lzexpand.dll16.so
 lib/wine/mapi32.dll.so
+lib/wine/mapistub.dll.so
 lib/wine/mciavi32.dll.so
 lib/wine/mcicda.dll.so
 lib/wine/mciqtz32.dll.so
@@ -1490,7 +1494,7 @@ lib/wine/unlodctr.exe.so
 lib/wine/updspapi.dll.so
 lib/wine/url.dll.so
 lib/wine/urlmon.dll.so
-lib/wine/user.exe16
+lib/wine/user.exe16.so
 lib/wine/user32.dll.so
 lib/wine/userenv.dll.so
 lib/wine/usp10.dll.so
@@ -1523,7 +1527,6 @@ lib/wine/winecoreaudio.drv.so
 lib/wine/wined3d.dll.so
 lib/wine/winedbg.exe.so
 lib/wine/winedevice.exe.so
-lib/wine/winedos.dll.so
 lib/wine/wineesd.drv.so
 lib/wine/winefile.exe.so
 lib/wine/winejack.drv.so
@@ -1561,7 +1564,6 @@ lib/wine/wmiutils.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wordpad.exe.so
 lib/wine/wow32.dll.so
-lib/wine/wprocs.dll16
 lib/wine/write.exe.so
 lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
