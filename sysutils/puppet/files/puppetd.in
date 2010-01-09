@@ -14,7 +14,7 @@
 name="puppetd"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 command_interpreter="%%PREFIX%%/bin/ruby18"
 
 load_rc_config "$name"
