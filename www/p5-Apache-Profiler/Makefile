@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Profiler
-PORTVERSION=	0.01
+PORTVERSION=	0.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Profiles time seconds needed for every request
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Apache::Profiler.3
+MAN3=		Apache::Profiler.3 Apache2::Profiler.3
 
 .include <bsd.port.mk>
