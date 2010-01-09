@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Bio-SCF
-PORTVERSION=	1.01
+PORTVERSION=	1.03
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read and Update SCF Chromatographic Sequence Files
 
 BUILD_DEPENDS=	${LOCALBASE}/include/io_lib/scf.h:${PORTSDIR}/biology/iolib
