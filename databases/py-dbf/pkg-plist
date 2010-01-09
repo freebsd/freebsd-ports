@@ -1,0 +1,19 @@
+%%PYTHON_SITELIBDIR%%/dbf/__init__.py
+%%PYTHON_SITELIBDIR%%/dbf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dbf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dbf/_io.py
+%%PYTHON_SITELIBDIR%%/dbf/_io.pyc
+%%PYTHON_SITELIBDIR%%/dbf/_io.pyo
+%%PYTHON_SITELIBDIR%%/dbf/dates.py
+%%PYTHON_SITELIBDIR%%/dbf/dates.pyc
+%%PYTHON_SITELIBDIR%%/dbf/dates.pyo
+%%PYTHON_SITELIBDIR%%/dbf/exceptions.py
+%%PYTHON_SITELIBDIR%%/dbf/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/dbf/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/dbf/tables.py
+%%PYTHON_SITELIBDIR%%/dbf/tables.pyc
+%%PYTHON_SITELIBDIR%%/dbf/tables.pyo
+%%PYTHON_SITELIBDIR%%/test_dbf.py
+%%PYTHON_SITELIBDIR%%/test_dbf.pyc
+%%PYTHON_SITELIBDIR%%/test_dbf.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/dbf
