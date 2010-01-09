@@ -9,6 +9,7 @@ PORTNAME=	dbf
 PORTVERSION=	0.87.14
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Pure python package for reading/writing dbf files
