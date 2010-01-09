@@ -189,6 +189,7 @@
     SUBDIR += glark
     SUBDIR += glimpse
     SUBDIR += glpi-plugins-AdditionalReports
+    SUBDIR += glpi-plugins-DataInjection
     SUBDIR += gmetadom
     SUBDIR += gnome-doc-utils
     SUBDIR += gnome-spell
