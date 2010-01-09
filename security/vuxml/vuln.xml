@@ -35,6 +35,39 @@ Note:  Please add new entries to the beginning of this file.
 -->
 
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dd8f2394-fd08-11de-b425-00215c6a37bb">
+    <topic>powerdns-recursor -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>3.1.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Security Advisory reports:</p>
+	<blockquote cite="http://doc.powerdns.com/powerdns-advisory-2010-01.html">
+	  <p>PowerDNS Recursor up to and including 3.1.7.1 can be
+	    brought down and probably exploited.</p>
+	</blockquote>
+	<blockquote cite="http://doc.powerdns.com/powerdns-advisory-2010-02.html">
+	  <p>PowerDNS Recursor up to and including 3.1.7.1 can be
+	    spoofed into accepting bogus data</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>37650</bid>
+      <bid>37653</bid>
+      <cvename>CVE-2009-4010</cvename>
+      <cvename>CVE-2009-4009</cvename>
+    </references>
+    <dates>
+      <discovery>2010-01-06</discovery>
+      <entry>2010-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56ba8728-f987-11de-b28d-00215c6a37bb">
     <topic>PEAR -- Net_Ping and Net_Traceroute remote arbitrary command injection</topic>
     <affects>
