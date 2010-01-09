@@ -1,0 +1,11 @@
+glpi-plugins-DataInjection is a glpi plugin.
+It allows data import into GLPI using CSV files.
+
+It allows to create models of injection for a future re-use.
+It's been created in order to :
+	* Import datas coming from others asset management softwares
+	* Inject electronic delivery forms
+Datas to be imported using the plugains are :
+	* Inventory datas (except softwares and licenses)
+	* Management datas (contract, contact, supplier)
+	* Configuration datas (user, group, entity)

@@ -1,0 +1,91 @@
+www/glpi/plugins/datainjection/ajax/profiles.php
+www/glpi/plugins/datainjection/config/plugin_datainjection.config.php
+www/glpi/plugins/datainjection/css/datainjection.css
+www/glpi/plugins/datainjection/docs/CHANGELOG.TXT
+www/glpi/plugins/datainjection/docs/LISEZMOI.TXT
+www/glpi/plugins/datainjection/docs/README.txt
+www/glpi/plugins/datainjection/docs/ROADMAP.TXT
+www/glpi/plugins/datainjection/fonts/Times-Bold.afm
+www/glpi/plugins/datainjection/fonts/Times-BoldItalic.afm
+www/glpi/plugins/datainjection/fonts/Times-Italic.afm
+www/glpi/plugins/datainjection/fonts/Times-Roman.afm
+www/glpi/plugins/datainjection/fonts/php_Times-Bold.afm
+www/glpi/plugins/datainjection/fonts/php_Times-BoldItalic.afm
+www/glpi/plugins/datainjection/fonts/php_Times-Italic.afm
+www/glpi/plugins/datainjection/fonts/php_Times-Roman.afm
+www/glpi/plugins/datainjection/front/plugin_datainjection.config.form.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.download.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.export.pdf.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.file.upload.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.install.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.popup.file.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.popup.log.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.profile.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.uninstall.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.upload.php
+www/glpi/plugins/datainjection/front/plugin_datainjection.wizard.form.php
+www/glpi/plugins/datainjection/hook.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.ajax.backend.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.ajax.selectfield.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.ajax.selectmodel.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.ajax.tablefieldinfo.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.ajax.tablefieldmapping.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.backend.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.backend.csv.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.backend.csv.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.backend.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.checks.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.common.constant.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.config.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.device.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.dropdown.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.engine.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.engine.connections.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.engine.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.infos.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.infos.constant.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.infos.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.log.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.mapping.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.mapping.constant.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.mapping.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.model.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.model.csv.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.model.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.profiles.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.reformat.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.results.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.results.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.type.class.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.type.function.php
+www/glpi/plugins/datainjection/inc/plugin_datainjection.wizard.function.php
+www/glpi/plugins/datainjection/index.php
+www/glpi/plugins/datainjection/javascript/datainjection.js
+www/glpi/plugins/datainjection/locales/en_GB.php
+www/glpi/plugins/datainjection/locales/es_ES.php
+www/glpi/plugins/datainjection/locales/fr_FR.php
+www/glpi/plugins/datainjection/locales/ru_RU.php
+www/glpi/plugins/datainjection/pics/danger.jpg
+www/glpi/plugins/datainjection/pics/danger.png
+www/glpi/plugins/datainjection/pics/fd_logo.JPG
+www/glpi/plugins/datainjection/pics/fleche.png
+www/glpi/plugins/datainjection/pics/logo.png
+www/glpi/plugins/datainjection/pics/minus.png
+www/glpi/plugins/datainjection/pics/notok.jpg
+www/glpi/plugins/datainjection/pics/notok.png
+www/glpi/plugins/datainjection/pics/ok.jpg
+www/glpi/plugins/datainjection/pics/ok.png
+www/glpi/plugins/datainjection/pics/plus.png
+www/glpi/plugins/datainjection/plugin_datainjection.includes.php
+www/glpi/plugins/datainjection/setup.php
+@dirrm www/glpi/plugins/datainjection/pics
+@dirrm www/glpi/plugins/datainjection/locales
+@dirrm www/glpi/plugins/datainjection/javascript
+@dirrm www/glpi/plugins/datainjection/inc
+@dirrm www/glpi/plugins/datainjection/front
+@dirrm www/glpi/plugins/datainjection/fonts
+@dirrm www/glpi/plugins/datainjection/docs
+@dirrm www/glpi/plugins/datainjection/css
+@dirrm www/glpi/plugins/datainjection/config
+@dirrm www/glpi/plugins/datainjection/ajax
+@dirrm www/glpi/plugins/datainjection
