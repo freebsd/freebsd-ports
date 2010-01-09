@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Aliases
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	MooseX
@@ -20,8 +20,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	MooseX::Aliases.3 \
+MAN3=	MooseX::Aliases::Meta::Trait::Constructor.3 \
 	MooseX::Aliases::Meta::Trait::Attribute.3 \
-	MooseX::Aliases::Meta::Trait::Method.3
+  	MooseX::Aliases.3 \
+  	MooseX::Aliases::Meta::Trait::Method.3 \
+  	MooseX::Aliases::Meta::Trait::Constructor.3 \
+  	MooseX::Aliases::Meta::Trait::Attribute.3 \
+  	MooseX::Aliases.3 \
+  	MooseX::Aliases::Meta::Trait::Method.3
 
 .include <bsd.port.mk>
