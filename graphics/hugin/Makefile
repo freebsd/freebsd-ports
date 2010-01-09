@@ -19,7 +19,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		exiv2:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \
-		boost_date_time:${PORTSDIR}/devel/boost-libs \
+		boost_python:${PORTSDIR}/devel/boost-python-libs \
 		GLEW:${PORTSDIR}/graphics/glew \
 		glut:${PORTSDIR}/graphics/libglut \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
