@@ -1,0 +1,8 @@
+*****************************************************************
+Add in cron table to run agent script : 
+
+*/10	*	*	*	*	root	/usr/local/bin/perl %%PREFIX%%/%%TRACKERAGENTDIR%%/tracker_agent.pl
+
+This script get devices to query from glpi server, query devices and send them to server
+
+*****************************************************************
