@@ -3284,6 +3284,7 @@ ferite                          ports/lang/ferite
 festalon                        ports/audio/festalon
 festdoc                         ports/audio/festdoc
 festival                        ports/audio/festival
+festival-freebsoft-utils        ports/audio/festival-freebsoft-utils
 festlex-cmu                     ports/audio/festlex-cmu
 festlex-czech                   ports/audio/festlex-czech
 festlex-oald                    ports/audio/festlex-oald
@@ -11202,6 +11203,7 @@ p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
 p5-DBIx-Class-QueryLog          ports/databases/p5-DBIx-Class-QueryLog
+p5-DBIx-Class-QueryProfiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-DBIx-Class-ResultSet-HashRef  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-DBIx-Class-ResultSet-RecursiveUpdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
@@ -11684,6 +11686,7 @@ p5-Font-TTFMetrics              ports/x11-fonts/p5-Font-TTFMetrics
 p5-Forest                       ports/devel/p5-Forest
 p5-FormValidator-Lite           ports/textproc/p5-FormValidator-Lite
 p5-FormValidator-Simple         ports/textproc/p5-FormValidator-Simple
+p5-Format-Human-Bytes           ports/converters/p5-Format-Human-Bytes
 p5-FreeBSD-Pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-FreeBSD-Pkgs-FindUpdates     ports/ports-mgmt/p5-FreeBSD-Pkgs-FindUpdates
 p5-FreeBSD-Portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
@@ -11837,6 +11840,7 @@ p5-HTML-Field                   ports/www/p5-HTML-Field
 p5-HTML-FillInForm              ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-HTML-FormFu                  ports/www/p5-HTML-FormFu
+p5-HTML-FormFu-Imager           ports/www/p5-HTML-FormFu-Imager
 p5-HTML-FormFu-Model-DBIC       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-HTML-FormHandler             ports/www/p5-HTML-FormHandler
 p5-HTML-Format                  ports/textproc/p5-HTML-Format
@@ -15016,6 +15020,7 @@ p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
 p5-dbix-class-querylog          ports/databases/p5-DBIx-Class-QueryLog
+p5-dbix-class-queryprofiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-dbix-class-resultset-hashref  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-dbix-class-resultset-recursiveupdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
@@ -15354,6 +15359,7 @@ p5-font-ttf                     ports/x11-fonts/p5-Font-TTF
 p5-font-ttfmetrics              ports/x11-fonts/p5-Font-TTFMetrics
 p5-forest                       ports/devel/p5-Forest
 p5-forks                        ports/devel/p5-forks
+p5-format-human-bytes           ports/converters/p5-Format-Human-Bytes
 p5-formvalidator-lite           ports/textproc/p5-FormValidator-Lite
 p5-formvalidator-simple         ports/textproc/p5-FormValidator-Simple
 p5-freebsd-i386-ptrace          ports/devel/p5-FreeBSD-i386-Ptrace
@@ -15531,6 +15537,7 @@ p5-html-fillinform-forceutf8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-html-format                  ports/textproc/p5-HTML-Format
 p5-html-formattext-withlinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-html-formfu                  ports/www/p5-HTML-FormFu
+p5-html-formfu-imager           ports/www/p5-HTML-FormFu-Imager
 p5-html-formfu-model-dbic       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-html-formhandler             ports/www/p5-HTML-FormHandler
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
@@ -18768,6 +18775,7 @@ php5-pdo_pgsql                  ports/databases/php5-pdo_pgsql
 php5-pdo_sqlite                 ports/databases/php5-pdo_sqlite
 php5-pgsql                      ports/databases/php5-pgsql
 php5-phing                      ports/devel/php5-phing
+php5-pinba                      ports/devel/php5-pinba
 php5-posix                      ports/sysutils/php5-posix
 php5-propel                     ports/databases/php5-propel
 php5-pspell                     ports/textproc/php5-pspell
@@ -18859,6 +18867,7 @@ pico-alpine                     ports/editors/pico-alpine
 picocom                         ports/comms/picocom
 picp                            ports/devel/picp
 picprog                         ports/devel/picprog
+picpuz                          ports/graphics/picpuz
 picturebook                     ports/graphics/picturebook
 picviz                          ports/graphics/picviz
 piddle                          ports/graphics/piddle
@@ -18894,6 +18903,7 @@ pilot_makedoc                   ports/palm/pilot_makedoc
 pilrc                           ports/palm/pilrc
 pimdd                           ports/net/pimdd
 pimp3                           ports/audio/pimp3
+pinba_engine                    ports/devel/pinba_engine
 pinball                         ports/games/pinball
 pine-pgp-filters                ports/mail/pine-pgp-filters
 pinentry                        ports/security/pinentry
@@ -22242,6 +22252,7 @@ species                         ports/games/species
 specimen                        ports/audio/specimen
 spectcl                         ports/devel/SpecTcl
 spectools                       ports/net-mgmt/spectools
+speech-dispatcher               ports/accessibility/speech-dispatcher
 speedbar                        ports/editors/speedbar
 speedcrunch                     ports/math/speedcrunch
 speex                           ports/audio/speex
@@ -23595,6 +23606,7 @@ uulib                           ports/converters/uulib
 uwatch                          ports/sysutils/uwatch
 uz-aspell                       ports/textproc/uz-aspell
 uzap                            ports/editors/uzap
+uzbl                            ports/www/uzbl
 v                               ports/x11-toolkits/v
 v4l_compat                      ports/multimedia/v4l_compat
 v6eval                          ports/net/v6eval
