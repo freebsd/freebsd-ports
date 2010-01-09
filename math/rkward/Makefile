@@ -17,6 +17,8 @@ COMMENT=	IDE/GUI for the R-project
 
 LIB_DEPENDS=	R.0:${PORTSDIR}/math/R
 
+BROKEN=		does not package
+
 CONFLICTS=	rkward-kde4-0.5.*
 
 USE_KDELIBS_VER=3
