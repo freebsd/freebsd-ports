@@ -12,7 +12,7 @@ MASTER_SITES=		SF
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		stephentfisher@yahoo.com
+MAINTAINER=		steve@stephen.fisher.com
 COMMENT=		Prints through a terminal with ANSI escape sequences
 
 PLIST_FILES=		bin/${PORTNAME}
