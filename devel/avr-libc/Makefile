@@ -30,6 +30,8 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		jpegtopnm:${PORTSDIR}/graphics/netpbm
 .endif
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
