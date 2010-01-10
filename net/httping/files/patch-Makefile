@@ -1,22 +1,12 @@
---- Makefile.orig	2009-12-28 20:52:20.000000000 +0100
-+++ Makefile	2009-12-28 20:53:00.000000000 +0100
-@@ -16,9 +16,7 @@
- 
+--- ./Makefile.orig	2010-01-10 22:58:57.000000000 +0100
++++ ./Makefile	2010-01-10 22:59:30.000000000 +0100
+@@ -17,8 +17,7 @@
  TARGET=httping
  
--WFLAGS=-Wall -W
+ WFLAGS=-Wall -W
 -OFLAGS=-O2
 -CFLAGS+=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\"
-+CFLAGS+= -DVERSION=\"$(VERSION)\"
++CFLAGS+=$(WFLAGS) -DVERSION=\"$(VERSION)\"
  
  PACKAGE=$(TARGET)-$(VERSION)
  PREFIX=/usr
-@@ -62,7 +60,7 @@
- all: $(TARGET)
- 
- $(TARGET): $(OBJS)
--	$(CC) $(WFLAGS) $(OBJS) $(LDFLAGS) -o $(TARGET)
-+	$(CC) $(OBJS) $(LDFLAGS) -o $(TARGET)
- 	#
- 	# Oh, blatant plug: http://keetweej.vanheusden.com/wishlist.html
- 
