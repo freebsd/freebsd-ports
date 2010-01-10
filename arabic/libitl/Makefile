@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	libitl
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	arabic
-MASTER_SITES=	SF/arabeyes/ITL%20Library%20%28${PORTNAME}%29/lib-${PORTVERSION}
+MASTER_SITES=	SF/arabeyes/ITL%20Library%20%28${PORTNAME}%29/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An API abstraction to common Islamic calculations
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/itl
 MAKE_JOBS_UNSAFE=	yes
-
-WRKSRC=		${WRKDIR}/itl/libs-${PORTVERSION}
 
 .include <bsd.port.mk>
