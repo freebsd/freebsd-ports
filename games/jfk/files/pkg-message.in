@@ -1,0 +1,5 @@
+Please create a file .jfkserverrc with a line 'level=<levelfile>' where
+<levelfile> is one from %%DATADIR%%/levels/ or your own and a file
+.jfkclientrc with a line 'name=<yourname>' in your home directory. For more
+information about other variables read %%DOCSDIR%%/jfkserver.sample
+and %%DOCSDIR%%/jfkclient.sample.
