@@ -478,6 +478,7 @@
     SUBDIR += linux-quake4-demo
     SUBDIR += linux-savage
     SUBDIR += linux-savage-samuraiwars
+    SUBDIR += linux-skulltag
     SUBDIR += linux-sof
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-ssamtfe
