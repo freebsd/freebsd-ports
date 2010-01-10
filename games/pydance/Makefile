@@ -35,7 +35,7 @@ PLIST_SUB=	SONGS="@comment "
 SONGS=
 .endif
 
-PKGMESSAGE=	${WRKDIR}/.pkg-message
+SUB_FILES=	pkg-message
 
 MAN1=		findbpm.1
 MAN6=		pydance.6
@@ -60,9 +60,6 @@ do-install:
 	for SONG in ${SONGS}; do ${INSTALL_DATA} ${_DISTDIR}/$$SONG ${PREFIX}/share/games/pydance/songs; done
 	${MV} ${PREFIX}/share/games/pydance/songs/pydance-cdtitle.png ${PREFIX}/share/games/pydance/songs/pydance.png
 .endif
-
-pre-install:
-	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
