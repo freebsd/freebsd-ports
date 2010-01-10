@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A FreeBSD Driver for FXO, FXS, BRI and PRI Telephony Cards
 
-LIB_DEPENDS=	newt.51:${PORTSDIR}/devel/newt
+LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 

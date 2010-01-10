@@ -17,7 +17,7 @@ COMMENT=	An Open Source PBX and telephony toolkit
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
-		newt.51:${PORTSDIR}/devel/newt \
+		newt.52:${PORTSDIR}/devel/newt \
 		gsm.1:${PORTSDIR}/audio/gsm \
 		curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
