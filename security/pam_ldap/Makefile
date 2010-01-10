@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTVERSION=	1.8.5
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -20,9 +19,10 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
+PAM_LDAP_CONF?=	ldap.conf
 CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-dir=${LOCALBASE} \
-		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf \
+		--with-ldap-conf-file=${PREFIX}/etc/${PAM_LDAP_CONF} \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
