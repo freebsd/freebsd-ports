@@ -4,9 +4,9 @@
 # $FreeBSD$
 
 PORTNAME=	networkx
-PORTVERSION=	0.99
+PORTVERSION=	1.0
 CATEGORIES=	math python
-MASTER_SITES=	https://networkx.lanl.gov/download/networkx/ \
+MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Tools for complex network
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
