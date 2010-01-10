@@ -1,0 +1,12 @@
+Nearly done!
+
+To be able to work, skulltag needs an official Doom, Doom 2, Heretic
+etc WAD file. This file comes with the official distribution of
+these games. You can still buy these games via the Internet for
+cheap, so use that instead of illegal downloading.
+
+Once you have obtained it, please place it in
+%%PREFIX%%/share/games/skulltag and run the game.
+
+Note: If the sound doesn't work, go to Options -> Sound Options ->
+Select SDL for the Output System and restart the game.

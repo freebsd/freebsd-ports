@@ -1,0 +1,33 @@
+Skulltag is a port for the original Doom and Doom II by id Software.
+
+Skulltag brings classic Doom into the 21st century, maintaining the
+essence of what has made Doom great for so many years and, at the
+same time, adding new features to modernize it, creating a fresh,
+fun new experience.
+
+Here's why you should kill your time with Skulltag, versus vanilla
+Doom:
+
+    * Excellent online play
+	o Client/server architecture: play and switch between games with ease
+	o Supports up to 32 players
+	o Wide array of gameplay modes
+	    + Competitive: Team DM, Duel, CTF, Possession, LMS,
+	      Terminator, Skulltag
+	    + Cooperative: Survival, Invasion (or both!)
+	    + Modifiers, like Instagib and Buckshot, can be used
+	      to spice up any game.
+    * Modern and beautiful
+	o Choose between GZDoom's OpenGL renderer, or Doom Software
+	o Useful features like a console, Quake-style key bindings,
+	  freelooking, and jumping
+        o Full, enthusiastic support for ZDoom and GZDoom mods
+	o Support for Heretic, Hexen, and Strife, as well as Linux/FreeBSD
+    * Innovative new content
+	o Announcers and skins for online play
+	o Runes, new weapons, and new monsters for modders
+	o 50 new, well designed stock maps for any game mode
+	o Bots, and support for custom bots
+    * So much more!
+
+WWW: http://skulltag.net/

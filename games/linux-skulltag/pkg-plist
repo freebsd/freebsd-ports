@@ -1,0 +1,24 @@
+bin/skulltag
+bin/skulltag.bin
+bin/skulltag-server
+share/games/skulltag/skulltag.pk3
+share/games/skulltag/libsnes_spc.so
+share/games/skulltag/liboutput_sdl.so
+share/games/skulltag/skulltag_data.pk3
+share/games/skulltag/announcer/Skulltag_98a_announcer.pk3
+share/games/skulltag/skins/ST_BASEII.pk3
+share/games/skulltag/skins/ST_Chaingun_Marine.pk3
+share/games/skulltag/skins/ST_Chubbs.pk3
+share/games/skulltag/skins/ST_Crash.pk3
+share/games/skulltag/skins/ST_Doom64Guy.pk3
+share/games/skulltag/skins/ST_Illucia.pk3
+share/games/skulltag/skins/ST_Orion.pk3
+share/games/skulltag/skins/ST_Phobos.pk3
+share/games/skulltag/skins/ST_Procyon.pk3
+share/games/skulltag/skins/ST_Seenas.pk3
+share/games/skulltag/skins/ST_Strife_Guy.pk3
+share/games/skulltag/skins/ST_Synas.pk3
+
+@dirrm share/games/skulltag/announcer
+@dirrm share/games/skulltag/skins
+@dirrm share/games/skulltag
