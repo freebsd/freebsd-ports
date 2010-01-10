@@ -17,9 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates a MacPlus machine!  Runs MacOS versions up to 7.5.5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GMAKE= 	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 ice sm xext
+SUB_FILES=	pkg-message
 
 pre-patch:
 	(cd ${WRKSRC} && ${SH} ${FILESDIR}/dos2unx gemulator.c)
@@ -35,6 +36,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.rom ${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE} | ${SED} -e s:/usr/local:${PREFIX}:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
