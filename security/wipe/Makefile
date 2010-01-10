@@ -7,7 +7,7 @@
 
 PORTNAME=	wipe
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -19,6 +19,9 @@ GNU_CONFIGURE=	yes
 
 MAN1=		wipe.1
 PORTDOCS=	CHANGES INSTALL LICENSE README TESTING TODO copyright
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@CFLAGS@|${CFLAGS}|' ${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/wipe.1 ${PREFIX}/man/man1
