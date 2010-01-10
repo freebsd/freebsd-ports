@@ -15,7 +15,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 #PATCHFILES=
 #PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKEFILE=	${WRKSRC}/scripts/makefile.freebsd
