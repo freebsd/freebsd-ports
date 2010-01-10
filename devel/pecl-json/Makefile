@@ -14,7 +14,7 @@ DISTNAME=	json-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	zaa@zaa.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP extension for JSON (JavaScript Object Notation) serialization
 
 USE_PHP=	yes

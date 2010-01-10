@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	zaa@zaa.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP extension which provides extended HTTP request/response handling
 
 USE_PHP=	session hash iconv

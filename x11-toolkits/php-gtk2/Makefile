@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
 
-MAINTAINER=	zaa@zaa.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension to use gtk in PHP-applications
 
 USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:22:env

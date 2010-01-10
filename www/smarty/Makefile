@@ -15,7 +15,7 @@ DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 DISTFILES+=	Smarty-${DOCSVERSION}-docs${EXTRACT_SUFX}:manual
 .endif
 
-MAINTAINER=	zaa@zaa.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The PHP compiling template engine
 
 DOCSVERSION=	2.6.14
