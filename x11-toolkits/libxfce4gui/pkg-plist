@@ -102,6 +102,7 @@ share/icons/hicolor/48x48/apps/xfce-utils.png
 share/icons/hicolor/scalable/apps/xfce-filemanager.svg
 share/locale/am/LC_MESSAGES/libxfcegui4.mo
 share/locale/ar/LC_MESSAGES/libxfcegui4.mo
+share/locale/ast/LC_MESSAGES/libxfcegui4.mo
 share/locale/be/LC_MESSAGES/libxfcegui4.mo
 share/locale/bn_IN/LC_MESSAGES/libxfcegui4.mo
 share/locale/ca/LC_MESSAGES/libxfcegui4.mo
@@ -150,6 +151,7 @@ share/locale/ta/LC_MESSAGES/libxfcegui4.mo
 share/locale/tr/LC_MESSAGES/libxfcegui4.mo
 share/locale/uk/LC_MESSAGES/libxfcegui4.mo
 share/locale/ur/LC_MESSAGES/libxfcegui4.mo
+share/locale/ur_PK/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_CN/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
 @dirrm include/xfce4/libxfcegui4
@@ -163,6 +165,8 @@ share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
 @dirrm share/gtk-doc/html/libxfcegui4
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/dz/LC_MESSAGES
@@ -175,6 +179,8 @@ share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
 @dirrmtry share/locale/si
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrm etc/xdg/xfce4/xfconf/xfce-perchannel-xml
 @dirrm etc/xdg/xfce4/xfconf
 @dirrm etc/xdg/xfce4
