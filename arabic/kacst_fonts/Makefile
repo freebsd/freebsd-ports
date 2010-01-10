@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		kacst_fonts
-PORTVERSION=		1.5
-PORTREVISION=	2
+PORTVERSION=		1.6.2
 CATEGORIES=		arabic
 MASTER_SITES=		SF/arabeyes/Fonts/${PORTNAME}
 DISTNAME=		kacst_fonts_${PORTVERSION}
