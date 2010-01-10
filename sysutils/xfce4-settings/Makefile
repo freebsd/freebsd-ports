@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.6.1
-PORTREVISION=	2
+PORTVERSION=	4.6.4
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITES=	http://www.xfce.org/archive/src/xfce/xfce4-settings/4.6/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org

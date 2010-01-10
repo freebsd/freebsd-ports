@@ -9,6 +9,7 @@ bin/xfce4-settings-editor
 bin/xfsettingsd
 etc/xdg/autostart/xfce4-settings-helper-autostart.desktop
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+share/locale/ast/LC_MESSAGES/xfce4-settings.mo
 share/locale/ca/LC_MESSAGES/xfce4-settings.mo
 share/locale/cs/LC_MESSAGES/xfce4-settings.mo
 share/locale/da/LC_MESSAGES/xfce4-settings.mo
@@ -23,15 +24,20 @@ share/locale/hu/LC_MESSAGES/xfce4-settings.mo
 share/locale/id/LC_MESSAGES/xfce4-settings.mo
 share/locale/it/LC_MESSAGES/xfce4-settings.mo
 share/locale/ja/LC_MESSAGES/xfce4-settings.mo
+share/locale/lv/LC_MESSAGES/xfce4-settings.mo
 share/locale/nb/LC_MESSAGES/xfce4-settings.mo
 share/locale/nl/LC_MESSAGES/xfce4-settings.mo
 share/locale/pl/LC_MESSAGES/xfce4-settings.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-settings.mo
 share/locale/pt/LC_MESSAGES/xfce4-settings.mo
+share/locale/ro/LC_MESSAGES/xfce4-settings.mo
 share/locale/ru/LC_MESSAGES/xfce4-settings.mo
+share/locale/sk/LC_MESSAGES/xfce4-settings.mo
 share/locale/sv/LC_MESSAGES/xfce4-settings.mo
 share/locale/tr/LC_MESSAGES/xfce4-settings.mo
 share/locale/uk/LC_MESSAGES/xfce4-settings.mo
+share/locale/ur/LC_MESSAGES/xfce4-settings.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-settings.mo
 share/applications/xfce-ui-settings.desktop
 share/applications/xfce4-accessibility-settings.desktop
@@ -44,3 +50,11 @@ share/applications/xfce4-settings-editor.desktop
 @dirrmtry etc/xdg/xfce4/xfconf/xfce-perchannel-xml
 @dirrmtry etc/xdg/xfce4/xfconf
 @dirrmtry etc/xdg/xfce4
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
