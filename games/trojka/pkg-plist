@@ -1,5 +1,5 @@
 bin/trojka
-share/trojka/COPYRIGHT
-share/trojka/README
-share/trojka/trojka.scores
-@dirrm share/trojka
+%%DATADIR%%/COPYRIGHT
+%%DATADIR%%/README
+%%DATADIR%%/trojka.scores
+@dirrm %%DATADIR%%
