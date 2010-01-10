@@ -15,8 +15,9 @@ MAINTAINER=	e@ik.nu
 COMMENT=	A game of skill
 
 MAN6=		trojka.6
+SUB_FILES=	pkg-message
 
 post-install:
-	${SED} "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
