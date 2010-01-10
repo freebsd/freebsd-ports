@@ -26,6 +26,7 @@ bin/freeoriond
 %%DATADIR%%/default/LICENSE.DejaVu
 %%DATADIR%%/default/buildings.txt
 %%DATADIR%%/default/credits.xml
+%%DATADIR%%/default/data/art/GLX_icon.png
 %%DATADIR%%/default/data/art/arrows.png
 %%DATADIR%%/default/data/art/combat/backgrounds/blackhole01back.png
 %%DATADIR%%/default/data/art/combat/backgrounds/blackhole01big_spark.png
@@ -1554,6 +1555,7 @@ bin/freeoriond
 %%DATADIR%%/default/techs.txt
 %%DATADIR%%/default/universe_tables.txt
 %%DATADIR%%/ogre_plugins.cfg
+%%DATADIR%%/resources.cfg
 %%DATADIR%%/OISInput.cfg
 @dirrm %%DATADIR%%/default/AI
 @dirrm %%DATADIR%%/default/data/art/stars_sidepanel

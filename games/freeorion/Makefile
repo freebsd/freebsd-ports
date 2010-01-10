@@ -7,6 +7,7 @@
 
 PORTNAME=	freeorion
 PORTVERSION=	0.3.13.3318
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	oliver
@@ -38,20 +39,20 @@ SCONS_ARGS+=	release=yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ND_coord_i|ND_coord|g' \
-		${WRKSRC}/UI/TechTreeWnd.cpp
-	@${REINPLACE_CMD} -e 's|"OISInput.cfg"|"${DATADIR}/OISInput.cfg"|g' \
-		${WRKSRC}/client/human/HumanClientApp.cpp
 	@${REINPLACE_CMD} -e 's|Plugin=Plugin_CgProgramManager|#&|g; \
 		s|\(PluginFolder=\)\.|\1${LOCALBASE}/lib/OGRE|g' \
 		${WRKSRC}/ogre_plugins.cfg
 	@${REINPLACE_CMD} -e 's|\(prefix.*\)/usr/local|\1${PREFIX}|g; \
 		s|/usr/local/lib/OGRE|${LOCALBASE}/lib/OGRE|g' \
 		${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		${WRKSRC}/util/Directories.cpp
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ogre_plugins.cfg ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/OISInput.cfg ${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/resources.cfg ${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/GLX_icon.png ${DATADIR}/default/data/art
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
