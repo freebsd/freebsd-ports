@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${E_VERSION:S/.//g}-src.zip \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${E_VERSION:S/.//g}-src.zip
 
-MAINTAINER=	makoto@pinpott.spnet.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zangband (Zelazny Angband) with japanese, color, X11 support
 
 USE_ZIP=	yes
