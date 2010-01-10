@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A C library for reading, creating, and modifying zip archives
 
 GNU_CONFIGURE=	yes
