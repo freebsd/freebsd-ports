@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Template%20Lite/Template%20Lite%20version%20${PORTVERSION}
 DISTNAME=	template_lite_${PORTVERSION}
 
-MAINTAINER=	zaa@zaa.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A smaller, faster alternative to the Smarty template engine
 
 NO_BUILD=	yes
