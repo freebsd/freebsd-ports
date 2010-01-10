@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Terminal
-PORTVERSION=	0.2.12
-PORTREVISION=	4
+PORTVERSION=	0.4.3
 CATEGORIES=	x11 xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITES=	http://www.xfce.org/archive/src/apps/terminal/0.4/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
