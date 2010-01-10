@@ -67,9 +67,9 @@ JAVA_VERSION=	1.4 1.5 1.6
 ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${ARCH} == amd64
-FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
+FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 .else
-FREEBSD_ENV_SET=	FreeBSDX86Env.Set
+FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
 MILESTONE?=		68
@@ -126,8 +126,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-WRKSRC?=		${WRKDIR}/${OOOTAG}
-TCSH?=		/bin/tcsh
+WRKSRC?=	${WRKDIR}/${OOOTAG}
+BASH?=		${PREFIX}/bin/bash
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(DISABLE_MAKE_JOBS)
@@ -146,6 +146,7 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
 			--enable-report-builder				\
+			--with-use-shell=bash				\
 			--with-vendor="FreeBSD ports system"
 
 OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
@@ -205,7 +206,7 @@ pre-build:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMPDIR ${WRKSRC} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
