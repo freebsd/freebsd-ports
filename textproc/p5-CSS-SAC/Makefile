@@ -12,7 +12,7 @@ CATEGORIES=	textproc perl5 www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SAC CSS (Simple API for CSS) parser
 
 RUN_DEPENDS=	p5-Class-ArrayObjects>=0.04:${PORTSDIR}/devel/p5-Class-ArrayObjects

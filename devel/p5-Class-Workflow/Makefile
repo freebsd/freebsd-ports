@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight workflow system
 
 BUILD_DEPENDS=	p5-Moose>=0.37:${PORTSDIR}/devel/p5-Moose \

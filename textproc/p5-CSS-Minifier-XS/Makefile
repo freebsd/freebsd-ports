@@ -11,7 +11,7 @@ CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XS based CSS minifier
 
 PERL_CONFIGURE=	yes

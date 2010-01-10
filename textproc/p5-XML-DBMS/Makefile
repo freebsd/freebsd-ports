@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	perl-xml-dbms-1.03
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl port of Java package XML-DBMS v1.0
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
