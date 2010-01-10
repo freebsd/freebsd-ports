@@ -6,11 +6,10 @@
 #    $MCom: ports/x11/libexo/Makefile,v 1.1 2006/10/02 21:05:55 ahze Exp $
 
 PORTNAME=	libexo
-PORTVERSION=	0.3.101
-PORTREVISION=	1
+PORTVERSION=	0.3.106
 CATEGORIES=	x11 xfce
 DISTNAME=	exo-${PORTVERSION}
-MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITES=	http://www.xfce.org/archive/src/xfce/exo/0.3/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
