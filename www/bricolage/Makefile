@@ -54,6 +54,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${BUILD_DEPENDS}
 
+BROKEN=		missing dependencies
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_APACHE=	13
