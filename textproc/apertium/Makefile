@@ -10,7 +10,7 @@ PORTVERSION=	3.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3.1
 
-MAINTAINER=	freebsd@levsha.org.ua
+MAINTAINER=	i@levsha.me
 COMMENT=	A toolbox to build shallow-transfer machine translation systems
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -20,12 +20,14 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		lttoolbox3:${PORTSDIR}/textproc/lttoolbox \
 		pcre:${PORTSDIR}/devel/pcre
 
+MAKE_JOBS_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 
 MAN1=	apertium-deshtml.1 apertium-desodt.1 apertium-despptx.1 \
-        apertium-desrtf.1 apertium-destxt.1 apertium-deswxml.1 \
-        apertium-desxlsx.1 apertium-filter-ambiguity.1 \
+	apertium-desrtf.1 apertium-destxt.1 apertium-deswxml.1 \
+	apertium-desxlsx.1 apertium-filter-ambiguity.1 \
 	apertium-gen-deformat.1 apertium-gen-lextorbil.1 \
 	apertium-gen-lextormono.1 apertium-gen-modes.1 \
 	apertium-gen-reformat.1 apertium-gen-stopwords-lextor.1 \
