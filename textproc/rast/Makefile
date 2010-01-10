@@ -22,7 +22,6 @@ USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	YES
 USE_BDB=	42
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
 USE_RUBY=	YES
 CONFIGURE_ARGS=	\
 	--with-apr-config=${LOCALBASE}/bin/apr-1-config \
@@ -70,9 +69,5 @@ PLIST_SUB+=		WITH_XMLRPC_C="@comment "
 .include <bsd.port.pre.mk>
 
 DEFAULT_ENCODING?=	euc_jp
-
-.if ${OSVERSION} >= 800000
-BROKEN=		does not compile on 8.X
-.endif
 
 .include <bsd.port.post.mk>
