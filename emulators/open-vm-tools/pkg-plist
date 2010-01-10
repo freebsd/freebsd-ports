@@ -9,8 +9,6 @@ lib/open-vm-tools/plugins/vmsvc/libguestInfo.so
 lib/open-vm-tools/plugins/vmsvc/libpowerOps.so
 lib/open-vm-tools/plugins/vmsvc/libtimeSync.so
 lib/open-vm-tools/plugins/vmsvc/libvmbackup.so
-lib/open-vm-tools/plugins/vmsvc/libhgfsServer.so
-lib/open-vm-tools/plugins/vmsvc/libvix.so
 lib/open-vm-tools/plugins/common/libhgfsServer.so
 lib/open-vm-tools/plugins/common/libhgfsServer.la
 lib/open-vm-tools/plugins/common/libvix.so
