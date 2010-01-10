@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 MAKE_ENV+=	NOCONF=1
 PERL_CONFIGURE=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 MAN3=	Net::FTPServer.3 \
 	Net::FTPServer::DBeg1::DirHandle.3 \
@@ -74,7 +74,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${PERL} -p -e 's,PREFIX,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
