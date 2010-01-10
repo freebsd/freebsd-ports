@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	makoto@pinpott.spnet.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 USE_GMAKE=	yes
