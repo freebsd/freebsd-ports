@@ -21,11 +21,14 @@ ONLY_FOR_ARCHS=	i386
 STRIP=
 WRKSRC=		${WRKDIR}/invaders
 ALL_TARGET=	clean all
+SUB_FILES=	pkg-message
 
 do-install:
-	${MKDIR} ${PREFIX}/share/grubinvaders
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/grubinvaders
-	${INSTALL_PROGRAM} ${WRKSRC}/invaders ${PREFIX}/share/grubinvaders
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	${MKDIR} ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/invaders ${DATADIR}
 
 .include <bsd.port.mk>

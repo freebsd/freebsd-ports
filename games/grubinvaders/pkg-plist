@@ -1,3 +1,4 @@
-share/grubinvaders/README
-share/grubinvaders/invaders
-@dirrm share/grubinvaders
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/invaders
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
