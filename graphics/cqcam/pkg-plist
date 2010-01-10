@@ -3,14 +3,14 @@ bin/gtkcam
 bin/movify
 bin/webcam
 bin/xcqcam
-%%PORTDOCS%%share/doc/cqcam/APINOTES
-%%PORTDOCS%%share/doc/cqcam/CHANGES
-%%PORTDOCS%%share/doc/cqcam/README
-%%PORTDOCS%%share/doc/cqcam/README.movies
-%%PORTDOCS%%share/doc/cqcam/README.webcam
-%%PORTDOCS%%share/doc/cqcam/refresh.html
-%%PORTDOCS%%share/doc/cqcam/webcam.html
-share/examples/cqcam/sample.cqcrc
-share/examples/cqcam/sample.nph-webcam
-@dirrm share/examples/cqcam
-%%PORTDOCS%%@dirrm share/doc/cqcam
+%%PORTDOCS%%%%DOCSDIR%%/APINOTES
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.movies
+%%PORTDOCS%%%%DOCSDIR%%/README.webcam
+%%PORTDOCS%%%%DOCSDIR%%/refresh.html
+%%PORTDOCS%%%%DOCSDIR%%/webcam.html
+%%EXAMPLESDIR%%/sample.cqcrc
+%%EXAMPLESDIR%%/sample.nph-webcam
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

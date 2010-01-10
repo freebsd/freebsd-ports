@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALL_TARGET=	bininstall
+SUB_FILES=	pkg-message
 
 MAN1=		cqcam.1
 MLINKS=		cqcam.1 webcam.1 \
@@ -37,15 +38,15 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/docs/cqcam.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/examples/cqcam
-	${INSTALL_DATA} ${WRKSRC}/.cqcrc ${PREFIX}/share/examples/cqcam/sample.cqcrc
-	${INSTALL_DATA} ${WRKSRC}/webcam/nph-webcam ${PREFIX}/share/examples/cqcam/sample.nph-webcam
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/.cqcrc ${EXAMPLESDIR}/sample.cqcrc
+	${INSTALL_DATA} ${WRKSRC}/webcam/nph-webcam ${EXAMPLESDIR}/sample.nph-webcam
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	@${SED} -e "s:/usr/local:${PREFIX}:" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
