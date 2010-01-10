@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	Generate Globally/Universally Unique Identifiers (GUIDs/UUIDs)
 
 PERL_CONFIGURE=	yes

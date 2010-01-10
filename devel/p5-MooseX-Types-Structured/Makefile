@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	Moose Type Constraint classes for Structured Types
 
 BUILD_DEPENDS=	p5-Moose>=0.63:${PORTSDIR}/devel/p5-Moose \
