@@ -1,14 +1,14 @@
---- Makefile.in.orig	Sat Aug 20 18:44:27 2005
-+++ Makefile.in	Sat Aug 20 18:45:57 2005
-@@ -434,17 +434,13 @@
+--- Makefile.in.orig	2010-01-08 12:09:42.124679000 +0000
++++ Makefile.in	2010-01-08 12:16:10.000000000 +0000
+@@ -594,24 +594,20 @@
  
  install-exec-local: pam_ldap.so
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(libdir)/security
 -@EXTENSION_SO_TRUE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.so
--@EXTENSION_SO_FALSE@@EXTENSION_1_TRUE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/libpam_ldap.1
--@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.so.1
--@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	(cd $(DESTDIR)$(libdir)/security; rm -f pam_ldap.so; ln -s pam_ldap.so.1 pam_ldap.so)
+-@EXTENSION_1_TRUE@@EXTENSION_SO_FALSE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/libpam_ldap.1
+-@EXTENSION_1_FALSE@@EXTENSION_SO_FALSE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.so.1
+-@EXTENSION_1_FALSE@@EXTENSION_SO_FALSE@	(cd $(DESTDIR)$(libdir)/security; rm -f pam_ldap.so; ln -s pam_ldap.so.1 pam_ldap.so)
 +	$(INSTALL_PROGRAM) -o root -g wheel pam_ldap.so $(DESTDIR)$(libdir)/pam_ldap.so
  
  install-data-local:
@@ -21,3 +21,11 @@
  	fi
  
  uninstall-local:
+ 	@$(NORMAL_UNINSTALL)
+ 
+ vers.c: $(top_srcdir)/CVSVersionInfo.txt
+-	CVSVERSIONDIR=$(top_srcdir) vers_string -v
++	CVSVERSIONDIR=$(top_srcdir) $(top_srcdir)/vers_string -v
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
