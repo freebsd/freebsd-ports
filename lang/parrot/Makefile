@@ -12,7 +12,7 @@ CATEGORIES=	lang
 #MASTER_SITE_SUBDIR=	../../authors/id/A/AR/ARANDAL
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
