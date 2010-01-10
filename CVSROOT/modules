@@ -5551,6 +5551,7 @@ icqlib                          ports/net-im/icqlib
 ics                             ports/science/ics
 icu                             ports/devel/icu
 icu2                            ports/devel/icu2
+icu4                            ports/devel/icu4
 id-aspell                       ports/textproc/id-aspell
 id-utils                        ports/devel/id-utils
 id3ed                           ports/audio/id3ed
@@ -19550,6 +19551,7 @@ py-4suite-xml                   ports/textproc/py-4suite-xml
 py-AddOns                       ports/devel/py-AddOns
 py-Breve                        ports/devel/py-Breve
 py-BytecodeAssembler            ports/devel/py-BytecodeAssembler
+py-DendroPy                     ports/science/py-DendroPy
 py-Elixir                       ports/databases/py-Elixir
 py-EnthoughtBase                ports/devel/py-EnthoughtBase
 py-GeoIP                        ports/net/py-GeoIP
@@ -19667,11 +19669,13 @@ py-cyruslib                     ports/mail/py-cyruslib
 py-dal                          ports/devel/py-dal
 py-darcsver                     ports/devel/py-darcsver
 py-dateutil                     ports/devel/py-dateutil
+py-dbf                          ports/databases/py-dbf
 py-dbus                         ports/devel/py-dbus
 py-dbutils                      ports/databases/py-dbutils
 py-decorator                    ports/devel/py-decorator
 py-decoratortools               ports/devel/py-decoratortools
 py-demjson                      ports/devel/py-demjson
+py-dendropy                     ports/science/py-DendroPy
 py-dexml                        ports/devel/py-dexml
 py-dialog                       ports/devel/py-dialog
 py-distorm                      ports/devel/py-distorm
@@ -23298,6 +23302,7 @@ tulip                           ports/graphics/tulip
 tumgreyspf                      ports/mail/tumgreyspf
 tunapie                         ports/multimedia/tunapie
 tuneradio                       ports/audio/tuneradio
+tuning-primer                   ports/databases/tuning-primer
 tuntun                          ports/security/tuntun
 tux-aqfh                        ports/games/tux-aqfh
 tuxcards                        ports/deskutils/tuxcards
