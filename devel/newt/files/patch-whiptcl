@@ -1,0 +1,74 @@
+--- whiptcl.c	2009-09-24 11:03:09.000000000 -0400
++++ whiptcl.c	2010-01-06 02:44:52.000000000 -0500
+@@ -6,6 +6,6 @@
+ #include "dialogboxes.h"
+ #include "newt.h"
+-#include "popt.h"
+-#include "tcl.h"
++#include <popt.h>
++#include <tcl.h>
+ 
+ enum mode { MODE_NONE, MODE_MSGBOX, MODE_YESNO, MODE_CHECKLIST, MODE_INPUTBOX,
+@@ -20,12 +20,12 @@
+ 
+ static char * setBacktext(ClientData data, Tcl_Interp * interp, 
+-			  char * name1, char * name2, int flags);
++			  const char * name1, const char * name2, int flags);
+ static char * setHelptext(ClientData data, Tcl_Interp * interp,
+-			  char * name1, char * name2, int flags);
++			  const char * name1, const char * name2, int flags);
+ static char * setFullButtons(ClientData data, Tcl_Interp * interp, 
+-			     char * name1, char * name2, int flags);
++			     const char * name1, const char * name2, int flags);
+ 
+ static int wtFinish(ClientData clientData, Tcl_Interp * interp, int argc,
+-                  char ** argv) {
++                  const char ** argv) {
+     newtFinished();
+ 
+@@ -34,5 +34,5 @@
+ 
+ static int wtInit(ClientData clientData, Tcl_Interp * interp, int argc,
+-                  char ** argv) {
++                  const char ** argv) {
+     newtInit();
+     newtCls();
+@@ -239,5 +239,5 @@
+ 
+       case MODE_NONE:
+-	/* this can't happen */
++	; /* this can't happen */
+         break;
+     }
+@@ -259,5 +259,5 @@
+ 
+ static char * setBacktext(ClientData data, Tcl_Interp * interp, 
+-			  char * name1, char * name2, int flags) {
++			  const char * name1, const char * name2, int flags) {
+     static char blankLine[81] = "                                        "
+                          "                                        ";
+@@ -271,6 +271,6 @@
+ 
+ static char * setHelptext(ClientData data, Tcl_Interp * interp, 
+-			  char * name1, char * name2, int flags) {
+-    char * text = Tcl_GetVar(interp, "whiptcl_helpline", TCL_GLOBAL_ONLY);
++			  const char * name1, const char * name2, int flags) {
++    const char * text = Tcl_GetVar(interp, "whiptcl_helpline", TCL_GLOBAL_ONLY);
+ 
+     if (!text)
+@@ -286,6 +286,6 @@
+ 
+ static char * setFullButtons(ClientData data, Tcl_Interp * interp, 
+-			     char * name1, char * name2, int flags) {
+-    char * val = Tcl_GetVar(interp, "whiptcl_fullbuttons", TCL_GLOBAL_ONLY);
++			     const char * name1, const char * name2, int flags) {
++    const char * val = Tcl_GetVar(interp, "whiptcl_fullbuttons", TCL_GLOBAL_ONLY);
+     int rc;
+     int state;
+@@ -306,4 +306,6 @@
+     Tcl_CreateCommand(interp, "whiptcl_cmd", (Tcl_CmdProc *) wtCmd, NULL, NULL);
+ 
++    Tcl_PkgProvide(interp, "Whip", VERSION);
++
+     return TCL_OK;
+ }
