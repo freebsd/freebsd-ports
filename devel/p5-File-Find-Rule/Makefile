@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	File-Find-Rule
-PORTVERSION=	0.30
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +15,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative interface to File::Find
 
 RUN_DEPENDS=	p5-Number-Compare>=0:${PORTSDIR}/math/p5-Number-Compare \
-		p5-Text-Glob>=0:${PORTSDIR}/textproc/p5-Text-Glob
+		p5-Text-Glob>=0.07:${PORTSDIR}/textproc/p5-Text-Glob
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	5.8.0+
 
 MAN1=		findrule.1
 MAN3=		File::Find::Rule.3 File::Find::Rule::Extending.3 \
