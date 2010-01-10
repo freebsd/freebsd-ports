@@ -7,7 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -15,11 +15,12 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
 
-MAINTAINER=	mrtg@subnets.ru
+MAINTAINER=	ports@subnets.ru
 COMMENT=	The multi-router traffic grapher
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
+RUN_DEPENDS=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
+		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
@@ -63,7 +64,7 @@ EXAMPLES=	cfgmaker.pod indexmaker.pod mrtg-contrib.pod mrtg-faq.pod \
 		mrtg-ti.png mrtg-l.gif mrtg-m.gif mrtg-r.gif
 IMAGES=		favicon.ico mrtg-l.gif mrtg-l.png mrtg-m.gif mrtg-m.png \
 		mrtg-r.gif mrtg-r.png mrtg-ti.gif mrtg-ti.png
-SCRIPTS=	cfgmaker indexmaker mrtg
+SCRIPTS=	cfgmaker indexmaker mrtg mrtg-traffic-sum
 
 OPTIONS=	IPV6 "Enable IPv6 support" OFF \
 		SNMP "Enable use of SNMPv3" OFF
@@ -75,8 +76,6 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 .endif
 .if defined(WITH_SNMP)
 RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-.else
-RUN_DEPENDS+=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 .endif
 
 post-patch:
