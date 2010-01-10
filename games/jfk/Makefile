@@ -16,6 +16,7 @@ COMMENT=	A multiplayer 2D shoot'em up game
 
 GNU_CONFIGURE=	yes
 USE_SDL=	image sdl
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +34,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} s-\$${PREFIX}-${PREFIX}-g < ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
