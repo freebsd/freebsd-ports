@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.6.1
-PORTREVISION=	1
+PORTVERSION=	4.6.3
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITES=	http://archive.xfce.org/src/xfce/xfce4-panel/4.6/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org

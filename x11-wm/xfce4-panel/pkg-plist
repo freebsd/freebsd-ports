@@ -86,6 +86,7 @@ share/icons/hicolor/48x48/apps/xfce4-systray.png
 share/icons/hicolor/48x48/apps/xfce4-taskbar.png
 share/locale/am/LC_MESSAGES/xfce4-panel.mo
 share/locale/ar/LC_MESSAGES/xfce4-panel.mo
+share/locale/ast/LC_MESSAGES/xfce4-panel.mo
 share/locale/az/LC_MESSAGES/xfce4-panel.mo
 share/locale/be/LC_MESSAGES/xfce4-panel.mo
 share/locale/bg/LC_MESSAGES/xfce4-panel.mo
@@ -115,6 +116,7 @@ share/locale/id/LC_MESSAGES/xfce4-panel.mo
 share/locale/it/LC_MESSAGES/xfce4-panel.mo
 share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 share/locale/ka/LC_MESSAGES/xfce4-panel.mo
+share/locale/kk/LC_MESSAGES/xfce4-panel.mo
 share/locale/ko/LC_MESSAGES/xfce4-panel.mo
 share/locale/ku/LC_MESSAGES/xfce4-panel.mo
 share/locale/lt/LC_MESSAGES/xfce4-panel.mo
@@ -124,6 +126,7 @@ share/locale/mr/LC_MESSAGES/xfce4-panel.mo
 share/locale/ms/LC_MESSAGES/xfce4-panel.mo
 share/locale/nb/LC_MESSAGES/xfce4-panel.mo
 share/locale/nl/LC_MESSAGES/xfce4-panel.mo
+share/locale/nn/LC_MESSAGES/xfce4-panel.mo
 share/locale/pa/LC_MESSAGES/xfce4-panel.mo
 share/locale/pl/LC_MESSAGES/xfce4-panel.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-panel.mo
@@ -138,6 +141,7 @@ share/locale/ta/LC_MESSAGES/xfce4-panel.mo
 share/locale/tr/LC_MESSAGES/xfce4-panel.mo
 share/locale/uk/LC_MESSAGES/xfce4-panel.mo
 share/locale/ur/LC_MESSAGES/xfce4-panel.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-panel.mo
 share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo
@@ -169,10 +173,18 @@ share/xfce4/panel-plugins/windowlist.desktop
 @dirrm share/gtk-doc/html/libxfce4panel
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc
