@@ -19,12 +19,13 @@ COMMENT=	A plasma-effect screensaver kernel module
 IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 PLIST_FILES=	lib/plasma_saver.ko
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/plasma_saver.ko ${PREFIX}/lib
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
