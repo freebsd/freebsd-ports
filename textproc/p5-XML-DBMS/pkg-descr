@@ -7,6 +7,3 @@ database.  An XML-based mapping language is used to define the view and
 map it to the database.
 
 WWW: http://www.rpbourret.com/xmldbms/index.htm
-
--- Sergey Skvortsov
-skv@FreeBSD.org

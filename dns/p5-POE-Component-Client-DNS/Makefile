@@ -12,7 +12,7 @@ CATEGORIES=	dns perl5 devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POE component for non-blocking/concurrent DNS queries
 
 BUILD_DEPENDS=	p5-POE>=1.007:${PORTSDIR}/devel/p5-POE \

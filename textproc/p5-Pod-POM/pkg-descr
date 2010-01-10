@@ -8,6 +8,3 @@ which can automatically traverse the tree, or section thereof, and
 generate an output representation in one form or another.
 
 WWW: http://search.cpan.org/dist/Pod-POM/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

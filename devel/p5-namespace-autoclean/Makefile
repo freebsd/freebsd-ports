@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep imports out of your namespace
 
 BUILD_DEPENDS=	p5-Class-MOP>=0.80:${PORTSDIR}/devel/p5-Class-MOP \

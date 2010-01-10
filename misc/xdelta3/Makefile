@@ -11,7 +11,7 @@ CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
 ALL_TARGET=	xdelta3
