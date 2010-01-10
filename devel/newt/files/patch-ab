@@ -1,170 +1,62 @@
---- Makefile.in.orig	Thu Aug 15 13:18:11 2002
-+++ Makefile.in	Fri Mar 19 03:29:21 2004
-@@ -1,36 +1,43 @@
--LIBS = -lslang -lm #-lefence
--SHLIBS = -lslang -lm -lc
-+LIBS = -lslang -lm -lpopt -lncurses #-lefence
-+SHLIBS = -lslang -lm -lc -lpopt -lncurses
- 
- GPM_SUPPORT=@gpm_support@
- 
--CFLAGS = $(RPM_OPT_FLAGS) -Wall -I/usr/include/slang -D_GNU_SOURCE
--ifeq ($(RPM_OPT_FLAGS),)
--CFLAGS += -g 
--endif
-+CFLAGS += -I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include
-+LDFLAGS += -L/usr/lib -L${LOCALBASE}/lib -L${PREFIX}/lib
- 
- VERSION = @VERSION@
- CVSTAG = r$(subst .,-,$(VERSION))
- SONAME = @SONAME@
- 
--PYTHONVERS = $(shell ls -d /usr/include/python* | sed "s|/usr/include/||g")
-+#PYTHONVERS = $(shell ls -d /usr/include/python* | sed "s|/usr/include/||g")
- 
--WHIPTCLSO=
--#WHIPTCLSO=whiptcl.so
-+.if defined(WITH_TCL)
-+WHIPTCLSO=whiptcl.so
-+CFLAGS += -I${LOCALBASE}/include/${TCLVERSION}
-+LDFLAGS += -L${LOCALBASE}/lib/${TCLVERSION}
-+SHLIBS += -l${TCLVERSION:S,.,,}
-+.endif
-+TARGET=${LIBNEWT} ${PROGS} ${WHIPTCLSO}
- 
--PROGS = test whiptail $(WHIPTCLSO) testgrid testtree
-+PROGS = test whiptail testgrid testtree
- TESTOBJS = test.o
- NDIALOGOBJS = whiptail.o dialogboxes.o
- WHIPTCLOBJS = whiptcl.o dialogboxes.o
- LIBNEWT = libnewt.a
--LIBNEWTSH = libnewt.so.$(VERSION)
-+LIBNEWTSH = libnewt.so.$(SONAME)
- LIBNEWTSONAME = libnewt.so.$(SONAME)
- LIBOBJS = newt.o button.o form.o checkbox.o entry.o label.o listbox.o \
-           scrollbar.o textbox.o scale.o grid.o windows.o buttonbar.o \
- 	  checkboxtree.o
- 
--SHCFLAGS = -fPIC
-+LIBSHOBJS = newt.So button.So form.So checkbox.So entry.So label.So listbox.So \
-+          scrollbar.So textbox.So scale.So grid.So windows.So buttonbar.So \
-+	  checkboxtree.So
- 
--prefix = /usr
-+SHCFLAGS = ${CFLAGS} -fPIC
-+
-+prefix = ${PREFIX}
- includedir = $(prefix)/include
- libdir = $(prefix)/lib
- bindir = $(prefix)/bin
-@@ -38,44 +45,41 @@
- 
- #--------------------------------------
- 
--SOURCES = $(subst .o,.c,$(TESTOBJS) $(NDIALOGOBJS) $(LIBOBJS))
-+SOURCES = $(subst .o,.c,$(TESTOBJS) $(NDIALOGOBJS) $(LIBOBJS)) $(subst .So,.c,$(LIBSHOBJS))
- 
--SHAREDDIR = shared
--SHAREDOBJS = $(patsubst %,$(SHAREDDIR)/%, $(LIBOBJS))
-+.SUFFIXES: .o .So
- 
--ifeq (.depend,$(wildcard .depend))
--TARGET=$(PROGS)
--else
--TARGET=depend $(PROGS)
--endif
-+SHAREDOBJS = ${LIBSHOBJS}
+--- Makefile.in	2009-09-24 11:03:09.000000000 -0400
++++ Makefile.in	2010-01-06 01:33:55.000000000 -0500
+@@ -51,5 +51,5 @@
+ endif
  
 -all:	$(TARGET) _snackmodule.so
 +all:	$(TARGET)
  
- test:	$(TESTOBJS) $(LIBNEWT)
--	gcc -g -o test $(TESTOBJS) $(LIBNEWT) $(LIBS) -static
-+	${CC} -g ${LDFLAGS} -o test $(TESTOBJS) $(LIBNEWT) $(LIBS) -static
+ test:	test.o $(LIBNEWT)
+@@ -68,11 +68,11 @@
+ 	$(CC) -g -o showkey showkey.o $(LIBNEWT) $(LIBS)
  
- testgrid:	testgrid.o $(LIBNEWT)
--	gcc -g -o testgrid testgrid.o $(LIBNEWT) $(LIBS)
-+	${CC} -g ${LDFLAGS} -o testgrid testgrid.o $(LIBNEWT) $(LIBS)
- 
- testtree:	testtree.o $(LIBNEWT)
--	gcc -g -o testtree testtree.o $(LIBNEWT) $(LIBS)
-+	${CC} -g ${LDFLAGS} -o testtree testtree.o $(LIBNEWT) $(LIBS)
- 
++ifdef PYTHONVERS
++install-sh:	_snackmodule.so
++all:	_snackmodule.so
  _snackmodule.so:   snackmodule.c $(LIBNEWTSH)
- 	for ver in $(PYTHONVERS) ; do \
- 	    if [ ! -f "$$ver/_snackmodule.so" -o $(LIBNEWTSH) -nt "$$ver/_snackmodule.so" ]; then \
- 	    	mkdir -p $$ver ;\
--	        gcc $(CFLAGS) -I/usr/include/$$ver -fPIC -c -o $$ver/snackmodule.o snackmodule.c ;\
--		gcc --shared $(SHCFLAGS) -o $$ver/_snackmodule.so $$ver/snackmodule.o -L . $(LIBNEWTSH) ;\
-+	        ${CC} $(CFLAGS) -I/usr/include/$$ver -fPIC -c -o $$ver/snackmodule.o snackmodule.c ;\
-+		${CC} --shared $(SHCFLAGS) -o $$ver/_snackmodule.so $$ver/snackmodule.o -L . $(LIBNEWTSH) ;\
- 	    fi ; \
- 	done
+-	for ver in $(PYTHONVERS) ; do \
+-	    	mkdir -p $$ver ;\
+-	        $(CC) $(CFLAGS) -I/usr/include/$$ver $(SHCFLAGS) -c -o $$ver/snackmodule.o snackmodule.c ;\
+-		$(CC) --shared $(SHCFLAGS) -o $$ver/_snackmodule.so $$ver/snackmodule.o -L .  -lnewt ;\
+-	done
+-	touch $@
++	$(CC) $(CFLAGS) $(CPPFLAGS) -I${LOCALBASE}/include/python${PYTHONVERS} $(SHCFLAGS) -c -o snackmodule.o snackmodule.c
++	$(CC) --shared $(SHCFLAGS) -o _snackmodule.so snackmodule.o -L .  -lnewt
++endif
  
  whiptail: $(NDIALOGOBJS) $(LIBNEWTSH)
--	gcc -g -o whiptail $(NDIALOGOBJS) -L . $(LIBNEWTSH) $(LIBS) -lpopt
-+	${CC} -g ${LDFLAGS} -o whiptail $(NDIALOGOBJS) -L . $(LIBNEWTSH) $(LIBS) -lpopt
+@@ -80,5 +80,5 @@
  
  whiptcl.so: $(WHIPTCLOBJS) $(LIBNEWTSH)
--	gcc -shared $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . $(LIBNEWTSH) -ltcl -lslang -lpopt -lm
-+	${CC} -shared ${LDFLAGS} $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . $(LIBNEWTSH) ${LIBS}
+-	$(CC) -shared $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . -lnewt  $(LIBTCL) -lpopt
++	$(CC) -shared $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . -lnewt  $(LIBTCL) $(LIBS) -lpopt
  
--$(LIBNEWT): $(LIBNEWT)($(LIBOBJS))
-+$(LIBNEWT): $(LIBOBJS)
-+	ar q ${LIBNEWT} ${LIBOBJS}
-+	ranlib ${LIBNEWT}
- 
- newt.o: newt.c Makefile
- 	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
-@@ -90,20 +94,16 @@
- depend:
- 	$(CPP) $(CFLAGS) -M $(SOURCES) > .depend
- 
--$(SHAREDDIR):
--	mkdir -p $(SHAREDDIR)
--
- sharedlib: $(LIBNEWTSH)
- 
--$(LIBNEWTSH): $(SHAREDDIR) $(SHAREDOBJS)
--	gcc -shared -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
-+$(LIBNEWTSH): $(SHAREDOBJS)
-+	${CC} -shared ${LDFLAGS} -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
- 
--$(SHAREDDIR)/%.o : %.c
-+.c.So:
- 	$(CC) $(SHCFLAGS) -c $(CFLAGS) -o $@ $<
- 
--$(SHAREDDIR)/newt.o: newt.c Makefile
--	$(CC) $(SHCFLAGS) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
--
-+newt.So: newt.c Makefile
-+	$(CC) $(SHCFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
- 
- install: $(LIBNEWT) install-sh whiptail
- 	[ -d $(instroot)/$(bindir) ] || install -m 755 -d $(instroot)/$(bindir)
-@@ -113,16 +113,11 @@
- 	install -m 644 $(LIBNEWT) $(instroot)/$(libdir)
- 	install -s -m 755 whiptail $(instroot)/$(bindir)
+ $(LIBNEWT): $(LIBOBJS)
+@@ -119,18 +119,18 @@
+ 	install -m 755 whiptail $(instroot)/$(bindir)
+ 	install -m 644 whiptail.1 $(instroot)/$(man1dir)
+-	make -C po datadir=$(instroot)/$(datadir) install
+-	install -m 644 -D libnewt.pc $(instroot)/$(pkgconfigdir)/libnewt.pc
++	${MAKE} -C po datadir=$(instroot)/$(datadir) install
++	install -m 644 libnewt.pc $(instroot)/$(pkgconfigdir)/libnewt.pc
  
 -install-sh: sharedlib $(WHIPTCLSO) _snackmodule.so
 +install-sh: sharedlib $(WHIPTCLSO)
  	[ -d $(instroot)/$(libdir) ] || install -m 755 -d $(instroot)/$(libdir)
- 	install -s -m 755 $(LIBNEWTSH) $(instroot)/$(libdir)
- 	ln -sf $(LIBNEWTSH) $(instroot)/$(libdir)/libnewt.so
- 	[ -n "$(WHIPTCLSO)" ] && install -s -m 755 whiptcl.so $(instroot)/$(libdir) || :
+ 	install -m 755 $(LIBNEWTSH) $(instroot)/$(libdir)
+ 	ln -sf $(LIBNEWTSONAME) $(instroot)/$(libdir)/libnewt.so
+ 	ln -sf $(LIBNEWTSH) $(instroot)/$(libdir)/$(LIBNEWTSONAME)
+-	[ -n "$(WHIPTCLSO)" ] && install -m 755 whiptcl.so $(instroot)/$(libdir) || :
 -	for ver in $(PYTHONVERS) ; do \
 -	   [ -d $(instroot)/$(libdir)/$$ver/site-packages ] || install -m 755 -d $(instroot)/$(libdir)/$$ver/site-packages ;\
--	   install -s -m 755 $$ver/_snackmodule.so $(instroot)/$(libdir)/$$ver/site-packages ;\
--	   install -m 755 snack.py $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	   install -m 755 $$ver/_snackmodule.so $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	   install -m 644 snack.py $(instroot)/$(libdir)/$$ver/site-packages ;\
 -	done
++	[ -n "$(WHIPTCLSO)" ] && install -m 755 whiptcl.so ${TCL_LIBDIR}/whip || :
++ifdef PYTHONVERS
++	[ -d $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages ] || install -m 755 -d $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages
++	install -m 755 _snackmodule.so $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages
++	install -m 644 snack.py $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages
++endif
  
- configure:  configure.in
- 	autoconf
-@@ -140,7 +135,3 @@
- 	@rm -f /tmp/newt-$(VERSION).tar.gz
- 	@echo " "
- 	@echo "The final archive is ./newt-$(VERSION).tar.gz."
--
--ifeq (.depend,$(wildcard .depend))
--include .depend
--endif
+ Makefile: newt.spec
