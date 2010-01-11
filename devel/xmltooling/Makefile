@@ -31,7 +31,7 @@ post-patch:
 	${WRKSRC}/configure
 
 .if defined(NOPORTDOCS)
-        @${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
