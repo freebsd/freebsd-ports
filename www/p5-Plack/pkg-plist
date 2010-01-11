@@ -30,6 +30,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/Lint.pm
 %%SITE_PERL%%/Plack/Middleware/MethodOverride.pm
 %%SITE_PERL%%/Plack/Middleware/RearrangeHeaders.pm
+%%SITE_PERL%%/Plack/Middleware/Runtime.pm
 %%SITE_PERL%%/Plack/Middleware/SimpleContentFilter.pm
 %%SITE_PERL%%/Plack/Middleware/StackTrace.pm
 %%SITE_PERL%%/Plack/Middleware/Static.pm
