@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	An easy editor with both curses and X11 interfaces
 
 OPTIONS=	XAE "Build X11 version 'xae'" off
@@ -30,6 +30,12 @@ PLIST_SUB=	XAE=""
 PLIST_FILES=	bin/aee bin/rae lib/help.ae %%XAE%%bin/xae %%XAE%%bin/rxae
 
 MAN1=		aee.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/create.mk.aee
+	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/create.mk.xae
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
+		${WRKSRC}/create.mk.xae
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aee ${PREFIX}/bin
