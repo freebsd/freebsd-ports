@@ -15,7 +15,7 @@ MASTER_SITES=	http://ftp.linux.org.uk/pub/lisp/cclan/ \
 PKGNAMEPREFIX=	cl-
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A lisp macro for reading math expressions in infix form
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf

@@ -16,7 +16,7 @@ PKGNAMESUFFIX=		-clisp
 DISTFILES=		# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Partitioning Common Lisp sequences
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/split-sequence/split-sequence.asd:${PORTSDIR}/devel/cl-split-sequence \

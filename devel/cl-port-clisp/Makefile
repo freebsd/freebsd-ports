@@ -16,7 +16,7 @@ PKGNAMESUFFIX=		-clisp
 DISTFILES=		# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Cross-Lisp portability package
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
