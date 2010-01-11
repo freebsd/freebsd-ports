@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.31
+PORTVERSION=	0.8.32
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -452,6 +452,10 @@ post-patch:
 	( cd ${WRKSRC} && \
 		${PATCH} -p0 < \
 			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
+.endif
+.if defined(WITH_UDPLOG_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
 do-build:
