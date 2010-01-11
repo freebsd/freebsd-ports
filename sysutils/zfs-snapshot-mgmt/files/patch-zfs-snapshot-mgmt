@@ -1,0 +1,14 @@
+--- zfs-snapshot-mgmt~
++++ zfs-snapshot-mgmt
+@@ -154,7 +154,11 @@ class FSInfo
+   end
+ 
+   def pool
++    if name["/"]
+     name[/\A.*?\//].chop
++    else
++      name
++    end
+   end
+ 
+ private
