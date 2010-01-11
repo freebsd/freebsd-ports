@@ -7,7 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -55,6 +55,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(sysconfdir)/ember/|$$(sysconfdir)/ember|g' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/components/ogre/Makefile.in
+	@${REINPLACE_CMD} -e 's|#plugindir=.*|plugindir="${LOCALBASE}/lib/OGRE"|; \
+		s|,Plugin_CgProgramManager||g' \
+		${WRKSRC}/ember.conf
 
 post-install:
 	(cd ${WRKDIR}/media-${PORTVERSION}/media && ${FIND} . -type f -print | \
