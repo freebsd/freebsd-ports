@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geometry-Primitive
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -28,6 +28,7 @@ MAN3=		Geometry::Primitive.3 \
 		Geometry::Primitive::Arc.3 \
 		Geometry::Primitive::Bezier.3 \
 		Geometry::Primitive::Circle.3 \
+		Geometry::Primitive::Dimension.3 \
 		Geometry::Primitive::Ellipse.3 \
 		Geometry::Primitive::Equal.3 \
 		Geometry::Primitive::Line.3 \

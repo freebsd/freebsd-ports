@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Geometry/Primitive/Arc.pm
 %%SITE_PERL%%/Geometry/Primitive/Bezier.pm
 %%SITE_PERL%%/Geometry/Primitive/Circle.pm
+%%SITE_PERL%%/Geometry/Primitive/Dimension.pm
 %%SITE_PERL%%/Geometry/Primitive/Ellipse.pm
 %%SITE_PERL%%/Geometry/Primitive/Equal.pm
 %%SITE_PERL%%/Geometry/Primitive/Line.pm
