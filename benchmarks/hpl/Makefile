@@ -7,7 +7,7 @@
 
 PORTNAME=	hpl
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netlib.org/benchmark/hpl/
 
@@ -16,13 +16,14 @@ COMMENT=	High Performance Computing Linpack Benchmark
 
 .if !defined(WITH_LAM)
 BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 .else
 BUILD_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
+RUN_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
 CC=		${LOCALBASE}/bin/mpicc
 FC=		${LOCALBASE}/bin/mpicc
 .endif
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
