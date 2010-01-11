@@ -1,14 +1,18 @@
 bin/gbirthday
 share/applications/gbirthday.desktop
-%%DATADIR%%/gbirthday.py
-share/pixmaps/gbirthday/birthday.png
-share/pixmaps/gbirthday/birthdaylost.png
-share/pixmaps/gbirthday/birthdaynext.png
-share/pixmaps/gbirthday/birthdaytoday.png
-share/pixmaps/gbirthday/gbirthday.png
-share/pixmaps/gbirthday/gbirthday.svg
-share/pixmaps/gbirthday/nobirthday.png
-share/pixmaps/gbirthday/pie.svg
+share/pixmaps/gbirthday.png
+%%PYTHON_SITELIBDIR%%/gbirthday/__init__.py
+%%PYTHON_SITELIBDIR%%/gbirthday/addressbook.py
+%%PYTHON_SITELIBDIR%%/gbirthday/databases.py
+%%PYTHON_SITELIBDIR%%/gbirthday/gtk_funcs.py
+%%PYTHON_SITELIBDIR%%/gbirthday/pics/birthday.png
+%%PYTHON_SITELIBDIR%%/gbirthday/pics/birthdaylost.png
+%%PYTHON_SITELIBDIR%%/gbirthday/pics/birthdaynext.png
+%%PYTHON_SITELIBDIR%%/gbirthday/pics/birthdayred.png
+%%PYTHON_SITELIBDIR%%/gbirthday/pics/birthdaytoday.png
+%%PYTHON_SITELIBDIR%%/gbirthday/pics/gbirthday.png
+%%PYTHON_SITELIBDIR%%/gbirthday/pics/nobirthday.png
+%%PYTHON_SITELIBDIR%%/gbirthday/status_icon.py
 %%NLS%%share/locale/de/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/en/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gbirthday.mo
@@ -21,6 +25,6 @@ share/pixmaps/gbirthday/pie.svg
 %%NLS%%share/locale/sk/LC_MESSAGES/gbirthday.mo
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry %%DATADIR%%
-@dirrmtry share/pixmaps/gbirthday
+@dirrm %%PYTHON_SITELIBDIR%%/gbirthday/pics
+@dirrm %%PYTHON_SITELIBDIR%%/gbirthday
 @dirrmtry share/applications
