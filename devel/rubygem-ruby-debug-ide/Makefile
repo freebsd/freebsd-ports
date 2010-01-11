@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-debug-ide
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	debug-commons
@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-ruby-debug-base>=0.10.0:${PORTSDIR}/devel/rubygem-ruby-debu
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rdebug-ide
 
