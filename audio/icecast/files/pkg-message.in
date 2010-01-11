@@ -1,0 +1,15 @@
+-----------------------------------------------------------------
+
+Icecast's various components have been installed in the following
+directories:
+
+  - The icecast server:
+    %%PREFIX%%/sbin/icecast
+
+  - Icecast configuration files have been installed in:
+    %%PREFIX%%/etc/icecast/
+
+  - Icecast documentation is located in:
+    %%PREFIX%%/share/doc/icecast/
+
+-----------------------------------------------------------------
