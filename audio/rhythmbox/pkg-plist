@@ -676,6 +676,7 @@ share/rhythmbox/uri-new.ui
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/rb
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/python-console
 @dirrm lib/rhythmbox/plugins/power-manager
+%%MTP%%@dirrm lib/rhythmbox/plugins/mtpdevice
 @dirrm lib/rhythmbox/plugins/mmkeys
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/magnatune
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/lyrics
