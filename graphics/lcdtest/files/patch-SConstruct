@@ -9,3 +9,14 @@
  opts.Update (env)
  opts.Save (conf_file, env)
 
+--- SConstruct.orig    2007-06-05 16:38:23.000000000 -0700
++++ SConstruct 2009-10-26 14:22:35.000000000 -0700
+@@ -50,7 +50,7 @@
+ # Cache options
+ #-----------------------------------------------------------------------------
+
+-env = Environment (options = opts)
++env = Environment (**ARGUMENTS)
+ opts.Update (env)
+ opts.Save (conf_file, env)
+
