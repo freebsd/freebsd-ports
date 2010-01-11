@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	weave
-PORTVERSION=	1.0b3
+DISTVERSION=	1.0rc
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
 		LOCAL/glarkin
@@ -43,7 +44,7 @@ PLIST_SUB+=	XPI_XPIDIR="${XPI_DIR:S,^${PREFIX}/,,}" \
 
 post-install:
 	${MKDIR} ${XPI_DIR}
-	(cd ${XPI_DIR}; tar -xf ${WRKSRC}/dist/xpi/weave-${PORTVERSION}-rel.xpi)
+	(cd ${XPI_DIR}; tar -xf ${WRKSRC}/dist/xpi/weave-${DISTVERSION}-rel.xpi)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_DIR}/
 	${CHMOD} -R a+rX,go-w ${XPI_DIR}/
 	${MKDIR} ${PREFIX}/lib/firefox3/extensions

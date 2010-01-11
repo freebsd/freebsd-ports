@@ -5,7 +5,7 @@
  ifeq ($(buildid),)
    date    := $(shell date -u +%Y%m%d%H%M)
 -  revid   := $(shell hg tip --template '{node|short}')
-+  revid   := 0ff643d2615e
++  revid   := d2a85a1d1d17
    buildid := $(date)-$(revid)
    buildid_short := $(date)
  endif
