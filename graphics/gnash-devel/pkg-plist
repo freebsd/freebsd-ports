@@ -40,7 +40,6 @@ include/gnash/Camera_as.h
 include/gnash/Capabilities_as.h
 include/gnash/CapsStyle_as.h
 include/gnash/CharacterProxy.h
-include/gnash/Class.h
 include/gnash/ClipboardFormats_as.h
 include/gnash/ClipboardTransferMode_as.h
 include/gnash/Clipboard_as.h
@@ -128,13 +127,13 @@ include/gnash/Movie.h
 include/gnash/MovieClip.h
 include/gnash/MovieClip_as.h
 include/gnash/MovieFactory.h
-include/gnash/Namespace.h
 include/gnash/NativeFunction.h
 include/gnash/NetConnection_as.h
 include/gnash/NetStatusEvent_as.h
 include/gnash/NetStream_as.h
 include/gnash/NewObjectSample_as.h
 include/gnash/ObjectEncoding_as.h
+include/gnash/ObjectURI.h
 include/gnash/PixelSnapping_as.h
 include/gnash/Point_as.h
 include/gnash/PrintJobOptions_as.h
@@ -258,6 +257,9 @@ etc/gnashrc.dist
 lib/gnash/libgnashamf-%%GNASHVER%%.so
 lib/gnash/libgnashamf.la
 lib/gnash/libgnashamf.so
+lib/gnash/libgnashagg.la
+lib/gnash/libgnashagg.so
+lib/gnash/libgnashagg.so.0
 lib/gnash/libgnashbase.la
 lib/gnash/libgnashbase.so
 lib/gnash/libgnashbase.so.0
