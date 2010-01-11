@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.60
+lib/libmunger.so.61
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/httpd.munger
 %%DATADIR%%/scgid.munger
