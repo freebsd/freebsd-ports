@@ -4245,7 +4245,7 @@ databases/mysql54-scripts|databases/mysql55-scripts|2010-01-04|Updated to milest
 databases/p5-DBD-mysql54|databases/p5-DBD-mysql55|2010-01-04|Updated to milestone 2
 misc/sword15|misc/sword|2010-01-06|Has expired: use misc/sword
 misc/bibletime-kde3|misc/bibletime|2010-01-06|Has expired: use misc/bibletime
-mail/squirrelmail-devel|use mail/squirrelmail|2010-01-06|Has expired: use mail/squirrelmail
+mail/squirrelmail-devel|mail/squirrelmail|2010-01-06|Has expired: use mail/squirrelmail
 security/openvpn-devel||2010-01-07|base port updated, use security/openvpn instead
 lang/drscheme|lang/plt-scheme|2010-01-07|superceded by lang/plt-scheme
 databases/mysql60-client||2010-01-10|Has expired: no longer under development
