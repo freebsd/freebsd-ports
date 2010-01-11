@@ -214,9 +214,6 @@
     SUBDIR += mysql55-client
     SUBDIR += mysql55-scripts
     SUBDIR += mysql55-server
-    SUBDIR += mysql60-client
-    SUBDIR += mysql60-scripts
-    SUBDIR += mysql60-server
     SUBDIR += mysql_last_value
     SUBDIR += mysqlard
     SUBDIR += mysqlbackup
@@ -304,7 +301,6 @@
     SUBDIR += p5-DBD-mysql50
     SUBDIR += p5-DBD-mysql51
     SUBDIR += p5-DBD-mysql55
-    SUBDIR += p5-DBD-mysql60
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-Shell
     SUBDIR += p5-DBICx-Deploy
