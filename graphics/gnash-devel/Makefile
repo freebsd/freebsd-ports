@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	20091129
+PORTVERSION=	20100110
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -22,7 +22,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	gnash-[0-9]*
 
-REVISION=	11659
+REVISION=	11741
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -38,7 +38,8 @@ MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--disable-testsuite \
+		--with-agg-lib="${LOCALBASE}/lib" \
+		--disable-testsuite --enable-avm2 \
 		--with-plugins-install=system \
 		--sysconfdir="${WRKDIR}/etc" \
 		--disable-jemalloc # leads to infinite recursion on FreeBSD
@@ -267,5 +268,9 @@ post-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
 .endif
+
+x-maintainer-make-snapshot:
+	bzr export --revision=${REVISION} --root=gnash-trunk \
+		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://bzr.savannah.gnu.org/r/gnash/trunk/
 
 .include <bsd.port.post.mk>
