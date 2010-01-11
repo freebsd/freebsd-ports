@@ -1,0 +1,28 @@
+--- rtengine/CMakeLists.txt.orig	2010-01-10 18:56:15.000000000 -0800
++++ rtengine/CMakeLists.txt	2010-01-10 19:02:25.000000000 -0800
+@@ -11,15 +11,7 @@
+     SET (EXTRA_LIB "ws2_32 ../lib/libiptcdata.a ../lib/libjpeg.a ../lib/libpng.a ../lib/libtiff.a ../lib/libz.a ../rawzor_win/rwz_sdk_s.a")
+     ADD_DEFINITIONS (-DRAWZOR_SUPPORT)
+ ELSE (WIN32)
+-    IF (CMAKE_SIZEOF_VOID_P EQUAL 4)
+-        SET (EXTRA_INCDIR "../rawzor_lin32")
+-	SET (EXTRA_LIBDIR "../rawzor_lin32")
+-    ELSEIF (CMAKE_SIZEOF_VOID_P EQUAL 8)
+-        SET (EXTRA_INCDIR "../rawzor_lin64")
+-	SET (EXTRA_LIBDIR "../rawzor_lin64")
+-    ENDIF (CMAKE_SIZEOF_VOID_P EQUAL 4)
+-    SET (EXTRA_LIB "iptcdata -lrwz_sdk")
+-    ADD_DEFINITIONS (-DRAWZOR_SUPPORT)
++    SET (EXTRA_LIB "iptcdata")
+ ENDIF (WIN32)
+ 
+ include_directories (. ../rtexif ${EXTRA_INCDIR} ${GLIB2_INCLUDE_DIRS} ${GLIBMM_INCLUDE_DIRS})
+@@ -31,8 +23,6 @@
+     stdimagesource.cc myfile.cc iccjpeg.c hlmultipliers.cc improccoordinator.cc
+     helpers.cc processingjob.cc rtthumbnail.cc utils.cc hlmultipliers.cc bilateral2.cc)
+ 
+-set_target_properties (rtengine PROPERTIES COMPILE_FLAGS "-O3 -ffast-math -fexpensive-optimizations -funroll-loops -msse")
+-
+ #add_executable (rtcmd rtetest.cc)
+ #add_executable (ppmap pparamsmap.cc)
+ 

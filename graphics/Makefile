@@ -791,6 +791,7 @@
     SUBDIR += qvplay
     SUBDIR += raster3d
     SUBDIR += rawstudio
+    SUBDIR += rawtherapee
     SUBDIR += ray++
     SUBDIR += rayshade
     SUBDIR += reallyslick

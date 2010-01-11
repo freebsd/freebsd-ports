@@ -1,0 +1,12 @@
+--- rtexif/CMakeLists.txt.orig	2010-01-10 19:02:49.000000000 -0800
++++ rtexif/CMakeLists.txt	2010-01-10 19:03:09.000000000 -0800
+@@ -4,7 +4,5 @@
+ 
+ IF (WIN32)
+     set_target_properties (rtexif PROPERTIES COMPILE_FLAGS "-O3 -ffast-math -fexpensive-optimizations")
+-ELSE (WIN32)
+-    set_target_properties (rtexif PROPERTIES COMPILE_FLAGS "-O3 -ffast-math -fexpensive-optimizations -fPIC")
+ ENDIF (WIN32)
+- 
+\ No newline at end of file
++ 
