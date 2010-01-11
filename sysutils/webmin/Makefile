@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.500
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -35,6 +36,7 @@ post-extract:
 			${TAR} --unlink -xzf ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 		done; \
 	fi
+	@${CP} ${WRKSRC}/mount/freebsd-mounts-7.c ${WRKSRC}/mount/freebsd-mounts-8.c
 
 post-patch:
 .for file in	config-freebsd apache/config-freebsd \
