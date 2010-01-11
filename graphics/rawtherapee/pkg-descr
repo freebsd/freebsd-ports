@@ -1,0 +1,45 @@
+    RawTherapee is a powerful RAW image processing appliction.
+Main features :
+ * Selectable high performance demosaicing algorithms
+   (EAHD and HPHD and VNG-4). 
+ * Image post processing in 16 bit / channel mode 
+ * Exposure control in RGB space 
+ * Auto exposure with adjustable clipping point / Exposure compensation /
+   Shadow and highight compression / Contrast adjustment, curve editor
+ * White balance adjustment in RGB space 
+ * With in-camera, automatic and spot white balance options /
+   Temperature/Green tint fine tuning
+ * Highlight Recovery
+ * Shadows/Highlights control in RGB space
+ * Basic Luminance curve tool to modify the luminance channel
+   in CIELab color space 
+ * Brightness / Contrast adjustment, curve editor
+ * USM sharpening applied on the CIELab luminance channel 
+ * Classical USM parameters (Radius, Amount, Threshold) / Option to avoid
+   noise amplification / Sharpening halo control
+ * Optional RL Deconvolution based sharpening for even better sharpening results
+ * Color shift control in CIELab color space 
+ * Allows color shift by shifting the CIELab "a" and "b" channels
+ * Color booster applied on the CIELab "a" and "b" channels 
+ * Amplifies color channels "a" and "b" together or separately /
+   Avoids color overamplification in high chrominance areas /
+   Option to avoid clipping caused by too high color boosting
+ * Luminance denoising algorithm applied on the CIELab luminance channel 
+ * Edge sensitive method to preserve as much details as possible
+ * Color denoising tool applied on the CIELab "a" and "b" channels 
+ * Classical gaussian blur or edge sensitive bluring of the color channels
+ * Fast switching between different postprocessing profiles
+ * Image flipping horizontally or vertically, rotation by 90 degrees clockwise
+   or counter clockwise
+ * Arbitrary image rotation (straightening tool) with fill function or
+   automatic crop
+ * Simple lens distortion correction
+ * Crop tool
+ * Chromatic Aberration correction tool
+ * Channel Mixer for Red, Green and Blue channels
+ * C/A Correction
+ * Vignetting Correction
+ * ICC based color management
+ * Change History with bookmarks to support before/after checking
+
+WWW:	http://www.rawtherapee.com

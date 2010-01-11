@@ -1,0 +1,12 @@
+--- rtgui/CMakeLists.txt.orig	2010-01-10 18:48:29.000000000 -0800
++++ rtgui/CMakeLists.txt	2010-01-10 19:02:44.000000000 -0800
+@@ -66,8 +66,7 @@
+ ENDIF (WIN32)
+ 
+ 
+-set_target_properties (rth PROPERTIES COMPILE_FLAGS "-O3")
+-target_link_libraries (rth rtengine liblcms.a iptcdata libjpeg.a libpng.a libz.a libtiff.a ${EXTRA_LIB} gthread-2.0 gobject-2.0 
++target_link_libraries (rth rtengine lcms iptcdata jpeg png z tiff ${EXTRA_LIB} gthread-2.0 gobject-2.0 
+    ${GLIB2_LIBRARIES} ${GLIBMM_LIBRARIES} ${GTK_LIBRARIES} ${GTKMM_LIBRARIES} ${GIO_LIBRARIES} ${GIOMM_LIBRARIES})
+ 
+ IF (WIN32)
