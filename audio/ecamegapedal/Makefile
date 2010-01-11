@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
-MAINTAINER=	lazyklimm@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio processor
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
