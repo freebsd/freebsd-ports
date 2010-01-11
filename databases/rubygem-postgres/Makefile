@@ -24,4 +24,10 @@ PG_CONFIG=	${LOCALBASE}/bin/pg_config
 CONFIGURE_ARGS=	--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
 		--with-pgsql-lib-dir=`${PG_CONFIG} --libdir`
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == "1.9"
+BROKEN=		does not compile with ruby 1.9, please use rubygem-pg
+.endif
+
+.include <bsd.port.post.mk>
