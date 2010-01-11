@@ -257,9 +257,9 @@ etc/gnashrc.dist
 lib/gnash/libgnashamf-%%GNASHVER%%.so
 lib/gnash/libgnashamf.la
 lib/gnash/libgnashamf.so
-lib/gnash/libgnashagg.la
-lib/gnash/libgnashagg.so
-lib/gnash/libgnashagg.so.0
+%%AGG%%lib/gnash/libgnashagg.la
+%%AGG%%lib/gnash/libgnashagg.so
+%%AGG%%lib/gnash/libgnashagg.so.0
 lib/gnash/libgnashbase.la
 lib/gnash/libgnashbase.so
 lib/gnash/libgnashbase.so.0

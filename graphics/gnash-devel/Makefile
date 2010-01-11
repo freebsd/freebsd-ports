@@ -168,7 +168,9 @@ CONFIGURE_ARGS+=	--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 .if defined(WITH_AGG) && !defined(WITH_OPENGL) && !defined(WITH_CAIRO)
 LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
 CONFIGURE_ARGS+=	--enable-renderer=agg
+PLIST_SUB+=		AGG=""
 .elif !defined(WITH_AGG) && defined(WITH_OPENGL) && !defined(WITH_CAIRO)
+PLIST_SUB+=		AGG="@comment "
 .	if defined(WITH_KDE4)
 IGNORE=			doesn't support OpenGL renderer with KDE4 gui yet. Please rerun 'make config' and select different renderer or disable KDE4 GUI
 .	endif
@@ -178,6 +180,7 @@ LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 .	endif
 CONFIGURE_ARGS+=	--enable-renderer=ogl
 .elif !defined(WITH_AGG) && !defined(WITH_OPENGL) && defined(WITH_CAIRO)
+PLIST_SUB+=		AGG="@comment "
 .	if defined(WITH_KDE) || defined(WITH_KDE4)
 IGNORE=			doesn't support Cairo renderer with KDE/KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE/KDE4 GUIs
 .	endif
