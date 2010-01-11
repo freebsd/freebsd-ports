@@ -1,5 +1,5 @@
---- spamass-milter.cpp.ORIG	2006-06-17 11:06:30.000000000 +0200
-+++ spamass-milter.cpp	2006-06-17 11:10:11.000000000 +0200
+--- spamass-milter.cpp.orig	2006-03-23 16:41:36.000000000 -0500
++++ spamass-milter.cpp	2010-01-11 09:32:07.000000000 -0500
 @@ -161,6 +161,7 @@
  char *defaultuser;				/* Username to send to spamc if there are multiple recipients */
  char *defaultdomain;			/* Domain to append if incoming address has none */
@@ -20,16 +20,17 @@
  	/* Process command line options */
  	while ((c = getopt(argc, argv, args)) != -1) {
  		switch (c) {
-@@ -232,6 +238,8 @@
+@@ -232,6 +238,9 @@
  				flag_reject = true;
  				reject_score = atoi(optarg);
  				break;
 +			case 'R':
 +				rejecttext = strdup (optarg);
++				break;
  			case 'u':
  				flag_sniffuser = true;
  				defaultuser = strdup(optarg);
-@@ -299,6 +307,7 @@
+@@ -299,6 +308,7 @@
        cout << "   -P pidfile: Put processid in pidfile" << endl;
        cout << "   -r nn: reject messages with a score >= nn with an SMTP error.\n"
                "          use -1 to reject any messages tagged by SA." << endl;
@@ -37,7 +38,7 @@
        cout << "   -u defaultuser: pass the recipient's username to spamc.\n"
                "          Uses 'defaultuser' if there are multiple recipients." << endl;
        cout << "   -x: pass email address through alias and virtusertable expansion." << endl;
-@@ -307,6 +316,11 @@
+@@ -307,6 +317,11 @@
        exit(EX_USAGE);
     }
  
@@ -49,7 +50,7 @@
  	if (pidfilename)
  	{
  		unlink(pidfilename);
-@@ -452,7 +466,7 @@
+@@ -452,7 +467,7 @@
  	if (do_reject)
  	{
  		debug(D_MISC, "Rejecting");
