@@ -1,0 +1,7 @@
+@exec mkdir -p %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/policyd-spf.conf.sample %D/%%ETCDIR%%/policyd-spf.conf; then rm -f %D/%%ETCDIR%%/policyd-spf.conf; fi
+%%ETCDIR%%/policyd-spf.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/policyd-spf.conf ] ; then cp -p %D/%F %B/policyd-spf.conf; fi
+bin/policyd-spf
+%%PYTHON_SITELIBDIR%%/policydspfsupp.py
+@dirrmtry %%ETCDIR%%
