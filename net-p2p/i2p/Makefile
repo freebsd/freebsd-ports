@@ -81,7 +81,7 @@ do-install:
 # doc
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme*.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/installer/resources/readme/readme*.html ${DOCSDIR}
 # line taken from textproc/xerces-j maintained by hq@FreeBSD.org
 	@cd ${JAVADOC_WRKSRC} && \
 		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
