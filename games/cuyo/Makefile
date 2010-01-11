@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://mirror.publicns.net/pub/nongnu/cuyo/
 DISTNAME=	${PORTNAME}-2.~-1.1
 
-MAINTAINER=	mdg583@hotmail.com
+MAINTAINER=	mdg583@gmail.com
 COMMENT=	A nice, innovative, challenging tetris-like game
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib mikmod.2:${PORTSDIR}/audio/libmikmod
