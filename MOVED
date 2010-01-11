@@ -4248,3 +4248,7 @@ misc/bibletime-kde3|misc/bibletime|2010-01-06|Has expired: use misc/bibletime
 mail/squirrelmail-devel|use mail/squirrelmail|2010-01-06|Has expired: use mail/squirrelmail
 security/openvpn-devel||2010-01-07|base port updated, use security/openvpn instead
 lang/drscheme|lang/plt-scheme|2010-01-07|superceded by lang/plt-scheme
+databases/mysql60-client||2010-01-10|Has expired: no longer under development
+databases/mysql60-server||2010-01-10|Has expired: no longer under development
+databases/mysql60-scripts||2010-01-10|Has expired: no longer under development
+databases/p5-DBD-mysql60||2010-01-10|Has expired: no longer under development
