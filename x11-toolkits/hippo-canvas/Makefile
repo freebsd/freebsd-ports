@@ -7,7 +7,7 @@
 
 PORTNAME=	hippo-canvas
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libcroco-0.6.pc:${PORTSDIR}/textpr
 LIB_DEPENDS=	croco-0.6.3:${PORTSDIR}/textproc/libcroco \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
-
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
 USE_GMAKE=	yes
@@ -31,13 +30,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--enable-gtk-doc
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gtkdocize:${PORTSDIR}/textproc/gtk-doc
-.else
 CONFIGURE_ARGS+=	--disable-gtk-doc
 pre-configure:
 	${REINPLACE_CMD} -e 's/^SUBDIRS =.*$$/SUBDIRS = ./g' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
