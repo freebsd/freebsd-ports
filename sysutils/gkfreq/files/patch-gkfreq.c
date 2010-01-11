@@ -36,7 +36,7 @@ diff -u -p gkfreq.c.orig gkfreq.c
  {
 +#ifdef __FreeBSD__
 +	int freq;
-+	int len = sizeof(freq);
++	size_t len = sizeof(freq);
 +
 +	if (oid_freq_len <= 0 ||
 +	    sysctl(oid_freq, oid_freq_len, &freq, &len, 0, 0) < 0)
