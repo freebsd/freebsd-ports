@@ -4358,6 +4358,12 @@ glog                            ports/devel/glog
 glom                            ports/databases/glom
 gloox                           ports/net-im/gloox
 glpi                            ports/www/glpi
+glpi-plugins-AdditionalReports  ports/textproc/glpi-plugins-AdditionalReports
+glpi-plugins-DataInjection      ports/textproc/glpi-plugins-DataInjection
+glpi-plugins-additionalreports  ports/textproc/glpi-plugins-AdditionalReports
+glpi-plugins-datainjection      ports/textproc/glpi-plugins-DataInjection
+glpi-plugins-tracker-agent      ports/net-mgmt/glpi-plugins-tracker-agent
+glpi-plugins-tracker-server     ports/net-mgmt/glpi-plugins-tracker-server
 glpk                            ports/math/glpk
 glpng                           ports/graphics/glpng
 glproto                         ports/x11/glproto
@@ -8321,6 +8327,7 @@ linux-seamonkey                 ports/www/linux-seamonkey
 linux-seamonkey-devel           ports/www/linux-seamonkey-devel
 linux-sha-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-shoutcast                 ports/audio/linux-shoutcast
+linux-skulltag                  ports/games/linux-skulltag
 linux-sof                       ports/games/linux-sof
 linux-spheresofchaos-demo       ports/games/linux-spheresofchaos-demo
 linux-ssamtfe                   ports/games/linux-ssamtfe
