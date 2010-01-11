@@ -1,0 +1,5 @@
+==========================================================================
+NOTE: In order to compile examples for liblrq, you will
+also need pngwriter port (%%PORTSDIR%%/graphics/pngwriter).
+Examples are located in %%EXAMPLESDIR%%
+==========================================================================

@@ -31,7 +31,8 @@ PORTDOCS=	*
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 
-PKGMESSAGE=	${WRKDIR}/pkg_message
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTSDIR=${PORTSDIR}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -60,12 +61,6 @@ post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-
-	@${ECHO_CMD} "==========================================================================" >> ${PKGMESSAGE}
-	@${ECHO_CMD} "NOTE: In order to compile examples for liblrq, you will" >> ${PKGMESSAGE}
-	@${ECHO_CMD} "also need pngwriter port (${PORTSDIR}/graphics/pngwriter)." >> ${PKGMESSAGE}
-	@${ECHO_CMD} "Examples are located in ${EXAMPLESDIR}" >> ${PKGMESSAGE}
-	@${ECHO_CMD} "==========================================================================" >> ${PKGMESSAGE}
 
 .if !exists(${LOCALBASE}/lib/libpngwriter.a)
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
