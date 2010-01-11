@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	gbirthday
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A birthday reminder for Evolution and some others
 
-OPTIONS=	EVO	"Evolution support"	on \
-		THUNDER	"Thunderbird/Sunbird support"	off \
-		MYSQL	"MySQL database support"	off
+OPTIONS=	EVO	"Enable Evolution support"	on \
+		THUNDER	"Enable Thunderbird/Sunbird support"	off \
+		MYSQL	"Enable MySQL database support"	off \
+		NOTIFY	"Enable libnotify support"	off
 
 NO_WRKSUBDIR=	yes
 USE_PYTHON_RUN=	yes
@@ -45,19 +46,25 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
+.if defined(WITH_NOTIFY)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/${PORTNAME}|${DATADIR}|g ;  \
-		s|/usr/share/pixmaps|${PREFIX}/share/pixmaps|g ; \
-		s|.mozilla-thunderbird|.thunderbird|g' \
-		${WRKSRC}/src/${PORTNAME}.py ${WRKSRC}/gbirthday.desktop.in
+	@${REINPLACE_CMD} -e 's|.mozilla.thunderbird|.thunderbird|g' \
+		${WRKSRC}/src/${PORTNAME}/databases.py
+	@${REINPLACE_CMD} -e 's|@VER@|${PORTVERSION}|g' \
+		${WRKSRC}/src/${PORTNAME}/__init__.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
+		${WRKSRC}/src/gb
 .if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -e 's|_Comment|Comment|' ${WRKSRC}/gbirthday.desktop.in
+	@${REINPLACE_CMD} -e 's|_Comment|Comment|' ${WRKSRC}/${PORTNAME}.desktop.in
 .endif
 
 do-build:
 .if !defined(WITHOUT_NLS)
-	@-intltool-merge -d ${WRKSRC}/po ${WRKSRC}/gbirthday.desktop.in \
-		${WRKSRC}/gbirthday.desktop
+	@-intltool-merge -d ${WRKSRC}/po ${WRKSRC}/${PORTNAME}.desktop.in \
+		${WRKSRC}/${PORTNAME}.desktop
 	@(for lang in ${LANGUAGES} ; do \
 		cd ${WRKSRC}/po ; \
 		${LOCALBASE}/bin/msgfmt $$lang.po -o $$lang.mo ; \
@@ -65,11 +72,11 @@ do-build:
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${PREFIX}/share/pixmaps/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/pics/* ${PREFIX}/share/pixmaps/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME}.py ${DATADIR}
-	${LN} -fs ${DATADIR}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/pics/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_SCRIPT} ${WRKSRC}/src/gb ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/*.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/pics/*.png ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
 	@${MKDIR} ${PREFIX}/share/applications
 .if !defined(WITHOUT_NLS)
 	@(for lang in ${LANGUAGES} ; do \
