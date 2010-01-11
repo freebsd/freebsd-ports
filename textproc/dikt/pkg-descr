@@ -1,5 +1,5 @@
-Dikt is a dictionary application for KDE4. It is the client
-side implementation of Dict protocol, with a browser interface
+Dikt is a dictionary for KDE. Dikt is a network application
+that implements the Dict protocol, with a browser interface
 specialized for querying dictionaries.
 
-WWW: http://diktv1.googlepages.com/
+WWW: http://dikt.googlecode.com/

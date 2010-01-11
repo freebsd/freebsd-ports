@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	1j
+PORTVERSION=	2
 CATEGORIES=	textproc net kde
-MASTER_SITES=	http://diktv1.googlepages.com/	\
-		LOCAL/yzlin
+MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	goran.tal@gmail.com
