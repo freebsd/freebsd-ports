@@ -14,7 +14,7 @@ MASTER_SITES=		ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 PKGNAMEPREFIX=		cl-
 DISTNAME=		clocc-${PORTNAME}_2002-10-02-1
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Cross-Lisp portability package
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf

@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-sbcl
 DISTFILES=	# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A lisp macro to read math statements in infix notation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/infix/infix.asd:${PORTSDIR}/devel/cl-infix \

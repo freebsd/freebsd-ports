@@ -16,7 +16,7 @@ PKGNAMESUFFIX=		-clisp
 DISTFILES=		# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		A parser generator for Common Lisp
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/meta/meta.asd:${PORTSDIR}/textproc/cl-meta \
