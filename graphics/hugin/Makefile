@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hugin
-PORTVERSION=	2009.2.0
+PORTVERSION=	2009.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -47,7 +47,9 @@ MAN1=		\
 		PTBatcherGUI.1 \
 		align_image_stack.1 \
 		autooptimiser.1 \
+		calibrate_lens.1 \
 		celeste_standalone.1 \
+		cpclean.1 \
 		fulla.1 \
 		hugin.1 \
 		hugin_hdrmerge.1 \
