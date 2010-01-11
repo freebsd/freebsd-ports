@@ -3,7 +3,9 @@ bin/PTBatcherGUI
 bin/align_image_stack
 bin/autooptimiser
 bin/autopano-noop.sh
+bin/calibrate_lens
 bin/celeste_standalone
+bin/cpclean
 bin/fulla
 bin/hugin
 bin/hugin_hdrmerge
@@ -96,6 +98,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/150px-Big_ben_fisheye.jpg
 %%DATADIR%%/xrc/data/help_en_EN/150px-Big_ben_rectilinear.jpg
 %%DATADIR%%/xrc/data/help_en_EN/150px-Big_ben_stereographic.jpg
+%%DATADIR%%/xrc/data/help_en_EN/16bit.html
 %%DATADIR%%/xrc/data/help_en_EN/16bit_workflow_with_hugin.html
 %%DATADIR%%/xrc/data/help_en_EN/17af7474cdfd5abe24fd07eb58810dba.png
 %%DATADIR%%/xrc/data/help_en_EN/180px-2125768589_b.jpg
@@ -139,6 +142,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/428px-Local-analysis-window.png
 %%DATADIR%%/xrc/data/help_en_EN/44ab04cdf6dce93c3e7a7cb1d00e8c83.png
 %%DATADIR%%/xrc/data/help_en_EN/4d2df1ec22beeb53124bd8941ea0db11.png
+%%DATADIR%%/xrc/data/help_en_EN/4d4d22d9c63b47c6f8fb7825ec5cd1db.png
 %%DATADIR%%/xrc/data/help_en_EN/4e84c278c8ff9bd39bd309031bd3fab4.png
 %%DATADIR%%/xrc/data/help_en_EN/4f16f3edffeeede179fcfeedd155175c.png
 %%DATADIR%%/xrc/data/help_en_EN/531px-Smooth-edge.png
@@ -155,6 +159,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/602px-Entropy-cutoff.png
 %%DATADIR%%/xrc/data/help_en_EN/687431209ed4a8feab0c151b622ef1e0.png
 %%DATADIR%%/xrc/data/help_en_EN/6e1e330821217bd2d14c40ea21747a03.png
+%%DATADIR%%/xrc/data/help_en_EN/700px-Autopano-done.png
 %%DATADIR%%/xrc/data/help_en_EN/7410666dfcbeeaa522ddf92427bc74ba.png
 %%DATADIR%%/xrc/data/help_en_EN/7a62f58ab1c3f78523eee522e71a9416.png
 %%DATADIR%%/xrc/data/help_en_EN/7ab63d1bb57f091d55507c4c4c582f03.png
@@ -162,6 +167,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/84aad7e0b33f2a1c47ed32902df4f3f3.png
 %%DATADIR%%/xrc/data/help_en_EN/89539baed8c394f4b6eea437f16b047d.png
 %%DATADIR%%/xrc/data/help_en_EN/8c2849b63c6f416da3d028b8f8584027.png
+%%DATADIR%%/xrc/data/help_en_EN/91ae7fc8fc2b7701135c69552e7379ed.png
 %%DATADIR%%/xrc/data/help_en_EN/98dda29ec0838b4a60698e962d90cd03.png
 %%DATADIR%%/xrc/data/help_en_EN/Aliasing.html
 %%DATADIR%%/xrc/data/help_en_EN/AliasingPScubic.jpg
@@ -173,6 +179,9 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Alpha_channel.html
 %%DATADIR%%/xrc/data/help_en_EN/Aspect_Ratio.html
 %%DATADIR%%/xrc/data/help_en_EN/Autooptimiser.html
+%%DATADIR%%/xrc/data/help_en_EN/Autopano-align.png
+%%DATADIR%%/xrc/data/help_en_EN/Autopano-prefs.png
+%%DATADIR%%/xrc/data/help_en_EN/Autopano-searching.png
 %%DATADIR%%/xrc/data/help_en_EN/Autopano-sift-C.html
 %%DATADIR%%/xrc/data/help_en_EN/Autopano-sift.html
 %%DATADIR%%/xrc/data/help_en_EN/Autopano.html
@@ -212,6 +221,8 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Chromatic_aberration.html
 %%DATADIR%%/xrc/data/help_en_EN/Color_correct_tiff.html
 %%DATADIR%%/xrc/data/help_en_EN/Colour_profile.html
+%%DATADIR%%/xrc/data/help_en_EN/Contrast.html
+%%DATADIR%%/xrc/data/help_en_EN/Control_point_generators.html
 %%DATADIR%%/xrc/data/help_en_EN/Control_points.html
 %%DATADIR%%/xrc/data/help_en_EN/Crop_factor.html
 %%DATADIR%%/xrc/data/help_en_EN/Cropped_TIFF.html
@@ -220,6 +231,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Cylindrical.html
 %%DATADIR%%/xrc/data/help_en_EN/Cylindrical_Projection.html
 %%DATADIR%%/xrc/data/help_en_EN/Cylindrical_panorama.html
+%%DATADIR%%/xrc/data/help_en_EN/DSLR_spherical_resolution.html
 %%DATADIR%%/xrc/data/help_en_EN/Depth_of_Field.html
 %%DATADIR%%/xrc/data/help_en_EN/Dust_Removal_with_Flatfield.html
 %%DATADIR%%/xrc/data/help_en_EN/Dynamic_range.html
@@ -336,6 +348,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Parallax.html
 %%DATADIR%%/xrc/data/help_en_EN/Perspective_correction.html
 %%DATADIR%%/xrc/data/help_en_EN/Perspective_distortion.html
+%%DATADIR%%/xrc/data/help_en_EN/Pfstmo.html
 %%DATADIR%%/xrc/data/help_en_EN/Pincushion-distortion.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Pincushion_distortion.html
 %%DATADIR%%/xrc/data/help_en_EN/Pitch.html
@@ -343,16 +356,22 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Projections.html
 %%DATADIR%%/xrc/data/help_en_EN/Pto2mk.html
 %%DATADIR%%/xrc/data/help_en_EN/QTVR.html
+%%DATADIR%%/xrc/data/help_en_EN/Qtvr2img.html
 %%DATADIR%%/xrc/data/help_en_EN/RAW.html
 %%DATADIR%%/xrc/data/help_en_EN/RGBE.html
 %%DATADIR%%/xrc/data/help_en_EN/RatingStar_002.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Rectilinear_Projection.html
 %%DATADIR%%/xrc/data/help_en_EN/Roll.html
+%%DATADIR%%/xrc/data/help_en_EN/SB_Blended.jpg
+%%DATADIR%%/xrc/data/help_en_EN/SB_Parallax.jpg
+%%DATADIR%%/xrc/data/help_en_EN/SB_Parallax_overlapped.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Sharp-edge.png
+%%DATADIR%%/xrc/data/help_en_EN/SmartBlend.html
 %%DATADIR%%/xrc/data/help_en_EN/Smooth-edge.png
 %%DATADIR%%/xrc/data/help_en_EN/Spherical.html
 %%DATADIR%%/xrc/data/help_en_EN/Stereographic_Projection.html
 %%DATADIR%%/xrc/data/help_en_EN/Straight_line_control_points.html
+%%DATADIR%%/xrc/data/help_en_EN/Swing_rod.html
 %%DATADIR%%/xrc/data/help_en_EN/TIFF.html
 %%DATADIR%%/xrc/data/help_en_EN/Tca_correct.html
 %%DATADIR%%/xrc/data/help_en_EN/Tone_mapping.html
@@ -367,6 +386,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Zenith.html
 %%DATADIR%%/xrc/data/help_en_EN/a70d0c9b2e529c999ec05569e1638668.png
 %%DATADIR%%/xrc/data/help_en_EN/a957404c96e59f1746f97ab668c8e1f8.png
+%%DATADIR%%/xrc/data/help_en_EN/ab807c8735d25a66b577b029bc0e568f.png
 %%DATADIR%%/xrc/data/help_en_EN/b27abc434a11d07b390df859d7aa782a.png
 %%DATADIR%%/xrc/data/help_en_EN/b79407c343611ecb4ce1d32612c4450e.png
 %%DATADIR%%/xrc/data/help_en_EN/bfe8b8159acf66b3ea23c52611fb819a.png
@@ -381,6 +401,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/e49f330a1a85dbab8724c8177de38cb0.png
 %%DATADIR%%/xrc/data/help_en_EN/f103730f19548bcf3e7bc170fb1f7860.png
 %%DATADIR%%/xrc/data/help_en_EN/f44fbe128fd280b77a856b2275d7a655.png
+%%DATADIR%%/xrc/data/help_en_EN/fa5313ae442c1ac7f832c141880e3e74.png
 %%DATADIR%%/xrc/data/help_en_EN/fd9eb36b9149cc4e2efebd10bdc4fdf2.png
 %%DATADIR%%/xrc/data/help_en_EN/hugin.hhc
 %%DATADIR%%/xrc/data/help_en_EN/hugin.hhk
@@ -560,6 +581,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/straighten_pano.png
 %%DATADIR%%/xrc/data/straighten_pano.xpm
 %%DATADIR%%/xrc/data/tips.txt
+%%DATADIR%%/xrc/data/transparent.png
 %%DATADIR%%/xrc/data/undo.png
 %%DATADIR%%/xrc/data/zoomin.xpm
 %%DATADIR%%/xrc/data/zoomout.xpm
