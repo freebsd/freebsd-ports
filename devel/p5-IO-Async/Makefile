@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl modules that implement asynchronous filehandle IO
 
-RUN_DEPENDS=	p5-Heap>=0:${PORTSDIR}/devel/p5-Heap
+RUN_DEPENDS=	p5-Async-MergePoint>=0:${PORTSDIR}/devel/p5-Async-MergePoint \
+		p5-Heap>=0.80:${PORTSDIR}/devel/p5-Heap \
+		p5-Socket-GetAddrInfo>=0.08:${PORTSDIR}/net/p5-Socket-GetAddrInfo
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
