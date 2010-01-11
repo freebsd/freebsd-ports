@@ -60,6 +60,8 @@ OPTIONS=	ADPLUG "Build with adplug support" on \
 		X11    "Build with X11 support" on \
 		SDL    "Build with SDL support" on
 
+PORTSCOUT=	skipv:0.1.19
+
 .include <bsd.port.pre.mk>
 
 .if exists(${TIMIDITY_CFG}) || !defined(WITHOUT_MIDI)
