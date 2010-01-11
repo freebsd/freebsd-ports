@@ -28,7 +28,7 @@ CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.6*
 LATEST_LINK=	rt38
 
 OPTIONS=	MYSQL 		"Enable MySQL backend" 		on  \
-		APACHE		"Enable ${APACHE_PORT} server"		on  \
+		APACHE		"Enable ${APACHE_PORT} server"	on  \
 		MODPERL		"Enable mod_perl support"	on \
 		POSTGRESQL 	"Enable Postgresql backend"	off \
 		ORACLE		"Enable Oracle backend"		off \
@@ -68,7 +68,7 @@ BUILD_DEPENDS+=	${STANDALONE_DEPS}
 RUN_DEPENDS+=	${STANDALONE_DEPS}
 .endif
 
-.if defined(WITH_APACHE)
+.if defined(WITH_APACHE) || defined(WITH_FASTCGI)
 USE_APACHE=	1.3+
 .endif
 
