@@ -5,10 +5,14 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	seamonkey-
+PORTVERSION=	0.96.0
 
 COMMENT=	A GnuPG extension for the Seamonkey mail client
 
-MASTERDIR=	${.CURDIR}/../enigmail-thunderbird
+MASTERDIR=	${.CURDIR}/../enigmail
+
+GECKO=		seamonkey
+GECKO_PORTDIR=	www/${GECKO}
+GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/mozilla
 
 .include "${MASTERDIR}/Makefile"

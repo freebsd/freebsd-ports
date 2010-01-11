@@ -1,7 +1,9 @@
 *****************************************************************************
-You have to manually delete the components database (compreg.dat), located in
-your profile directory in order to use enigmail.
+In order to activate the Enigmail extension, every user should install the 
+XPI file into his own profile via the menu:
 
-If you upgraded Mozilla/Thunderbird from a previous release you have to
-remove also the XUL.mfasl file and the content of the chrome subdirectory.
+Tools -> Add-ons -> Install (for Thunderbird)
+- or -
+File -> Open file (for Seamonkey)
+
 *****************************************************************************

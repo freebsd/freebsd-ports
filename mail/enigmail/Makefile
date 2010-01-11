@@ -6,90 +6,71 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	0.93.0
-PORTREVISION?=	8
+PORTVERSION?=	1.0.0
 CATEGORIES=	mail security
-MASTER_SITES=	\
-		http://mozdev.secsup.org/enigmail/src/ \
-		http://downloads.us-east3.mozdev.org/enigmail/src/ \
-		http://mozdev.oregonstate.edu/enigmail/src/ \
-		http://mozdev.sweetooth.org/enigmail/src/ \
-		http://ftp.heanet.ie/pub/mozdev/enigmail/src/ \
-		http://mirror.meisterwerk.net/rmozdev/enigmail/src/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		ipc-${IPCVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
+PKGNAMEPREFIX=	${GECKO}-
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT?=	A GnuPG extension for the Mozilla mail client
+COMMENT?=	A GnuPG extension for the Mozilla mail clients
 
-DEPRECATED=	The mozilla team has shifted the development branch of mozilla to \
-		seamonkey, this port is outdated. \
-		Please consider using www/seamonkey or mail/thunderbird instead.
-EXPIRATION_DATE=2010-01-10
-
-EXTRACT_DEPENDS?=	${NONEXISTENT}:${PORTSDIR}/${LOCAL_SRCDIR}:configure \
-		zip:${PORTSDIR}/archivers/zip \
+EXTRACT_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:configure \
+		${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gmake:${PORTSDIR}/devel/gmake \
-		intltool-extract:${PORTSDIR}/textproc/intltool
-BUILD_DEPENDS?=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS?=	nspr4:${PORTSDIR}/devel/nspr
-RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
+		intltool-extract:${PORTSDIR}/textproc/intltool \
+		${LOCALBASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto
+BUILD_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR}
+RUN_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
+		gpg:${PORTSDIR}/security/gnupg
 
-RUN_DEPENDS+=	gpgv:${PORTSDIR}/security/gnupg1
+.if !defined(GECKO)
+IGNORE=		is not available anymore for Mozilla: use one of the slave ports
+.endif
 
-IPCVERSION?=	1.1.3
+.if defined(GECKO_EXTDIR)
+GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/${GECKO_EXTDIR}
+WRKSRC=		${WRKDIR}/${GECKO_EXTDIR}
+MOZSRC=		${WRKSRC}/mozilla
+.else
+GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/mozilla
+WRKSRC=		${WRKDIR}/mozilla
+MOZSRC=		${WRKSRC}
+.endif
 
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libidl
-USE_XORG=	xp
 
-WRKSRC=		${WRKDIR}/mozilla
-LOCAL_SRCDIR?=	www/mozilla
-LOCAL_SUBDIR?=	lib/mozilla
-LOCAL_PREFIX=	${PREFIX}/${LOCAL_SUBDIR}
+.include <bsd.port.pre.mk>
 
-COMPONENTS=	ipc.xpt enigmime.xpt libenigmime.so enigmail.xpt enigmail.js enigprefs-service.js
-CHROME=		enigmime.jar enigmail.jar enigmail-skin.jar enigmail-skin-tbird.jar
-PREF=		enigmail.js
-
-PLIST_SUB=	LOCAL_SUBDIR=${LOCAL_SUBDIR}
+XPI_FILE=	${DISTNAME}-${GECKO}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
+PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
+PLIST_DIRS=	%%DATADIR%%
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@${CP} -R ${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla ${WRKSRC}
+	@${CP} -R ${GECKO_WRKSRC} ${WRKDIR}
 	@for f in ${EXTRACT_ONLY}; do \
-		cd ${WRKSRC}/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS}; \
+		cd ${WRKSRC}/mailnews/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS}; \
 	done
 
 pre-patch:
-	@${REINPLACE_CMD} -e "s|${LOCAL_SRCDIR}|mail/enigmail${PKGNAMESUFFIX}|g" \
+	@${REINPLACE_CMD} -e "s|${GECKO_PORTDIR}|mail/enigmail-${GECKO}|g" \
 		`${FIND} ${WRKSRC} -name autoconf.mk`
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} export)
-	@(cd ${WRKSRC}/modules/libreg; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${WRKSRC}/xpcom/string; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${WRKSRC}/xpcom; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${WRKSRC}/xpcom/obsolete; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${WRKSRC}/extensions/ipc; ./makemake -r; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS});
-	@(cd ${WRKSRC}/extensions/enigmail; ./makemake -r; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS});
+	@(cd ${MOZSRC}/modules/libreg; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
+	@(cd ${MOZSRC}/xpcom/string; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
+	@(cd ${MOZSRC}/xpcom; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
+	@(cd ${MOZSRC}/xpcom/obsolete; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
+	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ./makemake -r; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS});
+	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} xpi);
 
 do-install:
-	@for f in ${COMPONENTS}; do \
-		${INSTALL_DATA} ${WRKSRC}/dist/bin/components/$$f ${LOCAL_PREFIX}/components; \
-	done
-	@for f in ${CHROME}; do \
-		${INSTALL_DATA} ${WRKSRC}/dist/bin/chrome/$$f ${LOCAL_PREFIX}/chrome; \
-	done
-	@for f in ${PREF}; do \
-		${INSTALL_DATA} ${WRKSRC}/dist/bin/defaults/pref/$$f ${LOCAL_PREFIX}/defaults/pref; \
-	done
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${MOZSRC}/dist/bin/${DISTNAME:S/0.0/0/}-freebsd-${ARCH}.xpi ${DATADIR}/${XPI_FILE}
 
 post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
