@@ -2847,6 +2847,7 @@
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-needle
+    SUBDIR += rubygem-newgem
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-piston
