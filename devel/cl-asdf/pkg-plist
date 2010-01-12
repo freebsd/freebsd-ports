@@ -16,3 +16,4 @@ etc/asdf-init.lisp.default
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIB32DIR%%/common-lisp/system-registry
 @dirrm %%LIB32DIR%%/common-lisp/asdf
+@dirrm %%LIB32DIR%%/common-lisp
