@@ -570,6 +570,7 @@
     SUBDIR += hs-smallcheck
     SUBDIR += hs-testpack
     SUBDIR += hs-transformers
+    SUBDIR += hs-unamb
     SUBDIR += hs-uniplate
     SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
