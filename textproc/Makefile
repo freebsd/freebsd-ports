@@ -224,6 +224,7 @@
     SUBDIR += hs-polyparse-ghc
     SUBDIR += hs-stringsearch
     SUBDIR += hs-tagsoup
+    SUBDIR += hs-xml
     SUBDIR += hsb-aspell
     SUBDIR += htdig
     SUBDIR += html
