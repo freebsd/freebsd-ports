@@ -9,7 +9,8 @@ PORTNAME=       kix
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=     graphics kld
-MASTER_SITES=   http://www.witchspace.com/files/
+MASTER_SITES=   http://homepage.ntlworld.com/jon.belson/files/kix-1.0.tar.gz \
+	LOCAL/pgollucci
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	jon@witchspace.com
