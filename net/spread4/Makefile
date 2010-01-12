@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	LOCAL/wen
 DISTNAME=	spread-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
