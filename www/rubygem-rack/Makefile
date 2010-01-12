@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Rack, a Ruby Webserver Interface
 
 USE_RUBY=	yes
