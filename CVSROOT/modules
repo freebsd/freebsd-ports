@@ -2932,9 +2932,10 @@ engine_pkcs11                   ports/security/engine_pkcs11
 engradient                      ports/x11-themes/engradient
 engrave                         ports/devel/engrave
 enhance                         ports/x11-toolkits/enhance
-enigmail                        ports/mail/enigmail
 enigmail-seamonkey              ports/mail/enigmail-seamonkey
+enigmail-seamonkey2             ports/mail/enigmail-seamonkey2
 enigmail-thunderbird            ports/mail/enigmail-thunderbird
+enigmail-thunderbird3           ports/mail/enigmail-thunderbird3
 enity                           ports/x11/enity
 enjoympeg                       ports/multimedia/enjoympeg
 enlightenment                   ports/x11-wm/enlightenment
@@ -9462,9 +9463,6 @@ mysql51-server                  ports/databases/mysql51-server
 mysql55-client                  ports/databases/mysql55-client
 mysql55-scripts                 ports/databases/mysql55-scripts
 mysql55-server                  ports/databases/mysql55-server
-mysql60-client                  ports/databases/mysql60-client
-mysql60-scripts                 ports/databases/mysql60-scripts
-mysql60-server                  ports/databases/mysql60-server
 mysql_last_value                ports/databases/mysql_last_value
 mysqlard                        ports/databases/mysqlard
 mysqlbackup                     ports/databases/mysqlbackup
@@ -11184,7 +11182,6 @@ p5-DBD-mysql41                  ports/databases/p5-DBD-mysql41
 p5-DBD-mysql50                  ports/databases/p5-DBD-mysql50
 p5-DBD-mysql51                  ports/databases/p5-DBD-mysql51
 p5-DBD-mysql55                  ports/databases/p5-DBD-mysql55
-p5-DBD-mysql60                  ports/databases/p5-DBD-mysql60
 p5-DBI                          ports/databases/p5-DBI
 p5-DBI-Shell                    ports/databases/p5-DBI-Shell
 p5-DBICx-Deploy                 ports/databases/p5-DBICx-Deploy
@@ -14992,7 +14989,6 @@ p5-dbd-mysql41                  ports/databases/p5-DBD-mysql41
 p5-dbd-mysql50                  ports/databases/p5-DBD-mysql50
 p5-dbd-mysql51                  ports/databases/p5-DBD-mysql51
 p5-dbd-mysql55                  ports/databases/p5-DBD-mysql55
-p5-dbd-mysql60                  ports/databases/p5-DBD-mysql60
 p5-dbd-odbc                     ports/databases/p5-DBD-ODBC
 p5-dbd-oracle                   ports/databases/p5-DBD-Oracle
 p5-dbd-pg                       ports/databases/p5-DBD-Pg
@@ -19274,6 +19270,7 @@ postfix-gps                     ports/mail/postfix-gps
 postfix-policyd-sf              ports/mail/postfix-policyd-sf
 postfix-policyd-spf             ports/mail/postfix-policyd-spf
 postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
+postfix-policyd-spf-python      ports/mail/postfix-policyd-spf-python
 postfix-policyd-weight          ports/mail/postfix-policyd-weight
 postfix-postfwd                 ports/mail/postfix-postfwd
 postfix23                       ports/mail/postfix23
@@ -20761,6 +20758,7 @@ rawdog                          ports/news/rawdog
 rawio                           ports/benchmarks/rawio
 rawrec                          ports/audio/rawrec
 rawstudio                       ports/graphics/rawstudio
+rawtherapee                     ports/graphics/rawtherapee
 ray++                           ports/graphics/ray++
 raysfilter                      ports/mail/raysfilter
 rayshade                        ports/graphics/rayshade
