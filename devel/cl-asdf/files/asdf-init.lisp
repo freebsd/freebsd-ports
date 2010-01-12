@@ -4,11 +4,11 @@
 
 ;; Redistribution and use  in source and binary   forms, with or  without
 ;; modification, are permitted provided that the following conditions are
-;; met:                                                                  
+;; met:
 
 ;; 1. Redistributions  of  source  code  must retain  the above copyright
-;;    notice, this list of conditions and the following disclaimer.      
-;; 								      
+;;    notice, this list of conditions and the following disclaimer.
+;;
 ;; 2. Redistributions in  binary form must reproduce  the above copyright
 ;;    notice, this list of conditions and the following disclaimer in the
 ;;    documentation and/or other materials provided with the distribution
@@ -53,6 +53,9 @@
 ;; SBCL:
 ;;  %%PREFIX%%/etc/sbclrc
 ;;  ~/.sbclrc
+;;
+;; CLOZURE CL / OPENMCL:
+;;  ~/.ccl-init.lisp
 ;;
 ;; After that, you can load your installed ports like this (using
 ;; textproc/cl-ppcre as an example):
@@ -126,12 +129,17 @@
 ;;;; Paths
 
 (defvar *asdf-pathname*
-  "%%PREFIX%%/lib/common-lisp/asdf/asdf"
+  ;; Clozure CL's internal asdf
+  #+openmcl "%%PREFIX%%/lib/ccl/tools/asdf"
+  ;; SBCL's internal asdf
+  #+sbcl "%%PREFIX%%/lib/sbcl/asdf/asdf"
+  ;; CMU and clisp
+  #-(or openmcl sbcl) "%%PREFIX%%/lib/common-lisp/asdf/asdf"
   "Path of the ASDF library")
 
 (defvar *system-registry*
-  "%%PREFIX%%/lib/common-lisp/system-registry"
-  "FreeBSDs contribution to the entral registry for ASDF system
+  "%%PREFIX%%/lib/common-lisp/system-registry/"
+  "FreeBSD's contribution to the central registry for ASDF system
 definitions.  This will be added to asdf:*central-registry*, you
 should modify that in order to add other directories.")
 
@@ -158,10 +166,11 @@ error of type UNSUPPORTED-LISP-IMPLEMENTATION.
 This function has to be extended for each new Lisp implementation that
 should be able to use the ASDF-based Lisp ports. If you do this, you
 should probably extend GETENV as well."
-  #+clisp "clispfasl"
-  #+cmu   "cmuclfasl"
-  #+sbcl  "sbclfasl"
-  #-(or clisp cmu sbcl) (error 'unsupported-lisp-implementation))
+  #+clisp   "clispfasl"
+  #+cmu     "cmuclfasl"
+  #+sbcl    "sbclfasl"
+  #+openmcl "cclfasl"
+  #-(or clisp cmu sbcl openmcl) (error 'unsupported-lisp-implementation))
 
 (defun getenv (varname)
   "Return the value of environment variable VARNAME, as a string.
@@ -179,12 +188,12 @@ has to be extended for each Lisp implementation that is to work with
 FreeBSDs Lisp ports. If you do this, you should probably extend
 LISP-SPECIFIC-FASL-SUBDIR as well."
   #+sbcl (sb-ext:posix-getenv varname)
-  #+cmu  (cdr (assoc varname ext:*environment-list* 
+  #+cmu  (cdr (assoc varname ext:*environment-list*
 		     :test #'equalp
 		     :key #'string))
   #+clisp (sys::getenv varname)
-  #-(or sbcl cmu clisp) (error 'unsupported-lisp-implementation))
-
+  #+openmcl (ccl::getenv varname)
+  #-(or sbcl cmu clisp openmcl) (error 'unsupported-lisp-implementation))
 
 ;;;; Load and configure ASDF
 
@@ -205,7 +214,7 @@ LISP-SPECIFIC-FASL-SUBDIR as well."
 (if (and (getenv "FBSD_ASDF_COMPILE_PORT")
 	 (getenv "WRKSRC"))
 
-    ;;;; We are compiling a port - fasls should go to ${WRKSRC}
+    ;; We are compiling a port - fasls should go to ${WRKSRC}
     (defmethod asdf:output-files :around ((op asdf:compile-op)
 					  (file asdf:cl-source-file))
       (let ((wrksrc (getenv "WRKSRC"))
@@ -220,16 +229,21 @@ LISP-SPECIFIC-FASL-SUBDIR as well."
 	  :name (pathname-name default-output-name)
 	  :type "fasl"))))
 
-  ;; Normal operation: load from lisp-specific-fasl-subdir
-  (defmethod asdf:output-files :around ((op asdf:compile-op)
-					(file asdf:cl-source-file))
-    (let ((default-output-file (car (call-next-method))))
-      (list
-       (make-pathname
-	:directory `(:absolute ,@(cdr (pathname-directory default-output-file))
-			       ,(lisp-specific-fasl-subdir))
-	:type "fasl"
-	:defaults default-output-file))))
-)
+    ;; Normal operation: load from lisp-specific-fasl-subdir
+    (defmethod asdf:output-files :around ((op asdf:compile-op)
+                                          (file asdf:cl-source-file))
+      (let ((default-output-file (car (call-next-method))))
+        (let ((output-file-string (namestring default-output-file)))
+          (list
+           (if
+            (or
+             (search "%%PREFIX%%/lib/ccl" output-file-string)
+             (search "%%PREFIX%%/lib/sbcl" output-file-string))
+            (make-pathname :defaults default-output-file)
+            (make-pathname
+             :directory `(:absolute ,@(cdr (pathname-directory default-output-file))
+                                    ,(lisp-specific-fasl-subdir))
+             :type "fasl"
+             :defaults default-output-file)))))))
 
-;;; asdf-init.lisp ends here
+;;;; asdf-init.lisp ends here

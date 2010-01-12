@@ -1,12 +1,15 @@
---- asdf.lisp.orig	Thu Mar 20 13:58:09 2003
-+++ asdf.lisp	Thu Mar 20 13:58:49 2003
-@@ -322,8 +322,7 @@
- 	
- (defvar *central-registry*
-   '(*default-pathname-defaults*
--    #+nil "/home/dan/src/sourceforge/cclan/asdf/systems/"
--    #+nil "telent:asdf;systems;"))
-+    "%%PREFIX%%/lib/common-lisp/system-registry/"))
+
+$FreeBSD$
+
+--- asdf.lisp.orig
++++ asdf.lisp
+@@ -630,7 +630,8 @@
+             (system-source-file (cdr system-pair)))))))
  
- (defun sysdef-central-registry-search (system)
-   (let ((name (coerce-name system)))
+ (defvar *central-registry*
+-  `((directory-namestring *default-pathname-defaults*))
++  `((directory-namestring *default-pathname-defaults*)
++     "%%PREFIX%%/lib/common-lisp/system-registry/")
+ "A list of 'system directory designators' ASDF uses to find systems.
+ 
+ A 'system directory designator' is a pathname or a function
