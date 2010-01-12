@@ -21,6 +21,7 @@ MAN1=		qvplay.1 qvrec.1 qvalldel.1
 
 MYPORTDOCS=	FAQ.txt HISTORY PROTOCOL.txt PROTOCOL.eng \
 		README README.eng README.FreeBSD
+SUB_FILES=	pkg-message
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}
@@ -35,6 +36,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../../${file} ${DOCSDIR}
 .endfor
 .endif
-	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
