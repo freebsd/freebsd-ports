@@ -21,7 +21,7 @@ murmur_user=${murmur_user:-"murmur"}
 name=murmur
 rcvar=${name}_enable
 
-command="%%PREFIX%%/bin/murmurd"
+command="%%PREFIX%%/sbin/murmurd"
 command_args="-ini %%PREFIX%%/etc/murmur.ini"
 pidfile="/var/run/murmur/murmur.pid"
 
