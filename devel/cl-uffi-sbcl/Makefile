@@ -26,14 +26,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-por
 CL_LIBDIR?=	${LOCALBASE}/lib/common-lisp
 
 do-build:
-	WRKSRC=${WRKSRC}/ FBSD_ASDF_COMPILE_PORT=t\
+	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
 	sbcl	--noinform --userinit /dev/null --disable-debugger \
 		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
 		--eval "(asdf:oos 'asdf:compile-op :uffi)" \
 		--eval "(quit)"
 
 do-install:
-	${MKDIR} ${CL_LIBDIR}/uffi/src/sbclfasl
-	${INSTALL_DATA} ${WRKSRC}/*.fasl ${CL_LIBDIR}/uffi/src/sbclfasl/
+	@${MKDIR} ${CL_LIBDIR}/uffi/src/sbclfasl
+	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${CL_LIBDIR}/uffi/src/sbclfasl/
 
 .include <bsd.port.mk>

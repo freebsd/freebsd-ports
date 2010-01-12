@@ -29,19 +29,19 @@ LPORTEXAMPLES=	Makefile Makefile.msvc acl-compat-tester.lisp arrays.lisp atoifl.
 		strtol.lisp test-examples.lisp union.lisp
 
 do-install:
-	${MKDIR} ${CL_LIBDIR}/uffi
-	${MKDIR} ${CL_LIBDIR}/uffi/src
-	${INSTALL_DATA} ${WRKSRC}/uffi.asd   ${CL_LIBDIR}/uffi/
-	${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${CL_LIBDIR}/uffi/src/
-	${LN} -sf ${CL_LIBDIR}/uffi/uffi.asd ${CL_LIBDIR}/system-registry/uffi.asd
+	@${MKDIR} ${CL_LIBDIR}/uffi
+	@${MKDIR} ${CL_LIBDIR}/uffi/src
+	@${INSTALL_DATA} ${WRKSRC}/uffi.asd   ${CL_LIBDIR}/uffi/
+	@${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${CL_LIBDIR}/uffi/src/
+	@${LN} -sf ${CL_LIBDIR}/uffi/uffi.asd ${CL_LIBDIR}/system-registry/uffi.asd
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for i in ${LPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
-	${MKDIR} ${DOCSDIR}/examples
+	@${MKDIR} ${DOCSDIR}/examples
 .for i in ${LPORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${i} ${DOCSDIR}/examples/
+	@${INSTALL_DATA} ${WRKSRC}/examples/${i} ${DOCSDIR}/examples/
 .endfor
 .endif
 

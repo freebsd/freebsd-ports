@@ -8,8 +8,8 @@ PORTNAME=	infix
 DISTVERSION=	19960628
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://ftp.linux.org.uk/pub/lisp/cclan/ \
-		ftp://ftp.ntnu.no/pub/lisp/cclan/	\
-		http://thingamy.com/cclan/	\
+		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
+		http://thingamy.com/cclan/ \
 		http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=	cl-
 PKGNAMESUFFIX=	-sbcl
@@ -29,14 +29,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-por
 NO_CDROM=	No fees or compensation can be charged
 
 do-build:
-	WRKSRC=${WRKSRC}/ FBSD_ASDF_COMPILE_PORT=t\
+	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
 	sbcl	--noinform --userinit /dev/null \
 		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
 		--eval "(asdf:oos 'asdf:compile-op :infix)" \
 		--eval "(quit)"
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/common-lisp/infix/sbclfasl
-	${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/infix/sbclfasl/
+	@${MKDIR} ${PREFIX}/lib/common-lisp/infix/sbclfasl
+	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/infix/sbclfasl/
 
 .include <bsd.port.mk>
