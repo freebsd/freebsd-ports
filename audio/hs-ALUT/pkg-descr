@@ -1,0 +1,6 @@
+A Haskell binding for the OpenAL Utility Toolkit, which makes
+managing of OpenAL contexts, loading sounds in various formats
+and creating waveforms very easy. For more information about the
+C library on which this binding is based, please see:
+
+WWW: http://connect.creativelabs.com/openal/

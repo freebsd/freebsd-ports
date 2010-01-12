@@ -291,6 +291,7 @@
     SUBDIR += herrie
     SUBDIR += hexter
     SUBDIR += holyshout
+    SUBDIR += hs-ALUT
     SUBDIR += hs-OpenAL
     SUBDIR += hydrogen
     SUBDIR += icecast
