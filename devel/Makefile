@@ -564,6 +564,7 @@
     SUBDIR += hs-safe
     SUBDIR += hs-show
     SUBDIR += hs-smallcheck
+    SUBDIR += hs-testpack
     SUBDIR += hs-transformers
     SUBDIR += hs-uniplate
     SUBDIR += hs-utf8-string-ghc
