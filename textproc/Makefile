@@ -217,6 +217,7 @@
     SUBDIR += highlight
     SUBDIR += hil-aspell
     SUBDIR += hr-aspell
+    SUBDIR += hs-Diff
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-haxml
     SUBDIR += hs-highlighting-kate-ghc
