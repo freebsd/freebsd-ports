@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xotcl
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.5
 CATEGORIES?=	lang tcl
 MASTER_SITES=	SF \
 		http://media.wu-wien.ac.at/download/
@@ -97,7 +97,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for FILE in COPYRIGHT ChangeLog README README.aol doc/TODO
+.for FILE in COPYRIGHT ChangeLog README README.aol
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
