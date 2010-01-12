@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-DISTVERSION=	2009-07-07
+PORTVERSION=	r921
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ccxvii.net/mupdf/download/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Lightweight PDF viewer and toolkit
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.10:${PORTSDIR}/graphics/jpeg
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	x11 xext
 JAM_ARGS=	-q -sLOCALBASE=${LOCALBASE} \
 		-sPTHREAD_LIBS=${PTHREAD_LIBS} ${_MAKE_JOBS}

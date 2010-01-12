@@ -1,7 +1,14 @@
---- Jamrules.orig	2009-07-07 20:08:22.000000000 +0200
-+++ Jamrules	2009-08-08 12:32:45.000000000 +0200
-@@ -47,16 +47,16 @@
- if $(HAVE_JASPER)   { DEFINES += HAVE_JASPER ; }
+--- Jamrules.orig       2009-12-09 02:59:17.000000000 +0100
++++ Jamrules    2010-01-11 21:53:06.000000000 +0100
+@@ -39,22 +39,22 @@
+ OSPLAT ?= x64 ; # this one isn't in the jambase :(
+
+ # Place all build products here:
+-ALL_LOCATE_TARGET ?= [ FDirName $(TOP) build $(OS:L)-$(OSPLAT:L)-$(BUILD:L) ] ;
++ALL_LOCATE_TARGET ?= [ FDirName $(TOP) build ] ;
+
+ # Add compile time defines for JBIG2 and JPEG2000 support.
+ if $(HAVE_JBIG2DEC) { DEFINES += HAVE_JBIG2DEC ; }
  if $(HAVE_OPENJPEG) { DEFINES += HAVE_OPENJPEG ; }
  
 -if $(OS) = LINUX
