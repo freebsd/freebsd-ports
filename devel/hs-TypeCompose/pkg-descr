@@ -1,0 +1,5 @@
+TypeCompose provides some Haskell classes and instances for forms of
+type composition, as well as some modules who have not yet found a
+home.
+
+WWW: http://haskell.org/haskellwiki/TypeCompose

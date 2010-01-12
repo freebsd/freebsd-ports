@@ -533,6 +533,7 @@
     SUBDIR += hs-StateVar
     SUBDIR += hs-Stream
     SUBDIR += hs-Tensor
+    SUBDIR += hs-TypeCompose
     SUBDIR += hs-alex
     SUBDIR += hs-binary-ghc
     SUBDIR += hs-c2hs
