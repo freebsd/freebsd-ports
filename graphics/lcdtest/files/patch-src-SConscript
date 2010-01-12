@@ -9,14 +9,3 @@
 
  env.PNG2PNM (target = 'help_font.ppm',
               source = help_font_png)
---- src/SConscript.orig        2009-10-26 15:30:35.000000000 -0700
-+++ src/SConscript     2009-10-26 15:30:53.000000000 -0700
-@@ -40,7 +40,7 @@
-                  src_suffix = '.ppm')
-
- env.Append (BUILDERS = { 'PPM2C': PPM2C },
--            PPM2CCOM = "ppmtoxpm -name `basename $SOURCE .ppm`_xpm $SOURCE | sed 's/static //;s/black/#000000/;s/magenta/#FF00FF/;s/#E40808/#009900/' >$TARGET")
-+            PPM2CCOM = "ppmtoxpm -name `basename $SOURCE .ppm`_xpm $SOURCE -hexonly | sed 's/static //;s/black/#000000/;s/magenta/#FF00FF/;s/#E40808/#009900/' >$TARGET")
-
- env.PNG2PNM (target = 'help_font.ppm',
-              source = help_font_png)
