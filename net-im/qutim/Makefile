@@ -7,6 +7,7 @@
 
 PORTNAME=	qutim
 PORTVERSION=	0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://dl.kibab.com/distfiles/qutim/ \
@@ -14,7 +15,7 @@ MASTER_SITES=	http://dl.kibab.com/distfiles/qutim/ \
 DISTNAME=	qutim_${PORTVERSION}_svn529
 
 MAINTAINER=	webmaster@kibab.com
-COMMENT=	A Qt4-based lightweight ICQ client with advanced features
+COMMENT=	A Qt4-based lightweight multiprotocol client with advanced features
 
 USE_GMAKE=	yes
 USE_QT_VER=	4
@@ -29,20 +30,6 @@ CMAKE_USE_PTHREAD=	yes
 CMAKE_VERBOSE=	yes
 CMAKE_ARGS+=	-DUNIX:BOOL=1 -DBSD:BOOL=1
 
-PLIST_FILES=	bin/qutim \
-		include/qutim/plugininterface.h \
-		include/qutim/protocolinterface.h \
-		include/qutim/iconmanagerinterface.h
-PLIST_DIRS=	include/qutim
-
-WRKSRC=		${WRKDIR}/qutim
-
-do-install:
-	@${MKDIR} ${PREFIX}/include/qutim
-	@${INSTALL_PROGRAM} ${WRKSRC}/qutim ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/include/qutim/plugininterface.h ${PREFIX}/include/qutim
-	@${INSTALL_DATA} ${WRKSRC}/include/qutim/protocolinterface.h ${PREFIX}/include/qutim
-	@${INSTALL_DATA} ${WRKSRC}/include/qutim/iconmanagerinterface.h ${PREFIX}/include/qutim
-	@${STRIP_CMD} ${PREFIX}/bin/qutim
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
