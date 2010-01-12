@@ -16,7 +16,7 @@ EXTRACT_SUFX=
 DISTFILES=	${BIN_FILES} ${SBIN_FILES}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce client and server
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
