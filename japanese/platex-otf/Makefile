@@ -6,7 +6,7 @@
 
 PORTNAME=	platex-otf
 PORTVERSION=	1.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
@@ -30,9 +30,9 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR} \
 		DVIPSDIR=${DVIPSDIR} DVIPDFMDIR=${DVIPDFMDIR}
 WRKSRC=		${WRKDIR}/otfstable
 PLIST=		${WRKDIR}/pkg-plist
-PKGMESSAGE_SUB=	DVIPSDIR=${DVIPSDIR_DST} \
+SUB_FILES=	pkg-message
+SUB_LIST=	DVIPSDIR=${DVIPSDIR_DST} \
 		DVIPDFMDIR=${DVIPDFMDIR_DST}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 TEXMFDIR=	share/texmf
 TEXMFLOCALDIR=	share/texmf-local
@@ -540,8 +540,6 @@ post-build:
 	done
 
 pre-install:
-	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_CMD} "@comment AUTOMATICALLY GENERATED PLIST" > ${PLIST}
 	@${ECHO_CMD} "${DVIPDFMDIR_DST}/cid-otf-noembed.map"  >> ${PLIST}
 .for D in CLASS OFM TFM VF DVIPDFM DVIPS
@@ -554,8 +552,8 @@ pre-install:
 	@${ECHO_CMD} "%%PORTDOCS%%%%DOCSDIR%%/otfmanual.pdf" >> ${PLIST}
 	@${ECHO_CMD} "%%PORTDOCS%%%%DOCSDIR%%/vfontmap.platex-otf" >> ${PLIST}
 	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%"  >> ${PLIST}
-	@${ECHO_CMD} "@exec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi"  >> ${PLIST}
-	@${ECHO_CMD} "@unexec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi"  >> ${PLIST}
+	@${ECHO_CMD} "@exec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR} ${PREFIX}/${TEXMFDIR}; fi"  >> ${PLIST}
+	@${ECHO_CMD} "@unexec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR} ${PREFIX}/${TEXMFDIR}; fi"  >> ${PLIST}
 
 do-install:
 .for D in CLASS OFM TFM VF DVIPDFM DVIPS
@@ -574,7 +572,7 @@ do-install:
 .endif
 
 post-install:
-	${MKTEXLSR}
+	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
