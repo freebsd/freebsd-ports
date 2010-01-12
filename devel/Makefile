@@ -554,6 +554,7 @@
     SUBDIR += hs-hint
     SUBDIR += hs-hmake
     SUBDIR += hs-hoogle
+    SUBDIR += hs-hslogger
     SUBDIR += hs-idoc
     SUBDIR += hs-language-c-ghc
     SUBDIR += hs-lazysmallcheck-ghc
