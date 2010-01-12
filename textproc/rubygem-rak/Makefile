@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rak
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 
