@@ -75,6 +75,10 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/16x16/remotetreeview.png
 %%DATADIR%%/resources/16x16/server.png
 %%DATADIR%%/resources/16x16/sitemanager.png
+%%DATADIR%%/resources/16x16/sort_down_dark.png
+%%DATADIR%%/resources/16x16/sort_down_light.png
+%%DATADIR%%/resources/16x16/sort_up_dark.png
+%%DATADIR%%/resources/16x16/sort_up_light.png
 %%DATADIR%%/resources/16x16/symlink.png
 %%DATADIR%%/resources/16x16/synchronize.png
 %%DATADIR%%/resources/16x16/unknown.png

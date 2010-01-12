@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filezilla
-PORTVERSION=	3.3.0.1
+PORTVERSION=	3.3.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -14,6 +14,8 @@ DISTNAME=	FileZilla_${PORTVERSION}_src
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
 
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
 		idn.16:${PORTSDIR}/dns/libidn
 
@@ -22,6 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_WX=		2.8
 WX_CONF_ARGS=	relative
+WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
