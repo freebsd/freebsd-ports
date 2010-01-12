@@ -574,6 +574,7 @@
     SUBDIR += hs-safe
     SUBDIR += hs-show
     SUBDIR += hs-smallcheck
+    SUBDIR += hs-split
     SUBDIR += hs-testpack
     SUBDIR += hs-transformers
     SUBDIR += hs-unamb
