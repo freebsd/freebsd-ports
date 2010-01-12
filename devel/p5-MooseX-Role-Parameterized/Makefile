@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Role-Parameterized
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ MAN3=		MooseX::Role::Parameterized.3 \
 		MooseX::Role::Parameterized::Meta::Parameter.3 \
 		MooseX::Role::Parameterized::Meta::Role::Parameterizable.3 \
 		MooseX::Role::Parameterized::Meta::Role::Parameterized.3 \
+		MooseX::Role::Parameterized::Meta::Trait::Parameterized.3 \
 		MooseX::Role::Parameterized::Parameters.3 \
 		MooseX::Role::Parameterized::Tutorial.3
 
