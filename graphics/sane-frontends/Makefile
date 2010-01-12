@@ -29,6 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		scanadf.1 xcam.1 xscanimage.1
+SUB_FILES=	pkg-message
 
 OPTIONS=	GTK1 "GTK1 support (Default is GTK2)" off \
 		GIMP "also build xscanimage as a GIMP plug-in" off
@@ -55,6 +56,6 @@ CONFIGURE_ARGS+=	--disable-gimp
 .endif
 
 post-install:
-	@${SED} 's:/usr/local:${PREFIX}:' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
