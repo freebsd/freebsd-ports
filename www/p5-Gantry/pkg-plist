@@ -17,7 +17,6 @@
 %%WWWDIR%%/results.tt
 %%WWWDIR%%/sample_wrapper.tt
 %%WWWDIR%%/search.tt
-%%WWWDIR%%/session.tt
 %%WWWDIR%%/threeway.tt
 %%WWWDIR%%/wrapper.tt
 %%WWWDIR%%/wsdl.tt
@@ -74,6 +73,7 @@
 %%WWWDIR%%/moxie/gantry_wrapper.tt
 %%WWWDIR%%/moxie/results.tt
 %%WWWDIR%%/moxie/threeway.tt
+%%WWWDIR%%/sfbb/form.tt
 %%SITE_PERL%%/Gantry.pm
 %%SITE_PERL%%/Gantry/Build.pm
 %%SITE_PERL%%/Gantry/Conf.pm
@@ -140,9 +140,9 @@
 %%SITE_PERL%%/Gantry/Plugins/Calendar.pm
 %%SITE_PERL%%/Gantry/Plugins/DBIxClassConn.pm
 %%SITE_PERL%%/Gantry/Plugins/PageCache.pm
+%%SITE_PERL%%/Gantry/Plugins/Shibboleth.pm
 %%SITE_PERL%%/Gantry/Plugins/SOAP/Doc.pm
 %%SITE_PERL%%/Gantry/Plugins/SOAP/RPC.pm
-%%SITE_PERL%%/Gantry/Plugins/Session.pm
 %%SITE_PERL%%/Gantry/Plugins/Static.pm
 %%SITE_PERL%%/Gantry/Plugins/Validate.pm
 %%SITE_PERL%%/Gantry/Server.pm
@@ -183,6 +183,7 @@
 %%SITE_PERL%%/Gantry/Utils/Threeway.pm
 %%SITE_PERL%%/Gantry/Utils/Validate.pm
 %%SITE_PERL%%/Template/Plugin/GantryAuthCookie.pm
+@dirrmtry %%WWWDIR%%/sfbb
 @dirrmtry %%WWWDIR%%/moxie
 @dirrmtry %%WWWDIR%%/js
 @dirrmtry %%WWWDIR%%/images/tenttut
