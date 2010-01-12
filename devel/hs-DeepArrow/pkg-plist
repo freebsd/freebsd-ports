@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow.hi
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow/Examples.hi
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/DDeepArrow.hi
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/FunArr.hi
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSDeepArrow-%%DEEPARROW_VERSION%%.o
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Parens.hi
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/ToHs.hi
+%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSDeepArrow-%%DEEPARROW_VERSION%%.a
+%%DEEPARROW_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell
+@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow
+@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
+@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%DEEPARROW_LIBDIR_REL%%
+@exec /bin/sh %D/%%DEEPARROW_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister DeepArrow
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
