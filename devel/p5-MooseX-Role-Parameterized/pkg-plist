@@ -5,6 +5,8 @@
 %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Parameter.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Role/Parameterizable.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Role/Parameterized.pm
+%%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Trait/Parameterized.pm
+@dirrm %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Trait
 @dirrm %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Role
 @dirrm %%SITE_PERL%%/MooseX/Role/Parameterized/Meta
 @dirrm %%SITE_PERL%%/MooseX/Role/Parameterized
