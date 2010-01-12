@@ -11,7 +11,6 @@ PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/security/tools/net/openssl/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
 #PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
@@ -33,11 +32,13 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 OPTIONS=	I386	"Use optimzed assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ZLIB	"Build with zlib compression" on \
-		SCTP	"Build with SCTP support" off \
-		FIPS    "Build with FIPS support" off \
 
-EXTRACONFIGURE+=	enable-camellia
+BROKEN=		coredumps on i386 and amd64
+DEPRECATED=	has unfixed vulnerabilities
+EXPIRATION_DATE=2010-01-12
 
+
+EXTRACONFIGURE=	enable-camellia
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=		LIBRPATH="${PREFIX}/lib"
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
@@ -859,11 +860,7 @@ MLINKS=	dgst.1 md4.1 \
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
-.if ( ${OSVERSION} >= 800105 )
 OPENSSL_SHLIBVER?=	6
-.else
-OPENSSL_SHLIBVER?=	5
-.endif
 
 .if !defined(WITHOUT_SSE2)
 # disable runtime SSE2 detection
@@ -886,17 +883,6 @@ USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_ZLIB)
 EXTRACONFIGURE+=	zlib
-.endif
-
-.if defined(WITH_SCTP)
-BROKEN=		No SCTP patchset for 0.9.8 (turn off WITH_SCTP to build 0.9.8)
-.if ${OSVERSION} >= 702000
-PATCHFILES+=	tls-extractor.patch \
-		abbreviated-renegotiation.patch \
-		dtls-sctp.patch
-#		freebsd-compatibility.patch
-CFLAGS+=	-DSCTP
-.endif
 .endif
 
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
