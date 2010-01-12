@@ -11,7 +11,7 @@ MASTER_SITES=		http://files.b9.com/lml/ \
 					http://people.bsdgroup.de/~as/freebsd/distfiles/
 PKGNAMEPREFIX=		cl-
 
-MAINTAINER=		as@bsdgroup.de
+MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Lisp Markup Language
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
