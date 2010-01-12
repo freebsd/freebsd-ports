@@ -19,14 +19,19 @@ MAKEFILE=	GNUmakefile
 WRKSRC=		${WRKDIR}/trickyirc
 USE_GMAKE=	YES
 
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 post-install:
-	@ ${MKDIR} ${PREFIX}/share/doc/TrickyIRC
-#	@ ${MKDIR} ${PREFIX}/share/examples/TrickyIRC
-#	${INSTALL_DATA} ${WRKSRC}/config.sample \
-#	    ${PREFIX}/share/examples/TrickyIRC
-	${INSTALL_DATA} ${WRKSRC}/README \
-	    ${PREFIX}/share/doc/TrickyIRC
-	@${STRIP_CMD} ${PREFIX}/bin/trickyirc
-	@${CAT} ${PKGMESSAGE} | ${SED} -e s:/usr/local:${PREFIX}:
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@ ${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.sample ${EXAMPLESDIR}
+.endif
+	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
