@@ -36,7 +36,6 @@ do-build:
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
 	@${BRANDELF} -t Linux ${WRKDIR}/${DISTFILES}
 	@${CHMOD} +x ${WRKDIR}/${DISTFILES} && cd ${WRKDIR} && ./${DISTFILES}
-	@${CAT} pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${INSTALLDIR}
