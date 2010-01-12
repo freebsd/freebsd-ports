@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-sbcl
 DISTFILES=	# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
 
-MAINTAINER=	xenophon+fbsdports@irtnog.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp (SBCL binaries)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/uffi/uffi.asd:${PORTSDIR}/devel/cl-uffi \
