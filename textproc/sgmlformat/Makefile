@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	textproc print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
-#MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
@@ -36,8 +35,10 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
-RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
+RUN_DEPENDS+=	${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
+		${LOCALBASE}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410
+# Above depending on docbook-4.1 file is just for workaround.  We need
+# some of docbook DTDs, but not all.
 
 .if defined(WITH_OPENJADE)
 post-patch:
