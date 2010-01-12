@@ -1,0 +1,5 @@
+A C implementation of the stored procedure written in plpgsql that's bundled
+with OpenNMS, this is the preferred version for use as is offers better
+performance
+
+WWW: http://www.opennms.org/wiki/IPLIKE
