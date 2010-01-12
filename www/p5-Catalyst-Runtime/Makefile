@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.80016
+PORTVERSION=	5.80017
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,8 +27,8 @@ RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope
 		p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-MooseX-Getopt>=0.25:${PORTSDIR}/devel/p5-MooseX-Getopt \
-		p5-MooseX-MethodAttributes>=0.17:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
-		p5-MooseX-Role-WithOverloading>=0.03:${PORTSDIR}/devel/p5-MooseX-Role-WithOverloading \
+		p5-MooseX-MethodAttributes>=0.19:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
+		p5-MooseX-Role-WithOverloading>=0.05:${PORTSDIR}/devel/p5-MooseX-Role-WithOverloading \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
@@ -40,7 +40,7 @@ RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
