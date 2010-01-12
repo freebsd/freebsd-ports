@@ -145,11 +145,13 @@ MAN3=	SoAction.3iv SoCallbackAction.3iv SoGLRenderAction.3iv \
 	SoXtExaminerViewer.3iv SoXtFlyViewer.3iv SoXtFullViewer.3iv \
 	SoXtPlaneViewer.3iv SoXtViewer.3iv SoXtWalkViewer.3iv
 
+SUB_FILES=	pkg-message
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ;\
 			      s|%%CXX%%|${CXX}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g'  ${WRKSRC}/make/ivcommondefs
 post-install:
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
