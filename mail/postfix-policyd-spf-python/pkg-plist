@@ -4,4 +4,6 @@
 @exec if [ ! -f %D/%%ETCDIR%%/policyd-spf.conf ] ; then cp -p %D/%F %B/policyd-spf.conf; fi
 bin/policyd-spf
 %%PYTHON_SITELIBDIR%%/policydspfsupp.py
+%%PYTHON_SITELIBDIR%%/policydspfsupp.pyo
+%%PYTHON_SITELIBDIR%%/policydspfsupp.pyc
 @dirrmtry %%ETCDIR%%
