@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	loquacious
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/codeforpeople
 
