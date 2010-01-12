@@ -18,8 +18,9 @@ COMMENT=	A detachable irc proxy server with many features
 GNU_CONFIGURE=	yes
 
 MAN1=		dircproxy.1 dircproxy-crypt.1
+SUB_FILES=	pkg-message
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
