@@ -21,11 +21,12 @@ IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 MAKE_ENV+=	WERROR=
 PLIST_FILES=	lib/kix_saver.ko
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/kix_saver.ko ${PREFIX}/lib
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
