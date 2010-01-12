@@ -577,6 +577,7 @@
     SUBDIR += hs-unamb
     SUBDIR += hs-uniplate
     SUBDIR += hs-utf8-string-ghc
+    SUBDIR += hs-utility-ht
     SUBDIR += hs-uuagc
     SUBDIR += hs-uulib
     SUBDIR += hs-uvector
