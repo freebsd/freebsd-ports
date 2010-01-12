@@ -10,7 +10,8 @@ PORTREVISION=	2
 CATEGORIES=	textproc lisp
 MASTER_SITES=	http://weitz.de/files/
 PKGNAMESUFFIX=	-clisp
-DISTFILES=
+DISTFILES=	# use installed sources from CL_LIBDIR
+EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
@@ -23,13 +24,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/text
 		clisp:${PORTSDIR}/lang/clisp
 
 do-build:
-	FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
+	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
 	clisp	-q -ansi -norc \
 		-i ${LOCALBASE}/etc/asdf-init \
 		-x "(asdf:oos 'asdf:compile-op :cl-ppcre)"
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/common-lisp/cl-ppcre/clispfasl
-	${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/cl-ppcre/clispfasl/
+	@${MKDIR} ${PREFIX}/lib/common-lisp/cl-ppcre/clispfasl
+	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/cl-ppcre/clispfasl/
 
 .include <bsd.port.mk>

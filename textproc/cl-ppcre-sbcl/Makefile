@@ -9,8 +9,8 @@ PORTVERSION=	0.5.4
 CATEGORIES=	textproc lisp
 MASTER_SITES=	http://weitz.de/files/
 PKGNAMESUFFIX=	-sbcl
-DISTFILES=		# use installed sources from CL_LIBDIR
-EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
+DISTFILES=	# use installed sources from CL_LIBDIR
+EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
@@ -23,14 +23,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/text
 		sbcl:${PORTSDIR}/lang/sbcl
 
 do-build:
-	FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
+	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
 	sbcl	--noinform --userinit /dev/null \
 		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
 		--eval "(asdf:oos 'asdf:compile-op :cl-ppcre)" \
 		--eval "(quit)"
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/common-lisp/cl-ppcre/sbclfasl
-	${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/cl-ppcre/sbclfasl/
+	@${MKDIR} ${PREFIX}/lib/common-lisp/cl-ppcre/sbclfasl
+	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/cl-ppcre/sbclfasl/
 
 .include <bsd.port.mk>

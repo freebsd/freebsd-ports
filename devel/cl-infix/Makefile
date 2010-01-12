@@ -31,15 +31,15 @@ NO_CDROM=	No fees or compensation can be charged
 LPORTDOCS=	COPYING infix.3lisp
 
 do-install:
-	${MKDIR} ${CL_LIBDIR}/infix
-	${INSTALL_DATA} ${WRKSRC}/infix.asd   ${CL_LIBDIR}/infix/
-	${INSTALL_DATA} ${WRKSRC}/*.cl ${CL_LIBDIR}/infix/
-	${INSTALL_DATA} ${WRKSRC}/infix.system ${CL_LIBDIR}/infix/
-	${LN} -sf ${CL_LIBDIR}/infix/infix.asd ${CL_LIBDIR}/system-registry/infix.asd
+	@${MKDIR} ${CL_LIBDIR}/infix
+	@${INSTALL_DATA} ${WRKSRC}/infix.asd   ${CL_LIBDIR}/infix/
+	@${INSTALL_DATA} ${WRKSRC}/*.cl ${CL_LIBDIR}/infix/
+	@${INSTALL_DATA} ${WRKSRC}/infix.system ${CL_LIBDIR}/infix/
+	@${LN} -sf ${CL_LIBDIR}/infix/infix.asd ${CL_LIBDIR}/system-registry/infix.asd
 .if !defined(NOPORTDOCS)
-.for i in ${LPORTDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+.for FILE in ${LPORTDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/
 .endfor
 .endif
 
