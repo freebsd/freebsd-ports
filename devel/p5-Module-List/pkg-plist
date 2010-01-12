@@ -1,6 +1,4 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Module/List.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/List/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/List
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module
