@@ -8,7 +8,6 @@ this up on FreeBSD here:
 http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/usb-disks.html
 
 If you are not running a KDE4 desktop, you should consider installing the
-x11/kdebase4-runtime and multimedia/phonon ports along with Amarok. You will
-also need to pick a Phonon backend port (multimedia/phonon-xine or
-multimedia/phonon-gstreamer). It has been reported that icons and audio will
-not work properly without these additional ports.
+x11-themes/kde4-icons-oxygen and multimedia/phonon-xine ports along with Amarok.
+It has been reported that icons and audio will not work properly without
+these additional ports.
