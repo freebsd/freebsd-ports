@@ -1,0 +1,5 @@
+| Don't forget to run %%PREFIX%%/sbin/install_iplike.sh to make the relevant
+| changes to your OpenNMS database.
+| To confirm the changes have been made run:
+| psql -U opennms -h localhost -c '\df+ iplike' | head
+| Check the Language column, It should say "c" and not "plpgsql"

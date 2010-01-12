@@ -106,6 +106,7 @@
     SUBDIR += innotop
     SUBDIR += ip4r
     SUBDIR += ipa_sdb
+    SUBDIR += iplike
     SUBDIR += isql-viewer
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
