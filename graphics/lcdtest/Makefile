@@ -28,6 +28,8 @@ SCONS_ARGS=    bindir=${PREFIX}/bin mandir=${PREFIX}/man/man1
 PLIST_FILES=	bin/lcdtest
 PORTDOCS=	README
 
+MAN1=	lcdtest.1
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
