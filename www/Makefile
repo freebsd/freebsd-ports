@@ -292,6 +292,7 @@
     SUBDIR += hs-cgi
     SUBDIR += hs-fastcgi
     SUBDIR += hs-oeis
+    SUBDIR += hs-scgi
     SUBDIR += hs-http-server
     SUBDIR += hs-url
     SUBDIR += htdump
