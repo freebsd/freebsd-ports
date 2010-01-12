@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Base.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/C.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Map.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Num.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Time.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Utils.hi
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSconvertible-%%CONVERTIBLE_VERSION%%.o
+%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSconvertible-%%CONVERTIBLE_VERSION%%.a
+%%CONVERTIBLE_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances
+@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible
+@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%CONVERTIBLE_LIBDIR_REL%%
+@exec /bin/sh %D/%%CONVERTIBLE_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister convertible
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

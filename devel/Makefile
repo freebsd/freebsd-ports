@@ -541,6 +541,7 @@
     SUBDIR += hs-binary-ghc
     SUBDIR += hs-c2hs
     SUBDIR += hs-checkers
+    SUBDIR += hs-convertible
     SUBDIR += hs-cpphs
     SUBDIR += hs-deepseq
     SUBDIR += hs-dlist
