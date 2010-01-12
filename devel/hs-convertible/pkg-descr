@@ -1,0 +1,17 @@
+The "convertible" Haskell package provides a typeclass with a single
+function that is designed to help convert between different types:
+numeric values, dates and times, and the like.
+
+The conversions perform bounds checking and return a pure Either value.
+This means that you need not remember which specific function performs
+the conversion you desire.
+
+Also included in the package are optional instances that provide
+conversion for various numeric and time types, as well as utilities for
+writing your own instances.
+
+Finally, there is a function that will raise an exception on
+bounds-checking violation, or return a bare value otherwise, implemented
+in terms of the safer function described above.
+
+WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/convertible
