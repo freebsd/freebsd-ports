@@ -26,7 +26,8 @@ USE_XORG=	x11
 NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/ZAngband
-PKGMESSAGE=	${WRKDIR}/MESSAGE
+SUB_FILES=	pkg-message
+SUB_LIST=	ANGBANDBIN=${ANGBANDBIN} ANGBANDLIB=${ANGBANDLIB}
 PLIST_SUB+=	ANGBANDBIN=${ANGBANDBIN} ANGBANDLIB=${ANGBANDLIB}
 
 SHAREOWN=	games
@@ -53,7 +54,6 @@ pre-patch:
 pre-build:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	${CP} ${WRKSRC}/src/makefile.std ${WRKSRC}/src/Makefile
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;s|%%ANGBANDBIN%%|${ANGBANDBIN}|g;s|%%ANGBANDLIB%%|${ANGBANDLIB}|g" ${FILESDIR}/MESSAGE.in > ${PKGMESSAGE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/testing ${PREFIX}/${ANGBANDBIN}
