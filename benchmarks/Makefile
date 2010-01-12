@@ -18,6 +18,7 @@
     SUBDIR += gtkperf
     SUBDIR += himenobench
     SUBDIR += hpl
+    SUBDIR += hs-criterion
     SUBDIR += httperf
     SUBDIR += imb
     SUBDIR += iozone
