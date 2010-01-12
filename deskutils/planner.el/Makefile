@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.gna.org/planner-el/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	planner-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	PlannerMode is an organizer and day planner for Emacs
 
 USE_EMACS=	yes

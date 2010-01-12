@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	repacked
 EXTRACT_SUFX=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
 USE_EMACS=	yes

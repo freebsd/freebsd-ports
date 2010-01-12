@@ -12,7 +12,7 @@ CATEGORIES=	textproc elisp
 MASTER_SITES=	SF/xslide/xslide/${PORTVERSION}
 DISTNAME=	xslide-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Emacs major mode for editing XSL stylesheets
 
 NO_BUILD=	yes
