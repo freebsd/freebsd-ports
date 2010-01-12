@@ -1,6 +1,6 @@
 bin/gnome-panel-control
 bin/gdm-control
-bin/obprop
+bin/obxprop
 bin/openbox
 bin/openbox-gnome-session
 bin/openbox-kde-session

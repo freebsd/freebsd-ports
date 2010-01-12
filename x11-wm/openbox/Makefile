@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.4.9
+PORTVERSION=	3.4.10
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/${PORTNAME}/releases/ \
-		http://offload1.icculus.org/openbox/releases/ \
-		http://sorcerer.mirrors.pair.com/mirror/ \
+		http://offload1.icculus.org:9090/openbox/releases/ \
+		http://offload2.icculus.org:9090/openbox/releases/ \
+		http://offload3.icculus.org:9090/openbox/releases/ \
 		http://dougbarton.us/Downloads/
 
 MAINTAINER=	novel@FreeBSD.org
@@ -24,8 +25,8 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2 ltverhack
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
+		LDFLAGS+="-L${LOCALBASE}/lib"
 MAN1=		openbox.1 openbox-session.1 \
 		openbox-gnome-session.1 openbox-kde-session.1
 
