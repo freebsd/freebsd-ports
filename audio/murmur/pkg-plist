@@ -3,6 +3,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.Linux
-bin/murmurd
+sbin/murmurd
 etc/murmur.ini
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,13 +1,11 @@
---- compiler.pri.orig	2009-10-11 19:53:12.543346333 -0400
-+++ compiler.pri	2009-10-11 19:53:37.105373152 -0400
-@@ -46,8 +46,8 @@
- 		QMAKE_LINK = /opt/gcc/bin/g++
+--- compiler.pri.orig	2009-12-11 03:05:44.000000000 +0900
++++ compiler.pri	2009-12-22 02:29:38.000000000 +0900
+@@ -93,7 +93,7 @@
+ 	CONFIG(debug, debug|release) {
+ 		QMAKE_CFLAGS *= -fstack-protector -fPIE -pie
+ 		QMAKE_CXXFLAGS *= -fstack-protector -fPIE -pie
+-		QMAKE_LFLAGS = -Wl,--no-add-needed
++		QMAKE_LFLAGS = -Wl
  	}
  
--	QMAKE_CFLAGS *= -Wshadow -Wconversion -Wsign-compare -fvisibility=hidden
--	QMAKE_CXXFLAGS *= -Wshadow -Woverloaded-virtual -Wold-style-cast -Wconversion -Wsign-compare -fvisibility=hidden
-+	QMAKE_CFLAGS *= -Wshadow -Wconversion -Wsign-compare
-+	QMAKE_CXXFLAGS *= -Wshadow -Woverloaded-virtual -Wold-style-cast -Wconversion -Wsign-compare
- 	!macx {
- 		QMAKE_LFLAGS *= -Wl,--as-needed
- 	}
+ 	DEFINES *= _FORTIFY_SOURCE=2
