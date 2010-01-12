@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSALUT-%%HSALUT_VERSION%%.o
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT/Config.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT/Constants.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT/Errors.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT/Initialization.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT/Loaders.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT/Sleep.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT/Version.hi
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsALUT.h
+%%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSALUT-%%HSALUT_VERSION%%.a
+%%HSALUT_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/ALUT
+@dirrm %%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound
+@dirrm %%HSALUT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HSALUT_LIBDIR_REL%%
+@exec /bin/sh %D/%%HSALUT_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister ALUT
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
