@@ -565,6 +565,7 @@
     SUBDIR += hs-mmap
     SUBDIR += hs-mueval
     SUBDIR += hs-pcre-light-ghc
+    SUBDIR += hs-reactive
     SUBDIR += hs-readline
     SUBDIR += hs-safe
     SUBDIR += hs-show
