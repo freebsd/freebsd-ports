@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	0.2b
+PORTVERSION=	0.2
+PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://qutim.org/download/ \
 		http://dl.kibab.com/distfiles/qutim/ \
 		ftp://ftp.inferra.ru/pub/qutim/
 PKGNAMEPREFIX=	qutim-plugin-
-DISTNAME=	qutim-jabber_${PORTVERSION}_svn366
+DISTNAME=	qutim-jabber_${PORTVERSION}_svn431
 
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Jabber protocol plugin for qutIM
 
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 RUN_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 
