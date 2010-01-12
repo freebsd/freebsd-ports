@@ -52,6 +52,8 @@ WIKIAUTO=		${SITE_PERL}/auto/${PORTNAME}
 WIKIPM=			${SITE_PERL}/${PORTNAME}
 WIKISCRIPT=		wiki.cgi.in
 MAN3=			WiKicker.3 WiKicker::HTML.3
+SUB_FILES=		pkg-message
+SUB_LIST=		HostName=${HOST}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -91,8 +93,6 @@ post-install:
 		${SORT} -r | ${SED} -e 's/^/@dirrm /' >>${TMPPLIST}
 	@${ECHO_MSG} "===>  Making PLIST Phase End"
 
-	@${SED} -e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' \
-		-e 's|%%HostName%%|${HOST}|' < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
