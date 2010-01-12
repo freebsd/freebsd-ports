@@ -1,0 +1,5 @@
+This Haskell package provides portable implementations of parts of the
+unix package. This package re-exports the unix package when available.
+When it is not available, portable implementations are used.
+
+WWW: http://hackage.haskell.org/package/unix-compat

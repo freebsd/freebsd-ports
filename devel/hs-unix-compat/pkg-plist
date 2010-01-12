@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+%%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSunix-compat-%%UNIXCOMPAT_VERSION%%.o
+%%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/PosixCompat/Extensions.hi
+%%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/PosixCompat/Files.hi
+%%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/PosixCompat/Types.hi
+%%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/PosixCompat/User.hi
+%%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsUnixCompat.h
+%%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSunix-compat-%%UNIXCOMPAT_VERSION%%.a
+%%UNIXCOMPAT_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/PosixCompat
+@dirrm %%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%UNIXCOMPAT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%UNIXCOMPAT_LIBDIR_REL%%
+@exec /bin/sh %D/%%UNIXCOMPAT_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister unix-compat
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
