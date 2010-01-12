@@ -543,6 +543,7 @@
     SUBDIR += hs-c2hs
     SUBDIR += hs-checkers
     SUBDIR += hs-cpphs
+    SUBDIR += hs-deepseq
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
     SUBDIR += hs-ghc-mtl
