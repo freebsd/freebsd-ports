@@ -14,9 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Module 'directory' listing
 
-BROKEN=		does not build
-
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Module::List.3
 
