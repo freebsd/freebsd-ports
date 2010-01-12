@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%DIFF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Algorithm/Diff.hi
+%%DIFF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSDiff-%%DIFF_VERSION%%.o
+%%DIFF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSDiff-%%DIFF_VERSION%%.a
+%%DIFF_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%DIFF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Algorithm
+@dirrm %%DIFF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%DIFF_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%DIFF_LIBDIR_REL%%
+@exec /bin/sh %D/%%DIFF_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister Diff
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
