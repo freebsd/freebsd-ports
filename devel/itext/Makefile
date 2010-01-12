@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	itext
-PORTVERSION=	2.1.7
+PORTVERSION=	4.2.0
 PORTEPOCH=	1
 CATEGORIES=	devel java
-MASTER_SITES=	SF/${PORTNAME}/iText/iText%20${PORTVERSION}
-DISTNAME=	iText-src-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java-PDF Library
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
 		${JAVAJARDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j \
 		${JAVAJARDIR}/pdf-renderer.jar:${PORTSDIR}/print/pdf-renderer
 
-WRKSRC=		${WRKDIR}/src
+USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
