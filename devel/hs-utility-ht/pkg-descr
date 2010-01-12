@@ -1,0 +1,9 @@
+Various small Haskell helper functions for Lists, Maybes, Tuples,
+Functions. Some of these functions are improved implementations of
+standard functions. They have the same name as their standard
+counterparts.
+
+The package only contains functions that do not require packages
+other than the base package. Thus you do not risk a dependency.
+
+WWW: http://www.haskell.org/haskellwiki/Utility-HT
