@@ -579,6 +579,7 @@
     SUBDIR += hs-transformers
     SUBDIR += hs-unamb
     SUBDIR += hs-uniplate
+    SUBDIR += hs-unix-compat
     SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-utility-ht
     SUBDIR += hs-uuagc
