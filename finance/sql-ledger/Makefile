@@ -21,17 +21,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_BUILD=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message sql-ledger-httpd.conf
 
 post-patch:
 	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' \
 		`${FIND} ${WRKSRC} -name \*.pl`
-	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' \
-		${FILESDIR}/sql-ledger-httpd.conf.in \
-		> ${WRKDIR}/sql-ledger-httpd.conf
-	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' \
-		${PKGDIR}/pkg-message \
-		> ${PKGMESSAGE}
 
 do-install:
 	@cd ${WRKDIR} ; \
