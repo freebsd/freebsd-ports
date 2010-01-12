@@ -544,6 +544,7 @@
     SUBDIR += hs-checkers
     SUBDIR += hs-convertible
     SUBDIR += hs-cpphs
+    SUBDIR += hs-datetime
     SUBDIR += hs-deepseq
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
