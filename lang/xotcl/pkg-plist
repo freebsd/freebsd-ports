@@ -168,6 +168,7 @@ lib/xotcl%%PORTVERSION%%/xotclConfig.sh
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/makeDoc-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/metadataAnalyzer-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/mixinStrategy-xotcl.html
+%%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/mixinoftest-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/next-path-mixin-movement.gif
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/next-path.gif
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/obj_class_system.gif
@@ -189,6 +190,7 @@ lib/xotcl%%PORTVERSION%%/xotclConfig.sh
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/trace-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/tutorial.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/upvarcompat-xotcl.html
+%%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/varresolutiontest-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/webclient-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/webserver-xotcl.html
 %%TUTORIAL%%%%EXAMPLESDIR%%/tutorial/html/xo-daemon.html
