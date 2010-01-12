@@ -290,6 +290,7 @@
     SUBDIR += horde-wicked
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
+    SUBDIR += hs-fastcgi
     SUBDIR += hs-oeis
     SUBDIR += hs-http-server
     SUBDIR += hs-url
