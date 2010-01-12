@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aespipe
-DISTVERSION=	v2.3d
-PORTREVISION=	1
+DISTVERSION=	v2.3e
 CATEGORIES=	security
 MASTER_SITES=	http://loop-aes.sourceforge.net/${PORTNAME}/ \
 		http://koti.tnnet.fi/jari.ruusu/linux/
