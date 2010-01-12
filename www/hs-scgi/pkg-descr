@@ -1,0 +1,4 @@
+This Haskell library lets you write SCGI programs. This package reuses
+the cgi package API, making it very easy to port CGI programs to SCGI.
+
+WWW: http://github.com/esessoms/scgi

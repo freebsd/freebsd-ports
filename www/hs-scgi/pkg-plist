@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%SCGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSscgi-%%SCGI_VERSION%%.o
+%%SCGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/SCGI.hi
+%%SCGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSscgi-%%SCGI_VERSION%%.a
+%%SCGI_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/COPYING
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%SCGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
+@dirrm %%SCGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%SCGI_LIBDIR_REL%%
+@exec /bin/sh %D/%%SCGI_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister scgi
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
