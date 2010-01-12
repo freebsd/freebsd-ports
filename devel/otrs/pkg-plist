@@ -28,9 +28,10 @@ otrs/bin/cgi-bin/index.pl
 otrs/bin/cgi-bin/installer.pl
 otrs/bin/cgi-bin/public.pl
 otrs/bin/cgi-bin/rpc.pl
-otrs/bin/fcgi-bin/customer.fpl
-otrs/bin/fcgi-bin/index.fpl
-otrs/bin/fcgi-bin/public.fpl
+otrs/bin/fcgi-bin/customer.pl
+otrs/bin/fcgi-bin/index.pl
+otrs/bin/fcgi-bin/installer.pl
+otrs/bin/fcgi-bin/public.pl
 otrs/bin/mkStats.pl
 otrs/bin/opm.pl
 otrs/bin/otrs.ArticleStorageSwitch.pl
@@ -185,7 +186,6 @@ otrs/scripts/test/XML.t
 otrs/scripts/tools/base64.pl
 otrs/scripts/tools/charset-convert.pl
 otrs/scripts/tools/compress-mail.pl
-otrs/scripts/tools/convert_db_to_utf8.pl
 otrs/scripts/tools/sync-ldap2db.pl
 otrs/scripts/tools/xml2html.pl
 otrs/scripts/webform.pl
@@ -995,7 +995,7 @@ otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-debug.js
 otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-min.js
 otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core.js
 otrs/var/httpd/htdocs/yui/License-YUI.txt
-otrs/var/packages/Support-1.0.93.opm
+otrs/var/packages/Support-1.0.95.opm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
@@ -1057,6 +1057,7 @@ otrs/Kernel/Language/ru.pm
 otrs/Kernel/Language/sk_SK.pm
 otrs/Kernel/Language/sv.pm
 otrs/Kernel/Language/tr.pm
+otrs/Kernel/Language/uk.pm
 otrs/Kernel/Language/vi_VN.pm
 otrs/Kernel/Language/xx_AgentZoom.pm
 otrs/Kernel/Language/xx_Custom.pm
@@ -1533,6 +1534,7 @@ otrs/Kernel/System/User/Preferences/DB.pm
 otrs/Kernel/System/Valid.pm
 otrs/Kernel/System/Web/InterfaceAgent.pm
 otrs/Kernel/System/Web/InterfaceCustomer.pm
+otrs/Kernel/System/Web/InterfaceInstaller.pm
 otrs/Kernel/System/Web/InterfacePublic.pm
 otrs/Kernel/System/Web/Request.pm
 otrs/Kernel/System/Web/UploadCache.pm
@@ -1714,6 +1716,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/httpd/htdocs/yui/2.7.0/assets
 @dirrm otrs/var/httpd/htdocs/yui/2.7.0
 @dirrm otrs/var/httpd/htdocs/yui
+@dirrm otrs/var/httpd/htdocs/js/thirdparty
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver
@@ -1759,6 +1762,8 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/httpd/htdocs/images
 @dirrm otrs/var/httpd/htdocs/css/Standard
 @dirrm otrs/var/httpd/htdocs/css/Lite
+@dirrm otrs/var/httpd/htdocs/css/overcast/images
+@dirrm otrs/var/httpd/htdocs/css/overcast
 @dirrm otrs/var/httpd/htdocs/css
 @dirrm otrs/var/httpd/htdocs
 @dirrm otrs/var/httpd
