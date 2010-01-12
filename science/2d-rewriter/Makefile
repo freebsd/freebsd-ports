@@ -1,13 +1,12 @@
 # New ports collection makefile for:    2d-rewriter
 # Date created:                         8 December 2007
-# Whom:                                 Igor Serikov <bt@turtle.freedns.us>
+# Whom:                                 Igor Serikov <iserikov@acm.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	2d-rewriter
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	science
 MASTER_SITES=	http://www.crowdeduniverse.org/distfiles/
 
