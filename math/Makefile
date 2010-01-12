@@ -119,6 +119,7 @@
     SUBDIR += hs-mwc-random
     SUBDIR += hs-probability
     SUBDIR += hs-statistics
+    SUBDIR += hs-vector-space
     SUBDIR += igraph
     SUBDIR += isabelle
     SUBDIR += itl
