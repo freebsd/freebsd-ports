@@ -23,6 +23,7 @@ NO_BUILD=	yes
 
 USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	ruby_photo.rb
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abspath.rb ${RUBY_SITELIBDIR}
@@ -57,6 +58,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xml-generators/* ${DATADIR}/xml-generators
 
 post-install:
-	@${SED} -e "s#%%DATADIR%%#${DATADIR}#" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
