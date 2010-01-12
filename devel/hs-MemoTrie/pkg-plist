@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+%%MEMOTRIE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/MemoTrie.hi
+%%MEMOTRIE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSMemoTrie-%%MEMOTRIE_VERSION%%.o
+%%MEMOTRIE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSMemoTrie-%%MEMOTRIE_VERSION%%.a
+%%MEMOTRIE_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%MEMOTRIE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%MEMOTRIE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%MEMOTRIE_LIBDIR_REL%%
+@exec /bin/sh %D/%%MEMOTRIE_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister MemoTrie
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
