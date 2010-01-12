@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Singleton
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		MooseX::Singleton.3 MooseX::Singleton::Role::Meta::Class.3 \
+MAN3=		MooseX::Singleton.3 \
+		MooseX::Singleton::Role::Meta::Class.3 \
 		MooseX::Singleton::Role::Meta::Instance.3 \
+		MooseX::Singleton::Role::Meta::Method::Constructor.3 \
 		MooseX::Singleton::Role::Object.3
 
 .include <bsd.port.mk>
