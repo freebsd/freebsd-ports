@@ -1,4 +1,5 @@
 bin/opera-devel
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/opera
 %%DATADIR%%/bin/operaplugincleaner
@@ -32,34 +33,51 @@ bin/opera-devel
 %%DATADIR%%/java/opera.policy
 %%DATADIR%%/lngcode.txt
 %%DATADIR%%/locale/be/be.lng
+%%DATADIR%%/locale/be/bookmarks.adr
+%%DATADIR%%/locale/be/search.ini
+%%DATADIR%%/locale/be/standard_speeddial.ini
 %%DATADIR%%/locale/bg/bg.lng
 %%DATADIR%%/locale/cs/cs.lng
-%%DATADIR%%/locale/da/bookmarks.adr
 %%DATADIR%%/locale/da/da.lng
 %%DATADIR%%/locale/de/bookmarks.adr
 %%DATADIR%%/locale/de/de.lng
 %%DATADIR%%/locale/de/search.ini
+%%DATADIR%%/locale/de/standard_speeddial.ini
 %%DATADIR%%/locale/el/el.lng
+%%DATADIR%%/locale/en-GB/bookmarks.adr
 %%DATADIR%%/locale/en-GB/en-GB.lng
+%%DATADIR%%/locale/en-GB/search.ini
+%%DATADIR%%/locale/en-GB/standard_speeddial.ini
 %%DATADIR%%/locale/en/bookmarks.adr
 %%DATADIR%%/locale/en/en.lng
 %%DATADIR%%/locale/en/en.zip
 %%DATADIR%%/locale/en/license.txt
 %%DATADIR%%/locale/en/search.ini
 %%DATADIR%%/locale/en/standard_speeddial.ini
+%%DATADIR%%/locale/es-ES/bookmarks.adr
 %%DATADIR%%/locale/es-ES/es-ES.lng
+%%DATADIR%%/locale/es-ES/search.ini
+%%DATADIR%%/locale/es-ES/standard_speeddial.ini
 %%DATADIR%%/locale/es-LA/es-LA.lng
 %%DATADIR%%/locale/et/et.lng
 %%DATADIR%%/locale/fi/fi.lng
 %%DATADIR%%/locale/fr-CA/fr-CA.lng
+%%DATADIR%%/locale/fr/bookmarks.adr
 %%DATADIR%%/locale/fr/fr.lng
+%%DATADIR%%/locale/fr/search.ini
+%%DATADIR%%/locale/fr/standard_speeddial.ini
 %%DATADIR%%/locale/fy/fy.lng
 %%DATADIR%%/locale/hi/hi.lng
 %%DATADIR%%/locale/hi/standard_speeddial.ini
 %%DATADIR%%/locale/hr/hr.lng
 %%DATADIR%%/locale/hu/hu.lng
+%%DATADIR%%/locale/id/bookmarks.adr
 %%DATADIR%%/locale/id/id.lng
+%%DATADIR%%/locale/id/standard_speeddial.ini
+%%DATADIR%%/locale/it/bookmarks.adr
 %%DATADIR%%/locale/it/it.lng
+%%DATADIR%%/locale/it/search.ini
+%%DATADIR%%/locale/it/standard_speeddial.ini
 %%DATADIR%%/locale/ja/bookmarks.adr
 %%DATADIR%%/locale/ja/ja.lng
 %%DATADIR%%/locale/ja/license.txt
@@ -69,28 +87,37 @@ bin/opera-devel
 %%DATADIR%%/locale/ko/ko.lng
 %%DATADIR%%/locale/lt/lt.lng
 %%DATADIR%%/locale/mk/mk.lng
+%%DATADIR%%/locale/nb/bookmarks.adr
 %%DATADIR%%/locale/nb/nb.lng
+%%DATADIR%%/locale/nb/search.ini
+%%DATADIR%%/locale/nb/standard_speeddial.ini
 %%DATADIR%%/locale/nl/nl.lng
 %%DATADIR%%/locale/nn/nn.lng
 %%DATADIR%%/locale/pl/bookmarks.adr
 %%DATADIR%%/locale/pl/pl.lng
 %%DATADIR%%/locale/pl/search.ini
+%%DATADIR%%/locale/pl/standard_speeddial.ini
 %%DATADIR%%/locale/pt-BR/pt-BR.lng
 %%DATADIR%%/locale/pt/pt.lng
 %%DATADIR%%/locale/ro/ro.lng
 %%DATADIR%%/locale/ru/bookmarks.adr
 %%DATADIR%%/locale/ru/ru.lng
 %%DATADIR%%/locale/ru/search.ini
+%%DATADIR%%/locale/ru/standard_speeddial.ini
 %%DATADIR%%/locale/sk/sk.lng
 %%DATADIR%%/locale/sr/sr.lng
 %%DATADIR%%/locale/sv/sv.lng
 %%DATADIR%%/locale/ta/ta.lng
 %%DATADIR%%/locale/te/te.lng
 %%DATADIR%%/locale/tr/tr.lng
+%%DATADIR%%/locale/uk/bookmarks.adr
+%%DATADIR%%/locale/uk/search.ini
+%%DATADIR%%/locale/uk/standard_speeddial.ini
 %%DATADIR%%/locale/uk/uk.lng
 %%DATADIR%%/locale/zh-cn/bookmarks.adr
 %%DATADIR%%/locale/zh-cn/browser.js
 %%DATADIR%%/locale/zh-cn/search.ini
+%%DATADIR%%/locale/zh-cn/standard_speeddial.ini
 %%DATADIR%%/locale/zh-cn/turbosettings.xml
 %%DATADIR%%/locale/zh-cn/zh-cn.lng
 %%DATADIR%%/locale/zh-hk/browser.js
@@ -98,10 +125,20 @@ bin/opera-devel
 %%DATADIR%%/locale/zh-tw/browser.js
 %%DATADIR%%/locale/zh-tw/turbosettings.xml
 %%DATADIR%%/locale/zh-tw/zh-tw.lng
+%%DATADIR%%/package/lib/binprint.sh
+%%DATADIR%%/package/lib/layout_common.sh
+%%DATADIR%%/package/lib/layout_deb.sh
+%%DATADIR%%/package/lib/layout_tar.sh
+%%DATADIR%%/package/lib/main.sh
+%%DATADIR%%/package/lib/normalize.sh
+%%DATADIR%%/package/lib/package_deb.sh
+%%DATADIR%%/package/lib/package_rpm.sh
+%%DATADIR%%/package/lib/package_tar.sh
+%%DATADIR%%/package/lib/xml.sh
+%%DATADIR%%/package/main.sh
 %%DATADIR%%/scripts/common.js
 %%DATADIR%%/scripts/substance.js
 %%DATADIR%%/skin/standard_skin.zip
-%%DATADIR%%/styles/Inconsolata.otf
 %%DATADIR%%/styles/about.css
 %%DATADIR%%/styles/cache.css
 %%DATADIR%%/styles/certinfo.css
@@ -113,6 +150,7 @@ bin/opera-devel
 %%DATADIR%%/styles/history.css
 %%DATADIR%%/styles/im.css
 %%DATADIR%%/styles/image.css
+%%DATADIR%%/styles/images/Opera_256x256.png
 %%DATADIR%%/styles/images/bar.png
 %%DATADIR%%/styles/images/bullet.png
 %%DATADIR%%/styles/images/center.png
@@ -125,8 +163,6 @@ bin/opera-devel
 %%DATADIR%%/styles/images/folder.png
 %%DATADIR%%/styles/images/header-expanded.png
 %%DATADIR%%/styles/images/header.png
-%%DATADIR%%/styles/images/info-header.png
-%%DATADIR%%/styles/images/Opera_256x256.png
 %%DATADIR%%/styles/images/opera.png
 %%DATADIR%%/styles/images/page-bot.png
 %%DATADIR%%/styles/images/red_center.png
@@ -173,64 +209,72 @@ bin/opera-devel
 %%DATADIR%%/ui/standard_menu.ini
 %%DATADIR%%/ui/standard_mouse.ini
 %%DATADIR%%/ui/standard_toolbar.ini
-%%DATADIR%%/ui/standard_trusted_repositories.ini
 %%DATADIR%%/ui/unix_keyboard.ini
-%%DOCSDIR%%/LGPL
-%%DOCSDIR%%/LICENSE
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/defaults
-@dirrm %%DATADIR%%/extra
-@dirrm %%DATADIR%%/java
-@dirrm %%DATADIR%%/locale/be
-@dirrm %%DATADIR%%/locale/bg
-@dirrm %%DATADIR%%/locale/cs
-@dirrm %%DATADIR%%/locale/da
-@dirrm %%DATADIR%%/locale/de
-@dirrm %%DATADIR%%/locale/el
-@dirrm %%DATADIR%%/locale/en
-@dirrm %%DATADIR%%/locale/en-GB
-@dirrm %%DATADIR%%/locale/es-ES
-@dirrm %%DATADIR%%/locale/es-LA
-@dirrm %%DATADIR%%/locale/et
-@dirrm %%DATADIR%%/locale/fi
-@dirrm %%DATADIR%%/locale/fr
-@dirrm %%DATADIR%%/locale/fr-CA
-@dirrm %%DATADIR%%/locale/fy
-@dirrm %%DATADIR%%/locale/hi
-@dirrm %%DATADIR%%/locale/hr
-@dirrm %%DATADIR%%/locale/hu
-@dirrm %%DATADIR%%/locale/id
-@dirrm %%DATADIR%%/locale/it
-@dirrm %%DATADIR%%/locale/ja
-@dirrm %%DATADIR%%/locale/ka
-@dirrm %%DATADIR%%/locale/ko
-@dirrm %%DATADIR%%/locale/lt
-@dirrm %%DATADIR%%/locale/mk
-@dirrm %%DATADIR%%/locale/nb
-@dirrm %%DATADIR%%/locale/nl
-@dirrm %%DATADIR%%/locale/nn
-@dirrm %%DATADIR%%/locale/pl
-@dirrm %%DATADIR%%/locale/pt
-@dirrm %%DATADIR%%/locale/pt-BR
-@dirrm %%DATADIR%%/locale/ro
-@dirrm %%DATADIR%%/locale/ru
-@dirrm %%DATADIR%%/locale/sk
-@dirrm %%DATADIR%%/locale/sr
-@dirrm %%DATADIR%%/locale/sv
-@dirrm %%DATADIR%%/locale/ta
-@dirrm %%DATADIR%%/locale/te
-@dirrm %%DATADIR%%/locale/tr
-@dirrm %%DATADIR%%/locale/uk
-@dirrm %%DATADIR%%/locale/zh-cn
-@dirrm %%DATADIR%%/locale/zh-hk
-@dirrm %%DATADIR%%/locale/zh-tw
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/skin
-@dirrm %%DATADIR%%/styles/images
-@dirrm %%DATADIR%%/styles/user
-@dirrm %%DATADIR%%/styles
+%%DATADIR%%/unite/fileSharing.ua
+%%DATADIR%%/unite/fridge.ua
+%%DATADIR%%/unite/home.ua
+%%DATADIR%%/unite/mediaPlayer.ua
+%%DATADIR%%/unite/messenger.ua
+%%DATADIR%%/unite/photoSharing.ua
+%%DATADIR%%/unite/webserver.ua
+@dirrm %%DATADIR%%/unite
 @dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/styles/user
+@dirrm %%DATADIR%%/styles/images
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/package/lib
+@dirrm %%DATADIR%%/package
+@dirrm %%DATADIR%%/locale/zh-tw
+@dirrm %%DATADIR%%/locale/zh-hk
+@dirrm %%DATADIR%%/locale/zh-cn
+@dirrm %%DATADIR%%/locale/uk
+@dirrm %%DATADIR%%/locale/tr
+@dirrm %%DATADIR%%/locale/te
+@dirrm %%DATADIR%%/locale/ta
+@dirrm %%DATADIR%%/locale/sv
+@dirrm %%DATADIR%%/locale/sr
+@dirrm %%DATADIR%%/locale/sk
+@dirrm %%DATADIR%%/locale/ru
+@dirrm %%DATADIR%%/locale/ro
+@dirrm %%DATADIR%%/locale/pt-BR
+@dirrm %%DATADIR%%/locale/pt
+@dirrm %%DATADIR%%/locale/pl
+@dirrm %%DATADIR%%/locale/nn
+@dirrm %%DATADIR%%/locale/nl
+@dirrm %%DATADIR%%/locale/nb
+@dirrm %%DATADIR%%/locale/mk
+@dirrm %%DATADIR%%/locale/lt
+@dirrm %%DATADIR%%/locale/ko
+@dirrm %%DATADIR%%/locale/ka
+@dirrm %%DATADIR%%/locale/ja
+@dirrm %%DATADIR%%/locale/it
+@dirrm %%DATADIR%%/locale/id
+@dirrm %%DATADIR%%/locale/hu
+@dirrm %%DATADIR%%/locale/hr
+@dirrm %%DATADIR%%/locale/hi
+@dirrm %%DATADIR%%/locale/fy
+@dirrm %%DATADIR%%/locale/fr-CA
+@dirrm %%DATADIR%%/locale/fr
+@dirrm %%DATADIR%%/locale/fi
+@dirrm %%DATADIR%%/locale/et
+@dirrm %%DATADIR%%/locale/es-LA
+@dirrm %%DATADIR%%/locale/es-ES
+@dirrm %%DATADIR%%/locale/en-GB
+@dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale/el
+@dirrm %%DATADIR%%/locale/de
+@dirrm %%DATADIR%%/locale/da
+@dirrm %%DATADIR%%/locale/cs
+@dirrm %%DATADIR%%/locale/bg
+@dirrm %%DATADIR%%/locale/be
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%/extra
+@dirrm %%DATADIR%%/defaults
+@dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%DATADIR%%/plugins
