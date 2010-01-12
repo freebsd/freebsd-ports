@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Validate
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Validate method/function parameters
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Attribute::Params::Validate.3 Params::ValidateXS.3 \
 		Params::ValidatePP.3 Params::Validate.3
