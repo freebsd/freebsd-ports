@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+%%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSFileManip-%%FILEMANIP_VERSION%%.o
+%%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/Find.hi
+%%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/Glob.hi
+%%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/GlobPattern.hi
+%%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/Manip.hi
+%%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSFileManip-%%FILEMANIP_VERSION%%.a
+%%FILEMANIP_LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath
+@dirrm %%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%FILEMANIP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%FILEMANIP_LIBDIR_REL%%
+@exec /bin/sh %D/%%FILEMANIP_LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister FileManip
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

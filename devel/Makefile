@@ -527,6 +527,7 @@
     SUBDIR += hp48xgcc
     SUBDIR += hptools
     SUBDIR += hs-DeepArrow
+    SUBDIR += hs-FileManip
     SUBDIR += hs-MemoTrie
     SUBDIR += hs-MissingH
     SUBDIR += hs-MonadCatchIO-mtl
