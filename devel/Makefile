@@ -540,6 +540,7 @@
     SUBDIR += hs-arrows
     SUBDIR += hs-binary-ghc
     SUBDIR += hs-c2hs
+    SUBDIR += hs-checkers
     SUBDIR += hs-cpphs
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
