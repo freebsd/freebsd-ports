@@ -1,0 +1,10 @@
+Haskell Test Utility Pack for HUnit and QuickCheck testpack provides
+utilities for both HUnit and QuickCheck.
+
+These include tools for running QuickCheck properties as HUnit test
+cases, allowing you to combine both approaches in a single program.
+It also includes tools for more helpful displays of running progress
+in both HUnit and QuickCheck, additional generators for other types
+for QuickCheck, and shortcuts for quickly defining new test cases.
+
+WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/testpack
