@@ -83,6 +83,10 @@ MLINKS=	sendmail.1 mailq.1 \
 HTML1=	SOHO_README.html body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
+.if ${OSVERSION} >= 800037
+KRB5_EXTR=	-lhx509
+.endif
+
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
@@ -128,7 +132,7 @@ _REQUIRE+=		dovecot
 
 .if defined(WITH_SASLKRB)
 .if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
-BROKEN=			Select only one SASL Kerberos option
+BROKEN=			Select only one SASL Kerberos option	
 .endif
 POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .endif
@@ -137,7 +141,7 @@ POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
 BROKEN=			Select only one SASL Kerberos option
 .endif
-POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if defined(WITH_SASLKMIT)
