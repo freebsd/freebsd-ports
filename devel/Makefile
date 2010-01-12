@@ -537,6 +537,7 @@
     SUBDIR += hs-Tensor
     SUBDIR += hs-TypeCompose
     SUBDIR += hs-alex
+    SUBDIR += hs-arrows
     SUBDIR += hs-binary-ghc
     SUBDIR += hs-c2hs
     SUBDIR += hs-cpphs
