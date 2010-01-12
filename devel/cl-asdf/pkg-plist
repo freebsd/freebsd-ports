@@ -1,32 +1,18 @@
-lib/common-lisp/asdf/asdf.lisp
-lib/common-lisp/asdf/wild-modules.lisp
 @unexec if cmp -s %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp; then rm -f %D/etc/asdf-init.lisp; fi
 etc/asdf-init.lisp.default
 @exec [ -f %D/etc/asdf-init.lisp ] || cp %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp
-@dirrm lib/common-lisp/asdf
-@dirrm lib/common-lisp/system-registry
-@dirrm lib/common-lisp
+%%LIB32DIR%%/common-lisp/asdf/asdf-ecl.lisp
+%%LIB32DIR%%/common-lisp/asdf/asdf-install.lisp
+%%LIB32DIR%%/common-lisp/asdf/asdf.asd
+%%LIB32DIR%%/common-lisp/asdf/asdf.lisp
+%%LIB32DIR%%/common-lisp/asdf/cclan-package.lisp
+%%LIB32DIR%%/common-lisp/asdf/cclan.asd
+%%LIB32DIR%%/common-lisp/asdf/cclan.lisp
+%%LIB32DIR%%/common-lisp/asdf/wild-modules.lisp
+%%LIB32DIR%%/common-lisp/system-registry/asdf.asd
+%%LIB32DIR%%/common-lisp/system-registry/cclan.asd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file1.lisp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file2.lisp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file3.lisp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file4.lisp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run-tests.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test1.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test1.script
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2.script
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2a.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2b1.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2b2.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2b3.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test3.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test3.script
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test4.script
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wild-module.asd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wild-module.script
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/lib/common-lisp/system-registry
+@dirrm %%LIB32DIR%%/common-lisp/system-registry
+@dirrm %%LIB32DIR%%/common-lisp/asdf

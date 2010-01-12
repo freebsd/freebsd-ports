@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	asdf
-PORTVERSION=	2003.05.16
-PORTREVISION=	2
+PORTVERSION=	1.374
+PORTEPOCH=	1
 CATEGORIES=	devel lisp
-MASTER_SITES=	http://www.henrik-motakef.de/freebsd-distfiles/asdf/
 PKGNAMEPREFIX=	cl-
 PKGNAMESUFFIX=	-clisp
 DISTFILES=	# use installed sources from CL_LIBDIR
@@ -22,16 +21,20 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf \
 		clisp:${PORTSDIR}/lang/clisp
 
+ASDF_MODULES=	asdf.lisp wild-modules.lisp
+
 post-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 
 do-build:
-	clisp -q -ansi -norc \
-		-c ${PREFIX}/lib/common-lisp/asdf/asdf.lisp -o ${WRKSRC}/asdf.fasl \
-		-c ${PREFIX}/lib/common-lisp/asdf/wild-modules.lisp -o ${WRKSRC}/wild-modules.fasl
+	for FILE in ${ASDF_MODULES}; do \
+		clisp -q -ansi -norc \
+			-x "(compile-file \"${LOCALBASE}/lib/common-lisp/asdf/$${FILE}\" :output-file \"${WRKSRC}/$$(${BASENAME} $${FILE} .lisp).fasl\")" \
+			-x "(quit)"; \
+	done
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/common-lisp/asdf/clispfasl
-	${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/asdf/clispfasl
+	@${MKDIR} ${PREFIX}/lib/common-lisp/asdf/clispfasl
+	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/asdf/clispfasl
 
 .include <bsd.port.mk>
