@@ -546,6 +546,7 @@
     SUBDIR += hs-deepseq
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
+    SUBDIR += hs-fgl
     SUBDIR += hs-ghc-mtl
     SUBDIR += hs-ghc-paths
     SUBDIR += hs-ghc-paths-docs
