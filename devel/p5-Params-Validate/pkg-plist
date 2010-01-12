@@ -1,11 +1,11 @@
-%%SITE_PERL%%/Attribute/Params/Validate.pm
-%%SITE_PERL%%/Params/Validate.pm
-%%SITE_PERL%%/Params/Validate.xs
-%%SITE_PERL%%/Params/ValidatePP.pm
-%%SITE_PERL%%/Params/ValidateXS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params/Validate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Params/Validate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Params/ValidatePP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Params/ValidateXS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/Validate.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/Validate.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
-@dirrmtry %%SITE_PERL%%/Params
-@dirrmtry %%SITE_PERL%%/Attribute/Params
-@dirrmtry %%SITE_PERL%%/Attribute
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Params
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Attribute
