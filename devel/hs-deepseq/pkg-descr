@@ -1,0 +1,4 @@
+This package provides a "deep" version of seq, for
+fully evluating Haskell data structures.
+
+WWW: http://hackage.haskell.org/package/deepseq
