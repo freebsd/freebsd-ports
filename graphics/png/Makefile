@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.40
+PORTVERSION=	1.2.41
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/00-lib${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 #PATCHFILES=
 #PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKEFILE=	${WRKSRC}/scripts/makefile.freebsd

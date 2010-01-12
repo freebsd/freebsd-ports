@@ -1,29 +1,29 @@
---- scripts/makefile.freebsd.orig	2007-06-21 02:10:26.000000000 +0400
-+++ scripts/makefile.freebsd	2007-10-13 17:24:24.000000000 +0400
-@@ -8,26 +8,27 @@
+--- scripts/makefile.freebsd.orig	2009-12-03 02:46:02.000000000 +0100
++++ scripts/makefile.freebsd	2010-01-12 13:47:28.000000000 +0100
+@@ -11,26 +11,28 @@
  LIB=		png
  SHLIB_MAJOR=	${SHLIB_VER}
  SHLIB_MINOR=	0
--NOPROFILE=	YES
 +.if (${OSVERSION} > 600007)
-+NO_PROFILE=     YES
++NO_PROFILE=	YES
 +NO_OBJ=         YES
 +.else
-+NOPROFILE=      YES
+ NOPROFILE=	YES
  NOOBJ=          YES
 +.endif
  
  # where make install puts libpng.a and png.h
 -DESTDIR=	${PREFIX}
 -LIBDIR=		/lib
-+LIBDIR=         ${PREFIX}/lib
++#DESTDIR=	${PREFIX}
++LIBDIR=		${PREFIX}/lib
  INCS=		png.h pngconf.h
 -INCSDIR=	/include/libpng
-+INCSDIR=        ${PREFIX}/include/libpng
++INCSDIR=	${PREFIX}/include/libpng
  INCDIR=		${INCSDIR}		# for 4.x bsd.lib.mk
  MAN=		libpng.3 libpngpf.3 png.5
 -MANDIR=		/man/man
-+MANDIR=         ${PREFIX}/man/man
++MANDIR=		${PREFIX}/man/man
  SYMLINKS=       libpng/png.h ${INCSDIR}/../png.h \
  		libpng/pngconf.h ${INCSDIR}/../pngconf.h
  LDADD+=         -lm -lz
@@ -31,12 +31,12 @@
  
  CFLAGS+= -I.
 -.if (${MACHINE_ARCH} != "i386")
--CFLAGS+= -DPNG_NO_MMX_CODE
+-CFLAGS+= -DPNG_CONFIGURE_LIBPNG -DPNG_NO_MMX_CODE
 -.endif
  
  SRCS=	png.c pngset.c pngget.c pngrutil.c pngtrans.c pngwutil.c \
  	pngread.c pngrio.c pngwio.c pngwrite.c pngrtran.c \
-@@ -45,4 +46,22 @@
+@@ -48,4 +50,22 @@
  writelock:
  	chmod a-w *.[ch35] $(DOCS) scripts/*
  
