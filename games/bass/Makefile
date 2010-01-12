@@ -7,7 +7,7 @@
 
 PORTNAME=	bass
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/scummvm/extras/Beneath%20a%20Steel%20Sky
 DISTNAME=	bass-cd-1.2
@@ -21,7 +21,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -37,7 +37,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%DATADIR%%:${DATADIR}:g" pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
