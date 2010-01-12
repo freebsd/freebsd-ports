@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.3.2b
-PORTREVISION=	1
+PORTVERSION=	1.3.2c
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -24,7 +23,7 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	mm@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1

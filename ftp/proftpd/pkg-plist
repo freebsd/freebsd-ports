@@ -70,6 +70,7 @@ sbin/in.proftpd
 sbin/proftpd
 %%CTRLS_ADMIN%%sbin/ftpdctl
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/proftpd.mo
@@ -83,6 +84,7 @@ sbin/proftpd
 %%NLS%%@dirrmtry share/locale/bg_BG/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/zh_TW
 %%NLS%%@dirrmtry share/locale/en_US
 %%NLS%%@dirrmtry share/locale/it_IT
 %%NLS%%@dirrmtry share/locale/ru_RU
