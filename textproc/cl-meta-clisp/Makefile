@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	meta
-PORTVERSION=	20011114.1
+PORTVERSION=	0.1
 PORTREVISION=	2
 CATEGORIES=	textproc lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
