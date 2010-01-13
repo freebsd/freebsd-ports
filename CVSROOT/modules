@@ -5734,6 +5734,7 @@ ipfw2dshield                    ports/security/ipfw2dshield
 ipfwcount                       ports/security/ipfwcount
 ipgrab                          ports/net/ipgrab
 ipguard                         ports/security/ipguard
+iplike                          ports/databases/iplike
 iplog                           ports/net/iplog
 ipmi-kmod                       ports/sysutils/ipmi-kmod
 ipmitool                        ports/sysutils/ipmitool
@@ -21479,6 +21480,7 @@ rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
 rubygem-net-ssh                 ports/security/rubygem-net-ssh
 rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
+rubygem-newgem                  ports/devel/rubygem-newgem
 rubygem-nicovideo               ports/www/rubygem-nicovideo
 rubygem-nmap-parser             ports/security/rubygem-nmap-parser
 rubygem-nokogiri                ports/textproc/rubygem-nokogiri
