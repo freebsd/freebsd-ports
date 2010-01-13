@@ -27,6 +27,6 @@ do-install:
 	@${MKDIR} ${CL_LIBDIR}/split-sequence
 	@${INSTALL_DATA} ${WRKSRC}/split-sequence.lisp ${CL_LIBDIR}/split-sequence/
 	@${INSTALL_DATA} ${WRKSRC}/split-sequence.asd ${CL_LIBDIR}/split-sequence/
-	@${LN} -s ${CL_LIBDIR}/split-sequence/split-sequence.asd ${CL_LIBDIR}/system-registry/split-sequence.asd
+	@${LN} -sf ${CL_LIBDIR}/split-sequence/split-sequence.asd ${CL_LIBDIR}/system-registry/split-sequence.asd
 
 .include <bsd.port.mk>

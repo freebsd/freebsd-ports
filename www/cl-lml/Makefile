@@ -29,7 +29,7 @@ do-install:
 	@${MKDIR} ${CL_LIBDIR}/lml
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${CL_LIBDIR}/lml
 	@${INSTALL_DATA} ${WRKSRC}/lml.asd ${CL_LIBDIR}/lml
-	@${LN} -s ${CL_LIBDIR}/lml/lml.asd ${CL_LIBDIR}/system-registry/lml.asd
+	@${LN} -sf ${CL_LIBDIR}/lml/lml.asd ${CL_LIBDIR}/system-registry/lml.asd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}

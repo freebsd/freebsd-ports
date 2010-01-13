@@ -28,7 +28,7 @@ do-install:
 	@${MKDIR} ${CL_LIBDIR}/meta
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${CL_LIBDIR}/meta/
 	@${INSTALL_DATA} ${WRKSRC}/meta.asd ${CL_LIBDIR}/meta/
-	@${LN} -s ${CL_LIBDIR}/meta/meta.asd ${CL_LIBDIR}/system-registry/meta.asd
+	@${LN} -sf ${CL_LIBDIR}/meta/meta.asd ${CL_LIBDIR}/system-registry/meta.asd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/Prag-Parse.* ${DOCSDIR}
