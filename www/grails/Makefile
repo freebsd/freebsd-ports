@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	grails
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.0
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/grails/
-DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mjs@bur.st
 COMMENT=	Web framework built on Groovy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
 
+USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LICENSE build.properties build.xml ant conf dist media lib \
@@ -25,7 +26,7 @@ DATAFILES=	LICENSE build.properties build.xml ant conf dist media lib \
 SCRIPTFILES=	grails grails-debug startGrails
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	api
+PORTDOCS=	api guide index.html css img ref
 .endif
 PLIST_FILES=	${SCRIPTFILES:S,^,bin/,}
 SUB_FILES=	set-grails_home.sed pkg-message
