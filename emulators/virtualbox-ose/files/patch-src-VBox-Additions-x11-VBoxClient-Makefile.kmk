@@ -1,0 +1,20 @@
+Index: src/VBox/Additions/x11/VBoxClient/Makefile.kmk
+===================================================================
+--- src/VBox/Additions/x11/VBoxClient/Makefile.kmk	(revision 25472)
++++ src/VBox/Additions/x11/VBoxClient/Makefile.kmk	(revision 25473)
+@@ -43,11 +43,14 @@
+ 	$(VBOX_LIBPATH32_X11)
+ VBoxClient_LIBS.freebsd = \
+ 	iconv
++VBoxClient_LIBS.linux = \
++	dl
++VBoxClient_LIBS.solaris = \
++	dl
+ VBoxClient_LIBS = \
+ 	$(VBOX_LIB_IPRT_GUEST_R3) \
+ 	$(VBOX_LIB_VBGL_R3) \
+ 	$(VBOX_LIB_IPRT_GUEST_R3) \
+-	dl \
+ 	X11 \
+ 	Xt
+ # These are static replacements for gcc-specific parts of libstdc++

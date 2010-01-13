@@ -1,21 +1,20 @@
-# New ports collection makefile for:	virtualbox
+# New ports collection makefile for:	virtualbox-ose
 # Date created:		2009-05-02
 # Whom:			Bernhard Froehlich <decke@bluelife.at>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	virtualbox
-DISTVERSION=	3.0.51r22902
-PORTREVISION=	3
-CATEGORIES=	emulators kld
+PORTNAME=	virtualbox-ose
+DISTVERSION=	3.1.2
+CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
 		http://disasterarea.chruetertee.ch/ \
 		http://mirror.4bit.ws/ \
 		http://dlc.sun.com/virtualbox/${VBOX_GUEST_VER}/:guestadditions
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GADISTFILES}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	VirtualBox-${DISTVERSION}-OSE${EXTRACT_SUFX} ${GADISTFILES}
+EXTRACT_ONLY=	VirtualBox-${DISTVERSION}-OSE${EXTRACT_SUFX}
 
 #for discussion please use emulation@FreeBSD.org
 MAINTAINER=	vbox@FreeBSD.org
@@ -28,10 +27,11 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.5:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
 
+WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GNOME=	libidl
-USE_CDRTOOLS=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
@@ -48,7 +48,7 @@ CONFLICTS=	bcc-[0-9]*
 VBOXGROUP?=	vboxusers
 VBOXGID?=	920
 VBOX_FRONTENDS=	VBoxHeadless
-VBOX_GUEST_VER=	3.0.6
+VBOX_GUEST_VER=	${PORTVERSION}
 
 SUB_FILES=	pkg-install
 
@@ -66,12 +66,10 @@ OPTIONS=	QT4 "Build with QT4 Frontend" on \
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,} \
-		PYTHON_VER=${PYTHON_VER} \
+PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
 		GUEST_VER=${VBOX_GUEST_VER}
 
-KMODDIR=	/boot/modules
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=
@@ -130,16 +128,14 @@ CONFIGURE_ARGS+=--disable-dbus
 
 .if !defined(WITH_PULSEAUDIO)
 CONFIGURE_ARGS+=--disable-pulse
+.else
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .endif
 
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if !exists(${SRC_BASE}/sys/kern/bus_if.m)
-IGNORE=		requires kernel sources for the kernel module
 .endif
 
 .if ${OSVERSION} < 700000
@@ -172,7 +168,9 @@ post-patch:
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE = ${DATADIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_APP_DOCS = ${DOCSDIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_INSTALLER = 1' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_TESTCASES=' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_VBOXDRV = ' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_NETFLT = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_NETADP = ' >> ${WRKSRC}/LocalConfig.kmk
 .if defined(WITHOUT_X11)
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 .endif
@@ -191,11 +189,6 @@ do-build:
 	cd ${WRKSRC} && ${SH} env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
 
 do-install:
-	${MKDIR} ${KMODDIR}
-.for f in vboxdrv.ko vboxnetadp.ko vboxnetflt.ko
-	${INSTALL_KLD} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${KMODDIR}
-.endfor
-
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom && ${COPYTREE_SHARE} "idl samples" ${DATADIR})
 

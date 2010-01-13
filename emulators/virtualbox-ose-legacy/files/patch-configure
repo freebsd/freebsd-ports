@@ -1,15 +1,33 @@
---- configure.orgi	2009-05-31 13:43:50.000000000 +0200
-+++ configure	2009-05-31 13:45:47.000000000 +0200
-@@ -102,7 +102,7 @@
- XSLTPROC="xsltproc"
+--- configure.orig	2009-12-17 15:23:05.000000000 +0100
++++ configure	2009-12-21 14:25:45.000000000 +0100
+@@ -107,7 +107,7 @@
  GENISOIMAGE="genisoimage"
  MKISOFS="mkisofs"
+ INCCRYPTO=""
 -LIBCRYPTO="-lcrypto"
 +LIBCRYPTO="-lcrypto -lssl"
  LIBPTHREAD="-lpthread"
  LIBCAP="-lcap"
  GSOAP=""
-@@ -1698,7 +1698,7 @@
+@@ -125,6 +125,8 @@
+ if [ "$OS" = "freebsd" ]; then
+   INCCURL="-I/usr/local/include"
+   LIBCURL="-L/usr/local/lib -lcurl"
++  INCPULSE="-I/usr/local/include"
++  LIBPULSE="-L/usr/local/lib"
+ else
+   INCCURL=""
+   LIBCURL="-lcurl"
+@@ -1181,7 +1183,7 @@
+ #endif
+ }
+ EOF
+-  if test_compile "-lpulse" pulse pulse; then
++  if test_compile "$INCPULSE $LIBPULSE -lpulse" pulse pulse; then
+     test_execute
+   fi
+ }
+@@ -1773,7 +1775,7 @@
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
          echo "$CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so" >> $LOG
@@ -18,3 +36,31 @@
          if [ $? -eq 0 ]; then
            found=1
            break
+@@ -2315,6 +2317,15 @@
+ [ $WITH_QT4    -eq 1 ] && check_qt4
+ [ $WITH_PYTHON -eq 1 ] && check_python
+ 
++# PulseAudio
++if [ "$OS" = "linux" -o "$OS" = "freebsd" ]; then
++  if [ $WITH_PULSE -eq 1 ]; then
++    check_pulse
++  else
++    cnf_append "VBOX_WITH_PULSE" ""
++  fi
++fi
++
+ # Linux-specific
+ if [ "$OS" = "linux" ]; then
+   # don't check for the static libstdc++ in the PUEL version as we build the
+@@ -2332,11 +2343,6 @@
+   else
+     cnf_append "VBOX_WITH_ALSA" ""
+   fi
+-  if [ $WITH_PULSE -eq 1 ]; then
+-    check_pulse
+-  else
+-    cnf_append "VBOX_WITH_PULSE" ""
+-  fi
+   if [ $WITH_DBUS -eq 0 ]; then
+     cnf_append "VBOX_WITH_DBUS" ""
+   fi
