@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trackerbt
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/trackerbt/
 
