@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	yuri.pankov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clipboard manager for the GNOME panel
 
 USE_BZIP2=	yes
