@@ -4,7 +4,7 @@
  #endif
  
  #include "ruby.h"
-+#if defined(RFLOAT_VALUE)
++#if defined(DWITH_RUBY_19)
 +#define RUBY_VERSION_CODE 190
 +#endif
 +#if RUBY_VERSION_CODE < 190

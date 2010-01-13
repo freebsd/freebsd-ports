@@ -62,4 +62,8 @@ CONFIGURE_ENV+=	EXTRA_LDFLAGS="${EXTRA_LDFLAGS} -pthread"
 .endif
 .endif
 
+.if ${RUBY_RELVERSION} == 1.9.1
+CFLAGS+=	-DWITH_RUBY_19
+.endif
+
 .include <bsd.port.post.mk>
