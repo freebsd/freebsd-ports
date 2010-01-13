@@ -3195,12 +3195,14 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Interface.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Proxy.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Socket.php
+%%DATADIR%%/library/Zend/Http/Client/Adapter/Stream.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Test.php
 %%DATADIR%%/library/Zend/Http/Client/Exception.php
 %%DATADIR%%/library/Zend/Http/Cookie.php
 %%DATADIR%%/library/Zend/Http/CookieJar.php
 %%DATADIR%%/library/Zend/Http/Exception.php
 %%DATADIR%%/library/Zend/Http/Response.php
+%%DATADIR%%/library/Zend/Http/Response/Stream.php
 %%DATADIR%%/library/Zend/InfoCard.php
 %%DATADIR%%/library/Zend/InfoCard/Adapter/Default.php
 %%DATADIR%%/library/Zend/InfoCard/Adapter/Exception.php
@@ -3916,6 +3918,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Paginator/ScrollingStyle/Interface.php
 %%DATADIR%%/library/Zend/Paginator/ScrollingStyle/Jumping.php
 %%DATADIR%%/library/Zend/Paginator/ScrollingStyle/Sliding.php
+%%DATADIR%%/library/Zend/Paginator/SerializableLimitIterator.php
 %%DATADIR%%/library/Zend/Pdf.php
 %%DATADIR%%/library/Zend/Pdf/Action.php
 %%DATADIR%%/library/Zend/Pdf/Action/GoTo.php
@@ -3940,6 +3943,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Annotation.php
 %%DATADIR%%/library/Zend/Pdf/Annotation/FileAttachment.php
 %%DATADIR%%/library/Zend/Pdf/Annotation/Link.php
+%%DATADIR%%/library/Zend/Pdf/Annotation/Markup.php
 %%DATADIR%%/library/Zend/Pdf/Annotation/Text.php
 %%DATADIR%%/library/Zend/Pdf/Cmap.php
 %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding.php
@@ -3997,6 +4001,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Compression/Flate.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Compression/Lzw.php
 %%DATADIR%%/library/Zend/Pdf/Filter/Interface.php
+%%DATADIR%%/library/Zend/Pdf/Filter/RunLength.php
 %%DATADIR%%/library/Zend/Pdf/Font.php
 %%DATADIR%%/library/Zend/Pdf/Image.php
 %%DATADIR%%/library/Zend/Pdf/NameTree.php
@@ -7020,6 +7025,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/String/BinaryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/StringTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/FactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Filter/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Filter/Ascii85Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Filter/RunLengthTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/NamedDestinationsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/ProcessingTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/pdfarchiving.pdf
@@ -8054,6 +8062,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/ProgressBar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/_fonts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/Filter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/Element/String
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/Element/Object
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/Element
@@ -8814,6 +8823,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher
 @dirrm %%DATADIR%%/library/Zend/InfoCard/Adapter
 @dirrm %%DATADIR%%/library/Zend/InfoCard
+@dirrm %%DATADIR%%/library/Zend/Http/Response
 @dirrm %%DATADIR%%/library/Zend/Http/Client/Adapter
 @dirrm %%DATADIR%%/library/Zend/Http/Client
 @dirrm %%DATADIR%%/library/Zend/Http
