@@ -1,7 +1,7 @@
 
 Note:
 Dbskkd-cdb is designed to run with inetd or daemontools.  Example config
-for both superdaemons are available at /usr/local/share/doc/dbskkd-cdb.
+for both superdaemons are available at %%DOCSDIR%%.
 
 Also note that dbskkd-cdb no longer required to run 'root' (1.71dev does),
 nor chroot(8) to the dictionary directory.
