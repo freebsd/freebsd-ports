@@ -21,13 +21,6 @@ DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 NO_BUILD=	yes
 CL_LIBDIR?=	${LOCALBASE}/lib/common-lisp
 
-LPORTDOCS=	AUTHORS ChangeLog INSTALL LICENSE Makefile.common NEWS README TODO \
-		doc/uffi.pdf doc/html.tar.gz
-LPORTEXAMPLES=	Makefile Makefile.msvc acl-compat-tester.lisp arrays.lisp atoifl.lisp \
-		c-test-fns.c c-test-fns.lisp compress.lisp file-socket.lisp getenv.lisp \
-		gethostname.lisp getshells.lisp gettime.lisp run-examples.lisp \
-		strtol.lisp test-examples.lisp union.lisp
-
 do-install:
 	@${MKDIR} ${CL_LIBDIR}/uffi
 	@${MKDIR} ${CL_LIBDIR}/uffi/src
@@ -36,13 +29,18 @@ do-install:
 	@${LN} -sf ${CL_LIBDIR}/uffi/uffi.asd ${CL_LIBDIR}/system-registry/uffi.asd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${LPORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	@${TAR} -C ${DOCSDIR} -xf ${WRKSRC}/doc/html.tar.gz
+	@${CHOWN} ${DOCOWN}:${DOCGRP} ${DOCSDIR}/html/*
+	@${CHMOD} ${DOCMODE}  ${DOCSDIR}/html/*
+	@${INSTALL_DATA} ${WRKSRC}/doc/uffi.pdf ${DOCSDIR}
+.for FILE in AUTHORS ChangeLog INSTALL LICENSE NEWS README TODO
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/examples
-.for i in ${LPORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${i} ${DOCSDIR}/examples/
-.endfor
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
