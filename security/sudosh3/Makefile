@@ -18,6 +18,7 @@ CONFLICTS=		sudosh-*
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=		yes
+HAS_CONFIGURE=		yes
 USE_AUTOTOOLS=		automake:110
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
