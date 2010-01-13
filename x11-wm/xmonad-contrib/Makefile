@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmonad-contrib
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad-contrib/${PORTVERSION}/
 
@@ -15,17 +14,19 @@ MAINTAINER=	matt.guegan@free.fr
 COMMENT=	Third party tiling algorithms, configurations and scripts to xmonad
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		xmonad:${PORTSDIR}/x11-wm/xmonad
+		xmonad:${PORTSDIR}/x11-wm/xmonad \
+		hs-utf8-string-ghc>=0.1:${PORTSDIR}/devel/hs-utf8-string-ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		xmonad:${PORTSDIR}/x11-wm/xmonad
+		xmonad:${PORTSDIR}/x11-wm/xmonad \
+		hs-utf8-string-ghc>=0.1:${PORTSDIR}/devel/hs-utf8-string-ghc
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 USE_XORG=	x11
 
 GHC_VERSION=		6.10.4
 XMONADC_VERSION=	${PORTVERSION}
-UTF8STR_VERSION=	0.3.5
-HSX11XFT_VERSION=	0.3
+UTF8STR_VERSION=	0.3.6
+HSX11XFT_VERSION=	0.7
 
 GHC_CMD=	${LOCALBASE}/bin/ghc
 SETUP_CMD=	./setup
@@ -38,8 +39,7 @@ PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
 		XMONADC_LIBDIR_REL=${XMONADC_LIBDIR_REL}
 
 # See (1)
-OPTIONS=	XFT "Enable Xft support for fonts" On	\
-		UTF8 "Enable UTF-8 support" Off
+OPTIONS=	XFT "Enable Xft support for fonts" On
 
 .include <bsd.port.pre.mk>
 
@@ -48,17 +48,12 @@ CONFIGURE_ARGS=	--haddock-options=-w --prefix=${PREFIX}
 # (1)
 .if exists(${LOCALBASE}/lib/X11-xft-${HSX11XFT_VERSION}/register.sh)
 WITH_XFT=
-.elif exists(${LOCALBASE}/lib/utf8-string-${UTF8STR_VERSION}/register.sh)
-WITH_UTF8=
 .endif
 
 .if defined(WITH_XFT)
-CONFIGURE_ARGS+=	--flags="with_xft"
-BUILD_DEPENDS+=		hs-x11-xft-ghc>=0.2:${PORTSDIR}/x11/hs-x11-xft-ghc	\
-			hs-utf8-string-ghc>=0.1:${PORTSDIR}/devel/hs-utf8-string-ghc
-.elif defined(WITH_UTF8)
-CONFIGURE_ARGS+=	--flags="with_utf8"
-BUILD_DEPENDS+=		hs-utf8-string-ghc>=0.1:${PORTSDIR}/devel/hs-utf8-string-ghc
+CONFIGURE_ARGS+=	--flags="use_xft"
+BUILD_DEPENDS+=		hs-x11-xft-ghc>=0.2:${PORTSDIR}/x11/hs-x11-xft-ghc
+RUN_DEPENDS+=		hs-x11-xft-ghc>=0.2:${PORTSDIR}/x11/hs-x11-xft-ghc
 .endif
 
 .if defined(NOPORTDOCS)
