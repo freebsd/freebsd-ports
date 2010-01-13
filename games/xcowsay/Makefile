@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xcowsay
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.nickg.me.uk/files/
+MASTER_SITES=	http://www.nickg.me.uk/files/ \
+		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A graphical configurable talking cow
 
 OPTIONS=	DBUS "Enable DBus support" off
