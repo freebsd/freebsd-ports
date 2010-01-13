@@ -31,9 +31,6 @@ do-install:
 	@${MKDIR} ${CL_LIBDIR}/asdf
 	@${MKDIR} ${ASDF_SYSTEM_REGISTRY}
 
-	@${INSTALL_DATA} ${WRKSRC}/asdf.asd ${ASDF_SYSTEM_REGISTRY}
-	@${INSTALL_DATA} ${WRKSRC}/cclan.asd ${ASDF_SYSTEM_REGISTRY}
-
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${CL_LIBDIR}/asdf/
 	@${INSTALL_DATA} ${WRKSRC}/*.asd ${CL_LIBDIR}/asdf/
 
