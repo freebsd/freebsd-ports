@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	groovy
-DISTVERSION=	1.5.7
+DISTVERSION=	1.7.0
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.groovy.codehaus.org/distributions/
 DISTNAME=	groovy-${PORTVERSION}
@@ -22,7 +22,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	ASM-LICENSE.txt LICENSE.txt conf lib
+DATAFILES=	ANTLR-LICENSE.txt ASM-LICENSE.txt CLI-LICENSE.txt JSR223-LICENSE.txt LICENSE.txt conf lib
 SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
 
 .if !defined(NOPORTDOCS)
