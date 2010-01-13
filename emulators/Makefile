@@ -176,6 +176,7 @@
     SUBDIR += vgba-bin
     SUBDIR += vice
     SUBDIR += virtualbox-ose
+    SUBDIR += virtualbox-ose-additions
     SUBDIR += virtualbox-ose-kmod
     SUBDIR += visualos
     SUBDIR += vmips
