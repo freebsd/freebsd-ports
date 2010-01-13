@@ -38,8 +38,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.asd ${CL_LIBDIR}/cl-ppcre/
 	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.system ${CL_LIBDIR}/cl-ppcre/
 
-	@${LN} -s ${CL_LIBDIR}/cl-ppcre/cl-ppcre.asd ${CL_LIBDIR}/system-registry/cl-ppcre.asd
-	@${LN} -s ${CL_LIBDIR}/cl-ppcre/cl-ppcre.system ${CL_LIBDIR}/system-registry/cl-ppcre.system
+	@${LN} -sf ${CL_LIBDIR}/cl-ppcre/cl-ppcre.asd ${CL_LIBDIR}/system-registry/cl-ppcre.asd
+	@${LN} -sf ${CL_LIBDIR}/cl-ppcre/cl-ppcre.system ${CL_LIBDIR}/system-registry/cl-ppcre.system
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

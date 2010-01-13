@@ -30,7 +30,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/clocc-port.asd ${CL_LIBDIR}/port/port.asd
 	@${INSTALL_DATA} ${WRKSRC}/port.system ${CL_LIBDIR}/port/port.system
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${CL_LIBDIR}/port/
-	@${LN} -s ${CL_LIBDIR}/port/port.asd ${CL_LIBDIR}/system-registry/port.asd
+	@${LN} -sf ${CL_LIBDIR}/port/port.asd ${CL_LIBDIR}/system-registry/port.asd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/port.html ${DOCSDIR}
