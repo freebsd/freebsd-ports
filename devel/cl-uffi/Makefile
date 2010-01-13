@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uffi
-PORTVERSION=	1.5.17
+PORTVERSION=	1.6.2
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://files.b9.com/uffi/
 PKGNAMEPREFIX=	cl-

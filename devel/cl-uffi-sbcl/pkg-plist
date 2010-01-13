@@ -1,9 +1,9 @@
-lib/common-lisp/uffi/src/sbclfasl/aggregates.fasl
-lib/common-lisp/uffi/src/sbclfasl/functions.fasl
-lib/common-lisp/uffi/src/sbclfasl/libraries.fasl
-lib/common-lisp/uffi/src/sbclfasl/objects.fasl
-lib/common-lisp/uffi/src/sbclfasl/os.fasl
-lib/common-lisp/uffi/src/sbclfasl/package.fasl
-lib/common-lisp/uffi/src/sbclfasl/primitives.fasl
-lib/common-lisp/uffi/src/sbclfasl/strings.fasl
-@dirrm lib/common-lisp/uffi/src/sbclfasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/aggregates.fasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/functions.fasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/libraries.fasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/objects.fasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/os.fasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/package.fasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/primitives.fasl
+%%LIB32DIR%%/common-lisp/uffi/src/sbclfasl/strings.fasl
+@dirrm %%LIB32DIR%%/common-lisp/uffi/src/sbclfasl

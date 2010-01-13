@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	uffi
-PORTVERSION=	1.5.9
+PORTVERSION=	1.6.2
 CATEGORIES=	devel lisp
 MASTER_SITES=	# use installed sources from CL_LIBDIR
 PKGNAMEPREFIX=	cl-
