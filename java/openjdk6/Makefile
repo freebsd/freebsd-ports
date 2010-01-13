@@ -9,8 +9,10 @@ PORTNAME=	openjdk6
 PORTVERSION=	b16
 PORTREVISION=	2
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/
+MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
+		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}:ant
 
 MAINTAINER=	openjdk@getsnappy.com
 COMMENT=	Sun\'s java 6 virtual machine release under the GPL v2
@@ -21,20 +23,28 @@ OPENJDK_BUILDDATE=24_apr_2009
 
 OPTIONS=	DEBUG   "Enable debugging support"	off \
 		IPV6    "Enable IPv6 support"	off \
-		POLICY  "Install the Unlimited Strength Policy Files"	off \
+		POLICY  "Install the Unlimited Strength Policy Files"	off
 
 # java extracts directly to the cwd
-WRKSRC=	${WRKDIR}
+WRKSRC=		${WRKDIR}
 
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
+
+# do not depend on devel/apache-ant to avoid circular dependency, but
+# use .tar.bz2 distfile to avoid duplicated downloads
+ANTVERSION=	1.7.1
+ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
+
+# rely on bsdtar ability to extract .gz and .bz2 archives
+EXTRACT_CMD=	${CAT}
+EXTRACT_BEFORE_ARGS=
 
 .include <bsd.port.pre.mk>
 
@@ -70,7 +80,7 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		ALT_FREETYPE_LIB_PATH=${LOCALBASE}/lib \
 		ALT_X11_PATH=${LOCALBASE} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
-		ANT_HOME=${LOCALBASE} \
+		ANT_HOME=${WRKDIR}/apache-ant-${ANTVERSION} \
 		NO_DOCS=true
 
 .if !defined(WITH_IPV6)
@@ -86,28 +96,6 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 
 # perhaps we could check to see how many processors are availble and set this equivelent to that
 MAKE_ENV+=	HOTSPOT_BUILD_JOBS=4
-
-JDK_MAJOR_VERSION=	6
-POLICYFILE=	jce_policy-${JDK_MAJOR_VERSION}.zip
-
-.if defined(WITH_POLICY)
-DISTFILES=	${DISTNAME}.tar.gz ${POLICYFILE}
-.endif
-
-.if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-DISTFILE_INSTRUCTIONS =\n\
-Due to licensing restrictions, certain files must be fetched manually.\n\n
-DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
-in a web browser and follow the \"Download\" link for\n\
-\"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\
-This file must be placed is ${PORTSDIR}/distfiles\n\n
-.endif#}
-
-pre-fetch:
-.if defined(DISTFILE_INSTRUCTIONS)
-	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
-	@exit 1
-.endif
 
 COPYDIRS= \
 	hotspot/src/os/linux/launcher \
@@ -164,14 +152,17 @@ post-extract:
 	@${CP} ${WRKDIR}/jdk/src/share/lib/security/java.security \
 		${WRKDIR}/jdk/src/share/lib/security/java.security-openbsd
 
+.if defined(WITH_POLICY)
+post-patch:
+	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
+		${WRKSRC}/jdk/make/javax/crypto/Makefile
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/openjdk6/
 	${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/ ${PREFIX}/openjdk6/
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 	      ${PREFIX}/openjdk6/jre/lib/security/cacerts
-.if defined(WITH_POLICY)
-	${INSTALL_DATA} ${WRKDIR}/jce/*.jar ${PREFIX}/openjdk6/jre/lib/security
-.endif
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${PREFIX}/openjdk6 -not -type d | \
 		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
