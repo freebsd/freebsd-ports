@@ -1,272 +1,131 @@
-%%YABBDIR%%/Templates/Admin/default/adminbg.gif
-%%YABBDIR%%/Templates/Admin/default/admincatbg.gif
-%%YABBDIR%%/Templates/Admin/default/adminlogo.gif
-%%YABBDIR%%/Templates/Admin/default/admintopbg.gif
-%%YABBDIR%%/Templates/Admin/default/css.gif
-%%YABBDIR%%/Templates/Admin/default/xhtml.gif
-%%YABBDIR%%/Templates/Forum/default/yim.gif
-%%YABBDIR%%/Templates/Forum/default/addfav.gif
-%%YABBDIR%%/Templates/Forum/default/admin.gif
-%%YABBDIR%%/Templates/Forum/default/administrator.gif
-%%YABBDIR%%/Templates/Forum/default/admin_move.gif
-%%YABBDIR%%/Templates/Forum/default/admin_rem.gif
-%%YABBDIR%%/Templates/Forum/default/admin_splice.gif
-%%YABBDIR%%/Templates/Forum/default/admin_split.gif
-%%YABBDIR%%/Templates/Forum/default/admin_split_splice.gif
-%%YABBDIR%%/Templates/Forum/default/aim.gif
-%%YABBDIR%%/Templates/Forum/default/angry.gif
-%%YABBDIR%%/Templates/Forum/default/ann.gif
-%%YABBDIR%%/Templates/Forum/default/announcement.gif
-%%YABBDIR%%/Templates/Forum/default/answered.gif
-%%YABBDIR%%/Templates/Forum/default/arrow.gif
-%%YABBDIR%%/Templates/Forum/default/balloon2.gif
-%%YABBDIR%%/Templates/Forum/default/ban.gif
-%%YABBDIR%%/Templates/Forum/default/bar.gif
-%%YABBDIR%%/Templates/Forum/default/bdaycake.gif
-%%YABBDIR%%/Templates/Forum/default/bgcolor.gif
-%%YABBDIR%%/Templates/Forum/default/blank.gif
-%%YABBDIR%%/Templates/Forum/default/board.gif
-%%YABBDIR%%/Templates/Forum/default/bold.gif
-%%YABBDIR%%/Templates/Forum/default/buddylist.gif
-%%YABBDIR%%/Templates/Forum/default/cat.gif
-%%YABBDIR%%/Templates/Forum/default/catbg.png
-%%YABBDIR%%/Templates/Forum/default/cat_collall.gif
-%%YABBDIR%%/Templates/Forum/default/cat_collapse.gif
-%%YABBDIR%%/Templates/Forum/default/cat_expand.gif
-%%YABBDIR%%/Templates/Forum/default/center.gif
-%%YABBDIR%%/Templates/Forum/default/cheesy.gif
-%%YABBDIR%%/Templates/Forum/default/closed.gif
-%%YABBDIR%%/Templates/Forum/default/code.gif
-%%YABBDIR%%/Templates/Forum/default/code1.gif
-%%YABBDIR%%/Templates/Forum/default/cool.gif
-%%YABBDIR%%/Templates/Forum/default/cry.gif
-%%YABBDIR%%/Templates/Forum/default/css.gif
-%%YABBDIR%%/Templates/Forum/default/cssbold.gif
-%%YABBDIR%%/Templates/Forum/default/cssitalic.gif
-%%YABBDIR%%/Templates/Forum/default/delete.gif
-%%YABBDIR%%/Templates/Forum/default/des.gif
-%%YABBDIR%%/Templates/Forum/default/edit.gif
-%%YABBDIR%%/Templates/Forum/default/email.gif
-%%YABBDIR%%/Templates/Forum/default/email2.gif
-%%YABBDIR%%/Templates/Forum/default/embarassed.gif
-%%YABBDIR%%/Templates/Forum/default/evil.gif
-%%YABBDIR%%/Templates/Forum/default/face.gif
-%%YABBDIR%%/Templates/Forum/default/exclamation.gif
-%%YABBDIR%%/Templates/Forum/default/face1.gif
-%%YABBDIR%%/Templates/Forum/default/fade.gif
-%%YABBDIR%%/Templates/Forum/default/favorites.gif
-%%YABBDIR%%/Templates/Forum/default/female.gif
-%%YABBDIR%%/Templates/Forum/default/fill.gif
-%%YABBDIR%%/Templates/Forum/default/flash.gif
-%%YABBDIR%%/Templates/Forum/default/ftp.gif
-%%YABBDIR%%/Templates/Forum/default/gender.gif
-%%YABBDIR%%/Templates/Forum/default/glow.gif
-%%YABBDIR%%/Templates/Forum/default/green0.gif
-%%YABBDIR%%/Templates/Forum/default/green1.gif
-%%YABBDIR%%/Templates/Forum/default/greenon.gif
-%%YABBDIR%%/Templates/Forum/default/grey1.gif
-%%YABBDIR%%/Templates/Forum/default/grin.gif
-%%YABBDIR%%/Templates/Forum/default/gtalk2.gif
-%%YABBDIR%%/Templates/Forum/default/guardian.gif
-%%YABBDIR%%/Templates/Forum/default/guardian_icon.gif
-%%YABBDIR%%/Templates/Forum/default/guest.gif
-%%YABBDIR%%/Templates/Forum/default/happy.gif
-%%YABBDIR%%/Templates/Forum/default/headerbg.png
-%%YABBDIR%%/Templates/Forum/default/help.gif
-%%YABBDIR%%/Templates/Forum/default/help1.gif
-%%YABBDIR%%/Templates/Forum/default/hide.gif
-%%YABBDIR%%/Templates/Forum/default/hidelock.gif
-%%YABBDIR%%/Templates/Forum/default/hidesticky.gif
-%%YABBDIR%%/Templates/Forum/default/hidestickylock.gif
-%%YABBDIR%%/Templates/Forum/default/highlight.gif
-%%YABBDIR%%/Templates/Forum/default/home.gif
-%%YABBDIR%%/Templates/Forum/default/hotthread.gif
-%%YABBDIR%%/Templates/Forum/default/hr.gif
-%%YABBDIR%%/Templates/Forum/default/huh.gif
-%%YABBDIR%%/Templates/Forum/default/icqadd.gif
-%%YABBDIR%%/Templates/Forum/default/icqflow.gif
-%%YABBDIR%%/Templates/Forum/default/imclose.gif
-%%YABBDIR%%/Templates/Forum/default/img.gif
-%%YABBDIR%%/Templates/Forum/default/imopen.gif
-%%YABBDIR%%/Templates/Forum/default/imstore.gif
-%%YABBDIR%%/Templates/Forum/default/im_config.gif
-%%YABBDIR%%/Templates/Forum/default/im_delete.gif
-%%YABBDIR%%/Templates/Forum/default/im_inbox.gif
-%%YABBDIR%%/Templates/Forum/default/im_new.gif
-%%YABBDIR%%/Templates/Forum/default/im_outbox.gif
-%%YABBDIR%%/Templates/Forum/default/im_reload.gif
-%%YABBDIR%%/Templates/Forum/default/index_drop.gif
-%%YABBDIR%%/Templates/Forum/default/index_left.gif
-%%YABBDIR%%/Templates/Forum/default/index_left0.gif
-%%YABBDIR%%/Templates/Forum/default/index_right.gif
-%%YABBDIR%%/Templates/Forum/default/index_right0.gif
-%%YABBDIR%%/Templates/Forum/default/index_text.gif
-%%YABBDIR%%/Templates/Forum/default/index_togl.gif
-%%YABBDIR%%/Templates/Forum/default/info.gif
-%%YABBDIR%%/Templates/Forum/default/ip.gif
-%%YABBDIR%%/Templates/Forum/default/italicize.gif
-%%YABBDIR%%/Templates/Forum/default/kiss.gif
-%%YABBDIR%%/Templates/Forum/default/lamp.gif
-%%YABBDIR%%/Templates/Forum/default/lastpost.gif
-%%YABBDIR%%/Templates/Forum/default/laugh.gif
-%%YABBDIR%%/Templates/Forum/default/left.gif
-%%YABBDIR%%/Templates/Forum/default/lipsrsealed.gif
-%%YABBDIR%%/Templates/Forum/default/list.gif
-%%YABBDIR%%/Templates/Forum/default/locked.gif
-%%YABBDIR%%/Templates/Forum/default/lockmail.gif
-%%YABBDIR%%/Templates/Forum/default/login.gif
-%%YABBDIR%%/Templates/Forum/default/logout.gif
-%%YABBDIR%%/Templates/Forum/default/male.gif
-%%YABBDIR%%/Templates/Forum/default/markread.gif
-%%YABBDIR%%/Templates/Forum/default/markunread.gif
-%%YABBDIR%%/Templates/Forum/default/me.gif
-%%YABBDIR%%/Templates/Forum/default/message.gif
-%%YABBDIR%%/Templates/Forum/default/msn.gif
-%%YABBDIR%%/Templates/Forum/default/modify.gif
-%%YABBDIR%%/Templates/Forum/default/move.gif
-%%YABBDIR%%/Templates/Forum/default/msn0.gif
-%%YABBDIR%%/Templates/Forum/default/msn1.gif
-%%YABBDIR%%/Templates/Forum/default/msn10.gif
-%%YABBDIR%%/Templates/Forum/default/msn14.gif
-%%YABBDIR%%/Templates/Forum/default/msn18.gif
-%%YABBDIR%%/Templates/Forum/default/msn2.gif
-%%YABBDIR%%/Templates/Forum/default/msn3.gif
-%%YABBDIR%%/Templates/Forum/default/msn34.gif
-%%YABBDIR%%/Templates/Forum/default/msn50.gif
-%%YABBDIR%%/Templates/Forum/default/msn66.gif
-%%YABBDIR%%/Templates/Forum/default/new.gif
-%%YABBDIR%%/Templates/Forum/default/news.gif
-%%YABBDIR%%/Templates/Forum/default/new_thread.gif
-%%YABBDIR%%/Templates/Forum/default/next.gif
-%%YABBDIR%%/Templates/Forum/default/nn.gif
-%%YABBDIR%%/Templates/Forum/default/none.gif
-%%YABBDIR%%/Templates/Forum/default/notify.gif
-%%YABBDIR%%/Templates/Forum/default/off.gif
-%%YABBDIR%%/Templates/Forum/default/off_led.png
-%%YABBDIR%%/Templates/Forum/default/on.gif
-%%YABBDIR%%/Templates/Forum/default/online.gif
-%%YABBDIR%%/Templates/Forum/default/on_led.png
-%%YABBDIR%%/Templates/Forum/default/open.gif
-%%YABBDIR%%/Templates/Forum/default/palette.gif
-%%YABBDIR%%/Templates/Forum/default/paperclip.gif
-%%YABBDIR%%/Templates/Forum/default/perl.gif
-%%YABBDIR%%/Templates/Forum/default/poll_animated.gif
-%%YABBDIR%%/Templates/Forum/default/poll_animated2.gif
-%%YABBDIR%%/Templates/Forum/default/poll_create.gif
-%%YABBDIR%%/Templates/Forum/default/poll_create2.gif
-%%YABBDIR%%/Templates/Forum/default/poll_del.gif
-%%YABBDIR%%/Templates/Forum/default/poll_del2.gif
-%%YABBDIR%%/Templates/Forum/default/poll_dvote.gif
-%%YABBDIR%%/Templates/Forum/default/poll_left.gif
-%%YABBDIR%%/Templates/Forum/default/poll_lock.gif
-%%YABBDIR%%/Templates/Forum/default/poll_lock2.gif
-%%YABBDIR%%/Templates/Forum/default/poll_middle.gif
-%%YABBDIR%%/Templates/Forum/default/poll_mod.gif
-%%YABBDIR%%/Templates/Forum/default/poll_new.gif
-%%YABBDIR%%/Templates/Forum/default/poll_new2.gif
-%%YABBDIR%%/Templates/Forum/default/poll_new3.gif
-%%YABBDIR%%/Templates/Forum/default/poll_open.gif
-%%YABBDIR%%/Templates/Forum/default/poll_right.gif
-%%YABBDIR%%/Templates/Forum/default/poll_vvote.gif
-%%YABBDIR%%/Templates/Forum/default/pre.gif
-%%YABBDIR%%/Templates/Forum/default/preferences.gif
-%%YABBDIR%%/Templates/Forum/default/prev.gif
-%%YABBDIR%%/Templates/Forum/default/preview.gif
-%%YABBDIR%%/Templates/Forum/default/preview0.gif
-%%YABBDIR%%/Templates/Forum/default/preview1.gif
-%%YABBDIR%%/Templates/Forum/default/print.gif
-%%YABBDIR%%/Templates/Forum/default/profile.gif
-%%YABBDIR%%/Templates/Forum/default/question.gif
-%%YABBDIR%%/Templates/Forum/default/quote.gif
-%%YABBDIR%%/Templates/Forum/default/quote2.gif
-%%YABBDIR%%/Templates/Forum/default/recycle.gif
-%%YABBDIR%%/Templates/Forum/default/red0.gif
-%%YABBDIR%%/Templates/Forum/default/red1.gif
-%%YABBDIR%%/Templates/Forum/default/redoff.gif
-%%YABBDIR%%/Templates/Forum/default/red_folder.gif
-%%YABBDIR%%/Templates/Forum/default/register.gif
-%%YABBDIR%%/Templates/Forum/default/remfav.gif
-%%YABBDIR%%/Templates/Forum/default/remove.gif
-%%YABBDIR%%/Templates/Forum/default/reorder.gif
-%%YABBDIR%%/Templates/Forum/default/reply.gif
-%%YABBDIR%%/Templates/Forum/default/right.gif
-%%YABBDIR%%/Templates/Forum/default/rolleyes.gif
-%%YABBDIR%%/Templates/Forum/default/sad.gif
-%%YABBDIR%%/Templates/Forum/default/search.gif
-%%YABBDIR%%/Templates/Forum/default/sendtopic.gif
-%%YABBDIR%%/Templates/Forum/default/session.gif
-%%YABBDIR%%/Templates/Forum/default/sf.gif
-%%YABBDIR%%/Templates/Forum/default/shad-0.gif
-%%YABBDIR%%/Templates/Forum/default/shad-b.gif
-%%YABBDIR%%/Templates/Forum/default/shad-bl.gif
-%%YABBDIR%%/Templates/Forum/default/shad-br.gif
-%%YABBDIR%%/Templates/Forum/default/shad-l.gif
-%%YABBDIR%%/Templates/Forum/default/shad-lt.gif
-%%YABBDIR%%/Templates/Forum/default/shad-r.gif
-%%YABBDIR%%/Templates/Forum/default/shad-rt.gif
-%%YABBDIR%%/Templates/Forum/default/shad-t.gif
-%%YABBDIR%%/Templates/Forum/default/shadow.gif
-%%YABBDIR%%/Templates/Forum/default/shocked.gif
-%%YABBDIR%%/Templates/Forum/default/size.gif
-%%YABBDIR%%/Templates/Forum/default/size1.gif
-%%YABBDIR%%/Templates/Forum/default/smiley.gif
-%%YABBDIR%%/Templates/Forum/default/smiley_down.gif
-%%YABBDIR%%/Templates/Forum/default/smiley_up.gif
-%%YABBDIR%%/Templates/Forum/default/sort.gif
-%%YABBDIR%%/Templates/Forum/default/sorted.gif
-%%YABBDIR%%/Templates/Forum/default/star.gif
-%%YABBDIR%%/Templates/Forum/default/staradmin.gif
-%%YABBDIR%%/Templates/Forum/default/starblue.gif
-%%YABBDIR%%/Templates/Forum/default/sub.gif
-%%YABBDIR%%/Templates/Forum/default/stargmod.gif
-%%YABBDIR%%/Templates/Forum/default/stargold.gif
-%%YABBDIR%%/Templates/Forum/default/starmod.gif
-%%YABBDIR%%/Templates/Forum/default/starsilver.gif
-%%YABBDIR%%/Templates/Forum/default/sticky.gif
-%%YABBDIR%%/Templates/Forum/default/stickylock.gif
-%%YABBDIR%%/Templates/Forum/default/strike.gif
-%%YABBDIR%%/Templates/Forum/default/sup.gif
-%%YABBDIR%%/Templates/Forum/default/table.gif
-%%YABBDIR%%/Templates/Forum/default/td.gif
-%%YABBDIR%%/Templates/Forum/default/tele.gif
-%%YABBDIR%%/Templates/Forum/default/thread.gif
-%%YABBDIR%%/Templates/Forum/default/thumbdown.gif
-%%YABBDIR%%/Templates/Forum/default/thumbsup.gif
-%%YABBDIR%%/Templates/Forum/default/thumbup.gif
-%%YABBDIR%%/Templates/Forum/default/timestamp.gif
-%%YABBDIR%%/Templates/Forum/default/tline.gif
-%%YABBDIR%%/Templates/Forum/default/tline2.gif
-%%YABBDIR%%/Templates/Forum/default/tline3.gif
-%%YABBDIR%%/Templates/Forum/default/tongue.gif
-%%YABBDIR%%/Templates/Forum/default/tr.gif
-%%YABBDIR%%/Templates/Forum/default/undecided.gif
-%%YABBDIR%%/Templates/Forum/default/underline.gif
-%%YABBDIR%%/Templates/Forum/default/url.gif
-%%YABBDIR%%/Templates/Forum/default/usage.gif
-%%YABBDIR%%/Templates/Forum/default/usagebar.gif
-%%YABBDIR%%/Templates/Forum/default/usageempty.gif
-%%YABBDIR%%/Templates/Forum/default/valid-xhtml10.gif
-%%YABBDIR%%/Templates/Forum/default/vcss.gif
-%%YABBDIR%%/Templates/Forum/default/veryhotthread.gif
-%%YABBDIR%%/Templates/Forum/default/wink.gif
-%%YABBDIR%%/Templates/Forum/default/www.gif
-%%YABBDIR%%/Templates/Forum/default/xhtml.gif
-%%YABBDIR%%/Templates/Forum/default/xx.gif
-%%YABBDIR%%/Templates/Forum/default/yabbchelp.swf
-%%YABBDIR%%/Templates/Forum/default/yabblogo.png
-%%YABBDIR%%/Templates/Forum/default/aarea.jpg
-%%YABBDIR%%/Templates/index.html
-%%YABBDIR%%/Variables/.htaccess
-%%YABBDIR%%/Variables/index.html
+%%YABBDIR%%/AJS.js
+%%YABBDIR%%/AJS_fx.js
+%%YABBDIR%%/Admin/ViewMembers.pl
+%%YABBDIR%%/Admin/Admin.pl
+%%YABBDIR%%/Admin/AdminEdit.pl
+%%YABBDIR%%/Admin/AdminSubList.pl
+%%YABBDIR%%/Admin/Attachments.pl
+%%YABBDIR%%/Admin/Backup.pl
+%%YABBDIR%%/Admin/EditEmailTemplates.pl
+%%YABBDIR%%/Admin/EditHelpCentre.pl
+%%YABBDIR%%/Admin/ErrorLog.pl
+%%YABBDIR%%/Admin/GuardianAdmin.pl
+%%YABBDIR%%/Admin/index.html
+%%YABBDIR%%/Admin/MailMembers.pl
+%%YABBDIR%%/Admin/Maintenance.pl
+%%YABBDIR%%/Admin/ManageBoards.pl
+%%YABBDIR%%/Admin/ManageCats.pl
+%%YABBDIR%%/Admin/ManageTemplates.pl
+%%YABBDIR%%/Admin/MemberGroups.pl
+%%YABBDIR%%/Admin/ModList.pl
+%%YABBDIR%%/Admin/ModuleChecker.pl
+%%YABBDIR%%/Admin/NewSettings.pl
+%%YABBDIR%%/Admin/RegistrationLog.pl
+%%YABBDIR%%/Admin/RemoveOldTopics.pl
+%%YABBDIR%%/Admin/Settings_Advanced.pl
+%%YABBDIR%%/Admin/Settings_Antispam.pl
+%%YABBDIR%%/Admin/Settings_Main.pl
+%%YABBDIR%%/Admin/Settings_Maintenance.pl
+%%YABBDIR%%/Admin/Settings_News.pl
+%%YABBDIR%%/Admin/Settings_Security.pl
+%%YABBDIR%%/Admin/Smilies.pl
+%%YABBDIR%%/Admin/.htaccess
+%%YABBDIR%%/AdminIndex.pl
+%%YABBDIR%%/Backups/.htaccess
+%%YABBDIR%%/Boards/test.txt
+%%YABBDIR%%/Boards/announcements.txt
+%%YABBDIR%%/Boards/forum.control
+%%YABBDIR%%/Boards/forum.master
+%%YABBDIR%%/Boards/forum.totals
+%%YABBDIR%%/Boards/general.txt
 %%YABBDIR%%/Boards/index.html
+%%YABBDIR%%/Boards/recycle.txt
 %%YABBDIR%%/Boards/.htaccess
-%%YABBDIR%%/Help/English/Admin/001.help
+%%YABBDIR%%/Buttons/English/yim.png
+%%YABBDIR%%/Buttons/English/addbuddy.png
+%%YABBDIR%%/Buttons/English/addfav.png
+%%YABBDIR%%/Buttons/English/admin.png
+%%YABBDIR%%/Buttons/English/admin_move_split_splice.png
+%%YABBDIR%%/Buttons/English/admin_rem.png
+%%YABBDIR%%/Buttons/English/admin_split.png
+%%YABBDIR%%/Buttons/English/aim.png
+%%YABBDIR%%/Buttons/English/alert.png
+%%YABBDIR%%/Buttons/English/collapse.png
+%%YABBDIR%%/Buttons/English/del_notify.png
+%%YABBDIR%%/Buttons/English/delete.png
+%%YABBDIR%%/Buttons/English/delselected.png
+%%YABBDIR%%/Buttons/English/email.png
+%%YABBDIR%%/Buttons/English/email_sm.png
+%%YABBDIR%%/Buttons/English/expand.png
+%%YABBDIR%%/Buttons/English/facebook.png
+%%YABBDIR%%/Buttons/English/favorites.png
+%%YABBDIR%%/Buttons/English/forward.png
+%%YABBDIR%%/Buttons/English/go_down.png
+%%YABBDIR%%/Buttons/English/go_up.png
+%%YABBDIR%%/Buttons/English/icq.png
+%%YABBDIR%%/Buttons/English/gtalk.png
+%%YABBDIR%%/Buttons/English/guest.png
+%%YABBDIR%%/Buttons/English/help.png
+%%YABBDIR%%/Buttons/English/hide.png
+%%YABBDIR%%/Buttons/English/home.png
+%%YABBDIR%%/Buttons/English/ignored.png
+%%YABBDIR%%/Buttons/English/locked.png
+%%YABBDIR%%/Buttons/English/login.png
+%%YABBDIR%%/Buttons/English/logout.png
+%%YABBDIR%%/Buttons/English/mark_quote.png
+%%YABBDIR%%/Buttons/English/markallread.png
+%%YABBDIR%%/Buttons/English/markread.png
+%%YABBDIR%%/Buttons/English/markunread.png
+%%YABBDIR%%/Buttons/English/message.png
+%%YABBDIR%%/Buttons/English/modify.png
+%%YABBDIR%%/Buttons/English/modmenu.png
+%%YABBDIR%%/Buttons/English/msn.png
+%%YABBDIR%%/Buttons/English/mycenter.png
+%%YABBDIR%%/Buttons/English/myspace.png
+%%YABBDIR%%/Buttons/English/new_bcpm.png
+%%YABBDIR%%/Buttons/English/new_pm.png
+%%YABBDIR%%/Buttons/English/new_thread.png
+%%YABBDIR%%/Buttons/English/notification.png
+%%YABBDIR%%/Buttons/English/notify.png
+%%YABBDIR%%/Buttons/English/poll_add.png
+%%YABBDIR%%/Buttons/English/poll_create.png
+%%YABBDIR%%/Buttons/English/poll_del.png
+%%YABBDIR%%/Buttons/English/poll_dvote.png
+%%YABBDIR%%/Buttons/English/poll_lock.png
+%%YABBDIR%%/Buttons/English/poll_mod.png
+%%YABBDIR%%/Buttons/English/poll_modify.png
+%%YABBDIR%%/Buttons/English/poll_new.png
+%%YABBDIR%%/Buttons/English/poll_new2.png
+%%YABBDIR%%/Buttons/English/poll_new3.png
+%%YABBDIR%%/Buttons/English/poll_open.png
+%%YABBDIR%%/Buttons/English/poll_unlock.png
+%%YABBDIR%%/Buttons/English/poll_vvote.png
+%%YABBDIR%%/Buttons/English/print.png
+%%YABBDIR%%/Buttons/English/profile.png
+%%YABBDIR%%/Buttons/English/quote.png
+%%YABBDIR%%/Buttons/English/register.png
+%%YABBDIR%%/Buttons/English/remfav.png
+%%YABBDIR%%/Buttons/English/remove.png
+%%YABBDIR%%/Buttons/English/reply.png
+%%YABBDIR%%/Buttons/English/search.png
+%%YABBDIR%%/Buttons/English/sendtopic.png
+%%YABBDIR%%/Buttons/English/session.png
+%%YABBDIR%%/Buttons/English/skype.png
+%%YABBDIR%%/Buttons/English/sticky.png
+%%YABBDIR%%/Buttons/English/thread.png
+%%YABBDIR%%/Buttons/English/www.png
+%%YABBDIR%%/Buttons/English/add_notify.png
+%%YABBDIR%%/Help/English/Admin/admin03_members.help
 %%YABBDIR%%/Help/English/Admin/admin01_cats.help
 %%YABBDIR%%/Help/English/Admin/admin02_boards.help
-%%YABBDIR%%/Help/English/Admin/admin03_members.help
+%%YABBDIR%%/Help/English/Admin/001.help
+%%YABBDIR%%/Help/English/Admin/admin04_security.help
+%%YABBDIR%%/Help/English/Admin/admin05_misc.help
+%%YABBDIR%%/Help/English/Admin/admin06_index.help
 %%YABBDIR%%/Help/English/Gmod/001.help
 %%YABBDIR%%/Help/English/Gmod/gmod01_threads.help
 %%YABBDIR%%/Help/English/Gmod/gmod02_posts.help
+%%YABBDIR%%/Help/English/Gmod/gmod03_security.help
 %%YABBDIR%%/Help/English/Moderator/001.help
 %%YABBDIR%%/Help/English/Moderator/moderator01_threads.help
 %%YABBDIR%%/Help/English/Moderator/moderator02_posts.help
@@ -275,58 +134,31 @@
 %%YABBDIR%%/Help/English/User/user02_profile.help
 %%YABBDIR%%/Help/English/User/user03_posting.help
 %%YABBDIR%%/Help/English/User/user04_im.help
-%%YABBDIR%%/Sources/DateTime.pl
-%%YABBDIR%%/Sources/Decoder.pl
-%%YABBDIR%%/Sources/Display.pl
-%%YABBDIR%%/Sources/DoSmilies.pl
-%%YABBDIR%%/Sources/Favorites.pl
-%%YABBDIR%%/Sources/Guardian.pl
-%%YABBDIR%%/Sources/HelpCentre.pl
-%%YABBDIR%%/Sources/ICQPager.pl
-%%YABBDIR%%/Sources/index.html
-%%YABBDIR%%/Sources/InstantMessage.pl
-%%YABBDIR%%/Sources/Load.pl
-%%YABBDIR%%/Sources/LogInOut.pl
-%%YABBDIR%%/Sources/Maintenance.pl
-%%YABBDIR%%/Sources/Memberlist.pl
-%%YABBDIR%%/Sources/MessageIndex.pl
-%%YABBDIR%%/Sources/ModifyMessage.pl
-%%YABBDIR%%/Sources/MoveTopic.pl
-%%YABBDIR%%/Sources/Notify.pl
-%%YABBDIR%%/Sources/Poll.pl
-%%YABBDIR%%/Sources/Post.pl
-%%YABBDIR%%/Sources/Printpage.pl
-%%YABBDIR%%/Sources/Profile.pl
-%%YABBDIR%%/Sources/Recent.pl
-%%YABBDIR%%/Sources/Register.pl
-%%YABBDIR%%/Sources/RemoveTopic.pl
-%%YABBDIR%%/Sources/Search.pl
-%%YABBDIR%%/Sources/Security.pl
-%%YABBDIR%%/Sources/SendTopic.pl
-%%YABBDIR%%/Sources/Sessions.pl
-%%YABBDIR%%/Sources/SetStatus.pl
-%%YABBDIR%%/Sources/Smtp.pl
-%%YABBDIR%%/Sources/SplitSplice.pl
-%%YABBDIR%%/Sources/SubList.pl
-%%YABBDIR%%/Sources/Subs.pl
-%%YABBDIR%%/Sources/System.pl
-%%YABBDIR%%/Sources/YaBBC.pl
-%%YABBDIR%%/Sources/BoardIndex.pl
+%%YABBDIR%%/Help/English/User/user05_gloss.help
+%%YABBDIR%%/Help/.htaccess
+%%YABBDIR%%/Help/index.html
 %%YABBDIR%%/Languages/English/version.txt
 %%YABBDIR%%/Languages/English/agreement.txt
+%%YABBDIR%%/Languages/English/Backup.lng
 %%YABBDIR%%/Languages/English/BoardIndex.lng
 %%YABBDIR%%/Languages/English/censor.txt
+%%YABBDIR%%/Languages/English/Debug.lng
 %%YABBDIR%%/Languages/English/Display.lng
+%%YABBDIR%%/Languages/English/Email.lng
+%%YABBDIR%%/Languages/English/Error.lng
+%%YABBDIR%%/Languages/English/ExtendedProfiles.lng
 %%YABBDIR%%/Languages/English/FA.lng
-%%YABBDIR%%/Languages/English/flood.lng
+%%YABBDIR%%/Languages/English/GModPrivileges.lng
 %%YABBDIR%%/Languages/English/Guardian.lng
 %%YABBDIR%%/Languages/English/HelpCentre.lng
-%%YABBDIR%%/Languages/English/ICQ.lng
 %%YABBDIR%%/Languages/English/InstantMessage.lng
 %%YABBDIR%%/Languages/English/LogInOut.lng
 %%YABBDIR%%/Languages/English/Main.lng
+%%YABBDIR%%/Languages/English/MemberList.lng
 %%YABBDIR%%/Languages/English/Menu.lng
 %%YABBDIR%%/Languages/English/MessageIndex.lng
+%%YABBDIR%%/Languages/English/MoveSplitSplice.lng
+%%YABBDIR%%/Languages/English/MyCenter.lng
 %%YABBDIR%%/Languages/English/Notify.lng
 %%YABBDIR%%/Languages/English/Poll.lng
 %%YABBDIR%%/Languages/English/Post.lng
@@ -337,36 +169,17 @@
 %%YABBDIR%%/Languages/English/SendTopic.lng
 %%YABBDIR%%/Languages/English/Sessions.lng
 %%YABBDIR%%/Languages/English/Smtp.lng
-%%YABBDIR%%/Languages/English/SplitSplice.lng
+%%YABBDIR%%/Languages/English/TabMenu.lng
 %%YABBDIR%%/Languages/English/Templates.lng
+%%YABBDIR%%/Languages/English/UserSelect.lng
 %%YABBDIR%%/Languages/English/Admin.lng
+%%YABBDIR%%/Languages/.htaccess
+%%YABBDIR%%/Languages/index.html
 %%YABBDIR%%/Members/index.html
 %%YABBDIR%%/Members/.htaccess
-%%YABBDIR%%/Admin/ViewMembers.pl
-%%YABBDIR%%/Admin/AdminEdit.pl
-%%YABBDIR%%/Admin/AdminSubList.pl
-%%YABBDIR%%/Admin/AdvSettings.pl
-%%YABBDIR%%/Admin/Attachments.pl
-%%YABBDIR%%/Admin/EditHelpCentre.pl
-%%YABBDIR%%/Admin/ErrorLog.pl
-%%YABBDIR%%/Admin/GuardianAdmin.pl
-%%YABBDIR%%/Admin/index.html
-%%YABBDIR%%/Admin/MailMembers.pl
-%%YABBDIR%%/Admin/ManageBoards.pl
-%%YABBDIR%%/Admin/ManageCats.pl
-%%YABBDIR%%/Admin/ManageTemplates.pl
-%%YABBDIR%%/Admin/MemberGroups.pl
-%%YABBDIR%%/Admin/ModList.pl
-%%YABBDIR%%/Admin/RegistrationLog.pl
-%%YABBDIR%%/Admin/RemoveOldTopics.pl
-%%YABBDIR%%/Admin/Smilies.pl
-%%YABBDIR%%/Admin/Admin.pl
 %%YABBDIR%%/Messages/.htaccess
 %%YABBDIR%%/Messages/index.html
 @unexec rm -f %D/%%YABBDIR%%/Setup.pl
-%%YABBDIR%%/index.html
-%%YABBDIR%%/AdminIndex.pl
-%%YABBDIR%%/YaBB.pl
 %%YABBDIR%%/Smilies/wink.gif
 %%YABBDIR%%/Smilies/angry.gif
 %%YABBDIR%%/Smilies/bath.gif
@@ -401,7 +214,477 @@
 %%YABBDIR%%/Smilies/vrolijk_1.gif
 %%YABBDIR%%/Smilies/vrolijk_26.gif
 %%YABBDIR%%/Smilies/2vrolijk_08.gif
-%%YABBDIR%%/avatars/xena.gif
+%%YABBDIR%%/Sources/YaBBC.pl
+%%YABBDIR%%/Sources/AdvancedTabs.pl
+%%YABBDIR%%/Sources/BoardIndex.pl
+%%YABBDIR%%/Sources/Captcha.pl
+%%YABBDIR%%/Sources/DateTime.pl
+%%YABBDIR%%/Sources/Debug.pl
+%%YABBDIR%%/Sources/Decoder.pl
+%%YABBDIR%%/Sources/Display.pl
+%%YABBDIR%%/Sources/DoSmilies.pl
+%%YABBDIR%%/Sources/Downloads.pl
+%%YABBDIR%%/Sources/ExtendedProfiles.pl
+%%YABBDIR%%/Sources/Favorites.pl
+%%YABBDIR%%/Sources/Guardian.pl
+%%YABBDIR%%/Sources/HelpCentre.pl
+%%YABBDIR%%/Sources/index.html
+%%YABBDIR%%/Sources/InstantMessage.pl
+%%YABBDIR%%/Sources/Load.pl
+%%YABBDIR%%/Sources/LogInOut.pl
+%%YABBDIR%%/Sources/Mailer.pl
+%%YABBDIR%%/Sources/MediaCenter.pl
+%%YABBDIR%%/Sources/Memberlist.pl
+%%YABBDIR%%/Sources/MessageIndex.pl
+%%YABBDIR%%/Sources/ModifyMessage.pl
+%%YABBDIR%%/Sources/MoveSplitSplice.pl
+%%YABBDIR%%/Sources/MyCenter.pl
+%%YABBDIR%%/Sources/Notify.pl
+%%YABBDIR%%/Sources/Palette.pl
+%%YABBDIR%%/Sources/Poll.pl
+%%YABBDIR%%/Sources/Post.pl
+%%YABBDIR%%/Sources/Printpage.pl
+%%YABBDIR%%/Sources/Profile.pl
+%%YABBDIR%%/Sources/Recent.pl
+%%YABBDIR%%/Sources/Register.pl
+%%YABBDIR%%/Sources/RemoveTopic.pl
+%%YABBDIR%%/Sources/RSS.pl
+%%YABBDIR%%/Sources/Search.pl
+%%YABBDIR%%/Sources/Security.pl
+%%YABBDIR%%/Sources/SendTopic.pl
+%%YABBDIR%%/Sources/Sessions.pl
+%%YABBDIR%%/Sources/SetStatus.pl
+%%YABBDIR%%/Sources/Smtp.pl
+%%YABBDIR%%/Sources/SpamCheck.pl
+%%YABBDIR%%/Sources/SpellChecker.pl
+%%YABBDIR%%/Sources/SubList.pl
+%%YABBDIR%%/Sources/Subs.pl
+%%YABBDIR%%/Sources/System.pl
+%%YABBDIR%%/Sources/TabMenu.pl
+%%YABBDIR%%/Sources/UserSelect.pl
+%%YABBDIR%%/Sources/.htaccess
+%%YABBDIR%%/Templates/default/default.html
+%%YABBDIR%%/Templates/yabb21/yabb21.html
+%%YABBDIR%%/Templates/.htaccess
+%%YABBDIR%%/Templates/index.html
+%%YABBDIR%%/Templates/Admin/default/adminbg.gif
+%%YABBDIR%%/Templates/Admin/default/admincatbg.gif
+%%YABBDIR%%/Templates/Admin/default/adminlogo.gif
+%%YABBDIR%%/Templates/Admin/default/admintopbg.gif
+%%YABBDIR%%/Templates/Admin/default/css.gif
+%%YABBDIR%%/Templates/Admin/default/xhtml.gif
+%%YABBDIR%%/Templates/Admin/default.css
+%%YABBDIR%%/Templates/Forum/default/zip.gif
+%%YABBDIR%%/Templates/Forum/default/aarea.jpg
+%%YABBDIR%%/Templates/Forum/default/addbuddy.gif
+%%YABBDIR%%/Templates/Forum/default/addfav.gif
+%%YABBDIR%%/Templates/Forum/default/admin.gif
+%%YABBDIR%%/Templates/Forum/default/admin_move.gif
+%%YABBDIR%%/Templates/Forum/default/admin_move_split_splice.gif
+%%YABBDIR%%/Templates/Forum/default/admin_rem.gif
+%%YABBDIR%%/Templates/Forum/default/admin_split.gif
+%%YABBDIR%%/Templates/Forum/default/administrator.gif
+%%YABBDIR%%/Templates/Forum/default/aim.gif
+%%YABBDIR%%/Templates/Forum/default/alert.gif
+%%YABBDIR%%/Templates/Forum/default/alertmod.gif
+%%YABBDIR%%/Templates/Forum/default/angry.gif
+%%YABBDIR%%/Templates/Forum/default/ann.gif
+%%YABBDIR%%/Templates/Forum/default/announcement.gif
+%%YABBDIR%%/Templates/Forum/default/announcementlock.gif
+%%YABBDIR%%/Templates/Forum/default/answered.gif
+%%YABBDIR%%/Templates/Forum/default/arrow.gif
+%%YABBDIR%%/Templates/Forum/default/arrow_down.gif
+%%YABBDIR%%/Templates/Forum/default/arrow_up.gif
+%%YABBDIR%%/Templates/Forum/default/balloon2.gif
+%%YABBDIR%%/Templates/Forum/default/ban.gif
+%%YABBDIR%%/Templates/Forum/default/bar.gif
+%%YABBDIR%%/Templates/Forum/default/bars.gif
+%%YABBDIR%%/Templates/Forum/default/bdaycake.gif
+%%YABBDIR%%/Templates/Forum/default/blank.gif
+%%YABBDIR%%/Templates/Forum/default/bmp.gif
+%%YABBDIR%%/Templates/Forum/default/board.gif
+%%YABBDIR%%/Templates/Forum/default/boards.gif
+%%YABBDIR%%/Templates/Forum/default/bold.gif
+%%YABBDIR%%/Templates/Forum/default/buddylist.gif
+%%YABBDIR%%/Templates/Forum/default/cat.gif
+%%YABBDIR%%/Templates/Forum/default/cat_collall.gif
+%%YABBDIR%%/Templates/Forum/default/cat_collapse.gif
+%%YABBDIR%%/Templates/Forum/default/cat_expand.gif
+%%YABBDIR%%/Templates/Forum/default/catbg.jpg
+%%YABBDIR%%/Templates/Forum/default/catbg.png
+%%YABBDIR%%/Templates/Forum/default/center.gif
+%%YABBDIR%%/Templates/Forum/default/cheesy.gif
+%%YABBDIR%%/Templates/Forum/default/closed.gif
+%%YABBDIR%%/Templates/Forum/default/code.gif
+%%YABBDIR%%/Templates/Forum/default/code1.gif
+%%YABBDIR%%/Templates/Forum/default/confidential.gif
+%%YABBDIR%%/Templates/Forum/default/cool.gif
+%%YABBDIR%%/Templates/Forum/default/cry.gif
+%%YABBDIR%%/Templates/Forum/default/css.gif
+%%YABBDIR%%/Templates/Forum/default/cssbold.gif
+%%YABBDIR%%/Templates/Forum/default/cssitalic.gif
+%%YABBDIR%%/Templates/Forum/default/del_notify.gif
+%%YABBDIR%%/Templates/Forum/default/delete.gif
+%%YABBDIR%%/Templates/Forum/default/des.gif
+%%YABBDIR%%/Templates/Forum/default/doc.gif
+%%YABBDIR%%/Templates/Forum/default/docx.gif
+%%YABBDIR%%/Templates/Forum/default/edit.gif
+%%YABBDIR%%/Templates/Forum/default/email.gif
+%%YABBDIR%%/Templates/Forum/default/email2.gif
+%%YABBDIR%%/Templates/Forum/default/embarassed.gif
+%%YABBDIR%%/Templates/Forum/default/empty_bar.gif
+%%YABBDIR%%/Templates/Forum/default/exclamation.gif
+%%YABBDIR%%/Templates/Forum/default/face1.gif
+%%YABBDIR%%/Templates/Forum/default/facebook.gif
+%%YABBDIR%%/Templates/Forum/default/fade.gif
+%%YABBDIR%%/Templates/Forum/default/favboards.gif
+%%YABBDIR%%/Templates/Forum/default/favorites.gif
+%%YABBDIR%%/Templates/Forum/default/female.gif
+%%YABBDIR%%/Templates/Forum/default/fill.gif
+%%YABBDIR%%/Templates/Forum/default/forward.gif
+%%YABBDIR%%/Templates/Forum/default/ftp.gif
+%%YABBDIR%%/Templates/Forum/default/gender.gif
+%%YABBDIR%%/Templates/Forum/default/gif.gif
+%%YABBDIR%%/Templates/Forum/default/grad_bottom.jpg
+%%YABBDIR%%/Templates/Forum/default/grad_bottom.png
+%%YABBDIR%%/Templates/Forum/default/grad_top.png
+%%YABBDIR%%/Templates/Forum/default/green0.gif
+%%YABBDIR%%/Templates/Forum/default/green1.gif
+%%YABBDIR%%/Templates/Forum/default/greenon.gif
+%%YABBDIR%%/Templates/Forum/default/grey1.gif
+%%YABBDIR%%/Templates/Forum/default/grin.gif
+%%YABBDIR%%/Templates/Forum/default/gtalk2.gif
+%%YABBDIR%%/Templates/Forum/default/guardian.gif
+%%YABBDIR%%/Templates/Forum/default/guardian_icon.gif
+%%YABBDIR%%/Templates/Forum/default/guest.gif
+%%YABBDIR%%/Templates/Forum/default/guestpm.gif
+%%YABBDIR%%/Templates/Forum/default/guestpmreply.gif
+%%YABBDIR%%/Templates/Forum/default/headerbg.png
+%%YABBDIR%%/Templates/Forum/default/help.gif
+%%YABBDIR%%/Templates/Forum/default/help1.gif
+%%YABBDIR%%/Templates/Forum/default/hide.gif
+%%YABBDIR%%/Templates/Forum/default/hidelock.gif
+%%YABBDIR%%/Templates/Forum/default/hidesticky.gif
+%%YABBDIR%%/Templates/Forum/default/hidestickylock.gif
+%%YABBDIR%%/Templates/Forum/default/highlight.gif
+%%YABBDIR%%/Templates/Forum/default/home.gif
+%%YABBDIR%%/Templates/Forum/default/hotthread.gif
+%%YABBDIR%%/Templates/Forum/default/hr.gif
+%%YABBDIR%%/Templates/Forum/default/huh.gif
+%%YABBDIR%%/Templates/Forum/default/icqadd.gif
+%%YABBDIR%%/Templates/Forum/default/icqflow.gif
+%%YABBDIR%%/Templates/Forum/default/im_config.gif
+%%YABBDIR%%/Templates/Forum/default/im_delete.gif
+%%YABBDIR%%/Templates/Forum/default/im_inbox.gif
+%%YABBDIR%%/Templates/Forum/default/im_new.gif
+%%YABBDIR%%/Templates/Forum/default/im_outbox.gif
+%%YABBDIR%%/Templates/Forum/default/im_reload.gif
+%%YABBDIR%%/Templates/Forum/default/imcallback.gif
+%%YABBDIR%%/Templates/Forum/default/imcallback2.gif
+%%YABBDIR%%/Templates/Forum/default/imcallback3.gif
+%%YABBDIR%%/Templates/Forum/default/imclose.gif
+%%YABBDIR%%/Templates/Forum/default/imclose2.gif
+%%YABBDIR%%/Templates/Forum/default/img.gif
+%%YABBDIR%%/Templates/Forum/default/imopen.gif
+%%YABBDIR%%/Templates/Forum/default/imopen2.gif
+%%YABBDIR%%/Templates/Forum/default/imopen3.gif
+%%YABBDIR%%/Templates/Forum/default/imstore.gif
+%%YABBDIR%%/Templates/Forum/default/index_drop.gif
+%%YABBDIR%%/Templates/Forum/default/info.gif
+%%YABBDIR%%/Templates/Forum/default/index_left.gif
+%%YABBDIR%%/Templates/Forum/default/index_left0.gif
+%%YABBDIR%%/Templates/Forum/default/index_right.gif
+%%YABBDIR%%/Templates/Forum/default/index_right0.gif
+%%YABBDIR%%/Templates/Forum/default/index_text.gif
+%%YABBDIR%%/Templates/Forum/default/index_togl.gif
+%%YABBDIR%%/Templates/Forum/default/ip.gif
+%%YABBDIR%%/Templates/Forum/default/italicize.gif
+%%YABBDIR%%/Templates/Forum/default/jpe.gif
+%%YABBDIR%%/Templates/Forum/default/jpeg.gif
+%%YABBDIR%%/Templates/Forum/default/jpg.gif
+%%YABBDIR%%/Templates/Forum/default/kiss.gif
+%%YABBDIR%%/Templates/Forum/default/knapbagrms01.gif
+%%YABBDIR%%/Templates/Forum/default/knapblue.gif
+%%YABBDIR%%/Templates/Forum/default/knapgreen.gif
+%%YABBDIR%%/Templates/Forum/default/knapred.gif
+%%YABBDIR%%/Templates/Forum/default/lamp.gif
+%%YABBDIR%%/Templates/Forum/default/larger.gif
+%%YABBDIR%%/Templates/Forum/default/lastpost.gif
+%%YABBDIR%%/Templates/Forum/default/laugh.gif
+%%YABBDIR%%/Templates/Forum/default/left.gif
+%%YABBDIR%%/Templates/Forum/default/lipsrsealed.gif
+%%YABBDIR%%/Templates/Forum/default/list.gif
+%%YABBDIR%%/Templates/Forum/default/locked.gif
+%%YABBDIR%%/Templates/Forum/default/locked_moved.gif
+%%YABBDIR%%/Templates/Forum/default/lockmail.gif
+%%YABBDIR%%/Templates/Forum/default/login.gif
+%%YABBDIR%%/Templates/Forum/default/logout.gif
+%%YABBDIR%%/Templates/Forum/default/male.gif
+%%YABBDIR%%/Templates/Forum/default/mark_quote.gif
+%%YABBDIR%%/Templates/Forum/default/markread.gif
+%%YABBDIR%%/Templates/Forum/default/markunread.gif
+%%YABBDIR%%/Templates/Forum/default/me.gif
+%%YABBDIR%%/Templates/Forum/default/media.gif
+%%YABBDIR%%/Templates/Forum/default/mediacenter.jpg
+%%YABBDIR%%/Templates/Forum/default/menutop.jpg
+%%YABBDIR%%/Templates/Forum/default/menutop.png
+%%YABBDIR%%/Templates/Forum/default/message.gif
+%%YABBDIR%%/Templates/Forum/default/modify.gif
+%%YABBDIR%%/Templates/Forum/default/move.gif
+%%YABBDIR%%/Templates/Forum/default/mozilla_blu.gif
+%%YABBDIR%%/Templates/Forum/default/mozilla_gray.gif
+%%YABBDIR%%/Templates/Forum/default/msn.gif
+%%YABBDIR%%/Templates/Forum/default/msn0.gif
+%%YABBDIR%%/Templates/Forum/default/msn1.gif
+%%YABBDIR%%/Templates/Forum/default/msn10.gif
+%%YABBDIR%%/Templates/Forum/default/msn14.gif
+%%YABBDIR%%/Templates/Forum/default/msn18.gif
+%%YABBDIR%%/Templates/Forum/default/msn2.gif
+%%YABBDIR%%/Templates/Forum/default/msn3.gif
+%%YABBDIR%%/Templates/Forum/default/msn34.gif
+%%YABBDIR%%/Templates/Forum/default/msn50.gif
+%%YABBDIR%%/Templates/Forum/default/msn66.gif
+%%YABBDIR%%/Templates/Forum/default/mycenter.gif
+%%YABBDIR%%/Templates/Forum/default/myspace.gif
+%%YABBDIR%%/Templates/Forum/default/new.gif
+%%YABBDIR%%/Templates/Forum/default/new_bcpm.gif
+%%YABBDIR%%/Templates/Forum/default/new_thread.gif
+%%YABBDIR%%/Templates/Forum/default/news.gif
+%%YABBDIR%%/Templates/Forum/default/next.gif
+%%YABBDIR%%/Templates/Forum/default/nn.gif
+%%YABBDIR%%/Templates/Forum/default/noimg.gif
+%%YABBDIR%%/Templates/Forum/default/none.gif
+%%YABBDIR%%/Templates/Forum/default/notify.gif
+%%YABBDIR%%/Templates/Forum/default/off.gif
+%%YABBDIR%%/Templates/Forum/default/off_led.png
+%%YABBDIR%%/Templates/Forum/default/on.gif
+%%YABBDIR%%/Templates/Forum/default/on_led.png
+%%YABBDIR%%/Templates/Forum/default/online.gif
+%%YABBDIR%%/Templates/Forum/default/open.gif
+%%YABBDIR%%/Templates/Forum/default/palette.gif
+%%YABBDIR%%/Templates/Forum/default/palette_help.gif
+%%YABBDIR%%/Templates/Forum/default/palette1.gif
+%%YABBDIR%%/Templates/Forum/default/paperclip.gif
+%%YABBDIR%%/Templates/Forum/default/pdf.gif
+%%YABBDIR%%/Templates/Forum/default/perl.gif
+%%YABBDIR%%/Templates/Forum/default/pie.gif
+%%YABBDIR%%/Templates/Forum/default/pmadmin.gif
+%%YABBDIR%%/Templates/Forum/default/png.gif
+%%YABBDIR%%/Templates/Forum/default/poll_animated.gif
+%%YABBDIR%%/Templates/Forum/default/poll_animated2.gif
+%%YABBDIR%%/Templates/Forum/default/poll_create.gif
+%%YABBDIR%%/Templates/Forum/default/poll_create2.gif
+%%YABBDIR%%/Templates/Forum/default/poll_del.gif
+%%YABBDIR%%/Templates/Forum/default/poll_del2.gif
+%%YABBDIR%%/Templates/Forum/default/poll_dvote.gif
+%%YABBDIR%%/Templates/Forum/default/poll_left.gif
+%%YABBDIR%%/Templates/Forum/default/poll_lock.gif
+%%YABBDIR%%/Templates/Forum/default/poll_lock2.gif
+%%YABBDIR%%/Templates/Forum/default/poll_middle.gif
+%%YABBDIR%%/Templates/Forum/default/poll_mod.gif
+%%YABBDIR%%/Templates/Forum/default/poll_new.gif
+%%YABBDIR%%/Templates/Forum/default/poll_new2.gif
+%%YABBDIR%%/Templates/Forum/default/poll_new3.gif
+%%YABBDIR%%/Templates/Forum/default/poll_open.gif
+%%YABBDIR%%/Templates/Forum/default/poll_right.gif
+%%YABBDIR%%/Templates/Forum/default/poll_vvote.gif
+%%YABBDIR%%/Templates/Forum/default/ppt.gif
+%%YABBDIR%%/Templates/Forum/default/pre.gif
+%%YABBDIR%%/Templates/Forum/default/preferences.gif
+%%YABBDIR%%/Templates/Forum/default/prev.gif
+%%YABBDIR%%/Templates/Forum/default/preview.gif
+%%YABBDIR%%/Templates/Forum/default/preview0.gif
+%%YABBDIR%%/Templates/Forum/default/preview1.gif
+%%YABBDIR%%/Templates/Forum/default/print.gif
+%%YABBDIR%%/Templates/Forum/default/profile.gif
+%%YABBDIR%%/Templates/Forum/default/psd.gif
+%%YABBDIR%%/Templates/Forum/default/qquname.gif
+%%YABBDIR%%/Templates/Forum/default/question.gif
+%%YABBDIR%%/Templates/Forum/default/quote.gif
+%%YABBDIR%%/Templates/Forum/default/quote2.gif
+%%YABBDIR%%/Templates/Forum/default/rar.gif
+%%YABBDIR%%/Templates/Forum/default/recycle.gif
+%%YABBDIR%%/Templates/Forum/default/red_folder.gif
+%%YABBDIR%%/Templates/Forum/default/red0.gif
+%%YABBDIR%%/Templates/Forum/default/red1.gif
+%%YABBDIR%%/Templates/Forum/default/redoff.gif
+%%YABBDIR%%/Templates/Forum/default/register.gif
+%%YABBDIR%%/Templates/Forum/default/remfav.gif
+%%YABBDIR%%/Templates/Forum/default/remove.gif
+%%YABBDIR%%/Templates/Forum/default/reorder.gif
+%%YABBDIR%%/Templates/Forum/default/reply.gif
+%%YABBDIR%%/Templates/Forum/default/resize_hb.gif
+%%YABBDIR%%/Templates/Forum/default/resize_wb.gif
+%%YABBDIR%%/Templates/Forum/default/right.gif
+%%YABBDIR%%/Templates/Forum/default/rolleyes.gif
+%%YABBDIR%%/Templates/Forum/default/Rotate.gif
+%%YABBDIR%%/Templates/Forum/default/RotateStop.gif
+%%YABBDIR%%/Templates/Forum/default/rss.png
+%%YABBDIR%%/Templates/Forum/default/sad.gif
+%%YABBDIR%%/Templates/Forum/default/search.gif
+%%YABBDIR%%/Templates/Forum/default/searchbg211.jpg
+%%YABBDIR%%/Templates/Forum/default/searchbg211.png
+%%YABBDIR%%/Templates/Forum/default/sendtopic.gif
+%%YABBDIR%%/Templates/Forum/default/session.gif
+%%YABBDIR%%/Templates/Forum/default/sf.gif
+%%YABBDIR%%/Templates/Forum/default/shocked.gif
+%%YABBDIR%%/Templates/Forum/default/size1.gif
+%%YABBDIR%%/Templates/Forum/default/skype.gif
+%%YABBDIR%%/Templates/Forum/default/smaller.gif
+%%YABBDIR%%/Templates/Forum/default/smiley.gif
+%%YABBDIR%%/Templates/Forum/default/smiley_down.gif
+%%YABBDIR%%/Templates/Forum/default/smiley_up.gif
+%%YABBDIR%%/Templates/Forum/default/sort.gif
+%%YABBDIR%%/Templates/Forum/default/sorted.gif
+%%YABBDIR%%/Templates/Forum/default/standard.gif
+%%YABBDIR%%/Templates/Forum/default/star.gif
+%%YABBDIR%%/Templates/Forum/default/staradmin.gif
+%%YABBDIR%%/Templates/Forum/default/starblue.gif
+%%YABBDIR%%/Templates/Forum/default/stargmod.gif
+%%YABBDIR%%/Templates/Forum/default/stargold.gif
+%%YABBDIR%%/Templates/Forum/default/starmod.gif
+%%YABBDIR%%/Templates/Forum/default/starsilver.gif
+%%YABBDIR%%/Templates/Forum/default/sticky.gif
+%%YABBDIR%%/Templates/Forum/default/stickylock.gif
+%%YABBDIR%%/Templates/Forum/default/strike.gif
+%%YABBDIR%%/Templates/Forum/default/sub.gif
+%%YABBDIR%%/Templates/Forum/default/sup.gif
+%%YABBDIR%%/Templates/Forum/default/swf.gif
+%%YABBDIR%%/Templates/Forum/default/tab.gif
+%%YABBDIR%%/Templates/Forum/default/tab_selected.gif
+%%YABBDIR%%/Templates/Forum/default/tab_selected211.png
+%%YABBDIR%%/Templates/Forum/default/tab211.png
+%%YABBDIR%%/Templates/Forum/default/tabadd.gif
+%%YABBDIR%%/Templates/Forum/default/tabdelete.gif
+%%YABBDIR%%/Templates/Forum/default/tar.gif
+%%YABBDIR%%/Templates/Forum/default/tabedit.gif
+%%YABBDIR%%/Templates/Forum/default/tabfill.gif
+%%YABBDIR%%/Templates/Forum/default/table.gif
+%%YABBDIR%%/Templates/Forum/default/tableft.gif
+%%YABBDIR%%/Templates/Forum/default/tableft211.png
+%%YABBDIR%%/Templates/Forum/default/tabright211.png
+%%YABBDIR%%/Templates/Forum/default/tabsave.gif
+%%YABBDIR%%/Templates/Forum/default/tabsep.gif
+%%YABBDIR%%/Templates/Forum/default/tabsep211.png
+%%YABBDIR%%/Templates/Forum/default/tabstart211.png
+%%YABBDIR%%/Templates/Forum/default/tar.gz.gif
+%%YABBDIR%%/Templates/Forum/default/td.gif
+%%YABBDIR%%/Templates/Forum/default/tele.gif
+%%YABBDIR%%/Templates/Forum/default/thread.gif
+%%YABBDIR%%/Templates/Forum/default/thumbdown.gif
+%%YABBDIR%%/Templates/Forum/default/thumbup.gif
+%%YABBDIR%%/Templates/Forum/default/timestamp.gif
+%%YABBDIR%%/Templates/Forum/default/tline.gif
+%%YABBDIR%%/Templates/Forum/default/tline2.gif
+%%YABBDIR%%/Templates/Forum/default/tline3.gif
+%%YABBDIR%%/Templates/Forum/default/tongue.gif
+%%YABBDIR%%/Templates/Forum/default/tr.gif
+%%YABBDIR%%/Templates/Forum/default/txt.gif
+%%YABBDIR%%/Templates/Forum/default/undecided.gif
+%%YABBDIR%%/Templates/Forum/default/url.gif
+%%YABBDIR%%/Templates/Forum/default/underline.gif
+%%YABBDIR%%/Templates/Forum/default/urgent.gif
+%%YABBDIR%%/Templates/Forum/default/usage.gif
+%%YABBDIR%%/Templates/Forum/default/usagebar.gif
+%%YABBDIR%%/Templates/Forum/default/usageempty.gif
+%%YABBDIR%%/Templates/Forum/default/valid-rss.png
+%%YABBDIR%%/Templates/Forum/default/valid-xhtml10.gif
+%%YABBDIR%%/Templates/Forum/default/vcss.gif
+%%YABBDIR%%/Templates/Forum/default/veryhotthread.gif
+%%YABBDIR%%/Templates/Forum/default/wink.gif
+%%YABBDIR%%/Templates/Forum/default/www.gif
+%%YABBDIR%%/Templates/Forum/default/xhtml.gif
+%%YABBDIR%%/Templates/Forum/default/xls.gif
+%%YABBDIR%%/Templates/Forum/default/xx.gif
+%%YABBDIR%%/Templates/Forum/default/yabbchelp.swf
+%%YABBDIR%%/Templates/Forum/default/yabblogo.png
+%%YABBDIR%%/Templates/Forum/default/yim.gif
+%%YABBDIR%%/Templates/Forum/default/7z.gif
+%%YABBDIR%%/Templates/Forum/yabb21/zip.gif
+%%YABBDIR%%/Templates/Forum/yabb21/addbuddy.gif
+%%YABBDIR%%/Templates/Forum/yabb21/addfav.gif
+%%YABBDIR%%/Templates/Forum/yabb21/alert.gif
+%%YABBDIR%%/Templates/Forum/yabb21/angry.gif
+%%YABBDIR%%/Templates/Forum/yabb21/ann.gif
+%%YABBDIR%%/Templates/Forum/yabb21/arrow_down.gif
+%%YABBDIR%%/Templates/Forum/yabb21/arrow_up.gif
+%%YABBDIR%%/Templates/Forum/yabb21/bmp.gif
+%%YABBDIR%%/Templates/Forum/yabb21/board.gif
+%%YABBDIR%%/Templates/Forum/yabb21/boards.gif
+%%YABBDIR%%/Templates/Forum/yabb21/cat_collapse.gif
+%%YABBDIR%%/Templates/Forum/yabb21/cat_expand.gif
+%%YABBDIR%%/Templates/Forum/yabb21/cheesy.gif
+%%YABBDIR%%/Templates/Forum/yabb21/cool.gif
+%%YABBDIR%%/Templates/Forum/yabb21/cry.gif
+%%YABBDIR%%/Templates/Forum/yabb21/del_notify.gif
+%%YABBDIR%%/Templates/Forum/yabb21/doc.gif
+%%YABBDIR%%/Templates/Forum/yabb21/docx.gif
+%%YABBDIR%%/Templates/Forum/yabb21/email.gif
+%%YABBDIR%%/Templates/Forum/yabb21/embarassed.gif
+%%YABBDIR%%/Templates/Forum/yabb21/empty_bar.gif
+%%YABBDIR%%/Templates/Forum/yabb21/evil.gif
+%%YABBDIR%%/Templates/Forum/yabb21/exclamation.gif
+%%YABBDIR%%/Templates/Forum/yabb21/facebook.gif
+%%YABBDIR%%/Templates/Forum/yabb21/forward.gif
+%%YABBDIR%%/Templates/Forum/yabb21/gif.gif
+%%YABBDIR%%/Templates/Forum/yabb21/grin.gif
+%%YABBDIR%%/Templates/Forum/yabb21/happy.gif
+%%YABBDIR%%/Templates/Forum/yabb21/huh.gif
+%%YABBDIR%%/Templates/Forum/yabb21/imcallback.gif
+%%YABBDIR%%/Templates/Forum/yabb21/imcallback2.gif
+%%YABBDIR%%/Templates/Forum/yabb21/imcallback3.gif
+%%YABBDIR%%/Templates/Forum/yabb21/info.gif
+%%YABBDIR%%/Templates/Forum/yabb21/jpe.gif
+%%YABBDIR%%/Templates/Forum/yabb21/jpeg.gif
+%%YABBDIR%%/Templates/Forum/yabb21/jpg.gif
+%%YABBDIR%%/Templates/Forum/yabb21/kiss.gif
+%%YABBDIR%%/Templates/Forum/yabb21/lamp.gif
+%%YABBDIR%%/Templates/Forum/yabb21/laugh.gif
+%%YABBDIR%%/Templates/Forum/yabb21/lipsrsealed.gif
+%%YABBDIR%%/Templates/Forum/yabb21/login.gif
+%%YABBDIR%%/Templates/Forum/yabb21/mozilla_blu.gif
+%%YABBDIR%%/Templates/Forum/yabb21/mozilla_gray.gif
+%%YABBDIR%%/Templates/Forum/yabb21/myspace.gif
+%%YABBDIR%%/Templates/Forum/yabb21/noimg.gif
+%%YABBDIR%%/Templates/Forum/yabb21/notify.gif
+%%YABBDIR%%/Templates/Forum/yabb21/off.gif
+%%YABBDIR%%/Templates/Forum/yabb21/off_led.png
+%%YABBDIR%%/Templates/Forum/yabb21/on.gif
+%%YABBDIR%%/Templates/Forum/yabb21/on_led.png
+%%YABBDIR%%/Templates/Forum/yabb21/online.gif
+%%YABBDIR%%/Templates/Forum/yabb21/pdf.gif
+%%YABBDIR%%/Templates/Forum/yabb21/pmadmin.gif
+%%YABBDIR%%/Templates/Forum/yabb21/png.gif
+%%YABBDIR%%/Templates/Forum/yabb21/ppt.gif
+%%YABBDIR%%/Templates/Forum/yabb21/psd.gif
+%%YABBDIR%%/Templates/Forum/yabb21/rar.gif
+%%YABBDIR%%/Templates/Forum/yabb21/recycle.gif
+%%YABBDIR%%/Templates/Forum/yabb21/remfav.gif
+%%YABBDIR%%/Templates/Forum/yabb21/rolleyes.gif
+%%YABBDIR%%/Templates/Forum/yabb21/Rotate.gif
+%%YABBDIR%%/Templates/Forum/yabb21/RotateStop.gif
+%%YABBDIR%%/Templates/Forum/yabb21/sad.gif
+%%YABBDIR%%/Templates/Forum/yabb21/shocked.gif
+%%YABBDIR%%/Templates/Forum/yabb21/smiley.gif
+%%YABBDIR%%/Templates/Forum/yabb21/swf.gif
+%%YABBDIR%%/Templates/Forum/yabb21/tar.gif
+%%YABBDIR%%/Templates/Forum/yabb21/tar.gz.gif
+%%YABBDIR%%/Templates/Forum/yabb21/thumbdown.gif
+%%YABBDIR%%/Templates/Forum/yabb21/thumbsup.gif
+%%YABBDIR%%/Templates/Forum/yabb21/thumbup.gif
+%%YABBDIR%%/Templates/Forum/yabb21/txt.gif
+%%YABBDIR%%/Templates/Forum/yabb21/usage.gif
+%%YABBDIR%%/Templates/Forum/yabb21/undecided.gif
+%%YABBDIR%%/Templates/Forum/yabb21/usagebar.gif
+%%YABBDIR%%/Templates/Forum/yabb21/usageempty.gif
+%%YABBDIR%%/Templates/Forum/yabb21/wink.gif
+%%YABBDIR%%/Templates/Forum/yabb21/xls.gif
+%%YABBDIR%%/Templates/Forum/yabb21/7z.gif
+%%YABBDIR%%/Variables/index.html
+%%YABBDIR%%/Variables/.htaccess
+%%YABBDIR%%/YaBB.js
+%%YABBDIR%%/YaBB.pl
+%%YABBDIR%%/ajax.js
 %%YABBDIR%%/avatars/baby.gif
 %%YABBDIR%%/avatars/bart.gif
 %%YABBDIR%%/avatars/batman.gif
@@ -447,128 +730,100 @@
 %%YABBDIR%%/avatars/wacko.gif
 %%YABBDIR%%/avatars/winnie.gif
 %%YABBDIR%%/avatars/angryboy.gif
-%%YABBDIR%%/Buttons/English/yim.png
-%%YABBDIR%%/Buttons/English/admin.png
-%%YABBDIR%%/Buttons/English/admin_move.png
-%%YABBDIR%%/Buttons/English/admin_rem.png
-%%YABBDIR%%/Buttons/English/admin_splice.png
-%%YABBDIR%%/Buttons/English/admin_split.png
-%%YABBDIR%%/Buttons/English/aim.png
-%%YABBDIR%%/Buttons/English/collapse.png
-%%YABBDIR%%/Buttons/English/delete.png
-%%YABBDIR%%/Buttons/English/delselected.png
-%%YABBDIR%%/Buttons/English/email.png
-%%YABBDIR%%/Buttons/English/email_sm.png
-%%YABBDIR%%/Buttons/English/expand.png
-%%YABBDIR%%/Buttons/English/favorites.png
-%%YABBDIR%%/Buttons/English/go_down.png
-%%YABBDIR%%/Buttons/English/go_up.png
-%%YABBDIR%%/Buttons/English/gtalk.png
-%%YABBDIR%%/Buttons/English/guest.png
-%%YABBDIR%%/Buttons/English/help.png
-%%YABBDIR%%/Buttons/English/hide.png
-%%YABBDIR%%/Buttons/English/home.png
-%%YABBDIR%%/Buttons/English/icq.png
-%%YABBDIR%%/Buttons/English/ignored.png
-%%YABBDIR%%/Buttons/English/locked.png
-%%YABBDIR%%/Buttons/English/login.png
-%%YABBDIR%%/Buttons/English/logout.png
-%%YABBDIR%%/Buttons/English/markallread.png
-%%YABBDIR%%/Buttons/English/markread.png
-%%YABBDIR%%/Buttons/English/markunread.png
-%%YABBDIR%%/Buttons/English/message.png
-%%YABBDIR%%/Buttons/English/modify.png
-%%YABBDIR%%/Buttons/English/msn.png
-%%YABBDIR%%/Buttons/English/new_thread.png
-%%YABBDIR%%/Buttons/English/notification.png
-%%YABBDIR%%/Buttons/English/notify.png
-%%YABBDIR%%/Buttons/English/poll_add.png
-%%YABBDIR%%/Buttons/English/poll_create.png
-%%YABBDIR%%/Buttons/English/poll_del.png
-%%YABBDIR%%/Buttons/English/poll_dvote.png
-%%YABBDIR%%/Buttons/English/poll_lock.png
-%%YABBDIR%%/Buttons/English/poll_mod.png
-%%YABBDIR%%/Buttons/English/poll_modify.png
-%%YABBDIR%%/Buttons/English/poll_new.png
-%%YABBDIR%%/Buttons/English/poll_new2.png
-%%YABBDIR%%/Buttons/English/poll_new3.png
-%%YABBDIR%%/Buttons/English/poll_open.png
-%%YABBDIR%%/Buttons/English/poll_unlock.png
-%%YABBDIR%%/Buttons/English/poll_vvote.png
-%%YABBDIR%%/Buttons/English/print.png
-%%YABBDIR%%/Buttons/English/profile.png
-%%YABBDIR%%/Buttons/English/quote.png
-%%YABBDIR%%/Buttons/English/register.png
-%%YABBDIR%%/Buttons/English/remfav.png
-%%YABBDIR%%/Buttons/English/remove.png
-%%YABBDIR%%/Buttons/English/reply.png
-%%YABBDIR%%/Buttons/English/search.png
-%%YABBDIR%%/Buttons/English/sendtopic.png
-%%YABBDIR%%/Buttons/English/session.png
-%%YABBDIR%%/Buttons/English/sticky.png
-%%YABBDIR%%/Buttons/English/www.png
-%%YABBDIR%%/Buttons/English/addfav.png
-%%YABBDIR%%/yabbc.js
-%%YABBDIR%%/fader.js
-%%YABBDIR%%/post.js
+%%YABBDIR%%/avatars/xena.gif
+%%YABBDIR%%/googiespell/spellc.gif
+%%YABBDIR%%/googiespell/change_lang.gif
+%%YABBDIR%%/googiespell/cookiesupport.js
+%%YABBDIR%%/googiespell/googiespell.css
+%%YABBDIR%%/googiespell/googiespell.js
+%%YABBDIR%%/googiespell/googiespell_multiple.js
+%%YABBDIR%%/googiespell/GPL.txt
+%%YABBDIR%%/googiespell/indicator.gif
+%%YABBDIR%%/googiespell/logo.png
+%%YABBDIR%%/googiespell/ok.gif
+%%YABBDIR%%/googiespell/blank.gif
+%%YABBDIR%%/greybox/w_close.gif
+%%YABBDIR%%/greybox/gb_scripts.js
+%%YABBDIR%%/greybox/gb_styles.css
+%%YABBDIR%%/greybox/header_bg.gif
+%%YABBDIR%%/greybox/indicator.gif
+%%YABBDIR%%/greybox/loader_frame.html
+%%YABBDIR%%/greybox/next.gif
+%%YABBDIR%%/greybox/prev.gif
+%%YABBDIR%%/greybox/g_close.gif
+%%YABBDIR%%/index.html
+%%YABBDIR%%/mediaplayer.swf
+%%YABBDIR%%/palette.js
+%%YABBDIR%%/piechart.js
 %%YABBDIR%%/ubbc.js
-@unexec i='Boards/test.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Boards/announcements.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Boards/forum.control'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Boards/forum.master'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Boards/forum.totals'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Boards/general.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Boards/recycle.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/members.ttl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.imstore'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.ims'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.log'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.outbox'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.rlog'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.vars'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/memberinfo.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/memberlist.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Messages/1131465600.ctb'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Messages/1131465600.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Paths.pl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep  "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/default.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/Admin/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/Forum/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/Menu0.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/Menu1.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/Menu2.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+%%YABBDIR%%/yabbc.js
+
+@unexec i='Members/admin.ims'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.imstore'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.log'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.outbox'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.rlog'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.vars'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/broadcast.messages'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/memberinfo.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/memberlist.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/1239494700.ctb'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/1239494700.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/members.ttl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Paths.pl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Forum/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Forum/yabb21.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/MyCenter.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/MyCenter.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu0.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu1.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu2.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/bots.hosts'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/email_domain_filter.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/spamrules.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
 %%YABBDIR%%/checksum.sha256
+@dirrmtry %%YABBDIR%%/greybox
+@dirrmtry %%YABBDIR%%/googiespell
+@dirrmtry %%YABBDIR%%/avatars/UserAvatars
+@dirrmtry %%YABBDIR%%/avatars
+@dirrmtry %%YABBDIR%%/Variables
+@dirrmtry %%YABBDIR%%/Templates/yabb21
 @dirrmtry %%YABBDIR%%/Templates/default
-@dirrmtry %%YABBDIR%%/Templates/Admin/default
-@dirrmtry %%YABBDIR%%/Templates/Admin
+@dirrmtry %%YABBDIR%%/Templates/Forum/yabb21
 @dirrmtry %%YABBDIR%%/Templates/Forum/default
 @dirrmtry %%YABBDIR%%/Templates/Forum
+@dirrmtry %%YABBDIR%%/Templates/Admin/default
+@dirrmtry %%YABBDIR%%/Templates/Admin
 @dirrmtry %%YABBDIR%%/Templates
-@dirrmtry %%YABBDIR%%/Variables
-@dirrmtry %%YABBDIR%%/Boards
-@dirrmtry %%YABBDIR%%/Help/English/Admin
-@dirrmtry %%YABBDIR%%/Help/English/Gmod
-@dirrmtry %%YABBDIR%%/Help/English/Moderator
-@dirrmtry %%YABBDIR%%/Help/English/User
-@dirrmtry %%YABBDIR%%/Help/English
-@dirrmtry %%YABBDIR%%/Help
 @dirrmtry %%YABBDIR%%/Sources
+@dirrmtry %%YABBDIR%%/Smilies
+@dirrmtry %%YABBDIR%%/ModImages
+@dirrmtry %%YABBDIR%%/Messages
+@dirrmtry %%YABBDIR%%/Members
 @dirrmtry %%YABBDIR%%/Languages/English
 @dirrmtry %%YABBDIR%%/Languages
-@dirrmtry %%YABBDIR%%/Members
-@dirrmtry %%YABBDIR%%/Admin
-@dirrmtry %%YABBDIR%%/Messages
-@dirrmtry %%YABBDIR%%/Smilies
-@dirrmtry %%YABBDIR%%/avatars
-@dirrmtry %%YABBDIR%%/Attachments
-@dirrmtry %%YABBDIR%%/ModImages
+@dirrmtry %%YABBDIR%%/Help/English/User
+@dirrmtry %%YABBDIR%%/Help/English/Moderator
+@dirrmtry %%YABBDIR%%/Help/English/Gmod
+@dirrmtry %%YABBDIR%%/Help/English/Admin
+@dirrmtry %%YABBDIR%%/Help/English
+@dirrmtry %%YABBDIR%%/Help
 @dirrmtry %%YABBDIR%%/Buttons/English
 @dirrmtry %%YABBDIR%%/Buttons
+@dirrmtry %%YABBDIR%%/Boards
+@dirrmtry %%YABBDIR%%/Backups
+@dirrmtry %%YABBDIR%%/Attachments
+@dirrmtry %%YABBDIR%%/Admin
 @dirrmtry %%YABBDIR%%
 @unexec if [ -d %D/%%YABBDIR%% ]; then echo "================================================"; fi
 @unexec if [ -d %D/%%YABBDIR%% ]; then echo "Note: %D/%%YABBDIR%% was not deleted."           ; fi
