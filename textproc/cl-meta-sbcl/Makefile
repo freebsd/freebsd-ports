@@ -19,10 +19,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A parser generator for Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/meta/meta.asd:${PORTSDIR}/textproc/cl-meta \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/meta/meta.asd:${PORTSDIR}/textproc/cl-meta \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 
 do-build:

@@ -16,10 +16,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 
 do-build:

@@ -17,10 +17,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp (SBCL binaries)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/uffi/uffi.asd:${PORTSDIR}/devel/cl-uffi \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 
 CL_LIBDIR?=	${LOCALBASE}/lib/common-lisp

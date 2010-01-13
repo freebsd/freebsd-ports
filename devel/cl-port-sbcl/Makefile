@@ -19,10 +19,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Cross-Lisp portability package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 
 do-build:

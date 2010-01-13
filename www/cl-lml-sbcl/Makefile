@@ -17,10 +17,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp Markup Language
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/system-registry/lml.asd:${PORTSDIR}/www/cl-lml \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/system-registry/lml.asd:${PORTSDIR}/www/cl-lml \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 
 do-build:
