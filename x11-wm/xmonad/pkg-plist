@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 bin/xmonad
-share/xmonad-%%XMONAD_VERSION%%/man/xmonad.hs
 %%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSxmonad-%%XMONAD_VERSION%%.o
 %%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad.hi
 %%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Config.hi
@@ -18,8 +17,6 @@ share/xmonad-%%XMONAD_VERSION%%/man/xmonad.hs
 @dirrm %%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad
 @dirrm %%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
 @dirrm %%XMONAD_LIBDIR_REL%%
-@dirrm share/xmonad-%%XMONAD_VERSION%%/man
-@dirrm share/xmonad-%%XMONAD_VERSION%%
 @exec /bin/sh %D/%%XMONAD_LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister xmonad

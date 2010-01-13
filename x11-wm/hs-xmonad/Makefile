@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmonad
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad/${PORTVERSION}/
 
@@ -28,7 +27,10 @@ XMONAD_VERSION=	${PORTVERSION}
 GHC_CMD=	${LOCALBASE}/bin/ghc
 SETUP_CMD=	./setup
 
-DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
+DATADIR=		${PREFIX}/share/${DISTNAME}
+PORTDATA=		*
+
+DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
 XMONAD_LIBDIR_REL=	lib/${DISTNAME}
 
 PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
@@ -60,15 +62,21 @@ PORTDOCS=	*
 .SILENT:
 
 do-configure:
-	cd ${WRKSRC} && ${GHC_CMD} --make Setup.lhs -o setup -package Cabal \
-		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX}
+	cd ${WRKSRC} && ${GHC_CMD} --make Setup.lhs -o setup -package Cabal
+.if !defined(NOPORTDATA)
+	cd ${WRKSRC} && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX} \
+			    --datadir='${PREFIX}/share' --datasubdir='${DISTNAME}'
+.else
+	cd ${WRKSRC} && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX} \
+			    --datadir='' --datasubdir='' --docdir='${DOCSDIR}'
+.endif
 
 do-build:
 	cd ${WRKSRC} && ${SETUP_CMD} build \
 		     && ${SETUP_CMD} register --gen-script
 
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source \
+	cd ${WRKSRC} && ${SETUP_CMD} haddock --executables --hyperlink-source \
 					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif
 
