@@ -7,7 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8l
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -32,11 +32,6 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 OPTIONS=	I386	"Use optimzed assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ZLIB	"Build with zlib compression" on \
-
-BROKEN=		coredumps on i386 and amd64
-DEPRECATED=	has unfixed vulnerabilities
-EXPIRATION_DATE=2010-01-12
-
 
 EXTRACONFIGURE=	enable-camellia
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
@@ -860,7 +855,7 @@ MLINKS=	dgst.1 md4.1 \
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
-OPENSSL_SHLIBVER?=	6
+OPENSSL_SHLIBVER?=	7
 
 .if !defined(WITHOUT_SSE2)
 # disable runtime SSE2 detection
@@ -910,11 +905,19 @@ do-configure:
 	${RM} -f ${WRKSRC}/include/openssl/fips.h
 	${RM} -f ${WRKSRC}/include/openssl/fips_rand.h
 .endif
+.if defined(WITH_OPENSSL_THREADS)
+	cd ${WRKSRC} \
+	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
+		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
+	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
+		-L${PREFIX}/lib ${EXTRACONFIGURE}
+.else
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
+.endif
 .if defined(WITH_FIPS)
 	@${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
