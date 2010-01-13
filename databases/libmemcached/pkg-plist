@@ -7,36 +7,52 @@ bin/memflush
 bin/memrm
 bin/memslap
 bin/memstat
+include/libhashkit/algorithm.h
+include/libhashkit/behavior.h
+include/libhashkit/hashkit.h
+include/libhashkit/strerror.h
+include/libhashkit/types.h
+include/libhashkit/visibility.h
+include/libmemcached/analyze.h
+include/libmemcached/auto.h
+include/libmemcached/behavior.h
+include/libmemcached/callback.h
+include/libmemcached/configure.h
+include/libmemcached/constants.h
+include/libmemcached/dump.h
 include/libmemcached/exception.hpp
+include/libmemcached/get.h
 include/libmemcached/memcached.h
 include/libmemcached/memcached.hpp
-include/libmemcached/memcached_configure.h
-include/libmemcached/memcached_constants.h
-include/libmemcached/memcached_get.h
-include/libmemcached/memcached_pool.h
-include/libmemcached/memcached_result.h
-include/libmemcached/memcached_server.h
-include/libmemcached/memcached_storage.h
-include/libmemcached/memcached_string.h
-include/libmemcached/memcached_types.h
-include/libmemcached/memcached_watchpoint.h
 include/libmemcached/memcached_util.h
+include/libmemcached/memcached/protocol_binary.h
 include/libmemcached/protocol_handler.h
 include/libmemcached/protocol/cache.h
 include/libmemcached/protocol/callback.h
+include/libmemcached/result.h
+include/libmemcached/server.h
+include/libmemcached/stats.h
+include/libmemcached/storage.h
+include/libmemcached/string.h
+include/libmemcached/types.h
+include/libmemcached/util/pool.h
 include/libmemcached/visibility.h
-lib/libmemcached.a
+include/libmemcached/watchpoint.h
+lib/libhashkit.la
+lib/libhashkit.so
+lib/libhashkit.so.0
 lib/libmemcached.la
 lib/libmemcached.so
-lib/libmemcached.so.3
-lib/libmemcachedprotocol.a
+lib/libmemcached.so.4
 lib/libmemcachedprotocol.la
 lib/libmemcachedprotocol.so
 lib/libmemcachedprotocol.so.0
-lib/libmemcachedutil.a
 lib/libmemcachedutil.la
 lib/libmemcachedutil.so
 lib/libmemcachedutil.so.0
 libdata/pkgconfig/libmemcached.pc
+@dirrm include/libmemcached/util
 @dirrm include/libmemcached/protocol
+@dirrm include/libmemcached/memcached
 @dirrm include/libmemcached
+@dirrm include/libhashkit

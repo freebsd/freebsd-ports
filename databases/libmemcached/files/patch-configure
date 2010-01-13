@@ -1,11 +1,11 @@
---- configure.orig	2009-10-14 11:07:04.000000000 +0800
-+++ configure	2009-10-14 11:07:11.000000000 +0800
-@@ -19820,7 +19820,7 @@
-       if test "$ac_cv_safe_to_use_Wattributes_" = "yes"; then
-   :
- else
--  CXX_WARNINGS="${CXX_WARNINGS} -Wno-attributes"
-+  CXX_WARNINGS="${CXX_WARNINGS}"
- fi
+--- configure.orig	2010-01-07 11:15:40.000000000 +0800
++++ configure	2010-01-08 10:38:18.000000000 +0800
+@@ -22430,7 +22430,7 @@ $as_echo "$ac_cv_safe_to_use_Wno_attribu
  
+         if test "$ac_cv_safe_to_use_Wno_attributes_" = "yes"; then
+ 
+-          CC_WARNINGS="${CC_WARNINGS} -Wno-attributes"
++          CC_WARNINGS="${CC_WARNINGS}"
+           NO_ATTRIBUTES="-Wno-attributes"
+ fi
  

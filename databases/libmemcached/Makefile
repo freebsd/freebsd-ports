@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.35
-PORTREVISION=	1
+PORTVERSION=	0.37
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget pkgconfig
-CONFIGURE_ARGS=	--with-memcached=no
+USE_GNOME=	gnomehack gnometarget pkgconfig
+CONFIGURE_ARGS=	--with-memcached=no --disable-libevent --without-libevent-prefix
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
-			${WRKSRC}/support/Makefile.in
+			${WRKSRC}/Makefile.in
 .if defined(NO_INSTALL_MANPAGES)
 	${REINPLACE_CMD} -e 's|^SUBDIRS = docs |SUBDIRS = |' ${WRKSRC}/Makefile.in
 .endif
@@ -37,7 +38,22 @@ MAN1=		memcapable.1 \
 		memrm.1 \
 		memslap.1 \
 		memstat.1
-MAN3=		libmemcached.3 \
+MAN3=		hashkit_clone.3 \
+		hashkit_crc32.3 \
+		hashkit_create.3 \
+		hashkit_fnv1_32.3 \
+		hashkit_fnv1_64.3 \
+		hashkit_fnv1a_32.3 \
+		hashkit_fnv1a_64.3 \
+		hashkit_free.3 \
+		hashkit_functions.3 \
+		hashkit_hsieh.3 \
+		hashkit_is_allocated.3 \
+		hashkit_jenkins.3 \
+		hashkit_md5.3 \
+		hashkit_murmur.3 \
+		hashkit_value.3 \
+		libmemcached.3 \
 		libmemcachedutil.3 \
 		libmemcached_examples.3 \
 		memcached_add.3 \
@@ -88,6 +104,7 @@ MAN3=		libmemcached.3 \
 		memcached_replace_by_key.3 \
 		memcached_server_add.3 \
 		memcached_server_count.3 \
+		memcached_server_cursor.3 \
 		memcached_server_list.3 \
 		memcached_server_list_append.3 \
 		memcached_server_list_count.3 \
