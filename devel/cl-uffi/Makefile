@@ -3,7 +3,6 @@
 # Whom:					Matthew X. Economou <xenophon+fbsdports@irtnog.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	uffi
 PORTVERSION=	1.6.2
