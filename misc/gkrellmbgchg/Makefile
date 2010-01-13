@@ -17,6 +17,9 @@ COMMENT=	A plugin for GKrellM, which changes the desktop's background image
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+DEPRECATED=	use misc/gkrellmbgchg2
+EXPIRATION_DATE=	2010-01-31
+
 USE_GNOME=	imlib
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellmbgchg.so
