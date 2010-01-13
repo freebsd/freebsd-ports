@@ -3,7 +3,6 @@
 # Whom:					Pedro F. Giffuni
 #
 # $FreeBSD$
-#
 
 PORTNAME=	infix
 DISTVERSION=	19960628
