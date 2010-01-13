@@ -17,9 +17,8 @@ CONFLICTS=		sudosh-*
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
-BROKEN=			does not package
-
 GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		automake:110
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
 CONFIGURE_ARGS+=	--sysconfdir="${PREFIX}/etc"
