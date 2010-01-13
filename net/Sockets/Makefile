@@ -1,18 +1,23 @@
-# New ports collection makefile for:	C++ Sockets
-# Date created:		Sat Jan 15 16:17:20 UTC 2005
+# New ports collection makefile for:   C++ Sockets
+# Date created:                Sat Jan 15 16:17:20 UTC 2005
 # Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Sockets
-PORTVERSION=	1.8.7
+PORTVERSION=	2.1.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.alhem.net/Sockets/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for BSD-style sockets
 
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_BASE=	yes
@@ -31,12 +36,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 5 -x \
 		${REINPLACE_CMD} -E \
-			-e 's|"StdLog.h"|<StdLog.h>|'
+		-e 's|"StdLog.h"|<StdLog.h>|'
 
-.include <bsd.port.pre.mk>
+	@${REINPLACE_CMD} -e 's#pthread#(unsigned long)pthread#g' \
+		${WRKSRC}/Utility.cpp
 
-.if ${OSVERSION} >= 700042
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-SocketHandler.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
