@@ -151,6 +151,7 @@ lib/kroc/examples/course/sort_pump
 lib/kroc/examples/course/test_utils
 lib/kroc/examples/game/game
 lib/kroc/examples/graphics3d/butterflies
+lib/kroc/examples/graphics3d/g3dboard
 lib/kroc/examples/graphics3d/g3dchess
 lib/kroc/examples/graphics3d/g3dcog2
 lib/kroc/examples/graphics3d/g3dcogs
