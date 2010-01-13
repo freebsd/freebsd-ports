@@ -125,6 +125,7 @@
     SUBDIR += pybrain
     SUBDIR += pycdf
     SUBDIR += qcl
+    SUBDIR += qtresistors
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
     SUBDIR += silo
