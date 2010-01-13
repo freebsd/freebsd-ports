@@ -20,10 +20,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A lisp macro to read math statements in infix notation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/infix/infix.asd:${PORTSDIR}/devel/cl-infix \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 
 NO_CDROM=	No fees or compensation can be charged

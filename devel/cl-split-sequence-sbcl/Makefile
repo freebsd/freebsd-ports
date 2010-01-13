@@ -19,10 +19,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Partitioning Common Lisp sequences
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/split-sequence/split-sequence.asd:${PORTSDIR}/devel/cl-split-sequence \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/split-sequence/split-sequence.asd:${PORTSDIR}/devel/cl-split-sequence \
-		${LOCALBASE}/lib/common-lisp/asdf/sbclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-sbcl \
 		sbcl:${PORTSDIR}/lang/sbcl
 
 do-build:
