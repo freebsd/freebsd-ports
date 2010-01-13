@@ -13,7 +13,7 @@ share/ibus/component/skk.xml
 %%DATADIR%%/engine/skk.py
 %%DATADIR%%/engine/skk.pyc
 %%DATADIR%%/engine/skk.pyo
-%%DATADIR%%/icons/ibus-skk.png
+%%DATADIR%%/icons/ibus-skk.svg
 %%DATADIR%%/setup/config.py
 %%DATADIR%%/setup/config.pyc
 %%DATADIR%%/setup/config.pyo
