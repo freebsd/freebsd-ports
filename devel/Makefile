@@ -1234,8 +1234,8 @@
     SUBDIR += p5-Config-IniRegEx
     SUBDIR += p5-Config-JFDI
     SUBDIR += p5-Config-JSON
-    SUBDIR += p5-Config-Model
     SUBDIR += p5-Config-MVP
+    SUBDIR += p5-Config-Model
     SUBDIR += p5-Config-Objective
     SUBDIR += p5-Config-Options
     SUBDIR += p5-Config-Properties
@@ -1742,6 +1742,7 @@
     SUBDIR += p5-Module-Starter-PBP
     SUBDIR += p5-Module-Starter-Plugin-SimpleStore
     SUBDIR += p5-Module-Starter-Plugin-TT2
+    SUBDIR += p5-Module-Used
     SUBDIR += p5-Module-Util
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moose
