@@ -8,7 +8,7 @@
  #include "eruby.h"
  #include "config.h"
  
-+#if defined(RFLOAT_VALUE)
++#if defined(DWITH_RUBY_19)
 +#include "ruby/regex.h"
 +#undef ismbchar
 +#define ismbchar(c,e,enc)	((mbclen(c,e,enc)) != 1)
@@ -24,7 +24,7 @@
  	    }
  	    s++;
  	    goto again;
-+#if !defined(RFLOAT_VALUE)
++#if !defined(DWITH_RUBY_19)
  	case 'K':
  	    s++;
  	    if (*s == '\0') {
@@ -83,7 +83,7 @@
  		if (prevc < 0) output_literal(compiler, "print \"");
  		output_char(compiler, c);
  		prevc = c;
-+#if defined(RFLOAT_VALUE)
++#if defined(DWITH_RUBY_19)
 +                if (ismbchar(c,c+4,OnigEncDefaultCharEncoding)) {
 +                    int i, len = mbclen(c,c,OnigEncDefaultCharEncoding) - 1;
 +#else
