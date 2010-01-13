@@ -4667,7 +4667,6 @@ goggles                         ports/multimedia/goggles
 gogo                            ports/audio/gogo
 gogo-petit                      ports/audio/gogo-petit
 gok                             ports/accessibility/gok
-gold                            ports/devel/gold
 golddig                         ports/games/golddig
 golded+                         ports/news/golded+
 goldendict                      ports/textproc/goldendict
