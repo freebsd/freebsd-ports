@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	minder
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/minder/
 
@@ -45,7 +44,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}   
+	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/minder.cfg.sample \
 		${EXAMPLESDIR}/minder.cfg
 
