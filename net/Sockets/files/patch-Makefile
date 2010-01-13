@@ -1,20 +1,25 @@
---- Makefile.orig	Sun Sep 25 02:39:49 2005
-+++ Makefile	Sun Sep 25 02:40:28 2005
-@@ -75,13 +75,11 @@
- 		ranlib $@
+--- Makefile.orig	2010-01-12 15:22:03.000000000 +0800
++++ Makefile	2010-01-12 15:24:19.000000000 +0800
+@@ -70,18 +70,17 @@
  
- install:	all
--		@mkdir -p $(PREFIX)/lib
+ install:	all 
+ 		@mkdir -p $(PREFIX)/lib
 -		cp libSockets.a $(PREFIX)/lib
 -		cp libSocketsEx.a $(PREFIX)/lib
 +		@${BSD_INSTALL_DATA} libSockets.a $(PREFIX)/lib
 +		@${BSD_INSTALL_DATA} libSocketsEx.a $(PREFIX)/lib
  		@mkdir -p $(PREFIX)/include/Sockets
 -		cp -a *.h $(PREFIX)/include/Sockets
++		@${BSD_INSTALL_DATA} *.h $(PREFIX)/include/Sockets
+ 		@rm -f $(PREFIX)/include/Sockets/SSLSocket.*
+ 		@rm -f $(PREFIX)/include/Sockets/HttpsGetSocket.*
+ 		@rm -f $(PREFIX)/include/Sockets/HttpsSocket.*
+ 		@rm -f $(PREFIX)/include/Sockets/EventSocket.*
+ 		@rm -f $(PREFIX)/include/Sockets/PoolSocket.*
+ 		@rm -f $(PREFIX)/include/Sockets/SocketThread.*
 -		@mkdir -p $(PREFIX)/bin
 -		install Sockets-config $(PREFIX)/bin
-+		@${BSD_INSTALL_DATA} *.h $(PREFIX)/include/Sockets
-+		@${BSD_INSTALL_PROGRAM} Sockets-config $(PREFIX)/bin
++		@${BSD_INSTALL_DATA} Sockets-config $(PREFIX)/bin
  
- clean:
- 		rm -f *.o *~ slask *.d $(PROGS) *.a */*~
+ # no binary files, zip will translate lf to cr lf
+ FILES =		*.h *.cpp Makefile Makefile.* Project/*.ds* \
