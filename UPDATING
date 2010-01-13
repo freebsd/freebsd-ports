@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100113:
+  AFFECTS: users of emulators/virtualbox
+  AUTHOR: beat@FreeBSD.org
+
+  Port has been renamed to emulators/virtualbox-ose to reflect that we are
+  using the OSE version. A seperate port for the kernel modules has been
+  created: emulators/virtualbox-ose-kmod
+
+  Please see http://wiki.freebsd.org/VirtualBox for update instructions.
+
 20100107:
   AFFECTS: users of security/openvpn*
   AUTHOR: mandree@FreeBSD.org

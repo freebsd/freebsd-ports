@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE:	vboxnet
+# REQUIRE:	FILESYSTEMS
+# BEFORE:	netif
+# KEYWORD:	nojail
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# vboxnet_enable (bool):   Set to NO by default.
+#               Set it to YES to load network related kernel modules on startup
+
+. %%RC_SUBR%%
+
+name="vboxnet"
+rcvar=${name}_enable
+start_cmd="vboxnet_start"
+stop_cmd="vboxnet_stop"
+
+vboxnet_start()
+{
+	if ! kldstat -q -m ng_vboxnetflt;
+	then
+		if ! kldload vboxnetflt > /dev/null 2>&1;
+		then
+			warn "Can't load vboxnetflt module."
+			return 1
+		fi
+	fi
+
+	if ! kldstat -q -m vboxnetadp;
+	then
+		if ! kldload vboxnetadp > /dev/null 2>&1;
+		then
+			warn "Can't load vboxnetadp module."
+			return 1
+		fi
+	fi
+}
+
+vboxnet_stop()
+{
+	if kldstat -q -m vboxnetadp;
+	then
+		if ! kldunload vboxnetadp > /dev/null 2>&1;
+		then
+			warn "Can't unload vboxnetadp module."
+			return 1
+		fi
+	fi
+
+	if kldstat -q -m ng_vboxnetflt;
+	then
+		if ! kldunload vboxnetflt > /dev/null 2>&1;
+		then
+			warn "Can't unload vboxnetflt module."
+			return 1
+		fi
+	fi
+}
+
+load_rc_config $name
+
+: ${vboxnet_enable="NO"}
+
+run_rc_command "$1"

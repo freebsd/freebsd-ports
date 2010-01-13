@@ -2,14 +2,15 @@
 
 VirtualBox was installed.
 
-You need to load the vboxdrv kernel module and a mounted /proc filesystem.
+You need to load the vboxdrv kernel module via /boot/loader.conf:
 
-% mount -t procfs proc /proc
-% kldload vboxdrv
+vboxdrv_load="YES"
 
-For bridged networking you also need to load the vboxnetflt kernel module.
+For bridged networking please add the following line to your /etc/rc.conf:
 
-% kldload vboxnetflt
+vboxnet_enable="YES"
+
+Reboot the machine to load the needed kernel modules.
 
 You also have to add all users to your vboxusers group in order to use vbox.
 
