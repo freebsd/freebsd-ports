@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssam
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	editors plan9
 MASTER_SITES=	http://www.westley.demon.co.uk/src/
 
