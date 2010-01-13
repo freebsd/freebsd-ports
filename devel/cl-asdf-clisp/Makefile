@@ -27,7 +27,7 @@ post-extract:
 	@${MKDIR} ${WRKSRC}
 
 do-build:
-	for FILE in ${ASDF_MODULES}; do \
+	@for FILE in ${ASDF_MODULES}; do \
 		clisp -q -ansi -norc \
 			-x "(compile-file \"${LOCALBASE}/lib/common-lisp/asdf/$${FILE}\" :output-file \"${WRKSRC}/$$(${BASENAME} $${FILE} .lisp).fasl\")" \
 			-x "(quit)"; \
