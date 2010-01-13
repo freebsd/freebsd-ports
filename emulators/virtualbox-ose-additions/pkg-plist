@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+%%X11%%sbin/VBoxClient
+sbin/VBoxControl
+sbin/VBoxService
+%%X11%%lib/xorg/modules/drivers/vboxvideo_drv.so
+%%X11%%lib/xorg/modules/input/vboxmouse_drv.so
+%%X11%%@dirrmtry lib/xorg/modules/drivers
+%%X11%%@dirrmtry lib/xorg/modules/input
+%%X11%%@dirrmtry lib/xorg/modules
+%%X11%%@dirrmtry lib/xorg
+%%X11%%@dirrmtry lib
+@cwd /
+%%KMODDIR%%/vboxguest.ko
