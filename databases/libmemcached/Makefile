@@ -7,18 +7,20 @@
 
 PORTNAME=	libmemcached
 PORTVERSION=	0.37
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-CONFIGURE_ARGS=	--with-memcached=no --disable-libevent --without-libevent-prefix
+CONFIGURE_ARGS=	--with-memcached=no
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
