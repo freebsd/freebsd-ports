@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vitunes
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
@@ -27,8 +27,13 @@ MAKE_ARGS=	LDFLAGS_DEPS="-L${LOCALBASE}/lib -lid3tag -lmp4v2 -logg -lvorbis -lvo
 
 ALL_TARGET=	vitunes
 PLIST_FILES=	bin/vitunes
+MAN1=	vitunes.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|8|9|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
