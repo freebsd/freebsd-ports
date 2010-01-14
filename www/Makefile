@@ -1399,6 +1399,7 @@
     SUBDIR += py-webunit
     SUBDIR += py-webware
     SUBDIR += py-webware-component
+    SUBDIR += py-werkzeug
     SUBDIR += py-wikitools
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgiref
