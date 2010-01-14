@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vitunes
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
@@ -18,22 +18,13 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A curses-based media player with vim-like keybinds
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
-
-MAKE_ARGS=	LDFLAGS_DEPS="-L${LOCALBASE}/lib -lid3tag -lmp4v2 -logg -lvorbis -lvorbisfile" \
-		CFLAGS_DEPS="-I${LOCALBASE}/include"
+LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
 ALL_TARGET=	vitunes
 PLIST_FILES=	bin/vitunes
 MAN1=	vitunes.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|8|9|g' ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
