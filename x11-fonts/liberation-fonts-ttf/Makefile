@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	1.05.1.20090721
+PORTVERSION=	1.05.2.20091227
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_XORG=	x11
-USE_ZIP=	yes	# The 1.05.1.20090721 tarball is broken
 
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
@@ -29,22 +28,20 @@ SUB_LIST=	FONTDIR=${FONTDIR}
 
 FONTNAME=	Liberation
 FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-INSTDAT=	AUTHORS License.txt fonts.dir fonts.scale
+INSTDAT=	AUTHORS License.txt ttf/fonts.dir ttf/fonts.scale
 
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
 do-build:
-	cd ${WRKSRC} &&	\
-	${MKFONTSCL_CMD}
-	${REINPLACE_CMD} -e 's|-misc-|-redhat-|' ${WRKSRC}/fonts.scale
-	cd ${WRKSRC} &&	\
-	${MKFONTDIR_CMD}
+	cd ${WRKSRC}/ttf && ${MKFONTSCL_CMD}
+	${REINPLACE_CMD} -e 's|-misc-|-redhat-|' ${WRKSRC}/ttf/fonts.scale
+	cd ${WRKSRC}/ttf && ${MKFONTDIR_CMD}
 
 do-install:
 	${MKDIR} ${FONTDIR}
 	cd ${WRKSRC} &&	\
-	${INSTALL_DATA} ${INSTDAT} *.ttf ${FONTDIR}
+	${INSTALL_DATA} ${INSTDAT} ttf/*.ttf ${FONTDIR}
 
 post-install:
 	@${ECHO_MSG}
