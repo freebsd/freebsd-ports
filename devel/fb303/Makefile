@@ -42,8 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gen-perl/Facebook/FB303/${FILE} ${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
 .endfor
 
-.if ${OSVERSION} < 700000
-IGNORE=		not supported
-.endif
-
 .include <bsd.port.post.mk>
