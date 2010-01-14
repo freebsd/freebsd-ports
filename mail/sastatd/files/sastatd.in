@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sastatd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable :
+#
+# sastatd_enable="YES"
+# sastatd_spamd_log="/var/log/spamd.log"
+#
+
+. "%%RC_SUBR%%"
+
+
+name="sastatd"
+rcvar=`set_rcvar`
+
+load_rc_config "$name"
+: ${sastatd_enable="NO"}
+: ${sastatd_database="%%SASTATD_DBDIR%%/sastatd.db"}
+: ${sastatd_setuid="%%SASTATD_USER%%"}
+: ${sastatd_pidfile="%%SASTATD_RUNDIR%%/sastatd.pid"}
+: ${sastatd_flags="-d ${sastatd_database} -p ${sastatd_pidfile} -u ${sastatd_setuid}"}
+: ${sastatd_spamd_log="/var/log/spamd.log"}
+
+command="%%PREFIX%%/bin/sastatd"
+command_args="${sastatd_flags} ${sastatd_spamd_log}"
+pidfile="${sastatd_pidfile}"
+
+run_rc_command "$1"
+

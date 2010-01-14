@@ -1,0 +1,39 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-INSTALL" ]; then
+        exit 0
+fi
+
+SASTATD_USER="%%SASTATD_USER%%"
+SASTATD_DBDIR="%%SASTATD_DBDIR%%"
+SASTATD_RUNDIR="%%SASTATD_RUNDIR%%"
+
+CHOWN="%%CHOWN%%"
+MKDIR="%%MKDIR%%"
+PW="%%PW%%"
+
+${PW} user show ${SASTATD_USER} >/dev/null 2>&1 &&
+	echo "===> Using existing user ${SASTATD_USER}" || {
+		${PW} useradd ${SASTATD_USER} && 
+		echo "===> Created user ${SASTATD_USER}" || {
+			echo "*** Failed to create user ${SASTATD_USER}"
+			exit 1
+		}
+	}
+
+for DIR in ${SASTATD_DBDIR} ${SASTATD_RUNDIR}; do
+	test -d ${DIR} || {
+		${MKDIR} -p ${DIR} &&
+		echo "===> Created directory ${DIR}" || {
+			echo "*** Failed to create directory ${DIR}"
+			exit 1
+		};
+	}
+	${CHOWN} -R ${SASTATD_USER} ${DIR} &&
+	echo "===> Changed ownership of ${DIR}" || {
+		echo "*** Failed to changed ownership of ${DIR}"
+		exit 1
+	}
+done
+

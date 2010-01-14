@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/sastatd
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/sastatd/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/sastatd
