@@ -20,6 +20,13 @@ USE_GMAKE=	yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
 
+PLIST_FILES=	etc/pop3vscan.conf.sample \
+		etc/pop3vscan.mail.sample \
+		etc/rc.d/pop3vscan.sh \
+		sbin/pop3vscan
+
+SUB_FILES=	pkg-message
+
 post-extract:
 	@${RM} ${WRKSRC}/ripmime/ripmime.a
 
@@ -38,6 +45,6 @@ do-install:
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
