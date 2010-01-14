@@ -1,10 +1,10 @@
---- ./meta_info.h.orig	2010-01-04 03:17:55.000000000 +0100
-+++ ./meta_info.h	2010-01-05 18:33:09.000000000 +0100
-@@ -5,6 +5,7 @@
- #include <limits.h>
+--- ./meta_info.h.orig	2010-01-14 06:38:34.000000000 +0100
++++ ./meta_info.h	2010-01-14 21:03:35.000000000 +0100
+@@ -22,6 +22,7 @@
+ #include <stdint.h>
  #include <stdlib.h>
  #include <string.h>
 +#include <strings.h>
  #include <ctype.h>
- #include <time.h>
- #include <err.h>
+ #include <stdio.h>
+ #include <errno.h>
