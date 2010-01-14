@@ -980,6 +980,7 @@
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yap
+    SUBDIR += yukon
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zphoto
