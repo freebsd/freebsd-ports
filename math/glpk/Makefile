@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.39
+PORTVERSION=	4.42
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -55,12 +55,12 @@ post-patch:
 	${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	bench.txt bench1.txt bench2.txt glpk.pdf glpk_faq.txt gmpl.pdf \
-		opb.txt tables.pdf dfeas.djvu gomory.djvu scaling.djvu \
-		subset.djvu updating.djvu
+PORTDOCS=	glpk.pdf glpk_faq.txt gmpl.pdf graphs.pdf miplib2.txt miplib3.txt \
+		netlib.txt opb.txt tables.pdf dfeas.pdf gomory.pdf keller.pdf prepro.pdf \
+		scaling.pdf subset.pdf updating.pdf
 
 post-install:
-	@${CP} ${WRKSRC}/doc/notes/*.djvu ${WRKSRC}/doc/
+	@${CP} ${WRKSRC}/doc/notes/*.pdf ${WRKSRC}/doc/
 	@${MKDIR} ${DOCSDIR}
 	for docfile in ${PORTDOCS} ; do \
 		${INSTALL_MAN} ${WRKSRC}/doc/$${docfile} ${DOCSDIR} ; \
