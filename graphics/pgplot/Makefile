@@ -17,6 +17,8 @@ COMMENT=	A C/FORTRAN library for drawing graphs on a variety of display devices
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
