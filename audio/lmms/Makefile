@@ -7,10 +7,10 @@
 
 PORTNAME=	lmms
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An all-in-one sequencer, drum machine, sampler and more
@@ -51,8 +51,6 @@ CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 
 MANCOMPRESSED=	yes
 MAN1=		lmms.1
-
-CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
