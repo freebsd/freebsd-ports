@@ -591,6 +591,7 @@
     SUBDIR += rubygem-actionmailer
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-tmail
+    SUBDIR += sa-utils
     SUBDIR += sccmilter
     SUBDIR += scmail
     SUBDIR += sendmail

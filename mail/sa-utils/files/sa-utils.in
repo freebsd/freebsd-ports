@@ -1,0 +1,169 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# periodic(8) script that runs sa-update on a nightly basis, updating
+# SpamAssassin rules if needed. Relies on sa-update command.
+#
+# Originally contributed by: Jeremy Chadwick <koitsu@FreeBSD.org>
+# Extended and enhanced by: Matthew Seaman <m.seaman@infracaninophile.co.uk>
+#
+# Define these variables in either /etc/periodic.conf or
+# /etc/periodic.conf.local to override the defaults.
+#
+# Configuration Settings (with default values):
+#
+# daily_sa_enable="YES"
+#          run sa-update(1) daily.  We assume you want this since
+#          you've installed the port.
+#
+# daily_sa_quiet="NO"
+#           discard output from sa-update, sa-compile, sa-spamd if set
+#           to YES.  sa-compile in particular is quite verbose, so
+#           setting this to YES can avoid some occasional excess
+#           verbiage in your daily e-mails.
+#
+# daily_sa_update_flags=""
+#           flags to pass to sa-update. eg. to download additional
+#           updates from saupdates.example.com, signed with a GPG key
+#           with fingerprint 0xCAFEBABE which you have previously
+#           downloaded and installed into the sa-update keyring:
+#               daily_sa_update_flags="--gpgkey CAFEBABE \
+#                    --channel saupdates.example.com     \
+#                    --channel updates.spamassassin.org"  
+#
+# daily_sa_compile="YES"
+#           run sa-compile to create a compiled form of the filter
+#           rules when new rules are found.  Note: this can be time
+#           consuming and CPU intensive.
+#
+# daily_sa_compile_flags=""
+#           flags to pass to sa-compile. eg to enable debug output
+#               daily_sa_compile_flags="-D"
+#
+# daily_sa_compile_nice="YES"
+#           run sa-compile via nice(1) to minimize its impact on the
+#           the system.
+#
+# daily_sa_compile_nice_flags=""
+#           flags to pass to nice(1).  eg to use a priority increment
+#           different than the default.
+#               daily_sa_compile_nice_flags="-n 16"
+#
+# daily_sa_restart_spamd="YES"
+#           automatically restart sa-spamd when new rules are found.
+#           If daily_sa_compile is enabled, only restart if new rules
+#           are found and compilation succeeds  
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+: ${daily_sa_enable="YES"}
+: ${daily_sa_quiet="NO"}
+: ${daily_sa_update_flags=""}
+: ${daily_sa_compile="YES"}
+: ${daily_sa_compile_flags=""}
+: ${daily_sa_compile_nice="YES"}
+: ${daily_sa_compile_nice_flags=""}
+: ${daily_sa_restart_spamd="YES"}
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+export PATH
+
+update_rules() {
+    echo
+    echo "Checking for new SpamAssassin rules:"
+
+    eval sa-update ${daily_sa_update_flags} ${_output} || rc=$?
+
+    return $rc
+}
+
+# If enabled, run sa-compile to compile the updated rulesets.  This
+# can require significant time and CPU.
+compile_rules() {
+    case "$daily_sa_compile_nice" in
+        [Yy][Ee][Ss])
+            _nice="nice $daily_sa_compile_nice_flags"
+            ;;
+	*)
+            _nice=
+            ;;
+    esac
+
+    case "$daily_sa_compile" in
+	[Yy][Ee][Ss])
+	    echo "  Compiling new rules"
+	    eval ${_nice} sa-compile ${daily_sa_compile_flags} ${_output} || rc=$?
+
+	    if [ $rc -ne 0 ] ; then
+		echo "Error: sa-compile exited with code $rc"
+		rc=3
+	    fi
+	    ;;
+
+	*)  ;;			# Do nothing
+    esac
+
+    return $rc
+}
+
+# If update_rules() downloads new rules, and if compile_rules succeeds
+# or is not enabled, then restart the spamd daemon.
+restart_spamd() {
+    case "$daily_sa_restart_spamd" in
+	[Yy][Ee][Ss])
+	    echo "  Restarting sa-spamd"
+	    eval %%LOCALBASE%%/etc/rc.d/sa-spamd restart ${_output} || rc=$?
+
+	    if [ $rc -ne 0 ] ; then
+		echo "Error: failed to restart sa-spamd"
+		rc=3
+	    fi
+	    ;;
+
+	*)  ;;			# Do nothing
+    esac
+
+    return $rc
+}
+
+rc=0
+case "$daily_sa_enable" in
+    [Yy][Ee][Ss])
+	case ${daily_sa_quiet} in
+	    [Yy][Ee][Ss])
+		_output='>/dev/null 2>&1'
+		;;
+	    *)
+		_output=
+		;;
+	esac
+
+	update_rules || rc=$?
+	case ${rc} in
+	    0)
+		echo "Successfully downloaded updated rules"
+		compile_rules && \
+		    restart_spamd
+		;;
+	    1)
+		echo "No new rules available."
+		rc=0
+		;;
+	    *)
+		echo "Error: sa-update exited with code ${rc}"
+		rc=3
+		;;
+	esac
+	;;
+
+    *)	;;			# Nothing to do
+esac
+
+exit $rc
