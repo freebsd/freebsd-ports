@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
+--- ./Makefile.orig	2010-01-14 14:04:12.000000000 +0100
++++ ./Makefile	2010-01-14 14:08:21.000000000 +0100
 @@ -6,27 +6,27 @@
  # warranties, including, without limitation, the implied warranties
  # of merchant-ability and fitness for a particular purpose.
@@ -13,7 +10,7 @@ $FreeBSD$
 -CC=gcc
 +CC?=gcc
  
- VERSION=1.5.2.2
+ VERSION=1.5.3
  TREE_DEST=tree
  BINDIR=${prefix}/bin
 -MAN=tree.1
@@ -23,11 +20,10 @@ $FreeBSD$
  # Uncomment options below for your particular OS:
  
  # Linux defaults:
- #CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
--CFLAGS=-O2 -Wall -fomit-frame-pointer -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
--LDFLAGS=-s
-+#CFLAGS=-O2 -Wall -fomit-frame-pointer -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
-+#LDFLAGS=-s
+-CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++#CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+ #CFLAGS=-O2 -Wall -fomit-frame-pointer -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+ #LDFLAGS=-s
  
  # Uncomment for FreeBSD:
 -#CFLAGS=-O2 -Wall -fomit-frame-pointer
@@ -35,7 +31,7 @@ $FreeBSD$
 -#XOBJS=strverscmp.o
 +CFLAGS?=-O2 -Wall -fomit-frame-pointer
 +LDFLAGS?=-s
-+XOBJS=strverscmp.o
++XOBJS?=strverscmp.o
  
  # Uncomment for Solaris:
  #CC=cc
