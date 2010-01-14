@@ -1,0 +1,274 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/datastructures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/http.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/local.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/routing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/script.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/serving.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/templates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testapp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/useragents.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/wrappers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/_internal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/datastructures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/http.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/local.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/routing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/script.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/serving.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/templates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testapp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/useragents.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/wrappers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/_internal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/console.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/render.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/repr.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/tbtools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/console.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/render.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/repr.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/tbtools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/body.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/codetable.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/console.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/debugger.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/jquery.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/less.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/more.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/source.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/style.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared/vartable.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/console.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/dump_object.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/frame.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/help_command.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/source.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/traceback_full.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/traceback_plaintext.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates/traceback_summary.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/console.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/render.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/repr.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/tbtools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/atom.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/fixers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/iterio.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/jsrouting.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/kickstart.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/limiter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/lint.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/profiler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/reporterstream.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/securecookie.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/sessions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/testtools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/wrappers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/atom.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/fixers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/iterio.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/jsrouting.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/kickstart.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/limiter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/lint.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/profiler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/reporterstream.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/securecookie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/sessions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/testtools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/wrappers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/atom.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/fixers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/iterio.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/jsrouting.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/kickstart.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/limiter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/lint.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/profiler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/reporterstream.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/securecookie.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/sessions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/testtools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/wrappers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/datastructures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/http.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/local.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/routing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/script.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/serving.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/templates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testapp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/useragents.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/wrappers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/_internal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookieauth.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpbasicauth.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-coolmagic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-couchy.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-cupoftee.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-i18nurls.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-plnt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-shorty.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-simplewiki.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-webpylike.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upload.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/securecookie.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/sessions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/application.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/helpers.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/utils.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/public/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/templates/static/about.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/templates/static/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/templates/static/not_found.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/views/static.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/views/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/application.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/models.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/utils.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/views.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/static/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/templates/display.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/templates/list.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/templates/new.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/templates/not_found.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/application.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/db.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/network.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/pages.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/utils.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/shared/content.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/shared/down.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/shared/favicon.ico
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/shared/header.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/shared/logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/shared/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/shared/up.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/templates/missingpage.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/templates/search.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/templates/server.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cupoftee/templates/serverlist.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/application.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/urls.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/views.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/templates/about.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/templates/blog.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/templates/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/i18nurls/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial/complex_routing.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/database.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/sync.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/utils.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/views.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/webapp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/shared/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/templates/about.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/templates/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/application.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/models.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/utils.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/views.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/static/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/templates/display.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/templates/list.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/templates/new.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shorty/templates/not_found.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/actions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/application.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/database.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/specialpages.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/utils.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/shared/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/action_diff.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/action_edit.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/action_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/action_revert.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/action_show.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/macros.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/missing_action.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/page_index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/page_missing.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewiki/templates/recent_changes.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpylike/example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpylike/webpylike.py
+
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webpylike
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simplewiki/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simplewiki/shared
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simplewiki
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shorty/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shorty/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shorty
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/plnt/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/plnt/shared
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/plnt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/partial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/i18nurls/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/i18nurls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cupoftee/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cupoftee/shared
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cupoftee
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/couchy/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/couchy/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/couchy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coolmagic/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coolmagic/templates/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coolmagic/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coolmagic/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coolmagic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
