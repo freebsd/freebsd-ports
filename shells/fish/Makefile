@@ -7,7 +7,7 @@
 
 PORTNAME=	fish
 PORTVERSION=	1.23.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -19,14 +19,14 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LIBS="${LDFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
-OPTIONS=	NLS	"Native language support"	on \
-		XSEL	"Build with xsel"		on
+OPTIONS=	XSEL	"Build with xsel"		on \
+		DOXYGEN "Build docs with doxygen"	on
 
 MAN1=		alias.1 and.1 begin.1 bg.1 bind.1 block.1 \
 		break.1 breakpoint.1 builtin.1 case.1 cd.1 \
@@ -43,27 +43,28 @@ MAN1=		alias.1 and.1 begin.1 bg.1 bind.1 block.1 \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--without-gettext
-PLIST_SUB+=		NLS="@comment "
-.endif
+# Don't use the bundled xsel
+CONFIGURE_ARGS+=	--without-xsel
 
 .if !defined(WITHOUT_XSEL)
-CONFLICTS=		xsel-[0-9]*
-PLIST_SUB+=		XSEL=""
-MAN1+=			xsel.1
+RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel-conrad
+.endif
+
+.if defined(WITHOUT_DOXYGEN) || defined(NOPORTDOCS)
+PLIST_SUB+=	DOCS="@comment "
 .else
-CONFIGURE_ARGS+=	--without-xsel
-PLIST_SUB+=		XSEL="@comment "
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+PLIST_SUB+=	DOCS=""
+.endif
+
+post-patch:
+.if defined(WITHOUT_DOXYGEN) || defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|$(PROGRAMS) user_doc|$(PROGRAMS)|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 589,593d ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if !defined(WITHOUT_XSEL)
-	${MV} ${PREFIX}/man/man1/xsel.1x ${PREFIX}/man/man1/xsel.1
-.endif
 	${CP} ${DATADIR}/man/*.1 ${PREFIX}/man/man1/
 	${RM} -rf ${DATADIR}/man
 	if ${GREP} -q '${PREFIX}/bin/${PORTNAME}' /etc/shells; then \
