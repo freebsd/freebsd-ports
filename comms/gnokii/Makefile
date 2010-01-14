@@ -24,6 +24,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
+USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
 			--with-xgnokiidir=${PREFIX}/share
@@ -37,7 +38,7 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 PKGDEINSTALL=	${PKGINSTALL}
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
-MAN1=		gnokii.1 sendsms.1
+MAN1=		gnokii.1 sendsms.1 xgnokii.1
 MAN8=		gnokiid.8 mgnokiidev.8
 
 CONFLICTS=	smstools-[0-9]* sendsms-[0-9]*
@@ -94,7 +95,6 @@ PLIST_SUB+=	X11='@comment '
 USE_XORG=	xpm
 USE_GNOME+=	gtk20
 PLIST_SUB+=	X11=''
-MAN1+=		xgnokii.1
 .endif
 
 FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
