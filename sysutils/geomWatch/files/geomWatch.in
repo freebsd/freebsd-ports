@@ -1,0 +1,44 @@
+#!/bin/sh
+# $FreeBSD
+
+# PROVIDE: geomwatch
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these geomwatch_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/geomwatch
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+geomwatch_enable="${geomwatch_enable-NO}"
+geomwatch_pidfile="/var/run/geomWatch.pid"
+
+. /etc/rc.subr
+
+name="geomwatch"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/geomWatch"
+
+load_rc_config $name
+
+: ${geomwatch_config="%%PREFIX%%/etc/geomWatch.conf"}
+: ${geomwatch_flags="-c ${geomwatch_config}"}
+
+pidfile="${geomwatch_pidfile}"
+required_files="${geomwatch_config}"
+
+case "${geomwatch_flags}" in
+*-p\ *)
+	echo "ERROR: \$geomwatch_flags includes -p option." \
+		"Please use \$geomwatch_pidfile instead."
+	exit 1
+	;;
+*)
+	geomwatch_flags="-p ${pidfile} ${geomwatch_flags}"
+	;;
+esac
+
+run_rc_command "$1"

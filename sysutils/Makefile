@@ -281,6 +281,7 @@
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gdmap
+    SUBDIR += geomWatch
     SUBDIR += geomgui
     SUBDIR += getdelta
     SUBDIR += geteltorito
