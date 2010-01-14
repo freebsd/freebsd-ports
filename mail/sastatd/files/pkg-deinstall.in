@@ -1,0 +1,23 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+        exit 0
+fi
+
+SASTATD_USER=%%SASTATD_USER%%
+SASTATD_DBDIR=%%SASTATD_DBDIR%%
+SASTATD_RUNDIR=%%SASTATD_RUNDIR%%
+
+cat <<EOM
+------------------------------------------------------------------------
+                                 NOTE!
+
+If you are permanently removing sastatd, you may want also:
+
+    1. Delete user: 'pw userdel ${SASTATD_USER}
+    2. Delete directories: 'rmdir ${SASTATD_DBDIR} ${SASTATD_RUNDIR}
+
+------------------------------------------------------------------------
+EOM
+
