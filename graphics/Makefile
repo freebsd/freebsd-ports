@@ -895,6 +895,7 @@
     SUBDIR += tonicpoint-viewer
     SUBDIR += truevision
     SUBDIR += tulip
+    SUBDIR += tumble
     SUBDIR += uDrawGraph
     SUBDIR += ufraw
     SUBDIR += uniconvertor
