@@ -8,7 +8,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -69,6 +69,7 @@ test:
 
 # autogen plist
 post-install:
+	@(cd ${WRKSRC}; ${PERL} Doc/scantree.pl)
 	@(cd ${WRKSRC}/blib/man3 ; \
 	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/," \
 		>> ${TMPPLIST} ; \
