@@ -18,15 +18,11 @@ BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-OPTIONS=	RT36 "Install for rt-3.6.x (default rt-3.8.x)" off
-
 PERL_CONFIGURE=	yes
 
-MAN3=		RT::Extension::LDAPImport.3
+OPTIONS=	RT36 "Install for rt-3.6.x (default rt-3.8.x)" off
 
-PLIST_SUB+=	RTHOME=${RTHOME}
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_RT36)
 
@@ -46,17 +42,20 @@ MAN3PREFIX=	${PREFIX}
 
 .endif
 
+MAN3=		RT::Extension::LDAPImport.3
+PLIST_SUB+=	RTHOME=${RTHOME}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/opt/rt3/lib,${RT_PM_DIR},' \
 	    ${WRKSRC}/bin/rtldapimport && \
 	    ${RM} ${WRKSRC}/bin/rtldapimport.bak
 
-# Don't use normal CONFIGURE_ARGS.  Disable doc_?????_indstall targets to
-# suppress installing perllocal.pod.  This duplicates code from bsd.perl.mk
-# rather undesirably.
+# Note: You can install using an arbitrary $PREFIX but only if it
+# matches the $PREFIX used to install www/rt3{6,8}.  Hence ignore
+# $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${RT_PM_DIR} ./${CONFIGURE_SCRIPT} && \
+	    ${SETENV} -u PREFIX ${CONFIGURE_ENV} ${PERL5} -I${RT_PM_DIR} ./${CONFIGURE_SCRIPT} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
