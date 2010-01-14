@@ -24,6 +24,12 @@ USE_XORG=	x11 xv
 USE_GL=		yes
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
+.endif
+
 MAKE_JOBS_SAFE=	defined
 MAKE_ENV+=	DATADIR="${DATADIR}" PREFIX="${PREFIX}"
 
@@ -45,8 +51,6 @@ do-fetch:
 	    freefall.freebsd.org:public_distfiles/
 .endif
 .endif # defined(BOOTSTRAP)
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
 IGNORE=		unsupported on FreeBSD versions prior to 7.0
