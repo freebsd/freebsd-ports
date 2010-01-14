@@ -1,0 +1,53 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 196)
++++ Makefile	(working copy)
+@@ -2,8 +2,11 @@
+ MAJOR    = 0
+ LIBRARY  = libseom.so
+ 
+-DESTDIR  = 
++DESTDIR  ?=
++
++# XXX override passed in
+ LIBDIR   = lib
++LIBDATADIR   = libdata
+ 
+ CC       = gcc
+ ASM      = yasm
+@@ -11,8 +14,11 @@
+ CFLAGS   = -Iinclude -std=c99
+ LDFLAGS  = -Wl,--as-needed
+ 
+-include config.make
++###include config.make
+ 
++ARCH     = C
++CFLAGS  += -I${LOCALBASE}/include -L${LOCALBASE}/lib
++
+ OBJS = src/buffer.o src/client.o src/codec.o src/frame.o src/opengl.o \
+        src/server.o src/stream.o src/arch/$(ARCH)/frame.o
+ 
+@@ -29,7 +35,7 @@
+ 	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
+ 
+ $(LIBRARY): $(OBJS)
+-	$(CC) -shared $(LDFLAGS) -Wl,-soname,$@.$(MAJOR) -o $@ $(OBJS) -ldl -lpthread
++	$(CC) -shared $(LDFLAGS) -Wl,-soname,$@.$(MAJOR) -o $@ $(OBJS) -lpthread
+ 
+ $(APPS): $(LIBRARY)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -L. -o $@ src/$@/main.c -lseom $($@LIBS)
+@@ -39,11 +45,11 @@
+ 
+ inst = install -m 755 -d $(DESTDIR)$(3); install -m $(1) $(2) $(DESTDIR)$(3)$(if $(4),/$(4));
+ install: $(LIBRARY) $(APPS) seom.pc
+-	$(call inst,644,seom.pc,$(PREFIX)/$(LIBDIR)/pkgconfig)
++	$(call inst,644,seom.pc,$(PREFIX)/$(LIBDATADIR)/pkgconfig)
+ 	$(call inst,755,$(LIBRARY),$(PREFIX)/$(LIBDIR),$(LIBRARY).$(MAJOR))
+ 	ln -sf $(LIBRARY).$(MAJOR) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(LIBRARY)
+ 
+-	$(call inst,644,art/seom.svg,$(PREFIX)/share/seom,seom.svg)
++	$(call inst,644,art/seom.svg,$(DATADIR),seom.svg)
+ 	$(call inst,644,include/seom/*,$(PREFIX)/include/seom)
+ 	$(call inst,755,src/scripts/backup,$(PREFIX)/bin,seom-backup)
+ 	$(foreach app,$(APPS),$(call inst,755,$(app),$(PREFIX)/bin,seom-$(app)))

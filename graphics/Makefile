@@ -849,6 +849,7 @@
     SUBDIR += sdl_ttf
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
+    SUBDIR += seom
     SUBDIR += separate
     SUBDIR += sharpconstruct
     SUBDIR += shim
