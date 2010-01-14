@@ -1,13 +1,21 @@
---- snapshot~    2008-12-06 19:37:53.598862157 -0600
-+++ snapshot    2008-12-06 19:37:53.599877379 -0600
+--- ./snapshot.orig	2009-08-01 11:34:34.000000000 -0400
++++ ./snapshot	2010-01-14 18:14:06.940846133 -0500
 @@ -29,7 +29,9 @@
  ##
-
+ 
  #   make sure system tools are used first
 -PATH="/bin:/usr/bin:/sbin:/usr/sbin:$PATH"
 +PATH="/bin:/usr/bin:/sbin:/usr/sbin:%%PREFIX%%/sbin:$PATH"
 +LC_ALL=C
 +LANG=C
-
+ 
  #   option defaults
- fs_subdir=".snap"
+ verbose=no
+@@ -79,6 +81,7 @@
+         source_rc_confs; \
+     fi; \
+     . /etc/rc.subr; \
++    load_rc_config zfs; \
+     if checkyesno zfs_enable; then \
+         echo 'yes'; \
+     else \
