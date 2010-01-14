@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net-im audio
 MASTER_SITES=	http://jon.oberheide.org/projects/pidgin-rhythmbox/downloads/
 
-MAINTAINER=	yuri@darklight.org.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to update your status with info from Rhythmbox
 
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
