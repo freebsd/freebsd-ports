@@ -1,6 +1,6 @@
---- ./uinterface.h.orig	2010-01-04 03:17:55.000000000 +0100
-+++ ./uinterface.h	2010-01-05 18:33:14.000000000 +0100
-@@ -17,11 +17,11 @@
+--- ./uinterface.h.orig	2010-01-14 18:24:04.000000000 +0100
++++ ./uinterface.h	2010-01-14 18:24:15.000000000 +0100
+@@ -17,7 +17,6 @@
  #define UINTERFACE_H
  
  #include <sys/ioctl.h>
@@ -8,8 +8,3 @@
  #include <ncurses.h>
  #include <ctype.h>
  #include <stdio.h>
- #include <stdlib.h>
-+#include <stdint.h>
- #include <string.h>
- #include <stdbool.h>
- #include <termios.h>

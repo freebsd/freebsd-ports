@@ -1,17 +1,10 @@
---- ./vitunes.h.orig	2010-01-04 03:17:55.000000000 +0100
-+++ ./vitunes.h	2010-01-05 18:33:18.000000000 +0100
-@@ -1,10 +1,13 @@
- #ifndef VITUNES_H
- #define VITUNES_H
- 
-+#include <signal.h>
- #include <sys/time.h>
- #include <locale.h>
+--- ./vitunes.h.orig	2010-01-14 18:28:36.000000000 +0100
++++ ./vitunes.h	2010-01-14 18:28:43.000000000 +0100
+@@ -6,7 +6,6 @@
+ #include <getopt.h>
+ #include <signal.h>
+ #include <unistd.h>
 -#include <util.h>
-+//#include <util.h>
  #include <pwd.h>
-+#include <unistd.h>
-+#include <getopt.h>
  
  #include "input_handlers.h"
- #include "uinterface.h"
