@@ -73,6 +73,8 @@ bin/fail2ban-regex
 %%PYTHON_SITELIBDIR%%/server/faildata.pyc
 %%ETCDIR%%/fail2ban.conf
 %%ETCDIR%%/jail.conf
+%%ETCDIR%%/filter.d/bsd-sshd.conf
+%%ETCDIR%%/filter.d/bsdftp.conf
 %%ETCDIR%%/filter.d/vsftpd.conf
 %%ETCDIR%%/filter.d/gssftpd.conf
 %%ETCDIR%%/filter.d/proftpd.conf
@@ -111,6 +113,7 @@ bin/fail2ban-regex
 %%ETCDIR%%/action.d/hostsdeny.conf
 %%ETCDIR%%/action.d/iptables.conf
 %%ETCDIR%%/action.d/sendmail-whois.conf
+%%ETCDIR%%/action.d/bsd-ipfw.conf
 @dirrm %%ETCDIR%%/filter.d
 @dirrm %%ETCDIR%%/action.d
 @dirrm %%ETCDIR%%
