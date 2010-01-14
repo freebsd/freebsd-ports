@@ -1,0 +1,11 @@
+--- plugins/zynaddsubfx/fltk/CMakeLists.txt.orig	2009-08-11 20:52:17.000000000 +0400
++++ plugins/zynaddsubfx/fltk/CMakeLists.txt	2010-01-14 22:08:35.000000000 +0300
+@@ -344,7 +344,7 @@
+ #SET(FLUID_COMMAND "${FLUID_COMMAND}" CACHE INTERNAL "" FORCE)
+ 
+ # Include header files in fltk binary tree
+-INCLUDE_DIRECTORIES(${FLTK_BINARY_DIR})
++INCLUDE_DIRECTORIES(BEFORE ${FLTK_BINARY_DIR})
+ 
+ # Do the build of fltk libraries and fluid
+ SUBDIRS(src)
