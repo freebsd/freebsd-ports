@@ -677,8 +677,8 @@
     SUBDIR += p5-Text-Highlight
     SUBDIR += p5-Text-Language-Guess
     SUBDIR += p5-Text-Markdown
-    SUBDIR += p5-Text-MultiMarkdown
     SUBDIR += p5-Text-Metaphone
+    SUBDIR += p5-Text-MultiMarkdown
     SUBDIR += p5-Text-NSP
     SUBDIR += p5-Text-NeatTemplate
     SUBDIR += p5-Text-Netstring
@@ -813,7 +813,6 @@
     SUBDIR += p5-XML-Parser-Style-Elemental
     SUBDIR += p5-XML-Quote
     SUBDIR += p5-XML-RAI
-    SUBDIR += p5-XML-Reader
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-RSS-Feed
     SUBDIR += p5-XML-RSS-JavaScript
@@ -822,6 +821,7 @@
     SUBDIR += p5-XML-RSS-Parser
     SUBDIR += p5-XML-RSS-SimpleGen
     SUBDIR += p5-XML-RSSLite
+    SUBDIR += p5-XML-Reader
     SUBDIR += p5-XML-RegExp
     SUBDIR += p5-XML-Rules
     SUBDIR += p5-XML-SAX
@@ -1252,6 +1252,7 @@
     SUBDIR += xxdiff
     SUBDIR += xxdiff-scripts
     SUBDIR += y2l
+    SUBDIR += yali
     SUBDIR += yamcha
     SUBDIR += yaml-mode.el
     SUBDIR += yaml-mode.el-emacs21
