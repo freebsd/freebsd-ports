@@ -78,8 +78,6 @@ USE_RUBY=	yes
 USE_RAKE=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
 NGINX_VARDIR?=	/var
 NGINX_LOGDIR?=	${NGINX_VARDIR}/log
 NGINX_RUNDIR?=	${NGINX_VARDIR}/run
@@ -402,10 +400,12 @@ CONFIGURE_ARGS+=--with-mail_ssl_module
 .endif		# WITH_MAIL_MODULE
 
 .if defined(NGINX_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO_MSG}
