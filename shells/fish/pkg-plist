@@ -5,23 +5,22 @@ bin/fishd
 bin/mimedb
 bin/seq
 bin/set_color
-%%XSEL%%bin/xsel
 %%ETCDIR%%/config.fish
-share/doc/ChangeLog
-share/doc/commands.html
-share/doc/design.html
-share/doc/doc_8h-source.html
-share/doc/doxygen.css
-share/doc/doxygen.png
-share/doc/faq.html
-share/doc/files.html
-share/doc/index.html
-share/doc/license.html
-share/doc/pages.html
-share/doc/tab_b.gif
-share/doc/tab_l.gif
-share/doc/tab_r.gif
-share/doc/tabs.css
+%%DOCS%%share/doc/ChangeLog
+%%DOCS%%share/doc/commands.html
+%%DOCS%%share/doc/design.html
+%%DOCS%%share/doc/doc_8h-source.html
+%%DOCS%%share/doc/doxygen.css
+%%DOCS%%share/doc/doxygen.png
+%%DOCS%%share/doc/faq.html
+%%DOCS%%share/doc/files.html
+%%DOCS%%share/doc/index.html
+%%DOCS%%share/doc/license.html
+%%DOCS%%share/doc/pages.html
+%%DOCS%%share/doc/tab_b.gif
+%%DOCS%%share/doc/tab_l.gif
+%%DOCS%%share/doc/tab_r.gif
+%%DOCS%%share/doc/tabs.css
 %%DATADIR%%/completions/acpi.fish
 %%DATADIR%%/completions/adduser.fish
 %%DATADIR%%/completions/and.fish
@@ -347,10 +346,10 @@ share/doc/tabs.css
 %%DATADIR%%/functions/umask.fish
 %%DATADIR%%/functions/up-or-search.fish
 %%DATADIR%%/functions/vared.fish
-%%NLS%%share/locale/de/LC_MESSAGES/fish.mo
-%%NLS%%share/locale/en/LC_MESSAGES/fish.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/fish.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/fish.mo
+share/locale/de/LC_MESSAGES/fish.mo
+share/locale/en/LC_MESSAGES/fish.mo
+share/locale/fr/LC_MESSAGES/fish.mo
+share/locale/sv/LC_MESSAGES/fish.mo
 @dirrm %%DATADIR%%/functions
 @dirrm %%DATADIR%%/completions
 @dirrm %%DATADIR%%
