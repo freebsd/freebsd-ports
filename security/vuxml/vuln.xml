@@ -33,8 +33,62 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
-
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c9263916-006f-11df-94cb-0050568452ac">
+    <topic>Zend Framework -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ZendFramework</name>
+	<range><lt>1.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Zend Framework team reports:</p>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-06">
+	  <p>Potential XSS or HTML Injection vector in Zend_Json.</p>
+	</blockquote>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-05">
+	  <p>Potential XSS vector in Zend_Service_ReCaptcha_MailHide.</p>
+	</blockquote>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-04">
+	  <p>Potential MIME-type Injection in Zend_File_Transfer
+	    Executive Summary.</p>
+	</blockquote>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-03">
+	  <p>Potential XSS vector in Zend_Filter_StripTags when
+	    comments allowed.</p>
+	</blockquote>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-02">
+	  <p>Potential XSS vector in Zend_Dojo_View_Helper_Editor.</p>
+	</blockquote>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-01">
+	  <p>Potential XSS vectors due to inconsistent encodings.</p>
+	</blockquote>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2009-02">
+	  <p>XSS vector in Zend_Filter_StripTags.</p>
+	</blockquote>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2009-01">
+	  <p>LFI vector in Zend_View::setScriptPath() and render().</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://framework.zend.com/security/advisory/ZF2010-06</url>
+      <url>http://framework.zend.com/security/advisory/ZF2010-05</url>
+      <url>http://framework.zend.com/security/advisory/ZF2010-04</url>
+      <url>http://framework.zend.com/security/advisory/ZF2010-03</url>
+      <url>http://framework.zend.com/security/advisory/ZF2010-02</url>
+      <url>http://framework.zend.com/security/advisory/ZF2010-01</url>
+      <url>http://framework.zend.com/security/advisory/ZF2009-02</url>
+      <url>http://framework.zend.com/security/advisory/ZF2009-01</url>
+    </references>
+    <dates>
+      <discovery>2009-12-31</discovery>
+      <entry>2010-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd8f2394-fd08-11de-b425-00215c6a37bb">
     <topic>powerdns-recursor -- multiple vulnerabilities</topic>
     <affects>
@@ -705,7 +759,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>>Opera Team reports:</p>
+	<p>Opera Team reports:</p>
 	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1010/">
 	  <ul>
 	    <li>Fixed a heap buffer overflow in string to number conversion</li>
@@ -2059,7 +2113,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="59e7af2d-8db7-11de-883b-001e3300a30d">
-    <topic>pidgin -- MSN overflow parsing SLP messages </topic>
+    <topic>pidgin -- MSN overflow parsing SLP messages</topic>
     <affects>
       <package>
 	<name>pidgin</name>
@@ -2294,8 +2348,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Joomla! Security Center reports:</p>
-	<blockquote
-	cite="http://developer.joomla.org/security/news/303-20090723-core-com-mailto-timeout-issue.html">
+	<blockquote cite="http://developer.joomla.org/security/news/303-20090723-core-com-mailto-timeout-issue.html">
 	  <p>In com_mailto, it was possible to bypass timeout protection against
 	    sending automated emails.</p>
 	</blockquote>
