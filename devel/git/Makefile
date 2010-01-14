@@ -349,6 +349,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gitweb/git-logo.png ${EXAMPLESDIR}/gitweb/
 	${INSTALL_DATA} ${WRKSRC}/gitweb/gitweb.css ${EXAMPLESDIR}/gitweb/
 	${INSTALL_SCRIPT} ${WRKSRC}/gitweb/gitweb.cgi ${EXAMPLESDIR}/gitweb/
+	${INSTALL_SCRIPT} ${WRKSRC}/gitweb/gitweb.js ${EXAMPLESDIR}/gitweb/
 .endif
 
 	@${ECHO_MSG} "===> Updating ${SHELLS}"

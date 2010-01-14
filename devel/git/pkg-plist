@@ -737,6 +737,7 @@ share/git-core/templates/info/exclude
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-logo.png
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.css
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%
