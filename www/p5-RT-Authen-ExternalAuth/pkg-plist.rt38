@@ -19,7 +19,7 @@ man/auto/RT/Authen/ExternalAuth/.packlist
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth
 @dirrm man/auto/RT/Authen/ExternalAuth
 @dirrmtry man/auto/RT/Authen
-@dirrm man/auto/RT
+@dirrmtry man/auto/RT
 @dirrmtry man/auto
 @dirrmtry lib/RT/Authen
 @dirrmtry lib/RT
