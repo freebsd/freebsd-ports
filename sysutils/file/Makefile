@@ -7,6 +7,7 @@
 
 PORTNAME=	file
 PORTVERSION=	5.03
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/unix/file/ \
