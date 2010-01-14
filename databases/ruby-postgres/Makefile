@@ -43,4 +43,11 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == "1.9"
+BROKEN=		does not compile with ruby 1.9, please use ruby-pg
+.endif
+
+.include <bsd.port.post.mk>
+
