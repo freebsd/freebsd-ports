@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-satpass
-PORTVERSION=	0.027
+PORTVERSION=	0.028
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Classes and app to compute satellite visibility
 
-RUN_DEPENDS=	p5-Date-Manip>=1.14:${PORTSDIR}/devel/p5-Date-Manip \
+BUILD_DEPENDS=	p5-Date-Manip>=1.14:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Params-Util>=0.25:${PORTSDIR}/devel/p5-Params-Util
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	-y
@@ -31,4 +32,25 @@ MAN3=	Astro::Coord::ECI::Utils.3 \
 	Astro::Coord::ECI::Sun.3 \
 	Astro::Coord::ECI.3
 
-.include <bsd.port.mk>
+OPTIONS=	SIMBAD		"Add support for Astro::SIMBAD::Client" ON \
+		SPACETRACK	"Add support for Astro::SpaceTrack" ON \
+		USGS		"Add support for Geo::WebService::Elevation::USGS" ON \
+		SOAPLITE	"Add support for SOAP::Lite" ON
+
+.include <bsd.port.pre.mk>
+.if defined(WITH_SIMBAD)
+RUN_DEPENDS+=	p5-Astro-SIMBAD-Client>=0:${PORTSDIR}/astro/p5-Astro-SIMBAD-Client
+.endif
+
+.if defined(WITH_SPACETRACK)
+RUN_DEPENDS+=	p5-Astro-SpaceTrack>=0:${PORTSDIR}/astro/p5-Astro-SpaceTrack
+.endif
+
+.if defined(WITH_USGS)
+RUN_DEPENDS+=	p5-Geo-WebService-Elevation-USGS>=0:${PORTSDIR}/science/p5-Geo-WebService-Elevation-USGS
+.endif
+
+.if defined(WITH_SOAPLITE)
+RUN_DEPENDS+=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
+.endif
+.include <bsd.port.post.mk>
