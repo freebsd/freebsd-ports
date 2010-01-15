@@ -26,7 +26,7 @@ USE_XORG=	x11
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007
-CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp
+CONFIGURE_ARGS+=	--disable-lastlog --disable-wtmp
 .endif
 
 .if defined(WITH_JAPANESE)
