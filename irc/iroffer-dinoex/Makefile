@@ -44,7 +44,10 @@ CONFIGURE_ARGS+=	-upnp
 USE_RUBY=	yes
 CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
-CFLAGS+=	-Drb_errinfo=ruby_errinfo
+
+post-configure:
+	${REINPLACE_CMD} -e 's|RFLOAT_VALUE|USE_RUBYVERSION_19|' \
+		${WRKSRC}/src/dinoex_ruby.c
 .endif
 
 do-install:
