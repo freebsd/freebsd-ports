@@ -95,7 +95,7 @@ DISTFILE_INSTRUCTIONS=\n\
 Because of licensing restrictions, you must fetch the distribution\n\
 manually.\n\n
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})#{
-Please access\n\
+DISTFILE_INSTRUCTIONS+=Please access\n\
 \n\
   ${DOWNLOAD_URL}\n\
 \n\
