@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.09.004
-PORTREVISION=	2
+PORTVERSION=	0.11003
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Manipulate structured data definitions (SQL and more)
@@ -19,24 +17,25 @@ COMMENT=	Manipulate structured data definitions (SQL and more)
 BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-MakeMethods>=0:${PORTSDIR}/devel/p5-Class-MakeMethods \
+		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-File-ShareDir>=1:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Digest-SHA1>=2.0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
-		p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Parse-RecDescent>=1.962.2:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Template-Toolkit>=2.10:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
 		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Spreadsheet-ParseExcel>=0.2602:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
+		p5-Spreadsheet-ParseExcel>=0.41:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
 		p5-Text-RecordParser>=0.02:${PORTSDIR}/textproc/p5-Text-RecordParser \
 		p5-XML-Writer>=0.500:${PORTSDIR}/textproc/p5-XML-Writer \
-		p5-XML-XPath>=1.13:${PORTSDIR}/textproc/p5-XML-XPath \
-		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
+		p5-YAML>=0.66:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN1=		sqlt-diagram.1 \
 		sqlt-diff-old.1 \
@@ -107,5 +106,8 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Schema::View.3 \
 		SQL::Translator::Utils.3 \
 		Test::SQL::Translator.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>
