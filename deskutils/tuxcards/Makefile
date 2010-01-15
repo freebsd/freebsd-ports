@@ -6,40 +6,28 @@
 #
 
 PORTNAME=	tuxcards
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	2.2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.tifskom.de/tux/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://www.tuxcards.de/src/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Tool for managing notes within a hierarchical tree
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_QT_VER=	4
+QT_COMPONENTS=	gui xml qmake_build moc_build uic_build rcc_build
 
-USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
+PLIST_FILES=	bin/tuxcards
 
 .include <bsd.port.pre.mk>
 
-# Add this condititonal while people might still have old versions
-# of qmake, living in LOCALBASE, installed. This should go away eventually.
-
-.if exists(${LOCALBASE}/share/qt/mkspecs/freebsd-g++)
-QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-.else
-QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-.endif
-
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${QMAKESPEC} tuxcards.pro
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${QMAKE} -spec ${QMAKESPEC} tuxcards.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/en/*.* ${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
