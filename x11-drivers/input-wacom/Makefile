@@ -7,7 +7,7 @@
 
 PORTNAME=	input-wacom
 PORTVERSION=	${KLD_VERSION}.${WACOM_VERSION:C/-/./g}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers kld
 MASTER_SITES=	http://www.chillt.de/bsdwacom/:bsdwacom \
 		SF/linuxwacom/linuxwacom/${WACOM_VERSION}:linuxwacom
@@ -44,15 +44,18 @@ BSDWACOM=	bsdwacom-${KLD_VERSION}
 WACOM_VERSION=	0.8.2-2
 KLD_VERSION=	40
 
-OPTIONS=	UWACOMKLD "Install USB kernel module" On
-
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} >= 800064
-BROKEN=		does not build
+OPTIONS=	UWACOMKLD "Install USB kernel module (not supported on 8.x)" Off
+.else
+OPTIONS=	UWACOMKLD "Install USB kernel module (not supported on 8.x)" On
 .endif
 
+.include <bsd.port.options.mk>
+
 .if defined(WITH_UWACOMKLD)
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build with USB support
+.endif
 PLIST_SUB+=	UWACOMKLD="uwacom.ko"
 PORTTYPE=	usb
 .else
@@ -112,4 +115,4 @@ post-install:
 	@${ECHO} "===>  Displaying pkg-message."
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
