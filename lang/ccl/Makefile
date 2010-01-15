@@ -7,7 +7,7 @@
 
 PORTNAME=	ccl
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.clozure.com/pub/release/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
@@ -18,6 +18,8 @@ COMMENT=	Clozure CL is a free Common Lisp implementation
 WRKSRC=		${WRKDIR}/ccl
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+MANUAL_PACKAGE_BUILD=yes
 
 CCL_DIRECTORY=	${PREFIX}/lib/ccl
 CCL_PLIST=	${WRKDIR}/pkg-plist
@@ -41,7 +43,8 @@ SUB_FILES=	ccl.sh
 
 post-patch:
 	@${SED}	-i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/tools/asdf.lisp
-	@${FIND} ${WRKSRC} -name .svn -or -name .cvsignore | ${XARGS} ${RM} -r -f
+	@${FIND} ${WRKSRC} -name .svn -or -name .cvsignore -or -name "*.orig" \
+		| ${XARGS} ${RM} -r -f
 
 do-build:
 	@${RM} -f ${WRKSRC}/fx86cl ${WRKSRC}/fx86cl64
@@ -52,6 +55,8 @@ do-build:
 	fi
 	@cd ${WRKSRC} && ${ECHO_CMD} | ./${FX86CL} --no-init --batch --quiet \
 		--eval "(ccl:rebuild-ccl :full t)" \
+		--eval "(require 'asdf)" \
+		--eval "(asdf:operate 'asdf:load-op 'asdf-install)" \
 		--eval "(quit)"
 
 do-install:
