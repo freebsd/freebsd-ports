@@ -33,12 +33,15 @@ make_devfs() {
 	# devfs created. If ~/dev exists, it will be deleted.
 
 	eval DEV="~$1/dev"
-	while /sbin/umount "${DEV}" 2>/dev/null; do :; done
-	/bin/rm -rf "${DEV}"
+	if /sbin/mount | grep "${DEV}" >/dev/null 2>&1; then
+		/sbin/umount "${DEV}" 2>/dev/null
+	fi
+	/bin/rmdir "${DEV}" || err 1 "Unable to remove $DEV"
 	/bin/mkdir -p "${DEV}"
-	if /sbin/mount -t devfs dev "${DEV}"; then
-		/sbin/devfs -m "${DEV}" rule -s 1 applyset && \
-		/sbin/devfs -m "${DEV}" rule -s 2 applyset || \
+	devfs_domount "${DEV}"
+	if devfs_init_rulesets; then
+		devfs_apply_ruleset "devfsrules_hide_all" "${DEV}" && \
+		devfs_apply_ruleset "devfsrules_unhide_basic" "${DEV}" || \
 		/sbin/umount "${DEV}" 2>/dev/null
 	fi
 }
