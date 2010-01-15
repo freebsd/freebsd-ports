@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Geo/WebService/Elevation/USGS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/WebService/Elevation/USGS/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/WebService/Elevation/USGS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/WebService/Elevation
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/WebService
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/Geo/WebService/Elevation
+@dirrmtry %%SITE_PERL%%/Geo/WebService
+@dirrmtry %%SITE_PERL%%/Geo
