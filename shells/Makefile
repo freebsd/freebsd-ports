@@ -38,7 +38,6 @@
     SUBDIR += sash
     SUBDIR += scponly
     SUBDIR += shell-include
-    SUBDIR += tcsh-bofh
     SUBDIR += tcsh_nls
     SUBDIR += tcshrc
     SUBDIR += v7sh

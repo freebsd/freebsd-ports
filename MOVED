@@ -4256,3 +4256,4 @@ mail/enigmail||2010-01-10|Has expired: stop support for mozilla, use a slave por
 devel/cl-asdf-sbcl||2010-01-12|lang/sbcl has a bundled asdf version
 emulators/virtualbox|emulators/virtualbox-ose|2010-01-13|Renamed and split into two components
 devel/gold|devel/binutils|2010-01-13|part of binutils
+shells/tcsh-bofh||2010-01-15|Removed
