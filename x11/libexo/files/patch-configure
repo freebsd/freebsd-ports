@@ -1,0 +1,12 @@
+--- configure.orig	2010-01-14 17:33:27.000000000 +0100
++++ configure	2010-01-14 17:35:47.000000000 +0100
+@@ -746,6 +746,9 @@
+ #endif
+ #ifdef HAVE_UNISTD_H
+ # include <unistd.h>
++#endif
++#ifdef __FreeBSD__
++# include <sys/param.h>
+ #endif"
+ 
+ ac_header_list=

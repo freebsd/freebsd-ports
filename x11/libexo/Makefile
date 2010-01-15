@@ -66,8 +66,4 @@ CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|FALSE;;|FALSE;|' ${WRKSRC}/exo/exo-icon-view.c
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
-
 .include <bsd.port.post.mk>
