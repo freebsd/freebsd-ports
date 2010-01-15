@@ -14,6 +14,7 @@
 %%SITE_PERL%%/HTML/Shakan/Filter/WhiteSpace.pm
 %%SITE_PERL%%/HTML/Shakan/Filters.pm
 %%SITE_PERL%%/HTML/Shakan/Inflator/DateTime.pm
+%%SITE_PERL%%/HTML/Shakan/Model/DBIxSkinny.pm
 %%SITE_PERL%%/HTML/Shakan/Model/DataModel.pm
 %%SITE_PERL%%/HTML/Shakan/Renderer/HTML.pm
 %%SITE_PERL%%/HTML/Shakan/Role/Filter.pm
