@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tetrons
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	games
 MASTER_SITES=	http://www.mammothcheese.ca/
 
