@@ -1,0 +1,9 @@
+Geo::WebService::Elevation::USGS executes elevation queries against the
+United States Geological Survey's web server. You provide the latitude
+and longitude in degrees, with south latitude and west longitude being
+negative. The return is typically a hash containing the data you want.
+Query errors are exceptions by default, though the object can be configured
+to signal an error by an undef response, with the error retrievable from
+the 'error' attribute.
+
+WWW: http://search.cpan.org/dist/Geo-WebService-Elevation-USGS/

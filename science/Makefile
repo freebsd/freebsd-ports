@@ -105,6 +105,7 @@
     SUBDIR += p5-Chemistry-MacroMol
     SUBDIR += p5-Chemistry-Mol
     SUBDIR += p5-Geo-ReadGRIB
+    SUBDIR += p5-Geo-WebService-Elevation-USGS
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcp
