@@ -1,5 +1,5 @@
---- po/Makefile.in.in.orig	2009-11-27 15:00:00.000000000 +0900
-+++ po/Makefile.in.in	2009-11-28 17:48:06.000000000 +0900
+--- po/Makefile.in.in.orig	2010-01-15 20:56:17.000000000 +0900
++++ po/Makefile.in.in	2010-01-15 20:41:29.000000000 +0900
 @@ -34,7 +34,7 @@
  datarootdir = @datarootdir@
  libdir = @libdir@

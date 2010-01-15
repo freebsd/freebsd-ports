@@ -1,6 +1,6 @@
---- engine/Makefile.am.orig	2009-11-28 17:45:04.000000000 +0900
-+++ engine/Makefile.am	2009-11-28 18:04:42.000000000 +0900
-@@ -61,7 +61,7 @@
+--- engine/Makefile.am.orig	2010-01-15 20:54:45.000000000 +0900
++++ engine/Makefile.am	2010-01-15 20:37:19.000000000 +0900
+@@ -62,7 +62,7 @@
  enginedir = $(datadir)/ibus/component
  
  anthy.py anthy_wrap.c: anthy.i

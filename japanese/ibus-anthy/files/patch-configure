@@ -1,6 +1,17 @@
---- configure.orig	2009-11-28 17:33:24.000000000 +0900
-+++ configure	2009-11-28 17:35:52.000000000 +0900
-@@ -17771,9 +17771,9 @@
+--- configure.orig	2010-01-15 20:53:37.000000000 +0900
++++ configure	2010-01-15 20:27:48.000000000 +0900
+@@ -17832,8 +17832,8 @@
+ 	:
+ fi
+ 
+-{ $as_echo "$as_me:$LINENO: checking whether NTH_UNCONVERTED_CANDIDATE is declared" >&5
+-$as_echo_n "checking whether NTH_UNCONVERTED_CANDIDATE is declared... " >&6; }
++#{ $as_echo "$as_me:$LINENO: checking whether NTH_UNCONVERTED_CANDIDATE is declared" >&5
++#$as_echo_n "checking whether NTH_UNCONVERTED_CANDIDATE is declared... " >&6; }
+ if test "${ac_cv_have_decl_NTH_UNCONVERTED_CANDIDATE+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+@@ -17898,9 +17898,9 @@
  #define HAVE_DECL_NTH_UNCONVERTED_CANDIDATE 0
  _ACEOF
  
@@ -13,7 +24,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_KATAKANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_KATAKANA_CANDIDATE is declared... " >&6; }
-@@ -17841,9 +17841,9 @@
+@@ -17968,9 +17968,9 @@
  #define HAVE_DECL_NTH_KATAKANA_CANDIDATE 0
  _ACEOF
  
@@ -26,7 +37,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_HIRAGANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_HIRAGANA_CANDIDATE is declared... " >&6; }
-@@ -17911,9 +17911,9 @@
+@@ -18038,9 +18038,9 @@
  #define HAVE_DECL_NTH_HIRAGANA_CANDIDATE 0
  _ACEOF
  
@@ -39,7 +50,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_HALFKANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_HALFKANA_CANDIDATE is declared... " >&6; }
-@@ -17981,9 +17981,9 @@
+@@ -18108,9 +18108,9 @@
  #define HAVE_DECL_NTH_HALFKANA_CANDIDATE 0
  _ACEOF
  
