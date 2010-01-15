@@ -6,6 +6,7 @@
 
 PORTNAME=	split-sequence
 PORTVERSION=	20011114.1
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
@@ -16,17 +17,16 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Partitioning Common Lisp sequences
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-CL_LIBDIR=	${PREFIX}/lib/common-lisp
+
+USE_ASDF=	yes
 
 do-install:
-	@${MKDIR} ${CL_LIBDIR}/split-sequence
-	@${INSTALL_DATA} ${WRKSRC}/split-sequence.lisp ${CL_LIBDIR}/split-sequence/
-	@${INSTALL_DATA} ${WRKSRC}/split-sequence.asd ${CL_LIBDIR}/split-sequence/
-	@${LN} -sf ${CL_LIBDIR}/split-sequence/split-sequence.asd ${CL_LIBDIR}/system-registry/split-sequence.asd
+	@${MKDIR} ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/split-sequence.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/split-sequence.asd ${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

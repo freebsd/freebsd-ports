@@ -6,31 +6,20 @@
 
 PORTNAME=	lml
 PORTVERSION=	2.5.7
+PORTREVISION=	1
 CATEGORIES=	www textproc
-MASTER_SITES=	http://files.b9.com/lml/
 PKGNAMEPREFIX=	cl-
-PKGNAMESUFFIX=	-clisp
-DISTFILES=	# use installed sources from CL_LIBDIR
-EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
+DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp Markup Language
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/system-registry/lml.asd:${PORTSDIR}/www/cl-lml \
-		${LOCALBASE}/lib/common-lisp/asdf/clispfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-clisp \
-		clisp:${PORTSDIR}/lang/clisp
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/system-registry/lml.asd:${PORTSDIR}/www/cl-lml \
-		${LOCALBASE}/lib/common-lisp/asdf/clispfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-clisp \
-		clisp:${PORTSDIR}/lang/clisp
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
 
-do-build:
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
-	clisp	-q -ansi -norc \
-		-i ${LOCALBASE}/etc/asdf-init \
-		-x "(asdf:oos 'asdf:compile-op :lml)"
+USE_ASDF_FASL=	yes
+FASL_TARGET=	clisp
+FASL_BUILD=	yes
 
-do-install:
-	@${MKDIR} ${PREFIX}/lib/common-lisp/lml/clispfasl
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/lml/clispfasl/
-
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

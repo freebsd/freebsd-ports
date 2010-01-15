@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	infix
-DISTVERSION=	19960628
+PORTVERSION=	19960628
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://ftp.linux.org.uk/pub/lisp/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
@@ -17,29 +18,24 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A lisp macro for reading math expressions in infix form
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-CL_LIBDIR=	${PREFIX}/lib/common-lisp
-
 NO_BUILD=	yes
 NO_CDROM=	No fees or compensation can be charged
 
-LPORTDOCS=	COPYING infix.3lisp
+USE_ASDF=	yes
 
 do-install:
-	@${MKDIR} ${CL_LIBDIR}/infix
-	@${INSTALL_DATA} ${WRKSRC}/infix.asd   ${CL_LIBDIR}/infix/
-	@${INSTALL_DATA} ${WRKSRC}/*.cl ${CL_LIBDIR}/infix/
-	@${INSTALL_DATA} ${WRKSRC}/infix.system ${CL_LIBDIR}/infix/
-	@${LN} -sf ${CL_LIBDIR}/infix/infix.asd ${CL_LIBDIR}/system-registry/infix.asd
+	@${MKDIR} ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.cl ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/infix.asd ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/infix.system ${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
 .if !defined(NOPORTDOCS)
-.for FILE in ${LPORTDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/
+.for FILE in COPYING infix.3lisp
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

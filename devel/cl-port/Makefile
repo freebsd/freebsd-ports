@@ -6,7 +6,7 @@
 
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
@@ -17,23 +17,21 @@ DISTNAME=	clocc-${PORTNAME}_2002-10-02-1
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Cross-Lisp portability package
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-
 WRKSRC=		${WRKDIR}/clocc-${PORTNAME}
-DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 NO_BUILD=	yes
-CL_LIBDIR=	${PREFIX}/lib/common-lisp
+
+USE_ASDF=	yes
 
 do-install:
-	@${MKDIR} ${CL_LIBDIR}/port
-	@${INSTALL_DATA} ${WRKSRC}/clocc-port.asd ${CL_LIBDIR}/port/port.asd
-	@${INSTALL_DATA} ${WRKSRC}/port.system ${CL_LIBDIR}/port/port.system
-	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${CL_LIBDIR}/port/
-	@${LN} -sf ${CL_LIBDIR}/port/port.asd ${CL_LIBDIR}/system-registry/port.asd
+	@${MKDIR} ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/clocc-port.asd ${ASDF_PATHNAME}/port.asd
+	@${INSTALL_DATA} ${WRKSRC}/port.system ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/port.html ${DOCSDIR}
 .endif
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

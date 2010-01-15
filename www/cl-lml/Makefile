@@ -6,6 +6,7 @@
 
 PORTNAME=	lml
 PORTVERSION=	2.5.7
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://files.b9.com/lml/ \
 		http://people.bsdgroup.de/~as/freebsd/distfiles/
@@ -14,22 +15,19 @@ PKGNAMEPREFIX=	cl-
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp Markup Language
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
+NO_BUILD=	yes
 
-NO_BUILD=	yes # installs the sources only
-CL_LIBDIR=	${PREFIX}/lib/common-lisp
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+USE_ASDF=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Makefile make.lisp readme.html readme.lml
 .endif
 
 do-install:
-	@${MKDIR} ${CL_LIBDIR}/lml
-	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${CL_LIBDIR}/lml
-	@${INSTALL_DATA} ${WRKSRC}/lml.asd ${CL_LIBDIR}/lml
-	@${LN} -sf ${CL_LIBDIR}/lml/lml.asd ${CL_LIBDIR}/system-registry/lml.asd
+	@${MKDIR} ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/lml.asd ${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}
@@ -37,4 +35,5 @@ do-install:
 .endfor
 .endif
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

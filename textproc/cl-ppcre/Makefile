@@ -6,6 +6,7 @@
 
 PORTNAME=	cl-ppcre
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	textproc lisp
 MASTER_SITES=	http://weitz.de/files/
 EXTRACT_SUFX=	.tgz
@@ -13,42 +14,35 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
+NO_BUILD=	yes
 
-NO_BUILD=	yes # installs the sources only
-CL_LIBDIR=	${PREFIX}/lib/common-lisp
+USE_ASDF=	yes
 
 do-install:
-	@${MKDIR} ${CL_LIBDIR}/cl-ppcre
-
-	@${INSTALL_DATA} ${WRKSRC}/api.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/closures.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/convert.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/lexer.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/load.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/optimize.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/packages.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/parser.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/regex-class.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/repetition-closures.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/scanner.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/specials.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/util.lisp ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.asd ${CL_LIBDIR}/cl-ppcre/
-	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.system ${CL_LIBDIR}/cl-ppcre/
-
-	@${LN} -sf ${CL_LIBDIR}/cl-ppcre/cl-ppcre.asd ${CL_LIBDIR}/system-registry/cl-ppcre.asd
-	@${LN} -sf ${CL_LIBDIR}/cl-ppcre/cl-ppcre.system ${CL_LIBDIR}/system-registry/cl-ppcre.system
-
+	@${MKDIR} ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/api.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/closures.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/convert.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/lexer.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/load.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/optimize.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/packages.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/parser.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/regex-class.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/repetition-closures.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/scanner.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/specials.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/util.lisp ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.asd ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.system ${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
+	@${LN} -sf ${ASDF_PATHNAME}/*.system ${ASDF_REGISTRY}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-
 	@${MKDIR} ${DOCSDIR}/doc
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/doc/
-
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre-test.* ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/perltest.pl ${EXAMPLESDIR}
@@ -57,4 +51,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/testinput ${EXAMPLESDIR}
 .endif
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

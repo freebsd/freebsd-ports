@@ -6,29 +6,20 @@
 
 PORTNAME=	cl-ppcre
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	textproc lisp
 MASTER_SITES=	http://weitz.de/files/
-PKGNAMESUFFIX=	-sbcl
-DISTFILES=	# use installed sources from CL_LIBDIR
-EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
+DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre \
-		sbcl:${PORTSDIR}/lang/sbcl
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre \
-		sbcl:${PORTSDIR}/lang/sbcl
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre
 
-do-build:
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
-	sbcl	--noinform --userinit /dev/null \
-		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
-		--eval "(asdf:oos 'asdf:compile-op :cl-ppcre)" \
-		--eval "(quit)"
+USE_ASDF_FASL=	yes
+FASL_TARGET=	sbcl
+FASL_BUILD=	yes
 
-do-install:
-	@${MKDIR} ${PREFIX}/lib/common-lisp/cl-ppcre/sbclfasl
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/cl-ppcre/sbclfasl/
-
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

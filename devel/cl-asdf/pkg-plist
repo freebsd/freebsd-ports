@@ -14,6 +14,6 @@ etc/asdf-init.lisp.default
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIB32DIR%%/common-lisp/system-registry
-@dirrm %%LIB32DIR%%/common-lisp/asdf
-@dirrm %%LIB32DIR%%/common-lisp
+@dirrmtry %%LIB32DIR%%/common-lisp/system-registry
+@dirrmtry %%LIB32DIR%%/common-lisp/asdf
+@dirrmtry %%LIB32DIR%%/common-lisp

@@ -6,32 +6,23 @@
 
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
 		http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=	cl-
-PKGNAMESUFFIX=	-sbcl
-DISTFILES=	# use installed sources from CL_LIBDIR
-EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
+DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Cross-Lisp portability package
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
-		sbcl:${PORTSDIR}/lang/sbcl
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
-		sbcl:${PORTSDIR}/lang/sbcl
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
 
-do-build:
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
-	sbcl	--noinform --userinit /dev/null \
-		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
-		--eval "(asdf:oos 'asdf:compile-op :port)" \
-		--eval "(quit)"
+USE_ASDF_FASL=	yes
+FASL_TARGET=	sbcl
+FASL_BUILD=	yes
 
-do-install:
-	@${MKDIR} ${PREFIX}/lib/common-lisp/port/sbclfasl
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/port/sbclfasl/
-
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

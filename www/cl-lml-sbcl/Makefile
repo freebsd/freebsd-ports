@@ -6,30 +6,21 @@
 
 PORTNAME=	lml
 PORTVERSION=	2.5.7
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://files.b9.com/lml/
 PKGNAMEPREFIX=	cl-
-PKGNAMESUFFIX=	-sbcl
-DISTFILES=	# use installed sources from CL_LIBDIR
-EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
+DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp Markup Language
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/system-registry/lml.asd:${PORTSDIR}/www/cl-lml \
-		sbcl:${PORTSDIR}/lang/sbcl
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/system-registry/lml.asd:${PORTSDIR}/www/cl-lml \
-		sbcl:${PORTSDIR}/lang/sbcl
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
 
-do-build:
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
-	sbcl	--noinform --userinit /dev/null \
-		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
-		--eval "(asdf:oos 'asdf:compile-op :lml)" \
-		--eval "(quit)"
+USE_ASDF_FASL=	yes
+FASL_TARGET=	sbcl
+FASL_BUILD=	yes
 
-do-install:
-	@${MKDIR} ${PREFIX}/lib/common-lisp/lml/sbclfasl
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/lml/sbclfasl/
-
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
