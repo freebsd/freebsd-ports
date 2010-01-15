@@ -1,6 +1,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest/.packlist
 %%SITE_PERL%%/Forest.pm
 %%SITE_PERL%%/Forest/Tree.pm
+%%SITE_PERL%%/Forest/Tree/Builder/Callback.pm
+%%SITE_PERL%%/Forest/Tree/Builder/SimpleTextFile.pm
+%%SITE_PERL%%/Forest/Tree/Builder.pm
+%%SITE_PERL%%/Forest/Tree/Pure.pm
+%%SITE_PERL%%/Forest/Tree/Constructor.pm
 %%SITE_PERL%%/Forest/Tree/Indexer.pm
 %%SITE_PERL%%/Forest/Tree/Indexer/SimpleUIDIndexer.pm
 %%SITE_PERL%%/Forest/Tree/Loader.pm
@@ -16,6 +21,7 @@
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleASCII.pm
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleHTML.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest
+@dirrmtry %%SITE_PERL%%/Forest/Tree/Builder
 @dirrmtry %%SITE_PERL%%/Forest/Tree/Indexer
 @dirrmtry %%SITE_PERL%%/Forest/Tree/Loader
 @dirrmtry %%SITE_PERL%%/Forest/Tree/Reader

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Forest
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -25,6 +24,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Forest.3 \
 		Forest::Tree.3 \
+		Forest::Tree::Builder.3 \
+		Forest::Tree::Builder::Callback.3 \
+		Forest::Tree::Builder::SimpleTextFile.3 \
+		Forest::Tree::Constructor.3 \
+		Forest::Tree::Pure.3 \
 		Forest::Tree::Writer::SimpleHTML.3 \
 		Forest::Tree::Roles::JSONable.3 \
 		Forest::Tree::Writer::ASCIIWithBranches.3 \
