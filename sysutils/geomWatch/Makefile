@@ -7,6 +7,7 @@
 
 PORTNAME=	geomWatch
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://isis.poly.edu/~bk/geomWatch/ \
 		http://bk.macroblock.net/geomWatch/
@@ -18,6 +19,7 @@ COMMENT=	Watches for and e-mails admins about GEOM state changes
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
 PLIST_FILES=	sbin/geomWatch \
+				etc/rc.d/geomWatch \
 		etc/geomWatch.conf.sample
 
 SUB_FILES=	pkg-message geomWatch
