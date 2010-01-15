@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Shakan
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Email-Valid-Loose>=0.05:${PORTSDIR}/mail/p5-Email-Valid-Loose \
 	p5-FormValidator-Lite>=0.03:${PORTSDIR}/textproc/p5-FormValidator-Lite \
 	p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Mouse>=0.19:${PORTSDIR}/devel/p5-Mouse
+	p5-Mouse>=0.4600:${PORTSDIR}/devel/p5-Mouse
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -39,6 +39,7 @@ MAN3=	HTML::Shakan.3 \
 	HTML::Shakan::Filter::WhiteSpace.3 \
 	HTML::Shakan::Filters.3 \
 	HTML::Shakan::Inflator::DateTime.3 \
+	HTML::Shakan::Model::DBIxSkinny.3 \
 	HTML::Shakan::Model::DataModel.3 \
 	HTML::Shakan::Renderer::HTML.3 \
 	HTML::Shakan::Widgets::Simple.3 \
