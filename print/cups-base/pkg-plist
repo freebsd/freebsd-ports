@@ -89,7 +89,7 @@ libexec/cups/daemon/cups-lpd
 libexec/cups/daemon/cups-polld
 libexec/cups/filter/commandtoescpx
 libexec/cups/filter/commandtopclx
-%%WITH_GHOSTSCRIPT%%libexec/cups/filter/pdftops
+%%WITH_PDFTOPS%%libexec/cups/filter/pdftops
 libexec/cups/filter/rastertoescpx
 libexec/cups/filter/rastertopclx
 libexec/cups/monitor/bcp
