@@ -7,6 +7,7 @@
 
 PORTNAME=	Mouse
 PORTVERSION=	0.4600
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GF/GFUJI
@@ -15,6 +16,9 @@ DISTNAME=	${PORTNAME}-0.46
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose minus the antlers
+
+BUILD_DEPENDS=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
+		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 
 PERL_CONFIGURE=	5.8.5+
 
