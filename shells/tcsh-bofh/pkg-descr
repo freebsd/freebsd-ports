@@ -1,7 +1,0 @@
-Log commands run from tcsh to syslog under the USER facility, the advantages 
-of this is that a program does not need elevated privileges to send to
-syslog, so a shell run by a user can log the commands the users issues to
-syslog but(providing you have sane syslog file permissions)
-
-Author:	EF <ef@ccitt5.net>
-WWW:	http://www.ccitt5.net/archives/
