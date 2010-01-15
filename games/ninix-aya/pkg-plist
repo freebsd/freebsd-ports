@@ -6,7 +6,6 @@ libexec/ninix/ninix/dll/aya.py
 libexec/ninix/ninix/dll/bln.py
 libexec/ninix/ninix/dll/kawari.py
 libexec/ninix/ninix/dll/kawari8.py
-libexec/ninix/ninix/dll/lettuce.py
 libexec/ninix/ninix/dll/mciaudio.py
 libexec/ninix/ninix/dll/mciaudior.py
 libexec/ninix/ninix/dll/misaka.py
@@ -16,7 +15,6 @@ libexec/ninix/ninix/dll/hanayu.py
 libexec/ninix/ninix/dll/bln.pyc
 libexec/ninix/ninix/dll/kawari.pyc
 libexec/ninix/ninix/dll/kawari8.pyc
-libexec/ninix/ninix/dll/lettuce.pyc
 libexec/ninix/ninix/dll/mciaudio.pyc
 libexec/ninix/ninix/dll/textcopy.pyc
 libexec/ninix/ninix/dll/wmove.py
