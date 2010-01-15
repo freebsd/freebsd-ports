@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+mkdir -p ~/.jvgs
+cd ~/.jvgs
+if [ ! -e 'resources' ]; then
+	ln -s %%DATADIR%%/resources
+fi
+exec %%PREFIX%%/libexec/jvgs
