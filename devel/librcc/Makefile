@@ -7,6 +7,7 @@
 
 PORTNAME=	librcc
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
 		http://dside.dyndns.org/files/rusxmms/
@@ -29,9 +30,10 @@ USE_AUTOTOOLS=	autoheader:262
 CPPFLAGS=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib
 
-OPTIONS=	BDB "Translation database support" on \
-		TRANSLATE "Online translation support" on \
-		GTK2 "Gtk+2 frontend" on
+OPTIONS=	BDB "Translation database support" off \
+		TRANSLATE "Online translation support" off \
+		TOOLS "Install recode configuration utility" on \
+		GTK2 "Use Gtk2 library/frontend" on
 
 .include <bsd.port.options.mk>
 
@@ -59,8 +61,23 @@ CONFIGURE_ARGS+=--disable-glib1 --disable-gtk1
 PLIST_SUB+=	WITH_GTK2="@comment "
 .endif
 
+.if defined(WITH_TOOLS)
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-rcc-config
+PLIST_SUB+=	TOOLS=""
+.else
+PLIST_SUB+=	TOOLS="@comment "
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LIBS="${LIBS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+pre-everything::
+.if ${ARCH} == "i386"
+.if defined(WITH_BDB) || defined (WITH_TRANSLATE)
+	@${ECHO} 'BDB/LibTranslate support may cause breakages in depended apps on ${ARCH}'
+	@${ECHO} 'Use it with caution'
+.endif
+.endif
 
 .include <bsd.port.mk>

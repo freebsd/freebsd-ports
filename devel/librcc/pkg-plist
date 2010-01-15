@@ -1,3 +1,5 @@
+%%TOOLS%%bin/rcc-gtk-config
+%%TOOLS%%%%WITH_GTK2%%bin/rcc-gtk2-config
 include/librcc.h
 include/librccui.h
 lib/librcc.a
