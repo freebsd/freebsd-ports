@@ -25,7 +25,8 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 1.3[+] 1.4[+] 1.5[+] 1.6[+])
+#					versions. (allowed values: 1.3[+] 1.4[+] 1.5[+] 1.6[+]
+#					1.7[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
@@ -162,13 +163,15 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .		endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	1.3 1.4 1.5 1.6
+__JAVA_VERSION_LIST=	1.3 1.4 1.5 1.6 1.7
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/} 1.1+ 1.2+
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown openjdk
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
+_JAVA_PORT_NATIVE_OPENJDK_JDK_1_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/openjdk7 \
+											VERSION=1.7.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_1_6_INFO=		PORT=java/openjdk6			HOME=${LOCALBASE}/openjdk6 \
 											VERSION=1.6.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_FREEBSD_JDK_1_6_INFO=		PORT=java/diablo-jdk16			HOME=${LOCALBASE}/diablo-jdk1.6.0 \
@@ -215,6 +218,7 @@ _JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6
 # List all JDK ports
 __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6 \
 					JAVA_PORT_NATIVE_FREEBSD_JDK_1_5 \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_1_7 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
@@ -294,7 +298,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.3+/:S/1.2+/1.3+/:S/1.3+/1.3 1.4+/:S/1.4+/1.4 1.5+/:S/1.5+/1.5 1.6+/:S/1.6+/1.6/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.3+/:S/1.2+/1.3+/:S/1.3+/1.3 1.4+/:S/1.4+/1.4 1.5+/:S/1.5+/1.5 1.6+/:S/1.6+/1.6 1.7+/:S/1.7+/1.7/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
@@ -403,7 +407,8 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 # Enforce USE_JIKES=NO if not defined and using Java 1.5+
 # XXX: This is a temporary fix to be removed when Jikes supports Java 1.5
 .		if (${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.5") || \
-           (${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.6")
+           (${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.6") || \
+           (${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.7")
 USE_JIKES?=		NO
 .		endif
 # First test if USE_JIKES has a valid value
