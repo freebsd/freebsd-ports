@@ -47,7 +47,8 @@ OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		LDAP		"Build with LDAP support" off \
 		DBUS		"Build with DBUS support" off \
 		LIBUSB		"Build with USB support" off \
-		GHOSTSCRIPT	"Build pdftps with GHOSTSCRIPT" on \
+		GHOSTSCRIPT	"Build pdftops with GHOSTSCRIPT" on \
+		XPDF		"Build pdftops with XPDF" off \
 		XDG_OPEN	"Build with XDG_OPEN as browser" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
@@ -124,12 +125,20 @@ CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=		PHP="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_GHOSTSCRIPT)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && !defined(WITHOUT_GHOSTSCRIPT)
+.if defined(WITH_XPDF)
+IGNORE=			"Pick ghostscript or xpdf, not both"
+.endif
 USE_GHOSTSCRIPT=	yes
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=gs
-PLIST_SUB+=		WITH_GHOSTSCRIPT=""
+CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
+PLIST_SUB+=		WITH_PDFTOPS=""
+.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_XPDF)
+BUILD_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
+RUN_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
+CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/pdftops
+PLIST_SUB+=		WITH_PDFTOPS=""
 .else
-PLIST_SUB+=		WITH_GHOSTSCRIPT="@comment "
+PLIST_SUB+=		WITH_PDFTOPS="@comment "
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PYTHON)
@@ -323,7 +332,7 @@ pre-su-install:
 .endif
 
 post-install:
-.if defined(WITH_GHOSTSCRIPT)
+.if !defined(WITHOUT_GHOSTSCRIPT) || defined(WITH_XPDF)
 	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/
 .endif
 	${INSTALL} -d ${CUPS_ETCDIR}/
