@@ -44,6 +44,8 @@ BSDWACOM=	bsdwacom-${KLD_VERSION}
 WACOM_VERSION=	0.8.2-2
 KLD_VERSION=	40
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 800064
 OPTIONS=	UWACOMKLD "Install USB kernel module (not supported on 8.x)" Off
 .else
@@ -115,4 +117,4 @@ post-install:
 	@${ECHO} "===>  Displaying pkg-message."
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
