@@ -7,18 +7,17 @@
 
 PORTNAME=	ioquake3-devel
 DISTVERSION=	1.36_SVN${SVNREVISION}
+PORTREVISION=	0
 MASTER_SITES=	ftp://deponie.yamagi.org/freebsd/distfiles/ioquake3/ \
 		http://deponie.yamagi.org/freebsd/distfiles/ioquake3/
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Development SVN snapshots of ioquake3
 
-BUILD_DEPENDS+=	svnversion:${PORTSDIR}/devel/subversion
-
 PLIST=		${.CURDIR}/../ioquake3/pkg-plist
 PATCHDIR=	${WRKDIR}/freebsd-patchset/
 
-SVNREVISION=	1754
+SVNREVISION=	1771
 BINSUFFIX=	-devel
 
 .include "${.CURDIR}/../ioquake3/Makefile"

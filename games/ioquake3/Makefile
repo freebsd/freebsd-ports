@@ -7,6 +7,7 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
+PORTREVISION?=	1
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 
@@ -20,16 +21,20 @@ USE_ZIP?=	yes
 .endif
 USE_GMAKE=	yes
 
-OPTIONS=	CLIENT "Build client" on \
+OPTIONS+=	CLIENT "Build client" on \
 		GAMELIBS "Build game libraries (when not mandatory)" off \
 		DEDICATED "Build dedicated server" on \
+		CURL "Enable cURL for http/ftp download" on \
+		OPENAL "Enable OpenAL audio output" on \
+		MUMBLE "Enable Mumble support (no dependencies)" on \
 		VORBIS "Enable Ogg Vorbis support" on
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
 		DEFAULT_LIBDIR="${LIBDIR}" \
 		HOMEPATH="/.${PORTNAME}" \
+		VERSION="${DISTVERSION}" \
 		ARCH="${ARCH}"
-PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
+PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
 		ARCH="${ARCH}" \
 		BINSUFFIX="${BINSUFFIX}"
 ALL_TARGET=	release
@@ -45,7 +50,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 MACHINE_ARCH=	${ARCH}
 .include <bsd.cpu.mk>
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
     defined(WITHOUT_SMP)
@@ -53,14 +58,31 @@ IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 
 .if defined(WITH_CLIENT) || defined(WITH_SMP)
+# cURL
+.if defined(WITH_CURL)
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+#MAKE_ARGS+=	USE_CURL_DLOPEN=0
+.else
+MAKE_ARGS+=	USE_CURL=0
+.endif
 # OpenAL
+.if defined(WITH_OPENAL)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+.else
+MAKE_ARGS+=	USE_OPENAL=0
+.endif
 # SDL
 USE_SDL=	sdl
 # Vorbis
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ARGS+=	USE_CODEC_VORBIS=1
+.endif
+# Mumble
+.if defined(WITH_MUMBLE)
+MAKE_ARGS+=	USE_MUMBLE=1
+.else
+MAKE_ARGS+=	USE_MUMBLE=0
 .endif
 .endif
 
@@ -119,4 +141,4 @@ post-install:
 	@${ECHO_CMD}
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
