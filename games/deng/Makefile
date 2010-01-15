@@ -23,6 +23,7 @@ USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_SDL=	sdl mixer net
 USE_XORG=	x11
+USE_PYTHON=	yes
 
 BUILDDIR=	${WRKSRC}/doomsday/portbuild
 BUILD_WRKSRC=	${BUILDDIR}
