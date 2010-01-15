@@ -6,34 +6,23 @@
 
 PORTNAME=	split-sequence
 PORTVERSION=	20011114.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
 		http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=	cl-
-PKGNAMESUFFIX=	-clisp
-DISTFILES=	# use installed sources from CL_LIBDIR
-EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
+DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Partitioning Common Lisp sequences
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/split-sequence/split-sequence.asd:${PORTSDIR}/devel/cl-split-sequence \
-		${LOCALBASE}/lib/common-lisp/asdf/clispfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-clisp \
-		clisp:${PORTSDIR}/lang/clisp
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/split-sequence/split-sequence.asd:${PORTSDIR}/devel/cl-split-sequence \
-		${LOCALBASE}/lib/common-lisp/asdf/clispfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-clisp \
-		clisp:${PORTSDIR}/lang/clisp
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/split-sequence/split-sequence.asd:${PORTSDIR}/devel/cl-split-sequence
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/split-sequence/split-sequence.asd:${PORTSDIR}/devel/cl-split-sequence
 
-do-build:
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
-	clisp	-q -ansi -norc \
-		-i ${LOCALBASE}/etc/asdf-init \
-		-x "(asdf:oos 'asdf:compile-op :split-sequence)"
+USE_ASDF_FASL=	yes
+FASL_TARGET=	clisp
+FASL_BUILD=	yes
 
-do-install:
-	@${MKDIR} ${PREFIX}/lib/common-lisp/split-sequence/clispfasl
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/split-sequence/clispfasl/
-
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

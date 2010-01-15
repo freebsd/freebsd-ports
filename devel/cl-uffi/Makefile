@@ -6,26 +6,24 @@
 
 PORTNAME=	uffi
 PORTVERSION=	1.6.2
+PORTREVISION=	2
 CATEGORIES=	devel lisp
-MASTER_SITES=	http://files.b9.com/uffi/
 PKGNAMEPREFIX=	cl-
+MASTER_SITES=	http://files.b9.com/uffi/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-
-DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 NO_BUILD=	yes
-CL_LIBDIR?=	${LOCALBASE}/lib/common-lisp
+
+USE_ASDF=	yes
 
 do-install:
-	@${MKDIR} ${CL_LIBDIR}/uffi
-	@${MKDIR} ${CL_LIBDIR}/uffi/src
-	@${INSTALL_DATA} ${WRKSRC}/uffi.asd   ${CL_LIBDIR}/uffi/
-	@${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${CL_LIBDIR}/uffi/src/
-	@${LN} -sf ${CL_LIBDIR}/uffi/uffi.asd ${CL_LIBDIR}/system-registry/uffi.asd
+	@${MKDIR} ${ASDF_PATHNAME}
+	@${MKDIR} ${ASDF_PATHNAME}/src
+	@${INSTALL_DATA} ${WRKSRC}/uffi.asd   ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${ASDF_PATHNAME}/src
+	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${DOCSDIR} -xf ${WRKSRC}/doc/html.tar.gz
@@ -42,4 +40,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

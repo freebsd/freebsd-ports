@@ -6,32 +6,24 @@
 
 PORTNAME=	uffi
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	devel lisp
-MASTER_SITES=	# use installed sources from CL_LIBDIR
 PKGNAMEPREFIX=	cl-
-PKGNAMESUFFIX=	-sbcl
-DISTFILES=	# use installed sources from CL_LIBDIR
-EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
+DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp (SBCL binaries)
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/uffi/uffi.asd:${PORTSDIR}/devel/cl-uffi \
-		sbcl:${PORTSDIR}/lang/sbcl
-RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
-		sbcl:${PORTSDIR}/lang/sbcl
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/uffi/uffi.asd:${PORTSDIR}/devel/cl-uffi
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
 
-CL_LIBDIR?=	${LOCALBASE}/lib/common-lisp
-
-do-build:
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
-	sbcl	--noinform --userinit /dev/null --disable-debugger \
-		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
-		--eval "(asdf:oos 'asdf:compile-op :uffi)" \
-		--eval "(quit)"
+USE_ASDF_FASL=	yes
+FASL_TARGET=	sbcl
+FASL_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${CL_LIBDIR}/uffi/src/sbclfasl
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${CL_LIBDIR}/uffi/src/sbclfasl/
+	@${MKDIR} ${ASDF_PATHNAME}/src/${FASL_DIR_REL}
+	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${ASDF_PATHNAME}/src/${FASL_DIR_REL}
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
