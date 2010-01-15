@@ -1,0 +1,180 @@
+bin/jvgs
+libexec/jvgs
+%%DATADIR%%/main.lua
+%%DATADIR%%/resources/clock/clock.svg
+%%DATADIR%%/resources/clock/obtain-clock.lua
+%%DATADIR%%/resources/clock/obtain-clock.xml
+%%DATADIR%%/resources/common-scripts/enemy.lua
+%%DATADIR%%/resources/common-scripts/invincible-enemy.lua
+%%DATADIR%%/resources/drawing.svg
+%%DATADIR%%/resources/effects/moon.svg
+%%DATADIR%%/resources/effects/skull.svg
+%%DATADIR%%/resources/effects/spiral.svg
+%%DATADIR%%/resources/effects/star.svg
+%%DATADIR%%/resources/font.ttf
+%%DATADIR%%/resources/grenade/explosion.ogg
+%%DATADIR%%/resources/grenade/grenade.svg
+%%DATADIR%%/resources/grenade/grenade.xml
+%%DATADIR%%/resources/grenade/obtain-grenade.lua
+%%DATADIR%%/resources/grenade/obtain-grenade.xml
+%%DATADIR%%/resources/grenade/script.lua
+%%DATADIR%%/resources/hat/obtain-hat.lua
+%%DATADIR%%/resources/hat/obtain-hat.svg
+%%DATADIR%%/resources/hat/obtain-hat.xml
+%%DATADIR%%/resources/hedgehog/hedgehog.ogg
+%%DATADIR%%/resources/hedgehog/hedgehog.xml
+%%DATADIR%%/resources/hedgehog/walking-01.svg
+%%DATADIR%%/resources/hedgehog/walking-02.svg
+%%DATADIR%%/resources/helidude/helidude.ogg
+%%DATADIR%%/resources/helidude/helidude.xml
+%%DATADIR%%/resources/helidude/walking-01.svg
+%%DATADIR%%/resources/helidude/walking-02.svg
+%%DATADIR%%/resources/knife/knife-01.svg
+%%DATADIR%%/resources/knife/knife-02.svg
+%%DATADIR%%/resources/knife/knife-03.svg
+%%DATADIR%%/resources/knife/knife-04.svg
+%%DATADIR%%/resources/knife/knife.xml
+%%DATADIR%%/resources/knife/obtain-knife.lua
+%%DATADIR%%/resources/knife/obtain-knife.xml
+%%DATADIR%%/resources/knife/script.lua
+%%DATADIR%%/resources/knife/throw.ogg
+%%DATADIR%%/resources/level-city/cloud.lua
+%%DATADIR%%/resources/level-city/level.xml
+%%DATADIR%%/resources/level-city/world.svg
+%%DATADIR%%/resources/level-contact/girl.lua
+%%DATADIR%%/resources/level-contact/level.xml
+%%DATADIR%%/resources/level-contact/world.svg
+%%DATADIR%%/resources/level-credits/level.xml
+%%DATADIR%%/resources/level-credits/world.svg
+%%DATADIR%%/resources/level-end/end.lua
+%%DATADIR%%/resources/level-end/girl.lua
+%%DATADIR%%/resources/level-end/girl.svg
+%%DATADIR%%/resources/level-end/girl.xml
+%%DATADIR%%/resources/level-end/level.xml
+%%DATADIR%%/resources/level-end/world.svg
+%%DATADIR%%/resources/level-four/crown.lua
+%%DATADIR%%/resources/level-four/crown.svg
+%%DATADIR%%/resources/level-four/crown.xml
+%%DATADIR%%/resources/level-four/level.xml
+%%DATADIR%%/resources/level-four/teleport-to-start.lua
+%%DATADIR%%/resources/level-four/world.svg
+%%DATADIR%%/resources/level-intro/heart.lua
+%%DATADIR%%/resources/level-intro/level.xml
+%%DATADIR%%/resources/level-intro/tutorial-01.lua
+%%DATADIR%%/resources/level-intro/tutorial-02.lua
+%%DATADIR%%/resources/level-intro/tutorial-03.lua
+%%DATADIR%%/resources/level-intro/tutorial-04.lua
+%%DATADIR%%/resources/level-intro/world.svg
+%%DATADIR%%/resources/level-knife/level.xml
+%%DATADIR%%/resources/level-knife/star.lua
+%%DATADIR%%/resources/level-knife/world.svg
+%%DATADIR%%/resources/level-main-menu/main-menu.svg
+%%DATADIR%%/resources/level-main-menu/main-menu.xml
+%%DATADIR%%/resources/level-main-menu/play.lua
+%%DATADIR%%/resources/level-main-menu/quit.lua
+%%DATADIR%%/resources/level-nostalgia/level.xml
+%%DATADIR%%/resources/level-nostalgia/spiral.lua
+%%DATADIR%%/resources/level-nostalgia/world.svg
+%%DATADIR%%/resources/level-planet/level.xml
+%%DATADIR%%/resources/level-planet/star.lua
+%%DATADIR%%/resources/level-planet/world.svg
+%%DATADIR%%/resources/level-run/level.xml
+%%DATADIR%%/resources/level-run/triforce.lua
+%%DATADIR%%/resources/level-run/world.svg
+%%DATADIR%%/resources/level-sea/level.xml
+%%DATADIR%%/resources/level-sea/star.lua
+%%DATADIR%%/resources/level-sea/world.svg
+%%DATADIR%%/resources/modules/common.lua
+%%DATADIR%%/resources/modules/effects.lua
+%%DATADIR%%/resources/modules/events.lua
+%%DATADIR%%/resources/modules/jlib.lua
+%%DATADIR%%/resources/mouse/mouse.ogg
+%%DATADIR%%/resources/mouse/mouse.xml
+%%DATADIR%%/resources/mouse/walking-01.svg
+%%DATADIR%%/resources/mouse/walking-02.svg
+%%DATADIR%%/resources/music/city.ogg
+%%DATADIR%%/resources/music/contact.ogg
+%%DATADIR%%/resources/music/end.ogg
+%%DATADIR%%/resources/music/four.ogg
+%%DATADIR%%/resources/music/intro.ogg
+%%DATADIR%%/resources/music/knife.ogg
+%%DATADIR%%/resources/music/nostalgia.ogg
+%%DATADIR%%/resources/music/planet.ogg
+%%DATADIR%%/resources/music/run.ogg
+%%DATADIR%%/resources/music/sea.ogg
+%%DATADIR%%/resources/pacman/pacman.ogg
+%%DATADIR%%/resources/pacman/pacman.xml
+%%DATADIR%%/resources/pacman/walking-01.svg
+%%DATADIR%%/resources/pacman/walking-02.svg
+%%DATADIR%%/resources/plant/plant.xml
+%%DATADIR%%/resources/plant/walking-01.svg
+%%DATADIR%%/resources/plant/walking-02.svg
+%%DATADIR%%/resources/player/camera.xml
+%%DATADIR%%/resources/player/clock-sprite.xml
+%%DATADIR%%/resources/player/die.ogg
+%%DATADIR%%/resources/player/falling-01.svg
+%%DATADIR%%/resources/player/falling-clock-01.svg
+%%DATADIR%%/resources/player/falling-grenade-01.svg
+%%DATADIR%%/resources/player/falling-hat-01.svg
+%%DATADIR%%/resources/player/falling-knife-01.svg
+%%DATADIR%%/resources/player/grenade-sprite.xml
+%%DATADIR%%/resources/player/hat-sprite.xml
+%%DATADIR%%/resources/player/knife-sprite.xml
+%%DATADIR%%/resources/player/player.xml
+%%DATADIR%%/resources/player/regular-sprite.xml
+%%DATADIR%%/resources/player/script.lua
+%%DATADIR%%/resources/player/walking-01.svg
+%%DATADIR%%/resources/player/walking-02.svg
+%%DATADIR%%/resources/player/walking-clock-01.svg
+%%DATADIR%%/resources/player/walking-clock-02.svg
+%%DATADIR%%/resources/player/walking-grenade-01.svg
+%%DATADIR%%/resources/player/walking-grenade-02.svg
+%%DATADIR%%/resources/player/walking-hat-01.svg
+%%DATADIR%%/resources/player/walking-hat-02.svg
+%%DATADIR%%/resources/player/walking-knife-01.svg
+%%DATADIR%%/resources/player/walking-knife-02.svg
+%%DATADIR%%/resources/spider/spider.ogg
+%%DATADIR%%/resources/spider/spider.xml
+%%DATADIR%%/resources/spider/walking-01.svg
+%%DATADIR%%/resources/spider/walking-02.svg
+%%DATADIR%%/resources/spikey-ball/ball-script.lua
+%%DATADIR%%/resources/spikey-ball/ball.svg
+%%DATADIR%%/resources/spikey-ball/ball.xml
+%%DATADIR%%/resources/spikey-ball/cable-script.lua
+%%DATADIR%%/resources/spikey-ball/cable.svg
+%%DATADIR%%/resources/spikey-ball/cable.xml
+%%DATADIR%%/resources/velociraptor/velociraptor.ogg
+%%DATADIR%%/resources/velociraptor/velociraptor.xml
+%%DATADIR%%/resources/velociraptor/walking-01.svg
+%%DATADIR%%/resources/velociraptor/walking-02.svg
+@dirrm %%DATADIR%%/resources/velociraptor
+@dirrm %%DATADIR%%/resources/spikey-ball
+@dirrm %%DATADIR%%/resources/spider
+@dirrm %%DATADIR%%/resources/player
+@dirrm %%DATADIR%%/resources/plant
+@dirrm %%DATADIR%%/resources/pacman
+@dirrm %%DATADIR%%/resources/music
+@dirrm %%DATADIR%%/resources/mouse
+@dirrm %%DATADIR%%/resources/modules
+@dirrm %%DATADIR%%/resources/level-sea
+@dirrm %%DATADIR%%/resources/level-run
+@dirrm %%DATADIR%%/resources/level-planet
+@dirrm %%DATADIR%%/resources/level-nostalgia
+@dirrm %%DATADIR%%/resources/level-main-menu
+@dirrm %%DATADIR%%/resources/level-knife
+@dirrm %%DATADIR%%/resources/level-intro
+@dirrm %%DATADIR%%/resources/level-four
+@dirrm %%DATADIR%%/resources/level-end
+@dirrm %%DATADIR%%/resources/level-credits
+@dirrm %%DATADIR%%/resources/level-contact
+@dirrm %%DATADIR%%/resources/level-city
+@dirrm %%DATADIR%%/resources/knife
+@dirrm %%DATADIR%%/resources/helidude
+@dirrm %%DATADIR%%/resources/hedgehog
+@dirrm %%DATADIR%%/resources/hat
+@dirrm %%DATADIR%%/resources/grenade
+@dirrm %%DATADIR%%/resources/effects
+@dirrm %%DATADIR%%/resources/common-scripts
+@dirrm %%DATADIR%%/resources/clock
+@dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%
