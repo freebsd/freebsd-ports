@@ -1,0 +1,10 @@
+--- src/Makefile.am.orig	2008-01-30 14:55:46.000000000 -0800
++++ src/Makefile.am	2010-01-14 21:25:28.195547024 -0800
+@@ -8,6 +8,6 @@
+ 
+ install-sudosh.conf:
+ 	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
+-	test -f $(sysconfdir)/sudosh.conf || $(INSTALL) -o 0 -g 0 -m 0444 '$(srcdir)/sudosh.conf' '$(sysconfdir)/sudosh.conf'
++	$(INSTALL) -o 0 -g 0 -m 0444 '$(srcdir)/sudosh.conf' '$(sysconfdir)/sudosh.conf.sample'
+ 
+ install: install-am install-sudosh.conf
