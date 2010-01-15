@@ -23,6 +23,12 @@ CONFLICTS=	mrxvt-0.5.*
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp
+.endif
+
 .if defined(WITH_JAPANESE)
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
 .endif # WITH_JAPANESE
@@ -60,4 +66,4 @@ post-patch:
 		s/install-docDATA //' ${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
