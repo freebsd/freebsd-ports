@@ -7,10 +7,11 @@
 
 PORTNAME=		dtach
 PORTVERSION=		0.8
+PORTREVISION=		1
 CATEGORIES=		misc
 MASTER_SITES=		SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Emulates the detach feature of screen
 
 GNU_CONFIGURE=	yes
