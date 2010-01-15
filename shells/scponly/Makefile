@@ -71,13 +71,14 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.8
+PORTREVISION=	1
 CATEGORIES=	shells security
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
 		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A tiny shell that only permits scp and sftp
 
 MAN8=		scponly.8
