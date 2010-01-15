@@ -1,20 +1,23 @@
-The Doomsday Engine is an enhanced Doom source port for the Windows and
-UNIX platforms. It is based on the source code of id Software's Doom
-and Raven Software's Heretic and Hexen.
-Some of supported features are:
-* Dynamic lights
-* Lens flares
-* High-resolution textures (PNG, TGA, PCX)
-* Particle effects
-* Detail textures
-* 3D models (uses Quake II's MD2 format)
-* Simple environmental mapping for 3D models (shiny effects)
-* MD2 skymodels and skyboxes
-* Actor (monster) movement smoothing
-* Simulated radiosity shadowing system for the environment
-* Simple shadows for objects
-* Fog
-* Glowing surfaces
-* Smart texture filtering using a modified hq2x algorith
+The Doomsday Engine is an enhanced DOOM source port for Windows, Mac OS
+X, and various Unix platforms. It is based on the source code of id
+Software's DOOM and Raven Software's Heretic and Hexen.
 
-WWW: http://www.doomsdayhq.com/
+* Hardware-accelerated OpenGL graphics engine
+* 3D positional audio for sound effects (not supported by all audio plugins)
+* 16-player client/server networking via TCP/IP
+* Graphical Control Panel for configuration, accessed quickly with Shift-Escape
+* 3D models: Quake's MD2 format and Doomsday's DMD format with LOD support
+* High-resolution textures (PNG, TGA, PCX) and detail textures
+* Map lighting emulates the effects of radiosity for a more natual appearance
+  (FakeRadio: shadows in corners)
+* Smooth movement of objects, world structures and the camera.
+* Colored, dynamic lighting for world surfaces, 3D models, sprites and particles
+* Object shadowing effects
+* Particle generators for special effects
+* Decoration effects on world surfaces: light sources and particle generators
+* Lens flares and glowing objects
+* Support for skyboxes and 3D sky models
+* EAX and A3D environmental sound processing effects
+* Upsampling of sound effects
+
+WWW: http://www.dengine.net/

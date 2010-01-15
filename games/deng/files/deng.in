@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# The program creates the configuration files in the current directory, so we
-# enter ~/.deng and then run it from there.
-
-test -d ~/.deng || mkdir ~/.deng
-cd ~/.deng || exit 1
-exec %%PREFIX%%/bin/doomsday "$@"
