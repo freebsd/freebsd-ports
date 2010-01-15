@@ -8,7 +8,7 @@
 
 PORTNAME=	minicom
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2332/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
@@ -35,10 +35,17 @@ CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock
 
-MINICOM_DEFAULT_PORT?=	/dev/cuad0
 CONFIGURE_ARGS+=	--enable-dfl-port=${MINICOM_DEFAULT_PORT}
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800045
+MINICOM_DEFAULT_PORT?=	/dev/cuad0
+.else
+MINICOM_DEFAULT_PORT?=	/dev/cuau0
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local/bin/@${LOCALBASE}/bin/@; \
@@ -65,4 +72,4 @@ post-install:
 		${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
