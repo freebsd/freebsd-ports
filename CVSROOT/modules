@@ -4126,9 +4126,11 @@ geogebra-i18n                   ports/math/geogebra-i18n
 geoid                           ports/comms/geoid
 geoip                           ports/net/GeoIP
 geolizer                        ports/www/geolizer
+geomWatch                       ports/sysutils/geomWatch
 geomgui                         ports/sysutils/geomgui
 geomorph                        ports/graphics/geomorph
 geomview                        ports/graphics/geomview
+geomwatch                       ports/sysutils/geomWatch
 geonext                         ports/math/geonext
 geos                            ports/graphics/geos
 geoserver                       ports/graphics/geoserver
@@ -13467,6 +13469,7 @@ p5-Test-MockModule              ports/devel/p5-Test-MockModule
 p5-Test-MockObject              ports/devel/p5-Test-MockObject
 p5-Test-MockRandom              ports/devel/p5-Test-MockRandom
 p5-Test-MockTime                ports/devel/p5-Test-MockTime
+p5-Test-Module-Used             ports/devel/p5-Test-Module-Used
 p5-Test-Most                    ports/devel/p5-Test-Most
 p5-Test-NoWarnings              ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta            ports/devel/p5-Test-Number-Delta
@@ -17194,6 +17197,7 @@ p5-test-mockmodule              ports/devel/p5-Test-MockModule
 p5-test-mockobject              ports/devel/p5-Test-MockObject
 p5-test-mockrandom              ports/devel/p5-Test-MockRandom
 p5-test-mocktime                ports/devel/p5-Test-MockTime
+p5-test-module-used             ports/devel/p5-Test-Module-Used
 p5-test-most                    ports/devel/p5-Test-Most
 p5-test-nowarnings              ports/devel/p5-Test-NoWarnings
 p5-test-number-delta            ports/devel/p5-Test-Number-Delta
@@ -20314,6 +20318,7 @@ py-webtest                      ports/www/py-WebTest
 py-webunit                      ports/www/py-webunit
 py-webware                      ports/www/py-webware
 py-webware-component            ports/www/py-webware-component
+py-werkzeug                     ports/www/py-werkzeug
 py-wikitools                    ports/www/py-wikitools
 py-wmdockapps                   ports/x11-toolkits/py-wmdockapps
 py-wordnet                      ports/textproc/py-wordnet
@@ -20655,6 +20660,7 @@ qtorrent                        ports/net-p2p/qtorrent
 qtpfsgui                        ports/graphics/qtpfsgui
 qtpixmap                        ports/x11-toolkits/qtpixmap
 qtpkg                           ports/ports-mgmt/qtpkg
+qtresistors                     ports/science/qtresistors
 qtscriptgenerator               ports/devel/qtscriptgenerator
 qtstalker                       ports/finance/qtstalker
 qtv                             ports/games/qtv
@@ -21648,6 +21654,7 @@ s3mod                           ports/audio/s3mod
 s3switch                        ports/graphics/s3switch
 s5                              ports/textproc/s5
 s9fes                           ports/lang/s9fes
+sa-utils                        ports/mail/sa-utils
 sabbu                           ports/multimedia/sabbu
 sabernetdcs-client              ports/finance/sabernetdcs-client
 sablevm                         ports/java/sablevm
@@ -21701,6 +21708,7 @@ sarien                          ports/games/sarien
 sary                            ports/textproc/sary
 sash                            ports/shells/sash
 sasp                            ports/security/sasp
+sastatd                         ports/mail/sastatd
 satellite                       ports/net-mgmt/satellite
 sather                          ports/lang/Sather
 sather-specification            ports/lang/sather-specification
@@ -23347,6 +23355,7 @@ tuareg-mode.el                  ports/lang/tuareg-mode.el
 tuc                             ports/converters/tuc
 tucan                           ports/net/tucan
 tulip                           ports/graphics/tulip
+tumble                          ports/graphics/tumble
 tumgreyspf                      ports/mail/tumgreyspf
 tunapie                         ports/multimedia/tunapie
 tuneradio                       ports/audio/tuneradio
@@ -25271,6 +25280,7 @@ yahtzee                         ports/games/yahtzee
 yakuake                         ports/x11/yakuake
 yakuake-kde4                    ports/x11/yakuake-kde4
 yale-tftpd                      ports/ftp/yale-tftpd
+yali                            ports/textproc/yali
 yalias                          ports/x11/yalias
 yamcha                          ports/textproc/yamcha
 yamdi                           ports/multimedia/yamdi
