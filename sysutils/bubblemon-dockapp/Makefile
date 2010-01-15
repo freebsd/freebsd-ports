@@ -10,8 +10,7 @@ PORTVERSION=	1.46
 PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		LOCAL/ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
 MAINTAINER=	ports@FreeBSD.org
