@@ -17,6 +17,8 @@ COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
+BROKEN=		does not build
+
 DOCSDIR=	lib/${PORTNAME}
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
