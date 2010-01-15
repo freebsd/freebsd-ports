@@ -1,114 +1,26 @@
 bin/deng
 bin/doomsday
-lib/libdpdehread.a
-lib/libdpdehread.la
 lib/libdpdehread.so
-lib/libdpdehread.so.0
-lib/libdpmapload.a
-lib/libdpmapload.la
-lib/libdpmapload.so
-lib/libdpmapload.so.0
-lib/libdropengl.a
-lib/libdropengl.la
-lib/libdropengl.so
-lib/libdropengl.so.0
-%%OPENAL%%lib/libdsopenal.a
-%%OPENAL%%lib/libdsopenal.la
+lib/libdpwadmapconverter.so
 %%OPENAL%%lib/libdsopenal.so
-%%OPENAL%%lib/libdsopenal.so.0
-lib/libdssdlmixer.a
-lib/libdssdlmixer.la
-lib/libdssdlmixer.so
-lib/libdssdlmixer.so.0
-lib/libjdoom.a
-lib/libjdoom.la
 lib/libjdoom.so
-lib/libjdoom.so.0
-lib/libjheretic.a
-lib/libjheretic.la
 lib/libjheretic.so
-lib/libjheretic.so.0
-lib/libjhexen.a
-lib/libjhexen.la
 lib/libjhexen.so
-lib/libjhexen.so.0
-%%DATADIR%%/Data/CPHelp.txt
-%%DATADIR%%/Data/Doomsday.pk3
-%%DATADIR%%/Data/jDoom/jDoom.wad
-%%DATADIR%%/Data/jHeretic/jHeretic.wad
-%%DATADIR%%/Data/jHexen/jHexen.wad
-%%DATADIR%%/Defs/Doomsday.ded
-%%DATADIR%%/Defs/Flags.ded
-%%DATADIR%%/Defs/XG.ded
-%%DATADIR%%/Defs/jDoom/Anim.ded
-%%DATADIR%%/Defs/jDoom/Audio.ded
-%%DATADIR%%/Defs/jDoom/Details.ded
-%%DATADIR%%/Defs/jDoom/Doom1Lights.ded
-%%DATADIR%%/Defs/jDoom/Doom2Lights.ded
-%%DATADIR%%/Defs/jDoom/Finales.ded
-%%DATADIR%%/Defs/jDoom/Lights.ded
-%%DATADIR%%/Defs/jDoom/Maps.ded
-%%DATADIR%%/Defs/jDoom/Objects.ded
-%%DATADIR%%/Defs/jDoom/Particles.ded
-%%DATADIR%%/Defs/jDoom/PlutAnim.ded
-%%DATADIR%%/Defs/jDoom/PlutFinales.ded
-%%DATADIR%%/Defs/jDoom/PlutMaps.ded
-%%DATADIR%%/Defs/jDoom/Special.ded
-%%DATADIR%%/Defs/jDoom/Sprites.ded
-%%DATADIR%%/Defs/jDoom/TNTAnim.ded
-%%DATADIR%%/Defs/jDoom/TNTFinales.ded
-%%DATADIR%%/Defs/jDoom/TNTMaps.ded
-%%DATADIR%%/Defs/jDoom/Text.ded
-%%DATADIR%%/Defs/jDoom/Values.ded
-%%DATADIR%%/Defs/jDoom/jDoom.ded
-%%DATADIR%%/Defs/jHeretic/Anim.ded
-%%DATADIR%%/Defs/jHeretic/Audio.ded
-%%DATADIR%%/Defs/jHeretic/Finales.ded
-%%DATADIR%%/Defs/jHeretic/Lights.ded
-%%DATADIR%%/Defs/jHeretic/Maps.ded
-%%DATADIR%%/Defs/jHeretic/Objects.ded
-%%DATADIR%%/Defs/jHeretic/Special.ded
-%%DATADIR%%/Defs/jHeretic/Sprites.ded
-%%DATADIR%%/Defs/jHeretic/Text.ded
-%%DATADIR%%/Defs/jHeretic/jHeretic.ded
-%%DATADIR%%/Defs/jHexen/Anim.ded
-%%DATADIR%%/Defs/jHexen/Audio.ded
-%%DATADIR%%/Defs/jHexen/Finales.ded
-%%DATADIR%%/Defs/jHexen/Lights.ded
-%%DATADIR%%/Defs/jHexen/Maps.ded
-%%DATADIR%%/Defs/jHexen/Objects.ded
-%%DATADIR%%/Defs/jHexen/Special.ded
-%%DATADIR%%/Defs/jHexen/Sprites.ded
-%%DATADIR%%/Defs/jHexen/Text.ded
-%%DATADIR%%/Defs/jHexen/jHexen.ded
-%%DATADIR%%/Runtime/jDoom/Startup.cfg
-%%DATADIR%%/Runtime/jHeretic/Startup.cfg
-%%DATADIR%%/Runtime/jHexen/Startup.cfg
-%%PORTDOCS%%%%DOCSDIR%%/CVars.txt
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
-%%PORTDOCS%%%%DOCSDIR%%/DEDDoc.txt
-%%PORTDOCS%%%%DOCSDIR%%/Network.txt
-%%PORTDOCS%%%%DOCSDIR%%/Ravenlic.txt
-%%PORTDOCS%%%%DOCSDIR%%/SrcNotes.txt
-%%PORTDOCS%%%%DOCSDIR%%/TexC.txt
-%%PORTDOCS%%%%DOCSDIR%%/jDoom/DoomLic.txt
-%%PORTDOCS%%%%DOCSDIR%%/jDoom/JDoom.txt
-%%PORTDOCS%%%%DOCSDIR%%/jHeretic/JHeretic.txt
-%%PORTDOCS%%%%DOCSDIR%%/jHexen/JHexen.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHexen
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHeretic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/jDoom
+%%DATADIR%%/data/doomsday.pk3
+%%DATADIR%%/data/jdoom/jdoom.pk3
+%%DATADIR%%/data/jheretic/jheretic.pk3
+%%DATADIR%%/data/jhexen/jhexen.pk3
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/cnsname.txt
+%%PORTDOCS%%%%DOCSDIR%%/cvars.txt
+%%PORTDOCS%%%%DOCSDIR%%/deddoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/dhistory.txt
+%%PORTDOCS%%%%DOCSDIR%%/naming.txt
+%%PORTDOCS%%%%DOCSDIR%%/network.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/Runtime/jHexen
-@dirrm %%DATADIR%%/Runtime/jHeretic
-@dirrm %%DATADIR%%/Runtime/jDoom
-@dirrm %%DATADIR%%/Runtime
-@dirrm %%DATADIR%%/Defs/jHexen
-@dirrm %%DATADIR%%/Defs/jHeretic
-@dirrm %%DATADIR%%/Defs/jDoom
-@dirrm %%DATADIR%%/Defs
-@dirrm %%DATADIR%%/Data/jHexen
-@dirrm %%DATADIR%%/Data/jHeretic
-@dirrm %%DATADIR%%/Data/jDoom
-@dirrm %%DATADIR%%/Data
+@dirrm %%DATADIR%%/data/jdoom
+@dirrm %%DATADIR%%/data/jhexen
+@dirrm %%DATADIR%%/data/jheretic
+@dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
