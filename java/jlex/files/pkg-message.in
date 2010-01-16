@@ -1,0 +1,5 @@
+JLex is installed into %%JAVAJARDIR%%.
+
+Run with 'jlex'
+
+See http://www.cs.princeton.edu/~appel/modern/java/JLex.
