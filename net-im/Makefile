@@ -156,6 +156,7 @@
     SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-python
     SUBDIR += telepathy-qt
+    SUBDIR += telepathy-qt4
     SUBDIR += telepathy-salut
     SUBDIR += tkabber
     SUBDIR += tkabber-devel
