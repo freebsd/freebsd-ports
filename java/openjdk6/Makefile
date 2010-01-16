@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b16
-PORTREVISION=	2
+PORTVERSION=	b17
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
@@ -17,13 +16,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}:ant
 MAINTAINER=	openjdk@getsnappy.com
 COMMENT=	Sun\'s java 6 virtual machine release under the GPL v2
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=24_apr_2009
+BUILD_NUMBER=	${PORTVERSION:S/b//}
+OPENJDK_BUILDDATE=	14_oct_2009
 
-OPTIONS=	DEBUG   "Enable debugging support"	off \
-		IPV6    "Enable IPv6 support"	off \
-		POLICY  "Install the Unlimited Strength Policy Files"	off
+OPTIONS=	DEBUG "Enable legacy debugging support" off \
+		FASTDEBUG "Include fastdebug build" off \
+		IPV6 "Enable IPv6 support" off \
+		POLICY "Install the Unlimited Strength Policy Files" off
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
@@ -53,7 +55,7 @@ CATEGORIES+=	ipv6
 .endif
 
 # avoid ARCH in MAKEFLAGS, breaks build
-NOPRECIOUSMAKEVARS= yes
+NOPRECIOUSMAKEVARS=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -75,13 +77,31 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
 .endif
 
 MAKE_ENV=	LANG=C LC_ALL=C \
+		ARCH=${ARCH} \
+		ARCH_DATA_MODEL=64 \
+		LIBARCH=${ARCH} \
+		PLATFORM=bsd \
+		OS_NAME=freebsd \
+		ALT_JDK_IMPORT_PATH=${BOOTSTRAPJDKDIR} \
 		ALT_BOOTDIR=${BOOTSTRAPJDKDIR} \
+		ALT_CUPS_HEADERS_PATH=${LOCALBASE}/include \
+		ALT_CUPS_LIB_PATH=${LOCALBASE}/lib \
 		ALT_FREETYPE_HEADERS_PATH=${LOCALBASE}/include \
 		ALT_FREETYPE_LIB_PATH=${LOCALBASE}/lib \
 		ALT_X11_PATH=${LOCALBASE} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
 		ANT_HOME=${WRKDIR}/apache-ant-${ANTVERSION} \
-		NO_DOCS=true
+		BUILD_NUMBER=${BUILD_NUMBER} \
+		HS_BUILD_NUMBER=${BUILD_NUMBER} \
+		NO_DOCS=true \
+		MILESTONE=fcs
+
+# disable FASTDEBUG_BUILD by default to improve compile time.
+.if defined(WITH_FASTDEBUG)
+MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=false
+.else
+MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=true
+.endif
 
 .if !defined(WITH_IPV6)
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
@@ -94,16 +114,16 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 .endif
 
-# perhaps we could check to see how many processors are availble and set this equivelent to that
-MAKE_ENV+=	HOTSPOT_BUILD_JOBS=4
+BUILD_JOBS_NUMBER!=	${SYSCTL} -n kern.smp.cpus
+MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
 
-COPYDIRS= \
+COPYDIRS=	\
 	hotspot/src/os/linux/launcher \
 	hotspot/src/os/linux/vm \
 	hotspot/src/os_cpu/linux_x86/vm \
-	hotspot/build/linux \
-	hotspot/build/linux/makefiles \
 	hotspot/agent/src/os/linux \
+	hotspot/make/linux \
+	hotspot/make/linux/makefiles \
 	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux \
 	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/amd64 \
 	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/x86 \
@@ -112,7 +132,7 @@ COPYDIRS= \
 	hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_x86 \
 	jdk/src/linux/doc/man
 
-COPYFILES= \
+COPYFILES=	\
 	corba/make/common/Defs-linux.gmk \
 	corba/make/common/shared/Defs-linux.gmk \
 	hotspot/agent/src/share/classes/sun/jvm/hotspot/LinuxVtblAccess.java \
@@ -124,7 +144,6 @@ COPYFILES= \
 	jdk/make/sun/awt/mapfile-vers-linux \
 	jdk/make/tools/sharing/classlist.linux \
 	jdk/src/solaris/classes/java/lang/UNIXProcess.java.linux \
-	jdk/src/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
 	jdk/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
 	jdk/src/solaris/classes/sun/tools/attach/LinuxVirtualMachine.java \
 	jdk/src/solaris/hpi/include/largefile_linux.h \
@@ -149,8 +168,10 @@ post-extract:
 	@${SED} 's/solaris/bsd/g; s/Solaris/Bsd/g' \
 		< ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
 		> ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
-	@${CP} ${WRKDIR}/jdk/src/share/lib/security/java.security \
-		${WRKDIR}/jdk/src/share/lib/security/java.security-openbsd
+	@${CP} ${FILESDIR}/fontconfig.properties \
+		${WRKDIR}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
+	@${CP} ${FILESDIR}/cacerts \
+		${WRKDIR}/jdk/src/share/lib/security/cacerts
 
 .if defined(WITH_POLICY)
 post-patch:
@@ -161,8 +182,10 @@ post-patch:
 do-install:
 	${MKDIR} ${PREFIX}/openjdk6/
 	${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/ ${PREFIX}/openjdk6/
-	${INSTALL_DATA} ${FILESDIR}/cacerts \
-	      ${PREFIX}/openjdk6/jre/lib/security/cacerts
+.if defined(WITH_FASTDEBUG)
+	${MKDIR} ${PREFIX}/openjdk6-fastdebug/
+	${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}-fastdebug/j2sdk-image/ ${PREFIX}/openjdk6-fastdebug/
+.endif
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${PREFIX}/openjdk6 -not -type d | \
 		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
@@ -170,9 +193,21 @@ do-install:
 	@${FIND} ${PREFIX}/openjdk6 -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm '${PREFIX}/openjdk6/bin/java # OpenJDK6'" >> ${TMPPLIST}
+.if defined(WITH_FASTDEBUG)
+	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-fastdebug/bin/java" >> ${TMPPLIST}
+	@${FIND} -s ${PREFIX}/openjdk6-fastdebug -not -type d | \
+		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO} "@exec mkdir ${PREFIX}/openjdk6-fastdebug/jre/lib/applet" >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/openjdk6-fastdebug -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm '${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6'" >> ${TMPPLIST}
+.endif
 
 post-install:
 	# Register the VM
 	"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6/bin/java # OpenJDK6"
+.if defined(WITH_FASTDEBUG)
+	"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"
+.endif
 
 .include <bsd.port.post.mk>
