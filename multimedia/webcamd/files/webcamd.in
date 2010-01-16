@@ -1,0 +1,25 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: webcamd
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf[.local] to enable webcamd:
+#
+# webcamd_enable="YES"
+#
+
+webcamd_enable=${webcamd_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name=webcamd
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/webcamd
+command_args="-B"
+
+load_rc_config $name
+if [ $# -gt 1 ]; then
+	command_args="$command_args -d $2 -i 0"
+fi
+run_rc_command $1

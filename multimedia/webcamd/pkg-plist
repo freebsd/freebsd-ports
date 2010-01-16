@@ -1,0 +1,3 @@
+etc/devd/webcamd.conf
+sbin/webcamd
+@dirrmtry etc/devd
