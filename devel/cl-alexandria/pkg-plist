@@ -1,0 +1,25 @@
+%%LIB32DIR%%/common-lisp/alexandria/alexandria-tests.asd
+%%LIB32DIR%%/common-lisp/alexandria/alexandria.asd
+%%LIB32DIR%%/common-lisp/alexandria/arrays.lisp
+%%LIB32DIR%%/common-lisp/alexandria/binding.lisp
+%%LIB32DIR%%/common-lisp/alexandria/conditions.lisp
+%%LIB32DIR%%/common-lisp/alexandria/control-flow.lisp
+%%LIB32DIR%%/common-lisp/alexandria/definitions.lisp
+%%LIB32DIR%%/common-lisp/alexandria/features.lisp
+%%LIB32DIR%%/common-lisp/alexandria/functions.lisp
+%%LIB32DIR%%/common-lisp/alexandria/hash-tables.lisp
+%%LIB32DIR%%/common-lisp/alexandria/io.lisp
+%%LIB32DIR%%/common-lisp/alexandria/lists.lisp
+%%LIB32DIR%%/common-lisp/alexandria/macros.lisp
+%%LIB32DIR%%/common-lisp/alexandria/numbers.lisp
+%%LIB32DIR%%/common-lisp/alexandria/package.lisp
+%%LIB32DIR%%/common-lisp/alexandria/sequences.lisp
+%%LIB32DIR%%/common-lisp/alexandria/strings.lisp
+%%LIB32DIR%%/common-lisp/alexandria/symbols.lisp
+%%LIB32DIR%%/common-lisp/alexandria/tests.lisp
+%%LIB32DIR%%/common-lisp/alexandria/types.lisp
+%%LIB32DIR%%/common-lisp/system-registry/alexandria-tests.asd
+%%LIB32DIR%%/common-lisp/system-registry/alexandria.asd
+%%PORTDOCS%%%%DOCSDIR%%/alexandria.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%LIB32DIR%%/common-lisp/alexandria
