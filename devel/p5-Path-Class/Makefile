@@ -7,6 +7,7 @@
 
 PORTNAME=	Path-Class
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/K/KW/KWILLIAMS/
@@ -30,10 +31,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-RUN_DEPENDS+=	p5-PathTools>=0.87:${PORTSDIR}/devel/p5-PathTools
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

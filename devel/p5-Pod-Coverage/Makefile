@@ -7,6 +7,7 @@
 
 PORTNAME=	Pod-Coverage
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	devel textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Checks if the documentation of a module is comprehensive
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
-		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump
+RUN_DEPENDS=	${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump
 
 PERL_MODBUILD=	yes
 

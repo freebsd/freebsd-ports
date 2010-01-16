@@ -7,7 +7,7 @@
 
 PORTNAME=	VCS
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for generic Version Control System access in Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

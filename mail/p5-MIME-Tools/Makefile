@@ -7,7 +7,7 @@
 
 PORTNAME=	MIME-Tools
 PORTVERSION=	5.427
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
@@ -56,10 +56,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-File-Temp>=0.18:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

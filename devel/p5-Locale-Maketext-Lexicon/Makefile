@@ -7,15 +7,13 @@
 
 PORTNAME=	Locale-Maketext-Lexicon
 PORTVERSION=	0.77
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use other catalog formats in Locale::Maketext
-
-BUILD_DEPENDS=	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

@@ -7,6 +7,7 @@
 
 PORTNAME=       Cvs
 PORTVERSION=    0.07
+PORTREVISION=	1
 CATEGORIES=     devel perl5
 MASTER_SITES=   CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RS/RSOLIV
@@ -37,6 +38,5 @@ MAN3=           Cvs.3 Cvs::Command::Base.3 Cvs::Command::Checkout.3 \
 RUN_DEPENDS+=    ${SITE_PERL}/${PERL_ARCH}/IO/Tty.pm:${PORTSDIR}/devel/p5-IO-Tty
 RUN_DEPENDS+=   ${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS+=   ${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
-RUN_DEPENDS+=   ${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 .include <bsd.port.mk>
