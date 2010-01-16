@@ -1,0 +1,41 @@
+# New ports collection makefile for:	pwcview
+# Date created:				13 January 2010
+# Whom:					Andrew Thompson <thompsa@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pwcview
+PORTVERSION=	1.4.1
+CATEGORIES=	multimedia
+MASTER_SITES=	http://raaf.atspace.org/ \
+		http://www.bsd-geek.de/FreeBSD/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
+
+MAINTAINER=	hselasky@FreeBSD.org
+COMMENT=	The Video4Linux PWC webcam viewer
+
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+		v4l1.0:${PORTSDIR}/multimedia/libv4l
+
+CONFLICTS=	pwcbsd-[0-9]*
+
+USE_SDL=	sdl
+MAN1=		pwcview.1
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ljpeg|-ljpeg -lv4l1|g' \
+		-e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pwcview ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pwcsnap ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+
+.include <bsd.port.post.mk>
