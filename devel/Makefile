@@ -167,6 +167,7 @@
     SUBDIR += cil
     SUBDIR += cl-alexandria
     SUBDIR += cl-alexandria-clisp
+    SUBDIR += cl-alexandria-sbcl
     SUBDIR += cl-asdf
     SUBDIR += cl-asdf-clisp
     SUBDIR += cl-infix

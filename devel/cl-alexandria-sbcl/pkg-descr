@@ -1,0 +1,9 @@
+As a project Alexandria's goal is to reduce duplication of effort
+and improve portability of Common Lisp code according to its own
+idiosyncratic and rather conservative aesthetic. What this actually
+means is open to debate, but each project member has a veto on all
+project activities, so a degree of conservativism is inevitable.
+
+This package is compiled with SBCL.
+
+WWW: http://common-lisp.net/project/alexandria/
