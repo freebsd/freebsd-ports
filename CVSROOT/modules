@@ -6570,6 +6570,7 @@ junipoll                        ports/net-mgmt/junipoll
 junit                           ports/java/junit
 junkbuster                      ports/www/junkbuster
 junkfilter                      ports/mail/junkfilter
+jvgs                            ports/games/jvgs
 jwchat                          ports/net-im/jwchat
 jwhois                          ports/net/jwhois
 jwm                             ports/x11-wm/jwm
@@ -11803,6 +11804,7 @@ p5-Geo-Proj4                    ports/graphics/p5-Geo-Proj4
 p5-Geo-ReadGRIB                 ports/science/p5-Geo-ReadGRIB
 p5-Geo-ShapeFile                ports/devel/p5-Geo-ShapeFile
 p5-Geo-Weather                  ports/misc/p5-Geo-Weather
+p5-Geo-WebService-Elevation-USGS  ports/science/p5-Geo-WebService-Elevation-USGS
 p5-Geography-Countries          ports/misc/p5-Geography-Countries
 p5-Geography-NationalGrid       ports/misc/p5-Geography-NationalGrid
 p5-Geography-NationalGrid-TW    ports/misc/p5-Geography-NationalGrid-TW
@@ -15475,6 +15477,7 @@ p5-geo-proj4                    ports/graphics/p5-Geo-Proj4
 p5-geo-readgrib                 ports/science/p5-Geo-ReadGRIB
 p5-geo-shapefile                ports/devel/p5-Geo-ShapeFile
 p5-geo-weather                  ports/misc/p5-Geo-Weather
+p5-geo-webservice-elevation-usgs  ports/science/p5-Geo-WebService-Elevation-USGS
 p5-geography-countries          ports/misc/p5-Geography-Countries
 p5-geography-nationalgrid       ports/misc/p5-Geography-NationalGrid
 p5-geography-nationalgrid-tw    ports/misc/p5-Geography-NationalGrid-TW
@@ -21910,6 +21913,7 @@ senna                           ports/textproc/senna
 senso                           ports/games/senso
 sensors-applet                  ports/sysutils/sensors-applet
 sentinel                        ports/mail/sentinel
+seom                            ports/graphics/seom
 separate                        ports/graphics/separate
 seq2                            ports/misc/seq2
 seqio                           ports/biology/seqio
@@ -22844,7 +22848,6 @@ tcpview                         ports/net/tcpview
 tcpwatch                        ports/net/tcpwatch
 tcpxd                           ports/net/tcpxd
 tcpxtract                       ports/net/tcpxtract
-tcsh-bofh                       ports/shells/tcsh-bofh
 tcsh_nls                        ports/shells/tcsh_nls
 tcshrc                          ports/shells/tcshrc
 tdb                             ports/databases/tdb
@@ -25331,6 +25334,7 @@ ytree                           ports/misc/ytree
 yudit                           ports/editors/yudit
 yui                             ports/editors/yui
 yuicompressor                   ports/www/yuicompressor
+yukon                           ports/graphics/yukon
 yydecode                        ports/news/yydecode
 yzis                            ports/editors/yzis
 z80-asm                         ports/devel/z80-asm
