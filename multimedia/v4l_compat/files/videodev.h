@@ -1,16 +1,39 @@
+/*
+ *	Video for Linux version 1 - OBSOLETE
+ *
+ *	Header file for v4l1 drivers and applications, for
+ *	Linux kernels 2.2.x or 2.4.x.
+ *
+ *	Provides header for legacy drivers and applications
+ *
+ *	See http://linuxtv.org for more info
+ *
+ */
 #ifndef __LINUX_VIDEODEV_H
 #define __LINUX_VIDEODEV_H
 
 #include <sys/types.h>
-typedef int32_t __s32;
-typedef uint32_t __u32;
-typedef uint16_t __u16;
-typedef uint8_t __u8;
-
-#if 0
-#define HAVE_V4L2 1
+#include <sys/ioctl.h>
 #include <linux/videodev2.h>
-#endif 
+
+#if defined(__MIN_V4L1) && defined (__KERNEL__)
+
+/*
+ * Used by those V4L2 core functions that need a minimum V4L1 support,
+ * in order to allow V4L1 Compatibilty code compilation.
+ */
+
+struct video_mbuf
+{
+	int	size;		/* Total memory to map */
+	int	frames;		/* Frames */
+	int	offsets[VIDEO_MAX_FRAME];
+};
+
+#define VIDIOCGMBUF		_IOR('v',20, struct video_mbuf)		/* Memory map buffer info */
+
+#else
+#if defined(CONFIG_VIDEO_V4L1_COMPAT) || !defined (__KERNEL__)
 
 #define VID_TYPE_CAPTURE	1	/* Can capture */
 #define VID_TYPE_TUNER		2	/* Can tune */
@@ -45,13 +68,13 @@ struct video_channel
 	int channel;
 	char name[32];
 	int tuners;
-	__u32  flags;
+	uint32_t  flags;
 #define VIDEO_VC_TUNER		1	/* Channel has a tuner */
 #define VIDEO_VC_AUDIO		2	/* Channel has audio */
-	__u16  type;
+	uint16_t  type;
 #define VIDEO_TYPE_TV		1
-#define VIDEO_TYPE_CAMERA	2	
-	__u16 norm;			/* Norm set by channel */
+#define VIDEO_TYPE_CAMERA	2
+	uint16_t norm;			/* Norm set by channel */
 };
 
 struct video_tuner
@@ -59,7 +82,7 @@ struct video_tuner
 	int tuner;
 	char name[32];
 	unsigned long rangelow, rangehigh;	/* Tuner range */
-	__u32 flags;
+	uint32_t flags;
 #define VIDEO_TUNER_PAL		1
 #define VIDEO_TUNER_NTSC	2
 #define VIDEO_TUNER_SECAM	4
@@ -68,28 +91,28 @@ struct video_tuner
 #define VIDEO_TUNER_STEREO_ON	128	/* Tuner is seeing stereo */
 #define VIDEO_TUNER_RDS_ON      256     /* Tuner is seeing an RDS datastream */
 #define VIDEO_TUNER_MBS_ON      512     /* Tuner is seeing an MBS datastream */
-	__u16 mode;			/* PAL/NTSC/SECAM/OTHER */
+	uint16_t mode;			/* PAL/NTSC/SECAM/OTHER */
 #define VIDEO_MODE_PAL		0
 #define VIDEO_MODE_NTSC		1
 #define VIDEO_MODE_SECAM	2
 #define VIDEO_MODE_AUTO		3
-	__u16 signal;			/* Signal strength 16bit scale */
+	uint16_t signal;			/* Signal strength 16bit scale */
 };
 
 struct video_picture
 {
-	__u16	brightness;
-	__u16	hue;
-	__u16	colour;
-	__u16	contrast;
-	__u16	whiteness;	/* Black and white only */
-	__u16	depth;		/* Capture depth */
-	__u16   palette;	/* Palette in use */
+	uint16_t	brightness;
+	uint16_t	hue;
+	uint16_t	colour;
+	uint16_t	contrast;
+	uint16_t	whiteness;	/* Black and white only */
+	uint16_t	depth;		/* Capture depth */
+	uint16_t   palette;	/* Palette in use */
 #define VIDEO_PALETTE_GREY	1	/* Linear greyscale */
 #define VIDEO_PALETTE_HI240	2	/* High 240 cube (BT848) */
 #define VIDEO_PALETTE_RGB565	3	/* 565 16 bit RGB */
 #define VIDEO_PALETTE_RGB24	4	/* 24bit RGB */
-#define VIDEO_PALETTE_RGB32	5	/* 32bit RGB */	
+#define VIDEO_PALETTE_RGB32	5	/* 32bit RGB */
 #define VIDEO_PALETTE_RGB555	6	/* 555 15bit RGB */
 #define VIDEO_PALETTE_YUV422	7	/* YUV422 capture */
 #define VIDEO_PALETTE_YUYV	8
@@ -108,39 +131,39 @@ struct video_picture
 struct video_audio
 {
 	int	audio;		/* Audio channel */
-	__u16	volume;		/* If settable */
-	__u16	bass, treble;
-	__u32	flags;
+	uint16_t	volume;		/* If settable */
+	uint16_t	bass, treble;
+	uint32_t	flags;
 #define VIDEO_AUDIO_MUTE	1
 #define VIDEO_AUDIO_MUTABLE	2
 #define VIDEO_AUDIO_VOLUME	4
 #define VIDEO_AUDIO_BASS	8
-#define VIDEO_AUDIO_TREBLE	16	
+#define VIDEO_AUDIO_TREBLE	16
 #define VIDEO_AUDIO_BALANCE	32
 	char    name[16];
 #define VIDEO_SOUND_MONO	1
 #define VIDEO_SOUND_STEREO	2
 #define VIDEO_SOUND_LANG1	4
 #define VIDEO_SOUND_LANG2	8
-        __u16   mode;
-        __u16	balance;	/* Stereo balance */
-        __u16	step;		/* Step actual volume uses */
+	uint16_t   mode;
+	uint16_t	balance;	/* Stereo balance */
+	uint16_t	step;		/* Step actual volume uses */
 };
 
 struct video_clip
 {
-	__s32	x,y;
-	__s32	width, height;
+	int32_t	x,y;
+	int32_t	width, height;
 	struct	video_clip *next;	/* For user use/driver use only */
 };
 
 struct video_window
 {
-	__u32	x,y;			/* Position of window */
-	__u32	width,height;		/* Its size */
-	__u32	chromakey;
-	__u32	flags;
-	struct	video_clip *clips;	/* Set only */
+	uint32_t	x,y;			/* Position of window */
+	uint32_t	width,height;		/* Its size */
+	uint32_t	chromakey;
+	uint32_t	flags;
+	struct	video_clip  *clips;	/* Set only */
 	int	clipcount;
 #define VIDEO_WINDOW_INTERLACE	1
 #define VIDEO_WINDOW_CHROMAKEY	16	/* Overlay by chromakey */
@@ -151,10 +174,10 @@ struct video_window
 
 struct video_capture
 {
-	__u32 	x,y;			/* Offsets into image */
-	__u32	width, height;		/* Area to capture */
-	__u16	decimation;		/* Decimation divider */
-	__u16	flags;			/* Flags for capture */
+	uint32_t 	x,y;			/* Offsets into image */
+	uint32_t	width, height;		/* Area to capture */
+	uint16_t	decimation;		/* Decimation divider */
+	uint16_t	flags;			/* Flags for capture */
 #define VIDEO_CAPTURE_ODD		0	/* Temporal */
 #define VIDEO_CAPTURE_EVEN		1
 };
@@ -176,12 +199,9 @@ struct video_mmap
 
 struct video_key
 {
-	__u8	key[8];
-	__u32	flags;
+	uint8_t	key[8];
+	uint32_t	flags;
 };
-
-
-#define VIDEO_MAX_FRAME		32
 
 struct video_mbuf
 {
@@ -189,11 +209,9 @@ struct video_mbuf
 	int	frames;		/* Frames */
 	int	offsets[VIDEO_MAX_FRAME];
 };
-	
 
 #define 	VIDEO_NO_UNIT	(-1)
 
-	
 struct video_unit
 {
 	int 	video;		/* Video minor */
@@ -204,12 +222,12 @@ struct video_unit
 };
 
 struct vbi_format {
-	__u32	sampling_rate;	/* in Hz */
-	__u32	samples_per_line;
-	__u32	sample_format;	/* VIDEO_PALETTE_RAW only (1 byte) */
-	__s32	start[2];	/* starting line for each frame */
-	__u32	count[2];	/* count of lines for each frame */
-	__u32	flags;
+	uint32_t	sampling_rate;	/* in Hz */
+	uint32_t	samples_per_line;
+	uint32_t	sample_format;	/* VIDEO_PALETTE_RAW only (1 byte) */
+	int32_t	start[2];	/* starting line for each frame */
+	uint32_t	count[2];	/* count of lines for each frame */
+	uint32_t	flags;
 #define	VBI_UNSYNC	1	/* can distingues between top/bottom field */
 #define	VBI_INTERLACED	2	/* lines are interlaced */
 };
@@ -218,13 +236,13 @@ struct vbi_format {
 /* but it could apply generically to any hardware compressor/decompressor */
 struct video_info
 {
-	__u32	frame_count;	/* frames output since decode/encode began */
-	__u32	h_size;		/* current unscaled horizontal size */
-	__u32	v_size;		/* current unscaled veritcal size */
-	__u32	smpte_timecode;	/* current SMPTE timecode (for current GOP) */
-	__u32	picture_type;	/* current picture type */
-	__u32	temporal_reference;	/* current temporal reference */
-	__u8	user_data[256];	/* user data last found in compressed stream */
+	uint32_t	frame_count;	/* frames output since decode/encode began */
+	uint32_t	h_size;		/* current unscaled horizontal size */
+	uint32_t	v_size;		/* current unscaled veritcal size */
+	uint32_t	smpte_timecode;	/* current SMPTE timecode (for current GOP) */
+	uint32_t	picture_type;	/* current picture type */
+	uint32_t	temporal_reference;	/* current temporal reference */
+	uint8_t	user_data[256];	/* user data last found in compressed stream */
 	/* user_data[0] contains user data flags, user_data[1] has count */
 };
 
@@ -241,7 +259,7 @@ struct video_code
 {
 	char	loadwhat[16];	/* name or tag of file being passed */
 	int	datasize;
-	__u8	*data;
+	uint8_t	*data;
 };
 
 #define VIDIOCGCAP		_IOR('v',1,struct video_capability)	/* Get capabilities */
@@ -290,7 +308,7 @@ struct video_code
 	/* p1: = VIDEO_MODE_PAL, VIDEO_MODE_NTSC, etc ... */
 #define VID_PLAY_GENLOCK		1
 	/* p1: 0 = OFF, 1 = ON */
-	/* p2: GENLOCK FINE DELAY value */ 
+	/* p2: GENLOCK FINE DELAY value */
 #define VID_PLAY_NORMAL			2
 #define VID_PLAY_PAUSE			3
 #define VID_PLAY_SINGLE_FRAME		4
@@ -310,41 +328,8 @@ struct video_code
 #define VID_PLAY_RESET			13
 #define VID_PLAY_END_MARK		14
 
-
-
-#define VID_HARDWARE_BT848	1
-#define VID_HARDWARE_QCAM_BW	2
-#define VID_HARDWARE_PMS	3
-#define VID_HARDWARE_QCAM_C	4
-#define VID_HARDWARE_PSEUDO	5
-#define VID_HARDWARE_SAA5249	6
-#define VID_HARDWARE_AZTECH	7
-#define VID_HARDWARE_SF16MI	8
-#define VID_HARDWARE_RTRACK	9
-#define VID_HARDWARE_ZOLTRIX	10
-#define VID_HARDWARE_SAA7146    11
-#define VID_HARDWARE_VIDEUM	12	/* Reserved for Winnov videum */
-#define VID_HARDWARE_RTRACK2	13
-#define VID_HARDWARE_PERMEDIA2	14	/* Reserved for Permedia2 */
-#define VID_HARDWARE_RIVA128	15	/* Reserved for RIVA 128 */
-#define VID_HARDWARE_PLANB	16	/* PowerMac motherboard video-in */
-#define VID_HARDWARE_BROADWAY	17	/* Broadway project */
-#define VID_HARDWARE_GEMTEK	18
-#define VID_HARDWARE_TYPHOON	19
-#define VID_HARDWARE_VINO	20	/* SGI Indy Vino */
-#define VID_HARDWARE_CADET	21	/* Cadet radio */
-#define VID_HARDWARE_TRUST	22	/* Trust FM Radio */
-#define VID_HARDWARE_TERRATEC	23	/* TerraTec ActiveRadio */
-#define VID_HARDWARE_CPIA	24
-#define VID_HARDWARE_ZR36120	25	/* Zoran ZR36120/ZR36125 */
-#define VID_HARDWARE_ZR36067	26	/* Zoran ZR36067/36060 */
-#define VID_HARDWARE_OV511	27	
-#define VID_HARDWARE_ZR356700	28	/* Zoran 36700 series */
-#define VID_HARDWARE_W9966	29
-#define VID_HARDWARE_SE401	30	/* SE401 USB webcams */
-#define VID_HARDWARE_PWC	31	/* Philips webcams */
-#define VID_HARDWARE_MEYE	32	/* Sony Vaio MotionEye cameras */
-#define VID_HARDWARE_CPIA2	33
+#endif /* CONFIG_VIDEO_V4L1_COMPAT */
+#endif /* __MIN_V4L1 */
 
 #endif /* __LINUX_VIDEODEV_H */
 
