@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
