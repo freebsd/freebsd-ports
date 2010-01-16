@@ -21,6 +21,8 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 USE_LDCONFIG=	yes
 
+BROKEN=		does not compile
+
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
