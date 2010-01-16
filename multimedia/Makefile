@@ -153,6 +153,7 @@
     SUBDIR += libquicktime-lame
     SUBDIR += libtheora
     SUBDIR += libtuner
+    SUBDIR += libv4l
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += linux-divx4linux
@@ -234,6 +235,7 @@
     SUBDIR += pvr250
     SUBDIR += pvrxxx
     SUBDIR += pwcbsd
+    SUBDIR += pwcview
     SUBDIR += py-gstreamer
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
@@ -292,11 +294,13 @@
     SUBDIR += vcdimager
     SUBDIR += vcdpad
     SUBDIR += vcdtools
+    SUBDIR += video4bsd-kmod
     SUBDIR += vlc
     SUBDIR += vlconwooztalk
     SUBDIR += vodcatcher
     SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
+    SUBDIR += webcamd
     SUBDIR += win32-codecs
     SUBDIR += x264
     SUBDIR += xanim
