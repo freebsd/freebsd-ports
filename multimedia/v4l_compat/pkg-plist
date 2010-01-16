@@ -1,2 +1,3 @@
 include/linux/videodev.h
+include/linux/videodev2.h
 @dirrmtry include/linux

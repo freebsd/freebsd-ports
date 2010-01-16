@@ -1,4 +1,4 @@
-This port only installs Video4Linux header file.
+This port installs the Video4Linux header files.
 
 - Florent Thoumie
 flz@FreeBSD.org
