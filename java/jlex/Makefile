@@ -21,8 +21,8 @@ PLIST_FILES=	%%JAVAJARDIR%%/jlex.jar bin/jlex
 USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	jlex.sh
+SUB_FILES=	jlex.sh pkg-message
+SUB_LIST=	JAVAJARDIR=${JAVAJARDIR}
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -37,8 +37,6 @@ do-build:
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/jlex.sh ${PREFIX}/bin/jlex
-	@${SED} s:%%JAVAJARDIR%%:${JAVAJARDIR}: < ${PKGDIR}/pkg-message \
-		> ${PKGMESSAGE}
 
 post-install:
 	@${ECHO_MSG}
