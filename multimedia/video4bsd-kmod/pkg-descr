@@ -1,0 +1,6 @@
+video4bsd is a kernel module which provides the /dev/video_daemonX interface
+for webcamd and the /dev/videoX interface for the application using the video
+device. The video4bsd kernel module transports all data between these
+two devices. 
+
+WWW: http://www.selasky.org/hans_petter/video4bsd/
