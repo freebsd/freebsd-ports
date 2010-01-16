@@ -1,0 +1,17 @@
+*********************************************************************
+1) webcamd requires the video4bsd kernel module, please load this
+by doing
+
+       # kldload video4bsd
+
+or adding
+
+       video4bsd_load="YES"
+
+to your /boot/loader.conf.
+
+2) Please restart devd as the configuration changed
+
+	# /etc/rc.d/devd restart
+
+*********************************************************************
