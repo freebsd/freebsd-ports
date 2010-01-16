@@ -1,0 +1,17 @@
+include/libv4lconvert.h
+include/libv4l2.h
+include/libv4l1.h
+lib/libv4l/ov511-decomp
+lib/libv4l/ov518-decomp
+lib/libv4l/v4l2convert.so
+lib/libv4l/v4l1compat.so
+lib/libv4lconvert.so.0
+lib/libv4lconvert.so
+libdata/pkgconfig/libv4lconvert.pc
+libdata/pkgconfig/libv4l2.pc
+libdata/pkgconfig/libv4l1.pc
+lib/libv4l2.so.0
+lib/libv4l2.so
+lib/libv4l1.so.0
+lib/libv4l1.so
+@dirrm lib/libv4l
