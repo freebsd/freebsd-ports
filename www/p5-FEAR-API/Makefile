@@ -8,6 +8,7 @@
 
 PORTNAME=	FEAR-API
 PORTVERSION=	0.489
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/X/XE/XERN
@@ -17,12 +18,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Zen
 
 BUILD_DEPENDS=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
 		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
 		p5-HTML-Encoding>=0:${PORTSDIR}/www/p5-HTML-Encoding \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-LinkExtractor>=0:${PORTSDIR}/www/p5-HTML-LinkExtractor \

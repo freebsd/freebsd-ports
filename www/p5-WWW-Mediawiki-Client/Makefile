@@ -8,6 +8,7 @@
 
 PORTNAME=	WWW-Mediawiki-Client
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +23,7 @@ BUILD_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-URI>=1.31:${PORTSDIR}/net/p5-URI \
 		p5-Data-Dumper>0:${PORTSDIR}/devel/p5-Data-Dumper \
-		p5-Exception-Class>0:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Encode>=1.75:${PORTSDIR}/converters/p5-Encode
+		p5-Exception-Class>0:${PORTSDIR}/devel/p5-Exception-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

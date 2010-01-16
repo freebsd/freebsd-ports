@@ -7,6 +7,7 @@
 
 PORTNAME=	MooseX-Getopt
 PORTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,10 +35,4 @@ MAN3=	MooseX::Getopt.3 \
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Getopt-Long>=2.37:${PORTSDIR}/devel/p5-Getopt-Long
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

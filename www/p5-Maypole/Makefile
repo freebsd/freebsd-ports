@@ -6,7 +6,7 @@
 
 PORTNAME=	Maypole
 PORTVERSION=	2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TE/TEEJAY
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Class-DBI-Plugin-RetrieveAll>0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-RetrieveAll \
 		p5-Class-DBI-Plugin-Type>0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-Type \
 		p5-Class-DBI>=0.96:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-File-MMagic-XS>=0.08:${PORTSDIR}/devel/p5-File-MMagic-XS \
 		p5-HTML-Tree>0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-HTTP-Body>=0.5:${PORTSDIR}/www/p5-HTTP-Body \

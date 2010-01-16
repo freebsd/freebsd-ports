@@ -43,10 +43,6 @@ MAN3=	Test::Inline.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
 .if ${PERL_LEVEL} < 500905
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif

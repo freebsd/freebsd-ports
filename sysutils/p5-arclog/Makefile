@@ -7,6 +7,7 @@
 
 PORTNAME=	arclog
 PORTVERSION=	3.04
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Locale/IMACAT
@@ -19,8 +20,7 @@ BUILD_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
 		p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

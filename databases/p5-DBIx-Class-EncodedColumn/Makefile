@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class-EncodedColumn
 PORTVERSION=	0.00005
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,19 +30,14 @@ MAN3=	DBIx::Class::EncodedColumn.3 \
 post-extract:
 	@${PERL} -i -ne 'print unless m,^build_requires, || m,^feature, .. m,;,' ${WRKSRC}/Makefile.PL
 
-OPTIONS=	MD5 "Digest::MD5 Support" On \
-		SHA "Digest::SHA Support" On \
+OPTIONS=	SHA "Digest::SHA Support" On \
 		BLOWFISH "Blowfish Support?" On \
 		OPENPGP "Crypt::OpenPGP (gpg) Support" On
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MD5)
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
-.endif
 .if defined(WITH_SHA)
-RUN_DEPENDS+=	p5-Digest>=0:${PORTSDIR}/security/p5-Digest \
-		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
 .endif
 .if defined(WITH_BLOWFISH)
 RUN_DEPENDS+=	p5-Crypt-Eksblowfish>=0:${PORTSDIR}/security/p5-Crypt-Eksblowfish

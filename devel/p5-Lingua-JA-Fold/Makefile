@@ -7,6 +7,7 @@
 
 PORTNAME=	Lingua-JA-Fold
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Lingua
@@ -14,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lingua::JA::Fold - fold a Japanese text
-
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

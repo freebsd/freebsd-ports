@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Example-InstantCRUD
 PORTVERSION=	0.035
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,11 +33,9 @@ BUILD_DEPENDS=	\
 	p5-DBIx-Class-Schema-Loader>=0.03:${PORTSDIR}/databases/p5-DBIx-Class-Schema-Loader \
 	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 	p5-HTML-Widget>=1.10:${PORTSDIR}/www/p5-HTML-Widget \
 	p5-HTML-Widget-DBIC>=0:${PORTSDIR}/www/p5-HTML-Widget-DBIC \
-	p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser \
 	p5-Template-Plugin-Class>=0:${PORTSDIR}/www/p5-Template-Plugin-Class \
 	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 	p5-version>=0:${PORTSDIR}/devel/p5-version
