@@ -115,6 +115,8 @@ verify:	checksum
 pre-configure:
 	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" ${CONFIGURE_SUB} \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "/#include <utmp.h>/d" \
+		${WRKSRC}/tools/symcryptrun.c
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
