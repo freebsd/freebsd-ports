@@ -86,7 +86,7 @@ SITE_SUB+=	-e 's|%%BDB%%||g' \
 .else
 SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
 .endif
-.if defined(WITH_OPENSSL_BASE) || defined(OPENSSL_OVERWRITE_BASE)
+.if defined(WITH_OPENSSL_BASE)
 SITE_SUB+=	-e 's|%%OPENSSL%%|dnl |g'
 .else
 SITE_SUB+=	-e 's|%%OPENSSL%%||g' \
