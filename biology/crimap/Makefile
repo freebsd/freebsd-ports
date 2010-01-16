@@ -7,6 +7,7 @@
 
 PORTNAME=	crimap
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://compgen.rutgers.edu/multimap/crimap/
 DISTNAME=	${PORTNAME}.source
