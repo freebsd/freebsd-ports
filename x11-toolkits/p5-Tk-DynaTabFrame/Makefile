@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits perl5 tk
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	NoteBook widget with orientable, dynamically stacking tabs
 
 BUILD_DEPENDS=	p5-Tk>=804.027:${PORTSDIR}/x11-toolkits/p5-Tk
