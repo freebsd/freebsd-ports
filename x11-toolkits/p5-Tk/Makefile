@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN/Tk/SREZIC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 MAKE_JOBS_UNSAFE=	yes
