@@ -1,35 +1,36 @@
 @unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
-%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels/index.php
-%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels/premium_example.php
-%%SQUIRRELDIR%%/plugins/vlogin/data/domains/example.com.vlogin.config.php
-%%SQUIRRELDIR%%/plugins/vlogin/data/domains/index.php
-%%SQUIRRELDIR%%/plugins/vlogin/data/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/.htaccess
 %%SQUIRRELDIR%%/plugins/vlogin/data/config_default.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/config_example.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/config_example_per_user_functions_only.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/config_example_service_level_functions_only.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/config_example_typical.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/domains/example.com.vlogin.config.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/domains/index.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/hostmap_example.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/index.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/meta_config.add_default_domain.php
-%%SQUIRRELDIR%%/plugins/vlogin/data/meta_config_example.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/meta_config.strip_domain.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/meta_config_example.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels/premium_example.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/service_levels_example.php
 %%SQUIRRELDIR%%/plugins/vlogin/data/users_example.php
-%%SQUIRRELDIR%%/plugins/vlogin/data/users.paul.php
-%%SQUIRRELDIR%%/plugins/vlogin/CONFIGURATION
-%%SQUIRRELDIR%%/plugins/vlogin/COPYING
-%%SQUIRRELDIR%%/plugins/vlogin/INSTALL
-%%SQUIRRELDIR%%/plugins/vlogin/README
 %%SQUIRRELDIR%%/plugins/vlogin/functions.php
 %%SQUIRRELDIR%%/plugins/vlogin/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/make_release.sh
 %%SQUIRRELDIR%%/plugins/vlogin/per_user_functions.php
 %%SQUIRRELDIR%%/plugins/vlogin/service_level_functions.php
 %%SQUIRRELDIR%%/plugins/vlogin/setup.php
 %%SQUIRRELDIR%%/plugins/vlogin/sql_settings_lookup.php
-%%SQUIRRELDIR%%/plugins/vlogin/make_release.sh
 %%SQUIRRELDIR%%/plugins/vlogin/version
+%%PORTDOCS%%%%DOCSDIR%%/CONFIGURATION
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/service_levels
 @dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/domains
 @dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data
 @dirrmtry %%SQUIRRELDIR%%/plugins/vlogin
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
