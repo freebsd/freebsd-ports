@@ -32,7 +32,7 @@
 #                    --channel saupdates.example.com     \
 #                    --channel updates.spamassassin.org"  
 #
-# daily_sa_compile="YES"
+# daily_sa_compile="%%SACOMPILE%%"
 #           run sa-compile to create a compiled form of the filter
 #           rules when new rules are found.  Note: this can be time
 #           consuming and CPU intensive.
@@ -66,7 +66,7 @@ fi
 : ${daily_sa_enable="YES"}
 : ${daily_sa_quiet="NO"}
 : ${daily_sa_update_flags=""}
-: ${daily_sa_compile="YES"}
+: ${daily_sa_compile="%%SACOMPILE%%"}
 : ${daily_sa_compile_flags=""}
 : ${daily_sa_compile_nice="YES"}
 : ${daily_sa_compile_nice_flags=""}
