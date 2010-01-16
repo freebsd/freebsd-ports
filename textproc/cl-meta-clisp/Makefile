@@ -8,9 +8,6 @@ PORTNAME=	meta
 PORTVERSION=	0.1
 PORTREVISION=	3
 CATEGORIES=	textproc lisp
-MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
-		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
-		http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
