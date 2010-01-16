@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cl-md5-clisp
 # Date created:				16 January 2010
-# Whom:					Giacomo Olgeni
+# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
 #
 # $FreeBSD$
 
