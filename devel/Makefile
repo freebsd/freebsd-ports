@@ -166,6 +166,7 @@
     SUBDIR += chrpath
     SUBDIR += cil
     SUBDIR += cl-alexandria
+    SUBDIR += cl-alexandria-clisp
     SUBDIR += cl-asdf
     SUBDIR += cl-asdf-clisp
     SUBDIR += cl-infix
