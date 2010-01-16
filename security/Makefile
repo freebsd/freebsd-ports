@@ -64,6 +64,7 @@
     SUBDIR += chroot_safe
     SUBDIR += chrootuid
     SUBDIR += cksfv
+    SUBDIR += cl-md5
     SUBDIR += clamassassin
     SUBDIR += clamav
     SUBDIR += clamav-devel

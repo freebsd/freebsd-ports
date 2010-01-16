@@ -1,0 +1,4 @@
+%%LIB32DIR%%/common-lisp/md5/md5.asd
+%%LIB32DIR%%/common-lisp/md5/md5.lisp
+%%LIB32DIR%%/common-lisp/system-registry/md5.asd
+@dirrm %%LIB32DIR%%/common-lisp/md5
