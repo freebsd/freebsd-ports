@@ -65,6 +65,7 @@
     SUBDIR += chrootuid
     SUBDIR += cksfv
     SUBDIR += cl-md5
+    SUBDIR += cl-md5-sbcl
     SUBDIR += clamassassin
     SUBDIR += clamav
     SUBDIR += clamav-devel
