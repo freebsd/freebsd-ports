@@ -26,7 +26,7 @@ OPTIONS?=	SMTP_AFTER_POP3 "Enable SMTP-after-POP mode" off \
 		STANDALONE_POP3 "Enable standalone server mode" off \
 		SETPROCTITLE "Enable setproctitle mode" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # honor old flags
 .if defined(STANDALONE_POP3)
@@ -40,9 +40,11 @@ WITH_SMTP_AFTER_POP3=	yes
 STANDALONE_SUFFIX=	-standalone
 PLIST_SUB+=	STANDALONE_POP3=""
 CONFLICTS?=	popa3d-0.* popa3d-before-sendmail-0.*
+USE_RC_SUBR=	popa3d
 PKGMESSAGE=	${NONEXISTENT}
 PKGDEINSTALL=	${NONEXISTENT}
 .else
+SUB_FILES=	pkg-message
 PLIST_SUB+=	STANDALONE_POP3="@comment "
 .endif
 
@@ -60,15 +62,7 @@ CONFLICTS?=	popa3d-standalone-0.* popa3d-before-sendmail-0.*
 EXTRA_PATCHES+=	${FILESDIR}/setproctitle.patch
 .endif
 
-.if defined(WITH_STANDALONE_POP3)
-RC_SUBR=	/etc/rc.subr
-
-post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
-		-e "s=%%RC_SUBR%%=${RC_SUBR}=g" \
-		${FILESDIR}/popa3d.sh \
-		> ${WRKSRC}/popa3d.sh
-.endif
+.include <bsd.port.pre.mk>
 
 pre-configure:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
@@ -104,9 +98,7 @@ do-install:
 .if defined(WITH_SMTP_AFTER_POP3) && !defined(WITHOUT_POPAUTH_M4)
 	${INSTALL_DATA} ${FILESDIR}/popauth.m4 ${CFDIR}/hack/
 .endif
-.if defined(WITH_STANDALONE_POP3)
-	${INSTALL_SCRIPT} ${WRKSRC}/popa3d.sh ${PREFIX}/etc/rc.d/
-.endif
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/DESIGN ${DOCSDIR}/
