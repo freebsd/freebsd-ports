@@ -7,7 +7,7 @@
 
 PORTNAME=	lrzsz
 PORTVERSION=	0.12.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.netsw.org/net/modem/protocols/zmodem/lrzsz/ \
 		http://www.ohse.de/uwe/releases/
