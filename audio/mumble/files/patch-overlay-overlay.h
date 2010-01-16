@@ -27,16 +27,3 @@ diff -r -C 2 mumble-1.1.8/overlay/overlay.h overlay/overlay.h
 + 
   struct TextEntry {
   	unsigned int color;
-diff -r -C 2 mumble-1.1.8/src/mumble/ServerHandler.cpp src/mumble/ServerHandler.cpp
-*** mumble-1.1.8/src/mumble/ServerHandler.cpp	2009-03-22 16:05:00.000000000 +0100
---- src/mumble/ServerHandler.cpp	2009-08-06 12:50:18.000000000 +0200
-***************
-*** 40,43 ****
---- 40,46 ----
-  #include "PacketDataStream.h"
-  #include "NetworkConfig.h"
-+ #include <sys/types.h>
-+ #include <sys/socket.h>
-+ #include <netinet/in.h>
-  
-  ServerHandlerMessageEvent::ServerHandlerMessageEvent(QByteArray &msg, bool flush) : QEvent(static_cast<QEvent::Type>(SERVERSEND_EVENT)) {

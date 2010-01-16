@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mumble
-PORTVERSION=	1.1.8
+PORTVERSION=	1.2.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
@@ -14,12 +14,16 @@ MAINTAINER=	marius@nuenneri.ch
 COMMENT=	A voice chat software primarily intended for use while gaming
 
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex \
-		boost_iostreams:${PORTSDIR}/devel/boost-libs
+		celt.0:${PORTSDIR}/audio/celt \
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
+		boost_iostreams:${PORTSDIR}/devel/boost-libs \
+		boost_python:${PORTSDIR}/devel/boost-python-libs
+BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
 
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui opengl dbus xml sql network linguist_build l10n \
-		moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	gui svg iconengines xml sql network l10n \
+		linguist_build qmake_build moc_build rcc_build uic_build
 
 USE_XORG=	ice
 HAS_CONFIGURE=	yes
@@ -27,10 +31,13 @@ INSTALLS_ICONS=	yes
 
 MAKE_JOBS_SAFE=	yes
 
-CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-update no-g15 \
-		no-portaudio no-pulseaudio no-xevie
+CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-celt no-update \
+		no-g15 no-portaudio no-pulseaudio no-xevie no-11x
 
-MAN1=		mumble.1 mumble-overlay.1
+OPTIONS=	DBUS "Enable D-Bus support" on \
+		BONJOUR "Enable Bonjour support" off \
+
+MAN1=		mumble.1
 
 .include <bsd.port.pre.mk>
 
@@ -38,27 +45,40 @@ MAN1=		mumble.1 mumble-overlay.1
 BROKEN=		Does not compile on FreeBSD < 7.0
 .endif
 
+.if defined(WITHOUT_DBUS)
+CONFIG+=	no-dbus
+.else
+QT_COMPONENTS+=	dbus
+.endif
+
+.if defined(WITHOUT_BONJOUR)
+CONFIG+=	no-bonjour
+.else
+LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
-	@${REINPLACE_CMD} -e 's|qt_ja_jp|qt_ja_JP|' \
-	${WRKSRC}/src/mumble/mumble_qt.qrc ${WRKSRC}/src/mumble/mumble.pro
+	@${REINPLACE_CMD} -E '/qt_[a-z_]+\.qm/I s/qm/ts/g' \
+	${WRKSRC}/src/mumble11x/mumble11x.pro \
+	${WRKSRC}/src/mumble11x/mumble_qt.qrc \
+	${WRKSRC}/src/mumble/mumble.pro \
+	${WRKSRC}/src/mumble/mumble_qt.qrc
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} ${QMAKE} PREFIX=${PREFIX} main.pro "CONFIG+=${CONFIG}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mumble-overlay ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/services
 	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.protocol ${PREFIX}/share/services
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/mumble.xpm ${PREFIX}/share/pixmaps
-	for f in 16 32 48 64; do \
-		${MKDIR} ${PREFIX}/share/icons/hicolor/$${f}x$${f}/apps; \
-		${INSTALL_DATA} ${WRKSRC}/icons/mumble.$${f}x$${f}.png ${PREFIX}/share/icons/hicolor/$${f}x$${f}/apps; \
-	done
-	${INSTALL_MAN} ${WRKSRC}/man/mumble.1 ${MANPREFIX}/man/man1/mumble.1
-	${INSTALL_MAN} ${WRKSRC}/man/mumble-overlay.1 ${MANPREFIX}/man/man1/mumble-overlay.1
+	${MKDIR} ${PREFIX}/share/icons/hicolor/128x128/apps ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/icons/mumble.osx.png ${PREFIX}/share/icons/hicolor/128x128/apps
+	@${MV} ${PREFIX}/share/icons/hicolor/128x128/apps/mumble.osx.png ${PREFIX}/share/icons/hicolor/128x128/apps/mumble.png
+	${INSTALL_DATA} ${WRKSRC}/icons/mumble.svg ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_MAN} ${WRKSRC}/man/mumble.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
