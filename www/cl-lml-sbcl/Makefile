@@ -8,7 +8,6 @@ PORTNAME=	lml
 PORTVERSION=	2.5.7
 PORTREVISION=	1
 CATEGORIES=	www textproc
-MASTER_SITES=	http://files.b9.com/lml/
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 

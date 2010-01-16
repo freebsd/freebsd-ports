@@ -8,9 +8,6 @@ PORTNAME=	split-sequence
 PORTVERSION=	20011114.1
 PORTREVISION=	1
 CATEGORIES=	devel lisp
-MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
-		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
-		http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 

@@ -8,10 +8,6 @@ PORTNAME=	infix
 PORTVERSION=	19960628
 PORTREVISION=	1
 CATEGORIES=	devel lisp
-MASTER_SITES=	http://ftp.linux.org.uk/pub/lisp/cclan/ \
-		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
-		http://thingamy.com/cclan/ \
-		http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 

@@ -8,7 +8,6 @@ PORTNAME=	cl-ppcre
 PORTVERSION=	0.5.4
 PORTREVISION=	3
 CATEGORIES=	textproc lisp
-MASTER_SITES=	http://weitz.de/files/
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
