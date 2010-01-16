@@ -19,7 +19,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 USE_GNOME=	pkgconfig
 USE_PYTHON_BUILD=	2.5+
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus network xml qtestlib \
+QT_COMPONENTS=	corelib dbus network xml qtestlib_build \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
@@ -30,14 +30,6 @@ PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README html
 
 PORTEXAMPLES=	Makefile Makefile.am Makefile.in \
 		accounts call extensions file-transfer roster
-
-OPTIONS=	TESTS	"Run regression tests" off
-
-.include <bsd.port.pre.mk>
-
-.ifdef(WITH_TESTS)
-QT_COMPONENTS+=	qtestlib_build
-.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -E -e 's:(^pkgconfigdir =).*:\1 ${PREFIX}/libdata/pkgconfig:' \
@@ -62,4 +54,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
