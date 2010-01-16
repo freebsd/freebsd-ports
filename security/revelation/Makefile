@@ -18,8 +18,6 @@ LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
-BROKEN=		does not build
-
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_BZIP2=	yes
