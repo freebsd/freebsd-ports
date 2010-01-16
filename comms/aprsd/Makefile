@@ -15,8 +15,7 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Server daemon providing Internet access to APRS packet data
 
 GNU_CONFIGURE=	yes
-PKGMESSAGE=	${FILESDIR}/pkg_message.in
-WRK_PKGMESSAGE=	${WRKDIR}/pkg_message
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -26,16 +25,16 @@ post-patch:
 		    ${WRKSRC}/src/aprsd.cpp
 	@${REINPLACE_CMD} -e 's|%%LOGPATH%%|/var/log/aprsd/|' \
 	    ${WRKSRC}/src/utils.cpp
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 	    ${WRKSRC}/Makefile
+
 pre-install:
 	@${MKDIR} ${PREFIX}/etc/aprsd
 	@${MKDIR} "/var/log/aprsd"
-	@${CP} ${PKGMESSAGE} ${WRK_PKGMESSAGE}
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-	    ${WRK_PKGMESSAGE}
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 post-install:
 	@cd ${WRKSRC}/admin
 .for	f in INIT.TNC RESTORE.TNC aprsd.conf welcome.txt user.deny
@@ -53,6 +52,6 @@ post-install:
 	@${ECHO} docs are in ${PREFIX}/share/doc/aprsd
 	@${ECHO}
 .endif
-	@${CAT} ${WRK_PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
