@@ -26,7 +26,7 @@ PORTDOCS=	Makefile make.lisp readme.html readme.lml
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/lml.asd ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.asd ${ASDF_PATHNAME}
 	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
