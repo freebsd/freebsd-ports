@@ -1,4 +1,3 @@
-%%LIB32DIR%%/common-lisp/alexandria/alexandria-tests.asd
 %%LIB32DIR%%/common-lisp/alexandria/alexandria.asd
 %%LIB32DIR%%/common-lisp/alexandria/arrays.lisp
 %%LIB32DIR%%/common-lisp/alexandria/binding.lisp
@@ -18,7 +17,6 @@
 %%LIB32DIR%%/common-lisp/alexandria/symbols.lisp
 %%LIB32DIR%%/common-lisp/alexandria/tests.lisp
 %%LIB32DIR%%/common-lisp/alexandria/types.lisp
-%%LIB32DIR%%/common-lisp/system-registry/alexandria-tests.asd
 %%LIB32DIR%%/common-lisp/system-registry/alexandria.asd
 %%PORTDOCS%%%%DOCSDIR%%/alexandria.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
