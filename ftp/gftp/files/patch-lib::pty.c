@@ -1,6 +1,6 @@
 --- lib/pty.c.orig	Mon Nov 15 18:09:32 2004
 +++ lib/pty.c	Mon Nov 15 18:18:21 2004
-@@ -59,6 +59,49 @@
+@@ -59,6 +59,57 @@
    return (new_fds);
  }
  
@@ -8,10 +8,18 @@
 +
 +#ifdef HAVE_PTY_H
 +#include <pty.h>
++#ifdef HAVE_UTMPX_H
++#include <utmpx.h>
++#else
 +#include <utmp.h> /* for login_tty */
++#endif
 +#elif HAVE_LIBUTIL_H
 +#include <libutil.h>
++#ifdef HAVE_UTMPX_H
++#include <utmpx.h>
++#else
 +#include <utmp.h> /* for login_tty */
++#endif
 +#else
 +extern int openpty(int *amaster, int *aslave, char *name, struct termios *termp, struct winsize * winp);
 +extern int login_tty(int fd);
