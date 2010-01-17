@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tokyotyrant
-PORTVERSION=	1.1.33
-PORTREVISION=	2
+PORTVERSION=	1.1.37
 CATEGORIES=	databases
-MASTER_SITES=	SF/tokyocabinet/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://1978th.net/${PORTNAME}/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Network interface of Tokyo Cabinet
