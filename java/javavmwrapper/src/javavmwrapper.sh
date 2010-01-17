@@ -532,22 +532,25 @@ setJavaHome() {
         for version in ${JAVA_VERSION}; do
             case "${version}" in
                 1.1+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.1 1.2 1.3 1.4 1.5 1.6"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.1 1.2 1.3 1.4 1.5 1.6 1.7"
                     ;;
                 1.2+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.2 1.3 1.4 1.5 1.6"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.2 1.3 1.4 1.5 1.6 1.7"
                     ;;
                 1.3+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.3 1.4 1.5 1.6"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.3 1.4 1.5 1.6 1.7"
                     ;;
                 1.4+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.4 1.5 1.6"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.4 1.5 1.6 1.7"
                     ;;
                 1.5+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.5 1.6"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.5 1.6 1.7"
                     ;;
                 1.6+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6 1.7"
+                    ;;
+                1.6+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.7"
                     ;;
                 *)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} ${version}"
@@ -565,7 +568,8 @@ setJavaHome() {
         # Respect JAVA_VERSION
         if [ -n "${JAVA_VERSION}" ]; then
             _JAVAVM_VERSION=`echo ${_JAVAVM_VM} | \
-                sed -e 's|[^0-9]*\([0-9]\)\.\([0-9]\)\.[0-9]|\1.\2|'`
+                sed -e 's|^[^0-9]*\([0-9]\)\.\([0-9]\)\.[0-9]$|\1.\2|' \
+		    -e 's|^[^0-9]*\([0-9]\)$|1.\1|'`
             for _JAVAVM_REQUESTED_VERSION in ${JAVA_VERSION}; do
                 if [ "${_JAVAVM_VERSION}" = "${_JAVAVM_REQUESTED_VERSION}" ]; then
                     _JAVAVM_VERSION=
