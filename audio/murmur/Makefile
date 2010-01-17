@@ -7,6 +7,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	SF/mumble/Mumble/${PORTVERSION}
 DISTNAME=	mumble-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Murmur is the server component of Mumble
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
-LIB_DEPENDS=	protobuf.4:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	protobuf.6:${PORTSDIR}/devel/protobuf
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build corelib network xml sql
