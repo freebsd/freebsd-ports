@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	1.02
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A persistent key-value database with built-in net interface
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 CFLAGS+=	-I${LOCALBASE}/include
 
+USE_GMAKE=	yes
 USE_RC_SUBR=	redis.sh
 BIN_FILES=	redis-server redis-benchmark redis-cli
 
@@ -44,6 +43,14 @@ SUB_LIST+=	PORTNAME="${PORTNAME}" \
 	REDIS_LOGDIR="${REDIS_LOGDIR}" \
 	REDIS_DBDIR="${REDIS_DBDIR}" \
 	REDIS_RUNDIR="${REDIS_RUNDIR}"
+
+PATTERN=	'10d;13s|$$$$(ARCH) ||'
+.if !defined(WITH_DEBUG)
+PATTERN:=	${PATTERN:S/'$/;14s|^|\#|'/}
+.endif
+
+post-patch:
+	${REINPLACE_CMD} ${PATTERN} ${WRKSRC}/Makefile
 
 post-build:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
