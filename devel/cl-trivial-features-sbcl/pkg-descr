@@ -1,0 +1,12 @@
+trivial-features ensures consistent *FEATURES* across multiple
+Common Lisp implementations.
+
+For example, on MacOS X platforms, while most Lisps push :DARWIN
+to *FEATURES*, CLISP and Allegro push :MACOS and :MACOSX instead,
+respectively. Some Lisps might not push any feature suggesting MacOS
+X at all. trivial-features will make sure all Lisps will have :DARWIN
+in the *FEATURES* list when running on MacOS X.
+
+This package is compiled with SBCL.
+
+WWW: http://www.cliki.net/trivial-features
