@@ -1,0 +1,3 @@
+%%LIB32DIR%%/common-lisp/trivial-gray-streams/sbclfasl/mixin.fasl
+%%LIB32DIR%%/common-lisp/trivial-gray-streams/sbclfasl/package.fasl
+@dirrm %%LIB32DIR%%/common-lisp/trivial-gray-streams/sbclfasl

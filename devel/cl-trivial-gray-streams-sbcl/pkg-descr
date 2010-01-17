@@ -1,0 +1,18 @@
+trivial-gray-streams is a trivial library which provides an extremely
+thin compatibility layer for Gray streams.
+
+From David N. Gray's STREAM-DEFINITION-BY-USER proposal:
+
+"Common Lisp does not provide a standard way for users to define
+their own streams for use by the standard I/O functions. This impedes
+the development of window systems for Common Lisp because, while
+there are standard Common Lisp I/O functions and there are beginning
+to be standard window systems, there is no portable way to connect
+them together to make a portable Common Lisp window system.  There
+are also many applications where users might want to define their
+own filter streams for doing things like printer device control,
+report formatting, character code translation, or encryption/decryption."
+
+This package is compiled with SBCL.
+
+WWW: http://www.cliki.net/trivial-gray-streams

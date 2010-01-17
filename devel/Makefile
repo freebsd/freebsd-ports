@@ -181,6 +181,9 @@
     SUBDIR += cl-trivial-features
     SUBDIR += cl-trivial-features-clisp
     SUBDIR += cl-trivial-features-sbcl
+    SUBDIR += cl-trivial-gray-streams
+    SUBDIR += cl-trivial-gray-streams-clisp
+    SUBDIR += cl-trivial-gray-streams-sbcl
     SUBDIR += cl-uffi
     SUBDIR += cl-uffi-sbcl
     SUBDIR += clang
