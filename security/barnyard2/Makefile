@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	barnyard2
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.securixlive.com/download/barnyard2/
 
@@ -39,6 +39,10 @@ USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e "s,644,755,g" ${WRKSRC}/Makefile.in \
+		${WRKSRC}/configure
+
 post-install:
 
 .for f in barnyard2.conf
@@ -48,7 +52,6 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-#	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 

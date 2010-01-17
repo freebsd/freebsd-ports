@@ -1,16 +1,3 @@
-************************************************************************
-**************************WARNING****WARNING****************************
-**************************WARNING****WARNING****************************
-
-This version of barnyard2 does not correctly parse the waldo file.  As a
-result, each time barnyard2 is restarted, all alerts remaining in the 
-snort log directory will be reinserted into the database.  If this is a
-a problem for you, consider using security/barnyard2-devel, which has
-resolved this problem.
-
-**************************WARNING****WARNING****************************
-**************************WARNING****WARNING****************************
- 
 Read the notes in the barnyard2.conf file for how to configure 
 %%PREFIX%%/etc/barnyard2.conf after installation.  For addtional information
 see the Securixlive FAQ at http://www.securixlive.com/barnyard2/faq.php.
