@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
-MAKE_JOBS_SAFE=		yes
+MAKE_JOBS_UNSAFE=	yes
 
 USE_GMAKE=		yes
 INSTALL_TARGET=		install install-manx
