@@ -178,6 +178,7 @@
     SUBDIR += cl-split-sequence
     SUBDIR += cl-split-sequence-clisp
     SUBDIR += cl-split-sequence-sbcl
+    SUBDIR += cl-trivial-features
     SUBDIR += cl-uffi
     SUBDIR += cl-uffi-sbcl
     SUBDIR += clang
