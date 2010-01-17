@@ -6,53 +6,45 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.9.1s.20080620
-PORTREVISION=	5
+PORTVERSION=	0.12.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://bellard.org/qemu/:release \
-		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
-		${MASTER_SITE_LOCAL}:snapshot
-MASTER_SITE_SUBDIR=	nox/:snapshot
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}:release \
+		${MASTER_SITE_LOCAL}:snapshot \
+		http://people.freebsd.org/~nox/qemu/:snapshot
+MASTER_SITE_SUBDIR=	qemu/:release nox/:snapshot
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-2008-06-20_19
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 DIST_SUBDIR=	qemu
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development snapshot
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-PATCH_STRIP=	-lp1
+PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-# comment this if you really want to build this version:
-IGNORE=		is currently an older snapshot than emulators/qemu
-
-OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
-		RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
+OPTIONS=	RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
 		SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
 		PCAP "pcap dependency (networking with bpf)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
-		ALL_TARGETS "Also build dyngen targets (requires gcc34)" On
+		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
+		ALL_TARGETS "Also build non-x86 and user targets" On
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_ALL_TARGETS)
-CONFIGURE_ARGS+=	--disable-gcc-check --target-list=i386-softmmu,sparc-softmmu,x86_64-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,arm-softmmu,m68k-softmmu,cris-softmmu
-PLIST_SUB+=    DYNGEN="@comment "
+CONFIGURE_ARGS+=       --target-list=i386-softmmu,x86_64-softmmu
+PLIST_SUB+=    ALLTARGETS="@comment "
 .else
-USE_GCC=	3.4
-PLIST_SUB+=    DYNGEN=""
+PLIST_SUB+=    ALLTARGETS=""
 .endif
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
@@ -60,7 +52,7 @@ CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 
 .if defined(WITHOUT_SDL)
-CONFIGURE_ARGS+=	--disable-sdl --disable-gfx-check
+CONFIGURE_ARGS+=	--disable-sdl
 .else
 USE_SDL=	sdl
 .endif
@@ -75,18 +67,17 @@ LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-pcap
 .endif
 
+.if defined(WITH_ADD_AUDIO)
+CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
+.endif
+
 .if defined(WITH_SAMBA)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3
 .endif
 
-.if defined(WITH_KQEMU)
-BUILD_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
-.else
-CONFIGURE_ARGS+=	--disable-kqemu
-.endif
-
 .if defined(NOPORTDOCS)
 MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
+CONFIGURE_ARGS+=	--disable-docs
 .else
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
@@ -94,11 +85,6 @@ BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	ARCH=x86_64
 .endif
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/kqemu
-	@${TOUCH} ${WRKSRC}/kqemu/Makefile
-	@${ECHO} all: > ${WRKSRC}/kqemu/Makefile.freebsd
 
 pre-patch:
 	@for A in ${ONLY_FOR_ARCHS}; do \

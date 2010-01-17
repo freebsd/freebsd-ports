@@ -1,15 +1,26 @@
+Index: qemu/Makefile
+@@ -16,6 +16,8 @@
+ 
+ VPATH=$(SRC_PATH):$(SRC_PATH)/hw
+ 
++QEMU_CFLAGS+= -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\" -I${LOCALBASE}/include -DPREFIX=\"${PREFIX}\"
++
+ LIBS+=-lz $(LIBS_TOOLS)
+ 
+ ifdef BUILD_DOCS
 Index: qemu/Makefile.target
-@@ -179,7 +179,7 @@
+@@ -6,6 +6,7 @@
+ TARGET_PATH=$(SRC_PATH)/target-$(TARGET_BASE_ARCH)
+ VPATH=$(SRC_PATH):$(TARGET_PATH):$(SRC_PATH)/hw
+ QEMU_CFLAGS+= -I.. -I$(TARGET_PATH) -DNEED_CPU_H
++QEMU_CFLAGS+= -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\" -I${LOCALBASE}/include -DPREFIX=\"${PREFIX}\"
  
- #########################################################
- 
--CPPFLAGS+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
-+CPPFLAGS+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\" -I${LOCALBASE}/include -DPREFIX=\"${PREFIX}\"
- LIBS+=-lm
- ifndef CONFIG_USER_ONLY
- LIBS+=-lz
-Index: qemu/vl.c
-@@ -133,10 +133,12 @@
+ ifdef CONFIG_USER_ONLY
+ # user emulator name
+Index: qemu/net.h
+@@ -99,12 +99,14 @@
+ int slirp_is_inited(void);
+ void net_client_check(void);
  
 -#define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
 -#define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
@@ -20,7 +31,19 @@ Index: qemu/vl.c
  #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
  #else
  #define SMBD_COMMAND "/usr/sbin/smbd"
-+#endif
  #endif
++#endif
  
- //#define DEBUG_UNUSED_IOPORT
+ #endif
+Index: qemu/net/tap.h
+@@ -29,8 +29,8 @@
+ #include "qemu-common.h"
+ #include "qemu-option.h"
+ 
+-#define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
+-#define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
++#define DEFAULT_NETWORK_SCRIPT PREFIX "/etc/qemu-ifup"
++#define DEFAULT_NETWORK_DOWN_SCRIPT PREFIX "/etc/qemu-ifdown"
+ 
+ int net_init_tap(QemuOpts *opts, Monitor *mon, const char *name, VLANState *vlan);
+ 
