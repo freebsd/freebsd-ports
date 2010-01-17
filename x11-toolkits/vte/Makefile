@@ -38,6 +38,10 @@ OPTIONS=	GLX	"Enable support for DRI/GLX rendering" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 900007
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
+.endif
+
 .if defined(WITH_GLX) && !defined(MASTERDIR)
 CONFIGURE_ARGS+=	--with-glX
 USE_GL=			yes
