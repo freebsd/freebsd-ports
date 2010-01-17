@@ -9,7 +9,8 @@ name="popa3d"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/libexec/${name}"
-flags="-D"
+: ${popa3d_enable="NO"}
+: ${popa3d_flags="-D"}
 
 load_rc_config $name
 run_rc_command "$1"
