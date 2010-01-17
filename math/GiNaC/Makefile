@@ -37,13 +37,12 @@ LDFLAGS=	-L${LOCALBASE}/lib
 BROKEN=		Does not build on alpha
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
-
 .if ${OSVERSION} < 700042
 USE_GCC=	4.2+
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
 .if ${ARCH} != "i386"
 	@${REINPLACE_CMD} -e 's|unsigned|size_t|g' ${WRKSRC}/ginac/parser/parser.cpp
 .endif
