@@ -39,9 +39,8 @@ USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e "s,644,755,g" ${WRKSRC}/Makefile.in \
-		${WRKSRC}/configure
+pre-install:
+	${CHMOD} 744 ${WRKSRC}/install-sh
 
 post-install:
 
