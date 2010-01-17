@@ -1,52 +1,5 @@
 bin/yacas
-bin/yacas_client
 bin/ytxt2tex
-lib/libcyacas.a
-lib/libcyacas.la
-lib/libcyacas.so
-lib/libcyacas.so.0
-%%GMP%%lib/libgmpnumbers.a
-%%GMP%%lib/libgmpnumbers.la
-%%GMP%%lib/libgmpnumbers.so
-%%GMP%%lib/libgmpnumbers.so.0
-lib/libyacas.a
-lib/libyacas.la
-lib/libyacas.so
-lib/libyacas.so.0
-%%NOGMP%%lib/libyacasnumbers.a
-%%NOGMP%%lib/libyacasnumbers.la
-%%NOGMP%%lib/libyacasnumbers.so
-%%NOGMP%%lib/libyacasnumbers.so.0
-lib/libyacasplatform.a
-lib/libyacasplatform.la
-lib/libyacasplatform.so
-lib/libyacasplatform.so.0
-lib/yacas/example.a
-lib/yacas/example.la
-lib/yacas/example.so
-lib/yacas/filescanner.a
-lib/yacas/filescanner.la
-lib/yacas/filescanner.so
-lib/yacas/forth.a
-lib/yacas/forth.la
-lib/yacas/forth.so
-lib/yacas/libmath.a
-lib/yacas/libmath.la
-lib/yacas/libmath.so
-lib/yacas/libmath.so.0
-lib/yacas/pcre.a
-lib/yacas/pcre.la
-lib/yacas/pcre.so
-%%X11%%lib/yacas/opengl.a
-%%X11%%lib/yacas/opengl.la
-%%X11%%lib/yacas/opengl.so
-lib/yacas/yacas_gsl.a
-lib/yacas/yacas_gsl.la
-lib/yacas/yacas_gsl.so
-%%DATADIR%%/addons/editvi.ys
-%%DATADIR%%/addons/editvi.ys.def
-%%DATADIR%%/addons/unix.ys
-%%DATADIR%%/addons/unix.ys.def
 %%DATADIR%%/array.rep/code.ys
 %%DATADIR%%/array.rep/code.ys.def
 %%DATADIR%%/assoc.rep/code.ys
@@ -55,16 +8,6 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/base.rep/math.ys.def
 %%DATADIR%%/c_form.rep/code.ys
 %%DATADIR%%/c_form.rep/code.ys.def
-%%DATADIR%%/codecheck.rep/codetransform.ys
-%%DATADIR%%/codecheck.rep/commonlispreader.ys
-%%DATADIR%%/codecheck.rep/cplusplusreader.ys
-%%DATADIR%%/codecheck.rep/genericparser.ys
-%%DATADIR%%/codecheck.rep/interface.ys
-%%DATADIR%%/codecheck.rep/interface.ys.def
-%%DATADIR%%/codecheck.rep/process.ys
-%%DATADIR%%/codecheck.rep/process.ys.def
-%%DATADIR%%/compile.rep/compilecpp.ys
-%%DATADIR%%/compile.rep/compilecpp.ys.def
 %%DATADIR%%/complex.rep/code.ys
 %%DATADIR%%/complex.rep/code.ys.def
 %%DATADIR%%/complex.rep/om.ys
@@ -74,122 +17,103 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/controlflow.rep/code.ys
 %%DATADIR%%/controlflow.rep/code.ys.def
 %%DATADIR%%/corefunctions.ys
-%%DATADIR%%/cstubgen.rep/code.ys
-%%DATADIR%%/cstubgen.rep/code.ys.def
 %%DATADIR%%/debug.rep/code.ys
 %%DATADIR%%/debug.rep/code.ys.def
 %%DATADIR%%/deffunc.rep/code.ys
 %%DATADIR%%/deffunc.rep/code.ys.def
 %%DATADIR%%/deriv.rep/code.ys
 %%DATADIR%%/deriv.rep/code.ys.def
-%%DATADIR%%/documentation/Algo.html
-%%DATADIR%%/documentation/Algochapter1.html
-%%DATADIR%%/documentation/Algochapter2.html
-%%DATADIR%%/documentation/Algochapter3.html
-%%DATADIR%%/documentation/Algochapter4.html
-%%DATADIR%%/documentation/Algochapter5.html
-%%DATADIR%%/documentation/Algochapter6.html
-%%DATADIR%%/documentation/Algochapter7.html
-%%DATADIR%%/documentation/Algochapter8.html
-%%DATADIR%%/documentation/Algochapters.html
-%%DATADIR%%/documentation/Algomanual.html
-%%DATADIR%%/documentation/LispProgramming.html
-%%DATADIR%%/documentation/LispProgrammingchapter1.html
-%%DATADIR%%/documentation/LispProgrammingchapter2.html
-%%DATADIR%%/documentation/LispProgrammingchapter3.html
-%%DATADIR%%/documentation/LispProgrammingchapter4.html
-%%DATADIR%%/documentation/LispProgrammingchapter5.html
-%%DATADIR%%/documentation/LispProgrammingchapters.html
-%%DATADIR%%/documentation/LispProgrammingmanual.html
-%%DATADIR%%/documentation/NewDesign.html
-%%DATADIR%%/documentation/NewDesignchapter1.html
-%%DATADIR%%/documentation/NewDesignchapter10.html
-%%DATADIR%%/documentation/NewDesignchapter2.html
-%%DATADIR%%/documentation/NewDesignchapter3.html
-%%DATADIR%%/documentation/NewDesignchapter4.html
-%%DATADIR%%/documentation/NewDesignchapter5.html
-%%DATADIR%%/documentation/NewDesignchapter6.html
-%%DATADIR%%/documentation/NewDesignchapter7.html
-%%DATADIR%%/documentation/NewDesignchapter8.html
-%%DATADIR%%/documentation/NewDesignchapter9.html
-%%DATADIR%%/documentation/NewDesignchapters.html
-%%DATADIR%%/documentation/NewDesignmanual.html
-%%DATADIR%%/documentation/books.html
-%%DATADIR%%/documentation/coding.html
-%%DATADIR%%/documentation/codingchapter1.html
-%%DATADIR%%/documentation/codingchapter2.html
-%%DATADIR%%/documentation/codingchapter3.html
-%%DATADIR%%/documentation/codingchapter4.html
-%%DATADIR%%/documentation/codingchapter5.html
-%%DATADIR%%/documentation/codingchapter6.html
-%%DATADIR%%/documentation/codingchapter7.html
-%%DATADIR%%/documentation/codingchapter8.html
-%%DATADIR%%/documentation/codingchapter9.html
-%%DATADIR%%/documentation/codingchapters.html
-%%DATADIR%%/documentation/codingmanual.html
-%%DATADIR%%/documentation/essays.html
-%%DATADIR%%/documentation/essayschapter1.html
-%%DATADIR%%/documentation/essayschapter10.html
-%%DATADIR%%/documentation/essayschapter11.html
-%%DATADIR%%/documentation/essayschapter12.html
-%%DATADIR%%/documentation/essayschapter2.html
-%%DATADIR%%/documentation/essayschapter3.html
-%%DATADIR%%/documentation/essayschapter4.html
-%%DATADIR%%/documentation/essayschapter5.html
-%%DATADIR%%/documentation/essayschapter6.html
-%%DATADIR%%/documentation/essayschapter7.html
-%%DATADIR%%/documentation/essayschapter8.html
-%%DATADIR%%/documentation/essayschapter9.html
-%%DATADIR%%/documentation/essayschapters.html
-%%DATADIR%%/documentation/essaysmanual.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter1.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter2.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter3.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter4.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter5.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter6.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter7.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapter8.html
+%%PORTDOCS%%%%DOCSDIR%%/Algochapters.html
+%%PORTDOCS%%%%DOCSDIR%%/Algomanual.html
+%%PORTDOCS%%%%DOCSDIR%%/books.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter1.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter2.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter3.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter4.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter5.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter6.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter7.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter8.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapter9.html
+%%PORTDOCS%%%%DOCSDIR%%/codingchapters.html
+%%PORTDOCS%%%%DOCSDIR%%/codingmanual.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter1.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter2.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter3.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter4.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter5.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter6.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter7.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapter8.html
+%%PORTDOCS%%%%DOCSDIR%%/essayschapters.html
+%%PORTDOCS%%%%DOCSDIR%%/essaysmanual.html
+%%PORTDOCS%%%%DOCSDIR%%/introchapter1.html
+%%PORTDOCS%%%%DOCSDIR%%/introchapter2.html
+%%PORTDOCS%%%%DOCSDIR%%/introchapter3.html
+%%PORTDOCS%%%%DOCSDIR%%/introchapter4.html
+%%PORTDOCS%%%%DOCSDIR%%/introchapter5.html
+%%PORTDOCS%%%%DOCSDIR%%/introchapter6.html
+%%PORTDOCS%%%%DOCSDIR%%/introchapters.html
+%%PORTDOCS%%%%DOCSDIR%%/intromanual.html
+%%PORTDOCS%%%%DOCSDIR%%/manicon.html
+%%PORTDOCS%%%%DOCSDIR%%/ref.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter1.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter10.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter11.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter12.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter13.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter14.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter15.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter16.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter17.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter18.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter19.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter2.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter20.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter21.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter22.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter23.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter24.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter25.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter26.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter27.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter28.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter29.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter3.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter30.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter31.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter32.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter4.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter5.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter6.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter7.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter8.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapter9.html
+%%PORTDOCS%%%%DOCSDIR%%/refchapters.html
+%%PORTDOCS%%%%DOCSDIR%%/refmanual.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter1.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter10.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter2.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter3.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter4.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter5.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter6.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter7.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter8.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapter9.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogchapters.html
+%%PORTDOCS%%%%DOCSDIR%%/refprogmanual.html
+%%PORTDOCS%%%%DOCSDIR%%/yacaslogo.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/documentation/hints
-%%DATADIR%%/documentation/intro.html
-%%DATADIR%%/documentation/introchapter1.html
-%%DATADIR%%/documentation/introchapter2.html
-%%DATADIR%%/documentation/introchapter3.html
-%%DATADIR%%/documentation/introchapter4.html
-%%DATADIR%%/documentation/introchapters.html
-%%DATADIR%%/documentation/intromanual.html
-%%DATADIR%%/documentation/manicon.html
-%%DATADIR%%/documentation/ref.html
-%%DATADIR%%/documentation/refchapter1.html
-%%DATADIR%%/documentation/refchapter10.html
-%%DATADIR%%/documentation/refchapter11.html
-%%DATADIR%%/documentation/refchapter12.html
-%%DATADIR%%/documentation/refchapter13.html
-%%DATADIR%%/documentation/refchapter14.html
-%%DATADIR%%/documentation/refchapter15.html
-%%DATADIR%%/documentation/refchapter16.html
-%%DATADIR%%/documentation/refchapter17.html
-%%DATADIR%%/documentation/refchapter18.html
-%%DATADIR%%/documentation/refchapter19.html
-%%DATADIR%%/documentation/refchapter2.html
-%%DATADIR%%/documentation/refchapter20.html
-%%DATADIR%%/documentation/refchapter21.html
-%%DATADIR%%/documentation/refchapter22.html
-%%DATADIR%%/documentation/refchapter23.html
-%%DATADIR%%/documentation/refchapter3.html
-%%DATADIR%%/documentation/refchapter4.html
-%%DATADIR%%/documentation/refchapter5.html
-%%DATADIR%%/documentation/refchapter6.html
-%%DATADIR%%/documentation/refchapter7.html
-%%DATADIR%%/documentation/refchapter8.html
-%%DATADIR%%/documentation/refchapter9.html
-%%DATADIR%%/documentation/refchapters.html
-%%DATADIR%%/documentation/refmanual.html
-%%DATADIR%%/documentation/refprog.html
-%%DATADIR%%/documentation/refprogchapter1.html
-%%DATADIR%%/documentation/refprogchapter10.html
-%%DATADIR%%/documentation/refprogchapter2.html
-%%DATADIR%%/documentation/refprogchapter3.html
-%%DATADIR%%/documentation/refprogchapter4.html
-%%DATADIR%%/documentation/refprogchapter5.html
-%%DATADIR%%/documentation/refprogchapter6.html
-%%DATADIR%%/documentation/refprogchapter7.html
-%%DATADIR%%/documentation/refprogchapter8.html
-%%DATADIR%%/documentation/refprogchapter9.html
-%%DATADIR%%/documentation/refprogchapters.html
-%%DATADIR%%/documentation/refprogmanual.html
 %%DATADIR%%/documentation/yacaslogo.gif
 %%DATADIR%%/example.rep/code.ys
 %%DATADIR%%/example.rep/code.ys.def
@@ -208,11 +132,9 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/factors.rep/binaryfactors.ys.def
 %%DATADIR%%/factors.rep/code.ys
 %%DATADIR%%/factors.rep/code.ys.def
-%%DATADIR%%/fakedb.rep/code.ys
-%%DATADIR%%/fakedb.rep/code.ys.def
 %%DATADIR%%/functional.rep/code.ys
 %%DATADIR%%/functional.rep/code.ys.def
-%%DATADIR%%/glview.ys
+%%DATADIR%%/functional.rep/om.ys
 %%DATADIR%%/html.rep/code.ys
 %%DATADIR%%/html.rep/code.ys.def
 %%DATADIR%%/include/GPL_stuff.h
@@ -227,18 +149,11 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/include/compressedfiles.h
 %%DATADIR%%/include/core_yacasmain.h
 %%DATADIR%%/include/corefunctions.h
-%%DATADIR%%/include/ctokenizer.h
-%%DATADIR%%/include/cyacas.h
 %%DATADIR%%/include/debugmem.h
 %%DATADIR%%/include/deffile.h
 %%DATADIR%%/include/deffile.inl
-%%DATADIR%%/include/elfdll.h
-%%DATADIR%%/include/epoccli.h
-%%DATADIR%%/include/epocclsv.h
-%%DATADIR%%/include/epocserv.h
 %%DATADIR%%/include/errors.h
 %%DATADIR%%/include/evalfunc.h
-%%DATADIR%%/include/exedll.h
 %%DATADIR%%/include/filescanner.h
 %%DATADIR%%/include/genericobject.h
 %%DATADIR%%/include/genericstructs.h
@@ -259,7 +174,6 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/include/lispobject.h
 %%DATADIR%%/include/lispobject.inl
 %%DATADIR%%/include/lispparser.h
-%%DATADIR%%/include/lispplugin.h
 %%DATADIR%%/include/lispstring.h
 %%DATADIR%%/include/lispstring.inl
 %%DATADIR%%/include/lispuserfunc.h
@@ -275,11 +189,9 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/include/patternclass.h
 %%DATADIR%%/include/patterns.h
 %%DATADIR%%/include/plat/linux32/lisptype.h
-%%DATADIR%%/include/plat/linux32/platdll.h
 %%DATADIR%%/include/plat/linux32/platfileio.h
 %%DATADIR%%/include/plat/linux32/stubs.inl
 %%DATADIR%%/include/platmath.h
-%%DATADIR%%/include/plugins_available.h
 %%DATADIR%%/include/refcount.h
 %%DATADIR%%/include/standard.h
 %%DATADIR%%/include/standard.inl
@@ -289,14 +201,8 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/include/stubs.h
 %%DATADIR%%/include/substitute.h
 %%DATADIR%%/include/tokenizer.h
-%%DATADIR%%/include/unipoly.h
 %%DATADIR%%/include/unixcommandline.h
 %%DATADIR%%/include/version.h
-%%DATADIR%%/include/vm.h
-%%DATADIR%%/include/win32dll.h
-%%DATADIR%%/include/win32dllresource.h
-%%DATADIR%%/include/win32yacasdll.h
-%%DATADIR%%/include/win32yacasdllresource.h
 %%DATADIR%%/include/xmltokenizer.h
 %%DATADIR%%/include/yacas.h
 %%DATADIR%%/include/yacasbase.h
@@ -351,10 +257,6 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/openmath.rep/code.ys.def
 %%DATADIR%%/orthopoly.rep/code.ys
 %%DATADIR%%/orthopoly.rep/code.ys.def
-%%DATADIR%%/osdep.rep/code.ys
-%%DATADIR%%/osdep.rep/code.ys.def
-%%DATADIR%%/osdep.rep/unix.ys
-%%DATADIR%%/osdep.rep/win32.ys
 %%DATADIR%%/packages.ys
 %%DATADIR%%/padic.rep/code.ys
 %%DATADIR%%/padic.rep/code.ys.def
@@ -456,71 +358,62 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/univar.rep/sparse.ys.def
 %%DATADIR%%/univar.rep/sturm.ys
 %%DATADIR%%/univar.rep/sturm.ys.def
-%%DATADIR%%/yacas-gmtplot2d.sh
-%%DATADIR%%/yacas-gmtplot3d.sh
 %%DATADIR%%/yacasinit.ys
-@dirrm %%DATADIR%%/univar.rep
-@dirrm %%DATADIR%%/trigsimp.rep
-@dirrm %%DATADIR%%/transforms.rep
-@dirrm %%DATADIR%%/texform.rep
-@dirrm %%DATADIR%%/testers.rep
-@dirrm %%DATADIR%%/tensor.rep
-@dirrm %%DATADIR%%/sums.rep
-@dirrm %%DATADIR%%/substitute.rep
-@dirrm %%DATADIR%%/stubs.rep
-@dirrm %%DATADIR%%/stdfuncs.rep
-@dirrm %%DATADIR%%/stats.rep
-@dirrm %%DATADIR%%/statistics.rep
-@dirrm %%DATADIR%%/specfunc.rep
-@dirrm %%DATADIR%%/solve.rep
-@dirrm %%DATADIR%%/simplify.rep
-@dirrm %%DATADIR%%/random.rep
-@dirrm %%DATADIR%%/radsimp.rep
-@dirrm %%DATADIR%%/rabinmiller.rep
-@dirrm %%DATADIR%%/pslq.rep
-@dirrm %%DATADIR%%/probability.rep
-@dirrm %%DATADIR%%/predicates.rep
-@dirrm %%DATADIR%%/plots.rep
-@dirrm %%DATADIR%%/patterns.rep
-@dirrm %%DATADIR%%/padic.rep
-@dirrm %%DATADIR%%/osdep.rep
-@dirrm %%DATADIR%%/orthopoly.rep
-@dirrm %%DATADIR%%/openmath.rep
-@dirrm %%DATADIR%%/odesolver.rep
-@dirrm %%DATADIR%%/numbers.rep
-@dirrm %%DATADIR%%/newly.rep
-@dirrm %%DATADIR%%/multivar.rep
-@dirrm %%DATADIR%%/manmake
-@dirrm %%DATADIR%%/logic.rep
-@dirrm %%DATADIR%%/localrules.rep
-@dirrm %%DATADIR%%/lists.rep
-@dirrm %%DATADIR%%/linalg.rep
-@dirrm %%DATADIR%%/limit.rep
-@dirrm %%DATADIR%%/io.rep
-@dirrm %%DATADIR%%/integrate.rep
+@dirrm %%DATADIR%%/array.rep
+@dirrm %%DATADIR%%/assoc.rep
+@dirrm %%DATADIR%%/base.rep
+@dirrm %%DATADIR%%/c_form.rep
+@dirrm %%DATADIR%%/complex.rep
+@dirrm %%DATADIR%%/constants.rep
+@dirrm %%DATADIR%%/controlflow.rep
+@dirrm %%DATADIR%%/debug.rep
+@dirrm %%DATADIR%%/deffunc.rep
+@dirrm %%DATADIR%%/deriv.rep
+@dirrm %%DATADIR%%/documentation
+@dirrm %%DATADIR%%/example.rep
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/factors.rep
+@dirrm %%DATADIR%%/functional.rep
+@dirrm %%DATADIR%%/html.rep
 @dirrm %%DATADIR%%/include/plat/linux32
 @dirrm %%DATADIR%%/include/plat
 @dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/html.rep
-@dirrm %%DATADIR%%/functional.rep
-@dirrm %%DATADIR%%/fakedb.rep
-@dirrm %%DATADIR%%/factors.rep
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/example.rep
-@dirrm %%DATADIR%%/documentation
-@dirrm %%DATADIR%%/deriv.rep
-@dirrm %%DATADIR%%/deffunc.rep
-@dirrm %%DATADIR%%/debug.rep
-@dirrm %%DATADIR%%/cstubgen.rep
-@dirrm %%DATADIR%%/controlflow.rep
-@dirrm %%DATADIR%%/constants.rep
-@dirrm %%DATADIR%%/complex.rep
-@dirrm %%DATADIR%%/compile.rep
-@dirrm %%DATADIR%%/codecheck.rep
-@dirrm %%DATADIR%%/c_form.rep
-@dirrm %%DATADIR%%/base.rep
-@dirrm %%DATADIR%%/assoc.rep
-@dirrm %%DATADIR%%/array.rep
-@dirrm %%DATADIR%%/addons
+@dirrm %%DATADIR%%/integrate.rep
+@dirrm %%DATADIR%%/io.rep
+@dirrm %%DATADIR%%/limit.rep
+@dirrm %%DATADIR%%/linalg.rep
+@dirrm %%DATADIR%%/lists.rep
+@dirrm %%DATADIR%%/localrules.rep
+@dirrm %%DATADIR%%/logic.rep
+@dirrm %%DATADIR%%/manmake
+@dirrm %%DATADIR%%/multivar.rep
+@dirrm %%DATADIR%%/newly.rep
+@dirrm %%DATADIR%%/numbers.rep
+@dirrm %%DATADIR%%/odesolver.rep
+@dirrm %%DATADIR%%/openmath.rep
+@dirrm %%DATADIR%%/orthopoly.rep
+@dirrm %%DATADIR%%/padic.rep
+@dirrm %%DATADIR%%/patterns.rep
+@dirrm %%DATADIR%%/plots.rep
+@dirrm %%DATADIR%%/predicates.rep
+@dirrm %%DATADIR%%/probability.rep
+@dirrm %%DATADIR%%/pslq.rep
+@dirrm %%DATADIR%%/rabinmiller.rep
+@dirrm %%DATADIR%%/radsimp.rep
+@dirrm %%DATADIR%%/random.rep
+@dirrm %%DATADIR%%/simplify.rep
+@dirrm %%DATADIR%%/solve.rep
+@dirrm %%DATADIR%%/specfunc.rep
+@dirrm %%DATADIR%%/statistics.rep
+@dirrm %%DATADIR%%/stats.rep
+@dirrm %%DATADIR%%/stdfuncs.rep
+@dirrm %%DATADIR%%/stubs.rep
+@dirrm %%DATADIR%%/substitute.rep
+@dirrm %%DATADIR%%/sums.rep
+@dirrm %%DATADIR%%/tensor.rep
+@dirrm %%DATADIR%%/testers.rep
+@dirrm %%DATADIR%%/texform.rep
+@dirrm %%DATADIR%%/transforms.rep
+@dirrm %%DATADIR%%/trigsimp.rep
+@dirrm %%DATADIR%%/univar.rep
 @dirrm %%DATADIR%%
-@dirrm lib/yacas
