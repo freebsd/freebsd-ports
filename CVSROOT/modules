@@ -1564,6 +1564,9 @@ cjc                             ports/net-im/cjc
 cjk-lyx                         ports/print/cjk-lyx
 ck4up                           ports/sysutils/ck4up
 cksfv                           ports/security/cksfv
+cl-alexandria                   ports/devel/cl-alexandria
+cl-alexandria-clisp             ports/devel/cl-alexandria-clisp
+cl-alexandria-sbcl              ports/devel/cl-alexandria-sbcl
 cl-asdf                         ports/devel/cl-asdf
 cl-asdf-clisp                   ports/devel/cl-asdf-clisp
 cl-infix                        ports/devel/cl-infix
@@ -1571,6 +1574,9 @@ cl-infix-sbcl                   ports/devel/cl-infix-sbcl
 cl-lml                          ports/www/cl-lml
 cl-lml-clisp                    ports/www/cl-lml-clisp
 cl-lml-sbcl                     ports/www/cl-lml-sbcl
+cl-md5                          ports/security/cl-md5
+cl-md5-clisp                    ports/security/cl-md5-clisp
+cl-md5-sbcl                     ports/security/cl-md5-sbcl
 cl-meta                         ports/textproc/cl-meta
 cl-meta-clisp                   ports/textproc/cl-meta-clisp
 cl-meta-sbcl                    ports/textproc/cl-meta-sbcl
@@ -7971,6 +7977,7 @@ libutf                          ports/misc/libutf
 libutf-8                        ports/converters/libutf-8
 libutils                        ports/lang/libutils
 libv3d                          ports/graphics/libv3d
+libv4l                          ports/multimedia/libv4l
 libvanessa_adt                  ports/devel/libvanessa_adt
 libvanessa_logger               ports/devel/libvanessa_logger
 libvanessa_socket               ports/devel/libvanessa_socket
@@ -19585,6 +19592,7 @@ pvr250                          ports/multimedia/pvr250
 pvrxxx                          ports/multimedia/pvrxxx
 pwauth                          ports/security/pwauth
 pwcbsd                          ports/multimedia/pwcbsd
+pwcview                         ports/multimedia/pwcview
 pwd_unmkdb                      ports/sysutils/pwd_unmkdb
 pwebstats                       ports/www/pwebstats
 pwg                             ports/sysutils/pwg
@@ -22895,6 +22903,7 @@ telepathy-idle                  ports/net-im/telepathy-idle
 telepathy-mission-control       ports/net-im/telepathy-mission-control
 telepathy-python                ports/net-im/telepathy-python
 telepathy-qt                    ports/net-im/telepathy-qt
+telepathy-qt4                   ports/net-im/telepathy-qt4
 telepathy-salut                 ports/net-im/telepathy-salut
 tellico                         ports/misc/tellico
 telserv                         ports/net/telserv
@@ -23770,6 +23779,7 @@ vicq                            ports/net-im/vicq
 vid                             ports/graphics/vid
 vida                            ports/security/vida
 vidalia                         ports/net-mgmt/vidalia
+video4bsd-kmod                  ports/multimedia/video4bsd-kmod
 videocache                      ports/www/videocache
 videogen                        ports/sysutils/videogen
 videoproto                      ports/x11/videoproto
@@ -23971,6 +23981,7 @@ webalizer                       ports/www/webalizer
 webbench                        ports/benchmarks/webbench
 webcalendar                     ports/www/webcalendar
 webcalendar-devel               ports/www/webcalendar-devel
+webcamd                         ports/multimedia/webcamd
 webcheck                        ports/www/webcheck
 webcopy                         ports/www/webcopy
 webcpp                          ports/textproc/webcpp
