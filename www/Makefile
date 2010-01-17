@@ -590,6 +590,7 @@
     SUBDIR += ocaml-net
     SUBDIR += ocsigen
     SUBDIR += ojs2
+    SUBDIR += ompload
     SUBDIR += oops
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
