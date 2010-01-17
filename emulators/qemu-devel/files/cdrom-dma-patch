@@ -1,4 +1,4 @@
-Index: hw/ide.c
+Index: hw/ide/internal.h
 @@ -27,7 +27,7 @@
  //#define DEBUG_IDE
  //#define DEBUG_IDE_ATAPI

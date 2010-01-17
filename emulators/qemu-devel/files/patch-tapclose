@@ -1,0 +1,17 @@
+Index: qemu/net/tap.c
+@@ -254,12 +254,12 @@ static void tap_cleanup(VLANClientState 
+ 
+     qemu_purge_queued_packets(nc);
+ 
+-    if (s->down_script[0])
+-        launch_script(s->down_script, s->down_script_arg, s->fd);
+-
+     tap_read_poll(s, 0);
+     tap_write_poll(s, 0);
+     close(s->fd);
++
++    if (s->down_script[0])
++        launch_script(s->down_script, s->down_script_arg, -1);
+ }
+ 
+ /* fd support */
