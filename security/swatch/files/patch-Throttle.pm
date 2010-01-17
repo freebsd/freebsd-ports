@@ -1,42 +1,5 @@
---- swatch.orig	2006-07-21 14:55:00.000000000 -0600
-+++ swatch	2006-08-24 17:02:03.000000000 -0600
-@@ -404,12 +404,16 @@
- \$/ = "$opt_input_record_separator";
- my \$swatch_flush_interval = 300;
- my \$swatch_last_flush = time;
-+my \$tail_pid = -1;
-
- use IO::Handle;
- STDOUT->autoflush(1);
-
- sub goodbye {
-   \$| = 0;
-+  if( \$tail_pid != -1 ) {
-+    kill('TERM', \$tail_pid);
-+  }
- ];
-
-   if ($opt_read_pipe) {
-@@ -517,7 +521,8 @@
-       }
-        $code = qq/
- my \$filename = '$filename';
--if (not open(TAIL, \"$tail_cmd_name $tail_cmd_args \$filename|\")) {
-+\$tail_pid = open(TAIL, \"$tail_cmd_name $tail_cmd_args \$filename|\");
-+if (not \$tail_pid) {
-     die "$0: cannot read run \\"$tail_cmd_name $tail_cmd_args \$filename\\": \$!\\n";
- }
- 
-@@ -543,6 +548,7 @@
-     my $code;
-     $code = q[
- }
-+## TODO: Add close !!!
- ];
-     return $code;
- } 
---- lib/Swatch/Throttle.pm.orig	2004-07-19 22:14:54.000000000 +0200
-+++ lib/Swatch/Throttle.pm	2006-01-02 17:06:14.000000000 +0100
+--- lib/Swatch/Throttle.pm.orig	2010-01-16 00:54:35.478307464 +0900
++++ lib/Swatch/Throttle.pm	2010-01-16 00:58:31.814303601 +0900
 @@ -95,6 +95,7 @@
  	      @_
  	     );
@@ -65,7 +28,7 @@
 -	     and past_hold_time($cur_rec->{LAST},
 -				\@dmyhms, $opts{HOLD_DHMS})) {
 +  }
-+ 
++
 +  ## Get current record ##
 +  $cur_rec = $LogRecords{$key};
 +  $cur_rec->{COUNT}++;
@@ -83,7 +46,7 @@
        $msg = '';
      }
 -    $LogRecords{$key} = $cur_rec if exists($LogRecords{$key});  ## save any new values ##
-+  
++
 +  ## threshold only ##
 +  } elsif( defined $opts{THRESHOLD} and not defined $opts{DELAY} ) {
 +    if( $cur_rec->{COUNT} == $opts{THRESHOLD}) {
@@ -100,12 +63,12 @@
 +    if( not past_hold_time($cur_rec->{LAST}, [ @dmyhms ], [ @delay ]) ) {
 +      if( $cur_rec->{COUNT} == $opts{THRESHOLD} ) {
 +        ## threshold exceeded during delay ##
-+	chomp $msg;
-+	$msg = "$msg (threshold $opts{THRESHOLD} exceeded during delay $opts{DELAY})";
++       chomp $msg;
++       $msg = "$msg (threshold $opts{THRESHOLD} exceeded during delay $opts{DELAY})";
 +
-+	## TODO: Tenir compte du parametre repeat ici ##
-+	$cur_rec->{COUNT} = 0;
-+	$cur_rec->{LAST} = [ @dmyhms ];
++       ## TODO: Tenir compte du parametre repeat ici ##
++       $cur_rec->{COUNT} = 0;
++       $cur_rec->{LAST} = [ @dmyhms ];
 +      } else {
 +        $msg = '';
 +      }
@@ -115,12 +78,10 @@
 +      $msg = '';
 +    }
    }
-+  
++
 +  ## save any new values ##
 +  $LogRecords{$key} = $cur_rec if exists($LogRecords{$key});
-+  
++
    return $msg;
  }
  
-
- 	  	 
