@@ -1,0 +1,23 @@
+%%LIB32DIR%%/common-lisp/system-registry/trivial-features.asd
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-abcl.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-allegro.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-clisp.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-cmucl.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-corman.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-ecl.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-lispworks.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-openmcl.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-sbcl.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-scl.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/src/tf-xcl.lisp
+%%LIB32DIR%%/common-lisp/trivial-features/trivial-features.asd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SPEC
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/package.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sysinfo.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utsname.lisp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%LIB32DIR%%/common-lisp/trivial-features/src
+@dirrm %%LIB32DIR%%/common-lisp/trivial-features
