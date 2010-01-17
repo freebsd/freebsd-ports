@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unidecode
-PORTVERSION=	0.04.2
+PORTVERSION=	0.04.3
 CATEGORIES=	converters python
 MASTER_SITES=	http://code.zemanta.com/tsolc/unidecode/releases/ \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
