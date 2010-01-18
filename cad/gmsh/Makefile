@@ -7,6 +7,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/

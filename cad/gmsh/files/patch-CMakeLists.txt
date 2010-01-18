@@ -1,5 +1,5 @@
 --- CMakeLists.txt.orig	2009-09-21 13:54:49.000000000 -0500
-+++ CMakeLists.txt	2010-01-02 16:31:27.000000000 -0600
++++ CMakeLists.txt	2010-01-17 21:14:51.000000000 -0600
 @@ -41,6 +41,7 @@
  option(ENABLE_TAUCS "Enable Taucs linear algebra solver" ON)
  option(ENABLE_TETGEN "Enable Tetgen mesh generator" ON)
@@ -42,7 +42,23 @@
      if(OCC_INC)
        set(HAVE_OCC TRUE)
        list(APPEND CONFIG_OPTIONS "OpenCascade")
-@@ -762,13 +767,15 @@
+@@ -654,15 +659,6 @@
+ if(HAVE_LAPACK AND LAPACK_FLAGS)
+   set_target_properties(shared PROPERTIES LINK_FLAGS ${LAPACK_FLAGS})
+ endif(HAVE_LAPACK AND LAPACK_FLAGS)
+-if(HAVE_FLTK)
+-  target_link_libraries(shared ${FLTK_LIBRARIES} ${EXTERNAL_LIBRARIES} 
+-                        ${OPENGL_LIBRARIES} ${LAPACK_LIBRARIES})
+-elseif(HAVE_OPENGL)
+-  target_link_libraries(shared ${EXTERNAL_LIBRARIES} ${OPENGL_LIBRARIES}
+-                        ${LAPACK_LIBRARIES})
+-else(HAVE_FLTK)
+-  target_link_libraries(shared ${EXTERNAL_LIBRARIES} ${LAPACK_LIBRARIES})
+-endif(HAVE_FLTK)
+ 
+ # binary targets
+ if(HAVE_FLTK)
+@@ -762,13 +758,15 @@
  install(TARGETS gmsh DESTINATION ${GMSH_BIN} OPTIONAL)
  install(TARGETS lib shared DESTINATION lib OPTIONAL)
  install(FILES ${GMSH_API} DESTINATION include/gmsh)
