@@ -1,7 +1,16 @@
-diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
---- ../../vendor/xvkbd/xvkbd.c	2008-05-28 23:43:41.000000000 +0300
-+++ ./xvkbd.c	2008-06-03 14:54:14.000000000 +0300
-@@ -346,7 +346,7 @@
+Description: Assorted compilation and usage fixes.
+ - fix a lot of compiler warnings
+ - unbreak the build if XTEST is not selected
+ - fix the location of the words file on FreeBSD
+ - use snprintf() instead of sprintf() and strcpy(), just in case
+ - fix the text of an error message
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-01-18
+
+--- xvkbd.c.orig
++++ xvkbd.c
+@@ -356,7 +356,7 @@
    { "keyFile", "KeyFile", XtRString, sizeof(char *),
      Offset(key_file), XtRImmediate, ".xvkbd" },
    { "dictFile", "DictFile", XtRString, sizeof(char *),
@@ -10,7 +19,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    { "customizations", "Customizations", XtRString, sizeof(char *),
      Offset(customizations), XtRImmediate, "default" },
    { "editableFunctionKeys", "EditableFunctionKeys", XtRInt, sizeof(int),
-@@ -439,8 +439,8 @@
+@@ -449,8 +449,8 @@
  static int altgr_mask = 0;
  static KeySym altgr_keysym = NoSymbol;
  
@@ -21,7 +30,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
  static Display *target_dpy = NULL;
  
-@@ -451,7 +451,7 @@
+@@ -461,7 +461,7 @@
  static Pixmap xvkbd_pixmap = None;
  
  static int AddKeysym(KeySym keysym, Boolean top);  /* forward */
@@ -30,7 +39,16 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  static void MakeKeyboard(Boolean remake);
  static void MakeKeypad(Widget form, Widget from_vert, Widget from_horiz);
  static void MakeSunFunctionKey(Widget form, Widget from_vert, Widget from_horiz);
-@@ -468,8 +468,7 @@
+@@ -470,6 +470,8 @@
+ static void PopupFunctionKeyEditor(void);
+ static void DeleteWindowProc(Widget w, XEvent *event, String *pars, Cardinal *n_pars);
+ 
++static void SignalUser1(int sig);
++
+ /*
+  * Search for window which has specified instance name (WM_NAME)
+  * or class name (WM_CLASS).
+@@ -478,8 +480,7 @@
  {
    Window w;
    Window *children, dummy;
@@ -40,7 +58,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    XClassHint hint;
  
    w = None;
-@@ -746,7 +745,9 @@
+@@ -756,7 +757,9 @@
   */
  static void SendEvent(XKeyEvent *event)
  {
@@ -50,7 +68,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
    if (!appres.no_sync) {
      XSync(event->display, FALSE);
-@@ -1027,11 +1028,11 @@
+@@ -1037,11 +1040,11 @@
  
  #ifdef USE_XTEST
    if (appres.xtest) {
@@ -64,7 +82,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
      event.type = KeyRelease;
      event.state = 0;
-@@ -1154,7 +1155,7 @@
+@@ -1164,7 +1167,7 @@
   * via xvkbd can be listed, and choosing one of them will send the
   * suffix to the clients.
   * Words for completion will be read from dictionary file specified
@@ -73,7 +91,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
   */
  static Widget completion_panel = None;
  static Widget completion_entry = None;
-@@ -1211,7 +1212,7 @@
+@@ -1221,7 +1224,7 @@
  
  static void AddToCompletionText(KeySym keysym)
  {
@@ -82,7 +100,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    struct WORDLIST *node_ptr;
  
    if (completion_entry != None) {
-@@ -1300,11 +1301,11 @@
+@@ -1310,11 +1313,11 @@
   */
  static void KeyPressed(Widget w, char *key, char *data);
  
@@ -97,7 +115,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    int val;
    Window target_root, child, junk_w;
    int junk_i;
-@@ -1350,11 +1351,12 @@
+@@ -1360,11 +1363,12 @@
  	if ('1' <= *cp && *cp <= '9') {
  	  usleep((*cp - '0') * 100000);
  	} else {
@@ -111,7 +129,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  	cp++;
  	if ('1' <= *cp && *cp <= '9') {
  	  if (appres.debug) fprintf(stderr, "XTestFakeButtonEvent(%d)\n", *cp - '0');
-@@ -1365,10 +1367,18 @@
+@@ -1375,10 +1379,18 @@
            fprintf(stderr, "%s: no digit after \"\\m\"\n",
                    PROGRAM_NAME);
  	}
@@ -131,7 +149,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  	target_root = RootWindow(target_dpy, DefaultScreen(target_dpy));
  	XQueryPointer(target_dpy, target_root, &junk_w, &child,
  		      &cur_x, &cur_y, &junk_i, &junk_i, &junk_u);
-@@ -1436,7 +1446,7 @@
+@@ -1446,7 +1458,7 @@
    char name1[50];
    Widget w;
  
@@ -140,7 +158,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    w = XtNameToWidget(toplevel, name1);
    if (w != None) {
      if (strstr(name, "Focus") != NULL) {
-@@ -1465,13 +1475,13 @@
+@@ -1475,13 +1487,13 @@
  static void RefreshShiftState(Boolean force)
  {
    static Boolean first = TRUE;
@@ -159,7 +177,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    int first_row, row, col;
    Boolean shifted;
    char *label;
-@@ -1562,7 +1572,7 @@
+@@ -1572,7 +1584,7 @@
  
      Window root, child;
      int root_x, root_y, x, y;
@@ -168,7 +186,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
      XKeyEvent event;
  
-@@ -1578,28 +1588,28 @@
+@@ -1588,28 +1600,28 @@
      event.same_screen = TRUE;
      event.state = 0;
  
@@ -202,7 +220,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
        event.keycode = XKeysymToKeycode(target_dpy, XK_Meta_L);
        event.type = (shift_state & meta_mask) ? KeyPress : KeyRelease;
        SendEvent(&event);
-@@ -1660,7 +1670,7 @@
+@@ -1670,7 +1682,7 @@
  
    XtVaGetValues(w, XtNx, &x0, XtNy, &y0, NULL);
    XGetGeometry(dpy, XtWindow(w), &root, &x1, &y1, &wd, &ht, &bd, &dp);
@@ -211,7 +229,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
    return geom;
  }
-@@ -1680,7 +1690,7 @@
+@@ -1690,7 +1702,7 @@
  
    if (strcmp(key, "default") != 0) {
      sscanf(key, "%29[^/]/%29s", customization, lang);
@@ -220,7 +238,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
      xenv = XtResolvePathname(dpy, "app-defaults", name, NULL, NULL, NULL, 0, NULL);
      if (xenv == NULL) {
        fprintf(stderr, "%s: app-default file \"%s\" not installed\n",
-@@ -1792,6 +1802,7 @@
+@@ -1807,6 +1819,7 @@
    XtVaGetValues(XtNameToWidget(props_panel, "*jump_pointer"),
  		XtNstate, &appres.jump_pointer, NULL);
  
@@ -228,7 +246,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    appres.key_click_duration = (int)XawToggleGetCurrent(click_buttons);
    appres.autoclick_delay = (int)XawToggleGetCurrent(autoclick_buttons);
  
-@@ -1848,7 +1859,7 @@
+@@ -1863,7 +1876,7 @@
    if (props_panel == None) {
      Widget label, button;
      Widget form, w;
@@ -237,7 +255,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
      int val;
  
      props_panel = XtVaCreatePopupShell("props_panel", transientShellWidgetClass,
-@@ -1940,7 +1951,7 @@
+@@ -1955,7 +1968,7 @@
    focused_subwindow = None;
    if (target_dpy != NULL && target_dpy != dpy) XCloseDisplay(target_dpy);
  
@@ -246,7 +264,16 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    for (cp = name; isascii(*cp) && isprint(*cp); cp++) ;
    *cp = '\0';
  
-@@ -2423,7 +2434,7 @@
+@@ -2146,7 +2159,7 @@
+   }
+ }
+ 
+-void SignalUser1(void)
++static void SignalUser1(int sig)
+ {
+   XWindowAttributes attr;
+   XGetWindowAttributes(dpy, XtWindow(toplevel), &attr);
+@@ -2448,7 +2461,7 @@
    XtAddCallback(w, XtNcallback, (XtCallbackProc)KeyPressed, (XtPointer)name);
  
    if (label != NULL) {
@@ -255,7 +282,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
      if (strcmp(str, "space") == 0) strcpy(str, "");
      len = strlen(str);
      if (3 <= len) {
-@@ -2495,9 +2506,9 @@
+@@ -2520,9 +2533,9 @@
  	       || (strncmp(keypad_shift[row][col], "KP_", 3) == 0
  		   && isdigit(keypad_shift[row][col][3])))
  	color = appres.general_background;
@@ -267,7 +294,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
        key = MakeKey(keypad_box, XtNewString(name),
  		    keypad_label[row][col], color);
        XtVaSetValues(key, XtNfont, font, NULL);
-@@ -2599,12 +2610,12 @@
+@@ -2624,12 +2637,12 @@
    Widget form, key, left;
    Pixel color;
    XFontStruct *font;
@@ -282,16 +309,16 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
  #include "xvkbd.xbm"
  #include "iconify.xbm"
-@@ -2622,7 +2633,7 @@
-   first_row = appres.function_key ? 0 : 1;
-   if (!appres.keypad_only) {
+@@ -2649,7 +2662,7 @@
      for (row = first_row; row < NUM_KEY_ROWS; row++) {
+       if (keys_normal[row][0] == NULL) continue;
+ 
 -      sprintf(name, "row%d", row);
 +      snprintf(name, sizeof(name), "row%d", row);
        key_box[row] = XtVaCreateManagedWidget(name, formWidgetClass, form, NULL);
+       key_box[row + 1] = None;
        if (row != first_row)
-         XtVaSetValues(key_box[row], XtNfromVert, key_box[row - 1], NULL);
-@@ -2631,7 +2642,7 @@
+@@ -2659,7 +2672,7 @@
          
        left = None;
        for (col = 0; keys_normal[row][col] != NULL; col++) {
@@ -300,7 +327,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  	if (strcmp(name, "MainMenu") == 0) {
  	  Widget iconify_button = None;
  
-@@ -2673,11 +2684,11 @@
+@@ -2701,11 +2714,11 @@
  	    color = appres.general_background;
  	    font = appres.general_font;
  	    if (isalpha(name[0])) font = appres.letter_font;
@@ -315,7 +342,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  	    /* keys can be removed by setting its width to 1 */
  	    XtDestroyWidget(key);
  	    key = None;
-@@ -2712,7 +2723,7 @@
+@@ -2740,7 +2753,7 @@
      Window root;
      int x1, y1;
      unsigned int wd, ht, bd, dp;
@@ -324,7 +351,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
      XGetGeometry(dpy, XtWindow(toplevel), &root, &x1, &y1, &wd, &ht, &bd, &dp);
      max_wd = XtScreen(toplevel)->width * appres.max_width_ratio;
-@@ -2730,16 +2741,16 @@
+@@ -2758,16 +2771,16 @@
  
    if (!appres.debug && key_box[first_row] != None) {
      if (appres.keypad) {
@@ -333,20 +360,20 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
      } else {
 -      max_wd = 0;
 +      max_dwd = 0;
-       for (row = first_row; row < NUM_KEY_ROWS; row++) {
+       for (row = first_row; row < NUM_KEY_ROWS && key_box[row] != None; row++) {
 -        XtVaGetValues(key_box[row], XtNwidth, &wd, NULL);
 -        if (max_wd < wd) max_wd = wd;
 +        XtVaGetValues(key_box[row], XtNwidth, &dwd, NULL);
 +        if (max_dwd < dwd) max_dwd = dwd;
        }
      }
-     for (row = first_row; row < NUM_KEY_ROWS; row++) {
+     for (row = first_row; row < NUM_KEY_ROWS && key_box[row] != None; row++) {
 -      XtVaSetValues(key_box[row], XtNwidth, max_wd, NULL);
 +      XtVaSetValues(key_box[row], XtNwidth, max_dwd, NULL);
      }
    }
    if (0 < strlen(appres.geometry)) {
-@@ -2834,17 +2845,18 @@
+@@ -2862,17 +2875,18 @@
    home = getenv("HOME");
    if (appres.key_file[0] != '/' && home != NULL
        && strlen(home) + strlen(appres.key_file) + 1 < sizeof(fkey_filename))
@@ -369,7 +396,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  	appres.quick_modifiers = val;
        else if (strcmp(key, "shift_lock") == 0)
  	appres.shift_lock = val;
-@@ -2913,9 +2925,9 @@
+@@ -2941,9 +2955,9 @@
    if (key == NULL)
      strcpy(key2, "");
    else if (strncmp(key, "Shift-", strlen("Shift-")) == 0)
@@ -381,7 +408,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
    if (strcmp(cur_fkey, key2) != 0) {
      if (strlen(cur_fkey) != 0) {
-@@ -2958,10 +2970,10 @@
+@@ -2986,10 +3000,10 @@
        FKeyValueMenuSelected(None, (value[0] == '!') ? "command" : "string");
  
        if (value[0] == '!' || value[0] == '\\') value = value + 1;
@@ -394,7 +421,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
      }
    }
  }
-@@ -3020,9 +3032,9 @@
+@@ -3048,9 +3062,9 @@
      for (j = 0; j <= 1; j++) {
        for (i = 1; i <= appres.editable_function_keys; i++) {
  	if (j == 0)
@@ -406,7 +433,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  	key = XtNewString(label);
  	menu_entry = XtVaCreateManagedWidget(key, smeBSBObjectClass, menu, NULL);
  	XtAddCallback(menu_entry, XtNcallback, (XtCallbackProc)FKeyMenuSelected,
-@@ -3084,8 +3096,8 @@
+@@ -3112,8 +3126,8 @@
      else if (shift_state & ControlMask) prefix = 'c';
      else if (shift_state & ShiftMask) prefix = 's';
    }
@@ -417,7 +444,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    len = strlen(label);
    
    for (sp = fkey_list; sp != NULL; sp = sp->next) {
-@@ -3143,8 +3155,10 @@
+@@ -3171,8 +3185,10 @@
  {
    StopAutoclick();
  
@@ -428,7 +455,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  }
  
  static void ShowBalloon(Widget w, XEvent *event, String *pars, Cardinal *n_pars)
-@@ -3225,7 +3239,7 @@
+@@ -3253,7 +3269,7 @@
  static void VisibilityChanged(Widget w, XEvent *event,
  			      String *pars, Cardinal *n_pars)
  {
@@ -437,8 +464,8 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
    static time_t t1 = 0;
    time_t t2;
  
-@@ -3272,7 +3286,9 @@
- 
+@@ -3301,7 +3317,9 @@
+   Boolean open_keypad_panel = FALSE;
    char ch;
    Window child;
 +#ifdef USE_XTEST
@@ -447,7 +474,7 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.c ./xvkbd.c
  
    argc1 = argc;
    argv1 = malloc(sizeof(char *) * (argc1 + 5));
-@@ -3447,7 +3463,7 @@
+@@ -3500,7 +3518,7 @@
      } else {
        s = locale;
      }
