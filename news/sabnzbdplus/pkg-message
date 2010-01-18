@@ -1,0 +1,14 @@
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Due to the version of devel/py-cheetah in ports api keys do
+not work. To get around the error modify the following line 
+in your sabnzbd.ini file:
+
+    disable_api_key = 1
+
+Note however that by disabling the api key feature you may
+be at risk of the Cross-site Request Vulnerability described
+here: http://sabnzbd.wikidot.com/cross-site-vulnerability/
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
