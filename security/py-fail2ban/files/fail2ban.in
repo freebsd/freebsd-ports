@@ -23,11 +23,11 @@ client="%%PREFIX%%/bin/fail2ban-client"
 
 extra_commands="reload jailstatus"
 
+load_rc_config ${name}
+
 start_cmd="${client} ${fail2ban_flags} start"
 stop_cmd="${client} ${fail2ban_flags} stop"
 reload_cmd="${client} ${fail2ban_flags} reload"
 jailstatus_cmd="${client} ${fail2ban_flags} status"
-
-load_rc_config $name
 
 run_rc_command "$1"
