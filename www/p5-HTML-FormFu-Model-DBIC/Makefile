@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu-Model-DBIC
-PORTVERSION=	0.05000
+PORTVERSION=	0.06000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Set a forms default values from a DBIx::Class row object
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite		\
 		p5-DBIx-Class>=0.08002:${PORTSDIR}/databases/p5-DBIx-Class	\
+		p5-DateTime-Format-SQLite>=0:${PORTSDIR}/devel/p5-DateTime-Format-SQLite \
 		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL	\
 		p5-HTML-FormFu>=0.03001:${PORTSDIR}/www/p5-HTML-FormFu		\
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
