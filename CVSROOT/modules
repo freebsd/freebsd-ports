@@ -1589,6 +1589,9 @@ cl-ppcre-sbcl                   ports/textproc/cl-ppcre-sbcl
 cl-split-sequence               ports/devel/cl-split-sequence
 cl-split-sequence-clisp         ports/devel/cl-split-sequence-clisp
 cl-split-sequence-sbcl          ports/devel/cl-split-sequence-sbcl
+cl-trivial-features             ports/devel/cl-trivial-features
+cl-trivial-features-clisp       ports/devel/cl-trivial-features-clisp
+cl-trivial-features-sbcl        ports/devel/cl-trivial-features-sbcl
 cl-uffi                         ports/devel/cl-uffi
 cl-uffi-sbcl                    ports/devel/cl-uffi-sbcl
 clamassassin                    ports/security/clamassassin
