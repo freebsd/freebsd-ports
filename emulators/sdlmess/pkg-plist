@@ -79,7 +79,9 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/artwork/mk2.zip
 %%DATADIR%%/artwork/mm4.zip
 %%DATADIR%%/artwork/mm5.zip
+%%DATADIR%%/artwork/mm50.zip
 %%DATADIR%%/artwork/mpf1.zip
+%%DATADIR%%/artwork/mpf1b.zip
 %%DATADIR%%/artwork/nes.zip
 %%DATADIR%%/artwork/pc1401.zip
 %%DATADIR%%/artwork/pc1402.zip
@@ -88,6 +90,7 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/artwork/roma32.zip
 %%DATADIR%%/artwork/ssystem3.zip
 %%DATADIR%%/artwork/thomson.lay
+%%DATADIR%%/artwork/thomson.zip
 %%DATADIR%%/hash/a2600.hsi
 %%DATADIR%%/hash/a5200.hsi
 %%DATADIR%%/hash/a7800.hsi
