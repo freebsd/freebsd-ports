@@ -7,7 +7,7 @@
 
 PORTNAME=	autotrust
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 
@@ -18,6 +18,9 @@ LIB_DEPENDS+=	ldns.1:${PORTSDIR}/dns/ldns \
 		unbound.2:${PORTSDIR}/dns/unbound
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CFLAGS=		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN8=		autotrust.8
 
