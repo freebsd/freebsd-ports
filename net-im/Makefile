@@ -63,6 +63,7 @@
     SUBDIR += kf
     SUBDIR += kmerlin
     SUBDIR += kmess
+    SUBDIR += kmess-kde4
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += kpopup
