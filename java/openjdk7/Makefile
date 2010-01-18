@@ -8,7 +8,7 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.java.net/download/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/
+MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/
 DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-ea-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 MAINTAINER=	glewis@FreeBSD.org
@@ -16,7 +16,6 @@ COMMENT=	Java Development Kit 7
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-FETCH_ARGS=	-pRr
 USE_ZIP=	YES
 
 JDK_MAJOR_VERSION=	7
