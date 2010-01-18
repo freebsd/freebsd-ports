@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	obexapp
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.13
 CATEGORIES=	comms net
-MASTER_SITES=	http://www.geocities.com/m_evmenkin/
+MASTER_SITES=	http://people.freebsd.org/~emax/obexapp/
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Obex application to transfer objects to mobile equipment
