@@ -4257,3 +4257,30 @@ devel/cl-asdf-sbcl||2010-01-12|lang/sbcl has a bundled asdf version
 emulators/virtualbox|emulators/virtualbox-ose|2010-01-13|Renamed and split into two components
 devel/gold|devel/binutils|2010-01-13|part of binutils
 shells/tcsh-bofh||2010-01-15|Removed
+audio/ccaudio||2010-01-18|Has expired: has been broken for 4 months
+audio/py-libmpdclient||2010-01-18|Has expired: has been broken for 3 months
+chinese/gbk2uni||2010-01-18|Has expired: has been broken for 6 months
+chinese/iiimf-le-xcin||2010-01-18|Has expired: has been broken for 3 months
+devel/adabindx||2010-01-18|Has expired: has been broken for 3 months
+devel/agide||2010-01-18|Has expired: has been broken for 6 months
+devel/asis||2010-01-18|Has expired: has been broken for 3 months
+devel/callgrind||2010-01-18|Has expired: Included in devel/valgrind
+devel/florist||2010-01-18|Has expired: has been broken for 3 months
+editors/xml2rfc-xxe||2010-01-18|Has expired: has been broken for 4 months
+graphics/gephex||2010-01-18|Has expired: has been broken for 3 months
+graphics/irit||2010-01-18|Has expired: has been broken for 3 months
+graphics/pixieplus||2010-01-18|Has expired: has been broken for 6 months
+japanese/expect||2010-01-18|Has expired: has been broken for 3 months
+lang/pnetc||2010-01-18|Has expired: has been broken for 5 months
+mail/libnewmail||2010-01-18|Has expired: has been broken for 3 months
+net-mgmt/flowscan||2010-01-18|Has expired: has been broken for 5 months
+net/astmanproxy||2010-01-18|Has expired: has been broken for 3 months
+palm/prc-tools||2010-01-18|Has expired: has been broken for 4 months
+print/latex-msc||2010-01-18|Has expired: has been broken for 3 months
+science/xloops-ginac||2010-01-18|Has expired: has been broken for 3 months
+shells/bush||2010-01-18|Has expired: has been broken for 3 months
+textproc/iiimf-gnome-im-switcher||2010-01-18|Has expired: has been broken for 4 months
+textproc/iiimf-gtk||2010-01-18|Has expired: has been broken for 3 months
+x11-toolkits/gtkada-devel||2010-01-18|Has expired: has been broken for 3 months
+x11-toolkits/gtkada||2010-01-18|Has expired: has been broken for 3 months
+x11-wm/ion-2||2010-01-18|Has expired: has been broken for 4 months

@@ -67,7 +67,6 @@
     SUBDIR += i3
     SUBDIR += icewm
     SUBDIR += ion
-    SUBDIR += ion-2
     SUBDIR += jewel
     SUBDIR += jwm
     SUBDIR += kappdock

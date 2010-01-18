@@ -1,3 +1,0 @@
-@comment $FreeBSD$
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%

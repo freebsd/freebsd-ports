@@ -1,9 +1,0 @@
---- Makefile.am.orig	2007-04-29 23:53:38.000000000 +0900
-+++ Makefile.am	2008-08-08 23:24:21.000000000 +0900
-@@ -1,5 +1,5 @@
- AUTOMAKE_OPTIONS = 1.6
--SUBDIRS = contrib base build engine types util modules effectvmodules qtgui data examples doc
-+SUBDIRS = base build engine types util modules effectvmodules qtgui data examples doc
- EXTRA_DIST = BUGS NEWS README COPYING README.win32 README.macosx config_h.win32
- 
- # Strip binaries

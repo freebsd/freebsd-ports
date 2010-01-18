@@ -1,7 +1,0 @@
-AstManProxy is a multi-threaded proxy server for Asterisk written in
-C/P-threads. It is designed to handle communication with multiple
-Asterisk servers. It also acts as a single point of contact for
-applications. AstManProxy supports multiple input/output formats,
-including Standard, XML, CSV, and HTTP, HTTPS and SSL.
-
-WWW:		http://www.popvox.com/astmanproxy/
