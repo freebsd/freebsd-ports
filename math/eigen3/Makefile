@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://bitbucket.org/eigen/eigen/get/
