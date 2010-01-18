@@ -1,22 +1,16 @@
---- makefile.in.orig	2006-09-03 19:25:39.000000000 -0400
-+++ makefile.in	2009-08-08 04:44:18.000000000 -0400
-@@ -361,12 +361,12 @@
- 			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
- 		fi'
- 	@echo Updating $(sysconfdir)/lynx.cfg
--	@ECHO_CC@$(SHELL) -c 'if test -f $(SYSCONFDIR)/lynx.cfg ; then \
--		mv $(SYSCONFDIR)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
-+	@ECHO_CC@$(SHELL) -c 'if test -f $(SYSCONFDIR)/lynx.cfg.sample ; then \
-+		mv $(SYSCONFDIR)/lynx.cfg.sample $(SYSCONFDIR)/lynx.tmp ; \
+Index: makefile.in
+@@ -388,7 +388,9 @@
  	else \
  		cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
  	fi'
 -	@echo Updating $(sysconfdir)/lynx.cfg to point to installed help-files
-+	@echo Updating $(SYSCONFDIR)/lynx.cfg.sample to point to installed help-files
++	@echo Updating $(srcdir)/lynx.cfg.sample
++	@cp $(srcdir)/lynx.cfg $(srcdir)/lynx.tmp
++	@echo Updating $(srcdir)/lynx.cfg.sample to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
  		$(SYSCONFDIR)/lynx.tmp | \
-@@ -374,9 +374,11 @@
+@@ -396,9 +398,11 @@
  	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
@@ -28,9 +22,9 @@
 +	-[ ! -f $(SYSCONFDIR)/lynx.cfg ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.cfg.sample $(SYSCONFDIR)/lynx.cfg
 +	-[ ! -f $(SYSCONFDIR)/lynx.lss ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.lss.sample $(SYSCONFDIR)/lynx.lss
  
- LYHelp.h : help_files.sed LYHelp.hin
+ LYHelp.h : help_files.sed $(srcdir)/LYHelp.hin
  	@echo Creating $@
-@@ -398,18 +400,17 @@
+@@ -420,17 +424,17 @@
  	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(SYSCONFDIR)
@@ -38,12 +32,11 @@
 +	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.sample
  
  install-lss : $(SYSCONFDIR)
--	-mv -f $(SYSCONFDIR)/lynx.lss $(SYSCONFDIR)/lynx.oldlss
--	$(INSTALL_DATA) $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss
-+	@$(INSTALL_DATA) $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss.sample
+-	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss
++	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss.sample
  
  uninstall ::
- @MSG_DIR_MAKE@	cd po && $(MAKE) CC="$(CC)" uninstall
+ @MSG_DIR_MAKE@	cd $(PO_DIR) && $(MAKE_RECUR) uninstall
  	-rm -f $(BINDIR)/lynx$x
  	-rm -f $(MANDIR)/lynx.1
 -	-rm -f $(SYSCONFDIR)/lynx.cfg
