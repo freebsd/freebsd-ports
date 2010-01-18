@@ -1,0 +1,47 @@
+include/msgpack.h
+include/msgpack.hpp
+include/msgpack/object.h
+include/msgpack/object.hpp
+include/msgpack/pack.h
+include/msgpack/pack.hpp
+include/msgpack/pack_define.h
+include/msgpack/pack_template.h
+include/msgpack/sbuffer.h
+include/msgpack/sbuffer.hpp
+include/msgpack/sysdep.h
+include/msgpack/type.hpp
+include/msgpack/type/bool.hpp
+include/msgpack/type/define.hpp
+include/msgpack/type/deque.hpp
+include/msgpack/type/float.hpp
+include/msgpack/type/int.hpp
+include/msgpack/type/list.hpp
+include/msgpack/type/map.hpp
+include/msgpack/type/nil.hpp
+include/msgpack/type/pair.hpp
+include/msgpack/type/raw.hpp
+include/msgpack/type/set.hpp
+include/msgpack/type/string.hpp
+include/msgpack/type/tr1/unordered_map.hpp
+include/msgpack/type/tr1/unordered_set.hpp
+include/msgpack/type/tuple.hpp
+include/msgpack/type/vector.hpp
+include/msgpack/unpack.h
+include/msgpack/unpack.hpp
+include/msgpack/unpack_define.h
+include/msgpack/unpack_template.h
+include/msgpack/vrefbuffer.h
+include/msgpack/vrefbuffer.hpp
+include/msgpack/zone.h
+include/msgpack/zone.hpp
+lib/libmsgpack.a
+lib/libmsgpack.la
+lib/libmsgpack.so
+lib/libmsgpack.so.2
+lib/libmsgpackc.a
+lib/libmsgpackc.la
+lib/libmsgpackc.so
+lib/libmsgpackc.so.2
+@dirrm include/msgpack/type/tr1
+@dirrm include/msgpack/type
+@dirrm include/msgpack
