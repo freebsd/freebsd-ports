@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.6.5
-PORTREVISION=	5
+PORTVERSION=	2.8.7.1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://lynx.isc.org/current/ \
-		ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches
+MASTER_SITES=	ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches
 DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
-CONFLICTS=	lynx-2.8.[7-9]*
+CONFLICTS=	lynx-2.8.[8-9]*
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
+WRKSRC=		${WRKDIR}/${PORTNAME}2-8-7
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
@@ -62,7 +60,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-.if defined(WITH_DEFAULT_COLORS) || defined(ENABLE_DEFAULT_COLORS)
+.if defined(WITH_DEFAULT_COLORS)
 CONFIGURE_ARGS+=--enable-default-colors
 .endif
 
