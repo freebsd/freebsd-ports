@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: sams
-# REQUIRE: LOGIN cleanvar
+# REQUIRE: LOGIN cleanvar mysql
 # KEYWORD: shutdown
 
 # Define these sams_* variables in one of these files:

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sams
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ \
-		http://grishin.000webhost.info/sams/
+		http://gateway11.ath.cx/sams/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	uzgrishin@mail.ru
@@ -28,9 +28,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PHP=	ctype curl gettext hash iconv json mysql \
-		pcre pdf pdo pdo_sqlite posix session \
-		session simplexml spl sqlite tokenizer  \
-		xmlreader xmlwriter zlib
+		pcre pdo pdo_sqlite posix session \
+		simplexml spl sqlite tokenizer \
+		xmlwriter zlib xmlreader
 
 USE_MYSQL=	5.0
 
@@ -53,17 +53,13 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 .endif
 
 .if defined(WITH_INSTALLGD)
-USE_PHP+=	gd
+USE_PHP+=	pdf gd
 .endif
 
 post-extract:
 	${INSTALL_SCRIPT} ${FILESDIR}/setup.sh ${WRKSRC}/
 
 post-install:
-	@cp ${PREFIX}/share/sams/icon/classic/proxyes_32.jpg ${PREFIX}/share/sams/icon/bumper/proxyes_32.jpg
-	@cp ${PREFIX}/share/sams/icon/classic/cache_32.jpg ${PREFIX}/share/sams/icon/bumper/cache_32.jpg
-	@cp ${PREFIX}/share/sams/icon/classic/proxyes_48.jpg ${PREFIX}/share/sams/icon/bumper/proxyes_48.jpg
-	@cp ${PREFIX}/share/sams/icon/classic/cache_48.jpg ${PREFIX}/share/sams/icon/bumper/cache_48.jpg
 	@${CAT} ${PKGMESSAGE}
 
 setup:
