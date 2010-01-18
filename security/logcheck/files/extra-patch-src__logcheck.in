@@ -35,13 +35,13 @@
 -STATEDIR="/var/lib/logcheck"
 -LOGFILES_LIST="/etc/logcheck/logcheck.logfiles"
 -LOGFILE_FALLBACK="/var/log/syslog"
--LOGTAIL="/usr/sbin/logtail"
+-LOGTAIL="/usr/sbin/logtail2"
 +RULEDIR="%%ETCDIR%%"
 +CONFFILE="%%ETCDIR%%/logcheck.conf"
 +STATEDIR="/var/db/logcheck"
 +LOGFILES_LIST="%%ETCDIR%%/logcheck.logfiles"
 +LOGFILE_FALLBACK="/var/log/messages"
-+LOGTAIL="%%PREFIX%%/sbin/logtail"
++LOGTAIL="%%PREFIX%%/sbin/logtail2
  CAT="/bin/cat"
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
@@ -172,7 +172,7 @@
  fi
  
  # Create the secure temporary directory or exit
--TMPDIR=$(mktemp -d -p /tmp logcheck.XXXXXX) \
+-TMPDIR=$(mktemp -d -p ${TMP:-/tmp} logcheck.XXXXXX) \
 -    || TMPDIR=$(mktemp -d -p /var/tmp logcheck.XXXXXX) \
 +TMPDIR=$(mktemp -d /tmp/logcheck.XXXXXX) \
 +    || TMPDIR=$(mktemp -d /var/tmp/logcheck.XXXXXX) \

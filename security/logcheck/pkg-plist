@@ -2,6 +2,7 @@
 %%ETCDIR%%/cracking.d/smartd
 %%ETCDIR%%/ignore.d.paranoid/bind
 %%ETCDIR%%/ignore.d.paranoid/cron
+%%ETCDIR%%/ignore.d.paranoid/incron
 %%ETCDIR%%/ignore.d.paranoid/logcheck
 %%ETCDIR%%/ignore.d.paranoid/postfix
 %%ETCDIR%%/ignore.d.paranoid/ppp
@@ -12,6 +13,7 @@
 %%ETCDIR%%/ignore.d.paranoid/sysklogd
 %%ETCDIR%%/ignore.d.paranoid/telnetd
 %%ETCDIR%%/ignore.d.paranoid/tripwire
+%%ETCDIR%%/ignore.d.server/acpid
 %%ETCDIR%%/ignore.d.server/amandad
 %%ETCDIR%%/ignore.d.server/anacron
 %%ETCDIR%%/ignore.d.server/anon-proxy
@@ -31,20 +33,25 @@
 %%ETCDIR%%/ignore.d.server/cvsd
 %%ETCDIR%%/ignore.d.server/cyrus
 %%ETCDIR%%/ignore.d.server/dcc
+%%ETCDIR%%/ignore.d.server/ddclient
 %%ETCDIR%%/ignore.d.server/dhclient
 %%ETCDIR%%/ignore.d.server/dhcp
 %%ETCDIR%%/ignore.d.server/dictd
 %%ETCDIR%%/ignore.d.server/dkfilter
+%%ETCDIR%%/ignore.d.server/dkim-filter
 %%ETCDIR%%/ignore.d.server/dnsmasq
 %%ETCDIR%%/ignore.d.server/dovecot
 %%ETCDIR%%/ignore.d.server/dspam
 %%ETCDIR%%/ignore.d.server/epmd
 %%ETCDIR%%/ignore.d.server/exim4
+%%ETCDIR%%/ignore.d.server/ftpd
+%%ETCDIR%%/ignore.d.server/gnu-imap4d
 %%ETCDIR%%/ignore.d.server/gps
 %%ETCDIR%%/ignore.d.server/grinch
 %%ETCDIR%%/ignore.d.server/horde3
 %%ETCDIR%%/ignore.d.server/hplip
 %%ETCDIR%%/ignore.d.server/hylafax
+%%ETCDIR%%/ignore.d.server/ikiwiki
 %%ETCDIR%%/ignore.d.server/imap
 %%ETCDIR%%/ignore.d.server/imapproxy
 %%ETCDIR%%/ignore.d.server/imp
@@ -55,6 +62,8 @@
 %%ETCDIR%%/ignore.d.server/isdnutils
 %%ETCDIR%%/ignore.d.server/jabberd
 %%ETCDIR%%/ignore.d.server/kernel
+%%ETCDIR%%/ignore.d.server/krb5-kdc
+%%ETCDIR%%/ignore.d.server/libpam-mount
 %%ETCDIR%%/ignore.d.server/logcheck
 %%ETCDIR%%/ignore.d.server/lpr
 %%ETCDIR%%/ignore.d.server/maradns
@@ -68,6 +77,7 @@
 %%ETCDIR%%/ignore.d.server/ntp
 %%ETCDIR%%/ignore.d.server/oidentd
 %%ETCDIR%%/ignore.d.server/openvpn
+%%ETCDIR%%/ignore.d.server/otrs
 %%ETCDIR%%/ignore.d.server/pdns
 %%ETCDIR%%/ignore.d.server/perdition
 %%ETCDIR%%/ignore.d.server/policyd
@@ -76,7 +86,9 @@
 %%ETCDIR%%/ignore.d.server/postfix-policyd
 %%ETCDIR%%/ignore.d.server/ppp
 %%ETCDIR%%/ignore.d.server/pptpd
+%%ETCDIR%%/ignore.d.server/procmail
 %%ETCDIR%%/ignore.d.server/proftpd
+%%ETCDIR%%/ignore.d.server/puppetd
 %%ETCDIR%%/ignore.d.server/pure-ftpd
 %%ETCDIR%%/ignore.d.server/qpopper
 %%ETCDIR%%/ignore.d.server/rbldnsd
@@ -86,10 +98,13 @@
 %%ETCDIR%%/ignore.d.server/sa-exim
 %%ETCDIR%%/ignore.d.server/samba
 %%ETCDIR%%/ignore.d.server/saned
+%%ETCDIR%%/ignore.d.server/sasl2-bin
 %%ETCDIR%%/ignore.d.server/saslauthd
+%%ETCDIR%%/ignore.d.server/schroot
 %%ETCDIR%%/ignore.d.server/scponly
 %%ETCDIR%%/ignore.d.server/slapd
 %%ETCDIR%%/ignore.d.server/smartd
+%%ETCDIR%%/ignore.d.server/smbd_audit
 %%ETCDIR%%/ignore.d.server/smokeping
 %%ETCDIR%%/ignore.d.server/snmpd
 %%ETCDIR%%/ignore.d.server/snort
@@ -100,17 +115,23 @@
 %%ETCDIR%%/ignore.d.server/stunnel
 %%ETCDIR%%/ignore.d.server/sympa
 %%ETCDIR%%/ignore.d.server/syslogd
+%%ETCDIR%%/ignore.d.server/teapop
+%%ETCDIR%%/ignore.d.server/telnetd
 %%ETCDIR%%/ignore.d.server/tftpd
 %%ETCDIR%%/ignore.d.server/thy
 %%ETCDIR%%/ignore.d.server/ucd-snmp
+%%ETCDIR%%/ignore.d.server/upsd
 %%ETCDIR%%/ignore.d.server/uptimed
 %%ETCDIR%%/ignore.d.server/userv
+%%ETCDIR%%/ignore.d.server/vsftpd
 %%ETCDIR%%/ignore.d.server/watchdog
 %%ETCDIR%%/ignore.d.server/webmin
+%%ETCDIR%%/ignore.d.server/wu-ftpd
 %%ETCDIR%%/ignore.d.server/xinetd
 %%ETCDIR%%/ignore.d.workstation/automount
 %%ETCDIR%%/ignore.d.workstation/bind
 %%ETCDIR%%/ignore.d.workstation/bluez-utils
+%%ETCDIR%%/ignore.d.workstation/bluetooth-alsa
 %%ETCDIR%%/ignore.d.workstation/bonobo
 %%ETCDIR%%/ignore.d.workstation/francine
 %%ETCDIR%%/ignore.d.workstation/gconf
@@ -135,6 +156,7 @@
 %%ETCDIR%%/ignore.d.workstation/wdm
 %%ETCDIR%%/ignore.d.workstation/winbind
 %%ETCDIR%%/ignore.d.workstation/xdm
+%%ETCDIR%%/ignore.d.workstation/xlockmore
 %%ETCDIR%%/logcheck.conf.sample
 %%ETCDIR%%/logcheck.logfiles.sample
 %%ETCDIR%%/violations.d/kernel
@@ -156,11 +178,13 @@
 %%ETCDIR%%/violations.ignore.d/logcheck-mon
 %%ETCDIR%%/violations.ignore.d/logcheck-nagios
 %%ETCDIR%%/violations.ignore.d/logcheck-openvpn
+%%ETCDIR%%/violations.ignore.d/logcheck-passwd
 %%ETCDIR%%/violations.ignore.d/logcheck-pdns
 %%ETCDIR%%/violations.ignore.d/logcheck-postfix
 %%ETCDIR%%/violations.ignore.d/logcheck-proftpd
 %%ETCDIR%%/violations.ignore.d/logcheck-pureftp
 %%ETCDIR%%/violations.ignore.d/logcheck-samba
+%%ETCDIR%%/violations.ignore.d/logcheck-sasl2-bin
 %%ETCDIR%%/violations.ignore.d/logcheck-saslauthd
 %%ETCDIR%%/violations.ignore.d/logcheck-sendmail_tmp
 %%ETCDIR%%/violations.ignore.d/logcheck-smartd
@@ -171,8 +195,12 @@
 %%ETCDIR%%/violations.ignore.d/logcheck-sudo
 %%ETCDIR%%/violations.ignore.d/logcheck-usb
 %%ETCDIR%%/violations.ignore.d/logcheck-winbind
+%%DATADIR%%/detectrotate/10-savelog.dtr
+%%DATADIR%%/detectrotate/20-logrotate.dtr
+%%DATADIR%%/detectrotate/30-logrotate-dateext.dtr
 sbin/logcheck
 sbin/logtail
+sbin/logtail2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.in
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%ETCDIR%%/violations.ignore.d
@@ -182,6 +210,8 @@ sbin/logtail
 @dirrm %%ETCDIR%%/ignore.d.paranoid
 @dirrm %%ETCDIR%%/cracking.d
 @dirrm %%ETCDIR%%
+@dirrm %%DATADIR%%/detectrotate
+@dirrm %%DATADIR%%
 @exec mkdir -p /var/db/logcheck
 @dirrmtry /var/db/logcheck
 @exec mkdir -p /var/run/logcheck
