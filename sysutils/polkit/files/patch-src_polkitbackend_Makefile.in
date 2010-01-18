@@ -1,6 +1,6 @@
---- src/polkitbackend/Makefile.in.orig	2009-08-01 11:56:22.000000000 +0200
-+++ src/polkitbackend/Makefile.in	2009-08-01 11:57:18.000000000 +0200
-@@ -852,7 +852,11 @@ clean-local :
+--- src/polkitbackend/Makefile.in.orig	2010-01-18 02:50:30.000000000 -0500
++++ src/polkitbackend/Makefile.in	2010-01-18 14:18:36.000000000 -0500
+@@ -899,10 +899,18 @@ clean-local :
  
  install-exec-hook:
  	mkdir -p $(DESTDIR)$(localstatedir)/lib/polkit-1
@@ -11,5 +11,13 @@
 +	mkdir -p $(DESTDIR)$(localstatedir)/lib/polkit-1/localauthority/50-local.d
 +	mkdir -p $(DESTDIR)$(localstatedir)/lib/polkit-1/localauthority/90-mandatory.d
  	-chmod 700 $(DESTDIR)$(localstatedir)/lib/polkit-1
+ 	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1
+-	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1/localauthority/{10-vendor.d,20-org.d,30-site.d,50-local.d,90-mandatory.d}
++	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1/localauthority/10-vendor.d
++	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1/localauthority/20-org.d
++	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1/localauthority/30-site.d
++	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1/localauthority/50-local.d
++	mkdir -p $(DESTDIR)$(sysconfdir)/polkit-1/localauthority/90-mandatory.d
+ 	-chmod 700 $(DESTDIR)$(sysconfdir)/polkit-1/localauthority
  	mkdir -p $(DESTDIR)$(libdir)/polkit-1/extensions
  
