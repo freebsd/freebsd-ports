@@ -1,0 +1,116 @@
+diff -ur VERSION VERSION
+--- VERSION	2009-12-25 02:14:45.000000000 -0800
++++ VERSION	2010-01-17 02:36:47.000000000 -0800
+@@ -1 +1 @@
+-2009-12-25 "Lemming"
++2009-12-25c "Lemming"
+diff -ur conf/msg conf/msg
+--- conf/msg	2009-12-25 02:14:41.000000000 -0800
++++ conf/msg	2010-01-17 02:35:46.000000000 -0800
+@@ -1,4 +1,4 @@
+-23
++25
+ The first line of this file contains a number, indicating
+ which notification messages should not be displayed. This
+ is the only information sent to dokuwiki.org when the
+diff -ur lib/plugins/acl/admin.php lib/plugins/acl/admin.php
+--- lib/plugins/acl/admin.php	2009-12-25 02:14:41.000000000 -0800
++++ lib/plugins/acl/admin.php	2010-01-17 02:35:46.000000000 -0800
+@@ -31,7 +31,7 @@
+         return array(
+             'author' => 'Andreas Gohr',
+             'email'  => 'andi@splitbrain.org',
+-            'date'   => '2009-08-07',
++            'date'   => '2010-01-17',
+             'name'   => 'ACL Manager',
+             'desc'   => 'Manage Page Access Control Lists',
+             'url'    => 'http://dokuwiki.org/plugin:acl',
+@@ -67,6 +67,7 @@
+         // fresh 1:1 copy without replacements
+         $AUTH_ACL = file(DOKU_CONF.'acl.auth.php');
+ 
++
+         // namespace given?
+         if($_REQUEST['ns'] == '*'){
+             $this->ns = '*';
+@@ -89,7 +90,8 @@
+         }
+ 
+         // handle modifications
+-        if(isset($_REQUEST['cmd'])){
++        if(isset($_REQUEST['cmd']) && checkSecurityToken()){
++
+             // scope for modifications
+             if($this->ns){
+                 if($this->ns == '*'){
+@@ -310,6 +312,7 @@
+         echo '<input type="hidden" name="id" value="'.hsc($ID).'" />'.NL;
+         echo '<input type="hidden" name="do" value="admin" />'.NL;
+         echo '<input type="hidden" name="page" value="acl" />'.NL;
++        echo '<input type="hidden" name="sectok" value="'.getSecurityToken().'" />'.NL;
+         echo '</div></form>'.NL;
+     }
+ 
+@@ -480,11 +483,11 @@
+                 $alt   = '+';
+             }
+             $ret .= '<img src="'.$img.'" alt="'.$alt.'" />';
+-            $ret .= '<a href="'.wl('',$this->_get_opts(array('ns'=>$item['id']))).'" class="idx_dir'.$cl.'">';
++            $ret .= '<a href="'.wl('',$this->_get_opts(array('ns'=>$item['id'],'sectok'=>getSecurityToken()))).'" class="idx_dir'.$cl.'">';
+             $ret .= $base;
+             $ret .= '</a>';
+         }else{
+-            $ret .= '<a href="'.wl('',$this->_get_opts(array('id'=>$item['id'],'ns'=>''))).'" class="wikilink1'.$cl.'">';
++            $ret .= '<a href="'.wl('',$this->_get_opts(array('id'=>$item['id'],'ns'=>'','sectok'=>getSecurityToken()))).'" class="wikilink1'.$cl.'">';
+             $ret .= noNS($item['id']);
+             $ret .= '</a>';
+         }
+@@ -562,6 +565,7 @@
+         echo '<input type="hidden" name="acl_w" value="'.hsc($this->who).'" />'.NL;
+         echo '<input type="hidden" name="do" value="admin" />'.NL;
+         echo '<input type="hidden" name="page" value="acl" />'.NL;
++        echo '<input type="hidden" name="sectok" value="'.getSecurityToken().'" />'.NL;
+         echo '<table class="inline">';
+         echo '<tr>';
+         echo '<th>'.$this->getLang('where').'</th>';
+diff -ur lib/plugins/acl/ajax.php lib/plugins/acl/ajax.php
+--- lib/plugins/acl/ajax.php	2009-12-25 02:14:41.000000000 -0800
++++ lib/plugins/acl/ajax.php	2010-01-17 02:35:46.000000000 -0800
+@@ -16,12 +16,14 @@
+ require_once(DOKU_INC.'inc/common.php');
+ require_once(DOKU_INC.'inc/pageutils.php');
+ require_once(DOKU_INC.'inc/auth.php');
+-//close sesseion
++//close session
+ session_write_close();
+ 
++if(!auth_isadmin()) die('for admins only');
++if(!checkSecurityToken()) die('CRSF Attack');
++
+ $ID    = getID();
+ 
+-if(!auth_isadmin) die('for admins only');
+ require_once(DOKU_INC.'inc/pluginutils.php');
+ require_once(DOKU_INC.'inc/html.php');
+ $acl = plugin_load('admin','acl');
+@@ -42,6 +44,7 @@
+     if($ns == '*'){
+         $ns ='';
+     }
++    $ns  = cleanID($ns);
+     $lvl = count(explode(':',$ns));
+     $ns  = utf8_encodeFN(str_replace(':','/',$ns));
+ 
+diff -ur lib/plugins/acl/script.js lib/plugins/acl/script.js
+--- lib/plugins/acl/script.js	2009-12-25 02:14:41.000000000 -0800
++++ lib/plugins/acl/script.js	2010-01-17 02:35:46.000000000 -0800
+@@ -48,7 +48,8 @@
+         data[1] = ajax.encVar('id',frm.elements['id'].value);
+         data[2] = ajax.encVar('acl_t',frm.elements['acl_t'].value);
+         data[3] = ajax.encVar('acl_w',frm.elements['acl_w'].value);
+-        data[4] = ajax.encVar('ajax','info');
++        data[4] = ajax.encVar('sectok',frm.elements['sectok'].value);
++        data[5] = ajax.encVar('ajax','info');
+ 
+         ajax.elementObj = $('acl__info');
+ 
