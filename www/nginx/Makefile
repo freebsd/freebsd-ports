@@ -57,6 +57,7 @@ OPTIONS=	DEBUG			"Build with debug" off \
 		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
 		HTTP_UPLOAD_PROGRESS	"3rd party uploadprogress module" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
+		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
@@ -199,7 +200,7 @@ CONFIGURE_ARGS+=--with-http_image_filter_module
 .endif
 
 .if defined(WITH_HTTP_MOGILEFS_MODULE)
-NGINX_MOGILEFS_MODULE_VERSION=	1.0.2
+NGINX_MOGILEFS_MODULE_VERSION=	1.0.3
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
 DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}.tar.gz:mogilefs
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}
@@ -294,6 +295,13 @@ DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfa
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
 .endif
 
+.if defined(WITH_HTTP_UPSTREAM_HASH)
+NGINX_UPSTREAM_HASH_VERSION=	0.3.1
+MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
+DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
+.endif
+
 .if defined(WITH_HTTP_UPSTREAM_KEEPALIVE)
 NGINX_UPSTREAM_KEEPALIVE_VERSION=	0.2
 MASTER_SITES+=	http://mdounin.ru/files/:upstream
@@ -339,7 +347,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
-NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.2
+NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.3
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
 DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
@@ -428,6 +436,10 @@ post-patch:
 	@${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
 		s!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
+.endif
+.if defined(WITH_HTTP_UPSTREAM_HASH)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
