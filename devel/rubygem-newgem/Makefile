@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newgem
-PORTVERSION=	1.2.3
+PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
