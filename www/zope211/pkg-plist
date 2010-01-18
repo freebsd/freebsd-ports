@@ -1864,6 +1864,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/dtml/addTemporaryFolder.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/dtml/mountfail.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/help/TemporaryFolder.stx
+%%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/mount.py
+%%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/mount.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/patchfs.py
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/patchfs.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/www/tempfolder.gif
@@ -2869,6 +2871,10 @@
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/zeo-fan-out.test
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/zeoserver.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/zeoserver.pyc
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO2.py
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO2.pyc
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/servertesting.py
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/servertesting.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/util.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/util.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/version.txt
@@ -3011,6 +3017,9 @@
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/zodbload.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/zodbload.pyc
+%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.pyc
+%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.test
 %%ZOPEBASEDIR%%/lib/python/ZODB/serialize.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/serialize.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/storage.xml
