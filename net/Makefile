@@ -38,7 +38,6 @@
     SUBDIR += asterisk16
     SUBDIR += asterisk16-addons
     SUBDIR += astfax
-    SUBDIR += astmanproxy
     SUBDIR += atmsupport
     SUBDIR += avahi
     SUBDIR += avahi-app

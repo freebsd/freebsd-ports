@@ -20,7 +20,6 @@
     SUBDIR += acovea-gtk
     SUBDIR += acpicatools
     SUBDIR += activitymail
-    SUBDIR += adabindx
     SUBDIR += adabooch
     SUBDIR += adabooch-doc-html
     SUBDIR += adacurses
@@ -29,7 +28,6 @@
     SUBDIR += adocman
     SUBDIR += aegis
     SUBDIR += afay
-    SUBDIR += agide
     SUBDIR += aifad
     SUBDIR += alabastra
     SUBDIR += ald
@@ -52,7 +50,6 @@
     SUBDIR += aros-sdk
     SUBDIR += as31
     SUBDIR += asdlgen
-    SUBDIR += asis
     SUBDIR += asis-gpl
     SUBDIR += asl
     SUBDIR += asmutils
@@ -143,7 +140,6 @@
     SUBDIR += c_c++_reference
     SUBDIR += c_parser
     SUBDIR += calibrator
-    SUBDIR += callgrind
     SUBDIR += cbind
     SUBDIR += cbrowser
     SUBDIR += cc65
@@ -374,7 +370,6 @@
     SUBDIR += flexdock
     SUBDIR += flexjson
     SUBDIR += flick
-    SUBDIR += florist
     SUBDIR += florist-gpl
     SUBDIR += flowdesigner
     SUBDIR += flyspray

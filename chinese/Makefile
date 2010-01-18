@@ -44,7 +44,6 @@
     SUBDIR += fqterm
     SUBDIR += gb2jis
     SUBDIR += gb2ps
-    SUBDIR += gbk2uni
     SUBDIR += gbscript
     SUBDIR += gcin
     SUBDIR += gcin-devel
@@ -56,7 +55,6 @@
     SUBDIR += ibus-pinyin
     SUBDIR += iiimf-le-newpy
     SUBDIR += iiimf-le-ude
-    SUBDIR += iiimf-le-xcin
     SUBDIR += irssi
     SUBDIR += jis2gb
     SUBDIR += joe

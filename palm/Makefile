@@ -29,7 +29,6 @@
     SUBDIR += plucker
     SUBDIR += pose
     SUBDIR += ppmtoTbmp
-    SUBDIR += prc-tools
     SUBDIR += py-synce-librapi2
     SUBDIR += py-synce-librra
     SUBDIR += romeo

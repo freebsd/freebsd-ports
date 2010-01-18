@@ -222,7 +222,6 @@
     SUBDIR += geomview
     SUBDIR += geos
     SUBDIR += geoserver
-    SUBDIR += gephex
     SUBDIR += gfont
     SUBDIR += giblib
     SUBDIR += gif2png
@@ -342,7 +341,6 @@
     SUBDIR += intergif
     SUBDIR += inventor
     SUBDIR += ipe
-    SUBDIR += irit
     SUBDIR += isreal
     SUBDIR += iulib
     SUBDIR += ivtools
@@ -694,7 +692,6 @@
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie
-    SUBDIR += pixieplus
     SUBDIR += pixmap
     SUBDIR += plasma-kmod
     SUBDIR += plotmtv

@@ -68,7 +68,6 @@
     SUBDIR += flow-tools
     SUBDIR += flow-tools-ng
     SUBDIR += flowd
-    SUBDIR += flowscan
     SUBDIR += flowviewer
     SUBDIR += fprobe
     SUBDIR += fruity

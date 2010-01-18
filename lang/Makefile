@@ -257,7 +257,6 @@
     SUBDIR += plt-scheme
     SUBDIR += pnet
     SUBDIR += pnet-base
-    SUBDIR += pnetc
     SUBDIR += pnetlib
     SUBDIR += polyml
     SUBDIR += ptoc
