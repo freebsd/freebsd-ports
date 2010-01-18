@@ -47,6 +47,14 @@ share/gnome/help/gnome-audio-profiles/C/figures/gnome-audio-profiles-profile-win
 share/gnome/help/gnome-audio-profiles/C/figures/gnome-audio-profiles-profiles-window.png
 share/gnome/help/gnome-audio-profiles/C/gnome-audio-profiles.xml
 share/gnome/help/gnome-audio-profiles/C/legal.xml
+share/gnome/help/gnome-audio-profiles/de/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/de/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/de/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/de/legal.xml
+share/gnome/help/gnome-audio-profiles/es/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/es/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/es/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/es/legal.xml
 share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
 share/gnome/help/gnome-sound-recorder/C/gnome-sound-recorder.xml
 share/gnome/help/gnome-sound-recorder/C/legal.xml
@@ -54,6 +62,8 @@ share/gnome/help/gnome-sound-recorder/ca/figures/grecord_window.png
 share/gnome/help/gnome-sound-recorder/ca/gnome-sound-recorder.xml
 share/gnome/help/gnome-sound-recorder/cs/figures/grecord_window.png
 share/gnome/help/gnome-sound-recorder/cs/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/da/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/da/gnome-sound-recorder.xml
 share/gnome/help/gnome-sound-recorder/de/figures/grecord_window.png
 share/gnome/help/gnome-sound-recorder/de/gnome-sound-recorder.xml
 share/gnome/help/gnome-sound-recorder/el/figures/grecord_window.png
@@ -105,6 +115,8 @@ share/gnome/help/gstreamer-properties/sv/figures/gstreamer_properties_window.png
 share/gnome/help/gstreamer-properties/sv/gstreamer-properties.xml
 share/gnome/help/gstreamer-properties/th/figures/gstreamer_properties_window.png
 share/gnome/help/gstreamer-properties/th/gstreamer-properties.xml
+share/gnome/help/gstreamer-properties/uk/figures/gstreamer_properties_window.png
+share/gnome/help/gstreamer-properties/uk/gstreamer-properties.xml
 share/gnome/help/gstreamer-properties/zh_CN/figures/gstreamer_properties_window.png
 share/gnome/help/gstreamer-properties/zh_CN/gstreamer-properties.xml
 share/gstreamer-properties/gstreamer-properties.ui
@@ -145,6 +157,7 @@ share/locale/da/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/dz/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-media-2.0.mo
@@ -177,6 +190,7 @@ share/locale/mn/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/nds/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-media-2.0.mo
@@ -209,9 +223,12 @@ share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 share/omf/gnome-audio-profiles/gnome-audio-profiles-C.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-de.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-es.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-C.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-ca.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-cs.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-da.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-de.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-el.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-en_GB.omf
@@ -237,6 +254,7 @@ share/omf/gstreamer-properties/gstreamer-properties-oc.omf
 share/omf/gstreamer-properties/gstreamer-properties-ru.omf
 share/omf/gstreamer-properties/gstreamer-properties-sv.omf
 share/omf/gstreamer-properties/gstreamer-properties-th.omf
+share/omf/gstreamer-properties/gstreamer-properties-uk.omf
 share/omf/gstreamer-properties/gstreamer-properties-zh_CN.omf
 share/sounds/gnome/default/alerts/bark.ogg
 share/sounds/gnome/default/alerts/drip.ogg
@@ -252,6 +270,8 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/gstreamer-properties
 @dirrm share/gnome/help/gstreamer-properties/zh_CN/figures
 @dirrm share/gnome/help/gstreamer-properties/zh_CN
+@dirrm share/gnome/help/gstreamer-properties/uk/figures
+@dirrm share/gnome/help/gstreamer-properties/uk
 @dirrm share/gnome/help/gstreamer-properties/th/figures
 @dirrm share/gnome/help/gstreamer-properties/th
 @dirrm share/gnome/help/gstreamer-properties/sv/figures
@@ -303,6 +323,8 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/gnome/help/gnome-sound-recorder/el
 @dirrm share/gnome/help/gnome-sound-recorder/de/figures
 @dirrm share/gnome/help/gnome-sound-recorder/de
+@dirrm share/gnome/help/gnome-sound-recorder/da/figures
+@dirrm share/gnome/help/gnome-sound-recorder/da
 @dirrm share/gnome/help/gnome-sound-recorder/cs/figures
 @dirrm share/gnome/help/gnome-sound-recorder/cs
 @dirrm share/gnome/help/gnome-sound-recorder/ca/figures
@@ -310,6 +332,10 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/gnome/help/gnome-sound-recorder/C/figures
 @dirrm share/gnome/help/gnome-sound-recorder/C
 @dirrm share/gnome/help/gnome-sound-recorder
+@dirrm share/gnome/help/gnome-audio-profiles/es/figures
+@dirrm share/gnome/help/gnome-audio-profiles/es
+@dirrm share/gnome/help/gnome-audio-profiles/de/figures
+@dirrm share/gnome/help/gnome-audio-profiles/de
 @dirrm share/gnome/help/gnome-audio-profiles/C/figures
 @dirrm share/gnome/help/gnome-audio-profiles/C
 @dirrm share/gnome/help/gnome-audio-profiles
@@ -347,6 +373,8 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -355,6 +383,8 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
