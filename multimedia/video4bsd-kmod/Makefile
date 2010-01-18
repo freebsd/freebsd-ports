@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	video4bsd-kmod
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
@@ -20,6 +20,10 @@ PLIST_SUB=	KMODNAME="${KMODNAME}" \
 		KMODDIR="${KMODDIR}"
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+IGNORE=		requires FreeBSD 8.0-RELEASE or later
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/video4bsd.h ${PREFIX}/include
