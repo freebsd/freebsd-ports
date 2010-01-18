@@ -1,0 +1,45 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Model/.packlist
+%%SITE_PERL%%/Data/Model.pm
+%%SITE_PERL%%/Data/Model/Accessor.pm
+%%SITE_PERL%%/Data/Model/Driver.pm
+%%SITE_PERL%%/Data/Model/Driver/Cache.pm
+%%SITE_PERL%%/Data/Model/Driver/Cache/HASH.pm
+%%SITE_PERL%%/Data/Model/Driver/Cache/Memcached.pm
+%%SITE_PERL%%/Data/Model/Driver/DBI.pm
+%%SITE_PERL%%/Data/Model/Driver/DBI/DBD.pm
+%%SITE_PERL%%/Data/Model/Driver/DBI/DBD/SQLite.pm
+%%SITE_PERL%%/Data/Model/Driver/DBI/DBD/mysql.pm
+%%SITE_PERL%%/Data/Model/Driver/DBI/MasterSlave.pm
+%%SITE_PERL%%/Data/Model/Driver/Hash.pm
+%%SITE_PERL%%/Data/Model/Driver/Logic.pm
+%%SITE_PERL%%/Data/Model/Driver/Memcached.pm
+%%SITE_PERL%%/Data/Model/Driver/Memory.pm
+%%SITE_PERL%%/Data/Model/Driver/Queue/Q4M.pm
+%%SITE_PERL%%/Data/Model/Iterator.pm
+%%SITE_PERL%%/Data/Model/Mixin.pm
+%%SITE_PERL%%/Data/Model/Mixin/FindOrCreate.pm
+%%SITE_PERL%%/Data/Model/Mixin/Queue/Q4M.pm
+%%SITE_PERL%%/Data/Model/Row.pm
+%%SITE_PERL%%/Data/Model/SQL.pm
+%%SITE_PERL%%/Data/Model/Schema.pm
+%%SITE_PERL%%/Data/Model/Schema/Inflate.pm
+%%SITE_PERL%%/Data/Model/Schema/Inflate/UUID.pm
+%%SITE_PERL%%/Data/Model/Schema/Properties.pm
+%%SITE_PERL%%/Data/Model/Schema/SQL.pm
+%%SITE_PERL%%/Data/Model/Transaction.pm
+%%SITE_PERL%%/Data/Model/Tutorial/JA.pm
+%%SITE_PERL%%/Data/README.pod
+@dirrm %%SITE_PERL%%/Data/Model/Tutorial
+@dirrm %%SITE_PERL%%/Data/Model/Schema/Inflate
+@dirrm %%SITE_PERL%%/Data/Model/Schema
+@dirrm %%SITE_PERL%%/Data/Model/Mixin/Queue
+@dirrm %%SITE_PERL%%/Data/Model/Mixin
+@dirrm %%SITE_PERL%%/Data/Model/Driver/Queue
+@dirrm %%SITE_PERL%%/Data/Model/Driver/DBI/DBD
+@dirrm %%SITE_PERL%%/Data/Model/Driver/DBI
+@dirrm %%SITE_PERL%%/Data/Model/Driver/Cache
+@dirrm %%SITE_PERL%%/Data/Model/Driver
+@dirrm %%SITE_PERL%%/Data/Model
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Model
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
