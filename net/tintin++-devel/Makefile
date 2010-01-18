@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.99.8
+PORTVERSION=	1.99.9
 CATEGORIES+=	net games
-MASTER_SITES=	SF/${PORTNAME}/TinTin%2B%2B%20Source%20Code/${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A client program to help playing MUDs (devel version)
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+PROJECTHOST=	tintin-mud-client
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --includedir=${LOCALBASE}/include \
 			--libdir=${LOCALBASE}/lib
