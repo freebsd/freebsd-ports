@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://ports.abditum.com/pipemeter/ \
 		http://spamaps.org/files/pipemeter/
 
-MAINTAINER=	rabbi@abditum.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for displaying pipe status information
 
 GNU_CONFIGURE=	yes

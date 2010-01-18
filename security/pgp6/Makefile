@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://ftp.no.pgpi.org/pub/pgp/${PORTVERSION:R}/${PORTVERSION}/ \
 		ftp://ftp.ru.pgpi.org/pub/pgp/${PORTVERSION:R}/${PORTVERSION}/
 DISTNAME=	pgpsrc658unix
 
-MAINTAINER=	rabbi@abditum.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Public-Key encryption for the masses
 
 WRKSRC=		${WRKDIR}/pgpsrc
