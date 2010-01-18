@@ -1,6 +1,10 @@
-diff -urN -x .svn ../../vendor/xvkbd/xvkbd.man ./xvkbd.man
---- ../../vendor/xvkbd/xvkbd.man	2008-05-28 23:43:41.000000000 +0300
-+++ ./xvkbd.man	2008-06-03 14:54:13.000000000 +0300
+Description: Fix the words file location and escape a lot of minus signs.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-01-18
+
+--- xvkbd.man.orig
++++ xvkbd.man
 @@ -29,7 +29,7 @@
  .PP
  \fIIMPORTANT NOTE:\fP
@@ -355,16 +359,16 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.man ./xvkbd.man
  .SH "Download"
  .TP 4
  \fILatest Official Release\fP
--\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.0.tar.gz\fP
-+\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.0.tar.gz\fP
+-\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.1.tar.gz\fP
++\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.1.tar.gz\fP
  .br
- - source of version 3.0 (2008-05-05)
+ - source of version 3.1 (2010-01-17)
  .TP 4
  previous release
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-2.9.tar.gz\fP
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-2.9.tar.gz\fP
+-http://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.0.tar.gz
++http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.0.tar.gz
  .br
- - source of version 2.9 (2008-03-30)
+ - source of version 3.0 (2008-05-05)
  .PP
 @@ -600,8 +600,8 @@
  .IP "  o " 4
@@ -600,3 +604,21 @@ diff -urN -x .svn ../../vendor/xvkbd/xvkbd.man ./xvkbd.man
  via \fB\\x\fP, \fB\\y\fP and \fB\\m\fP special sequences.
  .TP 4
  Version 3.0 (2008-05-05)
+@@ -1132,7 +1132,7 @@
+ .IP "    - " 6
+ Changed the default setting for automatic click to OFF, which was set ON in the previous release in error and caused confusion.
+ .IP "    - " 6
+-The keypad is now customizable, too (see XVkbd-strip.ad for the example).
++The keypad is now customizable, too (see XVkbd\-strip.ad for the example).
+ .IP "    - " 6
+ Up to 25x25 keys can now be supported both for the main keyboard and the keypad.
+ .IP "    - " 6
+@@ -1140,7 +1140,7 @@
+ .IP "    - " 6
+ Fixed errors in some keyboard layout files (Korean, Slovene, UK).
+ .IP "    - " 6
+-A new sample layout file XVkbd-strip.ad.
++A new sample layout file XVkbd\-strip.ad.
+ 
+ .SH "Author"
+ \fIxvkbd\fP was written by Tom Sato,

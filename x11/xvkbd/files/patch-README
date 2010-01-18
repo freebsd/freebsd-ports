@@ -1,6 +1,10 @@
-diff -urN -x .svn ../../vendor/xvkbd/README ./README
---- ../../vendor/xvkbd/README	2008-05-28 23:43:41.000000000 +0300
-+++ ./README	2008-05-29 00:13:19.000000000 +0300
+Description: Fix the words file location on FreeBSD.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2008-05-28
+
+--- README.orig
++++ README
 @@ -93,7 +93,7 @@
         characters of the selected word by clicking one of the words in the
         list.

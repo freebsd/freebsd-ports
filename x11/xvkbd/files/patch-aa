@@ -1,5 +1,10 @@
---- Imakefile	2001/02/23 15:39:52	1.1.1.3
-+++ Imakefile	2001/02/23 15:41:45	1.6
+Description: Disable all optional features, reenabled in the port's Makefile.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2002-02-22
+
+--- Imakefile.orig
++++ Imakefile
 @@ -4,13 +4,13 @@
  
  
