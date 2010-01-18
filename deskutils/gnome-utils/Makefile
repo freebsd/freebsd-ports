@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-utils
-PORTVERSION=	2.28.1
+PORTVERSION=	2.28.3
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
@@ -36,8 +36,5 @@ MAN1=		gnome-dictionary.1 gnome-screenshot.1 gnome-search-tool.1 \
 GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
 		gnome-search-tool.schemas baobab.schemas \
 		gnome-system-log.schemas
-
-post-patch:
-	@${RM} ${WRKSRC}/gsearchtool/gnome-search-tool.schemas
 
 .include <bsd.port.mk>
