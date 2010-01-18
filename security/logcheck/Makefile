@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logcheck
-PORTVERSION=	1.2.54
-PORTREVISION=	5
+PORTVERSION=	1.2.69
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,6 +16,8 @@ COMMENT=	Auditing tool for system logs on Unix boxes
 
 RUN_DEPENDS=	lockfile:${PORTSDIR}/mail/procmail \
 		bash:${PORTSDIR}/shells/bash
+
+PORTSCOUT=	limit:^1\.2\.
 
 LOGCHECK_USER=	logcheck
 LOGCHECK_UID=	915
@@ -38,12 +39,13 @@ CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
 		ignore.d.workstation violations.d violations.ignore.d
 DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
 PORTDOCS=	${DOCS:T}
-MAN8=		logcheck.8 logtail.8
+MAN8=		logcheck.8 logtail.8 logtail2.8
 
 PATCH_LIST=	extra-patch-debian__logcheck.cron.d \
 		extra-patch-docs__logcheck.8 \
 		extra-patch-etc__logcheck.conf \
-		extra-patch-src__logcheck
+		extra-patch-src__logcheck \
+		extra-patch-src__logtail2
 EXTRA_PATCHES=	${PATCH_LIST:C|^|${WRKDIR}/|g}
 
 pre-patch:
@@ -60,6 +62,7 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail2 ${PREFIX}/sbin
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${INSTALL} -d /var/db/logcheck
 	@${INSTALL} -d /var/run/logcheck
@@ -78,6 +81,8 @@ do-install:
 	@${INSTALL} -d ${ETCDIR}/${i}
 	@${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* ${ETCDIR}/${i}
 .endfor
+	@${INSTALL} -d ${DATADIR}/detectrotate
+	@${INSTALL_DATA} ${WRKSRC}/src/detectrotate/*.dtr ${DATADIR}/detectrotate
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
