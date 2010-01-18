@@ -7,6 +7,7 @@
 
 PORTNAME=	sabnzbdplus
 PORTVERSION=	0.4.12
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -16,11 +17,13 @@ COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
-		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
-		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
+		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	-2.5
+
+PYVERSION=	${PYTHON_VERSION:S/^python//}
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/SABnzbd-${PORTVERSION}
 PLIST_SUB=	PORTNAME=${PORTNAME}
@@ -33,6 +36,26 @@ OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		OPENSSL "SSL support" on
 
 .include <bsd.port.pre.mk>
+
+#
+# Make sure that we build with the correct version of Python.
+#
+# The following variables may need to be added to /etc/make.conf or to
+# a build-specific environment file when building under Tinderbox:
+#
+#    PYTHON_VERSION=python2.5
+#    PYTHON_DEFAULT_VERSION=python2.5
+#
+# Ref: http://www.marcuscom.com/pipermail/tinderbox-list/2007-October/000948.html
+#
+.if defined(PACKAGE_BUILDING) && \
+	${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION}
+IGNORE=	needs Python ${PYTHON_VERSION} instead of ${PYTHON_DEFAULT_VERSION}
+.endif
+
+.if defined(PYTHON_VERSION) && ${PYVERSION:S/.//} < 25
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
+.endif
 
 .if !defined(WITHOUT_PAR2CMDLINE)
 RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline
@@ -72,5 +95,5 @@ post-install:
 	${CP} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
-
+	@${CAT} pkg-message
 .include <bsd.port.post.mk>
