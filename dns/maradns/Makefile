@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.3.07.09
-PORTREVISION=	1
+PORTVERSION=	1.4.02
 CATEGORIES=	dns
-MASTER_SITES=	http://www.maradns.org/download/1.3/${PORTVERSION}/ \
-		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/
+MASTER_SITES=	http://www.maradns.org/download/1.4/${PORTVERSION}/ \
+		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	decke@bluelife.at
 COMMENT=	DNS server with focus on security and simplicity
 
 REINPLACE_ARGS=	-i ""

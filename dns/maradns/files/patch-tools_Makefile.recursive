@@ -1,5 +1,5 @@
---- tools/Makefile.orig	Sat Jun  2 13:33:56 2007
-+++ tools/Makefile	Sat Jun  2 13:38:09 2007
+--- tools/Makefile.recursive.orig	2006-01-02 17:59:33.000000000 +0100
++++ tools/Makefile.recursive	2010-01-08 09:51:36.000000000 +0100
 @@ -27,7 +27,7 @@
  	$(CC) $(FLAGS) -o benchmark benchmark.c $(OBJECTS) $(POBJECTS)
  
