@@ -8,8 +8,10 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/
-DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-ea-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
+MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
+		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
+DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
+		${ANT_DISTFILE}${EXTRACT_SUFX}:ant
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 7
@@ -22,6 +24,12 @@ JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	0
 JDK_BUILD_NUMBER=	79
 JDK_BUILD_DATE=		14_jan_2010
+JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}-ea-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
+
+# Use our own version of ant to avoid circular dependencies
+ANT_VERSION=		1.7.1
+ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
+
 LATEST_LINK=		openjdk7
 
 USE_GMAKE=	YES
@@ -29,7 +37,6 @@ USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xrender xt xtst
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
@@ -54,7 +61,7 @@ MAKE_ENV+=	LANG="C" \
 		ALT_X11_PATH="${LOCALBASE}" \
 		ALT_PKG_PATH="${LOCALBASE}" \
 		ALT_PACKAGE_PATH="${LOCALBASE}" \
-		ANT_HOME="${LOCALBASE}" \
+		ANT_HOME="${WRKDIR}/apache-ant-${ANT_VERSION}" \
 		X11DIR="${LOCALBASE}" \
 		LOCALDIR="${LOCALBASE}" \
 		NO_DOCS="true" \
