@@ -16,6 +16,8 @@ COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 MAKE_JOBS_UNSAFE=	yes
 
+LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 PERL_CONFIGURE=	5.8.0+
 USE_XORG=	x11
 CONFIGURE_ARGS=	X11LIB=${LOCALBASE}/lib X11INC=${LOCALBASE}/include
@@ -146,7 +148,7 @@ MAN3=		Tie::Watch.3 \
 
 .if defined(WITH_XFT)
 CONFIGURE_ARGS=	XFT=1
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=	xft
 .endif
 
 .if !defined(WITH_XFT)
@@ -159,13 +161,17 @@ pre-everything::
 .endif
 
 post-patch:
-	@${PERL} -i -p -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/pTk/Makefile.PL
+	@${PERL} -i -p -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/pTk/Makefile.PL \
+		${WRKSRC}/JPEG/Makefile.PL \
+		${WRKSRC}/PNG/Makefile.PL
 
 post-configure:
 	@${PERL} -i -p \
 		-e 's|^(CC = ).*|$$1 ${CC}|;' \
-		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|' \
+		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|;' \
+		-e 's|^(LD = ).*|$$1 ${CC} ${CFLAGS} ${LDFLAGS}|;' \
+		-e 's|^(FULL_AR = ).*|$$1 ${AR}|' \
 		`${FIND} ${WRKSRC} -name Makefile`
 
 .include <bsd.port.post.mk>
