@@ -3,8 +3,4 @@ code for various computer vision problems. The library is compatible with
 IPL and utilizes Intel Integrated Performance Primitives for better
 performance.
 
-WWW: http://sourceforge.net/projects/opencvlibrary/
-     http://www.intel.com/research/mrl/research/opencv/
-
-- Marc
-http://marc.abramowitz.info
+WWW: http://opencv.willowgarage.com

@@ -1,0 +1,12 @@
+--- samples/CMakeLists.txt.orig	2009-11-25 01:26:49.804760829 +0000
++++ samples/CMakeLists.txt	2009-11-25 01:36:37.139328594 +0000
+@@ -4,5 +4,9 @@
+ # ----------------------------------------------------------------------------
+ 
+ add_subdirectory(c)
++if(INSTALL_PYTHON_EXAMPLES)
+ add_subdirectory(swig_python)
++endif()
++if(INSTALL_OCTAVE_EXAMPLES)
+ add_subdirectory(octave)
++endif()
