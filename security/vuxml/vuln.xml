@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="848539dc-0458-11df-8dd7-002170daae37">
+    <topic>dokuwiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20091225_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dokuwiki reports:</p>
+	<blockquote cite="http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1853">
+	  <p>The plugin does no checks against cross-site request
+	    forgeries (CSRF) which can be exploited to e.g. change
+	    the access control rules by tricking a logged in
+	    administrator into visiting a malicious web site.</p>
+	</blockquote>
+	<blockquote cite="http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1847">
+	  <p>The bug allows listing the names of arbitrary file on
+	    the webserver - not their contents. This could leak
+	    private information about wiki pages and server structure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1847</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1853</url>
+    </references>
+    <dates>
+      <discovery>2010-01-17</discovery>
+      <entry>2010-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9263916-006f-11df-94cb-0050568452ac">
     <topic>Zend Framework -- multiple vulnerabilities</topic>
     <affects>
