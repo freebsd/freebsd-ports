@@ -149,6 +149,8 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/bumper/adir.gif
 %%DATADIR%%/icon/bumper/allow_48.jpg
 %%DATADIR%%/icon/bumper/backup_48.jpg
+%%DATADIR%%/icon/bumper/cache_32.jpg
+%%DATADIR%%/icon/bumper/cache_48.jpg
 %%DATADIR%%/icon/bumper/chname_32.jpg
 %%DATADIR%%/icon/bumper/chname_48.jpg
 %%DATADIR%%/icon/bumper/computer.gif
@@ -222,7 +224,10 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/bumper/pobject.gif
 %%DATADIR%%/icon/bumper/proxy.gif
 %%DATADIR%%/icon/bumper/proxy_big.gif
+%%DATADIR%%/icon/bumper/proxyes_32.jpg
+%%DATADIR%%/icon/bumper/proxyes_48.jpg
 %%DATADIR%%/icon/bumper/puser.gif
+%%DATADIR%%/icon/bumper/puser_open.gif
 %%DATADIR%%/icon/bumper/puserd.gif
 %%DATADIR%%/icon/bumper/quote_alarm.gif
 %%DATADIR%%/icon/bumper/recalc_32.jpg
@@ -284,8 +289,6 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/blank.gif
 %%DATADIR%%/icon/classic/cache_32.jpg
 %%DATADIR%%/icon/classic/cache_48.jpg
-%%DATADIR%%/icon/bumper/cache_32.jpg
-%%DATADIR%%/icon/bumper/cache_48.jpg
 %%DATADIR%%/icon/classic/chname_32.jpg
 %%DATADIR%%/icon/classic/chname_48.jpg
 %%DATADIR%%/icon/classic/config_20.jpg
@@ -390,8 +393,6 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/proxy_big.gif
 %%DATADIR%%/icon/classic/proxyes_32.jpg
 %%DATADIR%%/icon/classic/proxyes_48.jpg
-%%DATADIR%%/icon/bumper/proxyes_32.jpg
-%%DATADIR%%/icon/bumper/proxyes_48.jpg
 %%DATADIR%%/icon/classic/psite.gif
 %%DATADIR%%/icon/classic/puser.gif
 %%DATADIR%%/icon/classic/puser_open.gif
@@ -666,6 +667,7 @@ etc/sams.conf.sample
 %%DATADIR%%/src/webconfigbuttom_1_prop.php
 %%DATADIR%%/src/webconfigtray.php
 %%DATADIR%%/tray.php
+@exec mkdir -p %D/%%DATADIR%%/backup
 @dirrm %%DATADIR%%/src/script
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%/messages
