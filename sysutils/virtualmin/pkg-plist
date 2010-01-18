@@ -148,7 +148,6 @@
 %%LIB32DIR%%/webmin/virtual-server/generate-cert.pl
 %%LIB32DIR%%/webmin/virtual-server/get-dns.pl
 %%LIB32DIR%%/webmin/virtual-server/get-template.pl
-%%LIB32DIR%%/webmin/virtual-server/list-custom.pl
 %%LIB32DIR%%/webmin/virtual-server/help/admin_create.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_desc.html
 %%LIB32DIR%%/webmin/virtual-server/help/admin_doms.html
@@ -169,10 +168,10 @@
 %%LIB32DIR%%/webmin/virtual-server/help/alias_local.html
 %%LIB32DIR%%/webmin/virtual-server/help/alias_period.html
 %%LIB32DIR%%/webmin/virtual-server/help/alias_start.html
-%%LIB32DIR%%/webmin/virtual-server/help/aliasdom.html
 %%LIB32DIR%%/webmin/virtual-server/help/aliascmt.html
 %%LIB32DIR%%/webmin/virtual-server/help/aliasdest.en_GB.html
 %%LIB32DIR%%/webmin/virtual-server/help/aliasdest.html
+%%LIB32DIR%%/webmin/virtual-server/help/aliasdom.html
 %%LIB32DIR%%/webmin/virtual-server/help/aliaslimit.html
 %%LIB32DIR%%/webmin/virtual-server/help/aliasname.html
 %%LIB32DIR%%/webmin/virtual-server/help/aliasname2.html
@@ -294,8 +293,8 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_iface6.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_iface_base.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_iface_manual.html
-%%LIB32DIR%%/webmin/virtual-server/help/config_index_fcols.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_index_cols.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_index_fcols.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_jail_shell.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_key_size.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_key_tmpl.html
@@ -321,6 +320,10 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_mail_skel.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_mail_system.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_maillog_period.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_max_all.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_max_backups.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_max_manual.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_max_timeout.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_mem_cmd.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_move_command.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_mysql.html
@@ -331,6 +334,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_openssl_cnf.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_other_doms.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_other_users.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_output_command.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_output_commands.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_passwd_length.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_passwd_mode.html
@@ -478,6 +482,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/newmxs.html
 %%LIB32DIR%%/webmin/virtual-server/help/newquotas.html
 %%LIB32DIR%%/webmin/virtual-server/help/newshells.html
+%%LIB32DIR%%/webmin/virtual-server/help/newvalidate.html
 %%LIB32DIR%%/webmin/virtual-server/help/nodbname.html
 %%LIB32DIR%%/webmin/virtual-server/help/nospam.html
 %%LIB32DIR%%/webmin/virtual-server/help/ownersemail.html
@@ -774,8 +779,10 @@
 %%LIB32DIR%%/webmin/virtual-server/images/starover.gif
 %%LIB32DIR%%/webmin/virtual-server/images/tick.gif
 %%LIB32DIR%%/webmin/virtual-server/images/up.gif
+%%LIB32DIR%%/webmin/virtual-server/images/usage-backup.gif
 %%LIB32DIR%%/webmin/virtual-server/images/usage-ftp.gif
 %%LIB32DIR%%/webmin/virtual-server/images/usage-mail.gif
+%%LIB32DIR%%/webmin/virtual-server/images/usage-restore.gif
 %%LIB32DIR%%/webmin/virtual-server/images/usage-unix.gif
 %%LIB32DIR%%/webmin/virtual-server/images/usage-web.gif
 %%LIB32DIR%%/webmin/virtual-server/images/users.gif
@@ -783,6 +790,7 @@
 %%LIB32DIR%%/webmin/virtual-server/images/view.gif
 %%LIB32DIR%%/webmin/virtual-server/images/web.gif
 %%LIB32DIR%%/webmin/virtual-server/images/white.gif
+%%LIB32DIR%%/webmin/virtual-server/import-database.pl
 %%LIB32DIR%%/webmin/virtual-server/import.cgi
 %%LIB32DIR%%/webmin/virtual-server/import_database.cgi
 %%LIB32DIR%%/webmin/virtual-server/import_form.cgi
@@ -811,6 +819,7 @@
 %%LIB32DIR%%/webmin/virtual-server/list-bandwidth.pl
 %%LIB32DIR%%/webmin/virtual-server/list-certs.pl
 %%LIB32DIR%%/webmin/virtual-server/list-commands.pl
+%%LIB32DIR%%/webmin/virtual-server/list-custom.pl
 %%LIB32DIR%%/webmin/virtual-server/list-databases.pl
 %%LIB32DIR%%/webmin/virtual-server/list-domains.pl
 %%LIB32DIR%%/webmin/virtual-server/list-features.pl
@@ -918,6 +927,8 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.70/5-lxadmin
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.71/1-backupplan
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.75/5-copycert
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.76/2-backupbw
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.76/3-backupmax
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -929,7 +940,6 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.66/2-gplapi
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.69/1-greylist
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.70/0-batch
-%%LIB32DIR%%/webmin/virtual-server/import-database.pl
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/newip_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/newkey.cgi
@@ -1039,6 +1049,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.76
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.75
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.71
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.70
