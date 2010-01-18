@@ -1,0 +1,11 @@
+--- src/server/Makefile.in.orig	2010-01-15 19:44:32.014987477 +0100
++++ src/server/Makefile.in	2010-01-15 19:44:56.313346422 +0100
+@@ -50,7 +50,7 @@
+ 	parse.$(OBJEXT) set.$(OBJEXT) alloc.$(OBJEXT) \
+ 	compare.$(OBJEXT) speaking.$(OBJEXT) options.$(OBJEXT) \
+ 	output.$(OBJEXT) sem_functions.$(OBJEXT) \
+-	index_marking.$(OBJEXT)
++	index_marking.$(OBJEXT) ../getline.$(OBJEXT)
+ speech_dispatcher_OBJECTS = $(am_speech_dispatcher_OBJECTS)
+ speech_dispatcher_DEPENDENCIES =
+ speech_dispatcher_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
