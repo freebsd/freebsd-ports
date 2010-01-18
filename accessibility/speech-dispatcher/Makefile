@@ -84,7 +84,16 @@ CONFIGURE_ARGS+=	--with-pulseaudio
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
-pre-patch:
+.if ${OSVERSION} < 800000
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-*
+.endif
+
+post-extract:
+.if ${OSVERSION} < 800000
+	${CP} ${FILESDIR}/getline.* ${WRKSRC}/src
+.endif
+
+post-patch:
 	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/g' \
 		${WRKSRC}/ltmain.sh
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \

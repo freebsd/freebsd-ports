@@ -1,0 +1,11 @@
+--- src/c/clients/spdsend/Makefile.in.orig	2010-01-15 19:46:14.737593506 +0100
++++ src/c/clients/spdsend/Makefile.in	2010-01-15 19:46:29.284418153 +0100
+@@ -47,7 +47,7 @@
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am_spdsend_OBJECTS = spdsend.$(OBJEXT) server.$(OBJEXT) \
+-	client.$(OBJEXT) common.$(OBJEXT)
++	client.$(OBJEXT) common.$(OBJEXT) ../../../getline.$(OBJEXT)
+ spdsend_OBJECTS = $(am_spdsend_OBJECTS)
+ spdsend_DEPENDENCIES =
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)

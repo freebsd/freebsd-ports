@@ -1,0 +1,55 @@
+--- src/modules/Makefile.in.orig	2010-01-15 19:47:30.277280590 +0100
++++ src/modules/Makefile.in	2010-01-15 19:49:05.729978711 +0100
+@@ -57,44 +57,44 @@
+ 	"$(DESTDIR)$(snddatadir)"
+ modulebinPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(modulebin_PROGRAMS)
+-am_sd_cicero_OBJECTS = cicero.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_cicero_OBJECTS = cicero.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_cicero_OBJECTS = $(am_sd_cicero_OBJECTS)
+ sd_cicero_DEPENDENCIES =
+-am_sd_dummy_OBJECTS = dummy.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_dummy_OBJECTS = dummy.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_dummy_OBJECTS = $(am_sd_dummy_OBJECTS)
+ sd_dummy_DEPENDENCIES =
+ sd_dummy_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(sd_dummy_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-am_sd_espeak_OBJECTS = espeak.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_espeak_OBJECTS = espeak.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_espeak_OBJECTS = $(am_sd_espeak_OBJECTS)
+ sd_espeak_DEPENDENCIES =
+ sd_espeak_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(sd_espeak_LDFLAGS) $(LDFLAGS) -o $@
+-am_sd_festival_OBJECTS = festival.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_festival_OBJECTS = festival.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_festival_OBJECTS = $(am_sd_festival_OBJECTS)
+ sd_festival_DEPENDENCIES =
+ sd_festival_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(sd_festival_LDFLAGS) $(LDFLAGS) -o $@
+-am_sd_flite_OBJECTS = flite.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_flite_OBJECTS = flite.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_flite_OBJECTS = $(am_sd_flite_OBJECTS)
+ am__DEPENDENCIES_1 =
+ sd_flite_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ sd_flite_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(sd_flite_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-am_sd_generic_OBJECTS = generic.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_generic_OBJECTS = generic.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_generic_OBJECTS = $(am_sd_generic_OBJECTS)
+ sd_generic_DEPENDENCIES =
+-am_sd_ibmtts_OBJECTS = ibmtts.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_ibmtts_OBJECTS = ibmtts.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_ibmtts_OBJECTS = $(am_sd_ibmtts_OBJECTS)
+ sd_ibmtts_DEPENDENCIES =
+ sd_ibmtts_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(sd_ibmtts_LDFLAGS) $(LDFLAGS) -o $@
+-am_sd_ivona_OBJECTS = ivona.$(OBJEXT) module_utils.$(OBJEXT)
++am_sd_ivona_OBJECTS = ivona.$(OBJEXT) module_utils.$(OBJEXT) ../getline.$(OBJEXT)
+ sd_ivona_OBJECTS = $(am_sd_ivona_OBJECTS)
+ sd_ivona_DEPENDENCIES =
+ sd_ivona_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \

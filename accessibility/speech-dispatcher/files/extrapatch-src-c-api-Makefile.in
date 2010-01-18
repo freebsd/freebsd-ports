@@ -1,0 +1,11 @@
+--- src/c/api/Makefile.in.orig	2010-01-15 19:51:09.284466853 +0100
++++ src/c/api/Makefile.in	2010-01-15 19:51:42.602485219 +0100
+@@ -54,7 +54,7 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ libspeechd_la_DEPENDENCIES =
+-am_libspeechd_la_OBJECTS = libspeechd.lo
++am_libspeechd_la_OBJECTS = libspeechd.lo ../../getline.$(OBJEXT)
+ libspeechd_la_OBJECTS = $(am_libspeechd_la_OBJECTS)
+ libspeechd_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
