@@ -40,11 +40,12 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/${PERL_ARCH}/Filesys/Df.pm:${PORTSDIR}/sysutils/p5-Filesys-Df \
 	${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long
-
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		bash:${PORTSDIR}/shells/bash \
 		tnef:${PORTSDIR}/converters/tnef \
 		wget:${PORTSDIR}/ftp/wget
+
+IGNORE=	Use mail/mailscanner instead
 
 OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
 		CLAMAV "Install ClamAV" on \
