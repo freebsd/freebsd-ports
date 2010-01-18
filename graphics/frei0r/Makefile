@@ -7,7 +7,7 @@
 
 PORTNAME=	frei0r
 PORTVERSION=	1.1.22
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	plugins-
 CATEGORIES=	graphics
 MASTER_SITES=	http://propirate.net/${PORTNAME}/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	http://propirate.net/${PORTNAME}/ \
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Minimalistic plugin API for video effects
 
-LIB_DEPENDS=	cv.1:${PORTSDIR}/graphics/opencv \
+LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv \
 		gavl.1:${PORTSDIR}/multimedia/gavl
 
 GNU_CONFIGURE=	yes

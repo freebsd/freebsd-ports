@@ -7,14 +7,14 @@
 
 PORTNAME=	objectdetect
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A simple library for detecting objects in pictures
 
-LIB_DEPENDS=	cv.1:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
