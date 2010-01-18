@@ -947,6 +947,7 @@
     SUBDIR += mph
     SUBDIR += mprof
     SUBDIR += mq4cpp
+    SUBDIR += msgpack
     SUBDIR += msp430-binutils
     SUBDIR += msp430-gcc
     SUBDIR += msp430-gdb
