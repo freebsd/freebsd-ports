@@ -79,7 +79,7 @@ CMAKE_ARGS+=	-DENABLE_METIS=OFF
 PLIST_SUB+=	METIS="@comment "
 .endif
 
-.if defined(WITH_TAUCS)
+.if !defined(WITHOUT_TAUCS)
 LIB_DEPENDS+=	taucs.1:${PORTSDIR}/math/taucs
 CMAKE_ARGS+=	-DENABLE_TAUCS=ON
 .else
