@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	net-p2p java security
-MASTER_SITES=	http://mirror.i2p2.de/:i2p \
-		${MASTER_SITE_GOOGLE_CODE}:i2p \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:i2p \
+		http://mirror.i2p2.de/:i2p \
 		SF/jetty/OldFiles:jetty
 DISTFILES=	\
 		i2psource_${PORTVERSION}${EXTRACT_SUFX}:i2p \
