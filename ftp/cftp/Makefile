@@ -7,12 +7,12 @@
 
 PORTNAME=	cftp
 PORTVERSION=	0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
 		ftp://sunsite.univie.ac.at/pub/nih/cftp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Comfortable FTP, a full screen ftp client
 
 GNU_CONFIGURE=	yes
