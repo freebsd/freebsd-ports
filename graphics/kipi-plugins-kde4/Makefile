@@ -7,6 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
@@ -48,7 +49,7 @@ PLIST_SUB+=	GPOD="@comment "
 .endif
 
 .if defined(WITH_OPENCV)
-LIB_DEPENDS+=	cv.1:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS+=	cv.2:${PORTSDIR}/graphics/opencv
 PLIST_SUB+=	OPENCV=""
 .else
 CMAKE_ARGS+=	-DWITH_OpenCV:BOOL=OFF
