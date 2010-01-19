@@ -1,0 +1,9 @@
+libbpm is a C-library which contains low level beam position monitor (BPM)
+signal processing routines. It's aim is to form a complete set of routines
+needed to handle RF Cavity BPM data, from digital downmixing, sampling,
+calibrating  analysing and simulating BPM data. This library has been developed
+in the context of the BPM work done by the accelerator physics groups at
+University College London, Royal Holloway University of London and the
+University of Cambridge (UK) (2006-2008)
+
+WWW: http://www.hep.ucl.ac.uk/~bino/libbpm/
