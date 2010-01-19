@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	seahaven
-PORTVERSION=	1.44
-PORTREVISION=	2
+PORTVERSION=	1.50
 CATEGORIES=	games
 MASTER_SITES=	http://seahaven.sourceforge.net/
 EXTRACT_SUFX=	.tgz
