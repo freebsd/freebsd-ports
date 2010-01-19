@@ -29,7 +29,7 @@ QT_COMPONENTS=	designer_build	\
 		script_build	\
 		uic_build	\
 		webkit		\
-		xml		\
+		xml
 USE_XORG=	xscrnsaver
 
 MAKE_JOBS_SAFE=	yes
