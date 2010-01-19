@@ -2871,6 +2871,7 @@
     SUBDIR += rubygem-mash
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-mocha
+    SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-newgem
     SUBDIR += rubygem-open4
