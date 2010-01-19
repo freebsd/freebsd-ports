@@ -1,5 +1,5 @@
---- scripts/train.pl.dist	Tue Nov  8 14:34:38 2005
-+++ scripts/train.pl	Tue Nov  8 14:36:06 2005
+--- ./scripts/train.pl.orig	2010-01-11 23:21:58.000000000 +0200
++++ ./scripts/train.pl	2010-01-17 18:52:16.000000000 +0200
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
 +#!%%PERL%%

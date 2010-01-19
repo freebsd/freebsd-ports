@@ -1,56 +1,44 @@
---- ./src/dspam.conf.in.orig	Tue Oct 10 01:22:52 2006
-+++ ./src/dspam.conf.in	Tue Oct 10 01:39:10 2006
-@@ -52,7 +52,7 @@
- # the user DSPAM is processing mail for. This configuration parameter is only 
+--- ./src/dspam.conf.in.orig	2010-01-11 23:21:58.000000000 +0200
++++ ./src/dspam.conf.in	2010-01-17 18:49:37.000000000 +0200
+@@ -56,6 +56,7 @@
  # necessary if you plan on allowing untrusted processing.
  #
--#UntrustedDeliveryAgent "/usr/bin/procmail -d %u"
-+#UntrustedDeliveryAgent "@delivery_agent@"
+ #UntrustedDeliveryAgent "/usr/bin/procmail -d %u"
++#QuarantineAgent "@delivery_agent@"
  
  #
  # SMTP or LMTP Delivery: Alternatively, you may wish to use SMTP or LMTP 
-@@ -85,7 +85,7 @@
- # a quarantine agent which will be called with all messages DSPAM thinks is
- # spam. Use %u to specify the user DSPAM is processing mail for.
- #
--#QuarantineAgent	"/usr/bin/procmail -d spam"
-+#QuarantineAgent	"@delivery_agent@"
- 
- #
- # DSPAM can optionally process "plused users" (addresses in the user+detail
-@@ -273,7 +273,7 @@
+@@ -330,7 +331,7 @@
  # Storage driver settings: Specific to a particular storage driver. Uncomment
  # the configuration specific to your installation, if applicable.
  #
--#MySQLServer    	/var/lib/mysql/mysql.sock
-+#MySQLServer    	/tmp/mysql.sock
- #MySQLPort
- #MySQLUser 	     	dspam
- #MySQLPass    		changeme
-@@ -619,7 +619,10 @@
- # If the message is larger than the maximum size, it will be delivered 
- # without processing. Value is in bytes.
+-#MySQLServer		/var/lib/mysql/mysql.sock
++#MySQLServer		/tmp/mysql.sock
+ #MySQLPort		
+ #MySQLUser		dspam
+ #MySQLPass		changeme
+@@ -341,7 +342,7 @@
+ # If you are using replication for clustering, you can also specify a separate
+ # server to perform all writes to.
  #
-+# WARNING: this applies to clamav scan also
-+#
- #MaxMessageSize 4194304
-+MaxMessageSize 307200
- 
- #
- # Virus Checking: If you are running clamd, DSPAM can perform stream-based
-@@ -644,6 +647,7 @@
- #
+-#MySQLWriteServer	/var/lib/mysql/mysql.sock
++#MySQLWriteServer	/tmp/mysql.sock
+ #MySQLWritePort		
+ #MySQLWriteUser		dspam
+ #MySQLWritePass		changeme
+@@ -778,6 +779,7 @@
+ #ServerHost		127.0.0.1
  #ServerPort		24
  #ServerQueueSize	32
 +# keep this is sync with /usr/local/etc/rc.d/dspam[.sh] rc.d script
- #ServerPID              /var/run/dspam.pid
+ #ServerPID		/var/run/dspam.pid
  
  #
-@@ -680,14 +684,15 @@
+@@ -814,14 +816,15 @@
  # you are running the client and server on the same machine, as it eliminates
  # much of the bandwidth overhead.
  #
--#ServerDomainSocketPath  "/tmp/dspam.sock"
+-#ServerDomainSocketPath	"/tmp/dspam.sock"
 +# keep this is sync with /usr/local/etc/rc.d/dspam[.sh] rc.d script
 +#ServerDomainSocketPath  "/var/run/dspam.sock"
  

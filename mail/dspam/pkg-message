@@ -7,32 +7,29 @@
  Please be sure to include in your email/pr relevant information such as:
  uname -a, dspam --version, %%_VAR_DIR%%/db/ports/%%PORTNAME%%/options, MTA setup.
 
-Asking about updates or telling me there is one: not only I am active on the
-mailing lists and IRC but I also track dspam CVS so I already know; either there
-is a problem with the new version or I didn't have enough time to patch the port
-and _test_ the new version; please report your success/failure if you run the
-new version or the cvs version.
+Asking about updates or telling me there is one: there's no need, I am one of
+the developers.
 
-%%CGI%% The CGI files had been installed in
-%%CGI%% %%CGI_PATH%%
-%%CGI%% Copy
-%%CGI%% %%CGI_PATH%%/default.prefs.sample
-%%CGI%% to
-%%CGI%% %%CGI_PATH%%/default.prefs
-%%CGI%% and edit it to your needs.
-%%CGI%% Copy
-%%CGI%% %%CGI_PATH%%/configure.pl.sample
-%%CGI%% to
-%%CGI%% %%CGI_PATH%%/configure.pl
-%%CGI%% and edit it to your needs.
-%%CGI%% If you symlink this file in %%DSPAM_HOME%%/
-%%CGI%% an administrator can edit these options in the DSPAM Admin Suite.
-%%CGI%% Define administrators by copying 
-%%CGI%% %%CGI_PATH%%/admins.sample
-%%CGI%% to
-%%CGI%% %%CGI_PATH%%/admins 
-%%CGI%% and edit the file to your needs. 
-%%CGI%% If you have problems (after upgrading) check permissions.
+%%WebUI%% The CGI files had been installed in
+%%WebUI%% %%WWWDIR%%
+%%WebUI%% Copy
+%%WebUI%% %%WWWDIR%%/default.prefs.sample
+%%WebUI%% to
+%%WebUI%% %%WWWDIR%%/default.prefs
+%%WebUI%% and edit it to your needs.
+%%WebUI%% Copy
+%%WebUI%% %%WWWDIR%%/configure.pl.sample
+%%WebUI%% to
+%%WebUI%% %%WWWDIR%%/configure.pl
+%%WebUI%% and edit it to your needs.
+%%WebUI%% If you symlink this file in %%DSPAM_HOME%%/
+%%WebUI%% an administrator can edit these options in the DSPAM Admin Suite.
+%%WebUI%% Define administrators by copying 
+%%WebUI%% %%WWWDIR%%/admins.sample
+%%WebUI%% to
+%%WebUI%% %%WWWDIR%%/admins 
+%%WebUI%% and edit the file to your needs. 
+%%WebUI%% If you have problems (after upgrading) check permissions.
 %%DAEMON%%
 %%DAEMON%% To enable the dspam deamon put dspam_enable="YES" in your
 %%DAEMON%% /etc/rc.conf
