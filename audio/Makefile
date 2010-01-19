@@ -421,6 +421,7 @@
     SUBDIR += linux-shoutcast
     SUBDIR += linux-vsound
     SUBDIR += linuxsampler
+    SUBDIR += liquidsoap
     SUBDIR += listener
     SUBDIR += liteamp
     SUBDIR += lmms

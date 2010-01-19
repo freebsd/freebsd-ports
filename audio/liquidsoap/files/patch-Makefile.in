@@ -1,0 +1,25 @@
+--- ./Makefile.in.orig	2009-10-30 16:07:43.000000000 +0200
++++ ./Makefile.in	2009-12-11 21:42:24.000000000 +0200
+@@ -3,17 +3,17 @@
+ default: all
+ 
+ all:
+-	for i in $(PRJ); do make -C $$i; done
++	for i in $(PRJ); do $(MAKE) -C $$i; done
+ 
+ clean:
+-	for i in $(PRJ); do make -C $$i $@; done
++	for i in $(PRJ); do $(MAKE) -C $$i $@; done
+ 
+ distclean:
+-	for i in $(PRJ); do make -C $$i $@; done
++	for i in $(PRJ); do $(MAKE) -C $$i $@; done
+ 
+ doc:
+-	make -C liquidsoap-@LIQ_VERSION@ doc
++	$(MAKE) -C liquidsoap-@LIQ_VERSION@ doc
+ 
+ install:
+-	make -C liquidsoap-@LIQ_VERSION@ install
++	$(MAKE) -C liquidsoap-@LIQ_VERSION@ install
+ 
