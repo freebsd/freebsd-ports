@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylib
-PORTVERSION=	0.9.2
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/p/py
@@ -19,7 +19,8 @@ COMMENT=	An agile development and test support library
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	py
-PYEASYINSTALL_ARCHDEP=	yes
+
+PLIST_SUB+=	PY_VER=${PYTHON_VERSION:S,python,,}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -30,7 +31,7 @@ PORTDOCS=	CHANGELOG LICENSE README.txt
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.pre.mk>
