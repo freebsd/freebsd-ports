@@ -840,6 +840,7 @@
     SUBDIR += umit
     SUBDIR += unhide
     SUBDIR += unicornscan
+    SUBDIR += unssh
     SUBDIR += vida
     SUBDIR += vinetto
     SUBDIR += vlock
