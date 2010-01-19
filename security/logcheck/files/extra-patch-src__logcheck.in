@@ -41,7 +41,7 @@
 +STATEDIR="/var/db/logcheck"
 +LOGFILES_LIST="%%ETCDIR%%/logcheck.logfiles"
 +LOGFILE_FALLBACK="/var/log/messages"
-+LOGTAIL="%%PREFIX%%/sbin/logtail2
++LOGTAIL="%%PREFIX%%/sbin/logtail2"
  CAT="/bin/cat"
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
