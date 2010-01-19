@@ -310,6 +310,10 @@ NO_MTREE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx	
+.endif
+
 .if defined(SLAVE_TLS)
 CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
 . if defined(WITH_TLS_DEBUG)
