@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 xt
 MAKE_ARGS=	DIRS=src
+CONFIGURE_ENV+=	LIBS="`fltk-config --ldflags`"
 
 PLIST_SUB=	INCSDIR="${INCSDIR:S,^${PREFIX}/,,}"
 
@@ -42,6 +43,7 @@ post-patch:
 		${WRKSRC}/FL/Flv_List.H
 	${REINPLACE_CMD} 's/\(friend\) \(Flv_Style_List\)/\1 class \2/' \
 		${WRKSRC}/FL/Flv_Style.H
+	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/makeinclude.in
 
 post-install: symlink-inc install-doc
 
