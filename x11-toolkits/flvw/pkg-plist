@@ -41,4 +41,4 @@ lib/libflvw.so.1
 %%PORTDOCS%%%%DOCSDIR%%/stylebasics.html
 %%PORTDOCS%%%%DOCSDIR%%/widget_features.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %%INCSDIR%% 2> /dev/null || :
+@dirrmtry %%INCSDIR%%
