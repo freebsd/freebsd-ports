@@ -1,0 +1,4 @@
+ASDF-Binary-Locations is an ASDF-Extension that makes it easy to
+specify where your Common Lisp binaries (FASL files) should go.
+
+WWW: http://common-lisp.net/project/asdf-binary-locations/

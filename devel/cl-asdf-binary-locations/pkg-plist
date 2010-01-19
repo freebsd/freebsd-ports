@@ -1,0 +1,5 @@
+%%LIB32DIR%%/common-lisp/asdf-binary-locations/asdf-binary-locations.asd
+%%LIB32DIR%%/common-lisp/asdf-binary-locations/dev/main.lisp
+%%LIB32DIR%%/common-lisp/system-registry/asdf-binary-locations.asd
+@dirrm %%LIB32DIR%%/common-lisp/asdf-binary-locations/dev
+@dirrm %%LIB32DIR%%/common-lisp/asdf-binary-locations
