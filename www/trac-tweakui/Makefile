@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tweakui
-PORTVERSION=	0.1.5514
+PORTVERSION=	0.1.7413
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
