@@ -12,6 +12,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Generated.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Inlined.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Wrapped.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/AttributeCore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasAttributes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasMethods.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Module.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Package.pm
@@ -31,5 +35,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
