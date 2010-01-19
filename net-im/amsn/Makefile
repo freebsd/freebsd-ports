@@ -6,42 +6,42 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.97.2
-PORTREVISION=	3
+PORTVERSION=	0.98.1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Alvano\'s MSN Messenger
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
-BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
+		gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2 \
+		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
-		dtplite:${PORTSDIR}/devel/tcllib
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		snack>=2.2.10_4:${PORTSDIR}/audio/snack
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
-		dtplite:${PORTSDIR}/devel/tcllib
+		snack>=2.2.10_4:${PORTSDIR}/audio/snack
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	x11
+USE_GETTEXT=	yes
+
+USE_TCL=	86
+USE_TK=		86
+WITH_TCL_THREADS=	86
+WITH_TK_THREADS=	86
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-		--with-tk=${LOCALBASE}/lib/tk8.4
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		TK_INC_SPEC=${LOCALBASE}/include/tk8.4/generic
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR}
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-.endif
+CONFIGURE_ENV+=	CFLAGS+="-I${LOCALBASE}/include" \
+		LDFLAGS+="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'

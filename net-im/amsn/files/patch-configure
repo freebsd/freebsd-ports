@@ -1,132 +1,15 @@
---- ./configure.orig	2008-07-25 15:47:03.000000000 +0100
-+++ ./configure	2008-08-05 11:51:42.000000000 +0100
-@@ -1850,7 +1850,7 @@
- fi
- 
- 
--if test "$enable_debug" == "yes" ; then
-+if test "$enable_debug" = "yes" ; then
-     DEBUG="yes"
- else
-     DEBUG="no"
-@@ -1865,7 +1865,7 @@
- fi
- 
- 
--if test "$enable_static" == "yes" ; then
-+if test "$enable_static" = "yes" ; then
-     STATIC="yes"
- else
-     STATIC="no"
-@@ -2008,7 +2008,7 @@
+--- configure.orig	2009-09-30 01:12:39.000000000 -0300
++++ configure	2009-09-30 01:15:06.000000000 -0300
+@@ -2380,7 +2380,7 @@
  fi
  
  
 -TCLSH=`which tclsh`
-+TCLSH=`which tclsh8.4`
++TCLSH=`which tclsh8.6-threads`
  VERSION=`echo "puts $::tcl_version ; exit" | ${TCLSH}`
  # Check whether --enable-version-check was given.
- if test "${enable_version_check+set}" = set; then
-@@ -2020,7 +2020,7 @@
- 
- OLDV=`expr $VERSION \< 8.4`
- 
--if test "x${version_ok}" == "xyes" -a $OLDV == 1; then
-+if test "x${version_ok}" = "xyes" -a $OLDV = 1; then
-     { { $as_echo "$as_me:$LINENO: error: Your current Tcl/Tk installation has a version number of $VERSION. The minimal version required for aMSN to run is Tcl/Tk 8.4" >&5
- $as_echo "$as_me: error: Your current Tcl/Tk installation has a version number of $VERSION. The minimal version required for aMSN to run is Tcl/Tk 8.4" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -2962,7 +2962,7 @@
- 
- 
- CC_INSTALLED=`which $CC`
--if test "x${CC_INSTALLED}" == "x"; then
-+if test "x${CC_INSTALLED}" = "x"; then
-     { { $as_echo "$as_me:$LINENO: error: You need a C compiler (gcc) to compiler aMSN. Please install gcc and try again" >&5
- $as_echo "$as_me: error: You need a C compiler (gcc) to compiler aMSN. Please install gcc and try again" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -3346,7 +3346,7 @@
- 
- 
- CXX_INSTALLED=`which $CXX`
--if test "x${CXX_INSTALLED}" == "x"; then
-+if test "x${CXX_INSTALLED}" = "x"; then
-      { { $as_echo "$as_me:$LINENO: error: You need a C++ compiler (g++) to compiler aMSN. Please install g++ and try again" >&5
- $as_echo "$as_me: error: You need a C++ compiler (g++) to compiler aMSN. Please install g++ and try again" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -3425,7 +3425,7 @@
- 
- 				if  test "x${TCL_INC_DIR}" != "x" -o "x${TCL_INC_SPEC}" != "x" \
- 					-o "x${TCL_INCLUDE_DIR}" != "x" -o "x${TCL_INCLUDE_SPEC}" != "x"; then
--				if test "x${TCL_VERSION}" == "x${VERSION}" ; then
-+				if test "x${TCL_VERSION}" = "x${VERSION}" ; then
- 				TCL_LIB_DIR=`cd $i; pwd`
- 				break;
- 				fi
-@@ -3482,15 +3482,15 @@
- 	TCL_INC_DIR=$TCL_INCLUDE_SPEC
- 	fi
- 
--	if test "x${TCL_INC_DIR}" == "x"; then
-+	if test "x${TCL_INC_DIR}" = "x"; then
- 	TCL_INC_DIR=$TCL_INCLUDE_DIR
- 	fi
- 
--	if test "x${TCL_INC_DIR}" == "x" -a -f ${TCL_PREFIX}/include/tcl.h; then
-+	if test "x${TCL_INC_DIR}" = "x" -a -f ${TCL_PREFIX}/include/tcl.h; then
- 	TCL_INC_DIR=${TCL_PREFIX}/include
- 	fi
- 
--	if test "x${TCL_INC_DIR}" == "x"; then
-+	if test "x${TCL_INC_DIR}" = "x"; then
- 	{ { $as_echo "$as_me:$LINENO: error: You dot not have a devel package of Tcl" >&5
- $as_echo "$as_me: error: You dot not have a devel package of Tcl" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -3504,7 +3504,7 @@
- 	TCL_INC_SPEC=$TCL_INC_DIR
- 
- 	framework=`echo "${TCL_BASE}" | grep -- "-framework"`
--	if test "x${framework}" == "x"; then
-+	if test "x${framework}" = "x"; then
- 	TCL_LIB_SPEC="-L${TCL_LIB_DIR} -l${TCL_BASE}"
- 	fi
- 	TCL_STUB_LIB_SPEC="-L${TCL_LIB_DIR} -l${TCL_STUB_BASE}"
-@@ -3575,7 +3575,7 @@
- 
- 		if  test "x${TK_INC_DIR}" != "x" -o "x${TK_INC_SPEC}" != "x" \
- 				-o "x${TK_INCLUDE_DIR}" != "x" -o "x${TK_INCLUDE_SPEC}" != "x"; then
--				if test "x${TK_VERSION}" == "x${VERSION}"; then
-+				if test "x${TK_VERSION}" = "x${VERSION}"; then
- 			TK_LIB_DIR=`cd $i; pwd`
- 			break;
- 			fi
-@@ -3619,19 +3619,19 @@
- 	TK_INC_DIR=$TK_INC_SPEC
- 	fi
- 
--	if  test "x${TK_INCLUDE_SPEC}" != "x"; then
--	TK_INC_DIR=$TK_INCLUDE_SPEC
--	fi
-+	#if  test "x${TK_INCLUDE_SPEC}" != "x"; then
-+	#TK_INC_DIR=$TK_INCLUDE_SPEC
-+	#fi
- 
--	if test "x${TK_INC_DIR}" == "x"; then
-+	if test "x${TK_INC_DIR}" = "x"; then
- 	TK_INC_DIR=$TK_INCLUDE_DIR
- 	fi
- 
--	if test "x${TK_INC_DIR}" == "x" -a -f ${TK_PREFIX}/include/tk.h; then
-+	if test "x${TK_INC_DIR}" = "x" -a -f ${TK_PREFIX}/include/tk.h; then
- 	TK_INC_DIR=${TK_PREFIX}/include
- 	fi
- 
--	if test "x${TK_INC_DIR}" == "x"; then
-+	if test "x${TK_INC_DIR}" = "x"; then
- 	{ { $as_echo "$as_me:$LINENO: error: You dot not have a devel package of Tk" >&5
- $as_echo "$as_me: error: You dot not have a devel package of Tk" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -3748,7 +3748,7 @@
+ if test "${enable_version_check+set}" = set; then :
+@@ -3752,7 +3752,7 @@
    $as_echo_n "(cached) " >&6
  else
        # Double quotes because CPP needs to be expanded
