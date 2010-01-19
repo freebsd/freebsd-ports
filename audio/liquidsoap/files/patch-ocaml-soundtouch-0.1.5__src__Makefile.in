@@ -1,0 +1,11 @@
+--- ./ocaml-soundtouch-0.1.5/src/Makefile.in.orig	2009-12-11 21:42:46.000000000 +0200
++++ ./ocaml-soundtouch-0.1.5/src/Makefile.in	2009-12-11 21:43:00.000000000 +0200
+@@ -27,7 +27,7 @@
+ RESULT = soundtouch
+ OCAMLDOCFLAGS = -stars
+ LIBINSTALL_FILES = $(wildcard *.mli *.cmi *.cma *.cmxa *.cmx *.a *.so)
+-ACLIBS = @LIBS@ @soundtouch_LIBS@ -lBPM
++ACLIBS = @LIBS@ @soundtouch_LIBS@ -lbpm
+ LDFLAGS = @LDFLAGS@ @soundtouch_LDFLAGS@
+ CLIBS = $(ACLIBS:-l%=%)
+ LIBDIRS = $(LDFLAGS:-L%=%)

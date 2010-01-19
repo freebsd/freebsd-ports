@@ -1,0 +1,10 @@
+--- ./ocaml-faad-0.1.3/bootstrap.orig	2009-10-30 16:07:44.000000000 +0200
++++ ./ocaml-faad-0.1.3/bootstrap	2009-12-11 21:42:24.000000000 +0200
+@@ -1,6 +1,7 @@
+ #!/bin/sh
+ 
+ aclocal
++autoheader
+ # Doing this only once sometimes yield an error message (AC_MSG_ERROR 
+ # undefined).. I give up understanding that.
+ autoconf

@@ -1,0 +1,10 @@
+--- ./ocaml-faad-0.1.3/src/Makefile.in.orig	2009-10-30 16:07:44.000000000 +0200
++++ ./ocaml-faad-0.1.3/src/Makefile.in	2009-12-11 21:42:24.000000000 +0200
+@@ -32,6 +32,7 @@
+ CLIBS = $(ACLIBS:-l%=%)
+ LIBDIRS = $(LDFLAGS:-L%=%)
+ CC = @CC@
++top_srcdir=../
+ CFLAGS = @CFLAGS@ -Wall -DCAML_NAME_SPACE
+ CPPFLAGS = @CPPFLAGS@
+ NO_CUSTOM = yes

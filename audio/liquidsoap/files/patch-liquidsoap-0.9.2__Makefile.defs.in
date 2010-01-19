@@ -1,0 +1,10 @@
+--- ./liquidsoap-0.9.2/Makefile.defs.in.orig	2009-10-30 16:07:44.000000000 +0200
++++ ./liquidsoap-0.9.2/Makefile.defs.in	2009-12-11 21:42:24.000000000 +0200
+@@ -17,6 +17,7 @@
+ datadir = @datadir@
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_DIRECTORY = @INSTALL@ -d
+ INSTALL_DATA = @INSTALL_DATA@
+ MAKE = @MAKE@
