@@ -21,6 +21,8 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
+IGNORE=		- use mail/dspam, for now it is newer
+
 PORTVER_MAJ=	3.8.0
 #SNAP_DATE=	.20061010.1118
 
