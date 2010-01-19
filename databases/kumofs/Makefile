@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	kumofs-${GIT_REVISION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Scalabe and highly available distributed key-value store
+COMMENT=	Scalable and highly available distributed key-value store
 
 LIB_DEPENDS=	msgpack:${PORTSDIR}/devel/msgpack \
 		tokyocabinet:${PORTSDIR}/databases/tokyocabinet
