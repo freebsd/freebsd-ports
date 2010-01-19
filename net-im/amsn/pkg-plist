@@ -1,6 +1,8 @@
 bin/amsn
 bin/amsn-remote
 bin/amsn-remote-CLI
+share/applications/amsn.desktop
+share/pixmaps/amsn.png
 %%DATADIR%%/AGREEMENT
 %%DATADIR%%/BWidget_mods.tcl
 %%DATADIR%%/CREDITS
@@ -11,15 +13,16 @@ bin/amsn-remote-CLI
 %%DATADIR%%/README
 %%DATADIR%%/TODO
 %%DATADIR%%/abook.tcl
+%%DATADIR%%/addressbook.tcl
 %%DATADIR%%/alarm.tcl
 %%DATADIR%%/amsn
 %%DATADIR%%/amsn-remote
 %%DATADIR%%/amsn-remote-CLI
 %%DATADIR%%/amsn.desktop
-%%DATADIR%%/amsn_des.tcl
 %%DATADIR%%/amsncore.tcl
 %%DATADIR%%/assistant.tcl
 %%DATADIR%%/audio.tcl
+%%DATADIR%%/auth.tcl
 %%DATADIR%%/automsg.tcl
 %%DATADIR%%/autoupdate.tcl
 %%DATADIR%%/balloon.tcl
@@ -54,6 +57,7 @@ bin/amsn-remote-CLI
 %%DATADIR%%/docs/FAQfur
 %%DATADIR%%/docs/FAQhu
 %%DATADIR%%/docs/FAQit
+%%DATADIR%%/docs/FAQlt
 %%DATADIR%%/docs/FAQmn
 %%DATADIR%%/docs/FAQnl
 %%DATADIR%%/docs/FAQno
@@ -75,6 +79,7 @@ bin/amsn-remote-CLI
 %%DATADIR%%/docs/HELPfur
 %%DATADIR%%/docs/HELPhu
 %%DATADIR%%/docs/HELPit
+%%DATADIR%%/docs/HELPlt
 %%DATADIR%%/docs/HELPmn
 %%DATADIR%%/docs/HELPnl
 %%DATADIR%%/docs/HELPno
@@ -95,6 +100,7 @@ bin/amsn-remote-CLI
 %%DATADIR%%/docs/READMEfur
 %%DATADIR%%/docs/READMEhu
 %%DATADIR%%/docs/READMEit
+%%DATADIR%%/docs/READMElt
 %%DATADIR%%/docs/READMEmn
 %%DATADIR%%/docs/READMEnl
 %%DATADIR%%/docs/READMEpt
@@ -135,7 +141,9 @@ bin/amsn-remote-CLI
 %%DATADIR%%/lang/langid
 %%DATADIR%%/lang/langis
 %%DATADIR%%/lang/langit
+%%DATADIR%%/lang/langja
 %%DATADIR%%/lang/langko
+%%DATADIR%%/lang/langku
 %%DATADIR%%/lang/langlt
 %%DATADIR%%/lang/langmk
 %%DATADIR%%/lang/langmt
@@ -152,6 +160,7 @@ bin/amsn-remote-CLI
 %%DATADIR%%/lang/langsr
 %%DATADIR%%/lang/langsv
 %%DATADIR%%/lang/langtr
+%%DATADIR%%/lang/langvn
 %%DATADIR%%/lang/langzh-CN
 %%DATADIR%%/lang/langzh-TW
 %%DATADIR%%/lang/missing.py
@@ -161,11 +170,46 @@ bin/amsn-remote-CLI
 %%DATADIR%%/loging.tcl
 %%DATADIR%%/migmd5.tcl
 %%DATADIR%%/msncam.tcl
+%%DATADIR%%/msngames.tcl
 %%DATADIR%%/msnp2p.tcl
 %%DATADIR%%/mutex.tcl
-%%DATADIR%%/notes.tcl
 %%DATADIR%%/picture.tcl
 %%DATADIR%%/plugins.tcl
+%%DATADIR%%/plugins/ColoredNicks/colorednicks.tcl
+%%DATADIR%%/plugins/ColoredNicks/lang/langde
+%%DATADIR%%/plugins/ColoredNicks/lang/langen
+%%DATADIR%%/plugins/ColoredNicks/lang/langes
+%%DATADIR%%/plugins/ColoredNicks/lang/langfr
+%%DATADIR%%/plugins/ColoredNicks/lang/langhu
+%%DATADIR%%/plugins/ColoredNicks/lang/langit
+%%DATADIR%%/plugins/ColoredNicks/lang/langja
+%%DATADIR%%/plugins/ColoredNicks/lang/langlt
+%%DATADIR%%/plugins/ColoredNicks/lang/langnl
+%%DATADIR%%/plugins/ColoredNicks/lang/langno
+%%DATADIR%%/plugins/ColoredNicks/lang/langpt_BR
+%%DATADIR%%/plugins/ColoredNicks/lang/langtr
+%%DATADIR%%/plugins/ColoredNicks/plugininfo.xml
+%%DATADIR%%/plugins/MSNGameTTT/GameTTT.tcl
+%%DATADIR%%/plugins/MSNGameTTT/lang/langde
+%%DATADIR%%/plugins/MSNGameTTT/lang/langen
+%%DATADIR%%/plugins/MSNGameTTT/lang/langes
+%%DATADIR%%/plugins/MSNGameTTT/lang/langfr
+%%DATADIR%%/plugins/MSNGameTTT/lang/langhu
+%%DATADIR%%/plugins/MSNGameTTT/lang/langja
+%%DATADIR%%/plugins/MSNGameTTT/lang/langlt
+%%DATADIR%%/plugins/MSNGameTTT/lang/langnl
+%%DATADIR%%/plugins/MSNGameTTT/lang/langno
+%%DATADIR%%/plugins/MSNGameTTT/lang/langpt_BR
+%%DATADIR%%/plugins/MSNGameTTT/lang/langtr
+%%DATADIR%%/plugins/MSNGameTTT/pixmaps/background.png
+%%DATADIR%%/plugins/MSNGameTTT/pixmaps/empty_normal.png
+%%DATADIR%%/plugins/MSNGameTTT/pixmaps/o_hover.png
+%%DATADIR%%/plugins/MSNGameTTT/pixmaps/o_normal.png
+%%DATADIR%%/plugins/MSNGameTTT/pixmaps/x_hover.png
+%%DATADIR%%/plugins/MSNGameTTT/pixmaps/x_normal.png
+%%DATADIR%%/plugins/MSNGameTTT/plugininfo.xml
+%%DATADIR%%/plugins/Notes/notes.tcl
+%%DATADIR%%/plugins/Notes/plugininfo.xml
 %%DATADIR%%/plugins/Nudge/Nudge.tcl
 %%DATADIR%%/plugins/Nudge/lang/langca
 %%DATADIR%%/plugins/Nudge/lang/langda
@@ -178,24 +222,46 @@ bin/amsn-remote-CLI
 %%DATADIR%%/plugins/Nudge/lang/langfr
 %%DATADIR%%/plugins/Nudge/lang/langhu
 %%DATADIR%%/plugins/Nudge/lang/langit
+%%DATADIR%%/plugins/Nudge/lang/langja
+%%DATADIR%%/plugins/Nudge/lang/langlt
 %%DATADIR%%/plugins/Nudge/lang/langnl
 %%DATADIR%%/plugins/Nudge/lang/langno
 %%DATADIR%%/plugins/Nudge/lang/langpt_BR
 %%DATADIR%%/plugins/Nudge/lang/langsv
 %%DATADIR%%/plugins/Nudge/lang/langtr
+%%DATADIR%%/plugins/Nudge/lang/langzh-CN
 %%DATADIR%%/plugins/Nudge/lang/langzh-TW
 %%DATADIR%%/plugins/Nudge/nudge.wav
 %%DATADIR%%/plugins/Nudge/plugininfo.xml
-%%DATADIR%%/plugins/PowerTool/plugininfo.xml
-%%DATADIR%%/plugins/PowerTool/powertool.tcl
+%%DATADIR%%/plugins/SearchContact/lang/langde
+%%DATADIR%%/plugins/SearchContact/lang/langen
+%%DATADIR%%/plugins/SearchContact/lang/langes
+%%DATADIR%%/plugins/SearchContact/lang/langfr
+%%DATADIR%%/plugins/SearchContact/lang/langhu
+%%DATADIR%%/plugins/SearchContact/lang/langja
+%%DATADIR%%/plugins/SearchContact/lang/langlt
+%%DATADIR%%/plugins/SearchContact/lang/langnl
+%%DATADIR%%/plugins/SearchContact/lang/langno
+%%DATADIR%%/plugins/SearchContact/lang/langpt
+%%DATADIR%%/plugins/SearchContact/lang/langpt_BR
+%%DATADIR%%/plugins/SearchContact/lang/langtr
+%%DATADIR%%/plugins/SearchContact/pixmaps/clear.png
+%%DATADIR%%/plugins/SearchContact/pixmaps/license.txt
+%%DATADIR%%/plugins/SearchContact/pixmaps/search.png
+%%DATADIR%%/plugins/SearchContact/plugininfo.xml
+%%DATADIR%%/plugins/SearchContact/searchcontact.tcl
 %%DATADIR%%/plugins/WebcamShooter/camshoot.tcl
+%%DATADIR%%/plugins/WebcamShooter/lang/langde
 %%DATADIR%%/plugins/WebcamShooter/lang/langen
 %%DATADIR%%/plugins/WebcamShooter/lang/langes
 %%DATADIR%%/plugins/WebcamShooter/lang/langfi
 %%DATADIR%%/plugins/WebcamShooter/lang/langfr
 %%DATADIR%%/plugins/WebcamShooter/lang/langhu
 %%DATADIR%%/plugins/WebcamShooter/lang/langit
+%%DATADIR%%/plugins/WebcamShooter/lang/langja
+%%DATADIR%%/plugins/WebcamShooter/lang/langlt
 %%DATADIR%%/plugins/WebcamShooter/lang/langnl
+%%DATADIR%%/plugins/WebcamShooter/lang/langno
 %%DATADIR%%/plugins/WebcamShooter/lang/langpt_BR
 %%DATADIR%%/plugins/WebcamShooter/lang/langsv
 %%DATADIR%%/plugins/WebcamShooter/lang/langtr
@@ -203,6 +269,9 @@ bin/amsn-remote-CLI
 %%DATADIR%%/plugins/inkdraw/inkdraw.tcl
 %%DATADIR%%/plugins/inkdraw/pencils/pencil1.png
 %%DATADIR%%/plugins/inkdraw/pencils/pencil2.png
+%%DATADIR%%/plugins/inkdraw/pencils/pencil_1.png
+%%DATADIR%%/plugins/inkdraw/pencils/pencil_3.png
+%%DATADIR%%/plugins/inkdraw/pencils/pencil_7.png
 %%DATADIR%%/plugins/inkdraw/pixmaps/butdraw.png
 %%DATADIR%%/plugins/inkdraw/pixmaps/butdraw_hover.png
 %%DATADIR%%/plugins/inkdraw/pixmaps/butgridoff.png
@@ -214,7 +283,47 @@ bin/amsn-remote-CLI
 %%DATADIR%%/plugins/inkdraw/pixmaps/butwipe.png
 %%DATADIR%%/plugins/inkdraw/pixmaps/butwipe_hover.png
 %%DATADIR%%/plugins/inkdraw/pixmaps/grid.png
+%%DATADIR%%/plugins/inkdraw/pixmaps/ink_huge.png
+%%DATADIR%%/plugins/inkdraw/pixmaps/ink_normal.png
+%%DATADIR%%/plugins/inkdraw/pixmaps/ink_tiny.png
 %%DATADIR%%/plugins/inkdraw/plugininfo.xml
+%%DATADIR%%/plugins/music/MusicWin/MusicWin.cpp
+%%DATADIR%%/plugins/music/MusicWin/MusicWin.dsp
+%%DATADIR%%/plugins/music/MusicWin/MusicWin.dsw
+%%DATADIR%%/plugins/music/MusicWin/MusicWin.h
+%%DATADIR%%/plugins/music/MusicWin/wa_ipc.h
+%%DATADIR%%/plugins/music/display_and_send.scpt
+%%DATADIR%%/plugins/music/infoamarok
+%%DATADIR%%/plugins/music/infoamarok2
+%%DATADIR%%/plugins/music/infoaudacious
+%%DATADIR%%/plugins/music/infobanshee
+%%DATADIR%%/plugins/music/infocog.scpt
+%%DATADIR%%/plugins/music/infoexaile
+%%DATADIR%%/plugins/music/infogmusicbrowser
+%%DATADIR%%/plugins/music/infojuk
+%%DATADIR%%/plugins/music/infojuk2
+%%DATADIR%%/plugins/music/infolastfm
+%%DATADIR%%/plugins/music/infolisten
+%%DATADIR%%/plugins/music/infompris
+%%DATADIR%%/plugins/music/inforhythmbox
+%%DATADIR%%/plugins/music/infosongbird
+%%DATADIR%%/plugins/music/lang/langda
+%%DATADIR%%/plugins/music/lang/langee
+%%DATADIR%%/plugins/music/lang/langen
+%%DATADIR%%/plugins/music/lang/langes
+%%DATADIR%%/plugins/music/lang/langfi
+%%DATADIR%%/plugins/music/lang/langfr
+%%DATADIR%%/plugins/music/lang/langfr_CA
+%%DATADIR%%/plugins/music/lang/langhu
+%%DATADIR%%/plugins/music/lang/langit
+%%DATADIR%%/plugins/music/lang/langlt
+%%DATADIR%%/plugins/music/lang/langpt_BR
+%%DATADIR%%/plugins/music/lang/langsv
+%%DATADIR%%/plugins/music/music.tcl
+%%DATADIR%%/plugins/music/pixmaps/notesdispic.gif
+%%DATADIR%%/plugins/music/pixmaps/notespic.gif
+%%DATADIR%%/plugins/music/plugininfo.xml
+%%DATADIR%%/plugins/music/readme.txt
 %%DATADIR%%/plugins/remind/lang/langca
 %%DATADIR%%/plugins/remind/lang/langda
 %%DATADIR%%/plugins/remind/lang/langde
@@ -226,7 +335,10 @@ bin/amsn-remote-CLI
 %%DATADIR%%/plugins/remind/lang/langfr_CA
 %%DATADIR%%/plugins/remind/lang/langhu
 %%DATADIR%%/plugins/remind/lang/langit
+%%DATADIR%%/plugins/remind/lang/langja
+%%DATADIR%%/plugins/remind/lang/langlt
 %%DATADIR%%/plugins/remind/lang/langnl
+%%DATADIR%%/plugins/remind/lang/langno
 %%DATADIR%%/plugins/remind/lang/langpt_BR
 %%DATADIR%%/plugins/remind/lang/langsv
 %%DATADIR%%/plugins/remind/lang/langtr
@@ -240,7 +352,11 @@ bin/amsn-remote-CLI
 %%DATADIR%%/plugins/winks/lang/langfr
 %%DATADIR%%/plugins/winks/lang/langhu
 %%DATADIR%%/plugins/winks/lang/langit
+%%DATADIR%%/plugins/winks/lang/langja
+%%DATADIR%%/plugins/winks/lang/langlt
 %%DATADIR%%/plugins/winks/lang/langnl
+%%DATADIR%%/plugins/winks/lang/langno
+%%DATADIR%%/plugins/winks/lang/langpt_BR
 %%DATADIR%%/plugins/winks/lang/langsv
 %%DATADIR%%/plugins/winks/lang/langtr
 %%DATADIR%%/plugins/winks/pixmaps/unknown_wink.png
@@ -257,8 +373,443 @@ bin/amsn-remote-CLI
 %%DATADIR%%/proxy.tcl
 %%DATADIR%%/remote.help
 %%DATADIR%%/remote.tcl
+%%DATADIR%%/roaming.tcl
 %%DATADIR%%/searchdialog.tcl
+%%DATADIR%%/sip.tcl
 %%DATADIR%%/skins.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/desc.txt
+%%DATADIR%%/skins/Dark Matter 4.0/displaypic/amsnicon.png
+%%DATADIR%%/skins/Dark Matter 4.0/license
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapmenu/bindings.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapmenu/entries.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapmenu/makecommands.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapmenu/menushell.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapmenu/pixmapmenu.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapmenu/pkgIndex.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/alarm.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/amsn.xbm
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/amsnicon.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/amsnmask.xbm
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/amsnplusbutton.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/amsnplusbutton_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/arrow.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/arrow.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/away.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/back.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/baway.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/bbusy.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/bell.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/belloff.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/blocked.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/blocked_offline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/boffline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/bonline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_body.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_down.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_downleft.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_downright.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_left.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_right.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_up.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_upleft.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/box_upright.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/busy.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butblock.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butblock_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butcall.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butcall_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butcallvideo.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butcallvideo_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butdraw.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butdraw_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butfont.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butfont_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butgridoff.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butgridoff_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butgridon.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butgridon_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/buthangup.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/buthangup_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butinvite.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butinvite_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butsend.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butsend_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butsmile.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butsmile_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/buttext.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/buttext_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butvoice.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butvoice_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butwebcam.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butwebcam_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butwipe.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/butwipe_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/cam_in_chatwin.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/camempty.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/camicon.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/checkSpelling.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/checkSpelling_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/checkbox.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/checkbox_on.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/checkmark.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/checkmark.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/colorbar.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/confbut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/confbuth.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/contract.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/contract_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/cwtopback.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/daway.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/dbrb.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/dbusy.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/dhidden.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/dinactive.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/dlunch.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/doffline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/donline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/download.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/dphone.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/expand.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/expand_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/fticon.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/ftreject.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/globe.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/gnotify_empty.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/gnotify_error.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/gnotify_new.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/greyline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/idle.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/imghide.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/imghide_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/imgshow.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/imgshow_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/lesstabs.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/loganim.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/loginbut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/loginbut_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/logolinmsn.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/logomacmsn.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/menu_arrow_down.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/menu_arrow_right.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/menu_background1.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/menu_background2.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/menu_select.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/menu_separator.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/messenger.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/miniinfo.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/minijoins.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/minileaves.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/miniwarn.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/mobile.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/moretabs.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/msnbot.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/mystatus_bg.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/newline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/no-emblem.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/note.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notesdispic.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notespic.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifclose.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifico.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifyemail.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifymsg.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifyoffline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifyonline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifyplugins.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notifystate.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/notinlist.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/nudge.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/nudgebutton.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/nudgebutton_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/nudgeoff.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/offline.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/online.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/pause.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/pausebut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/pausebuth.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/playbut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/playbuth.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/pop3_mailpic.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefalerts.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefaway.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefemotic.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/preffont.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefhist.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefhist2.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/preflook.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefmobile.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefmsg.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefnat.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefpers.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefphone.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefprofile.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefproxy.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/prefstatus.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/radiobox.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/radiomark.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/recordbut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/recordbuth.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/select_bg.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/select_border.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/sendbut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/sendbut_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/smile.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/space_noupdate.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/space_update.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/star.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/stopbut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/stopbuth.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tab.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tab_close.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tab_close_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tab_current.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tab_flicker.gif
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tab_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tex.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/tex_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/typing.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/unread.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/unread_tray.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/voice.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/warning.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/webcam.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/webmsn.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/winksbut.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/winksbut_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmaps/yes-emblem.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal/trough.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/pixmapscroll.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/pkgIndex.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/test.tcl
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop_disabled.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop_hover.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop_pressed.png
+%%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical/trough.png
+%%DATADIR%%/skins/Dark Matter 4.0/settings.xml
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Airplane.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Airplane.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Angel.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Angel_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Angry_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Angry_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Ashamed_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Asl.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Auto.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Auto.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Baring_teeth_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Baring_teeth_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Bat.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Be_Right_Back.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Be_Right_Back_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Beer.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Beer.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Birthday_cake.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Birthday_cake.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Black_sheep.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Bowl.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Bowl.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Boy.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Boy.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Broken_heart.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Broken_heart.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Camera.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Camera.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Cat.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Cat_face.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Cigarette.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Cigarette.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Clapping_hands.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Clock.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Clock.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Coffee_cup.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Coffee_cup.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Computer.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Computer.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Confused_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Confused_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Crying_face.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Crying_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Devil.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Devil.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Disappointed_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Dog.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Dog_face.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Dont_know_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Dont_tell_anyone.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Dont_tell_anyone_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Dry_martini.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Dry_martini.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Email.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Email.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Embarrassed_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Eye_rolling_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Eye_rolling_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Filmstrip.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Filmstrip.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Fingerscrossed.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Fingerscrossed.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Gift.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Gift_with_a_bow.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Girl.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Girl.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Goat.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Handcuffs.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Handcuffs.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Happy_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Heart.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Hi_five.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Hot_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Hot_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/IM.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Island.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Island_with_a_palm_tree.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Kiss.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Left_hug.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Left_hug.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Light.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Light_bulb.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Lightning.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Messenger.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Messenger.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Mobile_phone.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Mobile_phone.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Money.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Money.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Moon.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Nerd_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Nerd_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Note.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Note.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Oh_my_God_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Open_mouthed_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Party_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Pizza.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Pizza.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Plate.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Plate.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Rain.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Rainbow.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Rainbow.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Red_heart.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Red_lips.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Red_rose.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Right_hug.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Right_hug.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Rose.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sad_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sad_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sarcastic_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sarcastic_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Secret_telling_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Secret_telling_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sheep.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Shocked_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sick_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sick_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sleeping_half-moon.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sleepy_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sleepy_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Smiley_with_tonque_out.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Snail.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Snail.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Soccer_ball.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Soccer_ball.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Star.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Star.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Storm.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sun.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Sun.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Surprised_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Telephone_receiver.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Telephone_receiver.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Thinking_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Thinking_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Thumbs_down.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Thumbs_down.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Thumbs_up.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Thumbs_up.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Tonque_out_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Turtle.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Turtle.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Umbrella.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Umbrella.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Vampire_bat.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Very_happy_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/What_The_Fuck.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Wilted_rose.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Wilted_rose.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Winking_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Winking_smiley.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Xbox.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/Xbox.png
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/i_dont_know.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/null
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/party_smiley.gif
+%%DATADIR%%/skins/Dark Matter 4.0/smileys/rain.gif
+%%DATADIR%%/skins/Dark Matter 4.0/sounds/alarm.wav
+%%DATADIR%%/skins/Dark Matter 4.0/sounds/newemail.wav
+%%DATADIR%%/skins/Dark Matter 4.0/sounds/nudge.wav
+%%DATADIR%%/skins/Dark Matter 4.0/sounds/offline.wav
+%%DATADIR%%/skins/Dark Matter 4.0/sounds/online.wav
+%%DATADIR%%/skins/Dark Matter 4.0/sounds/type.wav
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/away.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/bossmode.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/brb.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/busy.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/hidden.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/inactive.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/lunch.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/msn.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/offline.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/online.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/phone.ico
+%%DATADIR%%/skins/Dark Matter 4.0/winicons/unread.ico
 %%DATADIR%%/skins/default/desc.txt
 %%DATADIR%%/skins/default/displaypic/amsn.dat
 %%DATADIR%%/skins/default/displaypic/amsn.png
@@ -290,6 +841,8 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/displaypic/shell.png
 %%DATADIR%%/skins/default/license
 %%DATADIR%%/skins/default/pixmaps/alarm.png
+%%DATADIR%%/skins/default/pixmaps/ampli.png
+%%DATADIR%%/skins/default/pixmaps/ampli_pressed.png
 %%DATADIR%%/skins/default/pixmaps/amsnicon.png
 %%DATADIR%%/skins/default/pixmaps/arrow.png
 %%DATADIR%%/skins/default/pixmaps/arrowmac.png
@@ -297,12 +850,16 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/assistant_audio.png
 %%DATADIR%%/skins/default/pixmaps/assistant_webcam.png
 %%DATADIR%%/skins/default/pixmaps/away.png
+%%DATADIR%%/skins/default/pixmaps/away_emblem.png
+%%DATADIR%%/skins/default/pixmaps/away_emblem_detailedview.png
 %%DATADIR%%/skins/default/pixmaps/back.png
 %%DATADIR%%/skins/default/pixmaps/baway.png
 %%DATADIR%%/skins/default/pixmaps/bbusy.png
 %%DATADIR%%/skins/default/pixmaps/bell.png
 %%DATADIR%%/skins/default/pixmaps/belloff.png
 %%DATADIR%%/skins/default/pixmaps/blocked.png
+%%DATADIR%%/skins/default/pixmaps/blocked_emblem.png
+%%DATADIR%%/skins/default/pixmaps/blocked_emblem_detailedview.png
 %%DATADIR%%/skins/default/pixmaps/blocked_off.png
 %%DATADIR%%/skins/default/pixmaps/boffline.png
 %%DATADIR%%/skins/default/pixmaps/bonline.png
@@ -316,8 +873,14 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/box_upleft.png
 %%DATADIR%%/skins/default/pixmaps/box_upright.png
 %%DATADIR%%/skins/default/pixmaps/busy.png
+%%DATADIR%%/skins/default/pixmaps/busy_emblem.png
+%%DATADIR%%/skins/default/pixmaps/busy_emblem_detailedview.png
 %%DATADIR%%/skins/default/pixmaps/butblock.png
 %%DATADIR%%/skins/default/pixmaps/butblock_hover.png
+%%DATADIR%%/skins/default/pixmaps/butcall.png
+%%DATADIR%%/skins/default/pixmaps/butcall_hover.png
+%%DATADIR%%/skins/default/pixmaps/butcallvideo.png
+%%DATADIR%%/skins/default/pixmaps/butcallvideo_hover.png
 %%DATADIR%%/skins/default/pixmaps/butdraw.png
 %%DATADIR%%/skins/default/pixmaps/butdraw_hover.png
 %%DATADIR%%/skins/default/pixmaps/butfont.png
@@ -326,6 +889,11 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/butgridoff_hover.png
 %%DATADIR%%/skins/default/pixmaps/butgridon.png
 %%DATADIR%%/skins/default/pixmaps/butgridon_hover.png
+%%DATADIR%%/skins/default/pixmaps/buthangup.png
+%%DATADIR%%/skins/default/pixmaps/buthangup_hover.png
+%%DATADIR%%/skins/default/pixmaps/buthangup_mini.png
+%%DATADIR%%/skins/default/pixmaps/buthangupvideo.png
+%%DATADIR%%/skins/default/pixmaps/buthangupvideo_hover.png
 %%DATADIR%%/skins/default/pixmaps/butinvite.png
 %%DATADIR%%/skins/default/pixmaps/butinvite_hover.png
 %%DATADIR%%/skins/default/pixmaps/butsend.png
@@ -348,6 +916,7 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/ccard_chat_hover.png
 %%DATADIR%%/skins/default/pixmaps/ccard_close.png
 %%DATADIR%%/skins/default/pixmaps/ccard_close_hover.png
+%%DATADIR%%/skins/default/pixmaps/ccard_dn.png
 %%DATADIR%%/skins/default/pixmaps/ccard_email.png
 %%DATADIR%%/skins/default/pixmaps/ccard_email_hover.png
 %%DATADIR%%/skins/default/pixmaps/ccard_left.png
@@ -358,12 +927,16 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/ccard_nudge_hover.png
 %%DATADIR%%/skins/default/pixmaps/ccard_right.png
 %%DATADIR%%/skins/default/pixmaps/ccard_right_hover.png
+%%DATADIR%%/skins/default/pixmaps/ccard_up.png
+%%DATADIR%%/skins/default/pixmaps/ccard_x.png
+%%DATADIR%%/skins/default/pixmaps/ccard_x_hl.png
 %%DATADIR%%/skins/default/pixmaps/checkSpelling.png
 %%DATADIR%%/skins/default/pixmaps/checkSpelling_hover.png
 %%DATADIR%%/skins/default/pixmaps/checkbox.png
 %%DATADIR%%/skins/default/pixmaps/checkbox_on.png
 %%DATADIR%%/skins/default/pixmaps/checkmark.png
 %%DATADIR%%/skins/default/pixmaps/colorbar.png
+%%DATADIR%%/skins/default/pixmaps/colorskin.png
 %%DATADIR%%/skins/default/pixmaps/confbut.png
 %%DATADIR%%/skins/default/pixmaps/confbuth.png
 %%DATADIR%%/skins/default/pixmaps/contract.png
@@ -388,6 +961,8 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/gnotify_error.png
 %%DATADIR%%/skins/default/pixmaps/gnotify_new.png
 %%DATADIR%%/skins/default/pixmaps/greyline.png
+%%DATADIR%%/skins/default/pixmaps/grouptopback_dark.png
+%%DATADIR%%/skins/default/pixmaps/grouptopback_light.png
 %%DATADIR%%/skins/default/pixmaps/idle.png
 %%DATADIR%%/skins/default/pixmaps/imghide.png
 %%DATADIR%%/skins/default/pixmaps/imghide_hover.png
@@ -409,6 +984,8 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/menu_select.png
 %%DATADIR%%/skins/default/pixmaps/menu_separator.png
 %%DATADIR%%/skins/default/pixmaps/messenger.png
+%%DATADIR%%/skins/default/pixmaps/mic.png
+%%DATADIR%%/skins/default/pixmaps/mic_muted.png
 %%DATADIR%%/skins/default/pixmaps/miniinfo.png
 %%DATADIR%%/skins/default/pixmaps/minijoins.png
 %%DATADIR%%/skins/default/pixmaps/minileaves.png
@@ -417,8 +994,10 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/moretabs.png
 %%DATADIR%%/skins/default/pixmaps/msnbot.png
 %%DATADIR%%/skins/default/pixmaps/mystatus_bg.png
+%%DATADIR%%/skins/default/pixmaps/mystatus_bg_hover.png
 %%DATADIR%%/skins/default/pixmaps/newline.png
 %%DATADIR%%/skins/default/pixmaps/no-emblem.png
+%%DATADIR%%/skins/default/pixmaps/nonim.png
 %%DATADIR%%/skins/default/pixmaps/note.png
 %%DATADIR%%/skins/default/pixmaps/notesdispic.png
 %%DATADIR%%/skins/default/pixmaps/notespic.png
@@ -431,6 +1010,8 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/notifyplugins.png
 %%DATADIR%%/skins/default/pixmaps/notifystate.png
 %%DATADIR%%/skins/default/pixmaps/notinlist.png
+%%DATADIR%%/skins/default/pixmaps/notinlist_emblem.png
+%%DATADIR%%/skins/default/pixmaps/notinlist_emblem_detailedview.png
 %%DATADIR%%/skins/default/pixmaps/nudgebutton.png
 %%DATADIR%%/skins/default/pixmaps/nudgebutton_hover.png
 %%DATADIR%%/skins/default/pixmaps/null
@@ -439,6 +1020,8 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/pause.png
 %%DATADIR%%/skins/default/pixmaps/pausebut.png
 %%DATADIR%%/skins/default/pixmaps/pausebuth.png
+%%DATADIR%%/skins/default/pixmaps/plain_emblem.png
+%%DATADIR%%/skins/default/pixmaps/plain_emblem_detailedview.png
 %%DATADIR%%/skins/default/pixmaps/playbut.png
 %%DATADIR%%/skins/default/pixmaps/playbuth.png
 %%DATADIR%%/skins/default/pixmaps/pop3_mailpic.png
@@ -463,11 +1046,15 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/pixmaps/recordbuth.png
 %%DATADIR%%/skins/default/pixmaps/sendbut.png
 %%DATADIR%%/skins/default/pixmaps/sendbut_hover.png
+%%DATADIR%%/skins/default/pixmaps/sipicon.png
+%%DATADIR%%/skins/default/pixmaps/smallanim.gif
 %%DATADIR%%/skins/default/pixmaps/smile.png
 %%DATADIR%%/skins/default/pixmaps/space_noupdate.png
 %%DATADIR%%/skins/default/pixmaps/space_update.png
 %%DATADIR%%/skins/default/pixmaps/spaces_dock.png
 %%DATADIR%%/skins/default/pixmaps/spaces_undock.png
+%%DATADIR%%/skins/default/pixmaps/speaker.png
+%%DATADIR%%/skins/default/pixmaps/speaker_muted.png
 %%DATADIR%%/skins/default/pixmaps/star.png
 %%DATADIR%%/skins/default/pixmaps/stopbut.png
 %%DATADIR%%/skins/default/pixmaps/stopbuth.png
@@ -544,6 +1131,7 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/smileys/Party_smiley.png
 %%DATADIR%%/skins/default/smileys/Pizza.png
 %%DATADIR%%/skins/default/smileys/Plate.png
+%%DATADIR%%/skins/default/smileys/Rabbit.png
 %%DATADIR%%/skins/default/smileys/Rain.png
 %%DATADIR%%/skins/default/smileys/Rainbow.png
 %%DATADIR%%/skins/default/smileys/Right_hug.png
@@ -577,6 +1165,7 @@ bin/amsn-remote-CLI
 %%DATADIR%%/skins/default/sounds/nudge.wav
 %%DATADIR%%/skins/default/sounds/offline.wav
 %%DATADIR%%/skins/default/sounds/online.wav
+%%DATADIR%%/skins/default/sounds/ring.wav
 %%DATADIR%%/skins/default/sounds/type.wav
 %%DATADIR%%/skins/default/winicons/away.ico
 %%DATADIR%%/skins/default/winicons/bossmode.ico
@@ -596,105 +1185,115 @@ bin/amsn-remote-CLI
 %%DATADIR%%/spaces.tcl
 %%DATADIR%%/sxml.tcl
 %%DATADIR%%/trayicon.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/LICENSE.txt
+%%DATADIR%%/utils/BWidget-1.9.0/arrow.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/bitmap.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/button.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/buttonbox.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/color.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/combobox.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/dialog.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/dragsite.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/dropsite.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/dynhelp.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/entry.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/font.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/images/bold.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/copy.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/cut.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/dragfile.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/dragicon.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/error.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/file.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/folder.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/hourglass.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/info.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/italic.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/minus.xbm
+%%DATADIR%%/utils/BWidget-1.9.0/images/new.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/opcopy.xbm
+%%DATADIR%%/utils/BWidget-1.9.0/images/open.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/openfold.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/oplink.xbm
+%%DATADIR%%/utils/BWidget-1.9.0/images/opmove.xbm
+%%DATADIR%%/utils/BWidget-1.9.0/images/overstrike.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/palette.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/passwd.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/paste.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/plus.xbm
+%%DATADIR%%/utils/BWidget-1.9.0/images/print.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/question.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/redo.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/save.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/target.xbm
+%%DATADIR%%/utils/BWidget-1.9.0/images/underline.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/undo.gif
+%%DATADIR%%/utils/BWidget-1.9.0/images/warning.gif
+%%DATADIR%%/utils/BWidget-1.9.0/init.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/label.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/labelentry.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/labelframe.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/lang/da.rc
+%%DATADIR%%/utils/BWidget-1.9.0/lang/de.rc
+%%DATADIR%%/utils/BWidget-1.9.0/lang/en.rc
+%%DATADIR%%/utils/BWidget-1.9.0/lang/es.rc
+%%DATADIR%%/utils/BWidget-1.9.0/lang/fr.rc
+%%DATADIR%%/utils/BWidget-1.9.0/lang/hu.rc
+%%DATADIR%%/utils/BWidget-1.9.0/lang/nl.rc
+%%DATADIR%%/utils/BWidget-1.9.0/lang/no.rc
+%%DATADIR%%/utils/BWidget-1.9.0/listbox.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/mainframe.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/messagedlg.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/notebook.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/pagesmgr.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/panedw.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/panelframe.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/passwddlg.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/pkgIndex.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/progressbar.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/progressdlg.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/scrollframe.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/scrollview.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/scrollw.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/separator.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/spinbox.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/statusbar.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/titleframe.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/tree.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/utils.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/widget.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/wizard.tcl
+%%DATADIR%%/utils/BWidget-1.9.0/xpm2image.tcl
 %%DATADIR%%/utils/TkCximage/TkCximage.so
 %%DATADIR%%/utils/TkCximage/pkgIndex.tcl
+%%DATADIR%%/utils/asyncresolver/asyncresolver.tcl
+%%DATADIR%%/utils/asyncresolver/libasyncresolver.so
+%%DATADIR%%/utils/asyncresolver/pkgIndex.tcl
 %%DATADIR%%/utils/base64/base64.tcl
 %%DATADIR%%/utils/base64/license.terms
 %%DATADIR%%/utils/base64/pkgIndex.tcl
 %%DATADIR%%/utils/base64/uuencode.tcl
 %%DATADIR%%/utils/base64/yencode.tcl
-%%DATADIR%%/utils/bwidget1.8.0/LICENSE.txt
-%%DATADIR%%/utils/bwidget1.8.0/arrow.tcl
-%%DATADIR%%/utils/bwidget1.8.0/bitmap.tcl
-%%DATADIR%%/utils/bwidget1.8.0/button.tcl
-%%DATADIR%%/utils/bwidget1.8.0/buttonbox.tcl
-%%DATADIR%%/utils/bwidget1.8.0/color.tcl
-%%DATADIR%%/utils/bwidget1.8.0/combobox.tcl
-%%DATADIR%%/utils/bwidget1.8.0/dialog.tcl
-%%DATADIR%%/utils/bwidget1.8.0/dragsite.tcl
-%%DATADIR%%/utils/bwidget1.8.0/dropsite.tcl
-%%DATADIR%%/utils/bwidget1.8.0/dynhelp.tcl
-%%DATADIR%%/utils/bwidget1.8.0/entry.tcl
-%%DATADIR%%/utils/bwidget1.8.0/font.tcl
-%%DATADIR%%/utils/bwidget1.8.0/images/bold.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/copy.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/cut.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/dragfile.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/dragicon.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/error.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/file.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/folder.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/hourglass.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/info.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/italic.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/minus.xbm
-%%DATADIR%%/utils/bwidget1.8.0/images/new.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/opcopy.xbm
-%%DATADIR%%/utils/bwidget1.8.0/images/open.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/openfold.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/oplink.xbm
-%%DATADIR%%/utils/bwidget1.8.0/images/opmove.xbm
-%%DATADIR%%/utils/bwidget1.8.0/images/overstrike.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/palette.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/passwd.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/paste.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/plus.xbm
-%%DATADIR%%/utils/bwidget1.8.0/images/print.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/question.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/redo.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/save.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/target.xbm
-%%DATADIR%%/utils/bwidget1.8.0/images/underline.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/undo.gif
-%%DATADIR%%/utils/bwidget1.8.0/images/warning.gif
-%%DATADIR%%/utils/bwidget1.8.0/init.tcl
-%%DATADIR%%/utils/bwidget1.8.0/label.tcl
-%%DATADIR%%/utils/bwidget1.8.0/labelentry.tcl
-%%DATADIR%%/utils/bwidget1.8.0/labelframe.tcl
-%%DATADIR%%/utils/bwidget1.8.0/lang/da.rc
-%%DATADIR%%/utils/bwidget1.8.0/lang/de.rc
-%%DATADIR%%/utils/bwidget1.8.0/lang/en.rc
-%%DATADIR%%/utils/bwidget1.8.0/lang/es.rc
-%%DATADIR%%/utils/bwidget1.8.0/lang/fr.rc
-%%DATADIR%%/utils/bwidget1.8.0/lang/hu.rc
-%%DATADIR%%/utils/bwidget1.8.0/lang/nl.rc
-%%DATADIR%%/utils/bwidget1.8.0/listbox.tcl
-%%DATADIR%%/utils/bwidget1.8.0/mainframe.tcl
-%%DATADIR%%/utils/bwidget1.8.0/messagedlg.tcl
-%%DATADIR%%/utils/bwidget1.8.0/notebook.tcl
-%%DATADIR%%/utils/bwidget1.8.0/pagesmgr.tcl
-%%DATADIR%%/utils/bwidget1.8.0/panedw.tcl
-%%DATADIR%%/utils/bwidget1.8.0/panelframe.tcl
-%%DATADIR%%/utils/bwidget1.8.0/passwddlg.tcl
-%%DATADIR%%/utils/bwidget1.8.0/pkgIndex.tcl
-%%DATADIR%%/utils/bwidget1.8.0/progressbar.tcl
-%%DATADIR%%/utils/bwidget1.8.0/progressdlg.tcl
-%%DATADIR%%/utils/bwidget1.8.0/scrollframe.tcl
-%%DATADIR%%/utils/bwidget1.8.0/scrollview.tcl
-%%DATADIR%%/utils/bwidget1.8.0/scrollw.tcl
-%%DATADIR%%/utils/bwidget1.8.0/separator.tcl
-%%DATADIR%%/utils/bwidget1.8.0/spinbox.tcl
-%%DATADIR%%/utils/bwidget1.8.0/statusbar.tcl
-%%DATADIR%%/utils/bwidget1.8.0/titleframe.tcl
-%%DATADIR%%/utils/bwidget1.8.0/tree.tcl
-%%DATADIR%%/utils/bwidget1.8.0/utils.tcl
-%%DATADIR%%/utils/bwidget1.8.0/widget.tcl
-%%DATADIR%%/utils/bwidget1.8.0/wizard.tcl
-%%DATADIR%%/utils/bwidget1.8.0/xpm2image.tcl
 %%DATADIR%%/utils/combobox/combobox.tcl
 %%DATADIR%%/utils/combobox/pkgIndex.tcl
 %%DATADIR%%/utils/contentmanager/contentmanager.tcl
 %%DATADIR%%/utils/contentmanager/pkgIndex.tcl
+%%DATADIR%%/utils/des/des.tcl
+%%DATADIR%%/utils/des/pkgIndex.tcl
+%%DATADIR%%/utils/des/tcldes.tcl
+%%DATADIR%%/utils/des/tcldesjr.tcl
 %%DATADIR%%/utils/dpbrowser/dpbrowser.tcl
 %%DATADIR%%/utils/dpbrowser/pkgIndex.tcl
 %%DATADIR%%/utils/drawboard/drawboard.tcl
 %%DATADIR%%/utils/drawboard/grid.png
 %%DATADIR%%/utils/drawboard/pkgIndex.tcl
+%%DATADIR%%/utils/farsight/pkgIndex.tcl
+%%DATADIR%%/utils/farsight/tcl_farsight.so
 %%DATADIR%%/utils/framec/framec.tcl
 %%DATADIR%%/utils/framec/pkgIndex.tcl
-%%DATADIR%%/utils/http2.4/http.tcl
-%%DATADIR%%/utils/http2.4/license.terms
-%%DATADIR%%/utils/http2.4/pkgIndex.tcl
+%%DATADIR%%/utils/http/http.tcl
+%%DATADIR%%/utils/http/license.terms
+%%DATADIR%%/utils/http/pkgIndex.tcl
 %%DATADIR%%/utils/linux/linflash/flash.so
 %%DATADIR%%/utils/linux/linflash/pkgIndex.tcl
 %%DATADIR%%/utils/linux/traydock/libtray.so
@@ -774,24 +1373,33 @@ bin/amsn-remote-CLI
 %%DATADIR%%/utils/sexytile/transp.png
 %%DATADIR%%/utils/sha1/pkgIndex.tcl
 %%DATADIR%%/utils/sha1/sha1.tcl
+%%DATADIR%%/utils/snit/main1.tcl
+%%DATADIR%%/utils/snit/main1_83.tcl
+%%DATADIR%%/utils/snit/main2.tcl
 %%DATADIR%%/utils/snit/pkgIndex.tcl
 %%DATADIR%%/utils/snit/snit.tcl
 %%DATADIR%%/utils/snit/snit2.tcl
 %%DATADIR%%/utils/snit/snit83.tcl
 %%DATADIR%%/utils/snit/snit_tcl83_utils.tcl
+%%DATADIR%%/utils/snit/validate.tcl
+%%DATADIR%%/utils/tclISF/pkgIndex.tcl
+%%DATADIR%%/utils/tclISF/tclISF.so
 %%DATADIR%%/utils/tcl_siren/pkgIndex.tcl
 %%DATADIR%%/utils/tcl_siren/tcl_siren.so
 %%DATADIR%%/utils/uri/pkgIndex.tcl
 %%DATADIR%%/utils/uri/uri.tcl
 %%DATADIR%%/utils/uri/urn-scheme.tcl
+%%DATADIR%%/utils/voipcontrols/pkgIndex.tcl
+%%DATADIR%%/utils/voipcontrols/test.tcl
+%%DATADIR%%/utils/voipcontrols/voipcontrols.tcl
 %%DATADIR%%/utils/webcamsn/pkgIndex.tcl
 %%DATADIR%%/utils/webcamsn/webcamsn.so
-share/applications/amsn.desktop
-share/pixmaps/amsn.png
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/utils/webcamsn
+@dirrm %%DATADIR%%/utils/voipcontrols
 @dirrm %%DATADIR%%/utils/uri
 @dirrm %%DATADIR%%/utils/tcl_siren
+@dirrm %%DATADIR%%/utils/tclISF
 @dirrm %%DATADIR%%/utils/snit
 @dirrm %%DATADIR%%/utils/sha1
 @dirrm %%DATADIR%%/utils/sexytile
@@ -805,17 +1413,20 @@ share/pixmaps/amsn.png
 @dirrm %%DATADIR%%/utils/linux/traydock
 @dirrm %%DATADIR%%/utils/linux/linflash
 @dirrm %%DATADIR%%/utils/linux
-@dirrm %%DATADIR%%/utils/http2.4
+@dirrm %%DATADIR%%/utils/http
 @dirrm %%DATADIR%%/utils/framec
+@dirrm %%DATADIR%%/utils/farsight
 @dirrm %%DATADIR%%/utils/drawboard
 @dirrm %%DATADIR%%/utils/dpbrowser
+@dirrm %%DATADIR%%/utils/des
 @dirrm %%DATADIR%%/utils/contentmanager
 @dirrm %%DATADIR%%/utils/combobox
-@dirrm %%DATADIR%%/utils/bwidget1.8.0/lang
-@dirrm %%DATADIR%%/utils/bwidget1.8.0/images
-@dirrm %%DATADIR%%/utils/bwidget1.8.0
 @dirrm %%DATADIR%%/utils/base64
+@dirrm %%DATADIR%%/utils/asyncresolver
 @dirrm %%DATADIR%%/utils/TkCximage
+@dirrm %%DATADIR%%/utils/BWidget-1.9.0/lang
+@dirrm %%DATADIR%%/utils/BWidget-1.9.0/images
+@dirrm %%DATADIR%%/utils/BWidget-1.9.0
 @dirrm %%DATADIR%%/utils
 @dirrm %%DATADIR%%/skins/default/winicons
 @dirrm %%DATADIR%%/skins/default/sounds
@@ -823,20 +1434,42 @@ share/pixmaps/amsn.png
 @dirrm %%DATADIR%%/skins/default/pixmaps
 @dirrm %%DATADIR%%/skins/default/displaypic
 @dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/winicons
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/sounds
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/smileys
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/vertical
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll/horizontal
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/pixmapscroll
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/pixmaps
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/pixmapmenu
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0/displaypic
+@dirrm %%DATADIR%%/skins/Dark Matter 4.0
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/plugins/winks/pixmaps
 @dirrm %%DATADIR%%/plugins/winks/lang
 @dirrm %%DATADIR%%/plugins/winks
 @dirrm %%DATADIR%%/plugins/remind/lang
 @dirrm %%DATADIR%%/plugins/remind
+@dirrm %%DATADIR%%/plugins/music/pixmaps
+@dirrm %%DATADIR%%/plugins/music/lang
+@dirrm %%DATADIR%%/plugins/music/MusicWin
+@dirrm %%DATADIR%%/plugins/music
 @dirrm %%DATADIR%%/plugins/inkdraw/pixmaps
 @dirrm %%DATADIR%%/plugins/inkdraw/pencils
 @dirrm %%DATADIR%%/plugins/inkdraw
 @dirrm %%DATADIR%%/plugins/WebcamShooter/lang
 @dirrm %%DATADIR%%/plugins/WebcamShooter
-@dirrm %%DATADIR%%/plugins/PowerTool
+@dirrm %%DATADIR%%/plugins/SearchContact/pixmaps
+@dirrm %%DATADIR%%/plugins/SearchContact/lang
+@dirrm %%DATADIR%%/plugins/SearchContact
 @dirrm %%DATADIR%%/plugins/Nudge/lang
 @dirrm %%DATADIR%%/plugins/Nudge
+@dirrm %%DATADIR%%/plugins/Notes
+@dirrm %%DATADIR%%/plugins/MSNGameTTT/pixmaps
+@dirrm %%DATADIR%%/plugins/MSNGameTTT/lang
+@dirrm %%DATADIR%%/plugins/MSNGameTTT
+@dirrm %%DATADIR%%/plugins/ColoredNicks/lang
+@dirrm %%DATADIR%%/plugins/ColoredNicks
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/docs

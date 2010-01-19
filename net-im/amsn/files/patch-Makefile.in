@@ -1,27 +1,19 @@
---- Makefile.in.orig	2007-12-25 05:25:59.000000000 +0800
-+++ Makefile.in	2008-02-23 11:15:00.000000000 +0800
-@@ -134,6 +134,11 @@
- FILES_TO_EXCLUDE += AppMain.tcl
- endif
+--- Makefile.in.orig	2009-10-06 15:51:12.000000000 -0300
++++ Makefile.in	2009-10-09 20:46:42.000000000 -0300
+@@ -67,7 +67,7 @@
+ TCL_STUB_LIB_SPEC := @TCL_STUB_LIB_SPEC@
  
-+ifeq ($(FOUND_OS),bsd)
-+FILES_TO_INSTALL += utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/traydock/libtray.so utils/linux/traydock/pkgIndex.tcl utils/webcamsn/pkgIndex.tcl utils/webcamsn/webcamsn.so
-+FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
-+endif
-+
- CONFIGURE_ARGS := @CONFIGURE_ARGS@
+ # Directories in which the Tk core can be found
+-TK_INC_SPEC 	:= @TK_INC_SPEC@
++TK_INC_SPEC 	:= @TK_INC_SPEC@/generic
+ TK_STUB_LIB_SPEC := @TK_STUB_LIB_SPEC@
  
- #########################################################
-@@ -227,6 +232,12 @@
- libstdc++.a :
- 	ln -s `g++ -print-file-name=libstdc++.a`
+ # C Flags for X
+@@ -118,6 +118,7 @@
+ CXXFLAGS   += -DPACKAGE='"$(PACKAGE)"'
+ CXXFLAGS   += -DVERSION='"$(VERSION)"'
+ CXXFLAGS   += -DLIBDIR='"$(LIBDIR)"'
++CXXFLAGS   += -I${LOCALBASE}/include
  
-+ifeq ($(FOUND_OS),bsd)
-+  ifeq ($(FOUND_X11),yes)
-+      ADDLIBS    += ${X_LIBS}
-+      include $(tray_dir)/Rules.mk
-+  endif
-+endif
- 
- #########################################################
- # include stuff
+ ifeq ($(STATIC),yes)
+ CXXFLAGS += -static-libgcc -L.
