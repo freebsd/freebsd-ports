@@ -16,6 +16,8 @@ DISTNAME=	gmp-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
+CONFLICTS=      gmp-5.*
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
