@@ -30,6 +30,10 @@ FULLDOCS=no
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
 do-install:
 	@cd ${WRKSRC} && \
 		${PYTHON_CMD} ./aap PREFIX="${PREFIX}" FULLDOCS=${FULLDOCS} \
