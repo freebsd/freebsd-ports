@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,6 +39,10 @@ MAN3=	Class::MOP.3 \
 	Class::MOP::Method::Generated.3 \
 	Class::MOP::Method::Inlined.3 \
 	Class::MOP::Method::Wrapped.3 \
+	Class::MOP::Mixin.3 \
+	Class::MOP::Mixin::AttributeCore.3 \
+	Class::MOP::Mixin::HasAttributes.3 \
+	Class::MOP::Mixin::HasMethods.3 \
 	Class::MOP::Module.3 \
 	Class::MOP::Object.3 \
 	Class::MOP::Package.3 \
