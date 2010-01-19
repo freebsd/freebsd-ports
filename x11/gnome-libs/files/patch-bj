@@ -8,7 +8,15 @@
  #include <signal.h>
  #include <fcntl.h>
  #include <termios.h>
-@@ -115,7 +116,7 @@
+@@ -50,7 +51,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <stdio.h>
+-#include <utmp.h>
+ #include <grp.h>
+ #include "gnome-pty.h"
+ #include "gnome-login-support.h"
+@@ -114,7 +114,7 @@
  #endif
  #endif /* CMSG_DATA */
 
