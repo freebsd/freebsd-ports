@@ -123,6 +123,7 @@
     SUBDIR += kpogre
     SUBDIR += ksqlanalyzer
     SUBDIR += ksqlshell
+    SUBDIR += kumofs
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libgda

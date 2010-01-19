@@ -1,0 +1,9 @@
+bin/kumo-gateway
+bin/kumo-manager
+bin/kumo-server
+bin/kumoctl
+bin/kumohash
+bin/kumolog
+bin/kumomergedb
+bin/kumostat
+bin/kumotop
