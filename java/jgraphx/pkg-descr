@@ -1,0 +1,11 @@
+JGraph is the most powerful, lightweight, feature-rich, and thoroughly
+documented open-source graph component available for Java. It is accompanied
+by JGraphpad, the first free diagram editor for Java that offers XML, Drag and
+Drop and much more!
+
+With the JGraph zoomable component, you can display objects and relations
+(networks) in any Swing UI. JGraph can also be used on the server-side, for
+example to read a GXL graph, apply a custom layout algorithm, and return the
+result as a HTML image map.
+
+WWW: http://www.jgraph.com/jgraphx.html

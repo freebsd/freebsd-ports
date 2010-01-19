@@ -115,6 +115,7 @@
     SUBDIR += jfreechart
     SUBDIR += jgraph
     SUBDIR += jgrapht
+    SUBDIR += jgraphx
     SUBDIR += jikes
     SUBDIR += jlex
     SUBDIR += jlint
