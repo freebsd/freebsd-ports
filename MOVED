@@ -1303,7 +1303,6 @@ benchmarks/bytebench|benchmarks/unixbench|2005-01-08|revived under new name
 audio/trm|audio/libtunepimp|2005-01-09|trm is now part of libtunepimp
 java/kaffe-devel|java/kaffe|2005-01-10|merge kaffe-devel into kaffe
 graphics/libtheora|multimedia/libtheora|2005-01-13|finished repocopy
-www/bluefish-devel|www/bluefish|2005-01-13|devel port no long needed after update
 irc/xchat-micryption|irc/xchat-mircryption|2005-01-17|Fix port name typo
 www/turck-mmcache|www/eaccelerator|2005-01-19|project changed name
 sysutils/task|sysutils/sleuthkit|2005-01-19|broken, unmaintained, better alternative exists
