@@ -136,14 +136,14 @@
 -AQSISDIR = /usr/local/aqsis
 -AQSISINC = -I$(AQSISDIR)/include
 +AQSISDIR = ${LOCALBASE}
-+AQSISINC = -I$(AQSISDIR)/include/aqsis
++AQSISINC = -I$(AQSISDIR)/include/aqsis -I$(AQSISDIR)/include/aqsis/ri
  AQSISLIBDIR = $(AQSISDIR)/lib
  # if you do not use Aqsis libslxargs as libslcargs replacement:
 -AQSISOBJS =
 +#AQSISOBJS =
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
  #AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L${AQSISLIBDIR} -lstdc++ -DUYUSESLXARGS
++AQSISOBJS = $(AQSISLIBDIR)/libaqsis_shadervm.so $(AQSISLIBDIR)/libaqsis_slxargs.so -L${AQSISLIBDIR} -lstdc++ -DUYUSESLXARGS
 +
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
@@ -151,7 +151,7 @@
 +#AQSISRI2RIB =
  # if you use Aqsis libri2rib (add -DAYUSEAQSISRIB to CFLAGS above!):
 -#AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
-+AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L${AQSISLIBDIR} -lstdc++ ${PTHREAD_LIBS}
++AQSISRI2RIB = $(AQSISLIBDIR)/libaqsis_ri2rib.so -L${AQSISLIBDIR} -lstdc++ ${PTHREAD_LIBS}
  
  
  # BMRT
@@ -173,8 +173,8 @@
  # Ayslx Plugin (Aqsis)
 -AYSLXINCDIR = $(AQSISDIR)/include
 -AYSLXLIBS = $(AQSISDIR)/lib/rcdummy.o $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L/usr/local/lib -llog4cpp
-+AYSLXINCDIR = ${AQSISDIR}/include/aqsis
-+AYSLXLIBS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L${LOCALBASE}/lib
++AYSLXINCDIR = ${AQSISDIR}/include -I${AQSISDIR}/include/aqsis -I${AQSISDIR}/include/aqsis/ri
++AYSLXLIBS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis_core.so $(AQSISDIR)/lib/libaqsis_shadervm.so $(AQSISDIR)/lib/libaqsis_slxargs.so -L${LOCALBASE}/lib
 +
  
  # Ayslc Plugin (BMRT)
