@@ -16,11 +16,15 @@ CFLAGS+=	-Wall -Wno-parentheses -Werror
 SRCS=		neoXcrypt.c neoPkgInit.c neoXwww.c neoXgeneral.c \
 		neoXcute.c neoXcomma.c neoXkdebug.c neoCbuf.c \
 		neoXlist.c neoXdb.c # neoXldap.c
+INCS=		neo.h neoCbuf.h neoXcute.h
+
+WARNS=		3
 
 SHLIB_NAME=	libneo82.so.1
 
 LDADD+=		-lcrypt -L${PREFIX}/lib -lmd -ldb2 # -ldap -llber
 
 LIBDIR=		${PREFIX}/lib
+INCSDIR=	${PREFIX}/include
 
 .include <bsd.lib.mk>

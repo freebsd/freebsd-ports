@@ -3,10 +3,10 @@
 #### (uncomment to activate)
 ####
 
-LoadModule	neoscript_module	%%APACHEMODDIR%%/apache/mod_neoscript.so
-#LoadModule	neo_userdir_module	%%APACHEMODDIR%%/apache/mod_neo_userdir.so
-#LoadModule	log_neo_module		%%APACHEMODDIR%%/apache/mod_log_neo.so
-#LoadModule	tcl_auth_module		%%APACHEMODDIR%%/apache/mod_auth_tcl.so
+LoadModule	neoscript_module	%%APACHEMODDIR%%/mod_neoscript.so
+#LoadModule	neo_userdir_module	%%APACHEMODDIR%%/mod_neo_userdir.so
+#LoadModule	neo_log_module		%%APACHEMODDIR%%/mod_log_neo.so
+#LoadModule	tcl_auth_module		%%APACHEMODDIR%%/mod_auth_tcl.so
 
 ## Enable the NeoWebScript handler
 AddType		text/html		.nhtml .nws

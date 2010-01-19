@@ -1,3 +1,6 @@
+include/neo.h
+include/neoCbuf.h
+include/neoXcute.h
 lib/libneo82.so.1
 lib/libneo82.so
 lib/neo8.2/pkgIndex.tcl

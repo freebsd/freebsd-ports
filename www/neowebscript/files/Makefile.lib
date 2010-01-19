@@ -10,7 +10,7 @@ INCLUDES=	-I${PREFIX}/include/apache \
 CC!=		${PREFIX}/sbin/apxs -q CC
 CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
 CFLAGS+=	${INCLUDES} -DGDTCL
-CFLAGS+=	-DDEFAULT_XFERLOG=\"/var/log/httpd-access.log\"
+CFLAGS+=	-DDEFAULT_XFERLOG=\"/var/log/httpd-access.log\" -Werror
 
 # Ridiculous!
 #CFLAGS+=	-Dneo_log_module=log_neo_module \
@@ -19,6 +19,7 @@ CFLAGS+=	-DDEFAULT_XFERLOG=\"/var/log/httpd-access.log\"
 SHLIB_NAME=	${SRCS:R}.so
 
 LDADD=		-L${PREFIX}/lib -ltcl${TCL_NDVER} -lm
+WARNS=	2
 
 USE_DB!=	grep -l db.h ${.CURDIR}/${SRCS}
 .if !empty(USE_DB)
@@ -27,6 +28,6 @@ LDADD+=		-ldb2
 
 #LDFLAGS=	${LDADD}
 
-NOMAN=	True	# don't bother with the man-page here, let the port handle it
+NO_MAN=	True	# don't bother with the man-page here, let the port handle it
 
 .include <bsd.lib.mk>

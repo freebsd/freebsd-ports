@@ -1,4 +1,4 @@
-%%APACHEETCDIR%%/neowebscript.conf
+%%APACHEETCDIR%%/neowebscript.conf.dist
 %%APACHEMODDIR%%/mod_neoscript.so
 %%APACHEMODDIR%%/mod_neo_userdir.so
 %%APACHEMODDIR%%/mod_log_neo.so
