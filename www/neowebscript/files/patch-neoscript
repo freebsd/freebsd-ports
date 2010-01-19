@@ -1,24 +1,199 @@
 --- mod_neoscript.c	Fri Jul 21 19:49:29 2000
-+++ mod_neoscript.c	Fri Aug 17 11:41:58 2001
-@@ -68,1 +68,1 @@
++++ mod_neoscript.c	2010-01-19 00:13:35.000000000 -0500
+@@ -66,10 +66,14 @@
+ #include "util_md5.h"
+ 
 -#include <db.h>
 +#include <db2/db.h>
-@@ -72,3 +72,5 @@
+ #include <assert.h>
+ #include <stdio.h>
+ 
  #include "tcl.h"
 -#include "tclExtend.h"
 +#ifdef STATIC_TCLX
 +#	include "tclExtend.h"
 +#endif
++#include <generic/tclInt.h>
++#include <generic/tclIntDecls.h>
  
-@@ -862,2 +864,3 @@
+ extern char ap_server_root[];
+@@ -79,4 +83,11 @@
+ void Tcl_InitExtensions(Tcl_Interp *interp);
+ 
++static Tcl_CmdProc Neo_IncludeCmd, Neo_IncludeCmd, Neo_IncludeCmd,
++    Neo_IncludeCmd, Neo_FlushBufferCmd, Neo_AbortPageCmd,
++    Neo_HttpdCmd, Tcl_HtmlCmd,
++    Neo_RequestInfoCmd, Tcl_ExtendSafeSlaveCmd,
++    Tcl_SetHeaderCmd, NWS_MD5Cmd, Tcl_gm_timestr_822Cmd;
++static Tcl_ObjCmdProc Neo_UnescapeUrlCmd, Neo_SimplifyPathnameCmd;
++
+ char softwareStartTimeString[32];
+ 
+@@ -128,5 +139,6 @@
+ static int NeoWebCacheEnabled;
+ 
+-int load_sub_req (Tcl_Interp *interp, request_rec *r)
++static int
++load_sub_req (Tcl_Interp *interp, request_rec *r)
+ {
+     int errstatus;
+@@ -201,5 +213,5 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     request_rec *rr=NULL;
+@@ -401,5 +413,5 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     if (argc != 1) {
+@@ -428,5 +440,5 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     if (argc != 1) {
+@@ -463,5 +475,5 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     if (argc != 2 || strncmp("child_terminate", argv[1], strlen(argv[1]))) {
+@@ -488,18 +500,19 @@
+  */
+ int
+-Neo_UnescapeUrlCmd (clientData, interp, argc, argv)
++Neo_UnescapeUrlCmd (clientData, interp, argc, objv)
+     ClientData  clientData;
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    Tcl_Obj * const objv[];
+ {
++    char *string;
+     if (argc != 2) {
+-	Tcl_AppendResult(interp, "wrong # args: should be \"", argv[0],
+-                          " url\"", (char *) NULL);
++	Tcl_WrongNumArgs(interp, 1, objv, "url");
+         return TCL_ERROR;
+     }
+ 
+-    if (ap_unescape_url(argv[1]) == OK) {
+-        interp->result = argv[1];
++    string = Tcl_GetString(objv[1]);
++    if (ap_unescape_url(string) == OK) {
++        Tcl_SetResult(interp, string, TCL_VOLATILE);
+     }
+     return TCL_OK;
+@@ -524,8 +537,8 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     char intbuf[20];
+-    char *varName;
++    const char *varName;
+     int depth;
+     request_rec *r = Tcl_request_rec;
+@@ -633,5 +646,5 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     int i, forceHeaders = 1;
+@@ -663,5 +676,5 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     char *digest;
+@@ -681,5 +694,5 @@
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    const char *argv[];
+ {
+     char *ascii_time;
+@@ -702,5 +715,5 @@
+     Tcl_Interp *interp;                 /* Current interpreter. */
+     int argc;                           /* Number of arguments. */
+-    char **argv;                        /* Argument strings. */
++    const char *argv[];                 /* Argument strings. */
+ {
+     Tcl_Interp *slaveInterp;
+@@ -741,18 +754,19 @@
+  */
+ int
+-Neo_SimplifyPathnameCmd (clientData, interp, argc, argv)
++Neo_SimplifyPathnameCmd (clientData, interp, argc, objv)
+     ClientData  clientData;
+     Tcl_Interp *interp;
+     int         argc;
+-    char      **argv;
++    Tcl_Obj * const objv[];
+ {
++    char *pathname;
++
+     if (argc != 2) {
+-	Tcl_AppendResult(interp, "wrong # args: should be \"", argv[0],
+-                          " pathname\"", (char *) NULL);
++	Tcl_WrongNumArgs(interp, 1, objv, "pathname");
+         return TCL_ERROR;
+     }
+ 
+-    ap_getparents(argv[1]);
+-    interp->result = argv[1];
++    ap_getparents(pathname);
++    Tcl_SetResult(interp, pathname, TCL_VOLATILE);
+     return TCL_OK;
+ }
+@@ -781,5 +795,5 @@
+     Tcl_Interp *interp;			/* Current interpreter. */
+     int argc;				/* Number of arguments. */
+-    char **argv;			/* Argument strings. */
++    const char *argv[];			/* Argument strings. */
+ {
+     int i = 1, tagstart, newline = 0;
+@@ -826,5 +840,6 @@
+ /* ----------------------- Initialization function ------------------------- */
+ 
+-void init_nws(server_rec *s, pool *p)
++static void
++init_nws(server_rec *s, pool *p)
+ {
+     time_t date;
+@@ -851,5 +866,9 @@
+ 	
+ 	/* Setup a library Path */
++#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION < 5
+ 	TclpInitLibraryPath(".");
++#else
++	TclSetLibraryPath(Tcl_NewStringObj(".", 2));
++#endif
+ 
+ 	/* Tcl */
+@@ -861,4 +880,5 @@
+     }
  
 +#ifdef STATIC_TCLX
      /* Extended Tcl */
-@@ -871,2 +874,3 @@
+     if (Tclx_Init(interp) == TCL_ERROR) {
+@@ -870,4 +890,5 @@
+     Tcl_StaticPackage(interp, "Tclx", Tclx_Init, Tclx_SafeInit);
      /* Tclx does its own call to Tcl_StaticPackage */
 +#endif
  
-@@ -908,6 +908,6 @@
+ #ifdef POSTGRESQL
+@@ -904,6 +925,6 @@
  #endif
  
 -#ifdef GDTCL
@@ -27,28 +202,221 @@
 +    /* Image generation */
      if (Gd_Init(interp) == TCL_ERROR) {
  	fprintf(stderr,
-@@ -916,2 +920,3 @@
+@@ -915,4 +936,5 @@
+ #endif
  
 +#ifdef STATIC_NEO
      /* NeoSoft Extensions */
-@@ -924,2 +929,3 @@
+     if (Neo_Init(interp) == TCL_ERROR) {
+@@ -923,4 +945,5 @@
+     }
      Tcl_StaticPackage(interp, "Neo", Neo_Init, NULL);
 +#endif
  
-@@ -956 +956 @@
+     /*
+@@ -948,8 +971,8 @@
+ 
+     if (Tcl_VarEval(interp, "source ",
 -	ap_server_root_relative(p, "neowebscript/init.tcl"), (char *)NULL)
 +	ap_server_root_relative(p, "share/neowebscript/init.tcl"), (char *)NULL)
-@@ -1687,2 +1687,3 @@
+ 	== TCL_ERROR)
+     {
+-	char *errorInfo;
++	const char *errorInfo;
+ 
+ 	errorInfo = Tcl_GetVar (interp, "errorInfo", TCL_GLOBAL_ONLY);
+@@ -998,9 +1021,9 @@
+ 		     (ClientData) 0, (Tcl_CmdDeleteProc *) NULL);
+ 
+-    Tcl_CreateCommand(interp, "www_simplify_pathname",
++    Tcl_CreateObjCommand(interp, "www_simplify_pathname",
+ 		     Neo_SimplifyPathnameCmd,
+                      (ClientData) NULL, (void (*)()) NULL);
+ 
+-    Tcl_CreateCommand(interp, "www_unescape_url",
++    Tcl_CreateObjCommand(interp, "www_unescape_url",
+ 		     Neo_UnescapeUrlCmd,
+                      (ClientData) NULL, (void (*)()) NULL);
+@@ -1179,7 +1202,10 @@
+  */
+ 
+-int find_string2(FILE *in, char *str1, char *str2, request_rec *r, int *result, int printing)
++static int
++find_string2(FILE *in, const char *str1, const char *str2,
++    request_rec *r, int *result, int printing)
+ { int x, l1 = strlen(str1), l2 = strlen(str2), p, p1, p2, m1, m2;
+-    char c, *str, outbuf[OUTBUFSIZE];
++    char c, outbuf[OUTBUFSIZE];
++    const char *str;
+     int outind = 0;
+ 
+@@ -1596,5 +1622,5 @@
+         timeTextBuf, TCL_GLOBAL_ONLY);
+ 
+-    sprintf (timeTextBuf, "%ld", r->finfo.st_uid);
++    sprintf (timeTextBuf, "%ld", (long)r->finfo.st_uid);
+     Tcl_SetVar2(interp, "webenv", "NEO_DOCUMENT_UID",
+         timeTextBuf, TCL_GLOBAL_ONLY);
+@@ -1608,87 +1634,4 @@
+ /* --------------------------- Action handlers ---------------------------- */
+ 
+-/* ensure that path is relative, and does not contain ".." elements
+- * ensentially ensure that it does not match the regex:
+- * (^/|(^|/)\.\.(/|$))
+- * XXX: this needs os abstraction... consider c:..\foo in win32
+- */
+-static int is_only_below(const char *path)
+-{
+-#if WIN32
+-    if (path[1] == ':')
+-  return 0;
+-#endif
+-    if (path[0] == '/') {
+-        return 0;
+-    }
+-    if (path[0] == '.' && path[1] == '.'
+-        && (path[2] == '\0' || path[2] == '/')) {
+-        return 0;
+-    }
+-    while (*path) {
+-        if (*path == '/' && path[1] == '.' && path[2] == '.'
+-            && (path[3] == '\0' || path[3] == '/')) {
+-            return 0;
+-        }
+-        ++path;
+-    }
+-    return 1;
+-}
+-
+-int run_pickfile_req( request_rec *r )
+-{
+-    int errstatus;
+-    FILE *f;
+-    char buf[IOBUFSIZE];
+-    int nLines;
+-    int whichLine;
+-
+-    if (r->method_number != M_GET) return DECLINED;
+-    if (r->finfo.st_mode == 0 || (r->path_info && *r->path_info)) {
+-        ap_log_rerror(APLOG_MARK, APLOG_ERR, r,
+-		     "access to %s failed for %s, reason %s", r->filename,
+-		     ap_get_remote_host(r->connection, r->per_dir_config,
+-				       REMOTE_NAME),
+-		     "File does not exist");
+-        return HTTP_NOT_FOUND;
+-    }
+-
+-    ap_set_last_modified(r);
+-    if ((errstatus = ap_set_content_length (r, r->finfo.st_size))
+-        || ((errstatus = ap_meets_conditions (r)) != OK))
+-        return errstatus;
+-
+-    f = fopen (r->filename, "r");
+-
+-    if (f == NULL) {
+-        ap_log_rerror(APLOG_MARK, APLOG_ERR, r,
+-		     "access to %s failed for %s, reason %s", r->filename,
+-		     ap_get_remote_host(r->connection, r->per_dir_config,
+-				       REMOTE_NAME),
+-		     "file permissions deny server access");
+-        return HTTP_FORBIDDEN;
+-    }
+-
+-    if ((fgets(buf, IOBUFSIZE, f) != NULL) || (errno == EINTR)) {
+-	nLines = atoi(buf);
+-	if (nLines <= 0) {
+-	    fclose (f);
+-	    return OK;
+-	}
+-
+-	ap_soft_timeout("send-pick", r);
+-
 -	srand((int)(getpid() * 17 + time((long *) 0)));
 -	for (whichLine = rand() % nLines; whichLine-- >= 0; ) {
-+	/* Use BSD's random(4) device and the random(3) functions */
-+	srandomdev();
-+	for (whichLine = random() % nLines; whichLine-- >= 0; ) {
-@@ -2164 +2165,6 @@
+-	    if ((fgets(buf,IOBUFSIZE,f)) == NULL) {
+-		if (errno != EINTR) break;
+-	    }
+-	}
+-	ap_rprintf (r, "%s", buf);
+-    }
+-    fclose(f);
+-    return OK;
+-}
+-
+ Tcl_Interp *get_slave_interp (request_rec *r, char *handler_name, char *name) {
+     extern Tcl_Interp *interp;
+@@ -1743,5 +1686,5 @@
+         strcpy (script, "setup_safe_interpreter");
+ 	if (Tcl_GlobalEval(interp, script) != TCL_OK) {
+-	    char *errorInfo;
++	    const char *errorInfo;
+ 
+ 	    errorInfo = Tcl_GetVar(interp, "errorInfo", TCL_GLOBAL_ONLY);
+@@ -1911,5 +1854,4 @@
+     char directive[MAX_STRING_LEN], error[MAX_STRING_LEN];
+     char timefmt[MAX_STRING_LEN];
+-    int noexec = ap_allow_options(r) & OPT_INCNOEXEC;
+     int ret, sizefmt, seqtype=0;
+     int init_environment, if_nesting, printing, conditional_status;
+@@ -2040,8 +1982,8 @@
+     request_rec *Tcl_saved_request_rec;
+     Tcl_Channel fchan;
+-    char *fchan_name;
++    const char *fchan_name;
+     Tcl_DString userCommand;
+-    char *commandString;
+-    int fno;
++    const char *commandString;
++    intptr_t fno;
+ 
+     Tcl_saved_request_rec = Tcl_request_rec;
+@@ -2090,5 +2032,5 @@
+ 
+     status = db->get(db, NULL, &key, &data, 0);
+-    db->close(db, NULL);
++    db->close(db, 0);
+     if (status)
+ 	return HTTP_NOT_FOUND;
+@@ -2113,5 +2055,5 @@
+ 	return;
+ 
+-    if (db_open(NeoWebCacheName, DB_HASH, NULL, 0644, NULL, NULL, &db))
++    if (db_open(NeoWebCacheName, DB_HASH, 0, 0644, NULL, NULL, &db))
+ 	return;
+ 
+@@ -2131,5 +2073,5 @@
+ 	    perror("db->put"); */
+     }
+-    db->close(db, NULL);
++    db->close(db, 0);
+     return;
+ }
+@@ -2156,5 +2098,10 @@
+     struct request_rec *frr = NULL;
+ 
 -    if (!(ap_allow_options(r) & OPT_INCLUDES)) return DECLINED;
 +    if (!(ap_allow_options(r) & OPT_INCLUDES)) {
 +	ap_log_rerror(APLOG_MARK, APLOG_ERR, r, "Apache configuration "
-+		     "does not allow SSI parsing for ``%s''",
++		     "does not allow SSI parsing for ``%s'' (mode %d)",
 +		     r->filename, mode);
 +	return DECLINED;
 +    }
+ 
+     r->allowed |= (1 << M_GET);
+@@ -2162,7 +2109,7 @@
+         ap_log_rerror(APLOG_MARK, APLOG_NOERRNO|APLOG_ERR, r,
+ 		     "File does not exist: %s",
+-                     (r->path_info
++                     r->path_info
+                      ? ap_pstrcat(r->pool, r->filename, r->path_info, NULL)
+-                     : r->filename, r));
++                     : r->filename);
+         return HTTP_NOT_FOUND;
+     }
+@@ -2294,5 +2241,5 @@
+ 	    if (Tcl_GlobalEval(interp, script) == TCL_ERROR)
+ 	    {
+-		char *errorInfo;
++		const char *errorInfo;
+ 
+                 /* An error occured setting up for the upload.  We have

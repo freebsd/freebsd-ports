@@ -1,0 +1,21 @@
+--- mod_neo_userdir.c	1999-11-19 19:35:28.000000000 -0500
++++ mod_neo_userdir.c	2010-01-17 15:02:59.000000000 -0500
+@@ -60,7 +60,8 @@
+  */
+ 
+-#include "httpd.h"
+-#include "http_config.h"
+-#include "ap_compat.h"
++#include <httpd.h>
++#include <http_config.h>
++#include <http_log.h>
++#include <ap_compat.h>
+ 
+ #include "tcl.h"
+@@ -306,5 +306,5 @@
+ 	    extern Tcl_Interp *interp;
+ 	    int code;
+-	    char *where;
++	    const char *where;
+ 	    code = Tcl_VarEval(interp, userdir+1, " ", pw->pw_name, " ",
+ 			      pw->pw_dir, " {", pw->pw_gecos, "} {", dname+1,

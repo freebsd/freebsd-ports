@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/${SUBDIR}/generic
 EXTRACT_AFTER_ARGS?=	| ${TAR} --exclude Makefile -xpf - ${SUBDIR}/generic ${SUBDIR}/neolibs
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-USE_TCL=	83+
+USE_TCL=	84+
 MAKE_ENV+=	NEO_LIBRARY=${NEO_LIBRARY} TCL_VER=${TCL_VER}
 
 DDIR=		${PREFIX}/lib/tcl${TCLV}/Trf

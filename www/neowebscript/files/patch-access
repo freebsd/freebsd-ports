@@ -1,5 +1,5 @@
 --- mod_auth_tcl.c	Fri Nov 19 19:35:28 1999
-+++ mod_auth_tcl.c	Thu Jan  3 12:24:41 2002
++++ mod_auth_tcl.c	2010-01-18 23:47:06.000000000 -0500
 @@ -5,5 +5,5 @@
   * You may freely redistribute most NeoSoft extensions to the Apache webserver
   * for any purpose except commercial resale and/or use in secure servers,
@@ -157,9 +157,14 @@
 +
      if (!method_restricted)
        return OK;
-@@ -214,4 +228,59 @@
+@@ -214,4 +228,63 @@
  }
  
++/*
++ * Defined in both mod_neo_include.c and mod_neoscript.c
++ */
++void propagate_vars_to_nws(Tcl_Interp *interp, request_rec *r);
++
 +/* A c c e s s
 + *
 + * Access control doesnt care about user identity, so the user doesnt
@@ -187,7 +192,6 @@
 +						  &tcl_auth_module);
 +    char errstr[MAX_STRING_LEN];
 +    int code;
-+    char *t;
 +
 +    if (!sec->tcl_access_command)
 +	return DECLINED;
@@ -217,7 +221,7 @@
 +
  module tcl_auth_module = {
     STANDARD_MODULE_STUFF,
-@@ -224,7 +293,7 @@
+@@ -224,7 +297,7 @@
     NULL,			/* handlers */
     NULL,			/* filename translation */
 -   authenticate_basic_user_via_tcl,	/* check_user_id */

@@ -7,7 +7,7 @@
 
 PORTNAME=	neowebscript
 PORTVERSION=	3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www tcl
 MASTER_SITES=	SF/nws/nws/${PORTVERSION}
 
@@ -17,14 +17,15 @@ COMMENT=	Embeds a TCL8 interpreter in the Apache server
 LIB_DEPENDS=	neo82:${PORTSDIR}/devel/tcl-neo
 
 USE_APACHE=	1.3
-USE_TCL=	yes
+USE_TCL=	84+
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 WRKSRC=		${WRKDIR}/${DISTNAME}/modules
 MAKE_ENV+=	FILESDIR="${FILESDIR}" \
-			INSTALL_DATA="${INSTALL_DATA}" \
-			TCL_VERSION=${TCL_VER}
+		INSTALL_DATA="${INSTALL_DATA}" \
+		TCL_VERSION=${TCL_VER}
 REINPLACE_ARGS=	-i ""
 SUB_FILES+=	pkg-message neowebscript.conf
+SUB_LIST+=	APACHEMODDIR=${APACHEMODDIR} APACHEETCDIR=${PREFIX}/${APACHEETCDIR}
 
 SUBDIRS=	modules neowebscript htdocs # tools
 
@@ -44,7 +45,7 @@ pre-install:
 		\( -type f -name \*.orig -o -type d -empty \) -delete
 
 post-install:
-	@${CP} ${WRKSRC}/../../neowebscript.conf ${LOCALBASE}/${APACHEETCDIR}/
+	@${CP} ${WRKDIR}/neowebscript.conf ${LOCALBASE}/${APACHEETCDIR}/neowebscript.conf.dist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/
 	@${CP} -Rp ${WRKSRC}/../htdocs/* ${DOCSDIR}/
