@@ -31,7 +31,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 XTRADOCS=	CHANGES README TODO
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g;s|package_data.*},||g;s|sunos5|freebsd8|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g;s|package_data.*},||g;s|sunos5|freebsd8', 'freebsd9|g" ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|>mininum|>minimum|g;s|>maxinum|>maximum|g;s|int size_buffer|Py_ssize_t size_buffer|g' ${WRKSRC}/python/fltk_wrap.cpp
 
 post-build:
