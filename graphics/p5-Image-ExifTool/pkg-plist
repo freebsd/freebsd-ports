@@ -1,4 +1,5 @@
 bin/exiftool
+%%SITE_PERL%%/Image/ExifTool/iWork.pm
 %%SITE_PERL%%/Image/ExifTool/ZIP.pm
 %%SITE_PERL%%/Image/ExifTool/XMP2.pm
 %%SITE_PERL%%/Image/ExifTool/XMP.pm
@@ -39,8 +40,10 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/PICT.pm
 %%SITE_PERL%%/Image/ExifTool/PDF.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
+%%SITE_PERL%%/Image/ExifTool/OOXML.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCapture.pm
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
+%%SITE_PERL%%/Image/ExifTool/M2TS.pm
 %%SITE_PERL%%/Image/ExifTool/MinoltaRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
@@ -51,6 +54,8 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/MIFF.pm
 %%SITE_PERL%%/Image/ExifTool/MIEUnits.pod
 %%SITE_PERL%%/Image/ExifTool/MIE.pm
+%%SITE_PERL%%/Image/ExifTool/MWG.pm
+%%SITE_PERL%%/Image/ExifTool/LNK.pm
 %%SITE_PERL%%/Image/ExifTool/Leaf.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/zh_tw.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/pl.pm
@@ -94,6 +99,8 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/CanonRaw.pm
 %%SITE_PERL%%/Image/ExifTool/CanonCustom.pm
 %%SITE_PERL%%/Image/ExifTool/Canon.pm
+%%SITE_PERL%%/Image/ExifTool/CaptureOne.pm
+%%SITE_PERL%%/Image/ExifTool/Charset.pm
 %%SITE_PERL%%/Image/ExifTool/BuildTagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
 %%SITE_PERL%%/Image/ExifTool/BZZ.pm
@@ -124,6 +131,7 @@ bin/exiftool
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/writing.html
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
+%%PORTDOCS%%%%DOCSDIR%%/standards.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/models.html
 %%PORTDOCS%%%%DOCSDIR%%/metafiles.html
@@ -139,6 +147,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/config.html
 %%PORTDOCS%%%%DOCSDIR%%/commentary.html
 %%PORTDOCS%%%%DOCSDIR%%/canon_raw.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/iWork.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/index.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ZIP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/XMP.html
@@ -164,8 +173,10 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PICT.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PDF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Olympus.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/OOXML.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/NikonCapture.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/M2TS.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MinoltaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MPF.html
@@ -174,7 +185,9 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MNG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MIE.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/MWG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Leaf.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/LNK.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/KyoceraRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Kodak.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Jpeg2000.html
