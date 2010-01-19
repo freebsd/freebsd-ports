@@ -80,6 +80,7 @@
     SUBDIR += etoile-iterm
     SUBDIR += etoile-xwindowserverkit
     SUBDIR += evieext
+    SUBDIR += evilvte
     SUBDIR += examine
     SUBDIR += fbdesk
     SUBDIR += fbpanel
