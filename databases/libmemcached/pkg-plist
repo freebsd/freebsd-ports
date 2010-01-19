@@ -5,7 +5,6 @@ bin/memdump
 bin/memerror
 bin/memflush
 bin/memrm
-bin/memslap
 bin/memstat
 include/libhashkit/algorithm.h
 include/libhashkit/behavior.h
