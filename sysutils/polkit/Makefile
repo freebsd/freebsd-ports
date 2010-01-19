@@ -8,6 +8,7 @@
 
 PORTNAME=	polkit
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 

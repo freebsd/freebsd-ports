@@ -3,7 +3,7 @@
 case $2 in
 POST-INSTALL)
 	mkdir -p /var/lib/polkit-1/localauthority
-	mkdir -p ${PKG_PREFIX}/polkit-1/localauthority
+	mkdir -p ${PKG_PREFIX}/etc/polkit-1/localauthority
 	for i in 10-vendor.d 20-org.d 30-site.d 50-local.d 90-mandatory.d; do
 	    mkdir -p /var/lib/polkit-1/localauthority/${i}
 	    mkdir -p ${PKG_PREFIX}/etc/polkit-1/localauthority/${i}
