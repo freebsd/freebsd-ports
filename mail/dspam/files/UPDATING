@@ -17,6 +17,19 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.9.0
+#
+
+Port changes:
+- LDAP option --> EXTERNAL_LOOKUP (following upstream changes)
+- CGI option --> WebUI (following upstream changes)
+- CGI_PATH var --> WWWDIR (defaulting to PREFIX/www/dspam)
+
+Lots of changes, see UPGRADING file in the tarball. At very least you need
+to adjust your dspam.conf and your database.
+
+
+###########################################################################
 # dspam-3.6.8_1
 #
 
