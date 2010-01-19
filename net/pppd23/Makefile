@@ -20,4 +20,10 @@ GNU_CONFIGURE=	yes
 MAN8=		pppd.8 pppstats.8 chat.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800045
+IGNORE=		depends on PPPDISC, which is no longer available
+.endif
+
+.include <bsd.port.post.mk>
