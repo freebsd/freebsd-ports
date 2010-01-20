@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/F/FO/FONKIE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	oyvind@moll.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-level interface to the Compact Disc Database
 
 PERL_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=		audio
 MASTER_SITES=		http://www.moll.no/oyvind/distfiles/\
 			http://www.orakel.ntnu.no/~oyvindmo/distfiles/
 
-MAINTAINER=		oyvind@moll.no
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple curses/ncurses based juke box program
 
 GNU_CONFIGURE=		yes

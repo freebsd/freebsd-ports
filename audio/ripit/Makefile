@@ -10,7 +10,7 @@ PORTVERSION=	3.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.suwald.com/ripit/
 
-MAINTAINER=	oyvind@moll.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line audio CD ripper
 
 # See pkg-message about other dependencies.
