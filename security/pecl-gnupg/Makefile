@@ -7,7 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
