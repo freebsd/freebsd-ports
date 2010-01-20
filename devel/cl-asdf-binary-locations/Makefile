@@ -6,6 +6,7 @@
 
 PORTNAME=	asdf-binary-locations
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
@@ -15,8 +16,6 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Selects where your Common Lisp binaries (FASL files) should go
 
 NO_BUILD=	yes
-
-USE_ASDF=	yes
 
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}
