@@ -1,6 +1,6 @@
---- Captcha.pm.orig	Mon May 10 10:58:05 2004
-+++ Captcha.pm	Mon May 10 11:06:24 2004
-@@ -65,6 +65,7 @@ sub new
+--- Captcha.pm.orig	2003-12-18 13:44:34.000000000 +0900
++++ Captcha.pm	2010-01-19 18:52:23.656183439 +0900
+@@ -65,6 +65,7 @@
  	my $keep_failures = (defined($opts{keep_failures}) && $opts{keep_failures})
  	                    ? 1 : 0;
  	$self->keep_failures($keep_failures);
@@ -8,7 +8,7 @@
  	
  	# create a random seed if perl version less than 5.004
  	if ($] < 5.005)
-@@ -193,6 +194,18 @@ sub data_folder
+@@ -193,6 +194,18 @@
     }
  }
  
@@ -27,7 +27,7 @@
  
  sub check_code 
  {
-@@ -214,7 +227,7 @@ sub check_code 
+@@ -214,7 +227,7 @@
  	# they could be confused with (o) and (l), so we swap them in
  	$code =~ tr/01/ol/;
  
@@ -36,7 +36,25 @@
  	
  	# pull in current database
  	warn "Open File: $database_file\n" if($self->debug() >= 2);
-@@ -490,7 +503,7 @@ sub generate_code 
+@@ -232,7 +245,7 @@
+ 	foreach my $line (@data) 
+ 	{
+ 		$line =~ s/\n//;
+-		my ($data_time,$data_code) = split(/::/,$line);
++		my ($data_time,$data_code) = $line =~ m/(^\d+)::([[:xdigit:]]{32})$/;
+ 		
+ 		my $png_file = File::Spec->catfile($self->output_folder(),$data_code . ".png");
+ 		if ($data_code eq $crypt)
+@@ -351,7 +364,7 @@
+ 	foreach my $line (@data) 
+ 	{
+ 		$line =~ s/\n//;
+-		my ($data_time,$data_code) = split(/::/,$line);
++		my ($data_time,$data_code) = $line =~ m/(^\d+)::([[:xdigit:]]{32})$/;
+ 		if ( (($current_time - $data_time) > ($self->expire())) ||
+ 		     ($data_code  eq $md5) )
+ 		{	# remove expired captcha, or a dup
+@@ -490,7 +503,7 @@
  	my $length = shift;
  
  	my $code = $self->generate_random_string($length);
@@ -45,7 +63,7 @@
  
  	my ($captcha_data_ref,$output_filename);
  	if ($self->type() eq 'image')
-@@ -625,6 +638,7 @@ See the method descriptions for more det
+@@ -625,6 +638,7 @@
     height => 35, # optional. default 35
     images_folder => '/some/folder', # optional. default to lib dir
     keep_failures => 0, # optional, defaults to 0(false)
@@ -53,11 +71,10 @@
     debug => 0, # optional. default 0
  
  =back
-@@ -694,6 +708,14 @@ Optional. Number of pixels wide for the 
- =item C<$captcha-E<gt>keep_failures( [0|1] );>
+@@ -695,6 +709,14 @@
  
  Optional. Defaults to zero. This option controls whether or not the captcha will remain valid after a failed attempt. By default, we only allow one attempt to solve it. This greatly reduces the possibility that a bot could brute force a correct answer. Change it at your own risk.
-+
+ 
 +=item C<$captcha-E<gt>secret( "SuperSecret" );>
 +
 +Optional. Defaults to an empty string. This option is meant to prevent
@@ -65,6 +82,7 @@
 +valid codes and comparing them with the image file name. Obviously, the
 +secret should be the same for creating and checking the captcha. It is a
 +good idea to set it to something else than the default.
- 
++
  =item C<$captcha-E<gt>debug( [0|1|2] );>
  
+ Optional. 
