@@ -38,8 +38,8 @@
     SUBDIR += dgs
     SUBDIR += dmenu
     SUBDIR += dmxproto
-    SUBDIR += dri2proto
     SUBDIR += docker
+    SUBDIR += dri2proto
     SUBDIR += dxpc
     SUBDIR += dynamag
     SUBDIR += dzen2
@@ -157,9 +157,9 @@
     SUBDIR += kdebase4-runtime
     SUBDIR += kdebase4-workspace
     SUBDIR += kdelibs3
+    SUBDIR += kdelibs3-nocups
     SUBDIR += kdelibs4
     SUBDIR += kdelibs4-experimental
-    SUBDIR += kdelibs3-nocups
     SUBDIR += keylaunch
     SUBDIR += keynav
     SUBDIR += libICE

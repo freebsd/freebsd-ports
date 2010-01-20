@@ -169,9 +169,9 @@
     SUBDIR += maatkit
     SUBDIR += mantis
     SUBDIR += mdbtools
-    SUBDIR += mergeant
     SUBDIR += memcached
     SUBDIR += memcachedb
+    SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mird
     SUBDIR += mongodb

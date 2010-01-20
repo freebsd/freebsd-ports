@@ -169,8 +169,8 @@
     SUBDIR += gmime24-sharp
     SUBDIR += gml
     SUBDIR += gnarwl
-    SUBDIR += gnubiff
     SUBDIR += gnome-gmail-notifier
+    SUBDIR += gnubiff
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
@@ -423,8 +423,8 @@
     SUBDIR += p5-Net-IMAP-Simple-SSL
     SUBDIR += p5-Net-ManageSieve
     SUBDIR += p5-Net-QMTP
-    SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-SMTP-SSL
+    SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-SMTP-TLS
     SUBDIR += p5-Net-SMTP_auth
     SUBDIR += p5-Net-SenderBase
@@ -741,6 +741,5 @@
     SUBDIR += zabit
     SUBDIR += zmailer
     SUBDIR += zms
-#   SUBDIR += mailman-devel
 
 .include <bsd.port.subdir.mk>

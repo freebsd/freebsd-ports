@@ -69,11 +69,11 @@
     SUBDIR += p5-Encoding-FixLatin
     SUBDIR += p5-Format-Human-Bytes
     SUBDIR += p5-JSON
-    SUBDIR += p5-JSON-XS-VersionOneAndTwo
-    SUBDIR += p5-JSON1
     SUBDIR += p5-JSON-Any
     SUBDIR += p5-JSON-DWIW
     SUBDIR += p5-JSON-XS
+    SUBDIR += p5-JSON-XS-VersionOneAndTwo
+    SUBDIR += p5-JSON1
     SUBDIR += p5-MIME-Base32
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-MIME-Base64-URLSafe

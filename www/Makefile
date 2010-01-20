@@ -218,8 +218,8 @@
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
     SUBDIR += firefox3
-    SUBDIR += firefox3-i18n
     SUBDIR += firefox3-devel
+    SUBDIR += firefox3-i18n
     SUBDIR += firefox35
     SUBDIR += firefox35-i18n
     SUBDIR += flashplugin-mozilla
@@ -292,9 +292,9 @@
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
     SUBDIR += hs-fastcgi
+    SUBDIR += hs-http-server
     SUBDIR += hs-oeis
     SUBDIR += hs-scgi
-    SUBDIR += hs-http-server
     SUBDIR += hs-url
     SUBDIR += htdump
     SUBDIR += html2hdml
@@ -680,7 +680,6 @@
     SUBDIR += p5-Bundle-Slash
     SUBDIR += p5-Bundle-Sledge
     SUBDIR += p5-Business-PayPal
-    SUBDIR += p5-Catalyst-Plugin-AutoCRUD
     SUBDIR += p5-CGI-Ajax
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-Application-Dispatch
@@ -786,6 +785,7 @@
     SUBDIR += p5-Catalyst-Plugin-Authentication-Store-Htpasswd
     SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
+    SUBDIR += p5-Catalyst-Plugin-AutoCRUD
     SUBDIR += p5-Catalyst-Plugin-AutoRestart
     SUBDIR += p5-Catalyst-Plugin-Browser
     SUBDIR += p5-Catalyst-Plugin-C3

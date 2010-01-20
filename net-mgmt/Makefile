@@ -49,8 +49,8 @@
     SUBDIR += ciscoconf
     SUBDIR += clog
     SUBDIR += collectd
-    SUBDIR += coovachilli
     SUBDIR += confregdecode
+    SUBDIR += coovachilli
     SUBDIR += cowpatty
     SUBDIR += cricket
     SUBDIR += darkstat
@@ -109,7 +109,6 @@
     SUBDIR += mtrace
     SUBDIR += nagcon
     SUBDIR += nagios
-    SUBDIR += nagios2
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula
     SUBDIR += nagios-check_clamav
@@ -128,6 +127,7 @@
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
     SUBDIR += nagios-spamd-plugin
+    SUBDIR += nagios2
     SUBDIR += nagiosagent
     SUBDIR += nagiosgraph
     SUBDIR += nagiosgrapher
@@ -277,13 +277,13 @@
     SUBDIR += xymon-server
     SUBDIR += yabm
     SUBDIR += yaf
-    SUBDIR += zabbix16-agent
-    SUBDIR += zabbix16-frontend
-    SUBDIR += zabbix16-proxy
-    SUBDIR += zabbix16-server
     SUBDIR += zabbix-agent
     SUBDIR += zabbix-frontend
     SUBDIR += zabbix-proxy
     SUBDIR += zabbix-server
+    SUBDIR += zabbix16-agent
+    SUBDIR += zabbix16-frontend
+    SUBDIR += zabbix16-proxy
+    SUBDIR += zabbix16-server
 
 .include <bsd.port.subdir.mk>
