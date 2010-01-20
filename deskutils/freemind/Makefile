@@ -16,14 +16,9 @@ DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION:S/./_/g}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Free mind-mapping software written in Java
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
-.if !exists(/usr/bin/unzip)
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-.endif
-.if !exists(/usr/bin/zip)
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-.endif
 
 USE_ZIP=	yes
 USE_JAVA=	yes
