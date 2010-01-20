@@ -168,6 +168,7 @@
     SUBDIR += cl-asdf-binary-locations
     SUBDIR += cl-asdf-clisp
     SUBDIR += cl-infix
+    SUBDIR += cl-infix-clisp
     SUBDIR += cl-infix-sbcl
     SUBDIR += cl-port
     SUBDIR += cl-port-clisp
