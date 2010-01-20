@@ -67,3 +67,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translator-test.lisp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%LIB32DIR%%/common-lisp/cffi/uffi-compat
+@dirrm %%LIB32DIR%%/common-lisp/cffi/src
+@dirrm %%LIB32DIR%%/common-lisp/cffi/grovel
+@dirrm %%LIB32DIR%%/common-lisp/cffi
