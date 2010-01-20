@@ -17,4 +17,8 @@ COMMENT=	Binary-based efficient data interchange format focused on performance
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
+.endif
+
 .include <bsd.port.mk>
