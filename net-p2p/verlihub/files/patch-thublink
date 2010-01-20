@@ -200,9 +200,10 @@ diff -u -r1.235 cserverdc.cpp
  		return 0;
  	}
 +	return true;
- }
- 
- /** No descriptions */
+ 	#else
+ 	return 0;
+ 	#endif
+
 Index: casyncconn.h
 ===================================================================
 RCS file: /cvsroot/verlihub/verlihub/src/casyncconn.h,v

@@ -7,10 +7,11 @@
 
 PORTNAME=	chatroom
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
+MASTER_SITES=	SF/verlihub/VH_Chatroom/${DISTVERSION}
 
-MAINTAINER=	skylord@vt.net.ru
+MAINTAINER=	me@skylord.ru
 
 PLUGIN_DESC=	Chatroom
 
