@@ -6,6 +6,7 @@
 
 PORTNAME=	trivial-features
 PORTVERSION=	2010.01.16
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -19,10 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd
 USE_ASDF_FASL=	yes
 FASL_TARGET=	clisp
 FASL_BUILD=	yes
-
-do-install:
-	@${MKDIR} ${ASDF_PATHNAME}/src/${FASL_DIR_REL}
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${ASDF_PATHNAME}/src/${FASL_DIR_REL}
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

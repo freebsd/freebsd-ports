@@ -15,7 +15,7 @@
 # USE_CLISP	- If set, depend on lang/clisp
 # USE_ASDF	- If set, depend on devel/cl-asdf
 # USE_ASDF_FASL - If set, set dependency on compiled ASDF files (only if
-#                 required by the chosed FASL_TARGET)
+#                 required by the chosen FASL_TARGET)
 # FASL_BUILD	- If set, compile FASL files using the ASDF framework
 # ASDF_MODULES	- If FASL_BUILD is set: list of ASDF modules to compile
 
@@ -55,8 +55,12 @@ RUN_DEPENDS+=	clisp:${PORTSDIR}/lang/clisp
 .if defined(USE_ASDF)
 # Even if the Common Lisp compiler already has a bundled ASDF framework,
 # we still need the asdf-init file.
-BUILD_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
+
+BUILD_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.asd:${PORTSDIR}/devel/cl-asdf \
+		${LOCALBASE}/${CL_LIBDIR_REL}/asdf-binary-locations/asdf-binary-locations.asd:${PORTSDIR}/devel/cl-asdf-binary-locations
+RUN_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.asd:${PORTSDIR}/devel/cl-asdf \
+		${LOCALBASE}/${CL_LIBDIR_REL}/asdf-binary-locations/asdf-binary-locations.asd:${PORTSDIR}/devel/cl-asdf-binary-locations
+
 .endif # defined(USE_ASDF)
 
 .if defined(USE_ASDF_FASL)
@@ -81,7 +85,7 @@ do-build:
 .for MODULE in ${ASDF_MODULES}
 
 .if defined(USE_SBCL)
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
+	@FBSD_ASDF_COMPILE_PORT=t PORTNAME=${PORTNAME} WRKSRC=${WRKSRC}/ \
 		${SBCL}	--noinform --userinit /dev/null --disable-debugger \
 		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
 		--eval "(asdf:oos 'asdf:compile-op :${MODULE})" \
@@ -89,10 +93,11 @@ do-build:
 .endif # USE_SBCL
 
 .if defined(USE_CLISP)
-	@FBSD_ASDF_COMPILE_PORT=t WRKSRC=${WRKSRC}/ \
+	@FBSD_ASDF_COMPILE_PORT=t PORTNAME=${PORTNAME} WRKSRC=${WRKSRC}/ \
 		${CLISP} -q -ansi -norc \
 		-i ${LOCALBASE}/etc/asdf-init \
 		-x "(asdf:oos 'asdf:compile-op :${MODULE})"
+	@${FIND} ${WRKSRC} -name "*.lib" | ${XARGS} ${RM}
 .endif # USE_CLISP
 
 .endfor
@@ -103,8 +108,19 @@ do-build:
 
 do-install:
 	@${MKDIR} ${FASL_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${FASL_PATHNAME}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${FASL_PATHNAME}
 
 .endif # !target(do-install)
+
+post-install:
+	@cd ${WRKSRC} && ${FIND} * -type f \
+		| ${SORT} \
+		| ${AWK} '{ print "${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}/" $$1 }' \
+		> ${TMPPLIST}
+	@cd ${WRKSRC} && ${FIND} * -type d \
+		| ${SORT} -r \
+		| ${AWK} '{ print "@dirrm ${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}/" $$1 }' \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}" >> ${TMPPLIST}
 
 .endif # FASL_BUILD
