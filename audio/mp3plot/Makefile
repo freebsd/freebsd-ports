@@ -32,6 +32,10 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 .if defined(WITHOUT_GD)
 CONFIGURE_ARGS+=	--disable-gd
 .else
