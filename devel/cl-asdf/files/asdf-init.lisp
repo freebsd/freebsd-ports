@@ -232,6 +232,11 @@ clispfasl, ...) by calling lisp-specific-fasl-subdir."
       :type "fasl"
       :defaults default-output-file))))
 
+;; Map each library in common-lisp/ to its fasl subdirectory
+(dolist (path (directory "%%PREFIX%%/lib/common-lisp/*/"))
+  (let ((fasldir (make-pathname :directory (append (pathname-directory path) (list (lisp-specific-fasl-subdir))))))
+    (pushnew (list path fasldir) asdf:*source-to-target-mappings*)))
+
 (if (and (getenv "FBSD_ASDF_COMPILE_PORT")
          (getenv "PORTNAME")
          (getenv "WRKSRC"))
@@ -239,7 +244,9 @@ clispfasl, ...) by calling lisp-specific-fasl-subdir."
           (portname (getenv "PORTNAME")))
       ;; If we are building a FreeBSD port, all the compiled fasl files
       ;; should be redirected to WRKSRC.
-      (let ((package (format nil "%%PREFIX%%/lib/common-lisp/~A/" portname)))
-        (pushnew (list package wrksrc) asdf:*source-to-target-mappings*))))
+      (let ((port-source (make-pathname 
+                          :directory (append (pathname-directory #P"%%PREFIX%%/lib/common-lisp/") 
+                                             (list portname)))))
+        (pushnew (list port-source wrksrc) asdf:*source-to-target-mappings*))))
 
 ;;;; asdf-init.lisp ends here
