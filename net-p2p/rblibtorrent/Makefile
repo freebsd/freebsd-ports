@@ -26,8 +26,14 @@ CONFLICTS=	libtorrent-[0-9]* \
 		libtorrent-devel-[0-9]* \
 		rblibtorrent-devel-[0-9]*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.x
+.endif
+
 post-install:
 	@cd ${PREFIX}/lib && ${LN} -sf libtorrent-0.13.so libtorrent.so.1 && \
 		${LN} -sf libtorrent.so.1 libtorrent.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

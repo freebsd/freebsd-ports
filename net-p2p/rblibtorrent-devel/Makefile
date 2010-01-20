@@ -38,10 +38,16 @@ USE_LDCONFIG=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g ; \
 		 s|@BOOST_SYSTEM_LIB@||g' ${WRKSRC}/src/Makefile.am
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
