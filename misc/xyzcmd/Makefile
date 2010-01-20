@@ -7,7 +7,7 @@
 
 PORTNAME=	xyzcmd
 PORTVERSION=	0.0.3
-CATEGORIES=	misc
+CATEGORIES=	misc python
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
