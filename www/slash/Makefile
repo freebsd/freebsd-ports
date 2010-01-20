@@ -7,7 +7,7 @@
 
 PORTNAME=	slash
 PORTVERSION=	2.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}code/${PORTNAME}code/${PORTVERSION}
 DISTNAME=	slash-${PORTVERSION}
@@ -16,7 +16,6 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Slash-Like Automatic Storytelling Homepage system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl

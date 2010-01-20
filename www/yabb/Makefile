@@ -7,7 +7,7 @@
 
 PORTNAME=	yabb
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/YaBB%202/${PORTVERSION}
 DISTNAME=	YaBB_${PORTVERSION}
@@ -15,10 +15,7 @@ DISTNAME=	YaBB_${PORTVERSION}
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	The original free open-source forum written in Perl
 
-RUN_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
-		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
 NO_PACKAGE=	complicated (de)installation paradigm
 USE_ZIP=	yes

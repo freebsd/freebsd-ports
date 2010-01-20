@@ -7,6 +7,7 @@
 
 PORTNAME=	MediaWiki-API
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +16,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	OOP MediaWiki engine client
 
 RUN_DEPENDS=	${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/JSON/XS.pm:${PORTSDIR}/converters/p5-JSON-XS \
-		${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
+		${SITE_PERL}/${PERL_ARCH}/JSON/XS.pm:${PORTSDIR}/converters/p5-JSON-XS
 
 PERL_CONFIGURE=	yes
 

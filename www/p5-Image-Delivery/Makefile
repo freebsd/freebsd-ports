@@ -7,6 +7,7 @@
 
 PORTNAME=	Image-Delivery
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	www graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Efficient transformation and delivery of web images
 
 BUILD_DEPENDS=	p5-Test-ClassAPI>=1.04:${PORTSDIR}/devel/p5-Test-ClassAPI \
-		p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Digest-TransformPath>=0.01:${PORTSDIR}/devel/p5-Digest-TransformPath \
 		p5-File-Remove>=0.34:${PORTSDIR}/devel/p5-File-Remove \
 		p5-File-Slurp>=9999.04:${PORTSDIR}/devel/p5-File-Slurp \

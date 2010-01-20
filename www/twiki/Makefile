@@ -7,6 +7,7 @@
 
 PORTNAME=	twiki
 PORTVERSION=	4.2.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
@@ -22,18 +23,12 @@ RUN_DEPENDS=	\
 		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
-		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
-		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Time-Local>=0:${PORTSDIR}/devel/p5-Time-Local \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		twiki-TWikiUserMappingContrib>=0:${PORTSDIR}/www/twiki-TWikiUserMappingContrib
 

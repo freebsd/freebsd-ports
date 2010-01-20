@@ -7,7 +7,7 @@
 
 PORTNAME=	Jifty
 PORTVERSION=	0.91117
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ COMMENT=	Jifty -- Just Do It -- Yet another web framework
 
 BUILD_DEPENDS=	\
 		p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
-		p5-CGI.pm>=3.19:${PORTSDIR}/www/p5-CGI.pm \
 		p5-CGI-Cookie-Splitter>=0:${PORTSDIR}/www/p5-CGI-Cookie-Splitter \
 		p5-CSS-Squish>=0.05:${PORTSDIR}/textproc/p5-CSS-Squish \
 		p5-Cache-Cache>0:${PORTSDIR}/devel/p5-Cache-Cache \
@@ -62,7 +61,6 @@ BUILD_DEPENDS=	\
 		p5-Locale-Maketext-Lexicon>=0.60:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		p5-Log-Log4perl>=1.04:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
-		p5-Module-CoreList>0:${PORTSDIR}/devel/p5-Module-CoreList \
 		p5-Module-Install>=0.50:${PORTSDIR}/devel/p5-Module-Install \
 		p5-Module-Pluggable>=3.5:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Module-Refresh>=0.09:${PORTSDIR}/devel/p5-Module-Refresh \
@@ -84,7 +82,6 @@ BUILD_DEPENDS=	\
 		p5-Test-MockModule>=0.05:${PORTSDIR}/devel/p5-Test-MockModule \
 		p5-Test-MockObject>=1.07:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-		p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-WWW-Declare>=0:${PORTSDIR}/devel/p5-Test-WWW-Declare \
 		p5-Test-WWW-Mechanize>=1.04:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 		p5-Test-WWW-Selenium>=0:${PORTSDIR}/devel/p5-Test-WWW-Selenium \
