@@ -1561,6 +1561,7 @@ cl-alexandria                   ports/devel/cl-alexandria
 cl-alexandria-clisp             ports/devel/cl-alexandria-clisp
 cl-alexandria-sbcl              ports/devel/cl-alexandria-sbcl
 cl-asdf                         ports/devel/cl-asdf
+cl-asdf-binary-locations        ports/devel/cl-asdf-binary-locations
 cl-asdf-clisp                   ports/devel/cl-asdf-clisp
 cl-infix                        ports/devel/cl-infix
 cl-infix-sbcl                   ports/devel/cl-infix-sbcl
@@ -6470,6 +6471,7 @@ jftp                            ports/ftp/jftp
 jftpgw                          ports/ftp/jftpgw
 jggtrans                        ports/net-im/jggtrans
 jgrapht                         ports/java/jgrapht
+jgraphx                         ports/java/jgraphx
 jhead                           ports/graphics/jhead
 jicmp                           ports/net/jicmp
 jid3lib                         ports/audio/jid3lib
@@ -6946,6 +6948,7 @@ kmatrix3d                       ports/deskutils/kmatrix3d
 kmenc15                         ports/multimedia/kmenc15
 kmerlin                         ports/net-im/kmerlin
 kmess                           ports/net-im/kmess
+kmess-kde4                      ports/net-im/kmess-kde4
 kmflcomp                        ports/textproc/kmflcomp
 kmilo                           ports/sysutils/kmilo
 kmldonkey                       ports/net-p2p/kmldonkey
@@ -7193,6 +7196,7 @@ kudu                            ports/graphics/kudu
 kuickshow                       ports/graphics/kuickshow
 kuickshow-kde4                  ports/graphics/kuickshow-kde4
 kuklomenos                      ports/games/kuklomenos
+kumofs                          ports/databases/kumofs
 kvirc                           ports/irc/kvirc
 kvirc-devel                     ports/irc/kvirc-devel
 kwappen                         ports/games/kwappen
@@ -7442,6 +7446,7 @@ libbonobomm                     ports/devel/libbonobomm
 libbonoboui                     ports/x11-toolkits/libbonoboui
 libbonoboui-reference           ports/x11-toolkits/libbonoboui-reference
 libbonobouimm                   ports/x11-toolkits/libbonobouimm
+libbpm                          ports/audio/libbpm
 libbt                           ports/net-p2p/libbt
 libburn                         ports/devel/libburn
 libcabinet                      ports/archivers/libcabinet
@@ -21519,6 +21524,7 @@ rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
+rubygem-msgpack                 ports/devel/rubygem-msgpack
 rubygem-needle                  ports/devel/rubygem-needle
 rubygem-net-netrc               ports/net/rubygem-net-netrc
 rubygem-net-scp                 ports/security/rubygem-net-scp
@@ -23600,6 +23606,7 @@ unreal                          ports/irc/unreal
 unroff                          ports/textproc/unroff
 unrtf                           ports/textproc/unrtf
 unshield                        ports/archivers/unshield
+unssh                           ports/security/unssh
 unstow                          ports/sysutils/unstow
 untahris                        ports/games/untahris
 untar                           ports/archivers/untar
