@@ -25,7 +25,7 @@ RUN_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
 
 .if !defined(GECKO)
 GECKO=		mozilla
-GECKO_PORTDIR=	mail/${GECKO}
+GECKO_PORTDIR=	www/${GECKO}
 IGNORE=		is not available anymore for Mozilla: use one of the slave ports
 .endif
 
