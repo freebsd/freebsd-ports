@@ -36,8 +36,8 @@
     SUBDIR += dynamips-devel
     SUBDIR += e-uae
     SUBDIR += extract-xiso
-    SUBDIR += fceux
     SUBDIR += fceu-server
+    SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fuse
@@ -82,13 +82,13 @@
     SUBDIR += linux-vmware-toolbox4
     SUBDIR += linux-vmware-toolbox5
     SUBDIR += linux-vmware-toolbox6
-    SUBDIR += linux_base-fc4
-    SUBDIR += linux_base-fc6
     SUBDIR += linux-xjoypad
     SUBDIR += linux_base-f10
     SUBDIR += linux_base-f7
     SUBDIR += linux_base-f8
     SUBDIR += linux_base-f9
+    SUBDIR += linux_base-fc4
+    SUBDIR += linux_base-fc6
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-gentoo-stage3
     SUBDIR += linux_dist-gentoo-stage1
@@ -128,9 +128,9 @@
     SUBDIR += nonpareil
     SUBDIR += o2em
     SUBDIR += ods2reader
-    SUBDIR += openmsx
     SUBDIR += open-vm-tools
     SUBDIR += open-vm-tools-nox11
+    SUBDIR += openmsx
     SUBDIR += osmose
     SUBDIR += p-interp
     SUBDIR += parallels-tools

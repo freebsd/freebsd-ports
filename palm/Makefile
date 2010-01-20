@@ -36,8 +36,8 @@
     SUBDIR += synce-gvfs
     SUBDIR += synce-hal
     SUBDIR += synce-librapi2
-    SUBDIR += synce-libsynce
     SUBDIR += synce-librra
+    SUBDIR += synce-libsynce
     SUBDIR += synce-serial
     SUBDIR += synce-sync-engine
     SUBDIR += synce-trayicon

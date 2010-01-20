@@ -156,6 +156,12 @@
     SUBDIR += kde-style-comix
     SUBDIR += kde-style-lipstik
     SUBDIR += kde-style-polyester
+    SUBDIR += kde-style-tiblit
+    SUBDIR += kde-windeco-activeheart
+    SUBDIR += kde-windeco-crystal
+    SUBDIR += kde-windeco-knifty
+    SUBDIR += kde-windeco-neos
+    SUBDIR += kde-windeco-smoothblend
     SUBDIR += kde4-icons-oxygen
     SUBDIR += kde4-style-bespin
     SUBDIR += kde4-style-nitrogen
@@ -165,12 +171,6 @@
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
     SUBDIR += kde4-windeco-nitrogen
-    SUBDIR += kde-style-tiblit
-    SUBDIR += kde-windeco-activeheart
-    SUBDIR += kde-windeco-crystal
-    SUBDIR += kde-windeco-knifty
-    SUBDIR += kde-windeco-neos
-    SUBDIR += kde-windeco-smoothblend
     SUBDIR += kdeartwork3
     SUBDIR += kdeartwork4
     SUBDIR += kdmtheme
