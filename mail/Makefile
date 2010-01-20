@@ -110,6 +110,7 @@
     SUBDIR += emh
     SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
+    SUBDIR += enigmail
     SUBDIR += enigmail-seamonkey
     SUBDIR += enigmail-seamonkey2
     SUBDIR += enigmail-thunderbird
