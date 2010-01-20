@@ -1,6 +1,14 @@
---- wmcube.c.orig	2009-02-25 09:56:08.000000000 -0300
-+++ wmcube.c	2009-02-25 09:56:28.000000000 -0300
-@@ -174,6 +174,7 @@
+--- wmcube.c.orig	2001-12-18 07:06:21.000000000 -0200
++++ wmcube.c	2010-01-20 13:19:32.000000000 -0200
+@@ -50,7 +50,6 @@
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+ 
+-#include <utmp.h>
+ #include <dirent.h>
+ 
+ #include <gdk/gdk.h>
+@@ -174,6 +173,7 @@
  #ifdef FREEBSD
  static kvm_t *kd;
  static struct nlist nlst[] = { {"_cp_time"}, {0} };
@@ -8,7 +16,7 @@
  #endif
  
  void prep_digits(void)
-@@ -226,7 +227,7 @@
+@@ -226,7 +226,7 @@
      XWMHints wmhints;
      /* for mask */
      GdkBitmap *mask;
@@ -17,7 +25,7 @@
      int i;
      GdkColor bright;
      /* for that stupid shadow line */
-@@ -778,7 +779,7 @@
+@@ -778,7 +778,7 @@
  	newx -= CHAR_WIDTH;
      }
  
@@ -26,7 +34,7 @@
      for (i = 0; (c = buf[i]); i++) {
  	if (c == '%')
  	    copy_xpm_area(60, 0, 7, 9, newx, y);
-@@ -899,7 +900,8 @@
+@@ -899,7 +899,8 @@
  
  	while ((i > -1) && (temparr[i] > key)) {
  	    temparr[i + 1] = temparr[i];
@@ -36,7 +44,7 @@
  	}
  
  	zorder[i + 1] = k;
-@@ -1250,7 +1252,7 @@
+@@ -1250,7 +1251,7 @@
  	exit(0);
      }
  
@@ -45,7 +53,7 @@
  
      if (strcmp(tmp, "WMCUBE_COORDINATES") != 0) {
  	printf
-@@ -1259,7 +1261,7 @@
+@@ -1259,7 +1260,7 @@
  	exit(0);
      }
  
@@ -54,7 +62,7 @@
      counter = atoi(tmp);
  
      while ((strcmp(tmp, "WMCUBE_LINES") != 0)
-@@ -1280,7 +1282,7 @@
+@@ -1280,7 +1281,7 @@
  	    fclose(fp);
  	    exit(0);
  	}
@@ -63,7 +71,7 @@
  
  	if (feof(fp)) {
  	    printf
-@@ -1297,23 +1299,23 @@
+@@ -1297,23 +1298,23 @@
  
  	planesORlines = 0;
  	while (1) {
@@ -93,7 +101,7 @@
      } else if (strcmp(tmp, "WMCUBE_PLANES") == 0) {
  
  	planesORlines = 1;
-@@ -1398,7 +1400,7 @@
+@@ -1398,7 +1399,7 @@
      char cpuid[6];
      char check_cpu[6];
  
@@ -102,7 +110,7 @@
  
      if ((fp = fopen("/proc/stat", "rb")) == NULL) {
  	perror("/proc/stat required for this system");
-@@ -1409,7 +1411,7 @@
+@@ -1409,7 +1410,7 @@
  	return 0;
  
      for (i = -2; i < which_cpu; i++) {
@@ -111,7 +119,7 @@
      }
  
      if (strcmp(check_cpu, cpuid) != 0) {
-@@ -1431,7 +1433,7 @@
+@@ -1431,7 +1432,7 @@
      fp = fopen("/proc/stat", "rt");
  
      for (i = -2; i < which_cpu; i++) {
@@ -120,7 +128,7 @@
      }
  
      fclose(fp);
-@@ -1582,18 +1584,23 @@
+@@ -1582,18 +1583,23 @@
  #include <nlist.h>
  #include <fcntl.h>
  #include <sys/dkstat.h>
@@ -152,7 +160,7 @@
      }
  
      /* drop setgid & setuid (hi GOBBLES, who the fuck are you? */
-@@ -1615,6 +1622,13 @@
+@@ -1615,6 +1621,13 @@
      int cpu, nice, system, idle;
      unsigned long int cpu_time[CPUSTATES];
  
