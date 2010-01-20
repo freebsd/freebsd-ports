@@ -30,7 +30,12 @@ MAN1=	finger.1 pfinger.1
 MAN5=	fingerconf.5
 MAN8=	in.fingerd.8
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/src/configfile.c
+.if ${OSVERSION} >= 900007
+	@${REINPLACE_CMD} -e 's|<utmp.h>|<utmpx.h>|' ${WRKSRC}/configure
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
