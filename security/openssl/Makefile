@@ -7,7 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8l
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -33,7 +33,7 @@ OPTIONS=	I386	"Use optimzed assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ZLIB	"Build with zlib compression" on \
 
-EXTRACONFIGURE=	enable-camellia
+EXTRACONFIGURE+=	enable-camellia
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=		LIBRPATH="${PREFIX}/lib"
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
@@ -857,7 +857,7 @@ OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 OPENSSL_SHLIBVER?=	7
 
-.if !defined(WITHOUT_SSE2)
+.if defined(WITHOUT_SSE2)
 # disable runtime SSE2 detection
 EXTRACONFIGURE+=	no-sse2
 .endif
@@ -914,7 +914,6 @@ do-configure:
 .else
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
 .endif
