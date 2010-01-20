@@ -37,7 +37,13 @@ CONFIGURE_WRKSRC=	${CMAKE_BUILD_PATH}
 BUILD_WRKSRC=		${CMAKE_BUILD_PATH}
 INSTALL_WRKSRC=		${CMAKE_BUILD_PATH}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-extract:
 	${MKDIR} ${CMAKE_BUILD_PATH}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
