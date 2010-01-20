@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Mason
 PORTVERSION=	1.44
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	p5-Class-Container>=0.7:${PORTSDIR}/devel/p5-Class-Container \
 RUN_DEPENDS=	p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Class-Container>=0.7:${PORTSDIR}/devel/p5-Class-Container \
 		p5-Exception-Class>=1.15:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Log-Any>=0.08:${PORTSDIR}/devel/p5-Log-Any \
 		p5-Params-Validate>=0.07:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
 
