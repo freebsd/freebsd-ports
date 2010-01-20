@@ -56,6 +56,8 @@
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/yahoo.png
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings/basic.html
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings/player.html
+%%SLIMDIR%%/Plugins/SuperDateTime/MANIFEST
+%%SLIMDIR%%/Plugins/SuperDateTime/META.yml
 %%SLIMDIR%%/Plugins/SuperDateTime/install.xml
 %%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins-SuperDateTime-Plugin.par
 %%SLIMDIR%%/Plugins/SuperDateTime/mlb.2.font.bmp
