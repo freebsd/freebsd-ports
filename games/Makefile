@@ -357,7 +357,6 @@
     SUBDIR += gunfudeadlands
     SUBDIR += gweled
     SUBDIR += hangman
-    SUBDIR += hattrickorganizer
     SUBDIR += hedgewars
     SUBDIR += heretic
     SUBDIR += heroes
@@ -430,7 +429,6 @@
     SUBDIR += lander
     SUBDIR += lapispuzzle
     SUBDIR += latrine
-    SUBDIR += laughingman
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud

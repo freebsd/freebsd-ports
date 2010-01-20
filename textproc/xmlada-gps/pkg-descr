@@ -1,5 +1,0 @@
-The XmlAda library includes a set of Ada2005 packages to manipulate XML
-input. It implements the XML 1.0 standard, as well as support for
-namespaces and a number of other optional standards related to XML.
-
-WWW: http://libre.adacore.com/

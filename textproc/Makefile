@@ -36,7 +36,6 @@
     SUBDIR += bib2html
     SUBDIR += bibtex2html
     SUBDIR += bibtool
-    SUBDIR += bidiv
     SUBDIR += bn-aspell
     SUBDIR += bomstrip
     SUBDIR += br-aspell
@@ -1224,7 +1223,6 @@
     SUBDIR += xml-parse.el
     SUBDIR += xml2rfc
     SUBDIR += xmlada-gcc
-    SUBDIR += xmlada-gps
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
     SUBDIR += xmldiff

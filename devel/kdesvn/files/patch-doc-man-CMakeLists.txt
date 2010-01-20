@@ -1,9 +1,0 @@
---- doc/man/CMakeLists.txt.orig	Fri Aug 25 05:29:36 2006
-+++ doc/man/CMakeLists.txt	Sun Oct 22 10:25:58 2006
-@@ -4,5 +4,5 @@
- 
- INSTALL(FILES 
-     ${MANFILES}
--    DESTINATION share/man/man1)
-+    DESTINATION man/man1)
- 

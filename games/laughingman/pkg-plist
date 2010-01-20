@@ -1,4 +1,0 @@
-bin/laugh
-%%DATADIR%%/haarcascade_frontalface_alt.xml
-%%DATADIR%%/laughingman.bmp
-@dirrm %%DATADIR%%
