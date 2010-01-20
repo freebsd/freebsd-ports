@@ -26,4 +26,10 @@ post-install:
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/blimitd.sh ${PREFIX}/etc/rc.d/blimitd.sh; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
+.endif
+
+.include <bsd.port.post.mk>
