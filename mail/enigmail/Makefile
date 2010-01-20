@@ -24,6 +24,7 @@ RUN_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gpg:${PORTSDIR}/security/gnupg
 
 .if !defined(GECKO)
+GECKO_PORTDIR=	www/mozilla
 IGNORE=		is not available anymore for Mozilla: use one of the slave ports
 .endif
 
