@@ -43,6 +43,12 @@ BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
+.if ${OSVERSION} >= 900007
+	@${REINPLACE_CMD} \
+		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
+		${WRKSRC}/configure ${WRKSRC}/src/afuser.c \
+		${WRKSRC}/src/utils.c ${WRKSRC}/src/utils.h
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
