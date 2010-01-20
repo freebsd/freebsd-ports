@@ -26,8 +26,8 @@ PORTEXAMPLES=	*
 MAN1=		kermit.1
 
 MAKE_ARGS=	KTARGET=freebsd CC="${CC}" CC2="${CC}" \
-		CFLAGS="${CFLAGS} -I${OPENSSLINC} \
-		-DBSD44 -DCK_NCURSES -DCK_NEWTERM \
+		CFLAGS="${CFLAGS} -I${OPENSSLINC} -DBSD44 \
+		-DCK_NCURSES -DCK_NEWTERM -DHERALD=\"\\\" ${HERALD}\\\"\" \
 		-DTCPSOCKET -DNOCOTFMC -DFREEBSD4 -DUSE_UU_LOCK -DFNFLOAT \
 		-funsigned-char -DTPUTSARGTYPE=int -DUSE_STRERROR -DCKHTTP \
 		-DCK_SSL -DCK_AUTHENTICATION -DCK_ENCRYPTION -DCK_DES \
@@ -35,12 +35,25 @@ MAKE_ARGS=	KTARGET=freebsd CC="${CC}" CC2="${CC}" \
 		LIBS="-L${OPENSSLLIB} \
 		-lssl -lcrypto -lncurses -lcrypt -lutil -lm"
 
+.include <bsd.port.pre.mk>
+
+# Derive correct version of our beloved OS; default routine is not robust
+# enough to handle all cases correctly.
+HERALD!=	${UNAME} -sr | ${CUT} -d - -f 1
+
 post-patch:
-# FreeBSD has hexdump(3) in libutil, which conflicts with local macro
+# FreeBSD has hexdump(3) in libutil, which conflicts with local macro.
+# Prepend the latter with two underscores to avoid the clash.
 	@${REINPLACE_CMD} -E 's,([[:blank:]])(hexdump),\1__\2,' \
 		${WRKSRC}/ck_crp.c ${WRKSRC}/ckcdeb.h ${WRKSRC}/ckcftp.c \
 		${WRKSRC}/ckcnet.c ${WRKSRC}/ckctel.c ${WRKSRC}/ckuath.c \
 		${WRKSRC}/ckutio.c
+# Catch up with recent <utmp.h> replacement by <utmpx.h>
+.if ${OSVERSION} > 900006
+	@${REINPLACE_CMD} -e 's,ut\.ut_name,ut.ut_user,g' \
+		-e 's,sizeof(struct utmp),sizeof(ut),' \
+		-e 's,UNIXWARE,FREEBSD4,' ${WRKSRC}/ckufio.c
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/krbmit ${PREFIX}/bin/kermit
@@ -59,4 +72,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ckermod.ini ${EXAMPLESDIR}/dot.mykermrc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
