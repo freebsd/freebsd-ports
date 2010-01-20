@@ -1,0 +1,4 @@
+Babel is a charset encoding/decoding library, not unlike GNU libiconv,
+but completely written in Common Lisp.
+
+WWW: http://www.cliki.net/Babel

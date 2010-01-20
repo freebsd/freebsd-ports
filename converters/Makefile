@@ -10,6 +10,9 @@
     SUBDIR += bsdconv
     SUBDIR += btoa
     SUBDIR += chmview
+    SUBDIR += cl-babel
+    SUBDIR += cl-babel-clisp
+    SUBDIR += cl-babel-sbcl
     SUBDIR += cmios9
     SUBDIR += cocot
     SUBDIR += convmv
