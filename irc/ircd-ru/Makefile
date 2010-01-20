@@ -7,11 +7,10 @@
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc russian
-MASTER_SITES=	http://muhnet.org.ru/ \
-		ftp://repoman.wenet.ru/pub/ircd-RU/
-DISTNAME=	ircd-RU-${PORTVERSION}-03-rc
+MASTER_SITES=	http://link.wenet.su/
+DISTNAME=	ircd-RU-${PORTVERSION}-03-rc-20090810
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	An irc daemon with translation schemes and other useful features
@@ -20,6 +19,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	ircd
+WRKSRC=		${WRKDIR}/ircd-RU-${PORTVERSION}-03-rc
 
 VARDIR=		/var
 PLIST_SUB=	VARDIR=${VARDIR}
