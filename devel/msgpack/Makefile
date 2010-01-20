@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	msgpack
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEFORGE_JP
-MASTER_SITE_SUBDIR=	msgpack/45459
+MASTER_SITE_SUBDIR=	msgpack/45536
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Binary-based efficient data interchange format focused on performance
