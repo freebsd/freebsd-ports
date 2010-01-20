@@ -24,9 +24,6 @@ PORTDOCS=	CHANGES README TODO
 SUB_FILES=	pkg-message
 MAKE_JOBS_UNSAFE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/include <utmp.h>/d' ${WRKSRC}/wmcube.c
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmcube ${PREFIX}/bin
 	@${CHMOD} g+s ${PREFIX}/bin/wmcube
