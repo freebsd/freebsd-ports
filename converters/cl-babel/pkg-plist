@@ -1,0 +1,41 @@
+%%LIB32DIR%%/common-lisp/babel/babel-streams.asd
+%%LIB32DIR%%/common-lisp/babel/babel.asd
+%%LIB32DIR%%/common-lisp/babel/src/enc-ascii.lisp
+%%LIB32DIR%%/common-lisp/babel/src/enc-cp1251.lisp
+%%LIB32DIR%%/common-lisp/babel/src/enc-ebcdic.lisp
+%%LIB32DIR%%/common-lisp/babel/src/enc-iso-8859.lisp
+%%LIB32DIR%%/common-lisp/babel/src/enc-jpn.lisp
+%%LIB32DIR%%/common-lisp/babel/src/enc-unicode.lisp
+%%LIB32DIR%%/common-lisp/babel/src/encodings.lisp
+%%LIB32DIR%%/common-lisp/babel/src/external-format.lisp
+%%LIB32DIR%%/common-lisp/babel/src/jpn-table.lisp
+%%LIB32DIR%%/common-lisp/babel/src/packages.lisp
+%%LIB32DIR%%/common-lisp/babel/src/sharp-backslash.lisp
+%%LIB32DIR%%/common-lisp/babel/src/streams.lisp
+%%LIB32DIR%%/common-lisp/babel/src/strings.lisp
+%%LIB32DIR%%/common-lisp/system-registry/babel-streams.asd
+%%LIB32DIR%%/common-lisp/system-registry/babel.asd
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/HEADER
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii.txt-utf8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmarks.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebcdic-us.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebcdic-us.txt-utf8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gen-test-files.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/streams.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-16-with-le-bom.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-16.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-16.txt-utf8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-32-with-le-bom.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-32.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-32.txt-utf8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-8.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-8.txt-utf8
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%LIB32DIR%%/common-lisp/babel/src
+@dirrm %%LIB32DIR%%/common-lisp/babel
