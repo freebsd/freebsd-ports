@@ -1,5 +1,0 @@
-bin/dino
-%%DATADIR%%/midisaurus.png
-%%DATADIR%%/head.png
-%%DATADIR%%/dino.glade
-@dirrmtry %%DATADIR%%

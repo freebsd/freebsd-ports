@@ -50,14 +50,12 @@
     SUBDIR += aros-sdk
     SUBDIR += as31
     SUBDIR += asdlgen
-    SUBDIR += asis-gpl
     SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += asmx
     SUBDIR += astyle
     SUBDIR += atlas
     SUBDIR += atlas-devel
-    SUBDIR += aunit
     SUBDIR += autobook
     SUBDIR += autoconf-archive
     SUBDIR += autoconf-wrapper
@@ -372,7 +370,6 @@
     SUBDIR += flexdock
     SUBDIR += flexjson
     SUBDIR += flick
-    SUBDIR += florist-gpl
     SUBDIR += flowdesigner
     SUBDIR += flyspray
     SUBDIR += fnccheck
@@ -432,7 +429,6 @@
     SUBDIR += gconfmm
     SUBDIR += gconfmm26
     SUBDIR += gcvs
-    SUBDIR += gdb53
     SUBDIR += gdb53-act
     SUBDIR += gdb6
     SUBDIR += gdbmods
@@ -644,7 +640,6 @@
     SUBDIR += kdebindings4-python-pykde4
     SUBDIR += kdesdk3
     SUBDIR += kdesdk4
-    SUBDIR += kdesvn
     SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop
     SUBDIR += kimwitu
@@ -2739,7 +2734,6 @@
     SUBDIR += qtcreator
     SUBDIR += qtscriptgenerator
     SUBDIR += quilt
-    SUBDIR += radrails
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += rapidsvn
@@ -2890,7 +2884,6 @@
     SUBDIR += rubygem-rparsec
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
-    SUBDIR += rubygem-rtags
     SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base

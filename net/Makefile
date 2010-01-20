@@ -14,7 +14,6 @@
     SUBDIR += Sockets-devel
     SUBDIR += abills
     SUBDIR += acx100
-    SUBDIR += adasockets
     SUBDIR += aget
     SUBDIR += amqp08
     SUBDIR += apinger

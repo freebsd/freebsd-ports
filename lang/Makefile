@@ -22,7 +22,6 @@
     SUBDIR += bwbasic
     SUBDIR += caml-light
     SUBDIR += ccl
-    SUBDIR += ccscript
     SUBDIR += cduce
     SUBDIR += cfortran
     SUBDIR += chicken
@@ -107,7 +106,6 @@
     SUBDIR += gnat-gcc42
     SUBDIR += gnat-gcc43
     SUBDIR += gnat-gcc44
-    SUBDIR += gnat-glade
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
     SUBDIR += gnustep-objc
@@ -368,7 +366,6 @@
     SUBDIR += xds
     SUBDIR += xds-c
     SUBDIR += xotcl
-    SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yorick
     SUBDIR += yorick-doc

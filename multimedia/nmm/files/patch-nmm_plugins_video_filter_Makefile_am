@@ -1,8 +1,0 @@
---- nmm/plugins/video/filter/Makefile.am.orig	2008-04-21 12:32:57.020305783 +0200
-+++ nmm/plugins/video/filter/Makefile.am	2008-04-21 13:15:03.953075675 +0200
-@@ -208,4 +208,5 @@
- 
- # additional include paths needed to compile the librar{y,ies}
- INCLUDES = \
-+	@png_incs@ \
- 	$(all_includes)

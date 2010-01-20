@@ -121,7 +121,6 @@
     SUBDIR += dcd
     SUBDIR += dekagen
     SUBDIR += denemo
-    SUBDIR += dino
     SUBDIR += dir2ogg
     SUBDIR += discid
     SUBDIR += drumpiler
