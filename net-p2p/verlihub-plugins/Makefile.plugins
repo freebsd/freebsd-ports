@@ -6,14 +6,15 @@
 PLUGIN_NAME?=	${PORTNAME}
 
 PKGNAMEPREFIX=	verlihub-plugins-
-MASTER_SITES=	SF/verlihub/OldFiles
-DISTNAME=	${PLUGIN_NAME}
+DISTNAME=	${PLUGIN_NAME}-${PORTVERSION}
+WRKSRC?=	${WRKDIR}/${PLUGIN_NAME}
 
 COMMENT?=	${PLUGIN_DESC} plugin for the VerliHub - a Direct Connect protocol server
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 
+USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
 
