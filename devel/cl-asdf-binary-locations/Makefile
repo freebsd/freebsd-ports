@@ -6,7 +6,7 @@
 
 PORTNAME=	asdf-binary-locations
 PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
@@ -22,6 +22,7 @@ do-install:
 	@${MKDIR} ${ASDF_PATHNAME}/dev
 	@${INSTALL_DATA} ${WRKSRC}/dev/*.lisp ${ASDF_PATHNAME}/dev
 	@${INSTALL_DATA} ${WRKSRC}/asdf-binary-locations.asd ${ASDF_PATHNAME}
+	@${MKDIR} ${ASDF_REGISTRY}
 	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
