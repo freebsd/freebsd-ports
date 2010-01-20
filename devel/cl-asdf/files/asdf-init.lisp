@@ -155,7 +155,6 @@ should modify that in order to add other directories.")
 		     (lisp-implementation-type)
 		     (lisp-implementation-version)))))
 
-
 (defun lisp-specific-fasl-subdir ()
   "Return the subdirectory in which fasl files for this Lisp
 implementations should be stored, as a string without any slashes.
@@ -209,41 +208,38 @@ LISP-SPECIFIC-FASL-SUBDIR as well."
 
 (pushnew *system-registry* asdf:*central-registry*)
 
-;;;; Messing with asdf:output-files
+;; The bundled ASDF in SBCL needs asdf-binary-locations
+#+sbcl (asdf:operate 'asdf:load-op :asdf-binary-locations)
+
+(defun asdf:implementation-specific-directory-name ()
+  "Return a name that can be used as a directory name that is unique to
+a Lisp implementation, Lisp implementation version, operating system,
+and hardware architecture. This implementation is designed for the
+FreeBSD ports system and returns a simplified directory name (sbclfasl,
+clispfasl, ...) by calling lisp-specific-fasl-subdir."
+  (lisp-specific-fasl-subdir))
+
+(setf asdf:*source-to-target-mappings*
+      '(#+openmcl ("%%PREFIX%%/lib/ccl/" nil)
+        #+sbcl ("%%PREFIX%%/lib/sbcl/" nil)))
+
+(defmethod asdf:output-files :around ((op asdf:compile-op)
+                                      (file asdf:cl-source-file))
+  (let ((default-output-file (car (call-next-method))))
+    (list
+     (make-pathname
+      :directory (pathname-directory (namestring default-output-file))
+      :type "fasl"
+      :defaults default-output-file))))
 
 (if (and (getenv "FBSD_ASDF_COMPILE_PORT")
-	 (getenv "WRKSRC"))
-
-    ;; We are compiling a port - fasls should go to ${WRKSRC}
-    (defmethod asdf:output-files :around ((op asdf:compile-op)
-					  (file asdf:cl-source-file))
-      (let ((wrksrc (getenv "WRKSRC"))
-	    (relative-name (asdf:component-relative-pathname file))
-	    (default-output-name (car (call-next-method))))
-	(list
-	 (make-pathname
-	  :host (pathname-host wrksrc)
-	  :device (pathname-device wrksrc)
-	  :directory `(:absolute ,@(cdr (pathname-directory wrksrc))
-				 ,@(cdr (pathname-directory relative-name)))
-	  :name (pathname-name default-output-name)
-	  :type "fasl"))))
-
-    ;; Normal operation: load from lisp-specific-fasl-subdir
-    (defmethod asdf:output-files :around ((op asdf:compile-op)
-                                          (file asdf:cl-source-file))
-      (let ((default-output-file (car (call-next-method))))
-        (let ((output-file-string (namestring default-output-file)))
-          (list
-           (if
-            (or
-             (search "%%PREFIX%%/lib/ccl" output-file-string)
-             (search "%%PREFIX%%/lib/sbcl" output-file-string))
-            (make-pathname :defaults default-output-file)
-            (make-pathname
-             :directory `(:absolute ,@(cdr (pathname-directory default-output-file))
-                                    ,(lisp-specific-fasl-subdir))
-             :type "fasl"
-             :defaults default-output-file)))))))
+         (getenv "PORTNAME")
+         (getenv "WRKSRC"))
+    (let ((wrksrc (getenv "WRKSRC"))
+          (portname (getenv "PORTNAME")))
+      ;; If we are building a FreeBSD port, all the compiled fasl files
+      ;; should be redirected to WRKSRC.
+      (let ((package (format nil "%%PREFIX%%/lib/common-lisp/~A/" portname)))
+        (pushnew (list package wrksrc) asdf:*source-to-target-mappings*))))
 
 ;;;; asdf-init.lisp ends here

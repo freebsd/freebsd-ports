@@ -6,7 +6,7 @@
 
 PORTNAME=	uffi
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -20,10 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/uffi/uffi.asd:${PORTSDIR}/devel/cl-uf
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl
 FASL_BUILD=	yes
-
-do-install:
-	@${MKDIR} ${ASDF_PATHNAME}/src/${FASL_DIR_REL}
-	@${INSTALL_DATA} ${WRKSRC}/*.fasl ${ASDF_PATHNAME}/src/${FASL_DIR_REL}
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

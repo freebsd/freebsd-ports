@@ -1,8 +1,0 @@
-lib/common-lisp/lml/clispfasl/base.fasl
-lib/common-lisp/lml/clispfasl/downloads.fasl
-lib/common-lisp/lml/clispfasl/files.fasl
-lib/common-lisp/lml/clispfasl/package.fasl
-lib/common-lisp/lml/clispfasl/read-macro.fasl
-lib/common-lisp/lml/clispfasl/stdsite.fasl
-lib/common-lisp/lml/clispfasl/utils.fasl
-@dirrm lib/common-lisp/lml/clispfasl

@@ -6,6 +6,7 @@
 
 PORTNAME=	trivial-gray-streams
 PORTVERSION=	2008.11.02
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
