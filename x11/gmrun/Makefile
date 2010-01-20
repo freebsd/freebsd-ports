@@ -7,7 +7,7 @@
 
 PORTNAME=	gmrun
 PORTVERSION=	0.9.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -28,15 +28,7 @@ PORTDOCS=	README
 PLIST_FILES=	bin/gmrun %%DATADIR%%/gmrunrc
 PLIST_DIRS=	%%DATADIR%%
 
-BROKEN=		Does not build with recent GTK
-DEPRECATED=	yes
-EXPIRATION_DATE=	2010-03-20
-
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e '/select_executables_only(const struct dirent/ s,const ,,' \
-		${WRKSRC}/src/gtkcompletionline.cc
 
 post-install:
 .if !defined(NOPORTDOCS)
