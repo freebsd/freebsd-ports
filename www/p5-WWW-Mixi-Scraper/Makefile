@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Mixi-Scraper
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Yet another mixi scraper
 
-BUILD_DEPENDS=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
-		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
+BUILD_DEPENDS=	p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-String-CamelCase>=0:${PORTSDIR}/textproc/p5-String-CamelCase \
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Web-Scraper>=0.17:${PORTSDIR}/www/p5-Web-Scraper \
 		p5-WWW-Mechanize>=1.50:${PORTSDIR}/www/p5-WWW-Mechanize

@@ -7,6 +7,7 @@
 
 PORTNAME=	webinject
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20Source%20Code%20%28with%20UNIX%20style%20line%20endings%29
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -15,8 +16,6 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A tool for automated testing of web applications
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/mach/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 	        ${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
