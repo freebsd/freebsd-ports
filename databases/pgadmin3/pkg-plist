@@ -1,7 +1,5 @@
 bin/pgadmin3
 %%DATADIR%%/branding/branding.ini
-%%DATADIR%%/docs/Docs.vcproj
-%%DATADIR%%/docs/builddocs.bat
 %%DATADIR%%/docs/cs_CZ/appendices.html
 %%DATADIR%%/docs/cs_CZ/backup.html
 %%DATADIR%%/docs/cs_CZ/bugreport.html
