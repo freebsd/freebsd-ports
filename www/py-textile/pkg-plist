@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/textile/__init__.py
+%%PYTHON_SITELIBDIR%%/textile/__init__.pyc
+%%PYTHON_SITELIBDIR%%/textile/__init__.pyo
+%%PYTHON_SITELIBDIR%%/textile/functions.py
+%%PYTHON_SITELIBDIR%%/textile/functions.pyc
+%%PYTHON_SITELIBDIR%%/textile/functions.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/textile
