@@ -1,0 +1,38 @@
+--- pcnfsd_misc.c
++++ pcnfsd_misc.c
+@@ -478,34 +478,7 @@
+ 
+ 
+ #else SVR4
+-
+-#include <utmp.h>
+-#ifndef	_PATH_WTMP
+-#define	_PATH_WTMP	"/usr/adm/wtmp"
+-#endif
+-
+-void
+-wlogin(name)
+-        char *name;
+-{
+-
+-extern char *getcallername();
+-        struct utmp ut;
+-
+-        int fd;
+-
+-	if(!wtmp_enabled)
+-		return;
+-	memset((char *)&ut, 0, sizeof (ut));
+-        (void) strcpy(ut.ut_line, "PC-NFS");
+-        (void) strncpy(ut.ut_name,name,sizeof ut.ut_name);
+-        ut.ut_time = time( (time_t *) 0);
+-        (void) strncpy(ut.ut_host, getcallername(), sizeof ut.ut_host);
+-        if ((fd = open(_PATH_WTMP, O_WRONLY|O_APPEND, 0)) >= 0) {
+-                (void)write(fd, (char *)&ut, sizeof(ut));
+-                (void)close(fd);
+-        }
+-}
++void wlogin(char *name) { }
+ #endif SVR4
+ #endif WTMP
+ 
