@@ -96,14 +96,18 @@ lib/qt4/libQtDesignerComponents.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtDesignerComponents.so.%%SHLIB_VER%%.debug
 lib/qt4/libQtUiTools.a
 lib/qt4/libQtUiTools.prl
-lib/qt4/plugins/designer/libphononwidgets.so
-lib/qt4/plugins/designer/libqt3supportwidgets.so
-%%DEBUG%%lib/qt4/plugins/designer/libqt3supportwidgets.so.debug
-lib/qt4/plugins/designer/libqwebview.so
-%%DEBUG%%lib/qt4/plugins/designer/libqwebview.so.debug
+%%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so.debug
+%%QT_PLUGINDIR_REL%%/designer/libqt3supportwidgets.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libqt3supportwidgets.so.debug
+%%QT_PLUGINDIR_REL%%/designer/libqwebview.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libqwebview.so.debug
 libdata/pkgconfig/QtUiTools.pc
 libdata/pkgconfig/QtDesigner.pc
 libdata/pkgconfig/QtDesignerComponents.pc
-@dirrmtry lib/qt4/plugins/designer
+@dirrmtry %%QT_PLUGINDIR_REL%%/designer
+@dirrmtry %%QT_PLUGINDIR_REL%%
+@dirrmtry lib/qt4
 @dirrm include/qt4/QtUiTools
 @dirrm include/qt4/QtDesigner
+@dirrmtry include/qt4

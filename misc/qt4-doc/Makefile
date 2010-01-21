@@ -10,9 +10,11 @@ PORTNAME=	doc
 PORTVERSION=	${QT4_VERSION}
 CATEGORIES?=	misc
 PKGNAMEPREFIX=	qt4-
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework
 
+USE_QT_VER=	4
 QT_DIST=	yes
 NO_BUILD=	yes
 
@@ -29,6 +31,4 @@ do-install:
 	${MKDIR} ${DOCSDIR} && \
 	${CP} -Rp ${WRKSRC}/doc/html ${WRKSRC}/doc/qch ${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../Mk/bsd.qt.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

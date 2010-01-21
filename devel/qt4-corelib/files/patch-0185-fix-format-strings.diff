@@ -1,6 +1,6 @@
---- src/corelib/global/qglobal.h
-+++ src/corelib/global/qglobal.h
-@@ -1266,8 +1266,16 @@ Q_CORE_EXPORT void qFatal(const char *, 
+--- src/corelib/global/qglobal.h.orig	2009-09-07 13:00:30.000000000 +0200
++++ src/corelib/global/qglobal.h	2009-09-14 12:46:30.965296640 +0200
+@@ -1594,8 +1594,16 @@
  #ifdef QT3_SUPPORT
  Q_CORE_EXPORT QT3_SUPPORT void qSystemWarning(const char *msg, int code = -1);
  #endif /* QT3_SUPPORT */
@@ -19,9 +19,9 @@
  
  #if (defined(QT_NO_DEBUG_OUTPUT) || defined(QT_NO_TEXTSTREAM)) && !defined(QT_NO_DEBUG_STREAM)
  #define QT_NO_DEBUG_STREAM
---- src/corelib/tools/qbytearray.h
-+++ src/corelib/tools/qbytearray.h
-@@ -71,8 +71,16 @@ Q_CORE_EXPORT int qstricmp(const char *,
+--- src/corelib/tools/qbytearray.h.orig	2009-09-07 13:00:30.000000000 +0200
++++ src/corelib/tools/qbytearray.h	2009-09-14 12:44:29.801547129 +0200
+@@ -95,8 +95,16 @@
  Q_CORE_EXPORT int qstrnicmp(const char *, const char *, uint len);
  
  // implemented in qvsnprintf.cpp

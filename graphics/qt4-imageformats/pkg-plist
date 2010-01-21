@@ -1,13 +1,14 @@
-lib/qt4/plugins/imageformats/libqgif.so
-%%DEBUG%%lib/qt4/plugins/imageformats/libqgif.so.debug
-lib/qt4/plugins/imageformats/libqjpeg.so
-%%DEBUG%%lib/qt4/plugins/imageformats/libqjpeg.so.debug
-lib/qt4/plugins/imageformats/libqmng.so
-%%DEBUG%%lib/qt4/plugins/imageformats/libqmng.so.debug
-lib/qt4/plugins/imageformats/libqsvg.so
-%%DEBUG%%lib/qt4/plugins/imageformats/libqsvg.so.debug
-lib/qt4/plugins/imageformats/libqtiff.so
-%%DEBUG%%lib/qt4/plugins/imageformats/libqtiff.so.debug
-lib/qt4/plugins/imageformats/libqico.so
-%%DEBUG%%lib/qt4/plugins/imageformats/libqico.so.debug
-@dirrmtry lib/qt4/plugins/imageformats
+%%QT_PLUGINDIR_REL%%/imageformats/libqgif.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqgif.so.debug
+%%QT_PLUGINDIR_REL%%/imageformats/libqjpeg.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqjpeg.so.debug
+%%QT_PLUGINDIR_REL%%/imageformats/libqmng.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqmng.so.debug
+%%QT_PLUGINDIR_REL%%/imageformats/libqsvg.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqsvg.so.debug
+%%QT_PLUGINDIR_REL%%/imageformats/libqtiff.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqtiff.so.debug
+%%QT_PLUGINDIR_REL%%/imageformats/libqico.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqico.so.debug
+@dirrm %%QT_PLUGINDIR_REL%%/imageformats
+@dirrmtry %%QT_PLUGINDIR_REL%%

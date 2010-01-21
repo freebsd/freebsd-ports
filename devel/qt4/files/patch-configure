@@ -1,0 +1,56 @@
+--- ./configure.orig	2010-01-15 20:01:30.000000000 +0300
++++ ./configure	2010-01-20 10:20:34.848078900 +0300
+@@ -2261,11 +2261,6 @@
+         chmod 755 "$outpath/bin/syncqt"
+     fi
+ 
+-    # symlink the mkspecs directory
+-    mkdir -p "$outpath/mkspecs"
+-    rm -f "$outpath"/mkspecs/*
+-    ln -s "$relpath"/mkspecs/* "$outpath/mkspecs"
+-    rm -f "$outpath/mkspecs/default"
+ 
+     # symlink the doc directory
+     rm -rf "$outpath/doc"
+@@ -2296,7 +2291,7 @@
+ # find a make command
+ if [ -z "$MAKE" ]; then
+     MAKE=
+-    for mk in gmake make; do
++    for mk in make; do
+         if "$WHICH" $mk >/dev/null 2>&1; then
+             MAKE=`"$WHICH" $mk`
+             break
+@@ -2946,7 +2941,7 @@
+ fi
+ 
+ QMAKE_CONF_COMPILER=`getQMakeConf "$XQMAKESPEC" | grep "^QMAKE_CXX[^_A-Z0-9]" | sed "s,.* *= *\(.*\)$,\1," | tail -1`
+-TEST_COMPILER="$CC"
++TEST_COMPILER="$CXX"
+ [ -z "$TEST_COMPILER" ] && TEST_COMPILER=$QMAKE_CONF_COMPILER
+ if [ -z "$TEST_COMPILER" ]; then
+     echo "ERROR: Cannot set the compiler for the configuration tests"
+@@ -4296,7 +4291,7 @@
+ }
+ 
+ # build qmake
+-if true; then ###[ '!' -f "$outpath/bin/qmake" ];
++if false; then ###[ '!' -f "$outpath/bin/qmake" ];
+     echo "Creating qmake. Please wait..."
+ 
+     OLD_QCONFIG_H=
+@@ -5059,14 +5054,6 @@
+         X11TESTS_FLAGS="$X11TESTS_FLAGS -fpermissive"
+     fi
+ 
+-    # Check we actually have X11 :-)
+-    "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/xlib "XLib" $L_FLAGS $I_FLAGS $l_FLAGS $X11TESTS_FLAGS
+-    if [ $? != "0" ]; then
+-        echo "Basic XLib functionality test failed!"
+-        echo " You might need to modify the include and library search paths by editing"
+-        echo " QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in ${XQMAKESPEC}."
+-        exit 1
+-    fi
+ 
+     # auto-detect OpenGL support (es1 = OpenGL ES 1.x Common, es1cl = ES 1.x common lite, es2 = OpenGL ES 2.x)
+     if [ "$CFG_OPENGL" = "auto" ] || [ "$CFG_OPENGL" = "yes" ]; then

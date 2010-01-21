@@ -409,6 +409,7 @@ lib/qt4/libQt3Support.so.%%SHLIB_SHVER%%
 lib/qt4/libQt3Support.so.%%SHLIB_VER%%
 @comment %%DEBUG%%lib/qt4/libQt3Support.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/Qt3Support.pc
+@dirrmtry lib/qt4
 @dirrm include/qt4/Qt3Support
 @dirrmtry include/qt4/Qt
 @dirrmtry include/qt4

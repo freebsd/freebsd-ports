@@ -7,7 +7,6 @@
 
 PORTNAME=	qmake
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -17,13 +16,13 @@ COMMENT=	The build utility of the Qt project
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 REINPLACE_ARGS=	-i ""
-WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
+WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV+=	FILESDIR="${FILESDIR}"
 MAKE_JOBS_SAFE=	yes
+TODAY_CMD=		/bin/date +%Y-%m-%d
 
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	'${DISTNAME}/config.tests/unix/padstring' \
 	'${DISTNAME}/mkspecs' \
 	'${DISTNAME}/include/*/*' \
 	'${DISTNAME}/src/*/*.h' \
@@ -33,15 +32,14 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	'${DISTNAME}/src/corelib/global' \
 	'${DISTNAME}/src/corelib/plugin' \
 	'${DISTNAME}/src/corelib/kernel' \
-	'${DISTNAME}/src/script' \
+	'${DISTNAME}/src/corelib/codecs' \
+	'${DISTNAME}/src/corelib/xml' \
 	'${DISTNAME}/src/3rdparty/md4' \
 	'${DISTNAME}/src/3rdparty/md5' \
 	'${DISTNAME}/src/3rdparty/sha1'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
-		-e 's|gcc.*|${CC}|' \
-		-e 's|g++.*|${CXX}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		-e 's|release|release thread|' \
@@ -53,12 +51,11 @@ post-patch:
 		${WRKSRC}/../mkspecs/freebsd-g++34/qmake.conf \
 		${WRKSRC}/../mkspecs/freebsd-g++40/qmake.conf \
 		${WRKSRC}/../mkspecs/freebsd-icc/qmake.conf
-	@${REINPLACE_CMD} -e 's|include(../common/c++|include(../common/g++.conf)|' \
-		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf 
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 
 do-configure:
 	${SED} -e 's|/usr/local|${PREFIX}|g' \
+		-e "s|TODAY|$$(${TODAY_CMD})|g" \
 		< ${FILESDIR}/qconfig.cpp \
 		> ${WRKSRC:H}/src/corelib/global/qconfig.cpp
 	${ECHO} '/* empty */' > ${WRKSRC}/qconfig.h

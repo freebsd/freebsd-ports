@@ -243,6 +243,7 @@
     SUBDIR += py-qt4-phonon
     SUBDIR += pyjama
     SUBDIR += qdvdauthor
+    SUBDIR += qt4-multimedia
     SUBDIR += qt4-phonon
     SUBDIR += qt4-phonon-gst
     SUBDIR += quark

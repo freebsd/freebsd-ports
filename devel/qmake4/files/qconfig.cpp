@@ -4,6 +4,9 @@
  * The default prefix (/ usr / local) is dynamicly replaced
  * at configure time.
  */
+/* Installation date */
+static const char qt_configure_installation          [12+11]    = "qt_instdate=TODAY";
+
 #define QT_CONFIGURE_LICENSEE "Open Source";
 #define QT_CONFIGURE_LICENSED_PRODUCTS "OpenSource";
 #define QT_CONFIGURE_PREFIX_PATH "/usr/local";

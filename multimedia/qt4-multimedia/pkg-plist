@@ -1,0 +1,49 @@
+include/qt4/Qt/QtMultimedia
+include/qt4/Qt/qabstractvideobuffer.h
+include/qt4/Qt/qabstractvideosurface.h
+include/qt4/Qt/qaudio.h
+include/qt4/Qt/qaudiodeviceinfo.h
+include/qt4/Qt/qaudioengine.h
+include/qt4/Qt/qaudioengineplugin.h
+include/qt4/Qt/qaudioformat.h
+include/qt4/Qt/qaudioinput.h
+include/qt4/Qt/qaudiooutput.h
+include/qt4/Qt/qvideoframe.h
+include/qt4/Qt/qvideosurfaceformat.h
+include/qt4/QtMultimedia/QAbstractAudioDeviceInfo
+include/qt4/QtMultimedia/QAbstractAudioInput
+include/qt4/QtMultimedia/QAbstractAudioOutput
+include/qt4/QtMultimedia/QAbstractVideoBuffer
+include/qt4/QtMultimedia/QAbstractVideoSurface
+include/qt4/QtMultimedia/QAudioDeviceInfo
+include/qt4/QtMultimedia/QAudioEngineFactoryInterface
+include/qt4/QtMultimedia/QAudioEnginePlugin
+include/qt4/QtMultimedia/QAudioFormat
+include/qt4/QtMultimedia/QAudioInput
+include/qt4/QtMultimedia/QAudioOutput
+include/qt4/QtMultimedia/QVideoFrame
+include/qt4/QtMultimedia/QVideoSurfaceFormat
+include/qt4/QtMultimedia/QtMultimedia
+include/qt4/QtMultimedia/qabstractvideobuffer.h
+include/qt4/QtMultimedia/qabstractvideosurface.h
+include/qt4/QtMultimedia/qaudio.h
+include/qt4/QtMultimedia/qaudiodeviceinfo.h
+include/qt4/QtMultimedia/qaudioengine.h
+include/qt4/QtMultimedia/qaudioengineplugin.h
+include/qt4/QtMultimedia/qaudioformat.h
+include/qt4/QtMultimedia/qaudioinput.h
+include/qt4/QtMultimedia/qaudiooutput.h
+include/qt4/QtMultimedia/qvideoframe.h
+include/qt4/QtMultimedia/qvideosurfaceformat.h
+lib/qt4/libQtMultimedia.la
+lib/qt4/libQtMultimedia.prl
+lib/qt4/libQtMultimedia.so
+lib/qt4/libQtMultimedia.so.4
+lib/qt4/libQtMultimedia.so.%%SHLIB_SHVER%%
+lib/qt4/libQtMultimedia.so.%%SHLIB_VER%%
+%%DEBUG%%lib/qt4/libQtMultimedia.so.%%SHLIB_VER%%.debug
+libdata/pkgconfig/QtMultimedia.pc
+@dirrmtry lib/qt4
+@dirrm include/qt4/QtMultimedia
+@dirrmtry include/qt4/Qt
+@dirrmtry include/qt4
