@@ -144,7 +144,6 @@ post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		< ${FILESDIR}/seamonkey.desktop.in > \
 		${WRKDIR}/seamonkey.desktop
-	${LN} -s  ${WRKSRC}/suite ${WRKSRC}/mozilla/suite
 
 port-pre-install:
 	@${REINPLACE_CMD} -e 's|seamonkey-${PORTVERSION}|seamonkey|' \
