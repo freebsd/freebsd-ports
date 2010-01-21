@@ -15,6 +15,7 @@ bin/hyperspace
 bin/lattice
 bin/lorenz
 bin/matrixview
+bin/pixelcity
 bin/plasma
 bin/rss-glx_install.pl
 bin/skyrocket
@@ -23,5 +24,7 @@ bin/spirographx
 bin/sundancer2
 lib/libImplicit.a
 lib/libImplicit.la
+lib/libPixelCity.a
+lib/libPixelCity.la
 lib/librsMath.a
 lib/librsMath.la
