@@ -1,17 +1,18 @@
---- source/Irrlicht/Makefile	2008-12-14 07:15:56.000000000 -0800
-+++ source/Irrlicht/Makefile	2008-12-28 12:04:16.000000000 -0800
-@@ -1,6 +1,6 @@
- VERSION = 1.5
- # Irrlicht Engine 1.5
+--- source/Irrlicht/Makefile.orig	2010-01-16 01:32:18.000000000 +0300
++++ source/Irrlicht/Makefile	2010-01-16 01:33:07.000000000 +0300
+@@ -3,7 +3,7 @@
+ VERSION_RELEASE = 1
+ VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_RELEASE)
+ # Irrlicht Engine 1.6.0-SVN
 -# Makefile for Linux
 +# Makefile for FreeBSD
  #
  # To use, just run:
  #
-@@ -36,29 +36,26 @@
- IRRIOOBJ = CFileList.o CFileSystem.o CLimitReadFile.o CMemoryReadFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CZipReader.o CPakReader.o irrXML.o CAttributes.o
- IRROTHEROBJ = CIrrDeviceSDL.o CIrrDeviceLinux.o CIrrDeviceStub.o CIrrDeviceWin32.o CLogger.o COSOperator.o Irrlicht.o os.o
- IRRGUIOBJ = CGUIButton.o CGUICheckBox.o CGUIComboBox.o CGUIContextMenu.o CGUIEditBox.o CGUIEnvironment.o CGUIFileOpenDialog.o CGUIFont.o CGUIImage.o CGUIInOutFader.o CGUIListBox.o CGUIMenu.o CGUIMeshViewer.o CGUIMessageBox.o CGUIModalScreen.o CGUIScrollBar.o CGUISpinBox.o CGUISkin.o CGUIStaticText.o CGUITabControl.o CGUITable.o CGUIToolBar.o CGUIWindow.o CGUIColorSelectDialog.o CDefaultGUIElementFactory.o CGUISpriteBank.o
+@@ -39,29 +39,26 @@
+ IRRIOOBJ = CFileList.o CFileSystem.o CLimitReadFile.o CMemoryFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CZipReader.o CPakReader.o CTarReader.o CMountPointReader.o irrXML.o CAttributes.o
+ IRROTHEROBJ = CIrrDeviceSDL.o CIrrDeviceLinux.o CIrrDeviceConsole.o CIrrDeviceStub.o CIrrDeviceWin32.o CLogger.o COSOperator.o Irrlicht.o os.o
+ IRRGUIOBJ = CGUIButton.o CGUICheckBox.o CGUIComboBox.o CGUIContextMenu.o CGUIEditBox.o CGUIEnvironment.o CGUIFileOpenDialog.o CGUIFont.o CGUIImage.o CGUIInOutFader.o CGUIListBox.o CGUIMenu.o CGUIMeshViewer.o CGUIMessageBox.o CGUIModalScreen.o CGUIScrollBar.o CGUISpinBox.o CGUISkin.o CGUIStaticText.o CGUITabControl.o CGUITable.o CGUIToolBar.o CGUIWindow.o CGUIColorSelectDialog.o CDefaultGUIElementFactory.o CGUISpriteBank.o CGUIImageList.o CGUITreeView.o
 -ZLIBOBJ = zlib/adler32.o zlib/compress.o zlib/crc32.o zlib/deflate.o zlib/inffast.o zlib/inflate.o zlib/inftrees.o zlib/trees.o zlib/uncompr.o zlib/zutil.o
 -JPEGLIBOBJ = jpeglib/jcapimin.o jpeglib/jcapistd.o jpeglib/jccoefct.o jpeglib/jccolor.o jpeglib/jcdctmgr.o jpeglib/jchuff.o jpeglib/jcinit.o jpeglib/jcmainct.o jpeglib/jcmarker.o jpeglib/jcmaster.o jpeglib/jcomapi.o jpeglib/jcparam.o jpeglib/jcphuff.o jpeglib/jcprepct.o jpeglib/jcsample.o jpeglib/jctrans.o jpeglib/jdapimin.o jpeglib/jdapistd.o jpeglib/jdatadst.o jpeglib/jdatasrc.o jpeglib/jdcoefct.o jpeglib/jdcolor.o jpeglib/jddctmgr.o jpeglib/jdhuff.o jpeglib/jdinput.o jpeglib/jdmainct.o jpeglib/jdmarker.o jpeglib/jdmaster.o jpeglib/jdmerge.o jpeglib/jdphuff.o jpeglib/jdpostct.o jpeglib/jdsample.o jpeglib/jdtrans.o jpeglib/jerror.o jpeglib/jfdctflt.o jpeglib/jfdctfst.o jpeglib/jfdctint.o jpeglib/jidctflt.o jpeglib/jidctfst.o jpeglib/jidctint.o jpeglib/jidctred.o jpeglib/jmemmgr.o jpeglib/jmemnobs.o jpeglib/jquant1.o jpeglib/jquant2.o jpeglib/jutils.o
 -LIBPNGOBJ = libpng/png.o libpng/pngerror.o libpng/pngget.o libpng/pngmem.o libpng/pngpread.o libpng/pngread.o libpng/pngrio.o libpng/pngrtran.o libpng/pngrutil.o libpng/pngset.o libpng/pngtrans.o libpng/pngwio.o libpng/pngwrite.o libpng/pngwtran.o libpng/pngwutil.o
@@ -26,10 +27,9 @@
  #Compiler flags
 -CXXINCS = -I../../include -Izlib -Ijpeglib -Ilibpng
 -CPPFLAGS = $(CXXINCS) -DIRRLICHT_EXPORTS=1
--CXXFLAGS = -Wall -pipe
 +CXXINCS = -I../../include -I$(LOCALBASE)/include -I/usr/include
 +CPPFLAGS += $(CXXINCS) -DIRRLICHT_EXPORTS=1
-+CXXFLAGS += -Wall -pipe
+ CXXFLAGS += -Wall -pipe -fno-exceptions -fno-rtti -fstrict-aliasing
  ifndef NDEBUG
  CXXFLAGS += -g -D_DEBUG
  else
@@ -42,9 +42,9 @@
 -CFLAGS := -fexpensive-optimizations -O3 -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
 +#CFLAGS := -fexpensive-optimizations -O3 -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
  
- sharedlib sharedlib_osx: CXXFLAGS += -fpic
- sharedlib sharedlib_osx: CFLAGS += -fpic
-@@ -68,16 +65,16 @@
+ sharedlib sharedlib_osx: CXXFLAGS += -fPIC
+ sharedlib sharedlib_osx: CFLAGS += -fPIC
+@@ -71,15 +68,15 @@
  LIBSELECT=64
  endif
  
@@ -53,20 +53,19 @@
 +#FreeBSD specific options
 +staticlib sharedlib install: SYSTEM = FreeBSD
  STATIC_LIB = libIrrlicht.a
- IRRLICHT_DLL := ../../bin/Win32-gcc/Irrlicht.dll
  LIB_PATH = ../../lib/$(SYSTEM)
 -INSTALL_DIR = /usr/local/lib
 +INSTALL_DIR = $(PREFIX)/lib
- sharedlib: SHARED_LIB = libIrrlicht.so
- staticlib sharedlib: LDFLAGS = --no-export-all-symbols --add-stdcall-alias
+ sharedlib install: SHARED_LIB = libIrrlicht.so
+ staticlib sharedlib: LDFLAGS += --no-export-all-symbols --add-stdcall-alias
 -sharedlib: LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 -staticlib sharedlib: CXXINCS += -I/usr/X11R6/include
-+sharedlib: LDFLAGS += -L/usr/lib -L$(LOCALBASE)/lib -lGL -lXxf86vm
++sharedlib: LDFLAGS += -L/usr/lib -L$(LOCALBASE)/lib -lGL -lXxf86vm -lpng -ljpeg
 +staticlib sharedlib: CXXINCS += -I$(LOCALBASE)/include
  
  #OSX specific options
  staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
-@@ -94,20 +91,22 @@
+@@ -97,20 +94,22 @@
  staticlib_win32: CPPFLAGS += -D_IRR_STATIC_LIB_
  
  ####################
@@ -78,8 +77,8 @@
 -# Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into /lib/Linux
 +# Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into /lib/FreeBSD
  sharedlib: $(LINKOBJ)
--	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).1 -fPIC -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
-+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(VERSION) -fPIC -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
+-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(VERSION_MAJOR).$(VERSION_MINOR) -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
++	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(VERSION) -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
 +	mkdir -p $(LIB_PATH)
  	cp $(SHARED_LIB).$(VERSION) $(LIB_PATH)
  
@@ -94,7 +93,7 @@
  	cp $^ $(LIB_PATH)
  
  # Builds Irrlicht as dll (Irrlicht.dll) into ../../bin/Win32-gcc
-@@ -152,9 +151,9 @@
+@@ -153,9 +152,9 @@
  
  help:
  	@echo "Available targets for Irrlicht"
@@ -103,7 +102,7 @@
 -	@echo " install: Copy shared library to /usr/lib"
 +	@echo " sharedlib: Build shared library Irrlicht.so for FreeBSD"
 +	@echo " staticlib: Build static library Irrlicht.a for FreeBSD"
-+	@echo " install: Copy shared library to /usr/local/lib"
++	@echo " install: Copy shared library to $(LOCALBASE)/lib"
  	@echo ""
  	@echo " sharedlib_win32: Build shared library Irrlicht.dll for Windows"
  	@echo " staticlib_win32: Build static library Irrlicht.a for Windows"
