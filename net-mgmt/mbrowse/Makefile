@@ -9,7 +9,9 @@ PORTNAME=	mbrowse
 PORTVERSION=	0.3.1
 PORTREVISION=	8
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.kill-9.org/mbrowse/
+MASTER_SITES=	http://www.sourcefiles.org/Monitoring/Network/ \
+		ftp://ftp.dei.uc.pt/pub/linux/gentoo/distfiles/ \
+		ftp://ftp.gentoo.org.ua/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SNMP MIB Browser for X
