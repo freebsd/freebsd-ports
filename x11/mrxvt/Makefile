@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt
 PORTVERSION=	0.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/${PORTNAME}%20source/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -65,5 +65,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^\(install-data-am:\).*/ \
 		s/install-docDATA //' ${WRKSRC}/doc/Makefile.in
 .endif
+
+post-install:
+	${CHMOD} 4511 ${PREFIX}/bin/mrxvt
 
 .include <bsd.port.post.mk>
