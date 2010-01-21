@@ -45,7 +45,7 @@ CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != i386
+.if ${ARCH} != i386 && ${ARCH} != amd64
 WITHOUT_JAVA=	yes
 .endif
 
