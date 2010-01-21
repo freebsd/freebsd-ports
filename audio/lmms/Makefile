@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lmms
-PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTVERSION=	0.4.6
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -73,12 +72,6 @@ CMAKE_ARGS+=	-DWANT_SDL:BOOL=OFF
 .endif
 
 post-patch:
-.for file in CMakeLists.txt
-	@${REINPLACE_CMD} -e \
-		's|-O2 -g||g ; \
-		 s|-ftree-vectorize||g ; \
-		 s|/share/man/|/man/|g' ${WRKSRC}/${file}
-.endfor
 .for file in data/lmms.desktop
 	@${REINPLACE_CMD} -e \
 		'/^Icon/s|=.*$$|=lmms|g ; \
