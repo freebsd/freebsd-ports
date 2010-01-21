@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xppaut
-PORTVERSION=	5.96
-PORTREVISION=	2
+PORTVERSION=	5.99
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.math.pitt.edu/~bard/bardware/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}_latest
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Graphical tool for solving differential equations, etc
