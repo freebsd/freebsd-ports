@@ -561,7 +561,7 @@ gecko-pre-install:
 .if !defined(NOGECKO_PLIST)
 	@${RM} -rf ${FAKEDIR} ${PLIST} ${PLISTD} ${PLISTF}
 	@${TOUCH} -f ${PLIST} ${PLISTD} ${PLISTF}
-	@cd ${MOZSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} prefix=${FAKEDIR} ${INSTALL_TARGET}
 .if defined(MOZILLA_SUFX) && ${MOZILLA_SUFX}!="none"
 	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//} ${FAKEDIR}/bin/${MOZILLA}
