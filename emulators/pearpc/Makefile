@@ -29,6 +29,8 @@ CFLAGS+=	-O3 -ffast-math
 CONFIGURE_ARGS+=	--disable-fpo
 .endif
 
+SUB_FILES=	pkg-message
+
 # GTK and QT ui are broken in this version
 #
 #.if defined(WITH_QT)
@@ -93,7 +95,6 @@ post-configure:
 post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/video.x ${DATADIR}/video.x
-	@${SED} -e 's,PREFIX,${PREFIX},g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 	@${INSTALL_DATA} ${WRKSRC}/ppccfg.example ${PREFIX}/etc/ppccfg.example
 
