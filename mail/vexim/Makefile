@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/vexim2
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
-USE_PHP=	gettext session
+USE_PHP=	gettext session posix
 
 OPTIONS=	MYSQL "Use MySQL" On \
 		PGSQL "Use PostgreSQL" Off
