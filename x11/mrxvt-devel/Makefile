@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/mrxvt%20source/${PORTVERSION}
 DISTNAME=	mrxvt-${PORTVERSION}
@@ -36,6 +36,10 @@ OPTIONS=	XFT "Enable Xft support for fonts" Off \
 		FRILLS "Enable internal borders and smart resizing" Off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+CONFIGURE_ARGS+=	--disable-lastlog --disable-wtmp
+.endif
 
 .if defined(WITH_JAPANESE)
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
@@ -137,5 +141,8 @@ do-install:
 	${BZIP2_CMD} -d ${DOCSDIR}/*.bz2
 .endif
 	@${CAT} ${PKGMESSAGE}
+
+post-install:
+	${CHMOD} 4511 ${PREFIX}/bin/mrxvt
 
 .include <bsd.port.post.mk>
