@@ -295,7 +295,9 @@ share/applications/claws-mail.desktop
 %%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
 %%DOCSDIR%%/manual/pl/claws-mail-manual.ps
 %%DOCSDIR%%/manual/pl/claws-mail-manual.txt
+share/icons/hicolor/128x128/apps/claws-mail-128x128.png
 share/icons/hicolor/48x48/apps/claws-mail.png
+share/icons/hicolor/64x64/apps/claws-mail-64x64.png
 share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo

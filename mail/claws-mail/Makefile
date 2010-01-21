@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.7.3
+PORTVERSION=	3.7.4
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
@@ -34,6 +34,7 @@ USE_GNOME=	gnomehack pkgconfig gtk20 glib20 atk libartlgpl2 pango libxml2
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		claws-mail.1
 
