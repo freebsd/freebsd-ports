@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.21
+DISTVERSION=	0.2.1.22
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -21,9 +21,11 @@ RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
+USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
+CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 		GEOIP "track country data" off \
