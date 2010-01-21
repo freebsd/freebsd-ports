@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/YAP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/YAP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/YAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
