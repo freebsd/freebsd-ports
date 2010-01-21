@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	graphics ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-asp
@@ -22,6 +22,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/ruby2gv
+PLIST_FILES=	bin/ruby2gv bin/gem2gv
 
 .include <bsd.port.mk>
