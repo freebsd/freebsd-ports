@@ -54,6 +54,8 @@ bin/xppaut
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%DOCSDIR%%/xpp_doc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/xpp_sum.pdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/angela.ode
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/angela.ode~
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/auto.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/dde.ode
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/ev1.ode
@@ -61,6 +63,7 @@ bin/xppaut
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/evelyn.ode
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/evelyn.ode.set
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/evelyn.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/fieldnoy.ode~
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/getmax.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/getmax.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/gill_bruss.ode
@@ -70,6 +73,8 @@ bin/xppaut
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/koho.ode~
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/kohox.ode
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/kohox.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/lorenz.ode~
+%%PORTDOCS%%%%EXAMPLESDIR%%/ode/nc.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/sm1.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/sm2.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/ode/6x6.ani
