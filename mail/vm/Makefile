@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	8.0.12
-PORTREVISION=	1
+PORTVERSION=	8.0.14
 CATEGORIES=	mail elisp
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	viewmail
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/8.0.x/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jhein@timing.com
+MAINTAINER=	jhein@symmetricom.com
 COMMENT=	A mail reader running inside Emacs or XEmacs
 
+FETCH_ARGS=	-prR
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
 USE_GMAKE=	yes
