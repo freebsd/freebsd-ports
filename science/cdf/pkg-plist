@@ -8,6 +8,7 @@ bin/cdfinquire
 bin/cdfirsdump
 bin/cdfmerge
 bin/cdfstats
+bin/cdfvalidate
 bin/definitions.B
 bin/definitions.C
 bin/definitions.K
@@ -41,6 +42,8 @@ lib/cdf/help/cdfmergej.olh
 lib/cdf/help/cdfstatj.olh
 lib/cdf/help/cdfstats.olh
 lib/cdf/help/cdfxp.ilh
+lib/cdf/help/cdfvalidate.olh
+lib/cdf/help/cdfvalidatej.olh
 lib/cdf/help/skt2cdf.olh
 lib/cdf/help/skt2cdfj.olh
 lib/libcdf.a
