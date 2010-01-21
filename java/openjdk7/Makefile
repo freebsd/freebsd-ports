@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
@@ -110,6 +111,10 @@ post-extract:
 		newfile=`echo $$file | ${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g'`; \
 		${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g' $$file > $$newfile; \
 	done
+
+post-patch:
+	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
+		${WRKSRC}/jdk/make/javax/crypto/Makefile
 
 do-install:
 	@${MKDIR} ${INSTALLDIR}
