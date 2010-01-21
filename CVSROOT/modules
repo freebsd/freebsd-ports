@@ -1091,6 +1091,7 @@ blt                             ports/x11-toolkits/blt
 blue                            ports/games/blue
 bluecurve-themes                ports/x11-themes/bluecurve-themes
 bluefish                        ports/www/bluefish
+bluefish-devel                  ports/www/bluefish-devel
 bluegps                         ports/comms/bluegps
 bluej                           ports/java/bluej
 bluez-firmware                  ports/comms/bluez-firmware
@@ -3126,6 +3127,7 @@ everygui                        ports/deskutils/everygui
 evfs                            ports/devel/evfs
 evieext                         ports/x11/evieext
 evilfinder                      ports/games/evilfinder
+evilvte                         ports/x11/evilvte
 evilwm                          ports/x11-wm/evilwm
 evince                          ports/graphics/evince
 evolution                       ports/mail/evolution
@@ -4407,6 +4409,7 @@ gmixer                          ports/audio/gmixer
 gml                             ports/mail/gml
 gmm                             ports/audio/gmm
 gmm++                           ports/math/gmm++
+gmp                             ports/math/gmp
 gmp-ecm                         ports/math/gmp-ecm
 gmpc                            ports/audio/gmpc
 gmpc-alarm                      ports/audio/gmpc-alarm
@@ -8431,6 +8434,7 @@ linuxthreads                    ports/devel/linuxthreads
 linwarrior                      ports/games/linwarrior
 lion                            ports/devel/lion
 lionwiki                        ports/www/lionwiki
+liquidsoap                      ports/audio/liquidsoap
 liquidwar                       ports/games/liquidwar
 lirc                            ports/comms/lirc
 lire                            ports/sysutils/lire
@@ -25261,6 +25265,7 @@ xye                             ports/games/xye
 xymon-client                    ports/net-mgmt/xymon-client
 xymon-server                    ports/net-mgmt/xymon-server
 xyssl                           ports/security/xyssl
+xyzcmd                          ports/misc/xyzcmd
 xz                              ports/archivers/xz
 xzgv                            ports/graphics/xzgv
 xzip                            ports/games/xzip
