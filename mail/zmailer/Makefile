@@ -23,6 +23,10 @@ USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
+.endif
+
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS=	--without-openssl
 .else
