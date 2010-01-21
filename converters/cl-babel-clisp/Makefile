@@ -13,10 +13,10 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A charset encoding/decoding library written in Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/devel/cl-babel \
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/clispfasl/src/tf-clisp.fasl:${PORTSDIR}/devel/cl-trivial-features-clisp \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-gray-streams/clispfasl/package.fasl:${PORTSDIR}/devel/cl-trivial-gray-streams-clisp
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/devel/cl-babel \
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/clispfasl/src/tf-clisp.fasl:${PORTSDIR}/devel/cl-trivial-features-clisp \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-gray-streams/clispfasl/package.fasl:${PORTSDIR}/devel/cl-trivial-gray-streams-clisp
 
