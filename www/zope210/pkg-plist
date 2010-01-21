@@ -1845,6 +1845,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/dtml/addTemporaryFolder.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/dtml/mountfail.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/help/TemporaryFolder.stx
+%%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/mount.py
+%%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/mount.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/patchfs.py
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/patchfs.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/www/tempfolder.gif
