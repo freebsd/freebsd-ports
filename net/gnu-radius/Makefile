@@ -54,6 +54,10 @@ EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
+.endif
+
 .if defined(WITH_SNMP)
 CONFIGURE_ARGS+=--enable-snmp
 .endif
