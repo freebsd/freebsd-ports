@@ -1043,6 +1043,7 @@
     SUBDIR += p5-Net-FreshBooks-API
     SUBDIR += p5-Net-GeoPlanet
     SUBDIR += p5-Net-Trac
+    SUBDIR += p5-Net-YAP
     SUBDIR += p5-Net-eBay
     SUBDIR += p5-Newsletter
     SUBDIR += p5-PHP-Session
