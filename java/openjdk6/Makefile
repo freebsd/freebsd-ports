@@ -7,25 +7,31 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b17
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
-		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
+		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
+		http://download.java.net/openjdk/jtreg/promoted/${JTREGVERSION}/:jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}:ant
 
 MAINTAINER=	openjdk@getsnappy.com
 COMMENT=	Sun\'s java 6 virtual machine release under the GPL v2
 
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-BUILD_NUMBER=	${PORTVERSION:S/b//}
 OPENJDK_BUILDDATE=	14_oct_2009
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
 		IPV6 "Enable IPv6 support" off \
-		POLICY "Install the Unlimited Strength Policy Files" off
+		POLICY "Install the Unlimited Strength Policy Files" off \
+		TEST "Add support for running regression test" off
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
@@ -34,17 +40,15 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
+JTREGVERSION=	b03
+JTREGFILE=	jtreg-4_0-bin-${JTREGVERSION}-31_mar_2009.zip
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
 ANTVERSION=	1.7.1
 ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 
-# rely on bsdtar ability to extract .gz and .bz2 archives
+# rely on bsdtar ability to extract .gz, .bz2 and .zip archives
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
 
@@ -84,6 +88,7 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		OS_NAME=freebsd \
 		ALT_JDK_IMPORT_PATH=${BOOTSTRAPJDKDIR} \
 		ALT_BOOTDIR=${BOOTSTRAPJDKDIR} \
+		ALT_CACERTS_FILE=${FILESDIR}/cacerts \
 		ALT_CUPS_HEADERS_PATH=${LOCALBASE}/include \
 		ALT_CUPS_LIB_PATH=${LOCALBASE}/lib \
 		ALT_FREETYPE_HEADERS_PATH=${LOCALBASE}/include \
@@ -91,8 +96,7 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		ALT_X11_PATH=${LOCALBASE} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
 		ANT_HOME=${WRKDIR}/apache-ant-${ANTVERSION} \
-		BUILD_NUMBER=${BUILD_NUMBER} \
-		HS_BUILD_NUMBER=${BUILD_NUMBER} \
+		BUILD_NUMBER=${PORTVERSION} \
 		NO_DOCS=true \
 		MILESTONE=fcs
 
@@ -112,6 +116,12 @@ ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 .else
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
+.endif
+
+.if defined(WITH_TEST)
+DISTFILES+=	${JTREGFILE}:jtreg
+BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
+USE_DISPLAY=	yes
 .endif
 
 BUILD_JOBS_NUMBER!=	${SYSCTL} -n kern.smp.cpus
@@ -168,15 +178,39 @@ post-extract:
 	@${SED} 's/solaris/bsd/g; s/Solaris/Bsd/g' \
 		< ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
 		> ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
-	@${CP} ${FILESDIR}/fontconfig.properties \
-		${WRKDIR}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
-	@${CP} ${FILESDIR}/cacerts \
-		${WRKDIR}/jdk/src/share/lib/security/cacerts
+	@${SED} "s|/usr/local|${LOCALBASE}|" < ${FILESDIR}/fontconfig.properties \
+		> ${WRKDIR}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|" < ${FILESDIR}/Makefile.test \
+		> ${WRKDIR}/jdk/test/Makefile
+	@${FIND} ${WRKDIR}/jdk/test -type f -name \*.sh -exec ${SED} -i "" -e s/Linux/FreeBSD/g {} \;
 
 .if defined(WITH_POLICY)
 post-patch:
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
+.endif
+
+.if defined(WITH_TEST)
+post-build:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Run \"make test\" to execute regression test (it could take a few hours to complete)."
+.if defined(DISPLAY)
+	@${ECHO_MSG} "Unset the environment DISPLAY variable to run tests in a virtual X server."
+.endif
+	@${ECHO_MSG} ""
+
+test: build-depends build
+.if !defined(DISPLAY)
+	@${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 -fp ${LOCALBASE}/lib/X11/fonts/misc > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+.endif
+	@-(cd ${WRKSRC}/jdk/test; ${SETENV} ${MAKE_ENV} ${GMAKE} tests)
+.if !defined(DISPLAY)
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.endif
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can run \"make test\" again to re-execute only the failed tests."
+	@${ECHO_MSG} ""
 .endif
 
 do-install:

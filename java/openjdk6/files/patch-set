@@ -8852,27 +8852,24 @@ diff -uNr ../orig/jdk/src/share/classes/sun/tools/jar/Main.java ./jdk/src/share/
  
      // An entryName(path)->File map generated during "expand", it helps to
      // decide whether or not an existing entry in a jar file needs to be
-@@ -860,6 +861,19 @@
-      * Extracts specified entries from JAR file.
-      */
-     void extract(InputStream in, String files[]) throws IOException {
-+        // Current working directory
-+
-+        cwd = System.getProperty("user.dir");
-+        if (cwd == null) {
-+            fatalError(getMsg("error.no.cwd"));
-+        }
-+        cwd = (new File(cwd)).getCanonicalPath();
-+        if (!cwd.endsWith(File.separator)) {
-+            cwd += File.separator;
-+        }
-+
-+        // Extract the files
-+
-         ZipInputStream zis = new ZipInputStream(in);
-         ZipEntry e;
-         // Set of all directory entries specified in archive.  Disallows
-@@ -921,6 +935,10 @@
+@@ -249,6 +250,16 @@
+                     }
+                 }
+             } else if (xflag) {
++                // Current working directory
++                cwd = System.getProperty("user.dir");
++                if (cwd == null) {
++                    fatalError(getMsg("error.no.cwd"));
++                }
++                cwd = (new File(cwd)).getCanonicalPath();
++                if (!cwd.endsWith(File.separator)) {
++                    cwd += File.separator;
++                }
++                // Extract the files
+                 replaceFSC(files);
+                 if (fname != null && files != null) {
+                     extract(fname, files);
+@@ -921,6 +932,10 @@
          ZipEntry rc = null;
          String name = e.getName();
          File f = new File(e.getName().replace('/', File.separatorChar));
@@ -8883,7 +8880,7 @@ diff -uNr ../orig/jdk/src/share/classes/sun/tools/jar/Main.java ./jdk/src/share/
          if (e.isDirectory()) {
              if (f.exists()) {
                  if (!f.isDirectory()) {
-@@ -942,6 +960,10 @@
+@@ -942,6 +957,10 @@
          } else {
              if (f.getParent() != null) {
                  File d = new File(f.getParent());
