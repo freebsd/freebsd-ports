@@ -45,40 +45,10 @@ lib/libral.so
 lib/libral.so.1
 libdata/pkgconfig/libral.pc
 share/applications/rubrica2.desktop
-%%PORTDOCS%%share/doc/libRAL/RAbook.html
-%%PORTDOCS%%share/doc/libRAL/RAddress.html
-%%PORTDOCS%%share/doc/libRAL/RCard.html
-%%PORTDOCS%%share/doc/libRAL/RCompanyCard.html
-%%PORTDOCS%%share/doc/libRAL/RContact.html
-%%PORTDOCS%%share/doc/libRAL/RDate.html
-%%PORTDOCS%%share/doc/libRAL/RFilter.html
-%%PORTDOCS%%share/doc/libRAL/RGroup.html
-%%PORTDOCS%%share/doc/libRAL/RGroupBox.html
-%%PORTDOCS%%share/doc/libRAL/RNetAddress.html
-%%PORTDOCS%%share/doc/libRAL/RNotes.html
-%%PORTDOCS%%share/doc/libRAL/RPersonalCard.html
-%%PORTDOCS%%share/doc/libRAL/RPlugin.html
-%%PORTDOCS%%share/doc/libRAL/RRef.html
-%%PORTDOCS%%share/doc/libRAL/RTelephone.html
-%%PORTDOCS%%share/doc/libRAL/RTimeout.html
-%%PORTDOCS%%share/doc/libRAL/RWork.html
 %%PORTDOCS%%share/doc/libRAL/ch01.html
 %%PORTDOCS%%share/doc/libRAL/home.png
 %%PORTDOCS%%share/doc/libRAL/index.html
-%%PORTDOCS%%share/doc/libRAL/index.sgml
 %%PORTDOCS%%share/doc/libRAL/left.png
-%%PORTDOCS%%share/doc/libRAL/libRAL-RCsv.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-RPluginManager.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-RRubrica.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-RVCard.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-error.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-io.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-load.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-lookup.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-rlib.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-save.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-types.html
-%%PORTDOCS%%share/doc/libRAL/libRAL-utils.html
 %%PORTDOCS%%share/doc/libRAL/libRAL.devhelp
 %%PORTDOCS%%share/doc/libRAL/libRAL.devhelp2
 %%PORTDOCS%%share/doc/libRAL/right.png
@@ -92,6 +62,7 @@ share/applications/rubrica2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/locale/de/LC_MESSAGES/rubrica2.mo
+share/locale/en_US/LC_MESSAGES/rubrica2.mo
 share/locale/fr/LC_MESSAGES/rubrica2.mo
 share/locale/it/LC_MESSAGES/rubrica2.mo
 share/locale/uk/LC_MESSAGES/rubrica2.mo
@@ -150,8 +121,10 @@ share/rubrica2/interface/logo.png
 @dirrm share/pixmaps/rubrica2/22x22
 @dirrm share/pixmaps/rubrica2/16x16
 @dirrm share/pixmaps/rubrica2
-%%PORTDOCS%%@dirrm share/doc/libRAL
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/doc/libRAL
 @dirrmtry share/applications
 @dirrmtry lib/libral/plugins
 @dirrmtry lib/libral
