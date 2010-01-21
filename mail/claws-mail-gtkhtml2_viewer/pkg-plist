@@ -2,6 +2,7 @@ lib/claws-mail/plugins/gtkhtml2_viewer.a
 lib/claws-mail/plugins/gtkhtml2_viewer.la
 lib/claws-mail/plugins/gtkhtml2_viewer.so
 %%NLS%%share/locale/ca/LC_MESSAGES/gtkhtml2_viewer.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gtkhtml2_viewer.mo
@@ -10,10 +11,10 @@ lib/claws-mail/plugins/gtkhtml2_viewer.so
 %%NLS%%share/locale/id/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gtkhtml2_viewer.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gtkhtml2_viewer.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/gtkhtml2_viewer.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gtkhtml2_viewer.mo
