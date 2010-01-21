@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_RPC
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	net devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
