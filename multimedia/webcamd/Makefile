@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	A port of Video4Linux USB webcam drivers into userspace
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
-		${LOCALBASE}/include/video4bsd.h:${PORTSDIR}/multimedia/video4bsd-kmod
+BUILD_DEPENDS=	v4l_compat>=1.0.20100113:${PORTSDIR}/multimedia/v4l_compat \
+		video4bsd-kmod>=0.1.3:${PORTSDIR}/multimedia/video4bsd-kmod
+
 LIB_DEPENDS=	v4l1.0:${PORTSDIR}/multimedia/libv4l
 
 USE_RC_SUBR=	webcamd
-CFLAGS+=	-I${LOCALBASE}/include
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
