@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stomp
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.1
 CATEGORIES=	net-im pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
