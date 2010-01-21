@@ -10,6 +10,8 @@ include/qt4/Qt/qxmlname.h
 include/qt4/Qt/qxmlnamepool.h
 include/qt4/Qt/qxmlquery.h
 include/qt4/Qt/qxmlresultitems.h
+include/qt4/Qt/qxmlschema.h
+include/qt4/Qt/qxmlschemavalidator.h
 include/qt4/Qt/qxmlserializer.h
 include/qt4/QtXmlPatterns/QAbstractMessageHandler
 include/qt4/QtXmlPatterns/QAbstractUriResolver
@@ -24,6 +26,8 @@ include/qt4/QtXmlPatterns/QXmlNamePool
 include/qt4/QtXmlPatterns/QXmlNodeModelIndex
 include/qt4/QtXmlPatterns/QXmlQuery
 include/qt4/QtXmlPatterns/QXmlResultItems
+include/qt4/QtXmlPatterns/QXmlSchema
+include/qt4/QtXmlPatterns/QXmlSchemaValidator
 include/qt4/QtXmlPatterns/QXmlSerializer
 include/qt4/QtXmlPatterns/QtXmlPatterns
 include/qt4/QtXmlPatterns/qabstractmessagehandler.h
@@ -37,6 +41,8 @@ include/qt4/QtXmlPatterns/qxmlname.h
 include/qt4/QtXmlPatterns/qxmlnamepool.h
 include/qt4/QtXmlPatterns/qxmlquery.h
 include/qt4/QtXmlPatterns/qxmlresultitems.h
+include/qt4/QtXmlPatterns/qxmlschema.h
+include/qt4/QtXmlPatterns/qxmlschemavalidator.h
 include/qt4/QtXmlPatterns/qxmlserializer.h
 lib/qt4/libQtXmlPatterns.la
 lib/qt4/libQtXmlPatterns.prl
@@ -46,5 +52,7 @@ lib/qt4/libQtXmlPatterns.so.%%SHLIB_SHVER%%
 lib/qt4/libQtXmlPatterns.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtXmlPatterns.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtXmlPatterns.pc
+@dirrmtry lib/qt4
 @dirrm include/qt4/QtXmlPatterns
 @dirrmtry include/qt4/Qt
+@dirrmtry include/qt4

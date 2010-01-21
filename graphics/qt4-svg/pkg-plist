@@ -20,6 +20,7 @@ lib/qt4/libQtSvg.so.%%SHLIB_SHVER%%
 lib/qt4/libQtSvg.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtSvg.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtSvg.pc
+@dirrmtry lib/qt4
 @dirrm include/qt4/QtSvg
 @dirrmtry include/qt4/Qt
 @dirrmtry include/qt4

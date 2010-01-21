@@ -7,25 +7,24 @@
 
 PORTNAME=	l10n
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	0
 CATEGORIES?=	misc
-MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt translations messages
 
 USE_QT_VER=	4
-QT_COMPONENTS=	#dummy
-NO_BUILD=	yes
-MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
+QT_COMPONENTS=	linguist_build
+QT_DIST=	yes
+QT_NONSTANDARD=	yes
 
 EXTRACT_AFTER_ARGS+=	| ${TAR} -xf - --include '${DISTNAME}/translations'
 
+do-build:
+	${LOCALBASE}/bin/lrelease-qt4 ${WRKSRC}/translations/*.ts
+
 do-install:
 	${MKDIR} ${PREFIX}/share/qt4/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/*.ts ${PREFIX}/share/qt4/translations
+	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${PREFIX}/share/qt4/translations
 
 .include <bsd.port.mk>

@@ -8,7 +8,6 @@
 
 PORTNAME=	gui
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	0
 CATEGORIES?=	x11-toolkits
 PKGNAMEPREFIX=	qt4-
 
@@ -37,20 +36,24 @@ MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake tools translations \
-		src/dbus src/network src/opengl src/phonon \
-		src/qt3support src/script src/sql src/svg src/testlib \
-		src/tools src/xml src/xmlpatterns src/3rdparty/clucene \
-		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+		src/activeqt src/dbus src/multimedia src/network src/opengl \
+		src/openvg src/phonon src/qt3support src/s60installs \
+		src/s60main src/script src/scripttools src/sql src/svg \
+		src/testlib src/tools src/winmain src/xml src/xmlpatterns \
+		src/3rdparty/clucene src/3rdparty/freetype \
+		src/3rdparty/libjpeg src/3rdparty/libmng src/3rdparty/libpng \
+		src/3rdparty/libtiff src/3rdparty/phonon src/3rdparty/webkit
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for dne in ${DO_NOT_EXTRACT}
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
-CONFIGURE_WRKSRC=${WRKSRC}/../../
-PATCH_WRKSRC=${CONFIGURE_WRKSRC}
+BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
+
+EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
@@ -82,19 +85,18 @@ RUN_DEPENDS+=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
 .endif
 
 pre-configure:
-	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${MKDIR} ${WRKSRC}/../../mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
+	${MKDIR} ${WRKSRC}/mkspecs
+	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
+	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
 
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/Makefile
+		-e 's|.*$$(QMAKE).*||g' ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
-		${WRKSRC}/../../lib/pkgconfig/QtGui.pc
+		${WRKSRC}/lib/pkgconfig/QtGui.pc
 
 .include <bsd.port.mk>

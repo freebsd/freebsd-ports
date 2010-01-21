@@ -1,49 +1,48 @@
 include/qt4/Phonon
+include/qt4/phonon/AbstractAudioOutput
+include/qt4/phonon/AbstractMediaStream
+include/qt4/phonon/AbstractVideoOutput
+include/qt4/phonon/AddonInterface
+include/qt4/phonon/AudioCaptureDevice
+include/qt4/phonon/AudioCaptureDeviceModel
+include/qt4/phonon/AudioChannelDescription
+include/qt4/phonon/AudioChannelDescriptionModel
+include/qt4/phonon/AudioOutput
+include/qt4/phonon/AudioOutputDevice
+include/qt4/phonon/AudioOutputDeviceModel
+include/qt4/phonon/AudioOutputInterface
+include/qt4/phonon/AudioOutputInterface40
+include/qt4/phonon/AudioOutputInterface42
+include/qt4/phonon/BackendCapabilities
+include/qt4/phonon/BackendInterface
+include/qt4/phonon/Effect
+include/qt4/phonon/EffectDescription
+include/qt4/phonon/EffectDescriptionModel
+include/qt4/phonon/EffectInterface
+include/qt4/phonon/EffectParameter
+include/qt4/phonon/EffectWidget
 include/qt4/phonon/Global
-include/qt4/phonon/Phonon/AbstractAudioOutput
-include/qt4/phonon/Phonon/AbstractMediaStream
-include/qt4/phonon/Phonon/AbstractVideoOutput
-include/qt4/phonon/Phonon/AddonInterface
-include/qt4/phonon/Phonon/AudioCaptureDevice
-include/qt4/phonon/Phonon/AudioCaptureDeviceModel
-include/qt4/phonon/Phonon/AudioChannelDescription
-include/qt4/phonon/Phonon/AudioChannelDescriptionModel
-include/qt4/phonon/Phonon/AudioOutput
-include/qt4/phonon/Phonon/AudioOutputDevice
-include/qt4/phonon/Phonon/AudioOutputDeviceModel
-include/qt4/phonon/Phonon/AudioOutputInterface
-include/qt4/phonon/Phonon/AudioOutputInterface40
-include/qt4/phonon/Phonon/AudioOutputInterface42
-include/qt4/phonon/Phonon/BackendCapabilities
-include/qt4/phonon/Phonon/BackendInterface
-include/qt4/phonon/Phonon/Effect
-include/qt4/phonon/Phonon/EffectDescription
-include/qt4/phonon/Phonon/EffectDescriptionModel
-include/qt4/phonon/Phonon/EffectInterface
-include/qt4/phonon/Phonon/EffectParameter
-include/qt4/phonon/Phonon/EffectWidget
-include/qt4/phonon/Phonon/Global
-include/qt4/phonon/Phonon/MediaController
-include/qt4/phonon/Phonon/MediaNode
-include/qt4/phonon/Phonon/MediaObject
-include/qt4/phonon/Phonon/MediaObjectInterface
-include/qt4/phonon/Phonon/MediaSource
-include/qt4/phonon/Phonon/ObjectDescription
-include/qt4/phonon/Phonon/ObjectDescriptionData
-include/qt4/phonon/Phonon/ObjectDescriptionModel
-include/qt4/phonon/Phonon/ObjectDescriptionModelData
-include/qt4/phonon/Phonon/Path
-include/qt4/phonon/Phonon/PlatformPlugin
-include/qt4/phonon/Phonon/SeekSlider
-include/qt4/phonon/Phonon/StreamInterface
-include/qt4/phonon/Phonon/SubtitleDescription
-include/qt4/phonon/Phonon/SubtitleDescriptionModel
-include/qt4/phonon/Phonon/VideoPlayer
-include/qt4/phonon/Phonon/VideoWidget
-include/qt4/phonon/Phonon/VideoWidgetInterface
-include/qt4/phonon/Phonon/VolumeFaderEffect
-include/qt4/phonon/Phonon/VolumeFaderInterface
-include/qt4/phonon/Phonon/VolumeSlider
+include/qt4/phonon/MediaController
+include/qt4/phonon/MediaNode
+include/qt4/phonon/MediaObject
+include/qt4/phonon/MediaObjectInterface
+include/qt4/phonon/MediaSource
+include/qt4/phonon/ObjectDescription
+include/qt4/phonon/ObjectDescriptionData
+include/qt4/phonon/ObjectDescriptionModel
+include/qt4/phonon/ObjectDescriptionModelData
+include/qt4/phonon/Path
+include/qt4/phonon/PlatformPlugin
+include/qt4/phonon/SeekSlider
+include/qt4/phonon/StreamInterface
+include/qt4/phonon/SubtitleDescription
+include/qt4/phonon/SubtitleDescriptionModel
+include/qt4/phonon/VideoPlayer
+include/qt4/phonon/VideoWidget
+include/qt4/phonon/VideoWidgetInterface
+include/qt4/phonon/VolumeFaderEffect
+include/qt4/phonon/VolumeFaderInterface
+include/qt4/phonon/VolumeSlider
 include/qt4/phonon/abstractaudiooutput.h
 include/qt4/phonon/abstractmediastream.h
 include/qt4/phonon/abstractvideooutput.h
@@ -85,10 +84,8 @@ lib/qt4/libphonon.so.4.3
 lib/qt4/libphonon.so.4.3.1
 %%DEBUG%%lib/qt4/libphonon.so.4.3.1.debug
 libdata/pkgconfig/phonon.pc
-@dirrm lib/qt4/plugins/phonon_backend
-@dirrm lib/qt4/plugins
-@dirrm lib/qt4
-@dirrmtry include/qt4/phonon/Phonon
+@dirrmtry lib/qt4
 @dirrm include/qt4/phonon
-@dirrmtry %%QT_PLUGINDIR_REL%%//phonon_backend
-@dirrm include/qt4
+@dirrmtry include/qt4
+@exec mkdir -p %%QT_PLUGINDIR_REL%%/phonon_backend
+@dirrmtry %%QT_PLUGINDIR_REL%%/phonon_backend

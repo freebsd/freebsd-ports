@@ -36,6 +36,7 @@ lib/qt4/libQtHelp.so.%%SHLIB_SHVER%%
 lib/qt4/libQtHelp.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtHelp.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtHelp.pc
+@dirrmtry lib/qt4
 @dirrm include/qt4/QtHelp
 @dirrmtry include/qt4/Qt
 @dirrmtry include/qt4

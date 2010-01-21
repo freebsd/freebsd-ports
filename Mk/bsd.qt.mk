@@ -1,21 +1,30 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# QT_NONSTANDARD	- Suppress modification of configure and make environment.
-# QT_DIST			- Package being built is part of the Qt distribution.
-#
 # $FreeBSD$
 #
+# Variables:
+# QT_NONSTANDARD	- Suppress modification of configure and make environment.
+# QT_DIST		- Package being built is part of the Qt distribution.
+#
+# Global switches (add this to /etc/make.conf):
+# WITH_KDE_PHONON	- If set, standalone phonon will be used instead of Qt.
+#				Required for KDE 4.4.0
+# QT4_OPTIONS		- A list of options, can be CUPS, NAS and/or QGTKSTYLE.
+#				If set, Qt will be built with support for:
+#				- Common UNIX Printing System (CUPS)
+#				- Network Audio System (NAS)
+#				- Qt style that renders using GTK (QGTKSTYLE)
 
 .if !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)
-Qt_Include_MAINTAINER=	kde@freebsd.org
+Qt_Include_MAINTAINER=	kde@FreeBSD.org
 Qt_Pre_Include=		bsd.qt.mk
 
 .if !defined(QT_NONSTANDARD)
 CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
-				--with-qt-libraries=${QT_LIBDIR} \
-				--with-extra-libs=${LOCALBASE}/lib \
-				--with-extra-includes=${LOCALBASE}/include
+		--with-qt-libraries=${QT_LIBDIR} \
+		--with-extra-libs=${LOCALBASE}/lib \
+		--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV+=	MOC="${MOC}" UIC="${UIC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
 		QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" QTDIR="${QT_PREFIX}"
 MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
@@ -24,7 +33,7 @@ MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .if defined(QT_DIST)
 MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
 MASTER_SITES=	${MASTER_SITE_QT}
-DISTNAME=	qt-x11-opensource-src-${QT4_VERSION}
+DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
 DIST_SUBDIR=	KDE
 #CONFLICTS+=	Currently there are no conflicts \o/
 
@@ -57,7 +66,7 @@ CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2
 # CONFIGURE_ARGS+=-no-exceptions
 # .endif
 
-.if defined(WANT_QT_DEBUG)
+.if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)
 CONFIGURE_ARGS+=-debug
 PLIST_SUB+=	DEBUG=""
 .else
@@ -84,6 +93,7 @@ QT_LIBDIR?=	${QT_PREFIX}/${QT_LIBDIR_REL}
 QT_PLUGINDIR?=	${QT_PREFIX}/${QT_PLUGINDIR_REL}
 MOC?=		${QT_PREFIX}/bin/moc-qt4
 UIC?=		${QT_PREFIX}/bin/uic-qt4
+RCC?=		${QT_PREFIX}/bin/rcc
 QMAKE?=		${QT_PREFIX}/bin/qmake-qt4
 QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-g++
 QMAKEFLAGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
@@ -103,95 +113,214 @@ QTCGFLIBS?=
 
 #
 # QT4 version
-# Don't forget to update ${PORTSDIR}/devel/qt4/files/configure !
+# Don't forget to update ${PORTSDIR}/devel/qt4/files/patch-configure !
 #
-QT4_VERSION?=		4.5.3
+QT4_VERSION?=		4.6.1
 
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
-			dbus designer doc help help-tools gui iconengines imageformats \
-			inputmethods linguist l10n makeqpf moc network opengl \
-			pixeltool porting phonon phonon-gst qdbusviewer qdoc3 \
+			dbus demo designer doc help help-tools gui iconengines imageformats \
+			inputmethods linguist l10n makeqpf moc multimedia network \
+			opengl pixeltool porting phonon phonon-gst qdbusviewer qdoc3 \
 			qmake qt3support qtconfig qtestlib qvfb rcc script scripttools \
-			sql svg uic uic3 webkit xml xmlpatterns xmlpatterns-tool
+			sql sql-ibase sql-mysql sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3 \
+			svg uic uic3 webkit xml xmlpatterns xmlpatterns-tool
 
-accessible_DEPENDS=	accessibility/qt4-accessible
-assistant_DEPENDS=	devel/qt4-assistant
-assistant-adp_DEPENDS=	devel/qt4-assistant-adp
-assistantclient_DEPENDS=devel/qt4-libqtassistantclient
-assistantclient_NAME=	libQtAssistantClient
-clucene_DEPENDS=	textproc/qt4-clucene
-codecs-cn_DEPENDS=	chinese/qt4-codecs-cn
-codecs-jp_DEPENDS=	japanese/qt4-codecs-jp
-codecs-kr_DEPENDS=	korean/qt4-codecs-kr
-codecs-tw_DEPENDS=	chinese/qt4-codecs-tw
-corelib_DEPENDS=	devel/qt4-corelib
-dbus_DEPENDS=		devel/dbus-qt4
-designer_DEPENDS=	devel/qt4-designer
-doc_DEPENDS=		misc/qt4-doc
-gui_DEPENDS=		x11-toolkits/qt4-gui
-help_DEPENDS=		devel/qt4-help
-help-tools_DEPENDS=	devel/qt4-help-tools
-iconengines_DEPENDS=	graphics/qt4-iconengines
-imageformats_DEPENDS=	graphics/qt4-imageformats
-inputmethods_DEPENDS=	x11/qt4-inputmethods
-linguist_DEPENDS=	devel/qt4-linguist
-l10n_DEPENDS=		misc/qt4-l10n
-makeqpf_DEPENDS=	devel/qt4-makeqpf
-moc_DEPENDS=		devel/qt4-moc
-network_DEPENDS=	net/qt4-network
-opengl_DEPENDS=		x11/qt4-opengl
-pixeltool_DEPENDS=	graphics/qt4-pixeltool
-phonon_DEPENDS=		multimedia/qt4-phonon
-phonon-gst_DEPENDS=	multimedia/qt4-phonon-gst
-porting_DEPENDS=	devel/qt4-porting
-qdbusviewer_DEPENDS=	devel/qt4-qdbusviewer
-qdoc3_DEPENDS=		devel/qt4-qdoc3
-qmake_DEPENDS=		devel/qmake4
-qt3support_DEPENDS=	devel/qt4-qt3support
-qtconfig_DEPENDS=	misc/qt4-qtconfig
-qtestlib_DEPENDS=	devel/qt4-qtestlib
-qvfb_DEPENDS=		devel/qt4-qvfb
-rcc_DEPENDS=		devel/qt4-rcc
-script_DEPENDS=		devel/qt4-script
-scripttools_DEPENDS=	devel/qt4-scripttools
-sql_DEPENDS=		databases/qt4-sql
-svg_DEPENDS=		graphics/qt4-svg
-uic_DEPENDS=		devel/qt4-uic
-uic3_DEPENDS=		devel/qt4-uic3
-webkit_DEPENDS=		www/qt4-webkit
-xml_DEPENDS=		textproc/qt4-xml
-xmlpatterns_DEPENDS=	textproc/qt4-xmlpatterns
-xmlpatterns-tool_DEPENDS=	textproc/qt4-xmlpatterns-tool
+accessible_PORT=	accessibility/qt4-accessible
+accessible_DEPENDS=	${QT_PLUGINDIR}/accessible/libqtaccessiblewidgets.so
+
+assistant_PORT=		devel/qt4-assistant
+assistant_DEPENDS=	${QT_PREFIX}/bin/assistant-qt4
+
+assistant-adp_PORT=	devel/qt4-assistant-adp
+assistant-adp_DEPENDS=	${QT_PREFIX}/bin/assistant_adp
+
+assistantclient_PORT=		devel/qt4-libqtassistantclient
+assistantclient_DEPENDS=	${QT_LIBDIR}/libQtAssistantClient.so
+
+clucene_PORT=		textproc/qt4-clucene
+clucene_DEPENDS=	${QT_LIBDIR}/libQtCLucene.so
+
+codecs-cn_PORT=		chinese/qt4-codecs-cn
+codecs-cn_DEPENDS=	${QT_PLUGINDIR}/codecs/libqcncodecs.so
+
+codecs-jp_PORT=		japanese/qt4-codecs-jp
+codecs-jp_DEPENDS=	${QT_PLUGINDIR}/codecs/libqjpcodecs.so
+
+codecs-kr_PORT=		korean/qt4-codecs-kr
+codecs-kr_DEPENDS=	${QT_PLUGINDIR}/codecs/libqkrcodecs.so
+
+codecs-tw_PORT=		chinese/qt4-codecs-tw
+codecs-tw_DEPENDS=	${QT_PLUGINDIR}/codecs/libqtwcodecs.so
+
+corelib_PORT=		devel/qt4-corelib
+corelib_DEPENDS=	${QT_LIBDIR}/libQtCore.so
+
+dbus_PORT=	devel/dbus-qt4
+dbus_DEPENDS=	${QT_LIBDIR}/libQtDBus.so
+
+demo_PORT=	misc/qt4-qtdemo
+demo_DEPENDS=	${QT_PREFIX}/bin/qtdemo
+
+designer_PORT=		devel/qt4-designer
+designer_DEPENDS=	${QT_PREFIX}/bin/designer-qt4
+
+doc_PORT=	misc/qt4-doc
+doc_DEPENDS=	qt4-doc>=4
+
+gui_PORT=	x11-toolkits/qt4-gui
+gui_DEPENDS=	${QT_LIBDIR}/libQtGui.so
+
+help_PORT=	devel/qt4-help
+help_DEPENDS=	${QT_LIBDIR}/libQtHelp.so
+
+help-tools_PORT=	devel/qt4-help-tools
+help-tools_DEPENDS=	${QT_PREFIX}/bin/qhelpgenerator
+
+iconengines_PORT=	graphics/qt4-iconengines
+iconengines_DEPENDS=	${QT_PLUGINDIR}/iconengines/libqsvgicon.so
+
+imageformats_PORT=	graphics/qt4-imageformats
+imageformats_DEPENDS=	${QT_PLUGINDIR}/imageformats/libqjpeg.so
+
+inputmethods_PORT=	x11/qt4-inputmethods
+inputmethods_DEPENDS=	${QT_PLUGINDIR}/inputmethods/libqimsw-multi.so
+
+linguist_PORT=		devel/qt4-linguist
+linguist_DEPENDS=	${QT_PREFIX}/bin/linguist-qt4
+
+l10n_PORT=	misc/qt4-l10n
+l10n_DEPENDS=	qt4-l10n>=4
+
+makeqpf_PORT=		devel/qt4-makeqpf
+makeqpf_DEPENDS=	${QT_PREFIX}/bin/makeqpf-qt4
+
+moc_PORT=	devel/qt4-moc
+moc_DEPENDS=	${MOC}
+
+multimedia_PORT=	multimedia/qt4-multimedia
+multimedia_DEPENDS=	${QT_LIBDIR}/libQtMultimedia.so
+
+network_PORT=		net/qt4-network
+network_DEPENDS=	${QT_LIBDIR}/libQtNetwork.so
+
+opengl_PORT=	x11/qt4-opengl
+opengl_DEPENDS=	${QT_LIBDIR}/libQtOpenGL.so
+
+pixeltool_PORT=		graphics/qt4-pixeltool
+pixeltool_DEPENDS=	${QT_PREFIX}/bin/pixeltool
+
+.if defined(WITH_KDE_PHONON)
+phonon_PORT=	multimedia/phonon
+.else
+phonon_PORT=	multimedia/qt4-phonon
+.endif
+phonon_DEPENDS=	${QT_LIBDIR}/libphonon.so
+
+.if defined(WITH_KDE_PHONON)
+phonon-gst_PORT=	multimedia/phonon-gstreamer
+.else
+phonon-gst_PORT=	multimedia/qt4-phonon-gst
+.endif
+phonon-gst_DEPENDS=	${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
+
+porting_PORT=		devel/qt4-porting
+porting_DEPENDS=	${QT_PREFIX}/bin/qt3to4
+
+qdbusviewer_PORT=	devel/qt4-qdbusviewer
+qdbusviewer_DEPENDS=	${QT_PREFIX}/bin/qdbusviewer
+
+qdoc3_PORT=	devel/qt4-qdoc3
+qdoc3_DEPENDS=	${QT_PREFIX}/bin/qdoc3
+
+qmake_PORT=	devel/qmake4
+qmake_DEPENDS=	${QMAKE}
+
+qt3support_PORT=	devel/qt4-qt3support
+qt3support_DEPENDS=	${QT_LIBDIR}/libQt3Support.so
+
+qtconfig_PORT=		misc/qt4-qtconfig
+qtconfig_DEPENDS=	${QT_PREFIX}/bin/qtconfig-qt4
+
+qtestlib_PORT=		devel/qt4-qtestlib
+qtestlib_DEPENDS=	${QT_LIBDIR}/libQtTest.so
+
+qvfb_PORT=	devel/qt4-qvfb
+qvfb_DEPENDS=	${QT_PREFIX}/bin/qvfb-qt4
+
+rcc_PORT=		devel/qt4-rcc
+rcc_DEPENDS=		${RCC}
+
+script_PORT=		devel/qt4-script
+script_DEPENDS=		${QT_LIBDIR}/libQtScript.so
+
+scripttools_PORT=	devel/qt4-scripttools
+scripttools_DEPENDS=	${QT_LIBDIR}/libQtScriptTools.so
+
+sql_PORT=	databases/qt4-sql
+sql_DEPENDS=	${QT_LIBDIR}/libQtSql.so
+
+sql-ibase_PORT=		databases/qt4-ibase-plugin
+sql-ibase_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlibase.so
+
+sql-mysql_PORT=		databases/qt4-mysql-plugin
+sql-mysql_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlmysql.so
+
+sql-odbc_PORT=		databases/qt4-odbc-plugin
+sql-odbc_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlodbc.so
+
+sql-pgsql_PORT=		databases/qt4-pgsql-plugin
+sql-pgsql_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlpsql.so
+
+sql-sqlite2_PORT=	databases/qt4-sqlite-plugin
+sql-sqlite2_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlite2.so
+
+sql-sqlite3_PORT=	databases/qt4-sqlite3-plugin
+sql-sqlite3_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlite.so
+
+svg_PORT=	graphics/qt4-svg
+svg_DEPENDS=	${QT_LIBDIR}/libQtSvg.so
+
+uic_PORT=	devel/qt4-uic
+uic_DEPENDS=	${UIC}
+
+uic3_PORT=	devel/qt4-uic3
+uic3_DEPENDS=	${QT_PREFIX}/bin/uic3
+
+webkit_PORT=	www/qt4-webkit
+webkit_DEPENDS=	${QT_LIBDIR}/libQtWebKit.so
+
+xml_PORT=	textproc/qt4-xml
+xml_DEPENDS=	${QT_LIBDIR}/libQtXml.so
+
+xmlpatterns_PORT=	textproc/qt4-xmlpatterns
+xmlpatterns_DEPENDS=	${QT_LIBDIR}/libQtXmlPatterns.so
+
+xmlpatterns-tool_PORT=		textproc/qt4-xmlpatterns-tool
+xmlpatterns-tool_DEPENDS=	${QT_PREFIX}/bin/xmlpatterns
 
 .if defined(_POSTMKINCLUDED) && !defined(Qt_Post_Include)
 Qt_Post_Include= bsd.qt.mk
 
 .for component in ${_QT_COMPONENTS_ALL}
-${component}_build_DEPENDS=	${${component}_DEPENDS}
-${component}_run_DEPENDS=	${${component}_DEPENDS}
-_QT_COMPONENTS_SUFFIXED+=${component} ${component}_build ${component}_run
+${component}_BUILD_DEPENDS?=	${${component}_DEPENDS}:${PORTSDIR}/${${component}_PORT}
+${component}_RUN_DEPENDS?=	${${component}_DEPENDS}:${PORTSDIR}/${${component}_PORT}
+
+${component}_build_BUILD_DEPENDS?=	${${component}_BUILD_DEPENDS}
+${component}_run_RUN_DEPENDS?=		${${component}_RUN_DEPENDS}
+
+_QT_COMPONENTS_ALL_SUFFIXED+=	${component} ${component}_build ${component}_run
 .endfor
 
 .if defined(QT_COMPONENTS)
-.for ext in ${QT_COMPONENTS}
-${ext}_QT4_PREFIX?=	qt4-
-${ext}_QT4_VERSION?=	${QT4_VERSION}
-${ext}_NAME?=		${ext}
-_${ext}=		${ext}
-.if ${_QT_COMPONENTS_SUFFIXED:M${ext}}!= ""
-.if ${_${ext}:M*_build}!= ""
-BUILD_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME:S/_build//}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
-.elif ${_${ext}:M*_run}!= ""
-RUN_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME:S/_run//}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
-.else
-BUILD_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
-RUN_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
-.endif
-.else
-IGNORE= cannot install: unknown Qt4 component -- ${ext}
-.endif
-.endfor
+. for component in ${QT_COMPONENTS:O:u}
+.  if ${_QT_COMPONENTS_ALL_SUFFIXED:M${component}}!= ""
+BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
+RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+.  else
+IGNORE=	can't be installed: unknown Qt 4 component '${component}'
+.  endif
+. endfor
 .endif
 
 .endif

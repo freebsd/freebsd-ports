@@ -1,6 +1,6 @@
---- qpf2.cpp	Sun Jul  8 08:08:09 2007
-+++ qpf2.cpp	Sun Jul  8 08:08:33 2007
-@@ -342,6 +342,8 @@
+--- tools/makeqpf/qpf2.cpp.orig	2009-09-07 13:00:31.000000000 +0200
++++ tools/makeqpf/qpf2.cpp	2009-09-21 22:15:11.717123200 +0200
+@@ -363,6 +363,8 @@
      int startGlyphIndex;
  };
  

@@ -56,6 +56,7 @@ lib/qt4/libQtXml.so.%%SHLIB_SHVER%%
 lib/qt4/libQtXml.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtXml.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtXml.pc
+@dirrmtry lib/qt4
 @dirrm include/qt4/QtXml
 @dirrmtry include/qt4/Qt
 @dirrmtry include/qt4

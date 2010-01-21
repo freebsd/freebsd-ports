@@ -1,2 +1,3 @@
-lib/qt4/plugins/sqldrivers/libq%%DB%%.so
-@dirrmtry lib/qt4/plugins/sqldrivers
+%%QT_PLUGINDIR_REL%%/sqldrivers/libq%%DB%%.so
+@dirrmtry %%QT_PLUGINDIR_REL%%/sqldrivers
+@dirrmtry %%QT_PLUGINDIR_REL%%

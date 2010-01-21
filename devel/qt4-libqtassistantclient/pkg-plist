@@ -9,4 +9,6 @@ lib/qt4/libQtAssistantClient.so.%%SHLIB_SHVER%%
 lib/qt4/libQtAssistantClient.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtAssistantClient.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtAssistantClient.pc
+@dirrmtry lib/qt4
 @dirrm include/qt4/QtAssistant
+@dirrmtry include/qt4

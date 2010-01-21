@@ -1,3 +1,4 @@
-lib/qt4/plugins/codecs/libqkrcodecs.so
-%%DEBUG%%lib/qt4/plugins/codecs/libqkrcodecs.so.debug
-@dirrmtry lib/qt4/plugins/codecs
+%%QT_PLUGINDIR_REL%%/codecs/libqkrcodecs.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/codecs/libqkrcodecs.so.debug
+@dirrmtry %%QT_PLUGINDIR_REL%%/codecs
+@dirrmtry %%QT_PLUGINDIR_REL%%

@@ -25,7 +25,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --include '${DISTNAME}/tools/${PORTNAME}'
 PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
-CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \

@@ -9,9 +9,6 @@
 PORTNAME=	qt4-${DB}-plugin
 PORTVERSION=	${QT4_VERSION}
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_QT}
-DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
-DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt PostgreSQL database plugin
@@ -21,8 +18,8 @@ DB=		psql
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build sql
 QT_NONSTANDARD=	yes
+QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes
-MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
 
 USE_PGSQL=	yes
 DRIVER=		src/sql/drivers/${DB}

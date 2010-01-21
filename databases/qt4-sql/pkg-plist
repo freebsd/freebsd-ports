@@ -1,14 +1,14 @@
 include/qt4/Qt/QtSql
 include/qt4/Qt/qsql.h
 include/qt4/Qt/qsql_db2.h
-include/qt4/Qt/qsql_oci.h
-include/qt4/Qt/qsql_tds.h
 include/qt4/Qt/qsql_ibase.h
 include/qt4/Qt/qsql_mysql.h
+include/qt4/Qt/qsql_oci.h
 include/qt4/Qt/qsql_odbc.h
 include/qt4/Qt/qsql_psql.h
 include/qt4/Qt/qsql_sqlite.h
 include/qt4/Qt/qsql_sqlite2.h
+include/qt4/Qt/qsql_tds.h
 include/qt4/Qt/qsqldatabase.h
 include/qt4/Qt/qsqldriver.h
 include/qt4/Qt/qsqldriverplugin.h
@@ -22,10 +22,14 @@ include/qt4/Qt/qsqlrelationaldelegate.h
 include/qt4/Qt/qsqlrelationaltablemodel.h
 include/qt4/Qt/qsqlresult.h
 include/qt4/Qt/qsqltablemodel.h
+include/qt4/QtSql/QDB2Driver
+include/qt4/QtSql/QDB2Result
 include/qt4/QtSql/QIBaseDriver
 include/qt4/QtSql/QIBaseResult
 include/qt4/QtSql/QMYSQLDriver
 include/qt4/QtSql/QMYSQLResult
+include/qt4/QtSql/QOCIDriver
+include/qt4/QtSql/QOCIResult
 include/qt4/QtSql/QODBCDriver
 include/qt4/QtSql/QODBCResult
 include/qt4/QtSql/QPSQLDriver
@@ -51,23 +55,19 @@ include/qt4/QtSql/QSqlRelationalDelegate
 include/qt4/QtSql/QSqlRelationalTableModel
 include/qt4/QtSql/QSqlResult
 include/qt4/QtSql/QSqlTableModel
+include/qt4/QtSql/QTDSDriver
+include/qt4/QtSql/QTDSResult
 include/qt4/QtSql/QtSql
 include/qt4/QtSql/qsql.h
+include/qt4/QtSql/qsql_db2.h
 include/qt4/QtSql/qsql_ibase.h
 include/qt4/QtSql/qsql_mysql.h
-include/qt4/QtSql/qsql_db2.h
 include/qt4/QtSql/qsql_oci.h
-include/qt4/QtSql/qsql_tds.h
-include/qt4/QtSql/QDB2Result
-include/qt4/QtSql/QDB2Driver
-include/qt4/QtSql/QOCIResult
-include/qt4/QtSql/QOCIDriver
-include/qt4/QtSql/QTDSResult
-include/qt4/QtSql/QTDSDriver
 include/qt4/QtSql/qsql_odbc.h
 include/qt4/QtSql/qsql_psql.h
 include/qt4/QtSql/qsql_sqlite.h
 include/qt4/QtSql/qsql_sqlite2.h
+include/qt4/QtSql/qsql_tds.h
 include/qt4/QtSql/qsqldatabase.h
 include/qt4/QtSql/qsqldriver.h
 include/qt4/QtSql/qsqldriverplugin.h
@@ -89,6 +89,7 @@ lib/qt4/libQtSql.so.%%SHLIB_SHVER%%
 lib/qt4/libQtSql.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtSql.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtSql.pc
+@dirrmtry lib/qt4
 @dirrm include/qt4/QtSql
 @dirrmtry include/qt4/Qt
 @dirrmtry include/qt4
