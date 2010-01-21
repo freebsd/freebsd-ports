@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	3.0
-PORTREVISION=	1
+DISTVERSION=	3.0.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source/
@@ -84,7 +83,6 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 post-extract::
 	${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
-	${LN} -s  ${WRKSRC}/mail ${WRKSRC}/mozilla/mail
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
