@@ -26,15 +26,6 @@
        sizeof(GtkCompletionLine),
        sizeof(GtkCompletionLineClass),
        (GtkClassInitFunc)gtk_completion_line_class_init,
-@@ -376,7 +377,7 @@
-   return 0;
- }
- 
--int my_alphasort(const void* va, const void* vb) {
-+int my_alphasort(const struct dirent** va, const struct dirent** vb) {
-   const struct dirent** a = (const struct dirent**)va;
-   const struct dirent** b = (const struct dirent**)vb;
- 
 @@ -551,10 +552,10 @@
  {
    string text = gtk_entry_get_text(GTK_ENTRY(object));

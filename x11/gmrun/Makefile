@@ -30,6 +30,16 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+.if ${OSVERSION} >= 900006
+	@${REINPLACE_CMD} -e '/my_alphasort/s#const void\*#const struct dirent**#g' \
+		${WRKSRC}/src/gtkcompletionline.cc
+.else
+	@${REINPLACE_CMD} -e '/select_executables_only(const /s#const ##' \
+		${WRKSRC}/src/gtkcompletionline.cc
+.endif
+	
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
