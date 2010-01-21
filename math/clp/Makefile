@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Clp
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.11.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
 		http://www.mavetju.org/download/adopted/
@@ -17,9 +16,6 @@ MAINTAINER=	co9co9@gmail.com
 COMMENT=	Linear Programming Solver
 
 LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack
-.ifdef WITH_GMPL
-LIB_DEPENDS+=	glpk.27:${PORTSDIR}/math/glpk
-.endif
 
 USE_FORTRAN=	yes
 CXXFLAGS+=	-ffast-math -fomit-frame-pointer
@@ -30,10 +26,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	${MAKE_ENV}
 CONFIGURE_ARGS=	--with-blas="-L${LOCALBASE}/lib -lblas"		\
 		--with-lapack="-L${LOCALBASE}/lib -llapack"
-.ifdef WITH_GMPL
-CONFIGURE_ARGS+=--with-gmpl-incdir=${LOCALBASE}/include	\
-		--with-gmpl-lib="-L${LOCALBASE}/lib -lglpk"
-.endif
 
 regression-test: build
 	(cd ${WRKSRC}/Clp && ${MAKE} unitTest )
