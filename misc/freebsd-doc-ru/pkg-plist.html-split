@@ -42,6 +42,14 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-clients.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-configuring-printers.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-configuring-server.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-install.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-ports-knobs.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-troubleshooting.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/configuring-ports-gcc.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/index.html
