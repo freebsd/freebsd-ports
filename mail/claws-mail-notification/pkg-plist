@@ -1,3 +1,14 @@
+include/notification_plugin/gtkhotkey/eggaccelerators.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-error.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-info.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-key-file-registry.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-listener.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-marshal.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-registry.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-utils.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-x11-listener.h
+include/notification_plugin/gtkhotkey/gtkhotkey.h
+include/notification_plugin/gtkhotkey/tomboykeybinder.h
 lib/claws-mail/plugins/notification_plugin.a
 lib/claws-mail/plugins/notification_plugin.la
 lib/claws-mail/plugins/notification_plugin.so
@@ -10,6 +21,10 @@ lib/claws-mail/plugins/notification_plugin.so
 %%NLS%%share/locale/id/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/notification_plugin.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/notification_plugin.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/notification_plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/notification_plugin.mo
+@dirrm include/notification_plugin/gtkhotkey
+@dirrm include/notification_plugin
