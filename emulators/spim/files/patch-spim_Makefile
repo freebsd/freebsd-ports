@@ -1,23 +1,23 @@
---- spim/Makefile.orig	2009-01-02 04:51:25.000000000 +0900
-+++ spim/Makefile	2009-01-21 03:38:23.000000000 +0900
-@@ -54,13 +54,13 @@
+--- spim/Makefile.orig	2010-01-09 14:22:57.000000000 +0900
++++ spim/Makefile	2010-01-17 01:44:59.000000000 +0900
+@@ -66,13 +66,13 @@
  
  
  # Full path for the directory that will hold the executable files:
--BIN_DIR = /usr/bin
+-BIN_DIR = /usr/local/bin
 +BIN_DIR = ${PREFIX}/bin
  
  # Full path for the directory that will hold the exception handler:
--EXCEPTION_DIR = /usr/lib/spim
+-EXCEPTION_DIR = /usr/local/lib/spim
 +EXCEPTION_DIR = ${PREFIX}/share/spim
  
  # Full path for the directory that will hold the man files:
--MAN_DIR = /usr/share/man/en
+-MAN_DIR = /usr/local/man/en
 +MAN_DIR = ${MANPREFIX}/man/man1
  
  
  # If you have flex, use it instead of lex.  If you use flex, define this
-@@ -92,12 +92,12 @@
+@@ -104,12 +104,12 @@
  
  DEFINES = $(ENDIAN) $(MEM_SIZES) -DDEFAULT_EXCEPTION_HANDLER="\"$(EXCEPTION_DIR)/exceptions.s\"" -DSPIM_VERSION="\"`cat ../VERSION`\""
  
@@ -34,7 +34,7 @@
  
  # lex.yy.c is usually compiled with -O to speed it up.
  
-@@ -110,10 +110,10 @@
+@@ -122,10 +122,10 @@
  
  
  spim:   force
@@ -47,7 +47,7 @@
  
  
  force:	configuration
-@@ -196,7 +196,7 @@
+@@ -211,7 +211,7 @@
  y.tab.h: y.tab.c
  
  y.tab.c: $(CPU_DIR)/parser.y
