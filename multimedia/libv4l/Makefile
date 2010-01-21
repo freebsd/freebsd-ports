@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libv4l
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.fedoraproject.org/~jwrdegoede/
 
@@ -23,6 +23,12 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
+.if ${OSVERSION} < 700000
+	@${REINPLACE_CMD} -e 's|-fvisibility=hidden||g' -e 's|-lrt||g'  \
+		${WRKSRC}/libv4l1/Makefile \
+		${WRKSRC}/libv4l2/Makefile \
+		${WRKSRC}/libv4lconvert/Makefile
+.endif
 	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/libv4l1/Makefile \
 		${WRKSRC}/libv4l2/Makefile \
