@@ -25,6 +25,12 @@ ALL_TARGET=
 DATADIR=	${PREFIX}/${PORTNAME}
 REINPLACE_SUB=	DATADIR="${DATADIR}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
+.endif
+
 _MANPREFIX=	${DATADIR}/usr/share/man/5man
 _MSECS=		1 1b 1m 2 3 4 5 6 7 8
 
@@ -96,4 +102,4 @@ install-doc:
 #. endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

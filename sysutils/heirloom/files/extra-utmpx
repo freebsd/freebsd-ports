@@ -1,0 +1,158 @@
+--- libcommon/_utmpx.h.orig	2006-01-22 20:06:14.000000000 +0100
++++ libcommon/_utmpx.h	2010-01-21 21:50:34.000000000 +0100
+@@ -26,7 +26,12 @@
+ 	defined (__DragonFly__) || defined (__APPLE__)
+ #include <sys/types.h>
+ #include <sys/time.h>
+-#include <utmp.h>
++
++#include <sys/param.h>
++#if defined(__FreeBSD__) && __FreeBSD_version >= 900007
++# include "/usr/include/utmpx.h"
++#else
++# include <utmp.h>
+ 
+ #ifndef	__dietlibc__
+ struct utmpx {
+@@ -83,6 +88,7 @@
+ extern struct utmpx	*getutxline(const struct utmpx *);
+ extern struct utmpx	*pututxline(const struct utmpx *);
+ extern void		setutxent(void);
++#endif /*!__FreeBSD__ && __FreeBSD_version >= 900007*/
+ extern int		utmpxname(const char *);
+ extern void		updwtmpx(const char *, const struct utmpx *);
+ #endif	/* __FreeBSD__ || __dietlibc__ || __NetBSD__ || __UCLIBC__ ||
+--- libcommon/utmpx.c.orig	2006-01-22 20:06:14.000000000 +0100
++++ libcommon/utmpx.c	2010-01-21 21:58:07.000000000 +0100
+@@ -28,14 +28,16 @@
+ 	defined (__DragonFly__) || defined (__APPLE__)
+ #include <sys/types.h>
+ #include <sys/time.h>
+-#include <utmp.h>
+ #include <string.h>
+ 
+ #include "utmpx.h"
+ 
+ static FILE	*utfp;
+ static struct utmpx	utx;
+-static const char	*utmpfile = _PATH_UTMP;
++static const char	*utmpfile = NULL;
++
++#include <sys/param.h>
++#if !(defined(__FreeBSD__) && __FreeBSD_version >= 900007)
+ 
+ static FILE *
+ init(void)
+@@ -198,13 +200,6 @@
+ 	fclose(fp);
+ }
+ 
+-int
+-utmpxname(const char *name)
+-{
+-	utmpfile = strdup(name);
+-	return 0;
+-}
+-
+ extern struct utmpx *
+ pututxline(const struct utmpx *up)
+ {
+@@ -235,6 +230,15 @@
+ 	return rp;
+ }
+ 
++#endif /*!__FreeBSD__ && __FreeBSD_version >= 900007*/
++
++int
++utmpxname(const char *name)
++{
++	utmpfile = strdup(name);
++	return 0;
++}
++
+ extern void
+ updwtmpx(const char *name, const struct utmpx *up)
+ {
+--- who/who.c.orig	2010-01-21 22:02:24.000000000 +0100
++++ who/who.c	2010-01-21 22:07:45.000000000 +0100
+@@ -129,8 +129,11 @@
+ 
+ 	if (u->ut_type == LOGIN_PROCESS)
+ 		cp = "LOGIN";
+-	else if (u->ut_type == BOOT_TIME || u->ut_type == RUN_LVL ||
+-			u->ut_user[0] == '\0')
++#if defined(__FreeBSD__) && __FreeBSD_version >= 900007
++	else if (u->ut_type == BOOT_TIME || u->ut_user[0] == '\0')
++#else
++	else if (u->ut_type == BOOT_TIME || u->ut_type == RUN_LVL || u->ut_user[0] == '\0')
++#endif
+ 		cp = "   .";
+ 	else
+ 		cp = u->ut_user;
+@@ -147,11 +150,16 @@
+ 	} else
+ 		c = ' ';
+ 	printf("%c ", c);
++
++#if !(defined(__FreeBSD__) && __FreeBSD_version >= 900007)
+ 	if (u->ut_type == RUN_LVL) {
+ 		snprintf(buf, sizeof buf, "run-level %c",
+ 				(int)(u->ut_pid & 0377));
+ 		cp = buf;
+-	} else if (u->ut_type == BOOT_TIME)
++	} else
++	    
++#endif
++	    if (u->ut_type == BOOT_TIME)
+ 		cp = "system boot";
+ 	else if (u->ut_line[0] == '\0')
+ 		cp = "     .";
+@@ -189,7 +197,11 @@
+ 				cp = "  .  ";
+ 			printf(" %s", cp);
+ 		}
+-		if (u->ut_type != RUN_LVL && u->ut_type != BOOT_TIME
++		if (
++#if !(defined(__FreeBSD__) && __FreeBSD_version >= 900007)
++			u->ut_type != RUN_LVL &&
++#endif
++			u->ut_type != BOOT_TIME
+ #ifdef	ACCOUNTING
+ 				&& u->ut_type != ACCOUNTING
+ #endif	/* ACCOUNTING */
+@@ -203,7 +215,7 @@
+ #endif	/* __hpux */
+ 		printf("  id=%4.4s term=%-3d exit=%d",
+ 				u->ut_id,
+-#if !defined (_AIX) || !defined (__APPLE__)
++#if (!defined (_AIX) || !defined (__APPLE__)) && !defined(__FreeBSD__)
+ 				u->ut_exit.e_termination,
+ 				u->ut_exit.e_exit
+ #else	/* _AIX, __APPLE__ */
+@@ -213,9 +225,12 @@
+ 				);
+ 	else if (u->ut_type == INIT_PROCESS && !sflag)
+ 		printf("  id=%4.4s", u->ut_id);
++
++#if !(defined(__FreeBSD__) && __FreeBSD_version >= 900007)
+ 	else if (u->ut_type == RUN_LVL)
+ 		printf("    %c    %-4ld %c", (int)(u->ut_pid & 0377),
+ 				0L, (int)((u->ut_pid & 0177777) / 0400));
++#endif
+ 	if (Rflag && u->ut_host[0])
+ 		printf("\t(%.*s)", (int)sizeof u->ut_host, u->ut_host);
+ 	putchar('\n');
+@@ -227,10 +242,13 @@
+ 	enum okay	val = STOP;
+ 
+ 	switch (u->ut_type) {
++
++#if !(defined(__FreeBSD__) && __FreeBSD_version >= 900007)
+ 	case RUN_LVL:
+ 		if (flags & FL_r)
+ 			val = OKAY;
+ 		break;
++#endif
+ 	case BOOT_TIME:
+ 		if (flags & FL_b)
+ 			val = OKAY;
