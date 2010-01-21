@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kumofs
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -23,13 +23,17 @@ WRKSRC=		${WRKDIR}/etolabo-kumofs-${GIT_REVISION}
 USE_AUTOTOOLS=	libtool:22 autoheader:262 autoconf:262 automake:110 aclocal:110
 ACLOCAL_ARGS=	# empty
 AUTOMAKE_ARGS=	--add-missing --copy
-CONFIGURE_ARGS=	--with-msgpack=${LOCALBASE}
+CONFIGURE_ARGS=	--with-msgpack=${LOCALBASE} --with-tokyocabinet=${LOCALBASE}
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_RUBY=	yes
 
-GIT_REVISION=	2a0c402
+GIT_REVISION=	03cb7f8
 
-MAN1=	kumoctl.1 \
+MAN1=	kumo-gateway.1 \
+	kumo-manager.1 \
+	kumo-server.1 \
+	kumoctl.1 \
 	kumohash.1 \
 	kumolog.1 \
 	kumomergedb.1 \
@@ -40,4 +44,10 @@ pre-configure:
 	cd ${WRKSRC}; ${TOUCH} README
 	cd ${WRKSRC}; ${LIBTOOLIZE} --force --copy
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
+.endif
+
+.include <bsd.port.post.mk>
