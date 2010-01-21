@@ -1,0 +1,11 @@
+--- transports/mailbox/mailbox.c.orig	2010-01-21 14:29:58.000000000 +0100
++++ transports/mailbox/mailbox.c	2010-01-21 14:30:06.000000000 +0100
+@@ -159,7 +159,7 @@
+ #endif	/* HAVE_SOCKET */
+ 
+ #ifdef HAVE_PROTOCOLS_RWHOD_H
+-#include <utmp.h>
++#include <utmpx.h>
+ #include <protocols/rwhod.h>
+ #define RWHODIR		"/var/spool/rwho"
+ #define	WHDRSIZE	(sizeof (wd) - sizeof (wd.wd_we))
