@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	spim
-PORTVERSION=	7.5
+PORTVERSION=	8.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://pages.cs.wisc.edu/~larus/SPIM/
 
