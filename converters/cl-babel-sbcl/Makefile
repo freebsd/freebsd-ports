@@ -13,10 +13,10 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A charset encoding/decoding library written in Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/devel/cl-babel \
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/sbclfasl/src/tf-sbcl.fasl:${PORTSDIR}/devel/cl-trivial-features-sbcl \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-gray-streams/sbclfasl/package.fasl:${PORTSDIR}/devel/cl-trivial-gray-streams-sbcl
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/devel/cl-babel \
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/sbclfasl/src/tf-sbcl.fasl:${PORTSDIR}/devel/cl-trivial-features-sbcl \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-gray-streams/sbclfasl/package.fasl:${PORTSDIR}/devel/cl-trivial-gray-streams-sbcl
 
