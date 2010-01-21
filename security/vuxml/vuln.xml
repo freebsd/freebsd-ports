@@ -436,6 +436,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>linux-seamonkey</name>
 	<range><lt>2.0.1</lt></range>
       </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.1</lt></range>
+      </package>
 
     </affects>
     <description>
@@ -477,6 +481,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-12-16</discovery>
       <entry>2009-12-16</entry>
+      <modified>2010-01-21</modified>
     </dates>
   </vuln>
 
