@@ -9,7 +9,7 @@ PORTNAME=	feappv
 PORTVERSION=	2.0
 PORTREVISION=	5
 CATEGORIES=	cad science
-MASTER_SITES=	http://www.ce.berkeley.edu/~rlt/feappv/
+MASTER_SITES=	http://www.ce.berkeley.edu/projects/feap/feappv/
 MASTER_SITE_SUBDIR=	feap
 DISTFILES=	${PORTNAME}20${EXTRACT_SUFX}
 .ifndef NOPORTDOCS
@@ -39,7 +39,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/main/feappv ${PREFIX}/bin/feappv
-	@${INSTALL_DATA} ${WRKSRC}/Feappv.a ${PREFIX}/lib/libfeappv.a
+	@${INSTALL_DATA} ${WRKSRC}/libfeappv.a ${PREFIX}/lib/
 .ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
