@@ -52,7 +52,8 @@ PLIST_SUB+=	RTHOME=${RTHOME}
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
-	    ${SETENV} -u PREFIX ${CONFIGURE_ENV} ${PERL5} -I${RT_PM_DIR} ./${CONFIGURE_SCRIPT} && \
+	    unset PREFIX && \
+	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${RT_PM_DIR} ./${CONFIGURE_SCRIPT} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
 .include <bsd.port.mk>
