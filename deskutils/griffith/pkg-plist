@@ -63,7 +63,6 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/about.py
 %%DATADIR%%/lib/add.py
 %%DATADIR%%/lib/advfilter.py
-%%DATADIR%%/lib/amazon.py
 %%DATADIR%%/lib/backup.py
 %%DATADIR%%/lib/config.py
 %%DATADIR%%/lib/cover.py
@@ -75,6 +74,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/delete.py
 %%DATADIR%%/lib/edit.py
 %%DATADIR%%/lib/gconsole.py
+%%DATADIR%%/lib/gdebug.py
 %%DATADIR%%/lib/gemail.py
 %%DATADIR%%/lib/griffith
 %%DATADIR%%/lib/gutils.py
@@ -94,9 +94,27 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/export/PluginExportXML.py
 %%DATADIR%%/lib/plugins/export/PluginExportiPod.py
 %%DATADIR%%/lib/plugins/export/__init__.py
+%%DATADIR%%/lib/plugins/extensions/__init__.py
+%%DATADIR%%/lib/plugins/extensions/amazon.py
+%%DATADIR%%/lib/plugins/extensions/ge_amazon.py
+%%DATADIR%%/lib/plugins/extensions/ge_mark_seen.py
+%%DATADIR%%/lib/plugins/extensions/ge_movieposterdb.py
+%%DATADIR%%/lib/plugins/extensions/ge_player.py
+%%DATADIR%%/lib/plugins/extensions/ge_remover.py
 %%DATADIR%%/lib/plugins/imp/AMC.py
+%%DATADIR%%/lib/plugins/imp/AllMyMovies.py
+%%DATADIR%%/lib/plugins/imp/BESTheMovieLibrary.py
 %%DATADIR%%/lib/plugins/imp/CSV.py
+%%DATADIR%%/lib/plugins/imp/DVDProfiler.py
+%%DATADIR%%/lib/plugins/imp/FoxMovieManager.py
+%%DATADIR%%/lib/plugins/imp/GCstar.py
+%%DATADIR%%/lib/plugins/imp/MovieTrack.py
+%%DATADIR%%/lib/plugins/imp/MyDVDs.py
+%%DATADIR%%/lib/plugins/imp/PersonalVideoDatabase.py
+%%DATADIR%%/lib/plugins/imp/TheMovieLibrary.py
+%%DATADIR%%/lib/plugins/imp/WintoolzFilmdatenbank.py
 %%DATADIR%%/lib/plugins/imp/__init__.py
+%%DATADIR%%/lib/plugins/imp/eXtremeMovieManager.py
 %%DATADIR%%/lib/plugins/movie/PluginMovie7arte.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAllMovie.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAllocine.py
@@ -152,6 +170,7 @@ share/locale/fa/LC_MESSAGES/griffith.mo
 share/locale/fi/LC_MESSAGES/griffith.mo
 share/locale/fr/LC_MESSAGES/griffith.mo
 share/locale/hu/LC_MESSAGES/griffith.mo
+share/locale/hr/LC_MESSAGES/griffith.mo
 share/locale/id/LC_MESSAGES/griffith.mo
 share/locale/it/LC_MESSAGES/griffith.mo
 share/locale/ja/LC_MESSAGES/griffith.mo
@@ -178,6 +197,7 @@ share/pixmaps/griffith.xpm
 @dirrmtry share/locale/nds
 @dirrm %%DATADIR%%/lib/plugins/movie
 @dirrm %%DATADIR%%/lib/plugins/imp
+@dirrm %%DATADIR%%/lib/plugins/extensions
 @dirrm %%DATADIR%%/lib/plugins/export
 @dirrm %%DATADIR%%/lib/plugins
 @dirrm %%DATADIR%%/lib/db

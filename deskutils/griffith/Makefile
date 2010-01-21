@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	griffith
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	deskutils
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	http://launchpadlibrarian.net/37682783/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
