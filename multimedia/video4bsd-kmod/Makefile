@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	video4bsd-kmod
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
