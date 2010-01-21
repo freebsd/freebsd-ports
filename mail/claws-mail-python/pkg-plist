@@ -1,5 +1,12 @@
 lib/claws-mail/plugins/python_plugin.a
 lib/claws-mail/plugins/python_plugin.la
 lib/claws-mail/plugins/python_plugin.so
-@dirrmtry lib/claws-mail/plugins
-@dirrmtry lib/claws-mail
+%%NLS%%share/locale/ca/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/id/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/python_plugin.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/python_plugin.mo
