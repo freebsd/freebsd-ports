@@ -1,5 +1,5 @@
 --- mDNSShared/CommonServices.h.orig	2009-03-31 04:51:29.000000000 +0900
-+++ mDNSShared/CommonServices.h	2010-01-13 13:10:59.000000000 +0900
++++ mDNSShared/CommonServices.h	2010-01-21 16:07:24.000000000 +0900
 @@ -92,6 +92,15 @@
  	#endif
  #endif
@@ -25,7 +25,7 @@
  		#define	TARGET_OS_VXWORKS		1
  	#else
  		#define	TARGET_OS_VXWORKS		0
-@@ -217,6 +226,13 @@
+@@ -217,6 +226,15 @@
  	#include	<libkern/OSTypes.h>
  	#include	<sys/types.h>
  	
@@ -33,13 +33,15 @@
 +
 +	// FreeBSD
 +	#include	<stdint.h>
++	#include	<pthread.h>
 +	#include	<netinet/in.h>
 +	#include	<arpa/inet.h>
++	#include	<sys/socket.h>
 +
  #elif( TARGET_OS_LINUX )
  	
  	// Linux
-@@ -493,7 +509,7 @@
+@@ -493,7 +511,7 @@
  // - Windows
  
  #if( TARGET_LANGUAGE_C_LIKE )
