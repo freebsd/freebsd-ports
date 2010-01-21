@@ -1,6 +1,7 @@
 lib/claws-mail/plugins/bsfilter.a
 lib/claws-mail/plugins/bsfilter.la
 lib/claws-mail/plugins/bsfilter.so
+%%NLS%%share/locale/ca/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bsfilter_plugin.mo
@@ -9,6 +10,7 @@ lib/claws-mail/plugins/bsfilter.so
 %%NLS%%share/locale/id/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bsfilter_plugin.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/bsfilter_plugin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bsfilter_plugin.mo
-@dirrm lib/claws-mail/plugins
-@dirrm lib/claws-mail
+%%NLS%%share/locale/sk/LC_MESSAGES/bsfilter_plugin.mo
