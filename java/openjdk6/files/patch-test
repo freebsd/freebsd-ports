@@ -1,0 +1,132 @@
+--- jdk/test/java/nio/channels/SocketChannel/LocalAddress.java.orig	2010-01-18 12:03:26.000000000 +0100
++++ jdk/test/java/nio/channels/SocketChannel/LocalAddress.java	2010-01-18 12:03:42.000000000 +0100
+@@ -40,7 +40,7 @@
+         InetAddress bogus = InetAddress.getByName("0.0.0.0");
+         SocketChannel sc = SocketChannel.open();
+         InetSocketAddress saddr = new InetSocketAddress(
+-            InetAddress.getByName(TestEnv.getProperty("host")), 23);
++            InetAddress.getByName(TestEnv.getProperty("host")), 7);
+ 
+         //Test1: connect only
+         sc.connect(saddr);
+--- jdk/test/java/nio/channels/SocketChannel/Shutdown.java.orig	2010-01-18 12:04:09.000000000 +0100
++++ jdk/test/java/nio/channels/SocketChannel/Shutdown.java	2010-01-18 12:04:20.000000000 +0100
+@@ -35,7 +35,7 @@
+ 
+     public static void main(String args[]) throws Exception {
+         InetSocketAddress sa = new InetSocketAddress(
+-            InetAddress.getByName(TestEnv.getProperty("host")), 23);
++            InetAddress.getByName(TestEnv.getProperty("host")), 7);
+         SocketChannel sc = SocketChannel.open(sa);
+         boolean before = sc.socket().isInputShutdown();
+         sc.socket().shutdownInput();
+--- jdk/test/sun/net/InetAddress/nameservice/dns/cname.sh.orig	2010-01-18 12:04:54.000000000 +0100
++++ jdk/test/sun/net/InetAddress/nameservice/dns/cname.sh	2010-01-18 12:05:15.000000000 +0100
+@@ -33,7 +33,7 @@
+ 
+ # The host that we try to resolve
+ 
+-HOST=webcache.sfbay.sun.com
++HOST=developer.classpath.org
+ 
+ # fail gracefully if DNS is not configured or there 
+ # isn't a CNAME record.
+--- jdk/test/TestEnv.java.orig	2010-01-18 12:05:45.000000000 +0100
++++ jdk/test/TestEnv.java	2010-01-18 12:06:40.000000000 +0100
+@@ -65,14 +65,14 @@
+         // Reachable host with the following services running:
+         // - echo service (port 7)
+         // - day time port (port 13)
+-        { "host", "javaweb.sfbay.sun.com"  },
++        { "host", "icedtea.classpath.org"  },
+ 
+         // Reachable host that refuses connections to port 80
+-        { "refusing_host", "jano1.sfbay.sun.com" },
++        { "refusing_host", "ns1.gnu.org" },
+ 
+         // Reachable host that is of sufficient hops away that a connection
+         // takes a while to be established (connect doesn't complete immediatly)
+-        { "far_host", "irejano.ireland.sun.com" },
++        { "far_host", "developer.classpath.org" },
+ 
+         // Hostname that cannot be resolved by named service
+         { "unresovable_host", "blah-blah.blah-blah.blah" },
+--- jdk/test/java/io/File/GetXSpace.java.orig	2010-01-20 14:12:07.000000000 +0100
++++ jdk/test/java/io/File/GetXSpace.java	2010-01-20 14:12:25.000000000 +0100
+@@ -49,7 +49,7 @@
+     private static final String name = System.getProperty("os.name");
+     private static final String dfFormat;
+     static {
+-        if (name.equals("SunOS") || name.equals("Linux")) {
++        if (name.equals("FreeBSD") || name.equals("SunOS") || name.equals("Linux")) {
+             // FileSystem Total Used Available Use% MountedOn
+             dfFormat = "([^\\s]+)\\s+(\\d+)\\s+\\d+\\s+(\\d+)\\s+\\d+%\\s+([^\\s]+)";
+         } else if (name.startsWith("Windows")) {
+--- jdk/test/tools/pack200/MemoryAllocatorTest.java.orig	2010-01-20 14:47:29.000000000 +0100
++++ jdk/test/tools/pack200/MemoryAllocatorTest.java	2010-01-20 14:48:02.000000000 +0100
+@@ -81,6 +81,7 @@
+ 
+     static final boolean debug = Boolean.getBoolean("MemoryAllocatorTest.Debug");
+     static final boolean WINDOWS = System.getProperty("os.name").startsWith("Windows");
++    static final boolean FREEBSD = System.getProperty("os.name").startsWith("FreeBSD");
+     static final boolean LINUX = System.getProperty("os.name").startsWith("Linux");
+     static final boolean SIXTYFOUR_BIT = System.getProperty("sun.arch.data.model", "32").equals("64");
+     static final private int NATIVE_EXPECTED_EXIT_CODE = (WINDOWS) ? -1 : 255;
+@@ -424,7 +425,7 @@
+          * the error message is not accurate for us to discern if the test
+          * passes successfully.
+          */
+-        if (SIXTYFOUR_BIT && (LINUX || WINDOWS)) {
++        if (SIXTYFOUR_BIT && (FREEBSD || LINUX || WINDOWS)) {
+             System.out.println("Warning: Windows/Linux 64bit tests passes vacuously");
+             return;
+         }
+--- jdk/test/tools/pack200/Pack200Simple.sh.orig	2010-01-20 14:48:44.000000000 +0100
++++ jdk/test/tools/pack200/Pack200Simple.sh	2010-01-20 14:50:05.000000000 +0100
+@@ -134,7 +134,7 @@
+   # A quick crc compare test to ensure a well formed zip
+   # archive, this is a critical unpack200 behaviour.
+ 
+-  unzip -t $jfName > ${jfName}.unzip.log 2>&1 
++  ${LOCALBASE}/bin/unzip -t $jfName > ${jfName}.unzip.log 2>&1 
+   if [ $? != 0 ]; then
+     errorOut "$jfName unzip -t test failed"
+   fi
+--- jdk/test/java/lang/ProcessBuilder/Zombies.java.orig	2010-01-20 15:54:25.000000000 +0100
++++ jdk/test/java/lang/ProcessBuilder/Zombies.java	2010-01-20 15:54:41.000000000 +0100
+@@ -49,11 +49,11 @@
+         } catch (IOException _) {/* OK */}
+ 
+         try {
+-            rt.exec("/bin/true", null, new File("no-such-dir"));
++            rt.exec("/usr/bin/true", null, new File("no-such-dir"));
+             throw new Error("expected IOException not thrown");
+         } catch (IOException _) {/* OK */}
+ 
+-        rt.exec("/bin/true").waitFor();
++        rt.exec("/usr/bin/true").waitFor();
+ 
+         // Count all the zombies that are children of this Java process
+         final String[] zombieCounter = {
+--- jdk/test/java/lang/ProcessBuilder/Basic.java.orig	2010-01-20 16:02:00.000000000 +0100
++++ jdk/test/java/lang/ProcessBuilder/Basic.java	2010-01-20 16:05:07.000000000 +0100
+@@ -1096,7 +1096,7 @@
+             String[] cmdp = childArgs.toArray(new String[childArgs.size()]);
+             String[] envp = {"=ExitValue=3", "=C:=\\"};
+             Process p = Runtime.getRuntime().exec(cmdp, envp);
+-            String expected = Windows.is() ? "=C:=\\,=ExitValue=3," : "=C:=\\,";
++            String expected = Windows.is() ? "=C:=\\,=ExitValue=3," : "";
+             equal(commandOutput(p), expected);
+             if (Windows.is()) {
+                 ProcessBuilder pb = new ProcessBuilder(childArgs);
+--- jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java.orig	2010-01-20 16:17:05.000000000 +0100
++++ jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	2010-01-20 16:19:55.000000000 +0100
+@@ -79,7 +79,7 @@
+         System.out.println("Test passed.");
+     }
+ 
+-    private static String LOAD_AVERAGE_TEXT = "load average:";
++    private static String LOAD_AVERAGE_TEXT = "load averages:";
+     private static void checkLoadAvg() throws Exception {
+         // Obtain load average from OS command
+         ProcessBuilder pb = new ProcessBuilder("/usr/bin/uptime");

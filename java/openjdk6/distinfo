@@ -4,3 +4,6 @@ SIZE (openjdk-6-src-b17-14_oct_2009.tar.gz) = 50029293
 MD5 (apache-ant-1.7.1-bin.tar.bz2) = 9330447f3763b87570dd1118c49a8efd
 SHA256 (apache-ant-1.7.1-bin.tar.bz2) = 24e54c9d90b81d1b7342695a8285a969393fd883e99ffbbc04203c106d9c2f97
 SIZE (apache-ant-1.7.1-bin.tar.bz2) = 7641928
+MD5 (jtreg-4_0-bin-b03-31_mar_2009.zip) = 99c4c119c2dd8e7a39c184896a56a00e
+SHA256 (jtreg-4_0-bin-b03-31_mar_2009.zip) = 919b3da574a8bfb96a53d9550a0cb2482dc08df6ce3e7042235e0e9067c832e6
+SIZE (jtreg-4_0-bin-b03-31_mar_2009.zip) = 4824967
