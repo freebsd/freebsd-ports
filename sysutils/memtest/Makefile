@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memtest
-PORTVERSION=	4.0.8
+PORTVERSION=	4.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/old-versions/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
@@ -20,9 +20,14 @@ PLIST_FILES=	bin/memtest
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|' \
 		${WRKSRC}/conf-cc
+	@${MV} ${WRKSRC}/${PORTNAME}er.8 ${WRKSRC}/${MAN8}
+	@${REINPLACE_CMD} -e 's|${PORTNAME}er |${PORTNAME} |g' \
+			  -e 's| ${PORTNAME}er| ${PORTNAME}|' \
+			  -e "s|${PORTNAME}er's|${PORTNAME}'s|" \
+		${WRKSRC}/${MAN8}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}er ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/${MAN8:S/./er./g} ${PREFIX}/man/man8/${MAN8}
+	@${INSTALL_MAN} ${WRKSRC}/${MAN8} ${PREFIX}/man/man8/${MAN8}
 
 .include <bsd.port.mk>
