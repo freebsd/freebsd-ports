@@ -35,4 +35,4 @@
  
  # Archive name
 -ARFEAP = /home/rlt/Feappv/ver20/Feappv.a
-+ARFEAP = %%WRKSRC%%/Feappv.a
++ARFEAP = %%WRKSRC%%/libfeappv.a
