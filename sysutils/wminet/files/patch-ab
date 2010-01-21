@@ -1,5 +1,5 @@
---- wminet.c.orig	Fri Dec 18 06:07:27 1998
-+++ wminet.c	Thu Aug 16 11:08:44 2001
+--- wminet.c
++++ wminet.c
 @@ -10,6 +10,8 @@
  
   ProFTPD support by Mike Kershaw aka Dragorn (dragorn@melchior.nerv-un.ml.org)
@@ -21,10 +21,10 @@
  
  #include <sys/wait.h>
  #include <sys/stat.h>
-@@ -30,6 +37,23 @@
- #include <sys/types.h>
+@@ -31,7 +38,29 @@
  #include <sys/ioctl.h>
  #include <sys/socket.h>
+ 
 +#ifdef __FreeBSD__
 +#include <sys/socketvar.h>
 +#include <sys/sysctl.h>
@@ -42,10 +42,16 @@
 +
 +#include <arpa/inet.h>
 +#endif /* __FreeBSD__ */
- 
++
++#if __FreeBSD_version >= 900007
++#include <utmpx.h>
++#else
  #include <utmp.h>
++#endif
  #include <dirent.h>
-@@ -57,6 +81,10 @@
+ 
+ #include <X11/Xlib.h>
+@@ -57,6 +86,10 @@
  // Lame work-around... Sigh... when will they standardize the headers!?!?
  #define TCP_ESTABLISHED 1
  
@@ -56,21 +62,27 @@
  extern	char **environ;
  
  char	*ProgName;
-@@ -101,6 +129,13 @@
+@@ -101,6 +134,19 @@
  
  char uconfig_file[256];
  
-+#ifdef __FreeBSD__
++#if __FreeBSD_version >= 900007
++#define	utmp		utmpx
++#define	setutent	setutxent
++#define	getutent	getutxent
++#define	endutent	endutxent
++#define	ut_name		ut_user
++#else
 +struct utmp *_wminet_getutent(FILE *);
 +#define setutent() { FILE *_wminet__ufp = fopen(_PATH_UTMP, "r")
 +#define getutent() _wminet_getutent(_wminet__ufp)
 +#define endutent() fclose(_wminet__ufp); }
-+#endif /* __FreeBSD__ */
++#endif
 +
  void usage(void);
  void printversion(void);
  void BlitString(char *name, int x, int y);
-@@ -109,10 +144,22 @@
+@@ -109,10 +155,22 @@
  void wminet_routine(int, char **);
  int PortWatch( short port );
  int ReadConfigInt(FILE *fp, char *setting, int *value);
@@ -79,7 +91,7 @@
  int Read_Config_File( char *filename );
  
  
-+#ifdef __FreeBSD__
++#if __FreeBSD_version < 900007
 +inline
 +struct utmp *_wminet_getutent( FILE *fp )
 +{
@@ -89,12 +101,12 @@
 +   else
 +      return NULL;
 +}
-+#endif /* __FreeBSD__ */
++#endif
 +
  int main(int argc, char *argv[]) {
  
  	int		i;
-@@ -149,7 +196,7 @@
+@@ -149,7 +207,7 @@
              case 'c' :
                  if (argc > (i+1))
                  {
@@ -103,7 +115,7 @@
                      i++;
                  }
                  break;
-@@ -214,12 +261,12 @@
+@@ -214,12 +272,12 @@
      }
      else
      {
@@ -118,7 +130,7 @@
          
              Read_Config_File(config_file);
          }
-@@ -240,13 +287,13 @@
+@@ -240,13 +298,13 @@
                  if (use_proftpd)
                  {
                      if (strstr(dent->d_name, "proftpd-") != NULL)
@@ -134,7 +146,7 @@
                          //printf("ftppidfile: %s\n", dent->d_name);
                      }
                  }
-@@ -422,7 +469,6 @@
+@@ -422,7 +480,6 @@
      char seps[]={"/"};
      char sep2[]={":"};
      char sep3[]={" "};
@@ -142,23 +154,21 @@
  #ifdef HTTP_MONITOR_PROC
      DIR *dir;
      struct dirent *dent;
-@@ -439,8 +485,13 @@
+@@ -439,8 +496,11 @@
          setutent();
          while ((ut = getutent()))
          {
 -            if ((ut->ut_type == USER_PROCESS) && 
 -		(ut->ut_name[0] != '\0'))
-+            if (
-+#ifdef __FreeBSD__
-+                (ut->ut_line[0] != '\0')
++#if __FreeBSD_version >= 900007
++            if (ut->ut_type == USER_PROCESS)
 +#else
-+                (ut->ut_type == USER_PROCESS)
-+#endif /* __FreeBSD__ */
-+		&& (ut->ut_name[0] != '\0'))
++            if (ut->ut_line[0] != '\0' && ut->ut_name[0] != '\0')
++#endif
              {
                  nUsers++;
              }
-@@ -459,7 +510,7 @@
+@@ -459,7 +519,7 @@
              logrun_t runent;
              logrun_header_t head;
  
@@ -167,7 +177,7 @@
  
              if (( fd = open(buf, O_RDONLY, 0644)) == -1)
              {
-@@ -486,7 +537,7 @@
+@@ -486,7 +546,7 @@
          } else {
              for (i=0; i!= numftpclasses; i++)
              {
@@ -176,7 +186,7 @@
                  //printf("opening '%s'\n", buf);
                  fp = fopen(buf, "r");
                  if (fp)
-@@ -508,11 +559,10 @@
+@@ -508,11 +568,10 @@
      // httpd processes
      nHttp = 0;
  
@@ -189,7 +199,7 @@
          dir = opendir("/proc");
          if (dir)
          {
-@@ -520,7 +570,7 @@
+@@ -520,7 +579,7 @@
              {
                  if (!isalpha(dent->d_name[0]))
                  {
@@ -198,7 +208,7 @@
                      //printf("opening '%s'\n", buf);
                      fp=fopen(buf, "r");
                      if (fp)
-@@ -544,41 +594,7 @@
+@@ -544,41 +603,7 @@
  #ifdef HTTP_MONITOR_NET
  
      if ( monitor_http )
@@ -241,7 +251,7 @@
  #endif
  
  
-@@ -587,7 +603,11 @@
+@@ -587,7 +612,11 @@
  
      if ( monitor_nfs )
      {
@@ -253,7 +263,7 @@
          if (fp)
          {
              while ( (fgets(buf, 128, fp)) )
-@@ -604,9 +624,46 @@
+@@ -604,9 +633,46 @@
      // Total Processes
      nProc = 0;
  
@@ -301,7 +311,7 @@
          fp = fopen("/proc/loadavg", "r");
          if (fp)
          {
-@@ -617,6 +674,7 @@
+@@ -617,6 +683,7 @@
              
              fclose(fp);
          }
@@ -309,7 +319,7 @@
      }
  
      // lpd
-@@ -654,14 +712,61 @@
+@@ -654,14 +721,61 @@
  
  int PortWatch( short port )
  {
@@ -373,7 +383,7 @@
      fp = fopen("/proc/net/tcp", "r");
      if (fp)
      {
-@@ -693,6 +798,7 @@
+@@ -693,6 +807,7 @@
  
          fclose(fp);
      }
@@ -381,7 +391,7 @@
  
      return count;
  }
-@@ -745,14 +851,14 @@
+@@ -745,14 +860,14 @@
          newx -= CHAR_WIDTH;
      }
  
@@ -398,7 +408,7 @@
  {
      char str[1024];
      char buf[1024];
-@@ -767,7 +873,7 @@
+@@ -767,7 +882,7 @@
          return 0;
      }
  
@@ -407,7 +417,7 @@
      slen = strlen(str);
      
      fseek(fp, 0, SEEK_SET);
-@@ -799,7 +905,7 @@
+@@ -799,7 +914,7 @@
                  if ( buf[i] == '=' )
                  {
                      p=buf+i+1;
@@ -416,7 +426,7 @@
                      return 1;
                  }
              }
-@@ -814,7 +920,7 @@
+@@ -814,7 +929,7 @@
  {
      char buf[1024];
  
@@ -425,7 +435,7 @@
      {
          *value = atoi(buf);
          return 1;
-@@ -831,11 +937,11 @@
+@@ -831,11 +946,11 @@
      if (fp)
      {
          ReadConfigInt(fp, "interval", &loopinterval);
@@ -442,7 +452,7 @@
          ReadConfigInt(fp, "monitor_proc", &monitor_proc);
          ReadConfigInt(fp, "monitor_users", &monitor_users);
          ReadConfigInt(fp, "monitor_ftp", &monitor_ftp);
-@@ -843,23 +949,23 @@
+@@ -843,23 +958,23 @@
          ReadConfigInt(fp, "monitor_nfs", &monitor_nfs);
          ReadConfigInt(fp, "monitor_lpd", &monitor_lpd);
          ReadConfigInt(fp, "use_proftpd", &use_proftpd);
