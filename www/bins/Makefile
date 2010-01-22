@@ -7,7 +7,7 @@
 
 PORTNAME=	bins
 PORTVERSION=	1.1.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/bins/
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	\
 	${PBASE}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 	${PBASE}/${PERL_ARCH}/Text/Unaccent.pm:${PORTSDIR}/textproc/p5-Text-Unaccent \
 	${PBASE}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-	${PBASE}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 	${PBASE}/HTML/Clean.pm:${PORTSDIR}/www/p5-HTML-Clean \
 	${PBASE}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 	${PBASE}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \

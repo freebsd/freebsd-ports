@@ -7,6 +7,7 @@
 
 PORTNAME=	foswiki
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -15,14 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A free and open source enterprise wiki
 
-BUILD_DEPENDS=	p5-CGI.pm>3.37:${PORTSDIR}/www/p5-CGI.pm \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
-		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
-		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
-		p5-File-Path>=0:${PORTSDIR}/devel/p5-File-Path \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
-		p5-IO>=1.22:${PORTSDIR}/devel/p5-IO \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.8.4+
@@ -35,15 +29,9 @@ OPTIONS=	OPTINT "Install Perl modules for intl character support" Off \
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_OPTINT)
-BUILD_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
-		p5-Encode-compat>=0:${PORTSDIR}/converters/p5-Encode-compat \
-		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+BUILD_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
-RUN_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
-		p5-Encode-compat>=0:${PORTSDIR}/converters/p5-Encode-compat \
-		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+RUN_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
 .endif
 
@@ -51,7 +39,6 @@ RUN_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
 BUILD_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-CGI-Session>=4.30:${PORTSDIR}/www/p5-CGI-Session \
-		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Lingua-EN-Sentence>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Sentence \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
