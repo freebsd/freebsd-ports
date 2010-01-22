@@ -13,10 +13,12 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A portable foreign function interface for Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-sbcl \
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cffi/cffi.asd:${PORTSDIR}/devel/cl-cffi \
+		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-sbcl \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/sbclfasl/src/tf-sbcl.fasl:${PORTSDIR}/devel/cl-trivial-features-sbcl \
 		${LOCALBASE}/${CL_LIBDIR_REL}/babel/sbclfasl/src/enc-ascii.fasl:${PORTSDIR}/converters/cl-babel-sbcl
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-sbcl \
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cffi/cffi.asd:${PORTSDIR}/devel/cl-cffi \
+		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-sbcl \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/sbclfasl/src/tf-sbcl.fasl:${PORTSDIR}/devel/cl-trivial-features-sbcl \
 		${LOCALBASE}/${CL_LIBDIR_REL}/babel/sbclfasl/src/enc-ascii.fasl:${PORTSDIR}/converters/cl-babel-sbcl
 
