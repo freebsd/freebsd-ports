@@ -1,6 +1,6 @@
---- gdb/avr-tdep.c~	Sat Jan 21 23:25:07 2006
-+++ gdb/avr-tdep.c	Sat Sep 30 22:57:08 2006
-@@ -182,8 +182,10 @@
+--- gdb/avr-tdep.c.orig	2008-01-11 14:19:59.000000000 +0100
++++ gdb/avr-tdep.c	2010-01-19 11:19:47.000000000 +0100
+@@ -181,8 +181,10 @@
  
  struct gdbarch_tdep
  {
@@ -13,7 +13,7 @@
  };
  
  /* Lookup the name of a register given it's number. */
-@@ -1003,22 +1005,29 @@
+@@ -1030,22 +1032,29 @@
                   on the stack is in big endian byte order, even though most
                   everything else about the avr is little endian. Ick!  */
  
@@ -49,10 +49,10 @@
  
 -              pc = (extract_unsigned_integer (buf, 2) * 2);
 +              pc = (extract_unsigned_integer (buf, tdep->pcsize) * 2);
-               store_unsigned_integer (bufferp,
-                                       register_size (current_gdbarch, regnum),
-                                       pc);
-@@ -1253,6 +1262,11 @@
+               store_unsigned_integer
+ 		(bufferp, register_size (get_frame_arch (next_frame), regnum),
+ 		 pc);
+@@ -1280,6 +1289,11 @@
      case bfd_mach_avr3:
      case bfd_mach_avr4:
      case bfd_mach_avr5:
