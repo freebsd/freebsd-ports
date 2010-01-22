@@ -7,17 +7,16 @@
 
 PORTNAME=	RDFStore
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl API for RDF Storage
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -45,10 +44,4 @@ pre-configure:
 	@${ECHO} "LIB=${BDB_LIB_DIR}" >> ${WRKSRC}/arch_conf.in
 	@${ECHO} "DBNAME=-l${BDB_LIB_NAME}" >> ${WRKSRC}/arch_conf.in
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-BROKEN=		does not compile on ${ARCH}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
