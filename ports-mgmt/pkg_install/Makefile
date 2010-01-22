@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20080708
-PORTREVISION=		1
+PORTVERSION=		20090902
+PORTREVISION=		0
 CATEGORIES=		ports-mgmt
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~flz/distfiles/pkg_install/
