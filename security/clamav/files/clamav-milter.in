@@ -95,7 +95,7 @@ load_rc_config $name
 : ${clamav_milter_socket="%%CLAMAV_MILTER_SOCKET%%"}
 : ${clamav_milter_flags="-c ${conf_file}"}
 : ${clamav_milter_socktimeout="60"}
-: ${clamav_milter_socket_mode="755"}
+: ${clamav_milter_socket_mode="777"}
 : ${clamav_milter_socket_user="%%CLAMAVUSER%%"}
 : ${clamav_milter_socket_group="%%CLAMAVGROUP%%"}
 
