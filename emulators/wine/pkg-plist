@@ -543,7 +543,7 @@ include/wine/windows/wfext.h
 include/wine/windows/wia.h
 include/wine/windows/wia_lh.h
 include/wine/windows/wia_lh.idl
-include/wine/windows/wia_xp.h 
+include/wine/windows/wia_xp.h
 include/wine/windows/wia_xp.idl
 include/wine/windows/winbase.h
 include/wine/windows/wincodec.h
@@ -606,6 +606,8 @@ include/wine/windows/xmldomdid.h
 include/wine/windows/xmldso.h
 include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
+include/wine/windows/xmllite.h
+include/wine/windows/xmllite.idl
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/hidsdi.h
