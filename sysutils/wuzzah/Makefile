@@ -20,12 +20,18 @@ MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	bin/wuzzah
 MAN1=		wuzzah.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS/d' \
+.if ${OSVERSION} >= 900007
+	@${REINPLACE_CMD} -e '/^CFLAGS/d' -e 's|^\(SUBDIRS.*\)utmpx|\1|p' \
 		${WRKSRC}/Makefile.in
+.else
+	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/Makefile.in
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
