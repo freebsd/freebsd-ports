@@ -7,7 +7,7 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.4z
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/${PORTNAME}/BLT/BLT%20${PORTVERSION} \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
@@ -23,19 +23,26 @@ PATCH_DIST_STRIP= -p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tk extension (with shared libs)
 
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 
 WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes
+CFLAGS+=	-Wall -Wno-uninitialized -DWERROR
+MAKE_JOBS_SAFE=	yes
 
 USE_TK=		82+
-INVALID_TK_VER=	85 86
 USE_XORG=	x11
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--exec_prefix=${PREFIX} \
+post-configure:
+	${REINPLACE_CMD} 's,-DWERROR,-Werror,' ${WRKSRC}/src/Makefile
+
+CONFIGURE_ARGS+=--exec_prefix=${PREFIX} \
+		--enable-jpeg=${LOCALBASE} \
 		--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR} \
 		--with-tcllibs=${LOCALBASE}/lib/ \
