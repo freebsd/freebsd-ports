@@ -48,7 +48,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386
-BROKEN=		Doesn't work on !i386 (ERROR: Bad CRC for bank data 38!)
+IGNORE=		Doesn't work on !i386 (ERROR: Bad CRC for bank data 38!)
 .endif
 
 .include <bsd.port.post.mk>
