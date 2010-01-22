@@ -26,7 +26,9 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:262 autoheader:262
 GNU_CONFIGURE=	yes
+.if !defined(WITH_ZSH_STATIC)
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+.endif
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -150,7 +152,7 @@ post-install:
 	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > ${SHELLS}
 	@${RM} ${SHELLS}.bak
 	@${PREFIX}/bin/zsh -fc ' \
-		setopt extendedglob; \
+		setopt extendedglob nomark_dirs; \
 		for i in ${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
 			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
 			${CHMOD} 644 $$i.zwc ; \
