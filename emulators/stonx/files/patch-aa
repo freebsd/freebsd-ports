@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Oct 16 19:24:54 1999
-+++ Makefile.in	Sat Oct 16 19:25:26 1999
+--- Makefile.in.orig	1997-05-24 22:49:30.000000000 +0200
++++ Makefile.in	2010-01-22 10:38:08.000000000 +0100
 @@ -28,7 +28,7 @@
  #XLIBS=@X_LIBS@ -lvgagl -lvga 
  #SFLAGS=-DUSE_SVGALIB
@@ -9,3 +9,16 @@
  DEF= @def@ -DINLINE=@inline@ -DSTONXDIR=\"$(STONXDIR)\"
  
  # Compiler
+@@ -117,10 +117,10 @@
+ 	$(SCC) @static@ -o $@ $(OBJ) $(MOREOBJ) $(XLIBS) @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS@ @xtra@
+ 
+ fnttobdf:	fnttobdf.c
+-	$(CC) -o $@ fnttobdf.c $(XLIBS) @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS@
++	$(CC) -o $@ fnttobdf.c $(CFLAGS) $(XLIBS) @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS@
+ 
+ tosfonts:	tosfonts.c
+-	$(CC) -o $@ tosfonts.c $(XLIBS) @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS@
++	$(CC) -o $@ tosfonts.c $(CFLAGS) $(XLIBS) @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS@
+ 
+ clean:
+ 	rm -f $(OBJ) $(MOREOBJ) stonx mon.out gmon.out fonts-done.stmp

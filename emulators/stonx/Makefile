@@ -28,12 +28,10 @@ USE_XORG=	x11 sm ice xext xextproto
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib
+ALL_TARGET=	all fnttobdf tosfonts fonts
 
 pre-build:
 	${CP} ${DISTDIR}/${TOSIMG} ${WRKSRC}/tos.img
-
-post-build:
-	(cd ${WRKSRC}; make fnttobdf fonts)
 
 # Installing
 #
