@@ -7,15 +7,19 @@
 
 PORTNAME=		afbinit
 PORTVERSION=		1.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		sysutils graphics
-MASTER_SITES=		${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/contrib/a/afbinit
-DISTNAME=		${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=		${MASTER_SITE_DEBIAN:S/$/:afbinit,patch/} \
+			http://dlc.sun.com/%SUBDIR%/:microcode
+MASTER_SITE_SUBDIR=	pool/contrib/a/afbinit/:afbinit,patch \
+			osol/sparc-gfx/downloads/:microcode
+DISTFILES=		${PORTNAME}_${PORTVERSION}.orig.tar.gz:afbinit \
+			afb-ucode.tar.bz2:microcode
+DIST_SUBDIR=		${PORTNAME}
 
 PATCH_SITES=		${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=		${PORTNAME}_${PORTVERSION}-4.diff.gz
+PATCHFILES=		${PORTNAME}_${PORTVERSION}-4.diff.gz:patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		marius@FreeBSD.org
@@ -23,7 +27,7 @@ COMMENT=		Sun AFB aka Sun Elite 3D microcode firmware loader
 
 ONLY_FOR_ARCHS=		sparc64
 USE_RC_SUBR=		afbinit.sh
-WRKSRC=			${WRKDIR}/${DISTNAME:S/_/-/}
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
 MAN8=			afbinit.8
@@ -45,6 +49,11 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/afbinit ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/debian/afbinit.8 ${PREFIX}/man/man8
 	@${INSTALL} -d ${DATADIR}
+	@${INSTALL_DATA} ${WRKDIR}/afb-ucode/afb.ucode ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/afb-ucode/README ${DOCSDIR}
+.endif
 
 post-install:
 	@${CAT} ${WRKDIR}/pkg-message
