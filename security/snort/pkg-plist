@@ -31,12 +31,16 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%src/snort_dynamicsrc/sfPolicyUserData.c
 %%DYNAMIC%%src/snort_dynamicsrc/sfPolicyUserData.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_common.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_define.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_engine.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_meta.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.c
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preprocessor.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_ip.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_packet.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_plugin_api.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_types.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfghash.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfhashfcn.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.c
