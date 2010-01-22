@@ -4,6 +4,9 @@ lib/libgupnp-igd-1.0.a
 lib/libgupnp-igd-1.0.la
 lib/libgupnp-igd-1.0.so
 lib/libgupnp-igd-1.0.so.3
+%%PYTHON_SITELIBDIR%%/gupnp/igd.a
+%%PYTHON_SITELIBDIR%%/gupnp/igd.la
+%%PYTHON_SITELIBDIR%%/gupnp/igd.so
 libdata/pkgconfig/gupnp-igd-1.0.pc
 share/gtk-doc/html/gupnp-igd/GUPnPSimpleIgd.html
 share/gtk-doc/html/gupnp-igd/GUPnPSimpleIgdThread.html
@@ -20,5 +23,8 @@ share/gtk-doc/html/gupnp-igd/up.png
 @dirrmtry share/gtk-doc/html/gupnp-igd
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry %%PYTHON_SITELIBDIR%%/gupnp
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
 @dirrmtry include/gupnp-igd-1.0/libgupnp-igd
 @dirrmtry include/gupnp-igd-1.0
