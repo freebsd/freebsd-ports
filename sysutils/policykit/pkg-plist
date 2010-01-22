@@ -51,7 +51,7 @@ libexec/polkit-read-auth-helper
 libexec/polkit-resolve-exe-helper
 libexec/polkit-revoke-helper
 libexec/polkit-set-default-helper
-libexec/polkitd
+libexec/polkitd-old
 share/PolicyKit/config.dtd
 share/PolicyKit/policy/org.freedesktop.policykit.policy
 share/dbus-1/interfaces/org.freedesktop.PolicyKit.AuthenticationAgent.xml
