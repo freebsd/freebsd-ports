@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Template
 PORTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Apache::Template - Apache/mod_perl interface to the Template Toolkit
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

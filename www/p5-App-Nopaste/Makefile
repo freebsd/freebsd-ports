@@ -7,6 +7,7 @@
 
 PORTNAME=	App-Nopaste
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +16,9 @@ MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	Easy access to any pastebin
 
 BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/MooseX/Getopt.pm:${PORTSDIR}/devel/p5-MooseX-Getopt
 
 RUN_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/MooseX/Getopt.pm:${PORTSDIR}/devel/p5-MooseX-Getopt
 
 OPTIONS=	CLIPBOARD "Support Clipboard" On \

@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-FormFu
 PORTVERSION=	0.06001
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,7 +34,6 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
 		p5-HTML-TokeParser-Simple>=3.14:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Locale-Maketext>=0:${PORTSDIR}/devel/p5-Locale-Maketext \
 		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Number-Format>=0:${PORTSDIR}/textproc/p5-Number-Format \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \

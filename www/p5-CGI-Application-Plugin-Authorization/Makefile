@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI-Application-Plugin-Authorization
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Applicatio
 		${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		${SITE_PERL}/CGI/Application/Plugin/Authentication.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-Authentication \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
 RUN_DEPENDS=	${BUILD_DEPENDS}

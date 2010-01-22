@@ -6,6 +6,7 @@
 
 PORTNAME=	HTML-FormHandler
 PORTVERSION=	0.29
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -16,14 +17,12 @@ COMMENT=	Form handler written in Moose
 
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 		p5-Class-Load>=0.05:${PORTSDIR}/devel/p5-Class-Load \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-MooseX-Traits>=0:${PORTSDIR}/devel/p5-MooseX-Traits \
 		p5-MooseX-Getopt>=0.16:${PORTSDIR}/devel/p5-MooseX-Getopt \
 		p5-MooseX-Types>=0.20:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Locale-Maketext>=1.09:${PORTSDIR}/devel/p5-Locale-Maketext \
 		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
