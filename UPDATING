@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100122:
+  AFFECTS: users of sysutils/policykit and sysutils/polkit
+  AUTHOR: gnome@FreeBSD.org
+
+  Due to a recent change in sysutils/policykit, both sysutils/policykit,
+  and sysutils/polkit need to be rebuilt, but in a certain order.  First,
+  upgrade sysutils/policykit to 0.9_6.  Then, force a rebuild and reinstall
+  of sysutils/polkit.  If you do not do this, applications which depend
+  on polkitd will fail.
+
 20100118:
   AFFECTS: users of news/sabnzbdplus
   AUTHOR: glarkin@FreeBSD.org
