@@ -1,5 +1,5 @@
---- mod_neoscript.c	Fri Jul 21 19:49:29 2000
-+++ mod_neoscript.c	2010-01-19 00:13:35.000000000 -0500
+--- mod_neoscript.c	2000-07-21 19:49:29.000000000 -0400
++++ mod_neoscript.c	2010-01-21 23:48:47.000000000 -0500
 @@ -66,10 +66,14 @@
  #include "util_md5.h"
  
@@ -171,7 +171,13 @@
 +init_nws(server_rec *s, pool *p)
  {
      time_t date;
-@@ -851,5 +866,9 @@
+@@ -846,10 +861,14 @@
+ 
+     time(&date);
+-    sprintf(softwareStartTimeString, "%ld", date);
++    sprintf(softwareStartTimeString, "%ld", (long)date);
+ 
+     /* Initialize core Tcl components and extensions */
  	
  	/* Setup a library Path */
 +#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION < 5
@@ -250,7 +256,12 @@
 +    const char *str;
      int outind = 0;
  
-@@ -1596,5 +1622,5 @@
+@@ -1592,9 +1618,9 @@
+     Tcl_SetVar2(interp, "webenv", "QUERY_STRING",
+         r->args ? r->args : "", TCL_GLOBAL_ONLY);
+-    sprintf (timeTextBuf, "%ld", r->finfo.st_mtime);
++    sprintf (timeTextBuf, "%ld", (long)r->finfo.st_mtime);
+     Tcl_SetVar2(interp, "webenv", "NEO_LAST_MODIFIED",
          timeTextBuf, TCL_GLOBAL_ONLY);
  
 -    sprintf (timeTextBuf, "%ld", r->finfo.st_uid);
