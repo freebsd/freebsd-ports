@@ -104,6 +104,7 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/devhelp/dtd
 @dirrm share/devhelp/assistant
 @dirrm share/devhelp
+%%GEDIT%%@dirrm lib/gedit-2/plugins/devhelp
 @dirrm include/devhelp-1.0/devhelp
 @dirrm include/devhelp-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
