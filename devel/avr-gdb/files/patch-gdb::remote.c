@@ -1,15 +1,14 @@
---- gdb/remote.c.orig	Sat Nov  6 00:38:25 2004
-+++ gdb/remote.c	Tue May 24 21:34:59 2005
-@@ -4895,8 +4895,10 @@
- 	return -1;
+--- gdb/remote.c~	2008-02-25 10:59:06.000000000 +0100
++++ gdb/remote.c	2010-01-19 11:30:19.000000000 +0100
+@@ -6102,8 +6102,9 @@
+ 				     [PACKET_qXfer_spu_write]);
      }
  
--  /* Only handle reads.  */
--  if (writebuf != NULL || readbuf == NULL)
-+  /* Only handle reads.  Zero OFFSET and LENGTH is just a size
-+   * query only, so allow it anyway.  */
-+  if ((writebuf != NULL || readbuf == NULL) &&
-+      !(offset == 0 && len == 0))
-     return -1;
+-  /* Only handle flash writes.  */
+-  if (writebuf != NULL)
++  /* Only handle flash writes.  Zero OFFSET and LENGTH is just a size
++   * query only, so proceed anyway. */
++  if (writebuf != NULL && !(offset == 0 && len == 0))
+     {
+       LONGEST xfered;
  
-   /* Map pre-existing objects onto letters.  DO NOT do this for new
