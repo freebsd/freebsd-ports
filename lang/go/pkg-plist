@@ -1,0 +1,203 @@
+lib/go/freebsd_%%ARCH%%/runtime.a
+lib/go/freebsd_%%ARCH%%/sort.a
+lib/go/freebsd_%%ARCH%%/json.a
+lib/go/freebsd_%%ARCH%%/patch.a
+lib/go/freebsd_%%ARCH%%/rpc.a
+lib/go/freebsd_%%ARCH%%/ebnf.a
+lib/go/freebsd_%%ARCH%%/utf8.a
+lib/go/freebsd_%%ARCH%%/image/png.a
+lib/go/freebsd_%%ARCH%%/image/jpeg.a
+lib/go/freebsd_%%ARCH%%/encoding/base64.a
+lib/go/freebsd_%%ARCH%%/encoding/ascii85.a
+lib/go/freebsd_%%ARCH%%/encoding/hex.a
+lib/go/freebsd_%%ARCH%%/encoding/binary.a
+lib/go/freebsd_%%ARCH%%/encoding/git85.a
+lib/go/freebsd_%%ARCH%%/encoding/pem.a
+lib/go/freebsd_%%ARCH%%/bytes.a
+lib/go/freebsd_%%ARCH%%/debug/gosym.a
+lib/go/freebsd_%%ARCH%%/debug/proc.a
+lib/go/freebsd_%%ARCH%%/debug/macho.a
+lib/go/freebsd_%%ARCH%%/debug/dwarf.a
+lib/go/freebsd_%%ARCH%%/debug/elf.a
+lib/go/freebsd_%%ARCH%%/container/ring.a
+lib/go/freebsd_%%ARCH%%/container/heap.a
+lib/go/freebsd_%%ARCH%%/container/list.a
+lib/go/freebsd_%%ARCH%%/container/vector.a
+lib/go/freebsd_%%ARCH%%/strconv.a
+lib/go/freebsd_%%ARCH%%/io/ioutil.a
+lib/go/freebsd_%%ARCH%%/websocket.a
+lib/go/freebsd_%%ARCH%%/flag.a
+lib/go/freebsd_%%ARCH%%/crypto/sha256.a
+lib/go/freebsd_%%ARCH%%/crypto/sha1.a
+lib/go/freebsd_%%ARCH%%/crypto/md4.a
+lib/go/freebsd_%%ARCH%%/crypto/md5.a
+lib/go/freebsd_%%ARCH%%/crypto/xtea.a
+lib/go/freebsd_%%ARCH%%/crypto/x509.a
+lib/go/freebsd_%%ARCH%%/crypto/aes.a
+lib/go/freebsd_%%ARCH%%/crypto/block.a
+lib/go/freebsd_%%ARCH%%/crypto/rsa.a
+lib/go/freebsd_%%ARCH%%/crypto/tls.a
+lib/go/freebsd_%%ARCH%%/crypto/rc4.a
+lib/go/freebsd_%%ARCH%%/crypto/hmac.a
+lib/go/freebsd_%%ARCH%%/crypto/subtle.a
+lib/go/freebsd_%%ARCH%%/regexp.a
+lib/go/freebsd_%%ARCH%%/malloc.a
+lib/go/freebsd_%%ARCH%%/sync.a
+lib/go/freebsd_%%ARCH%%/os.a
+lib/go/freebsd_%%ARCH%%/os/signal.a
+lib/go/freebsd_%%ARCH%%/go/scanner.a
+lib/go/freebsd_%%ARCH%%/go/printer.a
+lib/go/freebsd_%%ARCH%%/go/parser.a
+lib/go/freebsd_%%ARCH%%/go/token.a
+lib/go/freebsd_%%ARCH%%/go/doc.a
+lib/go/freebsd_%%ARCH%%/go/ast.a
+lib/go/freebsd_%%ARCH%%/net.a
+lib/go/freebsd_%%ARCH%%/exec.a
+lib/go/freebsd_%%ARCH%%/io.a
+lib/go/freebsd_%%ARCH%%/compress/zlib.a
+lib/go/freebsd_%%ARCH%%/compress/flate.a
+lib/go/freebsd_%%ARCH%%/compress/gzip.a
+lib/go/freebsd_%%ARCH%%/libcgo.so
+lib/go/freebsd_%%ARCH%%/rand.a
+lib/go/freebsd_%%ARCH%%/http.a
+lib/go/freebsd_%%ARCH%%/expvar.a
+lib/go/freebsd_%%ARCH%%/once.a
+lib/go/freebsd_%%ARCH%%/testing.a
+lib/go/freebsd_%%ARCH%%/hash.a
+lib/go/freebsd_%%ARCH%%/tabwriter.a
+lib/go/freebsd_%%ARCH%%/template.a
+lib/go/freebsd_%%ARCH%%/log.a
+lib/go/freebsd_%%ARCH%%/path.a
+lib/go/freebsd_%%ARCH%%/strings.a
+lib/go/freebsd_%%ARCH%%/exp/parser.a
+lib/go/freebsd_%%ARCH%%/exp/datafmt.a
+lib/go/freebsd_%%ARCH%%/exp/exception.a
+lib/go/freebsd_%%ARCH%%/exp/eval.a
+lib/go/freebsd_%%ARCH%%/exp/draw.a
+lib/go/freebsd_%%ARCH%%/exp/iterable.a
+lib/go/freebsd_%%ARCH%%/bignum.a
+lib/go/freebsd_%%ARCH%%/reflect.a
+lib/go/freebsd_%%ARCH%%/math.a
+lib/go/freebsd_%%ARCH%%/testing/quick.a
+lib/go/freebsd_%%ARCH%%/testing/iotest.a
+lib/go/freebsd_%%ARCH%%/testing/script.a
+lib/go/freebsd_%%ARCH%%/image.a
+lib/go/freebsd_%%ARCH%%/unicode.a
+lib/go/freebsd_%%ARCH%%/xgb.a
+lib/go/freebsd_%%ARCH%%/hash/crc32.a
+lib/go/freebsd_%%ARCH%%/hash/adler32.a
+lib/go/freebsd_%%ARCH%%/gob.a
+lib/go/freebsd_%%ARCH%%/archive/tar.a
+lib/go/freebsd_%%ARCH%%/fmt.a
+lib/go/freebsd_%%ARCH%%/big.a
+lib/go/freebsd_%%ARCH%%/bufio.a
+lib/go/freebsd_%%ARCH%%/asn1.a
+lib/go/freebsd_%%ARCH%%/time.a
+lib/go/freebsd_%%ARCH%%/scanner.a
+lib/go/freebsd_%%ARCH%%/syscall.a
+lib/go/freebsd_%%ARCH%%/syslog.a
+lib/go/freebsd_%%ARCH%%/xml.a
+lib/go/~place-holder~
+bin/%%GOOBJ%%g
+bin/hgpatch
+bin/godefs
+bin/godoc
+bin/cgo
+bin/6cov
+bin/gomake
+bin/%%GOOBJ%%c
+bin/%%GOOBJ%%a
+bin/%%GOOBJ%%l
+bin/6prof
+bin/ebnflint
+bin/gofmt
+bin/gotest
+bin/gopack
+bin/goyacc
+bin/6nm
+bin/quietgcc
+%%DATADIR%%/Make.%%ARCH%%
+%%DATADIR%%/Make.pkg
+%%DATADIR%%/Make.cmd
+%%PORTDOCS%%%%DOCSDIR%%/gccgo_contribute.html
+%%PORTDOCS%%%%DOCSDIR%%/prog.sh
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/makehtml
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/go_mem.html
+%%PORTDOCS%%%%DOCSDIR%%/root.html
+%%PORTDOCS%%%%DOCSDIR%%/godocs.js
+%%PORTDOCS%%%%DOCSDIR%%/go-logo-blue.png
+%%PORTDOCS%%%%DOCSDIR%%/sieve.gif
+%%PORTDOCS%%%%DOCSDIR%%/go_tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/progs/helloworld3.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/cat_rot13.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/cat.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/echo.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/sortmain.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/server1.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/file.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/server.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/sum.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/sort.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/sieve1.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/helloworld.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/print.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/sieve.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/print_string.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/strings.go
+%%PORTDOCS%%%%DOCSDIR%%/progs/run
+%%PORTDOCS%%%%DOCSDIR%%/video-snap.jpg
+%%PORTDOCS%%%%DOCSDIR%%/GoCourseDay1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/code.html
+%%PORTDOCS%%%%DOCSDIR%%/gordon/bumper640x360.png
+%%PORTDOCS%%%%DOCSDIR%%/gordon/gophercolor.png
+%%PORTDOCS%%%%DOCSDIR%%/gordon/bumper320x180.png
+%%PORTDOCS%%%%DOCSDIR%%/gordon/gophercolor16x16.png
+%%PORTDOCS%%%%DOCSDIR%%/gordon/gopherbw.png
+%%PORTDOCS%%%%DOCSDIR%%/gordon/bumper480x270.png
+%%PORTDOCS%%%%DOCSDIR%%/gordon/bumper.png
+%%PORTDOCS%%%%DOCSDIR%%/gordon/bumper192x108.png
+%%PORTDOCS%%%%DOCSDIR%%/GoCourseDay2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/effective_go.html
+%%PORTDOCS%%%%DOCSDIR%%/go_faq.html
+%%PORTDOCS%%%%DOCSDIR%%/gccgo_install.html
+%%PORTDOCS%%%%DOCSDIR%%/go_spec.html
+%%PORTDOCS%%%%DOCSDIR%%/GoCourseDay3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/logo-153x55.png
+%%PORTDOCS%%%%DOCSDIR%%/go_tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/htmlgen.go
+%%PORTDOCS%%%%DOCSDIR%%/go_for_cpp_programmers.html
+%%PORTDOCS%%%%DOCSDIR%%/contribute.html
+%%PORTDOCS%%%%DOCSDIR%%/go-logo-black.png
+%%PORTDOCS%%%%DOCSDIR%%/go_lang_faq.html
+%%PORTDOCS%%%%DOCSDIR%%/talks/slidy.js
+%%PORTDOCS%%%%DOCSDIR%%/talks/slidy.css
+%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20091030.pdf
+%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100112.html
+%%PORTDOCS%%%%DOCSDIR%%/go-logo-white.png
+%%PORTDOCS%%%%DOCSDIR%%/devel/release.html
+%%PORTDOCS%%%%DOCSDIR%%/devel/roadmap.html
+%%PORTDOCS%%%%DOCSDIR%%/devel/index.html
+@dirrm lib/go/freebsd_%%ARCH%%/os
+@dirrm lib/go/freebsd_%%ARCH%%/exp
+@dirrm lib/go/freebsd_%%ARCH%%/testing
+@dirrm lib/go/freebsd_%%ARCH%%/hash
+@dirrm lib/go/freebsd_%%ARCH%%/debug
+@dirrm lib/go/freebsd_%%ARCH%%/archive
+@dirrm lib/go/freebsd_%%ARCH%%/image
+@dirrm lib/go/freebsd_%%ARCH%%/crypto
+@dirrm lib/go/freebsd_%%ARCH%%/io
+@dirrm lib/go/freebsd_%%ARCH%%/encoding
+@dirrm lib/go/freebsd_%%ARCH%%/compress
+@dirrm lib/go/freebsd_%%ARCH%%/go
+@dirrm lib/go/freebsd_%%ARCH%%/container
+@dirrm lib/go/freebsd_%%ARCH%%
+@dirrm lib/go/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/devel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/progs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/talks
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gordon
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
