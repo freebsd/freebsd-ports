@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perl-MinimumVersion
-PORTVERSION=	1.22
+PORTVERSION=	1.24
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Find a minimum required version of perl for Perl code
 
-RUN_DEPENDS=	p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
+RUN_DEPENDS=	p5-File-Find-Rule>=0.32:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-File-Find-Rule-Perl>=1.04:${PORTSDIR}/devel/p5-File-Find-Rule-Perl \
 		p5-PPI>=1.205:${PORTSDIR}/textproc/p5-PPI \
 		p5-Perl-Critic>=1.10.4:${PORTSDIR}/textproc/p5-Perl-Critic \
