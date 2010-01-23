@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the GNOME Desktop
 
 BUILD_DEPENDS=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-    		${LOCALBASE}/share/sgml/docbook/4.1/catalog:${PORTSDIR}/textproc/docbook-410
+    		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
 		notify.1:${PORTSDIR}/devel/libnotify \
 		execinfo:${PORTSDIR}/devel/libexecinfo \

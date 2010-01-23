@@ -36,7 +36,7 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${LOCALBASE}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410
+		${LOCALBASE}/share/sgml/docbook/4.1/dtd/docbook.dtd:${PORTSDIR}/textproc/docbook-410
 # Above depending on docbook-4.1 file is just for workaround.  We need
 # some of docbook DTDs, but not all.
 
