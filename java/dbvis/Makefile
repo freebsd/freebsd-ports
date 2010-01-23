@@ -14,6 +14,8 @@ DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}
 MAINTAINER=	contact@toha.org.ua
 COMMENT=	DbVisualizer database tool
 
+BROKEN=		does not fetch
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
