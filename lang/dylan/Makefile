@@ -26,6 +26,8 @@ COMMENT=	CMU Gwydion project interpreter and compiler for the Dylan language
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
+BROKEN=		does not build
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--srcdir=${WRKSRC} --with-gc-prefix=${PREFIX}
@@ -61,10 +63,4 @@ post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/d2c-${PORTVERSION}-FreeBSD.gz >${WRKDIR}/d2c
 	${CHMOD} ugo+x ${WRKDIR}/d2c
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=	does not install
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
