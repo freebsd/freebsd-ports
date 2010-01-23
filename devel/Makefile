@@ -1292,6 +1292,7 @@
     SUBDIR += p5-Data-Path
     SUBDIR += p5-Data-Properties
     SUBDIR += p5-Data-Random
+    SUBDIR += p5-Data-Recursive-Encode
     SUBDIR += p5-Data-Remember
     SUBDIR += p5-Data-RoundRobin
     SUBDIR += p5-Data-Serializer
