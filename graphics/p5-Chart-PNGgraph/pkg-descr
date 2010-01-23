@@ -21,3 +21,5 @@ Additional types:
 
 Chart::PNGgraph::pie
     Create a pie chart.
+
+WWW: http://search.cpan.org/dist/Chart-PNGgraph

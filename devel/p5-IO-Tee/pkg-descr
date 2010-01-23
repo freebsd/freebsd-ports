@@ -1,6 +1,3 @@
-IO::Tee
-=======
-
 The `IO::Tee' constructor, given a list of output handles,
 returns a tied handle that can be written to but not read from.
 When written to (using print or printf), it multiplexes the
@@ -9,3 +6,5 @@ constructor. As a shortcut, you can also directly pass a string
 or an array reference to the constructor, in which case
 `IO::File::new' is called for you with the specified argument or
 arguments.
+
+WWW: http://search.cpan.org/dist/IO-Tee

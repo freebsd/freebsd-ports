@@ -1,22 +1,20 @@
-       The objective of the package is to provide a fast and
-       essential HTML check (esp. for CGI scripts where response
-       time is important) to prevent a piece of user input HTML
-       code from messing up the rest of a file, i.e., to minimize
-       and localize any possible damage created by including a
-       piece of user input HTML text in a dynamic document.
+The objective of the package is to provide a fast and essential HTML check (esp.
+for CGI scripts where response time is important) to prevent a piece of user
+input HTML code from messing up the rest of a file, i.e., to minimize and
+localize any possible damage created by including a piece of user input HTML
+text in a dynamic document.
 
-       HTMLQuickCheck checks for unmatched < and >, unmatched
-       tags and improper nesting, which could ruin the rest of
-       the document.  Attributes and elements with optional end
-       tags are not checked, as they should not cause disasters
-       with any decent browsers (they should ignore any
-       unrecognized tags and attributes according to the
-       standard).  A piece of HTML that passes HTMLQuickCheck may
-       not necessarily be valid HTML, but it would be very
-       unlikely to screw others but itself. A valid piece of HTML
-       that doesn't pass the HTMLQuickCheck is however very
-       likely to screw many browsers(which are obviously broken
-       in terms of strict conformance).
+HTMLQuickCheck checks for unmatched < and >, unmatched tags and improper
+nesting, which could ruin the rest of the document.  Attributes and elements
+with optional end tags are not checked, as they should not cause disasters with
+any decent browsers (they should ignore any unrecognized tags and attributes
+according to the standard).  A piece of HTML that passes HTMLQuickCheck may not
+necessarily be valid HTML, but it would be very unlikely to screw others but
+itself. A valid piece of HTML that doesn't pass the HTMLQuickCheck is however
+very likely to screw many browsers(which are obviously broken in terms of strict
+conformance).
 
-       HTMLQuickCheck currently supports HTML 1.0, 2.x (draft),
-       3.0 (draft) and netscape extensions (1.1).
+HTMLQuickCheck currently supports HTML 1.0, 2.x (draft), 3.0 (draft) and
+netscape extensions (1.1).
+
+WWW: http://search.cpan.org/dist/HTML-QuickCheck
