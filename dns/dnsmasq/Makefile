@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.51
+PORTVERSION=	2.52
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		http://homepages.uni-paderborn.de/mandree/
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP and TFTP server
 
 MAN8=		dnsmasq.8
