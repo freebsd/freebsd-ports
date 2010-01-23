@@ -7,7 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8l
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -29,17 +29,20 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-OPTIONS=	I386	"Use optimzed assembler for 80386" off \
+OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ZLIB	"Build with zlib compression" on \
 
+MAKE_JOBS_UNSAFE=	yes
+NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
+NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
+
+USE_PERL5_BUILD=	yes
 EXTRACONFIGURE+=	enable-camellia
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=		LIBRPATH="${PREFIX}/lib"
-NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
-NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
-USE_PERL5_BUILD=	yes
-MAKE_JOBS_UNSAFE=	yes
+OPENSSLDIR=		${PREFIX}/openssl
+MANPREFIX=		${PREFIX}
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 ec.1 ecparam.1 enc.1 errstr.1 gendsa.1 genrsa.1 \
@@ -857,15 +860,23 @@ OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 OPENSSL_SHLIBVER?=	7
 
+.if defined(WITH_I386)
+.if ${ARCH} == "i386"
+EXTRACONFIGURE+=	386
+.endif
+.endif
+
 .if defined(WITHOUT_SSE2)
 # disable runtime SSE2 detection
 EXTRACONFIGURE+=	no-sse2
 .endif
+
 .if !defined(WITH_FIPS)
 EXTRACONFIGURE+=	no-fips
 .else
 EXTRACONFIGURE+=	fips no-asm
 .endif
+
 .if defined(NOSHARED)
 PLIST_SUB+=	SHARED="@comment "
 .else
@@ -878,6 +889,8 @@ USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_ZLIB)
 EXTRACONFIGURE+=	zlib
+.else
+EXTRACONFIGURE+=	no-zlib
 .endif
 
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
@@ -890,16 +903,10 @@ pre-everything::
 	@${FALSE}
 
 .endif
-OPENSSLDIR=	${PREFIX}/openssl
-MANPREFIX=	${PREFIX}
-
-.if defined(WITH_I386)
-.if ${ARCH} == "i386"
-EXTRACONFIGURE+=	386
-.endif
-.endif
 
 do-configure:
+	@${REINPLACE_CMD} -e "s|options 386|options|" \
+		 ${WRKSRC}/config
 .if !defined(WITH_FIPS)
 	${RM} -rf ${WRKSRC}/fips
 	${RM} -f ${WRKSRC}/include/openssl/fips.h
@@ -949,7 +956,7 @@ do-configure:
 		-e 's|$$(FIPS_TEST_SUITE)$$(EXE_EXT)||' \
 		${WRKSRC}/test/Makefile
 .endif
-	@(cd ${BUILD_WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} depend)
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} depend)
 
 post-install:
 .if !defined(NOSHARED)
@@ -964,7 +971,7 @@ post-install:
 .endif
 	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
 
-test:
+test: build
 	cd ${WRKSRC} && ${MAKE} test
 
 regression-test:	test
