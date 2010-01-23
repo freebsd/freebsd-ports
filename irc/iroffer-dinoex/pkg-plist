@@ -1,4 +1,6 @@
 bin/iroffer
+bin/de-iroffer
+bin/it-iroffer
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LIESMICH.modDinoex
 %%PORTDOCS%%%%DOCSDIR%%/README-iroffer.txt

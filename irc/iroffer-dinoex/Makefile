@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.18
+PORTVERSION=	3.19
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -44,14 +44,24 @@ CONFIGURE_ARGS+=	-upnp
 USE_RUBY=	yes
 CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
-
-post-configure:
-	${REINPLACE_CMD} -e 's|RFLOAT_VALUE|USE_RUBYVERSION_19|' \
-		${WRKSRC}/src/dinoex_ruby.c
 .endif
+
+post-build:
+	${MV} ${WRKSRC}/iroffer ${WRKSRC}/en-iroffer
+	${RM} -rf ${WRKSRC}/obj
+	@cd ${WRKSRC} && ./Lang de
+	@cd ${WRKSRC} && ${MAKE}
+	${MV} ${WRKSRC}/iroffer ${WRKSRC}/de-iroffer
+	${RM} -rf ${WRKSRC}/obj
+	@cd ${WRKSRC} && ./Lang it
+	@cd ${WRKSRC} && ${MAKE}
+	${MV} ${WRKSRC}/iroffer ${WRKSRC}/it-iroffer
+	${MV} ${WRKSRC}/en-iroffer ${WRKSRC}/iroffer
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/de-iroffer ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/it-iroffer ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README-iroffer.txt ${DOCSDIR}/
