@@ -1,9 +1,6 @@
+	TTT: Tele Traffic Tapper
 
-	TTT: Tele Traffic Tapper (version 1.6)
-
-					2000/12/21
-
-ttt is yet another decendant of tcpdump but it is capable of real-time,
+ttt is yet another descendant of tcpdump but it is capable of real-time,
 graphical, and remote traffic-monitoring.  ttt won't replace tcpdump,
 rather, it helps you find out what to look into with tcpdump.
 
@@ -14,3 +11,5 @@ Features:
     - IPv6 Aware: (experimental)
     - Portable
     - Easy to customize
+
+WWW: http://www.sonycsl.co.jp/~kjc/software.html#ttt
