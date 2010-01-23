@@ -43,6 +43,8 @@ USE_WX=		2.8+
 
 USE_GETTEXT=	yes
 
+USE_GCC=	4.4+
+
 MAN1=		\
 		PTBatcherGUI.1 \
 		align_image_stack.1 \
