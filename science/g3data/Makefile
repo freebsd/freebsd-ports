@@ -16,7 +16,7 @@ COMMENT=	Utility for extracting data from graphs
 
 BUILD_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410
+		${LOCALBASE}/share/sgml/docbook/4.1/dtd/docbook.dtd:${PORTSDIR}/textproc/docbook-410
 
 USE_GNOME=	gtk20
 ALL_TARGET=
