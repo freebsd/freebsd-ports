@@ -21,8 +21,7 @@ RUN_DEPENDS=	p5-Business-ISBN>=1.80:${PORTSDIR}/misc/p5-Business-ISBN \
 		p5-libwww>=5.801:${PORTSDIR}/www/p5-libwww \
 		p5-XML-LibXML>=1.58:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

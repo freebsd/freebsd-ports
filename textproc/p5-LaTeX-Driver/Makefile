@@ -7,7 +7,7 @@
 
 PORTNAME=	LaTeX-Driver
 PORTVERSION=	0.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,6 @@ COMMENT=	Perl module of LaTeX Driver
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX-base \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
-		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}

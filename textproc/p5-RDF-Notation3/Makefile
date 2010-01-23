@@ -7,6 +7,7 @@
 
 PORTNAME=	RDF-Notation3
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	RDF Notation3 parser
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/RDF/Core.pm:${PORTSDIR}/textproc/p5-RDF-Core \
 		${SITE_PERL}/${PERL_ARCH}/RDFStore.pm:${PORTSDIR}/textproc/p5-RDFStore
 RUN_DEPENDS=	${BUILD_DEPENDS}

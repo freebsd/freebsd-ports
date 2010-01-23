@@ -7,6 +7,7 @@
 
 PORTNAME=	Text-MultiMarkdown
 PORTVERSION=	1.000032
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Text-Markdown>=1.0.26:${PORTSDIR}/textproc/p5-Text-Markdown
 RUN_DEPENDS=	\
-	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 	p5-Text-Markdown>=1.0.26:${PORTSDIR}/textproc/p5-Text-Markdown
 
 PERL_CONFIGURE=	yes

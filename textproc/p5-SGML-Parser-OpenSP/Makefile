@@ -7,6 +7,7 @@
 
 PORTNAME=	SGML-Parser-OpenSP
 PORTVERSION=	0.994
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Parse SGML documents using OpenSP
 
 BUILD_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

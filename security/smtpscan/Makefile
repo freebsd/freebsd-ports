@@ -7,15 +7,14 @@
 
 PORTNAME=	smtpscan
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security mail perl5
 MASTER_SITES=	http://www.frbsd.org/dist/
 
 MAINTAINER=	hubert@frbsd.org
 COMMENT=	A remote SMTP server version detector
 
-RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_PERL5=	yes
 MAN1=	smtpscan.1
