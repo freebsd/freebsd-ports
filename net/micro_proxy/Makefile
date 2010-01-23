@@ -20,6 +20,7 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	libexec/micro_proxy
 MAN8=		micro_proxy.8
+SUB_FILES=	pkg-message
 
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}.o
@@ -30,6 +31,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MANPREFIX}/man/man8
 
 post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
