@@ -1,0 +1,12 @@
+bin/debug.pl
+bin/pod2indexed_html.pl
+bin/podhtmleasy.pl
+bin/podhtmleasy.sh
+%%SITE_PERL%%/Pod/HtmlEasy/Data.pm
+%%SITE_PERL%%/Pod/HtmlEasy/Parser.pm
+%%SITE_PERL%%/Pod/HtmlEasy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/HtmlEasy/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/HtmlEasy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrm %%SITE_PERL%%/Pod/HtmlEasy
+@dirrmtry %%SITE_PERL%%/Pod
