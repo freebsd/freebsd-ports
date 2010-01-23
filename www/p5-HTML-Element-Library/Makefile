@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Element-Library
-PORTVERSION=	4.2.a
+PORTVERSION=	4.2.b
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,7 +28,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		HTML::Element::Library::Changes.3
+MAN3=		HTML::Element::Library::Changes.3 \
+		HTML::Element::Library.3
 
 post-extract:
 	@cd ${WRKSRC} && pod2text lib/HTML/Element/Library.pm > README
