@@ -379,7 +379,6 @@
     SUBDIR += msntp
     SUBDIR += mtr
     SUBDIR += mudix
-    SUBDIR += mugshot
     SUBDIR += nakenchat
     SUBDIR += nam
     SUBDIR += nast
