@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	rtorrent
-PORTVERSION?=	0.8.5
+PORTVERSION?=	0.8.6
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
@@ -16,8 +16,8 @@ MASTER_SITE_SUBDIR=	flz/rtorrent/
 MAINTAINER?=	flz@FreeBSD.org
 COMMENT?=	BitTorrent Client written in C++
 
-BUILD_DEPENDS?=	libtorrent=0.12.5:${PORTSDIR}/net-p2p/libtorrent
-RUN_DEPENDS?=	libtorrent=0.12.5:${PORTSDIR}/net-p2p/libtorrent
+BUILD_DEPENDS?=	libtorrent=0.12.6:${PORTSDIR}/net-p2p/libtorrent
+RUN_DEPENDS?=	libtorrent=0.12.6:${PORTSDIR}/net-p2p/libtorrent
 LIB_DEPENDS?=	curl.5:${PORTSDIR}/ftp/curl
 
 CONFLICTS?=	rtorrent-devel-[0-9]*
