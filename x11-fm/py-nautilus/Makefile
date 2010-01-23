@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	x11-fm gnome python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/nautilus-python/${PORTVERSION:R}
