@@ -1,5 +1,5 @@
---- hald/freebsd/hf-usb2.c.orig	2009-11-21 19:57:40.000000000 -0500
-+++ hald/freebsd/hf-usb2.c	2009-11-21 19:58:07.000000000 -0500
+--- hald/freebsd/hf-usb2.c.orig	2010-01-23 14:52:11.000000000 -0500
++++ hald/freebsd/hf-usb2.c	2010-01-23 14:52:33.000000000 -0500
 @@ -0,0 +1,312 @@
 +/***************************************************************************
 + * CVSID: $Id$
@@ -82,9 +82,9 @@
 +
 +      hal_device_property_set_string(device, "info.subsystem", "usb");
 +      hal_device_property_set_int(device, "usb.interface.number", i);
-+      hal_device_property_foreach(parent, hf_usb2_copy_parent, device);
 +      hal_device_copy_property(parent, "info.product", device, "info.product");
 +      hal_device_copy_property(parent, "info.vendor", device, "info.vendor");
++      hal_device_merge_with_rewrite(device, parent, "usb.", "usb_device.");
 +
 +      if (hf_device_preprobe(device))
 +        {
