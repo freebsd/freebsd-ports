@@ -28,7 +28,6 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 .if !defined(LIBPROXY_SLAVE)
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-CONFLICTS=	libmonetra-[0-9]*
 .endif
 
 .include <bsd.port.mk>
