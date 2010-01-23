@@ -16,7 +16,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 
 USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
-USE_GCC=	4.2+
+CFLAGS+=	-fPIC
 
 PLIST_FILES+=	lib/lib${PLUGIN_NAME}_pi.a \
 		lib/lib${PLUGIN_NAME}_pi.la \
