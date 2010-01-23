@@ -1,3 +1,6 @@
+%%PYTHON_SITELIBDIR%%/butterfly/Connection_Interface_Mail_Notification.py
+%%PYTHON_SITELIBDIR%%/butterfly/Connection_Interface_Mail_Notification.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/Connection_Interface_Mail_Notification.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/__init__.py
 %%PYTHON_SITELIBDIR%%/butterfly/__init__.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/__init__.pyo
@@ -46,6 +49,9 @@
 %%PYTHON_SITELIBDIR%%/butterfly/presence.py
 %%PYTHON_SITELIBDIR%%/butterfly/presence.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/presence.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/mail_notification.py
+%%PYTHON_SITELIBDIR%%/butterfly/mail_notification.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/mail_notification.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/media/__init__.py
 %%PYTHON_SITELIBDIR%%/butterfly/media/__init__.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/media/__init__.pyo
