@@ -4,7 +4,6 @@ bin/shorten
 %%SITE_PERL%%/WWW/Shorten/Linkz.pm
 %%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
 %%SITE_PERL%%/WWW/Shorten/Metamark.pm
-%%SITE_PERL%%/WWW/Shorten/Shorl.pm
 %%SITE_PERL%%/WWW/Shorten/TinyClick.pm
 %%SITE_PERL%%/WWW/Shorten/TinyURL.pm
 %%SITE_PERL%%/WWW/Shorten/Tinylink.pm
