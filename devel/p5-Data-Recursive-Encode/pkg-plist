@@ -1,4 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Recursive/Encode/.packlist
 %%SITE_PERL%%/Data/Recursive/Encode.pm
 @dirrmtry %%SITE_PERL%%/Data/Recursive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Recursive/Encode
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Recursive/Encode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Recursive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
