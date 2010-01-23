@@ -32,7 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
 CAIRO_API_VERSION=	1.0
 GLIB_API_VERSION=	0.4
 PLIST_SUB=		CAIRO_API_VERSION=${CAIRO_API_VERSION} PORTNAME=${PORTNAME}
-PKGMESSAGE=		${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	JAVAJARDIR=${JAVAJARDIR} CAIRO_API_VERSION=${CAIRO_API_VERSION}
 
 # jikes related
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
@@ -64,10 +65,6 @@ post-install:
 	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
 	${TOUCH} ${DOCSDIR}/api/packages.html
 .endif
-	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; \
-		s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%CAIRO_API_VERSION%%|${CAIRO_API_VERSION}|g' \
-		 < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
