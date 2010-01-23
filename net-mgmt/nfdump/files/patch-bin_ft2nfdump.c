@@ -1,10 +1,10 @@
 
 $FreeBSD$
 
---- ft2nfdump.c.orig
-+++ ft2nfdump.c
-@@ -66,7 +66,7 @@
- #include "nffile.h"
+--- bin/ft2nfdump.c.orig
++++ bin/ft2nfdump.c
+@@ -68,7 +68,7 @@
+ #include "nfx.h"
  #include "launch.h"
  
 -#include "ftbuild.h"

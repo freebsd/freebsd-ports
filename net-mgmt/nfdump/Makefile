@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -23,20 +23,15 @@ OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 
 .include <bsd.port.pre.mk>
 
-#for compatibility
-#
-.ifndef(WITHOUT_NFDUMP14_SUPPORT)
-CONFIGURE_ARGS=		--enable-compat14
-.endif
-
 PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfreplay bin/nfexpire
 MAN1=		nfcapd.1 nfdump.1 nfreplay.1 nfexpire.1
+MAN1+=		nfprofile.1 ft2nfdump.1 sfcapd.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
 .if defined(WITH_NFPROFILE)
 CONFIGURE_ARGS+=	--enable-nfprofile --with-rrdpath=${LOCALBASE}
 PLIST_FILES+=	bin/nfprofile
-MAN1+=		nfprofile.1
+#MAN1+=		nfprofile.1
 BUILD_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
@@ -46,14 +41,14 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 CONFIGURE_ARGS+=	--enable-ftconv --with-ftpath=${LOCALBASE}
 PLIST_FILES+=	bin/ft2nfdump
-MAN1+=		ft2nfdump.1
+#MAN1+=		ft2nfdump.1
 .endif
 
 #sflow capture support
 .if defined(WITH_SFLOW)
 CONFIGURE_ARGS+=	--enable-sflow
 PLIST_FILES+=	bin/sfcapd
-MAN1+=		sfcapd.1
+#MAN1+=		sfcapd.1
 .endif
 
 .if !defined(NOPORTDOCS)

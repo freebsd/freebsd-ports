@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- configure.orig
 +++ configure
-@@ -2843,7 +2843,7 @@
+@@ -4011,7 +4011,7 @@
  fi
  
  if test -d "$WHERE_FTPATH"; then
@@ -12,7 +12,7 @@ $FreeBSD$
  		{ { echo "$as_me:$LINENO: error: ftlib.h file not found in flow-tools directory '$WHERE_FTPATH'. Use --with-ftpath=PATH" >&5
  echo "$as_me: error: ftlib.h file not found in flow-tools directory '$WHERE_FTPATH'. Use --with-ftpath=PATH" >&2;}
     { (exit 1); exit 1; }; }
-@@ -2853,7 +2853,7 @@
+@@ -4021,7 +4021,7 @@
  echo "$as_me: error: libft.a not found in flow-tools directory '$WHERE_FTPATH'. Build flow tools first" >&2;}
     { (exit 1); exit 1; }; }
  	fi
