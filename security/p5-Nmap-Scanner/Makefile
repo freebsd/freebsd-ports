@@ -7,7 +7,7 @@
 
 PORTNAME=	Nmap-Scanner
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,11 +17,9 @@ COMMENT=	Perform and manipulate nmap scans using perl
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${SITE_PERL}/Class/Generate.pm:${PORTSDIR}/devel/p5-Class-Generate \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		nmap:${PORTSDIR}/security/nmap
 RUN_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${SITE_PERL}/Class/Generate.pm:${PORTSDIR}/devel/p5-Class-Generate \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		nmap:${PORTSDIR}/security/nmap
 
 PERL_CONFIGURE=	yes
