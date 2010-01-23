@@ -1,0 +1,18 @@
+------------------------------------------------------------------
+ To build Go programs for FreeBSD, you'll want to set up your
+ environment properly. The following environment variables should
+ be set:
+
+ GOOS=freebsd
+ GOARCH=%%ARCH%%
+ GOROOT=%%PREFIX%%/lib/go
+
+ To build Go programs, you may include %%PREFIX%%/share/go/Make.pkg
+ or %%PREFIX%%/share/go/Make.cmd in your build infrastructure
+ (note: this requires gmake).
+
+ Your compiler is %%GOOBJ%%g and your linker is %%GOOBJ%%l.
+
+ For more information on programming in Go and for more
+ documentation, see http://www.golang.org.
+------------------------------------------------------------------
