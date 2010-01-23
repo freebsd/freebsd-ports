@@ -17,3 +17,5 @@ is *not* a robomoderator or gateway in and of itself.  Rather, it's a
 toolkit for *building* robomoderators and gateways that attempts to
 take care of all of the nitpicking details for you and drastically
 decrease the amount of code you have to write.
+
+WWW: http://search.cpan.org/dist/Gateway

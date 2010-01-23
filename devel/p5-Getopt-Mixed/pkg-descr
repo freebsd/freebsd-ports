@@ -2,3 +2,5 @@ This module provides GNU-style option processing for Perl 5 scripts,
 with both long and short options.  Please see the documentation at the
 end of the module for instructions on its use and licensing
 restrictions.
+
+WWW: http://search.cpan.org/dist/Getopt-Mixed

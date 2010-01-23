@@ -8,3 +8,5 @@ changing $PI (heh).  Most notably, there is a C<attr> function that installs
 a whole hash on the symbol table with implicit localization.  This allows
 you to access object attributes without having to deref the object every
 time, as in most other OO languages.
+
+WWW: http://search.cpan.org/dist/Alias

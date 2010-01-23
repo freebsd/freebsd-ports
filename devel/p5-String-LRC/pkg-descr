@@ -12,3 +12,5 @@ which generates this aforementioned byte.
 Commonly used in financial protocols as follows with ETX (ASCII 03)
 appended to LRC sum and packets after the STX (ASCII 02), payload, 
 and ETX chars. 
+
+WWW: http://search.cpan.org/dist/String-LRC

@@ -11,3 +11,5 @@ From README:
     module to use, the database connect string, the username and the
     password. You will be prompted to give a name to this virtual
     user. You can add as many as you like.
+
+WWW: http://search.cpan.org/dist/DBIx-Password
