@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mongodb
-PORTVERSION=	1.1.3
+PORTVERSION=	1.3.0
 CATEGORIES=	databases net
-MASTER_SITES=	http://download.github.com/ \
-		http://people.freebsd.org/~ivoras/distfiles/
+MASTER_SITES=	http://downloads.mongodb.org/src/
 PKGNAMESUFFIX=	-devel
-DISTFILES=	mongodb-mongo-aa8b12e.tar.gz
+DISTNAME=	mongodb-src-r${PORTVERSION}
 
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	A NOSQL distributed document-oriented database
@@ -27,7 +26,6 @@ CONFLICTS=	mongodb-[0-9]*
 USE_SCONS=	yes
 SCONS_TARGET=	all
 USE_RC_SUBR=	mongod
-WRKSRC=		${WRKDIR}/mongodb-mongo-aa8b12e
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 700042
@@ -37,8 +35,6 @@ BROKEN=		Does not build
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|elif "freebsd7" == os.sys.platform|elif os.sys.platform.startswith("freebsd")|' \
 		${WRKSRC}/SConstruct
-
-	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#g' ${WRKSRC}/SConstruct
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mongo ${PREFIX}/bin
