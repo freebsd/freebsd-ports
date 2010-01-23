@@ -1,5 +1,8 @@
 bin/parole
+include/parole/parole-debug.h
 include/parole/parole-file.h
+include/parole/parole-filters.h
+include/parole/parole-pl-parser.h
 include/parole/parole-provider-player.h
 include/parole/parole-provider-plugin.h
 include/parole/parole-stream.h
@@ -10,6 +13,7 @@ lib/parole-0/tray-icon.la
 lib/parole-0/tray-icon.so
 lib/parole-0/window-title.la
 lib/parole-0/window-title.so
+libexec/parole-media-plugin
 share/applications/parole.desktop
 share/icons/hicolor/16x16/apps/parole.png
 share/icons/hicolor/22x22/apps/parole.png
@@ -18,6 +22,7 @@ share/icons/hicolor/48x48/apps/parole.png
 share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/da/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/de/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/es/LC_MESSAGES/parole.mo
@@ -31,6 +36,7 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/pt/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/parole.mo
