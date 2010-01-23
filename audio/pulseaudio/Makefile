@@ -12,6 +12,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.21
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -22,7 +23,8 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		speexdsp.1:${PORTSDIR}/audio/speex \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		ck-connector.0:${PORTSDIR}/sysutils/consolekit
 
 USE_GNOME=	gnometarget gnomehack glib20 intltool ltverhack
 USE_XORG=	x11 sm xtst ice
@@ -92,8 +94,7 @@ PLIST_SUB+=	AVAHI="@comment "
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	HAL=""
 .else
-CONFIGURE_ARGS+=--disable-hal \
-		--disable-polkit
+CONFIGURE_ARGS+=--disable-hal
 PLIST_SUB+=	HAL="@comment "
 .endif
 
