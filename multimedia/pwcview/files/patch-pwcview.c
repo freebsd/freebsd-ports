@@ -1,5 +1,5 @@
---- pwcview.c.orig	2010-01-14 18:40:49.000000000 +0100
-+++ pwcview.c	2010-01-14 18:57:19.000000000 +0100
+--- pwcview.c.orig	2007-10-09 03:23:58.000000000 -0400
++++ pwcview.c	2010-01-22 17:09:20.000000000 -0500
 @@ -37,11 +37,8 @@
  #ifndef NOGUI
  #include <SDL.h>
@@ -377,7 +377,41 @@
  	jpeg_stdio_dest(cinfo, outfile);
  	jpeg_start_compress(cinfo, TRUE);
  
-@@ -1218,7 +1217,7 @@
+@@ -1041,7 +1040,10 @@
+ }
+ #endif
+ 
+-#define PSZ_MAX 6
++#ifdef PSZ_MAX
++#undef PSZ_MAX
++#endif
++#define PSZ_MAX 10
+ struct {
+ 	char *name;
+ 	int width;
+@@ -1052,7 +1054,11 @@
+ 	{ "qcif", 176, 144 },
+ 	{ "sif", 320, 240 },
+ 	{ "cif", 352, 288 },
+-	{ "vga", 640, 480 }
++	{ "vga", 640, 480 },
++	{ "svga", 800, 600 },
++	{ "xga", 1024, 768 },
++	{ "sxga", 1280, 1024 },
++	{ "uxga", 1600, 1200 }
+ };
+ 	
+ int usage()
+@@ -1184,7 +1190,7 @@
+ 					  break;
+ 
+ 			if(i == PSZ_MAX) {
+-				fprintf(stderr,"Invalid size, valid sizes: sqcif, qsif, qcif, sif, cif, vga\n");
++				fprintf(stderr,"Invalid size, valid sizes: sqcif, qsif, qcif, sif, cif, vga, svga, xga, sxga, uxga\n");
+ 				return 1;
+ 			}
+ 			break;
+@@ -1218,7 +1224,7 @@
  	vw.flags = fps << PWC_FPS_SHIFT;
  	imgsize = (vw.width * vw.height * 3)/2;
  
@@ -386,7 +420,7 @@
  		if(errno == EBUSY)
  			fprintf(stderr,"Failed to access webcam: Device in use\n");
  		else {
-@@ -1236,17 +1235,17 @@
+@@ -1236,17 +1242,17 @@
      	}
  	fcntl(fd,F_SETFD,FD_CLOEXEC);
  
@@ -407,7 +441,7 @@
  		fprintf(stderr,"Failed to set webcam to: %dx%d (%s) at %d fps (%s)\n",
  				vw.width,vw.height,sizes[i].name,fps,strerror(errno));
  		exit(1);
-@@ -1254,12 +1253,12 @@
+@@ -1254,12 +1260,12 @@
  	fprintf(stderr,"Webcam set to: %dx%d (%s) at %d fps\n",vw.width,vw.height,sizes[i].name,fps);
  
  	if(headless && snapcnt == 0 && motionrecord == 0) { /* Done */
@@ -422,7 +456,7 @@
  		   probe.type >= 720 && probe.type <= 740)
  				snapbtn = 1;
  	}
-@@ -1327,7 +1326,7 @@
+@@ -1327,7 +1333,7 @@
  			timerid = SDL_AddTimer(interval,cbtimer,NULL);
  	}
  #endif
@@ -431,7 +465,7 @@
  		int snap = y[0] & 0x01;
  		if(!frozen && size != imgsize) {
  			if(size != -1) {
-@@ -1498,7 +1497,7 @@
+@@ -1498,7 +1504,7 @@
  	if(size != 0)
  		perror("Error reading from webcam");
  
