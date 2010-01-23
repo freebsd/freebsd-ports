@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clipgrab
-PORTVERSION=	3.0.4.1
+PORTVERSION=	3.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://clipgrab.de/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -19,11 +19,17 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build \
 		rcc_build network
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 PLIST_FILES=	bin/${PORTNAME} \
-		share/${PORTNAME}/icon.png \
-		share/${PORTNAME}/logo.png \
-		share/${PORTNAME}/splash.png
-PLIST_DIRS=	share/${PORTNAME}
+		%%DATADIR%%/icon.png \
+		%%DATADIR%%/logo.png \
+		%%DATADIR%%/splash.png
+PLIST_DIRS=	%%DATADIR%%
+
+DESKTOP_ENTRIES="Clipgrab" "Download and convert videos from YouTube and etc" \
+		"${DATADIR}/icon.png" "${PORTNAME}" \
+		"AudioVideo;Audio;Video;" false
 
 post-patch:
 	${REINPLACE_CMD} -e 's,img/,share/${PORTNAME}/,g' \
