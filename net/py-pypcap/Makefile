@@ -7,7 +7,7 @@
 
 PORTNAME=	pypcap
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,10 +27,4 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcap.so
 post-patch:
 	${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pcap.c
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800074
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
