@@ -8,17 +8,20 @@
 
 PORTNAME=	cwish
 PORTVERSION=	3.52
-PORTREVISION=	1
-CATEGORIES=	misc
-MASTER_SITES=	# none
+PORTREVISION=	2
+CATEGORIES=	misc shells
+MASTER_SITES=	http://www.predatorlabs.net/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Curses based user friendly windowing shell
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	cwish
 MAN1=		cwish.1
 PLIST_FILES=	bin/cwish
+
+post-patch:
+	${REINPLACE_CMD} -e 65d ${WRKSRC}/cwish.h
 
 pre-configure:
 	${CP} ${WRKSRC}/Makefile.FreeBSD ${WRKSRC}/Makefile
