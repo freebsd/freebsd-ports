@@ -5,11 +5,11 @@ include/ctlgeom.h
 lib/libctl.a
 lib/libctl.la
 lib/libctl.so
-lib/libctl.so.3
+lib/libctl.so.4
 lib/libctlgeom.a
 lib/libctlgeom.la
 lib/libctlgeom.so
-lib/libctlgeom.so.3
+lib/libctlgeom.so.4
 %%PORTDOCS%%%%DOCSDIR%%/advanced-user.html
 %%PORTDOCS%%%%DOCSDIR%%/basic-user.html
 %%PORTDOCS%%%%DOCSDIR%%/developer.html
@@ -56,6 +56,8 @@ lib/libctlgeom.so.3
 %%DATADIR%%/utils/ctl-io.scm
 %%DATADIR%%/utils/geom.c
 %%DATADIR%%/utils/geom.scm
+%%DATADIR%%/utils/nlopt-constants.scm
+%%DATADIR%%/utils/nlopt.c
 @dirrm %%DATADIR%%/utils
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
