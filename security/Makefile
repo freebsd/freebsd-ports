@@ -210,6 +210,7 @@
     SUBDIR += ipsec-tools
     SUBDIR += isakmpd
     SUBDIR += isnprober
+    SUBDIR += isolate
     SUBDIR += its4
     SUBDIR += jce_policy14
     SUBDIR += john
