@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	fricas
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A computer algebra system, forked from axiom
 
 BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl \
