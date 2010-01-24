@@ -1,0 +1,11 @@
+--- img/Makefile.orig	2009-12-10 18:44:03.000000000 +0100
++++ img/Makefile	2010-01-05 12:25:31.000000000 +0100
+@@ -15,7 +15,7 @@
+ 	echo $(OBJS)
+ 
+ install:
+-	install -D -m 644 key.xpm $(destdir)$(prefix)/share/pixmaps/xca-32x32.xpm
++	install -d -m 755 $(destdir)$(prefix)/share/pixmaps && install -m 644 key.xpm $(destdir)$(prefix)/share/pixmaps/xca-32x32.xpm
+ 
+ imgres.cpp: imgres.rcc
+ 	$(RCC) -o $@ $<

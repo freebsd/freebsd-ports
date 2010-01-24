@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	xca
-PORTVERSION=	0.6.4
+PORTVERSION=	0.8.1
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	mark@foster.cc
+MAINTAINER=	freebsd@nagilum.org
 COMMENT=	Graphical certification authority
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build uic_build qmake_build rcc_build linguist_build
+USE_AUTOTOOLS=	libltdl:22
 CC?=		gcc
 CXX?=		g++
 
@@ -34,7 +35,7 @@ post-patch:
 	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
 	@echo "LDFLAGS= ${LDFLAGS} -L${QT_LIBDIR} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
-	@echo "LIBS= -lQtGui ${PTHREAD_LIBS} -lcrypto" >> ${WRKSRC}/Local.mak
+	@echo "LIBS= -lQtGui ${PTHREAD_LIBS} -lcrypto -lltdl" >> ${WRKSRC}/Local.mak
 	@echo "MOC=${MOC}" >> ${WRKSRC}/Local.mak
 	@echo "UIC=${QT_PREFIX}/bin/uic-qt4" >> ${WRKSRC}/Local.mak
 	@echo "RCC=${LOCALBASE}/bin/rcc"  >> ${WRKSRC}/Local.mak
@@ -45,9 +46,11 @@ post-patch:
 	@echo "prefix=${PREFIX}" >> ${WRKSRC}/Local.mak
 	@echo "etc=${PREFIX}/etc/xca" >> ${WRKSRC}/Local.mak
 	@echo "basedir=" >> ${WRKSRC}/Local.mak
+	@echo "docdir=${DOCSDIR}" >> ${WRKSRC}/Local.mak
 	@echo "#define PREFIX \"${PREFIX}\"" > ${WRKSRC}/local.h
 	@echo "#define ETC \"${PREFIX}/etc/xca\"" >> ${WRKSRC}/local.h
 	@echo "#define VER \"${PORTVERSION}\"" >> ${WRKSRC}/local.h
+	@echo "#define DOCDIR \"${DOCSDIR}\"" >> ${WRKSRC}/local.h
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/import.cpp
 
 .include <bsd.port.post.mk>

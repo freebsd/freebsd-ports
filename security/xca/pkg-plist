@@ -1,15 +1,17 @@
 @comment $FreeBSD$
 bin/xca
-share/xca/CA.xca
-share/xca/HTTPS_client.xca
-share/xca/HTTPS_server.xca
-share/xca/aia.txt
-share/xca/dn.txt
-share/xca/eku.txt
-share/xca/oids.txt
-share/xca/xca_de.qm
-share/xca/xca_es.qm
-share/xca/xca.html
+%%DATADIR%%/CA.xca
+%%DATADIR%%/HTTPS_client.xca
+%%DATADIR%%/HTTPS_server.xca
+%%DATADIR%%/aia.txt
+%%DATADIR%%/dn.txt
+%%DATADIR%%/eku.txt
+%%DATADIR%%/oids.txt
+%%DATADIR%%/xca_de.qm
+%%DATADIR%%/xca_es.qm
+%%DOCSDIR%%/xca.html
 share/applications/xca.desktop
-@dirrm share/xca
+share/pixmaps/xca-32x32.xpm
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
