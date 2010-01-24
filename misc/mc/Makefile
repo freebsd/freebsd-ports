@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mc
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.0.1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
@@ -36,10 +36,13 @@ OPTIONS=	SLANG		"Build with SLang library" on \
 		SUBSHELL	"Build with subshell support" on \
 		SAMBA		"Build with Samba support" on
 
+post-patch:
+	${REINPLACE_CMD} -e 's/SUBDIRS = intl/SUBDIRS =/' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SAMBA) || !(defined(WITHOUT_SAMBA) || defined(MINIMAL))
-CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc \
+CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc\
 		--with-codepagedir=${LOCALBASE}/etc/codepages
 .endif
 
@@ -55,6 +58,7 @@ PLIST_SUB=	CHARSETS="@comment "
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 _MANLANG=	es hu it pl ru sr
