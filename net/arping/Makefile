@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	arping
-PORTVERSION=	2.06
+PORTVERSION=	2.08
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
-MAINTAINER=	gavin.atkinson@ury.york.ac.uk
+MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	ARP level "ping" utility
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
