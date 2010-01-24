@@ -1,0 +1,4 @@
+isolate runs processes in a chroot-ed environment, with constrained resource
+limits, as a random UID, and with limited access to the X server
+
+WWW:	http://code.google.com/p/isolate/
