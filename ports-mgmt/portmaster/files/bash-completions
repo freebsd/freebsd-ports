@@ -10,7 +10,7 @@ _portmaster () {
 		--clean-distfiles --clean-distfiles-all	--check-depends \
 		--check-port-dbdir --list-origins --packages --packages-only \
 		--packages-build --packages-if-newer --delete-build-only \
-		--always-fetch --local-packagedir= \
+		--always-fetch --local-packagedir= --no-confirm \
 		--help --version' -- $cur ) )
 		;;
 	*)	COMPREPLY=( $( compgen -d /var/db/pkg/$cur ) )
