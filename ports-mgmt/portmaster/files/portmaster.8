@@ -1,4 +1,4 @@
-.\" Copyright (c) 2006-2009 Doug Barton dougb@FreeBSD.org
+.\" Copyright (c) 2006-2010 Doug Barton dougb@FreeBSD.org
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd December 3, 2009
+.Dd January 23, 2010
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -38,6 +38,7 @@ Common Flags:
 .Op Fl -delete-build-only
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -no-confirm
 .Op Fl m Ar arguments for make
 .Op Fl x Ar glob pattern to exclude from building
 .Nm
@@ -133,7 +134,7 @@ including what is located in
 .Pa /var/db/pkg .
 The focus of this tool is to keep the dependency
 tracking information for your ports up to date.
-This allows you to update a specific port without
+This allows you to safely update a specific port without
 having to update all of the ports
 .Qq above
 it.
@@ -145,7 +146,8 @@ option exists to accomplish this.
 .Pp
 By default
 .Nm
-updates the port you specify on the command line
+updates the port you specify on the command line.
+This will occur
 whether there is a new version for it or not.
 It will first recurse through the port
 and all of its dependencies (if any) to handle
@@ -156,25 +158,38 @@ or if the OPTIONS have changed.
 You can force dialogs for all ports by using the
 .Fl -force-config
 option.
-It will then start building all ports that need
-updating.
+.Pp
 While recursing through dependencies,
 if you are not using any of the
 .Fl -packages*
 options,
 a 'make checksum' process will be launched
 in the background to either verify that the
-correct distfiles are available,
+correct distfiles are available
 or start downloading the new ones.
 If you stop
 .Nm
 with ^C, an attempt will be made to kill off
 the child processes started for this purpose.
 .Pp
-If the recursion through the ports for 'make
-config' does not find a port that needs updating
-the dependency check step will be skipped prior
-to building the port specified on the command line.
+While checking dependencies if a port has CONFLICTS
+set they will be compared to your installed ports
+and if you already have an alternate version of the dependency
+that is required by the port you are building
+it will be used in place of the default dependency.
+.Pp
+When the config and dependency checking phase is over the
+user will be presented with a list of ports that will be
+installed and/or upgraded, and asked to approve
+before proceeding.
+This behavior can be supressed with the
+.Fl -no-confirm
+option.
+.Pp
+If the dependency check
+does not find a port that needs updating
+that step will be skipped prior
+to building the port(s) specified on the command line.
 In addition to this optimization,
 information about up-to-date dependencies,
 choices made on which ports to build for
@@ -195,12 +210,6 @@ This can be eliminated with the
 or
 .Fl D
 options.
-.Pp
-While checking dependencies, if a port has CONFLICTS
-set, the list will be checked against your installed ports,
-and if you have installed an alternate version of a port
-that is required by the port you are building,
-it will be used in place of the default dependency.
 .Pp
 There are a number of
 .Fl -packages*
@@ -292,11 +301,6 @@ The answer is that (unfortunately)
 is not omniscient, and cannot guess what resolution the
 user would like to have for this problem.
 Manual intervention is therefore required.
-Assuming that the failure occurred after the config phase has ended
-(i.e., something has started building),
-the user can save time by adding the
-.Fl G
-option to the command line to skip the config phase the second time through.
 .Sh OPTIONS
 The options are as follows:
 .Bl -tag -width F1
@@ -406,6 +410,9 @@ in the category subdirectories, such as
 .Pa <path>/devel ,
 .Pa <path>/ports-mgmt ,
 etc.
+.It Fl -no-confirm
+do not ask the user to confirm the list of ports to
+be installed and/or updated before proceeding
 .It Fl l
 list all installed ports by category
 .It Fl L
@@ -595,6 +602,9 @@ along with their related options.
 #
 # Specify a local package repository (--local-packagedir)
 # LOCAL_PACKAGEDIR=<path>
+#
+# Suppress the build confirmation message (--no-confirm)
+# PM_NO_CONFIRM=pm_no_confirm
 .Ed
 .Pp
 .It Pa /var/db/pkg/*/+IGNOREME
