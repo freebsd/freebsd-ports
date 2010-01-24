@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libctl
-PORTVERSION=	3.0.3
-PORTREVISION=	5
+PORTVERSION=	3.1
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
@@ -26,7 +25,7 @@ MAN1=		gen-ctl-io.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-BROKEN=		does not compile on FreeBSD 6.X
+USE_FORTRAN=	g77
 .endif
 
 post-install:
