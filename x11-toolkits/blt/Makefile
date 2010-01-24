@@ -7,7 +7,7 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.4z
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/${PORTNAME}/BLT/BLT%20${PORTVERSION} \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
