@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -43,7 +44,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}"
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
-CONFLICTS=	bcc-[0-9]*
+CONFLICTS=	bcc-[0-9]* virtualbox-ose-additions-3*
 
 VBOXGROUP?=	vboxusers
 VBOXGID?=	920
@@ -171,6 +172,7 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_VBOXDRV = ' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_NETFLT = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_NETADP = ' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_TESTCASES=' >> ${WRKSRC}/LocalConfig.kmk
 .if defined(WITHOUT_X11)
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 .endif

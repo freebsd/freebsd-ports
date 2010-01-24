@@ -1,5 +1,18 @@
 --- src/VBox/Devices/Makefile.kmk.orig	2009-12-17 15:27:43.000000000 +0100
 +++ src/VBox/Devices/Makefile.kmk	2009-12-21 14:29:56.000000000 +0100
+@@ -31,8 +31,10 @@
+  include $(PATH_SUB_CURRENT)/PC/VMI/Makefile.kmk
+ endif
+ include $(PATH_SUB_CURRENT)/Graphics/BIOS/Makefile.kmk
+-include $(PATH_SUB_CURRENT)/testcase/Makefile.kmk
+-include $(PATH_SUB_CURRENT)/Storage/testcase/Makefile.kmk
++ifdef VBOX_WITH_TESTCASES
++ include $(PATH_SUB_CURRENT)/testcase/Makefile.kmk
++ include $(PATH_SUB_CURRENT)/Storage/testcase/Makefile.kmk
++endif
+ ifndef VBOX_OSE
+  include $(PATH_SUB_CURRENT)/Storage/VBoxHDDFormats/Makefile.kmk
+ endif
 @@ -970,6 +970,10 @@
   Drivers_SOURCES.linux+= \
  	Audio/pulseaudio.c \
