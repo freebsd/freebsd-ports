@@ -7,6 +7,7 @@
 
 PORTNAME=	libpcap
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -84,7 +85,7 @@ MAN5=		pcap-savefile.5
 MAN7=		pcap-filter.7 pcap-linktype.7
 
 MLINKS=		pcap_datalink_val_to_name.3 \
-		    pcap_datalink_val_to_description.3 \
+		pcap_datalink_val_to_description.3 \
 		pcap_dump_open.3 pcap_dump_fopen.3 \
 		pcap_geterr.3 pcap_perror.3 \
 		pcap_inject.3 pcap_sendpacket.3 \
@@ -122,6 +123,14 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+# Packages are built on a kernel that has cloning, but the resulting
+# package will be run on a system that does not have cloning (7.x).
+# Always use bpf device, but specify CFLAGS if we have cloning.
+CONFIGURE_ARGS+=	--with-pcap=bpf
+.if ${OSVERSION} > 800043
+CFLAGS+=	-DHAVE_DEVICE_CLONING=1
+.endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
