@@ -59,11 +59,6 @@ LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
-	@${REINPLACE_CMD} -E '/qt_[a-z_]+\.qm/I s/qm/ts/g' \
-	${WRKSRC}/src/mumble11x/mumble11x.pro \
-	${WRKSRC}/src/mumble11x/mumble_qt.qrc \
-	${WRKSRC}/src/mumble/mumble.pro \
-	${WRKSRC}/src/mumble/mumble_qt.qrc
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} ${QMAKE} PREFIX=${PREFIX} main.pro "CONFIG+=${CONFIG}"
