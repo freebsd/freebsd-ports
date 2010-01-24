@@ -1,5 +1,5 @@
---- hald/freebsd/probing/probe-usb2-interface.c.orig	2009-02-24 00:36:27.000000000 -0500
-+++ hald/freebsd/probing/probe-usb2-interface.c	2009-02-24 00:39:42.000000000 -0500
+--- hald/freebsd/probing/probe-usb2-interface.c.orig	2010-01-23 19:24:29.000000000 -0500
++++ hald/freebsd/probing/probe-usb2-interface.c	2010-01-23 19:52:30.000000000 -0500
 @@ -0,0 +1,140 @@
 +/***************************************************************************
 + * CVSID: $Id$
@@ -61,11 +61,11 @@
 +  if (pbe == NULL)
 +    goto end;
 +
-+  busstr = getenv("HAL_PROP_USB_DEVICE_BUS_NUMBER");
++  busstr = getenv("HAL_PROP_USB_BUS_NUMBER");
 +  if (! busstr)
 +    goto end;
 +
-+  addrstr = getenv("HAL_PROP_USB_DEVICE_PORT_NUMBER");
++  addrstr = getenv("HAL_PROP_USB_PORT_NUMBER");
 +  if (! addrstr)
 +    goto end;
 +
