@@ -45,9 +45,6 @@ BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
-EPATCH=		extrapatch-src-xml-Makefile
-
-SUB_LIST+=	WRKSRC=${WRKSRC:S|//|/|}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
@@ -62,7 +59,6 @@ post-configure:
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtXml.pc
 #disable installation of include/Qt/qxmlstream.h, it handled by qt-corelib package
-	@${SED} ${_SUB_LIST_TEMP} ${FILESDIR}/${EPATCH} > ${WRKDIR}/${EPATCH}
-	${PATCH} -d ${WRKSRC} < ${WRKDIR}/${EPATCH}
+	${REINPLACE_CMD} -e '\,stream/qxmlstream.h.*${QT_INCDIR}/Qt/,d' ${WRKSRC}/src/xml/Makefile
 
 .include <bsd.port.mk>
