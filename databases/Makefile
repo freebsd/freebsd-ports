@@ -458,7 +458,6 @@
     SUBDIR += pg_filedump
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
-    SUBDIR += pgadmin3-12
     SUBDIR += pgbouncer
     SUBDIR += pgcluster
     SUBDIR += pgdbf
