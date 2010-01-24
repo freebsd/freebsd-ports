@@ -253,6 +253,7 @@
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
     SUBDIR += ruby-flvtool2
+    SUBDIR += sabbu
     SUBDIR += schroedinger
     SUBDIR += shell-fm
     SUBDIR += smile
