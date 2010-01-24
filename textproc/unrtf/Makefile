@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	unrtf
-PORTVERSION=	0.21.0
+PORTVERSION=	0.21.1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
 USE_ICONV=	yes
@@ -20,22 +20,23 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 MAN1=		unrtf.1
 PLIST_FILES=	bin/unrtf \
-		%%DATADIR%%/charmaps/SYMBOL \
-		%%DATADIR%%/outputs/html \
-		%%DATADIR%%/outputs/latex \
-		%%DATADIR%%/outputs/rtf \
-		%%DATADIR%%/outputs/text \
-		%%DATADIR%%/outputs/vt
-PLIST_DIRS=	%%DATADIR%%/outputs \
-		%%DATADIR%%/charmaps \
-		%%DATADIR%%
+		%%DATADIR%%/SYMBOL.charmap \
+		%%DATADIR%%/html.conf \
+		%%DATADIR%%/latex.conf \
+		%%DATADIR%%/rtf.conf \
+		%%DATADIR%%/text.conf \
+		%%DATADIR%%/vt.conf
+PLIST_DIRS=	%%DATADIR%%
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -liconv
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.[1h]" -print0 | ${XARGS} -0 \
+	@${FIND} -X ${WRKSRC} -type f -and -name "*.[1h]" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|/usr/local/lib/unrtf/|${DATADIR}/|g'
+
+test: build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
