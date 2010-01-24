@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/ifgraph/files/pkg-install.in,v 1.1 2010-01-24 18:51:29 lth Exp $
 #
 
 PATH=/bin:/usr/bin:/usr/sbin
@@ -44,7 +44,7 @@ POST-INSTALL)
   fi
 
   echo "---> Creating crontab(5) file for user \"%%USER%%\""
-  crontab -u "%%USER%%" "%%PREFIX%%/ifgraph/crontab.in" || exit 1
+  crontab -u "%%USER%%" "%%PREFIX%%/ifgraph/crontab" || exit 1
 
   ;;
 
