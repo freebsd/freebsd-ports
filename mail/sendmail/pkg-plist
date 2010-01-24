@@ -11,8 +11,6 @@ bin/newaliases
 bin/purgestat
 bin/rmail
 bin/vacation
-%%ETCPORT%%etc/rc.d/sm-client.sh.sample
-%%ETCPORT%%etc/rc.d/sendmail.sh.sample
 libexec/mail.local
 libexec/smrsh
 sbin/editmap
