@@ -1,5 +1,5 @@
---- main.c.orig	2009-01-12 06:02:34.419192340 +0900
-+++ main.c	2009-01-12 06:29:01.427571571 +0900
+--- main.c.orig	2010-01-25 01:02:47.051647000 +0900
++++ main.c	2010-01-25 01:03:35.081557857 +0900
 @@ -210,7 +210,9 @@
  #undef FIOCLEX
  #undef FIONCLEX
@@ -19,6 +19,15 @@
  #include <sgtty.h>
  #endif
  #include <sys/resource.h>
+@@ -293,7 +295,7 @@
+ #define ttyslot() 1
+ #endif /* apollo */
+ 
+-#ifdef SVR4
++#if defined(SVR4) || (defined(__FreeBSD__) && __FreeBSD_version >= 900007)
+ #include <utmpx.h>
+ #define setutent setutxent
+ #define getutent getutxent
 @@ -319,6 +321,10 @@
  int	Ptyfd;
  #endif /* PUCC_PTYD */
