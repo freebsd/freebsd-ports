@@ -145,6 +145,31 @@
      tagsOption.printProc = Tk_CanvasTagsPrintProc;
  }
 
+The problem, that these two hunks seem to solve is mentioned by other
+people, but no solution is offered anywhere.
+
+	http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=524149#44
+
+These hunks do seem to fix things, but don't seem right anyway...
+
+--- src/bltHtext.c	2002-07-17 05:56:00.000000000 -0400
++++ src/bltHtext.c	2010-01-23 23:42:09.000000000 -0500
+@@ -3348,5 +3348,5 @@
+      * the text.
+      */
+-    if ((htPtr->first != oldFirst) || (htPtr->last != oldLast)) {
++    if (htPtr->lineArr && ((htPtr->first != oldFirst) || (htPtr->last != oldLast))) {
+ 	int offset;
+ 	int i;
+@@ -3377,5 +3377,6 @@
+ 	}
+     }
+-    DrawPage(htPtr, deltaY);
++    if (htPtr->lineArr)
++	DrawPage(htPtr, deltaY);
+     SendBogusEvent(tkwin);
+ 
+
 The patch below is obtained from RedHat
 	https://bugzilla.redhat.com/show_bug.cgi?id=504388
 When the problem in Tk-8.5 is fixed, the below work-around
