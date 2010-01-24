@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://spiegl.de/qiv/download/
+MASTER_SITES=	http://spiegl.de/qiv/download/ \
+		http://www.predatorlabs.net/dl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rfarmer@predatorlabs.net
