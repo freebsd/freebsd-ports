@@ -7,6 +7,7 @@
 
 PORTNAME=	RPC-XML
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	XML-RPC client and server library for Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

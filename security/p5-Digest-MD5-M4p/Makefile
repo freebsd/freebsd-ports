@@ -7,15 +7,13 @@
 
 PORTNAME=	Digest-MD5-M4p
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perl interface to a variant of the MD5 algorithm
-
-BUILD_DEPENDS=	${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

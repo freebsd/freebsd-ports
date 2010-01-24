@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios-snmp-plugins-extras
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
@@ -17,7 +18,6 @@ NO_BUILD=	yes
 USE_PERL_RUN=	yes
 
 RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
 		${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins
 
 PLUGINS=	\

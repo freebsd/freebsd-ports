@@ -7,6 +7,7 @@
 
 PORTNAME=	Authen-Passphrase
 PORTVERSION=	0.006
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,11 +23,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/DecHpwd.pm:${PORTSDIR}/security/
 		${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/UnixCrypt_XS.pm:${PORTSDIR}/security/p5-Crypt-UnixCrypt_XS \
 		${SITE_PERL}/Data/Entropy/Algorithms.pm:${PORTSDIR}/security/p5-Data-Entropy \
-		${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD4.pm:${PORTSDIR}/security/p5-Digest-MD4 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Module/Runtime.pm:${PORTSDIR}/devel/p5-Module-Runtime \
 		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
 RUN_DEPENDS=	${BUILD_DEPENDS}
