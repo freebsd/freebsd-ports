@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mongodb
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 PKGNAMESUFFIX=	-devel
@@ -33,8 +33,7 @@ BROKEN=		Does not build
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|elif "freebsd7" == os.sys.platform|elif os.sys.platform.startswith("freebsd")|' \
-		${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#g' ${WRKSRC}/SConstruct
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mongo ${PREFIX}/bin
