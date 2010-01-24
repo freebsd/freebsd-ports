@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	opensaml2
-DISTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	security
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${DISTVERSION}/
-DISTNAME=	opensaml-${DISTVERSION}
+MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${PORTVERSION}/
+DISTNAME=	opensaml-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Open source implentation of SAML2

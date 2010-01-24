@@ -45,7 +45,7 @@ include/saml/signature/SignableObject.h
 include/saml/signature/SignatureProfileValidator.h
 include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
-lib/libsaml.so.4
+lib/libsaml.so.6
 lib/libsaml.so
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
@@ -97,20 +97,20 @@ share/xml/opensaml/saml-schema-xacml-2.0.xsd
 share/xml/opensaml/sstc-saml1x-metadata.xsd
 share/xml/opensaml/sstc-saml-metadata-ext-query.xsd
 share/xml/opensaml/sstc-saml-protocol-ext-thirdparty.xsd
-@dirrmtry share/xml/opensaml
+@dirrm share/xml/opensaml
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/doc/opensaml
-@dirrmtry include/saml/util
-@dirrmtry include/saml/signature
-@dirrmtry include/saml/saml2/profile
-@dirrmtry include/saml/saml2/metadata
-@dirrmtry include/saml/saml2/core
-@dirrmtry include/saml/saml2/binding
-@dirrmtry include/saml/saml2
-@dirrmtry include/saml/saml1/profile
-@dirrmtry include/saml/saml1/core
-@dirrmtry include/saml/saml1/binding
-@dirrmtry include/saml/saml1
-@dirrmtry include/saml/encryption
-@dirrmtry include/saml/binding
-@dirrmtry include/saml
+@dirrm include/saml/util
+@dirrm include/saml/signature
+@dirrm include/saml/saml2/profile
+@dirrm include/saml/saml2/metadata
+@dirrm include/saml/saml2/core
+@dirrm include/saml/saml2/binding
+@dirrm include/saml/saml2
+@dirrm include/saml/saml1/profile
+@dirrm include/saml/saml1/core
+@dirrm include/saml/saml1/binding
+@dirrm include/saml/saml1
+@dirrm include/saml/encryption
+@dirrm include/saml/binding
+@dirrm include/saml
