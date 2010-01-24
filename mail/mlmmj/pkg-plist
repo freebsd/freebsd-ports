@@ -11,6 +11,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/cz/access
 %%DATADIR%%/text.skel/cz/bounce-probe
 %%DATADIR%%/text.skel/cz/digest
+%%DATADIR%%/text.skel/cz/list.txt
 %%DATADIR%%/text.skel/cz/listhelp
 %%DATADIR%%/text.skel/cz/listsubs
 %%DATADIR%%/text.skel/cz/moderation
@@ -37,6 +38,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/da/access
 %%DATADIR%%/text.skel/da/bounce-probe
 %%DATADIR%%/text.skel/da/digest
+%%DATADIR%%/text.skel/da/list.txt
 %%DATADIR%%/text.skel/da/listfaq
 %%DATADIR%%/text.skel/da/listhelp
 %%DATADIR%%/text.skel/da/listsubs
@@ -71,6 +73,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/de/access
 %%DATADIR%%/text.skel/de/bounce-probe
 %%DATADIR%%/text.skel/de/digest
+%%DATADIR%%/text.skel/de/list.txt
 %%DATADIR%%/text.skel/de/listhelp
 %%DATADIR%%/text.skel/de/listsubs
 %%DATADIR%%/text.skel/de/maxmailsize
@@ -102,6 +105,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/en/access
 %%DATADIR%%/text.skel/en/bounce-probe
 %%DATADIR%%/text.skel/en/digest
+%%DATADIR%%/text.skel/en/list.txt
 %%DATADIR%%/text.skel/en/listfaq
 %%DATADIR%%/text.skel/en/listhelp
 %%DATADIR%%/text.skel/en/listsubs
@@ -136,6 +140,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/es/access
 %%DATADIR%%/text.skel/es/bounce-probe
 %%DATADIR%%/text.skel/es/digest
+%%DATADIR%%/text.skel/es/list.txt
 %%DATADIR%%/text.skel/es/listfaq
 %%DATADIR%%/text.skel/es/listhelp
 %%DATADIR%%/text.skel/es/listsubs
@@ -165,6 +170,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/fr/access
 %%DATADIR%%/text.skel/fr/bounce-probe
 %%DATADIR%%/text.skel/fr/digest
+%%DATADIR%%/text.skel/fr/list.txt
 %%DATADIR%%/text.skel/fr/listhelp
 %%DATADIR%%/text.skel/fr/listsubs
 %%DATADIR%%/text.skel/fr/moderation
@@ -193,6 +199,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/it/access
 %%DATADIR%%/text.skel/it/bounce-probe
 %%DATADIR%%/text.skel/it/digest
+%%DATADIR%%/text.skel/it/list.txt
 %%DATADIR%%/text.skel/it/listfaq
 %%DATADIR%%/text.skel/it/listhelp
 %%DATADIR%%/text.skel/it/listsubs
@@ -227,6 +234,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/nl/access
 %%DATADIR%%/text.skel/nl/bounce-probe
 %%DATADIR%%/text.skel/nl/digest
+%%DATADIR%%/text.skel/nl/list.txt
 %%DATADIR%%/text.skel/nl/listfaq
 %%DATADIR%%/text.skel/nl/listhelp
 %%DATADIR%%/text.skel/nl/listsubs
@@ -261,6 +269,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/ru/access
 %%DATADIR%%/text.skel/ru/bounce-probe
 %%DATADIR%%/text.skel/ru/digest
+%%DATADIR%%/text.skel/ru/list.txt
 %%DATADIR%%/text.skel/ru/listfaq
 %%DATADIR%%/text.skel/ru/listhelp
 %%DATADIR%%/text.skel/ru/listsubs
