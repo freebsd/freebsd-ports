@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Wrapper to call the OpenERP web client
+# properly.
+#
+# Created by Francisco de Borja Lopez Rio <borja@pexego.es>
+# Mon Jan 11 18:15:54 CET 2010
+#
+# Edit this file to suit your needs (for example, setting your OpenERP
+# web client home directory)
+
+cd /usr/local/openerp-web
+./openerp-web.py $@ & > /dev/null

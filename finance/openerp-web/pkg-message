@@ -1,0 +1,17 @@
+------------------------------------------------------
+A sample configuration file has been installed in
+
+${PREFIX}/etc/openerp-web.conf.sample
+
+Make sure you copy it over openerp-web.conf, editing
+the needed information before starting the web client.
+
+A startup script has been installed in
+
+${PREFIX}/etc/rc.d/openerp-web
+
+Use it to start/stop the web client after you have
+added the following line to your rc.conf file:
+
+openerpweb_enable="YES"
+------------------------------------------------------
