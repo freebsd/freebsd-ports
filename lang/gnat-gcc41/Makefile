@@ -30,7 +30,6 @@ USE_ICONV=		yes
 USE_PERL5_BUILD=	yes # Needed for man pages.
 USE_BISON=		build
 
-CONFLICTS=		gcc-4.1.*
 WRKSRC=			${WRKDIR}/build
 
 MAN1=			cpp${gcc_suffix}.1 \
