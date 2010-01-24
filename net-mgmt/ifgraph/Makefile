@@ -32,26 +32,19 @@ IFGRAPH_GROUP=	ifgraph
 PLFILES=	find-if.pl ifgraph.pl makegraph.pl
 DOCFILES=	CHANGELOG INSTALACAO INSTALL TODO LICENSE.TXT MUDANCAS
 
-FILES_SUB=	USER=${IFGRAPH_USER} GROUP=${IFGRAPH_GROUP} \
-		PREFIX=${PREFIX} DOCSDIR=${DOCSDIR} \
-		PERL=${PERL} LOCALBASE=${LOCALBASE}
+SUB_FILES=	crontab pkg-deinstall pkg-install pkg-message
+SUB_LIST=	USER=${IFGRAPH_USER} GROUP=${IFGRAPH_GROUP} PERL=${PERL}
 
 pre-install:
-	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-install > ${PKGINSTALL}
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 .for plfile in ${PLFILES}
-	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@ ${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/${plfile} > ${WRKDIR}/${plfile}
 	@ ${INSTALL_SCRIPT} ${WRKDIR}/${plfile} ${PREFIX}/bin
 .endfor
-	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@ ${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/ifgraph.conf > ${WRKSRC}/ifgraph.conf.sample
 	@ ${INSTALL_DATA} ${WRKSRC}/ifgraph.conf.sample ${PREFIX}/etc
 	@ ${MKDIR} ${PREFIX}/ifgraph
@@ -59,8 +52,7 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/ifgraph/lib
 	@ ${CP} ${WRKSRC}/lib/rgb.txt ${PREFIX}/ifgraph/lib
 	@ ${CP} -Rp ${WRKSRC}/templates ${PREFIX}/ifgraph
-	@ ${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/crontab.in > ${PREFIX}/ifgraph/crontab.in
+	@ ${INSTALL_DATA} ${WRKDIR}/crontab ${PREFIX}/ifgraph/crontab
 	@ ${CHOWN} -R ifgraph:ifgraph ${PREFIX}/ifgraph
 	@ ${MKDIR} ${PREFIX}/var/ifgraph
 	@ ${CHOWN} ifgraph:ifgraph ${PREFIX}/var/ifgraph

@@ -5,7 +5,7 @@ bin/find-if.pl
 bin/ifgraph.pl
 bin/makegraph.pl
 etc/ifgraph.conf.sample
-ifgraph/crontab.in
+ifgraph/crontab
 ifgraph/lib/rgb.txt
 ifgraph/templates/en/if-data.html
 ifgraph/templates/en/if-header.html
