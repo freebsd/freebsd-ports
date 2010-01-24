@@ -146,9 +146,6 @@ USE_OPENSSL=	yes
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
 PREFIX?=	/usr
 MANPREFIX?=	/usr/share
-PLIST_SUB+=	ETCPORT="@comment "
-.else
-PLIST_SUB+=	ETCPORT=""
 .endif
 
 .if !defined(SENDMAIL_WITHOUT_MILTER)
@@ -169,10 +166,6 @@ SED_SCRIPT+=	-e "s;-DNIS ;;"
 .endif
 
 post-patch:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
-		> ${WRKSRC}/sm-client.sh
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
-		> ${WRKSRC}/sendmail.sh
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		-e "s=%%PORTSDIR%%=${PORTSDIR}=g" \
@@ -302,12 +295,6 @@ post-install:
 	 ${PREFIX}/lib/libmilter.so.${MILTER_SOVER}
 	${LN} -sf libmilter.so.${MILTER_SOVER} ${PREFIX}/lib/libmilter.so
 .endif
-.endif
-.if exists(${DESTDIR}/etc/mail/mailer.conf)
-	${INSTALL_SCRIPT} ${WRKSRC}/sm-client.sh \
-		${LOCALBASE}/etc/rc.d/sm-client.sh.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/sendmail.sh \
-		${LOCALBASE}/etc/rc.d/sendmail.sh.sample
 .endif
 	${CHOWN} smmsp:smmsp /var/spool/clientmqueue
 	${CHMOD} 770 /var/spool/clientmqueue
