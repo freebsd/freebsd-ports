@@ -7,6 +7,7 @@
 
 PORTNAME=	netleak
 PORTVERSION=	0.1a
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -15,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to detect connectivity between network segments
 
 RUN_DEPENDS=	${SITE_PERL}/Net/PcapUtils.pm:${PORTSDIR}/net/p5-Net-PcapUtils \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/NetPacket/Ethernet.pm:${PORTSDIR}/net/p5-NetPacket \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
 		${SITE_PERL}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP \

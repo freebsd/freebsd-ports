@@ -7,7 +7,7 @@
 
 PORTNAME=	latexdiff
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print perl5
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support
@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	Zeliboba@mail.ru
 COMMENT=	Determine and mark up significant differences between latex files
 
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 USE_PERL5_RUN=	yes
 USE_ZIP=	yes

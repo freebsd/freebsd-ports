@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Google-AuthSub
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Interact with sites that implement Google style AuthSub
 
-RUN_DEPENDS=	p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes

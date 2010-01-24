@@ -7,16 +7,13 @@
 
 PORTNAME=	File-RsyncP
 PORTVERSION=	0.68
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perl Rsync client
-
-RUN_DEPENDS=	p5-Getopt-Long>=2.24:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.7.3+
 

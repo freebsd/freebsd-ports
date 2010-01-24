@@ -7,7 +7,7 @@
 
 PORTNAME=	ldapsh
 PORTVERSION=	2.00
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	CPAN
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Te
 		${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/Parse/Lex.pm:${PORTSDIR}/devel/p5-ParseLex
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -29,7 +28,6 @@ SUB_FILES=	pkg-message
 MAN1=		ldapsh.1
 MAN3=		Net::LDAP::Shell.3 Net::LDAP::Config.3 \
 		Net::LDAP::Shell::Parse.3 Net::LDAP::Shell::Util.3
-		
 
 PERL_CONFIGURE=	yes
 

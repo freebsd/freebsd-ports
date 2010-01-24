@@ -7,7 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.16.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -19,8 +19,7 @@ MAINTAINER=	ports@subnets.ru
 COMMENT=	The multi-router traffic grapher
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
-		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include

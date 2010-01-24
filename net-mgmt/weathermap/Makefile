@@ -7,7 +7,7 @@
 
 PORTNAME=	weathermap
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netmon.grnet.gr/weathermap/dist/
 
@@ -15,8 +15,7 @@ MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	This tool displays the utilization of the network links
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/${PERL_ARCH}/GD/Image.pm:${PORTSDIR}/graphics/p5-GD \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD/Image.pm:${PORTSDIR}/graphics/p5-GD \
 		mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 NO_BUILD=	yes

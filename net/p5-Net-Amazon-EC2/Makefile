@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Amazon-EC2
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl interface to the Amazon Elastic Compute Cloud
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		p5-Digest-HMAC>=1.01:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Moose>=0.38:${PORTSDIR}/devel/p5-Moose \
