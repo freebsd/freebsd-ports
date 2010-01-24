@@ -109,6 +109,7 @@
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
     SUBDIR += gnustep-objc
+    SUBDIR += go
     SUBDIR += gpc
     SUBDIR += gprolog
     SUBDIR += groovy
