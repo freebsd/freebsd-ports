@@ -7,7 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.6.5.2
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		1
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/:kadu \
@@ -42,7 +42,8 @@ CMAKE_USE_PTHREAD=	yes
 
 USE_QT_VER=		4
 QT_COMPONENTS=		gui dbus network qt3support script webkit xml \
-			qmake_build linguist_build moc_build rcc_build uic_build
+			qmake_build linguist_build moc_build rcc_build uic_build \
+			imageformats_run
 WANT_GNOME=		yes
 INSTALLS_ICONS=		yes
 
