@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.1.51r25618
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -33,10 +34,11 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-alsa --disable-dbus --disable-python \
 		--build-headless
 
-CONFLICTS=	bcc-[0-9]*
+CONFLICTS=	bcc-[0-9]* virtualbox-ose-3.*
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
 		X11 "Build with X11 support" on \
+		HAL "Install HAL policy file for additions" on \
 		OPENGL "Build with OpenGL support" off
 
 .include <bsd.port.options.mk>
@@ -63,8 +65,18 @@ VBOX_WITH_X11=	1
 USE_XORG=	xcursor xmu inputproto
 PLIST_SUB+=	X11=""
 .else
+.if !defined(WITHOUT_HAL)
+BROKEN=		HAL requires X11 support. Run 'make config' again!
+.endif
 VBOX_WITH_X11=
 PLIST_SUB+=	X11="@comment "
+.endif
+
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+PLIST_SUB+=	HAL=""
+.else
+PLIST_SUB+=	HAL="@comment "
 .endif
 
 .if defined(WITHOUT_OPENGL)
@@ -135,6 +147,11 @@ do-install:
 
 	${MKDIR} ${INPUTDIR}
 	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_16.so ${INPUTDIR}/vboxmouse_drv.so
+.endif
+
+.if !defined(WITHOUT_HAL)
+	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/linux/installer/90-vboxguest.fdi \
+		${PREFIX}/share/hal/fdi/policy/10osvendor/
 .endif
 
 .include <bsd.port.post.mk>
