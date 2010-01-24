@@ -1,0 +1,1205 @@
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO/PKG-INFO
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO/SOURCES.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO/dependency_links.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO/entry_points.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO/not-zip-safe
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO/requires.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO/top_level.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/config/openerp-web.cfg
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/doc/ChangeLog
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/doc/LICENSE.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/doc/README.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/de_DE/LC_MESSAGES/messages.mo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/es_ES/LC_MESSAGES/messages.mo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/fr_FR/LC_MESSAGES/messages.mo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/messages.pot
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/cache.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/cache.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/cache.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/commands.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/commands.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/commands.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/common.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/common.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/common.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/actions.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/actions.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/actions.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/attachment.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/attachment.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/attachment.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/base.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/base.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/base.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/database.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/database.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/database.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/error_page.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/error_page.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/error_page.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/fieldpref.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/fieldpref.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/fieldpref.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/form.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/form.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/form.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/image.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/image.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/image.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/impex.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/impex.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/impex.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/listgrid.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/listgrid.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/listgrid.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openm2m.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openm2m.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openm2m.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openm2o.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openm2o.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openm2o.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openo2m.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openo2m.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/openo2m.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/preferences.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/preferences.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/preferences.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/process.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/process.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/process.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/record.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/record.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/record.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/requests.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/requests.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/requests.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/root.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/root.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/root.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/search.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/search.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/search.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/selection.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/selection.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/selection.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/shortcuts.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/shortcuts.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/shortcuts.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/about.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/calpopup.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/database.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/error_page.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/exp.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/fieldpref.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/form.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/image.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/imp.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/login.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/login_ajax.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/master.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/openm2m.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/openm2o.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/openo2m.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/preferences.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/process.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/process_open.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/search.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/selection.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/translator.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/tree.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/view_log.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/viewed.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/viewed_add.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/viewed_edit.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/viewed_new.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/viewed_new_model.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/viewed_preview.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/viewlist.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/wizard.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/wkf_list.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/wkf_popup.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates/workflow.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/tinycalendar.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/tinycalendar.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/tinycalendar.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/translator.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/translator.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/translator.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/tree.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/tree.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/tree.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/view_log.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/view_log.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/view_log.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/viewed.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/viewed.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/viewed.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/viewlist.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/viewlist.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/viewlist.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/wiki.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/wiki.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/wiki.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/wizard.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/wizard.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/wizard.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/workflow.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/workflow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/workflow.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/_gettext.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/_gettext.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/_gettext.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/format.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n/utils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/icons.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/icons.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/icons.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/profiler.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/profiler.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/profiler.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/release.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/release.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/release.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/rpc.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/rpc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/rpc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-blue.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-blue2.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-brown.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-green.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-setup.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-system.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-tas.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-win2k-1.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-win2k-2.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-win2k-cold-1.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar-win2k-cold-2.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/calendar.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-af.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-bg-cp1251.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-bg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ca.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-cs-cp1250.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-cs.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-da.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-de.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-de_at.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-de_de.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-el.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-en.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-es.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-fi.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-fr.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-he.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-hr.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-hu-cp1252.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-hu.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-it.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ja.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ko-euc_kr.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ko.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-lt.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-lv-cp1252.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-lv.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-nl.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-no.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-pl.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-pt_br.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ro-cp1250.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ro.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ru-cp1251.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ru-koi8_r.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-ru.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-sk.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-sl.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-sq.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-sv.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-tr-cp1254.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-tr.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-uk-cp1251.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-uk-koi8_u.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-uk.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-zh.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-zh_cn-gbk.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-zh_cn.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-zh_tw-big5.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang/calendar-zh_tw.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/menuarrow.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/menuarrow2.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/active-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/dark-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/hover-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/menuarrow.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/normal-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/rowhover-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/status-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/theme.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/title-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua/today-bg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/dashboard.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/listgrid.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/menu.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/modalbox.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/pager.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/style-ie.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/style.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/tabs.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/tiny_mce.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/tips.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/treegrid.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/waitbox.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css/wiki.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/blank.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/button_bg.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/button_bg2.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/developped_by.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/diagonal_left.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/diagonal_right.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/favicon.ico
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/gradientlinebg.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/grdbig.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/grdheader.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/grdline1.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/account.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/administration.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/calendar.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/crm.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/graph.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/hr.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/marketing.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/mrp.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/partner.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/product.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/project.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/purchase.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/report.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/sale.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/stock.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/tools.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons/translate.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/iepngfix.htc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/listgrid/arrow_down.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/listgrid/arrow_up.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/listgrid/delete_inline.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/listgrid/edit_inline.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/listgrid/save_inline.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/mainmenu_button.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/openerp_big.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/openerp_small.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/progress.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/sidebar_button_bg.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/sidebar_hide.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/sidebar_show.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-about.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-add.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-apply.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-bold.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-cancel.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-cdrom.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-clear.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-close.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-color-picker.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-connect.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-convert.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-copy.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-cut.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-delete.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-dialog-authentication.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-dialog-error.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-dialog-info.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-dialog-question.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-dialog-warning.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-directory-remote.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-directory.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-disconnect.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-dnd-multiple.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-dnd.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-edit.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-execute.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-file.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-find-and-replace.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-find.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-floppy.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-fullscreen.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-go-back.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-go-down.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-go-forward.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-go-up.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-goto-bottom.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-goto-first.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-goto-last.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-goto-top.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-harddisk.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-help.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-home.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-indent.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-index.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-info.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-italic.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-jump-to.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-justify-center.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-justify-fill.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-justify-left.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-justify-right.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-leave-fullscreen.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-forward.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-next.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-pause.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-play.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-previous.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-record.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-rewind.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-media-stop.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-missing-image.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-network.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-new.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-no.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-ok.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-open.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-paste-v.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-paste.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-preferences.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-print-preview.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-print.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-properties.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-quit.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-redo.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-refresh.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-remove.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-revert-to-saved.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-save-as.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-save.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-select-color.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-select-font.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-sort-ascending.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-sort-descending.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-spell-check.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-stop.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-strikethrough.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-undelete.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-underline.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-undo.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-unindent.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-yes.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-zoom-100.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-zoom-fit.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-zoom-in.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/gtk-zoom-out.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/stock.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/stock_calendar.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/stock_gantt.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/stock_graph.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/stock_log.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/stock_person.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled/stock_translate.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-about.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-add.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-apply.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-bold.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-cancel.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-cdrom.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-clear.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-close.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-color-picker.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-connect.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-convert.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-copy.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-cut.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-delete.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-dialog-authentication.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-dialog-error.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-dialog-info.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-dialog-question.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-dialog-warning.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-directory-remote.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-directory.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-disconnect.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-dnd-multiple.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-dnd.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-edit.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-execute.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-file.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-find-and-replace.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-find.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-floppy.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-fullscreen.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-go-back.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-go-down.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-go-forward.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-go-up.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-goto-bottom.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-goto-first.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-goto-last.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-goto-top.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-harddisk.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-help.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-home.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-indent.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-index.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-info.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-italic.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-jump-to.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-justify-center.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-justify-fill.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-justify-left.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-justify-right.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-leave-fullscreen.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-forward.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-next.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-pause.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-play.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-previous.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-record.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-rewind.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-media-stop.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-missing-image.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-network.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-new.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-no.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-ok.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-open.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-paste-v.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-paste.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-preferences.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-print-preview.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-print.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-properties.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-quit.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-redo.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-refresh.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-remove.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-revert-to-saved.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-save-as.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-save.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-select-color.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-select-font.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-sort-ascending.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-sort-descending.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-spell-check.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-stop.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-strikethrough.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-undelete.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-underline.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-undo.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-unindent.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-yes.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-zoom-100.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-zoom-fit.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-zoom-in.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/gtk-zoom-out.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/stock.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/stock_calendar.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/stock_gantt.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/stock_graph.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/stock_log.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/stock_person.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock/stock_translate.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tabs_left_active.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tabs_left_inactive.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tabs_right_active.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tabs_right_inactive.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/textarea-grip.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/b.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/bl.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/br.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/l.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/r.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/t.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/tl.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips/tr.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/treegrid/collapse.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/treegrid/collapseh.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/treegrid/expand.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/treegrid/expandh.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/treegrid/header.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/treegrid/loading.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Async.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Base.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Color.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/DOM.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/DateTime.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/DragAndDrop.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Format.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Iter.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/LICENSE.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Logging.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/LoggingPane.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/MochiKit.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/MockDOM.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Position.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Resizable.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Selector.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Signal.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Sortable.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Style.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Test.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/Visual.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit/__package__.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/ajax.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/binary.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/dashboard.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/form.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/form_state.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/i18n/de_DE.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/i18n/en_US.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/i18n/es_ES.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/i18n/fr_FR.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/i18n/i18n.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/listgrid.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/m2m.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/m2o.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/master.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/menu.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/modalbox.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/o2m.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/quickmenu.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/sortablegrid.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/swfobject.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/tabber/tabber.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/tabber/tabber_cookie.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/textarea.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/tips.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/treegrid.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/viewed.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/waitbox.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/wizard.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/open-flash-chart.swf
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/langs/en.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/license.txt
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/css/advhr.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/js/rule.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/rule.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/css/advimage.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/image.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/img/sample.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/js/image.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/css/advlink.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/js/advlink.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/link.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/autosave/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/autosave/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/bbcode/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/bbcode/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/compat2x/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/compat2x/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/contextmenu/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/contextmenu/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/directionality/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/directionality/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/emotions.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-cool.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-cry.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-embarassed.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-frown.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-innocent.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-kiss.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-laughing.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-sealed.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-smile.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-surprised.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-undecided.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-wink.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img/smiley-yell.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/js/emotions.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/dialog.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/img/example.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/js/dialog.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/langs/en.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/css/fullpage.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/fullpage.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/js/fullpage.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullscreen/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullscreen/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullscreen/fullscreen.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/iespell/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/iespell/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/template.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/insertdatetime/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/layer/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/layer/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/css/content.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/css/media.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img/flash.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img/flv_player.swf
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img/quicktime.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img/realmedia.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img/shockwave.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img/trans.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img/windowsmedia.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/js/embed.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/js/media.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/media.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/nonbreaking/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/noneditable/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/noneditable/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak/css/content.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak/img/pagebreak.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak/img/trans.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/blank.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/css/blank.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/css/pasteword.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/js/pastetext.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/js/pasteword.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/pastetext.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/pasteword.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/preview/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/preview/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/preview/example.html
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/preview/jscripts/embed.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/preview/preview.html
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/print/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/print/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/safari/blank.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/safari/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/safari/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/save/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/save/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/css/searchreplace.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/js/searchreplace.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/searchreplace.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/spellchecker/css/content.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/spellchecker/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/spellchecker/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/spellchecker/img/wline.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/css/props.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/js/props.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/props.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/cell.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/css/cell.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/css/row.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/css/table.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/js/cell.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/js/merge_cells.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/js/row.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/js/table.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/merge_cells.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/row.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/table.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/blank.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/css/template.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/js/template.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/template.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/visualchars/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/visualchars/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/abbr.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/acronym.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/attributes.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/cite.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/css/attributes.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/css/popup.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/del.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/ins.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js/abbr.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js/acronym.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js/attributes.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js/cite.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js/del.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js/element_common.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js/ins.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/about.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/anchor.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/charmap.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/color_picker.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/editor_template.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/editor_template_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/image.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/img/colorpicker.jpg
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/img/icons.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js/about.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js/anchor.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js/charmap.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js/color_picker.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js/image.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js/link.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js/source_editor.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/langs/en.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/langs/en_dlg.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/link.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/content.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/dialog.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/img/buttons.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/img/items.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/img/progress.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/ui.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/content.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/dialog.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/ui.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/source_editor.htm
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/editor_template.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/editor_template_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/img/icons.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/langs/en.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/default/content.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/default/ui.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/o2k7/content.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/o2k7/ui.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/tiny_mce.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/tiny_mce_popup.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/tiny_mce_src.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/utils/editable_selects.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/utils/form_utils.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/utils/mctabs.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/utils/validate.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/css/calendar.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/css/calendar_gantt.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/images/calGrip.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/images/calHeader.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/images/calLoading.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/javascript/calendar_box.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/javascript/calendar_date.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/javascript/calendar_gantt.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/javascript/calendar_month.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/javascript/calendar_utils.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/javascript/calendar_week.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/css/graph.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/css/process.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/css/process_box.css
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/ToolOval.jpg
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/ToolShowGrid.jpg
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/ToolShowGrid.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/grid_10.jpg
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/node-current.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/node-gray.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/node-subflow-gray.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/node-subflow.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/node.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/port.gif
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/window_bg.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images/window_toolbar.png
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/conn_anchor.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/conn_decorator.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/connector.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/draw2d/draw2d.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/draw2d/moocanvas.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/draw2d/mootools.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/draw2d/wz_jsgraphics.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/infobox.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/ports.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/process.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/process_box.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/state.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/toolbar.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/workflow.js
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/test.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/test_root_controller.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/test_root_controller.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests/test_root_controller.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tiny_socket.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tiny_socket.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tiny_socket.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/expose.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/expose.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/expose.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/tools.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/tools.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/tools.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools/utils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/utils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/validators/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/validators/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/validators/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/validators/validators.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/validators/validators.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/validators/validators.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/action.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/action.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/action.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/base.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/base.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/base.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/meta.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/meta.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/meta.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/resource.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/resource.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/resource.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/utils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/widgets.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/widgets.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base/widgets.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/binary.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/binary.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/binary.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/form.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/form.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/form.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/form_view.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/form_view.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/form_view.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/graph.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/graph.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/graph.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/interface.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/interface.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/interface.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/js_i18n.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/js_i18n.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/js_i18n.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/listgrid.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/listgrid.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/listgrid.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/many2many.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/many2many.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/many2many.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/many2one.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/many2one.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/many2one.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/one2many.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/one2many.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/one2many.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/pager.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/pager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/pager.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/reference.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/reference.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/reference.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/screen.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/screen.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/screen.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/sidebar.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/sidebar.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/sidebar.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/binary.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/boolean.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/button.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/char.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/dashbar.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/datetime.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/email.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/float.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/floattime.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/frame.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/graph.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/group.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/hidden.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/image.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/integer.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/listgrid.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/many2many.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/many2one.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/notebook.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/one2many.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/pager.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/progressbar.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/reference.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/selection.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/separator.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/sidebar.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/text.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/tiny_mce.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/treegrid.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/url.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/viewform.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates/viewtree.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tiny_mce.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tiny_mce.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tiny_mce.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/base.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/base.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/base.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/templates/day.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/templates/gantt.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/templates/groups.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/templates/mini.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/templates/month.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/templates/week.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/utils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/widgets.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/widgets.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/widgets.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tree_view.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tree_view.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tree_view.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/treegrid.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/treegrid.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/treegrid.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/rss/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/rss/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/rss/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/rss/feedparser.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/rss/feedparser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/rss/feedparser.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/templates/wiki.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/wiki.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/wiki.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/wiki.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/wikimarkup/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/wikimarkup/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/wikimarkup/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/search.py
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/search.pyc
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/search.pyo
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/templates/rangewid.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/templates/search.mako
+lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/scripts/openerp-web
+etc/openerp-web.conf.sample
+bin/openerp-web
+openerp-web/openerp-web.py
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/scripts
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search/templates
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets_search
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/wikimarkup
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/templates
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki/rss
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/wiki
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar/templates
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/tinycalendar
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/templates
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets/base
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/widgets
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/validators
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/tests
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript/draw2d
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/javascript
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/images
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/workflow
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/javascript
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/images
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tinycalendar
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/utils
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/o2k7/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/o2k7
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins/default
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/skins
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/simple
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/o2k7
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins/default
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/skins
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes/advanced
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/themes
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/xhtmlxtras
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/visualchars
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/template
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/table
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/style
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/spellchecker/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/spellchecker/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/spellchecker
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/searchreplace
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/save
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/safari
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/print
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/preview/jscripts
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/preview
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/paste
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/pagebreak
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/noneditable
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/nonbreaking
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/media
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/layer
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/insertdatetime
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins/clearlooks2
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups/skins
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/inlinepopups
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/iespell
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullscreen
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/fullpage
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/example
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/emotions
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/directionality
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/contextmenu
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/compat2x
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/bbcode
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/autosave
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advlink
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/img
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advimage
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/js
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins/advhr
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/plugins
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce/langs
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/tiny_mce
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/tabber
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/i18n
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript/MochiKit
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/javascript
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/treegrid
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/tips
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock-disabled
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/stock
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/listgrid
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images/icons
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/images
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/css
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins/aqua
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/skins
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar/lang
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static/calendar
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/static
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/i18n
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers/templates
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp/controllers
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/openerp
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/fr_FR/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/fr_FR
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/es_ES/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/es_ES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/de_DE/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales/de_DE
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/locales
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/config
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg/EGG-INFO
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/openerp_web-5.0.6-py2.6.egg
+@dirrm openerp-web

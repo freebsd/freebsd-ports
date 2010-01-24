@@ -1,0 +1,81 @@
+#!/bin/sh
+
+# PROVIDE: openerp-web
+# REQUIRE: LOGIN DAEMON openerp-server
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable openerp-web
+#
+#
+# openerpweb_enable (bool):	Set to "NO" by default,
+#                              	Set it to "YES" to enable 
+#                              	openerp-web
+#
+# openerpweb_config (str):	The path to openerp-web configuration
+#                              	file (defaults to 
+#                              	/usr/local/etc/openerp-web.conf)
+#
+# openerpweb_user (str):	The username of the user the daemon will
+# 		     	       	run as (defaults to _openerp)
+#
+# openerpweb_flags (str):	Extra Arguments to be used when invoking
+#                              	the openerp-web daemon.
+#
+# openerpweb_pidfile (str):	Path to the pidfile for the openerp-web
+# 		    	       	process (defaults to
+#			       	/var/run/openerp-web/openerp-web.pid)
+#
+# openerpweb_logdir (str):	Path to the directory used by the daemon to save
+# 			       	logfiles (defaults to /var/log/openerp-web)
+#	
+
+. /etc/rc.subr
+
+name="openerpweb"
+rcvar=`set_rcvar`
+#command="/usr/local/bin/${name}"
+command="/usr/local/bin/openerp-web"
+command_interpreter="/bin/sh"
+pidfile="${openerpweb_pidfile}"
+
+load_rc_config $name
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+openerpweb_config=${openerpweb_config:-"/usr/local/etc/openerp-web.conf"}
+openerpweb_user=${openerpweb_user:-"_openerp"}
+openerpweb_pidfile=${openerpweb_pidfile:-"/var/run/openerp-web/openerp-web.pid"}
+openerpweb_logdir=${openerpweb_logdir:-"/var/log/openerp-web"}
+openerpweb_flags=${openerpweb_flags:-"--config=${openerpweb_config}"}
+
+start_precmd="${name}_prestart"
+stop_cmd="${name}_poststop"
+
+openerpweb_prestart()
+{
+    if [ ! -d ${openerpweb_logdir} ]
+    then
+        mkdir -p ${openerpweb_logdir}
+    fi
+    chown ${openerpweb_user} ${openerpweb_logdir}
+
+    if [ ! -d `dirname ${openerpweb_pidfile}` ]
+    then
+        mkdir -p `dirname ${openerpweb_pidfile}`
+    fi
+    chown ${openerpweb_user} `dirname ${openerpweb_pidfile}`
+}
+
+openerpweb_stop()
+{
+    # ensure the server is stopped
+    if [ -f ${openerpweb_pidfile} ]
+    then
+        echo "Stopping ${name}."
+        kill -15 `cat ${openerpweb_pidfile}`
+    else
+        echo "${name} not running? (pidfile not found)"
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
