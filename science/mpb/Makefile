@@ -8,7 +8,7 @@
 
 PORTNAME=	mpb
 PORTVERSION=	1.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 
@@ -18,7 +18,7 @@ COMMENT=	MIT Photonic-Bands
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		hdf5.0:${PORTSDIR}/science/hdf5 \
-		ctl.3:${PORTSDIR}/science/libctl \
+		ctl.4:${PORTSDIR}/science/libctl \
 		guile.20:${PORTSDIR}/lang/guile
 
 USE_FORTRAN=	yes
