@@ -7,6 +7,7 @@
 
 PORTNAME=	radiusd-cistron
 PORTVERSION=	1.6.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
 
@@ -14,12 +15,14 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A RADIUS-compliant remote authentication and accounting server
 
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
+
 MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
 MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PAMBASE?=	etc
 
+USE_RC_SUBR=	radiusd-cistron
 MAN1=		radclient.1 radlast.1 radtest.1 radwho.1 radzap.1
 MAN5=		clients.5rad naslist.5rad
 MAN8=		radiusd.8 radrelay.8 radwatch.8
@@ -32,11 +35,6 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} install
-	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
-		${FILESDIR}/radiusd-cistron.sh \
-		> ${WRKSRC}/radiusd-cistron.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/radiusd-cistron.sh \
-		${PREFIX}/etc/rc.d/radiusd-cistron.sh
 	@${MKDIR} -m 700 /var/log/radacct
 	${INSTALL_MAN} ${WRKSRC}/doc/radlast.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/radtest.1 ${MANPREFIX}/man/man1
@@ -60,4 +58,13 @@ PLIST_SUB+=	WITH_PAMD="@comment "
 .endif
 PLIST_SUB+=	PAMBASE="/${PAMBASE}"
 
-.include <bsd.port.mk>
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+BROKEN=	needs utmp.h
+.endif
+
+.include <bsd.port.post.mk>
