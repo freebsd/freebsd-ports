@@ -15,9 +15,13 @@ DISTNAME=	gnat-gcc-xmlada-4.1.1_gnat_5.04a-r6.src
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	hopet@ics.muni.cz
-COMMENT=	An XML parsing library for Ada 95, port for lang/gnat-gcc41
+COMMENT=	An XML parsing library for Ada 95, port for lang/gnat-gcc42
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gcc41/gcc41:${PORTSDIR}/lang/gnat-gcc41
+BROKEN=		not yet updated to current versions of GNAT
+DEPRECATED=	unmaintained for several years, not in sync with upstream
+EXPIRATION_DATE=2010-02-24
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/gcc42/gcc42:${PORTSDIR}/lang/gnat-gcc42
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
@@ -30,9 +34,9 @@ WRKSRC=		${WRKDIR}/xmlada-gnat-5_04a
 
 CONFLICTS=	xmlada-[0-9]*
 
-CC=		${LOCALBASE}/bin/gcc41/gcc41
-CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
-MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH}
+CC=		${LOCALBASE}/bin/gcc42/gcc42
+CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc42:${PATH} CC=${LOCALBASE}/bin/gcc42/gcc42
+MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc42:${PATH}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
