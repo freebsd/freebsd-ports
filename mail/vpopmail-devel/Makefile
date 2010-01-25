@@ -21,6 +21,8 @@ USE_QMAIL=	yes
 
 CONFLICTS=	vpopmail-5.*
 
+PORTSCOUT=	limit:^5\.5\.[0-9]+$
+
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_PERL5=	YES
