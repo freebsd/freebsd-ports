@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	Ncurses client for the musicpd
+
+LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
@@ -34,7 +36,7 @@ PLIST_DIRS=%%EXAMPLESDIR%%
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=cs da de es fr gl he hu ko nb nl ru sk sv uk zh_CN
+LANGUAGES=cs da de eo es fr gl he hu ko nb nl ru sk sv uk zh_CN
 .for language in ${LANGUAGES}
 PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
@@ -43,9 +45,10 @@ PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 
 .ifdef(WITH_LYRICS)
 CONFIGURE_ARGS+=--enable-lyrics-screen
-PLIST_FILES+=	lib/ncmpc/lyrics/01-hd.sh \
-		lib/ncmpc/lyrics/02-lyricwiki.rb \
-		lib/ncmpc/lyrics/03-leoslyrics.py
+PLIST_FILES+=	lib/ncmpc/lyrics/10-hd.sh \
+		lib/ncmpc/lyrics/15-leoslyrics.sh \
+		lib/ncmpc/lyrics/20-lyricwiki.rb \
+		lib/ncmpc/lyrics/30-leoslyrics.py
 PLIST_DIRS+=	lib/ncmpc/lyrics \
 		lib/ncmpc
 .else
@@ -56,7 +59,7 @@ MAN1=		ncmpc.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
-	    ${WRKSRC}/lyrics/03-leoslyrics.py
+	    ${WRKSRC}/lyrics/30-leoslyrics.py
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpc ${PREFIX}/bin/
@@ -73,9 +76,10 @@ do-install:
 .endif
 .if !defined(WITHOUT_LYRICS)
 	${MKDIR} ${PREFIX}/lib/ncmpc/lyrics
-	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/01-hd.sh ${PREFIX}/lib/ncmpc/lyrics/01-hd.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/02-lyricwiki.rb ${PREFIX}/lib/ncmpc/lyrics/02-lyricwiki.rb
-	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/03-leoslyrics.py ${PREFIX}/lib/ncmpc/lyrics/03-leoslyrics.py
+	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/10-hd.sh ${PREFIX}/lib/ncmpc/lyrics/10-hd.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/15-leoslyrics.sh ${PREFIX}/lib/ncmpc/lyrics/15-leoslyrics.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/20-lyricwiki.rb ${PREFIX}/lib/ncmpc/lyrics/20-lyricwiki.rb
+	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/30-leoslyrics.py ${PREFIX}/lib/ncmpc/lyrics/30-leoslyrics.py
 .endif
 
 .include <bsd.port.post.mk>
