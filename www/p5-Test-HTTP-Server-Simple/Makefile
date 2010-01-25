@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-HTTP-Server-Simple
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Test::More functions for HTTP::Server::Simple
 
 BUILD_DEPENDS=	${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		${SITE_PERL}/NEXT.pm:${PORTSDIR}/devel/p5-NEXT \
-		p5-URI>0:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Simple
+		p5-URI>0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

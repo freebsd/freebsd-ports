@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-HatenaStar
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ COMMENT=	perl interface to Hatena::Star
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-WWW-HatenaLogin>=0:${PORTSDIR}/www/p5-WWW-HatenaLogin \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize

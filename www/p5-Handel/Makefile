@@ -7,7 +7,7 @@
 
 PORTNAME=	Handel
 PORTVERSION=	1.00011
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,6 @@ MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Simple ecommerce framework with AxKit/Catalyst support
 
 BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
 	${SITE_PERL}/Class/Accessor/Grouped.pm:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 	${SITE_PERL}/Data/Currency.pm:${PORTSDIR}/finance/p5-Data-Currency \
 	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \

@@ -7,7 +7,7 @@
 
 PORTNAME=	MojoMojo
 PORTVERSION=	0.999027
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
@@ -60,7 +60,6 @@ RUN_DEPENDS=	\
 	p5-Image-Math-Constrain>=0:${PORTSDIR}/graphics/p5-Image-Math-Constrain \
 	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
 	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-	p5-IO>=1.14:${PORTSDIR}/devel/p5-IO \
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 	p5-Pod-Simple>=3.01:${PORTSDIR}/textproc/p5-Pod-Simple \
