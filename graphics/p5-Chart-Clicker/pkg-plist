@@ -29,6 +29,7 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/Line.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Pie.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Point.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/PolarArea.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedArea.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedBar.pm
 %%SITE_PERL%%/Chart/Clicker/Tutorial.pod

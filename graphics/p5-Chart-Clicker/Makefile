@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.56
+PORTVERSION=	2.58
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -59,6 +59,7 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Renderer::Line.3 \
 		Chart::Clicker::Renderer::Pie.3 \
 		Chart::Clicker::Renderer::Point.3 \
+		Chart::Clicker::Renderer::PolarArea.3 \
 		Chart::Clicker::Renderer::StackedArea.3 \
 		Chart::Clicker::Renderer::StackedBar.3 \
 		Chart::Clicker::Tutorial.3
