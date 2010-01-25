@@ -7,7 +7,7 @@
 
 PORTNAME=	Jifty
 PORTVERSION=	0.91117
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -44,7 +44,6 @@ BUILD_DEPENDS=	\
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-Simple>=2.100:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Exporter-Lite>0:${PORTSDIR}/devel/p5-Exporter-Lite \
-		p5-ExtUtils-Command>0:${PORTSDIR}/devel/p5-ExtUtils-Command \
 		p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-File-MMagic>0:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-File-ShareDir>=0.04:${PORTSDIR}/devel/p5-File-ShareDir \
@@ -62,7 +61,6 @@ BUILD_DEPENDS=	\
 		p5-Log-Log4perl>=1.04:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Module-Install>=0.50:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Module-Pluggable>=3.5:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Module-Refresh>=0.09:${PORTSDIR}/devel/p5-Module-Refresh \
 		p5-Module-ScanDeps>0:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		p5-Net-Server>0:${PORTSDIR}/net/p5-Net-Server \

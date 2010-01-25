@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Mechanize-Plugin-phpBB
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ COMMENT=	Screen scraper for phpBB installations
 
 BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-WWW-Mechanize-Pluggable>=0.10:${PORTSDIR}/www/p5-WWW-Mechanize-Pluggable \
-		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Log-Log4perl>=1.0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor

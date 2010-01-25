@@ -7,6 +7,7 @@
 
 PORTNAME=	POE-Component-Client-HTTP
 PORTVERSION=	0.8200
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,6 @@ COMMENT=	POE component for non-blocking/concurrent HTTP queries
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/POE/Component/Client/Keepalive.pm:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive
 RUN_DEPENDS=	${BUILD_DEPENDS}

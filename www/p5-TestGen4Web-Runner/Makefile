@@ -8,6 +8,7 @@
 
 PORTNAME=	TestGen4Web-Runner
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	WWW/MACKERS
@@ -17,7 +18,6 @@ MAINTAINER=	eg@fbsd.lt
 COMMENT=	A PERL module to replay files recorded with TestGen4Web
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}

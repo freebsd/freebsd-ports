@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Comic
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve comic strip images
 
-RUN_DEPENDS=	p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable \
-		p5-WWW-Dilbert>=1.19:${PORTSDIR}/www/p5-WWW-Dilbert \
+RUN_DEPENDS=	p5-WWW-Dilbert>=1.19:${PORTSDIR}/www/p5-WWW-Dilbert \
 		p5-WWW-VenusEnvy>=1.10:${PORTSDIR}/www/p5-WWW-VenusEnvy
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
