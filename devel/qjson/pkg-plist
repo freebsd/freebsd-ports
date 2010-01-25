@@ -1,0 +1,15 @@
+include/qjson/parser.h
+include/qjson/parserrunnable.h
+include/qjson/qjson_export.h
+include/qjson/qobjecthelper.h
+include/qjson/serializer.h
+include/qjson/serializerrunnable.h
+lib/libqjson.so
+lib/libqjson.so.0
+lib/libqjson.so.0.7.1
+libdata/pkgconfig/QJson.pc
+share/apps/cmake/modules/FindQJSON.cmake
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake
+@dirrmtry share/apps
+@dirrm include/qjson

@@ -2706,6 +2706,7 @@
     SUBDIR += qct
     SUBDIR += qdevelop
     SUBDIR += qgit
+    SUBDIR += qjson
     SUBDIR += qmake
     SUBDIR += qmake4
     SUBDIR += qprog
