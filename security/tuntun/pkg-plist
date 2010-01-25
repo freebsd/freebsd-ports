@@ -13,6 +13,8 @@ share/tuntun/pixmaps/connected.png
 share/tuntun/pixmaps/disconnect.png
 share/tuntun/pixmaps/not_connected.png
 share/tuntun/pixmaps/unknown.png
+share/tuntun/pixmaps/tuntun_error.png
+share/tuntun/pixmaps/tuntun_warning.png
 share/doc/tuntun/AUTHORS
 share/doc/tuntun/COPYING
 share/doc/tuntun/ChangeLog
