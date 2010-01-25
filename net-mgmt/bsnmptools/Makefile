@@ -13,7 +13,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ringlet.net/~shteryana/snmp/ CENKES
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carlos.santos@hp.com
 COMMENT=	Snmp client tools
 
 USE_LDCONFIG=	yes
