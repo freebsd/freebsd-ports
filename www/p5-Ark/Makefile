@@ -7,6 +7,7 @@
 
 PORTNAME=	Ark
 PORTVERSION=	0.1.r1
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://cloud.github.com/downloads/typester/ark-perl/ \
 		${MASTER_SITE_LOCAL}
@@ -30,7 +31,6 @@ RUN_DEPENDS=	\
 	p5-HTTP-Engine>=0.1.8:${PORTSDIR}/www/p5-HTTP-Engine \
 	p5-HTTP-Engine-Middleware>=0.13:${PORTSDIR}/www/p5-HTTP-Engine-Middleware \
 	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
-	p5-Module-Pluggable>0:${PORTSDIR}/devel/p5-Module-Pluggable \
 	p5-Module-Setup>0:${PORTSDIR}/devel/p5-Module-Setup \
 	p5-Mouse>=0.21:${PORTSDIR}/devel/p5-Mouse \
 	p5-MouseX-Types-Path-Class>0:${PORTSDIR}/devel/p5-MouseX-Types-Path-Class \

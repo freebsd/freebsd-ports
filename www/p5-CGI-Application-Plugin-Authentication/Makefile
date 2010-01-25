@@ -42,13 +42,4 @@ MAN3=	CGI::Application::Plugin::Authentication::Driver.3 \
 	CGI::Application::Plugin::Authentication::Driver::HTPasswd.3 \
 	CGI::Application::Plugin::Authentication::Driver::Dummy.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Attribute-Handlers>=0:${PORTSDIR}/devel/p5-Attribute-Handlers \
-		p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
