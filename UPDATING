@@ -38,32 +38,6 @@ you update your ports collection, before attempting any port upgrades.
   of sysutils/polkit.  If you do not do this, applications which depend
   on polkitd will fail.
 
-20100118:
-  AFFECTS: users of news/sabnzbdplus
-  AUTHOR: glarkin@FreeBSD.org
-
-  SABnzbd only works with Python 2.5 and will not install if certain
-  ports were previously installed against Python 2.6, such as
-  py-setuptools.
-
-  In some cases, the installation may succeed by issuing the command:
-
-    make PYTHON_DEFAULT_VERSION=python2.5 install clean
-
-  If installation still fails, then one or more of the following ports
-  has been built against Python 2.6 and will not allow the same port 
-  built against Python 2.5 to be installed:
-
-    devel/py-cheetah
-    devel/py-setuptools
-    devel/py-utils
-    security/py-openssltextproc/py-chardet
-    textproc/py-feedparsertextproc/py-markdown
-    www/py-cherrypy-old
-
-  Either remove the py26- ports or install SABnzbd on a machine without
-  Python 2.6.
-
 20100113:
   AFFECTS: users of emulators/virtualbox
   AUTHOR: beat@FreeBSD.org
