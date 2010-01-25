@@ -19,6 +19,9 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}
 MAKE_ARGS=	CFLAGS="${CFLAGS} -ansi"
 
+post-patch:
+	${CHMOD} a+x ${WRKDIR}/configure
+
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
