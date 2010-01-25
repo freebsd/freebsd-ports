@@ -13,7 +13,7 @@ CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/jtc${PORTNAME}/${PORTNAME}/04-Mar-2008
 DISTNAME=	${PORTNAME}-04-Mar-2008
 
-MAINTAINER=	peter.thoenen@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frost is a Freenet client that provides messenger and file services
 
 USE_JAVA=	yes

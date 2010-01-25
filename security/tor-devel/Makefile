@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.anonymity.cn/dist/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	peter.thoenen@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	torsocks:${PORTSDIR}/net/torsocks
