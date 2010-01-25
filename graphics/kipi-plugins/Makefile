@@ -42,6 +42,8 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		TIMEADJUST "adjust image file time and date" on \
 		WALLPAPER "set your image as wallpaper" on
 
+PORTSCOUT=	limit:^0\.1\.
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes

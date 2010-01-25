@@ -23,6 +23,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		jasper.4:${PORTSDIR}/graphics/jasper
 
+PORTSCOUT=	limit:^0\.
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes

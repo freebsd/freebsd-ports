@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.rsibreak.org/files/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A KDE RSI prevention tool
 
+PORTSCOUT=	limit:^0\.8\.
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:22
