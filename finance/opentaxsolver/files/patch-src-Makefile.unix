@@ -1,0 +1,18 @@
+--- src/Makefile.unix.orig	2010-01-05 22:20:59.000000000 -0700
++++ src/Makefile.unix	2010-01-25 12:12:00.000000000 -0700
+@@ -20,6 +20,7 @@
+ 
+ all: ../bin/taxsolve_US_1040_2009 \
+      ../bin/taxsolve_US_1040_Sched_C_2009 \
++     ../bin/taxsolve_CA_540_2009 
+ #     ../bin/taxsolve_NC_D400_2009 \
+ #     ../bin/taxsolve_NJ_1040_2009 \
+ #     ../bin/taxsolve_PA_40_2009 \
+@@ -28,7 +29,6 @@
+ #     ../bin/taxsolve_NY_IT201_2009 \
+ #     ../bin/taxsolve_MA_1_2009 \
+ #     ../bin/taxsolve_US_8829 \
+-     ../bin/taxsolve_CA_540_2009 
+ 
+ 
+ ../bin/taxsolve_US_1040_2009:         taxsolve_US_1040_2009.c          $(OBJS)
