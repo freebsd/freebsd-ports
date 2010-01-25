@@ -32,6 +32,8 @@
 %%SITE_PERL%%/Mail/Box/Locker.pod
 %%SITE_PERL%%/Mail/Box/Locker/DotLock.pm
 %%SITE_PERL%%/Mail/Box/Locker/DotLock.pod
+%%SITE_PERL%%/Mail/Box/Locker/FcntlLock.pm
+%%SITE_PERL%%/Mail/Box/Locker/FcntlLock.pod
 %%SITE_PERL%%/Mail/Box/Locker/Flock.pm
 %%SITE_PERL%%/Mail/Box/Locker/Flock.pod
 %%SITE_PERL%%/Mail/Box/Locker/Multi.pm
