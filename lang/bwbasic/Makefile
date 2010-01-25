@@ -6,23 +6,18 @@
 #
 
 PORTNAME=	bwbasic
-PORTVERSION=	2.20p2
+PORTVERSION=	2.50
 CATEGORIES=	lang
-MASTER_SITES=	http://www.nicholson.com/rhn/files/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/version%20${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Bywater Basic interpreter
 
+USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
-WRKTOP=		${WRKDIR}/${DISTNAME}
-WRKSUBDIR=	bwbasic-2.20
-WRKSRC=		${WRKTOP}/${WRKSUBDIR}
+WRKSRC=		${WRKDIR}
 MAKE_ARGS=	CFLAGS="${CFLAGS} -ansi"
-
-pre-patch:
-	cd ${WRKTOP} && ${MV} bwb-2.20-patch01/* ${WRKSUBDIR}
-	cd ${WRKTOP} && ${MV} bwb-2.20-patch02/* ${WRKSUBDIR}
 
 .if !defined(NOPORTDOCS)
 post-install:
