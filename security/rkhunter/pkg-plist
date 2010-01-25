@@ -1,31 +1,31 @@
 bin/rkhunter
 etc/periodic/security/415.rkhunter
 etc/rkhunter.conf
-var/lib/rkhunter/db/backdoorports.dat
-var/lib/rkhunter/db/defaulthashes.dat
-var/lib/rkhunter/db/md5blacklist.dat
-var/lib/rkhunter/db/mirrors.dat
-var/lib/rkhunter/db/os.dat
-var/lib/rkhunter/db/programs_bad.dat
-var/lib/rkhunter/db/suspscan.dat
-var/lib/rkhunter/db/programs_good.dat
-var/lib/rkhunter/db/i18n/cn
-var/lib/rkhunter/db/i18n/en
-var/lib/rkhunter/tmp/group
-var/lib/rkhunter/tmp/passwd
 lib/rkhunter/scripts/check_modules.pl
-lib/rkhunter/scripts/check_port.pl
-lib/rkhunter/scripts/check_update.sh
 lib/rkhunter/scripts/filehashmd5.pl
+lib/rkhunter/scripts/filehashsha.pl
 lib/rkhunter/scripts/filehashsha1.pl
-lib/rkhunter/scripts/showfiles.pl
 lib/rkhunter/scripts/readlink.sh
 lib/rkhunter/scripts/stat.pl
-@dirrm lib/rkhunter/scripts
-@dirrm lib/rkhunter
-@dirrm var/lib/rkhunter/db/i18n
-@dirrm var/lib/rkhunter/db
+var/lib/rkhunter/db/backdoorports.dat
+var/lib/rkhunter/db/i18n/cn
+var/lib/rkhunter/db/i18n/de
+var/lib/rkhunter/db/i18n/en
+var/lib/rkhunter/db/i18n/zh
+var/lib/rkhunter/db/i18n/zh.utf8
+var/lib/rkhunter/db/mirrors.dat
+var/lib/rkhunter/db/programs_bad.dat
+var/lib/rkhunter/db/suspscan.dat
+var/lib/rkhunter/tmp/group
+var/lib/rkhunter/tmp/passwd
 @dirrm var/lib/rkhunter/tmp
-@dirrm var/lib/rkhunter
+@dirrm var/lib/rkhunter/db/i18n
 @dirrmtry etc/periodic/security
 @dirrmtry etc/periodic
+@dirrm var/lib/rkhunter/db
+@dirrm var/lib/rkhunter
+@dirrm var/lib
+@dirrm var
+@dirrm share/doc/rkhunter-1.3.6
+@dirrm lib/rkhunter/scripts
+@dirrm lib/rkhunter
