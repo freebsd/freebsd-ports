@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird3-i18n
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,13 +17,12 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-# xpi-quick-locale-switcher doesn't work with thunderbird3 yet
-#.ifndef WITHOUT_SWITCHER
-#RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
-#.endif
+.ifndef WITHOUT_SWITCHER
+RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
+.endif
 
 NO_BUILD=	yes
-USE_XPI=	*thunderbird-3.0
+USE_XPI=	*thunderbird-3.0*
 
 THUNDERBIRD_I18N_ALL=	af be bg ca cs de el en-GB es-AR es-ES eu fi fr ga-IE \
 			he hu it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR \
