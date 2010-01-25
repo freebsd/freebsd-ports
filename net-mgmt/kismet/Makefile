@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
 DISTNAME=	kismet-2008-05-R1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf1783@googlemail.com
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
 GNU_CONFIGURE=	yes
