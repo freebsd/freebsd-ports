@@ -8,13 +8,14 @@
 PORTNAME=	ciscoconf
 PORTVERSION=	1.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.isc.org/isc/ciscoconf/ \
+MASTER_SITES=	ISC/ciscoconf/ \
 		http://software.automagic.org/ciscoconf/
 
 MAINTAINER=	jabley@automagic.org
 COMMENT=	Fetches configuration from Cisco routers and stores them under RCS
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
+
 ALL_TARGET=	depend all
 MAN8=		ciscoconfd.8 ciscoconfr.8
 
