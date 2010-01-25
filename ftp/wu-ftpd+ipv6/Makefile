@@ -43,4 +43,11 @@ MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5 \
 		ftpservers.5
 MAN8=		ftpd.8 ftpshut.8 ftprestart.8 privatepw.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+post-patch:
+	${CP} ${FILESDIR}/logwtmp.c ${WRKSRC}/src
+.endif
+
+.include <bsd.port.post.mk>
