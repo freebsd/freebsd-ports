@@ -34,10 +34,6 @@ PORTDOCS=	CREDITS README
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
 .if defined(PACKAGE_BUILDING)
 SCONS_ARGS+=	usex86sse=-1	# disable MMX/SSE on the build cluster
 .endif

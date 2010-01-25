@@ -5,7 +5,7 @@
                  env.Append(CCFLAGS = '-g')
                  env.Append(CPPDEFINES = ['DEBUG'])
 -elif (sys.platform == 'freebsd5') or (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7'):
-+elif (sys.platform == 'freebsd5') or (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8'):
++elif (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8') or (sys.platform == 'freebsd9'):
  	print "Compiling for FreeBSD Environment"
  	env = Environment(ENV = os.environ)
  	LOCALBASE = os.environ['LOCALBASE']
