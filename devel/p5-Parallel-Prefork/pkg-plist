@@ -1,5 +1,9 @@
-%%SITE_PERL%%/Parallel/Prefork.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Prefork/.packlist
+%%SITE_PERL%%/Parallel/Prefork.pm
+%%SITE_PERL%%/Parallel/Prefork/SpareWorkers.pm
+%%SITE_PERL%%/Parallel/Prefork/SpareWorkers/Scoreboard.pm
+@dirrmtry %%SITE_PERL%%/Parallel/Prefork/SpareWorkers
+@dirrmtry %%SITE_PERL%%/Parallel/Prefork
+@dirrmtry %%SITE_PERL%%/Parallel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Prefork
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel
-@dirrmtry %%SITE_PERL%%/Parallel
