@@ -7,7 +7,7 @@
 
 PORTNAME=	el
 PORTVERSION=	180
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
@@ -17,15 +17,14 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		openal.0:${PORTSDIR}/audio/openal \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		cal3d.12:${PORTSDIR}/graphics/cal3d \
-		alut.1:${PORTSDIR}/audio/freealut
+		cal3d.12:${PORTSDIR}/graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
 PROJECTHOST=	bsdistfiles
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_OPENAL=	al alut
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes

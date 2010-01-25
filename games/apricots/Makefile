@@ -7,7 +7,7 @@
 
 PORTNAME=	apricots
 PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.fishies.org.uk/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -37,8 +37,7 @@ OPTIONS=	OPENAL	"Enable OpenAL audio" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+USE_OPENAL=	al alut
 .endif
 
 post-patch:

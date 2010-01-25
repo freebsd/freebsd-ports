@@ -7,7 +7,7 @@
 
 PORTNAME=	allegro
 DISTVERSION=	4.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/alleg/${PORTNAME}-unstable/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -51,7 +51,7 @@ PORTSCOUT=	limit:^4\.3\.[0-9]*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_AL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 CONFIGURE_ARGS+=--enable-sgialdigi
 PLIST_SUB+=	AL=""
 .else

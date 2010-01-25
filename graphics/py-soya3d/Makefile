@@ -7,7 +7,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,8 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 		GLEW.1:${PORTSDIR}/graphics/glew \
-		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-editobj \
 		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
@@ -32,6 +30,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-edit
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_OPENAL=	al alut
 USE_GL=		gl
 USE_GMAKE=	yes
 USE_SDL=	sdl

@@ -14,7 +14,7 @@
 
 PORTNAME=	uqm
 PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/sc2/UQM/${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tgz ${PORTNAME}-${DATAVERSION}-content.uqm
@@ -52,7 +52,7 @@ PLIST_SUB+=	MUSICADDON="@comment "
 .endif
 
 .ifdef(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 .endif
 
 post-extract:

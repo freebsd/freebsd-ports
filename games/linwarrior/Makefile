@@ -7,6 +7,7 @@
 
 PORTNAME=	linwarrior
 PORTVERSION=	20091108
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackcraft.de/games/linwarrior_3d/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,10 +16,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Navigate a mech through a 3D world and fire at enemies
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
-
 USE_GMAKE=	yes
+USE_OPENAL=	al alut
 USE_GL=		gl glu
 USE_SDL=	sdl
 MAKE_JOBS_SAFE=	yes

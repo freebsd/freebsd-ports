@@ -7,7 +7,7 @@
 
 PORTNAME=	assaultcube
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame/AssaultCube/1.0
 DISTNAME=	AssaultCube_v${PORTVERSION}
@@ -15,9 +15,8 @@ DISTNAME=	AssaultCube_v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Total conversion of the FPS game called Cube
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
-
 USE_BZIP2=	yes
+USE_OPENAL=	al
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libenet

@@ -7,7 +7,7 @@
 
 PORTNAME=	tnl
 PORTVERSION=	071111
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://tnlgame.net/downloads/tnl/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -20,9 +20,7 @@ COMMENT=	Futuristic action flight simulator and realtime strategy game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiovmall.so:${PORTSDIR}/lang/io
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut \
-		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
+LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui \
 		png.5:${PORTSDIR}/graphics/png \
 		GLEW.1:${PORTSDIR}/graphics/glew
@@ -33,6 +31,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GCC=	4.2+
 USE_GL=		yes
+USE_OPENAL=	al alut
 
 CONFIGURE_ARGS=	--with-io-cflags="-I${LOCALBASE}/include/io" \
 		--with-io-libs="-L${LOCALBASE}/lib -liovmall"

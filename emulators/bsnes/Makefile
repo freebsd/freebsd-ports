@@ -6,6 +6,7 @@
 
 PORTNAME=	bsnes
 PORTVERSION=	0.58
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://byuu.org/files/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
@@ -58,7 +59,7 @@ VIDEO_DRIVER+=	video.qtimage
 .endif
 
 .if defined(WITH_SOUND_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 AUDIO_DRIVER+=	audio.openal
 .endif
 

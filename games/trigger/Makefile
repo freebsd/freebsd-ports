@@ -7,7 +7,7 @@
 
 PORTNAME=	trigger
 PORTVERSION=	0.5.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-rally/${PORTNAME}-rally/${PORTNAME}-${PORTVERSION}
 DISTFILES=	trigger-${PORTVERSION}-src${EXTRACT_SUFX} \
@@ -17,10 +17,9 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A rally car racing game
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal \
-		physfs.1:${PORTSDIR}/devel/physfs \
-		alut.1:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
 
+USE_OPENAL=	al alut
 USE_SDL=	sdl image
 USE_GL=		yes
 USE_BZIP2=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://woe.crying-wolves.net/ \
 		http://www.derchris.eu/warsow/ \
@@ -83,7 +84,7 @@ PLIST_SUB+=	QF="@comment "
 .endif
 
 .if !defined(WITHOUT_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 ALL_TARGET+=	openal
 PLIST_SUB+=	OPENAL=""
 .else

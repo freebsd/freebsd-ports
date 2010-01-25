@@ -1,6 +1,6 @@
---- setup.py	Sun Apr 30 10:23:44 2006
-+++ setup.py	Mon Aug 21 00:25:58 2006
-@@ -1,14 +1,14 @@
+--- setup.py.orig	2006-04-30 17:23:44.000000000 +0200
++++ setup.py	2009-12-26 17:50:57.000000000 +0100
+@@ -1,17 +1,17 @@
  import os
  from distutils.core import setup, Extension
  
@@ -9,7 +9,8 @@
  LIBS    = ["openal", "alut"]
  
  try:
-   openal_version = os.popen("openal-config --version").read()
+-  openal_version = os.popen("openal-config --version").read()
++  openal_version = os.popen("pkg-config --modversion openal").read()
    if openal_version[0] == "0":
 -    LIBDIRS = ["/usr/lib", "/usr/local/lib"]
 -    LIBS    = ["openal"]
@@ -17,7 +18,11 @@
 +    LIBS    = ["openal","alut"]
      
  except:
-   print "Warning: error while running 'openal-config --version', using default values..."
+-  print "Warning: error while running 'openal-config --version', using default values..."
++  print "Warning: error while running 'pkg-config --modversion', using default values..."
+ 
+ 
+ setup(
 @@ -38,7 +38,7 @@
    
    ext_modules  = [Extension("_openal",

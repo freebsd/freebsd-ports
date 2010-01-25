@@ -7,7 +7,7 @@
 
 PORTNAME=	worldofpadman
 PORTVERSION=	1.2.20080621
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://thilo.kickchat.com/download/:full \
 		http://btc3x6.che.uni-bayreuth.de/~tl/wop_final/:full \
@@ -74,7 +74,7 @@ MAKE_ENV+=	USE_CURL_DLOPEN=1
 .   endif
 # OpenAL
 .   if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 MAKE_ENV+=	USE_OPENAL=1
 .       if defined(WITH_OPENAL_DLOPEN)
 MAKE_ENV+=	USE_OPENAL_DLOPEN=1

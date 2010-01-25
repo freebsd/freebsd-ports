@@ -7,7 +7,7 @@
 
 PORTNAME=	atr3d
 PORTVERSION=	0.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.avoidtheroid.com/pub/${PORTNAME}/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
@@ -39,7 +39,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SOUND)
-LIB_DEPENDS+=	alut.1:${PORTSDIR}/audio/freealut
+USE_OPENAL=		alut
 CONFIGURE_ARGS+=	--enable-sound
 .else
 CONFIGURE_ARGS+=	--disable-sound

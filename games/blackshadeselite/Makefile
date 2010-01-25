@@ -7,7 +7,7 @@
 
 PORTNAME=	blackshadeselite
 PORTVERSION=	0.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,14 +15,13 @@ MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Psychic Bodyguard FPS - protect the VIP
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GL=		yes
+USE_OPENAL=	al alut
 
 MAKE_ARGS=	CC=${CC} CXX=${CXX}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xpilot-ng
 PORTVERSION=	4.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/xpilot/xpilot_ng/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -74,7 +74,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if defined(WITH_SOUND)
-LIB_DEPENDS+=	openal:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 CONFIGURE_ARGS+=--enable-sound
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}

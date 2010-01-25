@@ -7,6 +7,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -60,7 +61,7 @@ USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=	--with-sound=gstreamer
 .endif
 .if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=		al
 CONFIGURE_ARGS+=	--with-sound=openal
 .endif
 .if defined(WITHOUT_GSTREAMER) && !defined(WITH_OPENAL)

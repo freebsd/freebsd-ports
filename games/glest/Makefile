@@ -7,7 +7,7 @@
 
 PORTNAME=	glest
 PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
@@ -17,14 +17,13 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free 3d real-time customizable strategy game
 
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 RUN_DEPENDS=	${DATADIR}/servers.ini:${PORTSDIR}/games/glest-data
 
 USE_AUTOTOOLS=	automake:15:env autoconf:262:env
 USE_ZIP=	yes
+USE_OPENAL=	al alut
 USE_DOS2UNIX=	yes
 USE_LUA=	5.1
 USE_SDL=	yes

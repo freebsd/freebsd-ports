@@ -7,6 +7,7 @@
 
 PORTNAME=	OpenAL
 PORTVERSION=	1.4.0.0
+PORTREVISION=	1
 CATEGORIES=	audio haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -22,8 +23,8 @@ RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-StateVar>=1.0.0.0:${PORTSDIR}/devel/hs-StateVar \
 		hs-Tensor>=1.0.0.1:${PORTSDIR}/devel/hs-Tensor \
 		hs-ObjectName>=1.0.0.0:${PORTSDIR}/devel/hs-ObjectName
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
 
+USE_OPENAL=	al
 GHC_VERSION=		6.10.4
 HSOPENAL_VERSION=	${PORTVERSION}
 

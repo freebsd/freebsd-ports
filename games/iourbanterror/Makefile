@@ -7,7 +7,7 @@
 
 PORTNAME=	iourbanterror
 DISTVERSION=	2007_12_20
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/complete/
 DISTNAME=	ioUrbanTerrorSource_${DISTVERSION}
@@ -78,7 +78,7 @@ MAKE_ENV+=	USE_CURL_DLOPEN=1
 .   endif
 # OpenAL
 .   if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 MAKE_ENV+=	USE_OPENAL=1
 .       if defined(WITH_OPENAL_DLOPEN)
 MAKE_ENV+=	USE_OPENAL_DLOPEN=1

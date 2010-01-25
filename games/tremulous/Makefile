@@ -7,7 +7,7 @@
 
 PORTNAME=	tremulous
 PORTVERSION=	1.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1 \
 		http://0day.icculus.org/mirrors/tremulous/ \
@@ -59,7 +59,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
 # OpenAL
 .   if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 MAKE_ENV+=	USE_OPENAL=1
 .       if defined(WITH_OPENAL_DLOPEN)
 MAKE_ENV+=	USE_OPENAL_DLOPEN=1

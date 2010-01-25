@@ -7,7 +7,7 @@
 
 PORTNAME=	btanks
 PORTVERSION=	0.7.5800
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTNAME}-source-${PORTVERSION}
 
@@ -15,12 +15,12 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		openal.0:${PORTSDIR}/audio/openal \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+USE_OPENAL=	al
 USE_SCONS=	yes
 USE_SDL=	image sdl
 SCONS_BUILDENV=	${SCONS_ENV} LDFLAGS=${PTHREAD_LIBS}

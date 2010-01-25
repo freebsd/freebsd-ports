@@ -7,15 +7,14 @@
 
 PORTNAME=	windstille
 PORTVERSION=	0.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS CENKES
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classic 2D jump-n-shoot game
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		physfs.1:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		ogg.6:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
 USE_SCONS=	yes
+USE_OPENAL=	al
 USE_GL=		gl
 USE_SDL=	sdl image
 USE_BISON=	build

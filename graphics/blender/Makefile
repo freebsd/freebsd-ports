@@ -6,6 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.49b
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -147,8 +148,7 @@ CFLAGS+=	-O3 -ffast-math
 .if defined(WITH_OPENAL)
 MAKE_ENV+=	NAN_NO_OPENAL="false"
 MAKE_ENV+=	NAN_OPENAL="${LOCALBASE}/"
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+USE_OPENAL=	al alut
 .else
 MAKE_ENV+=	NAN_NO_OPENAL="true"
 .endif

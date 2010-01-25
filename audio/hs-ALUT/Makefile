@@ -7,6 +7,7 @@
 
 PORTNAME=	ALUT
 PORTVERSION=	2.2.0.0
+PORTREVISION=	1
 CATEGORIES=	audio haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -20,14 +21,13 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-StateVar>=1.0.0.0:${PORTSDIR}/devel/hs-StateVar \
 		hs-OpenAL>=1.4.0.0:${PORTSDIR}/audio/hs-OpenAL
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
 
 GHC_VERSION=	6.10.4
 HSALUT_VERSION=	${PORTVERSION}
 
 GHC_CMD=	${LOCALBASE}/bin/ghc
 SETUP_CMD=	./setup
+USE_OPENAL=	al alut
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

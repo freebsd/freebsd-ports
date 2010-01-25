@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	1.0.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/crystal/crystal/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/$/-src/}-${PORTVERSION}
@@ -22,14 +22,13 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui
 
 CONFLICTS=	crystalspace-devel-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_OPENAL=	al alut
 USE_GL=		yes
 WANT_PERL=	yes
 LDFLAGS+=	-L/usr/lib -lc
