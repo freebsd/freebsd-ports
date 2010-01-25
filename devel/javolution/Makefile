@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	javolution
-PORTVERSION=	5.4.0
+PORTVERSION=	5.4.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://javolution.org/target/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-project
