@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium-bsu
 PORTVERSION=	0.9.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/${PORTVERSION}
 
@@ -46,8 +46,7 @@ CONFIGURE_ARGS+=--disable-glut
 USE_SDL+=	mixer
 CONFIGURE_ARGS+=--disable-openal
 .else
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+USE_OPENAL=	al alut
 CONFIGURE_ARGS+=--disable-sdlmixer
 .endif
 

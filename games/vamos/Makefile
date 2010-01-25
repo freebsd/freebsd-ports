@@ -7,16 +7,16 @@
 
 PORTNAME=	vamos
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automotive simulation framework
 
-LIB_DEPENDS=	alut.1:${PORTSDIR}/audio/freealut \
-		openal.0:${PORTSDIR}/audio/openal \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_OPENAL=	al alut
 USE_GL=		glut
 USE_SDL=	sdl
 USE_GMAKE=	yes

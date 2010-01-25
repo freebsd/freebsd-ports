@@ -7,7 +7,7 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 
@@ -67,7 +67,7 @@ MAKE_ARGS+=	USE_CURL=0
 .endif
 # OpenAL
 .if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 .else
 MAKE_ARGS+=	USE_OPENAL=0
 .endif

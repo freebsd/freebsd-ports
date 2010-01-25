@@ -7,7 +7,7 @@
 
 PORTNAME=	openarena
 PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://openarena.ws/rel/070/:src \
 		http://download.tuxfamily.net/cooker/openarena/rel070/:data \
@@ -66,7 +66,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
 # OpenAL
 .   if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+USE_OPENAL=	al
 MAKE_ENV+=	USE_OPENAL=1
 .       if defined(WITH_OPENAL_DLOPEN)
 MAKE_ENV+=	USE_OPENAL_DLOPEN=1

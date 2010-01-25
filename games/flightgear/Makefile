@@ -7,7 +7,7 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	1.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
@@ -22,8 +22,7 @@ MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	The FlightGear flight simulator
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
@@ -38,6 +37,7 @@ LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
+USE_OPENAL=	al
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

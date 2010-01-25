@@ -7,6 +7,7 @@
 
 PORTNAME=	deng
 PORTVERSION=	1.9.0b6.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/1.9.0-beta6.8
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
@@ -38,8 +39,8 @@ OPTIONS=	OPENAL "Build OpenAL sound plugin" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENAL) || exists(${LOCALBASE}/lib/libopenal.so.0)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+.if defined(WITH_OPENAL) || exists(${LOCALBASE}/lib/libopenal.so)
+USE_OPENAL=	al
 CMAKE_ARGS+=	-DBUILDOPENAL:BOOL=ON
 PLIST_SUB=	OPENAL=""
 .else

@@ -7,7 +7,7 @@
 
 PORTNAME=	freeorion
 PORTVERSION=	0.3.13.3318
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	oliver
@@ -16,7 +16,6 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Open-source, platform independent galactic conquest game
 
 LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
-		alut.1:${PORTSDIR}/audio/freealut \
 		graph:${PORTSDIR}/graphics/graphviz \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
 		vorbisfile.6:${PORTSDIR}/audio/libvorbis
@@ -29,6 +28,7 @@ USE_PYTHON=	yes
 USE_SCONS=	yes
 SCONS_ARGS=	with_builtin_sdlnet=0
 SCONS_BUILDENV=	PYTHON_LIB=${PYTHON_VERSION} LINKFLAGS=${LDFLAGS}
+USE_OPENAL=	alut
 USE_SDL=	sdl net
 WRKSRC=		${WRKDIR}/${PORTNAME}/FreeOrion
 

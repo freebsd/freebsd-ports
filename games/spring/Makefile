@@ -7,6 +7,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	0.80.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -15,7 +16,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A project aiming to create a new and versatile RTS Engine
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		openal.0:${PORTSDIR}/audio/openal \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		IL.2:${PORTSDIR}/graphics/devil \
@@ -28,6 +28,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math
 
 USE_SDL=	sdl
+USE_OPENAL=	al
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes

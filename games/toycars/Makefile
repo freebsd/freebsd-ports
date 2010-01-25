@@ -7,17 +7,15 @@
 
 PORTNAME=	toycars
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Physics-based 2D racing game
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
-
 USE_SDL=	mixer image sdl
+USE_OPENAL=	al alut
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

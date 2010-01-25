@@ -7,7 +7,7 @@
 
 PORTNAME=	sfml
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	SFML-${PORTVERSION}-sdk-linux-32
@@ -16,12 +16,12 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		openal.0:${PORTSDIR}/audio/openal \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
+USE_OPENAL=	al
 USE_XORG=	x11 xrandr
 USE_GL=		gl glu
 USE_LDCONFIG=	yes

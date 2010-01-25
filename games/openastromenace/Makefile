@@ -7,7 +7,7 @@
 
 PORTNAME=	openastromenace
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	openamenace-src-${PORTVERSION}${EXTRACT_SUFX} \
@@ -18,12 +18,11 @@ MAINTAINER=	proler@gmail.com
 COMMENT=	Hardcore 3D space shooter with spaceship upgrade possibilities
 
 LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis \
-		jpeg:${PORTSDIR}/graphics/jpeg	\
-		openal:${PORTSDIR}/audio/openal	\
-		alut:${PORTSDIR}/audio/freealut
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 USE_GL=		gl glu
+USE_OPENAL=	al alut
 WANT_SDL=	yes
 USE_SDL=	sdl
 USE_CMAKE=	yes

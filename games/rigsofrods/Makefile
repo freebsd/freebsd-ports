@@ -7,6 +7,7 @@
 
 PORTNAME=	rigsofrods
 PORTVERSION=	0.36.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
@@ -16,8 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Truck, car, airplane and boat simulator with advanced physics
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		zzip.13:${PORTSDIR}/devel/zziplib \
+LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui \
 		freeimage.3:${PORTSDIR}/graphics/freeimage
@@ -29,6 +29,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 BROKEN=		does not build
 
 USE_ZIP=	yes
+USE_OPENAL=	al
 USE_XORG=	x11 xt xaw sm ice xext
 WRKSRC=		${WRKDIR}/${PORTNAME}-source-${PORTVERSION}/build
 USE_WX=		2.6+

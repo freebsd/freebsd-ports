@@ -7,6 +7,7 @@
 
 PORTNAME=	reallyslick
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/rss-glx/rss-glx/${PORTVERSION}
 DISTNAME=	rss-glx_${PORTVERSION}
@@ -39,7 +40,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREEALUT)
-LIB_DEPENDS+=	alut.1:${PORTSDIR}/audio/freealut
+USE_OPENAL=	alut
 .else
 CONFIGURE_ARGS+=	--disable-sound
 .endif

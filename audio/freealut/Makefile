@@ -7,20 +7,19 @@
 
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	The OpenAL Utility Toolkit
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
-
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
+USE_OPENAL=	al
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Warzone%202100%20${PORTVERSION}
 
@@ -19,7 +20,6 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
 		ogg.6:${PORTSDIR}/audio/libogg \
-		openal.0:${PORTSDIR}/audio/openal \
 		physfs.1:${PORTSDIR}/devel/physfs \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
@@ -30,6 +30,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fo
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
+USE_OPENAL=	al
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	net sdl

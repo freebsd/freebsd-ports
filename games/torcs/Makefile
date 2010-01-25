@@ -7,7 +7,7 @@
 
 PORTNAME=	torcs
 DISTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
@@ -15,12 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png	\
-		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
+USE_OPENAL=	al alut
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

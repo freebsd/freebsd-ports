@@ -7,7 +7,7 @@
 
 PORTNAME=	ultimatestunts
 PORTVERSION=	0.7.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	srcdata-
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
@@ -16,10 +16,8 @@ MASTER_SITES=	SF/${PORTNAME}/sourcecode/0.7.5%20release%201
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Racing game with elaborate stunts
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
-
 USE_GETTEXT=	yes
+USE_OPENAL=	al alut
 USE_GL=		gl glu
 USE_SDL=	sdl image
 GNU_CONFIGURE=	yes

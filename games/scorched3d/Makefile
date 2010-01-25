@@ -7,6 +7,7 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/Version%20${SCORCH_VERSION}/
 DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
@@ -14,10 +15,7 @@ DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Scorched is a game based loosely on the classic DOS game
 
-BUILD_DEPENDS=		openal-config:${PORTSDIR}/audio/openal
-RUN_DEPENDS=		openal-config:${PORTSDIR}/audio/openal
-LIB_DEPENDS=		alut.1:${PORTSDIR}/audio/freealut \
-			fftw3f:${PORTSDIR}/math/fftw3-float \
+LIB_DEPENDS=		fftw3f:${PORTSDIR}/math/fftw3-float \
 			fftw3:${PORTSDIR}/math/fftw3 \
 			jpeg:${PORTSDIR}/graphics/jpeg \
 			png:${PORTSDIR}/graphics/png
@@ -27,6 +25,7 @@ SCORCH_VERSION=		42.1
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
 .endif
+USE_OPENAL=	al alut
 USE_SDL=		mixer net sdl
 GNU_CONFIGURE=		yes
 USE_GL=			yes

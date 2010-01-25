@@ -7,7 +7,7 @@
 
 PORTNAME=	excido
 PORTVERSION=	0.1.5c
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/excido/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,15 +15,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A portable fast-paced 3d shooter
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		physfs.1:${PORTSDIR}/devel/physfs \
-		alut.1:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
+USE_OPENAL=	al alut
 USE_SDL=	image sdl ttf
 
 post-install:

@@ -7,6 +7,7 @@
 
 PORTNAME=	pyglet
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +16,12 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform windowing and multimedia library for Python
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		openal.0:${PORTSDIR}/audio/openal
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		gl glu
+USE_OPENAL=	al
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
