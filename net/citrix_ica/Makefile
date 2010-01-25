@@ -35,6 +35,9 @@ PLIST_SUB+=	HAVE_ICA_CERTS="" ICA_CERTS="${ICA_CERTS}" CERTDIR="${CERTDIR}"
 PLIST_SUB+=	HAVE_ICA_CERTS="@comment "
 .endif
 
+SUB_FILES=	wfcmgr wfica
+SUB_LIST=	CDIR=${CDIR}
+
 .include <bsd.port.pre.mk>
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
@@ -76,13 +79,9 @@ do-install:
 		${ECHO} "-----------------------------------------------------------" ; \
 		${FALSE} ; \
 	fi
-	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfcmgr \
-		> ${WRKSRC}/wfcmgr.x
-	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfica \
-		> ${WRKSRC}/wfica.x
 	cd ${WRKSRC} && ${SH} -c './setupwfc'
-	${INSTALL_SCRIPT} ${WRKSRC}/wfcmgr.x ${PREFIX}/bin/wfcmgr
-	${INSTALL_SCRIPT} ${WRKSRC}/wfica.x ${PREFIX}/bin/wfica
+	${INSTALL_SCRIPT} ${WRKDIR}/wfcmgr ${PREFIX}/bin/wfcmgr
+	${INSTALL_SCRIPT} ${WRKDIR}/wfica ${PREFIX}/bin/wfica
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 .if defined(ICA_CERTS)
