@@ -1,0 +1,13 @@
+bin/meep
+include/meep.hpp
+include/meep/mympi.hpp
+include/meep/vec.hpp
+lib/libmeep.a
+lib/libmeep.la
+lib/pkgconfig/meep.pc
+share/meep/casimir.scm
+share/meep/meep-enums.scm
+share/meep/meep.scm
+@dirrm share/meep
+@dirrmtry lib/pkgconfig
+@dirrm include/meep
