@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vitunes
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
@@ -26,5 +26,6 @@ MAN1=	vitunes.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '26d' ${WRKSRC}/vitunes.h
 
 .include <bsd.port.mk>
