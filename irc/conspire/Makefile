@@ -24,7 +24,7 @@ USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -33,7 +33,6 @@ MAN1=	conspire-bot.1 \
 	conspire.1
 
 OPTIONS=	IPV6 "Enable IPv6 support" off \
-		PLUGIN "Enable plugin support" on \
 		REGEX "Enable regex substitution support" on \
 		GNUTLS "Enale gnutls support" on \
 		SOCKS "Build with socks5 support (broken)" off
@@ -45,10 +44,6 @@ CONFIGURE_ARGS+=--disable-python
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
-.endif
-
-.if !defined(WITH_PLUGIN)
-CONFIGURE_ARGS+=--disable-plugin
 .endif
 
 .if !defined(WITH_REGEX)
