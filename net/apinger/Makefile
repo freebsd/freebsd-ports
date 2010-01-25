@@ -17,29 +17,23 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	An IP device monitoring tool
 
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	apinger
+SUB_FILES=	pkg-message
 
 OPTIONS=	IPV6 "With support for IPv6" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-post-extract:
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${FILESDIR}/apinger.sh \
-		> ${WRKSRC}/apinger.sh
+.include <bsd.port.pre.mk>
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/apinger.conf ${PREFIX}/etc/apinger.conf.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/apinger.sh ${PREFIX}/etc/rc.d/apinger.sh.sample
 .if !defined(BATCH)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "###############################################################################"
-	@${ECHO_MSG} "# Please edit ${PREFIX}/etc/apinger.conf to your needs.                      #"
-	@${ECHO_MSG} "# A sample shell script has been installed in ${PREFIX}/etc/rc.d/            #"
-	@${ECHO_MSG} "# rename it to automatically start apinger at boot.                           #"
-	@${ECHO_MSG} "###############################################################################"
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .if !defined(NOPORTDOCS)

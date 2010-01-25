@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: apinger
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# apinger_enable (bool):   Set to NO by default.
+#               Set it to YES to enable apinger.
+#
+
+. /etc/rc.subr
+
+name="apinger"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${apinger_enable="NO"}
+
+run_rc_command "$1"
