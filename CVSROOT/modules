@@ -4442,7 +4442,6 @@ gnat-doc-info                   ports/lang/gnat-doc-info
 gnat-doc-ps                     ports/lang/gnat-doc-ps
 gnat-doc-texi                   ports/lang/gnat-doc-texi
 gnat-doc-txt                    ports/lang/gnat-doc-txt
-gnat-gcc41                      ports/lang/gnat-gcc41
 gnat-gcc42                      ports/lang/gnat-gcc42
 gnat-gcc43                      ports/lang/gnat-gcc43
 gnat-gcc44                      ports/lang/gnat-gcc44
@@ -4658,6 +4657,7 @@ gnustep-xdps                    ports/x11-toolkits/gnustep-xdps
 gnutls                          ports/security/gnutls
 gnutls-devel                    ports/security/gnutls-devel
 gnuwash                         ports/deskutils/gnuwash
+go                              ports/lang/go
 gob                             ports/x11-toolkits/gob
 gob2                            ports/devel/gob2
 gobby                           ports/editors/gobby
@@ -5001,7 +5001,6 @@ gtk12                           ports/x11-toolkits/gtk12
 gtk20                           ports/x11-toolkits/gtk20
 gtk20-reference                 ports/x11-toolkits/gtk20-reference
 gtkabale                        ports/games/gtkabale
-gtkada-gcc                      ports/x11-toolkits/gtkada-gcc
 gtkada-gps                      ports/x11-toolkits/gtkada-gps
 gtkam                           ports/graphics/gtkam
 gtkatlantic                     ports/games/gtkatlantic
@@ -10205,6 +10204,7 @@ opendpi                         ports/net/opendpi
 opendx                          ports/graphics/opendx
 opendylan                       ports/lang/opendylan
 openerp-server                  ports/finance/openerp-server
+openerp-web                     ports/finance/openerp-web
 openexr                         ports/graphics/OpenEXR
 openexr_ctl                     ports/graphics/openexr_ctl
 openfire                        ports/net-im/openfire
@@ -18664,7 +18664,6 @@ pftpd                           ports/ftp/pftpd
 pg_filedump                     ports/databases/pg_filedump
 pgaccess                        ports/databases/pgaccess
 pgadmin3                        ports/databases/pgadmin3
-pgadmin3-12                     ports/databases/pgadmin3-12
 pgbouncer                       ports/databases/pgbouncer
 pgcalc                          ports/math/pgcalc
 pgcluster                       ports/databases/pgcluster
@@ -21668,6 +21667,7 @@ s3switch                        ports/graphics/s3switch
 s5                              ports/textproc/s5
 s9fes                           ports/lang/s9fes
 sa-utils                        ports/mail/sa-utils
+sabbu                           ports/multimedia/sabbu
 sabernetdcs-client              ports/finance/sabernetdcs-client
 sablevm                         ports/java/sablevm
 sablevm-classpath               ports/java/sablevm-classpath
