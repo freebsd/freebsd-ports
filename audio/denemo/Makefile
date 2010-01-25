@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.12
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -15,6 +15,7 @@ COMMENT=	Graphical score editor
 
 BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	aubio.3:${PORTSDIR}/audio/aubio \
+		fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
 		jack.0:${PORTSDIR}/audio/jack \
 		guile.20:${PORTSDIR}/lang/guile \
 		fftw3.5:${PORTSDIR}/math/fftw3
