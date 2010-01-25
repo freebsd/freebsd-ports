@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A cross-platform make
+COMMENT=	A cross-platform Makefile generator
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
