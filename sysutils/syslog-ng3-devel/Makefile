@@ -54,6 +54,14 @@ CONFIGURE_ARGS+=--enable-tcp-wrapper
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
+.if ${OSVERSION} >= 900007
+	@${REINPLACE_CMD} \
+		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
+		-e 's|ut_name|ut_user|' \
+		${WRKSRC}/configure ${WRKSRC}/src/afuser.c \
+		${WRKSRC}/src/utils.c ${WRKSRC}/src/utils.h
+.endif
+
 
 post-install:
 .if !defined(NOPORTDOCS)
