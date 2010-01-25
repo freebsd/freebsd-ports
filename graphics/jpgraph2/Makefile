@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://hem.bredband.net/jpgraph2/
 
