@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Parse-RecDescent
-PORTVERSION=	1.962.2
+PORTVERSION=	1.963.0
+DISTVERSION=	${PORTVERSION:C/\.(0)$//}
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DC/DCONWAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.Org
+MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A recursive descent parsing framework for Perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
