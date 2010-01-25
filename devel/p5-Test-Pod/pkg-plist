@@ -1,5 +1,2 @@
 %%SITE_PERL%%/Test/Pod.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Pod/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test
