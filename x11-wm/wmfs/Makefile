@@ -6,19 +6,14 @@
 #
 
 PORTNAME=	wmfs
-DISTVERSION=	0.1rc4
-PORTREVISION=	2
+DISTVERSION=	201001
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://wmfs.info/files/ \
-		http://mirror.mcx2.org/
+MASTER_SITES=	http://www.wmfs.info/static/dl/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A floating and tiling Window Manager From Scratch
 
-BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xmlto:${PORTSDIR}/textproc/xmlto
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
-		confuse.0:${PORTSDIR}/devel/libconfuse
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GNOME=	pkgconfig
 USE_CMAKE=	yes
@@ -29,11 +24,11 @@ MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/wmfs \
 		etc/xdg/wmfs/wmfsrc \
+		share/xsessions/wmfs.desktop \
 		%%DOCSDIR%%/TODO \
 		%%DOCSDIR%%/README \
-		%%DOCSDIR%%/CHANGELOG \
 		%%DOCSDIR%%/wmfsrc
-PLIST_DIRS=	%%DOCSDIR%% etc/xdg/wmfs etc/xdg
+PLIST_DIRS=	%%DOCSDIR%% etc/xdg/wmfs etc/xdg share/xsessions
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +43,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}/TODO
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}/CHANGELOG
 	${INSTALL_DATA} ${WRKSRC}/wmfsrc ${DOCSDIR}/wmfsrc
 .endif
 
