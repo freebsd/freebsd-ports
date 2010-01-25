@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://t-o-m-e.net/dl/src/
 DISTNAME=	tome-235-src
 
-MAINTAINER=	peter.thoenen@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Roguelike dungeon exploration game based on JRR Tolkien's works
 
 SUB_FILES=	pkg-deinstall

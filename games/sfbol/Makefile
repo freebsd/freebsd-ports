@@ -13,7 +13,7 @@ DISTNAME=	install40
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	peter.thoenen@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star Fleet Battles Online
 
 IGNOREFILES=	install40.jar

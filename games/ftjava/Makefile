@@ -15,7 +15,7 @@ DISTFILES=	FTJavaV${PORTVERSION}.zip:file1 \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	FTJavaV${PORTVERSION}.zip
 
-MAINTAINER=	peter.thoenen@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Thrust PBEM Client
 
 USE_JAVA=	yes
