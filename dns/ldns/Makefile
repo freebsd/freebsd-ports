@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
