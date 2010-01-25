@@ -7,7 +7,7 @@
 
 PORTNAME=	amphetadesk
 PORTVERSION=	0.93.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
@@ -21,7 +21,6 @@ RUN_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI

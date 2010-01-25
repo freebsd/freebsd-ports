@@ -6,6 +6,7 @@
 
 PORTNAME=	cybercalendar
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ipv6.niif.hu/~mohacsi/downloads/
 DISTNAME=	CyberCalendar_${PORTVERSION}
@@ -14,7 +15,6 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	CyberCalendar is a web based calendar program written in perl
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
 

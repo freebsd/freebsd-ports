@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Model-DynamicAdaptor
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TO/TOMYHERO/
@@ -17,7 +18,6 @@ COMMENT=	Dynamically load adaptor modules
 
 RUN_DEPENDS=	${SITE_PERL}/Catalyst/Runtime.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Module/Recursive/Require.pm:${PORTSDIR}/devel/p5-Module-Recursive-Require \
-		${SITE_PERL}/NEXT.pm:${PORTSDIR}/devel/p5-NEXT \
 		${SITE_PERL}/Test/Spelling.pm:${PORTSDIR}/devel/p5-Test-Spelling
 
 PERL_CONFIGURE=	Yes

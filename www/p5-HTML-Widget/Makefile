@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML-Widget
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-HTML-Tree>=3.22:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		p5-Class-Data-Accessor>=0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-Module-Pluggable-Fast>=0:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc

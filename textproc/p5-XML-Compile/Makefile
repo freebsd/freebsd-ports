@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-Compile
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Compilation based XML processing
 
-RUN_DEPENDS=	p5-IO>=1.22:${PORTSDIR}/devel/p5-IO \
-		p5-Log-Report>=0.21:${PORTSDIR}/devel/p5-Log-Report \
-		p5-Math-BigInt>=1.77:${PORTSDIR}/math/p5-Math-BigInt \
+RUN_DEPENDS=	p5-Log-Report>=0.21:${PORTSDIR}/devel/p5-Log-Report \
 		p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
