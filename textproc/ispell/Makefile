@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.3.02
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -129,10 +129,8 @@ EXTRA_DICT+=	${NLDISTFILE}:nl
 EXTRACT_ONLY+=	${NLDISTFILE}
 .endif
 .if defined(ISPELL_DA)
-DADISTFILE=	ispell-da-1.7.18.tar.gz
-MASTER_SITES+=	http://da.speling.org/filer/:da \
-		${MASTER_SITE_LOCAL:S/$/:da/}
-MASTER_SITE_SUBDIR+=	fenner/:da
+DADISTFILE=	ispell-da-1.7.31.tar.gz
+MASTER_SITES+=	http://da.speling.org/filer/:da
 EXTRA_DICT+=	${DADISTFILE}:da
 EXTRACT_ONLY+=	${DADISTFILE}
 .endif
