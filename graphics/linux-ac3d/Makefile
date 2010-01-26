@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	ac3d
-PORTVERSION=	6.430
+PORTVERSION=	6.528
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://www.inivis.com/ac3d/download/release6/ \
-		http://freebsd.unixfreunde.de/sources/ \
-		http://kwiki.dragon2.net/distfiles/
+MASTER_SITES=	http://www.inivis.com/ac3d/download/release6/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}lx${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
@@ -30,7 +28,7 @@ RESTRICTED=	no distribution permitted
 ONLY_FOR_ARCHS=	i386 amd64
 # needs f8 or higher
 USE_LINUX=	yes
-USE_LINUX_APPS+=	jpeg png10 tiff xorglibs
+USE_LINUX_APPS+=jpeg png10 tiff xorglibs
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
@@ -43,7 +41,7 @@ DESKTOP_ENTRIES="AC3D" \
 		"ac3d" \
 		"ac3d" \
 		"" \
-		false
+		${FALSE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ac3d ${PREFIX}/libexec
@@ -102,12 +100,11 @@ do-install:
 # docs
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/manual
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/IMPORTANT ${DOCSDIR}
-	cd ${WRKSRC} && \
-		${FIND} manual -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} manual -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	(cd ${WRKSRC}/manual/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/manual)
 .endif
 
 # examples
