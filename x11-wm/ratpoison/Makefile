@@ -7,14 +7,14 @@
 
 PORTNAME=	ratpoison
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://mirror.4bit.ws/ratpoison/
+		http://mirror.4bit.ws/
+MASTER_SITE_SUBDIR=	ratpoison
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Simple window manager with no fat library dependencies
-
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	xext xinerama xtst
 GNU_CONFIGURE=	yes
@@ -26,9 +26,7 @@ SUB_FILES=	ratpoison.desktop
 .include <bsd.port.pre.mk>
 
 post-patch:
-.for file in rpws allwindows.sh
-	${REINPLACE_CMD} '1s|!\(/bin/bash\)|!/usr/local\1|' ${WRKSRC}/contrib/${file}
-.endfor
+	${REINPLACE_CMD} -e 's|bash|sh|g' ${WRKSRC}/contrib/allwindows.sh
 
 .if defined (WITH_GDM_SUPPORT)
 PLIST_SUB+=	WITH_GDM=""
