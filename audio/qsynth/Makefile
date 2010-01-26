@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	qsynth
-DISTVERSION=	0.3.2
-PORTREVISION=	3
+PORTVERSION=	0.3.4
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	lazyklimm@gmail.com
 COMMENT=	Qt fluidsynth front-end application
@@ -19,11 +18,13 @@ LIB_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build gui xml
+QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build linguist_build
 CFLAGS+=	-I${QT_INCDIR} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 LDFLAGS+=	-L${QT_LIBDIR}
-CONFIGURE_ARGS+=ac_cv_path_ac_moc=${LOCALBASE}/bin/moc-qt4 ac_cv_path_ac_uic=${LOCALBASE}/bin/uic-qt4 \
-		ac_cv_path_ac_qmake=${LOCALBASE}/bin/qmake-qt4
+CONFIGURE_ARGS+=ac_cv_path_ac_moc=${MOC} ac_cv_path_ac_uic=${UIC} \
+		ac_cv_path_ac_qmake=${QMAKE} \
+		ac_cv_path_ac_lupdate=${LOCALBASE}/bin/lupdate-qt4 \
+		ac_cv_path_ac_lrelease=${LOCALBASE}/bin/lrelease-qt4
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
