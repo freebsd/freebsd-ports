@@ -7,7 +7,7 @@
 
 PORTNAME=	dovecot-sieve
 PORTVERSION=	${DOVECOTVERSION}+${DISTVERSION}
-DISTVERSION=	0.1.13
+DISTVERSION=	0.1.15
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
@@ -20,15 +20,17 @@ RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:${PORTSDIR}/mail/dovecot
 
 DOVECOTVERSION=	1.2
 
-USE_LDCONFIG=	${PREFIX}/lib/dovecot/lda
-
-MAN1=	sieve-test.1 sievec.1 sieved.1
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-dovecot=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC`
+CONFIGURE_ENV=	LDFLAGS='${LDFLAGS}'
+LDFLAGS+=	-L${LOCALBASE}/lib
+USE_LDCONFIG=	${PREFIX}/lib/dovecot/lda
+
 SUB_FILES=	pkg-message
+
+MAN1=		sieve-test.1 sievec.1 sieved.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO
