@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Unix-Processors
-PORTVERSION=	2.041
+PORTVERSION=	2.042
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Interface to processor (CPU) information
 
 PERL_CONFIGURE=	yes
