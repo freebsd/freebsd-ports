@@ -7,7 +7,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.95a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
@@ -20,8 +20,7 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 CONFLICTS=	openbgpd-[0-9]* quagga-[0-9]*
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message zebractl
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra
@@ -42,6 +41,8 @@ OPTIONS=	IPV6 "enable IPv6 support" on \
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 INFO=		zebra
+
+.include <bsd.port.options.mk>
 
 .if defined (WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
@@ -112,10 +113,7 @@ PLIST_SUB+=	VTYSH="@comment "
 post-install:
 	@( cd ${WRKSRC}/doc; ${RM} -f zebra*info*; ${MAKE} zebra.info install )
 	@${ECHO} "===>     installing zebra startup file..."
-	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
-		< ${FILESDIR}/zebractl.sh  \
-		> ${PREFIX}/sbin/zebractl
-	@${CHMOD} 555 ${PREFIX}/sbin/zebractl
+	${INSTALL_SCRIPT} ${WRKDIR}/zebractl ${PREFIX}/sbin/zebractl
 	@${ECHO} "done."
 	@${CAT} ${PKGMESSAGE}
 
