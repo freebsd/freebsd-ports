@@ -7,6 +7,7 @@
 
 PORTNAME=	monkeytail
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.dollyfish.net.nz/releases/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A multi-file tail on both local and remote hosts
 
-RUN_DEPENDS=	p5-IO>=0:${PORTSDIR}/devel/p5-IO \
-		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
+RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
 		${SITE_PERL}/Getopt/Declare.pm:${PORTSDIR}/devel/p5-Getopt-Declare
 
 USE_PERL5_RUN=	yes

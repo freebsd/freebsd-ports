@@ -13,7 +13,7 @@
 
 PORTNAME=	lire
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
@@ -23,7 +23,6 @@ COMMENT=	Logfile analyse toolkit for multiple applications
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lambda:${PORTSDIR}/math/lambda \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \

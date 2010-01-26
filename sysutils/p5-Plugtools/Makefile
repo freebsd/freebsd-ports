@@ -7,6 +7,7 @@
 
 PORTNAME=	Plugtools
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -22,7 +23,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/LDAP/Entry.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Net/LDAP/posixGroup.pm:${PORTSDIR}/net/p5-Net-LDAP-posixGroup \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
 		${SITE_PERL}/Config/IniHash.pm:${PORTSDIR}/devel/p5-Config-IniHash
 

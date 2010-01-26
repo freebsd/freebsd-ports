@@ -7,6 +7,7 @@
 
 PORTNAME=	Pod-Abstract
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	cm@therek.net
 COMMENT=	Abstract document tree for Perl POD documents
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/Task/Weaken.pm:${PORTSDIR}/devel/p5-Task-Weaken
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

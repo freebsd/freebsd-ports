@@ -7,14 +7,14 @@
 
 PORTNAME=	whatpix
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://whatpix.sourceforge.net/download/
 
 MAINTAINER=	pcasidy@casidy.com
 COMMENT=	Perl console application which finds, moves or deletes duplicate files
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/whatpix

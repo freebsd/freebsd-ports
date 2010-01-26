@@ -8,6 +8,7 @@
 
 PORTNAME=	Perl-Critic
 PORTVERSION=	1.10.5
+PORTREVISION=	1
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,10 +20,8 @@ COMMENT=	Critique Perl source for style and standards
 RUN_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-File-Path>=0:${PORTSDIR}/devel/p5-File-Path \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-List-MoreUtils>=0.19:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Module-Pluggable>=3.1:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-PPI>=1.205:${PORTSDIR}/textproc/p5-PPI \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 		p5-String-Format>=1.13:${PORTSDIR}/textproc/p5-String-Format \

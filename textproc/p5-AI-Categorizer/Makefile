@@ -7,6 +7,7 @@
 
 PORTNAME=	AI-Categorizer
 PORTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic Text Categorization
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/Statistics/Contingency.pm:${PORTSDIR}/math/p5-Statistics-Contingency \
 		${SITE_PERL}/Lingua/Stem.pm:${PORTSDIR}/textproc/p5-Lingua-Stem \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/Time/Progress.pm:${PORTSDIR}/devel/p5-Time-Progress \
 		${SITE_PERL}/${PERL_ARCH}/Algorithm/SVM.pm:${PORTSDIR}/devel/p5-Algorithm-SVM \
 		${SITE_PERL}/${PERL_ARCH}/AI/DecisionTree.pm:${PORTSDIR}/math/p5-AI-DecisionTree \
