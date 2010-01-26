@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-GrowlClient
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
@@ -15,10 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Perl implementation of Growl Network Notification Protocol
 
-BUILD_DEPENDS=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-RUN_DEPENDS=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+BUILD_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+RUN_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
 
 PERL_CONFIGURE=	yes
 

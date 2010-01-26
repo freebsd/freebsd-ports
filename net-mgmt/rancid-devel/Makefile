@@ -7,6 +7,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	2.3.2a10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	-devel
@@ -16,7 +17,6 @@ COMMENT=	Really Awesome New Cisco confIg Differ
 
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/LockFile/Simple.pm:${PORTSDIR}/devel/p5-LockFile-Simple
 
 USE_PERL5=	yes

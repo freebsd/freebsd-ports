@@ -7,6 +7,7 @@
 
 PORTNAME=	POE-Component-SNMP
 PORTVERSION=	1.1005
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Event-driven SNMP interface
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

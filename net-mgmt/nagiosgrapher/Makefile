@@ -7,6 +7,7 @@
 
 PORTNAME=	nagiosgrapher
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosGrapher-${PORTVERSION}/ \
 		https://www.nagiosforge.org/gf/download/frsrelease/135/285/
@@ -16,10 +17,8 @@ MAINTAINER=	cristianorolim@hotmail.com
 COMMENT=	Collects the output from Nagios and generates graphs
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
-	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
 	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 	${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
