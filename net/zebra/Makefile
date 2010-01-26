@@ -43,12 +43,6 @@ MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 INFO=		zebra
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
 .if defined (WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 WITHOUT_OSPF6D=	yes
@@ -125,4 +119,4 @@ post-install:
 	@${ECHO} "done."
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
