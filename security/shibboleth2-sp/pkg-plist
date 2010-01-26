@@ -1,93 +1,134 @@
-@comment $FreeBSD$
-bin/test-client
-bin/shibtest
-bin/posttest
-etc/shibboleth/shibboleth.xml
-etc/shibboleth/shibboleth.xml.dist
+bin/mdquery
+bin/resolvertest
+etc/shibboleth/metagen.sh
 etc/shibboleth/native.logger
 etc/shibboleth/native.logger.dist
 etc/shibboleth/shibd.logger
 etc/shibboleth/shibd.logger.dist
-etc/shibboleth/AAP.xml
-etc/shibboleth/AAP.xml.dist
-etc/shibboleth/IQ-metadata.xml
-etc/shibboleth/IQ-metadata.xml.dist
+etc/shibboleth/shibboleth2.xml
+etc/shibboleth/shibboleth2.xml.dist
+etc/shibboleth/attribute-map.xml
+etc/shibboleth/attribute-map.xml.dist
+etc/shibboleth/attribute-policy.xml
+etc/shibboleth/attribute-policy.xml.dist
 etc/shibboleth/example-metadata.xml
 etc/shibboleth/example-metadata.xml.dist
-etc/shibboleth/shibboleth.logger
-etc/shibboleth/shibboleth.logger.dist
+etc/shibboleth/console.logger
+etc/shibboleth/console.logger.dist
+etc/shibboleth/syslog.logger
+etc/shibboleth/syslog.logger.dist
 etc/shibboleth/accessError.html
 etc/shibboleth/accessError.html.dist
-etc/shibboleth/rmError.html
-etc/shibboleth/sslError.html
-etc/shibboleth/rmError.html.dist
 etc/shibboleth/sessionError.html
 etc/shibboleth/sessionError.html.dist
 etc/shibboleth/metadataError.html
 etc/shibboleth/metadataError.html.dist
+etc/shibboleth/bindingTemplate.html
+etc/shibboleth/bindingTemplate.html.dist
+etc/shibboleth/discoveryTemplate.html
+etc/shibboleth/discoveryTemplate.html.dist
+etc/shibboleth/localLogout.html
+etc/shibboleth/localLogout.html.dist
+etc/shibboleth/globalLogout.html
+etc/shibboleth/globalLogout.html.dist
+etc/shibboleth/sslError.html
 etc/shibboleth/sslError.html.dist
-etc/shibboleth/sp-example.key
-etc/shibboleth/sp-example.key.dist
-etc/shibboleth/sp-example.crt
-etc/shibboleth/sp-example.crt.dist
-etc/shibboleth/shibd
+etc/shibboleth/shibd-redhat
+etc/shibboleth/shibd-debian
+etc/shibboleth/shibd-suse
+etc/shibboleth/shibd-osx.plist
 etc/shibboleth/apache.config
 etc/shibboleth/apache2.config
 etc/shibboleth/apache22.config
-etc/shibboleth/inqueue.pem
-include/shib/shib.h
-include/shib/shib-threads.h
-include/shib/hresult.h
-include/shib-target/shib-target.h
-include/shib-target/shibrpc.h
-include/shib-target/shib-paths.h
-include/shib-target/hresult.h
-lib/liboncrpc.so.2
-lib/liboncrpc.so
-lib/libshib.so.6
-lib/libshib.so
-lib/libshib-target.so.5
-lib/libshib-target.so
-libexec/xmlproviders.so
-libexec/xmlproviders.la
-libexec/adfs.so
-libexec/adfs.la
-libexec/mod_shib_22.so
-libexec/mod_shib_22.la
+etc/shibboleth/keygen.sh
+etc/shibboleth/upgrade.xsl
+etc/shibboleth/sp-key.pem
+etc/shibboleth/sp-cert.pem
+etc/shibboleth/postTemplate.html
+etc/shibboleth/postTemplate.html.dist
+etc/shibboleth/partialLogout.html
+etc/shibboleth/partialLogout.html.dist
+include/shibsp/attribute/filtering/AttributeFilter.h
+include/shibsp/attribute/filtering/BasicFilteringContext.h
+include/shibsp/attribute/filtering/FilteringContext.h
+include/shibsp/attribute/filtering/FilterPolicyContext.h
+include/shibsp/attribute/filtering/MatchFunctor.h
+include/shibsp/attribute/ExtensibleAttribute.h
+include/shibsp/attribute/Attribute.h
+include/shibsp/attribute/AttributeDecoder.h
+include/shibsp/attribute/NameIDAttribute.h
+include/shibsp/attribute/ScopedAttribute.h
+include/shibsp/attribute/SimpleAttribute.h
+include/shibsp/attribute/XMLAttribute.h
+include/shibsp/attribute/resolver/AttributeExtractor.h
+include/shibsp/attribute/resolver/AttributeResolver.h
+include/shibsp/attribute/resolver/ResolutionContext.h
+include/shibsp/binding/ArtifactResolver.h
+include/shibsp/binding/SOAPClient.h
+include/shibsp/handler/AbstractHandler.h
+include/shibsp/handler/AssertionConsumerService.h
+include/shibsp/handler/Handler.h
+include/shibsp/handler/LogoutHandler.h
+include/shibsp/handler/RemotedHandler.h
+include/shibsp/handler/SessionInitiator.h
+include/shibsp/AbstractSPRequest.h
+include/shibsp/AccessControl.h
+include/shibsp/Application.h
+include/shibsp/base.h
+include/shibsp/exceptions.h
+include/shibsp/paths.h
+include/shibsp/RequestMapper.h
+include/shibsp/ServiceProvider.h
+include/shibsp/SessionCache.h
+include/shibsp/SessionCacheEx.h
+include/shibsp/SPConfig.h
+include/shibsp/SPRequest.h
+include/shibsp/TransactionLog.h
+include/shibsp/version.h
+include/shibsp/lite/CommonDomainCookie.h
+include/shibsp/lite/SAMLConstants.h
+include/shibsp/metadata/MetadataExt.h
+include/shibsp/metadata/MetadataProviderCriteria.h
+include/shibsp/remoting/ddf.h
+include/shibsp/remoting/ListenerService.h
+include/shibsp/security/PKIXTrustEngine.h
+include/shibsp/security/SecurityPolicy.h
+include/shibsp/util/CGIParser.h
+include/shibsp/util/DOMPropertySet.h
+include/shibsp/util/PropertySet.h
+include/shibsp/util/SPConstants.h
+include/shibsp/util/TemplateParameters.h
+lib/libshibsp.so.4
+lib/libshibsp.so
+lib/shibboleth/adfs.so
+lib/shibboleth/adfs.la
+lib/shibboleth/adfs-lite.so
+lib/shibboleth/adfs-lite.la
+%%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.so
+%%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.la
+%%WITH_APACHE_20%%lib/shibboleth/mod_shib_20.so
+%%WITH_APACHE_20%%lib/shibboleth/mod_shib_20.la
+lib/libshibsp-lite.so.4
+lib/libshibsp-lite.so
 sbin/shibd
-sbin/siterefresh
-share/xml/shibboleth/credentials.xsd
-share/xml/shibboleth/cs-sstc-schema-assertion-01.xsd
-share/xml/shibboleth/cs-sstc-schema-protocol-01.xsd
-share/xml/shibboleth/cs-sstc-schema-assertion-1.1.xsd
-share/xml/shibboleth/cs-sstc-schema-protocol-1.1.xsd
-share/xml/shibboleth/soap-envelope.xsd
-share/xml/shibboleth/xmldsig-core-schema.xsd
-share/xml/shibboleth/xenc-schema.xsd
-share/xml/shibboleth/xml.xsd
+share/xml/shibboleth/catalog.xml
 share/xml/shibboleth/shibboleth.xsd
-share/xml/shibboleth/shibboleth-trust-1.0.xsd
 share/xml/shibboleth/shibboleth-metadata-1.0.xsd
-share/xml/shibboleth/shibboleth-targetconfig-1.0.xsd
-share/xml/shibboleth/saml-schema-assertion-2.0.xsd
+share/xml/shibboleth/shibboleth-2.0-native-sp-config.xsd
+share/xml/shibboleth/shibboleth-2.0-afp.xsd
+share/xml/shibboleth/shibboleth-2.0-afp-mf-basic.xsd
+share/xml/shibboleth/shibboleth-2.0-afp-mf-saml.xsd
+share/xml/shibboleth/shibboleth-2.0-attribute-map.xsd
+share/xml/shibboleth/shibboleth-2.0-sp-notify.xsd
 share/xml/shibboleth/WS-Trust.xsd
-share/xml/shibboleth/saml-schema-metadata-2.0.xsd
-share/xml/shibboleth/metadata_v12_to_v11.xsl
-share/xml/shibboleth/metadata_v12_to_v13.xsl
-share/xml/shibboleth/metadata_v13_to_v12.xsl
-share/xml/shibboleth/trust_v12_to_v11.xsl
-share/xml/shibboleth/trust_v13_to_v12.xsl
 share/doc/shibboleth/CREDITS.txt
-share/doc/shibboleth/INSTALL.txt
-share/doc/shibboleth/INSTALL-WIN32.txt
 share/doc/shibboleth/LICENSE.txt
-share/doc/shibboleth/NEWS.txt
 share/doc/shibboleth/NOTICE.txt
 share/doc/shibboleth/README.txt
+share/doc/shibboleth/RELEASE.txt
+share/doc/shibboleth/FASTCGI.LICENSE
 share/doc/shibboleth/OPENSSL.LICENSE
 share/doc/shibboleth/LOG4CPP.LICENSE
-share/doc/shibboleth/CURL.LICENSE
-share/doc/shibboleth/mysql-4.0.12.diff
 share/doc/shibboleth/main.css
 share/doc/shibboleth/logo.jpg
 @exec mkdir -p %D/data
@@ -95,9 +136,20 @@ share/doc/shibboleth/logo.jpg
 @exec mkdir -p /var/run/shibboleth
 @exec chmod -R ug=rwx,o= /var/run/shibboleth
 @unexec rm -rf /var/run/shibboleth 2>&1 >/dev/null || true
+@dirrmtry share/doc/shibboleth/api
+@dirrmtry share/doc/shibboleth
+@dirrmtry lib/shibboleth
 @dirrmtry share/xml/shibboleth
-@dirrmtry include/shib-target
-@dirrmtry include/shib
+@dirrmtry include/shibsp/util
+@dirrmtry include/shibsp/security
+@dirrmtry include/shibsp/remoting
+@dirrmtry include/shibsp/metadata
+@dirrmtry include/shibsp/lite
+@dirrmtry include/shibsp/handler
+@dirrmtry include/shibsp/binding
+@dirrmtry include/shibsp/attribute/resolver
+@dirrmtry include/shibsp/attribute/filtering
+@dirrmtry include/shibsp/attribute
+@dirrmtry include/shibsp
 @dirrmtry etc/shibboleth
-@dirrm share/doc/shibboleth
 @dirrmtry data
