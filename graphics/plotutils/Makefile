@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plotutils
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNU
@@ -26,7 +26,10 @@ USE_LDCONFIG=	yes
 MAN1=		ode.1 plot.1 plotfont.1 spline.1 tek2plot.1
 INFO=		libxmi plotutils
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+test: build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
