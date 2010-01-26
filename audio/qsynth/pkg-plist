@@ -1,4 +1,7 @@
 bin/qsynth
 share/pixmaps/qsynth.png
 share/applications/qsynth.desktop
+share/locale/qsynth_de.qm
+share/locale/qsynth_es.qm
+share/locale/qsynth_ru.qm
 @dirrmtry share/applications
