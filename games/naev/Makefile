@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	naev
-PORTVERSION=	0.3.9
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	${PORTNAME}
@@ -19,15 +18,24 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/ndata-${PORTVERSION}:${PORTSDIR}/games/naev-data
 
+USE_AUTOTOOLS=	automake:19:env aclocal:19:env autoconf:262:env
 USE_BZIP2=	yes
 USE_DOS2UNIX=	conf.example
+GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_SDL=	sdl image mixer
+USE_SDL=	sdl image
 
+CONFIGURE_ARGS=	--with-ndata-path=${DATADIR}/ndata-${PORTVERSION}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN6=		naev.6
 PLIST_FILES=	bin/${PORTNAME}
 SUB_FILES=	pkg-message
+
+OPTIONS=	OPENAL 		"Use the OpenAL sound backend"	on \
+		SDL_MIXER	"Use the SDL_mixer sound backend"	on
 
 .include <bsd.port.pre.mk>
 
@@ -36,12 +44,23 @@ PLIST_FILES+=	%%DOCSDIR%%/conf.example
 PLIST_DIRS=	%%DOCSDIR%%
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -i "" -e 's|%%DATADIR%%|${DATADIR}|g' -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -i "" -e 's|CFLAGS +=|CFLAGS ?=|g' ${WRKSRC}/build/Makefile.posix
+.if defined(WITH_OPENAL)
+USE_OPENAL=		yes
+CONFIGURE_ARGS+=	--with-openal=yes
+.else
+CONFIGURE_ARGS+=	--with-openal=no
+.endif
+
+.if defined(WITH_SDL_MIXER)
+USE_SDL+=		mixer
+CONFIGURE_ARGS+=	--with-sdlmixer=yes
+.else
+CONFIGURE_ARGS+=	--with-sdlmixer=no
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${PREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf.example ${DOCSDIR}
