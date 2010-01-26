@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-Entropy
 PORTVERSION=	0.006
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +17,6 @@ COMMENT=	Entropy (randomness) management
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5-Crypt-Rijndael \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt \
-		${SITE_PERL}/Math/BigRat.pm:${PORTSDIR}/math/p5-Math-BigRat \
 		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify \
 		p5-Data-Float>=0.002:${PORTSDIR}/math/p5-Data-Float
 

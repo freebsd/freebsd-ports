@@ -7,7 +7,7 @@
 
 PORTNAME=	tvrss
 DISTVERSION=	1.8beta
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/tvtrss/TV%20RSS/TV%20RSS%201.8beta
 
@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Torrent RSS feed reader
 
 RUN_DEPENDS=	\
-		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2/Gdk/Keysyms.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2/SimpleList.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

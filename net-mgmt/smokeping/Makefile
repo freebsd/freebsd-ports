@@ -7,7 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-CGI-Session>0:${PORTSDIR}/www/p5-CGI-Session \
 		p5-CGI-SpeedyCGI>0:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
 		p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-Net>0:${PORTSDIR}/net/p5-Net \
 		p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
