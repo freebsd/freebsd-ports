@@ -2,6 +2,7 @@ bin/ac3d
 bin/ac3ds
 libexec/ac3d
 libexec/ac3ds
+share/pixmaps/ac3d.png
 %%DATADIR%%/font.ac
 %%DATADIR%%/fontwire.ac
 %%DATADIR%%/lib/tcl8.5/auto.tcl
@@ -195,52 +196,51 @@ libexec/ac3ds
 %%DATADIR%%/tcl/images/walk.png
 %%DATADIR%%/tcl/images/zoom.png
 %%DATADIR%%/tcl/toolbar.tcl
-share/pixmaps/ac3d.png
-%%EXAMPLESDIR%%/SecondLife/avatar/default_female.ac
-%%EXAMPLESDIR%%/SecondLife/avatar/default_male.ac
-%%EXAMPLESDIR%%/SecondLife/avatar/eye.tga
-%%EXAMPLESDIR%%/SecondLife/avatar/face.tga
-%%EXAMPLESDIR%%/SecondLife/avatar/hair.tga
-%%EXAMPLESDIR%%/SecondLife/avatar/lower_body.tga
-%%EXAMPLESDIR%%/SecondLife/avatar/readme.txt
-%%EXAMPLESDIR%%/SecondLife/avatar/ruth.ac
-%%EXAMPLESDIR%%/SecondLife/avatar/skirt.tga
-%%EXAMPLESDIR%%/SecondLife/avatar/upper_body.tga
-%%EXAMPLESDIR%%/SecondLife/sculpty-cylinder.ac
-%%EXAMPLESDIR%%/SecondLife/sculpty-cylinder.tga
-%%EXAMPLESDIR%%/SecondLife/sculpty-sphere.ac
-%%EXAMPLESDIR%%/SecondLife/sculpty-sphere.tga
-%%EXAMPLESDIR%%/SecondLife/sculpty-subdcube.ac
-%%EXAMPLESDIR%%/SecondLife/sculpty-subdcube.tga
-%%EXAMPLESDIR%%/SubdividedDragon.ac
-%%EXAMPLESDIR%%/amp.ac
-%%EXAMPLESDIR%%/atomizer.ac
-%%EXAMPLESDIR%%/car.ac
-%%EXAMPLESDIR%%/cartoon_head.ac
-%%EXAMPLESDIR%%/celtic12.ac
-%%EXAMPLESDIR%%/diningtable.ac
-%%EXAMPLESDIR%%/enterprise.ac
-%%EXAMPLESDIR%%/falcon.ac
-%%EXAMPLESDIR%%/glider.ac
-%%EXAMPLESDIR%%/gym2.ac
-%%EXAMPLESDIR%%/head.ac
-%%EXAMPLESDIR%%/mydesk4.ac
-%%EXAMPLESDIR%%/racecar.ac
-%%EXAMPLESDIR%%/rose.ac
-%%EXAMPLESDIR%%/ship.ac
-%%EXAMPLESDIR%%/subdiv dog.ac
-%%EXAMPLESDIR%%/subdiv penguin.ac
-%%EXAMPLESDIR%%/subdiv spaceship.ac
-%%EXAMPLESDIR%%/subdiv troll.ac
-%%EXAMPLESDIR%%/sword.ac
-%%EXAMPLESDIR%%/tie3.ac
-%%EXAMPLESDIR%%/tree.ac
-%%EXAMPLESDIR%%/tree_transparent.gif
-%%EXAMPLESDIR%%/world.ac
-%%EXAMPLESDIR%%/world.rgb
-@dirrm %%EXAMPLESDIR%%/SecondLife/avatar
-@dirrm %%EXAMPLESDIR%%/SecondLife
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/default_female.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/default_male.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/eye.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/face.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/hair.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/lower_body.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/ruth.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/skirt.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/avatar/upper_body.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/sculpty-cylinder.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/sculpty-cylinder.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/sculpty-sphere.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/sculpty-sphere.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/sculpty-subdcube.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecondLife/sculpty-subdcube.tga
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SubdividedDragon.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/amp.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atomizer.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/car.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cartoon_head.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/celtic12.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diningtable.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/enterprise.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/falcon.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glider.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gym2.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/head.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mydesk4.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/racecar.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rose.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ship.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subdiv dog.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subdiv penguin.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subdiv spaceship.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subdiv troll.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sword.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tie3.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tree.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tree_transparent.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/world.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/world.rgb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SecondLife/avatar
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SecondLife
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/tcl/images/toolbar
 @dirrm %%DATADIR%%/tcl/images
 @dirrm %%DATADIR%%/tcl
