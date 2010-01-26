@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Reader
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/K/KE/KEICHNER/
@@ -19,6 +19,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	XML::Reader.3
+MAN3=	XML::Reader.3 XML::Reader_de.3 XML::Reader_fr.3
 
 .include <bsd.port.mk>
