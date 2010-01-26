@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-php/${PORTNAME}-php/${PORTVERSION}
 PKGNAMEPREFIX=	php5-
@@ -29,5 +29,8 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS+=	--with-ffmpeg=${LOCALBASE}/include
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|==|=|g' ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
