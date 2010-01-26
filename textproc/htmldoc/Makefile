@@ -50,8 +50,8 @@ post-configure:
 
 .if !defined(WITHOUT_HTMLDOCGUI)
 LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
-CONFIGURE_ARGS+=--enable-gui
+CONFIGURE_ARGS+=--with-gui=yes
 .else
-CONFIGURE_ARGS+=--disable-gui
+CONFIGURE_ARGS+=--with-gui=no
 .endif
 .include <bsd.port.post.mk>
