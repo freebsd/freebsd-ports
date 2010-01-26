@@ -7,7 +7,7 @@
 
 PORTNAME=	bigsister
 PORTVERSION=	1.02
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=		SF/${PORTNAME}/Big%20Sister/${PORTVERSION}
 DISTNAME=		big-sister-${PORTVERSION}
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp \
 		rrdtool:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	routers2
 PORTVERSION=	2.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
@@ -24,7 +24,6 @@ RUN_DEPENDS=	${SITE_PERL}/Convert/ASN1/IO.pm:${PORTSDIR}/converters/p5-Convert-A
 		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}

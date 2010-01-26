@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Packet
 DISTVERSION=	3.26
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +21,7 @@ BUILD_DEPENDS=	p5-Bit-Vector>=6.4:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-Net-Libdnet>=0.01:${PORTSDIR}/net/p5-Net-Libdnet \
 		p5-Net-Write>=1.00:${PORTSDIR}/net/p5-Net-Write \
 		p5-Net-Pcap>=0.14:${PORTSDIR}/net/p5-Net-Pcap \
-		p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6 \
-		p5-Storable>=2.15:${PORTSDIR}/devel/p5-Storable \
-		p5-Time-HiRes>=1.90,1:${PORTSDIR}/devel/p5-Time-HiRes
+		p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

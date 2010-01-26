@@ -8,6 +8,7 @@
 
 PORTNAME=	Net-Blogger
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,6 @@ COMMENT=	An OOP-ish interface for accessing a weblog via the XML-RPC API
 
 BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
 		p5-SOAP-Lite>0.55:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
