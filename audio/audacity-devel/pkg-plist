@@ -25,6 +25,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/nyquist/xlinit.lsp
 %%DATADIR%%/nyquist/xm.lsp
 %%DATADIR%%/plug-ins/SilenceMarker.ny
+%%DATADIR%%/plug-ins/SoundFinder.ny
 %%DATADIR%%/plug-ins/beat.ny
 %%DATADIR%%/plug-ins/clicktrack.ny
 %%DATADIR%%/plug-ins/clipfix.ny
@@ -88,14 +89,14 @@ share/locale/zh/LC_MESSAGES/audacity.mo
 share/locale/zh_TW/LC_MESSAGES/audacity.mo
 share/mime/packages/audacity.xml
 share/pixmaps/audacity.xpm
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
+@dirrm share/mime/packages
+@dirrm share/mime
+@dirrm share/locale/oc/LC_MESSAGES
+@dirrm share/locale/oc
+@dirrm share/locale/km/LC_MESSAGES
+@dirrm share/locale/km
+@dirrm share/locale/ca@valencia/LC_MESSAGES
+@dirrm share/locale/ca@valencia
 @dirrm %%DATADIR%%/plug-ins
 @dirrm %%DATADIR%%/nyquist
 @dirrm share/audacity
