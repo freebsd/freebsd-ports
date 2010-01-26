@@ -24,7 +24,7 @@ USE_XFCE=	configenv panel
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
+.if ${OSVERSION} >= 800045
 BROKEN=		does not compile: error: net/if_ppp.h: No such file or directory
 .endif
 
