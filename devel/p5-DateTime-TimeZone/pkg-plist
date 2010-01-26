@@ -133,6 +133,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Managua.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Manaus.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Martinique.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Matamoros.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Mazatlan.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Menominee.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Merida.pm
@@ -150,6 +151,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Noronha.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/Center.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/New_Salem.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Ojinaga.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Panama.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Pangnirtung.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Paramaribo.pm
@@ -165,6 +167,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Resolute.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Rio_Branco.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Santarem.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Santa_Isabel.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Santiago.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Santo_Domingo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Sao_Paulo.pm
