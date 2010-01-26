@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.10.1+
 
 MAN3=		BZ::Client.3 BZ::Client::API.3 BZ::Client::Bug.3 \
 		BZ::Client::Bugzilla.3 BZ::Client::Exception.3 \
