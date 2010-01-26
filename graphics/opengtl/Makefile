@@ -9,7 +9,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.opengtl.org/download/
 DISTNAME=	OpenGTL-${PORTVERSION}
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Graphics Transformation Languages
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

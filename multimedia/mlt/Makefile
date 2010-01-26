@@ -9,7 +9,7 @@ PORTVERSION=	0.4.10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	A multimedia framework and video playout server for TV broadcasting
 
 USE_GNOME=	libxml2 gnomehack

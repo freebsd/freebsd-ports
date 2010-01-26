@@ -9,7 +9,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.opengtl.org/download/
 DISTNAME=	libQtGTL-${PORTVERSION}
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Qt bindings for the Graphics Transformation Languages
 
 LIB_DEPENDS=	GTLCore.0:${PORTSDIR}/graphics/opengtl

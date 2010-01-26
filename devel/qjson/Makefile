@@ -9,7 +9,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Qt-based library that maps JSON data to QVariant objects
 
 USE_BZIP2=	yes

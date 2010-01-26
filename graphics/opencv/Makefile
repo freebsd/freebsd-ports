@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/2.0
 DISTNAME=	OpenCV-${PORTVERSION}
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Open Source Computer Vision library from Intel
 
 USE_GNOME=	pkgconfig

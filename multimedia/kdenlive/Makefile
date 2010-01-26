@@ -9,7 +9,7 @@ PORTVERSION=	0.7.6
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	A professional quality non-linear video editing suite for KDE
 
 LIB_DEPENDS=	mlt.2:${PORTSDIR}/multimedia/mlt
