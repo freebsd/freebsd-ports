@@ -7,6 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-main
@@ -18,7 +19,6 @@ COMMENT=	Collector part of Munin
 USE_PERL5=	yes
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
 BUILD_DEPENDS=	${RUN_DEPENDS}

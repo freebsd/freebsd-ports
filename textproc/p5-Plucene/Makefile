@@ -7,7 +7,7 @@
 
 PORTNAME=	Plucene
 PORTVERSION=	1.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TM/TMTM
@@ -16,8 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl port of the Java Lucene search engine
 
-BUILD_DEPENDS=	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
-		${SITE_PERL}/Tie/Array/Sorted.pm:${PORTSDIR}/devel/p5-Tie-Array-Sorted \
+BUILD_DEPENDS=	${SITE_PERL}/Tie/Array/Sorted.pm:${PORTSDIR}/devel/p5-Tie-Array-Sorted \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
 		${SITE_PERL}/Class/Virtual.pm:${PORTSDIR}/devel/p5-Class-Virtual \
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \

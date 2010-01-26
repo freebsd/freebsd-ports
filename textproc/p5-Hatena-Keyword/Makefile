@@ -7,6 +7,7 @@
 
 PORTNAME=	Hatena-Keyword
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/N/NA/NAOYA
@@ -21,7 +22,6 @@ BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
 		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
 		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

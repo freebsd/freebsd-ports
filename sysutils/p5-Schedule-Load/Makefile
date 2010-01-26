@@ -7,6 +7,7 @@
 
 PORTNAME=	Schedule-Load
 PORTVERSION=	3.062
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Load distribution and status across multiple host machines
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 		${SITE_PERL}/${PERL_ARCH}/Unix/Processors.pm:${PORTSDIR}/sysutils/p5-Unix-Processors \
 		${SITE_PERL}/IPC/PidStat.pm:${PORTSDIR}/devel/p5-IPC-Locker \
-		${SITE_PERL}/IPC/PidStat.pm:${PORTSDIR}/devel/p5-IPC-Locker \
-		${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser
+		${SITE_PERL}/IPC/PidStat.pm:${PORTSDIR}/devel/p5-IPC-Locker
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
