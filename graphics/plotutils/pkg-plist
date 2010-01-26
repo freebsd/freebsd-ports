@@ -1,5 +1,6 @@
 bin/double
 bin/graph
+bin/hersheydemo
 bin/ode
 bin/pic2plot
 bin/plot
@@ -24,13 +25,11 @@ lib/libxmi.so
 lib/libxmi.so.1
 share/libplot/README
 share/libplot/colors.txt
-share/libplot/demo-page
-share/libplot/h-demo.c
-share/libplot/h-fonts.doc
-share/libplot/h-glyphs.doc
+share/libplot/h-fonts.txt
+share/libplot/h-glyphs.txt
 share/libplot/hershey.bib
-share/libplot/kana.doc
-share/libplot/kanji.doc
+share/libplot/kana.txt
+share/libplot/kanji.txt
 share/ode/README
 share/ode/atwoods.ode
 share/ode/bead.ode
