@@ -7,11 +7,14 @@
 
 PORTNAME=	creox
 DISTVERSION=	0.2.2rc2
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	http://zyzstar.kosoru.com/projects/creox/downloads/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A real-time sound processor
+
+LIB_DEPENDS+=   jack.0:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
@@ -40,10 +43,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '186s,);,)&,' \
 		${WRKSRC}/creox/effects_dsp/tremoloprocessor.cpp
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not configure on sparc64: does not find Jack library
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
