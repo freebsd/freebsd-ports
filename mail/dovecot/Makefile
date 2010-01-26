@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
 		http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
@@ -56,7 +56,6 @@ PROTOCOLS=	imap pop3
 OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		SSL		"SSL support"		on  \
 		IPV6		"IPv6 support"		on  \
-		LDA		"LDA support"		on  \
 		MANAGESIEVE	"ManageSieve support"	on  \
 		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
@@ -98,15 +97,6 @@ CONFIGURE_ARGS+=	--without-ssl
 #
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-## LDA support
-#
-.if defined(WITHOUT_LDA)
-CONFIGURE_ARGS+=	--without-deliver
-PLIST_SUB+=		LDA="@comment "
-.else
-PLIST_SUB+=		LDA=""
 .endif
 
 ## ManageSieve support
