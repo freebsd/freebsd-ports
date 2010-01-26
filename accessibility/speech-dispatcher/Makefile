@@ -9,7 +9,7 @@ PORTVERSION=	0.6.7
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Common interface to speech synthesis
 
 LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf

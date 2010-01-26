@@ -9,7 +9,7 @@ PORTVERSION=	0.10
 CATEGORIES=	audio accessibility
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/${PORTNAME}/
 
-MAINTAINER=	villa.alberto@gmail.com
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Festival utilities focused on interaction with Speech Dispatcher
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
