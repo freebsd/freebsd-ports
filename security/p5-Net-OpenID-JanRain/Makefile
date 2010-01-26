@@ -7,7 +7,7 @@
 
 PORTNAME=	Net-OpenID-JanRain
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,7 @@ COMMENT=	OpenID JanRain and Consumer with JanRain API
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
 		${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
 		${SITE_PERL}/LWPx/ParanoidAgent.pm:${PORTSDIR}/www/p5-LWPx-ParanoidAgent \
-		${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt \
-    		${SITE_PERL}/Net/Yadis.pm:${PORTSDIR}/net/p5-Net-Yadis \
+		${SITE_PERL}/Net/Yadis.pm:${PORTSDIR}/net/p5-Net-Yadis \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

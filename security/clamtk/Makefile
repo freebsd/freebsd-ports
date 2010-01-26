@@ -7,6 +7,7 @@
 
 PORTNAME=	clamtk
 PORTVERSION=	4.22
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
@@ -16,7 +17,6 @@ COMMENT=	GTK front-end for Clam Antivirus
 RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Date-Calc>=5.5.1:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Net-DNS>=0.65:${PORTSDIR}/dns/p5-Net-DNS \
 		clamscan:${PORTSDIR}/security/clamav \

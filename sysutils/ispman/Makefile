@@ -7,7 +7,7 @@
 
 PORTNAME=	ispman
 PORTVERSION=	1.3r2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.3
 DISTNAME=	${PORTNAME}-1.3rc2
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
 		${SITE_PERL}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
 		${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
 		${SITE_PERL}/IMAP/Admin.pm:${PORTSDIR}/mail/p5-IMAP-Admin \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/DNS/ZoneParse.pm:${PORTSDIR}/dns/p5-DNS-ZoneParse \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \

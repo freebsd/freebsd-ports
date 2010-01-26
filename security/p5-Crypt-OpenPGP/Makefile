@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt-OpenPGP
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,7 +37,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Cr
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
-		p5-Math-BigInt>=1.78:${PORTSDIR}/math/p5-Math-BigInt \
 		p5-Math-BigInt-GMP>=1.21:${PORTSDIR}/math/p5-Math-BigInt-GMP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

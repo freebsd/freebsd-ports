@@ -7,7 +7,7 @@
 
 PORTNAME=	sitescooper
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm
 MASTER_SITES=	http://sitescooper.org/released/
 
@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News site downloader for Palm computing devices
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff

@@ -7,6 +7,7 @@
 
 PORTNAME=	nzbperl
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.thepentagon.org/local_distfiles/ \
 		http://noisybox.net/computers/nzbperl/ \
@@ -19,7 +20,6 @@ COMMENT=	A perl script for downloading nzb files
 
 RUN_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${LOCALBASE}/bin/uudeview:${PORTSDIR}/converters/uudeview
 
 PLIST_FILES=	bin/nzbperl
