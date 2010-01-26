@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
@@ -184,8 +184,10 @@ post-extract:
 		> ${WRKDIR}/jdk/test/Makefile
 	@${FIND} ${WRKDIR}/jdk/test -type f -name \*.sh -exec ${SED} -i "" -e s/Linux/FreeBSD/g {} \;
 
-.if defined(WITH_POLICY)
 post-patch:
+	@${REINPLACE_CMD} "s|/lib:/usr/lib|/lib:/usr/lib:${LOCALBASE}/lib|" \
+		${WRKDIR}/hotspot/src/os/bsd/vm/os_bsd.cpp
+.if defined(WITH_POLICY)
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
