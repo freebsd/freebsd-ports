@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	date2
-PORTVERSION=	4.0.18
+PORTVERSION=	4.0.19
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
