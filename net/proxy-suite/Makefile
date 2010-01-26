@@ -57,6 +57,7 @@ ALL_TARGET=	 -C ftp-proxy
 
 MAN8=		ftp-proxy.8
 MAN5=		ftp-proxy.conf.5
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -64,6 +65,6 @@ pre-install:
 	@${STRIP_CMD} ${WRKSRC}/ftp-proxy/ftp-proxy
 
 post-install:
-	@${SED} 's|PREFIX|${PREFIX}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
