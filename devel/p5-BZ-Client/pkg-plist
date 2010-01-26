@@ -1,0 +1,20 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client/.packlist
+%%SITE_PERL%%/BZ/Client.pm
+%%SITE_PERL%%/BZ/Client/API.pm
+%%SITE_PERL%%/BZ/Client/Bug.pm
+%%SITE_PERL%%/BZ/Client/Bugzilla.pm
+%%SITE_PERL%%/BZ/Client/Exception.pm
+%%SITE_PERL%%/BZ/Client/Product.pm
+%%SITE_PERL%%/BZ/Client/Test.pm
+%%SITE_PERL%%/BZ/Client/XMLRPC.pm
+%%SITE_PERL%%/BZ/Client/XMLRPC/Array.pm
+%%SITE_PERL%%/BZ/Client/XMLRPC/Handler.pm
+%%SITE_PERL%%/BZ/Client/XMLRPC/Parser.pm
+%%SITE_PERL%%/BZ/Client/XMLRPC/Response.pm
+%%SITE_PERL%%/BZ/Client/XMLRPC/Struct.pm
+%%SITE_PERL%%/BZ/Client/XMLRPC/Value.pm
+@dirrm %%SITE_PERL%%/BZ/Client/XMLRPC
+@dirrm %%SITE_PERL%%/BZ/Client
+@dirrm %%SITE_PERL%%/BZ
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ
