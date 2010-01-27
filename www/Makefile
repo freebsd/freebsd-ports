@@ -196,6 +196,7 @@
     SUBDIR += elog
     SUBDIR += emacs-w3m
     SUBDIR += emacs-w3m-emacs21
+    SUBDIR += emacs-w3m-emacs22
     SUBDIR += emacs-w3m-xemacs21-mule
     SUBDIR += entrans
     SUBDIR += epiphany
