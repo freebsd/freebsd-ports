@@ -1505,6 +1505,13 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/it/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/ShowBlockNodes.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/TableDialog.js
@@ -1703,10 +1710,8 @@
 %%WWWDIR%%/dojox/form/resources/RangeSlider.css
 %%WWWDIR%%/dojox/form/resources/Rating.css
 %%WWWDIR%%/dojox/form/resources/RecieveFile.php
-%%WWWDIR%%/dojox/form/resources/UploadFile.php
 %%WWWDIR%%/dojox/form/resources/VerticalRangeSlider.html
 %%WWWDIR%%/dojox/form/resources/_CheckedMultiSelectItem.html
-%%WWWDIR%%/dojox/form/resources/cLOG.php
 %%WWWDIR%%/dojox/form/resources/images/loading_wheel.gif
 %%WWWDIR%%/dojox/form/resources/images/nihiloFolderSprite.gif
 %%WWWDIR%%/dojox/form/resources/images/rating_empty.gif
@@ -1714,7 +1719,6 @@
 %%WWWDIR%%/dojox/form/resources/images/soriaFolderSprite.gif
 %%WWWDIR%%/dojox/form/resources/images/tundraFolderSprite.gif
 %%WWWDIR%%/dojox/form/resources/uploader.swf
-%%WWWDIR%%/dojox/form/resources/uploads/README
 %%WWWDIR%%/dojox/fx.js
 %%WWWDIR%%/dojox/fx/README
 %%WWWDIR%%/dojox/fx/Shadow.js
@@ -2070,7 +2074,6 @@
 %%WWWDIR%%/dojox/math/random/prng4.js
 %%WWWDIR%%/dojox/math/round.js
 %%WWWDIR%%/dojox/math/stats.js
-%%WWWDIR%%/dojox/portlet.js
 %%WWWDIR%%/dojox/resources/README.template
 %%WWWDIR%%/dojox/resources/_modules.js
 %%WWWDIR%%/dojox/resources/explore.php
@@ -2465,7 +2468,6 @@
 @dirrm %%WWWDIR%%/dojox/fx/resources
 @dirrm %%WWWDIR%%/dojox/fx/ext-dojo
 @dirrm %%WWWDIR%%/dojox/fx
-@dirrm %%WWWDIR%%/dojox/form/resources/uploads
 @dirrm %%WWWDIR%%/dojox/form/resources/images
 @dirrm %%WWWDIR%%/dojox/form/resources
 @dirrm %%WWWDIR%%/dojox/form/nls/zh-tw
