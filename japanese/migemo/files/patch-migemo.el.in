@@ -1,0 +1,16 @@
+--- migemo.el.in.orig	2010-01-20 11:28:54.431452726 +0900
++++ migemo.el.in	2010-01-20 11:30:09.070456941 +0900
+@@ -384,7 +384,12 @@
+       (search-backward-regexp migemo-search-pattern bound noerror count)
+     (or (and (not (eq this-command 'isearch-repeat-backward))
+ 	     (not (get-char-property (point) 'invisible (current-buffer)))
+-	     (looking-at migemo-search-pattern))
++	     (or (and (looking-at migemo-search-pattern)
++		      (match-beginning 0))
++		 (and (not (eq (point) (point-min)))
++		      (progn (forward-char -1)
++			     (and (looking-at migemo-search-pattern)
++				  (match-beginning 0))))))
+ 	(search-backward-regexp migemo-search-pattern bound noerror count))))
+
+ ;; experimental
