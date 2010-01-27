@@ -7,7 +7,7 @@
 
 PORTNAME=	ZConf-Mail
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -25,10 +25,9 @@ RUN_DEPENDS=	${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
 		${SITE_PERL}/Mail/Box.pm:${PORTSDIR}/mail/p5-Mail-Box \
 		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
 		${SITE_PERL}/IO/MultiPipe.pm:${PORTSDIR}/devel/p5-IO-MultiPipe \
-    		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
+		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${SITE_PERL}/File/MimeInfo/Magic.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
 		${SITE_PERL}/Email/Date.pm:${PORTSDIR}/mail/p5-Email-Date \
-		${SITE_PERL}/mach/MIME/QuotedPrint.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Mail/Cache.pm:${PORTSDIR}/mail/p5-Mail-Cache \

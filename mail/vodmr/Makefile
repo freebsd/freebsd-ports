@@ -10,6 +10,7 @@
 
 PORTNAME=	vodmr
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://romana.now.ie/software/ \
 		http://www.lecter.phlegethon.org/vodmr/
@@ -18,7 +19,6 @@ MAINTAINER=	james@now.ie
 COMMENT=	An ODMR/ATRN server for vpopmail+qmail
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/CDB_File.pm:${PORTSDIR}/databases/p5-CDB_File \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/vpopmail.pm:${PORTSDIR}/mail/p5-vpopmail \
 		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC

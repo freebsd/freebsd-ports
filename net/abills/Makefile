@@ -7,6 +7,7 @@
 
 PORTNAME=	abills
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -18,7 +19,6 @@ COMMENT=	Billing system for dialup, VPN and VoIP management
 
 RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD4.pm:${PORTSDIR}/security/p5-Digest-MD4 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES

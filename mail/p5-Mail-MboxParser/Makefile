@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-MboxParser
 PORTVERSION=	0.55
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +16,6 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A module for working with UNIX-flavoured mailboxes
 
 BUILD_DEPENDS=	${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}//${PERL_ARCH}/MIME/QuotedPrint.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Mail/Mbox/MessageParser.pm:${PORTSDIR}/mail/p5-Mail-Mbox-MessageParser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
