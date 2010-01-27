@@ -31,6 +31,7 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Base.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Bitflip.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/CX.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Canonical_GA_NN.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/CanonicalGA.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/ChangeLengthMutation.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Convergence_Terminator.pm
@@ -62,6 +63,7 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Selector.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/SimulatedAnnealing.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Storing.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/String_Mutation.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/StringRand.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/TournamentSelect.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/TreeMutation.pm
