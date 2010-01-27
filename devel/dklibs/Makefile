@@ -10,7 +10,7 @@ PORTVERSION=	1.23.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of libraries by Dirk Krause
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
