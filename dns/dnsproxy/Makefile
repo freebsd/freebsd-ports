@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	dnsproxy
-PORTVERSION=	1.15
-PORTREVISION=	2
+PORTVERSION=	1.16
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A proxy for DNS queries
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.so:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 
@@ -20,15 +21,11 @@ USE_RC_SUBR=	dnsproxy
 
 MAN1=		dnsproxy.1
 PLIST_FILES=	sbin/dnsproxy etc/${PORTNAME}/dnsproxy.conf.sample
+
 SUB_FILES=	pkg-message
 PLIST_DIRS=	%%ETCDIR%%
 
 .include <bsd.port.pre.mk>
-
-pre-configure:
-.if ${OSVERSION} > 700007
-	${RM} ${WRKSRC}/libevent/compat/sys/queue.h
-.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dnsproxy ${PREFIX}/sbin
