@@ -1,0 +1,11 @@
+%%SITE_PERL%%/WWW/Scripter/Plugin/JavaScript.pm
+%%SITE_PERL%%/WWW/Scripter/Plugin/JavaScript/JE.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin/JavaScript/.packlist
+@dirrm %%SITE_PERL%%/WWW/Scripter/Plugin/JavaScript
+@dirrmtry %%SITE_PERL%%/WWW/Scripter/Plugin
+@dirrmtry %%SITE_PERL%%/WWW/Scripter
+@dirrmtry %%SITE_PERL%%/WWW
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin/JavaScript
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
