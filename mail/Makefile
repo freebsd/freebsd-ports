@@ -716,6 +716,7 @@
     SUBDIR += wanderlust
     SUBDIR += wanderlust-devel
     SUBDIR += wanderlust-emacs21
+    SUBDIR += wanderlust-emacs22
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wbl
     SUBDIR += websieve
