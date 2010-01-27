@@ -1,0 +1,7 @@
+Kwalify is a parser, schema validator, and data binding tool for YAML and JSON.
+
+YAML and JSON are simple and nice format for structured data and easier for
+human to read and write than XML. But there have been no schema for YAML
+such as RelaxNG or DTD. Kwalify gets over this situation.
+
+WWW: http://www.kuwata-lab.com/kwalify/
