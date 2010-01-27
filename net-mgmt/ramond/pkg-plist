@@ -1,0 +1,5 @@
+sbin/ramond
+%%DATADIR%%/ramond.conf.dtd
+%%DATADIR%%/demo.pl
+@dirrmtry %%DATADIR%%
+etc/ramond.conf.example
