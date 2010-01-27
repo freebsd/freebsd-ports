@@ -20,7 +20,7 @@ USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/hrktorrent \
-		share/examples/hrktorrent.rc
+		share/examples/hrktorrent/hrktorrent.rc
 PLIST_DIRS=	share/examples/hrktorrent
 
 MAN1=		hrktorrent.1
