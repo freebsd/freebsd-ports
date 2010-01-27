@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A customizable program to run programs, with tab-completion
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
