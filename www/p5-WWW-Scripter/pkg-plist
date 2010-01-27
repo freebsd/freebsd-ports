@@ -1,0 +1,9 @@
+%%SITE_PERL%%/WWW/Scripter/Location.pod
+%%SITE_PERL%%/WWW/Scripter/History.pod
+%%SITE_PERL%%/WWW/Scripter.pm
+%%SITE_PERL%%/WWW/Scripter.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/.packlist
+@dirrmtry %%SITE_PERL%%/WWW/Scripter
+@dirrmtry %%SITE_PERL%%/WWW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
