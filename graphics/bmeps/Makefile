@@ -10,7 +10,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
 
 LIB_DEPENDS=	dkbif.1:${PORTSDIR}/devel/dklibs
