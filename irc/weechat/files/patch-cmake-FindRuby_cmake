@@ -1,0 +1,26 @@
+--- cmake/FindRuby.cmake.orig	2010-01-05 21:12:22.000000000 +0000
++++ cmake/FindRuby.cmake	2010-01-05 21:14:40.000000000 +0000
+@@ -35,7 +35,7 @@
+ 
+ IF(RUBY_EXECUTABLE)
+   EXECUTE_PROCESS(
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['rubyhdrdir'] || Config::CONFIG['archdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['topdir']"
+     OUTPUT_VARIABLE RUBY_ARCH_DIR
+     )
+ 
+@@ -45,12 +45,12 @@
+     )
+ 
+   EXECUTE_PROCESS(
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['libdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::TOPDIR + '/lib'"
+     OUTPUT_VARIABLE RUBY_POSSIBLE_LIB_PATH
+     )
+   
+   EXECUTE_PROCESS(
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['rubylibdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::TOPDIR + '/lib/ruby/' + Config::CONFIG['ruby_version']"
+     OUTPUT_VARIABLE RUBY_RUBY_LIB_PATH
+     )
+ 

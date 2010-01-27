@@ -1,0 +1,12 @@
+--- cmake/FindIconv.cmake.orig	2010-01-20 17:31:05.000000000 +0000
++++ cmake/FindIconv.cmake	2010-01-20 17:31:30.000000000 +0000
+@@ -30,6 +30,9 @@
+    set(ICONV_FIND_QUIETLY TRUE)
+ ENDIF(ICONV_FOUND)
+ 
++INCLUDE(CheckLibraryExists)
++INCLUDE(CheckFunctionExists)
++
+ FIND_PATH(ICONV_INCLUDE_PATH
+   NAMES iconv.h
+   PATHS /usr/include /usr/local/include /usr/pkg/include
