@@ -7,6 +7,7 @@
 
 PORTNAME=	hrktorrent
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://50hz.ws/hrktorrent/
 
@@ -19,8 +20,8 @@ USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/hrktorrent \
-		${EXAMPLESDIR}/hrktorrent.rc
-PLIST_DIRS=	${EXAMPLESDIR}
+		share/examples/hrktorrent.rc
+PLIST_DIRS=	share/examples/hrktorrent
 
 MAN1=		hrktorrent.1
 MANCOMPRESSED=	no
