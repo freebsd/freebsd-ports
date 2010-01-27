@@ -19,15 +19,16 @@ USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/hrktorrent \
-		share/examples/hrktorrent/hrktorrent.rc
-PLIST_DIRS=	share/examples/hrktorrent
+		${EXAMPLESDIR}/hrktorrent.rc
+PLIST_DIRS=	${EXAMPLESDIR}
 
 MAN1=		hrktorrent.1
 MANCOMPRESSED=	no
 
+SUB_FILES=	pkg-message
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/hrktorrent
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|PREFIX|${PREFIX}|g" \
-		${PKGDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
