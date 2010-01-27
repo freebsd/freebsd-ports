@@ -23,6 +23,12 @@ OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 
 .include <bsd.port.pre.mk>
 
+#for compatibility
+#
+.ifndef(WITHOUT_NFDUMP15_SUPPORT)
+CONFIGURE_ARGS=		--enable-compat15
+.endif
+
 PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfreplay bin/nfexpire
 MAN1=		nfcapd.1 nfdump.1 nfreplay.1 nfexpire.1
 MAN1+=		nfprofile.1 ft2nfdump.1 sfcapd.1
