@@ -490,6 +490,7 @@
     SUBDIR += xwatchwin
     SUBDIR += xwd
     SUBDIR += xwininfo
+    SUBDIR += xwinwrap
     SUBDIR += xwit
     SUBDIR += xwud
     SUBDIR += xxkb
