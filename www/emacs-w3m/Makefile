@@ -53,7 +53,7 @@ SHIMBUN=	""
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs23")
+.if (${EMACS_PORT_NAME} == "emacs23")
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
 INSTALL_TARGET= install install-icons
