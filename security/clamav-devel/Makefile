@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100122
+PORTVERSION=	20100127
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -26,10 +26,10 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		ICONV "Enable ICONV support" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
-USE_GMAKE=	yes
+USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 CONF_FILES=	clamd freshclam
 
@@ -50,9 +50,8 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-bigstack \
 		--enable-readdir_r \
 		--enable-gethostbyname_r \
-		--disable-dependency-tracking \
 		--enable-experimental \
-		--enable-llvm=no
+		--disable-dependency-tracking
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
@@ -112,6 +111,10 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 PORTSCOUT=	ignore:1
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-march=i486
+.endif
 
 .if defined(WITH_ARC)
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
@@ -174,6 +177,9 @@ post-patch:
 		${WRKSRC}/etc/clamav-milter.conf
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
+
+post-build:
+	@${MAKE} -C ${WRKSRC} check
 
 pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
