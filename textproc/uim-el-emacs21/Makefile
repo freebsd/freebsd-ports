@@ -10,7 +10,8 @@ MAINTAINER=	nobutaka@freebsd.org
 COMMENT=	Emacs lisp for uim input method library
 
 CONFLICTS=	uim-el-xemacs21-mule-[0-9]* \
-		uim-el-emacs22-[0-9]*
+	uim-el-emacs23-[0-9]* \
+	uim-el-emacs22-[0-9]*
 
 EMACS_PORT_NAME=emacs21
 
