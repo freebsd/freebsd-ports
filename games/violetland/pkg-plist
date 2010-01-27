@@ -3,7 +3,6 @@ bin/violetland
 %%DATADIR%%/README_RU.TXT
 %%DATADIR%%/fonts/harabara.ttf
 %%DATADIR%%/icon-light.png
-%%DATADIR%%/images/ak.png
 %%DATADIR%%/images/anima/grenade/0.png
 %%DATADIR%%/images/anima/grenade/1.png
 %%DATADIR%%/images/anima/grenade/10.png
@@ -41,6 +40,31 @@ bin/violetland
 %%DATADIR%%/images/anima/player/legs-7.png
 %%DATADIR%%/images/anima/player/legs-8.png
 %%DATADIR%%/images/anima/player/legs-9.png
+%%DATADIR%%/images/anima/shells/9mm/0.png
+%%DATADIR%%/images/anima/shells/9mm/1.png
+%%DATADIR%%/images/anima/shells/9mm/10.png
+%%DATADIR%%/images/anima/shells/9mm/11.png
+%%DATADIR%%/images/anima/shells/9mm/12.png
+%%DATADIR%%/images/anima/shells/9mm/13.png
+%%DATADIR%%/images/anima/shells/9mm/14.png
+%%DATADIR%%/images/anima/shells/9mm/15.png
+%%DATADIR%%/images/anima/shells/9mm/16.png
+%%DATADIR%%/images/anima/shells/9mm/17.png
+%%DATADIR%%/images/anima/shells/9mm/18.png
+%%DATADIR%%/images/anima/shells/9mm/19.png
+%%DATADIR%%/images/anima/shells/9mm/2.png
+%%DATADIR%%/images/anima/shells/9mm/20.png
+%%DATADIR%%/images/anima/shells/9mm/21.png
+%%DATADIR%%/images/anima/shells/9mm/22.png
+%%DATADIR%%/images/anima/shells/9mm/23.png
+%%DATADIR%%/images/anima/shells/9mm/24.png
+%%DATADIR%%/images/anima/shells/9mm/3.png
+%%DATADIR%%/images/anima/shells/9mm/4.png
+%%DATADIR%%/images/anima/shells/9mm/5.png
+%%DATADIR%%/images/anima/shells/9mm/6.png
+%%DATADIR%%/images/anima/shells/9mm/7.png
+%%DATADIR%%/images/anima/shells/9mm/8.png
+%%DATADIR%%/images/anima/shells/9mm/9.png
 %%DATADIR%%/images/blood_0.png
 %%DATADIR%%/images/blood_1.png
 %%DATADIR%%/images/blood_2.png
@@ -49,12 +73,7 @@ bin/violetland
 %%DATADIR%%/images/expl_1.png
 %%DATADIR%%/images/freeze.png
 %%DATADIR%%/images/grenade.png
-%%DATADIR%%/images/laser.png
-%%DATADIR%%/images/m32.png
 %%DATADIR%%/images/medikit.png
-%%DATADIR%%/images/player_top.png
-%%DATADIR%%/images/pm.png
-%%DATADIR%%/images/remington.png
 %%DATADIR%%/images/splash_0.png
 %%DATADIR%%/images/splash_1.png
 %%DATADIR%%/images/terrain/0/0.png
@@ -70,7 +89,6 @@ bin/violetland
 %%DATADIR%%/images/terrain/base_1.png
 %%DATADIR%%/images/terrain/base_2.png
 %%DATADIR%%/images/terrain/base_3.png
-%%DATADIR%%/images/uzi.png
 %%DATADIR%%/monsters/runner/death/0.png
 %%DATADIR%%/monsters/runner/death/1.png
 %%DATADIR%%/monsters/runner/death/10.png
@@ -95,7 +113,7 @@ bin/violetland
 %%DATADIR%%/monsters/runner/death/7.png
 %%DATADIR%%/monsters/runner/death/8.png
 %%DATADIR%%/monsters/runner/death/9.png
-%%DATADIR%%/monsters/runner/hit.ogg
+%%DATADIR%%/monsters/runner/sounds/hit/hit.ogg
 %%DATADIR%%/monsters/runner/stats
 %%DATADIR%%/monsters/runner/walk/0.png
 %%DATADIR%%/monsters/runner/walk/1.png
@@ -145,7 +163,9 @@ bin/violetland
 %%DATADIR%%/monsters/spider/death/7.png
 %%DATADIR%%/monsters/spider/death/8.png
 %%DATADIR%%/monsters/spider/death/9.png
-%%DATADIR%%/monsters/spider/hit.ogg
+%%DATADIR%%/monsters/spider/sounds/hit/hit_1.ogg
+%%DATADIR%%/monsters/spider/sounds/hit/hit_2.ogg
+%%DATADIR%%/monsters/spider/sounds/hit/hit_3.ogg
 %%DATADIR%%/monsters/spider/stats
 %%DATADIR%%/monsters/spider/walk/0.png
 %%DATADIR%%/monsters/spider/walk/1.png
@@ -172,7 +192,7 @@ bin/violetland
 %%DATADIR%%/monsters/zombie/death/7.png
 %%DATADIR%%/monsters/zombie/death/8.png
 %%DATADIR%%/monsters/zombie/death/9.png
-%%DATADIR%%/monsters/zombie/hit.ogg
+%%DATADIR%%/monsters/zombie/sounds/hit/hit.ogg
 %%DATADIR%%/monsters/zombie/stats
 %%DATADIR%%/monsters/zombie/walk/0.png
 %%DATADIR%%/monsters/zombie/walk/1.png
@@ -203,33 +223,64 @@ bin/violetland
 %%DATADIR%%/music/03.ogg
 %%DATADIR%%/music/04.ogg
 %%DATADIR%%/music/05.ogg
-%%DATADIR%%/sounds/ak-47_reload.ogg
-%%DATADIR%%/sounds/ak-47_shot.ogg
 %%DATADIR%%/sounds/explode-0.ogg
 %%DATADIR%%/sounds/explode-1.ogg
-%%DATADIR%%/sounds/laser_reload.ogg
-%%DATADIR%%/sounds/laser_shot.ogg
-%%DATADIR%%/sounds/m32_shot.ogg
 %%DATADIR%%/sounds/player_hit_0.ogg
 %%DATADIR%%/sounds/player_hit_1.ogg
 %%DATADIR%%/sounds/player_hit_2.ogg
 %%DATADIR%%/sounds/player_killed.ogg
-%%DATADIR%%/sounds/pm_reload.ogg
-%%DATADIR%%/sounds/pm_shot.ogg
-%%DATADIR%%/sounds/remington_reload.ogg
-%%DATADIR%%/sounds/remington_shot.ogg
-%%DATADIR%%/sounds/uzi_reload.ogg
-%%DATADIR%%/sounds/uzi_shot.ogg
-%%DATADIR%%/weapons
+%%DATADIR%%/weapon/AK-47/image.png
+%%DATADIR%%/weapon/AK-47/player.png
+%%DATADIR%%/weapon/AK-47/reload.ogg
+%%DATADIR%%/weapon/AK-47/shot.ogg
+%%DATADIR%%/weapon/AK-47/stats
+%%DATADIR%%/weapon/Laser/image.png
+%%DATADIR%%/weapon/Laser/player.png
+%%DATADIR%%/weapon/Laser/reload.ogg
+%%DATADIR%%/weapon/Laser/shot.ogg
+%%DATADIR%%/weapon/Laser/stats
+%%DATADIR%%/weapon/M-32/image.png
+%%DATADIR%%/weapon/M-32/player.png
+%%DATADIR%%/weapon/M-32/reload.ogg
+%%DATADIR%%/weapon/M-32/shot.ogg
+%%DATADIR%%/weapon/M-32/stats
+%%DATADIR%%/weapon/PM/image.png
+%%DATADIR%%/weapon/PM/player.png
+%%DATADIR%%/weapon/PM/reload.ogg
+%%DATADIR%%/weapon/PM/shot.ogg
+%%DATADIR%%/weapon/PM/stats
+%%DATADIR%%/weapon/Remington-870/image.png
+%%DATADIR%%/weapon/Remington-870/player.png
+%%DATADIR%%/weapon/Remington-870/reload.ogg
+%%DATADIR%%/weapon/Remington-870/shot.ogg
+%%DATADIR%%/weapon/Remington-870/stats
+%%DATADIR%%/weapon/UZI/image.png
+%%DATADIR%%/weapon/UZI/player.png
+%%DATADIR%%/weapon/UZI/reload.ogg
+%%DATADIR%%/weapon/UZI/shot.ogg
+%%DATADIR%%/weapon/UZI/stats
+@dirrm %%DATADIR%%/weapon/UZI
+@dirrm %%DATADIR%%/weapon/Remington-870
+@dirrm %%DATADIR%%/weapon/PM
+@dirrm %%DATADIR%%/weapon/M-32
+@dirrm %%DATADIR%%/weapon/Laser
+@dirrm %%DATADIR%%/weapon/AK-47
+@dirrm %%DATADIR%%/weapon
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/monsters/zombie/walk
+@dirrm %%DATADIR%%/monsters/zombie/sounds/hit
+@dirrm %%DATADIR%%/monsters/zombie/sounds
 @dirrm %%DATADIR%%/monsters/zombie/death
 @dirrm %%DATADIR%%/monsters/zombie
 @dirrm %%DATADIR%%/monsters/spider/walk
+@dirrm %%DATADIR%%/monsters/spider/sounds/hit
+@dirrm %%DATADIR%%/monsters/spider/sounds
 @dirrm %%DATADIR%%/monsters/spider/death
 @dirrm %%DATADIR%%/monsters/spider
 @dirrm %%DATADIR%%/monsters/runner/walk
+@dirrm %%DATADIR%%/monsters/runner/sounds/hit
+@dirrm %%DATADIR%%/monsters/runner/sounds
 @dirrm %%DATADIR%%/monsters/runner/death
 @dirrm %%DATADIR%%/monsters/runner
 @dirrm %%DATADIR%%/monsters
@@ -238,6 +289,8 @@ bin/violetland
 @dirrm %%DATADIR%%/images/terrain/1
 @dirrm %%DATADIR%%/images/terrain/0
 @dirrm %%DATADIR%%/images/terrain
+@dirrm %%DATADIR%%/images/anima/shells/9mm
+@dirrm %%DATADIR%%/images/anima/shells
 @dirrm %%DATADIR%%/images/anima/player
 @dirrm %%DATADIR%%/images/anima/grenade
 @dirrm %%DATADIR%%/images/anima
