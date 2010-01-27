@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ramon
+# REQUIRE: DAEMON NETWORKING
+#
+
+. %%RC_SUBR%%
+
+name="ramon"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/ramond"
+required_files=%%PREFIX%%/etc/ramond.conf
+
+load_rc_config $name
+
+: ${ramon_enable="NO"}
+
+command_args="-c %%PREFIX%%/etc/ramond.conf"
+
+run_rc_command "$1"

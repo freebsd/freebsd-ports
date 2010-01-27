@@ -229,6 +229,7 @@
     SUBDIR += py-twistedSNMP
     SUBDIR += py-yapsnmp
     SUBDIR += qkismet
+    SUBDIR += ramond
     SUBDIR += rancid
     SUBDIR += rancid-devel
     SUBDIR += rate
