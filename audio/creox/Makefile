@@ -14,7 +14,7 @@ MASTER_SITES=	http://zyzstar.kosoru.com/projects/creox/downloads/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A real-time sound processor
 
-LIB_DEPENDS+=   jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
