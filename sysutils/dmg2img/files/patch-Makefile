@@ -1,0 +1,21 @@
+--- Makefile.orig	2009-11-27 20:07:39.000000000 +0700
++++ Makefile	2009-11-27 20:08:25.000000000 +0700
+@@ -1,7 +1,8 @@
+ #CC = gcc
+ ##CFLAGS = -O3
+ CFLAGS = -O2 -Wall
+-BIN_DIR = ${DESTDIR}/usr/bin
++BIN_DIR = /usr/local/bin
++INSTALL = /usr/bin/install -m 755
+ 
+ all: dmg2img vfdecrypt 
+ 
+@@ -22,7 +23,7 @@ vfdecrypt: vfdecrypt.c
+ 
+ install: dmg2img vfdecrypt
+ 	mkdir -p ${BIN_DIR}
+-	install -c -s -m 755 -o root -g root dmg2img vfdecrypt $(BIN_DIR)
++	$(INSTALL) dmg2img vfdecrypt $(BIN_DIR)
+ 
+ clean:
+ 	rm -f dmg2img vfdecrypt *~ *.o core
