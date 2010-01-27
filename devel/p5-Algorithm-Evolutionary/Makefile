@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -65,6 +65,7 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Op::Base.3 \
 	Algorithm::Evolutionary::Op::Bitflip.3 \
 	Algorithm::Evolutionary::Op::CX.3 \
+	Algorithm::Evolutionary::Op::Canonical_GA_NN.3 \
 	Algorithm::Evolutionary::Op::CanonicalGA.3 \
 	Algorithm::Evolutionary::Op::ChangeLengthMutation.3 \
 	Algorithm::Evolutionary::Op::Convergence_Terminator.3 \
@@ -96,6 +97,7 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Op::Selector.3 \
 	Algorithm::Evolutionary::Op::SimulatedAnnealing.3 \
 	Algorithm::Evolutionary::Op::Storing.3 \
+	Algorithm::Evolutionary::Op::String_Mutation.3 \
 	Algorithm::Evolutionary::Op::StringRand.3 \
 	Algorithm::Evolutionary::Op::TournamentSelect.3 \
 	Algorithm::Evolutionary::Op::TreeMutation.3 \
