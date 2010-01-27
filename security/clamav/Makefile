@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
+BUILD_DEPENDS=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
+
 OPTIONS=	ARC "Enable arch archives support" On \
 		ARJ "Enable arj archives support" On \
 		LHA "Enable lha archives support" On \
@@ -47,6 +49,7 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-bigstack \
 		--enable-readdir_r \
 		--enable-gethostbyname_r \
+		--enable-check \
 		--disable-dependency-tracking
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
@@ -171,6 +174,9 @@ post-patch:
 		${WRKSRC}/etc/clamav-milter.conf
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
+
+post-build:
+	@${MAKE} -C ${WRKSRC} check
 
 pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
