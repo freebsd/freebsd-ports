@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.6-alpha
+DISTVERSION=	0.2.2.7-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -23,6 +23,8 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
+CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
