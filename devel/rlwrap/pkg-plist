@@ -1,5 +1,22 @@
 bin/rlwrap
-%%DATADIR%%/ftp
-%%DATADIR%%/testclient
-%%DATADIR%%/coqtop
+%%DATADIR%%/completions/coqtop
+%%DATADIR%%/completions/testclient
+%%DATADIR%%/filters/README
+%%DATADIR%%/filters/RlwrapFilter.3pm
+%%DATADIR%%/filters/RlwrapFilter.pm
+%%DATADIR%%/filters/censor_passwords
+%%DATADIR%%/filters/count_in_prompt
+%%DATADIR%%/filters/ftp_filter
+%%DATADIR%%/filters/listing
+%%DATADIR%%/filters/logger
+%%DATADIR%%/filters/null
+%%DATADIR%%/filters/paint_prompt
+%%DATADIR%%/filters/pipeline
+%%DATADIR%%/filters/pipeto
+%%DATADIR%%/filters/scrub_prompt
+%%DATADIR%%/filters/simple_macro
+%%DATADIR%%/filters/template
+%%DATADIR%%/filters/unbackspace
+@dirrm %%DATADIR%%/filters
+@dirrm %%DATADIR%%/completions
 @dirrm %%DATADIR%%
