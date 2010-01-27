@@ -851,7 +851,7 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/data/sounds/message1.wav
 %%DATADIR%%/data/sounds/message2.wav
 %%DATADIR%%/data/sounds/sent.wav
-%%DATADIR%%/icons/hicolor/128x128/apps/gajim_about.png
+%%DATADIR%%/icons/hicolor/128x128/apps/gajim-about.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-cam_active.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-cam_inactive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-earth.png
