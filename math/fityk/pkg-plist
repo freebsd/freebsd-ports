@@ -1,5 +1,6 @@
 bin/cfityk
 bin/fityk
+bin/xyconv
 include/fityk/brucker_raw.h
 include/fityk/cache.h
 include/fityk/canberra_mca.h
@@ -25,7 +26,7 @@ lib/libfityk.so.2
 lib/libxy.a
 lib/libxy.la
 lib/libxy.so
-lib/libxy.so.1
+lib/libxy.so.2
 share/applications/fityk.desktop
 share/mime/packages/fityk.xml
 share/pixmaps/fityk.png
