@@ -1,8 +1,8 @@
 ====================================================
-A sample .slashemrc file has been copied to 
-${PREFIX}/share/doc/slashem as sample.slashemrc.
-Copy it to your home directory as .slashemrc and 
+A sample .unnethackrc file has been copied to 
+${PREFIX}/share/doc/unnethack as sample.unnethackrc.
+Copy it to your home directory as .unnethackrc and 
 edit it to taste.
 The options for it are described in 
-${PREFIX}/share/doc/slashem/Guidebook.txt.
+${PREFIX}/share/doc/unnethack/Guidebook.txt.
 ====================================================

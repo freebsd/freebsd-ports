@@ -1,35 +1,36 @@
-# New ports collection makefile for: Slash'Em (tty interface)
-# Date created:	15th April 2001
-# Whom:	Adam Kranzel (adam@alameda.edu)
+# New ports collection makefile for:	unnethack
+# Date created:		19 January 2010
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	slashem
-PORTVERSION=	0.0.7E.7F.3
+PORTNAME=	unnethack
+PORTVERSION=	3.5.2.20100110
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/0.0.7E7F3
-PKGNAMESUFFIX=	-tty
-DISTNAME=	se${PORTVERSION:S/.//g:L}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A dungeon explorin', slashin', hackin' game
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
+MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A new variant of NetHack
+
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES+=	pkg-deinstall
-MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 slashem.6
+# This port accually conflicts with other nethack variant ports on
+# these commands that are only significant for those who want to
+# "hack" the game in deep.
+MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 ${PORTNAME}.6
 MAKE_JOBS_UNSAFE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}
 MAKE_ENV+=	DATADIR="${DATADIR}"
 
 post-patch:
 	${REINPLACE_CMD} -e \
 		"s@%%DATADIR%%@${DATADIR}@g" ${WRKSRC}/include/config.h
-
-pre-configure:
-	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
+	${MV} ${WRKSRC}/doc/nethack.6 ${WRKSRC}/doc/${PORTNAME}.6
 
 post-install:
 	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
@@ -38,8 +39,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/slamfaq.txt ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/sample.slashemrc ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/sample.unnethackrc ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -1,9 +1,8 @@
-This is Slash'Em (super lotsa added stuff hack - extended magic), 
-the only actively maintained variant of NetHack (based on NetHack v 3.3.1).
-A good old-fashioned dungeon-crawl with big nasties in the way, treasure
-galore, and immortality if you succeed.
+UnNetHack is a new variant of NetHack which development started in
+2009.  According to the author, the main intent of this fork is to put
+more randomness, challenges and fun into NetHack.  It features more
+levels, several UI changes like automatically opened doors and the
+pickup thrown patch and a lot of game play related changes.
 
-WWW: http://slashem.sourceforge.net/
-
-- Adam
- adam-ports@blacktabby.org
+Author:	Patric Mueller
+WWW:	http://unnethack.sourceforge.net/

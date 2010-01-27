@@ -1,15 +1,13 @@
-bin/slashem
+bin/unnethack
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample.slashemrc
-%%PORTDOCS%%%%DOCSDIR%%/slamfaq.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample.unnethackrc
 %%DATADIR%%/license
 %%DATADIR%%/logfile
-%%DATADIR%%/nhshare
-%%DATADIR%%/nhushare
+%%DATADIR%%/nhdat
 %%DATADIR%%/perm
 %%DATADIR%%/record
 %%DATADIR%%/recover
-%%DATADIR%%/slashem
+%%DATADIR%%/unnethack
 @exec mkdir %D/%%DATADIR%%/save
 @exec chmod -R 775 %D/%%DATADIR%%
 @exec chmod 2755 %D/%%DATADIR%%/save
