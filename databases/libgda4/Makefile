@@ -111,6 +111,8 @@ USE_JAVA=		yes
 JAVA_VENDOR=		bsdjava openjdk
 .if ${OSVERSION} < 700000
 BROKEN=		does not configure on 6.x
+.elif ${OSVERSION} < 800000
+BROKEN=		does not compile on 7.x
 .endif
 .else
 CONFIGURE_ARGS+=	--without-java
