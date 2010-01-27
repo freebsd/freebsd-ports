@@ -5,6 +5,9 @@
 # Options are tty, x11. qt, gtk
 # but not all of these are necessarily compiled in
 OPTIONS=windowtype:tty
+OPTIONS=color
+# Backticks are sometimes hard to recognize
+OPTIONS=boulder:0
 
 # names for pets
 OPTIONS=catname:Fuzzy
@@ -15,15 +18,22 @@ OPTIONS=horsename:Trigger
 # Autopickup all the things you would pick up anyway
 # In order: money, potions, spellbooks, rings, amulets, 
 # scrolls, and wands
-OPTIONS=autopickup
 OPTIONS=pickup_types:$!+="?/
+#OPTIONS=autopickup
+# You can always hit `@' to turn on (toggle) autopickup.
+OPTIONS=!autopickup
+
+# Autodig
+OPTIONS=autodig
 
 # Favorite fruit
-OPTIONS=fruit:Strawberry
+OPTIONS=fruit:strawberry
 
 # Turn on numberpad movement
 # Be sure to turn on numlock or this won't work
-OPTIONS=number_pad
+#OPTIONS=number_pad
+# Or just use vi-like bindings
+OPTIONS=!number_pad
 
 # Show experience on the status line
 OPTIONS=showexp
