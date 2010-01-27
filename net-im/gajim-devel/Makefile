@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20100101
+PORTVERSION=	20100116
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2010-01-01
+DISTNAME=	${PORTNAME}-2010-01-16
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
