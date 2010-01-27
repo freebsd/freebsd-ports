@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.gajim.org/downloads/0.13/ \
-		http://ports.internal.vlink.ru/distfiles/
+MASTER_SITES=	http://www.gajim.org/downloads/0.13/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
