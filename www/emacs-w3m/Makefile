@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.4.4
-PORTREVISION=	6
+PORTVERSION=	1.4.378.b.${SNAPDATE}
 CATEGORIES=	www elisp
-MASTER_SITES=	http://emacs-w3m.namazu.org/
+MASTER_SITES=	http://people.freebsd.org/~nobutaka/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+DISTNAME=	${PORTNAME}-1.4.378-${SNAPDATE}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Simple front-end to w3m for emacs
 
+USE_BZIP2=	yes
 USE_EMACS=	yes
+
+SNAPDATE=	20100125
 
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
 			--with-lispdir=${PREFIX}/${LISPDIR} \
@@ -41,7 +44,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 .if defined(WITHOUT_SHIMBUN)
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 SHIMBUN=	"@comment "
 WITHOUT_OCTET_VIEWER=	yes
 .else
@@ -49,10 +52,6 @@ SHIMBUN=	""
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if (${EMACS_PORT_NAME} == "emacs23")
-BROKEN=		this version does not support Emacs 23
-.endif
 
 .if (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs23")
 FLIM_PORT=	${PORTSDIR}/editors/flim
