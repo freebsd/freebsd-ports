@@ -44,4 +44,12 @@ do-install:
 	${CP} -R ${XPI_FILESDIR}/ ${XPI_XPIDIR}
 	${LN} -s ${XPI_XPIDIR} ${LOCALBASE}/lib/firefox3/extensions
 
+post-install:
+	@${FIND} -s ${XPI_FILESDIR} -not -type d | \
+		${SED} -ne 's,^${XPI_FILESDIR}/,${XPI_XPIDIR:S,^${PREFIX}/,,}/,p' >> ${TMPPLIST}
+	@${FIND} -s -d ${XPI_FILESDIR} -type d | \
+		${SED} -ne 's,^${XPI_FILESDIR}/,@dirrm ${XPI_XPIDIR:S,^${PREFIX}/,,}/,p' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${XPI_XPIDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${XPI_LIBDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+
 .include <bsd.port.mk>
