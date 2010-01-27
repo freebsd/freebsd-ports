@@ -1,15 +1,15 @@
 $FreeBSD$
 
---- sys/unix/Makefile.src.good	Thu Nov 23 00:24:58 2000
-+++ sys/unix/Makefile.src	Thu Nov 23 00:26:13 2000
-@@ -144,8 +144,8 @@
- # flags for debugging:
- # CFLAGS = -g -I../include
+--- sys/autoconf/Makefile.src.orig	2010-01-10 23:51:59.000000000 +0900
++++ sys/autoconf/Makefile.src	2010-01-19 14:57:58.042797577 +0900
+@@ -30,8 +30,8 @@
+ CC = @CC@ -DAUTOCONF
+ WINDRES = @WINDRES@
  
--CFLAGS = -O -I../include
--LFLAGS =
-+CFLAGS += -O -I../include -I${PREFIX}/include 
-+LFLAGS = -L${PREFIX}/lib
+-CFLAGS = -Wall -I../include -I$(srcdir)/../include @CFLAGS@ #-fbounds-check #-fprofile-arcs -ftest-coverage
+-LFLAGS = @LFLAGS@ #-fbounds-check
++CFLAGS = -Wall -I../include -I$(srcdir)/../include -I$(LOCALBASE)/include @CFLAGS@ #-fbounds-check #-fprofile-arcs -ftest-coverage
++LFLAGS = -L$(LOCALBASE)/lib @LFLAGS@ #-fbounds-check
  
- # QT windowing system
- # SuSE 6.1
+ # Only used for the Gnome interface.
+ GNOMEINC=`gnome-config gnome --cflags` -I$(srcdir)/../win/gnome

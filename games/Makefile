@@ -885,6 +885,7 @@
     SUBDIR += uhexen2-extras
     SUBDIR += ultimatestunts
     SUBDIR += umark
+    SUBDIR += unnethack
     SUBDIR += untahris
     SUBDIR += uox3
     SUBDIR += uqm
