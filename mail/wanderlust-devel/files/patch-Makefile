@@ -1,5 +1,14 @@
 --- Makefile.orig	2008-02-19 20:29:06.000000000 +0900
-+++ Makefile	2008-08-28 19:55:07.000000000 +0900
++++ Makefile	2009-12-28 01:33:12.000000000 +0900
+@@ -92,7 +92,7 @@
+ 		$(PACKAGEDIR) $(PIXMAPDIR)
+ 
+ info:
+-	$(EMACS) $(FLAGS) -l WL-MK -f wl-texinfo-format $(INFODIR)
++	LANG=ja $(EMACS) $(FLAGS) -l WL-MK -f wl-texinfo-format $(INFODIR)
+ 
+ install-info:
+ 	$(EMACS) $(FLAGS) -l WL-MK -f install-wl-info $(INFODIR)
 @@ -110,9 +110,9 @@
  clean-dvi: mostlyclean-dvi
  	rm -f doc/*.dvi

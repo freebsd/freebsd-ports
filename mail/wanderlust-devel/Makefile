@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	wanderlust
-PORTVERSION=	2.15.7.b.${SNAPDATE}
-PORTREVISION=	1
+PORTVERSION=	2.15.9.b.${SNAPDATE}
 CATEGORIES=	mail elisp
-MASTER_SITES=	http://people.freebsd.org/~nobutaka/
+MASTER_SITES=	http://www.jpl.org/elips/wl/snapshots/ \
+	http://people.freebsd.org/~nobutaka/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	wanderlust-cvs-snap-${SNAPDATE}
+DISTNAME=	wanderlust-${SNAPDATE}${SNAPTIME}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Yet another message interface on Emacsen
 
-USE_BZIP2=	yes
 USE_EMACS=	yes
 
-SNAPDATE=	20090926
+SNAPDATE=	20100125
+SNAPTIME=	1004
 
 CONFLICTS=	wanderlust-*-2.14.*
 NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
-
-.if (${EMACS_PORT_NAME} == "emacs23")
-BROKEN=     can not be installed with Emacs 23
-.endif
 
 MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}
 MIMEUI_PRODUCT=	semi
@@ -53,7 +49,6 @@ SHIMBUN=	""
 SHIMBUN=	"@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 INFODIR=	${PREFIX}/info
 INFO=		wl wl-ja
 UTILSDIR=	${EMACS_VERSION_SITE_LISPDIR}/wl
