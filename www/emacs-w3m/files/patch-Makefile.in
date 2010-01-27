@@ -1,11 +1,24 @@
---- Makefile.in.orig	Thu Apr 29 16:50:55 2004
-+++ Makefile.in	Sun Jun 13 22:08:51 2004
-@@ -56,7 +56,7 @@
+--- Makefile.in.orig	2008-02-06 11:24:18.000000000 +0900
++++ Makefile.in	2010-01-25 00:55:21.000000000 +0900
+@@ -63,7 +63,7 @@
  
  install-lisp: lisp
- 	@$(SHELL) $(srcdir)/mkinstalldirs $(lispdir);\
--	for p in ChangeLog* *.el; do\
+ 	@$(SHELL) $(srcdir)/mkinstalldirs "$(lispdir)";\
+-	for p in ChangeLog ChangeLog.[1-9] ChangeLog.[1-9][0-9] *.el; do\
 +	for p in *.el; do\
- 	  case "$$p" in\
- 	    $(IGNORES)) ;;\
- 	    *) echo " $(INSTALL_DATA) $$p $(lispdir)/$$p";\
+ 	  if test -f "$$p"; then\
+ 	    case "$$p" in\
+ 	      $(IGNORES)) ;;\
+@@ -85,12 +85,6 @@
+ 	  fi;\
+ 	done;\
+ 	if test -f shimbun/shimbun.elc; then\
+-	  for p in `cd shimbun && echo ChangeLog ChangeLog.[1-9] ChangeLog.[1-9][0-9]`; do\
+-	    if test -f "shimbun/$$p"; then\
+-	      echo "$(INSTALL_DATA) shimbun/$$p \"$(lispdir)/s$$p\"";\
+-	      $(INSTALL_DATA) shimbun/$$p "$(lispdir)/s$$p";\
+-	    fi;\
+-	  done;\
+ 	  for p in `cd shimbun && echo *.el`; do\
+ 	    echo "$(INSTALL_DATA) shimbun/$$p \"$(lispdir)/$$p\"";\
+ 	    $(INSTALL_DATA) shimbun/$$p "$(lispdir)/$$p";\
