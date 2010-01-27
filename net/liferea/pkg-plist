@@ -1,5 +1,6 @@
 bin/liferea
 bin/liferea-add-feed
+%%NOTIFY%%lib/liferea/liblinotiflibnotify.a
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.la
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.so
 share/applications/liferea.desktop

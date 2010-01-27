@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 
 USE_GNOME=	gnomeprefix gnomehack libglade2
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
