@@ -1,0 +1,17 @@
+--- ondir.1.orig	2010-01-24 23:43:46.000000000 +0200
++++ ondir.1	2010-01-24 23:44:09.000000000 +0200
+@@ -108,12 +108,12 @@
+ .LP 
+ The TCSH script you should add to your profile is:
+ .LP 
+-alias cwdcmd eval \`ondir \-t \$owd \$cwd\` 
++alias cwdcmd eval \\`ondir \\$owd \\$cwd\\`
+ .br 
+ .br 
+ # Run ondir on login
+ .br 
+-eval `ondir \-t /`
++eval `ondir /`
+ .br 
+ .SH "AUTHORS"
+ .LP 
