@@ -10630,6 +10630,7 @@ p5-BSD-Jail-Object              ports/sysutils/p5-BSD-Jail-Object
 p5-BSD-Resource                 ports/devel/p5-BSD-Resource
 p5-BSD-Sysctl                   ports/sysutils/p5-BSD-Sysctl
 p5-BSD-stat                     ports/devel/p5-BSD-stat
+p5-BZ-Client                    ports/devel/p5-BZ-Client
 p5-Badger                       ports/devel/p5-Badger
 p5-Baseball-Sabermetrics        ports/games/p5-Baseball-Sabermetrics
 p5-Beanstalk-Client             ports/net/p5-Beanstalk-Client
@@ -14362,6 +14363,7 @@ p5-business-tw-tsib-cstorepayment  ports/finance/p5-Business-TW-TSIB-CStorePayme
 p5-business-tw-tsib-virtualaccount  ports/finance/p5-Business-TW-TSIB-VirtualAccount
 p5-business-ups                 ports/misc/p5-Business-UPS
 p5-business-worldpay-junior     ports/finance/p5-Business-WorldPay-Junior
+p5-bz-client                    ports/devel/p5-BZ-Client
 p5-c-scan                       ports/devel/p5-C-Scan
 p5-cache                        ports/devel/p5-Cache
 p5-cache-bdb                    ports/databases/p5-Cache-BDB
