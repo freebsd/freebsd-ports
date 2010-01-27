@@ -7,6 +7,7 @@
 
 PORTNAME=	unnethack
 PORTVERSION=	3.5.2.20100110
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -38,7 +39,7 @@ post-install:
 		${MAKEFILE} ${MAKE_ARGS} manpages)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
+	${LN} -sf ${PREFIX}/share/${PORTNAME}/Guidebook.txt ${DOCSDIR}/
 	${INSTALL_DATA} ${FILESDIR}/sample.unnethackrc ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
