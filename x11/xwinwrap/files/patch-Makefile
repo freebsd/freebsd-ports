@@ -1,0 +1,46 @@
+--- Makefile.orig	2009-11-16 20:42:09.000000000 +0700
++++ Makefile	2009-11-17 04:52:13.000000000 +0700
+@@ -1,22 +1,23 @@
+-all: all64 all32
+-
+-all64:
+-	gcc -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -lX11 -lXext -lXrender xwinwrap.c -o xwinwrap
+-	-mkdir x86_64
+-	mv ./xwinwrap ./x86_64
+-
+-all32:
+-	gcc -m32 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -lX11 -lXext -lXrender xwinwrap.c -o xwinwrap
+-	-mkdir i386
+-	mv ./xwinwrap ./i386
+-
+-install64:
+-	cp x86_64/xwinwrap /usr/bin
+-
+-install32:
+-	cp i386/xwinwrap /usr/bin
++INSTALL = /usr/bin/install -m 755
++PREFIX = /usr/local
++CC = gcc
++ARCH = `uname -p`
++
++TARGET = xwinwrap
++
++CFLAGS = -I/usr/X11R6/include -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls
++LDFLAGS = -L/usr/X11R6/lib -lX11 -lXext -lXrender
++
++all:
++	if [ "${ARCH}" = "x86_64" ] ; then \
++		$(CC) $(CFLAGS) $(LDFLAGS) $(TARGET).c -o $(TARGET); \
++	elif [ "${ARCH}" = "i386" ] ; then \
++		$(CC) -m32 $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) $(TARGET).c -o $(TARGET); \
++	else \
++		echo 'ERROR: UNKNOWN ARCH'; \
++	fi;
+ 
++install:
++	$(INSTALL) $(TARGET) $(PREFIX)/bin
+ clean:
+-	-rm -rf x86_64/ i386/
+-
+-
++	-rm $(TARGET)
