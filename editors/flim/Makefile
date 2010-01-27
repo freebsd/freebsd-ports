@@ -57,6 +57,7 @@ PLIST=		${PKGDIR}/pkg-plist.emacs21
 .if defined(EMACS_PACKAGESDIR)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
+MAKE_ARGS+=	PACKAGEDIR="${LOCALBASE}/${EMACS_PACKAGESDIR}"
 .else
 # depends on apel (case of gnu emacsen etc...)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
