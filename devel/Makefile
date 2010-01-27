@@ -2369,6 +2369,7 @@
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
     SUBDIR += pecl-uploadprogress
+    SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
     SUBDIR += pedisassem
     SUBDIR += perforce
