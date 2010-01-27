@@ -7,16 +7,13 @@
 
 PORTNAME=	Algorithm-Combinatorics
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient generation of combinatorial sequences
-
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/${PERL_ARCH}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=		Algorithm::Combinatorics.3
 

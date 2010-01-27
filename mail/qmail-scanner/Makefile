@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	2.01
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -17,13 +17,9 @@ COMMENT=	Content/Anti-virus Scanner for qmail
 
 RUN_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
 		unzip:${PORTSDIR}/archivers/unzip \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		setuidgid:${PORTSDIR}/sysutils/daemontools
 BUILD_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
 		unzip:${PORTSDIR}/archivers/unzip \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		setuidgid:${PORTSDIR}/sysutils/daemontools
 
 CONFLICTS=	qmail-scanner-1.*

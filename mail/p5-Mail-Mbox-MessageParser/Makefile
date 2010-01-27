@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-Mbox-MessageParser
 PORTVERSION=	1.5002
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A fast and simple mbox folder reader
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
+BUILD_DEPENDS=	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/FileHandle/Unget.pm:${PORTSDIR}/devel/p5-FileHandle-Unget
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

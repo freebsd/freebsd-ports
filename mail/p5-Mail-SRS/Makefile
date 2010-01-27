@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SRS
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +16,7 @@ MAINTAINER=	chifeng@gmail.com
 COMMENT=	Sender Rewriting Scheme
 
 BUILD_DEPENDS=	${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Mail::SRS.3 \

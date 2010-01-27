@@ -7,6 +7,7 @@
 
 PORTNAME=	Math-Polygon
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Class for Maintaining Polygon Data
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Math-Complex>=1.54:${PORTSDIR}/math/p5-Math-Complex \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
