@@ -9,8 +9,9 @@ MAINTAINER=	nobutaka@freebsd.org
 
 COMMENT=	XEmacs lisp for uim input method library
 
-CONFLICTS=	uim-el-emacs22-[0-9]* \
-		uim-el-emacs21-[0-9]*
+CONFLICTS=	uim-el-emacs23-[0-9]* \
+	uim-el-emacs22-[0-9]* \
+	uim-el-emacs21-[0-9]*
 
 CONFIGURE_ARGS=--enable-emacs --with-lispdir=${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp
 
