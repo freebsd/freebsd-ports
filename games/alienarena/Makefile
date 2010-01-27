@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2008.721
-PORTREVISION=	1
+PORTVERSION=	2009.733
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
 		http://mirror.ipgn.com.au/games/alienarena/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
 		http://offload2.icculus.org:9090/alienarena/Files/ \
-		http://offload1.icculus.org:9090/alienarena/Files/
-DISTNAME=	${PORTNAME}2008-linux20090109
+		http://offload1.icculus.org:9090/alienarena/Files/ \
+		${MASTER_SITE_GENTOO:S|$|distfiles/|}
+DISTNAME=	${PORTNAME}7_33-linux20091227
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (native version)
 
-RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
+RUN_DEPENDS=	${DATADIR}/data1/default.cfg:${PORTSDIR}/games/alienarena-data
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
@@ -28,13 +28,14 @@ USE_GMAKE=	yes
 
 MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
 		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}2008/source
+WRKSRC=		${WRKDIR}/${PORTNAME}7_33/source
+
+SUB_FILES=	pkg-message
 ALL_TARGET=	build-release
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL sound client (needs CLIENT)" on
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
@@ -47,6 +48,7 @@ LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl \
 		jpeg.10:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes
+USE_OPENAL=	soft alut
 USE_XORG=	xxf86dga
 .endif
 
@@ -76,13 +78,9 @@ PLIST_SUB+=	DEDICATED="@comment "
 MAKE_ENV+=	OPTIMIZED_CFLAGS=no
 .endif
 
-.if defined(WITH_SDL)
-USE_SDL=	sdl
-PLIST_SUB+=	SDL=""
-.else
-MAKE_ENV+=	SDLSOUND=0
-PLIST_SUB+=	SDL="@comment "
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/client/snd_openal.c
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
@@ -99,10 +97,6 @@ do-install:
 .if defined(WITH_DEDICATED)
 	${INSTALL_PROGRAM} ${WRKSRC}/release/crded \
 		${PREFIX}/bin/${PORTNAME}-ded
-.endif
-.if defined(WITH_SDL)
-	${INSTALL_PROGRAM} ${WRKSRC}/release/crx.sdl \
-		${PREFIX}/bin/${PORTNAME}-sdl
 .endif
 
 post-install:
