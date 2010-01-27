@@ -1,0 +1,21 @@
+lib/xpi/gwt-dmp-ff35@gwt.google.com/chrome.manifest
+lib/xpi/gwt-dmp-ff35@gwt.google.com/components/IOOPHM.xpt
+lib/xpi/gwt-dmp-ff35@gwt.google.com/content/options.xul
+lib/xpi/gwt-dmp-ff35@gwt.google.com/content/prefScript.js
+lib/xpi/gwt-dmp-ff35@gwt.google.com/defaults/preferences/defaults.js
+lib/xpi/gwt-dmp-ff35@gwt.google.com/install.rdf
+lib/xpi/gwt-dmp-ff35@gwt.google.com/platform/FreeBSD_x86_64-gcc3/components/libgwt_dmp_ff35.so
+lib/xpi/gwt-dmp-ff35@gwt.google.com/skin/README.txt
+lib/xpi/gwt-dmp-ff35@gwt.google.com/skin/icon.png
+lib/xpi/gwt-dmp-ff35@gwt.google.com/skin/warning.png
+lib/firefox3/extensions/gwt-dmp-ff35@gwt.google.com
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/skin
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/platform/FreeBSD_x86_64-gcc3/components
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/platform/FreeBSD_x86_64-gcc3
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/platform
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/defaults/preferences
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/defaults
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/content
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com/components
+@dirrm lib/xpi/gwt-dmp-ff35@gwt.google.com
+@dirrm lib/xpi

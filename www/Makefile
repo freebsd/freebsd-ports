@@ -1775,6 +1775,7 @@
     SUBDIR += xpi-googlevideoonwooztalk
     SUBDIR += xpi-grab_and_drag
     SUBDIR += xpi-greasemonkey
+    SUBDIR += xpi-gwt-dev-plugin
     SUBDIR += xpi-hit-a-hint
     SUBDIR += xpi-httpfox
     SUBDIR += xpi-imagezoom
