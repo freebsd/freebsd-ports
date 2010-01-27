@@ -28,10 +28,6 @@ CONFLICTS=		crafty-open-large-* crafty-open-medium-* crafty-open-default-*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		dumps core during build
-.endif
-
 do-build:
 	@${ECHO_MSG} '================================================================'
 	@${ECHO_MSG} 'Ignore warnings about illegal moves.  These warnings are normal.'
