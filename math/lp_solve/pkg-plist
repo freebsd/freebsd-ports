@@ -6,6 +6,7 @@ include/lpsolve/lp_Hash.h
 include/lpsolve/lp_MDO.h
 include/lpsolve/lp_MPS.h
 include/lpsolve/lp_SOS.h
+include/lpsolve/lp_bit.h
 include/lpsolve/lp_crash.h
 include/lpsolve/lp_explicit.h
 include/lpsolve/lp_fortify.h
