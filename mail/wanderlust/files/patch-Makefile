@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-12-28 01:20:59.000000000 +0900
++++ Makefile	2009-12-28 01:22:55.000000000 +0900
+@@ -91,7 +91,7 @@
+ 		$(PACKAGEDIR) $(PIXMAPDIR)
+ 
+ info:
+-	$(EMACS) $(FLAGS) -l WL-MK -f wl-texinfo-format $(INFODIR)
++	LANG=ja $(EMACS) $(FLAGS) -l WL-MK -f wl-texinfo-format $(INFODIR)
+ 
+ install-info:
+ 	$(EMACS) $(FLAGS) -l WL-MK -f install-wl-info $(INFODIR)
