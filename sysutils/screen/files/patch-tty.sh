@@ -1,14 +1,15 @@
-From 01fbf99748f536519605087d5937761790fc6ded Mon Sep 17 00:00:00 2001
-From: Micah Cowan <micah@cowan.name>
-Date: Thu, 07 Aug 2008 08:27:12 +0000
-Subject: Set termios' VERASE to DEL, for vte's autodetect feature.
-
----
-diff --git a/src/tty.sh b/src/tty.sh
-index b16ff03..374bb97 100644
---- tty.sh
-+++ tty.sh
-@@ -562,7 +562,9 @@ XIF{VDISCARD}	np->tio.c_cc[VDISCARD] = VDISABLE;
+--- tty.sh.orig	2003-09-08 07:24:25.000000000 -0700
++++ tty.sh	2010-01-26 15:56:56.000000000 -0800
+@@ -76,7 +76,7 @@
+ #endif
+ 
+ #include "config.h"
+-#ifdef SVR4
++#if defined(SVR4) && !defined(__FreeBSD_cc_version)
+ #include <sys/stropts.h>	/* for I_POP */
+ #endif
+ 
+@@ -562,7 +562,9 @@
  XIF{VLNEXT}	np->tio.c_cc[VLNEXT] = VDISABLE;
  XIF{VSTATUS}	np->tio.c_cc[VSTATUS] = VDISABLE;
  XIF{VSUSP}	np->tio.c_cc[VSUSP] = VDISABLE;
@@ -19,5 +20,3 @@ index b16ff03..374bb97 100644
  XIF{VKILL}	np->tio.c_cc[VKILL] = VDISABLE;
  # ifdef HPUX_LTCHARS_HACK
    np->m_ltchars.t_suspc  = VDISABLE;
---
-cgit v0.8.2

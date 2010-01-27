@@ -1,5 +1,5 @@
---- configure.orig	Fri Dec  5 15:46:53 2003
-+++ configure	Sat Mar  4 10:18:24 2006
+--- configure.orig	2003-12-05 05:46:53.000000000 -0800
++++ configure	2010-01-26 22:18:47.000000000 -0800
 @@ -4746,48 +4746,6 @@
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -68,7 +68,16 @@
  }
  _ACEOF
  rm -f conftest$ac_exeext
-@@ -5314,18 +5271,15 @@
+@@ -5011,7 +4968,7 @@
+ { echo "$as_me:$LINENO: checking for SVR4 ptys..." >&5
+ echo "$as_me: checking for SVR4 ptys..." >&6;}
+ sysvr4ptys=
+-if test -c /dev/ptmx ; then
++if test -c /nonexistent ; then
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -5314,19 +5271,16 @@
  fi
  rm -f conftest*
  
@@ -86,8 +95,31 @@
 -#define PTYRANGE1 "$p1"
 +#define PTYRANGE1 "0123456789abcdefghijklmnopqrstuv"
  _ACEOF
--
--fi
  
+-fi
+-
  
  # Check whether --with-pty-mode or --without-pty-mode was given.
+ if test "${with_pty_mode+set}" = set; then
+@@ -5581,6 +5535,10 @@
+ #ifdef __hpux
+ #define pututline _pututline
+ #endif
++#ifdef __FreeBSD_cc_version
++#define pututline pututxline
++#define getutent getutxent
++#endif
+ 
+ int
+ main ()
+@@ -5633,6 +5591,10 @@
+ #ifdef __hpux
+ #define pututline _pututline
+ #endif
++#ifdef __FreeBSD_cc_version
++#define pututline pututxline
++#define getutent getutxent
++#endif
+ 
+ int
+ main ()
