@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Vimana
-PORTVERSION=	2009.336031
+PORTVERSION=	2010.02301
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CO/CORNELIUS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Vim script manager
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -33,14 +33,16 @@ PERL_CONFIGURE=	yes
 
 MAN1=		vimana.1
 MAN3=		Vimana.3 \
-		Vimana::AutoInstall.3 \
-		Vimana::Command::Install.3 \
+		Vimana::Accessor.3 \
 		Vimana::Command::Installed.3 \
 		Vimana::Index.3 \
+		Vimana::Installer::Auto.3 \
+		Vimana::Installer::Text.3 \
 		Vimana::Logger.3 \
 		Vimana::Manual.3 \
 		Vimana::PackageFile.3 \
 		Vimana::Record.3 \
+		Vimana::Recursive.3 \
 		Vimana::Util.3
 
 .include <bsd.port.mk>
