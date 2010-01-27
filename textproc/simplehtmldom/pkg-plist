@@ -1,0 +1,25 @@
+%%DATADIR%%/simple_html_dom.php
+%%PORTDOCS%%%%DOCSDIR%%/css/default.css
+%%PORTDOCS%%%%DOCSDIR%%/css/ui.tabs.css
+%%PORTDOCS%%%%DOCSDIR%%/img/tab.png
+%%PORTDOCS%%%%DOCSDIR%%/js/jquery-1.2.3.pack.js
+%%PORTDOCS%%%%DOCSDIR%%/js/ui.tabs.pack.js
+%%PORTDOCS%%%%DOCSDIR%%/manual.htm
+%%PORTDOCS%%%%DOCSDIR%%/manual_api.htm
+%%PORTDOCS%%%%DOCSDIR%%/manual_faq.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_advanced_selector.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_basic_selector.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_callback.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_extract_html.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_modify_contents.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scraping/example_scraping_digg.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scraping/example_scraping_imdb.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scraping/example_scraping_slashdot.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_html_dom_utility.php
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scraping
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
