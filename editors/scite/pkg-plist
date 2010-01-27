@@ -34,6 +34,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/bullant.properties
 %%DATADIR%%/caml.properties
 %%DATADIR%%/cmake.properties
+%%DATADIR%%/cobol.properties
 %%DATADIR%%/conf.properties
 %%DATADIR%%/cpp.properties
 %%DATADIR%%/csound.properties
@@ -80,6 +81,8 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/specman.properties
 %%DATADIR%%/spice.properties
 %%DATADIR%%/sql.properties
+%%DATADIR%%/tacl.properties
+%%DATADIR%%/tal.properties
 %%DATADIR%%/tcl.properties
 %%DATADIR%%/tex.properties
 %%DATADIR%%/vb.properties
