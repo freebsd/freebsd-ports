@@ -7,6 +7,7 @@
 
 PORTNAME=		WiKicker
 PORTVERSION=		0.26
+PORTREVISION=		1
 CATEGORIES+=		japanese www perl5
 MASTER_SITES=		http://www.naney.org/comp/distrib/WiKicker/archive/
 
@@ -24,11 +25,9 @@ PERL_CONFIGURE=		yes
 .if defined(WITH_IMAGEUPLOAD)
 RUN_DEPENDS+=		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface
 .endif
-RUN_DEPENDS+=		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-			${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
+RUN_DEPENDS+=		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 			${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
 			${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-			${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 			${JCODE}:${PORTSDIR}/japanese/p5-Jcode \
 			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 			${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \

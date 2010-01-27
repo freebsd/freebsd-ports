@@ -7,6 +7,7 @@
 
 PORTNAME=	fetchyahoo
 PORTVERSION=	2.13.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.twizzler.org/
 
@@ -14,7 +15,6 @@ MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Download e-mail from a Yahoo account to a Berkeley mailbox
 
 RUN_DEPENDS=	\
-	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 	${SITE_PERL}/IO/Lines.pm:${PORTSDIR}/devel/p5-IO-stringy \
 	${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \

@@ -7,15 +7,12 @@
 
 PORTNAME=	anomy-sanitizer
 PORTVERSION=	1.76
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	http://mailtools.anomy.net/dist/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Sanitize and clean incoming/outgoing mail
-
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 USE_PERL5=	yes
 
