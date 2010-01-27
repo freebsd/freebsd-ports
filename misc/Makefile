@@ -370,6 +370,7 @@
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
+    SUBDIR += ondir
     SUBDIR += opencyc
     SUBDIR += orville-write
     SUBDIR += ossp-uuid
