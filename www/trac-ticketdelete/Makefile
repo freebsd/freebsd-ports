@@ -7,6 +7,7 @@
 
 PORTNAME=	ticketdelete
 PORTVERSION=	2.0.3543
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
@@ -15,8 +16,7 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ticket and ticket change deletion
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USE_PYTHON=	yes
