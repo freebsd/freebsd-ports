@@ -7,6 +7,7 @@
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.67
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -16,7 +17,6 @@ COMMENT=	Milter based anti-spam and anti-virus filtering program
 BUILD_DEPENDS=	\
 	${PERL_SITELIBDIR}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 	p5-MIME-Tools>=5.417:${PORTSDIR}/mail/p5-MIME-Tools \
-	${PERL_SITELIBDIR}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 	${PERL_SITELIBDIR}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${PERL_SITELIBDIR}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 	${PERL_SITELIBDIR}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin

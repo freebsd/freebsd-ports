@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-Date
 PORTVERSION=	1.10.3
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,6 @@ COMMENT=	Find and Format Date Headers
 BUILD_DEPENDS=	p5-Email-Abstract>=2.10:${PORTSDIR}/mail/p5-Email-Abstract \
 		p5-Email-Date-Format>=1:${PORTSDIR}/mail/p5-Email-Date-Format \
 		p5-Email-Simple>=1.9:${PORTSDIR}/mail/p5-Email-Simple \
-		p5-Time-Local>=1.07:${PORTSDIR}/devel/p5-Time-Local \
 		p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS=	${BUILD_DEPENDS}

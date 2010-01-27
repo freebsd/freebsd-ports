@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-Send
 PORTVERSION=	2.198
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,10 +18,8 @@ COMMENT=	Email::Send - Simply Sending Email
 BUILD_DEPENDS=	p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Email-Address>=1.80:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Email-Simple>=1.92:${PORTSDIR}/mail/p5-Email-Simple \
-		p5-Module-Pluggable>=2.97:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Return-Value>=1.28:${PORTSDIR}/devel/p5-Return-Value \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-Net>0:${PORTSDIR}/net/p5-Net
+		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+

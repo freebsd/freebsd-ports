@@ -7,6 +7,7 @@
 
 PORTNAME=	extman
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
 		http://mirror3.extmail.net/dist/%SUBDIR%/
@@ -14,8 +15,7 @@ MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Web interface to manage Virtual Accounts
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 USE_PERL5=	yes
 NO_BUILD=	yes

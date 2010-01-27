@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kay.abendroth@raxion.net
 COMMENT=	Email::Reply - Reply to a Message
 
-BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	p5-Email-Abstract>=2.01:${PORTSDIR}/mail/p5-Email-Abstract \
 		p5-Email-Address>=1.80:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Email-MIME>=1.82:${PORTSDIR}/mail/p5-Email-MIME \

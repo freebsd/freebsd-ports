@@ -7,6 +7,7 @@
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/
 PKGNAMEPREFIX=	p5-
@@ -23,7 +24,6 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		gif2ps:${PORTSDIR}/graphics/libungif			\
 		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
 		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM	\
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/MLDBM/Sync.pm:${PORTSDIR}/databases/p5-MLDBM-Sync \
 		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx
 

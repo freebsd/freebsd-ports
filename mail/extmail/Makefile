@@ -7,6 +7,7 @@
 
 PORTNAME=	extmail
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extmail/ \
 		http://mirror3.extmail.net/dist/
@@ -14,8 +15,7 @@ MASTER_SITES=	http://www.chifeng.name/dist/extmail/ \
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	A high performance webmail system
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog
 
 USE_PERL5=	yes
 NO_BUILD=	yes
