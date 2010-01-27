@@ -1,0 +1,58 @@
+--- ./Makefile.orig	2008-09-25 20:55:39.000000000 -0400
++++ ./Makefile	2010-01-27 13:52:46.000000000 -0500
+@@ -27,8 +27,8 @@
+ 
+ # SRCDIR should be a path to the directory that will hold fractint.hlp
+ # SRCDIR should also hold the .par, .frm, etc. files
+-SRCDIR = $(DESTDIR)/share/xfractint
+-SHRDIR = $(PREFIX)/share/xfractint
++SRCDIR = $(PREFIX)/share/xfractint-devel
++SHRDIR = $(PREFIX)/share/xfractint-devel
+ # BINDIR is where you put your X11 binaries
+ BINDIR = $(DESTDIR)/bin
+ # MANDIR is where you put your chapter 1 man pages
+@@ -116,22 +116,18 @@
+ #For Solaris, use CFLAGS = -I. -I/usr/openwin/include $(DEFINES) -g
+ #If you have the nasm assembler on your system add -DNASM to CFLAGS
+ 
+-ifeq ($(AS),/usr/bin/nasm)
+ 
+-CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX -DNASM -fno-builtin
+ #CFLAGS = -I. -D_CONST $(DEFINES)
+ #CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX \
+ #         -march=$(ARCH) -DNASM -fno-builtin
+ #CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os -DNASM -fno-builtin
+ 
+-else
+ 
+-CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX -fno-builtin
++CFLAGS += -I$(PREFIX)/include -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX -fno-builtin
+ #CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX \
+ #         -march=$(ARCH) -fno-builtin
+ #CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os -fno-builtin
+ 
+-endif
+ 
+ # Gcc is often the only compiler that works for this
+ # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
+@@ -140,7 +136,6 @@
+ # For Sun Solaris 2.x w/SparcCompilerC (cc), use CC = cc.
+ # For Sun Solaris 2.x w/GNU gcc, use CC = gcc
+ #CC = gcc
+-CC = /usr/bin/gcc
+ 
+ # For HPUX, use LIBS = -L/usr/lib/X11R4 -lX11 -lm -lcurses -ltermcap
+ # For AIX or OSF/1, add -lbsd
+@@ -152,11 +147,7 @@
+ # LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses
+ # LIBS = -lX11 -lm -lcurses
+ 
+-ifeq ($(ARCH),athlon64)
+-LIBS = -L/usr/X11R6/lib64 -lX11 -lm
+-else
+-LIBS = -L/usr/X11R6/lib -lX11 -lm
+-endif
++LIBS = -L${PREFIX}/lib -lX11 -lm
+ 
+ ifeq ($(NCURSES),-DNCURSES)
+ LIBS += -lncurses
