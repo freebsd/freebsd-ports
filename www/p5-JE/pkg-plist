@@ -1,0 +1,37 @@
+%%SITE_PERL%%/JE.pm
+%%SITE_PERL%%/JE/Boolean.pm
+%%SITE_PERL%%/JE/Code.pm
+%%SITE_PERL%%/JE/LValue.pm
+%%SITE_PERL%%/JE/Null.pm
+%%SITE_PERL%%/JE/Number.pm
+%%SITE_PERL%%/JE/Object.pm
+%%SITE_PERL%%/JE/Object/Array.pm
+%%SITE_PERL%%/JE/Object/Boolean.pm
+%%SITE_PERL%%/JE/Object/Date.pm
+%%SITE_PERL%%/JE/Object/Error.pm
+%%SITE_PERL%%/JE/Object/Error/RangeError.pm
+%%SITE_PERL%%/JE/Object/Error/ReferenceError.pm
+%%SITE_PERL%%/JE/Object/Error/SyntaxError.pm
+%%SITE_PERL%%/JE/Object/Error/TypeError.pm
+%%SITE_PERL%%/JE/Object/Error/URIError.pm
+%%SITE_PERL%%/JE/Object/Function.pm
+%%SITE_PERL%%/JE/Object/Math.pm
+%%SITE_PERL%%/JE/Object/Number.pm
+%%SITE_PERL%%/JE/Object/Proxy.pm
+%%SITE_PERL%%/JE/Object/RegExp.pm
+%%SITE_PERL%%/JE/Object/String.pm
+%%SITE_PERL%%/JE/Parser.pm
+%%SITE_PERL%%/JE/Scope.pm
+%%SITE_PERL%%/JE/String.pm
+%%SITE_PERL%%/JE/Types.pod
+%%SITE_PERL%%/JE/Undefined.pm
+%%SITE_PERL%%/JE/_FieldHash.pm
+%%SITE_PERL%%/JE/escape.pl
+%%SITE_PERL%%/JE/toperl.pl
+%%SITE_PERL%%/JavaScript/Engine.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JE/.packlist
+@dirrmtry %%SITE_PERL%%/JE/Object/Error
+@dirrmtry %%SITE_PERL%%/JE/Object
+@dirrmtry %%SITE_PERL%%/JE
+@dirrmtry %%SITE_PERL%%/JavaScript
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JE
