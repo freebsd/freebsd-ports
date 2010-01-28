@@ -7,6 +7,7 @@
 
 PORTNAME=	Tree-Simple-View
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ COMMENT=	A set of classes for viewing Tree::Simple hierarchies
 
 BUILD_DEPENDS=	${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
 		${SITE_PERL}/Class/Throwable.pm:${PORTSDIR}/devel/p5-Class-Throwable \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/Test/LongString.pm:${PORTSDIR}/devel/p5-Test-LongString
 RUN_DEPENDS=	${BUILD_DEPENDS}

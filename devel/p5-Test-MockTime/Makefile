@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-MockTime
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Replaces actual time with simulated time
 
-BUILD_DEPENDS=	${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local \
-		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local \
-		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece
 
 PERL_CONFIGURE=	yes
 

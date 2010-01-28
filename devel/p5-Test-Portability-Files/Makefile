@@ -7,16 +7,13 @@
 
 PORTNAME=	Test-Portability-Files
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Test::Portability::Files Check file names portability
-
-BUILD_DEPENDS+=	${SITE_PERL}/Test/Builder.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-YAML-Meta
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Validation of the META.yml file in a distribution
 
 BUILD_DEPENDS+=	${SITE_PERL}/Test/YAML/Valid.pm:${PORTSDIR}/devel/p5-Test-YAML-Valid \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 RUN_DEPENDS+=	${BUILD_DEPENDS}

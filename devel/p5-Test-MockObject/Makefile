@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-MockObject
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Tests remote URLs or local web files
 
-RUN_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-UNIVERSAL-can>=1.11:${PORTSDIR}/devel/p5-UNIVERSAL-can \
+RUN_DEPENDS=	p5-UNIVERSAL-can>=1.11:${PORTSDIR}/devel/p5-UNIVERSAL-can \
 		p5-UNIVERSAL-isa>=0.06:${PORTSDIR}/devel/p5-UNIVERSAL-isa
 
 PERL_CONFIGURE=	yes

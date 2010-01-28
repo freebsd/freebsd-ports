@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-Pastor
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,17 +17,9 @@ COMMENT=	Generate Perl classes with XML bindings from a W3C XSD schema
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
-		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-Data-HashArray>=0:${PORTSDIR}/devel/p5-Data-HashArray \
 		p5-File-chdir>=0:${PORTSDIR}/devel/p5-File-chdir \
-		p5-File-Path>=0:${PORTSDIR}/devel/p5-File-Path \
-		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	${BUILD_DEPENDS}
