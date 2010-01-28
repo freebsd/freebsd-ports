@@ -23,9 +23,10 @@ USE_BZIP2=	yes
 
 MAN1=		gutenfetch.1
 PLIST_FILES=	bin/gutenfetch
+SUB_FILES=	pkg-message
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gutenfetch
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
