@@ -7,6 +7,7 @@
 
 PORTNAME=	Padre
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
 		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-File-Next>=1.06:${PORTSDIR}/sysutils/p5-File-Next \
-		p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path \
 		p5-File-Remove>=1.42:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/ShareDir.pm:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-File-Which>=1.08:${PORTSDIR}/sysutils/p5-File-Which \

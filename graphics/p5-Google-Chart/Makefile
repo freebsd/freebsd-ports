@@ -7,6 +7,7 @@
 
 PORTNAME=	Google-Chart
 PORTVERSION=	0.05014
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,6 @@ COMMENT=	Perl Interface to Google Charts API
 RUN_DEPENDS=	p5-Class-MOP>=0.63:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
-		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
 
 MAN3=		Google::Chart.3 Google::Chart::Axis.3 \

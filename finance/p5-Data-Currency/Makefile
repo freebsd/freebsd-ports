@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-Currency
 PORTVERSION=	0.04002
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Data
@@ -15,14 +16,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Container class for currency conversion/formatting
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \
+BUILD_DEPENDS=	${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \
 		${SITE_PERL}/Class/Accessor/Grouped.pm:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		${SITE_PERL}/Finance/Currency/Convert/WebserviceX.pm:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
 		${SITE_PERL}/Locale/Currency.pm:${PORTSDIR}/misc/p5-Locale-Codes \
 		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \
+RUN_DEPENDS=	${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \
 		${SITE_PERL}/Class/Accessor/Grouped.pm:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		${SITE_PERL}/Finance/Currency/Convert/WebserviceX.pm:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
 		${SITE_PERL}/Locale/Currency.pm:${PORTSDIR}/misc/p5-Locale-Codes \
