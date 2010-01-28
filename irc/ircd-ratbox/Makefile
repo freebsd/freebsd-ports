@@ -7,20 +7,20 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/		\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/		\
 		http://www.ircd-ratbox.org/download/			\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/			\
 		http://www.ircd-ratbox.org/download/old/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
 
 CONFLICTS=	ircd-ratbox-devel-[0-9]*
 
+USE_BZIP2=	yes
 MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
 USE_PERL5_BUILD=	yes
@@ -124,10 +124,10 @@ pre-configure:
 	@${ECHO_MSG} "Press CTRL+C now if you wish to set them."
 	@${ECHO_MSG} ""
 
-post-patch:
+pre-build:
 	@${REINPLACE_CMD} -e "s#-O2##" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"		  \
-			${WRKSRC}/doc/example.conf		  \
+	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"		\
+			${WRKSRC}/doc/example.conf		\
 			${WRKSRC}/doc/example.efnet.conf
 	@${REINPLACE_CMD} -e "s#%%LOGDIR%%#${LOGDIR}#g"		\
 				${WRKSRC}/doc/example.conf	\
@@ -174,7 +174,8 @@ post-patch:
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
 
-#-- execute ircd-shortcut perl script to generate the .c file. -----
+#------ Execute ircd-shortcut perl script to generate the .c file. -----
+	@${ECHO_MSG} "Executing ircd-shortcut.pl for ircd-shortcuts generation."
 	${PERL} ${WRKSRC}/contrib/ircd-shortcut.pl
 
 pre-su-install:
