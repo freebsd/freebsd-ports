@@ -7,6 +7,7 @@
 
 PORTNAME=	Params-Coerce
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Allows your classes to do coercion of parameters  (Params::Coerce)
 
-BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Params-Util>=0.20:${PORTSDIR}/devel/p5-Params-Util
-RUN_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Params-Util>=0.20:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Params-Util>=0.20:${PORTSDIR}/devel/p5-Params-Util
+RUN_DEPENDS=	p5-Params-Util>=0.20:${PORTSDIR}/devel/p5-Params-Util
 
 PERL_CONFIGURE=	yes
 

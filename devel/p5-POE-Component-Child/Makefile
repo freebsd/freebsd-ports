@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	POE child management
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 
 PERL_CONFIGURE=	yes

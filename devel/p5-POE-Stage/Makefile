@@ -7,6 +7,7 @@
 
 PORTNAME=	POE-Stage
 PORTVERSION=	0.0300
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Base class for formalized POE components
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalker \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/Devel/LexAlias.pm:${PORTSDIR}/devel/p5-Devel-LexAlias \

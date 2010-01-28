@@ -7,6 +7,7 @@
 
 PORTNAME=	Pipeline
 PORTVERSION=	3.12
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RC/RCLAMP
@@ -15,9 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rouslan@rshell.net
 COMMENT=	Pipeline - Generic pipeline interface
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+BUILD_DEPENDS=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/IO/Null.pm:${PORTSDIR}/devel/p5-IO-Null \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
