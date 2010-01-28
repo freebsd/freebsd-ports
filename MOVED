@@ -4304,3 +4304,8 @@ textproc/xmlada-gps||2010-01-20|Has expired: has been broken for 3 months
 net/mugshot||2010-01-23|No longer working, Mastersite disappeared
 lang/gnat-gcc41|lang/gnat-gcc44|2010-01-24|Superseded by newer upstream versions
 x11-toolkits/gtkada-gcc||2010-01-24|Not really maintained for a while and depended on lang/gnat-gcc41 which is gone
+x11-toolkits/gtkada-gps||2010-01-28|Has expired: has been broken for 3 months
+x11-fm/velocity||2010-01-28|Has expired: has been broken for 7 months
+x11-drivers/xf86-video-nsc||2010-01-28|Has expired: has been broken for 5 months
+www/rubygem-merb||2010-01-28|Has expired: has been broken for 5 months
+security/shibboleth-sp||2010-01-28|Has expired: has been broken for 3 months
