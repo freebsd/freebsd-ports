@@ -65,7 +65,7 @@ PLIST_SUB+=	FORTRAN="@comment "
 .if defined(WITH_PYTHON)
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13	\
 		f2py:${PORTSDIR}/math/py-numpy
-RUN_DEPENDS+=	f2py:${PORTSDIR}//math/py-numpy
+RUN_DEPENDS+=	f2py:${PORTSDIR}/math/py-numpy
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 CONFIGURE_ENV+=	PYTHON_VERSION="${PYTHON_VERSION}"
