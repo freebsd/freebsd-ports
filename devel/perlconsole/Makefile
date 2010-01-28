@@ -7,6 +7,7 @@
 
 PORTNAME=	perlconsole
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUKRIA
@@ -14,8 +15,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUKRIA
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A light program that lets you evaluate Perl code interactively
 
-RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		${SITE_PERL}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
 		${SITE_PERL}/Lexical/Persistence.pm:${PORTSDIR}/devel/p5-Lexical-Persistence \
 		${SITE_PERL}/B/Keywords.pm:${PORTSDIR}/devel/p5-B-Keywords

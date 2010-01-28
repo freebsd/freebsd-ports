@@ -7,6 +7,7 @@
 
 PORTNAME=	Thread-Queue
 PORTVERSION=	2.11
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 thread-safe queues
 
-BUILD_DEPENDS=	p5-Scalar-List-Utils>=1.10:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
+BUILD_DEPENDS=	p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES

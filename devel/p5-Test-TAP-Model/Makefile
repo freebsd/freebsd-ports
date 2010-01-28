@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-TAP-Model
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Accessible result collector for Test::Harness::Straps runs
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Method/Alias.pm:${PORTSDIR}/devel/p5-Method-Alias
+BUILD_DEPENDS=	${SITE_PERL}/Method/Alias.pm:${PORTSDIR}/devel/p5-Method-Alias
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

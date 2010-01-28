@@ -7,6 +7,7 @@
 
 PORTNAME=	UUID-Tiny
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cjk32@cam.ac.uk
 COMMENT=	Pure Perl UUID Support With Functional Interface
 
-BUILD_DEPENDS=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

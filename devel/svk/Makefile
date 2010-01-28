@@ -7,7 +7,7 @@
 
 PORTNAME=	svk
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -36,12 +36,10 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Class-Autouse>=1.15:${PORTSDIR}/devel/p5-Class-Autouse \
-		p5-File-Temp>=0.17:${PORTSDIR}/devel/p5-File-Temp \
 		p5-Data-Hierarchy>=0.30:${PORTSDIR}/devel/p5-Data-Hierarchy \
 		p5-Locale-Maketext-Lexicon>=0.62:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		p5-Locale-Maketext-Simple>=0.16:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
-		p5-PathTools>=3.19:${PORTSDIR}/devel/p5-PathTools \
 		p5-PerlIO-eol>=0.13:${PORTSDIR}/devel/p5-PerlIO-eol \
 		p5-PerlIO-gzip>=0.18:${PORTSDIR}/archivers/p5-PerlIO-gzip \
 		p5-PerlIO-via-Bzip2>=0.02:${PORTSDIR}/archivers/p5-PerlIO-via-Bzip2 \
