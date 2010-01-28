@@ -1,6 +1,6 @@
 ==============================================================================
 
-Should you encounter freezes when playing a demo or single player game,
-rebuild without client libraries.
+Should the game freeze when entering a match, try to change the value of
+com_zoneMegs (e.g. to 48).
 
 ==============================================================================
