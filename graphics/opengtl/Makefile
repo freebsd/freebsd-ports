@@ -23,10 +23,8 @@ USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-#disable layex doc, it not ready yer
+# disable latex doc, it's not ready yet
 	${REINPLACE_CMD} -e '/add_subdirectory.*doc/d' \
 		${PATCH_WRKSRC}/OpenShiva/CMakeLists.txt
 
@@ -41,4 +39,4 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|(int) pthread_self|(unsigned long long) pthread_self|' \
 		${PATCH_WRKSRC}/OpenGTL/GTLCore/MemoryManager_p.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
