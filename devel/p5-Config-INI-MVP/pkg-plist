@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Config/INI/MVP/Reader.pm
+%%SITE_PERL%%/Config/MVP/Reader/INI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI/MVP/Reader/.packlist
+@dirrmtry %%SITE_PERL%%/Config/MVP/Reader
+@dirrmtry %%SITE_PERL%%/Config/MVP
+@dirrmtry %%SITE_PERL%%/Config/INI/MVP
+@dirrmtry %%SITE_PERL%%/Config/INI
+@dirrmtry %%SITE_PERL%%/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI/MVP/Reader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI/MVP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
