@@ -297,9 +297,6 @@ LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .if defined(WITH_MUTT_CYRUS_SASL2)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
-.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
-USE_BDB=	42+
-.endif
 .if exists(${LOCALBASE}/lib/libidn.so) && !defined(WITHOUT_MUTT_IDN)
 WITH_MUTT_IDN=	yes
 .endif
@@ -489,7 +486,9 @@ SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
 .if defined(WITH_TOKYOCABINET)
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
+LIB_DEPENDS+=		tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
 .else
+USE_BDB=		42+
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 .endif
 .else
