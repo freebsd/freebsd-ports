@@ -8,7 +8,8 @@
 PORTNAME=	pwauth
 PORTVERSION=	2.3.7
 CATEGORIES=	security www
-MASTER_SITES=	http://www.unixpapa.com/software/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://www.unixpapa.com/software/
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	A Unix Web Authenticator
@@ -19,6 +20,10 @@ ALL_TARGET=	pwauth checkfaillog
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIB="-lcrypt -lpam"
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900006
+BROKEN=		does not compile on 9.X
+.endif
 
 WWWUID!=	${ID} -u ${WWWOWN}
 MINUID?=	1000
