@@ -29,6 +29,14 @@ CONFLICTS?=	erlang-lite-r[0-9]*
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
+OPTIONS=	JAVA "Enable Java applications" on \
+		X11 "Enable X11 support" on \
+		WX "Enable WX Extensions" on \
+		ODBC "Enable ODBC" on \
+		SMP "Enable SMP" on
+
+.include <bsd.port.pre.mk>
+
 # The Java applications that are part of the Erlang distribution are
 # not strictly necessary - it is included for completeness sake. A
 # problem with the Erlang build procedure is that it only checks if
@@ -52,7 +60,7 @@ USE_TK_RUN=	yes
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
-CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG}
+CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 .endif
 .endif
 
@@ -63,8 +71,6 @@ GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 REINPLACE_ARGS=	-i
 MAKE_JOBS_UNSAFE=	yes
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ODBC)
 DRIVER_MANAGER?=	iodbc
@@ -84,7 +90,11 @@ ERLANG_PLIST=	${WRKDIR}/pkg-plist
 # enabling --enable-smp-support crashes the OS when
 # net_kernel:start([node_name, shortnames]) invoked repeatedly
 
-CONFIGURE_ARGS+=	--enable-threads --enable-dynamic-ssl-lib --enable-sctp --enable-smp-support
+.if !defined(WITHOUT_SMP)
+CONFIGURE_ARGS+=--enable-threads --enable-dynamic-ssl-lib --enable-sctp --enable-smp-support
+.else
+CONFIGURE_ARGS+=--enable-threads --enable-dynamic-ssl-lib --enable-sctp
+.endif
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
