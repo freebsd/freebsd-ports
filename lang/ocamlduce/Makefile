@@ -6,35 +6,30 @@
 #
 
 PORTNAME=	ocamlduce
-PORTVERSION=	3.10.0.1
+PORTVERSION=	3.11.1.0
 CATEGORIES=	lang
-MASTER_SITES=	http://gallium.inria.fr/~frisch/ocamlcduce/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
+MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/225/
 
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	Library to integrate XML features into OCaml
 
-USE_GMAKE=	yes
-USE_OCAML=	yes
-OCAMLC_DEPEND=	ocaml>=3.10.0:${OCAMLC_PORT}
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAML_PLIST=	yes
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/lang/ocaml:extract
 
-ALL_TARGET=	all opt
-BROKEN=		does not build with current version of lang/ocaml
-DEPRECATED=	has been broken for 7 months
-EXPIRATION_DATE=2010-01-08
+BROKEN=		does not build
+
+ALL_TARGET=	prepare config/Makefile world world.opt
+INSTALL_TARGET=	installbyte installopt
 
 .include <bsd.port.pre.mk>
 
-post-extract:
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
-.endif
-.if !exists(${OCAMLFIND_LDCONF})
-	${TOUCH} ${OCAMLFIND_LDCONF}
-.endif
+OCAML_WRKSRC!=	(cd ${PORTSDIR}/lang/ocaml && ${MAKE} -V WRKSRC)
+
+USE_GMAKE=	yes
+USE_OCAML=	yes
+MAKE_ENV+=	PORTSDIR="${PORTSDIR}" OCAML_SOURCE="${OCAML_WRKSRC}" BINDIR="${LOCALBASE}/bin" SA_DIR="${LOCALBASE}/lib/ocaml/site-lib"
+OCAMLC_DEPEND=	ocaml>=3.11.1:${OCAMLC_PORT}
+USE_OCAML_FINDLIB=	yes
+USE_OCAML_LDCONFIG=	yes
+USE_OCAML_PLIST=	yes
 
 .include <bsd.port.post.mk>
