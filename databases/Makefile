@@ -337,6 +337,7 @@
     SUBDIR += p5-DBIx-Class-Validation
     SUBDIR += p5-DBIx-Class-WebForm
     SUBDIR += p5-DBIx-ContextualFetch
+    SUBDIR += p5-DBIx-Custom
     SUBDIR += p5-DBIx-DBSchema
     SUBDIR += p5-DBIx-DataSource
     SUBDIR += p5-DBIx-Ease
