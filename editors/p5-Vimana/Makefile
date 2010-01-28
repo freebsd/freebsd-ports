@@ -7,6 +7,7 @@
 
 PORTNAME=	Vimana
 PORTVERSION=	2010.02301
+PORTREVISION=	1
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CO/CORNELIUS
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	vim>=0:${PORTSDIR}/editors/vim \
 		p5-Cache>=2.04:${PORTSDIR}/devel/p5-Cache \
 		p5-File-Copy-Recursive>=0.38:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path \
 		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
 		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \

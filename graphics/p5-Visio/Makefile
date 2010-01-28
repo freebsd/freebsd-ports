@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension mainpulating XML based Visio files
 
-BUILD_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+BUILD_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 PERL_CONFIGURE=	5.8.1+

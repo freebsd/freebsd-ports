@@ -8,6 +8,7 @@
 
 PORTNAME=	profxp
 PORTVERSION=	3p2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://duncanthrax.net/profxp/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/p/-pre/}-src
@@ -17,8 +18,7 @@ COMMENT=	FXP (server-to-server FTP) client
 
 USE_PERL5=	yes
 
-RUN_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${PERL_SITELIBDIR}/Net/SOCKS.pm:${PORTSDIR}/net/p5-Socks \
+RUN_DEPENDS=	${PERL_SITELIBDIR}/Net/SOCKS.pm:${PORTSDIR}/net/p5-Socks \
 		${PERL_SITELIBDIR}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${PERL_SITELIBDIR}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
 
