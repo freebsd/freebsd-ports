@@ -1,9 +1,0 @@
-Merb is an MVC framework that is ORM-agnostic, JavaScript library agnostic,
-and template language agnostic, preferring plugins that add in support for
-a particular feature rather than trying to produce a monolithic library
-with everything in the core. In fact, this is a guiding principle of the
-project, which has led to third-party support for
-the ActiveRecord, DataMapper, and Sequel ORMs. 
-
-WWW:    http://www.merbivore.com/
-WWW:    http://rubyforge.org/projects/merb/

@@ -37,7 +37,6 @@
     SUBDIR += thunar
     SUBDIR += tkdesk
     SUBDIR += twander
-    SUBDIR += velocity
     SUBDIR += worker
     SUBDIR += workplace
     SUBDIR += x-files

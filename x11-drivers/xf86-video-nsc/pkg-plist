@@ -1,5 +1,0 @@
-lib/xorg/modules/drivers/nsc_drv.la
-lib/xorg/modules/drivers/nsc_drv.so
-@dirrmtry lib/xorg/modules/drivers
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg
