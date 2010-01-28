@@ -23,6 +23,7 @@ OPTIONS=	PGSQL "With pgsql" Off \
 		CVSUP "Use cvsup for updates" Off \
 		WEBUI   "Install web interface" On \
 		APACHE "Use Apache for web interface" On \
+		HIAWATHA "Use Hiawatha for web interface" Off \
 		LIGHTTPD "Use LightHTTPD for web interface" Off \
 		CHECK_FOR_ROOT "Check if ./tc is run by uid 0" On \
 		LSOF "For killMountProcesses() when using nullfs" On
@@ -83,6 +84,8 @@ RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
 USE_APACHE=	1.3+
 .elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
+.elif defined(WITH_HIAWATHA) && defined(WITH_WEBUI)
+RUN_DEPENDS+=	hiawatha:${PORTSDIR}/www/hiawatha
 .endif
 
 .if defined(WITH_LSOF)
@@ -90,8 +93,8 @@ RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
 pre-everything::
-.if (!defined(WITHOUT_APACHE) || defined(WITH_LIGHTTPD)) && !defined(WITH_WEBUI)
-	@${ECHO_CMD} "It doesn't make sense to depend on Apache or LightHTTPD if not using either web interface."
+.if (!defined(WITHOUT_APACHE) || defined(WITH_LIGHTTPD) || defined(WITH_HIAWATHA)) && !defined(WITH_WEBUI)
+	@${ECHO_CMD} "It doesn't make sense to depend on Apache, LightHTTPD or Hiawatha if not using any web interface."
 	@${FALSE}
 .endif
 
