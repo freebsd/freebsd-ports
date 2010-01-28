@@ -7,6 +7,7 @@
 
 PORTNAME=	Moose
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FL/FLORA
@@ -16,7 +17,6 @@ MAINTAINER=	sahil@tandon.net
 COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
-	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 	p5-Class-MOP>=0.93:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \

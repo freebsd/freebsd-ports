@@ -7,6 +7,7 @@
 
 PORTNAME=	Module-Release
 PORTVERSION=	2.05
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upload files to CPAN and SourceForge
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		${SITE_PERL}/IO/Null.pm:${PORTSDIR}/devel/p5-IO-Null \
-		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
+BUILD_DEPENDS=	${SITE_PERL}/IO/Null.pm:${PORTSDIR}/devel/p5-IO-Null \
 		${SITE_PERL}/ConfigReader/Simple.pm:${PORTSDIR}/devel/p5-ConfigReader-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		${SITE_PERL}/HTTP/Message.pm:${PORTSDIR}/www/p5-libwww

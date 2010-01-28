@@ -7,6 +7,7 @@
 
 PORTNAME=	SPOPS
 PORTVERSION=	0.87
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CW/CWINTERS
@@ -16,7 +17,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Simple Perl Object Persistence with Security
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Class/Date.pm:${PORTSDIR}/devel/p5-Class-Date \
 		${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
 		${SITE_PERL}/Class/Fields.pm:${PORTSDIR}/devel/p5-Class-Fields \

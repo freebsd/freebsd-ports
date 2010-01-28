@@ -7,6 +7,7 @@
 
 PORTNAME=	POE
 PORTVERSION=	1.0070
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,15 +16,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Multitasking and networking framework for perl
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+BUILD_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter \
-		${SITE_PERL}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO \
-		p5-Storable>=2.16:${PORTSDIR}/devel/p5-Storable \
-		p5-POE-Test-Loops>=1.021:${PORTSDIR}/devel/p5-POE-Test-Loops \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
+		p5-POE-Test-Loops>=1.021:${PORTSDIR}/devel/p5-POE-Test-Loops
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
