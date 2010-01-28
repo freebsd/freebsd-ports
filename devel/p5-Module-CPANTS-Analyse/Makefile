@@ -6,6 +6,7 @@
 
 PORTNAME=	Module-CPANTS-Analyse
 PORTVERSION=	0.85
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +23,6 @@ RUN_DEPENDS=	p5-Archive-Any>=0.06:${PORTSDIR}/archivers/p5-Archive-Any \
 		p5-IO-Capture>=0.05:${PORTSDIR}/devel/p5-IO-Capture \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Module-ExtractUse>=0.18:${PORTSDIR}/devel/p5-Module-ExtractUse \
-		p5-Module-Pluggable>=2.96:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Pod-Simple>=2.02:${PORTSDIR}/textproc/p5-Pod-Simple \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-Test-YAML-Meta>=0.06:${PORTSDIR}/devel/p5-Test-YAML-Meta \

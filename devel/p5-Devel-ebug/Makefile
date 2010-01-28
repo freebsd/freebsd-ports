@@ -7,6 +7,7 @@
 
 PORTNAME=	Devel-ebug
 PORTVERSION=	0.49
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Devel
@@ -19,7 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalk
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck \
 		${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		${SITE_PERL}/Devel/StackTrace.pm:${PORTSDIR}/devel/p5-Devel-StackTrace \
-		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
 		${SITE_PERL}/Proc/Background.pm:${PORTSDIR}/devel/p5-Proc-Background \
 		${SITE_PERL}/String/Koremutake.pm:${PORTSDIR}/textproc/p5-String-Koremutake
 BUILD_DEPENDS=	${RUN_DEPENDS}

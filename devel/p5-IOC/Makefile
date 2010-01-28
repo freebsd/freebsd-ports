@@ -7,6 +7,7 @@
 
 PORTNAME=	IOC
 PORTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STEVAN
@@ -18,7 +19,6 @@ COMMENT=	Lightweight IOC (Inversion of Control) framework
 BUILD_DEPENDS=	${SITE_PERL}/Class/Throwable.pm:${PORTSDIR}/devel/p5-Class-Throwable \
 		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/Class/StrongSingleton.pm:${PORTSDIR}/devel/p5-Class-StrongSingleton \
 		${SITE_PERL}/Class/Interfaces.pm:${PORTSDIR}/devel/p5-Class-Interfaces
 RUN_DEPENDS=	${BUILD_DEPENDS}
