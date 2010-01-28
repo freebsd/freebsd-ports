@@ -550,6 +550,7 @@
     SUBDIR += p5-Pod-Constants
     SUBDIR += p5-Pod-DocBook
     SUBDIR += p5-Pod-Escapes
+    SUBDIR += p5-Pod-Eventual
     SUBDIR += p5-Pod-HtmlEasy
     SUBDIR += p5-Pod-POM
     SUBDIR += p5-Pod-POM-View-HTML-Filter
