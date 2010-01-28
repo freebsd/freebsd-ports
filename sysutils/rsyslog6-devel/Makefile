@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.3.6
+PORTVERSION=	5.3.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 .ifdef MNAME
@@ -79,7 +79,7 @@ DESCR?=		${.CURDIR}/../rsyslog5/pkg-descr
 MD5_FILE?=	${.CURDIR}/../rsyslog5/distinfo
 .endif
 
-.if ${OSVERSION} < 700000
+.if ${OSVERSION} < 700042
 USE_GCC=	4.2+
 .endif
 
