@@ -1,0 +1,72 @@
+--- Makefile.orig	2009-06-13 01:49:38.000000000 +0200
++++ Makefile	2009-12-21 11:51:23.000000000 +0100
+@@ -1,13 +1,12 @@
+ #-include config/Makefile
+ 
+ OCAML_VERSION := $(shell ocamlc -version)
+-OCAML_SOURCE := /usr/src/ocaml-source-$(OCAML_VERSION).tar.bz2
+ OCAML_SRCDIR := ocaml-$(OCAML_VERSION)
+ 
+ DUCE_VERSION := $(shell head -n1 VERSION)
+ DUCE_SRCDIR := ocamlduce-$(DUCE_VERSION)
+ 
+-DUCE_LIBDIR := $(LIBDIR)/ocamlduce
++DUCE_LIBDIR := $(SA_DIR)/ocamlduce
+ 
+ BASE_BYT := ocamlc ocamldoc/ocamldoc tools/ocamldep
+ BYT := ocaml $(BASE_BYT)
+@@ -36,7 +35,7 @@
+ 	@echo "===> Please explicit what you want <==="
+ 
+ prepare:
+-	tar xf $(OCAML_SOURCE)
++	cp -PpR $(OCAML_SOURCE) $(OCAML_SRCDIR)
+ 	cp -PpR $(DUCEP_FILES) $(OCAML_SRCDIR)
+ 	cp -PpR ocamlduce $(OCAML_SRCDIR)/otherlibs
+ 	cd $(OCAML_SRCDIR) && for X in ../patches/*.diff; do patch -p1 < $$X; done
+@@ -46,13 +45,13 @@
+ 
+ config/Makefile:
+ 	@echo "===> You should probably run ./configure yourself, trying on my own... <==="
+-	$(shell sed -ne '1s@^.*\(./configure.*\)$$@\1@p' $(shell ocamlc -where)/Makefile.config)
++	cd $(OCAML_SRCDIR) && $(shell sed -ne '1s@^.*\(./configure.*\)$$@\1@p' $(shell ocamlc -where)/Makefile.config)
+ 
+ world: config/Makefile
+-	MAKE="$(MAKE)" CFLAGS="$(CFLAGS)" ./mkocamlduce.sh
++	cd $(OCAML_SRCDIR) && MAKE="$(MAKE)" CFLAGS="$(CFLAGS)" ./mkocamlduce.sh
+ 
+ world.opt: config/Makefile
+-	MAKE="$(MAKE)" CFLAGS="$(CFLAGS)" HAS_NATIVE=y ./mkocamlduce.sh
++	cd $(OCAML_SRCDIR) && MAKE="$(MAKE)" CFLAGS="$(CFLAGS)" HAS_NATIVE=y ./mkocamlduce.sh
+ 
+ META: META.in
+ 	sed 's/%VER%/$(DUCE_VERSION)/' $< > $@
+@@ -63,20 +62,20 @@
+ 	install -m 755 -d $(DUCE_LIBDIR)
+ 	install -m 755 ocamlducefind $(BINDIR)
+ 	install -m 644 META $(DUCE_LIBDIR)
+-	install -m 644 $(addprefix _build/,$(MLI)) $(DUCE_LIBDIR)
+-	install -m 644 $(addprefix _build/,$(CMI)) $(DUCE_LIBDIR)
++	install -m 644 $(addprefix $(OCAML_SRCDIR)/_build/,$(MLI)) $(DUCE_LIBDIR)
++	install -m 644 $(addprefix $(OCAML_SRCDIR)/_build/,$(CMI)) $(DUCE_LIBDIR)
+ 
+ installbyte: installcommon-stamp
+ 	@echo "===> Installing non-native files... <==="
+-	for X in $(BYT); do Y=$${X##*/}; Y=$${Y#ocaml}; install -m 755 _build/$$X $(BINDIR)/ocamlduce$$Y; done
+-	install -m 644 $(addprefix _build/,$(TOPCMO)) $(DUCE_LIBDIR)
+-	install -m 644 $(addprefix _build/,$(TOPCMA)) $(DUCE_LIBDIR)
+-	install -m 644 $(addprefix _build/,$(CMA)) $(DUCE_LIBDIR)
++	for X in $(BYT); do Y=$${X##*/}; Y=$${Y#ocaml}; install -m 755 $(OCAML_SRCDIR)/_build/$$X $(BINDIR)/ocamlduce$$Y; done
++	install -m 644 $(addprefix $(OCAML_SRCDIR)/_build/,$(TOPCMO)) $(DUCE_LIBDIR)
++	install -m 644 $(addprefix $(OCAML_SRCDIR)/_build/,$(TOPCMA)) $(DUCE_LIBDIR)
++	install -m 644 $(addprefix $(OCAML_SRCDIR)/_build/,$(CMA)) $(DUCE_LIBDIR)
+ 
+ installopt: installcommon-stamp
+ 	@echo "===> Installing native files... <==="
+-	for X in $(OPT); do Y=$${X##*/}; Y=$${Y#ocaml}; install -m 755 _build/$$X $(BINDIR)/ocamlduce$$Y; done
+-	install -m 644 $(addprefix _build/,$(CMXA)) $(DUCE_LIBDIR)
++	for X in $(OPT); do Y=$${X##*/}; Y=$${Y#ocaml}; install -m 755 $(OCAML_SRCDIR)/_build/$$X $(BINDIR)/ocamlduce$$Y; done
++	install -m 644 $(addprefix $(OCAML_SRCDIR)/_build/,$(CMXA)) $(DUCE_LIBDIR)
+ 
+ clean:
+ 	build/distclean.sh
