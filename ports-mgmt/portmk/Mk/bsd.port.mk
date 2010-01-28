@@ -394,6 +394,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_SDL		- If set, this port uses the sdl libraries.
 #				  See bsd.sdl.mk for more information.
 ##
+# USE_OPENAL	- If set, this port relies on the OpenAL package.
+#				  Legal values are: al, soft, si, alut.
+#				  If set to an unknown value, the port is marked broken.
+# WANT_OPENAL	- User-specific OpenAL wishes.
+#				  Legal values are: soft, si. The default is soft.
+##
 # USE_OPENSSL	- If set, this port relies on the OpenSSL package.
 ##
 # USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
@@ -619,7 +625,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # Set the following to specify all manpages that your port installs.
 # These manpages will be automatically listed in ${PLIST}.  Depending
-# on the setting of NOMANCOMPRESS, the make rules will compress the
+# on the setting of NO_MANCOMPRESS, the make rules will compress the
 # manpages for you.
 #
 # MAN<sect>		- A list of manpages, categorized by section.  For
@@ -652,7 +658,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # MANCOMPRESSED	- This variable can take values "yes", "no" or
 #				  "maybe".  "yes" means manpages are installed
 #				  compressed; "no" means they are not; "maybe" means
-#				  it changes depending on the value of NOMANCOMPRESS.
+#				  it changes depending on the value of NO_MANCOMPRESS.
 #				  Default: "yes" if USE_IMAKE is set and NO_INSTALL_MANPAGES
 #				  is not set, and "no" otherwise.
 #
@@ -698,9 +704,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # Default targets and their behaviors:
 #
-# fetch				- Retrieves missing ${DISTFILES} and ${PATCHFILES} for this
+# fetch			- Retrieves missing ${DISTFILES} and ${PATCHFILES} for this
 #				  port.
-# fetch-list			- Show list of commands to retrieve missing ${DISTFILES} and
+# fetch-list	- Show list of commands to retrieve missing ${DISTFILES} and
 #				  ${PATCHFILES} for this port.
 # fetch-recursive
 #				- Retrieves missing ${DISTFILES} and ${PATCHFILES} for this
@@ -770,7 +776,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Automatically run prior to extract, patch, configure, build,
 #				  install, and package.
 # config-recursive
-#				- Configure options for this port for this port and all dependencies.
+#				- Configure options for this port for this port and all
+#				  dependencies.
 # showconfig	- Display options config for this port.
 # showconfig-recursive
 #				- Display options config for this port and all dependencies.
@@ -1034,10 +1041,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${PREFIX}/www/${PORTNAME}
 # WWWDIR_REL	- The WWWDIR relative to ${PREFIX}
 #
-# USERS			- List of users to create at install time. Each login must have a
-# 				  corresponding entry in ${UID_FILES}.
-# GROUPS		- List of groups to create at install time. Each group must have a
-# 				  corresponding entry in ${GID_FILES}.
+# USERS			- List of users to create at install time. Each login must
+# 				  have a corresponding entry in ${UID_FILES}.
+# GROUPS		- List of groups to create at install time. Each group must
+# 				  have a corresponding entry in ${GID_FILES}.
 #
 # DESKTOPDIR	- Name of the directory to install ${DESKTOP_ENTRIES} in.
 #				  Default: ${PREFIX}/share/applications
@@ -1411,13 +1418,10 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid value is 'xorg'
 .endif
 
-.if ${OSVERSION} < 602000
-.if ${X11BASE} != ${LOCALBASE} && !defined(USE_NONDEFAULT_X11BASE)
+.if ${X11BASE} != ${LOCALBASE}
 .BEGIN:
-	@${ECHO_MSG} "On FreeBSD before 6.2 ports system unfortunately can not set default X11BASE by itself so please help it a bit by setting X11BASE=\$${LOCALBASE} in make.conf."
-	@${ECHO_MSG} "On the other hand, if you do wish to use non-default X11BASE, please set variable USE_NONDEFAULT_X11BASE."
+	@${ECHO_MSG} "X11BASE is now deprecated.  Unset X11BASE in make.conf and try again."
 	@${FALSE}
-.endif
 .endif
 
 .if defined(USE_XORG) || defined(XORG_CAT)
@@ -1826,7 +1830,7 @@ MANCOMPRESSED?=	no
 
 .if defined(PATCHFILES)
 .if ${PATCHFILES:M*.zip}x != x
-PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
+PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
 
@@ -1859,7 +1863,7 @@ LIB32DIR=	lib
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
 .if defined(USE_ZIP)
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .endif
 .if defined(USE_MAKESELF)
 EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
@@ -1884,6 +1888,83 @@ CONFIGURE_ENV+=	MAKE=${GMAKE}
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
 .endif
+
+.if defined(USE_OPENAL)
+_OPENAL_ALL=	al si soft alut
+_OPENAL_LIBS=	si soft
+# Default choie.
+_DEFAULT_OPENAL=	soft
+
+_OPENAL_SOFT=	openal.1:${PORTSDIR}/audio/openal-soft
+_OPENAL_SI=	openal.0:${PORTSDIR}/audio/openal
+_OPENAL_ALUT=	alut.1:${PORTSDIR}/audio/freealut
+
+.if exists(${LOCALBASE}/lib/libopenal.a)
+_HAVE_OPENAL=	si
+.elif exists(${LOCALBASE}/bin/openal-info)
+_HAVE_OPENAL=	soft
+.endif
+
+.if ${USE_OPENAL} == "yes"
+# Be friendly.
+USE_OPENAL=	${_DEFAULT_OPENAL}
+.endif
+
+__USED_OPENAL=
+_USE_OPENAL=
+.for component in ${USE_OPENAL}
+.if ${__USED_OPENAL:M${component}} == ""
+__USED_OPENAL+=	${component}
+
+.if ${_OPENAL_ALL:M${component}} == ""
+BROKEN=	OPENAL mismatch: unknown component ${component}
+.elif ${_OPENAL_ALL:M${component}} == "al"
+
+# Check if the user wish matches the found OpenAL system.
+.if defined(WANT_OPENAL) && defined(_HAVE_OPENAL) && ${_HAVE_OPENAL} != ${WANT_OPENAL}
+BROKEN=	OPENAL mismatch: ${_HAVE_OPENAL} is installed, but ${WANT_OPENAL} desired
+.endif # WANT_OPENAL
+
+.if defined(_HAVE_OPENAL)
+_OPENAL_SYSTEM=	${_HAVE_OPENAL}
+.elif defined(WANT_OPENAL)
+_OPENAL_SYSTEM=	${WANT_OPENAL}
+.else
+_OPENAL_SYSTEM=	${_DEFAULT_OPENAL}
+.endif # _HAVE_OPENAL
+
+_USE_OPENAL+= ${_OPENAL_${_OPENAL_SYSTEM:U}}
+
+.else # ${_OPENAL_ALL:M${component}} == ""
+
+.if ${_OPENAL_LIBS:M${component}} == ${component}
+# Check for the system implementation to use.
+.if defined(WANT_OPENAL) && ${WANT_OPENAL} != ${component}
+BROKEN=	OPENAL mismatch: wants to use ${component}, while you wish to use ${WANT_OPENAL}
+.endif
+.if defined(_OPENAL_SYSTEM)
+BROKEN=	OPENAL mismatch: cannot use ${component} and al together.
+.endif
+.if defined(_HAVE_OPENAL) && ${_HAVE_OPENAL} != ${component}
+BROKEN=	OPENAL mismatch: wants to use ${component}, but ${_HAVE_OPENAL} is installed
+.endif
+
+_OPENAL_SYSTEM=	${component}
+
+.endif # ${_OPENAL_LIBS:M${component}} == ${component}
+
+_USE_OPENAL+=	${_OPENAL_${component:U}}
+
+.endif # ${_OPENAL_ALL:M${component}} == ""
+
+.endif # ${__USED_OPENAL:M${component} == ""
+.endfor # component in ${USE_OPENAL}
+
+.for dep in ${_USE_OPENAL}
+LIB_DEPENDS+=	${dep}
+.endfor
+
+.endif # USE_OPENAL
 
 .if defined(USE_FAM)
 DEFAULT_FAM_SYSTEM=	gamin
@@ -2451,7 +2532,7 @@ _MAKE_JOBS=		#
 .if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
 MAKE_JOBS_NUMBER?=	`${SYSCTL} -n kern.smp.cpus`
 _MAKE_JOBS=		-j${MAKE_JOBS_NUMBER}
-.if defined(FORCE_MAKE_JOBS)
+.if defined(FORCE_MAKE_JOBS) && !defined(MAKE_JOBS_SAFE)
 BUILD_FAIL_MESSAGE+=	"You have chosen to use multiple make jobs (parallelization) for all ports.  This port was not tested for this setting.  Please remove FORCE_MAKE_JOBS and retry the build before reporting the failure to the maintainer."
 .endif
 .endif
@@ -2532,7 +2613,7 @@ EXTRACT_BEFORE_ARGS?=	-dc
 .if defined(EXTRACT_PRESERVE_OWNERSHIP)
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
 .else
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner --no-same-permissions
 .endif
 .if defined(USE_BZIP2)
 EXTRACT_CMD?=			${BZIP2_CMD}
@@ -3200,7 +3281,7 @@ MANNPREFIX?=	${MANPREFIX}
 
 MANLANG?=	""	# english only by default
 
-.if !defined(NOMANCOMPRESS)
+.if !defined(NO_MANCOMPRESS)
 MANEXT=	.gz
 .endif
 
@@ -3284,7 +3365,7 @@ _TMLINKS=
 
 .if defined(_MANPAGES)
 
-.if defined(NOMANCOMPRESS)
+.if defined(NO_MANCOMPRESS)
 __MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%}
 .else
 __MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
@@ -4498,10 +4579,10 @@ _CHROOT_SEQ=	post-chroot
 .else
 _CHROOT_SEQ=
 .endif
-_SANITY_SEQ=	${_CHROOT_SEQ} pre-everything check-makefile check-categories \
-				check-makevars check-desktop-entries check-depends \
-				check-deprecated check-vulnerable buildanyway-message \
-				options-message
+_SANITY_SEQ=	${_CHROOT_SEQ} pre-everything check-makefile \
+				check-categories check-makevars check-desktop-entries \
+				check-conflicts check-depends check-deprecated \
+				check-vulnerable buildanyway-message options-message
 _FETCH_DEP=		check-sanity
 _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
@@ -4520,8 +4601,7 @@ _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
 _INSTALL_DEP=	build
-_INSTALL_SEQ=	install-message check-conflicts \
-				run-depends lib-depends apply-slist pre-install \
+_INSTALL_SEQ=	install-message run-depends lib-depends apply-slist pre-install \
 				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script create-users-groups do-install \
@@ -5724,7 +5804,7 @@ missing:
 . if !target(describe)
 _EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
 _PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
-_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} 
+_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
 _LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
 _BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
 _RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
@@ -5747,7 +5827,7 @@ describe:
 			break; \
 			;; \
 		esac; \
-	done < ${DESCR}; ${ECHO_CMD} 
+	done < ${DESCR}; ${ECHO_CMD}
 . endif
 .else
 . if !target(describe)
@@ -6120,10 +6200,10 @@ install-rc-script:
 .if !target(compress-man)
 compress-man:
 .if defined(_MANPAGES) || defined(_MLINKS)
-.if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
+.if ${MANCOMPRESSED} == yes && defined(NO_MANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
 	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
-.elif ${MANCOMPRESSED} == no && !defined(NOMANCOMPRESS)
+.elif ${MANCOMPRESSED} == no && !defined(NO_MANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
 	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
 .endif
