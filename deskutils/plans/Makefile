@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	8.1.7
+PORTVERSION=	8.1.10
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
@@ -35,7 +35,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/${PORTNAME}_${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 SUB_FILES=	pkg-message
 
