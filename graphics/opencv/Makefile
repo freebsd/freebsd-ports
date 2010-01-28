@@ -46,6 +46,10 @@ OPTIONS=	FFMPEG	"Include FFmpeg support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.X
+.endif
+
 .ifndef(NOPORTEXAMPLES)
 CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=On -DINSTALL_C_EXAMPLES:BOOL=On
 .endif
