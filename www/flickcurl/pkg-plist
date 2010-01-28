@@ -11,6 +11,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/appgarden-edit-auth-flow-mobile.png
 %%DOCSDIR%%/appgarden-edit-auth-flow.png
 %%DOCSDIR%%/appgarden-get-your-api-key.png
+%%DOCSDIR%%/appgarden-mobile-auth-page.png
 %%DOCSDIR%%/appgarden-new-api-key-secret.png
 %%DOCSDIR%%/appgarden-tell-us-about-your-app.png
 %%DOCSDIR%%/appgarden-test-app-page.png
