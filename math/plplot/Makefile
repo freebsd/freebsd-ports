@@ -104,6 +104,12 @@ CMAKE_ARGS+=	-DENABLE_qt:BOOL=OFF -DDEFAULT_NO_QT_DEVICES:BOOL=ON
 PLIST_SUB+=	QT="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "PLplot has the following tunable options:"
@@ -136,4 +142,4 @@ pre-configure:
 . endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
