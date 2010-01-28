@@ -16,6 +16,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	llvm>=2.5:${PORTSDIR}/devel/llvm
 
 USE_BZIP2=	yes
+USE_GCC=	4.2+
 USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
@@ -23,10 +24,6 @@ USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
 
 post-patch:
 #disable layex doc, it not ready yer
