@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt-OpenSSL-X509
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::OpenSSL::X509.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
+.include <bsd.port.post.mk>
