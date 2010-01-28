@@ -7,6 +7,7 @@
 
 PORTNAME=	JQuery
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/P/PE/PETERG
@@ -16,7 +17,6 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Interface to Jquery, a language based on Javascript
 
 RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/CSS.pm:${PORTSDIR}/textproc/p5-CSS \
 		${SITE_PERL}/HTML/Table.pm:${PORTSDIR}/www/p5-HTML-Table \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
