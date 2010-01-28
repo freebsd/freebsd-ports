@@ -20,6 +20,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
 USE_BZIP2=		yes
+WANT_PERL=		yes
 
 OPTIONS=	\
 	PERL		"Embedded perl interpreter"			On	\

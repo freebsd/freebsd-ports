@@ -26,6 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PERL_CONFIGURE=	yes
 USE_APACHE=	1.3+
 
 .include <bsd.port.pre.mk>
@@ -34,8 +35,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-l
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Gallery.3
 DOC_FILES=	INSTALL LICENSE README TODO UPGRADE

@@ -169,6 +169,7 @@ MAKE_ENV+=	LIBMD_SHA1=yes \
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
+WANT_PERL=	yes
 
 SHELLS=		/etc/shells
 

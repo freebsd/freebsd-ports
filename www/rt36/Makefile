@@ -57,6 +57,7 @@ HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
 USE_APACHE=	1.3+
+USE_PERL5=	5.8.3+
 
 CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \
@@ -107,7 +108,6 @@ PERL_MODULES+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-D
 BUILD_DEPENDS+=	${PERL_MODULES}
 RUN_DEPENDS+=	${PERL_MODULES}
 
-USE_PERL5=	5.8.3+
 RT_PATH?=	${PREFIX}/rt3
 PLIST_SUB=	RT_PATH=${RT_PATH}  RTPLIST=${RT_PATH:S/^${PREFIX}\///}
 LAYOUT?=	RT3
