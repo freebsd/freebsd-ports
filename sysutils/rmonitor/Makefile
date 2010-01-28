@@ -20,4 +20,10 @@ MANCOMPRESSED=	yes
 
 #CFLAGS+=	-w
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
+.endif
+
+.include <bsd.port.post.mk>
