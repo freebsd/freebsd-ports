@@ -1,0 +1,11 @@
+%%SITE_PERL%%/WWW/Scripter/Plugin/Ajax/_xml_stuff.pm
+%%SITE_PERL%%/WWW/Scripter/Plugin/Ajax.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin/Ajax/.packlist
+@dirrmtry %%SITE_PERL%%/WWW/Scripter/Plugin/Ajax
+@dirrmtry %%SITE_PERL%%/WWW/Scripter/Plugin
+@dirrmtry %%SITE_PERL%%/WWW/Scripter
+@dirrmtry %%SITE_PERL%%/WWW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin/Ajax
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
