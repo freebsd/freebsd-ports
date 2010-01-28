@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SIP
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Net::SIP.3 Net::SIP::Debug.3 \
+		Net::SIP.3 Net::SIP::Redirect.3 \
 		Net::SIP::Dispatcher.3 Net::SIP::Dispatcher::Eventloop.3 \
 		Net::SIP::Endpoint.3 Net::SIP::Endpoint::Context.3 \
 		Net::SIP::Leg.3 Net::SIP::NATHelper::Base.3 \
