@@ -24,6 +24,8 @@
 %%SITE_PERL%%/Net/SIP/NATHelper/Server.pod
 %%SITE_PERL%%/Net/SIP/Packet.pm
 %%SITE_PERL%%/Net/SIP/Packet.pod
+%%SITE_PERL%%/Net/SIP/Redirect.pm
+%%SITE_PERL%%/Net/SIP/Redirect.pod
 %%SITE_PERL%%/Net/SIP/Registrar.pm
 %%SITE_PERL%%/Net/SIP/Registrar.pod
 %%SITE_PERL%%/Net/SIP/Request.pm
