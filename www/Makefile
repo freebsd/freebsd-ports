@@ -1185,6 +1185,7 @@
     SUBDIR += p5-WWW-Scraper-ISBN-ORA_Driver
     SUBDIR += p5-WWW-Scraper-ISBN-Record
     SUBDIR += p5-WWW-Scripter
+    SUBDIR += p5-WWW-Scripter-Plugin-Ajax
     SUBDIR += p5-WWW-Scripter-Plugin-JavaScript
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-WWW-Search-AltaVista
