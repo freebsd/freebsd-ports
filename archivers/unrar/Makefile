@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=	3.90
+PORTVERSION=	3.91
 PORTEPOCH=	5
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
-DISTNAME=	unrarsrc-3.9.6
+DISTNAME=	unrarsrc-3.9.7
 
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
 WRKSRC=		${WRKDIR}/unrar
 
-CONFLICTS?=	zh-unrar-* unrar-iconv-*
+CONFLICTS?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/unrar
