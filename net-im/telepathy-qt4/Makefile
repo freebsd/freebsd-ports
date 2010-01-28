@@ -31,6 +31,12 @@ PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README html
 PORTEXAMPLES=	Makefile Makefile.am Makefile.in \
 		accounts call extensions file-transfer roster
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -E -e 's:(^pkgconfigdir =).*:\1 ${PREFIX}/libdata/pkgconfig:' \
 		${WRKSRC}/TelepathyQt4/Makefile.in
@@ -54,4 +60,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
