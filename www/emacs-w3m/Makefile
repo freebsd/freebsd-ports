@@ -59,6 +59,10 @@ SEMI_PORT=	${PORTSDIR}/editors/semi
 INSTALL_TARGET= install install-icons
 .endif
 
+.if (${EMACS_PORT_NAME} == "emacs22")
+INSTALL_TARGET= install install-icons
+.endif
+
 .if (${EMACS_PORT_NAME} == "emacs21")
 MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
 INSTALL_TARGET= install install-icons
