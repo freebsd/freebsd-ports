@@ -25,6 +25,8 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/bin/snmpget:${PORTSDIR}/net-mgmt/net-snmp \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 
+BROKEN=		conflicting dependencies (tcl-Mysql brings in tcl85)
+
 DOCSDIR=	${PREFIX}/share/doc/TkNetmon
 EXAMPLESDIR=	${PREFIX}/share/examples/TkNetmon
 
