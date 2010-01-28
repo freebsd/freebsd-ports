@@ -1,0 +1,6 @@
+The MVP INI file reader reads INI files, but can handle properties with
+multiple values. The identification of properties that may have multiple
+entries is done by section, on a plugin basis.
+following file:
+
+WWW: http://search.cpan.org/dist/Config-INI-MVP
