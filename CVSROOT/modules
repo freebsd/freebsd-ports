@@ -531,6 +531,7 @@ apcpwr                          ports/sysutils/apcpwr
 apcupsd                         ports/sysutils/apcupsd
 apel                            ports/editors/apel
 apel-emacs21                    ports/editors/apel-emacs21
+apel-emacs22                    ports/editors/apel-emacs22
 apercu                          ports/www/apercu
 apertium                        ports/textproc/apertium
 apg                             ports/security/apg
@@ -2388,6 +2389,7 @@ dmachine                        ports/ftp/dmachine
 dmake                           ports/devel/dmake
 dmalloc                         ports/devel/dmalloc
 dmenu                           ports/x11/dmenu
+dmg2img                         ports/sysutils/dmg2img
 dmidecode                       ports/sysutils/dmidecode
 dmitry                          ports/security/dmitry
 dmjava                          ports/games/dmjava
@@ -2894,6 +2896,7 @@ emacs-lisp-intro                ports/lang/emacs-lisp-intro
 emacs-nox11                     ports/editors/emacs-nox11
 emacs-w3m                       ports/www/emacs-w3m
 emacs-w3m-emacs21               ports/www/emacs-w3m-emacs21
+emacs-w3m-emacs22               ports/www/emacs-w3m-emacs22
 emacs-w3m-xemacs21-mule         ports/www/emacs-w3m-xemacs21-mule
 emacs-wget                      ports/ftp/emacs-wget
 emacs-wiki                      ports/textproc/emacs-wiki
@@ -3436,6 +3439,7 @@ flightgear-data                 ports/games/flightgear-data
 flightgear-mb339-pan            ports/games/flightgear-mb339-pan
 flim                            ports/editors/flim
 flim-emacs21                    ports/editors/flim-emacs21
+flim-emacs22                    ports/editors/flim-emacs22
 flim-xemacs21-mule              ports/editors/flim-xemacs21-mule
 flite                           ports/audio/flite
 floatator                       ports/misc/floatator
@@ -6074,6 +6078,7 @@ ja-mh                           ports/japanese/mh
 ja-migemo                       ports/japanese/migemo
 ja-migemo-emacs21               ports/japanese/migemo-emacs21
 ja-migemo-emacs22               ports/japanese/migemo-emacs22
+ja-migemo-emacs23               ports/japanese/migemo-emacs23
 ja-migemo-xemacs-devel-mule     ports/japanese/migemo-xemacs-devel-mule
 ja-mikachan-ttfonts             ports/japanese/mikachan-ttfonts
 ja-mime_pls                     ports/japanese/mime_pls
@@ -10138,6 +10143,7 @@ omninotify                      ports/devel/omniNotify
 omniorb                         ports/devel/omniORB
 omnitty                         ports/net/omnitty
 ompload                         ports/www/ompload
+ondir                           ports/misc/ondir
 oneko                           ports/games/oneko
 oneko-sakura                    ports/games/oneko-sakura
 onenetd                         ports/net/onenetd
@@ -11879,6 +11885,7 @@ p5-HTML-Chunks                  ports/www/p5-HTML-Chunks
 p5-HTML-Clean                   ports/www/p5-HTML-Clean
 p5-HTML-ContentExtractor        ports/www/p5-HTML-ContentExtractor
 p5-HTML-Copy                    ports/textproc/p5-HTML-Copy
+p5-HTML-DOM                     ports/www/p5-HTML-DOM
 p5-HTML-Diff                    ports/www/p5-HTML-Diff
 p5-HTML-Display                 ports/www/p5-HTML-Display
 p5-HTML-Element-Extended        ports/www/p5-HTML-Element-Extended
@@ -12145,6 +12152,7 @@ p5-Iterator-File                ports/sysutils/p5-Iterator-File
 p5-Iterator-IO                  ports/devel/p5-Iterator-IO
 p5-Iterator-Misc                ports/devel/p5-Iterator-Misc
 p5-Iterator-Util                ports/devel/p5-Iterator-Util
+p5-JE                           ports/www/p5-JE
 p5-JIRA-Client                  ports/devel/p5-JIRA-Client
 p5-JQuery                       ports/devel/p5-JQuery
 p5-JSAN                         ports/lang/p5-JSAN
@@ -13835,6 +13843,8 @@ p5-WWW-Scraper-ISBN-Amazon_Driver  ports/www/p5-WWW-Scraper-ISBN-Amazon_Driver
 p5-WWW-Scraper-ISBN-Driver      ports/www/p5-WWW-Scraper-ISBN-Driver
 p5-WWW-Scraper-ISBN-ORA_Driver  ports/www/p5-WWW-Scraper-ISBN-ORA_Driver
 p5-WWW-Scraper-ISBN-Record      ports/www/p5-WWW-Scraper-ISBN-Record
+p5-WWW-Scripter                 ports/www/p5-WWW-Scripter
+p5-WWW-Scripter-Plugin-JavaScript  ports/www/p5-WWW-Scripter-Plugin-JavaScript
 p5-WWW-Search                   ports/www/p5-WWW-Search
 p5-WWW-Search-AltaVista         ports/www/p5-WWW-Search-AltaVista
 p5-WWW-Search-Google            ports/www/p5-WWW-Search-Google
@@ -15587,6 +15597,7 @@ p5-html-copy                    ports/textproc/p5-HTML-Copy
 p5-html-ctpp2                   ports/textproc/p5-HTML-CTPP2
 p5-html-diff                    ports/www/p5-HTML-Diff
 p5-html-display                 ports/www/p5-HTML-Display
+p5-html-dom                     ports/www/p5-HTML-DOM
 p5-html-element-extended        ports/www/p5-HTML-Element-Extended
 p5-html-element-library         ports/www/p5-HTML-Element-Library
 p5-html-email-obfuscate         ports/security/p5-HTML-Email-Obfuscate
@@ -15845,6 +15856,7 @@ p5-javascript-minifier-xs       ports/textproc/p5-JavaScript-Minifier-XS
 p5-javascript-rpc               ports/net/p5-JavaScript-RPC
 p5-javascript-spidermonkey      ports/lang/p5-JavaScript-SpiderMonkey
 p5-javascript-squish            ports/lang/p5-JavaScript-Squish
+p5-je                           ports/www/p5-JE
 p5-jemplate                     ports/www/p5-Jemplate
 p5-jifty                        ports/www/p5-Jifty
 p5-jifty-dbi                    ports/databases/p5-Jifty-DBI
@@ -17606,6 +17618,8 @@ p5-www-scraper-isbn-amazon_driver  ports/www/p5-WWW-Scraper-ISBN-Amazon_Driver
 p5-www-scraper-isbn-driver      ports/www/p5-WWW-Scraper-ISBN-Driver
 p5-www-scraper-isbn-ora_driver  ports/www/p5-WWW-Scraper-ISBN-ORA_Driver
 p5-www-scraper-isbn-record      ports/www/p5-WWW-Scraper-ISBN-Record
+p5-www-scripter                 ports/www/p5-WWW-Scripter
+p5-www-scripter-plugin-javascript  ports/www/p5-WWW-Scripter-Plugin-JavaScript
 p5-www-search                   ports/www/p5-WWW-Search
 p5-www-search-altavista         ports/www/p5-WWW-Search-AltaVista
 p5-www-search-google            ports/www/p5-WWW-Search-Google
@@ -20791,6 +20805,7 @@ rainbowcrack                    ports/security/rainbowcrack
 raincoat                        ports/sysutils/raincoat
 raine                           ports/emulators/raine
 raknet                          ports/devel/raknet
+ramond                          ports/net-mgmt/ramond
 rancid                          ports/net-mgmt/rancid
 rancid-devel                    ports/net-mgmt/rancid-devel
 rand                            ports/textproc/rand
@@ -21517,6 +21532,7 @@ rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-kirbybase               ports/databases/rubygem-kirbybase
+rubygem-kwalify                 ports/textproc/rubygem-kwalify
 rubygem-launchy                 ports/devel/rubygem-launchy
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-linecache               ports/devel/rubygem-linecache
@@ -21912,6 +21928,7 @@ selenium                        ports/www/selenium
 semantic                        ports/devel/semantic
 semi                            ports/editors/semi
 semi-emacs21                    ports/editors/semi-emacs21
+semi-emacs22                    ports/editors/semi-emacs22
 semi-xemacs21-mule              ports/editors/semi-xemacs21-mule
 send                            ports/net-mgmt/send
 sendemail                       ports/net/sendemail
@@ -22063,6 +22080,7 @@ simian                          ports/devel/simian
 simlib                          ports/science/simlib
 simple-ccsm                     ports/x11-wm/simple-ccsm
 simpleagenda                    ports/deskutils/simpleagenda
+simplehtmldom                   ports/textproc/simplehtmldom
 simpleirc                       ports/irc/simpleirc
 simplemod                       ports/audio/simplemod
 simpleproxy                     ports/net/simpleproxy
@@ -23549,6 +23567,7 @@ uif2iso                         ports/sysutils/uif2iso
 uim                             ports/textproc/uim
 uim-el                          ports/textproc/uim-el
 uim-el-emacs21                  ports/textproc/uim-el-emacs21
+uim-el-emacs22                  ports/textproc/uim-el-emacs22
 uim-el-xemacs21-mule            ports/textproc/uim-el-xemacs21-mule
 uim-gnome                       ports/textproc/uim-gnome
 uim-gtk                         ports/textproc/uim-gtk
@@ -23611,6 +23630,7 @@ unixstat                        ports/math/unixstat
 unlzx                           ports/archivers/unlzx
 unmakeself                      ports/archivers/unmakeself
 unmass                          ports/archivers/unmass
+unnethack                       ports/games/unnethack
 unpaper                         ports/graphics/unpaper
 unpost                          ports/news/unpost
 unquote                         ports/sysutils/unquote
@@ -23947,6 +23967,7 @@ wanderer                        ports/games/wanderer
 wanderlust                      ports/mail/wanderlust
 wanderlust-devel                ports/mail/wanderlust-devel
 wanderlust-emacs21              ports/mail/wanderlust-emacs21
+wanderlust-emacs22              ports/mail/wanderlust-emacs22
 wanderlust-xemacs21-mule        ports/mail/wanderlust-xemacs21-mule
 wanpipe                         ports/misc/wanpipe
 waon                            ports/audio/waon
@@ -25013,6 +25034,7 @@ xpi-google-notebook             ports/www/xpi-google-notebook
 xpi-googlevideoonwooztalk       ports/www/xpi-googlevideoonwooztalk
 xpi-grab_and_drag               ports/www/xpi-grab_and_drag
 xpi-greasemonkey                ports/www/xpi-greasemonkey
+xpi-gwt-dev-plugin              ports/www/xpi-gwt-dev-plugin
 xpi-hit-a-hint                  ports/www/xpi-hit-a-hint
 xpi-httpfox                     ports/www/xpi-httpfox
 xpi-imagezoom                   ports/www/xpi-imagezoom
@@ -25251,6 +25273,7 @@ xwd                             ports/x11/xwd
 xwelltris                       ports/games/xwelltris
 xwhois                          ports/net/xwhois
 xwininfo                        ports/x11/xwininfo
+xwinwrap                        ports/x11/xwinwrap
 xwipower                        ports/sysutils/xwipower
 xwit                            ports/x11/xwit
 xwlans                          ports/sysutils/xwlans
