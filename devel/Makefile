@@ -1817,6 +1817,7 @@
     SUBDIR += p5-Object-MultiType
     SUBDIR += p5-Object-Realize-Later
     SUBDIR += p5-Object-Signature
+    SUBDIR += p5-Object-Simple
     SUBDIR += p5-Object-Tiny
     SUBDIR += p5-Olson-Abbreviations
     SUBDIR += p5-P4
