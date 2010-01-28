@@ -43,7 +43,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>ircd-ratbox-devel</name>
-	<range><lt>3.0.5</lt></range>
+	<range><lt>3.0.6</lt></range>
       </package>
     </affects>
     <description>
