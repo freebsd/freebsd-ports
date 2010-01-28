@@ -38,6 +38,10 @@ OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		does not fetch
+.endif
+
 OPERA_ARCH=	${ARCH:S,i386,intel,}
 
 ONLY_FOR_ARCHS=	i386 amd64
