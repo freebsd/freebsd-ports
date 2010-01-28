@@ -5,5 +5,7 @@ bin/lshell
 etc/lshell.conf.sample
 @exec if [ ! -f %D/etc/lshell.conf ]; then cp %B/%f %D/etc/lshell.conf; fi
 %%PYTHON_SITELIBDIR%%/lshell.py
+%%PYTHON_SITELIBDIR%%/lshell.pyc
+%%PYTHON_SITELIBDIR%%/lshell.pyo
 @dirrmtry %%DATADIR%%
 @dirrmtry %%LOGDIR%%
