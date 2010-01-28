@@ -16,6 +16,8 @@ COMMENT=	Ruby DataObjects driver for PostgreSQL
 
 RUN_DEPENDS=	rubygem-data_objects>=0.9.11:${PORTSDIR}/databases/rubygem-data_objects
 
+BROKEN=		unsatisfiable dependency
+
 USE_PGSQL=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

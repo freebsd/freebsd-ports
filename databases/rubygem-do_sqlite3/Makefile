@@ -17,6 +17,8 @@ COMMENT=	Ruby DataObjects driver to the SQLite DB engine version 3
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	rubygem-data_objects>=0.9.11:${PORTSDIR}/databases/rubygem-data_objects
 
+BROKEN=		unsatisfiable dependency
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
