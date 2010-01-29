@@ -29,6 +29,7 @@ EXTRA_PROGS_BIN=mDNSClientPosix \
 		mDNSProxyResponderPosix \
 		mDNSResponderPosix
 EXTRA_PROGS_SBIN=dnsextd
+MAKE_JOBS_UNSAFE=	yes
 
 EXTRAMAN8=	dnsextd.8 mDNSResponderPosix.8
 
