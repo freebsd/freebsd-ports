@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Action-REST
-PORTVERSION=	0.80
-PORTREVISION=	1
+PORTVERSION=	0.81
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +29,7 @@ CONFIGURE_ARGS=	--default
 
 MAN3=		Catalyst::Action::Deserialize.3 Catalyst::Action::REST.3 \
 		Catalyst::Action::Serialize.3 Catalyst::Action::SerializeBase.3 \
-		Catalyst::Controller::REST.3 Catalyst::Request::REST.3
+		Catalyst::Controller::REST.3 Catalyst::Request::REST.3 \
+		Catalyst::TraitFor::Request::REST.3
 
 .include <bsd.port.mk>
