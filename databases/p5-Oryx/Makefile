@@ -7,6 +7,7 @@
 
 PORTNAME=	Oryx
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	XML/RHUNDT
@@ -16,7 +17,6 @@ MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Meta-Model Driven Object Persistance with Multiple Inheritance
 
 BUILD_DEPENDS=	${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
-		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
 		${SITE_PERL}/DBM/Deep.pm:${PORTSDIR}/databases/p5-DBM-Deep \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/${PERL_ARCH}/Class/Date.pm:${PORTSDIR}/devel/p5-Class-Date \

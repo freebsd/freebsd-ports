@@ -6,6 +6,7 @@
 
 PORTNAME=	mysqlsla
 PORTVERSION=	2.03
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
 
@@ -13,9 +14,7 @@ MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Mysqlsla analyzes general, slow, and raw MySQL statement logs
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI-mysql \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI-mysql
 
 USE_PERL5=	yes
 NO_BUILD=	yes

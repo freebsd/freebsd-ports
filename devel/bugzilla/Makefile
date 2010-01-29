@@ -7,7 +7,7 @@
 
 PORTNAME?=	bugzilla
 PORTVERSION?=	3.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -34,12 +34,9 @@ OPTIONS=	MYSQL "MySQL database support" off \
 		RADIUS "RADIUS Authentication" off
 
 RUN_DEPENDS+=	\
-		p5-CGI.pm>=3.21:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		p5-Template-Toolkit>=2.15:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \

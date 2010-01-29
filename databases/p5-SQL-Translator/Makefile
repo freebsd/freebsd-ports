@@ -7,6 +7,7 @@
 
 PORTNAME=	SQL-Translator
 PORTVERSION=	0.11003
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-File-ShareDir>=1:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Digest-SHA1>=2.0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
 		p5-Parse-RecDescent>=1.962.2:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \

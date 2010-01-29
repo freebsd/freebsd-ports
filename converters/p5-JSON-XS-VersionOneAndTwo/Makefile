@@ -15,8 +15,7 @@ MAINTAINER=	catone@cpan.org
 COMMENT=	Support versions 1 and 2 of JSON::XS
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/JSON/XS.pm:${PORTSDIR}/converters/p5-JSON-XS
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
