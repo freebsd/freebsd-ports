@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 bin/fl-build-report
 bin/fl-credential-ctl
 bin/fl-install-demo
@@ -6,37 +5,4 @@ bin/fl-monitor-ctl
 bin/fl-record
 bin/fl-run-bench
 bin/fl-run-test
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/Cmf.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/credential.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/groups.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/passwords.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/cmf/test_Cmf.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/seam-booking-1.1.5/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/seam-booking-1.1.5/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/seam-booking-1.1.5/SeamBooking.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/seam-booking-1.1.5/monitor.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/seam-booking-1.1.5/test_SeamBooking.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/Simple.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/monitor.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple/test_Simple.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/Credential.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/cred.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/monitor.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/xmlrpc/test_Credential.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/zope/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/zope/Zope.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/zope/test_Zope.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/zope
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/xmlrpc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/simple
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/seam-booking-1.1.5
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/cmf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
