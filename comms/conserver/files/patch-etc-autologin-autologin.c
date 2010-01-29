@@ -1,5 +1,5 @@
 --- etc/autologin/autologin.c.orig	2000-08-02 11:39:42.000000000 -0700
-+++ etc/autologin/autologin.c	2010-01-27 21:58:21.000000000 -0800
++++ etc/autologin/autologin.c	2010-01-28 21:04:23.000000000 -0800
 @@ -23,7 +23,15 @@
  #include <pwd.h>
  #include <grp.h>
@@ -33,7 +33,7 @@
  		/* NOTREACHED */
  	}
  #endif
-+#if defined(__FreeBSD_version) && __FreeBSD_version > 900007
++#ifdef __FreeBSD_version
 +	/* XXX:	FreeBSD does not support IUCLC, translate uppercase characters
 +		to lowercase */
 +	n_tio.c_iflag &= ~(IGNCR);
@@ -41,7 +41,7 @@
  	n_tio.c_iflag &= ~(IGNCR|IUCLC);
 +#endif
  	n_tio.c_iflag |= ICRNL|IXON|IXANY;
-+#if defined(__FreeBSD_version) && __FreeBSD_version > 900007
++#ifdef __FreeBSD_version
 +	/*
 +	   XXX: FreeBSD does not support OLCUC, translater lowercase
 +		to uppercase
@@ -56,7 +56,7 @@
  	n_tio.c_oflag &= ~(OLCUC|ONOCR|ONLRET|OFILL|NLDLY|CRDLY|TABDLY|BSDLY);
 +#endif
  	n_tio.c_oflag |= OPOST|ONLCR|TAB3;
-+#if defined(__FreeBSD_version) && __FreeBSD_version > 900007
++#ifdef __FreeBSD_version
 +	/* XXX:	FreeBSD does not support XCASE, with icanon, escape with '\'
 +		for uppercase characters */
 +	n_tio.c_lflag &= ~(NOFLSH|ECHOK|ECHONL);
