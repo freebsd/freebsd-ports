@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Catalyst/Action/Serialize.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/Data/Serializer.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/JSON.pm
+%%SITE_PERL%%/Catalyst/Action/Serialize/JSONP.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/JSON/XS.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/View.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/XML/Simple.pm
