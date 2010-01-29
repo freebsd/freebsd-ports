@@ -6,22 +6,27 @@
 #
 
 PORTNAME=	lmdbg
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Lightweight malloc debugger
 
-BUILD_DEPENDS=	${LOCALBASE}/share/mk/_mkc.ver.mk:${PORTSDIR}/devel/mk-configure
+BUILD_DEPENDS=	mk-configure>=0.13.0:${PORTSDIR}/devel/mk-configure
 
 MAN1=		lmdbg-run.1 lmdbg-leaks.1 lmdbg-sysleaks.1 lmdbg-sym.1 lmdbg.1
 
+post-patch:
+	# 0.12.0 tries to install progs from tests, which is wrong
+	@${REINPLACE_CMD} -e 's/^\([ 	]*SUBDIR+[ 	]*=[ 	]*tests\)/#\1/' \
+		${WRKSRC}/Makefile
+
 do-build:
-	bmake -C ${WRKSRC}
+	mkcmake -C ${WRKSRC}
 
 do-install:
-	bmake -C ${WRKSRC} install-dirs install
+	mkcmake -C ${WRKSRC} installdirs install
 
 post-install:
 .if !defined(NOPORTDOCS)

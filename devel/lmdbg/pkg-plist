@@ -1,5 +1,3 @@
-include/stacktrace.h
-lib/libstacktrace.a
 lib/liblmdbg.a
 lib/liblmdbg.so.0.0
 lib/liblmdbg.so.0
