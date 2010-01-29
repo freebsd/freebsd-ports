@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	4.0.0
-PORTREVISION=	3
+PORTVERSION=	4.1.0
 CATEGORIES=	net audio multimedia
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/4.0
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/4.1
+DISTNAME=	penguintv_${PORTVERSION}-0
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical RSS feed reader with incorperated playback functions - development version

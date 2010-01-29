@@ -192,6 +192,14 @@ share/dbus-1/services/penguintv.service
 %%PYTHON_SITELIBDIR%%/penguintv/trayicon/__init__.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/utils.py
 %%PYTHON_SITELIBDIR%%/penguintv/utils.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/html/PTVMozilla.py
+%%PYTHON_SITELIBDIR%%/penguintv/html/PTVGtkHtml.py
+%%PYTHON_SITELIBDIR%%/penguintv/html/__init__.py
+%%PYTHON_SITELIBDIR%%/penguintv/html/PTVhtml.py
+%%PYTHON_SITELIBDIR%%/penguintv/html/PTVMozilla.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/html/PTVGtkHtml.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/html/__init__.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/html/PTVhtml.pyc
 
 share/penguintv/gtkhtml.css
 share/penguintv/glade/widescreen.glade
@@ -216,6 +224,7 @@ share/icons/hicolor/26x26/apps/penguintvicon.png
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/amazon
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/trayicon
+@dirrm %%PYTHON_SITELIBDIR%%/penguintv/html
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
 @dirrm share/penguintv/pixmaps
 @dirrm share/penguintv/glade
