@@ -5005,7 +5005,6 @@ gtk12                           ports/x11-toolkits/gtk12
 gtk20                           ports/x11-toolkits/gtk20
 gtk20-reference                 ports/x11-toolkits/gtk20-reference
 gtkabale                        ports/games/gtkabale
-gtkada-gps                      ports/x11-toolkits/gtkada-gps
 gtkam                           ports/graphics/gtkam
 gtkatlantic                     ports/games/gtkatlantic
 gtkballs                        ports/games/gtkballs
@@ -5815,6 +5814,7 @@ iroffer-dinoex                  ports/irc/iroffer-dinoex
 iroffer-lamm                    ports/irc/iroffer-lamm
 ironpython                      ports/lang/ironpython
 irrd                            ports/net/irrd
+irrlamb                         ports/games/irrlamb
 irrlicht                        ports/x11-toolkits/irrlicht
 irrtoolset                      ports/net-mgmt/irrtoolset
 irsim                           ports/cad/irsim
@@ -11084,6 +11084,7 @@ p5-Config-Auto                  ports/devel/p5-Config-Auto
 p5-Config-Fast                  ports/devel/p5-Config-Fast
 p5-Config-General               ports/devel/p5-Config-General
 p5-Config-INI                   ports/devel/p5-Config-INI
+p5-Config-INI-MVP               ports/devel/p5-Config-INI-MVP
 p5-Config-INI-Simple            ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles              ports/devel/p5-Config-IniFiles
 p5-Config-IniHash               ports/devel/p5-Config-IniHash
@@ -11266,6 +11267,7 @@ p5-DBIx-Class-UUIDColumns       ports/databases/p5-DBIx-Class-UUIDColumns
 p5-DBIx-Class-Validation        ports/databases/p5-DBIx-Class-Validation
 p5-DBIx-Class-WebForm           ports/databases/p5-DBIx-Class-WebForm
 p5-DBIx-ContextualFetch         ports/databases/p5-DBIx-ContextualFetch
+p5-DBIx-Custom                  ports/databases/p5-DBIx-Custom
 p5-DBIx-DBSchema                ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource              ports/databases/p5-DBIx-DataSource
 p5-DBIx-Ease                    ports/databases/p5-DBIx-Ease
@@ -11345,6 +11347,7 @@ p5-Data-Recursive-Encode        ports/devel/p5-Data-Recursive-Encode
 p5-Data-Remember                ports/devel/p5-Data-Remember
 p5-Data-Report                  ports/textproc/p5-Data-Report
 p5-Data-RoundRobin              ports/devel/p5-Data-RoundRobin
+p5-Data-Section                 ports/devel/p5-Data-Section
 p5-Data-Serializer              ports/devel/p5-Data-Serializer
 p5-Data-ShowTable               ports/devel/p5-Data-ShowTable
 p5-Data-SpreadPagination        ports/textproc/p5-Data-SpreadPagination
@@ -12831,6 +12834,7 @@ p5-Object-InsideOut             ports/devel/p5-Object-InsideOut
 p5-Object-MultiType             ports/devel/p5-Object-MultiType
 p5-Object-Realize-Later         ports/devel/p5-Object-Realize-Later
 p5-Object-Signature             ports/devel/p5-Object-Signature
+p5-Object-Simple                ports/devel/p5-Object-Simple
 p5-Object-Tiny                  ports/devel/p5-Object-Tiny
 p5-Ogg-Vorbis-Header            ports/audio/p5-Ogg-Vorbis-Header
 p5-Ogg-Vorbis-Header-PurePerl   ports/audio/p5-Ogg-Vorbis-Header-PurePerl
@@ -13041,6 +13045,7 @@ p5-Pod-Coverage                 ports/devel/p5-Pod-Coverage
 p5-Pod-Coverage-Moose           ports/devel/p5-Pod-Coverage-Moose
 p5-Pod-DocBook                  ports/textproc/p5-Pod-DocBook
 p5-Pod-Escapes                  ports/textproc/p5-Pod-Escapes
+p5-Pod-Eventual                 ports/textproc/p5-Pod-Eventual
 p5-Pod-HtmlEasy                 ports/textproc/p5-Pod-HtmlEasy
 p5-Pod-POM                      ports/textproc/p5-Pod-POM
 p5-Pod-POM-View-HTML-Filter     ports/textproc/p5-Pod-POM-View-HTML-Filter
@@ -13844,6 +13849,7 @@ p5-WWW-Scraper-ISBN-Driver      ports/www/p5-WWW-Scraper-ISBN-Driver
 p5-WWW-Scraper-ISBN-ORA_Driver  ports/www/p5-WWW-Scraper-ISBN-ORA_Driver
 p5-WWW-Scraper-ISBN-Record      ports/www/p5-WWW-Scraper-ISBN-Record
 p5-WWW-Scripter                 ports/www/p5-WWW-Scripter
+p5-WWW-Scripter-Plugin-Ajax     ports/www/p5-WWW-Scripter-Plugin-Ajax
 p5-WWW-Scripter-Plugin-JavaScript  ports/www/p5-WWW-Scripter-Plugin-JavaScript
 p5-WWW-Search                   ports/www/p5-WWW-Search
 p5-WWW-Search-AltaVista         ports/www/p5-WWW-Search-AltaVista
@@ -14746,6 +14752,7 @@ p5-config-auto                  ports/devel/p5-Config-Auto
 p5-config-fast                  ports/devel/p5-Config-Fast
 p5-config-general               ports/devel/p5-Config-General
 p5-config-ini                   ports/devel/p5-Config-INI
+p5-config-ini-mvp               ports/devel/p5-Config-INI-MVP
 p5-config-ini-simple            ports/devel/p5-Config-INI-Simple
 p5-config-inifiles              ports/devel/p5-Config-IniFiles
 p5-config-inihash               ports/devel/p5-Config-IniHash
@@ -14939,6 +14946,7 @@ p5-data-recursive-encode        ports/devel/p5-Data-Recursive-Encode
 p5-data-remember                ports/devel/p5-Data-Remember
 p5-data-report                  ports/textproc/p5-Data-Report
 p5-data-roundrobin              ports/devel/p5-Data-RoundRobin
+p5-data-section                 ports/devel/p5-Data-Section
 p5-data-serializer              ports/devel/p5-Data-Serializer
 p5-data-showtable               ports/devel/p5-Data-ShowTable
 p5-data-spreadpagination        ports/textproc/p5-Data-SpreadPagination
@@ -15100,6 +15108,7 @@ p5-dbix-class-uuidcolumns       ports/databases/p5-DBIx-Class-UUIDColumns
 p5-dbix-class-validation        ports/databases/p5-DBIx-Class-Validation
 p5-dbix-class-webform           ports/databases/p5-DBIx-Class-WebForm
 p5-dbix-contextualfetch         ports/databases/p5-DBIx-ContextualFetch
+p5-dbix-custom                  ports/databases/p5-DBIx-Custom
 p5-dbix-datasource              ports/databases/p5-DBIx-DataSource
 p5-dbix-dbschema                ports/databases/p5-DBIx-DBSchema
 p5-dbix-ease                    ports/databases/p5-DBIx-Ease
@@ -16538,6 +16547,7 @@ p5-object-insideout             ports/devel/p5-Object-InsideOut
 p5-object-multitype             ports/devel/p5-Object-MultiType
 p5-object-realize-later         ports/devel/p5-Object-Realize-Later
 p5-object-signature             ports/devel/p5-Object-Signature
+p5-object-simple                ports/devel/p5-Object-Simple
 p5-object-tiny                  ports/devel/p5-Object-Tiny
 p5-ogg-vorbis-header            ports/audio/p5-Ogg-Vorbis-Header
 p5-ogg-vorbis-header-pureperl   ports/audio/p5-Ogg-Vorbis-Header-PurePerl
@@ -16683,6 +16693,7 @@ p5-pod-coverage                 ports/devel/p5-Pod-Coverage
 p5-pod-coverage-moose           ports/devel/p5-Pod-Coverage-Moose
 p5-pod-docbook                  ports/textproc/p5-Pod-DocBook
 p5-pod-escapes                  ports/textproc/p5-Pod-Escapes
+p5-pod-eventual                 ports/textproc/p5-Pod-Eventual
 p5-pod-htmleasy                 ports/textproc/p5-Pod-HtmlEasy
 p5-pod-parser                   ports/textproc/p5-Pod-Parser
 p5-pod-pom                      ports/textproc/p5-Pod-POM
@@ -17619,6 +17630,7 @@ p5-www-scraper-isbn-driver      ports/www/p5-WWW-Scraper-ISBN-Driver
 p5-www-scraper-isbn-ora_driver  ports/www/p5-WWW-Scraper-ISBN-ORA_Driver
 p5-www-scraper-isbn-record      ports/www/p5-WWW-Scraper-ISBN-Record
 p5-www-scripter                 ports/www/p5-WWW-Scripter
+p5-www-scripter-plugin-ajax     ports/www/p5-WWW-Scripter-Plugin-Ajax
 p5-www-scripter-plugin-javascript  ports/www/p5-WWW-Scripter-Plugin-JavaScript
 p5-www-search                   ports/www/p5-WWW-Search
 p5-www-search-altavista         ports/www/p5-WWW-Search-AltaVista
@@ -18620,6 +18632,7 @@ pecl-tcpwrap                    ports/security/pecl-tcpwrap
 pecl-tidy                       ports/www/pecl-tidy
 pecl-timezonedb                 ports/misc/pecl-timezonedb
 pecl-uploadprogress             ports/devel/pecl-uploadprogress
+pecl-uuid                       ports/devel/pecl-uuid
 pecl-vld                        ports/devel/pecl-vld
 pecl-wbxml                      ports/textproc/pecl-wbxml
 pecl-xdiff                      ports/textproc/pecl-xdiff
@@ -21549,7 +21562,6 @@ rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mash                    ports/devel/rubygem-mash
 rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
-rubygem-merb                    ports/www/rubygem-merb
 rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
@@ -22022,7 +22034,6 @@ shell-include                   ports/shells/shell-include
 shelldap                        ports/net/shelldap
 shflags                         ports/devel/shflags
 shftool                         ports/converters/shftool
-shibboleth-sp                   ports/security/shibboleth-sp
 shim                            ports/graphics/shim
 shimmer                         ports/security/shimmer
 shishi                          ports/security/shishi
@@ -22244,6 +22255,7 @@ snarf                           ports/www/snarf
 snd                             ports/audio/snd
 snes9express                    ports/emulators/snes9express
 snes9x                          ports/emulators/snes9x
+snes9x-gtk                      ports/emulators/snes9x-gtk
 snespp                          ports/emulators/snespp
 sng                             ports/graphics/sng
 sniff                           ports/security/sniff
@@ -23758,7 +23770,6 @@ veditor                         ports/java/veditor
 vee                             ports/www/vee
 vegastrike                      ports/games/vegastrike
 vegastrike-data                 ports/games/vegastrike-data
-velocity                        ports/x11-fm/velocity
 velvet                          ports/biology/velvet
 venice                          ports/finance/venice
 ventrilo-server                 ports/audio/ventrilo-server
@@ -24556,7 +24567,6 @@ xf86-video-mga                  ports/x11-drivers/xf86-video-mga
 xf86-video-neomagic             ports/x11-drivers/xf86-video-neomagic
 xf86-video-newport              ports/x11-drivers/xf86-video-newport
 xf86-video-nouveau              ports/x11-drivers/xf86-video-nouveau
-xf86-video-nsc                  ports/x11-drivers/xf86-video-nsc
 xf86-video-nv                   ports/x11-drivers/xf86-video-nv
 xf86-video-openchrome           ports/x11-drivers/xf86-video-openchrome
 xf86-video-r128                 ports/x11-drivers/xf86-video-r128
@@ -24656,6 +24666,7 @@ xforms                          ports/x11-toolkits/xforms
 xforms-i18n                     ports/x11-toolkits/xforms-i18n
 xfpovray                        ports/graphics/xfpovray
 xfractint                       ports/graphics/xfractint
+xfractint-devel                 ports/graphics/xfractint-devel
 xfree86_xkb_xml                 ports/x11/xfree86_xkb_xml
 xfrisk                          ports/games/xfrisk
 xfs                             ports/x11-fonts/xfs
