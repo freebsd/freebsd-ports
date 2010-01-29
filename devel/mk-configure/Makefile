@@ -7,6 +7,7 @@
 
 PORTNAME=	mk-configure
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,6 +15,7 @@ MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Lightweight, easy to use replacement for GNU autotools
 
 BUILD_DEPENDS=	bmake:${PORTSDIR}/devel/bmake
+RUN_DEPENDS=	$(BUILD_DEPENDS)
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	README NEWS TODO COPYRIGHT FAQ
