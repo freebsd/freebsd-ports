@@ -45,3 +45,25 @@
 @dirrmtry %%SITE_PERL%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Packet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arp-reply.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arp-request.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arp-scan.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chaos-query.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d3-syn-send.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d4-syn-send.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp-dest-unreach.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp-echo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp-information.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp-mask.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp-redirect.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp-timestamp.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ip6-syn-send.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipv4-flags.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/read-pcap.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sniffer.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/syn-scan.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/syn-send.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp-send.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vlan-craft.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vlan-support.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
