@@ -6,6 +6,7 @@
 
 PORTNAME=	Config-MVP
 PORTVERSION=	0.093350
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	andrey@kostenko.name
 COMMENT=	Multivalue-property package-oriented configuration
 
-BUILD_DEPENDS=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

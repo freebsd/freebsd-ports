@@ -7,7 +7,7 @@
 
 PORTNAME=	CPANPLUS
 PORTVERSION=	0.8400
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -62,15 +62,6 @@ MAN3=	CPANPLUS.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0.0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Storable>=0.0:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.if ${PERL_LEVEL} < 500808
-RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
 .if ${PERL_LEVEL} < 500904
 RUN_DEPENDS+=	p5-Module-Load>=0.10:${PORTSDIR}/devel/p5-Module-Load \
 		p5-Module-Loaded>=0.01:${PORTSDIR}/devel/p5-Module-Loaded \
@@ -82,8 +73,6 @@ RUN_DEPENDS+=	p5-Archive-Extract>=0.16:${PORTSDIR}/archivers/p5-Archive-Extract 
 		p5-IPC-Cmd>=0.36:${PORTSDIR}/devel/p5-IPC-Cmd \
 		p5-Locale-Maketext-Simple>=0.01:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		p5-Log-Message>=0.01:${PORTSDIR}/devel/p5-Log-Message \
-		p5-Module-CoreList>=2.09:${PORTSDIR}/devel/p5-Module-CoreList \
-		p5-Module-Pluggable>=2.4:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Object-Accessor>=0.32:${PORTSDIR}/devel/p5-Object-Accessor \
 		p5-Params-Check>=0.22:${PORTSDIR}/devel/p5-Params-Check
 .endif

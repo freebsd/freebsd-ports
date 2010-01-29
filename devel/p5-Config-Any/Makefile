@@ -7,6 +7,7 @@
 
 PORTNAME=	Config-Any
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load class configuration data from a number of file formats
 
-RUN_DEPENDS=	p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable \
-		p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+

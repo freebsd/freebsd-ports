@@ -7,7 +7,7 @@
 
 PORTNAME=	cons-test
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A test bed for `Cons' development
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 ${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
+RUN_DEPENDS=	${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
 
 USE_PERL5=	yes
 NO_BUILD=	yes

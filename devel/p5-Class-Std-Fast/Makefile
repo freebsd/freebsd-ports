@@ -7,6 +7,7 @@
 
 PORTNAME=	Class-Std-Fast
 DISTVERSION=	v0.0.8
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +17,7 @@ COMMENT=	Faster but less secure than Class::Std
 
 BUILD_DEPENDS=	p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-		p5-Class-Std>=0.0.9:${PORTSDIR}/devel/p5-Class-Std \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Data-Dumper>=2.121:${PORTSDIR}/devel/p5-Data-Dumper
+		p5-Class-Std>=0.0.9:${PORTSDIR}/devel/p5-Class-Std
 
 PERL_CONFIGURE=	YES
 

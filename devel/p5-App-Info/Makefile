@@ -14,9 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Interface for providing metadata about installed software packages
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
-
 PERL_MODBUILD=	YES
 
 MAN3=		App::Info::HTTPD.3 App::Info::Lib::Iconv.3 \
