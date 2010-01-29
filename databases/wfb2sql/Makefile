@@ -7,15 +7,14 @@
 
 PORTNAME=	wfb2sql
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CIA World Fact Book to SQL Conversion Utility
 
-BUILD_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
-		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General
+BUILD_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	YES

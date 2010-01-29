@@ -14,9 +14,7 @@ DISTNAME=	Net-OICQ-${PORTVERSION}
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	Implements OICQ messaging protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Crypt/OICQ.pm:${PORTSDIR}/security/p5-Crypt-OICQ
 
 PERL_CONFIGURE=	5.8.0+

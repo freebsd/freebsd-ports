@@ -7,6 +7,7 @@
 
 PORTNAME=	adocman
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/sitedocs/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +17,6 @@ COMMENT=	Automated sourceforge administration tool
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 
 PERL_CONFIGURE=	YES
