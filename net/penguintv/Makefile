@@ -34,6 +34,8 @@ USE_DISPLAY=	yes
 
 CONFLICTS=	PenguinTV-devel-[0-9]*
 
+PLIST_SUB=	PY_VERSION=${PYTHON_VERSION:S/thon//} PORTVERSION=${PORTVERSION}
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GSTREAMER)
