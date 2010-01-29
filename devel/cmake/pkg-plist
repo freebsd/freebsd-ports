@@ -513,5 +513,5 @@ bin/ctest
 @dirrm %%DATADIR%%/Modules/FortranCInterface
 @dirrm %%DATADIR%%/Modules/FindCUDA
 @dirrm %%DATADIR%%/Modules/Compiler
-@dirrm %%DATADIR%%/Modules
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/Modules
+@dirrmtry %%DATADIR%%
