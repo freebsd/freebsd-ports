@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	zabbix
+PORTREVISION=	1
 PKGNAMESUFFIX=	-frontend
 
 MASTERDIR=	${.CURDIR}/../zabbix16-server
@@ -14,7 +15,7 @@ NO_BUILD=	yes
 PATCHDIR=
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
-USE_PHP=	bcmath gd pcre snmp sockets
+USE_PHP=       bcmath ctype gd pcre snmp sockets
 WANT_PHP_WEB=	yes
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
