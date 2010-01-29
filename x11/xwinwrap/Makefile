@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_BZIP2=	yes
-USE_XLIB=	xrender xext
+USE_XLIB=	x11 xproto xrender xext
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
