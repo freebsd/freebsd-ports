@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	mod_proxy_html
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dsl@bitwizards.com.au
 COMMENT=	Apache module for rewriting HTML links in proxied content
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 USE_APACHE=	2.0+
@@ -24,7 +25,7 @@ SHORTMODNAME=	proxy_html
 USE_BZIP2=	YES
 USE_GNOME=	libxml2
 
-AP_INC+=	${LOCALBASE}/include/libxml2
+AP_INC+=	${LOCALBASE}/include/libxml2 -I${WRKSRC}
 AP_LIB+=	${LOCALBASE}/lib
 AP_EXTRAS+=	-lxml2
 
