@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Packet
-DISTVERSION=	3.26
-PORTREVISION=	1
+DISTVERSION=	3.27
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +24,7 @@ BUILD_DEPENDS=	p5-Bit-Vector>=6.4:${PORTSDIR}/math/p5-Bit-Vector \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 MAN3=	Net::Packet.3 Net::Packet::ARP.3 Net::Packet::CDP.3 Net::Packet::CDP::Address.3 \
 Net::Packet::CDP::Type.3 Net::Packet::CDP::TypeAddresses.3 Net::Packet::CDP::TypeCapabilities.3 \
@@ -37,5 +37,11 @@ Net::Packet::Layer3.3 Net::Packet::Layer4.3 Net::Packet::Layer7.3 Net::Packet::N
 Net::Packet::OSPF.3 Net::Packet::PPP.3 Net::Packet::PPPLCP.3 Net::Packet::PPPoE.3 Net::Packet::RAW.3 \
 Net::Packet::SLL.3 Net::Packet::STP.3 Net::Packet::TCP.3 Net::Packet::UDP.3 Net::Packet::Utils.3 \
 Net::Packet::VLAN.3
+
+.if !defined(NOPORTEXAMPLES)
+post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.mk>
