@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	funkload
-PORTVERSION=	1.9.0
+PORTVERSION=	1.11.0
 CATEGORIES=	www python
-MASTER_SITES=	http://funkload.nuxeo.org/ \
-		CHEESESHOP
+MASTER_SITES=	http://funkload.nuxeo.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -21,20 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-d
 		${PYXML} \
 		tcpwatch.py:${PORTSDIR}/net/tcpwatch
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/funkload/demo ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
