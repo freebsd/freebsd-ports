@@ -61,10 +61,4 @@ PLIST_SUB+=	PAMBASE="/${PAMBASE}"
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900007
-BROKEN=	needs utmp.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
