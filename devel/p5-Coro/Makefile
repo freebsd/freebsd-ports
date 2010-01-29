@@ -7,6 +7,7 @@
 
 PORTNAME=	Coro
 PORTVERSION=	5.21
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -20,7 +21,6 @@ RUN_DEPENDS=	p5-Event>=1.08:${PORTSDIR}/devel/p5-Event \
 		p5-AnyEvent>=5.0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-AnyEvent-AIO>=1.0:${PORTSDIR}/devel/p5-AnyEvent-AIO \
 		p5-EV>=3.3:${PORTSDIR}/devel/p5-EV \
-		p5-Storable>=2.15:${PORTSDIR}/devel/p5-Storable \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense \
 		p5-IO-AIO>=3.1:${PORTSDIR}/devel/p5-IO-AIO
 BUILD_DEPENDS=	${RUN_DEPENDS}
