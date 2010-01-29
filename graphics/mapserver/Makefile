@@ -7,6 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		5.6.1
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -35,6 +36,7 @@ OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			WMS "Support for web map service server and client" off \
 			WFS "Support for web feature service (req: GDAL)" off \
 			MAPSERV "Install mapserv cgi interface" on \
+			FASTCGI "Support FASTCGI" off \
 			DEBUG "Enable debugging output" off
 
 .include <bsd.port.pre.mk>
@@ -118,6 +120,11 @@ USE_APACHE=		13+
 PLIST_SUB+=		WITH_MAPSERV=""
 .else
 PLIST_SUB+=		WITH_MAPSERV="@comment "
+.endif
+
+.if defined(WITH_FASTCGI)
+BUILD_DEPENDS+=		${LOCALBASE}/bin/cgi-fcgi:${PORTSDIR}/www/fcgi
+CONFIGURE_ARGS+=	--with-fastcgi=${LOCALBASE}
 .endif
 
 .if defined(WITH_DEBUG)
