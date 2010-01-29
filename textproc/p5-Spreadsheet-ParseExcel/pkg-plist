@@ -1,3 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.packlist
 %%SITE_PERL%%/Spreadsheet/ParseExcel.pm
 %%SITE_PERL%%/Spreadsheet/ParseExcel/Cell.pm
 %%SITE_PERL%%/Spreadsheet/ParseExcel/Dump.pm
@@ -16,6 +17,8 @@
 @dirrm %%SITE_PERL%%/Spreadsheet/ParseExcel/SaveParser
 @dirrm %%SITE_PERL%%/Spreadsheet/ParseExcel
 @dirrmtry %%SITE_PERL%%/Spreadsheet
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Excel/AuthorK.xls
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Excel/AuthorK95.xls
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Excel/FmtTest.xls

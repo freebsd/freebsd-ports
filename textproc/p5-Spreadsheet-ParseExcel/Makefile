@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-ParseExcel
-PORTVERSION=	0.55
+PORTVERSION=	0.57
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Get information from Excel file
 
-BUILD_DEPENDS=	p5-OLE-Storage_Lite>=0.08:${PORTSDIR}/devel/p5-OLE-Storage_Lite
+BUILD_DEPENDS=	p5-OLE-Storage_Lite>=0.19:${PORTSDIR}/devel/p5-OLE-Storage_Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Spreadsheet::ParseExcel.3 \
 		Spreadsheet::ParseExcel::Cell.3 \
