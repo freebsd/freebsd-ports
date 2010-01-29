@@ -127,6 +127,7 @@
     SUBDIR += cheech
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
+    SUBDIR += chroma
     SUBDIR += chromium-bsu
     SUBDIR += circuslinux
     SUBDIR += cleanq3
