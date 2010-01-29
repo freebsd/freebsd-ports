@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-tls
 
@@ -14,9 +14,10 @@ COMMENT=	UCSPI tools for building SSL client-server applications w/ TLS support
 
 CONFLICTS=	ucspi-ssl-[0-9]*
 
-PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:tls/}
+PATCH_SITES+=		http://www.fehcom.de/qmail/spamcontrol/:tls \
+			${MASTER_SITE_LOCAL:S/$/:tls/}
 PATCH_SITE_SUBDIR+=	garga/ucspi-ssl/:tls
-PATCHFILES+=		ucspi-ssl-0.70_ucspitls-0.4.patch:tls
+PATCHFILES+=		ucspi-ssl-0.70_ucspitls-0.5.patch_:tls
 PATCH_WRKSRC=		${WRKSRC}/src
 
 MASTERDIR=	${.CURDIR}/../ucspi-ssl
