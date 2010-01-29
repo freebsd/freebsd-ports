@@ -7,6 +7,7 @@
 
 PORTNAME=	Bio-Graphics
 PORTVERSION=	1.995
+PORTREVISION=	2
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,9 +19,7 @@ BUILD_DEPENDS=	p5-GD>=2.3:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-SVG>=0.32:${PORTSDIR}/graphics/p5-GD-SVG \
 		p5-Statistics-Descriptive>=2.6:${PORTSDIR}/math/p5-Statistics-Descriptive \
 		p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl \
-		p5-Text-ParseWords>=3.26:${PORTSDIR}/textproc/p5-Text-ParseWords \
-		p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF \
-		p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+		p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	YES

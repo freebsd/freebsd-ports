@@ -7,7 +7,7 @@
 
 PORTNAME=	Net-DAAP-Client
 PORTVERSION=	0.42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Client for Apple iTunes DAAP service
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5/M4p.pm:${PORTSDIR}/security/p5-Digest-MD5-M4p \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5/M4p.pm:${PORTSDIR}/security/p5-Digest-MD5-M4p \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/DAAP/DMAP.pm:${PORTSDIR}/audio/p5-Net-DAAP-DMAP
 BUILD_DEPENDS=	${RUN_DEPENDS}

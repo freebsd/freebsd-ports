@@ -7,7 +7,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -35,7 +35,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-28947-noCPAN
 RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
 		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
@@ -44,7 +43,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zl
 		${SITE_PERL}/${PERL_ARCH}/JSON/XS.pm:${PORTSDIR}/converters/p5-JSON-XS \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck \
 		${SITE_PERL}/${PERL_ARCH}/EV.pm:${PORTSDIR}/devel/p5-EV \

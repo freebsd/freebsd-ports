@@ -7,6 +7,7 @@
 
 PORTNAME=	bioperl
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://bioperl.org/DIST/ \
 		CPAN
@@ -47,18 +48,15 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/l
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
 		${SITE_PERL}/${PERL_ARCH}/Convert/Binary/C.pm:${PORTSDIR}/converters/p5-Convert-Binary-C \
-		${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness \
 		${SITE_PERL}/Algorithm/Munkres.pm:${PORTSDIR}/math/p5-Algorithm-Munkres \
 		${SITE_PERL}/Array/Compare.pm:${PORTSDIR}/misc/p5-Array-Compare \
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${SITE_PERL}/${PERL_ARCH}/Math/Random.pm:${PORTSDIR}/math/p5-Math-Random \
 		${SITE_PERL}/PostScript/TextBlock.pm:${PORTSDIR}/print/p5-PostScript \
 		${SITE_PERL}/Set/Scalar.pm:${PORTSDIR}/devel/p5-Set-Scalar \
-		${SITE_PERL}/Text/ParseWords.pm:${PORTSDIR}/textproc/p5-Text-ParseWords \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 
 RUN_DEPENDS=	${BUILD_DEPENDS}

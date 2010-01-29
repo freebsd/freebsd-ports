@@ -7,6 +7,7 @@
 
 PORTNAME=	Astro-SIMBAD-Client
 PORTVERSION=	0.018
+PORTREVISION=	1
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,6 @@ COMMENT=	An object-oriented interface to SIMBAD4
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Parser>=3.60:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-SOAP-Lite>0:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-Scalar-List-Utils>=1.0.1:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-DoubleEncodedEntities>=1.0:${PORTSDIR}/textproc/p5-XML-DoubleEncodedEntities
 

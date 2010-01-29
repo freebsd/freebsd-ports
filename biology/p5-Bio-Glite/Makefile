@@ -7,6 +7,7 @@
 
 PORTNAME=	Bio-Glite
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Perl Interface to G-language
 
-BUILD_DEPENDS=	p5-Data-Dumper>=2.121:${PORTSDIR}/devel/p5-Data-Dumper \
-		p5-libwww>=5:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
