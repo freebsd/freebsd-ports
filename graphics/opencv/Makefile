@@ -23,6 +23,9 @@ CMAKE_ARGS=	-DWITH_1394:BOOL=Off -DWITH_UNICAP:BOOL=Off
 CMAKE_SOURCE_PATH=	${WRKSRC}
 USE_LDCONFIG=	yes
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
+
 PORTDOCS=	CMakeLists.txt ChangeLog.htm haartraining.htm index.htm \
 		latex_readme.txt license.txt opencv-logo.png \
 		opencv-logo2.png opencv.jpg opencv.pdf packaging.txt \
@@ -46,7 +49,7 @@ OPTIONS=	FFMPEG	"Include FFmpeg support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
+.if ${OSVERSION} < 700042
 BROKEN=		does not build on 6.X
 .endif
 
