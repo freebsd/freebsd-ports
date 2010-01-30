@@ -617,6 +617,7 @@
     SUBDIR += jakarta-commons-modeler
     SUBDIR += jakelib2
     SUBDIR += jam
+    SUBDIR += jansson
     SUBDIR += java-util-concurrent
     SUBDIR += javolution
     SUBDIR += jclassinfo
