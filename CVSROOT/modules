@@ -1527,6 +1527,7 @@ chord2html                      ports/misc/chord2html
 chordpack                       ports/audio/chordpack
 chpasswd                        ports/www/chpasswd
 chpp                            ports/textproc/chpp
+chroma                          ports/games/chroma
 chromium-bsu                    ports/games/chromium-bsu
 chroot_safe                     ports/security/chroot_safe
 chrootuid                       ports/security/chrootuid
