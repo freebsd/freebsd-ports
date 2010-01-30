@@ -224,6 +224,7 @@ lib/libgoffice-%%SHORT_VER%%.la
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.7
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
+%%DOCSDIR%%-%%SHORT_VER%%/GOCalendarButton.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOCharmapSel.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOCmdContext.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOComboBox.html
@@ -241,7 +242,9 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GOFileSaver.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOFontSel.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOFormatSel.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOIOContext.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOLocaleSel.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOMarker.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOOptionMenu.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPersist.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPluginLoader.html
@@ -265,6 +268,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GocStyledItem.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocText.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocWidget.html
+%%DOCSDIR%%-%%SHORT_VER%%/Gog3DBox.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogAxis.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogAxisLine.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogChart.html
@@ -287,6 +291,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GogSeriesLines.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogSmoothedCurve.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogStyledObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogText.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogTheme.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogTrendLine.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogView.html
@@ -308,6 +313,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/ch16.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp2
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOArrow.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOBezierSpline.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOCSpline.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GOCairo.html
@@ -339,10 +345,13 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogPlotEngine.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-GogTool.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-Other-utilities.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-Other.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-Simple-structures.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-Units.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-color-group.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-data-simple.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-distribution.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-marker.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-image.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-plugin.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-string.html
 %%DOCSDIR%%-%%SHORT_VER%%/home.png
