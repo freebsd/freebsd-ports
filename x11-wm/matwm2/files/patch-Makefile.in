@@ -1,0 +1,14 @@
+--- Makefile.in.old	2010-01-30 00:39:35.000000000 +0100
++++ Makefile.in	2010-01-30 00:39:56.000000000 +0100
+@@ -23,9 +23,8 @@
+ 	$(RM) matwm2 *.o
+ 
+ install: matwm2
+-	mkdir -p $(PREFIX)/bin $(MANDIR)/man1
+-	install -s matwm2 $(PREFIX)/bin
+-	install matwm2.1 $(MANDIR)/man1
++	${BSD_INSTALL_PROGRAM} matwm2 $(PREFIX)/bin
++	${BSD_INSTALL_MAN} matwm2.1 $(MANDIR)/man1
+ 
+ deinstall:
+ 	$(RM) $(PREFIX)/bin/matwm2 $(MANDIR)/man1/matwm2.1* $(MANDIR)/cat1/matwm2.1*
