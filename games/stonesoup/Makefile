@@ -7,6 +7,7 @@
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-src

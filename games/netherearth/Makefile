@@ -7,7 +7,7 @@
 
 PORTNAME=	netherearth
 PORTVERSION=	0.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://move.kirishi.ru/soft/netherearth/
 

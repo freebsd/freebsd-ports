@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl_mixer
-PORTVERSION=	1.2.8
-PORTREVISION=	2
+PORTVERSION=	1.2.11
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -17,6 +16,7 @@ COMMENT=	A sample multi-channel audio mixer library
 
 USE_AUTOTOOLS=	libtool:22
 USE_SDL=	sdl
+USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	MIKMOD		"Enable MOD music via libMikMod"	On \
 		SMPEG		"Enable MP3 music via SMPEG"		On \
+		FLAC		"Enable FLAC encoding support via flac"	On \
 		VORBIS		"Enable Ogg Vorbis music"		On \
 		TIMIDITYPLUS	"Use Timidity++ instead of Timidity"	Off
 
@@ -36,6 +37,13 @@ CONFIGURE_ARGS+=--disable-music-libmikmod
 .else
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--enable-music-libmikmod
+.endif
+
+.if defined(WITHOUT_FLAC)
+CONFIGURE_ARGS+=--disable-music-flac
+.else
+LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=--enable-music-flac
 .endif
 
 .if defined(WITHOUT_SMPEG)

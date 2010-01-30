@@ -61,12 +61,12 @@ _VERSION_gui=	0
 _SUBDIR_gui=	x11-toolkits
 _REQUIRES_gui=	sdl image ttf
 
-_VERSION_image=	1
+_VERSION_image=	8
 _SUBDIR_image=	graphics
 _LIB_image=	SDL_image-1.2
 _REQUIRES_image=sdl
 
-_VERSION_mixer=	2
+_VERSION_mixer=	10
 _SUBDIR_mixer=	audio
 _LIB_mixer=	SDL_mixer-1.2
 _REQUIRES_mixer=sdl

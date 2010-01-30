@@ -1,7 +1,8 @@
---- port/linux/linuxmain.cpp.orig	2008-01-10 06:26:42.000000000 +0300
-+++ port/linux/linuxmain.cpp	2009-06-08 00:37:41.000000000 +0400
-@@ -1,4 +1,8 @@
+--- port/linux/linuxmain.cpp.orig	2008-01-10 04:26:42.000000000 +0100
++++ port/linux/linuxmain.cpp	2010-01-28 00:08:58.000000000 +0100
+@@ -1,4 +1,9 @@
  #include <SDL.h>
++#include <errno.h>
 +#include <err.h>
 +#include <stdlib.h>
 +#include <sys/stat.h>
@@ -9,7 +10,7 @@
  
  #ifdef main
  #undef main
-@@ -11,6 +15,15 @@
+@@ -11,6 +16,15 @@
  
  int main(int argc, char **argv)
  {

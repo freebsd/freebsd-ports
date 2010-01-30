@@ -7,6 +7,7 @@
 
 PORTNAME=	chroma
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
 		http://mirror.amdmi3.ru/distfiles/

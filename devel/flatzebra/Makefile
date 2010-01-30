@@ -7,6 +7,7 @@
 
 PORTNAME=	flatzebra
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 

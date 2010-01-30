@@ -7,7 +7,7 @@
 
 PORTNAME=	icebreaker
 PORTVERSION=	1.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://mattdm.org/icebreaker/1.2.x/
 EXTRACT_SUFX=	.tgz

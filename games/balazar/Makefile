@@ -7,6 +7,7 @@
 
 PORTNAME=	balazar
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}

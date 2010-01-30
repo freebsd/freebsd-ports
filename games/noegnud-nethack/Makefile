@@ -7,7 +7,7 @@
 
 PORTNAME=	noegnud
 PORTVERSION=	0.8.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION}/:noegnud	\
 		SF/nethack/nethack/3.4.3:nethack

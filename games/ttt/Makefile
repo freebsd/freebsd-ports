@@ -7,7 +7,7 @@
 
 PORTNAME=	ttt
 PORTVERSION=	2003.03.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/ttt/
 
