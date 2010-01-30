@@ -29,9 +29,11 @@
 %%SIP%%share/py-sip/Qsci/qscilexerproperties.sip
 %%SIP%%share/py-sip/Qsci/qscilexerpython.sip
 %%SIP%%share/py-sip/Qsci/qscilexerruby.sip
+%%SIP%%share/py-sip/Qsci/qscilexerspice.sip
 %%SIP%%share/py-sip/Qsci/qscilexersql.sip
 %%SIP%%share/py-sip/Qsci/qscilexertcl.sip
 %%SIP%%share/py-sip/Qsci/qscilexertex.sip
+%%SIP%%share/py-sip/Qsci/qscilexerverilog.sip
 %%SIP%%share/py-sip/Qsci/qscilexervhdl.sip
 %%SIP%%share/py-sip/Qsci/qscilexerxml.sip
 %%SIP%%share/py-sip/Qsci/qscilexeryaml.sip

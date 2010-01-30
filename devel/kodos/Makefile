@@ -9,7 +9,7 @@
 
 PORTNAME=	kodos
 PORTVERSION=	2.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/

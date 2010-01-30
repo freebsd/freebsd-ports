@@ -51,6 +51,11 @@
 %%SIP%%share/py-sip/QtGui/qfontmetrics.sip
 %%SIP%%share/py-sip/QtGui/qformlayout.sip
 %%SIP%%share/py-sip/QtGui/qframe.sip
+%%SIP%%share/py-sip/QtGui/qgenericmatrix.sip
+%%SIP%%share/py-sip/QtGui/qgesture.sip
+%%SIP%%share/py-sip/QtGui/qgesturerecognizer.sip
+%%SIP%%share/py-sip/QtGui/qgraphicsanchorlayout.sip
+%%SIP%%share/py-sip/QtGui/qgraphicseffect.sip
 %%SIP%%share/py-sip/QtGui/qgraphicsgridlayout.sip
 %%SIP%%share/py-sip/QtGui/qgraphicsitem.sip
 %%SIP%%share/py-sip/QtGui/qgraphicsitemanimation.sip
@@ -60,6 +65,7 @@
 %%SIP%%share/py-sip/QtGui/qgraphicsproxywidget.sip
 %%SIP%%share/py-sip/QtGui/qgraphicsscene.sip
 %%SIP%%share/py-sip/QtGui/qgraphicssceneevent.sip
+%%SIP%%share/py-sip/QtGui/qgraphicstransform.sip
 %%SIP%%share/py-sip/QtGui/qgraphicsview.sip
 %%SIP%%share/py-sip/QtGui/qgraphicswidget.sip
 %%SIP%%share/py-sip/QtGui/qgridlayout.sip
@@ -77,6 +83,7 @@
 %%SIP%%share/py-sip/QtGui/qitemdelegate.sip
 %%SIP%%share/py-sip/QtGui/qitemeditorfactory.sip
 %%SIP%%share/py-sip/QtGui/qitemselectionmodel.sip
+%%SIP%%share/py-sip/QtGui/qkeyeventtransition.sip
 %%SIP%%share/py-sip/QtGui/qkeysequence.sip
 %%SIP%%share/py-sip/QtGui/qlabel.sip
 %%SIP%%share/py-sip/QtGui/qlayout.sip
@@ -87,12 +94,14 @@
 %%SIP%%share/py-sip/QtGui/qlistwidget.sip
 %%SIP%%share/py-sip/QtGui/qmainwindow.sip
 %%SIP%%share/py-sip/QtGui/qmatrix.sip
+%%SIP%%share/py-sip/QtGui/qmatrix4x4.sip
 %%SIP%%share/py-sip/QtGui/qmdiarea.sip
 %%SIP%%share/py-sip/QtGui/qmdisubwindow.sip
 %%SIP%%share/py-sip/QtGui/qmenu.sip
 %%SIP%%share/py-sip/QtGui/qmenubar.sip
 %%SIP%%share/py-sip/QtGui/qmessagebox.sip
 %%SIP%%share/py-sip/QtGui/qmime.sip
+%%SIP%%share/py-sip/QtGui/qmouseeventtransition.sip
 %%SIP%%share/py-sip/QtGui/qmovie.sip
 %%SIP%%share/py-sip/QtGui/qpagesetupdialog.sip
 %%SIP%%share/py-sip/QtGui/qpaintdevice.sip
@@ -117,6 +126,7 @@
 %%SIP%%share/py-sip/QtGui/qproxymodel.sip
 %%SIP%%share/py-sip/QtGui/qpushbutton.sip
 %%SIP%%share/py-sip/QtGui/qpytextobject.sip
+%%SIP%%share/py-sip/QtGui/qquaternion.sip
 %%SIP%%share/py-sip/QtGui/qradiobutton.sip
 %%SIP%%share/py-sip/QtGui/qregion.sip
 %%SIP%%share/py-sip/QtGui/qrgb.sip
@@ -173,6 +183,9 @@
 %%SIP%%share/py-sip/QtGui/qundostack.sip
 %%SIP%%share/py-sip/QtGui/qundoview.sip
 %%SIP%%share/py-sip/QtGui/qvalidator.sip
+%%SIP%%share/py-sip/QtGui/qvector2d.sip
+%%SIP%%share/py-sip/QtGui/qvector3d.sip
+%%SIP%%share/py-sip/QtGui/qvector4d.sip
 %%SIP%%share/py-sip/QtGui/qwhatsthis.sip
 %%SIP%%share/py-sip/QtGui/qwidget.sip
 %%SIP%%share/py-sip/QtGui/qwidgetaction.sip

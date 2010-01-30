@@ -7,7 +7,7 @@
 
 PORTNAME=	sivp
 DISTVERSION=	0.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 PKGNAMEPREFIX=	scilab-toolbox-
@@ -17,7 +17,7 @@ COMMENT=	Scilab Image and Video Processing Toolbox
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	cv.1:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab
 
 SCILABDIR?=	lib/scilab

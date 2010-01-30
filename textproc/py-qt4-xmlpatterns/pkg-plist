@@ -11,6 +11,8 @@
 %%SIP%%share/py-sip/QtXmlPatterns/qxmlnamepool.sip
 %%SIP%%share/py-sip/QtXmlPatterns/qxmlquery.sip
 %%SIP%%share/py-sip/QtXmlPatterns/qxmlresultitems.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlschema.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlschemavalidator.sip
 %%SIP%%share/py-sip/QtXmlPatterns/qxmlserializer.sip
 %%API%%share/qt4/qsci/api/python/QtXmlPatterns.api
 %%SIP%%@dirrm share/py-sip/QtXmlPatterns

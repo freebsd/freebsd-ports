@@ -13,6 +13,49 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/ui_mainwindow.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/webbrowser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/webbrowser.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/animatedtiles.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/animatedtiles.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/animatedtiles.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/images/Time-For-Lunch-2.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/images/centered.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/images/ellipse.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/images/figure8.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/images/kinetic.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/images/random.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animatedtiles/images/tile.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/appchooser/accessories-dictionary.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/appchooser/akregator.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/appchooser/appchooser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/appchooser/appchooser.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/appchooser/appchooser.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/appchooser/digikam.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/appchooser/k3b.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/easing/easing.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/easing/easing.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/easing/easing.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/easing/form.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/easing/images/qt-logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/easing/ui_form.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/easing/ui_form.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/moveblocks.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/moveblocks.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/accessories-dictionary.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/akregator.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/digikam.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/help-browser.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/k3b.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/kchart.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/states.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/states.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/states/states.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/stickman/animations/chilling
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/stickman/animations/dancing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/stickman/animations/dead
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/stickman/animations/jumping
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/stickman/stickman.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/stickman/stickman.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/stickman/stickman.qrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/No-Ones-Laughing-3.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialog.py
@@ -171,7 +214,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/effects/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/effects/lighting.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/effects/lighting.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/anchorlayout.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/anchorlayout.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/collidingmice.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/collidingmice.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/images/cheese.jpg
@@ -593,6 +641,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/collidingmice/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/collidingmice
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/effects
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/puzzle
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/fridgemagnets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/draggabletext
@@ -617,7 +666,17 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/qtdemo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/embeddeddialogs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/stickman/animations
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/stickman
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/states
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/easing/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/easing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/appchooser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/animatedtiles/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation/animatedtiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/activeqt/webbrowser/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/activeqt/webbrowser
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/activeqt
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+
