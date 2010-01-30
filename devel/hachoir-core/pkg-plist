@@ -70,6 +70,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_core/field/link.py
 %%PYTHON_SITELIBDIR%%/hachoir_core/field/link.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_core/field/link.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_core/field/new_seekable_field_set.py
+%%PYTHON_SITELIBDIR%%/hachoir_core/field/new_seekable_field_set.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_core/field/new_seekable_field_set.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_core/field/padding.py
 %%PYTHON_SITELIBDIR%%/hachoir_core/field/padding.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_core/field/padding.pyo
