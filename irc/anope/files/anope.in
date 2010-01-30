@@ -5,7 +5,7 @@
 # REQUIRE: LOGIN mysql
 
 #
-# Add the following line to /etc/rc.conf to enable quagga:
+# Add the following line to /etc/rc.conf to enable anope:
 #anope_enable="YES"
 #
 # Also, to prevent running anope as root You may use
