@@ -349,8 +349,10 @@ share/gnumeric/%%VERSION%%/glade/mean-tests.glade
 share/gnumeric/%%VERSION%%/glade/merge.glade
 share/gnumeric/%%VERSION%%/glade/moving-averages.glade
 share/gnumeric/%%VERSION%%/glade/paste-names.glade
+share/gnumeric/%%VERSION%%/glade/paste-special.glade
 share/gnumeric/%%VERSION%%/glade/plugin-manager.glade
 share/gnumeric/%%VERSION%%/glade/preferences.glade
+share/gnumeric/%%VERSION%%/glade/principal-components.glade
 share/gnumeric/%%VERSION%%/glade/print.glade
 share/gnumeric/%%VERSION%%/glade/random-generation-cor.glade
 share/gnumeric/%%VERSION%%/glade/random-generation.glade
@@ -363,6 +365,7 @@ share/gnumeric/%%VERSION%%/glade/scenario-manager.glade
 share/gnumeric/%%VERSION%%/glade/search-replace.glade
 share/gnumeric/%%VERSION%%/glade/sheet-order.glade
 share/gnumeric/%%VERSION%%/glade/sheet-resize.glade
+share/gnumeric/%%VERSION%%/glade/sheetobject-size.glade
 share/gnumeric/%%VERSION%%/glade/shuffle.glade
 share/gnumeric/%%VERSION%%/glade/sign-test-two.glade
 share/gnumeric/%%VERSION%%/glade/sign-test.glade
@@ -471,6 +474,8 @@ share/gnome/help/gnumeric/C/figures/analysistools-histogram-graphs.png
 share/gnome/help/gnumeric/C/figures/analysistools-histogram.png
 share/gnome/help/gnumeric/C/figures/analysistools-kaplan-ex1.png
 share/gnome/help/gnumeric/C/figures/analysistools-kaplan-ex2.png
+share/gnome/help/gnumeric/C/figures/analysistools-kaplan-ex3.png
+share/gnome/help/gnumeric/C/figures/analysistools-kaplan-groups.png
 share/gnome/help/gnumeric/C/figures/analysistools-kaplan-options.png
 share/gnome/help/gnumeric/C/figures/analysistools-kaplan.png
 share/gnome/help/gnumeric/C/figures/analysistools-moving-average-ex1.png
@@ -605,6 +610,8 @@ share/gnome/help/gnumeric/C/figures/chart_ring_1_2.png
 share/gnome/help/gnumeric/C/figures/chart_scatter_1_1.png
 share/gnome/help/gnumeric/C/figures/chart_scatter_3_1.png
 share/gnome/help/gnumeric/C/figures/chart_scatter_3_2.png
+share/gnome/help/gnumeric/C/figures/chart_surface_1.png
+share/gnome/help/gnumeric/C/figures/chart_surface_2.png
 share/gnome/help/gnumeric/C/figures/dialog-auto-correct.png
 share/gnome/help/gnumeric/C/figures/dialog-autosave.png
 share/gnome/help/gnumeric/C/figures/dialog-fileopen-withTags.png
@@ -643,6 +650,8 @@ share/gnome/help/gnumeric/C/figures/graph-example-line.png
 share/gnome/help/gnumeric/C/figures/graph-example-pie.png
 share/gnome/help/gnumeric/C/figures/graph-example-radar.png
 share/gnome/help/gnumeric/C/figures/graph-example-ring.png
+share/gnome/help/gnumeric/C/figures/graph-example-surface-t1.png
+share/gnome/help/gnumeric/C/figures/graph-example-surface-t2.png
 share/gnome/help/gnumeric/C/figures/graph-example-xyplot.png
 share/gnome/help/gnumeric/C/figures/graph-hierarchy.png
 share/gnome/help/gnumeric/C/figures/graphguru-axes-category-bounds.png
@@ -691,14 +700,21 @@ share/gnome/help/gnumeric/C/figures/menu-context-object.png
 share/gnome/help/gnumeric/C/figures/menu-context-tabs.png
 share/gnome/help/gnumeric/C/figures/menu-context-toolbars.png
 share/gnome/help/gnumeric/C/figures/menu-data-labelled.png
+share/gnome/help/gnumeric/C/figures/menu-edit-delete-cells.png
 share/gnome/help/gnumeric/C/figures/menu-edit-labelled.png
+share/gnome/help/gnumeric/C/figures/menu-edit-paste-special.png
+share/gnome/help/gnumeric/C/figures/menu-edit-select.png
 share/gnome/help/gnumeric/C/figures/menu-file-labelled.png
+share/gnome/help/gnumeric/C/figures/menu-file-printarea.png
+share/gnome/help/gnumeric/C/figures/menu-format-column.png
 share/gnome/help/gnumeric/C/figures/menu-format-labelled.png
+share/gnome/help/gnumeric/C/figures/menu-format-sheet.png
 share/gnome/help/gnumeric/C/figures/menu-help-labelled.png
 share/gnome/help/gnumeric/C/figures/menu-insert-labelled.png
 share/gnome/help/gnumeric/C/figures/menu-tools-labelled.png
 share/gnome/help/gnumeric/C/figures/menu-torn-off.png
 share/gnome/help/gnumeric/C/figures/menu-view-labelled.png
+share/gnome/help/gnumeric/C/figures/menu-view-properties-dialog.png
 share/gnome/help/gnumeric/C/figures/menubar.png
 share/gnome/help/gnumeric/C/figures/number-format-border-dialog.png
 share/gnome/help/gnumeric/C/figures/number-format-color-dialog.png
