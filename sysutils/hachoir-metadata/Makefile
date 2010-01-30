@@ -6,17 +6,22 @@
 #
 
 PORTNAME=	hachoir-metadata
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Extract metadata from files
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+
+PYDISTUTILS_CONFIGUREARGS+=	--disable-qt
+PYDISTUTILS_BUILDARGS+=	--disable-qt
+PYDISTUTILS_INSTALLARGS+=	--disable-qt
 
 pre-everything::
 	@${ECHO_MSG} ""
