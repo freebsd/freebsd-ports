@@ -116,6 +116,7 @@
     SUBDIR += jahshaka
     SUBDIR += jmref
     SUBDIR += k9copy
+    SUBDIR += k9copy-kde4
     SUBDIR += kaffeine
     SUBDIR += kaffeine-devel
     SUBDIR += kaffeine-mozilla
