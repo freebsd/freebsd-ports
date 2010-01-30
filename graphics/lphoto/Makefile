@@ -25,6 +25,10 @@ RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 #USE_CDRTOOLS=	yes
 
+IGNORE=		does not compile with devel/py-sip>=4.10
+DEPRECATED=	broken
+EXPIRATION_DATE=2010-03-30
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

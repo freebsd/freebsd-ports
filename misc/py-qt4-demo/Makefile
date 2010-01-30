@@ -42,6 +42,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-co
 		${PKGNAMEPREFIX}xmlpatterns>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xmlpatterns \
 		${PKGNAMEPREFIX}help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
 		${PKGNAMEPREFIX}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
+		${PKGNAMEPREFIX}multimedia>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-multimedia \
 		${PKGNAMEPREFIX}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	${PKGNAMEPREFIX}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc

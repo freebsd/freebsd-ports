@@ -56,6 +56,10 @@ try:
 except ImportError:
     pass
 try:
+    from PyQt4.QtMultimedia import *
+except ImportError:
+    pass
+try:
     from PyQt4.phonon import *
 except ImportError:
     pass

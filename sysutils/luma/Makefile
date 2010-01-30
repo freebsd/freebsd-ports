@@ -7,7 +7,7 @@
 
 PORTNAME=	luma
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils net-mgmt
 MASTER_SITES=	SF
 # MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/

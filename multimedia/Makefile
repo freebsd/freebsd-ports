@@ -240,6 +240,7 @@
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
     SUBDIR += py-pybmp
+    SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
     SUBDIR += pyjama
     SUBDIR += qdvdauthor

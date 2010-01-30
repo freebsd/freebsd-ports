@@ -4,6 +4,7 @@
 %%SIP%%share/py-sip/QtOpenGL/qglcolormap.sip
 %%SIP%%share/py-sip/QtOpenGL/qglframebufferobject.sip
 %%SIP%%share/py-sip/QtOpenGL/qglpixelbuffer.sip
+%%SIP%%share/py-sip/QtOpenGL/qglshaderprogram.sip
 %%API%%share/qt4/qsci/api/python/QtOpenGL.api
 @dirrm %%SIP%%share/py-sip/QtOpenGL
 @dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

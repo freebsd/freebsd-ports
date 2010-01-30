@@ -1,0 +1,14 @@
+%%PYTHON_SITELIBDIR%%/PyQt4/QtMultimedia.so
+%%SIP%%share/py-sip/QtMultimedia/QtMultimediamod.sip
+%%SIP%%share/py-sip/QtMultimedia/qabstractvideobuffer.sip
+%%SIP%%share/py-sip/QtMultimedia/qabstractvideosurface.sip
+%%SIP%%share/py-sip/QtMultimedia/qaudio.sip
+%%SIP%%share/py-sip/QtMultimedia/qaudiodeviceinfo.sip
+%%SIP%%share/py-sip/QtMultimedia/qaudioformat.sip
+%%SIP%%share/py-sip/QtMultimedia/qaudioinput.sip
+%%SIP%%share/py-sip/QtMultimedia/qaudiooutput.sip
+%%SIP%%share/py-sip/QtMultimedia/qvideoframe.sip
+%%SIP%%share/py-sip/QtMultimedia/qvideosurfaceformat.sip
+%%API%%share/qt4/qsci/api/python/QtMultimedia.api
+%%SIP%%@dirrm share/py-sip/QtMultimedia
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

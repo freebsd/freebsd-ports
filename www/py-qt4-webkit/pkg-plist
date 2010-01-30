@@ -1,9 +1,13 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtWebKit.so
 %%SIP%%share/py-sip/QtWebKit/QtWebKitmod.sip
+%%SIP%%share/py-sip/QtWebKit/qgraphicswebview.sip
 %%SIP%%share/py-sip/QtWebKit/qwebdatabase.sip
+%%SIP%%share/py-sip/QtWebKit/qwebelement.sip
 %%SIP%%share/py-sip/QtWebKit/qwebframe.sip
 %%SIP%%share/py-sip/QtWebKit/qwebhistory.sip
 %%SIP%%share/py-sip/QtWebKit/qwebhistoryinterface.sip
+%%SIP%%share/py-sip/QtWebKit/qwebinspector.sip
+%%SIP%%share/py-sip/QtWebKit/qwebkitversion.sip
 %%SIP%%share/py-sip/QtWebKit/qwebpage.sip
 %%SIP%%share/py-sip/QtWebKit/qwebpluginfactory.sip
 %%SIP%%share/py-sip/QtWebKit/qwebsecurityorigin.sip

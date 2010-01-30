@@ -11,6 +11,7 @@
 %%SIP%%share/py-sip/QtNetwork/qlocalsocket.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkaccessmanager.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkcookie.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkcookiejar.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkdiskcache.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkinterface.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkproxy.sip

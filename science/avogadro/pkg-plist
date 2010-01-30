@@ -33,9 +33,9 @@ include/avogadro/pluginmanager.h
 include/avogadro/primitive.h
 include/avogadro/primitivelist.h
 include/avogadro/protein.h
-include/avogadro/pythonerror.h
-include/avogadro/pythoninterpreter.h
-include/avogadro/pythonscript.h
+%%PYTHON%%include/avogadro/pythonerror.h
+%%PYTHON%%include/avogadro/pythoninterpreter.h
+%%PYTHON%%include/avogadro/pythonscript.h
 include/avogadro/residue.h
 include/avogadro/tool.h
 include/avogadro/toolgroup.h
@@ -81,7 +81,7 @@ lib/avogadro/1_0/extensions/molecularpropextension.so
 lib/avogadro/1_0/extensions/networkfetchextension.so
 lib/avogadro/1_0/extensions/povrayextension.so
 lib/avogadro/1_0/extensions/propextension.so
-lib/avogadro/1_0/extensions/pythonterminal.so
+%%PYTHON%%lib/avogadro/1_0/extensions/pythonterminal.so
 lib/avogadro/1_0/extensions/selectextension.so
 lib/avogadro/1_0/extensions/spectraextension.so
 lib/avogadro/1_0/extensions/supercellextension.so
@@ -100,7 +100,7 @@ lib/avogadro/1_0/tools/selectrotatetool.so
 lib/libavogadro.so
 lib/libavogadro.so.1
 lib/libavogadro.so.1.0.0
-%%PYTHON_SITELIBDIR%%/Avogadro.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/Avogadro.so
 %%DATADIR%%/builder/amino/d-ala.zmat
 %%DATADIR%%/builder/amino/d-arg.zmat
 %%DATADIR%%/builder/amino/d-asn.zmat
@@ -420,8 +420,8 @@ lib/libavogadro.so.1.0.0
 %%DATADIR%%/i18n/libavogadro_uk.qm
 %%DATADIR%%/i18n/libavogadro_zh_CN.qm
 %%DATADIR%%/i18n/libavogadro_zh_TW.qm
-share/libavogadro/engineScripts/wireframe.py
-share/libavogadro/extensionScripts/example.py
+%%PYTHON%%share/libavogadro/engineScripts/wireframe.py
+%%PYTHON%%share/libavogadro/extensionScripts/example.py
 @dirrm share/libavogadro/extensionScripts
 @dirrm share/libavogadro/engineScripts
 @dirrm share/libavogadro
