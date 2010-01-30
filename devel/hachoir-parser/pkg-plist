@@ -145,6 +145,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/game/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/game/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/game/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/game/blp.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/game/blp.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/game/blp.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/game/laf.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/game/laf.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/game/laf.pyo
@@ -298,6 +301,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/program/java.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/program/java.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/program/java.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/program/prc.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/program/prc.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/program/prc.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/program/python.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/program/python.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/program/python.pyo

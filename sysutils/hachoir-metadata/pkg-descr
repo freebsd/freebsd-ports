@@ -10,4 +10,4 @@ hachoir-metadata is tool to extract metadata from multimedia files
 * Only depends on hachoir-parser (and not on libmatroska, libmpeg2,
   libvorbis, etc.)
 
-WWW: http://hachoir.org/wiki/hachoir-metadata
+WWW: http://bitbucket.org/haypo/hachoir/wiki/hachoir-metadata
