@@ -10,7 +10,6 @@ PORTVERSION=		5.6.0
 CATEGORIES=		security
 MASTER_SITES=		SF \
 			http://www.cryptopp.com/
-
 DISTNAME=		cryptopp${PORTVERSION:S/.//g}
 
 MAINTAINER=		delphij@FreeBSD.org
