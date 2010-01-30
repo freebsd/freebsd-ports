@@ -23,6 +23,7 @@ MAINTAINER=	frank@exit.com
 COMMENT=	Telnet program with zmodem transfer
 
 RESTRICTED=	"zmodem code has restrictive copyright"
+BROKEN=		does not fetch
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
