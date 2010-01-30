@@ -23,6 +23,8 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
+BROKEN=		does not build
+
 DBDIR?=		/var/db
 
 MAKE_JOBS_SAFE=	yes
