@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad/${PORTVERSION}/
 
-MAINTAINER=	matt.guegan@free.fr
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Xmonad is a minimalist and tiling window manager for X
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
