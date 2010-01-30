@@ -7,6 +7,7 @@
 
 PORTNAME=	FreeBSD-Pkgs-FindUpdates
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -18,7 +19,8 @@ COMMENT=	Finds updates for FreeBSD pkgs by checking the ports index
 
 RUN_DEPENDS=	${SITE_PERL}/FreeBSD/Ports/INDEXhash.pm:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Ports-INDEXhash \
 		${SITE_PERL}/FreeBSD/Pkgs.pm:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Pkgs \
-		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions
+		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions \
+		${SITE_PERL}/FreeBSD/Ports.pm:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Ports
 
 PERL_CONFIGURE=	yes
 
