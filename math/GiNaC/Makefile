@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -35,10 +35,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .if ${ARCH} == "alpha"
 BROKEN=		Does not build on alpha
-.endif
-
-.if ${OSVERSION} < 700042
-USE_GCC=	4.2+
 .endif
 
 post-patch:
