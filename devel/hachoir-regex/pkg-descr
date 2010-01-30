@@ -4,4 +4,4 @@ during the construction: merge ranges, simplify repetitions, etc. It
 also contains a class for pattern matching allowing to search multiple
 strings and regex at the same time.
 
-WWW: http://hachoir.org/wiki/hachoir-regex
+WWW: http://bitbucket.org/haypo/hachoir/wiki/hachoir-regex
