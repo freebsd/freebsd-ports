@@ -7,7 +7,7 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.65
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		games gnustep
 MASTER_SITES=		${MASTER_SITE_BERLIOS} \
 			ftp://ftp.alioth.net/%SUBDIR%/:alioth

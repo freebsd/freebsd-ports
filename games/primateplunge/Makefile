@@ -7,7 +7,7 @@
 
 PORTNAME=	primateplunge
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.aelius.com/primateplunge/
 

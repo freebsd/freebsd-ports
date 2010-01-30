@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.2.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}
@@ -21,6 +20,7 @@ LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
 
 USE_AUTOTOOLS=	libtool:22
 USE_SDL=	sdl
+USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

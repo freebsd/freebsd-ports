@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl_console
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/sdlconsole/sdlconsole-source/sdlconsole-${PORTVERSION}
 DISTNAME=	sdlconsole-${PORTVERSION}

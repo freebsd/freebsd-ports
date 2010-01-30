@@ -7,7 +7,7 @@
 
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/explosions/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}

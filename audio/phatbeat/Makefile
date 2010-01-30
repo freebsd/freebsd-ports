@@ -7,7 +7,7 @@
 
 PORTNAME=		phatbeat
 PORTVERSION=		1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=		audio
 MASTER_SITES=		http://www.postreal.org/files/
 DISTNAME=		PhatBeat-${PORTVERSION}

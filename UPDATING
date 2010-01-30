@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100130:
+  AFFECTS: users of audio/sdl_mixer and graphics/sdl_image
+  AUTHOR: mva@FreeBSD.org
+
+  The SDL_mixer and SDL_image libraries have new shared library versions.
+  Please rebuild all ports that depend on them.
+    
+  If you use portmaster:
+    
+        portmaster -r sdl_mixer-\*
+        portmaster -r sdl_image-\*
+  
+  If you use portupgrade:
+  
+        portupgrade -fr audio/sdl_mixer
+        portupgrade -fr graphics/sdl_image
+
 20100125:
   AFFECTS: users of audio/openal and graphics/openal-soft
   AUTHOR: mva@FreeBSD.org
