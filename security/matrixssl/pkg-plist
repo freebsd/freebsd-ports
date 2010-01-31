@@ -8,7 +8,8 @@ lib/libmatrixsslstatic.a
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLKeyGeneration.pdf
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLPortingGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLSocketApi.pdf
-%%PORTDOCS%%%%DOCSDIR%%/MatrixSSL1.8ReleaseNotes.pdf
+%%PORTDOCS%%%%DOCSDIR%%/MatrixSSL-1.8.8-SecurityNotes.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Renegotiating_TLS.pdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/CAcertSrv.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/certSrv.p12
