@@ -460,6 +460,7 @@
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
     SUBDIR += rpc
+    SUBDIR += rpcalc
     SUBDIR += rpy
     SUBDIR += ruby-algebra
     SUBDIR += ruby-bitset
