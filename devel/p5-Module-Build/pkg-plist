@@ -1,9 +1,8 @@
-@comment $FreeBSD$
-%%EXE_FILES%%bin/config_data
 %%SITE_PERL%%/Module/Build.pm
 %%SITE_PERL%%/Module/Build/API.pod
 %%SITE_PERL%%/Module/Build/Authoring.pod
 %%SITE_PERL%%/Module/Build/Base.pm
+%%SITE_PERL%%/Module/Build/Bundling.pod
 %%SITE_PERL%%/Module/Build/Compat.pm
 %%SITE_PERL%%/Module/Build/Config.pm
 %%SITE_PERL%%/Module/Build/ConfigData.pm
@@ -29,6 +28,11 @@
 %%SITE_PERL%%/Module/Build/PodParser.pm
 %%SITE_PERL%%/Module/Build/Version.pm
 %%SITE_PERL%%/Module/Build/YAML.pm
+%%SITE_PERL%%/inc/latest.pm
+%%SITE_PERL%%/inc/latest/private.pm
+%%EXE_FILES%%bin/config_data
+@dirrm %%SITE_PERL%%/inc/latest
+@dirrm %%SITE_PERL%%/inc
 @dirrm %%SITE_PERL%%/Module/Build/Platform
 @dirrm %%SITE_PERL%%/Module/Build
 @dirrmtry %%SITE_PERL%%/Module

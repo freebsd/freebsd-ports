@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.35
+PORTVERSION=	0.3601
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,7 +31,9 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-MAN3=		Module::Build.3 \
+MAN3=	inc::latest.3 \
+		Module::Build.3 \
+  		Module::Build::Bundling.3 \
 		Module::Build::API.3 \
 		Module::Build::Authoring.3 \
 		Module::Build::Base.3 \
@@ -54,8 +56,7 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::aix.3 \
 		Module::Build::Platform::cygwin.3 \
 		Module::Build::Platform::darwin.3 \
-		Module::Build::Platform::os2.3 \
-		Module::Build::YAML.3
+		Module::Build::Platform::os2.3
 
 .include <bsd.port.pre.mk>
 
