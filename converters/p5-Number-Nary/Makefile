@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Number-Nary
-PORTVERSION=	0.108
+PORTVERSION=	1.100310
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Encode and decode numbers as n-ary strings
 
-BUILD_DEPENDS=	${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
+BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-UDCode>=0:${PORTSDIR}/devel/p5-UDCode
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Number::Nary.3
 
