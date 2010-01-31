@@ -7,6 +7,7 @@
 
 PORTNAME=	skulltag
 PORTVERSION=	0.9.8a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://skulltag.net/download/files/release/
 DISTFILES=	st-v098a_linux-base.tar.bz2 st-v098a_linux-x86.tar.bz2
@@ -37,4 +38,10 @@ do-install:
 post-install:
 	${CAT} ${WRKDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+IGNORE=	Needs the newer FreeBSD 8.0 Linuxolator
+.endif
+
+.include <bsd.port.post.mk>
