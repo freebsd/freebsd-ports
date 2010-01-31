@@ -25,9 +25,9 @@ MAN8=		relay-ctrl-age.8 relay-ctrl-allow.8 relay-ctrl-check.8 \
 		relay-ctrl-send.8 relay-ctrl-udp.8
 DOCS=		ANNOUNCEMENT NEWS README TODO packet.html
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-install
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGDEINSTALL=	${PKGINSTALL}
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	EXPIRY=${RELAY_CTRL_EXPIRY} FIXUP=${RELAY_CTRL_RELAYCLIENT}
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
@@ -41,12 +41,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${SED} -e 's,%%EXPIRY%%,${RELAY_CTRL_EXPIRY},' \
-		-e 's,%%FIXUP%%,${RELAY_CTRL_RELAYCLIENT},' \
-		${PKGDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
-		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
