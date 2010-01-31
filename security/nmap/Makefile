@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nmap
-PORTVERSION=	5.00
+PORTVERSION=	5.21
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://nmap.ucsd.edu/dist/ \
@@ -31,7 +31,9 @@ CONFIGURE_ARGS=	--without-localdirs \
 		--with-liblua=${LOCALBASE}
 CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
-MAN1=		nmap.1 ncat.1
+MANLANG=	"" de es fr hr hu it jp pl pt_BR pt_PT ro ru sk zh
+MAN1=		nmap.1
+MAN1_EN=	ncat.1
 PLIST_SUB=	NCATDATADIR=share/ncat
 
 .ifndef WITHOUT_SSL
