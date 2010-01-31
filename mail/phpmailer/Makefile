@@ -21,10 +21,7 @@ NO_BUILD=	yes
 IGNORE_WITH_PHP=	4
 USE_PHP=	pcre
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-MSG_SRC=	${FILESDIR}/pkg-message
-
-MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -48,8 +45,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} ${MSG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${MSG_SRC} > \
-		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
