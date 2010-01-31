@@ -338,6 +338,7 @@
     SUBDIR += xbindkeys
     SUBDIR += xbindkeys_config
     SUBDIR += xbitmaps
+    SUBDIR += xbrightness
     SUBDIR += xcalc
     SUBDIR += xcalib
     SUBDIR += xcb

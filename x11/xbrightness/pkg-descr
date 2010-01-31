@@ -1,0 +1,4 @@
+This package contains xbrightness, a commandline tool for altering the
+brightness (and optionally gamma) through the X server.
+
+WWW: http://disjunkt.com/xbrightness/
