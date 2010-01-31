@@ -3,24 +3,25 @@
 # Whom:					Bob Bomar <bob@fly.homeunix.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	phpsysinfo
-DISTVERSION=	2.5.4
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	A PHP script for displaying system information
 
-CONFLICTS=	phpsysinfo-3.[0-9]*
 LATEST_LINK=	phpsysinfo-dev
 
-USE_PHP=	pcre xml simplexml
+USE_PHP=	pcre xml simplexml mbstring
 WANT_PHP_WEB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -37,4 +38,7 @@ do-install:
 	${FIND} ${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 	${CP} ${WWWDIR}/config.php.new ${WWWDIR}/config.php
 
+.if !defined(BATCH)
+	@ ${CAT} ${PKGMESSAGE}
+.endif
 .include <bsd.port.post.mk>
