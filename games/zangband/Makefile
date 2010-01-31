@@ -25,8 +25,9 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/lib --mandir=${PREFIX}/man \
 NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/MESSAGE
 PLIST_SUB+=	ANGBANDBIN=${ANGBANDBIN} ANGBANDLIB=${ANGBANDLIB}
+SUB_FILES=	pkg-message
+SUB_LIST=	ANGBANDBIN=${ANGBANDBIN} ANGBANDLIB=${ANGBANDLIB}
 
 SHAREOWN=	games
 SHAREGRP=	games
@@ -54,7 +55,6 @@ post-install:
 		${CHMOD} -R o+r help ; \
 		${CHMOD} 1777 save user \
 	)
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;s|%%ANGBANDBIN%%|${ANGBANDBIN}|g;s|%%ANGBANDLIB%%|${ANGBANDLIB}|g" ${FILESDIR}/MESSAGE.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
