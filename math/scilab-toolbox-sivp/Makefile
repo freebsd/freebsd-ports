@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab \
 LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab
 
+BROKEN=		does not build
+
 SCILABDIR?=	lib/scilab
 CONTRIBDIR?=	${SCILABDIR}/contrib
 TOOLBOXDIR?=	${CONTRIBDIR}/${PORTNAME}
