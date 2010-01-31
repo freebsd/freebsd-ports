@@ -33,12 +33,14 @@ PLIST_SUB=	EPOPPASSD=${EPOPPASSD} \
 
 MAN8=		qpopper.8
 
+SUB_FILES=	pkg-message
+
 # internal configuration
 POP_USER=	pop
 POP_GROUP=	daemon
 POP_MODE_DIR=	0711
 POP_MODE_CONF=	0444
-POPUSERS_FILE=	${PREFIX}/etc/qpopper/popusers
+POPUSERS_FILE=	${ETCDIR}/popusers
 SAMPLE_EXT=	.sample
 #
 PKGDEINSTALL=	${PKGINSTALL}
@@ -57,7 +59,7 @@ OPTIONS=	APOP_ONLY	"build with APOP authentication only" off \
 		STANDALONE_MODE	"build qpopper to be run without inetd" off \
 		U_OPTION	"include support for user .qpopper-options" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_IPV6)
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
@@ -68,7 +70,7 @@ PATCH_DIST_STRIP=	-p1
 .if defined(WITHOUT_APOP)
 QPOPAUTH=	"@comment "
 .else
-CONFIGURE_ARGS+=	--enable-apop=${PREFIX}/etc/qpopper/pop.auth \
+CONFIGURE_ARGS+=	--enable-apop=${ETCDIR}/pop.auth \
 			--with-apopuid=pop
 MAN8+=		qpopauth.8
 QPOPAUTH=	""
@@ -131,6 +133,8 @@ CONFIGURE_ARGS+=	--enable-standalone
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${RM} -f ${WRKSRC}/popper/md5.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/*
@@ -165,14 +169,14 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/password/poppassd ${PREFIX}/libexec/qpoppassd
 .endif
 	@${INSTALL} -d -o ${POP_USER} -g ${POP_GROUP} -m ${POP_MODE_DIR} \
-		${PREFIX}/etc/${PORTNAME}
+		${ETCDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/GUIDE.pdf ${DOCSDIR}
 .endif
 
 post-install: install-conf-file
-	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 # based on original from op port, written by Cyrille Lefevre
 # <clefevre@citeweb.net>.
