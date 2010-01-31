@@ -233,6 +233,9 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/FileChoosers.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/FilterBar.pyo
 %%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/Icons.pyo
@@ -263,12 +266,12 @@ share/applications/zenmap.desktop
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanHostsView.pyo
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.py
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.pyc
+%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanInterface.pyo
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNmapOutputPage.pyo
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNotebook.py
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNotebook.pyc
-%%PYTHON_SITELIBDIR%%/zenmapGUI/ScanNotebook.pyo
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/ScanOpenPortsPage.pyo
@@ -353,6 +356,7 @@ share/applications/zenmap.desktop
 %%DATADIR%%/locale/pt_BR/LC_MESSAGES/zenmap.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/zenmap.mo
 %%DATADIR%%/locale/de/LC_MESSAGES/zenmap.mo
+%%DATADIR%%/locale/ru/LC_MESSAGES/zenmap.mo
 %%DATADIR%%/misc/profile_editor.xml
 %%DATADIR%%/su-to-zenmap.sh
 @dirrm %%DATADIR%%/misc
@@ -364,6 +368,8 @@ share/applications/zenmap.desktop
 @dirrm %%DATADIR%%/locale/fr
 @dirrm %%DATADIR%%/locale/de/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/de
+@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/ru
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/config
