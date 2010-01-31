@@ -18,7 +18,6 @@ bin/ncat
 %%DATADIR%%/scripts/smb-system-info.nse
 %%DATADIR%%/scripts/smb-server-stats.nse
 %%DATADIR%%/scripts/smb-security-mode.nse
-%%DATADIR%%/scripts/smb-pwdump.nse
 %%DATADIR%%/scripts/smb-os-discovery.nse
 %%DATADIR%%/scripts/smb-enum-users.nse
 %%DATADIR%%/scripts/smb-enum-shares.nse
@@ -60,7 +59,53 @@ bin/ncat
 %%DATADIR%%/scripts/auth-spoof.nse
 %%DATADIR%%/scripts/auth-owners.nse
 %%DATADIR%%/scripts/asn-query.nse
+%%DATADIR%%/scripts/citrix-brute-xml.nse
+%%DATADIR%%/scripts/citrix-enum-apps-xml.nse
+%%DATADIR%%/scripts/citrix-enum-apps.nse
+%%DATADIR%%/scripts/citrix-enum-servers-xml.nse
+%%DATADIR%%/scripts/citrix-enum-servers.nse
+%%DATADIR%%/scripts/db2-info.nse
+%%DATADIR%%/scripts/dhcp-discover.nse
+%%DATADIR%%/scripts/http-date.nse
+%%DATADIR%%/scripts/http-enum.nse
+%%DATADIR%%/scripts/http-favicon.nse
+%%DATADIR%%/scripts/http-headers.nse
+%%DATADIR%%/scripts/http-malware-host.nse
+%%DATADIR%%/scripts/http-userdir-enum.nse
+%%DATADIR%%/scripts/nfs-showmount.nse
+%%DATADIR%%/scripts/ntp-info.nse
+%%DATADIR%%/scripts/oracle-sid-brute.nse
+%%DATADIR%%/scripts/pjl-ready-message.nse
+%%DATADIR%%/scripts/smb-enum-groups.nse
+%%DATADIR%%/scripts/smb-psexec.nse
+%%DATADIR%%/scripts/smbv2-enabled.nse
+%%DATADIR%%/scripts/ssl-cert.nse
+%%DATADIR%%/scripts/x11-access.nse
 @dirrm %%DATADIR%%/scripts
+%%DATADIR%%/nselib/data/psexec/backdoor.lua
+%%DATADIR%%/nselib/data/psexec/drives.lua
+%%DATADIR%%/nselib/data/psexec/nmap_service.exe
+%%DATADIR%%/nselib/data/psexec/network.lua
+%%DATADIR%%/nselib/data/psexec/nmap_service.c
+%%DATADIR%%/nselib/data/psexec/experimental.lua
+%%DATADIR%%/nselib/data/psexec/pwdump.lua
+%%DATADIR%%/nselib/data/psexec/default.lua
+%%DATADIR%%/nselib/data/psexec/nmap_service.vcproj
+%%DATADIR%%/nselib/data/psexec/encoder.c
+%%DATADIR%%/nselib/data/psexec/examples.lua
+%%DATADIR%%/nselib/data/psexec/README
+@dirrm %%DATADIR%%/nselib/data/psexec
+%%DATADIR%%/nselib/data/usernames.lst
+%%DATADIR%%/nselib/data/favicon-db
+%%DATADIR%%/nselib/data/http-fingerprints
+%%DATADIR%%/nselib/data/folders.lst
+%%DATADIR%%/nselib/data/oracle-sids
+%%DATADIR%%/nselib/data/passwords.lst
+%%DATADIR%%/nselib/data/yokoso-fingerprints
+@dirrm %%DATADIR%%/nselib/data
+%%DATADIR%%/nselib/citrixxml.lua
+%%DATADIR%%/nselib/proxy.lua
+%%DATADIR%%/nselib/strict.lua
 %%DATADIR%%/nselib/http.lua
 %%DATADIR%%/nselib/ipOps.lua
 %%DATADIR%%/nselib/strbuf.lua
@@ -101,6 +146,38 @@ bin/ncat
 @dirrm %%DATADIR%%
 %%NCATDATADIR%%/ca-bundle.crt
 @dirrm %%NCATDATADIR%%
+@dirrmtry man/de/man1
+@dirrmtry man/de
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/hr/man1
+@dirrmtry man/hr
+@dirrmtry man/hu/man1
+@dirrmtry man/hu
+@dirrmtry man/it/man1
+@dirrmtry man/it
+@dirrmtry man/jp/man1
+@dirrmtry man/jp
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry man/pt_PT/man1
+@dirrmtry man/pt_PT
+@dirrmtry man/pt_BR/man1
+@dirrmtry man/pt_BR
+@dirrmtry man/pt/man1
+@dirrmtry man/pt
+@dirrmtry man/ro/man1
+@dirrmtry man/ro
+@dirrmtry man/ro/man1
+@dirrmtry man/ro
+@dirrmtry man/sk/man1
+@dirrmtry man/sk
+@dirrmtry man/zh/man1
+@dirrmtry man/zh
+man/pt_PT
+
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
