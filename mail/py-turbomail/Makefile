@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turbomail
-PORTVERSION=	3.0
+PORTVERSION=	3.0.3
 CATEGORIES=	mail www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
