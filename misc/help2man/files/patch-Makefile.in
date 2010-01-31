@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2010-02-01 00:46:42.000000000 +0100
++++ Makefile.in	2010-02-01 00:47:31.000000000 +0100
+@@ -23,6 +23,7 @@
+ LIBS = @LIBS@
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_INFO = @INSTALL_INFO@
+ MAKEINFO = @MAKEINFO@
+@@ -41,7 +42,7 @@
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
+ 
+-	$(INSTALL_PROGRAM) $(target) $(DESTDIR)$(bindir)
++	$(INSTALL_SCRIPT) $(target) $(DESTDIR)$(bindir)
+ 	$(INSTALL_DATA) $(srcdir)/$(target).1 $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL_DATA) $(srcdir)/$(target).info \
+ 	    $(DESTDIR)$(infodir)/$(target).info
