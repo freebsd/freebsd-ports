@@ -31,8 +31,7 @@ SUB_LIST+=	COURIERGRAPH_USER=${COURIERGRAPH_USER} COURIERGRAPH_GROUP=${COURIERGR
 
 STARTUP_FILE=	${PREFIX}/etc/rc.d/couriergraph.sh
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
 
 pre-everything::
 	@${ECHO_MSG}
@@ -46,7 +45,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/couriergraph.cgi
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/couriergraph.pl
-	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin
