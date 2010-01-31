@@ -1423,6 +1423,7 @@
     SUBDIR += quixote
     SUBDIR += red5
     SUBDIR += redmine
+    SUBDIR += redmine-basecamp
     SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
