@@ -34,7 +34,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/xtexshrc ${PREFIX}/etc/xtexshrc
 	@${MKDIR} ${PREFIX}/share/xtexsh
 .for f in xtexsh-mini.png xtexsh.png xtexsh.desktop xtexsh.spec
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/xtexsh
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
