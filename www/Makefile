@@ -207,6 +207,7 @@
     SUBDIR += etoile-rsskit
     SUBDIR += eventum
     SUBDIR += evolution-webcal
+    SUBDIR += extjs
     SUBDIR += extsm
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
