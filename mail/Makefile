@@ -197,6 +197,7 @@
     SUBDIR += imap-uw
     SUBDIR += imapfilter
     SUBDIR += imapsync
+    SUBDIR += isbg
     SUBDIR += isoqlog
     SUBDIR += isync
     SUBDIR += itraxp
