@@ -22,8 +22,10 @@ CFLAGS+=	-fPIC
 
 MAN1=		hspell.1
 MAN3=		hspell.3
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTSDIR=${PORTSDIR}
 
 post-install:
-	@${SED} -e "s:%%PORTSDIR%%:${PORTSDIR}:g" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
