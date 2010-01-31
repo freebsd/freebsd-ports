@@ -23,9 +23,6 @@ MANCOMPRESSED=	yes
 MAN8=		cdcc.8 dbclean.8 dblist.8 dcc.8 dccd.8 dccifd.8 dccm.8 \
 		dccproc.8 dccsight.8
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
 USE_RC_SUBR=
 
 #
@@ -70,10 +67,11 @@ PLIST_SUB+=	DCCUSER="${DCCUSER}"
 #
 CONFIGURE_ARGS=	--with-uid=${DCCUSER} --bindir=${PREFIX}/bin --mandir=${MANPREFIX}/man --with-configsuffix=.sample
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-SUB_FILES=		pkg-message
-SUB_LIST+=		WRKSRC=${WRKSRC}
+SUB_FILES=		pkg-install pkg-deinstall pkg-message
+SUB_LIST+=		WRKSRC=${WRKSRC} DCCUSER=${DCCUSER} DCCUID=${DCCUID} \
+			DCCGROUP=${DCCGROUP} DCCGID=${DCCGID} DCCHOME=${DCCHOME}
 
 ## /var/dcc home support
 #
@@ -86,7 +84,6 @@ DCCHOME=		${PREFIX}/dcc
 PLIST_SUB+=		WITH_ALT_HOME="@comment "
 .endif
 
-SUB_LIST+=		DCCHOME=${DCCHOME}
 CONFIGURE_ARGS+=	--homedir=${DCCHOME}
 
 ## dccm milter support
@@ -172,21 +169,12 @@ PLIST_SUB+=	WITH_DCCGREY=""
 PLIST_SUB+=	WITH_DCCGREY="@comment "
 .endif
 
-## Substitutions in pkg-install and pkg-deinstall
-#
-SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%DCCUSER%%|${DCCUSER}|g' -e 's|%%DCCUID%%|${DCCUID}|g' \
-		-e 's|%%DCCGROUP%%|${DCCGROUP}|g' -e 's|%%DCCGID%%|${DCCGID}|g' \
-		-e 's|%%DCCHOME%%|${DCCHOME}|g'
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO_MSG} ' '
 	@${ECHO_MSG} 'A description of ALT_HOME may be found in the port's Makefile.'
 	@${ECHO_MSG} ' '
-
-post-build:
-	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
-	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-deinstall >${PKGDEINSTALL}
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \

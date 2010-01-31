@@ -54,10 +54,10 @@ dcc/libexec/wlist
 %%WITH_ALT_HOME%%@cwd /var
 @comment -------------------------
 @comment The next group of three-line sets install/remove the config files
-@comment 
+@comment
 @comment **** on uninstall, delete the config file if it matches the sample file
 @unexec if cmp -s %D/dcc/dcc_conf %D/dcc/dcc_conf.sample; then rm -f %D/dcc/dcc_conf; fi
-@comment 
+@comment
 @comment **** the sample file is unilaterally installed/removed
 dcc/dcc_conf.sample
 @comment
