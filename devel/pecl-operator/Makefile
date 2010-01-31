@@ -14,7 +14,7 @@ DISTNAME=	operator-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP extension that provides operator overloading for PHP objects
 
 USE_PHP=	yes
