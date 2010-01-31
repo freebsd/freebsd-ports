@@ -20,13 +20,13 @@ COMMENT=	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 PORTDOCS=	ChangeLog bug.html conf.html embed.html index.html intro.html \
 		keys.html log.html mouse.html tidy.html tidy.png todo tpad.html
 MAN1=		tpad.1
 MLINKS=		tpad.1 tview.1
 PLIST_SUB=	LIBDIR=lib/tpad${PORTVERSION}
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/bin/tpad ${PREFIX}/bin/tpad
@@ -57,7 +57,6 @@ post-install:
 .endfor
 .endif
 	${INSTALL_DATA} ${WRKDIR}/etc/tpad.conf ${PREFIX}/etc/tpad.conf.sample
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
