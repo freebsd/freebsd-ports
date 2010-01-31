@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nagiosgraph
-PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTVERSION=	1.4.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Generate rrdtool\'s graphs by performance data from nagios plugins
@@ -21,41 +19,46 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios \
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-PORTDOCS=	CHANGELOG INSTALL README README.map
+PORTDOCS=	AUTHORS CHANGELOG INSTALL README README.map TODO
 
 PLIST_SUB=	NAGIOSWWWDIR=${NAGIOSWWWDIR}
 
 NAGIOSWWWDIR?=	www/nagios
 
 post-patch:
-.for i in insert.pl testcolor.cgi testentry.pl
+.for i in lib/insert.pl cgi/show.cgi cgi/showgraph.cgi cgi/showhost.cgi cgi/showservice.cgi cgi/testcolor.cgi
 	${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
-		-e 's!nagiosgraph\.conf!nagios/nagiosgraph/nagiosgraph.conf!g' ${WRKSRC}/$i
-.endfor
-.for i in show.cgi
-	${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
-		-e 's!nagiosgraph/nagiosgraph\.conf!nagios/nagiosgraph/nagiosgraph.conf!g' ${WRKSRC}/$i
+		-e 's!/etc/nagios/!/usr/local/etc/nagios/!g' ${WRKSRC}/$i
 .endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/etc/nagios/nagiosgraph
-.for i in map nagiosgraph.conf
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/nagios/nagiosgraph/${i}.example
+
+	${INSTALL_DATA} ${WRKSRC}/etc/ngshared.pm ${PREFIX}/etc/nagios/nagiosgraph/ngshared.pm
+
+.for i in hostdb.conf map nagiosgraph.conf servdb.conf
+	${INSTALL_DATA} ${WRKSRC}/etc/$i ${PREFIX}/etc/nagios/nagiosgraph/${i}.example
 .endfor
 
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/insert.pl ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/insert.pl ${PREFIX}/libexec/${PORTNAME}
 
 	${MKDIR} ${PREFIX}/${NAGIOSWWWDIR}/cgi-bin/nagiosgraph
-.for i in show.cgi testcolor.cgi
+.for i in cgi/show.cgi cgi/showgraph.cgi cgi/showhost.cgi cgi/showservice.cgi cgi/testcolor.cgi
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/${NAGIOSWWWDIR}/cgi-bin/nagiosgraph
 .endfor
 
 	${MKDIR} ${PREFIX}/${NAGIOSWWWDIR}/stylesheets
-	${INSTALL_DATA} ${WRKSRC}/nagiosgraph.css ${PREFIX}/${NAGIOSWWWDIR}/stylesheets
+.for i in share/action.gif share/nagiosgraph.css share/nagiosgraph.js
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${NAGIOSWWWDIR}/stylesheets
+.endfor
 
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/testentry.pl ${EXAMPLESDIR}
+.for i in utils/authz.pl utils/testentry.pl utils/upgrade.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/$i ${EXAMPLESDIR}
+.endfor
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
