@@ -17,6 +17,7 @@ COMMENT=	A simple curses/ncurses based juke box program
 GNU_CONFIGURE=		yes
 
 MAN1=			juke.1
+SUB_FILES=		pkg-message
 
 .if defined(WITH_VI_BINDINGS)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-vi
@@ -24,6 +25,6 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-vi
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/juke.conf ${PREFIX}/etc/juke.conf.sample
-	@${SED} 's,PREFIX,${PREFIX},' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
