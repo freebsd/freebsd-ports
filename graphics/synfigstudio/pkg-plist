@@ -84,6 +84,8 @@ include/synfigapp-0.0/synfigapp/waypointremove.h
 include/synfigapp-0.0/synfigapp/waypointset.h
 include/synfigapp-0.0/synfigapp/waypointsetsmart.h
 include/synfigapp-0.0/synfigapp/waypointsimpleadd.h
+include/synfigapp-0.0/synfigapp/waypointconnect.h
+include/synfigapp-0.0/synfigapp/waypointdisconnect.h
 lib/libsynfigapp.la
 lib/libsynfigapp.so
 lib/libsynfigapp.so.0
@@ -97,6 +99,7 @@ share/applications/synfigstudio.desktop
 share/locale/ca/LC_MESSAGES/synfigstudio.mo
 share/locale/es/LC_MESSAGES/synfigstudio.mo
 share/locale/fr/LC_MESSAGES/synfigstudio.mo
+share/locale/ru/LC_MESSAGES/synfigstudio.mo
 share/mime-info/synfigstudio.keys
 share/mime-info/synfigstudio.mime
 share/icons/hicolor/128x128/apps/synfig_icon.png
@@ -172,6 +175,25 @@ share/pixmaps/synfigstudio/valuenode_icon.png
 share/pixmaps/synfigstudio/vector_icon.png
 share/pixmaps/synfigstudio/width_icon.png
 share/pixmaps/synfigstudio/zoom_icon.png
+share/pixmaps/synfigstudio/set_fill_color.png
+share/pixmaps/synfigstudio/set_outline_color.png
+share/pixmaps/synfigstudio/seek_begin.png
+share/pixmaps/synfigstudio/seek_end.png
+share/pixmaps/synfigstudio/seek_next_frame.png
+share/pixmaps/synfigstudio/seek_prev_frame.png
+share/pixmaps/synfigstudio/duck_position_icon.png
+share/pixmaps/synfigstudio/duck_vertex_icon.png
+share/pixmaps/synfigstudio/duck_tangent_icon.png
+share/pixmaps/synfigstudio/duck_radius_icon.png
+share/pixmaps/synfigstudio/duck_width_icon.png
+share/pixmaps/synfigstudio/duck_angle_icon.png
+share/pixmaps/synfigstudio/show_grid_icon.png
+share/pixmaps/synfigstudio/snap_grid_icon.png
+share/pixmaps/synfigstudio/onion_skin_icon.png
+share/pixmaps/synfigstudio/incr_resolution_icon.png
+share/pixmaps/synfigstudio/decr_resolution_icon.png
+share/pixmaps/synfigstudio/render_options_icon.png
+share/pixmaps/synfigstudio/preview_options_icon.png
 @dirrm share/pixmaps/synfigstudio
 @dirrmtry share/mime-info
 @dirrmtry share/applications

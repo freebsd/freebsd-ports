@@ -114,6 +114,12 @@ include/synfig-0.0/synfig/valuenode_vectorlength.h
 include/synfig-0.0/synfig/valuenode_vectorx.h
 include/synfig-0.0/synfig/valuenode_vectory.h
 include/synfig-0.0/synfig/valuenode_log.h
+include/synfig-0.0/synfig/valuenode_and.h
+include/synfig-0.0/synfig/valuenode_compare.h
+include/synfig-0.0/synfig/valuenode_greyed.h
+include/synfig-0.0/synfig/valuenode_not.h
+include/synfig-0.0/synfig/valuenode_or.h
+include/synfig-0.0/synfig/valuenode_pow.h
 include/synfig-0.0/synfig/vector.h
 include/synfig-0.0/synfig/version.h
 include/synfig-0.0/synfig/waypoint.h
@@ -142,8 +148,6 @@ lib/synfig/modules/libmod_imagemagick.la
 lib/synfig/modules/libmod_imagemagick.so
 lib/synfig/modules/libmod_jpeg.la
 lib/synfig/modules/libmod_jpeg.so
-lib/synfig/modules/libmod_libavcodec.la
-lib/synfig/modules/libmod_libavcodec.so
 lib/synfig/modules/libmod_mng.la
 lib/synfig/modules/libmod_mng.so
 lib/synfig/modules/libmod_noise.la
@@ -158,6 +162,10 @@ lib/synfig/modules/libmod_ppm.la
 lib/synfig/modules/libmod_ppm.so
 lib/synfig/modules/libmod_yuv420p.la
 lib/synfig/modules/libmod_yuv420p.so
+lib/synfig/modules/libmod_svg.so
+lib/synfig/modules/libmod_svg.la
+lib/synfig/modules/libexample.so
+lib/synfig/modules/libexample.la
 libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -167,6 +175,7 @@ libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/locale/es/LC_MESSAGES/synfig.mo
 share/locale/fr/LC_MESSAGES/synfig.mo
+share/locale/ru/LC_MESSAGES/synfig.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/synfig/modules
 @dirrm lib/synfig
