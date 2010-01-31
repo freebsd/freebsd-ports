@@ -33,12 +33,14 @@ share/locale/br/LC_MESSAGES/metacity.mo
 share/locale/bs/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
 share/locale/ca@valencia/LC_MESSAGES/metacity.mo
+share/locale/crh/LC_MESSAGES/metacity.mo
 share/locale/cs/LC_MESSAGES/metacity.mo
 share/locale/cy/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
 share/locale/de/LC_MESSAGES/metacity.mo
 share/locale/dz/LC_MESSAGES/metacity.mo
 share/locale/el/LC_MESSAGES/metacity.mo
+share/locale/en@shaw/LC_MESSAGES/metacity.mo
 share/locale/en_CA/LC_MESSAGES/metacity.mo
 share/locale/en_GB/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
@@ -264,8 +266,12 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/ha/LC_MESSAGES
 @dirrmtry share/locale/ha
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
