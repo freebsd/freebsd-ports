@@ -1,0 +1,20 @@
+bin/desktop-installer
+%%DATADIR%%/KDE3/Xsession
+%%DATADIR%%/KDE3/xinitrc
+%%DATADIR%%/KDE4/Xsession
+%%DATADIR%%/KDE4/xinitrc
+%%DATADIR%%/PolicyKit.conf
+%%DATADIR%%/XFCE4/GiveConsole
+%%DATADIR%%/XFCE4/Xsession
+%%DATADIR%%/XFCE4/Xsetup_0
+%%DATADIR%%/XFCE4/Xstartup
+%%DATADIR%%/XFCE4/beastie.xpm
+%%DATADIR%%/XFCE4/bsd_background.jpg
+%%DATADIR%%/XFCE4/xdmshutdown
+%%DATADIR%%/XFCE4/xinitrc
+%%DATADIR%%/ntp.conf
+%%DATADIR%%/todo
+@dirrm %%DATADIR%%/XFCE4
+@dirrm %%DATADIR%%/KDE4
+@dirrm %%DATADIR%%/KDE3
+@dirrm %%DATADIR%%

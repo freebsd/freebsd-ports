@@ -146,6 +146,7 @@
     SUBDIR += decomment
     SUBDIR += deleted
     SUBDIR += deltup
+    SUBDIR += desktop-installer
     SUBDIR += desktopbsd-tools
     SUBDIR += detach
     SUBDIR += detox
