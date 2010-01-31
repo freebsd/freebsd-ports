@@ -7,35 +7,25 @@
 
 PORTNAME=	igmpproxy
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-beta2
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-beta2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	melifaro@ipfw.ru
 COMMENT=	Multicast forwarding IGMP proxy
 
 HOMEPAGE=	http://igmpproxy.sourceforge.net/
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/src
-
 USE_RC_SUBR=	igmpproxy
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 MAN5=		igmpproxy.conf.5
 MAN8=		igmpproxy.8
 
 PLIST_FILES=	sbin/igmpproxy \
+		etc/igmpproxy.conf \
 		etc/igmpproxy.conf.sample
-
-post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/igmpproxy ${PREFIX}/sbin/
-	@${INSTALL_DATA} ${WRKSRC}/src/igmpproxy.conf ${PREFIX}/etc/igmpproxy.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/doc/igmpproxy.8 ${PREFIX}/man/man8/
-	@${INSTALL_MAN} ${WRKSRC}/doc/igmpproxy.conf.5 ${PREFIX}/man/man5/
 
 .include <bsd.port.mk>

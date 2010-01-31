@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2009-12-20 13:13:06.000000000 +0300
++++ Makefile.in	2009-12-20 13:15:11.000000000 +0300
+@@ -284,7 +284,10 @@
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  if [ ! -f "$(DESTDIR)$(sysconfdir)/$$files" ]; then \
++	  	$(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  fi; \
++	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)/$$files.sample" || exit $$?; \
+ 	done
+ 
+ uninstall-dist_sysconfDATA:
