@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-builtin"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
+SUB_FILES=	pkg-message
 
 do-install:
 	${MKDIR} ${PREFIX}/etc/bforce
@@ -32,6 +33,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nlookup ${PREFIX}/bin
-	@${SED} "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
