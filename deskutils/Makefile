@@ -283,6 +283,7 @@
     SUBDIR += xpostitPlus
     SUBDIR += xrolo
     SUBDIR += xwrits
+    SUBDIR += znotes
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
