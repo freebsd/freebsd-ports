@@ -15,8 +15,7 @@ COMMENT=	Sendmail Analysis Report Generator
 
 GNU_CONFIGURE=	yes
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf ${PREFIX}/etc/mailmgr.conf.default
@@ -24,7 +23,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf ${PREFIX}/etc/mailmgr.conf
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/mailmgr ${PREFIX}/bin
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
