@@ -1,0 +1,11 @@
+--- nmapsi4-logr/CMakeLists.txt.orig	2009-12-29 14:35:41.000000000 +0700
++++ nmapsi4-logr/CMakeLists.txt	2009-12-29 14:36:02.000000000 +0700
+@@ -67,7 +67,7 @@ endif (WIN32)
+ if (Q_WS_X11)
+   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
+   install(FILES "${CMAKE_CURRENT_BINARY_DIR}/nmapsi4-logr" DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+-  install(FILES "src/nmapsi4-logr.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde/)
++  install(FILES "src/nmapsi4-logr.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/)
+ #  install(FILES "src/kde/nmapsi4-admin.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde/)
+ #  install(FILES "icons/16x16/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/16x16/apps/)
+ #  install(FILES "icons/32x32/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps/)
