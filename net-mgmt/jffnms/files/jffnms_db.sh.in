@@ -7,5 +7,5 @@
 		GRANT ALL PRIVILEGES ON jffnms.* TO jffnms@localhost
 		IDENTIFIED BY 'jffnms';
 		FLUSH PRIVILEGES; use jffnms;"
-	cat %JFFNMSDIR%/docs/%JFFNMS%.mysql
+	cat %%WWWDIR%%/docs/%%DISTNAME%%.mysql
 } | mysql ${*}

@@ -7,7 +7,7 @@
 
 PORTNAME=	jffnms
 PORTVERSION=	0.8.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -22,40 +22,36 @@ RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
 USE_PHP=	gd snmp sockets
 USE_MYSQL=	yes
 
-JFFNMSDIR?=	share/jffnms
 CRONTAB?=	/usr/bin/crontab
 
-PLIST_SUB=	JFFNMSDIR=${JFFNMSDIR}
+SUB_FILES=	jffnms.cron jffnms_db.sh pkg-message
+SUB_LIST=	DISTNAME=${DISTNAME}
 
 do-build:
 
 do-install:
-	@-${RM} ${WRKSRC}/engine/tmpwatch.sh.orig > /dev/null 2>&1
-	@${MKDIR} ${PREFIX}/${JFFNMSDIR}
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/${JFFNMSDIR}
-	@${CHOWN} -R www:www ${PREFIX}/${JFFNMSDIR}
-	@${SED} -e 's|%LOCALBASE%|${PREFIX}|g' \
-		-e 's|%JFFNMSDIR%|${PREFIX}/${JFFNMSDIR}|g' ${FILESDIR}/jffnms.cron \
-		> ${PREFIX}/${JFFNMSDIR}/jffnms.cron
-	@${SED} -e 's|%JFFNMSDIR%|${PREFIX}/${JFFNMSDIR}|g' \
-		-e 's|%JFFNMS%|${DISTNAME}|g' ${FILESDIR}/jffnms_db.sh \
-		> ${PREFIX}/${JFFNMSDIR}/jffnms_db.sh
-	@${CRONTAB} -u www ${PREFIX}/${JFFNMSDIR}/jffnms.cron
-	@${SED} -e 's|%JFFNMSDIR%|${PREFIX}/${JFFNMSDIR}|g' ${PKGMESSAGE}
+	@${MKDIR} ${WWWDIR}
+	@${CP} -R ${WRKSRC}/* ${WWWDIR}
+	@${CHOWN} -R www:www ${WWWDIR}
+	@${INSTALL_DATA} ${WRKDIR}/jffnms.cron ${WWWDIR}/jffnms.cron
+	@${INSTALL_SCRIPT} ${WRKDIR}/jffnms_db.sh ${WWWDIR}/jffnms_db.sh
+	@${CRONTAB} -u www ${WWWDIR}/jffnms.cron
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
 #
 #	!!! Maintainer only !!!
 #
 packinglist: pkg-plist.new
 pkg-plist.new:
 	@${ECHO_MSG} '---> Making ${@}'
-	@${FIND} '${PREFIX}/${JFFNMSDIR}' -type f | \
-		${SED} -e 's|^${PREFIX}/${JFFNMSDIR}|%%JFFNMSDIR%%|' | \
+	@${FIND} '${WWWDIR}' -type f | \
+	${SED} -e 's|^${WWWDIR}|%%WWWDIR%%|' | \
 		${SORT} -t / > ${@}
-	@${FIND} '${PREFIX}/${JFFNMSDIR}' -type d | \
+	@${FIND} '${WWWDIR}' -type d | \
 		${SORT} -rt / | \
-		${SED} -e 's|^${PREFIX}/${JFFNMSDIR}|@dirrm %%JFFNMSDIR%%|' >> ${@}
-	@${ECHO} "@exec crontab -u www %%JFFNMSDIR%%/jffnms.cron" >> ${@}
+		${SED} -e 's|^${WWWDIR}|@dirrm %%WWWDIR%%|' >> ${@}
+	@${ECHO} "@exec crontab -u www %%WWWDIR%%/jffnms.cron" >> ${@}
 	@${ECHO} "@unexec crontab -u www -l | sed 's|.*JFFNMS.*||' | crontab -u www -" >> ${@}
 
 .include <bsd.port.mk>
