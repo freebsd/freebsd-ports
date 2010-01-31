@@ -1,14 +1,19 @@
 bin/help2man
-%%NLS%%lib/hacklocaledir.so
+%%NLS%%share/locale/de/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/help2man.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/help2man.mo
+%%NLS%%@dirrmtry man/de/man1
+%%NLS%%@dirrmtry man/de
 %%NLS%%@dirrmtry man/fi/man1
 %%NLS%%@dirrmtry man/fi
 %%NLS%%@dirrmtry man/fr/man1
 %%NLS%%@dirrmtry man/fr
 %%NLS%%@dirrmtry man/pl/man1
 %%NLS%%@dirrmtry man/pl
+%%NLS%%@dirrmtry man/pt_BR/man1
+%%NLS%%@dirrmtry man/pt_BR
 %%NLS%%@dirrmtry man/sv/man1
 %%NLS%%@dirrmtry man/sv

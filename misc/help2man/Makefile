@@ -7,25 +7,26 @@
 #
 
 PORTNAME=	help2man
-PORTVERSION=	1.36.4
-PORTREVISION=	3
+PORTVERSION=	1.37.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically generating simple manual pages from program output
 
 .if !defined(WITHOUT_NLS)
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
-MANLANG=	"" pl fr fi sv
+MANLANG=	"" de fi fr pl pt_BR sv
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
+INSTALL_TARGET=	install install_l10n
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
+INSTALL_TARGET=	install
 .endif
 
 GNU_CONFIGURE=	yes
