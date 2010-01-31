@@ -1,0 +1,6 @@
+
+A sample configuration file has been copied to
+%%PREFIX%%/etc/juke.conf.sample.  Juke will not work without either
+%%PREFIX%%/etc/juke.conf or the running user's ~/.juke.conf being
+in place.
+
