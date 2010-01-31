@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	bundler
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	http://gems.rubyforge.mmmultiworks.com/gems/
+MASTER_SITES=	http://s3.amazonaws.com/gemcutter_production/gems/
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A tool that manages gem dependencies for ruby applications
