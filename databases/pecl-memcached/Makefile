@@ -7,6 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -27,7 +28,14 @@ USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 CONFIGURE_ARGS+=--with-libmemcached-dir=${LOCALBASE}
 
-post-install:
-	@${CAT} ${WRKSRC}/EXPERIMENTAL
+OPTIONS=	IGBINARY "Binary serializer support" off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IGBINARY)
+CONFIGURE_ARGS+=--enable-memcached-igbinary
+BUILD_DEPENDS+=	${LOCALBASE}lib/php/${PHP_EXT_DIR}/igbinary.so:${PORTSDIR}/converters/igbinary
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/igbinary.so:${PORTSDIR}/converters/igbinary
+.endif
+
+.include <bsd.port.post.mk>
