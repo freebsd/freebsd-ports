@@ -1,15 +1,25 @@
+etc/nagios/nagiosgraph/hostdb.conf.example
 etc/nagios/nagiosgraph/map.example
 etc/nagios/nagiosgraph/nagiosgraph.conf.example
+etc/nagios/nagiosgraph/ngshared.pm
+etc/nagios/nagiosgraph/servdb.conf.example
 libexec/nagiosgraph/insert.pl
-%%EXAMPLESDIR%%/testentry.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/authz.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testentry.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade.pl
 %%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/show.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/showgraph.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/showhost.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/showservice.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/testcolor.cgi
+%%NAGIOSWWWDIR%%/stylesheets/action.gif
 %%NAGIOSWWWDIR%%/stylesheets/nagiosgraph.css
-@dirrm etc/nagios/nagiosgraph
-@dirrmtry etc/nagios
-@dirrm libexec/nagiosgraph
-@dirrm %%EXAMPLESDIR%%
+%%NAGIOSWWWDIR%%/stylesheets/nagiosgraph.js
+@dirrmtry %%NAGIOSWWWDIR%%/stylesheets
 @dirrm %%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph
 @dirrmtry %%NAGIOSWWWDIR%%/cgi-bin
-@dirrmtry %%NAGIOSWWWDIR%%/stylesheets
 @dirrmtry %%NAGIOSWWWDIR%%
+@dirrm libexec/nagiosgraph
+@dirrm etc/nagios/nagiosgraph
+@dirrmtry etc/nagios
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
