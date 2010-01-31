@@ -3,10 +3,9 @@
 %%QPOPAUTH%%@exec ln -sf %D/bin/qpopauth %D/bin/qapopauth
 libexec/qpopper
 %%EPOPPASSD%%libexec/qpoppassd
-@exec mkdir -p %D/etc/qpopper && chown %%POP_USER%%:%%POP_GROUP%% %D/etc/qpopper && chmod %%POP_MODE_DIR%% %D/etc/qpopper
-@mode %%POP_MODE_CONF%%
-etc/qpopper/popusers.sample
+@exec mkdir -p %%ETCDIR%% && chown %%POP_USER%%:%%POP_GROUP%% %%ETCDIR%% && chmod %%POP_MODE_DIR%% %%ETCDIR%%
+%%ETCDIR%%/popusers.sample
 etc/qpopper.config.sample
-%%PORTDOCS%%share/doc/qpopper/GUIDE.pdf
-%%PORTDOCS%%@dirrm share/doc/qpopper
-@unexec rmdir %D/etc/qpopper 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/qpopper`` to remove any configuration files and logs left." | fmt
+%%PORTDOCS%%%%DOCSDIR%%/GUIDE.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%ETCDIR%% || echo "If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files and logs left." | fmt
