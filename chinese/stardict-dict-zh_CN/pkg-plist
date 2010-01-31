@@ -17,3 +17,4 @@ share/stardict/dic/xdict-ec-gb.dict.dz
 share/stardict/dic/xdict-ec-gb.idx
 share/stardict/dic/xdict-ec-gb.ifo
 @dirrmtry share/stardict/dic
+@dirrmtry share/stardict
