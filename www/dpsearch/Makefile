@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.52
+PORTVERSION=	4.53
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/
@@ -29,7 +29,6 @@ SUB_FILES=	pkg-message
 
 OPTIONS=	DPSEARCH_THREADS  "Enable pthreads"                       on  \
 		DPSEARCH_SSL      "Enable SSL"                            on  \
-		DPSEARCH_GUESSER  "Enable charset and language guesser"   on  \
 		DPSEARCH_CHINESE  "Enable chinese charsets"               off \
 		DPSEARCH_JAPANESE "Enable japanese charsets"              off \
 		DPSEARCH_MECAB    "Enable MeCab japanese analyzer"        off \
@@ -37,8 +36,9 @@ OPTIONS=	DPSEARCH_THREADS  "Enable pthreads"                       on  \
 		DPSEARCH_APACHE   "Enable mod_dpsearch for Apache"        off \
 		DPSEARCH_IDN      "Enable Internationalized Domain Names" off \
 		DPSEARCH_ASPELL   "Enable aspell support"                 off \
-		DPSEARCH_PGSQL    "Use PostgreSQL  (mutually exclusive)"  off \
-		DPSEARCH_MYSQL    "Use MySQL       (mutually exclusive)"  on \
+		DPSEARCH_EXTRACT  "Enable libextractor support"           off \
+		DPSEARCH_PGSQL    "Use PostgreSQL  (mutually exclusive)"  on \
+		DPSEARCH_MYSQL    "Use MySQL       (mutually exclusive)"  off \
 		DPSEARCH_SQLITE   "Use SQLite      (mutually exclusive)"  off
 
 .include <bsd.port.pre.mk>
@@ -59,16 +59,16 @@ LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--without-aspell
 .endif
 
+.if !defined(WITHOUT_DPSEARCH_EXTRACT)
+LIB_DEPENDS+=	extractor.2:${PORTSDIR}/textproc/libextractor
+.endif
+
 .if !defined(NO_OPENSSL) && !defined(WITHOUT_DPSEARCH_SSL)
 WITH_OPENSSL=	yes
 .endif
 
 .ifdef WITH_OPENSSL
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
-.endif
-
-.if defined(WITH_DPSEARCH_GUESSER)
-CONFIGURE_ARGS+=--enable-charset-guesser
 .endif
 
 .if defined(WITH_DPSEARCH_CHASRETS)
@@ -130,7 +130,7 @@ CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
 post-extract:
 .if defined(NOPORTDOCS)
-EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-doc_Makefile.in
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc_Makefile.in
 .endif
 
 post-patch:
