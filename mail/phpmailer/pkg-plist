@@ -61,6 +61,6 @@
 @dirrm %%DATADIR%%/test
 @dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images
-%%PORTEXAMPLES%%@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
