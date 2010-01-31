@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	databases python
 MASTER_SITES=	http://python.projects.postgresql.org/files/ \
 		http://limbo.xim.bz/distfiles/
