@@ -1280,7 +1280,6 @@
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
-    SUBDIR += pecl-pecl_http
     SUBDIR += pecl-swish
     SUBDIR += pecl-tidy
     SUBDIR += perlbal
