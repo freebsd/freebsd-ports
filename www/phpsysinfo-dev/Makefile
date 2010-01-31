@@ -17,6 +17,7 @@ USE_PHP=	pcre xml simplexml mbstring
 WANT_PHP_WEB=	yes
 
 CONFLICTS=	phpsysinfo-2.[0-9]*
+IGNORE=		please use www/phpsysinfo
 
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
 NO_BUILD=	yes
