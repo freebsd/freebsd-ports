@@ -88,7 +88,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 MAN1=		spamass-milter.1
 
@@ -124,8 +124,6 @@ post-patch:
 .if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
 	@${REINPLACE_CMD} -e 's|-lmilter|-lmilter -lldap|g' ${WRKSRC}/configure
 .endif
-	@${SED} -e's,%%DOCSDIR%%,${DOCSDIR},g' \
-		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
