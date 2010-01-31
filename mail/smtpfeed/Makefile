@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/smtpfeed/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMTP Fast Exploding External Deliverer for Sendmail
 
-NO_PACKAGE=	"complex configuration for sendmail.cf needed"
+NO_PACKAGE=	complex configuration for sendmail.cf needed
 
 GNU_CONFIGURE=	yes
 
@@ -24,6 +24,8 @@ MYPORTDOCS=	COPYRIGHT FEATURES FEATURES.j FYI FYI.j INSTALL INSTALL.j \
 		OPTIONS OPTIONS.j README README.j RELEASE.NOTE SIGNAL \
 		SIGNAL.j TODO smtpfeed.html
 
+SUB_FILES=	pkg-message
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/smtpfeed ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/smtpfeed.8 ${MANPREFIX}/man/man8
@@ -33,6 +35,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

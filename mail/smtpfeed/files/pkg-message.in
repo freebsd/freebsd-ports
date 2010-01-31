@@ -1,5 +1,5 @@
 **************************************************************
-smtpfeed is installed into /usr/local/libexec/smtpfeed.
+smtpfeed is installed into %%PREFIX%%/libexec/smtpfeed.
 You'll need to perform 2 steps, (a) to (b), to make smtpfeed
 work:
 	(a) replace /etc/mail/sendmail.cf
@@ -7,7 +7,7 @@ work:
 
 (a) depends on what kind of configuration tool you are using
 with sendmail.cf.  Read through documentation in
-/usr/local/share/doc/smtpfeed for details.
+%%DOCSDIR%% for details.
 (b) see file named INSTALL in
-/usr/local/share/doc/smtpfeed for details.
+%%DOCSDIR%% for details.
 **************************************************************
