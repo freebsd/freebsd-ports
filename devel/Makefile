@@ -2178,6 +2178,7 @@
     SUBDIR += p5-Tree-Simple
     SUBDIR += p5-Tree-Simple-View
     SUBDIR += p5-Tree-Simple-VisitorFactory
+    SUBDIR += p5-UDCode
     SUBDIR += p5-UI-Dialog
     SUBDIR += p5-UNIVERSAL-can
     SUBDIR += p5-UNIVERSAL-exports

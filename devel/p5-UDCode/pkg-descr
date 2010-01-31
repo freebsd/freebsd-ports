@@ -1,0 +1,8 @@
+A code is a set of strings, called the code words.  A code is
+"uniquely decodable" if any string S that is a concatenation of
+code words is so in exactly one way.
+
+The module provides functions that determine whether a given
+code is uniquely decodable or not.
+
+WWW: http://search.cpan.org/dist/UDCode/
