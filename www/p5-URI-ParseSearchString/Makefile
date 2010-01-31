@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	URI-ParseSearchString
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse Apache refferer logs and extract search engine query strings
+
+RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_CONFIGURE=	yes
 
