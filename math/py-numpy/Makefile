@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
