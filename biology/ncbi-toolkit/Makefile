@@ -18,7 +18,7 @@ COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
 USE_MOTIF=	yes
 CPIO_ARGS=	--quiet -pdum -R
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 # These are the executables we install.
 #
@@ -108,7 +108,6 @@ post-install:
 .endif
 
 .if !defined(BATCH)
-	@ ${SED} -e "s#%%PREFIX%%#${PREFIX}#" ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
