@@ -26,6 +26,10 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+BROKEN=		does not build
+.endif
+
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 .endif
