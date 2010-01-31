@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MooseX-Storage
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sahil@tandon.net
 COMMENT=	An serialization framework for Moose classes
 
-BUILD_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0.87:${PORTSDIR}/devel/p5-Moose \
 		p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Test-JSON>=0.06:${PORTSDIR}/devel/p5-Test-JSON \
-		p5-Best>=0.1:${PORTSDIR}/devel/p5-Best \
-		p5-Test-YAML-Valid>=0:${PORTSDIR}/devel/p5-Test-YAML-Valid \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-TempDir>=0.02:${PORTSDIR}/devel/p5-Test-TempDir \
