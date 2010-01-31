@@ -15,7 +15,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Doom/Doom2/Heretic engine
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libfmodexp-4.24.16.so:${PORTSDIR}/audio/linux-fmodapi \
-		${LINUXBASE}/usr/lib/libSDL-1.2.so.0.11.2:${PORTSDIR}/devel/linux-sdl12
+		${LINUXBASE}/usr/lib/libSDL-1.2.so.0.7.3:${PORTSDIR}/devel/linux-sdl12
 
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
