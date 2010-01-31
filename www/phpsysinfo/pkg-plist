@@ -1,354 +1,285 @@
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/README
+%%WWWDIR%%/README_PLUGIN
 %%WWWDIR%%/config.php
 %%WWWDIR%%/config.php.new
-%%WWWDIR%%/distros.ini
-%%WWWDIR%%/images/Arch.gif
-%%WWWDIR%%/images/CentOS.png
-%%WWWDIR%%/images/Cobalt.png
-%%WWWDIR%%/images/Darwin.png
-%%WWWDIR%%/images/Debian.png
-%%WWWDIR%%/images/Fedora.png
-%%WWWDIR%%/images/FreeBSD.png
-%%WWWDIR%%/images/Gentoo.png
-%%WWWDIR%%/images/Mandrake.png
-%%WWWDIR%%/images/NetBSD.png
-%%WWWDIR%%/images/OpenBSD.png
-%%WWWDIR%%/images/PLD.gif
-%%WWWDIR%%/images/Redhat.png
-%%WWWDIR%%/images/Rubix.png
-%%WWWDIR%%/images/Slackware.png
-%%WWWDIR%%/images/SunOS.png
-%%WWWDIR%%/images/Suse.png
-%%WWWDIR%%/images/Trustix.gif
-%%WWWDIR%%/images/Ubuntu.gif
-%%WWWDIR%%/images/free-eos.png
-%%WWWDIR%%/images/index.html
-%%WWWDIR%%/images/lfs.png
-%%WWWDIR%%/images/unknown.png
-%%WWWDIR%%/images/xp.gif
-%%WWWDIR%%/includes/XPath.class.php
-%%WWWDIR%%/includes/class.Template.inc.php
-%%WWWDIR%%/includes/class.error.inc.php
-%%WWWDIR%%/includes/common_functions.php
-%%WWWDIR%%/includes/index.html
-%%WWWDIR%%/includes/indicator.php
-%%WWWDIR%%/includes/lang/ar_utf8.php
-%%WWWDIR%%/includes/lang/bg.php
-%%WWWDIR%%/includes/lang/big5.php
-%%WWWDIR%%/includes/lang/br.php
-%%WWWDIR%%/includes/lang/ca.php
-%%WWWDIR%%/includes/lang/cn.php
-%%WWWDIR%%/includes/lang/cs.php
-%%WWWDIR%%/includes/lang/ct.php
-%%WWWDIR%%/includes/lang/da.php
-%%WWWDIR%%/includes/lang/de.php
-%%WWWDIR%%/includes/lang/en.php
-%%WWWDIR%%/includes/lang/es.php
-%%WWWDIR%%/includes/lang/et.php
-%%WWWDIR%%/includes/lang/eu.php
-%%WWWDIR%%/includes/lang/fi.php
-%%WWWDIR%%/includes/lang/fr.php
-%%WWWDIR%%/includes/lang/gr.php
-%%WWWDIR%%/includes/lang/he.php
-%%WWWDIR%%/includes/lang/hu.php
-%%WWWDIR%%/includes/lang/id.php
-%%WWWDIR%%/includes/lang/index.html
-%%WWWDIR%%/includes/lang/is.php
-%%WWWDIR%%/includes/lang/it.php
-%%WWWDIR%%/includes/lang/ja.php
-%%WWWDIR%%/includes/lang/jp.php
-%%WWWDIR%%/includes/lang/ko.php
-%%WWWDIR%%/includes/lang/lt.php
-%%WWWDIR%%/includes/lang/lv.php
-%%WWWDIR%%/includes/lang/nl.php
-%%WWWDIR%%/includes/lang/no.php
-%%WWWDIR%%/includes/lang/pa_utf8.php
-%%WWWDIR%%/includes/lang/pl.php
-%%WWWDIR%%/includes/lang/pt-br.php
-%%WWWDIR%%/includes/lang/pt.php
-%%WWWDIR%%/includes/lang/ro.php
-%%WWWDIR%%/includes/lang/ru.php
-%%WWWDIR%%/includes/lang/sk.php
-%%WWWDIR%%/includes/lang/sr.php
-%%WWWDIR%%/includes/lang/sv.php
-%%WWWDIR%%/includes/lang/tr.php
-%%WWWDIR%%/includes/lang/tw.php
-%%WWWDIR%%/includes/mb/class.hddtemp.inc.php
-%%WWWDIR%%/includes/mb/class.healthd.inc.php
-%%WWWDIR%%/includes/mb/class.hwsensors.inc.php
-%%WWWDIR%%/includes/mb/class.lmsensors.inc.php
-%%WWWDIR%%/includes/mb/class.mbm5.inc.php
-%%WWWDIR%%/includes/mb/class.mbmon.inc.php
-%%WWWDIR%%/includes/mb/index.html
-%%WWWDIR%%/includes/os/class.BSD.common.inc.php
+%%WWWDIR%%/data/ModelTranslation.txt
+%%WWWDIR%%/data/distros.ini
+%%WWWDIR%%/gfx/ajaxLoader.gif
+%%WWWDIR%%/gfx/attention.png
+%%WWWDIR%%/gfx/body.gif
+%%WWWDIR%%/gfx/bullet_toggle_minus.png
+%%WWWDIR%%/gfx/bullet_toggle_plus.png
+%%WWWDIR%%/gfx/close.gif
+%%WWWDIR%%/gfx/html.gif
+%%WWWDIR%%/gfx/images/Arch.png
+%%WWWDIR%%/gfx/images/CentOS.png
+%%WWWDIR%%/gfx/images/Cobalt.png
+%%WWWDIR%%/gfx/images/Darwin.png
+%%WWWDIR%%/gfx/images/Debian.png
+%%WWWDIR%%/gfx/images/DragonFly.png
+%%WWWDIR%%/gfx/images/Fedora.png
+%%WWWDIR%%/gfx/images/FreeBSD.png
+%%WWWDIR%%/gfx/images/Gentoo.png
+%%WWWDIR%%/gfx/images/Mandrake.png
+%%WWWDIR%%/gfx/images/NetBSD.png
+%%WWWDIR%%/gfx/images/OpenBSD.png
+%%WWWDIR%%/gfx/images/OpenSolaris.png
+%%WWWDIR%%/gfx/images/PLD.gif
+%%WWWDIR%%/gfx/images/ReactOS.png
+%%WWWDIR%%/gfx/images/Redhat.png
+%%WWWDIR%%/gfx/images/Rubix.png
+%%WWWDIR%%/gfx/images/Slackware.png
+%%WWWDIR%%/gfx/images/SunOS.png
+%%WWWDIR%%/gfx/images/Suse.png
+%%WWWDIR%%/gfx/images/Synology.png
+%%WWWDIR%%/gfx/images/Trustix.png
+%%WWWDIR%%/gfx/images/Ubuntu.png
+%%WWWDIR%%/gfx/images/XandrOS.png
+%%WWWDIR%%/gfx/images/free-eos.png
+%%WWWDIR%%/gfx/images/hlfs.png
+%%WWWDIR%%/gfx/images/iycc.png
+%%WWWDIR%%/gfx/images/lfs.png
+%%WWWDIR%%/gfx/images/unknown.png
+%%WWWDIR%%/gfx/images/vista.png
+%%WWWDIR%%/gfx/images/xp.png
+%%WWWDIR%%/gfx/next.gif
+%%WWWDIR%%/gfx/prev.gif
+%%WWWDIR%%/gfx/reload.png
+%%WWWDIR%%/gfx/sort_asc.gif
+%%WWWDIR%%/gfx/sort_both.gif
+%%WWWDIR%%/gfx/sort_desc.gif
+%%WWWDIR%%/gfx/treeTable/blank.gif
+%%WWWDIR%%/gfx/treeTable/tv-collapsable-last.gif
+%%WWWDIR%%/gfx/treeTable/tv-collapsable.gif
+%%WWWDIR%%/gfx/treeTable/tv-expandable-last.gif
+%%WWWDIR%%/gfx/treeTable/tv-expandable.gif
+%%WWWDIR%%/gfx/treeTable/tv-item-last.gif
+%%WWWDIR%%/gfx/treeTable/tv-item.gif
+%%WWWDIR%%/gfx/treeTable/vertline.gif
+%%WWWDIR%%/includes/autoloader.inc.php
+%%WWWDIR%%/includes/class.CommonFunctions.inc.php
+%%WWWDIR%%/includes/class.Parser.inc.php
+%%WWWDIR%%/includes/error/class.Error.inc.php
+%%WWWDIR%%/includes/interface/class.PSI_Interface_OS.inc.php
+%%WWWDIR%%/includes/interface/class.PSI_Interface_Output.inc.php
+%%WWWDIR%%/includes/interface/class.PSI_Interface_Plugin.inc.php
+%%WWWDIR%%/includes/interface/class.PSI_Interface_Sensor.inc.php
+%%WWWDIR%%/includes/interface/class.PSI_Interface_UPS.inc.php
+%%WWWDIR%%/includes/js/class.JavaScriptPacker.inc.php
+%%WWWDIR%%/includes/mb/class.Coretemp.inc.php
+%%WWWDIR%%/includes/mb/class.HDDTemp.inc.php
+%%WWWDIR%%/includes/mb/class.HWSensors.inc.php
+%%WWWDIR%%/includes/mb/class.Healthd.inc.php
+%%WWWDIR%%/includes/mb/class.IPMI.inc.php
+%%WWWDIR%%/includes/mb/class.K8Temp.inc.php
+%%WWWDIR%%/includes/mb/class.LMSensors.inc.php
+%%WWWDIR%%/includes/mb/class.MBM5.inc.php
+%%WWWDIR%%/includes/mb/class.MBMon.inc.php
+%%WWWDIR%%/includes/mb/class.Sensors.inc.php
+%%WWWDIR%%/includes/os/class.BSDCommon.inc.php
 %%WWWDIR%%/includes/os/class.Darwin.inc.php
+%%WWWDIR%%/includes/os/class.DragonFly.inc.php
 %%WWWDIR%%/includes/os/class.FreeBSD.inc.php
-%%WWWDIR%%/includes/os/class.HP-UX.inc.php
+%%WWWDIR%%/includes/os/class.HPUX.inc.php
 %%WWWDIR%%/includes/os/class.Linux.inc.php
 %%WWWDIR%%/includes/os/class.NetBSD.inc.php
+%%WWWDIR%%/includes/os/class.OS.inc.php
 %%WWWDIR%%/includes/os/class.OpenBSD.inc.php
 %%WWWDIR%%/includes/os/class.SunOS.inc.php
 %%WWWDIR%%/includes/os/class.WINNT.inc.php
-%%WWWDIR%%/includes/os/class.parseProgs.inc.php
-%%WWWDIR%%/includes/os/index.html
-%%WWWDIR%%/includes/system_footer.php
-%%WWWDIR%%/includes/system_header.php
-%%WWWDIR%%/includes/xml/filesystems.php
-%%WWWDIR%%/includes/xml/hardware.php
-%%WWWDIR%%/includes/xml/hddtemp.php
-%%WWWDIR%%/includes/xml/index.html
-%%WWWDIR%%/includes/xml/mbinfo.php
-%%WWWDIR%%/includes/xml/memory.php
-%%WWWDIR%%/includes/xml/network.php
-%%WWWDIR%%/includes/xml/vitals.php
+%%WWWDIR%%/includes/output/class.Output.inc.php
+%%WWWDIR%%/includes/output/class.Webpage.inc.php
+%%WWWDIR%%/includes/output/class.WebpageXML.inc.php
+%%WWWDIR%%/includes/output/class.WebpageXSLT.inc.php
+%%WWWDIR%%/includes/plugin/class.PSI_Plugin.inc.php
+%%WWWDIR%%/includes/to/class.MBInfo.inc.php
+%%WWWDIR%%/includes/to/class.System.inc.php
+%%WWWDIR%%/includes/to/class.UPSInfo.inc.php
+%%WWWDIR%%/includes/to/device/class.CpuDevice.inc.php
+%%WWWDIR%%/includes/to/device/class.DiskDevice.inc.php
+%%WWWDIR%%/includes/to/device/class.HWDevice.inc.php
+%%WWWDIR%%/includes/to/device/class.NetDevice.inc.php
+%%WWWDIR%%/includes/to/device/class.SensorDevice.inc.php
+%%WWWDIR%%/includes/to/device/class.UPSDevice.inc.php
+%%WWWDIR%%/includes/ups/class.Apcupsd.inc.php
+%%WWWDIR%%/includes/ups/class.Nut.inc.php
+%%WWWDIR%%/includes/ups/class.UPS.inc.php
+%%WWWDIR%%/includes/xml/class.SimpleXMLExtended.inc.php
+%%WWWDIR%%/includes/xml/class.XML.inc.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/phpsysinfo.dtd
-%%WWWDIR%%/templates/aq/aq.css
-%%WWWDIR%%/templates/aq/box.tpl
-%%WWWDIR%%/templates/aq/form.tpl
-%%WWWDIR%%/templates/aq/images/aq_background.gif
-%%WWWDIR%%/templates/aq/images/bar_left.gif
-%%WWWDIR%%/templates/aq/images/bar_middle.gif
-%%WWWDIR%%/templates/aq/images/bar_right.gif
-%%WWWDIR%%/templates/aq/images/coininfd.gif
-%%WWWDIR%%/templates/aq/images/coininfg.gif
-%%WWWDIR%%/templates/aq/images/coinsupd.gif
-%%WWWDIR%%/templates/aq/images/coinsupg.gif
-%%WWWDIR%%/templates/aq/images/d.gif
-%%WWWDIR%%/templates/aq/images/fond.gif
-%%WWWDIR%%/templates/aq/images/g.gif
-%%WWWDIR%%/templates/aq/images/index.html
-%%WWWDIR%%/templates/aq/images/inf.gif
-%%WWWDIR%%/templates/aq/images/redbar_left.gif
-%%WWWDIR%%/templates/aq/images/redbar_middle.gif
-%%WWWDIR%%/templates/aq/images/redbar_right.gif
-%%WWWDIR%%/templates/aq/images/space15_15.gif
-%%WWWDIR%%/templates/aq/images/sup.gif
-%%WWWDIR%%/templates/aq/index.html
-%%WWWDIR%%/templates/black/black.css
-%%WWWDIR%%/templates/black/box.tpl
-%%WWWDIR%%/templates/black/form.tpl
-%%WWWDIR%%/templates/black/images/aq_background.gif
-%%WWWDIR%%/templates/black/images/bar_left.gif
-%%WWWDIR%%/templates/black/images/bar_middle.gif
-%%WWWDIR%%/templates/black/images/bar_right.gif
-%%WWWDIR%%/templates/black/images/coininfd.gif
-%%WWWDIR%%/templates/black/images/coininfg.gif
-%%WWWDIR%%/templates/black/images/coinsupd.gif
-%%WWWDIR%%/templates/black/images/coinsupg.gif
-%%WWWDIR%%/templates/black/images/d.gif
-%%WWWDIR%%/templates/black/images/fond.gif
-%%WWWDIR%%/templates/black/images/g.gif
-%%WWWDIR%%/templates/black/images/index.html
-%%WWWDIR%%/templates/black/images/inf.gif
-%%WWWDIR%%/templates/black/images/redbar_left.gif
-%%WWWDIR%%/templates/black/images/redbar_middle.gif
-%%WWWDIR%%/templates/black/images/redbar_right.gif
-%%WWWDIR%%/templates/black/images/space15_15.gif
-%%WWWDIR%%/templates/black/images/sup.gif
-%%WWWDIR%%/templates/black/index.html
-%%WWWDIR%%/templates/blue/blue.css
-%%WWWDIR%%/templates/blue/box.tpl
-%%WWWDIR%%/templates/blue/form.tpl
-%%WWWDIR%%/templates/blue/images/bar_left.gif
-%%WWWDIR%%/templates/blue/images/bar_middle.gif
-%%WWWDIR%%/templates/blue/images/bar_right.gif
-%%WWWDIR%%/templates/blue/images/index.html
-%%WWWDIR%%/templates/blue/images/redbar_left.gif
-%%WWWDIR%%/templates/blue/images/redbar_middle.gif
-%%WWWDIR%%/templates/blue/images/redbar_right.gif
-%%WWWDIR%%/templates/blue/images/trans.gif
-%%WWWDIR%%/templates/blue/index.html
-%%WWWDIR%%/templates/bulix/box.tpl
-%%WWWDIR%%/templates/bulix/bulix.css
-%%WWWDIR%%/templates/bulix/form.tpl
-%%WWWDIR%%/templates/bulix/images/bar_left.gif
-%%WWWDIR%%/templates/bulix/images/bar_middle.gif
-%%WWWDIR%%/templates/bulix/images/bar_right.gif
-%%WWWDIR%%/templates/bulix/images/index.html
-%%WWWDIR%%/templates/bulix/images/left_bar.gif
-%%WWWDIR%%/templates/bulix/images/middle_bar.gif
-%%WWWDIR%%/templates/bulix/images/redbar_left.gif
-%%WWWDIR%%/templates/bulix/images/redbar_middle.gif
-%%WWWDIR%%/templates/bulix/images/redbar_right.gif
-%%WWWDIR%%/templates/bulix/images/right_bar.gif
-%%WWWDIR%%/templates/bulix/images/trans.gif
-%%WWWDIR%%/templates/bulix/index.html
-%%WWWDIR%%/templates/classic/box.tpl
-%%WWWDIR%%/templates/classic/classic.css
-%%WWWDIR%%/templates/classic/form.tpl
-%%WWWDIR%%/templates/classic/images/bar_left.gif
-%%WWWDIR%%/templates/classic/images/bar_middle.gif
-%%WWWDIR%%/templates/classic/images/bar_right.gif
-%%WWWDIR%%/templates/classic/images/index.html
-%%WWWDIR%%/templates/classic/images/redbar_left.gif
-%%WWWDIR%%/templates/classic/images/redbar_middle.gif
-%%WWWDIR%%/templates/classic/images/redbar_right.gif
-%%WWWDIR%%/templates/classic/images/trans.gif
-%%WWWDIR%%/templates/classic/index.html
-%%WWWDIR%%/templates/index.html
-%%WWWDIR%%/templates/kde/box.tpl
-%%WWWDIR%%/templates/kde/form.tpl
-%%WWWDIR%%/templates/kde/images/background.gif
-%%WWWDIR%%/templates/kde/images/bar_left.gif
-%%WWWDIR%%/templates/kde/images/bar_middle.gif
-%%WWWDIR%%/templates/kde/images/bar_right.gif
-%%WWWDIR%%/templates/kde/images/coininfd.gif
-%%WWWDIR%%/templates/kde/images/coininfg.gif
-%%WWWDIR%%/templates/kde/images/coinsupd.gif
-%%WWWDIR%%/templates/kde/images/coinsupg.gif
-%%WWWDIR%%/templates/kde/images/d.gif
-%%WWWDIR%%/templates/kde/images/fond.gif
-%%WWWDIR%%/templates/kde/images/g.gif
-%%WWWDIR%%/templates/kde/images/icons.gif
-%%WWWDIR%%/templates/kde/images/index.html
-%%WWWDIR%%/templates/kde/images/inf.gif
-%%WWWDIR%%/templates/kde/images/nobar_left.gif
-%%WWWDIR%%/templates/kde/images/nobar_middle.gif
-%%WWWDIR%%/templates/kde/images/nobar_right.gif
-%%WWWDIR%%/templates/kde/images/redbar_left.gif
-%%WWWDIR%%/templates/kde/images/redbar_middle.gif
-%%WWWDIR%%/templates/kde/images/redbar_right.gif
-%%WWWDIR%%/templates/kde/images/space15_15.gif
-%%WWWDIR%%/templates/kde/images/sup.gif
-%%WWWDIR%%/templates/kde/images/title_left.gif
-%%WWWDIR%%/templates/kde/images/title_mid.gif
-%%WWWDIR%%/templates/kde/images/title_right.gif
-%%WWWDIR%%/templates/kde/index.html
-%%WWWDIR%%/templates/kde/kde.css
-%%WWWDIR%%/templates/metal/box.tpl
-%%WWWDIR%%/templates/metal/form.tpl
-%%WWWDIR%%/templates/metal/images/bar_left.gif
-%%WWWDIR%%/templates/metal/images/bar_middle.gif
-%%WWWDIR%%/templates/metal/images/bar_right.gif
-%%WWWDIR%%/templates/metal/images/coininfd.gif
-%%WWWDIR%%/templates/metal/images/coininfg.gif
-%%WWWDIR%%/templates/metal/images/coinsupd.gif
-%%WWWDIR%%/templates/metal/images/coinsupg.gif
-%%WWWDIR%%/templates/metal/images/d.gif
-%%WWWDIR%%/templates/metal/images/fond.gif
-%%WWWDIR%%/templates/metal/images/g.gif
-%%WWWDIR%%/templates/metal/images/index.html
-%%WWWDIR%%/templates/metal/images/inf.gif
-%%WWWDIR%%/templates/metal/images/metal_background.gif
-%%WWWDIR%%/templates/metal/images/redbar_left.gif
-%%WWWDIR%%/templates/metal/images/redbar_middle.gif
-%%WWWDIR%%/templates/metal/images/redbar_right.gif
-%%WWWDIR%%/templates/metal/images/space15_15.gif
-%%WWWDIR%%/templates/metal/images/sup.gif
-%%WWWDIR%%/templates/metal/index.html
-%%WWWDIR%%/templates/metal/metal.css
-%%WWWDIR%%/templates/orange/box.tpl
-%%WWWDIR%%/templates/orange/form.tpl
-%%WWWDIR%%/templates/orange/images/bar_left.gif
-%%WWWDIR%%/templates/orange/images/bar_middle.gif
-%%WWWDIR%%/templates/orange/images/bar_right.gif
-%%WWWDIR%%/templates/orange/images/index.html
-%%WWWDIR%%/templates/orange/images/redbar_left.gif
-%%WWWDIR%%/templates/orange/images/redbar_middle.gif
-%%WWWDIR%%/templates/orange/images/redbar_right.gif
-%%WWWDIR%%/templates/orange/images/trans.gif
-%%WWWDIR%%/templates/orange/index.html
-%%WWWDIR%%/templates/orange/orange.css
-%%WWWDIR%%/templates/typo3/box.tpl
-%%WWWDIR%%/templates/typo3/form.tpl
-%%WWWDIR%%/templates/typo3/images/bar_left.gif
-%%WWWDIR%%/templates/typo3/images/bar_middle.gif
-%%WWWDIR%%/templates/typo3/images/bar_right.gif
-%%WWWDIR%%/templates/typo3/images/index.html
-%%WWWDIR%%/templates/typo3/images/redbar_left.gif
-%%WWWDIR%%/templates/typo3/images/redbar_middle.gif
-%%WWWDIR%%/templates/typo3/images/redbar_right.gif
-%%WWWDIR%%/templates/typo3/images/trans.gif
-%%WWWDIR%%/templates/typo3/index.html
-%%WWWDIR%%/templates/typo3/typo3.css
-%%WWWDIR%%/templates/windows_classic/box.tpl
-%%WWWDIR%%/templates/windows_classic/form.tpl
-%%WWWDIR%%/templates/windows_classic/images/bar_left.gif
-%%WWWDIR%%/templates/windows_classic/images/bar_middle.gif
-%%WWWDIR%%/templates/windows_classic/images/bar_right.gif
-%%WWWDIR%%/templates/windows_classic/images/bottom.gif
-%%WWWDIR%%/templates/windows_classic/images/bottom_left_corner.gif
-%%WWWDIR%%/templates/windows_classic/images/bottom_right_corner.gif
-%%WWWDIR%%/templates/windows_classic/images/index.html
-%%WWWDIR%%/templates/windows_classic/images/left.gif
-%%WWWDIR%%/templates/windows_classic/images/middle.gif
-%%WWWDIR%%/templates/windows_classic/images/min_max.gif
-%%WWWDIR%%/templates/windows_classic/images/nobar_left.gif
-%%WWWDIR%%/templates/windows_classic/images/nobar_middle.gif
-%%WWWDIR%%/templates/windows_classic/images/nobar_right.gif
-%%WWWDIR%%/templates/windows_classic/images/redbar_left.gif
-%%WWWDIR%%/templates/windows_classic/images/redbar_middle.gif
-%%WWWDIR%%/templates/windows_classic/images/redbar_right.gif
-%%WWWDIR%%/templates/windows_classic/images/right.gif
-%%WWWDIR%%/templates/windows_classic/images/spacer.gif
-%%WWWDIR%%/templates/windows_classic/images/top.gif
-%%WWWDIR%%/templates/windows_classic/images/upper_left_corner.gif
-%%WWWDIR%%/templates/windows_classic/images/upper_right_corner.gif
-%%WWWDIR%%/templates/windows_classic/images/yellowbar_left.gif
-%%WWWDIR%%/templates/windows_classic/images/yellowbar_middle.gif
-%%WWWDIR%%/templates/windows_classic/images/yellowbar_right.gif
-%%WWWDIR%%/templates/windows_classic/index.html
-%%WWWDIR%%/templates/windows_classic/windows_classic.css
-%%WWWDIR%%/templates/wintendoxp/box.tpl
-%%WWWDIR%%/templates/wintendoxp/form.tpl
-%%WWWDIR%%/templates/wintendoxp/images/aq_background.gif
-%%WWWDIR%%/templates/wintendoxp/images/background.gif
-%%WWWDIR%%/templates/wintendoxp/images/bar_left.gif
-%%WWWDIR%%/templates/wintendoxp/images/bar_middle.gif
-%%WWWDIR%%/templates/wintendoxp/images/bar_right.gif
-%%WWWDIR%%/templates/wintendoxp/images/coininfd.gif
-%%WWWDIR%%/templates/wintendoxp/images/coininfg.gif
-%%WWWDIR%%/templates/wintendoxp/images/coinsupd.gif
-%%WWWDIR%%/templates/wintendoxp/images/coinsupg.gif
-%%WWWDIR%%/templates/wintendoxp/images/d.gif
-%%WWWDIR%%/templates/wintendoxp/images/fond.gif
-%%WWWDIR%%/templates/wintendoxp/images/g.gif
-%%WWWDIR%%/templates/wintendoxp/images/icons.gif
-%%WWWDIR%%/templates/wintendoxp/images/index.html
-%%WWWDIR%%/templates/wintendoxp/images/inf.gif
-%%WWWDIR%%/templates/wintendoxp/images/nobar_left.gif
-%%WWWDIR%%/templates/wintendoxp/images/nobar_middle.gif
-%%WWWDIR%%/templates/wintendoxp/images/nobar_right.gif
-%%WWWDIR%%/templates/wintendoxp/images/redbar_left.gif
-%%WWWDIR%%/templates/wintendoxp/images/redbar_middle.gif
-%%WWWDIR%%/templates/wintendoxp/images/redbar_right.gif
-%%WWWDIR%%/templates/wintendoxp/images/space15_15.gif
-%%WWWDIR%%/templates/wintendoxp/images/sup.gif
-%%WWWDIR%%/templates/wintendoxp/index.html
-%%WWWDIR%%/templates/wintendoxp/wintendoxp.css
-@dirrm %%WWWDIR%%/templates/wintendoxp/images
-@dirrm %%WWWDIR%%/templates/wintendoxp
-@dirrm %%WWWDIR%%/templates/windows_classic/images
-@dirrm %%WWWDIR%%/templates/windows_classic
-@dirrm %%WWWDIR%%/templates/typo3/images
-@dirrm %%WWWDIR%%/templates/typo3
-@dirrm %%WWWDIR%%/templates/orange/images
-@dirrm %%WWWDIR%%/templates/orange
-@dirrm %%WWWDIR%%/templates/mobile/images
-@dirrm %%WWWDIR%%/templates/mobile
-@dirrm %%WWWDIR%%/templates/metal/images
-@dirrm %%WWWDIR%%/templates/metal
-@dirrm %%WWWDIR%%/templates/kde/images
-@dirrm %%WWWDIR%%/templates/kde
-@dirrm %%WWWDIR%%/templates/classic/images
-@dirrm %%WWWDIR%%/templates/classic
-@dirrm %%WWWDIR%%/templates/bulix/images
-@dirrm %%WWWDIR%%/templates/bulix
-@dirrm %%WWWDIR%%/templates/blue/images
-@dirrm %%WWWDIR%%/templates/blue
-@dirrm %%WWWDIR%%/templates/black/images
-@dirrm %%WWWDIR%%/templates/black
-@dirrm %%WWWDIR%%/templates/aq/images
-@dirrm %%WWWDIR%%/templates/aq
+%%WWWDIR%%/js.php
+%%WWWDIR%%/js/jQuery/README
+%%WWWDIR%%/js/jQuery/jquery.dataTables.js
+%%WWWDIR%%/js/jQuery/jquery.jgrowl.js
+%%WWWDIR%%/js/jQuery/jquery.js
+%%WWWDIR%%/js/jQuery/jquery.nyroModal.js
+%%WWWDIR%%/js/jQuery/jquery.timers.js
+%%WWWDIR%%/js/jQuery/jquery.treeTable.js
+%%WWWDIR%%/js/phpSysInfo/phpsysinfo.js
+%%WWWDIR%%/language/ast.xml
+%%WWWDIR%%/language/bg.xml
+%%WWWDIR%%/language/cz.xml
+%%WWWDIR%%/language/da.xml
+%%WWWDIR%%/language/de.xml
+%%WWWDIR%%/language/en.xml
+%%WWWDIR%%/language/es.xml
+%%WWWDIR%%/language/et.xml
+%%WWWDIR%%/language/fi.xml
+%%WWWDIR%%/language/fr.xml
+%%WWWDIR%%/language/gl.xml
+%%WWWDIR%%/language/hu.xml
+%%WWWDIR%%/language/is.xml
+%%WWWDIR%%/language/it.xml
+%%WWWDIR%%/language/ja.xml
+%%WWWDIR%%/language/ko.xml
+%%WWWDIR%%/language/language.php
+%%WWWDIR%%/language/nl.xml
+%%WWWDIR%%/language/no.xml
+%%WWWDIR%%/language/pl.xml
+%%WWWDIR%%/language/pt-br.xml
+%%WWWDIR%%/language/ro.xml
+%%WWWDIR%%/language/ru.xml
+%%WWWDIR%%/language/sc.xml
+%%WWWDIR%%/language/sk.xml
+%%WWWDIR%%/language/sl.xml
+%%WWWDIR%%/language/sv.xml
+%%WWWDIR%%/language/translation-plugin.xsd
+%%WWWDIR%%/language/translation.xsd
+%%WWWDIR%%/language/tw.xml
+%%WWWDIR%%/language/uk.xml
+%%WWWDIR%%/phpsysinfo.xslt
+%%WWWDIR%%/phpsysinfo3.xsd
+%%WWWDIR%%/plugins/BAT/BAT.config.php
+%%WWWDIR%%/plugins/BAT/class.BAT.inc.php
+%%WWWDIR%%/plugins/BAT/js/BAT.js
+%%WWWDIR%%/plugins/BAT/lang/cz.xml
+%%WWWDIR%%/plugins/BAT/lang/en.xml
+%%WWWDIR%%/plugins/BAT/lang/fr.xml
+%%WWWDIR%%/plugins/MDStatus/MDStatus.config.php
+%%WWWDIR%%/plugins/MDStatus/class.MDStatus.inc.php
+%%WWWDIR%%/plugins/MDStatus/css/mdstatus.css
+%%WWWDIR%%/plugins/MDStatus/gfx/error.png
+%%WWWDIR%%/plugins/MDStatus/gfx/harddrivefail.png
+%%WWWDIR%%/plugins/MDStatus/gfx/harddriveok.png
+%%WWWDIR%%/plugins/MDStatus/gfx/harddrivespare.png
+%%WWWDIR%%/plugins/MDStatus/js/MDStatus.js
+%%WWWDIR%%/plugins/MDStatus/lang/cz.xml
+%%WWWDIR%%/plugins/MDStatus/lang/de.xml
+%%WWWDIR%%/plugins/MDStatus/lang/en.xml
+%%WWWDIR%%/plugins/MDStatus/lang/fr.xml
+%%WWWDIR%%/plugins/PS/PS.config.php
+%%WWWDIR%%/plugins/PS/class.PS.inc.php
+%%WWWDIR%%/plugins/PS/js/PS.js
+%%WWWDIR%%/plugins/PS/lang/cz.xml
+%%WWWDIR%%/plugins/PS/lang/de.xml
+%%WWWDIR%%/plugins/PS/lang/en.xml
+%%WWWDIR%%/plugins/PS/lang/fr.xml
+%%WWWDIR%%/plugins/PSStatus/PSStatus.config.php
+%%WWWDIR%%/plugins/PSStatus/class.PSStatus.inc.php
+%%WWWDIR%%/plugins/PSStatus/css/psstatus.css
+%%WWWDIR%%/plugins/PSStatus/gfx/offline.png
+%%WWWDIR%%/plugins/PSStatus/gfx/online.png
+%%WWWDIR%%/plugins/PSStatus/js/PSStatus.js
+%%WWWDIR%%/plugins/PSStatus/lang/cz.xml
+%%WWWDIR%%/plugins/PSStatus/lang/de.xml
+%%WWWDIR%%/plugins/PSStatus/lang/en.xml
+%%WWWDIR%%/plugins/PSStatus/lang/fr.xml
+%%WWWDIR%%/plugins/Quotas/Quotas.config.php
+%%WWWDIR%%/plugins/Quotas/class.Quotas.inc.php
+%%WWWDIR%%/plugins/Quotas/css/quotas.css
+%%WWWDIR%%/plugins/Quotas/js/Quotas.js
+%%WWWDIR%%/plugins/Quotas/lang/cz.xml
+%%WWWDIR%%/plugins/Quotas/lang/de.xml
+%%WWWDIR%%/plugins/Quotas/lang/en.xml
+%%WWWDIR%%/plugins/Quotas/lang/fr.xml
+%%WWWDIR%%/plugins/SMART/SMART.config.php
+%%WWWDIR%%/plugins/SMART/class.SMART.inc.php
+%%WWWDIR%%/plugins/SMART/css/smart.css
+%%WWWDIR%%/plugins/SMART/js/SMART.js
+%%WWWDIR%%/plugins/SMART/lang/cz.xml
+%%WWWDIR%%/plugins/SMART/lang/en.xml
+%%WWWDIR%%/plugins/SMART/lang/fr.xml
+%%WWWDIR%%/plugins/ipmi/class.ipmi.inc.php
+%%WWWDIR%%/plugins/ipmi/ipmi.config.php
+%%WWWDIR%%/plugins/ipmi/js/ipmi.js
+%%WWWDIR%%/plugins/ipmi/lang/cz.xml
+%%WWWDIR%%/plugins/ipmi/lang/en.xml
+%%WWWDIR%%/plugins/ipmi/lang/fr.xml
+%%WWWDIR%%/plugins/ipmi/lang/pl.xml
+%%WWWDIR%%/templates/aqua.css
+%%WWWDIR%%/templates/aqua/aq_background.gif
+%%WWWDIR%%/templates/clean.css
+%%WWWDIR%%/templates/cream.css
+%%WWWDIR%%/templates/cream/bg.gif
+%%WWWDIR%%/templates/jstyle_blue.css
+%%WWWDIR%%/templates/jstyle_green.css
+%%WWWDIR%%/templates/phpsysinfo.css
+%%WWWDIR%%/templates/plugin/jquery.dataTables.css
+%%WWWDIR%%/templates/plugin/jquery.jgrowl.css
+%%WWWDIR%%/templates/plugin/jquery.treeTable.css
+%%WWWDIR%%/templates/plugin/nyroModal.full.css
+%%WWWDIR%%/templates/two.css
+%%WWWDIR%%/templates/two/gradient.png
+%%WWWDIR%%/xml.php
+@dirrm %%WWWDIR%%/templates/two
+@dirrm %%WWWDIR%%/templates/plugin
+@dirrm %%WWWDIR%%/templates/cream
+@dirrm %%WWWDIR%%/templates/aqua
 @dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/plugins/ipmi/lang
+@dirrm %%WWWDIR%%/plugins/ipmi/js
+@dirrm %%WWWDIR%%/plugins/ipmi
+@dirrm %%WWWDIR%%/plugins/SMART/lang
+@dirrm %%WWWDIR%%/plugins/SMART/js
+@dirrm %%WWWDIR%%/plugins/SMART/gfx
+@dirrm %%WWWDIR%%/plugins/SMART/css
+@dirrm %%WWWDIR%%/plugins/SMART
+@dirrm %%WWWDIR%%/plugins/Quotas/lang
+@dirrm %%WWWDIR%%/plugins/Quotas/js
+@dirrm %%WWWDIR%%/plugins/Quotas/gfx
+@dirrm %%WWWDIR%%/plugins/Quotas/css
+@dirrm %%WWWDIR%%/plugins/Quotas
+@dirrm %%WWWDIR%%/plugins/PSStatus/lang
+@dirrm %%WWWDIR%%/plugins/PSStatus/js
+@dirrm %%WWWDIR%%/plugins/PSStatus/gfx
+@dirrm %%WWWDIR%%/plugins/PSStatus/css
+@dirrm %%WWWDIR%%/plugins/PSStatus
+@dirrm %%WWWDIR%%/plugins/PS/lang
+@dirrm %%WWWDIR%%/plugins/PS/js
+@dirrm %%WWWDIR%%/plugins/PS/gfx
+@dirrm %%WWWDIR%%/plugins/PS/css
+@dirrm %%WWWDIR%%/plugins/PS
+@dirrm %%WWWDIR%%/plugins/MDStatus/lang
+@dirrm %%WWWDIR%%/plugins/MDStatus/js
+@dirrm %%WWWDIR%%/plugins/MDStatus/gfx
+@dirrm %%WWWDIR%%/plugins/MDStatus/css
+@dirrm %%WWWDIR%%/plugins/MDStatus
+@dirrm %%WWWDIR%%/plugins/BAT/lang
+@dirrm %%WWWDIR%%/plugins/BAT/js
+@dirrm %%WWWDIR%%/plugins/BAT/gfx
+@dirrm %%WWWDIR%%/plugins/BAT/css
+@dirrm %%WWWDIR%%/plugins/BAT
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/language
+@dirrm %%WWWDIR%%/js/phpSysInfo
+@dirrm %%WWWDIR%%/js/jQuery
+@dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/includes/xml
+@dirrm %%WWWDIR%%/includes/ups
+@dirrm %%WWWDIR%%/includes/to/device
+@dirrm %%WWWDIR%%/includes/to
+@dirrm %%WWWDIR%%/includes/plugin
+@dirrm %%WWWDIR%%/includes/output
 @dirrm %%WWWDIR%%/includes/os
 @dirrm %%WWWDIR%%/includes/mb
-@dirrm %%WWWDIR%%/includes/lang
+@dirrm %%WWWDIR%%/includes/js
+@dirrm %%WWWDIR%%/includes/interface
+@dirrm %%WWWDIR%%/includes/error
 @dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/gfx/treeTable
+@dirrm %%WWWDIR%%/gfx/images
 @dirrm %%WWWDIR%%/gfx
+@dirrm %%WWWDIR%%/data
 @dirrm %%WWWDIR%%
