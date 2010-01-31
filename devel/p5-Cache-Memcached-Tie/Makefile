@@ -1,0 +1,23 @@
+# New ports collection makefile for:	Cache-Memcached-Tie
+# Whom: 			Andrey Kostenko <andrey@kostenko.name>
+# Date created:		02 December 2009
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Cache-Memcached-Tie
+PORTVERSION=	0.08
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	andrey@kostenko.name
+COMMENT=	Use Cache::Memcached::Fast like hash.
+
+BUILD_DEPENDS=	p5-Cache-Memcached-Fast>=0:${PORTSDIR}/databases/p5-Cache-Memcached-Fast
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	5.8.0+
+MAN3=		Cache::Memcached::Tie.3
+
+.include <bsd.port.mk>
