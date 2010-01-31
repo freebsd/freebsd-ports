@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cfengine.org/tarballs/
 
@@ -36,7 +35,7 @@ OPTIONS=        PCRE	"Enable Perl-compatible regular expressions"		on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PCRE)
-BUILD_DEPENDS+= ${PORTSDIR}/devel/pcre
+BUILD_DEPENDS+= pcre-config:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+= --with-pcre=${LOCALBASE}
 .endif
 
