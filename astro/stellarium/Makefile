@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stellarium
-PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTVERSION=	0.10.3
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 
@@ -20,7 +19,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		freetype:${PORTSDIR}/print/freetype2
 
 USE_QT_VER=	4
-QT_COMPONENTS=	moc_build rcc_build uic_build qmake_build corelib gui opengl script network
+QT_COMPONENTS=	moc_build rcc_build uic_build qmake_build \
+		corelib gui opengl script network svg qtestlib sql
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GL=		gl glu
@@ -50,7 +50,7 @@ post-patch:
 		${WRKSRC}/doc/CMakeLists.txt
 # avoid picking up the wrong fixx11h.h (x11/kdelibs3 installs one that
 # doesn't handle FontChange)
-	@${FIND} ${WRKSRC}/src -type f -print0 | \
+	@${FIND} ${WRKSRC}/src ${WRKSRC}/plugins -type f -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/fixx11h.h/fixx11qt4h.h/'
 	@${MV} ${WRKSRC}/src/external/fixx11h.h ${WRKSRC}/src/external/fixx11qt4h.h
 
