@@ -1,0 +1,38 @@
+FreeBSD-Patch for Squid-Advisory 2010:1, prepared by Thomas-Martin Seck,
+<tmseck@web.de>, 2010-02-01.
+
+Removed one directory level and the first hunk with CVS meta-information
+from the original patch. The original patch can be downloaded from:
+http://www.squid-cache.org/Versions/v2/HEAD/changesets/12597.patch
+
+---------------------
+PatchSet 12597 
+Date: 2010/01/15 11:40:30
+Author: amosjeffries
+Branch: HEAD
+Tag: (none) 
+Log:
+Handle DNS header-only packets as invalid.
+
+Members: 
+	lib/rfc1035.c:1.30->1.31 
+
+Index: lib/rfc1035.c
+===================================================================
+RCS file: /cvsroot/squid/squid/lib/rfc1035.c,v
+retrieving revision 1.30
+retrieving revision 1.31
+diff -u -r1.30 -r1.31
+--- lib/rfc1035.c	15 Jun 2008 03:49:55 -0000	1.30
++++ lib/rfc1035.c	15 Jan 2010 11:40:30 -0000	1.31
+@@ -286,7 +286,9 @@
+     size_t len;
+     assert(ns > 0);
+     do {
+-	assert((*off) < sz);
++	if ((*off) >= sz) {
++	    return 1;
++	}
+ 	c = *(buf + (*off));
+ 	if (c > 191) {
+ 	    /* blasted compression */
