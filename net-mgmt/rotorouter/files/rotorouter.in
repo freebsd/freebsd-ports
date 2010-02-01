@@ -1,14 +1,12 @@
 #!/bin/sh
-#
-# $Id$
-#
 
+# $FreeBSD$
+#
 # PROVIDE: rotorouter
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following line to /etc/rc.conf to enable rotorouter:
+# Add the following line to /etc/rc.conf[.local] to enable rotorouter:
 #
 #   rotorouter_enable="YES"
 #
@@ -21,12 +19,11 @@ name=rotorouter
 rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
+command_args='&'
 
 load_rc_config $name
 
-rotorouter_enable=${rotorouter_enable:-"NO"}
-rotorouter_flags="${rotorouter_flags:--h %%PREFIX%%/etc/rotorouter.conf}"
-
-rotorouter_flags="${rotorouter_flags} &"
+: ${rotorouter_enable-"NO"}
+: ${rotorouter_flags-"-h %%PREFIX%%/etc/rotorouter.conf"}
 
 run_rc_command "$1"
