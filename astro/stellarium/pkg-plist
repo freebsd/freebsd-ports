@@ -147,13 +147,14 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/data/constellations_boundaries.dat
 %%DATADIR%%/data/countryCodes.dat
 %%DATADIR%%/data/default_config.ini
-%%DATADIR%%/data/fontmap.dat
 %%DATADIR%%/data/gui/nightHtml.css
 %%DATADIR%%/data/gui/nightStyle.css
 %%DATADIR%%/data/gui/normalHtml.css
 %%DATADIR%%/data/gui/normalStyle.css
 %%DATADIR%%/data/gui/world.png
+%%DATADIR%%/data/iso3166-1-alpha-2.utf8
 %%DATADIR%%/data/iso639-1.utf8
+%%DATADIR%%/data/shaders/xyYToRGB.glsl
 %%DATADIR%%/data/ssystem.ini
 %%DATADIR%%/data/stellarium.ico
 %%DATADIR%%/data/zone.tab
@@ -312,6 +313,7 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/nebulae/default/ngc2000names.dat
 %%DATADIR%%/nebulae/default/pleiades.png
 %%DATADIR%%/nebulae/default/textures.json
+%%DATADIR%%/scripts/common_objects.inc
 %%DATADIR%%/scripts/landscapes.ssc
 %%DATADIR%%/scripts/lunar_partial.ssc
 %%DATADIR%%/scripts/lunar_total.ssc
@@ -319,14 +321,41 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/scripts/solar_eclipse.ssc
 %%DATADIR%%/scripts/startup.ssc
 %%DATADIR%%/scripts/zodiac.ssc
+%%DATADIR%%/skycultures/aztec/Primeros_Memoriales.png
+%%DATADIR%%/skycultures/aztec/Tianquiztli_T.png
+%%DATADIR%%/skycultures/aztec/aztec0.png
+%%DATADIR%%/skycultures/aztec/citlaltlachtli.png
+%%DATADIR%%/skycultures/aztec/citlaltlachtli_t.png
+%%DATADIR%%/skycultures/aztec/colotlixayac.png
+%%DATADIR%%/skycultures/aztec/colotlixayac_image.png
+%%DATADIR%%/skycultures/aztec/colotlixayac_t.png
+%%DATADIR%%/skycultures/aztec/constellation_names.eng.fab
+%%DATADIR%%/skycultures/aztec/constellation_names.esp.fab
+%%DATADIR%%/skycultures/aztec/constellationsart.fab
+%%DATADIR%%/skycultures/aztec/constellationship.fab
+%%DATADIR%%/skycultures/aztec/description.en.utf8
+%%DATADIR%%/skycultures/aztec/description.es.utf8
+%%DATADIR%%/skycultures/aztec/edificios.png
+%%DATADIR%%/skycultures/aztec/info.ini
+%%DATADIR%%/skycultures/aztec/mamalhuaztli.png
+%%DATADIR%%/skycultures/aztec/mamalhuaztli_image.png
+%%DATADIR%%/skycultures/aztec/mamalhuaztli_t.png
+%%DATADIR%%/skycultures/aztec/nanahuatzin.png
+%%DATADIR%%/skycultures/aztec/tianquiztli.png
+%%DATADIR%%/skycultures/aztec/tiaquitztli_image.png
+%%DATADIR%%/skycultures/aztec/xonecuilli.png
+%%DATADIR%%/skycultures/aztec/xonecuilli_Glifo.png
+%%DATADIR%%/skycultures/aztec/xonecuilli_t.png
 %%DATADIR%%/skycultures/chinese/constellation_names.eng.fab
 %%DATADIR%%/skycultures/chinese/constellationship.fab
 %%DATADIR%%/skycultures/chinese/description.en.utf8
+%%DATADIR%%/skycultures/chinese/description.it.utf8
 %%DATADIR%%/skycultures/chinese/info.ini
 %%DATADIR%%/skycultures/chinese/star_names.fab
 %%DATADIR%%/skycultures/egyptian/constellation_names.eng.fab
 %%DATADIR%%/skycultures/egyptian/constellationship.fab
 %%DATADIR%%/skycultures/egyptian/description.en.utf8
+%%DATADIR%%/skycultures/egyptian/description.it.utf8
 %%DATADIR%%/skycultures/egyptian/info.ini
 %%DATADIR%%/skycultures/egyptian/star_names.fab
 %%DATADIR%%/skycultures/inuit/blubber-container.png
@@ -337,6 +366,7 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/skycultures/inuit/constellationsart.fab
 %%DATADIR%%/skycultures/inuit/constellationship.fab
 %%DATADIR%%/skycultures/inuit/description.en.utf8
+%%DATADIR%%/skycultures/inuit/description.it.utf8
 %%DATADIR%%/skycultures/inuit/dogs.png
 %%DATADIR%%/skycultures/inuit/info.ini
 %%DATADIR%%/skycultures/inuit/lamp-stand.png
@@ -351,39 +381,46 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/skycultures/korean/constellationsart.fab
 %%DATADIR%%/skycultures/korean/constellationship.fab
 %%DATADIR%%/skycultures/korean/description.en.utf8
+%%DATADIR%%/skycultures/korean/description.it.utf8
 %%DATADIR%%/skycultures/korean/info.ini
 %%DATADIR%%/skycultures/korean/on_korea_constellations.txt
 %%DATADIR%%/skycultures/korean/star_names.fab
 %%DATADIR%%/skycultures/lakota/constellation_names.eng.fab
 %%DATADIR%%/skycultures/lakota/constellationship.fab
 %%DATADIR%%/skycultures/lakota/description.en.utf8
+%%DATADIR%%/skycultures/lakota/description.it.utf8
 %%DATADIR%%/skycultures/lakota/info.ini
 %%DATADIR%%/skycultures/lakota/star_names.fab
 %%DATADIR%%/skycultures/maori/constellation_names.eng.fab
 %%DATADIR%%/skycultures/maori/constellationship.fab
 %%DATADIR%%/skycultures/maori/description.en.utf8
+%%DATADIR%%/skycultures/maori/description.it.utf8
 %%DATADIR%%/skycultures/maori/info.ini
 %%DATADIR%%/skycultures/maori/references.txt
 %%DATADIR%%/skycultures/maori/star_names.fab
 %%DATADIR%%/skycultures/navajo/constellation_names.eng.fab
 %%DATADIR%%/skycultures/navajo/constellationship.fab
 %%DATADIR%%/skycultures/navajo/description.en.utf8
+%%DATADIR%%/skycultures/navajo/description.it.utf8
 %%DATADIR%%/skycultures/navajo/info.ini
 %%DATADIR%%/skycultures/navajo/star_names.fab
 %%DATADIR%%/skycultures/norse/constellation_names.eng.fab
 %%DATADIR%%/skycultures/norse/constellationship.fab
 %%DATADIR%%/skycultures/norse/description.en.utf8
+%%DATADIR%%/skycultures/norse/description.it.utf8
 %%DATADIR%%/skycultures/norse/info.ini
 %%DATADIR%%/skycultures/norse/star_names.fab
 %%DATADIR%%/skycultures/polynesian/constellation_names.eng.fab
 %%DATADIR%%/skycultures/polynesian/constellationsart.fab
 %%DATADIR%%/skycultures/polynesian/constellationship.fab
 %%DATADIR%%/skycultures/polynesian/description.en.utf8
+%%DATADIR%%/skycultures/polynesian/description.it.utf8
 %%DATADIR%%/skycultures/polynesian/info.ini
 %%DATADIR%%/skycultures/polynesian/star_names.fab
 %%DATADIR%%/skycultures/tupi/constellation_names.eng.fab
 %%DATADIR%%/skycultures/tupi/constellationship.fab
 %%DATADIR%%/skycultures/tupi/description.en.utf8
+%%DATADIR%%/skycultures/tupi/description.it.utf8
 %%DATADIR%%/skycultures/tupi/info.ini
 %%DATADIR%%/skycultures/tupi/star_names.fab
 %%DATADIR%%/skycultures/western/andromeda.png
@@ -422,6 +459,7 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/skycultures/western/cygnus.png
 %%DATADIR%%/skycultures/western/delphinus.png
 %%DATADIR%%/skycultures/western/description.en.utf8
+%%DATADIR%%/skycultures/western/description.it.utf8
 %%DATADIR%%/skycultures/western/dorado.png
 %%DATADIR%%/skycultures/western/draco.png
 %%DATADIR%%/skycultures/western/equuleus.png
@@ -477,8 +515,8 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/skycultures/western/virgo.png
 %%DATADIR%%/skycultures/western/volans.png
 %%DATADIR%%/skycultures/western/vulpecula.png
+%%DATADIR%%/stars/default/defaultStarsConfig.json
 %%DATADIR%%/stars/default/name.fab
-%%DATADIR%%/stars/default/stars.ini
 %%DATADIR%%/stars/default/stars_0_0v0_1.cat
 %%DATADIR%%/stars/default/stars_1_0v0_1.cat
 %%DATADIR%%/stars/default/stars_2_0v0_1.cat
@@ -519,7 +557,7 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 %%DATADIR%%/textures/city.png
 %%DATADIR%%/textures/deimos.png
 %%DATADIR%%/textures/dione.png
-%%DATADIR%%/textures/earth-clouds.jpg
+%%DATADIR%%/textures/earth-clouds.png
 %%DATADIR%%/textures/earth-shadow.png
 %%DATADIR%%/textures/earthmap.png
 %%DATADIR%%/textures/enceladus.png
@@ -578,6 +616,7 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 @dirrm %%DATADIR%%/skycultures/inuit
 @dirrm %%DATADIR%%/skycultures/egyptian
 @dirrm %%DATADIR%%/skycultures/chinese
+@dirrm %%DATADIR%%/skycultures/aztec
 @dirrm %%DATADIR%%/skycultures
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/nebulae/default
@@ -590,6 +629,7 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 @dirrm %%DATADIR%%/landscapes/guereins
 @dirrm %%DATADIR%%/landscapes/garching
 @dirrm %%DATADIR%%/landscapes
+@dirrm %%DATADIR%%/data/shaders
 @dirrm %%DATADIR%%/data/gui
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
