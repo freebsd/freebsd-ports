@@ -7,6 +7,7 @@
 
 PORTNAME=	Mixin-Linewise
 PORTVERSION=	0.002
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RJ/RJBS/
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	Write your linewise code for handles; this does the rest
+
+BUILD_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter
 
 PERL_CONFIGURE=	yes
 
