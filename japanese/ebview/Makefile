@@ -7,14 +7,14 @@
 
 PORTNAME=	ebview
 PORTVERSION=	0.2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
-LIB_DEPENDS=	eb.14:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.15:${PORTSDIR}/japanese/eb
 
 CONFLICTS=	ja-ebview-gtk2-*
 
