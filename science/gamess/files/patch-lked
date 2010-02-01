@@ -1,5 +1,5 @@
---- lked.orig	2009-01-10 04:44:05.000000000 +0900
-+++ lked	2009-05-08 12:18:46.000000000 +0900
+--- lked.orig	2009-05-05 05:59:41.000000000 +0900
++++ lked	2010-02-01 10:29:52.000000000 +0900
 @@ -12,11 +12,11 @@
  #       axp64,compaq-sc,cray-pvp,cray-t3e,cray-x1,cray-xd1,cray-xt3,
  #       fuji-pp32,fuji-pp64,hpux32,hpux64,ibm32,ibm64,ibm64-sp,ibm-bg,
@@ -39,7 +39,7 @@
  #
  if ($TARGET == necsx) then
     set LDR='f90'
-@@ -693,13 +710,15 @@
+@@ -693,6 +710,8 @@
     case linux32:
     case linux64:
     case linux-ia64:
@@ -48,11 +48,12 @@
     case mac32:
     case mac64:
     case macG5:
-    case sgi32:
-    case sun32:
-    case sun64:
+@@ -707,7 +726,7 @@
+ #                                -lmpigf -lmpigi -lrt -lpthread'
+ #   The following is for TCP/IP sockets.
+ #
 -      set MSG_LIBRARIES='../ddi/libddi.a -lpthread'
-+      set MSG_LIBRARIES='../ddi/libddi.a %%PTHREAD_LIBS%%'
++       set MSG_LIBRARIES='../ddi/libddi.a %%PTHREAD_LIBS%%'
  #                    Solaris 2.6 needs -lposix4 instead of -lrt
        if (($TARGET == sun32)     || ($TARGET == sun64) || \
            ($TARGET == fuji-pp32) || ($TARGET == fuji-pp64)) then
