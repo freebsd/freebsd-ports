@@ -2241,6 +2241,7 @@ deskmenu                        ports/x11/deskmenu
 deskpaint                       ports/x11/deskpaint
 desktop-data-model              ports/net/desktop-data-model
 desktop-file-utils              ports/devel/desktop-file-utils
+desktop-installer               ports/sysutils/desktop-installer
 desktopbsd-tools                ports/sysutils/desktopbsd-tools
 desmume                         ports/emulators/desmume
 despoof                         ports/net/despoof
@@ -3193,6 +3194,7 @@ exrtools                        ports/graphics/exrtools
 exslt                           ports/textproc/exslt
 extace                          ports/audio/extace
 extipl                          ports/sysutils/extipl
+extjs                           ports/www/extjs
 extmail                         ports/mail/extmail
 extman                          ports/mail/extman
 extrackt                        ports/sysutils/extrackt
@@ -5834,6 +5836,7 @@ is-aspell                       ports/textproc/is-aspell
 isaac-cfd                       ports/science/isaac-cfd
 isabelle                        ports/math/isabelle
 isakmpd                         ports/security/isakmpd
+isbg                            ports/mail/isbg
 isc-cron                        ports/sysutils/isc-cron
 isc-dhcp3-devel                 ports/net/isc-dhcp3-devel
 isc-dhcp30-client               ports/net/isc-dhcp30-client
@@ -6595,6 +6598,7 @@ k3dsurf                         ports/math/k3dsurf
 k8048                           ports/devel/k8048
 k8temp                          ports/sysutils/k8temp
 k9copy                          ports/multimedia/k9copy
+k9copy-kde4                     ports/multimedia/k9copy-kde4
 kBuild                          ports/devel/kBuild
 kaddressbook-plugins            ports/misc/kaddressbook-plugins
 kaffe                           ports/java/kaffe
@@ -9814,6 +9818,7 @@ nload                           ports/net/nload
 nltk                            ports/textproc/nltk
 nmap                            ports/security/nmap
 nmap-i18n-man                   ports/security/nmap-i18n-man
+nmapsi4                         ports/security/nmapsi4
 nmh                             ports/mail/nmh
 nml                             ports/lang/nml
 nmzmail                         ports/mail/nmzmail
@@ -10799,6 +10804,7 @@ p5-Cache-FastMmap               ports/devel/p5-Cache-FastMmap
 p5-Cache-Memcached              ports/databases/p5-Cache-Memcached
 p5-Cache-Memcached-Fast         ports/databases/p5-Cache-Memcached-Fast
 p5-Cache-Memcached-Managed      ports/databases/p5-Cache-Memcached-Managed
+p5-Cache-Memcached-Tie          ports/devel/p5-Cache-Memcached-Tie
 p5-Cache-Memcached-XS           ports/databases/p5-Cache-Memcached-XS
 p5-Cache-Mmap                   ports/devel/p5-Cache-Mmap
 p5-Cache-Simple-TimedExpiry     ports/devel/p5-Cache-Simple-TimedExpiry
@@ -13158,6 +13164,7 @@ p5-SMS-Send-DeviceGsm           ports/comms/p5-SMS-Send-DeviceGsm
 p5-SMS-Send-TW-HiAir            ports/comms/p5-SMS-Send-TW-HiAir
 p5-SMS-Send-TW-PChome           ports/comms/p5-SMS-Send-TW-PChome
 p5-SMS-Send-TW-ShareSMS         ports/comms/p5-SMS-Send-TW-ShareSMS
+p5-SMS-Send-TW-Socket2Air       ports/comms/p5-SMS-Send-TW-Socket2Air
 p5-SMS-Send-TW-chtsns           ports/comms/p5-SMS-Send-TW-chtsns
 p5-SMS-Send-TW-emome            ports/comms/p5-SMS-Send-TW-emome
 p5-SNMP-Info                    ports/net-mgmt/p5-SNMP-Info
@@ -14392,6 +14399,7 @@ p5-cache-fastmmap               ports/devel/p5-Cache-FastMmap
 p5-cache-memcached              ports/databases/p5-Cache-Memcached
 p5-cache-memcached-fast         ports/databases/p5-Cache-Memcached-Fast
 p5-cache-memcached-managed      ports/databases/p5-Cache-Memcached-Managed
+p5-cache-memcached-tie          ports/devel/p5-Cache-Memcached-Tie
 p5-cache-memcached-xs           ports/databases/p5-Cache-Memcached-XS
 p5-cache-mmap                   ports/devel/p5-Cache-Mmap
 p5-cache-simple-timedexpiry     ports/devel/p5-Cache-Simple-TimedExpiry
@@ -16965,6 +16973,7 @@ p5-sms-send-tw-emome            ports/comms/p5-SMS-Send-TW-emome
 p5-sms-send-tw-hiair            ports/comms/p5-SMS-Send-TW-HiAir
 p5-sms-send-tw-pchome           ports/comms/p5-SMS-Send-TW-PChome
 p5-sms-send-tw-sharesms         ports/comms/p5-SMS-Send-TW-ShareSMS
+p5-sms-send-tw-socket2air       ports/comms/p5-SMS-Send-TW-Socket2Air
 p5-snmp-info                    ports/net-mgmt/p5-SNMP-Info
 p5-snmp-mib-compiler            ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-snmp-persist                 ports/devel/p5-SNMP-Persist
@@ -18610,7 +18619,6 @@ pecl-operator                   ports/devel/pecl-operator
 pecl-pam                        ports/security/pecl-pam
 pecl-params                     ports/devel/pecl-params
 pecl-pdflib                     ports/print/pecl-pdflib
-pecl-pecl_http                  ports/www/pecl-pecl_http
 pecl-perl                       ports/lang/pecl-perl
 pecl-phar                       ports/archivers/pecl-phar
 pecl-phk                        ports/archivers/pecl-phk
@@ -20639,6 +20647,7 @@ qstat                           ports/games/qstat
 qsvn                            ports/devel/qsvn
 qsynth                          ports/audio/qsynth
 qt-bluecurve-theme              ports/x11-themes/qt-bluecurve-theme
+qt-faststart                    ports/multimedia/qt-faststart
 qt-ibase-plugin                 ports/databases/qt-ibase-plugin
 qt-mysql-plugin                 ports/databases/qt-mysql-plugin
 qt-odbc-plugin                  ports/databases/qt-odbc-plugin
@@ -20915,6 +20924,7 @@ redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
 redmine                         ports/www/redmine
+redmine-basecamp                ports/www/redmine-basecamp
 ree                             ports/misc/ree
 reed                            ports/sysutils/reed
 reed-solomon                    ports/math/reed-solomon
@@ -21074,6 +21084,7 @@ roxterm                         ports/x11/roxterm
 rp-pppoe                        ports/net/rp-pppoe
 rpc                             ports/math/rpc
 rpc2                            ports/devel/rpc2
+rpcalc                          ports/math/rpcalc
 rpl                             ports/misc/rpl
 rplay                           ports/audio/rplay
 rpm                             ports/archivers/rpm
@@ -24416,6 +24427,7 @@ xbone                           ports/net/xbone
 xbone-gui                       ports/net/xbone-gui
 xboxproxy                       ports/net/xboxproxy
 xbraitenberg                    ports/emulators/xbraitenberg
+xbrightness                     ports/x11/xbrightness
 xbsql                           ports/databases/xbsql
 xbubble                         ports/games/xbubble
 xbuffy                          ports/mail/xbuffy
@@ -25381,6 +25393,7 @@ yodl                            ports/textproc/yodl
 yorick                          ports/lang/yorick
 yorick-doc                      ports/lang/yorick-doc
 yould                           ports/textproc/yould
+yourls                          ports/www/yourls
 youtube_dl                      ports/www/youtube_dl
 ypsilon                         ports/lang/ypsilon
 yptransitd                      ports/net/yptransitd
@@ -25580,8 +25593,8 @@ zh-scim-fcitx                   ports/chinese/scim-fcitx
 zh-scim-pinyin                  ports/chinese/scim-pinyin
 zh-scim-tables                  ports/chinese/scim-tables
 zh-srecite                      ports/chinese/srecite
-zh-stardict2-dict-zh_CN         ports/chinese/stardict2-dict-zh_CN
-zh-stardict2-dict-zh_cn         ports/chinese/stardict2-dict-zh_CN
+zh-stardict-dict-zh_CN          ports/chinese/stardict-dict-zh_CN
+zh-stardict-dict-zh_cn          ports/chinese/stardict-dict-zh_CN
 zh-tcl83                        ports/chinese/tcl83
 zh-telnet                       ports/chinese/telnet
 zh-tin                          ports/chinese/tin
@@ -25624,6 +25637,7 @@ znavigator                      ports/www/znavigator
 znc                             ports/irc/znc
 znibbles                        ports/games/znibbles
 zniper                          ports/net/zniper
+znotes                          ports/deskutils/znotes
 zodb3                           ports/databases/zodb3
 zoidberg                        ports/shells/zoidberg
 zoinks                          ports/editors/zoinks
