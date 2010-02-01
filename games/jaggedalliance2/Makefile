@@ -27,6 +27,7 @@ NO_CDROM=	License only permits non-commerical use
 NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+SUB_FILES=	pkg-message
 
 OPTIONS=	DUTCH	"Compile for Dutch version (choose ONE)"	Off \
 		ENGLISH	"Compile for English version (choose ONE)"	Off \
@@ -64,7 +65,7 @@ MAN6=	ja2.6
 
 post-install:
 	@${MKDIR} ${DATADIR}/Data/TILECACHE
-	@${SED} -e 's|$${DATADIR}|${DATADIR}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 lowercase:
 	@for i in \
