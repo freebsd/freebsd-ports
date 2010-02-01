@@ -1784,6 +1784,7 @@
     SUBDIR += p5-MooseX-Object-Pluggable
     SUBDIR += p5-MooseX-POE
     SUBDIR += p5-MooseX-Params-Validate
+    SUBDIR += p5-MooseX-RelatedClassRoles
     SUBDIR += p5-MooseX-Role-Parameterized
     SUBDIR += p5-MooseX-Role-WithOverloading
     SUBDIR += p5-MooseX-SemiAffordanceAccessor
