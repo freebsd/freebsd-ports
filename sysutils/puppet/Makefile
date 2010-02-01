@@ -7,6 +7,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	0.25.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
 
