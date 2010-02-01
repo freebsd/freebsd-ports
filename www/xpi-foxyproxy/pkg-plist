@@ -8,25 +8,57 @@
 %%XPI_XPIDIR%%/chrome/content/blockedpagepattern.xul
 %%XPI_XPIDIR%%/chrome/content/chooseproxy.js
 %%XPI_XPIDIR%%/chrome/content/chooseproxy.xul
+%%XPI_XPIDIR%%/chrome/content/colorpicker2.css
+%%XPI_XPIDIR%%/chrome/content/colorpicker2.xml
 %%XPI_XPIDIR%%/chrome/content/colorvalidator.js
 %%XPI_XPIDIR%%/chrome/content/firefoxOptionsOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay-svg.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/foxyproxy.css
 %%XPI_XPIDIR%%/chrome/content/foxyproxySongbird.css
+%%XPI_XPIDIR%%/chrome/content/images/arrow_refresh.png
 %%XPI_XPIDIR%%/chrome/content/images/cbox-check.gif
-%%XPI_XPIDIR%%/chrome/content/images/disabled.gif
-%%XPI_XPIDIR%%/chrome/content/images/down.gif
+%%XPI_XPIDIR%%/chrome/content/images/delete-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/delete.png
+%%XPI_XPIDIR%%/chrome/content/images/dialog-information.png
+%%XPI_XPIDIR%%/chrome/content/images/disk-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/disk.png
+%%XPI_XPIDIR%%/chrome/content/images/edit-clear-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/edit-clear.png
+%%XPI_XPIDIR%%/chrome/content/images/emblem-favorite.png
 %%XPI_XPIDIR%%/chrome/content/images/foxyproxy-nocopy.gif
-%%XPI_XPIDIR%%/chrome/content/images/foxyproxy-with-copy.gif
-%%XPI_XPIDIR%%/chrome/content/images/info.png
-%%XPI_XPIDIR%%/chrome/content/images/patterns-ani.gif
-%%XPI_XPIDIR%%/chrome/content/images/patterns.gif
-%%XPI_XPIDIR%%/chrome/content/images/random-ani.gif
-%%XPI_XPIDIR%%/chrome/content/images/random.gif
-%%XPI_XPIDIR%%/chrome/content/images/static-ani.gif
-%%XPI_XPIDIR%%/chrome/content/images/static.gif
-%%XPI_XPIDIR%%/chrome/content/images/up.gif
+%%XPI_XPIDIR%%/chrome/content/images/go-down-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/go-down.png
+%%XPI_XPIDIR%%/chrome/content/images/go-up-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/go-up.png
+%%XPI_XPIDIR%%/chrome/content/images/help-browser.png
+%%XPI_XPIDIR%%/chrome/content/images/internet-web-browser.png
+%%XPI_XPIDIR%%/chrome/content/images/lightning_add.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_add.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_delete-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_delete.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_edit-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_edit.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_go-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_go.png
+%%XPI_XPIDIR%%/chrome/content/images/monitor_link.png
+%%XPI_XPIDIR%%/chrome/content/images/page.png
+%%XPI_XPIDIR%%/chrome/content/images/page_add.png
+%%XPI_XPIDIR%%/chrome/content/images/page_copy.png
+%%XPI_XPIDIR%%/chrome/content/images/page_delete.png
+%%XPI_XPIDIR%%/chrome/content/images/page_edit.png
+%%XPI_XPIDIR%%/chrome/content/images/page_white_copy.png
+%%XPI_XPIDIR%%/chrome/content/images/preferences-system.png
+%%XPI_XPIDIR%%/chrome/content/images/satval.png
+%%XPI_XPIDIR%%/chrome/content/images/slide.gif
+%%XPI_XPIDIR%%/chrome/content/images/slidehue.gif
+%%XPI_XPIDIR%%/chrome/content/images/tab_go-disabled.png
+%%XPI_XPIDIR%%/chrome/content/images/tab_go.png
+%%XPI_XPIDIR%%/chrome/content/images/text_align_justify.png
+%%XPI_XPIDIR%%/chrome/content/images/tick.png
+%%XPI_XPIDIR%%/chrome/content/images/wand.png
+%%XPI_XPIDIR%%/chrome/content/images/world.png
 %%XPI_XPIDIR%%/chrome/content/includes.xul
 %%XPI_XPIDIR%%/chrome/content/options.js
 %%XPI_XPIDIR%%/chrome/content/options.xul
@@ -87,10 +119,10 @@
 %%XPI_XPIDIR%%/chrome/locale/fi-FI/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/fi-FI/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/fi-FI/torwizhelp.dtd
-%%XPI_XPIDIR%%/chrome/locale/fr-FR/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/fr-FR/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/fr-FR/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/fr-FR/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/amo.properties
+%%XPI_XPIDIR%%/chrome/locale/fr/foxyproxy.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/foxyproxy.properties
+%%XPI_XPIDIR%%/chrome/locale/fr/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/hr-HR/foxyproxy.properties
@@ -99,10 +131,6 @@
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/hu-HU/torwizhelp.dtd
-%%XPI_XPIDIR%%/chrome/locale/id-ID/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/id-ID/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/id-ID/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/id-ID/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/it-IT/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/it-IT/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/it-IT/foxyproxy.properties
@@ -111,10 +139,6 @@
 %%XPI_XPIDIR%%/chrome/locale/ja-JP/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/ja-JP/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/ja-JP/torwizhelp.dtd
-%%XPI_XPIDIR%%/chrome/locale/mk-MK/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/mk-MK/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/mk-MK/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/mk-MK/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl-NL/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/nl-NL/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl-NL/foxyproxy.properties
@@ -159,6 +183,10 @@
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/amo.properties
+%%XPI_XPIDIR%%/chrome/locale/vi/foxyproxy.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/foxyproxy.properties
+%%XPI_XPIDIR%%/chrome/locale/vi/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.properties
@@ -193,13 +221,11 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fa-IR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fi-FI
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fr
 @dirrm %%XPI_XPIDIR%%/chrome/locale/hr-HR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/hu-HU
-@dirrm %%XPI_XPIDIR%%/chrome/locale/id-ID
 @dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/chrome/locale/mk-MK
 @dirrm %%XPI_XPIDIR%%/chrome/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pl-PL
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
@@ -211,6 +237,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/th-TH
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/uk-UA
+@dirrm %%XPI_XPIDIR%%/chrome/locale/vi
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/locale
