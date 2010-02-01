@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="696053c6-0f50-11df-a628-001517351c22">
+    <topic>bugzilla -- information leak</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><gt>3.3.1</gt><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.0.10/">
+	  <p>When moving a bug from one product to another, an intermediate
+            page is displayed letting you select the groups the bug should
+            be restricted to in the new product. However, a regression in
+            the 3.4.x series made it ignore all groups which are not
+            available in both products. As a workaround, you had to move
+            the bug to the new product first and then restrict it to the
+            desired groups, in two distinct steps, which could make the bug
+            temporarily public.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3387</cvename>
+      <url>http://www.bugzilla.org/security/3.0.10/</url>
+    </references>
+    <dates>
+      <discovery>2010-01-31</discovery>
+      <entry>2010-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="192609c8-0c51-11df-82a0-00248c9b4be7">
     <topic>irc-ratbox -- multiple vulnerabilities</topic>
     <affects>
