@@ -19,28 +19,25 @@ COMMENT=	Traceroute attempt logger and result spoofer
 
 NO_WRKSUBDIR=	yes
 
-SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+SUB_FILES=	pkg-message
+
+USE_RC_SUBR=	rotorouter
 
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR=    yes
-
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${FILESDIR}/rotorouter.c ${WRKSRC}
+	${MKDIR} ${WRKSRC}/src
+	${CP} ${FILESDIR}/rotorouter.c ${WRKSRC}/src
 
 do-build:
-		${CC} -lpcap -o ${WRKSRC}/rotorouter ${WRKSRC}/rotorouter.c
-		${SED} ${SED_SCRIPT} < ${FILESDIR}/rotorouter.sh > ${WRKSRC}/rotorouter.sh
+		${CC} -lpcap -o ${WRKSRC}/src/rotorouter ${WRKSRC}/src/rotorouter.c
 
 do-install:
 		@${INSTALL_DATA} -m 640 ${FILESDIR}/rotorouter.conf-example ${PREFIX}/etc
 		@${INSTALL_DATA} -m 640 ${FILESDIR}/rotorouter.conf-example ${PREFIX}/etc/rotorouter.conf
-		@${INSTALL_PROGRAM} ${WRKSRC}/rotorouter ${PREFIX}/sbin/
-		@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/rotorouter.sh ${PREFIX}/etc/rc.d/rotorouter.sh
+		@${INSTALL_PROGRAM} ${WRKSRC}/src/rotorouter ${PREFIX}/sbin
 
 post-install:
-		@${SED} ${SED_SCRIPT} < ${PKGMESSAGE}
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
