@@ -162,3 +162,4 @@ couchdb:*:919:919:daemon:0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
 vboxusers:*:920:920::0:0:Virtualbox user:/nonexistent:/usr/sbin/nologin
 transmission:*:921:921::0:0:Transmission Daemon User:/usr/local/etc/transmission/home:/usr/sbin/nologin
 mongodb:*:922:922:daemon:0:0:MongoDB Account:/var/empty:/usr/sbin/nologin
+liquidsoap:*:923:923::0:0:Liquidsoap User:/nonexistent:/usr/sbin/nologin

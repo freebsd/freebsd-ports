@@ -152,3 +152,4 @@ couchdb:*:919:
 vboxusers:*:920:
 transmission:*:921:
 mongodb:*:922:
+liquidsoap:*:923:
