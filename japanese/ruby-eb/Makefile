@@ -7,7 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://rubyeb.sourceforge.net/ \
 		SF/rubyeb/rubyeb/rubyeb-${PORTVERSION}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bind of EB library
 
-LIB_DEPENDS=	eb.14:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.15:${PORTSDIR}/japanese/eb
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
