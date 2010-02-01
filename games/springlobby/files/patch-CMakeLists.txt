@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2010-01-26 22:06:42.000000000 +0300
++++ CMakeLists.txt	2010-01-31 05:34:06.000000000 +0300
+@@ -89,7 +89,6 @@
+ # Did we find wxWidgets ? This condition will fail for as long as the internal Vars do not point to the proper wxWidgets Configuration.
+ IF(wxWidgets_FOUND)
+ 	# Include wxWidgets macros
+-	INCLUDE(${wxWidgets_USE_FILE})
+ 	IF(MSVC)
+ 		INCLUDE_DIRECTORIES( ${wxWidgets_ROOT_DIR}/include/msvc )
+ 	ENDIF(MSVC)
+@@ -97,6 +96,9 @@
+ 		SET(wxWidgets_RC_DIR ${wxWidgets_ROOT_DIR}/include)
+ 	ENDIF(MINGW)
+ 	INCLUDE_DIRECTORIES( ${wxWidgets_INCLUDE_DIRS} )
++	STRING(REGEX REPLACE ";" ";-D" wxWidgets_DEFINITIONS "${wxWidgets_DEFINITIONS}")
++	SET(wxWidgets_DEFINITIONS "-D${wxWidgets_DEFINITIONS}")
++	ADD_DEFINITIONS( ${wxWidgets_DEFINITIONS} )
+ ELSE(wxWidgets_FOUND)
+ 	# For Convenience. If we cannot continue, inform the User.
+ 	MESSAGE( FATAL_ERROR "wxWidgets library not found! Please install the package to continue")
+@@ -117,7 +119,7 @@
+ 
+ 	Add_Subdirectory( ${springlobby_SOURCE_DIR}/src/sound/alure )
+ 	INCLUDE_DIRECTORIES( ${springlobby_SOURCE_DIR}/src/sound/alure/include )
+-	LINK_LIBRARIES( ${OPENAL_LIBRARY} ${springlobby_BINARY_DIR}/src/sound/alure/libalure.a )
++	LINK_LIBRARIES( ${OPENAL_LIBRARY} alure )
+ ELSE ( OPTION_SOUND )
+     # Disable sound.
+     ADD_DEFINITIONS( -DDISABLE_SOUND )
