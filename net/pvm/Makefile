@@ -110,6 +110,8 @@ MLINKS=		pvm_intro.1 PVM.1 pvmd3.1 pvmd.1 \
 		pvm_trecv.3 pvmftrecv.3 pvm_unpack.3 pvmfunpack.3 \
 		pvm_pkmesg.3 pvmfupkmesg.3
 
+SUB_FILES=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 pre-patch:
@@ -142,6 +144,6 @@ do-install:
 	cd ${WRKSRC}/man/man3 && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3
 
 post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
