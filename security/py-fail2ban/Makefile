@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTVERSION=	0.8.4
 CATEGORIES=	security python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pgollucci@FreeBSD.org
-COMMENT=	 scans log files and bans IP that makes too many password failures. 
+COMMENT=	scans log files and bans IP that makes too many password failures. 
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE= yes
 
 USE_BZIP2=	yes
 
-USE_PYTHON=	2.5
+USE_PYTHON=	2.5-2.6
 USE_PYDISTUTILS=	yes
 
 USE_RC_SUBR=	fail2ban
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_INSTALLARGS+=	--install-purelib=${PYTHON_SITELIBDIR} \
-							--install-data=${ETCDIR} 
+				--install-data=${ETCDIR} 
 
 FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/man/fail2ban-client.1 \
