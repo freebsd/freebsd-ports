@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="296ecb59-0f6b-11df-8bab-0019996bc1f7">
+    <topic>squid -- Denial of Service vulnerability in DNS handling</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>2.7.1</ge><lt>2.7.7_3</lt></range>
+	<range><ge>3.0.1</ge><lt>3.0.22</lt></range>
+	<range><ge>3.1.0.1</ge><lt>3.1.0.16</lt></range>
+       </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2010:1 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2010_1.txt">
+	  <p>Due to incorrect data validation Squid is vulnerable to a denial
+	    of service attack when processing specially crafted DNS packets.</p>
+	  <p>This problem allows any trusted client or external server who can
+	    determine the squid receiving port to perform a short-term denial
+	    of service attack on the Squid service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2010_1.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-01-14</discovery>
+      <entry>2010-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="696053c6-0f50-11df-a628-001517351c22">
     <topic>bugzilla -- information leak</topic>
     <affects>
