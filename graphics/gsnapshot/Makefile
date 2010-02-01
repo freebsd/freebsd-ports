@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	gsnapshot
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gould/${PORTNAME}/release%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk+ based screen capture
 
-USE_AUTOTOOLS=	automake:15:env libtool:22
-USE_GNOME=	gtk20
-GNU_CONFIGURE=	yes
-USE_XORG=	x11
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
+USE_GNOME=	pkgconfig gtk20 libwnck libxml2
+USE_XORG=	x11 xmu
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-fPIC -I${LOCALBASE}/include/libxml2
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS COPYING INSTALL README TODO
 
 DESKTOP_ENTRIES=	"gsnapshot" \
 			"A gtk+ based screen capture" \
