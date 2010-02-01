@@ -208,6 +208,7 @@ sbin/dnssec-revoke
 sbin/dnssec-settime
 sbin/dnssec-signzone
 sbin/genrandom
+sbin/isc-hmac-fixup
 sbin/lwresd
 sbin/named
 sbin/named-checkconf
@@ -249,6 +250,7 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-signzone.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.genrandom.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.host.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.isc-hmac-fixup.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkconf.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkzone.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.named-journalprint.html
