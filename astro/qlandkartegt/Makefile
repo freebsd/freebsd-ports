@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	qlandkartegt
-PORTVERSION=	0.15.1
-PORTREVISION=	1
+PORTVERSION=	0.16.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
-MAINTAINER=	freebsd@levsha.org.ua
+MAINTAINER=	i@levsha.me
 COMMENT=	The ultimate outdoor aficionado's tool
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
@@ -21,6 +20,12 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib moc_build uic_build rcc_build qmake_build opengl linguist
 
+SUB_FILES=	qlandkartegt
+
 MAN1=		qlandkartegt.1
+
+post-install:
+	${MV} ${PREFIX}/bin/qlandkartegt ${PREFIX}/bin/qlandkartegt.bin
+	${INSTALL_SCRIPT} ${WRKDIR}/qlandkartegt ${PREFIX}/bin
 
 .include <bsd.port.mk>
