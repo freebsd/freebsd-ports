@@ -12,7 +12,7 @@ name="denyhosts"
 rcvar=${name}_enable
 
 command="%%PREFIX%%/bin/denyhosts.py"
-command_interpreter="/usr/local/bin/python"
+command_interpreter="%%PYTHON%%"
 command_args="--config %%PREFIX%%/etc/denyhosts.conf --daemon"
 pidfile="/var/run/${name}.pid"
 
