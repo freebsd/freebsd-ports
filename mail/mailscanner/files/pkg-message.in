@@ -39,15 +39,24 @@
 	script %%PREFIX%%/share/doc/MailScanner/Sophos.install.freebsd
 
 	*****************************************************************
-	A new rc variable called mailscanner_user has been added to the
-	startup script. This is a temporary workaround to address the
-	numerous taint mode problems that are still present in the code.
+	A new optional rc variable called mailscanner_user has been added
+	to the startup script. This is a temporary workaround to address
+	any possible taint mode problems that may still be present in the
+	code.
+	
+	Taint mode related problems can usually be identified from
+	undeliverable reports containing the following error:
+	
+	"MailScanner: Message attempted to kill MailScanner"
 
 	If you changed the "Run As User" variable in MailScanner.conf
-	you MUST also set the same value in /etc/rc.conf.
+	and wish to disable taint mode, you MUST also set the same value
+	in /etc/rc.conf.
 
 	i.e. mailscanner_user="postfix"
 
+	To re-enable taint mode, simply remove the variable from rc.conf.
+	
 	The new variable uses su to start the master perl script as the
 	specified user, this effectively disables perl's taint mode.
 	*****************************************************************
