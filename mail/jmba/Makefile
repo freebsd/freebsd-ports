@@ -10,7 +10,7 @@ PORTVERSION=	0.5.5
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Junk Mail Buffering Agent
 
 USE_BZIP2=	yes

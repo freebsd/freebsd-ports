@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://fedorahosted.org/releases/n/o/nodoka/
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK nodoka engine and themes
 
 OPTIONS=	ANIMATION	"Enable animation support"	off \

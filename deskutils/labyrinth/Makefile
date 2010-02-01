@@ -12,7 +12,7 @@ CATEGORIES=	deskutils python
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Mind-mapping tool for GNOME
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4.0

@@ -14,7 +14,7 @@ MASTER_SITES=	https://launchpad.net/poppler-python/trunk/development/+download/ 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Python bindings for the Poppler PDF rendering library
 
 LIB_DEPENDS=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk

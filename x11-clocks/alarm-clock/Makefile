@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-clocks deskutils
 MASTER_SITES=	http://dp0154.debowypark.waw.pl/ac/downloads/
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Alarm Clock for the GNOME desktop
 
 LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2

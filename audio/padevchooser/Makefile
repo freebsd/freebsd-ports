@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK icon tray for PulseAudio
 
 LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
