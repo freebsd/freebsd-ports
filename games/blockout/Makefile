@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/bl24_lin_src
 BUILD_WRKSRC=	${WRKSRC}/BlockOut
 
 FETCH_ARGS?=	-pRr
+SUB_FILES=	pkg-message
 
 pre-build:
 		cd ${WRKSRC}/ImageLib/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
@@ -45,6 +46,6 @@ marbleg menuback menucredits menufont menufont2 menupit online onlinea spark spa
 .		endfor
 		${INSTALL_DATA} ${WRKSRC}/BlockOut/sounds/music.mp3 ${DATADIR}/sounds
 post-install:
-		${SED} -e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" ${PKGMESSAGE};
+		@{CAT} {PKGMESSAGE}
 
 .include <bsd.port.mk>
