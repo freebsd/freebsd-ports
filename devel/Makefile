@@ -762,6 +762,7 @@
     SUBDIR += libmsocket
     SUBDIR += libmtrie
     SUBDIR += libnaji
+    SUBDIR += libnfc
     SUBDIR += libnotify
     SUBDIR += libnotifymm
     SUBDIR += libnxt

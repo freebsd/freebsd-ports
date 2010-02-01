@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+bin/nfc-anticol
+bin/nfc-emulate
+bin/nfc-list
+bin/nfc-mfclassic
+bin/nfc-mfultralight
+bin/nfc-relay
+bin/nfcip-initiator
+bin/nfcip-target
+include/nfc/mifaretag.h
+include/nfc/mifareultag.h
+include/nfc/nfc-messages.h
+include/nfc/nfc-types.h
+include/nfc/nfc.h
+lib/libnfc.a
+lib/libnfc.la
+lib/libnfc.so
+lib/libnfc.so.0
+libdata/pkgconfig/libnfc.pc
+@dirrm include/nfc
