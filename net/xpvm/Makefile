@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphical Console and Monitor for PVM
 
+MAKE_JOBS_UNSAFE=	yes
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
@@ -23,7 +25,7 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 WRKSRC=		${WRKDIR}/xpvm
 PVM_ROOT?=	${LOCALBASE}/lib/pvm
 MAKE_ENV+=	PVM_ROOT=${PVM_ROOT} XPVM_ROOT=${WRKSRC}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 ALL_TARGET=	default
 
@@ -53,9 +55,6 @@ do-install:
 	done
 
 post-install:
-	@${SED} -e 's,%%DATADIR%%,${DATADIR},' \
-	                  -e 's,%%LOCALBASE%%,${LOCALBASE},' \
-	                  <${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
