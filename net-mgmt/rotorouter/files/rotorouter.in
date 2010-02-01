@@ -15,20 +15,18 @@
 # See rotorouter(8) for flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=rotorouter
-rcvar=`set_rcvar`
+rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
 
-# set defaults
+load_rc_config $name
 
 rotorouter_enable=${rotorouter_enable:-"NO"}
 rotorouter_flags="${rotorouter_flags:--h %%PREFIX%%/etc/rotorouter.conf}"
 
 rotorouter_flags="${rotorouter_flags} &"
 
-load_rc_config $name
 run_rc_command "$1"
-
