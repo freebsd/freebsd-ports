@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nielsenaa.com/red5-installers/   \
 		http://www.red5.fr/release/0.7.0/war/
 DISTNAME=	Red5War_${PORTVERSION}-java5
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Red5 is an Open Source flash server
 
 OPTIONS=	TOMCAT4	"Use Tomcat 4.1" OFF \
