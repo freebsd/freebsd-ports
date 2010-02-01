@@ -7,7 +7,7 @@
 
 PORTNAME=	bind97
 PKGNAMESUFFIX=	-devel
-PORTVERSION=	9.7.0.rc1
+PORTVERSION=	9.7.0.rc2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -20,7 +20,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.7.0rc1
+ISCVERSION=	9.7.0rc2
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -187,6 +187,7 @@ MAN5=	named.conf.5 rndc.conf.5
 MAN8=	ddns-confgen.8 dnssec-dsfromkey.8 dnssec-keyfromlabel.8 \
 	dnssec-keygen.8 dnssec-revoke.8 dnssec-settime.8 dnssec-signzone.8 \
 	genrandom.8 lwresd.8 named-checkconf.8 named-checkzone.8 \
+	isc-hmac-fixup.8 \
 	named-journalprint.8 named.8 nsec3hash.8 rndc-confgen.8 rndc.8
 MLINKS=	named-checkzone.8 named-compilezone.8
 
