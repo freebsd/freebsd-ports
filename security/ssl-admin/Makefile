@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	OpenSSL certificate manager with OpenVPN support
 
-RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/zip \
-		zip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+		zip:${PORTSDIR}/archivers/zip
 
 USE_PERL5_RUN=	YES
 MAN1=		ssl-admin.1
