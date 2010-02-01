@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	foxyproxy
-PORTVERSION=	2.14
+PORTVERSION=	2.17
 DISTVERSIONSUFFIX=	-fx+sm+tb
 CATEGORIES=	www
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	Advanced proxy management tool
 
-XPI_DISTNAME=	foxyproxy
+XPI_DISTNAME=	foxyproxy_standard
 XPI_NUM=	2464
 XPI_ID=		foxyproxy@eric.h.jung
 
