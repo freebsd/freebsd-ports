@@ -1,20 +1,34 @@
+bin/dbicdump
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader/.packlist
 %%SITE_PERL%%/DBIx/Class/Schema/Loader.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Base.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/DB2.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/MSSQL.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Pg.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/SQLite.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase/Common.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Writing.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual/UpgradingFromV4.pod
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_040.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/DBIx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
