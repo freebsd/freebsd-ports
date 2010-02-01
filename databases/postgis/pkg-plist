@@ -5,7 +5,9 @@ lib/postgresql/postgis.so
 lib/postgresql/liblwgeom.so
 lib/postgresql/liblwgeom.so.1
 %%DATADIR%%/contrib/postgis.sql
-%%DATADIR%%/contrib/postgis_upgrade.sql
+%%DATADIR%%/contrib/postgis_upgrade_14_minor.sql
+%%DATADIR%%/contrib/postgis_upgrade_13_to_14.sql
+%%DATADIR%%/contrib/postgis_upgrade_12_to_14.sql
 %%DATADIR%%/contrib/spatial_ref_sys.sql
 %%DATADIR%%/contrib/uninstall_postgis.sql
 %%DATADIR%%/utils/create_undef.pl
