@@ -54,6 +54,8 @@ stop_postcmd()
 
 do_cmd()
 {
+	local ret
+	ret=0
 	for daemon in ${quagga_daemons}; do
 	    command=%%PREFIX%%/sbin/${daemon}
 	    required_files=%%SYSCONF_DIR%%/${daemon}.conf
@@ -66,9 +68,10 @@ do_cmd()
 	    fi
 	    eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
 	    name=${daemon}
-	    run_rc_command "$1"
 	    _rc_restart_done=false
+	    run_rc_command "$1" || ret=1
 	done
+	return ${ret}
 }
 
 # set defaults
