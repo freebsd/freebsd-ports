@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	An IDE for the Vala programming language
 
 RUN_DEPENDS=	valac:${PORTSDIR}/lang/vala

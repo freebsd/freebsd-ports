@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	A C/C++ Debugger for GNOME
 
 LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \

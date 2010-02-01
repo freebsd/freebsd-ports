@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://romain.blogreen.org/distfiles/
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Recover lost JPEG images from device dumps
 
 PLIST_FILES=	bin/mmrecover
