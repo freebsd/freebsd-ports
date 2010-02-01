@@ -7,7 +7,6 @@
 
 PORTNAME=	gamess
 PORTVERSION=    ${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=   #http://www.msg.ameslab.gov/GAMESS/License_Agreement.html
 DISTNAME=	gamess-current
@@ -18,7 +17,7 @@ COMMENT=	A freely obtainable ab-initio molecular orbital calculation program
 
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/gamess
-SNAPDATE=	20090112.1
+SNAPDATE=	20090112.3
 
 USE_FORTRAN=   yes
 
