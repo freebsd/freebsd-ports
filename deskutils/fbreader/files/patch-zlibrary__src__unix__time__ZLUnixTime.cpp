@@ -1,12 +1,14 @@
---- ./zlibrary/core/src/unix/time/ZLUnixTime.cpp.orig	2009-12-13 11:03:09.000000000 +0300
-+++ ./zlibrary/core/src/unix/time/ZLUnixTime.cpp	2009-12-23 09:34:03.273539781 +0300
-@@ -17,33 +17,37 @@
+--- ./zlibrary/core/src/unix/time/ZLUnixTime.cpp.orig	2010-01-30 04:35:22.000000000 +1000
++++ ./zlibrary/core/src/unix/time/ZLUnixTime.cpp	2010-02-02 01:23:23.000000000 +1000
+@@ -17,35 +17,39 @@
   * 02110-1301, USA.
   */
  
 -#include <sys/timeb.h>
 -#include <time.h>
 +#include <sys/time.h>
+ 
+ #include <ZLTime.h>
  
  #include "ZLUnixTime.h"
  
