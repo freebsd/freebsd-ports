@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	springlobby
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.61
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,15 +15,13 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform lobby client for the Spring RTS project
 
 RUN_DEPENDS=	spring:${PORTSDIR}/games/spring
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 USE_WX=		2.8+
 MAKE_JOBS_SAFE=	yes
-
-CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	*
 
@@ -37,26 +34,26 @@ OPTIONS=	TORRENT	"Support automatic content downloads via torrent" on \
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
+CMAKE_ARGS+=	-DOPTION_TRANSLATION_SUPPORT:BOOL=OFF
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_TORRENT)
-LIB_DEPENDS+=	torrent.1:${PORTSDIR}/net-p2p/rblibtorrent
+LIB_DEPENDS+=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
 .else
-CONFIGURE_ARGS+=--disable-torrent-system
+CMAKE_ARGS+=	-DOPTION_TORRENT_SYSTEM:BOOL=OFF
 .endif
 
 .if !defined(WITHOUT_SOUND)
-USE_SDL+=	sdl mixer
+USE_OPENAL=		al
 .else
-CONFIGURE_ARGS+=--disable-sound
+CMAKE_ARGS+=	-DOPTION_SOUND:BOOL=OFF
 .endif
 
-.if defined(NOPORTDOCS)
 post-patch:
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docDATA||' \
-		${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/install.*FILES.*share\/doc/ d' \
+		${WRKSRC}/CMakeLists.txt
 .endif
 
 .include <bsd.port.mk>

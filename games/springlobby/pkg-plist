@@ -1,6 +1,7 @@
 bin/springlobby
 bin/springsettings
 share/applications/springlobby.desktop
+share/icons/hicolor/scalable/apps/springlobby.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/springlobby.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/springlobby.mo
 %%NLS%%share/locale/da/LC_MESSAGES/springlobby.mo
@@ -20,5 +21,8 @@ share/applications/springlobby.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/springlobby.mo
 %%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en_US
-share/pixmaps/springlobby.svg
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
