@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	3.4.4
-PORTREVISION=	2
+PORTVERSION?=	3.4.5
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -61,9 +60,13 @@ BUGZILLADIR=	${PREFIX}/www/data/bugzilla
 .endif
 .endif
 
+SUB_FILES=	pkg-message
+SUB_LIST=	BUGZILLADIR=${BUGZILLADIR}
 PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
 
 DATA_DIRS_LIST=	images js skins
+
+NO_BUILD=
 
 .include <bsd.port.pre.mk>
 
@@ -159,10 +162,6 @@ post-patch:
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${BUGZILLADIR}!"
-
-do-build:
-	@${SED} -e "s:%%BUGZILLADIR%%:${BUGZILLADIR}:g; s:%%DOCSDIR%%:${DOCSDIR}:g" \
-		${MASTERDIR}/pkg-message >${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${BUGZILLADIR}
