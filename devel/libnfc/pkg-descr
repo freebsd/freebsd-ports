@@ -1,0 +1,4 @@
+The libnfc provides a simple yet complete low-level API for handling NFC
+devices and building NFC applications.
+
+WWW:	http://www.libnfc.org
