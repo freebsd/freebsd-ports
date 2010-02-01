@@ -24,14 +24,14 @@ NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xaw xmu xt sm ice
 
-EXTRACT_CMD=		gzcat
+EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=	#empty
-EXTRACT_AFTER_ARGS=	| gunshar -d $(WRKDIR)
+EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKDIR}
 
 MAN1=		xengine.1
 
 pre-patch:
-	@cd $(WRKSRC) ; ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1
+	@cd ${WRKSRC} ; ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1
 
 post-install:
 .if !defined(NOPORTDOCS)
