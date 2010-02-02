@@ -69,6 +69,9 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::UserIdGroupPair.3 \
 		Net::Amazon::EC2::Volume.3
 
+post-extract:
+	${RM} ${WRKSRC}/lib/Net/Amazon/._EC2.pm
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
