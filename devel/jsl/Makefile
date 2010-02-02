@@ -7,26 +7,28 @@
 
 PORTNAME=	jsl
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/jsl/ \
 		http://www.javascriptlint.com/download/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Analyzes javascript code looking for bugs and signs of poor quality
 
 PLIST_FILES=	bin/jsl
-ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.ref
+MAKE_ARGS=	OS_CFLAGS="-DXP_UNIX -DHAVE_VA_COPY -DVA_COPY=va_copy"
+CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
 
-JSLCFG!=	${UNAME} -sr | ${SED} 's, ,,'
+JSLCFG_CMD=	${UNAME} -sr | ${SED} 's, ,,'
 
 post-patch:
-	${LN} -s Linux_All.mk ${WRKSRC}/config/${JSLCFG}.mk
+	${LN} -s Linux_All.mk ${WRKSRC}/config/$$(${JSLCFG_CMD}).mk
 
 do-install:
 	${INSTALL} ${WRKSRC}/${JSLCFG}_DBG.OBJ/jsl ${PREFIX}/bin/jsl
