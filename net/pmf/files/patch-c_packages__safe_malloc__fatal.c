@@ -1,5 +1,5 @@
---- c_packages/safe_malloc/fatal.c.orig	Mon Nov 18 18:14:28 2002
-+++ c_packages/safe_malloc/fatal.c	Mon Nov 18 18:15:21 2002
+--- ./c_packages/safe_malloc/fatal.c.orig	1991-09-21 23:13:52.000000000 -0400
++++ ./c_packages/safe_malloc/fatal.c	2010-02-02 14:21:04.000000000 -0500
 @@ -8,8 +8,8 @@
  #include "safe_malloc.h"
  

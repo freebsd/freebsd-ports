@@ -1,5 +1,5 @@
---- c_packages/safe_malloc/Makefile.orig	Mon Nov 18 18:14:39 2002
-+++ c_packages/safe_malloc/Makefile	Mon Nov 18 18:14:58 2002
+--- ./c_packages/safe_malloc/Makefile.orig	1991-09-21 23:13:52.000000000 -0400
++++ ./c_packages/safe_malloc/Makefile	2010-02-02 14:21:04.000000000 -0500
 @@ -14,11 +14,11 @@
  INCLUDEDIRS =
  

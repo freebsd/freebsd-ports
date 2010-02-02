@@ -1,5 +1,5 @@
---- tty.c	Fri Oct 29 10:09:06 1993
-+++ tty.c	Mon Mar 26 20:02:26 2007
+--- ./tty.c.orig	1993-10-29 05:09:06.000000000 -0400
++++ ./tty.c	2010-02-02 14:21:04.000000000 -0500
 @@ -18,6 +18,9 @@
  /* Added by dodurham@stimpy.ualr.edu for Linux machines */
  #ifdef SYSV
