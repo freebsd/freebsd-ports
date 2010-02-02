@@ -1,0 +1,19 @@
+--- exports/Makefile	2010-02-01 12:54:01.000000000 +0900
++++ exports/Makefile	2010-02-01 14:03:25.000000000 +0900
+@@ -75,13 +75,13 @@
+ 	-Wl,--out-implib,libgoto2_shared.lib $(FEXTRALIB)
+ 
+ libgoto2.def : gensymbol
+-	./gensymbol win2k    $(ARCH) dummy $(EXPRECISION) $(NO_CBLAS) > $(@F)
++	./gensymbol win2k    $(GARCH) dummy $(EXPRECISION) $(NO_CBLAS) > $(@F)
+ 
+ libgoto2_shared.def : gensymbol
+-	./gensymbol win2k    $(ARCH) dummy $(EXPRECISION) $(NO_CBLAS) > $(@F)
++	./gensymbol win2k    $(GARCH) dummy $(EXPRECISION) $(NO_CBLAS) > $(@F)
+ 
+ libgoto_hpl.def : gensymbol
+-	./gensymbol win2khpl $(ARCH) dummy $(EXPRECISION) $(NO_CBLAS) > $(@F)
++	./gensymbol win2khpl $(GARCH) dummy $(EXPRECISION) $(NO_CBLAS) > $(@F)
+ 
+ $(LIBDYNNAME) : ../$(LIBNAME) osx.def
+ 	$(PREFIX)gcc $(CFLAGS) -all_load -dynamiclib -o $(LIBDYNNAME) $< -Wl,-exported_symbols_list,osx.def  $(FEXTRALIB)

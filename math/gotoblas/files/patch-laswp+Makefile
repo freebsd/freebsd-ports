@@ -1,0 +1,11 @@
+--- lapack/laswp/Makefile~	2009-07-20 23:53:13.000000000 +0900
++++ lapack/laswp/Makefile	2009-09-03 15:52:41.000000000 +0900
+@@ -16,7 +16,7 @@
+ qlaswp_plus.$(PSUFFIX) qlaswp_minus.$(PSUFFIX) \
+ claswp_plus.$(PSUFFIX) claswp_minus.$(PSUFFIX) zlaswp_plus.$(PSUFFIX) zlaswp_minus.$(PSUFFIX) \
+ xlaswp_plus.$(PSUFFIX) xlaswp_minus.$(PSUFFIX) : dummy
+-	cd $(ARCH) && $(MAKE) ../$(@F)
++	cd $(GARCH) && $(MAKE) ../$(@F)
+ 
+ include ../../Makefile.tail
+ 
