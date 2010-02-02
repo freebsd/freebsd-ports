@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	di
-PORTVERSION=	4.18
+PORTVERSION=	4.19
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
@@ -43,17 +43,6 @@ do-configure:
 		prefix="${PREFIX}" LOCALEDIR="${PREFIX}/share/locale" \
 		DI_BUILD_NO_NLS=${DI_BUILD_NO_NLS} \
 		./Build config.h)
-
-post-configure:
-	@${REINPLACE_CMD} -e "s|#define _lib_zone_list 1|#undef _lib_zone_list|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_fs_stat_dev 1|#undef _lib_fs_stat_dev|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_getvfsstat 1|#undef _lib_getvfsstat|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_getmnt 1|#undef _lib_getmnt|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_mntctl 1|#undef _lib_mntctl|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_GetDiskFreeSpace 1|#undef _lib_GetDiskFreeSpace|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_GetDriveType 1|#undef _lib_GetDriveType|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_GetLogicalDriveStrings 1|#undef _lib_GetLogicalDriveStrings|" ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e "s|#define _lib_GetVolumeInformation 1|#undef _lib_GetVolumeInformation|" ${WRKSRC}/config.h
 
 do-build:
 	(cd ${WRKSRC}; \
