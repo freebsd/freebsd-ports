@@ -6,8 +6,13 @@
 # $FreeBSD$
 #
 
+.if defined(LIBRMATH_SLAVEPORT)
+PORTNAME=	libRmath
+.else
 PORTNAME=	R
+.endif
 PORTVERSION=	2.10.1
+PORTREVISION=	2
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -27,10 +32,16 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://probability.ca/cran/src/base/R-2/ \
 		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/R-2/ \
 		http://www.bioconductor.org/CRAN/src/base/R-2/
+DISTNAME=	R-${PORTVERSION}
 
 MAINTAINER=	bf1783@gmail.com
+.if defined(LIBRMATH_SLAVEPORT)
+COMMENT=	The standalone math library from R
+.else
 COMMENT=	A language for statistical computing and graphics
+.endif
 
+.if !defined(LIBRMATH_SLAVEPORT)
 OPTIONS=	ATLAS	"Use ATLAS instead of BLAS/LAPACK" off \
 		GHOSTSCRIPT  "Enable the [dev2]bitmap() graphics devices" on \
 		ICU		"Improve collation in multibyte locales with ICU" on \
@@ -39,6 +50,7 @@ OPTIONS=	ATLAS	"Use ATLAS instead of BLAS/LAPACK" off \
 		NLS		"Build with NLS support" on \
 		PCRE_PORT	"Use PCRE port instead of bundled source" on \
 		PNG	"Enable the png() graphics device" on \
+		STATIC_LIBR "Build a static, rather than a shared, libR" off \
 		TCLTK	"Use Tcl/Tk (for the tcltk package)" on \
 		THREADS "Build a multithreaded R" on \
 		X11	"Enable the X11() graphics device" on \
@@ -47,22 +59,29 @@ OPTIONS=	ATLAS	"Use ATLAS instead of BLAS/LAPACK" off \
 		PDF_MANUALS	"Install PDF manuals (requires TeX)" off
 
 MAN1=		R.1 Rscript.1
-
+.endif # !LIBRMATH_SLAVEPORT
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
-
+MAKE_JOBS_UNSAFE=	yes
+GNU_CONFIGURE=	yes
+.if defined(LIBRMATH_SLAVEPORT)
+BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
+CONFIGURE_ARGS+=--with-readline=no --with-x=no --disable-nls --with-tcltk=no --with-cairo=no \
+		--with-libpng=no --with-jpeglib=no --with-iconv=no --with-ICU=no --without-libintl-prefix
+USE_PERL5_BUILD=	yes
+.else # LIBRMATH_SLAVEPORT
 INSTALL_TARGET=	install install-libR
 ALL_TARGET=	all
-GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
 CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
 		FCFLAGS="${FFLAGS}" TAR="${TAR}"
-CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
-		rdocdir=${DOCSDIR}
+CONFIGURE_ARGS=	--with-system-bzlib --with-system-zlib rdocdir=${DOCSDIR}
+.endif # LIBRMATH_SLAVEPORT
 
 .include <bsd.port.pre.mk>
 
+.if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=--with-blas="-lf77blas -latlas"
@@ -120,6 +139,14 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-libpng
 .endif
 
+.if defined(WITH_STATIC_LIBR)
+CONFIGURE_ARGS+=--enable-R-static-lib
+PLIST_SUB+=	STATIC_LIBR="" SHARED_LIBR="@comment "
+.else
+CONFIGURE_ARGS+=--enable-R-shlib
+PLIST_SUB+=	STATIC_LIBR="@comment " SHARED_LIBR=""
+.endif
+
 .if defined(WITHOUT_TCLTK)
 CONFIGURE_ARGS+=--without-tcltk
 PLIST_SUB+=	TCLTK="@comment "
@@ -170,6 +197,7 @@ INSTALL_TARGET+=	install-pdf
 .else
 PLIST_SUB+=	PDF_MANUAL="@comment "
 .endif
+.endif # !LIBRMATH_SLAVEPORT
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
@@ -183,6 +211,7 @@ post-patch:
 		${WRKSRC}/config.site \
 		${WRKSRC}/src/extra/tzone/tzfile.h \
 		${WRKSRC}/src/scripts/javareconf
+.if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITHOUT_NLS)
 	@(cd ${WRKSRC}/src/library/Recommended; \
 	for tarfile in *.tgz *.tar.gz ; do \
@@ -198,13 +227,28 @@ check-all: build
 	@(cd ${WRKSRC}; ${MAKE} check-all)
 
 post-install:
+.if !defined(WITH_STATIC_LIBR)
 	${MV} ${PREFIX}/lib/libR.so ${PREFIX}/lib/libR.so.0
 	${LN} -sf ${PREFIX}/lib/libR.so.0 ${PREFIX}/lib/libR.so
+.endif
 .if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}/doc/manual; \
 	for infofile in ${INFO}; do \
 		${INSTALL_DATA} $${infofile}.info* ${PREFIX}/${INFO_PATH}/; \
 	done)
 .endif
+
+.else # !LIBRMATH_SLAVEPORT
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include
+	${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${PREFIX}/lib
+	${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.so ${PREFIX}/lib/libRmath.so.0
+	(cd ${PREFIX}/lib; ${LN} -sf libRmath.so.0 libRmath.so)
+
+test: install
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} test && ${BUILD_WRKSRC}/test)
+
+.endif # !LIBRMATH_SLAVEPORT
 
 .include <bsd.port.post.mk>
