@@ -859,6 +859,7 @@
     SUBDIR += roadrunner
     SUBDIR += rp-pppoe
     SUBDIR += rshell
+    SUBDIR += rsmb
     SUBDIR += rsync
     SUBDIR += rtg
     SUBDIR += rtpbreak

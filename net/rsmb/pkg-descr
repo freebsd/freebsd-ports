@@ -1,0 +1,6 @@
+This is a port of IBM's Really Small Message Broker (RSMB). RSMB is a small
+message broker that implements the MQTT protocol (http://mqtt.org/).
+
+This port installs the Linux binary for use with the Linuxulator.
+
+WWW: http://www.alphaworks.ibm.com/tech/rsmb
