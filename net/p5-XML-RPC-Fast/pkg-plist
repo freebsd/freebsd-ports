@@ -7,18 +7,14 @@
 %%SITE_PERL%%/XML/RPC/cpants.pl
 %%SITE_PERL%%/XML/RPC/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RPC/Fast/.packlist
+@dirrmtry blib/script
 @dirrmtry %%SITE_PERL%%/auto/XML/RPC/Fast
 @dirrmtry %%SITE_PERL%%/auto/XML/RPC
 @dirrmtry %%SITE_PERL%%/auto/XML
-@dirrmtry %%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%/XML/RPC/UA
 @dirrmtry %%SITE_PERL%%/XML/RPC/Enc
 @dirrmtry %%SITE_PERL%%/XML/RPC
 @dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RPC/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry blib/script
