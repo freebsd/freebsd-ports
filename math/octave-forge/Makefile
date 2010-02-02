@@ -134,9 +134,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/econometrics.tar.gz:${PORTSDIR}/math/octave-forge-
 .if defined(WITH_FINANCIAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/financial.tar.gz:${PORTSDIR}/math/octave-forge-financial
 .endif
-.if defined(WITH_FTP)
-RUN_DEPENDS+=	${TARBALLS_DIR}/ftp.tar.gz:${PORTSDIR}/math/octave-forge-ftp
-.endif
 .if defined(WITH_GA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/ga.tar.gz:${PORTSDIR}/math/octave-forge-ga
 .endif
