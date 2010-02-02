@@ -2,6 +2,7 @@
 %%WWWDIR%%/acknow.php
 %%WWWDIR%%/actionconf.php
 %%WWWDIR%%/api/.htaccess
+%%WWWDIR%%/api/classes/class.apiexception.php
 %%WWWDIR%%/api/classes/class.caction.php
 %%WWWDIR%%/api/classes/class.calert.php
 %%WWWDIR%%/api/classes/class.capiinfo.php
@@ -14,6 +15,7 @@
 %%WWWDIR%%/api/classes/class.citem.php
 %%WWWDIR%%/api/classes/class.cmaintenance.php
 %%WWWDIR%%/api/classes/class.cmap.php
+%%WWWDIR%%/api/classes/class.cproxy.php
 %%WWWDIR%%/api/classes/class.cscreen.php
 %%WWWDIR%%/api/classes/class.cscript.php
 %%WWWDIR%%/api/classes/class.ctemplate.php
@@ -218,6 +220,7 @@
 %%WWWDIR%%/include/.htaccess
 %%WWWDIR%%/include/acknow.inc.php
 %%WWWDIR%%/include/actions.inc.php
+%%WWWDIR%%/include/apicalls.inc.php
 %%WWWDIR%%/include/audit.inc.php
 %%WWWDIR%%/include/blocks.inc.php
 %%WWWDIR%%/include/classes/.htaccess
@@ -323,6 +326,7 @@
 %%WWWDIR%%/include/profiles.inc.php
 %%WWWDIR%%/include/regexp.inc.php
 %%WWWDIR%%/include/reports.inc.php
+%%WWWDIR%%/include/requirements.inc.php
 %%WWWDIR%%/include/screens.inc.php
 %%WWWDIR%%/include/scripts.inc.php
 %%WWWDIR%%/include/services.inc.php
@@ -337,10 +341,10 @@
 %%WWWDIR%%/js/class.cmap.js
 %%WWWDIR%%/js/class.cookie.js
 %%WWWDIR%%/js/class.cscreen.js
+%%WWWDIR%%/js/class.cswitcher.js
 %%WWWDIR%%/js/class.ctree.js
 %%WWWDIR%%/js/class.curl.js
 %%WWWDIR%%/js/class.pmaster.js
-%%WWWDIR%%/js/class.switcher.js
 %%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/functions.js
 %%WWWDIR%%/js/gtlc.js
