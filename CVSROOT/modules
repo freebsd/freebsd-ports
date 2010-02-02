@@ -10918,6 +10918,7 @@ p5-Catalyst-Plugin-Textile      ports/www/p5-Catalyst-Plugin-Textile
 p5-Catalyst-Plugin-Unicode      ports/www/p5-Catalyst-Plugin-Unicode
 p5-Catalyst-Plugin-XMLRPC       ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-Catalyst-Runtime             ports/www/p5-Catalyst-Runtime
+p5-Catalyst-TraitFor-Request-BrowserDetect  ports/www/p5-Catalyst-TraitFor-Request-BrowserDetect
 p5-Catalyst-View-ClearSilver    ports/www/p5-Catalyst-View-ClearSilver
 p5-Catalyst-View-Email          ports/www/p5-Catalyst-View-Email
 p5-Catalyst-View-GraphViz       ports/www/p5-Catalyst-View-GraphViz
@@ -10932,6 +10933,7 @@ p5-Catalyst-View-TT-ControllerLocal  ports/www/p5-Catalyst-View-TT-ControllerLoc
 p5-Catalyst-View-Templated      ports/www/p5-Catalyst-View-Templated
 p5-Catalyst-View-XSLT           ports/www/p5-Catalyst-View-XSLT
 p5-CatalystX-Component-Traits   ports/www/p5-CatalystX-Component-Traits
+p5-CatalystX-RoleApplicator     ports/www/p5-CatalystX-RoleApplicator
 p5-Cdk                          ports/devel/p5-Cdk
 p5-Cflow                        ports/net-mgmt/p5-Cflow
 p5-Chart-Clicker                ports/graphics/p5-Chart-Clicker
@@ -12560,6 +12562,7 @@ p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
 p5-MooseX-Object-Pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
+p5-MooseX-RelatedClassRoles     ports/devel/p5-MooseX-RelatedClassRoles
 p5-MooseX-Role-Parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-MooseX-Role-WithOverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
@@ -13739,6 +13742,7 @@ p5-Tree-Simple-View             ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-Tree-Suffix                  ports/textproc/p5-Tree-Suffix
 p5-Try-Tiny                     ports/lang/p5-Try-Tiny
+p5-UDCode                       ports/devel/p5-UDCode
 p5-UI-Dialog                    ports/devel/p5-UI-Dialog
 p5-UML-Class-Simple             ports/textproc/p5-UML-Class-Simple
 p5-UML-Sequence                 ports/textproc/p5-UML-Sequence
@@ -14518,6 +14522,7 @@ p5-catalyst-plugin-textile      ports/www/p5-Catalyst-Plugin-Textile
 p5-catalyst-plugin-unicode      ports/www/p5-Catalyst-Plugin-Unicode
 p5-catalyst-plugin-xmlrpc       ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-catalyst-runtime             ports/www/p5-Catalyst-Runtime
+p5-catalyst-traitfor-request-browserdetect  ports/www/p5-Catalyst-TraitFor-Request-BrowserDetect
 p5-catalyst-view-clearsilver    ports/www/p5-Catalyst-View-ClearSilver
 p5-catalyst-view-email          ports/www/p5-Catalyst-View-Email
 p5-catalyst-view-graphviz       ports/www/p5-Catalyst-View-GraphViz
@@ -14532,6 +14537,7 @@ p5-catalyst-view-tt             ports/www/p5-Catalyst-View-TT
 p5-catalyst-view-tt-controllerlocal  ports/www/p5-Catalyst-View-TT-ControllerLocal
 p5-catalyst-view-xslt           ports/www/p5-Catalyst-View-XSLT
 p5-catalystx-component-traits   ports/www/p5-CatalystX-Component-Traits
+p5-catalystx-roleapplicator     ports/www/p5-CatalystX-RoleApplicator
 p5-cdb_file                     ports/databases/p5-CDB_File
 p5-cdb_file-generator           ports/databases/p5-CDB_File-Generator
 p5-cddb                         ports/audio/p5-CDDB
@@ -16270,6 +16276,7 @@ p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
 p5-moosex-object-pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
+p5-moosex-relatedclassroles     ports/devel/p5-MooseX-RelatedClassRoles
 p5-moosex-role-parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-moosex-role-withoverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
@@ -17494,6 +17501,7 @@ p5-tree-simple-visitorfactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-tree-suffix                  ports/textproc/p5-Tree-Suffix
 p5-try-tiny                     ports/lang/p5-Try-Tiny
 p5-type1inst                    ports/x11-fonts/p5-type1inst
+p5-udcode                       ports/devel/p5-UDCode
 p5-ui-dialog                    ports/devel/p5-UI-Dialog
 p5-uml-class-simple             ports/textproc/p5-UML-Class-Simple
 p5-uml-sequence                 ports/textproc/p5-UML-Sequence
