@@ -1,124 +1,15 @@
---- Makefile.rule.orig	2008-05-13 02:50:54.000000000 +0900
-+++ Makefile.rule	2008-06-14 13:27:28.000000000 +0900
-@@ -114,7 +114,7 @@
- MACHINE =
- OSNAME  =
- PGCPATH =
--ARCH =
-+GARCH =
- SUBARCH =
- ARCHSUBDIR =
- CONFIG =
-@@ -201,7 +201,7 @@
- endif
+--- Makefile.rule	2009-12-16 11:26:22.000000000 +0900
++++ Makefile.rule	2009-12-31 19:16:48.000000000 +0900
+@@ -14,10 +14,10 @@
  
- ifndef F_COMPILER
--F_COMPILER = G77
-+F_COMPILER = GFORTRAN
- I_DONT_HAVE_FC = 1
- endif
+ # C compiler including binary type(32bit / 64bit). Default is gcc.
+ # Don't use Intel Compiler or PGI, it won't generate right codes as I expect.
+-# CC = gcc
++CC = %%CC%%
  
-@@ -245,7 +245,7 @@
- endif
+ # Fortran compiler. Default is g77.
+-# FC = gfortran
++FC = %%FC%%
  
- ifeq ($(C_COMPILER), GNU)
--COMPILER     = gcc
-+COMPILER     = %%CC%%
- CCOMMON_OPT += -Wall
- ifeq ($(SUPPORTED_DYNLIB), YES)
- CCOMMON_OPT += -fPIC 
-@@ -262,7 +262,7 @@
- endif
- 
- ifeq ($(C_COMPILER), INTEL)
--COMPILER     = icc
-+COMPILER     = %%CC%%
- ifeq ($(SUPPORTED_DYNLIB), YES)
- CCOMMON_OPT += -fPIC 
- endif
-@@ -294,7 +294,7 @@
- endif
- 
- ifeq ($(F_COMPILER), G77)
--COMPILER_F77 = g77
-+COMPILER_F77 = %%FC%%
- BU	     = _
- CCOMMON_OPT += -DF_INTERFACE_F2C -DNEED_F2CCONV
- FCOMMON_OPT += -Wall
-@@ -311,7 +311,7 @@
- endif
- 
- ifeq ($(F_COMPILER), G95)
--COMPILER_F77 = g95
-+COMPILER_F77 = %%FC%%
- BU	     = _
- CCOMMON_OPT += -DF_INTERFACE_F2C
- FCOMMON_OPT += -Wall #  -fno-underscoring
-@@ -328,10 +328,12 @@
- endif
- 
- ifeq ($(F_COMPILER), GFORTRAN)
--COMPILER_F77 = gfortran
-+COMPILER_F77 = %%FC%%
- BU	     = _
- CCOMMON_OPT += -DF_INTERFACE_GFORT
- FCOMMON_OPT += -Wall
-+GCCPATH = $(shell dirname `%%FC%% -print-libgcc-file-name`)
-+EXTRALIB    += -L$(GCCPATH)/../../../ -lgfortran
- ifeq ($(SUPPORTED_DYNLIB), YES)
- FCOMMON_OPT += -fPIC 
- endif
-@@ -349,7 +351,7 @@
- endif
- 
- ifeq ($(F_COMPILER), INTEL)
--COMPILER_F77 = ifort
-+COMPILER_F77 = %%FC%%
- BU	     = _
- CCOMMON_OPT += -DF_INTERFACE_F2C
- ifeq ($(SUPPORTED_DYNLIB), YES)
-@@ -404,7 +406,7 @@
- 
- ifneq ($(OSNAME), CYGWIN_NT)
- ifdef SMP
--EXTRALIB   += -lpthread
-+EXTRALIB   += ${PTHREAD_LIBS}
- endif
- endif
- 
-@@ -477,8 +479,8 @@
- GETARCH_SCRIPT	 = ./getarch
- endif
- 
--ifndef ARCH
--ARCH        := $(shell (cd $(TOPDIR); $(GETARCH_SCRIPT) 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
-+ifndef GARCH
-+GARCH        := $(shell (cd $(TOPDIR); $(GETARCH_SCRIPT) 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
- endif
- ifndef SUBARCH
- SUBARCH     := $(shell (cd $(TOPDIR); $(GETARCH_SCRIPT) 1 $(GETARCH_CC) $(GETARCH_FLAGS)))
-@@ -613,11 +615,11 @@
- endif
- 
- ifndef SMP
--LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION).$(LIBSUFFIX)
--LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION)_p.$(LIBSUFFIX)
-+LIBNAME		= $(LIBPREFIX)$(REVISION).a
-+LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.a
- else
--LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION).$(LIBSUFFIX)
--LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION)_p.$(LIBSUFFIX)
-+LIBNAME		= $(LIBPREFIX)p$(REVISION).a
-+LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.a
- endif
- 
- LIBSONAME    = $(LIBNAME:.$(LIBSUFFIX)=.so)
-@@ -637,7 +639,7 @@
- export MACHINE
- export OSNAME
- export PGCPATH
--export ARCH
-+export GARCH
- export SUBARCH
- export ARCHSUBDIR
- export CONFIG
+ # Even you can specify cross compiler
+ # CC = x86_64-w64-mingw32-gcc
