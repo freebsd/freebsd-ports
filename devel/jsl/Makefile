@@ -31,6 +31,6 @@ post-patch:
 	${LN} -s Linux_All.mk ${WRKSRC}/config/$$(${JSLCFG_CMD}).mk
 
 do-install:
-	${INSTALL} ${WRKSRC}/${JSLCFG}_DBG.OBJ/jsl ${PREFIX}/bin/jsl
+	${INSTALL} ${WRKSRC}/$$(${JSLCFG_CMD})_DBG.OBJ/jsl ${PREFIX}/bin/jsl
 
 .include <bsd.port.post.mk>
