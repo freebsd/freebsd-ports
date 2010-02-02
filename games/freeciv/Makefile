@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	2.1.9
-PORTREVISION=	2
+PORTVERSION=	2.1.11
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%202.1/${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
 
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
