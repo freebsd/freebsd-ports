@@ -10,24 +10,19 @@
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
 PORTNAME=	lila
-PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTVERSION=	0.6.4
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
-DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
+MASTER_SITES=	SF/lila-theme/lila-gnome/${PORTVERSION}
+DISTNAME=	${PORTNAME}-gnome_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lila Icons for Gnome
 
 RESTRICTED=	${REASON}
 
-USE_BZIP2=	yes
-WRKSRC=		"${WRKDIR}"
+NO_WRKSUBDIR=	yes
 
-post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME}-gnome/Lila ${WRKDIR}; \
-	${MV} ${WRKDIR}/LICENSE ${WRKDIR}/Lila; \
-	${MV} ${WRKDIR}/COPYRIGHT ${WRKDIR}/Lila
+USE_BZIP2=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>
