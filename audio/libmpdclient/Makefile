@@ -7,6 +7,7 @@
 
 PORTNAME=	libmpdclient
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
@@ -15,6 +16,7 @@ COMMENT=	API library for interfacing MPD
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes
 

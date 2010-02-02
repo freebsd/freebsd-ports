@@ -34,8 +34,8 @@ lib/libmpdclient.la
 lib/libmpdclient.so
 lib/libmpdclient.so.2
 libdata/pkgconfig/libmpdclient.pc
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
 @dirrm include/mpd
