@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20091228
+PORTVERSION=	20100131
 CATEGORIES=	irc
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
@@ -14,9 +14,10 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A modular IRC client with many features
 
+LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
+
 CONFLICTS=	irssi-0.8*
 
-USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_PERL=	yes
@@ -31,7 +32,6 @@ OPTIONS=	PERL "Enable Perl support" on \
 		BOT "Enable bot" off
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.14-svn
-MAKE_JOBS_SAFE=	yes
 
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
@@ -78,6 +78,10 @@ PLIST_SUB+=	WITH_BOT=""
 CONFIGURE_ARGS+=	--without-bot
 PLIST_SUB+=	WITH_BOT="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e 's|/etc|${PREFIX}&|' \
+		${WRKSRC}/docs/irssi.1
 
 post-configure:
 	@${MV} ${WRKSRC}/irssi.conf ${WRKSRC}/irssi.conf.sample
