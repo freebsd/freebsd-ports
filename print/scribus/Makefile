@@ -8,11 +8,10 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.3.3.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
-
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
@@ -34,12 +33,12 @@ USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
-USE_MOTIF=      yes
-USE_CMAKE=      yes
-CMAKE_USE_PTHREAD=      yes
+USE_MOTIF=	yes
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 
-PLIST_SUB+=     SCRIBUS_VERSION=${PORTVERSION}
-MAN1=           scribus.1
+PLIST_SUB+=	SCRIBUS_VERSION=${PORTVERSION}
+MAN1=		scribus.1
 MANLANG=	"" pl de
 MANCOMPRESSED=	no
 
