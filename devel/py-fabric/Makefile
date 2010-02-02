@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	fabric
-PORTVERSION=	0.9a2
+PORTVERSION=	0.9.0
+PORTEPOCH=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://distfiles.yzlin.org/ \
-		http://git.fabfile.org/cgit.cgi/fabric/snapshot/
+MASTER_SITES=	http://code.fabfile.org/projects/fabric/files/ \
+		http://distfiles.yzlin.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Fabric-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A simple pythonic remote deployment tool
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7:${PORTSDIR}/security/py-paramiko
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=1.9:${PORTSDIR}/security/py-pycrypto
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
