@@ -7,7 +7,7 @@
 
 PORTNAME=	wxMaxima
 PORTVERSION=	0.8.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
@@ -24,6 +24,9 @@ WX_CONF_ARGS=	absolute
 WANT_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=
+
+DESKTOP_ENTRIES=	"wxMaxima" "${COMMENT}" "${DATADIR}/wxmaxima.png" \
+			"wxmaxima" "Education;Science;Math;" false
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
