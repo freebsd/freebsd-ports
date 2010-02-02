@@ -690,6 +690,7 @@
 %%WWWDIR%%/docs/INSTALL
 %%WWWDIR%%/docs/LICENSE
 %%WWWDIR%%/docs/README
+%%WWWDIR%%/docs/CHANGELOG
 %%WWWDIR%%/docs/documentation.en.html
 %%WWWDIR%%/feed/category/rss.php
 %%WWWDIR%%/feed/latest/rss.php
@@ -823,6 +824,32 @@
 %%WWWDIR%%/inc/js/syntaxhighlighter/LGPLv3.txt
 %%WWWDIR%%/inc/js/syntaxhighlighter/src/shCore.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/src/shLegacy.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/clipboard.swf
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushAS3.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushBash.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushCSharp.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushColdFusion.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushCpp.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushCss.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushDelphi.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushDiff.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushErlang.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushGroovy.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushJScript.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushJava.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushJavaFX.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushPerl.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushPhp.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushPlain.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushPowerShell.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushPython.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushRuby.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushScala.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushSql.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushVb.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushXml.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shCore.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shLegacy.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/help.png
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/magnifier.png
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/page_white_code.png
@@ -841,46 +868,29 @@
 %%WWWDIR%%/inc/libs/phpseclib/Crypt/Hash.php
 %%WWWDIR%%/inc/libs/phpseclib/Crypt/Rijndael.php
 %%WWWDIR%%/inc/libs/tcpdf/LICENSE.TXT
+%%WWWDIR%%/inc/libs/tcpdf/fonts/almohanad.ctg.z
+%%WWWDIR%%/inc/libs/tcpdf/fonts/almohanad.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/almohanad.z
+%%WWWDIR%%/inc/libs/tcpdf/fonts/arialunicid0.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/courier.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusans.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusans.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusans.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansi.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansi.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansi.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmono.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmono.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmono.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonob.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonob.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonob.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonobi.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonobi.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonobi.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonoi.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonoi.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansmonoi.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserif.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserif.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserif.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifb.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifb.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifb.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifbi.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifbi.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifbi.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifi.ctg.z
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifi.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavuserifi.z
 %%WWWDIR%%/inc/libs/tcpdf/fonts/helvetica.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/helveticab.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/helveticabi.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/helveticai.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/hysmyeongjostdmedium.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/kozgopromedium.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/kozminproregular.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/msungstdlight.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/stsongstdlight.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/symbol.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/times.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/timesb.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/timesbi.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/timesi.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ac15.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ag15.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_aj16.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ak12.php
 %%WWWDIR%%/inc/libs/tcpdf/htmlcolors.php
 %%WWWDIR%%/inc/libs/tcpdf/tcpdf.php
 %%WWWDIR%%/inc/libs/tcpdf/unicode_data.php
@@ -964,6 +974,9 @@
 %%WWWDIR%%/show.php
 %%WWWDIR%%/sitemap.google.php
 %%WWWDIR%%/sitemap.php
+%%WWWDIR%%/scripts/git2changelog.sh
+%%WWWDIR%%/scripts/git2package.sh
+%%WWWDIR%%/scripts/version.sh
 %%WWWDIR%%/template/default/add.tpl
 %%WWWDIR%%/template/default/artikel.tpl
 %%WWWDIR%%/template/default/ask.tpl
@@ -1015,6 +1028,7 @@
 @dirrm %%WWWDIR%%/inc/libs/phpseclib/Crypt
 @dirrm %%WWWDIR%%/inc/libs/phpseclib
 @dirrm %%WWWDIR%%/inc/libs
+@dirrm %%WWWDIR%%/inc/js/syntaxhighlighter/scripts
 @dirrm %%WWWDIR%%/inc/js/syntaxhighlighter/styles
 @dirrm %%WWWDIR%%/inc/js/syntaxhighlighter/src
 @dirrm %%WWWDIR%%/inc/js/syntaxhighlighter
@@ -1039,6 +1053,7 @@
 @dirrm %%WWWDIR%%/inc/PMF_Attachment/Filesystem
 @dirrm %%WWWDIR%%/inc/PMF_Attachment
 @dirrm %%WWWDIR%%/inc
+@dirrm %%WWWDIR%%/scripts
 @dirrmtry %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/font
 @dirrm %%WWWDIR%%/feed/topten
