@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.6
+DISTVERSION=	2.1.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
