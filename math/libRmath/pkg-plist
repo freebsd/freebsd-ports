@@ -1,0 +1,4 @@
+include/Rmath.h
+lib/libRmath.a
+lib/libRmath.so
+lib/libRmath.so.0
