@@ -53,7 +53,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.0.${SQUID_BETA_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -91,7 +91,8 @@ PATCHFILES=	squid-3.1-9816.patch \
 		squid-3.1-9822.patch \
 		squid-3.1-9823.patch \
 		squid-3.1-9825.patch \
-		squid-3.1-9826.patch
+		squid-3.1-9826.patch \
+		squid-3.1-9853.patch
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy (BETA Version)
