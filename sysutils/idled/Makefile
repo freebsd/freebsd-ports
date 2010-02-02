@@ -23,10 +23,20 @@ USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	etc/idled.cf.template libexec/idled
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900006
+EXTRA_PATCHES=	${PATCHDIR}/utmpx-Makefile \
+		${PATCHDIR}/utmpx-idled.h \
+		${PATCHDIR}/utmpx-idled.c
+.else
+EXTRA_PATCHES=	${PATCHDIR}/utmp-Makefile
+.endif
+
 post-extract:
 	(cd ${WRKSRC}; make clean)
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/libexec/idled
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
