@@ -6,38 +6,39 @@
 #
 
 PORTNAME=	libgmp4
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	gmp-${PORTVERSION}
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library for arbitrary precision arithmetic (MinGW32)
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 
+GMP_TARG=	${PKGNAMEPREFIX:S/-$//}
 GNU_CONFIGURE=	yes
 CC=		${PKGNAMEPREFIX}gcc
 CXX=		${PKGNAMEPREFIX}c++
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" \
-		PREFIX="${PREFIX}/${PKGNAMEPREFIX:S/-$//}"
-CONFIGURE_ARGS=	--enable-cxx --host=${PKGNAMEPREFIX:S/-$//} \
-		--includedir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include \
-		--exec_prefix=${PREFIX}/${PKGNAMEPREFIX:S/-$//} \
-		--datadir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share \
-		--libdir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
+		PREFIX="${PREFIX}/${GMP_TARG}"
+CONFIGURE_ARGS=	--enable-cxx --host=${GMP_TARG} \
+		--includedir=${PREFIX}/${GMP_TARG}/include \
+		--exec_prefix=${PREFIX}/${GMP_TARG} \
+		--datadir=${PREFIX}/${GMP_TARG}/share \
+		--libdir=${PREFIX}/${GMP_TARG}/lib
 CONFIGURE_TARGET=
 
 INFO=		gmp
-INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
+INFO_PATH=	${GMP_TARG}/info
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/gmp.info*
 
 pre-install:
-	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
+	${MKDIR} ${PREFIX}/${GMP_TARG}/info
 
 .include <bsd.port.mk>
