@@ -640,6 +640,7 @@
     SUBDIR += spruce
     SUBDIR += sqlgrey
     SUBDIR += squirrelmail
+    SUBDIR += squirrelmail-abook_import_export-plugin
     SUBDIR += squirrelmail-avelsieve-plugin
     SUBDIR += squirrelmail-calendar_file_backend-plugin
     SUBDIR += squirrelmail-calendar_sql_backend-plugin
