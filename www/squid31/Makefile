@@ -53,7 +53,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.0.${SQUID_BETA_VER}
-PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -85,21 +84,14 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
-PATCHFILES=	squid-3.1-9816.patch \
-		squid-3.1-9817.patch \
-		squid-3.1-9818.patch \
-		squid-3.1-9822.patch \
-		squid-3.1-9823.patch \
-		squid-3.1-9825.patch \
-		squid-3.1-9826.patch \
-		squid-3.1-9853.patch
+PATCHFILES=
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy (BETA Version)
 
 LATEST_LINK=	squid31
 
-SQUID_BETA_VER=	15
+SQUID_BETA_VER=	16
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -215,7 +207,7 @@ libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
 libexec+=	unlinkd
 .endif
 
-sbin=		RunAccel RunCache squidclient squid
+sbin=		squidclient squid
 
 # XXX:
 # Squid 3.1 changed the default for the pid file location from
