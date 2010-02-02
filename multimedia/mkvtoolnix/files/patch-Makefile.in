@@ -1,0 +1,36 @@
+--- Makefile.in.orig	2010-01-19 20:05:55.000000000 +0900
++++ Makefile.in	2010-01-21 16:43:29.000000000 +0900
+@@ -176,7 +176,7 @@
+ MANPAGES_TRANSLATIONS_POS = @MANPAGES_TRANSLATIONS_POS@
+ MANPAGES_TRANSLATED = @MANPAGES_TRANSLATED@
+ 
+-GUIDE_TRANSLATIONS = @GUIDE_TRANSLATIONS@
++GUIDE_TRANSLATIONS = en zh_CN
+ 
+ HTMLHELPBOOKS = mkvmerge-gui-book
+ 
+@@ -185,11 +185,11 @@
+ 		-Lsrc/common -Lsrc/input -Lsrc/output -Lsrc/mpegparser
+ 
+ RUNAR = $(AR) rcu
+-LINK = $(CXX) $(LDFLAGS) $(LIBDIRS) $(SYSTEM_LIBDIRS)
+-LINKSHARED = $(CXX) $(LDFLAGS) $(LIBDIRS) $(SYSTEM_LIBDIRS) \
++LINK = $(CXX) $(SYSTEM_LIBDIRS) $(LIBDIRS) $(LDFLAGS)
++LINKSHARED = $(CXX) $(SYSTEM_LIBDIRS) $(LIBDIRS) $(LDFLAGS) \
+ 		-shared -Wl,--export-all
+-CXXCOMPILE = $(CXX) $(CXXFLAGS) $(INCLUDES) $(SYSTEM_INCLUDES)
+-CCOMPILE = $(CC) $(CFLAGS) $(INCLUDES) $(SYSTEM_INCLUDES)
++CXXCOMPILE = $(CXX) $(SYSTEM_INCLUDES) $(INCLUDES) $(CXXFLAGS)
++CCOMPILE = $(CC) $(SYSTEM_INCLUDES) $(INCLUDES) $(CFLAGS)
+ RCCOMPILE = $(WINDRES) $(WXWIDGETS_INCLUDES) -Isrc/mmg
+ 
+ ALL_SOURCES=$(wildcard lib/avilib-0.6.10/*.c) $(wildcard lib/avilib-0.6.10/*.cpp) \
+@@ -242,7 +242,7 @@
+ 
+ all: $(MANPAGES_DEP) $(TAGSFILE) $(APPLICATIONS) $(TRANSLATIONS_MOS) $(HTMLHELPBOOKS)
+ 
+-install: install-programs install-mans install-translated-mans install-trans install-guide
++install: install-programs install-mans install-trans install-guide
+ 
+ install-programs: $(APPLICATIONS)
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
