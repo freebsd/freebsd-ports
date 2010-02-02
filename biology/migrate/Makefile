@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1.1
 CATEGORIES=	biology
-MASTER_SITES=	http://people.scs.fsu.edu/~beerli/popgen/currentversion/
+MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +20,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_GMAKE="${MAKE}"
 MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu -DPRETTY"
 
-MAN1=		migrate.1
-MLINKS=		migrate.1 migrate-n.1
+MAN1=		${PORTNAME}.1
+MLINKS=		${PORTNAME}.1 ${PORTNAME}-n.1
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-n
 
 .include <bsd.port.pre.mk>
 
@@ -41,14 +44,16 @@ ALL_TARGET=	all
 post-patch:
 	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/PRETTY$$/d' ${WRKSRC}/definitions.h
+	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/haru/makefile.gcc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/migrate-n ${PREFIX}/bin
-	${LN} -sf migrate-n ${PREFIX}/bin/migrate
-	${INSTALL_MAN} ${WRKSRC}/migrate.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-n ${PREFIX}/bin
+	${LN} -sf ${PORTNAME}-n ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in HISTORY HOWTO-PARALLEL README migrate.html
+.for i in HISTORY HOWTO-PARALLEL README ${PORTNAME}.html
 	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/graphics
