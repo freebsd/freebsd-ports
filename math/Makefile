@@ -199,7 +199,6 @@
     SUBDIR += octave-devel
     SUBDIR += octave-forge
     SUBDIR += octave-forge-ad
-    SUBDIR += octave-forge-ann
     SUBDIR += octave-forge-arpack
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
@@ -213,13 +212,10 @@
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-financial
-    SUBDIR += octave-forge-fixed
     SUBDIR += octave-forge-fpl
-    SUBDIR += octave-forge-ftp
     SUBDIR += octave-forge-ga
     SUBDIR += octave-forge-general
     SUBDIR += octave-forge-generate_html
-    SUBDIR += octave-forge-graceplot
     SUBDIR += octave-forge-gsl
     SUBDIR += octave-forge-ident
     SUBDIR += octave-forge-image
@@ -246,7 +242,6 @@
     SUBDIR += octave-forge-optim
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
-    SUBDIR += octave-forge-parallel
     SUBDIR += octave-forge-pdb
     SUBDIR += octave-forge-physicalconstants
     SUBDIR += octave-forge-plot
@@ -269,10 +264,8 @@
     SUBDIR += octave-forge-symbolic
     SUBDIR += octave-forge-tcl-octave
     SUBDIR += octave-forge-time
-    SUBDIR += octave-forge-triangular
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
-    SUBDIR += octave-forge-vrml
     SUBDIR += octave-forge-xraylib
     SUBDIR += octave-forge-zenity
     SUBDIR += oleo
