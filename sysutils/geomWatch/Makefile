@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geomWatch
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://isis.poly.edu/~bk/geomWatch/ \
 		http://bk.macroblock.net/geomWatch/
