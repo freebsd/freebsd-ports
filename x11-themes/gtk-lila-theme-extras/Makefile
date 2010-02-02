@@ -9,20 +9,22 @@ PORTNAME=	gtk-lila-theme-extras
 PORTVERSION=	0.4.5
 PORTREVISION=	5
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
+MASTER_SITES=	SF/lila-theme/lila-gtk-extras/${PORTVERSION}
 DISTNAME=	lila-gtk-extras-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.0 Lila additional themes
 
 WRKSRC=		${WRKDIR}/lila-gtk-extras
-
 NO_BUILD=	yes
-USE_GNOME=	gtk20
+
 USE_BZIP2=	yes
+USE_GNOME=	gtk20
+
+.SILENT:
 
 do-install:
-	@${FIND} ${WRKSRC} -type d -depth 1 \
-		-exec ${CP} -r "{}" ${PREFIX}/share/themes/ \;
+	${MKDIR} ${PREFIX}/share/themes
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/share/themes)
 
 .include <bsd.port.mk>
