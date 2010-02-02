@@ -1,5 +1,5 @@
---- main.c.orig	Sun Sep 22 12:13:43 1991
-+++ main.c	Fri Feb 11 04:14:00 2000
+--- ./main.c.orig	1991-09-21 23:13:43.000000000 -0400
++++ ./main.c	2010-02-02 14:21:04.000000000 -0500
 @@ -12,9 +12,9 @@
  #include <stdio.h>
  #include <sys/types.h>
@@ -11,7 +11,7 @@
  #include "safe_malloc.h"
  #include "str_galore.h"
  #include "config.h"
-@@ -37,7 +38,7 @@
+@@ -37,7 +37,7 @@
      extern int stop_printing();
      extern int continue_printing();
  
@@ -20,7 +20,7 @@
  #endif
  
  /* Longjmp buffer, jump there after error() or CTRL-C */
-@@ -58,7 +59,7 @@
+@@ -58,7 +58,7 @@
  	ldisplay("\n");
  	ldisplay("%s", rl_line_buffer);
  	rl_redisplay(count, key);
@@ -28,16 +28,16 @@
 +	_rl_last_c_pos = rl_end;
      }
  #endif
-
-@@ -191,7 +192,11 @@
+ 
+@@ -191,7 +191,11 @@
  #endif
-
+ 
      if (debug && exitval) {
 +	#if defined(__FreeBSD__) && (__FreeBSD_version >= 500035)
 +	signal(SIGABRT, SIG_DFL);
 +	#else
-	signal(SIGIOT, SIG_DFL);
+ 	signal(SIGIOT, SIG_DFL);
 +	#endif
-	abort();
+ 	abort();
      }
      else

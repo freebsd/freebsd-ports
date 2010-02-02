@@ -1,5 +1,5 @@
---- config.h.orig	Fri Oct 29 18:25:35 1993
-+++ config.h	Tue Aug 15 09:04:26 2000
+--- ./config.h.orig	1993-10-29 05:25:35.000000000 -0400
++++ ./config.h	2010-02-02 14:21:04.000000000 -0500
 @@ -35,14 +35,16 @@
   *  files instead.
   *  Note that "~" is not expanded in this directory name.
@@ -18,7 +18,7 @@
  #define SYSTEM_NEWS_FILE                "NEWS"
  #define SYSTEM_HELP_DIR                 "helpfiles"
  #define SYSTEM_SOUND_DIR                "soundfiles"
-@@ -63,14 +65,20 @@
+@@ -63,16 +65,22 @@
  #define X_OUTPUT_PROGRAM	"cat"
  
  /* What system? Define one either BSD or SYSV:*/
@@ -33,10 +33,12 @@
  #  define USE_TIOCGETP
  #else
  #  define USE_TCGETA
-+#endif
-+
-+#ifdef BSD
-+#define _cnt _r
  #endif
  
++#ifdef BSD
++#define _cnt _r
++#endif
++
  /*  The prompt to print after doing a builtin command. 0 means no prompt.
+  *  The prompt variable is initially set to the value of DEFAULT_PROMPT,
+  *  but it can of course later be changed with the command "set prompt".
