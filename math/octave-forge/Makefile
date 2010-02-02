@@ -25,7 +25,6 @@ COMMENT=	Octave-forge metaport for math/octave
 #    octave-3.2.2.
 
 OPTIONS=	\
-	ANN "Install package: ann" Off \
 	AUDIO "Install package: audio" On \
 	BENCHMARK "Install package: benchmark" On \
 	BIOINFO "Install package: bioinfo" On \
@@ -36,8 +35,6 @@ OPTIONS=	\
 	DATABASE "Install package: database (do not select)" Off \
 	ECONOMETRICS "Install package: econometrics" On \
 	FINANCIAL "Install package: financial" On \
-	FIXED "Install package: fixed" Off \
-	FTP "Install package: ftp" Off \
 	GA "Install package: ga" On \
 	GENERAL "Install package: general" On \
 	GSL "Install package: gsl" On \
@@ -57,7 +54,6 @@ OPTIONS=	\
 	OPTIM "Install package: optim" On \
 	OPTIMINTERP "Install package: optiminterp" On \
 	OUTLIERS "Install package: outliers" On \
-	PARALLEL "Install package: parallel" Off \
 	PHYSICALCONSTANTS "Install package: physicalconstants" On \
 	QUATERNION "Install package: quaternion" On \
 	PLOT "Install package: plot" On \
@@ -73,8 +69,7 @@ OPTIONS=	\
 	SYMBOLIC "Install package: symbolic" On \
 	TIME "Install package: time" On \
 	VIDEO "Install package: video" On \
-	VRML "Install package: vrml" Off \
-	ZENITY "Install package: zenity" On \
+		ZENITY "Install package: zenity" On \
 	\
 	AD "Install package: ad" On \
 	BIM "Install package: bim" On \
@@ -82,7 +77,6 @@ OPTIONS=	\
 	ENGINE "Install package: engine" On \
 	FPL "Install package: fpl" On \
 	GENERATE_HTML "Install package: generate_html" On \
-	GRACEPLOT "Install package: graceplot" Off \
 	INTEGRATION "Install package: integration" On \
 	JAVA "Install package: java (do not select)" Off \
 	JHANDLES "Install package: jhandles (do not select)" Off \
@@ -99,7 +93,6 @@ OPTIONS=	\
 	SECS2D "Install package: secs2d" On \
 	SYMBAND "Install package: symband" On \
 	TCL_OCTAVE "Install package: tcl-octave" On \
-	TRIANGULAR "Install package: triangular" Off \
 	TSA "Install package: tsa" On \
 	XRAYLIB "Install package: xraylib" On \
 	\
@@ -111,9 +104,6 @@ OPTIONS=	\
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ANN)
-RUN_DEPENDS+=	${TARBALLS_DIR}/ann.tar.gz:${PORTSDIR}/math/octave-forge-ann
-.endif
 .if defined(WITH_AUDIO)
 RUN_DEPENDS+=	${TARBALLS_DIR}/audio.tar.gz:${PORTSDIR}/math/octave-forge-audio
 .endif
@@ -143,9 +133,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/econometrics.tar.gz:${PORTSDIR}/math/octave-forge-
 .endif
 .if defined(WITH_FINANCIAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/financial.tar.gz:${PORTSDIR}/math/octave-forge-financial
-.endif
-.if defined(WITH_FIXED)
-RUN_DEPENDS+=	${TARBALLS_DIR}/fixed.tar.gz:${PORTSDIR}/math/octave-forge-fixed
 .endif
 .if defined(WITH_FTP)
 RUN_DEPENDS+=	${TARBALLS_DIR}/ftp.tar.gz:${PORTSDIR}/math/octave-forge-ftp
@@ -207,9 +194,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/optiminterp.tar.gz:${PORTSDIR}/math/octave-forge-o
 .if defined(WITH_OUTLIERS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/outliers.tar.gz:${PORTSDIR}/math/octave-forge-outliers
 .endif
-.if defined(WITH_PARALLEL)
-RUN_DEPENDS+=	${TARBALLS_DIR}/parallel.tar.gz:${PORTSDIR}/math/octave-forge-parallel
-.endif
 .if defined(WITH_PHYSICALCONSTANTS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/physicalconstants.tar.gz:${PORTSDIR}/math/octave-forge-physicalconstants
 .endif
@@ -255,9 +239,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/time.tar.gz:${PORTSDIR}/math/octave-forge-time
 .if defined(WITH_VIDEO)
 RUN_DEPENDS+=	${TARBALLS_DIR}/video.tar.gz:${PORTSDIR}/math/octave-forge-video
 .endif
-.if defined(WITH_VRML)
-RUN_DEPENDS+=	${TARBALLS_DIR}/vrml.tar.gz:${PORTSDIR}/math/octave-forge-vrml
-.endif
 .if defined(WITH_ZENITY)
 RUN_DEPENDS+=	${TARBALLS_DIR}/zenity.tar.gz:${PORTSDIR}/math/octave-forge-zenity
 .endif
@@ -279,9 +260,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl
 .endif
 .if defined(WITH_GENERATE_HTML)
 RUN_DEPENDS+=	${TARBALLS_DIR}/generate_html.tar.gz:${PORTSDIR}/math/octave-forge-generate_html
-.endif
-.if defined(WITH_GRACEPLOT)
-RUN_DEPENDS+=	${TARBALLS_DIR}/graceplot.tar.gz:${PORTSDIR}/math/octave-forge-graceplot
 .endif
 .if defined(WITH_INTEGRATION)
 RUN_DEPENDS+=	${TARBALLS_DIR}/integration.tar.gz:${PORTSDIR}/math/octave-forge-integration
@@ -330,9 +308,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/symband.tar.gz:${PORTSDIR}/math/octave-forge-symba
 .endif
 .if defined(WITH_TCL_OCTAVE)
 RUN_DEPENDS+=	${TARBALLS_DIR}/tcl-octave.tar.gz:${PORTSDIR}/math/octave-forge-tcl-octave
-.endif
-.if defined(WITH_TRIANGULAR)
-RUN_DEPENDS+=	${TARBALLS_DIR}/triangular.tar.gz:${PORTSDIR}/math/octave-forge-triangular
 .endif
 .if defined(WITH_TSA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/tsa.tar.gz:${PORTSDIR}/math/octave-forge-tsa
