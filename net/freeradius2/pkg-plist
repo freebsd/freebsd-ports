@@ -41,6 +41,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/chap
 %%EXAMPLESDIR%%/raddb/modules/checkval
 %%EXAMPLESDIR%%/raddb/modules/counter
+%%EXAMPLESDIR%%/raddb/modules/cui
 %%EXAMPLESDIR%%/raddb/modules/detail
 %%EXAMPLESDIR%%/raddb/modules/detail.example.com
 %%EXAMPLESDIR%%/raddb/modules/detail.log
@@ -60,6 +61,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/mac2ip
 %%EXAMPLESDIR%%/raddb/modules/mac2vlan
 %%EXAMPLESDIR%%/raddb/modules/mschap
+%%EXAMPLESDIR%%/raddb/modules/ntlm_auth
 %%EXAMPLESDIR%%/raddb/modules/otp
 %%EXAMPLESDIR%%/raddb/modules/pam
 %%EXAMPLESDIR%%/raddb/modules/pap
@@ -101,10 +103,15 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/sites-enabled/default
 %%EXAMPLESDIR%%/raddb/sites-enabled/inner-tunnel
 %%EXAMPLESDIR%%/raddb/sql.conf
+%%EXAMPLESDIR%%/raddb/sql/ndb/README
+%%EXAMPLESDIR%%/raddb/sql/ndb/admin.sql
+%%EXAMPLESDIR%%/raddb/sql/ndb/schema.sql
 %%EXAMPLESDIR%%/raddb/sql/mssql/dialup.conf
 %%EXAMPLESDIR%%/raddb/sql/mssql/schema.sql
 %%EXAMPLESDIR%%/raddb/sql/mysql/admin.sql
 %%EXAMPLESDIR%%/raddb/sql/mysql/counter.conf
+%%EXAMPLESDIR%%/raddb/sql/mysql/cui.conf
+%%EXAMPLESDIR%%/raddb/sql/mysql/cui.sql
 %%EXAMPLESDIR%%/raddb/sql/mysql/dialup.conf
 %%EXAMPLESDIR%%/raddb/sql/mysql/ippool.conf
 %%EXAMPLESDIR%%/raddb/sql/mysql/ippool.sql
@@ -131,12 +138,14 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/sqlippool.conf
 %%EXAMPLESDIR%%/raddb/templates.conf
 %%EXAMPLESDIR%%/raddb/users
+%%EXAMPLESDIR%%/raddb/attrs.access_challenge
 @exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
 @exec chmod -R g-w,o-rwx %D/etc/raddb
 @dirrm %%EXAMPLESDIR%%/raddb/sites-enabled
 @dirrm %%EXAMPLESDIR%%/raddb/certs
 @dirrm %%EXAMPLESDIR%%/raddb/modules
 @dirrm %%EXAMPLESDIR%%/raddb/sites-available
+@dirrm %%EXAMPLESDIR%%/raddb/sql/ndb
 @dirrm %%EXAMPLESDIR%%/raddb/sql/mssql
 @dirrm %%EXAMPLESDIR%%/raddb/sql/mysql
 @dirrm %%EXAMPLESDIR%%/raddb/sql/oracle
@@ -591,6 +600,7 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5176.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5247.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5281.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5580.txt
 %%PORTDOCS%%%%DOCSDIR%%/rlm_dbm
 %%PORTDOCS%%%%DOCSDIR%%/rlm_eap
 %%PORTDOCS%%%%DOCSDIR%%/rlm_expiration
@@ -617,8 +627,11 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.3gpp
 %%DATADIR%%/dictionary.3gpp2
 %%DATADIR%%/dictionary.acc
+%%DATADIR%%/dictionary.acme
 %%DATADIR%%/dictionary.airespace
 %%DATADIR%%/dictionary.alcatel
+%%DATADIR%%/dictionary.alcatel.esam
+%%DATADIR%%/dictionary.alcatel.sr
 %%DATADIR%%/dictionary.alteon
 %%DATADIR%%/dictionary.altiga
 %%DATADIR%%/dictionary.alvarion
@@ -629,6 +642,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.asn
 %%DATADIR%%/dictionary.avaya
 %%DATADIR%%/dictionary.azaire
+%%DATADIR%%/dictionary.audiocodes
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
 %%DATADIR%%/dictionary.bristol
@@ -662,6 +676,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.hp
 %%DATADIR%%/dictionary.huawei
 %%DATADIR%%/dictionary.infonet
+%%DATADIR%%/dictionary.iea
 %%DATADIR%%/dictionary.ipunplugged
 %%DATADIR%%/dictionary.issanni
 %%DATADIR%%/dictionary.itk
@@ -711,6 +726,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.rfc4849
 %%DATADIR%%/dictionary.rfc5090
 %%DATADIR%%/dictionary.rfc5176
+%%DATADIR%%/dictionary.rfc5580
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.shasta
