@@ -52,8 +52,8 @@ PYTHON=		"@comment "
 
 .include <bsd.port.pre.mk>
 
-# broken OpenSSL on 6.4
-.if ${OSVERSION} >= 604000 && ${OSVERSION} < 700000
+# OpenSSL on 6.x has no sha256 functions
+.if ${OSVERSION} < 700000
 CONFIGURE_ARGS+=	--disable-sha2
 .endif
 
