@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+%%DATADIR%%/jgnash2.jar
+%%DATADIR%%/lib/DynamicJasper-3.0.10.jar
+%%DATADIR%%/lib/args4j-2.0.8.jar
+%%DATADIR%%/lib/bloat-1.0.jar
+%%DATADIR%%/lib/commons-beanutils-1.7.jar
+%%DATADIR%%/lib/commons-collections-3.0.jar
+%%DATADIR%%/lib/commons-logging-1.0.2.jar
+%%DATADIR%%/lib/db4o-6.4.54.11278-java5.jar
+%%DATADIR%%/lib/db4o-6.4.54.11278-nqopt.jar
+%%DATADIR%%/lib/forms-1.2.1.jar
+%%DATADIR%%/lib/iText-2.1.4.jar
+%%DATADIR%%/lib/jGnashHelp.jar
+%%DATADIR%%/lib/jasperreports-3.5.1.jar
+%%DATADIR%%/lib/jcommon-1.0.15.jar
+%%DATADIR%%/lib/jdt-compiler-3.1.1.jar
+%%DATADIR%%/lib/jfreechart-1.0.12.jar
+%%DATADIR%%/lib/jh.jar
+%%DATADIR%%/lib/looks-2.3.0.jar
+%%DATADIR%%/lib/mina-core-1.1.7.jar
+%%DATADIR%%/lib/slf4j-api-1.4.3.jar
+%%DATADIR%%/lib/slf4j-jdk14-1.4.3.jar
+%%DATADIR%%/lib/swingx-1.6.jar
+%%DATADIR%%/lib/xstream-1.3.1.jar
+%%DESKTOPDIR%%/jgnash2.desktop
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
+@dirrmtry %%DESKTOPDIR%%
