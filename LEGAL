@@ -735,3 +735,7 @@ pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 tarsnap-*		sysutils/tarsnap	Redistribution restricted
 linuxsampler-*		audio/linuxsampler	Commercial use is prohibited
 WowzaMediaServerPro	net/wowzamediaserverpro	Redistribution not allowed
+rsmb-*			net/rsmb		Must register for account
+						on IBM web site, must agree
+						to license before downloading,
+						and no redistribution allowed
