@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.1.1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
@@ -119,9 +119,6 @@ PLIST_SUB+=	DOCUMENTATION="@comment "
 .endif
 
 MAN1=	weechat-curses.1
-
-post-extract:
-	@${CP} ${WRKSRC}/doc/weechat-curses.1 ${WRKSRC}/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
