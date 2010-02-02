@@ -1,14 +1,15 @@
 #!/bin/sh
 
-if [ "$2" != "PRE-INSTALL" ]; then
-	exit 0
-fi
+# 3ware hardcoded /etc/3dm2 into the binary, so we need to fake it
+# in order to meet hier(9).
 
-# 3ware lamely hardcode the locations of various things  
-
+case $2 in
+POST-INSTALL)
 	mkdir /etc/3dm2
-	mkdir -p ${PKG_PREFIX}/etc/3dm2/msg
-	ln -s ${PKG_PREFIX}/etc/3dm2/msg /etc/3dm2/msg
 	ln -s ${PKG_PREFIX}/etc/3dm2/3dm2.conf /etc/3dm2/3dm2.conf
 	ln -s ${PKG_PREFIX}/etc/3dm2/3dm2.pem /etc/3dm2/3dm2.pem
+	;;
+*)
+	;;
+esac
 exit 0
