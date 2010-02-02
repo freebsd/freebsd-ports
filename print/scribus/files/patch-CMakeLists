@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2009-06-25 15:18:25.000000000 -0300
-+++ CMakeLists.txt	2009-06-25 15:52:47.000000000 -0300
+--- CMakeLists.txt.orig	2010-01-18 19:43:29.000000000 -0200
++++ CMakeLists.txt	2010-01-18 19:44:07.000000000 -0200
 @@ -116,7 +116,7 @@
  ENDIF (WANT_VERSIONING AND NOT CACHED_VERSIONING)
  
@@ -18,3 +18,9 @@
  SET(LIBDIR "${LIB_DIR_NAME}/${MAIN_DIR_NAME}${TAG_VERSION}/")
  ADD_DEFINITIONS("-DLIBDIR=\\\"${CMAKE_INSTALL_PREFIX}/${LIBDIR}\\\"")
  
+@@ -522,4 +522,5 @@
+ ## I'll make this prettier later - ignore any tarballs in the root
+   SET(CPACK_SOURCE_IGNORE_FILES CMakeCache.txt scribus-1.3.3.12.tar.bz2 scribus-1.3.3.13.tar.Z scribus-1.3.3.13.tar.gz "~$" "\\\\.cvsignore$" "^${PROJECT_SOURCE_DIR}.*/CVS/" "^${PROJECT_SOURCE_DIR}/debian/" "^${PROJECT_SOURCE_DIR}/old/" "^${PROJECT_SOURCE_DIR}.*/CVSROOT/" "^${PROJECT_SOURCE_DIR}.*/autom4te.cache/")
+   INCLUDE(CPack)
++  SET_TARGET_PROPERTIES(scribus PROPERTIES LINK_FLAGS -Wl,-E)
+ ENDIF(EXISTS "${CMAKE_ROOT}/Modules/CPack.cmake")
