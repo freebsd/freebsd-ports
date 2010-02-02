@@ -34,4 +34,4 @@ share/mk/subdir.mk
 share/mk/target-flags.mk
 share/mk/warnings.mk
 share/mk/yacc.mk
-@dirrm share/mk
+@dirrmtry share/mk
