@@ -5,7 +5,6 @@ etc/irssi.conf.sample
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.la
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so.0
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/Irc.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/TextUI.pm
