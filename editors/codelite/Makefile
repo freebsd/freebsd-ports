@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	2.1.0.${SVN_REVISION}
+DISTVERSION=	2.2.0.${SVN_REVISION}
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION}
 
@@ -25,7 +25,7 @@ HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-SVN_REVISION=	3584
+SVN_REVISION=	3681
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
