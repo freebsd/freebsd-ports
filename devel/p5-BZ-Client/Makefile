@@ -7,6 +7,7 @@
 
 PORTNAME=	BZ-Client
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/J/JW/JWIED
@@ -24,5 +25,9 @@ PERL_CONFIGURE=	5.10.1+
 MAN3=		BZ::Client.3 BZ::Client::API.3 BZ::Client::Bug.3 \
 		BZ::Client::Bugzilla.3 BZ::Client::Exception.3 \
 		BZ::Client::Product.3 BZ::Client::Test.3 BZ::Client::XMLRPC.3
+
+post-patch:
+	@${REINPLACE_CMD} -i '' -E 's=(api_call\()"=\1$$client, "=' \
+		${WRKSRC}/lib/BZ/Client/Bug.pm
 
 .include <bsd.port.mk>
