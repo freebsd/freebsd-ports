@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}
@@ -45,12 +44,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/lib/libmpich.so:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/GENERATED/s|$$@|$$(INCDIR)|' \
-		${WRKSRC}/rules.make
-	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
-		${WRKSRC}/src/libf/mvar.[ch]
 
 post-install:
 .for file in ncmpidump ncmpigen ncvalid
