@@ -20,6 +20,7 @@ include/dns/dbiterator.h
 include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
+include/dns/dlz.h
 include/dns/dnssec.h
 include/dns/ds.h
 include/dns/enumclass.h
@@ -55,6 +56,7 @@ include/dns/resolver.h
 include/dns/result.h
 include/dns/rootns.h
 include/dns/sdb.h
+include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
 include/dns/soa.h
