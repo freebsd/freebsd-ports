@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	uhub
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	yashin.dm@gmail.com
 COMMENT=	High performance peer-to-peer hub for the ADC network
-
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -23,6 +21,17 @@ USE_RC_SUBR=	uhub.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	${WRKSRC}/GNUmakefile
+
+OPTIONS=	OPENSSL		"Enable SSL support (experimental)" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+MAKE_ARGS=	USE_SSL=YES
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/uhub/|${PREFIX}&|' ${WRKSRC}/doc/uhub.conf
@@ -34,4 +43,4 @@ post-install:
 		${TOUCH} ${PREFIX}/etc/uhub/motd.txt.sample ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
