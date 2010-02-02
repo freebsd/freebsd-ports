@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -29,9 +29,12 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost=${LOCALBASE} \
+		--with-boost-filesystem=boost_filesystem \
+		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex
 MAKE_JOBS_SAFE=	yes
 
@@ -54,6 +57,7 @@ WX_CONF_ARGS=	absolute
 MAN1+=		mmg.1
 PLIST_SUB+=	GUI=""
 .else
+CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	GUI="@comment "
 .endif
 
