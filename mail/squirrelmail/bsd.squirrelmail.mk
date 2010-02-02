@@ -1,6 +1,6 @@
 # $FreeBSD$
 #
-# $Id: bsd.squirrelmail.mk 23 2008-12-03 16:17:48Z tabthorpe $
+# $LastChangedDate: 2010-02-01 22:21:34 -0500 (Mon, 01 Feb 2010) $
 #
 # Common code for squirrelmail plugins.
 #
@@ -27,7 +27,7 @@ RUN_DEPENDS+=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
-USE_PHP=		yes
+USE_PHP?=		yes
 WANT_PHP_WEB=		yes
 
 SQUIRREL_PLUGIN_NAME?=   ${PORTNAME}
