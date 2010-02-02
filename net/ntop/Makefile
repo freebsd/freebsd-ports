@@ -7,20 +7,26 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.ntop.org/trac/export/4103/trunk/ntop/3rd_party/ \
+		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+DISTFILES=	etter.finger.os.gz \
+		GeoIPASNum.dat.gz \
+		GeoLiteCity.dat.gz \
+		oui.txt.gz \
+		specialMAC.txt.gz \
+		${PORTNAME}-${PORTVERSION}.tar.gz
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
-BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		geoiplookup:${PORTSDIR}/net/GeoIP
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		event-1.4:${PORTSDIR}/devel/libevent
+BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
+		geoiplookup:${PORTSDIR}/net/GeoIP
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
 BROKEN=		does not build
@@ -93,6 +99,11 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 
 post-extract:
 	@${RM} ${WRKSRC}/configureextra/FREEBSD
+	@${CP} ${_DISTDIR}/etter.finger.os.gz ${WRKSRC}
+	@${CP} ${_DISTDIR}/GeoIPASNum.dat.gz ${WRKSRC}
+	@${CP} ${_DISTDIR}/GeoLiteCity.dat.gz ${WRKSRC}
+	@${CP} ${_DISTDIR}/oui.txt.gz ${WRKSRC}
+	@${CP} ${_DISTDIR}/specialMAC.txt.gz ${WRKSRC}
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} autogen.sh --noconfig

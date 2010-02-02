@@ -1,4 +1,6 @@
 bin/ntop
+etc/ntop/GeoIPASNum.dat.gz
+etc/ntop/GeoLiteCity.dat.gz
 etc/ntop/ntop-cert.pem
 etc/ntop/etter.finger.os.gz
 etc/ntop/oui.txt.gz
