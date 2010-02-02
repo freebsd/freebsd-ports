@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	polipo
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.4.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.pps.jussieu.fr/~jch/software/files/polipo/ \
+MASTER_SITES=	http://freehaven.net/~chrisd/polipo/ \
 		http://www.sax.de/~frank/polipo4bsd/files/
 
 MAINTAINER=	frank@pinky.sax.de
@@ -16,6 +16,7 @@ COMMENT=	A small and fast caching web proxy
 
 MAN1=		polipo.1
 
+MAKE_JOBS_SAFE=	yes
 USE_RC_SUBR=	polipo.sh
 
 .include <bsd.port.pre.mk>
