@@ -26,6 +26,7 @@ include/digikam/dlogoaction.h
 include/digikam/dmetadata.h
 include/digikam/dpopupmenu.h
 include/digikam/dprogressdlg.h
+include/digikam/dzoombar.h
 include/digikam/exifwidget.h
 include/digikam/greycstorationiface.h
 include/digikam/greycstorationsettings.h
@@ -40,15 +41,10 @@ include/digikam/iccprofilewidget.h
 include/digikam/icctransform.h
 include/digikam/imagecurves.h
 include/digikam/imagedialog.h
-include/digikam/imageguidewidget.h
 include/digikam/imagehistogram.h
 include/digikam/imageiface.h
 include/digikam/imagelevels.h
-include/digikam/imagepanelwidget.h
-include/digikam/imagepaniconwidget.h
 include/digikam/imageplugin.h
-include/digikam/imageregionwidget.h
-include/digikam/imagewidget.h
 include/digikam/iptcwidget.h
 include/digikam/knotificationwrapper.h
 include/digikam/libsinfodlg.h
@@ -674,6 +670,7 @@ share/locale/ar/LC_MESSAGES/digikam.mo
 share/locale/be/LC_MESSAGES/digikam.mo
 share/locale/bg/LC_MESSAGES/digikam.mo
 share/locale/ca/LC_MESSAGES/digikam.mo
+share/locale/ca@valencia/LC_MESSAGES/digikam.mo
 share/locale/cs/LC_MESSAGES/digikam.mo
 share/locale/da/LC_MESSAGES/digikam.mo
 share/locale/de/LC_MESSAGES/digikam.mo
@@ -691,6 +688,8 @@ share/locale/gl/LC_MESSAGES/digikam.mo
 share/locale/he/LC_MESSAGES/digikam.mo
 share/locale/hi/LC_MESSAGES/digikam.mo
 share/locale/hne/LC_MESSAGES/digikam.mo
+share/locale/hr/LC_MESSAGES/digikam.mo
+share/locale/hu/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
 share/locale/ja/LC_MESSAGES/digikam.mo
@@ -723,6 +722,8 @@ share/locale/zh_TW/LC_MESSAGES/digikam.mo
 @dirrmtry share/locale/se
 @dirrmtry share/locale/hne/LC_MESSAGES
 @dirrmtry share/locale/hne
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrm share/apps/showfoto/data
 @dirrm share/apps/showfoto
 @dirrm share/apps/digikam/utils
