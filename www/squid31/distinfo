@@ -22,3 +22,6 @@ SIZE (squid3.1/squid-3.1-9825.patch) = 1261
 MD5 (squid3.1/squid-3.1-9826.patch) = 02a49a40917c50995a37d2d29c80591c
 SHA256 (squid3.1/squid-3.1-9826.patch) = e4041f02c4233d664afbbd3bb472865dddb7d9187181acf9542bd650b6f8ffc0
 SIZE (squid3.1/squid-3.1-9826.patch) = 3915
+MD5 (squid3.1/squid-3.1-9853.patch) = afa851481af4e7d173a0be9f0ff4e75d
+SHA256 (squid3.1/squid-3.1-9853.patch) = 7b0e1917346d1f3684015b9f939518d5e6db66edc85421512c564c4b1f990f78
+SIZE (squid3.1/squid-3.1-9853.patch) = 2915
