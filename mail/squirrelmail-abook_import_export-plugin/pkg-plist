@@ -1,0 +1,17 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/CHANGELOG
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/COPYING
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/INSTALL
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/README
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/ReleaseNotes.txt
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/abook_import_export.pot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/address_book_export.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/address_book_import.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_default.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/functions.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/setup.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/xgetpot
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

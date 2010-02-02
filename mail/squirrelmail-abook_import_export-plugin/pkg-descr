@@ -1,0 +1,5 @@
+Allows for the importing of addressbooks from a CSV (comma separated
+values) file. This will be located at the bottom of the "Addresses"
+section.
+
+WWW: http://www.squirrelmail.org/plugin_view.php?id=29
