@@ -75,7 +75,6 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Compiler/Lexicon.pickle
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Annotate.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/AutoDocTransforms.pyc
@@ -151,27 +150,6 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Distutils/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Distutils/build_ext.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Distutils/extension.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Mac/__init__.py
-%%PYTHON_SITELIBDIR%%/Cython/Mac/DarwinSystem.py
-%%PYTHON_SITELIBDIR%%/Cython/Mac/MacSystem.py
-%%PYTHON_SITELIBDIR%%/Cython/Mac/MacUtils.py
-%%PYTHON_SITELIBDIR%%/Cython/Mac/TS_Misc_Suite.py
-%%PYTHON_SITELIBDIR%%/Cython/Mac/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Mac/DarwinSystem.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Mac/MacSystem.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Mac/MacUtils.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Mac/TS_Misc_Suite.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Mac/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Mac/DarwinSystem.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Mac/MacSystem.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Mac/MacUtils.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Mac/TS_Misc_Suite.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Unix/__init__.py
-%%PYTHON_SITELIBDIR%%/Cython/Unix/LinuxSystem.py
-%%PYTHON_SITELIBDIR%%/Cython/Unix/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Unix/LinuxSystem.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Unix/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Unix/LinuxSystem.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Runtime/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Runtime/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Runtime/__init__.pyo
@@ -242,6 +220,7 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_module.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_number.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_object.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/python_oldbuffer.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_ref.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_sequence.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/python_set.pxd
@@ -283,8 +262,6 @@ bin/cython
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Compiler
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Distutils
-@dirrm %%PYTHON_SITELIBDIR%%/Cython/Mac
-@dirrm %%PYTHON_SITELIBDIR%%/Cython/Unix
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Plex
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Runtime
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Tests
