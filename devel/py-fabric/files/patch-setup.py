@@ -1,11 +1,13 @@
+
+$FreeBSD$
+
 --- setup.py.orig
 +++ setup.py
-@@ -13,7 +13,7 @@
-     author='Jeff Forcier',
+@@ -16,7 +16,6 @@
      author_email='jeff@bitprophet.org',
      url='http://fabfile.org',
--    install_requires=['paramiko >=1.7, <2.0'],
-+    #install_requires=['paramiko >=1.7, <2.0'],
      packages=find_packages(),
+-    install_requires=['pycrypto >=1.9'],
      entry_points={
          'console_scripts': [
+             'fab = fabric.main:main',
