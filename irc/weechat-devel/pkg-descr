@@ -3,7 +3,4 @@ client. Everything can be done with a keyboard, and it is customizable
 and extensible with scripts. For the moment, only ncurse GUI is
 supported by this port.
 
-Note: this is not the official release version, this is a git snapshot, which
-may in some cases be unstable.
-
-WWW: http://git.savannah.gnu.org/gitweb/?p=weechat.git
+WWW: http://weechat.org
