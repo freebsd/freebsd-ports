@@ -22,7 +22,7 @@
 %%PYTHON_SITELIBDIR%%/gnutls/library/__init__.py
 %%PYTHON_SITELIBDIR%%/gnutls/library/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gnutls/library/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gnutls/library/_gnutls_init.so
+%%PYTHON_SITELIBDIR%%/gnutls/library/_init.so
 %%PYTHON_SITELIBDIR%%/gnutls/library/constants.py
 %%PYTHON_SITELIBDIR%%/gnutls/library/constants.pyc
 %%PYTHON_SITELIBDIR%%/gnutls/library/constants.pyo
