@@ -1,3 +1,6 @@
 MD5 (postgresql/postgresql-8.4.2.tar.bz2) = d738227e2f1f742d2f2d4ab56496c5c6
 SHA256 (postgresql/postgresql-8.4.2.tar.bz2) = adb3c5c90396195d76e986f835c2bd0e0dad438f91f4dc2b62048caf6d9869f2
 SIZE (postgresql/postgresql-8.4.2.tar.bz2) = 13600699
+SHA256 (postgresql/pg-840-icu-2009-09-15.diff.gz) = c09d3b59340a3bb6ea754e985739d4fbb47f730d1e48a357c5585825034fc72e
+MD5 (postgresql/pg-840-icu-2009-09-15.diff.gz) = 2b81134b462e01623bc9387fe4de7136
+SIZE (postgresql/pg-840-icu-2009-09-15.diff.gz) = 4321

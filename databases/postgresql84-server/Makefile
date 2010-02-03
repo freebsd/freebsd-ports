@@ -93,19 +93,19 @@ OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-#OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
+OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
 
-#.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-#USE_AUTOTOOLS=	autoconf:262
-#CONFIGURE_ARGS+=--with-icu
-#LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
-#PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-#PATCHFILES+=	pg-833-icu-xx-2008-08-28.diff.gz:icu
-#.  endif
+.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
+USE_AUTOTOOLS=	autoconf:262
+CONFIGURE_ARGS+=--with-icu
+LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
+PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
+PATCHFILES+=	pg-840-icu-2009-09-15.diff.gz:icu
+.  endif
 
 PATCH_DIST_STRIP=-p1
 
