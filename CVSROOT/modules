@@ -6482,6 +6482,7 @@ jfreechart                      ports/java/jfreechart
 jftp                            ports/ftp/jftp
 jftpgw                          ports/ftp/jftpgw
 jggtrans                        ports/net-im/jggtrans
+jgnash                          ports/finance/jgnash
 jgrapht                         ports/java/jgrapht
 jgraphx                         ports/java/jgraphx
 jhead                           ports/graphics/jhead
@@ -7765,6 +7766,7 @@ libnet-devel                    ports/net/libnet-devel
 libnet10                        ports/net/libnet10
 libnetdude                      ports/net/libnetdude
 libneural                       ports/math/libneural
+libnfc                          ports/devel/libnfc
 libnice                         ports/net-im/libnice
 libnids                         ports/net/libnids
 libnjb                          ports/audio/libnjb
@@ -11785,6 +11787,7 @@ p5-GD-Thumbnail                 ports/graphics/p5-GD-Thumbnail
 p5-GDBM                         ports/databases/p5-GDBM
 p5-GDS2                         ports/cad/p5-GDS2
 p5-GIS-Distance                 ports/math/p5-GIS-Distance
+p5-GIS-Distance-Fast            ports/math/p5-GIS-Distance-Fast
 p5-GMail-IMAPD                  ports/mail/p5-GMail-IMAPD
 p5-GPS                          ports/astro/p5-GPS
 p5-GPS-Babel                    ports/astro/p5-GPS-Babel
@@ -15543,6 +15546,7 @@ p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
 p5-getopt-mixed                 ports/devel/p5-Getopt-Mixed
 p5-getopt-popt                  ports/devel/p5-Getopt-Popt
 p5-gis-distance                 ports/math/p5-GIS-Distance
+p5-gis-distance-fast            ports/math/p5-GIS-Distance-Fast
 p5-git-pureperl                 ports/devel/p5-Git-PurePerl
 p5-github_creator               ports/devel/p5-github_creator
 p5-glade2                       ports/x11-toolkits/p5-Glade2
@@ -21111,6 +21115,7 @@ rrdtool12                       ports/databases/rrdtool12
 rscheme                         ports/lang/rscheme
 rshell                          ports/net/rshell
 rsibreak                        ports/x11/rsibreak
+rsmb                            ports/net/rsmb
 rsnapshot                       ports/sysutils/rsnapshot
 rss2email                       ports/mail/rss2email
 rss2html                        ports/textproc/rss2html
@@ -22483,6 +22488,7 @@ squirm                          ports/www/squirm
 squirrel                        ports/lang/squirrel
 squirrel-sql                    ports/databases/squirrel-sql
 squirrelmail                    ports/mail/squirrelmail
+squirrelmail-abook_import_export-plugin  ports/mail/squirrelmail-abook_import_export-plugin
 squirrelmail-avelsieve-plugin   ports/mail/squirrelmail-avelsieve-plugin
 squirrelmail-calendar_file_backend-plugin  ports/mail/squirrelmail-calendar_file_backend-plugin
 squirrelmail-calendar_sql_backend-plugin  ports/mail/squirrelmail-calendar_sql_backend-plugin
