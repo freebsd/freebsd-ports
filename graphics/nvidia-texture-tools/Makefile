@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nvidia-texture-tools
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+DISTVERSION=	2.0.7-1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE \
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
@@ -46,8 +46,8 @@ PLIST_SUB+=	COMPRESSUI="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-IGNORE=		does not build: not yet ported to sparc64
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+BROKEN=		does not build
 .endif
 
 post-patch:
