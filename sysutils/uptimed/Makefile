@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/uptimed/releases/
 
-MAINTAINER=	andy@athame.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	uptime daemon
 
 USE_RC_SUBR=	${PORTNAME}
