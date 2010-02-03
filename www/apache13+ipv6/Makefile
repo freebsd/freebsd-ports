@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	1.3.41
+PORTVERSION=	1.3.42
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 PKGNAMESUFFIX=	+ipv6
 DISTNAME=	apache_${PORTVERSION}
 
-PATCH_SITES=	http://www.don.to/arc/
-PATCHFILES=	apache-1.3.41-v6-20080122.diff.gz
-PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	http://cloud.github.com/downloads/sumikawa/apache13-ipv6/
+PATCHFILES=	apache-1.3.44-v6-20100202.diff.gz
+PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The extremely popular Apache http server. Very fast, very clean
