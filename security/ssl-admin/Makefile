@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
 
 MAINTAINER=	ecrist@secure-computing.net
-COMMENT=	OpenSSL certificate manager with OpenVPN support
+COMMENT=	OpenSSL certificate manager with OpenVPN support.
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
