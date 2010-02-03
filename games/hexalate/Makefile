@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hexalate
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,18 +17,16 @@ COMMENT=	A color matching game
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui svg moc_build qmake_build rcc_build
+QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
+QMAKEFLAGS+=	PREFIX=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		PREFIX=${PREFIX} -spec ${QMAKESPEC} ${PORTNAME}.pro
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
 
 .include <bsd.port.mk>
