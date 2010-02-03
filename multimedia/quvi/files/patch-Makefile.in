@@ -1,0 +1,11 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -277,7 +277,7 @@ docs/howto/HowtoHelp \
+ docs/howto/HowtoAddSupport \
+ docs/howto/HowtoSubmitPatches
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libquvi.pc
+ SUBDIRS = include lib src examples tests
+ all: config.h

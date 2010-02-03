@@ -1,0 +1,8 @@
+bin/quvi
+include/quvi/quvi.h
+@dirrm include/quvi
+lib/libquvi.a
+lib/libquvi.la
+lib/libquvi.so
+lib/libquvi.so.%%SHLIB_VER%%
+libdata/pkgconfig/libquvi.pc

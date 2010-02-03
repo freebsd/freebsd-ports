@@ -251,6 +251,7 @@
     SUBDIR += qt4-phonon-gst
     SUBDIR += quark
     SUBDIR += quodlibet
+    SUBDIR += quvi
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
