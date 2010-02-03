@@ -23,6 +23,10 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtksharp20 gnomesharp20
 USE_GMAKE=	yes
 
+USE_LDCONFIG=	yes
+
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		bareftp.1
 
 # should use configure --without-gnome-keyring but it is broken
