@@ -1,0 +1,14 @@
+--- src/misc/opensonic.orig	2009-06-01 02:34:38.000000000 +1100
++++ src/misc/opensonic	2010-02-02 20:03:04.352042228 +1000
+@@ -1,9 +1,9 @@
+-#!/bin/bash
++#!/bin/sh
+ # Game
+ 
+ GAME_BIN="opensonic_bin"
+ PWD_DIR=`pwd`
+-GAME_DIR=`echo $0 | sed 's,^\(.*\)/\(.*\)$,\1,g'`
++GAME_DIR=%%GAME_DIR%%
+ GAME_PATH="${GAME_DIR}/${GAME_BIN}"
+ 
+ # Set LD_LIBRARY_PATH
