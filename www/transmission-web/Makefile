@@ -21,6 +21,7 @@ NO_BUILD=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC}/web -name .svn | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC}/web -name Makefile.* | ${XARGS} ${RM} -rf
 
 do-install:
 	@${MKDIR} ${DATADIR}/web
