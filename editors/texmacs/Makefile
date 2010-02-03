@@ -21,6 +21,8 @@ LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 
+MAKE_JOBS_SAFE=	yes
+
 USE_PYTHON=	yes
 USE_ICONV=	yes
 REINPLACE_ARGS=	-i ""
