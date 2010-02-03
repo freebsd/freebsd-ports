@@ -7,6 +7,7 @@
 
 PORTNAME=	AnyEvent-HTTPD
 PORTVERSION=	0.84
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/E/EL/ELMEX
@@ -16,11 +17,9 @@ MAINTAINER=	mons@cpan.org
 COMMENT=	A simple lightweight event based web server
 
 RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-Object-Event>=1.101:${PORTSDIR}/devel/p5-Object-Event \
+		p5-Object-Event>=1.21:${PORTSDIR}/devel/p5-Object-Event \
 		p5-common-sense>=2.0:${PORTSDIR}/devel/p5-common-sense \
 		p5-URI>=1.40:${PORTSDIR}/net/p5-URI
-
-BROKEN=		unsatisfiable dependency condition
 
 PERL_CONFIGURE=	yes
 
