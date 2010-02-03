@@ -387,7 +387,6 @@
 %%WWWDIR%%/templates/show_edit_user.inc.php
 %%WWWDIR%%/templates/show_embed_xspf.inc.php
 %%WWWDIR%%/templates/show_export.inc.php
-%%WWWDIR%%/templates/show_flag.inc.php
 %%WWWDIR%%/templates/show_flag_row.inc.php
 %%WWWDIR%%/templates/show_flagged.inc.php
 %%WWWDIR%%/templates/show_gather_art.inc.php
@@ -425,9 +424,7 @@
 %%WWWDIR%%/templates/show_object_rating_static.inc.php
 %%WWWDIR%%/templates/show_object_row.inc.php
 %%WWWDIR%%/templates/show_objects.inc.php
-%%WWWDIR%%/templates/show_play_selected.inc.php
 %%WWWDIR%%/templates/show_playlist.inc.php
-%%WWWDIR%%/templates/show_playlist_edit.inc.php
 %%WWWDIR%%/templates/show_playlist_row.inc.php
 %%WWWDIR%%/templates/show_playlist_song_row.inc.php
 %%WWWDIR%%/templates/show_playlist_songs.inc.php
@@ -450,7 +447,6 @@
 %%WWWDIR%%/templates/show_search_options.inc.php
 %%WWWDIR%%/templates/show_shout_row.inc.php
 %%WWWDIR%%/templates/show_shoutbox.inc.php
-%%WWWDIR%%/templates/show_similar_artists.inc.php
 %%WWWDIR%%/templates/show_song.inc.php
 %%WWWDIR%%/templates/show_song_row.inc.php
 %%WWWDIR%%/templates/show_songs.inc.php
