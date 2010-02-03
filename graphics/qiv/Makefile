@@ -16,11 +16,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Small, fast GDK/Imlib2 image viewer
 
-OPTIONS=	XINERAMA "use multiple monitors" off
-USE_GMAKE=	yes
-USE_GNOME=	gtk20
 LIB_DEPENDS=	Imlib2.5:${PORTSDIR}/graphics/imlib2 \
 		exif.12:${PORTSDIR}/graphics/libexif
+
+USE_GMAKE=	yes
+USE_GNOME=	gtk20
+
+MAKE_JOBS_SAFE=	yes
+
+OPTIONS=	XINERAMA "use multiple monitors" off
 
 MAN1=		qiv.1
 PLIST_FILES=	bin/qiv
