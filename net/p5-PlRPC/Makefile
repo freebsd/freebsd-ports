@@ -7,6 +7,7 @@
 
 PORTNAME=	PlRPC
 PORTVERSION=	0.2020
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	RPC
@@ -27,5 +28,6 @@ MAN3=		Bundle::PlRPC.3 \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -rf
+	@${PERL} -pi -e 's/perldoc -t/echo perldoc -t/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
