@@ -1,0 +1,20 @@
+bin/cueplayer
+%%DATADIR%%/application-exit.png
+%%DATADIR%%/convertor.png
+%%DATADIR%%/fileopen.png
+%%DATADIR%%/format-indent-more.png
+%%DATADIR%%/format-list-unordered.png
+%%DATADIR%%/help-about.png
+%%DATADIR%%/hint.png
+%%DATADIR%%/knotify.png
+%%DATADIR%%/media-optical.png
+%%DATADIR%%/net-stream.png
+%%DATADIR%%/next.png
+%%DATADIR%%/pause.png
+%%DATADIR%%/play.png
+%%DATADIR%%/prev.png
+%%DATADIR%%/speaker.png
+%%DATADIR%%/stop.png
+%%DATADIR%%/text-field.png
+%%DATADIR%%/tool-animator.png
+@dirrm %%DATADIR%%

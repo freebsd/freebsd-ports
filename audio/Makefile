@@ -111,6 +111,7 @@
     SUBDIR += cripple
     SUBDIR += csound
     SUBDIR += cue2toc
+    SUBDIR += cueplayer
     SUBDIR += cuetools
     SUBDIR += cutmp3
     SUBDIR += cymbaline
