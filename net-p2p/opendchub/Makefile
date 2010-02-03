@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	opendchub
-PORTVERSION=	0.7.16
+PORTVERSION=	0.8.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yashin.dm@gmail.com
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
 USE_PERL5=	yes
@@ -24,6 +24,9 @@ PLIST_FILES=	bin/${PORTNAME}
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+pre-install:
+	@${CHMOD} a+rx ${WRKSRC}/install-sh
 
 post-install:
 .if !defined(NOPORTDOCS)
