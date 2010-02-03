@@ -7,7 +7,7 @@
 
 PORTNAME=	REminiscence
 PORTVERSION=	0.1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -45,10 +45,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != i386
-IGNORE=		Doesn't work on !i386 (ERROR: Bad CRC for bank data 38!)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
