@@ -7,7 +7,7 @@
 
 PORTNAME=	EBook-Tools
 PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,10 +27,13 @@ BUILD_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip 
 		${SITE_PERL}/Palm/PDB.pm:${PORTSDIR}/palm/p5-Palm \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32 \
-		${SITE_PERL}/HTML/TextToHTML.pm:${PORTSDIR}/textproc/txt2html
+		${SITE_PERL}/HTML/TextToHTML.pm:${PORTSDIR}/textproc/txt2html \
+		p5-version>=0:${PORTSDIR}/devel/p5-version \
+		p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS+=	${LOCALBASE}/bin/tidy:${PORTSDIR}/www/tidy
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN1=	ebook.1
 MAN3=		EBook::Tools.3 \
