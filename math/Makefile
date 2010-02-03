@@ -99,6 +99,7 @@
     SUBDIR += gmm++
     SUBDIR += gmp
     SUBDIR += gmp-ecm
+    SUBDIR += gnubc
     SUBDIR += gnumeric
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
