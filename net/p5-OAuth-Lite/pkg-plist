@@ -1,0 +1,22 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OAuth/Lite/.packlist
+%%SITE_PERL%%/OAuth/Lite.pm
+%%SITE_PERL%%/OAuth/Lite/Agent.pm
+%%SITE_PERL%%/OAuth/Lite/AuthMethod.pm
+%%SITE_PERL%%/OAuth/Lite/Consumer.pm
+%%SITE_PERL%%/OAuth/Lite/Problems.pm
+%%SITE_PERL%%/OAuth/Lite/Server/Test/Echo.pm
+%%SITE_PERL%%/OAuth/Lite/Server/mod_perl2.pm
+%%SITE_PERL%%/OAuth/Lite/ServerUtil.pm
+%%SITE_PERL%%/OAuth/Lite/SignatureMethod.pm
+%%SITE_PERL%%/OAuth/Lite/SignatureMethod/HMAC_SHA1.pm
+%%SITE_PERL%%/OAuth/Lite/SignatureMethod/PLAINTEXT.pm
+%%SITE_PERL%%/OAuth/Lite/SignatureMethod/RSA_SHA1.pm
+%%SITE_PERL%%/OAuth/Lite/Token.pm
+%%SITE_PERL%%/OAuth/Lite/Util.pm
+@dirrm %%SITE_PERL%%/OAuth/Lite/SignatureMethod
+@dirrm %%SITE_PERL%%/OAuth/Lite/Server/Test
+@dirrm %%SITE_PERL%%/OAuth/Lite/Server
+@dirrm %%SITE_PERL%%/OAuth/Lite
+@dirrmtry %%SITE_PERL%%/OAuth
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OAuth/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OAuth
