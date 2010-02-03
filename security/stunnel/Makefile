@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.28
-PORTREVISION=	1
+PORTVERSION=	4.29
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/download/stunnel/src/
-
-PATCH_SITES=	ftp://stunnel.mirt.net/stunnel/
-PATCHFILES=	execargs.patch
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
