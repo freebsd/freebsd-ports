@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	html2text
-PORTVERSION=	2.35
+PORTVERSION=	2.37
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Convert HTML into clean plain ASCII text
 
-USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
