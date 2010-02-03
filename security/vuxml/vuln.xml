@@ -127,7 +127,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2010-0300</cvename>
       <url>http://www.debian.org/security/2010/dsa-1980</url>
       <url>http://lists.ratbox.org/pipermail/ircd-ratbox/2010-January/000890.html</url>
-      <url>http://lists.ratbox.org/pipermail/ircd-ratbox/2010-January/000891.html></url>
+      <url>http://lists.ratbox.org/pipermail/ircd-ratbox/2010-January/000891.html</url>
     </references>
     <dates>
       <discovery>2010-01-25</discovery>
