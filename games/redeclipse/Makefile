@@ -32,6 +32,10 @@ OPTIONS=	CLIENT "Build client" on \
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		does not build on sparc64
+.endif
+
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
 IGNORE=		needs at least one executable (CLIENT or DEDICATED)
 .endif
