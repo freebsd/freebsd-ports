@@ -7,7 +7,7 @@
 
 PORTNAME=	IDNA-Punycode
 PORTVERSION=	0.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RO/ROBURBAN/
@@ -19,5 +19,8 @@ COMMENT=	Perl module to encode Unicode string in Punycode
 PERL_CONFIGURE=	YES
 
 MAN3=		IDNA::Punycode.3
+
+post-patch:
+	@${RM} -f ${WRKSRC}/lib/IDNA/.Punycode.pm.swp
 
 .include <bsd.port.mk>

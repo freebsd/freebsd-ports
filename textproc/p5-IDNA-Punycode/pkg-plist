@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IDNA/Punycode/.packlist
 %%SITE_PERL%%/IDNA/Punycode.pm
-%%SITE_PERL%%/IDNA/.Punycode.pm.swp
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IDNA/Punycode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IDNA
 @dirrmtry %%SITE_PERL%%/IDNA
