@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.16
+PORTVERSION=	1.4.17
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -27,6 +27,7 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/locale/de/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
+		share/locale/it/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/sv/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo \
