@@ -597,6 +597,7 @@
     SUBDIR += openjazz
     SUBDIR += openlierox
     SUBDIR += openmortal
+    SUBDIR += opensonic
     SUBDIR += openttd
     SUBDIR += openyahtzee
     SUBDIR += optimax
