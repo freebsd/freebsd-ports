@@ -894,6 +894,7 @@
     SUBDIR += truevision
     SUBDIR += tulip
     SUBDIR += tumble
+    SUBDIR += tumbler
     SUBDIR += uDrawGraph
     SUBDIR += ufraw
     SUBDIR += uniconvertor
