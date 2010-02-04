@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vor
-PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTVERSION=	0.5.5
 CATEGORIES=	games
 MASTER_SITES=	http://qualdan.com/vor/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,6 +16,7 @@ COMMENT=	Dodge the rocks until you die
 
 USE_SDL=	mixer image sdl
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -26,7 +26,7 @@ DESKTOP_ENTRIES="Variations on Rockdodger" \
 		"Dodge the rocks until you die" \
 		"${DATADIR}/icon.png" \
 		"vor" \
-		"Application;Game;" \
+		"Application;Game;ArcadeGame;" \
 		false
 
 .if !defined(NOPORTDOCS)
