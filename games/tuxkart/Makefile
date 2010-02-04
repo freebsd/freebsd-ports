@@ -25,10 +25,6 @@ CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
-BROKEN=		does not compile: error: plib/js.h: No such file or directory
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O6|${PTHREAD_CFLAGS}|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g ; \
