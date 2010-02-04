@@ -9,11 +9,10 @@ PORTNAME=	demime
 PORTVERSION=	1.1d
 PORTREVISION=	1
 CATEGORIES=	mail textproc
-MASTER_SITES=	http://majordomo.squawk.com/njs/demime/:demime \
-		http://scifi.squawk.com/:junkmail
-DISTFILES=	${PORTNAME}.${PORTVERSION}:demime demime_junkmail.cf:junkmail
+MASTER_SITES=	http://freebsd.dev-urandom.com/distfiles/demime/
+DISTFILES=	${PORTNAME}.${PORTVERSION} demime_junkmail.cf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	A tool to scrub mime from mailing lists
 
 RUN_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
