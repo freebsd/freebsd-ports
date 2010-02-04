@@ -7,6 +7,7 @@
 
 PORTNAME=	bc
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +17,7 @@ MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	The GNU bc/dc calculator
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-libedit
 MAN1=		bc.1 \
 		dc.1
 INFO=		bc \
