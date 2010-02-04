@@ -12,7 +12,6 @@
     SUBDIR += bobot++
     SUBDIR += bopm
     SUBDIR += cgiirc
-    SUBDIR += conspire
     SUBDIR += ctrlproxy
     SUBDIR += cwirc
     SUBDIR += dancer
