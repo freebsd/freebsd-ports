@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MS/MSERGEANT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Clamd - Connect to a local clamd service and send commands
 
 RUN_DEPENDS=	clamd:${PORTSDIR}/security/clamav
