@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-docs
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -14,13 +14,20 @@ MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	The m17n library documentation
 
-USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
+NO_BUILD=	yes
+
+OPTIONS=	JAPANESE "Install Japanese documentation (HTML and PDF)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_JAPANESE)
+PLIST_SUB+=	JAPANESE=""
+.else
+PLIST_SUB+=	JAPANESE="@comment "
+.endif
 
 MAN1=		m17n-config.1 m17n-db.1
-MAN3=		M17NObjectHead.3m17n \
-		MDrawMetric.3m17n \
-		m17nCharacter.3m17n \
+MAN3=		m17nCharacter.3m17n \
 		m17nCharset.3m17n \
 		m17nChartable.3m17n \
 		m17nConv.3m17n \
@@ -273,10 +280,17 @@ MAN5=		mdbCharsetList.5 mdbCodingList.5 mdbDir.5 \
 
 DOCSDIR=	${PREFIX}/share/doc/m17n
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/m17n/docs|/doc/m17n|g' \
-		${WRKSRC}/configure ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|for f in \*.html \*.png; do|for f in \*; do|' \
-		${WRKSRC}/Makefile.in
+do-install:
+	${MKDIR} ${DOCSDIR}/en
+	@${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/man/man1/|} ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${MAN3:S|^|${WRKSRC}/man/man3/|} ${MANPREFIX}/man/man3
+	@${INSTALL_MAN} ${MAN5:S|^|${WRKSRC}/man/man5/|} ${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/usr/latex/m17n-lib.pdf ${DOCSDIR}/en
+	(cd ${WRKSRC}/usr/ && ${COPYTREE_SHARE} html ${DOCSDIR}/en/)
+.if defined(WITH_JAPANESE)
+	${MKDIR} ${DOCSDIR}/ja
+	${INSTALL_MAN} ${WRKSRC}/ja/latex/m17n-lib.pdf ${DOCSDIR}/ja
+	(cd ${WRKSRC}/ja/ && ${COPYTREE_SHARE} html ${DOCSDIR}/ja/)
+.endif
 
 .include <bsd.port.mk>
