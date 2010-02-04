@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plt-scheme
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/\
 		http://plt.cs.uchicago.edu/bundles/${PORTVERSION}/plt/\
@@ -55,16 +55,14 @@ PLIST_SUB+=	ARCH=${ARCH}
 
 PLTPATCHES=	# none yet for this version
 
-CONFLICTS=	lang/drscheme
-
 .include <bsd.port.pre.mk>
 
 #.if defined(WITH_CGC)
-#ALL_TARGET=            both
-#INSTALL_TARGET=                install-both
-#PLIST_SUB+=            CGC=""
+#ALL_TARGET=		both
+#INSTALL_TARGET=	install-both
+#PLIST_SUB+=		CGC=""
 #.else
-#PLIST_SUB+=            CGC="@comment "
+#PLIST_SUB+=		CGC="@comment "
 #.endif
 
 .if ${ARCH} == "amd64"
@@ -72,6 +70,6 @@ CPPFLAGS+=	-DLONG64
 .endif
 
 pre-patch:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 
 .include <bsd.port.post.mk>
