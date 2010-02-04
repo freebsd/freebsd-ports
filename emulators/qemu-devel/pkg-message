@@ -122,6 +122,13 @@ if a guest cannot eject it itself.)
 - The default configuration location (qemu-ifup script etc.) has been
 changed from /etc to PREFIX/etc (usually /usr/local/etc).  Move your
 files accordingly.
+- The pcap code (-net nic... -net pcap,ifname=...) should work properly
+now, with only one exception:  Advanced features like TSO used on the host
+interface can cause oversize packets which now do get truncated to avoid
+confusing/panicing guests but of course still will cause retransmissions.
+So if you see slow throughput and `pcap_send: packet size > ..., truncating'
+messages on qemu's tty try disabling TSO etc on the host interface at least
+while using pcap.
 - kqemu is no longer supported in qemu upstream after the 0.11 branch
 was created, which means also not in this version.  (Linux has moved
 on to kvm now for qemu(-like) virtualization needs, so if you want qemu

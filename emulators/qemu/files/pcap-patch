@@ -1,6 +1,6 @@
---- Makefile.target.orig	2008-07-18 15:18:11.000000000 -0400
-+++ Makefile.target	2008-07-18 15:23:11.000000000 -0400
-@@ -619,6 +619,13 @@
+--- Makefile.target.orig	2010-01-29 14:39:26.000000000 -0500
++++ Makefile.target	2010-01-29 14:39:28.000000000 -0500
+@@ -616,6 +616,13 @@ ifdef CONFIG_COREAUDIO
  COCOA_LIBS+=-framework CoreAudio
  endif
  endif
@@ -14,8 +14,9 @@
  ifdef CONFIG_SLIRP
  CPPFLAGS+=-I$(SRC_PATH)/slirp
  endif
-Index: configure
-@@ -203,6 +203,9 @@
+--- configure.orig	2010-01-29 14:39:26.000000000 -0500
++++ configure	2010-01-29 14:39:27.000000000 -0500
+@@ -203,6 +203,9 @@ sdl="yes"
  sdl_x11="no"
  xen="yes"
  pkgversion=""
@@ -25,7 +26,7 @@ Index: configure
  
  # OS specific
  if check_define __linux__ ; then
-@@ -428,6 +431,8 @@
+@@ -428,6 +431,8 @@ for opt do
    ;;
    --disable-vnc-sasl) vnc_sasl="no"
    ;;
@@ -34,7 +35,7 @@ Index: configure
    --disable-slirp) slirp="no"
    ;;
    --disable-vde) vde="no"
-@@ -925,6 +930,48 @@
+@@ -925,6 +930,48 @@ EOF
  fi
  
  ##########################################
@@ -83,7 +84,7 @@ Index: configure
  # VNC TLS detection
  if test "$vnc_tls" = "yes" ; then
  cat > $TMPC <<EOF
-@@ -1436,6 +1484,7 @@
+@@ -1436,6 +1483,7 @@ if test "$vnc_sasl" = "yes" ; then
      echo "    SASL CFLAGS    $vnc_sasl_cflags"
      echo "    SASL LIBS      $vnc_sasl_libs"
  fi
@@ -91,7 +92,7 @@ Index: configure
  if test -n "$sparc_cpu"; then
      echo "Target Sparc Arch $sparc_cpu"
  fi
-@@ -1589,6 +1638,16 @@
+@@ -1589,6 +1637,16 @@ fi
  if test $profiler = "yes" ; then
    echo "#define CONFIG_PROFILER 1" >> $config_host_h
  fi
@@ -109,7 +110,7 @@ Index: configure
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "#define CONFIG_SLIRP 1" >> $config_host_h
 Index: net.c
-@@ -688,6 +688,166 @@
+@@ -688,6 +688,201 @@ static void config_error(Monitor *mon, c
      va_end(ap);
  }
  
@@ -123,6 +124,7 @@ Index: net.c
 +typedef struct PCAPState {
 +    VLANClientState *vc;
 +    pcap_t *handle;
++    int max_eth_frame_size;
 +} PCAPState;
 +
 +static ssize_t pcap_receive(VLANClientState *vc, const uint8_t *buf, size_t size)
@@ -136,14 +138,29 @@ Index: net.c
 +{
 +    VLANClientState *vc = (VLANClientState *)user;
 +
-+    qemu_send_packet(vc, pdata, phdr->len);
++    int len = phdr->len;
++#ifdef __FreeBSD__
++    PCAPState *s = vc->opaque;
++    int max_eth_frame_size = s->max_eth_frame_size;
++
++    if (len > max_eth_frame_size) {
++        fprintf(stderr,
++            "pcap_send: packet size > %d (%d), truncating\n",
++            max_eth_frame_size, len);
++        len = max_eth_frame_size;
++    }
++#endif
++    qemu_send_packet(vc, pdata, len);
 +}
 +
 +static void pcap_send(void *opaque)
 +{
 +    PCAPState *s = (PCAPState *)opaque;
 +
-+    pcap_dispatch(s->handle, 1, (pcap_handler)&pcap_callback, (u_char *)s->vc);
++    for (;;) {
++        if (pcap_dispatch(s->handle, 0, (pcap_handler)&pcap_callback, (u_char *)s->vc) >= 0)
++            break;
++    }
 +}
 +
 +static void pcap_cleanup(VLANClientState *vc)
@@ -165,43 +182,62 @@ Index: net.c
 +
 +    s = qemu_mallocz(sizeof(PCAPState));
 +    if (!s)
-+	return -1;
++        return -1;
 +
 +    if (ifname == NULL && (ifname = pcap_lookupdev(errbuf)) == NULL) {
-+	fprintf(stderr, "qemu: pcap_lookupdev: %s\n", errbuf);
-+	goto fail;
++        fprintf(stderr, "qemu: pcap_lookupdev: %s\n", errbuf);
++        goto fail;
 +    }
 +
++#ifdef __FreeBSD__
++    /*
++     * We want to avoid passing oversize packets to the guest, which
++     * at least on FreeBSD can happen if the host interface uses tso
++     * (seen with an em(4) in this case) - so find out the host
++     * interface's mtu and assume the guest is configured the same.
++     */
++    s->max_eth_frame_size = 1514;
++    i = socket(AF_INET, SOCK_DGRAM, 0);
++    if (i >= 0) {
++        struct ifreq ifr;
++
++        (void) memset(&ifr, 0, sizeof(ifr));
++        strncpy(ifr.ifr_name, ifname, sizeof(ifr.ifr_name));
++        if (ioctl(i, SIOCGIFMTU, &ifr) != -1)
++            s->max_eth_frame_size = ifr.ifr_mtu + 14;
++        close(i);
++    }
++#endif
 +#if defined(HAVE_PCAP_CREATE) || defined(_WIN32)
 +    /*
 +     * Create pcap handle for the device, set promiscuous mode and activate.
 +     */
 +    s->handle = (void *)pcap_create(ifname, errbuf);
 +    if (!s->handle) {
-+	fprintf(stderr, "qemu: pcap_create: %s\n", errbuf);
-+	goto fail;
++        fprintf(stderr, "qemu: pcap_create: %s\n", errbuf);
++        goto fail;
 +    }
 +    if (pcap_set_promisc(s->handle, 1) != 0) {
-+	pcap_perror(s->handle, "qemu: pcap_set_promisc:");
-+	goto fail;
++        pcap_perror(s->handle, "qemu: pcap_set_promisc:");
++        goto fail;
 +    }
 +    if (pcap_activate(s->handle) != 0) {
-+	pcap_perror(s->handle, "qemu: pcap_activate:");
-+	goto fail;
++        pcap_perror(s->handle, "qemu: pcap_activate:");
++        goto fail;
 +    }
 +#else
 +    /* Attempt to connect device. */
 +    s->handle = (void *)pcap_open_live(ifname, 65535, 1, 0, errbuf);
 +    if (!s->handle) {
-+	fprintf(stderr, "qemu: pcap_open_live: %s\n", errbuf);
-+	goto fail;
++        fprintf(stderr, "qemu: pcap_open_live: %s\n", errbuf);
++        goto fail;
 +    }
 +#endif
 +
 +    /* Set non-blocking mode. */
 +    if (pcap_setnonblock(s->handle, 1, errbuf) < 0) {
-+	fprintf(stderr, "qemu: pcap_setnonblock: %s\n", errbuf);
-+	goto fail;
++        fprintf(stderr, "qemu: pcap_setnonblock: %s\n", errbuf);
++        goto fail;
 +    }
 +
 +#if defined(_WIN32)
@@ -209,8 +245,8 @@ Index: net.c
 +     * Tell the kernel that the packet has to be seen immediately.
 +     */
 +    if (pcap_setmintocopy(s->handle, 0) < 0) {
-+	fprintf(stderr, "qemu: pcap failed to set immediate mode\n");
-+	goto fail;
++        fprintf(stderr, "qemu: pcap failed to set immediate mode\n");
++        goto fail;
 +    }
 +#else /* !_WIN32 */
 +#if defined(HAVE_BPF)
@@ -219,11 +255,11 @@ Index: net.c
 +     * Tell the kernel that the packet has to be seen immediately.
 +     */
 +    {
-+	unsigned int one = 1;
-+	if (ioctl(pcap_fileno(s->handle), BIOCIMMEDIATE, &one) < 0) {
-+	    fprintf(stderr, "qemu: pcap failed to set immediate mode\n");
-+	    goto fail;
-+	}
++        unsigned int one = 1;
++        if (ioctl(pcap_fileno(s->handle), BIOCIMMEDIATE, &one) < 0) {
++            fprintf(stderr, "qemu: pcap failed to set immediate mode\n");
++            goto fail;
++        }
 +    }
 +#endif /* BIOCIMMEDIATE */
 +
@@ -233,11 +269,11 @@ Index: net.c
 +     * This is necessary to connect host and guest.
 +     */
 +    {
-+	unsigned int one = 1;
-+	if (ioctl(pcap_fileno(s->handle), BIOCFEEDBACK, &one) < 0) {
-+	    fprintf(stderr, "qemu: pcap failed to set feedback mode\n");
-+	    goto fail;
-+	}
++        unsigned int one = 1;
++        if (ioctl(pcap_fileno(s->handle), BIOCFEEDBACK, &one) < 0) {
++            fprintf(stderr, "qemu: pcap failed to set feedback mode\n");
++            goto fail;
++        }
 +    }
 +#endif /* BIOCFEEDBACK */
 +#endif /* HAVE_BPF */
@@ -248,14 +284,14 @@ Index: net.c
 +
 +#if defined(_WIN32)
 +    if ((h = pcap_getevent(s->handle)) == NULL) {
-+	fprintf(stderr, "qemu: pcap_getevent failed\n");
-+	goto fail;
++        fprintf(stderr, "qemu: pcap_getevent failed\n");
++        goto fail;
 +    }
 +    qemu_add_wait_object(h, pcap_send, s);
 +#else /* !_WIN32 */
 +    if ((i = pcap_get_selectable_fd(s->handle)) < 0) {
-+	fprintf(stderr, "qemu: pcap_get_selectable_fd failed\n");
-+	goto fail;
++        fprintf(stderr, "qemu: pcap_get_selectable_fd failed\n");
++        goto fail;
 +    }
 +    qemu_set_fd_handler(i, pcap_send, NULL, s);
 +#endif /* _WIN32 */
@@ -264,9 +300,9 @@ Index: net.c
 +
 +fail:
 +    if (s) {
-+	if (s->handle)
-+	    pcap_close(s->handle);
-+	qemu_free(s);
++        if (s->handle)
++            pcap_close(s->handle);
++        qemu_free(s);
 +    }
 +
 +    return -1;
@@ -276,25 +312,26 @@ Index: net.c
  #if defined(CONFIG_SLIRP)
  
  /* slirp network adapter */
-@@ -2598,6 +2758,16 @@
+@@ -2596,6 +2791,16 @@ int net_client_init(Monitor *mon, const 
             are wanted */
          ret = 0;
      } else
 +#ifdef CONFIG_PCAP
 +    if (!strcmp(device, "pcap")) {
-+	char ifname[64];
-+	vlan->nb_host_devs++;
-+	if (get_param_value(ifname, sizeof(ifname), "ifname", p) <= 0)
-+	    ret = net_pcap_init(vlan, device, name, NULL);
-+	else
-+	    ret = net_pcap_init(vlan, device, name, ifname);
++        char ifname[64];
++        vlan->nb_host_devs++;
++        if (get_param_value(ifname, sizeof(ifname), "ifname", p) <= 0)
++            ret = net_pcap_init(vlan, device, name, NULL);
++        else
++            ret = net_pcap_init(vlan, device, name, ifname);
 +    } else
 +#endif
  #ifdef CONFIG_SLIRP
      if (!strcmp(device, "user")) {
          static const char * const slirp_params[] = {
-Index: qemu-options.hx
-@@ -782,6 +782,10 @@
+--- qemu-options.hx.orig	2009-12-02 15:27:02.000000000 -0500
++++ qemu-options.hx	2010-01-29 14:39:27.000000000 -0500
+@@ -782,6 +782,10 @@ DEF("net", HAS_ARG, QEMU_OPTION_net,
      "                connect the user mode network stack to VLAN 'n', configure its\n"
      "                DHCP server and enabled optional services\n"
  #endif
