@@ -3106,6 +3106,7 @@
     SUBDIR += yasm
     SUBDIR += z80-asm
     SUBDIR += z80asm
+    SUBDIR += z80ex
     SUBDIR += zeroinstall-injector
     SUBDIR += zmq
     SUBDIR += ztcl

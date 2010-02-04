@@ -1,0 +1,12 @@
+include/z80ex/z80ex.h
+include/z80ex/z80ex_common.h
+include/z80ex/z80ex_dasm.h
+lib/libz80ex.a
+lib/libz80ex.so.1
+lib/libz80ex_dasm.a
+lib/libz80ex_dasm.so.1
+lib/libz80ex.so
+lib/libz80ex.so.1.1.18
+lib/libz80ex_dasm.so
+lib/libz80ex_dasm.so.1.1.18
+@dirrm include/z80ex
