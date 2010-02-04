@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -280,6 +280,8 @@ CONFIGURE_ARGS+=	--enable-rule=INET6
 PLIST_SUB+=	WITHIPV6=""
 PLIST_FILES+=	include/apache/sa_len.h \
 		include/apache/sockaddr_storage.h
+.else
+EXTRA_PATCHES+=	${FILESDIR}/logresolve.c.patch
 .endif
 
 .if defined(WITH_APACHE_LATESTLOG)
