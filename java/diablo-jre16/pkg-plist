@@ -461,6 +461,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Makassar
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Manila
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Muscat
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Nicosia
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Novokuznetsk
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Novosibirsk
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Omsk
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Oral

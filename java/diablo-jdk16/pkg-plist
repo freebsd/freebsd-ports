@@ -2051,6 +2051,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Makassar
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Manila
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Muscat
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Nicosia
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Novokuznetsk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Novosibirsk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Omsk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Oral
