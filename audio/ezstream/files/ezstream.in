@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ezstream
+# REQUIRE: DAEMON
+# BEFORE:  login
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable the ezstream daemon:
+#
+# ezstream_enable="YES"
+# ezstream_flags="<set as needed>"
+#
+
+. %%RC_SUBR%%
+
+name="ezstream"
+rcvar=`set_rcvar`
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${ezstream_enable="NO"}
+: ${ezstream_flags="-c %%PREFIX%%/etc/${name}/${name}.xml"}
+
+command="%%PREFIX%%/bin/${name}"
+
+run_rc_command "$1"
