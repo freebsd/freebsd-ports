@@ -1,4 +1,4 @@
-.\" Copyright (c) 2007-2009 Andy Kosela <akosela@andykosela.com>
+.\" Copyright (c) 2007-2010 Andy Kosela <akosela@andykosela.com>
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -25,7 +25,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd December 25, 2009
+.Dd January 31, 2010
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -128,19 +128,19 @@ of the
 .Nm
 command:
 .Pp
-.Dl "plato> bpkg -i foo" 
+.Dl "$ bpkg -i foo" 
 .Pp
 Display info about port foo.
 .Pp
-.Dl "plato> bpkg -S 'foo[0-9]+$'"
+.Dl "$ bpkg -S 'foo[0-9]+$'"
 .Pp
 Display all ports matching the regular expression.
 .Pp
-.Dl "plato> bpkg -t | head"
+.Dl "$ bpkg -t | head"
 .Pp
 Display 10 most recently installed ports.
 .Pp
-.Dl "plato> bpkg -b 'foo bar'"
+.Dl "$ bpkg -b 'foo bar'"
 .Pp
 Create backup packages of foo and bar in /var/tmp/bpkg/ directory.
 .Sh SEE ALSO
