@@ -22,6 +22,7 @@ OPTIONS=	TAGLIB "TagLib support" on
 
 USE_GNOME=	libxml2
 USE_ICONV=	yes
+USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
@@ -31,7 +32,7 @@ PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
 		ezstream_reencode_mp3.xml ezstream_reencode_theora.xml \
 		ezstream_reencode_vorbis.xml ezstream_stdin_vorbis.xml \
 		ezstream_vorbis.xml meta.sh play.sh
-PLIST_FILES=	bin/ezstream bin/ezstream-file.sh
+PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml '@dirrm etc/ezstream'
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -41,26 +42,28 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .if defined(WITHOUT_TAGLIB)
 CONFIGURE_ARGS+=	--without-taglib
 .else
-LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=		tag.1:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib=${LOCALBASE}
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|examples||g ; \
-		 s|: install-dist_docDATA|:|g' ${WRKSRC}/Makefile.in
+		s|: install-dist_docDATA|:|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
 .endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/
+.for f in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}/
 .endfor
 .endif
+	@${MKDIR} ${ETCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/examples/ezstream_vorbis.xml ${ETCDIR}/ezstream.xml
 
 .include <bsd.port.post.mk>
