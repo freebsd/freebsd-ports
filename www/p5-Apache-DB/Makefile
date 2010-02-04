@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Debugging and profiling tools for mod_perl
 
 MAKE_JOBS_SAFE=  yes

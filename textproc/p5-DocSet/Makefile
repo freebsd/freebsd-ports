@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STAS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dcumentation projects builder in HTML, PS and PDF formats
 
 BUILD_DEPENDS=	${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \

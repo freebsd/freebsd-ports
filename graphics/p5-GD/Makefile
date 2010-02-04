@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	GD-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl5 interface to Gd Graphics Library version2
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

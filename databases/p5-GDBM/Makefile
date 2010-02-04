@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	perl-5.8.9
 DIST_SUBDIR=	perl
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GNU Data Base Manager (gdbm) interface
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

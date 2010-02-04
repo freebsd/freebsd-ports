@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tools to measure size of Perl OPs and [SAV]Vs
 
 MAKE_JOBS_SAFE=  yes

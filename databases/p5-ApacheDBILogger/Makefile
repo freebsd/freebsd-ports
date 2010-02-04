@@ -11,7 +11,7 @@ CATEGORIES=	databases www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module that tracks what's being transferred in a DBI database
 
 BUILD_DEPENDS=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \

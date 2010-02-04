@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/Z/ZI/ZIGOROU
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to check memcached via nagios
 
 PERL_CONFIGURE=	yes
