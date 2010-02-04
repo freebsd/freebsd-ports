@@ -41,7 +41,7 @@ case "${daily_status_smart_enable}" in
 				echo 
 				echo "Checking health of ${device}:"
 				echo
-				${smartctl} ${daily_status_smartctl_flags} ${device} > "${tmpfile}"
+				${smartctl} ${daily_status_smartctl_flags} /dev/${device} > "${tmpfile}"
 				status=$?
 				if [ $((status & 3)) -ne 0 ]; then
 					rc=2
