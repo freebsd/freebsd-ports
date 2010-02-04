@@ -5,8 +5,7 @@
 # Generated with portupload. Do not edit directly, please
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.30
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -18,6 +17,7 @@ COMMENT=	Form handler written in Moose
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-Class-Load>=0.05:${PORTSDIR}/devel/p5-Class-Load \
+		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-MooseX-Traits>=0:${PORTSDIR}/devel/p5-MooseX-Traits \
 		p5-MooseX-Getopt>=0.16:${PORTSDIR}/devel/p5-MooseX-Getopt \
@@ -30,6 +30,9 @@ PERL_CONFIGURE=	5.8.0+
 MAN3=	HTML::FormHandler.3 \
     HTML::FormHandler::BuildFields.3 \
     HTML::FormHandler::Field.3 \
+    HTML::FormHandler::TraitFor::I18N.3 \
+    HTML::FormHandler::Render::WithTT.3 \
+    HTML::FormHandler::Field::NoValue.3 \
     HTML::FormHandler::Field::Boolean.3 \
     HTML::FormHandler::Field::Checkbox.3 \
     HTML::FormHandler::Field::Compound.3 \

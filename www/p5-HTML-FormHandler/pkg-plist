@@ -1,4 +1,19 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/.packlist
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/text.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/form_end.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/reset.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/submit.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/hidden.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/textarea.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/upload.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/select.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/password.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/form_start.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/radio.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/checkbox_group.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/radio_group.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/checkbox.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form.tt
 %%SITE_PERL%%/HTML/FormHandler.pm
 %%SITE_PERL%%/HTML/FormHandler/BuildFields.pm
 %%SITE_PERL%%/HTML/FormHandler/Field.pm
@@ -6,6 +21,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Field/Checkbox.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Compound.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Date.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/NoValue.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/DateMDY.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/DateTime.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Display.pm
@@ -43,6 +59,8 @@
 %%SITE_PERL%%/HTML/FormHandler/Fields.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/en_us.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/de_de.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/tr_tr.pm
 %%SITE_PERL%%/HTML/FormHandler/InitResult.pm
 %%SITE_PERL%%/HTML/FormHandler/Manual.pod
 %%SITE_PERL%%/HTML/FormHandler/Manual/Catalyst.pod
@@ -61,10 +79,12 @@
 %%SITE_PERL%%/HTML/FormHandler/Params.pm
 %%SITE_PERL%%/HTML/FormHandler/Render/Simple.pm
 %%SITE_PERL%%/HTML/FormHandler/Render/Table.pm
+%%SITE_PERL%%/HTML/FormHandler/Render/WithTT.pm
 %%SITE_PERL%%/HTML/FormHandler/Result.pm
 %%SITE_PERL%%/HTML/FormHandler/Result/Role.pm
 %%SITE_PERL%%/HTML/FormHandler/Types.pm
 %%SITE_PERL%%/HTML/FormHandler/Validate.pm
+%%SITE_PERL%%/HTML/FormHandler/TraitFor/I18N.pm
 %%SITE_PERL%%/HTML/FormHandler/Validate/Actions.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/ApplyRole.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Checkbox.pm
@@ -97,8 +117,12 @@
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Model
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Meta
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Manual
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/TraitFor
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/I18N
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Field/Repeatable
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Field
+@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget
+@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates
+@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler
