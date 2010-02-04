@@ -4608,6 +4608,7 @@ gnu-regexp                      ports/java/gnu-regexp
 gnu-unifont                     ports/x11-fonts/gnu-unifont
 gnu-unifont-ttf                 ports/x11-fonts/gnu-unifont-ttf
 gnu-watch                       ports/misc/gnu-watch
+gnubc                           ports/math/gnubc
 gnubg                           ports/games/gnubg
 gnubiff                         ports/mail/gnubiff
 gnuboy                          ports/emulators/gnuboy
@@ -10035,7 +10036,6 @@ octave                          ports/math/octave
 octave-devel                    ports/math/octave-devel
 octave-forge                    ports/math/octave-forge
 octave-forge-ad                 ports/math/octave-forge-ad
-octave-forge-ann                ports/math/octave-forge-ann
 octave-forge-arpack             ports/math/octave-forge-arpack
 octave-forge-audio              ports/math/octave-forge-audio
 octave-forge-base               ports/math/octave-forge-base
@@ -10050,13 +10050,10 @@ octave-forge-data-smoothing     ports/math/octave-forge-data-smoothing
 octave-forge-econometrics       ports/math/octave-forge-econometrics
 octave-forge-engine             ports/math/octave-forge-engine
 octave-forge-financial          ports/math/octave-forge-financial
-octave-forge-fixed              ports/math/octave-forge-fixed
 octave-forge-fpl                ports/math/octave-forge-fpl
-octave-forge-ftp                ports/math/octave-forge-ftp
 octave-forge-ga                 ports/math/octave-forge-ga
 octave-forge-general            ports/math/octave-forge-general
 octave-forge-generate_html      ports/math/octave-forge-generate_html
-octave-forge-graceplot          ports/math/octave-forge-graceplot
 octave-forge-gsl                ports/math/octave-forge-gsl
 octave-forge-ident              ports/math/octave-forge-ident
 octave-forge-image              ports/math/octave-forge-image
@@ -10083,7 +10080,6 @@ octave-forge-odepkg             ports/math/octave-forge-odepkg
 octave-forge-optim              ports/math/octave-forge-optim
 octave-forge-optiminterp        ports/math/octave-forge-optiminterp
 octave-forge-outliers           ports/math/octave-forge-outliers
-octave-forge-parallel           ports/math/octave-forge-parallel
 octave-forge-pdb                ports/math/octave-forge-pdb
 octave-forge-physicalconstants  ports/math/octave-forge-physicalconstants
 octave-forge-plot               ports/math/octave-forge-plot
@@ -10106,10 +10102,8 @@ octave-forge-symband            ports/math/octave-forge-symband
 octave-forge-symbolic           ports/math/octave-forge-symbolic
 octave-forge-tcl-octave         ports/math/octave-forge-tcl-octave
 octave-forge-time               ports/math/octave-forge-time
-octave-forge-triangular         ports/math/octave-forge-triangular
 octave-forge-tsa                ports/math/octave-forge-tsa
 octave-forge-video              ports/math/octave-forge-video
-octave-forge-vrml               ports/math/octave-forge-vrml
 octave-forge-xraylib            ports/math/octave-forge-xraylib
 octave-forge-zenity             ports/math/octave-forge-zenity
 odamex                          ports/games/odamex
@@ -10283,6 +10277,7 @@ openscep                        ports/security/openscep
 opensched                       ports/textproc/opensched
 openser                         ports/net/openser
 openslp                         ports/net/openslp
+opensonic                       ports/games/opensonic
 opensp                          ports/textproc/opensp
 openspc                         ports/audio/openspc
 openssh-askpass                 ports/security/openssh-askpass
@@ -12684,6 +12679,7 @@ p5-Net-GrowlClient              ports/net/p5-Net-GrowlClient
 p5-Net-HL7                      ports/net/p5-Net-HL7
 p5-Net-Hiveminder               ports/net/p5-Net-Hiveminder
 p5-Net-ICQ2000                  ports/net-im/p5-Net-ICQ2000
+p5-Net-IMAP-Client              ports/mail/p5-Net-IMAP-Client
 p5-Net-IMAP-Server              ports/mail/p5-Net-IMAP-Server
 p5-Net-IMAP-Simple              ports/mail/p5-Net-IMAP-Simple
 p5-Net-IMAP-Simple-SSL          ports/mail/p5-Net-IMAP-Simple-SSL
@@ -12836,6 +12832,7 @@ p5-Number-Spell                 ports/textproc/p5-Number-Spell
 p5-Number-WithError             ports/math/p5-Number-WithError
 p5-Number-WithError-LaTeX       ports/math/p5-Number-WithError-LaTeX
 p5-OAI-Harvester                ports/net/p5-OAI-Harvester
+p5-OAuth-Lite                   ports/net/p5-OAuth-Lite
 p5-OLE-Storage_Lite             ports/devel/p5-OLE-Storage_Lite
 p5-OOTools                      ports/devel/p5-OOTools
 p5-ORBit                        ports/devel/p5-ORBit
@@ -13533,6 +13530,7 @@ p5-Test-Singleton               ports/devel/p5-Test-Singleton
 p5-Test-Spelling                ports/devel/p5-Test-Spelling
 p5-Test-Strict                  ports/devel/p5-Test-Strict
 p5-Test-SubCalls                ports/devel/p5-Test-SubCalls
+p5-Test-Synopsis                ports/devel/p5-Test-Synopsis
 p5-Test-TAP-HTMLMatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-Test-TAP-Model               ports/devel/p5-Test-TAP-Model
 p5-Test-TCP                     ports/devel/p5-Test-TCP
@@ -16409,6 +16407,7 @@ p5-net-hiveminder               ports/net/p5-Net-Hiveminder
 p5-net-hl7                      ports/net/p5-Net-HL7
 p5-net-icq2000                  ports/net-im/p5-Net-ICQ2000
 p5-net-ident                    ports/net/p5-Net-Ident
+p5-net-imap-client              ports/mail/p5-Net-IMAP-Client
 p5-net-imap-server              ports/mail/p5-Net-IMAP-Server
 p5-net-imap-simple              ports/mail/p5-Net-IMAP-Simple
 p5-net-imap-simple-ssl          ports/mail/p5-Net-IMAP-Simple-SSL
@@ -16562,6 +16561,7 @@ p5-number-spell                 ports/textproc/p5-Number-Spell
 p5-number-witherror             ports/math/p5-Number-WithError
 p5-number-witherror-latex       ports/math/p5-Number-WithError-LaTeX
 p5-oai-harvester                ports/net/p5-OAI-Harvester
+p5-oauth-lite                   ports/net/p5-OAuth-Lite
 p5-object-accessor              ports/devel/p5-Object-Accessor
 p5-object-array                 ports/devel/p5-Object-Array
 p5-object-declare               ports/devel/p5-Object-Declare
@@ -17288,6 +17288,7 @@ p5-test-singleton               ports/devel/p5-Test-Singleton
 p5-test-spelling                ports/devel/p5-Test-Spelling
 p5-test-strict                  ports/devel/p5-Test-Strict
 p5-test-subcalls                ports/devel/p5-Test-SubCalls
+p5-test-synopsis                ports/devel/p5-Test-Synopsis
 p5-test-tap-htmlmatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-test-tap-model               ports/devel/p5-Test-TAP-Model
 p5-test-tcp                     ports/devel/p5-Test-TCP
@@ -20805,6 +20806,7 @@ quranref                        ports/misc/quranref
 qutim                           ports/net-im/qutim
 qutim-plugin-icq                ports/net-im/qutim-plugin-icq
 qutim-plugin-jabber             ports/net-im/qutim-plugin-jabber
+quvi                            ports/multimedia/quvi
 qvplay                          ports/graphics/qvplay
 qvwm                            ports/x11-wm/qvwm
 qwdtools                        ports/games/qwdtools
@@ -23437,6 +23439,7 @@ tuc                             ports/converters/tuc
 tucan                           ports/net/tucan
 tulip                           ports/graphics/tulip
 tumble                          ports/graphics/tumble
+tumbler                         ports/graphics/tumbler
 tumgreyspf                      ports/mail/tumgreyspf
 tunapie                         ports/multimedia/tunapie
 tuneradio                       ports/audio/tuneradio
