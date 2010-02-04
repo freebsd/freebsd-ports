@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	dsh@wizard.volgograd.ru
+MAINTAINER=	hizel@vyborg.ru
 COMMENT=	Generate rrdtool\'s graphs by performance data from nagios plugins
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios \
