@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhddfs
-PORTVERSION=	0.1.23
+PORTVERSION=	0.1.29
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mhddfs.uvw.ru/downloads/
 PKGNAMEPREFIX=	fusefs-
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_GMAKE=	yes
+MAKE_ARGS=	WITHOUT_XATTR=1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		${PORTNAME}.1
