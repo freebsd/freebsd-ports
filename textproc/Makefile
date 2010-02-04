@@ -1057,6 +1057,7 @@
     SUBDIR += ruby-xslt
     SUBDIR += ruby-xtemplate
     SUBDIR += rubygem-diff-lcs
+    SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-formosa
     SUBDIR += rubygem-htmlentities
