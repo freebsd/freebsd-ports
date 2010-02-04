@@ -1,0 +1,12 @@
+diff -urN apache_1.3.41/src/support/logresolve.c src/support/logresolve.c
+--- apache_1.3.41/src/support/logresolve.c	2006-07-12 10:16:05.000000000 +0200
++++ src/support/logresolve.c	2008-10-06 16:29:12.000000000 +0200
+@@ -165,7 +165,7 @@
+ 
+ 	hostdata = gethostbyaddr((const char *) &ipnum, sizeof(struct in_addr),
+ 				 AF_INET);
+-	if (hostdata == NULL) {
++	if (hostdata == NULL || !hostdata->h_name || !*hostdata->h_name) {
+ 	    if (h_errno > MAX_ERR)
+ 		errors[UNKNOWN_ERR]++;
+ 	    else
