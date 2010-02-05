@@ -7,6 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://gwenole.beauchesne.info/projects/nspluginwrapper/files/:hostsrc \
 		LOCAL/jkim:hostsrc \

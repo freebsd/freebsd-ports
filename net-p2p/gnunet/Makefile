@@ -8,6 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	GNU \
 		http://gnunet.org/download/

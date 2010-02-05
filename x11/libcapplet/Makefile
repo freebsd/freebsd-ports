@@ -8,7 +8,7 @@
 
 PORTNAME=	libcapplet
 PORTVERSION=	1.4.0.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://people.freebsd.org/~sobomax/
 DIST_SUBDIR=	gnome

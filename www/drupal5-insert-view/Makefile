@@ -7,6 +7,7 @@
 
 PORTNAME=	insert_view
 DISTVERSION=	5.x-1.x-dev
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 

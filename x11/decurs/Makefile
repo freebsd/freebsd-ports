@@ -7,7 +7,7 @@
 
 PORTNAME=	decurs
 PORTVERSION=	0.55.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		#http://varg.dyndns.org/psi/files/

@@ -7,7 +7,7 @@
 
 PORTNAME=	textogif
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc math www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/textogif/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

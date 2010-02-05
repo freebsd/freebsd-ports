@@ -7,6 +7,7 @@
 
 PORTNAME=	amsn
 PORTVERSION=	0.98.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ COMMENT=	Alvano\'s MSN Messenger
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2 \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \

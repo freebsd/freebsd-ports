@@ -7,6 +7,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -14,7 +15,7 @@ PKGNAMESUFFIX=	-${CELESTIA_UI}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Scriptable space flight simulator for X
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	libtool:22

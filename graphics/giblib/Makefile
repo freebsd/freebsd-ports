@@ -7,7 +7,7 @@
 
 PORTNAME=	giblib
 PORTVERSION=	1.2.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 

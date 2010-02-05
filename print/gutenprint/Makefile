@@ -8,6 +8,7 @@
 
 PORTNAME=	gutenprint
 PORTVERSION=	5.2.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty

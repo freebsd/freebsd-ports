@@ -6,6 +6,7 @@
 
 PORTNAME=	mupdf
 PORTVERSION=	r921
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ccxvii.net/mupdf/download/
@@ -15,7 +16,7 @@ COMMENT=	Lightweight PDF viewer and toolkit
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.10:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	x11 xext

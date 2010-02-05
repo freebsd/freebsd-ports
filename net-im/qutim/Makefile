@@ -7,7 +7,7 @@
 
 PORTNAME=	qutim
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://dl.kibab.com/distfiles/qutim/ \

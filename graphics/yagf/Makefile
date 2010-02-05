@@ -7,7 +7,7 @@
 
 PORTNAME=	yagf
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://symmetrica.net/cuneiform-linux/
 

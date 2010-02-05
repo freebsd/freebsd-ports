@@ -7,6 +7,7 @@
 
 PORTNAME=	taskjuggler
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.taskjuggler.org/download/
 

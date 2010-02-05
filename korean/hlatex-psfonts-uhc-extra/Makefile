@@ -7,7 +7,7 @@
 
 PORTNAME=	HLaTeX-psfonts-${HLATEX_ENCODING}-extra
 PORTVERSION=	0.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/hlatex/
 DISTFILES=	${HLATEX_PSFONTS_EXTRA}

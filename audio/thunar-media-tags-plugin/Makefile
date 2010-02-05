@@ -7,7 +7,7 @@
 
 PORTNAME=	thunar-media-tags-plugin
 PORTVERSION=	0.1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

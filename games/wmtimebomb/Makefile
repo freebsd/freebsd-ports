@@ -6,7 +6,7 @@
 
 PORTNAME=	wmtimebomb
 PORTVERSION=	0.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games windowmaker
 MASTER_SITES=	ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 DISTNAME=	wmtimebomb.20

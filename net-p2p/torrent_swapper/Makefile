@@ -7,7 +7,7 @@
 
 PORTNAME=	torrent_swapper
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/bit-torrent/bit-torrent/Torrent%20Swapper
 DISTNAME=	swapper

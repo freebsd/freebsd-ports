@@ -66,7 +66,7 @@ PLIST_SUB+=	GPC="@comment "
 .endif
 
 .if defined(WITH_JPEG)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
 .else
 CONFIGURE_ARGS+=--disable-jpeg

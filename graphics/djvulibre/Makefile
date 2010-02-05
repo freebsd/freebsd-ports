@@ -7,7 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		SF/djvu/DjVuLibre/${PORTVERSION}
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	DjVu viewers and browser plugin
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		djvulibre.22:${PORTSDIR}/graphics/djvulibre-nox11
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	dfm
 PORTVERSION=	0.99.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.kaisersite.de/dfm/
 

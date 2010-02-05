@@ -7,7 +7,7 @@
 
 PORTNAME=	raul
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 

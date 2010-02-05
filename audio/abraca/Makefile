@@ -7,6 +7,7 @@
 
 PORTNAME=	abraca
 PORTVERSION=	0.4
+PORTREVISION=	1
 DISTVERSIONSUFFIX=-pre2
 CATEGORIES=	audio
 MASTER_SITES=	http://abraca.xmms.se/attachments/download/100/

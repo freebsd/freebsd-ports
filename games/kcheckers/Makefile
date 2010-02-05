@@ -6,7 +6,7 @@
 
 PORTNAME=	kcheckers
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://wibix.de/infusions/pro_download_panel/downloads/
 

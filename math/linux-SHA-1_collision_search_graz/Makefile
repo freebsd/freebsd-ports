@@ -7,7 +7,7 @@
 
 PORTNAME=	SHA-1_collision_search_graz
 PORTVERSION=	5.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://boinc.iaik.tugraz.at/sha1_coll_search/download/
 PKGNAMEPREFIX=	linux-

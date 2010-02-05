@@ -7,7 +7,7 @@
 
 PORTNAME=	speedbar
 PORTVERSION=	0.14.b4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF/cedet/${PORTNAME}/1.4beta4 \
 		http://dryice.name/computer/FreeBSD/distfiles/

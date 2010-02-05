@@ -7,7 +7,7 @@
 
 PORTNAME=	pyro
 PORTVERSION=	1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://nostatic.org/pyro/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple OpenGL-based firework simulator
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_GL=		gl glut
 USE_XORG=	xi xmu xext

@@ -7,6 +7,7 @@
 
 PORTNAME=	mupen64plus
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	# empty
 DISTFILES=	# empty

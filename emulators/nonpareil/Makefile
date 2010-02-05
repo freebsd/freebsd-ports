@@ -7,7 +7,7 @@
 
 PORTNAME=	nonpareil
 PORTVERSION=	0.78
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 

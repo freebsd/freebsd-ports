@@ -320,7 +320,7 @@ cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla/gfx/cairo
 
 dbm_EXTRACT_AFTER_ARGS=		--exclude mozilla/dbm
 
-jpeg_LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+jpeg_LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
 jpeg_EXTRACT_AFTER_ARGS=	--exclude mozilla/jpeg
 

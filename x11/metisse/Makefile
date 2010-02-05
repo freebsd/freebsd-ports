@@ -7,7 +7,7 @@
 
 PORTNAME=	metisse
 DISTVERSION=	0.4.0-rc4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/ \
 		http://freebsd.nsu.ru/distfiles/metisse/

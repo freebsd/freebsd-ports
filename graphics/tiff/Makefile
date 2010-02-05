@@ -9,6 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://dl1.maptools.org/dl/libtiff/
@@ -16,7 +17,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 
 USE_LDCONFIG=	yes

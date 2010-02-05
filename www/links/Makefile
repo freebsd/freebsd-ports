@@ -7,7 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -41,7 +41,7 @@ OPTIONS=	SVGALIB "non-X11 graphics support" off \
 
 .ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--enable-graphics
 .else

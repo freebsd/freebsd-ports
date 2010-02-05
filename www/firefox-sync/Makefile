@@ -7,6 +7,7 @@
 
 PORTNAME=	weave
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \

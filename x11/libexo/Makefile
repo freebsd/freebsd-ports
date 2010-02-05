@@ -7,6 +7,7 @@
 
 PORTNAME=	libexo
 PORTVERSION=	0.3.106
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 DISTNAME=	exo-${PORTVERSION}
 MASTER_SITES=	http://www.xfce.org/archive/src/xfce/exo/0.3/

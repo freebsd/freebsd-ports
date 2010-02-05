@@ -7,7 +7,7 @@
 
 PORTNAME=	mondrian
 PORTVERSION=	1.0.b8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors ruby
 MASTER_SITES=	http://www.mondrian-ide.com/download/ \
 		LOCAL/nivit/${PORTNAME}/

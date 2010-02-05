@@ -7,6 +7,7 @@
 
 PORTNAME=	libwraster
 PORTVERSION=	0.92.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://dougbarton.us/Downloads/

@@ -7,7 +7,7 @@
 
 PORTNAME=	coreblog2
 PORTVERSION=	0.90b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www zope
 MASTER_SITES=	http://coreblog.org/junk/
 PKGNAMEPREFIX=	zope-

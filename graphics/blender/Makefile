@@ -6,7 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.49b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -16,7 +16,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	3D modeling/rendering/animation/gaming package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		GLEW.1:${PORTSDIR}/graphics/glew \

@@ -7,7 +7,7 @@
 
 PORTNAME=	libmcs
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz

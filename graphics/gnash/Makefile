@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 # getgnash.org is slow
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -18,7 +19,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.5:${PORTSDIR}/ftp/curl \
 		ungif.5:${PORTSDIR}/graphics/libungif
 

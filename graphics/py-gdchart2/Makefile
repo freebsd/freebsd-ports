@@ -7,7 +7,7 @@
 
 PORTNAME=	gdchart
 DISTVERSION=	2.0-beta1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.nullcube.com/software/pygdchart2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

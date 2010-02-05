@@ -7,7 +7,7 @@
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/cserv/${PORTNAME}/${PORTVERSION}
@@ -15,7 +15,7 @@ MASTER_SITES=	SF/cserv/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Camserv is a free program to do streaming video via the web
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		freetype.9:${PORTSDIR}/print/freetype2
 

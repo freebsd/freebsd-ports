@@ -12,7 +12,7 @@ PORTNAME=	libRmath
 PORTNAME=	R
 .endif
 PORTVERSION=	2.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=--with-ICU
 .if defined(WITHOUT_JPEG)
 CONFIGURE_ARGS+=--without-jpeglib
 .else
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--with-jpeglib
 .endif
 

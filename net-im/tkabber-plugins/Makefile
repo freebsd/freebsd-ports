@@ -7,6 +7,7 @@
 
 PORTNAME=	tkabber-plugins
 PORTVERSION=	20091027
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 

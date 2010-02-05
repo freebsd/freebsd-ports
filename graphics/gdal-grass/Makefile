@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gdal.org/dl/ \
 		ftp://ftp.remotesensing.org/gdal/ \

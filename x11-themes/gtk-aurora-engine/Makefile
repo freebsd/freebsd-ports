@@ -7,6 +7,7 @@
 
 PORTNAME=	aurora
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	gtk-

@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.13
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla/mozilla-japan/mozilla/releases/${PORTVERSION}/ \

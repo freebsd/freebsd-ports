@@ -7,7 +7,7 @@
 
 PORTNAME=	fteqw
 PORTVERSION=	3343
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Source/${PORTVERSION}
 DISTNAME=	ftesrc${PORTVERSION}-all
@@ -41,7 +41,7 @@ FTE_TARGETS+=	fteqw.sv
 .endif
 
 .if !defined(WITHOUT_GL) || !defined(WITHOUT_SDL)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
@@ -71,6 +71,10 @@ post-patch:
 		${WRKSRC}/gl/gl_alias.c ${WRKSRC}/common/com_mesh.c
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' \
 		${WRKSRC}/common/plugin.c ${WRKSRC}/server/svq3_game.c
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		-e 's|jpeg_mem_dest|local_jpeg_mem_dest|' \
+		${WRKSRC}/client/image.c
 
 do-install:
 .for f in ${FTE_TARGETS}

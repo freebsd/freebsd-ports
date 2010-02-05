@@ -7,7 +7,7 @@
 
 PORTNAME=	wop
 PORTVERSION=	0.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://wormsofprey.org/download/ \
 		http://mirror.amdmi3.ru/distfiles/

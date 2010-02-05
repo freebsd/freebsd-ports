@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmwireless
 PORTVERSION=	0.2.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://gkrellm.luon.net/files/
 

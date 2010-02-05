@@ -8,7 +8,7 @@
 
 PORTNAME=	Gnome2-Canvas
 PORTVERSION=	1.002
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	CPAN/Gnome2 \
 		SF/gtk2-perl/Gnome2_Canvas/${PORTVERSION}

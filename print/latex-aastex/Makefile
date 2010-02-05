@@ -7,7 +7,7 @@
 
 PORTNAME=	latex-aastex
 PORTVERSION=	5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print astro science
 MASTER_SITES=	ftp://ftp.iop.org/pub/journals/
 DISTNAME=	aastex${PORTVERSION:S/.//}

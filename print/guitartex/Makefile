@@ -8,7 +8,7 @@
 
 PORTNAME=	guitartex
 PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/GuitarTeX/GuitarTeX-${PORTVERSION}
 ## Hack just for this "fix version"

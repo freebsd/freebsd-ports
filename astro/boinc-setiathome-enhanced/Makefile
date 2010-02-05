@@ -6,6 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	6.08
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	setiathome-svn-412
@@ -43,7 +44,7 @@ OPTIONS=	X11		"Build screensaver" off
 .if !exists(${LOCALBASE}/lib/libboinc_graphics2.a)
 BROKEN=Reinstall net/boinc-client with X11 enabled for screensavers
 .endif
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		xcb.2:${PORTSDIR}/x11/libxcb
 USE_GL=		gl glu glut
 USE_XORG=	ice sm x11 xau xext xi xdamage xdmcp xfixes xmu xt xxf86vm

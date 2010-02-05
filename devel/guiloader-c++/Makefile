@@ -7,7 +7,7 @@
 
 PORTNAME=	guiloader-c++
 PORTVERSION=	2.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF/crow-designer/guiloader-c%2B%2B/${PORTVERSION}
 

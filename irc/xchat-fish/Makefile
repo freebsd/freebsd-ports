@@ -7,7 +7,7 @@
 
 PORTNAME=	fish
 DISTVERSION=	0.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc security
 MASTER_SITES=	http://fish.secure.la/xchat/
 PKGNAMEPREFIX=	xchat-

@@ -7,7 +7,7 @@
 
 PORTNAME=	dgs
 PORTVERSION=	0.5.9.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	../old-gnu/dgs
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	../old-gnu/dgs
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A display ghostscript system
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

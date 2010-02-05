@@ -7,6 +7,7 @@
 
 PORTNAME=	telepathy-gabble
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 

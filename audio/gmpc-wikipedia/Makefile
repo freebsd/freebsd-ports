@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc-wikipedia
 PORTVERSION=	0.19.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/

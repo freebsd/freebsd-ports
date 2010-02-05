@@ -8,7 +8,7 @@
 
 PORTNAME=	pets
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.loria.fr/~rougier/pub/Software/
 

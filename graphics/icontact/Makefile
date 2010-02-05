@@ -7,6 +7,7 @@
 
 PORTNAME=	icontact
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.panix.com/~mbh/icontact/
 

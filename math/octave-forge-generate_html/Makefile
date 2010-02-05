@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-generate_html
 PORTVERSION=	0.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

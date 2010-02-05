@@ -7,7 +7,7 @@
 
 PORTNAME=	freedroidrpg
 PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/freedroid/freedroidRPG/freedroidRPG-${PORTVERSION}
 

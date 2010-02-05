@@ -7,7 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p perl5
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-serverspy

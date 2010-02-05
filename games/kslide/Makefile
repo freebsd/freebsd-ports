@@ -6,7 +6,7 @@
 
 PORTNAME=	kslide
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games kde
 MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 		http://perso.orange.fr/coquelle/taquin/

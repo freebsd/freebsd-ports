@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger-plugins-hubbe
 PORTVERSION=	5.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	www multimedia audio graphics print editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty

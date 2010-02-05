@@ -6,7 +6,7 @@
 
 PORTNAME=	phonon
 PORTVERSION=	4.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://ns.ael.ru/ports/distfiles/KDE/

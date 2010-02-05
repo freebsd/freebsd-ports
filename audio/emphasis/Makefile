@@ -8,7 +8,7 @@
 
 PORTNAME=	emphasis
 PORTVERSION=	20080223
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 

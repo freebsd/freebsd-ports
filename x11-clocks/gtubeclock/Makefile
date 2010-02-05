@@ -7,7 +7,7 @@
 
 PORTNAME=	gtubeclock
 PORTVERSION=	0.9.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bonnyswan.com/gtubeclock/downloads/
 

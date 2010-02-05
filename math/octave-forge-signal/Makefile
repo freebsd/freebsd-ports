@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-signal
 PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

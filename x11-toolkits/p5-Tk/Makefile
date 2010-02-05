@@ -7,6 +7,7 @@
 
 PORTNAME=	Tk
 DISTVERSION=	804.028_501
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN/Tk/SREZIC
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,7 @@ COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 MAKE_JOBS_UNSAFE=	yes
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 PERL_CONFIGURE=	5.8.0+
 USE_XORG=	x11

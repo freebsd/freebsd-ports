@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-nodoka-engine
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://fedorahosted.org/releases/n/o/nodoka/
 

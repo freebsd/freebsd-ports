@@ -7,6 +7,7 @@
 
 PORTNAME=	vavoom-extras
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/vavoom/vmodels-doom/1.4.3:vmd \
 		SF/vavoom/vmodels-heretic/1.4.3:vmhr \

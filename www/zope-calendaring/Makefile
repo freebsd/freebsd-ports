@@ -7,7 +7,7 @@
 
 PORTNAME=	calendaring
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.enfoldsystems.com/Products/Open/Downloads/
 PKGNAMEPREFIX=	zope-

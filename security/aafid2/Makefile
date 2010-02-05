@@ -7,7 +7,7 @@
 
 PORTNAME=	aafid2
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/ids/AAFID/
 EXTRACT_ONLY=

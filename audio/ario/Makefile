@@ -7,6 +7,7 @@
 
 PORTNAME=	ario
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 

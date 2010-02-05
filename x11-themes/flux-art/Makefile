@@ -7,7 +7,7 @@
 
 PORTNAME=	flux-art
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.iluxa.kremenchug.net/files/
 

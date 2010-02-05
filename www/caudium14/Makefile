@@ -7,6 +7,7 @@
 
 PORTNAME=	caudium14
 PORTVERSION=	1.4.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.caudium.net/caudium/source/ \
 		ftp://ftp.oav.net/caudium/source/

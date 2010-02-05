@@ -6,6 +6,7 @@
 
 PORTNAME=	scim-kmfl-sil-ipa-unicode5
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12_Src\&filename=/:1 \
 		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12.pdf\&filename=/:2

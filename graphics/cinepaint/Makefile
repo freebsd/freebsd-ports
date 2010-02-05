@@ -7,7 +7,7 @@
 
 PORTNAME=	cinepaint
 PORTVERSION=	0.22
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An editing tool used for painting and retouching of movies
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff \

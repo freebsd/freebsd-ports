@@ -7,6 +7,7 @@
 
 PORTNAME=	aptana
 PORTVERSION=	1.2.1.23268
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://update1.aptana.org/rails/${PORTVERSION}/ \
 		http://update2.aptana.org/rails/${PORTVERSION}/

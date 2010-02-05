@@ -7,7 +7,7 @@
 
 PORTNAME=	gift
 PORTVERSION=	0.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-p2p
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/gkrellm-gift/ \
 		http://depot.fsck.ch/mirror/distfiles/

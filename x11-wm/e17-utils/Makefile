@@ -8,7 +8,7 @@
 
 PORTNAME=	utils
 PORTVERSION=	20080223
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-

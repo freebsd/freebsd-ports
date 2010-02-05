@@ -6,6 +6,7 @@
 
 PORTNAME=	customerportal
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/vtigercrm/vtiger%20CRM%20${PORTVERSION}/Add-ons
 PKGNAMEPREFIX=	vtiger-

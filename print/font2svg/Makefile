@@ -8,7 +8,7 @@
 
 PORTNAME=	font2svg
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.gdv.uni-hannover.de/~peinecke/font2svg/
 

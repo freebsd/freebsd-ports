@@ -7,7 +7,7 @@
 
 PORTNAME=	feh
 PORTVERSION=	1.3.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 

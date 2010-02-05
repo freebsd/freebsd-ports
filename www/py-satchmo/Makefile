@@ -7,6 +7,7 @@
 
 PORTNAME=	satchmo
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://bitbucket.org/chris1610/satchmo/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

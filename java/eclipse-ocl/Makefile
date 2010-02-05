@@ -7,7 +7,7 @@
 
 PORTNAME=	ocl
 DISTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/modeling/mdt/ocl/downloads/drops/,}
 MASTER_SITE_SUBDIR=${DISTVERSION}.0/R200706201142

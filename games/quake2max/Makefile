@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2max
 PORTVERSION=	0.45
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Quake2MaX/:src \
 		${MASTER_SITE_LOCAL:S/$/:data/}
@@ -47,7 +47,7 @@ Q2MAX_DATA=	${PORTNAME}.044.rar
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GLX) || defined(WITH_SDLGL)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes
 .endif
@@ -109,6 +109,11 @@ PLIST_SUB+=	SDLGL="@comment "
 
 post-extract:
 	@cd ${WRKSRC} && unrar e ${DISTDIR}/${Q2MAX_DATA} baseq2/_maxpak.pak
+
+post-patch:
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/ref_gl/gl_image.c
 
 do-install:
 	${MKDIR} ${LIBDIR}/baseq2

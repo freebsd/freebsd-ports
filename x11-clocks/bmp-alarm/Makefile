@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-alarm
 PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/
 

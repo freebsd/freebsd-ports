@@ -7,6 +7,7 @@
 
 PORTNAME=	ibus-table
 PORTVERSION=	1.2.0.20091113
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	clean
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		${MASTER_SITE_GET_E}

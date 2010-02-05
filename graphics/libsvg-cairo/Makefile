@@ -8,14 +8,14 @@
 
 PORTNAME=	libsvg-cairo
 PORTVERSION=	0.1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SVG rendering library
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		svg.1:${PORTSDIR}/graphics/libsvg \
 		cairo.2:${PORTSDIR}/graphics/cairo
 

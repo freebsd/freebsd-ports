@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-simap
 PORTVERSION=	${SIMAP_VERSION}.${HMMER_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://boinc.bio.wzw.tum.de/boincsimap/download/
 DISTNAME=	${SIMAP_BINARY} ${HMMER_BINARY}

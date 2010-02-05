@@ -8,7 +8,7 @@
 # version number) when updating this port.  Thank you.
 
 PORTNAME=	jpeg
-PORTVERSION=	7
+PORTVERSION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \

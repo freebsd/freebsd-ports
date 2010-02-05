@@ -7,6 +7,7 @@
 
 PORTNAME=	subversive
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,%SUBDIR%,technology/subversive/0.7/builds,:S,$,:core,} \

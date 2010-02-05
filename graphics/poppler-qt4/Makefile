@@ -6,7 +6,7 @@
 #   $MCom: ports/graphics/poppler-qt4/Makefile,v 1.11 2009/08/02 17:55:19 marcus Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	gnome@FreeBSD.org

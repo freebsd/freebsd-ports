@@ -7,13 +7,14 @@
 
 PORTNAME=	gnofract4d
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui lthack \
 		pygtk2

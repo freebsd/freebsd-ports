@@ -7,6 +7,7 @@
 
 PORTNAME=	npcomplete
 PORTVERSION=	0.0.r20090116
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	numptyphysics-

@@ -7,6 +7,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	https://launchpad.net/terminator/trunk/${PORTVERSION}/+download/ \
 		https://launchpadlibrarian.net/28258738/ \

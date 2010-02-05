@@ -7,7 +7,7 @@
 
 PORTNAME=	kmp
 PORTVERSION=	0.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://mercury.chem.pitt.edu/~shank/ \
 		http://www.threadbox.net/files/

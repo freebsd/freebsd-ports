@@ -7,6 +7,7 @@
 
 PORTNAME=	xlog
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://pg4i.chronos.org.uk/download/ \

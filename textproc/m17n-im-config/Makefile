@@ -7,7 +7,7 @@
 
 PORTNAME=	m17n-im-config
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.m17n.org/common/im-config/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/

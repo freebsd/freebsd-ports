@@ -7,7 +7,7 @@
 
 PORTNAME=	bins
 PORTVERSION=	1.1.29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/bins/
 

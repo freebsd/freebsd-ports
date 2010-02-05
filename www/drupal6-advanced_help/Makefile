@@ -7,6 +7,7 @@
 
 PORTNAME=	advanced_help
 DISTVERSION=	6.x-1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 

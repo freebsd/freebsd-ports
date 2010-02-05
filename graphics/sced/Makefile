@@ -7,7 +7,7 @@
 
 PORTNAME=	sced
 PORTVERSION=	1.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.wisc.edu/~schenney/sced/src/
 

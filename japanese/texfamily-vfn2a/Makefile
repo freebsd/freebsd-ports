@@ -6,7 +6,7 @@
 
 PORTNAME=	texfamily-vfn2a
 PORTVERSION=	1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 DISTNAME=	vftool-${PORTVERSION}

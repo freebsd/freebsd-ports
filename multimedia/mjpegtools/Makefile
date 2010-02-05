@@ -7,14 +7,14 @@
 
 PORTNAME=	mjpegtools
 DISTVERSION=	1.9.0rc3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/mjpeg/OldFiles
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 CONFLICTS=	mplex-[0-9]*

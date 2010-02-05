@@ -7,6 +7,7 @@
 
 PORTNAME=	simplenews
 DISTVERSION=	5.x-1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 

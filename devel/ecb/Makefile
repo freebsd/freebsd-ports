@@ -7,7 +7,7 @@
 
 PORTNAME=	ecb
 PORTVERSION=	2.32
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://dryice.name/computer/FreeBSD/distfiles/

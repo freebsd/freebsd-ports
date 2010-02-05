@@ -6,7 +6,7 @@
 #
 
 LITE=		yes
-PORTREVISION?=	0
+PORTREVISION?=	1
 PKGNAMESUFFIX=	-lite
 
 MASTERDIR=	${.CURDIR}/../wireshark

@@ -8,6 +8,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 

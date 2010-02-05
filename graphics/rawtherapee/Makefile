@@ -7,6 +7,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.rawtherapee.com/
 DISTNAME=	${PORTNAME}${PORTVERSION:S,.,,g}src
@@ -17,7 +18,7 @@ COMMENT=	A powerful RAW image processing application
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		png:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff

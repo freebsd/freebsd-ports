@@ -7,7 +7,7 @@
 
 PORTNAME=	umit
 PORTVERSION=	0.9.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-RC2 \
 				http://bio3k.softboard.ru/uploads/arch/

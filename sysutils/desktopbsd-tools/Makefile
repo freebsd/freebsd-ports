@@ -6,7 +6,7 @@
 
 PORTNAME=	desktopbsd-tools
 PORTVERSION=	1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.desktopbsd.net/pub/DesktopBSD/Tools/
 

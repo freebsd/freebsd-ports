@@ -7,6 +7,7 @@
 
 PORTNAME=	arista
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://programmer-art.org/media/releases/arista-transcoder/ \
 		http://launchpadlibrarian.net/28489828/

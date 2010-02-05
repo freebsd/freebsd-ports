@@ -7,6 +7,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		SF/${PORTNAME}/AfterStep/${PORTVERSION}
@@ -19,7 +20,7 @@ COMMENT=	A stable version of the AfterStep window manager
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		rplay.1:${PORTSDIR}/audio/rplay \
 		rsvg-2.2:${PORTSDIR}/graphics/librsvg2 \

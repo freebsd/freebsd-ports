@@ -8,14 +8,14 @@
 
 PORTNAME=	tuxpuck
 PORTVERSION=	0.8.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://users.student.lth.se/d00jkr/tuxpuck/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		freetype.9:${PORTSDIR}/print/freetype2

@@ -7,7 +7,7 @@
 
 PORTNAME=	demonquake
 PORTVERSION=	0.16.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Another improved Quake engine based on FuhQuake
 
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes

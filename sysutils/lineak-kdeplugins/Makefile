@@ -7,7 +7,7 @@
 
 PORTNAME=	lineak-kdeplugins
 PORTVERSION=	0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	SF/lineak/lineak_kdeplugins/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak

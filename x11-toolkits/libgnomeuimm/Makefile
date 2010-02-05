@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnomeuimm
 PORTVERSION=	2.0.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	SF/gtkmm/OldFiles
 DIST_SUBDIR=	gnome2

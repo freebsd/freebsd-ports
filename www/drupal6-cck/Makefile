@@ -7,6 +7,7 @@
 
 PORTNAME=	cck
 DISTVERSION=	6.x-2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 

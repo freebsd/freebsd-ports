@@ -7,7 +7,7 @@
 
 PORTNAME=	tv_grab_au
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.tienza.es/crux/mirror/ \
 		http://www.onlinetractorparts.com.au/rohbags/xmltvau/

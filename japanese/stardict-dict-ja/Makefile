@@ -6,7 +6,7 @@
 
 PORTNAME=	stardict2-dict-ja
 PORTVERSION=	2.4.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese textproc
 MASTER_SITES=	SF/stardict/stardict-dictionaries-ja/${PORTVERSION}
 DISTFILES=	stardict-jmdict-en-ja-${PORTVERSION}.tar.bz2 \

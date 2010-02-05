@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkjournal
 PORTVERSION=	0.3.5.b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://sourcefiles.org/Productivity_Tools/Diary/ \
 		LOCAL/beech

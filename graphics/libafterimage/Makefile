@@ -8,7 +8,7 @@
 
 PORTNAME=	libafterimage
 PORTVERSION=	1.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/afterstep/libAfterImage/${PORTVERSION}
 DISTNAME=	libAfterImage-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Generic imaging library originally designed for AfterStep
 
 MAKE_JOBS_UNSAFE=	yes
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

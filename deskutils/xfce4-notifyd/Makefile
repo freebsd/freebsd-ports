@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfce4-notifyd/ \
 		CRITICAL

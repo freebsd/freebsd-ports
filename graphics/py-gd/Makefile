@@ -6,7 +6,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	0.56
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics python
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

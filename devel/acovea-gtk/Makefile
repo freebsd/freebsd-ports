@@ -7,7 +7,7 @@
 
 PORTNAME=	acovea-gtk
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 

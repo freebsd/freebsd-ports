@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmss
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 

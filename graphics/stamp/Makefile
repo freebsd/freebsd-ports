@@ -7,14 +7,14 @@
 
 PORTNAME=	stamp
 PORTVERSION=	2.0.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds a graphical, configurable timestamp to a grayscale image
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

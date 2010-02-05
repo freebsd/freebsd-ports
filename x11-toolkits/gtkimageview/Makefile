@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkimageview
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	LOCAL/kwm
 # http://trac.bjourne.webfactional.com/

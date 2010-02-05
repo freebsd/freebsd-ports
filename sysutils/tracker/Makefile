@@ -8,6 +8,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.95
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty

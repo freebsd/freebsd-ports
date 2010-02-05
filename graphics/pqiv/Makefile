@@ -7,6 +7,7 @@
 
 PORTNAME=	pqiv
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pberndt.com/raw/Programme/Linux/pqiv/_download/
 EXTRACT_SUFX=	.tbz

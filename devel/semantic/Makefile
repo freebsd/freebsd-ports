@@ -7,7 +7,7 @@
 
 PORTNAME=	semantic
 PORTVERSION=	1.4.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/cedet/${PORTNAME}/${PORTVERSION} \
 		http://dryice.name/computer/FreeBSD/distfiles/

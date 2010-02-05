@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-themepreview
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}	# http://www.users.monornet.hu/linux/files/
 MASTER_SITE_SUBDIR=	danfe

@@ -7,7 +7,7 @@
 
 PORTNAME=	pwcview
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.selasky.org/hans_petter/video4bsd/releases/ \
@@ -18,7 +18,7 @@ MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	The Video4Linux PWC webcam viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		v4l1.0:${PORTSDIR}/multimedia/libv4l
 
 CONFLICTS=	pwcbsd-[0-9]*

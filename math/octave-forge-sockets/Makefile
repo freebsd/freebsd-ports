@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-sockets
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=     math
 
 MAINTAINER=	stephen@missouri.edu

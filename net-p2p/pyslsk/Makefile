@@ -7,7 +7,7 @@
 
 PORTNAME=	pyslsk
 PORTVERSION=	1.2.7b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/
 

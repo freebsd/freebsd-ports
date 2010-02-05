@@ -7,7 +7,7 @@
 
 PORTNAME=	sdlquake2
 PORTVERSION=	0.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://koti.mbnet.fi/~turol/sdlquake2/
 
@@ -32,7 +32,7 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CLIENT)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes
 USE_SDL=	sdl
@@ -55,6 +55,11 @@ PLIST_SUB+=	GAME=""
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
+
+post-patch:
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/gl_image.c
 
 do-install:
 	${MKDIR} ${LIBDIR}/baseq2

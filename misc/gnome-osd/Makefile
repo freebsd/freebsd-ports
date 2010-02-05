@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-osd
 DISTVERSION=	0.11.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/${DISTVERSION:C|-.*$||}/
 

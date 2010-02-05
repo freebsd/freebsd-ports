@@ -7,6 +7,7 @@
 
 PORTNAME=	gpicview
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GPicView%20${PORTVERSION}
 

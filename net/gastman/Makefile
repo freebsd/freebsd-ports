@@ -7,7 +7,7 @@
 
 PORTNAME=	gastman
 PORTVERSION=	1.0.r1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/gastman/
 DISTNAME=	${PORTNAME}-1.0-RC1

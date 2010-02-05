@@ -6,7 +6,7 @@
 
 PORTNAME=	rospell
 DISTVERSION=	2007.02.rc1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors textproc # this should/will be romanian ;)
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 

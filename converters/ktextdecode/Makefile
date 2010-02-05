@@ -6,7 +6,7 @@
 
 PORTNAME=	ktextdecode
 PORTVERSION=	3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	converters kde
 MASTER_SITES=	http://osmirrors.cerias.purdue.edu/pub/FreeBSD/ports/local-distfiles/markus/
 

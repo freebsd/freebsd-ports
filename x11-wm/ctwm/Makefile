@@ -7,7 +7,7 @@
 
 PORTNAME=	ctwm
 PORTVERSION=	3.8a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
 		http://www.centralmiss.com/~matt/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	spandsp
 DISTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 		http://www.soft-switch.org/downloads/spandsp/old/

@@ -7,7 +7,7 @@
 
 PORTNAME=	xwota
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://people.fabaris.it/iz0ete/xwota/ \
 		${MASTER_SITE_LOCAL}

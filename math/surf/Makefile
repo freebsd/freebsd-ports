@@ -8,7 +8,7 @@
 
 PORTNAME=	surf
 PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +16,7 @@ USE_XORG=	x11 xmu
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualize some real algebraic geometry
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gmp.8:${PORTSDIR}/math/libgmp4
 

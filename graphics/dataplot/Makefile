@@ -7,6 +7,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20081002
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		LOCAL/beech:source \

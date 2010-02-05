@@ -7,7 +7,7 @@
 
 PORTNAME=	choqok
 PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www kde
 MASTER_SITES=	http://mirror.umoss.org/download.ospdev.net/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 

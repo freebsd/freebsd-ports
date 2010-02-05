@@ -7,7 +7,7 @@
 
 PORTNAME=	q2p
 PORTVERSION=	0.2.20061231
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Q2P/
 DISTNAME=	Q2P-0.2-2006-12-31
@@ -40,7 +40,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .if !defined(WITHOUT_GLX) || !defined(WITHOUT_SDLGL)
 USE_GL=		glu
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 .endif
 
@@ -108,6 +108,11 @@ Q2SND+=		sdl
 .else
 PLIST_SUB+=	SDL="@comment "
 .endif
+
+post-patch:
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/ref_gl/gl_image.c
 
 do-install:
 .for bin in ${Q2BIN}

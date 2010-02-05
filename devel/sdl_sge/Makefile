@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_sge
 PORTVERSION=	0.030809
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.etek.chalmers.se/~e8cal1/sge/files/ \
 		http://www.digitalfanatics.org/cal/sge/files/

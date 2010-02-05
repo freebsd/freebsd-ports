@@ -7,7 +7,7 @@
 
 PORTNAME=	repng2jpeg
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://sugachan.dip.jp/obsolete/arch/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

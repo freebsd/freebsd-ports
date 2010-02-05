@@ -8,7 +8,6 @@
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	dinoex@FreeBSD.org
-PORTREVISION=	1
 
 WITH_GNUSTEP_XDPS=	yes
 MASTERDIR=	${.CURDIR}/../gnustep-back

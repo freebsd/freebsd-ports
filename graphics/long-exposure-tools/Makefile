@@ -7,7 +7,7 @@
 
 PORTNAME=	long-exposure-tools
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.qqqq.ca/cgi-bin/wiki.cgi/download/ \
 		${MASTER_SITE_LOCAL}

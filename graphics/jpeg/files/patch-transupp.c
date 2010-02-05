@@ -1,5 +1,5 @@
---- transupp.c.orig	2009-06-17 11:14:27.000000000 +0200
-+++ transupp.c	2009-07-01 08:50:53.000000000 +0200
+--- transupp.c.orig	2009-09-03 16:45:06.000000000 +0200
++++ transupp.c	2010-01-13 09:38:15.000000000 +0100
 @@ -51,6 +51,13 @@
   * guarantee we can touch more than one row at a time.  So in that case,
   * we have to use a separate destination array.
@@ -356,26 +356,22 @@
  }
  
  
-@@ -861,9 +1168,9 @@
-   jvirt_barray_ptr *coef_arrays = NULL;
-   boolean need_workspace, transpose_it;
-   jpeg_component_info *compptr;
--  JDIMENSION xoffset, yoffset, width_in_iMCUs, height_in_iMCUs;
-+  JDIMENSION xoffset, yoffset, dtemp, width_in_iMCUs, height_in_iMCUs;
+@@ -876,7 +1183,9 @@
+   JDIMENSION xoffset, yoffset;
+   JDIMENSION width_in_iMCUs, height_in_iMCUs;
    JDIMENSION width_in_blocks, height_in_blocks;
--  int ci, h_samp_factor, v_samp_factor;
-+  int itemp, ci, h_samp_factor, v_samp_factor;
++  JDIMENSION dtemp;
+   int ci, h_samp_factor, v_samp_factor;
++  int itemp;
  
    /* Determine number of components in output image */
    if (info->force_grayscale &&
-@@ -917,34 +1224,113 @@
-     if (info->crop_xoffset_set == JCROP_UNSET)
+@@ -957,33 +1266,112 @@
        info->crop_xoffset = 0;	/* default to +0 */
      if (info->crop_yoffset_set == JCROP_UNSET)
--      info->crop_yoffset = 0;	/* default to +0 */
+       info->crop_yoffset = 0;	/* default to +0 */
 -    if (info->crop_xoffset >= info->output_width ||
 -	info->crop_yoffset >= info->output_height)
-+      info->crop_yoffset = 0; /* default to +0 */
 +    if (info->crop_width_set == JCROP_UNSET) {
 +      if (info->crop_xoffset >= info->output_width)
        ERREXIT(srcinfo, JERR_BAD_CROP_SPEC);
@@ -442,14 +438,14 @@
      /* Now adjust so that upper left corner falls at an iMCU boundary */
 +    if (info->transform == JXFORM_DROP) {
 +      /* Ensure the effective drop region will not exceed the requested */
-+      itemp = info->max_h_samp_factor * DCTSIZE;
++      itemp = info->iMCU_sample_width;
 +      dtemp = itemp - 1 - ((xoffset + itemp - 1) % itemp);
 +      xoffset += dtemp;
 +      if (info->crop_width > dtemp)
 +      info->drop_width = (info->crop_width - dtemp) / itemp;
 +      else
 +      info->drop_width = 0;
-+      itemp = info->max_v_samp_factor * DCTSIZE;
++      itemp = info->iMCU_sample_height;
 +      dtemp = itemp - 1 - ((yoffset + itemp - 1) % itemp);
 +      yoffset += dtemp;
 +      if (info->crop_height > dtemp)
@@ -485,17 +481,17 @@
 +    info->output_width = info->crop_width;
 +    else
      info->output_width =
-       info->crop_width + (xoffset % (info->max_h_samp_factor * DCTSIZE));
+       info->crop_width + (xoffset % info->iMCU_sample_width);
 +    if (info->crop_height > info->output_height)
 +    info->output_height = info->crop_height;
 +    else
      info->output_height =
-       info->crop_height + (yoffset % (info->max_v_samp_factor * DCTSIZE));
+       info->crop_height + (yoffset % info->iMCU_sample_height);
 +    }
      /* Save x/y offsets measured in iMCUs */
-     info->x_crop_offset = xoffset / (info->max_h_samp_factor * DCTSIZE);
-     info->y_crop_offset = yoffset / (info->max_v_samp_factor * DCTSIZE);
-@@ -960,7 +1346,9 @@
+     info->x_crop_offset = xoffset / info->iMCU_sample_width;
+     info->y_crop_offset = yoffset / info->iMCU_sample_height;
+@@ -999,7 +1387,9 @@
    transpose_it = FALSE;
    switch (info->transform) {
    case JXFORM_NONE:
@@ -506,7 +502,7 @@
        need_workspace = TRUE;
      /* No workspace needed if neither cropping nor transforming */
      break;
-@@ -1014,6 +1402,11 @@
+@@ -1053,6 +1443,11 @@
      need_workspace = TRUE;
      transpose_it = TRUE;
      break;
@@ -518,7 +514,7 @@
    }
  
    /* Allocate workspace if needed.
-@@ -1309,6 +1702,11 @@
+@@ -1359,6 +1754,11 @@
    case JXFORM_ROT_270:
      transpose_critical_parameters(dstinfo);
      break;
@@ -530,7 +526,7 @@
    default:
      break;
    }
-@@ -1363,7 +1761,9 @@
+@@ -1413,7 +1813,9 @@
     */
    switch (info->transform) {
    case JXFORM_NONE:
@@ -541,7 +537,7 @@
        do_crop(srcinfo, dstinfo, info->x_crop_offset, info->y_crop_offset,
  	      src_coef_arrays, dst_coef_arrays);
      break;
-@@ -1399,6 +1799,12 @@
+@@ -1449,6 +1851,12 @@
      do_rot_270(srcinfo, dstinfo, info->x_crop_offset, info->y_crop_offset,
  	       src_coef_arrays, dst_coef_arrays);
      break;

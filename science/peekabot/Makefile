@@ -7,6 +7,7 @@
 
 PORTNAME=	peekabot
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7.x/ \
 		http://distfiles.officialunix.com/

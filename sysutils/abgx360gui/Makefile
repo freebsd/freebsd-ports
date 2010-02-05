@@ -7,6 +7,7 @@
 
 PORTNAME=	abgx360gui
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://update.cooltrainer.org/abgx360/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	filelight
 PORTVERSION=	1.9
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	99561-${PORTNAME}-${PORTVERSION}rc3

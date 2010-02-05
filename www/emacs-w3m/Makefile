@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs-w3m
 PORTVERSION=	1.4.378.b.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	www elisp
 MASTER_SITES=	http://people.freebsd.org/~nobutaka/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

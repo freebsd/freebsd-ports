@@ -6,7 +6,7 @@
 #   $MCom: ports/multimedia/totem-xine/Makefile,v 1.1 2007/03/15 14:29:57 ahze Exp $
 #
 
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=	-xine
 
 MAINTAINER=	gnome@FreeBSD.org

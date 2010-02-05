@@ -7,7 +7,7 @@
 
 PORTNAME=	Pymacs
 PORTVERSION=	0.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel editors python elisp
 MASTER_SITES=	http://pymacs.progiciels-bpi.ca/archives/ \
 		${MASTER_SITE_GENTOO}

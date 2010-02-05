@@ -8,7 +8,7 @@
 
 PORTNAME=	eclair
 PORTVERSION=	20080223
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 

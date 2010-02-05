@@ -7,7 +7,7 @@
 
 PORTNAME=	uf-view
 PORTVERSION=	2.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 

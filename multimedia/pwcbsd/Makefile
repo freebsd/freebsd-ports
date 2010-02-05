@@ -7,7 +7,7 @@
 
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
@@ -53,7 +53,7 @@ ALL_TARGET=	all
 .if !defined(WITHOUT_PROGRAMS)
 ALL_TARGET+=	pwcview
 PROGRAMS=	pwcview
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 MAN1=		pwcview.1
 USE_SDL=	sdl
 PLIST_SUB+=	PROGRAMS=""

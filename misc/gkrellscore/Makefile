@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellscore
 PORTVERSION=	0.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 		http://voodoo.bawue.com/download/

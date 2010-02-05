@@ -7,7 +7,7 @@
 
 PORTNAME=	povchem
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology graphics
 MASTER_SITES=	http://www.chemicalgraphics.com/paul/PC_Dist/v1.00/
 DISTFILES=	povchem.c \

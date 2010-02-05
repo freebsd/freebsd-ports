@@ -7,6 +7,7 @@
 
 PORTNAME=	whups
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	ports@FreeBSD.org

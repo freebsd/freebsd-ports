@@ -7,6 +7,7 @@
 
 PORTNAME=	boo
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://dist.codehaus.org/boo/distributions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.${BUILD_NUMBER}-src

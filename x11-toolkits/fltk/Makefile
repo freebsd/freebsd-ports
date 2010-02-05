@@ -7,7 +7,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/${PORTVERSION}
@@ -20,7 +20,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Cross-platform C++ graphical user interface toolkit
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.10:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=--enable-threads

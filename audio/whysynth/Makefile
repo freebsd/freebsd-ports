@@ -7,6 +7,7 @@
 
 PORTNAME=	whysynth
 PORTVERSION=	20090608
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://smbolton.com/whysynth/
 

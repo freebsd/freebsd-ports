@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-vumeter-skins
 PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://vumeterplugin.sourceforge.net/skins/
 DISTFILES=	X-skin.tar.bz2 \

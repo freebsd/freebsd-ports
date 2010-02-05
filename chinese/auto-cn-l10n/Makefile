@@ -6,7 +6,7 @@
 
 PORTNAME=	auto-cn-l10n
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}

@@ -8,6 +8,7 @@
 
 PORTNAME=	accerciser
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

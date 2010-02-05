@@ -7,6 +7,7 @@
 
 PORTNAME=	uzbl
 DISTVERSION=	0.0.0.${GITDATE}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.linta.de/distfiles/ \
 		LOCAL/ehaupt

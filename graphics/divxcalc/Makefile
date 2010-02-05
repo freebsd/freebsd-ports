@@ -8,7 +8,7 @@
 
 PORTNAME=	divxcalc
 PORTVERSION=	0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagef1.net.nz/divxcalc/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxbox-tenr-styles-pack
 PORTVERSION=	20071215
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/fluxthemes/
 DISTNAME=	tenr.de-styles-${PORTVERSION}

@@ -8,7 +8,7 @@
 
 PORTNAME=	seaview
 PORTVERSION=	2006.02.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}

@@ -7,7 +7,7 @@
 
 PORTNAME=	childsplay_plugins
 PORTVERSION=	0.80.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/childsplay/OldFiles
 EXTRACT_SUFX=	.tgz

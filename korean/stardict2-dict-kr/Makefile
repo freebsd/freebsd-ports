@@ -7,7 +7,7 @@
 
 PORTNAME=	stardict2-dict-kr
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean textproc
 MASTER_SITES=	SF/stardict/stardict-dictionaries-ko/${PORTVERSION}
 DIST_SUBDIR=	stardict

@@ -8,7 +8,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.3.3.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -16,7 +16,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

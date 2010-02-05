@@ -7,6 +7,7 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.4.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
@@ -35,7 +36,7 @@ OPTIONS=	AALIB "Enable command line capture preview (aalib)" on
 
 .if defined(WITH_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib \
-		jpeg.10:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 .else
 CONFIGURE_ARGS+=--without-aalib --without-jpeg
 .endif

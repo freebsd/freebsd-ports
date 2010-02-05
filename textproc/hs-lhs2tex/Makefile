@@ -8,6 +8,7 @@
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://people.cs.uu.nl/andres/${PORTNAME}/
 

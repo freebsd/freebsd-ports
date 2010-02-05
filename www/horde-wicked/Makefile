@@ -8,7 +8,7 @@
 PORTNAME=	wicked
 DISTVERSIONPREFIX?=
 DISTVERSION=	0.0.20080730
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES?=	LOCAL/beech \
 		http://www.alaskaparadise.com/freebsd/

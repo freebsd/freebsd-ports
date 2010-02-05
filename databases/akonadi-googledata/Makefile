@@ -7,6 +7,7 @@
 
 PORTNAME=	akonadi-googledata
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://libgcal.googlecode.com/files/
 

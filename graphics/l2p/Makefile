@@ -7,7 +7,7 @@
 
 PORTNAME=	l2p
 PORTVERSION=	1.1.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics print perl5
 MASTER_SITES=	http://www.redsymbol.net/software/l2p/dist/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

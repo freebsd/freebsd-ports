@@ -7,7 +7,7 @@
 
 PORTNAME=	HLaTeX
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.ktug.or.kr/pub/ktug/hlatex/ \
 		ftp://ftp.ktug.or.kr/pub/ktug/hlatex/fonts/

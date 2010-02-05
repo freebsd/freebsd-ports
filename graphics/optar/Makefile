@@ -7,6 +7,7 @@
 
 PORTNAME=	optar
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xps.crucible.gr/
 DISTFILES=	optar.tgz \

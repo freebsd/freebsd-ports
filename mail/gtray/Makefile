@@ -7,7 +7,7 @@
 
 PORTNAME=	gtray
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://gnome-gtray.sourceforge.net/
 

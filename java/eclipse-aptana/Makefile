@@ -7,7 +7,7 @@
 
 PORTNAME=	aptana
 PORTVERSION=	1.2.2.024747
-#PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://update1.aptana.org/studio/3.2/024747/

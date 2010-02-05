@@ -7,6 +7,7 @@
 
 PORTNAME=	token
 DISTVERSION=	6.x-1.12
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org

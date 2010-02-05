@@ -7,6 +7,7 @@
 
 PORTNAME=	wspr
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.physics.princeton.edu/pulsar/K1JT/
 MASTER_SITES=	${MASTER_SITE_LOCAL}

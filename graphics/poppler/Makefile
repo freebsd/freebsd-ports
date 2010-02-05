@@ -8,14 +8,14 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.12.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A PDF rendering library
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data

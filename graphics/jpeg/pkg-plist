@@ -14,7 +14,7 @@ include/jpeglib.h
 lib/libjpeg.a
 lib/libjpeg.la
 lib/libjpeg.so
-lib/libjpeg.so.10
+lib/libjpeg.so.11
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/coderules.txt
 %%PORTDOCS%%%%DOCSDIR%%/filelist.txt

@@ -7,7 +7,7 @@
 
 PORTNAME=	lineak-xosdplugin
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	SF/lineak/lineak_xosdplugin/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak

@@ -9,7 +9,7 @@
 
 PORTNAME=	dtiquery
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science biology
 MASTER_SITES=	http://graphics.stanford.edu/projects/dti/
 

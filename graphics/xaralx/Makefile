@@ -7,7 +7,7 @@
 
 PORTNAME=	XaraLX
 PORTVERSION?=	0.7r1692
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/ \
 		${MASTER_SITE_LOCAL}
