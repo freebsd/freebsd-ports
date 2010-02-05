@@ -6,30 +6,35 @@
 #
 
 PORTNAME=		talloc
-PORTVERSION?=		1.3.1
+PORTVERSION=		2.0.1
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
-PKGNAMESUFFIX=
+MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
+			ftp://ca.samba.org/pub/%SUBDIR%/ \
+			ftp://de.samba.org/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
+MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Hierarchical pool based memory allocator
 
 CONFLICTS=		samba-3.3*
-
-SAMBA_PORT?=		samba4-devel
-SAMBA_SUBPORT=		yes
-
-MASTERDIR=		${.CURDIR}/../../net/${SAMBA_PORT}
-FILESDIR=		${.CURDIR}/files
-PKGDIR=			${.CURDIR}
-
-WRKSRC=			${WRKDIR}/${DISTNAME}/lib/talloc
 
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=		autoconf:262 autoheader:262
 
+IPATHS=			-I${WRKSRC}/libreplace
+AUTOHEADER_ARGS=	${IPATHS}
+AUTOCONF_ARGS=		${IPATHS}
+
+PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
+PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
+
+#CPPFLAGS+=		-I${LOCALBASE}/include
+#LDFLAGS+=		-L${LOCALBASE}/lib
+#CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 
 MAN3=			talloc.3
@@ -37,15 +42,15 @@ MAN3=			talloc.3
 PLIST_FILES=		include/talloc.h \
 			lib/libtalloc.a \
 			lib/libtalloc.so \
-			lib/libtalloc.so.1 \
-			libdata/pkgconfig/talloc.pc
+			lib/libtalloc.so.2 \
+			${PKGCONFIGDIR_REL}/talloc.pc
 
 pre-install:
 .if !exists(${WRKSRC}/talloc.3)
-		@${CP} ${FILESDIR}/talloc.3 ${WRKSRC}
+			@${CP} ${FILESDIR}/talloc.3 ${WRKSRC}
 .endif
 
 post-install:
-		${LN} -sf libtalloc.so.1 ${PREFIX}/lib/libtalloc.so
+			${LN} -sf libtalloc.so.2 ${PREFIX}/lib/libtalloc.so
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
