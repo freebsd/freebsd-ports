@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netbsd-pkgsrc-mk-files
-PORTVERSION=	20090329
+PORTVERSION=	20100117
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mova.org/~cheusov/pub/netbsd-tools/pkgsrc-mk-files/ \
 		http://trociny.googlecode.com/files/
