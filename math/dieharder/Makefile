@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dieharder
-PORTVERSION=	2.28.1
-PORTREVISION=	1
+DISTVERSION=	3.29.4beta
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/
 EXTRACT_SUFX=	.tgz
@@ -17,8 +16,12 @@ COMMENT=	A random number generator testsuite
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtool:22
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 MAN1=		dieharder.1
 MAN3=		libdieharder.3
@@ -32,5 +35,8 @@ run-autotools:
 	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
 		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
 			${WRKSRC}/configure
+
+test: build
+	${WRKSRC}/dieharder/dieharder -a
 
 .include <bsd.port.mk>

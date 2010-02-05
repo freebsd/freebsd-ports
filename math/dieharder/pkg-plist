@@ -20,12 +20,15 @@ include/dieharder/diehard_rank_6x8.h
 include/dieharder/diehard_runs.h
 include/dieharder/diehard_squeeze.h
 include/dieharder/diehard_sums.h
-include/dieharder/dieharder_types.h
+include/dieharder/dieharder_rng_types.h
+include/dieharder/dieharder_test_types.h
 include/dieharder/libdieharder.h
 include/dieharder/marsaglia_tsang_gcd.h
 include/dieharder/marsaglia_tsang_gorilla.h
 include/dieharder/parse.h
 include/dieharder/rgb_bitdist.h
+include/dieharder/rgb_kstest_test.h
+include/dieharder/rgb_lagged_sums.h
 include/dieharder/rgb_lmn.h
 include/dieharder/rgb_minimum_distance.h
 include/dieharder/rgb_operm.h
@@ -41,5 +44,5 @@ include/dieharder/verbose.h
 lib/libdieharder.a
 lib/libdieharder.la
 lib/libdieharder.so
-lib/libdieharder.so.2
+lib/libdieharder.so.3
 @dirrm include/dieharder
