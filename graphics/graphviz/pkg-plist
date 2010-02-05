@@ -83,7 +83,7 @@ lib/graphviz/libgraph.so.4
 lib/graphviz/libgraph.la
 lib/graphviz/libgraph.a
 lib/graphviz/libcgraph.so
-lib/graphviz/libcgraph.so.4
+lib/graphviz/libcgraph.so.5
 lib/graphviz/libcgraph.la
 lib/graphviz/libcgraph.a
 lib/graphviz/libpathplan.so
