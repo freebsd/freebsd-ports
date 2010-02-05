@@ -1,5 +1,5 @@
---- ./configure.in.orig	2009-06-23 09:35:13.000000000 +0000
-+++ ./configure.in	2009-06-26 00:41:37.000000000 +0000
+--- ./configure.in.orig	2010-01-14 10:12:10.000000000 +0000
++++ ./configure.in	2010-02-05 00:27:01.000000000 +0000
 @@ -189,16 +189,6 @@
         fi
  fi
@@ -17,7 +17,7 @@
  #################################################
  # check for a shared memory profiling support
  AC_MSG_CHECKING(whether to use profiling)
-@@ -1996,9 +1986,6 @@
+@@ -1976,9 +1966,6 @@
  AC_MSG_CHECKING([PICFLAG])
  AC_MSG_RESULT([$PICFLAG])
  
@@ -27,7 +27,7 @@
  AC_CACHE_CHECK([whether building shared libraries actually works],
                 [ac_cv_shlib_works],[
     # try building a trivial shared library
-@@ -4175,10 +4162,10 @@
+@@ -4180,10 +4167,10 @@
  
    ################################################################
    # first test for Active Directory support being enabled
@@ -42,7 +42,7 @@
    ##################################################################
    # then test for uuid.h (necessary to generate unique DNS keynames
    # (uuid.h is required for this test)
-@@ -4395,15 +4382,51 @@
+@@ -4400,15 +4387,51 @@
  		x"$ac_cv_header_pam_pam_modules_h" = x"no" ; then
  		if test x"${try_pam}" = x"yes";then
  			AC_MSG_ERROR([--with-pam=yes but pam_modules.h not found])
@@ -98,7 +98,7 @@
  
  		if test x"$create_pam_modules" = x"yes"; then
  			AC_DEFINE(WITH_PAM_MODULES,1,[Whether to include PAM MODULES support])
-@@ -4413,7 +4436,7 @@
+@@ -4418,7 +4441,7 @@
  			AC_CHECK_HEADERS(pam/pam_ext.h pam/_pam_macros.h)
  			AC_CHECK_FUNC_EXT(pam_vsyslog,$PAM_LIBS)
  		else
@@ -107,7 +107,7 @@
  		fi
  	fi
  	AC_MSG_CHECKING(whether to use PAM support)
-@@ -5968,6 +5991,7 @@
+@@ -5973,6 +5996,7 @@
  		NSSSONAMEVERSIONSUFFIX=".1"
  		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
  		    nsswitch/winbind_nss_linux.o"
@@ -115,7 +115,7 @@
  		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
  		WINBIND_WINS_NSS="nsswitch/nss_wins.$SHLIBEXT"
  		;;
-@@ -6046,23 +6070,15 @@
+@@ -6051,23 +6075,15 @@
  fi
  
  # Display test results
@@ -139,7 +139,7 @@
  	## Only worry about libwbclient if we have shared library support
  	## and winbindd
          LIBWBCLIENT_SHARED=$LIBWBCLIENT_SHARED_TARGET
-@@ -6080,26 +6096,34 @@
+@@ -6085,26 +6101,34 @@
  
  	EXTRA_BIN_PROGS="$EXTRA_BIN_PROGS bin/wbinfo\$(EXEEXT)"
  	EXTRA_SBIN_PROGS="$EXTRA_SBIN_PROGS bin/winbindd\$(EXEEXT)"
@@ -178,7 +178,7 @@
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
  
-@@ -6286,13 +6310,21 @@
+@@ -6291,13 +6315,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -201,7 +201,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -6549,6 +6581,16 @@
+@@ -6554,6 +6586,16 @@
  
  fi
  
@@ -218,7 +218,7 @@
  dnl Remove -L/usr/lib/? from LDFLAGS and LIBS
  LIB_REMOVE_USR_LIB(LDFLAGS)
  LIB_REMOVE_USR_LIB(LIBS)
-@@ -6605,6 +6647,8 @@
+@@ -6610,6 +6652,8 @@
  	  pkgconfig/wbclient.pc
  	  pkgconfig/netapi.pc
  	  pkgconfig/smbsharemodes.pc

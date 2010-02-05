@@ -1,5 +1,5 @@
---- ./nsswitch/pam_winbind.c.orig	2009-06-23 09:35:13.000000000 +0000
-+++ ./nsswitch/pam_winbind.c	2009-06-26 00:41:37.000000000 +0000
+--- ./nsswitch/pam_winbind.c.orig	2010-01-14 10:12:10.000000000 +0000
++++ ./nsswitch/pam_winbind.c	2010-02-05 00:27:01.000000000 +0000
 @@ -161,7 +161,6 @@
  }
  #endif
@@ -40,7 +40,7 @@
  	}
  	if (data != NULL) {
  		const char *type = (item_type != 0) ? "ITEM" : "DATA";
-@@ -1298,12 +1303,12 @@
+@@ -1321,12 +1326,12 @@
  static bool _pam_check_remark_auth_err(struct pwb_context *ctx,
  				       const struct wbcAuthErrorInfo *e,
  				       const char *nt_status_string,
@@ -55,7 +55,7 @@
  		return false;
  	}
  
-@@ -1317,18 +1322,18 @@
+@@ -1340,18 +1345,18 @@
  		error_string = _get_ntstatus_error_string(nt_status_string);
  		if (error_string) {
  			_make_remark(ctx, PAM_ERROR_MSG, error_string);
@@ -77,7 +77,7 @@
  
  		return true;
  	}
-@@ -2695,8 +2700,7 @@
+@@ -2729,8 +2734,7 @@
  		ret = PAM_USER_UNKNOWN;
  		goto out;
  	case 0:
