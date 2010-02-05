@@ -131,4 +131,8 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
+.if ${OSVERSION} >= 900007
+CONFIGURE_ARGS+=	GETTY=SysV
+.endif
+
 .include <bsd.port.post.mk>
