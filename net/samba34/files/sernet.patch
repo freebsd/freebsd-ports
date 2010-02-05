@@ -1,0 +1,1027 @@
+samba-3.4-check-bad-password-count.patch
+samba-3.4-dont-search-for-empty-values.patch
+samba-3.4-net-trustdom-list-tidyup.patch
+samba-3.4-search-accpolicies-in-sambaDomain.patch
+samba3-3.4-honor-all-loopback-ips.patch
+samba3-3.4-skip-useless-ldap-queries-in-is_trusted_domain.patch
+samba3-3.4.3-make-idmap-cache-persistent-ldapsam-trusted.patch
+samba3-3.4.3-shortcut-uid_to_sid-when-ldapsam-trusted-yes.patch
+samba3-3.4.4-fix-account-unlock.patch
+
+ source3/auth/auth_sam.c      |  159 +++++++++++++++++++++++++++++++++---------
+ source3/include/proto.h      |    3 +
+ source3/passdb/pdb_get_set.c |  132 +++++++++++++++++++----------------
+ source3/smbd/chgpasswd.c     |   87 ++++++++++++++++-------
+ 4 files changed, 262 insertions(+), 119 deletions(-)
+
+diff --git a/source3/auth/auth_sam.c b/source3/auth/auth_sam.c
+index fdfa292..24e7898 100644
+--- a/source3/auth/auth_sam.c
++++ b/source3/auth/auth_sam.c
+@@ -32,16 +32,14 @@
+ 
+ static NTSTATUS sam_password_ok(const struct auth_context *auth_context,
+ 				TALLOC_CTX *mem_ctx,
+-				struct samu *sampass, 
++				const char *username,
++				uint32_t acct_ctrl,
++				const uint8_t *lm_pw,
++				const uint8_t *nt_pw,
+ 				const auth_usersupplied_info *user_info, 
+ 				DATA_BLOB *user_sess_key, 
+ 				DATA_BLOB *lm_sess_key)
+ {
+-	uint32 acct_ctrl;
+-	const uint8 *lm_pw, *nt_pw;
+-	const char *username = pdb_get_username(sampass);
+-
+-	acct_ctrl = pdb_get_acct_ctrl(sampass);
+ 	if (acct_ctrl & ACB_PWNOTREQ) {
+ 		if (lp_null_passwords()) {
+ 			DEBUG(3,("Account for user '%s' has no password and null passwords are allowed.\n", username));
+@@ -52,9 +50,6 @@ static NTSTATUS sam_password_ok(const struct auth_context *auth_context,
+ 		}		
+ 	}
+ 
+-	lm_pw = pdb_get_lanman_passwd(sampass);
+-	nt_pw = pdb_get_nt_passwd(sampass);
+-
+ 	return ntlm_password_check(mem_ctx, &auth_context->challenge, 
+ 				   &user_info->lm_resp, &user_info->nt_resp, 
+ 				   &user_info->lm_interactive_pwd, &user_info->nt_interactive_pwd,
+@@ -240,6 +235,75 @@ static NTSTATUS sam_account_ok(TALLOC_CTX *mem_ctx,
+ 	return NT_STATUS_OK;
+ }
+ 
++/**
++ * Check whether the given password is one of the last two
++ * password history entries. If so, the bad pwcount should
++ * not be incremented even thought the actual password check
++ * failed.
++ */
++static bool need_to_increment_bad_pw_count(
++	const struct auth_context *auth_context,
++	struct samu* sampass,
++	const auth_usersupplied_info *user_info)
++{
++	uint8_t i;
++	const uint8_t *pwhistory;
++	uint32_t pwhistory_len;
++	uint32_t policy_pwhistory_len;
++	uint32_t acct_ctrl;
++	const char *username;
++	TALLOC_CTX *mem_ctx = talloc_stackframe();
++	bool result = true;
++
++	pdb_get_account_policy(AP_PASSWORD_HISTORY,
++			       &policy_pwhistory_len);
++	if (policy_pwhistory_len == 0) {
++		goto done;
++	}
++
++	pwhistory = pdb_get_pw_history(sampass, &pwhistory_len);
++	if (!pwhistory || pwhistory_len == 0) {
++		goto done;
++	}
++
++	acct_ctrl = pdb_get_acct_ctrl(sampass);
++	username = pdb_get_username(sampass);
++
++	for (i=1; i < MIN(MIN(3, policy_pwhistory_len), pwhistory_len); i++) {
++		static const uint8_t zero16[SALTED_MD5_HASH_LEN];
++		const uint8_t *salt;
++		const uint8_t *nt_pw;
++		NTSTATUS status;
++		DATA_BLOB user_sess_key = data_blob_null;
++		DATA_BLOB lm_sess_key = data_blob_null;
++
++		salt = &pwhistory[i*PW_HISTORY_ENTRY_LEN];
++		nt_pw = salt + PW_HISTORY_SALT_LEN;
++
++		if (memcmp(zero16, nt_pw, NT_HASH_LEN) == 0) {
++			/* skip zero password hash */
++			continue;
++		}
++
++		if (memcmp(zero16, salt, PW_HISTORY_SALT_LEN) != 0) {
++			/* skip nonzero salt (old format entry) */
++			continue;
++		}
++
++		status = sam_password_ok(auth_context, mem_ctx,
++					 username, acct_ctrl, NULL, nt_pw,
++					 user_info, &user_sess_key, &lm_sess_key);
++		if (NT_STATUS_IS_OK(status)) {
++			result = false;
++			break;
++		}
++	}
++
++done:
++	TALLOC_FREE(mem_ctx);
++	return result;
++}
++
+ /****************************************************************************
+ check if a username/password is OK assuming the password is a 24 byte
+ SMB hash supplied in the user_info structure
+@@ -259,6 +323,10 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 	DATA_BLOB user_sess_key = data_blob_null;
+ 	DATA_BLOB lm_sess_key = data_blob_null;
+ 	bool updated_autolock = False, updated_badpw = False;
++	uint32_t acct_ctrl;
++	const char *username;
++	const uint8_t *nt_pw;
++	const uint8_t *lm_pw;
+ 
+ 	if (!user_info || !auth_context) {
+ 		return NT_STATUS_UNSUCCESSFUL;
+@@ -267,7 +335,8 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 	/* the returned struct gets kept on the server_info, by means
+ 	   of a steal further down */
+ 
+-	if ( !(sampass = samu_new( mem_ctx )) ) {
++	sampass = samu_new(mem_ctx);
++	if (sampass == NULL) {
+ 		return NT_STATUS_NO_MEMORY;
+ 	}
+ 
+@@ -284,16 +353,22 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 		return NT_STATUS_NO_SUCH_USER;
+ 	}
+ 
++	acct_ctrl = pdb_get_acct_ctrl(sampass);
++	username = pdb_get_username(sampass);
++	nt_pw = pdb_get_nt_passwd(sampass);
++	lm_pw = pdb_get_lanman_passwd(sampass);
++
+ 	/* see if autolock flag needs to be updated */
+-	if (pdb_get_acct_ctrl(sampass) & ACB_NORMAL)
++	if (acct_ctrl & ACB_NORMAL)
+ 		pdb_update_autolock_flag(sampass, &updated_autolock);
+ 	/* Quit if the account was locked out. */
+-	if (pdb_get_acct_ctrl(sampass) & ACB_AUTOLOCK) {
+-		DEBUG(3,("check_sam_security: Account for user %s was locked out.\n", pdb_get_username(sampass)));
++	if (acct_ctrl & ACB_AUTOLOCK) {
++		DEBUG(3,("check_sam_security: Account for user %s was locked out.\n", username));
+ 		return NT_STATUS_ACCOUNT_LOCKED_OUT;
+ 	}
+ 
+-	nt_status = sam_password_ok(auth_context, mem_ctx, sampass, 
++	nt_status = sam_password_ok(auth_context, mem_ctx,
++				    username, acct_ctrl, lm_pw, nt_pw,
+ 				    user_info, &user_sess_key, &lm_sess_key);
+ 
+ 	/* Notify passdb backend of login success/failure. If not 
+@@ -302,10 +377,19 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 	update_login_attempts_status = pdb_update_login_attempts(sampass, NT_STATUS_IS_OK(nt_status));
+ 
+ 	if (!NT_STATUS_IS_OK(nt_status)) {
++		bool increment_bad_pw_count = false;
++
+ 		if (NT_STATUS_EQUAL(nt_status,NT_STATUS_WRONG_PASSWORD) && 
+-		    pdb_get_acct_ctrl(sampass) &ACB_NORMAL &&
++		    acct_ctrl & ACB_NORMAL &&
+ 		    NT_STATUS_IS_OK(update_login_attempts_status)) 
+-		{  
++		{
++			increment_bad_pw_count =
++				need_to_increment_bad_pw_count(auth_context,
++							       sampass,
++							       user_info);
++		}
++
++		if (increment_bad_pw_count) {
+ 			pdb_increment_bad_password_count(sampass);
+ 			updated_badpw = True;
+ 		} else {
+@@ -313,18 +397,21 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 						      &updated_badpw);
+ 		}
+ 		if (updated_autolock || updated_badpw){
++			NTSTATUS status;
++
+ 			become_root();
+-			if(!NT_STATUS_IS_OK(pdb_update_sam_account(sampass)))
+-				DEBUG(1, ("Failed to modify entry.\n"));
++			status = pdb_update_sam_account(sampass);
+ 			unbecome_root();
++
++			if (!NT_STATUS_IS_OK(status)) {
++				DEBUG(1, ("Failed to modify entry: %s\n",
++					  nt_errstr(status)));
++			}
+ 		}
+-		data_blob_free(&user_sess_key);
+-		data_blob_free(&lm_sess_key);
+-		TALLOC_FREE(sampass);
+-		return nt_status;
++		goto done;
+ 	}
+ 
+-	if ((pdb_get_acct_ctrl(sampass) & ACB_NORMAL) && 
++	if ((acct_ctrl & ACB_NORMAL) &&
+ 	    (pdb_get_bad_password_count(sampass) > 0)){
+ 		pdb_set_bad_password_count(sampass, 0, PDB_CHANGED);
+ 		pdb_set_bad_password_time(sampass, 0, PDB_CHANGED);
+@@ -332,30 +419,32 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 	}
+ 
+ 	if (updated_autolock || updated_badpw){
++		NTSTATUS status;
++
+ 		become_root();
+-		if(!NT_STATUS_IS_OK(pdb_update_sam_account(sampass)))
+-			DEBUG(1, ("Failed to modify entry.\n"));
++		status = pdb_update_sam_account(sampass);
+ 		unbecome_root();
+- 	}
++
++		if (!NT_STATUS_IS_OK(status)) {
++			DEBUG(1, ("Failed to modify entry: %s\n",
++				  nt_errstr(status)));
++		}
++	}
+ 
+ 	nt_status = sam_account_ok(mem_ctx, sampass, user_info);
+ 
+ 	if (!NT_STATUS_IS_OK(nt_status)) {
+-		TALLOC_FREE(sampass);
+-		data_blob_free(&user_sess_key);
+-		data_blob_free(&lm_sess_key);
+-		return nt_status;
++		goto done;
+ 	}
+ 
+ 	become_root();
+ 	nt_status = make_server_info_sam(server_info, sampass);
+ 	unbecome_root();
++	sampass = NULL;
+ 
+ 	if (!NT_STATUS_IS_OK(nt_status)) {
+ 		DEBUG(0,("check_sam_security: make_server_info_sam() failed with '%s'\n", nt_errstr(nt_status)));
+-		data_blob_free(&user_sess_key);
+-		data_blob_free(&lm_sess_key);
+-		return nt_status;
++		goto done;
+ 	}
+ 
+ 	(*server_info)->user_session_key =
+@@ -370,6 +459,10 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 
+ 	(*server_info)->nss_token |= user_info->was_mapped;
+ 
++done:
++	TALLOC_FREE(sampass);
++	data_blob_free(&user_sess_key);
++	data_blob_free(&lm_sess_key);
+ 	return nt_status;
+ }
+ 
+diff --git a/source3/include/proto.h b/source3/include/proto.h
+index d2ae62c..2c72bc6 100644
+--- a/source3/include/proto.h
++++ b/source3/include/proto.h
+@@ -6179,6 +6179,9 @@ NTSTATUS pass_oem_change(char *user,
+ 			 uchar password_encrypted_with_nt_hash[516],
+ 			 const uchar old_nt_hash_encrypted[16],
+ 			 uint32 *reject_reason);
++bool password_in_history(uint8_t nt_pw[NT_HASH_LEN],
++			 uint32_t pw_history_len,
++			 const uint8_t *pw_history);
+ NTSTATUS change_oem_password(struct samu *hnd, char *old_passwd, char *new_passwd, bool as_root, uint32 *samr_reject_reason);
+ 
+ /* The following definitions come from smbd/close.c  */
+diff --git a/source3/passdb/pdb_get_set.c b/source3/passdb/pdb_get_set.c
+index c79caf2..6e6b82b 100644
+--- a/source3/passdb/pdb_get_set.c
++++ b/source3/passdb/pdb_get_set.c
+@@ -979,6 +979,9 @@ bool pdb_set_plaintext_passwd(struct samu *sampass, const char *plaintext)
+ {
+ 	uchar new_lanman_p16[LM_HASH_LEN];
+ 	uchar new_nt_p16[NT_HASH_LEN];
++	uchar *pwhistory;
++	uint32 pwHistLen;
++	uint32 current_history_len;
+ 
+ 	if (!plaintext)
+ 		return False;
+@@ -1008,68 +1011,79 @@ bool pdb_set_plaintext_passwd(struct samu *sampass, const char *plaintext)
+ 	if (!pdb_set_pass_last_set_time (sampass, time(NULL), PDB_CHANGED))
+ 		return False;
+ 
+-	/* Store the password history. */
+-	if (pdb_get_acct_ctrl(sampass) & ACB_NORMAL) {
+-		uchar *pwhistory;
+-		uint32 pwHistLen;
+-		pdb_get_account_policy(AP_PASSWORD_HISTORY, &pwHistLen);
+-		if (pwHistLen != 0){
+-			uint32 current_history_len;
+-			/* We need to make sure we don't have a race condition here - the
+-			   account policy history length can change between when the pw_history
+-			   was first loaded into the struct samu struct and now.... JRA. */
+-			pwhistory = (uchar *)pdb_get_pw_history(sampass, &current_history_len);
+-
+-			if (current_history_len != pwHistLen) {
+-				/* After closing and reopening struct samu the history
+-					values will sync up. We can't do this here. */
+-
+-				/* current_history_len > pwHistLen is not a problem - we
+-					have more history than we need. */
+-
+-				if (current_history_len < pwHistLen) {
+-					/* Ensure we have space for the needed history. */
+-					uchar *new_history = (uchar *)TALLOC(sampass,
+-								pwHistLen*PW_HISTORY_ENTRY_LEN);
+-					if (!new_history) {
+-						return False;
+-					}
+-
+-					/* And copy it into the new buffer. */
+-					if (current_history_len) {
+-						memcpy(new_history, pwhistory,
+-							current_history_len*PW_HISTORY_ENTRY_LEN);
+-					}
+-					/* Clearing out any extra space. */
+-					memset(&new_history[current_history_len*PW_HISTORY_ENTRY_LEN],
+-						'\0', (pwHistLen-current_history_len)*PW_HISTORY_ENTRY_LEN);
+-					/* Finally replace it. */
+-					pwhistory = new_history;
+-				}
+-			}
+-			if (pwhistory && pwHistLen){
+-				/* Make room for the new password in the history list. */
+-				if (pwHistLen > 1) {
+-					memmove(&pwhistory[PW_HISTORY_ENTRY_LEN],
+-						pwhistory, (pwHistLen -1)*PW_HISTORY_ENTRY_LEN );
+-				}
+-				/* Create the new salt as the first part of the history entry. */
+-				generate_random_buffer(pwhistory, PW_HISTORY_SALT_LEN);
+-
+-				/* Generate the md5 hash of the salt+new password as the second
+-					part of the history entry. */
+-
+-				E_md5hash(pwhistory, new_nt_p16, &pwhistory[PW_HISTORY_SALT_LEN]);
+-				pdb_set_pw_history(sampass, pwhistory, pwHistLen, PDB_CHANGED);
+-			} else {
+-				DEBUG (10,("pdb_get_set.c: pdb_set_plaintext_passwd: pwhistory was NULL!\n"));
+-			}
+-		} else {
+-			/* Set the history length to zero. */
+-			pdb_set_pw_history(sampass, NULL, 0, PDB_CHANGED);
++	if ((pdb_get_acct_ctrl(sampass) & ACB_NORMAL) == 0) {
++		/*
++		 * No password history for non-user accounts
++		 */
++		return true;
++	}
++
++	pdb_get_account_policy(AP_PASSWORD_HISTORY, &pwHistLen);
++
++	if (pwHistLen == 0) {
++		/* Set the history length to zero. */
++		pdb_set_pw_history(sampass, NULL, 0, PDB_CHANGED);
++		return true;
++	}
++
++	/*
++	 * We need to make sure we don't have a race condition here -
++	 * the account policy history length can change between when
++	 * the pw_history was first loaded into the struct samu struct
++	 * and now.... JRA.
++	 */
++	pwhistory = (uchar *)pdb_get_pw_history(sampass, &current_history_len);
++
++	if ((current_history_len != 0) && (pwhistory == NULL)) {
++		DEBUG(1, ("pdb_set_plaintext_passwd: pwhistory == NULL!\n"));
++		return false;
++	}
++
++	if (current_history_len < pwHistLen) {
++		/*
++		 * Ensure we have space for the needed history. This
++		 * also takes care of an account which did not have
++		 * any history at all so far, i.e. pwhistory==NULL
++		 */
++		uchar *new_history = talloc_zero_array(
++			sampass, uchar,
++			pwHistLen*PW_HISTORY_ENTRY_LEN);
++
++		if (!new_history) {
++			return False;
+ 		}
++
++		memcpy(new_history, pwhistory,
++		       current_history_len*PW_HISTORY_ENTRY_LEN);
++
++		pwhistory = new_history;
+ 	}
+ 
++	/*
++	 * Make room for the new password in the history list.
++	 */
++	if (pwHistLen > 1) {
++		memmove(&pwhistory[PW_HISTORY_ENTRY_LEN], pwhistory,
++			(pwHistLen-1)*PW_HISTORY_ENTRY_LEN );
++	}
++
++	/*
++	 * Fill the salt area with 0-s: this indicates that
++	 * a plain nt has is stored in the has area.
++	 * The old format was to store a 16 byte salt and
++	 * then an md5hash of the nt_hash concatenated with
++	 * the salt.
++	 */
++	memset(pwhistory, 0, PW_HISTORY_SALT_LEN);
++
++	/*
++	 * Generate the md5 hash of the salt+new password as the
++	 * second part of the history entry.
++	 */
++	memcpy(&pwhistory[PW_HISTORY_SALT_LEN], new_nt_p16, SALTED_MD5_HASH_LEN);
++
++	pdb_set_pw_history(sampass, pwhistory, pwHistLen, PDB_CHANGED);
++
+ 	return True;
+ }
+ 
+diff --git a/source3/smbd/chgpasswd.c b/source3/smbd/chgpasswd.c
+index 61c3afb..046cc2c 100644
+--- a/source3/smbd/chgpasswd.c
++++ b/source3/smbd/chgpasswd.c
+@@ -1007,6 +1007,59 @@ static NTSTATUS check_oem_password(const char *user,
+ 	return NT_STATUS_WRONG_PASSWORD;
+ }
+ 
++bool password_in_history(uint8_t nt_pw[NT_HASH_LEN],
++			 uint32_t pw_history_len,
++			 const uint8_t *pw_history)
++{
++	static const uint8_t zero_md5_nt_pw[SALTED_MD5_HASH_LEN] = { 0, };
++	int i;
++
++	dump_data(100, nt_pw, NT_HASH_LEN);
++	dump_data(100, pw_history, PW_HISTORY_ENTRY_LEN * pw_history_len);
++
++	for (i=0; i<pw_history_len; i++) {
++		uint8_t new_nt_pw_salted_md5_hash[SALTED_MD5_HASH_LEN];
++		const uint8_t *current_salt;
++		const uint8_t *old_nt_pw_salted_md5_hash;
++
++		current_salt = &pw_history[i*PW_HISTORY_ENTRY_LEN];
++		old_nt_pw_salted_md5_hash = current_salt + PW_HISTORY_SALT_LEN;
++
++		if (memcmp(zero_md5_nt_pw, old_nt_pw_salted_md5_hash,
++			   SALTED_MD5_HASH_LEN) == 0) {
++			/* Ignore zero valued entries. */
++			continue;
++		}
++
++		if (memcmp(zero_md5_nt_pw, current_salt,
++			   PW_HISTORY_SALT_LEN) == 0)
++		{
++			/*
++			 * New format: zero salt and then plain nt hash.
++			 * Directly compare the hashes.
++			 */
++			if (memcmp(nt_pw, old_nt_pw_salted_md5_hash,
++				   SALTED_MD5_HASH_LEN) == 0)
++			{
++				return true;
++			}
++		} else {
++			/*
++			 * Old format: md5sum of salted nt hash.
++			 * Create salted version of new pw to compare.
++			 */
++			E_md5hash(current_salt, nt_pw, new_nt_pw_salted_md5_hash);
++
++			if (memcmp(new_nt_pw_salted_md5_hash,
++				   old_nt_pw_salted_md5_hash,
++				   SALTED_MD5_HASH_LEN) == 0) {
++				return true;
++			}
++		}
++	}
++	return false;
++}
++
+ /***********************************************************
+  This routine takes the given password and checks it against
+  the password history. Returns True if this password has been
+@@ -1016,11 +1069,8 @@ static NTSTATUS check_oem_password(const char *user,
+ static bool check_passwd_history(struct samu *sampass, const char *plaintext)
+ {
+ 	uchar new_nt_p16[NT_HASH_LEN];
+-	uchar zero_md5_nt_pw[SALTED_MD5_HASH_LEN];
+ 	const uint8 *nt_pw;
+ 	const uint8 *pwhistory;
+-	bool found = False;
+-	int i;
+ 	uint32 pwHisLen, curr_pwHisLen;
+ 
+ 	pdb_get_account_policy(AP_PASSWORD_HISTORY, &pwHisLen);
+@@ -1047,30 +1097,13 @@ static bool check_passwd_history(struct samu *sampass, const char *plaintext)
+ 		return True;
+ 	}
+ 
+-	dump_data(100, new_nt_p16, NT_HASH_LEN);
+-	dump_data(100, pwhistory, PW_HISTORY_ENTRY_LEN*pwHisLen);
+-
+-	memset(zero_md5_nt_pw, '\0', SALTED_MD5_HASH_LEN);
+-	for (i=0; i<pwHisLen; i++) {
+-		uchar new_nt_pw_salted_md5_hash[SALTED_MD5_HASH_LEN];
+-		const uchar *current_salt = &pwhistory[i*PW_HISTORY_ENTRY_LEN];
+-		const uchar *old_nt_pw_salted_md5_hash = &pwhistory[(i*PW_HISTORY_ENTRY_LEN)+
+-							PW_HISTORY_SALT_LEN];
+-		if (!memcmp(zero_md5_nt_pw, old_nt_pw_salted_md5_hash, SALTED_MD5_HASH_LEN)) {
+-			/* Ignore zero valued entries. */
+-			continue;
+-		}
+-		/* Create salted versions of new to compare. */
+-		E_md5hash(current_salt, new_nt_p16, new_nt_pw_salted_md5_hash);
+-
+-		if (!memcmp(new_nt_pw_salted_md5_hash, old_nt_pw_salted_md5_hash, SALTED_MD5_HASH_LEN)) {
+-			DEBUG(1,("check_passwd_history: proposed new password for user %s found in history list !\n",
+-				pdb_get_username(sampass) ));
+-			found = True;
+-			break;
+-		}
++	if (password_in_history(new_nt_p16, pwHisLen, pwhistory)) {
++		DEBUG(1,("check_passwd_history: proposed new password for "
++			 "user %s found in history list !\n",
++			 pdb_get_username(sampass) ));
++		return true;
+ 	}
+-	return found;
++	return false;
+ }
+ 
+ /***********************************************************
+@@ -1116,7 +1149,7 @@ NTSTATUS change_oem_password(struct samu *hnd, char *old_passwd, char *new_passw
+ 		}
+ 	}
+ 
+-	/* removed calculation here, becuase passdb now calculates
++	/* removed calculation here, because passdb now calculates
+ 	   based on policy.  jmcd */
+ 	if ((can_change_time != 0) && (time(NULL) < can_change_time)) {
+ 		DEBUG(1, ("user %s cannot change password now, must "
+commit 70063522065ab3e5a21fb11db0097b808aa11100
+Author: Björn Jacke <bj@sernet.de>
+Date:   Sat Oct 31 00:45:09 2009 +0100
+
+    s3:ldap: don't search when no values where found
+
+diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
+index 54cb03d..87df75e 100644
+--- a/source3/passdb/pdb_ldap.c
++++ b/source3/passdb/pdb_ldap.c
+@@ -2683,7 +2683,7 @@ static NTSTATUS ldapsam_enum_group_members(struct pdb_methods *methods,
+ 
+ 	values = ldap_get_values(conn->ldap_struct, entry, "memberUid");
+ 
+-	if (values) {
++	if ((values != NULL) && (values[0] != NULL)) {
+ 
+ 		filter = talloc_asprintf(mem_ctx, "(&(objectClass=%s)(|", LDAP_OBJ_SAMBASAMACCOUNT);
+ 		if (filter == NULL) {
+--- a/source3/utils/net_rpc.c	2009-10-28 11:37:35.336126630 +0100
++++ b/source3/utils/net_rpc.c	2009-10-28 14:18:50.555361309 +0100
+@@ -5709,7 +5709,9 @@
+ 					const char **argv)
+ {
+ 	fstring str_sid;
+-	sid_to_fstring(str_sid, domain_sid);
++	if (!sid_to_fstring(str_sid, domain_sid)) {
++		return NT_STATUS_UNSUCCESSFUL;
++	}
+ 	d_printf("%s\n", str_sid);
+ 	return NT_STATUS_OK;
+ }
+@@ -6182,14 +6184,14 @@
+ 					    &ndr_table_lsarpc.syntax_id, 0,
+ 					    rpc_query_domain_sid, argc,
+ 					    argv))
+-					d_fprintf(stderr, "couldn't get domain's sid\n");
++					d_printf("strange - couldn't get domain's sid\n");
+ 
+ 				cli_shutdown(remote_cli);
+-
+ 			} else {
+ 				d_fprintf(stderr, "domain controller is not "
+ 					  "responding: %s\n",
+ 					  nt_errstr(nt_status));
++				d_printf("couldn't get domain's sid\n");
+ 			};
+ 		};
+ 
+commit 72cec4a03145e11d299a5b679bb4a7ed6818032b
+Author: Björn Jacke <bj@sernet.de>
+Date:   Fri Oct 30 21:50:41 2009 +0100
+
+    ѕ3:ldap: search for account policies in objectclass sambaDomain, not *
+
+diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
+index c464a88..54cb03d 100644
+--- a/source3/passdb/pdb_ldap.c
++++ b/source3/passdb/pdb_ldap.c
+@@ -3864,6 +3864,7 @@ static NTSTATUS ldapsam_get_account_policy_from_ldap(struct pdb_methods *methods
+ 	int count;
+ 	int rc;
+ 	char **vals = NULL;
++	char *filter;
+ 	const char *policy_attr = NULL;
+ 
+ 	struct ldapsam_privates *ldap_state =
+@@ -3887,8 +3888,12 @@ static NTSTATUS ldapsam_get_account_policy_from_ldap(struct pdb_methods *methods
+ 	attrs[0] = policy_attr;
+ 	attrs[1] = NULL;
+ 
++	filter = talloc_asprintf(NULL, "(objectClass=%s)", LDAP_OBJ_DOMINFO);
++	if (filter == NULL) {
++		return NT_STATUS_NO_MEMORY;
++	}
+ 	rc = smbldap_search(ldap_state->smbldap_state, ldap_state->domain_dn,
+-			    LDAP_SCOPE_BASE, "(objectclass=*)", attrs, 0,
++			    LDAP_SCOPE_BASE, filter, attrs, 0,
+ 			    &result);
+ 
+ 	if (rc != LDAP_SUCCESS) {
+commit b6afe7ef236a454d8a6abf104b8846f817378f73
+Author: Björn Jacke <bj@sernet.de>
+Date:   Thu Oct 15 02:02:30 2009 +0200
+
+    util: cope the all loopback addresses IPv4 knows
+    
+    The fact that we just recogniced 127.0.0.1 as loopback IP address and not the
+    rest of the 127.0.0.0/8 IP address range we used the lo interface for sending
+    packages even though we should send them to some more physical interface. This
+    way we ended up with failing WINS registration and so on like in #6348.
+    On the lo interface sendto() returned "Invalid Argument" (EINVAL).
+
+diff --git a/lib/util/util_net.c b/lib/util/util_net.c
+index 0ce495e..0511a28 100644
+--- a/lib/util/util_net.c
++++ b/lib/util/util_net.c
+@@ -351,13 +351,11 @@ bool is_broadcast_addr(const struct sockaddr *pss)
+ }
+ 
+ /**
+- * Check if an IPv7 is 127.0.0.1
++ * Check if an IPv4 is in IN_LOOPBACKNET (127.0.0.0/8)
+  */
+ bool is_loopback_ip_v4(struct in_addr ip)
+ {
+-	struct in_addr a;
+-	a.s_addr = htonl(INADDR_LOOPBACK);
+-	return(ip.s_addr == a.s_addr);
++	return ((ntohl(ip.s_addr) & IN_CLASSA_NET) == (IN_LOOPBACKNET << IN_CLASSA_NSHIFT));
+ }
+ 
+ /**
+From 144c23893ec580eed1a38b2fd577b4bd4ebf491d Mon Sep 17 00:00:00 2001
+From: Michael Adam <obnox@samba.org>
+Date: Sat, 14 Nov 2009 01:12:22 +0100
+Subject: [PATCH] s3:is_trusted_domain: shortcut if domain name is NULL or empty
+
+This saves some roundtrips to LDAP in an ldapsm setup.
+
+Michael
+---
+ source3/auth/auth_util.c |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+diff --git a/source3/auth/auth_util.c b/source3/auth/auth_util.c
+index 1d25e22..512cae0 100644
+--- a/source3/auth/auth_util.c
++++ b/source3/auth/auth_util.c
+@@ -2181,6 +2181,10 @@ bool is_trusted_domain(const char* dom_name)
+	if ( lp_server_role() == ROLE_STANDALONE )
+		return False;
+
++	if (dom_name == NULL || dom_name[0] == '\0') {
++		return false;
++	}
++
+	/* if we are a DC, then check for a direct trust relationships */
+
+	if ( IS_DC ) {
+--
+1.6.0.4
+
+
+From 2e3d9abeafebffa6ff1c7b3de80525cd5f6deb49 Mon Sep 17 00:00:00 2001
+From: Michael Adam <obnox@samba.org>
+Date: Sat, 14 Nov 2009 01:21:42 +0100
+Subject: [PATCH] s3:is_trusted_domain: shortcut if domain name == global_sam_name
+
+A domain can't have a trust with itself.
+This saves some roundtrips to the ldap server for ldapsam.
+
+Michael
+---
+ source3/auth/auth_util.c |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+diff --git a/source3/auth/auth_util.c b/source3/auth/auth_util.c
+index 512cae0..118f41c 100644
+--- a/source3/auth/auth_util.c
++++ b/source3/auth/auth_util.c
+@@ -2185,6 +2185,10 @@ bool is_trusted_domain(const char* dom_name)
+		return false;
+	}
+
++	if (strequal(dom_name, get_global_sam_name())) {
++		return false;
++	}
++
+	/* if we are a DC, then check for a direct trust relationships */
+
+	if ( IS_DC ) {
+--
+1.6.0.4
+
+From 1f88d2b729a273b0d10e3b57695037dede290baf Mon Sep 17 00:00:00 2001
+From: Michael Adam <obnox@samba.org>
+Date: Fri, 13 Nov 2009 15:51:33 +0100
+Subject: [PATCH] s3:smbd: make idmap cache persistent for "ldapsam:trusted".
+
+This stores the mappings found in the idmap cache (which lives
+inside gencache). This cache is already read in sid_to_Xid()
+and Xid_to_sid() for ldapsam:trusted, this fills the opposite
+direction, massively reducing the number of ldap roundtrips
+across smbd restarts.
+
+Michael
+---
+ source3/passdb/pdb_ldap.c |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
+index d4a2fbe..7fda72e 100644
+--- a/source3/passdb/pdb_ldap.c
++++ b/source3/passdb/pdb_ldap.c
+@@ -1038,6 +1038,7 @@ static bool init_sam_from_ldap(struct ldapsam_privates *ldap_state,
+ 			/* We've got a uid, feed the cache */
+ 			uid_t uid = strtoul(temp, NULL, 10);
+ 			store_uid_sid_cache(pdb_get_user_sid(sampass), uid);
++			idmap_cache_set_sid2uid(pdb_get_user_sid(sampass), uid);
+ 		}
+ 	}
+ 
+@@ -2449,6 +2450,7 @@ for gidNumber(%lu)\n",(unsigned long)map->gid));
+ 
+ 	if (lp_parm_bool(-1, "ldapsam", "trusted", false)) {
+ 		store_gid_sid_cache(&map->sid, map->gid);
++		idmap_cache_set_sid2gid(&map->sid, map->gid);
+ 	}
+ 
+ 	TALLOC_FREE(ctx);
+@@ -4967,6 +4969,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
+ 
+ 		id->gid = strtoul(gid_str, NULL, 10);
+ 		*type = (enum lsa_SidType)strtoul(value, NULL, 10);
++		idmap_cache_set_sid2gid(sid, id->gid);
+ 		ret = True;
+ 		goto done;
+ 	}
+@@ -4983,6 +4986,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
+ 
+ 	id->uid = strtoul(value, NULL, 10);
+ 	*type = SID_NAME_USER;
++	idmap_cache_set_sid2uid(sid, id->uid);
+ 
+ 	ret = True;
+  done:
+-- 
+1.6.0.4
+
+
+From a582d52c6180d334d42f4e3d27a455e5fce53d53 Mon Sep 17 00:00:00 2001
+From: Michael Adam <obnox@samba.org>
+Date: Fri, 13 Nov 2009 16:16:50 +0100
+Subject: [PATCH] s3:smbd: also fill the memcache with sid<->id mappings in ldapsam_sid_to_id()
+
+not only the persistent idmap cache.
+
+Michael
+---
+ source3/passdb/pdb_ldap.c |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
+index 7fda72e..cce2cf1 100644
+--- a/source3/passdb/pdb_ldap.c
++++ b/source3/passdb/pdb_ldap.c
+@@ -4969,6 +4969,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
+ 
+ 		id->gid = strtoul(gid_str, NULL, 10);
+ 		*type = (enum lsa_SidType)strtoul(value, NULL, 10);
++		store_gid_sid_cache(sid, id->gid);
+ 		idmap_cache_set_sid2gid(sid, id->gid);
+ 		ret = True;
+ 		goto done;
+@@ -4986,6 +4987,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
+ 
+ 	id->uid = strtoul(value, NULL, 10);
+ 	*type = SID_NAME_USER;
++	store_uid_sid_cache(sid, id->uid);
+ 	idmap_cache_set_sid2uid(sid, id->uid);
+ 
+ 	ret = True;
+-- 
+1.6.0.4
+
+From d90798e8fa1f56a60cf0260dd8679bc11c41603b Mon Sep 17 00:00:00 2001
+From: Michael Adam <obnox@samba.org>
+Date: Mon, 16 Nov 2009 11:37:18 +0100
+Subject: [PATCH] s3: shortcut uid_to_sid when "ldapsam:trusted = yes"
+
+The normal uid_to_sid behaviour is to call sys_getpwuid()
+to get the name for the given uid and then call the
+getsampwnam passdb method for the resulting name.
+
+In the ldapsam:trusted case we can reduce the uid_to_sid
+operation to one simple search for the uidNumber attribute
+and only get the sambaSID attribute from the correspoinding
+LDAP object. This reduces the number of ldap roundtrips
+for this operation.
+
+Michael
+---
+ source3/passdb/pdb_ldap.c |   75 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 75 insertions(+), 0 deletions(-)
+
+diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
+index cce2cf1..401bf95 100644
+--- a/source3/passdb/pdb_ldap.c
++++ b/source3/passdb/pdb_ldap.c
+@@ -4996,6 +4996,80 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
+	return ret;
+ }
+
++/**
++ * Find the SID for a uid.
++ * This is shortcut is only used if ldapsam:trusted is set to true.
++ */
++static bool ldapsam_uid_to_sid(struct pdb_methods *methods, uid_t uid,
++			       DOM_SID *sid)
++{
++	struct ldapsam_privates *priv =
++		(struct ldapsam_privates *)methods->private_data;
++	char *filter;
++	const char *attrs[] = { "sambaSID", NULL };
++	LDAPMessage *result = NULL;
++	LDAPMessage *entry = NULL;
++	bool ret = false;
++	char *user_sid_string;
++	DOM_SID *user_sid;
++	int rc;
++	TALLOC_CTX *tmp_ctx = talloc_stackframe();
++
++	filter = talloc_asprintf(tmp_ctx,
++				 "(&(uidNumber=%u)"
++				 "(objectClass=%s)"
++				 "(objectClass=%s))",
++				 (unsigned int)uid,
++				 LDAP_OBJ_POSIXACCOUNT,
++				 LDAP_OBJ_SAMBASAMACCOUNT);
++	if (filter == NULL) {
++		DEBUG(3, ("talloc_asprintf failed\n"));
++		goto done;
++	}
++
++	rc = smbldap_search_suffix(priv->smbldap_state, filter, attrs, &result);
++	if (rc != LDAP_SUCCESS) {
++		goto done;
++	}
++	talloc_autofree_ldapmsg(tmp_ctx, result);
++
++	if (ldap_count_entries(priv2ld(priv), result) != 1) {
++		DEBUG(3, ("ERROR: Got %d entries for uid %u, expected one\n",
++			   ldap_count_entries(priv2ld(priv), result),
++			   (unsigned int)uid));
++		goto done;
++	}
++
++	entry = ldap_first_entry(priv2ld(priv), result);
++
++	user_sid_string = smbldap_talloc_single_attribute(priv2ld(priv), entry,
++							  "sambaSID", tmp_ctx);
++	if (user_sid_string == NULL) {
++		DEBUG(1, ("Could not find sambaSID in object '%s'\n",
++			  smbldap_talloc_dn(tmp_ctx, priv2ld(priv), entry)));
++		goto done;
++	}
++
++	user_sid = string_sid_talloc(tmp_ctx, user_sid_string);
++	if (user_sid == NULL) {
++		DEBUG(3, ("Error calling sid_string_talloc for sid '%s'\n",
++			  user_sid_string));
++		goto done;
++	}
++
++	sid_copy(sid, user_sid);
++
++	store_uid_sid_cache(sid, uid);
++	idmap_cache_set_sid2uid(sid, uid);
++
++	ret = true;
++
++ done:
++	TALLOC_FREE(tmp_ctx);
++	return ret;
++}
++
++
+ /*
+  * The following functions is called only if
+  * ldapsam:trusted and ldapsam:editposix are
+@@ -6344,6 +6418,7 @@ NTSTATUS pdb_init_ldapsam(struct pdb_methods **pdb_method, const char *location)
+			ldapsam_enum_group_memberships;
+		(*pdb_method)->lookup_rids = ldapsam_lookup_rids;
+		(*pdb_method)->sid_to_id = ldapsam_sid_to_id;
++		(*pdb_method)->uid_to_sid = ldapsam_uid_to_sid;
+
+		if (lp_parm_bool(-1, "ldapsam", "editposix", False)) {
+			(*pdb_method)->create_user = ldapsam_create_user;
+--
+1.6.0.4
+
+From 179e63ae9aa93984ea3d237c1039460c5acf01a5 Mon Sep 17 00:00:00 2001
+From: Michael Adam <obnox@samba.org>
+Date: Thu, 14 Jan 2010 14:24:35 +0100
+Subject: [PATCH] s3:auth: fix account unlock regression introduced with fix for bug #4347
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+By an oversight, the patchset for #4347 made the unlocking of a locked
+account after the lockout duration ineffective.
+Thanks to Björn for finding this!
+
+Michael
+---
+ source3/auth/auth_sam.c |   12 +++++-------
+ 1 files changed, 5 insertions(+), 7 deletions(-)
+
+diff --git a/source3/auth/auth_sam.c b/source3/auth/auth_sam.c
+index 1dd8fc9..01b2517 100644
+--- a/source3/auth/auth_sam.c
++++ b/source3/auth/auth_sam.c
+@@ -369,7 +369,6 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 	DATA_BLOB user_sess_key = data_blob_null;
+ 	DATA_BLOB lm_sess_key = data_blob_null;
+ 	bool updated_autolock = False, updated_badpw = False;
+-	uint32_t acct_ctrl;
+ 	const char *username;
+ 	const uint8_t *nt_pw;
+ 	const uint8_t *lm_pw;
+@@ -399,22 +398,21 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 		return NT_STATUS_NO_SUCH_USER;
+ 	}
+ 
+-	acct_ctrl = pdb_get_acct_ctrl(sampass);
+ 	username = pdb_get_username(sampass);
+ 	nt_pw = pdb_get_nt_passwd(sampass);
+ 	lm_pw = pdb_get_lanman_passwd(sampass);
+ 
+ 	/* see if autolock flag needs to be updated */
+-	if (acct_ctrl & ACB_NORMAL)
++	if (pdb_get_acct_ctrl(sampass) & ACB_NORMAL)
+ 		pdb_update_autolock_flag(sampass, &updated_autolock);
+ 	/* Quit if the account was locked out. */
+-	if (acct_ctrl & ACB_AUTOLOCK) {
++	if (pdb_get_acct_ctrl(sampass) & ACB_AUTOLOCK) {
+ 		DEBUG(3,("check_sam_security: Account for user %s was locked out.\n", username));
+ 		return NT_STATUS_ACCOUNT_LOCKED_OUT;
+ 	}
+ 
+ 	nt_status = sam_password_ok(auth_context, mem_ctx,
+-				    username, acct_ctrl, lm_pw, nt_pw,
++				    username, pdb_get_acct_ctrl(sampass), lm_pw, nt_pw,
+ 				    user_info, &user_sess_key, &lm_sess_key);
+ 
+ 	/* Notify passdb backend of login success/failure. If not 
+@@ -426,7 +424,7 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 		bool increment_bad_pw_count = false;
+ 
+ 		if (NT_STATUS_EQUAL(nt_status,NT_STATUS_WRONG_PASSWORD) && 
+-		    acct_ctrl & ACB_NORMAL &&
++		    pdb_get_acct_ctrl(sampass) & ACB_NORMAL &&
+ 		    NT_STATUS_IS_OK(update_login_attempts_status)) 
+ 		{
+ 			increment_bad_pw_count =
+@@ -457,7 +455,7 @@ static NTSTATUS check_sam_security(const struct auth_context *auth_context,
+ 		goto done;
+ 	}
+ 
+-	if ((acct_ctrl & ACB_NORMAL) &&
++	if ((pdb_get_acct_ctrl(sampass) & ACB_NORMAL) &&
+ 	    (pdb_get_bad_password_count(sampass) > 0)){
+ 		pdb_set_bad_password_count(sampass, 0, PDB_CHANGED);
+ 		pdb_set_bad_password_time(sampass, 0, PDB_CHANGED);
+-- 
+1.6.3.3
+
