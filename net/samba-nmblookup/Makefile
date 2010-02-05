@@ -11,9 +11,9 @@ PKGNAMESUFFIX=		-nmblookup
 
 COMMENT=		NetBIOS Name lookup tool
 
-CONFLICTS=		ja-samba-2.* ja-samba-3.* samba-2.* samba-3.*
+CONFLICTS=		ja-samba-[23].* samba-[2-4].*
 
-SAMBA_PORT?=		samba3
+SAMBA_PORT=		samba34
 SAMBA_SUBPORT=		yes
 
 MASTERDIR=		${.CURDIR}/../${SAMBA_PORT}
@@ -25,12 +25,12 @@ PLIST_FILES=		bin/nmblookup
 
 WITHOUT_ADS=		yes
 
-do-build:
-	cd ${WRKSRC} && ${MAKE} include/proto.h
-	cd ${WRKSRC} && ${MAKE} bin/nmblookup
+ALL_TARGET=		libtdb bin/nmblookup
 
 do-install:
+	-@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nmblookup ${PREFIX}/bin
+	-@${MKDIR} ${MAN1PREFIX}/man/man1 ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/nmblookup.1 ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/smb.conf.5 ${MAN5PREFIX}/man/man5
 
