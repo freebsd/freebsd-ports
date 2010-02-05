@@ -4,4 +4,6 @@ and 3DES ciphers, and the MD2, MD4, MD5, SHA1, and SHA256 hashes.
 Support is also included for X.509 certificate structures, 
 as well as an internal PRNG.  
 
-WWW: http://xyssl.org
+LICENSE: BSD
+
+WWW: http://xyssl.org/
