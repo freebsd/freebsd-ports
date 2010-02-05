@@ -6,22 +6,32 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	3.90
+PORTVERSION=	3.91
 PORTEPOCH=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
-DISTNAME=	rarbsd-3.9.0
+DISTNAME=	rarbsd-3.9.1
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	File archiver (binary port)
 
-IA32_BINARY_PORT=	YES
 RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
 PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
 		readme.txt
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if !defined(HAVE_COMPAT_IA32_KERN)
+HAVE_COMPAT_IA32_KERN!=	if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then ${ECHO_CMD} YES; fi
+.endif
+.if !defined(HAVE_COMPAT_IA32_KERN)
+IGNORE=	requires a kernel with compiled-in IA32 compatibility
+.endif
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${PREFIX}/bin/rar
@@ -37,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
