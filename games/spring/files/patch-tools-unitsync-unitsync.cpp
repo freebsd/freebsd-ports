@@ -1,13 +1,16 @@
---- tools/unitsync/unitsync.cpp.orig	2009-09-04 21:32:13.000000000 +0400
-+++ tools/unitsync/unitsync.cpp	2009-09-08 04:13:16.000000000 +0400
-@@ -264,7 +264,9 @@
+--- tools/unitsync/unitsync.cpp.orig	2010-01-31 20:03:33.000000000 +0300
++++ tools/unitsync/unitsync.cpp	2010-02-04 16:13:38.000000000 +0300
+@@ -259,8 +259,11 @@
+ EXPORT(int) Init(bool isServer, int id)
+ {
  	try {
- 		if (!logOutputInitialised)
- 		{
--			logOutput.SetFilename("unitsync.log");
+-		if (!logOutputInitialised)
+-			logOutput.SetFileName("unitsync.log");
++		if (!logOutputInitialised) {
 +			string fname = getenv("HOME");
 +			fname += "/.spring/unitsync.log";
-+			logOutput.SetFilename(fname.c_str());
- 			logOutput.Initialize();
- 			logOutputInitialised = true;
- 		}
++			logOutput.SetFileName(fname.c_str());
++		}
+ 		if (!configHandler)
+ 			ConfigHandler::Instantiate(); // use the default config file
+ 		FileSystemHandler::Initialize(false);
