@@ -7,7 +7,7 @@
 
 PORTNAME=	XBone
 PORTVERSION=	3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.isi.edu/xbone/software/xbone/
 
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/${PERL_ARCH}/IO/Socket/Multicast.pm:${PORTSDIR}/net/p5-IO-Socket-Multicast \
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
+		p5-IO-Socket-Multicast>=0.25:${PORTSDIR}/net/p5-IO-Socket-Multicast \
+		p5-IO-Socket-Multicast6>=0:${PORTSDIR}/net/p5-IO-Socket-Multicast6 \
 		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
@@ -47,5 +49,8 @@ INSTALL_TARGET=	node
 
 MAN5=		XB_Params.pm.5 xbone.conf.5
 MAN8=		X-Bone.8 xb-node-daemon.8 xb-node-control.8 xbonectl.8 xb-ldap-config.8
+
+post-patch:
+	${RM} -rf ${WRKSRC}/ports/*
 
 .include <bsd.port.mk>
