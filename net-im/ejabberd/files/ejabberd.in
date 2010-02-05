@@ -35,9 +35,10 @@ EJABBERDUSER=ejabberd
 ejabberd_status()
 {
     if ejabberd_checkstatus; then
-        echo "$name is running "
+        echo "$name is running."
     else
-        echo "$name is not running "
+        echo "$name is not running."
+        return 1
     fi
 }
 
@@ -48,32 +49,29 @@ ejabberd_checkstatus()
 
 ejabberd_start()
 {
-    echo -n "Starting $name: "
+    check_startmsgs && echo "Starting $name."
     su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node start"
-    echo "$name."
 }
 
 ejabberd_stop()
 {
-    echo -n "Stopping $name: "
+    echo "Stopping $name."
     if su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node stop"; then
 #        sleep 2
 #        killall -u ejabberd -kill
     else
-        echo -n " failed "
+        _run_rc_notrunning
     fi
-    echo "$name."
 }
 
 ejabberd_reload()
 {
-    echo -n "Restarting $name: "
+    echo "Restarting $name."
     if ejabberd_checkstatus; then
         su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node restart"
     else
         ejabberd_start
     fi
-    echo "$name."
 }
 
 load_rc_config $name
