@@ -1790,7 +1790,6 @@ conserver                       ports/comms/conserver
 conserver-com                   ports/comms/conserver-com
 consolehm                       ports/sysutils/consolehm
 consolekit                      ports/sysutils/consolekit
-conspire                        ports/irc/conspire
 construo                        ports/games/construo
 contact-lookup-applet           ports/mail/contact-lookup-applet
 contacts                        ports/deskutils/contacts
@@ -1947,6 +1946,7 @@ cube                            ports/games/cube
 cucipop                         ports/mail/cucipop
 cue2toc                         ports/audio/cue2toc
 cuecat                          ports/misc/cuecat
+cueplayer                       ports/audio/cueplayer
 cuetools                        ports/audio/cuetools
 cultivation                     ports/games/cultivation
 cuneiform                       ports/graphics/cuneiform
@@ -8188,6 +8188,7 @@ linux-f10-hicolor-icon-theme    ports/x11-themes/linux-f10-hicolor-icon-theme
 linux-f10-imlib                 ports/graphics/linux-f10-imlib
 linux-f10-jpeg                  ports/graphics/linux-f10-jpeg
 linux-f10-libGLU                ports/graphics/linux-f10-libGLU
+linux-f10-libasyncns            ports/dns/linux-f10-libasyncns
 linux-f10-libaudiofile          ports/audio/linux-f10-libaudiofile
 linux-f10-libg2c                ports/lang/linux-f10-libg2c
 linux-f10-libglade              ports/devel/linux-f10-libglade
@@ -8587,7 +8588,6 @@ lucene                          ports/textproc/lucene
 lucidlife                       ports/games/lucidlife
 luckybackup                     ports/sysutils/luckybackup
 ludia                           ports/databases/ludia
-lugtools                        ports/sysutils/lugtools
 luit                            ports/x11/luit
 luma                            ports/sysutils/luma
 luna                            ports/astro/luna
@@ -21538,6 +21538,7 @@ rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
 rubygem-extlib                  ports/devel/rubygem-extlib
+rubygem-ezamar                  ports/textproc/rubygem-ezamar
 rubygem-ezcrypto                ports/security/rubygem-ezcrypto
 rubygem-facets                  ports/devel/rubygem-facets
 rubygem-fastercsv               ports/devel/rubygem-fastercsv
@@ -22509,6 +22510,7 @@ squirrelmail-notes-plugin       ports/mail/squirrelmail-notes-plugin
 squirrelmail-notify-plugin      ports/mail/squirrelmail-notify-plugin
 squirrelmail-password_forget-plugin  ports/mail/squirrelmail-password_forget-plugin
 squirrelmail-plugins            ports/mail/squirrelmail-plugins
+squirrelmail-postfixadmin-plugin  ports/mail/squirrelmail-postfixadmin-plugin
 squirrelmail-pupdate-plugin     ports/mail/squirrelmail-pupdate-plugin
 squirrelmail-qmailadmin_login-plugin  ports/mail/squirrelmail-qmailadmin_login-plugin
 squirrelmail-quota_usage-plugin  ports/mail/squirrelmail-quota_usage-plugin
@@ -25426,6 +25428,7 @@ yydecode                        ports/news/yydecode
 yzis                            ports/editors/yzis
 z80-asm                         ports/devel/z80-asm
 z80asm                          ports/devel/z80asm
+z80ex                           ports/devel/z80ex
 z88                             ports/cad/z88
 zabbix-agent                    ports/net-mgmt/zabbix-agent
 zabbix-frontend                 ports/net-mgmt/zabbix-frontend
