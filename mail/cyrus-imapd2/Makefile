@@ -133,6 +133,10 @@ post-patch:
 				  -e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
 			${WRKSRC}/tools/mkimap
 
+post-build:
+	${FIND} ${WRKSRC}/perl -name Makefile -exec \
+	        ${REINPLACE_CMD} -i '' -E 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' {} \;
+
 post-install:
 .for f in ${CYRUS_MAN3}
 		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${f}
