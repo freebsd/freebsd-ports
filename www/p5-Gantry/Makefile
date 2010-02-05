@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.63
+PORTVERSION=	3.64
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exceptio
 		${SITE_PERL}/HTML/Prototype.pm:${PORTSDIR}/www/p5-HTML-Prototype \
 		${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
 		p5-Sub-Install>0:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-Mail-RFC822-Address>0:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
 		p5-Config-General>0:${PORTSDIR}/devel/p5-Config-General \
@@ -41,6 +42,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/HTML/Prototype.pm:${PORTSDIR}/www/p5-HTML-Prototype \
 		${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
 		p5-Sub-Install>0:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-Mail-RFC822-Address>0:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
 		p5-Config-General>0:${PORTSDIR}/devel/p5-Config-General \
