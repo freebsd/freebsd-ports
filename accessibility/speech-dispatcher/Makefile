@@ -88,6 +88,14 @@ CONFIGURE_ARGS+=	--without-pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-*
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
+.if ${OSVERSION} >= 700000 && ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		does not compile on amd64/7
+.endif
+
 post-extract:
 .if ${OSVERSION} < 800000
 	${CP} ${FILESDIR}/getline.* ${WRKSRC}/src
