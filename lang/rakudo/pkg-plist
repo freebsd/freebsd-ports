@@ -1,0 +1,13 @@
+bin/perl6
+lib/parrot/%%PARROT_VERSION%%/dynext/perl6_group.so
+lib/parrot/%%PARROT_VERSION%%/dynext/perl6_ops.so
+lib/parrot/%%PARROT_VERSION%%/dynext/perl6_ops_switch.so
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Safe.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
+@dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib
+@dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6
+@dirrm lib/parrot/%%PARROT_VERSION%%/languages
+@dirrm lib/parrot/%%PARROT_VERSION%%/dynext
+@dirrm lib/parrot/%%PARROT_VERSION%%
+@dirrm lib/parrot
