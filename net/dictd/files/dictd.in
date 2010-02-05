@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/net/dictd/files/Attic/dictd.sh.in,v 1.1 2006-04-14 06:10:26 edwin Exp $
+# $FreeBSD$
 #
 # PROVIDE: dictd
 # REQUIRE: DAEMON

@@ -19,7 +19,7 @@ LIB_DEPENDS=	maa.2:${PORTSDIR}/devel/libmaa
 MAN1=		dictzip.1
 MAN8=		dictd.8
 
-USE_RC_SUBR=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}
 USE_BISON=	build
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-SUB_FILES+=	pkg-message
+SUB_FILES+=	dictd.conf pkg-message
 SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
 USE_GMAKE=	yes
@@ -43,7 +43,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|\([\ \t(]\)T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
 
 post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/${PORTNAME}.conf > ${PREFIX}/etc/${PORTNAME}.conf.sample
+	@${CP} ${WRKDIR}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
 	@[ -f ${PREFIX}/etc/${PORTNAME}.conf ] || ${CP} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
 	@${CAT} ${PKGMESSAGE}
 
