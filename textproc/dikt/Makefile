@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	2
+PORTVERSION=	2a
 CATEGORIES=	textproc net kde
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tbz
@@ -22,6 +22,9 @@ USE_CMAKE=	yes
 PLIST_FILES=	bin/dikt \
 		share/applications/kde4/dikt.desktop \
 		share/apps/dikt/diktui.rc \
+		share/apps/dikt/dikt.css \
+		share/apps/dikt/format.conf \
+		share/icons/hicolor/128x128/apps/dikt.png \
 		share/kde4/services/dict.protocol
 PLIST_DIRS=	share/apps/dikt
 
