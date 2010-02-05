@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gv
-PORTVERSION=	3.6.7
-PORTREVISION=	1
+PORTVERSION=	3.6.8
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +22,8 @@ USE_GHOSTSCRIPT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/X11 \
-			--enable-setenv-code
+			--enable-setenv-code \
+			--enable-SIGCHLD-fallback
 
 MAN1=		gv.1 gv-update-userconfig.1
 INFO=		gv
