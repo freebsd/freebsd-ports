@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	2.0.5
-PORTREVISION=	3
+PORTVERSION=	2.1.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/
 
@@ -45,11 +44,6 @@ PLIST_SUB+=	ODBC="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/../doc/ && ${INSTALL_DATA} COPYING *.html *.png *.txt ${DOCSDIR})
-.endif
-
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
