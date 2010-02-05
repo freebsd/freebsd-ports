@@ -6,25 +6,21 @@
 #
 
 PORTNAME=		tevent
-PORTVERSION?=		0.9.6
+PORTVERSION=		0.9.8
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
-PKGNAMESUFFIX=
+MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
+			ftp://ca.samba.org/pub/%SUBDIR%/ \
+			ftp://de.samba.org/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
+MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Talloc based event loop library
 
-LIB_DEPENDS=		talloc.1:${PORTSDIR}/devel/talloc
+LIB_DEPENDS=		talloc.2:${PORTSDIR}/devel/talloc
 
 CONFLICTS=
-
-SAMBA_PORT?=		samba4-devel
-SAMBA_SUBPORT=		yes
-
-MASTERDIR=		${.CURDIR}/../../net/${SAMBA_PORT}
-PKGDIR=			${.CURDIR}
-
-WRKSRC=			${WRKDIR}/${DISTNAME}/lib/tevent
 
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
@@ -32,14 +28,20 @@ GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
 USE_AUTOTOOLS=		autoconf:262 autoheader:262
 
+IPATHS=			-I${WRKSRC}/libreplace
+AUTOHEADER_ARGS=	${IPATHS}
+AUTOCONF_ARGS=		${IPATHS}
+
+PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
+PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
+
 PLIST_FILES=		include/tevent.h \
-			include/tevent_internal.h \
 			lib/libtevent.a \
 			lib/libtevent.so \
 			lib/libtevent.so.0 \
-			libdata/pkgconfig/tevent.pc
+			${PKGCONFIGDIR_REL}/tevent.pc
 
 post-install:
-		${LN} -sf libtevent.so.0 ${PREFIX}/lib/libtevent.so
+			${LN} -sf libtevent.so.0 ${PREFIX}/lib/libtevent.so
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
