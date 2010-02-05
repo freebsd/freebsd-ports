@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100205:
+  AFFECTS: users of lang/perl*
+  AUTHOR: skv@FreeBSD.org
+
+  Change the default version of Perl to 5.10.
+
+  If you have already installed lang/perl5.8 and
+  want switch to lang/perl5.10 please follow instructions
+  in the entry 20090328 in this file.
+
+20100205:
   AFFECTS: users of net/samba34
   AUTHOR: timur@FreeBSD.org
 

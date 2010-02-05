@@ -146,7 +146,7 @@ LINK_USRBIN=	yes
 LINK_USRBIN=	no
 .endif
 
-LATEST_LINK=	perl
+NO_LATEST_LINK=	yes
 
 PLIST_SUB+=		NEED_USE_PERL="@comment "
 

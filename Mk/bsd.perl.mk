@@ -84,7 +84,7 @@ PERL_Include_MAINTAINER=	perl@FreeBSD.org
 # to set one of the conditionals that force the inclusion of bsd.perl.mk
 .if defined(_PERL_REFACTORING_COMPLETE)
 
-PERL_VERSION?=	5.8.9
+PERL_VERSION?=	5.10.1
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
 perl_major=		${PERL_VERSION:C|\..*||}
