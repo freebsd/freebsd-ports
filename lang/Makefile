@@ -275,6 +275,7 @@
     SUBDIR += q
     SUBDIR += qore
     SUBDIR += qscheme
+    SUBDIR += rakudo
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
