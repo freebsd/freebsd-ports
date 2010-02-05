@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100205:
+  AFFECTS: users of net/samba34
+  AUTHOR: timur@FreeBSD.org
+
+  This port was developed with the generous help of Florent Brodin.
+
+  The default passdb backend has been changed to 'tdbsam'! That breaks
+  existing setups using the 'smbpasswd' backend without explicit
+  declaration! Please use 'passdb backend = smbpasswd' if you would like
+  to stick to the 'smbpasswd' backend or convert your smbpasswd entries
+  using e.g. 'pdbedit -i smbpasswd -e tdbsam'.
+
+  The 'tdbsam' backend is much more flexible concerning per user
+  settings like 'profile path' or 'home directory' and there are some
+  commands which do not work with the 'smbpasswd' backend at all.
+
 20100130:
   AFFECTS: users of audio/sdl_mixer and graphics/sdl_image
   AUTHOR: mva@FreeBSD.org
