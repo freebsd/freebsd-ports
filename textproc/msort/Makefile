@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msort
-PORTVERSION=	8.52
-PORTREVISION=	2
+PORTVERSION=	8.53
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
