@@ -66,7 +66,7 @@ failures on 7.x-stable:
 <a href="sparc64-7-failure.html">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
-failures on 8.x-current:
+failures on 8.x-stable:
 <a href="amd64-8-failure.html">amd64</a>
 <a href="i386-8-failure.html">i386</a>
 <a href="ia64-8-failure.html">ia64</a>
@@ -88,7 +88,7 @@ failures on 9.x-current:
 <a href="amd64-7-exp-failure.html">amd64</a>
 <a href="i386-7-exp-failure.html">i386</a>
 <br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 8.x-current with experimental port patches:
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 8.x-stable with experimental port patches:
 <a href="amd64-8-exp-failure.html">amd64</a>
 <a href="i386-8-exp-failure.html">i386</a>
 <br>
@@ -136,14 +136,14 @@ on 7.x-stable:
 <a href="sparc64-7-latest/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 8.x-current:
+on 8.x-stable:
 <a href="amd64-8-full/">amd64</a>
 <a href="i386-8-full/">i386</a>
 <a href="ia64-8-full/">ia64</a>
 <a href="sparc64-8-full/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 8.x-current:
+on 8.x-stable:
 <a href="amd64-8-latest/">amd64</a>
 <a href="i386-8-latest/">i386</a>
 <a href="ia64-8-latest/">ia64</a>
@@ -185,12 +185,12 @@ on 7.x-stable with experimental port patches:
 <a href="i386-7-exp-latest/">i386</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 8.x-current with experimental port patches:
+on 8.x-stable with experimental port patches:
 <a href="amd64-8-exp-full/">amd64</a>
 <a href="i386-8-exp-full/">i386</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 8.x-current with experimental port patches:
+on 8.x-stable with experimental port patches:
 <a href="amd64-8-exp-latest/">amd64</a>
 <a href="i386-8-exp-latest/">i386</a>
 <br>
@@ -239,14 +239,14 @@ on 7.x-stable:
 <a href="sparc64-7-latest-logs">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 8.x-current:
+on 8.x-stable:
 <a href="amd64-8-full-logs">amd64</a>
 <a href="i386-8-full-logs">i386</a>
 <a href="ia64-8-full-logs">ia64</a>
 <a href="sparc64-8-full-logs">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-8.x-current:
+8.x-stable:
 <a href="amd64-8-latest-logs">amd64</a>
 <a href="i386-8-latest-logs">i386</a>
 <a href="ia64-8-latest-logs">ia64</a>
@@ -286,12 +286,12 @@ on 7.x-stable with experimental port patches:
 <a href="i386-7-exp-latest-logs">i386</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 8.x-current with experimental port patches:
+on 8.x-stable with experimental port patches:
 <a href="amd64-8-exp-full-logs">amd64</a>
 <a href="i386-8-exp-full-logs">i386</a>
 <br>
 <img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-8.x-current with experimental port patches:
+8.x-stable with experimental port patches:
 <a href="amd64-8-exp-latest-logs">amd64</a>
 <a href="i386-8-exp-latest-logs">i386</a>
 <br>
@@ -328,7 +328,7 @@ latest run on 7-stable:
 <a href="sparc64-7-packages-latest/">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-latest run on 8-current:
+latest run on 8-stable:
 <a href="amd64-8-packages-latest/">amd64</a>
 <a href="i386-8-packages-latest/">i386</a>
 <a href="ia64-8-packages-latest/">ia64</a>
@@ -394,7 +394,7 @@ put on a CDROM.</p>
 (
 <a href="i386-6-bindist.tar">tarball for 6.x-stable</a>
 |<a href="i386-7-bindist.tar">tarball for 7.x-stable</a>
-|<a href="i386-8-bindist.tar">tarball for 8.x-current</a>
+|<a href="i386-8-bindist.tar">tarball for 8.x-stable</a>
 |<a href="i386-9-bindist.tar">tarball for 9.x-current</a>
 )
 -->
