@@ -7,6 +7,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=openchange/libmapi/${PORTNAME}-${PORTVERSION}/
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		ical.43:${PORTSDIR}/devel/libical \
 		tdb.1:${PORTSDIR}/databases/tdb \
-		talloc.1:${PORTSDIR}/devel/talloc
+		talloc.2:${PORTSDIR}/devel/talloc
 RUN_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4-devel
 
 HOSTCONFIG=	${LOCALBASE}/libdata/pkgconfig/samba-hostconfig.pc
