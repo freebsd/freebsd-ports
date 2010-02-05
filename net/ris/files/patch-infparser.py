@@ -1,19 +1,19 @@
---- infparser.py.orig	Tue Aug  7 16:10:14 2007
-+++ infparser.py	Tue Aug  7 17:09:32 2007
+--- infparser.py.orig	2010-01-07 20:00:17.171071673 +0300
++++ infparser.py	2010-01-07 20:02:24.200743110 +0300
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#! @PYTHON_CMD@
  # -*- Mode: Python; tab-width: 4 -*-
  #
  # Inf Driver parser
-@@ -293,28 +293,6 @@
-         if inffile.split('/').pop() not in exclude:
-             devlist.update(scan_inf(inffile))
+@@ -312,28 +312,6 @@
+                 print format_exc()
+                 print '---- CUT HERE ----'
  
 -    print 'Compiled %d drivers' % len(devlist)
 -
--    fd = open('devlist.cache', 'w')
-+    fd = open('@DEVLIST_CACHE@', 'w')
+-    fd = open('devlist.cache', 'wb')
++    fd = open('@DEVLIST_CACHE@', 'wb')
      dump(devlist, fd)
      fd.close()
 -    print 'generated devlist.cache'

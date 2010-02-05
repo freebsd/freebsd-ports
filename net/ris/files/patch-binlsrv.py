@@ -1,5 +1,5 @@
---- binlsrv.py.orig	Tue Aug  7 16:06:15 2007
-+++ binlsrv.py	Tue Aug  7 16:35:02 2007
+--- binlsrv.py.orig	2007-09-28 19:29:12.000000000 +0400
++++ binlsrv.py	2010-01-07 18:50:47.218704824 +0300
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#! @PYTHON_CMD@
@@ -15,7 +15,7 @@
  -a, --address= : ip address to bind to [all interfaces]
  -p, --port=    : port to bind to [4011]
      --pid=     : pid file to use instead of the default
-@@ -839,11 +839,11 @@
+@@ -1015,11 +1015,11 @@
      ## Defaults
      global pidfile, s
      daemon  = False

@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ris
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	net
-MASTER_SITES=	http://oss.netfarm.it/guides/ \
-		http://m.komi.mtsnet.ru/FreeBSD/distfiles/
+MASTER_SITES=	http://oss.netfarm.it/guides/
 DISTNAME=	ris-linux-${PORTVERSION}
 
-MAINTAINER=	tiamat@komi.mts.ru
+MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	OpenSource alternative to Microsoft Windows RIS
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/in.tftpd:${PORTSDIR}/ftp/tftp-hpa
@@ -49,14 +48,13 @@ post-patch:
 .endfor
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}/
 	@${MKDIR} ${DATADIR}/inf
 	@${MKDIR} ${DATADIR}/sys
-	@${INSTALL_DATA} ${WRKSRC}/winnt.sif ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/winnt-ris.sif ${DATADIR}
-	@${INSTALL_DATA} ${FILESDIR}/tftp.map ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/winnt.sif ${DATADIR}/
+	@${INSTALL_DATA} ${FILESDIR}/tftp.map ${DATADIR}/
 .for SCRIPT in ${SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${DATADIR}/
 .endfor
 
 post-install:
