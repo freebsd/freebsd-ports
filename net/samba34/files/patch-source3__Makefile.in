@@ -1,0 +1,56 @@
+--- ./source3/Makefile.in.orig	2010-01-18 12:38:09.000000000 +0100
++++ ./source3/Makefile.in	2010-01-22 02:42:51.000000000 +0100
+@@ -851,6 +851,7 @@
+ PAM_WINBIND_OBJ = ../nsswitch/pam_winbind.o localedir.o $(WBCOMMON_OBJ) \
+ 		  $(LIBREPLACE_OBJ) @BUILD_INIPARSER@
+ 
++
+ LIBSMBCLIENT_OBJ0 = \
+ 		    libsmb/libsmb_cache.o \
+ 		    libsmb/libsmb_compat.o \
+@@ -1028,7 +1029,7 @@
+ 		$(LIBSAMBA_OBJ) \
+                 $(POPT_LIB_OBJ)
+ 
+-TALLOCTORT_OBJ = @tallocdir@/testsuite.o @tallocdir@/testsuite_main.o \
++TALLOCTORT_OBJ = ../lib/talloc/testsuite.o ../lib/talloc/testsuite_main.o \
+ 		$(PARAM_OBJ) $(LIB_NONSMBD_OBJ) $(LIBSAMBA_OBJ)
+ 
+ REPLACETORT_OBJ = @libreplacedir@/test/testsuite.o \
+@@ -1281,6 +1282,7 @@
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o .lo
++.SUFFIXES: .h .h.gch
+ 
+ .PHONY: showflags SHOWFLAGS
+ 
+@@ -1342,6 +1344,9 @@
+ 		$(COMPILE_CC) >/dev/null 2>&1
+ @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
+ 
++.h.h.gch:
++	@echo Compiling $*.h
++
+ PRECOMPILED_HEADER = $(builddir)/include/includes.h.gch
+ 
+ # this adds support for precompiled headers. To use it, install a snapshot
+@@ -2705,7 +2710,8 @@
+ 	@echo "Linking shared library $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_SMBPASS_OBJ) -lpam $(DYNEXP) \
+ 		$(LIBS) $(LDAP_LIBS) $(NSCD_LIBS) \
+-		$(LIBTALLOC_LIBS) $(LIBTDB_LIBS) $(LIBWBCLIENT_LIBS)
++		$(LIBTALLOC_LIBS) $(LIBTDB_LIBS) $(LIBWBCLIENT_LIBS) \
++		@SONAMEFLAG@`basename $@`
+ 
+ bin/tdbbackup@EXEEXT@: $(BINARY_PREREQS) $(TDBBACKUP_OBJ) @LIBTALLOC_TARGET@ @LIBTDB_TARGET@
+ 	@echo Linking $@
+@@ -3028,7 +3034,7 @@
+ 	@$(LIB_PATH_VAR)=./bin && \
+ 	export $(LIB_PATH_VAR) && \
+ 	for module in $(PAM_MODULES); do \
+-		./script/tests/dlopen.sh -lpam -ldl bin/$${module}.@SHLIBEXT@ \
++		./script/tests/dlopen.sh -lpam bin/$${module}.@SHLIBEXT@ \
+ 			|| exit 1; \
+ 	done
+ 
