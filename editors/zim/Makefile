@@ -76,6 +76,10 @@ OPTIONS=	TRAYICON	"Support trayicon"	on \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 501000
+BROKEN=		does not build
+.endif
+
 .if !defined(WITHOUT_TRAYICON)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2/TrayIcon.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-TrayIcon
 .endif
