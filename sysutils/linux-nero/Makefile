@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nero
-PORTVERSION=	3.5.0.1
+PORTVERSION=	4.0.0.0
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://ftp6.usw.nero.com/software/NeroLINUX/ \
 		ftp://ftp6.usw.nero.com/software/NeroLINUX/
@@ -16,8 +16,6 @@ DIST_SUBDIR=	rpm
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	CD/DVD disk burner
-
-BROKEN=		unfetchable
 
 RESTRICTED=	Get a serial number at http://www.nero.com/eng/NeroLINUX.html
 
