@@ -1,5 +1,5 @@
---- ./smbd/statvfs.c.orig	2009-06-23 09:35:13.000000000 +0000
-+++ ./smbd/statvfs.c	2009-06-26 00:41:37.000000000 +0000
+--- ./smbd/statvfs.c.orig	2010-01-14 10:12:10.000000000 +0000
++++ ./smbd/statvfs.c	2010-02-05 00:27:01.000000000 +0000
 @@ -3,6 +3,7 @@
     VFS API's statvfs abstraction
     Copyright (C) Alexander Bokovoy			2005

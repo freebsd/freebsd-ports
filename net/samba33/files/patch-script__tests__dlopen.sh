@@ -1,5 +1,5 @@
---- ./script/tests/dlopen.sh.orig	2009-06-23 09:35:13.000000000 +0000
-+++ ./script/tests/dlopen.sh	2009-06-26 00:41:37.000000000 +0000
+--- ./script/tests/dlopen.sh.orig	2010-01-14 10:12:10.000000000 +0000
++++ ./script/tests/dlopen.sh	2010-02-05 00:27:01.000000000 +0000
 @@ -67,7 +67,7 @@
  	esac
  done

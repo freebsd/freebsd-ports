@@ -240,6 +240,7 @@ sbin/nmbd
 %%PORTDOCS%%%%DOCSDIR%%/registry/Win-2Kx-XPP-ForceLocalProfile.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/Win-NT-DeleteRoamingProfile.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/Win2000_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win7_Samba3DomainMember.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/Win95_PlainPassword.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/Win98_PlainPassword.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/Win9X-CacheHandling.reg

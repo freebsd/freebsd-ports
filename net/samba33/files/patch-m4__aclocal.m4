@@ -1,5 +1,5 @@
---- ./m4/aclocal.m4.orig	2009-06-23 09:35:13.000000000 +0000
-+++ ./m4/aclocal.m4	2009-06-26 00:41:37.000000000 +0000
+--- ./m4/aclocal.m4.orig	2010-01-14 10:12:10.000000000 +0000
++++ ./m4/aclocal.m4	2010-02-05 00:27:01.000000000 +0000
 @@ -97,14 +97,14 @@
  		build_lib=yes
  		;;
@@ -17,7 +17,7 @@
  build_lib=no
  ]
  )
-@@ -416,101 +416,79 @@
+@@ -416,104 +416,81 @@
    dnl those with the standalone portable libiconv installed).
    AC_MSG_CHECKING(for iconv in $1)
      jm_cv_func_iconv="no"
@@ -27,75 +27,75 @@
 +    jm_cv_giconv="no"
      jm_save_LIBS="$LIBS"
  
-     dnl Check for include in funny place but no lib needed
-     if test "$jm_cv_func_iconv" != yes; then 
-       AC_TRY_LINK([#include <stdlib.h>
+-  dnl Check for include in giconv.h but no lib needed
+-  if test "$jm_cv_func_iconv" != yes; then
+-    AC_TRY_LINK([#include <stdlib.h>
++    dnl Check for include in funny place but no lib needed
++    if test "$jm_cv_func_iconv" != yes; then 
++      AC_TRY_LINK([#include <stdlib.h>
  #include <giconv.h>],
--        [iconv_t cd = iconv_open("","");
--         iconv(cd,NULL,NULL,NULL,NULL);
--         iconv_close(cd);],
--         jm_cv_func_iconv=yes
--         jm_cv_include="giconv.h"
--         jm_cv_giconv="yes"
--         jm_cv_lib_iconv="")
-+      [iconv_t cd = iconv_open("","");
-+       iconv(cd,NULL,NULL,NULL,NULL);
-+       iconv_close(cd);],
+       [iconv_t cd = iconv_open("","");
+        iconv(cd,NULL,NULL,NULL,NULL);
+        iconv_close(cd);],
+-       jm_cv_func_iconv=yes
+-       jm_cv_include="giconv.h"
+-       jm_cv_giconv="yes"
+-       jm_cv_lib_iconv="")
 +      jm_cv_func_iconv=yes
 +      jm_cv_include="giconv.h"
 +      jm_cv_lib_iconv=""
 +      jm_cv_giconv="yes")
  
-       dnl Standard iconv.h include, lib in glibc or libc ...
-       if test "$jm_cv_func_iconv" != yes; then
--        AC_TRY_LINK([#include <stdlib.h>
+-    dnl Standard iconv.h include, lib in glibc or libc ...
+-    if test "$jm_cv_func_iconv" != yes; then
+-      AC_TRY_LINK([#include <stdlib.h>
++      dnl Standard iconv.h include, lib in glibc or libc ...
++      if test "$jm_cv_func_iconv" != yes; then
 +	AC_TRY_LINK([#include <stdlib.h>
  #include <iconv.h>],
--          [iconv_t cd = iconv_open("","");
--           iconv(cd,NULL,NULL,NULL,NULL);
--           iconv_close(cd);],
--           jm_cv_include="iconv.h"
--           jm_cv_func_iconv=yes
--           jm_cv_lib_iconv="")
+-        [iconv_t cd = iconv_open("","");
 +	[iconv_t cd = iconv_open("","");
-+         iconv(cd,NULL,NULL,NULL,NULL);
-+         iconv_close(cd);],
+          iconv(cd,NULL,NULL,NULL,NULL);
+          iconv_close(cd);],
+-         jm_cv_include="iconv.h"
+-         jm_cv_func_iconv=yes
+-         jm_cv_lib_iconv="")
 +	jm_cv_func_iconv=yes
 +	jm_cv_include="iconv.h"
 +	jm_cv_lib_iconv="")
  
--          if test "$jm_cv_lib_iconv" != yes; then
--            jm_save_LIBS="$LIBS"
--            LIBS="$LIBS -lgiconv"
--            AC_TRY_LINK([#include <stdlib.h>
+-      dnl Include in giconv.h, libgiconv needed to link
+-      if test "$jm_cv_func_iconv" != yes; then
+-        jm_save_LIBS="$LIBS"
+-        LIBS="$LIBS -lgiconv"
+-        AC_TRY_LINK([#include <stdlib.h>
++	dnl Include in giconv.h, libgiconv needed to link
 +	if test "$jm_cv_func_iconv" != yes; then
 +	  jm_save_LIBS="$LIBS"
 +	  LIBS="$LIBS -lgiconv"
 +          AC_TRY_LINK([#include <stdlib.h>
  #include <giconv.h>],
--              [iconv_t cd = iconv_open("","");
--               iconv(cd,NULL,NULL,NULL,NULL);
--               iconv_close(cd);],
--              jm_cv_lib_iconv=yes
--              jm_cv_func_iconv=yes
--              jm_cv_include="giconv.h"
--              jm_cv_giconv=yes
--              jm_cv_lib_iconv="giconv")
+-          [iconv_t cd = iconv_open("","");
 +	  [iconv_t cd = iconv_open("","");
-+           iconv(cd,NULL,NULL,NULL,NULL);
-+           iconv_close(cd);],
-+          jm_cv_func_iconv=yes
-+          jm_cv_include="giconv.h"
+            iconv(cd,NULL,NULL,NULL,NULL);
+            iconv_close(cd);],
+-          jm_cv_lib_iconv=yes
+           jm_cv_func_iconv=yes
+           jm_cv_include="giconv.h"
+-          jm_cv_giconv=yes
+-          jm_cv_lib_iconv="giconv")
 +          jm_cv_lib_iconv="giconv"
 +          jm_cv_giconv=yes)
  
--           LIBS="$jm_save_LIBS"
+-        LIBS="$jm_save_LIBS"
 +	  LIBS="$jm_save_LIBS"
  
+-        dnl Include in iconv.h, libiconv needed to link
 -        if test "$jm_cv_func_iconv" != yes; then
 -          jm_save_LIBS="$LIBS"
 -          LIBS="$LIBS -liconv"
 -          AC_TRY_LINK([#include <stdlib.h>
++	dnl Include in iconv.h, libiconv needed to link
 +	  if test "$jm_cv_func_iconv" != yes; then
 +	    jm_save_LIBS="$LIBS"
 +	    LIBS="$LIBS -liconv"
@@ -109,7 +109,8 @@
 -            jm_cv_lib_iconv="iconv")
 -          LIBS="$jm_save_LIBS"
 -
--          if test "$jm_cv_lib_iconv" != yes; then
+-          dnl Include in biconv.h, libbiconv needed to link
+-          if test "$jm_cv_func_iconv" != yes; then
 -            jm_save_LIBS="$LIBS"
 -            LIBS="$LIBS -lbiconv"
 -            AC_TRY_LINK([#include <stdlib.h>
@@ -130,9 +131,10 @@
 +	    jm_cv_lib_iconv="iconv")
  
 -            LIBS="$jm_save_LIBS"
-+	    LIBS="$jm_save_LIBS"
- 	  fi
+-          fi
 -        fi
++	    LIBS="$jm_save_LIBS"
++	  fi
 +	fi
        fi
      fi
@@ -166,7 +168,7 @@
  ])
  
  AC_DEFUN(rjs_CHARSET,[
-@@ -815,6 +793,9 @@
+@@ -818,6 +795,9 @@
  #include <fcntl.h>
  #include <signal.h>
  
