@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.80.5.2
+PORTVERSION=	0.81.1.3
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -31,9 +31,6 @@ USE_OPENAL=	al
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
-# built with < 4.0 will not sync in multiplayer...
-# ...but it won't build with gcc42 from ports
-#USE_GCC=	4.2+
 MAKE_JOBS_SAFE=	yes
 
 USE_CMAKE=	yes

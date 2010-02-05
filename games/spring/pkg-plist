@@ -119,15 +119,20 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/BA704-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/BA704-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/XTAPEV959-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/XTAPEV959-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/template-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/NullAI/0.1/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/NullAI/0.1/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/NullAI/0.1/libSkirmishAI.so
-%%DATADIR%%/AI/Skirmish/NullLegacyCppAI/0.1/AIInfo.lua
-%%DATADIR%%/AI/Skirmish/NullLegacyCppAI/0.1/AIOptions.lua
-%%DATADIR%%/AI/Skirmish/NullLegacyCppAI/0.1/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/RAI/0.601/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/RAI/0.601/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/RAI/0.601/libSkirmishAI.so
@@ -237,12 +242,13 @@ share/pixmaps/spring.png
 @dirrm %%DATADIR%%/LuaUI
 @dirrm %%DATADIR%%/AI/Skirmish/RAI/0.601
 @dirrm %%DATADIR%%/AI/Skirmish/RAI
-@dirrm %%DATADIR%%/AI/Skirmish/NullLegacyCppAI/0.1
-@dirrm %%DATADIR%%/AI/Skirmish/NullLegacyCppAI
 @dirrm %%DATADIR%%/AI/Skirmish/NullAI/0.1
 @dirrm %%DATADIR%%/AI/Skirmish/NullAI
 @dirrm %%DATADIR%%/AI/Skirmish/KAIK/0.13
 @dirrm %%DATADIR%%/AI/Skirmish/KAIK
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.14.5
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI
 @dirrm %%DATADIR%%/AI/Skirmish/CppTestAI/0.1
 @dirrm %%DATADIR%%/AI/Skirmish/CppTestAI
 @dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod
