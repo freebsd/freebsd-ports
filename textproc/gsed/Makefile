@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sed
-PORTVERSION=	4.1.5
-PORTREVISION=	1
+PORTVERSION=	4.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,7 @@ COMMENT=	The GNU stream editor
 # Global variables
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS+=--disable-nls
+#CONFIGURE_ARGS+=--disable-nls
 USE_GMAKE=	yes
 INFO=		sed
 MAN1=		gsed.1
