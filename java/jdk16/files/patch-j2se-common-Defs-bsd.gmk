@@ -2,7 +2,21 @@ $FreeBSD$
 
 --- ../../j2se/make/common/Defs-bsd.gmk.orig	Sun Jul 29 23:03:29 2007
 +++ ../../j2se/make/common/Defs-bsd.gmk	Sun Jul 29 23:03:29 2007
-@@ -293,7 +293,7 @@
+@@ -314,6 +314,13 @@
+ ifeq ($(OS_VENDOR),NetBSD)
+ override HAVE_SIGIGNORE          = true
+ endif
++ifeq ($(OS_VENDOR),FreeBSD)
++OS_RELDATE := $(shell sysctl kern.osreldate | cut -d' ' -f2)
++HAS_SIGIGNORE := $(shell if [ $(OS_RELDATE) -ge 900003 ]; then echo "1"; fi)
++ifeq ($(HAS_SIGIGNORE),1)
++override HAVE_SIGIGNORE          = true
++endif
++endif
+ ifeq ($(OS_VENDOR),Apple)
+ override HAVE_SIGIGNORE          = true
+ endif
+@@ -332,7 +339,7 @@
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
  override NO_INTERRUPTIBLE_IO     = false
