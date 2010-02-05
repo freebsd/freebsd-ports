@@ -1,0 +1,18 @@
+--- ./source4/Makefile.orig	2010-01-11 05:35:28.000000000 +0000
++++ ./source4/Makefile	2010-01-24 21:49:26.000000000 +0000
+@@ -13,7 +13,6 @@
+ basedir = $(prefix)
+ swatdir = $(datadir)/swat
+ setupdir = $(datadir)/setup
+-ncalrpcdir = $(localstatedir)/ncalrpc
+ shliboutputdir = $(builddir)/bin/shared
+ 
+ BNLD = $(LD)
+@@ -182,6 +181,7 @@
+ 	@echo '  swatdir:     $(swatdir)'
+ 	@echo '  mandir:      $(mandir)'
+ 	@echo '  datadir:     $(datadir)'
++	@echo '  ncalrpcdir:  $(ncalrpcdir)'
+ 	@echo '  winbindd_socket_dir:  $(winbindd_socket_dir)'
+ 	@echo '  ntp_signd_socket_dir:  $(ntp_signd_socket_dir)'
+ 

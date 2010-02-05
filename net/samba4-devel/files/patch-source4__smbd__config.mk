@@ -1,6 +1,6 @@
---- ./source4/smbd/config.mk.orig	2009-06-19 04:36:48.000000000 +0000
-+++ ./source4/smbd/config.mk	2009-07-12 02:39:36.000000000 +0000
-@@ -18,7 +18,7 @@
+--- ./source4/smbd/config.mk.orig	2010-01-11 05:35:28.000000000 +0000
++++ ./source4/smbd/config.mk	2010-01-24 21:49:26.000000000 +0000
+@@ -20,7 +20,7 @@
  
  $(eval $(call proto_header_template,$(smbdsrcdir)/pidfile.h,$(PIDFILE_OBJ_FILES:.o=.c)))
  
@@ -9,7 +9,7 @@
  INSTALLDIR = SBINDIR
  PRIVATE_DEPENDENCIES = \
  		LIBEVENTS \
-@@ -36,7 +36,7 @@
+@@ -38,7 +38,7 @@
  		share \
  		CLUSTER
  
