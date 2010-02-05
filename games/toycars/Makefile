@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	toycars
-PORTVERSION=	0.3.3
-PORTREVISION=	4
+PORTVERSION=	0.3.10
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Physics-based 2D racing game
 
-USE_SDL=	mixer image sdl
-USE_OPENAL=	al alut
-USE_GL=		yes
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+
+USE_SDL=	image sdl
+USE_GL=		gl glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	README
+
+post-extract:
+	@${RM} ${WRKSRC}/data/.*Store
 
 .if !defined(NOPORTDOCS)
 post-install:
