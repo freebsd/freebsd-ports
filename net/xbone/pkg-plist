@@ -100,11 +100,7 @@ xbone/man/man8/xb-ldap-config.8
 xbone/man/man8/xb-apache-config.8
 xbone/man/man8/xbonectl.8
 xbone/programs/modules/cpan/IO/Socket/SSLv6.pm
-xbone/programs/modules/cpan/IO/Socket/Multicast6.pm
 xbone/programs/modules/cpan/Net/IP/XB_IP.pm
-xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/Multicast6.so
-xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/Multicast6.bs
-xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/.packlist
 xbone/programs/modules/XB_API_OM.pm
 xbone/programs/modules/XB_API_SUBS.pm
 xbone/programs/modules/XB_API_grammar.pm
@@ -232,17 +228,6 @@ xbone/www/xb-cgi-bin/xb-get-ca-cert.pl
 xbone/www/xb-cgi-bin/xb-index.pl
 xbone/www/xb-cgi-bin/xb-redirect.pl
 xbone/www/xb-cgi-bin/xb-req-user-cert.pl
-xbone/install/ports/IO-Socket-Multicast6-0.10/examples/client.pl
-xbone/install/ports/IO-Socket-Multicast6-0.10/examples/server.pl
-xbone/install/ports/IO-Socket-Multicast6-0.10/examples/v6_client.pl
-xbone/install/ports/IO-Socket-Multicast6-0.10/examples/v6_server.pl
-xbone/install/ports/IO-Socket-Multicast6-0.10/MANIFEST
-xbone/install/ports/IO-Socket-Multicast6-0.10/Makefile.PL
-xbone/install/ports/IO-Socket-Multicast6-0.10/Multicast6.pm
-xbone/install/ports/IO-Socket-Multicast6-0.10/Changes
-xbone/install/ports/IO-Socket-Multicast6-0.10/README
-xbone/install/ports/IO-Socket-Multicast6-0.10/test.pl
-xbone/install/ports/IO-Socket-Multicast6-0.10/Multicast6.xs
 xbone/install/patches/linux/ipip.c.patch71
 xbone/install/patches/linux/ipip.c.patch72
 xbone/install/patches/openldap/README
@@ -289,10 +274,6 @@ bin/xb-node-daemon
 @dirrm xbone/programs/modules/cpan/IO
 @dirrm xbone/programs/modules/cpan/Net/IP
 @dirrm xbone/programs/modules/cpan/Net
-@dirrm xbone/programs/modules/cpan/auto/IO/Socket/Multicast6
-@dirrm xbone/programs/modules/cpan/auto/IO/Socket
-@dirrm xbone/programs/modules/cpan/auto/IO
-@dirrm xbone/programs/modules/cpan/auto
 @dirrm xbone/programs/modules/cpan
 @dirrm xbone/programs/modules
 @dirrm xbone/programs
@@ -305,8 +286,6 @@ bin/xb-node-daemon
 @dirrm xbone/www/s-htdocs
 @dirrm xbone/www/xb-cgi-bin
 @dirrm xbone/www
-@dirrm xbone/install/ports/IO-Socket-Multicast6-0.10/examples
-@dirrm xbone/install/ports/IO-Socket-Multicast6-0.10
 @dirrm xbone/install/ports
 @dirrm xbone/install/patches/linux
 @dirrm xbone/install/patches/openldap
