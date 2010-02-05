@@ -6,23 +6,18 @@
 #
 
 PORTNAME=		tdb
-PORTVERSION=		1.1.5
+PORTVERSION=		1.2.0
 PORTREVISION=		0
-PORTEPOCH=		0
 CATEGORIES=		databases
-PKGNAMESUFFIX=
+MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
+			ftp://ca.samba.org/pub/%SUBDIR%/ \
+			ftp://de.samba.org/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
+MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Trivial Database
 
 CONFLICTS=		*samba-3.*
-
-SAMBA_PORT?=		samba4-devel
-SAMBA_SUBPORT=		yes
-
-MASTERDIR=		${.CURDIR}/../../net/${SAMBA_PORT}
-PKGDIR=			${.CURDIR}
-
-WRKSRC=			${WRKDIR}/${DISTNAME}/lib/tdb
 
 USE_PYTHON=		yes
 USE_GMAKE=		yes
@@ -31,6 +26,14 @@ GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
 USE_AUTOTOOLS=		autoconf:262 autoheader:262
 
+IPATHS=			-I${WRKSRC}/libreplace
+AUTOHEADER_ARGS=	${IPATHS}
+AUTOCONF_ARGS=		${IPATHS}
+
+PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
+PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
+PYTHON_SITELIBDIR_REL?=	${PYTHONPREFIX_SITELIBDIR:S|^${PREFIX}/||}
+
 PLIST_FILES=		bin/tdbbackup \
 			bin/tdbdump \
 			bin/tdbtool \
@@ -38,10 +41,10 @@ PLIST_FILES=		bin/tdbbackup \
 			lib/libtdb.a \
 			lib/libtdb.so \
 			lib/libtdb.so.1 \
-			libdata/pkgconfig/tdb.pc \
-			${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/||}/tdb.so
+			${PKGCONFIGDIR_REL}/tdb.pc \
+			${PYTHON_SITELIBDIR_REL}/tdb.so
 
 post-install:
-		@${LN} -sf libtdb.so.1 ${PREFIX}/lib/libtdb.so
+			@${LN} -sf libtdb.so.1 ${PREFIX}/lib/libtdb.so
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
