@@ -7,7 +7,7 @@
 
 PORTNAME=	wb
 PORTVERSION=	1.59
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=	i386-wb-1.59.tar.Z

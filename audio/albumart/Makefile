@@ -7,7 +7,7 @@
 
 PORTNAME=	albumart
 PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://muksuluuri.ath.cx/~skyostil/projects/albumart/dist/
 

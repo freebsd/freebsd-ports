@@ -8,7 +8,7 @@
 
 PORTNAME=	urlview
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc www
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 		ftp://ftp.sunsite.auc.dk/pub/mail/mutt/contrib/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	homebank
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 

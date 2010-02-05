@@ -7,7 +7,7 @@
 
 PORTNAME=	wping
 PORTVERSION=	0.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
@@ -27,7 +27,7 @@ LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		wpg-0.1:${PORTSDIR}/graphics/libwpg \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \

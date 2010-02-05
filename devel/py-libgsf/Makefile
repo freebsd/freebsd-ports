@@ -5,7 +5,7 @@
 # $FreeBSD$
 #   $MCom: ports/devel/py-libgsf/Makefile,v 1.1 2006/10/04 00:34:55 ahze Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

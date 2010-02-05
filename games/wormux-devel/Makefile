@@ -7,7 +7,7 @@
 
 PORTNAME=	wormux
 DISTVERSION=	20090228
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel

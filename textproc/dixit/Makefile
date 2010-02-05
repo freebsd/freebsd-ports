@@ -7,7 +7,7 @@
 
 PORTNAME=	dixit
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc # this should/will be romanian ;)
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz ${_DB_D}

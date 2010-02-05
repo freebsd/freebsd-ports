@@ -8,7 +8,7 @@
 
 PORTNAME=	exhibit
 PORTVERSION=	20080223
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 

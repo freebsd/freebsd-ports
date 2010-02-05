@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://woe.crying-wolves.net/ \
 		http://www.derchris.eu/warsow/ \
@@ -48,7 +48,7 @@ IGNORE=		requires at least one of CLIENT or SERVER options
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 USE_SDL=	yes
 USE_XORG=	xinerama xxf86dga
@@ -123,6 +123,11 @@ post-patch: .SILENT
 # Adjust architecture names, get rid of ``freebsd_'' prefix
 	${REINPLACE_CMD} -e 's/x86_64/amd64/ ; s/freebsd_//' \
 		${WRKSRC}/gameshared/q_arch.h
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/ref_gl/r_image.c
+
+
 
 do-install:
 .for b in ${WSWBIN}

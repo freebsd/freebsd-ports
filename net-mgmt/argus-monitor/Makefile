@@ -7,7 +7,7 @@
 
 PORTNAME=	argus-monitor
 PORTVERSION=	20060722
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.tcp4me.com/code/argus-archive/
 DISTNAME=	argus-dev-${PORTVERSION}

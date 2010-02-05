@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-settings
 PORTVERSION=	4.6.4
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://www.xfce.org/archive/src/xfce/xfce4-settings/4.6/
 DIST_SUBDIR=	xfce4

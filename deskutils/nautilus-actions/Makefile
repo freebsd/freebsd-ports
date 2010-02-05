@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	1.12.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME \
 		http://www.nautilus-actions.org/downloads/ \

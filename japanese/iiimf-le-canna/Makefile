@@ -7,7 +7,7 @@
 
 PORTNAME=	le-canna
 PORTVERSION=	12.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-

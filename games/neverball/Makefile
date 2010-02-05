@@ -7,6 +7,7 @@
 
 PORTNAME=	neverball
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 		http://offload2.icculus.org:9090/neverball/ \
@@ -17,7 +18,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		physfs.1:${PORTSDIR}/devel/physfs
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	libflash
 PORTVERSION=	0.4.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gplflash/gplflash/${PORTVERSION}
 DISTNAME=	gplflash-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	llwang@infor.org
 COMMENT=	GPL Flash (TM) Library
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		jpeg.10:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	x11 xext xkbfile xt
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib

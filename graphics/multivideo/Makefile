@@ -8,7 +8,7 @@
 
 PORTNAME=	multivideo
 PORTVERSION=	0.1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lis.inpg.fr/pages_perso/bonnaud/multivideo/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

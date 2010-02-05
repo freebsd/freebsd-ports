@@ -7,7 +7,7 @@
 
 PORTNAME=	trustedqsl
 PORTVERSION=	1.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/tqsllib/V2.0
 DISTFILES=	tqsllib-2.0.tar.gz TrustedQSL-1.11.tar.gz

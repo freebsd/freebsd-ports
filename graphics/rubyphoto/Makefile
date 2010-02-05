@@ -7,7 +7,7 @@
 
 PORTNAME=	rubyphoto
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics ruby www
 MASTER_SITES=	http://www.markhj.com/rubyphoto/files/
 

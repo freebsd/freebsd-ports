@@ -7,7 +7,7 @@
 
 PORTNAME=	QNetChess
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.silversoft.net/src/
 

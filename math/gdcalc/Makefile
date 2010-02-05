@@ -7,7 +7,7 @@
 
 PORTNAME=	gdcalc
 PORTVERSION=	2.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://bhepple.freeshell.org/dcalc/unix/
 

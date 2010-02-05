@@ -7,7 +7,7 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	${NETPBM_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	# defined later
 PKGNAMESUFFIX=	${NETPBM_SUFFIX}${PKGNAMESUFFIX2}
@@ -21,7 +21,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 #		jasper.4:${PORTSDIR}/graphics/jasper
@@ -43,7 +43,7 @@ DEVEL_PORTVERSION=	10.31
 .if defined(WITH_NETPBM_DEVEL)
 MASTER_SITES=	SF/netpbm/archive_of_old_release_system/${PORTVERSION}
 NETPBM_PORTVERSION=	${DEVEL_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 NETPBM_SUFFIX=	-devel
 CONFLICTS+=	netpbm-10.26.*
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2

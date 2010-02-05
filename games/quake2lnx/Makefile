@@ -74,7 +74,7 @@ PLIST_SUB+=	GLX="@comment "
 
 .if defined(WITH_EYECANDY)
 DISTFILES+=	maxpak.pak
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	BUILD_QMAX=YES
 PLIST_SUB+=	QMAX=""
 .else

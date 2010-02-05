@@ -7,7 +7,7 @@
 
 PORTNAME=	spook
 PORTVERSION=	20050207
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.litech.org/spook/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -38,7 +38,7 @@ CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=		jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=		jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--enable-encoder-jpeg
 .endif
 

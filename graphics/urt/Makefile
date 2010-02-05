@@ -7,7 +7,7 @@
 
 PORTNAME=	urt
 PORTVERSION=	3.1b1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.iastate.edu/pub/utah-raster/
 DISTNAME=	urt

@@ -7,7 +7,7 @@
 
 PORTNAME=	maketool
 PORTVERSION=	0.8.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	http://home.alphalink.com.au/~gnb/maketool/downloads/
 

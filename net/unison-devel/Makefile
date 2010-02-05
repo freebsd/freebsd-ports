@@ -7,6 +7,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	-devel

@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-kmfl-varamozhi-malayalam
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/varamozhi/2%20Mozhi%20Keyman%20-%20Input%20Method/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/kmfl/

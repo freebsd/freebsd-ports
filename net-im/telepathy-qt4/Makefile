@@ -6,6 +6,7 @@
 
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 

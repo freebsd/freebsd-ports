@@ -7,7 +7,7 @@
 
 PORTNAME=	xpn
 PORTVERSION=	1.2.6
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	news python
 MASTER_SITES=	http://xpn.altervista.org/codice/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

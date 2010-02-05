@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-logpap
 PORTVERSION=	0.6.20040201
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}

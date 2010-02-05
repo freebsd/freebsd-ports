@@ -7,7 +7,7 @@
 
 PORTNAME=	timer-applet
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/timerapplet/timerapplet/${PORTNAME}-${PORTVERSION}
 

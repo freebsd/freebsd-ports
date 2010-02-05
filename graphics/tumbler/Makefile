@@ -7,6 +7,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.1/
 
@@ -50,7 +51,7 @@ PLIST_SUB+=	GTK2="@comment "
 .endif
 
 .if defined(WITH_JPEG)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEG=""
 WITH_PLUGINS=	true
 .elif defined(WITHOUT_JPEG)

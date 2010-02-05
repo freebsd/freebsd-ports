@@ -8,7 +8,7 @@
 
 PORTNAME=	epix
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src

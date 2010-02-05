@@ -7,7 +7,7 @@
 
 PORTNAME=	ppmtoTbmp
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm graphics
 MASTER_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
 

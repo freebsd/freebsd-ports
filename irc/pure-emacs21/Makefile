@@ -7,7 +7,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://his.luky.org/ftp/mirrors/irchat-pj/2.5/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

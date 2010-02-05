@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc-mserver
 PORTVERSION=	0.19.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/ \
 		http://freebsd.unixfreunde.de/sources/

@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-quaternion
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

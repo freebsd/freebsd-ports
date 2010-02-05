@@ -7,7 +7,7 @@
 
 PORTNAME=	doxymacs
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/

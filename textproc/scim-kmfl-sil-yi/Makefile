@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-kmfl-sil-yi
 PORTVERSION=	20020903
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=SILYi12OFL_Src&filename=/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/kmfl/

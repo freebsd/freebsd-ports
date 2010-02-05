@@ -7,7 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://trilogyrelease.bungie.org/files/:bungie \
 		ftp://ftp2.fileball.net/fileball/marathon/aleph1/alterations/:landscapes \

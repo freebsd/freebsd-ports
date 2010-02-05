@@ -8,7 +8,7 @@
 
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/vnc-tight/TightVNC-unix/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
@@ -17,7 +17,7 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 MAKE_JOBS_UNSAFE=	yes
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
 		xauth:${PORTSDIR}/x11/xauth \
 		xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts

@@ -6,7 +6,7 @@
 
 PORTNAME=	kmastermind
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	20292-${PORTNAME}-${PORTVERSION}

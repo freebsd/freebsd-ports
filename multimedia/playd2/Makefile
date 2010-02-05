@@ -7,6 +7,7 @@
 
 PORTNAME=	playd2
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://pub.ocpsys.com/bsd/killasmurf86/playd/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	moonlight
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/
 DISTNAME=	moon-${PORTVERSION}

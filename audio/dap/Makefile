@@ -7,7 +7,7 @@
 
 PORTNAME=	dap
 PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://cvsup1.theplanet.com/distfiles/ \
 		http://www.sourcefiles.org/Multimedia/Soundfile_Editors/

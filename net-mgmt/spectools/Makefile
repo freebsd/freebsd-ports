@@ -7,6 +7,7 @@
 
 PORTNAME=	spectools
 PORTVERSION=	200906.r1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		${MASTER_SITE_LOCAL}

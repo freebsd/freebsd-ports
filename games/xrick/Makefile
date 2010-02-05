@@ -7,7 +7,7 @@
 
 PORTNAME=	xrick
 PORTVERSION=	021212
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.bigorno.net/xrick/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	drs@rucus.ru.ac.za
 COMMENT=	A clone of Rick Dangerous
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 RESTRICTED=	Copyright status of the graphics and sounds is uncertain
 USE_GMAKE=	yes

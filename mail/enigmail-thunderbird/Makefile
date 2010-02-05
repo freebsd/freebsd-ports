@@ -6,6 +6,7 @@
 #
 
 PORTVERSION=	0.96.0
+PORTREVISION=	1
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
 

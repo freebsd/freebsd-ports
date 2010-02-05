@@ -7,6 +7,7 @@
 
 PORTNAME=	archiver
 PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-

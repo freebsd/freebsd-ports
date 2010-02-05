@@ -7,7 +7,7 @@
 
 PORTNAME=	libmovtar
 PORTVERSION=	0.1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/mjpeg/OldFiles
 
@@ -23,7 +23,7 @@ CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 .include <bsd.port.pre.mk>
 
@@ -36,6 +36,9 @@ post-patch:
 		-e 's|^(LIBS="-L) (\$$JPEGDIR) \$$DEFAULT_JPEGDIR_L|\1\2/lib|' \
 		-e 's|-I (\$$JPEGDIR) \$$DEFAULT_JPEGDIR_I|-I\1/include|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+# Resolve name collision with jpeg-8
+	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/movtar_play.c
 .if ${ARCH} != "i386"
 # emms opcode should be noop in non-i386 non-MMX ARCH
 		@${REINPLACE_CMD} -E \

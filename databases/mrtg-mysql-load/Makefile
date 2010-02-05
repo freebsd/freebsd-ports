@@ -7,7 +7,7 @@
 
 PORTNAME=	mrtg-mysql-load
 PORTVERSION=	1.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases net-mgmt
 MASTER_SITES=	http://www.bitbybit.dk/mysql/mrtg-mysql-load/ \
 		http://freebsd.unixfreunde.de/sources/

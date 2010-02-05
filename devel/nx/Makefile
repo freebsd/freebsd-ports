@@ -8,7 +8,7 @@
 
 PORTNAME=	nx
 PORTVERSION=	0.37
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://networkx.lanl.gov/download/networkx/
 DISTNAME=	networkx-${PORTVERSION}

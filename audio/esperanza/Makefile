@@ -7,6 +7,7 @@
 
 PORTNAME=	esperanza
 PORTVERSION=	0.4.0.20090708
+PORTREVISION=	1
 DISTVERSIONSUFFIX=.87360cd
 CATEGORIES=	audio
 #MASTER_SITES=	http://exodus.xmms.se/~tru/esperanza/0.4/

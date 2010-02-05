@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	${ECLIPSE_RELEASE:C/(.*)\.[A-Z][0-9]{8}-[0-9]{4}/\1/}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-${ECLIPSE_TIMESTAMP}
@@ -54,7 +54,8 @@ PORTDESTDIR=	${PREFIX}/${PORTNAME}
 NO_WRKSUBDIR=	yes
 
 ECLIPSE_RELEASE=3.4.2.M20090211-1700
-ECLIPSE_VERSION=${ECLIPSE_RELEASE}-${PORTREVISION}
+#ECLIPSE_VERSION=${ECLIPSE_RELEASE}-${PORTREVISION}
+ECLIPSE_VERSION=	1
 ECLIPSE_BUILDID=${ECLIPSE_VERSION:C/.*\.([MIS][0-9]{8}-[0-9]{4}-[0-9]+)/\1/}
 ECLIPSE_BUILDTYPE=${ECLIPSE_BUILDID:C/(.).*/\1/}
 ECLIPSE_TIMESTAMP=${ECLIPSE_BUILDID:C/.([0-9]{8})-([0-9]{4})-[0-9]+/\1\2/}
@@ -130,8 +131,12 @@ post-patch:
 	  -e "s/%%ECLIPSE_TIMESTAMP%%/${ECLIPSE_TIMESTAMP}/g" \
 	  ${FILESDIR}/packager-packager.properties.in > ${WRKSRC}/packager/packager.properties
 	@${REINPLACE_CMD} -E \
+#	  -e "/buildId/ s/(.*)/\1-${PORTREVISION}/" \
 	  -e "/buildId/ s/(.*)/\1-${PORTREVISION}/" \
+1
+#	  -e "/buildLabel/ s/(.*)/\1-${PORTREVISION}/" \
 	  -e "/buildLabel/ s/(.*)/\1-${PORTREVISION}/" \
+1
 	  ${WRKSRC}/label.properties
 	@${SED} \
 	  -e "s/%%ECLIPSE_ARCH%%/${ECLIPSE_ARCH}/g" \

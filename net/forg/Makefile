@@ -8,7 +8,7 @@
 
 PORTNAME=	forg
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
 # Old home website doesn't seem to work anymore (19/05/03)

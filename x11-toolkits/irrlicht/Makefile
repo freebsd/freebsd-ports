@@ -7,13 +7,14 @@
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/1.6/${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	motion
 PORTVERSION=	3.2.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%203.2/${PORTVERSION}
 
@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ack@telefonica.net
 COMMENT=	A motion detection application
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		avformat.1:${PORTSDIR}/multimedia/ffmpeg
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -56,6 +56,11 @@ RUN_DEPENDS+=	/boot/modules/pwc.ko:${PORTSDIR}/multimedia/pwcbsd
 CONFIGURE_ARGS=	--with-linuxthreads
 LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
 .endif
+
+post-patch:
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_dest|local_jpeg_mem_dest|' \
+		${WRKSRC}/picture.c
 
 post-install:
 .if !exists(${PREFIX}/etc/motion.conf)

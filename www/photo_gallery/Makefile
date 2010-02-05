@@ -6,7 +6,7 @@
 
 PORTNAME=		photo_gallery
 PORTVERSION=		1.5
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		www
 MASTER_SITES=		http://www.capybara.org/~dfraser/photo_gallery/
 DISTNAME=		${PORTNAME}_${PORTVERSION}

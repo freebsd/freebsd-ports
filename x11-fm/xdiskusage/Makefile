@@ -7,7 +7,7 @@
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.48
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz

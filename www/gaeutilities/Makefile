@@ -7,7 +7,7 @@
 
 PORTNAME=	gaeutilities
 PORTVERSION=	1.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

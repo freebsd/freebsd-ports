@@ -8,7 +8,7 @@
 
 PORTNAME=	re_graph
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oualline.com/sw/re/
 DISTNAME=	${PORTNAME:S/_/-/}_${PORTVERSION:S/.//}

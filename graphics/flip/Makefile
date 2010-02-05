@@ -8,7 +8,7 @@
 
 PORTNAME=	flip
 PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reptilelabour.com/software/files/flip/
 

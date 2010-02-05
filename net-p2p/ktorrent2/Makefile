@@ -7,7 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	2.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/ \
 		http://www.brueffer.de/distfiles/

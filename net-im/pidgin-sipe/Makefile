@@ -7,6 +7,7 @@
 
 PORTNAME=	pidgin-sipe
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF/sipe/sipe/${DISTNAME}
 

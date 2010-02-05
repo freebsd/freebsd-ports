@@ -4,7 +4,7 @@
  JPEG_LIB_VERSION="`expr $JPEG_LIB_VERSION / 10`:`expr $JPEG_LIB_VERSION % 10`"
  { $as_echo "$as_me:$LINENO: result: $JPEG_LIB_VERSION" >&5
  $as_echo "$JPEG_LIB_VERSION" >&6; }
-+JPEG_LIB_VERSION="10"
++JPEG_LIB_VERSION="11"
  
  
  ac_config_files="$ac_config_files Makefile"

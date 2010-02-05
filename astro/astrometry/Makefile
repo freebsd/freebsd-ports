@@ -8,7 +8,7 @@
 
 PORTNAME=	astrometry
 PORTVERSION=	0.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	astrometry.net-${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	dereckson@gmail.com
 COMMENT=	Describes an astronomical image
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		netpbm.1:${PORTSDIR}/graphics/netpbm
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy

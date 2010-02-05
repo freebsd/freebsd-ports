@@ -7,7 +7,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	0.6.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		http://calibre-ebook.googlecode.com/files/

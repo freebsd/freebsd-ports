@@ -7,7 +7,7 @@
 
 PORTNAME=	emma
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fastflo.de/files/emma/downloads/python_src/
 

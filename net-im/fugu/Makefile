@@ -7,7 +7,7 @@
 
 PORTNAME=	fugu
 PORTVERSION=	1.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im python
 MASTER_SITES=	http://fugu.gale.org/dist/old/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	kio_p7zip
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	17829-${PORTNAME}-${PORTVERSION}

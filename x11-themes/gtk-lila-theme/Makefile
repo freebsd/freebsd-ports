@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-lila-theme
 PORTVERSION=	0.5.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lila-theme/lila-gtk/${PORTVERSION}
 DISTNAME=	lila-gtk-${PORTVERSION}

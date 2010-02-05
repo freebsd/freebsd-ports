@@ -7,7 +7,7 @@
 
 PORTNAME=	nagiosgrapher
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosGrapher-${PORTVERSION}/ \
 		https://www.nagiosforge.org/gf/download/frsrelease/135/285/

@@ -7,6 +7,7 @@
 
 PORTNAME=	pypersrc
 PORTVERSION=	20090914
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/pypersrc/ \
 		${MASTER_SITE_LOCAL}

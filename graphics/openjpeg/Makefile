@@ -7,7 +7,7 @@
 
 PORTNAME=	openjpeg
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openjpeg.org/ \
 		${MASTER_SITE_LOCAL}

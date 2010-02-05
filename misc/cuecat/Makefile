@@ -7,7 +7,7 @@
 
 PORTNAME=	cuecat
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.mired.org/downloads/
 

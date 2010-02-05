@@ -7,6 +7,7 @@
 
 PORTNAME=	page_title
 DISTVERSION=	6.x-2.3
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	frontline
 PORTVERSION=	0.5.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/autotrace/FrontLine/${PORTVERSION}
 

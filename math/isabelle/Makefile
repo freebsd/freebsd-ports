@@ -7,6 +7,7 @@
 
 PORTNAME=	isabelle
 PORTVERSION=	2009
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
 		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/ \

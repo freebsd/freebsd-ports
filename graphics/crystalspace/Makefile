@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	1.0.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/crystal/crystal/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/$/-src/}-${PORTVERSION}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		swig:${PORTSDIR}/devel/swig13 \
 		jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui
 

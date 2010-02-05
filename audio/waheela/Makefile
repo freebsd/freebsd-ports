@@ -6,6 +6,7 @@
 
 PORTNAME=	waheela
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	http://linux.wuertz.org/dists/sid/main/source/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

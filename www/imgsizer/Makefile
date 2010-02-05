@@ -7,7 +7,7 @@
 
 PORTNAME=		imgsizer
 PORTVERSION=		2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		www textproc
 MASTER_SITES=		http://www.catb.org/~esr/imgsizer/
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	cs
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://njhurst.org/programming/cross-stitch/ \
 		${MASTER_SITE_LOCAL}

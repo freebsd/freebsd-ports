@@ -7,7 +7,7 @@
 
 PORTNAME=	vncreflector
 PORTVERSION=	1.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/vnc-reflector/vnc-reflector/${PORTVERSION}
 DISTNAME=	vnc_reflector-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	vnc_reflector-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Multi-client VNC proxy server
 
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_RC_SUBR=	vncreflector.sh
 

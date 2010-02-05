@@ -7,7 +7,7 @@
 
 PORTNAME=	SimGear
 PORTVERSION=	1.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.de.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.simgear.org/pub/simgear/Source/
@@ -17,7 +17,7 @@ COMMENT=	A toolkit for 3D games and simulations
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 .if defined(WITH_OSG_DEVEL)

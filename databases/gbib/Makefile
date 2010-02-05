@@ -7,7 +7,7 @@
 
 PORTNAME=	gbib
 DISTVERSION=	0.1.3rc1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases editors gnome
 MASTER_SITES=	http://gbib.seul.org/
 

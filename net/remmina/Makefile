@@ -7,6 +7,7 @@
 
 PORTNAME=	remmina
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/0.7/
 
@@ -44,7 +45,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_VNC)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif

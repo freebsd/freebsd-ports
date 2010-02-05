@@ -7,7 +7,7 @@
 
 PORTNAME=	ptkei
 PORTVERSION=	1.18.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.lfmm.org/ptkei/
 

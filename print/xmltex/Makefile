@@ -7,7 +7,7 @@
 
 PORTNAME=		xmltex
 PORTVERSION=		1.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=		print
 MASTER_SITES=		ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 			${MASTER_SITE_TEX_CTAN}

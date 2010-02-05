@@ -7,7 +7,7 @@
 
 PORTNAME=	mbasecalc
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.muquit.com/muquit/software/mbasecalc/
 DISTNAME=	${PORTNAME}

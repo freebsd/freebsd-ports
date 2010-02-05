@@ -7,7 +7,7 @@
 
 PORTNAME=	pstoepsi
 PORTVERSION=	20020711
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/tools/pstoepsi/
 DISTFILES=	pstoepsi README.this-site

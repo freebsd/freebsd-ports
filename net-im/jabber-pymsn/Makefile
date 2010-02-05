@@ -6,7 +6,7 @@
 
 PORTNAME=	pymsn
 DISTVERSION=	0.11.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://delx.net.au/projects/pymsnt/tarballs/

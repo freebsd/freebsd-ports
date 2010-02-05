@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-weather-plugin
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc xfce geography
 MASTER_SITES=	http://archive.xfce.org/src/panel-plugins/xfce4-weather-plugin/0.7/
 DIST_SUBDIR=	xfce4

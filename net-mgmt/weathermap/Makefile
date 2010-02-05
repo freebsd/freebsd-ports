@@ -7,7 +7,7 @@
 
 PORTNAME=	weathermap
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netmon.grnet.gr/weathermap/dist/
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	scim-kmfl-sil-ezra
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=EzraSIL251_Src.zip\&filename=/:1 \
 		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=EzraSIL2.5Keying\&filename=/:2 \

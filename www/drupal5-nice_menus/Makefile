@@ -7,6 +7,7 @@
 
 PORTNAME=	nice_menus
 DISTVERSION=	5.x-1.4
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org

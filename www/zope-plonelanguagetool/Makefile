@@ -7,7 +7,7 @@
 
 PORTNAME=	plonelanguagetool
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www zope
 MASTER_SITES=	SF/collective/PloneLanguageTool/${PORTVERSION}
 PKGNAMEPREFIX=	zope-

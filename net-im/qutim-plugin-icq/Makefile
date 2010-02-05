@@ -7,6 +7,7 @@
 
 PORTNAME=	icq
 PORTVERSION=	0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://qutim.org/download/ \

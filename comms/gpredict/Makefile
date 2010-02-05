@@ -6,6 +6,7 @@
 
 PORTNAME=	gpredict
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/gpredict/Gpredict/${PORTVERSION}
 

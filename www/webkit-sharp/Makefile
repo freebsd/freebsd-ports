@@ -7,7 +7,7 @@
 
 PORTNAME=	webkit-sharp
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 #PORTEPOCH=	0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/${PORTNAME}/

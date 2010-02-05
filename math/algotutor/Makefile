@@ -7,7 +7,7 @@
 
 PORTNAME=	algotutor
 PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://saturn.stu.edu.tw/~ckhung/dl/
 EXTRACT_SUFX=	.tgz

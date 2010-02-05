@@ -7,7 +7,7 @@
 
 PORTNAME=	exaile
 DISTVERSION=	0.3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpadlibrarian.net/35452349/ \
 		http://wickedmachine.net/mirror/

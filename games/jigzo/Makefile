@@ -7,7 +7,7 @@
 
 PORTNAME=	jigzo
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,7 +17,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An OpenGL jigsaw puzzle game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.10:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_SDL=	sdl mixer
 USE_GL=		gl

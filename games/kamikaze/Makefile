@@ -6,7 +6,7 @@
 
 PORTNAME=	kamikaze
 PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games kde
 MASTER_SITES=	http://kamikaze.coolprojects.org/download/
 

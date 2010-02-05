@@ -7,14 +7,14 @@
 
 PORTNAME=	generator
 PORTVERSION=	0.35
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/files/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gtk12
 USE_SDL=	sdl

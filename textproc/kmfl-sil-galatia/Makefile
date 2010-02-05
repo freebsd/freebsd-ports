@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-kmfl-sil-galatia
 PORTVERSION=	1.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=GrkPolyComp_Src&filename=/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/

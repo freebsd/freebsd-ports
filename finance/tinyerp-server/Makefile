@@ -7,7 +7,7 @@
 
 PORTNAME=	tinyerp-server
 PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_LOCAL}			\
 		http://tinyerp.org/download/sources/

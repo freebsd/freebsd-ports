@@ -7,7 +7,7 @@
 
 PORTNAME=	gengameng
 PORTVERSION=	4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 

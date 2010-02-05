@@ -7,7 +7,7 @@
 
 PORTNAME=	pioneers
 PORTVERSION=	0.12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source%20code/Pioneers%200.12
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	scigraphica
 PORTVERSION=	0.8.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math gnome
 MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
 		SF/${PORTNAME}/${PORTNAME}-0.x/${PORTVERSION}-source \

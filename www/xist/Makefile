@@ -8,6 +8,7 @@
 
 PORTNAME=	xist
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/

@@ -7,7 +7,7 @@
 
 PORTNAME=	pydance
 PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	\
 		http://offload1.icculus.org/pyddr/ \

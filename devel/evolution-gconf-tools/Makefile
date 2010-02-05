@@ -8,7 +8,7 @@
 
 PORTNAME=	evolution-gconf-tools
 PORTVERSION=	0.1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://people.redhat.com/dmalcolm/evolution-gconf-tools/
 

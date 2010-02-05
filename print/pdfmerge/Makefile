@@ -7,7 +7,7 @@
 
 PORTNAME=	pdfmerge
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/ \
 		http://web.hku.hk/cgi-bin/cgiwrap/kangsg/freeware/

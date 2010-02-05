@@ -7,7 +7,7 @@
 
 PORTNAME=	q2pro
 PORTVERSION=	${SVN_REV}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -67,7 +67,7 @@ PLIST_SUB+=	GAME="@comment "
 
 .if !defined(WITHOUT_GL)
 USE_GL=		yes
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_newgl
 PLIST_SUB+=	GL=""
@@ -92,6 +92,11 @@ PLIST_SUB+=	UI="@comment "
 .if !defined(WITHOUT_X86_ASM) && ${ARCH} == "i386"
 MAKE_ENV+=	USE_X86_ASM=yes
 .endif
+
+post-patch:
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/ref_shared/r_images.c
 
 do-install:
 	${MKDIR} ${LIBDIR}/baseq2

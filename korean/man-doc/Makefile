@@ -6,6 +6,7 @@
 
 PORTNAME=	man
 PORTVERSION=	021120
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/

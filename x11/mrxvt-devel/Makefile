@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/mrxvt%20source/${PORTVERSION}
 DISTNAME=	mrxvt-${PORTVERSION}
@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--disable-xpm
 .if defined(WITHOUT_JPEG) || defined(WITHOUT_BACKGROUND)
 CONFIGURE_ARGS+=	--disable-jpeg
 .else
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 .endif
 
 .if defined(WITHOUT_PNG) || defined(WITHOUT_BACKGROUND)

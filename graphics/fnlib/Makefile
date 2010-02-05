@@ -7,7 +7,7 @@
 
 PORTNAME=	fnlib
 PORTVERSION=	0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enlightenment/OldFiles
 

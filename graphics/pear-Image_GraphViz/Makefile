@@ -7,7 +7,7 @@
 
 PORTNAME=	Image_GraphViz
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	gerrit.beine@gmx.de

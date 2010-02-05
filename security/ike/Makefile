@@ -7,6 +7,7 @@
 
 PORTNAME=	ike
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.shrew.net/download/ike/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release

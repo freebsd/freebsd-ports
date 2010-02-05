@@ -7,7 +7,7 @@
 
 PORTNAME=	kmquake2
 PORTVERSION=	0.19
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/KMQuake2/:src \
 		http://qexpo2005.quakedev.com/uploaded/54/:data \
@@ -87,7 +87,7 @@ MAKE_ENV+=	KMQ2_ADDONS="${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//}"
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 USE_OPENAL=	al
@@ -138,8 +138,11 @@ Q2BIN+=		${PORTNAME}-sdl
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(MOD_REQUESTED)
 post-patch:
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/renderer/r_image.c
+.if defined(MOD_REQUESTED)
 	@${FIND} ${WRKDIR}/${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//} \
 		-type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e \
 		's|__linux__|__unix__|; s|#include <bits/nan\.h>||'

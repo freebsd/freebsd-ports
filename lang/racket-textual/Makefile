@@ -7,6 +7,7 @@
 
 PORTNAME=	plt-scheme
 PORTVERSION=	4.2.4
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/\
 		http://plt.cs.uchicago.edu/bundles/${PORTVERSION}/plt/\
@@ -22,7 +23,7 @@ MAINTAINER=	areilly@bigpond.net.au
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo	\
-		jpeg.10:${PORTSDIR}/graphics/jpeg	\
+		jpeg.11:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png
 
 USE_XORG=	xft x11 xrender xaw

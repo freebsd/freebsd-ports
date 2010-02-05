@@ -7,6 +7,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.clutter-project.org/sources/clutter-perl/${PORTVERSION:R}/
 PKGNAMEPREFIX=	p5-

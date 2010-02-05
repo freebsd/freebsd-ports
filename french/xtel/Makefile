@@ -7,14 +7,14 @@
 
 PORTNAME=	xtel
 PORTVERSION=	3.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	An emulator for the french Minitel
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale

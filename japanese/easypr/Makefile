@@ -7,7 +7,7 @@
 
 PORTNAME=	easypr
 PORTVERSION=	0.70
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
 DISTNAME=	print-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.3
+PORTREVISION=	1
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
 		http://www.predatorlabs.net/dl/

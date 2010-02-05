@@ -7,6 +7,7 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mirror.mcx2.org/

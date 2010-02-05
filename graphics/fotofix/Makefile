@@ -7,6 +7,7 @@
 
 PORTNAME=	fotofix
 PORTVERSION=	0.01.1.79
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.mcx2.org/ \
 		http://prima.eu.org/cgi-bin/cvsweb.cgi/apps/fotofix/fotofix/

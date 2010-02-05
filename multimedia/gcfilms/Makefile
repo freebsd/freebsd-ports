@@ -6,6 +6,7 @@
 
 PORTNAME=	gcfilms
 PORTVERSION=	6.4
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	http://download.gna.org/gcfilms/
 

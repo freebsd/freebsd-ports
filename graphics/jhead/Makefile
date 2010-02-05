@@ -7,6 +7,7 @@
 
 PORTNAME=	jhead
 PORTVERSION=	2.88
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/ \
 		http://www.is-root.com/myports/

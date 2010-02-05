@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-subtitles
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 

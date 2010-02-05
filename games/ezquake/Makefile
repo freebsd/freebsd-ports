@@ -7,7 +7,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/A%29%20Official%20releases/ezQuake%20${PORTVERSION}:ezquake \
@@ -48,7 +48,7 @@ IGNORE=		needs at least one interface (GLX or X11)
 .endif
 
 .if !defined(WITHOUT_GLX)
-LIB_DEPENDS+=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 ALL_TARGET+=	glx
 PLIST_SUB+=	GLX=""
@@ -81,6 +81,9 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|libtcl\.so|libtcl${TCL_VER:S/.//}|' \
 		${WRKSRC}/embed_tcl.h
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/image.c
 
 do-install:
 .for dir in ezquake qw

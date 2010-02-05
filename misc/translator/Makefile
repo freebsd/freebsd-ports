@@ -7,7 +7,7 @@
 
 PORTNAME=	translator
 PORTVERSION=	0.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	http://jodrell.net/files/attic/translator/
 

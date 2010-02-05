@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_MINVER}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://snapshot.opera.com/unix/snapshot-${OPERA_BUILD}/${OPERA_ARCH}-freebsd/ \

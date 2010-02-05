@@ -7,7 +7,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful plotting tool (successor of xmgr)
 
 LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib		\
-		jpeg.10:${PORTSDIR}/graphics/jpeg	\
+		jpeg.11:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png		\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		fftw.2:${PORTSDIR}/math/fftw		\

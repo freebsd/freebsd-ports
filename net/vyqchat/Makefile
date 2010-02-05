@@ -7,7 +7,7 @@
 
 PORTNAME=	vyqchat
 PORTVERSION=	0.2.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 

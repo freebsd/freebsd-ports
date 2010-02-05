@@ -7,7 +7,7 @@
 
 PORTNAME=	driconf
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freedesktop.org/~fxkuehl/driconf/
 

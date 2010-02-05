@@ -7,7 +7,7 @@
 
 PORTNAME=	plucker
 PORTVERSION=	1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm www
 MASTER_SITES=	http://downloads.plkr.org/${PORTVERSION}/ \
 		http://downloads.hideho.org/${PORTNAME}/${PORTVERSION}/

@@ -7,7 +7,7 @@
 
 PORTNAME=	paintlib
 PORTVERSION=	2.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.paintlib.de/paintlib/
 
@@ -28,6 +28,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		paintlib-config.1
+
+post-patch:
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_dest|paintlib_jpeg_mem_dest|' \
+		${WRKSRC}/common/jmemdest.cpp \
+		${WRKSRC}/common/jmemdest.h \
+		${WRKSRC}/common/pljpegenc.cpp \
+		${WRKSRC}/doc/reference/html/jmemdest_8h-source.html
 
 .include <bsd.port.pre.mk>
 

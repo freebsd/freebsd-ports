@@ -6,7 +6,7 @@
 
 PORTNAME=	basket
 PORTVERSION=	1.0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 

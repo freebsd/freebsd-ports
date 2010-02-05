@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-nnet
 PORTVERSION=	0.1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

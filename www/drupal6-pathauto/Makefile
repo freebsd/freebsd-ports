@@ -7,6 +7,7 @@
 
 PORTNAME=	pathauto
 DISTVERSION=	6.x-1.2
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	bdesktopclock
 PORTVERSION=	1.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bucote.com/opensource/bdesktopclock/
 

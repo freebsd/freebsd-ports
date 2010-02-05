@@ -7,6 +7,7 @@
 
 PORTNAME=	tumble
 PORTVERSION=	0.33
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://tumble.brouhaha.com/download/ \
 		http://www.predatorlabs.net/dl/

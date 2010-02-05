@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-kmfl-sil-panafrican-latin
 PORTVERSION=	20090831
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=AfricaKeyboardDead2009\&filename=/:1 \
 		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=AfricaKeyboardUS2009\&filename=/:2 \

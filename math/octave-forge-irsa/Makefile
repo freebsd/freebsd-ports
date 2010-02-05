@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-irsa
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-panel
 PORTVERSION=	4.6.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://archive.xfce.org/src/xfce/xfce4-panel/4.6/
 DIST_SUBDIR=	xfce4

@@ -1,14 +1,14 @@
---- jpegtran.c.orig	2003-09-22 00:00:52.000000000 +0200
-+++ jpegtran.c	2009-06-30 13:41:20.000000000 +0200
+--- jpegtran.c.orig	2009-09-03 12:49:34.000000000 +0200
++++ jpegtran.c	2010-01-13 08:46:28.000000000 +0100
 @@ -37,6 +37,7 @@
  
  static const char * progname;	/* program name for error messages */
  static char * outfilename;	/* for -outfile switch */
 +static char * dropfilename;	/* for -drop switch */
+ static char * scaleoption;	/* -scale switch */
  static JCOPY_OPTION copyoption;	/* -copy switch */
  static jpeg_transform_info transformoption; /* image transformation options */
- 
-@@ -56,6 +57,7 @@
+@@ -57,6 +58,7 @@
    fprintf(stderr, "  -copy none     Copy no extra markers from source file\n");
    fprintf(stderr, "  -copy comments Copy only comment markers (default)\n");
    fprintf(stderr, "  -copy all      Copy all extra markers\n");
@@ -16,7 +16,7 @@
  #ifdef ENTROPY_OPT_SUPPORTED
    fprintf(stderr, "  -optimize      Optimize Huffman table (smaller file, but slow compression)\n");
  #endif
-@@ -65,13 +67,15 @@
+@@ -66,6 +68,7 @@
  #if TRANSFORMS_SUPPORTED
    fprintf(stderr, "Switches for modifying the image:\n");
    fprintf(stderr, "  -crop WxH+X+Y  Crop to a rectangular subarea\n");
@@ -24,7 +24,8 @@
    fprintf(stderr, "  -grayscale     Reduce to grayscale (omit color data)\n");
    fprintf(stderr, "  -flip [horizontal|vertical]  Mirror image (left-right or top-bottom)\n");
    fprintf(stderr, "  -perfect       Fail if there is non-transformable edge blocks\n");
-   fprintf(stderr, "  -rotate [90|180|270]         Rotate image (degrees clockwise)\n");
+@@ -73,7 +76,8 @@
+   fprintf(stderr, "  -scale M/N     Scale output image by fraction M/N, eg, 1/8\n");
    fprintf(stderr, "  -transpose     Transpose image\n");
    fprintf(stderr, "  -transverse    Transverse transpose image\n");
 -  fprintf(stderr, "  -trim          Drop non-transformable edge blocks\n");
@@ -33,7 +34,7 @@
  #endif /* TRANSFORMS_SUPPORTED */
    fprintf(stderr, "Switches for advanced users:\n");
    fprintf(stderr, "  -restart N     Set restart interval in rows, or in blocks with B\n");
-@@ -112,6 +116,52 @@
+@@ -114,6 +118,52 @@
  }
  
  
@@ -86,15 +87,15 @@
  LOCAL(int)
  parse_switches (j_compress_ptr cinfo, int argc, char **argv,
  		int last_file_arg_seen, boolean for_real)
-@@ -132,6 +182,7 @@
+@@ -134,6 +184,7 @@
    /* Set up default JPEG parameters. */
    simple_progressive = FALSE;
    outfilename = NULL;
 +  dropfilename = NULL;
+   scaleoption = NULL;
    copyoption = JCOPYOPT_DEFAULT;
    transformoption.transform = JXFORM_NONE;
-   transformoption.trim = FALSE;
-@@ -174,6 +225,8 @@
+@@ -177,6 +228,8 @@
  	copyoption = JCOPYOPT_COMMENTS;
        } else if (keymatch(argv[argn], "all", 1)) {
  	copyoption = JCOPYOPT_ALL;
@@ -103,7 +104,7 @@
        } else
  	usage();
  
-@@ -191,6 +244,26 @@
+@@ -194,6 +247,26 @@
        select_transform(JXFORM_NONE);	/* force an error */
  #endif
  
@@ -130,7 +131,7 @@
      } else if (keymatch(arg, "debug", 1) || keymatch(arg, "verbose", 1)) {
        /* Enable debug printouts. */
        /* On first -d, print version identification */
-@@ -199,6 +272,7 @@
+@@ -202,6 +275,7 @@
        if (! printed_version) {
  	fprintf(stderr, "Independent JPEG Group's JPEGTRAN, version %s\n%s\n",
  		JVERSION, JCOPYRIGHT);
@@ -138,7 +139,7 @@
  	printed_version = TRUE;
        }
        cinfo->err->trace_level++;
-@@ -359,6 +433,11 @@
+@@ -369,6 +443,11 @@
    struct jpeg_decompress_struct srcinfo;
    struct jpeg_compress_struct dstinfo;
    struct jpeg_error_mgr jsrcerr, jdsterr;
@@ -150,7 +151,7 @@
  #ifdef PROGRESS_REPORT
    struct cdjpeg_progress_mgr progress;
  #endif
-@@ -440,6 +519,21 @@
+@@ -450,6 +529,21 @@
      fp = read_stdin();
    }
  
@@ -172,9 +173,9 @@
  #ifdef PROGRESS_REPORT
    start_progress_monitor((j_common_ptr) &dstinfo, &progress);
  #endif
-@@ -453,6 +547,17 @@
-   /* Read file header */
-   (void) jpeg_read_header(&srcinfo, TRUE);
+@@ -469,6 +563,17 @@
+ 	&srcinfo.scale_num, &srcinfo.scale_denom) < 1)
+       usage();
  
 +#if TRANSFORMS_SUPPORTED
 +  if (dropfilename != NULL) {
@@ -190,7 +191,7 @@
    /* Any space needed by a transform option must be requested before
     * jpeg_read_coefficients so that memory allocation will be done right.
     */
-@@ -472,6 +577,12 @@
+@@ -484,6 +589,12 @@
    /* Read source file as DCT coefficients */
    src_coef_arrays = jpeg_read_coefficients(&srcinfo);
  
@@ -203,7 +204,7 @@
    /* Initialize destination compression parameters from source values */
    jpeg_copy_critical_parameters(&srcinfo, &dstinfo);
  
-@@ -510,6 +621,9 @@
+@@ -522,6 +633,9 @@
    /* Adjust default compression parameters by re-parsing the options */
    file_index = parse_switches(&dstinfo, argc, argv, 0, TRUE);
  
@@ -213,7 +214,7 @@
    /* Specify data destination for compression */
    jpeg_stdio_dest(&dstinfo, fp);
  
-@@ -531,16 +645,30 @@
+@@ -543,16 +657,30 @@
    jpeg_destroy_compress(&dstinfo);
    (void) jpeg_finish_decompress(&srcinfo);
    jpeg_destroy_decompress(&srcinfo);

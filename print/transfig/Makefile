@@ -7,6 +7,7 @@
 
 PORTNAME=	transfig
 PORTVERSION=	3.2.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION}/ \
 		ftp://www-epb.lbl.gov/xfig/

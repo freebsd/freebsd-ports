@@ -7,6 +7,7 @@
 
 PORTNAME=	gef
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/tools/gef/downloads/drops/,}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/R200802211602/

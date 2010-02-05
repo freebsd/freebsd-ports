@@ -7,6 +7,7 @@
 
 PORTNAME=	autopano-sift-C
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +17,7 @@ COMMENT=	Automatic panorama control point generation tool, C port
 RESTRICTED=	May be covered by patents
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		pano13:${PORTSDIR}/graphics/libpano13
 

@@ -7,14 +7,14 @@
 
 PORTNAME=	kscope
 PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel kde
 MASTER_SITES=	SF
 
 MAINTAINER=	frank@exit.com
 COMMENT=	KDE front-end to Cscope
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		cscope:${PORTSDIR}/devel/cscope \
 		dot:${PORTSDIR}/graphics/graphviz

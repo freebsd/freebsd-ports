@@ -7,7 +7,7 @@
 
 PORTNAME=	kanjipad
 PORTVERSION=	2.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://fishsoup.net/software/kanjipad/
 

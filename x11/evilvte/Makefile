@@ -7,6 +7,7 @@
 
 PORTNAME=	evilvte
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 		LOCAL/glarkin

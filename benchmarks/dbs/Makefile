@@ -7,7 +7,7 @@
 
 PORTNAME=	dbs
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.kusa.ac.jp/~yukio-m/dbs/software1.1.5/ \
 		${MASTER_SITE_LOCAL}

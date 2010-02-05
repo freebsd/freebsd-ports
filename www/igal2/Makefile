@@ -7,6 +7,7 @@
 
 PORTNAME=	igal2
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	http://igal.trexler.at/
 

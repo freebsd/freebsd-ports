@@ -7,13 +7,14 @@
 
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/libvncserver/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VNC server for use with real X displays
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		dbus:${PORTSDIR}/devel/dbus \
 		avahi-common.3:${PORTSDIR}/net/avahi-app
 

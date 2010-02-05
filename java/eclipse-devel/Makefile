@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	3.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200809111700
@@ -103,7 +103,8 @@ SWTGTK=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI
 SWTMOZ=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT Mozilla
 
 ECLIPSE_IU=FreeBSD Eclipse SDK
-ECLIPSE_IU_VERSION=${PORTVERSION}.${PORTREVISION}
+#ECLIPSE_IU_VERSION=${PORTVERSION}.${PORTREVISION}
+ECLIPSE_IU_VERSION=	1
 
 post-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTBASE}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT-gtk-org-eclipse-swt-widgets-FileDialog.java

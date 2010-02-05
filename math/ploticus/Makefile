@@ -8,7 +8,7 @@
 
 PORTNAME=	ploticus
 PORTVERSION=	2.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	pl${PORTVERSION:S/.//}src
@@ -17,7 +17,7 @@ MAINTAINER?=	linimon@FreeBSD.org
 COMMENT?=	Generates plots and graphs from data
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		jpeg.10:${PORTSDIR}/graphics/jpeg \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ming.4:${PORTSDIR}/graphics/ming \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2

@@ -7,6 +7,7 @@
 
 PORTNAME=	raster3d
 PORTVERSION=	2.7s
+PORTREVISION=	1
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${PORTVERSION}

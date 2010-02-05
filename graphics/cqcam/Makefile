@@ -7,14 +7,14 @@
 
 PORTNAME=	cqcam
 PORTVERSION=	0.91
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.duke.edu/~reynolds/cqcam/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color Quickcam control program
 
-LIB_DEPENDS=	jpeg.10:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386
 

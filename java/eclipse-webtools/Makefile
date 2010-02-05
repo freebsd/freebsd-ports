@@ -7,7 +7,7 @@
 
 PORTNAME=	webtools
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel www
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/webtools/downloads/drops/,}
 MASTER_SITE_SUBDIR=	R2.0/R-${PORTVERSION}-20080710044639/

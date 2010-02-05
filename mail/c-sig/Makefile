@@ -7,7 +7,7 @@
 
 PORTNAME=	c-sig
 PORTVERSION=	3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.threeweb.ad.jp/~kshibata/c-sig/programs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

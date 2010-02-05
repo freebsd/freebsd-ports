@@ -7,6 +7,7 @@
 
 PORTNAME=	imagecache
 DISTVERSION=	5.x-1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
