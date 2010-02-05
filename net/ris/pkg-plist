@@ -1,7 +1,6 @@
 @stopdaemon binlsrv
 %%DATADIR%%/tftp.map
 %%DATADIR%%/winnt.sif
-%%DATADIR%%/winnt-ris.sif
 %%DATADIR%%/binlsrv.py
 %%DATADIR%%/decode.py
 %%DATADIR%%/fixloader.py
