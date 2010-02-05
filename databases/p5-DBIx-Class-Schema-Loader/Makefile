@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.05000
-PORTREVISION=	1
+PORTVERSION=	0.05001
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,6 +34,7 @@ MAN1=	dbicdump.1
 MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::Base.3 \
 	DBIx::Class::Schema::Loader::DBI.3 \
+	DBIx::Class::Schema::Loader::DBI::Component::QuotedDefault.3 \
 	DBIx::Class::Schema::Loader::DBI::DB2.3 \
 	DBIx::Class::Schema::Loader::DBI::MSSQL.3 \
 	DBIx::Class::Schema::Loader::DBI::ODBC.3 \
