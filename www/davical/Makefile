@@ -19,7 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pgsql:${PORTSDIR}/databases/php5-pgsql
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
-		php-libawl>=0.37:${PORTSDIR}/devel/php-libawl
+		php-libawl>=0.37:${PORTSDIR}/devel/php-libawl \
+		${PORTSDIR}/converters/php5-iconv
 
 NO_BUILD=	yes
 
