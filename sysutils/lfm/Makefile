@@ -7,14 +7,15 @@
 #
 
 PORTNAME=	lfm
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
+MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/ \
+	http://www.predatorlabs.net/dl/
 
 MAINTAINER=	pesho.petrov@gmail.com
 COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
-USE_PYTHON=	2.0+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 MAN1=		lfm.1 pyview.1
 
