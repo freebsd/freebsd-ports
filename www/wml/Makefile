@@ -7,6 +7,7 @@
 
 PORTNAME=	wml
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www lang
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
@@ -16,8 +17,16 @@ MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	\
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-Bit-Vector>=5.2:${PORTSDIR}/math/p5-Bit-Vector \
+		p5-File-PathConvert>0:${PORTSDIR}/devel/p5-File-PathConvert \
+		p5-Image-Size>=2.6:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-Term-ReadKey>=2.11:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-HTML-Clean>0:${PORTSDIR}/www/p5-HTML-Clean \
+		p5-GD>0:${PORTSDIR}/graphics/p5-GD
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+		${RUN_DEPENDS}
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
@@ -57,8 +66,9 @@ MAN7=	wml_barebone.7 \
 
 .include <bsd.port.pre.mk>
 
-PERL_ARCHNAME!=	${PERL} -V:archname 2>/dev/null || true
-PLIST_SUB=	LOCAL_PERL_ARCH=${PERL_ARCHNAME:S/archname='//:S/';//}
+post-patch:
+	@${PERL5} -pi -e 's!^(\s+have_\S+)=\S+!\1=1!' \
+		${WRKSRC}/wml_common/Makefile.in
 
 do-configure:
 	@[ -f ${CONFIGURE_COOKIE}] || (cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS})
