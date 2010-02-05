@@ -19,6 +19,8 @@ BUILD_DEPENDS=	bltwish:${PORTSDIR}/x11-toolkits/blt \
 RUN_DEPENDS=	bltwish:${PORTSDIR}/x11-toolkits/blt \
 		${LOCALBASE}/lib/libtclreadline.so:${PORTSDIR}/devel/tclreadline
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 libtool:22
 AUTOMAKE_ARGS=	-c -a
