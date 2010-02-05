@@ -1,5 +1,5 @@
---- ./pidl/config.mk.orig	2009-06-19 04:36:48.000000000 +0000
-+++ ./pidl/config.mk	2009-07-12 02:39:36.000000000 +0000
+--- ./pidl/config.mk.orig	2010-01-11 05:35:28.000000000 +0000
++++ ./pidl/config.mk	2010-01-24 21:49:26.000000000 +0000
 @@ -6,18 +6,6 @@
  pidl-testcov: $(pidldir)/Makefile
  	cd $(pidldir) && cover -test

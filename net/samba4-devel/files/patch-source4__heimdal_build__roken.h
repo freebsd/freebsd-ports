@@ -1,6 +1,6 @@
---- ./source4/heimdal_build/roken.h.orig	2009-06-19 04:36:48.000000000 +0000
-+++ ./source4/heimdal_build/roken.h	2009-07-12 02:39:36.000000000 +0000
-@@ -41,6 +41,10 @@
+--- ./source4/heimdal_build/roken.h.orig	2010-01-11 05:35:28.000000000 +0000
++++ ./source4/heimdal_build/roken.h	2010-01-24 21:49:26.000000000 +0000
+@@ -49,6 +49,10 @@
  #define HAVE_STRNDUP
  #endif
  

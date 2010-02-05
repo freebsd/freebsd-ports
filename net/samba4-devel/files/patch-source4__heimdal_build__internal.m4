@@ -1,6 +1,6 @@
---- ./source4/heimdal_build/internal.m4.orig	2009-06-19 04:36:48.000000000 +0000
-+++ ./source4/heimdal_build/internal.m4	2009-07-12 02:39:36.000000000 +0000
-@@ -68,8 +68,7 @@
+--- ./source4/heimdal_build/internal.m4.orig	2010-01-11 05:35:28.000000000 +0000
++++ ./source4/heimdal_build/internal.m4	2010-01-24 21:49:26.000000000 +0000
+@@ -77,8 +77,7 @@
  	ttyname.h				\
  	netinet/in.h				\
  	netinet/in6.h				\
@@ -10,7 +10,7 @@
  ])
  
  AC_CHECK_FUNCS([				\
-@@ -171,12 +170,6 @@
+@@ -180,12 +179,6 @@
  
  SMB_EXT_LIB(OPENPTY,[${OPENPTY_LIBS}],[${OPENPTY_CFLAGS}],[${OPENPTY_CPPFLAGS}],[${OPENPTY_LDFLAGS}])
  
