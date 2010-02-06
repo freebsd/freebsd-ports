@@ -182,11 +182,11 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/yum-repo.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yxx.syntax
 %%EDITOR%%@dirrm %%DATADIR%%/syntax
-%%NLS%%@dirrmtry share/locale/be-tarask/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/be-tarask
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/extfs
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/be-tarask/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be-tarask
 @dirrm libexec/mc
 @dirrm etc/mc/extfs
 @dirrm etc/mc
