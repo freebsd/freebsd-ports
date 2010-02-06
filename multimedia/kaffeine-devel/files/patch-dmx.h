@@ -1,5 +1,5 @@
---- include/dmx.h.orig	2009-10-06 18:35:56.000000000 +0200
-+++ include/dmx.h	2009-10-06 18:36:31.000000000 +0200
+--- include/dmx.h.orig	2010-02-06 19:07:48.000000000 +0100
++++ include/dmx.h	2010-02-06 19:11:53.000000000 +0100
 @@ -24,7 +24,15 @@
  #ifndef _DVBDMX_H_
  #define _DVBDMX_H_
@@ -14,6 +14,6 @@
 +typedef uint8_t __u8;
 +#endif
 +
- #ifdef __KERNEL__
- #include <linux/time.h>
- #else
+ #include <time.h>
+ 
+ 

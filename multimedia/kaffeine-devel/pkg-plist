@@ -1,4 +1,5 @@
 bin/kaffeine
+bin/kaffeine-xbu
 lib/kde4/kaffeinedvb.so
 share/applications/kde4/kaffeine.desktop
 share/apps/kaffeine/scanfile.dvb
@@ -13,11 +14,16 @@ share/icons/oxygen/32x32/actions/audio-radio-encrypted.png
 share/icons/oxygen/32x32/actions/video-television-encrypted.png
 share/icons/oxygen/48x48/actions/audio-radio-encrypted.png
 share/icons/oxygen/48x48/actions/video-television-encrypted.png
+share/locale/ast/LC_MESSAGES/kaffeine.mo
+share/locale/be/LC_MESSAGES/kaffeine.mo
+share/locale/ca/LC_MESSAGES/kaffeine.mo
+share/locale/ca@valencia/LC_MESSAGES/kaffeine.mo
 share/locale/cs/LC_MESSAGES/kaffeine.mo
 share/locale/da/LC_MESSAGES/kaffeine.mo
 share/locale/de/LC_MESSAGES/kaffeine.mo
 share/locale/el/LC_MESSAGES/kaffeine.mo
 share/locale/en_GB/LC_MESSAGES/kaffeine.mo
+share/locale/eo/LC_MESSAGES/kaffeine.mo
 share/locale/es/LC_MESSAGES/kaffeine.mo
 share/locale/et/LC_MESSAGES/kaffeine.mo
 share/locale/fi/LC_MESSAGES/kaffeine.mo
@@ -25,6 +31,7 @@ share/locale/fr/LC_MESSAGES/kaffeine.mo
 share/locale/ga/LC_MESSAGES/kaffeine.mo
 share/locale/gl/LC_MESSAGES/kaffeine.mo
 share/locale/hu/LC_MESSAGES/kaffeine.mo
+share/locale/hr/LC_MESSAGES/kaffeine.mo
 share/locale/it/LC_MESSAGES/kaffeine.mo
 share/locale/ja/LC_MESSAGES/kaffeine.mo
 share/locale/km/LC_MESSAGES/kaffeine.mo
@@ -51,14 +58,26 @@ share/locale/uk/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
 share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
 @dirrm share/apps/kaffeine
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/eo/LC_MESSAGES
+@dirrmtry share/locale/eo
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/gl/LC_MESSAGES
 @dirrmtry share/locale/gl
+@dirrmtry share/locale/hr/LC_MESSAGES
+@dirrmtry share/locale/hr
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
 @dirrmtry share/locale/ko/LC_MESSAGES
