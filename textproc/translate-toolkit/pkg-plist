@@ -427,6 +427,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ml-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ne-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.ngram-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.pa-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.poedit-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.st-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.lang.sv-module.html
@@ -815,6 +816,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram.Generate-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram.NGram-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.ngram._NGram-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.pa-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.pa-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.pa.pa-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.poedit-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.poedit-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.lang.st-module.html
@@ -1347,6 +1351,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.poswap-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.poterminology-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.poterminology-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.poterminology.TerminologyExtractor-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.poterminology.TerminologyOptionParser-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pretranslate-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pretranslate-pysrc.html
@@ -1588,6 +1593,8 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_307.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_308.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_309.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_310.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_311.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_31.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_32.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_33.png
@@ -1908,6 +1915,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/lang/ngram.py
 %%PYTHON_SITELIBDIR%%/translate/lang/ngram.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/ngram.pyo
+%%PYTHON_SITELIBDIR%%/translate/lang/pa.py
+%%PYTHON_SITELIBDIR%%/translate/lang/pa.pyc
+%%PYTHON_SITELIBDIR%%/translate/lang/pa.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.py
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/poedit.pyo
