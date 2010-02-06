@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	archivesmtp
-PORTVERSION=	1.0.b1
+PORTVERSION=	1.1.b1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dancingfortune.com/projects/archivesmtp/files/
 
@@ -14,15 +14,16 @@ MAINTAINER=	contact@dancingfortune.com
 COMMENT=	SMTP mail archiver
 
 CFLAGS+=	${PTHREAD_CFLAGS}
-LIBS+=		${PTHREAD_LIBS} -lmilter
-MAKE_ENV+=	LDADD="${LIBS}" \
-		BINDIR="${PREFIX}/sbin" \
-		MANDIR="${MANPREFIX}/man/man" \
+LIBS+=		${PTHREAD_LIBS}\
+		-lmilter
+MAKE_ENV+=	LDADD="${LIBS}"\
+		BINDIR="${PREFIX}/sbin"\
+		MANDIR="${MANPREFIX}/man/man"\
 		NO_MANCOMPRESS="yes"
 
 USE_RC_SUBR=	archivesmtp
 SUB_FILES=	pkg-message
-SUB_LIST=	SOCKETBASE=${SOCKETBASE} \
+SUB_LIST+=	SOCKETBASE=${SOCKETBASE}\
 		SOCKETDIR=${SOCKETDIR}
 PLIST_SUB+=	${SUB_LIST}
 

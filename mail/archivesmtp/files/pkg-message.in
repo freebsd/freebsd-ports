@@ -11,7 +11,7 @@
  Filter socket -> archivesmtp_socket="unix:%%SOCKETBASE%%/%%SOCKETDIR%%/mta.sock"
  Pid file      -> archivesmtp_pidfile="%%SOCKETBASE%%/%%SOCKETDIR%%/run.pid"
  Configuration -> archivesmtp_config="%%PREFIX%%/etc/archivesmtp.conf"
- Other Flags   -> archuvesmtp_flags=""
+ Other Flags   -> archivesmtp_flags=""
 
  Please note: Only the owner my have write permissions on the socket directory.
 

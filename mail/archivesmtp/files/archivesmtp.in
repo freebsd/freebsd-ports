@@ -6,12 +6,12 @@
 . %%RC_SUBR%%
 
 name="archivesmtp"
-rcvar="${name}_enable"
+rcvar=`set_rcvar`
 
 command="%%PREFIX%%/sbin/${name}"
 
 # Read settings and set defaults
-load_rc_config $name
+load_rc_config "$name"
 
 : ${archivesmtp_enable="NO"}
 : ${archivesmtp_chuser="nobody"}
