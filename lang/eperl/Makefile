@@ -36,14 +36,6 @@ MAN1=	eperl.1
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 501000
-BROKEN=		does not build
-.endif
-
-.if ${PERL_LEVEL} >= 500809
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-configure
-.endif
-
 # Remove the strndup function from eperl, since
 # certain versions of FreeBSD include it
 .if ${OSVERSION} >= 701101

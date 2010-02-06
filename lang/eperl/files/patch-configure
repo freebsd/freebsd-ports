@@ -1,15 +1,16 @@
---- configure
-+++ configure
-@@ -571,7 +571,7 @@
+--- configure.orig	1998-08-02 22:48:40.000000000 +0900
++++ configure	2010-02-06 14:30:44.165551147 +0900
+@@ -571,7 +571,8 @@
  if test "${with_perl+set}" = set; then
    withval="$with_perl"
    perlprog=$with_perl
 -perlvers=`$perlprog -v | grep version | sed -e 's/.* version //' -e 's/ built.*//' -e 's/ with.*//'`
 +perlvers=`$perlprog -v | grep "This is perl" | sed -e 's/^.* version //' -e 's/^.* v//' -e 's/ built.*//' -e 's/ with.*//'`
++perlvers=`echo ${perlvers} | sed -e 's/ (\*)//'`
  
  else
    TMPFILE=/tmp/x.$$
-@@ -600,7 +600,7 @@
+@@ -600,7 +601,7 @@
  PATH_PERL=$perlprog
  echo "$ac_t""$perlprog v$perlvers" 1>&6
  case $perlvers in
@@ -18,7 +19,7 @@
          ;;
      * ) echo ""
          echo "Latest Perl found on your system is $perlvers,"
-@@ -617,6 +617,8 @@
+@@ -617,6 +618,8 @@
  	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
      5.00[3-6] ) 
  	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/$/00/'` ;; 
@@ -27,7 +28,18 @@
  	* ) 
  	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
  esac
-@@ -1030,7 +1032,7 @@
+@@ -708,7 +711,9 @@
+ #define HAVE_PERL_DYNALOADER 1
+ EOF
+ 
+-        perl_dla=$perl_archlib/auto/DynaLoader/DynaLoader.a
++	# In Perl 5.8.9, DynaLoader functions are moved to libperl.so,
++	# so we don't need an extra library linked here.
++        perl_dla=
+         ;;
+     * )
+         rc=no
+@@ -1028,7 +1033,7 @@
      CFLAGS="-Wall -g -ggdb3"
      LDFLAGS="-g -ggdb3"
  else
@@ -36,7 +48,7 @@
      LDFLAGS="-g"
  fi
  x="enabled"
-@@ -1041,7 +1043,7 @@
+@@ -1039,7 +1044,7 @@
  
  
  else
