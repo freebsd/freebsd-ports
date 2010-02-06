@@ -6,7 +6,7 @@
 
 PORTNAME=	MT
 CATEGORIES=	japanese www
-DISTNAME=	MTOS-${PORTVERSION:S,0$,,}-ja
+DISTNAME=	MTOS-${PORTVERSION}-ja
 PKGNAMEPREFIX=	ja-
 
 COMMENT=	Japanese localization of the MovableType publishing system
@@ -14,6 +14,6 @@ COMMENT=	Japanese localization of the MovableType publishing system
 MASTERDIR=	${.CURDIR}/../../www/${PORTNAME}
 
 JAPANESE=	yes
-CONFLICTS=	MT-[2-4].* fr-MT-[2-4].* de-MT-[2-4].* es-MT-[2-4].* nl-MT-[2-4].*
+CONFLICTS=	MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* nl-MT-[2-5].*
 
 .include "${MASTERDIR}/Makefile"

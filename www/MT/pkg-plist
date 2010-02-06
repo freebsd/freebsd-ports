@@ -1,12 +1,15 @@
 %%CGIDIR%%/tools/upgrade
 %%CGIDIR%%/tools/sig-validate
+%%CGIDIR%%/tools/shell
 %%CGIDIR%%/tools/run-periodic-tasks
 %%CGIDIR%%/tools/report-slow-request
+%%CGIDIR%%/tools/remove_old_sessions
 %%CGIDIR%%/tools/remove-object
 %%CGIDIR%%/tools/rebuild-pages
 %%CGIDIR%%/tools/rebuild-benchmark
 %%CGIDIR%%/tools/plugin-config
 %%CGIDIR%%/tools/pl-viewer
+%%CGIDIR%%/tools/permission-viewer
 %%CGIDIR%%/tools/mt-tmpl-test
 %%CGIDIR%%/tools/mt-tmpl-preview
 %%CGIDIR%%/tools/list-objects
@@ -37,12 +40,26 @@
 %%CGIDIR%%/tmpl/comment/profile.tmpl
 %%CGIDIR%%/tmpl/comment/login.tmpl
 %%CGIDIR%%/tmpl/comment/error.tmpl
+%%CGIDIR%%/tmpl/comment/auth_yahoojapan.tmpl
+%%CGIDIR%%/tmpl/comment/auth_yahoo.tmpl
+%%CGIDIR%%/tmpl/comment/auth_wordpress.tmpl
+%%CGIDIR%%/tmpl/comment/auth_vox.tmpl
+%%CGIDIR%%/tmpl/comment/auth_typepad.tmpl
+%%CGIDIR%%/tmpl/comment/auth_openid.tmpl
+%%CGIDIR%%/tmpl/comment/auth_livejournal.tmpl
+%%CGIDIR%%/tmpl/comment/auth_livedoor.tmpl
+%%CGIDIR%%/tmpl/comment/auth_hatena.tmpl
+%%CGIDIR%%/tmpl/comment/auth_googleopenid.tmpl
+%%CGIDIR%%/tmpl/comment/auth_aim.tmpl
 %%CGIDIR%%/tmpl/cms/widget/this_is_you.tmpl
+%%CGIDIR%%/tmpl/cms/widget/recent_websites.tmpl
+%%CGIDIR%%/tmpl/cms/widget/recent_blogs.tmpl
 %%CGIDIR%%/tmpl/cms/widget/new_version.tmpl
 %%CGIDIR%%/tmpl/cms/widget/new_user.tmpl
 %%CGIDIR%%/tmpl/cms/widget/new_install.tmpl
 %%CGIDIR%%/tmpl/cms/widget/mt_shortcuts.tmpl
 %%CGIDIR%%/tmpl/cms/widget/mt_news.tmpl
+%%CGIDIR%%/tmpl/cms/widget/favorite_blogs.tmpl
 %%CGIDIR%%/tmpl/cms/widget/custom_message.tmpl
 %%CGIDIR%%/tmpl/cms/widget/blog_stats_tag_cloud.tmpl
 %%CGIDIR%%/tmpl/cms/widget/blog_stats_recent_entries.tmpl
@@ -53,8 +70,9 @@
 %%CGIDIR%%/tmpl/cms/view_log.tmpl
 %%CGIDIR%%/tmpl/cms/upgrade_runner.tmpl
 %%CGIDIR%%/tmpl/cms/upgrade.tmpl
+%%CGIDIR%%/tmpl/cms/theme_export_replace.tmpl
 %%CGIDIR%%/tmpl/cms/system_check.tmpl
-%%CGIDIR%%/tmpl/cms/setup_initial_blog.tmpl
+%%CGIDIR%%/tmpl/cms/setup_initial_website.tmpl
 %%CGIDIR%%/tmpl/cms/search_replace.tmpl
 %%CGIDIR%%/tmpl/cms/restore_start.tmpl
 %%CGIDIR%%/tmpl/cms/restore_end.tmpl
@@ -73,6 +91,7 @@
 %%CGIDIR%%/tmpl/cms/pinging.tmpl
 %%CGIDIR%%/tmpl/cms/login.tmpl
 %%CGIDIR%%/tmpl/cms/list_widget.tmpl
+%%CGIDIR%%/tmpl/cms/list_theme.tmpl
 %%CGIDIR%%/tmpl/cms/list_template.tmpl
 %%CGIDIR%%/tmpl/cms/list_tag.tmpl
 %%CGIDIR%%/tmpl/cms/list_role.tmpl
@@ -90,12 +109,15 @@
 %%CGIDIR%%/tmpl/cms/list_asset.tmpl
 %%CGIDIR%%/tmpl/cms/install.tmpl
 %%CGIDIR%%/tmpl/cms/include/users_content_nav.tmpl
-%%CGIDIR%%/tmpl/cms/include/tools_content_nav.tmpl
+%%CGIDIR%%/tmpl/cms/include/theme_exporters/templateset.tmpl
+%%CGIDIR%%/tmpl/cms/include/theme_exporters/static_files.tmpl
+%%CGIDIR%%/tmpl/cms/include/theme_exporters/folder.tmpl
+%%CGIDIR%%/tmpl/cms/include/theme_exporters/category.tmpl
 %%CGIDIR%%/tmpl/cms/include/template_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/rpt_log_table.tmpl
+%%CGIDIR%%/tmpl/cms/include/revision_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/ping_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/pagination.tmpl
-%%CGIDIR%%/tmpl/cms/include/overview-left-nav.tmpl
 %%CGIDIR%%/tmpl/cms/include/notification_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/member_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/login_mt.tmpl
@@ -119,17 +141,15 @@
 %%CGIDIR%%/tmpl/cms/include/commenter_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/comment_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/comment_detail.tmpl
-%%CGIDIR%%/tmpl/cms/include/cfg_system_content_nav.tmpl
-%%CGIDIR%%/tmpl/cms/include/cfg_content_nav.tmpl
 %%CGIDIR%%/tmpl/cms/include/category_selector.tmpl
 %%CGIDIR%%/tmpl/cms/include/calendar.tmpl
 %%CGIDIR%%/tmpl/cms/include/blog_table.tmpl
-%%CGIDIR%%/tmpl/cms/include/blog-left-nav.tmpl
 %%CGIDIR%%/tmpl/cms/include/backup_start.tmpl
 %%CGIDIR%%/tmpl/cms/include/backup_end.tmpl
 %%CGIDIR%%/tmpl/cms/include/author_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/asset_upload.tmpl
 %%CGIDIR%%/tmpl/cms/include/asset_table.tmpl
+%%CGIDIR%%/tmpl/cms/include/asset_replace.tmpl
 %%CGIDIR%%/tmpl/cms/include/archive_maps.tmpl
 %%CGIDIR%%/tmpl/cms/include/archetype_editor.tmpl
 %%CGIDIR%%/tmpl/cms/include/anonymous_comment.tmpl
@@ -137,9 +157,11 @@
 %%CGIDIR%%/tmpl/cms/import_others.tmpl
 %%CGIDIR%%/tmpl/cms/import.tmpl
 %%CGIDIR%%/tmpl/cms/handshake_return.tmpl
+%%CGIDIR%%/tmpl/cms/export_theme.tmpl
 %%CGIDIR%%/tmpl/cms/export.tmpl
 %%CGIDIR%%/tmpl/cms/error.tmpl
 %%CGIDIR%%/tmpl/cms/edit_widget.tmpl
+%%CGIDIR%%/tmpl/cms/edit_website.tmpl
 %%CGIDIR%%/tmpl/cms/edit_template.tmpl
 %%CGIDIR%%/tmpl/cms/edit_role.tmpl
 %%CGIDIR%%/tmpl/cms/edit_ping.tmpl
@@ -151,8 +173,11 @@
 %%CGIDIR%%/tmpl/cms/edit_blog.tmpl
 %%CGIDIR%%/tmpl/cms/edit_author.tmpl
 %%CGIDIR%%/tmpl/cms/edit_asset.tmpl
+%%CGIDIR%%/tmpl/cms/dialog/theme_element_detail.tmpl
+%%CGIDIR%%/tmpl/cms/dialog/theme_detail_saved.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/select_weblog.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/select_users.tmpl
+%%CGIDIR%%/tmpl/cms/dialog/select_theme.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/restore_upload.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/restore_start.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/restore_end.tmpl
@@ -160,6 +185,8 @@
 %%CGIDIR%%/tmpl/cms/dialog/recover.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/publishing_profile.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/new_password.tmpl
+%%CGIDIR%%/tmpl/cms/dialog/move_blogs.tmpl
+%%CGIDIR%%/tmpl/cms/dialog/list_revision.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/header.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/footer.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/entry_notify.tmpl
@@ -176,32 +203,218 @@
 %%CGIDIR%%/tmpl/cms/dialog/adjust_sitepath.tmpl
 %%CGIDIR%%/tmpl/cms/dashboard.tmpl
 %%CGIDIR%%/tmpl/cms/cfg_web_services.tmpl
-%%CGIDIR%%/tmpl/cms/cfg_trackbacks.tmpl
 %%CGIDIR%%/tmpl/cms/cfg_system_users.tmpl
 %%CGIDIR%%/tmpl/cms/cfg_system_general.tmpl
-%%CGIDIR%%/tmpl/cms/cfg_system_feedback.tmpl
-%%CGIDIR%%/tmpl/cms/cfg_spam.tmpl
 %%CGIDIR%%/tmpl/cms/cfg_registration.tmpl
 %%CGIDIR%%/tmpl/cms/cfg_prefs.tmpl
 %%CGIDIR%%/tmpl/cms/cfg_plugin.tmpl
+%%CGIDIR%%/tmpl/cms/cfg_feedback.tmpl
 %%CGIDIR%%/tmpl/cms/cfg_entry.tmpl
-%%CGIDIR%%/tmpl/cms/cfg_comments.tmpl
-%%CGIDIR%%/tmpl/cms/cfg_archives.tmpl
 %%CGIDIR%%/tmpl/cms/cc_return.tmpl
 %%CGIDIR%%/tmpl/cms/backup.tmpl
+%%CGIDIR%%/tmpl/cms/asset_upload.tmpl
+%%CGIDIR%%/tmpl/cms/asset_replace.tmpl
+%%CGIDIR%%/themes/pico/thumb.png
+%%CGIDIR%%/themes/pico/thumb-small.png
+%%CGIDIR%%/themes/pico/thumb-medium.png
+%%CGIDIR%%/themes/pico/theme.yaml
+%%CGIDIR%%/themes/pico/templates/verify-subscribe.mtml
+%%CGIDIR%%/themes/pico/templates/trackbacks.mtml
+%%CGIDIR%%/themes/pico/templates/technorati_search.mtml
+%%CGIDIR%%/themes/pico/templates/tag_cloud.mtml
+%%CGIDIR%%/themes/pico/templates/syndication.mtml
+%%CGIDIR%%/themes/pico/templates/styles.mtml
+%%CGIDIR%%/themes/pico/templates/signin.mtml
+%%CGIDIR%%/themes/pico/templates/search_results.mtml
+%%CGIDIR%%/themes/pico/templates/search.mtml
+%%CGIDIR%%/themes/pico/templates/rsd.mtml
+%%CGIDIR%%/themes/pico/templates/recover-password.mtml
+%%CGIDIR%%/themes/pico/templates/recent_entries.mtml
+%%CGIDIR%%/themes/pico/templates/recent_comments.mtml
+%%CGIDIR%%/themes/pico/templates/recent_assets.mtml
+%%CGIDIR%%/themes/pico/templates/popup_image.mtml
+%%CGIDIR%%/themes/pico/templates/pages_list.mtml
+%%CGIDIR%%/themes/pico/templates/page.mtml
+%%CGIDIR%%/themes/pico/templates/openid.mtml
+%%CGIDIR%%/themes/pico/templates/notify-entry.mtml
+%%CGIDIR%%/themes/pico/templates/new-ping.mtml
+%%CGIDIR%%/themes/pico/templates/new-comment.mtml
+%%CGIDIR%%/themes/pico/templates/navigation.mtml
+%%CGIDIR%%/themes/pico/templates/monthly_entry_listing.mtml
+%%CGIDIR%%/themes/pico/templates/monthly_archive_list.mtml
+%%CGIDIR%%/themes/pico/templates/monthly_archive_dropdown.mtml
+%%CGIDIR%%/themes/pico/templates/main_index_widgets_group.mtml
+%%CGIDIR%%/themes/pico/templates/main_index.mtml
+%%CGIDIR%%/themes/pico/templates/javascript.mtml
+%%CGIDIR%%/themes/pico/templates/html_head.mtml
+%%CGIDIR%%/themes/pico/templates/footer-email.mtml
+%%CGIDIR%%/themes/pico/templates/feed_recent.mtml
+%%CGIDIR%%/themes/pico/templates/entry_summary.mtml
+%%CGIDIR%%/themes/pico/templates/entry.mtml
+%%CGIDIR%%/themes/pico/templates/dynamic_error.mtml
+%%CGIDIR%%/themes/pico/templates/date_based_category_archives.mtml
+%%CGIDIR%%/themes/pico/templates/date_based_author_archives.mtml
+%%CGIDIR%%/themes/pico/templates/current_category_monthly_archive_list.mtml
+%%CGIDIR%%/themes/pico/templates/current_author_monthly_archive_list.mtml
+%%CGIDIR%%/themes/pico/templates/creative_commons.mtml
+%%CGIDIR%%/themes/pico/templates/comments.mtml
+%%CGIDIR%%/themes/pico/templates/commenter_notify.mtml
+%%CGIDIR%%/themes/pico/templates/commenter_confirm.mtml
+%%CGIDIR%%/themes/pico/templates/comment_throttle.mtml
+%%CGIDIR%%/themes/pico/templates/comment_response.mtml
+%%CGIDIR%%/themes/pico/templates/comment_preview.mtml
+%%CGIDIR%%/themes/pico/templates/comment_listing.mtml
+%%CGIDIR%%/themes/pico/templates/comment_detail.mtml
+%%CGIDIR%%/themes/pico/templates/category_entry_listing.mtml
+%%CGIDIR%%/themes/pico/templates/category_archive_list.mtml
+%%CGIDIR%%/themes/pico/templates/calendar.mtml
+%%CGIDIR%%/themes/pico/templates/banner_header.mtml
+%%CGIDIR%%/themes/pico/templates/banner_footer.mtml
+%%CGIDIR%%/themes/pico/templates/author_archive_list.mtml
+%%CGIDIR%%/themes/pico/templates/archive_widgets_group.mtml
+%%CGIDIR%%/themes/pico/templates/archive_index.mtml
+%%CGIDIR%%/themes/pico/templates/about_this_page.mtml
+%%CGIDIR%%/themes/pico/static/style_library/pico.html
+%%CGIDIR%%/themes/pico/static/style_library/pico-white/thumbnail.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-white/thumbnail-large.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-white/screen.css
+%%CGIDIR%%/themes/pico/static/style_library/pico-white/pico-commentarrow-gray.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-tan/thumbnail.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-tan/thumbnail-large.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-tan/screen.css
+%%CGIDIR%%/themes/pico/static/style_library/pico-tan/pico-commentarrow-dktan.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkgrey/thumbnail.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkgrey/thumbnail-large.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkgrey/screen.css
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkgrey/pico-commentarrow-dkblue.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkblue/thumbnail.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkblue/thumbnail-large.gif
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkblue/screen.css
+%%CGIDIR%%/themes/pico/static/style_library/pico-darkblue/pico-commentarrow-dkblue.gif
+%%CGIDIR%%/themes/pico/static/style_library/base.css
+%%CGIDIR%%/themes/classic_website/thumb.png
+%%CGIDIR%%/themes/classic_website/thumb-small.png
+%%CGIDIR%%/themes/classic_website/thumb-medium.png
+%%CGIDIR%%/themes/classic_website/theme.yaml
+%%CGIDIR%%/themes/classic_website/templates/verify-subscribe.mtml
+%%CGIDIR%%/themes/classic_website/templates/trackbacks.mtml
+%%CGIDIR%%/themes/classic_website/templates/technorati_search.mtml
+%%CGIDIR%%/themes/classic_website/templates/tag_cloud.mtml
+%%CGIDIR%%/themes/classic_website/templates/syndication.mtml
+%%CGIDIR%%/themes/classic_website/templates/styles.mtml
+%%CGIDIR%%/themes/classic_website/templates/signin.mtml
+%%CGIDIR%%/themes/classic_website/templates/sidebar.mtml
+%%CGIDIR%%/themes/classic_website/templates/search_results.mtml
+%%CGIDIR%%/themes/classic_website/templates/search.mtml
+%%CGIDIR%%/themes/classic_website/templates/rsd.mtml
+%%CGIDIR%%/themes/classic_website/templates/recover-password.mtml
+%%CGIDIR%%/themes/classic_website/templates/recent_entries.mtml
+%%CGIDIR%%/themes/classic_website/templates/recent_comments.mtml
+%%CGIDIR%%/themes/classic_website/templates/recent_assets.mtml
+%%CGIDIR%%/themes/classic_website/templates/powered_by.mtml
+%%CGIDIR%%/themes/classic_website/templates/popup_image.mtml
+%%CGIDIR%%/themes/classic_website/templates/pages_list.mtml
+%%CGIDIR%%/themes/classic_website/templates/page.mtml
+%%CGIDIR%%/themes/classic_website/templates/openid.mtml
+%%CGIDIR%%/themes/classic_website/templates/notify-entry.mtml
+%%CGIDIR%%/themes/classic_website/templates/new-ping.mtml
+%%CGIDIR%%/themes/classic_website/templates/new-comment.mtml
+%%CGIDIR%%/themes/classic_website/templates/main_index_widgets_group.mtml
+%%CGIDIR%%/themes/classic_website/templates/main_index.mtml
+%%CGIDIR%%/themes/classic_website/templates/javascript.mtml
+%%CGIDIR%%/themes/classic_website/templates/html_head.mtml
+%%CGIDIR%%/themes/classic_website/templates/footer-email.mtml
+%%CGIDIR%%/themes/classic_website/templates/feed_recent.mtml
+%%CGIDIR%%/themes/classic_website/templates/entry_summary.mtml
+%%CGIDIR%%/themes/classic_website/templates/entry.mtml
+%%CGIDIR%%/themes/classic_website/templates/dynamic_error.mtml
+%%CGIDIR%%/themes/classic_website/templates/creative_commons.mtml
+%%CGIDIR%%/themes/classic_website/templates/comments.mtml
+%%CGIDIR%%/themes/classic_website/templates/commenter_notify.mtml
+%%CGIDIR%%/themes/classic_website/templates/commenter_confirm.mtml
+%%CGIDIR%%/themes/classic_website/templates/comment_throttle.mtml
+%%CGIDIR%%/themes/classic_website/templates/comment_response.mtml
+%%CGIDIR%%/themes/classic_website/templates/comment_preview.mtml
+%%CGIDIR%%/themes/classic_website/templates/comment_listing.mtml
+%%CGIDIR%%/themes/classic_website/templates/comment_detail.mtml
+%%CGIDIR%%/themes/classic_website/templates/blogs.mtml
+%%CGIDIR%%/themes/classic_website/templates/banner_header.mtml
+%%CGIDIR%%/themes/classic_website/templates/banner_footer.mtml
+%%CGIDIR%%/themes/classic_website/templates/about_this_page.mtml
+%%CGIDIR%%/themes/classic_blog/thumb.png
+%%CGIDIR%%/themes/classic_blog/thumb-small.png
+%%CGIDIR%%/themes/classic_blog/thumb-medium.png
+%%CGIDIR%%/themes/classic_blog/theme.yaml
+%%CGIDIR%%/themes/classic_blog/templates/verify-subscribe.mtml
+%%CGIDIR%%/themes/classic_blog/templates/trackbacks.mtml
+%%CGIDIR%%/themes/classic_blog/templates/technorati_search.mtml
+%%CGIDIR%%/themes/classic_blog/templates/tag_cloud.mtml
+%%CGIDIR%%/themes/classic_blog/templates/syndication.mtml
+%%CGIDIR%%/themes/classic_blog/templates/styles.mtml
+%%CGIDIR%%/themes/classic_blog/templates/signin.mtml
+%%CGIDIR%%/themes/classic_blog/templates/sidebar.mtml
+%%CGIDIR%%/themes/classic_blog/templates/search_results.mtml
+%%CGIDIR%%/themes/classic_blog/templates/search.mtml
+%%CGIDIR%%/themes/classic_blog/templates/rsd.mtml
+%%CGIDIR%%/themes/classic_blog/templates/recover-password.mtml
+%%CGIDIR%%/themes/classic_blog/templates/recent_entries.mtml
+%%CGIDIR%%/themes/classic_blog/templates/recent_comments.mtml
+%%CGIDIR%%/themes/classic_blog/templates/recent_assets.mtml
+%%CGIDIR%%/themes/classic_blog/templates/powered_by.mtml
+%%CGIDIR%%/themes/classic_blog/templates/popup_image.mtml
+%%CGIDIR%%/themes/classic_blog/templates/pages_list.mtml
+%%CGIDIR%%/themes/classic_blog/templates/page.mtml
+%%CGIDIR%%/themes/classic_blog/templates/openid.mtml
+%%CGIDIR%%/themes/classic_blog/templates/notify-entry.mtml
+%%CGIDIR%%/themes/classic_blog/templates/new-ping.mtml
+%%CGIDIR%%/themes/classic_blog/templates/new-comment.mtml
+%%CGIDIR%%/themes/classic_blog/templates/monthly_entry_listing.mtml
+%%CGIDIR%%/themes/classic_blog/templates/monthly_archive_list.mtml
+%%CGIDIR%%/themes/classic_blog/templates/monthly_archive_dropdown.mtml
+%%CGIDIR%%/themes/classic_blog/templates/main_index_widgets_group.mtml
+%%CGIDIR%%/themes/classic_blog/templates/main_index.mtml
+%%CGIDIR%%/themes/classic_blog/templates/javascript.mtml
+%%CGIDIR%%/themes/classic_blog/templates/html_head.mtml
+%%CGIDIR%%/themes/classic_blog/templates/footer-email.mtml
+%%CGIDIR%%/themes/classic_blog/templates/feed_recent.mtml
+%%CGIDIR%%/themes/classic_blog/templates/entry_summary.mtml
+%%CGIDIR%%/themes/classic_blog/templates/entry.mtml
+%%CGIDIR%%/themes/classic_blog/templates/dynamic_error.mtml
+%%CGIDIR%%/themes/classic_blog/templates/date_based_category_archives.mtml
+%%CGIDIR%%/themes/classic_blog/templates/date_based_author_archives.mtml
+%%CGIDIR%%/themes/classic_blog/templates/current_category_monthly_archive_list.mtml
+%%CGIDIR%%/themes/classic_blog/templates/current_author_monthly_archive_list.mtml
+%%CGIDIR%%/themes/classic_blog/templates/creative_commons.mtml
+%%CGIDIR%%/themes/classic_blog/templates/comments.mtml
+%%CGIDIR%%/themes/classic_blog/templates/commenter_notify.mtml
+%%CGIDIR%%/themes/classic_blog/templates/commenter_confirm.mtml
+%%CGIDIR%%/themes/classic_blog/templates/comment_throttle.mtml
+%%CGIDIR%%/themes/classic_blog/templates/comment_response.mtml
+%%CGIDIR%%/themes/classic_blog/templates/comment_preview.mtml
+%%CGIDIR%%/themes/classic_blog/templates/comment_listing.mtml
+%%CGIDIR%%/themes/classic_blog/templates/comment_detail.mtml
+%%CGIDIR%%/themes/classic_blog/templates/category_entry_listing.mtml
+%%CGIDIR%%/themes/classic_blog/templates/category_archive_list.mtml
+%%CGIDIR%%/themes/classic_blog/templates/calendar.mtml
+%%CGIDIR%%/themes/classic_blog/templates/banner_header.mtml
+%%CGIDIR%%/themes/classic_blog/templates/banner_footer.mtml
+%%CGIDIR%%/themes/classic_blog/templates/author_archive_list.mtml
+%%CGIDIR%%/themes/classic_blog/templates/archive_widgets_group.mtml
+%%CGIDIR%%/themes/classic_blog/templates/archive_index.mtml
+%%CGIDIR%%/themes/classic_blog/templates/about_this_page.mtml
 %%CGIDIR%%/search_templates/results_feed_rss2.tmpl
 %%CGIDIR%%/search_templates/results_feed.tmpl
 %%CGIDIR%%/search_templates/default.tmpl
 %%CGIDIR%%/search_templates/comments.tmpl
 @comment %%CGIDIR%%/readme.html
-%%CGIDIR%%/plugins/zemanta/lib/Zemanta/Product.pm
-%%CGIDIR%%/plugins/zemanta/lib/Zemanta/Basic.pm
-%%CGIDIR%%/plugins/zemanta/lib/Zemanta/Utils.pm
-%%CGIDIR%%/plugins/zemanta/tmpl/blog_config.tmpl
-%%CGIDIR%%/plugins/zemanta/json-proxy.cgi
-%%CGIDIR%%/plugins/zemanta/Zemanta.pl
-%%CGIDIR%%/plugins/zemanta/MANIFEST
-%%CGIDIR%%/plugins/zemanta/INSTALL
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/tmpl/blog_config.tmpl
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/lib/Zemanta/Utils.pm
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/lib/Zemanta/Product.pm
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/lib/Zemanta/Basic.pm
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/json-proxy.cgi
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/Zemanta.pl
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/MANIFEST
+%%LANG_EN%%%%CGIDIR%%/plugins/zemanta/INSTALL
 %%CGIDIR%%/plugins/spamlookup/tmpl/word_config.tmpl
 %%CGIDIR%%/plugins/spamlookup/tmpl/url_config.tmpl
 %%CGIDIR%%/plugins/spamlookup/tmpl/lookup_config.tmpl
@@ -272,13 +485,18 @@
 %%CGIDIR%%/plugins/MultiBlog/php/block.mtmultiblog.php
 %%CGIDIR%%/plugins/MultiBlog/multiblog.pl
 %%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/Tags.pm
+%%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N/nl.pm
 %%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N/ja.pm
+%%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N/fr.pm
+%%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N/es.pm
 %%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N/en_us.pm
+%%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N/de.pm
 %%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N.pm
 %%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog.pm
 %%CGIDIR%%/plugins/Markdown/php/smartypants.php
 %%CGIDIR%%/plugins/Markdown/php/modifier.markdown_with_smartypants.php
 %%CGIDIR%%/plugins/Markdown/php/modifier.markdown.php
+%%CGIDIR%%/plugins/Markdown/php/function.mtsmartypantsversion.php
 %%CGIDIR%%/plugins/Markdown/SmartyPants.pl
 %%CGIDIR%%/plugins/Markdown/Readme.txt
 %%CGIDIR%%/plugins/Markdown/Readme.text
@@ -294,11 +512,10 @@
 %%CGIDIR%%/php/lib/resource.mt.php
 %%CGIDIR%%/php/lib/rating_lib.php
 %%CGIDIR%%/php/lib/prefilter.mt_to_smarty.php
-%%CGIDIR%%/php/lib/mtdb_sqlite.php
-%%CGIDIR%%/php/lib/mtdb_postgres.php
-%%CGIDIR%%/php/lib/mtdb_pdo_sqlite.php
-%%CGIDIR%%/php/lib/mtdb_mysql.php
-%%CGIDIR%%/php/lib/mtdb_base.php
+%%CGIDIR%%/php/lib/mtdb.sqlite.php
+%%CGIDIR%%/php/lib/mtdb.postgres.php
+%%CGIDIR%%/php/lib/mtdb.mysql.php
+%%CGIDIR%%/php/lib/mtdb.base.php
 %%CGIDIR%%/php/lib/mtcache_session.php
 %%CGIDIR%%/php/lib/mtcache_memcached.php
 %%CGIDIR%%/php/lib/mtcache_base.php
@@ -341,6 +558,22 @@
 %%CGIDIR%%/php/lib/function.mtxmlrpcscript.php
 %%CGIDIR%%/php/lib/function.mtwidgetset.php
 %%CGIDIR%%/php/lib/function.mtwidgetmanager.php
+%%CGIDIR%%/php/lib/function.mtwebsiteurl.php
+%%CGIDIR%%/php/lib/function.mtwebsitetimezone.php
+%%CGIDIR%%/php/lib/function.mtwebsitethemeid.php
+%%CGIDIR%%/php/lib/function.mtwebsiterelativeurl.php
+%%CGIDIR%%/php/lib/function.mtwebsitepingcount.php
+%%CGIDIR%%/php/lib/function.mtwebsitepath.php
+%%CGIDIR%%/php/lib/function.mtwebsitepagecount.php
+%%CGIDIR%%/php/lib/function.mtwebsitename.php
+%%CGIDIR%%/php/lib/function.mtwebsitelanguage.php
+%%CGIDIR%%/php/lib/function.mtwebsiteid.php
+%%CGIDIR%%/php/lib/function.mtwebsitehost.php
+%%CGIDIR%%/php/lib/function.mtwebsitefileextension.php
+%%CGIDIR%%/php/lib/function.mtwebsitedescription.php
+%%CGIDIR%%/php/lib/function.mtwebsitecommentcount.php
+%%CGIDIR%%/php/lib/function.mtwebsitecclicenseurl.php
+%%CGIDIR%%/php/lib/function.mtwebsitecclicenseimage.php
 %%CGIDIR%%/php/lib/function.mtversion.php
 %%CGIDIR%%/php/lib/function.mtvar.php
 %%CGIDIR%%/php/lib/function.mtusersessioncookietimeout.php
@@ -358,6 +591,7 @@
 %%CGIDIR%%/php/lib/function.mttaglabel.php
 %%CGIDIR%%/php/lib/function.mttagid.php
 %%CGIDIR%%/php/lib/function.mttagcount.php
+%%CGIDIR%%/php/lib/function.mtsupportdirectoryurl.php
 %%CGIDIR%%/php/lib/function.mtsubfolderrecurse.php
 %%CGIDIR%%/php/lib/function.mtsubcatsrecurse.php
 %%CGIDIR%%/php/lib/function.mtsubcategorypath.php
@@ -532,6 +766,7 @@
 %%CGIDIR%%/php/lib/function.mtbuildtemplateid.php
 %%CGIDIR%%/php/lib/function.mtblogurl.php
 %%CGIDIR%%/php/lib/function.mtblogtimezone.php
+%%CGIDIR%%/php/lib/function.mtblogthemeid.php
 %%CGIDIR%%/php/lib/function.mtblogtemplatesetid.php
 %%CGIDIR%%/php/lib/function.mtblogsitepath.php
 %%CGIDIR%%/php/lib/function.mtblogrelativeurl.php
@@ -560,6 +795,7 @@
 %%CGIDIR%%/php/lib/function.mtauthorrank.php
 %%CGIDIR%%/php/lib/function.mtauthorname.php
 %%CGIDIR%%/php/lib/function.mtauthorid.php
+%%CGIDIR%%/php/lib/function.mtauthorentrycount.php
 %%CGIDIR%%/php/lib/function.mtauthoremail.php
 %%CGIDIR%%/php/lib/function.mtauthordisplayname.php
 %%CGIDIR%%/php/lib/function.mtauthorbasename.php
@@ -602,8 +838,46 @@
 %%CGIDIR%%/php/lib/function.mtadmincgipath.php
 %%CGIDIR%%/php/lib/compiler.defun.php
 %%CGIDIR%%/php/lib/commenter_auth_lib.php
+%%CGIDIR%%/php/lib/class.mt_website.php
+%%CGIDIR%%/php/lib/class.mt_trackback.php
+%%CGIDIR%%/php/lib/class.mt_touch.php
+%%CGIDIR%%/php/lib/class.mt_templatemap.php
+%%CGIDIR%%/php/lib/class.mt_template.php
+%%CGIDIR%%/php/lib/class.mt_tbping.php
+%%CGIDIR%%/php/lib/class.mt_tag.php
+%%CGIDIR%%/php/lib/class.mt_session.php
+%%CGIDIR%%/php/lib/class.mt_role.php
+%%CGIDIR%%/php/lib/class.mt_plugindata.php
+%%CGIDIR%%/php/lib/class.mt_placement.php
+%%CGIDIR%%/php/lib/class.mt_permission.php
+%%CGIDIR%%/php/lib/class.mt_page.php
+%%CGIDIR%%/php/lib/class.mt_objecttag.php
+%%CGIDIR%%/php/lib/class.mt_objectscore.php
+%%CGIDIR%%/php/lib/class.mt_objectasset.php
+%%CGIDIR%%/php/lib/class.mt_notification.php
+%%CGIDIR%%/php/lib/class.mt_ipbanlist.php
+%%CGIDIR%%/php/lib/class.mt_folder.php
+%%CGIDIR%%/php/lib/class.mt_fileinfo.php
+%%CGIDIR%%/php/lib/class.mt_entry.php
+%%CGIDIR%%/php/lib/class.mt_config.php
+%%CGIDIR%%/php/lib/class.mt_comment.php
+%%CGIDIR%%/php/lib/class.mt_category.php
+%%CGIDIR%%/php/lib/class.mt_blog.php
+%%CGIDIR%%/php/lib/class.mt_author.php
+%%CGIDIR%%/php/lib/class.mt_association.php
+%%CGIDIR%%/php/lib/class.mt_asset.php
+%%CGIDIR%%/php/lib/class.exception.php
+%%CGIDIR%%/php/lib/class.cachesession.php
+%%CGIDIR%%/php/lib/class.cachememory.php
+%%CGIDIR%%/php/lib/class.cachememcached.php
+%%CGIDIR%%/php/lib/class.baseobject.php
+%%CGIDIR%%/php/lib/class.basecache.php
 %%CGIDIR%%/php/lib/cc_lib.php
 %%CGIDIR%%/php/lib/captcha_lib.php
+%%CGIDIR%%/php/lib/block.mtwebsites.php
+%%CGIDIR%%/php/lib/block.mtwebsiteifcommentsopen.php
+%%CGIDIR%%/php/lib/block.mtwebsiteifcclicense.php
+%%CGIDIR%%/php/lib/block.mtwebsitehasblog.php
 %%CGIDIR%%/php/lib/block.mtunless.php
 %%CGIDIR%%/php/lib/block.mttoplevelparent.php
 %%CGIDIR%%/php/lib/block.mttoplevelfolders.php
@@ -641,6 +915,7 @@
 %%CGIDIR%%/php/lib/block.mtloop.php
 %%CGIDIR%%/php/lib/block.mtindexlist.php
 %%CGIDIR%%/php/lib/block.mtincludeblock.php
+%%CGIDIR%%/php/lib/block.mtifwebsite.php
 %%CGIDIR%%/php/lib/block.mtiftypekeytoken.php
 %%CGIDIR%%/php/lib/block.mtiftagsearch.php
 %%CGIDIR%%/php/lib/block.mtifrequirecommentemails.php
@@ -716,6 +991,7 @@
 %%CGIDIR%%/php/lib/block.mtcomments.php
 %%CGIDIR%%/php/lib/block.mtcommentreplies.php
 %%CGIDIR%%/php/lib/block.mtcommentparent.php
+%%CGIDIR%%/php/lib/block.mtcommentifmoderated.php
 %%CGIDIR%%/php/lib/block.mtcommenteruserpicasset.php
 %%CGIDIR%%/php/lib/block.mtcommenteriftrusted.php
 %%CGIDIR%%/php/lib/block.mtcommententry.php
@@ -731,6 +1007,7 @@
 %%CGIDIR%%/php/lib/block.mtcalendarifblank.php
 %%CGIDIR%%/php/lib/block.mtcalendar.php
 %%CGIDIR%%/php/lib/block.mtblogs.php
+%%CGIDIR%%/php/lib/block.mtblogparentwebsite.php
 %%CGIDIR%%/php/lib/block.mtblogifcommentsopen.php
 %%CGIDIR%%/php/lib/block.mtblogifcclicense.php
 %%CGIDIR%%/php/lib/block.mtauthoruserpicasset.php
@@ -864,6 +1141,205 @@
 %%CGIDIR%%/php/extlib/ezsql/ezsql_oracle.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_mysql.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_mssqlserver.php
+%%CGIDIR%%/php/extlib/adodb5/xsl/remove-0.3.xsl
+%%CGIDIR%%/php/extlib/adodb5/xsl/remove-0.2.xsl
+%%CGIDIR%%/php/extlib/adodb5/xsl/convert-0.2-0.3.xsl
+%%CGIDIR%%/php/extlib/adodb5/xsl/convert-0.2-0.1.xsl
+%%CGIDIR%%/php/extlib/adodb5/xsl/convert-0.1-0.3.xsl
+%%CGIDIR%%/php/extlib/adodb5/xsl/convert-0.1-0.2.xsl
+%%CGIDIR%%/php/extlib/adodb5/xmlschema03.dtd
+%%CGIDIR%%/php/extlib/adodb5/xmlschema.dtd
+%%CGIDIR%%/php/extlib/adodb5/tohtml.inc.php
+%%CGIDIR%%/php/extlib/adodb5/toexport.inc.php
+%%CGIDIR%%/php/extlib/adodb5/tests/xmlschema.xml
+%%CGIDIR%%/php/extlib/adodb5/tests/xmlschema-mssql.xml
+%%CGIDIR%%/php/extlib/adodb5/tests/tmssql.php
+%%CGIDIR%%/php/extlib/adodb5/tests/time.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testsessions.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testpear.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testpaging.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testoci8cursor.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testoci8.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testmssql.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testgenid.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testdatabases.inc.php
+%%CGIDIR%%/php/extlib/adodb5/tests/testcache.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test_rs_array.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test5.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test4.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test3.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test2.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-xmlschema.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-php5.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-pgblob.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-perf.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-datadict.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-active-relationsx.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-active-relations.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-active-recs2.php
+%%CGIDIR%%/php/extlib/adodb5/tests/test-active-record.php
+%%CGIDIR%%/php/extlib/adodb5/tests/pdo.php
+%%CGIDIR%%/php/extlib/adodb5/tests/client.php
+%%CGIDIR%%/php/extlib/adodb5/tests/benchmark.php
+%%CGIDIR%%/php/extlib/adodb5/session/session_schema2.xml
+%%CGIDIR%%/php/extlib/adodb5/session/session_schema.xml
+%%CGIDIR%%/php/extlib/adodb5/session/old/crypt.inc.php
+%%CGIDIR%%/php/extlib/adodb5/session/old/adodb-session.php
+%%CGIDIR%%/php/extlib/adodb5/session/old/adodb-session-clob.php
+%%CGIDIR%%/php/extlib/adodb5/session/old/adodb-cryptsession.php
+%%CGIDIR%%/php/extlib/adodb5/session/crypt.inc.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-sessions.oracle.sql
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-sessions.oracle.clob.sql
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-sessions.mysql.sql
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-session2.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-session.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-session-clob2.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-session-clob.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-sess.txt
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-encrypt-sha1.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-encrypt-secret.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-encrypt-md5.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-encrypt-mcrypt.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-cryptsession2.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-cryptsession.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-compress-gzip.php
+%%CGIDIR%%/php/extlib/adodb5/session/adodb-compress-bzip2.php
+%%CGIDIR%%/php/extlib/adodb5/server.php
+%%CGIDIR%%/php/extlib/adodb5/rsfilter.inc.php
+%%CGIDIR%%/php/extlib/adodb5/readme.txt
+%%CGIDIR%%/php/extlib/adodb5/pivottable.inc.php
+%%CGIDIR%%/php/extlib/adodb5/perf/perf-postgres.inc.php
+%%CGIDIR%%/php/extlib/adodb5/perf/perf-oci8.inc.php
+%%CGIDIR%%/php/extlib/adodb5/perf/perf-mysql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/perf/perf-mssqlnative.inc.php
+%%CGIDIR%%/php/extlib/adodb5/perf/perf-mssql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/perf/perf-informix.inc.php
+%%CGIDIR%%/php/extlib/adodb5/perf/perf-db2.inc.php
+%%CGIDIR%%/php/extlib/adodb5/pear/readme.Auth.txt
+%%CGIDIR%%/php/extlib/adodb5/pear/Auth/Container/ADOdb.php
+%%CGIDIR%%/php/extlib/adodb5/license.txt
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb_th.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-uk1251.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-sv.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-ru1251.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-ro.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-pt-br.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-pl.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-nl.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-it.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-hu.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-fr.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-fa.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-esperanto.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-es.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-en.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-de.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-da.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-cz.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-cn.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-ca.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-bgutf8.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-bg.inc.php
+%%CGIDIR%%/php/extlib/adodb5/lang/adodb-ar.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-vfp.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-sybase_ase.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-sybase.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-sqlitepo.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-sqlite.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-sqlanywhere.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-sapdb.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-proxy.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-postgres8.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-postgres7.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-postgres64.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-postgres.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-pdo_sqlite.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-pdo_pgsql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-pdo_oci.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-pdo_mysql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-pdo_mssql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-pdo.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-oracle.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-odbtp_unicode.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-odbtp.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-odbc_oracle.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-odbc_mssql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-odbc_db2.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-odbc.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-oci8po.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-oci805.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-oci8.old.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-oci8.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-netezza.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mysqlt.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mysqlpo.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mysqli.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mysql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mssqlpo.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mssqlnative.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mssql_n.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-mssql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-ldap.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-informix72.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-informix.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-ibase.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-firebird.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-fbsql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-db2.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-csv.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-borland_ibase.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-ado_mssql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-ado_access.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-ado5.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-ado.inc.php
+%%CGIDIR%%/php/extlib/adodb5/drivers/adodb-access.inc.php
+%%CGIDIR%%/php/extlib/adodb5/docs/tute.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/tips_portable_sql.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/readme.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/old-changelog.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/docs-session.old.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/docs-session.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/docs-perf.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/docs-oracle.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/docs-datadict.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/docs-adodb.htm
+%%CGIDIR%%/php/extlib/adodb5/docs/docs-active-record.htm
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-sybase.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-sapdb.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-postgres.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-oci8.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-mysql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-mssqlnative.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-mssql.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-informix.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-ibase.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-generic.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-firebird.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-db2.inc.php
+%%CGIDIR%%/php/extlib/adodb5/datadict/datadict-access.inc.php
+%%CGIDIR%%/php/extlib/adodb5/cute_icons_for_site/adodb2.gif
+%%CGIDIR%%/php/extlib/adodb5/cute_icons_for_site/adodb.gif
+%%CGIDIR%%/php/extlib/adodb5/contrib/toxmlrpc.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-xmlschema03.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-xmlschema.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-time.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-php4.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-perf.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-pear.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-pager.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-memcache.lib.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-lib.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-iterator.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-exceptions.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-errorpear.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-errorhandler.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-error.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-datadict.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-csvlib.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-active-recordx.inc.php
+%%CGIDIR%%/php/extlib/adodb5/adodb-active-record.inc.php
 %%CGIDIR%%/mt.cgi
 %%CGIDIR%%/mt-xmlrpc.cgi
 %%CGIDIR%%/mt-wizard.cgi
@@ -917,6 +1393,7 @@
 %%DATADIR%%/mt-static/styles_de.css
 %%DATADIR%%/mt-static/styles.css
 %%DATADIR%%/mt-static/readme/mt4-logo.png
+%%DATADIR%%/mt-static/readme/mt-logo.png
 %%DATADIR%%/mt-static/plugins/WidgetManager/styles/app.css
 %%DATADIR%%/mt-static/plugins/WidgetManager/js/app.js
 %%DATADIR%%/mt-static/plugins/WidgetManager/images/drop.gif
@@ -938,11 +1415,11 @@
 %%DATADIR%%/mt-static/plugins/StyleCatcher/images/down.gif
 %%DATADIR%%/mt-static/plugins/StyleCatcher/images/designer.gif
 %%DATADIR%%/mt-static/plugins/StyleCatcher/images/classic.gif
-%%LANG_JA%%%%DATADIR%%/mt-static/mt_nl.js
-%%LANG_JA%%%%DATADIR%%/mt-static/mt_ja.js
-%%LANG_JA%%%%DATADIR%%/mt-static/mt_fr.js
-%%LANG_JA%%%%DATADIR%%/mt-static/mt_es.js
-%%LANG_JA%%%%DATADIR%%/mt-static/mt_de.js
+%%DATADIR%%/mt-static/mt_nl.js
+%%DATADIR%%/mt-static/mt_ja.js
+%%DATADIR%%/mt-static/mt_fr.js
+%%DATADIR%%/mt-static/mt_es.js
+%%DATADIR%%/mt-static/mt_de.js
 %%DATADIR%%/mt-static/mt.js
 %%DATADIR%%/mt-static/js/widget.js
 %%DATADIR%%/mt-static/js/tc/wordselect.js
@@ -1004,188 +1481,101 @@
 %%DATADIR%%/mt-static/js/common/AdEngine.js
 %%DATADIR%%/mt-static/js/assetdetail.js
 %%DATADIR%%/mt-static/js/archetype_editor.js
-%%DATADIR%%/mt-static/jquery/ui/ui.tabs.js
-%%DATADIR%%/mt-static/jquery/ui/ui.sortable.js
-%%DATADIR%%/mt-static/jquery/ui/ui.slider.js
-%%DATADIR%%/mt-static/jquery/ui/ui.selectable.js
-%%DATADIR%%/mt-static/jquery/ui/ui.resizable.js
-%%DATADIR%%/mt-static/jquery/ui/ui.droppable.js
-%%DATADIR%%/mt-static/jquery/ui/ui.draggable.js
-%%DATADIR%%/mt-static/jquery/ui/ui.dialog.js
-%%DATADIR%%/mt-static/jquery/ui/ui.datepicker.js
-%%DATADIR%%/mt-static/jquery/ui/ui.core.js
-%%DATADIR%%/mt-static/jquery/ui/ui.accordion.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.tabs.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.sortable.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.slider.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.selectable.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.resizable.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.droppable.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.draggable.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.dialog.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.datepicker.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.core.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/ui.accordion.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/jquery.ui.all.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.transfer.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.slide.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.shake.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.scale.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.pulsate.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.highlight.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.fold.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.explode.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.drop.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.core.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.clip.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.bounce.packed.js
-%%DATADIR%%/mt-static/jquery/ui/packed/effects.blind.packed.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.tabs.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.sortable.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.slider.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.selectable.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.resizable.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.droppable.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.draggable.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.dialog.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.datepicker.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.core.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/ui.accordion.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/jquery.ui.all.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.transfer.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.slide.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.shake.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.scale.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.pulsate.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.highlight.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.fold.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.explode.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.drop.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.core.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.clip.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.bounce.min.js
-%%DATADIR%%/mt-static/jquery/ui/minified/effects.blind.min.js
-%%DATADIR%%/mt-static/jquery/ui/jquery.ui.all.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-zh-TW.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-zh-CN.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-uk.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-tr.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-th.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-sv.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-sk.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-ru.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-ro.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-pt-BR.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-pl.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-no.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-nl.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-lv.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-lt.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-ko.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-ja.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-it.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-is.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-id.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-hy.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-hu.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-he.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-fr.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-fi.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-es.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-de.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-da.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-cs.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-ca.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-bg.js
-%%DATADIR%%/mt-static/jquery/ui/i18n/ui.datepicker-ar.js
-%%DATADIR%%/mt-static/jquery/ui/effects.transfer.js
-%%DATADIR%%/mt-static/jquery/ui/effects.slide.js
-%%DATADIR%%/mt-static/jquery/ui/effects.shake.js
-%%DATADIR%%/mt-static/jquery/ui/effects.scale.js
-%%DATADIR%%/mt-static/jquery/ui/effects.pulsate.js
-%%DATADIR%%/mt-static/jquery/ui/effects.highlight.js
-%%DATADIR%%/mt-static/jquery/ui/effects.fold.js
-%%DATADIR%%/mt-static/jquery/ui/effects.explode.js
-%%DATADIR%%/mt-static/jquery/ui/effects.drop.js
-%%DATADIR%%/mt-static/jquery/ui/effects.core.js
-%%DATADIR%%/mt-static/jquery/ui/effects.clip.js
-%%DATADIR%%/mt-static/jquery/ui/effects.bounce.js
-%%DATADIR%%/mt-static/jquery/ui/effects.blind.js
+%%DATADIR%%/mt-static/jqueryui/ui.tabs.js
+%%DATADIR%%/mt-static/jqueryui/ui.sortable.js
+%%DATADIR%%/mt-static/jqueryui/ui.slider.js
+%%DATADIR%%/mt-static/jqueryui/ui.selectable.js
+%%DATADIR%%/mt-static/jqueryui/ui.resizable.js
+%%DATADIR%%/mt-static/jqueryui/ui.progressbar.js
+%%DATADIR%%/mt-static/jqueryui/ui.droppable.js
+%%DATADIR%%/mt-static/jqueryui/ui.draggable.js
+%%DATADIR%%/mt-static/jqueryui/ui.dialog.js
+%%DATADIR%%/mt-static/jqueryui/ui.datepicker.js
+%%DATADIR%%/mt-static/jqueryui/ui.core.js
+%%DATADIR%%/mt-static/jqueryui/ui.accordion.js
+%%DATADIR%%/mt-static/jqueryui/jquery.ui.custom.min.js
+%%DATADIR%%/mt-static/jqueryui/jquery.ui.all.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-zh-TW.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-zh-CN.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-uk.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-tr.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-th.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-sv.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-sr.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-sr-SR.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-sq.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-sl.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-sk.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-ru.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-ro.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-pt-BR.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-pl.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-no.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-nl.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-ms.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-lv.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-lt.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-ko.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-ja.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-it.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-is.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-id.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-hy.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-hu.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-hr.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-he.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-fr.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-fi.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-fa.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-es.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-eo.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-el.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-de.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-da.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-cs.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-ca.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-bg.js
+%%DATADIR%%/mt-static/jqueryui/i18n/ui.datepicker-ar.js
+%%DATADIR%%/mt-static/jqueryui/i18n/jquery-ui-i18n.js
+%%DATADIR%%/mt-static/jqueryui/effects.transfer.js
+%%DATADIR%%/mt-static/jqueryui/effects.slide.js
+%%DATADIR%%/mt-static/jqueryui/effects.shake.js
+%%DATADIR%%/mt-static/jqueryui/effects.scale.js
+%%DATADIR%%/mt-static/jqueryui/effects.pulsate.js
+%%DATADIR%%/mt-static/jqueryui/effects.highlight.js
+%%DATADIR%%/mt-static/jqueryui/effects.fold.js
+%%DATADIR%%/mt-static/jqueryui/effects.explode.js
+%%DATADIR%%/mt-static/jqueryui/effects.drop.js
+%%DATADIR%%/mt-static/jqueryui/effects.core.js
+%%DATADIR%%/mt-static/jqueryui/effects.clip.js
+%%DATADIR%%/mt-static/jqueryui/effects.bounce.js
+%%DATADIR%%/mt-static/jqueryui/effects.blind.js
 %%DATADIR%%/mt-static/jquery/thickbox.js
 %%DATADIR%%/mt-static/jquery/themes/ui.datepicker.css
 %%DATADIR%%/mt-static/jquery/themes/thickbox.css
 %%DATADIR%%/mt-static/jquery/themes/macFFBgHack.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/tabs.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/slider-handle.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/slider-bg-2.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/slider-bg-1.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-w.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-sw.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-se.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-s.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-nw.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-ne.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-n.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/resizable-e.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-w.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-titlebar-close.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-titlebar-close-hover.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-title.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-sw.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-se.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-s.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-nw.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-ne.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-n.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/dialog-e.gif
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-right.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-right-over.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-right-act.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-middle.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-middle-over.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-middle-act.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-left.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-left-over.png
-%%DATADIR%%/mt-static/jquery/themes/flora/i/accordion-left-act.png
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.tabs.css
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.slider.css
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.resizable.css
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.dialog.css
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.datepicker.css
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.css
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.all.css
-%%DATADIR%%/mt-static/jquery/themes/flora/flora.accordion.css
+%%DATADIR%%/mt-static/jquery/jquery.validate.min.js
+%%DATADIR%%/mt-static/jquery/jquery.validate.js
 %%DATADIR%%/mt-static/jquery/jquery.timeout.interval.idle.js
+%%DATADIR%%/mt-static/jquery/jquery.pngfix.js
 %%DATADIR%%/mt-static/jquery/jquery.phpdate.js
+%%DATADIR%%/mt-static/jquery/jquery.mt.min.js
+%%DATADIR%%/mt-static/jquery/jquery.mt.js
+%%DATADIR%%/mt-static/jquery/jquery.min.js
+%%DATADIR%%/mt-static/jquery/jquery.json.min.js
+%%DATADIR%%/mt-static/jquery/jquery.json.js
 %%DATADIR%%/mt-static/jquery/jquery.js
 %%DATADIR%%/mt-static/jquery/jquery.form.js
+%%DATADIR%%/mt-static/jquery/jquery.exfixed.js
 %%DATADIR%%/mt-static/jquery/jquery.dump.js
+%%DATADIR%%/mt-static/jquery/jquery.bgiframe.min.js
+%%DATADIR%%/mt-static/jquery/jquery.bgiframe.js
 %%DATADIR%%/mt-static/index.html
-%%DATADIR%%/mt-static/images/widget/you-t.gif
-%%DATADIR%%/mt-static/images/widget/you-br.gif
-%%DATADIR%%/mt-static/images/widget/you-bl.gif
-%%DATADIR%%/mt-static/images/widget/you-bg.gif
-%%DATADIR%%/mt-static/images/widget/welcome-close.gif
-%%DATADIR%%/mt-static/images/widget/welcome-bg.jpg
-%%DATADIR%%/mt-static/images/widget/news-tr.gif
-%%DATADIR%%/mt-static/images/widget/news-tl.gif
-%%DATADIR%%/mt-static/images/widget/news-tab-tr.gif
-%%DATADIR%%/mt-static/images/widget/news-tab-tl.gif
-%%DATADIR%%/mt-static/images/widget/news-header-bg.gif
-%%DATADIR%%/mt-static/images/widget/news-bg.gif
-%%DATADIR%%/mt-static/images/widget/news-b.gif
-%%DATADIR%%/mt-static/images/widget/corners.png
-%%DATADIR%%/mt-static/images/widget/blogstats-tr.gif
-%%DATADIR%%/mt-static/images/widget/blogstats-bg.gif
-%%DATADIR%%/mt-static/images/widget/blogstats-b.gif
-%%DATADIR%%/mt-static/images/white.gif
-%%DATADIR%%/mt-static/images/white-corner-tr.gif
-%%DATADIR%%/mt-static/images/white-corner-tl.gif
+%%DATADIR%%/mt-static/images/widget/widget-icons.png
+%%DATADIR%%/mt-static/images/widget/widget-header.png
+%%DATADIR%%/mt-static/images/widget/checked.gif
 %%DATADIR%%/mt-static/images/unlocked.gif
 %%DATADIR%%/mt-static/images/trust-bg.gif
-%%DATADIR%%/mt-static/images/system-nav.jpg
-%%DATADIR%%/mt-static/images/system-nav-down.gif
-%%DATADIR%%/mt-static/images/system-nav-down-hover.gif
 %%DATADIR%%/mt-static/images/status_icons/warning.gif
 %%DATADIR%%/mt-static/images/status_icons/warning-k.gif
 %%DATADIR%%/mt-static/images/status_icons/view.gif
@@ -1255,23 +1645,20 @@
 %%DATADIR%%/mt-static/images/status_icons/batch.gif
 %%DATADIR%%/mt-static/images/status_icons/banned.gif
 %%DATADIR%%/mt-static/images/status_icons/authenticated.gif
-%%DATADIR%%/mt-static/images/status-widget-bar-top.gif
-%%DATADIR%%/mt-static/images/status-widget-bar-bottom.gif
 %%DATADIR%%/mt-static/images/spinner-top.gif
 %%DATADIR%%/mt-static/images/spinner-right.gif
 %%DATADIR%%/mt-static/images/spinner-bottom.gif
+%%DATADIR%%/mt-static/images/spinner-big-top.gif
 %%DATADIR%%/mt-static/images/spinner-big-right.gif
 %%DATADIR%%/mt-static/images/spinner-big-bottom.gif
 %%DATADIR%%/mt-static/images/spacer.gif
-%%DATADIR%%/mt-static/images/settings_box_bg.gif
-%%DATADIR%%/mt-static/images/search-submit.gif
-%%DATADIR%%/mt-static/images/search-submit-system.gif
-%%DATADIR%%/mt-static/images/search-input-bg.gif
+%%DATADIR%%/mt-static/images/selector-nav-spinner.gif
+%%DATADIR%%/mt-static/images/selector-nav-separator_blog.gif
+%%DATADIR%%/mt-static/images/search-submit.png
+%%DATADIR%%/mt-static/images/search-submit-dialog.png
 %%DATADIR%%/mt-static/images/search-button.gif
-%%DATADIR%%/mt-static/images/resize.png
 %%DATADIR%%/mt-static/images/progress-bar.gif
 %%DATADIR%%/mt-static/images/progress-bar-indeterminate.gif
-%%DATADIR%%/mt-static/images/previous.gif
 %%DATADIR%%/mt-static/images/preview.gif
 %%DATADIR%%/mt-static/images/powered.gif
 %%DATADIR%%/mt-static/images/plugin.gif
@@ -1280,7 +1667,6 @@
 %%DATADIR%%/mt-static/images/pagination.gif
 %%DATADIR%%/mt-static/images/pagination-system.gif
 %%DATADIR%%/mt-static/images/openid-accepted.gif
-%%DATADIR%%/mt-static/images/next.gif
 %%DATADIR%%/mt-static/images/neutral-bg.gif
 %%DATADIR%%/mt-static/images/nav_icons/mini/view-site.gif
 %%DATADIR%%/mt-static/images/nav_icons/mini/trackbacks.gif
@@ -1319,6 +1705,7 @@
 %%DATADIR%%/mt-static/images/nav_icons/gray/groups.gif
 %%DATADIR%%/mt-static/images/nav_icons/gray/group.gif
 %%DATADIR%%/mt-static/images/nav_icons/gray/entries.gif
+%%DATADIR%%/mt-static/images/nav_icons/gray/delete.gif
 %%DATADIR%%/mt-static/images/nav_icons/gray/comments.gif
 %%DATADIR%%/mt-static/images/nav_icons/gray/commenters.gif
 %%DATADIR%%/mt-static/images/nav_icons/gray/categories.gif
@@ -1347,65 +1734,33 @@
 %%DATADIR%%/mt-static/images/nav_icons/color/group.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/entry.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/entries.gif
+%%DATADIR%%/mt-static/images/nav_icons/color/delete.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/comments.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/commenters.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/categories.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/backup.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/authors.gif
 %%DATADIR%%/mt-static/images/nav_icons/color/assets.gif
-%%DATADIR%%/mt-static/images/nav_arrow.gif
-%%DATADIR%%/mt-static/images/nav-icon-view.gif
-%%DATADIR%%/mt-static/images/nav-icon-rebuild.gif
-%%DATADIR%%/mt-static/images/nav-icon-dashboard.gif
-%%DATADIR%%/mt-static/images/nav-icon-dashboard-system.gif
-%%DATADIR%%/mt-static/images/nav-dot.gif
-%%DATADIR%%/mt-static/images/nav-divider.gif
+%%DATADIR%%/mt-static/images/nav-icon-view.png
+%%DATADIR%%/mt-static/images/nav-icon-publish.png
 %%DATADIR%%/mt-static/images/nav-commenters.gif
-%%DATADIR%%/mt-static/images/nav-arrow.gif
-%%DATADIR%%/mt-static/images/nav-arrow-right.png
-%%DATADIR%%/mt-static/images/nav-arrow-left.png
-%%DATADIR%%/mt-static/images/nav-arrow-down.png
-%%DATADIR%%/mt-static/images/nav-arrow-down.gif
-%%DATADIR%%/mt-static/images/nav-arrow-down-system.gif
-%%DATADIR%%/mt-static/images/nav-arrow-down-hover.gif
-%%DATADIR%%/mt-static/images/nav-arrow-down-hover-system.gif
-%%DATADIR%%/mt-static/images/mt4-bug-pbmt-white.png
-%%DATADIR%%/mt-static/images/movable-type-logo.gif
-%%DATADIR%%/mt-static/images/movable-type-logo-system.gif
-%%DATADIR%%/mt-static/images/mininav-create-bg.gif
+%%DATADIR%%/mt-static/images/menu-bg.png
+%%DATADIR%%/mt-static/images/menu-arrow-down.gif
+%%DATADIR%%/mt-static/images/logo/mt-spanner.png
+%%DATADIR%%/mt-static/images/logo/movable-type-logo.png
+%%DATADIR%%/mt-static/images/logo/movable-type-logo-website.png
+%%DATADIR%%/mt-static/images/logo/movable-type-logo-system.png
+%%DATADIR%%/mt-static/images/logo/movable-type-brand-logo.png
+%%DATADIR%%/mt-static/images/logo/movable-type-brand-logo-website.png
+%%DATADIR%%/mt-static/images/logo/movable-type-brand-logo-system.png
 %%DATADIR%%/mt-static/images/locked.gif
 %%DATADIR%%/mt-static/images/loadingAnimation.gif
-%%DATADIR%%/mt-static/images/listing/has-focus.gif
-%%DATADIR%%/mt-static/images/listing/filter-tr.gif
-%%DATADIR%%/mt-static/images/listing/filter-tl.gif
-%%DATADIR%%/mt-static/images/listing/column-label-bg.gif
-%%DATADIR%%/mt-static/images/listing/column-label-bg-system.gif
-%%DATADIR%%/mt-static/images/input-bg.gif
 %%DATADIR%%/mt-static/images/indicator.white.gif
 %%DATADIR%%/mt-static/images/indicator.gif
 %%DATADIR%%/mt-static/images/indicator-login.gif
 %%DATADIR%%/mt-static/images/indeterminate-progress-bar.gif
 %%DATADIR%%/mt-static/images/increase.gif
-%%DATADIR%%/mt-static/images/icon_warning.png
-%%DATADIR%%/mt-static/images/icon_success.png
-%%DATADIR%%/mt-static/images/icon_info.gif
-%%DATADIR%%/mt-static/images/icon_error.png
 %%DATADIR%%/mt-static/images/icon_close.png
-%%DATADIR%%/mt-static/images/icon_alert.png
-%%DATADIR%%/mt-static/images/header-inner.gif
-%%DATADIR%%/mt-static/images/header-inner-system.jpg
-%%DATADIR%%/mt-static/images/formatting-icons/upload_file.gif
-%%DATADIR%%/mt-static/images/formatting-icons/underline.gif
-%%DATADIR%%/mt-static/images/formatting-icons/separator.gif
-%%DATADIR%%/mt-static/images/formatting-icons/quote.gif
-%%DATADIR%%/mt-static/images/formatting-icons/link.gif
-%%DATADIR%%/mt-static/images/formatting-icons/italic.gif
-%%DATADIR%%/mt-static/images/formatting-icons/field-smaller.gif
-%%DATADIR%%/mt-static/images/formatting-icons/field-bigger.gif
-%%DATADIR%%/mt-static/images/formatting-icons/email.gif
-%%DATADIR%%/mt-static/images/formatting-icons/bold.gif
-%%DATADIR%%/mt-static/images/formatting-icons/add_image.gif
-%%DATADIR%%/mt-static/images/footer-bg.jpg
 %%DATADIR%%/mt-static/images/filter.gif
 %%DATADIR%%/mt-static/images/filetype_icons/zip_sm.gif
 %%DATADIR%%/mt-static/images/filetype_icons/zip_lg.gif
@@ -1438,47 +1793,16 @@
 %%DATADIR%%/mt-static/images/filetype_icons/default_sm.gif
 %%DATADIR%%/mt-static/images/filetype_icons/default_lg.gif
 %%DATADIR%%/mt-static/images/favicon.ico
-%%DATADIR%%/mt-static/images/expand.gif
-%%DATADIR%%/mt-static/images/drop.gif
-%%DATADIR%%/mt-static/images/divider.gif
-%%DATADIR%%/mt-static/images/display-options-link.gif
-%%DATADIR%%/mt-static/images/display-options-link-system.gif
+%%DATADIR%%/mt-static/images/delete.gif
+%%DATADIR%%/mt-static/images/default_theme_thumbnail_small.png
+%%DATADIR%%/mt-static/images/default_theme_thumbnail_medium.png
+%%DATADIR%%/mt-static/images/default_theme_thumbnail.png
 %%DATADIR%%/mt-static/images/default-userpic-90.jpg
 %%DATADIR%%/mt-static/images/default-userpic-50.jpg
 %%DATADIR%%/mt-static/images/default-userpic-36.jpg
 %%DATADIR%%/mt-static/images/decrease.gif
-%%DATADIR%%/mt-static/images/dashboard-bg.gif
-%%DATADIR%%/mt-static/images/dashboard-bg-system.gif
 %%DATADIR%%/mt-static/images/current-filter.gif
 %%DATADIR%%/mt-static/images/current-filter-system.gif
-%%DATADIR%%/mt-static/images/create-entry-button-right.gif
-%%DATADIR%%/mt-static/images/create-entry-button-left.gif
-%%DATADIR%%/mt-static/images/content.jpg
-%%DATADIR%%/mt-static/images/content-system.jpg
-%%DATADIR%%/mt-static/images/content-nav-arrow.gif
-%%DATADIR%%/mt-static/images/content-nav-arrow-system.gif
-%%DATADIR%%/mt-static/images/content-nav-active.gif
-%%DATADIR%%/mt-static/images/content-nav-active-top.gif
-%%DATADIR%%/mt-static/images/content-nav-active-top-system.gif
-%%DATADIR%%/mt-static/images/content-nav-active-bottom.gif
-%%DATADIR%%/mt-static/images/content-nav-active-bottom-system.gif
-%%DATADIR%%/mt-static/images/content-inner.gif
-%%DATADIR%%/mt-static/images/content-inner-wt.gif
-%%DATADIR%%/mt-static/images/content-inner-wt-system.gif
-%%DATADIR%%/mt-static/images/content-inner-wt-listing.gif
-%%DATADIR%%/mt-static/images/content-inner-wt-listing-system.gif
-%%DATADIR%%/mt-static/images/content-inner-wm.gif
-%%DATADIR%%/mt-static/images/content-inner-twt.gif
-%%DATADIR%%/mt-static/images/content-inner-twt-system.gif
-%%DATADIR%%/mt-static/images/content-inner-twt-listing.gif
-%%DATADIR%%/mt-static/images/content-inner-twt-listing-system.gif
-%%DATADIR%%/mt-static/images/content-inner-tw.gif
-%%DATADIR%%/mt-static/images/content-inner-tw-system.gif
-%%DATADIR%%/mt-static/images/content-inner-tw-listing.gif
-%%DATADIR%%/mt-static/images/content-inner-tw-listing-system.gif
-%%DATADIR%%/mt-static/images/content-inner-system.gif
-%%DATADIR%%/mt-static/images/content-inner-listing.gif
-%%DATADIR%%/mt-static/images/content-inner-listing-system.gif
 %%DATADIR%%/mt-static/images/comment/yahoojp-button.png
 %%DATADIR%%/mt-static/images/comment/yahoo.png
 %%DATADIR%%/mt-static/images/comment/yahoo-button.png
@@ -1511,19 +1835,11 @@
 %%DATADIR%%/mt-static/images/comment/blue_goto.png
 %%DATADIR%%/mt-static/images/comment/aim_logo.png
 %%DATADIR%%/mt-static/images/comment/aim.png
-%%DATADIR%%/mt-static/images/close.gif
 %%DATADIR%%/mt-static/images/chromeless/nav_pipe.png
 %%DATADIR%%/mt-static/images/chromeless/nav_on.png
 %%DATADIR%%/mt-static/images/chromeless/nav_off.png
 %%DATADIR%%/mt-static/images/chromeless/nav_help.png
-%%DATADIR%%/mt-static/images/chromeless/mt_logo.gif
-%%DATADIR%%/mt-static/images/chromeless/movable-type-logo.gif
-%%DATADIR%%/mt-static/images/chromeless/movable-type-logo-blackbg.gif
-%%DATADIR%%/mt-static/images/chromeless/chromeless_top_bg.gif
-%%DATADIR%%/mt-static/images/chromeless/chromeless_corners.gif
-%%DATADIR%%/mt-static/images/chromeless/chromeless_bg_b.png
-%%DATADIR%%/mt-static/images/chromeless/chrome_top.png
-%%DATADIR%%/mt-static/images/chromeless/chrome_bottom.png
+%%DATADIR%%/mt-static/images/chromeless/mt_logo.png
 %%DATADIR%%/mt-static/images/captcha-source/z.png
 %%DATADIR%%/mt-static/images/captcha-source/y.png
 %%DATADIR%%/mt-static/images/captcha-source/x.png
@@ -1563,7 +1879,6 @@
 %%DATADIR%%/mt-static/images/captcha-source/4.png
 %%DATADIR%%/mt-static/images/captcha-source/3.png
 %%DATADIR%%/mt-static/images/captcha-source/2.png
-%%DATADIR%%/mt-static/images/calendar.gif
 %%DATADIR%%/mt-static/images/buttons/toolbar/toolbar.gif
 %%DATADIR%%/mt-static/images/buttons/toolbar/toolbar-hover.gif
 %%DATADIR%%/mt-static/images/buttons/toolbar/toolbar-click.gif
@@ -1574,18 +1889,16 @@
 %%DATADIR%%/mt-static/images/buttons/toolbar/toggle-active.gif
 %%DATADIR%%/mt-static/images/buttons/button.gif
 %%DATADIR%%/mt-static/images/buttons/button-primary.gif
+%%DATADIR%%/mt-static/images/buttons/button-primary-website.gif
 %%DATADIR%%/mt-static/images/buttons/button-primary-system.gif
 %%DATADIR%%/mt-static/images/buttons/button-primary-disabled.gif
+%%DATADIR%%/mt-static/images/buttons/button-primary-disabled-website.gif
 %%DATADIR%%/mt-static/images/buttons/button-primary-disabled-system.gif
 %%DATADIR%%/mt-static/images/buttons/button-list.gif
+%%DATADIR%%/mt-static/images/buttons/button-list-website.gif
 %%DATADIR%%/mt-static/images/buttons/button-list-system.gif
-%%DATADIR%%/mt-static/images/blog-selector-control.gif
-%%DATADIR%%/mt-static/images/blog-selector-arrow.gif
-%%DATADIR%%/mt-static/images/blog-nav.jpg
-%%DATADIR%%/mt-static/images/black.gif
-%%DATADIR%%/mt-static/images/black-corner-tr.gif
-%%DATADIR%%/mt-static/images/black-corner-tl.gif
-%%DATADIR%%/mt-static/images/beta_icons/beta_icon_system.png
+%%DATADIR%%/mt-static/images/buttons/button-favorite-action.png
+%%DATADIR%%/mt-static/images/bug-pbmt-white.png
 %%DATADIR%%/mt-static/images/beta_icons/beta_icon.png
 %%DATADIR%%/mt-static/images/ban-bg.gif
 %%DATADIR%%/mt-static/images/asset/video.gif
@@ -1606,7 +1919,7 @@
 %%DATADIR%%/mt-static/images/arrow-left-green.gif
 %%DATADIR%%/mt-static/images/arrow-left-gray.gif
 %%DATADIR%%/mt-static/images/arrow-left-blue.gif
-%%DATADIR%%/mt-static/images/arrow-down-blue.gif
+%%DATADIR%%/mt-static/images/arrow-down-gray.gif
 %%DATADIR%%/mt-static/images/ani-rebuild.gif
 %%DATADIR%%/mt-static/images/align_right.gif
 %%DATADIR%%/mt-static/images/align_none.gif
@@ -1679,6 +1992,39 @@
 %%DATADIR%%/mt-static/codepress/engines/gecko.js
 %%DATADIR%%/mt-static/codepress/codepress.css
 %%DATADIR%%/mt-static/codepress/VERSION
+%%DATADIR%%/mt-static/codemirror/story.html
+%%DATADIR%%/mt-static/codemirror/sparqltest.html
+%%DATADIR%%/mt-static/codemirror/mixedtest.html
+%%DATADIR%%/mt-static/codemirror/manual.html
+%%DATADIR%%/mt-static/codemirror/jstest.html
+%%DATADIR%%/mt-static/codemirror/js/util.js
+%%DATADIR%%/mt-static/codemirror/js/undo.js
+%%DATADIR%%/mt-static/codemirror/js/tokenizejavascript.js
+%%DATADIR%%/mt-static/codemirror/js/tokenize.js
+%%DATADIR%%/mt-static/codemirror/js/stringstream.js
+%%DATADIR%%/mt-static/codemirror/js/select.js
+%%DATADIR%%/mt-static/codemirror/js/parsexml.js
+%%DATADIR%%/mt-static/codemirror/js/parsesparql.js
+%%DATADIR%%/mt-static/codemirror/js/parsejavascript.js
+%%DATADIR%%/mt-static/codemirror/js/parsehtmlmixed.js
+%%DATADIR%%/mt-static/codemirror/js/parsedummy.js
+%%DATADIR%%/mt-static/codemirror/js/parsecss.js
+%%DATADIR%%/mt-static/codemirror/js/mirrorframe.js
+%%DATADIR%%/mt-static/codemirror/js/highlight.js
+%%DATADIR%%/mt-static/codemirror/js/editor.js
+%%DATADIR%%/mt-static/codemirror/js/codemirror.js
+%%DATADIR%%/mt-static/codemirror/index.html
+%%DATADIR%%/mt-static/codemirror/htmltest.html
+%%DATADIR%%/mt-static/codemirror/highlight.html
+%%DATADIR%%/mt-static/codemirror/csstest.html
+%%DATADIR%%/mt-static/codemirror/css/xmlcolors.css
+%%DATADIR%%/mt-static/codemirror/css/sparqlcolors.css
+%%DATADIR%%/mt-static/codemirror/css/people.jpg
+%%DATADIR%%/mt-static/codemirror/css/jscolors.css
+%%DATADIR%%/mt-static/codemirror/css/docs.css
+%%DATADIR%%/mt-static/codemirror/css/csscolors.css
+%%DATADIR%%/mt-static/codemirror/bigtest.html
+%%DATADIR%%/mt-static/codemirror/LICENSE
 %%CGIDIR%%/mt-search.cgi
 %%CGIDIR%%/mt-ftsearch.cgi
 %%CGIDIR%%/mt-feed.cgi
@@ -1694,7 +2040,11 @@
 %%CGIDIR%%/lib/MT/Worker/SummaryWatcher.pm
 %%CGIDIR%%/lib/MT/Worker/Summarize.pm
 %%CGIDIR%%/lib/MT/Worker/Publish.pm
+%%CGIDIR%%/lib/MT/Website.pm
 %%CGIDIR%%/lib/MT/WeblogPublisher.pm
+%%CGIDIR%%/lib/MT/Util/YAML/Tiny.pm
+%%CGIDIR%%/lib/MT/Util/YAML/Syck.pm
+%%CGIDIR%%/lib/MT/Util/YAML.pm
 %%CGIDIR%%/lib/MT/Util/ReqTimer.pm
 %%CGIDIR%%/lib/MT/Util/PerformanceData.pm
 %%CGIDIR%%/lib/MT/Util/LogProcessor.pm
@@ -1703,16 +2053,51 @@
 %%CGIDIR%%/lib/MT/Util/Archive/Tgz.pm
 %%CGIDIR%%/lib/MT/Util/Archive.pm
 %%CGIDIR%%/lib/MT/Util.pm
+%%CGIDIR%%/lib/MT/Upgrade/v5.pm
+%%CGIDIR%%/lib/MT/Upgrade/v4.pm
+%%CGIDIR%%/lib/MT/Upgrade/v3.pm
+%%CGIDIR%%/lib/MT/Upgrade/v2.pm
+%%CGIDIR%%/lib/MT/Upgrade/v1.pm
+%%CGIDIR%%/lib/MT/Upgrade/Core.pm
 %%CGIDIR%%/lib/MT/Upgrade.pm
 %%CGIDIR%%/lib/MT/Trackback.pm
 %%CGIDIR%%/lib/MT/Touch.pm
 %%CGIDIR%%/lib/MT/Tool.pm
+%%CGIDIR%%/lib/MT/Theme/TemplateSet.pm
+%%CGIDIR%%/lib/MT/Theme/StaticFiles.pm
+%%CGIDIR%%/lib/MT/Theme/Pref.pm
+%%CGIDIR%%/lib/MT/Theme/Entry.pm
+%%CGIDIR%%/lib/MT/Theme/Element.pm
+%%CGIDIR%%/lib/MT/Theme/Category.pm
+%%CGIDIR%%/lib/MT/Theme.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/Job.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/FuncMap.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/ExitStatus.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/Error.pm
 %%CGIDIR%%/lib/MT/TheSchwartz.pm
 %%CGIDIR%%/lib/MT/TemplateMap.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Website.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Userpic.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Tag.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Search.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Score.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Ping.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Pager.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Page.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Misc.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Folder.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Filters.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Entry.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Commenter.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Comment.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Category.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Calendar.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Blog.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Author.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Asset.pm
+%%CGIDIR%%/lib/MT/Template/Tags/Archive.pm
+%%CGIDIR%%/lib/MT/Template/Node.pm
+%%CGIDIR%%/lib/MT/Template/Handler.pm
 %%CGIDIR%%/lib/MT/Template/ContextHandlers.pm
 %%CGIDIR%%/lib/MT/Template/Context/Search.pm
 %%CGIDIR%%/lib/MT/Template/Context.pm
@@ -1731,6 +2116,8 @@
 %%CGIDIR%%/lib/MT/Scorable.pm
 %%CGIDIR%%/lib/MT/Sanitize.pm
 %%CGIDIR%%/lib/MT/Role.pm
+%%CGIDIR%%/lib/MT/Revisable/Local.pm
+%%CGIDIR%%/lib/MT/Revisable.pm
 %%CGIDIR%%/lib/MT/Request.pm
 %%CGIDIR%%/lib/MT/PublishOption.pm
 %%CGIDIR%%/lib/MT/Promise.pm
@@ -1774,9 +2161,6 @@
 %%CGIDIR%%/lib/MT/L10N/es.pm
 %%CGIDIR%%/lib/MT/L10N/en_us.pm
 %%CGIDIR%%/lib/MT/L10N/de.pm
-%%LANG_EN%%%%CGIDIR%%/lib/MT/L10N/fr-iso-8859-1.pm
-%%LANG_EN%%%%CGIDIR%%/lib/MT/L10N/es-iso-8859-1.pm
-%%LANG_EN%%%%CGIDIR%%/lib/MT/L10N/de-iso-8859-1.pm
 %%CGIDIR%%/lib/MT/L10N.pm
 %%CGIDIR%%/lib/MT/JunkFilter.pm
 %%CGIDIR%%/lib/MT/ImportExport.pm
@@ -1807,9 +2191,11 @@
 %%CGIDIR%%/lib/MT/Cache/Session.pm
 %%CGIDIR%%/lib/MT/Cache/Null.pm
 %%CGIDIR%%/lib/MT/Cache/Negotiate.pm
+%%CGIDIR%%/lib/MT/CMS/Website.pm
 %%CGIDIR%%/lib/MT/CMS/User.pm
 %%CGIDIR%%/lib/MT/CMS/TrackBack.pm
 %%CGIDIR%%/lib/MT/CMS/Tools.pm
+%%CGIDIR%%/lib/MT/CMS/Theme.pm
 %%CGIDIR%%/lib/MT/CMS/Template.pm
 %%CGIDIR%%/lib/MT/CMS/Tag.pm
 %%CGIDIR%%/lib/MT/CMS/Search.pm
@@ -1891,8 +2277,24 @@
 %%CGIDIR%%/lib/MT.pm
 @comment %%CGIDIR%%/index.html
 %%CGIDIR%%/extlib/version/vpp.pm
+%%CGIDIR%%/extlib/version/typemap
+%%CGIDIR%%/extlib/version/Internals.pod
 %%CGIDIR%%/extlib/version.pod
 %%CGIDIR%%/extlib/version.pm
+%%CGIDIR%%/extlib/auto/Image/Size/xpmsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/xbmsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/tiffsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/swfsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/swfmxsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/psdsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/ppmsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/pngsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/pcdsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/mngsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/jpegsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/gifsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/bmpsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/autosplit.ix
 %%CGIDIR%%/extlib/YAML/Tiny.pm
 %%CGIDIR%%/extlib/XMLRPC/Transport/TCP.pm
 %%CGIDIR%%/extlib/XMLRPC/Transport/POP3.pm
@@ -1921,6 +2323,7 @@
 %%CGIDIR%%/extlib/XML/XPath/Builder.pm
 %%CGIDIR%%/extlib/XML/XPath/Boolean.pm
 %%CGIDIR%%/extlib/XML/XPath.pm
+%%CGIDIR%%/extlib/XML/Simple/FAQ.pod
 %%CGIDIR%%/extlib/XML/Simple.pm
 %%CGIDIR%%/extlib/XML/SAX/PurePerl/XMLDecl.pm
 %%CGIDIR%%/extlib/XML/SAX/PurePerl/UnicodeExt.pm
@@ -2075,6 +2478,10 @@
 %%CGIDIR%%/extlib/Net/OpenID/Consumer.pm
 %%CGIDIR%%/extlib/Net/OpenID/ClaimedIdentity.pm
 %%CGIDIR%%/extlib/Net/OpenID/Association.pm
+%%CGIDIR%%/extlib/Net/OAuth/V1_0A/UserAuthResponse.pm
+%%CGIDIR%%/extlib/Net/OAuth/V1_0A/RequestTokenResponse.pm
+%%CGIDIR%%/extlib/Net/OAuth/V1_0A/RequestTokenRequest.pm
+%%CGIDIR%%/extlib/Net/OAuth/V1_0A/AccessTokenRequest.pm
 %%CGIDIR%%/extlib/Net/OAuth/UserAuthResponse.pm
 %%CGIDIR%%/extlib/Net/OAuth/UserAuthRequest.pm
 %%CGIDIR%%/extlib/Net/OAuth/SignatureMethod/RSA_SHA1.pm
@@ -2086,6 +2493,7 @@
 %%CGIDIR%%/extlib/Net/OAuth/Request.pm
 %%CGIDIR%%/extlib/Net/OAuth/ProtectedResourceRequest.pm
 %%CGIDIR%%/extlib/Net/OAuth/Message.pm
+%%CGIDIR%%/extlib/Net/OAuth/ConsumerRequest.pm
 %%CGIDIR%%/extlib/Net/OAuth/AccessTokenResponse.pm
 %%CGIDIR%%/extlib/Net/OAuth/AccessTokenRequest.pm
 %%CGIDIR%%/extlib/Net/OAuth.pm
@@ -2099,8 +2507,12 @@
 %%CGIDIR%%/extlib/Math/BigInt/Scalar.pm
 %%CGIDIR%%/extlib/Math/BigInt/Calc.pm
 %%CGIDIR%%/extlib/Math/BigInt.pm
+%%CGIDIR%%/extlib/MIME/EncWords/JA_JP.pod
+%%CGIDIR%%/extlib/MIME/EncWords/Defaults.pm.sample
 %%CGIDIR%%/extlib/MIME/EncWords.pm
 %%CGIDIR%%/extlib/MIME/Charset/_Compat.pm
+%%CGIDIR%%/extlib/MIME/Charset/JA_JP.pod
+%%CGIDIR%%/extlib/MIME/Charset/Defaults.pm.sample
 %%CGIDIR%%/extlib/MIME/Charset.pm
 %%CGIDIR%%/extlib/Lucene/QueryParser.pm
 %%CGIDIR%%/extlib/Locale/Maketext/TPJ13.pod
@@ -2108,37 +2520,6 @@
 %%CGIDIR%%/extlib/Locale/Maketext/Guts.pm
 %%CGIDIR%%/extlib/Locale/Maketext.pod
 %%CGIDIR%%/extlib/Locale/Maketext.pm
-%%CGIDIR%%/extlib/LWP/media.types
-%%CGIDIR%%/extlib/LWP/UserAgent.pm
-%%CGIDIR%%/extlib/LWP/Simple.pm
-%%CGIDIR%%/extlib/LWP/RobotUA.pm
-%%CGIDIR%%/extlib/LWP/Protocol/nogo.pm
-%%CGIDIR%%/extlib/LWP/Protocol/nntp.pm
-%%CGIDIR%%/extlib/LWP/Protocol/mailto.pm
-%%CGIDIR%%/extlib/LWP/Protocol/https10.pm
-%%CGIDIR%%/extlib/LWP/Protocol/https.pm
-%%CGIDIR%%/extlib/LWP/Protocol/http10.pm
-%%CGIDIR%%/extlib/LWP/Protocol/http.pm
-%%CGIDIR%%/extlib/LWP/Protocol/gopher.pm
-%%CGIDIR%%/extlib/LWP/Protocol/ftp.pm
-%%CGIDIR%%/extlib/LWP/Protocol/file.pm
-%%CGIDIR%%/extlib/LWP/Protocol/data.pm
-%%CGIDIR%%/extlib/LWP/Protocol/GHTTP.pm
-%%CGIDIR%%/extlib/LWP/Protocol.pm
-%%CGIDIR%%/extlib/LWP/MemberMixin.pm
-%%CGIDIR%%/extlib/LWP/MediaTypes.pm
-%%CGIDIR%%/extlib/LWP/Debug.pm
-%%CGIDIR%%/extlib/LWP/ConnCache.pm
-%%CGIDIR%%/extlib/LWP/Authen/Digest.pm
-%%CGIDIR%%/extlib/LWP/Authen/Basic.pm
-%%CGIDIR%%/extlib/LWP.pm
-%%CGIDIR%%/extlib/Jcode/Unicode/NoXS.pm
-%%CGIDIR%%/extlib/Jcode/Unicode/Constants.pm
-%%CGIDIR%%/extlib/Jcode/Unicode.pm
-%%CGIDIR%%/extlib/Jcode/Tr.pm
-%%CGIDIR%%/extlib/Jcode/H2Z.pm
-%%CGIDIR%%/extlib/Jcode/Constants.pm
-%%CGIDIR%%/extlib/Jcode.pm
 %%CGIDIR%%/extlib/JSON/PP58.pm
 %%CGIDIR%%/extlib/JSON/PP56.pm
 %%CGIDIR%%/extlib/JSON/PP5005.pm
@@ -2155,23 +2536,10 @@
 %%CGIDIR%%/extlib/I18N/LangTags/Detect.pm
 %%CGIDIR%%/extlib/I18N/LangTags.pm
 %%CGIDIR%%/extlib/Heap/Fibonacci.pm
-%%CGIDIR%%/extlib/HTTP/Status.pm
-%%CGIDIR%%/extlib/HTTP/Response.pm
-%%CGIDIR%%/extlib/HTTP/Request/Common.pm
-%%CGIDIR%%/extlib/HTTP/Request.pm
-%%CGIDIR%%/extlib/HTTP/Negotiate.pm
-%%CGIDIR%%/extlib/HTTP/Message.pm
-%%CGIDIR%%/extlib/HTTP/Headers/Util.pm
-%%CGIDIR%%/extlib/HTTP/Headers/ETag.pm
-%%CGIDIR%%/extlib/HTTP/Headers/Auth.pm
-%%CGIDIR%%/extlib/HTTP/Headers.pm
-%%CGIDIR%%/extlib/HTTP/Date.pm
-%%CGIDIR%%/extlib/HTTP/Daemon.pm
-%%CGIDIR%%/extlib/HTTP/Cookies.pm
 %%CGIDIR%%/extlib/HTML/Template.pm
 %%CGIDIR%%/extlib/HTML/Form.pm
+%%CGIDIR%%/extlib/HTML/Diff.pm
 %%CGIDIR%%/extlib/File/Temp.pm
-%%CGIDIR%%/extlib/File/Listing.pm
 %%CGIDIR%%/extlib/File/Copy/Recursive.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/SQL/Oracle.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/SQL.pm
@@ -2202,6 +2570,7 @@
 %%CGIDIR%%/extlib/Class/Trigger.pm
 %%CGIDIR%%/extlib/Class/ErrorHandler.pm
 %%CGIDIR%%/extlib/Class/Data/Inheritable.pm
+%%CGIDIR%%/extlib/Class/Accessor/Faster.pm
 %%CGIDIR%%/extlib/Class/Accessor/Fast.pm
 %%CGIDIR%%/extlib/Class/Accessor.pm
 %%CGIDIR%%/extlib/Cache/Memory/HeapElem.pm
@@ -2217,10 +2586,13 @@
 %%CGIDIR%%/extlib/CGI/Carp.pm
 %%CGIDIR%%/extlib/CGI/Apache.pm
 %%CGIDIR%%/extlib/CGI.pm
+%%CGIDIR%%/extlib/AutoLoader.pm
 %%CGIDIR%%/extlib/Attribute/Params/Validate.pm
 %%CGIDIR%%/extlib/Archive/Extract.pm
 %%CGIDIR%%/extlib/Apache/XMLRPC/Lite.pm
 %%CGIDIR%%/extlib/Apache/SOAP.pm
+%%CGIDIR%%/extlib/Algorithm/DiffOld.pm
+%%CGIDIR%%/extlib/Algorithm/Diff.pm
 %%CGIDIR%%/default_templates/verify-subscribe.mtml
 %%CGIDIR%%/default_templates/trackbacks.mtml
 %%CGIDIR%%/default_templates/technorati_search.mtml
@@ -2267,6 +2639,7 @@
 %%CGIDIR%%/default_templates/comment_throttle.mtml
 %%CGIDIR%%/default_templates/comment_response.mtml
 %%CGIDIR%%/default_templates/comment_preview.mtml
+%%CGIDIR%%/default_templates/comment_listing_dynamic.mtml
 %%CGIDIR%%/default_templates/comment_listing.mtml
 %%CGIDIR%%/default_templates/comment_detail.mtml
 %%CGIDIR%%/default_templates/category_entry_listing.mtml
@@ -2286,16 +2659,30 @@
 @dirrm %%CGIDIR%%/tmpl/comment
 @dirrm %%CGIDIR%%/tmpl/cms/widget
 @dirrm %%CGIDIR%%/tmpl/cms/popup
+@dirrm %%CGIDIR%%/tmpl/cms/include/theme_exporters
 @dirrm %%CGIDIR%%/tmpl/cms/include/list_associations
 @dirrm %%CGIDIR%%/tmpl/cms/include
 @dirrm %%CGIDIR%%/tmpl/cms/dialog
 @dirrm %%CGIDIR%%/tmpl/cms
 @dirrm %%CGIDIR%%/tmpl
+@dirrm %%CGIDIR%%/themes/pico/templates
+@dirrm %%CGIDIR%%/themes/pico/static/style_library/pico-white
+@dirrm %%CGIDIR%%/themes/pico/static/style_library/pico-tan
+@dirrm %%CGIDIR%%/themes/pico/static/style_library/pico-darkgrey
+@dirrm %%CGIDIR%%/themes/pico/static/style_library/pico-darkblue
+@dirrm %%CGIDIR%%/themes/pico/static/style_library
+@dirrm %%CGIDIR%%/themes/pico/static
+@dirrm %%CGIDIR%%/themes/pico
+@dirrm %%CGIDIR%%/themes/classic_website/templates
+@dirrm %%CGIDIR%%/themes/classic_website
+@dirrm %%CGIDIR%%/themes/classic_blog/templates
+@dirrm %%CGIDIR%%/themes/classic_blog
+@dirrm %%CGIDIR%%/themes
 @dirrm %%CGIDIR%%/search_templates
-@dirrm %%CGIDIR%%/plugins/zemanta/tmpl
-@dirrm %%CGIDIR%%/plugins/zemanta/lib/Zemanta
-@dirrm %%CGIDIR%%/plugins/zemanta/lib
-@dirrm %%CGIDIR%%/plugins/zemanta
+%%LANG_EN%%@dirrm %%CGIDIR%%/plugins/zemanta/tmpl
+%%LANG_EN%%@dirrm %%CGIDIR%%/plugins/zemanta/lib/Zemanta
+%%LANG_EN%%@dirrm %%CGIDIR%%/plugins/zemanta/lib
+%%LANG_EN%%@dirrm %%CGIDIR%%/plugins/zemanta
 @dirrm %%CGIDIR%%/plugins/spamlookup/tmpl
 @dirrm %%CGIDIR%%/plugins/spamlookup/lib/spamlookup
 @dirrm %%CGIDIR%%/plugins/spamlookup/lib
@@ -2352,6 +2739,21 @@
 @dirrm %%CGIDIR%%/php/extlib/smarty/demo
 @dirrm %%CGIDIR%%/php/extlib/smarty
 @dirrm %%CGIDIR%%/php/extlib/ezsql
+@dirrm %%CGIDIR%%/php/extlib/adodb5/xsl
+@dirrm %%CGIDIR%%/php/extlib/adodb5/tests
+@dirrm %%CGIDIR%%/php/extlib/adodb5/session/old
+@dirrm %%CGIDIR%%/php/extlib/adodb5/session
+@dirrm %%CGIDIR%%/php/extlib/adodb5/perf
+@dirrm %%CGIDIR%%/php/extlib/adodb5/pear/Auth/Container
+@dirrm %%CGIDIR%%/php/extlib/adodb5/pear/Auth
+@dirrm %%CGIDIR%%/php/extlib/adodb5/pear
+@dirrm %%CGIDIR%%/php/extlib/adodb5/lang
+@dirrm %%CGIDIR%%/php/extlib/adodb5/drivers
+@dirrm %%CGIDIR%%/php/extlib/adodb5/docs
+@dirrm %%CGIDIR%%/php/extlib/adodb5/datadict
+@dirrm %%CGIDIR%%/php/extlib/adodb5/cute_icons_for_site
+@dirrm %%CGIDIR%%/php/extlib/adodb5/contrib
+@dirrm %%CGIDIR%%/php/extlib/adodb5
 @dirrm %%CGIDIR%%/php/extlib
 @dirrm %%CGIDIR%%/php
 @dirrm %%DATADIR%%/mt-static/themes/unstyled
@@ -2377,12 +2779,8 @@
 @dirrm %%DATADIR%%/mt-static/js/common/DOM
 @dirrm %%DATADIR%%/mt-static/js/common
 @dirrm %%DATADIR%%/mt-static/js
-@dirrm %%DATADIR%%/mt-static/jquery/ui/packed
-@dirrm %%DATADIR%%/mt-static/jquery/ui/minified
-@dirrm %%DATADIR%%/mt-static/jquery/ui/i18n
-@dirrm %%DATADIR%%/mt-static/jquery/ui
-@dirrm %%DATADIR%%/mt-static/jquery/themes/flora/i
-@dirrm %%DATADIR%%/mt-static/jquery/themes/flora
+@dirrm %%DATADIR%%/mt-static/jqueryui/i18n
+@dirrm %%DATADIR%%/mt-static/jqueryui
 @dirrm %%DATADIR%%/mt-static/jquery/themes
 @dirrm %%DATADIR%%/mt-static/jquery
 @dirrm %%DATADIR%%/mt-static/images/widget
@@ -2391,8 +2789,7 @@
 @dirrm %%DATADIR%%/mt-static/images/nav_icons/gray
 @dirrm %%DATADIR%%/mt-static/images/nav_icons/color
 @dirrm %%DATADIR%%/mt-static/images/nav_icons
-@dirrm %%DATADIR%%/mt-static/images/listing
-@dirrm %%DATADIR%%/mt-static/images/formatting-icons
+@dirrm %%DATADIR%%/mt-static/images/logo
 @dirrm %%DATADIR%%/mt-static/images/filetype_icons
 @dirrm %%DATADIR%%/mt-static/images/comment
 @dirrm %%DATADIR%%/mt-static/images/chromeless
@@ -2412,14 +2809,22 @@
 @dirrm %%DATADIR%%/mt-static/codepress/images
 @dirrm %%DATADIR%%/mt-static/codepress/engines
 @dirrm %%DATADIR%%/mt-static/codepress
+@dirrm %%DATADIR%%/mt-static/codemirror/js
+@dirrm %%DATADIR%%/mt-static/codemirror/css
+@dirrm %%DATADIR%%/mt-static/codemirror
 @dirrm %%DATADIR%%/mt-static
 @dirrm %%CGIDIR%%/lib/MT/Worker
+@dirrm %%CGIDIR%%/lib/MT/Util/YAML
 @dirrm %%CGIDIR%%/lib/MT/Util/Archive
 @dirrm %%CGIDIR%%/lib/MT/Util
+@dirrm %%CGIDIR%%/lib/MT/Upgrade
+@dirrm %%CGIDIR%%/lib/MT/Theme
 @dirrm %%CGIDIR%%/lib/MT/TheSchwartz
+@dirrm %%CGIDIR%%/lib/MT/Template/Tags
 @dirrm %%CGIDIR%%/lib/MT/Template/Context
 @dirrm %%CGIDIR%%/lib/MT/Template
 @dirrm %%CGIDIR%%/lib/MT/Summary
+@dirrm %%CGIDIR%%/lib/MT/Revisable
 @dirrm %%CGIDIR%%/lib/MT/Plugin
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/SQL
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD
@@ -2445,11 +2850,15 @@
 @dirrm %%CGIDIR%%/lib
 @dirrm %%CGIDIR%%/import
 @dirrm %%CGIDIR%%/extlib/version
+@dirrm %%CGIDIR%%/extlib/auto/Image/Size
+@dirrm %%CGIDIR%%/extlib/auto/Image
+@dirrm %%CGIDIR%%/extlib/auto
 @dirrm %%CGIDIR%%/extlib/YAML
 @dirrm %%CGIDIR%%/extlib/XMLRPC/Transport
 @dirrm %%CGIDIR%%/extlib/XMLRPC
 @dirrm %%CGIDIR%%/extlib/XML/XPath/Node
 @dirrm %%CGIDIR%%/extlib/XML/XPath
+@dirrm %%CGIDIR%%/extlib/XML/Simple
 @dirrm %%CGIDIR%%/extlib/XML/SAX/PurePerl/Reader
 @dirrm %%CGIDIR%%/extlib/XML/SAX/PurePerl
 @dirrm %%CGIDIR%%/extlib/XML/SAX
@@ -2474,6 +2883,7 @@
 @dirrm %%CGIDIR%%/extlib/Params
 @dirrm %%CGIDIR%%/extlib/Net/OpenID/Yadis
 @dirrm %%CGIDIR%%/extlib/Net/OpenID
+@dirrm %%CGIDIR%%/extlib/Net/OAuth/V1_0A
 @dirrm %%CGIDIR%%/extlib/Net/OAuth/SignatureMethod
 @dirrm %%CGIDIR%%/extlib/Net/OAuth
 @dirrm %%CGIDIR%%/extlib/Net/HTTP
@@ -2484,16 +2894,12 @@
 @dirrm %%CGIDIR%%/extlib/Math
 @dirrm %%CGIDIR%%/extlib/MT/L10N
 @dirrm %%CGIDIR%%/extlib/MT
+@dirrm %%CGIDIR%%/extlib/MIME/EncWords
 @dirrm %%CGIDIR%%/extlib/MIME/Charset
 @dirrm %%CGIDIR%%/extlib/MIME
 @dirrm %%CGIDIR%%/extlib/Lucene
 @dirrm %%CGIDIR%%/extlib/Locale/Maketext
 @dirrm %%CGIDIR%%/extlib/Locale
-@dirrm %%CGIDIR%%/extlib/LWP/Protocol
-@dirrm %%CGIDIR%%/extlib/LWP/Authen
-@dirrm %%CGIDIR%%/extlib/LWP
-@dirrm %%CGIDIR%%/extlib/Jcode/Unicode
-@dirrm %%CGIDIR%%/extlib/Jcode
 @dirrm %%CGIDIR%%/extlib/JSON/PP
 @dirrm %%CGIDIR%%/extlib/JSON
 @dirrm %%CGIDIR%%/extlib/Image
@@ -2502,9 +2908,6 @@
 @dirrm %%CGIDIR%%/extlib/I18N/LangTags
 @dirrm %%CGIDIR%%/extlib/I18N
 @dirrm %%CGIDIR%%/extlib/Heap
-@dirrm %%CGIDIR%%/extlib/HTTP/Request
-@dirrm %%CGIDIR%%/extlib/HTTP/Headers
-@dirrm %%CGIDIR%%/extlib/HTTP
 @dirrm %%CGIDIR%%/extlib/HTML
 @dirrm %%CGIDIR%%/extlib/File/Copy
 @dirrm %%CGIDIR%%/extlib/File
@@ -2526,10 +2929,10 @@
 @dirrm %%CGIDIR%%/extlib/Archive
 @dirrm %%CGIDIR%%/extlib/Apache/XMLRPC
 @dirrm %%CGIDIR%%/extlib/Apache
+@dirrm %%CGIDIR%%/extlib/Algorithm
 @dirrm %%CGIDIR%%/extlib
 @dirrm %%CGIDIR%%/default_templates
 @dirrm %%CGIDIR%%/alt-tmpl
 @dirrmtry %%CGIDIR%%/db
 @dirrmtry %%CGIDIR%%
 @dirrmtry %%DATADIR%%
-@dirrmtry www/cgi-bin
