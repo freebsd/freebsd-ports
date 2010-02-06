@@ -16,7 +16,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A fast implementation of Basic Linear Algebra Subprograms
 
 DIST_SUBDIR=	gotoblas
-GOTOBLAS2VER=	1.11p1
+GOTOBLAS2VER=	1.13
 GOTOBLAS2_SRCFILE=	GotoBLAS2-${GOTOBLAS2VER}.tar.gz
 LAPACK_SRCFILE=	lapack-3.1.1.tgz
 LARGE_FILE=	large.tgz
@@ -64,9 +64,9 @@ MAKE_FLAGS+=	F_COMPILER=PATHF90
 MAKE_FLAGS+=	F_COMPILER=IBM
 .endif
 
-.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${GOTOBLAS2_SRCFILE})
+.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${DIST_SUBDIR}/${GOTOBLAS2_SRCFILE})
 do-fetch:
-	@${ECHO_CMD} "You need to fetch ${DISTFILES} from:"
+	@${ECHO_CMD} "You need to fetch ${GOTOBLAS2_SRCFILE} from:"
 	@${ECHO_CMD} "http://www.tacc.utexas.edu/tacc-projects/"
 	@${ECHO_CMD} "and put it in ${DISTDIR}."
 .endif
