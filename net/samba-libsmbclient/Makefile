@@ -13,16 +13,17 @@ COMMENT=		Shared libs from the samba package
 
 CONFLICTS=
 
-SAMBA_PORT?=		samba3
+SAMBA_PORT=		samba34
 SAMBA_SUBPORT=		yes
 
 MASTERDIR=		${.CURDIR}/../${SAMBA_PORT}
 PKGDIR=			${.CURDIR}
 
-USE_LDCONFIG=		yes
+USE_LDCONFIG=		${PREFIX}/lib
 
 OPTIONS=		ADS		"With Active Directory support" off \
 			ADDNS		"Build the libaddns shared library" off \
+			NETAPI		"Build the libnetapi shared library" off \
 			SHAREMODES	"Build the libsharemodes shared library" off
 
 .include "${MASTERDIR}/Makefile"
