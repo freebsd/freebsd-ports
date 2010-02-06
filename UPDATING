@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100205:
+  AFFECTS: users of qt 3 and kde 3
+  AUTHOR: itetcu@FreeBSD.org
+
+  When building qt33 and kdelibs3 (at least), while they are installed, because
+  of -L/usr/local/lib being passedd to soon, the currently installed libs are
+  used instead of the ones from the build. This makes the build fail if you
+  updated any of the libs this qt / kde libs are linked against (like libjpeg).
+
+  For the moment the workaround, when you get to this, is to move the old lib
+  out of the way, e.g.:
+  mv /usr/local/lib/libqt-mt.so /usr/local/lib/libqt-mt.so.old && \
+  cd /usr/ports/x11-toolkits/qt33/ && make && \
+  mv /usr/local/lib/libqt-mt.so.old /usr/local/lib/libqt-mt.so && \
+  portmaster -C x11-toolkits/qt33
+  (or portupgrade -w qt-33\*), etc.
+
+20100205:
   AFFECTS: users of lang/perl*
   AUTHOR: skv@FreeBSD.org
 
