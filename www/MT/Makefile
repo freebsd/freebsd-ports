@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	4.320
-PORTREVISION=	1
+PORTVERSION=	5.01
 CATEGORIES?=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/stable/
-DISTNAME?=	MTOS-${PORTVERSION:S/0$//}-en
+DISTNAME?=	MTOS-${PORTVERSION}-en
 
 MAINTAINER?=	arved@FreeBSD.org
 COMMENT?=	A web-based personal publishing system for weblogs
 
-CONFLICTS?=	ja-MT-[2-4].* fr-MT-[2-4].* de-MT-[2-4].* es-MT-[2-4].* nl-MT-[2-4].*
+CONFLICTS?=	ja-MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* nl-MT-[2-5].*
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
@@ -126,7 +125,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi mt-config.cgi-original \
 	  alt-tmpl default_templates extlib import lib php plugins search_templates \
-	  tmpl tools ${PREFIX}/${CGIDIR}
+	  themes tmpl tools ${PREFIX}/${CGIDIR}
 	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}/"
 	@${MKDIR} ${PREFIX}/${DATADIR}
 	@cd ${WRKSRC} && ${CP} -R mt-static \
