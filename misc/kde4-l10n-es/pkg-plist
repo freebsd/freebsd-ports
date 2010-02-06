@@ -299,6 +299,10 @@ share/doc/HTML/es/kaddressbook/index.docbook
 share/doc/HTML/es/kalarm/common
 share/doc/HTML/es/kalarm/index.cache.bz2
 share/doc/HTML/es/kalarm/index.docbook
+share/doc/HTML/es/kalgebra/common
+share/doc/HTML/es/kalgebra/index.cache.bz2
+share/doc/HTML/es/kalgebra/index.docbook
+share/doc/HTML/es/kalgebra/kalgebra-main-window.png
 share/doc/HTML/es/kalzium/common
 share/doc/HTML/es/kalzium/index.cache.bz2
 share/doc/HTML/es/kalzium/index.docbook
@@ -306,9 +310,6 @@ share/doc/HTML/es/kalzium/man-kalzium.1.docbook
 share/doc/HTML/es/kalzium/screenshot1.png
 share/doc/HTML/es/kalzium/screenshot3.png
 share/doc/HTML/es/kalzium/settings.png
-share/doc/HTML/es/kamera/common
-share/doc/HTML/es/kamera/index.cache.bz2
-share/doc/HTML/es/kamera/index.docbook
 share/doc/HTML/es/kanagram/common
 share/doc/HTML/es/kanagram/index.cache.bz2
 share/doc/HTML/es/kanagram/index.docbook
@@ -368,11 +369,15 @@ share/doc/HTML/es/kbruch/compare.png
 share/doc/HTML/es/kbruch/convert.png
 share/doc/HTML/es/kbruch/factorize.png
 share/doc/HTML/es/kbruch/gui_main.png
+share/doc/HTML/es/kbruch/gui_mode.png
 share/doc/HTML/es/kbruch/index.cache.bz2
 share/doc/HTML/es/kbruch/index.docbook
+share/doc/HTML/es/kbruch/learning.png
 share/doc/HTML/es/kbruch/man-kbruch.1.docbook
+share/doc/HTML/es/kbruch/percentage.png
 share/doc/HTML/es/kbruch/reduced.png
 share/doc/HTML/es/kbruch/settings.png
+share/doc/HTML/es/kbruch/statistics.png
 share/doc/HTML/es/kbugbuster/common
 share/doc/HTML/es/kbugbuster/index.cache.bz2
 share/doc/HTML/es/kbugbuster/index.docbook
@@ -1344,17 +1349,12 @@ share/doc/HTML/es/ktouch/statistics_dialog.png
 share/doc/HTML/es/ktouch/statistics_dialog_chart.png
 share/doc/HTML/es/ktouch/training_options.png
 share/doc/HTML/es/kttsd/addtalker.png
-share/doc/HTML/es/kttsd/audio.png
 share/doc/HTML/es/kttsd/common
-share/doc/HTML/es/kttsd/festivalintconf.png
 share/doc/HTML/es/kttsd/filters.png
 share/doc/HTML/es/kttsd/general.png
 share/doc/HTML/es/kttsd/index.cache.bz2
 share/doc/HTML/es/kttsd/index.docbook
-share/doc/HTML/es/kttsd/interruption.png
 share/doc/HTML/es/kttsd/jobs.png
-share/doc/HTML/es/kttsd/notifications.png
-share/doc/HTML/es/kttsd/selecttalker.png
 share/doc/HTML/es/kttsd/stringreplacer.png
 share/doc/HTML/es/kttsd/talkerchooser.png
 share/doc/HTML/es/kttsd/talkers.png
@@ -2349,8 +2349,8 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kate
 @dirrm share/doc/HTML/es/kapptemplate
 @dirrm share/doc/HTML/es/kanagram
-@dirrm share/doc/HTML/es/kamera
 @dirrm share/doc/HTML/es/kalzium
+@dirrm share/doc/HTML/es/kalgebra
 @dirrm share/doc/HTML/es/kalarm
 @dirrm share/doc/HTML/es/kaddressbook
 @dirrm share/doc/HTML/es/juk

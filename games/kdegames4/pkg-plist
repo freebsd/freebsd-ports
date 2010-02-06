@@ -1134,6 +1134,9 @@ share/apps/lskat/grafix/blue.svg
 share/apps/lskat/grafix/default.desktop
 share/apps/lskat/grafix/default.rc
 share/apps/lskat/grafix/default.svg
+share/apps/lskat/grafix/egyptian.desktop
+share/apps/lskat/grafix/egyptian.rc
+share/apps/lskat/grafix/egyptian.svg
 share/apps/lskat/lskatui.rc
 share/config.kcfg/bomber.kcfg
 share/config.kcfg/kblocks.kcfg

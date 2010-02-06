@@ -1,3 +1,5 @@
+man/sr/man1/ark.1
+man/sr@latin/man1/ark.1
 share/apps/desktoptheme/default/widgets/l10n/sr/branding.svgz
 share/apps/desktoptheme/default/widgets/l10n/sr@latin/branding.svgz
 share/apps/khangman/sr@latin.txt
@@ -26,6 +28,10 @@ share/apps/kvtml/sr@latin/animals.kvtml
 share/apps/kvtml/sr@latin/easy.kvtml
 share/apps/kvtml/sr@latin/hard.kvtml
 share/apps/kvtml/sr@latin/medium.kvtml
+share/doc/HTML/sr/ark/common
+share/doc/HTML/sr/ark/index.cache.bz2
+share/doc/HTML/sr/ark/index.docbook
+share/doc/HTML/sr/ark/man-ark.1.docbook
 share/doc/HTML/sr/common/fdl-translated.html
 share/doc/HTML/sr/common/gpl-translated.html
 share/doc/HTML/sr/common/kde-localised.css
@@ -45,9 +51,22 @@ share/doc/HTML/sr/gwenview/interface.docbook
 share/doc/HTML/sr/gwenview/introduction.docbook
 share/doc/HTML/sr/gwenview/keybindings.docbook
 share/doc/HTML/sr/gwenview/mouse.docbook
+share/doc/HTML/sr/irkick/common
+share/doc/HTML/sr/irkick/index.cache.bz2
+share/doc/HTML/sr/irkick/index.docbook
 share/doc/HTML/sr/juk/common
 share/doc/HTML/sr/juk/index.cache.bz2
 share/doc/HTML/sr/juk/index.docbook
+share/doc/HTML/sr/kcalc/commands.docbook
+share/doc/HTML/sr/kcalc/common
+share/doc/HTML/sr/kcalc/index.cache.bz2
+share/doc/HTML/sr/kcalc/index.docbook
+share/doc/HTML/sr/kcharselect/common
+share/doc/HTML/sr/kcharselect/index.cache.bz2
+share/doc/HTML/sr/kcharselect/index.docbook
+share/doc/HTML/sr/kcmlirc/common
+share/doc/HTML/sr/kcmlirc/index.cache.bz2
+share/doc/HTML/sr/kcmlirc/index.docbook
 share/doc/HTML/sr/kcontrol/autostart/common
 share/doc/HTML/sr/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/sr/kcontrol/autostart/index.docbook
@@ -57,6 +76,9 @@ share/doc/HTML/sr/kcontrol/background/index.docbook
 share/doc/HTML/sr/kcontrol/bell/common
 share/doc/HTML/sr/kcontrol/bell/index.cache.bz2
 share/doc/HTML/sr/kcontrol/bell/index.docbook
+share/doc/HTML/sr/kcontrol/blockdevices/common
+share/doc/HTML/sr/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/sr/kcontrol/blockdevices/index.docbook
 share/doc/HTML/sr/kcontrol/bookmarks/common
 share/doc/HTML/sr/kcontrol/bookmarks/index.cache.bz2
 share/doc/HTML/sr/kcontrol/bookmarks/index.docbook
@@ -159,13 +181,22 @@ share/doc/HTML/sr/kdesu/common
 share/doc/HTML/sr/kdesu/index.cache.bz2
 share/doc/HTML/sr/kdesu/index.docbook
 share/doc/HTML/sr/kdesu/man-kdesu.1.docbook
+share/doc/HTML/sr/kdf/common
+share/doc/HTML/sr/kdf/index.cache.bz2
+share/doc/HTML/sr/kdf/index.docbook
 share/doc/HTML/sr/kfind/common
 share/doc/HTML/sr/kfind/index.cache.bz2
 share/doc/HTML/sr/kfind/index.docbook
 share/doc/HTML/sr/kfind/man-kfind.1.docbook
+share/doc/HTML/sr/kfloppy/common
+share/doc/HTML/sr/kfloppy/index.cache.bz2
+share/doc/HTML/sr/kfloppy/index.docbook
 share/doc/HTML/sr/kget/common
 share/doc/HTML/sr/kget/index.cache.bz2
 share/doc/HTML/sr/kget/index.docbook
+share/doc/HTML/sr/kgpg/common
+share/doc/HTML/sr/kgpg/index.cache.bz2
+share/doc/HTML/sr/kgpg/index.docbook
 share/doc/HTML/sr/khelpcenter/common
 share/doc/HTML/sr/khelpcenter/contact.docbook
 share/doc/HTML/sr/khelpcenter/help.docbook
@@ -410,6 +441,12 @@ share/doc/HTML/sr/krfb/index.docbook
 share/doc/HTML/sr/kscd/common
 share/doc/HTML/sr/kscd/index.cache.bz2
 share/doc/HTML/sr/kscd/index.docbook
+share/doc/HTML/sr/ktimer/common
+share/doc/HTML/sr/ktimer/index.cache.bz2
+share/doc/HTML/sr/ktimer/index.docbook
+share/doc/HTML/sr/kwallet/common
+share/doc/HTML/sr/kwallet/index.cache.bz2
+share/doc/HTML/sr/kwallet/index.docbook
 share/doc/HTML/sr/kwrite/common
 share/doc/HTML/sr/kwrite/index.cache.bz2
 share/doc/HTML/sr/kwrite/index.docbook
@@ -420,9 +457,24 @@ share/doc/HTML/sr/lokalize/index.docbook
 share/doc/HTML/sr/lokalize/original-diff.png
 share/doc/HTML/sr/lokalize/sync.png
 share/doc/HTML/sr/lokalize/tmview.png
+share/doc/HTML/sr/okteta/basics.docbook
+share/doc/HTML/sr/okteta/common
+share/doc/HTML/sr/okteta/credits.docbook
+share/doc/HTML/sr/okteta/index.cache.bz2
+share/doc/HTML/sr/okteta/index.docbook
+share/doc/HTML/sr/okteta/introduction.docbook
+share/doc/HTML/sr/okteta/menu.docbook
+share/doc/HTML/sr/okteta/tools.docbook
 share/doc/HTML/sr/sonnet/common
 share/doc/HTML/sr/sonnet/index.cache.bz2
 share/doc/HTML/sr/sonnet/index.docbook
+share/doc/HTML/sr/superkaramba/common
+share/doc/HTML/sr/superkaramba/index.cache.bz2
+share/doc/HTML/sr/superkaramba/index.docbook
+share/doc/HTML/sr@latin/ark/common
+share/doc/HTML/sr@latin/ark/index.cache.bz2
+share/doc/HTML/sr@latin/ark/index.docbook
+share/doc/HTML/sr@latin/ark/man-ark.1.docbook
 share/doc/HTML/sr@latin/dolphin/common
 share/doc/HTML/sr@latin/dolphin/index.cache.bz2
 share/doc/HTML/sr@latin/dolphin/index.docbook
@@ -436,9 +488,22 @@ share/doc/HTML/sr@latin/gwenview/interface.docbook
 share/doc/HTML/sr@latin/gwenview/introduction.docbook
 share/doc/HTML/sr@latin/gwenview/keybindings.docbook
 share/doc/HTML/sr@latin/gwenview/mouse.docbook
+share/doc/HTML/sr@latin/irkick/common
+share/doc/HTML/sr@latin/irkick/index.cache.bz2
+share/doc/HTML/sr@latin/irkick/index.docbook
 share/doc/HTML/sr@latin/juk/common
 share/doc/HTML/sr@latin/juk/index.cache.bz2
 share/doc/HTML/sr@latin/juk/index.docbook
+share/doc/HTML/sr@latin/kcalc/commands.docbook
+share/doc/HTML/sr@latin/kcalc/common
+share/doc/HTML/sr@latin/kcalc/index.cache.bz2
+share/doc/HTML/sr@latin/kcalc/index.docbook
+share/doc/HTML/sr@latin/kcharselect/common
+share/doc/HTML/sr@latin/kcharselect/index.cache.bz2
+share/doc/HTML/sr@latin/kcharselect/index.docbook
+share/doc/HTML/sr@latin/kcmlirc/common
+share/doc/HTML/sr@latin/kcmlirc/index.cache.bz2
+share/doc/HTML/sr@latin/kcmlirc/index.docbook
 share/doc/HTML/sr@latin/kcontrol/autostart/common
 share/doc/HTML/sr@latin/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol/autostart/index.docbook
@@ -448,6 +513,9 @@ share/doc/HTML/sr@latin/kcontrol/background/index.docbook
 share/doc/HTML/sr@latin/kcontrol/bell/common
 share/doc/HTML/sr@latin/kcontrol/bell/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol/bell/index.docbook
+share/doc/HTML/sr@latin/kcontrol/blockdevices/common
+share/doc/HTML/sr@latin/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/blockdevices/index.docbook
 share/doc/HTML/sr@latin/kcontrol/bookmarks/common
 share/doc/HTML/sr@latin/kcontrol/bookmarks/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol/bookmarks/index.docbook
@@ -550,13 +618,22 @@ share/doc/HTML/sr@latin/kdesu/common
 share/doc/HTML/sr@latin/kdesu/index.cache.bz2
 share/doc/HTML/sr@latin/kdesu/index.docbook
 share/doc/HTML/sr@latin/kdesu/man-kdesu.1.docbook
+share/doc/HTML/sr@latin/kdf/common
+share/doc/HTML/sr@latin/kdf/index.cache.bz2
+share/doc/HTML/sr@latin/kdf/index.docbook
 share/doc/HTML/sr@latin/kfind/common
 share/doc/HTML/sr@latin/kfind/index.cache.bz2
 share/doc/HTML/sr@latin/kfind/index.docbook
 share/doc/HTML/sr@latin/kfind/man-kfind.1.docbook
+share/doc/HTML/sr@latin/kfloppy/common
+share/doc/HTML/sr@latin/kfloppy/index.cache.bz2
+share/doc/HTML/sr@latin/kfloppy/index.docbook
 share/doc/HTML/sr@latin/kget/common
 share/doc/HTML/sr@latin/kget/index.cache.bz2
 share/doc/HTML/sr@latin/kget/index.docbook
+share/doc/HTML/sr@latin/kgpg/common
+share/doc/HTML/sr@latin/kgpg/index.cache.bz2
+share/doc/HTML/sr@latin/kgpg/index.docbook
 share/doc/HTML/sr@latin/khelpcenter/common
 share/doc/HTML/sr@latin/khelpcenter/contact.docbook
 share/doc/HTML/sr@latin/khelpcenter/help.docbook
@@ -801,6 +878,12 @@ share/doc/HTML/sr@latin/krfb/index.docbook
 share/doc/HTML/sr@latin/kscd/common
 share/doc/HTML/sr@latin/kscd/index.cache.bz2
 share/doc/HTML/sr@latin/kscd/index.docbook
+share/doc/HTML/sr@latin/ktimer/common
+share/doc/HTML/sr@latin/ktimer/index.cache.bz2
+share/doc/HTML/sr@latin/ktimer/index.docbook
+share/doc/HTML/sr@latin/kwallet/common
+share/doc/HTML/sr@latin/kwallet/index.cache.bz2
+share/doc/HTML/sr@latin/kwallet/index.docbook
 share/doc/HTML/sr@latin/kwrite/common
 share/doc/HTML/sr@latin/kwrite/index.cache.bz2
 share/doc/HTML/sr@latin/kwrite/index.docbook
@@ -811,9 +894,20 @@ share/doc/HTML/sr@latin/lokalize/index.docbook
 share/doc/HTML/sr@latin/lokalize/original-diff.png
 share/doc/HTML/sr@latin/lokalize/sync.png
 share/doc/HTML/sr@latin/lokalize/tmview.png
+share/doc/HTML/sr@latin/okteta/basics.docbook
+share/doc/HTML/sr@latin/okteta/common
+share/doc/HTML/sr@latin/okteta/credits.docbook
+share/doc/HTML/sr@latin/okteta/index.cache.bz2
+share/doc/HTML/sr@latin/okteta/index.docbook
+share/doc/HTML/sr@latin/okteta/introduction.docbook
+share/doc/HTML/sr@latin/okteta/menu.docbook
+share/doc/HTML/sr@latin/okteta/tools.docbook
 share/doc/HTML/sr@latin/sonnet/common
 share/doc/HTML/sr@latin/sonnet/index.cache.bz2
 share/doc/HTML/sr@latin/sonnet/index.docbook
+share/doc/HTML/sr@latin/superkaramba/common
+share/doc/HTML/sr@latin/superkaramba/index.cache.bz2
+share/doc/HTML/sr@latin/superkaramba/index.docbook
 share/icons/hicolor/16x16/actions/l10n/sr/approved.png
 share/icons/hicolor/16x16/actions/l10n/sr@latin/approved.png
 share/icons/hicolor/22x22/actions/l10n/sr/approved.png
@@ -1095,6 +1189,7 @@ share/locale/sr/LC_MESSAGES/knotificationitem-1.mo
 share/locale/sr/LC_MESSAGES/knotify4.mo
 share/locale/sr/LC_MESSAGES/kolf.mo
 share/locale/sr/LC_MESSAGES/kollision.mo
+share/locale/sr/LC_MESSAGES/kompare.mo
 share/locale/sr/LC_MESSAGES/konqueror.mo
 share/locale/sr/LC_MESSAGES/konquest.mo
 share/locale/sr/LC_MESSAGES/konsole.mo
@@ -1361,7 +1456,6 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr@latin
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr
 @dirrm share/icons/oxygen/32x32/actions/l10n
-@dirrm share/icons/oxygen/256x256
 @dirrm share/icons/oxygen/22x22/status/l10n/sr@latin
 @dirrm share/icons/oxygen/22x22/status/l10n/sr
 @dirrm share/icons/oxygen/22x22/status/l10n
@@ -1401,9 +1495,13 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr
 @dirrm share/icons/hicolor/16x16/actions/l10n
+@dirrm share/doc/HTML/sr@latin/superkaramba
 @dirrm share/doc/HTML/sr@latin/sonnet
+@dirrm share/doc/HTML/sr@latin/okteta
 @dirrm share/doc/HTML/sr@latin/lokalize
 @dirrm share/doc/HTML/sr@latin/kwrite
+@dirrm share/doc/HTML/sr@latin/kwallet
+@dirrm share/doc/HTML/sr@latin/ktimer
 @dirrm share/doc/HTML/sr@latin/kscd
 @dirrm share/doc/HTML/sr@latin/krfb
 @dirrm share/doc/HTML/sr@latin/krdc
@@ -1464,8 +1562,11 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr@latin/khelpcenter/userguide
 @dirrm share/doc/HTML/sr@latin/khelpcenter/quickstart
 @dirrm share/doc/HTML/sr@latin/khelpcenter
+@dirrm share/doc/HTML/sr@latin/kgpg
 @dirrm share/doc/HTML/sr@latin/kget
+@dirrm share/doc/HTML/sr@latin/kfloppy
 @dirrm share/doc/HTML/sr@latin/kfind
+@dirrm share/doc/HTML/sr@latin/kdf
 @dirrm share/doc/HTML/sr@latin/kdesu
 @dirrm share/doc/HTML/sr@latin/kdepasswd
 @dirrm share/doc/HTML/sr@latin/kdebugdialog
@@ -1499,18 +1600,28 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr@latin/kcontrol/clock
 @dirrm share/doc/HTML/sr@latin/kcontrol/cache
 @dirrm share/doc/HTML/sr@latin/kcontrol/bookmarks
+@dirrm share/doc/HTML/sr@latin/kcontrol/blockdevices
 @dirrm share/doc/HTML/sr@latin/kcontrol/bell
 @dirrm share/doc/HTML/sr@latin/kcontrol/background
 @dirrm share/doc/HTML/sr@latin/kcontrol/autostart
 @dirrm share/doc/HTML/sr@latin/kcontrol
+@dirrm share/doc/HTML/sr@latin/kcmlirc
+@dirrm share/doc/HTML/sr@latin/kcharselect
+@dirrm share/doc/HTML/sr@latin/kcalc
 @dirrm share/doc/HTML/sr@latin/juk
+@dirrm share/doc/HTML/sr@latin/irkick
 @dirrm share/doc/HTML/sr@latin/gwenview
 @dirrm share/doc/HTML/sr@latin/dragonplayer
 @dirrm share/doc/HTML/sr@latin/dolphin
+@dirrm share/doc/HTML/sr@latin/ark
 @dirrm share/doc/HTML/sr@latin
+@dirrm share/doc/HTML/sr/superkaramba
 @dirrm share/doc/HTML/sr/sonnet
+@dirrm share/doc/HTML/sr/okteta
 @dirrm share/doc/HTML/sr/lokalize
 @dirrm share/doc/HTML/sr/kwrite
+@dirrm share/doc/HTML/sr/kwallet
+@dirrm share/doc/HTML/sr/ktimer
 @dirrm share/doc/HTML/sr/kscd
 @dirrm share/doc/HTML/sr/krfb
 @dirrm share/doc/HTML/sr/krdc
@@ -1571,8 +1682,11 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr/khelpcenter/userguide
 @dirrm share/doc/HTML/sr/khelpcenter/quickstart
 @dirrm share/doc/HTML/sr/khelpcenter
+@dirrm share/doc/HTML/sr/kgpg
 @dirrm share/doc/HTML/sr/kget
+@dirrm share/doc/HTML/sr/kfloppy
 @dirrm share/doc/HTML/sr/kfind
+@dirrm share/doc/HTML/sr/kdf
 @dirrm share/doc/HTML/sr/kdesu
 @dirrm share/doc/HTML/sr/kdepasswd
 @dirrm share/doc/HTML/sr/kdebugdialog
@@ -1606,15 +1720,21 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr/kcontrol/clock
 @dirrm share/doc/HTML/sr/kcontrol/cache
 @dirrm share/doc/HTML/sr/kcontrol/bookmarks
+@dirrm share/doc/HTML/sr/kcontrol/blockdevices
 @dirrm share/doc/HTML/sr/kcontrol/bell
 @dirrm share/doc/HTML/sr/kcontrol/background
 @dirrm share/doc/HTML/sr/kcontrol/autostart
 @dirrm share/doc/HTML/sr/kcontrol
+@dirrm share/doc/HTML/sr/kcmlirc
+@dirrm share/doc/HTML/sr/kcharselect
+@dirrm share/doc/HTML/sr/kcalc
 @dirrm share/doc/HTML/sr/juk
+@dirrm share/doc/HTML/sr/irkick
 @dirrm share/doc/HTML/sr/gwenview
 @dirrm share/doc/HTML/sr/dragonplayer
 @dirrm share/doc/HTML/sr/dolphin
 @dirrm share/doc/HTML/sr/common
+@dirrm share/doc/HTML/sr/ark
 @dirrm share/apps/kvtml/sr@latin
 @dirrm share/apps/kvtml/sr
 @dirrm share/apps/kvtml
