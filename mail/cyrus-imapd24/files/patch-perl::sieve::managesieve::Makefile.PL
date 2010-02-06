@@ -10,6 +10,6 @@ diff -u perl/sieve/managesieve/Makefile.PL.orig perl/sieve/managesieve/Makefile.
 +package MY;
 +sub install {
 +    my $inherited = shift->SUPER::install(@_);
-+    $inherited =~ s/(install :: all pure_install) doc_install/$1/;
++    $inherited =~ s/(install :: (all )?pure_install) doc_install/$1/;
 +    $inherited;
 +}
