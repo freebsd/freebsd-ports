@@ -5,22 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME?=		${SAMBA_PORTNAME}
-PORTVERSION?=		${SAMBA_VERSION}
+PORTNAME=		samba34
+PORTVERSION=		3.4.5
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
-DISTNAME=		${SAMBA_DISTNAME}
+DISTNAME=		${PORTNAME:S|34$||}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
 CONFLICTS?=		ja-samba-[23].* samba-[23].* sharity-light-1.* tdb-1.*
-
-SAMBA_PORTNAME=		samba34
-SAMBA_VERSION=		3.4.5
-SAMBA_DISTNAME=		${SAMBA_PORTNAME:S|34$||}-${SAMBA_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
-
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
@@ -52,11 +47,7 @@ SAMBA_MODULEDIR=	${SAMBA_LIBDIR}/${PORTNAME}
 SAMBA_INCLUDEDIR=	${PREFIX}/include/${PORTNAME}
 SAMBA_PRIVATEDIR?=	${SAMBA_CONFDIR}/${PORTNAME}
 
-PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
-PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
-
 CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
-			--with-fhs \
 			--sysconfdir="${SAMBA_CONFDIR}" \
 			--with-configdir="${SAMBA_CONFDIR}" \
 			--includedir="${SAMBA_INCLUDEDIR}" \
@@ -74,6 +65,13 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+# pkg-config is used to find talloc
+PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
+PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
+
+PKG_CONFIG?=		${LOCALBASE}/bin/pkg-config
+CONFIGURE_ENV+=		PKG_CONFIG="${PKG_CONFIG}"
+BUILD_DEPENDS+=		${PKG_CONFIG}:${PORTSDIR}/devel/pkg-config
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 # Always use external libtalloc
@@ -104,7 +102,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 .endif
 
 .include <bsd.port.options.mk>
-
+# XXX
 .if ${OSVERSION} >= 701000 && ${OSVERSION} < 702000
 IGNORE=			databases/tdb crashes on FreeBSD 7.1. Please, consider upgrading to 7.2 or higher
 .endif
@@ -256,7 +254,6 @@ CONFIGURE_ARGS+=	--without-dnsupdate
 .endif
 
 .if defined(WITH_DNSSD)
-SAMBA_WANT_PKG_CONFIG=	yes
 CPPFLAGS+=		`${PKG_CONFIG} --cflags avahi-compat-libdns_sd`
 DNSSD_LIBS=		`${PKG_CONFIG} --libs avahi-compat-libdns_sd`
 LIB_DEPENDS+=		dns_sd.1:${PORTSDIR}/net/avahi-libdns
@@ -313,12 +310,6 @@ USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if defined(SAMBA_WANT_PKG_CONFIG)
-PKG_CONFIG?=		${LOCALBASE}/bin/pkg-config
-CONFIGURE_ENV+=		PKG_CONFIG="${PKG_CONFIG}"
-BUILD_DEPENDS+=		pkg-config:${PORTSDIR}/devel/pkg-config
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)

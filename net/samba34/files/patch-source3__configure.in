@@ -1,5 +1,5 @@
---- ./source3/configure.in.orig	2010-01-18 12:38:09.000000000 +0100
-+++ ./source3/configure.in	2010-01-22 02:42:50.000000000 +0100
+--- ./source3/configure.in.orig	2010-01-18 11:38:09.000000000 +0000
++++ ./source3/configure.in	2010-02-06 12:37:49.000000000 +0000
 @@ -210,16 +210,6 @@
         fi
  fi
@@ -17,6 +17,31 @@
  #################################################
  # check for a shared memory profiling support
  AC_MSG_CHECKING(whether to use profiling)
+@@ -781,10 +771,10 @@
+ 
+         if test "x$CUPS_CONFIG" != x; then
+ 
+-		ac_save_CFLAGS=$CFLAGS
+-		ac_save_LDFLAGS=$LDFLAGS
++		ac_save_PRINT_CPPFLAGS=$CPPFLAGS
++		ac_save_PRINT_LDFLAGS=$LDFLAGS
+ 		ac_save_PRINT_LIBS=$PRINT_LIBS
+-		CFLAGS="$CFLAGS `$CUPS_CONFIG --cflags`"
++		CPPFLAGS="$CPPFLAGS `$CUPS_CONFIG --cflags`"
+ 		LDFLAGS="$LDFLAGS `$CUPS_CONFIG --ldflags`"
+ 		PRINT_LIBS="$PRINT_LIBS `$CUPS_CONFIG --libs`"
+ 		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
+@@ -794,8 +784,8 @@
+ 			samba_cv_HAVE_CUPS=yes
+ 		else
+ 			AC_MSG_WARN([cups-config around but cups-devel not installed])
+-			CFLAGS=$ac_save_CFLAGS
+-			LDFLAGS=$ac_save_LDFLAGS
++			CPPFLAGS=$ac_save_PRINT_CPPFLAGS
++			LDFLAGS=$ac_save_PRINT_LDFLAGS
+ 			PRINT_LIBS=$ac_save_PRINT_LIBS
+ 		fi
+ 
 @@ -1747,9 +1737,6 @@
  AC_MSG_CHECKING([PICFLAG])
  AC_MSG_RESULT([$PICFLAG])
