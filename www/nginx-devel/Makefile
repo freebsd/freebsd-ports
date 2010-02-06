@@ -178,12 +178,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_eval_module-${NGINX_EVAL_MODULE_VER
 .endif
 
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
-NGINX_FANCYINDEX_MODULE_VERSION=	0.1b5
-MASTER_SITES+=	http://furi-ku.org/nginx/fancyindex/:fancyindex
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
-MASTER_SITE_SUBDIR+=	osa/:fancyindex
-DISTFILES+=	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}
+NGINX_FANCYINDEX_MODULE_VERSION=	0.2.1
+MASTER_SITES+=	http://connectical.com/attachments/download/21/:fancyindex
+DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}.tar.bz2:fancyindex
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_GUNZIP_FILTER)
@@ -434,10 +432,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
-.endif
-.if defined(WITH_HTTP_FANCYINDEX_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
 .endif
 .if defined(WITH_HTTP_NOTICE_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
