@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08115
+PORTVERSION=	0.08117
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,18 +15,18 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
 BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-Class-Accessor-Grouped>=0.09000:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-Class-Accessor-Grouped>=0.09002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Data-Dumper-Concise>=1.002:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
-		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
+		p5-DBI>=1.60.9:${PORTSDIR}/databases/p5-DBI \
 		p5-JSON-Any>=1.18:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-SQL-Abstract>=1.58:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract>=1.61:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -99,6 +99,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::AutoCast.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \
 	DBIx::Class::Storage::DBI::DB2.3 \
+	DBIx::Class::Storage::DBI::Informix.3 \
 	DBIx::Class::Storage::DBI::MSSQL.3 \
 	DBIx::Class::Storage::DBI::MultiColumnIn.3 \
 	DBIx::Class::Storage::DBI::NoBindVars.3 \
@@ -106,6 +107,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::ODBC::ACCESS.3 \
 	DBIx::Class::Storage::DBI::ODBC::DB2_400_SQL.3 \
 	DBIx::Class::Storage::DBI::ODBC::Microsoft_SQL_Server.3 \
+	DBIx::Class::Storage::DBI::ODBC::SQL_Anywhere.3 \
 	DBIx::Class::Storage::DBI::Oracle.3 \
 	DBIx::Class::Storage::DBI::Oracle::Generic.3 \
 	DBIx::Class::Storage::DBI::Oracle::WhereJoins.3 \
@@ -119,6 +121,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Replicated::Replicant.3 \
 	DBIx::Class::Storage::DBI::Replicated::WithDSN.3 \
 	DBIx::Class::Storage::DBI::Role::QueryCounter.3 \
+	DBIx::Class::Storage::DBI::SQLAnywhere.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
 	DBIx::Class::Storage::DBI::Sybase.3 \
 	DBIx::Class::Storage::DBI::Sybase::ASE.3 \
