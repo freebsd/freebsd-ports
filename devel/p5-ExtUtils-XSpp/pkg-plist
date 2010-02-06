@@ -4,6 +4,7 @@ bin/xspp
 %%SITE_PERL%%/ExtUtils/XSpp/Cmd.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Driver.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Grammar.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Lexer.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Node.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Parser.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Typemap.pm
