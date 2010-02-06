@@ -1,0 +1,32 @@
+--- lib/loop_wchar.h
++++ lib/loop_wchar.h
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2000-2002, 2005-2006, 2008 Free Software Foundation, Inc.
++ * Copyright (C) 2000-2002, 2005-2006, 2008-2009 Free Software Foundation, Inc.
+  * This file is part of the GNU LIBICONV Library.
+  *
+  * The GNU LIBICONV Library is free software; you can redistribute it
+@@ -321,7 +321,8 @@ static size_t wchar_to_loop_convert (iconv_t icd,
+   size_t result = 0;
+   while (*inbytesleft > 0) {
+     size_t incount;
+-    for (incount = 1; incount <= *inbytesleft; incount++) {
++    for (incount = 1; ; ) {
++      /* Here incount <= *inbytesleft. */
+       char buf[BUF_SIZE];
+       const char* inptr = *inbuf;
+       size_t inleft = incount;
+@@ -403,6 +404,12 @@ static size_t wchar_to_loop_convert (iconv_t icd,
+           break;
+         }
+       }
++      incount++;
++      if (incount > *inbytesleft) {
++        /* Incomplete input. */
++        errno = EINVAL;
++        return -1;
++      }
+     }
+   }
+   return result;
