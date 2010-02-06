@@ -193,6 +193,7 @@
     SUBDIR += gnome-doc-utils
     SUBDIR += gnome-spell
     SUBDIR += gnome-translate
+    SUBDIR += gnugrep
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
     SUBDIR += gpp
