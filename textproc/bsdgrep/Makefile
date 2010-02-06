@@ -32,6 +32,8 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 OPTIONS=	NLS	"Compile with NLS support"	on \
 		GNU_COMPAT	"Use GNU regex library (recommended)"	on
 
+CONFLICTS=	gnugrep-*
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_NLS)
