@@ -1,6 +1,9 @@
 ArchiveSMTP is a mail archiver designed to be run on an SMTP mail server. It
 uses rule-based matching to collect and store mail passing through an MTA to
-specific locations in mbox format. The libmilter interface is used and must be
+specific locations in mbox format. Adding headers and piping output to other
+programs is also supported. The libmilter interface is used and must be
 supported by the MTA for ArchiveSMTP to work.
+
+Version: 1.1.b1
 
 WWW: http://www.dancingfortune.com/projects/archivesmtp/
