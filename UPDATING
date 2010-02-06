@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: itetcu@FreeBSD.org
 
   When building qt33 and kdelibs3 (at least), while they are installed, because
-  of -L/usr/local/lib being passedd to soon, the currently installed libs are
+  of -L/usr/local/lib being passed too soon, the currently installed libs are
   used instead of the ones from the build. This makes the build fail if you
   updated any of the libs this qt / kde libs are linked against (like libjpeg).
 
