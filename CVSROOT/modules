@@ -10924,10 +10924,12 @@ p5-Catalyst-View-HTML-Template-Compiled  ports/www/p5-Catalyst-View-HTML-Templat
 p5-Catalyst-View-JSON           ports/www/p5-Catalyst-View-JSON
 p5-Catalyst-View-Jemplate       ports/www/p5-Catalyst-View-Jemplate
 p5-Catalyst-View-Mason          ports/www/p5-Catalyst-View-Mason
+p5-Catalyst-View-REST-XML       ports/www/p5-Catalyst-View-REST-XML
 p5-Catalyst-View-RRDGraph       ports/www/p5-Catalyst-View-RRDGraph
 p5-Catalyst-View-TT             ports/www/p5-Catalyst-View-TT
 p5-Catalyst-View-TT-ControllerLocal  ports/www/p5-Catalyst-View-TT-ControllerLocal
 p5-Catalyst-View-Templated      ports/www/p5-Catalyst-View-Templated
+p5-Catalyst-View-XML-Simple     ports/www/p5-Catalyst-View-XML-Simple
 p5-Catalyst-View-XSLT           ports/www/p5-Catalyst-View-XSLT
 p5-CatalystX-Component-Traits   ports/www/p5-CatalystX-Component-Traits
 p5-CatalystX-RoleApplicator     ports/www/p5-CatalystX-RoleApplicator
@@ -14532,10 +14534,12 @@ p5-catalyst-view-html-template-compiled  ports/www/p5-Catalyst-View-HTML-Templat
 p5-catalyst-view-jemplate       ports/www/p5-Catalyst-View-Jemplate
 p5-catalyst-view-json           ports/www/p5-Catalyst-View-JSON
 p5-catalyst-view-mason          ports/www/p5-Catalyst-View-Mason
+p5-catalyst-view-rest-xml       ports/www/p5-Catalyst-View-REST-XML
 p5-catalyst-view-rrdgraph       ports/www/p5-Catalyst-View-RRDGraph
 p5-catalyst-view-templated      ports/www/p5-Catalyst-View-Templated
 p5-catalyst-view-tt             ports/www/p5-Catalyst-View-TT
 p5-catalyst-view-tt-controllerlocal  ports/www/p5-Catalyst-View-TT-ControllerLocal
+p5-catalyst-view-xml-simple     ports/www/p5-Catalyst-View-XML-Simple
 p5-catalyst-view-xslt           ports/www/p5-Catalyst-View-XSLT
 p5-catalystx-component-traits   ports/www/p5-CatalystX-Component-Traits
 p5-catalystx-roleapplicator     ports/www/p5-CatalystX-RoleApplicator
@@ -20848,6 +20852,7 @@ rainbowcrack                    ports/security/rainbowcrack
 raincoat                        ports/sysutils/raincoat
 raine                           ports/emulators/raine
 raknet                          ports/devel/raknet
+rakudo                          ports/lang/rakudo
 ramond                          ports/net-mgmt/ramond
 rancid                          ports/net-mgmt/rancid
 rancid-devel                    ports/net-mgmt/rancid-devel
@@ -21762,6 +21767,7 @@ samba-vscan                     ports/security/samba-vscan
 samba3                          ports/net/samba3
 samba32                         ports/net/samba32
 samba33                         ports/net/samba33
+samba34                         ports/net/samba34
 samba4-devel                    ports/net/samba4-devel
 samba4wins                      ports/net/samba4wins
 sambasentinel                   ports/net/sambasentinel
