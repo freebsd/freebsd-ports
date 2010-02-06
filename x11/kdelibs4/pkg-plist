@@ -228,6 +228,7 @@ include/KDE/KBookmark
 include/KDE/KBookmarkAction
 include/KDE/KBookmarkActionInterface
 include/KDE/KBookmarkActionMenu
+include/KDE/KBookmarkDialog
 include/KDE/KBookmarkDomBuilder
 include/KDE/KBookmarkExporterBase
 include/KDE/KBookmarkGroup

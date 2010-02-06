@@ -366,6 +366,7 @@ share/locale/hu/LC_MESSAGES/kapman.mo
 share/locale/hu/LC_MESSAGES/kappfinder.mo
 share/locale/hu/LC_MESSAGES/kapptemplate.mo
 share/locale/hu/LC_MESSAGES/kate-ctags-plugin.mo
+share/locale/hu/LC_MESSAGES/kate_kttsd.mo
 share/locale/hu/LC_MESSAGES/kate.mo
 share/locale/hu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/hu/LC_MESSAGES/katebuild-plugin.mo

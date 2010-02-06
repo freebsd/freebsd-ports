@@ -621,6 +621,7 @@ share/locale/nds/LC_MESSAGES/libksieve.mo
 share/locale/nds/LC_MESSAGES/libktnef.mo
 share/locale/nds/LC_MESSAGES/libkworkspace.mo
 share/locale/nds/LC_MESSAGES/libkxmlrpcclient.mo
+share/locale/nds/LC_MESSAGES/librtm.mo
 share/locale/nds/LC_MESSAGES/libmailtransport.mo
 share/locale/nds/LC_MESSAGES/libocsclient.mo
 share/locale/nds/LC_MESSAGES/liboktetacore.mo
