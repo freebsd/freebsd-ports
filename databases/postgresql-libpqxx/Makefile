@@ -7,7 +7,7 @@
 
 PORTNAME=	libpqxx
 PORTVERSION=	2.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 PKGNAMEPREFIX=	postgresql-
@@ -15,6 +15,9 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A new C++ interface for PostgreSQL
+
+CONFLICTS=	postgresql-libpqxx-3.*
+PORTSCOUT=	limit:^2\.
 
 USE_PGSQL=	yes
 USE_GMAKE=	yes
