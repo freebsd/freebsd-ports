@@ -1,0 +1,14 @@
+--- layout/generic/Makefile.in.orig	2009-08-07 00:49:41.000000000 +0200
++++ layout/generic/Makefile.in	2009-08-09 20:54:53.000000000 +0200
+@@ -187,9 +187,10 @@
+ 		-I$(srcdir)/../../content/base/src \
+ 		-I$(srcdir)/../../content/html/content/src \
+ 		-I$(srcdir)/../../dom/base \
+-		$(MOZ_CAIRO_CFLAGS) \
+ 		$(NULL)
+ 
++CXXFLAGS += $(MOZ_CAIRO_CFLAGS)
++
+ ifdef MOZ_ENABLE_GTK2
+ CXXFLAGS += $(MOZ_GTK2_CFLAGS)
+ endif
