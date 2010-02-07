@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedNames
-PORTVERSION=	8.2.0
+PORTVERSION=	9.0.0
 CATEGORIES=	dns devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Names/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

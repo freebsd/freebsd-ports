@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedWeb
-PORTVERSION=	8.2.0
+PORTVERSION=	9.0.0
 CATEGORIES=	www devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Web/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

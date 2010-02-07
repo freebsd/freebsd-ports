@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedMail
-PORTVERSION=	8.2.0
+PORTVERSION=	9.0.0
 CATEGORIES=	mail devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Mail/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

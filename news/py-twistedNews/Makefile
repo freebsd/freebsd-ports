@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedNews
-PORTVERSION=	8.2.0
+PORTVERSION=	9.0.0
 CATEGORIES=	news devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/News/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

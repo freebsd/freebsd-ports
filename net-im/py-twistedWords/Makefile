@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedWords
-PORTVERSION=	8.2.0
+PORTVERSION=	9.0.0
 CATEGORIES=	net-im devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Words/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

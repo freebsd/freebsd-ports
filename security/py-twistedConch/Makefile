@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedConch
-PORTVERSION=	8.2.0
+PORTVERSION=	9.0.0
 CATEGORIES=	security devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Conch/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
