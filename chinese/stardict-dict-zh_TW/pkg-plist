@@ -1,0 +1,17 @@
+share/stardict/dic/cdict-big5.dict.dz
+share/stardict/dic/cdict-big5.idx
+share/stardict/dic/cdict-big5.ifo
+share/stardict/dic/cedict-big5.dict.dz
+share/stardict/dic/cedict-big5.idx
+share/stardict/dic/cedict-big5.ifo
+share/stardict/dic/oxford-big5.dict.dz
+share/stardict/dic/oxford-big5.idx
+share/stardict/dic/oxford-big5.ifo
+share/stardict/dic/xdict-ce-big5.dict.dz
+share/stardict/dic/xdict-ce-big5.idx
+share/stardict/dic/xdict-ce-big5.ifo
+share/stardict/dic/xdict-ec-big5.dict.dz
+share/stardict/dic/xdict-ec-big5.idx
+share/stardict/dic/xdict-ec-big5.ifo
+@dirrmtry share/stardict/dic
+@dirrmtry share/stardict
