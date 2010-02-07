@@ -1,4 +1,5 @@
 bin/zim
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Zim/.packlist
 %%SITE_PERL%%/Gtk2/Ex/HyperTextBuffer.pm
 %%SITE_PERL%%/Gtk2/Ex/HyperTextView.pm
 %%SITE_PERL%%/Gtk2/Ex/DesktopEntryMenu.pm
@@ -180,3 +181,4 @@ share/mime/application/x-gjots.xml
 @dirrm %%SITE_PERL%%/Zim
 @dirrmtry %%SITE_PERL%%/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/Gtk2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Zim
