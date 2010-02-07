@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	swt-devel
-DISTVERSION=	3.6M3
-PORTREVISION=	1
+DISTVERSION=	3.6M5
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	S-${DISTVERSION}-200910301201
+MASTER_SITE_SUBDIR=	S-${DISTVERSION}-201001291300
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Standard Widget Toolkit for Java
 
-ONLY_FOR_ARCHS=	i386 amd64 ppc
+ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
-SWT_VERSION=	3617
+SWT_VERSION=	3631
 OUTPUT_JAR=	swt-devel.jar
 
 USE_ZIP=	yes
@@ -71,7 +70,7 @@ MAKE_ENV+=	MAKE_CAIRO=${MAKE_CAIRO} \
 
 .if (${ARCH} == "amd64")
 DIST_EXT=	gtk-linux-x86_64
-.elif (${ARCH} == "ppc")
+.elif (${ARCH} == "powerpc")
 DIST_EXT=	gtk-linux-ppc
 .else
 DIST_EXT=	gtk-linux-x86
