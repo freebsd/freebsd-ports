@@ -81,6 +81,7 @@ include/wine/windows/activscp.idl
 include/wine/windows/adshlp.h
 include/wine/windows/advpub.h
 include/wine/windows/af_irda.h
+include/wine/windows/amaudio.h
 include/wine/windows/amstream.h
 include/wine/windows/amstream.idl
 include/wine/windows/amvideo.h
@@ -428,6 +429,7 @@ include/wine/windows/powrprof.h
 include/wine/windows/profinfo.h
 include/wine/windows/propidl.h
 include/wine/windows/propidl.idl
+include/wine/windows/propkey.h
 include/wine/windows/propkeydef.h
 include/wine/windows/propsys.h
 include/wine/windows/propsys.idl
@@ -942,6 +944,7 @@ lib/wine/fakedlls/msvidc32.dll
 lib/wine/fakedlls/msvideo.dll16
 lib/wine/fakedlls/mswsock.dll
 lib/wine/fakedlls/msxml3.dll
+lib/wine/fakedlls/msxml4.dll
 lib/wine/fakedlls/nddeapi.dll
 lib/wine/fakedlls/net.exe
 lib/wine/fakedlls/netapi32.dll
@@ -1385,6 +1388,7 @@ lib/wine/msvidc32.dll.so
 lib/wine/msvideo.dll16.so
 lib/wine/mswsock.dll.so
 lib/wine/msxml3.dll.so
+lib/wine/msxml4.dll.so
 lib/wine/nddeapi.dll.so
 lib/wine/net.exe.so
 lib/wine/netapi32.dll.so
