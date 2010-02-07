@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedFlow
-PORTVERSION=	8.0.0
+PORTVERSION=	8.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Flow/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
