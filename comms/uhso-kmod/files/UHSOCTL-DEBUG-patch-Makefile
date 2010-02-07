@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-08-19 14:41:30.923433005 +0000
++++ Makefile	2009-08-19 14:42:03.472847525 +0000
+@@ -1,7 +1,7 @@
+ SRCS=	uhsoctl.c
+ PROG=	uhsoctl
+ CFLAGS+=	-g
+-#CFLAGS+=	-DDEBUG=1	
++CFLAGS+=	-DDEBUG=1	
+ LDFLAGS+=	-lutil
+ DESTDIR?= /usr/local
+ 
