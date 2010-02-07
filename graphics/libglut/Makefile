@@ -15,6 +15,10 @@ COMMENT=	OpenGL utility toolkit
 USE_GL=		glu
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes xi xmu dri2proto
 
+.ifdef	WITH_NOUVEAU
+EXTRA_PATCHES=	mesalib74-configure
+.endif
+
 do-install:
 	cd ${WRKSRC}/src/glut/glx; ${GMAKE} install
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \

@@ -14,6 +14,10 @@ COMMENT=	OpenGL utility library
 USE_GL=		gl
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
+.ifdef	WITH_NOUVEAU
+EXTRA_PATCHES=	mesalib74-configure
+.endif
+
 do-install:
 	cd ${WRKSRC}/src/glu; ${GMAKE} install
 	${INSTALL_DATA} ${WRKSRC}/include/GL/glu*.h ${PREFIX}/include/GL/

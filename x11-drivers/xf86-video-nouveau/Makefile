@@ -20,6 +20,10 @@ MAN4=		nouveau.4x
 
 MAKE_JOBS_SAFE=	yes
 
+.if defined(WITHOUT_NOUVEAU)
+BROKEN=		Please disable WITHOUT_NOUVEAU global macro.
+.endif
+
 post-configure:
 	${REINPLACE_CMD} '/NV_DRIVER_DATE/s/".*"/"${SNAPDATE}.${SNAPREV}"/' ${WRKSRC}/config.h
 
