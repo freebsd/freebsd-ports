@@ -89,7 +89,6 @@ modules/dcerpc_server/dcesrv_mapiproxy.so
 modules/torture/openchange.so
 share/setup/AD/oc_provision_configuration.ldif
 share/setup/AD/oc_provision_schema.ldif
-share/setup/AD/oc_provision_schema_ADSC.ldif
 share/setup/AD/oc_provision_schema_modify.ldif
 share/setup/AD/prefixMap.txt
 share/setup/openchangedb/oc_provision_openchange_init.ldif
