@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	servingxml
-PORTVERSION=	1.1.1b
+PORTVERSION=	1.1.2
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Framework for flat/XML data transformations
 
+BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-BUILD_DEPENDS+=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=	${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 ANT_TARGETS=	dist
