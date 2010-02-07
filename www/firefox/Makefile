@@ -3,25 +3,33 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/www/firefox/Makefile,v 1.32 2009/01/09 23:41:22 mezz Exp $
 #
 
 PORTNAME=	firefox
-DISTVERSION=	2.0.0.20
-PORTREVISION=	10
+DISTVERSION=	3.6
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
+BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
-MOZILLA_NAME=	Firefox
+USE_AUTOTOOLS=	autoconf:213
+USE_GECKO=	gecko
+MOZ_PKGCONFIG_FILES=	# empty
+USE_MOZILLA=	-png -nss -dbm -jpeg -xft
+MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
+MOZILLA_SUFX=	3
+MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
+MOZ_TOOLKIT=	cairo-gtk2
+GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
+			lib/${MOZILLA}/include lib/${MOZILLA}/lib
 
+MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
@@ -29,30 +37,37 @@ EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GECKO=	gecko
-WANT_PERL=	yes
-GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
-GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
+MAKE_JOBS_SAFE=	yes
+NO_MOZPKGINSTALL=yes
+CONFLICTS=	firefox-3.[0,5].*
 
-FIREFOX_ICON=		${MOZILLA}.xpm
-FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
+FIREFOX_ICON=		${MOZILLA}.png
+FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
+		--enable-svg --enable-svg-renderer=cairo \
 		--enable-application=browser \
-		--enable-system-cairo	\
-		--enable-official-branding \
-		--enable-canvas	\
-		--with-system-nss
+		--enable-official-branding --disable-updater \
+		--enable-canvas --enable-libxul --disable-necko-wifi
 
 SYSTEM_PREFS=		${FAKEDIR}/lib/${MOZILLA}/defaults/pref/firefox.js
-MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 
-OPTIONS=	NEWTAB "Open external links in a new tab" on \
+OPTIONS=	DBUS "Enable D-BUS support" on \
+		NEWTAB "Open external links in a new tab" on \
 		SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+.if ${OSVERSION} < 700000
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
+.else
+EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
+.endif
+
+WRKSRC:=	${WRKSRC}-1.9.2
+
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
@@ -61,19 +76,12 @@ MOZ_OPTIONS+=	--enable-gnomeui
 MOZ_OPTIONS+=	--disable-gnomeui
 .endif
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
-IGNORE=	does not run, update to 6.2-RELEASE or newer
+.if defined(WITHOUT_DBUS)
+MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
+.else
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		notify.1:${PORTSDIR}/devel/libnotify
 .endif
-
-MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
-
-FORBIDDEN=	too many security issues \
-		http://www.vuxml.org/freebsd/922d2398-9e2d-11de-a998-0030843d3802.html \
-		http://www.vuxml.org/freebsd/49e8f2ee-8147-11de-a994-0030843d3802.html
-		
-DEPRECATED=	The mozilla team has shifted the development branch of mozilla to \
-		seamonkey, this port is outdated and has many vulnerabilities. \
-		Please consider using www/seamonkey or www/firefox35 instead.
 
 post-extract::
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
@@ -82,20 +90,27 @@ post-extract::
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
-		${WRKSRC}/storage/build/Makefile.in
+		${WRKSRC}/storage/build/Makefile.in \
+		${WRKSRC}/db/sqlite3/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/security/manager/ssl/src/Makefile.in
-.for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
-	embedding/minimo
-	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
-		/dom.disable_window_open_feature.toolbar/s/false/true/' \
-		${WRKSRC}/${ii}/all.js
-.endfor
+		${WRKSRC}/security/manager/ssl/src/Makefile.in \
+		${WRKSRC}/js/src/config/mkdepend/Makefile.in \
+		${WRKSRC}/js/src/config/config.mk
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|echo aout|echo elf|g ; \
+		s|/usr/X11R6|${LOCALBASE}|g' \
+		${WRKSRC}/js/src/configure
 
-pre-install:
-	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
+pre-configure:
+	(cd ${WRKSRC} && ${AUTOCONF})
+	(cd ${WRKSRC}/js/src/ && ${AUTOCONF})
+
+port-pre-install:
+#	${SED} -e 's|1.9a7|0|' ${WRKSRC}/dist/bin/application.ini ${FAKEDIR}/lib
+	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
+	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
+	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
 .if !defined(WITHOUT_NEWTAB)
 	${ECHO_CMD} >> ${SYSTEM_PREFS}
 	${ECHO_CMD} "// Open external links in new tab" >> ${SYSTEM_PREFS}
@@ -107,7 +122,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default
-	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default.xpm
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 	@${CAT} ${PKGMESSAGE}
 

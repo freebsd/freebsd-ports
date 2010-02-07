@@ -1,6 +1,6 @@
---- config/mkdepend/Makefile.in.orig	Sun Dec 12 07:36:57 2004
-+++ config/mkdepend/Makefile.in	Sun Dec 12 07:37:55 2004
-@@ -57,6 +57,7 @@
+--- config/mkdepend/Makefile.in.orig	2009-04-28 08:07:48.532396203 +0000
++++ config/mkdepend/Makefile.in	2009-04-28 08:08:07.342398592 +0000
+@@ -73,6 +73,7 @@
  include $(topsrcdir)/config/rules.mk
  
  HOST_CFLAGS	+= -DINCLUDEDIR=\"/usr/include\" -DOBJSUFFIX=\".$(OBJ_SUFFIX)\"
