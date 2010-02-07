@@ -7,7 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.20
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3026/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -42,6 +42,9 @@ CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 USE_LDCONFIG=	yes
+
+USE_RC_SUBR=	saned
+SUB_FILES+=	pkg-install pkg-message
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
@@ -92,5 +95,12 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^for ac_header in/s|libc.h||g ; \
 		 s|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+# Pass BATCH to pkg-install for Evil Things(tm)
+pre-install:
+	@BATCH="${BATCH}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
