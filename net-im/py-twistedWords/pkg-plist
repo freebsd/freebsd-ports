@@ -1,4 +1,3 @@
-bin/im
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_words.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_words.pyc
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_words.pyo
@@ -23,15 +22,6 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/im/basesupport.py
 %%PYTHON_SITELIBDIR%%/twisted/words/im/basesupport.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/im/basesupport.pyo
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkaccount.py
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkaccount.pyc
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkaccount.pyo
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkchat.py
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkchat.pyc
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkchat.pyo
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkcommon.py
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkcommon.pyc
-%%PYTHON_SITELIBDIR%%/twisted/words/im/gtkcommon.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/im/instancemessenger.glade
 %%PYTHON_SITELIBDIR%%/twisted/words/im/interfaces.py
 %%PYTHON_SITELIBDIR%%/twisted/words/im/interfaces.pyc
@@ -39,12 +29,6 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/im/ircsupport.py
 %%PYTHON_SITELIBDIR%%/twisted/words/im/ircsupport.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/im/ircsupport.pyo
-%%PYTHON_SITELIBDIR%%/twisted/words/im/jyaccount.py
-%%PYTHON_SITELIBDIR%%/twisted/words/im/jyaccount.pyc
-%%PYTHON_SITELIBDIR%%/twisted/words/im/jyaccount.pyo
-%%PYTHON_SITELIBDIR%%/twisted/words/im/jychat.py
-%%PYTHON_SITELIBDIR%%/twisted/words/im/jychat.pyc
-%%PYTHON_SITELIBDIR%%/twisted/words/im/jychat.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/im/locals.py
 %%PYTHON_SITELIBDIR%%/twisted/words/im/locals.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/im/locals.pyo
@@ -111,12 +95,6 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/protocols/toc.py
 %%PYTHON_SITELIBDIR%%/twisted/words/protocols/toc.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/protocols/toc.pyo
-%%PYTHON_SITELIBDIR%%/twisted/words/scripts/__init__.py
-%%PYTHON_SITELIBDIR%%/twisted/words/scripts/__init__.pyc
-%%PYTHON_SITELIBDIR%%/twisted/words/scripts/__init__.pyo
-%%PYTHON_SITELIBDIR%%/twisted/words/scripts/im.py
-%%PYTHON_SITELIBDIR%%/twisted/words/scripts/im.pyc
-%%PYTHON_SITELIBDIR%%/twisted/words/scripts/im.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/service.py
 %%PYTHON_SITELIBDIR%%/twisted/words/service.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/service.pyo
@@ -135,6 +113,9 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_irc.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_irc.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_irc.pyo
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_irc_service.py
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_irc_service.pyc
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_irc_service.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_jabberclient.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_jabberclient.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_jabberclient.pyo
@@ -162,6 +143,9 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_msn.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_msn.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_msn.pyo
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_oscar.py
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_oscar.pyc
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_oscar.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_service.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_service.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_service.pyo
@@ -210,7 +194,6 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/xmpproutertap.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/xish
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/test
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/words/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/protocols/jabber
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/protocols
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/im

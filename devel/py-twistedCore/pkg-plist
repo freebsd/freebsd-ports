@@ -36,6 +36,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/cred/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/cred/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/cred/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/cred/_digest.py
+%%PYTHON_SITELIBDIR%%/twisted/cred/_digest.pyc
+%%PYTHON_SITELIBDIR%%/twisted/cred/_digest.pyo
 %%PYTHON_SITELIBDIR%%/twisted/cred/checkers.py
 %%PYTHON_SITELIBDIR%%/twisted/cred/checkers.pyc
 %%PYTHON_SITELIBDIR%%/twisted/cred/checkers.pyo
@@ -75,9 +78,6 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/enterprise/util.py
 %%PYTHON_SITELIBDIR%%/twisted/enterprise/util.pyc
 %%PYTHON_SITELIBDIR%%/twisted/enterprise/util.pyo
-%%PYTHON_SITELIBDIR%%/twisted/im.py
-%%PYTHON_SITELIBDIR%%/twisted/im.pyc
-%%PYTHON_SITELIBDIR%%/twisted/im.pyo
 %%PYTHON_SITELIBDIR%%/twisted/internet/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/__init__.pyo
@@ -245,21 +245,36 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/reactormixins.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/reactormixins.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/reactormixins.pyo
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_base.py
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_base.pyc
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_base.pyo
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_baseprocess.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_baseprocess.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_baseprocess.pyo
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_core.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_core.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_core.pyo
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_fdset.py
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_fdset.pyc
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_fdset.pyo
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_iocp.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_iocp.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_iocp.pyo
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_pollingfile.py
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_pollingfile.pyc
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_pollingfile.pyo
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_posixbase.py
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_posixbase.pyc
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_posixbase.pyo
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_process.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_process.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_process.pyo
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_tcp.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_tcp.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_tcp.pyo
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_threads.py
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_threads.pyc
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/test_threads.pyo
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_time.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_time.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/test_time.pyo
@@ -321,16 +336,12 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/manhole/ui/gtk2manhole.py
 %%PYTHON_SITELIBDIR%%/twisted/manhole/ui/gtk2manhole.pyc
 %%PYTHON_SITELIBDIR%%/twisted/manhole/ui/gtk2manhole.pyo
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/gtkmanhole.py
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/gtkmanhole.pyc
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/gtkmanhole.pyo
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/gtkrc
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/pywidgets.py
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/pywidgets.pyc
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/pywidgets.pyo
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/spelunk_gnome.py
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/spelunk_gnome.pyc
-%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/spelunk_gnome.pyo
+%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test/__init__.py
+%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test/test_gtk2manhole.py
+%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test/test_gtk2manhole.pyc
+%%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test/test_gtk2manhole.pyo
 %%PYTHON_SITELIBDIR%%/twisted/persisted/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/persisted/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/persisted/__init__.pyo
@@ -355,9 +366,6 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/persisted/journal/rowjournal.py
 %%PYTHON_SITELIBDIR%%/twisted/persisted/journal/rowjournal.pyc
 %%PYTHON_SITELIBDIR%%/twisted/persisted/journal/rowjournal.pyo
-%%PYTHON_SITELIBDIR%%/twisted/persisted/marmalade.py
-%%PYTHON_SITELIBDIR%%/twisted/persisted/marmalade.pyc
-%%PYTHON_SITELIBDIR%%/twisted/persisted/marmalade.pyo
 %%PYTHON_SITELIBDIR%%/twisted/persisted/sob.py
 %%PYTHON_SITELIBDIR%%/twisted/persisted/sob.pyc
 %%PYTHON_SITELIBDIR%%/twisted/persisted/sob.pyo
@@ -423,12 +431,6 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/protocols/dict.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/dict.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/dict.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/dns.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/dns.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/dns.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/ethernet.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/ethernet.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/ethernet.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/finger.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/finger.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/finger.pyo
@@ -447,24 +449,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/protocols/htb.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/htb.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/htb.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/http.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/http.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/http.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/ident.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/ident.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/ident.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/imap4.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/imap4.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/imap4.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/ip.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/ip.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/ip.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/irc.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/irc.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/irc.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/jabber.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/jabber.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/jabber.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/loopback.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/loopback.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/loopback.pyo
@@ -477,66 +464,45 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/protocols/mice/mouseman.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/mice/mouseman.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/mice/mouseman.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/msn.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/msn.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/msn.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/nntp.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/nntp.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/nntp.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/oscar.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/oscar.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/oscar.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/pcp.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/pcp.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/pcp.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/policies.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/policies.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/policies.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/pop3.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/pop3.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/pop3.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/portforward.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/portforward.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/portforward.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/postfix.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/postfix.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/postfix.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/raw.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/raw.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/raw.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/rawudp.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/rawudp.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/rawudp.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/shoutcast.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/shoutcast.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/shoutcast.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/sip.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/sip.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/sip.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/smtp.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/smtp.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/smtp.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/socks.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/socks.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/socks.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/stateful.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/stateful.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/stateful.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/sux.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/sux.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/sux.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/telnet.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/telnet.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/telnet.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/toc.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/toc.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/toc.pyo
+%%PYTHON_SITELIBDIR%%/twisted/protocols/test/__init__.py
+%%PYTHON_SITELIBDIR%%/twisted/protocols/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/twisted/protocols/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/protocols/test/test_tls.py
+%%PYTHON_SITELIBDIR%%/twisted/protocols/test/test_tls.pyc
+%%PYTHON_SITELIBDIR%%/twisted/protocols/test/test_tls.pyo
+%%PYTHON_SITELIBDIR%%/twisted/protocols/tls.py
+%%PYTHON_SITELIBDIR%%/twisted/protocols/tls.pyc
+%%PYTHON_SITELIBDIR%%/twisted/protocols/tls.pyo
 %%PYTHON_SITELIBDIR%%/twisted/protocols/wire.py
 %%PYTHON_SITELIBDIR%%/twisted/protocols/wire.pyc
 %%PYTHON_SITELIBDIR%%/twisted/protocols/wire.pyo
-%%PYTHON_SITELIBDIR%%/twisted/protocols/xmlstream.py
-%%PYTHON_SITELIBDIR%%/twisted/protocols/xmlstream.pyc
-%%PYTHON_SITELIBDIR%%/twisted/protocols/xmlstream.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/python/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/__init__.pyo
@@ -570,6 +536,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/python/failure.py
 %%PYTHON_SITELIBDIR%%/twisted/python/failure.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/failure.pyo
+%%PYTHON_SITELIBDIR%%/twisted/python/fakepwd.py
+%%PYTHON_SITELIBDIR%%/twisted/python/fakepwd.pyc
+%%PYTHON_SITELIBDIR%%/twisted/python/fakepwd.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/filepath.py
 %%PYTHON_SITELIBDIR%%/twisted/python/filepath.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/filepath.pyo
@@ -579,6 +548,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/python/formmethod.py
 %%PYTHON_SITELIBDIR%%/twisted/python/formmethod.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/formmethod.pyo
+%%PYTHON_SITELIBDIR%%/twisted/python/hashlib.py
+%%PYTHON_SITELIBDIR%%/twisted/python/hashlib.pyc
+%%PYTHON_SITELIBDIR%%/twisted/python/hashlib.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/hook.py
 %%PYTHON_SITELIBDIR%%/twisted/python/hook.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/hook.pyo
@@ -603,9 +575,6 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/python/otp.py
 %%PYTHON_SITELIBDIR%%/twisted/python/otp.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/otp.pyo
-%%PYTHON_SITELIBDIR%%/twisted/python/plugin.py
-%%PYTHON_SITELIBDIR%%/twisted/python/plugin.pyc
-%%PYTHON_SITELIBDIR%%/twisted/python/plugin.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/procutils.py
 %%PYTHON_SITELIBDIR%%/twisted/python/procutils.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/procutils.pyo
@@ -636,6 +605,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/python/test/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/python/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/python/test/deprecatedattributes.py
+%%PYTHON_SITELIBDIR%%/twisted/python/test/deprecatedattributes.pyc
+%%PYTHON_SITELIBDIR%%/twisted/python/test/deprecatedattributes.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_components.py
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_components.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_components.pyo
@@ -645,12 +617,24 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_dist.py
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_dist.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_dist.pyo
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_fakepwd.py
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_fakepwd.pyc
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_fakepwd.pyo
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_hashlib.py
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_hashlib.pyc
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_hashlib.pyo
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_htmlizer.py
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_htmlizer.pyc
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_htmlizer.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_release.py
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_release.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_release.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_runtime.py
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_runtime.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_runtime.pyo
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_syslog.py
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_syslog.pyc
+%%PYTHON_SITELIBDIR%%/twisted/python/test/test_syslog.pyo
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_util.py
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_util.pyc
 %%PYTHON_SITELIBDIR%%/twisted/python/test/test_util.pyo
@@ -784,9 +768,6 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/spread/ui/gtk2util.py
 %%PYTHON_SITELIBDIR%%/twisted/spread/ui/gtk2util.pyc
 %%PYTHON_SITELIBDIR%%/twisted/spread/ui/gtk2util.pyo
-%%PYTHON_SITELIBDIR%%/twisted/spread/ui/gtkutil.py
-%%PYTHON_SITELIBDIR%%/twisted/spread/ui/gtkutil.pyc
-%%PYTHON_SITELIBDIR%%/twisted/spread/ui/gtkutil.pyo
 %%PYTHON_SITELIBDIR%%/twisted/spread/ui/login2.glade
 %%PYTHON_SITELIBDIR%%/twisted/spread/ui/tktree.py
 %%PYTHON_SITELIBDIR%%/twisted/spread/ui/tktree.pyc
@@ -954,6 +935,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/test/test_dict.py
 %%PYTHON_SITELIBDIR%%/twisted/test/test_dict.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/test_dict.pyo
+%%PYTHON_SITELIBDIR%%/twisted/test/test_digestauth.py
+%%PYTHON_SITELIBDIR%%/twisted/test/test_digestauth.pyc
+%%PYTHON_SITELIBDIR%%/twisted/test/test_digestauth.pyo
 %%PYTHON_SITELIBDIR%%/twisted/test/test_dirdbm.py
 %%PYTHON_SITELIBDIR%%/twisted/test/test_dirdbm.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/test_dirdbm.pyo
@@ -1104,9 +1088,6 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/test/test_socks.py
 %%PYTHON_SITELIBDIR%%/twisted/test/test_socks.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/test_socks.pyo
-%%PYTHON_SITELIBDIR%%/twisted/test/test_split_compat.py
-%%PYTHON_SITELIBDIR%%/twisted/test/test_split_compat.pyc
-%%PYTHON_SITELIBDIR%%/twisted/test/test_split_compat.pyo
 %%PYTHON_SITELIBDIR%%/twisted/test/test_ssl.py
 %%PYTHON_SITELIBDIR%%/twisted/test/test_ssl.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/test_ssl.pyo
@@ -1125,6 +1106,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/test/test_strerror.py
 %%PYTHON_SITELIBDIR%%/twisted/test/test_strerror.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/test_strerror.pyo
+%%PYTHON_SITELIBDIR%%/twisted/test/test_stringtransport.py
+%%PYTHON_SITELIBDIR%%/twisted/test/test_stringtransport.pyc
+%%PYTHON_SITELIBDIR%%/twisted/test/test_stringtransport.pyo
 %%PYTHON_SITELIBDIR%%/twisted/test/test_strports.py
 %%PYTHON_SITELIBDIR%%/twisted/test/test_strports.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/test_strports.pyo
@@ -1173,9 +1157,6 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/test/testutils.py
 %%PYTHON_SITELIBDIR%%/twisted/test/testutils.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/testutils.pyo
-%%PYTHON_SITELIBDIR%%/twisted/test/threading_latency.py
-%%PYTHON_SITELIBDIR%%/twisted/test/threading_latency.pyc
-%%PYTHON_SITELIBDIR%%/twisted/test/threading_latency.pyo
 %%PYTHON_SITELIBDIR%%/twisted/test/time_helpers.py
 %%PYTHON_SITELIBDIR%%/twisted/test/time_helpers.pyc
 %%PYTHON_SITELIBDIR%%/twisted/test/time_helpers.pyo
@@ -1291,31 +1272,33 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/trial/util.py
 %%PYTHON_SITELIBDIR%%/twisted/trial/util.pyc
 %%PYTHON_SITELIBDIR%%/twisted/trial/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/trial/test
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/trial
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/test
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/tap
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/spread/ui
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/spread
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/scripts/test
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/python/zsh
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/python/test
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/python
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols/mice
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols/gps
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/persisted/journal
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/persisted
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/manhole/ui
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/manhole
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/internet/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/application
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/cred
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/enterprise
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/internet/cfsupport
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/internet/iocpreactor/iocpsupport
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/internet/iocpreactor
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/internet/cfsupport
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/internet/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/internet
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/enterprise
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/cred
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/application
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/manhole/ui
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/manhole
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/persisted/journal
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/persisted
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols/gps
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols/mice
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/python/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/python/zsh
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/python
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/scripts/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/spread/ui
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/spread
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/tap
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/trial/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/trial
 @dirrm %%PYTHON_SITELIBDIR%%/twisted
