@@ -7,7 +7,6 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	3.3.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
@@ -73,11 +72,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		68
+MILESTONE?=		69
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20091223
+SNAPDATE=		20100110
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -197,13 +196,6 @@ post-extract:
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
-
-pre-build:
-#i107644#
-	cd ${WRKSRC}; ${CP} -R sdext/source/presenter/help/en-US/com.sun.PresenterScreen-linux_x86 sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86
-	cd ${WRKSRC}; ${CP} -R sdext/source/presenter/help/en-US/com.sun.PresenterScreen-linux_x86_64 sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86_64
-	cd ${WRKSRC}; ${REINPLACE_CMD} -e 's/linux/freebsd/g' sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86/presenter.xhp
-	cd ${WRKSRC}; ${REINPLACE_CMD} -e 's/linux/freebsd/g' sdext/source/presenter/help/en-US/com.sun.PresenterScreen-freebsd_x86_64/presenter.xhp
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
