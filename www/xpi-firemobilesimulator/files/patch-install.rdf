@@ -1,0 +1,11 @@
+--- install.rdf.orig	2009-08-10 10:10:50.000000000 +0900
++++ install.rdf	2010-02-07 22:42:13.192808359 +0900
+@@ -12,7 +12,7 @@
+       <Description>
+         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+         <em:minVersion>2.0</em:minVersion>
+-        <em:maxVersion>3.5.*</em:maxVersion>
++        <em:maxVersion>3.6.*</em:maxVersion>
+       </Description>
+     </em:targetApplication>
+     <em:description>携帯端末のHTTPリクエスト、絵文字表示をシミュレートします。</em:description>
