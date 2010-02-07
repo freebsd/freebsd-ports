@@ -732,27 +732,23 @@ share/icons/hicolor/scalable/apps/rkward.svgz
 @dirrmtry share/applications/kde4
 @dirrmtry share/applications
 @cwd %%LOCALBASE%%
-lib/R/library/rkward/CONTENTS
 lib/R/library/rkward/DESCRIPTION
 lib/R/library/rkward/INDEX
 lib/R/library/rkward/Meta/Rd.rds
 lib/R/library/rkward/Meta/hsearch.rds
+lib/R/library/rkward/Meta/links.rds
 lib/R/library/rkward/Meta/package.rds
-lib/R/library/rkward/R-ex/public.R
 lib/R/library/rkward/R/rkward
 lib/R/library/rkward/R/rkward.rdb
 lib/R/library/rkward/R/rkward.rdx
 lib/R/library/rkward/help/AnIndex
-lib/R/library/rkward/help/public
+lib/R/library/rkward/help/aliases.rds
+lib/R/library/rkward/help/paths.rds
+lib/R/library/rkward/help/rkward.rdb
+lib/R/library/rkward/help/rkward.rdx
 lib/R/library/rkward/html/00Index.html
-lib/R/library/rkward/html/public.html
-lib/R/library/rkward/latex/public.tex
-lib/R/library/rkward/man/rkward.Rd.gz
-@dirrm lib/R/library/rkward/man
-@dirrm lib/R/library/rkward/latex
 @dirrm lib/R/library/rkward/html
 @dirrm lib/R/library/rkward/help
-@dirrm lib/R/library/rkward/R-ex
 @dirrm lib/R/library/rkward/R
 @dirrm lib/R/library/rkward/Meta
 @dirrm lib/R/library/rkward
