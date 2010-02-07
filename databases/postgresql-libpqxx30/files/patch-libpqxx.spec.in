@@ -1,0 +1,12 @@
+diff -urN libpqxx-3.0.2.dist/libpqxx.spec.in libpqxx-3.0.2/libpqxx.spec.in
+--- libpqxx.spec.in	2009-07-03 22:38:38.000000000 -0700
++++ libpqxx.spec.in.new	2010-01-13 21:24:41.000000000 -0800
+@@ -58,7 +58,7 @@
+ %files devel
+ %defattr(-, root, root)
+ %{_libdir}/*a
+-%{_libdir}/pkgconfig/libpqxx.pc
++%{_prefix}/libdata/pkgconfig/libpqxx.pc
+ %{_includedir}/*
+ %{_bindir}/pqxx-config
+ 

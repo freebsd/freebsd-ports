@@ -3,7 +3,6 @@ include/pqxx/basic_connection
 include/pqxx/basic_connection.hxx
 include/pqxx/binarystring
 include/pqxx/binarystring.hxx
-include/pqxx/cachedresult.h
 include/pqxx/compiler-internal-post.hxx
 include/pqxx/compiler-internal-pre.hxx
 include/pqxx/compiler-public.hxx
@@ -15,7 +14,6 @@ include/pqxx/connection_base.hxx
 include/pqxx/connectionpolicy
 include/pqxx/connectionpolicy.hxx
 include/pqxx/cursor
-include/pqxx/cursor.h
 include/pqxx/cursor.hxx
 include/pqxx/dbtransaction
 include/pqxx/dbtransaction.hxx
@@ -28,6 +26,8 @@ include/pqxx/largeobject.hxx
 include/pqxx/libpq-forward.hxx
 include/pqxx/nontransaction
 include/pqxx/nontransaction.hxx
+include/pqxx/notify-listen
+include/pqxx/notify-listen.hxx
 include/pqxx/pipeline
 include/pqxx/pipeline.hxx
 include/pqxx/pqxx
@@ -55,7 +55,8 @@ include/pqxx/trigger
 include/pqxx/trigger.hxx
 include/pqxx/util
 include/pqxx/util.hxx
-lib/libpqxx-%%PORTVERSION%%.so
+include/pqxx/version.hxx
+lib/libpqxx-%%SHLIBVERSION%%.so
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so

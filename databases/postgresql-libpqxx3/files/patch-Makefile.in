@@ -1,9 +1,9 @@
---- Makefile.in~	Sat May 27 12:46:50 2006
-+++ Makefile.in	Sun May 28 17:51:23 2006
-@@ -212,7 +212,7 @@
+--- Makefile.in	2009-08-14 10:16:35.000000000 -0700
++++ Makefile.in.new	2010-01-13 23:09:39.000000000 -0800
+@@ -226,7 +226,7 @@
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.h.in config.log configure \
+ 	stamp-h.in
  
- 
- #includedir=$(prefix)/include
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libpqxx.pc
