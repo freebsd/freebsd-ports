@@ -7,6 +7,7 @@
 
 PORTNAME=		samba34
 PORTVERSION=		3.4.5
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -58,7 +59,10 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 			--with-pammodulesdir="${SAMBA_LIBDIR}" \
 			--localstatedir="${VARDIR}" \
 			--with-piddir="${SAMBA_RUNDIR}" \
+			--with-ncalrpcdir="${SAMBA_RUNDIR}/ncalrpc" \
 			--with-lockdir="${SAMBA_LOCKDIR}" \
+			--with-statedir="${SAMBA_LOCKDIR}" \
+			--with-cachedir="${SAMBA_LOCKDIR}" \
 			--with-privatedir="${SAMBA_PRIVATEDIR}" \
 			--with-logfilebase="${SAMBA_LOGDIR}"
 
@@ -93,7 +97,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		UTMP		"With UTMP accounting support" off \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
-		DNSSD		"With DNS service discovery support" off \
+		AVAHI		"With Bonjour service discovery support" off \
 		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on \
 		MAX_DEBUG	"With maximum debugging" off \
@@ -253,14 +257,13 @@ CONFIGURE_ARGS+=	--with-dnsupdate
 CONFIGURE_ARGS+=	--without-dnsupdate
 .endif
 
-.if defined(WITH_DNSSD)
-CPPFLAGS+=		`${PKG_CONFIG} --cflags avahi-compat-libdns_sd`
-DNSSD_LIBS=		`${PKG_CONFIG} --libs avahi-compat-libdns_sd`
-LIB_DEPENDS+=		dns_sd.1:${PORTSDIR}/net/avahi-libdns
-CONFIGURE_ENV+=		DNSSD_LIBS="${DNSSD_LIBS}"
-CONFIGURE_ARGS+=	--enable-dnssd
+.if defined(WITH_AVAHI)
+CPPFLAGS+=		`${PKG_CONFIG} --cflags avahi-client`
+DNSSD_LIBS=		`${PKG_CONFIG} --libs avahi-client`
+LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
+CONFIGURE_ARGS+=	--enable-avahi
 .else
-CONFIGURE_ARGS+=	--disable-dnssd
+CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
 .if !defined(WITHOUT_POPT)
@@ -400,7 +403,7 @@ MAN8+=		vfs_dirsort.8
 MAN8+=		vfs_streams_depot.8
 .endif
 
-PLIST_SUB+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
+SAMBA_SUB=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_LOCKDIR="${SAMBA_LOCKDIR}" \
 		SAMBA_CONFDIR="${SAMBA_CONFDIR}" \
 		SAMBA_CONFIG="${SAMBA_CONFIG}" \
@@ -410,14 +413,8 @@ PLIST_SUB+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}" \
 		PKGCONFIGDIR="${PKGCONFIGDIR_REL}"
 
-SUB_LIST+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
-		SAMBA_LOCKDIR="${SAMBA_LOCKDIR}" \
-		SAMBA_CONFDIR="${SAMBA_CONFDIR}" \
-		SAMBA_CONFIG="${SAMBA_CONFIG}" \
-		SAMBA_RUNDIR="${SAMBA_RUNDIR}" \
-		SAMBA_SWATDIR="${SAMBA_SWATDIR}" \
-		SAMBA_SPOOL="${SAMBA_SPOOL}" \
-		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}"
+PLIST_SUB+=	${SAMBA_SUB}
+SUB_LIST+=	${SAMBA_SUB}
 
 ALL_TARGET=	all
 .if defined(WITH_SMBTORTURE)
