@@ -8,7 +8,7 @@ $FreeBSD$
  endif
 +ifeq ($(OS_VENDOR),FreeBSD)
 +OS_RELDATE := $(shell sysctl kern.osreldate | cut -d' ' -f2)
-+HAS_SIGIGNORE := $(shell if [ $(OS_RELDATE) -ge 900003 ]; then echo "1"; fi)
++HAS_SIGIGNORE := $(shell if [ $(OS_RELDATE) -ge 800502 -a $(OS_RELDATE) -lt 900000 -o $(OS_RELDATE) -ge 900003 ]; then echo "1"; fi)
 +ifeq ($(HAS_SIGIGNORE),1)
 +override HAVE_SIGIGNORE          = true
 +endif
