@@ -1,0 +1,46 @@
+==================================================================
+
+saned will log to the 'daemon' facility; this is a hard-coded
+default. Also, saned has no support for SSL/TLS or cryptographic
+authentication; you may wish to deploy security/stunnel to wrap
+it if you have concerns about security.
+
+If you are using a USB scanner, you should edit /etc/devd.conf to
+allow saned access permissions. Currently, devfs.rules(5) has no
+support for USB specific filters such as vendor, product and
+serial number.
+
+Here is an example devd.conf(5) entry for an Epson CX3650
+multi-function scanner/printer device (assuming you are sharing
+the printer function with cups):
+
+attach 100 {
+        device-name "ugen[0-9].[0-9]";
+        match "vendor" "0x04b8";
+        match "product" "0x080e";
+        action "usb_devaddr=`echo $device-name | sed 's#^ugen##'` && \
+                chown cups:saned /dev/usb/${usb_devaddr}.* && \
+                chmod 660 /dev/usb/${usb_devaddr}.*";
+};
+
+Note: A backtick must be used above, due to how devd(8) performs
+variable substitutions.
+
+To determine which port your scanner is connected to, inspect the
+output of 'usbconfig list' before and after connecting your scanner,
+and note the numbers which appear after 'ugen' in the first column.
+Then, use 'usbconfig -d X.Y dump_device_desc' to learn the idVendor
+and idProduct fields, and plug them into the above example entry.
+
+Finally, restart devd with the command:
+ # /etc/rc.d/devd restart
+
+Please take %%PREFIX%%/etc/sane.d/dll.conf
+as an example only; you may wish to enable only the 'net' backend
+on client machines; be sure to point it at your scan server.
+
+If you are setting up a scan server, you may also wish to edit
+%%PREFIX%%/etc/sane.d/saned.conf
+to only permit specific machines.
+
+==================================================================

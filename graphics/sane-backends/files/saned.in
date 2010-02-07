@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: saned
+# REQUIRE: netif routing mountcritlocal
+# BEFORE:  NETWORKING
+#
+# A sample saned startup script.
+#
+# Add the following line to /etc/rc.conf to enable saned:
+#	saned_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="saned"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+
+start_precmd=${name}_prestart
+
+saned_prestart()
+{
+	case "${saned_flags}" in
+	*-a\ *) err "saned_flags includes the -a option. Please use saned_uid instead." ;;
+	esac
+}
+
+load_rc_config $name
+
+: ${saned_enable="NO"}
+: ${saned_uid="saned"}
+
+command_args="-a $saned_uid"
+
+run_rc_command "$1"
