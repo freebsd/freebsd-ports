@@ -22,6 +22,7 @@
 %%SITE_PERL%%/Mail/Mailer/rfc822.pm
 %%SITE_PERL%%/Mail/Mailer/sendmail.pm
 %%SITE_PERL%%/Mail/Mailer/smtp.pm
+%%SITE_PERL%%/Mail/Mailer/smtps.pm
 %%SITE_PERL%%/Mail/Mailer/testfile.pm
 %%SITE_PERL%%/Mail/Send.pm
 %%SITE_PERL%%/Mail/Send.pod
