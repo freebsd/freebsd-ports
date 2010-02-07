@@ -306,10 +306,9 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_HASH)
-NGINX_UPSTREAM_HASH_VERSION=	0.3
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamhash/}
-MASTER_SITE_SUBDIR+=	osa/:upstreamhash
-DISTFILES+=	nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
+NGINX_UPSTREAM_HASH_VERSION=	0.3.1
+MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
+DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
 .endif
 
