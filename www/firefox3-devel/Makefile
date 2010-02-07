@@ -19,6 +19,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
+IGNORE=		please use www/firefox instead
 USE_AUTOTOOLS=	autoconf:213
 LATEST_LINK=	firefox3-devel
 USE_GECKO=	gecko
