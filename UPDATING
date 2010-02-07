@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100207:
+  AFFECTS: users of Mesa3D libraries and x11-drivers/xf86-video-nouveau
+  AUTHOR: nork@FreeBSD.org
+
+  If you want to use Mesa3D 7.6.1 and libdrm 2.4.17 rather than 7.4.4
+  and 2.4.12, you must define WITHOUT_NOUVEAU global macro, at least,
+  enabled on graphics/libGL*, graphics/libglut, graphics/dri,
+  graphics/mesa-demos and graphics/libdrm.  And please give up using
+  x11-drivers/xf86-video-nouveau.
+
+  In this time, I can't enable latest Mesa3D and libdrm, because these
+  break xf86-video-nouveau.  But old(current?) Mesa3D and libdrm don't
+  break any drivers.
+
+  for AMD Radeon HD 2xxx/3xxx/4xxx users
+  If you use AMD Radeon HD [234]xxx series, please define WITHOUT_NOVEAU
+  global macro.  You can use OpenGL Hardware Accelerator feature on
+  these series.
+
 20100206:
   AFFECTS: users of net/samba4-devel
   AUTHOR: timur@FreeBSD.org

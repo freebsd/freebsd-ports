@@ -12,37 +12,50 @@
 #    - graphics/libGL
 #    - graphics/libGLU
 #    - graphics/libGLw
+#    - graphics/libglut
 #    - graphics/dri
 #
 # $FreeBSD$
 #
 
-MESAVERSION=	7.4.4
-MASTER_SITES?=	SF/mesa3d/MesaLib/${PORTVERSION}:mesa \
-		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/:mesa,glut,demos
+MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
+MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
+
+.ifdef	WITHOUT_NOUVEAU
+MESABASEVERSION=	7.6.1
+MESASUBVERSION=
+PLIST_SUB+=		MESALIB76= MESALIB74="@comment "
+.else
+MESABASEVERSION=	7.4.4
+MESASUBVERSION=
+PLIST_SUB+=		MESALIB74= MESALIB76="@comment "
+.endif
+
+MASTER_SITES?=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/:mesa,glut,demos
 MASTER_SITE_SUBDIR=	mesa3d
-DISTFILES=	MesaLib-${MESAVERSION}${EXTRACT_SUFX}:mesa
+DISTFILES=		MesaLib-${MESADISTVERSION}${EXTRACT_SUFX}:mesa
 MAINTAINER?=	x11@FreeBSD.org
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE_BZIP2=		yes
+USE_GMAKE=		yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
+				LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-gallium
 
-ALL_TARGET=	default
+ALL_TARGET=		default
 
-#MAKE_ARGS=	SHELL=${SH}
-#CFLAGS+=	-DUSE_XSHM -DHZ=100
+#MAKE_ARGS=		SHELL=${SH}
+#CFLAGS+=		-DUSE_XSHM -DHZ=100
 
-#FILESDIR=	${.CURDIR}/../../graphics/libGL/files
-WRKSRC=		${WRKDIR}/Mesa-${MESAVERSION}
+#FILESDIR=		${.CURDIR}/../../graphics/libGL/files
+WRKSRC=			${WRKDIR}/Mesa-${MESABASEVERSION}
 
 .if !defined(ARCH)
-ARCH!=		uname -p
+ARCH!=			uname -p
 .endif
 
 .if ${ARCH} == alpha
@@ -51,7 +64,7 @@ FAST_MATH=
 FAST_MATH=      -ffast-math
 .endif
 
-COMPONENT=	${PORTNAME:L:C/^lib//:C/mesa-//}
+COMPONENT=		${PORTNAME:L:C/^lib//:C/mesa-//}
 
 .if ${COMPONENT:Mglut} == ""
 . if ${COMPONENT:Mglu} == ""
@@ -60,8 +73,7 @@ CONFIGURE_ARGS+=	--disable-glu --disable-glut
 CONFIGURE_ARGS+=	--disable-glut
 . endif
 .else
-MASTER_SITES+=	SF/mesa3d/MesaGLUT/${MESAVERSION}:glut
-DISTFILES+=	MesaGLUT-${MESAVERSION}${EXTRACT_SUFX}:glut
+DISTFILES+=		MesaGLUT-${MESADISTVERSION}${EXTRACT_SUFX}:glut
 .endif
 
 .if ${COMPONENT:Mglw} == ""
@@ -73,8 +85,7 @@ CONFIGURE_ARGS+=	--enable-motif
 .if ${COMPONENT:Mdemos} == ""
 CONFIGURE_ARGS+=	--with-demos=no
 .else
-MASTER_SITES+=	SF/mesa3d/MesaDemos/${MESAVERSION}:demos
-DISTFILES+=	MesaDemos-${MESAVERSION}${EXTRACT_SUFX}:demos
+DISTFILES+=		MesaDemos-${MESADISTVERSION}${EXTRACT_SUFX}:demos
 CONFIGURE_ARGS+=	--with-demos=demos,xdemos
 .endif
 

@@ -17,6 +17,10 @@ LIB_DEPENDS+=	Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 USE_GL=		gl
 USE_XORG=	glproto xt x11 xext xxf86vm xdamage xfixes dri2proto
 
+.ifdef	WITH_NOUVEAU
+EXTRA_PATCHES=	mesalib74-configure
+.endif
+
 do-install:
 	cd ${WRKSRC}/src/glw; ${GMAKE} install
 

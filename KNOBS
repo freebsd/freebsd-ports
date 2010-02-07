@@ -83,6 +83,7 @@ NCURSES			Adds ncurses console graphics support
 NHC98			Prefer/use nhc98 Haskell compiler
 NIS			Support for NIS/YP
 NLS			Native Language Support via gettext utilities
+NOUVEAU			Use MesaLib 7.4.4/libdrm 2.4.12 with xf86-video-nouveau
 NVIDIA_GL		Use libGL provided by NVidia binary drivers
 OGG			OGG multimedia container format
 OPENAL			Adds OpenAL support
