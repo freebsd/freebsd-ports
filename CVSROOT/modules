@@ -4620,6 +4620,7 @@ gnuchess                        ports/games/gnuchess
 gnudatalanguage                 ports/science/gnudatalanguage
 gnudoku                         ports/games/gnudoku
 gnugo                           ports/games/gnugo
+gnugrep                         ports/textproc/gnugrep
 gnuit                           ports/misc/gnuit
 gnuitar                         ports/audio/gnuitar
 gnulibiberty                    ports/devel/gnulibiberty
