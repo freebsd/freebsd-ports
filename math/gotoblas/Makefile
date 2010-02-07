@@ -89,7 +89,18 @@ pre-build::
 	@${ECHO_CMD} "****"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" ${WRKSRC}/Makefile.rule
+	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" ${WRKSRC}/Makefile.rule
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/Makefile.system
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/Makefile.rule
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/Makefile.tail
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/driver/level3/Makefile
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/driver/others/Makefile
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/exports/Makefile
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/interface/Makefile
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/kernel/Makefile
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/kernel/Makefile.L3
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/lapack/laswp/Makefile
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/reference/Makefile
 
 do-build:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${LAPACK_SRCFILE} ${WRKSRC}
@@ -103,8 +114,8 @@ do-build:
 
 	cd ${WRKSRC} && ${GMAKE} clean
 	cd ${WRKSRC}/exports && ${GMAKE} clean
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 #DYNAMIC_ARCH=0
-	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 #DYNAMIC_ARCH=0
+	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 #DYNAMIC_ARCH=1
+	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 #DYNAMIC_ARCH=1
 	${INSTALL_DATA} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2.a
 	${INSTALL_DATA} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2.so
 

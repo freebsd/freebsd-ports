@@ -1,6 +1,15 @@
---- Makefile.orig	2009-11-11 06:46:48.000000000 +0900
-+++ Makefile	2010-02-02 10:44:34.000000000 +0900
-@@ -154,7 +154,7 @@
+--- Makefile	2010-01-21 05:54:38.000000000 +0900
++++ Makefile	2010-02-07 15:41:11.000000000 +0900
+@@ -23,7 +23,7 @@
+ 	@echo " GotoBLAS build complete."
+ 	@echo
+ 	@echo "  OS               ... $(OSNAME)             "
+-	@echo "  Architecture     ... $(ARCH)               "
++	@echo "  Architecture     ... $(ARCH_)              "
+ ifndef BINARY64
+ 	@echo "  BINARY           ... 32bit                 "
+ else
+@@ -158,7 +158,7 @@
  	-@echo "NOOPT     = $(FFLAGS) -O0" >> lapack-3.1.1/make.inc
  	-@echo "PNOOPT     = $(FPFLAGS) -O0" >> lapack-3.1.1/make.inc
  	-@echo "LOADOPTS  = $(FFLAGS) $(EXTRALIB)" >> lapack-3.1.1/make.inc
@@ -9,7 +18,7 @@
  	-@echo "RANLIB    = $(RANLIB)" >> lapack-3.1.1/make.inc
  	-@echo "LAPACKLIB = ../$(LIBNAME)" >> lapack-3.1.1/make.inc
  	-@echo "LAPACKLIB_P = ../$(LIBNAME_P)" >> lapack-3.1.1/make.inc
-@@ -166,7 +166,7 @@
+@@ -170,7 +170,7 @@
  
  lapack-3.1.1 : lapack-3.1.1.tgz
  ifndef NOFORTRAN
@@ -18,10 +27,3 @@
  		echo $(TAR) zxf $< ;\
  		$(TAR) zxf $< && (cd lapack-3.1.1; $(PATCH) -p1 < ../patch.for_lapack-3.1.1) ;\
  	else \
-@@ -223,4 +223,4 @@
- 	echo deleting lapack-3.1.1; \
- 	rm -rf lapack-3.1.1 ;\
- 	fi
--	@echo Done.
-\ No newline at end of file
-+	@echo Done.
