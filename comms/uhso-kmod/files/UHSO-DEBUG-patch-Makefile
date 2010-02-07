@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-12-28 18:29:47.732668607 +0000
++++ Makefile	2009-12-28 18:29:56.747883459 +0000
+@@ -2,7 +2,7 @@
+ S=  ${.CURDIR}/../..
+ .PATH: $S/dev/usb
+ 
+-#CFLAGS+= -DUSB_DEBUG=1 -DUHSO_DEBUG=2 -DUHSO_DEBUG_HEXDUMP=1 -g
++CFLAGS+= -DUSB_DEBUG=1 -DUHSO_DEBUG=2 -DUHSO_DEBUG_HEXDUMP=1 -g
+ KMOD=	uhso
+ SRCS=	opt_bus.h opt_usb.h device_if.h bus_if.h usbdevs.h uhso.c
+ 

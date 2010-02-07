@@ -143,6 +143,7 @@
     SUBDIR += tlf
     SUBDIR += trustedqsl
     SUBDIR += twpsk
+    SUBDIR += uhso-kmod
     SUBDIR += uird
     SUBDIR += unixcw
     SUBDIR += uticom
