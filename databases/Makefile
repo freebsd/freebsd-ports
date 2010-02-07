@@ -521,6 +521,7 @@
     SUBDIR += postgresql-libpgeasy
     SUBDIR += postgresql-libpq++
     SUBDIR += postgresql-libpqxx
+    SUBDIR += postgresql-libpqxx30
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-pllua
     SUBDIR += postgresql-plproxy
