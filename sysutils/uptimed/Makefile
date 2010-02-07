@@ -5,19 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.3.12
-PORTREVISION=	1
+PORTVERSION=	0.3.16
 CATEGORIES=	sysutils
-MASTER_SITES=	http://podgorny.cz/uptimed/releases/
+MASTER_SITES=	http://podgorny.cz/uptimed/releases/ \
+		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	uptime daemon
+MAINTAINER=	rfarmer@predatorlabs.net
+COMMENT=	Uptime daemon
+
+MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:22 aclocal:110
+ACLOCAL_ARGS=	# empty
 
 MAN1=		uprecords.1
 MAN8=		uptimed.8
