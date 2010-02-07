@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Audio-Wav
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules for reading and writing Microsoft WAV files
+
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
