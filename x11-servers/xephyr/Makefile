@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xephyr
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.5
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -35,10 +35,6 @@ PLIST_FILES=	bin/Xephyr
 OPTIONS=	HAL	"Compile with HAL config support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=	does not build
-.endif
 
 .if defined(WITH_OPENSSL_BASE)
 # The reason why I use this is cause openssl from base doesn't install a .pc file
