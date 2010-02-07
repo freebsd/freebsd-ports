@@ -7,7 +7,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
@@ -23,8 +22,8 @@ USE_ZIP=	YES
 
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	0
-JDK_BUILD_NUMBER=	80
-JDK_BUILD_DATE=		21_jan_2010
+JDK_BUILD_NUMBER=	82
+JDK_BUILD_DATE=		04_feb_2010
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}-ea-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
