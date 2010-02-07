@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dia
-DISTVERSION=	0.97
-PORTREVISION=	3
+DISTVERSION=	0.97.1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -47,10 +46,12 @@ PLIST_SUB+=	PYTHON="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-LIB_DEPENDS+=	EMF.1:${PORTSDIR}/graphics/libemf
-PLIST_SUB+=	WMF=""
+LIB_DEPENDS+=		EMF.1:${PORTSDIR}/graphics/libemf
+CONFIGURE_ARGS+=	--enable-libemf
+PLIST_SUB+=		WMF=""
 .else
-PLIST_SUB+=	WMF="@comment "
+CONFIGURE_ARGS+=	--disable-libemf
+PLIST_SUB+=		WMF="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
@@ -78,9 +79,6 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e \
 		's,\(^GTK_LIBS.*\),\1 ${PTHREAD_LIBS}, ; \
 		 s,\(^GTK_CFLAGS = \),\1 ${PTHREAD_CFLAGS} ,'
-.endif
-.if ${ARCH} != "i386"
-	@${REINPLACE_CMD} -e 's|wmf||g' ${WRKSRC}/plug-ins/Makefile.in
 .endif
 
 pre-configure:

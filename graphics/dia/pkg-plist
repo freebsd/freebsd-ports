@@ -1727,6 +1727,7 @@ share/locale/be/LC_MESSAGES/dia.mo
 share/locale/bg/LC_MESSAGES/dia.mo
 share/locale/bs/LC_MESSAGES/dia.mo
 share/locale/ca/LC_MESSAGES/dia.mo
+share/locale/ca@valencia/LC_MESSAGES/dia.mo
 share/locale/cs/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
 share/locale/de/LC_MESSAGES/dia.mo
@@ -1757,6 +1758,7 @@ share/locale/mn/LC_MESSAGES/dia.mo
 share/locale/mr/LC_MESSAGES/dia.mo
 share/locale/ms/LC_MESSAGES/dia.mo
 share/locale/oc/LC_MESSAGES/dia.mo
+share/locale/or/LC_MESSAGES/dia.mo
 share/locale/nb/LC_MESSAGES/dia.mo
 share/locale/ne/LC_MESSAGES/dia.mo
 share/locale/nl/LC_MESSAGES/dia.mo
@@ -1774,6 +1776,7 @@ share/locale/sq/LC_MESSAGES/dia.mo
 share/locale/sr/LC_MESSAGES/dia.mo
 share/locale/sr@Latn/LC_MESSAGES/dia.mo
 share/locale/sv/LC_MESSAGES/dia.mo
+share/locale/ta/LC_MESSAGES/dia.mo
 share/locale/th/LC_MESSAGES/dia.mo
 share/locale/tr/LC_MESSAGES/dia.mo
 share/locale/uk/LC_MESSAGES/dia.mo
