@@ -7,6 +7,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -21,6 +22,9 @@ CONFLICTS=	unixODBC-*
 
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-readline\
+		--without-jdk2\
+		--without-jdk3\
+		--without-jdk4\
 		--with-iodbc=${LOCALBASE}\
 		--enable-bpel-vad\
 		--datadir="${PREFIX}"\
@@ -28,9 +32,6 @@ CONFIGURE_ARGS=	--with-readline\
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
 		LDFLAGS="-L${LOCALBASE}/lib"
 ONLY_FOR_ARCHS=	i386 amd64
-USE_JAVA=	yes
-JAVA_VERSION=	1.4+
-JAVA_BUILD=	yes
 USERS=		virtuoso
 GROUPS=		virtuoso
 
