@@ -1666,7 +1666,7 @@ check_fetch_only () {
 
 term_printf () {
 	[ -n "$PM_NO_TERM_TITLE" ] && return
-	[ "$TERM" = cons25 ] && return
+	case "$TERM" in cons*) return ;; esac
 
 	printf "\033]0;${0##*/}: ${PM_PARENT_PORT}${1}\007"
 }
