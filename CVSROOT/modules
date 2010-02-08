@@ -20285,6 +20285,7 @@ py-sslstrip                     ports/security/py-sslstrip
 py-statgrab                     ports/devel/py-statgrab
 py-stripogram                   ports/textproc/py-stripogram
 py-subversion                   ports/devel/py-subversion
+py-supervisor                   ports/sysutils/py-supervisor
 py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
 py-svglib                       ports/converters/py-svglib
@@ -22757,7 +22758,6 @@ swm                             ports/x11-wm/swm
 sword                           ports/misc/sword
 swt                             ports/x11-toolkits/swt
 swt-devel                       ports/x11-toolkits/swt-devel
-swt31                           ports/x11-toolkits/swt31
 sxm                             ports/lang/sxm
 sxml                            ports/textproc/sxml
 sxpc                            ports/x11/sxpc
@@ -23618,6 +23618,7 @@ uhexen                          ports/games/uhexen
 uhexen2                         ports/games/uhexen2
 uhexen2-extras                  ports/games/uhexen2-extras
 uhidd                           ports/sysutils/uhidd
+uhso-kmod                       ports/comms/uhso-kmod
 uhub                            ports/net-p2p/uhub
 uif2iso                         ports/sysutils/uif2iso
 uim                             ports/textproc/uim
@@ -25621,7 +25622,9 @@ zh-scim-pinyin                  ports/chinese/scim-pinyin
 zh-scim-tables                  ports/chinese/scim-tables
 zh-srecite                      ports/chinese/srecite
 zh-stardict-dict-zh_CN          ports/chinese/stardict-dict-zh_CN
+zh-stardict-dict-zh_TW          ports/chinese/stardict-dict-zh_TW
 zh-stardict-dict-zh_cn          ports/chinese/stardict-dict-zh_CN
+zh-stardict-dict-zh_tw          ports/chinese/stardict-dict-zh_TW
 zh-tcl83                        ports/chinese/tcl83
 zh-telnet                       ports/chinese/telnet
 zh-tin                          ports/chinese/tin
