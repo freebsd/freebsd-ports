@@ -1,27 +1,15 @@
---- configure.orig	Sat Apr  7 00:04:34 2007
-+++ configure	Fri May  4 13:19:37 2007
-@@ -31831,7 +31831,7 @@
- 	   openldap_LDFLAGS="-lldap -llber"
- 	   ;;
- 	*)
--	   openldap="-I$with_ldap/include"
-+	   openldap_CFLAGS="-I$with_ldap/include"
- 	   openldap_LDFLAGS="-L$with_ldap/lib -lldap -llber"
- 	   LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$with_ldap/lib"
- 	   export LD_LIBRARY_PATH
-@@ -35996,13 +35996,13 @@
- ##  various destination dirs                      			##
- ##									##
- ##########################################################################
--virtdatadir=$datadir/virtuoso
-+virtdatadir=$prefix/virtuoso
- vaddir=$virtdatadir/vad
- docdir=$virtdatadir/doc
- htmldocdir=$docdir/html
- pdfdocdir=$docdir/pdf
+--- configure.orig	2009-03-15 21:10:10.000000000 +0600
++++ configure	2009-03-15 21:10:54.000000000 +0600
+@@ -2888,9 +2888,9 @@
+ 	docdir=$datadir/virtuoso/doc
+ 	htmldocdir=$datadir/virtuoso/doc/html
+ 	pdfdocdir=$datadir/virtuoso/doc/pdf
+-	demodir=$localstatedir/lib/virtuoso/demo
+-	dbdir=$localstatedir/lib/virtuoso/db
+-	httprootdir=$localstatedir/lib/virtuoso/vsp
++	demodir=$localstatedir/virtuoso/demo
++	dbdir=$localstatedir/virtuoso/db
++	httprootdir=$localstatedir/virtuoso/vsp
+ 	hostingdir=$libdir/virtuoso/hosting
+ 	;;
  
--virtstatedir=$localstatedir/lib/virtuoso
-+virtstatedir=$prefix/virtuoso
- demodir=$virtstatedir/demo
- dbdir=$virtstatedir/db
- httprootdir=$virtstatedir/vsp
