@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}:release \
 		${MASTER_SITE_LOCAL}:snapshot \
@@ -26,7 +26,7 @@ USE_PERL5=	yes
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc
 CONFLICTS=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
@@ -87,12 +87,29 @@ BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 MAKE_ARGS+=	ARCH=x86_64
 .endif
 
+.if ${ARCH} == "powerpc"
+MAKE_ARGS+=     ARCH=ppc
+.endif
+
 pre-patch:
 	@for A in ${ONLY_FOR_ARCHS}; do \
 		${MKDIR} ${WRKSRC}/bsd/$$A; \
 	done
 
 post-patch:
+.if ${ARCH} == "powerpc"
+.if ${OSVERSION} < 800030
+# These OSVERSION don't have all the needed long double fns in their
+# libc so just disable 80 bit floats completely.
+	@cd ${WRKSRC} && ${PATCH} --quiet -R ${PATCH_STRIP} < ${FILESDIR}/patch-libmath_FreeBSD-version
+	@cd ${WRKSRC} && ${PATCH} --quiet -R ${PATCH_STRIP} < ${FILESDIR}/patch-fbsd
+.else
+# ...else we only need to disable the libmath build. (since its
+# x86-specific.)
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/revert-fbsd-libmath-patch
+.endif
+.endif
+
 .if defined(WITH_RTL8139_TIMER)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
 .endif
