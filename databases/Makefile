@@ -652,6 +652,7 @@
     SUBDIR += rubygem-datamapper
     SUBDIR += rubygem-dm-aggregates
     SUBDIR += rubygem-dm-core
+    SUBDIR += rubygem-dm-types
     SUBDIR += rubygem-do_mysql
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
