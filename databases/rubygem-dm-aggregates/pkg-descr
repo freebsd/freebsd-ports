@@ -1,0 +1,4 @@
+DataMapper plugin providing support for aggregates, functions on collections
+and datasets
+
+WWW: http://github.com/datamapper/dm-more/tree/master/dm-aggregates
