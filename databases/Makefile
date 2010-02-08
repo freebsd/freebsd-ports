@@ -650,6 +650,7 @@
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
+    SUBDIR += rubygem-dm-core
     SUBDIR += rubygem-do_mysql
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
