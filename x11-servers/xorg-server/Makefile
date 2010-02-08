@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-server
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
@@ -48,9 +49,17 @@ MAN5=		xorg.conf.5
 
 NOT_FOR_ARCHS=	alpha
 
-OPTIONS=	HAL	"Compile with HAL config support" on \
-		AIGLX	"Compile with Accelerated Indirect GLX support" on \
+.if !defined(ARCH)
+ARCH!=	/usr/bin/uname -p
+.endif
+
+OPTIONS=	AIGLX	"Compile with Accelerated Indirect GLX support" on \
 		SUID	"Install the Xorg server with setuid bit set" on
+.if ${ARCH} == sparc64
+OPTIONS+=	HAL	"Compile with HAL config support" off
+.else
+OPTIONS+=	HAL	"Compile with HAL config support" on
+.endif
 
 .include <bsd.port.pre.mk>
 
