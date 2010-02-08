@@ -4,7 +4,7 @@
 
 # PROVIDE: mythbackend
 # REQUIRE: DAEMON
-# BEFORE: LOGIN
+# BEFORE: LOGIN mysql
 # KEYWORD: shutdown
 
 # Define mythbackend_enable in /etc/rc.conf[.local] to enable mythbackend
