@@ -7,7 +7,7 @@
 
 PORTNAME=	jhead
 PORTVERSION=	2.88
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/ \
 		http://www.is-root.com/myports/
@@ -23,6 +23,9 @@ MAKE_JOBS_SAFE=	yes
 PORTDOCS=	usage.html
 PLIST_FILES=	bin/jhead
 MAN1=		jhead.1
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^CFLAGS=/d' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jhead ${PREFIX}/bin
