@@ -36,6 +36,7 @@
     SUBDIR += bjfilters600
     SUBDIR += bjfilters630
     SUBDIR += bjfilters6300
+    SUBDIR += bsd_lpr
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
     SUBDIR += catdvi

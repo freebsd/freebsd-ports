@@ -1,0 +1,76 @@
+--- Makefile.orig	2010-02-07 03:08:55.000000000 +0000
++++ Makefile	2010-02-07 03:09:01.000000000 +0000
+@@ -1,7 +1,7 @@
+ # $FreeBSD: /tmp/pcvs/ports/print/bsd_lpr/files/Attic/patch-lpr-as-port,v 1.1 2010-02-08 14:52:39 bms Exp $
+ 
+ SUBDIR=	common_source chkprintcap lp lpc lpd lpq lpr lprm lptest pac \
+-	filters filters.ru SMM.doc
++	filters filters.ru #SMM.doc
+ 
+ # Questions/ideas for lpr & friends could also be sent to:
+ #	freebsd-print@bostonradio.org
+--- SMM.doc/Makefile.orig	2004-10-24 16:33:08.000000000 +0100
++++ SMM.doc/Makefile	2010-02-07 03:08:45.000000000 +0000
+@@ -1,7 +1,7 @@
+ #	From: @(#)Makefile	8.1 (Berkeley) 6/8/93
+ # $FreeBSD: /tmp/pcvs/ports/print/bsd_lpr/files/Attic/patch-lpr-as-port,v 1.1 2010-02-08 14:52:39 bms Exp $
+ 
+-BINDIR=	/usr/share/doc
++BINDIR=	${PREFIX}/share/doc
+ VOLUME=	smm/07.lpd
+ SRCS=	0.t 1.t 2.t 3.t 4.t 5.t 6.t 7.t
+ MACROS=	-ms
+--- filters/Makefile.orig	2006-03-09 19:52:44.000000000 +0000
++++ filters/Makefile	2010-02-07 03:08:45.000000000 +0000
+@@ -1,7 +1,7 @@
+ #	@(#)Makefile	8.1 (Berkeley) 6/6/93
+ # $FreeBSD: /tmp/pcvs/ports/print/bsd_lpr/files/Attic/patch-lpr-as-port,v 1.1 2010-02-08 14:52:39 bms Exp $
+ 
+-BINDIR=	/usr/libexec/lpr
++BINDIR=	${PREFIX}/libexec/lpr
+ 
+ PROG=	lpf
+ NO_MAN=
+--- lp/Makefile.orig	2001-07-20 07:20:32.000000000 +0100
++++ lp/Makefile	2010-02-07 03:08:45.000000000 +0000
+@@ -1,6 +1,6 @@
+ # $FreeBSD: /tmp/pcvs/ports/print/bsd_lpr/files/Attic/patch-lpr-as-port,v 1.1 2010-02-08 14:52:39 bms Exp $
+ 
+-BINDIR=	/usr/bin
++BINDIR=	${PREFIX}/bin
+ 
+ SCRIPTS=lp.sh
+ MAN=	lp.1
+--- lpq/Makefile.orig	2002-06-23 21:57:18.000000000 +0100
++++ lpq/Makefile	2010-02-07 03:08:45.000000000 +0000
+@@ -1,7 +1,7 @@
+ #	From: @(#)Makefile	8.1 (Berkeley) 6/6/93
+ # $FreeBSD: /tmp/pcvs/ports/print/bsd_lpr/files/Attic/patch-lpr-as-port,v 1.1 2010-02-08 14:52:39 bms Exp $
+ 
+-BINDIR=	/usr/bin
++BINDIR=	${PREFIX}/bin
+ 
+ PROG=	lpq
+ BINOWN=	root
+--- lpr/Makefile.orig	2002-06-23 21:57:18.000000000 +0100
++++ lpr/Makefile	2010-02-07 03:08:45.000000000 +0000
+@@ -3,7 +3,7 @@
+ 
+ .PATH: ${.CURDIR}/../common_source
+ 
+-BINDIR=	/usr/bin
++BINDIR=	${PREFIX}/bin
+ 
+ PROG=	lpr
+ MAN=	lpr.1 printcap.5
+--- lprm/Makefile.orig	2002-06-23 21:57:18.000000000 +0100
++++ lprm/Makefile	2010-02-07 03:08:45.000000000 +0000
+@@ -3,7 +3,7 @@
+ 
+ .PATH: ${.CURDIR}/../common_source
+ 
+-BINDIR=	/usr/bin
++BINDIR=	${PREFIX}/bin
+ 
+ PROG=	lprm
+ BINOWN=	root
