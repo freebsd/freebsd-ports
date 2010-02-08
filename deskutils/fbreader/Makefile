@@ -7,6 +7,7 @@
 
 PORTNAME=	fbreader
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	sources-
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/
@@ -26,7 +27,7 @@ USE_GNOME=	gtk20
 .else
 UI=		qt4
 USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib moc_build
+QT_COMPONENTS=	gui corelib imageformats network moc_build
 LDFLAGS+=	-L${QT_LIBDIR}
 .endif
 
