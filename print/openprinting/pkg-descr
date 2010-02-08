@@ -1,0 +1,11 @@
+This package contains implentations of the Free Standards Group (FSG)
+Open Printing API (PAPI) (v1.0) and client software that uses it.
+The implemenations of the API are designed so that they can be used
+individually to support client application interaction with a particular
+type of print service or together to interact with a variety of different
+print service types.
+
+WWW: http://openprinting.sourceforge.net/
+
+Bruce
+bms@FreeBSD.org

@@ -1,0 +1,11 @@
+==================================================================
+
+USE THIS PORT STRICTLY AT YOUR OWN RISK!
+
+The mod_ipp module dumps core, and the psm_cups.so does not
+compile with these sources as shipped. Therefore, this port
+defaults to shipping the include files and libraries only.
+
+USE THIS PORT STRICTLY AT YOUR OWN RISK!
+
+==================================================================
