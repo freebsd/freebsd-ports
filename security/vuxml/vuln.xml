@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6b575419-14cf-11df-a628-001517351c22">
+    <topic>otrs -- SQL injection</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>2.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OTRS Security Advisory reports:</p>
+	<blockquote cite="http://otrs.org/advisory/OSA-2010-01-en/">
+	  <p>Missing security quoting for SQL statements allows agents and
+            customers to manipulate SQL queries. So it's possible for
+            authenticated users to inject SQL queries
+            via string manipulation of statements.</p>
+          <p>A malicious user may be able to manipulate SQL queries to read
+            or modify records in the database. This way it could also be
+            possible to get access to more permissions (e. g. administrator
+            permissions).</p>
+          <p>To use this vulnerability the malicious user needs to have
+            a valid Agent- or Customer-session.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://otrs.org/advisory/OSA-2010-01-en/</url>
+    </references>
+    <dates>
+      <discovery>2010-02-08</discovery>
+      <entry>2010-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cae01d7b-110d-11df-955a-00219b0fc4d8">
     <topic>apache -- Prevent chunk-size integer overflow on platforms where sizeof(int) &lt; sizeof(long)</topic>
     <affects>
