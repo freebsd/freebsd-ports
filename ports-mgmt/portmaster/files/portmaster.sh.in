@@ -199,7 +199,7 @@ safe_exit () {
 			cd
 			for f in $build_deps_il; do
 				[ -n "$PM_VERBOSE" ] && echo "       $f"
-				pkg_delete -f $f
+				pm_pkg_delete_s -f $f
 			done
 			echo ''
 		fi
@@ -215,8 +215,13 @@ safe_exit () {
 
 			[ -n "$PM_DEL_BUILD_ONLY" ] &&
 			echo "build_deps_il='$build_deps_il'" >> $IPC_SAVE
-		elif [ -z "$NO_DEP_UPDATES" ]; then
-			echo 'unset NO_DEP_UPDATES' >> $IPC_SAVE
+		else
+			# Do these here so +IGNOREME can modify them
+			echo "num_of_deps='$num_of_deps'" >> $IPC_SAVE
+			echo "build_l='$build_l'" >> $IPC_SAVE
+			if [ -z "$NO_DEP_UPDATES" ]; then
+				echo 'unset NO_DEP_UPDATES' >> $IPC_SAVE
+			fi
 		fi
 		[ -z "$NO_BACKUP" -a -z "$BACKUP" ] &&
 			echo "NB_DELETE='$NB_DELETE'" >> $IPC_SAVE
@@ -240,7 +245,7 @@ usage () {
 	echo "Common flags: [--force-config] [-CGHKgntvw B|b f|i D|d]"
 	echo "    [[--packages|--packages-only] [-P|-PP] | [--packages-build]]"
 	echo "    [--packages-if-newer] [--delete-build-only] [--always-fetch]"
-	echo "    [--local-packagedir=<path>] [--no-confirm]"
+	echo "    [--local-packagedir=<path>] [--no-confirm] [--no-term-title]"
 	echo "    [-m <arguments for make>] [-x <glob pattern to exclude from building>]"
 	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
 	echo "${0##*/} [Common flags] <full path to $pd/foo/bar>"
@@ -298,6 +303,7 @@ usage () {
 	echo '   Can be specified more than once'
 	echo '--no-confirm do not ask user to confirm list of ports to be'
 	echo '   installed and/or updated before proceeding'
+	echo '--no-term-title do not update the xterm title bar'
 	echo ''
 	echo '--show-work list what ports are and would be installed'
 	echo ''
@@ -438,6 +444,8 @@ for var in "$@" ; do
 				export PM_DEL_BUILD_ONLY ;;
 	--no-confirm)		PM_NO_CONFIRM=pm_no_confirm
 				export PM_NO_CONFIRM ;;
+	--no-term-title)	PM_NO_TERM_TITLE=pm_no_term_title
+				export PM_NO_TERM_TITLE ;;
 	--help)			usage 0 ;;
 	--version)		version ; exit 0 ;;
 	--clean-distfiles)	CLEAN_DISTFILES=clean_distfiles ;;
@@ -1657,6 +1665,9 @@ check_fetch_only () {
 }
 
 term_printf () {
+	[ -n "$PM_NO_TERM_TITLE" ] && return
+	[ "$TERM" = cons25 ] && return
+
 	printf "\033]0;${0##*/}: ${PM_PARENT_PORT}${1}\007"
 }
 
@@ -1664,12 +1675,16 @@ update_build_l () {
 	local origin iport new_port
 
 	case "$1" in
-	*/*)	origin=$1 ; iport=`iport_from_origin $origin`
+	*/*)	origin=$1
+		case "$build_l" in *\ $origin\\*) return ;; esac
+		iport=`iport_from_origin $origin`
 		if [ -z "$iport" ]; then
 			build_l="${build_l}\tInstall $origin\n"
 			return
 		fi ;;
-	*)	origin=`origin_from_pdb $1` ; iport=$1 ;;
+	*)	iport=$1
+		case "$build_l" in *\ $iport\ *|*\ $iport\\*) return ;; esac
+		origin=`origin_from_pdb $1` ;;
 	esac
 
 	pm_cd $pd/$origin && new_port=`pm_make -V PKGNAME`
@@ -1688,19 +1703,25 @@ update_port () {
 	[ -n "$2" ] && update_to=" to $2"
 	echo "===>>> Launching child to update ${1#$pd/}${update_to}"
 
-	dep_of_deps=$(( $dep_of_deps + 1 ))
+	if [ -z "$NO_RECURSIVE_CONFIG" ]; then
+		local deps
 
-	if [ -n "$CONFIG_ONLY" ]; then
-		num_of_deps=$(( $num_of_deps + 1 ))
-		update_build_l $1
+		dep_of_deps=$(( $dep_of_deps + 1 ))
+
+		if [ -n "$CONFIG_ONLY" ]; then
+			num_of_deps=$(( $num_of_deps + 1 ))
+			update_build_l $1
+		fi
+
+		deps=" (${dep_of_deps}/${num_of_deps})"
 	fi
 
 	if [ -n "$PM_DEPTH" ]; then
 		echo "	${PM_DEPTH}>> ${1#$pd/}"
-term_printf " ${PM_DEPTH#* }>> ${1#$pd/} (${dep_of_deps}/${num_of_deps})"
+		term_printf " ${PM_DEPTH#* }>> ${1#$pd/}${deps}"
 	else
 		if [ -n "$UPDATE_ALL" ]; then
-		term_printf " >> ${1#$pd/} (${dep_of_deps}/${num_of_deps})"
+			term_printf " >> ${1#$pd/}${deps}"
 		fi
 	fi
 
@@ -1725,7 +1746,7 @@ term_printf " ${PM_DEPTH#* }>> ${1#$pd/} (${dep_of_deps}/${num_of_deps})"
 	elif [ -n "$CONFIG_ONLY" -a -z "$PM_PACKAGES" ]; then
 	echo "===>>> Continuing 'make config' dependency check for $portdir"
 	else
-term_printf " ${PM_DEPTH#* }(${dep_of_deps}/${num_of_deps})"
+		term_printf " ${PM_DEPTH#* }${deps}"
 		echo "===>>> Returning to dependency check for $portdir"
 	fi
 	return 0
@@ -1920,7 +1941,11 @@ dependency_check () {
 		case "$PM_DEPTH" in
 		*\>\>*)	echo "	$PM_DEPTH" ;;
 		*)	if [ "$PM_PARENT_PORT" = All ]; then
-	term_printf " >> ${upg_port:-$portdir} (${dep_of_deps}/${num_of_deps})"
+				if [ -z "$NO_RECURSIVE_CONFIG" ]; then
+					local deps
+					deps=" (${dep_of_deps}/${num_of_deps})"
+				fi
+				term_printf " >> ${upg_port:-$portdir}${deps}"
 			else
 				term_printf
 			fi ;;
@@ -2398,6 +2423,15 @@ if [ -e "$pdb/$upg_port/+IGNOREME" ]; then
 				case "$answer" in
 				[yY]) ;;	# Let it build
 				*) CUR_DEPS="${CUR_DEPS}${upg_port}:${portdir}:"
+			# Outdent
+			if [ $dep_of_deps -gt 0 ]; then
+				dep_of_deps=$(( $dep_of_deps - 1 ))
+				if [ -n "$CONFIG_ONLY" ]; then
+					num_of_deps=$(( $num_of_deps - 1 ))
+					build_l="${build_l%\t*}"
+				fi
+			fi
+			# Outdent
 					safe_exit ;;
 				esac
 			else
@@ -2435,7 +2469,7 @@ if [ -n "$CONFIG_ONLY" -a "$$" -eq "$PM_PARENT_PID" ]; then
 	if [ -n "$upg_port" ]; then
 		update_build_l $upg_port
 	else
-		build_l="${build_l}\tInstall $portdir\n"
+		update_build_l $portdir
 	fi
 fi
 
@@ -2528,8 +2562,6 @@ if [ -n "$CONFIG_ONLY" ]; then
 	if [ ! "$$" -eq "$PM_PARENT_PID" ]; then
 		# Save state for the parent process to read back in
 		echo "CONFIG_SEEN_LIST='$CONFIG_SEEN_LIST'" > $IPC_SAVE
-		echo "num_of_deps='$num_of_deps'" >> $IPC_SAVE
-		echo "build_l='$build_l'" >> $IPC_SAVE
 
 		if [ "$PM_BUILD_ONLY_LIST" = pmp_doing_build_deps ]; then
 			echo "build_only_dl_g='$build_only_dl_g'" >> $IPC_SAVE
@@ -2665,7 +2697,7 @@ fetch_package () {
 		fi
 
 		fetch $fetch_args -o $ppd ${sitepath}${1}.tbz 2>/dev/null || {
-			pm_unlink ${ppd}/${1}.tbz;
+			pm_unlink_s ${ppd}/${1}.tbz;
 			fetch $fetch_args -o $ppd ${sitepath}${1}.tbz 2>/dev/null; }
 	fi
 }
