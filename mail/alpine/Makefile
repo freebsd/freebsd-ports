@@ -128,8 +128,9 @@ PATCHFILES+=	maildir.patch.gz
 .endif
 
 .if !defined(WITHOUT_SSL)
-MAKE_ARGS+=	SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLDIR} \
+			--with-ssl-include-dir=${OPENSSLINC} \
+			--with-ssl-lib-dir=${OPENSSLLIB} \
 			--with-ssl-certs-dir=${OPENSSLDIR}/certs
 .else
 CONFIGURE_ARGS+=	--without-ssl
