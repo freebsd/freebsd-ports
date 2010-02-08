@@ -1,0 +1,11 @@
+==================================================================
+
+To enable this package, please add the following to /etc/rc.conf,
+and create the file %%ETCDIR%%/printcap :-
+ bsd_lpd_enable="YES"
+ bsd_chkprintcap_enable="YES"
+
+All knobs documented in rc.conf(5) for lpd(8) should be valid for
+this package, however, they must be prefixed with 'bsd_' as above.
+
+==================================================================
