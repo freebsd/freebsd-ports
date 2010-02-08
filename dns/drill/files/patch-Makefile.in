@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Jan  5 01:37:41 2005
-+++ Makefile.in	Wed Jan 12 20:42:10 2005
-@@ -10,7 +10,7 @@
- CC = @CC@
- CFLAGS = @CFLAGS@
+--- Makefile.in.orig	2009-07-03 09:43:18.000000000 -0300
++++ Makefile.in	2010-02-06 10:09:39.000000000 -0200
+@@ -14,7 +14,7 @@
+ CFLAGS = -I. @CFLAGS@
+ CPPFLAGS = @CPPFLAGS@ 
  LDFLAGS = @LDFLAGS@
 -LIBS = @LIBS@
 +LIBS = @LIBS@ -lssl
  INSTALL = $(srcdir)/install-sh -c
  INSTALL_PROGRAM = $(INSTALL)
- 
+ LDNSDIR = @LDNSDIR@
