@@ -23,7 +23,7 @@ MAN1=		cdda2ogg.1 devdump.1 dirsplit.1 genisoimage.1 icedax.1 \
 		pitchplay.1 readmult.1 readom.1 wodim.1
 MAN5=		genisoimagerc.5
 
-CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]*
+CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
 
 .include <bsd.port.pre.mk>
 
