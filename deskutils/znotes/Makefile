@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.0
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -22,18 +22,34 @@ DESKTOP_ENTRIES="zNotes" "Simple notes" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
 		"Utility;TextEditor;Qt;" ${FALSE}
 
+OPTIONS=	NLS		"Build with NLS support" on
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 post-patch:
 	    @${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
-		${WRKSRC}/znotes.pro
+		${WRKSRC}/${PORTNAME}.pro
+	    @${REINPLACE_CMD} -i -e 's,QCoreApplication::applicationDirPath()+"/translations","${DATADIR}/translations",g' \
+		${WRKSRC}/settings.cpp
+
+.include <bsd.port.pre.mk>
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKE_PRO}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/znotes.png ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
-.include <bsd.port.mk>
+.if defined(WITH_NLS)
+	${MKDIR} ${DATADIR}/translations
+	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
+PLIST_FILES+=	share/${PORTNAME}/translations/${PORTNAME}_cs.qm \
+		share/${PORTNAME}/translations/${PORTNAME}_ru.qm
+PLIST_DIRS+=	share/${PORTNAME}/translations \
+		share/${PORTNAME}
+.else
+.endif
+
+.include <bsd.port.post.mk>
