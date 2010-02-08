@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
@@ -44,7 +44,14 @@ CONFIGURE_ARGS+=	--with-libz
 CONFIGURE_ARGS+=	--without-libz
 .endif
 
-MAN3=	libssh2_banner_set.3 \
+MAN3=	libssh2_agent_connect.3 \
+	libssh2_agent_disconnect.3 \
+	libssh2_agent_free.3 \
+	libssh2_agent_get_identity.3 \
+	libssh2_agent_init.3 \
+	libssh2_agent_list_identities.3 \
+	libssh2_agent_userauth.3 \
+	libssh2_banner_set.3 \
 	libssh2_base64_decode.3 \
 	libssh2_channel_close.3 \
 	libssh2_channel_direct_tcpip_ex.3 \
@@ -131,6 +138,7 @@ MAN3=	libssh2_banner_set.3 \
 	libssh2_sftp_unlink_ex.3 \
 	libssh2_sftp_write.3 \
 	libssh2_trace.3 \
+	libssh2_trace_sethandler.3 \
 	libssh2_userauth_authenticated.3 \
 	libssh2_userauth_hostbased_fromfile_ex.3 \
 	libssh2_userauth_keyboard_interactive_ex.3 \
