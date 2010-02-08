@@ -23,7 +23,7 @@ COMMENT=	Distributed.net distributed computing project client
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
-ONLY_FOR_ARCHS=	i386 alpha sparc64 amd64
+ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
 USE_RC_SUBR=	dnetc.sh
 NO_BUILD=	yes
@@ -58,9 +58,8 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
-.endif
 
-.if ${ARCH} == amd64
+.elif ${ARCH} == amd64
 REVISION=	1
 VERSION=	2.9103.509
 .if ${OSVERSION} >= 700055
@@ -70,9 +69,8 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
-.endif
 
-.if ${ARCH} == sparc64
+.elif ${ARCH} == sparc64
 REVISION=	1
 VERSION=	2.9103.509
 .if ${OSVERSION} >= 700055
@@ -82,11 +80,10 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
-.endif
 
-.if ${ARCH} == alpha
-REVISION=	4
-VERSION=	2.9003.481
+.else
+REVISION=	0
+VERSION=	0
 .endif
 
 do-configure:
