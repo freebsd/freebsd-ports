@@ -653,7 +653,9 @@ bin/PootleServer
 %%DATADIR%%/mo/af/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ak/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ar/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ast/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/az/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/be/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/bg/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/bn/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/bn_IN/LC_MESSAGES/django.mo
@@ -694,6 +696,7 @@ bin/PootleServer
 %%DATADIR%%/mo/kn/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ko/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ku/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/lg/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ln/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/lt/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/lv/LC_MESSAGES/django.mo
@@ -794,7 +797,9 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/af/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ak/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ar/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ast/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/az/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/be/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/bg/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/bn/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/bn_IN/LC_MESSAGES
@@ -835,6 +840,7 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/kn/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ko/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ku/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/lg/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ln/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/lt/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/lv/LC_MESSAGES
@@ -881,7 +887,9 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/af
 @dirrm %%DATADIR%%/mo/ak
 @dirrm %%DATADIR%%/mo/ar
+@dirrm %%DATADIR%%/mo/ast
 @dirrm %%DATADIR%%/mo/az
+@dirrm %%DATADIR%%/mo/be
 @dirrm %%DATADIR%%/mo/bg
 @dirrm %%DATADIR%%/mo/bn
 @dirrm %%DATADIR%%/mo/bn_IN
@@ -922,6 +930,7 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/kn
 @dirrm %%DATADIR%%/mo/ko
 @dirrm %%DATADIR%%/mo/ku
+@dirrm %%DATADIR%%/mo/lg
 @dirrm %%DATADIR%%/mo/ln
 @dirrm %%DATADIR%%/mo/lt
 @dirrm %%DATADIR%%/mo/lv
