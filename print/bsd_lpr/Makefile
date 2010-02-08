@@ -58,7 +58,9 @@ PLIST_FILES=\
 	sbin/lptest \
 	sbin/pac \
 	sbin/lpf \
-	sbin/bjc-240.sh.sample
+	sbin/bjc-240.sh.sample \
+	sbin/koi2855 \
+	sbin/koi2alt
 
 LPR_SUBST_FILES=	${WRKSRC}/common_source/pathnames.h
 
