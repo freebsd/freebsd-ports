@@ -1,11 +1,11 @@
 #compdef portmaster
-# For portmaster 2.11
+# for portmaster 2.18
 
 local context state line array ret=1
 typeset -A opt_args
 
 _arguments -A "-*" : \
-  "--force-config['make config' for all ports (must be first option)]" \
+  "--force-config['make config' for all ports]" \
   "-C[prevents 'make clean' from being run before building]" \
   "(-F)-G[prevents recursive 'make config' (overrides --force-config)]" \
   "-H[hide details of the port build and install in a log file]" \
@@ -17,22 +17,29 @@ _arguments -A "-*" : \
   "-t[recurse dependencies thoroughly, using all-depends-array]" \
   "-v[verbose output]" \
   "-w[save old shared libraries before deinstall]" \
-  "-u[DEPRECATED]" \
-  "-f[always rebuild ports (overrides -i)]" \
+  "(-i)-f[always rebuild ports (overrides -i)]" \
   "(-f)-i[interactive update -- ask whether to rebuild ports]" \
   "(-d)-D[no cleaning of distfiles]" \
   "(-D)-d[always clean distfiles]" \
-  "-m[<arguments for the 'make' command line>]:arguments for make: " \
-  "-x[<avoid building or updating ports that match this pattern>]:glob pattern to exclude from building:->pkgs" \
-  "-p[specify the full path to a port directory]:port directory in /usr/ports:->ports" \
-  "--show-work[array what ports are and would be installed]" \
+  "-m[arguments for the 'make' command line]:arguments for make: " \
+  "-x[avoid building or updating ports that match this pattern]:glob pattern to exclude from building:->pkgs" \
+  "--no-confirm[do not ask user to confirm list of ports to be installed and/or updated before proceeding]" \
+  "--no-term-title[do not update the xterm title bar]" \
+  "--show-work[list what ports are and would be installed]" \
   "-o[replace the installed port with a port from a different origin]:new port dir in /usr/ports:->ports" \
   "-r[rebuild port, and all ports that depend on it]:name/glob of port in /var/db/pkg:->pkgs" \
   "-R[used with -\[rf\] to skip ports updated on a previous run]" \
   "-a[check all ports, update as necessary]" \
-  "-l[array installed ports by category]" \
-  "-L[array installed ports by category, and search for updates]" \
-  "-e[expunge a port via pkg_delete, and remove its distfiles]:name of port directory in /var/db/pkg:->pkgs" \
+  "--delete-build-only[delete ports that are build-only dependencies after a successful run]" \
+  {-P,--packages}"[use packages, but build port if not available]" \
+  {-PP,--packages-only}"[fail if no package is available]" \
+  "--packages-build[use packages for all build dependencies]" \
+  "--packages-if-newer[use package if newer than installed even if the package is not the latest]" \
+  "--always-fetch[fetch package even if it already exists locally]" \
+  "--local-packagedir=-[where local packages can be found]:path:_files -/" \
+  "-l[list all installed ports by category]" \
+  "-L[list all installed ports by category, and search for updates]" \
+  "-e[expunge a port via pkg_delete, and remove its distfiles]:full name of port directory in /var/db/pkg:->pkgs" \
   "-s[clean out stale ports that used to be depended on]" \
   "(-G)-F[fetch distfiles only]" \
   "--clean-distfiles[offer to delete stale distfiles]" \
@@ -40,7 +47,7 @@ _arguments -A "-*" : \
   "--check-depends[cross-check and update dependency information for all ports]" \
   "--check-port-dbdir[check for stale entries in /var/db/ports]" \
   "--list-origins[list directories from /usr/ports for root and leaf ports]" \
-  "(-h --help)"{-h,--help}"[display this help message]" \
+  "(-h --help)"{-h,--help}"[display help message]" \
   "--version[display the version number]" \
   '*:Packages and Ports:->pkgs_ports'
 
