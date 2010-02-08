@@ -1481,6 +1481,7 @@
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails-app-installer
+    SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-redcloth
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
