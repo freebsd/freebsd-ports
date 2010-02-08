@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	1.6.2
-PORTREVISION=	2
+PORTVERSION=	1.9.1
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -19,7 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 OPTIONS=	LAME "lame support" on \
 		OGG "ogg-vorbis support" on \
 		FLAC "FLAC support" on \
-		WAVPACK "WavPack support" off
+		WAVPACK "WavPack support" off \
+		MONKEYAUDIO "Monkey's Audio support" off
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -43,6 +43,10 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 
 .if defined(WITH_WAVPACK)
 RUN_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
+.endif
+
+.if defined(WITH_MONKEYAUDIO)
+RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 .endif
 
 post-install:
