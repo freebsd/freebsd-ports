@@ -1,5 +1,5 @@
 #!/bin/sh
-# This script checks for the existence of the three very important Z88
+# This script checks for the existence of the three very important Z88 
 # parameter files z88.fcd, z88.dyn and z88i4.txt and launches the
 # Z88 commander
 # This file was taken from the Z88 RPM distribution
@@ -16,7 +16,7 @@ fi
 
 if ! test -f z88i4.txt
   then
-    cp %%PREFIX%%/share/z88/b1_4.txt z88i4.txt
+    cp %%PREFIX%%/share/z88/z88i4.txt .
 fi
 
 if ! test -f z88i1.txt
@@ -34,8 +34,8 @@ if ! test -f z88i1.txt
               else
                 echo "A Z88 input file z88g.cos exists"
             fi
-          else
-            echo "A Z88 input file z88x.dxf exists"
+          else 
+            echo "A Z88 input file z88x.dxf exists" 
         fi
       else
         echo "A Z88 input file z88ni.txt exists"
@@ -44,9 +44,9 @@ if ! test -f z88i1.txt
     echo "A Z88 input file z88i1.txt exists"
 fi
 
-echo "For further information consult"
-echo "http://www.z88.org/ or "
-echo "%%PREFIX%%/share/doc/z88/z88mane.pdf (English)"
+echo "For further information consult" 
+echo "%%PREFIX%%/z88/README or"
+echo "%%PREFIX%%/doc/z88/z88mane.pdf (English)"
 echo "*** Starting the Z88 Finite Elements Analysis system ***"
 
-z88com &
+z88com

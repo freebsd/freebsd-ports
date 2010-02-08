@@ -1,7 +1,7 @@
---- z88.fcd.linux.orig	Tue Dec 28 21:32:30 2004
-+++ z88.fcd.linux	Tue Dec 28 21:33:46 2004
+--- z88.fcd.linux.orig	2008-11-23 16:23:32.000000000 +0000
++++ z88.fcd.linux	2010-01-19 10:12:57.000000000 +0000
 @@ -1,5 +1,5 @@
- Header file Z88.FCD for Prof.Dr. Frank Rieg's free FEA program Z88 V11.
+ Header file Z88.FCD for Prof.Dr. Frank Rieg's free FEA program Z88 V13.
 -This file fits well for the LINUX OS
 +This file fits well for the FreeBSD OS
  
@@ -11,8 +11,8 @@
  
      Your HTML-or Internet Browser's prefix
      Prefix fuer Ihren HTML- oder Internet Browser
--    CPREFIX      file:///home/rieg/z88v11/
+-    CPREFIX      file:///home/frank/z88130/
 +    CPREFIX      file://%%DOCSDIR%%/
  
-     Volume of alert bell
-     Warnton-Staerke
+   WINDOW END
+ 
