@@ -22,7 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a74
+PORTVERSION=	2.01.01a75
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -31,7 +31,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/DVD and ISO-9660 image creation and extraction tools
 
-CONFLICTS=	cdrtools-[0-9]*
+CONFLICTS=	cdrkit-* cdrtools-[0-9]* cjk-cdrtools-*
 
 MAN1=		btcflash.1 cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
 MAN8=		isoinfo.8 mkisofs.8
