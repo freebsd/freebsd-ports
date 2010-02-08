@@ -1469,6 +1469,7 @@
     SUBDIR += rubygem-htauth
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
+    SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-maruku
