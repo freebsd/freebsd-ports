@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	dklibs
-PORTVERSION=	1.23.1
-PORTREVISION=	1
+PORTVERSION=	1.26.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A set of libraries by Dirk Krause
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff \
 		netpbm:${PORTSDIR}/graphics/netpbm
+
+MAKE_JOBS_SAFE=	yes
 
 USE_BDB=	43+
 USE_OPENSSL_BASE=	yes
@@ -37,12 +38,6 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 # Need -lc for RELENG_6 support.
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${BDB_LIB_DIR} -lc"
-
-VERSION_PLUGIN=	1.23
-MAJOR_VERSION=	1
-
-PLIST_SUB+=	VERSION_PLUGIN="${VERSION_PLUGIN}" \
-		MAJOR_VERSION="${MAJOR_VERSION}"
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN3=		dk.3 \
