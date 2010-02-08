@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtuoso
-PORTVERSION=	5.0.1
-PORTREVISION=	2
+PORTVERSION=	6.1.0
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -15,24 +14,31 @@ DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Universal SQL/Application Server
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
+		htmldoc:${PORTSDIR}/textproc/htmldoc
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
+CONFLICTS=	unixODBC-*
 
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-readline\
 		--with-iodbc=${LOCALBASE}\
 		--enable-bpel-vad\
-		--disable-jdbc
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"\
+		--datadir="${PREFIX}"\
+		--localstatedir="${PREFIX}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
 		LDFLAGS="-L${LOCALBASE}/lib"
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_BUILD=	yes
+USERS=		virtuoso
+GROUPS=		virtuoso
 
 CHECK_PORT=	/usr/bin/nc -z localhost $$\1
 
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
 		KERBEROS "Kerberos extension" off\
 		OPENLDAP "OpenLDAP support" off
-#		JDBC "JDBC driver" off
 #		PERL "Perl hosting" off
 #		PYTHON "Python hosting" off
 #		MONO "Mono extension" off\
@@ -49,12 +55,6 @@ post-patch:
 	    ${XARGS} ${REINPLACE_CMD}\
 	        -e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-
-post-install:
-	${CHMOD} +w ${PREFIX}/virtuoso/demo/demo.db
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IMAGEMAGICK)
@@ -62,14 +62,9 @@ CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
 LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
+CONFIGURE_ARGS+=--disable-imagemagick
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 .endif
-
-#.if defined(WITH_JDBC)
-#USE_JAVA=	yes
-#JAVA_VERSION=	1.4+
-#JAVA_BUILD=	yes
-#.endif
 
 .if defined(WITH_KERBEROS)
 CONFIGURE_ARGS+=--enable-krb=${LOCALBASE}
