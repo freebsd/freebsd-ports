@@ -50,7 +50,7 @@
  pci_device_freebsd_unmap_range( struct pci_device *dev,
  				struct pci_device_mapping *map )
  {
-+#if defined(__sparc64__)
++#if !defined(__sparc64__)
      struct mem_range_desc mrd;
      struct mem_range_op mro;
      int fd;
