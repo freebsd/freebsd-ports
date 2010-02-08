@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_mkhomedir
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	http://portal-to-web.de/pam_mkhomedir/
 
@@ -15,22 +15,23 @@ COMMENT=	Create HOME with a PAM module on demand
 
 MANCOMPRESSED=	yes
 MAN8=		pam_mkhomedir.8
-SUB_FILES=      pkg-message
+SUB_FILES=	pkg-message
+
+PLIST_FILES=	lib/pam_mkhomedir.so \
+		lib/pam_mkhomedir.so.2
 
 .if defined(WITH_PROFILE)
-PLIST_SUB+=	PROFILE=""
+PLIST_FILES+=	lib/libpam_mkhomedir_p.a
 MAKE_ARGS+=	PROFILE=yes
 WITH_STATIC=	yes
 .else
-PLIST_SUB+=	PROFILE="@comment "
-MAKE_ARGS+=	NOPROFILE=yes
+MAKE_ARGS+=	NO_PROFILE=yes
 .endif
 
 .if defined(WITH_STATIC)
-PLIST_SUB+=     NOSTATIC=""
+PLIST_FILES+=	lib/libpam_mkhomedir.a
 .else
-MAKE_ARGS+=	NOINSTALLLIB=yes
-PLIST_SUB+=	NOSTATIC="@comment "
+MAKE_ARGS+=	NO_INSTALLLIB=yes
 .endif
 
 pre-everything::
