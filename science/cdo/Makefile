@@ -7,8 +7,7 @@
 #
 
 PORTNAME=		cdo
-PORTVERSION=		1.3.1
-PORTREVISION=		2
+PORTVERSION=		1.4.1
 CATEGORIES=		science
 MASTER_SITES=		http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 			http://sunpoet.net/distfiles/
@@ -29,6 +28,7 @@ NETCDF_VER?=		4
 HDF5_VER?=		18
 
 OPTIONS=		HDF5	"HDF5 support"		on \
+			JASPER	"Japser support"	on \
 			NETCDF	"NetCDF support"	on \
 			PROJ	"PROJ support"		on
 
@@ -42,17 +42,9 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DPTHREAD_MUTEXATTR_CONDATTR"
 IGNORE=netCDF 4 requires HDF5 1.8.
 .endif
 
-.if defined(WITH_NETCDF)
-CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-Makefile.in
-.if (${NETCDF_VER} == 4)
+.if defined(WITH_NETCDF) && (${NETCDF_VER} == 4)
 HDF5_VER=		18
 WITH_HDF5=		yes
-LIB_DEPENDS+=		netcdf.6:${PORTSDIR}/science/netcdf4
-.else
-LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
-.endif
-PLIST_FILES+=		bin/cdotest
 .endif
 
 .if defined(WITH_HDF5)
@@ -62,6 +54,24 @@ LIB_DEPENDS+=		hdf5.6:${PORTSDIR}/science/hdf5-18
 .else
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
 .endif
+.endif
+
+.if defined(WITH_JASPER)
+CONFIGURE_ARGS+=	--with-jasper=${LOCALBASE}
+LIB_DEPENDS+=		jasper:${PORTSDIR}/graphics/jasper
+PLIST_SUB+=		JPEG2000=""
+.else
+.endif
+
+.if defined(WITH_NETCDF)
+CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-Makefile.in
+.if (${NETCDF_VER} == 4)
+LIB_DEPENDS+=		netcdf.6:${PORTSDIR}/science/netcdf4
+.else
+LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
+.endif
+PLIST_FILES+=		bin/cdotest
 .endif
 
 .if defined(WITH_PROJ)
