@@ -2,20 +2,62 @@
 The installation of SCIM has finished. Please note this port is only a common
 framework for input methods and does not contain any actual input methods.
 
-In the ports collection the following input method components for SCIM are
-available:
+In the ports collection the following input methods, engines and SCIM-related
+projects are available:
 
- Chinese:
-  chinese/scim-tables	Table based input methods: Array30, CangJie, Cantonese,
-                        Dayi, Erbi, EZ, Jyutping, Simplex, Stroke, Wubi,
-                        Ziranma, ZhuYin
-  chinese/scim-pinyin	Smart pinyin
-    
- Korean:
-  korean/scim-tables	Table based input methods: Hangul, Hanja
+Language-specific IMEngines
+---------------------------
 
- Japanese:
-  japanese/scim-tables	Table based input methods: HIRAGANA, KATAKANA, Nippon
+ chinese/scim-array         Module for Array30
+ chinese/scim-chewing       Chewing Chinese methods
+ chinese/scim-fcitx         Module for fcitx
+ chinese/scim-pinyin        Smart Pinyin method
+ chinese/scim-tables        Table based input methods:
+                              Array30, CangJie, Cantonese, Dayi, Erbi, EZ,
+                              Jyutping, Simplex, Stroke, Wubi, Ziranma, ZhuYin
+                            (with textproc/scim-tables)
+
+ japanese/scim-anthy        Module using Anthy input method
+ japanese/scim-canna        Module using Canna
+ japanese/scim-honoka       The core of Honoka library that covers
+                              wnn, anthy, prime, skk and canna
+                            Use it with
+                              japanese/scim-honoka-plugin-romkan
+                              japanese/scim-honoka-plugin-wnn
+ japanese/scim-prime        Module using PRIME
+ japanese/scim-skk          Module like SKK input
+ japanese/scim-tables       Table based input methods:
+                              HIRAGANA, KATAKANA, Nippon
+                            (with textproc/scim-tables)
+ japanese/scim-tomoe        Module using Tomoe
+ japanese/scim-uim          Module using the uim input method library
+
+ korean/scim-hangul         Module for Korean Hangul input
+ korean/scim-tables         Table based input methods:
+                              Hangul, Hanja
+                            (with textproc/scim-tables)
+
+Multi-language IMEngines
+------------------------
+
+ textproc/scim-kmfl-imengine   Platform for Keyman (KMN) language keyboards,
+   textproc/scim-kmfl-*        available through textproc/scim-kmfl-* ports.
+                               They provide support for Ancient Greek,
+                               Biblical Hebrew, Yi, IPA, African languages
+                               and more
+ textproc/scim-m17n            Module which uses m17n library as the backend
+ textproc/scim-openvanilla     Input method to use modules of OpenVanilla
+                               (Traditional/Simplified Chinese and Tibetan)
+ textproc/scim-table-imengine  Engine for table based input methods
+                               (see language-specific tables above)
+
+Additional SCIM-related projects
+--------------------------------
+
+ textproc/scim-bridge          Scim-bridge agent (a wrapper library for SCIM)
+ textproc/scim-bridge-qt4      Qt4 client for SCIM-bridge
+ textproc/scim-input-pad       Add-on to input symbols with on-screen pad
+ textproc/skim                 SCIM integration into KDE
 
 As a common rule, set XMODIFIERS to '@im=SCIM' and use `scim -d' to start the
 scim daemon.
