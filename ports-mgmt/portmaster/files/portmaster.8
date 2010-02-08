@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd January 23, 2010
+.Dd February 7, 2010
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -39,6 +39,7 @@ Common Flags:
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
 .Op Fl -no-confirm
+.Op Fl -no-term-title
 .Op Fl m Ar arguments for make
 .Op Fl x Ar glob pattern to exclude from building
 .Nm
@@ -413,6 +414,8 @@ etc.
 .It Fl -no-confirm
 do not ask the user to confirm the list of ports to
 be installed and/or updated before proceeding
+.It Fl -no-term-title
+do not update the xterm title bar
 .It Fl l
 list all installed ports by category
 .It Fl L
@@ -605,6 +608,9 @@ along with their related options.
 #
 # Suppress the build confirmation message (--no-confirm)
 # PM_NO_CONFIRM=pm_no_confirm
+#
+# Do not update the xterm title bar (--no-term-title)
+# PM_NO_TERM_TITLE=pm_no_term_title
 .Ed
 .Pp
 .It Pa /var/db/pkg/*/+IGNOREME
