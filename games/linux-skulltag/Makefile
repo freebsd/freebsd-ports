@@ -7,7 +7,7 @@
 
 PORTNAME=	skulltag
 PORTVERSION=	0.9.8a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://skulltag.net/download/files/release/
 DISTFILES=	st-v098a_linux-base.tar.bz2 st-v098a_linux-x86.tar.bz2
@@ -16,7 +16,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Doom/Doom2/Heretic engine
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libfmodexp-4.24.16.so:${PORTSDIR}/audio/linux-fmodapi \
-		${LINUXBASE}/usr/lib/libSDL-1.2.so.0.7.3:${PORTSDIR}/devel/linux-sdl12
+		${LINUXBASE}/usr/lib/libSDL-1.2.so.0.7.3:${PORTSDIR}/devel/linux-f10-sdl12
 
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
