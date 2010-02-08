@@ -16,6 +16,9 @@ COMMENT=	A front-end of telnet client for multiple users or in private
 
 WRKSRC=		${WRKDIR}/bbsnet
 
+post-patch:
+	@${REINPLACE_CMD} -e 79d ${WRKSRC}/bbsnet.h
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bbsnet ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
