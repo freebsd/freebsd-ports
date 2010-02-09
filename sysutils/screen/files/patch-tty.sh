@@ -1,11 +1,11 @@
---- tty.sh.orig	2003-09-08 07:24:25.000000000 -0700
-+++ tty.sh	2010-01-26 15:56:56.000000000 -0800
+--- tty.sh
++++ tty.sh
 @@ -76,7 +76,7 @@
  #endif
  
  #include "config.h"
 -#ifdef SVR4
-+#if defined(SVR4) && !defined(__FreeBSD_cc_version)
++#if defined(SVR4) && !defined(__FreeBSD__)
  #include <sys/stropts.h>	/* for I_POP */
  #endif
  
