@@ -120,6 +120,7 @@
     SUBDIR += dap
     SUBDIR += darkice
     SUBDIR += dcd
+    SUBDIR += deadbeef
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += dir2ogg
