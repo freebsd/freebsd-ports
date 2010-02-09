@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Text-Markdown
-PORTVERSION=	1.000029
-PORTREVISION=	1
+PORTVERSION=	1.000030
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,13 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Markdown Perl5 module
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS=	\
-	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+RUN_DEPENDS=${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
