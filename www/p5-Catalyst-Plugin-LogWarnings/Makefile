@@ -17,7 +17,8 @@ COMMENT=	Log perl warnings to your Catalyst log object
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7001:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-C3>=0:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Catalyst-Plugin-C3>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-C3
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		p5-MRO-Compat>=0.11:${PORTSDIR}/devel/p5-MRO-Compat
 
 PERL_CONFIGURE=	5.8.1+
 
