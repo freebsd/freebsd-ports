@@ -22,9 +22,6 @@ MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DOCSDIR="${DOCSDIR}"
 
 PORTDOCS=	AUTHORS CHANGELOG README
 
-MAN8=		biosdecode.8 dmidecode.8 ownership.8 vpddecode.8
-PLIST_FILES=	sbin/biosdecode sbin/dmidecode sbin/ownership sbin/vpddecode
-
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^install.*:/s,install-doc,,' ${WRKSRC}/Makefile
@@ -38,4 +35,13 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+MAN8=		dmidecode.8
+PLIST_FILES=	sbin/dmidecode
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+MAN8+=		biosdecode.8 ownership.8 vpddecode.8
+PLIST_FILES+=	sbin/biosdecode sbin/ownership sbin/vpddecode
+.endif
+
+.include <bsd.port.post.mk>
