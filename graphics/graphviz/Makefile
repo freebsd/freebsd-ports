@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.26.2
+PORTVERSION=	2.26.3
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
