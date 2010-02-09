@@ -1,0 +1,27 @@
+--- makefile.orig	2007-08-21 07:59:54.000000000 +0400
++++ makefile	2010-02-08 19:56:05.000000000 +0300
+@@ -9,12 +9,7 @@
+ OPTS=-O0
+ #OPTS=-O2
+ 
+-UNAME = $(shell uname)
+-
+-ifeq ($(UNAME), Linux)
+-CXX       = g++
+-CPPFLAGS += $(OPTS) -Wall -pedantic
+-endif
++CPPFLAGS = $(CXXFLAGS) -Wall -pedantic
+ 
+ #######################################
+ 
+@@ -35,8 +30,8 @@
+ # CPPFLAGS += -I/usr/X11R6/include -DGLUI_FREEGLUT
+ 
+ # (3) GLUT
+-LIBGLUT   = -L/usr/X11R6/lib -lglut
+-CPPFLAGS += -I/usr/X11R6/include
++LIBGLUT   = -L${LOCALBASE}/lib -lglut
++CPPFLAGS += -I${LOCALBASE}/include
+ 
+ #######################################
+ 
