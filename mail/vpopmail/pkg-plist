@@ -77,6 +77,9 @@ vpopmail/etc/vlimits.default-dist
 %%MYSQL%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.mysql %D/vpopmail/etc/vpopmail.mysql-dist; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
 %%MYSQL%%vpopmail/etc/vpopmail.mysql-dist
 %%MYSQL%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.mysql ] ; then cp -p %D/%F %B/vpopmail.mysql; fi
+@unexec if cmp -s %D/vpopmail/etc/vusagec.conf %D/vpopmail/etc/vusagec.conf-dist; then rm -f %D/vpopmail/etc/vusagec.conf; fi
+vpopmail/etc/vusagec.conf-dist
+@exec if [ ! -f %D/vpopmail/etc/vusagec.conf ] ; then cp -p %D/%F %B/vusagec.conf; fi
 vpopmail/include/client.h
 vpopmail/include/conf.h
 vpopmail/include/config.h
