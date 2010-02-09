@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
-MAINTAINER=	cowbert@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
 
 CONFLICTS=	libiodbc-[0-9]* virtuoso-*

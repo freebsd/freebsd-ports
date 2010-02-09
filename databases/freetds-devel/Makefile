@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	freetds-patched
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	cowbert@gmail.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 WRKSRC=		${WRKDIR}/freetds-0.82.1.dev.20081111
