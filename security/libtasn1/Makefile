@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libtasn1
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/ \
-		http://josefsson.org/gnutls/releases/libtasn1/
-MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	libtasn1
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
