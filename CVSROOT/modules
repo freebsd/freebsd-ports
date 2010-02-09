@@ -1208,6 +1208,7 @@ brutecopy                       ports/net/brutecopy
 bruteforceblocker               ports/security/bruteforceblocker
 bsd-airtools                    ports/net-mgmt/bsd-airtools
 bsd-splash-changer              ports/sysutils/bsd-splash-changer
+bsd_lpr                         ports/print/bsd_lpr
 bsdadminscripts                 ports/sysutils/bsdadminscripts
 bsdar                           ports/archivers/bsdar
 bsdbktr_tvtune                  ports/multimedia/bsdbktr_tvtune
@@ -19407,6 +19408,7 @@ postgresql-jdbc                 ports/databases/postgresql-jdbc
 postgresql-libpgeasy            ports/databases/postgresql-libpgeasy
 postgresql-libpq++              ports/databases/postgresql-libpq++
 postgresql-libpqxx              ports/databases/postgresql-libpqxx
+postgresql-libpqxx30            ports/databases/postgresql-libpqxx30
 postgresql-odbc                 ports/databases/postgresql-odbc
 postgresql-pllua                ports/databases/postgresql-pllua
 postgresql-plproxy              ports/databases/postgresql-plproxy
