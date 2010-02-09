@@ -1,13 +1,14 @@
 Description: Install config files with -dist, do not add -fPIC.
  Install the config files with a -dist extension.
  Do not unconditionally add -fPIC, this is done only for shared libs.
+ Actually look for and install the vusagec.conf sample file!
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-01-05
+Last-Update: 2010-02-09
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -320,12 +320,11 @@
+@@ -320,12 +320,12 @@
  noinst_HEADERS = md5.h vpopmail.h file_lock.h vauth.h vlimits.h maildirquota.h vcdb.h vldap.h vmysql.h voracle.h vpgsql.h vsybase.h vlog.h global.h hmac_md5.h seek.h vutil.h
  COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c vutil.c vlistlib.c backfill.c client.c conf.c ippp.c
  CONFIG_CLEAN_FILES = vauth.c cdb/conf-cc cdb/conf-ld cdb/compile cdb/load
@@ -15,6 +16,7 @@ Last-Update: 2010-01-05
 -VLIMITS = $(DESTDIR)@vpopmaildir@/etc/vlimits.default
 +MYSQLCONF = $(DESTDIR)@vpopmaildir@/etc/vpopmail.mysql-dist
 +VLIMITS = $(DESTDIR)@vpopmaildir@/etc/vlimits.default-dist
++VUSAGECCONF = $(DESTDIR)@vpopmaildir@/etc/vusagec.conf-dist
  noinst_LIBRARIES = libvpopmail.a
  libvpopmail_a_SOURCES = $(COMMONSOURCES) 
  libvpopmail_a_LIBADD = cdb/*.o
