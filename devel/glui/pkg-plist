@@ -1,4 +1,0 @@
-include/glui.h
-lib/libglui.a
-%%PORTDOCS%%share/doc/glui/glui_manual.pdf
-%%PORTDOCS%%@dirrm share/doc/glui
