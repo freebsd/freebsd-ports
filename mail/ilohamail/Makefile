@@ -12,7 +12,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/IlohaMail-stable/${PORTVERSION}
 DISTNAME=	IlohaMail-${PORTVERSION}
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	IlohaMail is a lightweight multilingual webmail program
 
 NO_BUILD=	yes
@@ -33,7 +33,8 @@ ILOHADIR=	${PREFIX}/ilohamail
 .endif
 
 PLIST_SUB+=	ILOHADIR="${ILOHADIR:S,^${PREFIX}/,,}"
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	ILOHADIR=${ILOHADIR}
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -55,10 +56,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's|%%ILOHADIR%%|${ILOHADIR}|g' \
-		-e 's|%%DATADIR%%|${DATADIR}|g' \
-		-e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
-		< ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

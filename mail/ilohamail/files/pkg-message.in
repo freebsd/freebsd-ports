@@ -27,10 +27,10 @@ Using the MySQL back-end is also recommended.
      mysql> flush privileges;
 
   2. Create a MySQL database.
-     $ mysqladmin create webmail
+     $ mysqladmin create webmail -u root -p
 
   3. Create tables.
-     $ mysql webmail < %%DATADIR%%/MySQL/sql
+     $ mysql webmail < %%DATADIR%%/MySQL/sql -u root -p
 
   4. Configure %%ILOHADIR%%/conf/db_conf.php.
 
