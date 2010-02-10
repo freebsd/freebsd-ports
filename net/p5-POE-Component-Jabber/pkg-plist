@@ -1,16 +1,13 @@
-%%SITE_PERL%%/POE/Component/Jabber.pm
 %%SITE_PERL%%/POE/Component/Jabber/J14.pm
-%%SITE_PERL%%/POE/Component/Jabber/J2.pm
 %%SITE_PERL%%/POE/Component/Jabber/Legacy.pm
 %%SITE_PERL%%/POE/Component/Jabber/Protocol.pm
-%%SITE_PERL%%/POE/Component/Jabber/ProtocolFactory.pm
-%%SITE_PERL%%/POE/Component/Jabber/Status.pm
 %%SITE_PERL%%/POE/Component/Jabber/XMPP.pm
-%%SITE_PERL%%/POE/Component/Jabber/Error.pm
-%%SITE_PERL%%/POE/Component/Jabber/Utility/ClientHandle.pm
-%%SITE_PERL%%/POE/Component/Jabber/Utility/SSLify.pm
-%%SITE_PERL%%/POE/Component/Jabber/Utility/ServerHandle.pm
+%%SITE_PERL%%/POE/Component/Jabber/ProtocolFactory.pm
+%%SITE_PERL%%/POE/Component/Jabber/J2.pm
+%%SITE_PERL%%/POE/Component/Jabber/Events.pm
+%%SITE_PERL%%/POE/Component/Jabber.pm
 @dirrmtry %%SITE_PERL%%/POE/Component/Jabber/Utility
+@dirrmtry %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
