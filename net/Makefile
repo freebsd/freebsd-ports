@@ -266,6 +266,7 @@
     SUBDIR += java-beepcore
     SUBDIR += jcifs
     SUBDIR += jicmp
+    SUBDIR += jpcap
     SUBDIR += jrdesktop
     SUBDIR += jsch
     SUBDIR += jumpgate
