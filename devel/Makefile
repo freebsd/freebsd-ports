@@ -2093,6 +2093,7 @@
     SUBDIR += p5-Test-Parser
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
+    SUBDIR += p5-Test-Pod-Coverage-Permissive
     SUBDIR += p5-Test-Portability-Files
     SUBDIR += p5-Test-RandomResults
     SUBDIR += p5-Test-Reporter
