@@ -1,139 +1,138 @@
 bin/trophy
+%%DATADIR%%/cars/dust.tga
+%%DATADIR%%/cars/flash2/surface.tga
+%%DATADIR%%/cars/flash2/surface3d.tga
+%%DATADIR%%/cars/jeep/surface.tga
+%%DATADIR%%/cars/jeep/surface3d.tga
+%%DATADIR%%/cars/vw/surface.tga
+%%DATADIR%%/cars/vw/surface3d.tga
+%%DATADIR%%/cars/z3/surface.tga
+%%DATADIR%%/cars/z3/surface3d.tga
+%%DATADIR%%/fonts/lcd_13_green.tga
+%%DATADIR%%/fonts/normal_11_white.tga
+%%DATADIR%%/fonts/normal_14_white.tga
+%%DATADIR%%/fonts/normal_22_gray.tga
+%%DATADIR%%/fonts/normal_22_white.tga
+%%DATADIR%%/fonts/normal_8_white.tga
+%%DATADIR%%/goody/bullets.tga
+%%DATADIR%%/goody/fogbomb.tga
+%%DATADIR%%/goody/life.tga
+%%DATADIR%%/goody/money.tga
+%%DATADIR%%/goody/turbo.tga
+%%DATADIR%%/gui/arrow_b.tga
+%%DATADIR%%/gui/arrow_l.tga
+%%DATADIR%%/gui/arrow_r.tga
+%%DATADIR%%/gui/arrow_t.tga
+%%DATADIR%%/gui/border1.tga
+%%DATADIR%%/gui/border2.tga
+%%DATADIR%%/gui/border3.tga
+%%DATADIR%%/gui/border4.tga
+%%DATADIR%%/gui/button.tga
+%%DATADIR%%/gui/edge1.tga
+%%DATADIR%%/gui/edge2.tga
+%%DATADIR%%/gui/edge3.tga
+%%DATADIR%%/gui/edge4.tga
+%%DATADIR%%/gui/loading.tga
+%%DATADIR%%/gui/progressbar.tga
+%%DATADIR%%/menu/bar.tga
+%%DATADIR%%/menu/bg.tga
+%%DATADIR%%/menu/cursorani.tga
+%%DATADIR%%/misc/carfire.tga
+%%DATADIR%%/misc/caution.tga
+%%DATADIR%%/misc/checkflag.tga
+%%DATADIR%%/misc/cross.tga
+%%DATADIR%%/misc/dust.tga
+%%DATADIR%%/misc/fog.tga
+%%DATADIR%%/misc/gunfire.tga
+%%DATADIR%%/misc/hitpoint.tga
+%%DATADIR%%/misc/info.tga
+%%DATADIR%%/misc/light.tga
+%%DATADIR%%/misc/verticalbar.tga
+%%DATADIR%%/panel/button.tga
+%%DATADIR%%/panel/death.tga
+%%DATADIR%%/panel/infoview.tga
+%%DATADIR%%/panel/label.tga
+%%DATADIR%%/panel/life.tga
+%%DATADIR%%/panel/speed.tga
+%%DATADIR%%/panel/turbo.tga
+%%DATADIR%%/panel/turbolabel.tga
 %%DATADIR%%/resources.xml
-%%DATADIR%%/resources/cars/dust.tga
-%%DATADIR%%/resources/cars/flash2/surface.tga
-%%DATADIR%%/resources/cars/flash2/surface3d.tga
-%%DATADIR%%/resources/cars/jeep/surface.tga
-%%DATADIR%%/resources/cars/jeep/surface3d.tga
-%%DATADIR%%/resources/cars/vw/surface.tga
-%%DATADIR%%/resources/cars/vw/surface3d.tga
-%%DATADIR%%/resources/cars/z3/surface.tga
-%%DATADIR%%/resources/cars/z3/surface3d.tga
-%%DATADIR%%/resources/fonts/lcd_13_green.tga
-%%DATADIR%%/resources/fonts/normal_11_white.tga
-%%DATADIR%%/resources/fonts/normal_14_white.tga
-%%DATADIR%%/resources/fonts/normal_22_gray.tga
-%%DATADIR%%/resources/fonts/normal_22_white.tga
-%%DATADIR%%/resources/fonts/normal_8_white.tga
-%%DATADIR%%/resources/goody/bullets.tga
-%%DATADIR%%/resources/goody/fogbomb.tga
-%%DATADIR%%/resources/goody/life.tga
-%%DATADIR%%/resources/goody/money.tga
-%%DATADIR%%/resources/goody/turbo.tga
-%%DATADIR%%/resources/gui/arrow_b.tga
-%%DATADIR%%/resources/gui/arrow_l.tga
-%%DATADIR%%/resources/gui/arrow_r.tga
-%%DATADIR%%/resources/gui/arrow_t.tga
-%%DATADIR%%/resources/gui/border1.tga
-%%DATADIR%%/resources/gui/border2.tga
-%%DATADIR%%/resources/gui/border3.tga
-%%DATADIR%%/resources/gui/border4.tga
-%%DATADIR%%/resources/gui/button.tga
-%%DATADIR%%/resources/gui/edge1.tga
-%%DATADIR%%/resources/gui/edge2.tga
-%%DATADIR%%/resources/gui/edge3.tga
-%%DATADIR%%/resources/gui/edge4.tga
-%%DATADIR%%/resources/gui/loading.tga
-%%DATADIR%%/resources/gui/progressbar.tga
-%%DATADIR%%/resources/menu/bar.tga
-%%DATADIR%%/resources/menu/bg.tga
-%%DATADIR%%/resources/menu/cursorani.tga
-%%DATADIR%%/resources/misc/carfire.tga
-%%DATADIR%%/resources/misc/caution.tga
-%%DATADIR%%/resources/misc/checkflag.tga
-%%DATADIR%%/resources/misc/cross.tga
-%%DATADIR%%/resources/misc/dust.tga
-%%DATADIR%%/resources/misc/fog.tga
-%%DATADIR%%/resources/misc/gunfire.tga
-%%DATADIR%%/resources/misc/hitpoint.tga
-%%DATADIR%%/resources/misc/info.tga
-%%DATADIR%%/resources/misc/light.tga
-%%DATADIR%%/resources/misc/verticalbar.tga
-%%DATADIR%%/resources/panel/button.tga
-%%DATADIR%%/resources/panel/death.tga
-%%DATADIR%%/resources/panel/infoview.tga
-%%DATADIR%%/resources/panel/label.tga
-%%DATADIR%%/resources/panel/life.tga
-%%DATADIR%%/resources/panel/speed.tga
-%%DATADIR%%/resources/panel/turbo.tga
-%%DATADIR%%/resources/panel/turbolabel.tga
-%%DATADIR%%/resources/sounds/background01.wav
-%%DATADIR%%/resources/sounds/carhorn.wav
-%%DATADIR%%/resources/sounds/crash.wav
-%%DATADIR%%/resources/sounds/dog.wav
-%%DATADIR%%/resources/sounds/engine.wav
-%%DATADIR%%/resources/sounds/fire.wav
-%%DATADIR%%/resources/sounds/fogbomb.wav
-%%DATADIR%%/resources/sounds/goody.wav
-%%DATADIR%%/resources/sounds/goody_bullets.wav
-%%DATADIR%%/resources/sounds/goody_fogbomb.wav
-%%DATADIR%%/resources/sounds/goody_life.wav
-%%DATADIR%%/resources/sounds/goody_money.wav
-%%DATADIR%%/resources/sounds/goody_turbo.wav
-%%DATADIR%%/resources/sounds/light.wav
-%%DATADIR%%/resources/sounds/menu.wav
-%%DATADIR%%/resources/sounds/selector.wav
-%%DATADIR%%/resources/sounds/shoot.wav
-%%DATADIR%%/resources/sounds/shot.wav
-%%DATADIR%%/resources/sounds/slide.wav
-%%DATADIR%%/resources/tracks/Downtown/bridge.tga
-%%DATADIR%%/resources/tracks/Downtown/config.tck
-%%DATADIR%%/resources/tracks/Downtown/fmap.tga
-%%DATADIR%%/resources/tracks/Downtown/thumb.tga
-%%DATADIR%%/resources/tracks/Downtown/vmap.tga
-%%DATADIR%%/resources/tracks/Loops/bridge.tga
-%%DATADIR%%/resources/tracks/Loops/config.tck
-%%DATADIR%%/resources/tracks/Loops/fmap.tga
-%%DATADIR%%/resources/tracks/Loops/thumb.tga
-%%DATADIR%%/resources/tracks/Loops/vmap.tga
-%%DATADIR%%/resources/tracks/Moon/bridge.tga
-%%DATADIR%%/resources/tracks/Moon/config.tck
-%%DATADIR%%/resources/tracks/Moon/fmap.tga
-%%DATADIR%%/resources/tracks/Moon/thumb.tga
-%%DATADIR%%/resources/tracks/Moon/vmap.tga
-%%DATADIR%%/resources/tracks/Rally/config.tck
-%%DATADIR%%/resources/tracks/Rally/fmap.tga
-%%DATADIR%%/resources/tracks/Rally/thumb.tga
-%%DATADIR%%/resources/tracks/Rally/vmap.tga
-%%DATADIR%%/resources/tracks/Snake/bridge.tga
-%%DATADIR%%/resources/tracks/Snake/config.tck
-%%DATADIR%%/resources/tracks/Snake/fmap.tga
-%%DATADIR%%/resources/tracks/Snake/thumb.tga
-%%DATADIR%%/resources/tracks/Snake/vmap.tga
-%%DATADIR%%/resources/tracks/Zigzag/bridge.tga
-%%DATADIR%%/resources/tracks/Zigzag/config.tck
-%%DATADIR%%/resources/tracks/Zigzag/fmap.tga
-%%DATADIR%%/resources/tracks/Zigzag/thumb.tga
-%%DATADIR%%/resources/tracks/Zigzag/vmap.tga
-%%DATADIR%%/resources/tracks/Zurich/config.tck
-%%DATADIR%%/resources/tracks/Zurich/fmap.tga
-%%DATADIR%%/resources/tracks/Zurich/thumb.tga
-%%DATADIR%%/resources/tracks/Zurich/vmap.tga
-@dirrm %%DATADIR%%/resources/cars/flash2
-@dirrm %%DATADIR%%/resources/cars/jeep
-@dirrm %%DATADIR%%/resources/cars/vw
-@dirrm %%DATADIR%%/resources/cars/z3
-@dirrm %%DATADIR%%/resources/cars
-@dirrm %%DATADIR%%/resources/fonts
-@dirrm %%DATADIR%%/resources/goody
-@dirrm %%DATADIR%%/resources/gui
-@dirrm %%DATADIR%%/resources/menu
-@dirrm %%DATADIR%%/resources/misc
-@dirrm %%DATADIR%%/resources/panel
-@dirrm %%DATADIR%%/resources/sounds
-@dirrm %%DATADIR%%/resources/tracks/Downtown
-@dirrm %%DATADIR%%/resources/tracks/Loops
-@dirrm %%DATADIR%%/resources/tracks/Moon
-@dirrm %%DATADIR%%/resources/tracks/Rally
-@dirrm %%DATADIR%%/resources/tracks/Snake
-@dirrm %%DATADIR%%/resources/tracks/Zigzag
-@dirrm %%DATADIR%%/resources/tracks/Zurich
-@dirrm %%DATADIR%%/resources/tracks
-@dirrm %%DATADIR%%/resources
-@dirrm share/trophy
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/sounds/background01.wav
+%%DATADIR%%/sounds/carhorn.wav
+%%DATADIR%%/sounds/crash.wav
+%%DATADIR%%/sounds/dog.wav
+%%DATADIR%%/sounds/engine.wav
+%%DATADIR%%/sounds/fire.wav
+%%DATADIR%%/sounds/fogbomb.wav
+%%DATADIR%%/sounds/goody.wav
+%%DATADIR%%/sounds/goody_bullets.wav
+%%DATADIR%%/sounds/goody_fogbomb.wav
+%%DATADIR%%/sounds/goody_life.wav
+%%DATADIR%%/sounds/goody_money.wav
+%%DATADIR%%/sounds/goody_turbo.wav
+%%DATADIR%%/sounds/light.wav
+%%DATADIR%%/sounds/menu.wav
+%%DATADIR%%/sounds/selector.wav
+%%DATADIR%%/sounds/shoot.wav
+%%DATADIR%%/sounds/shot.wav
+%%DATADIR%%/sounds/slide.wav
+%%DATADIR%%/tracks/Downtown/bridge.tga
+%%DATADIR%%/tracks/Downtown/config.tck
+%%DATADIR%%/tracks/Downtown/fmap.tga
+%%DATADIR%%/tracks/Downtown/thumb.tga
+%%DATADIR%%/tracks/Downtown/vmap.tga
+%%DATADIR%%/tracks/Industrial/bridge.tga
+%%DATADIR%%/tracks/Industrial/config.tck
+%%DATADIR%%/tracks/Industrial/fmap.tga
+%%DATADIR%%/tracks/Industrial/thumb.tga
+%%DATADIR%%/tracks/Industrial/vmap.tga
+%%DATADIR%%/tracks/Loops/bridge.tga
+%%DATADIR%%/tracks/Loops/config.tck
+%%DATADIR%%/tracks/Loops/fmap.tga
+%%DATADIR%%/tracks/Loops/thumb.tga
+%%DATADIR%%/tracks/Loops/vmap.tga
+%%DATADIR%%/tracks/Moon/bridge.tga
+%%DATADIR%%/tracks/Moon/config.tck
+%%DATADIR%%/tracks/Moon/fmap.tga
+%%DATADIR%%/tracks/Moon/thumb.tga
+%%DATADIR%%/tracks/Moon/vmap.tga
+%%DATADIR%%/tracks/Rally/config.tck
+%%DATADIR%%/tracks/Rally/fmap.tga
+%%DATADIR%%/tracks/Rally/thumb.tga
+%%DATADIR%%/tracks/Rally/vmap.tga
+%%DATADIR%%/tracks/Snake/bridge.tga
+%%DATADIR%%/tracks/Snake/config.tck
+%%DATADIR%%/tracks/Snake/fmap.tga
+%%DATADIR%%/tracks/Snake/thumb.tga
+%%DATADIR%%/tracks/Snake/vmap.tga
+%%DATADIR%%/tracks/Zigzag/bridge.tga
+%%DATADIR%%/tracks/Zigzag/config.tck
+%%DATADIR%%/tracks/Zigzag/fmap.tga
+%%DATADIR%%/tracks/Zigzag/thumb.tga
+%%DATADIR%%/tracks/Zigzag/vmap.tga
+%%DATADIR%%/tracks/Zurich/config.tck
+%%DATADIR%%/tracks/Zurich/fmap.tga
+%%DATADIR%%/tracks/Zurich/thumb.tga
+%%DATADIR%%/tracks/Zurich/vmap.tga
+@dirrm %%DATADIR%%/tracks/Zurich
+@dirrm %%DATADIR%%/tracks/Zigzag
+@dirrm %%DATADIR%%/tracks/Snake
+@dirrm %%DATADIR%%/tracks/Rally
+@dirrm %%DATADIR%%/tracks/Moon
+@dirrm %%DATADIR%%/tracks/Loops
+@dirrm %%DATADIR%%/tracks/Industrial
+@dirrm %%DATADIR%%/tracks/Downtown
+@dirrm %%DATADIR%%/tracks
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/panel
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%/menu
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%/goody
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/cars/z3
+@dirrm %%DATADIR%%/cars/vw
+@dirrm %%DATADIR%%/cars/jeep
+@dirrm %%DATADIR%%/cars/flash2
+@dirrm %%DATADIR%%/cars
+@dirrm %%DATADIR%%
