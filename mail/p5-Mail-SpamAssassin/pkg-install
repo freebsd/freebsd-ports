@@ -1,6 +1,7 @@
 #!/bin/sh
 PKG_PREFIX=${PKG_PREFIX:-/usr/local}
 
+if [ "$2" = "POST-INSTALL" ];then
 ask() {
         local question default answer
 
@@ -27,20 +28,14 @@ yesno() {
         done
 }
 
-if [ "$2" = "POST-INSTALL" ];then
 
    if yesno "Do you wish to run sa-update to fetch new rules" "N";then
-       ${PKG_PREFIX}/bin/sa-update
-       if [ $? -eq 4 ];then
-          # rc=4 means host not found, might be old mirrors.
-          rm -rf /var/db/spamassassin/3*/updates_spamassassin_org/MIRRORED.BY
-          ${PKG_PREFIX}/bin/sa-update
-       fi
+       ${PKG_PREFIX}/bin/sa-update || true
    fi
    grep '^load.*Rule2XSBody' ${PKG_PREFIX}/etc/mail/spamassassin/v320.pre > /dev/null
    if [ $? -eq 0 ];then
      if yesno "Do you wish to compile rules with re2c (will take a long time)" "N";then
-       ${PKG_PREFIX}/bin/sa-compile
+       ${PKG_PREFIX}/bin/sa-compile || true
      fi
    fi
    exit 0
