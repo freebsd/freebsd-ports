@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Business-OnlinePayment-PaymenTech
-PORTVERSION=	1.6
+PORTVERSION=	2.03
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
