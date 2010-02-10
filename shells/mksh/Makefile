@@ -5,31 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=		mksh
-DISTVERSION=		R39
-CATEGORIES=		shells
-MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
-			http://pub.allbsd.org/MirOS/dist/mir/mksh/
-DISTFILES=		${PORTNAME}-${DISTVERSION}.cpio.gz
+PORTNAME=	mksh
+DISTVERSION=	R39b
+CATEGORIES=	shells
+MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
+		http://pub.allbsd.org/MirOS/dist/mir/mksh/
+DISTFILES=	${PORTNAME}-${DISTVERSION}.cpio.gz
 
-MAINTAINER=		miwi@FreeBSD.org
-COMMENT=		A MirBSD enhanced shell based on pdksh
+MAINTAINER=	miwi@FreeBSD.org
+COMMENT=	A MirBSD enhanced shell based on pdksh
 
-WRKSRC=			${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=			mksh.1
-PLIST_FILES=		bin/mksh %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.mkshrc
-PLIST_DIRS=		%%PORTEXAMPLES%%%%EXAMPLESDIR%%
+EXAMPLESDIR=	${LOCALBASE}/share/examples/${PORTNAME}
+
+MAN1=		mksh.1
+PLIST_FILES=	bin/mksh %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.mkshrc
+PLIST_DIRS=	%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
 
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && \
-		${GZCAT} ${DISTDIR}/${DISTFILES} | ${CPIO} -id
+	${GZCAT} ${DISTDIR}/${DISTFILES} | ${CPIO} -id
 
 do-build:
-	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r
+	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r -combine
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mksh ${PREFIX}/bin
