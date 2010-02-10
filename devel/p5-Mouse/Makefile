@@ -19,6 +19,8 @@ COMMENT=	Moose minus the antlers
 BUILD_DEPENDS=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
 		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	5.8.5+
 
 MAN3=	Mouse.3 \
