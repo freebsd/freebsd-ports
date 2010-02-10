@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	trophy
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -17,38 +16,21 @@ COMMENT=	A single player racing game
 
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
 
-USE_GMAKE=	yes
-MAKEFILE=	Makefile.in
-BUILD_WRKSRC=	${WRKSRC}/trophy
-CXXFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+HAS_CONFIGURE=	yes
+PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/std::sqrt/sqrt/' ${BUILD_WRKSRC}/caimagemanipulation.cpp \
-		${BUILD_WRKSRC}/catrophy.cpp ${BUILD_WRKSRC}/camath.cpp
-	@${REINPLACE_CMD} -e 's|resources.xml|${DATADIR}/resources.xml|' \
-		${BUILD_WRKSRC}/caresources.cpp
-	@${REINPLACE_CMD} -e 's|@prefix@|${PREFIX}|; \
-		s|@exec_prefix@|$${PREFIX}/bin|; \
-		s|@datadir@|${DATADIR}|; \
-		s|@bindir@|$${PREFIX}/bin|; \
-		s|EXTERN_LIBS =|EXTERN_LIBS = ${PTHREAD_LIBS}|;' \
-		${BUILD_WRKSRC}/Makefile.in
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --exec-prefix="${PREFIX}"
 
-do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/trophy ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${BUILD_WRKSRC}/resources.xml ${DATADIR}
-	${CP} -R ${BUILD_WRKSRC}/resources ${DATADIR}
+DESKTOP_ENTRIES="Trophy" "${COMMENT}" "" "trophy" "Application;Game;" false
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/AUTHORS \
-		${WRKSRC}/COPYING \
-		${WRKSRC}/ChangeLog \
-		${WRKSRC}/README \
-		${WRKSRC}/TODO \
-		${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
