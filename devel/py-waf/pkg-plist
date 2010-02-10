@@ -182,5 +182,11 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/winres.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/winres.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/winres.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlc.py
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlc.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlc.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlcxx.py
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlcxx.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlcxx.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/wafadmin/Tools
 @dirrm %%PYTHON_SITELIBDIR%%/wafadmin
