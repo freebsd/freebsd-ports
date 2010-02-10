@@ -10267,6 +10267,7 @@ openoffice.org-3-rc             ports/editors/openoffice.org-3-RC
 openoffice.org-vcltesttool      ports/editors/openoffice.org-vcltesttool
 openospfd                       ports/net/openospfd
 openpgpsdk                      ports/security/openpgpsdk
+openprinting                    ports/print/openprinting
 openproj                        ports/deskutils/openproj
 openquicktime                   ports/multimedia/openquicktime
 openradius                      ports/net/openradius
@@ -11919,6 +11920,7 @@ p5-HTML-FormFu                  ports/www/p5-HTML-FormFu
 p5-HTML-FormFu-Imager           ports/www/p5-HTML-FormFu-Imager
 p5-HTML-FormFu-Model-DBIC       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-HTML-FormHandler             ports/www/p5-HTML-FormHandler
+p5-HTML-FormHandler-Model-DBIC  ports/databases/p5-HTML-FormHandler-Model-DBIC
 p5-HTML-Format                  ports/textproc/p5-HTML-Format
 p5-HTML-FormatText-WithLinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction                ports/textproc/p5-HTML-Fraction
@@ -15650,6 +15652,7 @@ p5-html-formfu                  ports/www/p5-HTML-FormFu
 p5-html-formfu-imager           ports/www/p5-HTML-FormFu-Imager
 p5-html-formfu-model-dbic       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-html-formhandler             ports/www/p5-HTML-FormHandler
+p5-html-formhandler-model-dbic  ports/databases/p5-HTML-FormHandler-Model-DBIC
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
 p5-html-fromansi                ports/www/p5-HTML-FromANSI
 p5-html-fromtext                ports/www/p5-HTML-FromText
@@ -21538,6 +21541,9 @@ rubygem-deprecated              ports/devel/rubygem-deprecated
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-directory_watcher       ports/devel/rubygem-directory_watcher
 rubygem-ditz                    ports/devel/rubygem-ditz
+rubygem-dm-aggregates           ports/databases/rubygem-dm-aggregates
+rubygem-dm-core                 ports/databases/rubygem-dm-core
+rubygem-dm-types                ports/databases/rubygem-dm-types
 rubygem-dnsruby                 ports/dns/rubygem-dnsruby
 rubygem-do_mysql                ports/databases/rubygem-do_mysql
 rubygem-do_postgres             ports/databases/rubygem-do_postgres
@@ -21582,6 +21588,7 @@ rubygem-igraph                  ports/devel/rubygem-igraph
 rubygem-imagesize               ports/graphics/rubygem-imagesize
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
+rubygem-innate                  ports/www/rubygem-innate
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-jekyll                  ports/www/rubygem-jekyll
 rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
@@ -21648,6 +21655,7 @@ rubygem-rails-app-installer     ports/www/rubygem-rails-app-installer
 rubygem-railsbench              ports/benchmarks/rubygem-railsbench
 rubygem-rak                     ports/textproc/rubygem-rak
 rubygem-rake                    ports/devel/rubygem-rake
+rubygem-ramaze                  ports/www/rubygem-ramaze
 rubygem-rapt                    ports/devel/rubygem-rapt
 rubygem-rascut                  ports/devel/rubygem-rascut
 rubygem-rbase                   ports/databases/rubygem-rbase
