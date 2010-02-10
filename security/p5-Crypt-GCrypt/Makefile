@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-GCrypt
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,6 @@ PERL_CONFIGURE=	5.6.0+
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 		GCRYPTINCPATH=${LOCALBASE}/include
 
-MAN3=		Crypt::GCrypt.3
+MAN3=		Crypt::GCrypt.3 Crypt::GCrypt::MPI.3
 
 .include <bsd.port.mk>
