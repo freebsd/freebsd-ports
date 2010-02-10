@@ -4,6 +4,7 @@ bin/frend.pl
 bin/render_msa.pl
 bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/FeatureFile/Iterator.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/cross.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/phylo_align.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/pairplot.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/rainbow_gene.pm
