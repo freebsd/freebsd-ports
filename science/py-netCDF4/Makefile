@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	netCDF4
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	science python
 MASTER_SITES=	http://netcdf4-python.googlecode.com/files/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Interface to the NetCDF Library(versions 3 and 4)
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
