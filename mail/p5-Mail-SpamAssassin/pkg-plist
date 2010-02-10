@@ -1,5 +1,7 @@
 @unexec %D/etc/rc.d/sa-spamd.sh stop > /dev/null 2>&1 || true
 @unexec %D/etc/rc.d/sa-spamd stop > /dev/null 2>&1 || true
+bin/sa-awl
+bin/sa-check_spamd
 bin/sa-compile
 bin/sa-learn
 bin/sa-update

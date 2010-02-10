@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -163,6 +164,7 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::Plugin::AccessDB.3 \
 		Mail::SpamAssassin::Plugin::AntiVirus.3 \
 		Mail::SpamAssassin::Plugin::AutoLearnThreshold.3 \
+		Mail::SpamAssassin::Plugin::Bayes.3 \
 		Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3 \
 		Mail::SpamAssassin::Plugin::Check.3 \
 		Mail::SpamAssassin::Plugin::DCC.3 \
@@ -175,6 +177,7 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::Plugin::Razor2.3 \
 		Mail::SpamAssassin::Plugin::RelayCountry.3 \
 		Mail::SpamAssassin::Plugin::ReplaceTags.3 \
+		Mail::SpamAssassin::Plugin::Reuse.3 \
 		Mail::SpamAssassin::Plugin::Rule2XSBody.3 \
 		Mail::SpamAssassin::Plugin::SPF.3 \
 		Mail::SpamAssassin::Plugin::Shortcircuit.3 \
