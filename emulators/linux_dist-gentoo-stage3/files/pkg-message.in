@@ -5,10 +5,10 @@
 *
 *   linux_enable="YES"
 *
-* You may wish to enable emulation of the Linux proc filesystem.  See the
-* linprocfs(5) man page.
+* You may wish to enable emulation of the Linux proc and sys filesystems.
+* See the linprocfs(5) and linsysfs(5) man pages.
 *
-* To download Portage, do "chroot %%PREFIX%%/%%PREFIX_SUBDIR%% emerge sync" as root.  Then you
+* To download Portage, do "chroot %%PREFIX%%/%%PREFIX_SUBDIR%% emerge --sync" as root.  Then you
 * may want to do "chroot %%PREFIX%%/%%PREFIX_SUBDIR%% /usr/portage/scripts/bootstrap.sh" to
 * rebuild binutils, gcc, gettext, and glibc.  See
 * <URL:http://www.gentoo.org/doc/en/gentoo-x86-install.xml> for more complete 
