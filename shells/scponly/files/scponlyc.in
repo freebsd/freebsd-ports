@@ -8,7 +8,7 @@
 # KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable scponly:
-# spconlyc_enable (bool):		Set to "NO" by default.
+# scponlyc_enable (bool):		Set to "NO" by default.
 #					Set it to "YES" to enable scponly
 # scponlyc_shells (str):		Set to "/etc/shells" by default.
 # scponlyc_passwd (str):		Set to "/etc/passwd" by default.
