@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	gentoo-stage3
-PORTVERSION=	2008.0
+PORTVERSION=	20100126
 PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
+MASTER_SITE_SUBDIR=	releases/x86/autobuilds/${PORTVERSION}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
@@ -20,7 +20,7 @@ USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
 ONLY_FOR_ARCHS=		i386 amd64
-GENTOO_OPTIMIZED?=	x86
+GENTOO_OPTIMIZED?=	i486
 SUB_FILES+=		pkg-message pkg-install pkg-deinstall
 SUB_LIST+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
 PLIST_SUB+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
@@ -53,11 +53,11 @@ IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
 .endif
 
 .if (${GENTOO_OPTIMIZED} == "i686")
-MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
+MASTER_SITE_SUBDIR=	releases/x86/autobuilds/${PORTVERSION}
 DISTNAME=	stage3-${GENTOO_OPTIMIZED}-${PORTVERSION}
 .else
-MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
-DISTNAME=	stage3-x86-${PORTVERSION}
+MASTER_SITE_SUBDIR=	releases/x86/autobuilds/${PORTVERSION}
+DISTNAME=	stage3-i486-${PORTVERSION}
 .endif
 
 do-extract:
@@ -85,9 +85,16 @@ pre-fetch:
 	@${ECHO_MSG} "You can select your processor class for installing optimized"
 	@${ECHO_MSG} "Gentoo binaries with setting this knob"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "GENTOO_OPTIMIZED=[x86|i686]."
+	@${ECHO_MSG} "GENTOO_OPTIMIZED=[i486|i686]."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "The default is x86 for 386/486 compatibility."
+	@${ECHO_MSG} "The default is i486."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "======================================================="
+	@${ECHO_MSG} "                         WARNING"
+	@${ECHO_MSG} "======================================================="
+	@${ECHO_MSG} "The i686 version may segfault in some environments."
+	@${ECHO_MSG} "If this is your case, please use te i486 version."
+	@${ECHO_MSG} ""
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PREFIX_SUBDIR}
@@ -101,7 +108,7 @@ do-install:
 		${PREFIX}/${PREFIX_SUBDIR}usr/bin ${PREFIX}/${PREFIX_SUBDIR}/usr/sbin \
 		-type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 | ${XARGS} ${BRANDELF} -t Linux
-	@${BRANDELF} -t Linux ${PREFIX}/${PREFIX_SUBDIR}/lib/ld-2.6.1.so
+	@${BRANDELF} -t Linux ${PREFIX}/${PREFIX_SUBDIR}/lib/ld-*.so
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
