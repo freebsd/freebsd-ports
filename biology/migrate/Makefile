@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	biology
 MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
