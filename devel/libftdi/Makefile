@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	libftdi
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
 MAINTAINER=	o.davydenko@gmail.com
 COMMENT=	A library (using libusb) to talk to FTDI chips
 
-USE_AUTOTOOLS=	libtool:22
+OPTIONS=	BOOST	"Build with boost"	off
+
+USE_AUTOTOOLS=		autoconf:262 libtool:22 automake:110
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_LDCONFIG=		yes
@@ -24,17 +25,29 @@ PORTDOCS=		COPYING.LIB ChangeLog README
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_BOOST)
+PLIST_SUB+=		BOOST=""
+CONFIGURE_ARGS+=	--with-boost
+CXXFLAGS+=		"-I${LOCALBASE}/include"
+LIB_DEPENDS+=		boost_system.4:${PORTSDIR}/devel/boost-libs
+.else
+PLIST_SUB+=		BOOST="@comment "
+CONFIGURE_ARGS+=	--without-boost
+.endif
+
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
-USE_AUTOTOOLS+=	autoconf:262
 .endif
 
 post-patch:
-.if ${OSVERSION} >= 800069
-	${RM} -f ${WRKSRC}/configure
-.endif
+	@${REINPLACE_CMD} -E -e \
+		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
+		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+
+pre-configure:
+	@cd ${WRKSRC} && ${AUTORECONF}
 
 post-install:
 .if !defined(NOPORTDOCS)
