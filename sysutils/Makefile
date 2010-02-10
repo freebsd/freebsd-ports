@@ -742,7 +742,6 @@
     SUBDIR += sloth
     SUBDIR += slst
     SUBDIR += smartmontools
-    SUBDIR += smartmontools-devel
     SUBDIR += snap
     SUBDIR += snowlog
     SUBDIR += socket
