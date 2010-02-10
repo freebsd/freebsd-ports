@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon29
-PORTVERSION=	0.29.1
+PORTVERSION=	0.29.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -21,18 +21,18 @@ USE_LDCONFIG=	yes
 
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-shared \
+CONFIGURE_ARGS=	--enable-shared \
 		--with-libs=${LOCALBASE}:${PREFIX}
 
 # expat is default unless WITH_XML is choosen
 .if !defined(WITHOUT_EXPAT) && !defined(WITH_XML)
-CONFIGURE_ARGS+= --with-expat
+CONFIGURE_ARGS+=	--with-expat
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
 .if defined(WITH_XML)
 CONFIGURE_ARGS+=--with-libxml2
-LIB_DEPENDS+=   xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
 .ifndef WITHOUT_OPENSSL
