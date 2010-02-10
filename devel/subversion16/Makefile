@@ -74,11 +74,7 @@ SCRIPTS_DATA=
 
 pre-everything::
 	@${ECHO_MSG} ""
-.if defined(WITH_NEON) && defined(WITH_NEON28)
-	@${ECHO_CMD} "It doesn't make sense to depend on neon (neon29) and neon28 choose only one."
-	@${FALSE}
-.endif
-.if defined(WITH_NEON) || defined(WITH_NEON28)
+.if defined(WITH_NEON)
 	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
 .else
 	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
