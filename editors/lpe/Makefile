@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.sasknow.com/pub/ \
 		ftp://ftp.twu.net/users/cdsmith/lpe/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A "lightweight programmer's editor" with syntax highlighting
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2

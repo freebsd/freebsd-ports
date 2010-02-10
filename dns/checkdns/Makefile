@@ -12,7 +12,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 		http://www.trunix.org/projeler/checkdns/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A domain name server analysis and reporting tool
 
 MAKE_JOBS_SAFE=  yes

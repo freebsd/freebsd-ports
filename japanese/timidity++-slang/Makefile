@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-slang
 
 CATEGORIES=	japanese
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++ with Japanese support
 
 MAKE_JOBS_SAFE=  yes

@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/0.1849
 DISTNAME=	${PORTNAME}-devel-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Genetic Algorithm Utility Library
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2

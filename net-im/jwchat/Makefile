@@ -12,7 +12,7 @@ CATEGORIES=	net-im www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.0beta2
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.b,beta,}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured, web-based Jabber client
 
 MAKE_JOBS_SAFE=  yes

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-B${VERSION:R}-${VERSION:E}__J${JP_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-extralibs-${VERSION}.tar.gz
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SLang-based text editor (w/ Japanese support)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang

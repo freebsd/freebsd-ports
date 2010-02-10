@@ -7,7 +7,7 @@
 
 PKGNAMESUFFIX=	-slang
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++
 
 MAKE_JOBS_SAFE=  yes
