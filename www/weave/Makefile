@@ -16,7 +16,7 @@ MASTER_SITES=	http://files.roorback.net/ \
 MAINTAINER=	magik@roorback.net
 COMMENT=	Mozilla Weave extension
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox35 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox \
 		${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
