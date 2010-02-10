@@ -46,6 +46,6 @@ marbleg menuback menucredits menufont menufont2 menupit online onlinea spark spa
 .		endfor
 		${INSTALL_DATA} ${WRKSRC}/BlockOut/sounds/music.mp3 ${DATADIR}/sounds
 post-install:
-		@${CAT} {PKGMESSAGE}
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
