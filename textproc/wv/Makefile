@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wv
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 
@@ -20,9 +19,9 @@ RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 USE_GNOME=	gnometarget libgsf
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MKDIR_P="${MKDIR}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" MKDIR_P="${MKDIR}"
 CONFIGURE_ARGS=	--with-png=${LOCALBASE} \
 		--with-libwmf=${LOCALBASE}
 MAKEFILE=	GNUmakefile
