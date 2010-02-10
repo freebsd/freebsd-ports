@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-Jabber
-PORTVERSION=	2.03
+PORTVERSION=	3.00
 CATEGORIES=	net devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,23 +27,19 @@ CONFIGURE_ARGS=	</dev/null
 
 PORTEXAMPLES=	*
 MAN3=		POE::Component::Jabber.3 \
-		POE::Component::Jabber::Error.3 \
+		POE::Component::Jabber::Events.3 \
 		POE::Component::Jabber::J14.3 \
 		POE::Component::Jabber::J2.3 \
 		POE::Component::Jabber::Legacy.3 \
 		POE::Component::Jabber::Protocol.3 \
 		POE::Component::Jabber::ProtocolFactory.3 \
-		POE::Component::Jabber::Status.3 \
-		POE::Component::Jabber::Utility::ClientHandle.3 \
-		POE::Component::Jabber::Utility::SSLify.3 \
-		POE::Component::Jabber::Utility::ServerHandle.3 \
 		POE::Component::Jabber::XMPP.3
 
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
