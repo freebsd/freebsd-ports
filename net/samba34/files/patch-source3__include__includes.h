@@ -1,5 +1,5 @@
---- ./source3/include/includes.h.orig	2010-01-18 12:38:09.000000000 +0100
-+++ ./source3/include/includes.h	2010-01-22 02:42:50.000000000 +0100
+--- ./source3/include/includes.h.orig	2010-01-18 11:38:09.000000000 +0000
++++ ./source3/include/includes.h	2010-02-10 02:08:50.000000000 +0000
 @@ -222,6 +222,10 @@
  #include <sys/uio.h>
  #endif
@@ -11,12 +11,14 @@
  #if HAVE_LANGINFO_H
  #include <langinfo.h>
  #endif
-@@ -756,7 +760,7 @@
+@@ -755,10 +759,6 @@
+ #define SIGCLD SIGCHLD
  #endif
  
- #ifndef SIGRTMIN
+-#ifndef SIGRTMIN
 -#define SIGRTMIN 32
-+#define SIGRTMIN NSIG
- #endif
- 
+-#endif
+-
  #ifndef MAP_FILE
+ #define MAP_FILE 0
+ #endif
