@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tolua
-PORTVERSION=	5.1
+PORTVERSION=	5.1.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/ \
 		http://www.tecgraf.puc-rio.br/~celes/tolua/
@@ -17,7 +17,7 @@ COMMENT=	toLua: accessing C/C++ code from Lua
 
 USE_GMAKE=	yes
 USE_LUA=	5.1
-WRKSRC=		${WRKDIR}/${PORTNAME}-5.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-5.1.3
 
 post-extract:
 	${RM} ${WRKSRC}/src/bin/tolua_lua.o
