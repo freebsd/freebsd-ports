@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2/CodeGen.pm:${PORTSDIR}/x11-toolkit
 		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:${PORTSDIR}/www/webkit-gtk2
 
-BROKEN=		hangs during build
+NO_PACKAGE=	Man page creation hangs on some systems for unknown reasons
 
 PERL_CONFIGURE=	yes
 
