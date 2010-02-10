@@ -1,6 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/Mouse.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/Mouse.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Exporter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Attribute.pm
@@ -29,7 +26,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Squirrel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Squirrel/Role.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Test/Mouse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/Mouse.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/Mouse.so
 %%SITE_PERL%%/%%PERL_ARCH%%/ouse.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Squirrel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Util
@@ -37,4 +38,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Method
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse
