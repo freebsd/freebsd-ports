@@ -2,16 +2,14 @@ libexec/gimp/2.2/plug-ins/webexport
 %%DATADIR%%/help/en/gimp-help.xml
 %%DATADIR%%/help/en/index.html
 %%DATADIR%%/help/images/wilber.png
-share/locale/az/LC_MESSAGES/gimp20-save-for-web.mo
-share/locale/de/LC_MESSAGES/gimp20-save-for-web.mo
+share/locale/ca/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/es/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/fr/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/ko/LC_MESSAGES/gimp20-save-for-web.mo
+share/locale/it/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/ru/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/sk/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/sv/LC_MESSAGES/gimp20-save-for-web.mo
-share/locale/tr/LC_MESSAGES/gimp20-save-for-web.mo
-share/locale/zh_TW/LC_MESSAGES/gimp20-save-for-web.mo
 @dirrm %%DATADIR%%/help/images
 @dirrm %%DATADIR%%/help/en
 @dirrm %%DATADIR%%/help

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp-save-for-web
-PORTVERSION=	0.28.6
-PORTREVISION=	1
+PORTVERSION=	0.29.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 
@@ -22,7 +21,7 @@ USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget intltool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GMSGFMT = @GMSGFMT@|GMSGFMT = @MSGFMT@|g' ${WRKSRC}/po/Makefile.in.in
