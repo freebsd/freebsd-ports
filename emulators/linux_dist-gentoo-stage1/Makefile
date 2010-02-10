@@ -16,6 +16,9 @@ DISTNAME=	stage1-x86-${PORTVERSION}
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
+DEPRECATED=	no recent buils; use linux_dist-gentoo-stage3 instead
+EXPIRATION_DATE=	2010-03-10
+
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
 USE_BZIP2=		YES
