@@ -17,6 +17,22 @@ GNU_CONFIGURE=	yes
 
 MAN1=		amin.1 helpers.1 huh.1 mesg.1 write.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900006
+EXTRA_PATCHES=	${PATCHDIR}/utmpx-wrttmp.h \
+		${PATCHDIR}/utmpx-wrt_him.c \
+		${PATCHDIR}/utmpx-wrt_me.c \
+		${PATCHDIR}/utmpx-lib_common.c \
+		${PATCHDIR}/utmpx-lib_common.h \
+		${PATCHDIR}/utmpx-getutent.h \
+		${PATCHDIR}/utmpx-getutent.c \
+		${PATCHDIR}/utmpx-mesg.c \
+		${PATCHDIR}/utmpx-amin.c \
+		${PATCHDIR}/utmpx-huh.c \
+		${PATCHDIR}/utmpx-helpers.c
+.endif
+
 do-install:
 .for i in amin helpers huh mesg
 	${INSTALL_PROGRAM} -m 4711 ${WRKSRC}/${i} ${PREFIX}/bin
@@ -37,4 +53,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
