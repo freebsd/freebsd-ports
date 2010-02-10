@@ -6,7 +6,7 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+# Add the following lines to /etc/rc.conf to enable jftpgw:
 #
 # jftpgw_enable="YES"
 #
