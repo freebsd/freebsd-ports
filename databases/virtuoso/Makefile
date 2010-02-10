@@ -54,7 +54,8 @@ post-patch:
 			${WRKSRC}/configure
 	${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${GREP} -l 'netstat -an.*grep LISTEN' |\
 	    ${XARGS} ${REINPLACE_CMD}\
-	        -e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
+		-e 's,expr \$$,expr -- $$,'\
+		-e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
 
 .include <bsd.port.pre.mk>
 
