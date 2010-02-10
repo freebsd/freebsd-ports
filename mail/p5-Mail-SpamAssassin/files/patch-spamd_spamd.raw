@@ -1,11 +1,52 @@
 --- spamd/spamd.raw.orig	2008-04-24 09:50:46.000000000 +0200
 +++ spamd/spamd.raw	2008-04-24 09:52:55.000000000 +0200
-@@ -2075,7 +2075,7 @@
-   if ( $opt{'user-config'} ) {
-     my $prefsfrom = $username;  # the one passed, NOT $opt{username}
+@@ -1381,8 +1381,9 @@
+   
+   # Now parse *only* the message headers; the MIME tree won't be generated 
+   # yet, it will be done on demand later on.
+-  my $mail = $spamtest->parse(\@msglines, 0, !$timeout_child ? () :
+-                         { master_deadline => $start_time + $timeout_child } );
++  my $mail = $spamtest->parse(\@msglines, 0,
++                       !$timeout_child || !$start_time ? ()
++                       : { master_deadline => $start_time + $timeout_child } );
  
--    if ($prefsfrom eq $suidto) {
-+    if ($prefsfrom eq $suidto || $opt{'vpopmail'}) {
-       $userdir = $suiddir;      # reuse the already-looked-up info
-     } else {
-       $userdir = (getpwnam($prefsfrom))[7];
+   return ($mail, $actual_length);
+ }
+@@ -1705,8 +1706,9 @@
+   my $resp = "EX_OK";
+ 
+   # generate mail object from input
+-  my ($mail, $actual_length) = parse_body($client, $expected_length,
+-                $compress_zlib);
++  my($mail, $actual_length) =
++    parse_body($client, $expected_length, $compress_zlib, $start_time);
++
+   return 0 unless defined($mail);       # error
+ 
+   if ($compress_zlib) {
+@@ -2276,8 +2276,14 @@
+ 
+ sub handle_user_setuid_with_sql {
+   my $username = shift;
++
++  # Bug 6313: interestingly, if $username is not tainted than $pwd, $gcos and
++  # $etc end up tainted but other fields not;  if $username _is_ tainted,
++  # getpwnam does not complain, but all returned fields are tainted (which
++  # makes sense, but is worth remembering)
++  #
+   my ($name, $pwd, $uid, $gid, $quota, $comment, $gcos, $dir, $etc) =
+-      getpwnam($username);
++      getpwnam(untaint_var($username));
+ 
+   if (!$spamtest->{'paranoid'} && !defined($uid)) {
+     # if we are given a username, but can't look it up, maybe name
+@@ -2300,7 +2306,7 @@
+   }
+ 
+   my $spam_conf_dir = $dir . '/.spamassassin'; # needed for Bayes, etc.
+-  if (! -d $spam_conf_dir) {
++  if ($opt{'user-config'} && ! -d $spam_conf_dir) {
+     if (mkdir $spam_conf_dir, 0700) {
+       info("spamd: created $spam_conf_dir for $username");
+     }
+

@@ -21,10 +21,10 @@
 *************************************************************************
 You may wish to run sa-update now to obtain the latest rules.
 
-NOTE:  FREEBSD users: If you are updating to 3.20 you will find
-that sa-update now places state files in /var/db/spamassassin
-and not the default /var/lib/spamassassin.  This is to be consistant
-with Freebsd file directory conventions
+NOTE:  FREEBSD users: If you are updating from a version prior to 3.20.
+sa-update now places state files in /var/db/spamassassin and not 
+/var/lib/spamassassin.  This is to be consistant with Freebsd file
+directory conventions.
 
 If you run sa-compile, you will notice that files are in 
 /var/db/spamassassin/compiled/<perlversion>/<version> instead of
