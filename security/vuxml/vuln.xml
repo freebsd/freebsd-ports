@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bb0a8795-15dc-11df-bf0a-002170daae37">
+    <topic>wireshark -- LWRES vulnerability</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<range><lt>1.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark project reports:</p>
+	<blockquote cite="http://www.wireshark.org/security/wnpa-sec-2010-02.html">
+	  <p>Babi discovered several buffer overflows in the
+	    LWRES dissector.</p>
+	  <p>It may be possible to make Wireshark crash remotely
+	    or by convincing someone to read a malformed packet
+	    trace file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0304</cvename>
+      <url>http://secunia.com/advisories/38257/</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2010-02.html</url>
+    </references>
+    <dates>
+      <discovery>2010-01-27</discovery>
+      <entry>2010-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6b575419-14cf-11df-a628-001517351c22">
     <topic>otrs -- SQL injection</topic>
     <affects>
