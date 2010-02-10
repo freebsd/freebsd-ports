@@ -7,12 +7,13 @@
 
 PORTNAME=	rbldnsd
 PORTVERSION=	0.996b
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/:0 \
 		http://www.it.ca/~paul/src/:0
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Small and fast DNS daemon especially for DNSBL zones
 
 .if !defined(NOPORTDOCS)
@@ -42,13 +43,14 @@ do-install:
 		@if [ ! -d ${ROOTDIR} ]; then \
 			${MKDIR} ${ROOTDIR}; \
 			${CHMOD} 710 ${ROOTDIR}; \
-			${CHGRP} ${RBLDNSGROUP} ${ROOTDIR}; \
+			${CHOWN} ${RBLDNSUSER}:${RBLDNSGROUP} ${ROOTDIR}; \
 		fi
-		@${INSTALL_DATA} -g ${RBLDNSUSER} -m 640 ${FILESDIR}/example ${PREFIX}/etc/rbldnsd/
+		@${INSTALL_DATA} -o ${RBLDNSUSER} -g ${RBLDNSGROUP} -m 640 \
+			${FILESDIR}/example ${PREFIX}/etc/rbldnsd/
 		@${INSTALL_PROGRAM} ${WRKSRC}/rbldnsd ${PREFIX}/sbin/
 		@${INSTALL_MAN} ${WRKSRC}/rbldnsd.8 ${PREFIX}/man/man8/
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
+		@${MKDIR} ${DOCSDIR}/
 		@${INSTALL_DATA} ${WRKSRC}/CHANGES-0.81 ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
