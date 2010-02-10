@@ -21,14 +21,14 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-IO-Compress-Zlib \
 		p5-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
+		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 CONFLICTS=	ja-p5-Mail-SpamAssassin-[0-9]*
 
