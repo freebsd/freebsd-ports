@@ -179,6 +179,7 @@
     SUBDIR += drupal6-nice_menus
     SUBDIR += drupal6-nodewords
     SUBDIR += drupal6-page_title
+    SUBDIR += drupal6-panels
     SUBDIR += drupal6-pathauto
     SUBDIR += drupal6-print
     SUBDIR += drupal6-seo_checklist
