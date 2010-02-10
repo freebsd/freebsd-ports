@@ -42,6 +42,7 @@ NEON_VER!=	${LOCALBASE}/bin/neon-config --version | \
 NEON_VER=      29
 .endif
 LIB_DEPENDS+=	neon.${NEON_VER}:${PORTSDIR}/www/neon${NEON_VER}
+PLIST_SUB+=		NEON=""
 .else
 CONFIGURE_ARGS+=	--without-neon
 PLIST_SUB+=		NEON="@comment "
