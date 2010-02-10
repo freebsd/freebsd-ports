@@ -13,7 +13,7 @@ CATEGORIES+=	irc
 MASTER_SITES=	http://members.core.com/~stabro/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SLang-based IRC client
 
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}

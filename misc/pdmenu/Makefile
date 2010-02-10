@@ -10,7 +10,7 @@ CATEGORIES=	misc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple console menu program
 
 LIB_DEPENDS=   slang.2:${PORTSDIR}/devel/libslang2
