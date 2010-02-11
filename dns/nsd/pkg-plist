@@ -6,4 +6,4 @@ sbin/nsd-patch
 sbin/nsd-xfer
 sbin/nsdc
 sbin/zonec
-@dirrm etc/nsd
+@dirrmtry etc/nsd

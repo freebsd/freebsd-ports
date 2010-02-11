@@ -18,7 +18,7 @@ rcvar=`set_rcvar`
 required_files=%%PREFIX%%/etc/nsd/nsd.conf
 
 command=%%PREFIX%%/sbin/${name}
-pidfile=/var/run/${name}.pid
+pidfile=`%%PREFIX%%/sbin/nsd-checkconf -o pidfile %%PREFIX%%/etc/nsd/nsd.conf`
 
 load_rc_config ${name}
 
