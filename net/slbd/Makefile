@@ -28,7 +28,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 800502
 BROKEN=		does not build
 .endif
 
