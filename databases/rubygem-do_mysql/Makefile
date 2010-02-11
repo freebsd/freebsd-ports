@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	do_mysql
-PORTVERSION=	0.9.11
+PORTVERSION=	0.10.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RUBYFORGE/dorb
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,9 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Ruby DataObjects driver for MySQL
 
-RUN_DEPENDS=	rubygem-data_objects>=0.9.11:${PORTSDIR}/databases/rubygem-data_objects
-
-BROKEN=		unsatisfiable dependency
+RUN_DEPENDS=	rubygem-data_objects>=0.10.0:${PORTSDIR}/databases/rubygem-data_objects
 
 USE_MYSQL=	yes
 USE_RUBY=	yes
