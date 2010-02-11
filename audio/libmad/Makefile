@@ -31,6 +31,8 @@ CONFIGURE_ARGS+=	--enable-accuracy
 post-patch:
 	@${SED} -e 's|%PREFIX%|${PREFIX}|g ; s|%VERSION%|${PORTVERSION}|g' \
 		${FILESDIR}/mad.pc.in > ${WRKDIR}/mad.pc
+	@${REINPLACE_CMD} -e 's| -fforce-mem||' \
+		${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
