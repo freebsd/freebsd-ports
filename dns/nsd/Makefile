@@ -7,6 +7,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -19,13 +20,24 @@ CONFLICTS=	nsd-[0-2]*
 USE_RC_SUBR=	nsd
 
 NSDUSER?=	bind
-NSD_LSD=	/var
+NSDGROUP?=	bind
+NSDLSDIR=	/var
+NSDDBDIR=	/var/db/nsd
+NSDRUNDIR=	/var/run/nsd
 NSDMAX_INT?=	512
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-configdir=${PREFIX}/etc/nsd \
-		--localstatedir=${NSD_LSD}
+		--localstatedir=${NSDLSDIR} \
+		--with-dbfile=${NSDDBDIR}/nsd.db \
+		--with-pidfile=${NSDRUNDIR}/nsd.pid
+
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST+=	NSDUSER=${NSDUSER} \
+		NSDGROUP=${NSDGROUP} \
+		NSDDBDIR=${NSDDBDIR} \
+		NSDRUNDIR=${NSDRUNDIR}
 
 USE_OPENSSL=	yes
 
@@ -120,6 +132,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
 .endfor
 .endif
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
