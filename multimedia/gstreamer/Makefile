@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.25
+PORTVERSION=	0.10.26
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		GNOME
