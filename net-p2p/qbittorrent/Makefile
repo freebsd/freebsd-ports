@@ -47,10 +47,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/configure
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|@BOOST_SYSTEM_LIB@|-lboost_system|' \
-		${WRKSRC}/conf.pri
-
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
 
