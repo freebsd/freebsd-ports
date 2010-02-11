@@ -1,0 +1,12 @@
+
+================================================================================
+
+- Create %%PREFIX%%/etc/mail/milter-callback.conf
+
+- Add the following line to your sendmail.mc:
+
+	INPUT_MAIL_FILTER(`milter-callback', \
+		`S=unix:/var/run/milter-callback.sock, F=T, T=S:3m;R:6m')
+
+================================================================================
+

@@ -1,0 +1,3 @@
+libexec/milter-callback
+etc/mail/milter-callback.conf.sample
+@dirrmtry etc/mail

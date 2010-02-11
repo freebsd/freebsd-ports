@@ -1,0 +1,9 @@
+milter-callback is a sendmail milter intended to:
+
+  * perform a envelope-from sender verification on target MX
+  * perform an optional envelope-from sender verification on sending peer
+  * drop e-mails from nonexistent hostsparts, mail domains and nonexistent users
+  * log to database all connections processed (only pgsql is supported at this
+    time)
+
+WWW: http://unix.zhegan.in
