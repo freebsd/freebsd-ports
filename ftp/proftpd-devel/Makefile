@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.3rc2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
@@ -32,7 +33,8 @@ MAN8=	proftpd.8 ftpshut.8 ftpdctl.8 ftpscrub.8
 PORTDOCSdoc=	Configuration.html faq.html
 PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
 		mod_tls.html mod_wrap2.html mod_wrap2_file.html mod_wrap2_sql.html \
-		mod_ban.html mod_quotatab_radius.html ftpasswd.html
+		mod_ban.html mod_quotatab_radius.html ftpasswd.html mod_sftp.html \
+		mod_sftp_sql.html mod_sftp_pam.html
 PORTDOCSmodule=	mod_auth_file.html mod_auth_pam.html mod_cap.html mod_ctrls.html \
 		mod_delay.html mod_dso.html mod_facl.html mod_facts.html \
 		mod_ident.html mod_lang.html
@@ -85,7 +87,10 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		NLS "Use nls (builds mod_lang)" off \
 		UNIQUE "Include mod_unique_id" off \
 		CLAMAV "Include mod_clamav" off \
-		DIGEST "Include mod_digest" off
+		DIGEST "Include mod_digest" off \
+		SFTP "Include mod_sftp" off\
+		SFTP_SQL "Include mod_sftp_sql" off \
+		SFTP_PAM "Include mod_sftp_pam" off
 
 MODULES?=
 LIBDIRS?=
@@ -265,6 +270,37 @@ PLIST_SUB+=	CLAMAV="@comment "
 .if defined(WITH_DIGEST)
 DISTFILES+=	mod_digest.c:digest
 MODULES:=${MODULES}:mod_digest
+.endif
+
+.if defined(WITH_SFTP)
+USE_SQLITE=	yes
+MODULES:=${MODULES}:mod_sftp
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+PLIST_SUB+=	SFTP=""
+PLIST_FILES+=	include/${PORTNAME}/mod_sftp.h
+.else
+PLIST_SUB+=	SFTP="@comment "
+.endif
+
+.if defined(WITH_SFTP_SQL)
+USE_SQLITE=	yes
+MODULES:=${MODULES}:mod_sftp_sql
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+PLIST_SUB+=	SFTP_SQL=""
+.else
+PLIST_SUB+=	SFTP_SQL="@comment "
+.endif
+
+.if defined(WITH_SFTP_PAM)
+USE_SQLITE=	yes
+MODULES:=${MODULES}:mod_sftp_pam
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+PLIST_SUB+=	SFTP_PAM=""
+.else
+PLIST_SUB+=	SFTP_PAM="@comment "
 .endif
 
 # mod_ifsession should be the last item in the modules list
