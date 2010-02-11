@@ -85,6 +85,7 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.image
 .else
+CONFLICTS+=	cupsddk-*
 CUPS_SUFFIX=	-base
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
