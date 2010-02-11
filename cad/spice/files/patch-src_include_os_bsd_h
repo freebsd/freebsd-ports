@@ -1,6 +1,6 @@
---- src/include/os_bsd.h.orig	Sat Apr 24 18:09:46 1993
-+++ src/include/os_bsd.h	Mon Nov 12 03:14:36 2007
-@@ -8,18 +8,35 @@
+--- src/include/os_bsd.h.orig	1993-04-24 23:09:46.000000000 +0000
++++ src/include/os_bsd.h	2010-02-09 16:25:54.000000000 +0000
+@@ -8,18 +8,34 @@
  
  #include "os_unix.h"
  
@@ -8,7 +8,6 @@
 +#define HAS_STDLIB		/* #include <stdlib.h> for libc defs	*/
 +#define HAS_SYSVDIRS		/* <sys/dirent.h>			*/
 +#define HAS_INTWAITSTATUS	/* wait(2)  takes an int *, not a union */
-+#define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
 +#define HAS_STRCHR		/* strchr(3) instead of index(3)	*/
 +#define HAS_ATRIGH		/* acosh(3), asinh(3), atanh(3)         */
 +#define HAS_FLOAT_H		/* float.h				*/

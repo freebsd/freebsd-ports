@@ -1,0 +1,11 @@
+--- src/lib/fte/outitf.c.orig	2010-02-09 15:49:01.000000000 +0000
++++ src/lib/fte/outitf.c	2010-02-09 15:49:55.000000000 +0000
+@@ -353,7 +353,7 @@
+ 
+     data->name = copy(name);
+ 
+-    unique = devname;
++    unique = copy(devname);
+     INPinsert(&unique, (INPtables *) ft_curckt->ci_symtab);
+     data->specName = unique;
+ 
