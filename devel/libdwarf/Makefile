@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdwarf
-PORTVERSION=	20080615
+PORTVERSION=	20100204
 CATEGORIES=	devel
 MASTER_SITES=	http://reality.sgiweb.org/davea/
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libelf.so.0:${PORTSDIR}/devel/libelf
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/libdwarf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I. -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_DOS2UNIX=	*.h
