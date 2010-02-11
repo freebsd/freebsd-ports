@@ -8,27 +8,16 @@ CHMOD="/bin/chmod"
 MKDIR="/bin/mkdir -p"
 NOLOGIN="/usr/sbin/nologin"
 
-MRTG_USER=%%MRTG_USER%%
-MRTG_GROUP=%%MRTG_GROUP%%
-MRTG_UID=%%MRTG_UID%%
-MRTG_GID=%%MRTG_GID%%
 MRTG_RUNDIR=%%MRTG_RUNDIR%%
 
 case "$2" in
-	
-PRE-INSTALL)
-  ${PW} groupshow -n ${MRTG_GROUP} >/dev/null 2>&1 \
-    || ${PW} groupadd -n ${MRTG_GROUP} -g ${MRTG_GID}
-  ${PW} usershow -n ${MRTG_USER} >/dev/null 2>&1 \
-    || ${PW} useradd ${MRTG_USER} -g ${MRTG_GROUP} -u ${MRTG_UID} -s ${NOLOGIN}
-  ;;
 
 POST-INSTALL)
 	if [ ! -d "$MRTG_RUNDIR" ]; then
 		${MKDIR} $MRTG_RUNDIR
 	fi
 
-	${CHOWN} -R ${MRTG_USER}:${MRTG_USER} ${MRTG_RUNDIR}
+	${CHOWN} -R %%USERS%%:%%GROUPS%% ${MRTG_RUNDIR}
 	${CHMOD} 0700 ${MRTG_RUNDIR}
 	;;
 esac
