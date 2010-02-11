@@ -7,7 +7,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		cups.2:${PORTSDIR}/print/cups-base \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
-BUILD_DEPENDS=	ppdc:${PORTSDIR}/print/cupsddk
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
 		espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
