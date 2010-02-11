@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.6.7
+PORTVERSION=	1.6.8
 PORTEPOCH=	1
-PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,15 +21,18 @@ BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
-.if !defined(NOPORTDOCS)
+
+OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_AVRLIBCDOCS) && !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX \
 		pdflatex:${PORTSDIR}/print/teTeX \
 		fig2dev:${PORTSDIR}/print/transfig \
 		jpegtopnm:${PORTSDIR}/graphics/netpbm
 .endif
-
-BROKEN=		does not build
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
