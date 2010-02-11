@@ -1,13 +1,8 @@
-bin/hsmspeed
-bin/hsmutil
-bin/ksmutil
 bin/ods-auditor
-bin/ods-control
 bin/ods-hsmspeed
 bin/ods-hsmutil
 bin/ods-ksmutil
 bin/ods-kaspcheck
-bin/ods-signer
 %%ETCDIR%%/conf.xml
 %%ETCDIR%%/conf.xml.sample
 %%ETCDIR%%/kasp.xml
@@ -63,7 +58,9 @@ libexec/opendnssec/signer_threads
 libexec/opendnssec/sorter
 libexec/opendnssec/zone_fetcher
 libexec/opendnssec/zone_reader
+sbin/ods-control
 sbin/ods-enforcerd
+sbin/ods-signer
 sbin/ods-signerd
 %%DATADIR%%.spec
 %%DATADIR%%/conf.rnc
