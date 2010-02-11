@@ -7,6 +7,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.14.8
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.googlecode.com/files/
 PKGNAMEPREFIX=	rb
@@ -15,6 +16,8 @@ DISTNAME=	${PORTNAME}-rasterbar-${PORTVERSION}
 
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client (devel version)
+
+MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
 
@@ -49,5 +52,9 @@ post-patch:
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g ; \
 		 s|@BOOST_SYSTEM_LIB@||g' ${WRKSRC}/src/Makefile.am
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|@BOOST_SYSTEM_LIB@|-lboost_system|' \
+		${WRKSRC}/libtorrent-rasterbar.pc
 
 .include <bsd.port.post.mk>
