@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.5
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	NOTIFY "Enable libnotify support" on
 
@@ -33,7 +34,7 @@ MAN1=		qbittorrent.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NOTIFY)
+.if !defined(WITHOUT_NOTIFY)
 LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=	--disable-libnotify
@@ -45,6 +46,10 @@ post-patch:
 	@${ECHO_CMD} "LIBS+= -lexecinfo" >> ${WRKSRC}/src/src.pro
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/configure
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|@BOOST_SYSTEM_LIB@|-lboost_system|' \
+		${WRKSRC}/conf.pri
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
