@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	hf
-PORTVERSION=	1.0a11
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ee.lbl.gov/ \
 		ftp://ftp.tux.org/sites/ftp.ee.lbl.gov/ \
 		ftp://ftp.xemacs.org/sites/ftp.ee.lbl.gov/ \
 		http://ftp.riken.go.jp/pub/net/lbl/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PKGNAMEPREFIX=	lbl-
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Address to hostname filter
+
+MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	comms/hf-0.* security/bro-1.*
 
@@ -24,6 +28,9 @@ PLIST_FILES=	bin/hf
 MAN1=		hf.1
 
 GNU_CONFIGURE=	yes
+
+verify: checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 # Only install hf
 do-install:
