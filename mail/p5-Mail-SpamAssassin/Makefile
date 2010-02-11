@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -17,18 +17,20 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 MAINTAINER=	scheidell@secnap.net
 COMMENT=	A highly efficient mail filter for identifying spam
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-IO-Compress-Zlib \
-		p5-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+		p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness \
+		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
+		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
+		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 CONFLICTS=	ja-p5-Mail-SpamAssassin-[0-9]*
@@ -71,7 +73,7 @@ WITHOUT_SSL=1
 .endif
 
 .if defined(WITH_SPF_QUERY)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
+BUILD_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -103,16 +105,16 @@ RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 .else
 .if !defined(WITH_DKIM)
 .if   ${PERL_LEVEL} < 501000
-RUN_DEPENDS=+	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS+=	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
 .endif
 .endif
 .endif
 
 .if defined(WITH_DKIM)
-RUN_DEPENDS+=	p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
-RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA
+BUILD_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA
+BUILD_DEPENDS+=	p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM
+BUILD_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 .endif
 
 .if defined(WITH_SACOMPILE)
@@ -121,10 +123,6 @@ RUN_DEPENDS+=	re2c>=.12.0:${PORTSDIR}/devel/re2c
 
 .if defined(WITH_RELAY_COUNTRY)
 RUN_DEPENDS+=	${SITE_PERL}/IP/Country/Fast.pm:${PORTSDIR}/net/p5-IP-Country
-.endif
-
-.if !defined(NO_INET6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 .endif
 
 .if defined(WITH_DCC)
