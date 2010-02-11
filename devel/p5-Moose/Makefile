@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.93
-PORTREVISION=	1
+PORTVERSION=	0.98
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/F/FL/FLORA
+MASTER_SITE_SUBDIR=    ../by-authors/id/D/DR/DROLSKY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@tandon.net
 COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
-	p5-Class-MOP>=0.93:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.98:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
@@ -105,12 +104,14 @@ MAN3=	Moose.3 \
 	Moose::Meta::Method::Delegation.3 \
 	Moose::Meta::Method::Destructor.3 \
 	Moose::Meta::Method::Overridden.3 \
+	Moose::Meta::Mixin::AttributeCore.3 \
 	Moose::Meta::Role.3 \
 	Moose::Meta::Role::Application.3 \
 	Moose::Meta::Role::Application::RoleSummation.3 \
 	Moose::Meta::Role::Application::ToClass.3 \
 	Moose::Meta::Role::Application::ToInstance.3 \
 	Moose::Meta::Role::Application::ToRole.3 \
+	Moose::Meta::Role::Attribute.3 \
 	Moose::Meta::Role::Composite.3 \
 	Moose::Meta::Role::Method.3 \
 	Moose::Meta::Role::Method::Conflicting.3 \
