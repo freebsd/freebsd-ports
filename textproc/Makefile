@@ -903,6 +903,7 @@
     SUBDIR += pecl-wbxml
     SUBDIR += pecl-xdiff
     SUBDIR += pecl-xslcache
+    SUBDIR += pecl-yaml
     SUBDIR += perl2html
     SUBDIR += permute
     SUBDIR += php4-ctype
