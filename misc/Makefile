@@ -331,6 +331,7 @@
     SUBDIR += lc
     SUBDIR += ldconfig_compat
     SUBDIR += lesspipe
+    SUBDIR += libeatmydata
     SUBDIR += libhome
     SUBDIR += libmcal
     SUBDIR += libmetalink
