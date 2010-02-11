@@ -1,38 +1,41 @@
---- Makefile.orig	2008-11-18 19:31:49.000000000 +0800
-+++ Makefile	2008-11-18 19:43:46.000000000 +0800
-@@ -1,11 +1,11 @@
- # $Id: Makefile,v 1.113 2005/01/30 02:14:14 prahl Exp $
- 
--CC=gcc
-+CC?=gcc
+--- Makefile.orig	2009-12-11 22:10:59.000000000 +0100
++++ Makefile	2010-02-11 15:08:00.000000000 +0100
+@@ -1,5 +1,5 @@
+-CC?=gcc
+-TAR?=gnutar
+-RM?=rm
++#CC?=gcc
++#TAR?=gnutar
++#RM?=rm
  MKDIR=mkdir -p
- TAR=gnutar
- RM=rm
+ PKGMANDIR?=man
+@@ -6,5 +6,6 @@
  
--CFLAGS:=-DUNIX
+-CFLAGS:=$(CFLAGS) -DUNIX
 +CFLAGS+=-DUNIX
- #CFLAGS:=-DMSDOS         #Windows/DOS
- #CFLAGS:=-DMAC_CLASSIC   #MacOS 8/9
- #CFLAGS:=-DOS2           #OS/2
-@@ -23,7 +23,7 @@
++#CFLAGS:=$(CFLAGS) -DUNIX
+ #CFLAGS:=$(CFLAGS) -DUNIX -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64  -mtune=generic
+ #CFLAGS:=$(CFLAGS) -DMSDOS -DNOSTDERR #Windows/DOS
+ #CFLAGS:=$(CFLAGS) -DMAC_CLASSIC   #MacOS 8/9
+@@ -20,7 +21,7 @@
  #CFLAGS:=$(CFLAGS) -Zwin32  
  
  #Base directory - adapt as needed
--PREFIX=$(PREFIX_DRIVE)/usr/local
-+#PREFIX=$(PREFIX_DRIVE)/usr/local
+-PREFIX?=$(PREFIX_DRIVE)/usr/local
++#PREFIX?=$(PREFIX_DRIVE)/usr/local
  
  #Name of executable binary --- beware of 8.3 restriction under DOS
  BINARY_NAME=latex2rtf$(EXE_SUFFIX)
-@@ -37,7 +37,7 @@
+@@ -34,7 +35,7 @@
  
  # Nothing to change below this line
  
 -CFLAGS:=$(CFLAGS) -g -Wall -fsigned-char
 +CFLAGS+= -fsigned-char
  
- LIBS=
- #LIBS=-lMallocDebug -force_flat_namespace
-@@ -206,14 +206,14 @@
+ LIBS= -lm
+ 
+@@ -195,14 +196,14 @@
  	$(MKDIR) $(BIN_INSTALL)
  	$(MKDIR) $(MAN_INSTALL)
  	$(MKDIR) $(CFG_INSTALL)
@@ -55,7 +58,7 @@
  	@echo "******************************************************************"
  	@echo "*** latex2rtf successfully installed as \"$(BINARY_NAME)\""
  	@echo "*** in directory \"$(BIN_INSTALL)\""
-@@ -231,8 +231,8 @@
+@@ -220,8 +221,8 @@
  
  install-info: doc/latex2rtf.info
  	$(MKDIR) $(INFO_INSTALL)
@@ -65,4 +68,4 @@
 +	install-info --info-dir=$(INFO_INSTALL) $(INFO_INSTALL)/latex2rtf.info
  
  realclean: checkdir clean
- 	$(RM) -f makefile.depend latex2rtf-$(VERSION).tar.gz
+ 	$(RM) -f makefile.depend $(L2R_VERSION).tar.gz
