@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	aqualung
-DISTVERSION=	0.9beta10
-PORTREVISION=	6
+DISTVERSION=	0.9beta11
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9beta10 \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
  		http://wickedmachine.net/mirror/
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Music player with rich features
 
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
+LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
@@ -41,16 +39,31 @@ USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no\
+CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no \
 		--with-cdda=no
-.ifndef WITH_TRAYICON
-CONFIGURE_ARGS+=	--with-systray=no
-.endif
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lstrfunc
-PORTDOCS=	*
 MAN1=		${PORTNAME}.1
+
+OPTIONS=	JACK "Enable JACK low-latency audio server support" Off \
+		PULSE "Enable PulseAudio sound server support" Off
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITH_JACK)
+CONFIGURE_ARGS+=	--with-jack=no
+.else
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=	--with-jack=yes
+.endif
+
+.if !defined(WITH_PULSE)
+CONFIGURE_ARGS+=	--with-pulse=no
+.else
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=	--with-pulse=yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir/s!=.*!= ${DOCSDIR}!'\
