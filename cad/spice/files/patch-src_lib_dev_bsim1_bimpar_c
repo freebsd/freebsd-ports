@@ -1,0 +1,11 @@
+--- src/lib/dev/bsim1/b1mpar.c.orig	2010-02-09 16:02:41.000000000 +0000
++++ src/lib/dev/bsim1/b1mpar.c	2010-02-09 16:03:44.000000000 +0000
+@@ -287,7 +287,7 @@
+             mod->B1gateBulkOverlapCapGiven = TRUE;
+             break;
+         case  BSIM1_MOD_XPART :
+-            mod->B1channelChargePartitionFlag = value->iValue;
++            mod->B1channelChargePartitionFlag = value->rValue;
+             mod->B1channelChargePartitionFlagGiven = TRUE;
+             break;
+         case  BSIM1_MOD_RSH :

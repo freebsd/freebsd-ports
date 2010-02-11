@@ -1,0 +1,41 @@
+--- src/lib/inp/inpgtok.c.orig	2010-02-09 15:39:09.000000000 +0000
++++ src/lib/inp/inpgtok.c	2010-02-09 15:43:10.000000000 +0000
+@@ -27,6 +27,7 @@
+ 	int gobble; /* eat non-whitespace trash AFTER token? */
+ {
+     char * point;
++    int signstate;
+ 
+     /* scan along throwing away garbage characters */
+     for(point = *line;*point != '\0' ; point++ ) {
+@@ -41,6 +42,7 @@
+     /* mark beginning of token */
+     *line = point;
+     /* now find all good characters */
++    signstate = 0;
+     for(point = *line;*point!='\0';point++) {
+         if(*point == ' ') break;
+         if(*point == '\t') break;
+@@ -48,6 +50,22 @@
+         if(*point == '(') break;
+         if(*point == ')') break;
+         if(*point == ',') break;
++       /* This is not complex enough to catch all errors, but it will
++          get the "good" parses */
++	if(*point == '+' && (signstate == 1 || signstate == 3)) break;
++	if(*point == '-' && (signstate == 1 || signstate == 3)) break;
++	if(*point == '*') break;
++	if(*point == '/') break;
++	if(*point == '^') break;
++	if (isdigit(*point) || *point == '.') {
++	    if (signstate > 1)                              
++	        signstate = 3;
++	    else
++	        signstate = 1;
++	} else if (tolower(*point) == 'e' && signstate == 1)
++	    signstate = 2;
++	else
++	    signstate = 3;
+     }
+     if (point == *line && *point)	/* Weird items, 1 char */
+ 	point++;

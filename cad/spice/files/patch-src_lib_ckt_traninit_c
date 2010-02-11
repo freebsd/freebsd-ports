@@ -1,0 +1,14 @@
+--- src/lib/ckt/traninit.c.orig	2010-02-09 23:52:59.000000000 +0000
++++ src/lib/ckt/traninit.c	2010-02-09 23:57:48.000000000 +0000
+@@ -22,7 +22,10 @@
+     ckt->CKTinitTime = ((TRANan*)job)->TRANinitTime;
+     ckt->CKTmaxStep = ((TRANan*)job)->TRANmaxStep;
+     if(ckt->CKTmaxStep == 0) {
+-	ckt->CKTmaxStep = (ckt->CKTfinalTime-ckt->CKTinitTime)/50;
++	if ( ckt->CKTstep < (ckt->CKTfinalTime - ckt->CKTinitTime)/50.0) {
++		   ckt->CKTmaxStep = ckt->CKTstep; }
++    	else
++    	     { ckt->CKTmaxStep = (ckt->CKTfinalTime - ckt->CKTinitTime)/50.0; }
+     }
+     ckt->CKTdelmin = 1e-9*ckt->CKTmaxStep;	/* XXX */
+     ckt->CKTmode = ((TRANan*)job)->TRANmode;

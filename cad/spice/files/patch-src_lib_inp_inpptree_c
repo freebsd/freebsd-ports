@@ -1,5 +1,5 @@
---- src/lib/inp/inpptree.c.orig	Mon May  3 02:16:54 1993
-+++ src/lib/inp/inpptree.c	Sun May 14 09:34:56 2006
+--- src/lib/inp/inpptree.c.orig	1993-05-03 09:16:54.000000000 +0000
++++ src/lib/inp/inpptree.c	2010-02-09 15:45:52.000000000 +0000
 @@ -1,6 +1,8 @@
  /**********
  Copyright 1990 Regents of the University of California.  All rights reserved.
@@ -32,3 +32,12 @@
          }
          break;
  
+@@ -977,7 +971,7 @@
+             break;
+         }
+ 
+-	td = INPevaluate(&sbuf, &err, 0);
++	td = INPevaluate(&sbuf, &err, 1);
+         if (err == OK) {
+             el.token = TOK_VALUE;
+             el.type = TYP_NUM;
