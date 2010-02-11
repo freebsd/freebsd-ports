@@ -351,6 +351,7 @@
     SUBDIR += hourglass
     SUBDIR += hoz
     SUBDIR += hpacucli
+    SUBDIR += hploscripts
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat
