@@ -42,10 +42,13 @@ PLIST_SUB+=	SDL=""
 
 .if defined(WITH_VIDIO)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-.else
+.endif
+
 post-patch:
+.if !defined(WITH_VIDIO)
 	@${REINPLACE_CMD} -e 's/novidio, 0/novidio, 1/' ${WRKSRC}/configure.ac
 .endif
+	@${REINPLACE_CMD} -e 's/nov4l2, 0/nov4l2, 1/' ${WRKSRC}/configure.ac
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} \
