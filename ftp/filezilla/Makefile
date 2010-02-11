@@ -7,7 +7,7 @@
 
 PORTNAME=	filezilla
 PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -49,6 +49,10 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-locales
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(MAINTAINER_MODE)
+CONFIGURE_ARGS+=	--disable-manualupdatecheck
 .endif
 
 post-patch:
