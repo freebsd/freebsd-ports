@@ -7,7 +7,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/dvdnav/ \
@@ -49,5 +49,6 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
 		${WRKSRC}/src/dvd_input.c
+	@${REINPLACE_CMD} -e 's|cc=gcc|cc=${CC}|' ${WRKSRC}/configure2
 
 .include <bsd.port.mk>
