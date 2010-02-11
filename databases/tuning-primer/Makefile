@@ -7,6 +7,7 @@
 
 PORTNAME=	tuning-primer
 PORTVERSION=	1.5.r5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/36004840/
 DISTNAME=	${PORTNAME}.sh
@@ -17,6 +18,7 @@ MAINTAINER=	joehorn@gmail.com
 COMMENT=	MySQL performance tuning primer script
 
 NO_BUILD=	yes
+USE_MYSQL=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
