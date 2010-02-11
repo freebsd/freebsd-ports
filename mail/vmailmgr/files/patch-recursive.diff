@@ -1,6 +1,6 @@
 diff -ruN ../vmailmgr-0.97_orig/Makefile.am ./Makefile.am
---- ../vmailmgr-0.97_orig/Makefile.am	2007-10-24 23:10:21.000000000 +0200
-+++ ./Makefile.am	2007-10-25 00:28:41.000000000 +0200
+--- ../vmailmgr-0.97_orig/Makefile.am	2004-03-15 18:58:59.000000000 +0100
++++ ./Makefile.am	2010-02-06 02:07:54.000000000 +0100
 @@ -1,7 +1,7 @@
  if WANTPYTHON
 -SUBDIRS = python php lib authenticate commands daemon cgi doc scripts
@@ -12,8 +12,8 @@ diff -ruN ../vmailmgr-0.97_orig/Makefile.am ./Makefile.am
  
  dist-hook:
 diff -ruN ../vmailmgr-0.97_orig/authenticate/Makefile.am ./authenticate/Makefile.am
---- ../vmailmgr-0.97_orig/authenticate/Makefile.am	2007-10-24 23:10:20.000000000 +0200
-+++ ./authenticate/Makefile.am	2007-10-25 01:14:12.000000000 +0200
+--- ../vmailmgr-0.97_orig/authenticate/Makefile.am	2003-12-02 04:46:43.000000000 +0100
++++ ./authenticate/Makefile.am	2010-02-06 02:07:54.000000000 +0100
 @@ -1,5 +1,5 @@
  bin_PROGRAMS = checkvpw vauthenticate
 -authlib_PROGRAMS = authvmailmgr
@@ -33,8 +33,8 @@ diff -ruN ../vmailmgr-0.97_orig/authenticate/Makefile.am ./authenticate/Makefile
  vauthenticate_SOURCES = vauthenticate.cc authvlib.cc authvlib.h
  vauthenticate_LDADD = ../lib/libvmailmgr.a
 diff -ruN ../vmailmgr-0.97_orig/cgi/Makefile.am ./cgi/Makefile.am
---- ../vmailmgr-0.97_orig/cgi/Makefile.am	2007-10-24 23:10:21.000000000 +0200
-+++ ./cgi/Makefile.am	2007-10-25 01:25:01.000000000 +0200
+--- ../vmailmgr-0.97_orig/cgi/Makefile.am	2003-12-02 04:46:47.000000000 +0100
++++ ./cgi/Makefile.am	2010-02-06 02:07:54.000000000 +0100
 @@ -1,5 +1,6 @@
  EXTRA_DIST = listvdomain.html vaddalias.html vadduser.html vchalias.html \
  	vchattr.html vchforwards.html vdeluser.html vpasswd.html
@@ -43,8 +43,8 @@ diff -ruN ../vmailmgr-0.97_orig/cgi/Makefile.am ./cgi/Makefile.am
  	listvdomain
  
 diff -ruN ../vmailmgr-0.97_orig/commands/vdeliver.cc ./commands/vdeliver.cc
---- ../vmailmgr-0.97_orig/commands/vdeliver.cc	2007-10-24 23:10:20.000000000 +0200
-+++ ./commands/vdeliver.cc	2007-10-25 00:30:33.000000000 +0200
+--- ../vmailmgr-0.97_orig/commands/vdeliver.cc	2005-09-04 06:19:36.000000000 +0200
++++ ./commands/vdeliver.cc	2010-02-06 02:07:54.000000000 +0100
 @@ -262,7 +262,7 @@
      close(pipe2[1]);
      if((dup2(pipe1[0], 0) != 0) || (dup2(pipe2[0], 1) != 1))
@@ -55,9 +55,24 @@ diff -ruN ../vmailmgr-0.97_orig/commands/vdeliver.cc ./commands/vdeliver.cc
    default:
      close(pipe1[0]);
 diff -ruN ../vmailmgr-0.97_orig/configure.in ./configure.in
---- ../vmailmgr-0.97_orig/configure.in	2007-10-24 23:10:21.000000000 +0200
-+++ ./configure.in	2007-10-25 00:50:29.000000000 +0200
-@@ -62,27 +62,27 @@
+--- ../vmailmgr-0.97_orig/configure.in	2002-11-20 16:54:41.000000000 +0100
++++ ./configure.in	2010-02-06 02:07:54.000000000 +0100
+@@ -52,37 +52,36 @@
+ AC_PATH_PROG(LN, ln)
+ 
+ AC_PATH_PROG(PYTHON, python)
+-AC_CACHE_CHECK(Python library path, local_cv_python_lib_dir,
+-[[if test -x "$PYTHON"; then
+-  local_cv_python_lib_dir=`$PYTHON -c "import sys;print sys.path[1]"`
+-else
+-  local_cv_python_lib_dir=NONE
+-fi]])
++AC_ARG_WITH(pythonapi,
++            [ --with-pythonapi=<pythonlibdir>   do install the python API in pythonlibdir],
++            [ local_cv_python_lib_dir="$withval" ],
++            [ local_cv_python_lib_dir=NONE ]
++            )
+ pythonlibdir="$local_cv_python_lib_dir/vmailmgr"
  AC_SUBST(pythonlibdir)
  AM_CONDITIONAL(WANTPYTHON, test x$local_cv_python_lib_dir != xNONE)
  
@@ -92,15 +107,15 @@ diff -ruN ../vmailmgr-0.97_orig/configure.in ./configure.in
  SUFFIXES="$SUFFIXES .1 .5 .7 .8 .pod .html .texi .txt .ps .fig .sgml .py .pyc .pyo"
  AC_SUBST(POD2MAN)
  AC_SUBST(POD2HTML)
-@@ -135,5 +135,4 @@
+@@ -135,5 +134,4 @@
  	  lib/vpwentry/Makefile
  	  lib/vpwtable/Makefile
  	  scripts/Makefile
 -	  php/Makefile
  	  python/Makefile)
 diff -ruN ../vmailmgr-0.97_orig/doc/Makefile.am ./doc/Makefile.am
---- ../vmailmgr-0.97_orig/doc/Makefile.am	2007-10-24 23:10:21.000000000 +0200
-+++ ./doc/Makefile.am	2007-10-25 00:29:38.000000000 +0200
+--- ../vmailmgr-0.97_orig/doc/Makefile.am	2004-03-15 17:48:01.000000000 +0100
++++ ./doc/Makefile.am	2010-02-06 02:07:54.000000000 +0100
 @@ -2,21 +2,23 @@
  noinst_TEXINFOS = FAQ.texi HOWTO.texi configuration.texi vmailmgr-cgi.texi
  noinst_HTMLS = vmailmgr.html HOWTO.html FAQ.html NEWS.html \
@@ -131,8 +146,8 @@ diff -ruN ../vmailmgr-0.97_orig/doc/Makefile.am ./doc/Makefile.am
  	HOWTO.txt FAQ.txt configuration.txt vmailmgr-cgi.txt \
  	pod2htmd.tmp pod2htmi.tmp
 diff -ruN ../vmailmgr-0.97_orig/lib/fdbuf/fdobuf.h ./lib/fdbuf/fdobuf.h
---- ../vmailmgr-0.97_orig/lib/fdbuf/fdobuf.h	2007-10-24 23:10:20.000000000 +0200
-+++ ./lib/fdbuf/fdobuf.h	2007-10-25 00:31:00.000000000 +0200
+--- ../vmailmgr-0.97_orig/lib/fdbuf/fdobuf.h	2005-09-04 06:24:03.000000000 +0200
++++ ./lib/fdbuf/fdobuf.h	2010-02-06 02:07:54.000000000 +0100
 @@ -18,6 +18,8 @@
  #ifndef FDBUF__FDOBUF__H__
  #define FDBUF__FDOBUF__H__
@@ -143,8 +158,8 @@ diff -ruN ../vmailmgr-0.97_orig/lib/fdbuf/fdobuf.h ./lib/fdbuf/fdobuf.h
  {
  public:
 diff -ruN ../vmailmgr-0.97_orig/lib/misc/maildir.cc ./lib/misc/maildir.cc
---- ../vmailmgr-0.97_orig/lib/misc/maildir.cc	2007-10-24 23:10:20.000000000 +0200
-+++ ./lib/misc/maildir.cc	2007-10-25 00:32:17.000000000 +0200
+--- ../vmailmgr-0.97_orig/lib/misc/maildir.cc	2005-01-19 20:29:31.000000000 +0100
++++ ./lib/misc/maildir.cc	2010-02-06 02:07:54.000000000 +0100
 @@ -36,7 +36,7 @@
      if(mkdirp(dirname.left(i), 0755))
        return -1;
@@ -155,8 +170,8 @@ diff -ruN ../vmailmgr-0.97_orig/lib/misc/maildir.cc ./lib/misc/maildir.cc
    return 0;
  }
 diff -ruN ../vmailmgr-0.97_orig/lib/misc/server.cc ./lib/misc/server.cc
---- ../vmailmgr-0.97_orig/lib/misc/server.cc	2007-10-24 23:10:20.000000000 +0200
-+++ ./lib/misc/server.cc	2007-10-25 00:30:44.000000000 +0200
+--- ../vmailmgr-0.97_orig/lib/misc/server.cc	2002-11-20 16:54:45.000000000 +0100
++++ ./lib/misc/server.cc	2010-02-06 02:07:54.000000000 +0100
 @@ -17,6 +17,7 @@
  #include <config.h>
  #include "server.h"
@@ -166,8 +181,8 @@ diff -ruN ../vmailmgr-0.97_orig/lib/misc/server.cc ./lib/misc/server.cc
  #include "un.h"
  #include "debug.h"
 diff -ruN ../vmailmgr-0.97_orig/php/Makefile.am ./php/Makefile.am
---- ../vmailmgr-0.97_orig/php/Makefile.am	2007-10-24 23:10:21.000000000 +0200
-+++ ./php/Makefile.am	2007-10-25 01:26:19.000000000 +0200
+--- ../vmailmgr-0.97_orig/php/Makefile.am	2002-11-20 16:54:41.000000000 +0100
++++ ./php/Makefile.am	2010-02-06 02:07:54.000000000 +0100
 @@ -1,3 +1,4 @@
 +phpdir=$(PREFIX)/libexec/vmailmgr/php/
  php_DATA = vmail.inc

@@ -24,5 +24,27 @@ libexec/vmailmgr/cgi-bin/vchattr
 libexec/vmailmgr/cgi-bin/vchforwards
 libexec/vmailmgr/cgi-bin/listvdomain
 sbin/vmailmgrd
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/commands.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/commands.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/commands.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/config.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/config.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/config.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/constants.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/constants.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/constants.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/daemon.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/daemon.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/daemon.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/local.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/local.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/local.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/types.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/types.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/types.pyo
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/vmailmgr
 @dirrmtry libexec/vmailmgr/cgi-bin
 @dirrmtry libexec/vmailmgr
