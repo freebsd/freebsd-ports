@@ -26,7 +26,12 @@ OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" on
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_AVRLIBCDOCS) && !defined(NOPORTDOCS)
+.if defined(WITHOUT_AVRLIBCDOCS) || defined(NOPORTDOCS)
+WITHOUT_AVRLIBCDOCS=	true
+.undef WITH_AVRLIBCDOCS
+.endif
+
+.if defined(WITH_AVRLIBCDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX \
 		pdflatex:${PORTSDIR}/print/teTeX \
@@ -41,7 +46,7 @@ HAS_CONFIGURE=	yes
 CONFLICTS=	avr-libc-devel*
 
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
-.if !defined(NOPORTDOCS)
+.if defined(WITH_AVRLIBCDOCS)
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr \
 	--enable-doc --disable-versioned-doc --prefix=${PREFIX}
 PLIST_DOC=	${PKGDIR}/pkg-plist.doc
@@ -57,13 +62,13 @@ CFLAGS=		-O
 CXXFLAGS=	-O
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if defined(WITHOUT_AVRLIBCDOCS)
 	${REINPLACE_CMD} -e '/SUBDIRS/s,examples,,' ${WRKSRC}/doc/Makefile.in
 .endif
 
 do-install:
 		${RM} -f ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if defined(WITH_AVRLIBCDOCS)
 		(cd ${BUILD_WRKSRC}/doc/api/avr-libc-user-manual && \
 		 ${FIND} . -type f \
 		  \( -name '*.html' -or -name '*.css' -or \
