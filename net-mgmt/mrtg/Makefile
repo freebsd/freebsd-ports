@@ -7,7 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.16.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -24,22 +24,21 @@ RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
 
+USERS=		mrtg
+GROUPS=		mrtg
+
 USE_PERL5=	YES
 MAKE_ENV+=	PERL=${PERL}
-MRTG_USER?=	mrtg
-MRTG_GROUP?=	mrtg
-MRTG_UID?=	279
-MRTG_GID?=	279
 MRTG_RUNDIR?=	/var/run/mrtg
 
 USE_RC_SUBR=	mrtg_daemon
-SUB_FILES=	pkg-install pkg-message
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	PERL=${PERL} \
-		MRTG_USER=${MRTG_USER} \
-		MRTG_GROUP=${MRTG_GROUP} \
-		MRTG_UID=${MRTG_UID} \
-		MRTG_GID=${MRTG_GID} \
-		MRTG_RUNDIR=${MRTG_RUNDIR}
+		MRTG_RUNDIR=${MRTG_RUNDIR} \
+		USERS=${USERS} \
+		GROUPS=${GROUPS}
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	PERL=${PERL}
@@ -80,20 +79,12 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 post-patch:
 	@${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 
-pre-configure:
-	@${SED} -e 's,%%MRTG_USER%%,${MRTG_USER},g;' \
-		-e 's,%%MRTG_GROUP%%,${MRTG_GROUP},g;' \
-		-e 's,%%MRTG_UID%%,${MRTG_UID},g;' \
-		-e 's,%%MRTG_GID%%,${MRTG_GID},g;' \
-		-e 's,%%MRTG_RUNDIR%%,${MRTG_RUNDIR},g;' \
-		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
-		PRE-INSTALL
-
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/doc ${EXAMPLESDIR}/images
 	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} ${EXAMPLESDIR}/doc/
 	@${INSTALL_DATA} ${IMAGES:S,^,${WRKSRC}/images/,} ${EXAMPLESDIR}/images/

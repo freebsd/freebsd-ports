@@ -61,7 +61,6 @@ bin/rateup
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/mrtg-r.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/mrtg-ti.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/mrtg-ti.png
-@dirrmtry /var/run/mrtg
 @dirrmtry %%ETCDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
