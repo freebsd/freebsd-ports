@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dwarfdump
-PORTVERSION=	20080615
+PORTVERSION=	20100204
 CATEGORIES=	devel
 MASTER_SITES=	http://reality.sgiweb.org/davea/
 DISTNAME=	libdwarf-${PORTVERSION}
