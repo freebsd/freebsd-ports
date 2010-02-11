@@ -1394,7 +1394,6 @@ share/applications/hplip.desktop
 @dirrmtry lib/python2.5
 @dirrmtry libexec/cups/filter
 @dirrmtry libexec/cups/backends
-@dirrmtry libexec/cups/driver
 @dirrmtry libexec/cups
 @dirrmtry etc/hp
 @dirrmtry etc/xdg/autostart
