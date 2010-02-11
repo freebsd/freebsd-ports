@@ -2083,6 +2083,7 @@
     SUBDIR += p5-Test-MockRandom
     SUBDIR += p5-Test-MockTime
     SUBDIR += p5-Test-Module-Used
+    SUBDIR += p5-Test-More-UTF8
     SUBDIR += p5-Test-Most
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Number-Delta
