@@ -274,6 +274,7 @@
     SUBDIR += mew2
     SUBDIR += mew3
     SUBDIR += milter-bogom
+    SUBDIR += milter-callback
     SUBDIR += milter-greylist
     SUBDIR += milter-greylist-devel
     SUBDIR += milter-manager

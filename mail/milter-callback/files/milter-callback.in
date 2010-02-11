@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: milter-callback
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `milter-callback':
+#
+# miltercallback_enable="YES"
+#
+
+. "/etc/rc.subr"
+
+name="miltercallback"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/libexec/milter-callback"
+required_files="%%PREFIX%%/etc/mail/milter-callback.conf"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${miltercallback_enable="NO"}
+
+run_rc_command "$1"
