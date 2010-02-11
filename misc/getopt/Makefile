@@ -24,6 +24,9 @@ MAKE_ENV=	LIBCGETOPT=0 LDFLAGS="${LDFLAGS}"
 MAN1=		getopt.1
 DOCS=		Changelog README
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|' ${WRKSRC}/Makefile
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
