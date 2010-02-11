@@ -17,6 +17,7 @@
 %%LIBAWLDIR%%/inc/XMLDocument.php
 %%LIBAWLDIR%%/inc/XMLElement.php
 %%LIBAWLDIR%%/inc/classBrowser.php
+%%LIBAWLDIR%%/inc/classEditor.php
 %%LIBAWLDIR%%/inc/iCalendar.php
 %%LIBAWLDIR%%/inc/vEvent.php
 @dirrm %%LIBAWLDIR%%/inc
