@@ -94,6 +94,7 @@
     SUBDIR += geogebra-i18n
     SUBDIR += geonext
     SUBDIR += gexpr
+    SUBDIR += ggobi
     SUBDIR += glgraph
     SUBDIR += glpk
     SUBDIR += gmm++
