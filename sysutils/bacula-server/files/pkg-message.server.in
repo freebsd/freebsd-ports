@@ -55,8 +55,16 @@ ReleaseNotes
 
 IMPORTANT UPGRADE NOTES FOR THIS RELEASE:
 
-- bacula-client and bacula-server do not need to be simultaneously 
-upgraded.
+As always, both the Director and Storage daemon must be upgraded at
+the same time, and on any given machine, you must run only one version
+of Bacula. This means that on the Director and Storage daemon machines,
+you *must* upgrade your File daemon as well.
+
+New database Catalog format in version 5.0.0 (3.1.9 or later).
+
+If upgrading to 5.x from < 5.x, you must run the update_bacula_tables
+script.  Afterwards, check the ownership on any new tables
+and make sure they are consisten with existing tables.
 
 Read the ReleaseNotes for further information.
 

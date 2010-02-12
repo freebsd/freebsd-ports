@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	3.0.3
+DISTVERSION=	5.0.0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 
@@ -60,7 +60,6 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
 		--disable-conio \
 		--enable-batch-insert \
 		--with-plugindir=${LOCALBASE}/lib \
-		--with-libdir=${PREFIX}lib/bacula \
 		--with-dump-email=root@localhost \
 		--with-job-email=root@localhost \
 		--with-db-name=bacula \
@@ -94,7 +93,6 @@ IS_INTERACTIVE=	yes
 
 .if defined(WITH_CLIENT_ONLY)
 OPTIONS=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
-OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console: deprecated" off
 OPTIONS+=	SFDAEMON "Build with staticly compiled file daemon" off
 .elif defined(WITH_BAT)
 OPTIONS=	
@@ -107,13 +105,6 @@ OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on
 OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
-
-# Prepare if bgnome-console is selected this must be happen before
-# include of bsd.port.pre.mk!
-WANT_GNOME=	yes
-.if defined(WITH_GNOMECONSOLE)
-USE_GNOME=	libgnome gnomelibs libgnomeui
-.endif
 
 .if !defined(WITH_BAT)
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
@@ -146,15 +137,6 @@ PLIST_SUB+=	SFDAEMON=""
 .else
 PLIST_SUB+=	SFDAEMON="@comment "
 .endif
-# Build bgnome-console
-.if defined(WITH_GNOMECONSOLE)
-CONFIGURE_ARGS+=	--enable-gnome
-PLIST_SUB+=		GNOMECONS=""
-.else
-# We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
-WITHOUT_GNOME=		yes
-PLIST_SUB+=		GNOMECONS="@comment "
-.endif
 # Build bwx-console
 .if defined(WITH_WXCONSOLE)
 USE_WX=			2.4
@@ -162,13 +144,10 @@ CONFIGURE_ARGS+=	--enable-bwx-console
 CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
 PLIST_SUB+=		WXCONS=""
 .else
-# We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
-WITHOUT_GNOME=		yes
 PLIST_SUB+=	 	WXCONS="@comment "
 .endif
 .else
 # Server only Options
-PLIST_SUB+=		GNOMECONS="@comment "
 PLIST_SUB+=	 	WXCONS="@comment "
 CONFFILES=		sd dir
 .if defined(WITH_MYSQL)
@@ -182,14 +161,10 @@ USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
-.elif defined(WITH_SQLITE3)
+.else
 CONFIGURE_ARGS+=	--with-sqlite3=yes
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 DBTYPE=			sqlite3
-.else
-CONFIGURE_ARGS+=	--with-sqlite=yes
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
-DBTYPE=			sqlite
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
 # Install mtx
@@ -207,7 +182,7 @@ CONFIGURE_ARGS+=	--with-openssl
 MAN8=bacula-fd.8 bconsole.8
 .else
 MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
-MAN1=bsmtp.1 bacula-bgnome-console.1 bacula-tray-monitor.1 bacula-bwxconsole.1
+MAN1=bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
 .endif
 .endif
 
@@ -220,7 +195,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
 	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
-	@${ECHO_MSG} "  WITH_GNOMECONSOLE=yes	if you only want a GNOME based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
 	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SqLite-3 instead of SqLite-2 as the database."
 	@${ECHO_MSG} "  WITH_SFDAEMON=yes  if you want staticly compiled file daemon (client)."
@@ -292,14 +266,6 @@ post-install:
 		${ECHO_CMD} "etc/bwx-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif
-.if defined(WITH_GNOMECONSOLE)
-	if [ -f ${PREFIX}/etc/bgnome-console.conf.new ]; then \
-		${ECHO_CMD} "etc/bgnome-console.conf.new" >> ${TMPPLIST}; \
-	elif [ -f ${PREFIX}/etc/bgnome-console.conf ]; then \
-		${MV} ${PREFIX}/etc/bgnome-console.conf ${PREFIX}/etc/bgnome-console.conf.sample; \
-		${ECHO_CMD} "etc/bgnome-console.conf.sample" >> ${TMPPLIST}; \
-	fi
-.endif
 
 #	ensure that users in the bacula group can run bconsole
 	${CHGRP} bacula ${PREFIX}/sbin/bconsole
@@ -316,6 +282,15 @@ post-install:
 # 	chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
+	
+#	on a fresh install, the .new suffix is not used
+	if [ -f ${PREFIX}/etc/bacula-dir.conf.new ]; then \
+		${CHGRP} bacula ${PREFIX}/etc/bacula-dir.conf.new; \
+	else \
+		${CHGRP} bacula ${PREFIX}/etc/bacula-dir.conf; \
+	fi
+		
+	${CHGRP} bacula ${PREFIX}/sbin/dbcheck
 
 .endif
 # 	Install leaves existing conf files untouched. Respect this here!
