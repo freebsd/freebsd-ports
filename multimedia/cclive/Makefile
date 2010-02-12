@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,7 +14,8 @@ MAINTAINER=	legatvs@gmail.com
 COMMENT=	Lightweight command line video extraction tool
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.0:${PORTSDIR}/devel/pcre \
+		quvi.0:${PORTSDIR}/multimedia/quvi
 
 MAN1=		cclive.1
 
@@ -22,10 +23,10 @@ PLIST_FILES=	bin/cclive
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_GCC=	4.2+
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	pkgconfig
-USE_ICONV=	yes
 
 .include <bsd.port.pre.mk>
 
