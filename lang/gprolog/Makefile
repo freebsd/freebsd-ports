@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gprolog
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gprolog.org/
 
