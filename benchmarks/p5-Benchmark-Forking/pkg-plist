@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Forking/.packlist
 %%SITE_PERL%%/Benchmark/Forking.pm
-%%SITE_PERL%%/Benchmark/Forking/ReadMe.pod
 @dirrmtry %%SITE_PERL%%/Benchmark/Forking
 @dirrmtry %%SITE_PERL%%/Benchmark
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Forking
