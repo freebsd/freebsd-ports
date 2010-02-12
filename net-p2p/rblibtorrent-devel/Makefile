@@ -7,7 +7,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.14.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.googlecode.com/files/
 PKGNAMEPREFIX=	rb
@@ -19,7 +19,8 @@ COMMENT=	A C++ library implementing a BitTorrent client (devel version)
 
 MAKE_JOBS_SAFE=	yes
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
+		GeoIP.5:${PORTSDIR}/net/GeoIP
 
 CONFLICTS=	rblibtorrent-[0-9]*
 
@@ -30,11 +31,15 @@ ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \
 		--disable-python-binding \
+		--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-thread=boost_thread \
 		--with-boost-regex=boost_regex \
 		--with-boost-program-options=boost_program_options \
 		--with-asio=shipped \
+		--with-dht=on \
+		--with-encryption=on \
+		--with-libgeoip \
 		--with-zlib=system
 USE_LDCONFIG=	yes
 
