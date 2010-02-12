@@ -72,6 +72,7 @@
     SUBDIR += qfsm
     SUBDIR += qmls
     SUBDIR += qucs
+    SUBDIR += salome-geom
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += scv

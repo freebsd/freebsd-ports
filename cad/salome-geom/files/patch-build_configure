@@ -1,0 +1,12 @@
+--- build_configure.orig	2010-01-05 19:08:31.000000000 +0600
++++ build_configure	2010-01-05 19:09:32.000000000 +0600
+@@ -63,7 +63,8 @@
+ echo "======================================================= aclocal"
+ 
+ aclocal -I adm_local/unix/config_files \
+-        -I ${KERNEL_ROOT_DIR}/salome_adm/unix/config_files || exit 1
++        -I ${KERNEL_ROOT_DIR}/salome_adm/unix/config_files \
++        -I ${GUI_ROOT_DIR}/adm_local/unix/config_files || exit 1
+ 
+ # ____________________________________________________________________
+ # libtoolize creates some configuration files (ltmain.sh,

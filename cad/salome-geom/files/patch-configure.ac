@@ -1,0 +1,21 @@
+--- configure.ac.orig	2009-12-01 20:59:44.000000000 +0600
++++ configure.ac	2010-01-05 19:58:10.000000000 +0600
+@@ -248,15 +248,15 @@
+ 
+ AM_CONDITIONAL(GEOM_ENABLE_GUI, [test "${gui_ok}" = "yes"])
+ 
+-if test "${SalomeGUI_need}" == "yes"; then
++if test "${SalomeGUI_need}" = "yes"; then
+   if test "${FullGUI_ok}" != "yes"; then
+     AC_MSG_WARN(For configure GEOM module necessary full GUI!)
+   fi
+-elif test "${SalomeGUI_need}" == "auto"; then
++elif test "${SalomeGUI_need}" = "auto"; then
+   if test "${FullGUI_ok}" != "yes"; then
+     AC_MSG_WARN(Full GUI not found. Build will be done without GUI!)
+   fi
+-elif test "${SalomeGUI_need}" == "no"; then
++elif test "${SalomeGUI_need}" = "no"; then
+   echo Build without GUI option has been chosen
+ fi
+ 

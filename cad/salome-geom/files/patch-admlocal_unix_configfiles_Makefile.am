@@ -1,0 +1,12 @@
+--- adm_local/unix/config_files/Makefile.am.orig	2009-12-26 22:32:01.000000000 +0600
++++ adm_local/unix/config_files/Makefile.am	2009-12-26 22:32:16.000000000 +0600
+@@ -22,8 +22,4 @@
+ include $(top_srcdir)/adm_local/unix/make_common_starter.am
+ 
+ dist_admlocalm4_DATA =	\
+-check_GEOM.m4 \
+-check_GUI.m4 \
+-check_qt.m4 \
+-check_opengl.m4 \
+-check_vtk.m4
++check_GEOM.m4
