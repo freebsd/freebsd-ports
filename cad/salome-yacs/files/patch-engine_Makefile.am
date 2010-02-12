@@ -1,0 +1,20 @@
+--- src/engine/Makefile.am.orig	2009-12-01 20:58:28.000000000 +0600
++++ src/engine/Makefile.am	2010-01-06 15:56:36.000000000 +0600
+@@ -88,7 +88,7 @@
+ Dispatcher.hxx           DynParaLoop.hxx   ElementaryNode.hxx              Executor.hxx                   \
+ ForEachLoop.hxx          ForLoop.hxx       InGate.hxx                      InlineNode.hxx                 InPort.hxx \
+ InputDataStreamPort.hxx  InputPort.hxx     InvalidExtractionException.hxx  LinkInfo.hxx                   Logger.hxx \
+-LogRecord.hxx            Loop.hxx          Node.hxx                        OptimizerAlg.hxx               OptimizerLoop.hxx \
++LogRecord.hxx            Loop.hxx          OptimizerAlg.hxx               OptimizerLoop.hxx \
+ OutGate.hxx              OutPort.hxx       OutputDataStreamPort.hxx        OutputPort.hxx                 Pool.hxx \
+ Port.hxx                 Proc.hxx          RefCounter.hxx                  Runtime.hxx                    Scheduler.hxx \
+ ServiceInlineNode.hxx    ServiceNode.hxx   SharedPtr.hxx                   StaticDefinedComposedNode.hxx  Switch.hxx \
+@@ -101,7 +101,7 @@
+ 	$(__dummy__)
+ 
+ libYACSlibEngine_la_LIBADD = ../bases/libYACSBases.la 
+-libYACSlibEngine_la_LDFLAGS = -pthread -lpthread -ldl
++libYACSlibEngine_la_LDFLAGS = -pthread
+ 
+ AM_CXXFLAGS = $(THREAD_DEF)  \
+               -I$(srcdir)/../bases
