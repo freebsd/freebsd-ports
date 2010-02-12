@@ -54,7 +54,7 @@ post-install:
 
 .if defined(WITH_APACHELOG)
 .if defined(WITH_APACHE2)
-RUN_DEPENDS+=	mod_perl>=2.0:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	mod_perl2>=2.0:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 .endif
