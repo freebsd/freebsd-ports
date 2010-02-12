@@ -760,6 +760,7 @@
     SUBDIR += p5-Catalyst-Controller-BindLex
     SUBDIR += p5-Catalyst-Controller-FormBuilder
     SUBDIR += p5-Catalyst-Controller-HTML-FormFu
+    SUBDIR += p5-Catalyst-Controller-RateLimit
     SUBDIR += p5-Catalyst-Controller-RequestToken
     SUBDIR += p5-Catalyst-Devel
     SUBDIR += p5-Catalyst-Engine-Apache
