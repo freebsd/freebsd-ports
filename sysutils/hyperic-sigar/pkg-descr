@@ -1,0 +1,23 @@
+Hyperic's System Information Gatherer (SIGAR) is a cross-platform API
+for collecting software inventory data.  SIGAR is core of HQ's
+auto-discovery functionality, and you can use it to extend
+auto-discovery behavior.
+
+SIGAR includes support for Linux, FreeBSD, Windows, Solaris, AIX, HP-UX
+and Mac OSX across a variety of versions and architectures.  Users of
+the SIGAR API are given portable access to inventory and monitoring data
+including:
+
+   * System memory, swap, cpu, load average, uptime, logins
+   * Per-process memory, cpu, credential info, state, arguments,
+     environment, open files
+   * File system detection and metrics
+   * Network interface detection, configuration information and metrics
+   * TCP and UDP connection tables
+   * Network route tables
+
+This information is available in most operating systems, but each OS has
+its own way(s) providing it.  SIGAR provides developers with one API to
+access this information regardless of the underlying platform.
+
+WWW: http://support.hyperic.com/display/SIGAR/Home
