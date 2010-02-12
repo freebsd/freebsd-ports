@@ -7,7 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/ \
@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	icecast2.sh
 SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE} CFLAGS=-I${LOCALBASE}/include
 
 DOCSDIR=	${PREFIX}/share/doc/icecast
