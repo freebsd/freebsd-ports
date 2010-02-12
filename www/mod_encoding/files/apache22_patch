@@ -78,7 +78,7 @@
  #include <http_log.h>
  #include <http_protocol.h>
  #include <http_request.h>
-+/* #include <ap_compat.h> */
++#include <apr_strings.h>
  
 +/* #include <iconv_hook/iconv.h> */
 +#include <regex.h>
@@ -241,8 +241,9 @@
    if (*args && (arg = ap_getword_conf_nc(cmd->pool, &args))) {
 -    LOG(APLOG_DEBUG, cmd->server, "add_client_encoding: agent: %s", arg);
 -    *(void **)ap_push_array(conf->client_encoding) =
+-      ap_pregcomp(cmd->pool, arg, REG_EXTENDED|REG_ICASE|REG_NOSUB);
 +    *(void **)apr_array_push(conf->client_encoding) =
-       ap_pregcomp(cmd->pool, arg, REG_EXTENDED|REG_ICASE|REG_NOSUB);
++      ap_pregcomp(cmd->pool, arg, AP_REG_EXTENDED|AP_REG_ICASE|AP_REG_NOSUB);
    }
  
    /* register list of possible encodings from above useragent */
