@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stalonetray
-PORTVERSION=	0.7.6
+PORTVERSION=	0.8.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,7 +15,6 @@ COMMENT=	STAnd-aLONE system tray
 
 USE_BZIP2=	yes
 USE_XORG=	xpm
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-native-kde \
 		--disable-debug
