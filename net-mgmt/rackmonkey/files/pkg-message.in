@@ -1,0 +1,28 @@
+
+*********************************************************************
+*                            Please Read                            *
+*********************************************************************
+
+DATABASE SETUP:
+If you have selected PostgreSQL or MySQL databases, you will need to 
+read the documentation on how to edit the config file, as well as how
+to initialize the database.  IF YOU SELECTED SQLITE, THIS CAN BE DONE
+AUTOMATICALLY BY THIS PORT.
+
+DOCUMENTATION URL: 
+http://flux.org.uk/projects/rackmonkey/doc/1.2.5/install
+
+
+WEBSERVER SETUP:
+If using the Apache web server, simply add the following
+to the appropriate place in your config files:
+
+<Location /rackmonkey>
+   Options ExecCGI FollowSymLinks Includes
+   AddHandler cgi-script .pl
+   AddType text/html .shtml 
+   AddHandler server-parsed .shtml
+   DirectoryIndex rackmonkey.pl index.shtml index.html 
+   SetEnv RACKMONKEY_CONF /usr/local/www/rackmonkey/rackmonkey.conf
+</Location>
+

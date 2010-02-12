@@ -1,0 +1,145 @@
+%%WWWDIR%%/rackmonkey.pl
+%%WWWDIR%%/rackmonkey.db
+%%WWWDIR%%/rack2xls.pl
+%%WWWDIR%%/rackdns.pl
+%%WWWDIR%%/graphics/favicon.ico
+%%WWWDIR%%/graphics/help/app-single.png
+%%WWWDIR%%/graphics/help/config.png
+%%WWWDIR%%/graphics/help/device-single.png
+%%WWWDIR%%/graphics/help/devices.png
+%%WWWDIR%%/graphics/help/navbar.png
+%%WWWDIR%%/graphics/help/racks-physical.png
+%%WWWDIR%%/graphics/help/racks.png
+%%WWWDIR%%/graphics/icons/add.png
+%%WWWDIR%%/graphics/icons/delete.png
+%%WWWDIR%%/graphics/icons/information.png
+%%WWWDIR%%/graphics/icons/pencil.png
+%%WWWDIR%%/graphics/logo.png
+%%WWWDIR%%/javascript/racklib.js
+%%WWWDIR%%/styles/form.css
+%%WWWDIR%%/styles/help.css
+%%WWWDIR%%/styles/itemtable.css
+%%WWWDIR%%/styles/main.css
+%%WWWDIR%%/styles/print.css
+%%WWWDIR%%/styles/rackphysical.css
+%%WWWDIR%%/styles/report.css
+%%WWWDIR%%/styles/tabs.css
+%%WWWDIR%%/tmpl/app-edit.ssi
+%%WWWDIR%%/tmpl/app_create.tmpl
+%%WWWDIR%%/tmpl/app_default.tmpl
+%%WWWDIR%%/tmpl/app_edit.tmpl
+%%WWWDIR%%/tmpl/app_single.tmpl
+%%WWWDIR%%/tmpl/building-edit.ssi
+%%WWWDIR%%/tmpl/building_create.tmpl
+%%WWWDIR%%/tmpl/building_default.tmpl
+%%WWWDIR%%/tmpl/building_edit.tmpl
+%%WWWDIR%%/tmpl/building_single.tmpl
+%%WWWDIR%%/tmpl/config_default.tmpl
+%%WWWDIR%%/tmpl/device-edit.ssi
+%%WWWDIR%%/tmpl/device_create.tmpl
+%%WWWDIR%%/tmpl/device_default.tmpl
+%%WWWDIR%%/tmpl/device_default_asset.tmpl
+%%WWWDIR%%/tmpl/device_default_extended.tmpl
+%%WWWDIR%%/tmpl/device_edit.tmpl
+%%WWWDIR%%/tmpl/device_default_search.tmpl
+%%WWWDIR%%/tmpl/device_default_unracked.tmpl
+%%WWWDIR%%/tmpl/device_single.tmpl
+%%WWWDIR%%/tmpl/deviceApp_create.tmpl
+%%WWWDIR%%/tmpl/domain-edit.ssi
+%%WWWDIR%%/tmpl/domain_create.tmpl
+%%WWWDIR%%/tmpl/domain_default.tmpl
+%%WWWDIR%%/tmpl/domain_edit.tmpl
+%%WWWDIR%%/tmpl/domain_single.tmpl
+%%WWWDIR%%/tmpl/footer.ssi
+%%WWWDIR%%/tmpl/hardware-edit.ssi
+%%WWWDIR%%/tmpl/hardware_create.tmpl
+%%WWWDIR%%/tmpl/hardware_default.tmpl
+%%WWWDIR%%/tmpl/hardware_edit.tmpl
+%%WWWDIR%%/tmpl/hardware_single.tmpl
+%%WWWDIR%%/tmpl/help_admin.tmpl
+%%WWWDIR%%/tmpl/help_default.tmpl
+%%WWWDIR%%/tmpl/help_errors.tmpl
+%%WWWDIR%%/tmpl/help_getting_support.tmpl
+%%WWWDIR%%/tmpl/help_legal.tmpl
+%%WWWDIR%%/tmpl/help_user.tmpl
+%%WWWDIR%%/tmpl/nav-app.ssi
+%%WWWDIR%%/tmpl/nav-config.ssi
+%%WWWDIR%%/tmpl/nav-device.ssi
+%%WWWDIR%%/tmpl/nav-help.ssi
+%%WWWDIR%%/tmpl/nav-rack.ssi
+%%WWWDIR%%/tmpl/nav-report.ssi
+%%WWWDIR%%/tmpl/org-edit.ssi
+%%WWWDIR%%/tmpl/org_create.tmpl
+%%WWWDIR%%/tmpl/org_default.tmpl
+%%WWWDIR%%/tmpl/org_edit.tmpl
+%%WWWDIR%%/tmpl/org_single.tmpl
+%%WWWDIR%%/tmpl/os-edit.ssi
+%%WWWDIR%%/tmpl/os_create.tmpl
+%%WWWDIR%%/tmpl/os_default.tmpl
+%%WWWDIR%%/tmpl/os_edit.tmpl
+%%WWWDIR%%/tmpl/os_single.tmpl
+%%WWWDIR%%/tmpl/rack-edit.ssi
+%%WWWDIR%%/tmpl/rack_create.tmpl
+%%WWWDIR%%/tmpl/rack_default.tmpl
+%%WWWDIR%%/tmpl/rack_edit.tmpl
+%%WWWDIR%%/tmpl/rack_physical.tmpl
+%%WWWDIR%%/tmpl/rack_physical_extended.tmpl
+%%WWWDIR%%/tmpl/rack_single.tmpl
+%%WWWDIR%%/tmpl/report_counts.tmpl
+%%WWWDIR%%/tmpl/report_default.tmpl
+%%WWWDIR%%/tmpl/report_duplicates.tmpl
+%%WWWDIR%%/tmpl/role-edit.ssi
+%%WWWDIR%%/tmpl/role_create.tmpl
+%%WWWDIR%%/tmpl/role_default.tmpl
+%%WWWDIR%%/tmpl/role_edit.tmpl
+%%WWWDIR%%/tmpl/role_single.tmpl
+%%WWWDIR%%/tmpl/room-edit.ssi
+%%WWWDIR%%/tmpl/room_create.tmpl
+%%WWWDIR%%/tmpl/room_default.tmpl
+%%WWWDIR%%/tmpl/room_edit.tmpl
+%%WWWDIR%%/tmpl/room_single.tmpl
+%%WWWDIR%%/tmpl/service-edit.ssi
+%%WWWDIR%%/tmpl/service_create.tmpl
+%%WWWDIR%%/tmpl/service_default.tmpl
+%%WWWDIR%%/tmpl/service_edit.tmpl
+%%WWWDIR%%/tmpl/service_single.tmpl
+%%WWWDIR%%/RackMonkey/CGI.pm
+%%WWWDIR%%/RackMonkey/Conf.pm
+%%WWWDIR%%/RackMonkey/Engine.pm
+%%WWWDIR%%/RackMonkey/Error.pm
+%%WWWDIR%%/sql/data/default_data.sql
+%%WWWDIR%%/sql/data/sample_data.sql
+%%WWWDIR%%/sql/migration/3/migration.mysql.sql
+%%WWWDIR%%/sql/migration/3/migration.postgres.sql
+%%WWWDIR%%/sql/migration/3/migration.sqlite.sql
+%%WWWDIR%%/sql/migration/4/migration.mysql.sql
+%%WWWDIR%%/sql/migration/4/migration.postgres.sql
+%%WWWDIR%%/sql/migration/4/migration.sqlite.sql
+%%WWWDIR%%/sql/schema/schema.mysql.sql
+%%WWWDIR%%/sql/schema/schema.postgres.sql
+%%WWWDIR%%/sql/schema/schema.sqlite.sql
+%%WWWDIR%%/doc/changes.txt
+%%WWWDIR%%/doc/devguide.txt
+%%WWWDIR%%/doc/install-debian-ubuntu.txt
+%%WWWDIR%%/doc/install-redhat.txt
+%%WWWDIR%%/doc/install.txt
+%%WWWDIR%%/doc/licence.txt
+%%WWWDIR%%/doc/troubleshooting.txt
+%%WWWDIR%%/doc/upgrade.txt
+@unexec if cmp -s %D/%%WWWDIR%%/rackmonkey.conf-default %D/%%WWWDIR%%/rackmonkey.conf; then rm -f %D/%%WWWDIR%%/rackmonkey.conf; fi
+%%WWWDIR%%/rackmonkey.conf-default
+@dirrmtry %%WWWDIR%%/graphics/help
+@dirrmtry %%WWWDIR%%/graphics/icons
+@dirrmtry %%WWWDIR%%/graphics
+@dirrmtry %%WWWDIR%%/javascript
+@dirrmtry %%WWWDIR%%/styles
+@dirrmtry %%WWWDIR%%/tmpl
+@dirrmtry %%WWWDIR%%/RackMonkey
+@dirrmtry %%WWWDIR%%/sql/data
+@dirrmtry %%WWWDIR%%/sql/migration/3
+@dirrmtry %%WWWDIR%%/sql/migration/4
+@dirrmtry %%WWWDIR%%/sql/migration
+@dirrmtry %%WWWDIR%%/sql/schema
+@dirrmtry %%WWWDIR%%/sql
+@dirrmtry %%WWWDIR%%/doc
+@dirrmtry %%WWWDIR%%/
