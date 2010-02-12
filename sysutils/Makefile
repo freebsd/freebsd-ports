@@ -355,6 +355,7 @@
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat
+    SUBDIR += hyperic-sigar
     SUBDIR += i855vidctl10
     SUBDIR += iat
     SUBDIR += idled
