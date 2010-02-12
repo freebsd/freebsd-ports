@@ -58,7 +58,8 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Tools.3 \
 		HTML::Mason::Utils.3
 
-OPTIONS=	MOD_PERL "with mod_perl dependency" off
+OPTIONS=	MOD_PERL "with mod_perl dependency" off \
+		APACHE2 "with mod_perl for Apache 2" off
 
 post-build:
 	${MV} -f ${WRKSRC}/bin ${WRKSRC}/bin.orig
