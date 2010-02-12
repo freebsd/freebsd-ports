@@ -25,12 +25,12 @@ name=freenet6
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/gw6c
-required_files=%%PREFIX%%/etc/gw6c.conf
+required_files=%%PREFIX%%/etc/freenet6/gw6c.conf
 
 # set defaults
 
 freenet6_enable=${freenet6_enable:-"NO"}
-freenet6_flags=${freenet6_flags:-"-f %%PREFIX%%/etc/gw6c.conf"}
+freenet6_flags=${freenet6_flags:-"-f %%PREFIX%%/etc/freenet6/gw6c.conf"}
 
 load_rc_config $name
 run_rc_command "$1"

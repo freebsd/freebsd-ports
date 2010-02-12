@@ -1,11 +1,11 @@
---- src/lib/config.c.orig	2007-11-29 04:27:29.000000000 +1100
-+++ src/lib/config.c	2008-07-20 23:56:02.000000000 +1000
-@@ -284,7 +284,7 @@
+--- src/lib/config.c.orig	2009-05-19 18:22:06.000000000 +0200
++++ src/lib/config.c	2009-11-15 17:57:52.000000000 +0100
+@@ -264,7 +264,7 @@
+ {
    tConf CmdLine;
-   int status = NO_ERROR;
-   struct in_addr addr;
+   gw6c_status status = STATUS_SUCCESS_INIT;
 -  const char* cszTemplDir = "template";
 +  const char* cszTemplDir = "bin";
- #ifdef V4V6_SUPPORT
-   struct in6_addr addr6;
- #endif
+ 
+ 
+   // Hard-coded parameters. Not configurable anymore.

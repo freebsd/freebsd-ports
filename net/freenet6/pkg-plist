@@ -1,0 +1,5 @@
+bin/gw6c
+bin/gw6c-freebsd.sh
+etc/freenet6/README
+etc/freenet6/gw6c.conf.sample
+@dirrmtry etc/freenet6
