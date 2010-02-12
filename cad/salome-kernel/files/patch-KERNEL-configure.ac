@@ -1,0 +1,29 @@
+--- configure.ac.orig	2009-07-20 14:30:59.000000000 +0700
++++ configure.ac	2009-07-20 14:33:42.000000000 +0700
+@@ -52,7 +52,7 @@
+ # argument. Exemple:
+ # $ filename="../KERNEL_SRC/configure
+ # $ absfilename=`absolute_path $filename`
+-function absolute_path {
++absolute_path () {
+     filename=$1
+     here=`pwd`
+     apath=`dirname $filename`
+@@ -410,7 +410,7 @@
+ echo
+ 
+ # This function displays the values of each variable given in arguments 
+-function summary {
++summary () {
+   variables=$*
+   for var in $variables
+   do
+@@ -424,7 +424,7 @@
+ 
+ # --------------------------------------
+ 
+-function check_fatal_error {
++check_fatal_error () {
+   variables=$*
+   for var in $variables
+   do
