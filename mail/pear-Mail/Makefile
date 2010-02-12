@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail
-DISTVERSION=	1.2.0b2
+DISTVERSION=	1.2.0b5
 CATEGORIES=	mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org
