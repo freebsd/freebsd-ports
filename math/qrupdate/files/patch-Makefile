@@ -1,5 +1,5 @@
---- Makefile.orig	2009-02-06 20:12:00.000000000 +1100
-+++ Makefile	2009-08-06 01:20:12.000000000 +1000
+--- Makefile
++++ Makefile
 @@ -21,6 +21,8 @@
  
  include Makeconf
@@ -34,4 +34,5 @@
 +	gmake -C src/ install-shlib
  
  install-staticlib:
- 	make -C src/ install-staticlib
+-	make -C src/ install-staticlib
++	gmake -C src/ install-staticlib

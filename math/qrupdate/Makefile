@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	qrupdate
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	math
-MASTER_SITES=	http://downloads.sourceforge.net/project/qrupdate/qrupdate/1.0/ \
-		http://transact.dl.sourceforge.net/project/qrupdate/qrupdate/1.0/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	qrupdate/qrupdate/1.1
 
 MAINTAINER=	robertjenssen@ozemail.com.au
 COMMENT=	Fortran library for fast updates of QR and Cholesky decomposition
+
+LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas lapack.4:${PORTSDIR}/math/lapack
 
 FETCH_ARGS=	-p
 
