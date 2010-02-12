@@ -535,6 +535,7 @@
 %%WWWDIR%%/lib/Foswiki/Compatibility.pm
 %%WWWDIR%%/lib/Foswiki/Configure/CSS.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checker.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/AllowInlineScript.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/AuthScripts.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/BasicSanity.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/CGISetup.pm
@@ -593,6 +594,7 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/UpperNational.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/UseClientSessions.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/UseLocale.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Validation/Method.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/WarningFileName.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/WebMasterEmail.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/WorkingDir.pm
@@ -640,6 +642,7 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Valuer.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/BehaviourContrib.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/JSCalendarContrib.pm
+%%WWWDIR%%/lib/Foswiki/Contrib/JSCalendarContrib/Config.spec
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Change.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/CompatibilityHacks.pm
@@ -852,23 +855,6 @@
 %%WWWDIR%%/pub/System/BehaviourContrib/behaviour.js
 %%WWWDIR%%/pub/System/BehaviourContrib/behaviour_src.js
 %%WWWDIR%%/pub/System/CommentPlugin/wikiringlogo20x20.png
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x11_photo.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x11_video.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x13_changes-small.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x13_detail-small.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_13x13_search-small.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_16x16.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_7x5_bullet-blue.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_FileTypeIcons.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Plugins_FormPlugin_error.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Plugins_TablePlugin_sort_icons.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Plugins_TagMePlugin_buttons_gradient.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_RSS_XML.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_closed.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_done.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_new.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_todo.psd
-%%WWWDIR%%/pub/System/DocumentGraphics/DocumentGraphics_Text_updated.psd
 %%WWWDIR%%/pub/System/DocumentGraphics/_filetypes.txt
 %%WWWDIR%%/pub/System/DocumentGraphics/addon.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/air.gif
@@ -887,11 +873,13 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/as.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/attachfile.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/award.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/barcode.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/bat.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/bed.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/blank-bg.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/blank.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/bmp.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/bomb.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/book.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/bubble.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/bug.gif
@@ -901,13 +889,18 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/cachetopic.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/changes-small.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/changes.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/chart-bar.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/chart-pie.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/checked.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/choice-cancel.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/choice-no.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/choice-yes.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/closed.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/code.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/comments.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/connections.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/css.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/database.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/days.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/detail.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/dll.gif
@@ -933,6 +926,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/empty.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/exe.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/external.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/facebook.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/fax.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/feed.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/filter.gif
@@ -986,6 +980,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/led-red.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/led-yellow.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/left.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/legal.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/line_ld.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/line_lr.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/line_lrd.gif
@@ -998,6 +993,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/line_ulr.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/line_ur.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/line_ur_gray.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/linkedin.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/lock.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/lockfolder.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/lockfoldergray.gif
@@ -1008,6 +1004,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/mail.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/map.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/mdb.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/mechanics.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/megaphone.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/minus.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/mobile.gif
@@ -1032,16 +1029,19 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/phone.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/photo.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/pl.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/plug.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/plugin.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/plus.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/png.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/ppt.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/presentation.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/printtopic.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/process.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/processing-32-bg.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/processing-32.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/processing-bg.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/processing.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/profile.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/proportional.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/ps.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/psd.gif
@@ -1049,6 +1049,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/py.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/question.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/quiet.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/radioactive.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/ram.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/recentchanges.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/refreshtopic.gif
@@ -1057,6 +1058,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/right.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/rss-feed.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/rss-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/rss.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/save.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/search-small.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/searchpackage.gif
@@ -1068,13 +1070,19 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/skin.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/skype.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/sniff.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/socket.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/sort.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/star-full.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/star-half.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/star-none.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/stargold.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/starred.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/statistics.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/stop.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/support.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/svg.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/swf.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/switch.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/table.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/tablesortdiamond.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/tablesortdown.gif
@@ -1095,6 +1103,8 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/target-orange.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/target-red.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/target.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/thumbs-down.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/thumbs-up.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/tip.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/todo.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleclose-mini.gif
@@ -1106,8 +1116,11 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopen.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopenleft-small.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopenleft.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toolbox.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tooth.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/topicbacklinks.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/topicdiffs.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/traffic-light.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/trash.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/ttf.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/twitter.gif
@@ -1126,6 +1139,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/uweb-o12.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/uweb-oo.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/uweb-os.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/vcard.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/vector.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/video.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/viewtopic.gif
@@ -1143,6 +1157,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/xml-small.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/xml.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/xsl.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/ying-yang.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/zip.gif
 %%WWWDIR%%/pub/System/EditTablePlugin/EditTablePluginCalendarExample.gif
 %%WWWDIR%%/pub/System/EditTablePlugin/ScreenshotEditCell1.gif
@@ -1396,7 +1411,7 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/indent.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/link.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/outdent.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/screenshot.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/screenshot.png
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/build.bat
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/build.xml
@@ -1404,6 +1419,7 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/css/content.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/css/word.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/full.html
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/full_jquery.html
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/index.html
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/lists/image_list.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/lists/link_list.js
@@ -1436,6 +1452,7 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/UndoManager.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/WindowManager.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/adapter/jquery/adapter.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/adapter/jquery/jquery.tinymce.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/adapter/prototype/adapter.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/commands/BlockQuote.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/commands/CutCopyPaste.js
@@ -1445,6 +1462,7 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/dom/DOMUtils.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/dom/Element.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/dom/Event.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/dom/EventUtils.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/dom/Range.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/dom/ScriptLoader.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/dom/Selection.js
@@ -1476,6 +1494,7 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/util/URI.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/util/XHR.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/classes/xml/Parser.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/jquery.tinymce.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/license.txt
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
@@ -1497,6 +1516,8 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/js/advlink.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
@@ -1536,6 +1557,7 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs/en.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/attach.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/attach_error_autoinc.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/colours.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css/popup.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css/popup_src.css
@@ -1551,8 +1573,8 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/colour_src.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs/en.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs/en_dlg.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/advimage.css
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/advimage_src.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/foswikiimage.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/foswikiimage_src.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/editor_plugin_src.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/image.htm
@@ -1674,6 +1696,8 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/template.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin_src.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm
@@ -1917,6 +1941,7 @@
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/wordcount
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/visualchars
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/langs
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/template/js
@@ -1992,6 +2017,7 @@
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/compat2x
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/bbcode
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autosave
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autoresize
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/langs
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/js
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlink/css
@@ -2090,9 +2116,11 @@
 @dirrm %%WWWDIR%%/lib/Foswiki/Engine
 @dirrm %%WWWDIR%%/lib/Foswiki/Contrib/TopicUserMappingContrib
 @dirrm %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib
+@dirrm %%WWWDIR%%/lib/Foswiki/Contrib/JSCalendarContrib
 @dirrm %%WWWDIR%%/lib/Foswiki/Contrib
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/UIs
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Types
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Validation
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Site
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Sessions
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Register

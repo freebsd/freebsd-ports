@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	foswiki
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.0.9
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -29,10 +28,8 @@ OPTIONS=	OPTINT "Install Perl modules for intl character support" Off \
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_OPTINT)
-BUILD_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
-		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
-RUN_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
-		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
+BUILD_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
+RUN_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
 .endif
 
 .if defined(WITH_OPTOTH)
