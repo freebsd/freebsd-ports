@@ -12,7 +12,7 @@ MASTER_SITES=	SF/mydbf2mysql/mydbf2mysql/${PORTVERSION}/
 DISTNAME=	MyDBF2MySQL-${PORTVERSION}
 
 MAINTAINER=	andrey.polyakov@unix.net
-COMMENT=	Flexiable tool for DBF import into MySQL
+COMMENT=	Flexible tool for DBF import into MySQL
 
 RUN_DEPENDS+=	py26-MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 RUN_DEPENDS+=	ydbf=0.0.1:${PORTSDIR}/devel/py-ydbf
