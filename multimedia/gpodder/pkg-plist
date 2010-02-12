@@ -13,6 +13,8 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/corestats.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/dbsqlite.py
 %%PYTHON_SITELIBDIR%%/gpodder/dbsqlite.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/dbusproxy.py
+%%PYTHON_SITELIBDIR%%/gpodder/dbusproxy.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/download.py
 %%PYTHON_SITELIBDIR%%/gpodder/download.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/feedcore.py
@@ -67,6 +69,8 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/welcome.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/model.py
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/model.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/gtkui/mygpodder.py
+%%PYTHON_SITELIBDIR%%/gpodder/gtkui/mygpodder.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/services.py
@@ -81,12 +85,16 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/libconverter.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/liblogger.py
 %%PYTHON_SITELIBDIR%%/gpodder/liblogger.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/minidb.py
+%%PYTHON_SITELIBDIR%%/gpodder/minidb.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/model.py
 %%PYTHON_SITELIBDIR%%/gpodder/model.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/my.py
 %%PYTHON_SITELIBDIR%%/gpodder/my.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/qtui.py
+%%PYTHON_SITELIBDIR%%/gpodder/qtui.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/services.py
 %%PYTHON_SITELIBDIR%%/gpodder/services.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/soundcloud.py
@@ -99,7 +107,53 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/util.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.py
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/__init__.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/api.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/api.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/api.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/api_test.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/api_test.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/api_test.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/http.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/http.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/http.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/http_test.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/http_test.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/http_test.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/json.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/json.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/json.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/json_test.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/json_test.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/json_test.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/locator.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/locator.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/locator.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/locator_test.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/locator_test.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/locator_test.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/public.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/public.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/public.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/public_test.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/public_test.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/public_test.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/simple.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/simple.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/simple.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/simple_test.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/simple_test.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/simple_test.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/testing.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/testing.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/testing.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/util.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/util.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/util.pyo
 share/applications/gpodder.desktop
+share/dbus-1/services/org.gpodder.service
 %%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/credits.txt
@@ -115,6 +169,7 @@ share/applications/gpodder.desktop
 %%DATADIR%%/ui/desktop/gpoddershownotes.ui
 %%DATADIR%%/ui/desktop/gpoddersyncprogress.ui
 %%DATADIR%%/ui/gpodderwelcome.ui
+%%DATADIR%%/ui/mygpoddersettings.ui
 share/icons/hicolor/16x16/apps/gpodder.png
 share/icons/hicolor/22x22/apps/gpodder.png
 share/icons/hicolor/24x24/apps/gpodder.png
@@ -130,6 +185,7 @@ share/locale/gl/LC_MESSAGES/gpodder.mo
 share/locale/it/LC_MESSAGES/gpodder.mo
 share/locale/nb/LC_MESSAGES/gpodder.mo
 share/locale/nl/LC_MESSAGES/gpodder.mo
+share/locale/nn/LC_MESSAGES/gpodder.mo
 share/locale/pl/LC_MESSAGES/gpodder.mo
 share/locale/pt/LC_MESSAGES/gpodder.mo
 share/locale/pt_BR/LC_MESSAGES/gpodder.mo
@@ -154,6 +210,7 @@ share/pixmaps/gpodder.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/mygpoclient
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui

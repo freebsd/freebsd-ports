@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	multimedia
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	BERLIOS \
+		http://thpinfo.com/2010/mygpoclient/:mygpoclient
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
+		${MGC_DISTNAME}${EXTRACT_SUFX}:mygpoclient
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
 RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
+		py*-sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		py*-notify>=0:${PORTSDIR}/devel/py-notify \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
@@ -32,10 +35,15 @@ OPTIONS=	COVERART "Cover Art syncing support" off \
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	messages
 INSTALLS_ICONS=	yes
 INSTALLS_EGGINFO=yes
 
 MAN1=		gpo.1 ${PORTNAME}.1 ${PORTNAME}-backup.1
+
+MGC_DISTNAME=	mygpoclient-1.0
+MGC_WRKSRC=	${WRKDIR}/${MGC_DISTNAME}/mygpoclient
 
 .include <bsd.port.pre.mk>
 
@@ -70,8 +78,15 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile
 
-post-install:
+pre-build:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${MGC_WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${MGC_WRKSRC}
+
+pre-install:
+	@${MKDIR} ${PYTHON_SITELIBDIR}/mygpoclient
+	@(cd ${MGC_WRKSRC} && ${COPYTREE_SHARE} . ${PYTHON_SITELIBDIR}/mygpoclient)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in PKG-INFO README
