@@ -470,6 +470,7 @@
     SUBDIR += pgpool-II
     SUBDIR += pgpool-II-22
     SUBDIR += pgpoolAdmin
+    SUBDIR += pgsphere
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pgtune
