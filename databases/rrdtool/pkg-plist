@@ -1,16 +1,18 @@
-bin/rrdtool
+bin/rrdcached
 bin/rrdcgi
+bin/rrdtool
 bin/rrdupdate
+include/rrd.h
+include/rrd_client.h
+include/rrd_format.h
 lib/librrd.a
 lib/librrd.la
 lib/librrd.so
-lib/librrd.so.4
+lib/librrd.so.5
 lib/librrd_th.a
 lib/librrd_th.la
 lib/librrd_th.so
-lib/librrd_th.so.4
-include/rrd.h
-include/rrd_format.h
+lib/librrd_th.so.5
 libdata/pkgconfig/librrd.pc
 %%WITH_PERL%%%%SITE_PERL%%/RRDp.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
@@ -22,3 +24,8 @@ libdata/pkgconfig/librrd.pc
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs
+share/rrdtool/examples/rrdcached/RRDCached.pm
+share/rrdtool/examples/rrdcached/rrdcached-size.pl
+@dirrm share/rrdtool/examples/rrdcached
+@dirrm share/rrdtool/examples
+@dirrm share/rrdtool
