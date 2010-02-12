@@ -34,7 +34,7 @@ MAN4=		uhso.4
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
 .elif ${OSVERSION} <= 800063
-IGNORE=		requires FreeBSD 8.0 (with USB2) or superior
+IGNORE=		requires FreeBSD 8.0 or later, please try comms/hso-kmod instead
 .endif
 
 .if !defined(WITHOUT_UHSOCTL)
