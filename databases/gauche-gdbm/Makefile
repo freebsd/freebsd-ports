@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdbm
-PORTVERSION=	0.8.13	# Keep this in sync with lang/gauche
+PORTVERSION=	0.9	# Keep this in sync with lang/gauche
 CATEGORIES=	databases scheme
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	gauche-
@@ -19,6 +19,8 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 		${NONEXISTENT}:${PORTSDIR}/lang/gauche:patch
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
+
+BROKEN=		does not compile
 
 WRKSRC=		${WRKDIR}/dbm
 MAKE_ARGS=	GOSH=gosh \
