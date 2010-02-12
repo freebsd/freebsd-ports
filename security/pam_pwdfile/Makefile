@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_pwdfile
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://cpbotha.net/files/pam_pwdfile/
 
@@ -17,9 +18,11 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 PLIST_FILES=	lib/pam_pwdfile.so
 PORTDOCS=	README INSTALL changelog
+CFLAGS+=	-I${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|#include <features.h>||g' ${WRKSRC}/pam_pwdfile.c
+	${CP} ${FILESDIR}/_pam_macros.h ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)

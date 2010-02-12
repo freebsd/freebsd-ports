@@ -1,11 +1,29 @@
 # inspired from pam-pgsql port :-)
 
-SRCS=	pam_pwdfile.c
+SRCS=	pam_pwdfile.c \
+	bigcrypt.c \
+	md5_good.c \
+	md5_crypt_good.c \
+	md5_broken.c \
+	md5_crypt_broken.c 
+
 SHLIB_NAME=	pam_pwdfile.so
 
 LDADD=		-lpam -lcrypt
 CFLAGS+=	-Wall -D_BSD_SOURCE
 
 LIBDIR=		${LOCALBASE}/lib
+
+md5_good.c: md5.c
+	$(CPP) $(CPPFLAGS) -DHIGHFIRST -D'MD5Name(x)=Good##x' -o $@ $>
+
+md5_broken.c: md5.c
+	$(CPP) $(CPPFLAGS) -D'MD5Name(x)=Broken##x' -o $@ $>
+
+md5_crypt_good.c: md5_crypt.c
+	$(CPP) $(CPPFLAGS) -D'MD5Name(x)=Good##x' -o $@ $>
+
+md5_crypt_broken.c: md5_crypt.c
+	$(CPP) $(CPPFLAGS) -D'MD5Name(x)=Broken##x' -o $@ $>
 
 .include <bsd.lib.mk>
