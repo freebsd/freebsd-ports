@@ -1,0 +1,12 @@
+--- src/SMESH/Makefile.am.orig	2009-11-02 13:29:51.000000000 +0600
++++ src/SMESH/Makefile.am	2009-11-02 13:30:12.000000000 +0600
+@@ -81,8 +81,8 @@
+ 
+ # additionnal information to compile and link file
+ libSMESHimpl_la_CPPFLAGS = \
+-	$(KERNEL_CXXFLAGS) \
+ 	$(CAS_CPPFLAGS) \
++	$(KERNEL_CXXFLAGS) \
+ 	$(MED_CXXFLAGS) \
+ 	$(GEOM_CXX_FLAGS) \
+ 	$(BOOST_CPPFLAGS) \

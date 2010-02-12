@@ -1,0 +1,11 @@
+--- src/DriverMED/Makefile.am.orig	2010-01-06 22:24:09.000000000 +0600
++++ src/DriverMED/Makefile.am	2010-01-06 22:24:14.000000000 +0600
+@@ -51,7 +51,7 @@
+ 	DriverMED_Family.cxx
+ 
+ # Executables targets
+-bin_PROGRAMS = MED_Test
++bin_PROGRAMS =
+ 
+ dist_MED_Test_SOURCES = \
+ 	MED_Test.cxx

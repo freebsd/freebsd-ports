@@ -1,0 +1,10 @@
+--- adm_local/unix/config_files/Makefile.am.orig	2009-12-26 23:17:33.000000000 +0600
++++ adm_local/unix/config_files/Makefile.am	2009-12-26 23:17:44.000000000 +0600
+@@ -24,5 +24,4 @@
+ dist_admlocalm4_DATA =	\
+     check_SMESH.m4	\
+     check_f77.m4	\
+-    check_Platform.m4   \
+-    check_qwt.m4        
++    check_Platform.m4
+\ No newline at end of file

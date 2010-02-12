@@ -1,0 +1,11 @@
+--- bin/Makefile.am.orig	2010-01-06 21:49:10.000000000 +0600
++++ bin/Makefile.am	2010-01-06 21:49:17.000000000 +0600
+@@ -26,7 +26,7 @@
+ include $(top_srcdir)/adm_local/unix/make_common_starter.am
+ 
+ # non-distributed files 
+-nodist_salomescript_DATA = VERSION
++nodist_salomescript_DATA =
+ 
+ # python files
+ dist_salomescript_PYTHON = \
