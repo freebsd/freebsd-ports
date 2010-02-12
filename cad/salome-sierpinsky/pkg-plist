@@ -1,0 +1,29 @@
+adm_local/unix/config_files/check_SIERPINSKY.m4
+adm_local/unix/config_files/check_gd.m4
+idl/salome/Sierpinsky.idl
+include/salome/SIERPINSKY_Gen_i.hxx
+include/salome/SIERPINSKY_version.h
+include/salome/Sierpinsky.hh
+%%PYTHON_SITELIBDIR%%/salome/SIERPINSKY_ORB/__init__.py
+%%PYTHON_SITELIBDIR%%/salome/SIERPINSKY_ORB__POA/__init__.py
+%%PYTHON_SITELIBDIR%%/salome/Sierpinsky_idl.py
+lib/salome/libSIERPINSKY.la
+lib/salome/libSIERPINSKY.so
+lib/salome/libSIERPINSKY.so.0
+lib/salome/libSIERPINSKYEngine.la
+lib/salome/libSIERPINSKYEngine.so
+lib/salome/libSIERPINSKYEngine.so.0
+lib/salome/libSalomeIDLSIERPINSKY.la
+lib/salome/libSalomeIDLSIERPINSKY.so
+lib/salome/libSalomeIDLSIERPINSKY.so.0
+share/salome/resources/sierpinsky/SIERPINSKY.png
+share/salome/resources/sierpinsky/SIERPINSKYCatalog.xml
+share/salome/resources/sierpinsky/SIERPINSKY_icons.qm
+share/salome/resources/sierpinsky/SIERPINSKY_msg_en.qm
+share/salome/resources/sierpinsky/SalomeApp.xml
+share/salome/resources/sierpinsky/go.png
+share/salome/resources/sierpinsky/graph1.xml
+share/salome/resources/sierpinsky/graph2.xml
+@dirrm share/salome/resources/sierpinsky
+@dirrm %%PYTHON_SITELIBDIR%%/salome/SIERPINSKY_ORB__POA
+@dirrm %%PYTHON_SITELIBDIR%%/salome/SIERPINSKY_ORB
