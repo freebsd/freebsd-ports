@@ -1,0 +1,19 @@
+SALOME is a free software that provides a generic platform for Pre 
+and Post-Processing for numerical simulation. 
++Supports interoperability between CAD modeling and 
+ computation software (CAD-CAE link) 
++Makes easier the integration of new components on heterogeneous systems 
+ for numerical computation 
++Sets the priority to multi-physics coupling between computation software 
++Provides a generic user interface, user-friendly and efficient, 
+ which helps to reduce the costs and  delays of carrying out the studies
++Reduces training time to the specific time for learning the software solution
+ which has been based on this platform 
++All functionalities are accessible through the programmatic 
+ integrated Python console
+
+This package contains SIERPINSKY module.
+
+WWW: http://www.salome-platform.org
+- Stas Timokhin
+devel@stasyan.com
