@@ -1,6 +1,6 @@
 Now that the package is installed, please finish it with the following steps:
 
-- Copy %%EXAMPLESDIR%%/gw5c.conf to %%PREFIX%%/etc/gw6c.conf
+- Copy %%PREFIX%%/etc/gw6c.conf.example to %%PREFIX%%/etc/gw6c.conf
 - Check the values of %%PREFIX%%/etc/gw6c.conf. If you have registered at
   the website, fill in your userid and password there.
 - Add 'freenet6_enable="YES"' to your /etc/rc.conf to make it start
