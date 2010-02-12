@@ -17,12 +17,6 @@ CONFLICTS=	expect-5.44*
 
 PORTSCOUT=	skipv:5.44.0,5.44.1	# These were recalled by NIST
 
-.if !defined(WITHOUT_X11)
-LIB_DEPENDS?=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-.else
-LIB_DEPENDS?=	tcl84.1:${PORTSDIR}/lang/tcl84
-.endif
-
 EXPECT_VER=	5.43
 LIBEXPECT_VER=	543
 
@@ -32,6 +26,16 @@ GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	EXPECT_VER="${EXPECT_VER}"
 PLIST_SUB+=	LIBEXPECT_VER="${LIBEXPECT_VER}"
+
+OPTIONS=	X11 "Enable X11 support" on
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_X11)
+LIB_DEPENDS?=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+.else
+LIB_DEPENDS?=	tcl84.1:${PORTSDIR}/lang/tcl84
+.endif
 
 .if defined(WITHOUT_X11)
 TK_CONFIG_ARGS=
