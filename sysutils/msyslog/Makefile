@@ -30,6 +30,10 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900006
+EXTRA_PATCHES=	${PATCHDIR}/utmpx-src-modules-om_classic.c
+.endif
+
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 MAN8+=	om_mysql.8
