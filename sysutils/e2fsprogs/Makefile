@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.41.9
+PORTVERSION=	1.41.10
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -19,11 +19,11 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
-		--with-cc='${CC}' --with-linker='${LD}' \
-		--with-ccopts='${CFLAGS}' \
 		--with-root-prefix='${PREFIX}'
+#CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib \
+#		-I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
 CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib \
-		-I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
+		-I${LOCALBASE}/include'
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 
 OPTIONS?=	NLS "Enable national language support" on
@@ -48,10 +48,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: fails self-test
-.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
