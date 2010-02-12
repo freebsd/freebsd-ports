@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gauche
-PORTVERSION=	0.8.13	# Keep databases/gauche-gdbm in sync with this
-PORTREVISION=	2
+PORTVERSION=	0.9	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang scheme
-MASTER_SITES=	SF/${PORTNAME}/Gauche/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Gauche/
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -54,9 +53,6 @@ INFO=		gauche-refe gauche-refj
 BROKEN=		Does not compile on ${ARCH}
 .endif
 
-post-build:
-	${REINPLACE_CMD} 's/gauche-refj.  info/gauche-refj.info/' ${WRKSRC}/doc/gauche-refj.info
-
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gosh
 	${RM} -f ${PREFIX}/share/gauche/${PORTVERSION}/lib/slibcat
@@ -71,7 +67,7 @@ post-install:
 	${TOUCH} ${EXAMPLESDIR}/.keepme
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${WRKSRC}/doc/*.info-[1-7] ${PREFIX}/info/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.info.gz ${WRKSRC}/doc/*.info-[1-7].gz ${PREFIX}/info/
 .endif
 
 .include <bsd.port.post.mk>
