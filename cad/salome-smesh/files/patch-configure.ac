@@ -1,0 +1,31 @@
+--- configure.ac.orig	2009-12-01 21:00:13.000000000 +0600
++++ configure.ac	2010-01-05 22:17:53.000000000 +0600
+@@ -258,7 +258,8 @@
+ echo ---------------------------------------------
+ echo
+ 
+-CHECK_GUI_MODULE
++CHECK_SALOME_GUI
++FullGUI_ok=yes
+ 
+ gui_ok=no
+ if test "${SalomeGUI_need}" != "no" -a "${FullGUI_ok}" = "yes" ; then 
+@@ -267,15 +268,15 @@
+ 
+ AM_CONDITIONAL(SMESH_ENABLE_GUI, [test "${gui_ok}" = "yes"])
+ 
+-if test "${SalomeGUI_need}" == "yes"; then
++if test "${SalomeGUI_need}" = "yes"; then
+   if test "${FullGUI_ok}" != "yes"; then
+     AC_MSG_WARN(For configure SMESH module necessary full GUI!)
+   fi
+-elif test "${SalomeGUI_need}" == "auto"; then
++elif test "${SalomeGUI_need}" = "auto"; then
+   if test "${FullGUI_ok}" != "yes"; then
+     AC_MSG_WARN(Full GUI not found. Build will be done without GUI!)
+   fi
+-elif test "${SalomeGUI_need}" == "no"; then
++elif test "${SalomeGUI_need}" = "no"; then
+   echo Build without GUI option has been chosen
+ fi
+ 
