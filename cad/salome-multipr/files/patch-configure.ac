@@ -1,0 +1,12 @@
+--- configure.ac.orig	2010-01-06 20:22:27.000000000 +0600
++++ configure.ac	2010-01-06 20:22:52.000000000 +0600
+@@ -167,7 +167,8 @@
+ echo ---------------------------------------------
+ echo
+ 
+-CHECK_GUI_MODULE
++CHECK_SALOME_GUI
++FullGUI_ok=yes
+ 
+ gui_ok=no
+ if test "${SalomeGUI_need}" != "no" -a "${FullGUI_ok}" = "yes" ; then 
