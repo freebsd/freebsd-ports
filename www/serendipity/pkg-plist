@@ -1,4 +1,4 @@
-www/serendipity/bundled-libs/.current_version
+%%SERENDIPITY%%/bundled-libs/.current_version
 %%SERENDIPITY%%/bundled-libs/Cache/BUNDLE_NOTICE
 %%SERENDIPITY%%/bundled-libs/Cache/Lite.php
 %%SERENDIPITY%%/bundled-libs/Cache/Lite/Function.php
@@ -318,6 +318,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/docs/NEWS
 %%SERENDIPITY%%/docs/NEWS_OLD
 %%SERENDIPITY%%/docs/README
+%%SERENDIPITY%%/docs/RELEASE
 %%SERENDIPITY%%/docs/UPGRADE
 %%SERENDIPITY%%/docs/upgrade.sh
 %%SERENDIPITY%%/exit.php
@@ -487,6 +488,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/htmlarea/modules/InternetExplorer/InternetExplorer.js
 %%SERENDIPITY%%/htmlarea/modules/Opera/Opera.js
 %%SERENDIPITY%%/htmlarea/modules/WebKit/WebKit.js
+%%SERENDIPITY%%/htmlarea/my_custom.js
 %%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbr/de.js
 %%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbr/en.js
 %%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbreviation.css
@@ -1273,6 +1275,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/include/admin/importers/movabletype.inc.php
 %%SERENDIPITY%%/include/admin/importers/nucleus.inc.php
 %%SERENDIPITY%%/include/admin/importers/nuke.inc.php
+%%SERENDIPITY%%/include/admin/importers/old_blogger.inc.php
 %%SERENDIPITY%%/include/admin/importers/phpbb.inc.php
 %%SERENDIPITY%%/include/admin/importers/pivot.inc.php
 %%SERENDIPITY%%/include/admin/importers/pmachine.inc.php
@@ -1295,6 +1298,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/include/db/mysql.inc.php
 %%SERENDIPITY%%/include/db/mysqli.inc.php
 %%SERENDIPITY%%/include/db/pdo-postgres.inc.php
+%%SERENDIPITY%%/include/db/pdo-sqlite.inc.php
 %%SERENDIPITY%%/include/db/postgres.inc.php
 %%SERENDIPITY%%/include/db/sqlite.inc.php
 %%SERENDIPITY%%/include/db/sqlite3.inc.php
@@ -2414,6 +2418,9 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.5-alpha1_1.5-alpha2_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.5-alpha1_1.5-alpha2_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.5-alpha1_1.5-alpha2_sqlite.sql
 %%SERENDIPITY%%/templates/HOWTO
 %%SERENDIPITY%%/templates/blue/htmlarea.css
 %%SERENDIPITY%%/templates/blue/info.txt
@@ -2425,6 +2432,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_en.inc.php
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_fr.inc.php
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_adminframe.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner_fluid.png
@@ -2504,11 +2512,13 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/bulletproof/lang_cz.inc.php
 %%SERENDIPITY%%/templates/bulletproof/lang_de.inc.php
 %%SERENDIPITY%%/templates/bulletproof/lang_en.inc.php
+%%SERENDIPITY%%/templates/bulletproof/lang_fr.inc.php
 %%SERENDIPITY%%/templates/bulletproof/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/bulletproof/plugin_contactform.tpl
 %%SERENDIPITY%%/templates/bulletproof/plugin_dynamicform.tpl
 %%SERENDIPITY%%/templates/bulletproof/plugin_staticpage.tpl
 %%SERENDIPITY%%/templates/bulletproof/plugin_staticpage_aboutpage.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_staticpage_related_category.tpl
 %%SERENDIPITY%%/templates/bulletproof/plugin_staticpage_searchresults.tpl
 %%SERENDIPITY%%/templates/bulletproof/preview.png
 %%SERENDIPITY%%/templates/bulletproof/preview_fullsize.jpg
@@ -2560,13 +2570,11 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/competition/preview.png
 %%SERENDIPITY%%/templates/competition/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/competition/style.css
-%%SERENDIPITY%%/templates/contest/admin/img/Thumbs.db
 %%SERENDIPITY%%/templates/contest/admin/img/button_background.png
 %%SERENDIPITY%%/templates/contest/admin/img/menuheader_background.png
 %%SERENDIPITY%%/templates/contest/admin/style.css
 %%SERENDIPITY%%/templates/contest/content.tpl
 %%SERENDIPITY%%/templates/contest/entries.tpl
-%%SERENDIPITY%%/templates/contest/img/Thumbs.db
 %%SERENDIPITY%%/templates/contest/img/back.png
 %%SERENDIPITY%%/templates/contest/img/date_bar.png
 %%SERENDIPITY%%/templates/contest/img/forward.png
@@ -2748,6 +2756,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/default/preview_iframe.tpl
 %%SERENDIPITY%%/templates/default/sidebar.tpl
 %%SERENDIPITY%%/templates/default/style.css
+%%SERENDIPITY%%/templates/default/style_fallback.css
 %%SERENDIPITY%%/templates/default/trackbacks.tpl
 %%SERENDIPITY%%/templates/default/treeview/lm.gif
 %%SERENDIPITY%%/templates/default/treeview/lmh.gif
@@ -2771,6 +2780,8 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/idea/preview.png
 %%SERENDIPITY%%/templates/idea/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/idea/style.css
+%%SERENDIPITY%%/templates/kubrick/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/templates/kubrick/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/templates/kubrick/comments.tpl
 %%SERENDIPITY%%/templates/kubrick/config.inc.php
 %%SERENDIPITY%%/templates/kubrick/entries.tpl
@@ -2783,6 +2794,8 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/kubrick/images/kubrickportrait.png
 %%SERENDIPITY%%/templates/kubrick/index.tpl
 %%SERENDIPITY%%/templates/kubrick/info.txt
+%%SERENDIPITY%%/templates/kubrick/lang_cs.inc.php
+%%SERENDIPITY%%/templates/kubrick/lang_cz.inc.php
 %%SERENDIPITY%%/templates/kubrick/lang_de.inc.php
 %%SERENDIPITY%%/templates/kubrick/lang_en.inc.php
 %%SERENDIPITY%%/templates/kubrick/lang_ko.inc.php
@@ -2894,6 +2907,7 @@ www/serendipity/bundled-libs/.current_version
 @dirrm %%SERENDIPITY%%/templates/moz-modern
 @dirrm %%SERENDIPITY%%/templates/kubrick/img
 @dirrm %%SERENDIPITY%%/templates/kubrick/images
+@dirrm %%SERENDIPITY%%/templates/kubrick/UTF-8
 @dirrm %%SERENDIPITY%%/templates/kubrick
 @dirrm %%SERENDIPITY%%/templates/idea/img
 @dirrm %%SERENDIPITY%%/templates/idea
