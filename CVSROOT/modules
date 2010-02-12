@@ -2204,6 +2204,7 @@ de-unix-connect                 ports/german/unix-connect
 de-vtiger                       ports/german/vtiger
 de-webalizer2                   ports/german/webalizer2
 de-wordpress                    ports/german/wordpress
+deadbeef                        ports/audio/deadbeef
 deal                            ports/games/deal
 deb2targz                       ports/archivers/deb2targz
 decibel                         ports/net-im/decibel
@@ -2555,13 +2556,16 @@ drupal5-xmlsitemap              ports/www/drupal5-xmlsitemap
 drupal6                         ports/www/drupal6
 drupal6-advanced_help           ports/www/drupal6-advanced_help
 drupal6-cck                     ports/www/drupal6-cck
+drupal6-chaos                   ports/www/drupal6-chaos
 drupal6-geshifilter             ports/www/drupal6-geshifilter
 drupal6-google_analytics        ports/www/drupal6-google_analytics
+drupal6-image                   ports/www/drupal6-image
 drupal6-menu_block              ports/www/drupal6-menu_block
 drupal6-mimedetect              ports/www/drupal6-mimedetect
 drupal6-nice_menus              ports/www/drupal6-nice_menus
 drupal6-nodewords               ports/www/drupal6-nodewords
 drupal6-page_title              ports/www/drupal6-page_title
+drupal6-panels                  ports/www/drupal6-panels
 drupal6-pathauto                ports/www/drupal6-pathauto
 drupal6-print                   ports/www/drupal6-print
 drupal6-seo_checklist           ports/www/drupal6-seo_checklist
@@ -5317,6 +5321,7 @@ hping-devel                     ports/net/hping-devel
 hpl                             ports/benchmarks/hpl
 hplip                           ports/print/hplip
 hplip3                          ports/print/hplip3
+hploscripts                     ports/sysutils/hploscripts
 hppsmtools                      ports/graphics/hppsmtools
 hptools                         ports/devel/hptools
 hr-aspell                       ports/textproc/hr-aspell
@@ -6527,6 +6532,7 @@ josm                            ports/astro/josm
 jove                            ports/editors/jove
 jp2a                            ports/graphics/jp2a
 jpatch                          ports/graphics/jpatch
+jpcap                           ports/net/jpcap
 jpeg                            ports/graphics/jpeg
 jpeg2pdf                        ports/graphics/jpeg2pdf
 jpeg2ps-a4                      ports/graphics/jpeg2ps-a4
@@ -8924,6 +8930,7 @@ migrate                         ports/biology/migrate
 mikmod                          ports/audio/mikmod
 milkytracker                    ports/audio/milkytracker
 milter-bogom                    ports/mail/milter-bogom
+milter-callback                 ports/mail/milter-callback
 milter-greylist                 ports/mail/milter-greylist
 milter-greylist-devel           ports/mail/milter-greylist-devel
 milter-manager                  ports/mail/milter-manager
@@ -13514,6 +13521,7 @@ p5-Test-MockObject              ports/devel/p5-Test-MockObject
 p5-Test-MockRandom              ports/devel/p5-Test-MockRandom
 p5-Test-MockTime                ports/devel/p5-Test-MockTime
 p5-Test-Module-Used             ports/devel/p5-Test-Module-Used
+p5-Test-More-UTF8               ports/devel/p5-Test-More-UTF8
 p5-Test-Most                    ports/devel/p5-Test-Most
 p5-Test-NoWarnings              ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta            ports/devel/p5-Test-Number-Delta
@@ -13525,6 +13533,7 @@ p5-Test-Parser                  ports/devel/p5-Test-Parser
 p5-Test-Perl-Critic             ports/textproc/p5-Test-Perl-Critic
 p5-Test-Pod                     ports/devel/p5-Test-Pod
 p5-Test-Pod-Coverage            ports/devel/p5-Test-Pod-Coverage
+p5-Test-Pod-Coverage-Permissive  ports/devel/p5-Test-Pod-Coverage-Permissive
 p5-Test-Portability-Files       ports/devel/p5-Test-Portability-Files
 p5-Test-RandomResults           ports/devel/p5-Test-RandomResults
 p5-Test-Reporter                ports/devel/p5-Test-Reporter
@@ -17275,6 +17284,7 @@ p5-test-mockobject              ports/devel/p5-Test-MockObject
 p5-test-mockrandom              ports/devel/p5-Test-MockRandom
 p5-test-mocktime                ports/devel/p5-Test-MockTime
 p5-test-module-used             ports/devel/p5-Test-Module-Used
+p5-test-more-utf8               ports/devel/p5-Test-More-UTF8
 p5-test-most                    ports/devel/p5-Test-Most
 p5-test-nowarnings              ports/devel/p5-Test-NoWarnings
 p5-test-number-delta            ports/devel/p5-Test-Number-Delta
@@ -17284,6 +17294,7 @@ p5-test-parser                  ports/devel/p5-Test-Parser
 p5-test-perl-critic             ports/textproc/p5-Test-Perl-Critic
 p5-test-pod                     ports/devel/p5-Test-Pod
 p5-test-pod-coverage            ports/devel/p5-Test-Pod-Coverage
+p5-test-pod-coverage-permissive  ports/devel/p5-Test-Pod-Coverage-Permissive
 p5-test-poe-client-tcp          ports/devel/p5-Test-POE-Client-TCP
 p5-test-poe-server-tcp          ports/devel/p5-Test-POE-Server-TCP
 p5-test-portability-files       ports/devel/p5-Test-Portability-Files
@@ -18286,6 +18297,7 @@ pear-Validate_AU                ports/devel/pear-Validate_AU
 pear-Validate_Finance           ports/devel/pear-Validate_Finance
 pear-Validate_Finance_CreditCard  ports/devel/pear-Validate_Finance_CreditCard
 pear-Var_Dump                   ports/devel/pear-Var_Dump
+pear-VersionControl_Git         ports/devel/pear-VersionControl_Git
 pear-VersionControl_SVN         ports/devel/pear-VersionControl_SVN
 pear-XML_Beautifier             ports/textproc/pear-XML_Beautifier
 pear-XML_DTD                    ports/textproc/pear-XML_DTD
@@ -18570,6 +18582,7 @@ pear-validate_au                ports/devel/pear-Validate_AU
 pear-validate_finance           ports/devel/pear-Validate_Finance
 pear-validate_finance_creditcard  ports/devel/pear-Validate_Finance_CreditCard
 pear-var_dump                   ports/devel/pear-Var_Dump
+pear-versioncontrol_git         ports/devel/pear-VersionControl_Git
 pear-versioncontrol_svn         ports/devel/pear-VersionControl_SVN
 pear-vfs                        ports/devel/pear-VFS
 pear-xml_beautifier             ports/textproc/pear-XML_Beautifier
@@ -18672,6 +18685,7 @@ pecl-vld                        ports/devel/pecl-vld
 pecl-wbxml                      ports/textproc/pecl-wbxml
 pecl-xdiff                      ports/textproc/pecl-xdiff
 pecl-xslcache                   ports/textproc/pecl-xslcache
+pecl-yaml                       ports/textproc/pecl-yaml
 pecl-yaz                        ports/net/pecl-yaz
 pecl-zip                        ports/archivers/pecl-zip
 pecomato                        ports/graphics/pecomato
@@ -22261,7 +22275,6 @@ smartdoc                        ports/textproc/smartdoc
 smartdoc-devel                  ports/textproc/smartdoc-devel
 smarteiffel                     ports/lang/smarteiffel
 smartmontools                   ports/sysutils/smartmontools
-smartmontools-devel             ports/sysutils/smartmontools-devel
 smarty                          ports/www/smarty
 smasher                         ports/audio/smasher
 smb2www                         ports/www/smb2www
