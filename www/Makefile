@@ -1346,6 +1346,7 @@
     SUBDIR += py-apachelog
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
+    SUBDIR += py-beautifulsoup30
     SUBDIR += py-bottle
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
