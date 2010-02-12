@@ -1,0 +1,4 @@
+A coroutine-based Python networking library that uses greenlet to
+provide a high-level synchronous API on top of an libevent event loop.
+
+WWW:	http://www.gevent.org/

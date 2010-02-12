@@ -2548,6 +2548,7 @@
     SUBDIR += py-generate
     SUBDIR += py-geojson
     SUBDIR += py-geotypes
+    SUBDIR += py-gevent
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
     SUBDIR += py-gobject
