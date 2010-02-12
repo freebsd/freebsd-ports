@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	1.5.4.59.40
+PORTVERSION=	2.1.0.63.73
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
-DISTNAME= ${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	oracle
 
 MAINTAINER=	jjuanino@gmail.com
@@ -21,7 +21,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_ZIP=	yes
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 
@@ -54,20 +54,17 @@ IGNORE+=		and then restart this installation\n\n
 do-install:
 	@${REINPLACE_CMD} -e 's|%DATADIR%|${DATADIR}|' \
 			  -e 's|%JAVA_HOME%|${JAVA_HOME}|' \
-	    ${WRKSRC}/sqldeveloper.sh \
-	    ${WRKSRC}/sqlcli
+	    ${WRKSRC}/sqldeveloper.sh
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!${LOCALBASE}/bin/bash|' \
 	    ${WRKSRC}/sqldeveloper.sh \
-	    ${WRKSRC}/sqlcli \
 	    ${WRKSRC}/ide/bin/launcher.sh \
 	    ${WRKSRC}/ide/bin/product-launcher.template \
 	    ${WRKSRC}/sqldeveloper/bin/sqldeveloper
 	@${ECHO_MSG} -n ">> Installing scripts..."
 	@${INSTALL_SCRIPT} ${WRKSRC}/sqldeveloper.sh ${PREFIX}/bin/sqldeveloper
-	@${INSTALL_SCRIPT} ${WRKSRC}/sqlcli ${PREFIX}/bin/sqlcli
 	@${ECHO_MSG} " [ DONE ]"
 
-.for d in BC4J dvt ide j2ee jdbc jdev jlib lib rdbms sqldeveloper timingframework
+.for d in ide j2ee jdbc jdev jlib lib modules rdbms sleepycat sqldeveloper timingframework
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	@cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-not -path "jdev/extensions/oracle.jdeveloper.subversion/licenses" \
@@ -89,7 +86,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_MAN} relnotes.html raptor_image.jpg otn_new.css ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_MAN} readme.html ${DOCSDIR}
 .endif
 
 post-install:

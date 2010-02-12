@@ -1,19 +1,12 @@
 ************************************************************************
-Note for ALL users:
-
-    The first time this version of sqldeveloper is run, it shows a splash
-    screen and a hidden prompt window behind. By mean of your window manager,
-    grab the edge, pull the window over (or move it), and answer the prompt as
-    appropiate.
-
-
 Note for Oracle users:
 
     In order to connect in a simple way to an Oracle database, it is needed to
     set ORACLE_HOME environment variable and then locate in a
-    $ORACLE_HOME/network/admin/ folder a valid tnsnames.ora services file.
+    $ORACLE_HOME/network/admin/ directory a valid tnsnames.ora services file.
     After that choose "TNS" as "Connection Type" when you are going to add a
     new connection database.
+
 
 Note for MySQL users:
     
@@ -21,6 +14,6 @@ Note for MySQL users:
     Developer where the MySQL JDBC classes are. Go to Tools -> Preferences
     menu, select Database -> Third Party JDBC Drivers and add the proper jar.
     Do not install 5.1 version of mysql jdbc connector; see
-    http://download.oracle.com/docs/cd/E12151_01/doc.150/e12153/install.htm#CIHIHDIF
+    http://download.oracle.com/docs/cd/E15846_01/doc.21/e15223/install.htm#CIHDHHHJ
 
 ************************************************************************
