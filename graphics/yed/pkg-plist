@@ -1,0 +1,4 @@
+%%DATADIR%%/yed.jar
+%%DATADIR%%/license.html
+bin/yed
+@dirrm %%DATADIR%%
