@@ -1,0 +1,8 @@
+--- configure.ac.orig	2009-06-03 15:58:43.000000000 +0700
++++ configure.ac	2009-06-03 16:05:00.000000000 +0700
+@@ -665,4 +665,4 @@
+ ])
+ 
+ dnl To avoid recompiling half of the sources because of SALOMEconfig.h recreating
+-touch -d 01Jan2007 ./salome_adm/unix/SALOMEconfig.h
++touch -t 200701010000 ./salome_adm/unix/SALOMEconfig.h

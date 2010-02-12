@@ -1,0 +1,20 @@
+--- adm_local/unix/config_files/Makefile.am.orig	2009-12-01 20:59:14.000000000 +0600
++++ adm_local/unix/config_files/Makefile.am	2010-01-05 20:29:04.000000000 +0600
+@@ -23,17 +23,12 @@
+ 
+ dist_admlocalm4_DATA =          \
+     ac_check_sizeof_fortran.m4  \
+-    check_GUI.m4                \
+     check_Med.m4                \
+     check_Med2.m4               \
+     check_bft.m4                \
+     check_fvm.m4                \
+     check_libxml.m4             \
+-    check_metis.m4              \
+-    check_opengl.m4             \
+-    check_qt.m4                 \
+     check_scotch.m4             \
+-    check_vtk.m4                \
+     med_check_sizeof_medint.m4  \
+     renumber.m4                 \
+     splitter.m4                 \
