@@ -1,4 +1,3 @@
-include/libtorrent/GeoIP.h
 include/libtorrent/alert.hpp
 include/libtorrent/alert_types.hpp
 include/libtorrent/asio/basic_datagram_socket.hpp

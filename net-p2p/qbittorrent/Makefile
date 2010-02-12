@@ -11,12 +11,11 @@ CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent
+COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
-BUILD_DEPENDS=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		GeoIP.5:${PORTSDIR}/net/GeoIP \
 		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=	yes
 
