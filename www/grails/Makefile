@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grails
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/grails/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -21,14 +21,16 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	LICENSE build.properties build.xml ant conf dist media lib \
-		scripts src
+DATAFILES=	LICENSE README build.properties build.xml ant conf cruise \
+		dist lib media plugins samples scripts src
 SCRIPTFILES=	grails grails-debug startGrails
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	api guide index.html css img ref
 .endif
-PLIST_FILES=	${SCRIPTFILES:S,^,bin/,}
+PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} \
+		${SCRIPTFILES:S,^,${DATADIR:S,${PREFIX}/,,}/bin/,}
+PLIST_DIRS=	${DATADIR:S,${PREFIX}/,,}/bin
 SUB_FILES=	set-grails_home.sed pkg-message
 
 do-install:
@@ -37,11 +39,13 @@ do-install:
 	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
 	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing executables in ${PREFIX}/bin..."
+	@${ECHO_MSG} -n ">> Installing and symlinking executables..."
+	@${MKDIR} ${DATADIR}/bin
 	@${REINPLACE_CMD} -f ${WRKDIR}/set-grails_home.sed ${WRKSRC}/bin/startGrails
 .for file in ${SCRIPTFILES}
 	@${ECHO_MSG} -n " ${file}"
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${DATADIR}/bin/${file}
+	@${LN} -fs ${DATADIR}/bin/${file} ${PREFIX}/bin/${file}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
