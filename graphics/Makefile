@@ -979,6 +979,7 @@
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yap
+    SUBDIR += yed
     SUBDIR += yukon
     SUBDIR += zgv
     SUBDIR += zimg

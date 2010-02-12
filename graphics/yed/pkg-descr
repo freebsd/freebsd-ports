@@ -1,0 +1,8 @@
+yEd is a very powerful graph editor that can be used to quickly and effectively
+generate drawings and to apply automatic layouts to a range of different
+diagrams and networks.
+yEd makes full use of the yFiles library. This is a Java class library enabling
+the viewing, editing, optimizing, drawing, and animating of a wide range
+of diagrams, networks, and other graph-like structures.
+
+WWW: http://www.yworks.com/en/products_yed_about.html
