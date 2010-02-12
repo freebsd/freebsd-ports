@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Vimana
-PORTVERSION=	2010.02301
-PORTREVISION=	1
+PORTVERSION=	2010.0421
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CO/CORNELIUS
@@ -34,7 +33,11 @@ PERL_CONFIGURE=	yes
 MAN1=		vimana.1
 MAN3=		Vimana.3 \
 		Vimana::Accessor.3 \
+		Vimana::Command::Download.3 \
+		Vimana::Command::Install.3  \
 		Vimana::Command::Installed.3 \
+		Vimana::Command::Remove.3 \
+		Vimana::Command::Search.3 \
 		Vimana::Index.3 \
 		Vimana::Installer::Auto.3 \
 		Vimana::Installer::Text.3 \
