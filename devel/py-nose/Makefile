@@ -21,6 +21,8 @@ USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 MAN1=		nosetests.1
 
+PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/nosetests.1 ${PREFIX}/man/man1
 
