@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	GData Python Client Library
 
 PROJECTHOST=	gdata-python-client
@@ -37,7 +37,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_atom-mock_service.py \
 		${FILESDIR}/extra-patch-src_gdata_tlslite-mathls.py \
 		${FILESDIR}/extra-patch-src_gdata_tlslite-messages.py \
 		${FILESDIR}/extra-patch-src_gdata_tlslite-TLSRecordLayer.py \
-		${FILESDIR}/extra-patch-src_gdata_tlslite_utils-cryptomath.py \
 		${FILESDIR}/extra-patch-src_gdata_tlslite_utils-jython_compat.py
 .endif
 

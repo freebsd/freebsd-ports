@@ -202,6 +202,15 @@
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/client.py
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/data.py
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/calendar_resource/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/client.py
 %%PYTHON_SITELIBDIR%%/gdata/client.pyc
 %%PYTHON_SITELIBDIR%%/gdata/client.pyo
@@ -582,6 +591,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar_resource
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/books
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
@@ -633,6 +643,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maps/MapsExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/2_legged_oauth.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/TwoLeggedOAuthExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_on_appengine/app.yaml
