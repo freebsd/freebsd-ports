@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${RELEASE_VERSION}.${BUILD_VERSION}
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	diablo-
@@ -53,8 +53,8 @@ LIB_DEPENDS=	z.3:${PORTSDIR}/misc/compat6x
 
 .if !defined(WITHOUT_TZUPDATE)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-TZUPDATE_VERSION=	1_3_21
-TZUPDATE_TZVERSION=	2009p
+TZUPDATE_VERSION=	1_3_25
+TZUPDATE_TZVERSION=	2009u
 TZUPDATEFILE=		tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}.zip
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${TZUPDATEFILE}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -103,11 +103,14 @@ pre-fetch:
 .if !defined(WITHOUT_TZUPDATE)
 post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${TZUPDATEFILE} -d ${WRKDIR}
+	@${UNZIP_CMD} -qo ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/tzupdater.jar -d ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/
+	@${MKDIR} ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/zi
+	@${UNZIP_CMD} -qo ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/data/tzdata${TZUPDATE_TZVERSION}.zip -d ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/zi
 
 pre-install:
 	@${ECHO_CMD} -n "Updating time zones..."
-	@${WRKSRC}/bin/java -jar \
-		${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
+	@${RM} -rf ${WRKSRC}/jre/lib/zi
+	@${MV} -f ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/zi ${WRKSRC}/jre/lib/
 	@${ECHO_CMD} "done"
 	@-${RM} -rf ${WRKSRC}/jre/lib/zi.tzdata*
 .endif
