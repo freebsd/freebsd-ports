@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2a6a966f-1774-11df-b5c1-0026189baca3">
+    <topic>fetchmail -- heap overflow on verbose X.509 display</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><ge>6.3.11</ge></range>
+	<range><lt>6.3.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2010-01.txt">
+	  <p>In verbose mode, fetchmail prints X.509 certificate subject and
+	  issuer information to the user, and counts and allocates a malloc()
+	  buffer for that purpose.</p>
+	  <p>If the material to be displayed contains characters with high bit
+	  set and the platform treats the "char" type as signed, this can cause
+	  a heap buffer overrun because non-printing characters are escaped as
+	  \xFF..FFnn, where nn is 80..FF in hex.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>38088</bid>
+      <cvename>CVE-2010-0562</cvename>
+      <url>http://www.fetchmail.info/fetchmail-SA-2010-01.txt</url>
+      <mlist msgid="20100205014643.GA25506@merlin.emma.line.org">https://lists.berlios.de/pipermail/fetchmail-announce/2010-February/000073.html</mlist>
+    </references>
+    <dates>
+      <discovery>2010-02-04</discovery>
+      <entry>2010-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb0a8795-15dc-11df-bf0a-002170daae37">
     <topic>wireshark -- LWRES vulnerability</topic>
     <affects>
