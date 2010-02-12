@@ -1,0 +1,14 @@
+adm_local/unix/config_files/check_LIGHT.m4
+include/salome/LIGHT_version.h
+lib/salome/libLIGHT.la
+lib/salome/libLIGHT.so
+lib/salome/libLIGHT.so.0
+share/salome/resources/light/LIGHT.png
+share/salome/resources/light/LIGHT_images.qm
+share/salome/resources/light/LIGHT_msg_en.qm
+share/salome/resources/light/LightApp.xml
+share/salome/resources/light/SalomeApp.xml
+share/salome/resources/light/line_icon.png
+share/salome/resources/light/paragraph_icon.png
+share/salome/resources/light/queen.txt
+@dirrm share/salome/resources/light

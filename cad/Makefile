@@ -75,6 +75,7 @@
     SUBDIR += salome-geom
     SUBDIR += salome-gui
     SUBDIR += salome-kernel
+    SUBDIR += salome-light
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += scv
