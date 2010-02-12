@@ -65,6 +65,7 @@ bin/yudit
 %%DATADIR%%/data/Hanunoo.my
 %%DATADIR%%/data/Hebrew.my
 %%DATADIR%%/data/HebrewIsraeli.my
+%%DATADIR%%/data/Hosszu.my
 %%DATADIR%%/data/Hungarian-prefix.my
 %%DATADIR%%/data/Hungarian.my
 %%DATADIR%%/data/HungarianRunes.my
@@ -133,6 +134,7 @@ bin/yudit
 %%DATADIR%%/data/Telugu-Inscript.my
 %%DATADIR%%/data/Telugu-Rts.my
 %%DATADIR%%/data/Telugu.my
+%%DATADIR%%/data/TestH.my
 %%DATADIR%%/data/Thai.my
 %%DATADIR%%/data/Tibetan-Wylie.my
 %%DATADIR%%/data/Troff.my
@@ -167,6 +169,7 @@ bin/yudit
 %%DATADIR%%/data/indic.my
 %%DATADIR%%/data/iso-646.my
 %%DATADIR%%/data/iso-8859-1.my
+%%DATADIR%%/data/iso-8859-13.my
 %%DATADIR%%/data/iso-8859-15.my
 %%DATADIR%%/data/iso-8859-16.my
 %%DATADIR%%/data/iso-8859-2.my
@@ -437,6 +440,7 @@ bin/yudit
 %%DATADIR%%/src/Telugu-Inscript.kmap
 %%DATADIR%%/src/Telugu-Rts.kmap
 %%DATADIR%%/src/Telugu.kmap
+%%DATADIR%%/src/TestH.kmap
 %%DATADIR%%/src/Thai.kmap
 %%DATADIR%%/src/Tibetan-Wylie.kmap
 %%DATADIR%%/src/Troff.kmap

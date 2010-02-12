@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	yudit
-PORTVERSION=	2.9.0
-PORTREVISION=	1
+PORTVERSION=	2.9.2
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		SUNSITE/apps/editors/X
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-lingual unicode text editor with TTF support
@@ -19,12 +17,12 @@ COMMENT=	Multi-lingual unicode text editor with TTF support
 CONFLICTS=	uniconvertor-[0-9]*
 
 USE_XORG=	x11
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LC_ALL=
 MAKE_ENV=	LC_ALL=
+MAKE_JOBS_UNSAFE=	yes
+
 MAN1=		mytool.1 uniconv.1 uniprint.1
 
 .include <bsd.port.mk>
