@@ -73,6 +73,7 @@
     SUBDIR += qmls
     SUBDIR += qucs
     SUBDIR += salome-geom
+    SUBDIR += salome-gui
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += scv
