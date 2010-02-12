@@ -567,6 +567,7 @@
     SUBDIR += queue-fix
     SUBDIR += queue-repair
     SUBDIR += quickml
+    SUBDIR += qwebirc
     SUBDIR += rabl_client
     SUBDIR += rabl_server
     SUBDIR += raysfilter
