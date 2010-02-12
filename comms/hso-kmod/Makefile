@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Driver for Option HSDPA modem
 
+CONFLICTS=	uhso-kmod-[0-9]*
+
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
 OPTIONS=	HSOCTL "Build hsoctl tool" on \
@@ -31,7 +33,7 @@ MAN4=	hso.4
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 800063
-BROKEN=	Does not build with USB2
+BROKEN=	does not build with USB2, please try comms/uhso-kmod instead
 .endif
 
 .if !defined(WITHOUT_HSOCTL)
