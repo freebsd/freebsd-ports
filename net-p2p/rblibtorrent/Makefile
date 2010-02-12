@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	rb
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client
 
+DEPRECATED=	Version is out of date
+EXPIRATION_DATE=	2010-03-15
+
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
