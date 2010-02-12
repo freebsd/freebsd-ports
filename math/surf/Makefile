@@ -7,12 +7,10 @@
 #
 
 PORTNAME=	surf
-PORTVERSION=	1.0.5
-PORTREVISION=	6
+PORTVERSION=	1.0.6
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF
 
-USE_XORG=	x11 xmu
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualize some real algebraic geometry
 
@@ -20,16 +18,23 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
+USE_XORG=	x11 xmu
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-cups --datadir=${PREFIX}/share
 
-MAN1=	surf.1
-
-.if !defined(NOPORTDOCS)
+MAN1=		${PORTNAME}.1
 PORTDOCS=	manual.sgml
-.endif
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.xpm
+PLIST_DIRS=	%%DATADIR%%
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		's|@CUPS_TRUE@|#|g ; \
+		 s|@CUPS_FALSE@||g'
 
 post-install:
 .if !defined(NOPORTDOCS)
