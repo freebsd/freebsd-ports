@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- doc/mpdconf.example.orig
-+++ doc/mpdconf.example
+--- doc/mpdconf.example.orig	2009-12-27 17:05:54.000000000 +0100
++++ doc/mpdconf.example	2010-01-17 00:14:50.000000000 +0100
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -81,11 +78,11 @@ $FreeBSD$
 -#audio_output {
 -#	type		"alsa"
 -#	name		"My ALSA Device"
--#	device		"hw:0,0"	# optional
--#	format		"44100:16:2"	# optional
--#	mixer_device	"default"	# optional
--#	mixer_control	"PCM"		# optional
--#	mixer_index	"0"		# optional
+-##	device		"hw:0,0"	# optional
+-##	format		"44100:16:2"	# optional
+-##	mixer_device	"default"	# optional
+-##	mixer_control	"PCM"		# optional
+-##	mixer_index	"0"		# optional
 -#}
 -#
  # An example of an OSS output:
