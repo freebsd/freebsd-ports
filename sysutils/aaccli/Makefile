@@ -19,7 +19,7 @@ USE_ZIP=		yes
 RESTRICTED=		May not be redistributed in binary form
 NO_CDROM=		yes
 DEPRECATED=		see sysutils/arcconf instead, no longer maintained by Adaptec
-EXPIRATION_DATE=	2009-05-11
+EXPIRATION_DATE=	2010-05-11
 
 IA32_BINARY_PORT=	yes
 PLIST=			${MASTERDIR}/pkg-plist.i386
