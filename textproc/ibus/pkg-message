@@ -32,9 +32,14 @@ export XIM_ARGS="--daemonize --xim"
 
 Following input methods/engines are available in ports:
 
+chinese/ibus-chewing		Chewing engine for IBus
 chinese/ibus-pinyin		The PinYin input method
 japanese/ibus-anthy		Anthy engine for IBus
+japanese/ibus-skk		SKK engine for IBus
 textproc/ibus-m17n		The m17n IMEngine for IBus framework
+textproc/ibus-table		Table based IM framework for IBus
+
+and QT4 input method module, textproc/ibus-qt.
 
 If ibus cannot start or the panel does not appear, please ensure
 that you are using up-to-date python.
