@@ -1,0 +1,187 @@
+%%WWWDIR%%/AUTHORS
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/bin/__init__.py
+%%WWWDIR%%/bin/cleanpyc.py
+%%WWWDIR%%/bin/compile.py
+%%WWWDIR%%/bin/dependencies.py
+%%WWWDIR%%/bin/dependencies_b.py
+%%WWWDIR%%/bin/mkstatic.py
+%%WWWDIR%%/bin/optionsgen.py
+%%WWWDIR%%/bin/pagegen.py
+%%WWWDIR%%/bin/pages.py
+%%WWWDIR%%/bin/yuicompressor-2.3.5.jar
+%%WWWDIR%%/clean.py
+%%WWWDIR%%/compile.py
+@unexec if cmp -s %D/www/qwebirc/config.py.example %D/www/qwebirc/config.py; then rm -f %D/www/qwebirc/config.py; fi
+%%WWWDIR%%/config.py.example
+@exec if [ ! -f %D/www/qwebirc/config.py ] ; then cp -p %D/%F %B/config.py; fi
+%%WWWDIR%%/css/colours.css
+%%WWWDIR%%/css/dialogs.css
+%%WWWDIR%%/css/mochaui.css
+%%WWWDIR%%/css/mochaui/content.css
+%%WWWDIR%%/css/mochaui/ui.css
+%%WWWDIR%%/css/qui.mcss
+%%WWWDIR%%/css/swmui.css
+%%WWWDIR%%/css/uglyui.css
+%%WWWDIR%%/dummyauthgate/__init__.py
+%%WWWDIR%%/js/auth.js
+%%WWWDIR%%/js/copyright.js
+%%WWWDIR%%/js/crypto.js
+%%WWWDIR%%/js/irc/baseircclient.js
+%%WWWDIR%%/js/irc/commandhistory.js
+%%WWWDIR%%/js/irc/commandparser.js
+%%WWWDIR%%/js/irc/commands.js
+%%WWWDIR%%/js/irc/ircclient.js
+%%WWWDIR%%/js/irc/ircconnection.js
+%%WWWDIR%%/js/irc/irclib.js
+%%WWWDIR%%/js/irc/irctracker.js
+%%WWWDIR%%/js/irc/numerics.js
+%%WWWDIR%%/js/jslib.js
+%%WWWDIR%%/js/md5.js
+%%WWWDIR%%/js/qwebirc.js
+%%WWWDIR%%/js/qwebircinterface.js
+%%WWWDIR%%/js/sound.js
+%%WWWDIR%%/js/ui/baseui.js
+%%WWWDIR%%/js/ui/baseuiwindow.js
+%%WWWDIR%%/js/ui/colour.js
+%%WWWDIR%%/js/ui/frontends/mochaui.js
+%%WWWDIR%%/js/ui/frontends/qui.js
+%%WWWDIR%%/js/ui/frontends/swmlayout.js
+%%WWWDIR%%/js/ui/frontends/swmui.js
+%%WWWDIR%%/js/ui/frontends/uglyui.js
+%%WWWDIR%%/js/ui/menuitems.js
+%%WWWDIR%%/js/ui/notifications.js
+%%WWWDIR%%/js/ui/panes/about.js
+%%WWWDIR%%/js/ui/panes/connect.js
+%%WWWDIR%%/js/ui/panes/embed.js
+%%WWWDIR%%/js/ui/panes/faq.js
+%%WWWDIR%%/js/ui/panes/feedback.js
+%%WWWDIR%%/js/ui/panes/options.js
+%%WWWDIR%%/js/ui/panes/privacypolicy.js
+%%WWWDIR%%/js/ui/style.js
+%%WWWDIR%%/js/ui/tabcompleter.js
+%%WWWDIR%%/js/ui/theme.js
+%%WWWDIR%%/js/ui/url.js
+%%WWWDIR%%/js/version.js
+%%WWWDIR%%/qwebirc.pdn
+%%WWWDIR%%/qwebirc.png
+%%WWWDIR%%/qwebirc/__init__.py
+%%WWWDIR%%/qwebirc/config_options.py
+%%WWWDIR%%/qwebirc/dns.py
+%%WWWDIR%%/qwebirc/engines/__init__.py
+%%WWWDIR%%/qwebirc/engines/adminengine.py
+%%WWWDIR%%/qwebirc/engines/ajaxengine.py
+%%WWWDIR%%/qwebirc/engines/authgateengine.py
+%%WWWDIR%%/qwebirc/engines/feedbackengine.py
+%%WWWDIR%%/qwebirc/engines/staticengine.py
+%%WWWDIR%%/qwebirc/ircclient.py
+%%WWWDIR%%/qwebirc/root.py
+%%WWWDIR%%/qwebirc/sigdebug.py
+%%WWWDIR%%/qwebirc/util/__init__.py
+%%WWWDIR%%/qwebirc/util/ciphers.py
+%%WWWDIR%%/qwebirc/util/gziprequest.py
+%%WWWDIR%%/qwebirc/util/hitcounter.py
+%%WWWDIR%%/qwebirc/util/rijndael.py
+%%WWWDIR%%/run.py
+%%WWWDIR%%/simplejson/__init__.py
+%%WWWDIR%%/simplejson/decoder.py
+%%WWWDIR%%/simplejson/encoder.py
+%%WWWDIR%%/simplejson/scanner.py
+%%WWWDIR%%/static/favicon.ico
+%%WWWDIR%%/static/images/empty_favicon.ico
+%%WWWDIR%%/static/images/favicon.png
+%%WWWDIR%%/static/images/hue.png
+%%WWWDIR%%/static/images/mochaui/arrow-right.gif
+%%WWWDIR%%/static/images/mochaui/bg-dropdown.gif
+%%WWWDIR%%/static/images/mochaui/bg-handle-horizontal.gif
+%%WWWDIR%%/static/images/mochaui/bg-header.gif
+%%WWWDIR%%/static/images/mochaui/bg-panel-header.gif
+%%WWWDIR%%/static/images/mochaui/collapse-expand.gif
+%%WWWDIR%%/static/images/mochaui/dock-tabs.gif
+%%WWWDIR%%/static/images/mochaui/handle-icon-horizontal.gif
+%%WWWDIR%%/static/images/mochaui/handle-icon.gif
+%%WWWDIR%%/static/images/mochaui/icons/48x48/camera.png
+%%WWWDIR%%/static/images/mochaui/icons/48x48/globe.png
+%%WWWDIR%%/static/images/mochaui/icons/48x48/headset.png
+%%WWWDIR%%/static/images/mochaui/icons/48x48/speaker.png
+%%WWWDIR%%/static/images/mochaui/icons/48x48/view.png
+%%WWWDIR%%/static/images/mochaui/icons/cog.gif
+%%WWWDIR%%/static/images/mochaui/icons/page.gif
+%%WWWDIR%%/static/images/mochaui/icons/page_green.gif
+%%WWWDIR%%/static/images/mochaui/icons/page_red.gif
+%%WWWDIR%%/static/images/mochaui/icons/sheet.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/I.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/L.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/Lminus.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/Lplus.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/Rminus.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/Rplus.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/T.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/Tminus.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/Tplus.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/_closed.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/_doc.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/_open.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/minus.gif
+%%WWWDIR%%/static/images/mochaui/icons/tree/plus.gif
+%%WWWDIR%%/static/images/mochaui/icons/windows.gif
+%%WWWDIR%%/static/images/mochaui/knob.gif
+%%WWWDIR%%/static/images/mochaui/logo-blank.gif
+%%WWWDIR%%/static/images/mochaui/logo.gif
+%%WWWDIR%%/static/images/mochaui/logo2.gif
+%%WWWDIR%%/static/images/mochaui/slider-area.gif
+%%WWWDIR%%/static/images/mochaui/spacer.gif
+%%WWWDIR%%/static/images/mochaui/spinner-placeholder.gif
+%%WWWDIR%%/static/images/mochaui/spinner.gif
+%%WWWDIR%%/static/images/mochaui/tabs.gif
+%%WWWDIR%%/static/images/mochaui/toolbox-divider.gif
+%%WWWDIR%%/static/images/mochaui/toolbox-divider2.gif
+%%WWWDIR%%/static/images/qwebircsmall.png
+%%WWWDIR%%/static/images/simej.jpg
+%%WWWDIR%%/static/js/mochaui/excanvas-compressed.js
+%%WWWDIR%%/static/js/mochaui/mocha-compressed.js
+%%WWWDIR%%/static/js/mochaui/mocha.js
+%%WWWDIR%%/static/js/mootools-1.2-more-nc.js
+%%WWWDIR%%/static/js/mootools-1.2-more.js
+%%WWWDIR%%/static/js/mootools-1.2.1-core-nc.js
+%%WWWDIR%%/static/js/mootools-1.2.1-core.js
+%%WWWDIR%%/static/js/soundmanager2-nodebug-jsmin.js
+%%WWWDIR%%/static/js/soundmanager2.js
+%%WWWDIR%%/static/panes/about.html
+%%WWWDIR%%/static/panes/faq.html
+%%WWWDIR%%/static/panes/feedback.html
+%%WWWDIR%%/static/robots.txt
+%%WWWDIR%%/static/sound/beep.mp3
+%%WWWDIR%%/static/sound/beep2.mp3
+%%WWWDIR%%/static/sound/beep2.wav
+%%WWWDIR%%/static/sound/beep3.mp3
+%%WWWDIR%%/static/sound/beep3.wav
+%%WWWDIR%%/static/sound/soundmanager2.swf
+%%WWWDIR%%/static/sound/soundmanager2_flash9.swf
+%%WWWDIR%%/twisted/plugins/webirc.py
+@dirrm %%WWWDIR%%/twisted/plugins
+@dirrm %%WWWDIR%%/twisted
+@dirrm %%WWWDIR%%/static/sound
+@dirrm %%WWWDIR%%/static/panes
+@dirrm %%WWWDIR%%/static/js/mochaui
+@dirrm %%WWWDIR%%/static/js
+@dirrm %%WWWDIR%%/static/images/mochaui/icons/tree
+@dirrm %%WWWDIR%%/static/images/mochaui/icons/48x48
+@dirrm %%WWWDIR%%/static/images/mochaui/icons
+@dirrm %%WWWDIR%%/static/images/mochaui
+@dirrm %%WWWDIR%%/static/images
+@dirrm %%WWWDIR%%/static
+@dirrm %%WWWDIR%%/simplejson
+@dirrm %%WWWDIR%%/qwebirc/util
+@dirrm %%WWWDIR%%/qwebirc/engines
+@dirrm %%WWWDIR%%/qwebirc
+@dirrm %%WWWDIR%%/js/ui/panes
+@dirrm %%WWWDIR%%/js/ui/frontends
+@dirrm %%WWWDIR%%/js/ui
+@dirrm %%WWWDIR%%/js/irc
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/dummyauthgate
+@dirrm %%WWWDIR%%/css/mochaui
+@dirrm %%WWWDIR%%/css
+@dirrm %%WWWDIR%%/bin
+@dirrm %%WWWDIR%%
