@@ -72,6 +72,7 @@
     SUBDIR += qfsm
     SUBDIR += qmls
     SUBDIR += qucs
+    SUBDIR += salome
     SUBDIR += salome-geom
     SUBDIR += salome-gui
     SUBDIR += salome-kernel
