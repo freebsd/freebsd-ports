@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	swaks
-PORTVERSION=	20061116.0
+PORTVERSION=	20100211.0
 CATEGORIES=	mail
-MASTER_SITES=	http://jetmore.org/john/code/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=
+MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Swiss Army Knife SMTP transaction tester
@@ -37,14 +35,9 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Ne
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Authen/NTLM.pm:${PORTSDIR}/security/p5-Authen-NTLM
 .endif
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}
-
 do-build:
 	@${SED} -e '1s|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/${DISTNAME} > ${WRKSRC}/${PORTNAME}.pl
+		${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.pl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
