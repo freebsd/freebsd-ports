@@ -545,6 +545,7 @@ share/locale/pt_BR/LC_MESSAGES/gretl.mo
 share/locale/ru/LC_MESSAGES/gretl.mo
 share/locale/tr/LC_MESSAGES/gretl.mo
 share/locale/zh_TW/LC_MESSAGES/gretl.mo
+share/mime/packages/gretl.xml
 share/mime-info/gretl.keys
 share/mime-info/gretl.mime
 share/pixmaps/gnome-application-x-gretldata.png
@@ -569,3 +570,5 @@ share/pixmaps/gretl.xpm
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

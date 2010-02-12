@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.8.6
-PORTREVISION=	1
+PORTVERSION=	1.8.7
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -32,7 +31,7 @@ CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake --without-gnome
 ALL_TARGET=	# empty
 USE_LDCONFIG=	yes
 
-MAN1=		gretl.1 gretl-config.1
+MAN1=		gretl.1
 
 USE_FORTRAN=	yes
 CONFIGURE_ENV+=	LAPACK_LIBS="${BLAS} ${LAPACK} -l${FORTRANRUNTIME}"
@@ -76,6 +75,10 @@ post-install:
 .for file in gretl.desktop
 	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/applications
 .endfor
+	@${MKDIR} ${PREFIX}/share/mime/packages
+.for file in gretl.xml
+	${INSTALL_DATA} ${WRKSRC}/xdg/${file} ${PREFIX}/share/mime/packages
+.endfor
 	@${MKDIR} ${PREFIX}/share/mime-info
 .for file in gretl.keys gretl.mime
 	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/mime-info
@@ -87,5 +90,6 @@ post-install:
 .for file in gretl-logo.xpm gretl.xpm
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/${file} ${PREFIX}/share/pixmaps
 .endfor
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>

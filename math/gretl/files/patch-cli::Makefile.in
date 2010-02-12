@@ -1,8 +1,8 @@
---- cli/Makefile.in.orig	2009-08-17 22:00:41.000000000 +0900
-+++ cli/Makefile.in	2009-10-29 22:57:08.000000000 +0900
-@@ -16,6 +16,10 @@
- READLINE_LIBS = @READLINE_LIBS@
- READLINE_CFLAGS = @READLINE_CFLAGS@
+--- cli/Makefile.in.orig	2009-12-31 01:24:50.000000000 +0900
++++ cli/Makefile.in	2010-02-02 03:05:49.000000000 +0900
+@@ -18,6 +18,10 @@
+ 
+ quiet_build = @quiet_build@
  
 +CPPFLAGS = @CPPFLAGS@
 +LDFLAGS = @LDFLAGS@
@@ -11,7 +11,7 @@
  ifeq ($(CC),)
    CC = gcc
  endif
-@@ -41,10 +45,10 @@
+@@ -52,10 +56,10 @@
  
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
  
@@ -23,13 +23,13 @@
 +LIBTOOL = @LIBTOOL@
  
  %.o: %.c
- 	$(CC) -c $(CFLAGS) $<
-@@ -52,7 +56,7 @@
- 
+ 	$(CCECHO)
+@@ -65,7 +69,7 @@
  $(CLI): .deps $(OBJS)
- 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) $(OBJS) $(GRETLLIB) \
+ 	$(LDECHO)
+ 	$(AMP)$(LIBTOOL) --mode=link $(CCV) -o $@ $(LDFLAGS) $(OBJS) $(GRETLLIB) \
 -	$(READLINE_LIBS)
 +	$(READLINE_LIBS) $(INTL_LIBS)
  
  .deps:
- 	mkdir $@
+ 	$(AMP)mkdir $@
