@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 DISTFILES=	# none
 
-MAINTAINER=	andreas_and_joe@tao.org.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System configuration management utility to alter system personality
 
 WRKSRC=		${WRKDIR}/src
