@@ -1,5 +1,5 @@
 --- Makefile.orig	2009-07-02 12:00:44.000000000 -0700
-+++ Makefile	2009-11-07 12:51:25.000000000 -0800
++++ Makefile	2010-02-09 22:13:14.000000000 -0800
 @@ -1,51 +1,34 @@
 -BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel
 +BINS=isutf8 ifne pee sponge mispipe lckdo parallel

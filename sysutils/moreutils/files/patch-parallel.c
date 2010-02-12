@@ -1,6 +1,6 @@
---- parallel.c.orig	2009-07-25 00:59:37.000000000 -0700
-+++ parallel.c	2009-09-19 15:41:07.000000000 -0700
-@@ -64,6 +64,7 @@
+--- parallel.c.orig	2010-02-09 12:39:08.000000000 -0800
++++ parallel.c	2010-02-09 22:27:25.000000000 -0800
+@@ -76,6 +76,7 @@
  	return;
  }
  
@@ -8,21 +8,22 @@
  int wait_for_child(int options) {
  	id_t id_ignored = 0;
  	siginfo_t infop;
-@@ -76,6 +77,17 @@
+@@ -88,6 +89,18 @@
  		return infop.si_status;
  	return 1;
  }
 +#else
 +int wait_for_child(int options) {
-+	int status;
++   int status;
 +
-+	if(waitpid(-1, &status, options) == -1)
-+		return -1; /* nothing to wait for */
-+	if(WIFEXITED(status))
-+			return WEXITSTATUS(status);
-+	return 1;
++   if(waitpid(-1, &status, options) == -1)
++       return -1; /* nothing to wait for */
++   if(WIFEXITED(status))
++           return WEXITSTATUS(status);
++   return 1;
 +}
 +#endif
++
  
  int main(int argc, char **argv) {
  	int maxjobs = -1;
