@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gupnp-av
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.gupnp.org/sources/${PORTNAME}/
 
