@@ -81,6 +81,7 @@
     SUBDIR += salome-randomizer
     SUBDIR += salome-sierpinsky
     SUBDIR += salome-smesh
+    SUBDIR += salome-visu
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += scv
