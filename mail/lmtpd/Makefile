@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lmtpd
-PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTVERSION=	0.10.7
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll/${PORTNAME}/${PORTVERSION}
 
@@ -96,9 +95,6 @@ post-patch:
 		${REINPLACE_CMD}-e 's;in db4;in ${BDB_LIB_NAME};g' \
 			${WRKSRC}/configure ; \
 	fi
-.endif
-.if defined(WITH_TRE)
-	@${REINPLACE_CMD} -e "s|tre_r|libmtpd_&|g" ${WRKSRC}/re/re-tre.c
 .endif
 
 post-install:
