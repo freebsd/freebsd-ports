@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	2009-11-26 06:07:31.000000000 +0900
-+++ lib/Makefile.in	2009-12-04 04:04:23.000000000 +0900
-@@ -33,6 +33,10 @@
+--- lib/Makefile.in.orig	2009-12-31 01:22:21.000000000 +0900
++++ lib/Makefile.in	2010-02-02 03:11:21.000000000 +0900
+@@ -34,6 +34,10 @@
    RPATH = $(DARWIN_RPATH)
  endif
  
@@ -11,18 +11,16 @@
  ifeq ($(INSTALL_PROGRAM),)
    INSTALL_PROGRAM = $(INSTALL) -m 755
  endif
-@@ -47,7 +51,7 @@
+@@ -56,14 +60,14 @@
+ # Installation directories
  libdir = $(prefix)/lib
  includedir = $(prefix)/include/gretl
- aclocaldir = $(prefix)/share/aclocal
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  
- INSTALLDIRS = $(DESTDIR)$(libdir) $(DESTDIR)$(includedir) $(DESTDIR)$(aclocaldir)
+ INSTALLDIRS = $(DESTDIR)$(libdir) $(DESTDIR)$(includedir) $(DESTDIR)$(pkgconfigdir)
  
-@@ -60,8 +64,8 @@
-   INSTALL_CFG = install-cfg-old
- endif
+ LIBGRETL = libgretl-1.0.la 
  
 -LIBS = $(LAPACK_LIBS) -lm -ldl -lz $(XML_LIBS) \
 -	$(GLIB_LIBS) $(GMP_LIBS) $(FFTW_LIBS)
@@ -31,7 +29,7 @@
  
  #### End of system configuration section. ####
  
-@@ -230,10 +234,10 @@
+@@ -232,10 +236,10 @@
  LOBJS = $(SRCS:.c=.lo)
  AUX_LOBJ = $(CEPHES_SRC:.c=.lo) $(MINPACK_SRC:.c=.lo)
  
@@ -42,14 +40,14 @@
 -	$(GMP_CFLAGS) $(FFTW_CFLAGS) $(RLIB_CFLAGS) -DHAVE_CONFIG_H
 +	$(GMP_CFLAGS) $(FFTW_CFLAGS) $(RLIB_CFLAGS) $(CPPFLAGS) -DHAVE_CONFIG_H
  
- COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
+ COMPILE = $(LIBTOOL) --mode=compile $(CCV) -c $(CFLAGS) 
  
-@@ -242,7 +246,7 @@
- 	$(CC) $(CFLAGS) -MM -MT $*.lo $< > .deps/$*.d
+@@ -246,7 +250,7 @@
  
  $(LIBGRETL): .deps $(LOBJS) $(AUX_LOBJ)
--	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(AUX_LOBJ) \
-+	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $(LOBJS) $(AUX_LOBJ) \
+ 	$(LDECHO)
+-	$(AMP)$(LIBTOOL) --mode=link $(CCV) -o $@ $(LOBJS) $(AUX_LOBJ) \
++	$(AMP)$(LIBTOOL) --mode=link $(CCV) $(LDFLAGS) -o $@ $(LOBJS) $(AUX_LOBJ) \
  	-rpath $(RPATH) $(LIBS) -version-info $(CURRENT):$(REVISION):$(AGE)
  
  .deps:
