@@ -45,6 +45,7 @@
     SUBDIR += font-cursor-misc
     SUBDIR += font-daewoo-misc
     SUBDIR += font-dec-misc
+    SUBDIR += font-gost
     SUBDIR += font-ibm-type1
     SUBDIR += font-isas-misc
     SUBDIR += font-jis-misc
