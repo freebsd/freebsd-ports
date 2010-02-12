@@ -174,6 +174,7 @@
     SUBDIR += drupal6-geshifilter
     SUBDIR += drupal6-google_analytics
     SUBDIR += drupal6-image
+    SUBDIR += drupal6-imce
     SUBDIR += drupal6-menu_block
     SUBDIR += drupal6-mimedetect
     SUBDIR += drupal6-nice_menus
