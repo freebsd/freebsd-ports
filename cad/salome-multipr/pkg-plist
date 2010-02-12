@@ -1,0 +1,34 @@
+adm_local/unix/config_files/check_MULTIPR.m4
+bin/salome/myrunSalome.py
+bin/salome/runAppli
+idl/salome/MULTIPR.idl
+include/salome/MULTIPR.hh
+include/salome/MULTIPR_GUI.h
+include/salome/MULTIPR_GUI_Dlg.h
+include/salome/MULTIPR_i.hxx
+include/salome/MULTIPR_version.h
+%%PYTHON_SITELIBDIR%%/salome/MULTIPR_ORB/__init__.py
+%%PYTHON_SITELIBDIR%%/salome/MULTIPR_ORB__POA/__init__.py
+%%PYTHON_SITELIBDIR%%/salome/MULTIPR_idl.py
+lib/salome/libMULTIPR.la
+lib/salome/libMULTIPR.so
+lib/salome/libMULTIPR.so.0
+lib/salome/libMULTIPREngine.la
+lib/salome/libMULTIPREngine.so
+lib/salome/libMULTIPREngine.so.0
+lib/salome/libSalomeIDLMULTIPR.la
+lib/salome/libSalomeIDLMULTIPR.so
+lib/salome/libSalomeIDLMULTIPR.so.0
+share/doc/salome/CSSI_DRV_EDF-IOLS-MULTIPR_spec-conception_1_1.pdf
+share/salome/resources/multipr/ExecMULTIPR.png
+share/salome/resources/multipr/MULTIPR.png
+share/salome/resources/multipr/MULTIPRCatalog.xml
+share/salome/resources/multipr/MULTIPR_icons.qm
+share/salome/resources/multipr/MULTIPR_import_med.png
+share/salome/resources/multipr/MULTIPR_msg_en.qm
+share/salome/resources/multipr/MULTIPR_msg_fr.qm
+share/salome/resources/multipr/MULTIPR_save_med.png
+share/salome/resources/multipr/SalomeApp.xml
+@dirrm share/salome/resources/multipr
+@dirrm %%PYTHON_SITELIBDIR%%/salome/MULTIPR_ORB__POA
+@dirrm %%PYTHON_SITELIBDIR%%/salome/MULTIPR_ORB

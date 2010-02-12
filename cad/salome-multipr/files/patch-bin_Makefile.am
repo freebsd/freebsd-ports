@@ -1,0 +1,9 @@
+--- bin/Makefile.am.orig	2010-01-07 13:08:40.000000000 +0600
++++ bin/Makefile.am	2010-01-07 13:08:55.000000000 +0600
+@@ -31,5 +31,4 @@
+ nodist_salomescript_SCRIPTS = \
+         runAppli
+ 
+-nodist_salomescript_DATA = \
+-	VERSION
++nodist_salomescript_DATA =
