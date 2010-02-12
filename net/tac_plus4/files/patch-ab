@@ -1,10 +1,30 @@
---- tac_plus.h.orig	Tue Dec 12 19:43:08 2006
-+++ tac_plus.h	Sat Jun 30 02:07:03 2007
-@@ -731,6 +731,7 @@ int sendpass_fn(struct authen_data *data
+--- tac_plus.h.orig	2009-07-27 20:11:53.000000000 -0400
++++ tac_plus.h	2010-02-12 18:13:49.000000000 -0500
+@@ -86,6 +86,7 @@
+ #ifdef FREEBSD
+ #define CONST_SYSERRLIST
+ #define NO_PWAGE
++#include <sys/param.h>
+ #endif
+ 
+ #ifdef BSDI
+@@ -138,7 +139,11 @@
+ # include <sys/syslog.h>
+ #endif
+ 
++#if defined(FREEBSD) && __FreeBSD_version >= 900007
++#include <utmpx.h>
++#else
+ #include <utmp.h>
++#endif
+ 
+ #include <unistd.h>
+ 
+@@ -655,6 +660,7 @@ int sendpass_fn(struct authen_data *data
  int enable_fn(struct authen_data *data);
  int default_v0_fn(struct authen_data *data);
  int skey_fn(struct authen_data *data);
 +int opie_fn(struct authen_data *data);
  
  #ifdef MAXSESS
- extern void loguser(struct acct_rec *);
+ void loguser(struct acct_rec *);
