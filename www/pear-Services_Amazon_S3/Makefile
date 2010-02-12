@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Amazon_S3
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
