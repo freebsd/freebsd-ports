@@ -78,6 +78,7 @@
     SUBDIR += salome-light
     SUBDIR += salome-med
     SUBDIR += salome-multipr
+    SUBDIR += salome-randomizer
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += scv

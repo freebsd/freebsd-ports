@@ -1,0 +1,15 @@
+adm_local/unix/config_files/check_RANDOMIZER.m4
+bin/salome/RANDOMIZER.py
+idl/salome/Randomizer.idl
+include/salome/Randomizer.hh
+%%PYTHON_SITELIBDIR%%/salome/RANDOMIZER_ORB/__init__.py
+%%PYTHON_SITELIBDIR%%/salome/RANDOMIZER_ORB__POA/__init__.py
+%%PYTHON_SITELIBDIR%%/salome/Randomizer_idl.py
+lib/salome/libSalomeIDLRANDOMIZER.la
+lib/salome/libSalomeIDLRANDOMIZER.so
+lib/salome/libSalomeIDLRANDOMIZER.so.0
+share/salome/resources/randomizer/RANDOMIZERCatalog.xml
+share/salome/resources/randomizer/SalomeApp.xml
+@dirrm share/salome/resources/randomizer
+@dirrm %%PYTHON_SITELIBDIR%%/salome/RANDOMIZER_ORB__POA
+@dirrm %%PYTHON_SITELIBDIR%%/salome/RANDOMIZER_ORB
