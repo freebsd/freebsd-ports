@@ -7,7 +7,7 @@
 
 PORTNAME=	libgpod
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -43,7 +43,7 @@ PLIST_SUB+=	PYTHON="@comment "
 # SysInfo detection utility is required in order to support iPod classic
 # and nano 3G
 .if defined(WITH_TOOLS) || exists(${LOCALBASE}/lib/libsgutils.so)
-LIB_DEPENDS+=	sgutils.1:${PORTSDIR}/sysutils/sg3_utils
+LIB_DEPENDS+=	sgutils2.2:${PORTSDIR}/sysutils/sg3_utils
 PLIST_FILES+=	bin/ipod-read-sysinfo-extended
 .endif
 
