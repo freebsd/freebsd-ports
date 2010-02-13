@@ -204,5 +204,3 @@ share/devhelp/books/vala/vala.devhelp2
 @dirrmtry share/devhelp
 %%VAPIGEN%%@dirrm lib/vala
 @dirrm include/vala-1.0
-@dirrmtry %%DATADIR%%/vapi
-@dirrmtry %%DATADIR%%
