@@ -1,0 +1,4 @@
+bin/twitmail
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/twitmail/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/twitmail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
