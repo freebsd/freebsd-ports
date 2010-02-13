@@ -11,7 +11,7 @@
 
 package-rename:
 	@${ECHO_MSG} "===>   Rename package for OpenOffice.org mirror upload";
-	@${MV} ${PKGFILE} \
+	@${LN} ${PKGFILE} \
 		${WRKDIR}/../${PACKAGE_BASENAME}_install_${LOCALIZED_LANG}${PKG_SUFX}
 
 package-canonical:
