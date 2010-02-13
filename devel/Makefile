@@ -2582,6 +2582,7 @@
     SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-mez_xml
+    SUBDIR += py-mongokit
     SUBDIR += py-mox
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
