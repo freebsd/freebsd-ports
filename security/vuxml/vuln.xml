@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0a82ac0c-1886-11df-b0d1-0015f2db7bde">
+    <topic>gnome-screensaver -- Multiple monitor hotplug issues</topic>
+    <affects>
+      <package>
+	<name>gnome-screensaver</name>
+	<range><lt>2.28.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ray Strode reports:</p>
+	<blockquote cite="https://bugzilla.gnome.org/show_bug.cgi?id=609337">
+	  <p>Under certain circumstances it is possible to circumvent the security of screen
+	   locking functionality of gnome-screensaver by changing the systems physical
+	   monitor configuration.</p>
+	</blockquote>
+	<blockquote cite="https://bugzilla.gnome.org/show_bug.cgi?id=609789">
+	  <p>gnome-screensaver can lose its keyboard grab when locked, exposing the system
+	   to intrusion by adding and removing monitors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0414</cvename>
+      <cvename>CVE-2010-0422</cvename>
+      <url>https://bugzilla.gnome.org/show_bug.cgi?id=609337</url>
+      <url>https://bugzilla.gnome.org/show_bug.cgi?id=609789</url>
+    </references>
+    <dates>
+      <discovery>2010-02-08</discovery>
+      <entry>2010-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a6a966f-1774-11df-b5c1-0026189baca3">
     <topic>fetchmail -- heap overflow on verbose X.509 display</topic>
     <affects>
