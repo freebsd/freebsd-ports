@@ -1,0 +1,24 @@
+The goal of this Java API is to display mathematical formulas written in
+LaTeX. The default encoding is UTF-8.
+
+The most of LaTeX commands are available and :
+
+ 1) macros from amsmath and symbols from amssymb and stmaryrd;
+ 2) \includegraphics (without options);
+ 3) the TeX macro \over;
+ 4) accents from amsxtra package;
+ 5) the macros \definecolor, \textcolor, \colorbox and \fcolorbox from the
+    package color;
+ 6) the macros \rotatebox, \reflectbox and \scalebox from the package graphicx;
+ 7) the most of latin unicode characters are available and cyrillic or
+    greek characters are detected for the loading of the different fonts;
+ 8) the commands \newcommand and \newenvironment;
+ 9) the environments array, matrix, pmatrix,..., eqnarray, cases;
+10) the fonts are embedded in the jar file to be used by fop 0.95 to generate
+    PDF, PS or EPS (SVG export with shaped fonts works fine too);
+11) and probably other things I forgot...
+
+There is no dependency and no external programs to install : JLaTeXMath is
+fully functional by itself.
+
+WWW: http://forge.scilab.org/index.php/p/jlatexmath/

@@ -1,0 +1,26 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example1.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example2.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example3.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example4.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Main.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/lion.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Convert.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Example1.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Example2.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Example3.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Example4.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Main.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/lion.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/FooPackage.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/Main.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/Package_Foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/README
+share/java/classes/jlatexmath-0.8.9.jar
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Macros/bin
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Macros
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Export
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Basic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/Macros/bin
