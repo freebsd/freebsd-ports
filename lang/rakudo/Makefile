@@ -33,7 +33,7 @@ LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 BROKEN=	internal gcc bugs 
 .endif
 
-.if ${ARCH} == 'i386'  && ${OSVERSION} >= 800000 && ${OSVERSION} <= 900000
+.if ${OSVERSION} >= 800000 && ${OSVERSION} <= 900000
 BROKEN=	internal gcc bugs 
 .endif
 
