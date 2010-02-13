@@ -33,6 +33,7 @@
     SUBDIR += esmska
     SUBDIR += fldigi
     SUBDIR += gammu
+    SUBDIR += gammu-devel
     SUBDIR += garmin-utils
     SUBDIR += geoid
     SUBDIR += ghfaxviewer
