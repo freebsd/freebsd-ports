@@ -23,12 +23,12 @@ USE_PYTHON=	yes
 NAME=		irc
 DATADIR=	${PREFIX}/share/gdesklets
 LANG=		ko
-PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${NAME}
+SUB_FILES=	pkg-message
+SUB_LIST=	NAME=${NAME}
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${DATADIR}/Displays/${NAME}/gfx
