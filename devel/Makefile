@@ -2553,6 +2553,7 @@
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
     SUBDIR += py-gobject
+    SUBDIR += py-greenlet
     SUBDIR += py-grouch
     SUBDIR += py-hashring
     SUBDIR += py-icalendar
