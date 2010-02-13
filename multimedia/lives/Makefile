@@ -7,7 +7,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
-		mjpegutils-1.9.1:${PORTSDIR}/multimedia/mjpegtools
+		mjpegutils-1.9.0:${PORTSDIR}/multimedia/mjpegtools
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \

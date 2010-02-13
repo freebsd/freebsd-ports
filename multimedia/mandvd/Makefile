@@ -7,7 +7,7 @@
 
 PORTNAME=	mandvd
 DISTVERSION=	2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/FTP/
 DISTNAME=	ManDVD
@@ -24,7 +24,7 @@ RUN_DEPENDS=	dvd-slideshow>=0.7.5:${PORTSDIR}/multimedia/dvd-slideshow \
 		xine>0.99.4:${PORTSDIR}/multimedia/xine \
 		lame>=3.97:${PORTSDIR}/audio/lame \
 		dvdauthor>=0.6.11:${PORTSDIR}/multimedia/dvdauthor \
-		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
+		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools \
 		netpbm-devel>10.29:${PORTSDIR}/graphics/netpbm-devel \
 		ImageMagick>=6.2.4:${PORTSDIR}/graphics/ImageMagick \
 		transcode>=1.0.2:${PORTSDIR}/multimedia/transcode \

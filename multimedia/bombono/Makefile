@@ -7,7 +7,7 @@
 
 PORTNAME=	bombono
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/bombono/bombono-dvd/${PORTVERSION} \
 		http://www.stasyan.com/devel/distfiles/
@@ -19,10 +19,10 @@ COMMENT=	DVD authoring program
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26
 BUILD_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
-		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
+		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
-		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
+		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
 		dvda-author:${PORTSDIR}/audio/dvda-author \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \

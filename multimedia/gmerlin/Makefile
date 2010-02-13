@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -138,7 +138,7 @@ PLIST_SUB+=	TIFF="@comment "
 .endif
 
 .if !defined(WITHOUT_MJPEGTOOLS)
-LIB_DEPENDS+=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-1.9.0:${PORTSDIR}/multimedia/mjpegtools
 .else
 CONFIGURE_ARGS+=--disable-mjpegtools
 .endif
