@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
@@ -195,7 +195,7 @@ CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
 .if defined(WITH_MJPEG)
-LIB_DEPENDS+=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-1.9.0:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--with-mjpegtools-prefix=${LOCALBASE} --enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools
