@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff6519ad-18e5-11df-9bdd-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>9.0r262</lt></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.0r45</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb10-06.html">
+	  <p>A critical vulnerability has been identified in Adobe
+	    Flash Player version 10.0.42.34 and earlier. This
+	    vulnerability (CVE-2010-0186) could subvert the domain sandbox
+	    and make unauthorized cross-domain requests. This update also
+	    resolves a potential Denial of Service issue (CVE-2010-0187).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0186</cvename>
+      <cvename>CVE-2010-0187</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb10-06.html</url>
+    </references>
+    <dates>
+      <discovery>2010-02-11</discovery>
+      <entry>2010-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a82ac0c-1886-11df-b0d1-0015f2db7bde">
     <topic>gnome-screensaver -- Multiple monitor hotplug issues</topic>
     <affects>
