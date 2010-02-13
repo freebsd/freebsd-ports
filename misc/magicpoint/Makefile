@@ -7,7 +7,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -47,7 +47,7 @@ SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREETYPE)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=		ttf.4:${PORTSDIR}/print/freetype
 CONFIGURE_ARGS+=	--enable-freetype \
 			--enable-freetype-charset16
 .else
