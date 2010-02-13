@@ -29,15 +29,13 @@ CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
 DOCSDIR=		${PREFIX}/share/doc/HTML/en/${PORTNAME}
-MESSAGE=		${WRKDIR}/pkg-message
+SUB_FILES=		pkg-message
 
 post-install:
 .for i in smb2awk smb2nsmbrc
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
-
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE} > ${MESSAGE}
-	@${CAT} ${MESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
