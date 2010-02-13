@@ -7,6 +7,7 @@
 
 PORTNAME=	gtg
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome python
 MASTER_SITES=	http://launchpad.net/gtg/0.2/${PORTVERSION}/+download/
 
@@ -19,10 +20,20 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
 
 FETCH_ARGS=	-pRr
 USE_GNOME=	pygtk2 desktopfileutils
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
 MAN1=		gtg.1 gtg_new_task.1
+
+OPTIONS=	CHEETAH "Needed for export plugin to work" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_CHEETAH)
+RUN_DEPENDS+=${LOCALBASE}/bin/cheetah:${PORTSDIR}/devel/py-cheetah
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
@@ -33,4 +44,4 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
