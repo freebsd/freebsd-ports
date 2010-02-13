@@ -261,6 +261,7 @@
     SUBDIR += sdl_gui
     SUBDIR += sdl_pango
     SUBDIR += shared-desktop-ontologies
+    SUBDIR += skinlf
     SUBDIR += slgtk
     SUBDIR += slgtkdatabox
     SUBDIR += slingshot
