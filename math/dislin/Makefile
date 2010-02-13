@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	9.5
-PORTREVISION=	2
+PORTVERSION=	10.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -19,7 +18,6 @@ COMMENT=	A scientific data plotting package
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
 
 RESTRICTED=	free for non-commercial use.
-ONLY_FOR_ARCHS=	i386
 USE_XORG=	x11
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
