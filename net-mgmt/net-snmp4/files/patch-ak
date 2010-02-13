@@ -1,0 +1,21 @@
+--- agent/Makefile.in.orig	Sun Nov 19 12:58:06 2000
++++ agent/Makefile.in	Wed Jan 17 18:37:02 2001
+@@ -68,10 +68,18 @@
+ 
+ libucdagent.$(LIB_EXTENSION)$(LIB_VERSION):    ${LLIBAGENTOBJS} libucdmibs.$(LIB_EXTENSION)$(LIB_VERSION)
+ 	$(LIB_LD_CMD) libucdagent.$(LIB_EXTENSION)$(LIB_VERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
++	ld -Bshareable -soname libucdagent.$(LIB_EXTENSION)$(LIB_VERSION) \
++		-o libucdagent.so ${LIBAGENTOBJS}
++	ln -f libucdagent.so \
++		../libucdagent.so.4
+ 	$(RANLIB) libucdmibs.$(LIB_EXTENSION)$(LIB_VERSION)
+ 
+ libucdmibs.$(LIB_EXTENSION)$(LIB_VERSION):    ${LMIBOBJS}
+ 	$(LIB_LD_CMD) libucdmibs.$(LIB_EXTENSION)$(LIB_VERSION) ${LMIBOBJS}  $(LIB_LD_LIBS)
++	ld -Bshareable -soname libucdmibs.so.4 \
++		-o libucdmibs.so ${MIBOBJS}
++	ln -f libucdmibs.so \
++		../libucdmibs.so.4
+ 	$(RANLIB) libucdmibs.$(LIB_EXTENSION)$(LIB_VERSION)
+ 
+ clean:
