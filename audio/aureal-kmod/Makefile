@@ -36,6 +36,12 @@ WRKSRC=		${WRKDIR}
 MAKE_ENV=	WRKSRC="${WRKSRC}"
 MAKE_ARGS=	KMODDIR="${KMODDIR}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		doesn't build on RELENG_8
+.endif
+
 # Make sure kernel sources are present before going any further
 .if ! exists(${SRCPREFIX}/sys/dev/sound/pcm/sound.c)
 IGNORE=	you need to extract kernel source tree before building this package
@@ -64,4 +70,4 @@ pre-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
