@@ -22,7 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
 NO_BUILD=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	APP_HOME=${APP_HOME}
 APP_HOME=	${PREFIX}/eclipse/plugins/${PORTNAME}_${PORTVERSION}
 
 .if defined(WITH_PROGUARD)
@@ -34,6 +35,6 @@ do-install:
 	@${CP} -R ${WRKSRC}/${PORTNAME}_${PORTVERSION} ${PREFIX}/eclipse/plugins/
 
 post-install:
-	@${CAT} ./pkg-message | ${SED} -e 's|%%PREFIX%%|${APP_HOME}|'
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
