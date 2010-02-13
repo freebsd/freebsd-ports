@@ -167,6 +167,7 @@
     SUBDIR += trix
     SUBDIR += ttytter
     SUBDIR += twirssi
+    SUBDIR += twitmail
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += wooztalk
