@@ -1,0 +1,24 @@
+--- dpkg-deb/Makefile.in.orig	2009-11-12 06:31:17.000000000 +0800
++++ dpkg-deb/Makefile.in	2009-11-12 06:31:41.000000000 +0800
+@@ -58,9 +58,7 @@
+ 	main.$(OBJEXT)
+ dpkg_deb_OBJECTS = $(am_dpkg_deb_OBJECTS)
+ am__DEPENDENCIES_1 =
+-dpkg_deb_DEPENDENCIES = ../libcompat/libcompat.a $(am__DEPENDENCIES_1) \
+-	../lib/libdpkg.a $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1)
++dpkg_deb_DEPENDENCIES = $(am__DEPENDENCIES_1) ../lib/libdpkg.a ../libcompat/libcompat.a $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+@@ -212,9 +210,7 @@
+ 	info.c \
+ 	main.c
+ 
+-dpkg_deb_LDADD = \
+-	../libcompat/libcompat.a \
+-	$(LIBINTL) ../lib/libdpkg.a $(ZLIB_LIBS) $(BZ2_LIBS) $(SELINUX_LIBS)
++dpkg_deb_LDADD = $(LIBINTL) ../lib/libdpkg.a ../libcompat/libcompat.a $(ZLIB_LIBS) $(BZ2_LIBS) $(SELINUX_LIBS)
+ 
+ all: all-am
+ 

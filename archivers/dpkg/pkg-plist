@@ -1,3 +1,41 @@
+%%DATADIR%%/cputable
+%%DATADIR%%/ostable
+%%DATADIR%%/triplettable
+%%SITE_PERL%%/Dpkg.pm
+%%SITE_PERL%%/Dpkg/Arch.pm
+%%SITE_PERL%%/Dpkg/BuildOptions.pm
+%%SITE_PERL%%/Dpkg/Cdata.pm
+%%SITE_PERL%%/Dpkg/Changelog.pm
+%%SITE_PERL%%/Dpkg/Changelog/Debian.pm
+%%SITE_PERL%%/Dpkg/Checksums.pm
+%%SITE_PERL%%/Dpkg/Compression.pm
+%%SITE_PERL%%/Dpkg/Control.pm
+%%SITE_PERL%%/Dpkg/Deps.pm
+%%SITE_PERL%%/Dpkg/ErrorHandling.pm
+%%SITE_PERL%%/Dpkg/Exit.pm
+%%SITE_PERL%%/Dpkg/Fields.pm
+%%SITE_PERL%%/Dpkg/Gettext.pm
+%%SITE_PERL%%/Dpkg/IPC.pm
+%%SITE_PERL%%/Dpkg/Path.pm
+%%SITE_PERL%%/Dpkg/Shlibs.pm
+%%SITE_PERL%%/Dpkg/Shlibs/Objdump.pm
+%%SITE_PERL%%/Dpkg/Shlibs/SymbolFile.pm
+%%SITE_PERL%%/Dpkg/Source/Archive.pm
+%%SITE_PERL%%/Dpkg/Source/CompressedFile.pm
+%%SITE_PERL%%/Dpkg/Source/Compressor.pm
+%%SITE_PERL%%/Dpkg/Source/Functions.pm
+%%SITE_PERL%%/Dpkg/Source/Package.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V1.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V2.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/bzr.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/custom.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/git.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/native.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/quilt.pm
+%%SITE_PERL%%/Dpkg/Source/Patch.pm
+%%SITE_PERL%%/Dpkg/Substvars.pm
+%%SITE_PERL%%/Dpkg/Vars.pm
+%%SITE_PERL%%/Dpkg/Version.pm
 bin/822-date
 bin/dpkg
 bin/dpkg-architecture
@@ -7,6 +45,7 @@ bin/dpkg-deb
 bin/dpkg-distaddfile
 bin/dpkg-genchanges
 bin/dpkg-gencontrol
+bin/dpkg-gensymbols
 bin/dpkg-name
 bin/dpkg-parsechangelog
 bin/dpkg-query
@@ -15,12 +54,10 @@ bin/dpkg-scansources
 bin/dpkg-shlibdeps
 bin/dpkg-source
 bin/dpkg-split
+bin/dpkg-trigger
 bin/dselect
 etc/alternatives/README
 etc/dpkg/origins/debian
-libexec/dpkg/controllib.pl
-libexec/dpkg/dpkg-gettext.pl
-libexec/dpkg/enoent
 libexec/dpkg/methods/disk/desc.cdrom
 libexec/dpkg/methods/disk/desc.harddisk
 libexec/dpkg/methods/disk/desc.mounted
@@ -42,34 +79,33 @@ libexec/dpkg/parsechangelog/debian
 @dirrmtry man/pt_BR
 sbin/cleanup-info
 sbin/dpkg-divert
-sbin/dpkg-statoverride
 sbin/dpkg-install-info
+sbin/dpkg-statoverride
 sbin/start-stop-daemon
 sbin/update-alternatives
-%%DATADIR%%/cputable
-%%DATADIR%%/ostable
 %%NLS%%share/locale/bs/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/dselect.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/dpkg-dev.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/da/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/da/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/de/LC_MESSAGES/dpkg-dev.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/dz/LC_MESSAGES/dpkg.mo
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
 %%NLS%%share/locale/el/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/el/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/es/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/es/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/et/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/et/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/dselect.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dpkg-dev.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/dselect.mo
@@ -82,10 +118,11 @@ sbin/update-alternatives
 %%NLS%%share/locale/ja/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/km/LC_MESSAGES/dpkg.mo
-%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/km
 %%NLS%%share/locale/ko/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/dpkg.mo
@@ -94,6 +131,7 @@ sbin/update-alternatives
 %%NLS%%share/locale/nn/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/dpkg-dev.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/dpkg.mo
@@ -102,39 +140,113 @@ sbin/update-alternatives
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/dpkg-dev.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/dpkg-dev.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dselect.mo
+%%NLS%%share/locale/th/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/dselect.mo
-%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tl
 %%NLS%%share/locale/vi/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dselect.mo
-@dirrm %%DATADIR%%/origins
-@dirrm %%DATADIR%%
-@dirrm libexec/dpkg/parsechangelog
-@dirrm libexec/dpkg/methods/floppy
-@dirrm libexec/dpkg/methods/disk
-@dirrm libexec/dpkg/methods
-@dirrm libexec/dpkg
-@dirrm etc/dpkg/origins
-@dirrm etc/dpkg
-@dirrm etc/alternatives
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi
+%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tl
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSA
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/nn/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nn
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt
+%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/km
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+@dirrmtry libexec/dpkg/parsechangelog
+@dirrmtry libexec/dpkg/methods/floppy
+@dirrmtry libexec/dpkg/methods/disk
+@dirrmtry libexec/dpkg/methods
+@dirrmtry libexec/dpkg
+@dirrmtry etc/dpkg/origins
+@dirrmtry etc/dpkg
+@dirrmtry etc/alternatives
+@dirrmtry %%SITE_PERL%%/Dpkg/Source/Package/V3
+@dirrmtry %%SITE_PERL%%/Dpkg/Source/Package
+@dirrmtry %%SITE_PERL%%/Dpkg/Source
+@dirrmtry %%SITE_PERL%%/Dpkg/Shlibs
+@dirrmtry %%SITE_PERL%%/Dpkg/Changelog
+@dirrmtry %%SITE_PERL%%/Dpkg
+@dirrmtry %%DATADIR%%/origins
+@dirrmtry %%DATADIR%%
 @cwd /
-@dirrm %%DPKGDIR%%/updates
-@dirrm %%DPKGDIR%%/parts
-@dirrm %%DPKGDIR%%/methods/mnt
-@dirrm %%DPKGDIR%%/methods/floppy
-@dirrm %%DPKGDIR%%/methods/disk
-@dirrm %%DPKGDIR%%/methods
-@dirrm %%DPKGDIR%%/info
-@dirrm %%DPKGDIR%%/alternatives
-@dirrm %%DPKGDIR%%
+@dirrmtry %%DPKGDIR%%/updates
+@dirrmtry %%DPKGDIR%%/parts
+@dirrmtry %%DPKGDIR%%/methods/mnt
+@dirrmtry %%DPKGDIR%%/methods/floppy
+@dirrmtry %%DPKGDIR%%/methods/disk
+@dirrmtry %%DPKGDIR%%/methods
+@dirrmtry %%DPKGDIR%%/info
+@dirrmtry %%DPKGDIR%%/alternatives
+@dirrmtry %%DPKGDIR%%

@@ -1,0 +1,24 @@
+--- dpkg-split/Makefile.in.orig	2009-11-12 06:32:28.000000000 +0800
++++ dpkg-split/Makefile.in	2009-11-12 06:32:44.000000000 +0800
+@@ -59,8 +59,7 @@
+ 	queue.$(OBJEXT) split.$(OBJEXT)
+ dpkg_split_OBJECTS = $(am_dpkg_split_OBJECTS)
+ am__DEPENDENCIES_1 =
+-dpkg_split_DEPENDENCIES = ../libcompat/libcompat.a \
+-	$(am__DEPENDENCIES_1) ../lib/libdpkg.a
++dpkg_split_DEPENDENCIES = $(am__DEPENDENCIES_1) ../lib/libdpkg.a ../libcompat/libcompat.a
+ pkglibSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ SCRIPTS = $(pkglib_SCRIPTS)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+@@ -216,10 +215,7 @@
+ 	queue.c \
+ 	split.c
+ 
+-dpkg_split_LDADD = \
+-	../libcompat/libcompat.a \
+-	$(LIBINTL) \
+-	../lib/libdpkg.a
++dpkg_split_LDADD = $(LIBINTL) ../lib/libdpkg.a ../libcompat/libcompat.a
+ 
+ pkglib_SCRIPTS = mksplit
+ EXTRA_DIST = mksplit.pl
