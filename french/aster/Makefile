@@ -16,8 +16,6 @@ MASTER_SITES=		http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
 
-BROKEN=		conflicting dependencies
-
 #-----------------------------------------------------------------------
 # You may define these options:
 #
