@@ -1,0 +1,13 @@
+--- snmplib/Makefile.in.orig	Mon Oct  2 11:41:46 2000
++++ snmplib/Makefile.in	Wed Jan 17 18:29:44 2001
+@@ -70,6 +70,10 @@
+ 
+ libsnmp.$(LIB_EXTENSION)$(LIB_VERSION):    ${TOBJS}
+ 	$(LIB_LD_CMD) libsnmp.$(LIB_EXTENSION)$(LIB_VERSION) ${TOBJS}
++	ld -Bshareable -soname libsnmp.so.4 \
++		-o libsnmp.so ${OBJS}
++	ln -f libsnmp.so \
++		../libsnmp.so.4
+ 	$(RANLIB) libsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
+ 
+ installdirs:

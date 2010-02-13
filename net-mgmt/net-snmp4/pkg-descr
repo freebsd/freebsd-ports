@@ -1,0 +1,12 @@
+This is UCD SNMP, a derivative of CMU's SNMP package.
+
+Various tools relating to the Simple Network Management Protocol including: 
+
+    An extensible agent 
+    An SNMP library 
+    tools to request or set information from SNMP agents 
+    tools to generate and handle SNMP traps 
+    a version of the unix 'netstat' command using SNMP 
+    a Tk/perl mib browser 
+
+WWW: http://net-snmp.sourceforge.net/

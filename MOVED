@@ -4322,4 +4322,3 @@ sysutils/lugtools|sysutils/p5-Plugtools|2010-02-04|Superceeded by sysutils/p5-Pl
 irc/conspire||2010-02-04|Upstream development abandoned
 x11-toolkits/swt31|x11-toolkits/swt|2010-02-07|Superseded by x11-toolkits/swt
 sysutils/smartmontools-devel|sysutils/smartmontools|2010-02-10|Removed, use sysutils/smartmontools instead
-net-mgmt/net-snmp4|net-snmp|2010-02-13|Has expired: Use net-mgmt/net-snmp port instead
