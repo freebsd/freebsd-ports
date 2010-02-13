@@ -797,6 +797,7 @@
     SUBDIR += sopwith
     SUBDIR += spacearyarya
     SUBDIR += spacehulk
+    SUBDIR += spacejunk
     SUBDIR += speak
     SUBDIR += species
     SUBDIR += spellathon
