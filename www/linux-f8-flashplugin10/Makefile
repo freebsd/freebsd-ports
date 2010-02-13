@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	10.0r42
+PORTVERSION=	10.0r45
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		http://tijl.ulyssis.fm/mirror/:suplib LOCAL/pav:suplib
