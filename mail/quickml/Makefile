@@ -7,7 +7,7 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
