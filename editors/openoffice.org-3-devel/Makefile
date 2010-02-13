@@ -40,6 +40,14 @@ USE_GNOME+=		libidl
 
 USE_GNOME=	desktopfileutils gtk20
 
+.if defined(WITH_KDE4) && defined(WITH_KDE)
+.error "Cannot define WITH_KDE and WITH_KDE4 at the same time"
+.endif
+.if defined(WITH_KDE4)
+USE_KDE4=	kdelibs
+USE_QT_VER=	4
+.endif
+
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3
 .endif
@@ -196,6 +204,9 @@ post-extract:
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
+.if defined(WITH_KDE4)
+       @${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/solenv/bin/moc
+.endif
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
