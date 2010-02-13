@@ -1,9 +1,9 @@
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -277,7 +277,7 @@ docs/howto/HowtoHelp \
- docs/howto/HowtoAddSupport \
- docs/howto/HowtoSubmitPatches
+@@ -285,7 +285,7 @@ docs/howto/HowtoSubmitPatches \
+ quvi.pod
  
+ @WITH_MAN_TRUE@dist_man_MANS = quvi.1
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libquvi.pc
