@@ -4,6 +4,7 @@ bin/ekg
 %%DATADIR%%/themes/eileen.theme
 %%DATADIR%%/themes/emers.theme
 %%DATADIR%%/themes/feeg.theme
+%%DATADIR%%/themes/gophi.theme
 %%DATADIR%%/themes/irc.theme
 %%DATADIR%%/themes/jamzed.theme
 %%DATADIR%%/themes/klith.theme

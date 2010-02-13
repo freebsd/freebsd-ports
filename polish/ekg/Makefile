@@ -4,32 +4,31 @@
 #
 # $FreeBSD$
 
-PORTNAME=		ekg
-PORTVERSION=		1.7
-PORTREVISION=		1
-PORTEPOCH=		2
-CATEGORIES=		polish net-im
-MASTER_SITES=		http://ekg.chmurka.net/
+PORTNAME=	ekg
+DISTVERSION=	1.8rc1
+PORTEPOCH=	2
+CATEGORIES=	polish net-im
+MASTER_SITES=	http://ekg.chmurka.net/
 
-MAINTAINER=		bartlomiej@syryjczyk.name
-COMMENT=		Text-mode Gadu-Gadu client
+MAINTAINER=	bartlomiej@syryjczyk.name
+COMMENT=	Text-mode Gadu-Gadu client
 
-LIB_DEPENDS=		execinfo.1:${PORTSDIR}/devel/libexecinfo \
-			gadu.3:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		gadu.3:${PORTSDIR}/polish/libgadu
 
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-USE_GNOME=		gnomehack pkgconfig
-CONFIGURE_ARGS+=	--disable-shared \
-			--disable-static \
-			--enable-dynamic \
-			--disable-libgadu-openssl \
-			--without-libungif \
-			--without-libjpeg
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack pkgconfig
+CONFIGURE_ARGS+=--disable-shared \
+		--disable-static \
+		--enable-dynamic \
+		--disable-libgadu-openssl \
+		--without-libungif \
+		--without-libjpeg
 
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}"
 
 OPTIONS=	ASPELL "Build with ASPELL support" off \
 		OPENSSL "Build with OPENSSL support" on
