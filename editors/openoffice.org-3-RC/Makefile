@@ -1,4 +1,3 @@
-
 # New ports collection makefile for: OpenOffice.org
 # Date created:		28 February 2002
 # Whom:                 Martin Blapp
@@ -10,7 +9,6 @@ PORTNAME?=	openoffice.org
 PORTVERSION?=	3.2.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/misc/moz/:mozsrc \
 		${MASTER_SITE_MOZILLA_EXTENDED:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
@@ -33,6 +31,14 @@ USE_GNOME+=		libidl
 .endif
 
 USE_GNOME=	desktopfileutils gtk20
+
+.if defined(WITH_KDE4) && defined(WITH_KDE)
+.error "Cannot define WITH_KDE and WITH_KDE4 at the same time"
+.endif
+.if defined(WITH_KDE4)
+USE_KDE4=	kdelibs
+USE_QT_VER=	4
+.endif
 
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3
@@ -188,6 +194,9 @@ post-extract:
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
+.if defined(WITH_KDE4)
+	@${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/solenv/bin/moc
+.endif
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
