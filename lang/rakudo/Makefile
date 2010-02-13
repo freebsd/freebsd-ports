@@ -21,6 +21,26 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		icudata:${PORTSDIR}/devel/icu
 
+#           				    amd64       i386	sparc
+#				9-current       pass        gcc
+#				8-stable       	gcc	        pass
+#				7-stable        pass        pass
+#				6-stable        icu         icu
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == 'i386' && ${OSVERSION} >= 900000
+BROKEN=	internal gcc bugs 
+.endif
+
+.if ${ARCH} == 'i386'  && ${OSVERSION} >= 800000 && ${OSVERSION} <= 900000
+BROKEN=	internal gcc bugs 
+.endif
+
+.if ${OSVERSION} < 700000
+BROKEN=	dependency devel/icu is broken on 6.x
+.endif
+
 USE_BISON=	build
 USE_PERL5=	5.8.0+
 USE_GMAKE=	yes
@@ -52,7 +72,5 @@ x-generate-plist:
 	' | ${TR} -s '\n') > temp-pkg-plist
 
 .include "${.CURDIR}/../parrot/Makefile.common"
-
-.include <bsd.port.pre.mk>
 
 .include <bsd.port.post.mk>
