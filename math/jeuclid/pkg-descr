@@ -1,0 +1,6 @@
+JEuclid is a complete MathML rendering solution, consisting of: a MathViewer
+application, command line converters from MathML to other formats, an ant
+task for autmated conversion, display components for AWT and Swing and a
+component for Apache Cocoon.
+
+WWW: http://jeuclid.sourceforge.net/
