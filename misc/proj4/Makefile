@@ -14,6 +14,8 @@ DISTNAME=	position-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Cartographic projection software
 
+CONFLICTS=	proj-4*
+
 WRKSRC=		${WRKDIR}/Position/PROJ.4
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
