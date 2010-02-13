@@ -288,6 +288,7 @@
     SUBDIR += tovid
     SUBDIR += transcode
     SUBDIR += transkode
+    SUBDIR += tsMuxeR
     SUBDIR += tstools
     SUBDIR += tunapie
     SUBDIR += tv_grab_au
