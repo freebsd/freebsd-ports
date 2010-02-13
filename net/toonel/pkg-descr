@@ -1,0 +1,7 @@
+Toonel.net exploits a tunneling technique combined with data compression.
+It runs compressed data frames from toonel client to one of the toonel
+servers and then these are forwarded to the target host. Reducing the
+size of resources that are transferred between the server and the client
+makes more efficient use of the user's bandwidth.
+
+WWW:	http://toonel.net

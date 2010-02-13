@@ -1010,6 +1010,7 @@
     SUBDIR += tinyldap
     SUBDIR += tn5250
     SUBDIR += tn5250j
+    SUBDIR += toonel
     SUBDIR += torsocks
     SUBDIR += tptest
     SUBDIR += traceroute
