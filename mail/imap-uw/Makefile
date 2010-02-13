@@ -15,11 +15,19 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-uw
-DISTNAME=	imap-${PORTVERSION}
-DISTFILES=	${DISTNAME}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
+
+LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+SUB_FILES=	pkg-message
+
+MAN1=		dmail.1 mailutil.1 tmail.1
+MAN8=		ipopd.8 imapd.8
+
+ALL_TARGET=	bsf
 
 # This port must have the same SSL settings as mail/cclient, which it depends on
 # To make MBX format the default mailbox format, change the settings of cclient
@@ -29,21 +37,13 @@ OPTIONS=	SSL "Compile with SSL support" on \
 		DRAC "Dynamically open MTA for relaying" off \
 		NETSCAPE_BRAIN_DAMAGE "See Makefile for documentation" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 MAKE_ARGS+=	WITH_DRAC=yes
 .endif
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-MAN1=		dmail.1 mailutil.1 tmail.1
-MAN8=		ipopd.8 imapd.8
-
-ALL_TARGET=	bsf
 .if defined(WITHOUT_SSL)
 MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
@@ -61,6 +61,7 @@ MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
 .endif
 # See src/imapd/Makefile for more information about these three options.
 
+.include <bsd.port.pre.mk>
 pre-build:
 	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
 .if !defined(WITHOUT_SSL)
