@@ -1569,6 +1569,7 @@
     SUBDIR += p5-Getopt-ArgvFile
     SUBDIR += p5-Getopt-Declare
     SUBDIR += p5-Getopt-Euclid
+    SUBDIR += p5-Getopt-GUI-Long
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Getopt-Long-Descriptive
     SUBDIR += p5-Getopt-Mixed

@@ -1,0 +1,19 @@
+This module is a wrapper around Getopt::Long that extends the value of
+the original Getopt::Long module to:
+
+1) add a simple graphical user interface option screen if no arguments
+   are passed to the program.
+2) provide an auto-help mechanism such that -h and --help are handled
+   automatically.
+
+   It's designed to make the creation of graphical shells trivial without the
+   programmer having to think about it much as well as providing automatic
+   good-looking usage output without the programmer needing to write usage()
+   functions.
+
+   This also can turn normal command line programs into web CGI scripts as
+   well (automatically).  If the Getopt::GUI::Long program is installed as a
+   CGI script then it will automatically prompt the user for the same
+   variables.
+
+ WWW:	http://search.cpan.org/dist/Getopt-GUI-Long/
