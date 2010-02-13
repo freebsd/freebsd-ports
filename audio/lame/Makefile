@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/
-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//:S/./-/}
 
 MAINTAINER=	netchild@FreeBSD.org
