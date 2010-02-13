@@ -223,7 +223,7 @@
 +   /* format: TIME MACSRC > MACDST, ethertype TYPE (0xCODE), ... */
 +   if (*eTo == '>') {
 +     char *s;
-+     (void)sscanf(p, "%s %s > %s", time, eFrom, eTo);
++     (void)sscanf(p, "%s %s > %17s", time, eFrom, eTo);
 +     if ((s = strstr(p, "ethertype ")) != NULL) {
 +       strlcpy(eType, s+10, sizeof(eType));
 +       if ((s = strchr(eType, ' ')) != NULL) {
