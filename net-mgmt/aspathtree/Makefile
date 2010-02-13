@@ -23,7 +23,7 @@ RESTRICTED=		not redistributable, license agreement required
 NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	PERL5=${PERL5}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 CONFIG_FILES=	ASpath-tree.config
 ICON_FILES=	bnew.gif bold.gif e.gif h.gif l.gif p.gif t.gif v.gif
 LIB_FILES=	bgp-tree-changes.pl bgp-tree.pl create-homepage.pl elaborate-aspaths.pl getbgptable.pl history.pl ipv6prefix.pl odd-as.pl odd-routes.pl route-stability.pl utility.pl ASmain.pl
@@ -68,7 +68,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${.CURDIR}/pkg-message >${PKGMESSAGE}
 .if !defined(BATCH)
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
