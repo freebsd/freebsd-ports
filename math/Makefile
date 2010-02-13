@@ -132,6 +132,7 @@
     SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += javaview
+    SUBDIR += jeuclid
     SUBDIR += jlatexmath
     SUBDIR += jsmath
     SUBDIR += jsmath-fonts
