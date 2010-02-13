@@ -1,2 +1,4 @@
-lib/qt4/libqt4intf.so
-@dirrmtry lib/qt4
+lib/qt4/libQt4Pas.so
+lib/qt4/libQt4Pas.so.5
+lib/qt4/libQt4Pas.so.5.2
+lib/qt4/libQt4Pas.so.5.2.0

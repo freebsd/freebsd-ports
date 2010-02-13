@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt4pas
-PORTVERSION=	1.70
+PORTVERSION=	2.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://users.telenet.be/Jan.Van.hijfte/qtforfpc/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/V/}_Qt${QT4_VER_MIN}
@@ -16,9 +16,10 @@ COMMENT=	Qt4 binding for FreePascal
 
 USE_LDCONFIG=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network script webkit
+QT_COMPONENTS=	corelib gui network script webkit qmake_build \
+		moc_build
 
-QT4_VER_MIN=	4.5.0
+QT4_VER_MIN=	4.5.3
 
 .include <bsd.port.pre.mk>
 
@@ -26,16 +27,7 @@ QT4_VER_MIN=	4.5.0
 IGNORE=	Please update your current qt4 version to ${QT4_VER_MIN}
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%QT_INCDIR%%|${QT_INCDIR}|' -e 's|%%QT_LIBDIR%%|${QT_LIBDIR}|g' -e \
-		's|%%CXX%%|${CXX}|g' -e 's|%%STRIP_CMD%%|${STRIP_CMD}|g' -e 's|bash|sh|g' ${WRKSRC}/compile_lib.sh
-
-do-build:
-	@cd ${WRKSRC} && \
-		${SH} compile_lib.sh
-
-do-install:
-	@${MKDIR} ${PREFIX}/lib/qt4
-	${INSTALL_PROGRAM} ${WRKSRC}/libqt4intf.so ${PREFIX}/lib/qt4
+pre-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 .include <bsd.port.post.mk>
