@@ -7,7 +7,7 @@
 
 PORTNAME=	qwebirc
 PORTVERSION=	0.1
-CATEGORIES=	mail www
+CATEGORIES=	irc www
 MASTER_SITES=	https://bitbucket.org/slug/qwebirc/get/
 DISTNAME=	stable
 EXTRACT_SUFX=	.gz
