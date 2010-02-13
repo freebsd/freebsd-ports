@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.2
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -34,6 +33,9 @@ CONFIGURE_ARGS+=--without-ofx
 LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
 CONFIGURE_ARGS+=--with-ofx
 .endif
+
+post-extract:
+	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 
 post-install:
 .if !defined(NOPORTDOCS)
