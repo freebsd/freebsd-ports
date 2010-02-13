@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios-pf-plugin
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.zampanosbits.com/check_pf/ \
 		http://restek.wwu.edu/~kian/
