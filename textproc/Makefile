@@ -1226,6 +1226,7 @@
     SUBDIR += xlhtml
     SUBDIR += xlreader
     SUBDIR += xls2xml
+    SUBDIR += xml-commons
     SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
     SUBDIR += xml-parse.el
