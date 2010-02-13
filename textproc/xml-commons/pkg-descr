@@ -1,0 +1,11 @@
+xml-commons is focussed on common code and guidelines for xml projects. The
+first focus will be to organize and have common packaging for the various
+externally-defined standards code relating to XML - things like the DOM,
+SAX, and JAXP interfaces.
+
+As the xml-commons community forms, we also hope to serve as a holding area
+for other common xml-related utilities and code, and to help promulgate
+common packaging, testing, documentation, and other guidelines across all
+xml.apache.org subprojects.
+
+WWW: http://xml.apache.org/commons/
