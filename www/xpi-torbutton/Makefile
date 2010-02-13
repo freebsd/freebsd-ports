@@ -10,7 +10,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.torproject.org/torbutton/releases/
 
-MAINTAINER=	a.donig@gmx.net
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Quickly toggle use of the Tor network
 
 XPI_NUM=	2275
