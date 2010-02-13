@@ -9,9 +9,7 @@ PORTNAME=	qterm
 PORTVERSION=	0.4.1
 PORTREVISION=	5
 CATEGORIES=	chinese
-MASTER_SITES=	SF \
-		http://www.yuanjue.net/download/
-
+MASTER_SITES=	 SF/qterm/qterm/${PORTVERSION}
 PKGNAMEPREFIX=	zh-
 
 MAINTAINER=	ports@FreeBSD.org
