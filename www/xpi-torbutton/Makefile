@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	torbutton
-PORTVERSION=	1.2.2
-DISTVERSIONSUFFIX=	-fx
+PORTVERSION=	1.2.4
 CATEGORIES=	www
+MASTER_SITES=	http://www.torproject.org/torbutton/releases/
 
 MAINTAINER=	a.donig@gmx.net
 COMMENT=	Quickly toggle use of the Tor network
 
 XPI_NUM=	2275
-XPI_ID=		{e0204bd5-9d31-402b-a99d-a6aa8ffebdca}
+XPI_ID=		{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
