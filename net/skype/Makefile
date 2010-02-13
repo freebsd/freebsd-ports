@@ -25,6 +25,8 @@ USE_LINUX_APPS+=xorglibs
 USE_LINUX_APPS+=dri
 .endif
 
+BROKEN=		fails to fetch
+
 USE_BZIP2=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS+=alsalib expat fontconfig libsigcpp20
