@@ -941,6 +941,7 @@
     SUBDIR += xmandel
     SUBDIR += xmedcon
     SUBDIR += xmfract
+    SUBDIR += xmlgraphics-commons
     SUBDIR += xmms-blursk
     SUBDIR += xmms-dancingparticles
     SUBDIR += xmms-dflowers
