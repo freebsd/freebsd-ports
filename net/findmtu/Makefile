@@ -13,11 +13,10 @@ MASTER_SITES=	http://www.dia.uniroma3.it/~compunet/tunneldiscovery/findmtu/
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A tool for performing IPv6 path MTU discovery on *NIX
 
+SUB_FILES=	findmtu
+
 do-configure:
 	${LN} -s ${WRKSRC}/Makefile.rawsocket ${WRKSRC}/Makefile
-
-post-build:
-	${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${FILESDIR}/findmtu.sh > ${WRKDIR}/findmtu
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/findmtu ${PREFIX}/bin/findmtu
