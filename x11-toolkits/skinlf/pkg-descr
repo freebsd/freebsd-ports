@@ -1,0 +1,8 @@
+Skin Look And Feel allows Java developers to write skinnable application
+using the Swing toolkit. Skin Look And Feel is able to load themepacks (a
+bundle of GTK - The Gimp Toolkit - and KDE - The K Desktop Environment - skins)
+to enhance your application GUI controls such as Buttons, Checks, Radios,
+Scrollbars, Progress Bar, Lists, Tables, Internal Frames, Colors, Background
+Textures, Regular Windows.
+
+WWW: http://www.l2fprod.com/skinlf/index.html
