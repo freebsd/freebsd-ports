@@ -62,10 +62,10 @@ CMAKE_ARGS+=	-DENABLE_TETGEN=ON
 .endif
 
 # Even though the taucs port pulls in the metis port, we will still need
-# WITHOUT_METIS not set when WITHOUT_TAUCS is not set, otherwise the linker
+# WITHOUT_METIS not set when WITH_TAUCS is set, otherwise the linker
 # does not find the libraries installed by the metis port.
-.if !defined(WITHOUT_TAUCS) && defined(WITHOUT_METIS)
-IGNORE=		requires that WITHOUT_METIS is not set if WITHOUT_TAUCS is not set
+.if defined(WITH_TAUCS) && defined(WITHOUT_METIS)
+IGNORE=		requires that WITHOUT_METIS is not set if WITH_TAUCS is set
 .endif
 
 .if !defined(WITHOUT_METIS)
@@ -80,7 +80,7 @@ CMAKE_ARGS+=	-DENABLE_METIS=OFF
 PLIST_SUB+=	METIS="@comment "
 .endif
 
-.if !defined(WITHOUT_TAUCS)
+.if defined(WITH_TAUCS)
 LIB_DEPENDS+=	taucs.1:${PORTSDIR}/math/taucs
 CMAKE_ARGS+=	-DENABLE_TAUCS=ON
 .else
@@ -132,8 +132,8 @@ pre-everything::
 	@${ECHO_MSG} "3D mesh generator."
 	@${ECHO_MSG} ""
 .endif
-.if !defined(WITHOUT_TAUCS)
-	@${ECHO_MSG} "Define WITHOUT_TAUCS to disable the Taucs linear algebra solver."
+.if !defined(WITH_TAUCS)
+	@${ECHO_MSG} "Define WITH_TAUCS to enable the Taucs linear algebra solver."
 	@${ECHO_MSG} ""
 .endif
 .if !defined(WITHOUT_MED)
@@ -182,7 +182,7 @@ post-extract:
 	@${ECHO} "http://glaros.dtc.umn.edu/gkhome/metis/metis/faq?q=metis/metis/faq#distribute" >> ${PKGMESSAGE}
 	@${ECHO} "\"A Fast and Highly Quality Multilevel Scheme for Partitioning Irregular Graphs\". George Karypis and Vipin Kumar. SIAM Journal on Scientific Computing, Vol. 20, No. 1, pp. 359-392, 1999." >> ${PKGMESSAGE}
 .endif
-.if !defined(WITHOUT_TAUCS)
+.if defined(WITH_TAUCS)
 	@${ECHO} >> ${PKGMESSAGE}
 	@${ECHO} "There might be licensing issues with using Taucs with Gmsh" >> ${PKGMESSAGE}
 	@${ECHO} "because Taucs requires Metis." >> ${PKGMESSAGE}
