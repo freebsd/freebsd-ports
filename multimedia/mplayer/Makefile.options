@@ -189,7 +189,7 @@ CONFIGURE_ARGS+=	--disable-nas
 .endif
 
 .if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS+=	openal.1:${PORTSDIR}/audio/openal-soft
 .else
 CONFIGURE_ARGS+=	--disable-openal
 .endif
