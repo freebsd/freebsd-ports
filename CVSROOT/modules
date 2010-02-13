@@ -2560,6 +2560,7 @@ drupal6-chaos                   ports/www/drupal6-chaos
 drupal6-geshifilter             ports/www/drupal6-geshifilter
 drupal6-google_analytics        ports/www/drupal6-google_analytics
 drupal6-image                   ports/www/drupal6-image
+drupal6-imce                    ports/www/drupal6-imce
 drupal6-menu_block              ports/www/drupal6-menu_block
 drupal6-mimedetect              ports/www/drupal6-mimedetect
 drupal6-nice_menus              ports/www/drupal6-nice_menus
@@ -3506,6 +3507,7 @@ fnord                           ports/www/fnord
 fntsample                       ports/x11-fonts/fntsample
 fo-aspell                       ports/textproc/fo-aspell
 foiltex                         ports/textproc/foiltex
+fondu                           ports/converters/fondu
 font-adobe-100dpi               ports/x11-fonts/font-adobe-100dpi
 font-adobe-75dpi                ports/x11-fonts/font-adobe-75dpi
 font-adobe-utopia-100dpi        ports/x11-fonts/font-adobe-utopia-100dpi
@@ -3527,6 +3529,7 @@ font-cronyx-cyrillic            ports/x11-fonts/font-cronyx-cyrillic
 font-cursor-misc                ports/x11-fonts/font-cursor-misc
 font-daewoo-misc                ports/x11-fonts/font-daewoo-misc
 font-dec-misc                   ports/x11-fonts/font-dec-misc
+font-gost                       ports/x11-fonts/font-gost
 font-ibm-type1                  ports/x11-fonts/font-ibm-type1
 font-isas-misc                  ports/x11-fonts/font-isas-misc
 font-jis-misc                   ports/x11-fonts/font-jis-misc
@@ -5542,6 +5545,7 @@ hybserv                         ports/irc/hybserv
 hydrogen                        ports/audio/hydrogen
 hylafax                         ports/comms/hylafax
 hyperestraier                   ports/textproc/hyperestraier
+hyperic-sigar                   ports/sysutils/hyperic-sigar
 hyperlatex                      ports/print/hyperlatex
 hypermail                       ports/www/hypermail
 hypersrc                        ports/devel/hypersrc
@@ -7538,6 +7542,7 @@ libdvdplay                      ports/multimedia/libdvdplay
 libdvdread                      ports/multimedia/libdvdread
 libdwarf                        ports/devel/libdwarf
 libdynamite                     ports/archivers/libdynamite
+libeatmydata                    ports/misc/libeatmydata
 libebml                         ports/textproc/libebml
 libecap                         ports/www/libecap
 libecc                          ports/security/libecc
@@ -9483,6 +9488,7 @@ mxp                             ports/graphics/mxp
 mybashburn                      ports/sysutils/mybashburn
 mybb                            ports/www/mybb
 mybudget                        ports/finance/mybudget
+mydbf2mysql                     ports/databases/mydbf2mysql
 mydns                           ports/dns/mydns
 mydns-ng                        ports/dns/mydns-ng
 mydumper                        ports/databases/mydumper
@@ -10838,6 +10844,7 @@ p5-Catalyst-Controller-ActionRole  ports/www/p5-Catalyst-Controller-ActionRole
 p5-Catalyst-Controller-BindLex  ports/www/p5-Catalyst-Controller-BindLex
 p5-Catalyst-Controller-FormBuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-Catalyst-Controller-HTML-FormFu  ports/www/p5-Catalyst-Controller-HTML-FormFu
+p5-Catalyst-Controller-RateLimit  ports/www/p5-Catalyst-Controller-RateLimit
 p5-Catalyst-Controller-RequestToken  ports/www/p5-Catalyst-Controller-RequestToken
 p5-Catalyst-Devel               ports/www/p5-Catalyst-Devel
 p5-Catalyst-Engine-Apache       ports/www/p5-Catalyst-Engine-Apache
@@ -14451,6 +14458,7 @@ p5-catalyst-controller-actionrole  ports/www/p5-Catalyst-Controller-ActionRole
 p5-catalyst-controller-bindlex  ports/www/p5-Catalyst-Controller-BindLex
 p5-catalyst-controller-formbuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-catalyst-controller-html-formfu  ports/www/p5-Catalyst-Controller-HTML-FormFu
+p5-catalyst-controller-ratelimit  ports/www/p5-Catalyst-Controller-RateLimit
 p5-catalyst-controller-requesttoken  ports/www/p5-Catalyst-Controller-RequestToken
 p5-catalyst-devel               ports/www/p5-Catalyst-Devel
 p5-catalyst-engine-apache       ports/www/p5-Catalyst-Engine-Apache
@@ -19758,6 +19766,7 @@ py-bcfg2                        ports/sysutils/py-bcfg2
 py-bcrypt                       ports/security/py-bcrypt
 py-beaker                       ports/www/py-beaker
 py-beautifulsoup                ports/www/py-beautifulsoup
+py-beautifulsoup30              ports/www/py-beautifulsoup30
 py-biopython                    ports/biology/py-biopython
 py-bison                        ports/devel/py-bison
 py-bittornado                   ports/net-p2p/py-bittornado
@@ -20835,6 +20844,7 @@ quvi                            ports/multimedia/quvi
 qvplay                          ports/graphics/qvplay
 qvwm                            ports/x11-wm/qvwm
 qwdtools                        ports/games/qwdtools
+qwebirc                         ports/mail/qwebirc
 qwit                            ports/net-im/qwit
 qwit-devel                      ports/net-im/qwit-devel
 qwt4                            ports/x11-toolkits/qwt4
@@ -25432,6 +25442,7 @@ yaz                             ports/net/yaz
 yaz++                           ports/net/yaz++
 yazproxy                        ports/net/yazproxy
 yeahconsole                     ports/x11/yeahconsole
+yed                             ports/graphics/yed
 yell                            ports/audio/yell
 yelp                            ports/x11/yelp
 yencode                         ports/news/yencode
