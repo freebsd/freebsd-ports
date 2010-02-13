@@ -36,7 +36,7 @@ you update your ports collection, before attempting any port upgrades.
   break any drivers.
 
   for AMD Radeon HD 2xxx/3xxx/4xxx users
-  If you use AMD Radeon HD [234]xxx series, please define WITHOUT_NOVEAU
+  If you use AMD Radeon HD [234]xxx series, please define WITHOUT_NOUVEAU
   global macro.  You can use OpenGL Hardware Accelerator feature on
   these series.
 
