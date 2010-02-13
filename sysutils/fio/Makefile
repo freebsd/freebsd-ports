@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	fio
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	sysutils
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
