@@ -1,0 +1,55 @@
+--- src/Makefile.in.orig	2009-11-12 06:25:40.000000000 +0800
++++ src/Makefile.in	2009-11-12 06:26:38.000000000 +0800
+@@ -62,18 +62,14 @@
+ 	update.$(OBJEXT)
+ dpkg_OBJECTS = $(am_dpkg_OBJECTS)
+ am__DEPENDENCIES_1 =
+-dpkg_DEPENDENCIES = ../libcompat/libcompat.a $(am__DEPENDENCIES_1) \
+-	../lib/libdpkg.a $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1)
++dpkg_DEPENDENCIES = $(am__DEPENDENCIES_1) ../lib/libdpkg.a ../libcompat/libcompat.a $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ am_dpkg_query_OBJECTS = errors.$(OBJEXT) filesdb.$(OBJEXT) \
+ 	query.$(OBJEXT)
+ dpkg_query_OBJECTS = $(am_dpkg_query_OBJECTS)
+-dpkg_query_DEPENDENCIES = ../libcompat/libcompat.a \
+-	$(am__DEPENDENCIES_1) ../lib/libdpkg.a
++dpkg_query_DEPENDENCIES = $(am__DEPENDENCIES_1) ../lib/libdpkg.a ../libcompat/libcompat.a
+ am_dpkg_trigger_OBJECTS = trigcmd.$(OBJEXT)
+ dpkg_trigger_OBJECTS = $(am_dpkg_trigger_OBJECTS)
+-dpkg_trigger_DEPENDENCIES = ../libcompat/libcompat.a \
+-	$(am__DEPENDENCIES_1) ../lib/libdpkg.a
++dpkg_trigger_DEPENDENCIES = $(am__DEPENDENCIES_1) ../lib/libdpkg.a ../libcompat/libcompat.a
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+@@ -238,27 +234,19 @@
+ 	trigproc.c \
+ 	update.c
+ 
+-dpkg_LDADD = \
+-	../libcompat/libcompat.a \
+-	$(LIBINTL) ../lib/libdpkg.a $(ZLIB_LIBS) $(BZ2_LIBS) $(SELINUX_LIBS)
++dpkg_LDADD = $(LIBINTL) ../lib/libdpkg.a ../libcompat/libcompat.a $(ZLIB_LIBS) $(BZ2_LIBS) $(SELINUX_LIBS)
+ 
+ dpkg_query_SOURCES = \
+ 	errors.c \
+ 	filesdb.c filesdb.h \
+ 	query.c
+ 
+-dpkg_query_LDADD = \
+-	../libcompat/libcompat.a \
+-	$(LIBINTL) \
+-	../lib/libdpkg.a
++dpkg_query_LDADD = $(LIBINTL) ../lib/libdpkg.a ../libcompat/libcompat.a
+ 
+ dpkg_trigger_SOURCES = \
+ 	trigcmd.c
+ 
+-dpkg_trigger_LDADD = \
+-	../libcompat/libcompat.a \
+-	$(LIBINTL) \
+-	../lib/libdpkg.a
++dpkg_trigger_LDADD = $(LIBINTL) ../lib/libdpkg.a ../libcompat/libcompat.a
+ 
+ all: all-am
+ 

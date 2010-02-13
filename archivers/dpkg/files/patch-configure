@@ -1,33 +1,11 @@
---- configure.orig	Fri Oct 13 06:37:44 2006
-+++ configure	Mon Nov 13 18:23:21 2006
-@@ -1991,7 +1991,7 @@
- { echo "$as_me:$LINENO: checking dpkg cpu type" >&5
- echo $ECHO_N "checking dpkg cpu type... $ECHO_C" >&6; }
+--- configure.orig	2009-11-19 19:45:27.000000000 +0800
++++ configure	2009-11-19 19:45:35.000000000 +0800
+@@ -7172,8 +7172,6 @@
+ echo "${ECHO_T}no" >&6; }
+ fi
  
--cpu_type="`cd $srcdir/scripts; ./dpkg-architecture.pl -t$target -qDEB_HOST_ARCH_CPU 2>/dev/null`"
-+cpu_type="`grep -v ^# cputable | awk 'match("'$target'", $3) { print $1 }'`"
- 
- if test "x$cpu_type" = "x"; then
- 	cpu_type=$target_cpu
-@@ -2012,7 +2012,7 @@
- { echo "$as_me:$LINENO: checking dpkg operating system type" >&5
- echo $ECHO_N "checking dpkg operating system type... $ECHO_C" >&6; }
- 
--os_type="`cd $srcdir/scripts; ./dpkg-architecture.pl -t$target -qDEB_HOST_ARCH_OS 2>/dev/null`"
-+os_type="`grep -v ^# ostable | awk 'match("'$target'", $3) { print $1 }'`"
- 
- if test "x$os_type" = "x"; then
- 	os_type=$target_os
-@@ -2033,7 +2033,11 @@
- { echo "$as_me:$LINENO: checking dpkg architecture name" >&5
- echo $ECHO_N "checking dpkg architecture name... $ECHO_C" >&6; }
- 
--dpkg_arch="`cd $srcdir/scripts; ./dpkg-architecture.pl -t$target -qDEB_HOST_ARCH 2>/dev/null`"
-+if test $os_type = "linux"; then
-+	dpkg_arch=$cpu_type
-+else
-+	dpkg_arch=$os_type-$cpu_type
-+fi
- 
- { echo "$as_me:$LINENO: result: $dpkg_arch" >&5
- echo "${ECHO_T}$dpkg_arch" >&6; }
+-PERL_LIBDIR=`$PERL -MConfig -e 'my $r=$Config{vendorlibexp};$r=~s/$Config{vendorprefixexp}/\\$(prefix)/; print $r'`
+-
+ # Checks for operating system services and capabilities.
+ # Check whether --enable-largefile was given.
+ if test "${enable_largefile+set}" = set; then
