@@ -1,0 +1,17 @@
+--- nss/makefile.mk~	2009-10-18 14:50:43.000000000 +0900
++++ nss/makefile.mk	2009-10-18 14:50:56.000000000 +0900
+@@ -65,6 +65,14 @@
+ .ENDIF			# "$(CPU)"=="X"
+ .ENDIF                  # "$(OS)$(COM)"=="LINUXGCC"
+ 
++.IF "$(OS)$(COM)"=="FREEBSDGCC"
++.IF "$(CPU)"=="X"
++# force 64-bit buildmode
++USE_64:=1
++.EXPORT : USE_64
++.ENDIF			# "$(CPU)"=="X"
++.ENDIF                  # "$(OS)$(COM)"=="LINUXGCC"
++
+ 
+ .IF "$(OS)"=="MACOSX"
+ .IF "$(EXTRA_CFLAGS)"!=""
