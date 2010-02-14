@@ -139,6 +139,9 @@ share/doc/HTML/et/konversation/index.docbook
 share/doc/HTML/it/konversation/common
 share/doc/HTML/it/konversation/index.cache.bz2
 share/doc/HTML/it/konversation/index.docbook
+share/doc/HTML/pt_BR/konversation/common
+share/doc/HTML/pt_BR/konversation/index.cache.bz2
+share/doc/HTML/pt_BR/konversation/index.docbook
 share/doc/HTML/sv/konversation/addchannel.png
 share/doc/HTML/sv/konversation/addnetwork_co.png
 share/doc/HTML/sv/konversation/addserver_co.png
@@ -196,7 +199,6 @@ share/icons/hicolor/scalable/actions/konv_message.svgz
 share/icons/hicolor/scalable/apps/konversation.svgz
 share/kde4/services/konvirc.protocol
 share/kde4/services/konvirc6.protocol
-share/locale/ar/LC_MESSAGES/konversation.mo
 share/locale/bg/LC_MESSAGES/konversation.mo
 share/locale/ca/LC_MESSAGES/konversation.mo
 share/locale/cs/LC_MESSAGES/konversation.mo
@@ -206,19 +208,21 @@ share/locale/el/LC_MESSAGES/konversation.mo
 share/locale/en_GB/LC_MESSAGES/konversation.mo
 share/locale/es/LC_MESSAGES/konversation.mo
 share/locale/et/LC_MESSAGES/konversation.mo
+share/locale/fi/LC_MESSAGES/konversation.mo
 share/locale/fr/LC_MESSAGES/konversation.mo
 share/locale/gl/LC_MESSAGES/konversation.mo
 share/locale/he/LC_MESSAGES/konversation.mo
 share/locale/hu/LC_MESSAGES/konversation.mo
 share/locale/it/LC_MESSAGES/konversation.mo
 share/locale/ja/LC_MESSAGES/konversation.mo
+share/locale/nb/LC_MESSAGES/konversation.mo
 share/locale/nds/LC_MESSAGES/konversation.mo
 share/locale/nl/LC_MESSAGES/konversation.mo
-share/locale/pa/LC_MESSAGES/konversation.mo
 share/locale/pl/LC_MESSAGES/konversation.mo
 share/locale/pt/LC_MESSAGES/konversation.mo
 share/locale/pt_BR/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
+share/locale/sk/LC_MESSAGES/konversation.mo
 share/locale/sv/LC_MESSAGES/konversation.mo
 share/locale/tr/LC_MESSAGES/konversation.mo
 share/locale/uk/LC_MESSAGES/konversation.mo
@@ -226,6 +230,7 @@ share/locale/zh_CN/LC_MESSAGES/konversation.mo
 share/locale/zh_TW/LC_MESSAGES/konversation.mo
 @dirrm share/doc/HTML/uk/konversation
 @dirrm share/doc/HTML/sv/konversation
+@dirrm share/doc/HTML/pt_BR/konversation
 @dirrm share/doc/HTML/it/konversation
 @dirrm share/doc/HTML/et/konversation
 @dirrm share/doc/HTML/en/konversation
