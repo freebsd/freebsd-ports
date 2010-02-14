@@ -222,7 +222,7 @@ lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
 lib/libgoffice-%%SHORT_VER%%.a
 lib/libgoffice-%%SHORT_VER%%.la
 lib/libgoffice-%%SHORT_VER%%.so
-lib/libgoffice-%%SHORT_VER%%.so.7
+lib/libgoffice-%%SHORT_VER%%.so.8
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GOCalendarButton.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOCharmapSel.html
@@ -423,6 +423,7 @@ share/locale/pt_BR/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ro/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/goffice-%%VERSION%%.mo
+share/locale/sl/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/sr@latin/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/goffice-%%VERSION%%.mo
