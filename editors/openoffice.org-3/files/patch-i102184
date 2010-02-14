@@ -1,0 +1,11 @@
+--- libxslt/libxslt-1.1.24.patch	2009-05-24 16:32:30.000000000 +0900
++++ libxslt/libxslt-1.1.24.patch	2009-05-24 16:38:38.000000000 +0900
+@@ -20,7 +20,7 @@
+ -	  major=".$current"
+ -	  versuffix=".$current";
+ +	  major=.`expr $current - $age`
+-+	  versuffix="$major.$age.$revision"
+++	  versuffix="$major"
+  	  ;;
+  
+  	irix | nonstopux)

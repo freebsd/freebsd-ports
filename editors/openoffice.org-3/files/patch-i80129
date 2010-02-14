@@ -1,35 +1,16 @@
-Merely a workaround
-
 Index: libxml2/libxml2-2.6.31.patch
 ===================================================================
 RCS file: /cvs/external/libxml2/libxml2-2.6.31.patch,v
 retrieving revision 1.2
 diff -u -r1.2 libxml2-2.6.31.patch
 --- libxml2/libxml2-2.6.31.patch	6 Jun 2008 11:48:45 -0000	1.2
-+++ libxml2/libxml2-2.6.31.patch	10 Jun 2008 09:34:51 -0000
-@@ -87,7 +87,7 @@
-   	  ;;
++++ libxml2/libxml2-2.6.31.patch	8 Jul 2008 02:54:59 -0000
+@@ -88,7 +88,7 @@
    
    	freebsd-elf)
--! 	  major=.`expr $current - $age`
-+! 	  major=`expr $current - $age`
- ! 	  versuffix=".$major.$age.$revision";
+ ! 	  major=.`expr $current - $age`
+-! 	  versuffix=".$major.$age.$revision";
++! 	  versuffix="$major"; 
    	  ;;
    
-
-Index: scp2/source/ooo/ure.scp
-===================================================================
-RCS file: /cvs/installation/scp2/source/ooo/ure.scp,v
-retrieving revision 1.7
-diff -u -r1.7 ure.scp
---- scp2/source/ooo/ure.scp	6 Jun 2008 17:05:51 -0000	1.7
-+++ scp2/source/ooo/ure.scp	10 Jun 2008 09:45:54 -0000
-@@ -679,6 +679,8 @@
- #endif
- #elif defined MACOSX
-     Name = SCP2_URE_DL_NORMAL("xml2.2");
-+#elif defined FREEBSD
-+    Name = STRING(CONCAT3(libxml2,UNXSUFFIX,.2.6.31));
- #else
-     Name = SCP2_URE_DL_VER("xml2", "2");
- #endif
+   	irix | nonstopux)

@@ -7,32 +7,38 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
+		http://ooopackages.good-day.net/pub/OpenOffice.org/misc/moz/:mozsrc \
+		${MASTER_SITE_MOZILLA_EXTENDED:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
 DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
-.if defined(WITH_GPC)
-DISTFILES+=	gpc231.tar.Z:gpc
-.endif
 EXTRACT_ONLY=	${OOOSRC}
 
 #de facto maintainer is maho@FreeBSD.org
 #patch submitters must sign SCA; see http://porting.openoffice.org/freebsd/#policy
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
+COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-OOOVERSION=	3.1.1
+OOOVERSION=	3.2.0
 NO_LATEST_LINK=	yes
-USE_GNOME=	desktopfileutils gtk20
-MOZILLA_VERSION=	1.7.5
-MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
+
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_SOURCE}:mozsrc
-USE_GNOME+=	libidl
+SEAMONKEY_VERSION=	1.1.14
+SEAMONKEY_SOURCE=	seamonkey-${SEAMONKEY_VERSION}.source.tar.bz2
+DISTFILES+=		${SEAMONKEY_SOURCE}:mozsrc
+USE_GNOME+=		libidl
+.endif
+
+USE_GNOME=	desktopfileutils gtk20
+
+.if defined(WITH_KDE4) && defined(WITH_KDE)
+.error "Cannot define WITH_KDE and WITH_KDE4 at the same time"
+.endif
+.if defined(WITH_KDE4)
+USE_KDE4=	kdelibs
+USE_QT_VER=	4
 .endif
 
 .if defined(WITH_KDE)
@@ -67,8 +73,8 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		19
-OOOTAG?=		OOO310_m${MILESTONE}
+MILESTONE?=		12
+OOOTAG?=		OOO320_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
@@ -113,12 +119,10 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
 		imake:${PORTSDIR}/devel/imake \
+		gtar:${PORTSDIR}/archivers/gtar \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		ant:${PORTSDIR}/devel/apache-ant
-
-.if !defined(WITH_GPC)
-LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
-.endif
+#see #i85469# for gperf
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
@@ -136,6 +140,7 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-system-zlib				\
 			--with-system-stdlibs				\
 			--with-epm=internal				\
+			--enable-hids					\
 			--enable-minimizer 				\
 			--enable-presenter-console			\
 			--enable-pdfimport				\
@@ -148,9 +153,6 @@ OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
 OOOEXTENSIONS+=		swext/wiki-publisher.oxt
 OOOEXTENSIONS+=		sun-report-builder.oxt
 
-.if ${ARCH} == amd64
-WITHOUT_MOZILLA=	yes
-.endif
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
 .endif
@@ -185,22 +187,20 @@ post-extract:
 		cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's###g' $$i ; \
 	done
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-.if defined(WITH_GPC)
-	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
-	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
-	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
-.endif
 .if !defined(WITHOUT_MOZILLA)
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${SEAMONKEY_SOURCE} ${WRKSRC}/moz/download
 .endif
 
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
+.if defined(WITH_KDE4)
+	@${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/solenv/bin/moc
+.endif
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput -- -P${MAKE_JOBS_NUMBER}"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
@@ -208,13 +208,13 @@ do-build:
 
 do-install:
 .if ${LOCALIZED_LANG} == "alllangs"
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/ ; ${LS} */freebsd*/*.t?z > ${WRKDIR}/LANGPACKFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd-*/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/$$i ; \
 	done
 	@for i in `${CAT} ${WRKDIR}/LANGPACKFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
@@ -222,19 +222,23 @@ do-install:
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/320/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@${INSTALL_DATA} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/bin/hid.lst ${PREFIX}/${INSTALLATION_BASEDIR}
 .else
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .endif
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/310/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@${INSTALL_DATA} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/bin/hid.lst ${PREFIX}/${INSTALLATION_BASEDIR}
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
