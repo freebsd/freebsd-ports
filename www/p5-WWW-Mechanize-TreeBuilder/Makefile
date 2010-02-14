@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Mechanize-TreeBuilder
 PORTVERSION=	1.10001
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,7 @@ COMMENT=	WWW::Mechanize::TreeBuilder
 BUILD_DEPENDS=	${SITE_PERL}/MooseX/Role/Parameterized.pm:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
 		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
-		${SITE_PERL}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+		${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
