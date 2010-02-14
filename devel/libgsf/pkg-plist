@@ -100,9 +100,12 @@ share/locale/eu/LC_MESSAGES/libgsf.mo
 share/locale/fr/LC_MESSAGES/libgsf.mo
 share/locale/nb/LC_MESSAGES/libgsf.mo
 share/locale/oc/LC_MESSAGES/libgsf.mo
+share/locale/pa/LC_MESSAGES/libgsf.mo
 share/locale/pt/LC_MESSAGES/libgsf.mo
 share/locale/pt_BR/LC_MESSAGES/libgsf.mo
+share/locale/sl/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
+share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
 @dirrm share/doc/gsf
