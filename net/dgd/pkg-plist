@@ -2,6 +2,8 @@ bin/precomp
 etc/dgd/kernel.dgd
 etc/rc.d/dgd.sh.sample
 sbin/dgd
+%%DATADIR%%/kernel/doc/README.kernel
+%%DATADIR%%/kernel/doc/kernel/Changelog
 %%DATADIR%%/kernel/doc/kernel/efun/add_event
 %%DATADIR%%/kernel/doc/kernel/efun/call_limited
 %%DATADIR%%/kernel/doc/kernel/efun/call_other
@@ -24,6 +26,7 @@ sbin/dgd
 %%DATADIR%%/kernel/doc/kernel/hook/driver
 %%DATADIR%%/kernel/doc/kernel/hook/rsrcd
 %%DATADIR%%/kernel/doc/kernel/hook/userd
+%%DATADIR%%/kernel/doc/kernel/kernel.dgd
 %%DATADIR%%/kernel/doc/kernel/lfun/allow_subscribe
 %%DATADIR%%/kernel/doc/kernel/lfun/create
 %%DATADIR%%/kernel/doc/kernel/lfun/query_owner
