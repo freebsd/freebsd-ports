@@ -192,8 +192,8 @@ _GCC_PORT_DEPENDS:=	gcc${V}
 CC:=			gcc${V}
 CXX:=			g++${V}
 .   if ${_USE_GCC} != 3.4
-CFLAGS+=		-Wl,-rpath=${PREFIX}/lib/${_GCC_BUILD_DEPENDS}
-LDFLAGS+=		-Wl,-rpath=${PREFIX}/lib/${_GCC_BUILD_DEPENDS}
+CFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+LDFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
 .   endif
 .  endif
 . endif
