@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100214:
+  AFFECTS: users of japanese/roundcube
+  AUTHOR: nork@FreeBSD.org
+
+  If you switch mail/roundcube to japanese/roundcube, please re-check
+  configuration files like ${PREFIX}/www/roundcube/config/main.inc.php.
+  At least, please add following settings:
+
+  $rcmail_config['message_charset_languages'] = array('en_US' => 'ISO-8859-1', ...
+  $rcmail_config['transfer_encoding_languages'] = array('en_US' => 'quoted-printable', ...
+
+  SEE ALSO: ${PREFIX}/www/roundcube/config/main.inc.php.dist
+
 20100207:
   AFFECTS: users of www/firefox
   AUTHOR: beat@FreeBSD.org

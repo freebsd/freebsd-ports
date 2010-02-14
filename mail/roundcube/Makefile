@@ -8,14 +8,15 @@
 PORTNAME=	roundcube
 DISTVERSION=	0.3.1
 PORTEPOCH=	1
-CATEGORIES=	mail www
+CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${PORTVERSION}
 DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER?=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
 NO_BUILD=	yes
+CONFLICTS=	ja-roundcube-[0-9]*
 
 RCUBECOMP=	SQL bin config index.php logs plugins program robots.txt skins temp
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADING
