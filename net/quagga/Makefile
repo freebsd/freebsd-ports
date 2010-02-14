@@ -40,7 +40,8 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		RTADV		"IPv6 Router Advertisements"	off \
 		SNMP		"SNMP support"			off \
 		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off \
-		DLMALLOC	"Use dlmalloc (makes bgpd much faster)" off
+		DLMALLOC	"Use dlmalloc (makes bgpd much faster)" off \
+		NO_BGP_ANNOUNCE	"Turn off BGP route announcement" off
 
 .include <bsd.port.pre.mk>
 
@@ -124,6 +125,10 @@ SUB_LIST=	RCLDCONFIG=ldconfig
 SUB_LIST=	RCLDCONFIG=
 .endif
 
+.if defined(WITH_NO_BGP_ANNOUNCE)
+CONFIGURE_ARGS+=--disable-bgp-announce
+.endif
+
 USE_RC_SUBR=	quagga.sh watchquagga.sh
 
 SUB_LIST+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
@@ -153,6 +158,7 @@ pre-everything::
 	@${ECHO} "   WITH_SNMP             SNMP support"
 	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
 	@${ECHO} "   WITH_DLMALLOC         Use dlmalloc (makes bgpd much faster)"
+	@${ECHO} "   WITH_NO_BGP_ANNOUNCE  Turn off BGP route announcement"
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
