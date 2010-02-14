@@ -1,0 +1,6 @@
+MD5 (roundcubemail-0.3.1.tar.gz) = 34e8e18772e7eada8769b6c5c20f7c8e
+SHA256 (roundcubemail-0.3.1.tar.gz) = 78b7160e58fc3692591e8a909464a858500768e5e7a7c076b496a7caf119ddd1
+SIZE (roundcubemail-0.3.1.tar.gz) = 1917564
+MD5 (roundcubemail-0.3.1-ja.patch) = ee2674dcbb0c701d36a506d73cb21425
+SHA256 (roundcubemail-0.3.1-ja.patch) = 0c2948d000f75139974e0b62ec92690d7cc19235a12db0e3e8b3f761a451af72
+SIZE (roundcubemail-0.3.1-ja.patch) = 30994
