@@ -8,7 +8,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -22,7 +22,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		wv-1.2:${PORTSDIR}/textproc/wv \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		fribidi.3:${PORTSDIR}/converters/fribidi \
-		goffice-0.8.7:${PORTSDIR}/devel/goffice
+		goffice-0.8.8:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_GMAKE=	yes
