@@ -279,6 +279,7 @@
     SUBDIR += recjis
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
+    SUBDIR += roundcube
     SUBDIR += rskkserv
     SUBDIR += ruby-chasen
     SUBDIR += ruby-eb
