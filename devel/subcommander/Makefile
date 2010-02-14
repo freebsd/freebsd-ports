@@ -7,7 +7,7 @@
 
 PORTNAME=	subcommander
 PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://subcommander.tigris.org/files/documents/1759/42385/
 DISTNAME=	Subcommander-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	Subcommander-${PORTVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Qt based multiplatform subversion client, diff & merge tool
 
-LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28 \
+LIB_DEPENDS=	neon.29:${PORTSDIR}/www/neon29 \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		svn_client-1.0:${PORTSDIR}/devel/subversion
 
