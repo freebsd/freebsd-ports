@@ -1,24 +1,30 @@
---- Makefile.in.orig	2009-09-22 12:00:07.000000000 +0200
-+++ Makefile.in	2009-09-22 12:02:56.000000000 +0200
-@@ -434,14 +434,14 @@ uninstall-anjuta_dataDATA:
- 	  rm -f "$(DESTDIR)$(anjuta_datadir)/$$f"; \
- 	done
+--- Makefile.in.orig	2010-02-14 13:38:48.000000000 -0500
++++ Makefile.in	2010-02-14 13:39:18.000000000 -0500
+@@ -482,17 +482,17 @@ uninstall-anjuta_dataDATA:
+ 	echo " ( cd '$(DESTDIR)$(anjuta_datadir)' && rm -f" $$files ")"; \
+ 	cd "$(DESTDIR)$(anjuta_datadir)" && rm -f $$files
  install-anjutadocDATA: $(anjutadoc_DATA)
 -	@$(NORMAL_INSTALL)
 -	test -z "$(anjutadocdir)" || $(MKDIR_P) "$(DESTDIR)$(anjutadocdir)"
--	@list='$(anjutadoc_DATA)'; for p in $$list; do \
+-	@list='$(anjutadoc_DATA)'; test -n "$(anjutadocdir)" || list=; \
+-	for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(anjutadocDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(anjutadocdir)/$$f'"; \
--	  $(anjutadocDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(anjutadocdir)/$$f"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(anjutadocdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(anjutadocdir)" || exit $$?; \
 -	done
 +#	@$(NORMAL_INSTALL)
 +#	test -z "$(anjutadocdir)" || $(MKDIR_P) "$(DESTDIR)$(anjutadocdir)"
-+#	@list='$(anjutadoc_DATA)'; for p in $$list; do \
++#	@list='$(anjutadoc_DATA)'; test -n "$(anjutadocdir)" || list=; \
++#	for p in $$list; do \
 +#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-+#	  f=$(am__strip_dir) \
-+#	  echo " $(anjutadocDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(anjutadocdir)/$$f'"; \
-+#	  $(anjutadocDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(anjutadocdir)/$$f"; \
++#	  echo "$$d$$p"; \
++#	done | $(am__base_list) | \
++#	while read files; do \
++#	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(anjutadocdir)'"; \
++#	  $(INSTALL_DATA) $$files "$(DESTDIR)$(anjutadocdir)" || exit $$?; \
 +#	done
  
  uninstall-anjutadocDATA:
