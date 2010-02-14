@@ -7,6 +7,7 @@
 
 PORTNAME=	Moose-Policy
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STEVAN
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Moose-mounted police
 
-RUN_DEPENDS=	${SITE_PERL}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose
 BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${RUN_DEPENDS}
 
