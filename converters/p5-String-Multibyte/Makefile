@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	String-Multibyte
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	converters perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/S/SA/SADAHIRO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manipulate multibyte character strings
 
 PERL_CONFIGURE=	yes
