@@ -5,5 +5,5 @@ include/libssh/sftp.h
 include/libssh/ssh2.h
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.0.0
+lib/libssh.so.4.0.1
 @dirrm include/libssh
