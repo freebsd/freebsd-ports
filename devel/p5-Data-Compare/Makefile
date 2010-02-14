@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Data-Compare
-PORTVERSION=	1.2102
+PORTVERSION=	1.2200
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/D/DC/DCANTRELL
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::Compare - compare perl data structures
