@@ -1,0 +1,15 @@
+--- ./src/common/CMakeLists.txt.orig	2010-01-19 02:52:02.000000000 +0300
++++ ./src/common/CMakeLists.txt	2010-02-13 11:11:27.822966933 +0300
+@@ -77,11 +77,4 @@
+   target_link_libraries(mod_common "-framework CoreServices" "-framework CoreFoundation")
+ endif(APPLE)
+ 
+-if(CMAKE_HOST_UNIX)
+-    find_library(libdl dl)
+-    if (libdl-NOTFOUND)
+-        message(FATAL_ERROR "Cannot find required library: libdl")
+-    endif (libdl-NOTFOUND)
+-
+-    target_link_libraries(mod_common ${libdl})
+-endif(CMAKE_HOST_UNIX)
++target_link_libraries(mod_common ${CMAKE_DL_LIBS})
