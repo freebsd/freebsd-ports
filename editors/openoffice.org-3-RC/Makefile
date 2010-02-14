@@ -21,6 +21,8 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
+IGNORE=		OOO320_m12 has been released
+
 NO_LATEST_LINK=	yes
 
 .if !defined(WITHOUT_MOZILLA)
