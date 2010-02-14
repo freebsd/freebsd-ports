@@ -26,6 +26,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFLICTS=	py??-cheetah-[0-9]*
 
+# XXX: when removing this port, don't forget to also remove needless
+# CONFLICTS from devel/py-cheetah
+BROKEN=		crashes on loading any webpage
+DEPRECATED=	broken, unmaintained, development ceased in 2001
+EXPIRATION_DATE=2010-03-14
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
