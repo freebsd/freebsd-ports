@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.6.1
+PORTVERSION=	1.6.6.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -183,7 +183,7 @@ OPTIONS=	GUI "Enable building of GUI tools" off \
 		ICONV "Support for multiple character encodings" on \
 		CURL "Support HTTP push and pull" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef (WITH_PERL)
 USE_PERL5=	yes
@@ -362,4 +362,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
