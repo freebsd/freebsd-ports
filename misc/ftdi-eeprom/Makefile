@@ -7,6 +7,7 @@
 
 PORTNAME=	ftdi-eeprom
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.bwct.de/
 
