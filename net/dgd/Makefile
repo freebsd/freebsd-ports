@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net lang games
-MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
-		http://ftp.dworkin.nl/dgd/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME}-osr|}:1 \
+		http://ftp.dworkin.nl/kernellib/:2 \
+		http://ftp.dworkin.nl/kernellib/patches/:3
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1 \
+		kernellib-${KERNELLIB_VERSION}${EXTRACT_SUFX}:2 \
+		${KERNELLIB_VERSION}-${KERNELLIB_VERSION}.1.gz:3
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		kernellib-${KERNELLIB_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	Dworkin's Generic Driver (network server)
-
-NO_CDROM=	no distribution to corporate environment
-RESTRICTED=	license required for commercial use
+COMMENT=	Dworkin's Game Driver
 
 OPTIONS=	NETWORKING	"With networking kfuns"		off
 
@@ -25,6 +28,9 @@ PATCH_WRKSRC=	${WRKDIR}/dgd
 ALL_TARGET=	install
 MAKE_JOBS_UNSAFE=	yes
 
+KERNELLIB_VERSION=	1.3
+EXTRA_PATCHES=		${WRKDIR}/${KERNELLIB_VERSION}-${KERNELLIB_VERSION}.1
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
@@ -32,26 +38,31 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NETWORKING)
-PATCH_SITES+=	http://ftp.dworkin.nl/dgd/pkg/
-PATCHFILES+=	Network-6-DGD-1.3.patch.gz
+MASTER_SITES+=	http://wotf.org/downloads/${PORTNAME}/:4
+DIST_FILES+=	Network-0.8-dgd-${PORTVERSION}.patch.gz:4
+EXTRA_PATCHES+=	${WRKDIR}/Network-0.8-dgd-${PORTVERSION}.patch \
+		${FILESDIR}/extrapatch-kernellib-net
 PLIST_SUB+=	NETWORKING=""
-PATCH_DIST_STRIP=	-p1
-PATCH_STRIP=		-p0 -F 3
 .else
 PLIST_SUB+=	NETWORKING="@comment "
+.endif
+
+post-extract:
+	@${MV} ${WRKDIR}/kernellib ${WRKDIR}/dgd/
+
+pre-patch:
+	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${KERNELLIB_VERSION}-${KERNELLIB_VERSION}.1.gz > ${WRKDIR}/${KERNELLIB_VERSION}-${KERNELLIB_VERSION}.1
+.if defined(WITH_NETWORKING)
+	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/Network-0.8-dgd-${PORTVERSION}.patch.gz | ${SED} -e 's:^\*\*\* dgd/:*** :' -e 's:^--- dgd-net/:--- :'> ${WRKDIR}/Network-0.8-dgd-${PORTVERSION}.patch
 .endif
 
 post-patch:
 	@${MV} ${WRKSRC}/host/Makefile.bsd ${WRKSRC}/host/Makefile
 	@# There are here since the networking package modifies either these
 	@# lines or lines near them so they cannot be applied as patches.
-	@${REINPLACE_CMD} -e "s:^directory\([[:space:]]\)=\([[:space:]]\)\"[^\"]*\":directory\1=\2\"${DATADIR}/kernel\":" ${WRKDIR}/dgd/mud.dgd
+	@${REINPLACE_CMD} -e "s:^directory\([[:space:]]\)=\([[:space:]]\)\"[^\"]*\":directory\1=\2\"${DATADIR}/kernel\":" -e "s:tmp/swap:tmp/dgd.swap:" ${WRKDIR}/dgd/mud.dgd
 	@${REINPLACE_CMD} -e "/^DEBUG/d" ${WRKSRC}/Makefile
-
-.ifdef (WITH_NETWORKING)
-post-configure:
-	cd ${WRKDIR}/dgd/ && ${FIND} . -name '*.orig' -delete
-.endif
+	@cd ${WRKDIR}/dgd/ && ${FIND} . -name '*.orig' -delete
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/dgd/bin/driver ${PREFIX}/sbin/dgd
@@ -60,9 +71,9 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/dgd/mud.dgd \
 		${PREFIX}/etc/${PORTNAME}/kernel.dgd
 	${MKDIR} ${DATADIR}/kernel
-	cd ${WRKDIR}/dgd/mud && ${FIND} . \
+	cd ${WRKDIR}/dgd/kernellib && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/kernel
-	# Install an RC script for DGD
+	@# Install an RC script for DGD
 	${CAT} ${FILESDIR}/dgd.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
 		-e "s:%%DATADIR%%:${DATADIR}:" > \
 		${PREFIX}/etc/rc.d/dgd.sh.sample
@@ -72,8 +83,9 @@ do-install:
 .ifdef (WITH_NETWORKING)
 	${INSTALL_DATA} ${WRKDIR}/dgd/Changelog.NET ${DOCSDIR}
 .endif
-	${INSTALL_DATA} ${WRKDIR}/dgd/Copyright ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/dgd/COPYING ${DOCSDIR}
 .ifdef (WITH_NETWORKING)
+	${INSTALL_DATA} ${WRKDIR}/dgd/COPYING.NET ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/dgd/Copyright.NET ${DOCSDIR}
 .endif
 	${INSTALL_DATA} ${WRKDIR}/dgd/Credits ${DOCSDIR}

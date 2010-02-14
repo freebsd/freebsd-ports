@@ -1,0 +1,996 @@
+*** kernellib/include/config.h	Thu May 21 15:10:42 2009
+--- kernellib/include/config.h	Thu May 21 15:10:52 2009
+***************
+*** 6,8 ****
+--- 6,15 ----
+  # undef SYS_PERSISTENT		/* off by default */
+  
+  # define CALLOUTRSRC	FALSE	/* don't have callouts as a resource */
++ 
++ # ifdef SYS_NETWORKING
++ #  define TELNET_PORT     6047    /* default telnet port */
++ #  define BINARY_PORT     6048    /* default binary port */
++ #  define EMERGENCY_PORT  6049    /* emergency binary port */
++ # endif
++ 
+*** kernellib/include/kernel/kernel.h	Thu May 21 15:10:42 2009
+--- kernellib/include/kernel/kernel.h	Thu May 21 15:10:52 2009
+***************
+*** 1,4 ****
+--- 1,7 ----
+  # include <config.h>
++ # ifndef SYS_NETWORKING
++ # define SYS_NETWORKING
++ # endif
+  
+  # define DRIVER		"/kernel/sys/driver"
+  # define AUTO		("/kernel" + INHERITABLE_SUBDIR + "auto")
+*** kernellib/include/kernel/net.h	Thu Jan  1 00:00:00 1970
+--- kernellib/include/kernel/net.h	Thu May 21 15:10:52 2009
+***************
+*** 0 ****
+--- 1,10 ----
++ # ifdef SYS_NETWORKING
++ #  define LIB_PORT 	"/kernel/lib/network/port"
++ #  define PORT_OBJECT	"/kernel/obj/port"
++ #  define PORT_TELNET   "/kernel/sys/telnet_port"
++ #  define PORT_BINARY   "/kernel/sys/binary_port"
++ #  define PORT_EMERGENCY "/kernel/sys/emergency_port"
++ #  define PORT_UDP	"/kernel/obj/udp"
++ # else
++ #  error	networking capabilities required
++ # endif
+*** kernellib/include/kernel/user.h	Thu May 21 15:10:42 2009
+--- kernellib/include/kernel/user.h	Thu May 21 15:10:52 2009
+***************
+*** 6,11 ****
+--- 6,15 ----
+  # define BINARY_CONN		("/kernel" + CLONABLE_SUBDIR + "binary")
+  # define API_USER		("/kernel" + INHERITABLE_SUBDIR + "api/user")
+  
++ #ifdef __NETWORK_PACKAGE__
++ #define LIB_PORT                "/kernel/lib/network/port"
++ #endif
++ 
+  # define DEFAULT_USER		("/kernel" + CLONABLE_SUBDIR + "user")
+  # define DEFAULT_WIZTOOL	("/kernel" + CLONABLE_SUBDIR + "wiztool")
+  # define DEFAULT_USER_DIR	"/kernel/data"
+*** kernellib/include/std.h	Thu May 21 15:10:42 2009
+--- kernellib/include/std.h	Thu May 21 15:10:52 2009
+***************
+*** 1,2 ****
+--- 1,8 ----
++ #ifdef __NETWORK_PACKAGE__
++ #ifndef SYS_NETWORKING
++ #define SYS_NETWORKING
++ #endif
++ #endif
++ 
+  # define TRUE	1
+  # define FALSE	0
+*** kernellib/kernel/lib/auto.c	Thu May 21 15:10:42 2009
+--- kernellib/kernel/lib/auto.c	Thu May 21 15:10:52 2009
+***************
+*** 3,8 ****
+--- 3,12 ----
+  # include <kernel/rsrc.h>
+  # include <kernel/access.h>
+  # include <kernel/user.h>
++ # ifdef SYS_NETWORKING
++ # include <kernel/net.h>
++ # endif
++ 
+  # include <status.h>
+  # include <type.h>
+  # include <trace.h>
+***************
+*** 1547,1549 ****
+--- 1551,1614 ----
+      } : error(TLSVAR2);
+      return result;
+  }
++ 
++ # ifdef SYS_NETWORKING
++ /*
++  * NAME:        connect()
++  * DESCRIPTION: open an outbound connection
++  */
++ static void connect(string destination, int port,varargs string proto)
++ {
++     object conn;
++     string err;
++ 
++     if (previous_program() == LIB_CONN) {
++         if(!proto) proto = "tcp";
++         ::connect(destination, port,proto);
++     } else {
++         CHECKARG(destination, 1, "connect");
++ 
++         if (creator == "System" && this_object()) {
++             if (function_object("query_conn", this_object()) != LIB_USER) {
++                 error("Not a user object");
++             }
++             conn = clone_object(BINARY_CONN, "System");
++             call_other(this_object(),"connection",conn);
++             conn->connect(destination, port,proto);
++             if(err) {
++                 rlimits (-1; -1) {
++                     destruct_object(conn);
++                 }
++                 error(err);
++             }
++         }
++     }
++ }
++ 
++ static object port_object;
++ 
++ /*
++  * NAME:        open_port()
++  * DESCRIPTION: open a port to listen on
++  */
++ static void open_port(string protocol, varargs int port)
++ {
++     CHECKARG(protocol, 1, "open_port");
++ 
++     if (KERNEL() && this_object()) {
++         ::open_port(protocol, port);
++     }
++ }
++ 
++ /*
++  * NAME:        ports()
++  * DESCRIPTION: return list of open ports
++  */
++ static object *ports()
++ {
++     if (creator == "System") {
++         return ::ports();
++     }
++ }
++ # endif /* SYS_NETWORKING */
++ 
+*** kernellib/kernel/lib/connection.c	Thu May 21 15:10:42 2009
+--- kernellib/kernel/lib/connection.c	Thu May 21 15:10:52 2009
+***************
+*** 6,11 ****
+--- 6,12 ----
+  private object user;		/* user object */
+  private string conntype;	/* connection type */
+  private int mode;		/* connection mode */
++ private int outgoing;
+  private int blocked;		/* connection blocked? */
+  private string buffer;		/* buffered output string */
+  
+***************
+*** 66,71 ****
+--- 67,77 ----
+      int timeout;
+      string banner;
+  
++     if(outgoing) {
++        user->login("now");
++        return;
++     }
++ 
+      banner = call_other(userd, "query_" + conntype + "_banner", port,
+  			this_object());
+      if (banner) {
+***************
+*** 74,80 ****
+  
+      timeout = call_other(userd, "query_" + conntype + "_timeout", port,
+  			 this_object());
+!     if (timeout < 0) {
+  	/* disconnect immediately */
+  	destruct_object(this_object());
+  	return;
+--- 80,86 ----
+  
+      timeout = call_other(userd, "query_" + conntype + "_timeout", port,
+  			 this_object());
+!     if (timeout < 0 && !outgoing) {
+  	/* disconnect immediately */
+  	destruct_object(this_object());
+  	return;
+***************
+*** 83,88 ****
+--- 89,99 ----
+      if (!user && timeout != 0) {
+  	call_out("timeout", timeout);
+      }
++ # ifdef SYS_NETWORKING
++     else {
++         set_mode(user->login(nil));
++     }
++ # endif
+  }
+  
+  /*
+***************
+*** 136,142 ****
+   */
+  void set_port(int num)
+  {
+!     if (previous_object() == userd) {
+  	port = num;
+      }
+  }
+--- 147,154 ----
+   */
+  void set_port(int num)
+  {
+!     if(num == 0) error("port is 0\n");
+!     if (previous_object() == userd || SYSTEM()) {
+  	port = num;
+      }
+  }
+***************
+*** 194,200 ****
+  	user = call_other(userd, conntype + "_user", port, str);
+  	set_mode(mode = user->login(str));
+      } else {
+! 	set_mode(mode = user->receive_message(str));
+      }
+      return mode;
+  }
+--- 206,216 ----
+  	user = call_other(userd, conntype + "_user", port, str);
+  	set_mode(mode = user->login(str));
+      } else {
+!         mixed m;
+!         m = user->receive_message(str);
+!         if(m) mode = m;
+!         else mode = 0;
+! 	set_mode(mode);
+      }
+      return mode;
+  }
+***************
+*** 223,228 ****
+--- 239,246 ----
+  		return TRUE;
+  	    }
+  	}
++     } else {
++         error(object_name(previous_object())+" is not allowed to do that");
+      }
+  }
+  
+***************
+*** 240,245 ****
+--- 258,264 ----
+      }
+  }
+  
++ #ifndef SYS_NETWORKING
+  /*
+   * NAME:	datagram_challenge()
+   * DESCRIPTION:	set the challenge for the datagram channel
+***************
+*** 283,285 ****
+--- 302,324 ----
+  	return (send_datagram(str) == strlen(str));
+      }
+  }
++ #else
++ /*
++  * NAME:        connect()
++  * DESCRIPTION: establish an outbount connection
++  */
++ void connect(string destination, int n,varargs string protocol)
++ {
++     if (previous_program() == AUTO || previous_program() == LIB_USER) {
++         outgoing = 1;
++         user = previous_object();
++         port = n;
++         ::connect(destination, n, protocol);
++     }
++ }
++ 
++ void receive_error(string str) {
++     DRIVER->message("NETWORK ERROR: "+str+"\n");
++ }
++ # endif
++ 
+*** kernellib/kernel/lib/network/port.c	Thu Jan  1 00:00:00 1970
+--- kernellib/kernel/lib/network/port.c	Thu May 21 15:10:52 2009
+***************
+*** 0 ****
+--- 1,68 ----
++ # include <kernel/kernel.h>
++ # include <kernel/user.h>
++ # include <trace.h>
++ # include <type.h>
++ 
++ private object driver;		/* driver object */
++ private object userd;		/* user manager object */
++ private string protocol;        /* telnet, tcp or udp */
++ 
++ /*
++  * NAME:	create()
++  * DESCRIPTION:	initialize port object
++  */
++ static void create()
++ {
++     driver = find_object(DRIVER);
++     userd = find_object(USERD);
++ }
++ 
++ /*
++  * NAME:	open_port()
++  * DESCRIPTION:	start listening on a port
++  */
++ static 
++ void open_port(string prot, varargs int port)
++ {
++     rlimits (-1; -1) {
++ /*	catch {*/
++ 	if (typeof(port)==T_INT && port !=0) {
++ 		::open_port(prot, port);
++ 	    } else {
++ 		::open_port(prot);
++ 	    }
++ 	    protocol = prot;
++ 	    return;
++ /*	} : {
++ 	    error(::call_trace()[1][TRACE_FIRSTARG][1]);
++ 	    return;
++ 	    }*/
++     }
++ }
++ 
++ object
++ connection(mixed *tls, string ip, int port)
++ {
++     object conn;
++ 
++     switch(protocol) {
++       case "telnet" : conn = clone_object(TELNET_CONN);
++                       break;
++       default       : conn = clone_object(BINARY_CONN);
++                       break;
++     }
++     conn->set_port(port);
++     return conn;
++ }
++ 
++ int 
++ open(mixed *tls,int port)
++ {
++     return FALSE;
++ }
++ 
++ void
++ close(mixed *tls, int force)
++ {
++ }
++ 
+*** kernellib/kernel/obj/binary.c	Thu May 21 15:10:42 2009
+--- kernellib/kernel/obj/binary.c	Thu May 21 15:10:52 2009
+***************
+*** 1,5 ****
+--- 1,9 ----
+  # include <kernel/kernel.h>
+  # include <kernel/user.h>
++ # ifdef SYS_NETWORKING
++ #  include <kernel/net.h>
++ # endif
++ 
+  
+  inherit LIB_CONN;	/* basic connection object */
+  
+***************
+*** 25,33 ****
+   * NAME:	open()
+   * DESCRIPTION:	open the connection
+   */
+! static void open()
+  {
+      ::open(allocate(driver->query_tls_size()));
+  }
+  
+  /*
+--- 29,42 ----
+   * NAME:	open()
+   * DESCRIPTION:	open the connection
+   */
+! static int open()
+  {
+      ::open(allocate(driver->query_tls_size()));
++ # ifdef SYS_NETWORKING
++     return TRUE;
++ # else
++     return FALSE;
++ # endif
+  }
+  
+  /*
+***************
+*** 153,158 ****
+--- 162,168 ----
+      ::message_done(allocate(driver->query_tls_size()));
+  }
+  
++ #ifndef SYS_NETWORKING
+  /*
+   * NAME:	open_datagram()
+   * DESCRIPTION:	open a datagram channel for this connection
+***************
+*** 170,172 ****
+--- 180,229 ----
+  {
+      ::receive_datagram(allocate(driver->query_tls_size()), str);
+  }
++ #endif
++ 
++ #ifdef SYS_NETWORKING
++ 
++ object udpchannel;      /* UDP channel object */
++ 
++ /*
++  * NAME:        set_udpchannel()
++  * DESCRIPTION: set the UDP channel for this connection
++  */
++ void set_udpchannel(object udp, string host, int port)
++ {
++     if (previous_program() == LIB_PORT) {
++         udpchannel = udp;
++         udp->add_connection(this_object(), host, port);
++     }
++ }
++ 
++ /*
++  * NAME:        receive_datagram()
++  * DESCRIPTION: receive a datagram
++  */
++ void receive_datagram(mixed *tls, string str)
++ {
++     if (previous_object() == udpchannel) {
++         object user;
++ 
++         user = query_user();
++         if (user) {
++             user->receive_datagram(str);
++         }
++     }
++ }
++ 
++ /*
++  * NAME:        datagram()
++  * DESCRIPTION: send a datagram on the UDP channel
++  */
++ int datagram(string str)
++ {
++     if (previous_object() == query_user() && udpchannel) {
++         return udpchannel->datagram(str);
++     }
++ }
++ 
++ #endif 
++ 
+*** kernellib/kernel/obj/port.c	Thu Jan  1 00:00:00 1970
+--- kernellib/kernel/obj/port.c	Thu May 21 15:10:52 2009
+***************
+*** 0 ****
+--- 1,49 ----
++ # include <kernel/kernel.h>
++ # include <kernel/user.h>
++ # include <kernel/net.h>
++ 
++ inherit LIB_PORT;
++ 
++ /*
++  * NAME:        create()
++  * DESCRIPTION: initialize port object
++  */
++ static void create(int clone)
++ {
++     if (clone) {
++         ::create();
++     }
++ }
++ 
++ /*
++  * NAME:        listen()
++  * DESCRIPTION: start listening on a port
++  */
++ void listen(string protocol, int port)
++ {
++ #ifndef SYS_NETWORKING
++     if (previous_program() == DRIVER) {
++ #else
++     if (previous_program() == DRIVER || previous_program() == USERD) {
++ #endif
++         ::open_port(protocol, port);
++     }
++ }
++ 
++ /*
++  * NAME:        open_connection()
++  * DESCRIPTION: don't return a user object, select it by first line of input
++  */
++ static object open_connection(string ipaddr, int port)
++ {
++     return nil;
++ }
++ 
++ void open(int port) {
++     ::open(allocate(DRIVER->query_tls_size()),port);
++ }
++ 
++ object connection(string ip, int port) {
++     ::connection(allocate(DRIVER->query_tls_size()),ip,port);
++ }
++ 
+*** kernellib/kernel/sys/binary_port.c	Thu Jan  1 00:00:00 1970
+--- kernellib/kernel/sys/binary_port.c	Thu May 21 15:10:52 2009
+***************
+*** 0 ****
+--- 1,47 ----
++ #include <kernel/net.h>
++ #include <kernel/user.h>
++ #include <kernel/kernel.h>
++ 
++ inherit LIB_PORT;               /* basic port object */
++ 
++ object driver;                   /* driver object */
++ 
++ void
++ create()
++ {
++     ::create();
++     driver = find_object(DRIVER);
++     open_port("tcp", BINARY_PORT);   
++ }
++ 
++ object
++ connection(string ip, int port)
++ {
++     return ::connection(allocate(driver->query_tls_size()), ip, port);
++ }
++ 
++ void
++ done()
++ {
++     close_user();
++ }
++ 
++ /*
++  * NAME:	open()
++  * DESCRIPTION:	open the connection
++  */
++ static int open(int port)
++ {
++     ::open(allocate(driver->query_tls_size()), port);
++     return FALSE;
++ }
++ 
++ /*
++  * NAME:	close()
++  * DESCRIPTION:	close the connection
++  */
++ static void close(int force)
++ {
++     ::close(allocate(driver->query_tls_size()), force);
++ }
++ 
+*** kernellib/kernel/sys/driver.c	Thu May 21 15:10:42 2009
+--- kernellib/kernel/sys/driver.c	Thu May 21 15:10:52 2009
+***************
+*** 4,9 ****
+--- 4,15 ----
+  # include <kernel/access.h>
+  # include <kernel/user.h>
+  # include <kernel/tls.h>
++ # ifdef __NETWORK_PACKAGE__
++ # ifndef SYS_NETWORKING
++ # define SYS_NETWORKING
++ # endif
++ #  include <kernel/net.h>
++ # endif
+  # include <status.h>
+  # include <trace.h>
+  
+***************
+*** 16,23 ****
+--- 22,38 ----
+  object initd;		/* init manager object */
+  object objectd;		/* object manager object */
+  object errord;		/* error manager object */
++ # ifdef SYS_NETWORKING
++ static object port_master;      /* port master object */
++ static object telnet;           /* default telnet port object */
++ static object binary;           /* default binary port object */
++ static object emergency;        /* emergency port object */
++ # endif
++ 
+  int tls_size;		/* thread local storage size */
+  
++ 
++ 
+  /*
+   * NAME:	creator()
+   * DESCRIPTION:	get creator of file
+***************
+*** 408,413 ****
+--- 423,432 ----
+      call_other(accessd = load(ACCESSD), "???");
+      call_other(userd = load(USERD), "???");
+      call_other(load(DEFAULT_WIZTOOL), "???");
++ # ifdef SYS_NETWORKING
++     call_other(port_master = load(PORT_OBJECT), "???");
++     call_other(emergency = load(PORT_EMERGENCY), "???");
++ # endif
+  
+      /* initialize other users as resource owners */
+      users = (accessd->query_users() - ({ "System" })) | ({ "admin" });
+***************
+*** 432,439 ****
+  	    shutdown();
+  	    return;
+  	}
+      }
+- 
+      message("Initialization complete.\n\n");
+  }
+  
+--- 451,463 ----
+  	    shutdown();
+  	    return;
+  	}
++ # ifdef SYS_NETWORKING
++     } else {
++         call_other(telnet = load(PORT_TELNET),"???");
++         call_other(binary = load(PORT_BINARY),"???");
++         rsrcd->rsrc_incr("System", "objects", nil, 2, 1);
++ #endif
+      }
+      message("Initialization complete.\n\n");
+  }
+  
+***************
+*** 477,483 ****
+  	    initd->reboot();
+  	}
+      }
+! 
+      message("State restored.\n\n");
+  }
+  
+--- 501,519 ----
+  	    initd->reboot();
+  	}
+      }
+! # ifdef SYS_NETWORKING
+!     if (telnet) {
+!         telnet->listen("telnet", TELNET_PORT);
+!     }
+!     if (binary) {
+!         binary->listen("tcp", BINARY_PORT);
+!     }
+!     if(!emergency) {
+!       emergency = clone_object(port_master);
+!       rsrcd->rsrc_incr("System", "objects", nil, 1, 1);
+!     }
+!     emergency->listen("tcp", EMERGENCY_PORT);
+! # endif
+      message("State restored.\n\n");
+  }
+  
+*** kernellib/kernel/sys/emergency_port.c	Thu Jan  1 00:00:00 1970
+--- kernellib/kernel/sys/emergency_port.c	Thu May 21 15:10:52 2009
+***************
+*** 0 ****
+--- 1,47 ----
++ #include <kernel/net.h>
++ #include <kernel/user.h>
++ #include <kernel/kernel.h>
++ 
++ inherit LIB_PORT;               /* basic port object */
++ 
++ object driver;                   /* driver object */
++ 
++ void
++ create()
++ {
++     ::create();
++     driver = find_object(DRIVER);
++     open_port("tcp", EMERGENCY_PORT);   
++ }
++ 
++ object
++ connection(string ip, int port)
++ {
++     return ::connection(allocate(driver->query_tls_size()), ip, port);
++ }
++ 
++ void
++ done()
++ {
++     close_user();
++ }
++ 
++ /*
++  * NAME:	open()
++  * DESCRIPTION:	open the connection
++  */
++ static int open(int port)
++ {
++     ::open(allocate(driver->query_tls_size()), port);
++     return FALSE;
++ }
++ 
++ /*
++  * NAME:	close()
++  * DESCRIPTION:	close the connection
++  */
++ static void close(int force)
++ {
++     ::close(allocate(driver->query_tls_size()), force);
++ }
++ 
+*** kernellib/kernel/sys/telnet_port.c	Thu Jan  1 00:00:00 1970
+--- kernellib/kernel/sys/telnet_port.c	Thu May 21 15:10:52 2009
+***************
+*** 0 ****
+--- 1,47 ----
++ #include <kernel/net.h>
++ #include <kernel/user.h>
++ #include <kernel/kernel.h>
++ 
++ inherit LIB_PORT;               /* basic port object */
++ 
++ object driver;                   /* driver object */
++ 
++ void
++ create()
++ {
++     ::create();
++     driver = find_object(DRIVER);
++     open_port("telnet", TELNET_PORT);   
++ }
++ 
++ object
++ connection(string ip, int port)
++ {
++     return ::connection(allocate(driver->query_tls_size()), ip, port);
++ }
++ 
++ void
++ done()
++ {
++     close_user();
++ }
++ 
++ /*
++  * NAME:	open()
++  * DESCRIPTION:	open the connection
++  */
++ static int open(int port)
++ {
++     ::open(allocate(driver->query_tls_size()), port);
++     return FALSE;
++ }
++ 
++ /*
++  * NAME:	close()
++  * DESCRIPTION:	close the connection
++  */
++ static void close(int force)
++ {
++     ::close(allocate(driver->query_tls_size()), force);
++ }
++ 
+*** kernellib/kernel/sys/userd.c	Thu May 21 15:10:42 2009
+--- kernellib/kernel/sys/userd.c	Thu May 21 15:10:52 2009
+***************
+*** 1,11 ****
+--- 1,18 ----
+  # include <kernel/kernel.h>
+  # include <kernel/user.h>
++ # ifdef SYS_NETWORKING
++ #  include <kernel/net.h>
++ #  define PORT  PORT_OBJECT
++ # else
++ #  define PORT  DRIVER
++ # endif
+  # include <status.h>
+  
+  
+  object *users;		/* user mappings */
+  mapping names;		/* name : connection object */
+  object *connections;	/* saved connections */
++ mapping listeners_telnet, listeners_tcp; /* port objects */
+  mapping telnet, binary;	/* port managers */
+  
+  /*
+***************
+*** 18,23 ****
+--- 25,31 ----
+      if (!find_object(TELNET_CONN)) { compile_object(TELNET_CONN); }
+      if (!find_object(BINARY_CONN)) { compile_object(BINARY_CONN); }
+      if (!find_object(DEFAULT_USER)) { compile_object(DEFAULT_USER); }
++     if (!find_object(PORT_OBJECT)) { compile_object(PORT_OBJECT); }
+  
+      /* initialize user arrays */
+      users = ({ });
+***************
+*** 32,38 ****
+   */
+  object telnet_connection(mixed *tls, int port)
+  {
+!     if (previous_program() == DRIVER) {
+  	object conn;
+  
+  	conn = clone_object(TELNET_CONN);
+--- 40,46 ----
+   */
+  object telnet_connection(mixed *tls, int port)
+  {
+!     if (previous_program() == PORT) {
+  	object conn;
+  
+  	conn = clone_object(TELNET_CONN);
+***************
+*** 47,53 ****
+   */
+  object binary_connection(mixed *tls, int port)
+  {
+!     if (previous_program() == DRIVER) {
+  	object conn;
+  
+  	conn = clone_object(BINARY_CONN);
+--- 55,61 ----
+   */
+  object binary_connection(mixed *tls, int port)
+  {
+!     if (previous_program() == PORT) {
+  	object conn;
+  
+  	conn = clone_object(BINARY_CONN);
+***************
+*** 57,62 ****
+--- 65,113 ----
+  }
+  
+  /*
++  * NAME:
++  * DESCRIPTION:
++  */
++ private void start_telnet_listener(int port)
++ {
++     if(!listeners_telnet) {
++         listeners_telnet = ([ ]);
++     }
++     if(!listeners_tcp) {
++         listeners_tcp = ([ ]);
++     }
++ 
++     if(!listeners_telnet[port] && !listeners_tcp[port]) {
++        listeners_telnet[port] = clone_object(PORT_OBJECT);
++        listeners_telnet[port]->listen("telnet",port);
++     } else {
++        error("Port "+port+" is already in use.");
++     }
++ }
++ 
++ /*
++  * NAME:
++  * DESCRIPTION:
++  */
++ private void start_tcp_listener(int port) 
++ {
++     if(!listeners_telnet) {
++         listeners_telnet = ([ ]);
++     }
++ 
++     if(!listeners_tcp) {
++         listeners_tcp = ([ ]);
++     }
++ 
++     if(!listeners_telnet[port] && !listeners_tcp[port]) {
++         listeners_tcp[port] = clone_object(PORT_OBJECT);
++         listeners_tcp[port]->listen("tcp",port);
++     } else {
++         error("Port "+port+" is already in use.");
++     }
++ }
++ 
++ /*
+   * NAME:	set_telnet_manager()
+   * DESCRIPTION:	set the telnet manager object, which determines what the
+   *		user object is, based on the first line of input
+***************
+*** 67,73 ****
+--- 118,128 ----
+  void set_telnet_manager(int port, object manager)
+  {
+      if (SYSTEM()) {
++         if(!port) port = TELNET_PORT;
+  	telnet[port] = manager;
++         DRIVER->message("telnet manager for port "+port+ " is now "+
++           object_name(manager)+"\n");
++         start_telnet_listener(port);
+      }
+  }
+  
+***************
+*** 82,88 ****
+--- 137,147 ----
+  void set_binary_manager(int port, object manager)
+  {
+      if (SYSTEM()) {
++         if(!port) port = BINARY_PORT;
+  	binary[port] = manager;
++         DRIVER->message("binary manager for port "+port+ " is now "+
++           object_name(manager)+"\n");
++         start_tcp_listener(port);
+      }
+  }
+  
+***************
+*** 100,105 ****
+--- 159,165 ----
+  	user = names[str];
+  	if (!user) {
+  	    user = telnet[port];
++             if(!user) user = binary[port];
+  	    if (user) {
+  		user = (object LIB_USER) user->select(str);
+  	    } else {
+***************
+*** 123,129 ****
+  	user = names[str];
+  	if (!user) {
+  	    user = binary[port];
+! 	    if (user && (str != "admin" || port != 0)) {
+  		user = (object LIB_USER) user->select(str);
+  	    } else {
+  		user = clone_object(DEFAULT_USER);
+--- 183,190 ----
+  	user = names[str];
+  	if (!user) {
+  	    user = binary[port];
+!             if(!user) user = telnet[port];
+! 	    if (user && (str != "admin" || port != EMERGENCY_PORT)) {
+  		user = (object LIB_USER) user->select(str);
+  	    } else {
+  		user = clone_object(DEFAULT_USER);
+*** kernellib/usr/System/initd.c	Thu Jan  1 00:00:00 1970
+--- kernellib/usr/System/initd.c	Thu May 21 15:10:52 2009
+***************
+*** 0 ****
+--- 1,32 ----
++ # include <kernel/kernel.h>
++ 
++ private void
++ load(string filename)
++ {
++     if (!find_object(filename)) {
++         compile_object(filename);
++     }
++ }
++ 
++ static void
++ create()
++ {
++     load("/kernel/sys/telnet_port");
++     load("/kernel/sys/binary_port");
++ }
++ 
++ void
++ prepare_reboot()
++ {
++     if (previous_program() == DRIVER) {
++         /* ... */
++     }
++ }
++ 
++ void
++ reboot()
++ {
++     if (previous_program() == DRIVER) {
++         /* ... */
++     }
++ }
