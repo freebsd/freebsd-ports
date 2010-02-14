@@ -4186,6 +4186,7 @@ gfp                             ports/finance/gfp
 gfslicer                        ports/sysutils/gfslicer
 gftp                            ports/ftp/gftp
 ggiterm                         ports/x11/ggiterm
+ggobi                           ports/math/ggobi
 ggrab                           ports/multimedia/ggrab
 ggsd                            ports/net/ggsd
 ggv                             ports/print/ggv
@@ -5201,6 +5202,7 @@ hcfmdm                          ports/comms/hcfmdm
 hcidump                         ports/comms/hcidump
 hcs12mem                        ports/devel/hcs12mem
 hdf                             ports/science/hdf
+hdf-java                        ports/science/hdf-java
 hdf5                            ports/science/hdf5
 hdf5-18                         ports/science/hdf5-18
 hdup                            ports/sysutils/hdup
@@ -6482,6 +6484,7 @@ jesred                          ports/www/jesred
 jetpack                         ports/games/jetpack
 jetspeed                        ports/www/jetspeed
 jetty                           ports/www/jetty
+jeuclid                         ports/math/jeuclid
 jewel                           ports/x11-wm/jewel
 jext                            ports/editors/jext
 jfbterm                         ports/sysutils/jfbterm
@@ -6510,6 +6513,7 @@ jit                             ports/net-im/jit
 jive                            ports/misc/jive
 jjclient                        ports/deskutils/jjclient
 jkill                           ports/sysutils/jkill
+jlatexmath                      ports/math/jlatexmath
 jlex                            ports/java/jlex
 jline                           ports/devel/jline
 jlint                           ports/java/jlint
@@ -18777,6 +18781,7 @@ pgpool-ii-22                    ports/databases/pgpool-II-22
 pgpoolAdmin                     ports/databases/pgpoolAdmin
 pgpooladmin                     ports/databases/pgpoolAdmin
 pgpsendmail                     ports/mail/pgpsendmail
+pgsphere                        ports/databases/pgsphere
 pgtcl                           ports/databases/pgtcl
 pgtop                           ports/databases/pgtop
 pgtune                          ports/databases/pgtune
@@ -19745,6 +19750,7 @@ py-amanith                      ports/graphics/py-amanith
 py-amf                          ports/www/py-amf
 py-anki                         ports/games/py-anki
 py-anonfunc                     ports/devel/py-anonfunc
+py-anyjson                      ports/devel/py-anyjson
 py-ao                           ports/audio/py-ao
 py-apachelog                    ports/www/py-apachelog
 py-apetag                       ports/audio/py-apetag
@@ -19913,6 +19919,7 @@ py-genshi-devel                 ports/textproc/py-genshi-devel
 py-geoip                        ports/net/py-GeoIP
 py-geojson                      ports/devel/py-geojson
 py-geotypes                     ports/devel/py-geotypes
+py-gevent                       ports/devel/py-gevent
 py-gimp                         ports/graphics/py-gimp
 py-gingin                       ports/www/py-GinGin
 py-gitosis                      ports/devel/py-gitosis
@@ -20844,7 +20851,7 @@ quvi                            ports/multimedia/quvi
 qvplay                          ports/graphics/qvplay
 qvwm                            ports/x11-wm/qvwm
 qwdtools                        ports/games/qwdtools
-qwebirc                         ports/mail/qwebirc
+qwebirc                         ports/irc/qwebirc
 qwit                            ports/net-im/qwit
 qwit-devel                      ports/net-im/qwit-devel
 qwt4                            ports/x11-toolkits/qwt4
@@ -20864,6 +20871,7 @@ rabbitmq                        ports/net/rabbitmq
 rabl_client                     ports/mail/rabl_client
 rabl_server                     ports/mail/rabl_server
 race                            ports/games/race
+rackmonkey                      ports/net-mgmt/rackmonkey
 racoon2                         ports/security/racoon2
 raddump                         ports/net/raddump
 radeontool                      ports/sysutils/radeontool
@@ -21794,6 +21802,18 @@ saint                           ports/security/saint
 sakai                           ports/www/sakai
 sakura                          ports/x11-toolkits/sakura
 salias                          ports/misc/salias
+salome                          ports/cad/salome
+salome-geom                     ports/cad/salome-geom
+salome-gui                      ports/cad/salome-gui
+salome-kernel                   ports/cad/salome-kernel
+salome-light                    ports/cad/salome-light
+salome-med                      ports/cad/salome-med
+salome-multipr                  ports/cad/salome-multipr
+salome-randomizer               ports/cad/salome-randomizer
+salome-sierpinsky               ports/cad/salome-sierpinsky
+salome-smesh                    ports/cad/salome-smesh
+salome-visu                     ports/cad/salome-visu
+salome-yacs                     ports/cad/salome-yacs
 sam2p                           ports/graphics/sam2p
 samba-libsmbclient              ports/net/samba-libsmbclient
 samba-nmblookup                 ports/net/samba-nmblookup
@@ -22211,6 +22231,7 @@ sketchy                         ports/lang/sketchy
 ski                             ports/emulators/ski
 skill                           ports/sysutils/skill
 skim                            ports/textproc/skim
+skinlf                          ports/x11-toolkits/skinlf
 skippy                          ports/x11-wm/skippy
 skippy-xd                       ports/x11-wm/skippy-xd
 skribe                          ports/textproc/skribe
@@ -23452,11 +23473,13 @@ tryst                           ports/net/tryst
 tryst-examples                  ports/net/tryst-examples
 trytond                         ports/finance/trytond
 ts                              ports/sysutils/ts
+tsMuxeR                         ports/multimedia/tsMuxeR
 tsclient                        ports/net/tsclient
 tse3                            ports/audio/tse3
 tshark                          ports/net/tshark
 tshark-lite                     ports/net/tshark-lite
 tsito                           ports/games/tsito
+tsmuxer                         ports/multimedia/tsMuxeR
 tsocks                          ports/net/tsocks
 tss                             ports/sysutils/tss
 tstools                         ports/multimedia/tstools
@@ -24884,6 +24907,7 @@ xminesweep                      ports/games/xminesweep
 xmitbin                         ports/news/xmitbin
 xmix                            ports/audio/xmix
 xmixer                          ports/audio/xmixer
+xml-commons                     ports/textproc/xml-commons
 xml-i18n-tools                  ports/textproc/xml-i18n-tools
 xml-lite.el                     ports/textproc/xml-lite.el
 xml-parse.el                    ports/textproc/xml-parse.el
@@ -24896,6 +24920,7 @@ xmldiff                         ports/textproc/xmldiff
 xmleditor                       ports/editors/xmleditor
 xmlenc                          ports/textproc/xmlenc
 xmlformat                       ports/textproc/xmlformat
+xmlgraphics-commons             ports/graphics/xmlgraphics-commons
 xmlindent                       ports/textproc/xmlindent
 xmlink                          ports/games/xmlink
 xmlpp                           ports/textproc/xmlpp
