@@ -137,6 +137,11 @@ lib/gnumeric/%%VERSION%%/plugins/dif/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/excel/excel.la
 lib/gnumeric/%%VERSION%%/plugins/excel/excel.so
 lib/gnumeric/%%VERSION%%/plugins/excel/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/excelplugins/plugin.la
+lib/gnumeric/%%VERSION%%/plugins/excelplugins/plugin.so
+lib/gnumeric/%%VERSION%%/plugins/excelplugins/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/excelplugins/xlcall32.la
+lib/gnumeric/%%VERSION%%/plugins/excelplugins/xlcall32.so
 lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-christian-date/plugin.xml
@@ -1021,6 +1026,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-database
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-complex
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-christian-date
+@dirrm lib/gnumeric/%%VERSION%%/plugins/excelplugins
 @dirrm lib/gnumeric/%%VERSION%%/plugins/excel
 @dirrm lib/gnumeric/%%VERSION%%/plugins/dif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/applix

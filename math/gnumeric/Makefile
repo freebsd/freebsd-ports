@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.9.18
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
-LIB_DEPENDS=	goffice-0.8.7:${PORTSDIR}/devel/goffice \
+LIB_DEPENDS=	goffice-0.8.8:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
@@ -40,7 +39,7 @@ GCONF_SCHEMAS=	gnumeric-dialogs.schemas gnumeric-general.schemas \
 
 MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
-PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.7.18
+PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.0
 
 OPTIONS=	PERL "Enable Perl as extension language" on
 #GNOMEDB "Enable libgnomedb support" off
