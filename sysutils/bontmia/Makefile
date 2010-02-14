@@ -7,8 +7,9 @@
 
 PORTNAME=	bontmia
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://kosmos.ttyv0.se/attachments/download/31/
+MASTER_SITES=	http://kosmos.ttyv0.se/attachments/download/37/
 
 MAINTAINER=	ports@henrikandersen.se
 COMMENT=	A small tool for incremental backups over network
