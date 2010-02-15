@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-Blowfish
-PORTVERSION=	2.10
+PORTVERSION=	2.11a
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Perl5 interface to the Blowfish encryption alogorithm
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC
 
+WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Blowfish.3
