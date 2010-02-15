@@ -1,3 +1,4 @@
+@stopdaemon smokeping
 bin/smokeping
 bin/tSmoke
 @unexec if cmp -s %D/etc/smokeping/basepage.html %D/etc/smokeping/basepage.html.dist; then rm -f %D/etc/smokeping/basepage.html; fi
