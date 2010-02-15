@@ -1,5 +1,6 @@
 bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
+share/locale/ara/LC_MESSAGES/shared-mime-info.mo
 share/locale/az/LC_MESSAGES/shared-mime-info.mo
 share/locale/be@latin/LC_MESSAGES/shared-mime-info.mo
 share/locale/bg/LC_MESSAGES/shared-mime-info.mo
@@ -50,6 +51,7 @@ share/mime/application/gnunet-directory.xml
 share/mime/application/illustrator.xml
 share/mime/application/javascript.xml
 share/mime/application/mac-binhex40.xml
+share/mime/application/mathml+xml.xml
 share/mime/application/mathematica.xml
 share/mime/application/mbox.xml
 share/mime/application/metalink+xml.xml
@@ -66,6 +68,8 @@ share/mime/application/pgp-signature.xml
 share/mime/application/pkcs10.xml
 share/mime/application/pkcs7-mime.xml
 share/mime/application/pkcs7-signature.xml
+share/mime/application/pkix-cert.xml
+share/mime/application/pkix-crl.xml
 share/mime/application/pkix-pkipath.xml
 share/mime/application/postscript.xml
 share/mime/application/prs.plucker.xml
@@ -76,12 +80,14 @@ share/mime/application/rtf.xml
 share/mime/application/sdp.xml
 share/mime/application/sieve.xml
 share/mime/application/smil.xml
+share/mime/application/vnd.apple.mpegurl.xml
 share/mime/application/vnd.corel-draw.xml
 share/mime/application/vnd.emusic-emusic_package.xml
 share/mime/application/vnd.google-earth.kml+xml.xml
 share/mime/application/vnd.google-earth.kmz.xml
 share/mime/application/vnd.hp-hpgl.xml
 share/mime/application/vnd.hp-pcl.xml
+share/mime/application/vnd.iccprofile.xml
 share/mime/application/vnd.lotus-1-2-3.xml
 share/mime/application/vnd.mozilla.xul+xml.xml
 share/mime/application/vnd.ms-access.xml
@@ -97,13 +103,17 @@ share/mime/application/vnd.oasis.opendocument.chart.xml
 share/mime/application/vnd.oasis.opendocument.database.xml
 share/mime/application/vnd.oasis.opendocument.formula-template.xml
 share/mime/application/vnd.oasis.opendocument.formula.xml
+share/mime/application/vnd.oasis.opendocument.graphics-flat-xml.xml
 share/mime/application/vnd.oasis.opendocument.graphics-template.xml
 share/mime/application/vnd.oasis.opendocument.graphics.xml
 share/mime/application/vnd.oasis.opendocument.image.xml
+share/mime/application/vnd.oasis.opendocument.presentation-flat-xml.xml
 share/mime/application/vnd.oasis.opendocument.presentation-template.xml
 share/mime/application/vnd.oasis.opendocument.presentation.xml
+share/mime/application/vnd.oasis.opendocument.spreadsheet-flat-xml.xml
 share/mime/application/vnd.oasis.opendocument.spreadsheet-template.xml
 share/mime/application/vnd.oasis.opendocument.spreadsheet.xml
+share/mime/application/vnd.oasis.opendocument.text-flat-xml.xml
 share/mime/application/vnd.oasis.opendocument.text-master.xml
 share/mime/application/vnd.oasis.opendocument.text-template.xml
 share/mime/application/vnd.oasis.opendocument.text-web.xml
@@ -111,6 +121,7 @@ share/mime/application/vnd.oasis.opendocument.text.xml
 share/mime/application/vnd.openofficeorg.extension.xml
 share/mime/application/vnd.openxmlformats-officedocument.presentationml.presentation.xml
 share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.xml
+share/mime/application/vnd.openxmlformats-officedocument.presentationml.slideshow.xml
 share/mime/application/vnd.openxmlformats-officedocument.wordprocessingml.document.xml
 share/mime/application/vnd.rn-realmedia.xml
 share/mime/application/vnd.stardivision.calc.xml
@@ -223,9 +234,12 @@ share/mime/application/x-hdf.xml
 share/mime/application/x-hwp.xml
 share/mime/application/x-hwt.xml
 share/mime/application/x-ica.xml
+share/mime/application/x-it87.xml
 share/mime/application/x-ipod-firmware.xml
 share/mime/application/x-java-archive.xml
+share/mime/application/x-java-jce-keystore.xml
 share/mime/application/x-java-jnlp-file.xml
+share/mime/application/x-java-keystore.xml
 share/mime/application/x-java-pack200.xml
 share/mime/application/x-java.xml
 share/mime/application/x-jbuilder-project.xml
@@ -513,7 +527,6 @@ share/mime/text/directory.xml
 share/mime/text/enriched.xml
 share/mime/text/html.xml
 share/mime/text/htmlh.xml
-share/mime/text/mathml.xml
 share/mime/text/plain.xml
 share/mime/text/rfc822-headers.xml
 share/mime/text/richtext.xml
@@ -666,3 +679,5 @@ share/mime/x-epoc/x-sisx-app.xml
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ara/LC_MESSAGES
+@dirrmtry share/locale/ara

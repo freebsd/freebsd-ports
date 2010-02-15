@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
