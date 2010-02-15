@@ -3,6 +3,8 @@ bin/dbicadmin
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/.packlist
 %%SITE_PERL%%/DBIx/Class.pm
 %%SITE_PERL%%/DBIx/Class/AccessorGroup.pm
+%%SITE_PERL%%/DBIx/Class/Admin.pm
+%%SITE_PERL%%/DBIx/Class/Admin/Types.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/AbstractSearch.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/AccessorMapping.pm
@@ -50,6 +52,8 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Manual/Joining.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Reading.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Troubleshooting.pod
+%%SITE_PERL%%/DBIx/Class/Optional/Dependencies.pm
+%%SITE_PERL%%/DBIx/Class/Optional/Dependencies.pod
 %%SITE_PERL%%/DBIx/Class/Ordered.pm
 %%SITE_PERL%%/DBIx/Class/PK.pm
 %%SITE_PERL%%/DBIx/Class/PK/Auto.pm
@@ -162,10 +166,12 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Relationship
 @dirrmtry %%SITE_PERL%%/DBIx/Class/PK/Auto
 @dirrmtry %%SITE_PERL%%/DBIx/Class/PK
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Optional
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Manual
 @dirrmtry %%SITE_PERL%%/DBIx/Class/InflateColumn
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ClassResolver
 @dirrmtry %%SITE_PERL%%/DBIx/Class/CDBICompat
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Admin
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
