@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	Hash-Case
-PORTVERSION=	1.006
+PORTVERSION=	1.010
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Hash
+MASTER_SITES=	CPAN/../../authors/id/M/MA/MARKOV
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class for hashes with key-casing requirements
+
+BUILD_DEPENDS=	p5-Log-Report>=0.26:${PORTSDIR}/devel/p5-Log-Report
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
