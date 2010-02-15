@@ -30,4 +30,5 @@ etc/rc.d/sip2ncid
 %%DATADIR%%/ncid-tivo
 %%DATADIR%%/ncid-yac
 @dirrm %%DATADIR%%
-share/pixmaps/ncid.gif
+share/pixmaps/ncid/ncid.gif
+@dirrmtry share/pixmaps/ncid
