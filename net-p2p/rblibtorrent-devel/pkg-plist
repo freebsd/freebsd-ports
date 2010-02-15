@@ -291,6 +291,50 @@ lib/libtorrent-rasterbar.la
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.5
 libdata/pkgconfig/libtorrent-rasterbar.pc
+%%PORTDOCS%%%%DOCSDIR%%/Linkage.png
+%%PORTDOCS%%%%DOCSDIR%%/acquasition.jpg
+%%PORTDOCS%%%%DOCSDIR%%/arctic_thumb.png
+%%PORTDOCS%%%%DOCSDIR%%/bitbuddy_thumb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/bitfox.png
+%%PORTDOCS%%%%DOCSDIR%%/bitrocket_thumb.png
+%%PORTDOCS%%%%DOCSDIR%%/bitscast_thumb.png
+%%PORTDOCS%%%%DOCSDIR%%/bitslug_thumb.png
+%%PORTDOCS%%%%DOCSDIR%%/btg_thumb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/bubba.png
+%%PORTDOCS%%%%DOCSDIR%%/building.html
+%%PORTDOCS%%%%DOCSDIR%%/client_test.html
+%%PORTDOCS%%%%DOCSDIR%%/client_test.png
+%%PORTDOCS%%%%DOCSDIR%%/deluge.png
+%%PORTDOCS%%%%DOCSDIR%%/dht_extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/electric_sheep_thumb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/extension_protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/fatrat.png
+%%PORTDOCS%%%%DOCSDIR%%/fdm.png
+%%PORTDOCS%%%%DOCSDIR%%/features.html
+%%PORTDOCS%%%%DOCSDIR%%/firetorrent.png
+%%PORTDOCS%%%%DOCSDIR%%/flush.jpg
+%%PORTDOCS%%%%DOCSDIR%%/halite_thumb.png
+%%PORTDOCS%%%%DOCSDIR%%/im_thumb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/leechcraft.png
+%%PORTDOCS%%%%DOCSDIR%%/libtorrent_plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/lince.png
+%%PORTDOCS%%%%DOCSDIR%%/make_torrent.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/miro.jpg
+%%PORTDOCS%%%%DOCSDIR%%/moopolice_thumb.gif
+%%PORTDOCS%%%%DOCSDIR%%/projects.html
+%%PORTDOCS%%%%DOCSDIR%%/pump.png
+%%PORTDOCS%%%%DOCSDIR%%/python_binding.html
+%%PORTDOCS%%%%DOCSDIR%%/qbittorrent_thumb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/running_tests.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/tvitty.jpg
+%%PORTDOCS%%%%DOCSDIR%%/udp_tracker_protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/unicode_support.png
+%%PORTDOCS%%%%DOCSDIR%%/ziptorrent_thumb.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libtorrent/kademlia
 @dirrm include/libtorrent/extensions
 @dirrm include/libtorrent/aux_

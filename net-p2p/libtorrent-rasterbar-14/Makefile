@@ -7,8 +7,8 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.14.8
-PORTREVISION=	2
-CATEGORIES=	net-p2p
+PORTREVISION=	3
+CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	http://libtorrent.googlecode.com/files/
 PKGNAMEPREFIX=	rb
 PKGNAMESUFFIX=	-devel
@@ -61,5 +61,15 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e 's|@BOOST_SYSTEM_LIB@|-lboost_system|' \
 		${WRKSRC}/libtorrent-rasterbar.pc
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.css ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.gif ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.jpg ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.png ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
