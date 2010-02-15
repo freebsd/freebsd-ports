@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Throwable/Error.pm
+%%SITE_PERL%%/Throwable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Throwable/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Throwable
+@dirrmtry %%SITE_PERL%%/Throwable
