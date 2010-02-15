@@ -7,7 +7,7 @@
 
 PORTNAME=	libcompizconfig
 PORTVERSION=	0.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 post-patch:
+	echo ${OSVERSION}
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
 		${WRKSRC}/src/main.c			\
 		${WRKSRC}/src/lists.c			\
@@ -35,4 +36,11 @@ post-patch:
 		${WRKSRC}/src/ini.c			\
 		${WRKSRC}/backend/ini.c
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 800501) || \
+    (${OSVERSION} >= 900000 && ${OSVERSION} < 900006)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-compiz.cpp
+.endif
+
+.include <bsd.port.post.mk>
