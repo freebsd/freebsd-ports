@@ -101,8 +101,8 @@ lib/eaglemode/etc/emFileMan/Commands/Archive/PackTarGz.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/PackZip.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/Unpack.pl
 lib/eaglemode/etc/emFileMan/Commands/AudioVideo.props
+lib/eaglemode/etc/emFileMan/Commands/AudioVideo/Kaffeine.pl
 lib/eaglemode/etc/emFileMan/Commands/AudioVideo/Totem.pl
-lib/eaglemode/etc/emFileMan/Commands/AudioVideo/XMMS.pl
 lib/eaglemode/etc/emFileMan/Commands/AudioVideo/xine.pl
 lib/eaglemode/etc/emFileMan/Commands/Clone.pl
 lib/eaglemode/etc/emFileMan/Commands/Copy.pl
@@ -289,6 +289,7 @@ lib/eaglemode/include/emIlbm/emIlbmImageFileModel.h
 lib/eaglemode/include/emJpeg/emJpegImageFileModel.h
 lib/eaglemode/include/emMain/emBookmarks.h
 lib/eaglemode/include/emMain/emCoreConfigPanel.h
+lib/eaglemode/include/emMain/emMainConfig.h
 lib/eaglemode/include/emMain/emMainContentPanel.h
 lib/eaglemode/include/emMain/emMainPanel.h
 lib/eaglemode/include/emMain/emMainWindow.h
