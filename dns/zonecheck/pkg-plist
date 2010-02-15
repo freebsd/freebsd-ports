@@ -85,6 +85,7 @@ libexec/zonecheck/zc/data/logo.rb
 libexec/zonecheck/zc/data/msgcat.dtd
 libexec/zonecheck/zc/data/xpm.rb
 libexec/zonecheck/zc/data/zonecheck.dtd
+libexec/zonecheck/zc/data/logo.png
 libexec/zonecheck/zc/dbg.rb
 libexec/zonecheck/zc/ext/array.rb
 libexec/zonecheck/zc/ext/file.rb
