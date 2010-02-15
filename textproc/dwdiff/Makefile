@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/ \
 		http://www.logvinov.ru/files/dist/ \
@@ -22,19 +22,19 @@ MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
-MAN1=		${PORTNAME}.1
+MAN1=		${PORTNAME}.1 dwfilter.1
 PORTDOCS=	COPYING Changelog README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-MANLANG=	"" nl
-LANGS=		de nl
+MANLANG=	"" nl nl.UTF-8
 .else
 CONFIGURE_ARGS+=	--without-gettext
 PLIST_SUB+=	NLS="@comment "
@@ -46,25 +46,12 @@ LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu
 CONFIGURE_ARGS+=	--without-unicode
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MAN1PREFIX}/man/man1
+post-patch:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
-.if !defined(WITHOUT_NLS)
-.for lang in ${MANLANG:N""}
-	@${MKDIR} ${MAN1PREFIX}/man/${lang}/man1
-	${INSTALL_MAN} ${WRKSRC}/man/${lang}/${MAN1} ${MAN1PREFIX}/man/${lang}/man1
-.endfor
-.for lang in ${LANGS}
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
-	    ${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
-.endfor
+	@${REINPLACE_CMD} -e 's|share/doc/${PORTNAME}-${PORTVERSION}|${DOCSDIR_REL}|' \
+		${WRKSRC}/Makefile.in
+.else
+	@${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

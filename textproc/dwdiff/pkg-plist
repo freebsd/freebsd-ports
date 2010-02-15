@@ -1,5 +1,8 @@
 bin/dwdiff
+bin/dwfilter
 %%NLS%%share/locale/de/LC_MESSAGES/dwdiff.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/dwdiff.mo
+%%NLS%%@dirrmtry man/nl.UTF-8/man1
+%%NLS%%@dirrmtry man/nl.UTF-8
 %%NLS%%@dirrmtry man/nl/man1
 %%NLS%%@dirrmtry man/nl
