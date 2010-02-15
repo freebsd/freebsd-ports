@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xastir
-PORTVERSION=	1.9.6
-PORTREVISION=	3
+PORTVERSION=	1.9.8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -25,7 +24,10 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_GETTEXT=	yes
 
-MAN1=		xastir.1
+MAN1=		xastir.1 \
+		callpass.1 \
+		testdbfawk.1 \
+		xastir_udp_client.1
 
 SUB_FILES=	pkg-message
 

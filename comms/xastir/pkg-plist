@@ -78,12 +78,17 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/language-Spanish.sys
 %%DATADIR%%/config/nwsc_ddmmyy.dbfawk
 %%DATADIR%%/config/nwsc_ddmmyy_09.dbfawk
+%%DATADIR%%/config/nwsc_ddmmyy_09b.dbfawk
 %%DATADIR%%/config/nwsmzddmmyy.dbfawk
+%%DATADIR%%/config/nwsmzddmmyy_09.dbfawk
 %%DATADIR%%/config/nwsmzoddmmyy.dbfawk
 %%DATADIR%%/config/nwsozddmmyy.dbfawk
+%%DATADIR%%/config/nwsozddmmyy_09.dbfawk
 %%DATADIR%%/config/nwsw_ddmmyy.dbfawk
+%%DATADIR%%/config/nwsw_ddmmyy_09.dbfawk
 %%DATADIR%%/config/nwsz1ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy.dbfawk
+%%DATADIR%%/config/nwsz_ddmmyy_09.dbfawk
 %%DATADIR%%/config/nwszoddmmyy.dbfawk
 %%DATADIR%%/config/pointlm.dbfawk
 %%DATADIR%%/config/predefined_EVENT.sys
