@@ -8,8 +8,10 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/Microsoft_SQL_Server.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/SQL_Anywhere.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Pg.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/SQLAnywhere.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase/Common.pm
