@@ -7,6 +7,7 @@
 
 PORTNAME=		rmilter
 PORTVERSION=		1.5.24
+PORTREVISION=		1
 CATEGORIES=		mail
 MASTER_SITES=		http://cebka.pp.ru/distfiles/
 
@@ -20,6 +21,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
+WITH_SENDMAIL_BASE=	yes
 
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=	--enable-debug
