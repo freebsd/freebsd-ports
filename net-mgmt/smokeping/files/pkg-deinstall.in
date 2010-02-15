@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/smokeping/files/pkg-deinstall.in,v 1.1 2010-02-15 12:53:24 lth Exp $
+#
+
+if [ -f ${PKG_PREFIX}/var/smokeping/smokeping.pid ]; then
+rm ${PKG_PREFIX}/var/smokeping/smokeping.pid
+fi
+

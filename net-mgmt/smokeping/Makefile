@@ -7,7 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -24,49 +24,6 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-
-OPTIONS=	FPING "Support for fping probes" on
-OPTIONS+=	ECHOPING "Support for EchoPing probes" off
-OPTIONS+=	CURL "Support for Curl probes" off
-OPTIONS+=	LDAP "Support for LDAP probes" off
-OPTIONS+=	LDAPSSL "Support for SSL-enabled LDAP probes" off
-OPTIONS+=	RADIUS "Support for Radius probes" off
-OPTIONS+=	TELNET "Support for TelnetIOSPing probes" off
-OPTIONS+=	DNS "Support for AnotherDNS probes" off
-
-.include <bsd.port.pre.mk>
-
-.ifdef(WITH_FPING)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
-.endif
-
-.ifdef(WITH_ECHOPING)
-RUN_DEPENDS+=	${LOCALBASE}/bin/echoping:${PORTSDIR}/net/echoping
-.endif
-
-.ifdef(WITH_CURL)
-RUN_DEPENDS+=	${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
-.endif
-
-.if defined(WITH_LDAP) || defined(WITH_LDAPSSL)
-RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
-.endif
-
-.ifdef(WITH_RADIUS)
-RUN_DEPENDS+=	${SITE_PERL}/Authen/Radius.pm:${PORTSDIR}/security/p5-Authen-Radius
-.endif
-
-.ifdef(WITH_LDAPSSL)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
-.endif
-
-.ifdef(WITH_TELNET)
-RUN_DEPENDS+=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet
-.endif
-
-.ifdef(WITH_DNS)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
-.endif
 
 USE_RC_SUBR=	smokeping
 
@@ -113,18 +70,16 @@ MAN7=		smokeping_examples.7 \
 		smokeping_install.7 \
 		smokeping_upgrade.7
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-USER=		smokeping
-SMOKEPING_UID=	117
-GROUP=		smokeping
-SMOKEPING_GID=	117
+USERS=		smokeping
+GROUPS=		smokeping
 
-SUB_LIST+=	USER=${USER} UID=${SMOKEPING_UID} \
-		GROUP=${GROUP} GID=${SMOKEPING_GID} \
-		PERL=${PERL} PREFIX=${PREFIX}
+SUB_FILES=	pkg-deinstall pkg-message
+SUB_LIST=	USERS=${USERS} \
+		GROUPS=${GROUPS} \
+		PERL=${PERL} \
+		PKG_PREFIX=${PKG_PREFIX}
 
 DOC1=		CHANGES CONTRIBUTORS COPYING COPYRIGHT README TODO
 DOC2=		Config/Grammar \
@@ -179,6 +134,50 @@ EXAMPLES=	config.echoping \
 
 ETC1=		basepage.html config smokemail tmail
 
+OPTIONS=	FPING "Support for fping probes" on
+OPTIONS+=	ECHOPING "Support for EchoPing probes" off
+OPTIONS+=	CURL "Support for Curl probes" off
+OPTIONS+=	LDAP "Support for LDAP probes" off
+OPTIONS+=	LDAPSSL "Support for SSL-enabled LDAP probes" off
+OPTIONS+=	RADIUS "Support for Radius probes" off
+OPTIONS+=	TELNET "Support for TelnetIOSPing probes" off
+OPTIONS+=	DNS "Support for AnotherDNS probes" off
+
+.include <bsd.port.options.mk>
+.ifdef(WITH_FPING)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
+.endif
+
+.ifdef(WITH_ECHOPING)
+RUN_DEPENDS+=	${LOCALBASE}/bin/echoping:${PORTSDIR}/net/echoping
+.endif
+
+.ifdef(WITH_CURL)
+RUN_DEPENDS+=	${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
+.endif
+
+.if defined(WITH_LDAP) || defined(WITH_LDAPSSL)
+RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+.endif
+
+.ifdef(WITH_RADIUS)
+RUN_DEPENDS+=	${SITE_PERL}/Authen/Radius.pm:${PORTSDIR}/security/p5-Authen-Radius
+.endif
+
+.ifdef(WITH_LDAPSSL)
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+.endif
+
+.ifdef(WITH_TELNET)
+RUN_DEPENDS+=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet
+.endif
+
+.ifdef(WITH_DNS)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+.endif
+
+.include <bsd.port.pre.mk>
+
 # Things that shouldn't have been in the tarball in the first place
 post-extract:
 	${RM} ${WRKSRC}/lib/BER.pm
@@ -215,19 +214,10 @@ pre-configure:
 		${WRKSRC}/etc/config.dist \
 		${WRKSRC}/lib/Smokeping/probes/*.pm
 	${FIND} ${WRKSRC} -name \*.bak -delete
-	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-install > ${PKGINSTALL}
-	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	${MV} ${WRKSRC}/bin/smokeping.dist ${WRKSRC}/bin/smokeping
 	${MV} ${WRKSRC}/bin/tSmoke.dist ${WRKSRC}/bin/tSmoke
 	${MV} ${WRKSRC}/htdocs/smokeping.cgi.dist ${WRKSRC}/htdocs/smokeping.cgi
 	${MV} ${WRKSRC}/htdocs/tr.cgi.dist ${WRKSRC}/htdocs/tr.cgi
-
-pre-su-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
@@ -266,15 +256,11 @@ do-install:
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs
 	${CP} -R ${WRKSRC}/lib ${PREFIX}/smokeping/
 	${MKDIR} ${PREFIX}/var/smokeping
-	${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
+	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/smokeping
 
 post-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(BATCH)
 	${CAT} ${PKGMESSAGE}
 .endif
-
-post-deinstall:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.post.mk>

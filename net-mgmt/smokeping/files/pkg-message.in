@@ -4,10 +4,10 @@ SmokePing has now been installed in %%PREFIX%%/smokeping/.
 
 NOTE: A set of sample configuration files have been installed:
 
-  %%PREFIX%%/etc/smokeping/config
-  %%PREFIX%%/etc/smokeping/smokemail
-  %%PREFIX%%/etc/smokeping/basepage.html
-  %%PREFIX%%/etc/smokeping/tmail
+  %%ETCDIR%%/config
+  %%ETCDIR%%/smokemail
+  %%ETCDIR%%/basepage.html
+  %%ETCDIR%%/tmail
 
 You *MUST* edit these to suit your requirements. Please read the
 manpages 'smokeping_install' and 'smokeping_config' for further
