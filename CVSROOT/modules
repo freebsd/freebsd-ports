@@ -3991,6 +3991,7 @@ games_ttt                       ports/games/ttt
 gamess                          ports/science/gamess
 gamin                           ports/devel/gamin
 gammu                           ports/comms/gammu
+gammu-devel                     ports/comms/gammu-devel
 ganglia-monitor-core            ports/sysutils/ganglia-monitor-core
 ganglia-webfrontend             ports/sysutils/ganglia-webfrontend
 ganttproject                    ports/deskutils/ganttproject
@@ -6222,6 +6223,7 @@ ja-rbnamazu                     ports/japanese/rbnamazu
 ja-recjis                       ports/japanese/recjis
 ja-roget-fpw                    ports/japanese/roget-fpw
 ja-rogue_s                      ports/japanese/rogue_s
+ja-roundcube                    ports/japanese/roundcube
 ja-rskkserv                     ports/japanese/rskkserv
 ja-ruby-chasen                  ports/japanese/ruby-chasen
 ja-ruby-eb                      ports/japanese/ruby-eb
@@ -11860,6 +11862,7 @@ p5-Getargs-Long                 ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile              ports/devel/p5-Getopt-ArgvFile
 p5-Getopt-Declare               ports/devel/p5-Getopt-Declare
 p5-Getopt-Euclid                ports/devel/p5-Getopt-Euclid
+p5-Getopt-GUI-Long              ports/devel/p5-Getopt-GUI-Long
 p5-Getopt-Long                  ports/devel/p5-Getopt-Long
 p5-Getopt-Long-Descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-Getopt-Lucid                 ports/textproc/p5-Getopt-Lucid
@@ -15567,6 +15570,7 @@ p5-getargs-long                 ports/devel/p5-Getargs-Long
 p5-getopt-argvfile              ports/devel/p5-Getopt-ArgvFile
 p5-getopt-declare               ports/devel/p5-Getopt-Declare
 p5-getopt-euclid                ports/devel/p5-Getopt-Euclid
+p5-getopt-gui-long              ports/devel/p5-Getopt-GUI-Long
 p5-getopt-long                  ports/devel/p5-Getopt-Long
 p5-getopt-long-descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
@@ -19939,6 +19943,7 @@ py-google                       ports/net/py-google
 py-gozerbot                     ports/irc/py-gozerbot
 py-graph                        ports/graphics/py-graph
 py-graphviz                     ports/graphics/py-graphviz
+py-greenlet                     ports/devel/py-greenlet
 py-grouch                       ports/devel/py-grouch
 py-gsl                          ports/math/py-gsl
 py-gstreamer                    ports/multimedia/py-gstreamer
@@ -20046,6 +20051,7 @@ py-ming                         ports/graphics/py-ming
 py-miniupnpc                    ports/net/py-miniupnpc
 py-mlpy                         ports/science/py-mlpy
 py-mnemosyne                    ports/games/py-mnemosyne
+py-mongokit                     ports/devel/py-mongokit
 py-mox                          ports/devel/py-mox
 py-mp-random                    ports/net/py-mp-random
 py-mpd                          ports/audio/py-mpd
@@ -22423,6 +22429,7 @@ soxt                            ports/x11-toolkits/SoXt
 spacearyarya                    ports/games/spacearyarya
 spacechart                      ports/astro/spacechart
 spacehulk                       ports/games/spacehulk
+spacejunk                       ports/games/spacejunk
 spamass-milter                  ports/mail/spamass-milter
 spamass-rules                   ports/mail/spamass-rules
 spamass-rules_du_jour           ports/mail/spamass-rules_du_jour
@@ -23305,6 +23312,7 @@ tonicpoint-viewer               ports/graphics/tonicpoint-viewer
 toolame                         ports/audio/toolame
 toolbox                         ports/deskutils/toolbox
 toolboxkit                      ports/deskutils/toolboxkit
+toonel                          ports/net/toonel
 topaz                           ports/math/topaz
 topless                         ports/sysutils/topless
 toppler                         ports/games/toppler
@@ -23608,6 +23616,7 @@ twin                            ports/emulators/twin
 twinkle                         ports/net/twinkle
 twirssi                         ports/net-im/twirssi
 twitch                          ports/games/twitch
+twitmail                        ports/net-im/twitmail
 twitux                          ports/net/twitux
 twm                             ports/x11-wm/twm
 twoftpd                         ports/ftp/twoftpd
