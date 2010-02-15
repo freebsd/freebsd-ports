@@ -1,5 +1,14 @@
---- src/filename_list.cxx.orig	2010-02-09 11:00:46.000000000 +0100
-+++ src/filename_list.cxx	2010-02-09 11:35:23.000000000 +0100
+--- src/filename_list.cxx.orig	2006-06-09 18:16:34.000000000 +0200
++++ src/filename_list.cxx	2010-02-15 14:57:40.000000000 +0100
+@@ -30,7 +30,7 @@
+ #include <FL/filename.H>
+ #include "flstring.h"
+ #include <stdlib.h>
+-
++#include <sys/param.h>
+ 
+ extern "C" {
+ #ifndef HAVE_SCANDIR
 @@ -54,7 +54,7 @@
                       Fl_File_Sort_F *sort) {
  #ifndef HAVE_SCANDIR
