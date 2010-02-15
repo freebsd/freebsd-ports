@@ -78,6 +78,7 @@ include/libgda-%%VERSION%%/libgda/handlers/gda-handler-time.h
 include/libgda-%%VERSION%%/libgda/handlers/gda-handler-type.h
 include/libgda-%%VERSION%%/libgda/libgda.h
 include/libgda-%%VERSION%%/libgda/providers-support/gda-data-select-priv.h
+include/libgda-%%VERSION%%/libgda/providers-support/gda-meta-column-types.h
 include/libgda-%%VERSION%%/libgda/providers-support/gda-pstmt.h
 include/libgda-%%VERSION%%/libgda/sql-parser/gda-sql-parser-enum-types.h
 include/libgda-%%VERSION%%/libgda/sql-parser/gda-sql-parser.h
