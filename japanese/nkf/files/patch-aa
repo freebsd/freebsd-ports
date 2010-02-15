@@ -1,5 +1,5 @@
 --- Makefile.orig	2009-11-17 09:33:04.000000000 +0900
-+++ Makefile	2010-02-15 22:45:33.396131542 +0900
++++ Makefile	2010-02-15 23:02:44.471546444 +0900
 @@ -1,18 +1,22 @@
 -CC = cc
 -CFLAGS = -g -O2 -Wall -pedantic
@@ -28,13 +28,23 @@
  
  nkf.o : nkf.c nkf.h utf8tbl.h config.h
  	$(CC) $(CFLAGS) -c nkf.c
-@@ -39,9 +43,9 @@
- 	-$(MKDIR) $(prefix)/man/man1
- 	-$(MKDIR) $(prefix)/man/ja
- 	-$(MKDIR) $(prefix)/man/ja/man1
+@@ -34,14 +38,14 @@
+ 	make test )
+ 
+ install:
+-	-$(MKDIR) $(prefix)/bin
+-	-$(MKDIR) $(prefix)/man
+-	-$(MKDIR) $(prefix)/man/man1
+-	-$(MKDIR) $(prefix)/man/ja
+-	-$(MKDIR) $(prefix)/man/ja/man1
 -	cp nkf $(prefix)/bin/
 -	cp nkf.1 $(prefix)/man/man1/
 -	cp nkf.1j $(prefix)/man/ja/man1/nkf.1
++	-$(MKDIR) $(PREFIX)/bin
++	-$(MKDIR) $(PREFIX)/man
++	-$(MKDIR) $(PREFIX)/man/man1
++	-$(MKDIR) $(PREFIX)/man/ja
++	-$(MKDIR) $(PREFIX)/man/ja/man1
 +	${BSD_INSTALL_PROGRAM} nkf ${PREFIX}/bin/
 +	${BSD_INSTALL_MAN} nkf.1 ${PREFIX}/man/man1/
 +	${BSD_INSTALL_MAN} nkf.1j.euc ${PREFIX}/man/ja/man1/nkf.1
