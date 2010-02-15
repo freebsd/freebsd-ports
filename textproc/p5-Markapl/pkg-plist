@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Markapl.pm
+%%SITE_PERL%%/Markapl/Helpers.pm
+%%SITE_PERL%%/Markapl/TagHandlers.pm
+%%SITE_PERL%%/Markapl/Tags.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Markapl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Markapl
+@dirrmtry %%SITE_PERL%%/Markapl
