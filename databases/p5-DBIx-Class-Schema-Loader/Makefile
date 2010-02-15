@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.05001
+PORTVERSION=	0.05002
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,8 +39,10 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::DBI::MSSQL.3 \
 	DBIx::Class::Schema::Loader::DBI::ODBC.3 \
 	DBIx::Class::Schema::Loader::DBI::ODBC::Microsoft_SQL_Server.3 \
+	DBIx::Class::Schema::Loader::DBI::ODBC::SQL_Anywhere.3 \
 	DBIx::Class::Schema::Loader::DBI::Oracle.3 \
 	DBIx::Class::Schema::Loader::DBI::Pg.3 \
+	DBIx::Class::Schema::Loader::DBI::SQLAnywhere.3 \
 	DBIx::Class::Schema::Loader::DBI::SQLite.3 \
 	DBIx::Class::Schema::Loader::DBI::Sybase.3 \
 	DBIx::Class::Schema::Loader::DBI::Sybase::Common.3 \
