@@ -76,7 +76,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.7.${SQUID_STABLE_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -107,7 +107,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
-PATCHFILES=
+PATCHFILES=	12600.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@web.de

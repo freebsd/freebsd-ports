@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81d9dc0c-1988-11df-8e66-0019996bc1f7">
+    <topic>squid -- Denial of Service vulnerability in HTCP</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>2.7.1</ge><lt>2.7.7_4</lt></range>
+	<range><ge>3.0.1</ge><lt>3.0.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2010:2 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2010_2.txt">
+	  <p>Due to incorrect processing Squid is vulnerable to a
+	    denial of service attack when receiving specially crafted
+	    HTCP packets.</p>
+	  <p>This problem allows any machine to perform a denial
+	    of service attack on the Squid service when its HTCP port
+	    is open.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2010_2.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-02-12</discovery>
+      <entry>2010-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff6519ad-18e5-11df-9bdd-001b2134ef46">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
