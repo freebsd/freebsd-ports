@@ -6,7 +6,7 @@
 #   $MCom: ports/databases/libgda4-postgresql/Makefile,v 1.1 2008/08/18 23:53:36 kwm Exp $
 #
 
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-postgresql
 
