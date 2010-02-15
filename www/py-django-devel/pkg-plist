@@ -77,6 +77,8 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/formats.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/formats.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/formats.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bs/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bs/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/djangojs.mo
@@ -217,6 +219,10 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/fr/formats.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/fr/formats.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/fr/formats.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fy_NL/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fy_NL/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fy_NL/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fy_NL/LC_MESSAGES/djangojs.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ga/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ga/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ga/LC_MESSAGES/djangojs.mo
@@ -467,6 +473,10 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sl/formats.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sl/formats.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sl/formats.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sq/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sq/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sq/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sq/LC_MESSAGES/djangojs.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/djangojs.mo
@@ -660,17 +670,25 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tooltag-arrowright_over.gif
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/gis/move_vertex_off.png
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/gis/move_vertex_on.png
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/LICENSE-JQUERY.txt
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/SelectBox.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/SelectFilter2.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/actions.js
-%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/CollapsedFieldsets.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/actions.min.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/DateTimeShortcuts.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/RelatedObjectLookups.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/ordering.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/calendar.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/collapse.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/collapse.min.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/compress.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/core.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/dateparse.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/getElementsBySelector.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/inlines.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/inlines.min.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/jquery.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/jquery.min.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/timeparse.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/urlify.js
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/models.py
@@ -815,6 +833,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/changepassword.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/changepassword.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/changepassword.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/createsuperuser.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/createsuperuser.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/management/commands/createsuperuser.pyo
@@ -840,6 +861,11 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/remote_user.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/remote_user.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/login.html
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_complete.html
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_confirm.html
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_done.html
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_email.html
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_form.html
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/tokens.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/tokens.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/tokens.pyo
@@ -1055,6 +1081,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/creation.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/creation.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/introspection.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/introspection.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/operations.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/operations.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/mysql/operations.pyo
@@ -1073,6 +1102,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/creation.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/creation.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/introspection.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/introspection.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/oracle/models.pyo
@@ -1091,6 +1123,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/creation.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/creation.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/introspection.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/introspection.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/postgis/models.pyo
@@ -1112,6 +1147,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/introspection.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/introspection.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/models.pyo
@@ -1250,6 +1288,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/backend/geos.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/backend/geos.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/backend/geos.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/regex.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/regex.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/regex.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/__init__.pyo
@@ -1316,6 +1357,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/prepared.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/prepared.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/prepared.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/threadsafe.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/threadsafe.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/threadsafe.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/topology.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/topology.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/prototypes/topology.pyo
@@ -3024,6 +3068,8 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr_Latn
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sq/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sq
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sl
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sk/LC_MESSAGES
@@ -3074,6 +3120,8 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/gl
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ga/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ga
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fy_NL/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fy_NL
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fr
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fi/LC_MESSAGES
@@ -3102,6 +3150,8 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/cs
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ca
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bs
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bn
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bg/LC_MESSAGES
