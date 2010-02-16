@@ -1,18 +1,18 @@
 Index: bgpd/printconf.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/printconf.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.5
-diff -u -p -r1.1.1.1 -r1.5
---- bgpd/printconf.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/printconf.c	22 Oct 2009 15:10:02 -0000	1.5
+retrieving revision 1.1.1.7
+retrieving revision 1.6
+diff -u -p -r1.1.1.7 -r1.6
+--- bgpd/printconf.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
++++ bgpd/printconf.c	4 Feb 2010 16:22:23 -0000	1.6
 @@ -1,4 +1,4 @@
--/*	$OpenBSD: printconf.c,v 1.65 2007/11/22 11:37:25 henning Exp $	*/
-+/*	$OpenBSD: printconf.c,v 1.70 2009/06/06 01:10:29 claudio Exp $	*/
+-/*	$OpenBSD: printconf.c,v 1.70 2009/06/06 01:10:29 claudio Exp $	*/
++/*	$OpenBSD: printconf.c,v 1.77 2009/12/17 09:32:59 claudio Exp $	*/
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
-@@ -19,10 +19,14 @@
+@@ -19,6 +19,9 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
@@ -22,40 +22,117 @@ diff -u -p -r1.1.1.1 -r1.5
  
  #include "bgpd.h"
  #include "mrt.h"
- #include "session.h"
-+#include "rde.h"
+@@ -27,6 +30,8 @@
  
  void		 print_op(enum comp_ops);
  void		 print_community(int, int);
-@@ -185,6 +189,8 @@ print_mainconf(struct bgpd_config *conf)
- 		printf("holdtime %u\n", conf->holdtime);
- 	if (conf->min_holdtime)
- 		printf("holdtime min %u\n", conf->min_holdtime);
-+	if (conf->connectretry)
-+		printf("connect-retry %u\n", conf->connectretry);
++void		 print_extcommunity(struct filter_extcommunity *);
++void		 print_origin(u_int8_t);
+ void		 print_set(struct filter_set_head *);
+ void		 print_mainconf(struct bgpd_config *);
+ void		 print_network(struct network_config *);
+@@ -34,7 +39,7 @@ void		 print_peer(struct peer_config *, 
+ 		    const char *);
+ const char	*print_auth_alg(u_int8_t);
+ const char	*print_enc_alg(u_int8_t);
+-const char	*print_safi(u_int8_t);
++void		 print_announce(struct peer_config *, const char *);
+ void		 print_rule(struct peer *, struct filter_rule *);
+ const char *	 mrt_type(enum mrt_type);
+ void		 print_mrt(u_int32_t, u_int32_t, const char *, const char *);
+@@ -94,6 +99,45 @@ print_community(int as, int type)
+ }
  
- 	if (conf->flags & BGPD_FLAG_NO_FIB_UPDATE)
- 		printf("fib-update no\n");
-@@ -200,9 +206,6 @@ print_mainconf(struct bgpd_config *conf)
- 	if (conf->flags & BGPD_FLAG_DECISION_MED_ALWAYS)
- 		printf("rde med compare always\n");
+ void
++print_extcommunity(struct filter_extcommunity *c)
++{
++	switch (c->type & EXT_COMMUNITY_VALUE) {
++	case EXT_COMMUNITY_TWO_AS:
++		printf("%s %i:%i", log_ext_subtype(c->subtype),
++		    c->data.ext_as.as, c->data.ext_as.val);
++		break;
++	case EXT_COMMUNITY_IPV4:
++		printf("%s %s:%i", log_ext_subtype(c->subtype),
++		    inet_ntoa(c->data.ext_ip.addr), c->data.ext_ip.val);
++		break;
++	case EXT_COMMUNITY_FOUR_AS:
++		printf("%s %s:%i", log_ext_subtype(c->subtype),
++		    log_as(c->data.ext_as4.as4), c->data.ext_as.val);
++		break;
++	case EXT_COMMUNITY_OPAQUE:
++		printf("%s 0x%llx", log_ext_subtype(c->subtype),
++		    c->data.ext_opaq);
++		break;
++	default:
++		printf("0x%x 0x%llx", c->type, c->data.ext_opaq);
++		break;
++	}
++}
++
++void
++print_origin(u_int8_t o)
++{
++	if (o == ORIGIN_IGP)
++		printf("igp ");
++	else if (o == ORIGIN_EGP)
++		printf("egp ");
++	else if (o == ORIGIN_INCOMPLETE)
++		printf("incomplete ");
++	else
++		printf("%u ", o);
++}
++
++void
+ print_set(struct filter_set_head *set)
+ {
+ 	struct filter_set	*s;
+@@ -161,11 +205,25 @@ print_set(struct filter_set_head *set)
+ 		case ACTION_RTLABEL:
+ 			printf("rtlabel %s ", s->action.rtlabel);
+ 			break;
++		case ACTION_SET_ORIGIN:
++			printf("origin ");
++			print_origin(s->action.origin);
++			break;
+ 		case ACTION_RTLABEL_ID:
+ 		case ACTION_PFTABLE_ID:
+ 			/* not possible */
+ 			printf("king bula saiz: config broken");
+ 			break;
++		case ACTION_SET_EXT_COMMUNITY:
++			printf("ext-community ");
++			print_extcommunity(&s->action.ext_community);
++			printf(" ");
++			break;
++		case ACTION_DEL_EXT_COMMUNITY:
++			printf("ext-community delete ");
++			print_extcommunity(&s->action.ext_community);
++			printf(" ");
++			break;
+ 		}
+ 	}
+ 	printf("}");
+@@ -263,8 +321,8 @@ print_peer(struct peer_config *p, struct
+ 	char		*method;
+ 	struct in_addr	 ina;
  
--	if (conf->flags & BGPD_FLAG_DECISION_TRANS_AS)
--		printf("transparent-as yes\n");
--
- 	if (conf->log & BGPD_LOG_UPDATES)
- 		printf("log updates\n");
- 
-@@ -271,6 +274,8 @@ print_peer(struct peer_config *p, struct
- 		printf("%sneighbor %s {\n", c, log_addr(&p->remote_addr));
- 	if (p->descr[0])
- 		printf("%s\tdescr \"%s\"\n", c, p->descr);
-+	if (p->rib[0])
-+		printf("%s\trib \"%s\"\n", c, p->rib);
- 	if (p->remote_as)
- 		printf("%s\tremote-as %s\n", c, log_as(p->remote_as));
- 	if (p->down)
-@@ -293,6 +298,12 @@ print_peer(struct peer_config *p, struct
+-	if ((p->remote_addr.af == AF_INET && p->remote_masklen != 32) ||
+-	    (p->remote_addr.af == AF_INET6 && p->remote_masklen != 128))
++	if ((p->remote_addr.aid == AID_INET && p->remote_masklen != 32) ||
++	    (p->remote_addr.aid == AID_INET6 && p->remote_masklen != 128))
+ 		printf("%sneighbor %s/%u {\n", c, log_addr(&p->remote_addr),
+ 		    p->remote_masklen);
+ 	else
+@@ -281,7 +339,7 @@ print_peer(struct peer_config *p, struct
+ 		printf("%s\tmultihop %u\n", c, p->distance);
+ 	if (p->passive)
+ 		printf("%s\tpassive\n", c);
+-	if (p->local_addr.af)
++	if (p->local_addr.aid)
+ 		printf("%s\tlocal-address %s\n", c, log_addr(&p->local_addr));
+ 	if (p->max_prefix) {
+ 		printf("%s\tmax-prefix %u", c, p->max_prefix);
+@@ -295,6 +353,12 @@ print_peer(struct peer_config *p, struct
  		printf("%s\tholdtime min %u\n", c, p->min_holdtime);
  	if (p->announce_capa == 0)
  		printf("%s\tannounce capabilities no\n", c);
@@ -68,12 +145,10 @@ diff -u -p -r1.1.1.1 -r1.5
  	if (p->announce_type == ANNOUNCE_SELF)
  		printf("%s\tannounce self\n", c);
  	else if (p->announce_type == ANNOUNCE_NONE)
-@@ -320,6 +331,12 @@ print_peer(struct peer_config *p, struct
- 		printf("%s\tdemote %s\n", c, p->demote_group);
- 	if (p->if_depend[0])
+@@ -324,6 +388,10 @@ print_peer(struct peer_config *p, struct
  		printf("%s\tdepend on \"%s\"\n", c, p->if_depend);
-+	if (p->flags & PEERFLAG_TRANS_AS)
-+		printf("%s\ttransparent-as yes\n", c);
+ 	if (p->flags & PEERFLAG_TRANS_AS)
+ 		printf("%s\ttransparent-as yes\n", c);
 +#if defined(IPV6_LINKLOCAL_PEER)
 +	if (p->lliface[0])
 +		printf("%s\tinterface %s\n", c, p->lliface);
@@ -81,64 +156,57 @@ diff -u -p -r1.1.1.1 -r1.5
  
  	if (p->auth.method == AUTH_MD5SIG)
  		printf("%s\ttcp md5sig\n", c);
-@@ -419,10 +436,12 @@ print_rule(struct peer *peer_l, struct f
- 		printf("deny ");
- 	else
- 		printf("match ");
--
- 	if (r->quick)
- 		printf("quick ");
+@@ -354,8 +422,7 @@ print_peer(struct peer_config *p, struct
+ 	if (p->ttlsec)
+ 		printf("%s\tttl-security yes\n", c);
  
-+	if (r->rib[0])
-+		printf("rib %s ", r->rib);
+-	printf("%s\tannounce IPv4 %s\n", c, print_safi(p->capabilities.mp_v4));
+-	printf("%s\tannounce IPv6 %s\n", c, print_safi(p->capabilities.mp_v6));
++	print_announce(p, c);
+ 
+ 	if (p->softreconfig_in == 1)
+ 		printf("%s\tsoftreconfig in yes\n", c);
+@@ -399,17 +466,14 @@ print_enc_alg(u_int8_t alg)
+ 	}
+ }
+ 
+-const char *
+-print_safi(u_int8_t safi)
++void
++print_announce(struct peer_config *p, const char *c)
+ {
+-	switch (safi) {
+-	case SAFI_NONE:
+-		return ("none");
+-	case SAFI_UNICAST:
+-		return ("unicast");
+-	default:
+-		return ("?");
+-	}
++	u_int8_t	aid;
 +
- 	if (r->dir == DIR_IN)
- 		printf("from ");
- 	else if (r->dir == DIR_OUT)
-@@ -532,12 +551,14 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
- 	LIST_FOREACH(m, xmrt_l, entry)
- 		if ((gid != 0 && m->group_id == gid) ||
- 		    (m->peer_id == pid && m->group_id == gid)) {
-+			printf("%s%sdump ", prep, prep2);
-+			if (m->rib[0])
-+				printf("rib %s ", m->rib);
- 			if (MRT2MC(m)->ReopenTimerInterval == 0)
--				printf("%s%sdump %s %s\n", prep, prep2,
--				    mrt_type(m->type), MRT2MC(m)->name);
-+				printf("%s %s\n", mrt_type(m->type),
-+				    MRT2MC(m)->name);
- 			else
--				printf("%s%sdump %s %s %d\n", prep, prep2,
--				    mrt_type(m->type),
-+				printf("%s %s %d\n", mrt_type(m->type),
- 				    MRT2MC(m)->name,
- 				    MRT2MC(m)->ReopenTimerInterval);
- 		}
-@@ -602,16 +623,25 @@ peer_compare(const void *aa, const void 
++	for (aid = 0; aid < AID_MAX; aid++)
++		if (p->capabilities.mp[aid])
++			printf("%s\tannounce %s\n", c, aid2str(aid));
  }
  
  void
--print_config(struct bgpd_config *conf, struct network_head *net_l,
--    struct peer *peer_l, struct filter_head *rules_l, struct mrt_head *mrt_l)
-+print_config(struct bgpd_config *conf, struct rib_names *rib_l,
-+    struct network_head *net_l, struct peer *peer_l,
-+    struct filter_head *rules_l, struct mrt_head *mrt_l)
- {
- 	struct filter_rule	*r;
- 	struct network		*n;
-+	struct rde_rib		*rr;
+@@ -455,14 +519,14 @@ print_rule(struct peer *peer_l, struct f
+ 	} else
+ 		printf("any ");
  
- 	xmrt_l = mrt_l;
- 	printf("\n");
- 	print_mainconf(conf);
- 	printf("\n");
-+	SIMPLEQ_FOREACH(rr, rib_l, entry) {
-+		if (rr->flags & F_RIB_NOEVALUATE)
-+			printf("rde rib %s no evaluate\n", rr->name);
-+		else
-+			printf("rde rib %s\n", rr->name);
-+	}
-+	printf("\n");
- 	TAILQ_FOREACH(n, net_l, entry)
- 		print_network(&n->net);
- 	printf("\n");
+-	if (r->match.prefix.addr.af)
++	if (r->match.prefix.addr.aid)
+ 		printf("prefix %s/%u ", log_addr(&r->match.prefix.addr),
+ 		    r->match.prefix.len);
+ 
+-	if (r->match.prefix.addr.af == 0 && r->match.prefixlen.af) {
+-		if (r->match.prefixlen.af == AF_INET)
++	if (r->match.prefix.addr.aid == 0 && r->match.prefixlen.aid) {
++		if (r->match.prefixlen.aid == AID_INET)
+ 			printf("inet ");
+-		if (r->match.prefixlen.af == AF_INET6)
++		if (r->match.prefixlen.aid == AID_INET6)
+ 			printf("inet6 ");
+ 	}
+ 
