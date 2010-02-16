@@ -37,7 +37,6 @@
    SUBDIR += port-maintenance-tools
    SUBDIR += portaudit
    SUBDIR += portaudit-db
-   SUBDIR += portbrowser
    SUBDIR += portcheck
    SUBDIR += portcheckout
    SUBDIR += portconf
