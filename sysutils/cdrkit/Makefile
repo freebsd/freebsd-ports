@@ -7,6 +7,7 @@
 
 PORTNAME=	cdrkit
 PORTVERSION=	1.1.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cdrkit.org/releases/ \
 		http://debburn.alioth.debian.org/
@@ -15,8 +16,9 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Command-line CD/DVD writing suite
 
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 USE_ICONV=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		cdda2ogg.1 devdump.1 dirsplit.1 genisoimage.1 icedax.1 \
 		isodebug.1 isodump.1 isoinfo.1 isovfy.1 list_audio_tracks.1 \
