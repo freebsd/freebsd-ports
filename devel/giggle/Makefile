@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	giggle
-PORTVERSION=	0.4.91
-PORTREVISION=	2
+PORTVERSION=	0.4.96
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -17,7 +16,8 @@ COMMENT=	GTK+ frontend for git version control system
 BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		${SITE_PERL}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
-OPTIONS=	EDS	"Evolution Data Server support"	on
+OPTIONS=	EDS	"Evolution Data Server support"	On \
+		VTE	"Terminal Widget" On
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -26,7 +26,23 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_EDS)
+CONFIGURE_ARGS+=	--disable-evolution-data-server
+.elif defined(WITH_EDS)
+USE_GNOME+=	evolutiondataserver
+.endif
+
+.if defined(WITH_VTE)
+USE_GNOME+=	vte
+PLIST_SUB+=	VTE=""
+.elif defined(WITHOUT_VTE)
+CONFIGURE_ARGS+=	--disable-terminal
+PLIST_SUB+=	VTE="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -34,10 +50,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 BROKEN=		does not build
 .endif
 
-.if defined(WITHOUT_EDS)
-CONFIGURE_ARGS+=	--disable-evolution-data-server
-.elif defined(WITH_EDS)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libebook-1.2.pc:${PORTSDIR}/databases/evolution-data-server
-.endif
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
