@@ -21,9 +21,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of routines for performing sparse factorization
 
+.include <bsd.port.pre.mk>
+
 USE_BLAS?=	reference
 
-.if exists(${LOCALBASE}/lib/libgoto.so)
+.if exists(${LOCALBASE}/lib/libgoto2.so)
 USE_BLAS=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas_r.so)
 USE_BLAS=	atlas
@@ -31,13 +33,13 @@ USE_BLAS=	atlas
 
 . if ${USE_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-BLAS_LIBS=		-lblas
+BLAS=		-lblas
 .elif ${USE_BLAS} == gotoblas
-LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
-BLAS_LIBS=		-lgotop
+LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
+BLAS=		-lgoto2p
 .elif ${USE_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
-BLAS_LIBS=		-lptf77blas -lptcblas -latlas_r
+BLAS=		-lptf77blas -lptcblas -latlas_r
 .endif
 
 USE_FORTRAN=	yes
@@ -50,7 +52,7 @@ ARCH2FIX=	SRC/Makefile TESTING/MATGEN/Makefile CBLAS/Makefile make.inc	\
 		MAKE_INC/make.alpha MAKE_INC/make.inc
 
 pre-build:
-	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+-L${LOCALBASE}/lib ${BLAS_LIBS}+ ; \
+	@${REINPLACE_CMD} -e 's+%%BLAS%%+-L${LOCALBASE}/lib ${BLAS}+ ; \
 			s+%%CC%%+${CC}+; s+%%FC%%+${FC}+; \
 			s+%%CFLAGS%%+${CFLAGS}+; \
 			s+%%FFLAGS%%+${FFLAGS}+' \
@@ -76,4 +78,4 @@ regression-test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} testing )
 	@(cd ${WRKSRC}/TESTING && ${CAT} *.out )
 	
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

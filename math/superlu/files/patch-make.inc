@@ -5,7 +5,7 @@
  TMGLIB       = libtmglib.a
  SUPERLULIB   = libsuperlu_3.0.a
 -BLASLIB      = ../libblas.a
-+BLASLIB      = %%BLAS_LIBS%%
++BLASLIB      = %%BLAS%%
  
  #
  #  The archiver and the flag(s) to use when building archive (library)
