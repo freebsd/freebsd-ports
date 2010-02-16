@@ -17,8 +17,8 @@
 smokeping_enable=${smokeping_enable-"NO"}
 smokeping_pidfile=${smokeping_pidfile-"%%PREFIX%%/var/smokeping/smokeping.pid"}
 smokeping_logfile=${smokeping_logfile-"/var/log/smokeping.log"}
-smokeping_user=${smokeping_user-"%%USER%%"}
-smokeping_group=${smokeping_group-"%%GROUP%%"}
+smokeping_user=${smokeping_user-"%%USERS%%"}
+smokeping_group=${smokeping_group-"%%GROUPS%%"}
 
 . %%RC_SUBR%%
 
