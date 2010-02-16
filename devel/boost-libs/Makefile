@@ -35,9 +35,7 @@ post-patch: customize-boost-build
 # The following directory is empty and causes issues with pkg_{add,delete}
 	${RMDIR} ${WRKSRC}/boost/interprocess/containers/detail
 # Remove Boost.Python
-.if !defined(WITH_PYTHON)
 	${RM} -rf ${WRKSRC}/boost/python* ${WRKSRC}/libs/python
-.endif
 
 do-build:
 # build the library
