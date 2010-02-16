@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.0.0
-PORTREVISION=	1
+PORTVERSION?=	1.0.1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
 PKGNAMEPREFIX=	${GECKO}-
@@ -71,7 +70,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${MOZSRC}/dist/bin/${DISTNAME:S/0.0/0/}-freebsd-${ARCH}.xpi ${DATADIR}/${XPI_FILE}
+	${INSTALL_DATA} ${MOZSRC}/dist/bin/${DISTNAME:C/1.0.[0-9]/1.0/}-freebsd-${ARCH}.xpi ${DATADIR}/${XPI_FILE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
