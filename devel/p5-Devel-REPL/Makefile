@@ -7,6 +7,7 @@
 
 PORTNAME=	Devel-REPL
 PORTVERSION=	1.003007
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -63,5 +64,8 @@ MAN3=	Devel::REPL.3 \
 	Devel::REPL::Plugin::Timing.3 \
 	Devel::REPL::Plugin::Turtles.3 \
 	Devel::REPL::Profile.3
+
+post-patch:
+	@${RM} ${WRKSRC}/lib/Devel/REPL/Meta/Plugin.pm.orig
 
 .include <bsd.port.mk>
