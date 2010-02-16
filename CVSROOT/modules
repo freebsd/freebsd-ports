@@ -12417,6 +12417,7 @@ p5-Make                         ports/devel/p5-Make
 p5-Make-Cache                   ports/devel/p5-Make-Cache
 p5-Makefile-DOM                 ports/textproc/p5-Makefile-DOM
 p5-Makefile-Parser              ports/textproc/p5-Makefile-Parser
+p5-Markapl                      ports/textproc/p5-Markapl
 p5-Markup-Perl                  ports/www/p5-Markup-Perl
 p5-MasonX-Interp-WithCallbacks  ports/www/p5-MasonX-Interp-WithCallbacks
 p5-MasonX-Profiler              ports/www/p5-MasonX-Profiler
@@ -16120,6 +16121,7 @@ p5-marc-charset                 ports/textproc/p5-MARC-Charset
 p5-marc-lint                    ports/textproc/p5-MARC-Lint
 p5-marc-record                  ports/textproc/p5-MARC-Record
 p5-marc-xml                     ports/textproc/p5-MARC-XML
+p5-markapl                      ports/textproc/p5-Markapl
 p5-markup-perl                  ports/www/p5-Markup-Perl
 p5-masonx-interp-withcallbacks  ports/www/p5-MasonX-Interp-WithCallbacks
 p5-masonx-profiler              ports/www/p5-MasonX-Profiler
