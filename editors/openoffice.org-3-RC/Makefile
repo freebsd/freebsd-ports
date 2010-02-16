@@ -130,7 +130,8 @@ USE_BISON=	build
 GNU_CONFIGURE=	yes
 WRKSRC?=		${WRKDIR}/${OOOTAG}
 TCSH?=		/bin/tcsh
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	EXECBASE=${EXECBASE} OOOTAG=${OOOTAG} OOODIR=${OOODIR}
 
 .if defined(DISABLE_MAKE_JOBS)
 MAKE_JOBS_NUMBER=	1
@@ -302,12 +303,6 @@ post-install:
 	@${ECHO_CMD} "@unexec ${RM} %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
-	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
-			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
-			-e 's#%%OOODIR%%#${OOODIR}#g' \
-			${PKGMESSAGE}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
