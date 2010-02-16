@@ -15,6 +15,7 @@ MASTERDIR=	${.CURDIR}/../firebird20-server
 PLIST=		${PKGDIR}/pkg-plist.client
 
 CLIENT_ONLY=	yes
+CONFLICTS=	unixODBC-* virtuoso-*
 
 MANUAL_PACKAGE_BUILD=	yes
 
