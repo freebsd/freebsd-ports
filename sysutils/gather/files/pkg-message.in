@@ -1,0 +1,23 @@
+**********************************************************************
+
+To setup statistics gathering you could e.g. add something like this
+to /etc/crontab:
+
+  */5 * * * * root %%PREFIX%%/bin/gather collect
+  18  0 * * * root %%PREFIX%%/bin/gather expire 7
+
+Before adding this, please, review the configuration in
+%%PREFIX%%/etc/gather.
+
+To check that the configuration is correct, run:
+
+  gather show utils
+  gather -v collect
+
+After setting cron up, you can check if gathering works running:
+
+  gather show -t 1h grep . uptime
+
+See gather(1) and %%DOCSDIR%%/README for more details.
+
+**********************************************************************

@@ -1,0 +1,6 @@
+bin/gather
+@unexec if cmp -s %D/etc/gather/gather.cfg.sample %D/etc/gather/gather.cfg; then rm -f %D/etc/gather/gather.cfg; else echo "If permanently deleting this package, %D/etc/gather/gather.cfg must be removed manually."; fi
+etc/gather/gather.cfg.sample
+@unexec if cmp -s %D/etc/gather/gather.map.sample %D/etc/gather/gather.map; then rm -f %D/etc/gather/gather.map; else echo "If permanently deleting this package, %D/etc/gather/gather.map must be removed manually."; fi
+etc/gather/gather.map.sample
+@dirrmtry etc/gather
