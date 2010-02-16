@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhaced OpenGL only Quake II engine
 
+BROKEN=		does not compile
+
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
