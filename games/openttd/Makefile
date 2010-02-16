@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.5
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		http://binaries.openttd.org/releases/${PORTVERSION}/
+MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
+		#SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open source clone of Microprose Transport Tycoon Deluxe
@@ -47,10 +47,11 @@ MAN6=		openttd.6
 DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "openttd" "openttd" \
 		"Game;Simulation;StrategyGame;" false
 
-DOCS=		32bpp.txt HOWTO_compile_lang_files.txt Manual.txt elrail.svg \
+PORTDOCS=	32bpp.txt HOWTO_compile_lang_files.txt Manual.txt elrail.svg \
 		elrail_tile.png elrail_track.png landscape.html \
 		landscape_externals.html landscape_grid.html multiplayer.txt \
-		ottd-colour-palette.gif ottd-colourtext-palette.png tileh.png
+		obg_format.txt ottd-colour-palette.gif \
+		ottd-colourtext-palette.png tileh.png
 
 pre-everything::
 .if !defined(WITH_MIDI_PLAYER)
@@ -65,7 +66,7 @@ pre-everything::
 
 post-patch:
 # Remove extra (vendor) CFLAGS, we set our own
-	@${REINPLACE_CMD} '1096,1097d' ${WRKSRC}/config.lib
+	@${REINPLACE_CMD} '1102,1103d' ${WRKSRC}/config.lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
@@ -81,9 +82,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
-. endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}
 .endif
 
 post-install:
