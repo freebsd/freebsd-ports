@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
@@ -426,6 +426,9 @@ post-install:
 	fi
 	if [ ! -f ${PREFIX}/vpopmail/etc/vlimits.default ]; then \
 		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/vlimits.default-dist ${PREFIX}/vpopmail/etc/vlimits.default; \
+	fi
+	if [ ! -f ${PREFIX}/vpopmail/etc/vusagec.conf ]; then \
+		${INSTALL_DATA} ${PREFIX}/vpopmail/etc/vusagec.conf-dist ${PREFIX}/vpopmail/etc/vusagec.conf; \
 	fi
 .if defined(WITH_MYSQL)
 	if [ ! -f ${PREFIX}/vpopmail/etc/vpopmail.mysql ]; then \
