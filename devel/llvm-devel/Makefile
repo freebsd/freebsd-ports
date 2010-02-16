@@ -32,6 +32,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_PYTHON_RUN=	yes
 MAKE_JOBS_SAFE=	yes
+MAKE_ARGS=	REQUIRES_RTTI=1
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -44,7 +45,7 @@ CONFIGURE_ARGS+=	--enable-bindings=none
 OPTIONS=	NO_ASSERTS "Disable assertions" off
 
 MAN1=		bugpoint.1 clang.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
-		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
+		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
@@ -131,13 +132,15 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/tblgen \
 			lib/libCIndex.* \
 			lib/libCompilerDriver.a \
+			lib/libEnhancedDisassembly.so \
+			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
 			lib/libUnitTestMain.a \
 			lib/libclang* \
 			lib/libplugin_llvmc* \
-			lib/libprofile_rt.so \
-			libexec/clang-cc
+			lib/libprofile_rt.bca \
+			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
 			include/llvm-c \

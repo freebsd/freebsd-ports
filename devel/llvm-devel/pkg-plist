@@ -26,9 +26,11 @@ include/clang/AST/AST.h
 include/clang/AST/ASTConsumer.h
 include/clang/AST/ASTContext.h
 include/clang/AST/ASTDiagnostic.h
+include/clang/AST/ASTImporter.h
 include/clang/AST/Attr.h
 include/clang/AST/CXXInheritance.h
 include/clang/AST/CanonicalType.h
+include/clang/AST/CharUnits.h
 include/clang/AST/Decl.h
 include/clang/AST/DeclBase.h
 include/clang/AST/DeclCXX.h
@@ -43,6 +45,7 @@ include/clang/AST/Expr.h
 include/clang/AST/ExprCXX.h
 include/clang/AST/ExprObjC.h
 include/clang/AST/ExternalASTSource.h
+include/clang/AST/FullExpr.h
 include/clang/AST/NestedNameSpecifier.h
 include/clang/AST/ParentMap.h
 include/clang/AST/PrettyPrinter.h
@@ -65,44 +68,15 @@ include/clang/AST/TypeLocVisitor.h
 include/clang/AST/TypeNodes.def
 include/clang/AST/TypeOrdering.h
 include/clang/AST/TypeVisitor.h
+include/clang/AST/UnresolvedSet.h
 include/clang/Analysis/Analyses/LiveVariables.h
+include/clang/Analysis/Analyses/PrintfFormatString.h
 include/clang/Analysis/Analyses/UninitializedValues.h
+include/clang/Analysis/AnalysisContext.h
 include/clang/Analysis/AnalysisDiagnostic.h
 include/clang/Analysis/CFG.h
 include/clang/Analysis/FlowSensitive/DataflowSolver.h
 include/clang/Analysis/FlowSensitive/DataflowValues.h
-include/clang/Analysis/LocalCheckers.h
-include/clang/Analysis/ManagerRegistry.h
-include/clang/Analysis/PathDiagnostic.h
-include/clang/Analysis/PathSensitive/AnalysisContext.h
-include/clang/Analysis/PathSensitive/AnalysisManager.h
-include/clang/Analysis/PathSensitive/BasicValueFactory.h
-include/clang/Analysis/PathSensitive/BugReporter.h
-include/clang/Analysis/PathSensitive/BugType.h
-include/clang/Analysis/PathSensitive/Checker.h
-include/clang/Analysis/PathSensitive/CheckerVisitor.def
-include/clang/Analysis/PathSensitive/CheckerVisitor.h
-include/clang/Analysis/PathSensitive/Checkers/DereferenceChecker.h
-include/clang/Analysis/PathSensitive/ConstraintManager.h
-include/clang/Analysis/PathSensitive/Environment.h
-include/clang/Analysis/PathSensitive/ExplodedGraph.h
-include/clang/Analysis/PathSensitive/GRAuditor.h
-include/clang/Analysis/PathSensitive/GRBlockCounter.h
-include/clang/Analysis/PathSensitive/GRCoreEngine.h
-include/clang/Analysis/PathSensitive/GRExprEngine.h
-include/clang/Analysis/PathSensitive/GRExprEngineBuilders.h
-include/clang/Analysis/PathSensitive/GRSimpleAPICheck.h
-include/clang/Analysis/PathSensitive/GRState.h
-include/clang/Analysis/PathSensitive/GRStateTrait.h
-include/clang/Analysis/PathSensitive/GRSubEngine.h
-include/clang/Analysis/PathSensitive/GRTransferFuncs.h
-include/clang/Analysis/PathSensitive/GRWorkList.h
-include/clang/Analysis/PathSensitive/MemRegion.h
-include/clang/Analysis/PathSensitive/SVals.h
-include/clang/Analysis/PathSensitive/SValuator.h
-include/clang/Analysis/PathSensitive/Store.h
-include/clang/Analysis/PathSensitive/SymbolManager.h
-include/clang/Analysis/PathSensitive/ValueManager.h
 include/clang/Analysis/ProgramPoint.h
 include/clang/Analysis/Support/BlkExprDeclBitVector.h
 include/clang/Analysis/Support/BumpVector.h
@@ -129,6 +103,8 @@ include/clang/Basic/DiagnosticSemaKinds.inc
 include/clang/Basic/FileManager.h
 include/clang/Basic/IdentifierTable.h
 include/clang/Basic/LangOptions.h
+include/clang/Basic/Linkage.h
+include/clang/Basic/MacroBuilder.h
 include/clang/Basic/OnDiskHashTable.h
 include/clang/Basic/OperatorKinds.def
 include/clang/Basic/OperatorKinds.h
@@ -146,6 +122,7 @@ include/clang/Basic/Release/DiagnosticSemaKinds.inc.tmp
 include/clang/Basic/SourceLocation.h
 include/clang/Basic/SourceManager.h
 include/clang/Basic/SourceManagerInternals.h
+include/clang/Basic/Specifiers.h
 include/clang/Basic/TargetBuiltins.h
 include/clang/Basic/TargetInfo.h
 include/clang/Basic/TargetOptions.h
@@ -154,6 +131,39 @@ include/clang/Basic/TokenKinds.def
 include/clang/Basic/TokenKinds.h
 include/clang/Basic/TypeTraits.h
 include/clang/Basic/Version.h
+include/clang/Checker/BugReporter/BugReporter.h
+include/clang/Checker/BugReporter/BugType.h
+include/clang/Checker/BugReporter/PathDiagnostic.h
+include/clang/Checker/Checkers/DereferenceChecker.h
+include/clang/Checker/Checkers/LocalCheckers.h
+include/clang/Checker/DomainSpecific/CocoaConventions.h
+include/clang/Checker/ManagerRegistry.h
+include/clang/Checker/PathSensitive/AnalysisManager.h
+include/clang/Checker/PathSensitive/BasicValueFactory.h
+include/clang/Checker/PathSensitive/Checker.h
+include/clang/Checker/PathSensitive/CheckerVisitor.def
+include/clang/Checker/PathSensitive/CheckerVisitor.h
+include/clang/Checker/PathSensitive/ConstraintManager.h
+include/clang/Checker/PathSensitive/Environment.h
+include/clang/Checker/PathSensitive/ExplodedGraph.h
+include/clang/Checker/PathSensitive/GRAuditor.h
+include/clang/Checker/PathSensitive/GRBlockCounter.h
+include/clang/Checker/PathSensitive/GRCoreEngine.h
+include/clang/Checker/PathSensitive/GRExprEngine.h
+include/clang/Checker/PathSensitive/GRExprEngineBuilders.h
+include/clang/Checker/PathSensitive/GRSimpleAPICheck.h
+include/clang/Checker/PathSensitive/GRState.h
+include/clang/Checker/PathSensitive/GRStateTrait.h
+include/clang/Checker/PathSensitive/GRSubEngine.h
+include/clang/Checker/PathSensitive/GRTransferFuncs.h
+include/clang/Checker/PathSensitive/GRWorkList.h
+include/clang/Checker/PathSensitive/MemRegion.h
+include/clang/Checker/PathSensitive/SVals.h
+include/clang/Checker/PathSensitive/SValuator.h
+include/clang/Checker/PathSensitive/Store.h
+include/clang/Checker/PathSensitive/SummaryManager.h
+include/clang/Checker/PathSensitive/SymbolManager.h
+include/clang/Checker/PathSensitive/ValueManager.h
 include/clang/CodeGen/CodeGenOptions.h
 include/clang/CodeGen/ModuleBuilder.h
 include/clang/Driver/Action.h
@@ -229,6 +239,7 @@ include/clang/Index/SelectorMap.h
 include/clang/Index/TranslationUnit.h
 include/clang/Index/Utils.h
 include/clang/Lex/DirectoryLookup.h
+include/clang/Lex/ExternalPreprocessorSource.h
 include/clang/Lex/HeaderMap.h
 include/clang/Lex/HeaderSearch.h
 include/clang/Lex/LexDiagnostic.h
@@ -246,7 +257,6 @@ include/clang/Lex/ScratchBuffer.h
 include/clang/Lex/Token.h
 include/clang/Lex/TokenConcatenation.h
 include/clang/Lex/TokenLexer.h
-include/clang/Parse/AccessSpecifier.h
 include/clang/Parse/Action.h
 include/clang/Parse/AttributeList.h
 include/clang/Parse/DeclSpec.h
@@ -270,6 +280,7 @@ include/llvm-c/Analysis.h
 include/llvm-c/BitReader.h
 include/llvm-c/BitWriter.h
 include/llvm-c/Core.h
+include/llvm-c/EnhancedDisassembly.h
 include/llvm-c/ExecutionEngine.h
 include/llvm-c/LinkTimeOptimizer.h
 include/llvm-c/Target.h
@@ -288,6 +299,7 @@ include/llvm/ADT/DepthFirstIterator.h
 include/llvm/ADT/EquivalenceClasses.h
 include/llvm/ADT/FoldingSet.h
 include/llvm/ADT/GraphTraits.h
+include/llvm/ADT/ImmutableIntervalMap.h
 include/llvm/ADT/ImmutableList.h
 include/llvm/ADT/ImmutableMap.h
 include/llvm/ADT/ImmutableSet.h
@@ -303,6 +315,7 @@ include/llvm/ADT/STLExtras.h
 include/llvm/ADT/ScopedHashTable.h
 include/llvm/ADT/SetOperations.h
 include/llvm/ADT/SetVector.h
+include/llvm/ADT/SmallBitVector.h
 include/llvm/ADT/SmallPtrSet.h
 include/llvm/ADT/SmallSet.h
 include/llvm/ADT/SmallString.h
@@ -330,6 +343,7 @@ include/llvm/Analysis/CallGraph.h
 include/llvm/Analysis/CaptureTracking.h
 include/llvm/Analysis/ConstantFolding.h
 include/llvm/Analysis/ConstantsScanner.h
+include/llvm/Analysis/DOTGraphTraitsPass.h
 include/llvm/Analysis/DebugInfo.h
 include/llvm/Analysis/DomPrinter.h
 include/llvm/Analysis/DominatorInternals.h
@@ -376,24 +390,19 @@ include/llvm/Bitcode/Archive.h
 include/llvm/Bitcode/BitCodes.h
 include/llvm/Bitcode/BitstreamReader.h
 include/llvm/Bitcode/BitstreamWriter.h
-include/llvm/Bitcode/Deserialize.h
 include/llvm/Bitcode/LLVMBitCodes.h
 include/llvm/Bitcode/ReaderWriter.h
-include/llvm/Bitcode/Serialization.h
-include/llvm/Bitcode/SerializationFwd.h
-include/llvm/Bitcode/Serialize.h
 include/llvm/CMakeLists.txt
 include/llvm/CallGraphSCCPass.h
 include/llvm/CallingConv.h
 include/llvm/CodeGen/AsmPrinter.h
 include/llvm/CodeGen/BinaryObject.h
-include/llvm/CodeGen/BreakCriticalMachineEdge.h
+include/llvm/CodeGen/CalcSpillWeights.h
 include/llvm/CodeGen/CallingConvLower.h
 include/llvm/CodeGen/DAGISelHeader.h
 include/llvm/CodeGen/DwarfWriter.h
 include/llvm/CodeGen/ELFRelocation.h
 include/llvm/CodeGen/FastISel.h
-include/llvm/CodeGen/FileWriters.h
 include/llvm/CodeGen/GCMetadata.h
 include/llvm/CodeGen/GCMetadataPrinter.h
 include/llvm/CodeGen/GCStrategy.h
@@ -445,6 +454,7 @@ include/llvm/CodeGen/SelectionDAG.h
 include/llvm/CodeGen/SelectionDAGISel.h
 include/llvm/CodeGen/SelectionDAGNodes.h
 include/llvm/CodeGen/SlotIndexes.h
+include/llvm/CodeGen/TargetLoweringObjectFileImpl.h
 include/llvm/CodeGen/ValueTypes.h
 include/llvm/CodeGen/ValueTypes.td
 include/llvm/CompilerDriver/Action.h
@@ -473,6 +483,7 @@ include/llvm/ExecutionEngine/JIT.h
 include/llvm/ExecutionEngine/JITEventListener.h
 include/llvm/ExecutionEngine/JITMemoryManager.h
 include/llvm/Function.h
+include/llvm/GVMaterializer.h
 include/llvm/GlobalAlias.h
 include/llvm/GlobalValue.h
 include/llvm/GlobalVariable.h
@@ -498,15 +509,21 @@ include/llvm/Linker.h
 include/llvm/MC/MCAsmInfo.h
 include/llvm/MC/MCAsmInfoCOFF.h
 include/llvm/MC/MCAsmInfoDarwin.h
-include/llvm/MC/MCAsmLexer.h
-include/llvm/MC/MCAsmParser.h
 include/llvm/MC/MCAssembler.h
 include/llvm/MC/MCCodeEmitter.h
 include/llvm/MC/MCContext.h
+include/llvm/MC/MCDirectives.h
 include/llvm/MC/MCDisassembler.h
 include/llvm/MC/MCExpr.h
+include/llvm/MC/MCFixup.h
 include/llvm/MC/MCInst.h
 include/llvm/MC/MCInstPrinter.h
+include/llvm/MC/MCParser/AsmCond.h
+include/llvm/MC/MCParser/AsmLexer.h
+include/llvm/MC/MCParser/AsmParser.h
+include/llvm/MC/MCParser/MCAsmLexer.h
+include/llvm/MC/MCParser/MCAsmParser.h
+include/llvm/MC/MCParser/MCParsedAsmOperand.h
 include/llvm/MC/MCSection.h
 include/llvm/MC/MCSectionELF.h
 include/llvm/MC/MCSectionMachO.h
@@ -516,7 +533,6 @@ include/llvm/MC/MCValue.h
 include/llvm/MC/SectionKind.h
 include/llvm/Metadata.h
 include/llvm/Module.h
-include/llvm/ModuleProvider.h
 include/llvm/OperandTraits.h
 include/llvm/Operator.h
 include/llvm/Pass.h
@@ -551,8 +567,8 @@ include/llvm/Support/IRReader.h
 include/llvm/Support/InstIterator.h
 include/llvm/Support/InstVisitor.h
 include/llvm/Support/LeakDetector.h
+include/llvm/Support/MachO.h
 include/llvm/Support/ManagedStatic.h
-include/llvm/Support/Mangler.h
 include/llvm/Support/MathExtras.h
 include/llvm/Support/MemoryBuffer.h
 include/llvm/Support/MemoryObject.h
@@ -570,6 +586,7 @@ include/llvm/Support/RecyclingAllocator.h
 include/llvm/Support/Regex.h
 include/llvm/Support/Registry.h
 include/llvm/Support/RegistryParser.h
+include/llvm/Support/SMLoc.h
 include/llvm/Support/SlowOperationInformer.h
 include/llvm/Support/SourceMgr.h
 include/llvm/Support/StableBasicBlockNumbering.h
@@ -580,6 +597,7 @@ include/llvm/Support/TargetFolder.h
 include/llvm/Support/Timer.h
 include/llvm/Support/TypeBuilder.h
 include/llvm/Support/ValueHandle.h
+include/llvm/Support/circular_raw_ostream.h
 include/llvm/Support/raw_os_ostream.h
 include/llvm/Support/raw_ostream.h
 include/llvm/Support/type_traits.h
@@ -606,8 +624,10 @@ include/llvm/System/Solaris.h
 include/llvm/System/ThreadLocal.h
 include/llvm/System/Threading.h
 include/llvm/System/TimeValue.h
+include/llvm/Target/Mangler.h
 include/llvm/Target/SubtargetFeature.h
 include/llvm/Target/Target.td
+include/llvm/Target/TargetAsmLexer.h
 include/llvm/Target/TargetAsmParser.h
 include/llvm/Target/TargetCallingConv.td
 include/llvm/Target/TargetData.h
@@ -620,8 +640,8 @@ include/llvm/Target/TargetIntrinsicInfo.h
 include/llvm/Target/TargetJITInfo.h
 include/llvm/Target/TargetLowering.h
 include/llvm/Target/TargetLoweringObjectFile.h
-include/llvm/Target/TargetMachOWriterInfo.h
 include/llvm/Target/TargetMachine.h
+include/llvm/Target/TargetOpcodes.h
 include/llvm/Target/TargetOptions.h
 include/llvm/Target/TargetRegisterInfo.h
 include/llvm/Target/TargetRegistry.h
@@ -661,6 +681,8 @@ lib/clang/1.1/include/xmmintrin.h
 lib/libCIndex.a
 lib/libCIndex.so
 lib/libCompilerDriver.a
+lib/libEnhancedDisassembly.a
+lib/libEnhancedDisassembly.so
 lib/libLLVMARMAsmParser.a
 lib/libLLVMARMAsmPrinter.a
 lib/libLLVMARMCodeGen.a
@@ -688,11 +710,13 @@ lib/libLLVMCppBackend.a
 lib/libLLVMCppBackendInfo.a
 lib/libLLVMExecutionEngine.a
 lib/libLLVMHello.so
+lib/libLLVMInstCombine.a
 lib/libLLVMInstrumentation.a
 lib/libLLVMInterpreter.a
 lib/libLLVMJIT.a
 lib/libLLVMLinker.a
 lib/libLLVMMC.a
+lib/libLLVMMCParser.a
 lib/libLLVMMSIL.a
 lib/libLLVMMSILInfo.a
 lib/libLLVMMSP430AsmPrinter.a
@@ -736,6 +760,7 @@ lib/libUnitTestMain.a
 lib/libclangAST.a
 lib/libclangAnalysis.a
 lib/libclangBasic.a
+lib/libclangChecker.a
 lib/libclangCodeGen.a
 lib/libclangDriver.a
 lib/libclangFrontend.a
@@ -746,8 +771,8 @@ lib/libclangRewrite.a
 lib/libclangSema.a
 lib/libplugin_llvmc_Base.a
 lib/libplugin_llvmc_Clang.a
+lib/libprofile_rt.bca
 lib/libprofile_rt.so
-libexec/clang-cc
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%DOCSDIR%%/html.tar.gz
@@ -769,7 +794,6 @@ libexec/clang-cc
 %%DOCSDIR%%/html/CommandGuide/llvm-as.html
 %%DOCSDIR%%/html/CommandGuide/llvm-bcanalyzer.html
 %%DOCSDIR%%/html/CommandGuide/llvm-config.html
-%%DOCSDIR%%/html/CommandGuide/llvm-db.html
 %%DOCSDIR%%/html/CommandGuide/llvm-dis.html
 %%DOCSDIR%%/html/CommandGuide/llvm-extract.html
 %%DOCSDIR%%/html/CommandGuide/llvm-ld.html
@@ -858,7 +882,6 @@ libexec/clang-cc
 %%DOCSDIR%%/ps/llvm-as.ps
 %%DOCSDIR%%/ps/llvm-bcanalyzer.ps
 %%DOCSDIR%%/ps/llvm-config.ps
-%%DOCSDIR%%/ps/llvm-db.ps
 %%DOCSDIR%%/ps/llvm-dis.ps
 %%DOCSDIR%%/ps/llvm-extract.ps
 %%DOCSDIR%%/ps/llvm-ld.ps
@@ -880,6 +903,7 @@ libexec/clang-cc
 @dirrm include/llvm/Target
 @dirrm include/llvm/System
 @dirrm include/llvm/Support
+@dirrm include/llvm/MC/MCParser
 @dirrm include/llvm/MC
 @dirrm include/llvm/ExecutionEngine
 @dirrm include/llvm/Config
@@ -901,12 +925,15 @@ libexec/clang-cc
 @dirrm include/clang/Driver/Release
 @dirrm include/clang/Driver
 @dirrm include/clang/CodeGen
+@dirrm include/clang/Checker/PathSensitive
+@dirrm include/clang/Checker/DomainSpecific
+@dirrm include/clang/Checker/Checkers
+@dirrm include/clang/Checker/BugReporter
+@dirrm include/clang/Checker
 @dirrm include/clang/Basic/Release
 @dirrm include/clang/Basic
 @dirrm include/clang/Analysis/Visitors
 @dirrm include/clang/Analysis/Support
-@dirrm include/clang/Analysis/PathSensitive/Checkers
-@dirrm include/clang/Analysis/PathSensitive
 @dirrm include/clang/Analysis/FlowSensitive
 @dirrm include/clang/Analysis/Analyses
 @dirrm include/clang/Analysis
