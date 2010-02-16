@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-DISTVERSION=	71.86.11
+DISTVERSION=	71.86.13
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 NO_LATEST_LINK=	yes

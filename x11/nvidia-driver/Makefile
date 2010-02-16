@@ -79,7 +79,7 @@ PLIST_SUB+=	LINUX="@comment "
 MAKE_ENV+=	WITHOUT_LINUX=yes
 .endif
 
-.if ${OSVERSION} < 702106
+.if ${OSVERSION} < 702106 && ${NVVERSION} == 1952200
 IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
@@ -90,6 +90,13 @@ LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
+# Adjust for updated d_mmap() in recent -CURRENT
+.if ${NVVERSION} < 1952200
+	${REINPLACE_CMD} 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
+		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
+		s/int nprot/&, vm_memattr_t *memattr/' \
+			${WRKSRC}/src/nvidia_dev.c
+.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
