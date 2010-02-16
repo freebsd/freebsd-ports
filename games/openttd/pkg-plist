@@ -82,17 +82,3 @@ share/icons/hicolor/256x256/apps/openttd.png
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-%%PORTDOCS%%%%DOCSDIR%%/32bpp.txt
-%%PORTDOCS%%%%DOCSDIR%%/HOWTO_compile_lang_files.txt
-%%PORTDOCS%%%%DOCSDIR%%/Manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/elrail.svg
-%%PORTDOCS%%%%DOCSDIR%%/elrail_tile.png
-%%PORTDOCS%%%%DOCSDIR%%/elrail_track.png
-%%PORTDOCS%%%%DOCSDIR%%/landscape.html
-%%PORTDOCS%%%%DOCSDIR%%/landscape_externals.html
-%%PORTDOCS%%%%DOCSDIR%%/landscape_grid.html
-%%PORTDOCS%%%%DOCSDIR%%/multiplayer.txt
-%%PORTDOCS%%%%DOCSDIR%%/ottd-colour-palette.gif
-%%PORTDOCS%%%%DOCSDIR%%/ottd-colourtext-palette.png
-%%PORTDOCS%%%%DOCSDIR%%/tileh.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
