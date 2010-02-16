@@ -18,7 +18,7 @@ COMMENT=	Universal SQL/Application Server
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		htmldoc:${PORTSDIR}/textproc/htmldoc
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
-CONFLICTS=	unixODBC-*
+CONFLICTS=	unixODBC-* firebird-client-*
 
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-readline\
