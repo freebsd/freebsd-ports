@@ -27,7 +27,7 @@ USE_FORTRAN=	yes
 
 USE_BLAS?=	reference
 
-.if exists(${LOCALBASE}/lib/libgoto.so)
+.if exists(${LOCALBASE}/lib/libgoto2.so)
 USE_BLAS=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas_r.so)
 USE_BLAS=	atlas
@@ -35,13 +35,14 @@ USE_BLAS=	atlas
 
 .if ${USE_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-BLAS_LIBS=	-lblas
+BLAS=	-lblas
 .elif ${USE_BLAS} == gotoblas
-LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
-BLAS_LIBS=	-lgotop
+LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
+BLAS=	-lgoto2p
+BROKEN=	Build stops while testing
 .elif ${USE_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
-BLAS_LIBS=	-lptf77blas -lptcblas -latlas_r
+BLAS=	-lptf77blas -lptcblas -latlas_r
 .endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
@@ -66,7 +67,7 @@ post-patch:
 		s|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${fmk}
 .endfor
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+-L${LOCALBASE}/lib ${BLAS_LIBS}+ ; \
+	@${REINPLACE_CMD} -e 's+%%BLAS%%+-L${LOCALBASE}/lib ${BLAS}+ ; \
 			s+%%CC%%+${CC}+; s+%%FC%%+${FC}+; \
 			s+%%CFLAGS%%+${CFLAGS}+; \
 			s+%%FFLAGS%%+${FFLAGS}+; \
@@ -75,7 +76,7 @@ post-patch:
 	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
 		${WRKSRC}/make.inc
 
-	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+-L${LOCALBASE}/lib ${BLAS_LIBS}+ ; \
+	@${REINPLACE_CMD} -e 's+%%BLAS%%+-L${LOCALBASE}/lib ${BLAS}+ ; \
 			s+%%CC%%+${CC}+; s+%%FC%%+${FC}+; \
 			s+%%CFLAGS%%+${CFLAGS} ${FPIC}+; \
 			s+%%FFLAGS%%+${FFLAGS} ${FPIC}+; \

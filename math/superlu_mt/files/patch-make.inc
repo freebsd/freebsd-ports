@@ -22,7 +22,7 @@
  #
  BLASDEF	  = -DUSE_VENDOR_BLAS
 -BLASLIB   = -lessl
-+BLASLIB   = %%BLAS_LIBS%%
++BLASLIB   = %%BLAS%%
  #BLASLIB   = ../lib/libblas$(PLAT).a
  MATHLIB	  = -lm 
 -MPLIB	  = -lpthread
