@@ -250,6 +250,9 @@ post-patch:
 	@${REINPLACE_CMD} ${SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/local/${filename}
 .endfor
+.if ${OSVERSION} >= 900007
+	${REINPLACE_CMD} -e 's!utmp_p->ut_name!utmp_p->ut_user!' ${WRKSRC}/agent/mibgroup/host/hr_system.c
+.endif
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
