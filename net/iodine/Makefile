@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	iodine
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0r1
 CATEGORIES=	net
 MASTER_SITES=	http://code.kryo.se/iodine/ \
 		http://redundancy.redundancy.org/mirror/
+DISTNAME=	${PORTNAME}-0.6.0-rc1
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tunnel IPv4 data through a DNS server
