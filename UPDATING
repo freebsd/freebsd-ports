@@ -16,23 +16,23 @@ you update your ports collection, before attempting any port upgrades.
   $rcmail_config['message_charset_languages'] = array('en_US' => 'ISO-8859-1', ...
   $rcmail_config['transfer_encoding_languages'] = array('en_US' => 'quoted-printable', ...
 
-  SEE ALSO: ${PREFIX}/www/roundcube/config/main.inc.php.dist
+  See also: ${PREFIX}/www/roundcube/config/main.inc.php.dist
 
 20100207:
   AFFECTS: users of www/firefox
   AUTHOR: beat@FreeBSD.org
 
-  The www/firefox port has been updated to 3.6. From now on www/firefox
-  will contain the most recent version of Firefox. Older but still supported
-  releases will be available in www/firefox3 or www/firefox35.
- 
+  The www/firefox port has been updated to 3.6.  From now on www/firefox
+  will contain the most recent version of Firefox.  Older but still
+  supported releases will be available in www/firefox3 and www/firefox35.
+
   In order to update to Firefox 3.6 please delete your older installed
-  version of Firefox first and install www/firefox afterwards. Please make
-  sure all your addons are compatible with Firefox 3.6 and backup your
-  $HOME/.mozilla directory prior to the first launch of Firefox 3.6.
- 
-  The Java plugin will not work with Firefox 3.6. If you need Java in your
-  browser, please use www/firefox35 instead.
+  version of Firefox first and install www/firefox afterwards.  Please
+  make sure all your addons are compatible with Firefox 3.6 and backup
+  your ~/.mozilla directory prior to the first launch of Firefox 3.6.
+
+  The Java plugin will not work with Firefox 3.6.  If you need Java in
+  your browser, please use www/firefox35 instead.
 
 20100207:
   AFFECTS: users of Mesa3D libraries and x11-drivers/xf86-video-nouveau
@@ -41,35 +41,35 @@ you update your ports collection, before attempting any port upgrades.
   If you want to use Mesa3D 7.6.1 and libdrm 2.4.17 rather than 7.4.4
   and 2.4.12, you must define WITHOUT_NOUVEAU global macro, at least,
   enabled on graphics/libGL*, graphics/libglut, graphics/dri,
-  graphics/mesa-demos and graphics/libdrm.  And please give up using
+  graphics/mesa-demos, and graphics/libdrm.  And please give up using
   x11-drivers/xf86-video-nouveau.
 
-  In this time, I can't enable latest Mesa3D and libdrm, because these
-  break xf86-video-nouveau.  But old(current?) Mesa3D and libdrm don't
+  At this time, I cannot enable latest Mesa3D and libdrm, because they
+  break xf86-video-nouveau.  But old (current?) Mesa3D and libdrm do not
   break any drivers.
 
-  for AMD Radeon HD 2xxx/3xxx/4xxx users
-  If you use AMD Radeon HD [234]xxx series, please define WITHOUT_NOUVEAU
-  global macro.  You can use OpenGL Hardware Accelerator feature on
-  these series.
+  AMD Radeon HD 2xxx/3xxx/4xxx users: If you use AMD Radeon HD [234]xxx
+  series, please define WITHOUT_NOUVEAU global macro.  You can then use
+  OpenGL Hardware Accelerator feature on these series.
 
 20100206:
   AFFECTS: users of net/samba4-devel
   AUTHOR: timur@FreeBSD.org
 
   Default configuration file was moved to ${LOCALBASE}/etc/smb4.conf to
-  avoid conflicts with the installed net/samba3?. Also, userland utils
+  avoid conflicts with the installed net/samba3?.  Also, userland utils
   are not installed by default, which should also help with the parallel
   setup of Samba3 and Samba4.
 
 20100205:
-  AFFECTS: users of qt 3 and kde 3
+  AFFECTS: users of Qt 3 and KDE 3
   AUTHOR: itetcu@FreeBSD.org
 
-  When building qt33 and kdelibs3 (at least), while they are installed, because
-  of -L/usr/local/lib being passed too soon, the currently installed libs are
-  used instead of the ones from the build. This makes the build fail if you
-  updated any of the libs this qt / kde libs are linked against (like libjpeg).
+  When building qt33 and kdelibs3 (at least), while they are installed,
+  because of -L/usr/local/lib being passed too soon, the currently installed
+  libraries are used instead of the ones from the build.  This makes the
+  build fail if you updated any of the libraries these Qt/KDE libraries are
+  linked against (e.g. libjpeg).
 
   For the moment the workaround, when you get to this, is to move the old lib
   out of the way, e.g.:
@@ -95,15 +95,15 @@ you update your ports collection, before attempting any port upgrades.
 
   This port was developed with the generous help of Florent Brodin.
 
-  The default passdb backend has been changed to 'tdbsam'! That breaks
-  existing setups using the 'smbpasswd' backend without explicit
-  declaration! Please use 'passdb backend = smbpasswd' if you would like
-  to stick to the 'smbpasswd' backend or convert your smbpasswd entries
-  using e.g. 'pdbedit -i smbpasswd -e tdbsam'.
+  The default passdb backend has been changed to `tdbsam'! That breaks
+  existing setups using the `smbpasswd' backend without explicit
+  declaration! Please use `passdb backend = smbpasswd' if you would like
+  to stick to the `smbpasswd' backend or convert your smbpasswd entries
+  using e.g. `pdbedit -i smbpasswd -e tdbsam'.
 
-  The 'tdbsam' backend is much more flexible concerning per user
-  settings like 'profile path' or 'home directory' and there are some
-  commands which do not work with the 'smbpasswd' backend at all.
+  The `tdbsam' backend is much more flexible concerning per user
+  settings like `profile path' or `home directory' and there are some
+  commands which do not work with the `smbpasswd' backend at all.
 
 20100130:
   AFFECTS: users of audio/sdl_mixer and graphics/sdl_image
@@ -111,16 +111,16 @@ you update your ports collection, before attempting any port upgrades.
 
   The SDL_mixer and SDL_image libraries have new shared library versions.
   Please rebuild all ports that depend on them.
-    
+
   If you use portmaster:
-    
-        portmaster -r sdl_mixer-
-        portmaster -r sdl_image-
-  
+
+	portmaster -r sdl_mixer-
+	portmaster -r sdl_image-
+
   If you use portupgrade:
-  
-        portupgrade -fr audio/sdl_mixer
-        portupgrade -fr graphics/sdl_image
+
+	portupgrade -fr audio/sdl_mixer
+	portupgrade -fr graphics/sdl_image
 
 20100125:
   AFFECTS: users of audio/openal and graphics/openal-soft
@@ -129,21 +129,21 @@ you update your ports collection, before attempting any port upgrades.
   The default OpenAL implementation was switched to audio/openal-soft.
   To update all ports correctly, the following steps have to be performed.
 
-      pkg_delete -f openal-\*
+	pkg_delete -f openal-\*
 
   If you use portmaster:
-    
-      portmaster -or audio/openal audio/openal-soft
-  
+
+	portmaster -or audio/openal audio/openal-soft
+
   If you use portupgrade:
-  
-      portupgrade -or audio/openal audio/openal-soft
+
+	portupgrade -or audio/openal audio/openal-soft
 
   If you want to stick with audio/openal, please specify the following ports
   make flag within /etc/make.conf (or an appropriate configuration file for
   your ports):
 
-      WANT_OPENAL=si
+	WANT_OPENAL=si
 
 20100122:
   AFFECTS: users of sysutils/policykit and sysutils/polkit
@@ -151,7 +151,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Due to a recent change in sysutils/policykit, both sysutils/policykit,
   and sysutils/polkit need to be rebuilt, but in a certain order.  First,
-  upgrade sysutils/policykit to 0.9_6.  Then, force a rebuild and reinstall
+  upgrade sysutils/policykit to 0.9_6.  Then, force rebuild and reinstall
   of sysutils/polkit.  If you do not do this, applications which depend
   on polkitd will fail.
 
@@ -160,8 +160,8 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: beat@FreeBSD.org
 
   Port has been renamed to emulators/virtualbox-ose to reflect that we are
-  using the OSE version. A seperate port for the kernel modules has been
-  created: emulators/virtualbox-ose-kmod
+  using the OSE version.  A separate port for the kernel modules has been
+  created: emulators/virtualbox-ose-kmod.
 
   Please see http://wiki.freebsd.org/VirtualBox for update instructions.
 
@@ -202,7 +202,7 @@ you update your ports collection, before attempting any port upgrades.
   If you are updating from a previous version, to preserve your settings
   and data, please do the following:
 
-    mv /usr/local/www/data/websvn /usr/local/www
+	mv /usr/local/www/data/websvn /usr/local/www
 
   Then update as usual.
 
@@ -218,8 +218,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net-mgmt/ndoutils
   AUTHOR: pgollucci@FreeBSD.org
 
-  When upgrading you'll need to run ./upgradedb
-  See UPGRADING file
+  When upgrading you'll need to run ./upgradedb; see UPGRADING file.
 
 20091214:
   AFFECTS: users of net/grdc
@@ -402,7 +401,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of sysutils/gosa
   AUTHOR: Denis Shaposhnikov <dsh@wizard.volgograd.ru>
 
-  Plese read the following:
+  Please read the following:
 
     https://oss.gonicus.de/labs/gosa/wiki/DocumentationInstallingUpdatingGOsa
 
@@ -444,11 +443,12 @@ you update your ports collection, before attempting any port upgrades.
   changes at http://weblog.rubyonrails.org/.
 
 20090909:
-  AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good
+  AFFECTS: users of gstreamer-plugins-bad gstreamer-plugins-good
   AUTHOR: kwm@FreeBSD.org
 
   Due to the move of several plugins from gstreamer-plugins-bad to
-  gstreamer-plugins-good, it is necessary to update gstreamer-plugins-bad first:
+  gstreamer-plugins-good, it is necessary to update gstreamer-plugins-bad
+  first:
 
 	portupgrade -R gstreamer-plugins-bad
 
@@ -584,8 +584,8 @@ you update your ports collection, before attempting any port upgrades.
   based on version 1 should still work.  Read more about the new features
   and possible configuration changes at the following URLs:
 
-     http://clusterlabs.org/wiki/Documentation (Configuration 0.6 Explained)
-     http://www.linux-ha.org/GettingStartedRevisedV2
+    http://clusterlabs.org/wiki/Documentation (Configuration 0.6 Explained)
+    http://www.linux-ha.org/GettingStartedRevisedV2
 
 20090724:
   AFFECTS: users of www/rubygem-rails
@@ -656,7 +656,8 @@ you update your ports collection, before attempting any port upgrades.
   mail processed via it.
 
 20090620:
-  AFFECTS: gstreamer-plugins-bad gstreamer-plugins-good gstreamer-plugins-ugly
+  AFFECTS: users of gstreamer-plugins-bad, gstreamer-plugins-good, and
+	   gstreamer-plugins-ugly ports
   AUTHOR: kwm@FreeBSD.org
 
   Due to the move of several plugins from gstreamer-plugins-bad to
@@ -1201,7 +1202,7 @@ you update your ports collection, before attempting any port upgrades.
   for how to set variables in /etc/rc.conf.
 
 20090127:
-  AFFECTS: gstreamer-plugins
+  AFFECTS: users of gstreamer-plugins
   AUTHOR: kwm@FreeBSD.org
 
   The gstapp library moved from the gstreamer-plugins-bad package to
@@ -1476,11 +1477,11 @@ you update your ports collection, before attempting any port upgrades.
   to www/rt38, www/rt36 is still around.
 
 20081224:
-  AFFECTS: www/phpSysInfo
+  AFFECTS: users of www/phpSysInfo
   AUTHOR: miwi@FreeBSD.org
 
-  The www/phpSysInfo port has been split into www/phpsysinfo
-  and www/phpsysinfo-dev.
+  The www/phpSysInfo port has been split into www/phpsysinfo and
+  www/phpsysinfo-dev ports.
 
 20081217:
   AFFECTS: users of mail/policyd2
@@ -5732,13 +5733,13 @@ you update your ports collection, before attempting any port upgrades.
   confusion.
 
 20060302:
-  AFFECTS: net-im/jabber-pyicq and net-im/jabber-pymsn
+  AFFECTS: users of net-im/jabber-pyicq and net-im/jabber-pymsn
   AUTHOR: garga@FreeBSD.org
 
   Port versions older than 0.7 and 0.11a respectively run as root which
-  is an unneeded security risk. Newer versions run as as user jabber,
+  is an unneeded security risk.  Newer versions run as as user jabber,
   so before starting the daemons, you should fix permissions for each
-  spooldir (default: /var/spool/jabber):
+  spooldir (default is /var/spool/jabber):
 
 	# chown -R jabber:jabber spooldir/Transport_JID
 
