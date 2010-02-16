@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.unixodbc.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
 
-CONFLICTS=	libiodbc-[0-9]* virtuoso-*
+CONFLICTS=	firebird-client-* libiodbc-[0-9]* virtuoso-*
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
