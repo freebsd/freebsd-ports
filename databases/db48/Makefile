@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db48
-PORTVERSION=	4.8.24.0
+PORTVERSION=	4.8.26.0
 CATEGORIES=	databases
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
