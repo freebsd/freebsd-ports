@@ -771,7 +771,6 @@ lib/libclangRewrite.a
 lib/libclangSema.a
 lib/libplugin_llvmc_Base.a
 lib/libplugin_llvmc_Clang.a
-lib/libprofile_rt.bca
 lib/libprofile_rt.so
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
