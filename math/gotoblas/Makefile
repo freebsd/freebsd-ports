@@ -107,15 +107,15 @@ do-build:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${LARGE_FILE} ${WRKSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${TIMING_FILE} ${WRKSRC}
 	${MKDIR} ${WRKDIR}/lib
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=1 #DYNAMIC_ARCH=1
-	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=1 #DYNAMIC_ARCH=1
+	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=1 DYNAMIC_ARCH=1
+	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=1 DYNAMIC_ARCH=1
 	${INSTALL_DATA} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2p.a
 	${INSTALL_DATA} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2p.so
 
 	cd ${WRKSRC} && ${GMAKE} clean
 	cd ${WRKSRC}/exports && ${GMAKE} clean
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 #DYNAMIC_ARCH=1
-	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 #DYNAMIC_ARCH=1
+	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 DYNAMIC_ARCH=1
+	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 DYNAMIC_ARCH=1
 	${INSTALL_DATA} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2.a
 	${INSTALL_DATA} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2.so
 
