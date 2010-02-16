@@ -21,27 +21,26 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 USE_LDCONFIG=	yes
 
-BROKEN=		does not compile
-
-.include "Makefile.man"
+#.include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if exists (${LOCALBASE}/bin/doxygen) || !defined (NOPORTDOCS)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.else
+# doxygen build is BROKEN atm
+#.if exists (${LOCALBASE}/bin/doxygen) || !defined (NOPORTDOCS)
+#BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+#.else
 NOPORTDOCS=		true
 CONFIGURE_ARGS+=	--disable-doxygen
-.endif
+#.endif
 
-.if !exists (${LOCALBASE}/bin/doxygen) && !defined (NOPORTDOCS)
-pre-everything::
-	@${ECHO_CMD}
-	@${ECHO_CMD} By default, this port uses doxygen to build its documentation.\
-It currently is not present your system, and if you do not want to install it, abort\
-this build by hitting CTRL+C and re-run the installation with -DNOPORTDOCS | ${FMT} 74
-	@${ECHO_CMD}
-	@sleep 3
-.endif
+#.if !exists (${LOCALBASE}/bin/doxygen) && !defined (NOPORTDOCS)
+#pre-everything::
+#	@${ECHO_CMD}
+#	@${ECHO_CMD} By default, this port uses doxygen to build its documentation.\
+#It currently is not present your system, and if you do not want to install it, abort\
+#this build by hitting CTRL+C and re-run the installation with -DNOPORTDOCS | ${FMT} 74
+#	@${ECHO_CMD}
+#	@sleep 3
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
