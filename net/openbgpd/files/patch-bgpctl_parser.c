@@ -1,14 +1,14 @@
 Index: bgpctl/parser.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/parser.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.3
-diff -u -p -r1.1.1.1 -r1.3
---- bgpctl/parser.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpctl/parser.c	9 Jul 2009 17:22:12 -0000	1.3
+retrieving revision 1.1.1.6
+retrieving revision 1.4
+diff -u -p -r1.1.1.6 -r1.4
+--- bgpctl/parser.c	14 Feb 2010 20:20:14 -0000	1.1.1.6
++++ bgpctl/parser.c	4 Feb 2010 16:22:26 -0000	1.4
 @@ -1,4 +1,4 @@
--/*	$OpenBSD: parser.c,v 1.50 2008/06/15 09:58:43 claudio Exp $ */
-+/*	$OpenBSD: parser.c,v 1.54 2009/06/12 16:44:02 claudio Exp $ */
+-/*	$OpenBSD: parser.c,v 1.54 2009/06/12 16:44:02 claudio Exp $ */
++/*	$OpenBSD: parser.c,v 1.60 2010/01/13 06:04:00 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -23,126 +23,144 @@ diff -u -p -r1.1.1.1 -r1.3
  #include <sys/types.h>
  #include <sys/socket.h>
  
-@@ -42,6 +46,7 @@ enum token_type {
- 	ASTYPE,
- 	PREFIX,
- 	PEERDESC,
-+	RIBNAME,
- 	COMMUNITY,
- 	LOCALPREF,
- 	MED,
-@@ -72,6 +77,7 @@ static const struct token t_show_summary
- static const struct token t_show_fib[];
- static const struct token t_show_rib[];
- static const struct token t_show_rib_neigh[];
-+static const struct token t_show_rib_rib[];
- static const struct token t_show_neighbor[];
- static const struct token t_show_neighbor_modifiers[];
- static const struct token t_fib[];
-@@ -148,6 +154,7 @@ static const struct token t_show_rib[] =
- 	{ FLAG,		"in",		F_CTL_ADJ_IN,	t_show_rib},
- 	{ FLAG,		"out",		F_CTL_ADJ_OUT,	t_show_rib},
- 	{ KEYWORD,	"neighbor",	NONE,		t_show_rib_neigh},
-+	{ KEYWORD,	"table",	NONE,		t_show_rib_rib},
- 	{ KEYWORD,	"summary",	SHOW_SUMMARY,	t_show_summary},
- 	{ KEYWORD,	"memory",	SHOW_RIB_MEM,	NULL},
- 	{ FAMILY,	"",		NONE,		t_show_rib},
-@@ -161,6 +168,11 @@ static const struct token t_show_rib_nei
- 	{ ENDTOKEN,	"",		NONE,	NULL}
+@@ -97,6 +101,7 @@ static const struct token t_prepself[];
+ static const struct token t_weight[];
+ static const struct token t_irrfilter[];
+ static const struct token t_irrfilter_opts[];
++static const struct token t_log[];
+ 
+ static const struct token t_main[] = {
+ 	{ KEYWORD,	"reload",	RELOAD,		NULL},
+@@ -105,6 +110,7 @@ static const struct token t_main[] = {
+ 	{ KEYWORD,	"neighbor",	NEIGHBOR,	t_neighbor},
+ 	{ KEYWORD,	"network",	NONE,		t_network},
+ 	{ KEYWORD,	"irrfilter",	IRRFILTER,	t_irrfilter},
++	{ KEYWORD,	"log",		NONE,		t_log},
+ 	{ ENDTOKEN,	"",		NONE,		NULL}
  };
  
-+static const struct token t_show_rib_rib[] = {
-+	{ RIBNAME,	"",		NONE,	t_show_rib},
-+	{ ENDTOKEN,	"",		NONE,	NULL}
+@@ -311,6 +317,12 @@ static const struct token t_irrfilter_op
+ 	{ ENDTOKEN,	"",		NONE,			NULL}
+ };
+ 
++static const struct token t_log[] = {
++	{ KEYWORD,	"verbose",	LOG_VERBOSE,	NULL},
++	{ KEYWORD,	"brief",	LOG_BRIEF,	NULL},
++	{ ENDTOKEN,	"",		NONE,		NULL}
 +};
 +
- static const struct token t_show_neighbor[] = {
- 	{ NOTOKEN,	"",		NONE,	NULL},
- 	{ PEERADDRESS,	"",		NONE,	t_show_neighbor_modifiers},
-@@ -456,6 +468,15 @@ match_token(int *argc, char **argv[], co
- 				t = &table[i];
- 			}
- 			break;
-+		case RIBNAME:
-+			if (!match && word != NULL && strlen(word) > 0) {
-+				if (strlcpy(res.rib, word, sizeof(res.rib)) >=
-+				    sizeof(res.rib))
-+					errx(1, "rib name too long");
+ static struct parse_result	res;
+ 
+ const struct token	*match_token(int *argc, char **argv[],
+@@ -336,6 +348,7 @@ parse(int argc, char *argv[])
+ 	bzero(&res, sizeof(res));
+ 	res.community.as = COMMUNITY_UNSET;
+ 	res.community.type = COMMUNITY_UNSET;
++	res.flags = (F_IPV4 | F_IPV6);
+ 	TAILQ_INIT(&res.set);
+ 	if ((res.irr_outdir = getcwd(NULL, 0)) == NULL) {
+ 		fprintf(stderr, "getcwd failed: %s", strerror(errno));
+@@ -404,15 +417,22 @@ match_token(int *argc, char **argv[], co
+ 		case FAMILY:
+ 			if (word == NULL)
+ 				break;
+-			if (!strcmp(word, "inet") || !strcmp(word, "IPv4")) {
++			if (!strcmp(word, "inet") ||
++			    !strcasecmp(word, "IPv4")) {
 +				match++;
 +				t = &table[i];
++				res.aid = AID_INET;
 +			}
-+			break;
- 		case COMMUNITY:
- 			if (word != NULL && strlen(word) > 0 &&
- 			    parse_community(word, &res)) {
-@@ -547,6 +568,9 @@ show_valid_args(const struct token table
- 		case PEERDESC:
- 			fprintf(stderr, "  <neighbor description>\n");
++			if (!strcmp(word, "inet6") ||
++			    !strcasecmp(word, "IPv6")) {
+ 				match++;
+ 				t = &table[i];
+-				res.af = AF_INET;
++				res.aid = AID_INET6;
+ 			}
+-			if (!strcmp(word, "inet6") || !strcmp(word, "IPv6")) {
++			if (!strcasecmp(word, "VPNv4")) {
+ 				match++;
+ 				t = &table[i];
+-				res.af = AF_INET6;
++				res.aid = AID_VPN_IPv4;
+ 			}
  			break;
-+		case RIBNAME:
-+			fprintf(stderr, "  <rib name>\n");
-+			break;
- 		case COMMUNITY:
- 			fprintf(stderr, "  <community>\n");
+ 		case ADDRESS:
+@@ -584,7 +604,7 @@ show_valid_args(const struct token table
+ 			fprintf(stderr, "  <pftable>\n");
  			break;
-@@ -686,7 +710,7 @@ parse_asnum(const char *word, u_int32_t 
+ 		case FAMILY:
+-			fprintf(stderr, "  [ inet | inet6 | IPv4 | IPv6 ]\n");
++			fprintf(stderr, "  [ inet | inet6 | IPv4 | IPv6 | VPNv4 ]\n");
+ 			break;
+ 		case GETOPT:
+ 			fprintf(stderr, "  <options>\n");
+@@ -608,7 +628,7 @@ parse_addr(const char *word, struct bgpd
+ 	bzero(&ina, sizeof(ina));
+ 
+ 	if (inet_net_pton(AF_INET, word, &ina, sizeof(ina)) != -1) {
+-		addr->af = AF_INET;
++		addr->aid = AID_INET;
+ 		addr->v4 = ina;
+ 		return (1);
+ 	}
+@@ -618,13 +638,7 @@ parse_addr(const char *word, struct bgpd
+ 	hints.ai_socktype = SOCK_DGRAM; /*dummy*/
+ 	hints.ai_flags = AI_NUMERICHOST;
+ 	if (getaddrinfo(word, "0", &hints, &r) == 0) {
+-		addr->af = AF_INET6;
+-		memcpy(&addr->v6,
+-		    &((struct sockaddr_in6 *)r->ai_addr)->sin6_addr,
+-		    sizeof(addr->v6));
+-		addr->scope_id =
+-		    ((struct sockaddr_in6 *)r->ai_addr)->sin6_scope_id;
+-
++		sa2addr(r->ai_addr, addr);
+ 		freeaddrinfo(r);
+ 		return (1);
+ 	}
+@@ -663,15 +677,15 @@ parse_prefix(const char *word, struct bg
+ 		if (parse_addr(word, addr) == 0)
+ 			return (0);
+ 
+-	switch (addr->af) {
+-	case AF_INET:
++	switch (addr->aid) {
++	case AID_INET:
+ 		if (mask == -1)
+ 			mask = 32;
+ 		if (mask > 32)
+ 			errx(1, "invalid netmask: too large");
+ 		addr->v4.s_addr = addr->v4.s_addr & htonl(prefixlen2mask(mask));
+ 		break;
+-	case AF_INET6:
++	case AID_INET6:
+ 		if (mask == -1)
+ 			mask = 128;
+ 		inet6applymask(&addr->v6, &addr->v6, mask);
+@@ -706,7 +720,7 @@ parse_asnum(const char *word, u_int32_t 
  		if (errstr)
  			errx(1, "AS number is %s: %s", errstr, word);
  	} else {
--		uval = strtonum(word, 0, USHRT_MAX - 1, &errstr);
-+		uval = strtonum(word, 0, ASNUM_MAX - 1, &errstr);
+-		uval = strtonum(word, 0, ASNUM_MAX - 1, &errstr);
++		uval = strtonum(word, 0, UINT_MAX, &errstr);
  		if (errstr)
  			errx(1, "AS number is %s: %s", errstr, word);
  	}
-@@ -801,7 +825,7 @@ parse_community(const char *word, struct
- 	type = getcommunity(p);
+@@ -882,8 +896,14 @@ bgpctl_getopt(int *argc, char **argv[], 
+ 	int	  ch;
  
- done:
--	if (as == 0 || as == USHRT_MAX) {
-+	if (as == 0) {
- 		fprintf(stderr, "Invalid community\n");
- 		return (0);
- 	}
-@@ -814,7 +838,7 @@ done:
+ 	optind = optreset = 1;
+-	while ((ch = getopt((*argc) + 1, (*argv) - 1, "o:")) != -1) {
++	while ((ch = getopt((*argc) + 1, (*argv) - 1, "46o:")) != -1) {
+ 		switch (ch) {
++		case '4':
++			res.flags = (res.flags | F_IPV4) & ~F_IPV6;
++			break;
++		case '6':
++			res.flags = (res.flags | F_IPV6) & ~F_IPV4;
++			break;
+ 		case 'o':
+ 			res.irr_outdir = optarg;
  			break;
- 		default:
- 			/* unknown */
--			fprintf(stderr, "Invalid well-known community\n");
-+			fprintf(stderr, "Unknown well-known community\n");
- 			return (0);
- 		}
- 
-@@ -856,33 +880,6 @@ parse_nexthop(const char *word, struct p
- 	return (1);
- }
- 
--/* XXX local copies from kroute.c, should go to a shared file */
--in_addr_t
--prefixlen2mask(u_int8_t prefixlen)
--{
--	if (prefixlen == 0)
--		return (0);
--
--	return (0xffffffff << (32 - prefixlen));
--}
--
--void
--inet6applymask(struct in6_addr *dest, const struct in6_addr *src, int prefixlen)
--{
--	struct in6_addr	mask;
--	int		i;
--
--	bzero(&mask, sizeof(mask));
--	for (i = 0; i < prefixlen / 8; i++)
--		mask.s6_addr[i] = 0xff;
--	i = prefixlen % 8;
--	if (i)
--		mask.s6_addr[prefixlen / 8] = 0xff00 >> i;
--
--	for (i = 0; i < 16; i++)
--		dest->s6_addr[i] = src->s6_addr[i] & mask.s6_addr[i];
--}
--
- int
- bgpctl_getopt(int *argc, char **argv[], int type)
- {

@@ -1,332 +1,294 @@
 Index: bgpd/rde_prefix.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_prefix.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.3
-diff -u -p -r1.1.1.1 -r1.3
---- bgpd/rde_prefix.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/rde_prefix.c	9 Jul 2009 17:22:14 -0000	1.3
+retrieving revision 1.1.1.6
+retrieving revision 1.4
+diff -u -p -r1.1.1.6 -r1.4
+--- bgpd/rde_prefix.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
++++ bgpd/rde_prefix.c	4 Feb 2010 16:22:23 -0000	1.4
 @@ -1,4 +1,4 @@
--/*	$OpenBSD: rde_prefix.c,v 1.25 2007/05/11 11:27:59 claudio Exp $ */
-+/*	$OpenBSD: rde_prefix.c,v 1.29 2009/05/30 18:27:17 claudio Exp $ */
+-/*	$OpenBSD: rde_prefix.c,v 1.29 2009/05/30 18:27:17 claudio Exp $ */
++/*	$OpenBSD: rde_prefix.c,v 1.31 2010/01/13 06:02:37 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org>
-@@ -40,46 +40,30 @@
+@@ -38,15 +38,16 @@
+  * pt_lookup: lookup a IP in the prefix table. Mainly for "show ip bgp".
+  * pt_empty:  returns true if there is no bgp prefix linked to the pt_entry.
   * pt_init:   initialize prefix table.
-  * pt_alloc?: allocate a AF specific pt_entry. Internal function.
+- * pt_alloc?: allocate a AF specific pt_entry. Internal function.
++ * pt_alloc: allocate a AF specific pt_entry. Internal function.
   * pt_free:   free a pt_entry. Internal function.
-- * pt_restart used to restart a tree walk at the spot it was aborted earlier.
   */
  
  /* internal prototypes */
- static struct pt_entry4	*pt_alloc4(void);
- static struct pt_entry6	*pt_alloc6(void);
+-static struct pt_entry4	*pt_alloc4(void);
+-static struct pt_entry6	*pt_alloc6(void);
++static struct pt_entry	*pt_alloc(struct pt_entry *);
  static void		 pt_free(struct pt_entry *);
--static struct pt_entry	*pt_restart(struct pt_context *);
  
--int	pt_prefix_cmp(const struct pt_entry *, const struct pt_entry *);
--
--#define MIN_PREFIX 0
--#define MAX_PREFIX 32
++size_t	pt_sizes[AID_MAX] = AID_PTSIZE;
++
  RB_HEAD(pt_tree, pt_entry);
  RB_PROTOTYPE(pt_tree, pt_entry, pt_e, pt_prefix_cmp);
  RB_GENERATE(pt_tree, pt_entry, pt_e, pt_prefix_cmp);
- 
--struct pt_tree	pttable4;
--struct pt_tree	pttable6;
-+struct pt_tree	pttable;
- 
- void
- pt_init(void)
+@@ -70,17 +71,24 @@ void
+ pt_getaddr(struct pt_entry *pte, struct bgpd_addr *addr)
  {
--	RB_INIT(&pttable4);
--	RB_INIT(&pttable6);
-+	RB_INIT(&pttable);
- }
- 
- void
- pt_shutdown(void)
- {
--	if (!RB_EMPTY(&pttable4))
--		log_debug("pt_shutdown: IPv4 tree is not empty.");
--	if (!RB_EMPTY(&pttable6))
--		log_debug("pt_shutdown: IPv6 tree is not empty.");
--}
--
--int
--pt_empty(struct pt_entry *pte)
--{
--	return LIST_EMPTY(&pte->prefix_h);
-+	if (!RB_EMPTY(&pttable))
-+		log_debug("pt_shutdown: tree is not empty.");
- }
- 
- void
-@@ -103,14 +87,15 @@ pt_getaddr(struct pt_entry *pte, struct 
- }
- 
+ 	bzero(addr, sizeof(struct bgpd_addr));
+-	switch (pte->af) {
+-	case AF_INET:
+-		addr->af = pte->af;
++	addr->aid = pte->aid;
++	switch (addr->aid) {
++	case AID_INET:
+ 		addr->v4 = ((struct pt_entry4 *)pte)->prefix4;
+ 		break;
+-	case AF_INET6:
+-		addr->af = pte->af;
++	case AID_INET6:
+ 		memcpy(&addr->v6, &((struct pt_entry6 *)pte)->prefix6,
+ 		    sizeof(addr->v6));
+ 		/* XXX scope_id ??? */
+ 		break;
++	case AID_VPN_IPv4:
++		addr->vpn4.addr = ((struct pt_entry_vpn4 *)pte)->prefix4;
++		addr->vpn4.rd = ((struct pt_entry_vpn4 *)pte)->rd;
++		addr->vpn4.labellen = ((struct pt_entry_vpn4 *)pte)->labellen;
++		memcpy(addr->vpn4.labelstack,
++		    ((struct pt_entry_vpn4 *)pte)->labelstack,
++		    addr->vpn4.labellen);
++		break;
+ 	default:
+ 		fatalx("pt_getaddr: unknown af");
+ 	}
+@@ -89,33 +97,49 @@ pt_getaddr(struct pt_entry *pte, struct 
  struct pt_entry *
--pt_get(struct bgpd_addr *prefix, int prefixlen)
-+pt_fill(struct bgpd_addr *prefix, int prefixlen)
+ pt_fill(struct bgpd_addr *prefix, int prefixlen)
  {
--	struct pt_entry4	pte4;
--	struct pt_entry6	pte6;
-+	static struct pt_entry4	pte4;
-+	static struct pt_entry6	pte6;
- 	in_addr_t		addr_hbo;
+-	static struct pt_entry4	pte4;
+-	static struct pt_entry6	pte6;
+-	in_addr_t		addr_hbo;
++	static struct pt_entry4		pte4;
++	static struct pt_entry6		pte6;
++	static struct pt_entry_vpn4	pte_vpn4;
++	in_addr_t			addr_hbo;
  
- 	switch (prefix->af) {
- 	case AF_INET:
-+		bzero(&pte4, sizeof(pte4));
+-	switch (prefix->af) {
+-	case AF_INET:
++	switch (prefix->aid) {
++	case AID_INET:
+ 		bzero(&pte4, sizeof(pte4));
++		pte4.aid = prefix->aid;
  		if (prefixlen > 32)
- 			fatalx("pt_get: bad IPv4 prefixlen");
- 		pte4.af = AF_INET;
-@@ -118,24 +103,33 @@ pt_get(struct bgpd_addr *prefix, int pre
+-			fatalx("pt_get: bad IPv4 prefixlen");
+-		pte4.af = AF_INET;
++			fatalx("pt_fill: bad IPv4 prefixlen");
+ 		addr_hbo = ntohl(prefix->v4.s_addr);
  		pte4.prefix4.s_addr = htonl(addr_hbo &
  		    prefixlen2mask(prefixlen));
  		pte4.prefixlen = prefixlen;
--		return RB_FIND(pt_tree, &pttable4, (struct pt_entry *)&pte4);
-+		return ((struct pt_entry *)&pte4);
- 	case AF_INET6:
-+		bzero(&pte6, sizeof(pte6));
+ 		return ((struct pt_entry *)&pte4);
+-	case AF_INET6:
++	case AID_INET6:
+ 		bzero(&pte6, sizeof(pte6));
++		pte6.aid = prefix->aid;
  		if (prefixlen > 128)
  			fatalx("pt_get: bad IPv6 prefixlen");
- 		pte6.af = AF_INET6;
+-		pte6.af = AF_INET6;
  		pte6.prefixlen = prefixlen;
  		inet6applymask(&pte6.prefix6, &prefix->v6, prefixlen);
--		return RB_FIND(pt_tree, &pttable6, (struct pt_entry *)&pte6);
-+		return ((struct pt_entry *)&pte6);
+ 		return ((struct pt_entry *)&pte6);
++	case AID_VPN_IPv4:
++		bzero(&pte_vpn4, sizeof(pte_vpn4));
++		pte_vpn4.aid = prefix->aid;
++		if (prefixlen > 32)
++			fatalx("pt_fill: bad IPv4 prefixlen");
++		addr_hbo = ntohl(prefix->vpn4.addr.s_addr);
++		pte_vpn4.prefix4.s_addr = htonl(addr_hbo &
++		    prefixlen2mask(prefixlen));
++		pte_vpn4.prefixlen = prefixlen;
++		pte_vpn4.rd = prefix->vpn4.rd;
++		pte_vpn4.labellen = prefix->vpn4.labellen;
++		memcpy(pte_vpn4.labelstack, prefix->vpn4.labelstack,
++		    prefix->vpn4.labellen);
++		return ((struct pt_entry *)&pte_vpn4);
  	default:
- 		log_warnx("pt_get: unknown af");
-+		return (NULL);
+-		log_warnx("pt_get: unknown af");
+-		return (NULL);
++		fatalx("pt_fill: unknown af");
  	}
--	return (NULL);
-+}
-+
-+struct pt_entry *
-+pt_get(struct bgpd_addr *prefix, int prefixlen)
-+{
-+	struct pt_entry	*pte;
-+
-+	pte = pt_fill(prefix, prefixlen);
-+	return RB_FIND(pt_tree, &pttable, pte);
- }
- 
- struct pt_entry *
- pt_add(struct bgpd_addr *prefix, int prefixlen)
- {
--	struct pt_tree		*tree = NULL;
- 	struct pt_entry		*p = NULL;
- 	struct pt_entry4	*p4;
- 	struct pt_entry6	*p6;
-@@ -152,7 +146,6 @@ pt_add(struct bgpd_addr *prefix, int pre
- 		p4->prefix4.s_addr = htonl(addr_hbo &
- 		    prefixlen2mask(prefixlen));
- 		p = (struct pt_entry *)p4;
--		tree = &pttable4;
- 		break;
- 	case AF_INET6:
- 		p6 = pt_alloc6();
-@@ -162,15 +155,13 @@ pt_add(struct bgpd_addr *prefix, int pre
- 		p6->prefixlen = prefixlen;
- 		inet6applymask(&p6->prefix6, &prefix->v6, prefixlen);
- 		p = (struct pt_entry *)p6;
--		tree = &pttable6;
- 		break;
- 	default:
- 		fatalx("pt_add: unknown af");
- 	}
--	LIST_INIT(&p->prefix_h);
- 
--	if (RB_INSERT(pt_tree, tree, p) != NULL) {
--		log_warnx("prefix_add: insert failed");
-+	if (RB_INSERT(pt_tree, &pttable, p) != NULL) {
-+		log_warnx("pt_add: insert failed");
- 		return (NULL);
- 	}
- 
-@@ -181,101 +172,35 @@ void
- pt_remove(struct pt_entry *pte)
- {
- 	if (!pt_empty(pte))
--		fatalx("pt_remove: entry not empty");
--
--	switch (pte->af) {
--	case AF_INET:
--		if (RB_REMOVE(pt_tree, &pttable4, pte) == NULL)
--			log_warnx("pt_remove: remove failed.");
--		break;
--	case AF_INET6:
--		if (RB_REMOVE(pt_tree, &pttable6, pte) == NULL)
--			log_warnx("pt_remove: remove failed.");
--		break;
--	default:
--		fatalx("pt_remove: unknown af");
--	}
-+		fatalx("pt_remove: entry still holds references");
- 
-+	if (RB_REMOVE(pt_tree, &pttable, pte) == NULL)
-+		log_warnx("pt_remove: remove failed.");
- 	pt_free(pte);
- }
- 
- struct pt_entry *
--pt_lookup(struct bgpd_addr *prefix)
-+pt_lookup(struct bgpd_addr *addr)
- {
- 	struct pt_entry	*p;
- 	int		 i;
- 
--	switch (prefix->af) {
-+	switch (addr->af) {
- 	case AF_INET:
--		for (i = 32; i >= 0; i--) {
--			p = pt_get(prefix, i);
--			if (p != NULL)
--				return (p);
--		}
-+		i = 32;
- 		break;
- 	case AF_INET6:
--		for (i = 128; i >= 0; i--) {
--			p = pt_get(prefix, i);
--			if (p != NULL)
--				return (p);
--		}
-+		i = 128;
- 		break;
- 	default:
- 		fatalx("pt_lookup: unknown af");
- 	}
--	return (NULL);
--}
--
--void
--pt_dump(void (*upcall)(struct pt_entry *, void *), void *arg, sa_family_t af)
--{
--	if (af == AF_INET || af == AF_UNSPEC)
--		pt_dump_r(upcall, arg, AF_INET, NULL);
--	if (af == AF_INET6 || af == AF_UNSPEC)
--		pt_dump_r(upcall, arg, AF_INET6, NULL);
--}
--
--void
--pt_dump_r(void (*upcall)(struct pt_entry *, void *), void *arg,
--    sa_family_t af, struct pt_context *ctx)
--{
--	struct pt_entry	*p;
--	unsigned int	 i;
--
--	if (ctx == NULL || ctx->ctx_p.af != af) {
--		switch (af) {
--		case AF_INET:
--			p = RB_MIN(pt_tree, &pttable4);
--			break;
--		case AF_INET6:
--			p = RB_MIN(pt_tree, &pttable6);
--			break;
--		default:
--			return;
--		}
--	} else
--		p = pt_restart(ctx);
--
--	for (i = 0; p != NULL; p = RB_NEXT(pt_tree, unused, p)) {
--		if (ctx && i++ >= ctx->count) {
--			/* store next start point */
--			switch (p->af) {
--			case AF_INET:
--				ctx->ctx_p4 = *(struct pt_entry4 *)p;
--				break;
--			case AF_INET6:
--				ctx->ctx_p6 = *(struct pt_entry6 *)p;
--				break;
--			default:
--				fatalx("pt_dump_r: unknown af");
--			}
--			return;
--		}
--		upcall(p, arg);
-+	for (; i >= 0; i--) {
-+		p = pt_get(addr, i);
-+		if (p != NULL)
-+			return (p);
- 	}
--
--	if (ctx)
--		ctx->done = 1;
++	/* NOT REACHED */
 +	return (NULL);
  }
  
- int
-@@ -285,8 +210,10 @@ pt_prefix_cmp(const struct pt_entry *a, 
- 	const struct pt_entry6	*a6, *b6;
- 	int			 i;
- 
--	if (a->af != b->af)
--		fatalx("king bula sez: comparing pears with apples");
-+	if (a->af > b->af)
-+		return (1);
-+	if (a->af < b->af)
-+		return (-1);
- 
- 	switch (a->af) {
- 	case AF_INET:
-@@ -361,56 +288,3 @@ pt_free(struct pt_entry *pte)
- 	}
- 	free(pte);
- }
+ struct pt_entry *
+@@ -131,34 +155,9 @@ struct pt_entry *
+ pt_add(struct bgpd_addr *prefix, int prefixlen)
+ {
+ 	struct pt_entry		*p = NULL;
+-	struct pt_entry4	*p4;
+-	struct pt_entry6	*p6;
+-	in_addr_t		 addr_hbo;
 -
--static struct pt_entry *
--pt_restart(struct pt_context *ctx)
--{
--	struct pt_entry *tmp, *prev = NULL;
--	int comp;
--
--	/* first select correct tree */
--	switch (ctx->ctx_p.af) {
+-	switch (prefix->af) {
 -	case AF_INET:
--		tmp = RB_ROOT(&pttable4);
+-		p4 = pt_alloc4();
+-		if (prefixlen > 32)
+-			fatalx("pt_add: bad IPv4 prefixlen");
+-		p4->af = AF_INET;
+-		p4->prefixlen = prefixlen;
+-		addr_hbo = ntohl(prefix->v4.s_addr);
+-		p4->prefix4.s_addr = htonl(addr_hbo &
+-		    prefixlen2mask(prefixlen));
+-		p = (struct pt_entry *)p4;
 -		break;
 -	case AF_INET6:
--		tmp = RB_ROOT(&pttable6);
+-		p6 = pt_alloc6();
+-		if (prefixlen > 128)
+-			fatalx("pt_add: bad IPv6 prefixlen");
+-		p6->af = AF_INET6;
+-		p6->prefixlen = prefixlen;
+-		inet6applymask(&p6->prefix6, &prefix->v6, prefixlen);
+-		p = (struct pt_entry *)p6;
 -		break;
 -	default:
--		fatalx("pt_restart: unknown af");
+-		fatalx("pt_add: unknown af");
 -	}
--
--	/* then try to find the element */
--	while (tmp) {
--		prev = tmp;
--		comp = pt_prefix_cmp(&ctx->ctx_p, tmp);
--		if (comp < 0)
--			tmp = RB_LEFT(tmp, pt_e);
--		else if (comp > 0)
--			tmp = RB_RIGHT(tmp, pt_e);
--		else
--			return (tmp);
--	}
--
--	/* no match, empty tree */
--	if (prev == NULL)
--		return (NULL);
--
--	/*
--	 * no perfect match
--	 * if last element was bigger use that as new start point
--	 */
--	if (comp < 0)
--		return (prev);
--
--	/* backtrack until parent is bigger */
--	do {
--		prev = RB_PARENT(prev, pt_e);
--		if (prev == NULL)
--			/* all elements in the tree are smaler */
--			return (NULL);
--		comp = pt_prefix_cmp(&ctx->ctx_p, prev);
--	} while (comp > 0);
--
--	return (prev);
++
++	p = pt_fill(prefix, prefixlen);
++	p = pt_alloc(p);
+ 
+ 	if (RB_INSERT(pt_tree, &pttable, p) != NULL) {
+ 		log_warnx("pt_add: insert failed");
+@@ -183,13 +182,14 @@ struct pt_entry *
+ pt_lookup(struct bgpd_addr *addr)
+ {
+ 	struct pt_entry	*p;
+-	int		 i;
++	int		 i = 0;
+ 
+-	switch (addr->af) {
+-	case AF_INET:
++	switch (addr->aid) {
++	case AID_INET:
++	case AID_VPN_IPv4:
+ 		i = 32;
+ 		break;
+-	case AF_INET6:
++	case AID_INET6:
+ 		i = 128;
+ 		break;
+ 	default:
+@@ -206,17 +206,18 @@ pt_lookup(struct bgpd_addr *addr)
+ int
+ pt_prefix_cmp(const struct pt_entry *a, const struct pt_entry *b)
+ {
+-	const struct pt_entry4	*a4, *b4;
+-	const struct pt_entry6	*a6, *b6;
+-	int			 i;
++	const struct pt_entry4		*a4, *b4;
++	const struct pt_entry6		*a6, *b6;
++	const struct pt_entry_vpn4	*va4, *vb4;
++	int				 i;
+ 
+-	if (a->af > b->af)
++	if (a->aid > b->aid)
+ 		return (1);
+-	if (a->af < b->af)
++	if (a->aid < b->aid)
+ 		return (-1);
+ 
+-	switch (a->af) {
+-	case AF_INET:
++	switch (a->aid) {
++	case AID_INET:
+ 		a4 = (const struct pt_entry4 *)a;
+ 		b4 = (const struct pt_entry4 *)b;
+ 		if (ntohl(a4->prefix4.s_addr) > ntohl(b4->prefix4.s_addr))
+@@ -228,7 +229,7 @@ pt_prefix_cmp(const struct pt_entry *a, 
+ 		if (a4->prefixlen < b4->prefixlen)
+ 			return (-1);
+ 		return (0);
+-	case AF_INET6:
++	case AID_INET6:
+ 		a6 = (const struct pt_entry6 *)a;
+ 		b6 = (const struct pt_entry6 *)b;
+ 
+@@ -242,49 +243,49 @@ pt_prefix_cmp(const struct pt_entry *a, 
+ 		if (a6->prefixlen > b6->prefixlen)
+ 			return (1);
+ 		return (0);
++	case AID_VPN_IPv4:
++		va4 = (const struct pt_entry_vpn4 *)a;
++		vb4 = (const struct pt_entry_vpn4 *)b;
++		if (ntohl(va4->prefix4.s_addr) > ntohl(vb4->prefix4.s_addr))
++			return (1);
++		if (ntohl(va4->prefix4.s_addr) < ntohl(vb4->prefix4.s_addr))
++			return (-1);
++		if (va4->prefixlen > vb4->prefixlen)
++			return (1);
++		if (va4->prefixlen < vb4->prefixlen)
++			return (-1);
++		if (betoh64(va4->rd) > betoh64(vb4->rd))
++			return (1);
++		if (betoh64(va4->rd) < betoh64(vb4->rd))
++			return (-1);
++		return (0);
+ 	default:
+ 		fatalx("pt_prefix_cmp: unknown af");
+ 	}
+ 	return (-1);
+ }
+ 
+-/* returns a zeroed pt_entry function may not return on fail */
+-static struct pt_entry4 *
+-pt_alloc4(void)
++/*
++ * Returns a pt_entry cloned from the one passed in.
++ * Function may not return on failure.
++ */
++static struct pt_entry *
++pt_alloc(struct pt_entry *op)
+ {
+-	struct pt_entry4	*p;
++	struct pt_entry		*p;
+ 
+-	p = calloc(1, sizeof(*p));
++	p = malloc(pt_sizes[op->aid]);
+ 	if (p == NULL)
+ 		fatal("pt_alloc");
+-	rdemem.pt4_cnt++;
+-	return (p);
 -}
++	rdemem.pt_cnt[op->aid]++;
++	memcpy(p, op, pt_sizes[op->aid]);
+ 
+-static struct pt_entry6 *
+-pt_alloc6(void)
+-{
+-	struct pt_entry6	*p;
+-
+-	p = calloc(1, sizeof(*p));
+-	if (p == NULL)
+-		fatal("pt_alloc");
+-	rdemem.pt6_cnt++;
+ 	return (p);
+ }
+ 
+ static void
+ pt_free(struct pt_entry *pte)
+ {
+-	switch (pte->af) {
+-	case AF_INET:
+-		rdemem.pt4_cnt--;
+-		break;
+-	case AF_INET6:
+-		rdemem.pt6_cnt--;
+-		break;
+-	default:
+-		break;
+-	}
++	rdemem.pt_cnt[pte->aid]--;
+ 	free(pte);
+ }

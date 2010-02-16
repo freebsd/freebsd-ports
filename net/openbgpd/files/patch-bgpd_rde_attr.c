@@ -1,14 +1,14 @@
 Index: bgpd/rde_attr.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_attr.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.3
-diff -u -p -r1.1.1.1 -r1.3
---- bgpd/rde_attr.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/rde_attr.c	9 Jul 2009 17:22:14 -0000	1.3
+retrieving revision 1.1.1.6
+retrieving revision 1.4
+diff -u -p -r1.1.1.6 -r1.4
+--- bgpd/rde_attr.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
++++ bgpd/rde_attr.c	4 Feb 2010 16:22:23 -0000	1.4
 @@ -1,4 +1,4 @@
--/*	$OpenBSD: rde_attr.c,v 1.76.2.1 2009/02/18 20:30:36 claudio Exp $ */
-+/*	$OpenBSD: rde_attr.c,v 1.79 2009/03/19 06:52:59 claudio Exp $ */
+-/*	$OpenBSD: rde_attr.c,v 1.79 2009/03/19 06:52:59 claudio Exp $ */
++/*	$OpenBSD: rde_attr.c,v 1.81 2009/12/18 15:51:37 claudio Exp $ */
  
  /*
   * Copyright (c) 2004 Claudio Jeker <claudio@openbsd.org>
@@ -34,44 +34,222 @@ diff -u -p -r1.1.1.1 -r1.3
  
  #include "bgpd.h"
  #include "rde.h"
-@@ -62,6 +69,31 @@ attr_write(void *p, u_int16_t p_len, u_i
- 	return (tot_len);
+@@ -971,13 +978,26 @@ aspath_match(struct aspath *a, enum as_s
+ 	return (0);
+ }
+ 
++/*
++ * Functions handling communities and extended communities.
++ */
++
++int community_ext_conv(struct filter_extcommunity *, u_int16_t, u_int64_t *);
++
+ int
+-community_match(void *data, u_int16_t len, int as, int type)
++community_match(struct rde_aspath *asp, int as, int type)
+ {
+-	u_int8_t	*p = data;
+-	u_int16_t	 eas, etype;
++	struct attr	*a;
++	u_int8_t	*p;
++	u_int16_t	 eas, etype, len;
+ 
+-	len >>= 2; /* divide by four */
++	a = attr_optget(asp, ATTR_COMMUNITIES);
++	if (a == NULL)
++		/* no communities, no match */
++		return (0);
++
++	len = a->len / 4;
++	p = a->data;
+ 
+ 	for (; len > 0; len--) {
+ 		eas = *p++;
+@@ -1000,7 +1020,6 @@ community_set(struct rde_aspath *asp, in
+ 	u_int8_t	*p = NULL;
+ 	unsigned int	 i, ncommunities = 0;
+ 	u_int8_t	 f = ATTR_OPTIONAL|ATTR_TRANSITIVE;
+-	u_int8_t	 t = ATTR_COMMUNITIES;
+ 
+ 	attr = attr_optget(asp, ATTR_COMMUNITIES);
+ 	if (attr != NULL) {
+@@ -1017,7 +1036,7 @@ community_set(struct rde_aspath *asp, in
+ 		p += 4;
+ 	}
+ 
+-	if (ncommunities++ >= 0x3fff)
++	if (ncommunities++ >= USHRT_MAX / 4)
+ 		/* overflow */
+ 		return (0);
+ 
+@@ -1032,11 +1051,10 @@ community_set(struct rde_aspath *asp, in
+ 	if (attr != NULL) {
+ 		memcpy(p + 4, attr->data, attr->len);
+ 		f = attr->flags;
+-		t = attr->type;
+ 		attr_free(asp, attr);
+ 	}
+ 
+-	attr_optadd(asp, f, t, p, ncommunities << 2);
++	attr_optadd(asp, f, ATTR_COMMUNITIES, p, ncommunities << 2);
+ 
+ 	free(p);
+ 	return (1);
+@@ -1049,7 +1067,7 @@ community_delete(struct rde_aspath *asp,
+ 	u_int8_t	*p, *n;
+ 	u_int16_t	 l, len = 0;
+ 	u_int16_t	 eas, etype;
+-	u_int8_t	 f, t;
++	u_int8_t	 f;
+ 
+ 	attr = attr_optget(asp, ATTR_COMMUNITIES);
+ 	if (attr == NULL)
+@@ -1100,10 +1118,146 @@ community_delete(struct rde_aspath *asp,
+ 	}
+ 
+ 	f = attr->flags;
+-	t = attr->type;
+ 
+ 	attr_free(asp, attr);
+-	attr_optadd(asp, f, t, n, len);
++	attr_optadd(asp, f, ATTR_COMMUNITIES, n, len);
++	free(n);
++}
++
++int
++community_ext_set(struct rde_aspath *asp, struct filter_extcommunity *c,
++    u_int16_t neighas)
++{
++	struct attr	*attr;
++	u_int8_t	*p = NULL;
++	u_int64_t	 community;
++	unsigned int	 i, ncommunities = 0;
++	u_int8_t	 f = ATTR_OPTIONAL|ATTR_TRANSITIVE;
++
++	if (community_ext_conv(c, neighas, &community))
++		return (0);
++
++	attr = attr_optget(asp, ATTR_EXT_COMMUNITIES);
++	if (attr != NULL) {
++		p = attr->data;
++		ncommunities = attr->len / 8; /* 64bit per ext-community */
++	}
++
++	/* first check if the community is not already set */
++	for (i = 0; i < ncommunities; i++) {
++		if (memcmp(&community, p, sizeof(community)) == 0)
++			/* already present, nothing todo */
++			return (1);
++		p += sizeof(community);
++	}
++
++	if (ncommunities++ >= USHRT_MAX / sizeof(community))
++		/* overflow */
++		return (0);
++
++	if ((p = malloc(ncommunities * sizeof(community))) == NULL)
++		fatal("community_ext_set");
++
++	memcpy(p, &community, sizeof(community));
++	if (attr != NULL) {
++		memcpy(p + sizeof(community), attr->data, attr->len);
++		f = attr->flags;
++		attr_free(asp, attr);
++	}
++
++	attr_optadd(asp, f, ATTR_EXT_COMMUNITIES, p,
++	    ncommunities * sizeof(community));
++
++	free(p);
++	return (1);
++}
++
++void
++community_ext_delete(struct rde_aspath *asp, struct filter_extcommunity *c,
++    u_int16_t neighas)
++{
++	struct attr	*attr;
++	u_int8_t	*p, *n;
++	u_int64_t	 community;
++	u_int16_t	 l, len = 0;
++	u_int8_t	 f;
++
++	if (community_ext_conv(c, neighas, &community))
++		return;
++
++	attr = attr_optget(asp, ATTR_EXT_COMMUNITIES);
++	if (attr == NULL)
++		/* no attr nothing to do */
++		return;
++
++	p = attr->data;
++	for (l = 0; l < attr->len; l += sizeof(community)) {
++		if (memcmp(&community, p + l, sizeof(community)) == 0)
++			/* match */
++			continue;
++		len += sizeof(community);
++	}
++
++	if (len == 0) {
++		attr_free(asp, attr);
++		return;
++	}
++
++	if ((n = malloc(len)) == NULL)
++		fatal("community_delete");
++
++	p = attr->data;
++	for (l = 0; l < len && p < attr->data + attr->len;
++	    p += sizeof(community)) {
++		if (memcmp(&community, p, sizeof(community)) == 0)
++			/* match */
++			continue;
++		memcpy(n + l, p, sizeof(community));
++		l += sizeof(community);
++	}
++
++	f = attr->flags;
++
++	attr_free(asp, attr);
++	attr_optadd(asp, f, ATTR_EXT_COMMUNITIES, n, len);
+ 	free(n);
  }
  
 +int
-+attr_writebuf(struct buf *buf, u_int8_t flags, u_int8_t type, void *data,
-+    u_int16_t data_len)
++community_ext_conv(struct filter_extcommunity *c, u_int16_t neighas,
++    u_int64_t *community)
 +{
-+	u_char	hdr[4];
++	u_int64_t	com;
++	u_int32_t	ip;
 +
-+	if (data_len > 255) {
-+		flags |= ATTR_EXTLEN;
-+		hdr[2] = (data_len >> 8) & 0xff;
-+		hdr[3] = data_len & 0xff;
-+	} else {
-+		flags &= ~ATTR_EXTLEN;
-+		hdr[2] = data_len & 0xff;
++	com = (u_int64_t)c->type << 56;
++	switch (c->type & EXT_COMMUNITY_VALUE) {
++	case EXT_COMMUNITY_TWO_AS:
++		com |= (u_int64_t)c->subtype << 48;
++		com |= (u_int64_t)c->data.ext_as.as << 32;
++		com |= c->data.ext_as.val;
++		break;
++	case EXT_COMMUNITY_IPV4:
++		com |= (u_int64_t)c->subtype << 48;
++		ip = ntohl(c->data.ext_ip.addr.s_addr);
++		com |= (u_int64_t)ip << 16;
++		com |= c->data.ext_ip.val;
++		break;
++	case EXT_COMMUNITY_FOUR_AS:
++		com |= (u_int64_t)c->subtype << 48;
++		com |= (u_int64_t)c->data.ext_as4.as4 << 16;
++		com |= c->data.ext_as4.val;
++		break;
++	case EXT_COMMUNITY_OPAQUE:
++		com |= (u_int64_t)c->subtype << 48;
++		com |= c->data.ext_opaq & EXT_COMMUNITY_OPAQUE_MAX;
++		break;
++	default:
++		com |= c->data.ext_opaq & 0xffffffffffffffULL;
++		break;
 +	}
 +
-+	hdr[0] = flags;
-+	hdr[1] = type;
++	*community = htobe64(com);
 +
-+	if (buf_add(buf, hdr, flags & ATTR_EXTLEN ? 4 : 3) == -1)
-+		return (-1);
-+	if (buf_add(buf, data, data_len) == -1)
-+		return (-1);
 +	return (0);
 +}
-+
- /* optional attribute specific functions */
- int		 attr_diff(struct attr *, struct attr *);
- struct attr	*attr_alloc(u_int8_t, u_int8_t, const void *, u_int16_t);
-@@ -588,7 +620,7 @@ aspath_merge(struct rde_aspath *a, struc
- 
- 	ascnt = aspath_count(attr->data, attr->len);
- 	if (ascnt > a->aspath->ascnt) {
--		/* ASPATH is shorter then NEW_ASPATH no way to merge */
-+		/* ASPATH is shorter then AS4_PATH no way to merge */
- 		attr_free(a, attr);
- 		return;
- 	}

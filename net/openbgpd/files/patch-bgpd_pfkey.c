@@ -1,81 +1,120 @@
 Index: bgpd/pfkey.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/pfkey.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.1.1.2
-diff -u -p -r1.1.1.1 -r1.1.1.2
---- bgpd/pfkey.c	30 Jun 2009 05:46:15 -0000	1.1.1.1
-+++ bgpd/pfkey.c	9 Jul 2009 16:49:54 -0000	1.1.1.2
+retrieving revision 1.1.1.6
+retrieving revision 1.1.1.7
+diff -u -p -r1.1.1.6 -r1.1.1.7
+--- bgpd/pfkey.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
++++ bgpd/pfkey.c	14 Feb 2010 20:27:06 -0000	1.1.1.7
 @@ -1,4 +1,4 @@
--/*	$OpenBSD: pfkey.c,v 1.34 2006/10/26 14:26:49 henning Exp $ */
-+/*	$OpenBSD: pfkey.c,v 1.37 2009/04/21 15:25:52 henning Exp $ */
+-/*	$OpenBSD: pfkey.c,v 1.37 2009/04/21 15:25:52 henning Exp $ */
++/*	$OpenBSD: pfkey.c,v 1.40 2009/12/14 17:38:18 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
-@@ -36,7 +36,8 @@
- #define	ROUNDUP(x) (((x) + (PFKEY2_CHUNK - 1)) & ~(PFKEY2_CHUNK - 1))
- #define	IOV_CNT	20
- 
--static u_int32_t	sadb_msg_seq = 1;
-+static u_int32_t	sadb_msg_seq = 0;
-+static u_int32_t	pid = 0; /* should pid_t but pfkey needs u_int32_t */
- static int		fd;
- 
- int	pfkey_reply(int, u_int32_t *);
-@@ -74,6 +75,9 @@ pfkey_send(int sd, uint8_t satype, uint8
+@@ -74,6 +74,7 @@ pfkey_send(int sd, uint8_t satype, uint8
+ 	int			len = 0;
  	int			iov_cnt;
  	struct sockaddr_storage	ssrc, sdst, speer, smask, dmask;
++	struct sockaddr		*saptr;
  
-+	if (!pid)
-+		pid = getpid();
-+
+ 	if (!pid)
+ 		pid = getpid();
+@@ -81,22 +82,17 @@ pfkey_send(int sd, uint8_t satype, uint8
  	/* we need clean sockaddr... no ports set */
  	bzero(&ssrc, sizeof(ssrc));
  	bzero(&smask, sizeof(smask));
-@@ -129,8 +133,8 @@ pfkey_send(int sd, uint8_t satype, uint8
+-	switch (src->af) {
+-	case AF_INET:
+-		((struct sockaddr_in *)&ssrc)->sin_addr = src->v4;
+-		ssrc.ss_len = sizeof(struct sockaddr_in);
+-		ssrc.ss_family = AF_INET;
++	if ((saptr = addr2sa(src, 0)))
++		memcpy(&ssrc, saptr, sizeof(ssrc));
++	switch (src->aid) {
++	case AID_INET:
+ 		memset(&((struct sockaddr_in *)&smask)->sin_addr, 0xff, 32/8);
+ 		break;
+-	case AF_INET6:
+-		memcpy(&((struct sockaddr_in6 *)&ssrc)->sin6_addr,
+-		    &src->v6, sizeof(struct in6_addr));
+-		ssrc.ss_len = sizeof(struct sockaddr_in6);
+-		ssrc.ss_family = AF_INET6;
++	case AID_INET6:
+ 		memset(&((struct sockaddr_in6 *)&smask)->sin6_addr, 0xff,
+ 		    128/8);
+ 		break;
+-	case 0:
++	case AID_UNSPEC:
+ 		ssrc.ss_len = sizeof(struct sockaddr);
+ 		break;
+ 	default:
+@@ -107,22 +103,17 @@ pfkey_send(int sd, uint8_t satype, uint8
  
- 	bzero(&smsg, sizeof(smsg));
- 	smsg.sadb_msg_version = PF_KEY_V2;
--	smsg.sadb_msg_seq = sadb_msg_seq++;
--	smsg.sadb_msg_pid = getpid();
-+	smsg.sadb_msg_seq = ++sadb_msg_seq;
-+	smsg.sadb_msg_pid = pid;
- 	smsg.sadb_msg_len = sizeof(smsg) / 8;
- 	smsg.sadb_msg_type = mtype;
- 	smsg.sadb_msg_satype = satype;
-@@ -415,10 +419,23 @@ pfkey_reply(int sd, u_int32_t *spip)
- 	u_int8_t *data;
- 	ssize_t len;
+ 	bzero(&sdst, sizeof(sdst));
+ 	bzero(&dmask, sizeof(dmask));
+-	switch (dst->af) {
+-	case AF_INET:
+-		((struct sockaddr_in *)&sdst)->sin_addr = dst->v4;
+-		sdst.ss_len = sizeof(struct sockaddr_in);
+-		sdst.ss_family = AF_INET;
++	if ((saptr = addr2sa(dst, 0)))
++		memcpy(&sdst, saptr, sizeof(sdst));
++	switch (dst->aid) {
++	case AID_INET:
+ 		memset(&((struct sockaddr_in *)&dmask)->sin_addr, 0xff, 32/8);
+ 		break;
+-	case AF_INET6:
+-		memcpy(&((struct sockaddr_in6 *)&sdst)->sin6_addr,
+-		    &dst->v6, sizeof(struct in6_addr));
+-		sdst.ss_len = sizeof(struct sockaddr_in6);
+-		sdst.ss_family = AF_INET6;
++	case AID_INET6:
+ 		memset(&((struct sockaddr_in6 *)&dmask)->sin6_addr, 0xff,
+ 		    128/8);
+ 		break;
+-	case 0:
++	case AID_UNSPEC:
+ 		sdst.ss_len = sizeof(struct sockaddr);
+ 		break;
+ 	default:
+@@ -220,8 +211,8 @@ pfkey_send(int sd, uint8_t satype, uint8
+ 		sa_dst.sadb_address_exttype = SADB_X_EXT_DST_FLOW;
  
--	if (recv(sd, &hdr, sizeof(hdr), MSG_PEEK) != sizeof(hdr)) {
--		log_warn("pfkey peek");
--		return (-1);
-+	for (;;) {
-+		if (recv(sd, &hdr, sizeof(hdr), MSG_PEEK) != sizeof(hdr)) {
-+			log_warn("pfkey peek");
-+			return (-1);
-+		}
-+
-+		if (hdr.sadb_msg_seq == sadb_msg_seq &&
-+		    hdr.sadb_msg_pid == pid)
-+			break;
-+
-+		/* not ours, discard */
-+		if (read(sd, &hdr, sizeof(hdr)) == -1) {
-+			log_warn("pfkey read");
-+			return (-1);
-+		}
- 	}
-+
- 	if (hdr.sadb_msg_errno != 0) {
- 		errno = hdr.sadb_msg_errno;
- 		if (errno == ESRCH)
-@@ -497,6 +514,8 @@ pfkey_sa_remove(struct bgpd_addr *src, s
- int
- pfkey_md5sig_establish(struct peer *p)
- {
-+	sleep(1);
-+
- 	if (!p->auth.spi_out)
- 		if (pfkey_sa_add(&p->auth.local_addr, &p->conf.remote_addr,
- 		    p->conf.auth.md5key_len, p->conf.auth.md5key,
+ 		bzero(&smask, sizeof(smask));
+-		switch (src->af) {
+-		case AF_INET:
++		switch (src->aid) {
++		case AID_INET:
+ 			smask.ss_len = sizeof(struct sockaddr_in);
+ 			smask.ss_family = AF_INET;
+ 			memset(&((struct sockaddr_in *)&smask)->sin_addr,
+@@ -233,7 +224,7 @@ pfkey_send(int sd, uint8_t satype, uint8
+ 				    htons(0xffff);
+ 			}
+ 			break;
+-		case AF_INET6:
++		case AID_INET6:
+ 			smask.ss_len = sizeof(struct sockaddr_in6);
+ 			smask.ss_family = AF_INET6;
+ 			memset(&((struct sockaddr_in6 *)&smask)->sin6_addr,
+@@ -247,8 +238,8 @@ pfkey_send(int sd, uint8_t satype, uint8
+ 			break;
+ 		}
+ 		bzero(&dmask, sizeof(dmask));
+-		switch (dst->af) {
+-		case AF_INET:
++		switch (dst->aid) {
++		case AID_INET:
+ 			dmask.ss_len = sizeof(struct sockaddr_in);
+ 			dmask.ss_family = AF_INET;
+ 			memset(&((struct sockaddr_in *)&dmask)->sin_addr,
+@@ -260,7 +251,7 @@ pfkey_send(int sd, uint8_t satype, uint8
+ 				    htons(0xffff);
+ 			}
+ 			break;
+-		case AF_INET6:
++		case AID_INET6:
+ 			dmask.ss_len = sizeof(struct sockaddr_in6);
+ 			dmask.ss_family = AF_INET6;
+ 			memset(&((struct sockaddr_in6 *)&dmask)->sin6_addr,

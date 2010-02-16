@@ -3,10 +3,10 @@ Index: openbsd-compat/openbsd-compat.h
 RCS file: openbsd-compat/openbsd-compat.h
 diff -N openbsd-compat/openbsd-compat.h
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ openbsd-compat/openbsd-compat.h	9 Jul 2009 17:22:14 -0000	1.3
-@@ -0,0 +1,46 @@
++++ openbsd-compat/openbsd-compat.h	4 Feb 2010 16:22:51 -0000	1.4
+@@ -0,0 +1,87 @@
 +/*
-+ * $hrs: openbgpd/openbsd-compat/openbsd-compat.h,v 1.3 2009/07/09 17:22:14 hrs Exp $
++ * $hrs: openbgpd/openbsd-compat/openbsd-compat.h,v 1.4 2010/02/04 16:22:51 hrs Exp $
 + */
 +
 +#ifndef _OPENBSD_COMPAT_H
@@ -50,4 +50,45 @@ diff -N openbsd-compat/openbsd-compat.h
 +#define RTP_MASK        0x7f
 +#define RTP_DOWN        0x80    /* route/link is down */
 +
++/* missing LINK_STATE_* macros in net/if.h */
++#define LINK_STATE_INVALID	LINK_STATE_UNKNOWN	/* link invalid */
++#define LINK_STATE_KALIVE_DOWN	7	/* keepalive reports down */
++#define LINK_STATE_HALF_DUPLEX	5	/* link is up and half duplex */
++#define LINK_STATE_FULL_DUPLEX	6	/* link is up and full duplex */
++
++/*
++ * Status bit descriptions for the various interface types.
++ */
++struct if_status_description {
++	unsigned char	ifs_type;
++	unsigned char	ifs_state;
++	const char *ifs_string;
++};
++
++#define LINK_STATE_DESC_MATCH(_ifs, _t, _s)				\
++	(((_ifs)->ifs_type == (_t) || (_ifs)->ifs_type == 0) &&		\
++	    (_ifs)->ifs_state == (_s))
++
++#define LINK_STATE_DESCRIPTIONS {					\
++	{ IFT_ETHER, LINK_STATE_DOWN, "no carrier" },			\
++									\
++	{ IFT_IEEE80211, LINK_STATE_DOWN, "no network" },		\
++									\
++	{ IFT_PPP, LINK_STATE_DOWN, "no carrier" },			\
++									\
++	{ IFT_CARP, LINK_STATE_DOWN, "backup" },			\
++	{ IFT_CARP, LINK_STATE_UP, "master" },				\
++	{ IFT_CARP, LINK_STATE_HALF_DUPLEX, "master" },			\
++	{ IFT_CARP, LINK_STATE_FULL_DUPLEX, "master" },			\
++									\
++	{ 0, LINK_STATE_UP, "active" },					\
++	{ 0, LINK_STATE_HALF_DUPLEX, "active" },			\
++	{ 0, LINK_STATE_FULL_DUPLEX, "active" },			\
++									\
++/*	{ 0, LINK_STATE_UNKNOWN, "unknown" },	*/			\
++	{ 0, LINK_STATE_INVALID, "invalid" },				\
++	{ 0, LINK_STATE_DOWN, "down" },					\
++	{ 0, LINK_STATE_KALIVE_DOWN, "keepalive down" },		\
++	{ 0, 0, NULL }							\
++}
 +#endif /* _OPENBSD_COMPAT_H */
