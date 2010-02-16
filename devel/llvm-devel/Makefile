@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.7.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -139,7 +140,6 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libUnitTestMain.a \
 			lib/libclang* \
 			lib/libplugin_llvmc* \
-			lib/libprofile_rt.bca \
 			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
