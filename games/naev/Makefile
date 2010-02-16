@@ -40,6 +40,10 @@ OPTIONS=	OPENAL 		"Use the OpenAL sound backend"	on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 .if !defined(NOPORTDOCS)
 PLIST_FILES+=	%%DOCSDIR%%/conf.example
 PLIST_DIRS=	%%DOCSDIR%%
