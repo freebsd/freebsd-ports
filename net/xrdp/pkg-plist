@@ -1,9 +1,12 @@
-bin/sesman
-bin/sessvc
-bin/sesrun
-bin/sestest
-bin/xrdp
-etc/pam.d/sesman
+bin/xrdp-keygen
+bin/xrdp-sesadmin
+bin/xrdp-sesrun
+bin/xrdp-sestest
+etc/pam.d/xrdp-sesman
+etc/xrdp/xrdp.sh
+@unexec if cmp -s %D/etc/xrdp/startwm.sh %D/etc/xrdp/startwm.sh.sample; then rm -f %D/etc/xrdp/startwm.sh; fi
+etc/xrdp/startwm.sh.sample
+@exec [ -f %D/etc/xrdp/startwm.sh ] || cp %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh
 @unexec if cmp -s %D/etc/xrdp/rsakeys.ini %D/etc/xrdp/rsakeys.ini.sample; then rm -f %D/etc/xrdp/rsakeys.ini; fi
 etc/xrdp/rsakeys.ini.sample
 @exec [ -f %D/etc/xrdp/rsakeys.ini ] || cp %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini
@@ -13,16 +16,43 @@ etc/xrdp/sesman.ini.sample
 @unexec if cmp -s %D/etc/xrdp/xrdp.ini %D/etc/xrdp/xrdp.ini.sample; then rm -f %D/etc/xrdp/xrdp.ini; fi
 etc/xrdp/xrdp.ini.sample
 @exec [ -f %D/etc/xrdp/xrdp.ini ] || cp %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini
-lib/xrdp/Tahoma-10.fv1
-lib/xrdp/ad256.bmp
-lib/xrdp/cursor0.cur
-lib/xrdp/cursor1.cur
+lib/xrdp/libcommon.a
+lib/xrdp/libcommon.la
+lib/xrdp/libcommon.so
+lib/xrdp/libcommon.so.0
+lib/xrdp/libmc.a
+lib/xrdp/libmc.la
+lib/xrdp/libmc.so
+lib/xrdp/libmc.so.0
+lib/xrdp/librdp.a
+lib/xrdp/librdp.la
 lib/xrdp/librdp.so
+lib/xrdp/librdp.so.0
+lib/xrdp/libscp.a
+lib/xrdp/libscp.la
 lib/xrdp/libscp.so
+lib/xrdp/libscp.so.0
+lib/xrdp/libvnc.a
+lib/xrdp/libvnc.la
 lib/xrdp/libvnc.so
+lib/xrdp/libvnc.so.0
+lib/xrdp/libxrdp.a
+lib/xrdp/libxrdp.la
 lib/xrdp/libxrdp.so
+lib/xrdp/libxrdp.so.0
+lib/xrdp/libxup.a
+lib/xrdp/libxup.la
 lib/xrdp/libxup.so
-lib/xrdp/startwm.sh
-lib/xrdp/xrdp256.bmp
+lib/xrdp/libxup.so.0
+sbin/xrdp
+sbin/xrdp-chansrv
+sbin/xrdp-sesman
+sbin/xrdp-sessvc
+share/xrdp/ad256.bmp
+share/xrdp/cursor0.cur
+share/xrdp/cursor1.cur
+share/xrdp/sans-10.fv1
+share/xrdp/xrdp256.bmp
+@dirrm share/xrdp
 @dirrm lib/xrdp
 @dirrmtry etc/xrdp
