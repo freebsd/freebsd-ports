@@ -91,10 +91,14 @@ PLIST_SUB+=	YAHOO=""
 JB_CONF_ARGS+=	evolution=no
 PLIST_SUB+=	EVOLUTION="@comment "
 .else
-EVO_VERSION=	2.22
+EVO_VERSION!=	make -C ${PORTSDIR}/mail/evolution -V EVO_VERSION
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION="" EVO_VERSION=${EVO_VERSION}
+# Work around the fact that MN is using evolution's private(?) api that is not part of
+# evolution-plugin thus it's includes are not covered by pkgconfig metadata.
+# That path is frozen at 3.14 even for later versions of libgtkhtml.
+CFLAGS+=	-I${LOCALBASE}/include/libgtkhtml-3.14 -I${LOCALBASE}/include/libgtkhtml-3.14/editor
 .endif
 .if defined(WITHOUT_MOZILLA)
 JB_CONF_ARGS+=	mozilla=no
