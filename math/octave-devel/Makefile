@@ -44,7 +44,7 @@ MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 
 USE_BLAS?=	reference
 
-.if exists(${LOCALBASE}/lib/libgoto.so)
+.if exists(${LOCALBASE}/lib/libgoto2.so)
 USE_BLAS=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas_r.so)
 USE_BLAS=	atlas
@@ -56,10 +56,9 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${USE_BLAS} == gotoblas
-LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-BLAS=		-lgotop
-LAPACK=		-lgotop -llapack
+LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
+BLAS=		-lgoto2p
+LAPACK=		-lgoto2p
 .elif ${USE_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas -lptcblas -latlas_r
