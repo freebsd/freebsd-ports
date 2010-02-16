@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
+MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A Ruby interface to the FFTW ver.3
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
