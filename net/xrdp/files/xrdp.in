@@ -10,7 +10,7 @@
 
 name="xrdp"
 rcvar=`set_rcvar`
-xrdp_daemons="xrdp sesman"
+xrdp_daemons="xrdp xrdpsesman"
 
 # Read settings and set default values.
 load_rc_config "$name"
@@ -43,8 +43,13 @@ xrdp_cmd() {
     # Apply to all the daemons.
     for name in ${xrdp_daemons}; do
 	rcvar=$(set_rcvar)
-	command="%%PREFIX%%/bin/${name}"
-	pidfile="/var/run/${name}.pid"
+	if [ "${name}" = "xrdpsesman" ]; then
+		command="%%PREFIX%%/sbin/xrdp-sesman"
+		pidfile="/var/run/xrdp-sesman.pid"
+	else
+		command="%%PREFIX%%/sbin/${name}"
+		pidfile="/var/run/${name}.pid"
+	fi
 
 	run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
     done
