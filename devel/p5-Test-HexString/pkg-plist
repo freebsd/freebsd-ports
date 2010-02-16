@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/HexString.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HexString/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HexString
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test

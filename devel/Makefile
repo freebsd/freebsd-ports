@@ -2069,6 +2069,7 @@
     SUBDIR += p5-Test-HTML-Tidy
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-HasVersion
+    SUBDIR += p5-Test-HexString
     SUBDIR += p5-Test-Inline
     SUBDIR += p5-Test-JSON
     SUBDIR += p5-Test-Kwalitee
