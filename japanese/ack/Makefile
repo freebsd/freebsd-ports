@@ -6,6 +6,7 @@
 
 PORTNAME=	ack
 PORTVERSION=	1.39
+PORTREVISION=	1
 CATEGORIES=	japanese converters
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/util/text/conv/code/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
