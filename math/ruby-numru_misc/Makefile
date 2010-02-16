@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	numru-misc-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
+MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Collection of misc functions and classes to facilitate programming
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
