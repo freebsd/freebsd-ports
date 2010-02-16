@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20080903
+PORTVERSION=	20100215
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ranner.jawa.at/stuff/
+MASTER_SITES=	http://www.ranner.eu/stuff/
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Custom rulesets for SpamAssassin
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
-OPTIONS=	AHBL "Check AHBL Blacklist" off \
-		AIRMAX "Some custom rulesets" off \
+OPTIONS=	AHBL "Check AHBL Blacklist" on \
+		AIRMAX "Some custom rulesets" on \
 		BACKHAIR "Catch those ugly, unsightly HTML tags" on \
 		BOGUS_VIRUS "Catch 'collateral spam' caused by viruses" on \
 		BRAZILIAN "Catches spam written in Portuguese" off \
@@ -26,8 +26,8 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		FRENCH "Catches spam written in French" off \
 		GERMAN "Catches spam written in German" off \
 		GREEK "Catches spam written in Greek" off \
-		MANGLED "Looks for obfuscated/gappy words" off \
-		MIMEVLD "Some mime validation rules" off \
+		MANGLED "Looks for obfuscated/gappy words" on \
+		MIMEVLD "Some mime validation rules" on \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
 		ROMANIAN "Catches spam written in Romanian" off \
 		SARE "Installs safe SARE rules" on \
@@ -36,7 +36,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		SARE3 "Installs aggressive SARE rules" off \
 		SAREH "Installs SARE high risk rules" off \
 		SAREW "Installs SARE whitelist rules" off \
-		TRIPWIRE "Matches 3 chars that shouldn't be together" off \
+		TRIPWIRE "Matches 3 chars that shouldn't be together" on \
 		WEEDS "Looks at alphanum, hex, lower-, uppercase chars" on \
 		WEEDS2 "More restrictive than WEEDS, dont use together" off
 SUB_FILES=	pkg-message
