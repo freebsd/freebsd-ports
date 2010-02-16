@@ -279,6 +279,7 @@
     SUBDIR += ganglia-monitor-core
     SUBDIR += ganglia-webfrontend
     SUBDIR += gapcmon
+    SUBDIR += gather
     SUBDIR += gcdmaster
     SUBDIR += gcombust
     SUBDIR += gconf-editor
