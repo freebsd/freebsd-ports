@@ -3,6 +3,7 @@ bin/appcfg.py
 bin/bulkload_client.py
 bin/bulkloader.py
 bin/dev_appserver.py
+bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/add_domain.png
@@ -477,6 +478,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/api/datastore_errors.py
 %%DATADIR%%/google/appengine/api/datastore_file_stub.py
 %%DATADIR%%/google/appengine/api/datastore_types.py
+%%DATADIR%%/google/appengine/api/dosinfo.py
 %%DATADIR%%/google/appengine/api/images/__init__.py
 %%DATADIR%%/google/appengine/api/images/images_not_implemented_stub.py
 %%DATADIR%%/google/appengine/api/images/images_service_pb.py
@@ -566,6 +568,24 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/admin/templates/queues.html
 %%DATADIR%%/google/appengine/ext/admin/templates/tasks.html
 %%DATADIR%%/google/appengine/ext/admin/templates/xmpp.html
+%%DATADIR%%/google/appengine/ext/appstats/__init__.py
+%%DATADIR%%/google/appengine/ext/appstats/datamodel_pb.py
+%%DATADIR%%/google/appengine/ext/appstats/formatting.py
+%%DATADIR%%/google/appengine/ext/appstats/recording.py
+%%DATADIR%%/google/appengine/ext/appstats/sample_appengine_config.py
+%%DATADIR%%/google/appengine/ext/appstats/static/app_engine_logo_sm.gif
+%%DATADIR%%/google/appengine/ext/appstats/static/appstats_css.css
+%%DATADIR%%/google/appengine/ext/appstats/static/appstats_js.js
+%%DATADIR%%/google/appengine/ext/appstats/static/gantt.js
+%%DATADIR%%/google/appengine/ext/appstats/static/minus.gif
+%%DATADIR%%/google/appengine/ext/appstats/static/pix.gif
+%%DATADIR%%/google/appengine/ext/appstats/static/plus.gif
+%%DATADIR%%/google/appengine/ext/appstats/templates/base.html
+%%DATADIR%%/google/appengine/ext/appstats/templates/details.html
+%%DATADIR%%/google/appengine/ext/appstats/templates/file.html
+%%DATADIR%%/google/appengine/ext/appstats/templates/main.html
+%%DATADIR%%/google/appengine/ext/appstats/templates/test.html
+%%DATADIR%%/google/appengine/ext/appstats/ui.py
 %%DATADIR%%/google/appengine/ext/blobstore/__init__.py
 %%DATADIR%%/google/appengine/ext/blobstore/blobstore.py
 %%DATADIR%%/google/appengine/ext/bulkload/__init__.py
@@ -609,10 +629,10 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/tools/dev_appserver.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_blobstore.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_index.py
-%%DATADIR%%/google/appengine/tools/dev_appserver_info.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_login.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_main.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_upload.py
+%%DATADIR%%/google/appengine/tools/https_wrapper.py
 %%DATADIR%%/google/appengine/tools/os_compat.py
 %%DATADIR%%/google/appengine/tools/remote_api_shell.py
 %%DATADIR%%/google/appengine/tools/requeue.py
@@ -646,6 +666,7 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/antlr3/antlr_python_runtime.egg-info/dependency_links.txt
 %%DATADIR%%/lib/antlr3/antlr_python_runtime.egg-info/top_level.txt
 %%DATADIR%%/lib/antlr3/setup.py
+%%DATADIR%%/lib/cacerts/cacerts.txt
 %%DATADIR%%/lib/django/AUTHORS
 %%DATADIR%%/lib/django/INSTALL
 %%DATADIR%%/lib/django/LICENSE
@@ -1245,6 +1266,11 @@ bin/dev_appserver.py
 %%DATADIR%%/lib/django/scripts/rpm-install.sh
 %%DATADIR%%/lib/django/setup.cfg
 %%DATADIR%%/lib/django/setup.py
+%%DATADIR%%/lib/ipaddr/ipaddr/COPYING
+%%DATADIR%%/lib/ipaddr/ipaddr/README
+%%DATADIR%%/lib/ipaddr/ipaddr/__init__.py
+%%DATADIR%%/lib/ipaddr/ipaddr/ipaddr_test.py
+%%DATADIR%%/lib/ipaddr/ipaddr/setup.py
 %%DATADIR%%/lib/webob/LICENSE
 %%DATADIR%%/lib/webob/PKG-INFO
 %%DATADIR%%/lib/webob/WebOb.egg-info/PKG-INFO
@@ -1342,6 +1368,8 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/lib/webob/docs
 @dirrm %%DATADIR%%/lib/webob/WebOb.egg-info
 @dirrm %%DATADIR%%/lib/webob
+@dirrm %%DATADIR%%/lib/ipaddr/ipaddr
+@dirrm %%DATADIR%%/lib/ipaddr
 @dirrm %%DATADIR%%/lib/django/scripts
 @dirrm %%DATADIR%%/lib/django/docs
 @dirrm %%DATADIR%%/lib/django/django/views/generic
@@ -1509,6 +1537,7 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/lib/django/django/bin
 @dirrm %%DATADIR%%/lib/django/django
 @dirrm %%DATADIR%%/lib/django
+@dirrm %%DATADIR%%/lib/cacerts
 @dirrm %%DATADIR%%/lib/antlr3/antlr_python_runtime.egg-info
 @dirrm %%DATADIR%%/lib/antlr3/antlr3
 @dirrm %%DATADIR%%/lib/antlr3
@@ -1531,6 +1560,9 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/ext/db
 @dirrm %%DATADIR%%/google/appengine/ext/bulkload
 @dirrm %%DATADIR%%/google/appengine/ext/blobstore
+@dirrm %%DATADIR%%/google/appengine/ext/appstats/templates
+@dirrm %%DATADIR%%/google/appengine/ext/appstats/static
+@dirrm %%DATADIR%%/google/appengine/ext/appstats
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/js
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/images
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/css
