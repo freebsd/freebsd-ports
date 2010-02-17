@@ -7,7 +7,7 @@
 
 PORTNAME=	eruby
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -63,7 +63,7 @@ CONFIGURE_ENV+=	EXTRA_LDFLAGS="${EXTRA_LDFLAGS} -pthread"
 .endif
 
 .if ${RUBY_RELVERSION} == 1.9.1
-CFLAGS+=	-DWITH_RUBY_19
+CONFIGURE_ENV+=	EXTRA_CFLAGS="${EXTRA_CFLAGS} -DWITH_RUBY_19"
 .endif
 
 .include <bsd.port.post.mk>

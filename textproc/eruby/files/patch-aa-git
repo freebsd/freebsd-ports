@@ -1,0 +1,1027 @@
+Only in eruby: .git
+diff -ur eruby-1.0.5/ChangeLog eruby/ChangeLog
+--- eruby-1.0.5/ChangeLog	2003-12-23 16:11:54.000000000 +0100
++++ ChangeLog	2010-02-17 14:20:36.000000000 +0100
+@@ -1,3 +1,23 @@
++Tue Jul  19 19:07:12  2005  Jb Evain  <jbevain@gmail.com>
++
++	* eruby_lib.c: clean warnings, little refactoring
++
++Tue Mar  9 14:16:06 2004  Shugo Maeda <shugo@modruby.net>
++
++	* Makefile.in: use $(RUBY) to execute bin2c.
++
++Tue Mar  9 14:08:19 2004  MOROHOSHI Akihiko <moro@remus.dti.ne.jp>
++
++	* eruby_main.c (proc_args): pass ARGV to scripts.
++
++Wed Feb 25 13:37:07 2004  U.Nakamura <usa@garbagecollect.jp>
++
++	* autoconf.rb: should use RUBY_PLATFORM instead of PLATFORM.
++
++Wed Dec 24 00:45:29 2003  Shugo Maeda <shugo@modruby.net>
++
++	* eruby_main.c (run): call rb_exec_end_proc().
++
+ Wed Dec 24 00:11:19 2003  Shugo Maeda <shugo@modruby.net>
+ 
+ 	* version 1.0.5 released.
+diff -ur eruby-1.0.5/Makefile.in eruby/Makefile.in
+--- eruby-1.0.5/Makefile.in	2003-07-26 12:21:33.000000000 +0200
++++ Makefile.in	2010-02-17 14:20:36.000000000 +0100
+@@ -160,7 +160,7 @@
+ 	$(RM) $@~
+ 
+ eruby_logo.c: @VPATH@eruby_logo.png
+-	$(srcdir)/bin2c $(srcdir)/eruby_logo.png
++	$(RUBY) $(srcdir)/bin2c $(srcdir)/eruby_logo.png
+ eruby_lib.@OBJEXT@: @VPATH@eruby_lib.c @VPATH@eruby.h config.h
+ eruby_logo.@OBJEXT@: @VPATH@eruby_logo.c @VPATH@eruby_logo.h
+ eruby_main.@OBJEXT@: @VPATH@eruby_main.c @VPATH@eruby.h @VPATH@eruby_logo.h
+diff -ur eruby-1.0.5/README.ja eruby/README.ja
+--- eruby-1.0.5/README.ja	2001-05-16 11:27:08.000000000 +0200
++++ README.ja	2010-02-17 14:20:36.000000000 +0100
+@@ -5,8 +5,7 @@
+ == eRubyとは?
+ 
+ eRubyはRubyのコードが埋めこまれたテキストファイルを解釈実行します。
+-たとえば、eRubyを使えば、HTMLにRubyのコードをHTMLファイルに埋めこむ
+-ことができます。
++たとえば、eRubyを使えば、HTMLにRubyのコードを埋めこむことができます。
+ 
+ == 要求される環境
+ 
+diff -ur eruby-1.0.5/configure.rb eruby/configure.rb
+--- eruby-1.0.5/configure.rb	2003-02-10 04:18:10.000000000 +0100
++++ configure.rb	2010-02-17 14:20:36.000000000 +0100
+@@ -59,21 +59,24 @@
+   end
+ end
+ 
+-require 'ftools'
++require 'fileutils'
+ 
+ def AC_OUTPUT(*files)
++  $DEFS ||= ""
+   if $AC_LIST_HEADER
+-    $DEFS = "-DHAVE_CONFIG_H"
++    $DEFS << " -DHAVE_CONFIG_H"
+     AC_OUTPUT_HEADER($AC_LIST_HEADER)
+   else
+-    $DEFS = $ac_confdefs.collect {|k, v| "-D#{k}=#{v}" }.join(" ")
++    $DEFS << " " + $ac_confdefs.collect {|k, v| "-D#{k}=#{v}" }.join(" ")
+   end
+   for file in files
+     print "creating ", file, "\n"
+     open(File.join($srcdir, file + ".in")) do |fin|
+-      File.makedirs(File.dirname(file))
++      FileUtils.mkdir_p(File.dirname(file))
+       open(file, "w") do |fout|
++	depend = false
+ 	while line = fin.gets
++          depend = true if /^\#\#\# depend/ =~ line
+ 	  line.gsub!(/@([A-Za-z_]+)@/) do |s|
+ 	    name = $1
+ 	    if $ac_sed.key?(name)
+@@ -82,6 +85,7 @@
+ 	      s
+ 	    end
+ 	  end
++          line.gsub!(/(\s)([^\s\/]+\.[ch])/, '\1{$(srcdir)}\2') if depend && $nmake
+ 	  fout.print(line)
+ 	end
+       end
+@@ -153,13 +157,18 @@
+       file = File.join(dir, prog)
+       if File.file?(file); then
+ 	$ac_aux_dir = dir
+-	$ac_install_rb = "#{file} -c"
++	$ac_install_rb = "$(RUBY) #{file} -c"
+ 	return
+       end
+     end
+   end
+ end
+ 
++begin
++  require "continuation"
++rescue LoadError
++end
++
+ def AC_PROG_INSTALL
+   AC_MSG_CHECKING("for a BSD compatible install")
+   $ac_cv_path_install = callcc { |c|
+@@ -291,6 +300,13 @@
+ $AR = CONFIG["AR"]
+ $LD = "$(CC)"
+ $RANLIB = CONFIG["RANLIB"]
++$ruby = arg_config("--ruby", File.join(Config::CONFIG["bindir"], CONFIG["ruby_install_name"]))
++$RUBY = ($nmake && !$configure_args.has_key?('--ruby')) ? $ruby.gsub(%r'/', '\\') : $ruby
++if RUBY_VERSION < "1.8.0"
++  $RM = 'rm -f'
++else
++  $RM = CONFIG["RM"] || '$(RUBY) -run -e rm -- -f'
++end
+ 
+ if not defined? CFLAGS
+   CFLAGS = CONFIG["CFLAGS"]
+@@ -306,7 +322,7 @@
+   $LDFLAGS = "-link -incremental:no -pdb:none"
+ end
+ $LIBS = CONFIG["LIBS"]
+-$XLDFLAGS = CONFIG["XLDFLAGS"]
++$XLDFLAGS = CONFIG["XLDFLAGS"].to_s
+ $XLDFLAGS.gsub!(/-L\./, "")
+ if /mswin32/ !~ RUBY_PLATFORM
+   $XLDFLAGS += " -L$(libdir)"
+@@ -333,7 +349,7 @@
+ $LIBRUBY_A = CONFIG["LIBRUBY_A"]
+ $RUBY_SO_NAME = CONFIG["RUBY_SO_NAME"]
+ 
+-case PLATFORM
++case RUBY_PLATFORM
+ when /-aix/
+   if $RUBY_SHARED
+     $LIBRUBYARG = "-Wl,$(libdir)/" + CONFIG["LIBRUBY_SO"]
+@@ -349,6 +365,14 @@
+   end
+ end
+ 
++$COMPILE_RULES = ''
++if defined?(COMPILE_RULES)
++  COMPILE_RULES.each do |rule|
++    $COMPILE_RULES << sprintf(rule, 'c', $OBJEXT)
++    $COMPILE_RULES << sprintf("\n\t%s\n\n", COMPILE_C)
++  end
++end
++
+ AC_SUBST("srcdir")
+ AC_SUBST("topdir")
+ AC_SUBST("hdrdir")
+@@ -375,6 +399,8 @@
+ AC_SUBST("AR")
+ AC_SUBST("LD")
+ AC_SUBST("RANLIB")
++AC_SUBST("RUBY")
++AC_SUBST("RM")
+ 
+ AC_SUBST("CFLAGS")
+ AC_SUBST("DEFS")
+@@ -388,6 +414,8 @@
+ AC_SUBST("EXEEXT")
+ AC_SUBST("DLEXT")
+ 
++AC_SUBST("COMPILE_RULES")
++
+ AC_SUBST("RUBY_INSTALL_NAME")
+ AC_SUBST("LIBRUBYARG")
+ AC_SUBST("LIBRUBYARG_SHARED")
+@@ -431,7 +459,7 @@
+ $ENABLE_SHARED = false
+ AC_ENABLE("shared") { |enableval|
+   if enableval == "yes"
+-    if PLATFORM =~ /-mswin32/
++    if /-mswin32/ =~ RUBY_PLATFORM
+       AC_MSG_ERROR("can't enable shared on mswin32")
+     end
+     $ENABLE_SHARED = true
+@@ -449,7 +477,7 @@
+ if $ENABLE_SHARED
+   $LIBERUBY = "${LIBERUBY_SO}"
+   $LIBERUBYARG = "-L. -leruby"
+-  case PLATFORM
++  case RUBY_PLATFORM
+   when /-sunos4/
+     $LIBERUBY_ALIASES = "liberuby.so.$(MAJOR).$(MINOR) liberuby.so"
+   when /-linux/
+@@ -457,7 +485,7 @@
+     $LIBERUBY_ALIASES = "liberuby.so.$(MAJOR).$(MINOR) liberuby.so"
+   when /-(freebsd|netbsd)/
+     $LIBERUBY_SO = "liberuby.so.$(MAJOR).$(MINOR)"
+-    if PLATFORM =~ /elf/ || PLATFORM =~ /-freebsd[3-9]/
++    if /elf/ =~ RUBY_PLATFORM || /-freebsd[3-9]/ =~ RUBY_PLATFORM
+       $LIBERUBY_SO = "liberuby.so.$(MAJOR_MINOR)"
+       $LIBERUBY_ALIASES = "liberuby.so"
+     else
+@@ -493,7 +521,7 @@
+   end
+ end
+ 
+-if PLATFORM =~ /-mswin32/
++if /-mswin32/ =~ RUBY_PLATFORM
+   $AR = "lib"
+   $AROPT = "/out:$@"
+   $LIBERUBY_A = "liberuby.lib"
+@@ -519,7 +547,7 @@
+ AC_SUBST("AROPT")
+ 
+ $EXT_DLDFLAGS = CONFIG["DLDFLAGS"]
+-if $RUBY_SHARED || RUBY_PLATFORM =~ /mswin32/
++if $RUBY_SHARED || /mswin32/ =~ RUBY_PLATFORM
+   $EXT_LIBRUBYARG = "$(LIBRUBYARG)"
+ else
+   $EXT_LIBRUBYARG = ""
+diff -ur eruby-1.0.5/configure.rb.in eruby/configure.rb.in
+--- eruby-1.0.5/configure.rb.in	2003-01-20 08:22:41.000000000 +0100
++++ configure.rb.in	2010-02-17 14:20:36.000000000 +0100
+@@ -35,7 +35,7 @@
+ AC_ARG_ENABLE("shared",
+ 	      "  --enable-shared         build a shared library for eruby") { |enableval|
+   if enableval == "yes"
+-    if PLATFORM =~ /-mswin32/
++    if /-mswin32/ =~ RUBY_PLATFORM
+       AC_MSG_ERROR("can't enable shared on mswin32")
+     end
+     $ENABLE_SHARED = true
+@@ -53,7 +53,7 @@
+ if $ENABLE_SHARED
+   $LIBERUBY = "${LIBERUBY_SO}"
+   $LIBERUBYARG = "-L. -leruby"
+-  case PLATFORM
++  case RUBY_PLATFORM
+   when /-sunos4/
+     $LIBERUBY_ALIASES = "liberuby.so.$(MAJOR).$(MINOR) liberuby.so"
+   when /-linux/
+@@ -61,7 +61,7 @@
+     $LIBERUBY_ALIASES = "liberuby.so.$(MAJOR).$(MINOR) liberuby.so"
+   when /-(freebsd|netbsd)/
+     $LIBERUBY_SO = "liberuby.so.$(MAJOR).$(MINOR)"
+-    if PLATFORM =~ /elf/ || PLATFORM =~ /-freebsd[3-9]/
++    if /elf/ =~ RUBY_PLATFORM || /-freebsd[3-9]/ =~ RUBY_PLATFORM
+       $LIBERUBY_SO = "liberuby.so.$(MAJOR_MINOR)"
+       $LIBERUBY_ALIASES = "liberuby.so"
+     else
+@@ -97,7 +97,7 @@
+   end
+ end
+ 
+-if PLATFORM =~ /-mswin32/
++if /-mswin32/ =~ RUBY_PLATFORM
+   $AR = "lib"
+   $AROPT = "/out:$@"
+   $LIBERUBY_A = "liberuby.lib"
+@@ -123,7 +123,7 @@
+ AC_SUBST("AROPT")
+ 
+ $EXT_DLDFLAGS = CONFIG["DLDFLAGS"]
+-if $RUBY_SHARED || RUBY_PLATFORM =~ /mswin32/
++if $RUBY_SHARED || /mswin32/ =~ RUBY_PLATFORM
+   $EXT_LIBRUBYARG = "$(LIBRUBYARG)"
+ else
+   $EXT_LIBRUBYARG = ""
+diff -ur eruby-1.0.5/eruby.1 eruby/eruby.1
+--- eruby-1.0.5/eruby.1	2000-09-13 09:35:51.000000000 +0200
++++ eruby.1	2010-02-17 14:20:36.000000000 +0100
+@@ -1,5 +1,5 @@
+ .\" DO NOT MODIFY THIS FILE! it was generated by rd2
+-.TH eruby 1 "September 2000"
++.TH eruby 1 "January 2007"
+ .SH NAME
+ .PP
+ eruby \- Embedded Ruby Language
+@@ -10,13 +10,15 @@
+ .PP
+ eruby interprets a Ruby code embedded text file. For example, eruby
+ enables you to embed a Ruby code to a HTML file.
++.PP
+ A Ruby block starts with `<%' and ends with `%>'. eRuby replaces
+ the block with its output.
++.PP
+ If `<%' is followed by `=', eRuby replaces the block with a value
+ of the block.
++.PP
+ If `<%' is followed by `#', the block is ignored as a comment.
+ .SH OPTIONS
+-.PP
+ .TP
+ .fi
+ .B
+@@ -36,8 +38,7 @@
+ \&    f: filter mode
+ \&    c: CGI mode
+ \&    n: NPH\-CGI mode
+-.fi
+-.TP
++.fi.TP
+ .fi
+ .B
+ \-C charset
+@@ -55,7 +56,7 @@
+ .TP
+ .fi
+ .B
+-\-\-version 
++\-\-version
+ print version information and exit
+ .SH AUTHOR
+ .PP
+diff -ur eruby-1.0.5/eruby.h eruby/eruby.h
+--- eruby-1.0.5/eruby.h	2003-12-23 16:11:54.000000000 +0100
++++ eruby.h	2010-02-17 14:20:36.000000000 +0100
+@@ -28,18 +28,34 @@
+ extern char *eruby_filename;
+ extern int eruby_mode;
+ extern int eruby_noheader;
++extern int eruby_sync;
+ extern VALUE eruby_charset;
+ extern VALUE eruby_default_charset;
+-#define ERUBY_CHARSET RSTRING(eruby_charset)->ptr
++#define ERUBY_CHARSET RSTRING_PTR(eruby_charset)
+ 
+ const char *eruby_version();
+ int eruby_parse_options(int argc, char **argv, int *optind);
+ VALUE eruby_compiler_new();
++VALUE eruby_compiler_set_sourcefile(VALUE self, VALUE filename);
+ VALUE eruby_compiler_compile_file(VALUE self, VALUE file);
+ VALUE eruby_compiler_compile_string(VALUE self, VALUE s);
+ VALUE eruby_load(char *filename, int wrap, int *state);
+ void eruby_init();
+ 
++/* for compatibility with ruby 1.9 */
++#ifndef RARRAY_LEN
++# define RARRAY_LEN(ary) (RARRAY(ary)->len)
++#endif
++#ifndef RARRAY_PTR
++# define RARRAY_PTR(ary) (RARRAY(ary)->ptr)
++#endif
++#ifndef RSTRING_LEN
++# define RSTRING_LEN(str) (RSTRING(str)->len)
++#endif
++#ifndef RSTRING_PTR
++# define RSTRING_PTR(str) (RSTRING(str)->ptr)
++#endif
++
+ #endif /* ERUBY_H */
+ 
+ /*
+diff -ur eruby-1.0.5/eruby_lib.c eruby/eruby_lib.c
+--- eruby-1.0.5/eruby_lib.c	2003-07-29 05:42:56.000000000 +0200
++++ eruby_lib.c	2010-02-17 14:20:36.000000000 +0100
+@@ -48,6 +48,7 @@
+ char *eruby_filename = NULL;
+ int eruby_mode = MODE_UNKNOWN;
+ int eruby_noheader = 0;
++int eruby_sync = 0;
+ VALUE eruby_charset;
+ VALUE eruby_default_charset;
+ 
+@@ -82,6 +83,7 @@
+ 			  n: NPH-CGI mode\n\
+   -C [charset]		specifies charset parameter for Content-Type\n\
+   -n, --noheader	disables CGI header output\n\
++  -s, --sync		sync output\n\
+   -v, --verbose		enables verbose mode\n\
+   --version		print version information and exit\n\
+ \n", progname);
+@@ -112,10 +114,19 @@
+     return 0;
+ }
+ 
++static int is_option (const char *s, const char *opt)
++{
++	int len = strlen (opt);
++	if (strncmp(s , opt, len) == 0
++		&& (s[len] == '\0' || isspace(s[len])))
++		return len;
++	return 0;
++}
++
+ int eruby_parse_options(int argc, char **argv, int *optind)
+ {
+-    int i, result = 0;
+-    unsigned char *s;
++    int i, next, result = 0;
++    char *s;
+ 
+     for (i = 1; i < argc; i++) {
+ 	if (argv[i][0] != '-' || argv[i][1] == '\0') {
+@@ -123,7 +134,7 @@
+ 	}
+ 	s = argv[i];
+       again:
+-	while (isspace(*s))
++	while (isspace(*(unsigned char *) s))
+ 	    s++;
+ 	if (*s == '-') s++;
+ 	switch (*s) {
+@@ -155,8 +166,8 @@
+ 		break;
+ 	    }
+ 	    else {
+-		unsigned char *p = s;
+-		while (*p && !isspace(*p)) p++;
++		char *p = s;
++		while (*p && !isspace(*(unsigned char *) p)) p++;
+ 		eruby_charset = rb_str_new(s, p - s);
+ 		s = p;
+ 		goto again;
+@@ -173,6 +184,10 @@
+ 	    eruby_noheader = 1;
+ 	    s++;
+ 	    goto again;
++	case 's':
++	    eruby_sync = 1;
++	    s++;
++	    goto again;
+ 	case '\0':
+ 	    break;
+ 	case 'h':
+@@ -180,31 +195,31 @@
+ 	    result = 1; break;
+ 	case '-':
+ 	    s++;
+-	    if (strncmp(s , "debug", 5) == 0
+-		&& (s[5] == '\0' || isspace(s[5]))) {
++	    if ((next = is_option (s, "debug"))) {
+ 		ruby_debug = Qtrue;
+-		s += 5;
++		s += next;
+ 		goto again;
+ 	    }
+-	    else if (strncmp(s, "noheader", 8) == 0
+-		     && (s[8] == '\0' || isspace(s[8]))) {
++	    else if ((next = is_option (s, "noheader"))) {
+ 		eruby_noheader = 1;
+-		s += 8;
++		s += next;
+ 		goto again;
+ 	    }
+-	    else if (strncmp(s, "version", 7) == 0
+-		     && (s[7] == '\0' || isspace(s[7]))) {
++	    else if ((next = is_option (s, "sync"))) {
++		eruby_sync = 1;
++		s += next;
++		goto again;
++	    }
++	    else if (is_option (s, "version")) {
+ 		show_version();
+ 		result = 1; break;
+ 	    }
+-	    else if (strncmp(s, "verbose", 7) == 0
+-		     && (s[7] == '\0' || isspace(s[7]))) {
++	    else if ((next = is_option (s, "verbose"))) {
+ 		ruby_verbose = Qtrue;
+-		s += 7;
++		s += next;
+ 		goto again;
+ 	    }
+-	    else if (strncmp(s, "help", 4) == 0
+-		     && (s[4] == '\0' || isspace(s[4]))) {
++	    else if (is_option (s, "help")) {
+ 		usage(argv[0]);
+ 		result = 1; break;
+ 	    }
+@@ -296,18 +311,18 @@
+     VALUE s = compiler->lex_input;
+     char *beg, *end, *pend;
+ 
+-    if (RSTRING(s)->len == compiler->lex_gets_ptr)
++    if (RSTRING_LEN(s) == compiler->lex_gets_ptr)
+ 	return Qnil;
+-    beg = RSTRING(s)->ptr;
++    beg = RSTRING_PTR(s);
+     if (compiler->lex_gets_ptr > 0) {
+ 	beg += compiler->lex_gets_ptr;
+     }
+-    pend = RSTRING(s)->ptr + RSTRING(s)->len;
++    pend = RSTRING_PTR(s) + RSTRING_LEN(s);
+     end = beg;
+     while (end < pend) {
+ 	if (*end++ == '\n') break;
+     }
+-    compiler->lex_gets_ptr = end - RSTRING(s)->ptr;
++    compiler->lex_gets_ptr = end - RSTRING_PTR(s);
+     return rb_str_new(beg, end - beg);
+ }
+ 
+@@ -326,8 +341,8 @@
+ 
+ 	    if (NIL_P(v)) return EOF;
+ 	    compiler->sourceline++;
+-	    compiler->lex_pbeg = compiler->lex_p = RSTRING(v)->ptr;
+-	    compiler->lex_pend = compiler->lex_p + RSTRING(v)->len;
++	    compiler->lex_pbeg = compiler->lex_p = RSTRING_PTR(v);
++	    compiler->lex_pend = compiler->lex_p + RSTRING_LEN(v);
+ 	    compiler->lex_lastline = v;
+ 	}
+ 	else {
+@@ -469,9 +484,9 @@
+     if (c == '#') {
+ 	c = nextc(compiler);
+ 	if (c == '!') {
+-	    unsigned char *p;
++	    char *p;
+ 	    char *argv[2];
+-	    char *line = RSTRING(compiler->lex_lastline)->ptr;
++	    char *line = RSTRING_PTR(compiler->lex_lastline);
+ 
+ 	    if (line[strlen(line) - 1] == '\n') {
+ 		line[strlen(line) - 1] = '\0';
+@@ -479,9 +494,9 @@
+ 	    }
+ 	    argv[0] = "eruby";
+ 	    p = line;
+-	    while (isspace(*p)) p++;
+-	    while (*p && !isspace(*p)) p++;
+-	    while (isspace(*p)) p++;
++	    while (isspace(*(unsigned char *) p)) p++;
++	    while (*p && !isspace(*(unsigned char *) p)) p++;
++	    while (isspace(*(unsigned char *) p)) p++;
+ 	    argv[1] = p;
+ 	    if (eruby_parse_options(2, argv, NULL) != 0) {
+ 		rb_raise(eERubyCompileError, "invalid #! line");
+@@ -632,78 +647,6 @@
+     return eruby_compile(compiler);
+ }
+ 
+-static VALUE file_open(VALUE filename)
+-{
+-    return rb_file_open((char *) filename, "r");
+-}
+-
+-typedef struct compile_arg {
+-    VALUE compiler;
+-    VALUE input;
+-} compile_arg_t;
+-
+-static VALUE eruby_compile_file(VALUE arg)
+-{
+-    return eruby_compiler_compile_file(((compile_arg_t *) arg)->compiler,
+-				       ((compile_arg_t *) arg)->input);
+-}
+-
+-typedef struct eval_arg {
+-    VALUE src;
+-    VALUE filename;
+-} eval_arg_t;
+-
+-static VALUE eval_string(VALUE arg)
+-{
+-    return rb_funcall(ruby_top_self, rb_intern("eval"), 3,
+-		      ((eval_arg_t *) arg)->src,
+-		      Qnil,
+-		      ((eval_arg_t *) arg)->filename);
+-}
+-
+-VALUE eruby_load(char *filename, int wrap, int *state)
+-{
+-    VALUE compiler;
+-    VALUE code;
+-    VALUE f;
+-    VALUE vfilename = rb_str_new2(filename);
+-    compile_arg_t carg;
+-    eval_arg_t earg;
+-    int status;
+-
+-    if (strcmp(filename, "-") == 0) {
+-	f = rb_stdin;
+-    }
+-    else {
+-	f = rb_protect(file_open, (VALUE) filename, &status);
+-	if (status) {
+-	    if (state) *state = status;
+-	    return Qnil;
+-	}
+-    }
+-    compiler = eruby_compiler_new();
+-    eruby_compiler_set_sourcefile(compiler, vfilename);
+-    carg.compiler = compiler;
+-    carg.input = f;
+-    code = rb_protect(eruby_compile_file, (VALUE) &carg, &status);
+-    if (status)	{
+-	if (state) *state = status;
+-	return Qnil;
+-    }
+-    if (wrap) {
+-	rb_eval_string_wrap(STR2CSTR(code), &status);
+-    }
+-    else {
+-	earg.src = code;
+-	earg.filename = vfilename;
+-	rb_protect(eval_string, (VALUE) &earg, &status);
+-    }
+-    if (state) *state = status;
+-    if (f != rb_stdin)
+-	rb_io_close(f);
+-    return code;
+-}
+-
+ static VALUE noheader_getter()
+ {
+     return eruby_noheader ? Qtrue : Qfalse;
+@@ -765,6 +708,7 @@
+     rb_define_virtual_variable("$NOHEADER", noheader_getter, noheader_setter);
+ 
+     mERuby = rb_define_module("ERuby");
++    rb_define_const(mERuby, "VERSION", rb_str_new2(ERUBY_VERSION));
+     rb_define_singleton_method(mERuby, "noheader", eruby_get_noheader, 0);
+     rb_define_singleton_method(mERuby, "noheader=", eruby_set_noheader, 1);
+     rb_define_singleton_method(mERuby, "charset", eruby_get_charset, 0);
+diff -ur eruby-1.0.5/eruby_main.c eruby/eruby_main.c
+--- eruby-1.0.5/eruby_main.c	2003-12-23 16:10:54.000000000 +0100
++++ eruby_main.c	2010-02-17 14:20:36.000000000 +0100
+@@ -42,6 +42,7 @@
+ EXTERN VALUE rb_defout;
+ #endif
+ EXTERN VALUE rb_load_path;
++EXTERN VALUE ruby_top_self;
+ 
+ /* copied from eval.c */
+ #define TAG_RETURN	0x1
+@@ -92,7 +93,11 @@
+ static void error_pos(FILE *out, int cgi)
+ {
+     char buff[BUFSIZ];
++#if RUBY_VERSION_CODE >= 190
++    ID last_func = rb_frame_this_func();
++#else
+     ID last_func = rb_frame_last_func();
++#endif
+ 
+     if (ruby_sourcefile) {
+ 	if (last_func) {
+@@ -119,34 +124,34 @@
+ 
+     errat = rb_funcall(ruby_errinfo, rb_intern("backtrace"), 0);
+     if (!NIL_P(errat)) {
+-	VALUE mesg = RARRAY(errat)->ptr[0];
++	VALUE mesg = RARRAY_PTR(errat)[0];
+ 
+ 	if (NIL_P(mesg)) {
+ 	    error_pos(out, cgi);
+ 	}
+ 	else {
+ 	    if (cgi)
+-		write_escaping_html(out, RSTRING(mesg)->ptr, RSTRING(mesg)->len);
++		write_escaping_html(out, RSTRING_PTR(mesg), RSTRING_LEN(mesg));
+ 	    else
+-		fwrite(RSTRING(mesg)->ptr, 1, RSTRING(mesg)->len, out);
++		fwrite(RSTRING_PTR(mesg), 1, RSTRING_LEN(mesg), out);
+ 	}
+     }
+ 
+     eclass = CLASS_OF(ruby_errinfo);
+     einfo = rb_obj_as_string(ruby_errinfo);
+-    if (eclass == rb_eRuntimeError && RSTRING(einfo)->len == 0) {
++    if (eclass == rb_eRuntimeError && RSTRING_LEN(einfo) == 0) {
+ 	fprintf(out, ": unhandled exception\n");
+     }
+     else {
+ 	VALUE epath;
+ 
+ 	epath = rb_class_path(eclass);
+-	if (RSTRING(einfo)->len == 0) {
++	if (RSTRING_LEN(einfo) == 0) {
+ 	    fprintf(out, ": ");
+ 	    if (cgi)
+-		write_escaping_html(out, RSTRING(epath)->ptr, RSTRING(epath)->len);
++		write_escaping_html(out, RSTRING_PTR(epath), RSTRING_LEN(epath));
+ 	    else
+-		fwrite(RSTRING(epath)->ptr, 1, RSTRING(epath)->len, out);
++		fwrite(RSTRING_PTR(epath), 1, RSTRING_LEN(epath), out);
+ 	    if (cgi)
+ 		fprintf(out, "<br>\n");
+ 	    else
+@@ -154,24 +159,24 @@
+ 	}
+ 	else {
+ 	    char *tail  = 0;
+-	    int len = RSTRING(einfo)->len;
++	    int len = RSTRING_LEN(einfo);
+ 
+-	    if (RSTRING(epath)->ptr[0] == '#') epath = 0;
+-	    if ((tail = strchr(RSTRING(einfo)->ptr, '\n')) != NULL) {
+-		len = tail - RSTRING(einfo)->ptr;
++	    if (RSTRING_PTR(epath)[0] == '#') epath = 0;
++	    if ((tail = strchr(RSTRING_PTR(einfo), '\n')) != NULL) {
++		len = tail - RSTRING_PTR(einfo);
+ 		tail++;		/* skip newline */
+ 	    }
+ 	    fprintf(out, ": ");
+ 	    if (cgi)
+-		write_escaping_html(out, RSTRING(einfo)->ptr, len);
++		write_escaping_html(out, RSTRING_PTR(einfo), len);
+ 	    else
+-		fwrite(RSTRING(einfo)->ptr, 1, len, out);
++		fwrite(RSTRING_PTR(einfo), 1, len, out);
+ 	    if (epath) {
+ 		fprintf(out, " (");
+ 		if (cgi)
+-		    write_escaping_html(out, RSTRING(epath)->ptr, RSTRING(epath)->len);
++		    write_escaping_html(out, RSTRING_PTR(epath), RSTRING_LEN(epath));
+ 		else
+-		    fwrite(RSTRING(epath)->ptr, 1, RSTRING(epath)->len, out);
++		    fwrite(RSTRING_PTR(epath), 1, RSTRING_LEN(epath), out);
+ 		if (cgi)
+ 		    fprintf(out, ")<br>\n");
+ 		else
+@@ -179,9 +184,9 @@
+ 	    }
+ 	    if (tail) {
+ 		if (cgi)
+-		    write_escaping_html(out, tail, RSTRING(einfo)->len - len - 1);
++		    write_escaping_html(out, tail, RSTRING_LEN(einfo) - len - 1);
+ 		else
+-		    fwrite(tail, 1, RSTRING(einfo)->len - len - 1, out);
++		    fwrite(tail, 1, RSTRING_LEN(einfo) - len - 1, out);
+ 		if (cgi)
+ 		    fprintf(out, "<br>\n");
+ 		else
+@@ -200,38 +205,38 @@
+ 
+ 	rb_ary_pop(errat);
+ 	ep = RARRAY(errat);
+-	for (i=1; i<ep->len; i++) {
+-	    if (TYPE(ep->ptr[i]) == T_STRING) {
++	for (i=1; i<RARRAY_LEN(ep); i++) {
++	    if (TYPE(RARRAY_PTR(ep)[i]) == T_STRING) {
+ 		if (cgi) {
+ 		    fprintf(out, "<div class=\"backtrace\">from ");
+ 		    write_escaping_html(out,
+-					RSTRING(ep->ptr[i])->ptr,
+-					RSTRING(ep->ptr[i])->len);
++					RSTRING_PTR(RARRAY_PTR(ep)[i]),
++					RSTRING_LEN(RARRAY_PTR(ep)[i]));
+ 		}
+ 		else {
+ 		    fprintf(out, "        from ");
+-		    fwrite(RSTRING(ep->ptr[i])->ptr, 1,
+-			   RSTRING(ep->ptr[i])->len, out);
++		    fwrite(RSTRING_PTR(RARRAY_PTR(ep)[i]), 1,
++			   RSTRING_LEN(RARRAY_PTR(ep)[i]), out);
+ 		}
+ 		if (cgi)
+ 		    fprintf(out, "<br></div>\n");
+ 		else
+ 		    fprintf(out, "\n");
+ 	    }
+-	    if (i == TRACE_HEAD && ep->len > TRACE_MAX) {
++	    if (i == TRACE_HEAD && RARRAY_LEN(ep) > TRACE_MAX) {
+ 		char buff[BUFSIZ];
+ 		if (cgi)
+ 		    snprintf(buff, BUFSIZ,
+ 			     "<div class=\"backtrace\">... %ld levels...\n",
+-			     ep->len - TRACE_HEAD - TRACE_TAIL);
++			     RARRAY_LEN(ep) - TRACE_HEAD - TRACE_TAIL);
+ 		else
+ 		    snprintf(buff, BUFSIZ, "         ... %ld levels...<br></div>\n",
+-			     ep->len - TRACE_HEAD - TRACE_TAIL);
++			     RARRAY_LEN(ep) - TRACE_HEAD - TRACE_TAIL);
+ 		if (cgi)
+ 		    write_escaping_html(out, buff, strlen(buff));
+ 		else
+ 		    fputs(buff, out);
+-		i = ep->len - TRACE_TAIL;
++		i = RARRAY_LEN(ep) - TRACE_TAIL;
+ 	    }
+ 	}
+     }
+@@ -251,10 +256,10 @@
+     }
+ 
+     if (cgi) {
+-	write_escaping_html(out, RSTRING(code)->ptr, RSTRING(code)->len);
++	write_escaping_html(out, RSTRING_PTR(code), RSTRING_LEN(code));
+     }
+     else {
+-	fwrite(RSTRING(code)->ptr, 1, RSTRING(code)->len, out);
++	fwrite(RSTRING_PTR(code), 1, RSTRING_LEN(code), out);
+     }
+     if (cgi) {
+ 	fprintf(out, "</code></pre>\n");
+@@ -394,15 +399,14 @@
+ static VALUE defout_write(VALUE self, VALUE str)
+ {
+     str = rb_obj_as_string(str);
+-    rb_str_cat(self, RSTRING(str)->ptr, RSTRING(str)->len);
++    rb_str_cat(self, RSTRING_PTR(str), RSTRING_LEN(str));
+     return Qnil;
+ }
+ 
+ static VALUE defout_cancel(VALUE self)
+ {
+-    if (RSTRING(self)->len == 0) return Qnil;
+-    RSTRING(self)->len = 0;
+-    RSTRING(self)->ptr[0] = '\0';
++    if (RSTRING_LEN(self) == 0) return Qnil;
++    rb_str_resize(self, 0);
+     return Qnil;
+ }
+ 
+@@ -453,18 +457,6 @@
+ #endif
+     if (eruby_mode == MODE_CGI || eruby_mode == MODE_NPHCGI)
+ 	rb_set_safe_level(1);
+-
+-#if RUBY_VERSION_CODE >= 180
+-    rb_io_binmode(rb_stdout);	/* for mswin32 */
+-    rb_stdout = rb_str_new("", 0);
+-    rb_define_singleton_method(rb_stdout, "write", defout_write, 1);
+-    rb_define_singleton_method(rb_stdout, "cancel", defout_cancel, 0);
+-#else
+-    rb_defout = rb_str_new("", 0);
+-    rb_io_binmode(rb_stdout);	/* for mswin32 */
+-    rb_define_singleton_method(rb_defout, "write", defout_write, 1);
+-    rb_define_singleton_method(rb_defout, "cancel", defout_cancel, 0);
+-#endif
+     eruby_init();
+ }
+ 
+@@ -540,22 +532,14 @@
+ 	    eruby_filename = "-";
+ 	}
+ 	else {
+-	    eruby_filename = argv[option_index];
++	    eruby_filename = argv[option_index++];
++            ruby_set_argv(argc - option_index, argv + option_index);
+ 	}
+     }
+ }
+ 
+-static void run()
++static void error(int state, VALUE code)
+ {
+-    VALUE stack_start;
+-    VALUE code;
+-    int state;
+-    char *out;
+-    int nout;
+-    void Init_stack _((VALUE*));
+-
+-    Init_stack(&stack_start);
+-    code = eruby_load(eruby_filename, 0, &state);
+     if (state && !rb_obj_is_kind_of(ruby_errinfo, rb_eSystemExit)) {
+ 	if (RTEST(ruby_debug) &&
+ 	    (eruby_mode == MODE_CGI || eruby_mode == MODE_NPHCGI)) {
+@@ -567,32 +551,160 @@
+ 	    eruby_exit(1);
+ 	}
+     }
+-    if (eruby_mode == MODE_FILTER && (RTEST(ruby_debug) || RTEST(ruby_verbose))) {
+-	print_generated_code(stderr, code, 0);
+-    }
+-#if RUBY_VERSION_CODE >= 180
+-    out = RSTRING(rb_stdout)->ptr;
+-    nout = RSTRING(rb_stdout)->len;
+-#else
+-    out = RSTRING(rb_defout)->ptr;
+-    nout = RSTRING(rb_defout)->len;
+-#endif
++}
++
++static void print_headers(int length)
++{
+     if (!eruby_noheader &&
+ 	(eruby_mode == MODE_CGI || eruby_mode == MODE_NPHCGI)) {
+ 	if (eruby_mode == MODE_NPHCGI)
+ 	    print_http_headers();
+ 
+ 	printf("Content-Type: text/html; charset=%s\r\n", ERUBY_CHARSET);
+-	printf("Content-Length: %d\r\n", nout);
++	if (length >= 0) {
++	    printf("Content-Length: %d\r\n", length);
++	}
+ 	printf("\r\n");
+     }
++}
++
++static void replace_stdout()
++{
++#if RUBY_VERSION_CODE >= 180
++    rb_io_binmode(rb_stdout);	/* for mswin32 */
++    rb_stdout = rb_str_new("", 0);
++    rb_define_singleton_method(rb_stdout, "write", defout_write, 1);
++    rb_define_singleton_method(rb_stdout, "cancel", defout_cancel, 0);
++#else
++    rb_defout = rb_str_new("", 0);
++    rb_io_binmode(rb_stdout);	/* for mswin32 */
++    rb_define_singleton_method(rb_defout, "write", defout_write, 1);
++    rb_define_singleton_method(rb_defout, "cancel", defout_cancel, 0);
++#endif
++}
++
++static void flush_buffer()
++{
++    char *out;
++    int nout;
++
++#if RUBY_VERSION_CODE >= 180
++    out = RSTRING_PTR(rb_stdout);
++    nout = RSTRING_LEN(rb_stdout);
++#else
++    out = RSTRING(rb_defout)->ptr;
++    nout = RSTRING(rb_defout)->len;
++#endif
++    print_headers(nout);
+     fwrite(out, nout, 1, stdout);
+     fflush(stdout);
++}
++
++static VALUE file_open(VALUE filename)
++{
++    return rb_file_open((char *) filename, "r");
++}
++
++typedef struct compile_arg {
++    VALUE compiler;
++    VALUE input;
++} compile_arg_t;
++
++static VALUE eruby_compile_file(VALUE arg)
++{
++    return eruby_compiler_compile_file(((compile_arg_t *) arg)->compiler,
++				       ((compile_arg_t *) arg)->input);
++}
++
++static VALUE compile(char *filename)
++{
++    VALUE compiler;
++    VALUE code;
++    VALUE f;
++    VALUE vfilename = rb_str_new2(filename);
++    compile_arg_t carg;
++    int status;
++
++    if (strcmp(filename, "-") == 0) {
++	f = rb_stdin;
++    }
++    else {
++	f = rb_protect(file_open, (VALUE) filename, &status);
++	if (status) {
++	    error(status, Qnil);
++	}
++    }
++    compiler = eruby_compiler_new();
++    eruby_compiler_set_sourcefile(compiler, vfilename);
++    carg.compiler = compiler;
++    carg.input = f;
++    code = rb_protect(eruby_compile_file, (VALUE) &carg, &status);
++    if (status)	{
++	error(status, Qnil);
++    }
++    if (f != rb_stdin)
++	rb_io_close(f);
++    return code;
++}
++
++typedef struct eval_arg {
++    VALUE src;
++    VALUE filename;
++} eval_arg_t;
++
++static VALUE eval_string(VALUE arg)
++{
++    return rb_funcall(ruby_top_self, rb_intern("eval"), 3,
++		      ((eval_arg_t *) arg)->src,
++		      Qnil,
++		      ((eval_arg_t *) arg)->filename);
++}
++
++static VALUE eval(VALUE code, char *filename)
++{
++    int status;
++    eval_arg_t earg;
++
++    earg.src = code;
++    earg.filename = rb_str_new2(filename);
++    rb_protect(eval_string, (VALUE) &earg, &status);
++    if (status) {
++	error(status, code);
++    }
++    return code;
++}
++
++static void run()
++{
++    VALUE stack_start;
++    VALUE code;
++    void Init_stack _((VALUE*));
++
++    Init_stack(&stack_start);
++    code = compile(eruby_filename);
++    if (eruby_sync) {
++	print_headers(-1);
++    }
++    else {
++	replace_stdout();
++    }
++    code = eval(code, eruby_filename);
++    if (eruby_mode == MODE_FILTER &&
++	(RTEST(ruby_debug) || RTEST(ruby_verbose))) {
++	print_generated_code(stderr, code, 0);
++    }
++    rb_exec_end_proc();
++    if (!eruby_sync) {
++	flush_buffer();
++    }
+     ruby_finalize();
+ }
+ 
+ int main(int argc, char **argv)
+ {
++#ifdef _WIN32
++    NtInitialize(&argc, &argv);
++#endif
+     init();
+     proc_args(argc, argv);
+     run();
