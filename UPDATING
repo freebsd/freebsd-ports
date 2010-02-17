@@ -7,21 +7,20 @@ you update your ports collection, before attempting any port upgrades.
 
 20100216:
   AFFECTS: users of sysutils/bacula-server, sysutils/bacula-client
-  AUTHOR: dvl@freebsd.org
+  AUTHOR: dvl@FreeBSD.org
 
-  Bacula 5.x uses new shared objects which conflict
-  with the shared objects from previous versions.
-  You should delete all existing Bacula packages
-  from your system before compiling Bacula 5.x
-  otherwise you'll encounter compile errors.
+  Bacula 5.x uses new shared objects which conflict with the shared objects
+  from previous versions.  You should delete all existing Bacula packages
+  from your system before compiling Bacula 5.x, otherwise you'll encounter
+  compilation errors.
 
-      /usr/local/etc/rd.c/bacula-dir stop
-      /usr/local/etc/rd.c/bacula-sd  stop
-      /usr/local/etc/rd.c/bacula-fd  stop
-      pkg_delete 'bacula-*'
+	/usr/local/etc/rd.c/bacula-dir stop
+	/usr/local/etc/rd.c/bacula-sd stop
+	/usr/local/etc/rd.c/bacula-fd stop
+	pkg_delete 'bacula-*'
 
-  After upgrading, remember to run the database upgrade script
-  supplied with the port.
+  After upgrading, remember to run the database upgrade script supplied
+  with the port.
 
 20100214:
   AFFECTS: users of japanese/roundcube
@@ -91,21 +90,21 @@ you update your ports collection, before attempting any port upgrades.
 
   For the moment the workaround, when you get to this, is to move the old lib
   out of the way, e.g.:
-  mv /usr/local/lib/libqt-mt.so /usr/local/lib/libqt-mt.so.old && \
-  cd /usr/ports/x11-toolkits/qt33/ && make && \
-  mv /usr/local/lib/libqt-mt.so.old /usr/local/lib/libqt-mt.so && \
-  portmaster -C x11-toolkits/qt33
-  (or portupgrade -w qt-33\*), etc.
+
+    mv /usr/local/lib/libqt-mt.so /usr/local/lib/libqt-mt.so.old && \
+    cd /usr/ports/x11-toolkits/qt33/ && make && \
+    mv /usr/local/lib/libqt-mt.so.old /usr/local/lib/libqt-mt.so && \
+    portmaster -C x11-toolkits/qt33 (or portupgrade -w qt-33\*) ...
 
 20100205:
   AFFECTS: users of lang/perl*
   AUTHOR: skv@FreeBSD.org
 
-  Change the default version of Perl to 5.10.
+  Default version of Perl was bumped to 5.10.
 
-  If you have already installed lang/perl5.8 and
-  want switch to lang/perl5.10 please follow instructions
-  in the entry 20090328 in this file.
+  If you already have lang/perl5.8 installed, and want to switch to
+  lang/perl5.10 please follow instructions in the entry 20090328 in this
+  file.
 
 20100205:
   AFFECTS: users of net/samba34
@@ -450,7 +449,7 @@ you update your ports collection, before attempting any port upgrades.
   "perl-after-upgrade" script supplied with lang/perl5.10.  Please see its
   manual page for details.
 
-  If you want switch to lang/perl5.10 from lang/perl5.8 please follow
+  If you want to switch to lang/perl5.10 from lang/perl5.8 please follow
   instructions in the entry 20090328 in this file.
 
 20090910:
@@ -5125,9 +5124,9 @@ you update your ports collection, before attempting any port upgrades.
   'rm /var/db/pkg/pkgdb.db /usr/ports/INDEX*.db'.
   portupgrade will recreate them automatically. It does absolutely no harm.
 
-  If you do not want remove the databases, you should detect what database
-  type do you use, and set the port options for portupgrade accordingly.
-  Follow these instructions:
+  If you do not want to remove the databases, you should detect what
+  database type do you use, and set the port options for portupgrade
+  accordingly.  Follow these instructions:
 
   - run 'pkgdb -fu' *before* upgrading and take a look on the output.
     You can see database format there as: format:XXX, where XXX is your
@@ -5680,23 +5679,21 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/docproj[-jadetex]
   AUTHOR: delphij@FreeBSD.org
 
-  docproj now installs a set of CJK (Chinese, Japanese, Korean)
-  related stuff in case that you have chosen to install the
-  jadetex feature. Because the CJK part could be potentially
-  large for those who do not want it, this feature can be disabled
-  by defining WITHOUT_CJK=yes.
+  docproj now installs a set of CJK (Chinese, Japanese, Korean) related
+  stuff in case that you have chosen to install the jadetex feature.
+  Because the CJK part could be potentially large for those who do not
+  want it, this feature can be disabled by defining WITHOUT_CJK=yes.
 
-  Please be sure to update to the latest docproj package, as an
-  upcoming doc/share/mk change will make use of the newly added
-  fixrtf utility.
+  Please be sure to update to the latest docproj package, as an upcoming
+  doc/share/mk change will make use of the newly added fixrtf utility.
 
 20060315:
   AFFECTS: users of www/horde, mail/turba and deskutils/kronolith
   AUTHOR: thierry@FreeBSD.org
 
-  There are several points to check in your configuration files or
-  in your database after upgrading Horde to 3.1, Turba to 2.1 and
-  IMP to 4.1; please read UPGRADING in their doc directories.
+  There are several points to check in your configuration files or in
+  your database after upgrading Horde to 3.1, Turba to 2.1, and IMP to
+  4.1; please read UPGRADING in their documentation directories.
 
 20060315:
   AFFECTS: users of net-im/jabber
