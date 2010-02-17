@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-3
 
 CXXFLAGS+=	-fPIC
 
-NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS=	ia64 sparc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
 post-patch:
