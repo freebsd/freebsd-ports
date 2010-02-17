@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.10
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://ispras.linux-foundation.org/images/3/34/
+MASTER_SITES=	http://ispras.linux-foundation.org/images/b/ba/
 DISTFILES=	${PORTNAME:S/^a/A/}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
+
+RUN_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -26,6 +28,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s|c++filt|${CPPFILT}|g" \
 		-e "s|readelf|${READELF}|g" -e "s|g++|${CXX}|g" \
 		-e "s|\"gcc|\"${CC}|g" -e "s|-shared|& -fPIC|g" \
+		-e "s|gsed|${LOCALBASE}/bin/gsed|g" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
