@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=--with-defaults
 .endif
 
 .include <bsd.port.pre.mk>
+CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 
 .if defined(WITH_DUMMY)
 CONFIGURE_ARGS+=--with-dummy-values
