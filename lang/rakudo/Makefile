@@ -17,9 +17,10 @@ COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		parrot_config:${PORTSDIR}/lang/parrot
+		parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		icudata:${PORTSDIR}/devel/icu
+RUN_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
 
 #           				    amd64       i386	sparc
 #				9-current       pass        gcc
@@ -30,11 +31,11 @@ LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 900000
-BROKEN=	internal gcc bugs 
+BROKEN=	internal gcc bugs
 .endif
 
 .if ${OSVERSION} >= 800000 && ${OSVERSION} <= 900000
-BROKEN=	internal gcc bugs 
+BROKEN=	internal gcc bugs
 .endif
 
 .if ${OSVERSION} < 700000
