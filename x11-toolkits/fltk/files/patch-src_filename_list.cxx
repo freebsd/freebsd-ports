@@ -14,7 +14,7 @@
  #ifndef HAVE_SCANDIR
    int n = scandir(d, list, 0, sort);
 -#elif defined(__hpux) || defined(__CYGWIN__)
-+#elif defined(__hpux) || defined(__CYGWIN__) || (defined(__FreeBSD__)  && __FreeBSD_version >= 900006)
++#elif defined(__hpux) || defined(__CYGWIN__) || (defined(__FreeBSD__)  && (__FreeBSD_version >= 900006 || (__FreeBSD_version >= 800501 && __FreeBSD_version < 900000)))
    // HP-UX, Cygwin define the comparison function like this:
    int n = scandir(d, list, 0, (int(*)(const dirent **, const dirent **))sort);
  #elif defined(__osf__)
