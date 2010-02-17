@@ -7,7 +7,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6
-@dirrm lib/parrot/%%PARROT_VERSION%%/languages
-@dirrm lib/parrot/%%PARROT_VERSION%%/dynext
-@dirrm lib/parrot/%%PARROT_VERSION%%
-@dirrm lib/parrot
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/dynext
+@dirrmtry lib/parrot/%%PARROT_VERSION%%
+@dirrmtry lib/parrot
