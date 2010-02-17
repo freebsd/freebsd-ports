@@ -9,7 +9,6 @@ Some of the new features of BIND 9.7.x are:
 	- DNS rebinding attack prevention
 	- New default values for dnssec-keygen parameters
 	- Support for RFC 5011 automated trust anchor maintenance
-	  (see README.rfc5011 for additional details)
 	- Smart signing: simplified tools for zone signing and key
 	  maintenance
 	- Improved PKCS#11 support
