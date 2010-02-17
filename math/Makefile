@@ -164,6 +164,7 @@
     SUBDIR += linpack
     SUBDIR += linux-SHA-1_collision_search_graz
     SUBDIR += linux-relview
+    SUBDIR += lll_spect
     SUBDIR += lp_solve
     SUBDIR += ltl
     SUBDIR += lybniz
