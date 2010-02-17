@@ -14,9 +14,7 @@ MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open source clone of Microprose Transport Tycoon Deluxe
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -38,6 +36,8 @@ CONFIGURE_ARGS+=	--with-midi-arg=${WITH_MIDI_PLAYER_ARGS}
 .if defined(WITH_DEDICATED_SERVER_ONLY)
 CONFIGURE_ARGS+=	--enable-dedicated
 .else
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 USE_SDL=	sdl
 .endif
 
