@@ -4008,6 +4008,7 @@ gastman                         ports/net/gastman
 gate                            ports/editors/gate
 gatekeeper                      ports/net/gatekeeper
 gateway6                        ports/net/gateway6
+gather                          ports/sysutils/gather
 gatling                         ports/www/gatling
 gauche                          ports/lang/gauche
 gauche-gaunit                   ports/devel/gauche-gaunit
@@ -13521,6 +13522,7 @@ p5-Test-HTTP                    ports/www/p5-Test-HTTP
 p5-Test-HTTP-Server-Simple      ports/www/p5-Test-HTTP-Server-Simple
 p5-Test-Harness                 ports/devel/p5-Test-Harness
 p5-Test-HasVersion              ports/devel/p5-Test-HasVersion
+p5-Test-HexString               ports/devel/p5-Test-HexString
 p5-Test-Inline                  ports/devel/p5-Test-Inline
 p5-Test-JSON                    ports/devel/p5-Test-JSON
 p5-Test-Kwalitee                ports/devel/p5-Test-Kwalitee
@@ -13694,6 +13696,7 @@ p5-Thread-Queue                 ports/devel/p5-Thread-Queue
 p5-Thread-Queue-Duplex          ports/devel/p5-Thread-Queue-Duplex
 p5-Thread-Suspend               ports/devel/p5-Thread-Suspend
 p5-Thrift                       ports/devel/p5-Thrift
+p5-Throwable                    ports/devel/p5-Throwable
 p5-Tie-Array-Pack               ports/devel/p5-Tie-Array-Pack
 p5-Tie-Array-Sorted             ports/devel/p5-Tie-Array-Sorted
 p5-Tie-CPHash                   ports/devel/p5-Tie-CPHash
@@ -17284,6 +17287,7 @@ p5-test-fixture-dbic-schema     ports/devel/p5-Test-Fixture-DBIC-Schema
 p5-test-group                   ports/devel/p5-Test-Group
 p5-test-harness                 ports/devel/p5-Test-Harness
 p5-test-hasversion              ports/devel/p5-Test-HasVersion
+p5-test-hexstring               ports/devel/p5-Test-HexString
 p5-test-html-tidy               ports/devel/p5-Test-HTML-Tidy
 p5-test-http                    ports/www/p5-Test-HTTP
 p5-test-http-server-simple      ports/www/p5-Test-HTTP-Server-Simple
@@ -17464,6 +17468,7 @@ p5-thread-suspend               ports/devel/p5-Thread-Suspend
 p5-threads                      ports/devel/p5-threads
 p5-threads-shared               ports/devel/p5-threads-shared
 p5-thrift                       ports/devel/p5-Thrift
+p5-throwable                    ports/devel/p5-Throwable
 p5-tie-array-pack               ports/devel/p5-Tie-Array-Pack
 p5-tie-array-sorted             ports/devel/p5-Tie-Array-Sorted
 p5-tie-cache                    ports/devel/p5-Tie-Cache
