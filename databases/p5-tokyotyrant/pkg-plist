@@ -1,0 +1,6 @@
+%%SITE_PERL%%/TokyoTyrant.pm
+%%SITE_PERL%%/TokyoTyrant.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TokyoTyrant/.packlist
+%%SITE_PERL%%/tcrtest.pl
+%%SITE_PERL%%/ttutest.pl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TokyoTyrant
