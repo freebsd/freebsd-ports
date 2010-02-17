@@ -8,19 +8,17 @@
 PORTNAME=	parrot
 PORTVERSION=	${PARROT_VERSION}
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/${PORTVERSION}/
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
-		
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		icudata.38:${PORTSDIR}/devel/icu
-		
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_BISON=	build
@@ -39,8 +37,8 @@ CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
 		--verbose \
 		--prefix=${PREFIX}
 
-INSTALL_TARGET=install-dev
-ALL_TARGET=installable
+INSTALL_TARGET=	install-dev
+ALL_TARGET=	installable
 
 .include "${.CURDIR}/Makefile.common"
 
