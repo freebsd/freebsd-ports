@@ -5,7 +5,7 @@
          order of preference is homedir, global dir, source dir (if available)"""
          local_directory = os.path.join(data_home, 'pyroom', 'themes')
 -        global_directory = '/usr/share/pyroom/themes' # FIXME: platform
-+        global_directory = '%%LOCALBASE%%/share/pyroom/themes' # FIXME: platform
++        global_directory = '%%PREFIX%%/share/pyroom/themes' # FIXME: platform
          # in case PyRoom is run without installation
          fallback_directory = os.path.join(
              os.path.dirname(os.path.abspath(__file__)),

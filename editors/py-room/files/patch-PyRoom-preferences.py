@@ -5,7 +5,7 @@
          self.data_dir = os.path.join(data_home, 'pyroom')
          self.themes_dir  = os.path.join(self.data_dir, 'themes')
 -        self.global_themes_dir = '/usr/share/pyroom/themes'
-+        self.global_themes_dir = '%%LOCALBASE%%/share/pyroom/themes'
++        self.global_themes_dir = '%%PREFIX%%/share/pyroom/themes'
          # if we are not using a global installation,
          # take the themes directly from sources
          if not os.path.isdir(self.global_themes_dir) :
