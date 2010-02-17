@@ -2525,6 +2525,7 @@
     SUBDIR += py-dbus
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
+    SUBDIR += py-deliciousapi
     SUBDIR += py-demjson
     SUBDIR += py-dexml
     SUBDIR += py-dialog
