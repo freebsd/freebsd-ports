@@ -29,6 +29,8 @@ USE_PYTHON=	yes
 USE_GCC=	4.3+
 MAKE_ENV=	PYTHONPATH="${PYTHONPREFIX_SITELIBDIR}"
 
+OPTIONS=	PSYCO "Enable devel/py-psyco optimization support (i386)" off
+
 MAN1=		deluge.1 deluged.1
 
 PLIST_SUB=	VERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
@@ -42,6 +44,18 @@ INSTALLS_ICONS=	yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+.undef WITH_PSYCO
+
+WITHOUT_PSYCO=	yes
+.endif
+
+.if defined(WITH_PSYCO)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
+
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-deluge__main.py
+.endif
 
 .if (exists(${LOCALBASE}/lib/libboost_iostreams.so) && \
 	!exists(${LOCALBASE}/lib/libboost_python.so))
