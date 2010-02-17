@@ -331,6 +331,7 @@ share/kroc/doc/api/graphics3d.html
 share/kroc/doc/api/hostio.html
 share/kroc/doc/api/hostsp.html
 share/kroc/doc/api/index.html
+share/kroc/doc/api/ioport.html
 share/kroc/doc/api/maths.html
 share/kroc/doc/api/occGL.html
 share/kroc/doc/api/occSDL.html
@@ -339,6 +340,7 @@ share/kroc/doc/api/occade.html
 share/kroc/doc/api/occamdoc.css
 share/kroc/doc/api/occplayer.html
 share/kroc/doc/api/overwriting-buffer.html
+share/kroc/doc/api/pioneer.html
 share/kroc/doc/api/player.html
 share/kroc/doc/api/pony.html
 share/kroc/doc/api/proc.html
