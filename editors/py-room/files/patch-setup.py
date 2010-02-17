@@ -7,9 +7,9 @@
 -    ('/usr/share/pyroom/themes', glob.glob('themes/*.theme')),
 -    ('/usr/share/pyroom', ['pyroom.png']),
 -    ('/usr/share/applications', ['pyroom.desktop'])
-+    ('%%LOCALBASE%%/share/pyroom/themes', glob.glob('themes/*.theme')),
-+    ('%%LOCALBASE%%/share/pyroom', ['pyroom.png']),
-+    ('%%LOCALBASE%%/share/applications', ['pyroom.desktop'])
++    ('%%PREFIX%%/share/pyroom/themes', glob.glob('themes/*.theme')),
++    ('%%PREFIX%%/share/pyroom', ['pyroom.png']),
++    ('%%PREFIX%%/share/applications', ['pyroom.desktop'])
      ],
    scripts=['pyroom',],
    cmdclass={'install_data': InstallData},

@@ -27,8 +27,8 @@ PYDISTUTILS_PKGNAME=	PyRoom
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		's|%%PREFIX%%|${PREFIX}|g' \
 			${WRKSRC}/setup.py ${WRKSRC}/PyRoom/preferences.py \
-				${WRKSRC}/PyRoom/gui.py
+			${WRKSRC}/PyRoom/gui.py ${WRKSRC}/pyroom.desktop
 
 .include <bsd.port.mk>
