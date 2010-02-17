@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	1.5
+PORTVERSION=	2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/jmk/tools/ \
 		http://redundancy.redundancy.org/mirror/
@@ -17,7 +17,8 @@ COMMENT=	A speedy, massively parallel, modular, login brute-forcer
 OPTIONS=	SVN "Enable Subversion module" off \
 		POSTGRESQL "Enable PostgreSQL module" off
 
-LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2
+LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2 \
+		pcre:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--program-transform= #--disable-module-ncp
