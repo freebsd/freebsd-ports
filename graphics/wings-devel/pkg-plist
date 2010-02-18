@@ -140,6 +140,7 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/wpc_noise.auv
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/wpc_snap.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/wpc_wood.auv
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/README
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/ambocc_gl2.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_absolute_move.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_absolute_scale.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_ambocc.beam
@@ -157,6 +158,7 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_magnet_mask.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_move_planar.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_numeric_camera.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_region.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_rotate_unconstrained.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_shear.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_shift.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_sweep_extrude.beam
