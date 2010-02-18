@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_ruby
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -14,18 +15,15 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Apache module that embeds Ruby interpreter within
 
-LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby
-
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	1.3+
 USE_RUBY=	yes
 USE_PERL5_BUILD=	yes
 
-CONFIGURE_ARGS=	--with-apxs="${APXS}" \
-		--enable-eruby=yes \
-		--with-eruby-includes="${LOCALBASE}/include" \
-		--with-eruby-libraries="${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-apxs="${APXS}"
+CFLAGS+=	-DONIG_ESCAPE_REGEX_T_COLLISION
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 MAKE_ARGS=	RUBY="${RUBY}"
 INSTALL_TARGET=	site-install
 
@@ -73,5 +71,7 @@ doc-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
+
+#RUBY_VER=1.9
 
 .include <bsd.port.post.mk>
