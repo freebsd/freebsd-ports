@@ -1,6 +1,7 @@
 bin/evolvotron
-bin/evolvotron_match
 bin/evolvotron_mutate
 bin/evolvotron_render
+lib/libevolvotron.a
+lib/libfunction.a
 %%PORTDOCS%%%%DOCSDIR%%/evolvotron.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

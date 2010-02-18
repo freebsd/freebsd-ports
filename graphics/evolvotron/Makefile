@@ -5,44 +5,38 @@
 # $FreeBSD$
 
 PORTNAME=	evolvotron
-PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTVERSION=	0.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Generative software that evolves images/textures/patterns
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_QT_VER=	3
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui moc_build qmake_build xml
 USE_PYTHON=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
-MAKE_ENV=	QTDIR=${QT_PREFIX} MOC=${MOC}
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS} -g -static|' \
-		${WRKSRC}/common.pro
-
-do-configure:
-	@cd ${WRKSRC} && ./text_to_markup.py -html < USAGE > evolvotron.html
-	@cd ${WRKSRC} && ./text_to_markup.py -qml -s < USAGE > libevolvotron/usage_text.h
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake -spec \
-		${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-			VERSION_NUMBER=${PORTVERSION} main.pro
+	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 28d ${WRKSRC}/libevolvotron/platform_specific.h
+	${REINPLACE_CMD} -e 30d ${WRKSRC}/libevolvotron/platform_specific.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron/evolvotron ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron_match/evolvotron_match ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron_mutate/evolvotron_mutate ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron_render/evolvotron_render ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/libevolvotron/libevolvotron.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/libfunction/libfunction.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/evolvotron.html ${DOCSDIR}
