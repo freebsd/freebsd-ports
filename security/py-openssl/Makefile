@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	security python
-MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyOpenSSL-${PORTVERSION}
 
@@ -23,9 +22,17 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyOpenSSL
 USE_OPENSSL=	yes
 
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
 pre-configure:
 	@${ECHO_CMD} "[build_ext]" >> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "include-dirs = ${OPENSSLINC}" >> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "library-dirs = ${OPENSSLLIB}" >> ${WRKSRC}/setup.cfg
+
+.if !defined(NOPORTEXAMPLES)
+post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.mk>

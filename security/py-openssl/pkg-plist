@@ -10,9 +10,15 @@
 %%PYTHON_SITELIBDIR%%/OpenSSL/test/test_crypto.py
 %%PYTHON_SITELIBDIR%%/OpenSSL/test/test_crypto.pyc
 %%PYTHON_SITELIBDIR%%/OpenSSL/test/test_crypto.pyo
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_rand.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_rand.pyc
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_rand.pyo
 %%PYTHON_SITELIBDIR%%/OpenSSL/test/test_ssl.py
 %%PYTHON_SITELIBDIR%%/OpenSSL/test/test_ssl.pyc
 %%PYTHON_SITELIBDIR%%/OpenSSL/test/test_ssl.pyo
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/util.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/util.pyo
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/util.pyc
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.py
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyc
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyo
@@ -21,3 +27,13 @@
 %%PYTHON_SITELIBDIR%%/OpenSSL/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/OpenSSL/test
 @dirrm %%PYTHON_SITELIBDIR%%/OpenSSL
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecureXMLRPCServer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certgen.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mk_simple_certs.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%//proxy.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
