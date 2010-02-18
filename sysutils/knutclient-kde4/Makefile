@@ -6,30 +6,25 @@
 #
 
 PORTNAME=	knutclient
-PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTVERSION=	1.0.p1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
 		http://www.vg.kernel.org/pub/mirrors/gentoo/source/distfiles/
+DISTNAME=	${PORTNAME}-${DIST_VER}
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	A visual client for UPS system NUT
 
-MAKE_JOBS_UNSAFE=	yes
+LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
-BUILD_DEPENDS=	automake>=0:${PORTSDIR}/devel/automake19
+USE_CMAKE=	yes
+USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
+LATEST_LINK=	knutclient-kde4
 
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ARGS=	--disable-fast-perl --enable-mt --program-transform-name=''
-
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|-O2||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
-		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
-		${WRKSRC}/admin/libtool.m4.in
+DIST_VER=	${PORTVERSION:S/.0.p1/_0_KDE4_pre1/}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${DIST_VER}
 
 .include <bsd.port.mk>
