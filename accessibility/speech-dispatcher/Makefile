@@ -6,6 +6,7 @@
 
 PORTNAME=	speech-dispatcher
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
@@ -13,6 +14,8 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Common interface to speech synthesis
 
 LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf
+
+SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	speechd
 USE_GNOME=	glib20 pkgconfig
@@ -84,24 +87,29 @@ CONFIGURE_ARGS+=	--with-pulseaudio
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
-.if ${OSVERSION} < 800000
+.if ${OSVERSION} < 800067
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-*
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
-.if ${OSVERSION} >= 700000 && ${OSVERSION} < 800000 && ${ARCH} == "amd64"
-BROKEN=		does not compile on amd64/7
-.endif
-
 post-extract:
-.if ${OSVERSION} < 800000
-	${CP} ${FILESDIR}/getline.* ${WRKSRC}/src
+.if ${OSVERSION} < 800067
+	${CP} ${FILESDIR}/getline.h ${WRKSRC}/src
+.if ${OSVERSION} < 701101
+	${CP} ${FILESDIR}/getline_strndup.c ${WRKSRC}/src/freebsd.c
+.else
+	${CP} ${FILESDIR}/getline.c ${WRKSRC}/src/freebsd.c
+.endif
 .endif
 
 post-patch:
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} -E -e 's/^(LDFLAGS =.+)/\1 ${PTHREAD_LIBS}/' \
+		${WRKSRC}/src/c/clients/say/Makefile.in \
+		${WRKSRC}/src/tests/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/g' \
 		${WRKSRC}/ltmain.sh
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \

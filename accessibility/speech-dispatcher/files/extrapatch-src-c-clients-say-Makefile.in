@@ -5,7 +5,7 @@
  binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  PROGRAMS = $(bin_PROGRAMS)
 -am_spd_say_OBJECTS = say.$(OBJEXT) options.$(OBJEXT)
-+am_spd_say_OBJECTS = say.$(OBJEXT) options.$(OBJEXT) ../../../getline.$(OBJEXT)
++am_spd_say_OBJECTS = say.$(OBJEXT) options.$(OBJEXT) ../../../freebsd.$(OBJEXT)
  spd_say_OBJECTS = $(am_spd_say_OBJECTS)
  spd_say_DEPENDENCIES = $(c_api)/libspeechd.la
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
