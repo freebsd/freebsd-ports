@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bitefusion
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,14 +17,14 @@ COMMENT=	A snake game with 8 levels
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		LDFLAGS="`${SDL_CONFIG} --libs`"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/bitefusion
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-freebsd|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lSDL||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
