@@ -1,0 +1,12 @@
+======================================================================
+
+To start speech-dispatcher daemon locally, instead of using the rc.d
+script, you have to export SPEECHD_PORT to a number between 1024 and
+65535 (it must be a free port). The following example works on
+/bin/sh:
+
+$ export SPEECHD_PORT=1138
+$ speech-dispatcher --config-dir %%ETCDIR%% \
+> --port $SPEECHD_PORT
+
+======================================================================

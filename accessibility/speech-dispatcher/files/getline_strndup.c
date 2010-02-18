@@ -163,3 +163,22 @@ getline_safe (lineptr, n, stream, limit)
 {
   return getstr (lineptr, n, stream, '\n', 0, limit);
 }
+
+char *
+strndup (str, n)
+     const char *str;
+     size_t n;
+{
+  size_t len;
+  char *copy;
+
+  len = strlen(str);
+  if (n < len)
+    len = n;
+  copy = malloc(len + 1);
+  if (copy == NULL)
+    return NULL;
+  memcpy(copy, str, len);
+  copy[len] = '\0';
+  return copy;
+}

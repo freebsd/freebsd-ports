@@ -17,7 +17,7 @@ rcvar=`set_rcvar`
 
 real_name="speech-dispatcher"
 command="%%PREFIX%%/bin/${real_name}"
-command_args="-C %%ETCDIR%%"
+command_args="--config-dir %%ETCDIR%%"
 pidfile="/var/run/${real_name}.pid"
 
 start_precmd="${name}_prestart"
@@ -30,7 +30,7 @@ speechd_prestart()
 
 speechd_poststop()
 {
-	rm -f $pifile
+	rm -f $pidfile
 }
 
 load_rc_config $name

@@ -5,7 +5,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  am_spdsend_OBJECTS = spdsend.$(OBJEXT) server.$(OBJEXT) \
 -	client.$(OBJEXT) common.$(OBJEXT)
-+	client.$(OBJEXT) common.$(OBJEXT) ../../../getline.$(OBJEXT)
++	client.$(OBJEXT) common.$(OBJEXT) ../../../freebsd.$(OBJEXT)
  spdsend_OBJECTS = $(am_spdsend_OBJECTS)
  spdsend_DEPENDENCIES =
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)

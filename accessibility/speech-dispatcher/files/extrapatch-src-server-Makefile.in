@@ -5,7 +5,7 @@
  	compare.$(OBJEXT) speaking.$(OBJEXT) options.$(OBJEXT) \
  	output.$(OBJEXT) sem_functions.$(OBJEXT) \
 -	index_marking.$(OBJEXT)
-+	index_marking.$(OBJEXT) ../getline.$(OBJEXT)
++	index_marking.$(OBJEXT) ../freebsd.$(OBJEXT)
  speech_dispatcher_OBJECTS = $(am_speech_dispatcher_OBJECTS)
  speech_dispatcher_DEPENDENCIES =
  speech_dispatcher_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
