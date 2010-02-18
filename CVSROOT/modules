@@ -8488,6 +8488,7 @@ ljpms                           ports/www/ljpms
 ljsm                            ports/www/ljsm
 lla                             ports/net/lla
 llgal                           ports/www/llgal
+lll_spect                       ports/math/lll_spect
 llnlxdir                        ports/ftp/llnlxdir
 llnlxftp                        ports/ftp/llnlxftp
 llvm                            ports/devel/llvm
@@ -17534,6 +17535,7 @@ p5-tk-resizebutton              ports/x11-toolkits/p5-Tk-ResizeButton
 p5-tk-splashscreen              ports/x11-toolkits/p5-Tk-Splashscreen
 p5-tk-tablematrix               ports/x11-toolkits/p5-Tk-TableMatrix
 p5-tk-xmlviewer                 ports/textproc/p5-Tk-XMLViewer
+p5-tokyotyrant                  ports/databases/p5-tokyotyrant
 p5-toolset                      ports/devel/p5-ToolSet
 p5-tracefuncs                   ports/devel/p5-TraceFuncs
 p5-tree-authz                   ports/security/p5-Tree-Authz
@@ -19340,7 +19342,6 @@ portaudio                       ports/audio/portaudio
 portaudio2                      ports/audio/portaudio2
 portaudit                       ports/ports-mgmt/portaudit
 portaudit-db                    ports/ports-mgmt/portaudit-db
-portbrowser                     ports/ports-mgmt/portbrowser
 portcheck                       ports/ports-mgmt/portcheck
 portcheckout                    ports/ports-mgmt/portcheckout
 portconf                        ports/ports-mgmt/portconf
@@ -19845,6 +19846,7 @@ py-dbus                         ports/devel/py-dbus
 py-dbutils                      ports/databases/py-dbutils
 py-decorator                    ports/devel/py-decorator
 py-decoratortools               ports/devel/py-decoratortools
+py-deliciousapi                 ports/devel/py-deliciousapi
 py-demjson                      ports/devel/py-demjson
 py-dendropy                     ports/science/py-DendroPy
 py-dexml                        ports/devel/py-dexml
