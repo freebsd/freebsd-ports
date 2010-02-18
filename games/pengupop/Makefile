@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pengupop
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,12 +17,9 @@ COMMENT=	Online multiplayer clone of Bust a Move
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		LDFLAGS="`${SDL_CONFIG} --libs`"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 PLIST_FILES=	bin/pengupop
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lSDL||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
