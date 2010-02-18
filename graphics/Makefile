@@ -337,6 +337,7 @@
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
     SUBDIR += import-pictures
+    SUBDIR += impressive
     SUBDIR += inkscape
     SUBDIR += intergif
     SUBDIR += inventor
