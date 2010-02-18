@@ -1,0 +1,171 @@
+diff -ur mod_ruby-1.3.0/Makefile.in mod_ruby/Makefile.in
+--- mod_ruby-1.3.0/Makefile.in	2008-11-08 05:15:36.000000000 +0100
++++ Makefile.in	2010-02-17 14:25:57.000000000 +0100
+@@ -16,6 +16,7 @@
+ bindir = @bindir@
+ datadir = @datadir@
+ libdir = @libdir@
++rubylibprefix = @rubylibprefix@
+ rubylibdir = @rubylibdir@
+ archdir = @archdir@
+ sitedir = @sitedir@
+@@ -29,6 +30,7 @@
+ LD = @LD@
+ RANLIB = @RANLIB@
+ RUBY = @RUBY@
++RUBY_BASE_NAME = @RUBY_BASE_NAME@
+ RM = @RM@
+ 
+ CFLAGS = @CFLAGS@ -I. -I$(hdrdir) -I$(hdrdir)/$(arch) $(APACHE_INCLUDES) $(LIBAPREQ_INCLUDES) @DEFS@
+diff -ur mod_ruby-1.3.0/autoconf.rb mod_ruby/autoconf.rb
+--- mod_ruby-1.3.0/autoconf.rb	2008-11-08 05:15:36.000000000 +0100
++++ autoconf.rb	2010-02-17 14:25:57.000000000 +0100
+@@ -243,6 +243,8 @@
+ $bindir = CONFIG["bindir"].sub(prefix, "$(exec_prefix)").sub(drive, '')
+ $datadir = CONFIG["datadir"].sub(prefix, "$(prefix)").sub(drive, '')
+ $libdir = CONFIG["libdir"].sub(prefix, "$(exec_prefix)").sub(drive, '')
++$RUBY_BASE_NAME = CONFIG["RUBY_BASE_NAME"]
++$rubylibprefix = CONFIG["rubylibprefix"]
+ $archdir = $archdir.sub(prefix, "$(prefix)").sub(drive, '')
+ $sitelibdir = $sitelibdir.sub(prefix, "$(prefix)").sub(drive, '')
+ $sitearchdir = $sitearchdir.sub(prefix, "$(prefix)").sub(drive, '')
+@@ -416,6 +418,7 @@
+ AC_SUBST("bindir")
+ AC_SUBST("datadir")
+ AC_SUBST("libdir")
++AC_SUBST("rubylibprefix")
+ AC_SUBST("rubylibdir")
+ AC_SUBST("archdir")
+ AC_SUBST("sitedir")
+@@ -429,6 +432,7 @@
+ AC_SUBST("LD")
+ AC_SUBST("RANLIB")
+ AC_SUBST("RUBY")
++AC_SUBST("RUBY_BASE_NAME")
+ AC_SUBST("RM")
+ 
+ AC_SUBST("CFLAGS")
+diff -ur mod_ruby-1.3.0/configure.rb mod_ruby/configure.rb
+--- mod_ruby-1.3.0/configure.rb	2008-11-08 05:15:36.000000000 +0100
++++ configure.rb	2010-02-17 14:25:57.000000000 +0100
+@@ -221,6 +221,8 @@
+ $bindir = CONFIG["bindir"].sub(prefix, "$(exec_prefix)").sub(drive, '')
+ $datadir = CONFIG["datadir"].sub(prefix, "$(prefix)").sub(drive, '')
+ $libdir = CONFIG["libdir"].sub(prefix, "$(exec_prefix)").sub(drive, '')
++$RUBY_BASE_NAME = CONFIG["RUBY_BASE_NAME"]
++$rubylibprefix = CONFIG["rubylibprefix"]
+ $archdir = $archdir.sub(prefix, "$(prefix)").sub(drive, '')
+ $sitelibdir = $sitelibdir.sub(prefix, "$(prefix)").sub(drive, '')
+ $sitearchdir = $sitearchdir.sub(prefix, "$(prefix)").sub(drive, '')
+@@ -394,6 +396,7 @@
+ AC_SUBST("bindir")
+ AC_SUBST("datadir")
+ AC_SUBST("libdir")
++AC_SUBST("rubylibprefix")
+ AC_SUBST("rubylibdir")
+ AC_SUBST("archdir")
+ AC_SUBST("sitedir")
+@@ -407,6 +410,7 @@
+ AC_SUBST("LD")
+ AC_SUBST("RANLIB")
+ AC_SUBST("RUBY")
++AC_SUBST("RUBY_BASE_NAME")
+ AC_SUBST("RM")
+ 
+ AC_SUBST("CFLAGS")
+diff -ur mod_ruby-1.3.0/lib/apache/erb-run.rb mod_ruby/lib/apache/erb-run.rb
+--- mod_ruby-1.3.0/lib/apache/erb-run.rb	2005-08-03 03:32:41.000000000 +0200
++++ lib/apache/erb-run.rb	2010-02-17 14:25:57.000000000 +0100
+@@ -97,7 +97,7 @@
+ 	r.allowed |= (1 << M_POST)
+ 	return DECLINED
+       end
+-      if r.finfo.mode == 0
++      if r.finfo.nil? || r.finfo.mode == 0
+ 	return NOT_FOUND
+       end
+ 
+diff -ur mod_ruby-1.3.0/lib/apache/eruby-run.rb mod_ruby/lib/apache/eruby-run.rb
+--- mod_ruby-1.3.0/lib/apache/eruby-run.rb	2007-04-04 10:02:18.000000000 +0200
++++ lib/apache/eruby-run.rb	2010-02-17 14:25:57.000000000 +0100
+@@ -89,7 +89,7 @@
+ 	r.allowed |= (1 << M_POST)
+ 	return DECLINED
+       end
+-      if r.finfo.mode == 0
++      if r.finfo.nil? || r.finfo.mode == 0
+ 	return NOT_FOUND
+       end
+       return OK
+diff -ur mod_ruby-1.3.0/lib/apache/ruby-run.rb mod_ruby/lib/apache/ruby-run.rb
+--- mod_ruby-1.3.0/lib/apache/ruby-run.rb	2005-08-03 03:32:41.000000000 +0200
++++ lib/apache/ruby-run.rb	2010-02-17 14:25:57.000000000 +0100
+@@ -62,7 +62,7 @@
+ 	r.allowed |= (1 << M_POST)
+ 	return DECLINED
+       end
+-      if r.finfo.mode == 0
++      if r.finfo.nil? || r.finfo.mode == 0
+ 	return NOT_FOUND
+       end
+       if r.allow_options & OPT_EXECCGI == 0
+@@ -80,6 +80,7 @@
+       r.setup_cgi_env
+       filename = r.filename.dup
+       filename.untaint
++      filename.freeze # to avoid SecurityError in 1.9
+       Apache.chdir_file(filename)
+       return filename
+     end
+diff -ur mod_ruby-1.3.0/mod_ruby.c mod_ruby/mod_ruby.c
+--- mod_ruby-1.3.0/mod_ruby.c	2008-11-08 05:34:48.000000000 +0100
++++ mod_ruby.c	2010-02-17 14:25:57.000000000 +0100
+@@ -706,7 +706,7 @@
+ #ifdef RUBY_VM
+     Init_prelude();
+ #endif
+-    default_load_path = GET_LOAD_PATH();
++    default_load_path = rb_ary_dup(GET_LOAD_PATH());
+     rb_global_variable(&default_load_path);
+     rb_define_variable("$0", &progname);
+     list = (char **) conf->load_path->elts;
+diff -ur mod_ruby-1.3.0/request.c mod_ruby/request.c
+--- mod_ruby-1.3.0/request.c    2008-11-08 04:57:19.000000000 +0100
++++ request.c  2010-02-17 14:25:57.000000000 +0100
+@@ -788,7 +788,7 @@
+     return data->notes;
+ }
+ 
+-#ifdef APACHE2
++#if defined(APACHE2) && !defined(RUBY_VM)
+ 
+ #ifdef WIN32
+ typedef int mode_t;
+@@ -859,12 +859,17 @@
+ 
+ static VALUE request_finfo(VALUE self)
+ {
+-    VALUE cStat;
+     request_data *data;
+-    struct stat *st;
+ 
+     data = get_request_data(self);
+     if (NIL_P(data->finfo)) {
++#ifdef RUBY_VM
++	data->finfo = rb_protect_funcall(rb_cFile, rb_intern("stat"), NULL, 1,
++					 rb_str_new2(data->request->filename));
++#else
++	VALUE cStat;
++	struct stat *st;
++
+ 	cStat = rb_const_get(rb_cFile, rb_intern("Stat"));
+ 	data->finfo = Data_Make_Struct(cStat, struct stat, NULL, free, st);
+ #ifdef APACHE2
+@@ -884,6 +889,7 @@
+ #else /* Apache 1.x */
+ 	*st = data->request->finfo;
+ #endif
++#endif
+     }
+     return data->finfo;
+ }
