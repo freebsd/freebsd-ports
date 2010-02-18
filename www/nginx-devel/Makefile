@@ -46,6 +46,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		MAIL_SSL_MODULE		"Enable mail_ssl module" off \
 		WWW			"Enable html sample files" on \
 		CACHE_PURGE_MODULE	"3rd party cache_purge module" off \
+		HTTP_ACCEPT_LANGUAGE	"3rd party accept_language module" off \
 		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
 		HTTP_AUTH_PAM_MODULE	"3rd party http_auth_pam module" off \
 		HTTP_EVAL_MODULE	"3rd party eval module" off \
@@ -135,6 +136,12 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
 		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
 		--http-log-path=${NGINX_ACCESSLOG}
+
+.if defined(WITH_HTTP_ACCEPT_LANGUAGE)
+MASTER_SITES+=	ftp://inside01.p8.ru/nginx/:accept_language
+DISTFILES+=	nginx_accept_language_module.tar.gz:accept_language
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_accept_language_module
+.endif
 
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
