@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	quantlib
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.9
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}/QuantLib/older%20releases/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/QuantLib/${PORTVERSION}
 DISTNAME=	QuantLib-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	A comprehensive software framework for quantitative finance
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
