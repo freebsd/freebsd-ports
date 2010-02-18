@@ -1,9 +1,9 @@
---- configure.orig	Mon Jul  9 08:30:38 2007
-+++ configure	Mon Jul  9 08:29:58 2007
-@@ -20357,6 +20357,8 @@
-      LIBS="$ql_original_LIBS -l$boost_lib"
+--- configure.orig	2010-02-17 19:21:37.000000000 +0900
++++ configure	2010-02-17 19:22:34.000000000 +0900
+@@ -14620,6 +14620,8 @@
       boost_unit_found=no
-      cat >conftest.$ac_ext <<_ACEOF
+      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
 +#define BOOST_TEST_DYN_LINK
 +#define BOOST_TEST_MAIN
  #include <boost/test/unit_test.hpp>
