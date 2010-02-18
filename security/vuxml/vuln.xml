@@ -34,6 +34,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f82c85d8-1c6e-11df-abb2-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.5.*,1</gt><lt>3.5.8,1</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.18,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.0.18,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.8</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-05 XSS hazard using SVG document and binary Content-Type</p>
+	  <p>MFSA 2010-04 XSS due to window.dialogArguments being readable cross-domain</p>
+	  <p>MFSA 2010-03 Use-after-free crash in HTML parser</p>
+	  <p>MFSA 2010-02 Web Worker Array Handling Heap Corruption Vulnerability</p>
+	  <p>MFSA 2010-01 Crashes with evidence of memory corruption (rv:1.9.1.8/ 1.9.0.18)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0159</cvename>
+      <cvename>CVE-2010-0160</cvename>
+      <cvename>CVE-2009-1571</cvename>
+      <cvename>CVE-2009-3988</cvename>
+      <cvename>CVE-2010-0162</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-01.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-02.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-03.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-04.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-05.html</url>
+    </references>
+    <dates>
+      <discovery>2010-02-17</discovery>
+      <entry>2010-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a3bd81f-1b25-11df-bd1a-002170daae37">
     <topic>lighttpd -- denial of service vulnerability</topic>
     <affects>
