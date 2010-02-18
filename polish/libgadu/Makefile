@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgadu
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+DISTVERSION=	1.9.0-rc2
 PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
@@ -16,7 +15,6 @@ COMMENT=	This library is used by many IMs with Gadu-Gadu support
 
 CONFLICTS=	pl-ekg-1.[0-6]*
 
-USE_GMAKE=		yes
 USE_GNOME=		gnomehack pkgconfig
 GNU_CONFIGURE=		yes
 
@@ -39,6 +37,9 @@ PLIST_FILES=	include/libgadu.h \
 .else
 CONFIGURE_ARGS+=	--without-openssl
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's/^((DIST_)?SUBDIRS.*) test(.*)/\1\3/' ${WRKSRC}/Makefile.in
 
 pre-install:
 
