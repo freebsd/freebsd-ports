@@ -406,6 +406,7 @@
     SUBDIR += klineakconfig
     SUBDIR += kmilo
     SUBDIR += knutclient
+    SUBDIR += knutclient-kde4
     SUBDIR += komparator
     SUBDIR += krename
     SUBDIR += krename-kde4
