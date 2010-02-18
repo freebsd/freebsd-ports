@@ -15,6 +15,9 @@ bin/coverage
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/backward.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/backward.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/backward.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/bytecode.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/bytecode.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/bytecode.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/cmdline.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/cmdline.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/cmdline.pyo
@@ -39,8 +42,10 @@ bin/coverage
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/html.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/html.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/html.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/coverage_html.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/jquery-1.3.2.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/jquery.tablesorter.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/pyfile.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/style.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/misc.py
@@ -49,9 +54,15 @@ bin/coverage
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/parser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/parser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/phystokens.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/phystokens.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/phystokens.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/report.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/report.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/report.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/results.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/results.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/results.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/summary.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/summary.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/summary.pyo
