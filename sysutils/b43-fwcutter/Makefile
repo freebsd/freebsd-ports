@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	b43-fwcutter
-PORTVERSION=	011
+PORTVERSION=	012
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bu3sch.de/b43/fwcutter/
 
