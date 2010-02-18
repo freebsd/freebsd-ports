@@ -16,7 +16,7 @@ COMMENT=	Is a commandline scoreboard viewer for the Apache server
 BUILD_DEPENDS=	${LOCALBASE}/bin/apr-1-config:${PORTSDIR}/devel/apr
 
 GNU_CONFIGURE=	yes
-USE_APACHE=	2.2+
+USE_APACHE=	2.0+
 
 PLIST_FILES=	sbin/ftasv
 SUB_FILES=	pkg-message
