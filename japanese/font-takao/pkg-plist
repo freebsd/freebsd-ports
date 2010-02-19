@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%DATADIR%%/TakaoPMincho.otf
+%%DATADIR%%/TakaoMincho.otf
+%%DATADIR%%/TakaoPGothic.otf
+%%DATADIR%%/TakaoGothic.otf
+@dirrm %%DATADIR%%
+%%LOCAL_FONTSDIR%%/OTF/TakaoGothic.otf
+%%LOCAL_FONTSDIR%%/OTF/TakaoPGothic.otf
+%%LOCAL_FONTSDIR%%/OTF/TakaoMincho.otf
+%%LOCAL_FONTSDIR%%/OTF/TakaoPMincho.otf
+@dirrmtry %%LOCAL_FONTSDIR%%/OTF
+@dirrmtry %%LOCAL_FONTSDIR%%
+etc/fonts/conf.avail/20-unhint-takao.conf
+etc/fonts/conf.avail/62-fonts-takao.conf
+@exec ln -s -f ../conf.avail/20-unhint-ipa.conf %D/etc/fonts/conf.d/20-unhint-takao.conf
+@exec ln -s -f ../conf.avail/62-fonts-ipa.conf %D/etc/fonts/conf.d/62-fonts-takao.conf
+@unexec rm -f %D/etc/fonts/conf.d/20-unhint-takao.conf
+@unexec rm -f %D/etc/fonts/conf.d/62-fonts-takao.conf
+%%X_FONTSDIR%%/OTF/TakaoGothic.otf
+%%X_FONTSDIR%%/OTF/TakaoPGothic.otf
+%%X_FONTSDIR%%/OTF/TakaoMincho.otf
+%%X_FONTSDIR%%/OTF/TakaoPMincho.otf
+@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/OTF || true
+@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/OTF || true
+@unexec rm -f %D/%%X_FONTSDIR%%/OTF/fonts.cache-1
+@dirrmtry %%X_FONTSDIR%%/OTF
+@unexec if [ -d %D/%%X_FONTSDIR%%/OTF ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/OTF || true; fi
