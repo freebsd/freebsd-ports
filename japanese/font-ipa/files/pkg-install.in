@@ -9,7 +9,7 @@ catfontsdir ()
     do
       case "${_IN}" in
       *-ipa-IPAUI*|*-ipa-[MU]*)	echo ${_IN} ;;
-      *-ipa-*|[0-9]*|"") ;;
+      *-ipa-[Mm]incho-*|*-ipa-[Gg]othic-*|*-ipa-IPA*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
     done
