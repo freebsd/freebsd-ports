@@ -83,6 +83,7 @@
     SUBDIR += font-sazanami
     SUBDIR += font-shinonome
     SUBDIR += font-std
+    SUBDIR += font-takao
     SUBDIR += font-ume
     SUBDIR += font-vlgothic
     SUBDIR += freepwing
