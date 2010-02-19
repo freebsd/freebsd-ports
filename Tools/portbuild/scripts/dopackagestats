@@ -6,7 +6,7 @@
 #
 
 # alpha is obsolete
-SUPPORTED_ARCHS="amd64 i386 ia64 sparc64"
+SUPPORTED_ARCHS="amd64 i386 ia64 powerpc sparc64"
 ROOT_DIRECTORY=/var/portbuild
 
 OUTFILE=`basename $0 | sed -e "s/^do//"`".html"
@@ -34,7 +34,7 @@ write_header () {
 write_table_begin () {
   echo "<table border='1' cellpadding='4' cellspacing='1' bgcolor='$TABLEBGCOLOR'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
-  echo "<td align='left' width='100' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
+  echo "<td align='left' width='120' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
   echo "<th width='60' bgcolor='$THCOLOR'>cvs date</th>" >> ${TMPFILE}
   # MCL removed 20090808 -- this takes way too long
   # echo "<th width='60' bgcolor='$THCOLOR'>latest log</th>" >> ${TMPFILE}
@@ -44,6 +44,7 @@ write_table_begin () {
   echo "<th bgcolor='$THCOLOR'>errors</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>skipped</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>not yet built</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>queue length</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>running?</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>completed?</th>" >> ${TMPFILE}
   echo "</tr>" >> ${TMPFILE}
@@ -192,6 +193,14 @@ write_row () {
       cellcolor=$TDCOLOR_NOT_DONE
     fi
 
+    # queue length -PAV-
+    m_not_yet_built=""
+    queue_length=""
+    if [ "$completed_flag" = "N" ]; then
+      m_not_yet_built=`tail -n 1000 /var/portbuild/$arch/$build/builds/latest/make|grep MASTER|grep Queue|tail -1|sed 's|.*remaining=|| ; s|, Queue.*||'`
+      queue_length=`tail -n 1000 /var/portbuild/$arch/$build/builds/latest/make|grep MASTER|grep Queue|tail -1|sed 's|.*length=||'`
+    fi;
+
     # now write the row
     echo "<tr>" >> ${TMPFILE}
 
@@ -262,8 +271,16 @@ write_row () {
     echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ ! -z "$have_not_yet_built" ]; then
+    if [ ! -z "$m_not_yet_built" ]; then
       echo "$n_not_yet_built" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
+
+    echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
+    if [ ! -z "$queue_length" ]; then
+      echo "$queue_length" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
     fi
