@@ -6,25 +6,34 @@
 #
 
 PORTNAME=	sharktorrent
-PORTVERSION=	0.1.1
-PORTREVISION=	5
+PORTVERSION=	0.1.8.4
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}-beta-src
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Bittorrent client using wxWidgets, libtorrent and boost
 
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		torrent.1:${PORTSDIR}/net-p2p/rblibtorrent
+		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
 
-DEPRECATED=	Version is out of date, relies on too-old version of libtorrent
-EXPIRATION_DATE=	2010-03-15
-USE_WX=		2.6
-WX_CONF_ARGS=	absolute
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDLFAGS="-L${LOCALBASE}/lib"
-CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libtorrent
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui network
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/sharktorrent
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/opt|${LOCALBASE}|; s|-mt||' \
+		${WRKSRC}/src/src.pro
+
+do-configure:
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} sharktorrent.pro
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
