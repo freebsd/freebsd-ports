@@ -91,7 +91,7 @@ post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
 # Adjust for updated d_mmap() in recent -CURRENT
-.if ${NVVERSION} < 1952200
+.if ${OSVERSION} > 900005 && ${NVVERSION} < 1952200
 	${REINPLACE_CMD} 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
 		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
 		s/int nprot/&, vm_memattr_t *memattr/' \
