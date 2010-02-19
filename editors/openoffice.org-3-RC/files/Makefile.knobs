@@ -6,7 +6,7 @@ CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home="${LOCALBASE}/sh
 
 .if defined(WITH_KDE4)
 CONFIGURE_ARGS+=	--enable-kde4 QT4DIR="${QT_PREFIX}" QT4LIB="${QT_LIBDIR}" QT4INC="${QT_INCDIR}" KDE4DIR="${KDE4_PREFIX}"
-QT_COMPONENTS+=		moc
+QT_COMPONENTS+=		moc_build
 .endif
 
 .if defined(WITH_KDE)
