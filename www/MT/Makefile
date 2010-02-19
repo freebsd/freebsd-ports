@@ -7,6 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	5.01
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
@@ -22,7 +23,6 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 
 OPTIONS=	APACHE			"USE_APACHE"		off\
 		MYSQL			"USE_MYSQL"		off\
-		POSTGRES		"USE_POSTGRES"		off\
 		OPTIONAL_MODULES	"OPTIONAL_MODULES"	on
 
 .include <bsd.port.options.mk>
@@ -44,10 +44,6 @@ CGIDIR=		www/cgi-bin/mt
 .if defined(WITH_MYSQL)
 DB_DIR?=		/var/db/mysql/blog
 USE_MYSQL=		yes
-.elif defined(WITH_POSTGRES)
-DB_DIR?=		${PREFIX}/pgsql/data/blog
-# Or somewhere defined in $PGDATA
-USE_PGSQL=		yes
 .else
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
 RUN_DEPENDS+=\
@@ -79,6 +75,11 @@ PLIST_SUB+=	LANG_EN="" \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_APACHE)
+PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}/Includes"
+PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}"
+.endif
+
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
@@ -109,14 +110,6 @@ pre-everything::
 .if !defined(WITH_MYSQL)
 	@${ECHO_CMD} "WITH_MYSQL"
 	@${ECHO_CMD} "		- Use MySQL as database backend"
-.endif
-.if !defined(WITH_POSTGRES)
-	@${ECHO_CMD} "WITH_POSTGRES"
-	@${ECHO_CMD} "		- Use PostgreSQL as database backend"
-.endif
-.if defined(WITH_APACHE)
-PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}/Includes"
-PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}"
 .endif
 
 do-install:
