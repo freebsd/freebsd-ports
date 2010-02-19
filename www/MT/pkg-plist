@@ -2935,4 +2935,5 @@
 @dirrm %%CGIDIR%%/alt-tmpl
 @dirrmtry %%CGIDIR%%/db
 @dirrmtry %%CGIDIR%%
+@dirrmtry www/cgi-bin
 @dirrmtry %%DATADIR%%
