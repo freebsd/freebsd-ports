@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.1.38
+DISTVERSION=	1.1.39
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -41,13 +41,13 @@ ONLY_FOR_ARCHS=	i386
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GL=		glut
+USE_GL=		glu
 USE_XORG=	xpm xrender
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On \
+OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	Off \
 		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
 		LDAP	"Use LDAP"					Off \
 		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off

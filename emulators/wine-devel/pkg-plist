@@ -134,6 +134,8 @@ include/wine/windows/cpl.h
 include/wine/windows/crtrow.idl
 include/wine/windows/cryptdlg.h
 include/wine/windows/cryptuiapi.h
+include/wine/windows/ctfutb.h
+include/wine/windows/ctfutb.idl
 include/wine/windows/ctxtcall.h
 include/wine/windows/ctxtcall.idl
 include/wine/windows/custcntl.h
