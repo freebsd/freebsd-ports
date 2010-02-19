@@ -150,7 +150,8 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portmaster:
 
-	portmaster -or audio/openal audio/openal-soft
+	portmaster -o audio/openal-soft audio/openal
+	portmaster -r audio/openal-soft
 
   If you use portupgrade:
 
