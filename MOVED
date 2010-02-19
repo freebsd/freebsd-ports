@@ -4323,3 +4323,4 @@ irc/conspire||2010-02-04|Upstream development abandoned
 x11-toolkits/swt31|x11-toolkits/swt|2010-02-07|Superseded by x11-toolkits/swt
 sysutils/smartmontools-devel|sysutils/smartmontools|2010-02-10|Removed, use sysutils/smartmontools instead
 ports-mgmt/portbrowser||2010-02-16|No longer maintained
+editors/openoffice.org-2-RC||2010-02-19|Removed
