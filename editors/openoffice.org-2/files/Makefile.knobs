@@ -13,7 +13,7 @@ CONFIGURE_ARGS+=	--enable-kde QTDIR="${QT_PREFIX}"
 .if defined(WITHOUT_CUPS)
 CONFIGURE_ARGS+=	--enable-cups=no
 .else
-LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups=yes
 .endif
 
