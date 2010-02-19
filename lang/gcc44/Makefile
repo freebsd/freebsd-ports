@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.4.4.20100209
+PORTVERSION=	4.4.4.20100216
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -20,6 +20,8 @@ COMMENT=	GNU Compiler Collection 4.4
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if defined(MAINTAINER_MODE)
 DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
@@ -59,13 +61,15 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
-		--with-system-zlib \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-gmp=${LOCALBASE} \
-		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/
+		--program-suffix=${SUFFIX} \
+		--with-as=${LOCALBASE}/bin/as \
+		--with-gmp=${LOCALBASE} \
+		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--with-ld=${LOCALBASE}/bin/ld \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
