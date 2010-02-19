@@ -4370,7 +4370,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/Queue.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/mysql.sql
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/postgresql.sql
-%%DATADIR%%/library/Zend/Queue/Adapter/Db/queue_sqlite.php
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/queue_sqlite.sql
 %%DATADIR%%/library/Zend/Queue/Adapter/Memcacheq.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Null.php
 %%DATADIR%%/library/Zend/Queue/Adapter/PlatformJobQueue.php
@@ -4985,6 +4985,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/DataDirectory.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/DbTableDirectory.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/DbTableFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/DocsDirectory.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/FormFile.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/FormsDirectory.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/HtaccessFile.php
@@ -5306,16 +5307,16 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.log.writers.zendmonitor-events.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.openid.protocol.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.paginator.usage.rendering.control.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.advanced-mergefieldblockformat.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.advanced-mswordblocksdocument.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.advanced-mswordblockstemplate.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.bitmaps-documentpage1.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.bitmaps-documentpage2.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.generation-diabasic.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-msworddialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-msworddocument.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-mswordtemplatecropped.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-mswordtemplatefull.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.advanced-mergefieldblockformat_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.advanced-mswordblocksdocument_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.advanced-mswordblockstemplate_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.bitmaps-documentpage1_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.bitmaps-documentpage2_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.generation-diabasic_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-msworddialog_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-msworddocument_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-mswordtemplatecropped_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-mswordtemplatefull_zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.tool.framework.clihelp.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.tool.framework.cliversionunix.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.tool.framework.cliversionwin32.png
@@ -7927,6 +7928,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/PluginLoaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ParseError.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZendLoaderAutoloader/Foo.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/Zend_LoaderTest.phar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZfTest/CacheTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZfTest/FormSubmit.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/Zfns/Foo.php
@@ -8982,7 +8984,12 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/ClassNonexistent.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Interface1.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir2/Class2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/languages/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/languages/Zend_ValidateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/runtests.sh
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/resources/languages
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/resources
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/_files/_testDir2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Class1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/_files/_testDir1
