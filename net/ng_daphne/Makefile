@@ -9,7 +9,8 @@ PORTNAME=	ng_daphne
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	net kld
-MASTER_SITES=	http://newton.ee.auth.gr/ng_daphne/
+MASTER_SITES=	http://newton.ee.auth.gr/ng_daphne/ \
+		LOCAL/glarkin
 
 MAINTAINER=	gedimitr@auth.gr
 COMMENT=	A simple netgraph module for multihop ad hoc networks
@@ -18,13 +19,14 @@ COMMENT=	A simple netgraph module for multihop ad hoc networks
 
 SYSDIR?=	${SRC_BASE}/sys
 .if !exists(${SYSDIR}/netgraph/netgraph.h)
-IGNORE=		"Requires kernel source (/usr/src/sys) to build"
+IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 MAKE_ENV+=	WERROR=
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ng_daphne.c
 PLIST_FILES=	lib/ng_daphne.ko
 PORTDOCS=	README
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/ng_daphne.ko ${PREFIX}/lib
@@ -34,6 +36,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
