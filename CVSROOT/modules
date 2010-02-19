@@ -5715,6 +5715,7 @@ impact                          ports/cad/impact
 import-pictures                 ports/graphics/import-pictures
 impress                         ports/editors/impress
 impresscms                      ports/www/impresscms
+impressive                      ports/graphics/impressive
 imspector                       ports/net-im/imspector
 imwheel                         ports/x11/imwheel
 inadyn                          ports/dns/inadyn
@@ -7007,6 +7008,7 @@ knowit                          ports/deskutils/knowit
 knowlan                         ports/net-mgmt/knowlan
 knowledgekit                    ports/www/knowledgekit
 knutclient                      ports/sysutils/knutclient
+knutclient-kde4                 ports/sysutils/knutclient-kde4
 ko-FreeWnn-lib                  ports/korean/FreeWnn-lib
 ko-FreeWnn-server               ports/korean/FreeWnn-server
 ko-a2ps                         ports/korean/a2ps
