@@ -33,6 +33,8 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-S
 		${SITE_PERL}/Tk/Getopt.pm:${PORTSDIR}/x11-toolkits/p5-Tk-Getopt \
 		${SITE_PERL}/${PERL_ARCH}/Tk/TableMatrix.pm:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix
 
+BROKEN=		bad plist
+
 USE_APACHE=	20
 
 USE_GMAKE=	yes
