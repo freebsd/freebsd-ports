@@ -2,10 +2,10 @@ Index: bgpd/kroute.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/kroute.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.6
-diff -u -p -r1.1.1.7 -r1.6
+retrieving revision 1.7
+diff -u -p -r1.1.1.7 -r1.7
 --- bgpd/kroute.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/kroute.c	4 Feb 2010 16:22:23 -0000	1.6
++++ bgpd/kroute.c	19 Feb 2010 01:29:05 -0000	1.7
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: kroute.c,v 1.169 2009/06/25 15:54:22 claudio Exp $ */
 +/*	$OpenBSD: kroute.c,v 1.173 2009/12/01 14:28:05 claudio Exp $ */
@@ -255,6 +255,15 @@ diff -u -p -r1.1.1.7 -r1.6
  			k6 = kn->kroute;
  			k6->r.flags &= ~F_NEXTHOP;
  			break;
+@@ -1689,7 +1698,7 @@ protect_lo(void)
+ 	}
+ 	memcpy(&kr6->r.prefix, &in6addr_loopback, sizeof(kr6->r.prefix));
+ 	kr6->r.prefixlen = 128;
+-	kr->r.flags = F_KERNEL|F_CONNECTED;
++	kr6->r.flags = F_KERNEL|F_CONNECTED;
+ 
+ 	if (RB_INSERT(kroute6_tree, &krt6, kr6) != NULL)
+ 		free(kr6);	/* kernel route already there, no problem */
 @@ -1849,7 +1858,7 @@ if_change(u_short ifindex, int flags, st
  					nh.connected = 1;
  					if ((nh.gateway.v4.s_addr =
@@ -405,7 +414,21 @@ diff -u -p -r1.1.1.7 -r1.6
  			kr->r.ifindex = rtm->rtm_index;
  			kr->r.prefix.s_addr =
  			    ((struct sockaddr_in *)sa)->sin_addr.s_addr;
-@@ -2238,7 +2270,11 @@ fetchtable(u_int rtableid, int connected
+@@ -2223,8 +2255,12 @@ fetchtable(u_int rtableid, int connected
+ 					break;
+ 				kr->r.prefixlen =
+ 				    mask2prefixlen(sa_in->sin_addr.s_addr);
+-			} else if (rtm->rtm_flags & RTF_HOST)
++			} else if (rtm->rtm_flags & RTF_HOST) {
+ 				kr->r.prefixlen = 32;
++#if defined(__FreeBSD__)	/* RTF_HOST means connected route */
++				kr->r.flags |= F_CONNECTED;
++#endif
++			}
+ 			else
+ 				kr->r.prefixlen =
+ 				    prefixlen_classful(kr->r.prefix.s_addr);
+@@ -2238,7 +2274,11 @@ fetchtable(u_int rtableid, int connected
  			}
  
  			kr6->r.flags = F_KERNEL;
@@ -417,7 +440,21 @@ diff -u -p -r1.1.1.7 -r1.6
  			kr6->r.ifindex = rtm->rtm_index;
  			memcpy(&kr6->r.prefix,
  			    &((struct sockaddr_in6 *)sa)->sin6_addr,
-@@ -2290,7 +2326,12 @@ fetchtable(u_int rtableid, int connected
+@@ -2257,8 +2297,12 @@ fetchtable(u_int rtableid, int connected
+ 				if (sa_in6->sin6_len == 0)
+ 					break;
+ 				kr6->r.prefixlen = mask2prefixlen6(sa_in6);
+-			} else if (rtm->rtm_flags & RTF_HOST)
++			} else if (rtm->rtm_flags & RTF_HOST) {
+ 				kr6->r.prefixlen = 128;
++#if defined(__FreeBSD__)	/* RTF_HOST means connected route */
++				kr6->r.flags |= F_CONNECTED;
++#endif
++			}
+ 			else
+ 				fatalx("INET6 route without netmask");
+ 			break;
+@@ -2290,7 +2334,12 @@ fetchtable(u_int rtableid, int connected
  			}
  
  		if (sa->sa_family == AF_INET) {
@@ -430,7 +467,7 @@ diff -u -p -r1.1.1.7 -r1.6
  				send_rtmsg(kr_state.fd, RTM_DELETE, &kr->r);
  				free(kr);
  			} else if (connected_only &&
-@@ -2299,7 +2340,12 @@ fetchtable(u_int rtableid, int connected
+@@ -2299,7 +2348,12 @@ fetchtable(u_int rtableid, int connected
  			else
  				kroute_insert(kr);
  		} else if (sa->sa_family == AF_INET6) {
@@ -443,7 +480,7 @@ diff -u -p -r1.1.1.7 -r1.6
  				send_rt6msg(kr_state.fd, RTM_DELETE, &kr6->r);
  				free(kr6);
  			} else if (connected_only &&
-@@ -2418,7 +2464,11 @@ dispatch_rtmsg(void)
+@@ -2418,7 +2472,11 @@ dispatch_rtmsg(void)
  		case RTM_ADD:
  		case RTM_CHANGE:
  		case RTM_DELETE:
@@ -455,7 +492,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			get_rtaddrs(rtm->rtm_addrs, sa, rti_info);
  
  			if (rtm->rtm_pid == kr_state.pid) /* cause by us */
-@@ -2431,12 +2481,14 @@ dispatch_rtmsg(void)
+@@ -2431,12 +2489,14 @@ dispatch_rtmsg(void)
  				continue;
  
  			connected_only = 0;
@@ -470,7 +507,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  			if (dispatch_rtmsg_addr(rtm, rti_info,
  			    connected_only) == -1)
-@@ -2494,10 +2546,14 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
+@@ -2494,31 +2554,44 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
  		mpath = 1;
  #endif
  
@@ -487,7 +524,18 @@ diff -u -p -r1.1.1.7 -r1.6
  		prefix.v4.s_addr = ((struct sockaddr_in *)sa)->sin_addr.s_addr;
  		sa_in = (struct sockaddr_in *)rti_info[RTAX_NETMASK];
  		if (sa_in != NULL) {
-@@ -2511,6 +2567,7 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
+ 			if (sa_in->sin_len != 0)
+ 				prefixlen = mask2prefixlen(
+ 				    sa_in->sin_addr.s_addr);
+-		} else if (rtm->rtm_flags & RTF_HOST)
++		} else if (rtm->rtm_flags & RTF_HOST) {
+ 			prefixlen = 32;
++#if defined(__FreeBSD__)	/* RTF_HOST means connected route */
++			flags |= F_CONNECTED;
++#endif
++		}
+ 		else
+ 			prefixlen =
  			    prefixlen_classful(prefix.v4.s_addr);
  		break;
  	case AF_INET6:
@@ -495,7 +543,20 @@ diff -u -p -r1.1.1.7 -r1.6
  		memcpy(&prefix.v6, &((struct sockaddr_in6 *)sa)->sin6_addr,
  		    sizeof(struct in6_addr));
  		sa_in6 = (struct sockaddr_in6 *)rti_info[RTAX_NETMASK];
-@@ -2537,8 +2594,8 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
+ 		if (sa_in6 != NULL) {
+ 			if (sa_in6->sin6_len != 0)
+ 				prefixlen = mask2prefixlen6(sa_in6);
+-		} else if (rtm->rtm_flags & RTF_HOST)
++		} else if (rtm->rtm_flags & RTF_HOST) {
+ 			prefixlen = 128;
++#if defined(__FreeBSD__)	/* RTF_HOST means connected route */
++			flags |= F_CONNECTED;
++#endif
++		}
+ 		else
+ 			fatalx("in6 net addr without netmask");
+ 		break;
+@@ -2537,8 +2610,8 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
  		}
  
  	if (rtm->rtm_type == RTM_DELETE) {
@@ -506,7 +567,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			sa_in = (struct sockaddr_in *)sa;
  			if ((kr = kroute_find(prefix.v4.s_addr,
  			    prefixlen, prio)) == NULL)
-@@ -2557,7 +2614,7 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
+@@ -2557,7 +2630,7 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
  			if (kroute_remove(kr) == -1)
  				return (-1);
  			break;
@@ -515,7 +576,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			sa_in6 = (struct sockaddr_in6 *)sa;
  			if ((kr6 = kroute6_find(&prefix.v6, prefixlen,
  			    prio)) == NULL)
-@@ -2590,8 +2647,8 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
+@@ -2590,8 +2663,8 @@ dispatch_rtmsg_addr(struct rt_msghdr *rt
  		return (0);
  	}
  
@@ -526,7 +587,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		sa_in = (struct sockaddr_in *)sa;
  		if ((kr = kroute_find(prefix.v4.s_addr, prefixlen,
  		    prio)) != NULL) {
-@@ -2654,7 +2711,7 @@ add4:
+@@ -2654,7 +2727,7 @@ add4:
  			kroute_insert(kr);
  		}
  		break;
