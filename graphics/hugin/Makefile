@@ -44,10 +44,6 @@ USE_WX=		2.8+
 
 USE_GETTEXT=	yes
 
-.if ${OSVERSION} < 700000
-USE_GCC=	4.4+
-.endif
-
 MAN1=		\
 		PTBatcherGUI.1 \
 		align_image_stack.1 \
@@ -87,6 +83,10 @@ post-configure:
 		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/link.txt
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.4+
+.endif
 
 .if defined(WITH_PANOMATIC)
 RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
