@@ -84,8 +84,9 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
+# see the commit log message for Makefile rev 1.43
 .if ${OSVERSION} < 700000
-USE_GCC=	4.4+
+USE_GCC=	4.2
 .endif
 
 .if defined(WITH_PANOMATIC)
