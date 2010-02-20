@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wget
-DISTVERSION=	1.11.4
-PORTREVISION=	1
+DISTVERSION=	1.12
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
@@ -67,9 +66,8 @@ PLIST_SUB=	NLS="@comment "
 MAN1=		wget.1
 INFO=		wget
 
+# eliminate gmakism
 post-patch:
-	${RM} -f ${WRKSRC}/doc/wget.info* ${WRKSRC}/po/*.mo ${WRKSRC}/po/*.gmo
-	@# eliminate gmakism
 	${REINPLACE_CMD} -e 's,$$<,$$(srcdir)/wget.texi,' \
 		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's,/usr/local/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
