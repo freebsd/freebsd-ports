@@ -42,3 +42,11 @@ etc/wgetrc.sample
 %%NLS%%share/locale/vi/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wget.mo
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/en_AU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_AU
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
