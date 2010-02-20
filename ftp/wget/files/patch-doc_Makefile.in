@@ -1,20 +1,11 @@
---- doc/Makefile.in.orig	2008-05-01 04:57:18.613091552 -0400
-+++ doc/Makefile.in	2008-05-01 04:58:14.768389781 -0400
-@@ -22,7 +22,7 @@
- SHELL = /bin/sh
- 
- # Program to format Texinfo source into Info files.
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- # Program to format Texinfo source into DVI files.
- TEXI2DVI = texi2dvi
- # Program to convert DVI files to PostScript
-@@ -51,7 +51,7 @@
- TEXI2POD     = $(srcdir)/texi2pod.pl
- POD2MAN      = @POD2MAN@
- MAN          = wget.$(manext)
--WGETRC       = $(sysconfdir)/wgetrc
-+WGETRC       = $(sysconfdir)/wgetrc.sample
+--- doc/Makefile.in.orig	2010-02-14 16:28:59.000000000 +0200
++++ doc/Makefile.in	2010-02-14 16:29:43.000000000 +0200
+@@ -598,7 +598,7 @@
+ RM = rm -f
+ TEXI2POD = $(srcdir)/texi2pod.pl
+ MAN = wget.$(manext)
+-WGETRC = $(sysconfdir)/wgetrc
++WGETRC = $(sysconfdir)/wgetrc.sample
  SAMPLERCTEXI = sample.wgetrc.munged_for_texi_inclusion
  
  #
