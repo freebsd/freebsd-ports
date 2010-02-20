@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zzuf
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	security
-MASTER_SITES=	http://libcaca.zoy.org/files/zzuf/
+MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/zzuf/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Transparent application input fuzzer
@@ -16,7 +16,7 @@ COMMENT=	Transparent application input fuzzer
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=	zzuf.1
+MAN1=	zzuf.1 zzcat.1
 MAN3=	libzzuf.3
 
 post-install:
