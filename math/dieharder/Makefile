@@ -16,6 +16,7 @@ COMMENT=	A random number generator testsuite
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
+BROKEN=		does not build
 MAKE_JOBS_UNSAFE=	yes
 
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtool:22
