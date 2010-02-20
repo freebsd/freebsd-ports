@@ -1,4 +1,5 @@
 bin/gnubiff
+share/applications/gnubiff.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gnubiff.mo
@@ -6,6 +7,7 @@ bin/gnubiff
 %%NLS%%share/locale/fr_CA/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gnubiff.mo
@@ -39,3 +41,4 @@ share/pixmaps/gnubiff.png
 %%NLS%%@dirrmtry share/locale/fr_CA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr_CA
 @dirrm share/gnubiff
+@dirrmtry share/applications
