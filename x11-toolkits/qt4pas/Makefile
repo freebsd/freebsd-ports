@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt4pas
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://users.telenet.be/Jan.Van.hijfte/qtforfpc/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/V/}_Qt${QT4_VER_MIN}
