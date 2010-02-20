@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	20100110
-PORTREVISION=	1
+PORTVERSION=	20100218
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -23,7 +22,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	gnash-[0-9]*
 
-REVISION=	11741
+REVISION=	11957
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -39,7 +38,6 @@ MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--with-agg-lib="${LOCALBASE}/lib" \
 		--disable-testsuite --enable-avm2 \
 		--with-plugins-install=system \
 		--sysconfdir="${WRKDIR}/etc" \
@@ -53,7 +51,9 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-MAN1=		cygnal.1 dumpshm.1 flvdumper.1 gnash.1 gprocessor.1 soldumper.1 rtmpget.1
+MAN1=		cygnal.1 dumpshm.1 findmicrophones.1 findwebcams.1 \
+		flvdumper.1 gnash.1 gprocessor.1 gtk-gnash.1 kde4-gnash.1 \
+		rtmpget.1 soldumper.1
 
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
@@ -244,9 +244,8 @@ pre-configure:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/ s|libdir)|exec_prefix)/libdata|' \
 		${WRKSRC}/Makefile.in
-
-pre-build:
-	cat ${WRKSRC}/libbase/Makefile
+	@${REINPLACE_CMD} -e '/^man1dir =/ s|=.*|= ${MAN1PREFIX}/man/man1|' \
+		${WRKSRC}/doc/C/Makefile.in
 
 post-install:
 .for conf in ${CONFIG_FILES}
@@ -276,5 +275,7 @@ post-install:
 x-maintainer-make-snapshot:
 	bzr export --revision=${REVISION} --root=gnash-trunk \
 		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://bzr.savannah.gnu.org/r/gnash/trunk/
+	${RM} -f ${DISTINFO}
+	${MAKE} makesum
 
 .include <bsd.port.post.mk>
