@@ -16,7 +16,6 @@ COMMENT=	A random number generator testsuite
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
-BROKEN=		does not build
 MAKE_JOBS_UNSAFE=	yes
 
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtool:22
@@ -26,6 +25,11 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 MAN1=		dieharder.1
 MAN3=		libdieharder.3
+
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "i386"
+BROKEN=	does not compile on i386
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|./configure|#./configure|g" \
@@ -40,4 +44,4 @@ run-autotools:
 test: build
 	${WRKSRC}/dieharder/dieharder -a
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
