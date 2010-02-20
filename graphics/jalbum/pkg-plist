@@ -8,6 +8,15 @@ bin/jalbum
 %%DATADIR%%/ext/JPrint.jar
 %%DATADIR%%/ext/JTextPad.jar
 %%DATADIR%%/ext/JalbumFilters.jar
+%%DATADIR%%/ext/JalbumFilters/for-translators.txt
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts.properties
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_de.properties
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_fi.properties
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_ko.properties
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_nl.properties
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_pt.properties
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_sk.properties
+%%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts/texts_sv.properties
 %%DATADIR%%/icons/JalbumApp.ico
 %%DATADIR%%/icons/JalbumDoc.ico
 %%DATADIR%%/icons/JalbumInstaller.ico
@@ -37,6 +46,7 @@ bin/jalbum
 %%DATADIR%%/lib/sunos/jdic_stub.jar
 %%DATADIR%%/lib/sunos/sparc/libtray.so
 %%DATADIR%%/lib/sunos/x86/libtray.so
+%%DATADIR%%/lib/swing-worker-1.2.jar
 %%DATADIR%%/lib/windows/jdic_stub.jar
 %%DATADIR%%/lib/windows/x86/jdic_fileutil.dll
 %%DATADIR%%/lib/windows/x86/tray.dll
@@ -56,6 +66,8 @@ bin/jalbum
 %%DATADIR%%/plugins/BlurFilter.class
 %%DATADIR%%/plugins/BlurFilter.java
 %%DATADIR%%/plugins/Compile.bat
+%%DATADIR%%/plugins/CropFilter.class
+%%DATADIR%%/plugins/CropFilter.java
 %%DATADIR%%/plugins/FixedShapeFilter.class
 %%DATADIR%%/plugins/FixedShapeFilter.java
 %%DATADIR%%/plugins/GrayscaleFilter.class
@@ -110,128 +122,6 @@ bin/jalbum
 %%DATADIR%%/res/xls.gif
 %%DATADIR%%/res/xml.gif
 %%DATADIR%%/res/zip.gif
-%%DATADIR%%/skins/Boxer/examples/close.gif
-%%DATADIR%%/skins/Boxer/examples/controlbar.gif
-%%DATADIR%%/skins/Boxer/examples/expand.gif
-%%DATADIR%%/skins/Boxer/examples/left.gif
-%%DATADIR%%/skins/Boxer/examples/move.gif
-%%DATADIR%%/skins/Boxer/examples/pause.gif
-%%DATADIR%%/skins/Boxer/examples/play.gif
-%%DATADIR%%/skins/Boxer/examples/right.gif
-%%DATADIR%%/skins/Boxer/examples/valid-html401.png
-%%DATADIR%%/skins/Boxer/examples/vcss.gif
-%%DATADIR%%/skins/Boxer/hints.jap
-%%DATADIR%%/skins/Boxer/index.htt
-%%DATADIR%%/skins/Boxer/init.bsh
-%%DATADIR%%/skins/Boxer/onload.bsh
-%%DATADIR%%/skins/Boxer/res/BlackNBlueBG.png
-%%DATADIR%%/skins/Boxer/res/BlueSkyBG.png
-%%DATADIR%%/skins/Boxer/res/CloudBar.png
-%%DATADIR%%/skins/Boxer/res/GreenNBlackBG.png
-%%DATADIR%%/skins/Boxer/res/PavementBG.png
-%%DATADIR%%/skins/Boxer/res/PinkNWhiteBG.png
-%%DATADIR%%/skins/Boxer/res/RedNBlackBG.png
-%%DATADIR%%/skins/Boxer/res/black-download.png
-%%DATADIR%%/skins/Boxer/res/black-next.png
-%%DATADIR%%/skins/Boxer/res/black-previous.png
-%%DATADIR%%/skins/Boxer/res/black-up.png
-%%DATADIR%%/skins/Boxer/res/blank.gif
-%%DATADIR%%/skins/Boxer/res/easing_equations.js
-%%DATADIR%%/skins/Boxer/res/folder.gif
-%%DATADIR%%/skins/Boxer/res/folder_sm.gif
-%%DATADIR%%/skins/Boxer/res/gold-download.png
-%%DATADIR%%/skins/Boxer/res/gold-next.png
-%%DATADIR%%/skins/Boxer/res/gold-previous.png
-%%DATADIR%%/skins/Boxer/res/gold-up.png
-%%DATADIR%%/skins/Boxer/res/graphics/close.png
-%%DATADIR%%/skins/Boxer/res/graphics/closeX.png
-%%DATADIR%%/skins/Boxer/res/graphics/controlbar-black.gif
-%%DATADIR%%/skins/Boxer/res/graphics/controlbar-white-small.gif
-%%DATADIR%%/skins/Boxer/res/graphics/controlbar-white.gif
-%%DATADIR%%/skins/Boxer/res/graphics/geckodimmer.png
-%%DATADIR%%/skins/Boxer/res/graphics/icon.gif
-%%DATADIR%%/skins/Boxer/res/graphics/loader.gif
-%%DATADIR%%/skins/Boxer/res/graphics/loader.white.gif
-%%DATADIR%%/skins/Boxer/res/graphics/outlines/beveled.png
-%%DATADIR%%/skins/Boxer/res/graphics/outlines/brown.png
-%%DATADIR%%/skins/Boxer/res/graphics/outlines/drop-shadow.png
-%%DATADIR%%/skins/Boxer/res/graphics/outlines/glossy-dark.png
-%%DATADIR%%/skins/Boxer/res/graphics/outlines/outer-glow.png
-%%DATADIR%%/skins/Boxer/res/graphics/outlines/rounded-black.png
-%%DATADIR%%/skins/Boxer/res/graphics/outlines/rounded-white.png
-%%DATADIR%%/skins/Boxer/res/graphics/resize.gif
-%%DATADIR%%/skins/Boxer/res/graphics/zoomin.cur
-%%DATADIR%%/skins/Boxer/res/graphics/zoomout.cur
-%%DATADIR%%/skins/Boxer/res/gray-download.png
-%%DATADIR%%/skins/Boxer/res/gray-next.png
-%%DATADIR%%/skins/Boxer/res/gray-previous.png
-%%DATADIR%%/skins/Boxer/res/gray-up.png
-%%DATADIR%%/skins/Boxer/res/green-download.png
-%%DATADIR%%/skins/Boxer/res/green-next.png
-%%DATADIR%%/skins/Boxer/res/green-previous.png
-%%DATADIR%%/skins/Boxer/res/green-up.png
-%%DATADIR%%/skins/Boxer/res/highslide.js
-%%DATADIR%%/skins/Boxer/res/new.png
-%%DATADIR%%/skins/Boxer/res/red-download.png
-%%DATADIR%%/skins/Boxer/res/red-next.png
-%%DATADIR%%/skins/Boxer/res/red-previous.png
-%%DATADIR%%/skins/Boxer/res/red-up.png
-%%DATADIR%%/skins/Boxer/scripts/exif.inc
-%%DATADIR%%/skins/Boxer/scripts/focallength.inc
-%%DATADIR%%/skins/Boxer/scripts/highslide.inc
-%%DATADIR%%/skins/Boxer/scripts/index-breadcrumbs.inc
-%%DATADIR%%/skins/Boxer/scripts/index-navigation-old.inc
-%%DATADIR%%/skins/Boxer/scripts/index-navigation.inc
-%%DATADIR%%/skins/Boxer/scripts/indexNav.inc
-%%DATADIR%%/skins/Boxer/scripts/indexNav2.inc
-%%DATADIR%%/skins/Boxer/scripts/infoPropsFolder.inc
-%%DATADIR%%/skins/Boxer/scripts/infoPropsImage.inc
-%%DATADIR%%/skins/Boxer/scripts/infoPropsSubFolder.inc
-%%DATADIR%%/skins/Boxer/skin.properties
-%%DATADIR%%/skins/Boxer/slide.htt
-%%DATADIR%%/skins/Boxer/styles/1 Pavement.css
-%%DATADIR%%/skins/Boxer/styles/1 Pavement.jpg
-%%DATADIR%%/skins/Boxer/styles/1a Silver Pavement.css
-%%DATADIR%%/skins/Boxer/styles/1a Silver Pavement.jpg
-%%DATADIR%%/skins/Boxer/styles/1b Black Silver Gradient Pavement.css
-%%DATADIR%%/skins/Boxer/styles/1b Black Silver Gradient Pavement.jpg
-%%DATADIR%%/skins/Boxer/styles/2 Purple Pavement.css
-%%DATADIR%%/skins/Boxer/styles/2 Purple Pavement.jpg
-%%DATADIR%%/skins/Boxer/styles/2a Gradient Purple Pavement.css
-%%DATADIR%%/skins/Boxer/styles/2a Gradient Purple Pavement.jpg
-%%DATADIR%%/skins/Boxer/styles/3 Black n Blue.css
-%%DATADIR%%/skins/Boxer/styles/3 Black n Blue.jpg
-%%DATADIR%%/skins/Boxer/styles/3a Gradient Black n Blue.css
-%%DATADIR%%/skins/Boxer/styles/3a Gradient Black n Blue.jpg
-%%DATADIR%%/skins/Boxer/styles/3b Gradient Red n Black.css
-%%DATADIR%%/skins/Boxer/styles/3b Gradient Red n Black.jpg
-%%DATADIR%%/skins/Boxer/styles/3c Gradient Black n Red.css
-%%DATADIR%%/skins/Boxer/styles/3c Gradient Black n Red.jpg
-%%DATADIR%%/skins/Boxer/styles/3d Gradient Green n Black.css
-%%DATADIR%%/skins/Boxer/styles/3d Gradient Green n Black.jpg
-%%DATADIR%%/skins/Boxer/styles/3e Gradient Black n Green.css
-%%DATADIR%%/skins/Boxer/styles/3e Gradient Black n Green.jpg
-%%DATADIR%%/skins/Boxer/styles/3f Red White and Blue.css
-%%DATADIR%%/skins/Boxer/styles/3f Red White and Blue.jpg
-%%DATADIR%%/skins/Boxer/styles/4 Blue Sky.css
-%%DATADIR%%/skins/Boxer/styles/4 Blue Sky.jpg
-%%DATADIR%%/skins/Boxer/styles/4a Blue Sky Cloudy.css
-%%DATADIR%%/skins/Boxer/styles/4a Blue Sky Cloudy.jpg
-%%DATADIR%%/skins/Boxer/styles/4b Gradient Blue Sky.css
-%%DATADIR%%/skins/Boxer/styles/4b Gradient Blue Sky.jpg
-%%DATADIR%%/skins/Boxer/styles/5 Bright White.css
-%%DATADIR%%/skins/Boxer/styles/5 Bright White.jpg
-%%DATADIR%%/skins/Boxer/styles/5a Pink.css
-%%DATADIR%%/skins/Boxer/styles/5a Pink.jpg
-%%DATADIR%%/skins/Boxer/styles/6 Bold Black.css
-%%DATADIR%%/skins/Boxer/styles/6 Bold Black.jpg
-%%DATADIR%%/skins/Boxer/styles/7 The Matrix.css
-%%DATADIR%%/skins/Boxer/styles/7 The Matrix.jpg
-%%DATADIR%%/skins/Boxer/styles/8 Arizona.css
-%%DATADIR%%/skins/Boxer/styles/8 Arizona.jpg
-%%DATADIR%%/skins/Boxer/styles/8a Gradient Arizona.css
-%%DATADIR%%/skins/Boxer/styles/8a Gradient Arizona.jpg
-%%DATADIR%%/skins/Boxer/styles/highslide.inc
 %%DATADIR%%/skins/Chameleon/guestbook/guestbook.swf
 %%DATADIR%%/skins/Chameleon/guestbook/processXML.php
 %%DATADIR%%/skins/Chameleon/help.htt
@@ -1356,6 +1246,48 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/texts/texts_sv.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_uk.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_zh.properties
+%%DATADIR%%/skins/Galleria/headless-settings.jap
+%%DATADIR%%/skins/Galleria/hints.jap
+%%DATADIR%%/skins/Galleria/includes/additional_scripts.inc
+%%DATADIR%%/skins/Galleria/includes/additional_styles.inc
+%%DATADIR%%/skins/Galleria/includes/breadcrumbs.inc
+%%DATADIR%%/skins/Galleria/includes/caption.inc
+%%DATADIR%%/skins/Galleria/includes/footer.inc
+%%DATADIR%%/skins/Galleria/includes/header.inc
+%%DATADIR%%/skins/Galleria/includes/metadata.inc
+%%DATADIR%%/skins/Galleria/includes/paging.inc
+%%DATADIR%%/skins/Galleria/includes/single_image_metadata.inc
+%%DATADIR%%/skins/Galleria/index.htt
+%%DATADIR%%/skins/Galleria/init.bsh
+%%DATADIR%%/skins/Galleria/onload.bsh
+%%DATADIR%%/skins/Galleria/preview.jpg
+%%DATADIR%%/skins/Galleria/res/folder.png
+%%DATADIR%%/skins/Galleria/res/galleria/galleria.css
+%%DATADIR%%/skins/Galleria/res/galleria/jquery.galleria.js
+%%DATADIR%%/skins/Galleria/res/galleria/licence.txt
+%%DATADIR%%/skins/Galleria/res/index.css
+%%DATADIR%%/skins/Galleria/res/jquery.hotkeys.js
+%%DATADIR%%/skins/Galleria/res/jquery.js
+%%DATADIR%%/skins/Galleria/res/jquery.scrollimages.js
+%%DATADIR%%/skins/Galleria/skin.properties
+%%DATADIR%%/skins/Galleria/styles/Dark.css
+%%DATADIR%%/skins/Galleria/styles/Dark.jap
+%%DATADIR%%/skins/Galleria/styles/Dark.jpg
+%%DATADIR%%/skins/Galleria/styles/Dark/left-fast.png
+%%DATADIR%%/skins/Galleria/styles/Dark/left.png
+%%DATADIR%%/skins/Galleria/styles/Dark/loader.gif
+%%DATADIR%%/skins/Galleria/styles/Dark/right-fast.png
+%%DATADIR%%/skins/Galleria/styles/Dark/right.png
+%%DATADIR%%/skins/Galleria/styles/Light.css
+%%DATADIR%%/skins/Galleria/styles/Light.jap
+%%DATADIR%%/skins/Galleria/styles/Light.jpg
+%%DATADIR%%/skins/Galleria/styles/Light/left-fast.png
+%%DATADIR%%/skins/Galleria/styles/Light/left.png
+%%DATADIR%%/skins/Galleria/styles/Light/loader.gif
+%%DATADIR%%/skins/Galleria/styles/Light/right-fast.png
+%%DATADIR%%/skins/Galleria/styles/Light/right.png
+%%DATADIR%%/skins/Galleria/texts/texts.properties
+%%DATADIR%%/skins/Galleria/texts/texts_sv.properties
 %%DATADIR%%/skins/Minimal/index.htt
 %%DATADIR%%/skins/Minimal/onload.bsh
 %%DATADIR%%/skins/Minimal/preview.jpg
@@ -1386,7 +1318,6 @@ bin/jalbum
 %%DATADIR%%/skins/Simplicity/onload.bsh
 %%DATADIR%%/skins/Simplicity/preview.jpg
 %%DATADIR%%/skins/Simplicity/res/common.css
-%%DATADIR%%/skins/Simplicity/res/folder.gif
 %%DATADIR%%/skins/Simplicity/res/index.css
 %%DATADIR%%/skins/Simplicity/res/keyboard-navigation.js
 %%DATADIR%%/skins/Simplicity/res/slide.css
@@ -1464,97 +1395,37 @@ bin/jalbum
 %%DATADIR%%/skins/Spartan/init.bsh
 %%DATADIR%%/skins/Spartan/onload.bsh
 %%DATADIR%%/skins/Spartan/preview.jpg
+%%DATADIR%%/skins/Spartan/res/first.png
 %%DATADIR%%/skins/Spartan/res/folder.gif
 %%DATADIR%%/skins/Spartan/res/global.css
+%%DATADIR%%/skins/Spartan/res/index.png
+%%DATADIR%%/skins/Spartan/res/js/keyboard.js
+%%DATADIR%%/skins/Spartan/res/js/navIndex.js
+%%DATADIR%%/skins/Spartan/res/js/navSlide.js
+%%DATADIR%%/skins/Spartan/res/last.png
 %%DATADIR%%/skins/Spartan/res/movie.gif
+%%DATADIR%%/skins/Spartan/res/next.png
+%%DATADIR%%/skins/Spartan/res/next_disabled.png
+%%DATADIR%%/skins/Spartan/res/previous.png
+%%DATADIR%%/skins/Spartan/res/previous_disabled.png
+%%DATADIR%%/skins/Spartan/res/up.png
+%%DATADIR%%/skins/Spartan/setupIndex.js
+%%DATADIR%%/skins/Spartan/setupSlide.js
 %%DATADIR%%/skins/Spartan/skin.properties
 %%DATADIR%%/skins/Spartan/slide.htt
 %%DATADIR%%/skins/Spartan/styles/coal.css
 %%DATADIR%%/skins/Spartan/styles/coal.jpg
 %%DATADIR%%/skins/Spartan/styles/coal/bg.jpg
-%%DATADIR%%/skins/Spartan/styles/coal/first.png
-%%DATADIR%%/skins/Spartan/styles/coal/index.png
-%%DATADIR%%/skins/Spartan/styles/coal/last.png
-%%DATADIR%%/skins/Spartan/styles/coal/next.png
-%%DATADIR%%/skins/Spartan/styles/coal/next_disabled.png
-%%DATADIR%%/skins/Spartan/styles/coal/previous.png
-%%DATADIR%%/skins/Spartan/styles/coal/previous_disabled.png
-%%DATADIR%%/skins/Spartan/styles/coal/up.png
 %%DATADIR%%/skins/Spartan/styles/emerald.css
 %%DATADIR%%/skins/Spartan/styles/emerald.jpg
 %%DATADIR%%/skins/Spartan/styles/emerald/bg.jpg
-%%DATADIR%%/skins/Spartan/styles/emerald/first.png
-%%DATADIR%%/skins/Spartan/styles/emerald/index.png
-%%DATADIR%%/skins/Spartan/styles/emerald/last.png
-%%DATADIR%%/skins/Spartan/styles/emerald/next.png
-%%DATADIR%%/skins/Spartan/styles/emerald/next_disabled.png
-%%DATADIR%%/skins/Spartan/styles/emerald/previous.png
-%%DATADIR%%/skins/Spartan/styles/emerald/previous_disabled.png
-%%DATADIR%%/skins/Spartan/styles/emerald/up.png
+%%DATADIR%%/skins/Spartan/styles/ruby.css
+%%DATADIR%%/skins/Spartan/styles/ruby.jpg
+%%DATADIR%%/skins/Spartan/styles/ruby/bg.jpg
 %%DATADIR%%/skins/Spartan/styles/silver.css
 %%DATADIR%%/skins/Spartan/styles/silver.jpg
 %%DATADIR%%/skins/Spartan/styles/silver/bg.jpg
-%%DATADIR%%/skins/Spartan/styles/silver/first.png
-%%DATADIR%%/skins/Spartan/styles/silver/index.png
-%%DATADIR%%/skins/Spartan/styles/silver/last.png
-%%DATADIR%%/skins/Spartan/styles/silver/next.png
-%%DATADIR%%/skins/Spartan/styles/silver/next_disabled.png
-%%DATADIR%%/skins/Spartan/styles/silver/previous.png
-%%DATADIR%%/skins/Spartan/styles/silver/previous_disabled.png
-%%DATADIR%%/skins/Spartan/styles/silver/up.png
 %%DATADIR%%/skins/Spartan/texts/texts.properties
-%%DATADIR%%/skins/TiltViewer/NOTES.media_server
-%%DATADIR%%/skins/TiltViewer/README.txt
-%%DATADIR%%/skins/TiltViewer/blank.htt
-%%DATADIR%%/skins/TiltViewer/finally.bsh
-%%DATADIR%%/skins/TiltViewer/header.htt
-%%DATADIR%%/skins/TiltViewer/hier.htt
-%%DATADIR%%/skins/TiltViewer/hints.jap
-%%DATADIR%%/skins/TiltViewer/images.htt
-%%DATADIR%%/skins/TiltViewer/index.css.htt
-%%DATADIR%%/skins/TiltViewer/index.htt
-%%DATADIR%%/skins/TiltViewer/init.bsh
-%%DATADIR%%/skins/TiltViewer/menu.css.htt
-%%DATADIR%%/skins/TiltViewer/menu.htt
-%%DATADIR%%/skins/TiltViewer/menu.js.htt
-%%DATADIR%%/skins/TiltViewer/onload.bsh
-%%DATADIR%%/skins/TiltViewer/plugins/Constants.class
-%%DATADIR%%/skins/TiltViewer/plugins/ConstantsAbstract.class
-%%DATADIR%%/skins/TiltViewer/plugins/Macros.class
-%%DATADIR%%/skins/TiltViewer/plugins/MainSkin.class
-%%DATADIR%%/skins/TiltViewer/plugins/MySkin.class
-%%DATADIR%%/skins/TiltViewer/plugins/MySkinAbstract.class
-%%DATADIR%%/skins/TiltViewer/plugins/SkinControl.class
-%%DATADIR%%/skins/TiltViewer/plugins/SkinControlAbstract$1.class
-%%DATADIR%%/skins/TiltViewer/plugins/SkinControlAbstract$2.class
-%%DATADIR%%/skins/TiltViewer/plugins/SkinControlAbstract$3.class
-%%DATADIR%%/skins/TiltViewer/plugins/SkinControlAbstract$4.class
-%%DATADIR%%/skins/TiltViewer/plugins/SkinControlAbstract.class
-%%DATADIR%%/skins/TiltViewer/plugins/Version.class
-%%DATADIR%%/skins/TiltViewer/preview.jpg
-%%DATADIR%%/skins/TiltViewer/res/dtree.js
-%%DATADIR%%/skins/TiltViewer/res/folder.gif
-%%DATADIR%%/skins/TiltViewer/res/img/empty.gif
-%%DATADIR%%/skins/TiltViewer/res/img/get_flash_player.gif
-%%DATADIR%%/skins/TiltViewer/res/img/join.gif
-%%DATADIR%%/skins/TiltViewer/res/img/joinbottom.gif
-%%DATADIR%%/skins/TiltViewer/res/img/line.gif
-%%DATADIR%%/skins/TiltViewer/res/img/minus.gif
-%%DATADIR%%/skins/TiltViewer/res/img/minusbottom.gif
-%%DATADIR%%/skins/TiltViewer/res/img/nolines_minus.gif
-%%DATADIR%%/skins/TiltViewer/res/img/nolines_plus.gif
-%%DATADIR%%/skins/TiltViewer/res/img/plus.gif
-%%DATADIR%%/skins/TiltViewer/res/img/plusbottom.gif
-%%DATADIR%%/skins/TiltViewer/res/mootools.js
-%%DATADIR%%/skins/TiltViewer/res/mootools_tip.js
-%%DATADIR%%/skins/TiltViewer/res/swfobject.js
-%%DATADIR%%/skins/TiltViewer/res/viewer.swf
-%%DATADIR%%/skins/TiltViewer/slide.css.htt
-%%DATADIR%%/skins/TiltViewer/slide.htt
-%%DATADIR%%/skins/TiltViewer/slideskin.htt
-%%DATADIR%%/skins/TiltViewer/styles/style.css
-%%DATADIR%%/skins/TiltViewer/texts/texts.base.properties
-%%DATADIR%%/skins/TiltViewer/texts/texts.properties
 %%DATADIR%%/startjalbum.sh
 %%DATADIR%%/system/album.rss
 %%DATADIR%%/system/cameras.properties
@@ -1597,8 +1468,8 @@ bin/jalbum
 %%DATADIR%%/texts/texts_zh_CN.properties
 %%DATADIR%%/texts/texts_zh_TW.properties
 %%DATADIR%%/tools/Add JPEG comments.bsh
+%%DATADIR%%/tools/Apply ordering to subfolders.bsh
 %%DATADIR%%/tools/Batch rename files.bsh
-%%DATADIR%%/tools/Calculate album size.bsh
 %%DATADIR%%/tools/Convert upper case to lower case.bsh
 %%DATADIR%%/tools/Extract comments.bsh
 %%DATADIR%%/tools/Perform garbage collection.bsh
@@ -1611,17 +1482,13 @@ bin/jalbum
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/texts
 @dirrm %%DATADIR%%/system
-@dirrm %%DATADIR%%/skins/TiltViewer/texts
-@dirrm %%DATADIR%%/skins/TiltViewer/styles
-@dirrm %%DATADIR%%/skins/TiltViewer/res/img
-@dirrm %%DATADIR%%/skins/TiltViewer/res
-@dirrm %%DATADIR%%/skins/TiltViewer/plugins
-@dirrm %%DATADIR%%/skins/TiltViewer
 @dirrm %%DATADIR%%/skins/Spartan/texts
 @dirrm %%DATADIR%%/skins/Spartan/styles/silver
+@dirrm %%DATADIR%%/skins/Spartan/styles/ruby
 @dirrm %%DATADIR%%/skins/Spartan/styles/emerald
 @dirrm %%DATADIR%%/skins/Spartan/styles/coal
 @dirrm %%DATADIR%%/skins/Spartan/styles
+@dirrm %%DATADIR%%/skins/Spartan/res/js
 @dirrm %%DATADIR%%/skins/Spartan/res
 @dirrm %%DATADIR%%/skins/Spartan
 @dirrm %%DATADIR%%/skins/Simplicity/texts
@@ -1649,6 +1516,14 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Minimal/styles
 @dirrm %%DATADIR%%/skins/Minimal/res
 @dirrm %%DATADIR%%/skins/Minimal
+@dirrm %%DATADIR%%/skins/Galleria/texts
+@dirrm %%DATADIR%%/skins/Galleria/styles/Light
+@dirrm %%DATADIR%%/skins/Galleria/styles/Dark
+@dirrm %%DATADIR%%/skins/Galleria/styles
+@dirrm %%DATADIR%%/skins/Galleria/res/galleria
+@dirrm %%DATADIR%%/skins/Galleria/res
+@dirrm %%DATADIR%%/skins/Galleria/includes
+@dirrm %%DATADIR%%/skins/Galleria
 @dirrm %%DATADIR%%/skins/Chameleon/texts
 @dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow
 @dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Violet
@@ -1726,13 +1601,6 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Chameleon/help
 @dirrm %%DATADIR%%/skins/Chameleon/guestbook
 @dirrm %%DATADIR%%/skins/Chameleon
-@dirrm %%DATADIR%%/skins/Boxer/styles
-@dirrm %%DATADIR%%/skins/Boxer/scripts
-@dirrm %%DATADIR%%/skins/Boxer/res/graphics/outlines
-@dirrm %%DATADIR%%/skins/Boxer/res/graphics
-@dirrm %%DATADIR%%/skins/Boxer/res
-@dirrm %%DATADIR%%/skins/Boxer/examples
-@dirrm %%DATADIR%%/skins/Boxer
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/res
 @dirrm %%DATADIR%%/plugins
@@ -1748,5 +1616,10 @@ bin/jalbum
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/includes
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/ext/JalbumFilters/net/jalbum/filters/texts
+@dirrm %%DATADIR%%/ext/JalbumFilters/net/jalbum/filters
+@dirrm %%DATADIR%%/ext/JalbumFilters/net/jalbum
+@dirrm %%DATADIR%%/ext/JalbumFilters/net
+@dirrm %%DATADIR%%/ext/JalbumFilters
 @dirrm %%DATADIR%%/ext
 @dirrm %%DATADIR%%
