@@ -46,7 +46,5 @@ etc/wgetrc.sample
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en_AU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_AU
 %%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en_US
