@@ -73,6 +73,7 @@ include/gnash/Event_as.h
 include/gnash/ExportableResource.h
 include/gnash/ExternalInterface_as.h
 include/gnash/FileFilter_as.h
+include/gnash/FileTypes.h
 include/gnash/FocusEvent_as.h
 include/gnash/FontStyle_as.h
 include/gnash/FontType_as.h
@@ -115,6 +116,7 @@ include/gnash/KeyLocation_as.h
 include/gnash/KeyboardEvent_as.h
 include/gnash/Keyboard_as.h
 include/gnash/LineScaleMode_as.h
+include/gnash/LineStyle.h
 include/gnash/LoaderContext_as.h
 include/gnash/LoaderInfo_as.h
 include/gnash/Loader_as.h
@@ -139,6 +141,7 @@ include/gnash/NetStream_as.h
 include/gnash/NetworkAdapter.h
 include/gnash/NewObjectSample_as.h
 include/gnash/ObjectEncoding_as.h
+include/gnash/ObjectURI.h
 include/gnash/PixelSnapping_as.h
 include/gnash/Point2d.h
 include/gnash/Point_as.h
@@ -153,10 +156,12 @@ include/gnash/Proxy_as.h
 include/gnash/RGBA.h
 include/gnash/Range2d.h
 include/gnash/Rectangle_as.h
+include/gnash/Relay.h
 include/gnash/Responder_as.h
 include/gnash/RunResources.h
 include/gnash/SWF.h
 include/gnash/SWFMatrix.h
+include/gnash/SWFRect.h
 include/gnash/SWFVersion_as.h
 include/gnash/SafeStack.h
 include/gnash/Sample_as.h
@@ -221,8 +226,6 @@ include/gnash/Video_as.h
 include/gnash/XMLDocument_as.h
 include/gnash/XMLNode_as.h
 include/gnash/XMLSocket_as.h
-include/gnash/asClass.h
-include/gnash/asNamespace.h
 include/gnash/as_environment.h
 include/gnash/as_function.h
 include/gnash/as_object.h
@@ -246,12 +249,10 @@ include/gnash/movie_root.h
 include/gnash/namedStrings.h
 include/gnash/net_pkg.h
 include/gnash/rc.h
-include/gnash/rect.h
 include/gnash/ref_counted.h
 include/gnash/smart_ptr.h
 include/gnash/snappingrange.h
 include/gnash/string_table.h
-include/gnash/styles.h
 include/gnash/text_pkg.h
 include/gnash/utility.h
 %%KPARTS%%lib/kde3/libklashpart.so
@@ -275,6 +276,9 @@ etc/gnashrc.dist
 lib/gnash/libgnashamf-%%GNASHVER%%.so
 lib/gnash/libgnashamf.la
 lib/gnash/libgnashamf.so
+%%AGG%%lib/gnash/libgnashagg.la
+%%AGG%%lib/gnash/libgnashagg.so
+%%AGG%%lib/gnash/libgnashagg.so.0
 lib/gnash/libgnashbase-%%GNASHVER%%.so
 lib/gnash/libgnashbase.la
 lib/gnash/libgnashbase.so

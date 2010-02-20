@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	graphics
 # getgnash.org is slow
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -39,7 +38,7 @@ MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--disable-testsuite \
+		--disable-testsuite --enable-avm2 \
 		--with-plugins-install=system \
 		--sysconfdir="${WRKDIR}/etc" \
 		--disable-jemalloc # leads to infinite recursion on FreeBSD
@@ -52,7 +51,9 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-MAN1=		cygnal.1 dumpshm.1 flvdumper.1 gnash.1 gprocessor.1 soldumper.1 rtmpget.1
+MAN1=		cygnal.1 dumpshm.1 findmicrophones.1 findwebcams.1 \
+		flvdumper.1 gnash.1 gprocessor.1 gtk-gnash.1 kde4-gnash.1 \
+		rtmpget.1 soldumper.1
 
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
@@ -168,7 +169,9 @@ CONFIGURE_ARGS+=	--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 .if defined(WITH_AGG) && !defined(WITH_OPENGL) && !defined(WITH_CAIRO)
 LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
 CONFIGURE_ARGS+=	--enable-renderer=agg
+PLIST_SUB+=		AGG=""
 .elif !defined(WITH_AGG) && defined(WITH_OPENGL) && !defined(WITH_CAIRO)
+PLIST_SUB+=		AGG="@comment "
 .	if defined(WITH_KDE4)
 IGNORE=			doesn't support OpenGL renderer with KDE4 gui yet. Please rerun 'make config' and select different renderer or disable KDE4 GUI
 .	endif
@@ -178,6 +181,7 @@ LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 .	endif
 CONFIGURE_ARGS+=	--enable-renderer=ogl
 .elif !defined(WITH_AGG) && !defined(WITH_OPENGL) && defined(WITH_CAIRO)
+PLIST_SUB+=		AGG="@comment "
 .	if defined(WITH_KDE) || defined(WITH_KDE4)
 IGNORE=			doesn't support Cairo renderer with KDE/KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE/KDE4 GUIs
 .	endif
@@ -239,6 +243,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/ s|libdir)|exec_prefix)/libdata|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^man1dir =/ s|=.*|= ${MAN1PREFIX}/man/man1|' \
+		${WRKSRC}/doc/C/Makefile.in
 
 post-install:
 .for conf in ${CONFIG_FILES}
