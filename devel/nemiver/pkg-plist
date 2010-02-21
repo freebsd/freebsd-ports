@@ -31,6 +31,7 @@ include/nemiver/common/nmv-safe-ptr.h
 include/nemiver/common/nmv-scope-logger.h
 include/nemiver/common/nmv-sequence.h
 include/nemiver/common/nmv-sql-statement.h
+include/nemiver/common/nmv-str-utils.h
 include/nemiver/common/nmv-tools.h
 include/nemiver/common/nmv-transaction.h
 include/nemiver/common/nmv-ustring.h
@@ -50,6 +51,7 @@ lib/nemiver/config/gdbengine.conf
 lib/nemiver/config/org.nemiver.db.sqlitedriver.conf
 lib/nemiver/config/varlist.conf
 lib/nemiver/config/varlistwalker.conf
+lib/nemiver/config/varobjwalker.conf
 lib/nemiver/config/varwalker.conf
 lib/nemiver/config/workbench.conf
 lib/nemiver/libnemivercommon.a
@@ -73,6 +75,9 @@ lib/nemiver/modules/libvarlistmod.so
 lib/nemiver/modules/libvarlistwalkermod.a
 lib/nemiver/modules/libvarlistwalkermod.la
 lib/nemiver/modules/libvarlistwalkermod.so
+lib/nemiver/modules/libvarobjwalkermod.a
+lib/nemiver/modules/libvarobjwalkermod.la
+lib/nemiver/modules/libvarobjwalkermod.so
 lib/nemiver/modules/libvarwalkermod.a
 lib/nemiver/modules/libvarwalkermod.la
 lib/nemiver/modules/libvarwalkermod.so
@@ -95,6 +100,7 @@ lib/nemiver/plugins/dbgperspective/glade/runprogramdialog.glade
 lib/nemiver/plugins/dbgperspective/glade/savedsessionsdialog.glade
 lib/nemiver/plugins/dbgperspective/glade/setbreakpointdialog.glade
 lib/nemiver/plugins/dbgperspective/glade/varinspectordialog.glade
+lib/nemiver/plugins/dbgperspective/glade/watchpointdialog.glade
 lib/nemiver/plugins/dbgperspective/icons/breakpoint-disabled-marker.png
 lib/nemiver/plugins/dbgperspective/icons/breakpoint-marker.png
 lib/nemiver/plugins/dbgperspective/icons/line-pointer.png
@@ -110,6 +116,8 @@ lib/nemiver/plugins/dbgperspective/libdbgperspectiveplugin.so
 lib/nemiver/plugins/dbgperspective/menus/breakpointspopup.xml
 lib/nemiver/plugins/dbgperspective/menus/callstackpopup.xml
 lib/nemiver/plugins/dbgperspective/menus/contextualmenu.xml
+lib/nemiver/plugins/dbgperspective/menus/localvarsinspectorpopup.todelete.xml
+lib/nemiver/plugins/dbgperspective/menus/localvarsinspectorpopup.xml
 lib/nemiver/plugins/dbgperspective/menus/memoryview-menu.xml
 lib/nemiver/plugins/dbgperspective/menus/menus.xml
 lib/nemiver/plugins/dbgperspective/menus/toolbar.xml
@@ -134,6 +142,22 @@ share/gnome/help/nemiver/C/figures/set-breakpoint-dialog.png
 share/gnome/help/nemiver/C/figures/variable-inspector.png
 share/gnome/help/nemiver/C/legal.xml
 share/gnome/help/nemiver/C/nemiver.xml
+share/gnome/help/nemiver/de/figures/attach-dialog.png
+share/gnome/help/nemiver/de/figures/connect-remote-dialog.png
+share/gnome/help/nemiver/de/figures/disabled-breakpoint.png
+share/gnome/help/nemiver/de/figures/enabled-breakpoint.png
+share/gnome/help/nemiver/de/figures/execute-dialog.png
+share/gnome/help/nemiver/de/figures/global-variables-dialog.png
+share/gnome/help/nemiver/de/figures/load-core-dialog.png
+share/gnome/help/nemiver/de/figures/main-window.png
+share/gnome/help/nemiver/de/figures/memory-view.png
+share/gnome/help/nemiver/de/figures/open-files-target.png
+share/gnome/help/nemiver/de/figures/registers-view.png
+share/gnome/help/nemiver/de/figures/sessions-dialog.png
+share/gnome/help/nemiver/de/figures/set-breakpoint-dialog.png
+share/gnome/help/nemiver/de/figures/variable-inspector.png
+share/gnome/help/nemiver/de/legal.xml
+share/gnome/help/nemiver/de/nemiver.xml
 share/gnome/help/nemiver/es/figures/attach-dialog.png
 share/gnome/help/nemiver/es/figures/connect-remote-dialog.png
 share/gnome/help/nemiver/es/figures/disabled-breakpoint.png
@@ -203,6 +227,7 @@ share/locale/oc/LC_MESSAGES/nemiver.mo
 share/locale/pt_BR/LC_MESSAGES/nemiver.mo
 share/locale/sv/LC_MESSAGES/nemiver.mo
 share/locale/th/LC_MESSAGES/nemiver.mo
+share/omf/nemiver/nemiver-de.omf
 %%DATADIR%%/glade/workbench.glade
 %%DATADIR%%/menus/menubar.xml
 share/omf/nemiver/nemiver-C.omf
@@ -219,6 +244,8 @@ share/omf/nemiver/nemiver-sv.omf
 @dirrmtry share/gnome/help/nemiver/oc
 @dirrmtry share/gnome/help/nemiver/es/figures
 @dirrmtry share/gnome/help/nemiver/es
+@dirrmtry share/gnome/help/nemiver/de/figures
+@dirrmtry share/gnome/help/nemiver/de
 @dirrmtry share/gnome/help/nemiver/C/figures
 @dirrmtry share/gnome/help/nemiver/C
 @dirrmtry share/gnome/help/nemiver
