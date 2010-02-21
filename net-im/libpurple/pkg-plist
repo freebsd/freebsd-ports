@@ -199,6 +199,7 @@ share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/mn/LC_MESSAGES/pidgin.mo
+share/locale/mr/LC_MESSAGES/pidgin.mo
 share/locale/ms_MY/LC_MESSAGES/pidgin.mo
 share/locale/my_MM/LC_MESSAGES/pidgin.mo
 share/locale/nb/LC_MESSAGES/pidgin.mo
@@ -206,6 +207,7 @@ share/locale/ne/LC_MESSAGES/pidgin.mo
 share/locale/nl/LC_MESSAGES/pidgin.mo
 share/locale/nn/LC_MESSAGES/pidgin.mo
 share/locale/oc/LC_MESSAGES/pidgin.mo
+share/locale/or/LC_MESSAGES/pidgin.mo
 share/locale/pa/LC_MESSAGES/pidgin.mo
 share/locale/pl/LC_MESSAGES/pidgin.mo
 share/locale/ps/LC_MESSAGES/pidgin.mo
@@ -282,6 +284,8 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/my_MM
 @dirrmtry share/locale/ms_MY/LC_MESSAGES
 @dirrmtry share/locale/ms_MY
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/lo/LC_MESSAGES
 @dirrmtry share/locale/lo
 @dirrmtry share/locale/ku/LC_MESSAGES
