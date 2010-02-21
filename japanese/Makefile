@@ -90,6 +90,7 @@
     SUBDIR += fumeikai-fpw
     SUBDIR += gawk
     SUBDIR += gd
+    SUBDIR += gedy
     SUBDIR += gicq
     SUBDIR += gorua
     SUBDIR += gqmpeg
