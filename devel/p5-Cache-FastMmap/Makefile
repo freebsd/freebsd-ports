@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	Cache-FastMmap
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Uses an mmap'ed file to act as a shared memory interprocess cache
-
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
