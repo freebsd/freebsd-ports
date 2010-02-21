@@ -1,0 +1,4 @@
+FeliCa read/write library for Sony RC-S320 USB FeliCa R/W(PaSoRi).
+This library is independent from the SDK for FeliCa.
+
+WWW: http://homepage3.nifty.com/slokar/pasori/libpafe.html

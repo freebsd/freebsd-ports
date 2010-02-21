@@ -776,6 +776,7 @@
     SUBDIR += libopensync022
     SUBDIR += libopkele
     SUBDIR += libowfat
+    SUBDIR += libpafe
     SUBDIR += libpasori
     SUBDIR += libpci
     SUBDIR += libpciaccess
