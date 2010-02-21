@@ -19,7 +19,7 @@ COMMENT=	A movie player for AVI, MPEG-2/4 and MOV movies
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 EXTRACT_CMD=	rpm2cpio
