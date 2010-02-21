@@ -777,6 +777,7 @@
     SUBDIR += libopkele
     SUBDIR += libowfat
     SUBDIR += libpafe
+    SUBDIR += libpafe-ruby
     SUBDIR += libpasori
     SUBDIR += libpci
     SUBDIR += libpciaccess
