@@ -1,0 +1,24 @@
+$FreeBSD$
+
+--- ../../j2se/make/common/Defs-bsd.gmk	2010-02-14 14:16:23.000000000 -0800
++++ ../../j2se/make/common/Defs-bsd.gmk	2010-02-14 14:19:21.000000000 -0800
+@@ -420,9 +420,19 @@
+ override HAVE_GETHRVTIME         = false
+ ifeq ($(TRUE_PLATFORM), NetBSD)
+ override HAVE_SIGIGNORE          = true
++endif
++ifeq ($(TRUE_PLATFORM),FreeBSD)
++OS_RELDATE := $(shell sysctl kern.osreldate | cut -d' ' -f2)
++HAS_SIGIGNORE := $(shell if [ $(OS_RELDATE) -ge 800502 -a $(OS_RELDATE) -lt 900000 -o $(OS_RELDATE) -ge 900003 ]; then echo "1"; fi)
++ifeq ($(HAS_SIGIGNORE),1)
++override HAVE_SIGIGNORE          = true
+ else
+ override HAVE_SIGIGNORE          = false
+ endif
++endif
++ifeq ($(TRUE_PLATFORM), OpenBSD)
++override HAVE_SIGIGNORE          = false
++endif
+ override LEX_LIBRARY             = -lfl
+ ifeq ($(STATIC_CXX),true)
+ override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
