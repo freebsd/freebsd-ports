@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/bindings/java/
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
+USE_PERL5_BUILD=yes
+USE_LDCONFIG=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/include ${PREFIX}/lib ${JAVAJARDIR}
