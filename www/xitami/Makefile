@@ -8,7 +8,7 @@
 PORTNAME=	xitami
 PORTVERSION=	2.5c2
 CATEGORIES=	www
-MASTER_SITES=	http://www.xitami.com/
+MASTER_SITES=	http://legacy.xitami.com/
 DISTNAME=	xiopen_2_5_src
 
 MAINTAINER=	ports@FreeBSD.org
