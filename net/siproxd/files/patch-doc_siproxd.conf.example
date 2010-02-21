@@ -1,5 +1,5 @@
---- doc/siproxd.conf.example.orig	2008-05-17 17:56:11.000000000 +0200
-+++ doc/siproxd.conf.example	2008-09-23 12:03:33.000000000 +0200
+--- doc/siproxd.conf.example.orig	2010-01-24 17:18:04.000000000 +0100
++++ doc/siproxd.conf.example	2010-01-24 17:21:34.000000000 +0100
 @@ -17,8 +17,8 @@
  #    or a hostname that resolves to that address (use a dyndns address for
  #    example).
@@ -38,12 +38,12 @@
  
  ######################################################################
  # global switch to control the RTP proxy behaviour
-@@ -286,7 +286,7 @@
+@@ -292,7 +292,7 @@
  # the processing order is given by the load order.
  #
  # plugin_dir: MUST be terminated with '/'
--plugindir=/home/hb9xar/src/siproxd/src/.libs/
+-plugindir=/usr/lib/siproxd/
 +plugindir=%%PREFIX%%/lib/siproxd/
  #
- # List of plugins to load:
- #load_plugin=plugin_demo.so
+ # List of plugins to load. MUST use the .la file extension!
+ #load_plugin=plugin_demo.la

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	siproxd
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	osip2.6:${PORTSDIR}/net/libosip
 
 USE_RC_SUBR=	siproxd.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libosip-prefix=${PREFIX}
+CONFIGURE_ARGS=	--disable-doc --with-libosip-prefix=${PREFIX}
 
 PORTDOCS1=	AUTHORS ChangeLog README RELNOTES
 PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
@@ -28,22 +27,26 @@ PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-lgnugetopt,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.if !defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's,-lgnugetopt,,g ; 24600d ; 23998s,doc/Makefile ,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 	${WRKSRC}/doc/siproxd.conf.example
-.endif
+	${REINPLACE_CMD} -e '22s,doc ,,' ${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e '212s,doc ,,' ${WRKSRC}/Makefile.in
+
+post-extract:
+.for docs in ${PORTDOCS2}
+	${CP} ${WRKSRC}/doc/${docs} ${WRKSRC}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS1}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.for i in ${PORTDOCS2}
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 .endif
+	${CP} ${WRKSRC}/doc/siproxd.conf.example ${PREFIX}/etc
+	${CP} ${WRKSRC}/doc/siproxd_passwd.cfg ${PREFIX}/etc
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
