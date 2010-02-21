@@ -7,7 +7,7 @@
 
 PORTNAME=	nrg
 PORTVERSION=	0.99.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/ \
 		http://www.ranner.jawa.at/stuff/
@@ -16,8 +16,9 @@ MAINTAINER=	michael@ranner.eu
 COMMENT=	Tool for visualizing network and resource utilization data
 
 BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
-		${LOCALBASE}/bin/snmpget:${PORTSDIR}/net-mgmt/net-snmp4
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${LOCALBASE}/bin/snmpget:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
+		${LOCALBASE}/bin/snmpget:${PORTSDIR}/net-mgmt/net-snmp \
 		${SITE_PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 NRG_WEB_PREFIX?=	${PREFIX}/www/data
