@@ -7,7 +7,7 @@
 
 PORTNAME=	openerp-server
 PORTVERSION=	5.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imag
 		${PYTHON_PKGNAMEPREFIX}pydot>0:${PORTSDIR}/graphics/py-pydot \
 		${PYTHON_PKGNAMEPREFIX}libxslt>0:${PORTSDIR}/textproc/py-libxslt \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}xml>0:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
