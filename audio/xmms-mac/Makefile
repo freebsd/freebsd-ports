@@ -6,14 +6,18 @@
 
 PORTNAME=	mac
 PORTVERSION=	0.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
-MASTER_SITES=	CENKES
+MASTER_SITES=	http://repository.slacky.eu/slackware-12.2/multimedia/${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION}/src/ \
+		http://ftp.hosteurope.de/mirror/ftp.frugalware.org/pub/frugalware/frugalware-testing/source/xlib-extra/${PKGNAMEPREFIX}${PORTNAME}/ \
+		http://ftp.yz.yamagata-u.ac.jp/pub/linux/plamo/Plamo-src/contrib/Sound/MAC/ \
+		http://www10.frugalware.org/pub/linux/frugalware/frugalware-current/source/xlib-extra/${PKGNAMEPREFIX}${PORTNAME}/ \
+		CENKES
 PKGNAMEPREFIX=	xmms-
-DISTNAME=	xmms-${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	arundel@h3c.de
-COMMENT=	Monkey's Audio Codec non-win32 port
+MAINTAINER=	alexbestms@wwu.de
+COMMENT=	Native Monkey Audio Codec plugin for the XMMS1 Multimedia Player
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		mac.2:${PORTSDIR}/audio/mac
