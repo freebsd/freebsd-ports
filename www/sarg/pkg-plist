@@ -12,7 +12,6 @@ etc/sarg/images/datetime.png
 etc/sarg/images/graph.png
 etc/sarg/images/sarg-squidguard-block.png
 etc/sarg/images/sarg.png
-etc/sarg/languages/.new
 etc/sarg/languages/Bulgarian_windows1251
 etc/sarg/languages/Catalan
 etc/sarg/languages/Czech
@@ -28,6 +27,7 @@ etc/sarg/languages/Italian
 etc/sarg/languages/Japanese
 etc/sarg/languages/Latvian
 etc/sarg/languages/Polish
+etc/sarg/languages/Polish_windows1250
 etc/sarg/languages/Portuguese
 etc/sarg/languages/Romanian
 etc/sarg/languages/Russian_UTF-8
