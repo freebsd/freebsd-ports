@@ -148,6 +148,7 @@ lib/libntl.a
 %%PORTDOCS%%%%DOCSDIR%%/tour-ex5.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-ex6.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-examples.html
+%%PORTDOCS%%%%DOCSDIR%%/tour-gf2x.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-gmp.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-impl.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-intro.html
@@ -156,6 +157,7 @@ lib/libntl.a
 %%PORTDOCS%%%%DOCSDIR%%/tour-stdcxx.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-struct.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-time.html
+%%PORTDOCS%%%%DOCSDIR%%/tour-tips.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-unix.html
 %%PORTDOCS%%%%DOCSDIR%%/tour-win.html
 %%PORTDOCS%%%%DOCSDIR%%/tour.html
