@@ -7,12 +7,9 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.4.10
+PORTVERSION=	3.4.11
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://icculus.org/${PORTNAME}/releases/ \
-		http://offload1.icculus.org:9090/openbox/releases/ \
-		http://offload2.icculus.org:9090/openbox/releases/ \
-		http://offload3.icculus.org:9090/openbox/releases/ \
+MASTER_SITES=	http://openbox.org/dist/openbox/ \
 		http://dougbarton.us/Downloads/
 
 MAINTAINER=	novel@FreeBSD.org
@@ -27,7 +24,7 @@ USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS+="-L${LOCALBASE}/lib"
-MAN1=		openbox.1 openbox-session.1 \
+MAN1=		openbox.1 openbox-session.1 obxprop.1 \
 		openbox-gnome-session.1 openbox-kde-session.1
 
 .if !defined(WITHOUT_NLS)

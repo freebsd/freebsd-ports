@@ -8,17 +8,17 @@ bin/openbox-session
 etc/xdg/openbox/autostart.sh
 etc/xdg/openbox/menu.xml
 etc/xdg/openbox/rc.xml
-include/openbox/3.4/openbox/color.h
-include/openbox/3.4/openbox/font.h
-include/openbox/3.4/openbox/geom.h
-include/openbox/3.4/openbox/gradient.h
-include/openbox/3.4/openbox/image.h
-include/openbox/3.4/openbox/instance.h
-include/openbox/3.4/openbox/mask.h
-include/openbox/3.4/openbox/parse.h
-include/openbox/3.4/openbox/render.h
-include/openbox/3.4/openbox/theme.h
-include/openbox/3.4/openbox/version.h
+include/openbox/3.4.11/openbox/color.h
+include/openbox/3.4.11/openbox/font.h
+include/openbox/3.4.11/openbox/geom.h
+include/openbox/3.4.11/openbox/gradient.h
+include/openbox/3.4.11/openbox/image.h
+include/openbox/3.4.11/openbox/instance.h
+include/openbox/3.4.11/openbox/mask.h
+include/openbox/3.4.11/openbox/parse.h
+include/openbox/3.4.11/openbox/render.h
+include/openbox/3.4.11/openbox/theme.h
+include/openbox/3.4.11/openbox/version.h
 lib/libobparser.a
 lib/libobparser.la
 lib/libobparser.so
@@ -162,8 +162,8 @@ share/xsessions/openbox-kde.desktop
 @dirrmtry share/gnome/wm-properties
 @dirrmtry share/gnome
 @dirrmtry libdata/pkgconfig
-@dirrm include/openbox/3.4/openbox
-@dirrm include/openbox/3.4
+@dirrm include/openbox/3.4.11/openbox
+@dirrm include/openbox/3.4.11
 @dirrm include/openbox
 @dirrm lib/openbox
 @dirrm etc/xdg/openbox
