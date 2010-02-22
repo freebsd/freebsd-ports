@@ -7,7 +7,7 @@
 
 PORTNAME=	gltron
 PORTVERSION=	0.70
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 EXTRACT_SUFX=	-source.tar.gz
@@ -26,6 +26,17 @@ CONFIGURE_ARGS=	--disable-warn
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+OPTIONS=	SDL_NET "With network support" off
+
+DESKTOP_ENTRIES=	"GLtron" \
+	"3D lightcycle game" \
+	"${DATADIR}/art/default/gltron.png" \
+	"gltron" \
+	"Game;ArcadeGame;" \
+	false
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_SDL_NET)
 USE_SDL+=	net
