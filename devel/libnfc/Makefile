@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnfc
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
     		http://romain.blogreen.org/distfiles/
@@ -14,8 +14,8 @@ MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Near Field Communication (NFC) library
 
-LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-RUN_DEPENDS=	RSA_SecurID_getpasswd:${PORTSDIR}/devel/libccid
+OPTIONS=	PCSC "Compile with PC/SC Lite support" on \
+		USB  "Compile with libusb support" on
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -27,10 +27,29 @@ MAN1=		nfc-mfclassic.1 nfc-emulate.1 nfc-list.1 nfc-mfultralight.1 \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_PCSC)
+LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+RUN_DEPENDS+=	RSA_SecurID_getpasswd:${PORTSDIR}/devel/libccid
+CONFIGURE_ARGS+=--enable-pcsc-lite
+.else
+CONFIGURE_ARGS+=--disable-pcsc-lite
+.endif
+
+.if defined(WITH_USB)
+CONFIGURE_ARGS+=--enable-libusb
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+.endif
+.else
+CONFIGURE_ARGS+=--disable-libusb
+.endif
+
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/pn53x.conf ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
