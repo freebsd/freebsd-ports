@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	ttytter
-PORTVERSION=	0.9.11
+PORTVERSION=	1.0.0
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.floodgap.com/software/ttytter/
-DISTFILES=	${PORTNAME}.txt
+MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist1/
+DISTFILES=	1.0.00.txt
 EXTRACT_ONLY=
 
 MAINTAINER=	jdunn@aquezada.com
@@ -32,12 +32,12 @@ RUN_DEPENDS+=	${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-P
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${PORTNAME}.txt  ${WRKSRC}/${PORTNAME}
+	@${CP} ${DISTDIR}/${DISTFILES}  ${WRKSRC}/${PORTNAME}-${PORTVERSION}.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/${PORTNAME}-${PORTVERSION}.txt
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.txt ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
