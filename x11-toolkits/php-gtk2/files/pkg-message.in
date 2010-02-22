@@ -1,0 +1,8 @@
+*****************************************************************************
+
+The following line has been added to your %%LOCALBASE%%/etc/php/extensions.ini
+configuration file to automatically load the installed extension:
+
+extension=php_gtk2.so
+
+*****************************************************************************

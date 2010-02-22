@@ -199,6 +199,7 @@
     SUBDIR += paragui-devel
     SUBDIR += phat
     SUBDIR += php-gtk
+    SUBDIR += php-gtk2
     SUBDIR += plib
     SUBDIR += py-Pmw
     SUBDIR += py-SciParam
