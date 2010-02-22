@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTVERSION=	1.9.9
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -29,13 +28,13 @@ QMAKE_ARGS=	PREFIX=${PREFIX} ICONDIR=${PREFIX}/share/pixmaps \
 		DESKTOPDIR=${DESKTOPDIR} -unix
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	XDVI "view dvi with xdvi" On \
-		GV "view ps with gv" On \
-		XPDF "view pdf with xpdf" On
+OPTIONS=	XDVI "view dvi with xdvi" Off \
+		GV "view ps with gv" Off \
+		XPDF "view pdf with xpdf" Off
 
 STRIP_FILES=	bin/texmaker
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_XDVI)
 RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
@@ -51,13 +50,9 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKE_ARGS} texmaker.pro
-
-post-configure:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
+		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS} texmaker.pro
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
