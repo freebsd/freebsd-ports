@@ -41,6 +41,7 @@
     SUBDIR += pathload
     SUBDIR += pathrate
     SUBDIR += pear-Benchmark
+    SUBDIR += phoronix-test-suite
     SUBDIR += pipebench
     SUBDIR += pnetmark
     SUBDIR += polygraph
