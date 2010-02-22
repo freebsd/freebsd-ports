@@ -981,20 +981,41 @@
 %%WWWDIR%%/script/process/spinner
 %%WWWDIR%%/script/runner
 %%WWWDIR%%/script/server
+%%WWWDIR%%/test/exemplars/attachment_exemplar.rb
+%%WWWDIR%%/test/exemplars/auth_source_exemplar.rb
+%%WWWDIR%%/test/exemplars/board_exemplar.rb
+%%WWWDIR%%/test/exemplars/change_exemplar.rb
+%%WWWDIR%%/test/exemplars/changeset_exemplar.rb
+%%WWWDIR%%/test/exemplars/comment_exemplar.rb
 %%WWWDIR%%/test/exemplars/custom_field_exemplar.rb
 %%WWWDIR%%/test/exemplars/custom_value_exemplar.rb
+%%WWWDIR%%/test/exemplars/document_exemplar.rb
+%%WWWDIR%%/test/exemplars/enabled_module_exemplar.rb
 %%WWWDIR%%/test/exemplars/enumeration_exemplar.rb
+%%WWWDIR%%/test/exemplars/group_exemplar.rb
+%%WWWDIR%%/test/exemplars/issue_category_exemplar.rb
 %%WWWDIR%%/test/exemplars/issue_exemplar.rb
 %%WWWDIR%%/test/exemplars/issue_status_exemplar.rb
+%%WWWDIR%%/test/exemplars/journal_exemplar.rb
 %%WWWDIR%%/test/exemplars/member_exemplar.rb
+%%WWWDIR%%/test/exemplars/member_role_exemplar.rb
+%%WWWDIR%%/test/exemplars/message_exemplar.rb
+%%WWWDIR%%/test/exemplars/news_exemplar.rb
 %%WWWDIR%%/test/exemplars/project_exemplar.rb
 %%WWWDIR%%/test/exemplars/query_exemplar.rb
+%%WWWDIR%%/test/exemplars/repository_exemplar.rb
 %%WWWDIR%%/test/exemplars/role_exemplar.rb
+%%WWWDIR%%/test/exemplars/subversion_repository_exemplar.rb
 %%WWWDIR%%/test/exemplars/time_entry_activity.rb
 %%WWWDIR%%/test/exemplars/time_entry_exemplar.rb
 %%WWWDIR%%/test/exemplars/tracker_exemplar.rb
 %%WWWDIR%%/test/exemplars/user_exemplar.rb
 %%WWWDIR%%/test/exemplars/version_exemplar.rb
+%%WWWDIR%%/test/exemplars/watcher_exemplar.rb
+%%WWWDIR%%/test/exemplars/wiki_content_exemplar.rb
+%%WWWDIR%%/test/exemplars/wiki_exemplar.rb
+%%WWWDIR%%/test/exemplars/wiki_page_exemplar.rb
+%%WWWDIR%%/test/exemplars/wiki_redirect_exemplar.rb
 %%WWWDIR%%/test/fixtures/attachments.yml
 %%WWWDIR%%/test/fixtures/auth_sources.yml
 %%WWWDIR%%/test/fixtures/boards.yml
@@ -1167,6 +1188,7 @@
 %%WWWDIR%%/test/unit/message_test.rb
 %%WWWDIR%%/test/unit/news_test.rb
 %%WWWDIR%%/test/unit/principal_test.rb
+%%WWWDIR%%/test/unit/project_nested_set_test.rb
 %%WWWDIR%%/test/unit/project_test.rb
 %%WWWDIR%%/test/unit/query_test.rb
 %%WWWDIR%%/test/unit/repository_bazaar_test.rb
@@ -3572,7 +3594,7 @@
 @dirrm %%WWWDIR%%/tmp/sockets
 @dirrmtry %%WWWDIR%%/tmp/sessions
 @dirrmtry %%WWWDIR%%/tmp/pids
-@dirrm %%WWWDIR%%/tmp/cache
+@dirrmtry %%WWWDIR%%/tmp/cache
 @dirrmtry %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/test/unit/lib/redmine/wiki_formatting
 @dirrm %%WWWDIR%%/test/unit/lib/redmine/menu_manager

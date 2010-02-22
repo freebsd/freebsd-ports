@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redmine
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,9 +39,7 @@ do-install:
 	${MKDIR} ${WWWDIR}/public/plugin_assets
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
-.for f in files log tmp public/plugin_assets
-	${CHMOD} -R 755 ${WWWDIR}/${f}
-.endfor
+	${FIND} ${WWWDIR}/script -type f -exec ${CHMOD} 755 {} \;
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
