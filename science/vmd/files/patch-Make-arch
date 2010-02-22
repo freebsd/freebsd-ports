@@ -1,22 +1,24 @@
 --- Make-arch.orig	Mon Feb  7 13:09:55 2005
 +++ ../plugins/Make-arch	Fri Mar 25 16:54:01 2005
-@@ -9,6 +9,7 @@
- 	@echo "--------------------------------------"
- 	@echo " AIX4"
+@@ -12,6 +12,7 @@
+ 	@echo " AIX5_64"
+ 	@echo " AIX6_64"
  	@echo " FREEBSD"
 +	@echo " FREEBSDAMD64"
  	@echo " HPUX11"
  	@echo " IRIX6"
  	@echo " IRIX6_64"
-@@ -142,8 +143,22 @@
- 	"LOPTO = -o " \
+@@ -259,8 +260,25 @@
  	"CC = gcc" \
  	"CXX = g++" \
--	"CCFLAGS = -O2 -Wall -I/usr/local/include/tcl8.4" \
+	"DEF = -D" \
+-	"CCFLAGS = -O2 -Wall -I/usr/local/include/tcl8.5" \
 -	"CXXFLAGS = -O2 -Wall" \
-+	"CCFLAGS = ${CFLAGS} -O2 -Wall -I/usr/local/include/tcl8.4" \
-+	"CXXFLAGS = ${CFLAGS} -O2 -Wall" \
-+	"TCLLDFLAGS = -L/usr/local/lib -ltcl84" \
++	"CCFLAGS = ${CFLAGS} -O2 -Wall -I/usr/local/include/tcl8.5" \
++	"CXXFLAGS = ${CFLAGS} -O2 -Wall -I/usr/local/include/tcl8.5" \
++	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
++	"NETCDFLDFLAGS = -lnetcdf " \
++	"AR = ar" \
 +	"NM = nm -p" \
 +	"RANLIB = touch" \
 +	"SHLD = gcc -shared"
@@ -28,8 +30,9 @@
 +	"LOPTO = -fPIC -m64 -o " \
 +	"CC = gcc" \
 +	"CXX = g++" \
-+	"CCFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.4" \
-+	"CXXFLAGS = ${CFLAGS} -m64 -O2 -Wall" \
- 	"TCLLDFLAGS = -L/usr/local/lib -ltcl84" \
- 	"NM = nm -p" \
- 	"RANLIB = touch" \
++	"DEF = -D" \
++	"CCFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
++	"CXXFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
+ 	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
+	"NETCDFLDFLAGS = -lnetcdf " \
+ 	"AR = ar" \

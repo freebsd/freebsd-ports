@@ -1,39 +1,54 @@
---- configure.orig	Sat Dec  6 04:20:58 2003
-+++ configure	Wed Feb  2 21:16:23 2005
-@@ -46,6 +46,7 @@
- # ---------------------------------------------------------------
- # AIX4        - compile on an RS/6000 machine (gcc/g++/xlc/xlC)
- # FREEBSD     - compile on a FreeBSD machine (gcc/g++)
-+# FREEBSDAMD64- compile on a FreeBSD machine (gcc/g++)
- # HPUX11      - compile on an HP-UX 11.0 machine (cc/CC/cc/aCC)
- # IRIX6       - compile on an SGI, IRIX 6.X or later, 32-bit ABI
- # IRIX6_64    - compile on an SGI, IRIX 6.X or later, 64-bit ABI
-@@ -116,7 +117,7 @@
+--- configure.orig	2009-08-01 03:19:34.000000000 -0400
++++ configure	2010-01-08 22:01:38.000000000 -0500
+@@ -13,10 +13,10 @@
+ $install_name = "vmd";
+ 
+ # Directory where VMD startup script is installed, should be in users' paths.
+-$install_bin_dir="/usr/local/bin";
++$install_bin_dir="%%PREFIX%%/bin";
+ 
+ # Directory where VMD files and executables are installed
+-$install_library_dir="/usr/local/lib/$install_name";
++$install_library_dir="%%PREFIX%%/lib/$install_name";
+ 
+ 
+ # optionally override hard-coded defaults above with environment variables
+@@ -48,6 +48,7 @@
+ # AIX5          - compile on an RS/6000 machine (gcc/g++/xlc/xlC)
+ # AIX6          - compile on an RS/6000 machine (gcc/g++/xlc/xlC)
+ # FREEBSD       - compile on a FreeBSD machine (gcc/g++)
++# FREEBSDAMD64  - compile on a FreeBSD machine (gcc/g++)
+ # HPUX11        - compile on an HP-UX 11.0 machine (cc/CC/cc/aCC)
+ # IRIX6         - compile on an SGI, IRIX 6.X or later, 32-bit ABI
+ # IRIX6_64      - compile on an SGI, IRIX 6.X or later, 64-bit ABI
+@@ -153,7 +154,7 @@
  
  #################### Parse command line options   ###########
  # list of allowed architectures
--@archlist=('IRIX6', 'IRIX6_64', 'FREEBSD', 'HPUX11', 'AIX4', 'LINUX', 'LINUXALPHA', 'LINUXAMD64', 'LINUXPPC', 'MACOSX', 'TRU64', 'SOLARIS2', 'SOLARIS2_64', 'SOLARISX86', 'WIN32');
-+@archlist=('IRIX6', 'IRIX6_64', 'FREEBSD', 'FREEBSDAMD64', 'HPUX11', 'AIX4', 'LINUX', 'LINUXALPHA', 'LINUXAMD64', 'LINUXPPC', 'MACOSX', 'TRU64', 'SOLARIS2', 'SOLARIS2_64', 'SOLARISX86', 'WIN32');
+-@archlist=('IRIX6', 'IRIX6_64', 'FREEBSD', 'HPUX11', 'AIX4', 'AIX5', 'AIX5_64', 'AIX6_64', 'LINUX', 'LINUXALPHA', 'LINUXAMD64', 'LINUXIA64', 'LINUXPPC', 'LINUXPPC64', 'MACOSX', 'MACOSXX86', 'MACOSXX86_64', 'TRU64', 'SOLARIS2', 'SOLARIS2_64', 'SOLARISX86', 'SOLARISX86_64', 'WIN32', 'WIN64');
++@archlist=('IRIX6', 'IRIX6_64', 'FREEBSD', 'FREEBSDAMD64', 'HPUX11', 'AIX4', 'AIX5', 'AIX5_64', 'AIX6_64', 'LINUX', 'LINUXALPHA', 'LINUXAMD64', 'LINUXIA64', 'LINUXPPC', 'LINUXPPC64', 'MACOSX', 'MACOSXX86', 'MACOSXX86_64', 'TRU64', 'SOLARIS2', 'SOLARIS2_64', 'SOLARISX86', 'SOLARISX86_64', 'WIN32', 'WIN64');
  
  if ($#ARGV == -1) {
      $text = `cat configure.options`;
-@@ -624,8 +625,8 @@
+@@ -747,8 +748,8 @@
  # This may be commented out if not required.
- $libtachyon_defines        = "-DVMDLIBTACHYON";
+ $libtachyon_defines     = "-DVMDLIBTACHYON";
  $libtachyon_dir         = "$vmd_library_dir/tachyon";
 -$libtachyon_include     = "-I$libtachyon_dir/include";
 -$libtachyon_library     = "-L$libtachyon_dir/lib_$config_arch";
 +$libtachyon_include     = "-I$libtachyon_dir/src";
 +$libtachyon_library     = "-L$libtachyon_dir/compile/bsd";
  $libtachyon_libs        = "-ltachyon";
- @libtachyon_cc             = ();
- @libtachyon_ccpp           = ('LibTachyonDisplayDevice.C'
-@@ -1174,8 +1175,10 @@
+ @libtachyon_cc          = ();
+ @libtachyon_cu          = ();
+@@ -1478,9 +1479,11 @@
+     $def_imageviewer="display %s";
  
      # XFree 4.0 Direct Rendering Interface and GLX 
-     $opengl_dir         = "/usr/X11R6";
+-    $opengl_dir         = "/usr/X11R6";
 -    $opengl_include     = "-I$opengl_dir/include";
 -    $opengl_library     = "-L$opengl_dir/lib";
++    $opengl_dir         = "/usr/local";
 +# -DGLX_GLXEXT_LEGACY is required for patched OpenGLExtensions.C to compile.
 +# See patched OpenGLExtensions.C for explanation.
 +    $opengl_include     = "-DGLX_GLXEXT_LEGACY -I$opengl_dir/include";
@@ -41,7 +56,28 @@
      $opengl_libs        = "-lGL -lGLU"; 
  
      $arch_lex      = "flex";
-@@ -1209,7 +1212,66 @@
+@@ -1492,17 +1495,17 @@
+     $arch_shld        = "g++ -shared";
+     $arch_shlibname   = "so";
+     $arch_shcppopts   = "-fPIC";
+-    $arch_shldopts    = "-L/usr/local/lib -L/usr/X11R6/lib";
++    $arch_shldopts    = "-L/usr/local/lib";
+ 
+     $arch_opt_flag    = "-m32 -fno-for-scope -Wno-deprecated -Wall -O3";
+     $arch_copts       = "-m32 -Wall -O3";
+ 
+     if ($config_static) {
+       $arch_lopts       = "-static";
+-      $mesa_libs        = "-lMesaGL -lMesaGLU -L/usr/X11R6/lib -lXext -lX11";
++      $mesa_libs        = "-lMesaGL -lMesaGLU -L/usr/local/lib -lXext -lX11";
+     } else {
+       $arch_lopts       = "";
+-      $mesa_libs        = "-lGL -lGLU -L/usr/X11R6/lib -lXext -lX11";
++      $mesa_libs        = "-lGL -lGLU -L/usr/local/lib -lXext -lX11";
+     }
+ 
+     if ($config_shared) {
+@@ -1515,7 +1518,66 @@
  
      # this is to make tcl happy,
      # also needed for plugins
@@ -67,7 +103,7 @@
 +    }
 +
 +    # XFree 4.0 Direct Rendering Interface and GLX 
-+    $opengl_dir         = "/usr/X11R6";
++    $opengl_dir         = "/usr/local";
 +# -DGLX_GLXEXT_LEGACY is required for patched OpenGLExtensions.C to compile.
 +# See patched OpenGLExtensions.C for explanation.
 +    $opengl_include     = "-DGLX_GLXEXT_LEGACY -I$opengl_dir/include";
@@ -83,17 +119,17 @@
 +    $arch_shld        = "ld -shared";
 +    $arch_shlibname   = "so";
 +    $arch_shcppopts   = "-fPIC";
-+    $arch_shldopts    = "-L/usr/local/lib -L/usr/X11R6/lib";
++    $arch_shldopts    = "-L/usr/local/lib -L/usr/local/lib";
 +
-+    $arch_opt_flag	= "-m64 -Wall -O6 -ffast-math";
-+    $arch_copts	        = "-m64 -Wall -O6 -ffast-math";
++    $arch_opt_flag	= "-m64 -Wall -O3 -ffast-math";
++    $arch_copts	        = "-m64 -Wall -O3 -ffast-math";
 +
 +    if ($config_static) {
 +      $arch_lopts       = "-static";
-+      $mesa_libs        = "-lMesaGL -lMesaGLU -L/usr/X11R6/lib -lXext -lX11";
++      $mesa_libs        = "-lMesaGL -lMesaGLU -L/usr/local/lib -lXext -lX11";
 +    } else {
 +      $arch_lopts       = "";
-+      $mesa_libs        = "-lGL -lGLU -L/usr/X11R6/lib -lXext -lX11";
++      $mesa_libs        = "-lGL -lGLU -L/usr/local/lib -lXext -lX11";
 +    }
 +
 +    if ($config_shared) {
@@ -109,17 +145,16 @@
   
      if ($config_python) {
        # this is to make python happy
-@@ -2052,11 +2114,11 @@
+@@ -2715,10 +2777,10 @@
  
  # compiler and compiler directives 
  CC          = $arch_cc
--CFLAGS      = $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
- COMPILERC   = $arch_compilerc
- RCFLAGS     = $arch_rcflags
- CCPP	    = $arch_ccpp
--CPPFLAGS    = $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
-+CPPFLAGS    = \${CXXFLAGS} $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
+-CFLAGS      = $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
 +CFLAGS      += $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
  
- DEPEND      = $arch_depend_flag
- DEPENDFILE  = Makedata.depend
+ CCPP	    = $arch_ccpp
+-CPPFLAGS    = $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
++CPPFLAGS    = \${CXXFLAGS} $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
+ 
+ NVCC        = $arch_nvcc
+ NVCCFLAGS   = $arch_nvccflags -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
