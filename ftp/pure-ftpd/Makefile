@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.27
+PORTVERSION=	1.0.28
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -48,7 +48,7 @@ OPTIONS=	LDAP		"Support for users in LDAP directories" off \
 		THROTTLING	"Bandwidth throttling" off \
 		BANNER		"Show ${PORTNAME} welcome upon session start" on \
 		UPLOADSCRIPT	"Support uploadscript daemon" off \
-		UTF8		"Support for charset conversion (expreimental)" off \
+		UTF8		"Support for charset conversion" off \
 		SENDFILE	"Support for the sendfile syscall" on \
 		LARGEFILE	"Support downloading files larger than 2Gb" off \
 		VIRTUALCHROOT	"Follow symlinks outside a chroot jail" on
