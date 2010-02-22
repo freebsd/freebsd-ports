@@ -62,7 +62,12 @@ if [ "$?" -ne "0" ]; then
 fi
 
 args="$JAVA_OPTS -jar $HELMA_INSTALL/launcher.jar -h $HELMA_HOME -f $HELMA_CONFIG/server.properties $HELMA_ARGS"
-command="su -m $HELMA_USER -c 'nohup $JAVA_BIN $args >& $HELMA_LOG & echo \$! > $HELMA_PID' > /dev/null"
+
+if [ "`whoami`" = "$HELMA_USER" ]; then
+	command="csh -c 'nohup $JAVA_BIN $args >& $HELMA_LOG & echo \$! > $HELMA_PID' > /dev/null"
+else
+	command="su -m $HELMA_USER -c 'nohup $JAVA_BIN $args >& $HELMA_LOG & echo \$! > $HELMA_PID' > /dev/null"
+fi
 
 echo "Starting ${HELMA_SERVICE}."
 

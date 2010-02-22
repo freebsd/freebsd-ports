@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	helma
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.0
 CATEGORIES=	www java
-MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/
+MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/ \
+		http://home.bluelife.at/ports/distfiles/helma/${PORTVERSION}/
 DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	decke@bluelife.at
@@ -29,10 +30,6 @@ LOGDIR?=	/var/log/${PORTNAME}
 HELMA_USER=	${WWWOWN}
 HELMA_GROUP=	${WWWGRP}
 HELMA_CONFIG=	${WRKBASE}/scripts/helma.conf
-APPFILES=	apps modules
-ETCFILES=	apps.properties db.properties server.properties scripts/helma.conf
-DATAFILES=	lib launcher.jar
-DOCFILES=	docs licenses README.txt
 
 PLIST_SUB=	DBDIR="${DBDIR}" \
 		LOGDIR="${LOGDIR}" \
@@ -85,12 +82,12 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/helma.sh.in ${PREFIX}/bin/helma
 
 	${MKDIR} ${WWWDIR} && \
-	(cd ${WRKBASE} && ${COPYTREE_SHARE} "${APPFILES}" ${WWWDIR} \
+	(cd ${WRKBASE} && ${COPYTREE_SHARE} "apps modules" ${WWWDIR} \
 		"! -name *.html ! -name helma-*.jar ! -name .jsdoc") && \
 	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${WWWDIR}
 
 	${MKDIR} ${DATADIR} && \
-	(cd ${WRKBASE} && ${COPYTREE_SHARE} "${DATAFILES}" ${DATADIR} \
+	(cd ${WRKBASE} && ${COPYTREE_SHARE} "lib launcher.jar" ${DATADIR} \
 		"! -name *.html ! -name helma-*.jar ! -name .jsdoc")
 
 	${MKDIR} ${LOGDIR} && \
@@ -100,7 +97,7 @@ do-install:
 	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${DBDIR}
 
 	${MKDIR} ${ETCDIR}; \
-	for f in ${ETCFILES}; do \
+	for f in apps.properties db.properties server.properties scripts/helma.conf; do \
 		${INSTALL_DATA} ${WRKBASE}/$$f ${ETCDIR}/$${f##*/}.sample; \
 		if [ ! -f ${ETCDIR}/$${f##*/} ]; then \
 		${CP} -p ${ETCDIR}/$${f##*/}.sample ${ETCDIR}/$${f##*/}; \
@@ -109,7 +106,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} && \
-	(cd ${WRKBASE} && ${COPYTREE_SHARE} "${DOCFILES}" ${DOCSDIR})
+	(cd ${WRKBASE} && ${COPYTREE_SHARE} "licenses license.txt README.txt" ${DOCSDIR})
 
 	${MKDIR} ${DOCSDIR}/docs/api/jala && \
 	(cd ${WRKBASE}/modules/jala/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/docs/api/jala)

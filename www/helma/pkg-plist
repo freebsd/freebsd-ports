@@ -21,475 +21,7 @@
 %%MYSQL%%@exec ln -sf %D/%%JAVAJARDIR%%/mysql-connector-java.jar %D/%%DATADIR%%/lib/ext/mysql-connector-java.jar
 %%MYSQL%%%%DATADIR%%/lib/ext/mysql-connector-java.jar
 bin/helma
-%%WWWDIR%%/apps/manage/app.properties
-%%WWWDIR%%/apps/manage/class.properties
-%%WWWDIR%%/apps/manage/manage.zip
-%%WWWDIR%%/apps/manage/readme.txt
-%%WWWDIR%%/apps/welcome/code/Global/init.js
-%%WWWDIR%%/apps/welcome/code/Guide/handler.js
-%%WWWDIR%%/apps/welcome/code/Guide/intro.actions.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.applications.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.dbmapping.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.hopobjects.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.javapackages.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.macros.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.prototypes.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.skins.skin
-%%WWWDIR%%/apps/welcome/code/Guide/intro.staticfiles.skin
-%%WWWDIR%%/apps/welcome/code/Guide/list.intro.skin
-%%WWWDIR%%/apps/welcome/code/Guide/list.tools.skin
-%%WWWDIR%%/apps/welcome/code/Guide/list.website.skin
-%%WWWDIR%%/apps/welcome/code/Guide/main.hac
-%%WWWDIR%%/apps/welcome/code/Guide/overview.skin
-%%WWWDIR%%/apps/welcome/code/Guide/tools.about_inspector.skin
-%%WWWDIR%%/apps/welcome/code/Guide/tools.about_manage.skin
-%%WWWDIR%%/apps/welcome/code/Guide/tools.about_shell.skin
-%%WWWDIR%%/apps/welcome/code/Guide/tools.about_sqlshell.skin
-%%WWWDIR%%/apps/welcome/code/Guide/tools.debugger.skin
-%%WWWDIR%%/apps/welcome/code/Guide/tools.skin
-%%WWWDIR%%/apps/welcome/code/HopObject/add.hac
-%%WWWDIR%%/apps/welcome/code/HopObject/add.skin
-%%WWWDIR%%/apps/welcome/code/HopObject/hop.skin
-%%WWWDIR%%/apps/welcome/code/HopObject/hoplist.js
-%%WWWDIR%%/apps/welcome/code/HopObject/main.hac
-%%WWWDIR%%/apps/welcome/code/HopObject/main.skin
-%%WWWDIR%%/apps/welcome/code/HopObject/page.skin
-%%WWWDIR%%/apps/welcome/code/HopObject/scripts_js.hac
-%%WWWDIR%%/apps/welcome/code/HopObject/scripts_js.skin
-%%WWWDIR%%/apps/welcome/code/HopObject/styles_css.hac
-%%WWWDIR%%/apps/welcome/code/HopObject/styles_css.skin
-%%WWWDIR%%/apps/welcome/code/HopObject/type.properties
-%%WWWDIR%%/apps/welcome/code/Root/example.hac
-%%WWWDIR%%/apps/welcome/code/Root/example.js
-%%WWWDIR%%/apps/welcome/code/Root/example.skin
-%%WWWDIR%%/apps/welcome/code/Root/example_using_macro.hac
-%%WWWDIR%%/apps/welcome/code/Root/example_using_macro.skin
-%%WWWDIR%%/apps/welcome/code/Root/example_using_skin.hac
-%%WWWDIR%%/apps/welcome/code/Root/type.properties
-%%WWWDIR%%/apps/welcome/code/app.properties
-%%WWWDIR%%/apps/welcome/static/guide/debugger.png
-%%WWWDIR%%/apps/welcome/static/guide/inspector.png
-%%WWWDIR%%/apps/welcome/static/guide/manage.png
-%%WWWDIR%%/apps/welcome/static/guide/shell.png
-%%WWWDIR%%/apps/welcome/static/guide/sqlshell.png
-%%WWWDIR%%/apps/welcome/static/helmaheader.png
-%%WWWDIR%%/apps/welcome/static/test.txt
-%%DATADIR%%/launcher.jar
-%%DATADIR%%/lib/activation.jar
-%%DATADIR%%/lib/commons-codec.jar
-%%DATADIR%%/lib/commons-fileupload.jar
-%%DATADIR%%/lib/commons-io.jar
-%%DATADIR%%/lib/commons-logging.jar
-%%DATADIR%%/lib/commons-net.jar
-%%DATADIR%%/lib/helma.jar
-%%DATADIR%%/lib/jetty.jar
-%%DATADIR%%/lib/mail.jar
-%%DATADIR%%/lib/rhino.jar
-%%DATADIR%%/lib/servlet.jar
-%%DATADIR%%/lib/tagsoup.jar
-%%DATADIR%%/lib/xmlrpc.jar
-%%DATADIR%%/lib/apache-dom.jar
-%%DATADIR%%/lib/jimi.jar
-%%WWWDIR%%/modules/core/Array.js
-%%WWWDIR%%/modules/core/Date.js
-%%WWWDIR%%/modules/core/Filters.js
-%%WWWDIR%%/modules/core/Global.js
-%%WWWDIR%%/modules/core/HopObject.js
-%%WWWDIR%%/modules/core/JSON.js
-%%WWWDIR%%/modules/core/Number.js
-%%WWWDIR%%/modules/core/Object.js
-%%WWWDIR%%/modules/core/String.js
-%%WWWDIR%%/modules/core/all.js
-%%WWWDIR%%/modules/helma/Aspects.js
-%%WWWDIR%%/modules/helma/Chart.js
-%%WWWDIR%%/modules/helma/Color.js
-%%WWWDIR%%/modules/helma/Database.js
-%%WWWDIR%%/modules/helma/File.js
-%%WWWDIR%%/modules/helma/Ftp.js
-%%WWWDIR%%/modules/helma/Group.js
-%%WWWDIR%%/modules/helma/Html.js
-%%WWWDIR%%/modules/helma/Http.js
-%%WWWDIR%%/modules/helma/Image.js
-%%WWWDIR%%/modules/helma/Mail.js
-%%WWWDIR%%/modules/helma/Search.js
-%%WWWDIR%%/modules/helma/Skin.js
-%%WWWDIR%%/modules/helma/Ssh.js
-%%WWWDIR%%/modules/helma/Url.js
-%%WWWDIR%%/modules/helma/Zip.js
-%%WWWDIR%%/modules/helma/all.js
-%%WWWDIR%%/modules/helma/ganymed-ssh2.jar
-%%WWWDIR%%/modules/helma/jxl.jar
-%%WWWDIR%%/modules/helma/lucene-analyzers.jar
-%%WWWDIR%%/modules/helma/lucene-core.jar
-%%WWWDIR%%/modules/jala/code/AsyncRequest.js
-%%WWWDIR%%/modules/jala/code/BitTorrent.js
-%%WWWDIR%%/modules/jala/code/Captcha.js
-%%WWWDIR%%/modules/jala/code/Database.js
-%%WWWDIR%%/modules/jala/code/Date.js
-%%WWWDIR%%/modules/jala/code/DnsClient.js
-%%WWWDIR%%/modules/jala/code/Form.js
-%%WWWDIR%%/modules/jala/code/Global.js
-%%WWWDIR%%/modules/jala/code/History.js
-%%WWWDIR%%/modules/jala/code/HopObject.js
-%%WWWDIR%%/modules/jala/code/HtmlDocument.js
-%%WWWDIR%%/modules/jala/code/I18n.js
-%%WWWDIR%%/modules/jala/code/ImageFilter.js
-%%WWWDIR%%/modules/jala/code/IndexManager.js
-%%WWWDIR%%/modules/jala/code/ListRenderer.js
-%%WWWDIR%%/modules/jala/code/Mp3.js
-%%WWWDIR%%/modules/jala/code/PodcastWriter.js
-%%WWWDIR%%/modules/jala/code/RemoteContent.js
-%%WWWDIR%%/modules/jala/code/Rss20Writer.js
-%%WWWDIR%%/modules/jala/code/Utilities.js
-%%WWWDIR%%/modules/jala/code/XmlRpcRequest.js
-%%WWWDIR%%/modules/jala/code/XmlWriter.js
-%%WWWDIR%%/modules/jala/code/all.js
-%%WWWDIR%%/modules/jala/docs/stylesheet.css
-%%WWWDIR%%/modules/jala/lib/dom4j-1.6.1.jar
-%%WWWDIR%%/modules/jala/lib/id3-1.6.0d9.jar
-%%WWWDIR%%/modules/jala/lib/javadns.jar
-%%WWWDIR%%/modules/jala/lib/jaxen-1.1-beta-8.jar
-%%WWWDIR%%/modules/jala/lib/jid3lib-0.5.4.jar
-%%WWWDIR%%/modules/jala/licenses/dom4j.txt
-%%WWWDIR%%/modules/jala/licenses/id3.txt
-%%WWWDIR%%/modules/jala/licenses/jala.txt
-%%WWWDIR%%/modules/jala/licenses/javadns.txt
-%%WWWDIR%%/modules/jala/tests/1meg.reference-win.torrent
-%%WWWDIR%%/modules/jala/tests/1meg.reference.torrent
-%%WWWDIR%%/modules/jala/tests/AsyncRequest.js
-%%WWWDIR%%/modules/jala/tests/BitTorrent.js
-%%WWWDIR%%/modules/jala/tests/Database.js
-%%WWWDIR%%/modules/jala/tests/Database.script.sql
-%%WWWDIR%%/modules/jala/tests/DnsClient.js
-%%WWWDIR%%/modules/jala/tests/Form.fileupload.doc
-%%WWWDIR%%/modules/jala/tests/Form.imageupload.jpg
-%%WWWDIR%%/modules/jala/tests/Form.js
-%%WWWDIR%%/modules/jala/tests/HopObject.js
-%%WWWDIR%%/modules/jala/tests/HtmlDocument.js
-%%WWWDIR%%/modules/jala/tests/I18n.js
-%%WWWDIR%%/modules/jala/tests/ImageFilter.js
-%%WWWDIR%%/modules/jala/tests/IndexManager.js
-%%WWWDIR%%/modules/jala/tests/ListRenderer.js
-%%WWWDIR%%/modules/jala/tests/Mp3.js
-%%WWWDIR%%/modules/jala/tests/Mp3.test.jpg
-%%WWWDIR%%/modules/jala/tests/Mp3.test.mp3
-%%WWWDIR%%/modules/jala/tests/Utilities.js
-%%WWWDIR%%/modules/jala/tests/gaussianBlur.reference.jpg
-%%WWWDIR%%/modules/jala/tests/sharpen.reference.jpg
-%%WWWDIR%%/modules/jala/tests/test.jpg
-%%WWWDIR%%/modules/jala/tests/test.mp3
-%%WWWDIR%%/modules/jala/tests/unsharpMask.reference.jpg
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/XMI.pm
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/XML.pm
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/xmi.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/xml.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript/Syntax/HTML.pm
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/allclasses-frame.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/allclasses-noframe.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/constant-values.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/help-doc.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/index-all.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/index.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/main.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/overview-frame.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/overview-summary.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/overview-tree.tmpl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/stylesheet.css
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/.jsdoc_config
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/CHANGES
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc.pm
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/README
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/TODO
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/TestJSDoc.pl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/jsdoc.pl
-%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/test.js
-%%WWWDIR%%/modules/jala/util/HopKit/lib/bsf.jar
-%%WWWDIR%%/modules/jala/util/HopKit/scripts/MessageParser.js
-%%WWWDIR%%/modules/jala/util/HopKit/scripts/PoParser.js
-%%WWWDIR%%/modules/jala/util/HopKit/scripts/jsant.js
-%%WWWDIR%%/modules/jala/util/HopKit/scripts/jslint.js
-%%WWWDIR%%/modules/jala/util/HopKit/scripts/jsmin.js
-%%WWWDIR%%/modules/jala/util/HopKit/build.bat
-%%WWWDIR%%/modules/jala/util/HopKit/build.sh
-%%WWWDIR%%/modules/jala/util/HopKit/js.bat
-%%WWWDIR%%/modules/jala/util/HopKit/lib.xml
-%%WWWDIR%%/modules/jala/util/Test/code/Global/Root.js
-%%WWWDIR%%/modules/jala/util/Test/code/Global/jala.Test.js
-%%WWWDIR%%/modules/jala/util/Test/code/Global/jala.Test.skin
-%%WWWDIR%%/modules/jala/util/Test/code/subetha-smtp.jar
-%%WWWDIR%%/modules/jala/util/Test/code/subetha-wiser.jar
-%%WWWDIR%%/modules/jala/util/Test/code/subethasmtp.license.txt
-%%WWWDIR%%/modules/jala/util/Test/docs/stylesheet.css
-%%WWWDIR%%/modules/jala/util/Test/tests/selftest.js
-%%WWWDIR%%/modules/jala/util/Test/tests/skeleton.js
-%%WWWDIR%%/modules/jala/util/XmlRpcClient/Global/Feedback.js
-%%WWWDIR%%/modules/jala/util/XmlRpcClient/Global/Global.js
-%%WWWDIR%%/modules/jala/util/XmlRpcClient/Global/XmlRpcCall.js
-%%WWWDIR%%/modules/jala/util/XmlRpcClient/Root/Root.js
-%%WWWDIR%%/modules/jala/util/XmlRpcClient/Root/main.skin
-%%WWWDIR%%/modules/jala/util/XmlRpcClient/README
-%%WWWDIR%%/modules/jala/README
-%%WWWDIR%%/modules/jala/build.properties
-%%WWWDIR%%/modules/helmaTools.zip
-%%WWWDIR%%/modules/summary.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocApplication.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocComparator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocElement.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocFunction.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocProperties.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocPrototype.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocRepositoryElement.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocResourceElement.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocSkin.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/DocTag.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/Util.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/doc/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/demo/DemoExtension.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/demo/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/demo/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/demo/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/ConfigurationException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/HelmaExtension.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/extensions/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/AppClassLoader.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/Application.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/ApplicationBean.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/Prototype.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/RemoteApplication.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/RequestEvaluator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/RequestPath.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/Session.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/SessionBean.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/SessionManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/Skin.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/SkinManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/TypeManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/core/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/demo/SimplePathElement.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/demo/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/demo/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/demo/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/AbstractRepository.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/AbstractResource.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/FileRepository.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/FileResource.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/MultiFileRepository.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/Repository.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/Resource.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/ResourceComparator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/ResourceTracker.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/SingleFileRepository.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/ZipRepository.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/ZipResource.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/repository/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/AbortException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/ApplicationStoppedException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/CookieTrans.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/FrameworkException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/FutureResult.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/IPathElement.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/IRemoteApp.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/NotFoundException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/RedirectException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/RequestBean.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/RequestTrans.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/ResponseBean.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/ResponseTrans.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/TimeoutException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/UploadStatus.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/framework/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/gif/GIFImageWriteParam.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/gif/GIFImageWriter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/gif/GIFImageWriterSpi.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/gif/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/gif/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/gif/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/ImageIOGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/imageio/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/jimi/JimiGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/jimi/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/jimi/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/jimi/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/ColorQuantizer.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/DiffusionFilterOp.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/GIFEncoder.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/ImageFilterOp.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/ImageGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/ImageInfo.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/ImageWaiter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/ImageWrapper.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/image/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/launcher/Commandline.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/launcher/Main.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/launcher/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/launcher/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/launcher/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/ApplicationManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/CommandlineRunner.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/HelmaSecurityManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/HelmaShutdownHook.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/HelmaSocketFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/JettyServer.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/Server.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/ServerConfig.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/DbColumn.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/DbKey.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/DbMapping.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/DbSource.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/IDGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/IReplicationListener.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/Key.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/MultiKey.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/Node.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/NodeChangeListener.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/NodeHandle.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/NodeManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/OrderedSubnodeList.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/ParentInfo.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/Property.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/Relation.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/Replicator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/SubnodeList.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/SyntheticKey.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/Transactor.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/UpdateableSubnodeList.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/WrappedNodeManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/db/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlConstants.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlConverter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlDatabase.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlDatabaseReader.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlIDGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlReader.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlUtil.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/XmlWriter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/dom/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/ConcurrencyException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/DatabaseException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/IDatabase.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/INode.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/INodeState.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/IProperty.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/ITransaction.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/NodeEvent.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/ObjectCache.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/ObjectNotFoundException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/Property.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/TransientNode.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/objectmodel/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/debug/HelmaDebugger.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/debug/Tracer.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/debug/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/debug/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/debug/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/DatabaseObject.RowSet.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/DatabaseObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/FileObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/FtpObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/ImageObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/MailObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/XmlObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/XmlRpcObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/GlobalObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/HacHspConverter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/HopObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/HopObjectCtor.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/JSAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/JavaObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/MapWrapper.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/PathWrapper.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/PropertyRecorder.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/RhinoCore.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/RhinoEngine.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/SerializationProxy.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/ScriptingEngine.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/ScriptingException.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/servlet/AbstractServletClient.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/servlet/EmbeddedServletClient.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/servlet/StandaloneServletClient.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/servlet/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/servlet/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/servlet/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Base64.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/CacheMap.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/CopyOnWriteMap.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/CronJob.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Crypt.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/CryptFile.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/CryptResource.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Diff.change.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Diff.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/EmptyEnumeration.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/FileLogger.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/HtmlEncoder.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/InetAddressFilter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Logger.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Logging.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Logo.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/MD5Encoder.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/MimePart.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/MimePartDataSource.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/ParanoidServerSocket.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/ResourceProperties.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/StringUtils.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/SystemMap.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/SystemProperties.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/Timer.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/UrlEncoded.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/WeakCacheMap.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/WrappedMap.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/XmlUtils.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/util/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/resources/inherit.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/allclasses-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/allclasses-noframe.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/constant-values.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/deprecated-list.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/help-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/index-all.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/overview-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/overview-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/overview-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/package-list
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/serialized-form.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/jala/Global.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/jala/HopObject.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/jala/allclasses-frame.html
@@ -596,228 +128,303 @@ bin/helma
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/jala/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/jala/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/jala/stylesheet.css
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.DatabaseObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.File.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.FtpClient.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.HopObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.Image.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.Mail.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.MimePart.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.Skin.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.User.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.app.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.arrayList.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.assertAttribute.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.cleanup.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.createDocumentObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.debugElement.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.idCounter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isArray.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isBoolean.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isDate.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isNull.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isFunction.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isNumber.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isString.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.isUndefined.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.req.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.res.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.session.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.setup.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testAQuery.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testAdd.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testAsyncRequest.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testBitTorrent.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testConstructor.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testCreatePassword.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testDiffObjects.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testFileDatabase.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testFormRender.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.tests.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testFormRenderWithError.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testFormSave.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testFormValidate.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testFormatMessage.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testFunction.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testGaussianBlur.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testGetAccessName.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testGetAll.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testGetLinks.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testGettext.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testHrefs.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testId3v1Read.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testId3v1Write.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testId3v2Read.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testId3v2Write.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testImageFilter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testMp3Read.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testIndexCalculation.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testMessageMacro.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testMxQuery.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testNgettext.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testNsQuery.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testOptimize.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testPageCalculation.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testPatchObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testRamDatabase.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testRemove.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testRenderer.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testSharpen.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testSoaQuery.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/.testUnsharpMask.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/ArrayExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/DatabaseObject.RowSet.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/File.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/DatabaseObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/DateExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/FtpClient.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/GlobalMacros.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/HopObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/HopObjectExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/Image.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/JSON.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/MacroFilters.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/Mail.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/MimePart.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/NumberExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/Object.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/ObjectExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/Skin.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/StringExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/User.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/Xml.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/app.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/constructor.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/file.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/function.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/global.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Aspects.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Chart.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Color.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Database.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.File.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Ftp.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Group.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Html.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Http.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Image.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Mail.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Search.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Skin.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Ssh.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Url.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.Zip.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helma.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/helmaheader.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/index.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.AsyncRequest.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.BitTorrent.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.Captcha.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.Date.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.DnsClient.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.Form.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.History.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.HopObjectExtensions.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.HtmlDocument.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.I18n.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.ImageFilter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.IndexManager.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.ListRenderer.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.Mp3.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.PodcastWriter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.db.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.RemoteContent.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.Rss20Writer.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.Utilities.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.XmlRpcRequest.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.XmlWriter.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/jala.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/javalibs.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/object.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/overview.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/req.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/res.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/scripts.js
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/session.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/framework/styles.css
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/apache.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/cddl.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/incava-diff.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/jetty.html
 %%PORTDOCS%%%%DOCSDIR%%/licenses/lgpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/rhino.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/sun-javamail.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/w3c.html
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/extensions/demo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/extensions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/framework/core
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/framework/demo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/framework/repository
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/framework
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/image/imageio/gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/image/imageio
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/image/jimi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/image
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/main/launcher
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/main
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/objectmodel/db
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/objectmodel/dom
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/objectmodel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/scripting/rhino/debug
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/scripting/rhino/extensions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/scripting/rhino
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/scripting
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/servlet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma/util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/helma
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/jala
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/framework
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%WWWDIR%%/apps/manage
-@dirrm %%WWWDIR%%/apps/welcome/code/Global
-@dirrm %%WWWDIR%%/apps/welcome/code/Guide
-@dirrm %%WWWDIR%%/apps/welcome/code/HopObject
-@dirrm %%WWWDIR%%/apps/welcome/code/Root
-@dirrm %%WWWDIR%%/apps/welcome/code
-@dirrm %%WWWDIR%%/apps/welcome/static/guide
-@dirrm %%WWWDIR%%/apps/welcome/static
-@dirrm %%WWWDIR%%/apps/welcome
-@dirrmtry %%WWWDIR%%/apps
-@dirrm %%WWWDIR%%/modules/core
-@dirrm %%WWWDIR%%/modules/helma
-@dirrm %%WWWDIR%%/modules/jala/code
-@dirrm %%WWWDIR%%/modules/jala/docs
-@dirrm %%WWWDIR%%/modules/jala/lib
-@dirrm %%WWWDIR%%/modules/jala/licenses
-@dirrm %%WWWDIR%%/modules/jala/tests
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript/Syntax
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/lib
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/scripts
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit
+%%DATADIR%%/launcher.jar
+%%DATADIR%%/lib/activation.jar
+%%DATADIR%%/lib/apache-dom.jar
+%%DATADIR%%/lib/commons-codec.jar
+%%DATADIR%%/lib/commons-fileupload.jar
+%%DATADIR%%/lib/commons-io.jar
+%%DATADIR%%/lib/commons-logging.jar
+%%DATADIR%%/lib/commons-net.jar
+%%DATADIR%%/lib/helma.jar
+%%DATADIR%%/lib/jetty-ajp.jar
+%%DATADIR%%/lib/jetty-util.jar
+%%DATADIR%%/lib/jetty.jar
+%%DATADIR%%/lib/jimi.jar
+%%DATADIR%%/lib/mail.jar
+%%DATADIR%%/lib/rhino.jar
+%%DATADIR%%/lib/servlet.jar
+%%DATADIR%%/lib/tagsoup.jar
+%%DATADIR%%/lib/xmlrpc.jar
+%%WWWDIR%%/apps/manage/app.properties
+%%WWWDIR%%/apps/manage/class.properties
+%%WWWDIR%%/apps/manage/manage.zip
+%%WWWDIR%%/apps/manage/readme.txt
+%%WWWDIR%%/apps/welcome/code/Global/init.js
+%%WWWDIR%%/apps/welcome/code/Guide/handler.js
+%%WWWDIR%%/apps/welcome/code/Guide/intro.actions.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.applications.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.dbmapping.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.hopobjects.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.javapackages.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.macros.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.prototypes.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.skins.skin
+%%WWWDIR%%/apps/welcome/code/Guide/intro.staticfiles.skin
+%%WWWDIR%%/apps/welcome/code/Guide/list.intro.skin
+%%WWWDIR%%/apps/welcome/code/Guide/list.tools.skin
+%%WWWDIR%%/apps/welcome/code/Guide/list.website.skin
+%%WWWDIR%%/apps/welcome/code/Guide/main.hac
+%%WWWDIR%%/apps/welcome/code/Guide/overview.skin
+%%WWWDIR%%/apps/welcome/code/Guide/tools.about_inspector.skin
+%%WWWDIR%%/apps/welcome/code/Guide/tools.about_manage.skin
+%%WWWDIR%%/apps/welcome/code/Guide/tools.about_shell.skin
+%%WWWDIR%%/apps/welcome/code/Guide/tools.about_sqlshell.skin
+%%WWWDIR%%/apps/welcome/code/Guide/tools.debugger.skin
+%%WWWDIR%%/apps/welcome/code/Guide/tools.skin
+%%WWWDIR%%/apps/welcome/code/HopObject/add.hac
+%%WWWDIR%%/apps/welcome/code/HopObject/add.skin
+%%WWWDIR%%/apps/welcome/code/HopObject/hop.skin
+%%WWWDIR%%/apps/welcome/code/HopObject/hoplist.js
+%%WWWDIR%%/apps/welcome/code/HopObject/main.hac
+%%WWWDIR%%/apps/welcome/code/HopObject/main.skin
+%%WWWDIR%%/apps/welcome/code/HopObject/page.skin
+%%WWWDIR%%/apps/welcome/code/HopObject/scripts_js.hac
+%%WWWDIR%%/apps/welcome/code/HopObject/scripts_js.skin
+%%WWWDIR%%/apps/welcome/code/HopObject/styles_css.hac
+%%WWWDIR%%/apps/welcome/code/HopObject/styles_css.skin
+%%WWWDIR%%/apps/welcome/code/HopObject/type.properties
+%%WWWDIR%%/apps/welcome/code/Root/example.hac
+%%WWWDIR%%/apps/welcome/code/Root/example.js
+%%WWWDIR%%/apps/welcome/code/Root/example.skin
+%%WWWDIR%%/apps/welcome/code/Root/example_using_macro.hac
+%%WWWDIR%%/apps/welcome/code/Root/example_using_macro.skin
+%%WWWDIR%%/apps/welcome/code/Root/example_using_skin.hac
+%%WWWDIR%%/apps/welcome/code/Root/type.properties
+%%WWWDIR%%/apps/welcome/code/app.properties
+%%WWWDIR%%/apps/welcome/static/guide/debugger.png
+%%WWWDIR%%/apps/welcome/static/guide/inspector.png
+%%WWWDIR%%/apps/welcome/static/guide/manage.png
+%%WWWDIR%%/apps/welcome/static/guide/shell.png
+%%WWWDIR%%/apps/welcome/static/guide/sqlshell.png
+%%WWWDIR%%/apps/welcome/static/helmaheader.png
+%%WWWDIR%%/apps/welcome/static/test.txt
+%%WWWDIR%%/modules/core/Array.js
+%%WWWDIR%%/modules/core/Date.js
+%%WWWDIR%%/modules/core/Filters.js
+%%WWWDIR%%/modules/core/Global.js
+%%WWWDIR%%/modules/core/HopObject.js
+%%WWWDIR%%/modules/core/JSON.js
+%%WWWDIR%%/modules/core/Number.js
+%%WWWDIR%%/modules/core/Object.js
+%%WWWDIR%%/modules/core/String.js
+%%WWWDIR%%/modules/core/all.js
+%%WWWDIR%%/modules/helma/Aspects.js
+%%WWWDIR%%/modules/helma/Chart.js
+%%WWWDIR%%/modules/helma/Color.js
+%%WWWDIR%%/modules/helma/Database.js
+%%WWWDIR%%/modules/helma/File.js
+%%WWWDIR%%/modules/helma/Ftp.js
+%%WWWDIR%%/modules/helma/Group.js
+%%WWWDIR%%/modules/helma/Html.js
+%%WWWDIR%%/modules/helma/Http.js
+%%WWWDIR%%/modules/helma/Image.js
+%%WWWDIR%%/modules/helma/Mail.js
+%%WWWDIR%%/modules/helma/Search.js
+%%WWWDIR%%/modules/helma/Skin.js
+%%WWWDIR%%/modules/helma/Ssh.js
+%%WWWDIR%%/modules/helma/Url.js
+%%WWWDIR%%/modules/helma/Zip.js
+%%WWWDIR%%/modules/helma/all.js
+%%WWWDIR%%/modules/helma/ganymed-ssh2.jar
+%%WWWDIR%%/modules/helma/jxl.jar
+%%WWWDIR%%/modules/helma/lucene-analyzers.jar
+%%WWWDIR%%/modules/helma/lucene-core.jar
+%%WWWDIR%%/modules/helmaTools.zip
+%%WWWDIR%%/modules/jala/README
+%%WWWDIR%%/modules/jala/build.properties
+%%WWWDIR%%/modules/jala/code/AsyncRequest.js
+%%WWWDIR%%/modules/jala/code/BitTorrent.js
+%%WWWDIR%%/modules/jala/code/Captcha.js
+%%WWWDIR%%/modules/jala/code/Database.js
+%%WWWDIR%%/modules/jala/code/Date.js
+%%WWWDIR%%/modules/jala/code/DnsClient.js
+%%WWWDIR%%/modules/jala/code/Form.js
+%%WWWDIR%%/modules/jala/code/Global.js
+%%WWWDIR%%/modules/jala/code/History.js
+%%WWWDIR%%/modules/jala/code/HopObject.js
+%%WWWDIR%%/modules/jala/code/HtmlDocument.js
+%%WWWDIR%%/modules/jala/code/I18n.js
+%%WWWDIR%%/modules/jala/code/ImageFilter.js
+%%WWWDIR%%/modules/jala/code/IndexManager.js
+%%WWWDIR%%/modules/jala/code/ListRenderer.js
+%%WWWDIR%%/modules/jala/code/Mp3.js
+%%WWWDIR%%/modules/jala/code/PodcastWriter.js
+%%WWWDIR%%/modules/jala/code/RemoteContent.js
+%%WWWDIR%%/modules/jala/code/Rss20Writer.js
+%%WWWDIR%%/modules/jala/code/Utilities.js
+%%WWWDIR%%/modules/jala/code/XmlRpcRequest.js
+%%WWWDIR%%/modules/jala/code/XmlWriter.js
+%%WWWDIR%%/modules/jala/code/all.js
+%%WWWDIR%%/modules/jala/docs/stylesheet.css
+%%WWWDIR%%/modules/jala/lib/dom4j-1.6.1.jar
+%%WWWDIR%%/modules/jala/lib/id3-1.6.0d9.jar
+%%WWWDIR%%/modules/jala/lib/javadns.jar
+%%WWWDIR%%/modules/jala/lib/jaxen-1.1-beta-8.jar
+%%WWWDIR%%/modules/jala/lib/jid3lib-0.5.4.jar
+%%WWWDIR%%/modules/jala/licenses/dom4j.txt
+%%WWWDIR%%/modules/jala/licenses/id3.txt
+%%WWWDIR%%/modules/jala/licenses/jala.txt
+%%WWWDIR%%/modules/jala/licenses/javadns.txt
+%%WWWDIR%%/modules/jala/tests/1meg.reference-win.torrent
+%%WWWDIR%%/modules/jala/tests/1meg.reference.torrent
+%%WWWDIR%%/modules/jala/tests/AsyncRequest.js
+%%WWWDIR%%/modules/jala/tests/BitTorrent.js
+%%WWWDIR%%/modules/jala/tests/Database.js
+%%WWWDIR%%/modules/jala/tests/Database.script.sql
+%%WWWDIR%%/modules/jala/tests/DnsClient.js
+%%WWWDIR%%/modules/jala/tests/Form.fileupload.doc
+%%WWWDIR%%/modules/jala/tests/Form.imageupload.jpg
+%%WWWDIR%%/modules/jala/tests/Form.js
+%%WWWDIR%%/modules/jala/tests/HopObject.js
+%%WWWDIR%%/modules/jala/tests/HtmlDocument.js
+%%WWWDIR%%/modules/jala/tests/I18n.js
+%%WWWDIR%%/modules/jala/tests/ImageFilter.js
+%%WWWDIR%%/modules/jala/tests/IndexManager.js
+%%WWWDIR%%/modules/jala/tests/ListRenderer.js
+%%WWWDIR%%/modules/jala/tests/Mp3.js
+%%WWWDIR%%/modules/jala/tests/Mp3.test.jpg
+%%WWWDIR%%/modules/jala/tests/Mp3.test.mp3
+%%WWWDIR%%/modules/jala/tests/Utilities.js
+%%WWWDIR%%/modules/jala/tests/gaussianBlur.reference.jpg
+%%WWWDIR%%/modules/jala/tests/sharpen.reference.jpg
+%%WWWDIR%%/modules/jala/tests/test.jpg
+%%WWWDIR%%/modules/jala/tests/test.mp3
+%%WWWDIR%%/modules/jala/tests/unsharpMask.reference.jpg
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/.jsdoc_config
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/CHANGES
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc.pm
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/XMI.pm
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/XML.pm
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/xmi.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc/xml.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript/Syntax/HTML.pm
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/README
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/TODO
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/TestJSDoc.pl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/jsdoc.pl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/allclasses-frame.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/allclasses-noframe.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/constant-values.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/help-doc.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/index-all.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/index.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/main.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/overview-frame.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/overview-summary.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/overview-tree.tmpl
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates/stylesheet.css
+%%WWWDIR%%/modules/jala/util/HopKit/JSDoc/test.js
+%%WWWDIR%%/modules/jala/util/HopKit/build.bat
+%%WWWDIR%%/modules/jala/util/HopKit/build.sh
+%%WWWDIR%%/modules/jala/util/HopKit/js.bat
+%%WWWDIR%%/modules/jala/util/HopKit/lib.xml
+%%WWWDIR%%/modules/jala/util/HopKit/lib/bsf.jar
+%%WWWDIR%%/modules/jala/util/HopKit/scripts/MessageParser.js
+%%WWWDIR%%/modules/jala/util/HopKit/scripts/PoParser.js
+%%WWWDIR%%/modules/jala/util/HopKit/scripts/jsant.js
+%%WWWDIR%%/modules/jala/util/HopKit/scripts/jslint.js
+%%WWWDIR%%/modules/jala/util/HopKit/scripts/jsmin.js
+%%WWWDIR%%/modules/jala/util/Test/code/Global/Root.js
+%%WWWDIR%%/modules/jala/util/Test/code/Global/jala.Test.js
+%%WWWDIR%%/modules/jala/util/Test/code/Global/jala.Test.skin
+%%WWWDIR%%/modules/jala/util/Test/code/subetha-smtp.jar
+%%WWWDIR%%/modules/jala/util/Test/code/subetha-wiser.jar
+%%WWWDIR%%/modules/jala/util/Test/code/subethasmtp.license.txt
+%%WWWDIR%%/modules/jala/util/Test/docs/stylesheet.css
+%%WWWDIR%%/modules/jala/util/Test/tests/selftest.js
+%%WWWDIR%%/modules/jala/util/Test/tests/skeleton.js
+%%WWWDIR%%/modules/jala/util/XmlRpcClient/Global/Feedback.js
+%%WWWDIR%%/modules/jala/util/XmlRpcClient/Global/Global.js
+%%WWWDIR%%/modules/jala/util/XmlRpcClient/Global/XmlRpcCall.js
+%%WWWDIR%%/modules/jala/util/XmlRpcClient/README
+%%WWWDIR%%/modules/jala/util/XmlRpcClient/Root/Root.js
+%%WWWDIR%%/modules/jala/util/XmlRpcClient/Root/main.skin
+%%WWWDIR%%/modules/summary.txt
+%%WWWDIR%%/modules/test/README.txt
+%%WWWDIR%%/modules/test/code/Global/global.js
+%%WWWDIR%%/modules/test/code/Global/subskins.skin
+%%WWWDIR%%/modules/test/code/Organisation/type.properties
+%%WWWDIR%%/modules/test/code/Person/type.properties
+%%WWWDIR%%/modules/test/code/Root/root.js
+%%WWWDIR%%/modules/test/code/Root/type.properties
+%%WWWDIR%%/modules/test/code/app.properties
+%%WWWDIR%%/modules/test/code/db.properties
+%%WWWDIR%%/modules/test/db-mysql.sql
+%%WWWDIR%%/modules/test/db-oracle.sql
+%%WWWDIR%%/modules/test/db-postgresql.sql
+%%WWWDIR%%/modules/test/tests/HopObjectBasicMapping.js
+%%WWWDIR%%/modules/test/tests/HopObjectCollection.js
+%%WWWDIR%%/modules/test/tests/HopObjectGeneric.js
+%%WWWDIR%%/modules/test/tests/HopObjectGroupBy.js
+%%WWWDIR%%/modules/test/tests/HopObjectHref.js
+%%WWWDIR%%/modules/test/tests/HopObjectReference.js
+%%WWWDIR%%/modules/test/tests/Skin.js
+%%WWWDIR%%/modules/test/tests/helma.Http.js
+%%WWWDIR%%/modules/test/tests/helma.Search.js
+@dirrm %%WWWDIR%%/modules/test/tests
+@dirrm %%WWWDIR%%/modules/test/code/SomeMountpoint
+@dirrm %%WWWDIR%%/modules/test/code/Root
+@dirrm %%WWWDIR%%/modules/test/code/Person
+@dirrm %%WWWDIR%%/modules/test/code/Organisation
+@dirrm %%WWWDIR%%/modules/test/code/Global
+@dirrm %%WWWDIR%%/modules/test/code/Country
+@dirrm %%WWWDIR%%/modules/test/code
+@dirrm %%WWWDIR%%/modules/test
+@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient/Root
+@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient/Global
+@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient
+@dirrm %%WWWDIR%%/modules/jala/util/Test/tests
+@dirrm %%WWWDIR%%/modules/jala/util/Test/docs
 @dirrm %%WWWDIR%%/modules/jala/util/Test/code/Global
 @dirrm %%WWWDIR%%/modules/jala/util/Test/code
-@dirrm %%WWWDIR%%/modules/jala/util/Test/docs
-@dirrm %%WWWDIR%%/modules/jala/util/Test/tests
 @dirrm %%WWWDIR%%/modules/jala/util/Test
-@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient/Global
-@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient/Root
-@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit/scripts
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit/lib
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript/Syntax
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc
+@dirrm %%WWWDIR%%/modules/jala/util/HopKit
 @dirrm %%WWWDIR%%/modules/jala/util
-@dirrm %%WWWDIR%%/modules/jala
-@dirrm %%WWWDIR%%/modules
+@dirrm %%WWWDIR%%/modules/jala/tests
+@dirrm %%WWWDIR%%/modules/jala/licenses
+@dirrmtry %%WWWDIR%%/modules/jala/lib
+@dirrm %%WWWDIR%%/modules/jala/docs
+@dirrm %%WWWDIR%%/modules/jala/code
+@dirrmtry %%WWWDIR%%/modules/jala
+@dirrm %%WWWDIR%%/modules/helma
+@dirrm %%WWWDIR%%/modules/core
+@dirrmtry %%WWWDIR%%/modules
+@dirrm %%WWWDIR%%/apps/welcome/static/guide
+@dirrm %%WWWDIR%%/apps/welcome/static
+@dirrm %%WWWDIR%%/apps/welcome/code/Root
+@dirrm %%WWWDIR%%/apps/welcome/code/HopObject
+@dirrm %%WWWDIR%%/apps/welcome/code/Guide
+@dirrm %%WWWDIR%%/apps/welcome/code/Global
+@dirrm %%WWWDIR%%/apps/welcome/code
+@dirrm %%WWWDIR%%/apps/welcome
+@dirrm %%WWWDIR%%/apps/manage
+@dirrmtry %%WWWDIR%%/apps
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%DATADIR%%/lib/ext
 @dirrmtry %%DATADIR%%/lib
 @dirrmtry %%DATADIR%%
 @dirrmtry %%ETCDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/jala
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
