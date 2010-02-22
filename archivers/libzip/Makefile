@@ -6,28 +6,21 @@
 #
 
 PORTNAME=	libzip
-PORTVERSION=	0.8
+PORTVERSION=	0.9.3
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A C library for reading, creating, and modifying zip archives
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig
 
-PLIST_FILES=	bin/zipcmp \
-		bin/zipmerge \
-		include/zip.h \
-		lib/libzip.a \
-		lib/libzip.la \
-		lib/libzip.so \
-		lib/libzip.so.1 \
-		libdata/pkgconfig/libzip.pc
-
 MAN1=		zipcmp.1 \
-		zipmerge.1
+		zipmerge.1 \
+		ziptorrent.1
 
 MAN3=		libzip.3 \
 		zip_add.3 \
@@ -47,6 +40,7 @@ MAN3=		libzip.3 \
 		zip_fopen_index.3 \
 		zip_fread.3 \
 		zip_get_archive_comment.3 \
+		zip_get_archive_flag.3 \
 		zip_get_file_comment.3 \
 		zip_get_name.3 \
 		zip_get_num_files.3 \
@@ -55,6 +49,7 @@ MAN3=		libzip.3 \
 		zip_rename.3 \
 		zip_replace.3 \
 		zip_set_archive_comment.3 \
+		zip_set_archive_flag.3 \
 		zip_set_file_comment.3 \
 		zip_source_buffer.3 \
 		zip_source_file.3 \
