@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	texmakerx
-PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTVERSION=	1.9.3
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TexMakerX%20${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -23,13 +22,15 @@ WRKSRC=		${WRKDIR}/${PORTVERSION}
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build \
-		uic_build qtestlib
+		uic_build
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	XDVI "view dvi with xdvi" On \
 		GV "view ps with gv" On
+
+WRKSRC=		${WRKDIR}/trunk
 
 .include <bsd.port.pre.mk>
 
