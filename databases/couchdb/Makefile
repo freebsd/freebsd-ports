@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	couchdb
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -37,6 +36,7 @@ CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--disable-init \
 		--with-js-include=${LOCALBASE}/include \
 		--with-js-lib=${LOCALBASE}/lib
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 MAN1=	couchdb.1 couchjs.1
 
@@ -46,6 +46,7 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 post-patch:
+	${REINPLACE_CMD} -e '117s|@INSTALL_PROGRAM@|@INSTALL_SCRIPT@|' ${WRKSRC}/src/couchdb/priv/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
