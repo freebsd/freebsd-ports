@@ -7,10 +7,9 @@
 
 PORTNAME=	enigma
 PORTVERSION=	1.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	enigma-game
+MASTER_SITES=	BERLIOS/enigma-game
 DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -28,9 +27,9 @@ USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cxxlua \
 		--with-libintl-prefix="${LOCALBASE}"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}"
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -52,8 +51,10 @@ post-extract:
 	@${RM} -rf ${WRKSRC}/lib-src/lua ${WRKSRC}/lib-src/zipios++ \
 		${WRKSRC}/lib-src/enet ${WRKSRC}/tools ${WRKSRC}/intl
 
-.if defined(NOPORTDOCS)
 post-patch:
+	@${REINPLACE_CMD} -e '/Exec=/s,enigma,${PREFIX}/bin/enigma,g' \
+		${WRKSRC}/etc/enigma.desktop
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e '/install-data-am/ s,install-(doc|index)DATA,,g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|=.*|=|' ${WRKSRC}/doc/Makefile.in
