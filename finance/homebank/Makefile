@@ -15,6 +15,8 @@ COMMENT=	Manage your personal accounts at home
 
 OPTIONS=	OFX "Enable libOFX support" on
 
+BROKEN=		does not fetch
+
 USE_GNOME=	desktopfileutils gnomehier gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
