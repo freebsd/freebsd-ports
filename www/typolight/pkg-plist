@@ -1,23 +1,39 @@
-%%WWWDIR%%/._htaccess
+%%WWWDIR%%/.htaccess.default
 %%WWWDIR%%/CHANGELOG.txt
+%%WWWDIR%%/GPL.txt
 %%WWWDIR%%/INSTALL.txt
-%%WWWDIR%%/LICENSE.txt
+%%WWWDIR%%/LGPL.txt
 %%WWWDIR%%/basic.css
 %%WWWDIR%%/cron.php
-%%WWWDIR%%/flash.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/music_academy.css
-%%WWWDIR%%/plugins/calendar/calendar-icon.gif
-%%WWWDIR%%/plugins/calendar/calendar-next.gif
-%%WWWDIR%%/plugins/calendar/calendar-prev.gif
-%%WWWDIR%%/plugins/calendar/calendar-td.gif
-%%WWWDIR%%/plugins/calendar/calendar-valid.gif
-%%WWWDIR%%/plugins/calendar/calendar.css
-%%WWWDIR%%/plugins/calendar/calendar.js
-%%WWWDIR%%/plugins/calendar/calendar.png
-%%WWWDIR%%/plugins/calendar/calendar_src.css
-%%WWWDIR%%/plugins/calendar/calendar_src.js
+%%WWWDIR%%/plugins/calendar/css/calendar.css
+%%WWWDIR%%/plugins/calendar/css/calendar_src.css
+%%WWWDIR%%/plugins/calendar/js/calendar.js
+%%WWWDIR%%/plugins/calendar/js/calendar.js.gz
+%%WWWDIR%%/plugins/calendar/js/calendar_src.js
+%%WWWDIR%%/plugins/calendar/media/calendar-hilite.gif
+%%WWWDIR%%/plugins/calendar/media/calendar-icon.gif
+%%WWWDIR%%/plugins/calendar/media/calendar-next.gif
+%%WWWDIR%%/plugins/calendar/media/calendar-prev.gif
+%%WWWDIR%%/plugins/calendar/media/calendar-td.gif
+%%WWWDIR%%/plugins/calendar/media/calendar-valid.gif
+%%WWWDIR%%/plugins/calendar/media/calendar.png
+%%WWWDIR%%/plugins/fancyupload/Swiff.Uploader.swf
+%%WWWDIR%%/plugins/fancyupload/assets/attach.png
+%%WWWDIR%%/plugins/fancyupload/assets/bar.gif
+%%WWWDIR%%/plugins/fancyupload/assets/error.png
+%%WWWDIR%%/plugins/fancyupload/assets/failed.png
+%%WWWDIR%%/plugins/fancyupload/assets/file.png
+%%WWWDIR%%/plugins/fancyupload/assets/progress.gif
+%%WWWDIR%%/plugins/fancyupload/assets/success.png
+%%WWWDIR%%/plugins/fancyupload/assets/uploading.png
+%%WWWDIR%%/plugins/fancyupload/css/fancyupload.css
+%%WWWDIR%%/plugins/fancyupload/css/fancyupload_src.css
+%%WWWDIR%%/plugins/fancyupload/js/fancyupload.js
+%%WWWDIR%%/plugins/fancyupload/js/fancyupload_src.js
 %%WWWDIR%%/plugins/highlighter/scripts/clipboard.swf
+%%WWWDIR%%/plugins/highlighter/scripts/shBrushAS3.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushBash.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushCSharp.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushCpp.js
@@ -27,9 +43,11 @@
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushGroovy.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushJScript.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushJava.js
+%%WWWDIR%%/plugins/highlighter/scripts/shBrushJavaFX.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushPerl.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushPhp.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushPlain.js
+%%WWWDIR%%/plugins/highlighter/scripts/shBrushPowerShell.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushPython.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushRuby.js
 %%WWWDIR%%/plugins/highlighter/scripts/shBrushScala.js
@@ -51,25 +69,50 @@
 %%WWWDIR%%/plugins/highlighter/styles/shThemeDefault.css
 %%WWWDIR%%/plugins/highlighter/styles/shThemeTYPOlight.css
 %%WWWDIR%%/plugins/highlighter/styles/wrapping.png
+%%WWWDIR%%/plugins/idna/ReadMe.txt
+%%WWWDIR%%/plugins/idna/idna_convert.class.php
+%%WWWDIR%%/plugins/idna/transcode_wrapper.php
+%%WWWDIR%%/plugins/idna/uctc.php
+%%WWWDIR%%/plugins/mediabox/NonverBlaster.swf
+%%WWWDIR%%/plugins/mediabox/css/mediabox.css
+%%WWWDIR%%/plugins/mediabox/css/mediabox_src.css
+%%WWWDIR%%/plugins/mediabox/images/50.gif
+%%WWWDIR%%/plugins/mediabox/images/80.png
+%%WWWDIR%%/plugins/mediabox/images/BlackClose.gif
+%%WWWDIR%%/plugins/mediabox/images/BlackLoading.gif
+%%WWWDIR%%/plugins/mediabox/images/BlackNext.gif
+%%WWWDIR%%/plugins/mediabox/images/BlackPrevious.gif
+%%WWWDIR%%/plugins/mediabox/images/MinimalClose.png
+%%WWWDIR%%/plugins/mediabox/images/MinimalLoading.gif
+%%WWWDIR%%/plugins/mediabox/images/MinimalNext.png
+%%WWWDIR%%/plugins/mediabox/images/MinimalPrevious.png
+%%WWWDIR%%/plugins/mediabox/images/WhiteClose.gif
+%%WWWDIR%%/plugins/mediabox/images/WhiteLoading.gif
+%%WWWDIR%%/plugins/mediabox/images/WhiteNext.gif
+%%WWWDIR%%/plugins/mediabox/images/WhitePrevious.gif
+%%WWWDIR%%/plugins/mediabox/js/mediabox.js
+%%WWWDIR%%/plugins/mediabox/js/mediabox.js.gz
+%%WWWDIR%%/plugins/mediabox/js/mediabox_src.js
 %%WWWDIR%%/plugins/mootools/images/blank.gif
 %%WWWDIR%%/plugins/mootools/images/moor_arrows.gif
 %%WWWDIR%%/plugins/mootools/images/moor_boverlay.png
 %%WWWDIR%%/plugins/mootools/images/moor_cursor.gif
 %%WWWDIR%%/plugins/mootools/images/moor_slider.png
 %%WWWDIR%%/plugins/mootools/images/moor_woverlay.png
-%%WWWDIR%%/plugins/mootools/mootools.js
-%%WWWDIR%%/plugins/mootools/mootools.js.gz
-%%WWWDIR%%/plugins/mootools/mootools_src.js
+%%WWWDIR%%/plugins/mootools/mootools-core.js
+%%WWWDIR%%/plugins/mootools/mootools-core.js.gz
+%%WWWDIR%%/plugins/mootools/mootools-more.js
+%%WWWDIR%%/plugins/mootools/mootools-more.js.gz
 %%WWWDIR%%/plugins/mootools/rainbow.css
 %%WWWDIR%%/plugins/mootools/rainbow.js
-%%WWWDIR%%/plugins/mootools/rainbow_src.css
-%%WWWDIR%%/plugins/mootools/rainbow_src.js
-%%WWWDIR%%/plugins/phpmailer/class.phpmailer.php
-%%WWWDIR%%/plugins/phpmailer/class.smtp.php
-%%WWWDIR%%/plugins/phpmailer/language/phpmailer.lang-en.php
+%%WWWDIR%%/plugins/mootools/src/mootools-core.js
+%%WWWDIR%%/plugins/mootools/src/mootools-more.js
+%%WWWDIR%%/plugins/mootools/src/rainbow.css
+%%WWWDIR%%/plugins/mootools/src/rainbow.js
 %%WWWDIR%%/plugins/simplepie/idna_convert.class.php
 %%WWWDIR%%/plugins/simplepie/npdata.ser
 %%WWWDIR%%/plugins/simplepie/simplepie.inc
+%%WWWDIR%%/plugins/slimbox/README.txt
 %%WWWDIR%%/plugins/slimbox/css/closelabel.gif
 %%WWWDIR%%/plugins/slimbox/css/loading.gif
 %%WWWDIR%%/plugins/slimbox/css/nextlabel.gif
@@ -77,17 +120,160 @@
 %%WWWDIR%%/plugins/slimbox/css/slimbox.css
 %%WWWDIR%%/plugins/slimbox/css/slimbox_src.css
 %%WWWDIR%%/plugins/slimbox/js/slimbox.js
+%%WWWDIR%%/plugins/slimbox/js/slimbox.js.gz
 %%WWWDIR%%/plugins/slimbox/js/slimbox_src.js
-%%WWWDIR%%/plugins/swfobject/swfobject.js
-%%WWWDIR%%/plugins/swfobject/swfobject.js.gz
-%%WWWDIR%%/plugins/swfobject/swfobject_src.js
+%%WWWDIR%%/plugins/swiftmailer/README
+%%WWWDIR%%/plugins/swiftmailer/VERSION
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Attachment.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/ByteStream/AbstractFilterableInputStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/ByteStream/ArrayByteStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/ByteStream/FileByteStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReader/GenericFixedWidthReader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReader/UsAsciiReader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReader/Utf8Reader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReaderFactory.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterStream/ArrayCharacterStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterStream/NgCharacterStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/DependencyContainer.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/DependencyException.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/EmbeddedFile.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Encoder/Base64Encoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Encoder/QpEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Encoder/Rfc2231Encoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Encoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Encoding.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/CommandEvent.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/CommandListener.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/Event.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/EventDispatcher.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/EventListener.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/EventObject.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/ResponseEvent.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/ResponseListener.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/SendEvent.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/SendListener.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/SimpleEventDispatcher.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/TransportChangeEvent.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/TransportChangeListener.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/TransportExceptionEvent.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events/TransportExceptionListener.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/FailoverTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/FileStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Filterable.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Image.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/InputByteStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/IoException.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/KeyCache/ArrayKeyCache.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/KeyCache/DiskKeyCache.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/KeyCache/KeyCacheInputStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/KeyCache/NullKeyCache.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/KeyCache/SimpleKeyCacheInputStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/KeyCache.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/LoadBalancedTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/MailTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mailer/ArrayRecipientIterator.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mailer/RecipientIterator.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mailer.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Message.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Attachment.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/CharsetObserver.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/ContentEncoder/Base64ContentEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/ContentEncoder/PlainContentEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/ContentEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/EmbeddedFile.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/EncodingObserver.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Header.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/HeaderEncoder/Base64HeaderEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/HeaderEncoder/QpHeaderEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/HeaderEncoder.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/HeaderFactory.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/HeaderSet.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers/AbstractHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers/DateHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers/IdentificationHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers/MailboxHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers/ParameterizedHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers/PathHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers/UnstructuredHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Message.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/MimeEntity.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/MimePart.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/ParameterizedHeader.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/SimpleHeaderFactory.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/SimpleHeaderSet.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/SimpleMessage.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/SimpleMimeEntity.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/MimePart.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/OutputByteStream.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/AntiFloodPlugin.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/BandwidthMonitorPlugin.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Decorator/Replacements.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/DecoratorPlugin.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Logger.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/LoggerPlugin.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Loggers/ArrayLogger.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Loggers/EchoLogger.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Pop/Pop3Connection.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Pop/Pop3Exception.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/PopBeforeSmtpPlugin.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Reporter.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/ReporterPlugin.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Reporters/HitReporter.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Reporters/HtmlReporter.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Sleeper.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/ThrottlerPlugin.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Timer.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Preferences.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/ReplacementFilterFactory.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/RfcComplianceException.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/SendmailTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/SmtpTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/StreamFilter.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/StreamFilters/ByteArrayReplacementFilter.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/StreamFilters/StringReplacementFilter.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/StreamFilters/StringReplacementFilterFactory.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/SwiftException.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/Esmtp/Auth/CramMd5Authenticator.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/Esmtp/Auth/LoginAuthenticator.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/Esmtp/Auth/PlainAuthenticator.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/Esmtp/AuthHandler.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/Esmtp/Authenticator.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/EsmtpHandler.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/EsmtpTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/FailoverTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/IoBuffer.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/LoadBalancedTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/MailInvoker.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/MailTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/SendmailTransport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/SimpleMailInvoker.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/SmtpAgent.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/StreamBuffer.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift/TransportException.php
+%%WWWDIR%%/plugins/swiftmailer/classes/Swift.php
+%%WWWDIR%%/plugins/swiftmailer/dependency_maps/cache_deps.php
+%%WWWDIR%%/plugins/swiftmailer/dependency_maps/mime_deps.php
+%%WWWDIR%%/plugins/swiftmailer/dependency_maps/transport_deps.php
+%%WWWDIR%%/plugins/swiftmailer/mime_types.php
+%%WWWDIR%%/plugins/swiftmailer/preferences.php
+%%WWWDIR%%/plugins/swiftmailer/swift_init.php
+%%WWWDIR%%/plugins/swiftmailer/swift_required.php
+%%WWWDIR%%/plugins/swiftmailer/swift_required_pear.php
 %%WWWDIR%%/plugins/tablesort/css/tablesort.css
 %%WWWDIR%%/plugins/tablesort/css/tablesort_src.css
 %%WWWDIR%%/plugins/tablesort/js/tablesort.js
+%%WWWDIR%%/plugins/tablesort/js/tablesort.js.gz
 %%WWWDIR%%/plugins/tablesort/js/tablesort_src.js
 %%WWWDIR%%/plugins/tablesort/media/asc.gif
 %%WWWDIR%%/plugins/tablesort/media/default.gif
 %%WWWDIR%%/plugins/tablesort/media/desc.gif
+%%WWWDIR%%/plugins/tcpdf/README.TXT
 %%WWWDIR%%/plugins/tcpdf/cache/.htaccess
 %%WWWDIR%%/plugins/tcpdf/config/lang/eng.php
 %%WWWDIR%%/plugins/tcpdf/config/tcpdf_config.php
@@ -124,18 +310,23 @@
 %%WWWDIR%%/plugins/tinyMCE/langs/el.js
 %%WWWDIR%%/plugins/tinyMCE/langs/en.js
 %%WWWDIR%%/plugins/tinyMCE/langs/es.js
+%%WWWDIR%%/plugins/tinyMCE/langs/et.js
 %%WWWDIR%%/plugins/tinyMCE/langs/fa.js
+%%WWWDIR%%/plugins/tinyMCE/langs/fi.js
 %%WWWDIR%%/plugins/tinyMCE/langs/fr.js
+%%WWWDIR%%/plugins/tinyMCE/langs/gl.js
 %%WWWDIR%%/plugins/tinyMCE/langs/he.js
 %%WWWDIR%%/plugins/tinyMCE/langs/hr.js
 %%WWWDIR%%/plugins/tinyMCE/langs/hu.js
+%%WWWDIR%%/plugins/tinyMCE/langs/id.js
 %%WWWDIR%%/plugins/tinyMCE/langs/is.js
 %%WWWDIR%%/plugins/tinyMCE/langs/it.js
 %%WWWDIR%%/plugins/tinyMCE/langs/ja.js
+%%WWWDIR%%/plugins/tinyMCE/langs/ko.js
 %%WWWDIR%%/plugins/tinyMCE/langs/lt.js
 %%WWWDIR%%/plugins/tinyMCE/langs/lv.js
 %%WWWDIR%%/plugins/tinyMCE/langs/nl.js
-%%WWWDIR%%/plugins/tinyMCE/langs/nn.js
+%%WWWDIR%%/plugins/tinyMCE/langs/no.js
 %%WWWDIR%%/plugins/tinyMCE/langs/pl.js
 %%WWWDIR%%/plugins/tinyMCE/langs/pt.js
 %%WWWDIR%%/plugins/tinyMCE/langs/ro.js
@@ -145,8 +336,11 @@
 %%WWWDIR%%/plugins/tinyMCE/langs/sq.js
 %%WWWDIR%%/plugins/tinyMCE/langs/sr.js
 %%WWWDIR%%/plugins/tinyMCE/langs/sv.js
+%%WWWDIR%%/plugins/tinyMCE/langs/ta.js
+%%WWWDIR%%/plugins/tinyMCE/langs/th.js
 %%WWWDIR%%/plugins/tinyMCE/langs/tr.js
 %%WWWDIR%%/plugins/tinyMCE/langs/uk.js
+%%WWWDIR%%/plugins/tinyMCE/langs/vi.js
 %%WWWDIR%%/plugins/tinyMCE/langs/zh.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/css/advimage.css
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/editor_plugin.js
@@ -165,18 +359,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/ro_dlg.js
@@ -186,13 +385,14 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/autosave/editor_plugin_src.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/contextmenu/editor_plugin.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/contextmenu/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/directionality/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/directionality/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/editor_plugin.js
@@ -226,18 +426,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/ro_dlg.js
@@ -247,8 +452,11 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/editor_plugin_src.js
@@ -261,9 +469,6 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins/clearlooks2/window.css
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/template.htm
-%%WWWDIR%%/plugins/tinyMCE/plugins/paste/blank.htm
-%%WWWDIR%%/plugins/tinyMCE/plugins/paste/css/blank.css
-%%WWWDIR%%/plugins/tinyMCE/plugins/paste/css/pasteword.css
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/js/pastetext.js
@@ -279,18 +484,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/ro_dlg.js
@@ -300,8 +510,11 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/pastetext.htm
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/pasteword.htm
@@ -325,18 +538,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/ro_dlg.js
@@ -346,8 +564,11 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/searchreplace.htm
 %%WWWDIR%%/plugins/tinyMCE/plugins/spellchecker/classes/EnchantSpell.php
@@ -379,18 +600,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/ro_dlg.js
@@ -400,10 +626,15 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/style/props.htm
+%%WWWDIR%%/plugins/tinyMCE/plugins/tabfocus/editor_plugin.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/tabfocus/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/cell.htm
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/css/cell.css
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/css/row.css
@@ -425,18 +656,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/ro_dlg.js
@@ -446,8 +682,11 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/merge_cells.htm
 %%WWWDIR%%/plugins/tinyMCE/plugins/table/row.htm
@@ -468,18 +707,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/ro_dlg.js
@@ -489,8 +733,11 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/template/template.htm
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/editor_plugin.js
@@ -552,18 +799,23 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/el_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/pt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/ro_dlg.js
@@ -573,8 +825,11 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/sq_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/xhtmlxtras/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/about.htm
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/anchor.htm
@@ -614,30 +869,40 @@
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/en_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/es.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/es_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/et.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/et_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/fa.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/fa_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/fi.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/fi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/fr.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/gl.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/gl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/he.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/he_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/hr.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/hr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/hu.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/hu_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/id.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/id_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/is.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/is_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/it.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/it_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/ja.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/ja_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/ko.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/ko_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/lt.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/lt_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/lv.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/lv_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/nl.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/nl_dlg.js
-%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/nn.js
-%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/nn_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/no.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/no_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/pl.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/pt.js
@@ -656,10 +921,16 @@
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/sr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/sv.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/sv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/ta.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/ta_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/th.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/th_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/tr.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/tr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/uk.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/uk_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/vi.js
+%%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/vi_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/zh.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/themes/advanced/link.htm
@@ -695,18 +966,23 @@
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/el.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/en.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/es.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/et.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/fa.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/fi.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/fr.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/gl.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/he.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/hr.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/hu.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/id.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/is.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/it.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/ja.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/ko.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/lt.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/lv.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/nl.js
-%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/nn.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/no.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/pl.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/pt.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/ro.js
@@ -716,8 +992,11 @@
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/sq.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/sr.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/sv.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/ta.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/th.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/tr.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/uk.js
+%%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/vi.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/langs/zh.js
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/skins/default/content.css
 %%WWWDIR%%/plugins/tinyMCE/themes/simple/skins/default/ui.css
@@ -738,6 +1017,8 @@
 %%WWWDIR%%/system/config/config.php
 %%WWWDIR%%/system/config/countries.php
 %%WWWDIR%%/system/config/dcaconfig.php
+%%WWWDIR%%/system/config/fancyUpload.php
+%%WWWDIR%%/system/config/initconfig.php
 %%WWWDIR%%/system/config/langconfig.php
 %%WWWDIR%%/system/config/languages.php
 %%WWWDIR%%/system/config/localconfig.php
@@ -800,6 +1081,7 @@
 %%WWWDIR%%/system/modules/backend/ChmodTable.php
 %%WWWDIR%%/system/modules/backend/DataContainer.php
 %%WWWDIR%%/system/modules/backend/FileTree.php
+%%WWWDIR%%/system/modules/backend/ImageSize.php
 %%WWWDIR%%/system/modules/backend/InputUnit.php
 %%WWWDIR%%/system/modules/backend/ListWizard.php
 %%WWWDIR%%/system/modules/backend/ModuleMaintenance.php
@@ -824,7 +1106,6 @@
 %%WWWDIR%%/system/modules/backend/dca/tl_article.php
 %%WWWDIR%%/system/modules/backend/dca/tl_content.php
 %%WWWDIR%%/system/modules/backend/dca/tl_files.php
-%%WWWDIR%%/system/modules/backend/dca/tl_flash.php
 %%WWWDIR%%/system/modules/backend/dca/tl_form.php
 %%WWWDIR%%/system/modules/backend/dca/tl_form_field.php
 %%WWWDIR%%/system/modules/backend/dca/tl_layout.php
@@ -848,9 +1129,9 @@
 %%WWWDIR%%/system/modules/backend/languages/de/tl_article.php
 %%WWWDIR%%/system/modules/backend/languages/de/tl_content.php
 %%WWWDIR%%/system/modules/backend/languages/de/tl_files.php
-%%WWWDIR%%/system/modules/backend/languages/de/tl_flash.php
 %%WWWDIR%%/system/modules/backend/languages/de/tl_form.php
 %%WWWDIR%%/system/modules/backend/languages/de/tl_form_field.php
+%%WWWDIR%%/system/modules/backend/languages/de/tl_install.php
 %%WWWDIR%%/system/modules/backend/languages/de/tl_layout.php
 %%WWWDIR%%/system/modules/backend/languages/de/tl_log.php
 %%WWWDIR%%/system/modules/backend/languages/de/tl_maintenance.php
@@ -874,9 +1155,9 @@
 %%WWWDIR%%/system/modules/backend/languages/en/tl_article.php
 %%WWWDIR%%/system/modules/backend/languages/en/tl_content.php
 %%WWWDIR%%/system/modules/backend/languages/en/tl_files.php
-%%WWWDIR%%/system/modules/backend/languages/en/tl_flash.php
 %%WWWDIR%%/system/modules/backend/languages/en/tl_form.php
 %%WWWDIR%%/system/modules/backend/languages/en/tl_form_field.php
+%%WWWDIR%%/system/modules/backend/languages/en/tl_install.php
 %%WWWDIR%%/system/modules/backend/languages/en/tl_layout.php
 %%WWWDIR%%/system/modules/backend/languages/en/tl_log.php
 %%WWWDIR%%/system/modules/backend/languages/en/tl_maintenance.php
@@ -894,7 +1175,6 @@
 %%WWWDIR%%/system/modules/backend/templates/.htaccess
 %%WWWDIR%%/system/modules/backend/templates/be_error.tpl
 %%WWWDIR%%/system/modules/backend/templates/be_files.tpl
-%%WWWDIR%%/system/modules/backend/templates/be_ftp.tpl
 %%WWWDIR%%/system/modules/backend/templates/be_help.tpl
 %%WWWDIR%%/system/modules/backend/templates/be_index.tpl
 %%WWWDIR%%/system/modules/backend/templates/be_install.tpl
@@ -920,9 +1200,9 @@
 %%WWWDIR%%/system/modules/calendar/Calendar.php
 %%WWWDIR%%/system/modules/calendar/Events.php
 %%WWWDIR%%/system/modules/calendar/ModuleCalendar.php
+%%WWWDIR%%/system/modules/calendar/ModuleEventMenu.php
 %%WWWDIR%%/system/modules/calendar/ModuleEventReader.php
 %%WWWDIR%%/system/modules/calendar/ModuleEventlist.php
-%%WWWDIR%%/system/modules/calendar/ModuleUpcomingEvents.php
 %%WWWDIR%%/system/modules/calendar/TimePeriod.php
 %%WWWDIR%%/system/modules/calendar/config/.htaccess
 %%WWWDIR%%/system/modules/calendar/config/config.php
@@ -953,20 +1233,25 @@
 %%WWWDIR%%/system/modules/calendar/templates/.htaccess
 %%WWWDIR%%/system/modules/calendar/templates/cal_default.tpl
 %%WWWDIR%%/system/modules/calendar/templates/cal_mini.tpl
-%%WWWDIR%%/system/modules/calendar/templates/event_default.tpl
+%%WWWDIR%%/system/modules/calendar/templates/event_full.tpl
 %%WWWDIR%%/system/modules/calendar/templates/event_list.tpl
 %%WWWDIR%%/system/modules/calendar/templates/event_teaser.tpl
 %%WWWDIR%%/system/modules/calendar/templates/event_upcoming.tpl
 %%WWWDIR%%/system/modules/calendar/templates/mod_calendar.tpl
 %%WWWDIR%%/system/modules/calendar/templates/mod_event.tpl
 %%WWWDIR%%/system/modules/calendar/templates/mod_eventlist.tpl
+%%WWWDIR%%/system/modules/calendar/templates/mod_eventmenu.tpl
+%%WWWDIR%%/system/modules/calendar/templates/mod_eventmenu_year.tpl
+%%WWWDIR%%/system/modules/comments/Comments.php
 %%WWWDIR%%/system/modules/comments/ContentComments.php
+%%WWWDIR%%/system/modules/comments/ModuleComments.php
 %%WWWDIR%%/system/modules/comments/config/.htaccess
 %%WWWDIR%%/system/modules/comments/config/config.php
 %%WWWDIR%%/system/modules/comments/config/database.sql
 %%WWWDIR%%/system/modules/comments/dca/.htaccess
 %%WWWDIR%%/system/modules/comments/dca/tl_comments.php
 %%WWWDIR%%/system/modules/comments/dca/tl_content.php
+%%WWWDIR%%/system/modules/comments/dca/tl_module.php
 %%WWWDIR%%/system/modules/comments/html/approved.gif
 %%WWWDIR%%/system/modules/comments/html/icon.gif
 %%WWWDIR%%/system/modules/comments/html/pending.gif
@@ -982,35 +1267,6 @@
 %%WWWDIR%%/system/modules/comments/templates/.htaccess
 %%WWWDIR%%/system/modules/comments/templates/ce_comments.tpl
 %%WWWDIR%%/system/modules/comments/templates/com_default.tpl
-%%WWWDIR%%/system/modules/dfGallery/ContentDfGallery.php
-%%WWWDIR%%/system/modules/dfGallery/DfGallery.swf
-%%WWWDIR%%/system/modules/dfGallery/config/.htaccess
-%%WWWDIR%%/system/modules/dfGallery/config/config.php
-%%WWWDIR%%/system/modules/dfGallery/config/database.sql
-%%WWWDIR%%/system/modules/dfGallery/dca/.htaccess
-%%WWWDIR%%/system/modules/dfGallery/dca/tl_content.php
-%%WWWDIR%%/system/modules/dfGallery/languages/de/.htaccess
-%%WWWDIR%%/system/modules/dfGallery/languages/de/default.php
-%%WWWDIR%%/system/modules/dfGallery/languages/de/modules.php
-%%WWWDIR%%/system/modules/dfGallery/languages/de/tl_content.php
-%%WWWDIR%%/system/modules/dfGallery/languages/en/.htaccess
-%%WWWDIR%%/system/modules/dfGallery/languages/en/default.php
-%%WWWDIR%%/system/modules/dfGallery/languages/en/modules.php
-%%WWWDIR%%/system/modules/dfGallery/languages/en/tl_content.php
-%%WWWDIR%%/system/modules/dfGallery/resources/locale/dfgallery_en.eden
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/properties.php
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/skins/mac.png
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/skins/mac.xml
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/skins/standard.png
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/skins/standard.xml
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/skins/vista.png
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/skins/vista.xml
-%%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/theme.swf
-%%WWWDIR%%/system/modules/dfGallery/templates/.htaccess
-%%WWWDIR%%/system/modules/dfGallery/templates/ce_dfgallery.tpl
-%%WWWDIR%%/system/modules/dfGallery/templates/df_default.tpl
-%%WWWDIR%%/system/modules/dfGallery/templates/df_mac.tpl
-%%WWWDIR%%/system/modules/dfGallery/templates/df_vista.tpl
 %%WWWDIR%%/system/modules/faq/ModuleFaq.php
 %%WWWDIR%%/system/modules/faq/ModuleFaqList.php
 %%WWWDIR%%/system/modules/faq/ModuleFaqReader.php
@@ -1059,6 +1315,7 @@
 %%WWWDIR%%/system/modules/frontend/FormCaptcha.php
 %%WWWDIR%%/system/modules/frontend/FormCheckBox.php
 %%WWWDIR%%/system/modules/frontend/FormExplanation.php
+%%WWWDIR%%/system/modules/frontend/FormFieldset.php
 %%WWWDIR%%/system/modules/frontend/FormFileUpload.php
 %%WWWDIR%%/system/modules/frontend/FormHeadline.php
 %%WWWDIR%%/system/modules/frontend/FormHidden.php
@@ -1108,30 +1365,21 @@
 %%WWWDIR%%/system/modules/frontend/languages/en/modules.php
 %%WWWDIR%%/system/modules/frontend/templates/.htaccess
 %%WWWDIR%%/system/modules/frontend/templates/ce_accordion.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_accordion_image.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_accordion_image_fullsize.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_accordion_image_link.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_accordion_start.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_accordion_stop.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_code.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_download.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_downloads.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_gallery.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_gallery_fullsize.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_headline.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_html.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_hyperlink.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_hyperlink_image.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_image.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_image_fullsize.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_image_link.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_list.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_table.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_teaser.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_text.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_text_image.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_text_image_fullsize.tpl
-%%WWWDIR%%/system/modules/frontend/templates/ce_text_image_link.tpl
 %%WWWDIR%%/system/modules/frontend/templates/ce_toplink.tpl
 %%WWWDIR%%/system/modules/frontend/templates/fe_page.tpl
 %%WWWDIR%%/system/modules/frontend/templates/form.tpl
@@ -1145,6 +1393,7 @@
 %%WWWDIR%%/system/modules/frontend/templates/form_submit.tpl
 %%WWWDIR%%/system/modules/frontend/templates/form_widget.tpl
 %%WWWDIR%%/system/modules/frontend/templates/form_xml.tpl
+%%WWWDIR%%/system/modules/frontend/templates/gallery_default.tpl
 %%WWWDIR%%/system/modules/frontend/templates/member_default.tpl
 %%WWWDIR%%/system/modules/frontend/templates/member_grouped.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article.tpl
@@ -1155,7 +1404,6 @@
 %%WWWDIR%%/system/modules/frontend/templates/mod_booknav.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_breadcrumb.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_flash.tpl
-%%WWWDIR%%/system/modules/frontend/templates/mod_flash_content.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_html.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_login_1cl.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_login_2cl.tpl
@@ -1170,35 +1418,12 @@
 %%WWWDIR%%/system/modules/frontend/templates/mod_search_advanced.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_search_simple.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_sitemap.tpl
-%%WWWDIR%%/system/modules/frontend/templates/moo_close_all.tpl
-%%WWWDIR%%/system/modules/frontend/templates/moo_default.tpl
-%%WWWDIR%%/system/modules/frontend/templates/moo_modify_foreground.tpl
+%%WWWDIR%%/system/modules/frontend/templates/moo_accordion.tpl
+%%WWWDIR%%/system/modules/frontend/templates/moo_mediabox.tpl
+%%WWWDIR%%/system/modules/frontend/templates/moo_slimbox.tpl
 %%WWWDIR%%/system/modules/frontend/templates/nav_default.tpl
 %%WWWDIR%%/system/modules/frontend/templates/pagination.tpl
 %%WWWDIR%%/system/modules/frontend/templates/search_default.tpl
-%%WWWDIR%%/system/modules/glossary/ModuleGlossaryList.php
-%%WWWDIR%%/system/modules/glossary/ModuleGlossaryMenu.php
-%%WWWDIR%%/system/modules/glossary/config/.htaccess
-%%WWWDIR%%/system/modules/glossary/config/config.php
-%%WWWDIR%%/system/modules/glossary/config/database.sql
-%%WWWDIR%%/system/modules/glossary/dca/.htaccess
-%%WWWDIR%%/system/modules/glossary/dca/tl_glossary.php
-%%WWWDIR%%/system/modules/glossary/dca/tl_glossary_term.php
-%%WWWDIR%%/system/modules/glossary/dca/tl_module.php
-%%WWWDIR%%/system/modules/glossary/html/icon.gif
-%%WWWDIR%%/system/modules/glossary/languages/de/.htaccess
-%%WWWDIR%%/system/modules/glossary/languages/de/modules.php
-%%WWWDIR%%/system/modules/glossary/languages/de/tl_glossary.php
-%%WWWDIR%%/system/modules/glossary/languages/de/tl_glossary_term.php
-%%WWWDIR%%/system/modules/glossary/languages/de/tl_module.php
-%%WWWDIR%%/system/modules/glossary/languages/en/.htaccess
-%%WWWDIR%%/system/modules/glossary/languages/en/modules.php
-%%WWWDIR%%/system/modules/glossary/languages/en/tl_glossary.php
-%%WWWDIR%%/system/modules/glossary/languages/en/tl_glossary_term.php
-%%WWWDIR%%/system/modules/glossary/languages/en/tl_module.php
-%%WWWDIR%%/system/modules/glossary/templates/.htaccess
-%%WWWDIR%%/system/modules/glossary/templates/mod_glossary_list.tpl
-%%WWWDIR%%/system/modules/glossary/templates/mod_glossary_menu.tpl
 %%WWWDIR%%/system/modules/listing/ModuleListing.php
 %%WWWDIR%%/system/modules/listing/config/.htaccess
 %%WWWDIR%%/system/modules/listing/config/config.php
@@ -1215,28 +1440,6 @@
 %%WWWDIR%%/system/modules/listing/templates/.htaccess
 %%WWWDIR%%/system/modules/listing/templates/info_default.tpl
 %%WWWDIR%%/system/modules/listing/templates/list_default.tpl
-%%WWWDIR%%/system/modules/memberlist/ModuleMemberlist.php
-%%WWWDIR%%/system/modules/memberlist/config/.htaccess
-%%WWWDIR%%/system/modules/memberlist/config/config.php
-%%WWWDIR%%/system/modules/memberlist/config/database.sql
-%%WWWDIR%%/system/modules/memberlist/dca/.htaccess
-%%WWWDIR%%/system/modules/memberlist/dca/tl_member.php
-%%WWWDIR%%/system/modules/memberlist/dca/tl_module.php
-%%WWWDIR%%/system/modules/memberlist/html/details.gif
-%%WWWDIR%%/system/modules/memberlist/languages/de/.htaccess
-%%WWWDIR%%/system/modules/memberlist/languages/de/default.php
-%%WWWDIR%%/system/modules/memberlist/languages/de/modules.php
-%%WWWDIR%%/system/modules/memberlist/languages/de/tl_member.php
-%%WWWDIR%%/system/modules/memberlist/languages/de/tl_module.php
-%%WWWDIR%%/system/modules/memberlist/languages/en/.htaccess
-%%WWWDIR%%/system/modules/memberlist/languages/en/default.php
-%%WWWDIR%%/system/modules/memberlist/languages/en/modules.php
-%%WWWDIR%%/system/modules/memberlist/languages/en/tl_member.php
-%%WWWDIR%%/system/modules/memberlist/languages/en/tl_module.php
-%%WWWDIR%%/system/modules/memberlist/templates/.htaccess
-%%WWWDIR%%/system/modules/memberlist/templates/mod_memberlist.tpl
-%%WWWDIR%%/system/modules/memberlist/templates/mod_memberlist_detail.tpl
-%%WWWDIR%%/system/modules/news/Comments.php
 %%WWWDIR%%/system/modules/news/ModuleNews.php
 %%WWWDIR%%/system/modules/news/ModuleNewsArchive.php
 %%WWWDIR%%/system/modules/news/ModuleNewsList.php
@@ -1250,12 +1453,9 @@
 %%WWWDIR%%/system/modules/news/dca/tl_module.php
 %%WWWDIR%%/system/modules/news/dca/tl_news.php
 %%WWWDIR%%/system/modules/news/dca/tl_news_archive.php
-%%WWWDIR%%/system/modules/news/dca/tl_news_comments.php
 %%WWWDIR%%/system/modules/news/dca/tl_user.php
 %%WWWDIR%%/system/modules/news/dca/tl_user_group.php
 %%WWWDIR%%/system/modules/news/html/approved.gif
-%%WWWDIR%%/system/modules/news/html/comments.gif
-%%WWWDIR%%/system/modules/news/html/comments_.gif
 %%WWWDIR%%/system/modules/news/html/pending.gif
 %%WWWDIR%%/system/modules/news/html/style.css
 %%WWWDIR%%/system/modules/news/languages/de/.htaccess
@@ -1281,6 +1481,7 @@
 %%WWWDIR%%/system/modules/news/templates/mod_newsarchive_empty.tpl
 %%WWWDIR%%/system/modules/news/templates/mod_newslist.tpl
 %%WWWDIR%%/system/modules/news/templates/mod_newsmenu.tpl
+%%WWWDIR%%/system/modules/news/templates/mod_newsmenu_day.tpl
 %%WWWDIR%%/system/modules/news/templates/mod_newsmenu_year.tpl
 %%WWWDIR%%/system/modules/news/templates/mod_newsreader.tpl
 %%WWWDIR%%/system/modules/news/templates/news_full.tpl
@@ -1331,6 +1532,7 @@
 %%WWWDIR%%/system/modules/newsletter/templates/mod_newsletter_list.tpl
 %%WWWDIR%%/system/modules/newsletter/templates/mod_newsletter_reader.tpl
 %%WWWDIR%%/system/modules/newsletter/templates/nl_default.tpl
+%%WWWDIR%%/system/modules/registration/ModuleCloseAccount.php
 %%WWWDIR%%/system/modules/registration/ModulePassword.php
 %%WWWDIR%%/system/modules/registration/ModuleRegistration.php
 %%WWWDIR%%/system/modules/registration/config/.htaccess
@@ -1455,6 +1657,7 @@
 %%WWWDIR%%/system/themes/default/images/all.gif
 %%WWWDIR%%/system/themes/default/images/all_big.gif
 %%WWWDIR%%/system/themes/default/images/article.gif
+%%WWWDIR%%/system/themes/default/images/article_.gif
 %%WWWDIR%%/system/themes/default/images/articles.gif
 %%WWWDIR%%/system/themes/default/images/articles_.gif
 %%WWWDIR%%/system/themes/default/images/back.gif
@@ -1476,6 +1679,7 @@
 %%WWWDIR%%/system/themes/default/images/delete.gif
 %%WWWDIR%%/system/themes/default/images/deleteAll.gif
 %%WWWDIR%%/system/themes/default/images/delete_.gif
+%%WWWDIR%%/system/themes/default/images/demagnify.gif
 %%WWWDIR%%/system/themes/default/images/down.gif
 %%WWWDIR%%/system/themes/default/images/edit.gif
 %%WWWDIR%%/system/themes/default/images/edit_.gif
@@ -1506,6 +1710,8 @@
 %%WWWDIR%%/system/themes/default/images/group.gif
 %%WWWDIR%%/system/themes/default/images/group_.gif
 %%WWWDIR%%/system/themes/default/images/hbg.jpg
+%%WWWDIR%%/system/themes/default/images/header.gif
+%%WWWDIR%%/system/themes/default/images/header_.gif
 %%WWWDIR%%/system/themes/default/images/headline.gif
 %%WWWDIR%%/system/themes/default/images/help.gif
 %%WWWDIR%%/system/themes/default/images/home.gif
@@ -1536,6 +1742,7 @@
 %%WWWDIR%%/system/themes/default/images/login.gif
 %%WWWDIR%%/system/themes/default/images/logo.gif
 %%WWWDIR%%/system/themes/default/images/logout.gif
+%%WWWDIR%%/system/themes/default/images/magnify.gif
 %%WWWDIR%%/system/themes/default/images/member.gif
 %%WWWDIR%%/system/themes/default/images/member_.gif
 %%WWWDIR%%/system/themes/default/images/mgroup.gif
@@ -1578,8 +1785,6 @@
 %%WWWDIR%%/system/themes/default/images/regular_6.gif
 %%WWWDIR%%/system/themes/default/images/regular_7.gif
 %%WWWDIR%%/system/themes/default/images/reload.gif
-%%WWWDIR%%/system/themes/default/images/resize.gif
-%%WWWDIR%%/system/themes/default/images/resize_.gif
 %%WWWDIR%%/system/themes/default/images/right.gif
 %%WWWDIR%%/system/themes/default/images/root.gif
 %%WWWDIR%%/system/themes/default/images/root_1.gif
@@ -1619,7 +1824,7 @@
 %%WWWDIR%%/system/tmp/.htaccess
 %%WWWDIR%%/system/typolight.css
 %%WWWDIR%%/templates/.htaccess
-%%WWWDIR%%/templates/example_website.sql
+%%WWWDIR%%/templates/music_academy.sql
 %%WWWDIR%%/tl_files/music_academy/admin.gif
 %%WWWDIR%%/tl_files/music_academy/background.gif
 %%WWWDIR%%/tl_files/music_academy/campus/campus_building.jpg
@@ -1637,13 +1842,8 @@
 %%WWWDIR%%/tl_files/music_academy/permissions.gif
 %%WWWDIR%%/tl_files/music_academy/protect.gif
 %%WWWDIR%%/tl_files/tiny_templates/index.html
-%%WWWDIR%%/tl_files/xBrowser_style_sheets/xBasic.css
-%%WWWDIR%%/tl_files/xBrowser_style_sheets/xElements.css
-%%WWWDIR%%/tl_files/xBrowser_style_sheets/xForm.css
-%%WWWDIR%%/tl_files/xBrowser_style_sheets/xNavigation.css
 %%WWWDIR%%/typolight/file.php
 %%WWWDIR%%/typolight/files.php
-%%WWWDIR%%/typolight/ftp.php
 %%WWWDIR%%/typolight/help.php
 %%WWWDIR%%/typolight/index.php
 %%WWWDIR%%/typolight/install.php
@@ -1653,23 +1853,60 @@
 %%WWWDIR%%/typolight/preview.php
 %%WWWDIR%%/typolight/switch.php
 %%WWWDIR%%/typolight/typolight.js
+%%WWWDIR%%/typolight/typolight.js.gz
 %%WWWDIR%%/typolight/typolight_src.js
+%%WWWDIR%%/typolight/upload.php
 @exec touch %D/%%WWWDIR%%/system/config/localconfig.php;chown www %D/%%WWWDIR%%/system/config/localconfig.php
 @unexec if [ ! -s %D/%%WWWDIR%%/system/config/localconfig.php ];then rm -f %D/%%WWWDIR%%/system/config/localconfig.php;fi
+@dirrm %%WWWDIR%%/plugins/calendar/css
+@dirrm %%WWWDIR%%/plugins/calendar/js
+@dirrm %%WWWDIR%%/plugins/calendar/media
 @dirrm %%WWWDIR%%/plugins/calendar
+@dirrm %%WWWDIR%%/plugins/fancyupload/assets
+@dirrm %%WWWDIR%%/plugins/fancyupload/css
+@dirrm %%WWWDIR%%/plugins/fancyupload/js
+@dirrm %%WWWDIR%%/plugins/fancyupload
 @dirrm %%WWWDIR%%/plugins/highlighter/scripts
 @dirrm %%WWWDIR%%/plugins/highlighter/src
 @dirrm %%WWWDIR%%/plugins/highlighter/styles
 @dirrm %%WWWDIR%%/plugins/highlighter
+@dirrm %%WWWDIR%%/plugins/idna
+@dirrm %%WWWDIR%%/plugins/mediabox/css
+@dirrm %%WWWDIR%%/plugins/mediabox/images
+@dirrm %%WWWDIR%%/plugins/mediabox/js
+@dirrm %%WWWDIR%%/plugins/mediabox
 @dirrm %%WWWDIR%%/plugins/mootools/images
+@dirrm %%WWWDIR%%/plugins/mootools/src
 @dirrm %%WWWDIR%%/plugins/mootools
-@dirrm %%WWWDIR%%/plugins/phpmailer/language
-@dirrm %%WWWDIR%%/plugins/phpmailer
 @dirrm %%WWWDIR%%/plugins/simplepie
 @dirrm %%WWWDIR%%/plugins/slimbox/css
 @dirrm %%WWWDIR%%/plugins/slimbox/js
 @dirrm %%WWWDIR%%/plugins/slimbox
-@dirrm %%WWWDIR%%/plugins/swfobject
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/ByteStream
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReader
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterReaderFactory
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/CharacterStream
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Encoder
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Events
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/KeyCache
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mailer
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/ContentEncoder
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/HeaderEncoder
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime/Headers
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Mime
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Decorator
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Loggers
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Pop
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins/Reporters
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Plugins
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/StreamFilters
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/Esmtp/Auth
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport/Esmtp
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift/Transport
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes/Swift
+@dirrm %%WWWDIR%%/plugins/swiftmailer/classes
+@dirrm %%WWWDIR%%/plugins/swiftmailer/dependency_maps
+@dirrm %%WWWDIR%%/plugins/swiftmailer
 @dirrm %%WWWDIR%%/plugins/tablesort/css
 @dirrm %%WWWDIR%%/plugins/tablesort/js
 @dirrm %%WWWDIR%%/plugins/tablesort/media
@@ -1687,7 +1924,6 @@
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/advimage
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/autosave
-@dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/contextmenu
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/directionality
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/img
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/js
@@ -1697,7 +1933,6 @@
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins/clearlooks2
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups
-@dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/paste/css
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/paste/js
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/paste
@@ -1717,6 +1952,7 @@
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/style/js
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/style/langs
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/style
+@dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/tabfocus
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/table/css
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/table/js
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/table/langs
@@ -1782,18 +2018,6 @@
 @dirrm %%WWWDIR%%/system/modules/comments/languages
 @dirrm %%WWWDIR%%/system/modules/comments/templates
 @dirrm %%WWWDIR%%/system/modules/comments
-@dirrm %%WWWDIR%%/system/modules/dfGallery/config
-@dirrm %%WWWDIR%%/system/modules/dfGallery/dca
-@dirrm %%WWWDIR%%/system/modules/dfGallery/languages/de
-@dirrm %%WWWDIR%%/system/modules/dfGallery/languages/en
-@dirrm %%WWWDIR%%/system/modules/dfGallery/languages
-@dirrm %%WWWDIR%%/system/modules/dfGallery/resources/locale
-@dirrm %%WWWDIR%%/system/modules/dfGallery/resources/themes/standard/skins
-@dirrm %%WWWDIR%%/system/modules/dfGallery/resources/themes/standard
-@dirrm %%WWWDIR%%/system/modules/dfGallery/resources/themes
-@dirrm %%WWWDIR%%/system/modules/dfGallery/resources
-@dirrm %%WWWDIR%%/system/modules/dfGallery/templates
-@dirrm %%WWWDIR%%/system/modules/dfGallery
 @dirrm %%WWWDIR%%/system/modules/faq/config
 @dirrm %%WWWDIR%%/system/modules/faq/dca
 @dirrm %%WWWDIR%%/system/modules/faq/html
@@ -1808,14 +2032,6 @@
 @dirrm %%WWWDIR%%/system/modules/frontend/languages
 @dirrm %%WWWDIR%%/system/modules/frontend/templates
 @dirrm %%WWWDIR%%/system/modules/frontend
-@dirrm %%WWWDIR%%/system/modules/glossary/config
-@dirrm %%WWWDIR%%/system/modules/glossary/dca
-@dirrm %%WWWDIR%%/system/modules/glossary/html
-@dirrm %%WWWDIR%%/system/modules/glossary/languages/de
-@dirrm %%WWWDIR%%/system/modules/glossary/languages/en
-@dirrm %%WWWDIR%%/system/modules/glossary/languages
-@dirrm %%WWWDIR%%/system/modules/glossary/templates
-@dirrm %%WWWDIR%%/system/modules/glossary
 @dirrm %%WWWDIR%%/system/modules/listing/config
 @dirrm %%WWWDIR%%/system/modules/listing/dca
 @dirrm %%WWWDIR%%/system/modules/listing/html
@@ -1824,14 +2040,6 @@
 @dirrm %%WWWDIR%%/system/modules/listing/languages
 @dirrm %%WWWDIR%%/system/modules/listing/templates
 @dirrm %%WWWDIR%%/system/modules/listing
-@dirrm %%WWWDIR%%/system/modules/memberlist/config
-@dirrm %%WWWDIR%%/system/modules/memberlist/dca
-@dirrm %%WWWDIR%%/system/modules/memberlist/html
-@dirrm %%WWWDIR%%/system/modules/memberlist/languages/de
-@dirrm %%WWWDIR%%/system/modules/memberlist/languages/en
-@dirrm %%WWWDIR%%/system/modules/memberlist/languages
-@dirrm %%WWWDIR%%/system/modules/memberlist/templates
-@dirrm %%WWWDIR%%/system/modules/memberlist
 @dirrm %%WWWDIR%%/system/modules/news/config
 @dirrm %%WWWDIR%%/system/modules/news/dca
 @dirrm %%WWWDIR%%/system/modules/news/html
@@ -1895,7 +2103,6 @@
 @dirrm %%WWWDIR%%/tl_files/music_academy/campus
 @dirrm %%WWWDIR%%/tl_files/music_academy
 @dirrm %%WWWDIR%%/tl_files/tiny_templates
-@dirrm %%WWWDIR%%/tl_files/xBrowser_style_sheets
 @dirrm %%WWWDIR%%/tl_files
 @dirrm %%WWWDIR%%/typolight
 @dirrm %%WWWDIR%%/
