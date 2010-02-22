@@ -109,6 +109,7 @@
     SUBDIR += commonist
     SUBDIR += contenido
     SUBDIR += coppermine
+    SUBDIR += cplanet
     SUBDIR += crawl
     SUBDIR += crp
     SUBDIR += css-mode.el
