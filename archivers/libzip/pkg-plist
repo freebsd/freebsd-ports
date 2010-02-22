@@ -1,0 +1,9 @@
+bin/zipcmp
+bin/zipmerge
+bin/ziptorrent
+include/zip.h
+lib/libzip.a
+lib/libzip.la
+lib/libzip.so
+lib/libzip.so.1
+libdata/pkgconfig/libzip.pc
