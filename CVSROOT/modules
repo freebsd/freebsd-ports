@@ -6010,12 +6010,14 @@ ja-freewnn-server               ports/japanese/FreeWnn-server
 ja-fumeikai-fpw                 ports/japanese/fumeikai-fpw
 ja-gawk                         ports/japanese/gawk
 ja-gd                           ports/japanese/gd
+ja-gedy                         ports/japanese/gedy
 ja-gicq                         ports/japanese/gicq
 ja-gorua                        ports/japanese/gorua
 ja-gqmpeg                       ports/japanese/gqmpeg
 ja-grep                         ports/japanese/grep
 ja-groff                        ports/japanese/groff
 ja-gskk                         ports/japanese/gskk
+ja-gsuica                       ports/japanese/gsuica
 ja-gtkicq                       ports/japanese/gtkicq
 ja-guesswork-classic            ports/japanese/guesswork-classic
 ja-gxditview                    ports/japanese/gxditview
@@ -7844,6 +7846,8 @@ libotf                          ports/print/libotf
 libotr                          ports/security/libotr
 libowfat                        ports/devel/libowfat
 libp11                          ports/security/libp11
+libpafe                         ports/devel/libpafe
+libpafe-ruby                    ports/devel/libpafe-ruby
 libpanelappletmm                ports/x11-toolkits/libpanelappletmm
 libpano12                       ports/graphics/libpano12
 libpano13                       ports/graphics/libpano13
