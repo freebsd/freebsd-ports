@@ -7,7 +7,7 @@
 
 PORTNAME=	glaxium
 PORTVERSION=	0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,7 +26,14 @@ ALL_TARGET=	${PORTNAME}
 
 MAN6=		glaxium.6
 
-USE_DOS2UNIX=variables.cpp scene.cpp
+USE_DOS2UNIX=	variables.cpp scene.cpp
+
+DESKTOP_ENTRIES=	"Glaxium" \
+			"Space-ship \"shoot-em-up\" game" \
+			"${DATADIR}/textures/myship.png" \
+			"glaxium" \
+			"Game;ArcadeGame;" \
+			false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
