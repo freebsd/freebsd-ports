@@ -14,12 +14,14 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		GeoIP.5:${PORTSDIR}/net/GeoIP \
-		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
+		GeoIP.5:${PORTSDIR}/net/GeoIP
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	NOTIFY "Enable libnotify support" on
+CONFLICTS=	qbittorrent*-2.2.*
+
+OPTIONS=	NOTIFY "Enable libnotify support" on \
+		LT_15 "Use 0.15 (devel) version of libtorrent-rasterbar" off
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network xml \
@@ -37,6 +39,12 @@ MAN1=		qbittorrent.1
 LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=	--disable-libnotify
+.endif
+
+.if defined(WITH_LT_15)
+LIB_DEPENDS+=	torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
+.else
+LIB_DEPENDS+=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 .endif
 
 post-patch:

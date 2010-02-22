@@ -62,6 +62,8 @@
     SUBDIR += libpdtp
     SUBDIR += libtorrent
     SUBDIR += libtorrent-devel
+    SUBDIR += libtorrent-rasterbar-14
+    SUBDIR += libtorrent-rasterbar-15
     SUBDIR += limewire
     SUBDIR += linux-agsatellite
     SUBDIR += linux-edonkey-core
@@ -102,10 +104,10 @@
     SUBDIR += py-vertex
     SUBDIR += pyslsk
     SUBDIR += qbittorrent
+    SUBDIR += qbittorrent-22
     SUBDIR += qtella
     SUBDIR += qtorrent
     SUBDIR += rblibtorrent
-    SUBDIR += rblibtorrent-devel
     SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel

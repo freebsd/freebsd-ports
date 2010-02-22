@@ -15,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Bittorrent client using wxWidgets, libtorrent and boost
 
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
+		torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui network

@@ -40,7 +40,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_TORRENT)
-LIB_DEPENDS+=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/rblibtorrent-devel
+LIB_DEPENDS+=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 .else
 CMAKE_ARGS+=	-DOPTION_TORRENT_SYSTEM:BOOL=OFF
 .endif
