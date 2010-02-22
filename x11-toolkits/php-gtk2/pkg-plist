@@ -1,15 +1,22 @@
-lib/php/%%PHPEXTDIR%%/php_gtk.so
-%%EXAMPLESDIR%%/combobutton.php
-%%EXAMPLESDIR%%/fileselection.php
-%%EXAMPLESDIR%%/gtk.php
-%%EXAMPLESDIR%%/hello.php
-%%EXAMPLESDIR%%/list.php
-%%EXAMPLESDIR%%/piemenu.php
-%%EXAMPLESDIR%%/scribble.php
-%%EXAMPLESDIR%%/scrollpane.php
-%%EXAMPLESDIR%%/spaned.php
-%%EXAMPLESDIR%%/sqpane.php
-%%EXAMPLESDIR%%/testgtkrc
-%%EXAMPLESDIR%%/testgtkrc2
-%%EXAMPLESDIR%%/window.xpm
-@dirrm %%EXAMPLESDIR%%
+lib/php/%%PHPEXTDIR%%/php_gtk2.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/combobutton.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileselection.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtk.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/list.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/piemenu.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scribble.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scrollpane.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spaned.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sqpane.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testgtkrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testgtkrc2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/window.xpm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p %D/etc/php
+@exec echo extension=php_gtk2.so >> %D/etc/php/extensions.ini
+@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig
+@unexec grep -v extension=php_gtk2.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true
+@unexec rm %D/etc/php/extensions.ini.orig 2>&1 >/dev/null || true
+@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini
+@dirrmtry %D/etc/php

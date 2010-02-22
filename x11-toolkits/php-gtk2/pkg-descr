@@ -2,6 +2,9 @@ PHP-GTK is a PHP extension that enables you to write client-side,
 cross-platform GUI applications. This is the first extension for PHP of
 its kind, and was written in part to prove that PHP is a capable
 general-purpose language that is suited to more than just the web
-application environment. 
+application environment.
 
 WWW: http://gtk.php.net/
+
+- Kris Moore
+kmoore@FreeBSD.org
