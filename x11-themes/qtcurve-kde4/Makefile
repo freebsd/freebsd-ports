@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	qtcurve
-PORTVERSION=	0.69.2
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://home.freeuk.com/cpdrummond/ \
-		http://craigd.wikispaces.com/file/view/
+MASTER_SITES=	http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	kde4-style-
 DISTNAME=	QtCurve-KDE4-${PORTVERSION}
 
