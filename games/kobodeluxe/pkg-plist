@@ -1,5 +1,4 @@
 bin/kobodl
-share/applications/kobodeluxe.desktop
 %%DATADIR%%/gfx/bigfont3.png
 %%DATADIR%%/gfx/bigship.png
 %%DATADIR%%/gfx/bmr-green.png
@@ -114,4 +113,3 @@ share/pixmaps/kobo-icon.xpm
 @dirrm %%DATADIR%%
 @exec install -d -o root -g games -m 775 %%SCOREDIR%%
 @dirrmtry %%SCOREDIR%%
-@dirrmtry share/applications
