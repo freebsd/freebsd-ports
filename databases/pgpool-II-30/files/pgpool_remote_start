@@ -1,13 +1,26 @@
-#!/bin/sh
+#!/usr/bin/perl
 #
 # $FreeBSD$
 
-DEST=pgsql@$1
+use strict;
+use warnings;
 
-logger="logger -t pgpool -p local0.info"
+my ($host, $dir) = @ARGV;
 
-/bin/sh <<EOF | ${logger} 2>&1
+my $logger = "logger -t pgpool -p local0.info";
+my $pgctl = "/usr/local/bin/pg_ctl -D $dir";
+my ($fh, $log);
 
-ssh $DEST '/usr/local/etc/rc.d/postgresql start'
+if (not open($fh, "ssh pgsql\@$host $pgctl -t 5 -w -s -m fast start 2>&1 |")) {
+  die "cannot open ssh: $!";
+}
+if (not open($log, "| $logger")) {
+  die "cannot open logger: $!";
+}
+while (<$fh>) {
+  print $log $_;
+}
+close($fh) or die "close(ssh) failed: $!";
+close($log) or die "close(logger): $!";
 
-EOF
+system("ssh pgsql\@$host $pgctl status 2>&1") == 0 or die "pg_ctl status failed";
