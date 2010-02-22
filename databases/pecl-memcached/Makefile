@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
 RUN_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 
+BROKEN=		does not compile
+
 PHP_MODNAME=	memcached
 USE_PHP=	json session
 USE_PHPEXT=	yes
