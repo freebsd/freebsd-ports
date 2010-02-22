@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twirssi
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://twirssi.com/
 EXTRACT_SUFX=	.pl
