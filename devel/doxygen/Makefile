@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -79,8 +78,6 @@ CONFIGURE_ARGS+=	--enable-langs no
 PLIST_FILES+=	bin/doxywizard
 .endif
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
 		${ECHO} "unix:LIBS += -liconv" >> $$pro; done
@@ -135,4 +132,4 @@ do-install:
 		| ${TAR} -C ${PREFIX}/share/doc --unlink -xf -
 .endif # ! NOPORTDOCS
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
