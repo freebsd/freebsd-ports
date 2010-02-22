@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Email-Stuff
-PORTVERSION=	2.101
+PORTVERSION=	2.102
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A more casual approach to creating and sending Email
 
 BUILD_DEPENDS=	p5-prefork>=1.01:${PORTSDIR}/devel/p5-prefork \
