@@ -224,7 +224,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_MO
 .endif
 
 .if defined(WITH_HTTP_MP4_H264_MODULE)
-NGINX_H264_MODULE_VERSION=	2.2.5
+NGINX_H264_MODULE_VERSION=	2.2.7
 MASTER_SITES+=	http://h264.code-shop.com/download/:mp4streaming
 DISTFILES+=	nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}.tar.gz:mp4streaming
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}
@@ -357,7 +357,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.8
+PASSENGER_VERSION=	2.2.9
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
