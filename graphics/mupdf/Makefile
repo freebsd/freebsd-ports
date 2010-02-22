@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	r921
-PORTREVISION=	1
+PORTVERSION=	r938
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ccxvii.net/mupdf/download/
@@ -44,10 +43,8 @@ do-install:
 	${INSTALL} ${WRKSRC}/build/$f ${PREFIX}/bin/mu_$f ;
 .endfor
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
