@@ -9,6 +9,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	2.1.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -144,6 +145,8 @@ WITH_EXPERIMENTAL=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
+# temporary workaround for libtool issue until FR 2.2.x is released
+CFLAGS+=	-DHAVE_LT_DLADVISE_INIT
 .else
 CONFIGURE_ARGS+=--without-perl --without-rlm_perl
 PLIST_SUB+=	RLMPERL="@comment "
