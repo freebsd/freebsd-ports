@@ -231,7 +231,7 @@ USE_PERL5=	yes
 .endif
 
 .if defined(WITH_HTTP_PUSH_MODULE)
-NGINX_PUSH_MODULE_VERSION=	0.69
+NGINX_PUSH_MODULE_VERSION=	0.692
 MASTER_SITES+=	http://pushmodule.slact.net/downloads/:push
 DISTFILES+=	nginx_http_push_module-${NGINX_PUSH_MODULE_VERSION}.tar.gz:push
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_MODULE_VERSION}
@@ -345,7 +345,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.9
+PASSENGER_VERSION=	2.2.10
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
