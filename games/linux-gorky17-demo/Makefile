@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Gorky17 Demo - a tactical shooter similiar to Jagged Alliance
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 jpeg sdlmixer mikmod libogg libvorbis xorglibs
 NO_CDROM=	Redistribution is limited, see license
