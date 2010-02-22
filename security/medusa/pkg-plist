@@ -25,7 +25,36 @@ lib/medusa/modules/smtp.mod
 %%SVN%%lib/medusa/modules/svn.mod
 lib/medusa/modules/web-form.mod
 share/zsh/site-functions/_medusa
+%%PORTDOCS%%%%DOCSDIR%%/medusa-afp.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-compare.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-cvs.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-ftp.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-http.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-imap.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-mssql.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-mysql.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-ncp.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-nntp.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-pcanywhere.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-pop3.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-postgres.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-rexec.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-rlogin.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-rsh.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-smbnt.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-smtp-vrfy.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-smtp.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-snmp.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-ssh.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-svn.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-telnet.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-vmauthd.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-vnc.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-web-form.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-wrapper.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa.html
 @unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true
 @dirrmtry share/zsh
 @dirrm lib/medusa/modules
 @dirrm lib/medusa
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
