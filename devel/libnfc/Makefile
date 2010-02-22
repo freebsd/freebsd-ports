@@ -27,23 +27,23 @@ MAN1=		nfc-mfclassic.1 nfc-emulate.1 nfc-list.1 nfc-mfultralight.1 \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PCSC)
+.if defined(WITHOUT_PCSC)
+CONFIGURE_ARGS+=--disable-pcsc-lite
+.else
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS+=	RSA_SecurID_getpasswd:${PORTSDIR}/devel/libccid
 CONFIGURE_ARGS+=--enable-pcsc-lite
-.else
-CONFIGURE_ARGS+=--disable-pcsc-lite
 .endif
 
-.if defined(WITH_USB)
+.if defined(WITHOUT_USB)
+CONFIGURE_ARGS+=--disable-libusb
+.else
 CONFIGURE_ARGS+=--enable-libusb
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 .endif
-.else
-CONFIGURE_ARGS+=--disable-libusb
 .endif
 
 post-install:
