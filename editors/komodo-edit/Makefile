@@ -13,7 +13,7 @@ DISTNAME=	Komodo-Edit-${PORTVERSION}-3797-linux-libcpp6-x86
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
-ONLY_FOR_ARCH=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 RESTRICTED=	Distribution not permitted
 NO_BUILD=	yes
 USE_LINUX=	f10
