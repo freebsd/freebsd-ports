@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	5.0.3
+PORTVERSION=	5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
@@ -49,8 +49,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/CHANGES.txt ${PREFIX}/share/doc/monit/CHANGES.txt
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/CONTRIBUTORS ${PREFIX}/share/doc/monit/CONTRIBUTORS
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/FAQ.txt ${PREFIX}/share/doc/monit/FAQ.txt
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/LICENSE ${PREFIX}/share/doc/monit/LICENSE
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/monit/README
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/README.SSL ${PREFIX}/share/doc/monit/README.SSL
