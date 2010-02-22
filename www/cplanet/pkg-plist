@@ -1,0 +1,6 @@
+bin/cplanet
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-atom.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-opml.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-rss.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.hdf
