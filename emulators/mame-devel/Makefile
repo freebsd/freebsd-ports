@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_SDL=	sdl
 MAKEFILE=	makefile
-ONLY_FOR_ARCH=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
 
 OPTIONS=	DEBUG "Build sdlmame debugger" off
