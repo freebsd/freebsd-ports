@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100221:
+  AFFECTS: users of rblibtorrent-devel
+  AUTHOR: dougb@FreeBSD.org
+
+  The port name has changed to libtorrent-rasterbar-14
+
+  If you use portmaster:
+
+    portmaster -o net-p2p/libtorrent-rasterbar-14 net-p2p/rblibtorrent-devel
+
+  If you use portupgrade:
+
+    portupgrade -o net-p2p/libtorrent-rasterbar-14 net-p2p/rblibtorrent-devel
+
 20100216:
   AFFECTS: users of sysutils/bacula-server, sysutils/bacula-client
   AUTHOR: dvl@FreeBSD.org
