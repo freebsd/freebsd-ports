@@ -3,7 +3,7 @@
 @@ -40,7 +40,7 @@
  #define MAX_BOND                  100
  #define MAX_ASSIGN                300
- #define MAX_INFO                  1000
+ #define MAX_INFO                  100
 -#define MAX_AT_IN_RES             50
 +#define MAX_AT_IN_RES             75
  #define MAX_AT_IN_HETERORES       200
