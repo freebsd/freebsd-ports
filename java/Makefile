@@ -87,6 +87,7 @@
     SUBDIR += java-getopt
     SUBDIR += java-tutorial
     SUBDIR += java3d
+    SUBDIR += javahelp
     SUBDIR += javamail
     SUBDIR += javavmwrapper
     SUBDIR += jaxen
