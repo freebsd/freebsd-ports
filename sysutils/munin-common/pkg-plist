@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Munin/Common/Config.pm
+%%SITE_PERL%%/Munin/Common/Defaults.pm
+%%SITE_PERL%%/Munin/Common/TLS.pm
+%%SITE_PERL%%/Munin/Common/TLSClient.pm
+%%SITE_PERL%%/Munin/Common/TLSServer.pm
+%%SITE_PERL%%/Munin/Common/Timeout.pm
+@dirrm %%SITE_PERL%%/Munin/Common
+@dirrm %%SITE_PERL%%/Munin

@@ -1,0 +1,14 @@
+--- Makefile.orig	2009-12-30 05:55:56.000000000 -0700
++++ Makefile	2010-01-30 12:57:44.000000000 -0700
+@@ -65,11 +65,8 @@
+ endif
+ 
+ install-pre: Makefile Makefile.config
+-	@$(CHECKUSER)
+-	mkdir -p $(LOGDIR)
+ 	mkdir -p $(STATEDIR)
+ 	mkdir -p $(CONFDIR)
+-	$(CHOWN) $(USER) $(LOGDIR) $(STATEDIR)
+ 
+ install-master-prime: $(INFILES_MASTER) install-pre install-master
+ 	mkdir -p $(CONFDIR)/templates

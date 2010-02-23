@@ -1,11 +1,11 @@
---- node/munin-node.conf.in.orig	Thu Jan 15 15:28:57 2004
-+++ node/munin-node.conf.in	Sun Jan 25 14:26:15 2004
-@@ -12,7 +12,7 @@
- # Which port to bind to;
- host *
+--- node/munin-node.conf.in.orig	2010-01-30 12:07:52.000000000 -0700
++++ node/munin-node.conf.in	2010-01-30 12:07:59.000000000 -0700
+@@ -10,7 +10,7 @@
+ setsid 1
+ 
  user root
 -group root
 +group wheel
- setsid yes
  
  # Regexps for files to ignore
+ 
