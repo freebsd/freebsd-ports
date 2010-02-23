@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20080909
-PORTREVISION=	1
+PORTVERSION=	20100223
 CATEGORIES=	devel plan9
-MASTER_SITES=	http://swtch.com/plan9port/ \
-		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://swtch.com/plan9port/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of many Plan 9 programs to Unix-like operating systems
 
 USE_XORG=	x11 xt xi xaw
-USE_PERL5_BUILD=YES
+USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/plan9
 PLIST=		${WRKDIR}/.PLIST
 SUB_FILES=	pkg-message
-REINPLACE_ARGS=	-i ""
-ONLY_FOR_ARCHS=	i386
+REINPLACE_ARGS=	-i ""		# necessary since installs via recursive copy
 
 PLAN9=		${PREFIX}/plan9
 MANPREFIX=	${PLAN9}
@@ -44,7 +41,8 @@ MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
 		web.1 wintext.1 ndb.1 passwd.1 secstored.1 tar.1 pem.1 \
 		readcons.1 rsa.1 ssh-agent.1 netfiles.1 sftpcache.1 \
 		hist.1 venti.1 yesterday.1 hget.1 snarfer.1 htmlroff.1 \
-		resample.1 devdraw.1 mount.1 hg.1
+		resample.1 devdraw.1 mount.1 hg.1 codereview.1 awk.1 \
+		ssam.1
 
 MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		runestrcat.3 thread.3 9p.3 matrix.3 arith3.3 ctime.3 \
@@ -69,18 +67,22 @@ MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		readcons.3 venti-cache.3 venti-client.3 venti-conn.3 \
 		venti-fcall.3 venti-file.3 venti-log.3 venti-mem.3 \
 		venti-packet.3 venti-server.3 venti-zero.3 venti.3 \
-		acme.3 drawfcall.3
+		acme.3 drawfcall.3 avl.3
 
 MAN4=		0intro.4 9pserve.4 acme.4 import.4 plumber.4 ramfs.4 \
-		vacfs.4 factotum.4 srv.4 9pfuse.4 tapefs.4 smugfs.4
+		vacfs.4 factotum.4 srv.4 9pfuse.4 tapefs.4 smugfs.4 \
+		fontsrv.4
 
 MAN7=		utf.7 regexp.7 0intro.7 color.7 face.7 font.7 image.7 \
 		man.7 map.7 ms.7 plot.7 plumb.7 thumbprint.7 ndb.7 \
 		keyboard.7 mpictures.7 venti.7 mhtml.7 htmlroff.7
-MAN8=		listen1.8 vbackup.8 venti-backup.8 venti-fmt.8 venti.8
+
+MAN8=		listen1.8 vbackup.8 venti-backup.8 venti-fmt.8 venti.8 \
+		getflags.8
 
 MAN9=		0intro.9p attach.9p clunk.9p error.9p flush.9p open.9p \
 		openfd.9p read.9p remove.9p stat.9p version.9p walk.9p
+
 MANCOMPRESSED=	no
 NO_MANCOMPRESS=	yes
 
@@ -91,17 +93,13 @@ EMPTY_DIRS=	plan9/log \
 		plan9/dist/debian \
 		plan9/dist/pkg
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-BROKEN=		does not build
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
 		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PLAN9}|'
-	@${REINPLACE_CMD} -e 's|X11=/usr/X11R6|X11=${X11BASE}|' ${WRKSRC}/bin/9l \
-		${WRKSRC}/src/cmd/devdraw/mkwsysrules.sh
+	@${REINPLACE_CMD} -e 's|X11=/usr/X11R6|X11=${X11BASE}|' \
+		${WRKSRC}/bin/9l ${WRKSRC}/src/cmd/devdraw/mkwsysrules.sh
+	@${REINPLACE_CMD} -e 's|/lib/font/bit|${PLAN9}/font|' \
+		${WRKSRC}/src/cmd/acme/acme.c
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL
@@ -129,11 +127,12 @@ post-install:
 	${CHGRP} kmem ${PLAN9}/bin/auxstats
 	${CHMOD} +s ${PLAN9}/bin/auxstats
 	${CHMOD} 01777 ${PLAN9}/news
-	@${ECHO_CMD} ""
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 install-user:
 	@${MKDIR} ${HOME}/lib
 	${INSTALL_DATA} ${PLAN9}/plumb/initial.plumbing ${HOME}/lib/plumbing
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
