@@ -1,5 +1,5 @@
---- node/node.d/ntp_offset.in.orig	2008-10-14 19:50:27.092576040 +0900
-+++ node/node.d/ntp_offset.in	2008-10-14 19:50:36.788908430 +0900
+--- plugins/node.d/ntp_offset.in.orig	2008-10-14 19:50:27.092576040 +0900
++++ plugins/node.d/ntp_offset.in	2008-10-14 19:50:36.788908430 +0900
 @@ -1,4 +1,4 @@
 -#!@@GOODSH@@ -w
 +#!@@GOODSH@@

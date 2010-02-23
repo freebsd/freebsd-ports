@@ -501,7 +501,8 @@
     SUBDIR += mtpfs
     SUBDIR += mtxorbd
     SUBDIR += multitail
-    SUBDIR += munin-main
+    SUBDIR += munin-common
+    SUBDIR += munin-master
     SUBDIR += munin-node
     SUBDIR += muse
     SUBDIR += mybashburn

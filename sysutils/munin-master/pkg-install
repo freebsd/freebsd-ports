@@ -88,11 +88,11 @@ mklogdir() {
 }
 
 newsyslog() {
-    if fgrep -q '/var/log/munin-main/*' /etc/newsyslog.conf; then
+    if fgrep -q '/var/log/munin-master/*' /etc/newsyslog.conf; then
         :
     else
         cat >> /etc/newsyslog.conf <<EOT
-/var/log/munin-main/*.log munin:munin	644  7	   *	@T00  GNWZ
+/var/log/munin-master/*.log munin:munin	644  7	   *	@T00  GNWZ
 EOT
     fi  
 }
