@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/lj${PORTNAME}/lj${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A command line client for posting LiveJournal entries
 
 USE_ICONV=	yes

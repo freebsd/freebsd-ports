@@ -11,7 +11,7 @@ CATEGORIES=	games ipv6
 MASTER_SITES=	http://www.stack.nl/~marcolz/empire/ \
 		ftp://ftp.stack.nl/pub/users/johans/eif/
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Empire text client
 
 MAN1=		eif.1

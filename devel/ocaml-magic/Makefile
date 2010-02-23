@@ -12,7 +12,7 @@ MASTER_SITES=	SF/ocaml-${PORTNAME}/ocaml-${PORTNAME}/0.7
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAME}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An OCaml binding for libmagic(3)
 
 USE_OCAML=		yes

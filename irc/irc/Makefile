@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.irc.org/ftp/irc/server/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The "Internet Relay Chat" Server
 
 USE_RC_SUBR=	ircd.sh

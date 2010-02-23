@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

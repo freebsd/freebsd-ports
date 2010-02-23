@@ -11,7 +11,7 @@ PORTVERSION=	3.8
 CATEGORIES=	dns
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Recover zone file information from servers that use DNSSEC
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \

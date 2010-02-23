@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A lexer generator for Unicode and OCaml
 
 USE_OCAML=	true
