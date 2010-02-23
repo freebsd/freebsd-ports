@@ -16,7 +16,7 @@ DISTFILES=	packages-${GAP_PKGTIME}.tar.bz2 \
 		xtom1r1p4.tar.bz2
 DIST_SUBDIR=	gap
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GAP is a system for computational discrete algebra
 
 OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \

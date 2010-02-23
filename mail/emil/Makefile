@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.uu.se/pub/unix/networking/mail/emil/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.uu.se/pub/unix/networking/mail/emil/
 DISTNAME=	${PORTNAME}-2.1.0-beta9
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Mail format/encoding converter
 
 GNU_CONFIGURE=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${AFNIX_VERSION}
 DISTNAME=	${PORTNAME}-src-${AFNIX_VERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A multi-threaded functional programming language
 
 USE_GMAKE=	yes

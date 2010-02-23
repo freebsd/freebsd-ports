@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		ftp://ftp.ntua.gr/pub/lang/slang/slrn/ \
 		ftp://ftp.plig.org/pub/slrn/
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2

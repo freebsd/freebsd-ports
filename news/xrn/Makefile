@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://sipb.mit.edu/pub/xrn/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Usenet News reader for the X Window System
 
 MAN1=		xrn.1

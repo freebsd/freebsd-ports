@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	CLI-based Multi-Messenger
 
 USE_GMAKE=	yes

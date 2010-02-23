@@ -13,7 +13,7 @@ MASTER_SITES=	http://coq.inria.fr/V${PORTVERSION:R}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
 DISTNAME=	${PORTNAME}-${COQVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
 		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML Security Library
 
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config

@@ -12,7 +12,7 @@ CATEGORIES=	lang math
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interpreted language and scientific graphics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}

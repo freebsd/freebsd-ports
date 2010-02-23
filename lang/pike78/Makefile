@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
 DISTNAME=	Pike-v${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

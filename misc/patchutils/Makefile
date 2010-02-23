@@ -11,7 +11,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A small collection of programs that operate on patch files
 
 USE_BZIP2=	yes
