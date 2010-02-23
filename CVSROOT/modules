@@ -7988,6 +7988,8 @@ libtommath                      ports/math/libtommath
 libtool22                       ports/devel/libtool22
 libtorrent                      ports/net-p2p/libtorrent
 libtorrent-devel                ports/net-p2p/libtorrent-devel
+libtorrent-rasterbar-14         ports/net-p2p/libtorrent-rasterbar-14
+libtorrent-rasterbar-15         ports/net-p2p/libtorrent-rasterbar-15
 libtrace                        ports/net/libtrace
 libtranslate                    ports/textproc/libtranslate
 libtre                          ports/textproc/libtre
@@ -18820,6 +18822,7 @@ phluid                          ports/x11-wm/phluid
 pho                             ports/graphics/pho
 phonon-xine                     ports/multimedia/phonon-xine
 phoon                           ports/astro/phoon
+phoronix-test-suite             ports/benchmarks/phoronix-test-suite
 photo_gallery                   ports/www/photo_gallery
 photoclip                       ports/graphics/photoclip
 photopc                         ports/graphics/photopc
@@ -18831,6 +18834,7 @@ php-auth_openid2                ports/security/php-Auth_OpenID2
 php-dbg2                        ports/devel/php-dbg2
 php-dyn                         ports/www/php-dyn
 php-gtk                         ports/x11-toolkits/php-gtk
+php-gtk2                        ports/x11-toolkits/php-gtk2
 php-java-bridge                 ports/devel/php-java-bridge
 php-libawl                      ports/devel/php-libawl
 php-magickwand                  ports/graphics/php-magickwand
@@ -20607,6 +20611,7 @@ qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
 qbittorrent                     ports/net-p2p/qbittorrent
+qbittorrent-22                  ports/net-p2p/qbittorrent-22
 qbrew                           ports/misc/qbrew
 qca                             ports/devel/qca
 qca-cyrus-sasl                  ports/security/qca-cyrus-sasl
@@ -20956,7 +20961,6 @@ rbl-milter                      ports/mail/rbl-milter
 rblcheck                        ports/mail/rblcheck
 rbldnsd                         ports/dns/rbldnsd
 rblibtorrent                    ports/net-p2p/rblibtorrent
-rblibtorrent-devel              ports/net-p2p/rblibtorrent-devel
 rbllookup                       ports/dns/rbllookup
 rbllookup-ng                    ports/dns/rbllookup-ng
 rbot                            ports/irc/rbot
