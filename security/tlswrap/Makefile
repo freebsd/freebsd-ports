@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://tlswrap.sunsite.dk/
 DISTNAME=	${PORTNAME}-1.04
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An FTP proxy that wraps data and control with TLS/SSL
 
 GNU_CONFIGURE=	yes

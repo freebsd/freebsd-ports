@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
 		ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Class Library for Numbers
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4

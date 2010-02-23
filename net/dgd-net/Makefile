@@ -11,7 +11,7 @@ CATEGORIES=	net lang
 MASTER_SITES=	http://ftp.dworkin.nl/dgd/archive/
 DISTNAME=	${PORTNAME:S/-net//g}-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
 
 NO_CDROM=	no distribution to corporate environment
