@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taskwarrior
-PORTVERSION=	1.8.5
+PORTVERSION=	1.9.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 DISTNAME=	task-${PORTVERSION}
@@ -19,15 +19,17 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 
 MAN1=	task.1
-MAN5=	taskrc.5 task-tutorial.5
+MAN5=	taskrc.5 task-faq.5 task-color.5 task-tutorial.5
+
+CONFIGURE_ARGS+=--datadir=${DATADIR} --docdir=${DOCSDIR}
+
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|; s|%%DATADIR%%|${DATADIR}|' \
-	    ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '342,349d' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '396,406d' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
