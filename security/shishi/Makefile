@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A free implementation of the Kerberos 5 network security system
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \

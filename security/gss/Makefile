@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU Generic Security Service Library
 
 LIB_DEPENDS=	shishi.0:${PORTSDIR}/security/shishi
