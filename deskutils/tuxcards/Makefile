@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.tuxcards.de/src/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Tool for managing notes within a hierarchical tree
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

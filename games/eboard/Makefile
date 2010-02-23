@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-1pl2.tar.gz eboard-extras-2.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
 EXTRAS=		1pl2 2

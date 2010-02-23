@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open source MSX emulator
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \

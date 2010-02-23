@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
 OPTIONS=	XAW3D	"Use Xaw3d widgets (instead of Xaw)"	On

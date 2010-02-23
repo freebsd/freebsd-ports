@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	OCaml package manager
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml

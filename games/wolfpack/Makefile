@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	empserver/${DISTNAME}
 DISTNAME=	empire-${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Long term multiplayer strategy game
 
 MAKEFILE=	GNUmakefile

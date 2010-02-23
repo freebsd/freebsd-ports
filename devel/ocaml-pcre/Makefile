@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

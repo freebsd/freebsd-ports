@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes
 
 LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick

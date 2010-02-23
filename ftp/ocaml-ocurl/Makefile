@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	ocaml-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An interface for OCaml to the curl lib
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
