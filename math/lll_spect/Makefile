@@ -5,6 +5,7 @@
 
 PORTNAME=	lll_spect
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://random.mat.sbg.ac.at/results/karl/spectraltest/LLLSpectralTest/
 DISTFILES=	lll_spect.C lll_search.C examples.txt
