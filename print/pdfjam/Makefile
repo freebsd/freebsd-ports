@@ -13,7 +13,7 @@ MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/
 		http://www.it.ca/~paul/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Shell scripts to manipulate PDF files
 
 RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base

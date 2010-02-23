@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.cs.vu.nl/pub/leendert/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Userland NFS command tool
 
 WRKSRC=		${WRKDIR}/nfs

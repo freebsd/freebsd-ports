@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/ \
 DISTNAME=	yorick-${PORTVERSION:R}-${PORTVERSION:E}-doc
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Yorick interpreted language full documentation
 
 WRKSRC=		${WRKDIR}/yorick-${PORTVERSION:R}-${PORTVERSION:E}/doc

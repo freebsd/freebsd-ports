@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C++ Elliptic Curve Library
 
 LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4

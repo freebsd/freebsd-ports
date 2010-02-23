@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \

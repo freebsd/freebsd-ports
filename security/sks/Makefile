@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 
 PROJECTHOST=	sks-keyserver

@@ -10,7 +10,7 @@ PORTVERSION=	2.12.4.0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.12.4
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
 
 USE_BZIP2=	yes

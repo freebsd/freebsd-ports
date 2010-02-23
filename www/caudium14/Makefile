@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.caudium.net/caudium/source/ \
 		ftp://ftp.oav.net/caudium/source/
 DISTNAME=	caudium-${PORTVERSION}
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A free webserver based on the Roxen Challenger 1.3 code base
 
 BUILD_DEPENDS=	pike76:${PORTSDIR}/lang/pike76/

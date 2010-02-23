@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Graph manipulation library for OCaml
 
 OPTIONS=	GUI "Include user programs: viewer and editor" off

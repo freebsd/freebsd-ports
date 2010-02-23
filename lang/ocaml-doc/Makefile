@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}-refman.html.tar.gz \
 		${DISTNAME}-refman.pdf
 EXTRACT_ONLY=	${DISTNAME}-refman.html.tar.gz
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Documentation (HTML, PS) for the Objective Caml
 
 NO_BUILD=	yes

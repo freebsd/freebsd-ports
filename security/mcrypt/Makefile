@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/MCrypt/${PORTVERSION} \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/ \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \

@@ -17,7 +17,7 @@ PATCH_SITES=	ftp://ftp.stack.nl/pub/users/johans/pidentd/ \
 PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20080101.diff.gz
 PATCH_DIST_STRIP=	-p0
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An RFC1413 identification server
 
 GNU_CONFIGURE=	yes

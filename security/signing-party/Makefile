@@ -18,7 +18,7 @@ PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCHFILES=	${PORTNAME}_${PORTVERSION}-1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
 
 RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1 \

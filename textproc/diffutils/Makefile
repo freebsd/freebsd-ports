@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	diffutils
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU diff utilities
 
 LIB_DEPENDS=	sigsegv:${PORTSDIR}/devel/libsigsegv

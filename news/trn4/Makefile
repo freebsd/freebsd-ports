@@ -12,7 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}4/4.0%20test76
 DISTNAME=	trn-4.0-test76
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Version 4.0 of the threaded readnews newsreader
 
 NO_LATEST_LINK=	yes
