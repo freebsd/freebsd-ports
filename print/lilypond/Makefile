@@ -64,7 +64,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
-BUILD_DEPENDS+=	pbmpscale:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS+=	pbmpscale:${PORTSDIR}/graphics/netpbm \
+    		rsync:${PORTSDIR}/net/rsync
 ALL_TARGET+=	doc
 PLIST_SUB+=	DOCS=""
 .else
