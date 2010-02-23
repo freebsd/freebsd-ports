@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
@@ -37,9 +38,10 @@ USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xrender xt xtst
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
+BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
+RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}
@@ -112,6 +114,8 @@ post-extract:
 	done
 
 post-patch:
+	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
+		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 
