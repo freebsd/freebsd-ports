@@ -19,6 +19,7 @@ COMMENT=	Large file hex editor
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build
 USE_BISON=	build
+MAKE_JOBS_UNSAFE=yes
 
 PORTDOCS=	README
 PLIST_FILES=	bin/lfhex
@@ -32,7 +33,8 @@ post-patch:
 .endif
 
 pre-build:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix lfhex.pro
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} -unix lfhex.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lfhex ${PREFIX}/bin
