@@ -1,24 +1,23 @@
-Add these to your profile environment.
-PLAN9=%%PREFIX%%/plan9; export PLAN9
-PATH=$PATH:$PLAN9/bin; export PATH
+You should benefit from adding these to your profile environment:
 
-This port install a default plumbing file.
-Just cd to the ports directory and type (not as root)
+	PLAN9=%%PREFIX%%/plan9; export PLAN9
+	PATH=$PATH:$PLAN9/bin; export PATH
 
-make install-user
+This port can install a default plumbing file if you want.  Just go to the
+port's directory and type (being your normal user):
 
-BUGS
-This port can cause some problems if you install certain
-ports:
-- www/mozilla need archivers/zip to build. If zip
-is not installed before you build it, this port will
-detect $PLAN9/bin/zip and try to use it unsuccessfully
-because they do not share the same options.
+	make install-user
 
-- x11/kdebase3 build crash in a fish.cpp file if you try
-to build it with $PLAN9.
-I suggest you to unset $PLAN9 before building any other ports
-if you don't want to fall into these problems and reset it after.
+BEWARE:  This port can cause some problems if you try install certain
+software (including, but not limited to our Ports Collection):
 
-- venti/fmt* commands work only with normal files.
+  - Ports that require `archivers/zip' to build (e.g. `www/mozilla').  If
+   `$PLAN9/bin/zip' would be found as `zip' command (via $PATH) and used,
+    it could easily fail since does not share options with "standard" `zip'
 
+  - `x11/kdebase3' build can result in crash in `fish.cpp' file if you try
+    to build it with $PLAN9.  We suggest you to unset $PLAN9 before building
+    any other ports that fail with similar symptoms (or unset it for all
+    ports just to be on the safe side)
+
+  - venti/fmt* commands work only with normal files
