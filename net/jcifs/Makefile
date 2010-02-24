@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.14
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
@@ -22,9 +22,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
+PORTEXAMPLES=	*
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
@@ -32,6 +31,8 @@ do-install:
 	cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
 	cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
 	cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
 	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	@${FIND} ${EXAMPLESDIR} ! -type d | \
