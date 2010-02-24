@@ -124,6 +124,7 @@
     SUBDIR += jmp
     SUBDIR += jode
     SUBDIR += jomp
+    SUBDIR += jrosetta
     SUBDIR += jsdk
     SUBDIR += jtiger
     SUBDIR += jump
