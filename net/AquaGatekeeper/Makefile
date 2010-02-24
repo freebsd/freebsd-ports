@@ -7,7 +7,7 @@
 
 PORTNAME=	AquaGatekeeper
 PORTVERSION=	1.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.svzserv.kemerovo.su/pub/FreeBSD/distfiles.misc/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
@@ -17,6 +17,7 @@ MAINTAINER=	ports@grosbein.pp.ru
 COMMENT=	Aqua H323 Gatekeeper and proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CONFLICTS=	AquaGatekeeper-2.*
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
