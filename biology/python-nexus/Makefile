@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python-nexus
-PORTVERSION=	0.6d
+PORTVERSION=	0.7
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 
