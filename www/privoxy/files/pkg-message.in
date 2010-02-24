@@ -19,9 +19,9 @@
   changing them you should use your own action and
   filter files as described in Privoxy's manual.
 
-  If you installed Privoxy as package and are using the
-  default configuration, you have to make sure the
-  directories /var/log/privoxy and /var/run/privoxy
-  exist and are owned by privoxy:privoxy.
+  If you installed Privoxy as package and are using
+  the default configuration, you have to make sure
+  the directory /var/run/privoxy exists and is owned
+  by privoxy:privoxy.
 
 ***********************************************************
