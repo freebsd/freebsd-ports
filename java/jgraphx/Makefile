@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jgraphx
-PORTVERSION=	1.2.0.5
+PORTVERSION=	1.3.0.0
 CATEGORIES=	java graphics
 MASTER_SITES=	http://www.jgraph.com/downloads/jgraphx/archive/ \
 		http://www.bayofrum.net/dist/jgraphx/
