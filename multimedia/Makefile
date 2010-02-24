@@ -165,6 +165,7 @@
     SUBDIR += linux-libtheora
     SUBDIR += linux-ov511-kmod
     SUBDIR += linux-realplayer
+    SUBDIR += linux-tsmuxer
     SUBDIR += linux-xmovie
     SUBDIR += lives
     SUBDIR += lsdvd
@@ -288,7 +289,6 @@
     SUBDIR += tovid
     SUBDIR += transcode
     SUBDIR += transkode
-    SUBDIR += tsMuxeR
     SUBDIR += tstools
     SUBDIR += tunapie
     SUBDIR += tv_grab_au
