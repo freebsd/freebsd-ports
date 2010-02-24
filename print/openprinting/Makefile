@@ -17,6 +17,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
 
+BROKEN=		incomplete plist
+
 WRKSRC=		${WRKDIR}/papi-${PORTVERSION}_beta
 
 USE_BZIP2=	yes
