@@ -28,9 +28,9 @@ you update your ports collection, before attempting any port upgrades.
   from your system before compiling Bacula 5.x, otherwise you'll encounter
   compilation errors.
 
-	/usr/local/etc/rd.c/bacula-dir stop
-	/usr/local/etc/rd.c/bacula-sd stop
-	/usr/local/etc/rd.c/bacula-fd stop
+	/usr/local/etc/rc.d/bacula-dir stop
+	/usr/local/etc/rc.d/bacula-sd stop
+	/usr/local/etc/rc.d/bacula-fd stop
 	pkg_delete 'bacula-*'
 
   After upgrading, remember to run the database upgrade script supplied
