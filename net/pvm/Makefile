@@ -7,6 +7,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.6
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
@@ -26,10 +27,11 @@ PLIST_SUB+=	X11=''
 .endif
 
 USE_FORTRAN=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/pvm3
-MAKE_ENV+=	PVM_ROOT=${WRKSRC} ARCHCFLAGS="${CFLAGS}"
-ALL_TARGET=	all install
+MAKE_ENV+=	PVM_ROOT=${WRKSRC} SHAREDLDFLAGS="-lgfortran -shared"
+ALL_TARGET=	all shared install
 PVM_ROOT=	${PREFIX}/lib/pvm
 REINPLACE_ARGS=	-i ""
 MAKE_JOBS_UNSAFE=yes
@@ -115,6 +117,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 pre-patch:
+	@${REINPLACE_CMD} -e 's|$$(ARCHCFLAGS)|$$(ARCHCFLAGS) -fPIC|g' ${WRKSRC}/src/Makefile.aimk
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/tracer/tracer.h ${WRKSRC}/tracer/trclib.h \
 		${WRKSRC}/tracer/trcsort.c
@@ -138,6 +141,10 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libfpvm3.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libgpvm3.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvmtrc.a ${PREFIX}/lib
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvm3.so ${PREFIX}/lib
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvm3.so ${PREFIX}/lib/libpvm3.so.3
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libgpvm3.so ${PREFIX}/lib
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libgpvm3.so ${PREFIX}/lib/libgpvm3.so.3
 	@ ${INSTALL_DATA} ${WRKSRC}/conf/FREEBSD.def ${PVM_ROOT}/conf
 	@ ${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
