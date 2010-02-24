@@ -21,6 +21,8 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 		${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 
+BROKEN=		does not compile
+
 PLIST_SUB=	GAUCHE_VERSION="`gauche-config -V`"\
 		TARGET="${CONFIGURE_TARGET}"
 PORTFAKENAME=	Gauche-sdl-${PORTVERSION}
