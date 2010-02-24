@@ -1,0 +1,17 @@
+Tokyo Promenade is a browser-based content management system with the
+following features:
+
+  * simple and logical user interface : aims at conciseness like LaTeX
+
+  * high accessibility : XHTML 1.0 compliant and considering WCAG 1.0
+
+  * hybrid data structure : available as BBS, blog, and Wiki
+
+  * sufficient functionality : supports user management and file management
+
+  * high performance : uses an embedded database, Tokyo Cabinet
+
+  * lightweight : implemented by C99 and without any dependency
+                  on other libraries
+
+WWW:	http://1978th.net/tokyopromenade/

@@ -1,0 +1,30 @@
+bin/prommgr
+libexec/promenade.cgi
+libexec/promenade.fcgi
+libexec/promscrsample.lua
+libexec/promscrcount.lua
+libexec/promupdiff.sh
+libexec/promupping.sh
+%%DATADIR%%/doc/index.html
+%%DATADIR%%/doc/spex.html
+%%DATADIR%%/doc/common.css
+%%DATADIR%%/misc/about.tpw
+%%DATADIR%%/misc/banner.svg
+%%DATADIR%%/misc/dup1.tpw
+%%DATADIR%%/misc/dup2.tpw
+%%DATADIR%%/misc/dup3.tpw
+%%DATADIR%%/misc/dup4.tpw
+%%DATADIR%%/misc/blog.tpw
+%%DATADIR%%/misc/help-ja.tpw
+%%DATADIR%%/misc/help-en.tpw
+%%DATADIR%%/misc/tc.tpw
+%%DATADIR%%/misc/front.tpw
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/COPYING
+%%DATADIR%%/THANKS
+%%DATADIR%%/promenade.css
+%%DATADIR%%/promenade.tmpl
+%%DATADIR%%/passwd.txt
+@dirrmtry %%DATADIR%%/misc
+@dirrmtry %%DATADIR%%/doc
+@dirrmtry %%DATADIR%%

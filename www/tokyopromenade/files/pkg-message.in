@@ -1,0 +1,59 @@
+POST-INSTALL CONFIGURATION FOR Tokyo Promenade
+==============================================
+
+1) Install an arbitrary web server which supports the CGI mechanism.
+   Then, create a directory where CGI scripts can be executed. We call
+   it the base directory, which contains some files of Tokyo Promenade.
+
+   mkdir -p /path/to/the/base/directory
+   cd /path/to/the/base/directory
+
+2) Copy the CGI script and some configuration files into the base
+   directory.
+
+   cp %%PREFIX%%/libexec/promenade.fcgi .
+   cp %%DATADIR%%/promenade.* .
+   cp %%DATADIR%%/passwd.txt .
+
+3) Create the database file where articles are stored.
+
+   prommgr create promenade.tct
+
+4) Import the help articles into the database.
+
+   prommgr import promenade.tct %%DATADIR%%/misc/help-*.tpw
+
+5) Create a directory where uploaded files are stored.
+
+   mkdir upload
+
+6) The CGI script should have permissions to read/write the database
+   file, the upload directory and the password file. To achieve the
+   purpose, one of the following is suggested.
+
+   Change the owner:
+      sudo chown -R www:nobody /path/to/the/base/directory
+
+   Forget the security:
+      chmod -R 777 /path/to/the/base/directory
+
+   Run the web server by the same user of the owner of the base
+   directory.
+
+   Change the user ID of the CGI script by using a feature of the
+   web server like suExec.
+
+7) Run the FastCGI script.
+
+   %%LOCALBASE%%/bin/spawn-fcgi -a 127.0.0.1 -p 8889 \
+                             -d /path/to/the/base/directory \
+                             -f /path/to/the/base/directory/promenade.fcgi
+
+8) Configure your web browser with FastCGI-specific directives. For
+   Apache, this might look like:
+
+   FastCgiExternalServer /path/to/the/base/directory/promenade.fcgi \
+      -host 127.0.0.1:8889
+
+When all steps above are finished, access the CGI script with a Web
+browser.
