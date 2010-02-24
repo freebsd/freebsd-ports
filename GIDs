@@ -139,6 +139,7 @@ puppet:*:814:
 openacs:*:820:
 dotlrn:*:821:
 netdisco:*:840:
+munin:*:842:
 fossy:*:901:www
 bacula:*:910:
 iserv:*:911:

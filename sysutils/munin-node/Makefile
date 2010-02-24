@@ -7,6 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-node
@@ -32,7 +33,11 @@ PATCH_STRIP=	-p0
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAKE_ARGS=	LIBDIR=${DATADIR} CONFDIR=${ETCDIR} \
+USERS=		munin
+GROUPS=		munin
+
+DBDIR=		/var/${PORTNAME}
+MAKE_ARGS=	LIBDIR=${DATADIR} CONFDIR=${ETCDIR} DBDIR=${DBDIR} \
 		PERL=${PERL} SITE_PERL_REL=${SITE_PERL_REL}
 ALL_TARGET=	build-node build-plugins
 INSTALL_TARGET=	install-node-prime install-plugins-prime
@@ -61,23 +66,29 @@ MAN3=		${MAN3_NODE} ${MAN3_PLUGIN}
 MAN5=		munin-node.conf.5
 MAN8=		munin.8
 
+PLIST_SUB=	DBDIR=${DBDIR}
 SUB_FILES=	pkg-message munin-node-revive.sh
 USE_RC_SUBR=	munin-node.sh
 RC_SUBR_SUFFIX=	.sh
 
 pre-su-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/munin-node.sh \
 		${PREFIX}/etc/rc.d/munin-node.sh
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
-		${PREFIX}/etc/munin/munin-node.conf.sample
+		${ETCDIR}/munin-node.conf.sample
+	@if [ ! -f ${ETCDIR}/munin-node.conf ]; then \
+		${INSTALL_DATA} ${ETCDIR}/munin-node.conf.sample \
+			${ETCDIR}/munin-node.conf; \
+	fi
 	${INSTALL_DATA} ${FILESDIR}/plugins.conf \
-		${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample
-	@if [ ! -f ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample \
-			${PREFIX}/etc/munin/plugin-conf.d/plugins.conf; \
+		${ETCDIR}/plugin-conf.d/plugins.conf.sample
+	@if [ ! -f ${ETCDIR}/plugin-conf.d/plugins.conf ]; then \
+		${INSTALL_DATA} ${ETCDIR}/plugin-conf.d/plugins.conf.sample \
+			${ETCDIR}/plugin-conf.d/plugins.conf; \
 	fi
 	@(cd ${WRKSRC}/node/blib/bindoc && for man in ${MAN1}; do \
 		${INSTALL_MAN} -C $$man ${PREFIX}/man/man1; \
@@ -95,7 +106,8 @@ post-install:
 		${INSTALL_MAN} -C $$man ${PREFIX}/man/man8; \
 	done)
 	@${ECHO} ${PORTVERSION} > ${PREFIX}/etc/munin/VERSION.node
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

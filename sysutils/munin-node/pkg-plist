@@ -1,7 +1,12 @@
+@stopdaemon munin-node
 bin/munindoc
-etc/munin/VERSION.node
-etc/munin/munin-node.conf.sample
-etc/munin/plugin-conf.d/plugins.conf.sample
+%%ETCDIR%%/VERSION.node
+@unexec if cmp -s %D/%%ETCDIR%%/munin-node.conf.sample %D/%%ETCDIR%%/munin-node.conf ; then rm -f %D/%%ETCDIR%%/munin-node.conf ; fi
+%%ETCDIR%%/munin-node.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/munin-node.conf ] ; then cp -p %D/%%ETCDIR%%/munin-node.conf.sample %D/%%ETCDIR%%/munin-node.conf ; fi
+@unexec if cmp -s %D/%%ETCDIR%%/plugin-conf.d/plugins.conf.sample %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ; then rm -f %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ; fi
+%%ETCDIR%%/plugin-conf.d/plugins.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ] ; then cp -p %D/%%ETCDIR%%/plugin-conf.d/plugins.conf.sample %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ; fi
 %%SITE_PERL%%/Munin/Node/Config.pm
 %%SITE_PERL%%/Munin/Node/Configure/Debug.pm
 %%SITE_PERL%%/Munin/Node/Configure/History.pm
@@ -212,14 +217,16 @@ sbin/munin-run
 %%DATADIR%%/plugins/vmstat
 %%DATADIR%%/plugins/warning_tester
 %%DATADIR%%/plugins/zimbra_
-@dirrmtry var/munin/plugin-state
-@dirrmtry var/munin
+@dirrmtry %%DBDIR%%/plugin-state
+@dirrmtry %%DBDIR%%
 @dirrm %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%
 @dirrm %%SITE_PERL%%/Munin/Plugin
 @dirrm %%SITE_PERL%%/Munin/Node/Configure
 @dirrm %%SITE_PERL%%/Munin/Node
 @dirrmtry %%SITE_PERL%%/Munin
-@dirrmtry etc/munin/plugins
-@dirrmtry etc/munin/plugin-conf.d
-@dirrmtry etc/munin
+@exec mkdir -p %D/%%ETCDIR%%/plugins
+@dirrmtry %%ETCDIR%%/plugins
+@exec mkdir -p %D/%%ETCDIR%%/plugin-conf.d
+@dirrmtry %%ETCDIR%%/plugin-conf.d
+@dirrmtry %%ETCDIR%%

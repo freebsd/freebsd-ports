@@ -1,6 +1,8 @@
 bin/munin-check
 bin/munin-cron
+@unexec if cmp -s %D/%%ETCDIR%%/munin.conf.sample %D/%%ETCDIR%%/munin.conf ; then rm -f %D/%%ETCDIR%%/munin.conf ; fi
 %%ETCDIR%%/munin.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/munin.conf ] ; then cp -p %D/%%ETCDIR%%/munin.conf.sample %D/%%ETCDIR%%/munin.conf ; fi
 %%ETCDIR%%/templates/definitions.html
 %%ETCDIR%%/templates/favicon.ico
 %%ETCDIR%%/templates/logo-h.png
@@ -48,8 +50,11 @@ bin/munin-cron
 @dirrmtry %%WWWDIR%%/cgi-bin
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%DATADIR%%
-@dirrmtry var/munin
+@dirrmtry %%DBDIR%%
 @dirrm %%SITE_PERL%%/Munin/Master
 @dirrmtry %%SITE_PERL%%/Munin
+@dirrmtry %%ETCDIR%%/templates/partial
 @dirrmtry %%ETCDIR%%/templates
+@exec mkdir -p %D/%%ETCDIR%%/munin-conf.d
+@dirrmtry %%ETCDIR%%/munin-conf.d
 @dirrmtry %%ETCDIR%%
