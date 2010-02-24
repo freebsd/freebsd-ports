@@ -6,7 +6,11 @@ This port presents Aqua Gatekeeper Startup Edition.
 It is not a free software but may be used free of charge.
 The Aqua Gatekeeper Startup Edition is limited to 30 concurrent calls.
 
-WWW: http://www.aqua.comptek.ru/man/voip/gatekeeper/index.htm
+!!! NOTE: THE AQUA GATEKEEPER IS DISCONTIUED BY ITS VENDOR. No vendor support,
+!!! no updates, no bugfixes. This port is still provided to support
+!!! old installations only. You should choose other software for new setups.
+
+WWW: http://www.kuzbass.ru/docs/AquaGatekeeper/AquaGatekeeper.htm
 
 - Grosbein
-eugen@grosbein.pp.ru
+ports@grosbein.pp.ru
