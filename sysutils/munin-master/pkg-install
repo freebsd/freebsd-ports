@@ -29,45 +29,6 @@ yesno() {
     done
 }
 
-make_account() {
-    local u g gcos
-
-    u=$1
-    g=$2
-    gcos=$3
-
-    if pw group show "${g}" >/dev/null 2>&1; then
-	echo "You already have a group \"${g}\", so I will use it."
-    else
-	echo "You need a group \"${g}\"."
-	if which -s pw && yesno "Would you like me to create it" y; then
-	    pw groupadd ${g} || exit
-	    echo "Done."
-	else
-	    echo "Please create it, and try again."
-	    if ! /usr/sbin/pw user show ${u} >/dev/null 2>/dev/null; then
-		echo "While you're at it, please create a user \"${u}\" too,"
-		echo "with a default group of \"${g}\"."
-	    fi
-	    exit 1
-	fi
-    fi
-    
-    if pw user show "${u}" >/dev/null 2>&1; then
-	echo "You already have a user \"${u}\", so I will use it."
-    else
-	echo "You need a user \"${u}\"."
-	if which -s pw && yesno "Would you like me to create it" y; then
-	    pw useradd ${u} -g ${g} -h - \
-		-s /bin/sh -c "${gcos}" || exit
-	    echo "Done."
-	else
-	    echo "Please create it, and try again."
-	    exit 1
-	fi
-    fi
-}
-
 create_crontab_entries() {
     local b e
     b=$1
@@ -109,7 +70,6 @@ move_www_dir() {
 
 case $2 in
     PRE-INSTALL)
-	make_account munin munin "Munin owner"
 	move_www_dir # at some point in the installation, the www dir is created
 	;;      
     POST-INSTALL)

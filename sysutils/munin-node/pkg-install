@@ -29,29 +29,6 @@ yesno() {
     done
 }
 
-make_group() {
-    local g
-
-    g=$1
-
-    if pw group show "${g}" >/dev/null 2>&1; then
-	echo "You already have a group \"${g}\", so I will use it."
-    else
-	echo "You need a group \"${g}\"."
-	if which -s pw && yesno "Would you like me to create it" y; then
-	    pw groupadd ${g} || exit
-	    echo "Done."
-	else
-	    echo "Please create it, and try again."
-	    if ! /usr/sbin/pw user show ${u} >/dev/null 2>/dev/null; then
-		echo "While you're at it, please create a user \"${u}\" too,"
-		echo "with a default group of \"${g}\"."
-	    fi
-	    exit 1
-	fi
-    fi
-}
-
 init_plugins() {
     if [ -f ${PKG_PREFIX}/etc/munin/VERSION.node ]; then
 	prevver=$(cat ${PKG_PREFIX}/etc/munin/VERSION.node)
@@ -109,7 +86,6 @@ EOT
 
 case $2 in
     PRE-INSTALL)
-	make_group munin
 	;;      
     POST-INSTALL)
 	if [ -z "${PACKAGE_BUILDING}" ]; then

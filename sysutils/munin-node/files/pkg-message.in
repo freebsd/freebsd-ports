@@ -1,6 +1,6 @@
 ********************************************************************
 Unless this file already existed, a sample configuration file
-has been placed in %%ETCDIR%%/munin/munin-node.conf.
+has been placed in %%ETCDIR%%/munin-node.conf.
 
 Please edit it according to your needs.
 
@@ -15,5 +15,5 @@ Then, it will be started on the next boot. If this line is already
 present, the client will be started now.  Otherwise, edit
 /etc/rc.conf and execute this command:
 
-    %%ETCDIR%%/rc.d/munin-node.sh start
+    %%PREFIX%%/etc/rc.d/munin-node.sh start
 ********************************************************************

@@ -7,6 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-common
@@ -22,9 +23,9 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAKE_ARGS=	LIBDIR=${DATADIR} CONFDIR=${ETCDIR} \
+DBDIR=		/var/${PORTNAME}
+MAKE_ARGS=	LIBDIR=${DATADIR} CONFDIR=${ETCDIR} DBDIR=${DBDIR} \
 		PERL=${PERL} SITE_PERL_REL=${SITE_PERL_REL}
 ALL_TARGET=	build-common-prime
 INSTALL_TARGET=	install-common
@@ -35,8 +36,6 @@ MAN3=		Munin::Common::Config.3 \
 		Munin::Common::TLSClient.3 \
 		Munin::Common::TLSServer.3 \
 		Munin::Common::Timeout.3
-
-SUB_FILES=	pkg-message
 
 post-install:
 	@(cd ${WRKSRC}/common/blib/libdoc && for man in ${MAN3} ; do \

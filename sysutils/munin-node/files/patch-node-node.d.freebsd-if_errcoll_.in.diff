@@ -1,0 +1,17 @@
+--- plugins/node.d.freebsd/if_errcoll_.in.orig	2009-12-30 13:55:55.000000000 +0100
++++ plugins/node.d.freebsd/if_errcoll_.in	2010-02-24 19:00:26.026407278 +0100
+@@ -59,9 +59,13 @@
+ 		print "ierrors.value", $5;
+ 		print "oerrors.value", $8;
+ 		print "collisions.value", $10;
+-	} else {
++	} else if (NF == 11) {
+ 		print "ierrors.value", $6;
+ 		print "oerrors.value", $9;
+ 		print "collisions.value", $11;
++	} else {
++		print "ierrors.value", $6;
++		print "oerrors.value", $10;
++		print "collisions.value", $12;
+ 	}
+ }'
