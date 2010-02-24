@@ -6,7 +6,11 @@ This port presents Aqua Gatekeeper Startup Edition.
 It is not a free software but may be used free of charge.
 The Aqua Gatekeeper Startup Edition 2.0 is limited to 7 concurrent calls.
 
-WWW: http://www.infinetwireless.com/WirelessEq/tmp/software/docs/agk_manual/agk
+!!! NOTE: THE AQUA GATEKEEPER IS DISCONTIUED BY ITS VENDOR. No vendor support,
+!!! no updates, no bugfixes. This port is still provided to support
+!!! old installations only. You should choose other software for new setups.
+
+WWW: http://www.kuzbass.ru/docs/AquaGatekeeper2/AquaGatekeeper.htm
 
 - Grosbein
-eugen@grosbein.pp.ru
+ports@grosbein.pp.ru
