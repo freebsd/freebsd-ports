@@ -4,3 +4,4 @@ bin/cplanet
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-rss.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.hdf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
