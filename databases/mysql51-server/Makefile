@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.43
+PORTVERSION=	5.1.44
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -100,7 +100,11 @@ CONFLICTS=	mysql-server-[34].* mysql-server-5.[02-9].*
 
 USE_RC_SUBR=	mysql-server.sh
 
+USERS=		mysql
+GROUPS=		mysql
+
 .if defined(WITH_NDB)
+USE_LDCONFIG=	${PREFIX}/lib/mysql
 PLIST_SUB+=	NDB=""
 .else
 PLIST_SUB+=	NDB="@comment "
@@ -160,7 +164,6 @@ post-patch:
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .endif
 
