@@ -7,13 +7,13 @@
 
 PORTNAME=	AquaGatekeeper
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://www.infinetwireless.com/WirelessEq/tmp/software/docs/agk/ \
+MASTER_SITES=	ftp://ftp.svzserv.kemerovo.su/pub/FreeBSD/distfiles.misc/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	eugen@grosbein.pp.ru
+MAINTAINER=	ports@grosbein.pp.ru
 COMMENT=	Aqua H323 Gatekeeper and proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -24,6 +24,10 @@ ONLY_FOR_ARCHS=	amd64 i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 RESTRICTED=	No commercial redistribution
+SUB_FILES=	pkg-message
+STRIP=
+STRIP_CMD=	${TRUE}
+DEPRECATED=	Binary port of software abandoned by the vendor
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -48,20 +52,18 @@ do-install:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${SED} "s'%%PREFIX%%'${PREFIX}'" < pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
+# This is binary port of closed-source software
 .if ${ARCH} == "i386"
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-.elif ${ARCH} == "amd64"
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-
-.if ${ARCH} == "amd64"
-DISTNAME=	AquaGatekeeper200FreeBSDamd64Build653
-.else
 DISTNAME=	AquaGatekeeper200FreeBSDBuild653
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x \
+		crypto.3:${PORTSDIR}/misc/compat5x
+.elif ${ARCH} == "amd64"
+DISTNAME=	AquaGatekeeper200FreeBSDamd64Build653
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 .include <bsd.port.post.mk>
