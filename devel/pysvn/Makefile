@@ -16,6 +16,8 @@ COMMENT=	Python binding for Subversion
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		neon.28:${PORTSDIR}/www/neon28
 
+BROKEN=		conflicting dependencies
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_NOEGGINFO=yes
