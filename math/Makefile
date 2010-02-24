@@ -170,6 +170,7 @@
     SUBDIR += lybniz
     SUBDIR += matharray
     SUBDIR += mathomatic
+    SUBDIR += matio
     SUBDIR += matrices
     SUBDIR += matrix
     SUBDIR += maxima
