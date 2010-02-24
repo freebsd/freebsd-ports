@@ -1,6 +1,10 @@
+%%PRIVOXY_TOOLS%%bin/privoxy-log-parser.pl
+%%PRIVOXY_TOOLS%%bin/privoxy-regression-test.pl
+%%PRIVOXY_TOOLS%%bin/uagen.pl
 sbin/privoxy
 etc/privoxy/default.action
 etc/privoxy/default.filter
+etc/privoxy/regression-tests.action
 etc/privoxy/templates/blocked
 etc/privoxy/templates/cgi-error-404
 etc/privoxy/templates/cgi-error-bad-param
@@ -11,6 +15,7 @@ etc/privoxy/templates/cgi-error-modified
 etc/privoxy/templates/cgi-error-parse
 etc/privoxy/templates/cgi-style.css
 etc/privoxy/templates/connect-failed
+etc/privoxy/templates/connection-timeout
 etc/privoxy/templates/default
 etc/privoxy/templates/edit-actions-add-url-form
 etc/privoxy/templates/edit-actions-for-url
@@ -26,6 +31,7 @@ etc/privoxy/templates/mod-local-help
 etc/privoxy/templates/mod-support-and-service
 etc/privoxy/templates/mod-title
 etc/privoxy/templates/mod-unstable-warning
+etc/privoxy/templates/no-server-data
 etc/privoxy/templates/no-such-domain
 etc/privoxy/templates/show-request
 etc/privoxy/templates/show-status
@@ -54,7 +60,6 @@ etc/privoxy/templates/url-info-osd.xml
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/seealso.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/startup.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/templates.html
-%%PORTDOCS%%%%DOCSDIR%%/user-manual/upgradersnote.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/whatsnew.html
 %%EXAMPLESDIR%%/config
 %%EXAMPLESDIR%%/match-all.action

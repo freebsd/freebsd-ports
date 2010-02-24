@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.12
-CATEGORIES=	www
+PORTVERSION=	3.0.16
+CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
@@ -35,12 +35,26 @@ MAN1=		privoxy.1
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include/
 
-OPTIONS=	FORCE "Allows to optionally bypass blocks" On \
-		TOGGLE "Support for remote toggling" On \
+OPTIONS=	ACCEPT_FILTER "Enable support for accf_http(9)" Off \
+		DEBUG "Build with debugging symbols" Off \
 		EDITOR "Allow to enable the webbased action editor" On \
-		DEBUG "Build with debugging symbols" Off
+		FORCE "Allows to optionally bypass blocks" On \
+		PRIVOXY_TOOLS "Install Privoxy-Log-Parser, uagen etc." Off \
+		TOGGLE "Support for remote toggling" On
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ACCEPT_FILTER)
+CONFIGURE_ARGS+=	 --enable-accept-filter
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debug
+.endif
+
+.if defined(WITHOUT_EDITOR)
+CONFIGURE_ARGS+=	--disable-editor
+.endif
 
 .if defined(WITHOUT_FORCE)
 CONFIGURE_ARGS+=	--disable-force
@@ -50,12 +64,12 @@ CONFIGURE_ARGS+=	--disable-force
 CONFIGURE_ARGS+=	--disable-toggle
 .endif
 
-.if defined(WITHOUT_EDITOR)
-CONFIGURE_ARGS+=	--disable-editor
-.endif
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--with-debug
+.if defined(WITH_PRIVOXY_TOOLS)
+USE_PERL5_RUN=	yes
+RUN_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+PLIST_SUB+=	PRIVOXY_TOOLS=""
+.else
+PLIST_SUB+=	PRIVOXY_TOOLS="@comment "
 .endif
 
 post-patch:
@@ -68,8 +82,12 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's,^#\(user-manual\) http://www.privoxy.org/user-manual/,\1 ${DOCSDIR}/user-manual,' \
 	${WRKSRC}/config
-
 .endif
+	${REINPLACE_CMD} \
+		-e 's,\(/etc/privoxy\),${PREFIX}\1,' ${WRKSRC}/tools/uagen.pl
+# Effectivly apply revision 1.208 to fix a regression test.
+	${REINPLACE_CMD} \
+		-e 's,\(-fast-redirects -hide-refer\),\1r,' ${WRKSRC}/default.action.master
 
 pre-configure:
 	@cd ${WRKSRC}; ${AUTOHEADER}
@@ -82,7 +100,12 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/privoxy/templates
 	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${PREFIX}/etc/privoxy/templates
-.for defaultfile in default.action default.filter
+.if defined(WITH_PRIVOXY_TOOLS)
+.for privoxy_tool in privoxy-log-parser.pl privoxy-regression-test.pl uagen.pl
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${privoxy_tool} ${PREFIX}/bin
+.endfor
+.endif
+.for defaultfile in default.action default.filter regression-tests.action
 	@${INSTALL_DATA} ${WRKSRC}/${defaultfile} ${PREFIX}/etc/privoxy
 	@${CHOWN} privoxy:privoxy ${PREFIX}/etc/privoxy/${defaultfile}
 	@${CHMOD} 0444 ${PREFIX}/etc/privoxy/${defaultfile}
@@ -101,9 +124,6 @@ do-install:
 .endif
 
 post-install:
-	@${MKDIR} /var/log/privoxy
-	@${CHOWN} privoxy:privoxy /var/log/privoxy
-	@${CHMOD} 0750 /var/log/privoxy
 	@${MKDIR} /var/run/privoxy
 	@${CHOWN} privoxy:privoxy /var/run/privoxy
 	@${CHMOD} 0750 /var/run/privoxy
