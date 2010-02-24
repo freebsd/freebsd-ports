@@ -1575,6 +1575,7 @@
     SUBDIR += tinymce3
     SUBDIR += tinyproxy
     SUBDIR += tinytinyhttpd
+    SUBDIR += tokyopromenade
     SUBDIR += tomcat-native
     SUBDIR += tomcat41
     SUBDIR += tomcat55
