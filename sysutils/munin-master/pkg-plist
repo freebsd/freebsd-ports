@@ -47,6 +47,7 @@ bin/munin-cron
 %%WWWDIR%%/.htaccess
 www/cgi-bin/munin-cgi-graph
 www/cgi-bin/munin-fastcgi-graph
+@dirrmtry www/cgi-bin
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%DATADIR%%
 @dirrmtry %%DBDIR%%
