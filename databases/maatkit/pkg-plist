@@ -1,10 +1,10 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/maatkit.pod
 bin/mk-archiver
-bin/mk-audit
 bin/mk-checksum-filter
 bin/mk-deadlock-logger
 bin/mk-duplicate-key-checker
+bin/mk-error-log
 bin/mk-fifo-split
 bin/mk-find
 bin/mk-heartbeat
