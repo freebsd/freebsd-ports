@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	csv2latex
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 PORTEPOCH=	1
 CATEGORIES=	textproc converters
 MASTER_SITES=	http://herewe.servebeer.com/csv2latex/releases/ \
