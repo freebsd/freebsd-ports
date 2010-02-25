@@ -7,7 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-node
@@ -29,16 +29,10 @@ RUN_DEPENDS=	${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes 
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-PATCH_STRIP=	-p0
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USERS=		munin
-GROUPS=		munin
+.include "${.CURDIR}/../munin-common/munin.mk"
 
-DBDIR=		/var/${PORTNAME}
-MAKE_ARGS=	LIBDIR=${DATADIR} CONFDIR=${ETCDIR} DBDIR=${DBDIR} \
-		PERL=${PERL} SITE_PERL_REL=${SITE_PERL_REL}
 ALL_TARGET=	build-node build-plugins
 INSTALL_TARGET=	install-node-prime install-plugins-prime
 
@@ -66,25 +60,23 @@ MAN3=		${MAN3_NODE} ${MAN3_PLUGIN}
 MAN5=		munin-node.conf.5
 MAN8=		munin.8
 
-PLIST_SUB=	DBDIR=${DBDIR}
 SUB_FILES=	pkg-message munin-node-revive.sh
-USE_RC_SUBR=	munin-node.sh
-RC_SUBR_SUFFIX=	.sh
+USE_RC_SUBR=	munin-node
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/munin-node.sh \
-		${PREFIX}/etc/rc.d/munin-node.sh
-	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
+	@${INSTALL_SCRIPT} ${WRKDIR}/munin-node \
+		${PREFIX}/etc/rc.d/munin-node
+	@${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
 		${ETCDIR}/munin-node.conf.sample
 	@if [ ! -f ${ETCDIR}/munin-node.conf ]; then \
 		${INSTALL_DATA} ${ETCDIR}/munin-node.conf.sample \
 			${ETCDIR}/munin-node.conf; \
 	fi
-	${INSTALL_DATA} ${FILESDIR}/plugins.conf \
+	@${INSTALL_DATA} ${FILESDIR}/plugins.conf \
 		${ETCDIR}/plugin-conf.d/plugins.conf.sample
 	@if [ ! -f ${ETCDIR}/plugin-conf.d/plugins.conf ]; then \
 		${INSTALL_DATA} ${ETCDIR}/plugin-conf.d/plugins.conf.sample \

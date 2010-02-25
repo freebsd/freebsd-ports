@@ -90,7 +90,7 @@ case $2 in
     POST-INSTALL)
 	if [ -z "${PACKAGE_BUILDING}" ]; then
 		init_plugins
-		${PKG_PREFIX}/etc/rc.d/munin-node.sh start
+		${PKG_PREFIX}/etc/rc.d/munin-node start
 		newsyslog
 	fi
 	;;      
