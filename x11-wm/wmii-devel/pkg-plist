@@ -4,11 +4,46 @@ bin/wmii
 bin/wmii.rc
 bin/wmii.sh
 bin/wmii9menu
-bin/wmii9rc
 bin/wmiir
-bin/wmiistartrc
-etc/wmii-hg/rc.wmii
-etc/wmii-hg/welcome
-etc/wmii-hg/wmiirc
-@dirrm etc/wmii-hg
+etc/wmii/plan9port/wmiirc
+etc/wmii/python/pygmi/__init__.py
+etc/wmii/python/pygmi/event.py
+etc/wmii/python/pygmi/fs.py
+etc/wmii/python/pygmi/menu.py
+etc/wmii/python/pygmi/monitor.py
+etc/wmii/python/pygmi/util.py
+etc/wmii/python/pyxp/__init__.py
+etc/wmii/python/pyxp/asyncclient.py
+etc/wmii/python/pyxp/client.py
+etc/wmii/python/pyxp/dial.py
+etc/wmii/python/pyxp/fcall.py
+etc/wmii/python/pyxp/fields.py
+etc/wmii/python/pyxp/messages.py
+etc/wmii/python/pyxp/mux.py
+etc/wmii/python/pyxp/types.py
+etc/wmii/python/wmiirc
+etc/wmii/python/wmiirc.py
+etc/wmii/ruby/config.rb
+etc/wmii/ruby/config.yaml
+etc/wmii/ruby/wmiirc
+etc/wmii/welcome
+etc/wmii/wmiirc
+@dirrm etc/wmii/ruby
+@dirrm etc/wmii/python/pyxp
+@dirrm etc/wmii/python/pygmi
+@dirrm etc/wmii/python
+@dirrm etc/wmii/plan9port
+@dirrm etc/wmii
 lib/libwmii_hack.so
+%%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/README
+%%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/plan9port/README
+%%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/python/README
+%%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/ruby/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/ruby/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/ruby/README
+%%PORTDOCS%%%%DOCSDIR%%/wmii.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs/ruby
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs/python
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs/plan9port
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
