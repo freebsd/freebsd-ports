@@ -1583,17 +1583,80 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ar/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ca/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/da/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/el/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fi/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/he/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/latinEntities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/latinEntities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/Breadcrumb.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/FindReplace.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/InsertEntity.js
@@ -1601,21 +1664,68 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/Preview.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/Save.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nb/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nl/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt-pt/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/latinEntities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sk/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sl/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sv/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/th/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/tr/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/latinEntities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/Breadcrumb.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/FindReplace.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/InsertEntity.css
@@ -1906,6 +2016,18 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd/_DndRowSelector.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd/_DndSelectingManager.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/cs/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/de/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/es/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fr/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/hu/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/it/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ja/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ko/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pl/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ru/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh-tw/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins/DnD.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins/IndirectSelection.js
@@ -2299,40 +2421,51 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/da/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/da/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/el/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/el/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fi/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fi/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/he/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/he/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/hu/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/hu/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/hu/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/it/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/it/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/it/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nb/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nb/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nl/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nl/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/FilePicker.js
@@ -2346,8 +2479,10 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh-tw/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh-tw/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh-tw/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/rotator/Controller.js
@@ -5522,7 +5657,6 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.feed.modifying-feed.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.feed.pubsubhubbub.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.feed.reader.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.feed.writer.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.file.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.file.transfer.filters.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.file.transfer.introduction.html
@@ -6053,6 +6187,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/TranslateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ViewTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/_files/ZfAppBootstrapCustomView.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/mailTestCAsE.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/BootstrapBaseCircularDependency.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/Zf-6719-1.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/Zf-6719-2.ini
@@ -6605,6 +6740,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/Query/Css2XpathTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/Query/ResultTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/QueryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/_files/bad-sample.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dom/_files/sample.xhtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ExceptionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/AllTests.php
@@ -8313,6 +8449,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OnlineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/mozart_result.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/offers_with_names.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AlbumDataTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/ArtistTest.php
@@ -10483,7 +10620,19 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources/images
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh-tw
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ja
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/it
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/hu
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/es
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/de
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/cs
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced
