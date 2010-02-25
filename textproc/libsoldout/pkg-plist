@@ -1,0 +1,9 @@
+bin/kilt
+bin/lace
+include/upskirt/array.h
+include/upskirt/buffer.h
+include/upskirt/markdown.h
+include/upskirt/renderers.h
+lib/libupskirt.so
+lib/libupskirt.so.1
+@dirrm include/upskirt

@@ -1,0 +1,10 @@
+lightweight C library that can parse John Gruber's [markdown]
+(http://daringfireball.net/projects/markdown/) format and convert
+it into several formats and can be easily extended.
+
+It also provides two usage examples:
+- lace: markdown to xhtml conversion.
+- kilt: markdown to manpage conversion.
+
+
+WWW: http://git.instinctive.eu/cgit/libupskirt/
