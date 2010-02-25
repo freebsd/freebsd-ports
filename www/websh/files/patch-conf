@@ -8,7 +8,7 @@
 -    set webshroot "C:/Program Files/Apache Group/Websh"
 -} else {
 -    # Unix (.so, .dylib ...)
--    set webshroot /usr/local/websh
+-    set webshroot /usr/share/websh3.6
 -}
 +set webshroot /usr/local/websh
  

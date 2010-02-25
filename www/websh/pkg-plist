@@ -1,5 +1,5 @@
-lib/libwebsh84.so.1
-lib/libwebsh84.so
+lib/libwebsh%%TCL_DVER%%.so.1
+lib/libwebsh%%TCL_DVER%%.so
 lib/websh/pkgIndex.tcl
 lib/websh/htmlhandler.ws3
 lib/websh/otherhandler.ws3
