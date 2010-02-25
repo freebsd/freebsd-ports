@@ -47,6 +47,7 @@ share/doc/luckybackup/manual/data/popup_ProfileExport.png
 share/doc/luckybackup/manual/data/popup_ProfileImport.png
 share/doc/luckybackup/manual/data/popup_ProfileRename.png
 share/doc/luckybackup/manual/data/rsync_InAction.png
+share/doc/luckybackup/manual/data/rsync_operations completed.png
 share/doc/luckybackup/manual/data/rsync_operations_aborted.png
 share/doc/luckybackup/manual/data/rsync_operations_completed.png
 share/doc/luckybackup/manual/data/scheduleAdd.png
@@ -56,8 +57,14 @@ share/doc/luckybackup/manual/data/scheduleFull.png
 share/doc/luckybackup/manual/data/toolBar.png
 share/doc/luckybackup/manual/data/up.png
 share/doc/luckybackup/manual/index.html
+share/luckybackup/translations/luckybackup_ara.qm
+share/luckybackup/translations/luckybackup_ara.ts
+share/luckybackup/translations/luckybackup_bh.qm
+share/luckybackup/translations/luckybackup_bh.ts
 share/luckybackup/translations/luckybackup_cs.qm
 share/luckybackup/translations/luckybackup_cs.ts
+share/luckybackup/translations/luckybackup_de.qm
+share/luckybackup/translations/luckybackup_de.ts
 share/luckybackup/translations/luckybackup_el.qm
 share/luckybackup/translations/luckybackup_el.ts
 share/luckybackup/translations/luckybackup_en.qm
@@ -66,10 +73,14 @@ share/luckybackup/translations/luckybackup_es.qm
 share/luckybackup/translations/luckybackup_es.ts
 share/luckybackup/translations/luckybackup_fr.qm
 share/luckybackup/translations/luckybackup_fr.ts
+share/luckybackup/translations/luckybackup_it.qm
+share/luckybackup/translations/luckybackup_it.ts
 share/luckybackup/translations/luckybackup_nl.qm
 share/luckybackup/translations/luckybackup_nl.ts
 share/luckybackup/translations/luckybackup_pt_BR.qm
 share/luckybackup/translations/luckybackup_pt_BR.ts
+share/luckybackup/translations/luckybackup_ro.qm
+share/luckybackup/translations/luckybackup_ro.ts
 share/luckybackup/translations/luckybackup_ru.qm
 share/luckybackup/translations/luckybackup_ru.ts
 share/pixmaps/luckybackup.png
