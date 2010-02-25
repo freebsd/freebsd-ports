@@ -327,7 +327,6 @@
     SUBDIR += slrn
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
-    SUBDIR += stardict2-dict-ja
     SUBDIR += stardict-dict-ja
     SUBDIR += suicavalue
     SUBDIR += suikyo
