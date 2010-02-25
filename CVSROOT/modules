@@ -1846,6 +1846,7 @@ cpbk                            ports/sysutils/cpbk
 cpdup                           ports/sysutils/cpdup
 cphone                          ports/net/cphone
 cpige                           ports/audio/cpige
+cplanet                         ports/www/cplanet
 cplay                           ports/audio/cplay
 cpmemu                          ports/emulators/cpmemu
 cpmtools                        ports/emulators/cpmtools
@@ -6432,6 +6433,7 @@ java3d                          ports/java/java3d
 java_jgraph                     ports/java/jgraph
 javacc                          ports/textproc/javacc
 javadc                          ports/net-p2p/javadc
+javahelp                        ports/java/javahelp
 javamail                        ports/java/javamail
 javanns                         ports/math/javanns
 javaservicewrapper              ports/sysutils/javaservicewrapper
@@ -6566,6 +6568,7 @@ jps                             ports/sysutils/jps
 jrdesktop                       ports/net/jrdesktop
 jrefentry                       ports/textproc/jrefentry
 jrobin                          ports/databases/jrobin
+jrosetta                        ports/java/jrosetta
 jrrd                            ports/databases/jrrd
 jrtplib                         ports/devel/jrtplib
 jruby                           ports/lang/jruby
@@ -8429,6 +8432,7 @@ linux-sunbird                   ports/deskutils/linux-sunbird
 linux-systemsimcell             ports/emulators/linux-systemsimcell
 linux-thunderbird               ports/mail/linux-thunderbird
 linux-tiff                      ports/graphics/linux-tiff
+linux-tsmuxer                   ports/multimedia/linux-tsmuxer
 linux-ucl                       ports/archivers/linux-ucl
 linux-ungif                     ports/graphics/linux-ungif
 linux-unrealgold                ports/games/linux-unrealgold
@@ -8777,6 +8781,7 @@ mathml-xsd                      ports/textproc/mathml-xsd
 mathomatic                      ports/math/mathomatic
 mathopd                         ports/www/mathopd
 mathplanner                     ports/editors/MathPlanner
+matio                           ports/math/matio
 matrices                        ports/math/matrices
 matrix                          ports/math/matrix
 matrixssl                       ports/security/matrixssl
@@ -9446,7 +9451,8 @@ mummer                          ports/biology/mummer
 mumps                           ports/math/mumps
 mumps-mpich                     ports/math/mumps-mpich
 munger                          ports/lang/munger
-munin-main                      ports/sysutils/munin-main
+munin-common                    ports/sysutils/munin-common
+munin-master                    ports/sysutils/munin-master
 munin-node                      ports/sysutils/munin-node
 mup                             ports/print/mup
 mupad                           ports/math/mupad
@@ -10331,6 +10337,7 @@ openvmps                        ports/net-mgmt/openvmps
 openvpn                         ports/security/openvpn
 openvpn-admin                   ports/security/openvpn-admin
 openvpn-auth-ldap               ports/security/openvpn-auth-ldap
+openvpn-devel                   ports/security/openvpn-devel
 openvpn20                       ports/security/openvpn20
 openvrml                        ports/www/openvrml
 openwebmail                     ports/mail/openwebmail
@@ -23500,13 +23507,11 @@ tryst                           ports/net/tryst
 tryst-examples                  ports/net/tryst-examples
 trytond                         ports/finance/trytond
 ts                              ports/sysutils/ts
-tsMuxeR                         ports/multimedia/tsMuxeR
 tsclient                        ports/net/tsclient
 tse3                            ports/audio/tse3
 tshark                          ports/net/tshark
 tshark-lite                     ports/net/tshark-lite
 tsito                           ports/games/tsito
-tsmuxer                         ports/multimedia/tsMuxeR
 tsocks                          ports/net/tsocks
 tss                             ports/sysutils/tss
 tstools                         ports/multimedia/tstools
