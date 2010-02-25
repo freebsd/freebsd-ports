@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey2-i18n
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -74,8 +75,7 @@ do-install:
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
-		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d' \
-			-e 's/\(langpack\)/\13/'
+		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d'
 
 List-Langs:
 	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${PORTVERSION}/langpack"|\
