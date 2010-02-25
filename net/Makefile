@@ -370,7 +370,6 @@
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
-    SUBDIR += mpd
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd4
     SUBDIR += mpd5

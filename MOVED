@@ -4327,3 +4327,4 @@ net-p2p/rblibtorrent-devel|net-p2p/libtorrent-rasterbar-14|2010-02-21|No longer 
 sysutils/munin-main|sysutils/munin-master|2010-02-22|Reorganized upstream
 multimedia/tsMuxeR|multimedia/linux-tsmuxer|2010-02-24|Port was given a better name
 japanese/stardict-dict-ja||2010-02-25|Please use japanese/stardict-dict-ja
+net/mpd||2010-02-25|Has expired: obsoleted, unsupported port. Use net/mpd4, net/mpd5 instead
