@@ -1,0 +1,5 @@
+You can use this Python module to convert amongst many different
+notations and to manage couples of address/netmask in the CIDR
+notation.
+
+WWW:	http://pypi.python.org/pypi/iplib

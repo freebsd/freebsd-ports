@@ -789,6 +789,7 @@
     SUBDIR += py-dpkt
     SUBDIR += py-google
     SUBDIR += py-impacket
+    SUBDIR += py-iplib
     SUBDIR += py-ldap2
     SUBDIR += py-libdnet
     SUBDIR += py-libnet

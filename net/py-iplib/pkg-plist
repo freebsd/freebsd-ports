@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/iplib.py
+%%PYTHON_SITELIBDIR%%/iplib.pyc
+%%PYTHON_SITELIBDIR%%/iplib.pyo
+bin/cidrinfo.py
+bin/ipconv.py
+bin/nmconv.py
