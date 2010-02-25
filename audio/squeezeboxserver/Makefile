@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squeezeboxserver
-PORTVERSION=	7.4.1
-PORTREVISION=	3
+PORTVERSION=	7.4.2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -30,7 +29,7 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-28947-noCPAN
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-30215-noCPAN
 
 RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
