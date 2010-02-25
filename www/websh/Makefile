@@ -17,9 +17,6 @@ COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	WSMDEBUG "memory(n) and checkmem(n) commands in web-scripts" on
-OPTIONS+=	WSSTATIC "Link the objects into the module statically" off
-
 TCL_DVER=	${TCL_VER:S/.//}
 
 USE_TCL=	84+
@@ -87,14 +84,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_WSMDEBUG)
-CFLAGS+=	-DTCL_MEM_DEBUG
-.endif
-
-.if defined(WITHOUT_WSSTATIC)
-EXTRA_PATCHES=	${FILESDIR}/shared-patch
-.endif
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
