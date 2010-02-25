@@ -7,7 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-common
@@ -21,12 +21,10 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-DBDIR=		/var/${PORTNAME}
-MAKE_ARGS=	LIBDIR=${DATADIR} CONFDIR=${ETCDIR} DBDIR=${DBDIR} \
-		PERL=${PERL} SITE_PERL_REL=${SITE_PERL_REL}
+.include "${.CURDIR}/../munin-common/munin.mk"
+
 ALL_TARGET=	build-common-prime
 INSTALL_TARGET=	install-common
 
@@ -38,6 +36,8 @@ MAN3=		Munin::Common::Config.3 \
 		Munin::Common::Timeout.3
 
 post-install:
+	@${MKDIR} ${LOGDIR}
+	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}
 	@(cd ${WRKSRC}/common/blib/libdoc && for man in ${MAN3} ; do \
 		${INSTALL_MAN} -C $$man ${PREFIX}/man/man3; \
 	done)

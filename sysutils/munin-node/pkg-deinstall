@@ -30,7 +30,7 @@ yesno() {
 }
 
 stop_process() {
-    STARTSTOP=${PKG_PREFIX}/etc/rc.d/munin-node.sh
+    STARTSTOP=${PKG_PREFIX}/etc/rc.d/munin-node
 
     if [ -x $STARTSTOP ]; then
 	$STARTSTOP stop

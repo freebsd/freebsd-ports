@@ -7,7 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-master
@@ -39,17 +39,10 @@ RUN_DEPENDS=	${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-co
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-PATCH_STRIP=	-p1
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USERS=		munin
-GROUPS=		munin
+.include "${.CURDIR}/../munin-common/munin.mk"
 
-DBDIR=		/var/${PORTNAME}
-MAKE_ARGS=	LIBDIR=${DATADIR} CONFDIR=${ETCDIR} DBDIR=${DBDIR} \
-		WWWDIR=${WWWDIR} CGIDIR=${WWWDIR}/cgi-bin \
-		PERL=${PERL} SITE_PERL_REL=${SITE_PERL_REL}
 ALL_TARGET=	build-master build-man
 INSTALL_TARGET=	install-master-prime
 
@@ -80,7 +73,9 @@ pre-install:
 		${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/build/master/munin.conf ${PREFIX}/etc/munin/munin.conf.sample
+	@${CHOWN} ${USERS}:${GROUPS} ${DBDIR} ${STATEDIR} ${WWWDIR}
+	@${INSTALL_DATA} ${WRKSRC}/build/master/munin.conf \
+		${PREFIX}/etc/munin/munin.conf.sample
 	@(cd ${WRKSRC}/master/blib/libdoc && for man in ${MAN3}; do \
 		${INSTALL_MAN} -C $$man ${PREFIX}/man/man3; \
 	done)
@@ -92,8 +87,6 @@ post-install:
 	done)
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
-	@${CHOWN} munin /var/log/munin-master
-	@${CHGRP} munin /var/run/munin /var/log/munin-master ${WWWDIR} ${DBDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
