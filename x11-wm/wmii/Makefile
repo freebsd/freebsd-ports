@@ -41,7 +41,7 @@ MAKE_ARGS+=	-DNO_UTF8
 .endif
 
 .if defined(WITH_SLIM_LAYOUT_BOX)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-slim-layout-boxes
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-slim-layout-boxes
 .endif
 
 post-patch: .SILENT
@@ -55,11 +55,10 @@ post-patch: .SILENT
 # Make actual compile/link commands appear in the build log
 	${REINPLACE_CMD} -e 's|^COMPILE=|& noisycc=yes| ; \
 		s|^LINK=|& noisycc=yes|' ${WRKSRC}/mk/hdr.mk
+# Fix brain-damaged piece of code; otherwise it breaks on archs where
+# `size_t' is not 32-bit unsigned integer (e.g. amd64, sparc64)
+	${REINPLACE_CMD} -e '/wmii_strlcat/d' ${WRKSRC}/include/util.h
+	${REINPLACE_CMD} -e 's|strlcat|wmii_&|' ${WRKSRC}/include/util.h \
+		${WRKSRC}/cmd/util.c ${WRKSRC}/cmd/wmii/client.c
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on amd64 or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
