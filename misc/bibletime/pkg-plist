@@ -16,7 +16,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/cs/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/cs/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/cs/hdbk-reference.html
-%%DATADIR%%/docs/handbook/cs/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/cs/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/cs/hdbk-term.html
 %%DATADIR%%/docs/handbook/cs/i_back.png
 %%DATADIR%%/docs/handbook/cs/i_bible.png
@@ -60,7 +60,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/de/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/de/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/de/hdbk-reference.html
-%%DATADIR%%/docs/handbook/de/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/de/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/de/hdbk-term.html
 %%DATADIR%%/docs/handbook/de/i_back.png
 %%DATADIR%%/docs/handbook/de/i_bible.png
@@ -104,7 +104,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/en/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/en/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/en/hdbk-reference.html
-%%DATADIR%%/docs/handbook/en/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/en/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/en/hdbk-term.html
 %%DATADIR%%/docs/handbook/en/i_back.png
 %%DATADIR%%/docs/handbook/en/i_bible.png
@@ -148,7 +148,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fi/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/fi/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/fi/hdbk-reference.html
-%%DATADIR%%/docs/handbook/fi/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/fi/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/fi/hdbk-term.html
 %%DATADIR%%/docs/handbook/fi/i_back.png
 %%DATADIR%%/docs/handbook/fi/i_bible.png
@@ -192,7 +192,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fr/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/fr/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/fr/hdbk-reference.html
-%%DATADIR%%/docs/handbook/fr/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/fr/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/fr/hdbk-term.html
 %%DATADIR%%/docs/handbook/fr/i_back.png
 %%DATADIR%%/docs/handbook/fr/i_bible.png
@@ -236,7 +236,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/hu/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/hu/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/hu/hdbk-reference.html
-%%DATADIR%%/docs/handbook/hu/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/hu/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/hu/hdbk-term.html
 %%DATADIR%%/docs/handbook/hu/i_back.png
 %%DATADIR%%/docs/handbook/hu/i_bible.png
@@ -280,7 +280,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/it/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/it/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/it/hdbk-reference.html
-%%DATADIR%%/docs/handbook/it/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/it/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/it/hdbk-term.html
 %%DATADIR%%/docs/handbook/it/i_back.png
 %%DATADIR%%/docs/handbook/it/i_bible.png
@@ -324,7 +324,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/nl/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/nl/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/nl/hdbk-reference.html
-%%DATADIR%%/docs/handbook/nl/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/nl/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/nl/hdbk-term.html
 %%DATADIR%%/docs/handbook/nl/i_back.png
 %%DATADIR%%/docs/handbook/nl/i_bible.png
@@ -368,7 +368,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/pt_BR/hdbk-reference-shortcuts.html
 %%DATADIR%%/docs/handbook/pt_BR/hdbk-reference-works.html
 %%DATADIR%%/docs/handbook/pt_BR/hdbk-reference.html
-%%DATADIR%%/docs/handbook/pt_BR/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/pt_BR/hdbk-start-firstrun.html
 %%DATADIR%%/docs/handbook/pt_BR/hdbk-term.html
 %%DATADIR%%/docs/handbook/pt_BR/i_back.png
 %%DATADIR%%/docs/handbook/pt_BR/i_bible.png
@@ -746,6 +746,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/icons/stop.svg
 %%DATADIR%%/icons/swordconfig.svg
 %%DATADIR%%/icons/sync.svg
+%%DATADIR%%/icons/tabbed.svg
 %%DATADIR%%/icons/text_bold.svg
 %%DATADIR%%/icons/text_center.svg
 %%DATADIR%%/icons/text_italic.svg
