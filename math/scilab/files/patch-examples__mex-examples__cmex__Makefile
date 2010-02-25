@@ -1,5 +1,0 @@
-diff -ruN examples/mex-examples/cmex/Makefile.orig examples/mex-examples/cmex/Makefile
---- examples/mex-examples/cmex/Makefile	Thu Jan  1 01:00:00 1970
-+++ examples/mex-examples/cmex/Makefile	Sun Dec 31 11:39:14 2006
-@@ -0,0 +1 @@
-+distclean:
