@@ -29,6 +29,10 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900007
+BROKEN=		does not build. Use net/mpd5 instead please
+.endif
+
 .if ${OSVERSION} < 700041 && defined(WITH_NG_CAR)
 BUILD_DEPENDS+=	${LOCALBASE}/include/netgraph/ng_car.h:${PORTSDIR}/net/ng_car
 .if exists(${KMODDIR}/ng_car.ko)
