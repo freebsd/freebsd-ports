@@ -5,3 +5,4 @@ share/stardict/dic/jmdict-ja-en.dict.dz
 share/stardict/dic/jmdict-ja-en.idx
 share/stardict/dic/jmdict-ja-en.ifo
 @dirrmtry share/stardict/dic
+@dirrmtry share/stardict

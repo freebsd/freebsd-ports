@@ -1,0 +1,11 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+You should install a dictionary program via these ports:
+
+  textproc/qstardict    A StarDict clone written with using Qt4
+  textproc/stardict2    StarDict 2.x
+  textproc/stardict3    StarDict 3.x
+  textproc/goldendict   Goldendict
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
