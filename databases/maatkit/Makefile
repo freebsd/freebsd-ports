@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	5427
+PORTVERSION=	5686
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -22,10 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN1=	maatkit.1p \
 		mk-archiver.1p \
-		mk-audit.1p \
 		mk-checksum-filter.1p \
 		mk-deadlock-logger.1p \
 		mk-duplicate-key-checker.1p \
+		mk-error-log.1p \
 		mk-fifo-split.1p \
 		mk-find.1p \
 		mk-heartbeat.1p \
