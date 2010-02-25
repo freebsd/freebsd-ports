@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.1.1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://mu.wordpress.org/
-DISTNAME=	latest
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Multi-user version of the famous WordPress blogging application
