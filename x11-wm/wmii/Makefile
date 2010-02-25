@@ -17,7 +17,7 @@ COMMENT=	A dynamic, minimalist window manager for X11
 LIB_DEPENDS=	ixp.1:${PORTSDIR}/devel/libixp
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
-CONFLICTS=	wmii-s[0-9]*
+CONFLICTS=	wmii-3.9*
 
 USE_XORG=	x11 xextproto xt xext
 
