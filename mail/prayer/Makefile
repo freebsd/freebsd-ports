@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	1.3.2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
@@ -31,6 +30,9 @@ PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 USE_RC_SUBR=	prayer
 
 OPTIONS=	SESSIONCACHE	"Activate Session Cache" On
+
+USERS=		_prayer
+GROUPS=		prayer
 
 MAN5=		prayer.cf.5
 MAN8=		prayer-session.8 prayer-ssl-prune.8 prayer.8
@@ -63,7 +65,6 @@ post-configure:
 
 pre-install:
 	@${MKDIR} ${PREFIX}/etc/prayer
-	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -1,5 +1,5 @@
---- Config.orig	2009-03-16 00:51:45.000000000 +0800
-+++ Config	2009-03-16 00:52:23.000000000 +0800
+--- Config.orig	2010-02-22 13:43:01.247512371 +0100
++++ Config	2010-02-22 13:47:49.048414822 +0100
 @@ -27,31 +27,31 @@
  
  ############################################################################
@@ -11,10 +11,9 @@
  # Location of install program (GNU install or compatible required)
  INSTALL      = install
  
--# Base Compiler options for GCC (use CPPFLAGS and LDFLAGS if passed in)
+ # Base Compiler options for GCC (use CPPFLAGS and LDFLAGS if passed in)
 -ifdef CPPFLAGS
 -  BASECFLAGS   = $(CPPFLAGS)
-+# Base Compiler options for GCC (use PORTCFLAGS and LDFLAGS if passed in)
 +ifdef PORTCFLAGS
 +  BASECFLAGS   = $(PORTCFLAGS)
  else
@@ -32,8 +31,8 @@
  endif
  
  # Minimal libraries needed by Linux
--BASE_LIBS    = -lcrypt
-+# BASE_LIBS    = -lcrypt
+-BASE_LIBS    = -lcrypt -lutil
++#BASE_LIBS    = -lcrypt -lutil
  # FreeBSD needs some extra libraries:
 -# BASE_LIBS   = -lcrypt -liconv -lutil
 +BASE_LIBS   = -lcrypt -liconv -lutil
@@ -104,13 +103,13 @@
  RO_USER   = root
  RO_GROUP  = prayer
  
-@@ -181,8 +183,8 @@
+@@ -181,6 +183,6 @@
  PRIVATE_FILE = 0640
  
  # Location of configuration files and binaries
 -PRAYER_CONFIG_FILE   = ${PREFIX}/etc/prayer.cf
-+PRAYER_CONFIG_FILE   = %%PREFIX%%/etc/prayer/prayer.cf
 -BIN_DIR              = ${PREFIX}/sbin
-+BIN_DIR              = %%PREFIX%%/sbin
 -ACCOUNTD_CONFIG_FILE = ${PREFIX}/etc/prayer-accountd.cf
++PRAYER_CONFIG_FILE   = %%PREFIX%%/etc/prayer/prayer.cf
++BIN_DIR              = %%PREFIX%%/sbin
 +ACCOUNTD_CONFIG_FILE = %%PREFIX%%/etc/prayer/accountd.cf
