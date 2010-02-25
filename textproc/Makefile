@@ -313,6 +313,7 @@
     SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libuninameslist
+    SUBDIR += libupskirt
     SUBDIR += libwpd
     SUBDIR += libwps
     SUBDIR += libxdiff
