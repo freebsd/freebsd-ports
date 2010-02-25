@@ -17,34 +17,46 @@
 %%WWWDIR%%/wp-admin/comment.php
 %%WWWDIR%%/wp-admin/css/colors-classic-rtl.css
 %%WWWDIR%%/wp-admin/css/colors-classic.css
+%%WWWDIR%%/wp-admin/css/colors-classic.dev.css
 %%WWWDIR%%/wp-admin/css/colors-fresh-rtl.css
 %%WWWDIR%%/wp-admin/css/colors-fresh.css
+%%WWWDIR%%/wp-admin/css/colors-fresh.dev.css
 %%WWWDIR%%/wp-admin/css/dashboard-rtl.css
 %%WWWDIR%%/wp-admin/css/dashboard.css
+%%WWWDIR%%/wp-admin/css/dashboard.dev.css
 %%WWWDIR%%/wp-admin/css/farbtastic-rtl.css
 %%WWWDIR%%/wp-admin/css/farbtastic.css
 %%WWWDIR%%/wp-admin/css/global-rtl.css
 %%WWWDIR%%/wp-admin/css/global.css
+%%WWWDIR%%/wp-admin/css/global.dev.css
 %%WWWDIR%%/wp-admin/css/ie-rtl.css
 %%WWWDIR%%/wp-admin/css/ie.css
 %%WWWDIR%%/wp-admin/css/install-rtl.css
 %%WWWDIR%%/wp-admin/css/install.css
+%%WWWDIR%%/wp-admin/css/install.dev.css
 %%WWWDIR%%/wp-admin/css/login-rtl.css
 %%WWWDIR%%/wp-admin/css/login.css
+%%WWWDIR%%/wp-admin/css/login.dev.css
 %%WWWDIR%%/wp-admin/css/media-rtl.css
 %%WWWDIR%%/wp-admin/css/media.css
+%%WWWDIR%%/wp-admin/css/media.dev.css
 %%WWWDIR%%/wp-admin/css/mu-rtl.css
 %%WWWDIR%%/wp-admin/css/mu.css
 %%WWWDIR%%/wp-admin/css/plugin-install-rtl.css
 %%WWWDIR%%/wp-admin/css/plugin-install.css
+%%WWWDIR%%/wp-admin/css/plugin-install.dev.css
 %%WWWDIR%%/wp-admin/css/press-this-rtl.css
 %%WWWDIR%%/wp-admin/css/press-this.css
+%%WWWDIR%%/wp-admin/css/press-this.dev.css
 %%WWWDIR%%/wp-admin/css/theme-editor-rtl.css
 %%WWWDIR%%/wp-admin/css/theme-editor.css
+%%WWWDIR%%/wp-admin/css/theme-editor.dev.css
 %%WWWDIR%%/wp-admin/css/theme-install.css
+%%WWWDIR%%/wp-admin/css/theme-install.dev.css
 %%WWWDIR%%/wp-admin/css/upload-rtl.css
 %%WWWDIR%%/wp-admin/css/widgets-rtl.css
 %%WWWDIR%%/wp-admin/css/widgets.css
+%%WWWDIR%%/wp-admin/css/widgets.dev.css
 %%WWWDIR%%/wp-admin/custom-header.php
 %%WWWDIR%%/wp-admin/edit-attachment-rows.php
 %%WWWDIR%%/wp-admin/edit-category-form.php
@@ -91,6 +103,7 @@
 %%WWWDIR%%/wp-admin/images/gray-grad.png
 %%WWWDIR%%/wp-admin/images/icons32-vs.png
 %%WWWDIR%%/wp-admin/images/icons32.png
+%%WWWDIR%%/wp-admin/images/imgedit-icons.png
 %%WWWDIR%%/wp-admin/images/list-vs.png
 %%WWWDIR%%/wp-admin/images/list.png
 %%WWWDIR%%/wp-admin/images/loading-publish.gif
@@ -167,10 +180,12 @@
 %%WWWDIR%%/wp-admin/includes/dashboard.php
 %%WWWDIR%%/wp-admin/includes/export.php
 %%WWWDIR%%/wp-admin/includes/file.php
+%%WWWDIR%%/wp-admin/includes/image-edit.php
 %%WWWDIR%%/wp-admin/includes/image.php
 %%WWWDIR%%/wp-admin/includes/import.php
 %%WWWDIR%%/wp-admin/includes/manifest.php
 %%WWWDIR%%/wp-admin/includes/media.php
+%%WWWDIR%%/wp-admin/includes/meta-boxes.php
 %%WWWDIR%%/wp-admin/includes/misc.php
 %%WWWDIR%%/wp-admin/includes/mu.php
 %%WWWDIR%%/wp-admin/includes/plugin-install.php
@@ -209,6 +224,8 @@
 %%WWWDIR%%/wp-admin/js/farbtastic.js
 %%WWWDIR%%/wp-admin/js/gallery.dev.js
 %%WWWDIR%%/wp-admin/js/gallery.js
+%%WWWDIR%%/wp-admin/js/image-edit.dev.js
+%%WWWDIR%%/wp-admin/js/image-edit.js
 %%WWWDIR%%/wp-admin/js/inline-edit-post.dev.js
 %%WWWDIR%%/wp-admin/js/inline-edit-post.js
 %%WWWDIR%%/wp-admin/js/inline-edit-tax.dev.js
@@ -219,8 +236,6 @@
 %%WWWDIR%%/wp-admin/js/media-upload.js
 %%WWWDIR%%/wp-admin/js/media.dev.js
 %%WWWDIR%%/wp-admin/js/media.js
-%%WWWDIR%%/wp-admin/js/page.dev.js
-%%WWWDIR%%/wp-admin/js/page.js
 %%WWWDIR%%/wp-admin/js/password-strength-meter.dev.js
 %%WWWDIR%%/wp-admin/js/password-strength-meter.js
 %%WWWDIR%%/wp-admin/js/plugin-install.dev.js
@@ -230,8 +245,8 @@
 %%WWWDIR%%/wp-admin/js/postbox.dev.js
 %%WWWDIR%%/wp-admin/js/postbox.js
 %%WWWDIR%%/wp-admin/js/revisions-js.php
-%%WWWDIR%%/wp-admin/js/slug.dev.js
-%%WWWDIR%%/wp-admin/js/slug.js
+%%WWWDIR%%/wp-admin/js/set-post-thumbnail.dev.js
+%%WWWDIR%%/wp-admin/js/set-post-thumbnail.js
 %%WWWDIR%%/wp-admin/js/tags.dev.js
 %%WWWDIR%%/wp-admin/js/tags.js
 %%WWWDIR%%/wp-admin/js/theme-preview.dev.js
@@ -255,6 +270,7 @@
 %%WWWDIR%%/wp-admin/link.php
 %%WWWDIR%%/wp-admin/load-scripts.php
 %%WWWDIR%%/wp-admin/load-styles.php
+%%WWWDIR%%/wp-admin/maint/repair.php
 %%WWWDIR%%/wp-admin/media-new.php
 %%WWWDIR%%/wp-admin/media-upload.php
 %%WWWDIR%%/wp-admin/media.php
@@ -282,6 +298,7 @@
 %%WWWDIR%%/wp-admin/profile.php
 %%WWWDIR%%/wp-admin/revision.php
 %%WWWDIR%%/wp-admin/rtl.css
+%%WWWDIR%%/wp-admin/rtl.dev.css
 %%WWWDIR%%/wp-admin/setup-config.php
 %%WWWDIR%%/wp-admin/sidebar.php
 %%WWWDIR%%/wp-admin/theme-editor.php
@@ -299,6 +316,7 @@
 %%WWWDIR%%/wp-admin/users.php
 %%WWWDIR%%/wp-admin/widgets.php
 %%WWWDIR%%/wp-admin/wp-admin.css
+%%WWWDIR%%/wp-admin/wp-admin.dev.css
 %%WWWDIR%%/wp-admin/wpmu-admin.php
 %%WWWDIR%%/wp-admin/wpmu-blogs.php
 %%WWWDIR%%/wp-admin/wpmu-edit.php
@@ -405,6 +423,8 @@
 %%WWWDIR%%/wp-includes/category.php
 %%WWWDIR%%/wp-includes/class-IXR.php
 %%WWWDIR%%/wp-includes/class-feed.php
+%%WWWDIR%%/wp-includes/class-json.php
+%%WWWDIR%%/wp-includes/class-oembed.php
 %%WWWDIR%%/wp-includes/class-phpass.php
 %%WWWDIR%%/wp-includes/class-phpmailer.php
 %%WWWDIR%%/wp-includes/class-pop3.php
@@ -419,6 +439,7 @@
 %%WWWDIR%%/wp-includes/comment.php
 %%WWWDIR%%/wp-includes/compat.php
 %%WWWDIR%%/wp-includes/cron.php
+%%WWWDIR%%/wp-includes/default-embeds.php
 %%WWWDIR%%/wp-includes/default-filters.php
 %%WWWDIR%%/wp-includes/default-widgets.php
 %%WWWDIR%%/wp-includes/deprecated.php
@@ -434,7 +455,6 @@
 %%WWWDIR%%/wp-includes/functions.wp-scripts.php
 %%WWWDIR%%/wp-includes/functions.wp-styles.php
 %%WWWDIR%%/wp-includes/general-template.php
-%%WWWDIR%%/wp-includes/gettext.php
 %%WWWDIR%%/wp-includes/http.php
 %%WWWDIR%%/wp-includes/images/blank.gif
 %%WWWDIR%%/wp-includes/images/crystal/archive.png
@@ -527,6 +547,11 @@
 %%WWWDIR%%/wp-includes/js/crop/marqueeVert.gif
 %%WWWDIR%%/wp-includes/js/hoverIntent.dev.js
 %%WWWDIR%%/wp-includes/js/hoverIntent.js
+%%WWWDIR%%/wp-includes/js/imgareaselect/border-anim-h.gif
+%%WWWDIR%%/wp-includes/js/imgareaselect/border-anim-v.gif
+%%WWWDIR%%/wp-includes/js/imgareaselect/imgareaselect.css
+%%WWWDIR%%/wp-includes/js/imgareaselect/jquery.imgareaselect.dev.js
+%%WWWDIR%%/wp-includes/js/imgareaselect/jquery.imgareaselect.js
 %%WWWDIR%%/wp-includes/js/jcrop/Jcrop.gif
 %%WWWDIR%%/wp-includes/js/jcrop/jquery.Jcrop.css
 %%WWWDIR%%/wp-includes/js/jcrop/jquery.Jcrop.dev.js
@@ -552,6 +577,8 @@
 %%WWWDIR%%/wp-includes/js/jquery/ui.selectable.js
 %%WWWDIR%%/wp-includes/js/jquery/ui.sortable.js
 %%WWWDIR%%/wp-includes/js/jquery/ui.tabs.js
+%%WWWDIR%%/wp-includes/js/json2.dev.js
+%%WWWDIR%%/wp-includes/js/json2.js
 %%WWWDIR%%/wp-includes/js/prototype.js
 %%WWWDIR%%/wp-includes/js/quicktags.dev.js
 %%WWWDIR%%/wp-includes/js/quicktags.js
@@ -638,6 +665,7 @@
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/editor_plugin.dev.js
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/editor_plugin.js
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/audio.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/embedded.png
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/help.gif
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/image.gif
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/media.gif
@@ -729,6 +757,7 @@
 %%WWWDIR%%/wp-includes/link-template.php
 %%WWWDIR%%/wp-includes/locale.php
 %%WWWDIR%%/wp-includes/media.php
+%%WWWDIR%%/wp-includes/meta.php
 %%WWWDIR%%/wp-includes/pluggable.php
 %%WWWDIR%%/wp-includes/plugin.php
 %%WWWDIR%%/wp-includes/pomo/entry.php
@@ -737,6 +766,7 @@
 %%WWWDIR%%/wp-includes/pomo/streams.php
 %%WWWDIR%%/wp-includes/pomo/translations.php
 %%WWWDIR%%/wp-includes/post-template.php
+%%WWWDIR%%/wp-includes/post-thumbnail-template.php
 %%WWWDIR%%/wp-includes/post.php
 %%WWWDIR%%/wp-includes/query.php
 %%WWWDIR%%/wp-includes/registration-functions.php
@@ -746,7 +776,6 @@
 %%WWWDIR%%/wp-includes/rss.php
 %%WWWDIR%%/wp-includes/script-loader.php
 %%WWWDIR%%/wp-includes/shortcodes.php
-%%WWWDIR%%/wp-includes/streams.php
 %%WWWDIR%%/wp-includes/taxonomy.php
 %%WWWDIR%%/wp-includes/template-loader.php
 %%WWWDIR%%/wp-includes/theme.php
@@ -793,7 +822,6 @@
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wpeditimage/img
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wpeditimage/css
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wpeditimage
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/js
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/css
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress
@@ -826,6 +854,7 @@
 @dirrm %%WWWDIR%%/wp-includes/js/scriptaculous
 @dirrm %%WWWDIR%%/wp-includes/js/jquery
 @dirrm %%WWWDIR%%/wp-includes/js/jcrop
+@dirrm %%WWWDIR%%/wp-includes/js/imgareaselect
 @dirrm %%WWWDIR%%/wp-includes/js/crop
 @dirrm %%WWWDIR%%/wp-includes/js/codepress/languages
 @dirrm %%WWWDIR%%/wp-includes/js/codepress/images
@@ -850,6 +879,7 @@
 @dirrm %%WWWDIR%%/wp-content/plugins
 @dirrm %%WWWDIR%%/wp-content/mu-plugins
 @dirrm %%WWWDIR%%/wp-content
+@dirrm %%WWWDIR%%/wp-admin/maint
 @dirrm %%WWWDIR%%/wp-admin/js
 @dirrm %%WWWDIR%%/wp-admin/includes
 @dirrm %%WWWDIR%%/wp-admin/import
