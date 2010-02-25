@@ -1,61 +1,25 @@
 bin/waheela
 share/applications/kde4/waheela.desktop
-share/apps/waheela/themes/Bubbles/background-wide.jpg
-share/apps/waheela/themes/Bubbles/background.jpg
-share/apps/waheela/themes/Bubbles/preview.jpg
-share/apps/waheela/themes/Bubbles/theme.config
-share/apps/waheela/themes/ColorWaves/background.jpg
-share/apps/waheela/themes/ColorWaves/preview.jpg
-share/apps/waheela/themes/ColorWaves/theme.config
-share/apps/waheela/themes/DreamingGirl/background-wide.jpg
-share/apps/waheela/themes/DreamingGirl/background.jpg
-share/apps/waheela/themes/DreamingGirl/preview.jpg
-share/apps/waheela/themes/DreamingGirl/theme.config
-share/apps/waheela/themes/FloralGlow/background.jpg
-share/apps/waheela/themes/FloralGlow/preview.jpg
-share/apps/waheela/themes/FloralGlow/theme.config
-share/apps/waheela/themes/HoneyComb/background-wide.jpg
-share/apps/waheela/themes/HoneyComb/background.jpg
-share/apps/waheela/themes/HoneyComb/preview.jpg
-share/apps/waheela/themes/HoneyComb/theme.config
-share/apps/waheela/themes/Kore/background.jpg
-share/apps/waheela/themes/Kore/preview.jpg
-share/apps/waheela/themes/Kore/theme.config
-share/apps/waheela/themes/LakePowell/background.jpg
-share/apps/waheela/themes/LakePowell/preview.jpg
-share/apps/waheela/themes/LakePowell/theme.config
-share/apps/waheela/themes/LandOfFreedom/background.jpg
-share/apps/waheela/themes/LandOfFreedom/preview.jpg
-share/apps/waheela/themes/LandOfFreedom/theme.config
-share/apps/waheela/themes/SunsetBliss/background.jpg
-share/apps/waheela/themes/SunsetBliss/preview.jpg
-share/apps/waheela/themes/SunsetBliss/theme.config
-share/apps/waheela/themes/TheSoundOfNature/background.jpg
-share/apps/waheela/themes/TheSoundOfNature/preview.jpg
-share/apps/waheela/themes/TheSoundOfNature/theme.config
-share/apps/waheela/themes/Tiles/background-wide.jpg
-share/apps/waheela/themes/Tiles/preview.jpg
-share/apps/waheela/themes/Tiles/theme.config
-share/apps/waheela/themes/VirtualWorld/background.jpg
-share/apps/waheela/themes/VirtualWorld/preview.jpg
-share/apps/waheela/themes/VirtualWorld/theme.config
+share/config/waheela/themes/Aghi.config
+share/config/waheela/themes/Air.config
+share/config/waheela/themes/Atra_Dot.config
+share/config/waheela/themes/Code_Poets_Dream.config
+share/config/waheela/themes/Curls_on_Green.config
+share/config/waheela/themes/EOS.config
+share/config/waheela/themes/Evening.config
+share/config/waheela/themes/Fields_of_Peace.config
+share/config/waheela/themes/Finally_Summer_in_Germany.config
+share/config/waheela/themes/Fresh_Morning.config
+share/config/waheela/themes/Plasmalicious.config
+share/config/waheela/themes/Red_Leaf.config
+share/config/waheela/themes/Spring_Sunray.config
+share/config/waheela/themes/The_Rings_of_Saturn.config
+share/config/waheela/themes/There_is_Rain_on_the_Table.config
 share/icons/hicolor/128x128/apps/waheela.png
 share/icons/hicolor/16x16/apps/waheela.png
 share/icons/hicolor/22x22/apps/waheela.png
 share/icons/hicolor/32x32/apps/waheela.png
 share/icons/hicolor/48x48/apps/waheela.png
 share/icons/hicolor/64x64/apps/waheela.png
-@dirrm share/apps/waheela/themes/VirtualWorld
-@dirrm share/apps/waheela/themes/Tiles
-@dirrm share/apps/waheela/themes/TheSoundOfNature
-@dirrm share/apps/waheela/themes/SunsetBliss
-@dirrm share/apps/waheela/themes/LandOfFreedom
-@dirrm share/apps/waheela/themes/LakePowell
-@dirrm share/apps/waheela/themes/Kore
-@dirrm share/apps/waheela/themes/HoneyComb
-@dirrm share/apps/waheela/themes/FloralGlow
-@dirrm share/apps/waheela/themes/DreamingGirl
-@dirrm share/apps/waheela/themes/ColorWaves
-@dirrm share/apps/waheela/themes/Bubbles
-@dirrm share/apps/waheela/themes
-@dirrm share/apps/waheela
+@dirrm share/config/waheela/themes
+@dirrm share/config/waheela
