@@ -1,0 +1,5 @@
+This Trac plugin implements a page for creating time estimates. The
+estimates will be attached to whatever tickets are specified in the
+tickets box.
+
+WWW:    http://trac-hacks.org/wiki/EstimatorPlugin
