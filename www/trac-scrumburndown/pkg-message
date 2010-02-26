@@ -1,0 +1,18 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+timingandestimationplugin.* = enabled
+burndown.* = enabled
+
+to your trac.ini to enable the plugins.
+
+Next, upgrade your database with the command:
+
+  trac-admin /full/path/to/YourProjectName upgrade
+
+Finally, visit:
+http://trac-hacks.org/wiki/ScrumBurndownPlugin#Usingtheplugin
+
+for usage instructions.
+**************************************************

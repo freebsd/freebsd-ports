@@ -1620,6 +1620,7 @@
     SUBDIR += trac-remind
     SUBDIR += trac-revtree
     SUBDIR += trac-robotstxt
+    SUBDIR += trac-scrumburndown
     SUBDIR += trac-simpleticket
     SUBDIR += trac-spam-filter
     SUBDIR += trac-tags
