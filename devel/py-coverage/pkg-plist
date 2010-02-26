@@ -27,6 +27,9 @@ bin/coverage
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/collector.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/collector.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/collector.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/config.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/control.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/control.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/control.pyo
