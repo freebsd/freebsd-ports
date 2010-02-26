@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dexml
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A dead-simple Object-XML mapper for Python
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
