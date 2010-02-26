@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.4.10
-PORTREVISION=	3
+PORTVERSION=	0.5.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -21,8 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-gpl
 USE_GMAKE=	yes
-# required by FreeBSD 6
-MAKE_ENV=	LDFLAGS="-lc"
+MAKE_ENV=	LDFLAGS="-lc" # required by FreeBSD 6
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mlt
 
@@ -41,7 +39,8 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		QIMAGE	"Qimage module" on \
 		RESAMPLE	"Secret Rabbit Code module" on \
 		SOX	"Sound eXchange module" on \
-		SSE	"SSE support (requires MMX, caution on x86-64)" off \
+		SSE	"SSE support (requires MMX)" off \
+		SSE2	"SSE2 support" off \
 		VORBIS	"Vorbis module" on
 
 .include <bsd.port.pre.mk>
@@ -144,6 +143,12 @@ CONFIGURE_ARGS+=	--enable-sse
 CONFIGURE_ARGS+=	--disable-sse
 .endif
 
+.ifdef(WITH_SSE2)
+CONFIGURE_ARGS+=	--enable-sse2
+.else
+CONFIGURE_ARGS+=	--disable-sse2
+.endif
+
 .ifdef(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-vorbis
@@ -154,20 +159,22 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+.if ${OSVERSION} < 700041
+	${REINPLACE_CMD} -E -e 's|^(LDFLAGS.*)|\1 -lthr|' \
+		${WRKSRC}/src/framework/Makefile \
+		${WRKSRC}/src/modules/avformat/Makefile \
+		${WRKSRC}/src/modules/core/Makefile \
+		${WRKSRC}/src/modules/dv/Makefile \
+		${WRKSRC}/src/modules/sdl/Makefile
+.endif
+	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/swig/*/build
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
-	@${REINPLACE_CMD} -E -e 's|^(LDFLAGS.*)|\1 -lthr|' \
-	    ${WRKSRC}/src/framework/Makefile \
-	    ${WRKSRC}/src/modules/avformat/Makefile \
-	    ${WRKSRC}/src/modules/core/Makefile \
-	    ${WRKSRC}/src/modules/dv/Makefile \
-	    ${WRKSRC}/src/modules/sdl/Makefile
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 
 post-install:
