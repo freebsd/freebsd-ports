@@ -19,6 +19,8 @@ COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 BUILD_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+IGNORE=		doesn't build with Scilab 5.2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 SCILABDIR?=	lib/scilab
@@ -31,7 +33,7 @@ CONFIGURE_ENV+=	SCI="${LOCALBASE}/${SCILABDIR}"
 
 PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR}
 
-OPTIONS=        SIVP "Enable Image and Video support" off
+OPTIONS=	SIVP "Enable Image and Video support" off
 
 .include <bsd.port.pre.mk>
 
