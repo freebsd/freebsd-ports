@@ -23,6 +23,8 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.5
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.6
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.60.0
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.7
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.8
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyo
@@ -210,6 +212,9 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/html/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/html/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/html/__init__.pyo
+%%PYTHON_SITELIBDIR%%/itools/html/filters.py
+%%PYTHON_SITELIBDIR%%/itools/html/filters.pyc
+%%PYTHON_SITELIBDIR%%/itools/html/filters.pyo
 %%PYTHON_SITELIBDIR%%/itools/html/html.py
 %%PYTHON_SITELIBDIR%%/itools/html/html.pyc
 %%PYTHON_SITELIBDIR%%/itools/html/html.pyo
