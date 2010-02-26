@@ -18,6 +18,8 @@ COMMENT=	Yorick interpreted language full documentation
 
 WRKSRC=		${WRKDIR}/yorick-${PORTVERSION:R}-${PORTVERSION:E}/doc
 DOCSDIR=	${PREFIX}/share/doc/yorick
+DEPRECATED=	More up-to-date docs are included in the lang/yorick port
+EXPIRATION_DATE=	2010-04-02
 
 NO_BUILD=	true
 PLIST=		${WRKDIR}/pkg-plist
