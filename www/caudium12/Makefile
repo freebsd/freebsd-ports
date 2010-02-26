@@ -22,6 +22,9 @@ LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron/
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof/ \
 		pexts>0:${PORTSDIR}/lang/pexts/
 
+DEPRECATED=	No longer maintained upstream, please switch to www/caudium14
+EXPIRATION_DATE=	2010-04-02
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PIKEVERSION=	7.2.570
