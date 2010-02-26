@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Test-LongString
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fbsdports@commit.it
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A library to test long strings
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
