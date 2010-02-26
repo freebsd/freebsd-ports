@@ -9,6 +9,7 @@ lib/libgss.so.1
 libdata/pkgconfig/gss.pc
 share/locale/en@boldquot/LC_MESSAGES/gss.mo
 share/locale/en@quot/LC_MESSAGES/gss.mo
+share/locale/fi/LC_MESSAGES/gss.mo
 share/locale/fr/LC_MESSAGES/gss.mo
 share/locale/pl/LC_MESSAGES/gss.mo
 share/locale/ro/LC_MESSAGES/gss.mo
@@ -18,8 +19,6 @@ share/locale/ga/LC_MESSAGES/gss.mo
 share/locale/id/LC_MESSAGES/gss.mo
 share/locale/sk/LC_MESSAGES/gss.mo
 share/locale/zh_CN/LC_MESSAGES/gss.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrmtry share/locale/en@quot/LC_MESSAGES
 @dirrmtry share/locale/en@quot
 @dirrmtry share/locale/en@boldquot/LC_MESSAGES
