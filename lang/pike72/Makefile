@@ -22,6 +22,10 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		mird.1:${PORTSDIR}/databases/mird \
 		gmp.8:${PORTSDIR}/math/libgmp4
 
+DEPRECATED=	No longer maintained upstream, consider switching \
+		to a more modern version: lang/pike76 or lang/pike78
+EXPIRATION_DATE=	2010-04-02
+
 CONFLICTS=	pike7[68]*-[0-9]*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
