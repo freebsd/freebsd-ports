@@ -17,7 +17,7 @@ COMMENT=	Nero Digital Audio Reference MPEG-4 & 3GPP Audio Encoder
 
 USE_ZIP=	yes
 USE_LINUX=	yes
-ONLY_FOR_ARCH=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 RESTRICTED=	forbidden by license considerations
