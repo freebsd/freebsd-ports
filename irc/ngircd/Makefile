@@ -7,7 +7,7 @@
 
 PORTNAME=	ngircd
 PORTVERSION=	0.15
-CATEGORIES=	irc
+CATEGORIES=	irc ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		ftp://ngircd.barton.de/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,6 +27,7 @@ MAN8=		ngircd.8
 OPTIONS=	TCP_WRAPPERS	"Enable TCP wrappers support"	on \
 		SYSLOG		"Enable SYSLOG support"		on \
 		ZLIB		"Enable ZLIB compression"	on \
+		IPV6		"Enable IPV6"			on \
 		OPENSSL		"Enable OpenSSL support"	off \
 		GNUTLS		"Enable GnuTLS support"		off \
 		IRCPLUS		"Enable IRC+ protocol"		on \
@@ -46,6 +47,10 @@ CONFIGURE_ARGS+=	--without-syslog
 
 .if defined(WITHOUT_ZLIB)
 CONFIGURE_ARGS+=	--without-zlib
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .if defined(WITH_OPENSSL)
