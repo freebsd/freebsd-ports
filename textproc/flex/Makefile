@@ -36,7 +36,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's/tests//' \
+	${REINPLACE_CMD} -Ee 's/tests//' \
 		-e 's/^([[:space:]]*)\$$\(RANLIB\) ([^ ;]*)/\1chmod u+w \2;&/' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/@MAKEINFO@/& --no-split/g' \
