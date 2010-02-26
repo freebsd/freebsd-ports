@@ -6275,7 +6275,7 @@ ja-slimeforest                  ports/japanese/slimeforest
 ja-slrn                         ports/japanese/slrn
 ja-srd-fpw                      ports/japanese/srd-fpw
 ja-srd-fpw-package              ports/japanese/srd-fpw-package
-ja-stardict2-dict-ja            ports/japanese/stardict2-dict-ja
+ja-stardict-dict-ja             ports/japanese/stardict-dict-ja
 ja-suicavalue                   ports/japanese/suicavalue
 ja-suikyo                       ports/japanese/suikyo
 ja-t2ps                         ports/japanese/t2ps
@@ -7275,7 +7275,6 @@ lamprop                         ports/science/lamprop
 lanbrowsing                     ports/net/lanbrowsing
 lander                          ports/games/lander
 landscape                       ports/graphics/landscape
-lang_mpd                        ports/lang/mpd
 langspec                        ports/java/langspec
 lanmap                          ports/net-mgmt/lanmap
 lapack                          ports/math/lapack
@@ -8010,6 +8009,7 @@ libuninameslist                 ports/textproc/libuninameslist
 libuninum                       ports/devel/libuninum
 libunp                          ports/net/libunp
 libunrar                        ports/archivers/libunrar
+libupskirt                      ports/textproc/libupskirt
 libusb                          ports/devel/libusb
 libutempter                     ports/sysutils/libutempter
 libutf                          ports/misc/libutf
@@ -9333,6 +9333,7 @@ mpack                           ports/converters/mpack
 mpage                           ports/print/mpage
 mpatrol                         ports/devel/mpatrol
 mpb                             ports/science/mpb
+mpd                             ports/lang/mpd
 mpd-l2tp-ipv6pd-client          ports/net/mpd-l2tp-ipv6pd-client
 mpd4                            ports/net/mpd4
 mpd5                            ports/net/mpd5
@@ -9711,7 +9712,6 @@ net-snmp4                       ports/net-mgmt/net-snmp4
 net2ftp                         ports/ftp/net2ftp
 net6                            ports/net/net6
 net_jags                        ports/net/jags
-net_mpd                         ports/net/mpd
 net_ttt                         ports/net/ttt
 netams                          ports/net-mgmt/netams
 netams-front                    ports/net-mgmt/netams-front
@@ -20006,6 +20006,7 @@ py-inlineegg                    ports/devel/py-InlineEgg
 py-instant                      ports/devel/py-instant
 py-interface                    ports/devel/py-interface
 py-ipaddr                       ports/devel/py-ipaddr
+py-iplib                        ports/net/py-iplib
 py-ipy                          ports/net-mgmt/py-ipy
 py-irclib                       ports/irc/py-irclib
 py-istring                      ports/devel/py-istring
@@ -23319,6 +23320,7 @@ toilet                          ports/misc/toilet
 tokamak                         ports/devel/tokamak
 tokyocabinet                    ports/databases/tokyocabinet
 tokyodystopia                   ports/textproc/tokyodystopia
+tokyopromenade                  ports/www/tokyopromenade
 tokyotyrant                     ports/databases/tokyotyrant
 tolkien-ttf                     ports/x11-fonts/tolkien-ttf
 tolua                           ports/lang/tolua
