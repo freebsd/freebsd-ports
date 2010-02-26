@@ -19,7 +19,7 @@ DISTFILES=	Isabelle2009.tar.gz \
 		Isabelle2009_pdf.tar.gz
 .endif
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	A generic proof assistant
 
 OPTIONS=	SMLNJ  "Use SML/NJ (devel) instead of faster Poly/ML"     off
