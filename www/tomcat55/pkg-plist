@@ -1022,5 +1022,8 @@
 @dirrm %%T%%/common/endorsed
 @dirrm %%T%%/common/classes
 @dirrm %%T%%/common
+@dirrm %%T%%/bin/procrun/ia64
+@dirrm %%T%%/bin/procrun/amd64
+@dirrm %%T%%/bin/procrun
 @dirrm %%T%%/bin
 @dirrm %%T%%
