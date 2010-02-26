@@ -16,6 +16,8 @@ COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
 
 NO_CDROM=	no distribution to corporate environment
 RESTRICTED=	license required for commercial use
+DEPRECATED=	Redundant, all network functionality is included in net/dgd
+EXPIRATION_DATE=	2010-04-02
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
