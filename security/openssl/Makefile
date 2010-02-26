@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.8l
-PORTREVISION=	4
+PORTVERSION=	0.9.8m
+PORTREVISION=	0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-#PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~dinoex/distfiles/
-PATCH_SITE_SUBDIR=	dinoex
-PATCHFILES=	dtls-bugs-2009-05-18.patch
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -566,8 +561,11 @@ MLINKS=	dgst.1 md4.1 \
 	SSL_CTX_set_msg_callback.3 SSL_CTX_set_msg_callback_arg.3 \
 	SSL_CTX_set_msg_callback.3 SSL_get_msg_callback_arg.3 \
 	SSL_CTX_set_msg_callback.3 SSL_set_msg_callback.3 \
+	SSL_CTX_set_options.3 SSL_CTX_clear_options.3 \
 	SSL_CTX_set_options.3 SSL_CTX_get_options.3 \
+	SSL_CTX_set_options.3 SSL_clear_options.3 \
 	SSL_CTX_set_options.3 SSL_get_options.3 \
+	SSL_CTX_set_options.3 SSL_get_secure_renegotiation_support.3 \
 	SSL_CTX_set_options.3 SSL_set_options.3 \
 	SSL_CTX_set_quiet_shutdown.3 SSL_CTX_get_quiet_shutdown.3 \
 	SSL_CTX_set_quiet_shutdown.3 SSL_get_quiet_shutdown.3 \
@@ -802,6 +800,72 @@ MLINKS=	dgst.1 md4.1 \
 	mdc2.3 MDC2_Init.3 \
 	mdc2.3 MDC2_Update.3 \
 	pem.3 PEM.3 \
+	pem.3 PEM_read_DHparams.3  \
+	pem.3 PEM_read_DSAPrivateKey.3 \
+	pem.3 PEM_read_DSA_PUBKEY.3 \
+	pem.3 PEM_read_DSAparams.3 \
+	pem.3 PEM_read_NETSCAPE_CERT_SEQUENCE.3 \
+	pem.3 PEM_read_PKCS7.3 \
+	pem.3 PEM_read_PUBKEY.3 \
+	pem.3 PEM_read_PrivateKey.3 \
+	pem.3 PEM_read_RSAPrivateKey.3 \
+	pem.3 PEM_read_RSAPublicKey.3 \
+	pem.3 PEM_read_RSA_PUBKEY.3 \
+	pem.3 PEM_read_X509.3 \
+	pem.3 PEM_read_X509_AUX.3 \
+	pem.3 PEM_read_X509_CRL.3 \
+	pem.3 PEM_read_X509_REQ.3 \
+	pem.3 PEM_read_bio_DHparams.3 \
+	pem.3 PEM_read_bio_DSAPrivateKey.3 \
+	pem.3 PEM_read_bio_DSA_PUBKEY.3 \
+	pem.3 PEM_read_bio_DSAparams.3 \
+	pem.3 PEM_read_bio_NETSCAPE_CERT_SEQUENCE.3 \
+	pem.3 PEM_read_bio_PKCS7.3 \
+	pem.3 PEM_read_bio_PUBKEY.3 \
+	pem.3 PEM_read_bio_PrivateKey.3 \
+	pem.3 PEM_read_bio_RSAPrivateKey.3 \
+	pem.3 PEM_read_bio_RSAPublicKey.3 \
+	pem.3 PEM_read_bio_RSA_PUBKEY.3 \
+	pem.3 PEM_read_bio_X509.3 \
+	pem.3 PEM_read_bio_X509_AUX.3 \
+	pem.3 PEM_read_bio_X509_CRL.3 \
+	pem.3 PEM_read_bio_X509_REQ.3 \
+	pem.3 PEM_write_DHparams.3 \
+	pem.3 PEM_write_DSAPrivateKey.3 \
+	pem.3 PEM_write_DSA_PUBKEY.3 \
+	pem.3 PEM_write_DSAparams.3 \
+	pem.3 PEM_write_NETSCAPE_CERT_SEQUENCE.3 \
+	pem.3 PEM_write_PKCS7.3 \
+	pem.3 PEM_write_PKCS8PrivateKey.3 \
+	pem.3 PEM_write_PKCS8PrivateKey_nid.3 \
+	pem.3 PEM_write_PUBKEY.3 \
+	pem.3 PEM_write_PrivateKey.3 \
+	pem.3 PEM_write_RSAPrivateKey.3 \
+	pem.3 PEM_write_RSAPublicKey.3 \
+	pem.3 PEM_write_RSA_PUBKEY.3 \
+	pem.3 PEM_write_X509.3 \
+	pem.3 PEM_write_X509_AUX.3 \
+	pem.3 PEM_write_X509_CRL.3 \
+	pem.3 PEM_write_X509_REQ.3 \
+	pem.3 PEM_write_X509_REQ_NEW.3 \
+	pem.3 PEM_write_bio_DHparams.3 \
+	pem.3 PEM_write_bio_DSAPrivateKey.3 \
+	pem.3 PEM_write_bio_DSA_PUBKEY.3 \
+	pem.3 PEM_write_bio_DSAparams.3 \
+	pem.3 PEM_write_bio_NETSCAPE_CERT_SEQUENCE.3 \
+	pem.3 PEM_write_bio_PKCS7.3 \
+	pem.3 PEM_write_bio_PKCS8PrivateKey.3 \
+	pem.3 PEM_write_bio_PKCS8PrivateKey_nid.3 \
+	pem.3 PEM_write_bio_PUBKEY.3 \
+	pem.3 PEM_write_bio_PrivateKey.3 \
+	pem.3 PEM_write_bio_RSAPrivateKey.3 \
+	pem.3 PEM_write_bio_RSAPublicKey.3 \
+	pem.3 PEM_write_bio_RSA_PUBKEY.3 \
+	pem.3 PEM_write_bio_X509.3 \
+	pem.3 PEM_write_bio_X509_AUX.3 \
+	pem.3 PEM_write_bio_X509_CRL.3 \
+	pem.3 PEM_write_bio_X509_REQ.3 \
+	pem.3 PEM_write_bio_X509_REQ_NEW.3 \
 	rc4.3 RC4.3 \
 	rc4.3 RC4_set_key.3 \
 	ripemd.3 RIPEMD160.3 \
@@ -927,13 +991,13 @@ do-configure:
 .if defined(WITH_FIPS)
 	@${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
-		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
+		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
 		${WRKSRC}/Makefile
 .else
 	@${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
-		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
+		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
 		-e 's| build_fips | |' \
 		${WRKSRC}/Makefile
