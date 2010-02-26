@@ -13,7 +13,7 @@ MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 DISTNAME=	ProofGeneral-3.7.1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	A generic interface for proof assistants
 
 PKGNAMESUFFIX+=	-${EMACS_NAME}
