@@ -17,7 +17,7 @@ COMMENT=	ChartDirector Chart Component for PHP ${PHP_VER}
 
 USE_PHP=	yes
 NO_BUILD=	yes
-ONLY_FOR_ARCH=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
 IGNORE_WITH_PHP?=4
 DEFAULT_PHP_VER?=5
