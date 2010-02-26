@@ -18,6 +18,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_QMAIL_RUN=	yes
 
 CONFLICTS=	ezmlm-0.*
