@@ -5,7 +5,7 @@
 # Generated with portupload. Do not edit directly, please
 
 PORTNAME=	Catalyst-Plugin-AutoCRUD
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
