@@ -26,6 +26,9 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
+
 .if ${ARCH} == "i386"
 BROKEN=		does not build
 .endif
