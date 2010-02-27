@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	OAuth-Lite
-PORTVERSION=	1.23
+PORTVERSION=	1.25
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/L/LY/LYOKATO
@@ -35,6 +35,7 @@ MAN3=	OAuth::Lite.3 \
 	OAuth::Lite::AuthMethod.3 \
 	OAuth::Lite::Consumer.3 \
 	OAuth::Lite::Problems.3 \
+	OAuth::Lite::Response.3 \
 	OAuth::Lite::Server::Test::Echo.3 \
 	OAuth::Lite::Server::mod_perl2.3 \
 	OAuth::Lite::ServerUtil.3 \

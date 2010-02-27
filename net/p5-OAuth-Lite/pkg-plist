@@ -4,6 +4,7 @@
 %%SITE_PERL%%/OAuth/Lite/AuthMethod.pm
 %%SITE_PERL%%/OAuth/Lite/Consumer.pm
 %%SITE_PERL%%/OAuth/Lite/Problems.pm
+%%SITE_PERL%%/OAuth/Lite/Response.pm
 %%SITE_PERL%%/OAuth/Lite/Server/Test/Echo.pm
 %%SITE_PERL%%/OAuth/Lite/Server/mod_perl2.pm
 %%SITE_PERL%%/OAuth/Lite/ServerUtil.pm
