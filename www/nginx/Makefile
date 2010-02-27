@@ -47,6 +47,7 @@ OPTIONS=	DEBUG			"Build with debug" off \
 		HTTP_ACCEPT_LANGUAGE	"3rd party accept_language module" off \
 		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
 		HTTP_AUTH_PAM_MODULE	"3rd party http_auth_pam module" off \
+		HTTP_AUTH_REQ_MODULE	"3rd party http_auth_request module" off \
 		HTTP_EVAL_MODULE	"3rd party eval module" off \
 		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
 		HTTP_GUNZIP_FILTER	"3rd party http_gunzip_filter module" off \
@@ -154,6 +155,13 @@ NGINX_AUTH_PAM_MODULE_VERSION=	1.1
 MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
 DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}.tar.gz:auth_pam
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}
+.endif
+
+.if defined(WITH_HTTP_AUTH_REQ_MODULE)
+NGINX_AUTH_REQ_MODULE_VERSION=	0.1
+MASTER_SITES+=	http://mdounin.ru/files/:auth_request
+DISTFILES+=	ngx_http_auth_request-${NGINX_AUTH_REQ_MODULE_VERSION}.tar.gz:auth_request
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request-${NGINX_AUTH_REQ_MODULE_VERSION}
 .endif
 
 .if defined(WITHOUT_HTTP_CACHE_MODULE)
