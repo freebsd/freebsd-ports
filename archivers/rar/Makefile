@@ -31,6 +31,8 @@ HAVE_COMPAT_IA32_KERN!=	if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; the
 .if !defined(HAVE_COMPAT_IA32_KERN)
 IGNORE=	requires a kernel with compiled-in IA32 compatibility
 .endif
+.elif ${ARCH} == "sparc64"
+BROKEN=	fails to install on sparc64: File format not recognized
 .endif
 
 do-install:
