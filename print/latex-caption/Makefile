@@ -21,6 +21,8 @@ BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${TEXMF_LSR}:${PORTSDIR}/print/tex-texmflocal
 
+BROKEN=		does not fetch
+
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFDIR=${TEXMFDIR}
 
