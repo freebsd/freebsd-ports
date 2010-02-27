@@ -47,6 +47,12 @@ XPI_FILE=	${DISTNAME}-${GECKO}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
 PLIST_DIRS=	%%DATADIR%%
 
+.if ${ARCH} == "sparc64"
+.if ${GECKO} == "seamonkey" || ${GECKO} == "thunderbird"
+BROKEN=		Does not install on sparc64
+.endif
+.endif
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
