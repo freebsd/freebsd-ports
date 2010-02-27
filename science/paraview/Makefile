@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.6.2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v3.6/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	devel@stasyan.com
 COMMENT=	ParaView is a powerful scientific data visualization application
 
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
@@ -42,7 +41,11 @@ CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DVTK_USE_X="ON" \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1 \
 		-DQT_ASSISTANT_EXECUTABLE="${LOCALBASE}/bin/assistant-qt4" \
-		-DCMAKE_INCLUDE_DIRECTORIES_BEFORE="ON"
+		-DVTK_INSTALL_QT_PLUGIN_DIR="${PREFIX}/${QT_PLUGINDIR_REL}/designer" \
+		-DCMAKE_INCLUDE_DIRECTORIES_BEFORE="ON" \
+		-DPARAVIEW_INSTALL_DEVELOPMENT="ON"
+
+MAKE_JOBS_SAFE=	yes
 
 PATCH_WRKSRC=	${WRKDIR}/ParaView3
 WRKSRC=		${WRKDIR}/ParaView3/build
